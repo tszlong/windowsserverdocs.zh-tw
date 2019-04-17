@@ -1,0 +1,3 @@
+Windows Admin Center （非預覽） 發行版本將依據 Microsoft 的[新式生命週期原則](https://support.microsoft.com/help/30881/modern-lifecycle-policy)會持續，支援。 這表示的最新版本的 Windows Admin Center 是 「 服務，支援，且使用者必須保持目前透過升級到保持支援可用性的 30 天內最新的 Windows Admin Center 版本。 這項原則套用到這兩個 Windows Admin Center 平台本身，以及在 Windows Admin Center 擴充功能摘要發行任何已發行 （非預覽） Microsoft 擴充功能。 請注意，某些擴充功能可能會比其他 Windows Admin Center 發行之間經常更新。
+
+如需關於 Windows Admin Center 預覽版版本資訊，請參閱[Windows Insider Preview 版本](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)。

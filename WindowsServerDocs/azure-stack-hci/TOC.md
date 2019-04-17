@@ -1,0 +1,7 @@
+# [Azure Stack HCI](index.md)
+## [Hyper-V](../virtualization/hyper-v/index.md)
+## [儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)
+## [容錯移轉叢集](../failover-clustering/failover-clustering-overview.md)
+## [軟體定義的網路功能](https://docs.microsoft.com/windows-server/networking/sdn/)
+## [Windows Admin Center](../manage/windows-admin-center/overview.md)
+## [連線至 Azure](../azure-hybrid-services/index.md)
