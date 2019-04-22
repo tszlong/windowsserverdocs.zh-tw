@@ -1,7 +1,7 @@
 ---
 ms.assetid: c89a977c-b09f-44ec-be42-41e76a6cf3ad
-title: "移除的 Microsoft 的著作權權益"
-description: 
+title: 移除 Microsoft 著作權
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,51 +9,58 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c2e6f9445e53a5b5867a763d58ad4a6ca3600cbe
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: aa27a014b0803712a20fdd23f075486dc35f33c2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820979"
 ---
-# <a name="remove-the-microsoft-copyright"></a>移除的 Microsoft 的著作權權益 
+# <a name="remove-the-microsoft-copyright"></a>移除 Microsoft 著作權 
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
  
-根據預設，AD FS 之包含 Microsoft 著作權。 若要移除此著作權從 [自訂頁面，您可以使用下列程序。 
+根據預設，AD FS 頁面包含 Microsoft 著作權。 若要從您的自訂頁面移除此著作權，可以使用下列程序。 
 
 ![移除著作權](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png) 
   
-## <a name="to-remove-the-microsoft-copyright"></a>若要移除的 Microsoft 的著作權權益  
+## <a name="to-remove-the-microsoft-copyright"></a>移除 Microsoft 著作權  
   
-1.  建立自訂預設值為基礎的主題。  
-  
+1. 根據預設值建立自訂的佈景主題。
 
-    `New-AdfsWebTheme –Name custom –SourceName default ` 
- 
-  
-2.  藉由輸出資料夾匯出主題。  
+   ```powershell
+   New-AdfsWebTheme –Name custom –SourceName default
+   ```
 
-    `Export-AdfsWebTheme -Name custom -DirectoryPath C:\customWebTheme ` 
+2. 指定輸出資料夾以匯出佈景主題。  
 
-  
-3.  找出 Style.css 檔案所在位置輸出資料夾中。 使用先前的範例，為 C:\\CustomWebTheme\\Css\\Style.css 路徑。  
-  
-4.  使用編輯器] 中，例如記事本開放 Style.css 檔案。  
-  
-5.  找出`#copyright`部分，以及然後變更下列：  
-  `#copyright {color:#696969; display:none;} ` 
- 
-6.  建立自訂主題為基礎的新 Style.css 檔案。  
-  
-    `Set-AdfsWebTheme -TargetName custom -StyleSheet @{locale="";path="C:\customWebTheme\css\style.css"}  `
+   ```powershell
+   Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
+   ```
 
-7.  啟動新的主題。  
+3. 找出`Style.css`位於輸出資料夾中的檔案。 藉由使用上述的範例，路徑就是 `C:\CustomWebTheme\Css\Style.css.`
   
+4. 開啟`Style.css`編輯器，例如 [記事本] 檔案。  
+  
+5. 找出 `#copyright` 部分，並將它變更如下：  
 
-    `Set-AdfsWebConfig -ActiveThemeName custom ` 
+   ```css
+   #copyright {color:#696969; display:none;}
+   ```
 
+6. 建立自訂佈景主題為基礎的新`Style.css`檔案。  
 
-現在，您應該不會再看到登入頁面底部的著作權權益。
+   ```powershell
+   Set-AdfsWebTheme -TargetName custom -StyleSheet @{locale="";path="C:\customWebTheme\css\style.css"}
+   ```
+
+7. 啟動新的佈景主題。  
+
+   ```powershell
+   Set-AdfsWebConfig -ActiveThemeName custom
+   ```
+
+現在，您應該不會再看到著作權底部的 [登入] 頁面。
 
 ![移除著作權](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1a.png) 
 

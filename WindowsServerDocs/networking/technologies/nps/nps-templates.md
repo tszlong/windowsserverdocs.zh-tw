@@ -1,6 +1,6 @@
 ---
 title: NPS 範本
-description: 本主題提供的網路原則伺服器範本，Windows Server 2016 中的概觀。
+description: 本主題提供 Windows Server 2016 中的網路原則伺服器範本的概觀。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,36 +8,37 @@ ms.topic: article
 ms.assetid: fdfc0df1-21c7-492c-9fad-38fe9c7d935a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2835959b8c076ef7b6aeb1fca31a62717ef95037
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 0647dbf0f99a01e32ba68475b439501e2dbeebfe
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823309"
 ---
 # <a name="nps-templates"></a>NPS 範本
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-網路原則伺服器 \(NPS\) 範本可讓您建立設定項目，例如撥號使用者服務遠端驗證 \(RADIUS\) 戶端或共用的密碼，您可以在本機伺服器 NPS 及匯出其他 NPS 伺服器上使用重複使用。
+網路原則伺服器\(NPS\)範本可讓您建立組態項目，例如遠端驗證撥入使用者服務\(RADIUS\)用戶端或可重複使用在本機的共用的密碼NPS 與用於其他 NPSs 的匯出。
 
-NPS 範本專為減少的時間和成本所需設定 NPS 一或多個的伺服器上。 適用於管理範本 \] 中的設定下列 NPS 範本類型︰
+NPS 範本的設計目的是減少的時間與一或多個伺服器上設定 NPS 所花費的成本。 下列的 NPS 範本類型可供範本管理 中的組態：
 
-- 共用的密碼
-- RADIUS 戶端
+- 共用祕密
+- RADIUS 用戶端
 - 遠端 RADIUS 伺服器
-- IP 篩選
+- IP 篩選器
 - 補救伺服器群組
 
-設定範本與不同直接設定 NPS 伺服器。 建立範本不會影響 NPS 伺服器的功能。 它是只有當您選取範本中 NPS 主控台範本影響 NPS 功能伺服器的適當位置。 
+設定範本是不同於直接設定 NPS。 建立範本並不會影響 NPS 的功能。 它是只有當您選取的範本中，範本會影響 NPS 功能的 NPS 主控台中的適當位置。 
 
-例如，如果您可以設定 RADIUS client NPS RADIUS 戶端及伺服器主控台中，變更 NPS 伺服器設定也可以拍攝設定 NPS 與您的網路存取伺服器 \(NAS's\) 其中一個步驟。 \ (下一步就是設定通訊具有 NPS。NAS \) 不過，如果您在 NPS 主機中設定新 RADIUS 戶端範本**管理範本**而非建立新的 RADIUS client 在**RADIUS 戶端與伺服器**、建立範本，但您無法更動 NPS 伺服器功能尚未。 若要變更的 NPS server 功能，您必須選取範本 NPS 主控台位置正確。
+例如，如果您在 NPS 主控台的 RADIUS 用戶端和伺服器設定為 RADIUS 用戶端，您變更 NPS 設定並採取設定 NPS 與其中一個網路存取伺服器進行通訊的其中一個步驟\(NAS 的\). \(下一個步驟是設定在 NAS 與 NPS 進行通訊。\)不過，如果您在 NPS 主控台的 設定新的 RADIUS 用戶端範本**範本管理**而不會建立新的 RADIUS 用戶端下**RADIUS 用戶端和伺服器**，您已建立範本，但您並未改變 NPS 功能尚未。 若要改變的 NPS 功能，您必須從正確的位置，在 NPS 主控台中選取範本。
 
 ## <a name="creating-templates"></a>建立範本
 
-若要建立範本，開放 NPS 主機上按一下滑鼠右鍵範本類型，例如**IP 篩選器**，然後按一下 [**新增]**。 新範本屬性對話方塊，可讓您設定您的範本。
+若要建立範本，請開啟 NPS 主控台，例如以滑鼠右鍵按一下範本類型， **IP 篩選器**，然後按一下**新增**。 此時會開啟新的範本內容對話方塊，可讓您設定您的範本。
 
 ## <a name="using-templates-locally"></a>在本機使用範本
 
-您可以使用您所建立的範本**管理範本**藉由瀏覽至範本可在套用 NPS 主機的位置。 例如您建立新分享機密範本，如果您想要 RADIUS client 設定，適用於在**RADIUS 戶端與伺服器**和**RADIUS 戶端**，開放 RADIUS client 屬性。 在**選取現有的共用機密範本**，選取您先前建立的清單中可用的範本範本。
+您可以使用您在建立範本**範本管理**瀏覽至在 NPS 主控台中可以套用範本的位置。 比方說，如果您建立新的共用祕密範本，您想要在 RADIUS 用戶端設定，適用於**RADIUS 用戶端和伺服器**並**RADIUS 用戶端**，開啟 RADIUS 用戶端內容。 在 **選取現有的共用祕密範本**，選取您先前建立的可用範本清單中的範本。
 
-如需 NPS 的詳細資訊，請查看[的網路原則 Server (NPS)](nps-top.md)。
+如需 NPS 的詳細資訊，請參閱[網路原則伺服器 (NPS)](nps-top.md)。

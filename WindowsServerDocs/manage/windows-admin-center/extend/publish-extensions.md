@@ -1,6 +1,6 @@
 ---
-title: 發佈 Windows Admin Center 擴充功能
-description: 發佈擴充功能，Windows Admin center (Project Honolulu)
+title: 發行 Windows Admin Center 的擴充功能
+description: 發行 Windows Admin Center （專案檀香山） 的擴充功能
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
@@ -9,75 +9,75 @@ ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 762bd4613fa8ad6cdfb5b44745a7ce78b331499d
-ms.sourcegitcommit: 3883eebbba70bfea0221e510863ee1a724a5f926
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5783750"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820419"
 ---
-# 發佈擴充功能
+# <a name="publishing-extensions"></a>發行擴充功能
 
->適用於：Windows Admin Center、Windows Admin Center 預覽版
+>適用於：Windows Admin Center，Windows Admin Center 預覽
 
-當您開發您的擴充功能時，您會想要將它發行，並讓它提供給其他人測試，或使用。 根據您的對象和發佈的目的，有幾個選項其中我們文件會介紹下方以及步驟和發佈的需求。
+當您開發您的延伸模組時，您會想要將它發行，並將它提供給其他人來測試或使用。 根據您的對象和目的發行，還有我們會介紹以下的步驟和發行需求以及幾個選項。
 
-## 發佈選項
+## <a name="publishing-options"></a>發行選項
 
-有三個主要支援 Windows Admin Center 的可設定的套件來源選項：
+有三個 Windows Admin Center 支援的可設定的套件來源的主要選項：
 * Microsoft 的公用 Windows Admin Center NuGet 摘要
-* 您自己私用的 NuGet 摘要
+* 您自己的私用 NuGet 摘要
 * 本機或網路檔案共用
 
-### 發佈至 Windows Admin Center 擴充功能摘要
+### <a name="publishing-to-the-windows-admin-center-extension-feed"></a>發佈到摘要的 Windows Admin Center 延伸模組
 
-根據預設，Windows Admin Center 已連接到 NuGet 由 Microsoft Windows Admin Center 產品小組維護的摘要。 早期的預覽版本的 Microsoft 所開發的新擴充功能可能會發佈到此摘要，提供給 Windows Admin Center 使用者。 計劃要建置並公開發行延伸模組的外部開發人員也可以[提交要求](#publishing-your-extension-to-the-windows-admin-center-feed)發佈到此摘要。
+依預設，Windows Admin Center 連線至 NuGet 由 Microsoft 的 Windows Admin Center 產品小組所維護的摘要。 發佈到此摘要，並可供 Windows Admin Center 使用者，可能是由 Microsoft 所開發的新擴充功能的早期預覽版本。 外部計劃要建置及公開發行延伸模組的開發人員也可以[申請](#publishing-your-extension-to-the-windows-admin-center-feed)發佈到此摘要。
 
-### 發佈到不同的 NuGet 摘要
+### <a name="publishing-to-a-different-nuget-feed"></a>發行至不同的 NuGet 摘要
 
-您也可能會建立您自己的 NuGet 摘要若要使用這其中許多[不同的選項設定為私用的來源或使用 NuGet 裝載服務](https://docs.microsoft.com/nuget/hosting-packages/overview)的發佈您的延伸模組。 NuGet 摘要必須支援 NuGet v2 API。 Windows Admin Center 目前不支援摘要的驗證，因為摘要需要設定，以允許任何人的讀取權限。
+您也可以建立您自己的 NuGet 摘要，以將您的延伸模組發行至使用任何一種[不同的選項，設定 私用的來源，或使用 NuGet，裝載服務](https://docs.microsoft.com/nuget/hosting-packages/overview)。 NuGet 摘要必須支援 NuGet v2 API。 由於 Windows Admin Center 目前不支援驗證摘要，摘要必須設定為允許任何人都能讀取權限。
 
-### 發佈至檔案共用
+### <a name="publishing-to-a-file-share"></a>發行至檔案共用
 
-若要限制您的擴充功能的存取權，您的組織或一組有限的人員，您可以使用 SMB 檔案共用作為擴充功能摘要。 在此情況下，將會套用檔案共用及資料夾的權限允許其存取摘要。
+若要限制存取您的延伸模組，到您的組織，或為一組有限的人員，您可以使用 SMB 檔案共用作為擴充功能摘要。 在此情況下，將套用的檔案共用和資料夾權限，允許存取摘要。
 
-## 準備發行您的擴充功能
+## <a name="preparing-your-extension-for-release"></a>準備您的延伸模組可供發行
 
-請確定您閱讀並請考慮下列開發主題：
+請確認您已閱讀並考慮下列的開發主題：
 
-- [控制您的工具可見性](guides/dynamic-tool-display.md)
+- [控制工具的可見性](guides/dynamic-tool-display.md)
 - [字串和當地語系化](guides/strings-localization.md)
 
-### 可以考慮發行的預覽版本
+### <a name="consider-releasing-as-a-preview-release"></a>請考慮釋放的預覽版本
 
-如果您發行您的擴充功能，針對評估用途的預覽版本，我們建議您：
+如果您要釋出您的延伸模組，用於評估的預覽版本，我們建議您：
 
-- 將 「 （預覽） 」 附加到.nuspec 檔案中的延伸模組之標題的結尾
-- 說明在您的擴充功能描述.nuspec 檔案中的限制
+- .Nuspec 檔案中的擴充功能的標題結尾附加"(Preview)"
+- 說明在.nuspec 檔案中的擴充功能的描述中的限制
 
-## 建立延伸模組套件
+## <a name="creating-an-extension-package"></a>建立延伸模組套件
 
-Windows Admin Center 利用 NuGet 套件和散發和下載擴充功能的摘要。  為了讓您出貨的套件，您將需要產生包含您的外掛程式和延伸模組的 NuGet 套件。  單一套件可以包含 UI 延伸模組以及閘道外掛程式，和下一節將會逐步引導您完成此程序。
+NuGet 封裝和散發及下載擴充功能的摘要，則會利用 Windows Admin Center。  為了讓您的出貨的套件，您必須產生 NuGet 封裝，其中包含您的增益集和延伸模組。  UI 延伸模組以及閘道外掛程式，可以包含單一封裝下, 一節將逐步引導您完成程序。
 
-### 1.建置擴充功能
+### <a name="1-build-your-extension"></a>1.建置您的延伸模組
 
-因為您已經準備好開始封裝您的擴充功能，建立新的目錄，您的檔案系統上，開啟主控台，並 CD 到其中。  這會是我們將用來包含所有 nuspec 和內容目錄會構成我們套件的根目錄。  我們會參考此資料夾做為 「 NuGet 套件 」，如本文件的持續時間。
+當您準備好要開始封裝您的延伸模組，在您的檔案系統上建立新的目錄，開啟主控台，並 CD 入它。  這是我們將使用包含所有 nuspec 及內容目錄將構成我們套件的根目錄。  期間本文件，我們將 「 NuGet 套件 」 的形式參考此資料夾。
 
-#### UI 擴充功能
+#### <a name="ui-extensions"></a>UI 延伸模組
 
-若要開始上收集所需的 UI 延伸模組的所有內容的程序，執行您的工具上的 「 gulp 組建 」 並確定會成功的組建。  此程序的套件，一起在名為"bundle"的資料夾中的所有元件都位於您的擴充功能 （在相同層級的 src 目錄） 的根目錄。  將此目錄和所有複製它的內容到 「 NuGet 套件 」 資料夾中。
+若要開始上收集所需的 UI 延伸模組的所有內容的程序，請執行您的工具上的 「 gulp 組建 」，請確定組建已成功。  此程序的封裝，一起在名為 「 組合 」 的資料夾中的所有元件都位於您的延伸模組 （相同層級的 src 目錄） 的根目錄。  複製此目錄及其所有的內容 [NuGet 封裝] 資料夾。
 
-#### 閘道外掛程式
+#### <a name="gateway-plugins"></a>閘道外掛程式
 
-使用您建置的基礎結構 （這可能是一樣簡單開啟 Visual Studio，然後按一下 [建置] 按鈕），編譯並建置您的外掛程式。  開啟您的建置輸出目錄，並複製 dll 代表您外掛程式，並將它們放在名為 「 套件 」 的 「 NuGet 套件 」 目錄內的新資料夾。  您不需要複製 FeatureInterface dll，只是代表您的程式碼的 dll。
+使用您的建置基礎結構 （這可能很簡單，只要開啟 Visual Studio，並按一下 [建立] 按鈕），編譯和建置您的外掛程式。  開啟您的組建輸出目錄，並複製 dll 代表您的外掛程式，將它們放在 [NuGet 封裝] 目錄中稱為 「 套件 」 的新資料夾中。  您不需要複製 FeatureInterface dll 時，就表示您的程式碼的 dll。
 
-### 2.建立.nuspec 檔案
+### <a name="2-create-the-nuspec-file"></a>2.建立.nuspec 檔案
 
-若要建立的 NuGet 套件，您需要先建立.nuspec 檔案。 .Nuspec 檔案是包含 NuGet 套件中繼資料的 XML 資訊清單。 建置套件和資訊提供給消費者，則會使用此資訊清單。  將此檔案放在 「 NuGet 套件 」 資料夾的根目錄。
+若要建立 NuGet 套件，您必須先建立.nuspec 檔案。 .Nuspec 檔案是包含 NuGet 套件中繼資料的 XML 資訊清單。 若要建置的套件和資訊提供給取用者，則會使用此資訊清單。  將此檔案放在 [NuGet 封裝] 資料夾的根目錄。
 
-以下是範例.nuspec 檔案及需要或建議的屬性的清單。 完整的結構描述，請參閱[.nuspec 參考](https://docs.microsoft.com/nuget/reference/nuspec)。 .nuspec 將檔案儲存到您的專案根資料夾，以您選擇的檔案名稱。
+以下是範例.nuspec 檔案以及必要或建議的屬性清單。 針對完整的結構描述，請參閱[.nuspec 參考](https://docs.microsoft.com/nuget/reference/nuspec)。 .Nuspec 檔案儲存至您的專案根資料夾中，使用您選擇的檔案名稱。
 
 > [!IMPORTANT]
-> ```<id>``` .Nuspec 檔案中的值必須符合```"name"```在您的專案中的值```manifest.json```檔案，，否則您已發佈的擴充功能將不會成功以載入 Windows Admin Center。
+> ```<id>``` .Nuspec 檔案中的值必須符合```"name"```在您的專案中的值```manifest.json```或是您已發佈的延伸模組的檔案，就不會載入已成功在 Windows Admin Center。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,49 +106,49 @@ Windows Admin Center 利用 NuGet 套件和散發和下載擴充功能的摘要�
 </package>
 ```
 
-#### 需要或建議屬性
+#### <a name="required-or-recommended-properties"></a>必要或建議的屬性
 
-| 屬性名稱 | 需要具備 / 建議 | 描述 |
+| 屬性名稱 | 必要 / 建議 | 描述 |
 | ---- | ---- | ---- |
-| packageType | 必要 | 使用 「 WindowsAdminCenterExtension 」，也就是針對 Windows Admin Center 擴充功能定義的 NuGet 套件類型。 |
-| id | 必要 | 在摘要中唯一套件識別碼。 這個值必須符合您的專案 manifest.json 檔中的 「 名稱 」 值。  如指導方針，請參閱[選擇套件的唯一識別碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
-| title | 所需的發佈至 Windows Admin Center 摘要 | Windows Admin Center 擴充功能管理員 」 中顯示之套件的易記名稱。 |
-| 版本 | 必要 | 延伸模組的版本。 使用[語意式版本 （SemVer 慣例）](http://semver.org/spec/v1.0.0.html)是建議的但不是需要。 |
-| 作者 | 必要 | 如果您的公司代表發行，使用您的公司名稱。 |
-| description | 必要 | 提供延伸模組之功能的描述。 |
-| iconUrl | 發佈至 Windows Admin Center 摘要時建議 | 若要顯示在 [擴充管理員] 中的圖示 URL。 |
-| projectUrl | 所需的發佈至 Windows Admin Center 摘要 | 您的擴充功能的網站 URL。 如果您不需要另外的網站，使用上摘要 NuGet 套件網頁 URL。 |
-| licenseUrl | 所需的發佈至 Windows Admin Center 摘要 | 您的擴充功能的使用者授權合約的 URL。 |
-| 檔案 | 必要 | 這兩個設定設定 Windows Admin Center UI 擴充功能和閘道外掛程式的預期的資料夾結構。 |
+| packageType | 必要項 | 使用 「 WindowsAdminCenterExtension"，也就是針對 Windows Admin Center 延伸模組所定義的 NuGet 套件類型。 |
+| id | 必要項 | 摘要中的唯一封裝識別碼。 此值必須符合您的專案 manifest.json 檔案中的"name"值。  請參閱[選擇唯一的套件識別碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)指導方針。 |
+| title | 所需的發佈到摘要的 Windows Admin Center | 顯示在 Windows Admin Center 延伸模組管理員中之封裝的易記名稱。 |
+| version | 必要項 | 延伸模組版本。 使用[語意版本控制 （SemVer 慣例）](http://semver.org/spec/v1.0.0.html) ，建議使用但非必要。 |
+| 作者 | 必要項 | 如果發行代表您的公司，使用您的公司名稱。 |
+| description | 必要項 | 提供延伸模組的功能的描述。 |
+| iconUrl | 發佈到摘要的 Windows Admin Center 時，建議使用 | 若要顯示在延伸模組管理員圖示 URL。 |
+| projectUrl | 所需的發佈到摘要的 Windows Admin Center | 擴充功能的網站 URL。 如果您還沒有個別的網站，用於封裝網頁上的 NuGet 摘要的 URL。 |
+| licenseUrl | 所需的發佈到摘要的 Windows Admin Center | 您的擴充功能使用者授權合約的 URL。 |
+| 檔案 | 必要項 | 這兩項設定會設定 Windows Admin Center UI 延伸模組和閘道外掛程式所預期的資料夾結構。 |
 
-### 3.建置延伸模組 NuGet 套件
+### <a name="3-build-the-extension-nuget-package"></a>3.建置延伸模組的 NuGet 套件
 
-使用您建立上述的.nuspec 檔案，您現在將建立您可以上傳並發佈至摘要 NuGet 的 NuGet 套件.nupkg 檔案。
+使用您先前建立的.nuspec 檔案，您現在將建立您可上傳及發佈至 NuGet 摘要的 NuGet 套件.nupkg 檔案。
 
-1. [NuGet 用戶端工具網站](https://docs.microsoft.com/nuget/install-nuget-client-tools)下載 nuget.exe CLI 工具。
-2. 若要建立.nupkg 檔案執行 「 nuget.exe 套件 [.nuspec 檔案名稱] 」。
+1. 下載 nuget.exe CLI 工具，從[NuGet 用戶端工具網站](https://docs.microsoft.com/nuget/install-nuget-client-tools)。
+2. 您可以執行 [nuget.exe 套件 [.nuspec 檔案名稱]] 以建立.nupkg 檔案。
 
-### 4.簽署您的延伸模組 NuGet 套件
+### <a name="4-signing-your-extension-nuget-package"></a>4.簽署您延伸模組的 NuGet 套件
 
-您的擴充功能中包含任何.dll 檔案是必要項目使用來自受信任的憑證授權單位 (CA) 憑證來簽署。 根據預設，將會封鎖不帶正負號的.dll 檔案時，在生產環境模式下執行 Windows Admin Center 正在執行。
+需要使用從受信任憑證授權單位 (CA) 憑證來簽署任何包含在您的延伸模組的.dll 檔案。 根據預設，不帶正負號的.dll 檔案將會封鎖 Windows Admin Center 在生產模式中執行時執行。
 
-也強烈建議您簽署的擴充功能 NuGet 套件，以確保 「 套件 」 的完整性，但這不是必要的步驟。
+我們也強烈建議您登入延伸模組的 NuGet 套件，以確保套件的完整性，但這不是必要的步驟。
 
-### 5.測試您的延伸模組 NuGet 套件
+### <a name="5-test-your-extension-nuget-package"></a>5.測試您的延伸模組 NuGet 套件
 
-您的延伸模組套件現在已準備好進行測試 ！ .nupkg 檔案上傳至 NuGet 摘要或將它複製到的檔案共用。 若要檢視和下載套件從不同的摘要或檔案共用，您將需要[變更您的摘要的設定](../configure/using-extensions.md#installing-extensions-from-a-different-feed)以指向您 NuGet 摘要或檔案共用。 測試時，請確定內容正確出現在 [擴充管理員] 中成功安裝和解除安裝您的擴充功能。
+現在已準備好進行測試擴充功能封裝 ！ 將.nupkg 檔案上傳至 NuGet 摘要，或將它複製到檔案共用。 若要檢視，並從其他摘要或檔案共用下載套件，您將需要[變更摘要的設定](../configure/using-extensions.md#installing-extensions-from-a-different-feed)指向您的 NuGet 摘要，或檔案共用。 測試時，請確定屬性會正確顯示在 [延伸模組管理員] 中，而且您可以成功地安裝和解除安裝您的延伸模組。
 
-## 將 Windows Admin Center 發佈您的擴充功能摘要
+## <a name="publishing-your-extension-to-the-windows-admin-center-feed"></a>您的延伸模組發行至 Windows Admin Center 摘要
 
-由發佈到 Windows Admin Center 摘要，您可以將您的擴充功能提供給任何 Windows Admin Center 使用者。 因為 Windows Admin Center SDK 是仍在預覽，所以我們想要與您協助解決開發問題，請確定您就可以產品的品質和給您的使用者體驗密切合作。
+發行至摘要的 Windows Admin Center，您可以將您的擴充功能提供給 Windows Admin Center 中的任何使用者。 因為 Windows Admin Center SDK 仍處於預覽狀態，我們想要密切合作，與您合作協助解決開發問題和，請確定您將可提供高品質的產品，並為您的使用者體驗。
 
-之前發行您的擴充功能的初始版本，我們建議您提交給 Microsoft 的擴充功能檢閱要求至少 2-3 週，以確保我們有足夠的時間來檢閱發行前，並為您對您的擴充功能進行任何變更，如有必要。 一旦準備好可以發佈您的擴充功能，您將需要將它傳送給我們的評論，並核准，如果我們會將它發行至您的摘要。
+之前釋出您的延伸模組的初始版本，我們建議您提交給 Microsoft 的擴充功能檢閱要求至少 2-3 個星期之前版本，以確保有足夠的時間來檢閱，並為您如有必要，對您的延伸模組進行任何變更。 準備要發行您的延伸模組之後，您必須進行審查，將它傳送給我們，如果核准，我們會將它發行到您的摘要。
 
-之後，如果您想要發行至您的擴充功能更新，您將必須提交評論的另一個要求。 雖然根據變更的範圍，更新的評論的往返時間通常應該較短。
+之後，如果您想要釋放您的延伸模組的更新，您必須提交另一個檢閱要求。 根據變更的範圍，而更新檢閱迴轉時間通常應該短。
 
-### 提交給 Microsoft 的擴充功能檢閱要求
+### <a name="submit-an-extension-review-request-to-microsoft"></a>提交給 Microsoft 的擴充功能檢閱要求
 
-若要提交的延伸模組檢閱要求，輸入下列資訊並傳送電子郵件傳送給[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)為。 我們將在一星期內回覆您的電子郵件。
+若要提交的延伸模組檢閱要求，請輸入下列資訊和傳送電子郵件給[ wacextensionrequest@microsoft.com ](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)。 我們將一週內回覆您的電子郵件。
 
 ```
 Windows Admin Center Extension Review Request
@@ -160,11 +160,11 @@ Windows Admin Center Extension Review Request
 6. For extension update review – Description of changes (include product screenshots if UI has been significantly changed):
 ```
 
-### 提交您的延伸模組套件適用於檢閱和發佈
+### <a name="submit-your-extension-package-for-review-and-publishing"></a>提交您的延伸模組套件，供您檢閱和發佈
 
-請確定您依照上述的指示來[建立延伸模組套件](#creating-an-extension-package)和.nuspec 檔案的正確定義和簽署的檔案。 我們也建議您有專案網站，包括下列：
+請確定您遵循上述指示，如[建立延伸模組套件](#creating-an-extension-package)和.nuspec 檔案已正確定義，而且檔案會經過簽署。 我們也建議您有專案網站，包括下列：
 
-- 您的擴充功能包括螢幕擷取畫面或視訊的詳細的說明
-- 收到意見反應或問題的電子郵件地址或網站功能
+- 詳細的描述，包括螢幕擷取畫面或影片擴充功能
+- 接收意見反應或問題的電子郵件地址或網站功能
 
-當您準備好發佈您的擴充功能時，將電子郵件傳送給[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review) ，我們會提供有關如何將您的延伸模組套件傳送給我們的指示。 一旦我們收到您的套件，我們將檢閱並核准，如果發佈到 Windows Admin Center 摘要。
+當您準備好發佈您的延伸模組時，傳送電子郵件[ wacextensionrequest@microsoft.com ](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review) ，我們將提供有關如何將您的延伸模組套件傳送給我們的指示。 一旦我們收到您的套件，我們將檢閱並一經核准，將發佈到摘要的 Windows Admin Center。

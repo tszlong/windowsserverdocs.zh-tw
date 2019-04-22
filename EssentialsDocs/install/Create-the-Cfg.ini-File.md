@@ -1,6 +1,6 @@
 ---
-title: "建立 Cfg.ini 檔案"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 建立 Cfg.ini 檔案
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,27 +13,28 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 967db5f36ea27fb04eab9a6682a106ba0072d45d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820119"
 ---
 # <a name="create-the-cfgini-file"></a>建立 Cfg.ini 檔案
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-Cfg.ini 檔案用來自動安裝在下列案例中的作業系統中：  
+您可以在下列情況中使用 cfg.ini 檔案來自動安裝作業系統：  
   
--   當測試的目標電腦上的預先安裝映像的使用者體驗的初始設定區段來引導安裝以手動或自動模式。 若要這樣做，請查看[建立的初始設定區段](Create-the-Cfg.ini-File.md#BKMK_CreateInit2)。  
+-   在目標電腦上使用預先安裝的映像來測試使用者的經驗時，可使用初始設定區段以自動或非自動安裝模式，逐步完成安裝作業。 若要執行此動作，請參閱[建立初始設定區段](Create-the-Cfg.ini-File.md#BKMK_CreateInit2)。  
   
-##  <a name="BKMK_CreateInit2"></a>建立的初始設定一節  
- 逐步以手動或自動模式安裝 cfg.ini 檔案中使用的初始設定區段。  
+##  <a name="BKMK_CreateInit2"></a> 建立初始設定區段  
+ cfg.ini 檔案中的初始設定區段，可用來以自動或非自動安裝模式，逐步完成安裝作業。  
   
-#### <a name="to-define-the-initial-configuration-section"></a>若要定義的初始設定一節  
+#### <a name="to-define-the-initial-configuration-section"></a>若要定義初始設定區段  
   
-1.  在「記事本」開放 cfg.ini 檔案，如果有的話;否則，請建立新的檔案。  
+1.  在記事本中開啟 cfg.ini 檔案 (如果存在的話)，否則請建立新的檔案。  
   
-2.  新增下列文字來建立 InitialConfiguration 區段。  
+2.  新增以下文字以建立初始設定區段。  
   
     ```  
   
@@ -97,66 +98,66 @@ Cfg.ini 檔案用來自動安裝在下列案例中的作業系統中：
     ```  
   
     > [!NOTE]
-    >  未提供的選項，在初始設定期間選擇不同的語言。 如果重設系統語言的作業系統會原先一個。  
+    >  在初始設定期間無法提供選取不同語言的選項。 如果重設系統，則作業系統的語言會是原始安裝的語言。  
   
     |參數名稱|參數描述|  
     |--------------------|---------------------------|  
-    |*AcceptEula*|表示使用者接受 Microsoft 軟體授權條款。 可以等於 True 或 False，但此設定為 True，才會繼續進行安裝。|  
-    |*AcceptOEMEula*|（選擇性）表示使用者接受合作夥伴授權合約。 值可以等於 True 或 False。 只有當伺服器已購買的合作夥伴提供不同授權合約，此欄位會需要。|  
-    |*供應商*|（選擇性）在公司名稱。 使用您的公司名稱與您的公司您的伺服器，並以自訂您的公司報告。 可以將最多 254 個字元。|  
-    |*國家/地區*|（選擇性）字串，表示您想要的國家/地區。 範例：我們針對美國。|  
-    |*伺服器名稱*|伺服器名稱辨識網路上的伺服器。 您的伺服器名稱必須符合下列條件：<br /><br /> -可以將最多的 15 字元。<br /><br /> -能字母、數字和連字號（-）。<br /><br /> -不得以連字號。<br /><br /> -不得包含任何空間。<br /><br /> -必須不只包含數字。<br /><br /> 範例：ContosoServer。|  
-    |*DNSName*|內部網域群組伺服器和 client 電腦，才能分享通用資料庫的使用者名稱、密碼，以及其他常見的資訊。 登入他們的電腦，但它使用內部僅並不網際網路網域名稱相同時，使用者會看到這個名稱。 內部網域名稱必須符合的條件相同所指定的*伺服器名稱*。<br /><br /> 範例：contoso.local。|  
-    |*NetbiosName*|NetBIOS 名稱用來辨識的伺服器執行的資源。 它可以是最多的 15 字元。 範例︰ 以 Contoso。|  
-    |*語言*|（選擇性）指定顯示語言。 它只是其中一個已安裝語言。 範例：en-us-我們為您使用美國英文。|  
-    |*地區設定*|（選擇性）使用指定的時間，以及貨幣格式，*LocaleID*格式。 範例：en-us-我們的貨幣和時間以英文顯示並使用美國標準來格式化。|  
-    |*鍵盤*|在下列兩個格式可以鍵盤：<br /><br /> - **輸入的語言：鍵盤配置。** 例如 0409:00000409 其中 0409 年之前**:**已輸入的語言，和**00000409**時的鍵盤配置。 您可以找到清單中的鍵盤配置登錄在**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard 配置**。<br /><br /> - **輸入語言：的輸入法識別碼。** 以下是識別碼輸入法的完整清單。<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{8F96574E-C86C-4bd6-9666-3F7327D4CBE8} 阿姆哈拉文輸入法<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e}{FA550B04-5AD7-411F-A5AC-CA038EC515D7} 微軟拼音-簡單快速頻道（簡體中文）<br /><br /> {531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{B2F9C502-1742-11D4-9790-0080C882687E} 中文（繁體）的-新文注音<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{4BDF9F03-C7D3-11D4-B2AB-0080C882687E} 中文（繁體）-倉頡輸入法<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{6024B45F-5C54-11D4-B921-0080C882687E} 中文（繁體）-快速<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{D38EFF65-AA46-4FD5-91A7-67845FB02F5B} 中文傳統陣列<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{037B2C25-480C-4D7F-B027-D6CA6B69788A} 中文傳統大易<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36}{A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft 輸入法（日本）<br /><br /> -{A028AE76-01B1-46C2-99C4-ACD9858AE02F}{B5FE1F02-D5F2-4445-9C03-C568F23C99A1} Microsoft 輸入法（韓國）<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F}{B60AF051-257A-46BC-B9D3-84DAD819BAFB} 舊韓文輸入法（韓國）<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{409C8376-007B-4357-AE8E-26316EE3FB0D} Yi 輸入法<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{3CAB88B7-CC3E-46A6-9765-B772AD7761FF} Tigrinya 輸入法|  
-    |*設定*|設定使用者更新的選擇。 使用其中一項下列值：<br /><br /> **-所有**等於使用建議的設定。<br /><br /> **-更新**等安裝重要的更新。 僅限<br /><br /> **-無**等不要檢查更新。|  
-    |*使用者名稱*|在設定期間建立新的系統管理員 account-名稱。 您的系統管理員身分和標準使用者 account 名稱必須符合下列條件：<br /><br /> -可以將最多 19 字元。<br /><br /> -不包含日 \ [] 與 #124;< > + =;, ? *<br /><br /> -必須開頭或結尾的一段時間。<br /><br /> -不得包含兩個句點。<br /><br /> -不能相同的伺服器名稱或內部網域名稱。<br /><br /> -不得預先定義的使用者名稱，例如系統管理員或客體相同。|  
-    |*PlainTextPassword*|這是在設定期間建立新的系統管理員 account 的密碼。<br /><br /> -必須至少為八個字元。<br /><br /> -必須包含至少三種四個下列類型：<br /><br /> -大寫字元。<br /><br /> -小寫的字元。<br /><br /> -數字。<br /><br /> -符號。|  
-    |*StdUserName*|新的標準使用者 account 在設定期間所建立的名稱。 查看*的使用者名稱*參數的需求。|  
-    |*StdUserPlainTextPassword*|標準使用者帳號，會建立在設定期間的密碼。|  
-    |WebDomainName|（選擇性）設定網際網路 server 的完整網域名稱。 此檔案可讓您設定的網域名稱安裝精靈中手動設定使用的方法類似的網域名稱。|  
-    |TrustedCertFileName|（選擇性）設定的網域名稱受信任的憑證。 這可讓您將。PFX 憑證，其中包含私密金鑰。|  
-    |TrustedCertPassword|（選擇性）匯入的密碼。PFX。|  
-    |EnableVPN|（選擇性）預設關閉的 VPN。|  
-    |VpnIPv4StartAddress|（選擇性）設定 VPN 開始地址。|  
-    |VpnIPv4EndAddress|（選擇性）設定 VPN 結束地址。|  
-    |VpnBaseIPv6Address|（選擇性）設定 VPN 基礎 IPV6 位址。|  
-    |VpnIPv6PrefixLength|（選擇性）設定的 VPN IPv6 位址首碼長度。|  
-    |IsHosted|（選擇性）預設值是 false 未指定。 如果您設定這項環境中，設定此值。 它會關閉路由器設定。|  
-    |StaticIPv4Address|（選擇性）如果您想要設定的靜態 IP 位址，而不是動態位址，指定靜態 IP 位址。|  
-    |StaticIPv4Gateway|（選擇性）如果您想要設定的靜態 IP 位址，而不是動態位址，指定預設閘道位址。|  
-    |StaticIPv4SubnetMask|（選擇性）指定子網路遮罩，如果您想要設定的靜態 IP 位址，而不是動態位址。|  
-    |StaticIPv6Address|（選擇性）如果您想要設定的靜態 IP 位址，而不是動態位址，指定預設 IP 位址。|  
-    |StaticIPv6SubnetPrefixLength|（選擇性）指定 IPV6 子網路首碼長度預設，如果您想要設定的靜態 IP 位址，而不是動態位址。|  
-    |StaticIPv6Gateway|（選擇性）如果您想要設定的靜態 IP 位址，而不是一份動態，指定預設閘道位址。|  
-    |ClientBackupOn|（選擇性）關閉 Client 備份預設戶端新加入的伺服器。|  
-    |FileHistoryOn|（選擇性）關閉檔案歷史備份預設新戶端執行 Windows 8 Consumer Preview 加入伺服器。|  
-    |EnableRWA|它可以讓遠端 Web 存取安裝 Windows Server Essentials，但將會跳過路由器設定。 這只被支援 product 的全新安裝。 預設值是 false。|  
-    |IPv4DNSForwarder|設定 IPv4 DNS 轉寄。|  
-    |IPv6DNSForwarder|設定 IPv6 DNS 轉寄。|  
-    |LaunchPadHiddenTasks|-（選擇性）您可以隱藏備份的項目或日和系統管理員儀表板上 Launchpad 的項目。<br /><br /> -來停用儀表板：LaunchPadHiddenTasks=Microsoft.LaunchPad.AdminDashboard<br /><br /> -來停用備份：LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup<br /><br /> -來停用備份與儀表板：LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup,Microsoft.LaunchPad.AdminDashboard|  
+    |*AcceptEula*|指出使用者接受 Microsoft 軟體授權合約。 此值可為 True 或 False，但只有在設為 True 時，安裝才能繼續。|  
+    |*AcceptOEMEula*|(選擇性) 指出使用者接受合作夥伴授權合約。 此值可為 True 或 False。 只有向提供個別授權合約的合作夥伴購買伺服器時，才需填入此欄位。|  
+    |*CompanyName*|(選用) 公司的名稱。 您的公司名稱是用來將您的伺服器與公司建立關聯，並自訂您的公司報告。 長度最多可達 254 個字元。|  
+    |*國家/地區*|(選用) 字串表示要選擇的國家/地區。 範例：US 代表美國。|  
+    |*ServerName*|伺服器名稱可以在網路上唯一識別您的伺服器。 您的伺服器名稱必須符合下列準則：<br /><br /> -可以是最多 15 個字元。<br /><br /> -可以包含字母、 數字和連字號 （-）。<br /><br /> -不得以連字號開頭。<br /><br /> -不能包含任何空格。<br /><br /> -必須不只能包含數字。<br /><br /> 範例：ContosoServer。|  
+    |*DNSName*|內部網域可將伺服器與用戶端電腦群組在一起，以共用內含使用者名稱、密碼和其他通用資訊的通用資料庫。 使用者在登入電腦時會看見此名稱，但此名稱僅供內部使用，而且與網際網路的網域名稱不同。 內部網域名稱必須符合針對 *ServerName* 指定的相同準則。<br /><br /> 例如：contoso.local。|  
+    |*NetbiosName*|NetBIOS 名稱可用來識別伺服器上所執行的資源。 其長度最多可達 15 個字元。 範例：Contoso。|  
+    |*語言*|(選擇性) 指定顯示名稱。 這必須是已安裝的語言之一。 例如：en-us 代表美國使用的英文。|  
+    |*地區設定*|(選擇性) 使用 *LocaleID* 格式指定時間與貨幣格式。 例如：en-us 代表以英文顯示，並根據美國的使用標準設定格式的貨幣與時間。|  
+    |*鍵盤*|鍵盤可以是下列兩種格式之一：<br /><br /> - **輸入的語言： 鍵盤配置。** 例如 0409:00000409，其中 **:** 之前的 0409 是輸入語言，而 **00000409** 是鍵盤配置。 您可以在 **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts** 登錄機碼下找到鍵盤配置清單。<br /><br /> - **輸入語言： IME 識別碼。** 以下是 IME 識別碼的完整清單。<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{8F96574E-C86C-4bd6-9666-3F7327D4CBE8} 阿姆哈拉文輸入方法<br /><br /> -Microsoft {81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e}{FA550B04-5AD7-411F-A5AC-CA038EC515D7} 拼音-簡單的快速 （簡體中文）<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{B2F9C502-1742-11D4-9790-0080C882687E} 中文 （繁體）-新的語音<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{4BDF9F03-C7D3-11D4-B2AB-0080C882687E} 中文 （繁體）-倉頡<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{6024B45F-5C54-11D4-B921-0080C882687E} 中文 （繁體）-快速<br /><br /> - {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{D38EFF65-AA46-4FD5-91A7-67845FB02F5B}            Chinese Traditional Array<br /><br /> - {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{037B2C25-480C-4D7F-B027-D6CA6B69788A}            Chinese Traditional DaYi<br /><br /> - {03B5835F-F03C-411B-9CE2-AA23E1171E36}{A76C93D9-5523-4E90-AAFA-4DB112F9AC76}            Microsoft IME (Japanese)<br /><br /> - {A028AE76-01B1-46C2-99C4-ACD9858AE02F}{B5FE1F02-D5F2-4445-9C03-C568F23C99A1}             Microsoft IME (Korean)<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F}{B60AF051-257A-46BC-B9D3-84DAD819BAFB} 舊韓文輸入法 （韓文）<br /><br /> - {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{409C8376-007B-4357-AE8E-26316EE3FB0D}              Yi Input Method<br /><br /> - {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{3CAB88B7-CC3E-46A6-9765-B772AD7761FF}            Tigrinya Input Method|  
+    |*設定*|設定使用者的更新選項。 使用下列其中一個值：<br /><br /> **-所有**等於使用建議的設定。<br /><br /> **-更新**等於安裝重要更新。 只有<br /><br /> **-None**等於不會檢查更新。|  
+    |*使用者名稱*|的安裝期間建立的新系統管理員帳戶名稱。 您的系統管理員及標準使用者帳戶名稱必須符合下列準則：<br /><br /> -可達 19 個字元長。<br /><br /> - Cannot contain / \  [ ] &#124; < > + = ; , ? *<br /><br /> -必須啟動，或以句號結尾。<br /><br /> -不能包含兩個連續的句號。<br /><br /> -不能相同的伺服器名稱或內部網域名稱。<br /><br /> -不能做為預先定義的使用者名稱，例如系統管理員或來賓相同。|  
+    |*PlainTextPassword*|此為安裝期間建立的新系統管理員帳戶的密碼。<br /><br /> -必須是至少 8 個字元。<br /><br /> -必須包含至少三種下列四類：<br /><br /> 大寫字元。<br /><br /> -小寫字元。<br /><br /> -數字。<br /><br /> -符號。|  
+    |*StdUserName*|在安裝期間新建立之標準使用者帳戶的名稱。 如需相關需求，請參閱 *UserName* 參數。|  
+    |*StdUserPlainTextPassword*|在安裝期間建立之標準使用者帳戶的密碼。|  
+    |WebDomainName|(選用) 設定伺服器的網際網路網域名稱。 此檔案可讓您設定網域名稱，其方法與在網域名稱設定精靈中進行手動設定使用的方法類似。|  
+    |TrustedCertFileName|(選用) 為網域名稱設定受信任的憑證。 這可讓您放置 .PFX 憑證，其中包含私密金鑰。|  
+    |TrustedCertPassword|(選用) 用來匯入 .PFX 的密碼。|  
+    |EnableVPN|(選用) 預設會開啟 VPN。|  
+    |VpnIPv4StartAddress|(選用) 設定 VPN 啟動位址。|  
+    |VpnIPv4EndAddress|(選用) 設定 VPN 結束位址。|  
+    |VpnBaseIPv6Address|(選用) 設定用於 VPN 的基本 IPV6 位址。|  
+    |VpnIPv6PrefixLength|(選用) 設定 VPN IPv6 位址的前置長度。|  
+    |IsHosted|(選用) 如果未指定，預設值為 false。 如果是在主機服務提供者環境中設定該項目，請設定此值。 它將停用路由器設定。|  
+    |StaticIPv4Address|(選用) 如果要設定靜態 IP 位址，而不是動態位址，請指定靜態 IP 位址。|  
+    |StaticIPv4Gateway|(選用) 如果要設定靜態 IP 位址，而不是動態位址，請指定預設閘道位址。|  
+    |StaticIPv4SubnetMask|(選用) 如果要設定靜態 IP 位址，而不是動態位址，請指定子網路遮罩。|  
+    |StaticIPv6Address|(選用) 如果要設定靜態 IP 位址，而不是動態位址，請指定預設 IP 位址。|  
+    |StaticIPv6SubnetPrefixLength|(選用) 如果要設定靜態 IP 位址，而不是動態位址，請指定預設的 IPV6 子網路前置碼長度。|  
+    |StaticIPv6Gateway|(選用) 如果要設定靜態 IP 位址，而不是動態位址，請指定預設閘道位址。|  
+    |ClientBackupOn|(選用) 在新用戶端已聯結伺服器時，根據預設關閉用戶端備份。|  
+    |FileHistoryOn|(選用) 在執行 Windows 8 Consumer Preview 的新用戶端已聯結伺服器時，根據預設關閉檔案歷程記錄備份。|  
+    |EnableRWA|安裝 Windows Server Essentials 時，它會啟用遠端 Web 存取，但會跳過路由器設定。 這只有在全新安裝產品時才受支援。 預設值為 false。|  
+    |IPv4DNSForwarder|設定 IPv4 DNS 轉寄站。|  
+    |IPv6DNSForwarder|設定 IPv6 DNS 轉寄站。|  
+    |LaunchPadHiddenTasks|-（選擇性） 您可以隱藏備份項目或 / 及啟動列 上的管理儀表板項目。<br /><br /> -若要停用儀表板：LaunchPadHiddenTasks=Microsoft.LaunchPad.AdminDashboard<br /><br /> -若要停用備份：LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup<br /><br /> -若要停用備份和儀表板：LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup,Microsoft.LaunchPad.AdminDashboard|  
   
-3.  儲存檔案。 請確定您將檔案儲存為 cfg.ini，cfg.ini.txt。  
+3.  儲存檔案。 確定您將檔案儲存為 cfg.ini，而不是 cfg.ini.txt。  
   
     > [!NOTE]
-    >  您可以將檔案儲存到 USB 快閃磁碟機，可以用於特定階段安裝或 cfg.ini 檔案可能位於根的目標伺服器上的任何硬碟機。 您必須確保檔案編碼設定為 [ANSI 或 Unicode，不支援 UTF-8 編碼。  
+    >  您可以將檔案儲存到 USB 快閃磁碟機 (以在特定安裝階段使用)，但 cfg.ini 檔案也可以在目標伺服器上任何硬碟的根目錄中找到。 您必須確定檔案的編碼已設定為 ANSI 或 Unicode，UTF-8 編碼不受支援。  
   
 > [!IMPORTANT]
->  Cfg.ini 的初始設定區段只能伺服器個人化的使用者或的合作夥伴使用自動的回應檔案測試伺服器的使用者體驗。 本節中的檔案不是用來建立映像。  
+>  只有當使用者想要利用自動安裝回應檔案將伺服器個人化，或合作夥伴想要利用自動安裝回應檔案來測試伺服器帶來的使用者經驗時，才應使用 cfg.ini 中的初始設定區段。 檔案的這個區段目的並非用於建立映像的用途。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
- [開始使用 Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [與 Windows Server Essentials ADK 快速入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
 
- [開始使用 Windows Server Essentials ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [與 Windows Server Essentials ADK 快速入門](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](../install/Additional-Customizations.md)   
- [準備部署映像](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](../install/Testing-the-Customer-Experience.md)
+ [其他自訂項目](../install/Additional-Customizations.md)   
+ [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

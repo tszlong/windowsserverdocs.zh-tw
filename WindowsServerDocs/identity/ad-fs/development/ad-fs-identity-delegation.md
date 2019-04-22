@@ -1,6 +1,6 @@
 ---
-title: "AD FS 使用的身分委派案例"
-description: "本案例描述需要存取後端資源需要身分委派鏈結進行存取控制檢查應用程式。"
+title: 與 AD FS 的身分識別委派案例
+description: 此案例中描述的應用程式需要存取需要執行存取控制檢查身分識別委派鏈結的後端資源。
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,83 +9,84 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: b82d5fd749ac874d09bc54123727aaf902c4d778
-ms.sourcegitcommit: c16a2bf1b8a48ff267e71ff29f18b5e5cda003e8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819849"
 ---
-# <a name="identity-delegation-scenario-with-ad-fs"></a>AD FS 使用的身分委派案例
+# <a name="identity-delegation-scenario-with-ad-fs"></a>與 AD FS 的身分識別委派案例
 
 
-[開始使用.NET Framework 4.5、Windows 身分基礎 (WIF) 已被完整地整合.NET Framework。 WIF WIF 3.5，此主題中所述的版本會取代，應該時開發.NET Framework 3.5 SP1 或.NET Framework 4 僅限使用。 如需有關的.NET Framework 4.5，也就是 WIF 4.5 WIF 查看 Windows 的身分基本知識的文件中的.NET Framework 4.5 開發。] 
+[從.NET Framework 4.5 開始，Windows Identity Foundation (WIF) 已完全整合至.NET Framework。 本主題中，WIF 3.5 所定址的 WIF 的版本已被取代，應該只在針對.NET Framework 3.5 SP1 或.NET Framework 4 進行開發時才使用。 如需在.NET Framework 4.5 中，也稱為 WIF 4.5 中，WIF 的詳細資訊請參閱.NET Framework 4.5 開發指南中的 Windows Identity Foundation 文件。] 
 
-本案例描述需要存取後端資源需要身分委派鏈結進行存取控制檢查應用程式。 簡單的身分委派鏈結通常組成初始播報來電者和立即播報來電者的身分的資訊。
+此案例中描述的應用程式需要存取需要執行存取控制檢查身分識別委派鏈結的後端資源。 在初始呼叫者並立即呼叫端的身分識別資訊通常包含簡單身分識別委派鏈結。
 
-Kerberos 委派模型今天 Windows 平台上，使用端資源存取，才能立即播報來電者的身分，而不的初始播報來電者。 此模型通常稱為信任的子系統模型。 WIF 維護初始播報來電者，以及使用演員屬性委派鏈結中的立即播報來電者的身分。
+立即在 Windows 平台上的 Kerberos 委派模型，與後端資源會有存取權才能立即呼叫端的身分識別和不的初始呼叫者。 此模型通常稱為 「 受信任的子系統模型。 WIF 會維護初始呼叫者，以及使用動作項目屬性的委派鏈結中的立即呼叫端的身分識別。
 
-下圖顯示一般身分委派案例中 Fabrikam 員工存取公開 Contoso.com 應用程式中的資源。
+下圖說明典型的身分識別委派的情況下，在其中 Fabrikam 員工會存取 Contoso.com 應用程式中公開的資源。
 
-![身分](media/ad-fs-identity-delegation/id1.png)
+![身分識別](media/ad-fs-identity-delegation/id1.png)
 
-本案例中為參與虛構使用者︰
+在此案例中參與的虛構使用者是：
 
-- Frank: Fabrikam 員工想要存取 Contoso 資源。
-- 奧地：Contoso 應用程式開發人員的應用程式中執行所需的變更。
-- Adam: Contoso IT 系統管理員。
+- Frank:Fabrikam 員工想要存取 Contoso 資源。
+- Daniel:Contoso 應用程式的開發人員在應用程式中實作必要的變更。
+- Adam:Contoso IT 系統管理員。
 
-本案例中相關元件︰
+在此案例中所涉及的元件如下：
 
-- web1: Web 應用程式連結後端資源需要委派的身分初始播報來電者。 建置 ASP.NET 使用這個應用程式。
-- 存取 SQL Server、需要委派的身分初始播報來電者，以及立即播報來電者的 Web 服務。 這項服務以 WCF 建置。
-- sts1: STS 中的角色宣告提供者，並會發出宣告應用程式 (web1) 預期的。 它已建立信任的 Fabrikam.com 和應用程式。
-- sts2: STS，Fabrikam.com 身分提供者的角色是提供 Fabrikam 員工使用驗證結束點。 它已建立與 Contoso.com 信任使 Fabrikam 員工已獲授權存取 Contoso.com 資源。
+- web1:Web 應用程式的連結需要委派的身分識別的初始呼叫者的後端資源。 使用 ASP.NET 建置此應用程式。
+- 存取 SQL Server，而這需要委派的身分識別的初始呼叫者，以及立即呼叫端的 Web 服務。 此服務會使用 WCF 建置。
+- sts1:STS 角色的宣告提供者，並發出宣告式預期的應用程式 (web1)。 它已建立 Fabrikam.com 與以及與應用程式的信任。
+- sts2:位於 Fabrikam.com 的身分識別提供者的角色，並提供 Fabrikam 員工用來驗證端點 STS。 若要建立 contoso.com 的信任，它的讓 Fabrikam 員工可以存取 Contoso.com 上的資源。
 
 >[!NOTE] 
->「ActAs 權杖」，這通常中使用此案例，指到預付碼由 STS 發出，其中包含使用者的身分。 演員屬性包含 STS 的身分。
+>詞彙"actas 語彙基元 」，這通常用在此案例中，參考的某個 STS 所發出，且包含使用者的身分識別的權杖。 動作項目屬性會包含 STS 的身分識別。
 
-在上圖所示，流程在本案例中的為：
-
-
-1. Contoso 應用程式設定為取得 ActAs 權杖包含 Fabrikam 員工的身分和演員屬性身分立即播報來電者。 奧地已實作這些應用程式的變更。
-2. Contoso 應用程式設定為傳遞至後端服務 ActAs 預付碼。 奧地已實作這些應用程式的變更。
-3. 設定 Contoso Web 服務為呼叫 sts1 驗證 ActAs 預付碼。 Adam 已支援 sts1 處理委派要求。
-4. Fabrikam 使用者 Frank 存取 Contoso 應用程式，都可以存取後端資源。
-
-## <a name="set-up-the-identity-provider-ip"></a>設定的身分提供者 (IP)
-
-適用於 Fabrikam.com 系統管理員，Frank 的三個選項：
+上圖所示，在此案例中的流程就會是：
 
 
-1. 購買並安裝 STS product，例如 Active Directory（) 聯盟 Services (AD FS)。
-2. 希望例如 LiveID STS 雲端 STS product。
-3. 組建使用 WIF 自訂 STS。
+1. Contoso 應用程式會設定為取得 ActAs 權杖，其中包含 Fabrikam 員工的身分識別和動作項目屬性中的立即呼叫者身分識別。 Daniel 已實作這些變更應用程式。
+2. Contoso 應用程式會設定為將 actas 語彙基元傳遞至後端服務。 Daniel 已實作這些變更應用程式。
+3. Contoso Web 服務被設定為藉由呼叫 sts1 驗證 actas 語彙基元。 Adam 已經啟用 sts1 處理委派的要求。
+4. Fabrikam 使用者 Frank 存取 Contoso 應用程式，並獲得存取權的後端資源。
 
-針對此範例，我們假設 Frank 選取選項 1 並安裝 IP STS AD FS。 他也設定名 \windowsauth，以便驗證使用者結束點。 透過推薦 AD FS product 文件和到 Adam，以 Contoso IT 系統管理員，Frank 建立與 Contoso.com 網域信任。
+## <a name="set-up-the-identity-provider-ip"></a>設定身分識別提供者 (IP)
+
+有適用於 Fabrikam.com 系統管理員，Frank 的三個選項：
+
+
+1. 購買並安裝 STS 產品，例如 Active Directory® Federation Services (AD FS)。
+2. 訂閱的雲端 STS 產品，例如 LiveID STS。
+3. 建置自訂 STS 使用 WIF。
+
+此範例案例中，我們假設 Frank 選取選項 1，並將 AD FS 安裝為 IP-STS。 他也會設定為端點，名為 \windowsauth，來驗證使用者。 指的 AD FS 產品文件，並與 Adam，Contoso 的 IT 系統管理員中，Frank 會建立與 Contoso.com 網域的信任。
 
 ## <a name="set-up-the-claims-provider"></a>設定宣告提供者
 
-選項適用於 Contoso.com 系統管理員，Adam，都相同如之前所述，身分提供者。 針對此範例，我們假設 Adam 選取選項 1 並安裝資源點數 STS AD FS 2.0。
+選項適用於 Contoso.com 的系統管理員，Adam，會如同先前所述，身分識別提供者。 此範例案例中，我們假設 Adam 選取選項 1，並將 AD FS 2.0 安裝為 RP STS。
 
-## <a name="set-up-trust-with-the-ip-and-application"></a>信任的 IP 和應用程式設定
+## <a name="set-up-trust-with-the-ip-and-application"></a>設定信任 IP 與應用程式
 
-透過推薦 AD FS 文件，Adam 建立 Fabrikam.com 和應用程式之間的信任。
+藉由參考的 AD FS 的文件，Adam 會建立 Fabrikam.com 與應用程式之間的信任。
 
 ## <a name="set-up-delegation"></a>設定委派
 
-AD FS 提供委派處理。 透過推薦 AD FS 文件，Adam 可讓 ActAs 權杖處理。
+AD FS 提供委派處理。 藉由參考的 AD FS 的文件，Adam 會讓 ActAs 語彙基元的處理。
 
 ## <a name="application-specific-changes"></a>應用程式特定的變更
 
-下列需要進行變更的身分委派支援加入現有的應用程式。 奧地使用 WIF 完成這些改變。
+將身分識別委派支援新增至現有的應用程式，就必須進行下列的變更。 Daniel 使用 WIF 進行這些變更。
 
 
-- 快取開機權杖收到 sts1 該 web1。
-- 發行的權杖 CreateChannelActingAs 使用建立後端服務網路的通道。
+- 快取的啟動程序的權杖從 sts1 收到該 web1。
+- 使用 CreateChannelActingAs 和發行的權杖，以建立後端 Web 服務的通道。
 - 呼叫後端服務的方法。
 
-## <a name="cache-the-bootstrap-token"></a>快取開機權杖
+## <a name="cache-the-bootstrap-token"></a>快取的啟動程序的權杖
 
-開機預付碼是由 STS，發行的初始權杖和應用程式中擷取時宣告。 在此範例案例中，此預付碼由 sts1 使用者 Frank 發出和應用程式將其快取。 下列程式碼範例顯示如何擷取開機權杖 ASP.NET 應用程式中：
+啟動程序權杖的 STS 所發行的初始權杖，且應用程式會從其擷取宣告。 在此範例案例中，此權杖公布的 sts1 Frank 的使用者和應用程式快取它。 下列程式碼範例會示範如何擷取啟動程序權杖中的 ASP.NET 應用程式：
 
 ```
 // Get the Bootstrap Token
@@ -98,9 +99,9 @@ if ( claimsPrincipal != null )
     bootstrapToken = claimsIdentity.BootstrapToken;
 }
 ```
-WIF 提供一種方法，[CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)，建立權杖發行要求，以指定的安全性權杖為 ActAs 項目，指定類型的通道。 您可以將開機權杖傳遞此方法，接著呼叫必要服務方法傳回頻道。 在此範例案例中，Frank 的身分有[演員](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.iclaimsidentity.actor.aspx)屬性設 web1 的身分。
+WIF 提供一種方法， [CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)，建立指定型別的擴大為 ActAs 項目指定的安全性權杖的權杖發佈要求的通道。 您可以將啟動程序權杖傳遞給這個方法，並接著呼叫傳回的通道上的 必要的服務方法。 在此範例案例中，Frank 的身分識別具有[動作項目](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.iclaimsidentity.actor.aspx)屬性設定為 web1 的身分識別。
 
-下列程式碼片段示範如何使用 Web 服務呼叫[CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)，然後在傳回通道呼叫其中一個 ComputeResponse，服務的方法：
+下列程式碼片段示範如何呼叫 Web 服務[CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx) ，然後呼叫其中一種服務的方法，ComputeResponse，傳回的通道上：
 
 ```
 // Get the channel factory to the backend service from the application state
@@ -133,11 +134,11 @@ try
 }
 
 ```
-## <a name="web-service-specific-changes"></a>Web 服務特定的變更
+## <a name="web-service-specific-changes"></a>Web 服務特有的變更
 
-Web 服務建置 wcf 和支援 WIF，繫結的 IssuedSecurityTokenParameters 設定適當的發行者地址後，由於 WIF 會自動處理 ActAs 的驗證。 
+由於 Web 服務是以 WCF 建置，而且啟用 WIF，一旦繫結設定為使用 IssuedSecurityTokenParameters 正確的簽發者位址，WIF 會自動處理 ActAs 的驗證。 
 
-Web 服務公開應用程式所需的特定方法。 有需要服務任何特定的程式碼變更。 下列程式碼範例顯示 IssuedSecurityTokenParameters Web 服務的設定：
+Web 服務會公開應用程式所需的特定方法。 沒有服務上所需的特定程式碼變更。 下列程式碼範例顯示 IssuedSecurityTokenParameters 的 Web 服務的組態：
 
 ```
 // Configure the issued token parameters with the correct settings

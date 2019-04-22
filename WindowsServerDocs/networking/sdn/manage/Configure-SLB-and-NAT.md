@@ -1,7 +1,7 @@
 ---
-title: 設定的軟體負載平衡器負載平衡和網路位址轉譯 (NAT)
-description: 本主題是輔助的軟體定義網路上如何管理承租人工作負載和 Windows Server 2016 Virtual 網路的一部分。
-manager: brianlic
+title: 設定軟體負載平衡器以進行負載平衡和網路位址轉譯 (NAT)
+description: 本主題是軟體定義網路上如何管理租用戶工作負載和指南 Windows Server 2016 中的虛擬網路的一部分。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,242 +12,291 @@ ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7f0393db564061caa0bc8f18b1d623f24749b46c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: 55847bfbc0362887497514009f6efe1312d79906
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819349"
 ---
-# <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>設定的軟體負載平衡器負載平衡和網路位址轉譯 (NAT)
+# <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>設定軟體負載平衡器以進行負載平衡和網路位址轉譯 (NAT)
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用本主題以了解如何使用軟體定義網路 \(SDN\) 軟體負載平衡器 \(SLB\) 提供輸出網路位址轉譯 NAT，輸入 NAT，或負載平衡之間多個應用程式執行個體。
+您可以使用本主題來了解如何使用軟體定義網路功能\(SDN\)軟體負載平衡器\(SLB\)提供輸出網路位址轉譯\(NAT\)，輸入 NAT 或負載平衡的應用程式的多個執行個體之間。
 
-本主題包含下列各節。
+## <a name="software-load-balancer-overview"></a>軟體負載平衡器概觀
 
-- [軟體負載平衡器概觀](#bkmk_slbover)
-- [範例：建立負載平衡 virtual 網路上的兩個 Vm 的集區與公用 VIP](#bkmk_publicvip)
-- [範例：使用 SLB 輸出 NAT](#bkmk_obnat)
-- [範例：後端集區中新增網路介面](#bkmk_backend)
-- [範例：轉送流量使用軟體負載平衡器](#bkmk_forward)
+SDN 軟體負載平衡器\(SLB\)您的應用程式提供高可用性和網路效能。 它是第 4 層\(TCP、 UDP\)負載平衡器，將雲端服務或負載平衡器集合中定義的虛擬機器中狀況良好的服務執行個體之間的連入流量分配。
 
-## <a name="bkmk_slbover"></a>軟體負載平衡器概觀
+設定 SLB，執行下列操作：
 
-SDN 軟體負載平衡器 \(SLB\) 提供高可用性和網路效能，您的應用程式。 它是層級 4 \（TCP、UDP\）負載平衡器分散傳入良好的服務執行個體雲端服務或虛擬機器定義負載平衡將流量之。
-
-您可以設定 SLB 執行動作。
-
-* 負載平衡傳入流量外部虛擬機器 \(VMs\) virtual 網路。 這稱為公用 VIP 負載平衡。
-* 負載平衡傳入流量之間 Vm 中 virtual 網路、之間 Vm 中的雲端服務，或在跨先 virtual 網路 Vm 先在電腦之間。 
-* 往後 VM 的網路流量 virtual 網路外部使用網路位址轉譯 (NAT) 的目的地。  這稱為 nat 輸出。
-* 將外部流量轉寄給特定 VM。  這稱為輸入 nat。
-
->[!IMPORTANT]
->已知的問題會防止負載平衡器中的物件 NetworkController Windows PowerShell 模組在 Windows Server 2016 5 正確運作。 因應措施是改為使用動態 hash 表格和 Invoke-WebRequest。 下列範例圖示範此方法。
+- 負載平衡連入流量的虛擬機器的虛擬網路的外部\(Vm\)，也稱為公用 VIP 負載平衡。
+- 負載平衡連入流量的虛擬網路中 Vm 之間、 雲端服務中的 Vm 之間或在內部部署電腦與跨單位虛擬網路中的 Vm 之間。 
+- 從虛擬網路的 VM 網路流量轉送至外部目的地，使用網路位址轉譯 (NAT)，也稱為輸出 nat。
+- 將外部流量轉送到特定的 VM，也稱為 「 輸入 nat。
 
 
-## <a name="bkmk_publicvip"></a>範例：建立負載平衡 virtual 網路上的兩個 Vm 的集區與公用 VIP
 
-您可以使用此範例中，以做為可要求 VIP 集區成員建立負載平衡器物件公用 VIP 和兩個 Vm。  此程式碼範例，也新增 HTTP 健康探查偵測您是否有一個集區成員變成非回應。
 
-###<a name="step-1-prepare-the-load-balancer-object"></a>步驟 1：準備負載平衡器物件
-您可以使用以下的範例準備負載平衡器物件。
+## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>範例：建立負載平衡集區的虛擬網路上的兩個 Vm 的公用 VIP
 
-    $lbresourceId = "LB2"
+在此範例中，您建立負載平衡器物件具有公用 VIP 和兩個 Vm 為來處理要求到 VIP 集區成員。 此程式碼範例也會新增 HTTP 健全狀況探查來偵測是否有一個集區成員會變成沒有回應。
 
-    $lbproperties = @{}
-    $lbproperties.frontendipconfigurations = @()
-    $lbproperties.backendAddressPools = @()
-    $lbproperties.probes = @()
-    $lbproperties.loadbalancingRules = @()
-    $lbproperties.OutboundNatRules = @()
+1. 準備負載平衡器物件。
 
-###<a name="step-2-assign-a-front-end-ip"></a>步驟 2：指派前端 IP
-前端 IP 通常為 Virtual IP (VIP)。  必須從未使用的 IP 其中一個 IP 集區之前贈與負載平衡器管理員邏輯網路獲得 VIP。
+   ```PowerShell
+    import-module NetworkController
 
-您可以使用以下的範例指派前端 IP 位址。
+    $URI = "https://sdn.contoso.com"
 
-    $vipip = "10.127.132.5"
-    $vipln = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "f8f67956-3906-4303-94c5-09cf91e7e311"
+    $LBResourceId = "LB2"
 
-    $fe = @{}
-    $fe.resourceId = "FE1"
-    $fe.resourceRef = "/loadBalancers/$lbresourceId/frontendIPConfigurations/$($fe.resourceId)"
-    $fe.properties = @{}
-    $fe.properties.subnet = @{}
-    $fe.properties.subnet.ResourceRef = $vipln.properties.Subnets[0].ResourceRef
-    $fe.properties.privateIPAddress = $vipip
-    $fe.properties.privateIPAllocationMethod = "Static"
-    $lbproperties.frontendipconfigurations += $fe
+    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+   ```
 
-###<a name="step-3-allocate-a-backend-address-pool"></a>步驟 3：配置集區端地址
-地址後端集區包含動態 IPs (DIPs) 組成負載平衡集 Vm 的成員。 在此步驟，您只能配置集區。IP 設定會在接下來的步驟來新增。
+2. 指派前端的 IP 位址，一般稱為虛擬 IP (VIP)。<p>VIP 必須來自其中一個提供給負載平衡器管理員的邏輯網路 IP 集區中的未使用的 IP。 
 
-您可以使用以下的範例配置後端地址集區。
- 
-    $backend = @{}
-    $backend.resourceId = "BE1"
-    $backend.resourceRef = "/loadBalancers/$lbresourceId/backendAddressPools/$($backend.resourceId)"
-    $lbproperties.backendAddressPools += $backend
-
-###<a name="step-4-define-a-health-probe"></a>步驟 4：定義健康探查
-健康探查使用負載平衡器來判斷成員後端集區的健康狀態。 使用此範例中，您定義查詢 HTTP 探查 RequestPath 的「日 health.htm」。  查詢執行每個 5 秒，所指定的 IntervalInSeconds 屬性。
-
-健康探查必須接收的健康狀態端 ip 探查 11 連續查詢 200 HTTP 回應程式碼。 如果不良好端 IP，負載平衡器不會傳送資料傳輸至 IP。
-
->[!Note]
->請務必的任何存取控制清單套用至端 IP 不會阻止或從第一次的 IP 子網路中的資料傳輸因為這是原始的探查點。
-
-您可以使用以下的範例，來定義健康探查。
- 
-    $lbprobe = @{}
-    $lbprobe.ResourceId = "Probe1"
-    $lbprobe.resourceRef = "/loadBalancers/$lbresourceId/Probes/$($lbprobe.resourceId)"
-    $lbprobe.properties = @{}
-    $lbprobe.properties.protocol = "HTTP"
-    $lbprobe.properties.port = "80"
-    $lbprobe.properties.RequestPath = "/health.htm"
-    $lbprobe.properties.IntervalInSeconds = 5
-    $lbprobe.properties.NumberOfProbes = 11
-    $lbproperties.probes += $lbprobe
-
-###<a name="step-5-define-a-load-balancing-rule"></a>步驟 5：定義負載平衡規則
-此負載平衡規則定義流量之到達前端 IP 是傳送到端 IP。  在此範例中，TCP 連接埠 80 流量會傳送至端集區。
-
-您可以使用以下的範例，來定義負載平衡規則。
-
-    $lbrule = @{}
-    $lbrule.ResourceId = "webserver1"
-    $lbrule.properties = @{}
-    $lbrule.properties.FrontEndIPConfigurations = @()
-    $lbrule.properties.FrontEndIPConfigurations += $fe
-    $lbrule.properties.backendaddresspool = $backend 
-    $lbrule.properties.protocol = "TCP"
-    $lbrule.properties.frontendPort = 80
-    $lbrule.properties.Probe = $lbprobe
-    $lbproperties.loadbalancingRules += $lbrule
-
-###<a name="step-6-add-the-load-balancer-configuration-to-network-controller"></a>步驟 6：加入 Network Controller 負載平衡器設定
-到目前為止在此範例中，所有建立的物件的記憶體中的 Windows PowerShell 工作階段。 這個步驟加入 Network Controller 的物件。
-
-您可以使用以下的範例加入 Network Controller 負載平衡器設定。
-
-    $lb = @{}
-    $lb.ResourceId = $lbresourceid
-    $lb.properties = $lbproperties
-
-    $body = convertto-json $lb -Depth 100
-
-    Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Put" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -Body $body -DisableKeepAlive -UseBasicParsing
-
-在此步驟後，您必須遵循下列到此端集區中新增的網路介面範例。
-
-## <a name="bkmk_obnat"></a>範例：使用 SLB 輸出 NAT
-
-您可以使用此範例中，設定 SLB 後端集區提供輸出 NAT 功能連接到網際網路輸出 vm virtual 網路位址私密空間。
-
-###<a name="step-1-create-the-loadbalancer-properties-front-end-ip-and-backend-pool"></a>步驟 1：建立 loadbalancer 屬性，前端 IP 和端集區。
-若要建立 loadbalancer 屬性，前端 IP 和端集區，您可以使用以下的範例。
-
-    $lbresourceId = "OutboundNATMembers"
-    $vipip = "10.127.132.7"
-
-    $vipln = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "f8f67956-3906-4303-94c5-09cf91e7e311"
-
-    $lbproperties = @{}
-    $lbproperties.frontendipconfigurations = @()
-    $lbproperties.backendAddressPools = @()
-    $lbproperties.probes = @()
-    $lbproperties.loadbalancingRules = @()
-    $lbproperties.OutboundNatRules = @()
-
-    $fe = @{}
-    $fe.resourceId = "FE1"
-    $fe.resourceRef = "/loadBalancers/$lbresourceId/frontendIPConfigurations/$($fe.resourceId)"
-    $fe.properties = @{}
-    $fe.properties.subnet = @{}
-    $fe.properties.subnet.ResourceRef = $vipln.properties.Subnets[0].ResourceRef
-    $fe.properties.privateIPAddress = $vipip
-    $fe.properties.privateIPAllocationMethod = "Static"
-    $lbproperties.frontendipconfigurations += $fe
-
-    $backend = @{}
-    $backend.resourceId = "BE1"
-    $backend.resourceRef = "/loadBalancers/$lbresourceId/backendAddressPools/$($backend.resourceId)"
-    $lbproperties.backendAddressPools += $backend
-
-###<a name="step-2-define-the-outbound-nat-rule"></a>步驟 2：定義輸出 NAT 規則
-您可以使用以下的範例定義的輸出 NAT 規則。 
-
-    $onat = @{}
-    $onat.ResourceId = "onat1"
-    $onat.properties = @{}
-    $onat.properties.frontendipconfigurations = @()
-    $onat.properties.frontendipconfigurations += $fe
-    $onat.properties.backendaddresspool = $backend
-    $onat.properties.protocol = "ALL"
-    $lbproperties.OutboundNatRules += $onat
-
-###<a name="step-3-add-the-load-balancer-object-in-network-controller"></a>步驟 3: Network Controller 中新增負載平衡器物件
-您可以使用以下的範例 Network Controller 中新增負載平衡器物件。
-
-    $lb = @{}
-    $lb.ResourceId = $lbresourceid
-    $lb.properties = $lbproperties
-
-    $body = convertto-json $lb -Depth 100
-
-    Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Put" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -Body $body -DisableKeepAlive -UseBasicParsing
-
-在下一個步驟中，您可以新增您想要提供網際網路存取權的網路介面。
-
-## <a name="bkmk_backend"></a>範例：後端集區中新增網路介面
-您可以使用此範例中新增網路介面後端集區。
-
-您必須重複此步驟針對每個可處理網路介面要求 VIP 對的。 您也可以重複此程序在單一網路介面新增多個負載平衡器物件。 例如，如果您的網頁伺服器 VIP 負載平衡器物件不同負載平衡器物件，以提供 nat 輸出。
+   ```PowerShell
+    $VIPIP = "10.127.134.5"
+    $VIPLogicalNetwork = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "PublicVIP" -PassInnerException
     
-### <a name="step-1-get-the-load-balancer-object-containing-the-back-end-pool-to-which-you-will-add-a-network-interface"></a>步驟 1：取得負載平衡器物件包含後端集區，您將會新增網路介面
-您可以使用以下的範例擷取負載平衡器物件。
+    $FrontEndIPConfig = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+    $FrontEndIPConfig.ResourceId = "FE1"
+    $FrontEndIPConfig.ResourceRef = "/loadBalancers/$LBResourceId/frontendIPConfigurations/$($FrontEndIPConfig.ResourceId)"
 
-    $lbresourceid = "LB2"
-    $lb = (Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Get" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -DisableKeepAlive -UseBasicParsing).content | convertfrom-json 
+    $FrontEndIPConfig.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+    $FrontEndIPConfig.Properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+    $FrontEndIPConfig.Properties.Subnet.ResourceRef = $VIPLogicalNetwork.Properties.Subnets[0].ResourceRef
+    $FrontEndIPConfig.Properties.PrivateIPAddress = $VIPIP
+    $FrontEndIPConfig.Properties.PrivateIPAllocationMethod = "Static"
+      
+    $LoadBalancerProperties.FrontEndIPConfigurations += $FrontEndIPConfig
+   ```
 
-### <a name="step-2-get-the-network-interface-and-add-the-backendaddress-pool-to-the-loadbalancerbackendaddresspools-array"></a>步驟 2：取得的網路介面並新增到 loadbalancerbackendaddresspools 陣列 backendaddress 集區。
-您可以使用以下的範例取得的網路介面並新增到 loadbalancerbackendaddresspools 陣列 backendaddress 集區。
+3. 配置後端位址集區，其中包含 Vm 的負載平衡集的成員所組成的動態 Ip (Dip)。 
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
-    $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   ```PowerShell 
+    $BackEndAddressPool = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+    $BackEndAddressPool.ResourceId = "BE1"
+    $BackEndAddressPool.ResourceRef = "/loadBalancers/$LBResourceId/backendAddressPools/$($BackEndAddressPool.ResourceId)"
+
+    $BackEndAddressPool.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+
+    $LoadBalancerProperties.backendAddressPools += $BackEndAddressPool
+   ```
+
+4. 定義健康狀態探查的負載平衡器用來判斷後端集區成員的健全狀況狀態。<p>在此範例中，您會定義查詢 HTTP 探查的 RequestPath"/ health.htm。 」  每隔 5 秒，IntervalInSeconds 屬性所指定執行查詢。<p>健康情況探查必須接收 HTTP 回應碼為 200，探查才會良好的後端 IP，請考慮的 11 連續查詢。 如果後端 IP 不是狀況良好的它不會接收流量負載平衡器。
+
+   >[!IMPORTANT]
+   >不針對任何存取控制清單 (Acl)，因為這是起始點，讓探查套用至後端 IP 會封鎖流量，或從第一個 IP 子網路中。
+
+   您可以使用下列範例來定義健康狀態探查。
+
+   ```PowerShell
+    $Probe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
+    $Probe.ResourceId = "Probe1"
+    $Probe.ResourceRef = "/loadBalancers/$LBResourceId/Probes/$($Probe.ResourceId)"
+
+    $Probe.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerProbeProperties
+    $Probe.properties.Protocol = "HTTP"
+    $Probe.properties.Port = "80"
+    $Probe.properties.RequestPath = "/health.htm"
+    $Probe.properties.IntervalInSeconds = 5
+    $Probe.properties.NumberOfProbes = 11
+
+    $LoadBalancerProperties.Probes += $Probe
+   ```
+
+5.  定義負載平衡規則傳送到後端 IP 抵達前端 IP 的流量。  在此範例中後, 端集區會接收 TCP 連接埠 80 的流量。<p>您可以使用下列範例定義負載平衡規則：
+
+   ```PowerShell
+    $Rule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
+    $Rule.ResourceId = "webserver1"
+
+    $Rule.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
+    $Rule.Properties.FrontEndIPConfigurations += $FrontEndIPConfig
+    $Rule.Properties.backendaddresspool = $BackEndAddressPool 
+    $Rule.Properties.protocol = "TCP"
+    $Rule.Properties.FrontEndPort = 80
+    $Rule.Properties.BackEndPort = 80
+    $Rule.Properties.IdleTimeoutInMinutes = 4
+    $Rule.Properties.Probe = $Probe
+
+    $LoadBalancerProperties.loadbalancingRules += $Rule
+   ```
+
+6. 加入網路控制站的負載平衡器組態。<p>使用下列範例將負載平衡器組態新增至網路控制站：
+
+   ```PowerShell
+    $LoadBalancerResource = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $LBResourceId -Properties $LoadBalancerProperties -Force -PassInnerException
+   ```
+
+7. 請遵循下一個範例中將網路介面新增至這個後端集區。
+
+
+## <a name="example-use-slb-for-outbound-nat"></a>範例：SLB 用於輸出 NAT
+
+在此範例中，您可以設定 SLB 與後端集區提供 vm 上的虛擬網路私人位址空間來觸達輸出至網際網路的輸出 NAT 功能。 
+
+1. 建立負載平衡器的屬性、 前端 IP 和後端集區。
+
+   ```PowerShell
+    import-module NetworkController
+    $URI = "https://sdn.contoso.com"
+
+    $LBResourceId = "OutboundNATMMembers"
+    $VIPIP = "10.127.134.6"
+
+    $VIPLogicalNetwork = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "PublicVIP" -PassInnerException
+
+    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+
+    $FrontEndIPConfig = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+    $FrontEndIPConfig.ResourceId = "FE1"
+    $FrontEndIPConfig.ResourceRef = "/loadBalancers/$LBResourceId/frontendIPConfigurations/$($FrontEndIPConfig.ResourceId)"
+
+    $FrontEndIPConfig.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+    $FrontEndIPConfig.Properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+    $FrontEndIPConfig.Properties.Subnet.ResourceRef = $VIPLogicalNetwork.Properties.Subnets[0].ResourceRef
+    $FrontEndIPConfig.Properties.PrivateIPAddress = $VIPIP
+    $FrontEndIPConfig.Properties.PrivateIPAllocationMethod = "Static"
+
+    $LoadBalancerProperties.FrontEndIPConfigurations += $FrontEndIPConfig
+
+    $BackEndAddressPool = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+    $BackEndAddressPool.ResourceId = "BE1"
+    $BackEndAddressPool.ResourceRef = "/loadBalancers/$LBResourceId/backendAddressPools/$($BackEndAddressPool.ResourceId)"
+    $BackEndAddressPool.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+
+    $LoadBalancerProperties.backendAddressPools += $BackEndAddressPool
+   ```
+
+2. 定義輸出 NAT 規則。
+
+   ```PowerShell
+    $OutboundNAT = new-object Microsoft.Windows.NetworkController.LoadBalancerOutboundNatRule
+    $OutboundNAT.ResourceId = "onat1"
     
-### <a name="step-3-put-the-network-interface-to-apply-the-change"></a>步驟 3：放套用變更的網路介面
-您可以使用以下的範例將網路介面套用變更。
+    $OutboundNAT.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerOutboundNatRuleProperties
+    $OutboundNAT.properties.frontendipconfigurations += $FrontEndIPConfig
+    $OutboundNAT.properties.backendaddresspool = $BackEndAddressPool
+    $OutboundNAT.properties.protocol = "ALL"
 
-    new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -properties $nic.properties -force
- 
-## <a name="bkmk_forward"></a>範例：轉送流量使用軟體負載平衡器
-如果您需要不定義個人連接埠對應 virtual 網路上的單一網路介面 Virtual IP，您可以建立 L3 轉接規則。  此規則會轉送透過指派 VIP，必須包含在 PublicIPAddress 物件 VM 中的所有的資料傳輸。
+    $LoadBalancerProperties.OutboundNatRules += $OutboundNAT
+   ```
 
-如果 VIP 和 DIP 定義相同的子網路，然後這相當於執行而不需要 NAT L3 轉接
+3. 加入網路控制卡中的負載平衡器物件。
+
+   ```PowerShell
+    $LoadBalancerResource = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $LBResourceId -Properties $LoadBalancerProperties -Force -PassInnerException
+   ```
+
+4. 請遵循下一個範例中新增您要提供網際網路存取的網路介面。
+
+## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>範例：將網路介面新增至後端集區
+在此範例中，您網路介面新增至後端集區。  您必須重複此步驟中每個網路介面，可處理對 VIP 提出的要求。 
+
+您也可以重複此程序上將它新增至多個負載平衡器物件的單一網路介面。 例如，如果您有 web 伺服器 VIP 的負載平衡器物件和個別的負載平衡器物件，以提供輸出 nat。
+    
+1. 取得包含要新增網路介面的後端集區的負載平衡器物件。
+
+   ```PowerShell
+   $lbresourceid = "LB2"
+   $lb = get-networkcontrollerloadbalancer -connectionuri $uri -resourceID $LBResourceId -PassInnerException
+  ```
+
+2. 取得網路介面，並將 backendaddress 集區新增至 loadbalancerbackendaddresspools 陣列。
+
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -PassInnerException
+   $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   ```  
+
+3. 將網路介面，以套用變更。 
+
+   ```PowerShell
+   new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -properties $nic.properties -force -PassInnerException
+   ``` 
+
+
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>範例：使用軟體負載平衡器將流量轉送
+如果您需要對應至單一網路介面的虛擬網路上的虛擬 IP，而不需定義個別的連接埠，您可以建立的 L3 轉寄規則。  此規則會轉送所有流量透過指派的 VIP PublicIPAddress 物件中包含的 VM。
+
+如果您定義 VIP 和 DIP 為相同的子網路，然後這相當於執行 L3 轉送，而不需要 nat。
 
 >[!NOTE]
->此程序不需要建立負載平衡器物件。  指定的網路介面 PublicIPAddress 是不足，無法軟體負載平衡器執行設定的資訊。
+>此程序不需要您建立負載平衡器物件。  指派給網路介面的 PublicIPAddress 是足夠的資訊來執行其設定的軟體負載平衡器。
 
-###<a name="step-1-create-a-public-ip-object-to-contain-the-vip"></a>步驟 1：建立包含 VIP 公用 IP 物件
-您可以使用以下的範例建立公用 IP 物件。
 
-    $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
-    $publicIPProperties.ipaddress = "10.127.132.6"
-    $publicIPProperties.PublicIPAllocationMethod = "static"
-    $publicIPProperties.IdleTimeoutInMinutes = 4
-    $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri
+1. 建立包含 VIP 的公用 IP 物件。
 
-####<a name="step-2-assign-the-publicipaddress-to-a-network-interface"></a>步驟 2: PublicIPAddress 為網路介面
-您可以使用以下的範例 PublicIPAddress 為網路介面。
+   ```PowerShell
+   $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
+   $publicIPProperties.ipaddress = "10.127.134.7"
+   $publicIPProperties.PublicIPAllocationMethod = "static"
+   $publicIPProperties.IdleTimeoutInMinutes = 4
+   $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri -Force -PassInnerException
+   ```
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
-    $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
-    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties
+2. 指派給網路介面的 PublicIPAddress。
 
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
+   $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
+   New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
+   ```
+
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>範例：使用軟體負載平衡器將流量轉送與動態配置 VIP
+此範例會重複上一個範例中，與相同的動作，但它會自動從負載平衡器，而不是指定特定的 IP 位址中可用的 Vip 集區配置 VIP。 
+
+1. 建立包含 VIP 的公用 IP 物件。
+
+   ```PowerShell
+   $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
+   $publicIPProperties.PublicIPAllocationMethod = "dynamic"
+   $publicIPProperties.IdleTimeoutInMinutes = 4
+   $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri -Force -PassInnerException
+   ```
+
+2. 查詢 PublicIPAddress 資源，以判斷所指派的 IP 位址。
+
+   ```PowerShell
+    (Get-NetworkControllerPublicIpAddress -ConnectionUri $uri -ResourceId "MyPIP").properties
+   ```
+
+   IpAddress 屬性包含指派的位址。  輸出會看起來像這樣：
+   ```
+    Counters                 : {}
+    ConfigurationState       :
+    IpAddress                : 10.127.134.2
+    PublicIPAddressVersion   : IPv4
+    PublicIPAllocationMethod : Dynamic
+    IdleTimeoutInMinutes     : 4
+    DnsSettings              :
+    ProvisioningState        : Succeeded
+    IpConfiguration          :
+    PreviousIpConfiguration  :
+   ```
+ 
+1. 指派給網路介面的 PublicIPAddress。
+
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
+   $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
+   New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
+   ```
+## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>範例：移除用於轉送流量的 PublicIP 位址，並將它傳回的 VIP 集區
+此範例會移除先前的範例所建立的 PublicIPAddress 資源。  PublicIPAddress 移除之後，PublicIPAddress 的參考會自動移除與網路介面、 流量將會停止正在轉送和重複使用的公用 VIP 集區，將傳回的 IP 位址。  
+
+1. 移除 PublicIP
+
+   ```PowerShell
+   Remove-NetworkControllerPublicIPAddress -ConnectionURI $uri -ResourceId "MyPIP"
+   ```
+
+---
 
 
  

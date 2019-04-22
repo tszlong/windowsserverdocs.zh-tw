@@ -1,35 +1,47 @@
 ---
-title: "初始化新磁碟"
-description: "本文說明如何初始化新磁碟"
-ms.date: 10/12/2017
+title: 初始化新磁碟
+description: 如何初始化新的磁碟使用磁碟管理，讓他們可供使用。 也包含連結的問題進行疑難排解。
+ms.date: 10/24/2018
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 587553746d45eceab654efd4d120038088d32991
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 61c8eb2321ee2a282345aba01c6d04a128f0448c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819389"
 ---
 # <a name="initialize-new-disks"></a>初始化新磁碟
 
-> **適用於：**Windows 10、Windows 8.1、Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows 7、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
-> [!NOTE]
-> 您必須至少是**備份操作員**或**系統管理員**群組的成員，才能完成這些步驟。
+如果新的磁碟新增至您的電腦，它不會顯示在 [檔案總管] 中，您可能需要[新增的磁碟機代號](change-a-drive-letter.md)，或將它初始化後才能使用它。 您只可以初始化尚未格式化的磁碟機。 初始化的磁碟清除它的所有項目，並準備好以供 Windows 之後，您可以格式化並儲存在其上的檔案。
+
+> [!WARNING]
+> 如果您的磁碟已經有您想知道它的檔案，不將它初始化，-將會遺失所有檔案。 取而代之的是我們建議疑難排解磁碟来知道是否您可以讀取檔案-請參閱[磁碟的狀態為 未初始化或磁碟已遺失完全](troubleshooting-disk-management.md#disk-not-initialized)。
 
 ## <a name="to-initialize-new-disks"></a>若要初始化新磁碟
-1.  在 [磁碟管理] 中，以滑鼠右鍵按一下您要初始化的磁碟，然後按一下 **\[初始化磁碟\]**。
 
-2.  在 **\[初始化磁碟\]** 對話方塊中，選取要初始化的磁碟。 您可以選取要使用主開機記錄 (MBR) 或 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。
+以下是如何初始化新的磁碟使用磁碟管理。 如果您偏好使用 PowerShell，使用[初始化磁碟](https://docs.microsoft.com/powershell/module/storage/initialize-disk)cmdlet 改。
 
-## <a name="additional-considerations"></a>其他考量
+1. 您可以開啟 磁碟管理系統管理員權限。 <br>若要這樣做，請在工作列上的 [搜尋] 方塊中輸入**磁碟管理**、 選取並保存 （或以滑鼠右鍵按一下）**磁碟管理**，然後選取**系統管理員身分執行** > **是**。 如果您無法以系統管理員身分開啟它，輸入**電腦管理**相反的然後移至**儲存體** > **磁碟管理**。
+1. 在 磁碟管理，以滑鼠右鍵按一下您想要初始化，然後按一下 的磁碟**初始化磁碟**（如下所示）。 如果磁碟已列為*Offline*先以滑鼠右鍵按一下它，然後選取**線上**。<br>請注意，有些 USB 磁碟機不需要初始化的選項，它們只是取得格式化並[磁碟機代號](change-a-drive-letter.md)。
 
--   新的磁碟顯示為 **\[未初始化\]**。 您必須先將磁碟初始化，才能使用的磁碟。 如果您在新增磁碟後啟動 [磁碟管理]，[初始化磁碟精靈] 會出現，讓您可以初始化磁碟。
+    ![顯示未格式化的磁碟，以顯示 初始化磁碟 快顯功能表的 磁碟管理](media\uninitialized-disk.PNG)
+2. 在 **初始化磁碟**（如下所示） 的對話方塊中，以確定已選取正確的磁碟，然後按一下核取**確定**接受預設分割區樣式。 如果您需要變更磁碟分割樣式 （GPT 或 MBR），請參閱[有關的磁碟分割樣式-GPT 和 MBR](#about-partition-styles-GPT-and-MBR)。<br>磁碟狀態很快變為**Initializing**然後**線上**狀態。 如果初始化失敗，因為某些原因，請參閱[磁碟的狀態為 未初始化或磁碟已遺失完全](troubleshooting-disk-management.md#disk-not-initialized)。
 
-> [!NOTE]
-> 新的磁碟會初始化為基本磁碟。
+    ![選取的 GPT 磁碟分割樣式初始化磁碟 對話方塊](media\initialize-disk.PNG)
 
+## <a name="about-partition-styles---gpt-and-mbr"></a>有關磁碟分割樣式-GPT 和 MBR
+
+磁碟可以分成多個區塊稱為 「 磁碟分割。 每個資料分割-即使只有一個-必須要有磁碟分割樣式-GPT 或 MBR。 Windows 會使用的磁碟分割樣式，來了解如何存取磁碟上的資料。
+
+因為這可能不一樣有趣，重點是，這幾天，您通常不需要擔心磁碟分割樣式，-Windows 會自動使用適當的磁碟類型。
+
+大部分的電腦的硬碟機和 Ssd 使用 GUID 磁碟分割表格 (GPT) 磁碟類型。 GPT 更穩固，可讓磁碟區大於 2 TB。 較舊的主開機記錄 (MBR) 磁碟類型會使用 32 位元電腦，較舊的電腦及記憶卡等抽取式磁碟機。
+
+若要將磁碟從 MBR 或 GPT，您首先必須從磁碟中，刪除所有磁碟區清除磁碟上的所有項目。 如需詳細資訊，請參閱 <<c0> [ 轉換成 GPT 磁碟的 MBR 磁碟](change-an-mbr-disk-into-a-gpt-disk.md)，或[成 MBR 磁碟轉換為 GPT 磁碟](change-a-gpt-disk-into-an-mbr-disk.md)。

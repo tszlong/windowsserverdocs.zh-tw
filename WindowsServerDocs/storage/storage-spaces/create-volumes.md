@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 01/11/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 277a676d8e53a7847d54039aab6607be8e5a78c5
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1833430"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823609"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>建立儲存空間直接存取中的磁碟區
 
@@ -31,15 +31,15 @@ ms.locfileid: "1833430"
 
 **New-Volume** cmdlet 有四個您永遠需要提供的參數：
 
-- **FriendlyName：** 任何您想要的字串，例如 *"Volume1"*
-- **FileSystem**：**CSVFS_ReFS** (建議選項) 或 **CSVFS_NTFS**
-- **StoragePoolFriendlyName：** 儲存集區的名稱，例如 *"S2D on ClusterName"*
-- **Size：** 磁碟區大小，例如 *"10TB"*
+- **FriendlyName:** 任何您想的字串，例如 *"Volume1 」*
+- **檔案系統：** 任一**CSVFS_ReFS** （建議選項） 或**CSVFS_NTFS**
+- **StoragePoolFriendlyName:** 名稱，您的儲存體集區，例如 *"S2D 上 ClusterName"*
+- **大小:** 磁碟區，例如大小 *"10 TB 」*
 
    >[!NOTE]
    >  Windows，包括 PowerShell，使用二進位 (以 2 為底數) 數字計算，而磁碟機通常使用十進位 (以 10 為底數) 數字標示。 這解釋 "1 TB" 磁碟機，定義為 1,000,000,000,000 位元組，為何在 Windows 中顯示為約 "909 GB"。 此為預期性行為。 在使用 **New-Volume** 建立磁碟區時，您應該以二進位 (以 2 為底數) 數字指定 **Size** 參數。 例如，指定 "909GB" 或 "0.909495TB" 會建立大約 1,000,000,000,000 位元組的磁碟區。
 
-### <a name="example-with-2-or-3-servers"></a>範例：使用 2 或 3 部伺服器
+### <a name="example-with-2-or-3-servers"></a>範例：具有 2 或 3 個伺服器
 
 為了簡化，如果您的部署只有兩部伺服器，儲存空間直接存取會自動使用雙向鏡像復原類型。 如果您的部署只有三部伺服器，它就會自動使用三向鏡像。
 
@@ -47,11 +47,11 @@ ms.locfileid: "1833430"
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>範例：使用 4 部以上伺服器
+### <a name="example-with-4-servers"></a>範例：4 + 伺服器
 
 如果您有四部以上的伺服器，您可以使用選擇性的 **ResiliencySettingName** 參數選擇您的復原類型。
 
--   **ResiliencySettingName**：**Mirror** 或 **Parity**。
+-   **ResiliencySettingName:** 任一**鏡像**或是**同位檢查**。
 
 在下列範例，*"Volume2"* 使用三向鏡像，而 *"Volume3"* 使用雙同位（通常稱為「清除編碼」）。
 
@@ -109,14 +109,14 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 ### <a name="step-3-add-to-cluster-shared-volumes"></a>步驟 3：新增至叢集共用磁碟區
 
-![新增至叢集共用磁碟區](media/creating-volumes/GUI-Step-2.png)
+![[新增至叢集共用磁碟區]](media/creating-volumes/GUI-Step-2.png)
 
 12. 在 \[容錯移轉叢集管理員\] 中，瀏覽至 **\[儲存\]** -> **\[磁碟\]**。
 13. 選擇您剛建立的虛擬磁碟，然後從右側 \[執行\] 窗格選取 **\[新增至叢集共用磁碟區\]** 或以滑鼠右鍵按一下虛擬磁碟，然後選取 **\[新增至叢集共用磁碟區\]**。
 
 大功告成！ 視需要重複以建立一個以上的磁碟區。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
-- [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)
+- [規劃中儲存空間直接存取磁碟區](plan-volumes.md)

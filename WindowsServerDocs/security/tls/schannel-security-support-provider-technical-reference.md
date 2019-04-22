@@ -1,6 +1,6 @@
 ---
-title: "Schannel 安全性支援提供者技術參考"
-description: "Windows Server 安全性"
+title: 安全通道安全性支援提供者技術參考資料
+description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,28 +12,27 @@ ms.assetid: 5bf9c4a5-cdc1-49eb-bf9a-8bf987410b63
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: 4ee48ad350663bdedb8ee960fec65ac5198d17b8
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.date: 08/08/2018
+ms.openlocfilehash: 9e38a3960bb3e00dd5ce55690fecab22e680c678
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826279"
 ---
-# <a name="schannel-security-support-provider-technical-reference"></a>Schannel 安全性支援提供者技術參考
+# <a name="schannel-security-support-provider-technical-reference"></a>安全通道安全性支援提供者技術參考資料
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016 中，Windows 10
 
-適用於 IT 專業人員此參照包含傳輸層級的安全性 (TLS) 通訊協定、 安全通訊端層 (SSL) 通訊協定和資訊資料流傳輸層級的安全性 (DTLS) 通訊協定實作，Schannel 安全性支援提供者 (SSP)。
+這個參考適用於 IT 專業人員所實作的安全通道安全性支援，包含傳輸層安全性 (TLS) 通訊協定、 安全通訊端層 (SSL) 通訊協定及資料包傳輸層安全性 (DTLS) 通訊協定資訊提供者 (SSP)。
 
-這些通訊協定提供要保護使用憑證式驗證以及對稱加密金鑰未受信任的網路上的應用程式之間傳送資料的方法。
+這些通訊協定能用來保護不受信任的網路，使用憑證型驗證和對稱式加密金鑰的應用程式之間傳送的資料。
 
-## <a name="w2k3tr_schan_intro"></a>本文件
-這個參考解釋 TLS、 SSL，以及 DTLS 哪些;如何 TLS 及 SSL 使用安全性支援提供者介面 (SSPI) 和 Schannel SSP 安全資料傳輸所有受信任的網路。和的工具與設定的設定 TLS 及 SSL 可用。
+- [傳輸層安全性通訊協定](transport-layer-security-protocol.md)
+- [資料包傳輸層安全性通訊協定](datagram-transport-layer-security-protocol.md)
 
-
-    -   [傳輸層級的安全性通訊協定](transport-layer-security-protocol.md)
-
-## <a name="see-also"></a>也了
-[Windows 驗證](https://technet.microsoft.com/library/cc755284.aspx)
+## <a name="see-also"></a>另請參閱
+[Windows 驗證](../windows-authentication/windows-authentication-overview.md)
+[Kerberos 驗證](../kerberos/kerberos-authentication-overview.md)
 
 

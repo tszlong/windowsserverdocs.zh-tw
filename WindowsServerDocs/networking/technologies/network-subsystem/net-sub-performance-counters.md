@@ -1,6 +1,6 @@
 ---
 title: 網路相關的效能計數器
-description: 本主題是部分的 Windows Server 2016 的網路效能子系統調整節目表。
+description: 本主題是 Windows Server 2016 的網路子系統效能調整指南的一部分。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,128 +8,129 @@ ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33551dfd4f76bc13ba69863b782ddae279e0ad16
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: e5e8abbc19482bcd0dd5670065cde59d5be3169a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824349"
 ---
 # <a name="network-related-performance-counters"></a>網路相關的效能計數器
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題列出的計數器相關管理網路效能，並包含下列各節。  
+本主題會列出與管理網路效能，且包含下列各節的計數器。  
   
--   [資源使用量](#bkmk_ru)  
+-   [資源使用率](#bkmk_ru)  
   
--   [潛在網路的問題](#bkmk_np)  
+-   [潛在網路問題](#bkmk_np)  
   
--   [接收效能側邊聯合 (RSC)](#bkmk_rsc)  
+-   [接收端聯合 (RSC) 效能](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a>資源使用量  
+##  <a name="bkmk_ru"></a> 資源使用率  
 
-下列效能計數器是與網路資源使用量。  
+下列效能計數器會與網路資源使用率。  
   
--   IPv4，請 IPv6  
+-   IPv4, IPv6  
   
-    -   資料包收到秒  
+    -   接收資料包數/秒  
   
-    -   傳送資料包日秒  
+    -   傳送的資料包/秒  
   
--   TCPv4 TCPv6  
+-   TCPv4, TCPv6  
   
-    -   區段收到秒  
+    -   Segments Received/sec  
   
-    -   區段會傳送秒  
+    -   傳送的區段/秒  
   
-    -   區段秒傳輸  
+    -   Segments Retransmitted/sec  
   
--   網路 Interface(*)、網路 Adapter(\*)  
+-   網路 Interface(*)，網路介面卡 (\*)  
   
-    -   位元組收到秒  
+    -   Bytes Received/sec  
   
-    -   傳送位元組日秒  
+    -   傳送的位元組/秒  
   
-    -   封包收到秒  
+    -   Packets Received/sec  
   
-    -   傳送封包日秒  
+    -   傳送的封包/秒  
   
     -   輸出佇列長度  
   
-     這個計數器是輸出封包佇列 \(in packets\) 長度。 如果這是超過 2，就會發生延遲。 您應該找出瓶頸，如果您可以將它移除。 NDIS 佇列要求，因為此長度一律應為 0。  
+     此計數器是輸出封包佇列長度\(封包中\)。 如果值大於 2，就會發生延遲。 您應該找出瓶頸，以及如果您可以將它消除。 NDIS 排入佇列的要求，因為這個長度應該一律是 0。  
   
 -   處理器資訊  
   
-    -   %處理器時間  
+    -   % Processor Time  
   
-    -   中斷秒  
+    -   Interrupts/sec  
   
-    -   Dpc 佇列秒  
+    -   DPCs Queued/sec  
   
-     這個計數器是 Dpc 已加入到邏輯處理器 DPC 佇列平均比例。 每個邏輯處理器都有它自己 DPC 佇列。 這個計數器測量 Dpc 加入至佇列，不 Dpc 佇列中數目的速度。 它會顯示發現上次兩個樣本，樣本間隔持續值之間的人而有所不同。  
+     此計數器是在 Dpc 已加入邏輯處理器 DPC 佇列的平均速率。 每個邏輯處理器有它自己 DPC 佇列。 此計數器會測量 Dpc 加入至佇列，而不是 Dpc 佇列的數目的速率。 它會顯示在最後兩個範例中，除以樣本間隔的持續時間中未觀察到的值之間的差異。  
   
-##  <a name="bkmk_np"></a>潛在網路的問題  
+##  <a name="bkmk_np"></a> 潛在網路問題  
 
-下列效能計數器的相關潛在網路問題。  
+下列效能計數器是潛在的網路問題相關。  
   
--   網路 Interface(*)、網路 Adapter(\*)  
+-   網路 Interface(*)，網路介面卡 (\*)  
   
-    -   捨棄收到的封包  
+    -   已丟棄接收封包  
   
-    -   收到錯誤封包。  
+    -   收到的封包錯誤  
   
-    -   封包輸出捨棄  
+    -   輸出封包捨棄  
   
-    -   封包輸出錯誤  
+    -   輸出封包錯誤  
   
--   WFPv4 WFPv6  
+-   WFPv4, WFPv6  
   
-    -   捨棄的封包日秒
+    -   捨棄的封包/秒
 
--   UDPv4 UDPv6
+-   UDPv4, UDPv6
 
-    -   資料包收到錯誤  
+    -   Datagrams Received 錯誤  
   
--   TCPv4 TCPv6  
+-   TCPv4, TCPv6  
   
-    -   連接失敗  
+    -   連線失敗  
   
-    -   連接重設  
+    -   連線重設  
   
 -   網路 QoS 原則  
   
     -   捨棄的封包  
   
-    -   卸除封包日秒  
+    -   卸除的封包/秒  
   
 -   每個處理器網路介面卡活動  
   
-    -   低資源收到指示秒  
+    -   低資源接收指示數/秒  
   
-    -   低資源收到封包秒  
+    -   低資源接收的封包/秒  
   
 -   Microsoft Winsock BSP  
   
-    -   卸除的資料包  
+    -   已捨棄的資料包  
   
-    -   卸除的資料包秒  
+    -   已捨棄的資料包/sec  
   
-    -   拒絕連接情形  
+    -   拒絕的連線  
   
-    -   連接拒絕的秒  
+    -   已拒絕的連線數/秒  
   
-##  <a name="bkmk_rsc"></a>接收效能側邊聯合 (RSC)  
+##  <a name="bkmk_rsc"></a> 接收端聯合 (RSC) 效能  
 
-下列效能計數器的相關 RSC 效能。  
+下列效能計數器會與 RSC 的效能相關的。  
   
 -   網路 Adapter(*)  
   
-    -   TCP 使用 RSC 連接情形  
+    -   作用中的 RSC 的 TCP 連線  
   
     -   TCP RSC 平均封包大小  
   
-    -   TCP RSC 聯合封包秒  
+    -   TCP RSC 聯合封包/秒  
   
-    -   TCP RSC 例外秒
+    -   TCP RSC Exceptions/sec
 
-本指南所有主題的連結，會看到[的網路效能子系統調整](net-sub-performance-top.md)。
+本指南中的所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。

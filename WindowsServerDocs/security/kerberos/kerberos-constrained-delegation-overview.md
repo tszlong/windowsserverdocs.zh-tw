@@ -1,6 +1,6 @@
 ---
-title: "Kerberos 限制委派概觀"
-description: "Windows Server 安全性"
+title: Kerberos Constrained Delegation Overview
+description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,58 +13,77 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e90aa5e395fa43a3f94cccb13444fd6991ac1074
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: d77dd6f6f310ae71a4d9e2d52b44cc9b1bef6401
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59821929"
 ---
-# <a name="kerberos-constrained-delegation-overview"></a>Kerberos 限制委派概觀
+# <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-適用於 IT 專業人員此概觀主題描述 Kerberos 限制委派 Windows Server 2012 R2 和 Windows Server 2012 中的新功能。
+此概觀主題適用於 IT 專業人員說明 Windows Server 2012 R2 和 Windows Server 2012 中的 Kerberos 限制委派的新功能。
 
-## <a name="feature-description"></a>描述的功能
-Windows Server 2003，以提供更安全地表單的委派無法使用的服務中引進委派 Kerberos 限制。 設定之後，限制的委派限制的使用者代表指定的伺服器可做的服務。 這需要設定核對服務網域系統管理員權限，而且會限制 account 單一網域。 今天的企業版，前端服務並未設計成限於整合只他們網域中的服務。
+**功能描述**
 
-更早版本作業系統網域系統管理員位置設定的服務，在服務系統管理員必須知道委派給其所擁有的資源服務的前端服務不實用的方式。 並無法委派給資源服務任何前端服務代表潛在的攻擊點。 如果受損裝載前端服務的伺服器，並設定委派給資源服務，可能也入侵資源服務。
+Windows Server 2003 推出的 Kerberos 限制委派，可提供一種較安全的委派形式，供服務使用。 設定此功能時，限制委派會限制指定伺服器可以代表使用者執行的服務。 這需要網域系統管理員權限才能設定服務的網域帳戶，並將該帳戶限制為單一網域。 在現今的企業，前端服務不會設計為限制為只有在其網域中的服務與整合。
 
-Windows Server 2012 R2 和 Windows Server 2012 中，若要設定限制的委派服務的能力已經傳輸網域系統管理員從服務系統管理員。 如此一來後, 端服務系統管理員可以允許或拒絕前端服務。
+在網域系統管理員可以設定服務的舊版作業系統中，服務系統管理員並沒有實用的方式可以得知哪些前端服務已委派給他們所擁有的資源服務。 而且，可以委派給資源服務的任何前端服務都代表一個潛在的攻擊點。 如果裝載前端服務的伺服器已遭到洩露，而且已將它設定為委派給資源服務，則資源服務可能也會遭到洩露。
 
-限制委派的詳細資訊的為引進了 Windows Server 2003，查看[Kerberos 通訊協定轉換和限制委派](https://technet.microsoft.com/library/cc739587(v=ws.10))。
+在 Windows Server 2012 R2 和 Windows Server 2012 中，若要設定服務的限制的委派的能力已從移轉網域系統管理員為服務系統管理員。 如此一來，後端服務系統管理員便能允許或拒絕前端服務。
 
-Windows Server 2012 R2 和 Windows Server 2012 的 Kerberos 通訊協定實作包括專為限制委派擴充功能。  使用者 Proxy (S4U2Proxy) 服務可讓您使用使用者其 Kerberos 服務票證後端服務取得的服務票證金鑰 Distribution 中心 (KDC) 的服務。 這些擴充功能讓限制的委派後端服務的帳號，另一個網域中的設定。 如需有關這些擴充功能的詳細資訊，請查看[\[MS-SFU\]: Kerberos 通訊協定擴充功能：使用者和限制委派通訊協定規格服務](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)MSDN 媒體櫃中。
+如需 Windows Server 2003 推出之限制委派的詳細資訊，請參閱 [Kerberos 通訊協定轉換與限制委派](https://technet.microsoft.com/library/cc739587(v=ws.10))。
 
-## <a name="practical-applications"></a>實用的應用程式
-限制的委派提供服務的系統管理員指定並執行的應用程式信任邊界藉由限制位置服務的應用程式可以依據代表使用者範圍的功能。 服務系統管理員可以設定，可以將前端服務帳號委派給他們後端服務。
+Windows Server 2012 R2 和 Windows Server 2012 的 Kerberos 通訊協定實作包含特別適用於限制委派的延伸模組。  Service for User to Proxy (S4U2Proxy) 讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。 這些擴充功能可讓後端服務的帳戶，可以位於另一個網域上設定限制的委派。 如需有關這些延伸模組的詳細資訊，請參閱 < [ \[MS-SFU\]:Kerberos 通訊協定延伸：Service for User 與限制的委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)MSDN Library 中。
 
-藉由支援限制的委派網域中的 Windows Server 2012 R2 和 Windows Server 2012 上，可以使用限制的委派給其他網域中的伺服器的驗證設定前端服務，例如 Microsoft 網際網路安全性加速 (ISA) 伺服器、Microsoft Forefront 威脅管理閘道、Microsoft Exchange Outlook Web Access (OWA)，並 Microsoft SharePoint 伺服器。 這提供支援跨網域服務方案，使用現有的 Kerberos 基礎結構。 網域系統管理員或服務的系統管理員可以管理委派 Kerberos 限制。
+**實際的應用程式**
 
-## <a name="new-and-changed-functionality"></a>新功能和變更功能
-**跨網域型資源限制的委派**
+限制的委派讓服務系統管理員指定與強制執行限制的範圍，應用程式服務可以代表使用者的應用程式信任界限的能力。 服務系統管理員能夠設定哪些前端服務帳戶可以委派給它們的後端服務。
 
-當前端服務和資源服務不在相同的網域中提供限制的委派可委派 Kerberos 限制。 服務管理員是可以指定前端服務，可模擬 account 物件的資源服務使用者的網域帳號設定新委派。
+由 Windows Server 2012 R2 和 Windows Server 2012 中，前端服務，例如 Microsoft Internet Security and Acceleration (ISA) Server、 Microsoft Forefront Threat Management Gateway、 Microsoft Exchange 中跨網域支援限制委派Outlook Web Access (OWA) 和 Microsoft SharePoint Server，都可以設定為使用限制的委派來驗證其他網域中的伺服器。 這樣可以使用現有的 Kerberos 基礎結構，支援跨網域服務解決方案。 Kerberos 限制委派可以由網域系統管理員或服務系統管理員來管理。
 
-**這項變更新增值為何？**
+## <a name="resource-based-constrained-delegation-across-domains"></a>跨網域的資源型限制委派
 
-藉由支援限制的委派跨網域，可以使用限制的委派中其他網域，而不要使用 [無限制的委派伺服器驗證服務設定。 這信任前端服務委派給任何服務，而不需要使用現有 Kerberos 基礎結構提供驗證支援跨網域服務方案。
+當前端服務和資源服務不在相同的網域時，可以使用 Kerberos 限制委派來提供限制委派。 服務系統管理員能夠藉由指定前端服務的網域帳戶來設定新委派，而這些前端服務可以模擬資源服務帳戶物件上的使用者。
 
-**有哪些方式各不相同？**
+**這個變更增加了什麼價值？**
 
-變更基礎通訊協定跨網域可限制的委派。 Windows Server 2012 R2 和 Windows Server 2012 的 Kerberos 通訊協定實作包含 Proxy (S4U2Proxy) 通訊協定使用者服務擴充功能。 這是一組擴充功能來 Kerberos 通訊協定，允許使用使用者其 Kerberos 服務票證後端服務取得的服務票證金鑰 Distribution 中心 (KDC) 的服務。
+藉由跨網域支援限制委派，可以將服務設定為使用限制委派來驗證其他網域中的伺服器，而不是使用非限制委派。 這樣便能使用現有的 Kerberos 基礎結構來提供跨網域服務解決方案的驗證支援，而不需信任要委派給任何服務的前端服務。
 
-這些擴充功能實作資訊，請查看[\[MS-SFU\]: Kerberos 通訊協定擴充功能：使用者和限制委派通訊協定規格服務](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)在 MSDN。
+這也會進入伺服器是否應該信任來源的資源擁有者委派從委派從網域系統管理員身分識別的決策。
 
-基本訊息順序 Kerberos 委派與轉送票證授與票證 (TGT) 相較於服務使用者 (S4U) 擴充功能的相關詳細資訊，會看到一節[1.3.3 通訊協定概觀](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx)在 [MS-SFU]: Kerberos 通訊協定擴充功能：使用者和限制委派通訊協定規格服務。
+**有哪些不同？**
 
-若要設定允許前端服務存取的使用者代表資源服務，請使用 Windows PowerShell cmdlet。
+基礎通訊協定中的變更允許跨網域的限制委派。 Windows Server 2012 R2 和 Windows Server 2012 的 Kerberos 通訊協定實作包含 service for User to Proxy (S4U2Proxy) 通訊協定的延伸模組。 此為一組 Kerberos 通訊協定的延伸，讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。
 
--   擷取一系列原則，使用**取得-ADComputer**，**取得-ADServiceAccount**，並**取得-ADUser** cmdlet 使用**屬性 PrincipalsAllowedToDelegateToAccount**參數。
+如需有關這些延伸模組的實作資訊，請參閱[ \[MS-SFU\]:Kerberos 通訊協定延伸：Service for User 與限制的委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)MSDN 中。
 
--   若要設定資源服務，使用**新-ADComputer**，**新-ADServiceAccount**，**新-ADUser**，**設定-ADComputer**，**設定-ADServiceAccount**，和**設定-ADUser** cmdlet 與**PrincipalsAllowedToDelegateToAccount**參數。
+相較於 Service for User (S4U) 延伸，如需有關含轉送票證授權票證 (TGT) 之 Kerberos 委派基本訊息順序的詳細資訊，請參閱 [1.3.3 通訊協定概觀](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx)一節，位於＜[MS-SFU]：Kerberos 通訊協定延伸：Service for User 與限制委派通訊協定規格＞中。
+
+**安全性意涵之資源型限制委派**
+
+資源型限制委派將控制項的手中的系統管理員擁有所存取之資源的委派。 這取決於資源服務，而不是受信任委派的服務屬性。 如此一來，資源型限制的委派無法使用先前控制通訊協定轉換的受信任-至-驗證-進行-委派位元。 KDC 會永遠允許通訊協定轉換，執行資源型限制委派，就好像已設為位元時。
+
+因為 KDC 不會限制通訊協定轉換，導入兩個新的已知 Sid 給這個控制項到資源管理員。  這些 Sid 找出是否發生，通訊協定轉換，並可以搭配標準存取控制清單來授與或限制存取所需。
+
+|SID|描述|
+|-------|--------|
+|AUTHENTICATION_AUTHORITY_ASSERTED_IDENTITY<br />S-1-18-1|表示用戶端的身分識別的 SID 為基礎的用戶端認證的擁有權證明驗證授權單位所判斷提示。|
+|SERVICE_ASSERTED_IDENTITY<br />S-1-18-2|表示用戶端的身分識別的 SID 是由服務所判斷提示。|
+
+後端服務可以使用標準的 ACL 運算式，以判斷使用者的驗證方式。
+
+**您要如何設定資源型限制委派？**
+
+若要設定資源服務以允許代表使用者進行前端服務存取，請使用 Windows PowerShell Cmdlet。
+
+-   若要擷取主體清單，請使用**Get-adcomputer**， **Get-adserviceaccount**，並**Get-aduser** cmdlet 搭配**屬性PrincipalsAllowedToDelegateToAccount**參數。
+
+-   若要設定資源服務，請使用**New-adcomputer**， **New-adserviceaccount**， **New-aduser**， **Set-adcomputer**， **Set-adserviceaccount**，並**Set-aduser**指令程式，其**PrincipalsAllowedToDelegateToAccount**參數。
 
 ## <a name="BKMK_SOFT"></a>軟體需求
-資源型限制的委派只能執行 Windows Server 2012、Windows Server 2012 R2 網域控制站設定，但可以在混合模式樹系套用。
+資源型限制的委派只能設定執行 Windows Server 2012 R2 和 Windows Server 2012，網域控制站上，但可以混合模式的樹系內套用。
 
-您必須將下列 hotfix 套用到所有執行 Windows Server 2012 中使用者 account 網域推薦路徑更早版本與 Windows Server 執行作業系統前端和端網域之間的網域控制站：資源型限制委派 KDC_ERR_POLICY 失敗 Windows Server 2008 R2 網域控制站環境中。
+您必須將下列 hotfix 套用到執行 Windows Server 2012 中使用者帳戶網域轉介路徑上執行作業系統的版本早於 Windows Server 的前端和後端網域間的所有網域控制站：資源型限制委派 KDC_ERR_POLICY 在含有 Windows Server 2008 R2 網域控制站的環境中失敗。

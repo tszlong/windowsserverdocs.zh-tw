@@ -1,6 +1,6 @@
 ---
-title: "設定伺服器的 WinSAT 分數"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 在伺服器上設定 WinSAT 分數
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,35 +13,36 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 77866acccac13ac48da8779700c8654f2c7f3277
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819949"
 ---
-# <a name="set-the-winsat-score-on-the-server"></a>設定伺服器的 WinSAT 分數
+# <a name="set-the-winsat-score-on-the-server"></a>在伺服器上設定 WinSAT 分數
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-您應該會執行 Windows Server Essentials 的作業系統最佳化的影片的串流解析度伺服器設定 WinSAT CPU 分數。 建立及安裝.xml 檔案，包含 WinSAT 分數資訊來執行此動作。  
+您應該執行 Windows Server Essentials 作業系統，以最佳化視訊串流解析度的伺服器設定 WinSAT CPU 分數。 建立並安裝含有 WinSAT 分數資訊的 .xml 檔案，即可達到此目的。  
   
 ## <a name="obtain-the-winsat-cpu-score"></a>取得 WinSAT CPU 分數  
- 您可以用 OPK 稱為 WinServerSAT.exe 探索 WinSAT CPU 分數和進入作業系統讀取 WinServerSAT.xml 檔案資訊的程式。  
+ OPK 隨附一個名為 WinServerSAT.exe 的程式，這個程式會探索 WinSAT CPU 分數，並將該資訊放置在作業系統會讀取的 WinServerSAT.xml 檔案中。  
   
 #### <a name="to-obtain-the-winsat-cpu-score"></a>若要取得 WinSAT CPU 分數  
   
-1.  在 [ADK 媒體複製 Resources\WinServerSAT\\ * 參考電腦。  
+1.  複製 Resources\WinServerSAT\\* 到參照電腦的 ADK 媒體中。  
   
-2.  參考在電腦上，開放提升權限的命令提示字元視窗。  
+2.  在參照電腦上，開啟提高權限的命令提示字元視窗。  
   
-3.  如果 %ProgramFiles%\Windows Server\Bin\OEM 資料夾不存在，輸入下列命令，然後按 Enter 鍵。  
+3.  如果 %ProgramFiles%\Windows Server\Bin\OEM 資料夾不存在，請輸入以下命令，然後按 Enter。  
   
-     **mkdir 」 %ProgramFiles%\Windows Server\Bin\OEM 」**  
+     **mkdir "%ProgramFiles%\Windows Server\Bin\OEM"**  
   
-4.  輸入下列命令，然後按 Enter 鍵。  
+4.  輸入以下命令，然後按 Enter。  
   
-     **WinServerSAT.exe 」 %ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml 」**  
+     **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
   
- 下列範例顯示 XML 到建立 WinServerSAT.xml 檔案。  
+ 以下範例顯示已建立的 WinServerSAT.xml 檔案的 XML 內容。  
   
 ```  
   
@@ -51,7 +52,7 @@ ms.lasthandoff: 07/03/2017
 </WinSAT>  
 ```  
   
- 其中*WinSAT_Score*會取代發現在伺服器的值。  
+ 其中 *WinSAT_Score* 會以在伺服器上探索的值取代。  
   
 > [!IMPORTANT]
->  您必須移除 WinServerSAT.exe、 winsat.prx、 winsat.wmv，以及 WinSATEncode.wmv 檔案參照電腦之前擷取映像。
+>  在擷取映像之前，您必須先將參照電腦上的 WinServerSAT.exe、winsat.prx、winsat.wmv 和 WinSATEncode.wmv 檔案移除。

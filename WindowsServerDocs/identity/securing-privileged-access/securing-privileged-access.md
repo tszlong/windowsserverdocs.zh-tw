@@ -1,215 +1,174 @@
 ---
-title: "保護的存取權限"
-description: "Windows Server 安全性"
-ms.custom: na
+title: 保護特殊權限的存取
+description: 若要保護特殊權限的存取的分段式的方法
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: eb83903204b00ef6c1eb116554ec54bc2211a399
-ms.sourcegitcommit: 7b01b54032ec56432116626e08fbd92508c3a7d5
+ms.date: 02/25/2019
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
+ms.reviewer: mas
+ms.openlocfilehash: 0d54a94d51a4d1e0a1d28f78ec39bf16bc3d9100
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822009"
 ---
-# <a name="securing-privileged-access"></a>保護的存取權限
+# <a name="securing-privileged-access"></a>保護特殊權限的存取
 
->適用於：Windows Server 2016
+>適用於：Windows Server
 
-保護權限存取權是現代化在組織中建立的企業資產安全性保證重大第一個步驟。 大部分或全部商務資產是在組織中的安全性，而定的特殊權限帳號，管理管理 IT 系統完整性。 攻擊者充滿網路的目標帳號這些和其他元素，以快速存取目標的資料與系統使用認證竊取攻擊特殊權限存取的[Pass--Hash 和 Pass 票證](https://www.microsoft.com/pth)。
+保護特殊權限存取是針對現代組織中的企業資產建立安全性保證時重要的第一個步驟。 IT 組織中的大部分或所有企業資產的安全性取決於用來管理、 管理及開發的特殊權限帳戶的完整性。 網路攻擊者通常會以這些帳戶，才能存取資料和使用認證竊取攻擊，例如系統的特殊權限存取的其他項目[Pass-雜湊與傳遞票證](https://www.microsoft.com/pth)。
 
-保護管理存取針對判斷對手需要您拍攝以完成而重視方法來找出這些系統的風險。 這個圖描述分隔並保護管理此藍圖中的三個階段建議：
+保護特殊權限的存取積極的攻擊者會要求您執行完整且深思熟慮的方法來隔絕這些系統風險。
 
-![建議的三個階段分隔和保護管理，在這個藍圖的簡圖](../media/securing-privileged-access/PAW_LP_Fig1.JPG)
+## <a name="what-are-privileged-accounts"></a>特殊權限的帳戶有哪些？
 
-藍圖目標：
+討論如何保護其安全之前可讓定義特殊權限的帳戶。
 
--   **2 至 4 星期計畫**： 快速減少最常使用的攻擊技術
+特殊權限的帳戶，例如 Active Directory 網域服務的系統管理員會有直接或間接存取大部分或所有的資產在 IT 組織，使這些帳戶的洩漏大量商務風險。
 
--   **1-3 個月計畫**： 組建可見性的系統管理員活動控制項
+## <a name="why-securing-privileged-access-is-important"></a>保護特殊權限的存取為何如此重要？
 
--   **6 + 每月方案**： 繼續建置防禦以主動式更多的安全性狀態
+特殊權限的存取，例如 Active Directory (AD) 來快速存取所有組織目標資料的系統上的網路攻擊者焦點。 傳統的安全性方法著重於網路和防火牆作為主要安全性周邊，但網路安全性的效能明顯降低兩個趨勢：
 
-Microsoft 建議您有依照此藍圖安全對有心對手特殊權限的存取。 您可以調整此藍圖以符合您現有的功能與您組織中的特定要求。
+* 組織要裝載資料，而且雲端服務，在行動裝置企業版裝置，例如行動電話和平板電腦的電腦上的傳統網路界限之外的資源，並攜帶您自己的裝置 (BYOD)
+* 攻擊者已透過網路釣魚和其他網路與電子郵件攻擊，取得網路界限內部工作站存取權，展現出一致且持續的攻擊能力。
 
-> [!NOTE]
-> 保護權限存取需要各式各樣的項目包括技術元件 （主機防禦、 account 保護、 身分管理等），以及變更處理及系統管理做法知識。
+這些因素會使得建置出驗證和授權的最新的安全性周邊身分識別的控制項，加上的傳統網路周邊策略必須顧及。 的安全性周邊被定義為一組一致的資產之間的潛在威脅，這些控制項。 特殊權限的帳戶可有效控管的這個新的安全性周邊因此請務必保護特殊權限的存取。
 
-## <a name="why-is-securing-privileged-access-important"></a>為何保護特殊權限存取重要？
-在大部分組織中，大部分或全部商務資產的安全性，而定完整性特殊權限帳號，管理管理 IT 系統。 充滿網路-攻擊者會將焦點放在系統的存取權限的目標 Active Directory 快速存取所有組織的資料，例如。
+![此圖顯示組織的身分識別層級](../media/securing-privileged-access/PAW_LP_Fig2.JPG)
 
-安全性傳統的方式有專注於使用組織網路的輸入與輸出點主要安全性周邊，但的網路安全性效率明顯降低由兩個趨勢：
+取得系統管理帳戶控制權的攻擊者可以使用這些權限，來增加其影響的目標組織如下所述：
 
--   組織裝載資料和行動裝置企業版電腦上的傳統網路邊界外、 裝置，例如行動裝置版的手機與平板電腦、 雲端服務和 BYOD 裝置
+![此圖顯示取得系統管理帳戶控制權的攻擊者可以使用那些權限，靠犧牲目標組織的代價來追求其個人目的](../media/securing-privileged-access/PAW_LP_Fig3.JPG)
 
--   對手有示範一致的和傳出功能存取工作站放置網路邊界透過網路釣魚和其他網頁和電子郵件的攻擊。
+下圖說明兩個路徑：
 
-自然取代網路安全性周邊複雜的現代化企業版的方式是組織的身分層的驗證並授權控制項。 特殊權限管理的帳號都是有效的這個新 」 安全性周邊 」 的控制，請務必保護的存取權限：
+* 完成 「 藍色 」 路徑的標準使用者帳戶用於資源，例如電子郵件和網頁瀏覽和每日工作的非特殊權限存取的位置。
 
-![圖表顯示組織的身分層](../media/securing-privileged-access/PAW_LP_Fig2.JPG)
+   > [!NOTE]
+   > 稍後所述的藍色路徑項目表示的系統管理帳戶以外的廣泛環境保護。
 
-取得管理 account 的控制權對手可以使用這些權限追求他們獲得執行目標組織如如下所示：
+* 「 紅色 」 的路徑，特殊權限的存取發生強行寫入的裝置，以減少網路釣魚和其他網路與電子郵件的攻擊的風險。
 
-![圖表顯示對手侵害管理帳號，如何使用這些權限來追求執行目標組織他們獲得](../media/securing-privileged-access/PAW_LP_Fig3.JPG)
+![此圖顯示藍圖，以隔離特殊權限的存取工作從高風險標準使用者工作，例如網頁瀏覽與存取電子郵件所建立的個別 「 路徑 」 進行管理](../media/securing-privileged-access/PAW_LP_Fig4.JPG)
 
-如需有關的攻擊，通常會導致系統帳號控制攻擊者類型的詳細資訊，請瀏覽[傳遞 Hash 網站](https://www.microsoft.com/pth)包含白皮書、 視訊等等。
+## <a name="securing-privileged-access-roadmap"></a>保護特殊權限的存取計劃
 
-此圖所管理藍圖建立隔離的風險高標準使用者工作網頁瀏覽和存取電子郵件權限的存取工作指出不同 「 通道 」。
+藍圖的設計目的，若要充分使用的 Microsoft 技術，您已經部署，充分利用雲端技術來加強安全性，並整合您可能已經部署任何第 3 方安全性工具。
 
-![圖表顯示管理隔離的風險高標準使用者工作網頁瀏覽和存取電子郵件權限的存取工作，建立藍圖不同 「 通道 」](../media/securing-privileged-access/PAW_LP_Fig4.JPG)
+Microsoft 建議的藍圖分成 3 個階段：
 
-因為對手可以使用各種不同的方法授權的存取權的控制權，緩和風險需要整體和詳細技術方法此藍圖中所述。 藍圖會隔離及強化環境中建置防禦中的欄數字的每個區域中的防護功能可讓存取權限的項目：
+* [第 1 階段：前 30 天內]()
+   * 使用有意義的正面影響的快速 wins。
+* [第 2 階段：90 天]()
+   * 重要的累加增強功能。
+* [第 3 階段：進行中]()
+   * 改進安全性和 sustainment。
 
-![下表顯示攻擊並防禦欄](../media/securing-privileged-access/PAW_LP_Fig5.JPG)
+藍圖已根據我們對這些攻擊的經驗和解決方案的實作經驗，優先排定最有效、最快速的實作。 
 
-## <a name="security-privileged-access-roadmap"></a>安全性特殊權限存取藍圖
-放到最大的技術，您可能會使用的設計目的是藍圖部署，利用技術重要的目前與未來的安全性，並整合您可能已經部署任何 3 廠商安全性工具。
-
-Microsoft 建議的藍圖分為 3 個階段中：
-
--   2 至 4 星期計劃-快速減少最常使用的攻擊技術
-
--   1-3 個月計劃-組建可見性的系統管理員活動控制項
-
--   6 + 月份計劃-繼續建置防禦以主動式更多的安全性狀態
-
-每個藍圖階段的設計目的是引發的成本和困難攻擊特殊權限的存取您在場所和雲端資產例子。 藍圖已排程最有效和快實作第一次根據我們與這些的攻擊方案實作體驗的優先順序。
+Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極的攻擊者。 您可能需要調整這份藍圖以容納您現有的功能以及您組織中的特定需求。
 
 > [!NOTE]
-> 藍圖的時間軸會大概和根據我們客戶實作體驗。 持續時間會視複雜的環境並變更管理處理程序在組織中而有所不同。
+> 保護特殊權限存取需要更廣泛的項目，包括技術元件 (主機防禦、帳戶保護、身分識別管理等) 以及處理程序的變更，和系統管理實務與知識。 藍圖的時間表為估計值，並且依我們的經驗與客戶實作為根據。 根據您的環境與變更管理處理程序的複雜程度，組織中的持續時間會有所不同。
 
-### <a name="security-privileged-access-roadmap-stage-1"></a>安全性特殊權限存取藍圖： 階段 1
-1 階段藍圖的焦點是在快速緩和認證竊取和濫用最常使用的攻擊技術。 階段 1 的設計目的是實作大約 2 至 4 星期中，這個圖所示：
+## <a name="phase-1-quick-wins-with-minimal-operational-complexity"></a>階段 1：最少的操作複雜性的快速 wins
 
-![圖顯示 1 階段的設計目的是大約 2 至 4 星期中實作](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
+計劃的階段 1 著重在快速減輕受到最常用的攻擊技術的認證竊取和濫用。 第 1 階段設計為在大約 30 天內實作，並會在此圖中所述：
 
-1 階段安全性特殊權限存取藍圖包含這些元件：
+![第 1 階段圖表：1. 另一個系統管理員和使用者帳戶、 2。 Just-in-time 3 次本機系統管理員密碼。 系統管理員工作站的階段 1，4。 身分識別攻擊偵測](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
 
-**1.不同的系統管理員負責管理工作**
+### <a name="1-separate-accounts"></a>1.不同的帳戶
 
-若要協助分開網際網路風險 (網路釣魚攻擊，瀏覽 web) 的系統管理員權限，建立專用的 account 所有的系統管理員權限的人員。 在這其他指導方針隨附於發行爪指示[在此](http://Aka.ms/CyberPAW)。
+為了杜絕網際網路風險 (網路釣魚攻擊、 網頁瀏覽) 從特殊權限存取帳戶，請為所有具備特殊權限存取的人員建立專用的帳戶。 系統管理員應該不會瀏覽網頁，檢查其電子郵件，以及進行日常的產能的工作，使用具有高度權限的帳戶。 詳細資訊，在此可以找到一節[分隔系統管理帳戶](securing-privileged-access-reference-material.md#separate-administrative-accounts)的參考文件。
 
-**2.特殊權限存取工作站 （腳印） 階段 1: Active Directory 系統管理員**
+請遵循本文中的指導方針[在 Azure AD 中管理緊急存取帳戶](/azure/active-directory/users-groups-roles/directory-emergency-access)建立至少兩個緊急存取帳戶，永久指派的系統管理員權限，在這兩個您內部部署 AD 與 Azure AD 環境. 這些帳戶是僅供使用，無法執行必要的工作例如，在傳統的系統管理員帳戶時的災害案例。
 
-若要協助分開網際網路風險 (網路釣魚攻擊，瀏覽 web) 的網域系統管理員權限，建立廣告系統管理員權限的人員專用特殊權限的存取工作站 （腳印）。 這是爪程式的第一個步驟，而且階段 1 指南發行的[在此](http://Aka.ms/CyberPAW)。
+### <a name="2-just-in-time-local-admin-passwords"></a>2.Just-in-time 時間本機系統管理員密碼
 
-**3.唯一本機系統管理員密碼工作站**
+若要減輕攻擊者竊取本機 SAM 資料庫中的本機系統管理員帳戶密碼雜湊，並濫用它攻擊其他電腦的風險，組織應該確定每台機器有唯一的本機系統管理員密碼。 本機系統管理員密碼解決方案 (LAPS) 工具可以在每一個工作站上設定唯一的隨機密碼，伺服器將其儲存在 Active Directory (AD) 保護的 ACL。 只有符合資格授權的使用者可讀取，或要求的本機系統管理員帳戶密碼重設。 您可以取得用於工作站和伺服器從 LAPS [Microsoft 下載中心取得](http://Aka.ms/LAPS)。
 
-**4.伺服器唯一本機系統管理員密碼**
+其他指導方針操作環境使用 LAP 和 Paw 可以找到一節[乾淨來源準則為基礎的操作標準](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)。
 
-若要降低對手竊取從本機坡資料庫本機系統管理員 account 密碼 hash 和濫用它攻擊其他電腦的風險，您應該使用圈工具來設定每個工作站和伺服器隨機的唯一密碼，以及在 Active Directory 登記這些密碼。 您可以取得工作站和伺服器使用本機系統管理員密碼方案[在此](http://Aka.ms/LAPS)。
+### <a name="3-administrative-workstations"></a>3.系統管理工作站
 
-找不到其他指導方針操作圈與腳印環境[在此](http://aka.ms/securitystandards)。
+作為 Azure Active Directory 與傳統內部部署 Active Directory 系統管理員權限的使用者初始的安全性措施，請確定它們使用設定的 Windows 10 裝置[高度安全的 Windows 標準10 的裝置](/windows-hardware/design/device-experiences/oem-highly-secure)。 
 
-### <a name="security-privileged-access-roadmap-stage-2"></a>安全性特殊權限存取藍圖： 步驟 2
-步驟 2 1 階段的組建上防護功能，並其設計可在大約 1-3 個月實作。 在這個圖表描繪這個階段中的步驟：
+### <a name="4-identity-attack-detection"></a>4.身分識別攻擊偵測
 
-![顯示步驟 2 階段的簡圖](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
+[Azure 進階威脅防護 (ATP)](/azure-advanced-threat-protection/what-is-atp)是雲端為基礎的安全性解決方案，以識別、 偵測到，並可協助您調查進階的威脅、 遭入侵的身分識別及導向您在內部使用的惡意內部人士動作Directory 環境。
 
-**1.爪階段 2 和 3： 所有系統管理員 」 和其他強化**
+## <a name="phase-2-significant-incremental-improvements"></a>第 2 階段：重要的漸進式增強
 
-若要網際網路風險分開所有特殊權限管理帳號，繼續與您在步驟 1 開始爪，實作專用的工作站所有的存取權限的人員。 此第 2 階段和 3 種指南 maps 發行[在此](http://Aka.ms/CyberPAW)。
+第 2 階段完成第 1 階段中的工作為基礎，而且是大約 90 天內完成。 此階段的步驟會在此圖表中說明︰
 
-**2.時間繫結權限 （不永久管理員）**
+![第 2 階段圖表：1. Windows hello 企業版 / MFA，2。 PAW 首度發行、 3。 Just-in-time 4 的時間權限。 Credential Guard，5。 認證外洩，6。 橫向移動的弱點可能會偵測](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
 
-若要降低曝光時間的權限提高看見他們的使用，提供權限在使用例如下方的適當方案的時間 (JIT):
+### <a name="1-require-windows-hello-for-business-and-mfa"></a>1.需要 Windows Hello 為商務和 MFA
 
--   Active Directory Domain Services (AD DS)，使用 Microsoft 的身分管理員 (MIM) 的[的存取權限管理員 (PAM)](https://technet.microsoft.com/en-us/library/mt150258.aspx)功能。
+系統管理員可以受益於與 Windows hello 企業版相關的使用便利性。 系統管理員可以取代他們的電腦上的增強式雙重要素驗證的複雜密碼。 攻擊者必須同時裝置和生物識別資訊或 PIN，才能存取該員工的不知情的情況下更為困難。 關於 Windows Hello 企業和首度發行的路徑的更多詳細資料可在發行項[Windows Hello for Business 概觀](/windows/security/identity-protection/hello-for-business/hello-overview)
 
--   Azure Active Directory 中，使用[Azure AD 特殊權限的身分管理 (PIM)](http://aka.ms/AzurePIM)功能。
+使用 Azure MFA 的 Azure AD 中，為您的系統管理員帳戶啟用多重要素驗證 (MFA)。 在啟用最小[基準保護條件式存取原則](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins)可以找到 Azure Multi-factor Authentication 的詳細資訊，在本文中[部署雲端式 Azure Multi-factor Authentication](/azure/active-directory/authentication/howto-mfa-getstarted)
 
-**3.多因素時間繫結提高權限**
+### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2.將 PAW 部署到所有的特殊權限的身分識別存取帳戶持有者
 
-若要增加系統管理員驗證保證程度，您應該需要之前的權限授與多因素驗證。
-這可以完成 MIM PAM 與 Azure AD PIM 使用 Azure 多因素驗證 (MFA)。
+繼續從電子郵件、 瀏覽網頁及其他非系統管理工作中找到的威脅將特殊權限的帳戶的程序，您應該實作專用的特殊權限存取工作站 (PAW) 具有特殊權限的存取權的所有人員的您組織的資訊系統。 PAW 部署的其他指引，請參閱文章[特殊權限存取工作站](privileged-access-workstations.md#paw-phased-implementation)。
 
-**4.俠維護只系統管理員 (JEA)**
+### <a name="3-just-in-time-privileges"></a>3.只是在時間的權限
 
-若要減少帳號網域管理權限和相關的曝光量，使用中的 PowerShell 執行一般維護作業網域控制站只達到管理 (JEA) 功能。 JEA 技術允許特定的使用者來執行特定管理工作伺服器 （例如網域控制站），而不將它們提供系統管理員權限。 下載從[TechNet](http://aka.ms/JEA)。
+若要降低權限的曝光時間並增加使用的可見性，提供 just-in-time (JIT) 使用如下所示的其中一個適當解決方案或其他第三方解決方案的權限：
 
-**5.較低攻擊網域和網域控制站的 surface**
+* 針對 Active Directory 網域服務 (AD DS)，請使用 Microsoft Identity Manager (MIM) 的[特殊權限存取管理員 (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) 功能。
+* 針對 Azure Active Directory，請使用 [Azure AD 特殊權限身分識別管理 (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan) 功能。
 
-若要減少對手控制的樹系的機會，您應該減少攻擊可以取得控制的網域控制站或網域控制物件的路徑。 請依照下列指導方針來減少此風險發行[在此](http://aka.ms/HardenAD)。
+### <a name="4-enable-windows-defender-credential-guard"></a>4.啟用 Windows Defender Credential Guard
 
-**6.攻擊偵測**
+啟用 Credential Guard 可協助保護 NTLM 密碼雜湊、 Kerberos 票證授權票證，並做為網域認證的應用程式所儲存的認證。 這項功能有助於防止認證竊取攻擊，例如傳遞-雜湊或傳遞票證藉由增加在環境中使用遭竊的認證進行樞紐分析的困難度。 Credential Guard 的運作方式以及如何部署的詳細資訊可在發行項[保護衍生的網域認證，與 Windows Defender Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)。
 
-若要取得可見性到作用中認證竊取和身分攻擊，讓您可以快速回應的事件和損害，部署及設定[Microsoft 進階威脅 Analytics (ATA)](https://www.microsoft.com/ata)。
+### <a name="5-leaked-credentials-reporting"></a>5.報告的認證外洩
 
-之前安裝 ATA，您應該確定您以處理主要安全性事件偵測 ATA 可能會有處理程序。
+「 每一天，Microsoft 會分析超過 6.5 兆個訊號識別新興的威脅及保護客戶以 「- [Microsoft 的數字](https://news.microsoft.com/bythenumbers/cyber-attacks)
 
--   事件回應程序設定的詳細資訊，請查看[回應 IT 安全性事件](https://aka.ms/irr)和 「 回應可疑的活動 」 和 「 從違約復原] 的區段[Mitigating Pass--Hash 和其他認證竊取](https://www.microsoft.com/pth)，版本 2。
+啟用 Microsoft Azure AD Identity Protection，以報告認證外洩的使用者，以便予以修復。 [Azure AD Identity Protection](/azure/active-directory/identity-protection/index)可以用來協助組織保護雲端和混合式環境的威脅。
 
--   如需有關包括 Microsoft 服務以協助您針對 ATA 產生事件和部署 ATA 準備您 IR 處理程序，請連絡 Microsoft 代表存取[這個頁面](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)。
+### <a name="6-azure-atp-lateral-movement-paths"></a>6.Azure ATP 橫向移動路徑
 
--   存取[這個頁面](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)的詳細資訊包括 Microsoft 服務，以協助的調查，並從事件復原
+請確定權限存取帳戶持有者會使用其 PAW 系統管理目的在於遭入侵的非特殊權限帳戶無法存取特殊權限的帳戶透過認證竊取攻擊，例如傳遞-雜湊或傳遞票證。 [Azure ATP 橫向移動路徑 (LMPs)](/azure-advanced-threat-protection/use-case-lateral-movement-path)提供容易了解報告來識別可能危及開啟特殊權限的帳戶。
 
--   實作 ATA，請依照下列部署本指南使用[在此](http://aka.ms/ata)。
+## <a name="phase-3-security-improvement-and-sustainment"></a>第 3 階段：改進安全性和 sustainment
 
-### <a name="security-privileged-access-roadmap-stage-3"></a>安全性特殊權限存取藍圖： 階段 3
-3 階段藍圖組建上防護功能與階段 1 2 加強和範圍上新增防護功能。 在這個圖表視覺描繪階段 3:
+計劃的第 3 階段為基礎來鞏固安全性現況的階段 1 和 2 中所採取的步驟。 此圖表會以視覺化方式說明第 3 階段：
 
-![圖表顯示階段 3](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
+![第 3 階段：1. 檢閱 RBAC，2。 減少受攻擊面，3。 整合 SEIM，4 中的記錄檔。 認證外洩的自動化](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
 
-這些功能將組建上之前的階段的防護功能，並將防禦移動到更多主動式的狀態。
+這些功能會建置在上一個階段的步驟，並將您的防禦措施移到更主動的防護。 這個階段中有任何特定的時間軸，而且可能需要較長的時間實作根據您針對個別組織。
 
-**1.現代化角色與委派模型**
+### <a name="1-review-role-based-access-control"></a>1.檢閱以角色為基礎的存取控制
 
-若要減少安全性風險，您應該會重新設計角色與委派模型層型號的規則與相容、 容納雲端服務的系統管理員角色，並整合主旨為系統管理員使用性的各個的層面。 此模型應該利用 JIT 和 JEA 功能的早期階段，以及工作自動化技術部署以達成下列目的。
+使用三個階層式的模型一文所述[Active Directory 系統管理層模型](securing-privileged-access-reference-material.md)、 檢閱，並確保較低層系統管理員不需要系統管理存取權較高層資源 （群組成員資格的 Acl使用者帳戶等.)。
 
-**2.智慧卡或護照驗證的所有系統管理員**
+### <a name="2-reduce-attack-surfaces"></a>2.減少受攻擊面
 
-增加保證層級和系統管理員驗證的可用性，您應該需要裝載 Azure Active Directory 與 （包括帳號聯盟雲端服務） 您 Windows 的伺服器 Active Directory 中的所有系統帳號穩固驗證。
+強化您的身分識別工作負載，包括網域、 網域控制站，ADFS，與 Azure AD Connect 為危害這些系統的其中一個可能會導致您的組織中的其他系統遭到入侵。 發行項[減少 Active Directory 的攻擊面](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md)並[五個步驟，保護您的身分識別基礎結構](/azure/security/azure-ad-secure-steps)提供指導方針來保護您的內部部署和混合式身分識別環境。
 
-**3.管理員樹系的 Active Directory 系統管理員**
+### <a name="3-integrate-logs-with-siem"></a>3.將記錄與 SIEM 整合
 
-若要提供最穩定的 Active Directory 系統管理員的防護，設定環境，在您的實際執行 Active Directory 中已不安全性相依性隔所有的攻擊，但最受信任的系統 production 環境中。 如需有關 ESAE 架構瀏覽[這個頁面](http://aka.ms/esae)。
+將記錄整合到集中式的 SIEM 工具可協助您分析、 偵測及回應安全性事件的組織。 發行項[監視的洩露跡象的 Active Directory](../ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise.md)和[附錄 l:要監視的事件](../ad-ds/plan/appendix-l--events-to-monitor.md)應該監視您的環境中的事件提供指引。
 
-**4.程式碼完整性原則 Dc (Server 2016)**
+這是一部分的更多規劃彙總，因為建立，並調整警示中的安全性資訊及事件管理 (SIEM) 需要技術熟練的分析師 （不同於 30 天計劃包括從 方塊中的警示中的 Azure ATP)
 
-若要限制的網域控制站的對手攻擊操作與管理意外的錯誤未經授權的程式，請設定 Windows Server 2016 的程式碼完整性核心 （驅動程式） 和使用者模式只允許電腦上執行的授權可執行檔 （應用程式）。
+### <a name="4-leaked-credentials---force-password-reset"></a>4.認證外洩-強制密碼重設
 
-**5.護套 Vm virtual dc (Server 2016 HYPER-V Fabric)**
+繼續增強您的安全性狀態，藉由啟用 Azure AD Identity Protection 到密碼有可能遭到入侵時，會自動強制執行密碼重設。 本指南的文章中找到[使用觸發程序的多重要素驗證和密碼變更的風險事件](/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa)說明如何啟用此使用條件式存取原則。
 
-若要利用一樣既有遺失的實體安全性攻擊的保護模擬的網域控制站，使用此新 Server 2016 HYPER-V 功能 Virtual 網域控制站的 Active Directory 機密遭竊，防止其他。 您可以使用此方案，加密代 2 Vm 保護 VM 的資料免於檢查、 遭竊和竄改來儲存和網路系統管理員以及攻擊 HYPER-V 主機系統管理員的 vm 強化存取。
+## <a name="am-i-done"></a>我完成了嗎？
 
-## <a name="am-i-done"></a>我已完成嗎？
-完成此藍圖，將會取得穩固特殊權限的存取保護目前目前已知，並且可用於對手攻擊。 很抱歉，安全性威脅的攻擊會不斷演進和 shift，因此我們建議您檢視持續專注於引發成本和降低對手針對您的環境的成功率與安全性。
+簡短的答案是沒有。
 
-保護權限存取重要的第一個步驟的企業資產安全性保證建立在現代化組織中，但不會包括的項目，例如原則，作業，安全性資訊，伺服器、 應用程式、 電腦、 裝置、 雲端 fabric 和其他元件提供安全性保證您需要的完整的安全性程式的僅限部分。
+壞人永遠不會停止，因此都不可以。 這份藍圖可協助保護貴組織目前已知的威脅，因為攻擊者會不斷地發展並轉移。 我們建議您檢視為進行中的程序著重於引發成本，並降低其成功率的對手您環境的安全性。
 
-建置完成安全性藍圖的詳細資訊，會看到 「 客戶責任和藍圖 > 一節企業 Architects 文件的 Microsoft Cloud 安全性[在此](http://aka.ms/securecustomer)。
-
-適用於互動協助與下列主題的任何 Microsoft 服務的詳細資訊，請連絡您的 Microsoft 代表或瀏覽[這個頁面](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)。
-
-### <a name="related-topics"></a>相關的主題
-[試試的頂級： 如何 Pass Hash 和其他形式的認證竊取降低](https://channel9.msdn.com/Blogs/Taste-of-Premier/Taste-of-Premier-How-to-Mitigate-Pass-the-Hash-and-Other-Forms-of-Credential-Theft)
-
-[Microsoft 進階威脅 Analytics](http://aka.ms/ata)
-
-[保護衍生的網域憑證的 Credential Guard](https://technet.microsoft.com/en-us/library/mt483740%28v=vs.85%29.aspx)
-
-[裝置 Guard 概觀](https://technet.microsoft.com/en-us/library/dn986865(v=vs.85).aspx)
-
-[使用安全管理員工作站保護的高價值資產](https://msdn.microsoft.com/en-us/library/mt186538.aspx)
-
-[目前 Probert （通道 9） 與 Windows 10 中的隔離的使用者模式](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
-
-[隔離的使用者模式處理程序和記錄與 Windows 10 中的功能 Gabriel （通道 9）](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
-
-[在處理程序與目前 Probert （通道 9） 與 Windows 10 隔離的使用者模式中的功能](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
-
-[降低認證竊取使用 Windows 10 隔離的使用者模式 (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
-
-[讓 Windows Kerberos 中的 [嚴格] \ [KDC 驗證](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
-
-[適用於 Windows Server 2012 F:kerberos 驗證中的新功能](https://technet.microsoft.com/library/hh831747.aspx)
-
-[在 Windows Server 2008 R2 逐步 AD ds 驗證機制保證](https://technet.microsoft.com/library/dd378897(v=ws.10).aspx)
-
-[信賴平台模組](https://docs.microsoft.com/en-us/windows/device-security/tpm/trusted-platform-module-overview)
+雖然不是唯一的保護特殊權限的存取貴組織的安全性計畫部分是您的安全性策略的重要元件。

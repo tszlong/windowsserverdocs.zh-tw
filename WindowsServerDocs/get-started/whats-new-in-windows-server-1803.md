@@ -9,15 +9,15 @@ ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
 ms.openlocfilehash: c4f80b668b91e65b6c8bc528e14f52a1d117a3c9
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2061468"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823089"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 的新功能
 
->適用於：Windows Server (半年通道)
+>適用於：Windows Server (半年度管道)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;本節內容說明 Windows Server 版本 1803 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱[Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
 
@@ -50,12 +50,12 @@ Windows Server 版本 1709 已於 2017 年 9 月做為半年通道中的第一�
 
 ## <a name="application-platform-and-containers"></a>應用程式平台和容器
 
-- 最佳化
+- Optimization
     - Server Core 基本容器映像從 Windows Server 版本 1709 開始已縮減 30%。 
     - 應用程式相容性也已改善，可協助進行傳統應用程式容器化。
     - 歸功於各種修正和最佳化，容器開機效能及執行時間效能已改善。
-- 容器網路功能：已新增 Localhost 和 http Proxy 支援，並改善容器延展性和啟動時間。
-- 工具：已增強對 Curl.exe、Tar.exe 和 SSH 的支援來補足 PowerShell 運用於建置和偵錯案例的功能。
+- 容器網路功能：新增 Localhost 和 http proxy 支援之後，，進而改善延展性和啟動時間的容器。
+- 工具：Curl.exe、 Tar.exe 和 SSH 支援已經過增強，來補充 PowerShell 建立和偵錯案例。
 
 ### <a name="server-core-container-image"></a>Server Core 容器映像
 
@@ -75,9 +75,9 @@ WSL 可讓伺服器系統管理員從 Windows Server 上的 Linux 使用現有�
 Kubernetes (通常稱為 K8s) 是在[雲端原生運算基金會 (Cloud Native Computing Foundation)](https://www.cncf.io) 管理下所開發適用於自動化部署、延展和管理容器化應用程式的開放原始碼系統。 
 
 在 Windows Server 版本 1709 中，使用者已經能充分利用 Windows 上的 Kubernetes 功能，包括：
-- 共用 Pod 區間：基礎架構和背景工作角色 Pod 現在共用網路區間 (類似於 Linux 命名空間)。
-- 端點最佳化：由於區間共用，容器服務現在需要追蹤的端點數量是以前的至少一半。
-- 資料路徑最佳化：改善虛擬篩選平台和主機網路服務，允許核心型負載平衡。
+- 共用 pod 區間：基礎結構和背景工作的 pod 現在共用網路區間 （類似於 Linux 命名空間）。
+- 端點最佳化：多虧有區間共用、 容器服務需要追蹤至少一半的多個端點。
+- 資料路徑最佳化：虛擬篩選平台及主機網路服務的改良功能可讓核心基礎負載平衡。
 
 隨著 Windows Server 版本 1803 的發行，未來的 Kubernetes 版本中將會提供更多功能： 
 - 由 Kubernetes 所協調適用於 Windows 容器的[儲存空間外掛程式](https://github.com/Microsoft/K8s-Storage-Plugins)。
@@ -92,7 +92,7 @@ Kubernetes (通常稱為 K8s) 是在[雲端原生運算基金會 (Cloud Native C
     - 具體來說，對 Server Core 及 Nano 伺服器容器映像的通知都已變更為 CTRL_SHUTDOWN_EVENT。 此外，這還會延伸 Server Core 容器映像中的通知來影響所有在容器中執行的處理程序，包括傳送服務關閉通知至容器中執行的服務。
 - docker pull 及 docker load，與判斷固定資料磁碟機是否必須有 BitLocker 保護才可寫入 (FDVDenyWriteAccess) 之原則設定的相容性問題已修正。 
 
-## <a name="storage"></a>儲存空間
+## <a name="storage"></a>儲存體
 
 在此版本中，可以防止檔案伺服器資源管理員服務於其啟動時在所有磁碟區上建立變更日誌 (也稱為 USN 日誌)。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview)。
 
@@ -111,4 +111,4 @@ Install-WindowsFeature -Name WDS
 ## <a name="see-also"></a>另請參閱
 
 [Windows Server 版本資訊](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Windows 10 (版本 1803) 新功能 IT 專業人員內容](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[在 Windows 10 中，版本 1803年中的 IT 專業人員內容最新消息](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

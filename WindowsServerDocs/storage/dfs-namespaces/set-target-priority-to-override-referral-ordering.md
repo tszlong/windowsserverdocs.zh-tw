@@ -1,6 +1,6 @@
 ---
-title: "設定目標優先順序以覆寫轉介順序"
-description: "本文說明如何設定目標優先順序以覆寫轉介順序"
+title: 設定目標優先順序以覆寫轉介順序
+description: 本文說明如何設定目標優先順序以覆寫轉介順序
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 10f5e8979ae2f6390da76276dfa193226019e5d3
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826359"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>設定目標優先順序以覆寫轉介順序
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用於：Windows Server 2019，Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
 
 轉介是排序的目標清單，當使用者存取命名空間根目錄或命名空間中包含目標的資料夾時，用戶端電腦會從網域控制站或命名空間伺服器收到轉介。 轉介中的每一個目標皆根據命名空間根目錄或資料夾的排序方法來排序。 
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 10/17/2017
 
 若要針對網域型命名空間，設定根目標的目標優先順序，請使用下列程序：
 
-1.  按一下 **\[開始\]**，指向 **\[系統管理工具\]**，然後按一下 **\[DFS 管理\]**。
+1.  按一下 [開始]，指向 [系統管理工具]，然後按一下 [DFS 管理]。
 
 2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，按一下要設定根目標優先順序的網域型命名空間。
 
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/17/2017
 
 若要設定資料夾目標的目標優先順序，請使用下列程序：
 
-1.  按一下 **\[開始\]**，指向 **\[系統管理工具\]**，然後按一下 **\[DFS 管理\]**。
+1.  按一下 [開始]，指向 [系統管理工具]，然後按一下 [DFS 管理]。
 
 2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，按一下要設定優先順序之目標的資料夾。
 
@@ -54,7 +55,7 @@ ms.lasthandoff: 10/17/2017
 > [!NOTE]
 > 若要使用 Windows PowerShell 來設定目標優先順序，請使用 [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) 和 [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) Cmdlet 與 **ReferralPriorityClass** 和 **ReferralPriorityRank** 參數。 這些 Cmdlet 於 Windows Server 2012 中引進。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
--   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
+-   [委派管理 DFS 命名空間的權限](delegate-management-permissions-for-dfs-namespaces.md)

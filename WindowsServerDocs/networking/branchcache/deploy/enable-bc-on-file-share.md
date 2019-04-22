@@ -1,6 +1,6 @@
 ---
-title: 讓 BranchCache 檔案共用（選擇性）
-description: 本主題是 BranchCache 部署節目表適用於 Windows Server 2016 的示範如何將 BranchCache 部署最佳化分公司 WAN 頻寬分散與裝載快取模式中的一部分
+title: 啟用檔案共用的 BranchCache (選用)
+description: 本主題是 BranchCache 部署指南的 Windows Server 2016 中，示範如何以最佳化 WAN 頻寬使用量，在分公司的分散式和裝載式快取模式部署 BranchCache 的一部分
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,39 +13,40 @@ ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33ed40ef91d9389bb7940dcf928cba43f0c9dbd2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 36d8379378529a94874c82e0aa90a6440f0281b2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822229"
 ---
-# <a name="enable-branchcache-on-a-file-share-optional"></a>讓 BranchCache 檔案共用（選擇性）
+# <a name="enable-branchcache-on-a-file-share-optional"></a>啟用檔案共用的 BranchCache (選用)
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用此程序，以便 BranchCache 檔案共用。  
+若要啟用 BranchCache 的檔案共用上，您可以使用此程序。  
   
 > [!IMPORTANT]  
-> 您不需要執行此程序，如果您設定 hash 發行值的**允許 hash 發行的所有共用資料夾**。  
+> 您不需要執行此程序，如果您設定具有值的雜湊發行集設定**允許所有共用資料夾的雜湊發行**。  
   
-資格在**系統管理員**，或相當於的最低需求才能執行此程序。  
+中的成員資格**系統管理員**，或同等權限才能執行此程序的最小值。  
   
-### <a name="to-enable-branchcache-on-a-file-share"></a>若要讓 BranchCache 檔案共用  
+### <a name="to-enable-branchcache-on-a-file-share"></a>若要在檔案共用上啟用 BranchCache  
   
-1.  開放的 Windows PowerShell，輸入**mmc**，然後按 ENTER 鍵。 Microsoft Management Console (MMC) 開啟。  
+1.  開啟 Windows PowerShell，輸入 **mmc**，然後按 ENTER 鍵。 此時會開啟 Microsoft Management Console (MMC)。  
   
-2.  在 MMC，在**檔案**功能表上，按**新增/移除嵌入式管理單元**。 **中新增或移除嵌入式管理單元**對話方塊。  
+2.  在 MMC 中，在**檔案**功能表上，按一下**新增/移除嵌入式管理單元**。 **新增或移除嵌入式管理單元**對話方塊隨即開啟。  
   
-3.  在**中新增或移除嵌入式管理單元**，請在**可用嵌入式管理單元**，按兩下 [**共用資料夾**。 選取 [本機電腦物件開啟共用資料夾精靈。 設定您想要的話，檢視按一下**完成**，然後按一下 [ **[確定]**。  
+3.  在 **新增或移除嵌入式管理單元**，請在**可用的嵌入式管理單元**，連按兩下**共用資料夾**。 共用資料夾精靈 隨即開啟與選取本機電腦物件。 設定您偏好，檢視按一下 **完成**，然後按一下**確定**。  
   
-4.  按兩下**共用資料夾（本機）**，然後按**共用**。  
+4.  按兩下**共用資料夾 （本機）**，然後按一下**共用**。  
   
-5.  在詳細資料窗格中，以滑鼠右鍵按一下 [共用]，然後按一下 [**屬性**。 分享的**屬性**對話方塊。  
+5.  在 [詳細資料] 窗格中，請在共用中，按一下滑鼠右鍵，，然後按一下**屬性**。 共用的**屬性**對話方塊隨即開啟。  
   
-6.  在**屬性**對話方塊中，於**一般**索引標籤上，按一下 [ **Offline 設定**。 **Offline 設定**對話方塊。  
+6.  在 **屬性**對話方塊的 **一般**索引標籤上，按一下 **離線設定**。 **離線設定**對話方塊隨即開啟。  
   
-7.  確認**的檔案和程式的使用者指定的提供 offline 僅**已選取，然後按一下 [**可讓 BranchCache**。  
+7.  請確認**只可以使用的檔案和使用者指定的程式離線**已選取，然後按一下**啟用 BranchCache**。  
   
-8.  按一下**[確定]**兩次。  
+8.  按兩次 **[確定]** 。  
   
 

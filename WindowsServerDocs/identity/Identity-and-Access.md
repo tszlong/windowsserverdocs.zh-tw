@@ -11,13 +11,13 @@ ms.topic: landing-page
 ms.author: billmath
 ms.localizationpriority: high
 ms.openlocfilehash: 161840d86cae6b688e3e7a877c7c44b17aefd432
-ms.sourcegitcommit: c6ac2f70f8fb5f27f6bbe5c9cfc9f76b02f557b5
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4286170"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824239"
 ---
-# 身分識別 | 存取
+# <a name="identity--access"></a>身分識別 | 存取
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
@@ -80,7 +80,7 @@ ms.locfileid: "4286170"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>適用於企業的 Windows 10：將裝置用於工作的方式</h3><hr />
+                        <h3>適用於企業的 Windows 10:若要使用裝置工作的方式</h3><hr />
                         <p>Windows 10 可讓您運用 Azure Active Directory。 Windows 10 裝置可以連線至 Azure AD，使用者可以使用 Azure AD 帳戶登入 Windows，或新增他們的 Azure ID 以存取商務應用程式和資源。</p>
                     </div>
                 </div>
@@ -130,8 +130,8 @@ ms.locfileid: "4286170"
 
 ---
 
-## 解決方案和案例指南  
-* [確保從任意地點使用任意裝置存取公司資源時的安全](https://technet.microsoft.com/library/dn550982.aspx)  
-*  [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](https://technet.microsoft.com/library/dn280945.aspx)  
-* [透過其他多因素驗證管理機密應用程式的風險](https://technet.microsoft.com/library/dn280949.aspx)  
+## <a name="solutions-and-scenario-guides"></a>解決方案和案例指南  
+* [保護從任何裝置上的任何位置存取公司資源](https://technet.microsoft.com/library/dn550982.aspx)  
+*  [從任何裝置加入工作地點網路提供 SSO 和無縫式次要因素驗證，跨公司應用程式](https://technet.microsoft.com/library/dn280945.aspx)  
+* [透過機密應用程式的其他多因素驗證管理風險](https://technet.microsoft.com/library/dn280949.aspx)  
 * [使用條件式存取控制管理風險](https://technet.microsoft.com/library/dn280937.aspx)

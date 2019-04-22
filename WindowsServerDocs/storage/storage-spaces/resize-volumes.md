@@ -10,24 +10,24 @@ author: cosmosdarwin
 ms.date: 01/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51f58ec23c55a6cb1664d800d6f4a75dae545899
-ms.sourcegitcommit: dfd25348ea3587e09ea8c2224237a3e8078422ae
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4678647"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824969"
 ---
-# 延伸儲存空間直接存取中的磁碟區
-> 適用於： Windows Server 2019、 Windows Server 2016
+# <a name="extending-volumes-in-storage-spaces-direct"></a>延伸儲存空間直接存取中的磁碟區
+> 適用於：Windows Server 2019，Windows Server 2016
 
 本主題將說明如何調整[直接儲存空間](storage-spaces-direct-overview.md)中的磁碟區大小。
 
-## 必要條件
+## <a name="prerequisites"></a>先決條件
 
-### 儲存集區的容量
+### <a name="capacity-in-the-storage-pool"></a>儲存集區的容量
 
 您可以調整磁碟區大小之前，請確定儲存集區中有足夠的容量，以容納其新的、更大的使用量。 例如，將三向鏡像磁碟區從 1 TB 大小調整為 2 TB 時，使用量會從 3 TB 增加到 6 TB。 為了調整大小成功，儲存集區將需要至少 (6 - 3) = 3 TB 的可用容量。
 
-### 熟悉儲存空間的磁碟區
+### <a name="familiarity-with-volumes-in-storage-spaces"></a>熟悉儲存空間的磁碟區
 
 在儲存空間直接存取，每個磁碟區包含幾個堆疊物件：叢集共用磁碟區 (CSV) (這是磁碟區)、磁碟分割、磁碟 (這是虛擬磁碟)，以及一或多個儲存層（如果有的話）。 若要調整磁碟區大小，您將需要調整幾個物件大小。
 
@@ -35,7 +35,7 @@ ms.locfileid: "4678647"
 
 若要熟悉它們，請嘗試執行**Get-** 搭配 PowerShell 的對應名詞使用。
 
-例如：
+例如: 
 
 ```PowerShell
 Get-VirtualDisk
@@ -49,7 +49,7 @@ Get-VirtualDisk
 Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
 ```
 
-## 步驟 1 – 調整虛擬磁碟大小
+## <a name="step-1--resize-the-virtual-disk"></a>步驟 1 – 調整虛擬磁碟大小
 
 虛擬磁碟不一定使用儲存層，根據建立方式。
 
@@ -61,7 +61,7 @@ Get-VirtualDisk <FriendlyName> | Get-StorageTier
 
 如果 cmdlet 沒有傳回任何項目，虛擬磁碟不使用儲存層。
 
-### 無儲存層
+### <a name="no-storage-tiers"></a>無儲存層
 
 如果虛擬磁碟沒有儲存層，您可以使用 **Resize-VirtualDisk** cmdlet 直接調整大小。
 
@@ -75,7 +75,7 @@ Get-VirtualDisk <FriendlyName> | Resize-VirtualDisk -Size <Size>
 
 ![Resize-VirtualDisk](media/resize-volumes/Resize-VirtualDisk.gif)
 
-### 使用儲存層
+### <a name="with-storage-tiers"></a>使用儲存層
 
 如果虛擬磁碟使用儲存層，您可以使用 **Resize-StorageTier** cmdlet 分別調整每個層大小。
 
@@ -98,7 +98,7 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 ![Resize-StorageTier](media/resize-volumes/Resize-StorageTier.gif)
 
-## 步驟 2 – 調整磁碟分割大小
+## <a name="step-2--resize-the-partition"></a>步驟 2 – 調整磁碟分割大小
 
 接下來，使用 **Resize-Partition**cmdlet 調整磁碟分割大小。 虛擬磁碟預期有兩個磁碟分割：第一個已保留，不應修改。第二個需要調整大小，有下列值 **PartitionNumber = 2** 和 **Type = Basic**。
 
@@ -119,13 +119,13 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 ![Resize-Partition](media/resize-volumes/Resize-Partition.gif)
 
-這樣就完成了！
+就這麼容易！
 
 > [!TIP]
 > 您可以執行 **Get-Volume** 檢查磁碟區是否有新的大小。
 
-## 請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
-- [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)
-- [建立儲存空間直接存取中的磁碟區](create-volumes.md)
+- [規劃中儲存空間直接存取磁碟區](plan-volumes.md)
+- [建立磁碟區中儲存空間直接存取](create-volumes.md)

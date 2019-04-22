@@ -1,6 +1,6 @@
 ---
-title: "疑難排解監視在 Windows Server Essentials 的電腦"
-description: "告訴您如何使用 Windows Server Essentials"
+title: Windows Server Essentials 中的電腦監視問題疑難排解
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,77 +13,78 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 72fe309e0e7ce6d7227cce8b7f2c5dbf018eb4a1
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813089"
 ---
-# <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>疑難排解監視在 Windows Server Essentials 的電腦
+# <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦監視問題疑難排解
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-本主題提供時發生監控電腦，並透過 Windows Server Essentials 的電子郵件通知的警示檢視器中的健康狀態的問題進行疑難排解。  
+本主題提供針對監視健全狀況狀態，在 警示檢視器中及透過電子郵件通知，Windows Server Essentials 中的電腦時所遇到的問題進行疑難排解。  
   
 > [!NOTE]
->  針對 Windows Server Essentials 社群貢獻的最新疑難排解資訊，我們建議您瀏覽[Windows Server Essentials 論壇](https://social.technet.microsoft.com/Forums/winserveressentials/threads)。 Windows Server Essentials 論壇是一個很好的協助，或是詢問問題。  
+>  從 Windows Server Essentials 社群最新的疑難排解資訊，建議您瀏覽[Windows Server Essentials 論壇](https://social.technet.microsoft.com/Forums/winserveressentials/threads)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。  
   
-##  <a name="BKMK_TS"></a>疑難排解警示的電子郵件通知  
+##  <a name="BKMK_TS"></a> 疑難排解警示的電子郵件通知  
  本節列出使用警示的電子郵件通知時，可能會遇到的各種問題。  
   
-### <a name="cannot-send-the-test-email-for-the-alert"></a>無法傳送測試警示的電子郵件  
- **問題**您收到錯誤訊息，無法傳送測試警示的電子郵件。  
+### <a name="cannot-send-the-test-email-for-the-alert"></a>無法傳送警示的測試電子郵件  
+ **問題**您收到錯誤訊息，指出，無法傳送測試電子郵件警示。  
   
- **原因**這個錯誤可能會造成任何下列設定警示通知的問題：  
+ **原因** 這個錯誤可能是因為警示通知的設定中有下列問題：  
   
 -   不正確的 SMTP 伺服器名稱或連接埠號碼。  
   
--   它指定不正確 SMTP 伺服器需要連接單一通訊端層 (SSL)。  
+-   不正確指定 SMTP 伺服器需要單一通訊端層 (SSL) 連線。  
   
--   SMTP 伺服器需要驗證而且輸入不正確的認證。  
+-   SMTP 伺服器需要驗證，但卻輸入不正確的認證。  
   
- **方案**修正您的電子郵件通知的設定中的任何錯誤。  
+ **解決方式** 修正電子郵件通知設定中的任何錯誤。  
   
-##### <a name="to-identify-issues-in-your-email-notification-settings"></a>找出問題您的電子郵件通知設定  
+##### <a name="to-identify-issues-in-your-email-notification-settings"></a>找出電子郵件通知設定的問題  
   
--   詢問正確 SMTP 伺服器名稱、連接埠號碼，並使用 SSL 網際網路服務提供者 (ISP)。  
+-   向您的網際網路服務提供者 (ISP) 詢問正確的 SMTP 伺服器名稱、連接埠號碼以及 SSL 用法。  
   
--   檢視警示的電子郵件通知的登入檔案伺服器，在這個位置中：  
+-   檢閱伺服器上警示之電子郵件通知的記錄檔，位置在：  
   
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  若要查看 ProgramData 資料夾，您必須隱藏顯示的項目。 如果您不 t s 功能區上看到 ProgramData 資料夾，**檢視**索引標籤的**顯示/隱藏**群組中，選取**隱藏的項目**文字方塊。  
+    >  若要查看 [ProgramData] 資料夾，您必須顯示隱藏的項目。 如果您不要看到 [ProgramData] 資料夾中，在功能區 s**檢視**索引標籤中，於**顯示/隱藏**群組中，選取**隱藏的項目**文字方塊。  
   
-##### <a name="to-update-your-email-notification-setup-for-alerts"></a>若要更新您的警示的電子郵件通知設定  
+##### <a name="to-update-your-email-notification-setup-for-alerts"></a>更新警示的電子郵件通知設定  
   
-1.  儀表板，按一下右上角打開警示檢視器任何警示圖示。  
+1.  在儀表板上，按一下右上角的任何警示圖示以開啟警示檢視器。  
   
-2.  底部的 [提醒] 檢視器，請按一下**設定電子郵件通知的警示**。  
+2.  在警示檢視器底部，按一下 [設定警示的電子郵件通知] 。  
   
-3.  在**設定電子郵件通知的警示**對話方塊中，按**支援**。  
+3.  在 [設定警示的電子郵件通知] 對話方塊中，按一下 [啟用]。  
   
-4.  在**SMTP 設定**對話方塊中，更新 SMTP 設定，然後按一下 [ **[確定]**。  
+4.  在 [SMTP 設定] 對話方塊中，更新 SMTP 設定，然後按一下 [確定]。  
   
-5.  若要測試的更新的設定，請按一下**套用並傳送電子郵件**。  
+5.  若要測試更新的設定，請按一下 [套用及傳送電子郵件] 。  
   
-6.  您確認測試電子郵件已成功後，請按一下**[確定]**以儲存您的更新的設定。  
+6.  確認測試電子郵件已成功後，按一下 [確定]  以儲存更新的設定。  
   
-### <a name="test-email-notification-does-not-list-any-alerts"></a>測試電子郵件通知未列出任何警示  
- **問題**即使有警示檢視器中列出的警示測試電子郵件通知的警示不會顯示任何通知。  
+### <a name="test-email-notification-does-not-list-any-alerts"></a>測試電子郵件通知沒有列出任何警示  
+ **問題** 警示的測試電子郵件通知沒有顯示任何警示，即使警示檢視器中有列出警示時亦同。  
   
- **方案**未警示報告的警示檢視器中的產生的電子郵件通知。 設定為會擴大為他們健康的定義檔案中的電子郵件通知的警示的電子郵件傳送給指定的電子郵件收件者。  
+ **解決方式** 警示檢視器中並非所有警示都會產生電子郵件通知。 只有在其健康定義檔內設定為以電子郵件通知呈報的警示，才會以電子郵件傳送給指定的電子郵件收件者。  
   
- 當您按下**套用並傳送電子郵件**，通常是您會收到範例電子郵件通知未列出的健康警示。 不過，如果已傳送電子郵件通知健康警示找出這項測試程序期間，該警示包含測試電子郵件中。  
+ 當您按一下 [套用及傳送電子郵件] 時，通常您會收到沒有列出任何健康情況警示的範例電子郵件通知。 不過，如果此測試程序期間已確認有設定為傳送電子郵件通知的健康警示，測試電子郵件中就會包含該警示。  
   
-### <a name="active-alerts-are-displayed-for-an-uninstalled-application"></a>作用中警示會顯示為已解除安裝的應用程式  
- **問題**顯示即使應用程式，並其健康定義檔已被解除安裝的應用程式的作用中警示。  
+### <a name="active-alerts-are-displayed-for-an-uninstalled-application"></a>已解除安裝的應用程式顯示作用中警示  
+ **問題** 即使應用程式及其健康定義檔已解除安裝，仍然會顯示應用程式的作用中警示。  
   
- **方案**您必須手動 delete 解除安裝應用程式的作用中警示。 若要 delete 警示，執行下列動作。  
+ **解決方式** 您必須手動刪除已解除安裝之應用程式的作用中警示。 若要刪除警示，請執行下列動作。  
   
-##### <a name="to-delete-an-alert-from-the-server-by-using-the-dashboard"></a>若要從伺服器的警示 delete 使用儀表板  
+##### <a name="to-delete-an-alert-from-the-server-by-using-the-dashboard"></a>使用儀表板從伺服器刪除警示  
   
-1.  伺服器，從左儀表板。  
+1.  從伺服器開啟 [儀表板]。  
   
-2.  在瀏覽窗格中，按一下任何顯示警示圖示（重大、警告或資訊）。 這時限警示檢視器。  
+2.  在瀏覽窗格中，按一下任何顯示的警示圖示 (嚴重、警告或資訊)。 這會啟動警示檢視器。  
   
-3.  在警示檢視器，以滑鼠右鍵按一下您想要 delete，然後按一下 [提醒**Delete 此警示**。
+3.  在 [警示檢視器] 中，以滑鼠右鍵按一下您想要刪除的警示，然後按一下 [刪除此警示]。

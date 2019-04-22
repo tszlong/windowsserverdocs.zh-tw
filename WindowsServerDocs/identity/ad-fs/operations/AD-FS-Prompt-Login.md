@@ -1,6 +1,6 @@
 ---
-title: "AD FS 提示 = 登入"
-description: "Ad FS 2016 常見問題集"
+title: AD FS 提示 = 登入
+description: 適用於 AD FS 2016 的常見問題集
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,66 +9,67 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b98cdc27c9bd01d9855e98965f59ebe5257ed5c
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.openlocfilehash: 6a4b6cfe98064181824e210be9031a0f67cb4b75
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824629"
 ---
-# <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory 同盟服務提示 = 登入參數支援
-下列文件告訴您的原生支援提示 = 登入參數，可在 AD FS。
+# <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory Federation Services 提示 = 登入參數支援
+下列文件描述 prompt = 登入參數可在 AD FS 中的原生支援。
 
-## <a name="what-is-promptlogin"></a>提示 = 登入？  
+## <a name="what-is-promptlogin"></a>什麼是 prompt = login？  
 
-某些（使用現代化驗證支援）的 Office 365 應用程式傳送提示 = 登入參數 Azure ad 為每個驗證要求的一部分。  根據預設，Azure AD 轉譯這兩個參數：<code><b>wauth</b>=urn:oasis:names:tc:SAML:1.0:am:password</code>，並<code><b>wfresh</b>=0</code>。
+某些 Office 365 應用程式 （已啟用新式驗證） 會將 prompt = login 參數傳送至每個驗證要求的一部分的 Azure AD。  根據預設，Azure AD 轉譯這兩個參數： <code> <b> wauth </b> =urn:oasis:names:tc:SAML:1.0:am:password </code>，以及<code> <b> wfresh </b> =0 </code>.
 
-這可能會造成內部網路與多因素驗證案例需要驗證類型以外的使用者名稱和密碼的問題。  
+這可能會造成公司內部網路與使用者名稱和密碼以外的驗證類型所需的 multi-factor authentication 案例的問題。  
 
-AD FS 在 2016 年 7 月更新彙總套件與 Windows Server 2012 R2 推出提示 = 登入參數原生的支援。  這表示您現在可以設定 Azure AD 的選擇傳送此參數-Azure AD 的一部分就是您 AD FS 服務和 Office 365 驗證要求。
+AD FS 2016 年 7 月更新彙總套件的 Windows Server 2012 R2 中引進了 prompt = login 參數的原生支援。  這表示您現在可以選擇設定 Azure AD，將這個參數當做-為您的 AD FS 服務，做為一部分的 Azure AD 和 Office 365 驗證要求。
 
-### <a name="ad-fs-versions-that-support-promptlogin"></a>AD FS 版本支援提示 = 登入
-以下是 AD FS 版本支援提示 = 參數登入的清單。
+### <a name="ad-fs-versions-that-support-promptlogin"></a>支援提示字元中的 AD FS 版本 = 登入
+以下是一份支援 prompt = login 參數的 AD FS 版本。
 
-- AD FS 年 7 月 2016 年與 Windows Server 2012 R2 的更新彙總套件
+- AD FS 2016 年 7 月的 Windows Server 2012 R2 更新彙總套件
 
-- 在 Windows Server 2016 AD FS
+- Windows Server 2016 中的 AD FS
 
-## <a name="how-do-to-configure-your-azure-ad-tenant-to-send-promptlogin-to-ad-fs"></a>如何設定傳送提示您 Azure AD 承租人 = AD FS 登入
+## <a name="how-do-to-configure-your-azure-ad-tenant-to-send-promptlogin-to-ad-fs"></a>如何設定 Azure AD 租用戶傳送 prompt = 登入 AD FS
 
-使用 Azure AD PowerShell 模組設定。
+使用 Azure AD PowerShell 模組來進行設定。
 
 > [!NOTE]
-> （PromptLoginBehavior 屬性支援）的提示 = 登入功能是目前只適用於[' 版本 1.0' Azure AD Powershell 模組](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)，cmdlet 中已包含」Msol」，例如 Set-MsolDomainFederationSettings 名稱。  不透過目前可用 ' 版本 2.0' Azure AD PowerShell 模組，其 cmdlet 有名稱等」設定-AzureAD\ *」。
+> （啟用 PromptLoginBehavior 屬性） 的提示 = 登入功能是目前只適用於[' 版本 1.0' Azure AD Powershell 模組](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)，在其中是 cmdlet 擁有包含"Msol"，例如的名稱Set-msoldomainfederationsettings。  不是目前可透過 ' 版本 2.0' Azure AD PowerShell 模組，其 cmdlet 有名稱類似"集 AzureAD\*"。
 
-若要設定 [命令提示字元中 = 登入的行為，下列 cmdlet 語法：
+若要設定提示字元 = 登入行為，下列 cmdlet 語法：
 
-範例 1:
+範例 1：
 ```powershell
     Set-MsolDomainFederationSettings –DomainName <your domain name> -PreferredAuthenticationProtocol <your current protocol setting> 
 ```
 
-範例 2:
+範例 2：
 ```powershell
     Set-MsolDomainFederationSettings –DomainName <your domain name> -SupportsMfa <$True|$False>
 ```
 
-範例 3:
+範例 3：
 ```powershell
     Set-MsolDomainFederationSettings –DomainName <your domain name> -PromptLoginBehavior <TranslateToFreshPasswordAuth|NativeSupport|Disabled>
 ```
 
  
- 檢視 cmdlet 的輸出找到 PreferredAuthenticationProtocol、SupportsMfa，以及 PromptLoginBehavior 屬性的值：![取得-MsolDomainFederationSettings](media/AD-FS-Prompt-Login/GetMsol.png)
+ PreferredAuthenticationProtocol、 SupportsMfa 和 PromptLoginBehavior 屬性值可在檢視 cmdlet 的輸出：![Get-MsolDomainFederationSettings](media/AD-FS-Prompt-Login/GetMsol.png)
 ```powershell
     Get-MsolDomainFederationSettings -DomainName <your_domain_name> | fl *
  ```
 > [!NOTE]
-> 根據預設，執行 Get-MsolDomainFederationSettings 時，某些屬性，不會顯示在主機中。  若要檢視建議您使用這些參數 |fl * 強制的所有物件的屬性輸出。
+> 根據預設，執行 Get-msoldomainfederationsettings 時，某些屬性不會顯示在主控台中。  若要檢視建議，您會使用這些參數 |fl * 以強制輸出的所有物件的屬性。
 
 
-以下是 PromptLoginBehavior 參數，其設定的相關詳細資訊。
+以下是 PromptLoginBehavior 參數和其設定的詳細資訊。
    
-   - <b>TranslateToFreshPasswordAuth</b>表示預設 Azure AD 行為傳送的<b>wauth</b>和<b>wfresh</b>以而非提示 AD FS = 登入
-   - <b>NativeSupport</b> = 提示登入參數會傳送到 AD FS 表示
-   - <b>停用</b>表示不會傳送給 AD FS
+   - <b>TranslateToFreshPasswordAuth</b>表示傳送的預設 Azure AD 行為<b>wauth</b>並<b>wfresh</b>而不是提示字元中的 AD fs = 登入
+   - <b>NativeSupport</b> prompt = login 參數將會依原狀傳送至 AD FS 的表示
+   - <b>已停用</b>表示不會傳送至 AD FS
 

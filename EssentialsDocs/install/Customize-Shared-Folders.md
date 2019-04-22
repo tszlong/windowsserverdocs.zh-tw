@@ -1,6 +1,6 @@
 ---
-title: "自訂共用的資料夾"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 自訂共用資料夾
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,51 +12,52 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bcdd43183512bb225dd4afa916f2782c6eb79d7e
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 552a76ba9c2ff385f1ff09d4869eaeb6613027a7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823469"
 ---
-# <a name="customize-shared-folders"></a>自訂共用的資料夾
+# <a name="customize-shared-folders"></a>自訂共用資料夾
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-根據預設，伺服器資料夾會建立在 0 上最大資料磁碟分割。 合作夥伴可以自訂的位置，指定其他伺服器資料夾中，使用下列步驟：  
+伺服器資料夾依預設會建立在磁碟 0 最大的資料磁碟分割上。 合作夥伴可使用下列步驟來自訂位置，以及指定其他伺服器資料夾：  
   
-1.  使用自訂的磁碟分割設定，請建立原廠映像，並使用 sysprep 建立新的儲存空間登錄金鑰。 在初始設定 (IC)，此登錄鍵檢查儲存空間 IC 工作。 如果有的話，預設伺服器資料夾會建立在 C:\ServerFolders directory 中。  
+1.  使用自訂磁碟分割設定建立原廠映像，然後在使用 sysprep 前建立新的 Storage 登錄機碼。 在初始設定 (IC) 期間，存放裝置 IC 工作會檢查是否有此登錄機碼。 如果存在，則會在 C:\ServerFolders 目錄中建立預設的伺服器資料夾。  
   
-    #### <a name="to-create-a-new-storage-registry-key"></a>若要建立新的儲存空間登錄鍵  
+    #### <a name="to-create-a-new-storage-registry-key"></a>建立新的 Storage 登錄機碼  
   
-    1.  在伺服器上，將滑鼠移到畫面的右上角，然後按一下**搜尋**。  
+    1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。  
   
-    2.  在搜尋方塊中，輸入**regedit**，然後按**Regedit**應用程式。  
+    2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]  應用程式。  
   
-    3.  在瀏覽窗格中，展開**跳**，展開 [**軟體**，然後展開 [ **Microsoft**。  
+    3.  在瀏覽窗格中，依序展開 **[HKEY_LOCAL_MACHINE]**、**[SOFTWARE]** 與 **[Microsoft]**。  
   
-    4.  以滑鼠右鍵按一下**Windows Server**，按一下 [**新**，然後按一下 [**鍵**。  
+    4.  以滑鼠右鍵按一下 **[Windows Server]**，按一下 **[新增]**，然後按一下 **[機碼]**。  
   
-    5.  命名按鍵**存放裝置**。  
+    5.  將機碼命名為 **Storage**。  
   
-    6.  在瀏覽窗格中，以滑鼠右鍵按一下新的儲存空間登錄鍵、按一下**新**，然後按一下 [ **DWORD（32 位元）值**。  
+    6.  在瀏覽窗格中，以滑鼠右鍵按一下新的 Storage 登錄機碼，按一下 **[新增]**，然後按 **[DWORD (32-位元) 值]**。  
   
-    7.  名稱字串**CreateFoldersOnSystem**。  
+    7.  將字串命名為 **CreateFoldersOnSystem**。  
   
-    8.  以滑鼠右鍵按一下**CreateFoldersOnSystem**，然後按**修改]**。 **編輯字串**對話方塊中出現。  
+    8.  在 **[CreateFoldersOnSystem]** 上按一下滑鼠右鍵，然後按一下 **[修改]**。 **[編輯字串]** 對話方塊隨即出現。  
   
-    9. 設定的這個新的金鑰值**1**，然後按**[確定]**。  
+    9. 將此新機碼的值設定為 **1**，然後按一下 **[確定]**。  
   
-2.  使用 PostIC.cmd 指令碼，移動至不同位置的資料夾，或建立其他資料夾。 查看下列範例：[第 1 範例：建立自訂資料夾，並使用 Windows PowerShell 來從 PostIC.cmd 移動預設資料夾到新的位置](Customize-Shared-Folders.md#BKMK_Example1)。  
+2.  使用 PostIC.cmd 指令碼將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 1:建立自訂資料夾，並在預設資料夾移至新的位置從 PostIC.cmd 使用 Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1)。  
   
-3.  使用 Windows Server 方案 SDK 移動至不同位置的資料夾，或建立其他資料夾。 查看下列範例：[第 2 範例：建立自訂資料夾，並使用 Windows Server 方案 SDK 將現有的資料夾](Customize-Shared-Folders.md#BKMK_Example2)。  
+3.  使用 Windows Server 解決方案 SDK 將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 2:建立自訂資料夾，並使用 Windows Server 解決方案 SDK 中移動現有資料夾](Customize-Shared-Folders.md#BKMK_Example2)。  
   
- 合作夥伴（選擇性）c 磁碟機上保留資料的資料夾這可讓使用者或經銷商判斷資料磁碟機上的資料資料夾的版面配置。  
+ 或者，合作夥伴也可以將資料夾保留在磁碟機 C 上。如此可讓使用者或轉銷商判斷資料磁碟機上的資料夾配置。  
   
-###  <a name="BKMK_Example1"></a>範例 1：建立自訂資料夾，並使用 Windows PowerShell 來從 PostIC.cmd 移動預設資料夾到新的位置  
+###  <a name="BKMK_Example1"></a> 範例 1:使用 Windows PowerShell 從 PostIC.cmd 建立自訂資料夾，並將預設資料夾移到新位置  
   
-1.  建立後執行以在詳細初始設定工作 PostIC.cmd 檔案[適用於執行文章初始設定工作建立 PostIC.cmd 檔案](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節。  
+1.  依照[建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節中的詳細說明，建立用來執行初始設定後續工作的 PostIC.cmd 檔案。  
   
-2.  使用「記事本」中建立檔名為**customizefolders.ps1**中 C:\Windows\Setup\Scripts 資料夾貼上到檔案的命令下列 Windows PowerShell®（標示適當行，視想要的行為）。  
+2.  使用 [記事本] 在 C:\Windows\Setup\Scripts 資料夾中建立名為 **customizefolders.ps1** 的檔案，然後將下列 Windows PowerShell® 命令貼到此檔案中 (根據所要的行為適當取消某幾行的標示)。  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  
@@ -83,7 +84,7 @@ ms.lasthandoff: 07/03/2017
     exit 0  
     ```  
   
-3.  將下列命令新增至 PostIC.cmd 檔案執行的指令碼。  
+3.  將下列行新增至 PostIC.cmd 檔案並執行此指令碼。  
   
     ```  
     REM Lower the execution policy  
@@ -93,13 +94,13 @@ ms.lasthandoff: 07/03/2017
     "%programfiles%\Windows Server\bin\WssPowershell.exe" -NoProfile -Noninteractive -command ". %windir%\setup\scripts\customizefolders.ps1;exit $LASTEXITCODE"  
     Set error_level=%ERRORLEVEL%  
   
-    REM Restore the execution policy to deafult  
+    REM Restore the execution policy to default  
     "%programfiles%\Windows Server\bin\WssPowershell.exe" "Set-ExecutionPolicy Restricted"  
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a>建立自訂資料夾，並使用 Windows Server 方案 SDK 將現有的資料夾範例 2:  
- 可以可執行檔，以符合您所建立的程式碼，然後稱為 PostIC.cmd 檔案從或稱為直接從安裝增益集。  
+###  <a name="BKMK_Example2"></a> 範例 2:使用 Windows Server 解決方案 SDK 建立自訂資料夾，並移動現有資料夾  
+ 您所建立的程式碼可編譯為可執行檔，然後從 PostIC.cmd 檔案加以呼叫，或直接從已安裝的增益集呼叫。  
   
 ```  
 static void Main(string[] args)  
@@ -142,8 +143,8 @@ static void Main(string[] args)
 }  
 ```  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
