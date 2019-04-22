@@ -1,55 +1,55 @@
 ---
-title: 指令碼搭配儲存空間直接存取的效能歷程記錄
+title: 指令碼與儲存空間直接存取的效能歷程記錄
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
-Keywords: Storage Spaces Direct
+Keywords: 儲存空間直接存取
 ms.localizationpriority: medium
 ms.openlocfilehash: cc8ebcaaf7cc39cfadb0ebcec71ed573b436b466
-ms.sourcegitcommit: 78ecb64cac789751abf9fd3f55b4a1fcbbe4dad2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8843106"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59816319"
 ---
-# 指令碼搭配 PowerShell 和儲存空間直接存取的效能歷程記錄
+# <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>指令碼與 PowerShell 和儲存空間直接存取的效能歷程記錄
 
-> 適用於： Windows Server Insider Preview 組建 17692 及更新版本
+> 適用於：Windows Server Insider Preview 組建 17692 和更新版本
 
-在 Windows Server 2019，[儲存空間直接存取](storage-spaces-direct-overview.md)會記錄並儲存虛擬機器、 伺服器、 磁碟機、 磁碟區、 網路介面卡，及更廣泛的[效能歷程記錄](performance-history.md)。 效能歷程記錄是輕鬆地查詢和 PowerShell 中的程序，因此您可以快速瀏覽從*原始資料*的*實際解答*像：
+在 Windows Server 2019，[儲存空間直接存取](storage-spaces-direct-overview.md)記錄和廣泛的存放區[效能歷程記錄](performance-history.md)的虛擬機器、 伺服器、 磁碟機、 磁碟區、 網路介面卡，以及更多。 效能歷程記錄是查詢和在 PowerShell 中的程序變得更加容易，因此您可以從快速移*未經處理資料*要*實際答案*這類問題：
 
-1. 是否有任何 CPU 尖峰最後一週？
-2. 任何實體磁碟一直發生異常延遲？
-3. 現在耗用大量那些 Vm 最多儲存 IOPS？
-4. 我的網路頻寬飽和？
-5. 何時這個磁碟區將可用空間退出執行？
-6. 在過去一個月，那些 Vm 使用最多的記憶體？
+1. 已有任何 CPU 尖峰的原因上週？
+2. 任何實體磁碟發生異常的延遲？
+3. 哪些 Vm 會立即耗用最多儲存體 IOPS？
+4. 我的網路頻寬飽和嗎？
+5. 何時將此磁碟區用盡可用空間？
+6. 在過去一個月中，哪些 Vm 會使用最多的記憶體？
 
-`Get-ClusterPerf` Cmdlet 內建的指令碼。 它接受來自像 cmdlet 的輸入`Get-VM`或`Get-PhysicalDisk`管線處理關聯的關係，而且您可以使用管線傳送其輸出到公用程式 cmdlet，例如`Sort-Object`， `Where-Object`，以及`Measure-Object`快速編寫強大的查詢。
+`Get-ClusterPerf` Cmdlet 針對指令碼所建置。 它會接受來自等 cmdlet 的輸入`Get-VM`或`Get-PhysicalDisk`管線來處理，以及您可以將其輸出輸送到公用程式 cmdlet，例如`Sort-Object`， `Where-Object`，和`Measure-Object`快速撰寫功能強大的查詢。
 
-**本主題提供，並說明 6 回答 6 上述問題的範例指令碼。** 他們呈現的模式，您可以套用了山峰、 尋找平均值、 繪製趨勢行，請執行 outlier，偵測，以及更多各種不同的資料和時間範圍。 他們提供免費的起始程式碼，為您要複製、 擴充和重複使用。
+**本主題提供，並說明 6 回答上述問題，6 的範例指令碼。** 它們呈現的模式，您可以套用以尋找尖峰、 尋找平均值、 繪製趨勢線、 執行極端值偵測，以及更多，跨各種不同的資料和時間範圍。 它們提供免費的入門即可複製、 擴充和重複使用的程式碼。
 
    > [!NOTE]
-   > 為求簡明起見，範例指令碼會省略像是您所預期的高品質的 PowerShell 程式碼的錯誤處理。 它們是主要用於靈感和教育版而不是實際執行使用。
+   > 為求簡潔，範例指令碼會省略之類的高品質的 PowerShell 程式碼，您可能預期的錯誤處理。 它們主要供靈感和教育版而不是生產環境使用。
 
-## 範例 1: CPU，查看您 ！
+## <a name="sample-1-cpu-i-see-you"></a>範例 1:CPU，我見 ！
 
-這個範例使用`ClusterNode.Cpu.Usage`從系列`LastWeek`來顯示叢集中的最大值 （「 高水域標記 」），為每個伺服器的最小和平均 CPU 使用量的時間範圍。 它也會顯示多少小時 CPU 使用量超過已 25%的簡單四分位分析 50%，並在最後一個 8 天內的 75%。
+這個範例會使用`ClusterNode.Cpu.Usage`序列從`LastWeek`顯示叢集中的最大值 （「 上限標準 」），而每一部伺服器的最小和平均 CPU 使用量的時間範圍內。 它也會執行簡單的四分位數的分析，以顯示多少小時 CPU 使用量已超過 25%、 50%和過去 8 天內的 75%。
 
-### Screenshot
+### <a name="screenshot"></a>Screenshot
 
-我們在下方的螢幕擷取畫面，請參閱*伺服器 02*擁有不明的增量最後一週：
+在以下的螢幕擷取畫面，我們看到*Server 02*有無法解釋的高峰過去一週：
 
 ![PowerShell 的螢幕擷取畫面](media/performance-history/Show-CpuMinMaxAvg.png)
 
-### 運作方式
+### <a name="how-it-works"></a>運作方式
 
-從輸出`Get-ClusterPerf`恰當到內建的管道`Measure-Object`cmdlet，我們只需指定`Value`屬性。 使用其`-Maximum`， `-Minimum`，以及`-Average`旗標， `Measure-Object` ，讓我們的前三個資料行幾乎免費。 若要執行四分位分析，我們可以使用管線傳送到`Where-Object`並計算了多少值`-Gt`（大於） 25、 50 或 75。 最後一個步驟是使用美化`Format-Hours`和`Format-Percent`協助程式函式 – 當然是選用。
+輸出`Get-ClusterPerf`妥善至內建的管道`Measure-Object`cmdlet，我們只需要指定`Value`屬性。 使用其`-Maximum`， `-Minimum`，並`-Average`旗標，`Measure-Object`提供我們前三個資料行幾乎免費。 若要執行的四分位數分析，我們可以透過管道傳送至`Where-Object`與計算多少值已`-Gt`（大於） 25、 50、 或 75。 最後一個步驟是使用美化`Format-Hours`和`Format-Percent`helper 函式-當然選擇性。
 
-### 指令碼
+### <a name="script"></a>指令碼
 
 以下是指令碼：
 
@@ -91,28 +91,28 @@ $Output = Get-ClusterNode | ForEach-Object {
 $Output | Sort-Object ClusterNode | Format-Table
 ```
 
-## 範例 2： 射擊，射擊、 延遲 outlier
+## <a name="sample-2-fire-fire-latency-outlier"></a>範例 2:火災、 火災、 延遲極端值
 
-這個範例使用`PhysicalDisk.Latency.Average`從系列`LastHour`統計範數，尋找的時間範圍定義為每小時平均延遲超過 + 3σ 的磁碟機 （三個標準差） 擴展平均上方。
+這個範例會使用`PhysicalDisk.Latency.Average`序列從`LastHour`時間範圍來尋找統計的極端值，定義為磁碟機，以每小時的平均延遲超出 + 3σ （三個標準差） 高於母體擴展平均。
 
    > [!IMPORTANT]
-   > 為求簡潔，這個指令碼不會實作針對低差異的防護功能，不會處理遺失的部分資料，不會無法區別的模型或韌體等等。請練習良好 judgement 並不依賴此指令碼來判斷是否要取代的硬碟。 僅供教育此處提供它。
+   > 為求簡潔，此指令碼不會實作低變異數的保護措施，不會處理部分遺失的資料，不會區分模型或韌體等。請執行良好的判斷，請勿依賴此指令碼來判斷是否要更換的硬碟。 它會在此僅供教育。
 
-### Screenshot
+### <a name="screenshot"></a>Screenshot
 
-我們在下方的螢幕擷取畫面，請參閱有沒有範數：
+在以下的螢幕擷取畫面，我們可以看到有任何極端值：
 
 ![PowerShell 的螢幕擷取畫面](media/performance-history/Show-LatencyOutlierHDD.png)
 
-### 運作方式
+### <a name="how-it-works"></a>運作方式
 
-首先，我們排除閒置或幾乎閒置的磁碟機，檢查`PhysicalDisk.Iops.Total`以一致的方式是`-Gt 1`。 針對每個作用中的 HDD，我們使用管線傳送其`LastHour`時期，組成 360 度量 10 第二個間隔，為`Measure-Object -Average`以取得其平均延遲在過去一小時。 這會設定我們的人員。
+首先，我們藉由檢查排除閒置或幾乎閒置的磁碟機`PhysicalDisk.Iops.Total`一直`-Gt 1`。 每個作用中的 HDD，我們透過管道傳送其`LastHour`時間範圍內，組成 360 的度量值 10 秒間隔，為`Measure-Object -Average`過去一小時中取得其平均的延遲。 這會設定我們的母體擴展。
 
-我們實作[廣泛已知公式](http://www.mathsisfun.com/data/standard-deviation.html)來尋找平均數`μ`和標準差`σ`的擴展。 針對每個作用中的 HDD，我們會比較擴展平均值其平均延遲並除以標準差。 我們保留原始值，因此我們可以`Sort-Object`我們的結果，但使用`Format-Latency`和`Format-StandardDeviation`來美化什麼我們將說明 – 當然是選用的協助程式函式。
+我們會實作[廣泛已知公式](http://www.mathsisfun.com/data/standard-deviation.html)來尋找平均`μ`和標準差`σ`母體擴展。 針對每個作用中的 HDD，我們會比較其母體擴展平均的平均延遲，並除以標準差。 我們保留原始值，我們可以`Sort-Object`我們的結果，但使用`Format-Latency`和`Format-StandardDeviation`美化什麼我們將示範 – 當然是選擇性的 helper 函式。
 
-如果任何磁碟機是多個 + 3σ，我們`Write-Host`以紅色;如果不是，為綠色。
+如果任何磁碟機超過 + 3σ，我們`Write-Host`紅色; 否則為綠色。
 
-### 指令碼
+### <a name="script"></a>指令碼
 
 以下是指令碼：
 
@@ -201,26 +201,26 @@ Else {
 }
 ```
 
-## 範例 3： 芳鄰的雜訊？ 這就是寫入 ！
+## <a name="sample-3-noisy-neighbor-thats-write"></a>範例 3:吵雜的芳鄰嗎？ 這是寫入 ！
 
-效能歷程記錄可以太回答*立即*的相關問題。 新的測量值是提供即時、 每隔 10 秒。 這個範例使用`VHD.Iops.Total`從系列`MostRecent`來識別忙碌的 （一些可能說出 「 noisiest 」） 的時間範圍取用最儲存體 IOPS，整個叢集，並顯示其活動的讀/寫分解過程中的每一部主機的虛擬機器。
+效能歷程記錄可以回答問題的相關*立即*也。 新的度量是即時提供，每隔 10 秒。 這個範例會使用`VHD.Iops.Total`系列從`MostRecent`來識別最忙碌的 （有些可能會說 「 繁忙"） 的時間範圍內耗用最多儲存體 IOPS，跨叢集中的每個主機的虛擬機器，並顯示的讀/寫解析其活動。
 
-### Screenshot
+### <a name="screenshot"></a>Screenshot
 
-在下方的螢幕擷取畫面，我們會儲存活動所看到前 10 虛擬機器：
+在以下的螢幕擷取畫面，我們可以看到前 10 個虛擬機器的儲存體活動：
 
 ![PowerShell 的螢幕擷取畫面](media/performance-history/Show-TopIopsVMs.png)
 
-### 運作方式
+### <a name="how-it-works"></a>運作方式
 
-不同於`Get-PhysicalDisk`、 `Get-VM` cmdlet 不是叢集感知 – 它只會傳回 Vm 在本機伺服器上。 若要查詢從每個伺服器以並行方式，我們我們將呼叫包裝在`Invoke-Command (Get-ClusterNode).Name { ... }`。 對於每個 VM 中，我們取得`VHD.Iops.Total`， `VHD.Iops.Read`，以及`VHD.Iops.Write`度量。 藉由不指定`-TimeFrame`參數，我們取得`MostRecent`的每個單一資料點。
+不同於`Get-PhysicalDisk`，則`Get-VM`cmdlet 無法感知叢集 – 它只會在本機伺服器上傳回的 Vm。 若要查詢從每一部伺服器，以平行方式，將在我們呼叫`Invoke-Command (Get-ClusterNode).Name { ... }`。 為每個 VM 中，會得到`VHD.Iops.Total`， `VHD.Iops.Read`，和`VHD.Iops.Write`度量。 不指定`-TimeFrame`參數，會得到`MostRecent`每個單一資料點。
 
    > [!TIP]
-   > 這些系列反映此 VM 活動，其所有的 VHD/VHDX 檔案的總和。 這是其中效能歷程記錄自動彙總我們的範例。 若要取得每個 VHD/VHDX 細項，您可以使用管線傳送個別`Get-VHD`到`Get-ClusterPerf`而不是 VM。
+   > 這些數列會反映這個 VM 的活動，其所有的 VHD/VHDX 檔案的總和。 這是其中效能歷程記錄會自動彙總為我們的範例。 若要取得的每個 VHD/VHDX 細分，您可以透過管道傳送個人`Get-VHD`成`Get-ClusterPerf`而不是 VM。
 
-每個伺服器的結果成形了做為`$Output`，其中我們可以`Sort-Object`，然後`Select-Object -First 10`。 請注意，`Invoke-Command`裝飾結果與`PsComputerName`屬性，指出他們來自何處，我們可以知道 VM 在何處執行列印。
+每一部伺服器的結果為聚集在一起`$Output`，我們可以`Sort-Object`，然後`Select-Object -First 10`。 請注意，`Invoke-Command`裝飾具有結果`PsComputerName`指出它們來自何處，我們可以列印到知道 VM 執行所在的內容。
 
-### 指令碼
+### <a name="script"></a>指令碼
 
 以下是指令碼：
 
@@ -253,24 +253,24 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawIopsTotal -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, IopsTotal, IopsRead, IopsWrite
 ```
 
-## 範例 4： 因為他們說，「 25 gb 是新的 10 gb 」
+## <a name="sample-4-as-they-say-25-gig-is-the-new-10-gig"></a>範例 4:因為他們會說 「 25 gb 是新的 10 gb 」
 
-這個範例使用`NetAdapter.Bandwidth.Total`從系列`LastDay`以尋找網路飽和度的時間範圍定義為 > 90%的理論上的最大頻寬。 叢集中每個網路介面卡，它會為其指定的連結速度的最後一天中比較最高的觀察到的頻寬使用量。
+這個範例會使用`NetAdapter.Bandwidth.Total`序列從`LastDay`時間範圍內尋找符號的網路已飽和，定義為 > 90%的理論的最大頻寬。 在叢集中每個網路介面卡，它會比較最高的觀察的頻寬使用量中所述的連結速度的最後一天。
 
-### Screenshot
+### <a name="screenshot"></a>Screenshot
 
-在下方的螢幕擷取畫面，我們會看到一個*Fabrikam NX 4 專業版 #2*尖峰最後一天中：
+在以下的螢幕擷取畫面，我們會看到一*Fabrikam NX 4 Pro #2*尖峰最後一天：
 
 ![PowerShell 的螢幕擷取畫面](media/performance-history/Show-NetworkSaturation.png)
 
-### 運作方式
+### <a name="how-it-works"></a>運作方式
 
-我們重複我們`Invoke-Command`以上述策略`Get-NetAdapter`上每個伺服器與管道到`Get-ClusterPerf`。 我們可以沿著一來，抓取兩個相關的屬性： 其`LinkSpeed`字串，如 「 10 Gbps 」，以及其原始`Speed`像 10000000000 整數。 我們使用`Measure-Object`以取得從最後一天的平均和尖峰 (提醒： 每個度量單位`LastDay`的時間範圍代表 5 分鐘)，並將乘以每個位元組，以取得頻果-頻果比較 8 位元。
+我們會重複我們`Invoke-Command`一輪牌上述來`Get-NetAdapter`上每個伺服器和管道到`Get-ClusterPerf`。 過程中，我們抓取兩個相關的屬性： 其`LinkSpeed`字串，例如"10 Gbps 」，和其原始`Speed`10000000000 等的整數。 我們會使用`Measure-Object`以取得從最後一天的平均與尖峰 (提醒： 中的每個度量單位`LastDay`時間範圍表示 5 分鐘) 乘以每個位元組，若要取得的蘋果對蘋果比較的 8 位元。
 
    > [!NOTE]
-   > 一些廠商，Chelsio，例如遠端直接記憶體存取 (RDMA) 活動中包含其*網路介面卡*的效能計數器，因此會包含在`NetAdapter.Bandwidth.Total`系列。 其他使用者，例如 Mellanox，可能不會。 如果您的廠商不會只需將新增`NetAdapter.Bandwidth.RDMA.Total`這個指令碼的版本中的一系列。
+   > 有些廠商，例如 Chelsio，包括遠端直接記憶體存取 (RDMA) 活動，在其*網路介面卡*效能計數器，讓它包含在`NetAdapter.Bandwidth.Total`系列。 例如 Mellanox，卻不然。 如果沒有，請只新增您的供應商`NetAdapter.Bandwidth.RDMA.Total`此指令碼的版本中的數列。
 
-### 指令碼
+### <a name="script"></a>指令碼
 
 以下是指令碼：
 
@@ -325,28 +325,28 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object PsComputerName, InterfaceDescription | Format-Table PsComputerName, NetAdapter, LinkSpeed, MaxInbound, MaxOutbound, Saturated
 ```
 
-## 範例 5： 儲存體 trendy 再讓 ！
+## <a name="sample-5-make-storage-trendy-again"></a>範例 5:請儲存體 trendy 一次 ！
 
-若要查看巨集趨勢，效能歷程記錄保留的高達 1 年。 這個範例使用`Volume.Size.Available`從系列`LastYear`來判斷的儲存體填滿的速率和估計值時將會完整的時間範圍。
+若要查看巨集的趨勢，效能歷程記錄會保留最多 1 年。 這個範例會使用`Volume.Size.Available`序列從`LastYear`時就會填滿，判斷儲存體填滿的速率及估計的時間範圍。
 
-### Screenshot
+### <a name="screenshot"></a>Screenshot
 
-我們在下方的螢幕擷取畫面，請參閱*備份*磁碟區新增每日約 15 GB:
+在以下的螢幕擷取畫面，我們會看到*備份*新增每天大約 15 GB 的磁碟區：
 
 ![PowerShell 的螢幕擷取畫面](media/performance-history/Show-StorageTrend.png)
 
-在此速率，它將到達其容量另一個 42 天內。
+依此速率，它會在另一個 42 天達到其容量。
 
-### 運作方式
+### <a name="how-it-works"></a>運作方式
 
-`LastYear`時間範圍中有一個的資料點，每日。 雖然您嚴格只需要兩個點，以符合趨勢線，實際上它是較好的需要更多，例如 14 天。 我們使用`Select-Object -Last 14`若要設定的 *（x，y）* 點， *x* [1，14] 的範圍中的陣列。 使用這些點，我們實作簡單[線性最少方形演算法](http://mathworld.wolfram.com/LeastSquaresFitting.html)來尋找`$A`和`$B`的參數化最適營運*y = ax + b*。 歡迎使用高學校所有超過一次。
+`LastYear`時間範圍內有每日的一個資料點。 雖然您只會嚴格需要兩個點，以符合的趨勢線，實際上它是比較好的作法需要的詳細資訊，例如 14 天。 我們會使用`Select-Object -Last 14`若要設定的陣列 *（x，y）* 點，如*x*範圍 [1，14] 中。 這些點中，我們實作簡單[線性的最小平方演算法](http://mathworld.wolfram.com/LeastSquaresFitting.html)尋找`$A`並`$B`，會參數化為最適合的一行*y = ax + b<*。 歡迎來到高中所有超過一次。
 
-分割的磁碟區`SizeRemaining`由趨勢的屬性 (斜率`$A`) 可讓我們初步估計多少天，以目前的存放裝置成長速率，直到磁碟區已滿。 `Format-Bytes`， `Format-Trend`，以及`Format-Days`協助程式函式美化輸出。
+將分割的磁碟區`SizeRemaining`趨勢屬性 (斜率`$A`) 可讓我們初步估計多少天後，在目前的儲存體成長速率，到磁碟區已滿為止。 `Format-Bytes`， `Format-Trend`，和`Format-Days`helper 函式美化輸出。
 
    > [!IMPORTANT]
-   > 這個估計值是線性和僅根據最新的 14 每日度量。 更複雜且準確的技術存在。 請練習良好 judgement 並不依賴單獨以判斷是否要願意投資於展開您儲存此指令碼。 僅供教育此處提供它。
+   > 這項估計是線性和只根據最近 14 的每日測量。 有更複雜且正確的技術。 請執行良好的判斷，請勿依賴此指令碼來判斷是否要將心力灌注在擴充您的儲存體。 它會在此僅供教育。
 
-### 指令碼
+### <a name="script"></a>指令碼
 
 以下是指令碼：
 
@@ -440,21 +440,21 @@ $Output = $CSV | ForEach-Object {
 $Output | Format-Table
 ```
 
-## 範例 6： 您可以執行記憶體的怪物，但您無法隱藏
+## <a name="sample-6-memory-hog-you-can-run-but-you-cant-hide"></a>範例 6:您可以執行記憶體的怪物，但您無法隱藏
 
-因為效能歷程記錄是收集並儲存在集中，針對整個叢集，您永遠不需要拼接在一起資料從不同的電腦，無論如何多次 Vm 之間移動的主機。 這個範例使用`VM.Memory.Assigned`從系列`LastMonth`來找出最多記憶體消耗過去 35 天的虛擬機器的時間範圍。
+因為效能歷程記錄會收集及整個叢集，您永遠不會需要將拼接在一起資料來自不同的電腦，不論多次會集中儲存 Vm 主機之間移動。 這個範例會使用`VM.Memory.Assigned`序列從`LastMonth`識別耗用最多記憶體，過去 35 天的虛擬機器的時間範圍。
 
-### Screenshot
+### <a name="screenshot"></a>Screenshot
 
-在以下的螢幕擷取畫面，我們查看記憶體使用量上個月前 10 虛擬機器：
+以下的螢幕擷取畫面，在中，我們可以看到前 10 個虛擬機器的記憶體使用量上個月：
 
 ![PowerShell 的螢幕擷取畫面](media/performance-history/Show-TopMemoryVMs.png)
 
-### 運作方式
+### <a name="how-it-works"></a>運作方式
 
-我們重複我們`Invoke-Command`技巧，上方，為`Get-VM`每個伺服器上。 我們使用`Measure-Object -Average`針對每個 VM，然後取得每月平均`Sort-Object`後面加上`Select-Object -First 10`以取得我們排行榜。 （或有可能是我們*最想*list?）
+我們會重複我們`Invoke-Command`技巧，到上面，介紹`Get-VM`每部伺服器上。 我們會使用`Measure-Object -Average`然後針對每個 VM，取得每月的平均`Sort-Object`後面`Select-Object -First 10`取得我們排行榜。 (或它可能是我們*最令人期待*清單？)
 
-### 指令碼
+### <a name="script"></a>指令碼
 
 以下是指令碼：
 
@@ -486,10 +486,10 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, AvgMemoryUsage
 ```
 
-這樣就完成了！ 希望這些樣本啟發您，並協助您開始。 使用儲存空間直接存取的效能歷程記錄和強大，指令碼方便的`Get-ClusterPerf`cmdlet，您會獲得授權，以要求 – 和回答 ！ – 複雜的問題，當您管理和監視您的 Windows Server 2019 基礎結構。
+就這麼容易！ 希望這些範例可激發您，並幫助您開始。 與儲存空間直接存取的效能歷程記錄功能強大，指令碼友善`Get-ClusterPerf`cmdlet，您能夠的問答園地 – ！ – 當您管理及監視您的 Windows Server 2019 基礎結構的複雜問題。
 
-## 請參閱
+## <a name="see-also"></a>另請參閱
 
 - [開始使用 Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 - [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
-- [效能歷程](performance-history.md)
+- [效能歷程記錄](performance-history.md)

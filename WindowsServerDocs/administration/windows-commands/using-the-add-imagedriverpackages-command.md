@@ -1,0 +1,59 @@
+---
+title: 使用新增 ImageDriverPackages 命令
+description: '適用於 Windows 命令主題 * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 9dc78909-a4d1-42a2-af8f-21ebcbfe8302
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: 55b26acf9c4006db3d64e27be8a10e158876ddc1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59817359"
+---
+# <a name="using-the-add-imagedriverpackages-command"></a>使用新增 ImageDriverPackages 命令
+
+>適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+
+將驅動程式套件從驅動程式存放區新增至開機映像。 映像版本必須是 Windows 7 或 Windows Server 2008 R2 或更新版本。
+如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+## <a name="syntax"></a>語法
+```
+wdsutil /add-ImageDriverPackages [/Server:<Server name>media:<Image namemediatype:Boot /Architecture:{x86 | ia64 | x64} 
+[/Filename:<File name>] /Filtertype:<Filter type> /Operator:{Equal | NotEqual | GreaterOrEqual | LessOrEqual | Contains} /Value:<Value> [/Value:<Value> ...]
+```
+## <a name="parameters"></a>參數
+|參數|描述|
+|-------|--------|
+|/ 伺服器：<Server name>|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果沒有指定伺服器名稱時，會使用本機伺服器。|
+媒體：<Image name>|指定要新增驅動程式的映像的名稱。|
+mediatype:Boot|指定要新增驅動程式的影像類型。 驅動程式套件可以只能加入至開機映像。|
+|/ 架構: {x86 &#124; ia64 &#124; x64}|指定的開機映像的架構。 因為它可能會有將開機映像的相同映像名稱放在不同的架構，您應該指定以確保使用正確的映像的架構。|
+|/ 檔案名稱：<File name>|指定的檔案名稱。 如果映像無法依名稱來唯一識別，則必須指定檔案名稱。|
+|/ Filtertype:<Filter type>|指定要搜尋的驅動程式套件的屬性。 您可以在單一命令中指定多個屬性。 您也必須指定 **/Operator**並 **/值**使用此選項。<br /><br /><Filter type> 可以是下列其中一項：<br /><br />**PackageId**<br /><br />**PackageName**<br /><br />**PackageEnabled**<br /><br />**Packagedateadded**<br /><br />**PackageInfFilename**<br /><br />**PackageClass**<br /><br />**PackageProvider**<br /><br />**PackageArchitecture**<br /><br />**PackageLocale**<br /><br />**PackageSigned**<br /><br />**PackagedatePublished**<br /><br />**Packageversion**<br /><br />**Driverdescription**<br /><br />**DriverManufacturer**<br /><br />**DriverHardwareId**<br /><br />**DrivercompatibleId**<br /><br />**DriverExcludeId**<br /><br />**DriverGroupId**<br /><br />**DriverGroupName**|
+|/Operator:{Equal &#124; NotEqual &#124; GreaterOrEqual &#124; LessOrEqual &#124; Contains}|屬性與值之間的關係。 您只能指定**Contains**的字串屬性。 您只能指定**GreaterOrEqual**並**LessOrEqual**使用日期和版本的屬性。|
+|/ 值：<Value>|指定要搜尋的值相對於指定<attribute>。 您可以指定多個值的單一 **/Filtertype**。 以下清單說明您可以指定每個篩選器的屬性。 如需有關這些屬性的詳細資訊，請參閱 <<c0> [ 驅動程式和封裝屬性](https://go.microsoft.com/fwlink/?LinkId=166895)(https://go.microsoft.com/fwlink/?LinkId=166895)。<br /><br />-PackageId-指定有效的 GUID。 例如: {4d36e972-e325-11ce-bfc1-08002be10318}。<br />-PackageName 指定任何字串值。<br />-PackageEnabled-指定 **[是]** 或是**No**。<br />-Packagedateadded-指定的日期，格式如下：YYYY/MM/DD<br />-PackageInfFilename 指定任何字串值。<br />-PackageClass-指定有效的類別名稱或類別 GUID。 例如: **DiskDrive**， **Net**，或 {4d36e972-e325-11ce-bfc1-08002be10318}。<br />-PackageProvider 指定任何字串值。<br />-PackageArchitecture-指定**x86**， **x64**，或**ia64**。<b />-PackageLocale-指定有效的語言識別碼。 例如： **EN-US**或是**ES-ES**。<br />-PackageSigned-指定 **[是]** 或是**No**。<br />-PackagedatePublished-指定的日期，格式如下：YYYY/MM/DD<br />-Packageversion-以下列格式指定版本： a.b.x.y. 例如: 6.1.0.0<br />-Driverdescription 指定任何字串值。<br />-DriverManufacturer 指定任何字串值。<br />-DriverHardwareId-指定任何字串值。<br />-DrivercompatibleId-指定任何字串值。<br />-DriverExcludeId-指定任何字串值。<br />-DriverGroupId-指定有效的 GUID。 例如: {4d36e972-e325-11ce-bfc1-08002be10318}。<br />-DriverGroupName 指定任何字串值。|
+## <a name="BKMK_examples"></a>範例
+若要將驅動程式套件新增至開機映像中，輸入下列其中一項：
+```
+wdsutil /add-ImageDriverPackagemedia:"WinPE Boot Imagemediatype:Boot /Architecture:x86 /Filtertype:DriverGroupName /Operator:Equal /Value:x86Bus /Filtertype:PackageProvider /Operator:Contains /Value:Provider1 /Filtertype:Packageversion /Operator:GreaterOrEqual /Value:6.1.0.0
+```
+```
+wdsutil /verbose /add-ImageDriverPackagemedia: "WinPE Boot Image" /Server:MyWDSServemediatype:Boot /Architecture:x64 /Filtertype:PackageClass /Operator:Equal /Value:Net /Filtertype:DriverManufacturer /Operator:NotEqual /Value:Name1 /Value:Name2 /Filtertype:Packagedateadded /Operator:LessOrEqual /Value:2008/01/01
+```
+```
+wdsutil /verbose /add-ImageDriverPackagemedia:"WinPE Boot Image" /Server:MyWDSServemediatype:Boot /Architecture:x64 /Filtertype:PackageClass /Operator:Equal /Value:Net /Value:System /Value:DiskDrive /Value:HDC /Value:SCSIAdapter
+```
+#### <a name="additional-references"></a>其他參考資料
+[命令列語法重點](command-line-syntax-key.md)
+[使用新增 ImageDriverPackage 命令](using-the-add-imagedriverpackage-command.md)
+[使用新增 AllDriverPackages 子命令](using-the-add-alldriverpackages-subcommand.md)

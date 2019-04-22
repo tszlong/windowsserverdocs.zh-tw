@@ -1,5 +1,5 @@
 ---
-title: Nano 伺服器上的 PowerShell
+title: Nano Server 上的 PowerShell
 description: Nano Server 上縮減 PowerShell 功能的差異
 ms.prod: windows-server-threshold
 ms.service: na
@@ -12,15 +12,15 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a19082121e2d859bc4694fd3f7332e9d0d0b3b9
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081977"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812259"
 ---
-# <a name="powershell-on-nano-server"></a>Nano 伺服器上的 PowerShell
+# <a name="powershell-on-nano-server"></a>Nano Server 上的 PowerShell
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
   
 > [!IMPORTANT]
 > 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
@@ -29,8 +29,8 @@ ms.locfileid: "2081977"
   
 從 5.1 版開始，PowerShell 提供代表各種功能集和平台相容性的不同版本。  
   
-- **Desktop Edition**︰建置在 .NET Framework 上，並與 Server Core 和 Windows Desktop 等完整版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。  
-- **Core Edition**︰建置在 .NET Core 上，並與 Nano Server 和 Windows IoT 等縮減版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。  
+- **Desktop Edition:** 在.NET Framework 上建置，並提供與指令碼和模組在完整使用量的 Server Core 等的 Windows 和 Windows 桌面版本上執行的 PowerShell 版本的相容性。  
+- **Core Edition:** 建置在.NET Core，並提供與指令碼和模組的縮減版 Nano Server 等的 Windows 和 Windows IoT 上執行的 PowerShell 版本相容性。  
   
 $PSVersionTable 的 PSEdition 屬性會顯示正在執行的 PowerShell 版本。  
 ```powershell  
@@ -102,7 +102,7 @@ At line:1 char:1
 Nano Server 預設會在所有 Nano Server 安裝中包含 PowerShell Core。 PowerShell Core 是縮減版 PowerShell，建置在 .NET Core 上，並於 Nano Server 和 Windows IoT 核心版等縮減版 Windows 上執行。 PowerShell Core 的運作方式與其他 PowerShell 版本 (例如 Windows Server 2016 上執行的 Windows PowerShell) 的運作方式相同。 不過，縮減版 Nano Server 表示並非 Windows Server 2016 中的所有 PowerShell 功能都可供 Nano Server 上的 PowerShell Core 使用。  
   
   
-**Nano Server 中無法使用的 Windows PowerShell 功能**  
+**Windows PowerShell 功能不適用於 Nano Server**  
 * ADSI、ADO 和 WMI 類型介面卡   
 * Enable-PSRemoting、Disable-PSRemoting (預設會啟用 PowerShell 遠端執行功能；請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md) 的＜使用 Windows PowerShell 遠端執行功能＞一節)。  
 * 排程的工作和 PSScheduledJob 模組   
@@ -123,7 +123,7 @@ Nano Server 預設會在所有 Nano Server 安裝中包含 PowerShell Core。 Po
 * PowerShell 工作流程基礎結構、模組和 Cmdlet   
 * Out-Printer   
 * Update-List   
-* WMI v1 Cmdlet：Get-WmiObject、Invoke-WmiMethod、Register-WmiEvent、Remove-WmiObject、Set-WmiInstance (請改用 CimCmdlets 模組)。   
+* WMI v1 cmdlet:Get-wmiobject、 Invoke-wmimethod、 Register-wmievent、 Remove-wmiobject、 Set-wmiinstance （請改用 CimCmdlets 模組。）   
   
 ## <a name="using-windows-powershell-desired-state-configuration-with-nano-server"></a>搭配 Nano Server 使用 Windows PowerShell 預期狀態設定  
   

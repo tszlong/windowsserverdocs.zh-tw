@@ -1,47 +1,48 @@
 ---
-title: "廣告樹系修復移除通用"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 07/07/2017
+title: AD 樹系復原移除通用類別目錄
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 60087a62-11e6-4750-a70e-510f35315688
-ms.technology: identity-adfs
-ms.openlocfilehash: b7da7c03cbae4691e8f902f1be0cb33c0c912248
-ms.sourcegitcommit: 84a2bdcb92ba6af45781fab9727617e50fa5e911
+ms.technology: identity-adds
+ms.openlocfilehash: d730ce65fc179aee6a98f7cfc1a5b693bfcd6c93
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59817069"
 ---
-# <a name="ad-forest-recovery---removing-the-global-catalog"></a>廣告樹系修復-移除通用  
+# <a name="ad-forest-recovery---removing-the-global-catalog"></a>AD 樹系復原-移除通用類別目錄  
 
->適用於： Windows Server 2016、 Windows Server 2012 和 2012 R2、 Windows Server 2008 和 2008 R2
+>適用於：Windows Server 2016 中，Windows Server 2012 和 2012 R2 中，Windows Server 2008 和 2008 R2
 
- 若要移除 DC 通用使用下列程序。  
+ 您可以使用下列程序，從 DC 移除通用類別目錄。 
   
- 從備份還原通用伺服器可能會導致通用按住其部分複本的對應的部分複本授權網域比較新的資料。 在這些案例中，較新的資料將不會從通用，甚至可能會複寫其他通用伺服器。 如此一來，即使您還原是一個通用伺服器，可能不小心俠或孤獨備份，這是因為您信任的您應該會移除通用即將還原作業完成之後。 當移除通用時，電腦將會移除所有部分的複本。  
+ 從備份還原的通用類別目錄伺服器，可能會導致通用類別目錄保留的其中一個部分的複本較新的資料比對應的網域，則該部分的複本。 在此情況下，較新的資料不會移除通用類別目錄，並可能甚至會複寫至其他通用類別目錄伺服器。 如此一來，即使您未還原的 DC 是通用類別目錄伺服器，可能是不小心，或是因為，單獨備份信任，您應該先移除通用類別目錄，很快就在還原作業完成之後。 移除通用類別目錄時，電腦就會移除其所有部分的複本。 
   
-## <a name="to-remove-the-global-catalog-using-active-directory-sites-and-services"></a>若要移除通用使用 Active Directory 網站和服務  
+## <a name="to-remove-the-global-catalog-using-active-directory-sites-and-services"></a>若要移除使用 Active Directory 站台和服務的通用類別目錄  
  
-1.  打開伺服器管理員中，按一下**工具**，按一下 [ **Active Directory 網站和服務**。  
-2.  在主控台中，展開**網站**容器、，然後選取包含目標伺服器的適當網站。  
-3.  展開**伺服器]**容器，然後展開*伺服器*針對您要移除的通用網域控制站物件。  
-4.  以滑鼠右鍵按一下**NTDS 設定**，然後按**屬性**。  
-5.  清除**通用**核取方塊。  
-![移除 GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
-6.  按一下**適用於**。
+1. 開啟 伺服器管理員中，按一下**工具**然後按一下**Active Directory 站台及服務**。 
+2. 在主控台樹狀目錄中，依序展開**站台**容器，然後選取適當的站台，其中包含目標伺服器。 
+3. 依序展開**伺服器**容器，然後展開*伺服器*您要從中移除通用類別目錄的 dc 物件。 
+4. 以滑鼠右鍵按一下**NTDS 設定**，然後按一下**屬性**。 
+5. 清除**通用類別目錄**核取方塊。 
+   ![移除 GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
+6. 按一下 **[套用]**。
   
-## <a name="to-remove-the-global-catalog-using-repadmin"></a>若要移除通用使用 Repadmin  
+## <a name="to-remove-the-global-catalog-using-repadmin"></a>若要移除通用類別目錄使用 Repadmin  
   
-1.  打開提升權限的命令提示字元中，輸入下列命令，並按下 ENTER:  
-  
-    ```  
-    repadmin.exe /options DC_NAME –IS_GC  
-    ```  
-  
- ## <a name="next-steps"></a>後續步驟
+開啟提升權限的命令提示字元中，輸入下列命令，然後按 ENTER:  
 
-- [廣告樹系復原指南](AD-Forest-Recovery-Guide.md)
-- [廣告樹系修復程序](AD-Forest-Recovery-Procedures.md)
+   ```
+   repadmin.exe /options DC_NAME –IS_GC  
+   ```  
+
+## <a name="next-steps"></a>後續步驟
+
+- [AD 樹系復原指南](AD-Forest-Recovery-Guide.md)
+- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 53ee93e2-09ea-4f8b-adb7-c24c59f055ea
-title: "AD FS 中使用 Uri 的方式"
-description: 
+title: AD FS 中的 URI 使用方式
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,72 +10,73 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 305bf0cece742c961604dacda7e27b8eac8065e5
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812219"
 ---
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-# <a name="how-uris-are-used-in-ad-fs"></a>AD FS 中使用 Uri 的方式
-統一資源識別碼 \(URI\) 是用來做的唯一的字元字串。  AD FS，在 Uri 用來找出合作夥伴網路地址和設定物件。  當您用來找出合作夥伴網路位址，URI 都 URL。  當您用來找出組態物件，URI 可能 URN 或 URL。  有關更一般 Uri，請查看[RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289)和[RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453)。  
+# <a name="how-uris-are-used-in-ad-fs"></a>AD FS 中的 URI 使用方式
+統一資源識別項\(URI\)是用來當做唯一識別碼的字元字串。  在 AD FS 中，URI 可用來識別合作夥伴網路位址和設定物件。  用來識別合作夥伴網路位址時，URI 一律是 URL。  用來識別設定物件時，URI 可能是 URN 或 URL。  如需更多關於 URI 的一般資訊，請參閱 [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) 和 [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453)。  
   
-## <a name="uris-as-partner-network-addresses"></a>為合作夥伴網路位址 Uri  
-以下是最常由 AD FS 中的系統管理員的網路位址 Url。  
+## <a name="uris-as-partner-network-addresses"></a>URI 做為合作夥伴網路位址  
+以下是 AD FS 中最常由系統管理員處理的網路位址 URL。  
   
--   聯盟服務，包括 WS\-同盟、 SAML、 WS\ 信任、 聯盟中繼資料、 WS\-MetadataExchange 隱私權和組織 Url 的 Url  
+-   包括 WS 同盟服務的 Url\-同盟、 SAML、 WS\-信任，同盟中繼資料、 WS\-MetadataExchange、 隱私權和組織 Url  
   
--   信賴的派對信任，包括 WS\-同盟、 SAML，以及聯盟中繼資料 Url 的 Url  
+-   信賴憑證者的合作對象信任，包括 WS 的 Url\-同盟、 SAML 和同盟中繼資料 Url  
   
--   宣告提供者信任，包括 WS\-同盟、 SAML，以及聯盟中繼資料 Url 的 Url  
+-   宣告提供者信任，包括 WS Url\-同盟、 SAML 和同盟中繼資料 Url  
   
-## <a name="uris-as-object-identifiers"></a>做為物件識別碼 Uri  
-下表描述通常由 AD FS 管理員識別碼。  
+## <a name="uris-as-object-identifiers"></a>URI 做為物件識別碼  
+下表說明 AD FS 中最常由系統管理員處理的識別碼。  
   
 |識別碼名稱|描述|比較|  
 |-------------------|---------------|---------------|  
-|聯盟服務識別碼|找出同盟服務使用此識別碼。  使用這個同盟服務，以及宣告提供者，此同盟服務宣告問題宣告信賴派對使用它。|當使用者向宣告服務提供者，此聯盟要求宣告時，同盟服務識別碼將會用來找出所宣告的目標。<br /><br />當此同盟服務接收宣告宣告提供者時，就會檢查以確保宣告範圍它所尋找的項目同盟服務。<br /><br />信賴從這個同盟服務接收宣告，當信賴會檢查所宣告的發行者符合同盟服務識別碼。|  
-|可以廠商識別碼|找出信賴此同盟服務使用此識別碼。  發行宣告信賴來時使用它。|當使用者向此同盟服務要求宣告信賴的時信賴的派對識別碼將會用來找出的信賴宣告應該會對應的。  完成此比較使用前置詞 \(see below\) 相符。<br /><br />當信賴收到宣告時，就會檢查以確保宣告針對安全性權杖中的項目。|  
-|宣告提供者識別碼|使用這個識別碼找出宣告此同盟服務提供者。  它是用來接收宣告宣告提供者。|當此同盟服務接收宣告宣告提供者時，此同盟服務會檢查所宣告的發行者符合宣告提供者識別碼。|  
-|宣告類型|使用這個識別碼來定義理賠要求的類型。  它會使用此同盟服務、 宣告提供者，以及時傳送和接收宣告信賴的派對。|當同盟服務接收宣告宣告提供者時，對應的宣告提供者信任相關聯的理賠要求規則允許比較宣告類型及處理宣告的系統管理員。  信賴的派對信任相關聯的理賠要求規則也允許比較宣告類型退出宣告提供者信任規則，提供宣告的系統管理員，並選擇的發行宣告。|  
+|Federation Service 識別碼|這個識別碼用來識別同盟服務。  它是由信賴憑證者 (使用來自此同盟服務的宣告) 和宣告提供者 (將宣告發行給此同盟服務) 使用。|當使用者向宣告提供者要求此同盟服務的宣告時，同盟服務識別碼將會用來識別宣告的目標。<br /><br />當此同盟服務收到來自宣告提供者的宣告時，就會檢查以確保宣告是適用的，方法是尋找其同盟服務識別碼。<br /><br />當信賴憑證者收到來自此同盟服務的宣告時，信賴憑證者會檢查宣告的簽發者與同盟服務識別碼相符。|  
+|信賴憑證者識別碼|這個識別碼是用來識別此同盟服務的信賴憑證者。  它是在將宣告發行給信賴憑證者時使用。|當使用者向此同盟服務要求信賴憑證者的宣告時，信賴憑證者識別碼將會用來識別應該做為宣告目標的信賴憑證者。  完成這項比較使用前置詞比對\(如下所示\)。<br /><br />當信賴憑證者收到宣告時，它會檢查其安全性權杖中的識別碼以確保這些宣告的目標是它。|  
+|宣告提供者識別碼|這個識別碼是用來識別此同盟服務的宣告提供者。  它是在接收來自宣告提供者的宣告時使用。|當此同盟服務收到來自此宣告提供者的宣告時，此同盟服務會檢查宣告的簽發者與宣告提供者識別碼相符。|  
+|宣告類型|這個識別碼是用來定義宣告的類型。  它是由這個同盟服務、宣告提供者和信賴憑證者在傳送和接收宣告時使用。|當同盟服務收到來自宣告提供者的宣告時，與對應的宣告提供者信任相關聯的宣告規則可以讓系統管理員比較宣告類型和處理宣告。  與信賴憑證者信任相關聯的的宣告規則也允許系統管理員比較宣告類型與來自宣告提供者信任規則的宣告，並決定要發行哪個宣告。|  
   
-## <a name="uri-prefix-matching-for-relying-party-identifiers"></a>符合信賴派對識別碼 URI 前置詞  
-URI 的路徑語法階層組織和由所有分隔 」 \ 日 」 的字元或所有 」: 「 字元。  因此路徑可分成根據分隔字元路徑區段。  當前置詞比對，每個區段必須符合規則根據完整相符項目 \ （這些規則管理 matches\ 的大小寫）。 如需符合規則，查看 RFC 的上述。  
+## <a name="uri-prefix-matching-for-relying-party-identifiers"></a>符合信賴憑證者識別碼的 URI 首碼  
+URI 的路徑語法以階層方式組織，並分隔所有 「\/"字元或所有":"字元。  因此路徑可能會根據分隔字元分割為路徑區段。  當首碼相符時，每個區段必須根據比對規則完全相符\(這些規則會控制大小寫的相符項目\)。 如需比對規則的詳細資訊，請參閱上述的 RFC。  
   
-當信賴辨識要求同盟服務中時，AD FS 使用前置詞相符邏輯操作，判斷是否符合信賴廠商信任 AD FS 設定資料庫中。  
+在對於同盟服務的要求中已識別信賴憑證者時，AD FS 會使用首碼比對邏輯來判斷 AD FS 設定資料庫中是否有相符的信賴憑證者信任。  
   
-例如是否 AD FS 設定資料庫中的依賴派對識別碼 \(URI1\) 連入信賴派對識別碼前置詞要求 \(URI2\)，接著必須符合下列：  
+比方說，如果 AD FS 組態資料庫中的信賴憑證者合作對象識別項\(URI1\)是傳入要求中的信賴憑證者的合作對象識別碼的前置詞\(URI2\)，則下列必須為 true:  
   
--   結尾分隔字元 \(slashes and colons\) 路徑的區段或授權必須忽略  
+-   尾端分隔符號\(斜線和冒號\)的路徑區段或授權必須忽略  
   
--   必須區分大小寫的完全符合 URI1 和 URI2 的配置，並授權的部分。  
+-   URI1 與 URI2 的配置和授權部分必須是不區分大小寫完全相符  
   
--   每個路徑部分 URI1 必須完全符合 \ （根據區分大小寫 chosen\） URI2 相對路徑一節  
+-   URI1 的每個路徑區段必須是完全相符\(根據選擇的區分大小寫\)URI2 的對應路徑區段  
   
--   URI2 可能會有更多的路徑區段比 URI1，但 URI1 不能有更多的路徑區段 URI2 比  
+-   URI2 可能會有比 URI1 更多的路徑區段，但是 URI1 不能有比 URI2 更多的路徑區段  
   
--   URI1 不會有更多的路徑區段 URI2 比  
+-   URI1 不能有比 URI2 更多的路徑區段  
   
--   如果 URI1 查詢字串，必須符合完全為 URI2 查詢字串  
+-   如果 URI1 具有查詢字串，它必須完全符合 URI2 查詢字串  
   
--   如果 URI1 片段，必須符合完全到 URI2 片段  
+-   如果 URI1 具有片段，它必須完全符合 URI2 片段  
   
-下表會提供額外的範例。  
+下表提供其他範例。  
   
-|可以廠商識別碼 AD FS 設定資料庫中|可以廠商識別碼接受要求訊息中|組態識別字要求識別碼相符項目嗎？|原因|  
+|AD FS 設定資料庫中的信賴憑證者識別碼|要求訊息中的信賴憑證者識別碼|要求識別碼是否與設定識別項相符？|原因|  
 |------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|----------|  
-|http:///\/contoso.com|http:///\/contoso.com|為 TRUE|相符|  
-|http:///\/contoso.com\/|http:///\/contoso.com|為 TRUE|忽略行尾斜線|  
-|http:///\/contoso.com|http:///\/contoso.com\/|為 TRUE|忽略行尾斜線|  
-|http:///\/contoso.com|http:///\/contoso.com\/hr|為 TRUE|URI1 已經不會路徑和相符項目配置和 URI2 權限|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com\/hr\/web|為 TRUE|第一次路徑區段符合、 URI1 有無第二個路徑一節|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com\/hr\/web\/?m\=t|為 TRUE|上述相同的原因，查詢字串未變更任何項目|  
-|http:///\/contoso.com\/hr\/|http:///\/contoso.com\/hrw\/main|FALSE|URI1 路徑區段 1 不符合 URI2 路徑區段 1|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com|FALSE|URI1 有更多的路徑區段 URI2 比|  
-|http:///\/contoso.com\/hr|http:///\/contoso.com\/hrweb|FALSE|第一次路徑章節不相符|  
-|http:///\/contoso.com\/?m\=t|http:///\/contoso.com\/?m\=f|FALSE|查詢字串組件不相符|  
-|https:\/\/contoso.com|http:///\/contoso.com|FALSE|部分配置不相符|  
-|http:///\/sts.contoso.com|http:///\/contoso.com|FALSE|授權單位部分不符|  
-|http:///\/contoso.com|http:///\/sts.contoso.com|FALSE|授權單位部分不符|  
+|http:\/\/contoso.com|http:\/\/contoso.com|TRUE|完全相符|  
+|http:\/\/contoso.com\/|http:\/\/contoso.com|TRUE|會忽略尾端斜線|  
+|http:\/\/contoso.com|http:\/\/contoso.com\/|TRUE|會忽略尾端斜線|  
+|http:\/\/contoso.com|http:\/\/contoso.com\/hr|TRUE|URI1 沒有與 URI2 相符的路徑和配置及授權|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com\/hr\/web|TRUE|第一個路徑區段相符，URI1 沒有第二個路徑區段|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com\/hr\/web\/?m\=t|TRUE|與上述原因相同，查詢字串不會變更任何項目|  
+|http:\/\/contoso.com\/hr\/|http:\/\/contoso.com\/hrw\/main|FALSE|URI1 路徑區段 1 與 URI2 路徑區段 1 不相符|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com|FALSE|URI1 有比 URI2 更多的路徑區段|  
+|http:\/\/contoso.com\/hr|http:\/\/contoso.com\/hrweb|FALSE|第一個路徑區段不相符|  
+|http:\/\/contoso.com\/?m\=t|http:\/\/contoso.com\/?m\=f|FALSE|查詢字串組件不相符|  
+|https:\/\/contoso.com|http:\/\/contoso.com|FALSE|配置組件不相符|  
+|http:\/\/sts.contoso.com|http:\/\/contoso.com|FALSE|授權組件不相符|  
+|http:\/\/contoso.com|http:\/\/sts.contoso.com|FALSE|授權組件不相符|  
   
 

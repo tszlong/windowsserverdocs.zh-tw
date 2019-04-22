@@ -1,6 +1,6 @@
 ---
-title: "設定檔案伺服器資源管理員選項"
-description: "本文說明如何設定檔案伺服器資源管理員選項"
+title: 設定檔案伺服器資源管理員選項
+description: 本文說明如何設定檔案伺服器資源管理員選項
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: f8b29235540957265062dded4cd39da1eb35ae31
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813619"
 ---
 # <a name="setting-file-server-resource-manager-options"></a>設定檔案伺服器資源管理員選項
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 您可以在 **\[檔案伺服器資源管理員選項\]** 對話方塊中設定檔案伺服器資源管理員的一般選項。 這些設定會使用在整個節點上，當您使用配額、檢測檔案或產存放裝置報告時，可以修改其中一些設定。
 

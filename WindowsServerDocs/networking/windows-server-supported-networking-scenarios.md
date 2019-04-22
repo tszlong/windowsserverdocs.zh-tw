@@ -1,6 +1,6 @@
 ---
-title: Windows Server 支援網路案例
-description: 本主題提供新支援網路案例在 Windows Server 2016 及更新版本的相關資訊
+title: Windows Server 支援的網路功能案例
+description: 本主題提供有關新支援網路功能案例在 Windows Server 2016 和更新版本資訊
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -9,23 +9,24 @@ ms.date: ''
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 70198f97c4ec39de4b78de28ab196dc3e86a684c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 85f73f1f7caf833d23d3d693c0d754f52c4aa27d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812229"
 ---
-# <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支援網路案例
+# <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支援的網路功能案例
 
->適用於：Windows Server \(Semi-Annual Channel\)、Windows Server 2016
+>適用於：Windows Server\(半年通道\)，Windows Server 2016
 
-本主題提供支援和不支援案例，您可以或無法執行此版本的 Windows Server 2016 的相關資訊。  
+本主題提供支援和不受支援的案例，您可以或無法執行此版本的 Windows Server 2016 的相關資訊。  
 >[!IMPORTANT]
->適用於所有 production 案例中，使用您的原始設備製造商簽署最新的硬體驅動程式 \(OEM\) 或獨立硬體廠商 \(IHV\)。
+>所有的生產案例中，使用最新已簽署的硬體驅動程式，從您的原始設備製造商\(OEM\)或 獨立硬體廠商\(IHV\)。
   
-## <a name="bkmk_supp"></a>網路案例的支援
+## <a name="bkmk_supp"></a>支援的網路功能案例
 
-本章節包含 Windows Server 2016 的網路支援案例相關資訊，並包含下列類案例。  
+本章節包含適用於 Windows Server 2016，支援網路功能案例的相關資訊，並包含下列案例類別。  
   
 -   [軟體定義網路 (SDN) 案例](#bkmk_sdn)  
   
@@ -33,155 +34,155 @@ ms.lasthandoff: 03/28/2018
   
 -   [DNS 伺服器案例](#bkmk_dns)  
   
--   [使用 DHCP 和 DNS IPAM 案例](#bkmk_ipam)  
+-   [IPAM 與 DHCP 和 DNS 的案例](#bkmk_ipam)  
   
--   [NIC 小組案例](#bkmk_nicteam)
+-   [NIC 小組的案例](#bkmk_nicteam)
 
-- [切換 Embedded 小組 \(SET\) 案例](#bkmk_set)
+- [交換器內嵌小組\(設定\)案例](#bkmk_set)
   
 ### <a name="bkmk_sdn"></a>軟體定義網路 (SDN) 案例
  
-您可以使用下列的文件部署 SDN 與 Windows Server 2016 的案例。  
+您可以使用下列文件，以部署 Windows Server 2016 的 SDN 案例。  
   
   
--   [部署軟體定義網路基礎結構使用指令碼，](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
+-   [部署軟體定義網路基礎結構使用指令碼](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
   
-如需詳細資訊，請查看[軟體定義網路與 #40;SDN 與 #41;](sdn/software-defined-networking.md).  
+如需詳細資訊，請參閱 <<c0> [ 軟體定義網路&#40;SDN&#41;](sdn/software-defined-networking.md)。</c0>  
   
-#### <a name="bkmk_netc"></a>網路控制器案例
+#### <a name="bkmk_netc"></a>網路控制站案例
 
-Network Controller 案例可讓您：  
+網路控制站案例可讓您：  
   
--   部署及管理 Network Controller 的多節點執行個體。 如需詳細資訊，請查看[使用 Windows PowerShell 部署 Network Controller](sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)。  
+-   部署和管理網路控制卡的多個節點執行個體。 如需詳細資訊，請參閱 <<c0> [ 部署網路控制站使用 Windows PowerShell](sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)。  
   
--   使用 REST API Northbound 以程式設計方式定義的網路原則的網路使用控制器。  
+-   若要使用 REST Northbound API 以程式設計方式定義網路原則中使用網路控制站。  
   
--   使用網路控制器建立及管理 HYPER-V 網路模擬-使用 NVGRE 或 VXLAN 封裝 virtual 網路。  
+-   若要建立和管理 HYPER-V 網路虛擬化-使用 NVGRE 或 VXLAN 封裝的虛擬網路使用網路控制站。  
   
-如需詳細資訊，請查看[Network Controller](sdn/technologies/network-controller/Network-Controller.md)。  
+如需詳細資訊，請參閱[網路控制卡](sdn/technologies/network-controller/Network-Controller.md)。  
   
-#### <a name="bkmk_netf"></a>網路功能模擬 (NFV) 案例  
+#### <a name="bkmk_netf"></a>網路函式虛擬化 (NFV) 案例  
 NFV 案例可讓您：  
   
--   部署，並使用軟體負載平衡器 northbound 和 southbound 流量。  
+-   部署與使用軟體負載平衡器將 northbound 和 southbound 流量。  
   
--   部署，並使用軟體負載平衡器 eastbound 和 westbound 建立 HYPER-V 網路模擬 virtual 網路流量。  
+-   部署與使用軟體負載平衡器將 eastbound 和 westbound 使用 HYPER-V 網路虛擬化建立的虛擬網路的流量。  
   
--   部署，並使用 NAT 軟體負載平衡器建立 HYPER-V 網路模擬 virtual 網路。  
+-   部署與使用 NAT 軟體負載平衡器使用 HYPER-V 網路虛擬化建立的虛擬網路。  
   
--   部署，並使用層級 3 轉接閘道  
+-   部署和使用層級 3 轉寄閘道  
   
--   部署，並使用的私人網路 virtual (VPN) 閘道到網站 (IKEv2) IPsec 通道  
+-   部署和使用虛擬私人網路 (VPN) 閘道的站對站 IPsec (IKEv2) 通道  
   
--   部署，並使用閘道一般路由封裝 (GRE)。  
+-   部署與使用 Generic Routing Encapsulation (GRE) 閘道。  
   
--   部署，並設定動態路由和之間網站使用邊境閘道通訊協定 (BGP) 的移動路徑。  
+-   部署和設定動態路由和使用邊界閘道通訊協定 (BGP) 的站台之間的傳輸路由。  
   
--   設定 M + N 冗餘，層級 3 及-網站閘道和 BGP 路由。  
+-   第 3 層和站對站閘道和 BGP 路由，請設定 M + N 備援。  
   
--   用於指定 Acl virtual 網路與網路介面網路控制器。  
+-   使用網路控制站上的虛擬網路和網路介面指定 Acl。  
   
-如需詳細資訊，請查看[網路功能模擬](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)。  
+如需詳細資訊，請參閱 <<c0> [ 網路功能虛擬化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)。  
   
 ### <a name="bkmk_netp"></a>網路平台案例
 
-Windows Server 網路本節中案例小組支援使用任何 Windows Server 2016 認證驅動程式。 請洽詢您的網路介面卡 \(NIC\) 製造商以確保您擁有最新的驅動程式更新。
+在本節中的 Windows Server Networking 案例小組支援認證的驅動程式的任何 Windows Server 2016 的使用。 請洽詢您的網路介面卡\(NIC\)製造商，以確保您擁有最新的驅動程式更新。
   
 網路平台案例可讓您：  
   
--   使用聚合型的 NIC 結合 RDMA 和乙太網路流量使用單一網路介面卡。  
+-   您可以使用交集的 NIC，結合使用單一網路介面卡的 RDMA 和乙太網路流量。  
   
--   建立低延遲資料路徑使用封包 Direct HYPER-V Virtual 開關和單一網路介面卡的支援。  
+-   使用 Packet Direct，啟用在 HYPER-V 虛擬交換器，以及單一網路介面卡，以建立低延遲資料路徑。  
   
--   設定散播最多個網路介面卡之間 SMB 直接與 RDMA 流量的設定。  
+-   設定組分散 SMB 直接傳輸與 RDMA 最多兩個網路介面卡之間的流量流程。  
   
-如需詳細資訊，請查看[遠端直接記憶體存取和 #40;RDMA 與 #41;切換 Embedded 小組與 #40; 以及設定與 #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
+如需詳細資訊，請參閱 <<c0> [ 遠端直接記憶體存取&#40;RDMA&#41;和交換器內嵌小組&#40;設定&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。</c0>  
   
-#### <a name="bkmk_switch"></a>HYPER-V Virtual 切換案例
+#### <a name="bkmk_switch"></a>HYPER-V 虛擬交換器案例
 
-HYPER-V Virtual 切換案例可讓您：  
+HYPER-V 虛擬交換器案例可讓您：  
   
--   使用遠端直接記憶體存取 (RDMA) 但 vNIC 建立 HYPER-V Virtual 開關切換至  
+-   使用遠端直接記憶體存取 (RDMA) vNIC 建立 HYPER-V 虛擬交換器  
   
--   建立 HYPER-V Virtual 切換開關切換至 Embedded 小組（設定）和 RDMA vNICs 使用  
+-   使用 Switch Embedded Teaming (SET) 和 RDMA Vnic 建立 HYPER-V 虛擬交換器  
   
--   建立 HYPER-V Virtual 切換設定團隊  
+-   建立 HYPER-V 虛擬交換器中的設定小組  
   
--   使用 Windows PowerShell 命令來管理設定團隊  
+-   使用 Windows PowerShell 命令來管理將小組設定  
   
-如需詳細資訊，請查看[遠端直接記憶體存取和 #40;RDMA 與 #41;切換 Embedded 小組與 #40; 以及設定與 #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
+如需詳細資訊，請參閱 <<c0> [ 遠端直接記憶體存取&#40;RDMA&#41;和交換器內嵌小組&#40;設定&#41;</c0>](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
   
 ### <a name="bkmk_dns"></a>DNS 伺服器案例
 
-DNS 伺服器案例可讓您：  
+DNS 伺服器案例，可讓您：  
   
--   指定地理位置型流量管理，使用 DNS 原則  
+-   指定地理位置型流量管理使用 DNS 原則  
   
--   設定 split-brain DNS 使用 DNS 原則  
+-   設定使用 DNS 原則拆分式 DNS  
   
--   使用 DNS 原則 DNS 查詢上套用篩選  
+-   使用 DNS 原則的 DNS 查詢上套用篩選  
   
 -   設定應用程式負載平衡使用 DNS 原則  
   
--   指定智慧 DNS 回應根據一天的時間  
+-   指定的時間為基礎的智慧型 DNS 回應  
   
 -   設定 DNS 區域傳輸原則  
   
--   設定 DNS 伺服器原則 Active Directory Domain Services (AD DS) 整合區域  
+-   設定 DNS 伺服器上的原則 Active Directory 網域服務 (AD DS) 整合區域  
   
--   設定的回應速度限制  
+-   設定回應速率限制  
   
--   指定 DNS 驗證的命名實體 (DANE)  
+-   指定的具名實體 （圖表） 的 DNS 為基礎的驗證  
   
--   在 DNS 設定記錄未知的支援  
+-   在 DNS 中設定支援未知的記錄  
   
-如需詳細資訊，請查看主題[在 Windows Server 2016 DNS Client 中的新功能](dns/What-s-New-in-DNS-Client.md)和[的 DNS 伺服器，在 Windows Server 2016 中的 [新增](dns/What-s-New-in-DNS-Server.md)。  
+如需詳細資訊，請參閱主題[What's New in Windows Server 2016 中 DNS 用戶端](dns/What-s-New-in-DNS-Client.md)並[What's New in Windows Server 2016 中的 DNS 伺服器](dns/What-s-New-in-DNS-Server.md)。  
   
-### <a name="bkmk_ipam"></a>使用 DHCP 和 DNS IPAM 案例
+### <a name="bkmk_ipam"></a>IPAM 與 DHCP 和 DNS 的案例
 
 IPAM 案例可讓您：  
   
--   探索及管理 DNS 與 DHCP 伺服器以及跨多個聯盟 Active Directory 樹系的 IP 位址  
+-   探索和管理 DNS 和 DHCP 伺服器和跨多個同盟的 Active Directory 樹系的 IP 位址  
   
--   使用 IPAM DNS 屬性，包括區域和資源記錄的集中管理。  
+-   使用 IPAM 進行集中管理的 DNS 內容，包括區域和資源記錄。  
   
--   定義細微以角色為基礎存取控制原則和委派 IPAM 使用者或群組使用者管理 DNS 屬性，指定的設定。  
+-   定義更細微的角色型存取控制原則和委派管理的一組您指定的 DNS 屬性的 IPAM 使用者或使用者群組。  
   
--   使用 Windows PowerShell 命令 IPAM 自動化 DHCP 和 DNS 存取控制設定。  
+-   您可以使用 IPAM 的 Windows PowerShell 命令來自動化 DHCP 和 DNS 的存取控制設定。  
   
-    如需詳細資訊，請查看[管理 IPAM](technologies/ipam/Manage-IPAM.md)。  
+    如需詳細資訊，請參閱 <<c0> [ 管理 IPAM](technologies/ipam/Manage-IPAM.md)。  
   
-### <a name="bkmk_nicteam"></a>NIC 小組案例
+### <a name="bkmk_nicteam"></a>NIC 小組的案例
 
-NIC 小組案例可讓您：  
+NIC 小組的案例可讓您：  
   
--   支援的設定建立 NIC 團隊  
+-   支援的設定中建立的 NIC 小組  
   
--   Delete NIC 團隊  
+-   刪除 NIC 小組  
   
--   網路介面卡加入 NIC 小組中支援的設定  
+-   新增至 NIC 小組支援的設定中的網路介面卡  
   
 -   網路介面卡移除 NIC 小組  
   
 > [!NOTE]  
-> 在 Windows Server 2016 您可以使用 NIC 小組中 HYPER-V，但有時一樣佇列 (VMQ) 可能不會自動讓基礎網路介面卡上當您建立 NIC 團隊。 發生這種情形，如果您可以使用下列的 Windows PowerShell 命令，以確保 VMQ 尚未 NIC 小組成員介面卡上： `Set-NetAdapterVmq -Name <NetworkAdapterName> -Enable`  
+> 在 Windows Server 2016 中，您可以使用 NIC 小組的 HYPER-V，但在某些情況下的虛擬機器佇列 (VMQ) 可能不會自動啟用基礎的網路介面卡上建立的 NIC 小組時。 如果發生這種情況，您可以使用下列 Windows PowerShell 命令來確認 VMQ 啟用 NIC 小組成員介面卡上： `Set-NetAdapterVmq -Name <NetworkAdapterName> -Enable`  
 
-如需詳細資訊，請查看[NIC 小組](technologies/nic-teaming/NIC-Teaming.md)。 
+如需詳細資訊，請參閱 < [NIC 小組](technologies/nic-teaming/NIC-Teaming.md)。 
 
-### <a name="bkmk_set"></a>切換 Embedded 小組 \(SET\) 案例
+### <a name="bkmk_set"></a>交換器內嵌小組\(設定\)案例
 
-設定為替代 NIC 小組方案，您可以在 Windows Server 2016 中包含 HYPER-V 和軟體所定義網路 (SDN) 堆疊的環境中使用。 設定 HYPER-V Virtual 開關切換至整合 NIC 小組的某些功能。 
+集合是替代的 NIC 小組解決方案，您可以使用包含 Windows Server 2016 中的 HYPER-V 和軟體定義網路 (SDN) 堆疊的環境中。 設定會將部分 NIC 小組功能整合到 HYPER-V 虛擬交換器。 
 
-如需詳細資訊，請查看[遠端直接記憶體存取 (RDMA) 和切換 Embedded 小組（設定）](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+如需詳細資訊，請參閱[遠端直接記憶體存取 (RDMA) 和 Switch Embedded Teaming (SET)](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
   
  
   
-## <a name="bkmk_unsupp"></a>不支援的網路案例  
-Windows Server 2016 不支援下列網路功能案例。  
+## <a name="bkmk_unsupp"></a>不支援的網路功能案例  
+Windows Server 2016 中不支援下列網路功能案例。  
   
--   VLAN 型承租人 virtual 網路。  
+-   VLAN 架構的租用戶虛擬網路。  
   
--   底圖或覆疊 IPv6 不受支援。  
+-   底圖或覆疊中不支援 IPv6。  
   
 
 

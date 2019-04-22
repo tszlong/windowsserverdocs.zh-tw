@@ -1,6 +1,6 @@
 ---
-title: "步驟 5： 讓資料夾重新導向在目的地 Windows Server Essentials 伺服器移轉"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 步驟 5：啟用移轉的目的地伺服器的 Windows Server Essentials 上的資料夾重新導向
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,48 +13,49 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 613ff4c80a80ed4f3207cb0c1ead6db12c723e85
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59815379"
 ---
-# <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>步驟 5： 讓資料夾重新導向在目的地 Windows Server Essentials 伺服器移轉
+# <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>步驟 5：啟用移轉的目的地伺服器的 Windows Server Essentials 上的資料夾重新導向
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-如果來源伺服器上為支援資料夾重新導向，您可以讓資料夾重新導向目的伺服器，並再 delete 舊的資料夾重新導向群組原則設定。  
+如果來源伺服器上已啟用資料夾重新導向，您可以在目的地伺服器啟用資料夾重新導向，然後刪除舊的資料夾重新導向群組原則設定。  
   
- 首先，使用 Windows Server Essentials 儀表板，讓資料夾重新導向目的伺服器上。 然後，delete 舊的資料夾重新導向群組原則設定。  
+ 首先，使用 Windows Server Essentials 儀表板啟用目的地伺服器上的資料夾重新導向。 然後，刪除舊的 [資料夾重新導向群組原則] 設定。  
   
-### <a name="to-enable-folder-redirection-on-the-destination-server"></a>若要讓目的伺服器上的資料夾重新導向  
+### <a name="to-enable-folder-redirection-on-the-destination-server"></a>啟用目的地伺服器上的資料夾重新導向  
   
-1.  在目的伺服器，開放 Windows Server Essentials 儀表板。  
+1.  在目的地伺服器上，開啟 Windows Server Essentials 儀表板。  
   
-2.  在瀏覽列中，按一下 [**裝置**。  
+2.  在瀏覽列中，按一下 [裝置]。  
   
-3.  在**裝置工作**窗格中，按**實作群組原則**。  
+3.  在 [裝置工作] 窗格中，按一下 [實作群組原則]。  
   
-4.  在**讓資料夾重新導向群組原則**頁面上，選取 [資料夾重新導向，然後按一下 [**下**。  
+4.  在 [啟用資料夾重新導向群組原則] 頁面上，選取要重新導向的資料夾，然後按一下 [下一步]。  
   
-5.  在**支援的安全性原則設定**頁面上，按**完成]**。  
+5.  在 [啟用安全性原則設定]  頁面上，按一下 [完成] 。  
   
-### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>若要 delete 舊的資料夾重新導向群組原則設定  
+### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>刪除舊的「資料夾重新導向群組原則」設定  
   
-1.  在目的伺服器，請打開**群組原則管理**系統管理工具。  
+1.  在目的地伺服器上，開啟 [群組原則管理] 系統管理工具。  
   
-2.  在**群組原則管理**，展開 [**樹系：***YourNetworkDomainName*，展開 [**網域**，展開 [ *YourNetworkDomainName*，然後展開**群組原則物件**。  
+2.  在 **群組原則管理**，展開 **樹系: * * * YourNetworkDomainName*，展開**網域**，展開*YourNetworkDomainName*然後展開**群組原則物件**。  
   
-3.  以滑鼠右鍵按一下您想要 delete，然後按一下 [原則**Delete**。  
+3.  以滑鼠右鍵按一下您想要刪除的原則，然後按一下 [刪除] 。  
   
-4.  朗讀警告，然後按一下**[是]**。  
+4.  閱讀警告，然後按一下 [是] 。  
   
-5.  關閉**群組原則管理**。  
+5.  關閉 [群組原則管理]。  
   
- 若要套用變更資料夾重新導向，網路使用者必須先登出他們的電腦，以及然後重新登入。 這樣可確保所有重新導向資料夾傳輸到目的伺服器。  
+ 若要套用資料夾重新導向的變更，網路使用者必須登出電腦，然後再重新登入。 這可確保將所有重新導向資料夾都傳輸到目的地伺服器。  
   
 ## <a name="next-steps"></a>後續步驟  
- 您有支援資料夾重新導向目的伺服器上。 立即移至[執行 「 步驟 6： 降級並移除新的 Windows Server Essentials 網路來源伺服器](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)。  
+ 您已經啟用目的地伺服器上的資料夾重新導向。 現在請移至[步驟 6:降級和移除來源伺服器從新的 Windows Server Essentials 網路](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)。  
   
 
-若要檢視所有的步驟，請查看[Windows Server essentials 移轉](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要檢視所有步驟，請參閱[移轉至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

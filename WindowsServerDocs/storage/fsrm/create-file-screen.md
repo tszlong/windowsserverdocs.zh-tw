@@ -1,6 +1,6 @@
 ---
-title: "建立檔案檢測"
-description: "本文說明如何建立檔案檢測"
+title: 建立檔案檢測
+description: 本文說明如何建立檔案檢測
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c1f261eb926eca3ead58b87aeb00a5060b9d957c
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59815919"
 ---
 # <a name="create-a-file-screen"></a>建立檔案檢測
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 建立新的檔案檢測時，您可以選擇儲存以您所定義之自訂檔案檢測內容為基礎的檔案檢測範本。 這樣做的好處是可在檔案檢測與用於建立這些檢測的範本之間保留連結，以便日後可將範本的變更套用至所有衍生自該範本的檔案檢測。 這是提供一個可進行所有更新之中心點藉以簡化存放原則變更實作的功能。
 
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/17/2017
 
 7.  在 **\[檔案群組\]** 中，選取您要納入檔案檢測的每個檔案群組 (若要選取檔案群組的核取方塊，按兩下檔案群組標籤即可)。
 
-    如果您想要檢視檔案群組包含與排除的檔案類型，請按一下檔案群組標籤，再按一下 **\[編輯\]**。 若要建立新的檔案群組，按一下 **\[建立\]**。
+    如果您想要檢視檔案群組包含與排除的檔案類型，按一下 檔案群組標籤，然後按一下  **編輯**。 若要建立新的檔案群組，請按一下 **建立**。
 
 8.  此外，您還可以設定 **\[檔案伺服器資源管理員\]** 產生一個或多個通知，方法是設定 **\[電子郵件訊息\]**、**\[事件記錄檔\]**、**\[命令\]** 和 **\[報告\]** 索引標籤上的選項。 如需檔案檢測通知選項的詳細資訊，請參閱[建立檔案檢測範本](create-file-screen-template.md)。
 
@@ -51,9 +52,9 @@ ms.lasthandoff: 10/17/2017
     -   若要儲存以這些自訂內容為基礎的範本 (建議)，請按一下 **\[將自訂內容儲存成範本\]**，然後輸入範本的名稱。 這個選項會將範本套用至新的檔案檢測，您日後可以此範本建立其他的檔案檢測。 這可讓您事後藉由更新範本，自動更新檔案檢測。
     -   如果您不想在儲存檔案檢測時儲存範本，請按一下 **\[儲存自訂檔案檢測，但不建立範本\]**。
 
-12. 按一下 **\[確定\]**。
+12. 按一下 [確定] 。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [定義檢測的檔案群組](define-file-groups-for-screening.md)

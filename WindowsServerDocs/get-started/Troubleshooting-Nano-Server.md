@@ -1,5 +1,5 @@
 ---
-title: 針對 Nano 伺服器進行疑難排解
+title: 針對 Nano Server 進行疑難排解
 description: 修復主控台、緊急管理服務、核心偵錯
 ms.prod: windows-server-threshold
 ms.service: na
@@ -13,15 +13,15 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5d3e352cd022853a1602c67c3aaf2530cfc696
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081994"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813639"
 ---
-# <a name="troubleshooting-nano-server"></a>針對 Nano 伺服器進行疑難排解
+# <a name="troubleshooting-nano-server"></a>針對 Nano Server 進行疑難排解
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 

@@ -1,6 +1,6 @@
 ---
-title: "分類管理"
-description: "本文說明如何根據分類屬性將檔案分類"
+title: 分類管理
+description: 本文說明如何將分類的分類屬性為基礎的檔案
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bf983fe693af7e5ba3f922b14fd1865a72a88296
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 13323cd380c9df5185a7989721ec2574ea880d4f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814789"
 ---
 # <a name="classification-management"></a>分類管理
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 分類屬性用於將檔案分類，可用來針對已排程的檔案管理工作選取檔案。
 
@@ -32,6 +33,6 @@ ms.lasthandoff: 10/17/2017
 > 若要設定電子郵件通知和某些報告功能，您必須先設定檔案伺服器資源管理員的一般選項。
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

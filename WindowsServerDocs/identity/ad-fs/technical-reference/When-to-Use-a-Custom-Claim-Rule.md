@@ -1,7 +1,7 @@
 ---
 ms.assetid: 20d183f0-ef94-44bb-9dfc-ed93799dd1a6
-title: "使用 [自訂理賠要求規則"
-description: 
+title: 使用自訂宣告規則的時機
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,69 +9,70 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f5398f0b10d9e62548145fdde0354a3d047eb0ae
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: b08622cd9eefa153e2fe8403fbe85077644182f4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813109"
 ---
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-# <a name="when-to-use-a-custom-claim-rule"></a>使用 [自訂理賠要求規則
-您在使用理賠要求規則語言、 架構宣告發行引擎使用以程式設計方式產生轉換、 通過會 Active Directory 同盟服務 \(AD FS\) 撰寫自訂理賠要求規則及篩選與主張。 使用自訂規則，您可以建立具有更複雜的邏輯比一般規則範本規則。 請考慮當您想要使用自訂的規則：  
+# <a name="when-to-use-a-custom-claim-rule"></a>使用自訂宣告規則的時機
+您可以撰寫自訂宣告規則中 Active Directory Federation Services \(AD FS\)使用宣告規則語言，這是宣告發行引擎用來以程式設計方式產生、 轉換、 通過和篩選宣告。 藉由使用自訂規則，您可以透過比標準規則範本更複雜的邏輯來建立規則。 當您想要執行下列作業時，請考慮使用自訂規則：  
   
--   傳送宣告基礎結構化查詢語言 \(SQL\) 屬性存放區擷取的值。  
+-   根據從結構化的查詢語言擷取的值來傳送宣告\(SQL\)屬性存放區。  
   
--   傳送主張使用自訂 LDAP 篩選輕量型 Directory 存取通訊協定 \(LDAP\) 屬性存放區擷取的值為基礎。  
+-   根據從輕量型目錄存取通訊協定擷取的值來傳送宣告\(LDAP\)使用自訂 LDAP 篩選器的屬性存放區。  
   
--   傳送宣告根據自訂屬性存放區擷取的值。  
+-   根據從自訂屬性存放區中擷取的值來傳送宣告。  
   
--   有兩個或更多連入宣告時才，請傳送主張。  
+-   僅在有兩個或更多傳入宣告存在時傳送宣告。  
   
--   傳送宣告，連入取得值相符項目複雜的模式時，才。  
+-   僅在傳入宣告值符合複雜模式時傳送宣告。  
   
--   傳送到傳入複雜變更宣告取得值。  
+-   在傳入宣告值有複雜的變更時傳送宣告。  
   
--   只會在稍後規則，建立主張使用，而不需要實際傳送宣告。  
+-   建立僅用於後續規則的宣告，而不實際傳送宣告。  
   
--   建立的多個連入宣告 content 從傳出宣告。  
+-   從多個連入宣告的內容建構傳出宣告。  
   
-傳出宣告宣告值必須為基礎的值連入宣告，但必須也包含其他 content 時，您也可以使用 [自訂規則。  
+如果傳出宣告的宣告值必須以傳入宣告的值為準，但還必須包含其他內容，您也可以使用自訂規則。  
   
-宣告規則語言是根據規則。 它已條件和執行部分。 您可以使用理賠要求規則語言語法列舉、 新增、 delete，或修改宣告貴組織的需求。 針對每個部分運作方式的相關詳細資訊，請查看[的角色理賠要求規則語言的](The-Role-of-the-Claim-Rule-Language.md)。  
+宣告規則語言以規則為準。 它有條件組件和執行組件。 您可以使用宣告規則語言語法來列舉、新增、刪除或修改宣告，以符合組織的需求。 如需有關如何每一種組件運作方式的詳細資訊，請參閱 < [The Role of 宣告規則語言](The-Role-of-the-Claim-Rule-Language.md)。  
   
-下列章節提供基本簡介取得規則。 它們也提供使用自訂宣告規則詳細資訊。  
+下列各節提供宣告規則的基本介紹。 此外也提供關於如何使用自訂宣告規則的詳細資料。  
   
-## <a name="about-claim-rules"></a>關於理賠要求規則  
-宣告規則表示商務邏輯操作，連入宣告的執行個體、 適用於條件 \ （如果 x，然後 y\） 和產生傳出宣告依據條件的參數。  
+## <a name="about-claim-rules"></a>關於宣告規則  
+宣告規則表示商務邏輯接受連入宣告的執行個體，對其套用條件\(若 x 則 y\)和產生根據條件參數傳出宣告。  
   
 > [!IMPORTANT]  
-> -   AD FS snap\ 中管理，取得可以只使用理賠要求規則範本建立規則  
-> -   宣告規則處理程序傳入宣告直接從宣告提供者 \ （例如 Active Directory 或其他聯盟 Service\） 或接受的輸出從轉換宣告提供者信任規則。  
-> -   宣告發行引擎順序特定的規則集中處理理賠要求規則。 藉由設定優先順序規則，可以進一步改善或篩選宣告專特定的規則設定中的上一個規則。  
-> -   宣告規則範本一定需要您指定傳入宣告類型。 不過，您可以使用相同的理賠要求類型處理多個理賠要求值使用單一規則。  
+> -   在 AD FS 管理嵌入式管理單元\-，宣告可以只使用宣告規則範本建立規則  
+> -   宣告規則處理程序內送宣告直接從宣告提供者\(Active Directory 或其他同盟服務等\)或宣告提供者信任上從輸出的接受轉換規則。  
+> -   宣告規則的處理方式，是由宣告發行引擎依時間先後順序按照指定的規則集處理。 藉由設定規則優先順序，您可以進一步精簡或篩選由特定規則集內的上一個規則所產生的宣告。  
+> -   宣告規則範本一律會要求您指定傳入宣告類型。 不過，您可以使用單一規則和同一宣告類型處理多個宣告值。  
   
-如需詳細資訊理賠要求規則及宣告規則集合，請查看[的角色的取得規則](The-Role-of-Claim-Rules.md)。 如需規則的處理方式的相關資訊，請查看[的角色宣告引擎的](The-Role-of-the-Claims-Engine.md)。 宣告規則集合的處理方式的相關資訊，請查看[的角色宣告管線的](The-Role-of-the-Claims-Pipeline.md)。  
+如需詳細的宣告規則和宣告規則集的相關資訊，請參閱[規則的角色宣告](The-Role-of-Claim-Rules.md)。 如需有關規則的處理方式的詳細資訊，請參閱 < [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md)。 宣告規則集的處理方式的詳細資訊，請參閱[The Role of the Claims Pipeline](The-Role-of-the-Claims-Pipeline.md)。  
   
-## <a name="how-to-create-this-rule"></a>如何建立本規則  
-您第一次製作，您必須使用理賠要求規則語言作業然後結果貼上所提供的傳送文字方塊主張使用宣告提供者的屬性自訂規則範本信任或信賴信任 snap\ 中 AD FS 管理語法建立此規則。  
+## <a name="how-to-create-this-rule"></a>如何建立此規則  
+建立此規則的第一個撰寫的語法，您需要您使用宣告規則語言，然後貼上的項目，在文字中的結果也就是方塊的作業提供在傳送的宣告，使用自訂規則範本內容的宣告提供者 trust 或信賴憑證者信任 AD FS 管理嵌入式管理單元中\-中。  
   
-此規則範本提供下列選項：  
+此規則範本提供以下選項：  
   
--   指定名稱理賠要求規則  
+-   指定宣告規則名稱  
   
--   輸入一個或多個選擇性 and 發行聲明，請使用 AD FS 取得規則語言  
+-   輸入一或多個選用條件和發佈陳述式使用 AD FS 宣告規則語言  
   
-建立自訂使用此範本規則的其他的指示，請查看[建立自訂規則傳送主張使用規則](https://technet.microsoft.com/library/dd807049.aspx)中的 AD FS 部署。  
+建立自訂規則使用此範本的詳細指示，請參閱[建立自訂規則傳送宣告使用的規則](https://technet.microsoft.com/library/dd807049.aspx)AD FS 部署指南中。  
   
-解理賠要求規則語言的運作方式，檢視理賠要求規則語言的其他存在的規則語法 snap\ 中按一下**檢視規則語言**索引標籤中，規則的屬性。 使用此一節中的資訊和語法資訊此索引標籤上，可提供深入了解如何建立您自己的自訂規則。  
+深入了解宣告規則語言的運作方式，檢視已存在其他規則的宣告規則語言語法中的嵌入式管理單元\-中按一下**檢視規則語言**該規則屬性 索引標籤。 使用本節的資訊和此索引標籤上的語法資訊，可深入了解如何建構您自己的自訂規則。  
   
-如需有關如何使用理賠要求規則語言，請查看[角色取得規則語言的](The-Role-of-the-Claim-Rule-Language.md)。  
+如需如何使用宣告規則語言的詳細資訊，請參閱[The Role of 宣告規則語言](The-Role-of-the-Claim-Rule-Language.md)。  
   
-## <a name="using-the-claim-rule-language"></a>使用語言理賠要求規則  
+## <a name="using-the-claim-rule-language"></a>使用宣告規則語言  
   
-### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>範例： 如何結合姓名根據的使用者名稱屬性的值  
-下列語法規則結合了特定地區姓名中指定的屬性網上商店的屬性。 原則引擎形成笛 product 的每個條件相符項目。 例如，{」 Frank 」、 「 心靈 「} 名字與姓氏 {「 李玉紅 」、 「 Shen 「} 輸出為 {「 Frank 李玉紅 」、 「 Frank Shen 」、 「 心靈李玉紅 」、 「 心靈 Shen 「}:  
+### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>範例：如何根據使用者的名稱屬性值結合名字和姓氏  
+下列規則語法會結合會從給定屬性存放區中的屬性值結合名字和姓氏。 原則引擎會組成每個條件之相符項目的笛卡兒乘積。 例如，名字 {“Frank”, “Alan”} 和姓氏 {“Miller”, “Shen”} 的輸出是 {“Frank Miller”, “Frank Shen”, “Alan Miller”, “Alan Shen”}：  
   
 ```  
 c1:[type == "http://exampleschema/firstname" ]  
@@ -79,23 +80,23 @@ c1:[type == "http://exampleschema/firstname" ]
 => issue(type = "http://exampleschema/name", value = c1.value + “  “ + c2.value);  
 ```  
   
-### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>範例： 如何發出根據使用者是否有屬下管理員理賠要求  
-下列規則問題管理員理賠要求只有使用者有直接報告：  
+### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>範例：如何根據使用者是否有直接報告發出管理員宣告  
+下列規則只會在使用者有直接報告時發出管理員宣告：  
   
 ```  
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => add(store = "SQL Store", types = ("http://schemas.xmlsoap.org/claims/Reports"), query = "SELECT Reports FROM dbo.DirectReports WHERE UserName = {0}", param = c.value );  
 count([type == “http://schemas.xmlsoap.org/claims/Reports“] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
 ```  
   
-### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>範例： 如何發出根據 LDAP 屬性 PPID 理賠要求  
-下列規則問題私人個人識別碼 \(PPID\) 理賠要求根據**windowsaccountname**和**originalissuer**屬性 LDAP 屬性網上商店中的使用者：  
+### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>範例：如何根據 LDAP 屬性發出 PPID 宣告  
+下列規則發出私密個人識別碼\(PPID\)宣告根據**windowsaccountname**並**originalissuer** LDAP 屬性中的使用者屬性存放區：  
   
 ```  
-c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]  
+c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]  
  => issue(store = "_OpaqueIdStore", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier"), query = "{0};{1};{2}", param = "ppid", param = c.Value, param = c.OriginalIssuer);  
 ```  
   
-常見的屬性，可用於唯一找出使用者提供這項查詢包含下列類型：  
+可用來唯一識別此查詢之使用者的常用屬性包括：  
   
 -   **使用者 SID**  
   

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 330c7b61-dde0-432f-9b74-d250ad9cc808
-title: "新增 sign\\ 在頁面上的描述"
-description: 
+title: 新增\-在 [描述] 頁面
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,28 +9,29 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 128a4ffd8d4b9dfcfe5f0e8e2df8a0e1505cbb24
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 553cdcf2ac98b23d06cc43a64220cf8433117fc8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814009"
 ---
-# <a name="add-sign-in-page-description"></a>新增 sign\ 在頁面上的描述
+# <a name="add-sign-in-page-description"></a>新增\-在 [描述] 頁面
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-## <a name="to-add-sign-in-page-description"></a>若要新增 sign\ 在頁面上的描述  
-若要 sign\ 中頁面需要新增描述 sign\ 在頁面上，使用下列的 Windows PowerShell PowerShell cmdlet 和語法。  
+## <a name="to-add-sign-in-page-description"></a>若要新增登\-在 [描述] 頁面  
+若要新增標誌\-正負號的頁面描述中\-在頁面上，使用下列 Windows PowerShell cmdlet 和語法。  
 
-![在 [描述新增登入](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+![新增登入說明](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
 
     Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information.</p>" 
  
   
 > [!IMPORTANT]  
-> 適用於字串`SignInPageDescriptionText`參數支援兩個純真 HTML 標記與不用。 因此，您可以也執行下列 cmdlet 不使用&lt;p&gt;標籤。  `Set-AdfsGlobalWebContent -SignInPageDescriptionText "Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information." ` 
+> `SignInPageDescriptionText` 參數的字串支援包含標記與不包含標記的純 HTML。 因此，您也可以執行下列 cmdlet 而不使用&lt;p&gt;標記。  `Set-AdfsGlobalWebContent -SignInPageDescriptionText "Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information." ` 
 
-自訂 sign\ 頁面會之後，自訂的優先順序。因此，您應該自訂為所有要支援的語言。 所有自訂的 content 參數的地區設定。 當您設定當地語系化的 content 時，它應該設定無 country\ 的地區設定第一次，，例如「en-us」，例如設定國家/地區和 region\ 特定地區之前「en\-我們」。  
+號後面\-頁面中為自訂，自訂會有優先順序; 因此，您應該自訂您想要支援的所有語言。 所有的自訂內容皆接受地區設定參數。 當您設定當地語系化的內容時，它應該設有國家/地區\-較少的地區設定第一個，例如，"en"，然後再設定 country 和 region\-特定地區設定，例如 「 en-us\-我們"。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

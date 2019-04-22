@@ -1,6 +1,6 @@
 ---
-title: "步驟 2： 與全新的複本網域控制站安裝 Windows Server Essentials"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 步驟 2：Windows Server Essentials 安裝為新的複本網域控制站
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,92 +13,93 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 757012b7d1a57a001e3b55cdc0604b63852a3d3c
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59816459"
 ---
-# <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>步驟 2： 與全新的複本網域控制站安裝 Windows Server Essentials
+# <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>步驟 2：Windows Server Essentials 安裝為新的複本網域控制站
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-本節 （與 Windows Server Essentials 體驗角色支援） 安裝 Windows Server Essentials 和 Windows Server 2012 標準 R2 網域控制站的方式。  
+本節說明如何使用來安裝 Windows Server Essentials 和 Windows Server 2012 R2 Standard （已啟用 「 Windows Server Essentials 體驗角色） 為網域控制站。  
   
- 針對環境中最多 25 位使用者與 50 個裝置，您可以依照本指南從舊版的 Windows SBS 移轉到 Windows Server Essentials。 最多 100 使用者和 200 裝置的環境，您可以依照相同的指導方針與 Windows Server Essentials 體驗角色安裝移轉到 Standard 和 Datacenter 版本的 Windows Server 2012 R2。 本文件中所涵蓋這兩個案例。  
+ 具有多達 25 名使用者及 50 台裝置的環境，您可以依照本指南，以從舊版的 Windows SBS 移轉到 Windows Server Essentials 中的步驟。 具有最多 100 位使用者和 200 台裝置的環境，您可以依照相同的指引移轉到 Windows Server 2012 R2 Standard 和 Datacenter 版本已安裝的 Windows Server Essentials 體驗角色。 本文件將涵蓋這兩種案例。  
   
 > [!IMPORTANT]
->  如果您移轉到 Windows Server Essentials，下列錯誤訊息被新增至事件登入期間 21 日優惠直到您移除您的網路來源伺服器每一天。 21 日優惠期間之後來源伺服器會關閉。 <br> **FSMO 角色檢查偵測條件授權原則遵守退出的環境中。管理伺服器必須按住主要網域控制站和網域命名主要 Active Directory 角色。請移至管理伺服器的 Active Directory 角色現在。此伺服器將會自動關閉如果無法修正問題 21 天從第一次此條件偵測到的時間在**。   
+>  如果您移轉到 Windows Server Essentials 時，下列的錯誤訊息加入至事件記錄檔之前從網路移除來源伺服器在 21 天寬限期內的每一天。 21 天寬限期之後，會關閉來源伺服器。 <br> **FSMO 角色檢查偵測環境不符合授權原則中的情況。管理伺服器必須具有網域主控站和網域命名主要 Active Directory 角色。請立即將 Active Directory 角色移至管理伺服器。此伺服器將會自動關閉若此問題修正的時間，第一次偵測到此狀況的 21 天內**。   
   
-#### <a name="install-windows-server-essentials-or-windows-server-2012-r2-standard-on-the-destination-server"></a>目的地伺服器上安裝 Windows Server Essentials 或 Windows Server 2012 R2 標準  
+#### <a name="install-windows-server-essentials-or-windows-server-2012-r2-standard-on-the-destination-server"></a>在目的地伺服器上安裝 Windows Server Essentials 或 Windows Server 2012 R2 Standard  
   
-1.  安裝 Windows Server Essentials 或 Windows Server 2012 標準 R2 依照下列指示支援 Windows Server Essentials 體驗角色[安裝與設定 Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
-  
-    > [!NOTE]
-    >  如果 [設定 Windows Server Essentials 精靈時限，取消。  
-  
-2.  從您的來源伺服器傳輸故障。  
+1.  安裝 Windows Server Essentials 或 Windows Server 2012 R2 Standard 中的指示已啟用 Windows Server Essentials 體驗角色[安裝和設定 Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
   
     > [!NOTE]
-    >  Windows Server Essentials 是否只網域控制站網域中的，FSMO 角色會自動移到執行 Windows Server Essentials 當您降級來源伺服器伺服器。  
+    >  如果「設定 Windows Server Essentials 精靈」啟動，請將它取消。  
   
-3.  打開伺服器管理員並執行新增角色與功能精靈。  
+2.  從來源伺服器移轉 FSMO 角色。  
   
-4.  如果無法安裝，新增 Windows Server Essentials 體驗角色。  
+    > [!NOTE]
+    >  如果 Windows Server Essentials 網域中唯一的網域控制站，則 FSMO 角色會自動移到時降級來源伺服器執行 Windows Server Essentials 的伺服器。  
   
-5.  安裝 Windows Server Essentials 體驗角色之後，設定 Windows Server Essentials 工作會顯示在通知區域中。 按一下稍設定 Windows Server Essentials 精靈中的工作。  
+3.  開啟伺服器管理員，然後執行「新增角色及功能」精靈。  
   
-6.  請依照下列指示完成 Windows Server Essentials 的設定。 您在執行精靈之前，請執行下列動作：  
+4.  如果未安裝，請新增 Windows Server Essentials 經驗角色。  
   
-    -   變更伺服器名稱如有需要因為您已經完成設定 Windows Server Essentials 精靈之後，您無法變更名稱。  
+5.  安裝 Windows Server Essentials 體驗角色之後，[設定 Windows Server Essentials] 工作會出現在通知區域中。 按一下工作以啟動「設定 Windows Server Essentials」精靈。  
   
-    -   確保伺服器的時間，並設定正確。  
+6.  依照指示完成 Windows Server Essentials 的設定。 執行精靈之前，請執行下列作業：  
   
-7.  請確認安裝，如下所示：  
+    -   如有需要，請變更伺服器名稱，因為您完成「設定 Windows Server Essentials 精靈」之後，就無法再變更名稱。  
   
-    1.  打開儀表板。  
+    -   請確定伺服器的時間和設定正確無誤。  
   
-    2.  按一下**使用者**索引標籤，然後確認 [帳號，您的 Active Directory 中已列出。  
+7.  請依照下列步驟確認安裝成功：  
   
-### <a name="transfer-the-operations-master-roles"></a>傳送操作主機角色  
- 操作 （也稱為彈性的單一主機操作或 FSMO） 主機必須將它們傳輸來源伺服器的目的地伺服器 21 天目的伺服器上安裝 Windows Server Essentials 的中。  
+    1.  開啟 [儀表板]。  
   
-##### <a name="to-transfer-the-operations-master-roles"></a>若要傳送操作主機角色  
+    2.  按一下 [使用者]  索引標籤，然後確認已列出您 Active Directory 中的使用者帳戶。  
   
-1.  目的伺服器，開放 [以系統管理員身分在命令提示字元視窗。 查看[開放命令提示字元視窗中，系統管理員的身分，以](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx)。  
+### <a name="transfer-the-operations-master-roles"></a>轉移操作主機角色  
+ 操作主機 （也稱為彈性單一主機操作或 FSMO） 角色必須被傳輸從來源伺服器到目的地伺服器的目的地伺服器上安裝 Windows Server Essentials 的 21 天內。  
   
-2.  在命令提示字元中，輸入**NETDOM 查詢 FSMO**，然後按 ENTER 鍵。  
+##### <a name="to-transfer-the-operations-master-roles"></a>轉移操作主機角色  
   
-3.  在命令提示字元中，輸入**ntdsutil**，然後按 ENTER 鍵。  
+1.  在目的地伺服器上，以系統管理員身分開啟 [命令提示字元] 視窗。 請參閱 [以系統管理員身分開啟命令提示字元視窗](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx)。  
   
-4.  在**ntdsutil**命令提示字元中，輸入下列命令：  
+2.  在命令提示字元下，輸入 **NETDOM QUERY FSMO**，然後按 ENTER。  
   
-    1.  輸入**啟動執行個體 NTDS**，然後按 ENTER 鍵。  
+3.  在命令提示字元下，輸入 **ntdsutil**，然後按 ENTER。  
   
-    2.  輸入**角色**，然後按 ENTER 鍵。  
+4.  在 **ntdsutil** 命令提示字元中，輸入下列命令：  
   
-    3.  輸入**連接**，然後按 ENTER 鍵。  
+    1.  輸入 **activate instance NTDS**，然後按 ENTER 鍵。  
   
-    4.  輸入**連接伺服器** *< ServerName\ >* (其中*< ServerName\ >*目的伺服器的名稱)，然後按 ENTER 鍵。  
+    2.  輸入 **角色**，然後按 ENTER。  
   
-    5.  在命令提示字元中，輸入**q**，然後按 ENTER 鍵。  
+    3.  輸入 **連線**，然後按 ENTER。  
   
-        1.  輸入**傳輸 PDC**，按下 ENTER，然後按一下 [**是**中**角色傳輸確認**] 對話方塊。  
+    4.  型別**連接到伺服器** *< 伺服器名稱\>* (其中 *< ServerName\>* 是目的地伺服器的名稱)，然後按 ENTER 鍵。  
   
-        2.  輸入**傳輸基礎結構主機**，按下 ENTER，然後按一下 [**是**中**角色傳輸確認**] 對話方塊。  
+    5.  在命令提示字元中輸入 **q**，然後按 ENTER。  
   
-        3.  輸入**傳輸命名主機**，按下 ENTER，然後按一下 [**是**中**角色傳輸確認**] 對話方塊。  
+        1.  輸入 **transfer PDC**，按 ENTER 鍵，然後在 [角色轉移確認] 對話方塊中按一下 [是]。  
   
-        4.  輸入**傳輸 RID 主機**，按下 ENTER，然後按一下 [**是**中**角色傳輸確認**] 對話方塊。  
+        2.  輸入 **傳輸基礎結構主機**，按 ENTER，然後在 [角色轉移確認] 對話方塊中按一下 [是]。  
   
-        5.  輸入**傳輸架構主機**，按下 ENTER，然後按一下 [**是**中**角色傳輸確認**] 對話方塊。  
+        3.  輸入 **傳輸命名主機**，按 ENTER，然後在 [角色轉移確認]  對話方塊中按一下 [是]  。  
   
-    6.  輸入**q**，然後按 ENTER 鍵，直到您回到命令提示字元。  
+        4.  輸入 **傳輸 RID 主機**，按 ENTER，然後在 [角色轉移確認] 對話方塊中按一下 [是]。  
+  
+        5.  輸入 **傳輸架構主機**，按 ENTER，然後在 [角色轉移確認]  對話方塊中按一下 [是]  。  
+  
+    6.  輸入 **q**，然後按 ENTER 鍵，直到您返回命令提示字元。  
   
 > [!NOTE]
->  從網路上的任何伺服器，您就可以驗證操作主機角色已將轉移到目的伺服器。 打開命令提示字元視窗以系統管理員 (如需詳細資訊，請查看[若要打開命令提示字元視窗以系統管理員身分](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx))。 輸入**netdom 查詢 fsmo**，然後按 ENTER 鍵。  
+>  從網路上的任何伺服器，您都可以確認操作主機角色已轉移到目的地伺服器。 以系統管理員身分開啟 [命令提示字元] 視窗 (如需詳細資訊，請參閱 [以系統管理員身分開啟命令提示字元視窗](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx))。 輸入 **netdom query fsmo**，然後按 ENTER。  
   
 ## <a name="next-steps"></a>後續步驟  
- 您已安裝 Windows Server Essentials 的全新複本網域控制站為。 立即移至[執行 「 步驟 3： 電腦加入新的 Windows Server Essentials 伺服器](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)。  
+ 您已安裝 Windows Server Essentials 為新的複本網域控制站。 現在請移至[步驟 3:將電腦加入新的 Windows Server Essentials 伺服器](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)。  
   
-若要檢視所有的步驟，請查看[Windows Server essentials 移轉](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要檢視所有步驟，請參閱[移轉至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

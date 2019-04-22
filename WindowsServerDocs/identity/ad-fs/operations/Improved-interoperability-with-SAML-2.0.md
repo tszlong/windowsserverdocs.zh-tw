@@ -1,7 +1,7 @@
 ---
 ms.assetid: 80b5335b-fa02-4944-900c-5fe4f5c6111d
-title: "已改善交互操作 SAML 2.0"
-description: 
+title: 使用 SAML 2.0 改進互通性
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,25 +10,26 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 4f55eaacec8ee0eb41e1980f1aa15c6256f8b979
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818729"
 ---
-# <a name="improved-interoperability-with-saml-20"></a>已改善交互操作 SAML 2.0
+# <a name="improved-interoperability-with-saml-20"></a>使用 SAML 2.0 改進互通性
 
 >適用於：Windows Server 2016
 
   
-在 Windows Server 2016 AD FS 包含其他 SAML 通訊協定支援，包括根據中繼資料包含多個項目信任匯入的支援。  這可讓您設定在 confederations InCommon 聯盟和其他實作 eGov 2.0 一般符合參與 AD FS。   
+Windows Server 2016 中的 AD FS 包含其他 SAML 通訊協定支援，包括支援匯入包含多個實體的中繼資料為基礎的信任。  這可讓您設定 AD FS 以參與 confederations InCommon 同盟等其他符合 eGov 2.0 標準的實作。   
   
-新的功能根據信賴或宣告提供者信任的群組。 每個群組是 EntitiesDescriptor (< md:EntitiesDescriptor >) 為 eGov 中指定 2.0 的個人檔案，包含一或多個 EntityDescriptor 項目。  群組有常見的授權規範，且可以修改所有其他屬性，例如個人信任物件。  
+新的功能為基礎的信賴憑證者的合作對象 」 或 「 宣告提供者信任群組。 每個群組是 EntitiesDescriptor (< md:EntitiesDescriptor >) 元素指定在 eGov 2.0 設定檔，其中包含一或多個 EntityDescriptor 項目。  群組有共同的授權規則，並可以修改所有其他屬性，如同個別的信任物件。  
   
-在信任群組匯入 AD FS，AD FS 自動更新信任為基礎的中繼資料文件群組。  
+一旦信任群組會匯入到 AD FS 中，AD FS 會自動更新信任為基礎的中繼資料文件的群組。  
   
-讓這些案例中，就像簡單使用新的 PowerShell commandlets 該新增和移除 AdfsClaimsProviderTrustsGroup AdfsRelyingPartyTrustsGroup 物件。 這可以使用 URL 中繼資料或檔案，以下的範例所示。  
+啟用這些案例是只要使用新的 PowerShell cmdlet，新增和移除 AdfsClaimsProviderTrustsGroup 和 AdfsRelyingPartyTrustsGroup 物件。 這可以使用中繼資料 URL 或檔案，如下列範例所示。  
   
-此外，AD FS 2016 已支援的範圍參數，SAML 核心規格 3.4.1.2 一節中所述。 此項目可可以指定一方，或要求其他驗證身分提供者。  
+此外，AD FS 2016 都有支援範圍的參數區段 3.4.1.2 SAML Core 規格中所述。 這個項目可讓信賴憑證者合作對象來指定一個或多個身分識別提供者進行驗證要求。  
   
 ## <a name="examples"></a>範例  
   
@@ -42,10 +43,10 @@ Add-AdfsClaimsProviderTrustsGroup -MetadataUrl "https://www.contosoconsortium.co
 Add-AdfsClaimsProviderTrustsGroup -MetadataFile "C:\metadata.xml"   
 ```  
   
-## <a name="references"></a>資訊尋找參考資料  
+## <a name="references"></a>參考  
   
-找不到 eGov 2.0 設定檔[在此。](https://kantarainitiative.org/confluence/download/attachments/60817482/kantara-report-egov-saml2-profile-2.0.pdf?version=1&modificationDate=1345580916000&api=v2)  
+可以找到 eGov 2.0 設定檔[這裡。](https://kantarainitiative.org/confluence/download/attachments/60817482/kantara-report-egov-saml2-profile-2.0.pdf?version=1&modificationDate=1345580916000&api=v2)  
   
-找不到 SAML 核心規格[在此。](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf)   
+您可以找到 SAML Core 規格[這裡。](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf)   
 
 

@@ -1,19 +1,20 @@
 ---
 redirect_url: /windows-server/windows-server
-ms.openlocfilehash: aa1bc1d94f91a2b9584f72398385575d22db33a9
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 6f6e0d21fdf43ce3cf9f713d5731cfea5bb069de
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812269"
 ---
-# <a name="windows-server-2016"></a>WindowsServer 2016
+# <a name="windows-server-2016"></a>Windows Server 2016
 
 這個文件庫提供專業 IT 人員評估、規劃、部署、保護和管理 Windows Server 2016 所需的資訊。
 
 > [!Note] 
 > 下一個 Windows Server 版本要改變了！ 您可以瀏覽 [Windows Server 半年度管道概觀](./get-started/semi-annual-channel-overview.md)，深入了解即將出現哪些變化。 
 
-[![W[Windows Server 2016 概觀影片](media/front-page-video.png)](https://www.youtube.com/embed/V8oF0JpDzaM)
+[![Windows Server 2016 概觀影片](media/front-page-video.png)](https://www.youtube-nocookie.com/embed/V8oF0JpDzaM)
 
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
@@ -25,7 +26,7 @@ ms.lasthandoff: 10/17/2017
     <td align='center' style="width:25%; border:0;">
       <a href="/windows-server/get-started/server-basics">
         <img height=145 src="media/1-getstarted.png" alt="get started icon" title="開始使用 Windows Server 2016" /></a>
-      <br/>入門 </td>
+      <br/>開始使用 </td>
     <td align='center' style="width:25%; border:0;">
       <a href="/windows-server/administration/index">
         <img height=145 src="media/8-management.png" alt="administer icon" title="管理 Windows Server" /></a>
@@ -62,7 +63,7 @@ ms.lasthandoff: 10/17/2017
       <a href="/windows-server/storage/storage">
         <img height=145 src="media/7-storage.png" alt="Storage icon" title="Windows Server 儲存空間" />
       </a>
-      <br/>儲存空間 </td>
+      <br/>儲存體 </td>
    <td align='center' style="width:25%; border:0;"><br/>
       <a href="/windows-server/virtualization/virtualization">
         <img height=145 src="media/virtualization.png" alt="virtualization icon" title="Windows Server Virtualization" /></a>
@@ -77,46 +78,46 @@ ms.lasthandoff: 10/17/2017
 > 若要體驗 Windows Server 2016 中提供的最新功能，您可以瀏覽 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)來下載評估版。 
 
 
-## <a name="windows-server-2016-editions"></a>WindowsServer 2016 版本
+## <a name="windows-server-2016-editions"></a>Windows Server 2016 版本
 
-Standard、Datacenter 和 Essentials 版本中都提供 WindowsServer 2016。 WindowsServer 2016 Datacenter 包含無限制的虛擬化權限，以及建置軟體定義資料中心的新功能。 WindowsServer 2016 Standard 提供具有有限虛擬化權限的企業級功能。 WindowsServer Essentials 是理想的連接雲端的第一部伺服器。 它有自己的[大量文件](http://go.microsoft.com/fwlink/?LinkID=827171)：這裡的內容著重於 Standard 和 Datacenter 版本。 下表簡單地摘要說明 Standard 與 Datacenter 版本之間的主要差異︰
+Standard、Datacenter 和 Essentials 版本中都提供 Windows Server 2016。 Windows Server 2016 Datacenter 包含無限制的虛擬化權限，以及建置軟體定義資料中心的新功能。 Windows Server 2016 Standard 提供具有有限虛擬化權限的企業級功能。 Windows Server Essentials 是理想的連接雲端的第一部伺服器。 它有自己的[大量文件](https://go.microsoft.com/fwlink/?LinkID=827171)：這裡的內容著重於 Standard 和 Datacenter 版本。 下表簡單地摘要說明 Standard 與 Datacenter 版本之間的主要差異︰
 
 |功能|Datacenter|Standard|  
 |-------------------|----------|-----------------------|  
-|WindowsServer 的核心功能| 是| 是|
-|OSE/Hyper-V 容器|無限制|   2|
-|WindowsServer 容器|無限制|   無限制|
+|Windows Server 的核心功能| 是| 是|
+|OSE / Hyper-V 容器|沒有限制|   2|
+|Windows Server 容器|沒有限制|   沒有限制|
 |主機守護者服務| 是| 是|
 |Nano Server 安裝選項| 是| 是|
 |儲存體功能 (包括儲存空間直接存取和儲存體複本)| 是| 否|
 |受防護的虛擬機器| 是| 否|
 |軟體定義網路基礎結構 (網路控制器、軟體負載平衡器和多租用戶閘道)| 是| 否|
 
-如需詳細資訊，請參閱 [Pricing and licensing for WindowsServer 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server-pricing) (WindowsServer 2016 的價格和授權) 和 [Compare features in WindowsServer versions](https://www.microsoft.com/en-us/cloud-platform/windows-server-comparison) (比較 WindowsServer 版本的功能)。
+如需詳細資訊，請參閱 [Pricing and licensing for Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server-pricing) (Windows Server 2016 的價格和授權) 和 [Compare features in Windows Server versions](https://www.microsoft.com/en-us/cloud-platform/windows-server-comparison) (比較 Windows Server 版本的功能)。
 
 ## <a name="installation-options"></a>安裝選項
 
 Standard 和 Datacenter 版本都提供三個安裝選項︰
 
-- **Server Core：**可減少磁碟上所需的空間、潛在的受攻擊面，以及特別是服務需求。 除非有額外使用者介面元素和圖形化管理工具的特別需求，否則這是**建議**選項。
-- **含桌面體驗的伺服器：**會安裝標準使用者介面和所有工具，包括需要在 WindowsServer 2012 R2 中另外安裝的用戶體驗功能。 伺服器角色及功能可由伺服器管理員或其他方法安裝。
-- **Nano Server：**是一個遠端管理的伺服器作業系統，已針對私人雲端和資料中心最佳化。 它類似於 Server Core 模式的 WindowsServer，但明顯較小、沒有本機登入功能，而且只支援 64 位元應用程式、工具和代理程式。 比起其他選項，它佔用的磁碟空間更少、設定的速度明顯地更快，而且所需的更新和重新啟動次數更少。
+- [Server Core] 可減少磁碟上所需的空間、潛在的受攻擊面，以及特別是服務需求。 除非有額外使用者介面元素和圖形化管理工具的特別需求，否則這是**建議**選項。
+- [含桌面體驗的伺服器] 會安裝標準使用者介面和所有工具，包括需要在 Windows Server 2012 R2 中另外安裝的用戶體驗功能。 伺服器角色及功能可由伺服器管理員或其他方法安裝。
+- [Nano 伺服器] 是一個遠端管理的伺服器作業系統，已針對私人雲端和資料中心最佳化。 它類似於 Server Core 模式的 Windows Server，但明顯較小、沒有本機登入功能，而且只支援 64 位元應用程式、工具和代理程式。 比起其他選項，它佔用的磁碟空間更少、設定的速度明顯地更快，而且所需的更新和重新啟動次數更少。
 
 >[!Note]
-> 與 WindowsServer 某些更早的版本不同，您無法在安裝完成後在 Server Core 與桌面體驗伺服器之間進行轉換。 例如，如果您安裝 Server Core，並稍後決定使用桌面體驗伺服器，您應該執行全新安裝 (反之亦然)。
+> 與 Windows Server 某些更早的版本不同，您無法在安裝完成後在 Server Core 與桌面體驗伺服器之間進行轉換。 例如，如果您安裝 Server Core，並稍後決定使用桌面體驗伺服器，您應該執行全新安裝 (反之亦然)。
 
 
-現在您已知道哪一個版本和安裝選項最適合您，請在下面按一下以開始使用 WindowsServer 2016。
+現在您已知道哪一個版本和安裝選項最適合您，請按一下下方開始使用 Windows Server 2016。
 <br/>
 <br/>
 
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:33%; border:0;">
-      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - 最輕量型" /><br/>Nano Server - <br/>最輕量型</a>
+      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - 最輕量型" /><br/>Nano Server - <br/>最小的權數</a>
     </td>
-    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - 建議使用" /><br/>Server Core - <br/>建議使用</a></td>
-   <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-with-desktop-experience"><img width="175" src="media/desktop.png" alt="Icon representing the full desktop experience installation option for Windows Server" title="桌面體驗 - 完整體驗" /><br/>桌面體驗 - <br/>完整介面</a></td>
+    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - 建議使用" /><br/>Server Core - <br/>建議</a></td>
+   <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-with-desktop-experience"><img width="175" src="media/desktop.png" alt="Icon representing the full desktop experience installation option for Windows Server" title="桌面體驗 - 完整體驗" /><br/>桌面體驗 - <br/>完整的介面</a></td>
   </tr>
 </table>
 
@@ -133,5 +134,3 @@ Standard 和 Datacenter 版本都提供三個安裝選項︰
     <td align='center' style="width:10%; border:0;"></td>
   </tr>
 </table>
-
-找不到需要的內容嗎？ Windows 10 使用者，請於[意見反應中樞](feedback-hub://?referrer=techDocsUcPage&tabid=2&contextid=898&newFeedback=true&topic=Windows-Server-2016.md)告訴我們您想要什麼。 

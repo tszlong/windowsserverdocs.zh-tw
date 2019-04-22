@@ -6,26 +6,26 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: Storage Spaces Direct
+Keywords: 儲存空間直接存取
 ms.localizationpriority: medium
 ms.openlocfilehash: 68596cbdcf8593cd3017c8ae5d0836891c78229c
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1894317"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818769"
 ---
 # <a name="performance-history-for-clusters"></a>叢集的效能歷程記錄
 
-> 適用於： Windows Server 內部預覽
+> 適用於：Windows Server Insider Preview
 
-[效能歷程記錄的儲存空間直接](performance-history.md)這個子主題會說明叢集收集的效能歷程記錄。
+子主題[效能歷程記錄的儲存空間直接存取](performance-history.md)說明叢集所收集的效能歷程記錄。
 
-有任何源自叢集層級的數列。 而 server 系列，例如`clusternode.cpu.usage`，在叢集中的所有伺服器的彙總。 大量數列例如`volume.iops.total`，在叢集中的所有磁碟區彙總。 例如磁碟機數列和`physicaldisk.size.total`，會針對所有的磁碟機叢集中的彙總。
+有源自於叢集層級沒有數列。 相反地，server 系列，例如`clusternode.cpu.usage`，針對叢集中的所有伺服器彙總。 磁碟區的數列，例如`volume.iops.total`，針對叢集中的所有磁碟區彙總。 這類磁碟機系列和`physicaldisk.size.total`，會彙總的叢集中的所有磁碟機。
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用狀況
+## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
 
-使用[Get 叢集](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster)指令程式：
+使用[取得叢集](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster)cmdlet:
 
 ```PowerShell
 Get-Cluster | Get-ClusterPerf
@@ -33,4 +33,4 @@ Get-Cluster | Get-ClusterPerf
 
 ## <a name="see-also"></a>另請參閱
 
-- [效能的儲存空間直接的歷程記錄](performance-history.md)
+- [效能歷程記錄的儲存空間直接存取](performance-history.md)

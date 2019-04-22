@@ -10,25 +10,25 @@ ms.date: 05/02/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cf87597-b15d-4f43-8aa1-91e60367f011
-ms.openlocfilehash: c5cd8fbcf8424fa158ad31ca64e3eabe426240a6
-ms.sourcegitcommit: 8e2903c9b58646840eedd63b47a9bba6c6a06bf7
-ms.translationtype: HT
+ms.openlocfilehash: c0a4917d0fdb3e911204601d6137d8c8a296e57a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1859869"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812279"
 ---
 # <a name="introducing-windows-server-version-1803"></a>Windows Server 版本 1803 簡介
 
->適用於：Windows Server (半年通道)
+>適用於：Windows Server (半年度管道)
 
-**Windows Server 版本 1803 是 current release in 新推出半年通道中目前的版本**
+**Windows Server 1803 版是新的半年通道中目前的版本**
 
 
 ## <a name="what-the-semi-annual-channel-is--and-isnt"></a>半年通道是什麼，以及不是什麼
 Windows Server 版本 1803 *不是* Windows Server 2016 的「更新」或「Service Pack」。 這是發行管道中目前的一年兩次伺服器版本，專門設計給依「雲端發佈頻率」進展的客戶，例如那些處於快速開發週期的客戶。 這個管道非常適合現代應用程式和創新案例，例如容器和微型服務。 此管道中發行的每個版本都會從初始版本開始提供 18 個月的支援。 如需半年通道的詳細資訊，以及**判斷應加入哪個通道的提示** (或維持不變)，請參閱[半年通道概觀](semi-annual-channel-overview.md)。
 
 
-**Windows Server 2016 是目前的長期維護通道 (LTSC) 產品**。 如果您需要伺服器作業系統的長期穩定性與可預測性以便支援傳統工作負載和應用程式，則 LTSC 很適合您。 如果您想要繼續留在 LTSC 中，就應該安裝 (或繼續使用) Windows Server 2016，而您可以在 Server Core 模式或「含有桌面體驗的伺服器」模式下進行安裝。 如需詳細資訊，請參閱[開始使用 WindowsServer 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)。
+**Windows Server 2016 是目前的長期維護通道 (LTSC) 產品。** 如果您需要伺服器作業系統的長期穩定性與可預測性以便支援傳統工作負載和應用程式，則 LTSC 很適合您。 如果您想要繼續留在 LTSC 中，就應該安裝 (或繼續使用) Windows Server 2016，而您可以在 Server Core 模式或「含有桌面體驗的伺服器」模式下進行安裝。 如需詳細資訊，請參閱[開始使用 Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)。
 
 
 ## <a name="whats-different-about-windows-server-version-1803"></a>Windows Server 版本 1803 有何不同？
@@ -57,11 +57,11 @@ Nano Server 是以容器作業系統形式來提供。 如需詳細資訊，請�
 
 此版本應以全新安裝方式進行安裝。
 
-- 大量授權服務中心 (VLSC)：有[軟體保證](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)的大量授權客戶可以取得此版本，[大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)並按一下 **\[登入\]**。 然後按一下 **\[下載和金鑰\]** 並搜尋此版本。 
+- 大量授權服務中心 (VLSC):大量授權客戶[軟體保證](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)可以取得此版本中，移至[Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx) ，然後按一下**登入**。 然後按一下 **\[下載和金鑰\]** 並搜尋此版本。 
 
 - Windows Server 版本 1803 也有在 [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中提供。
 
-- Visual Studio 訂閱：Visual Studio 訂閱者可以從 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)取得 Windows Server 版本 1803。 如果您還不是訂閱者，請前往 [Visual Studio 訂閱](https://www.visualstudio.com/subscriptions/)註冊，然後依上述方式瀏覽 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)。 透過 Visual Studio 訂閱取得的版本僅供開發和測試用途。
+- Visual Studio 訂用帳戶：Visual Studio 訂閱者可以取得 Windows Server，下載並從版本 1803年[Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)。 如果您還不是訂閱者，請前往 [Visual Studio 訂閱](https://www.visualstudio.com/subscriptions/)註冊，然後依上述方式瀏覽 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)。 透過 Visual Studio 訂閱取得的版本僅供開發和測試用途。
 
 
 

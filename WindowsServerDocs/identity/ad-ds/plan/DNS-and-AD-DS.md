@@ -1,42 +1,37 @@
 ---
 ms.assetid: c32606b4-2ee2-4df3-a704-8ac6723e188f
-title: "DNS 和 AD DS"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+title: DNS 與 AD DS
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 8e7ee494c157396a7d58e9fd1b4b80060c4d99fc
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: f6d75a78119d76a0f8380967292b1d0abc720597
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813139"
 ---
-# <a name="dns-and-ad-ds"></a>DNS 和 AD DS
+# <a name="dns-and-ad-ds"></a>DNS 與 AD DS
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-Active Directory Domain Services (AD DS) 使用網域名稱系統」(DNS) 的名稱解析服務，讓它可能用來尋找網域控制站戶端和的網域控制站彼此至該主機 directory 服務。  
+Active Directory 網域服務 (AD DS) 使用網域名稱系統 (DNS) 名稱解析服務可讓用戶端找到網域控制站和網域控制站裝載目錄服務來彼此通訊。  
   
-AD DS 可讓您輕鬆整合到現有 DNS 命名空間 Active Directory 命名空間。 功能，例如 Active Directory 整合 DNS 區域讓您更輕鬆地部署 DNS 不需要在次要區域，設定，然後再設定區域傳輸。  
+AD DS 可讓您輕鬆整合到現有的 DNS 命名空間的 Active Directory 命名空間。 功能，例如 Active Directory 整合 DNS 區域讓您更輕鬆地部署不需要設定次要區域的 DNS，然後設定 區域轉送。  
   
-有關如何 DNS 支援 AD DS，查看 [DNS 支援的 Active Directory 技術參考 ([https://go.microsoft.com/fwlink/?LinkID=48147](https://go.microsoft.com/fwlink/?LinkID=48147))。  
+DNS 如何支援 AD DS 的相關資訊，請參閱節[Active Directory 技術參照的 DNS 支援](https://go.microsoft.com/fwlink/?LinkID=48147)。  
   
 > [!NOTE]  
-> 如果您實作分開命名空間 AD DS 網域名稱 mca 主要 DNS 尾碼戶端使用中，使用 DNS AD DS 整合」是更複雜。 如需詳細資訊，請查看[斷續命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)。  
+> 如果您實作脫離的命名空間中的 AD DS 網域名稱不同於用戶端使用的主要 DNS 尾碼時，AD DS 整合 dns 是更複雜。 如需詳細資訊，請參閱 <<c0> [ 脫離的命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)。  
   
-## <a name="in-this-section"></a>在本區段中  
+## <a name="in-this-section"></a>本節內容  
   
--   [網域控制站的位置](../../ad-ds/plan/Domain-Controller-Location.md)  
-  
--   [Active Directory 整合 DNS 區域](../../ad-ds/plan/Active-Directory-Integrated-DNS-Zones.md)  
-  
--   [電腦命名](../../ad-ds/plan/Computer-Naming.md)  
-  
--   [分開命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)  
-  
-
-
+- [網域控制站的位置](../../ad-ds/plan/Domain-Controller-Location.md)  
+- [Active Directory 整合 DNS 區域](../../ad-ds/plan/Active-Directory-Integrated-DNS-Zones.md)  
+- [電腦命名](../../ad-ds/plan/Computer-Naming.md)  
+- [脫離的命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)  
