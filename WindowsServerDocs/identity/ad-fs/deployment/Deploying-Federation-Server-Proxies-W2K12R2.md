@@ -1,7 +1,7 @@
 ---
 ms.assetid: 222e9f93-7c41-4527-8a98-8f7fbc7a58af
-title: "部署聯盟的 Proxy 伺服器"
-description: 
+title: 部署同盟伺服器 Proxy
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,38 +10,39 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: dc49d8f4b656fdbb92083aa3c60bc4ce81091e9b
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890819"
 ---
-# <a name="deploying-federation-server-proxies"></a>部署聯盟的 Proxy 伺服器
+# <a name="deploying-federation-server-proxies"></a>部署同盟伺服器 Proxy
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-在 Active Directory 同盟服務 \(AD FS\) 在 Windows Server 2012 R2，聯盟 proxy 伺服器的角色被處理呼叫 Web 應用程式 Proxy 新遠端存取的角色服務。 若要可讓您的企業網路，是目的部署聯盟伺服器 proxy 在舊版 AD FS，例如 AD FS 2.0 和在 Windows Server 2012，AD FS 以外的協助工具的 AD FS 您可以將一或多個 web 應用程式 proxy AD fs 在 Windows Server 2012 R2 的部署。  
+在 Active Directory Federation Services \(AD FS\) Windows Server 2012 r2 中的同盟伺服器 proxy 角色由稱為 Web Application Proxy 的新遠端存取角色服務。 若要啟用從公司網路外部的也就是部署舊版 AD FS 中，例如 AD FS 2.0 和 Windows Server 2012 中的 AD FS 同盟伺服器 proxy 的目的的協助工具的 AD FS 中，您可以部署為 A 的一或多個 web 應用程式 proxyWindows Server 2012 R2 中的 D FS。  
   
-AD FS 處在，Web 應用程式 Proxy AD FS 聯盟伺服器 proxy 功能。 除了，Web 應用程式 Proxy 提供 web 應用程式在您的企業網路，讓使用者在任何裝置上存取它們的以外的公司網路 proxy 反向功能。 如需詳細資訊，有關 Web 應用程式 Proxy 角色服務，Web 應用程式 Proxy 概觀。  
+在 AD FS 內容中，Web 應用程式 Proxy 做為 AD FS 同盟伺服器 proxy。 此外，Web 應用程式 Proxy 為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以讓任何裝置上的使用者能從公司網路外部存取這些應用程式。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱 Web 應用程式 Proxy 概觀。  
   
-計劃的 proxy Web 應用程式部署，您可以檢視的下列主題中的資訊：  
+若要規劃 Web 應用程式 Proxy 的部署，您可以檢閱下列主題的資訊：  
   
--   [規劃 Web 應用程式 Proxy 基礎結構 (WAP)](https://technet.microsoft.com/library/dn383648.aspx)  
+-   [規劃 Web Application Proxy 基礎結構 (WAP)](https://technet.microsoft.com/library/dn383648.aspx)  
   
--   [計畫網站的應用程式的 Proxy 伺服器](https://technet.microsoft.com/library/dn383647.aspx)  
+-   [規劃 Web Application Proxy 伺服器](https://technet.microsoft.com/library/dn383647.aspx)  
   
-若要部署的應用程式網路 proxy，您可以依照下列主題中的程序：  
+若要部署 Web Application Proxy，您可以依照下列主題的程序：  
   
--   [設定應用程式網路 Proxy 架構](https://technet.microsoft.com/library/dn383644.aspx)  
+-   [設定 Web Application Proxy 基礎結構](https://technet.microsoft.com/library/dn383644.aspx)  
   
--   [安裝並將 Web 應用程式的 Proxy 伺服器設定](https://technet.microsoft.com/library/dn383662.aspx)  
+-   [安裝和設定 Web Application Proxy 伺服器](https://technet.microsoft.com/library/dn383662.aspx)  
   
  
-## <a name="see-also"></a>也了 
+## <a name="see-also"></a>另請參閱 
 
 [AD FS 部署](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 部署指南](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[部署聯盟伺服器陣列](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[部署同盟伺服器陣列](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   
 

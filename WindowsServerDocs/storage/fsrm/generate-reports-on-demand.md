@@ -1,6 +1,6 @@
 ---
-title: "產生隨選報告"
-description: "此文說明如何產生隨選報告來分析伺服器上的磁碟使用量"
+title: 產生隨選報告
+description: 此文說明如何產生隨選報告來分析伺服器上的磁碟使用量
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: e91bfbc306d1d2712f7b35ec48114b3a8a84ec83
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890989"
 ---
 # <a name="generate-reports-on-demand"></a>產生隨選報告
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 進行日常作業時，您可以使用 **\[立即產生報告\]** 選項來產生一份或多份隨選報告。 您可以使用這些報告來分析伺服器目前磁碟使用量的各個不同層面。 產生報告之前會收集目前的資料。
 
@@ -65,7 +66,7 @@ ms.lasthandoff: 10/17/2017
 
     這兩個選項都會儲存報告，如果您啟用透過電子郵件傳遞，則會將您所選格式的報告傳送給系統管理員。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [存放裝置報告管理](storage-reports-management.md)
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
