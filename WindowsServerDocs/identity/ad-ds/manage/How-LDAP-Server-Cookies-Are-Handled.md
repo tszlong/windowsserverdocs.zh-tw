@@ -1,80 +1,81 @@
 ---
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
-title: "LDAP 伺服器 Cookie 的處理方式"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 如何處理 LDAP 伺服器 Cookie
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 89369cb1e52a315520062ca5ecc96b66ac3e2bfc
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: e9c293d04f1fd1b8091b768e49db554a23e7ce95
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846559"
 ---
-# <a name="how-ldap-server-cookies-are-handled"></a>LDAP 伺服器 Cookie 的處理方式
+# <a name="how-ldap-server-cookies-are-handled"></a>如何處理 LDAP 伺服器 Cookie
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-在 LDAP，某些大型結果查詢會導致設定。 這類查詢對 Windows Server 造成一些問題。  
+在 LDAP 中，某些查詢會產生大型結果集。 此類查詢會對 Windows Server 帶來一些挑戰。  
   
-收集建置這些結果大集，請重要的工作。 許多屬性必須從內部表示轉換成 LDAP 花朵代表。 許多屬性，需要從內部、 通常二進位，格式轉換文字型 utf-8 格式 LDAP 回應框架中執行。  
+收集和建置這些大型結果集是很重要的工作。 許多屬性必須從內部表示法轉換為 LDAP 有線表示法。 對於許多屬性，必須從通常為二進位的內部格式轉換為 LDAP 回應框架中的 UTF-8 文字格式。  
   
-另一個挑戰是結果該設定的數以萬計的物件成為龐大，輕鬆地數個數百大-位元組。 這些然後需要多很多的 virtual 地址空間及傳輸中斷的 TCP 工作階段時不會遺失整個努力在網路上的傳送也有問題。  
+另一個挑戰是擁有成千上萬個物件的結果集會變得很大，至少有數百 MB。 接著它們需要大量虛擬位址空間，而透過網路傳輸也存在問題，因為當 TCP 工作階段在傳輸過程中斷時，等於一切努力都白費了。  
   
-這些容量和後勤問題有 led Microsoft LDAP 開發人員來建立稱為 「 分頁查詢 「 LDAP 擴充功能。 其實 LDAP 控制龐大查詢分成的較小的結果集區塊。 變得更 RFC 標準為[RFC 2696](http://www.ietf.org/rfc/rfc2696)。  
+這些容量和傳輸問題會導致 Microsoft LDAP 開發人員建立稱為 「 分頁查詢 」 的 LDAP 延伸模組。 此延伸模組會實作一個 LDAP 控制項，將一個大型查詢拆開成為較小型的結果集區塊。 它已成為 RFC 標準，作為[RFC 2696](http://www.ietf.org/rfc/rfc2696)。  
   
-## <a name="cookie-handling-on-client"></a>Cookie Client 上處理  
-分頁查詢方法使用頁面大小任一設 client，或透過[LDAP 原則](https://support.microsoft.com/kb/315071/en-us)(」 MaxPageSize 」)。 隨時 client 需要藉由傳送 LDAP 控制項讓分頁。  
+## <a name="cookie-handling-on-client"></a>用戶端的 Cookie 處理  
+分頁查詢方法會使用用戶端，或透過其中一個設定頁面大小[LDAP 原則](https://support.microsoft.com/kb/315071/en-us)("MaxPageSize")。 用户端一律需要透過傳送 LDAP 控制項才能啟用分頁。  
 
   
-使用許多結果查詢時，有些時候允許的物件已達上限。 LDAP 伺服器上回應訊息封裝，並將 cookie 包含之後繼續搜尋所需的資訊。  
+在處理具有許多結果的查詢時，某些時候會達到允許的物件數目上限。 LDAP 伺服器會將回應訊息封裝起來，再加上一個 Cookie，其中包含稍後繼續搜尋所需的資訊。  
   
-Client 應用程式必須視為透明 blob cookie。 它可以擷取物件計數回應，可以繼續基於 cookie 的搜尋]。Client 繼續搜尋查詢傳送 LDAP 伺服器再試一次使用相同的基本物件及篩選器，例如參數，包含在上一個回應傳回 cookie 值。  
+用户端應用程式必須將 Cookie 視為不透明的 Blob。 它可以擷取回應中的物件計數，也能根據存在的 Cookie 繼續執行搜尋。用户端透過將具備相同參數 (例如基本物件和篩選器) 的查詢再次傳送給 LDAP 伺服器，並加入前次回應傳回的 Cookie 值，即可繼續搜尋。  
   
-如果物件數量不會填滿頁面，請 LDAP 查詢已完成，而且回應包含不頁面上的 cookie。 如果不 cookie 伺服器傳回，client 必須考慮成功完成分頁的搜尋。  
+如果物件數目無法填滿頁面，LDAP 查詢已完成，且回應會包含任何頁面 cookie。 如果伺服器未傳回任何 Cookie，用户端必須將分頁搜尋視為成功完成。  
   
-伺服器傳回錯誤，如果 client 必須請考慮將會失敗分頁的搜尋。 重試一次搜尋] 會造成從第一頁搜尋。  
+如果伺服器傳回錯誤，用户端必須將分頁搜尋視為不成功。 重試搜尋會導致從第一頁重新開始搜尋。  
   
-## <a name="server-side-cookie-handling"></a>伺服器端 Cookie 處理  
-Windows Server 回到 client cookie 和有時會儲存在伺服器上的 cookie 相關的資訊。 此資訊會儲存在伺服器上的快取中，皆受特定限制。  
+## <a name="server-side-cookie-handling"></a>伺服器端的 Cookie 處理  
+Windows Server 將 Cookie 傳回給用户端，有時候會在伺服器上儲存 Cookie 相關資訊。 此項資訊儲存在伺服器的快取中，受到某些限制。  
   
-此時，請傳送到 client 的伺服器 cookie 也會使用伺服器以查詢快取的伺服器上的資訊。 當 client 持續分頁的搜尋時，Windows Server 會使用 client cookie，以及任何相關的資訊伺服器 cookie 快取的繼續搜尋。 如果伺服器找不到任何原因伺服器快取 cookie 相關的資訊，已不再提供搜尋和錯誤到 client。  
+在這種情況下，伺服器也會使用從伺服器傳送到用户端的 Cookie 來查閱來自伺服器快取中的資訊。 當用户端繼續進行分頁搜尋時，Windows Server 會使用用户端 Cookie 以及來自伺服器 Cookie 快取中的任何相關資訊，繼續進行搜尋。 如果伺服器因故找不到來自伺服器快取的相關 Cookie 資訊，則會停止搜尋，並傳回錯誤給用户端。  
   
-## <a name="how-the-cookie-pool-is-managed"></a>如何管理 cookie 集區  
-當然，LDAP 伺服器服務一次以上 client，也更多個 client 一次可以舉辦查詢需要伺服器 cookie 快取的使用。因此的 Windows Server 實作 cookie 集區使用量追蹤且 cookie 集區不花太多資源，限制放入定位。 限制可以設定的系統管理員使用下列設定 LDAP 原則。 解釋與預設值︰  
+## <a name="how-the-cookie-pool-is-managed"></a>如何管理 Cookie 集區  
+很顯然，LDAP 伺服器一次不只服務一個用戶端，同一時間也會有多個用戶端啟動需要用到伺服器 Cookie 快取的查詢。因此 Windows Server 實作會追蹤 Cookie 集區使用情況，並加上限制條件，讓 Cookie 集區不致佔用過多資源。 系統管理員可以使用 LDAP 原則中的下列設定，來設定限制。 預設值和說明如下：  
   
-**MinResultSets: 4**  
+**MinResultSets:4**  
   
-如果有小於 MinResultSets 伺服器 cookie 快取中的項目，如下所示大集區大小不會看到 LDAP 伺服器。  
+如果伺服器 Cookie 快取中的項目數少於 MinResultSets，則 LDAP 伺服器不會查看下面討論的最大集區大小。  
   
-**MaxResultSetSize: 262,144 位元組**  
+**MaxResultSetSize:為 262,144 個位元組**  
   
-在伺服器上的 cookie 總快取大小不得超過 MaxResultSetSize 位元組最大值。 若是如此，請從舊的 cookie 刪除集區小於 MaxResultSetSize 位元組或小於 MinResultSets cookie 的集區中。 這表示過使用預設設定，LDAP 伺服器視為 450 KB 為確定如果只 3 cookie 儲存集區。  
+伺服器上的 Cookie 快取大小總計不得超過 MaxResultSetSize 的最大值 (以位元組為單位)。 如果超過，則會從最舊的 Cookie 開始刪除，直到集區小於 MaxResultSetSize 位元組或集區中少於 MinResultSets 個 Cookie。 這表示在預設設定下，LDAP 伺服器會認為只儲存了 3 個 Cookie 的 450KB 集區是適當的。  
   
-**MaxResultSetsPerConn: 10**  
+**Maxresultsetsperconn 個：10**  
   
-LDAP 伺服器可不超過 MaxResultSetsPerConn cookie 每 389 集區中。  
+LDAP 伺服器不允許集區中每個 LDAP 連線超過 MaxResultSetsPerConn 個 Cookie。  
   
-## <a name="handling-deleted-cookies"></a>處理刪除 Cookie  
-移除 cookie 從 LDAP Server 快取的資訊不會導致立即所有案例中的應用程式的錯誤。 應用程式可能會重新分頁的搜尋從 [開始] 畫面和上嘗試另一個將它完成。 某些應用程式有此類型重試機制來新增穩定性。  
+## <a name="handling-deleted-cookies"></a>處理删除的 Cookie  
+在所有情況下，從 LDAP 伺服器快取移除 Cookie 資訊都不會對應用程式造成立即錯誤。 應用程式可能會重頭開始進行分頁搜尋，並在再一次嘗試後完成。 某些應用程式具有這種重試機制，以增加穩定性。  
   
-某些應用程式可能瀏覽網頁搜尋並不會將它完成。 這可能會保留 LDAP 伺服器中的項目 cookie 快取，透過 4 一節中的機制。 這是必要釋出的作用中 LDAP 搜尋伺服器上的記憶體。  
+某些應用程式可能會進行一次頁面搜尋，但永遠無法完成。 這可能會在 LDAP 伺服器 Cookie 快取中留下項目，這由第 4 節的機制來處理。 這對於釋放伺服器的記憶體以供作用中 LDAP 搜尋使用相當重要。  
   
-這類 cookie 刪除伺服器上 client 繼續使用此 cookie 控點搜尋時的行為？LDAP 伺服器會不找到伺服器 cookie 快取 cookie 並傳回查詢錯誤，會類似錯誤回應：  
+如果從伺服器刪除了此類 Cookie，而用戶端繼續使用此 Cookie 控制代碼搜尋時，會發生什麼事？LDAP 伺服器在伺服器 Cookie 快取中將找不到 Cookie，並會傳回查詢錯誤，此錯誤回應將類似於：  
   
 ```  
 00000057: LdapErr: DSID-xxxxxxxx, comment: Error processing control, data 0, v1db1  
 ```  
   
 > [!NOTE]  
-> 「 DSID 「 背後的十六進位值會根據組建 LDAP 伺服器二進位版本而有所不同。  
+> "Dsid"的十六進位值是以 LDAP 伺服器二進位檔的組建版本會有所不同。  
   
-## <a name="reporting-on-the-cookie-pool"></a>Cookie 集區報告  
-LDAP 伺服器已登入事件通過分類 「 16 Ldap 介面 」 功能[NTDS 診斷鍵](https://support.microsoft.com/kb/314980/en-us)。 如果您設定的這個分類 」 2 」，您可以取得下列事件：  
+## <a name="reporting-on-the-cookie-pool"></a>報告 Cookie 集區  
+LDAP 伺服器能夠透過"16 Ldap Interface"的事件記錄[NTDS 診斷機碼](https://support.microsoft.com/kb/314980/en-us)。 如果您設定此類別為"2"，您可以取得下列事件：  
   
 ```  
 Log Name:      Directory Service  
@@ -116,20 +117,20 @@ The client should consider a more efficient search filter.  The limit for Maximu
   
 ```  
   
-事件訊號移除了儲存的 cookie。 並不代表 client 已經看過 LDAP 錯誤，但僅限 LDAP 伺服器人數已達快取的管理限制。  有時候，LDAP client 可能會有放棄分頁的搜尋，可能不會看到此錯誤。  
+這些事件指出儲存的 Cookie 已删除。 它並不表示用戶端已經收到 LDAP 錯誤，只表示 LDAP 伺服器已達到快取的系統管理限制。  在某些情況下，LDAP 用戶端可能已放棄分頁搜尋，永遠看不到這個錯誤。  
   
-## <a name="monitoring-the-cookie-pool"></a>Cookie 集區的監視  
-如果您不會在您的網域體驗 LDAP 搜尋錯誤，您不需要監視 LDAP 伺服器頁面搜尋 cookie 集區。 如果您看到您的環境中搜尋相關的錯誤 LDAP 頁面，您可能會有 cookie 集區的系統管理員限制的問題。  
+## <a name="monitoring-the-cookie-pool"></a>監視 Cookie 集區  
+如果您的網域中從未出現過 LDAP 搜尋錯誤，您可能不需要監視 LDAP 伺服器頁面搜尋 Cookie 集區。 如果您的環境中出現 LDAP 頁面搜尋相關錯誤，可能表示 Cookie 集區系統管理員限制有問題。  
   
-事件 2898年和 2899年是知道您已經到達 LDAP 伺服器管理員限制的唯一方式。 您體驗時出該 LDAP 查詢錯誤而處理錯誤上述控制項，您應該查看增加限制一或多個 4，您收到的事件根據一節中所提到的 LDAP 原則設定。  
+事件 2898 和 2899 是唯一可得知 LDAP 伺服器是否已達到系統管理員限制的方式。 如果您的 LDAP 查詢錯誤是由於上述控制項處理錯誤而發生，您應根據所取得的事件，查看第 4 節所述的「提高一或多個 LDAP 原則設定的限制」。  
   
-如果您看到事件 2898年俠日 LDAP 伺服器上，我們建議您 25 MaxResultSetsPerConn 設定。 在單一 389 平行分頁的搜尋 25 個以上不是平常。 如果您看到事件 2898年繼續，請考慮調查 LDAP client 應用程式，發生錯誤。 懷疑就是，它日子卡住擷取額外分頁的結果、 離開擱置中的 cookie，新的查詢重新開機。 請查看是否應用程式會有些時候有不足 cookie 其為了，您也可以增加 MaxResultSetsPerConn 25.以外的值，當您看到的身分登入您的網域控制站事件 2899年、 計劃會不同。 如果您俠日 LDAP 伺服器記憶體不足 (數個 Gb 的可用記憶體) 的電腦上執行，建議您設定 MaxResultsetSize LDAP 伺服器上 > = 有 250 MB。 這項限制足以容納大量 LDAP 網頁搜尋非常大型目錄即使是在。  
+如果您的 DC/LDAP 伺服器上出現事件 2898，建議您將 MaxResultSetsPerConn 設為 25。 單一 LDAP 連線中超過 25 個並行分頁搜尋並不常見。 如果您持續看到事件 2898，請調查發生錯誤的 LDAP 用戶端應用程式。 有可能在擷取其他分頁結果時停滯住了，因而讓 Cookie 擱置，並重新啟動一個新查詢。 所以請查看應用程式在某個時候是否具有足夠的 Cookie 可供使用，您也可以將 MaxResultSetsPerConn 的值提高到 25 以上。如果是網域控制站上記錄了事件 2899，處理方法將有所不同。 如果 DC/LDAP 伺服器在具有足夠記憶體 (數 GB 可用記憶體) 的機器上執行，建議您將 LDAP 伺服器的 MaxResultsetSize 設定為 >=250MB。 此上限已夠大，足以容納在極大目錄上進行的大量 LDAP 頁面搜尋。  
   
-如果您仍然看到事件 2899年有 250 MB 或更多的集區，您可能會有許多戶端傳回的物件更高的數字，，查詢非常常用的方式。 您可以使用收集的資料[Active Directory 資料收集設定](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)可協助您尋找可讓您 LDAP 伺服器重複分頁的查詢忙碌。 這些查詢將會有數字的 「 退貨項目 」 符合使用的頁面的大小顯示。  
+如果在 250MB 以上的集區中仍然出現事件 2899，則您可能有許多用戶端以很頻繁的方式進行查詢，並傳回極大量物件。 您可以使用收集的資料[Active Directory 資料收集器集合工具](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)可以幫助您找到的重複分頁的查詢出讓 LDAP 伺服器忙碌。 這些查詢會使用符合使用頁面大小的 「 傳回的項目 」 的數字顯示。  
   
-如果可能的話，您應該檢視應用程式的設計，並實作不同的頻率較低、 資料音量和/或較少 client 執行個體查詢此資料的方法。在您擁有的來源的程式碼存取此指南的應用程式[建立有效率 AD-Enabled 應用程式](https://msdn.microsoft.com/en-us/library/ms808539.aspx)可協助您了解應用程式可以存取廣告的最佳方式。  
+可能的話，您應該檢閱應用程式的設計，並實作具有較低的頻率、 資料量和/或較少查詢此資料的用戶端執行個體不同的方法。如果您有原始程式碼存取權，本指南的應用程式[建立有效率的 AD-Enabled 應用程式](https://msdn.microsoft.com/en-us/library/ms808539.aspx)可以協助您了解存取 AD 的應用程式的最佳方式。  
   
-如果您無法變更查詢行為，其中一種方法新增所需的命名內容並可以轉散發戶端及最後減少個人 LDAP 伺服器上的載入更多複寫執行個體。  
+如果無法變更查詢行為，其中一個方法也會增加複製的例項的所需的命名內容，還是重新分配用戶端，並最終可降低各 LDAP 伺服器上的負載。  
   
 
 

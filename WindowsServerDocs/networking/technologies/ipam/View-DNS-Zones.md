@@ -1,6 +1,6 @@
 ---
 title: 檢視 DNS 區域
-description: 本主題是在 Windows Server 2016 的 IP 位址管理 (IPAM) 管理組節目表的一部分。
+description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,27 +13,28 @@ ms.topic: article
 ms.assetid: 2cfe4e40-ec6d-4541-baa9-d772409fe27c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4279a15f885758e59b6f5c30b2feddd50962f0d5
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 18a593a82a9b9fd0d8f2e59d1bb9da971856ad17
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841519"
 ---
 # <a name="view-dns-zones"></a>檢視 DNS 區域
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-若要檢視 DNS 區域 IPAM client 主控台中，您可以使用此主題。  
+若要檢視 IPAM 用戶端主控台中的 DNS 區域，您可以使用本主題。  
   
-資格在**系統管理員**，或相當於，才能執行此程序最小值。  
+若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。  
   
-### <a name="to-view-dns-zones-in-the-ipam-client-console"></a>若要檢視 DNS 區域中 IPAM client 主機  
+### <a name="to-view-dns-zones-in-the-ipam-client-console"></a>若要檢視 IPAM 用戶端主控台中的 DNS 區域  
   
-1.  在伺服器管理員中，按一下**IPAM**。 顯示 IPAM client 主機。  
+1.  在 [伺服器管理員] 中，按一下**IPAM**。 IPAM 用戶端主控台隨即出現。  
   
-2.  在瀏覽窗格中，在**監視和管理**，按一下 [ **DNS 區域**。  瀏覽窗格中分為左上角的瀏覽窗格中，較低的瀏覽窗格。  
+2.  在 [導覽] 窗格中，在**監視與管理**，按一下**DNS 區域**。  瀏覽窗格會分割成上方瀏覽窗格和下方的瀏覽窗格中。  
   
-3.  在較低的瀏覽窗格中，進行下列選項之一：  
+3.  在下方瀏覽窗格中，進行下列選擇其中一項：  
   
     -   正向對應  
   
@@ -41,10 +42,10 @@ ms.lasthandoff: 03/28/2018
   
     -   IPv6 反向對應  
   
-    -   條件轉寄  
+    -   條件式轉寄站  
   
-## <a name="see-also"></a>也了  
-[管理 DNS 區域](DNS-Zone-Management.md)  
+## <a name="see-also"></a>另請參閱  
+[DNS 區域管理](DNS-Zone-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   
 

@@ -1,17 +1,30 @@
+---
+author: shortpatti
+ms.author: pashort
+ms.date: 10/02/2018
+ms.prod: windows-server-threshold
+ms:topic: include
+ms.openlocfilehash: 4e8e3234b89630bf16148eef644f0c6607ad38bd
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59852339"
+---
 ## <a name="importance-of-time-protocols"></a>時間通訊協定的重要性
-時間通訊協定進行通訊交換時間資訊和使用這些資訊同步時鐘兩部電腦之間。 Windows 時間服務時間通訊協定，以 client 要求來自伺服器的時間資訊和同步時鐘依據收到的資訊。
+交換時間資訊，並接著使用該資訊來同步處理其時鐘的兩部電腦之間的通訊時間通訊協定。 與 Windows 時間服務的時間通訊協定，用戶端會要求來自伺服器的時間資訊，並同步處理其時鐘根據收到的資訊。
   
-Windows 時間服務使用 NTP 可協助您在網路上同步處理時間。 NTP 是包含訓練演算法所需的同步時鐘網際網路時間通訊協定。 NTP 是更加準確的時間通訊協定比簡單網路時間通訊協定 (SNTP) 用於某些版本的 Windows。不過，繼續支援，可讓電腦執行的時間 SNTP 為基礎的服務，例如 Windows 2000 的回溯相容性 SNTP W32Time。
+Windows 時間服務會使用 NTP 來協助在網路上同步處理時間。 NTP 是網際網路時間通訊協定，其中包含所需的同步處理時鐘的專業領域演算法。 NTP 是更精確的時間通訊協定比簡單網路時間通訊協定 (SNTP)，可在部分版本的 Windows;不過，W32Time 會繼續支援 SNTP 啟用回溯相容性的執行 SNTP 為基礎的時間服務，例如 Windows 2000 的電腦。
 
-有許多不同的原因，您可能需要正確的時間。  適用於 Windows 的一般案例是正確性的 Kerberos，需要 5 分鐘 client 之間伺服器。  但是，有許多其他區域受到時間正確性包括：
+有許多不同的原因，您可能需要精確的時間。  Windows 的一般案例是精確度的 Kerberos，需要 5 分鐘的用戶端與伺服器之間。  不過，有許多可能會受到時間精確度包括其他領域：
 
 
-- 政府法規像：
-    - 在美國 FINRA 的 50 ms 準確度。
-    - 1 ms ESMA (MiFID II) 歐盟中。
+- 例如政府法規：
+    - 位於美國的 FINRA 的 50 毫秒精確度
+    - 1 ms ESMA (MiFID II) 在歐盟境內。
 - 密碼編譯演算法
-- 例如換貨叢集/SQL 和文件好處分散式的系統
-- 比特幣交易 Blockchain 架構
-- 分散式的登和威脅分析 
-- 廣告複寫
-- PCI (付款卡片 Industry) 目前 1 第二個正確性
+- 叢集/SQL/交換和文件 Db 等分散式的系統
+- 比特幣交易的區塊鏈架構
+- 分散式記錄檔和威脅分析 
+- AD 複寫
+- PCI （支付卡產業），目前 1 的第二個精確度

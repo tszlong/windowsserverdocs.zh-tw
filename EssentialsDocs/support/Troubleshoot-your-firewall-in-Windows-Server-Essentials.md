@@ -1,6 +1,6 @@
 ---
-title: "在 Windows Server Essentials 防火牆的疑難排解"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 疑難排解 Windows Server Essentials 的防火牆
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,47 +13,48 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 3c48d2abb7fd8431f40f76f8eece5c4142be4c75
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846549"
 ---
-# <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>在 Windows Server Essentials 防火牆的疑難排解
+# <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 的防火牆
  
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
   
- 如果您遇到遠端存取執行修復任何地方存取精靈中的問題。  
+ 如果您遇到遠端存取問題，請執行 [修復隨處存取精靈]。  
   
-### <a name="to-run-the-repair-anywhere-access-wizard"></a>若要執行修復任何地方存取精靈  
+### <a name="to-run-the-repair-anywhere-access-wizard"></a>執行 [修復隨處存取精靈]  
   
-1.  打開儀表板。  
+1.  開啟 [儀表板]。  
   
-2.  按一下**設定**，按一下 [**隨處存取**索引標籤，然後按一下 [**修復**。  
+2.  按一下 [設定] ，再按一下 [隨處存取]  索引標籤，然後按一下 [修復] 。  
   
-3.  請依照精靈中的指示修復隨處存取。  
+3.  請遵循 [修復隨處存取精靈] 中的指示。  
   
- 如果您是使用網路進階的設定，或使用非 Microsoft 防火牆，您可能需要開放防火牆額外的連接埠。 下表中的連接埠的登記與網際網路受指派的數字授權 (IANA)。  
+ 如果您使用進階的網路安裝程式或使用非 Microsoft 防火牆，您可能需要在防火牆上開啟其他連接埠。 下表中的連接埠已向 Internet Assigned Numbers Authority (IANA) 註冊。  
   
 |連接埠號碼|描述|  
 |-----------------|-----------------|  
-|65500|憑證 web 服務|  
-|65510 和 65515|Client 電腦部署網站|  
-|65520|Mac client 電腦 web 服務|  
-|65532|提供者的伺服器回送通訊的架構|  
-|6602|提供者的伺服器和 client 電腦間通訊架構|  
+|65500|憑證 Web 服務|  
+|65510 和 65515|用戶端電腦部署網站|  
+|65520|Mac 用戶端電腦的 Web 服務|  
+|65532|伺服器回送通訊的提供者架構|  
+|6602|伺服器與用戶端電腦之間通訊的提供者架構|  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
--   [使用遠端存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [使用遠端 Web 存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [管理網路遠端存取](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [管理遠端 Web 存取](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [管理隨時隨地存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   
 
--   [Windows Server Essentials 的支援](Support-Windows-Server-Essentials.md)
+-   [支援 Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
--   [Windows Server Essentials 的支援](../support/Support-Windows-Server-Essentials.md)
+-   [支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

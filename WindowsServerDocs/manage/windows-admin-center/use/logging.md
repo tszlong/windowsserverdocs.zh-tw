@@ -1,6 +1,6 @@
 ---
 title: 事件記錄
-description: 從 Windows 系統管理中心 (Project Honolulu) 的事件記錄
+description: 從 Windows Admin Center （專案檀香山） 的事件記錄
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
@@ -9,38 +9,38 @@ ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: d91b92cb3bba99ae4aa96a96650a251a6df4cea5
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2074339"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849299"
 ---
-# <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>使用 Windows 系統管理中心中記錄的事件可以深入了解管理活動和追蹤閘道流量
+# <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>若要深入了解管理活動和追蹤閘道的使用方式使用 Windows Admin Center 的事件記錄
 
->適用於： Windows 系統管理中心，Windows 系統管理中心預覽
+>適用於：Windows Admin Center，Windows Admin Center 預覽
 
-Windows 系統管理中心中寫入事件記錄檔以讓您查看您的環境中的伺服器上執行的管理活動，以及可協助您疑難排解任何 Windows 系統管理中心的問題。
+Windows Admin Center 寫入事件記錄檔，讓您查看您的環境中的伺服器上執行管理活動，以及可協助您疑難排解 Windows Admin Center 中的任何問題。
 
-## <a name="gain-insight-into-management-activities-in-your-environment-through-user-action-logging"></a>掌握透過使用者動作記錄您環境中管理活動
+## <a name="gain-insight-into-management-activities-in-your-environment-through-user-action-logging"></a>深入了解您的環境，透過使用者的動作記錄中的管理活動
 
-Windows 系統管理中心提供在伺服器上執行您環境的事件記錄檔中的**Microsoft ServerManagementExperience**事件通道的受管理的伺服器，與 /eventid 4000 記錄動作的管理活動與來源 SMEGateway。 Windows 系統管理中心僅記錄的受管理的伺服器上的動作，讓您將不會看到如果使用者的唯讀存取伺服器記錄的事件。
+Windows Admin Center 提供您環境中的伺服器上所記錄的動作，以執行管理活動的深入**Microsoft ServerManagementExperience**受管理的事件記錄檔中的事件通道EventID 4000 與來源 SMEGateway 的伺服器。 Windows Admin Center 只會記錄動作上的受管理的伺服器，因此您不會看到如果使用者的唯讀存取的伺服器所記錄的事件。
 
-記錄的事件包括下列資訊：
+記錄的事件包含下列資訊：
 
-| 鍵           | 值                                                                                              |
+| Key           | 值                                                                                              |
 |---------------|----------------------------------------------------------------------------------------------------|
-| PowerShell    | 如果巨集指令執行 PowerShell 指令碼的伺服器上，執行 PowerShell 指令碼名稱 |
-| CIM           | 如果巨集指令執行 CIM 通話的伺服器上，執行 CIM 通話                        |
-| 模組        | 工具 （或模組） 執行巨集指令                                                     |
-| 閘道       | 執行巨集指令的 Windows 系統管理中心閘道機器名稱                     |
-| UserOnGateway | 用來存取 Windows 系統管理中心閘道並執行巨集指令的使用者名稱                    |
-| UserOnTarget  | 用來存取目標受管理的伺服器中，如果 userOnGateway （亦即使用使用"做為管理 」 的認證的伺服器存取的使用者） 與不同的使用者名稱 |
-| 委派    | 布林值： 如果受管理的目標伺服器信任閘道並從使用者的用戶端電腦已委派認證             |
-| 圈          | 布林值： 如果使用者存取使用[圈](https://technet.microsoft.com/mt227395.aspx)認證的伺服器                          |
-| 檔案          | 上傳，如果動作是 「 檔案上傳的檔案名稱                                |
+| PowerShell    | 如果動作已執行的 PowerShell 指令碼的伺服器，執行的 PowerShell 指令碼名稱 |
+| CIM           | 如果動作已執行的 CIM 呼叫的伺服器，執行的 CIM 呼叫                        |
+| 模組        | 工具 （或模組） 已在其中執行的動作                                                     |
+| 閘道       | 動作已執行的 Windows Admin Center 閘道電腦的名稱                     |
+| UserOnGateway | 用來存取 Windows Admin Center 閘道，並執行動作的使用者名稱                    |
+| UserOnTarget  | 如果不同於 userOnGateway （也就是使用者存取伺服器並使用 管理者身分 」 認證），用來存取目標受管理的伺服器的使用者名稱 |
+| 委派    | 布林值： 如果目標管理伺服器信任閘道並從使用者的用戶端電腦所委派的認證             |
+| LAPS          | 布林值： 如果伺服器使用的使用者存取[LAPS](https://technet.microsoft.com/mt227395.aspx)認證                          |
+| 檔案          | 上傳，如果動作是檔案上傳的檔案名稱                                |
 
-## <a name="learn-about-windows-admin-center-activity-with-event-logging"></a>了解使用事件記錄的 Windows 系統管理中心活動
+## <a name="learn-about-windows-admin-center-activity-with-event-logging"></a>了解與事件記錄的 Windows Admin Center 活動
 
-Windows 系統管理中心記錄可協助您疑難排解問題及檢視使用狀況計量閘道電腦上的事件通道閘道活動。 **Microsoft ServerManagementExperience**事件通道會記錄下列事件。
+Windows Admin Center 會將閘道活動記錄到事件通道，可協助您疑難排解問題，以及檢視使用量計量在閘道電腦上。 這些事件會記錄到**Microsoft ServerManagementExperience**事件通道。
 
-[深入了解疑難排解 Windows 系統管理中心。](troubleshooting.md)
+[深入了解疑難排解 Windows Admin Center。](troubleshooting.md)

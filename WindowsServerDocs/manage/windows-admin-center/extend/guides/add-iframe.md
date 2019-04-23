@@ -1,6 +1,6 @@
 ---
-title: 將 iFrame 新增到工具擴充功能
-description: 開發工具擴充功能 Windows Admin Center SDK (Project Honolulu)-將 iFrame 新增到工具擴充功能
+title: 新增 iFrame 至工具擴充功能
+description: 開發工具擴充功能的 Windows Admin Center SDK （專案檀香山）-將 iFrame 加入至 [工具] 延伸模組
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,32 +8,32 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7b4a7b688e4b2d9f52e44395c19211b91b964578
-ms.sourcegitcommit: be0144eb59daf3269bebea93cb1c467d67e2d2f1
+ms.openlocfilehash: 7cf1dcec1bc8e187b6db789c5402ca8119ca8b6c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4080925"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59850759"
 ---
-# 將 iFrame 新增到工具擴充功能
+# <a name="add-an-iframe-to-a-tool-extension"></a>新增 iFrame 至工具擴充功能
 
->適用於：Windows Admin Center、Windows Admin Center 預覽版
+>適用於：Windows Admin Center，Windows Admin Center 預覽
 
-在本文中，我們將新增 iFrame 我們已使用 Windows Admin Center CLI 建立新的空白工具擴充功能。
+在本文中，我們會新增一個 iframe，連結至新的空白工具延伸模組，我們建立了使用 Windows Admin Center CLI。
 
-## 準備您的環境 ##
+## <a name="prepare-your-environment"></a>準備您的環境 ##
 
-如果您還沒有這樣做，請依照[開發工具擴充功能](..\develop-tool.md)來準備您的環境，並建立新的空白工具擴充功能的指示。
+如果您還沒有這麼做，請依照下列中的指示[開發工具 延伸模組](..\develop-tool.md)若要準備您的環境，並建立新的清空 [工具] 延伸模組。
 
-## 模組新增到您的專案 ##
+## <a name="add-a-module-to-your-project"></a>將模組新增至您的專案 ##
 
-將新的[空白模組](add-module.md)新增到您的專案，，我們將在下一個步驟中新增 iFrame。  
+加入新[空的模組](add-module.md)至您的專案下, 一步我們會新增一個 iframe，連結。  
 
-## 將 iFrame 新增到您的模組 ##
+## <a name="add-an-iframe-to-your-module"></a>將 iFrame 加入至您的模組 ##
 
-現在我們將新增 iFrame 我們剛建立的新的空白模組。
+現在我們將新增一個 iframe，連結到我們剛剛建立的新的空白模組。
 
-在 \src\app\，瀏覽到您的模組資料夾，然後開啟檔案```{!module-name}.component.html```使用下列命名慣例找到：
+在 \src\app\,瀏覽至您的模組資料夾，然後開啟檔案```{!module-name}.component.html```，找到下列命名慣例：
 
 | 值 | 說明 | 範例檔案名稱 |
 | ----- | ----------- | ------- |
@@ -47,4 +47,7 @@ Html 檔案中加入下列內容：
 </div>
 ```
 
-這樣就完成了，您已新增 iFrame 到您的擴充功能。  接下來，您可以[建置並側載入](..\develop-tool.md#build-and-side-load-your-extension)您的擴充功能，在 Windows Admin Center，以查看結果。
+就這麼簡單，您已將 iFrame 加入您的延伸模組。  接下來，您可以[建置，並端負載](..\develop-tool.md#build-and-side-load-your-extension)您 Windows Admin Center，來查看結果的延伸模組。
+
+> [!Note]
+> 內容安全性原則 (CSP) 設定可防止某些站台內 Windows Admin Center 的 iFrame 中轉譯。 您可以深入了解這[此處](https://content-security-policy.com/)。 

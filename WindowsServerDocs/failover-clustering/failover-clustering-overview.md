@@ -11,15 +11,15 @@ ms.technology: storage-failover-clustering
 ms.date: 03/08/2019
 ms.localizationpriority: high
 ms.openlocfilehash: 445de065ff5b68b83481ee5bd83ebf18fdd180a7
-ms.sourcegitcommit: b0fece76b871da3fa9d6a996798a5008756f486b
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "9178599"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59848649"
 ---
-# Windows Server 中的容錯移轉叢集
+# <a name="failover-clustering-in-windows-server"></a>Windows Server 中的容錯移轉叢集
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
+> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
@@ -47,7 +47,7 @@ ms.locfileid: "9178599"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h2><a href="whats-new-in-failover-clustering.md">容錯移轉叢集的新功能</a></h2>
+                                        <h2><a href="whats-new-in-failover-clustering.md">什麼是容錯移轉叢集的新功能</a></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -71,17 +71,17 @@ ms.locfileid: "9178599"
                                         <div class="cardText">
                                         <h3>了解</h3>
 <HR />
-                                        <p><a href="sofs-overview.md">用於應用程式資料的向外延展檔案伺服器</a></p>
+                                        <p><a href="sofs-overview.md">應用程式資料的向外延展檔案伺服器</a></p>
 <HR />
-                                        <p><a href="../storage/storage-spaces/understand-quorum.md">叢集和集區仲裁</a></p>
+                                        <p><a href="../storage/storage-spaces/understand-quorum.md">叢集和集區的仲裁</a></p>
 <HR />
                                         <p><a href="fault-domains.md">容錯網域感知</a></p>
 <HR />
-                                        <p><a href="smb-multichannel.md">簡化 SMB 多重通道和多個 NIC 的叢集網路</a></p>
+                                        <p><a href="smb-multichannel.md">簡化的 SMB 多重通道和多個 NIC 的叢集網路</a></p>
 <HR />
                                         <p><a href="vm-load-balancing-overview.md">VM 負載平衡</a></p>
 <HR />
-                                        <p><a href="../storage/storage-spaces/cluster-sets.md">叢集集合</a></p>
+                                        <p><a href="../storage/storage-spaces/cluster-sets.md">叢集設定</a></p>
 <HR />
                                         <p><a href="cluster-affinity.md">叢集親和性</a></p>
                                         </div>
@@ -103,11 +103,11 @@ ms.locfileid: "9178599"
                                         <div class="cardText">
                                         <h3>規劃</h3>
 <HR />
-                                        <p><a href="clustering-requirements.md">容錯移轉叢集硬體需求及儲存體選項</a></p>
+                                        <p><a href="clustering-requirements.md">容錯移轉叢集硬體需求及存放選項</a></p>
 <HR />
-                                        <p><a href="failover-cluster-csvs.md">使用叢集共用磁碟區 (CSV)</a></p>               
+                                        <p><a href="failover-cluster-csvs.md">使用叢集共用磁碟區 (Csv)</a></p>               
 <HR />
-                                        <p><a href="../storage/storage-spaces/storage-spaces-direct-in-vm.md">使用客體虛擬機器叢集搭配儲存空間直接存取</a></p>
+                                        <p><a href="../storage/storage-spaces/storage-spaces-direct-in-vm.md">搭配儲存空間直接存取使用客體虛擬機器叢集</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -126,13 +126,13 @@ ms.locfileid: "9178599"
                                         <div class="cardText">
                                         <h3>部署</a></h3> 
 <HR />
-                                        <p><a href="prestage-cluster-adds.md">在 Active Directory Domain Services 中預先設置叢集電腦物件</a></p>
+                                        <p><a href="prestage-cluster-adds.md">預先設置叢集電腦物件，Active Directory 網域服務中</a></p>
 <HR />
                                         <p><a href="create-failover-cluster.md">建立容錯移轉叢集</a></p> 
 <HR />
                                         <p><a href="deploy-two-node-clustered-file-server.md">部署雙節點檔案伺服器</a></p> 
 <HR />
-                                        <p><a href="manage-cluster-quorum.md">管理仲裁和見證</a></p> 
+                                        <p><a href="manage-cluster-quorum.md">管理仲裁及見證</a></p> 
 <HR />
                                         <p><a href="deploy-cloud-witness.md">部署雲端見證</a></p>
 <HR />
@@ -140,9 +140,9 @@ ms.locfileid: "9178599"
 <HR />
                                         <p><a href="cluster-operating-system-rolling-upgrade.md">叢集作業系統輪流升級</a></p> 
 <HR />
-                                        <p><a href="upgrade-option-same-hardware.md">升級相同硬體上的容錯移轉叢集</a></p>
+                                        <p><a href="upgrade-option-same-hardware.md">升級的相同硬體上的容錯移轉叢集</a></p>
 <HR />
-                                        <p><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\)">部署已中斷連結 Active Directory 的叢集</a></p>
+                                        <p><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\)">部署 Active Directory 中斷連結的叢集</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@ ms.locfileid: "9178599"
 <HR />
                                         <p><a href="cluster-aware-updating.md">叢集感知更新</a></p> 
 <HR />
-                                        <p><a href="health-service-overview.md">健康情況服務</a></p>
+                                        <p><a href="health-service-overview.md">健全狀況服務</a></p>
 <HR />
                                         <p><a href="cluster-domain-migration.md">叢集網域移轉</a></p>
 <HR />
@@ -189,9 +189,9 @@ ms.locfileid: "9178599"
                                         <div class="cardText">
                                         <h3>工具及設定</a></h3>
 <HR />
-                                        <p><a href="https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps">容錯移轉叢集 PowerShell Cmdlet</a></p> 
+                                        <p><a href="https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps">容錯移轉叢集的 PowerShell Cmdlet</a></p> 
 <HR />
-                                        <p><a href="https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps">叢集感知更新 PowerShell Cmdlet</a></p> 
+                                        <p><a href="https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps">叢集感知更新的 PowerShell Cmdlet</a></p> 
                                         </div>
                                     </div>
                                 </div>
@@ -212,7 +212,7 @@ ms.locfileid: "9178599"
 <HR />
                                         <p><a href="https://go.microsoft.com/fwlink/p/?LinkId=230641">高可用性 (叢集) 論壇</a></p> 
 <HR />
-                                        <p><a href="http://blogs.msdn.com/b/clustering/">容錯移轉叢集和網路負載平衡小組部落格</a></p> 
+                                        <p><a href="http://blogs.msdn.com/b/clustering/">容錯移轉叢集和網路負載平衡團隊部落格</a></p> 
                                         </div>
                                     </div>
                                 </div>

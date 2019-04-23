@@ -1,6 +1,6 @@
 ---
-title: "編輯檔案檢測範本內容"
-description: "本文說明如何編輯檔案檢測範本內容"
+title: 編輯檔案檢測範本內容
+description: 本文說明如何編輯檔案檢測範本內容
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 31ca46707a32d23a5dd9606c57bcaec5d6e53a80
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846889"
 ---
 # <a name="edit-file-screen-template-properties"></a>編輯檔案檢測範本內容
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 對檔案檢測範本進行變更時，您可以選擇將這些變更擴展到使用原始檔案檢測範本所建立的檔案檢測。 您可以選擇只修改那些符合原始範本的檔案檢測，或是修改所有衍生自原始範本的檔案檢測，無視於這些檔案檢測自建立以來所經過的任何修改。 這項功能提供一個可進行所有變更的中心點，以簡化檔案檢測內容的更新流程。
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 10/17/2017
 
 1.  在 **\[檔案檢測範本\]** 中，選取您要修改的範本。
 
-2.  在檔案檢測範本上按滑鼠右鍵，再按一下 **\[編輯範本內容\]** (或在 **\[動作\]** 窗格的 **\[選取的檔案檢測範本\]** 下選取 **\[編輯範本內容\]**)。如此會開啟 **\[檔案檢測範本內容\]** 對話方塊。
+2.  以滑鼠右鍵按一下 檔案檢測範本，然後按一下 **編輯範本內容**(或在**動作**窗格下方**選取檔案檢測範本**，選取**編輯範本內容**。)這會開啟**檔案檢測範本內容** 對話方塊。
 
 3.  如果您要複製其他範本的內容做為已修改範本的基礎，請從 **\[從範本複製內容\]** 下拉式清單中選取範本， 然後按一下 **\[複製\]**。
 
@@ -41,9 +42,9 @@ ms.lasthandoff: 10/17/2017
     -   如果您想要修改所有使用原始範本所建立的現有檔案檢測，請按一下 **\[將範本套用到所有的衍生檔案檢測\]**。
     -   如果您想要保持現有的檔案檢測不變，請按一下 **\[不要將範本套用到衍生檔案檢測\]**。
 
-7.  按一下 **\[確定\]**。
+7.  按一下 [確定] 。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [建立檔案檢測範本](create-file-screen-template.md)

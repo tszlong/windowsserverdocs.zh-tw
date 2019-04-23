@@ -1,6 +1,6 @@
 ---
-title: "檔案伺服器資源管理員命令列工具"
-description: "本文說明 Windows Server 2016 命令列工具"
+title: 檔案伺服器資源管理員命令列工具
+description: 本文說明 Windows Server 2016 命令列工具
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7d36a30ca65ae88afdc11e516968c6f9900a5ae6
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 9b31c133b0ee4382b5b9aeded9b3852c7230d2d8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858439"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>檔案伺服器資源管理員命令列工具
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 檔案伺服器資源管理員會安裝 [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) PowerShell Cmdlet，以及下列命令列工具：
 
@@ -26,13 +27,13 @@ ms.lasthandoff: 10/17/2017
 
 您可以使用這些工具，來管理在本機電腦或遠端電腦上的儲存資源。 如需這些命令列工具的詳細資訊，請參閱下列參考資料：
 
--   **Dirquota**：<http://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**：<http://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**：<http://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**: <https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**: <https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**: <https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
-> 若要查看命令語法以及命令的可用參數，請使用 <strong>/?</strong> 參數執行命令。
+> 若要查看命令語法以及命令的可用參數，請使用 <strong>/?</strong> 參數。
 
 
 ## <a name="remote-management-using-the-command-line-tools"></a>使用命令列工具進行遠端管理
@@ -51,11 +52,11 @@ ms.lasthandoff: 10/17/2017
 若要使用命令列工具管理遠端資源：
 
 -   您必須使用屬於本機電腦或遠端電腦中 **\[系統管理員\]** 群組成員的網域帳戶來登入。
--   您必須從提高權限的 [命令提示字元] 視窗執行命令列工具。 若要開啟提升權限的命令提示字元視窗，請按一下 **\[開始\]**，依序指向 **\[所有程式\]** 及 **\[附屬應用程式\]**，以滑鼠右鍵按一下 **\[命令提示字元\]**，然後按一下 **\[以系統管理員身分執行\]**。
+-   您必須從提高權限的 [命令提示字元] 視窗執行命令列工具。 若要開啟提升權限的命令提示字元視窗，請按一下 [開始]，依序指向 [所有程式] 及 [附屬應用程式]，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。
 -   遠端電腦必須執行 Windows Server，而系統必須已安裝檔案伺服器資源管理員。
 -   必須啟用遠端電腦上的 **\[遠端檔案伺服器資源管理員管理\]** 例外。 使用 [控制台] 中的 [Windows 防火牆] 來啟用此例外。
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
--   [管理遠端儲存資源](managing-remote-storage-resources.md)
+-   [管理遠端存放裝置資源](managing-remote-storage-resources.md)

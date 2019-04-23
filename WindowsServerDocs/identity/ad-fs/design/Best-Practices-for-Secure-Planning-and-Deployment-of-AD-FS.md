@@ -1,7 +1,7 @@
 ---
 ms.assetid: 963a3d37-d5f1-4153-b8d5-2537038863cb
-title: "規劃安全和部署 AD FS 的最佳做法"
-description: 
+title: 安全規劃和部署 AD FS 的最佳做法
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,28 +9,29 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ed8c36d4bec455879ffd00ad40b72fd5e90484ab
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 67b122353ca9dff3a4df6cbfac56b16bed52b539
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59848079"
 ---
-# <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>規劃安全和部署 AD FS 的最佳做法
+# <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>安全規劃和部署 AD FS 的最佳做法
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-本主題提供最佳資訊來幫助您計劃以及當您設計 Active Directory 同盟 Services (AD FS) 部署評估安全性。 此主題是 「 檢視及評估會影響您的 AD FS 使用的整體安全性考量的起點。 此主題中的資訊是用來與和延伸您的現有安全性計劃與其他設計最佳做法的規範。  
+本主題提供可協助您規劃和評估安全性，當您設計您的 Active Directory Federation Services (AD FS) 部署的最佳做法資訊。 本主題會檢閱和評估會影響您的 AD FS 使用的整體安全性的考量事項的起始點。 這個主題中的資訊是用來補充及延伸現有安全性規劃及其他設計最佳做法。  
   
-## <a name="core-security-best-practices-for-ad-fs"></a>AD fs 核心安全性最佳做法  
-下列幾個核心最佳的常見的所有 AD FS 安裝您想要改善或擴充設計或部署安全性：  
+## <a name="core-security-best-practices-for-ad-fs"></a>AD FS 的核心安全性最佳做法  
+下列的核心最佳做法通用於所有的 AD FS 安裝您想要用來改善或擴充設計或部署的安全性：  
   
--   **AD FS 特定安全的最佳做法會套用到聯盟伺服器與聯盟 proxy 伺服器的電腦使用的安全性設定精靈**  
+-   **若要將 AD FS 特定的安全性最佳作法套用到同盟伺服器和同盟伺服器 proxy 電腦使用安全性設定精靈**  
   
-    安全性設定精靈 (SCW) 是在 Windows Server 2008、 Windows Server 2008 R2 和 Windows Server 2012 的電腦進入預先安裝的工具。 您可以使用它來適用的最佳做法，可協助您減少伺服器，根據您所安裝的伺服器角色攻擊 surface 安全性。  
+    安全性設定精靈 (SCW) 是所有的 Windows Server 2008、 Windows Server 2008 R2 和 Windows Server 2012 電腦上預先安裝的工具。 您可以根據所安裝的伺服器角色，使用它來套用可協助減少伺服器攻擊面的安全性最佳做法。  
   
-    當您安裝 AD FS 時，安裝程式會建立角色擴充功能來建立安全性原則，將會套用到特定 AD FS 伺服器角色 （聯盟伺服器或聯盟伺服器 proxy），您在設定期間選擇使用 SCW 的檔案。  
+    當您安裝 AD FS 時，安裝程式會建立角色延伸檔案，您可以將該檔案與 SCW 搭配使用來建立安全性原則，此原則將套用到您在安裝期間選擇的特定 AD FS 伺服器角色 (可能是同盟伺服器或同盟伺服器 Proxy)。  
   
-    安裝每個角色延伸模組檔案代表角色 subrole 每一台電腦的設定類型。 下列角色延伸檔案安裝 C:WindowsADFSScw directory 中：  
+    每個安裝的角色延伸檔案都代表每台電腦所設定的角色和子角色類型。 C:WindowsADFSScw 目錄中，會安裝下列角色延伸檔案：  
   
     -   Farm.xml  
   
@@ -38,107 +39,111 @@ ms.lasthandoff: 12/12/2017
   
     -   StandAlone.xml  
   
-    -   Proxy.xml （是您在聯盟 proxy 伺服器的角色設定電腦時，才有此檔案）。  
+    -   Proxy.xml (只有當您在同盟伺服器 Proxy 角色中設定電腦時，這個檔案才會存在)。  
   
-    若要套用中 SCW AD FS 角色擴充功能，請完成順序下列步驟：  
+    若要在 SCW 中套用 AD FS 角色延伸，請依序完成下列步驟：  
   
-    1.  安裝 AD FS，然後選擇該電腦的適當的伺服器角色。 如需詳細資訊，請查看[安裝同盟服務 Proxy 角色服務](../../ad-fs/deployment/Install-the-Federation-Service-Proxy-Role-Service.md)中的 AD FS 部署。  
+    1.  安裝 AD FS，然後為該電腦選擇適當的伺服器角色。 如需詳細資訊，請參閱 <<c0> [ 安裝 Federation Service Proxy 角色服務](../../ad-fs/deployment/Install-the-Federation-Service-Proxy-Role-Service.md)AD FS 部署指南中。  
   
-    2.  登記使用 Scwcmd 命令列工具適當的角色延伸模組檔案。 查看下表中的角色您的電腦設定中使用此工具的相關詳細資訊。  
+    2.  使用 Scwcmd 命令列工具，登錄適當的角色延伸檔案。 請參閱下表，以取得如何在為電腦設定的角色中使用這個工具的詳細資料。  
   
-    3.  請確認命令已成功完成，請檢查位於 WindowssecurityMsscwLogs directory SCWRegister_log.xml 檔案。  
+    3.  確認命令已順利完成，藉由檢查的 SCWRegister_log.xml 檔案，位於 WindowssecurityMsscwLogs 目錄中。  
   
-    您必須在每個聯盟伺服器或想要套用 AD FS 為基礎 SCW 安全性原則聯盟伺服器 proxy 電腦上執行所有這些步驟。  
+    您必須在想要套用以 AD FS 為基礎的 SCW 安全性原則的每台同盟伺服器或同盟伺服器 Proxy 電腦上，執行所有的這些步驟。  
   
-    下表如何登記適當 SCW 角色擴充功能，根據您選擇您已安裝 AD FS 使用的電腦的 AD FS 伺服器角色。  
+    下表說明如何根據您在安裝 AD FS 的電腦上選擇的 AD FS 伺服器角色，來登錄適當的 SCW 角色延伸。  
   
-    |AD FS 伺服器角色|AD FS 使用的設定資料庫|在命令提示字元中輸入下列命令：|  
+    |AD FS 伺服器角色|使用的 AD FS 設定資料庫|在命令提示字元中輸入下列命令：|  
     |---------------------|-------------------------------------|---------------------------------------------------|  
-    |聯盟獨立伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
-    |發電廠加入聯盟伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
-    |發電廠加入聯盟伺服器|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |聯盟伺服器 proxy|不適用|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |獨立同盟伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
+    |已加入伺服陣列的同盟伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
+    |已加入伺服陣列的同盟伺服器|[SQL Server]|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
+    |同盟伺服器 Proxy|N/A|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
-    如需資料庫，您可以使用 AD FS 使用的詳細資訊，請查看[的角色 AD FS 設定資料庫的](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
+    如需您可以與 AD FS 搭配使用之資料庫的相關詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
--   **在中安全性時非常重要的問題，例如 kiosk 時使用權杖重播偵測功能。**  
-    權杖重播偵測是 AD FS 可確保偵測到任何嘗試重新執行的專為同盟服務權杖要求並捨棄要求的功能。 預設的話權杖重播偵測功能。 這也適用於 WS 同盟被動式設定檔和安全性判斷提示標記的語言 (SAML) WebSSO 設定檔來確保相同權杖一律不會超過一次。  
+-   **安全性是非常重要的考量，例如，使用 kiosk 時的情況下使用權杖重新執行偵測。**  
+    權杖重新執行偵測是一項功能可確保偵測到任何嘗試重新執行權杖要求，對同盟服務，並會捨棄該要求的 AD fs。 預設會啟用權杖重新執行偵測。 這個功能可藉由確保同一個權杖絕對不會使用超過一次，針對 WS-Federation 被動設定檔和安全性聲明標記語言 (SAML) WebSSO 設定檔來運作。  
   
-    聯盟服務時，它開始建置實現任何權杖要求的快取。 長時間在後續權杖要求加入的快取，來偵測到重新執行權杖要求多次任何嘗試的功能增加同盟服務。 如果您重新執行權杖偵測停用，稍後再試一次讓它，請記住同盟服務會仍接受一段時間，檔案可能使用之前，直到重新顯示快取的已允許時間不足重建內容權杖選擇。 如需詳細資訊，請查看[的角色 AD FS 設定資料庫的](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
+    啟動 Federation Service 時，即會開始建置它所履行之任何權杖要求的快取。 經過一段時間之後，因為已將後續的權杖要求新增到快取，因此能夠提高 Federation Service 偵測任何嘗試多次重新執行權杖要求的能力。 如果您停用權杖重新執行偵測且之後選擇再次啟用它，請記住，Federation Service 仍然會在一段期間內接受先前已使用的權杖，直到重新執行快取有足夠的時間重新建置其內容。 如需詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
--   **尤其是當您正在使用支援 SAML 成品解析度，請使用權杖加密。**  
+-   **特別是當您使用支援 SAML 成品解析，請使用權杖加密。**  
   
-    加密權杖會建議您提高安全性與防護可能在中央男人 (MITM)，可能會嘗試針對 AD FS 部署。 使用使用加密可能會有輕微影響整個，但通常，它應該不會通常注意到而且在許多部署適用於更高安全性的優點超過成本則伺服器的效能。  
+    若要提高安全性和保護來抵禦潛在可能會嘗試攻擊您的 AD FS 部署的攔截層 (MITM) 攻擊強烈建議您使用權杖加密。 使用加密可能會對整體產生些微影響，但一般來說，通常這類影響應該不會被注意到，而且在許多部署中，更高安全性的好處遠超過伺服器效能方面所產生的任何成本。  
   
-    若要以便權杖加密，第一組新增加密您依賴廠商信任的憑證。 您可以設定可能可以在建立時廠商信任的加密憑證或更新版本。 將的加密憑證新增至現有信賴廠商信任的之後，您可以在設定使用的憑證**加密**索引標籤中時使用 AD FS 信任屬性。 指定使用 AD FS cmdlet 現有信任的憑證，請使用任一個的 EncryptionCertificate 參數**設定為 ClaimsProviderTrust**或**設定為 RelyingPartyTrust** cmdlet。 設定同盟服務解密權杖時要使用的憑證，請使用**設定為 ADFSCertificate** cmdlet 並指定 」`Token-Encryption`」 的*CertificateType*參數。 讓和停用加密的特定信賴信任可透過使用*EncryptClaims*的參數**設定為 RelyingPartyTrust** cmdlet。  
+    若要啟用權杖加密，首先請針對您的信賴憑證者信任設定新增加密憑證。 您可以在建立信賴憑證者信任時或在之後設定加密憑證。 若要將加密憑證新增至現有信賴憑證者信任的更新版本，您可以設定使用的憑證**加密**信任內容，同時使用 AD FS 嵌入式管理單元中的索引標籤。 若要指定使用 AD FS cmdlet 現有信任的憑證，請使用 EncryptionCertificate 參數**Set-claimsprovidertrust**或是**Set-relyingpartytrust** cmdlet。 若要設定 Federation Service 解密權杖時所要使用的憑證，請使用**Set-adfscertificate** cmdlet 並指定"`Token-Encryption`"的*CertificateType*參數。 可以使用 *Set-RelyingPartyTrust* Cmdlet 的 **EncryptClaims** 參數來啟用和停用特定信賴憑證者信任的加密。  
   
--   **利用驗證延伸的保護**  
+-   **使用驗證擴充的保護**  
   
-    為了協助保護您的部署，您可以設定並使用 AD FS 進行驗證功能的延伸的保護。 此設定中指定延伸支援聯盟伺服器的驗證的保護層的級。  
+    為了保護您的部署，您可以設定，以及使用延伸的保護與 AD FS 的驗證功能。 此設定指定同盟伺服器所支援的驗證擴充保護層的級。  
   
-    驗證延伸的保護可協助防護在中央男人 (MITM) 攻擊，攻擊攔截 client 認證然後轉寄給伺服器。 這類防護是因為透過通道繫結權杖 (CBT) 可以可能需要、 允許，或建立與戶端通訊時，不需要伺服器。  
+    驗證的延伸保護可協助提供保護，以抵禦攔截式 (MITM) 攻擊，攻擊者會在攻擊時攔截用戶端認證並將它們轉送到伺服器。 您能夠透過通道繫結權杖 (CBT) 提供保護來抵禦這類攻擊，對伺服器而言，當它建立與用戶端的通訊時，這類保護可能是必要、允許，或非必要的。  
   
-    要保護的延伸的功能，請使用**ExtendedProtectionTokenCheck**上的參數**設定為 ADFSProperties** cmdlet。 下表描述此設定和層級的安全性，值提供可能值。  
+    若要啟用延伸保護功能，請使用 **ExtendedProtectionTokenCheck** 參數 (位於 **Set-ADFSProperties** Cmdlet 上)。 下表說明這個設定的可能值以及該值所提供的安全性等級。  
   
-    |讓參數值|安全性層級|保護設定|  
+    |參數值|安全性層級|保護設定|  
     |-------------------|------------------|----------------------|  
-    |需要|完全強化伺服器。|延伸的保護會執行並一定。|  
-    |允許|部分強化伺服器。|延伸的保護會執行系統有修補支援。|  
-    |無|雖然伺服器。|不被執行延伸的保護。|  
+    |必要|會完全強化伺服器。|會強制執行且一律必須強制執行延伸的保護。|  
+    |允許|會部分強化伺服器。|若已修補所涉及的系統來支援此功能，即會強制執行延伸的保護。|  
+    |None|伺服器容易受到攻擊。|不會強制執行延伸的保護。|  
   
--   **如果您使用的登入和追蹤，確認所有敏感資訊的隱私權。**  
+-   **如果您使用記錄和追蹤，請確定任何敏感資訊的隱私權。**  
   
-    AD FS 不會預設公開或直接曲目同盟服務或正常運作的一部分 (PII) 的個人資訊。 當事件登入及偵錯追蹤登入 AD FS 中的功能時，但是，根據您所設定的部分宣告宣告原則類型與自己相關的值可能包含 PII 可能會在登入 AD FS 事件或追蹤登。  
+    AD FS 不會根據預設，公開或追蹤個人識別資訊 (PII) 直接在 Federation Service 或正常運作。 當 AD FS 中啟用事件記錄和偵錯追蹤記錄時，不過，根據您設定某些宣告的宣告原則類型及其相關聯的值可能會包含可能會記錄在 AD FS 事件或追蹤記錄的 PII。  
   
-    因此，非常建議執行存取控制 AD FS 設定和檔案登入。 如果您不想資訊，可看見這類，您應該停用 loggin，或之前與其他人共用您登入篩選掉任何 PII 或敏感性資料。  
+    因此，強烈建議強制執行的 AD FS 設定和其記錄檔的存取控制。 如果您不想顯示此類資訊，您應該先停用登入，或將您記錄中的任何 PII 或敏感資料篩除掉，然後再與他人共用資訊。  
   
-    以下秘訣，可協助您避免 content 的登入檔案不小心被公開：  
+    下列秘訣可協助您防止意外公開記錄檔的內容：  
   
-    -   請確定 AD FS 事件登入和追蹤登入檔案保護的存取控制清單 (ACL)，以限制只有這些受信任的系統管理員需要存取權限存取。  
+    -   請確定 AD FS 事件記錄檔和追蹤記錄檔會受到存取控制清單 (ACL)，限制只有這些受信任的系統管理員需要存取它們。  
   
-    -   請勿複製或封存登入檔案，使用副檔名或可輕鬆地提供使用的 Web 要求的路徑。 例如，.xml 檔案副檔名並不安全的選擇。 您可以檢查網際網路服務 (IIS) 管理指南看到擴充功能，可提供一份。  
+    -   不要使用透過 Web 要求即可輕易取得的副檔名或路徑來複製或封存記錄檔。 例如，.xml 副檔名就不是安全的選擇。 您可以檢查網際網路資訊服務 (IIS) 管理指南，以查看可提供的副檔名清單。  
   
-    -   如果修改登入檔案的路徑，請務必指定絕對應該以外 Web 主機 virtual 根 (vroot) 公用 directory 防止存取外部廠商使用網頁瀏覽器登入檔案位置的路徑。  
+    -   如果您修改記錄檔的路徑，請確定有指定記錄檔位置的絕對路徑，這個位置應該是在 Web 主機虛擬根 (vroot) 公開目錄之外，以防止外部人員使用 Web 瀏覽器來存取它。  
 
--   **AD FS 外部鎖定保護**  
+-   **AD FS 外部網路軟式鎖定和外部網路的 AD FS 的智慧鎖定保護**  
     
-    來自 Web 應用程式 Proxy invalid(bad) 密碼驗證要求的形式攻擊，在 AD FS 外部鎖定可讓您從 AD FS 鎖定保護您的使用者。 除了從 AD FS 保護您的使用者帳號鎖定，AD FS 外部鎖定也會防止猜測攻擊暴力密碼。  如需詳細資訊請查看[AD FS 外部鎖定保護](../../ad-fs/operations/Configure-AD-FS-Extranet-Lockout-Protection.md)。  
+    如果攻擊者都透過 Web Application Proxy 的 invalid(bad) 密碼驗證要求的形式，AD FS 外部網路鎖定可讓您從 AD FS 帳戶鎖定保護您的使用者。 除了從 AD FS 保護您的使用者帳戶鎖定，AD FS 外部網路鎖定也會防止暴力密碼破解攻擊。  
+    
+    適用於 Windows Server 2012 R2 上的 AD FS 外部網路的軟式鎖定，請參閱[AD FS 外部網路軟式鎖定保護](../../ad-fs/operations/Configure-AD-FS-Extranet-Soft-Lockout-Protection.md)。  
+
+     如為 Windows Server 2016 上的 AD FS 外部網路的智慧鎖定[AD FS 外部網路智慧鎖定保護](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)。  
   
-## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>AD fs 的 SQL Server – 特定安全性最佳做法  
-下列幾個安全性最佳專屬於 Microsoft SQL Server® 或 Windows 內部資料庫 (WID) 使用時這些資料庫技術管理 AD FS 設計和部署的資料。  
+## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>適用於 AD FS 的 SQL Server 特定的安全性最佳做法  
+當這些資料庫技術來管理 AD FS 設計和部署中的資料時，下列安全性最佳作法特有 Microsoft SQL Server® 或 Windows 內部資料庫 (WID) 的使用。  
   
 > [!NOTE]  
-> 這些建議是延長，但不會取代，SQL Server product 安全性指南。 如需有關計劃的安全 SQL Server 安裝，請查看[安全性考量安全 SQL 安裝的](https://go.microsoft.com/fwlink/?LinkID=139831)(https://go.microsoft.com/fwlink/?LinkID=139831)。  
+> 這些建議的用意是要延伸 (而非取代) SQL Server 產品安全性指導方針。 如需規劃安全 SQL Server 安裝的詳細資訊，請參閱[安全 SQL 安裝的安全性考量](https://go.microsoft.com/fwlink/?LinkID=139831)(https://go.microsoft.com/fwlink/?LinkID=139831)。  
   
--   **隨時防火牆實體安全的網路環境中部署 SQL Server。**  
+-   **一律將 SQL Server 部署在實體上安全的網路環境使用防火牆。**  
   
-    不應直接與網際網路公開 SQL Server 安裝。 您應該可以瑞曲之戰 SQL server 安裝支援 AD FS 資料中心中的電腦。 如需詳細資訊，請查看[安全性最佳做法檢查清單](https://go.microsoft.com/fwlink/?LinkID=189229)(https://go.microsoft.com/fwlink/?LinkID=189229)。  
+    絕對不應將 SQL Server 安裝直接向網際網路公開。 只有在您的資料中心內的電腦應該能夠連線到您支援 AD FS 的 SQL server 安裝。 如需詳細資訊，請參閱 <<c0> [ 安全性最佳做法檢查清單](https://go.microsoft.com/fwlink/?LinkID=189229)(https://go.microsoft.com/fwlink/?LinkID=189229)。  
   
--   **執行而不是使用建預設系統服務帳號服務 account SQL Server。**  
+-   **執行 SQL Server，而不是使用內建的預設系統服務帳戶的服務帳戶。**  
   
-    根據預設，SQL Server 通常安裝和使用其中一個支援的建系統帳號，例如帳號 LocalSystem 或其他設定。 若要提升 AD fs SQL Server 安裝的安全性，不論可能來存取您 SQL Server 服務使用不同的服務帳號以及 Kerberos 驗證，在 Active Directory 部署登記這個 account 安全性主體名稱 (SPN)。 這可讓 client 和 server 之間的相互驗證。 SPN 登記的不同服務帳號，而 SQL Server 將使用 NTLM 適用於 windows 的驗證，驗證只 client 的位置。  
+    根據預設，通常會安裝並設定 SQL Server 來使用其中一個支援的內建系統帳戶，例如 LocalSystem 或 NetworkService 帳戶。 若要增強的 SQL Server 安裝 AD FS 的安全性，盡可能使用個別的任一處服務帳戶來存取您的 SQL Server 服務和登錄中的這個帳戶的安全性主體名稱 (SPN)，藉以啟用 Kerberos 驗證程式Active Directory 部署。 這會在用戶端和伺服器之間啟用相互驗證。 在沒有為個別服務帳戶登錄 SPN 的情況下，SQL Server 將針對 Windows 型驗證使用 NTLM，這只會驗證用戶端。  
   
--   **最小化 surface SQL Server 區域。**  
+-   **最小化 SQL Server 的介面區。**  
   
-    讓所需 SQL Server 端點。 根據預設，SQL Server 提供無法移除的單一建 TCP 端點。 AD fs，您應該讓 F:kerberos 驗證此 TCP 結束點。 若要檢視目前 TCP 端點以查看是否其他使用者定義 TCP 連接埠] 會新增至 SQL 安裝，您可以使用 「 選取 * sys.tcp_endpoints 從 「 查詢聲明 SQL (SQL At&t) 的活動中。 如需 SQL Server 端點設定的詳細資訊，請查看[如何：多 TCP 連接埠設定資料庫引擎接聽](https://go.microsoft.com/fwlink/?LinkID=189231)(https://go.microsoft.com/fwlink/?LinkID=189231)。  
+    只啟用必要的 SQL Server 端點。 根據預設，SQL Server 會提供單一內建 TCP 端點，且無法移除。 適用於 AD FS，您應該啟用這個 TCP 端點，Kerberos 驗證。 若要檢閱目前的 TCP 端點以查看是否已將其他使用者定義的 TCP 連接埠新增到 SQL 安裝，您可以在 Transact-SQL (T-SQL) 工作階段中使用 "SELECT * FROM sys.tcp_endpoints" 查詢陳述式。 如需有關 SQL Server 端點設定的詳細資訊，請參閱[How To:設定 Database Engine 接聽多個 TCP 通訊埠](https://go.microsoft.com/fwlink/?LinkID=189231)(https://go.microsoft.com/fwlink/?LinkID=189231)。  
   
--   **避免使用 SQL 架構的驗證。**  
+-   **請避免使用以 SQL 為基礎的驗證。**  
   
-    若要避免明文密碼傳輸到您的網路，或將密碼儲存在設定，Windows 驗證只適用於您安裝 SQL Server。 SQL Server 驗證是舊版驗證模式。 儲存結構化查詢的語言 (SQL) 登入認證 （SQL 使用者名稱和密碼） 使用時 SQL Server 驗證不建議。 如需詳細資訊，請查看[驗證模式](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232)。  
+    為避免必須透過網路以純文字形式傳輸密碼或在組態設定中儲存密碼，請只將 Windows 驗證與 SQL Server 安裝搭配使用。 SQL Server 驗證是舊有的驗證模式。 不建議您在使用 SQL Server 驗證時儲存結構化查詢語言 (SQL) 登入認證 (SQL 使用者名稱和密碼)。 如需詳細資訊，請參閱 <<c0> [ 驗證模式](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232)。  
   
--   **仔細評估 SQL 安裝中的其他頻道安全性的需求。**  
+-   **請仔細評估 SQL 安裝中的其他通道安全性的需求。**  
   
-    事實上，即使有 F:kerberos 驗證 SQL Server 安全性支援提供者介面 (SSPI) 並不會提供通道層級的安全性。 不過，安裝中伺服器確實位於防火牆受保護的網路，加密 SQL 通訊可能不需。  
+    即使是使用 Kerberos 驗證，SQL Server 安全性支援提供者介面 (SSPI) 還是不提供通道等級的安全性。 但是，對於伺服器安全地位於受防火牆保護之網路上的安裝而言，可能就不需要將 SQL 通訊加密。  
   
-    雖然加密可協助您確保安全性寶貴工具，就不能視為適用於所有的資料或連接。 當您決定是否實作加密時，請考慮使用者存取資料的方式。 如果使用者透過公用網路存取的資料，可能需要提高安全性資料加密。 不過，如果 AD FS SQL 資料的所有存取都包含內部安全的網路設定，加密可能不需。 使用任何加密應該也包含密碼、 按鍵，以及憑證維護策略。  
+    雖然加密是一項可協助確保安全性的好用工具，但還是不應該將它視為適用於所有資料或連線。 當您在決定是否要實作加密時，請考量使用者將存取資料的方式。 如果使用者是透過公用網路存取資料，可能就需要資料加密來增加安全性。 不過，如果 AD fs 的 SQL 資料的所有存取牽涉都到與安全內部網路設定，加密不可能需要。 任何加密的用法也都應該包含對密碼、金鑰及憑證的維護策略。  
   
-    如果有任何 SQL 資料，可能會看到或竄改透過您的網路，以協助保護您的 SQL 連接使用網際網路通訊協定的安全性 (IPsec) 或安全通訊端層 (SSL) 的問題。 不過，這可能會影響負 SQL Server 效能，這可能會影響或限制有時 AD FS 效能。 例如，AD FS 效能權杖發行也可能降低當 SQL 為基礎的屬性存放區的屬性對應權杖發行的重要。 您可以更排除 SQL 竄改威脅所遇到周邊安全性設定。 保護您的 SQL Server 安裝好方案，例如是確保該 app 會維持網際網路使用者無法存取和電腦，且該仍然可以存取只的使用者或電腦 datacenter 環境中。  
+    如果對於任何 SQL 資料可能透過網路被看見或遭到竄改有所疑慮，請使用網際網路通訊協定安全性 (IPsec) 或安全通訊端層 (SSL)，來協助保護您的 SQL 連線。 不過，這可能需要在 SQL Server 效能，這可能會影響或限制在某些情況下的 AD FS 效能產生負面影響。 比方說，從 SQL 屬性存放區查閱而言非常重要，對權杖發行時，可能會降低在權杖發行的 AD FS 效能。 您可以設定強大的周邊安全性設定，來更完善地排除 SQL 竄改威脅。 例如，對於保護 SQL Server 安裝而言，更好解決方案是確保網際網路使用者和電腦無法存取它，而且只有位於您資料中心環境內的使用者和電腦可以存取它。  
   
-    如需詳細資訊，請查看[加密連接 SQL Server](https://go.microsoft.com/fwlink/?LinkID=189234)或[SQL Server 加密](https://go.microsoft.com/fwlink/?LinkID=189233)。  
+    如需詳細資訊，請參閱 <<c0> [ 加密 SQL Server 的連接](https://go.microsoft.com/fwlink/?LinkID=189234)或是[SQL Server 加密](https://go.microsoft.com/fwlink/?LinkID=189233)。  
   
--   **安全地設計的存取設定儲存程序使用 AD FS 的 SQL 儲存的資料來執行所有 SQL 為基礎的對應。**  
+-   **使用預存程序來執行所有以 SQL 為基礎的查閱 AD FS 的 SQL 預存的資料，以設定安全設計的存取。**  
   
-    為了提供更好的服務，資料隔離，您可以建立所有屬性市集中搜尋命令儲存程的序。 您可以建立的您再授予權限來執行儲存程序資料庫角色。 將服務的身分 AD FS Windows 服務指派給此資料庫角色。 AD FS Windows 服務不應該可以執行任何其他 SQL 隱私權聲明，適用於屬性對應的適當儲存程序以外。 鎖定存取這種方式 SQL Server 資料庫降低攻擊權限提高權限的風險。  
+    若要提供更安全的服務和資料隔離，您可以針對所有屬性存放區查閱命令建立預存程序。 您可以建立資料庫角色，然後授與權限以執行預存程序。 將 AD FS Windows 服務的服務識別指派給此資料庫角色中。 AD FS Windows 服務應該不能執行任何其他 SQL 陳述式，不用於查閱屬性的適當預存程序。 以這種方式鎖定對 SQL Server 資料庫的存取，可降低受到「權限提高」攻擊的風險。  
   
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

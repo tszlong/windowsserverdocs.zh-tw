@@ -1,5 +1,5 @@
 ---
-title: Nano 伺服器上的 IIS
+title: Nano Server 上的 IIS
 description: 在 Nano Server 上設定 IIS 的詳細資料
 ms.prod: windows-server-threshold
 ms.service: na
@@ -13,15 +13,15 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 1461f3e3266d77d2510aba37208347253a8f78e7
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082014"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851619"
 ---
-# <a name="iis-on-nano-server"></a>Nano 伺服器上的 IIS
+# <a name="iis-on-nano-server"></a>Nano Server 上的 IIS
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
@@ -38,7 +38,7 @@ ms.locfileid: "2082014"
 |HTTP 錯誤|x|  
 |靜態內容|x|  
 |HTTP 重新導向||  
-|**狀況及診斷**||  
+|**健康情況和診斷**||  
 |HTTP 記錄|x|  
 |自訂記錄||  
 |要求監視器||  
@@ -65,7 +65,7 @@ ms.locfileid: "2082014"
 |**管理工具**||  
 |適用於 Windows PowerShell 的 IIS 系統管理模組|x|  
 
-一系列的其他設定文章的 IIS （例如使用 ASP.NET、 PHP、 及 Java），以及其他相關內容發佈在[http://iis.net/learn](http://iis.net/learn)。  
+在發佈的內容相關的一系列的其他組態上的 IIS （例如使用 ASP.NET、 PHP 和 Java），以及其他的文章[ http://iis.net/learn ](http://iis.net/learn)。  
 
 ## <a name="installing-iis-on-nano-server"></a>在 Nano Server 上安裝 IIS  
 您可以離線 (Nano Server 已關閉時) 或線上 (Nano Server 正在執行時) 安裝此伺服器角色；離線安裝是建議選項。  
@@ -129,7 +129,7 @@ ms.locfileid: "2082014"
 
     **dism /online /get-packages**  
 
-    您應該會看到 "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000" 列出兩次，一次針對 Release Type : Language Pack，另一次針對 Release Type : Feature Pack。  
+    您應該會看到"Package Identity:Microsoft NanoServer-IIS 套件 ~ 31bf3856ad364e35 ~ amd64 ~ ~ 10.0.14393.1000"列出兩次，一次針對 Release Type:語言套件，一次針對 Release Type:功能套件。  
 
 6.  使用 **net start w3svc** 或藉由重新啟動 Nano Server 來啟動 W3SVC 服務。  
 
@@ -185,7 +185,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 例如，Window
 
 您接著可以執行 `Get-IISSite` 來確認網站的狀態 (傳回網站名稱、識別碼、狀態、實體路徑和繫結)。  
 
-**刪除網站**  
+**正在刪除網站**  
 
 執行 `Remove-IISSite -Name TestSite -Confirm:$false`。  
 
@@ -242,9 +242,9 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
     $sm.CommitChanges()  
     ```  
 
-    您也可以使用伺服器名稱指示 (SNI) 與特定的主機名稱，並搭配下列語法： `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    您也可以使用伺服器名稱指示 (SNI) 與特定的主機名稱，使用此語法： `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
 
-## <a name="appendix-1-list-of-iis-sub-features"></a>附錄 1：IIS 子功能清單
+## <a name="appendix-1-list-of-iis-sub-features"></a>附錄 1:IIS 子功能清單
 
 - IIS-WebServer
 - IIS-CommonHttpFeatures
@@ -280,7 +280,7 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
 - IIS-HttpTracing
 - IIS-CustomLogging
 
-## <a name="appendix-2-elements-of-http-features"></a>附錄 2：HTTP 功能的元素  
+## <a name="appendix-2-elements-of-http-features"></a>附錄 2:HTTP 功能的項目  
 IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出此版 Nano Server 中所有功能的設定元素  
 
 ### <a name="common-http-features"></a>一般 HTTP 功能  

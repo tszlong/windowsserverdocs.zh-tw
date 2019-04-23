@@ -1,6 +1,6 @@
 ---
-title: "管理 Windows Server Essentials 的 VPN"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 管理 Windows Server Essentials 中的 VPN
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,80 +12,81 @@ ms.assetid: cc2b264a-b9a8-4114-9f7b-8604f77096e5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 08a08a13d696371420bdfdf89f54320c787636b0
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: ec367337318d12161a250572745d8f303d098ffe
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849199"
 ---
-# <a name="manage-vpn-in-windows-server-essentials"></a>管理 Windows Server Essentials 的 VPN
+# <a name="manage-vpn-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 VPN
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集 
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials 
   
- 連接私人網路 virtual (VPN) 可讓使用者在家或外出工作使用的基礎結構提供公用網路，例如網際網路存取私人網路上的伺服器。 若要使用 VPN 存取伺服器資源，您必須完成以下：  
+ 虛擬私人網路 (VPN) 連線可讓在家中或差旅中工作的使用者，使用公用網路 (例如網際網路) 所提供的基礎結構來存取私人網路上的伺服器。 若要使用 VPN 存取伺服器資源，您必須完成以下各項：  
   
--   [遠端存取伺服器上的讓 VPN](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [啟用 VPN 用於遠端存取伺服器上](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [網路使用者的設定 VPN 權限](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [設定網路使用者的 VPN 權限](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [連接至伺服器 client 電腦](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [用戶端電腦連線到伺服器](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
--   [使用 Windows Server Essentials 連接的 VPN](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [使用 VPN 來連線到 Windows Server Essentials](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_3)  
   
-##  <a name="BKMK_1"></a>遠端存取伺服器上的讓 VPN  
- 完成設定，可讓遠端存取的 Windows Server Essentials VPN 下列程序。  
+##  <a name="BKMK_1"></a> 啟用 VPN 用於遠端存取伺服器上  
+ 請完成以下程序，在 Windows Server Essentials 設定 VPN 以啟用遠端存取。  
   
-#### <a name="to-enable-vpn-in-windows-server-essentials"></a>若要讓 Windows Server Essentials 的 VPN  
+#### <a name="to-enable-vpn-in-windows-server-essentials"></a>啟用 Windows Server Essentials 中的 VPN  
   
-1.  打開儀表板。  
+1.  開啟 [儀表板]。  
   
-2.  按一下**設定**，然後按一下 [**隨處存取**索引標籤。  
+2.  按一下 [設定] ，然後按一下 [隨處存取]  索引標籤。  
   
-3.  按一下**設定**。 設定任何地方存取精靈會出現。  
+3.  按一下**設定**。 此時會出現 [設定隨處存取精靈]。  
   
-4.  在**選擇隨處存取功能，可讓**頁面上，選取**Virtual 私人網路**核取方塊。  
+4.  在 [選擇要啟用的隨處存取功能] 頁面，選取 [虛擬私人網路] 核取方塊。  
   
-5.  請依照下列指示完成精靈。  
+5.  遵循指示以完成精靈。  
   
-##  <a name="BKMK_2"></a>網路使用者的設定 VPN 權限  
- 您可以連接到 Windows Server Essentials 並存取所有資源是儲存在伺服器上使用 VPN。 這是您的電腦與網路帳號，可以用來連接的 VPN 連接到 Windows Server Essentials 伺服器裝載設定使用 client 的尤其是實用。 Windows Server Essentials 裝載伺服器上的所有新建立的使用者帳號必須使用 VPN 第一次登入 client 的電腦。  
+##  <a name="BKMK_2"></a> 設定網路使用者的 VPN 權限  
+ 您可以使用 VPN 來連線到 Windows Server Essentials，並存取您所有儲存在伺服器上的資源。 當您有已設定網路帳戶的用戶端電腦且那些帳戶可透過 VPN 連線來連線到託管的 Windows Server Essentials 伺服器時，這會特別有用。 所有在託管的 Windows Server Essentials 伺服器上新建立的使用者帳戶，在第一次登入用戶端電腦時都必須使用 VPN。  
   
-#### <a name="to-set-vpn-permissions-for-network-users"></a>若要設定網路使用者的 VPN 權限  
+#### <a name="to-set-vpn-permissions-for-network-users"></a>變更網路使用者的 VPN 權限  
   
-1.  打開儀表板。  
+1.  開啟 [儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者] 。  
   
-3.  在清單中的使用者帳號，選取您想要給予權限來遠端存取桌面帳號。  
+3.  在使用者帳戶清單中，選取您想要授與桌面遠端存取權限的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**屬性**。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **屬性**。  
   
-5.  在**< 使用者 Account\ > 屬性**，按一下 [**隨處存取**索引標籤。  
+5.  在  **< 使用者帳戶\>屬性**，按一下 **隨處存取** 索引標籤。  
   
-6.  在**隨處存取**索引標籤，讓使用者使用 VPN、 連接到伺服器選取**允許 Virtual 私人網路 (VPN)**核取方塊。  
+6.  若要允許使用者使用 VPN 來連線到伺服器，請在 [隨處存取]  索引標籤上，選取 [允許虛擬私人網路 (VPN)]   核取方塊。  
   
-7.  按一下**套用**，然後按**[確定]**。  
+7.  按一下 [套用]，然後按一下 [確定]。  
   
-##  <a name="BKMK_Connect"></a>連接至伺服器 client 電腦  
- VPN 會支援執行 Windows Server Essentials 遠端存取伺服器上之後，您可以使用 VPN 連接連接到並存取所有您儲存在伺服器的資源。 不過，您必須伺服器第一次連接的電腦。 當您使用 「 連接我的電腦伺服器精靈電腦連接到伺服器時，VPN 上網也會自動上，可用來存取伺服器資源在家或外出時。 如需有關您的電腦連接伺服器逐步指示，請查看[電腦連接到伺服器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
+##  <a name="BKMK_Connect"></a> 用戶端電腦連線到伺服器  
+ 在執行 Windows Server Essentials 的伺服器上啟用 VPN 用於遠端存取後，您就可以使用 VPN 連線連線到伺服器，並使用伺服器上儲存的所有資源。 不過，您必須先將電腦連線到伺服器。 當您使用 [將我的電腦連線到伺服器精靈] 將電腦連線到伺服器時，會自動在用戶端電腦上產生 VPN 網路連線，您可以在家中或旅途中工作時使用這個連線存取伺服器資源。 如需將電腦連線到伺服器的逐步指示，請參閱 [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
   
-##  <a name="BKMK_3"></a>使用 Windows Server Essentials 連接的 VPN  
- 如果您的電腦與網路帳號，可以用來連接到執行 Windows Server Essentials 透過 VPN 連接，所有的新建立的使用者帳號裝載的伺服器設定使用 client 裝載的伺服器必須第一次登入 client 電腦使用 VPN。 完成 client 電腦連接到伺服器從下列程序。  
+##  <a name="BKMK_3"></a> 使用 VPN 來連線到 Windows Server Essentials  
+ 如果您有已設定網路帳戶的用戶端電腦，並且那些帳戶可透過 VPN 連線來連線到執行 Windows Server Essentials 的託管伺服器，則所有在該託管伺服器上新建立的使用者帳戶在第一次登入該用戶端電腦時都必須使用 VPN。 從連線到伺服器的用戶端電腦完成以下程序。  
   
-#### <a name="to-use-vpn-to-remotely-access-server-resources"></a>若要使用 VPN 遠端存取伺服器資源  
+#### <a name="to-use-vpn-to-remotely-access-server-resources"></a>使用 VPN 從遠端存取伺服器資源  
   
-1.  按下 Ctrl + Alt + Delete client 電腦上。  
+1.  在用戶端電腦上按 Ctrl + Alt + Delete。  
   
-2.  按一下**切換使用者**畫面上。  
+2.  在登入畫面按一下 [切換使用者]。  
   
-3.  按一下 [網路登入畫面右下角的圖示。  
+3.  按一下畫面右下角的網路登入圖示。  
   
-4.  使用您的網路使用者名稱和密碼登入 Windows Server Essentials 的網路。  
+4.  使用您的網路使用者名稱和密碼來登入 Windows Server Essentials 網路。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
--   [從遠端使用](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
+-   [在遠端工作](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
   
--   [管理隨時隨地存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [管理隨處存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)

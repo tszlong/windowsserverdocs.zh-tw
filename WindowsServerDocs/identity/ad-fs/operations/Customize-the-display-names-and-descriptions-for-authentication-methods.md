@@ -1,7 +1,7 @@
 ---
 ms.assetid: 309d6358-777d-496a-856d-728246c7d9a1
-title: "自訂的顯示名稱及的驗證方法描述"
-description: 
+title: 自訂的顯示名稱和描述的驗證方法
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,20 +10,21 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 699622a8a075dd6c78ab1b536dce2abfee642e9e
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855189"
 ---
-# <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>自訂的顯示名稱及的驗證方法描述 
+# <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>自訂的顯示名稱和描述的驗證方法 
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-若要自訂的顯示名稱及描述您可以使用的驗證方法`Set-AdfsAuthenticationProviderWebContent`PowerShell cmdlt。  以使用此 cmdlt，您必須先取得您想要自訂的驗證方法的名稱。  這可以使用`Get-AdfsGlobalAuthenticationPolicy`。  我們看到以下範例，我們 sign\ 中在頁面上，以下顯示:「登入使用 x.509」。  我們希望此簡化的使用者。  
+若要自訂驗證方法的顯示名稱和描述，您可以使用 `Set-AdfsAuthenticationProviderWebContent` PowerShell Cmdlt。  若要使用此 Cmdlt，您必須先取得您想要自訂的驗證方法的名稱。  作法是使用 `Get-AdfsGlobalAuthenticationPolicy`。  在下列範例中我們發現，在我們登\-在頁面中，顯示下列文字：「使用 X.509 憑證登入」。  我們想要為使用者簡化這行文字。  
   
 ![自訂顯示名稱](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update1.PNG)  
   
-讓第一次我們收到的驗證方法的名稱，然後我們編輯所顯示的文字。  
+首先，我們取得驗證方法的名稱，然後編輯顯示的文字。  
   
  
     Get-AdfsGlobalAuthenticationPolicy  
@@ -39,7 +40,7 @@ ms.lasthandoff: 07/03/2017
   
 ![自訂顯示名稱](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update2.PNG)  
   
-現在我們看到已經我們顯示的訊息。  
+我們現在看到顯示訊息已變更。  
   
 ![自訂顯示名稱](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update3.PNG)  
 

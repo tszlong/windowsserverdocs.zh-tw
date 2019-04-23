@@ -1,46 +1,47 @@
 ---
-title: "廣告樹系修復-重設電腦 account DC 上"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 07/07/2017
+title: AD 樹系復原-重設電腦帳戶在網域控制站
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 4e1a6070-df0a-4dfe-8773-899a010bfabd
-ms.technology: identity-adfs
-ms.openlocfilehash: 588510a27f56abb4497b2f80fa0281a858a7e8eb
-ms.sourcegitcommit: 84a2bdcb92ba6af45781fab9727617e50fa5e911
+ms.technology: identity-adds
+ms.openlocfilehash: 388b460196888d4ca0cd12218972197afb6d49c5
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59852759"
 ---
-# <a name="ad-forest-recovery---resetting-the-computer-account-on-the-dc"></a>廣告樹系修復-重設電腦 account DC 上 
+# <a name="ad-forest-recovery---resetting-the-computer-account-on-the-dc"></a>AD 樹系復原-重設電腦帳戶在網域控制站
 
->適用於： Windows Server 2016、 Windows Server 2012 和 2012 R2、 Windows Server 2008 和 2008 R2
+>適用於：Windows Server 2016 中，Windows Server 2012 和 2012 R2 中，Windows Server 2008 和 2008 R2
 
- 使用下列程序來重設電腦 account DC 的密碼。  
+ 您可以使用下列程序來重設 DC 的電腦帳戶密碼。 
   
-## <a name="to-reset-the-computer-account-password-of-the-domain-controller"></a>重設電腦的網域控制站 account 密碼  
+## <a name="to-reset-the-computer-account-password-of-the-domain-controller"></a>若要重設的網域控制站的電腦帳戶密碼  
+
+1. 在命令提示字元中輸入下列命令，然後按 ENTER：  
+
+   ```
+   netdom help resetpwd  
+   ```
   
-1.  在命令提示字元中，輸入下列命令，，然後按 ENTER 鍵：  
+2. 使用這個命令會提供重設電腦帳戶密碼，例如使用 Netdom 命令列工具的語法：  
+
+   ```
+   netdom resetpwd /server:domain controller name /userD:administrator /passwordd:*  
+   ```  
   
-    ```  
-    netdom help resetpwd  
-    ```  
+    何處*網域控制站名稱*是您要復原的本機 DC。 
   
-2.  使用這個命令提供使用 Netdom 命令列工具來重設電腦 account 密碼，例如語法：  
-  
-    ```  
-    netdom resetpwd /server:domain controller name /userD:administrator /passwordd:*  
-    ```  
-  
-     其中*網域控制站名稱*是您要修復的本機 DC。  
-  
-    > [!NOTE]
-    >  您應該會在兩次執行這個命令。  
+   > [!NOTE]
+   > 您應該執行此命令兩次。
   
 ## <a name="next-steps"></a>後續步驟
 
-- [廣告樹系復原指南](AD-Forest-Recovery-Guide.md)
-- [廣告樹系修復程序](AD-Forest-Recovery-Procedures.md)
+- [AD 樹系復原指南](AD-Forest-Recovery-Guide.md)
+- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)

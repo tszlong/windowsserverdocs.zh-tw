@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
-title: "組建多層應用程式使用 On-Behalf-Of (OBO) 使用 AD FS 2016 中的 OAuth"
-description: 
+title: 建置多層式應用程式使用代理者 (OBO) 使用 OAuth 與 AD FS 2016
+description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,120 +9,121 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8940cde2b78ce3ead499263e6fba0fbe28aae695
-ms.sourcegitcommit: c16a2bf1b8a48ff267e71ff29f18b5e5cda003e8
+ms.openlocfilehash: 33d0bfa4139f16c90f3d79f5b61188b4d311538b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858939"
 ---
-# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016"></a>組建多層應用程式使用 On-Behalf-Of (OBO) 使用 AD FS 2016 中的 OAuth
+# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016"></a>建置多層式應用程式使用代理者 (OBO) 使用 OAuth 與 AD FS 2016
 
 >適用於：Windows Server 2016
 
-本節提供實作開展工作的 (OBO) 驗證的 Windows Server 2016 TP5 AD FS 使用的指示。  O 深入了解 OBO 驗證請朗讀[適用於開發人員 AD FS 案例](../../ad-fs/overview/AD-FS-Scenarios-for-Developers.md)
+本逐步解說提供實作上-代表 (OBO) 驗證在 Windows Server 2016 TP5 使用 AD FS 的指示。 若要深入了解 OBO 驗證，請閱讀[適用於開發人員的 AD FS 案例](../../ad-fs/overview/AD-FS-Scenarios-for-Developers.md)
 
->警告：僅供教育是您可以在此組建的範例。 這些指示僅適用於可能公開所需項目模式的最簡單、最小實作。 範例可能不會包含錯誤處理的一切和其他相關的功能和聚焦只有在收到成功 OBO 驗證。
+>警告：您可以在這裡建置的範例是僅供教育。 這些指示是最簡單、 最小實作能夠公開 （expose） 模型的必要項目。 此範例可能不會包含錯誤處理的所有層面，以及其他與關聯的功能並將焦點放僅在取得 OBO 驗證成功。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
-在此範例中，我們將建立驗證流程位置 client 存取中間層 Web 服務和 web 服務則將會執行代表證取得存取預付碼。
+在此範例中，我們將建立的驗證流程，其中用戶端會存取中介層 Web 服務和 web 服務接著會代表已驗證的用戶端取得存取權杖。
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.PNG)
+![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.png)
 
-以下是範例達成驗證流程
-1. Client 驗證，AD FS 授權結束點，並要求驗證碼
-2. 授權端點回到 client 的驗證碼
-3. Client 使用驗證碼，並將其給 AD FS 權杖端點要求存取權杖展示 WebAPI 為中間層 Web 服務
-4. AD FS 回到中型層 Web 服務的存取預付碼。 需要存取端 WebAPI 中央層服務的額外功能，
-5. Client 使用中央層服務使用存取預付碼。
-6. 中央層服務提供 AD FS 權杖結束點存取預付碼和要求存取預付碼的端 WebAPI 開展工作的已驗證的使用者
-7. AD FS 回到端 WebAPI 存取權杖中央層服務 actiing client 為
-8. 中央層服務使用 AD FS 執行「步驟 7」中所提供的存取憑證存取端為 client WebAPI 並執行所需的功能
+以下是範例，以達到的驗證流程
+1. 用戶端會向 AD FS 授權端點，並要求授權碼
+2. 授權端點傳回至用戶端的驗證碼
+3. 用戶端使用驗證碼，與對 AD FS 權杖端點要求存取權杖中呈現為 WebAPI 的中間層 Web 服務
+4. AD FS 會傳回存取權杖，中間層 Web 服務。 如需其他功能中, 介層服務需要存取後端 WebAPI
+5. 用戶端會使用存取權杖，使用中介層服務。
+6. 中介層服務提供 AD FS 權杖的結束點的存取權杖，並要求存取權杖的後端 WebAPI 代表的已驗證的使用者
+7. AD FS 作為用戶端將後端 WebAPI 的存取權杖傳回給中介層服務 actiing
+8. 中介層服務會使用在步驟 7 中的 AD FS 所提供的存取權杖存取後端為用戶端的 WebAPI 並執行必要的功能
 
 ## <a name="sample-structure"></a>範例結構
 
-範例會所組成的三個模組
+範例會包含三個模組
 
 
 模組 | 描述
 -------|------------
-ToDoClient | 原生 client 與使用者互動
-ToDoService | 中間層 web 做為 client WebAPI 端的 API
-WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoItem ToDoService api
+ToDoClient | 與使用者互動的原生用戶端
+ToDoService | 中間層 web API 做為後端 WebAPI 的用戶端
+WebAPIOBO | 後端 web api，供 ToDoService 用來執行必要的作業，當使用者新增的 ToDoItem 時
 
 
 
 
-## <a name="setting-up-the-development-box"></a>開發方塊設定
+## <a name="setting-up-the-development-box"></a>設定開發電腦
 
-這個解說使用 Visual Studio 2015。 專案經驗會使用 Active Directory 驗證媒體櫃 (ADAL)。 若要深入了解 ADAL 請朗讀[Active Directory 驗證庫.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+此逐步解說會使用 Visual Studio 2015。 專案會大量使用 Active Directory Authentication Library (ADAL)。 若要了解 ADAL，請閱讀[Active Directory Authentication Library.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)
 
-也會使用 SQL LocalDB v11.0。 安裝之前處理範例 SQL LocalDB。
+此範例也會使用 SQL LocalDB v11.0。 安裝 SQL LocalDB 之前的範例。
 
 ## <a name="setting-up-the-environment"></a>設定環境
-我們將會使用的基本安裝：
+我們將使用的基本安裝：
 
-1. **DC**：網域控制站 AD FS 可裝載的網域
-2. **AD FS 伺服器**: AD FS 伺服器的網域
-3. **開發電腦**：電腦我們已安裝 Visual Studio，將會開發我們範例
+1. **DC**:將在其中裝載 AD FS 的網域的網域控制站
+2. **AD FS 伺服器**:網域的 AD FS 伺服器
+3. **開發電腦**:我們已安裝 Visual Studio 和開發我們的範例中的機器
 
-您可以如果您想要使用只兩部電腦。 另一個用於俠日 ADFS，另一個用於範例開發無障礙。
+您可以如果您想，使用只有兩部機器。 一個用於 DC/ADFS，另一個則用於開發的範例。
 
-如何設定的網域控制站和 AD FS 超出範圍的這篇文章。 適用於其他部署的資訊查看：
+如何設定網域控制站和 AD FS 已超出本文的範圍。 其他部署資訊，請參閱：
 
 - [AD DS 部署](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [AD FS 部署](../AD-FS-Deployment.md)
 
-範例已依據針對 Azure Vittorio Bertocci 所建立的現有 OBO 範例也可以使用[在此](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)。 請依照下列指示您開發電腦上的專案的複製和建立的範例，若要開始使用的複本。
+此範例是根據現有 OBO 範例針對 Azure 建立 Vittorio bertocci 且可用[此處](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)。 請依照下列指示來複製您的開發電腦上的專案，並建立一份以開始使用的範例。
 
-## <a name="clone-or-download-this-repository"></a>複製或下載這個存放庫
+## <a name="clone-or-download-this-repository"></a>複製或下載此存放庫
 
-從命令列或殼層：
+從您的殼層或命令列：
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
 ## <a name="modifying-the-sample"></a>修改範例
 
-當您開放 WebAPI-OnBehalfOf-DotNet.sln 方案，您會注意到您有兩個專案中的方案
+當您開啟方案 WebAPI-OnBehalfOf-DotNet.sln 時，您會注意到您的方案中有兩個專案
 
-* **ToDoListClient**：這樣做為 OpenID client 的使用者會互動
-* **ToDoListService**：這會將中間層 web 伺服器上的應用程式] / [服務，將會與其他端 WebAPI OBO 互動驗證的使用者
+* **ToDoListClient**:這將做為使用者進行互動的 OpenID 用戶端
+* **ToDoListService**:這會是中介層 web 伺服器應用程式 / 服務，將會與另一個後端 WebAPI OBO 互動已驗證的使用者
 
-您可以看到時，我們需要新增另一個專案稍後將會做為中間層 ToDoListService 會存取資源。
+如您所見，我們必須新增另一個專案稍後會做為將中介層 ToDoListService 所存取的資源。
 
-### <a name="configuring-ad-fs-for-the-client-and-webserver-app"></a>AD FS 設定 Client 與 web 伺服器上的應用程式
+### <a name="configuring-ad-fs-for-the-client-and-webserver-app"></a>在用戶端和 web 伺服器應用程式中設定 AD FS
 
-在目前的形式的範例，是針對 Azure AD 設定驗證。 我們想要變更的驗證機制，直接向 AD FS 它部署場所上。 若要這樣做，我們需要設定辨識 client AD FS 與 web 伺服器上的應用程式我們在此範例中。
+此範例的最新的格式，必須針對 Azure AD 來設定驗證。 我們想要變更的驗證機制，並直接它針對 AD FS 在內部部署。 若要這樣做，我們要設定來辨識用戶端的 AD FS 和 web 伺服器應用程式，我們在此範例中。
 
 **建立應用程式群組**
 
-打開 AD FS 管理 MMC，並加入新的應用程式群組。 選取 WebAPI-應用程式原生-範本。
+開啟 AD FS 管理 MMC 並加入新的應用程式群組。 選取原生-應用程式-WebAPI 範本。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO2.PNG)
 
-按一下 [下一步，您將會看到提供 Client 的應用程式的相關資訊的頁面。 給 AD FS 應用程式 client 適當的名稱。 複製 client 識別碼，並儲存這將會需要 visual studio 中的應用程式設定中之後，您可以存取位置。
+按一下 [下一步]，您會看到的頁面提供用戶端應用程式的相關資訊。 用戶端應用程式在 AD FS 中提供適當的名稱。 複製用戶端識別碼，並將它儲存在稍後這會需要在 visual studio 中的應用程式設定中，您可以存取的地方。
 
->注意：在該真的不是在原生戶端重新導向 URI 可以是任何任意 URI
+>注意：重新導向 URI 可以是任何任意的 URI，因為它真的不會發生原生用戶端
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO11.PNG)
 
-按 [下一步，您將會看到提供 WebAPI 的相關資訊的頁面。 命名適合 AD FS 項目的的 WebAPI 並輸入您看到 Visual Studio 中 ToDoListService URI 重新導向 URI
+按一下 [下一步]，您會看到的頁面提供 WebAPI 的相關資訊。 針對 WebAPI 提供適合的名稱，AD FS 項目和輸入的重新導向 URI 的 URI，您會看到 Visual Studio 中針對為 ToDoListService
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO16.PNG)
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO18.PNG)
 
-按一下 [下一步，您將會看到 [選擇存取控制] 原則頁面。 請確定您看到 [允許所有人] 原則一節中。
+按一下 [下一步]，您會看到 [選擇存取控制原則] 頁面。 請確定您會看到 「 允許每個人 」 的原則區段中。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
 
-按 [下一步，您將會看到的 [設定] 應用程式權限頁面。 在這個頁面上，選取 [允許的範圍 openid（預設值，選取）和 user_impersonation。 範圍 'user_impersonation' 是必要無法順利向 AD FS 要求開展工作的存取權的憑證。
+按一下 [下一步]，您會看到 [設定應用程式權限] 頁面。 這個頁面上，選取 允許的範圍 （預設選項） 的 openid 以及 user_impersonation。 範圍 'user_impersonation' 是為了能夠成功地從 AD FS 要求代表的存取權杖。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
 
-旁邊就會顯示 [摘要] 頁面。 瀏覽精靈中的其餘部分，並完成設定。
+按一下 下一步將會顯示 摘要 頁面。 瀏覽精靈的其餘部分並完成相關設定。
 
-為了讓開展工作的驗證，我們需要確定 AD FS 傳回至 client 的範圍 user_impersonation 存取預付碼。 修改為包含下列三種自訂規則 ToDoListServiceWebApi 宣告發行：
+若要讓代表的驗證，我們需要確保 AD FS 會傳回給用戶端 user_impersonation 範圍的存取權杖。 修改針對包含下列三個自訂規則的 ToDoListServiceWebApi 宣告發行：
 
     @RuleName = "All claims"
     c:[]
@@ -136,42 +137,42 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
-**新增 ToDoListService 為 client 應用程式群組中**
+**做為用戶端應用程式群組中新增 ToDoListService**
 
-在此階段我們需要中為 web 伺服器上的應用程式做為 client，而不只是資源 AD FS 進行其他項目。 打開應用程式群組您剛建立並按一下 [新增應用程式。
+在這個階段中，我們需要建立做為用戶端並不只是做為資源的 web 伺服器應用程式的 AD FS 中的其他項目。 開啟您剛建立的應用程式群組，然後按一下 新增應用程式。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO15.PNG)
 
-您會看到 [新增新的應用程式來 MySampleGroup] 頁面。 該頁面上，選取 [伺服器應用程式或網站」的獨立應用程式
+您會看到 [新增 MySampleGroup 新的應用程式] 頁面。 在該頁面上，選取 「 伺服器應用程式或網站 」 當做獨立應用程式
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO19.PNG)
 
-按 [下一步，您將會看到提供應用程式的詳細資料頁面。 提供設定中的項目名稱] 區段中適用的名稱。 確保 Client 識別碼相同的 ToDoListServiceWebAPI id
+按一下 下一步，您會看到頁面，即可提供應用程式詳細資料。 提供組態項目，在 [名稱] 區段中的適當名稱。 請確定用戶端識別碼是與 ToDoListServiceWebAPI 的識別項相同
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO20.PNG)
 
-按 [下一步，您將會看到與設定的應用程式認證頁面。 按一下 [產生共用的密碼]。 您會看到所自動密碼。 這是必要時我們在 visual studio 設定 ToDoListService 複製某些位置的密碼。
+按一下 [下一步]，您會看到 [設定應用程式的認證] 頁面。 按一下 [產生共用的密碼]。 您會看到使用自動產生的密碼。 因為這是需要我們在 visual studio 中設定 ToDoListService 時，請將複製的某處的祕密。
 
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO17.PNG)
 
-按 [下一步，完成精靈。
+按一下 [下一步]，並完成精靈。
 
-### <a name="modifying-the-todolistclient-code"></a>修改 ToDoListClient 的程式碼
+### <a name="modifying-the-todolistclient-code"></a>修改 ToDoListClient 程式碼
 
-#### <a name="modify-the-application-config"></a>修改應用程式設定
+#### <a name="modify-the-application-config"></a>修改應用程式組態
 
-移至您在 ToDoListClient 專案中 WebAPI-OnBehalfOf-DotNet 方案。 打開 App.config 檔案，並進行下列修改
+移至您在 ToDoListClient 專案 WebAPI OnBehalfOf DotNet 方案中。 開啟 App.config 檔案，並進行下列修改
 
-* 加 ida：承租人金鑰的項目
-* 針對 ida: RedirectURI 輸入您在 AD FS 設定 MySampleGroup_ClientApplication 時所提供的任意 URI。
-* 對於 ida: ClientID 金鑰，提供 client ID 識別碼設定 MySampleGroup_ClientApplication 時，給 AD FS。
-* 您的 ida: ToDoListResourceID 提供的資源 ID 提供 AD FS 中設定 ToDoListServiceWebApi 時
-* 主要 ida: AADInstance 意見
-* 輸入 ida: ToDoListBaseAddress ToDoListServiceWebApi ID 資源。 這將會通話 ToDoList WebAPI 時使用。
-* 新增 ida：授權金鑰，並提供 AD FS URI 值。
+* 註解的 ida： 租用戶索引鍵的項目
+* Ida: RedirectURI 輸入您在 AD FS 中設定 MySampleGroup_ClientApplication 時所提供的任意 URI。
+* 對於 ida: ClientID 金鑰，提供用戶端設定 MySampleGroup_ClientApplication 時提供的 AD FS 的識別碼辨識符號。
+* 您為 AD FS 中設定 ToDoListServiceWebApi 時 ida: ToDoListResourceID 提供的資源識別碼
+* 註解主要的 ida: AADInstance
+* Ida: ToDoListBaseAddress 輸入 ToDoListServiceWebApi 的資源識別碼。 這會呼叫 ToDoList WebAPI 時使用。
+* 新增金鑰的 ida： 授權單位，並提供作為 URI 的值，適用於 AD FS。
 
-您**和 appSettings**中 App.Config 應該看起來像這樣：
+您**appSettings** App.Config 中應該看起來像這樣：
 
     <appSettings>
     <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />-->
@@ -187,49 +188,49 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
 
 **MainWindow.xaml.cs**
 
-加行朗讀承租人資訊的應用程式設定
+註解讀取應用程式組態中的租用戶的資訊列
 
     //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
     //private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
 
-將值字串的權限的變更
+字串權限的值變更
 
     private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
 
-若要朗讀 ToDoListResourceId 和 ToDoListBaseAddress 正確的值的程式碼變更
+程式碼，以讀取 ToDoListResourceId 和 ToDoListBaseAddress 的正確值
 
     private static string todoListResourceId = ConfigurationManager.AppSettings["ida:TodoListResourceId"];
     private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
 
-在 [函式 MainWindow() 變更 authcontext 初始化為：
+函式中 mainwindow （） 會變更為 aquiretoken 初始化：
 
     authContext = new AuthenticationContext(authority, false);
 
-### <a name="adding-the-backend-resource"></a>新增端資源
+### <a name="adding-the-backend-resource"></a>新增後端資源
 
-您必須完成開展工作的流程，才能建立端資源將會存取 ToDoListService 開展工作的已驗證的使用者。 選擇端資源會依需求，但針對此範例中，您可以建立基本的 WebAPI。
+若要完成代理者的流程，您必須建立 ToDoListService 將用來存取後端資源代表的已驗證的使用者。 根據需求，而異的後端資源的選擇，但在此範例中，您可以建立基本的 WebAPI。
 
-* 方案 ' WebAPI-OnBehalfOf-DotNet' 方案檔案總管中按一下滑鼠右鍵，選取 [新增]-> [新增專案
+* 解決方案 'OnBehalfOf-Webapi-dotnet' 方案總管] 中以滑鼠右鍵按一下並選取 [新增]-> [新增專案
 * 選擇 ASP.NET Web 應用程式範本
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO4.PNG)
 
-* 在下一步提示，按一下 [' 變更驗證]
-* 選取 [工作和學校帳號]，然後選取 [上正確下拉式清單的 [' 先 '
-* 輸入您的部署 AD FS federationmetadata.xml 路徑，並提供的應用程式 URI（提供任何 URI 現在，以及您將會在稍後變更），按一下 [新增專案方案確定。
+* 在下一個提示字元上按一下 [變更驗證]
+* 選取 工作和學校帳戶，然後在右側下拉式清單中，選取 ' 內部 '
+* 輸入您的 AD FS 部署 federationmetadata.xml 路徑，並提供應用程式 URI （到目前為止，提供任何 URI 與您將在稍後變更），按一下 [確定] 以將專案加入方案。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
 
-* 按一下滑鼠右鍵在控制器上建立的新專案在總管] 中。 選取 [新增]-> [控制器
-* 選取範本，選取 ['Web API 2 控制器-空白'，按一下 [確定]。
+* 以滑鼠右鍵按一下控制站上建立新專案下的 [方案總管] 中。 選取 新增-> 控制器
+* 在 範本選取範圍中，選取 'Web API 2 控制器-空白' 並按一下 確定。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
 
-* 命名適當的控制器
+* 提供適當的控制器名稱
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
 
-* 在控制器中新增下列程式碼
+* 在控制器中加入下列程式碼
 
 
         using System;
@@ -249,47 +250,47 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
             }
         }
 
-任何人的 WebAPI WebAPIOBO 放取得要求時，此驗證碼只會傳回字串
+此程式碼只會傳回字串，當任何人都針對 WebAPI WebAPIOBO 將 Get 要求
 
-### <a name="adding-the-new-backend-webapi-to-ad-fs"></a>AD FS 以新增新的端 WebAPI
+### <a name="adding-the-new-backend-webapi-to-ad-fs"></a>將新的 WebAPI 後端新增至 AD FS
 
-打開 MySampleGroup 應用程式群組。 按一下 [新增應用程式，選取 Web API 範本，按一下 [下一步]
+開啟 MySampleGroup 應用程式群組。 按一下 新增應用程式並選取 Web API 範本，並按一下 下一步。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO6.PNG)
 
-在 [設定網路 API 頁面上提供 WebAPI 項目以及適當的名稱。 在 visual studio（類似於我們針對 BackendWebAPIAdfsAdd）識別碼應該 WebAPIOBO 專案的值 SSL URL。
+在 [設定 Web API] 頁面上提供適當名稱的 WebAPI 項目和識別項。 識別碼應該是從 WebAPIOBO 專案 SSL URL 值，在 visual studio 中 （類似於我們的 BackendWebAPIAdfsAdd）。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO8.PNG)
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO7.PNG)
 
-請繼續透過精靈中的其餘部分相同為我們設定 ToDoListService WebAPI 時。 結尾您的應用程式群組應該的外觀如下：
+繼續執行精靈的其餘部分相同為我們設定 ToDoListService WebAPI 的時。 結束您的應用程式群組看起來應該像下面：
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO5.PNG)
 
 
-### <a name="modifying-the-todolistservice-code"></a>修改 ToDoListService 的程式碼
+### <a name="modifying-the-todolistservice-code"></a>修改 ToDoListService 程式碼
 
-#### <a name="modifying-the-application-config"></a>修改應用程式設定
+#### <a name="modifying-the-application-config"></a>修改應用程式組態
 
-* 打開 web.config
-* 修改下鍵
+* 開啟 Web.config 檔案
+* 修改下列索引鍵
 
-| 鍵 | 值。 |
+| Key | 值 |
 |:-----|:-------|
-|對象 ida:| 為您提供給 AD FS 設定 ToDoListService WebAPI，例如時 https://localhost:44321/ ToDoListService 的來電顯示|
-|ida: ClientID| 為您提供給 AD FS 設定 ToDoListService WebAPI，例如時 https://localhost:44321/ ToDoListService 的來電顯示 </br>**請務必 ida: ClientID 與 ida：對象符合彼此**|
-|ida: ClientSecret| 這是 AD FS 產生當您已設定 ToDoListService client AD FS 中的密碼|
-|ida: ADFSMetadata| 這是您 AD FS 的中繼資料，例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml URL|
-|ida: OBOWebAPIBase| 這是我們用來呼叫端的 API，例如 https://localhost:44300 的基底地址|
-|授權單位 ida:| 這是您 AD FS 服務，https://fs.anandmsft.com/adfs/ 的範例 URL|
+|ida:Audience| 指定在設定 ToDoListService WebAPI，比方說，AD fs ToDoListService 的識別碼 https://localhost:44321/|
+|ida:ClientID| 指定在設定 ToDoListService WebAPI，比方說，AD fs ToDoListService 的識別碼 https://localhost:44321/ </br>**它是非常重要的 ida： 對象和 ida: ClientID 符合每個其他**|
+|ida:ClientSecret| 這是當您在 AD FS 中設定 ToDoListService 用戶端時，AD FS 將會產生的密碼|
+|ida:ADFSMetadata| 這是您的 AD FS 中繼資料 URL 如例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml|
+|ida:OBOWebAPIBase| 這是我們將使用後端 API，例如呼叫的基底地址 https://localhost:44300|
+|ida:Authority| 這是您的 AD FS 服務的 URL 範例 https://fs.anandmsft.com/adfs/|
 
 
-所有其他 ida: XXXXXXX 鍵在 [**和 appsettings**節點可以略過或刪除
+中索引鍵的所有其他 ida: XXXXXXX **appsettings**可以標記為註解或刪除節點
 
-#### <a name="change-authentication-from-azure-ad-to-ad-fs"></a>Azure AD 來 AD FS 從變更驗證
+#### <a name="change-authentication-from-azure-ad-to-ad-fs"></a>從 Azure AD 到 AD FS 的變更驗證
 
-* 打開 Startup.Auth.cs 檔案
+* 開啟檔案 Startup.Auth.cs
 * 移除下列程式碼
 
         app.UseWindowsAzureActiveDirectoryBearerAuthentication(
@@ -300,7 +301,7 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
                 TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
             });
 
-使用
+取代為
 
         app.UseActiveDirectoryFederationServicesBearerAuthentication(
             new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -315,7 +316,7 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
 
 #### <a name="modifying-the-todolistcontroller"></a>修改 ToDoListController
 
-加入 System.Web 參考。擴充功能。 更換下列程式碼來修改課程成員
+新增 System.Web.Extensions 的參考。 取代下列程式碼來修改類別成員
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -337,7 +338,7 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
     private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
     private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
 
-使用
+取代為
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -352,11 +353,11 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
 
 **修改用於名稱宣告**
 
-我們從 AD FS 發行 Nmae 理賠要求，但是我們不發行 NameIdentifier 理賠要求。 範例使用 NameIdentifier 唯一 ToDo 項目] 中的金鑰。 為了簡化，您可以放心密碼移除 NameIdentifier 與名稱宣告。 尋找和所有場次 NameIdentifier 都取代名稱。
+從 AD FS 中，我們要發出 Nmae 宣告，但我們不會發出 NameIdentifier 宣告。 此範例會使用 NameIdentifier 唯一 ToDo 項目中的索引鍵。 為了簡單起見，您可以安全地在程式碼中移除具有名稱宣告 NameIdentifier。 尋找和取代所有出現的 NameIdentifier 具有名稱。
 
-**修改 CallGraphAPIOnBehalfOfUser() 文章程序**
+**修改後的常式和 CallGraphAPIOnBehalfOfUser()**
 
-複製和貼上 ToDoListController.cs 下列程式碼的文章與 CallGraphAPIOnBehalfOfUser 取代的程式碼
+複製並貼上下列程式碼 ToDoListController.cs，然後將 Post 和 CallGraphAPIOnBehalfOfUser 取代程式碼
 
     // POST api/todolist
     public async Task Post(TodoItem todo)
@@ -421,7 +422,7 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
             retry = false;
             try
             {
-                result = authContext.AcquireToken(OBOWebAPIBase, clientCred, userAssertion);
+                result = await authContext.AcquireTokenAsync(...);
                 accessToken = result.AccessToken;
             }
             catch (AdalException ex)
@@ -465,36 +466,36 @@ WebAPIOBO | 端網頁，用來執行必要的作業時的使用者新增 ToDoIte
         return (null);
     }
 
-## <a name="running-the-solution"></a>執行方案
+## <a name="running-the-solution"></a>執行解決方案
 
 
-Visual studio 預設設定來執行一個專案，當您遇到執行偵錯。
+根據預設 visual studio 會執行一個專案，當您叫用來執行的偵錯設定。
 
-* 以滑鼠右鍵按一下方案，然後選取 [屬性。
-* 屬性網頁中選取多個開機專案及變更動作到開始畫面的所有的三個項目。
+* 以滑鼠右鍵按一下方案，然後選取 [屬性]。
+* 在 [屬性] 頁面中選取多個啟始專案，並變更啟動所有的三個項目的動作。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO14.PNG)
 
-F5 並執行方案
+按 f5 鍵，並執行解決方案
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO24.PNG)
 
-按一下 [登入] 按鈕。 將會提示您登入使用 AD FS
+按一下 [登入] 按鈕。 系統會提示您使用 AD FS 登入
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO25.PNG)
 
-在您登入，新增 ToDo 項目清單中。 我們會想要的進一步即可張貼到 WebAPIOBO web API ToDoListService 文章作業幕後的細節。
+之後您登入、 在清單中新增 ToDo 項目。 在幕後我們要來進一步執行 WebAPIOBO web API 的 Post ToDoListService 執行 Post 作業。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO26.PNG)
 
-在順利運作，您會看到的項目已新增至其他訊息清單後端使用 OBO 驗證流程已存取網路 API。
+在成功的作業中，您會看到的項目已從後端 Web API 已存取使用 OBO 驗證流程新增至具有額外的訊息的清單。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
-您也可以查看詳細的追蹤 Fiddler 上。 上市 Fiddler 以及 HTTPS 解密。 您可以看到我們對 /adfs/oautincludes 端點的兩個要求。
-中的第一個互動，我們提供權杖端點存取程式碼，並取得 https://localhost:44321/ 權杖存取![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+您也可以在 Fiddler 中看到詳細的追蹤。 啟動 Fiddler，並啟用 HTTPS 解密。 您可以看到我們提出 /adfs/oautincludes 端點的兩個要求。
+在第一次的互動，方法，我們可以呈現存取程式碼，對權杖端點，並取得存取權杖以供 https://localhost:44321/ ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
-在第二個權杖端點互動，您可以看到我們已經**requested_token_use**設定為**on_behalf_of**，並使用存取權杖取得中間層 web 服務，亦即 https://localhost:44321/ 為宣告，來取得開展工作的預付碼。
+在第二個語彙基元端點互動，您可以看到我們有**requested_token_use**設定為**on_behalf_of**而且我們會使用為中介層 web 服務，也就是取得存取權杖 https://localhost:44321/以取得代表的權杖判斷提示。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>後續步驟
