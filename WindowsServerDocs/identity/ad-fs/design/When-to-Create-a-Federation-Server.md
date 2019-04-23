@@ -1,7 +1,7 @@
 ---
 ms.assetid: 824005ae-c3c1-459b-9baa-1660158918ab
-title: "建立聯盟伺服器的時機"
-description: 
+title: 建立同盟伺服器的時機
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,73 +10,74 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 8013764b88a1061cfcaa3a507466c111bfd59aad
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864809"
 ---
-# <a name="when-to-create-a-federation-server"></a>建立聯盟伺服器的時機
+# <a name="when-to-create-a-federation-server"></a>建立同盟伺服器的時機
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-當您建立聯盟 serverin Active Directory 同盟服務 \(AD FS\) 時，您提供一種方法可以您的組織：  
+當您建立同盟 serverin Active Directory Federation Services \(AD FS\)，提供您的組織可以用一種方法：  
   
--   交戰 single\ sign\ 在網頁中 \ (SSO\) – 根據通訊與其他公司 \ （也有一個以上的聯盟 server\） 和必要時，使用您的組織中的員工 \ （人員將需要透過 Internet\ 存取）。  
+-   參與 Web 單一\-號\-上\(SSO\)– 與另一個組織的通訊\(另有至少一部同盟伺服器\)，必要時，與您組織中的員工\(誰需要存取網際網路的\)。  
   
--   讓模擬基礎結構服務使用的身分委派使用者前端服務。 如需詳細資訊，請查看[何時要使用的身分委派](When-to-Use-Identity-Delegation.md)。  
+-   使用識別委派，啟用前端服務以模擬使用者執行基礎結構服務。 如需詳細資訊，請參閱 [When to Use Identity Delegation](When-to-Use-Identity-Delegation.md)。  
   
-下列章節描述一些重要決策判斷時，並建立一個或多個聯盟伺服器的位置。  
+下列各節描述一些關鍵的決策，決定何時及如何建立一或多個同盟伺服器。  
   
-## <a name="determine-the-organizational-role-for-the-federation-server"></a>判斷組織聯盟伺服器角色  
-要充分有關何時建立新的聯盟伺服器，您必須先判斷組織的伺服器會位於。 聯盟伺服器播放是在組織中的角色是否放置聯盟伺服器 account 合作夥伴公司或資源合作夥伴組織中而定。  
+## <a name="determine-the-organizational-role-for-the-federation-server"></a>決定同盟伺服器的組織角色  
+若要讓建立新的同盟伺服器的時機做出明智的決策，您必須先判斷伺服器所在位置的所在的組織。 在組織中的同盟伺服器所扮演的角色，取決於是否您伺服器的放置同盟帳戶夥伴組織中或資源夥伴組織中。  
   
-當聯盟伺服器位於 account 合作夥伴的企業網路時，其的角色是驗證的瀏覽器、 Web 服務或身分選取器戶端使用者認證，並傳送安全性權杖給戶端。 如需詳細資訊，請查看[檢視聯盟伺服器 Account 合作夥伴中的角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)。  
+同盟伺服器放置在帳戶夥伴的公司網路，其角色時驗證使用者的認證瀏覽器、 Web 服務或身分識別選取器用戶端，並將安全性權杖傳送至用戶端。 如需詳細資訊，請參閱＜ [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)＞。  
   
-聯盟伺服器置於企業網路資源協力廠商，當的角色是驗證使用者，根據發出聯盟伺服器資源合作夥伴組織中的安全性權杖或的角色是重新導向權杖要求 account 合作夥伴公司 client 屬於設定的 Web 應用程式或 Web 服務。 如需詳細資訊，請查看[檢視的資源合作夥伴聯盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
+在資源夥伴的公司網路中放置同盟伺服器，其角色是在驗證使用者，在資源夥伴組織的同盟伺服器所發出之安全性權杖為基礎，或其角色為從權杖的要求重新導向設定 Web 應用程式或 Web 服務與用戶端屬於帳戶夥伴組織。 如需詳細資訊，請參閱 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   
-## <a name="determine-which-ad-fs-design-to-deploy"></a>判斷 AD FS 設計部署  
-建立聯盟伺服器您在組織中每當您想要部署的下列 AD FS 設計的任何：  
+## <a name="determine-which-ad-fs-design-to-deploy"></a>判斷要部署哪一種 AD FS 設計  
+每當您想要部署任何下列的 AD FS 設計時，您可以建立您組織中的同盟伺服器：  
   
--   [Web SSO 設計](Web-SSO-Design.md)  
+-   [網頁 SSO 設計](Web-SSO-Design.md)  
   
--   [聯盟的網路 SSO 設計](Federated-Web-SSO-Design.md)  
+-   [同盟的網頁 SSO 設計](Federated-Web-SSO-Design.md)  
   
-如有需要，部署的聯盟網路 SSO 設計組織可以設定單一聯盟伺服器，使其做 account 合作夥伴角色與資源合作夥伴角色中。 在這種情形下，聯盟伺服器可能會根據其組織中帳號安全性判斷提示標記語言 \(SAML\) 權杖，或變更路徑權杖要求組織，根據使用者帳號所在的位置。  
+如有必要，組織部署同盟網頁 SSO 設計，可以設定在單一同盟伺服器，使其運作在帳戶夥伴角色和資源夥伴角色。 在此情況下，同盟伺服器可能會產生安全性聲明標記語言\(SAML\)它自己的組織或權杖的要求重新路由到組織中的使用者帳戶為基礎的權杖為基礎的使用者帳戶所在的位置.  
   
 > [!NOTE]  
-> 聯盟網路 SSO 設計，必須在 account 合作夥伴至少一個聯盟伺服器和資源合作夥伴至少一個聯盟伺服器。  
+> 對於同盟網頁 SSO 設計中，必須有至少一個帳戶夥伴中的同盟伺服器和資源夥伴中的至少一部同盟伺服器。  
   
-## <a name="differences-between-a-federation-server-and-a-federation-server-proxy"></a>聯盟伺服器與聯盟 proxy 伺服器不同  
-聯盟伺服器可以查看網頁 sign\ 中原則、 驗證和探索做聯盟 proxy 伺服器會相同的方式。 聯盟伺服器及聯盟 proxy 伺服器主要不同可以執行的作業聯盟伺服器可以執行的聯盟 proxy 伺服器無法執行。  
+## <a name="differences-between-a-federation-server-and-a-federation-server-proxy"></a>同盟伺服器與同盟伺服器 Proxy 之間的差異  
+同盟伺服器時，可以提供網頁上，進行登\-in、 原則、 驗證、 和中，同盟伺服器 proxy 的方法相同的探索。 同盟伺服器與同盟伺服器 proxy 之間的主要差異和有哪些作業的同盟伺服器可以執行的同盟伺服器 proxy 無法執行。  
   
-以下是聯盟伺服器可以執行的作業：  
+同盟伺服器可以執行的作業如下：  
   
--   聯盟伺服器執行權杖密碼編譯作業。 雖然聯盟的 proxy 伺服器無法產生權杖，他們可以用於路由或重新導向權杖給戶端，必要時，回聯盟伺服器。 如需有關使用聯盟伺服器的資訊，請查看[當建立聯盟 Proxy 伺服器](When-to-Create-a-Federation-Server-Proxy.md)。  
+-   同盟伺服器會執行產生權杖的密碼編譯作業。 雖然同盟伺服器 proxy 無法產生權杖，它們可用來路由傳送，或重新導向語彙基元，用戶端，如有必要，回到同盟伺服器。 如需使用同盟伺服器的詳細資訊，請參閱[When to Create a Federation Server Proxy](When-to-Create-a-Federation-Server-Proxy.md)。  
   
--   聯盟伺服器支援使用 Windows 整合驗證的企業網路; 戶端聯盟伺服器 proxy 不執行動作。 如需關於 Windows 的整合式驗證使用聯盟伺服器的資訊，請查看[當建立聯盟伺服器陣列](When-to-Create-a-Federation-Server-Farm.md)。  
+-   同盟伺服器上的公司網路，用戶端支援使用 Windows 整合式驗證同盟伺服器 proxy 則否。 如需同盟伺服器使用 Windows 整合式驗證的詳細資訊，請參閱[When to Create a Federation Server Farm](When-to-Create-a-Federation-Server-Farm.md)。  
   
 > [!CAUTION]  
-> 聯盟伺服器及 SQL Server 設定資料庫、 SQL Server 屬性存放區，網域控制站與廣告 LDS 執行個體之間的通訊不完整性或機密性預設保護。 若要減少此問題，請考慮保護這些伺服器使用 IPSEC 或使用這些伺服器的所有之間的實體安全連接間通訊通道。 聯盟伺服器 SQL 伺服器間通訊，請考慮使用 SSL 保護連接字串。 網域控制站伺服器聯盟之間的連接，請考慮將在 Kerberos 簽署及加密。 適用於 LDAP，LDAP\ S/不支援的廣告 LDS\ 日 AD DS。  
+> 依預設，同盟伺服器和 SQL Server 組態資料庫、SQL Server 屬性存放區、網域控制站與 AD LDS 執行個體之間的通訊並不完整，或未被視為機密加以保護。 若要緩解這種情況，請考慮使用 IPSEC，或在所有伺服器之間使用實體安全的連線，以保護這些伺服器之間的通訊通道。 對於同盟伺服器和 SQL 伺服器之間的通訊，請考慮在連接字串中使用 SSL 保護。 對於同盟伺服器與網域控制站之間的連線，請考慮啟用 Kerberos 簽署和加密。 若為 LDAP，LDAP\/S 不支援為 AD LDS\/AD DS。  
   
-## <a name="how-to-create-a-federation-server"></a>如何建立聯盟伺服器  
-您可以建立聯盟伺服器使用 AD FS 聯盟伺服器設定精靈或 Fsconfig.exe command\ 列工具。 當您使用這些工具時，您可以選取下列其中一個選項來建立聯盟伺服器任何。  
+## <a name="how-to-create-a-federation-server"></a>如何建立同盟伺服器  
+您可以建立同盟伺服器使用 AD FS 同盟伺服器設定精靈或 Fsconfig.exe 命令\-列工具。 使用上述任一工具時，您可以選擇下列任何選項來建立同盟伺服器。  
   
--   建立 stand\ 只聯盟伺服器  
+-   建立獨立\-單獨的同盟伺服器  
   
-    如需了解如何設定 stand\ 只聯盟伺服器的資訊，請查看[建立獨立聯盟伺服器](../../ad-fs/deployment/Create-a-Stand-Alone-Federation-Server.md)。  
+    如需有關如何設定獨立\-單獨的同盟伺服器，請參閱 <<c2> [ 建立獨立同盟伺服器](../../ad-fs/deployment/Create-a-Stand-Alone-Federation-Server.md)。  
   
--   建立的第一個聯盟伺服器聯盟伺服器陣列  
+-   在同盟伺服器陣列中建立第一部同盟伺服器  
   
-    如需了解如何設定的第一個聯盟伺服器，或新增至陣列聯盟伺服器的資訊，請查看[第一個聯盟伺服器建立聯盟伺服器陣列](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md)。  
+    如需如何設定第一部同盟伺服器，或將同盟伺服器加入至伺服陣列的詳細資訊，請參閱＜ [Create the First Federation Server in a Federation Server Farm](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md)＞。  
   
--   新增至聯盟伺服器陣列聯盟伺服器  
+-   新增同盟伺服器到同盟伺服器陣列  
   
-    如需了解如何新增至陣列聯盟伺服器的資訊，請查看[新增聯盟伺服器聯盟伺服器陣列到](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)。  
+    如需如何將同盟伺服器加入至伺服陣列的詳細資訊，請參閱＜ [Add a Federation Server to a Federation Server Farm](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)＞。  
   
-如需詳細資訊每個選項的工作方式時，請查看[的角色 AD FS 設定資料庫的](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
+如需其中每一個選項之運作方式的更詳細資訊，請參閱＜ [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)＞。  
   
-如需了解如何設定所有必要條件部署聯盟伺服器所需的詳細資訊，請查看[檢查清單︰ 設定好聯盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
+如需如何設定的先決條件以部署同盟伺服器所需的詳細資訊，請參閱[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
   
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

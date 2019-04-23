@@ -1,29 +1,30 @@
 ---
-title: "健康服務設定"
+title: 健全狀況服務設定
 ms.prod: windows-server-threshold
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: 
+ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
 ms.openlocfilehash: 569cf7ba30fd3f993394efd3735a56d116c067e0
-ms.sourcegitcommit: 30fcae929ce7b611f5d3a5f8fee64b0299272110
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858329"
 ---
-# <a name="health-service-settings"></a>健康服務設定
+# <a name="health-service-settings"></a>健全狀況服務設定
 > 適用於 Windows Server 2016
 
-健康服務是 Windows Server 2016，可改善您的日常監視和操作叢集執行儲存空間直接存取體驗中的新功能。
+健全狀況服務是中改善的日常監視的 Windows Server 2016 和操作經驗執行儲存空間直接存取叢集的新功能。
 
-控制 Health 服務的行為的參數許多是設定為公開。 您可以修改這些調整侵略錯誤的動作，請將某些行為開/關，以及更多。
+許多管理健全狀況服務之行為的參數都會公開為設定。 您可以修改這些微調此加強值的錯誤或動作，請開啟 開啟/關閉，某些行為及更多。
 
-使用下列 PowerShell cmdlet 設定或修改設定。
+您可以使用下列 PowerShell cmdlet 來設定或修改設定。
 
-### <a name="usage"></a>使用
+### <a name="usage"></a>使用量
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Value <Value>  
@@ -37,7 +38,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 
 ### <a name="common-settings"></a>通用設定
 
-部分一般修改的設定，如下所示以及它們的預設值。
+一些經常修改的設定，如下所示以及其預設值。
 
 #### <a name="volume-capacity-threshold"></a>磁碟區容量閾值
 
@@ -47,13 +48,13 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.Volume.CapacityThreshold.Critical" = 90
 ```
 
-#### <a name="pool-reserve-capacity-threshold"></a>集區預約容量臨界值
+#### <a name="pool-reserve-capacity-threshold"></a>集區保留容量的臨界值
 
 ```
 "System.Storage.StoragePool.CheckPoolReserveCapacity.Enabled" = True
 ```
 
-#### <a name="physical-disk-lifecycle"></a>實體磁碟週期
+#### <a name="physical-disk-lifecycle"></a>實體磁碟生命週期
 
 ```
 "System.Storage.PhysicalDisk.AutoPool.Enabled"                             = True
@@ -64,9 +65,9 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.PhysicalDisk.Unresponsive.Reset.CountAllowed"              = 3
 ```
 
-#### <a name="supported-components-document"></a>支援的元件文件
+#### <a name="supported-components-document"></a>支援的元件的文件
 
-查看 [上一節。
+請參閱上一節。
 
 #### <a name="firmware-rollout"></a>韌體推出
 
@@ -79,7 +80,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.FailureTolerance"  = 3
 ```
 
-#### <a name="platform--quiescence"></a>平台日 Quiescence
+#### <a name="platform--quiescence"></a>平台 / 靜止
 
 ```
 "Platform.Quiescence.MinDelaySeconds" = 120 (i.e. 2 minutes)
@@ -92,13 +93,13 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Reports.ReportingPeriodSeconds" = 1
 ```
 
-#### <a name="debugging"></a>Windows 偵錯
+#### <a name="debugging"></a>偵錯
 
 ```
 "System.LogLevel" = 4
 ```
 
-## <a name="see-also"></a>也了
+## <a name="see-also"></a>另請參閱
 
-- [Windows Server 2016 中 health 服務](health-service-overview.md)
+- [Windows Server 2016 中的健全狀況服務](health-service-overview.md)
 - [Windows Server 2016 中的儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)

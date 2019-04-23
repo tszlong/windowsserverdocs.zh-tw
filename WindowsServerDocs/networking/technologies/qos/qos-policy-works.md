@@ -1,6 +1,6 @@
 ---
 title: QoS 原則的運作方式
-description: 本主題提供概觀品質服務 (QoS) 原則，讓您可以使用群組原則優先順序網路流量頻寬特定應用程式和 Windows Server 2016 中的服務。
+description: 本主題概述的服務品質 (QoS) 原則，可讓您使用群組原則來設定特定的應用程式和服務 Windows Server 2016 中的網路流量頻寬優先順序。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,68 +8,69 @@ ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1073308b5939e648fdcc2006acdce76ecf0331c9
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 272272c833bb38924f1daa5561037901f6ff4e25
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864279"
 ---
 # <a name="how-qos-policy-works"></a>QoS 原則的運作方式
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-當開始或向可能受到更新的使用者或電腦群組原則設定的 QoS，下列程序。
+當啟動或取得更新的使用者或電腦設定群組原則設定 qos，就會發生下列程序。
 
-1. 群組原則引擎 Active directory 擷取電腦的使用者或群組原則設定。
+1. 群組原則引擎會從 Active Directory 擷取使用者或電腦設定群組原則設定。
 
-2. 群組原則引擎會通知 QoS Client 端延伸 QoS 原則中已變更。
+2. 群組原則引擎通知 QoS 用戶端延伸 QoS 原則中沒有變更。
 
-3. QoS Client 端延伸模組 QoS 檢查傳送 QoS 原則事件通知。
+3. QoS 用戶端延伸傳送 QoS 原則事件通知 QoS 偵測模組來。
 
-4. 擷取的使用者或電腦 QoS 原則 QoS 偵測模組，並將它們儲存。
+4. QoS 偵測模組擷取的使用者或電腦 QoS 原則，並將它們儲存。
 
-當新傳輸層端點 \（TCP 連接或 UDP traffic\）建立，下列程序。
+當新的傳輸層端點\(TCP 連接或 UDP 流量\)建立時，會發生下列處理序。
 
-1. TCP/IP 堆疊傳輸層元件通知 QoS 偵測模組。
+1. TCP/IP 堆疊的傳輸層元件通知 QoS 偵測模組。
 
-2. QoS 偵測模組比較傳輸層端點儲存 QoS 原則的參數。
+2. QoS 偵測模組會比較儲存的 QoS 原則的傳輸層端點的參數。
 
-3. 如果您找到符合 QoS 偵測模組連絡人 Pacer.sys 建立包含 DSCP 值，資料傳輸節流對應 QoS 原則設定的資料結構流程。 如果有多個 QoS 原則符合傳輸層的端點的參數，則使用最特定 QoS 原則。
+3. 如果找到相符項目，QoS 偵測模組會連絡 Pacer.sys 建立流程時，資料結構，包含 DSCP 值和節流設定比對的 QoS 原則的流量。 如果有多個 QoS 原則對應的傳輸層端點的參數，則會使用最特定的 QoS 原則。
 
-4. Pacer.sys 儲存流程，並傳回對應 QoS 偵測模組 flow 流程數字。
+4. Pacer.sys 儲存流量，並傳回對應至 QoS 偵測模組的整個流程的流程數字。
 
-5. QoS 偵測模組傳回傳輸層流量號碼。
+5. QoS 偵測模組會將流量號碼傳回傳輸層。
 
-6. 傳輸層儲存傳輸層端點流程電話號碼。
+6. 傳輸層會儲存與傳輸層端點的流量號碼。
 
-對應至傳輸層端點封包標示流程數字會傳送，下列程序。
+傳輸層端點相對應的封包有流量號碼的標記時傳送，會發生下列處理序。
 
-1. 傳輸層內部標記流量號碼封的包。
+1. 傳輸層在內部標示封包以流量號碼。
 
-2. 網路層級查詢 Pacer.sys 對應的封包流程數目 DSCP 值。
+2. 網路層查詢 Pacer.sys 封包的流量號碼相對應的 DSCP 值。
 
-3. Pacer.sys 網路層級會 DSCP 值。
+3. Pacer.sys 將 DSCP 值回到網路層級。
 
-4. 網路層級變更 DSCP 值 Pacer.sys 指定 IPv4 TO 欄位或 IPv6 流量課程欄位，並 IPv4 封包，計算最終 IPv4 標頭檢查值。
+4. 網路層級變更為 Pacer.sys 所指定的 DSCP 值 IPv4 TOS 欄位或 IPv6 Traffic Class 欄位，並針對 IPv4 封包計算最終的 IPv4 標頭總和檢查碼。
 
-5. 網路層級框架層傳遞封包。
+5. 網路層級會將封包交給框架層。
 
-6. 因為封包已標示的流程數字，框架層將封包交給 Pacer.sys NDIS 透過 6.x。
+6. 因為已有流量號碼標示封包，所以框架層將封包交給 Pacer.sys 透過 NDIS 6.x。
 
-7. Pacer.sys 來判斷封包需要節流，如果是，使用封包流量號碼、排定的傳送封包。
+7. Pacer.sys 使用封包的流量號碼，以判斷封包必須進行節流處理，且如果是的話，則排定封包以便傳送。
 
-8. Pacer.sys 傳遞封包可以立即 \（如果未流量 throttling\）或已排定為 \（如果流量 throttling\）來 NDIS 6.x 傳輸到適當的網路介面卡。
+8. Pacer.sys 將封包交給是立即\(如果沒有流量節流\)或依排程\(如果流量節流\)NDIS 來 6.x 透過適當的網路介面卡的傳輸。
 
-這些處理程序的原則為主 QoS 提供下列優點。
+這些程序的原則為依據的 QoS 提供下列優點。
 
-- 檢查以判斷是否 QoS 原則套用流量是每個傳輸層端點，而不是每一封包。
+- -傳輸層端點，而不是每個封包，會完成的流量，以判斷是否要套用 QoS 原則檢查。
 
-- 也不會效能影響流量不符合 QoS 原則。
+- 沒有任何效能影響不符合 QoS 原則的流量。
 
-- 利用 DSCP 型已區分服務或流量節流修改不需要應用程式。
+- 應用程式不需要修改，以利用 DSCP 架構的差異服務或流量節流。
 
-- 交通受 IPsec 可套用 QoS 原則。
+- QoS 原則可以套用到以 IPsec 保護的流量。
 
-本指南下一步主題，請查看[QoS 原則架構](qos-policy-architecture.md)。
+如本指南中的下一個主題，請參閱 < [QoS 原則架構](qos-policy-architecture.md)。
 
-本指南中第一次主題，請查看[品質服務 (QoS) 原則](qos-policy-top.md)。
+如本指南中的第一個主題，請參閱 <<c0> [ 服務品質 (QoS) 原則](qos-policy-top.md)。

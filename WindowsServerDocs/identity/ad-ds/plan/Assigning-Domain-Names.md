@@ -1,42 +1,43 @@
 ---
 ms.assetid: 73897497-b189-4305-b234-e057ffda163a
-title: "指派網域名稱"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 指派網域名稱
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0d5ec9b76798f21503f650527a7961cff0b592b4
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: ba5a7ee8b7d9728c48e2798853aab8d55047e86f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59866559"
 ---
 # <a name="assigning-domain-names"></a>指派網域名稱
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-您必須計劃中指定每個網域名稱。 Active Directory Domain Services (AD DS) 網域有兩種類型的名稱： 網域名稱系統 」 (DNS) 和 NetBIOS 名稱。 一般而言，這兩個名稱會顯示使用者。 Active Directory 網域的 DNS 名稱包含兩個組件，尾碼前置詞。 建立網域名稱時，第一次判斷 DNS 前置詞。 這是在 DNS 網域名稱的第一個標籤。 尾碼會判斷當您選取的樹系根網域名稱。 下表列出的 DNS 名稱命名規則前置詞。  
+您必須計劃中，將名稱指派給每個網域中。 Active Directory 網域服務 (AD DS) 網域中有兩種類型的名稱：網域名稱系統 (DNS) 名稱和 NetBIOS 名稱。 一般情況下，這兩個名稱會顯示給使用者。 Active Directory 網域的 DNS 名稱中包含兩個組件、 前置詞和後置詞。 建立網域名稱時，先判斷 DNS 前置詞。 這是在網域的 DNS 名稱的第一個標籤。 當您選取的樹系根網域名稱，尾碼是由決定。 下表列出的 DNS 名稱的命名規則的前置詞。  
   
-|規則|解釋|  
+|規則|說明|  
 |--------|---------------|  
-|選取 [前置詞不會變成過時。|避免名稱，例如 product 列或作業系統，可能會在未來的變更。 我們建議使用的地理位置名稱。|  
-|選取 [包含只網際網路標準字元前置詞。|A Z、 z，0-9 與 （-），但無法完全數字。|  
-|包含的 15 字元或較少中前置詞。|如果您選擇首碼長度或較少的 15 字元，NetBIOS 名稱為前置詞相同。|  
+|選取不太可能會變成過期的前置詞。|避免使用名稱，例如產品線或可能會在未來變更的作業系統。 我們建議使用地理位置的名稱。|  
+|選取包含僅限網際網路標準字元的前置詞。|A-Z、 a-z、 0-9 和 （-），但不是完全的數值。|  
+|包含 15 個字元以內的前置詞。|如果您選擇的前置長度為 15 個字元以內，NetBIOS 名稱等同於前置詞。|  
   
-如需詳細資訊，請查看 Active Directory 適用於電腦、網域、網站及 Ou 命名規格 ([https://go.microsoft.com/fwlink/?LinkId=106629](https://go.microsoft.com/fwlink/?LinkId=106629))。  
+如需詳細資訊，請參閱 Active Directory 中的電腦、 網域、 網站和 Ou 的命名慣例 ([https://go.microsoft.com/fwlink/?LinkId=106629](https://go.microsoft.com/fwlink/?LinkId=106629))。  
   
 > [!NOTE]  
->  Windows Server 2008 和 Windows Server 2003 Dcpromo.exe 可讓您建立單一標籤 DNS 網域名稱，雖然您不應該使用的數個原因單一標籤 DNS 網域名稱。 在 Windows Server 2008 R2 Dcpromo.exe 不允許您建立單一標籤 DNS 網域名稱。 如需詳細資訊，請查看[https://go.microsoft.com/fwlink/?LinkId=92467。](https://go.microsoft.com/fwlink/?LinkId=92467)   
+>  雖然 Windows Server 2008 和 Windows Server 2003 中的 Dcpromo.exe 可以讓您建立單一標籤的 DNS 網域名稱，但是因為一些原因，您不應該將單一標籤的 DNS 名稱用於網域。 在 Windows Server 2008 R2 中，Dcpromo.exe 不允許您為網域建立單一標籤的 DNS 名稱。 如需詳細資訊，請參閱 < [ https://go.microsoft.com/fwlink/?LinkId=92467。](https://go.microsoft.com/fwlink/?LinkId=92467)   
   
-如果目前 NetBIOS 的網域名稱不當代表地區或滿足命名規則前置詞失敗時，選取新的前置詞。 若是如此，NetBIOS 的網域名稱是不同的 DNS 網域前置詞。  
+如果目前的網域的 NetBIOS 名稱不適合用來代表區域，或無法滿足的前置詞命名規則，請選取 新的前置詞。 在此情況下，網域的 NetBIOS 名稱是不同網域的 DNS 首碼。  
   
-每個新的網域部署，選取首碼所定義適合地區的滿足命名規則前置詞。 我們建議您的網域名稱 NetBIOS 為相同的 DNS 前置詞。  
+如您所部署的每個新網域，選取適合的區域，並滿足之前置詞命名規則的前置詞。 我們建議在網域的 NetBIOS 名稱是 DNS 首碼相同。  
   
-文件 DNS 前置詞和 NetBIOS 您選取每個您森林中的網域名稱。 您可以將 DNS 和 NetBIOS 名稱資訊新增到 「 規劃網域 」 試算表，您要建立的全新和已升級網域計劃的文件。 若要打開它，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 從工作協助工具的 Windows Server 2003 部署套件 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) 和開放「網域規劃」(DSSLOGI_5.doc).  
+文件的 DNS 首碼和您選取您的樹系中每個網域的 NetBIOS 名稱。 您可以加入您建立用來記錄您的計劃，為新的和升級網域 」 網域計劃 」 工作表的 DNS 及 NetBIOS 名稱資訊。 若要開啟它，請從 工作輔助工具的 Windows Server 2003 Deployment Kit 下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))，然後開啟 「 網域規劃 」 (DSSLOGI_5.doc)。  
   
 
 

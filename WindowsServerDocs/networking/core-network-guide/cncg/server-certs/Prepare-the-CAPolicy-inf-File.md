@@ -1,6 +1,6 @@
 ---
 title: 準備 CAPolicy.inf 檔案
-description: CAPolicy.inf 包含安裝 Active Directory 認證服務 (AD CS) 或是約 CA 時所使用的各種設定憑證。
+description: CAPolicy.inf 包含安裝 「 Active Directory 憑證服務 (AD CS) 時，或更新 CA 憑證時所使用的各種設定。
 manager: alanth
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
@@ -8,40 +8,41 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9618d4abe512b487f4f22ffde85a052c1c52ef22
-ms.sourcegitcommit: fb4e2ace2e0a29e0f6b028f1cb945cab6aa6ee2c
+ms.openlocfilehash: 80c7155224502379e2e9618ceb38709c5051a6b7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59857839"
 ---
-# <a name="capolicyinf-syntax"></a>CAPolicy.inf 語法
->   適用於：Windows Server（以每年次管道）、Windows Server 2016
+# <a name="capolicyinf-syntax"></a>CAPolicy.inf Syntax
+>   適用於：Windows Server （半年通道），Windows Server 2016
 
-CAPolicy.inf 是定義擴充功能、限制和其他設定可套用到根憑證及發行根 CA 所有憑證設定檔。 必須先根 CA 開始安裝程序的主機伺服器上安裝 CAPolicy.inf 檔案。 修改 ca 安全性限制時，必須更新根憑證，並更新的 CAPolicy.inf 檔案必須先安裝在伺服器上開始更新程序。
+CAPolicy.inf 是組態檔中定義的擴充功能、 限制和其他組態設定會套用至根 CA 憑證和根 CA 所簽發的所有憑證。 CAPolicy.inf 檔案必須安裝在主機伺服器的根 CA 會開始安裝程式常式之前。 要修改的根 CA 上的安全性限制時，必須更新根憑證，更新程序開始之前，必須伺服器上安裝更新的 CAPolicy.inf 檔案。
 
 CAPolicy.inf 是：
 
--   建立和系統管理員所定義的以手動方式
+-   建立並由系統管理員以手動方式定義
 
--   利用期間建立根和附屬 CA 憑證
+-   根和次級 CA 憑證的建立期間使用
 
--   在您登入並發行憑證 (不能要求 CA) 簽章 CA 定義
+-   在簽署和發行憑證 (不是授與要求的 CA) 簽署的 CA 上定義
 
-當您建立您的 CAPolicy.inf 檔案之後時，您必須複製到**隱藏資料夾**安裝 ADC 或 CA 憑證之前 server 的資料夾。
+當您建立您的 CAPolicy.inf 檔案之後時，您必須將它複製到 **%systemroot%** 伺服器才能安裝 ADCS 或更新 CA 憑證的資料夾。
 
-CAPolicy.inf 可讓您可以指定並設定各種不同的 CA 屬性和選項。 下一節描述所有選項，讓您建立.inf 檔案量身打造，以您的需求。
+CAPolicy.inf 可讓您能夠指定並設定各種不同的 CA 的屬性和選項。 下一節會說明要建立您的特定需求來量身打造的.inf 檔案的所有選項。
 
 ## <a name="capolicyinf-file-structure"></a>CAPolicy.inf 檔案結構
 
-下列條款用來描述.inf 檔案結構：
+下列詞彙用來描述.inf 檔案結構：
 
--   _區段_–是涵蓋邏輯按鍵群組的檔案使用的區域。 一節中.inf 檔案的名稱都會出現在 [括號。 區段許多，但並非全部，用來設定憑證擴充功能。
+-   _區段_– 是區域檔案中涵蓋的索引鍵的邏輯群組。 .Inf 檔案中的區段名稱均不會出現在括號。 許多，但不是全部區段可用來設定憑證延伸。
 
--   _按鍵_–名稱的項目，會顯示左邊等號。
+-   _索引鍵_– 項目的名稱，並在等號左邊會出現。
 
--   _值_–參數，號右邊會出現。
+-   _值_– 是參數，而在等號右邊。
 
-範例所示，在**[版本]**區段，**簽章**是將金鑰，和**」\ $ Windows NT \ $]**是值。
+在下列範例中， **[版本]** 區段中，**簽章**索引鍵，並 **」\$Windows NT\$"** 的值。
 
 範例：
 
@@ -52,15 +53,15 @@ Signature="$Windows NT$"      #key=value
 
 ###  <a name="version"></a>版本
 
-將檔案辨識為.inf 檔案。 版本只需要一節和必須 CAPolicy.inf 檔案的開頭。
+識別為.inf 檔案的檔案。 唯一的必要區段和 CAPolicy.inf 檔案的開頭必須是版本。
 
 ###  <a name="policystatementextension"></a>PolicyStatementExtension
 
-列出定義組織的原則與是否有選用或管轄。 多個原則是以逗號分隔。 名稱或就自訂應用程式，檢查有這些原則的特定部署，環境中有的意義。
+列出由組織所定義的原則，以及其屬於選擇性或強制性。 以逗號分隔多個原則。 名稱在特定的部署，或相對於檢查這些原則存在的自訂應用程式內容中具有意義。
 
-針對每個定義原則，必須要有一節，以定義特定原則設定。 針對每個原則，您必須向使用者定義物件識別碼 (OID) 和文字您想要顯示為政策或 URL 指標原則聲明。 URL 可以形式 HTTP、FTP 或 LDAP URL。
+每個原則定義，必須定義該特定的原則設定的區段。 針對每個原則中，您需要提供使用者定義的物件識別碼 (OID)，以及文字您想要顯示的原則陳述式或原則陳述式指向的 URL。 HTTP、 FTP 或 LDAP URL 的形式可以是 URL。
 
-如果您要原則聲明中已描述文字，然後 CAPolicy.inf 的下一步三行想看起來像：
+如果您要的原則陳述式中具有描述性文字，CAPolicy.inf 的接下來的三行應該會像這樣：
 
 ```
 [InternalPolicy]
@@ -68,79 +69,86 @@ OID=1.1.1.1.1.1.1
 Notice=”Legal policy statement text”
 ```
 
-如果您要使用的 URL 放 CA 原則聲明，然後接下來三行想改為看起來像：
+如果您要使用 URL 來裝載 CA 的原則陳述式，然後接下來的三行改為如下：
 
 ```
 [InternalPolicy]
 OID=1.1.1.1.1.1.2
-URL=http://pki.wingtiptoys.com/policies/legalpolicy.asp
+URL=https://pki.wingtiptoys.com/policies/legalpolicy.asp
 ```
 
-此外︰
+其他情況：
 
--   多個 URL 與通知按鍵的支援。
+-   支援多個 URL，請注意索引鍵。
 
--   通知和 URL 相同的原則一節中按鍵的支援。
+-   支援通知與 URL 相同的 [原則] 區段中的索引鍵。
 
--   必須以報價住空間 Url 或文字空間。 這適用於**URL**鍵，無論它出現的區段。
+-   必須以引號括住有空格的 Url 或空格的文字。 這適用於**URL**索引鍵，不論它出現的區段。
 
-多個通知和 Url 原則一節中的範例想看起來像：
+多個通知和原則 區段中的 Url 的範例如下：
 
 ```
 [InternalPolicy]
 OID=1.1.1.1.1.1.1
-URL=http://pki.wingtiptoys.com/policies/legalpolicy.asp
+URL=https://pki.wingtiptoys.com/policies/legalpolicy.asp
 URL=ftp://ftp.wingtiptoys.com/pki/policies/legalpolicy.asp
 Notice=”Legal policy statement text”
 ```
 
 ### <a name="crldistributionpoint"></a>CRLDistributionPoint
 
-您可以指定 CRL Distribution 點 (Cdp) 中 CAPolicy.inf 根憑證。 CA 安裝完成後，您可以設定 CA 包含每個發行憑證 CDP Url。 根憑證本身」包含 CAPolicy.inf 檔案的此一節中所指定的 Url。
+您可以指定在 CAPolicy.inf 中的根 CA 憑證的 CRL 發佈點 (Cdp)。  安裝 CA 之後, 您可以設定 CDP Url，其中包含在每個發行憑證的 CA。 根 CA 憑證顯示此區段的 CAPolicy.inf 檔案中指定的 Url。 
 
 ```
 [CRLDistributionPoint]
 URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 ```
 
-本章節一些其他資訊：
+本節中一些其他資訊：
+-   支援：
+    - HTTP 
+    - 檔案的 Url
+    - LDAP Url 
+    - 多個 Url
+   
+    >[!IMPORTANT]
+    >不支援 HTTPS Url。
 
--   多個 Url 的支援。
+-   引號必須住空格的 Url。
 
--   支援 HTTP、FTP 和 LDAP Url。 不支援 HTTPS Url。
+-   如果沒有任何 Url 指定 – 也就是，如果 **[CRLDistributionPoint]** – 區段存在檔案中，但卻是空白的根 CA 憑證授權單位資訊存取延伸模組會略過。 設定根 CA 時，這是通常偏好。 Windows 不會執行撤銷檢查根 CA 憑證，所以多餘的根 CA 憑證的 CDP 延伸。
 
--   如果您的設定 ca 或更新根憑證，才會使用此一節。 CA 問題附屬 CA 憑證，來判定附屬 CA CDP 擴充功能。
+-    CA 可以發行至檔案的 UNC，比方說，代表用戶端會透過 HTTP 擷取的網站資料夾的共用。
 
--   必須以報價住空間 Url。
-
--   如果不 Url 指定–也就是，如果**[CRLDistributionPoint]**區段在於檔案，但是空的–從 ca 憑證省略 CRL Distribution 點擴充功能。 設定 ca 時，這是通常較佳。 Windows 不會執行撤銷 CDP 擴充功能非必要中根憑證檢查根憑證、上。
+-   只有當您設定的根 CA 或更新根 CA 憑證時，才能使用這一節。 CA 會判斷次級 CA CDP 延伸模組。
+   
 
 ### <a name="authorityinformationaccess"></a>AuthorityInformationAccess
 
-您可以指定 CAPolicy.inf 的根憑證授權單位資訊的存取點。
+在 CAPolicy.inf 中的根 CA 憑證，您可以指定授權單位資訊存取點。
 
 ```
 [AuthorityInformationAccess]
 URL=http://pki.wingtiptoys.com/Public/myCA.crt
 ```
 
-一些額外的授權單位資訊存取一節注意事項︰
+在 [授權單位資訊存取] 區段上一些其他注意事項：
 
--   多個 Url 的支援。
+-   支援多個 Url。
 
--   支援 HTTP、FTP、LDAP 和檔案的 Url。 不支援 HTTPS Url。
+-   支援 HTTP、 FTP、 LDAP 和檔案的 Url。 不支援 HTTPS Url。
 
--   如果您的設定根或更新根憑證，才會使用此一節。 CA 發出附屬 CA 憑證，來判定附屬 CA AIA 擴充功能。
+-   如果您要設定根 CA，或更新根 CA 憑證，才會使用這一節。 次級 CA AIA 延伸模組是由 CA 發行次級 CA 的憑證決定。
 
--   必須以報價住空間 Url。
+-   使用空間的 Url 必須以引號括住。
 
--   如果不 Url 指定–也就是，如果**[AuthorityInformationAccess]**區段在於檔案，但是空的–從 ca 憑證省略 CRL Distribution 點擴充功能。 再試一次，這是在根憑證的偏好的設定為根憑證授權單位參考連結到其憑證會需要比未授權。
+-   如果沒有任何 Url 指定 – 也就是，如果 **[AuthorityInformationAccess]** – 區段存在檔案中，但卻是空白的 CRL 發佈點延伸模組會略過的根 CA 憑證。 同樣地，這會是偏好的設定，在根 CA 憑證的情況下，因為沒有任何高於的根 CA 必須要由其憑證的連結參考的授權單位。
 
 ### <a name="certsrvserver"></a>certsrv_Server
 
-另一個選擇性 CAPolicy.inf 區段是 [certsrv_server]，用來指定憑證授權單位是續約金鑰長度、續約，有效期和憑證撤銷清單 (CRL) 有效期正在更新或安裝。 都需要本節中的按鍵。 預設值是滿足大部分需求，且可以只是要省略 CAPolicy.inf 檔案從有許多這些設定。 或者，許多這些設定可以變更之後已安裝 CA。
+CAPolicy.inf 的另一個選擇性的區段是 [certsrv_server]，用來指定更新的金鑰長度，更新的有效期間，憑證撤銷清單 (CRL) 的有效期間，ca 所更新或安裝。 在本節中的索引鍵都需要。 許多這些設定都有足以滿足大多數需求且只需 CAPolicy.inf 檔案從省略的預設值。 或者，許多這些設定可以變更在安裝 CA 之後。
 
-範例看起來像：
+範例如下：
 
 ```
 [certsrv_server]
@@ -158,17 +166,17 @@ ForceUTF8=0
 EnableKeyCounting=0
 ```
 
-**RenewalKeyLength**設定金鑰大小只續約。 這只用當新的金鑰期間 CA 憑證續約。 安裝 CA 設定金鑰初始 CA 憑證的大小。
+**RenewalKeyLength**設定只更新索引鍵的大小。 此外，這才使用 CA 憑證更新期間產生新的金鑰組時。 CA 安裝時，會設定為初始的 CA 憑證的金鑰大小。
 
-當更新憑證，以新的金鑰，金鑰長度可以是提高或降低。 例如，如果您已設定根金鑰 CA 大小 4096 位元組或更高版本，並，然後找出您有 JAVA 應用程式或網路的裝置，可以僅限支援的 2048 位元組金鑰大小。 無論您提高或降低大小，您必須重新發出所有這個 CA 憑證的憑證。
+更新 CA 憑證時使用新的金鑰組，金鑰長度可以增加或減少。 比方說，如果您已將設定根 CA 金鑰大小為 4096 個位元組或更高版本，然後發現您的 Java 應用程式或網路裝置只能支援金鑰大小為 2048 個位元組。 無論您增加或減少大小，您必須重新發出該 CA 所發行的所有憑證。
 
-**RenewalValidityPeriod**與**RenewalValidityPeriodUnits**建立的新根 CA 憑證期間時更新舊 CA 根憑證。 它只適用於 ca。 附屬 CA 憑證期間是由其上層判斷。 RenewalValidityPeriod 可以有下列值：小時、日期、星期、月份和年。
+**RenewalValidityPeriod**並**RenewalValidityPeriodUnits**更新舊的根 CA 憑證時，建立新的根 CA 憑證的存留期。 它只適用於根 CA。 次級 CA 的憑證存留時間取決於其上層。 RenewalValidityPeriod 可以有下列值：小時、 天、 週、 月和年。
 
-**CRLPeriod**與**CRLPeriodUnits**的基本 CRL 建立有效期。 **CRLPeriod**可以有下列值：小時、日期、星期、月份和年。
+**CRLPeriod**並**CRLPeriodUnits**建立基底 CRL 有效期間。 **CRLPeriod**可以有下列值：小時、 天、 週、 月和年。
 
-**CRLDeltaPeriod**與**CRLDeltaPeriodUnits** delta CRL 有效期進行通訊。 **CRLDeltaPeriod**可以有下列值：小時、日期、星期、月份和年。
+**CRLDeltaPeriod**並**Crldeltaperiodunits=0**建立 delta CRL 的有效期間。 **CRLDeltaPeriod**可以有下列值：小時、 天、 週、 月和年。
 
-這些設定可以設定 CA 安裝之後：
+在安裝 CA 之後，所有這些設定可以進行設定：
 
 ```
 Certutil -setreg CACRLPeriod Weeks
@@ -177,32 +185,32 @@ Certutil -setreg CACRLDeltaPeriod Days
 Certutil -setreg CACRLDeltaPeriodUnits 1
 ```
 
-請記得重新開機 Active Directory 憑證服務所做的變更才會生效。
+請務必重新啟動 Active Directory 憑證服務所做的變更才會生效。
 
-**LoadDefaultTemplates**僅適用於企業 CA 安裝期間。 此設定，請為 True，或 \ [false\]（1 或是 0），是否已使用的預設範本 CA 規定。
+**LoadDefaultTemplates**僅適用於在企業 CA 安裝期間。 此設定，其中 True 或 False （或 1 或 0），指出是否 CA 已設定任何預設範本。
 
-CA 預設安裝時，預設憑證範本子集會新增到憑證授權單位嵌入式管理單元 [憑證範本 \] 資料夾。 這表示，只要 AD CS 服務開始安裝角色之後使用者或電腦的權限不足可以立即註冊憑證。
+在 CA 的預設安裝中，預設憑證範本子集會新增至憑證授權單位 嵌入式管理單元的 憑證範本 資料夾。 這表示，只要 AD CS 服務啟動之後已安裝角色的使用者或電腦具有足夠權限可以立即註冊憑證。
 
-您可能不希望發行任何憑證已安裝 CA 之後，您可以使用 LoadDefaultTemplates 設定以防止預設範本新增至企業版 CA。 如果不有任何範本 CA 上設定就可以發行不到憑證。
+此外，您可能不想發行任何憑證，只有在已安裝 CA 之後，立即讓您可以使用 LoadDefaultTemplates 設定來防止新增至企業 CA 的預設範本。 如果沒有任何 CA 上設定的範本，它可以發出任何憑證。
 
-**AlternateSignatureAlgorithm**設定 CA 憑證和憑證要求支援 PKCS\ #1 V2.1 簽章格式。 設定為上根 1 時 CA 憑證將會包含 PKCS\ #1 V2.1 簽章格式。 設定從時 CA、附屬 CA 會建立憑證要求，包含格式 PKCS\ #1 V2.1 簽章。
+**AlternateSignatureAlgorithm**會設定 CA 以支援 PKCS\#1 V2.1 簽章格式的 CA 憑證和憑證要求。 當設定為 1 的根 CA 的 CA 憑證將包含 PKCS\#1 V2.1 簽章格式。 次級 CA 上設定時，次級 CA 將會建立憑證要求包含 PKCS\#1 V2.1 簽章格式。
 
-**ForceUTF8**變更預設的主題和發行者中相關分辨名稱 (Rdn) 編碼分辨 utf-8 的名稱。 只支援 utf-8，例如這些定義影響 Directory 字串類型 RFC，來為這些 Rdn。 例如，RDN 的網域元件 (DC) 支援編碼為 IA5 或 utf-8，Country RDN (C) 僅支援做為可列印字串編碼時。 ForceUTF8 指示詞因此會影響俠 RDN，但不是會影響 C RDN。
+**ForceUTF8**變更預設編碼方式的相對辨別名稱 (Rdn) 中主旨和簽發者辨別名稱為 utf-8。 僅支援 utf-8，例如那些定義為目錄字串型別，由 RFC、 受影響的 Rdn。 比方說，RDN 的網域元件 (DC) 支援而 Country RDN (C) 只支援做為可列印的字串編碼為 IA5 或 utf-8 編碼方式。 ForceUTF8 指示詞會影響 DC RDN，但不是會影響 C RDN。
 
-**EnableKeyCounting**設定每次使用 CA 簽署金鑰，請增加計數器 CA。 請不要此設定除非您有支援享有金鑰的相關聯的密碼編譯服務提供者 (CSP) 和硬體安全性模組」(HSM)。 非 Microsoft 強 CSP 也 Microsoft 軟體的金鑰儲存提供者 (KSP) 支援按鍵計算。
+**EnableKeyCounting**設定 CA 以每次使用 CA 簽署金鑰時，遞增計數器。 除非您有硬體安全性模組 (HSM) 和支援金鑰計算的相關聯的密碼編譯服務提供者 (CSP)，請勿啟用此設定。 不是 Microsoft 強式 CSP 或 Microsoft 軟體金鑰儲存提供者 (KSP) 支援索引鍵計數。
 
 
 ## <a name="create-the-capolicyinf-file"></a>建立 CAPolicy.inf 檔案
 
-您安裝 AD CS 之前，您設定 CAPolicy.inf 檔案的特定設定為您的部署。
+在安裝 AD CS 之前，您設定 CAPolicy.inf 檔案使用特定的設定為您的部署。
 
-**必要條件：**您必須是系統管理員群組成員。
+**必要條件：** 您必須是 Administrators 群組的成員。
 
-1.  在您的計劃安裝 AD CS，開放的 Windows PowerShell，電腦上輸入**「記事本」c:.inf**按下 ENTER。
+1.  在您打算安裝 AD CS，開啟 Windows PowerShell，在電腦上輸入**記事本 c:\CAPolicy.inf**按 ENTER 鍵。
 
-2.  出現提示時，以建立新的檔案，請按一下**[是]**。
+2.  當系統提示您建立新檔案時，按一下 [是] 。
 
-3.  輸入與檔案：
+3.  輸入下列檔案內容：
    ```
    [Version]  
     Signature="$Windows NT$"  
@@ -211,7 +219,7 @@ CA 預設安裝時，預設憑證範本子集會新增到憑證授權單位嵌�
     [InternalPolicy]  
     OID=1.2.3.4.1455.67.89.5  
     Notice="Legal Policy Statement"  
-    URL=http://pki.corp.contoso.com/pki/cps.txt  
+    URL=https://pki.corp.contoso.com/pki/cps.txt  
     [Certsrv_Server]  
     RenewalKeyLength=2048  
     RenewalValidityPeriod=Years  
@@ -223,28 +231,28 @@ CA 預設安裝時，預設憑證範本子集會新增到憑證授權單位嵌�
     [CRLDistributionPoint]  
     [AuthorityInformationAccess]
    ```
-1.  按一下**檔案**，然後按**另存新檔**。
+1.  按一下 **檔案**，然後按一下**另存新檔**。
 
 2.  瀏覽至 %systemroot%資料夾。
 
-3.  請確定下列動作：
+3.  確認下列事項：
 
-    -   **檔案名稱**設定為 [ **CAPolicy.inf**
+    -   [檔案名稱] 設為 **CAPolicy.inf**
 
-    -   **另存新檔輸入**設定為 [**的所有檔案**
+    -   [存檔類型] 設定為 [所有檔案]
 
-    -   **編碼]**是**ANSI**
+    -   [編碼] 為 **[ANSI]**
 
-4.  按一下**儲存**。
+4.  按一下 [儲存] 。
 
-5.  當您接到覆寫的檔案時，請按一下**[是]**。
+5.  當系統提示您覆寫檔案時，按一下 [是] 。
 
-    ![另存新檔 CAPolicy.inf 檔案的位置](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
+    ![將儲存為 CAPolicy.inf 檔案位置](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
 
     >   [!CAUTION]  
-    >   務必儲存 CAPolicy.inf inf 副檔名。 如果您不專門輸入**.inf**結尾的檔案名稱及選取的選項所述，檔案將會被儲存成文字檔案和 CA 安裝時將無法使用。
+    >   務必以 inf 副檔名儲存 CAPolicy.inf。 如果您未在檔案名稱結尾明確輸入 **.inf** 並選取上述選項，檔案將儲存為文字檔案，而且將不會用於 CA 安裝。
 
-6.  關閉「記事本」。
+6.  關閉 [記事本]。
 
 >   [!IMPORTANT]  
->   在 CAPolicy.inf，您可以看到指定 URL 行http://pki.corp.contoso.com/pki/cps.txt。 只顯示的方式，您可以指定的位置 (CPS) 憑證做法聲明，例如 CAPolicy.inf 內部原則區段。 本指南，您不指示建立憑證做法聲明 (CPS)。
+>   在 CAPolicy.inf 中，您可以看到有一行，指定 URL https://pki.corp.contoso.com/pki/cps.txt。 CAPolicy.inf 的內部原則區段只是用來舉例說明如何指定憑證實施準則 (CPS) 的位置。 在本指南中，您不會指示來建立憑證實施 (準則 CPS)。

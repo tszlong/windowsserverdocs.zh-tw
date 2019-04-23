@@ -1,59 +1,61 @@
 ---
-title: 廣告樹系修復-復原單一網域中的多網域樹
+title: AD 樹系復原-復原在多網域樹系有單一網域
 description: ''
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 07/07/2017
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
-ms.technology: identity-adfs
-ms.openlocfilehash: 3a1c9d0671a732eee83aa707e061afdbbf106fa5
-ms.sourcegitcommit: f26d2668f57624a3865ca4ffd36a698eea7b503e
+ms.technology: identity-adds
+ms.openlocfilehash: fae2cc40af0b43dd38d72c2622720a6bb17b0a66
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59863469"
 ---
-# <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>廣告樹系修復-復原單一網域中的多網域樹
+# <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD 樹系復原-復原在多網域樹系有單一網域
 
->適用於： Windows Server 2016、 Windows Server 2012 和 2012 R2、 Windows Server 2008 和 2008 R2
+>適用於：Windows Server 2016 中，Windows Server 2012 和 2012 R2 中，Windows Server 2008 和 2008 R2
 
-可能會有時復原單一網域中的多個網域，而不是完整的樹系復原樹系所需的時間。 本主題涵蓋考量復原單一網域和修復的可能策略。  
+可以有時復原只有單一網域內具有多個網域，而不是完整的樹系復原的樹系所需的時間。 本主題涵蓋考量復原為單一網域和復原的可能策略。  
   
- 單一網域復原呈現的唯一挑戰重建通用 (GC) 伺服器。 例如，如果的第一個網域控制站 DC 網域還原備份，建立一個星期更早版本，然後在森林中的所有其他 Gc 從將會有更多最新資料該網域比還原網域控制站。 若要重新建立 GC 資料的一致性，有幾個選項：  
+單一網域復原代表獨特的挑戰，以重建通用類別目錄 (GC) 伺服器。 比方說，如果已建立一週稍早的備份，則其他所有樹系中的 Gc 從還原的第一個網域控制站 (DC) 網域會擁有多個新的資料網域比還原的網域控制站。 若要重新建立 GC 資料一致性，有幾個選項：  
   
--   Unhost，再一次重新裝載的樹系以外的復原網域中的所有 Gc 復原的網域磁碟分割。  
+- Unhost，然後重新復原的網域磁碟分割，所有的 Gc，在樹系，除了在復原的網域中，從裝載在相同的時間。  
+- 若要復原的網域樹系復原程序，然後再移除 其他網域中的 Gc 中的 延遲物件。  
   
--   依照復原網域的樹系修復程序，並 Gc 其他網域中的移除延遲物件。  
+下列各節提供每個選項的一般考量。 一組完整的必須完成復原的步驟會針對不同的 Active Directory 環境而有所不同。  
   
- 下列區段會提供一般考量每個選項。 一組完整的需要進行修復的步驟會針對不同的 Active Directory 環境而有所不同。  
-  
-## <a name="rehost-all-gcs"></a>重新所有 Gc 都裝載  
+## <a name="rehost-all-gcs"></a>重新裝載所有的 Gc  
 
 > [!WARNING]
->  萬一發生問題而無法存取 gc 登入的所有網域網域系統管理員負責密碼必須可供使用。  
+> 萬一發生問題，讓存取登入為 gc，所有網域的網域系統管理員帳戶的密碼必須是可供使用。  
 
- 可以完成 rehosting 所有 Gc 使用 repadmin//unhost 和 repadmin /rehost 命令 (repadmin 的一部分 /experthelp)。 您會在每個復原網域中的每個 GC 執行 repadmin 的命令。 它需要可確保所有 Gc 再不包含復原網域複本。 為了這 unhost 網域磁碟分割第一次所有網域控制站跨樹系的所有無-復原網域第一次。 所有 Gc 並不會再磁碟分割都包含之後，您可以重新裝載。 當 rehosting，請考慮將網站和複寫-結構的樹系，例如時，完成 rehost 的一個俠每個之前 rehosting 其他網域控制站該網站的網站。  
+可以在重新裝載所有 Gc 使用 repadmin / unhost 和 repadmin /rehost 命令 （repadmin /experthelp 的一部分）。 您會在每次 GC 不會復原每個網域中執行 repadmin 命令。 它必須確保，所有的 Gc 未再保存一份已復原的網域。 若要這麼做，unhost 網域分割第一次所有網域控制站在無復原的所有定義域，樹系的第一次。 所有的 Gc 不不再包含資料分割之後，您就可以將它重新裝載。 重新裝載時，請考慮站台-和複寫-結構的樹系，比方說，完成前重新裝載該站台的其他網域控制站的站台每一個網域控制站的重新裝載。  
   
- 此選項可小型的只有少數網域網域控制站每個組織的好處。 所有 Gc 可以星期五之夜 」 上重建，如有需要，週一之前完成所有唯讀網域複寫磁碟分割。 但如果您需要復原全球涵蓋網站大型網域，rehosting 唯讀網域磁碟分割上所有的 Gc 其他網域可大幅影響作業，可能需要向時間。  
+此選項很有幫助，對於小型組織有只有少數的網域控制站的每個網域。 所有的 Gc 可以重建在星期五晚上，如有必要，在星期一早上前完成複寫的所有唯讀網域分割區。 但是，如果您需要復原大型網域，其中涵蓋在全球各地的網站，重新裝載唯讀的網域上的磁碟分割所有的 Gc 其他定義域可大幅影響作業，可能需要停機時間。  
   
-## <a name="remove-lingering-objects"></a>移除延遲物件  
- 類似的樹系的修復程序，一個俠從備份還原的網域中，您需要復原、 執行的清除中繼資料的剩餘 Dc，並重新安裝 AD DS 建置網域。 森林中的所有其他網域 Gc、 在您移除延遲物件唯讀復原網域中的磁碟分割。  
-  
- 適用於延遲物件清理來源必須 DC 復原網域中。 若要將某些來源 DC 不會有任何延遲物件的任何網域磁碟分割，您可以移除通用是否 GC。  
-  
- 移除延遲物件的是較大型的組織可能會無法使用的其他選項的相關的向下時間的理想。  
-  
- 如需詳細資訊，請查看[使用 Repadmin 移除延遲物件](https://technet.microsoft.com/library/cc785298.aspx)。
+## <a name="remove-lingering-objects"></a>移除延遲物件
+
+類似於樹系修復程序，您有一個 DC 從備份還原的網域中，您需要復原，執行其餘的 Dc 的中繼資料清除作業，然後再重新安裝 AD DS 網域建置。 在樹系中的所有其他網域的 Gc，您可以移除延遲物件的唯讀磁碟分割的已復原的網域。  
+
+延遲物件清除的來源必須是復原的網域中的 DC。 特定來源 DC 並沒有任何延遲物件的任何網域分割區，才能，如果它是 GC，可以移除通用類別目錄。  
+
+移除延遲物件是不可能會與其他選項相關聯的停機時間的較大型組織有利的。  
+
+如需詳細資訊，請參閱 <<c0> [ 移除延遲物件的使用 Repadmin](https://technet.microsoft.com/library/cc785298.aspx)。
 
 ## <a name="next-steps"></a>後續步驟
--   [廣告樹系修復必要條件](AD-Forest-Recovery-Prerequisties.md)  
--   [廣告樹系修復-設計自訂樹系復原計劃](AD-Forest-Recovery-Devising-a-Plan.md)  
--   [廣告樹系修復-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
--   [廣告樹系修復-判斷如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
--   [廣告樹系修復-執行初始復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
--   [廣告樹系修復程序](AD-Forest-Recovery-Procedures.md)  
--   [廣告樹系修復-常見問題集](AD-Forest-Recovery-FAQ.md)  
--   [廣告樹系修復-復原 Multidomain 樹系單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
--   [廣告樹系復原與 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)  
+
+- [AD 樹系復原-必要條件](AD-Forest-Recovery-Prerequisties.md)  
+- [AD 樹系復原-設計自訂的樹系復原計劃](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [AD 樹系復原-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD 樹系復原-判斷如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD 樹系復原-執行初始的復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)  
+- [AD 樹系復原-常見問題集](AD-Forest-Recovery-FAQ.md)  
+- [AD 樹系復原-復原 Multidomain 樹系內的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [AD 樹系復原與 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)  

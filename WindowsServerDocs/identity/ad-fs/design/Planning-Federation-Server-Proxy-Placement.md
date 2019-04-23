@@ -1,7 +1,7 @@
 ---
 ms.assetid: d3cf4cb9-9b9e-4dcf-b6c6-8c6c42ec5f3e
-title: "規劃聯盟 Proxy 伺服器的位置"
-description: 
+title: 規劃同盟伺服器 Proxy 的位置
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,37 +10,38 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 79bf9fd21cc61ba41a22caa11d4e5a920b509720
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59865319"
 ---
-# <a name="planning-federation-server-proxy-placement"></a>規劃聯盟 Proxy 伺服器的位置
+# <a name="planning-federation-server-proxy-placement"></a>規劃同盟伺服器 Proxy 的位置
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-之後您會收集您將會使用 Active Directory 同盟服務 \(AD FS\) 基礎結構的設計，並希望您聯盟伺服器與 Web 伺服器策略之後，您可以計劃的時機，以及將您新的設計聯盟的 proxy 伺服器的所有資訊。 下列主題中的資訊可協助您判斷時間和地點放置聯盟 proxy 伺服器，以及是否進行帳號合作夥伴角色或資源合作夥伴角色：  
+收集您將用來設計您的 Active Directory Federation Services 的所有資訊之後\(AD FS\)基礎結構和您計劃您的同盟伺服器和 Web 伺服器策略之後，您可以規劃何時及如何放置在新設計中的同盟伺服器 proxy。 下列主題中的資訊可協助您判斷時間和地點放置同盟伺服器 proxy，以及是否要設定帳戶夥伴角色或資源夥伴角色：  
   
--   [檢視中 Account 合作夥伴聯盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
+-   [Review the Role of the Federation Server in 帳戶夥伴](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
--   [檢視聯盟伺服器 Proxy 資源夥伴中的角色](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
+-   [檢閱資源夥伴中的同盟伺服器 proxy 角色](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
   
--   [建立聯盟 Proxy 伺服器的時機](When-to-Create-a-Federation-Server-Proxy.md)  
+-   [建立同盟伺服器 Proxy 的時機](When-to-Create-a-Federation-Server-Proxy.md)  
   
--   [放置聯盟 Proxy 伺服器](Where-to-Place-a-Federation-Server-Proxy.md)  
+-   [同盟伺服器 Proxy 的位置](Where-to-Place-a-Federation-Server-Proxy.md)  
   
--   [建立聯盟 Proxy 伺服器陣列的時機](When-to-Create-a-Federation-Server-Proxy-Farm.md)  
+-   [建立同盟伺服器 Proxy 伺服器陣列的時機](When-to-Create-a-Federation-Server-Proxy-Farm.md)  
   
--   [聯盟的 Proxy 伺服器的憑證需求](Certificate-Requirements-for-Federation-Server-Proxies.md)  
+-   [同盟伺服器 Proxy 的憑證需求](Certificate-Requirements-for-Federation-Server-Proxies.md)  
   
--   [聯盟的 Proxy 伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)  
+-   [同盟伺服器 Proxy 的名稱解析需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)  
   
 > [!NOTE]  
-> 雖然這項資訊可能會使用您位置規劃聯盟伺服器 proxy 幫助，它會不如何判斷 proxy 和每個 AD FS 設計的 proxy 硬體需求的適當的數字。  
+> 雖然這項資訊可協助您規劃同盟伺服器 proxy 的位置進行，但它不會說明如何判斷適當數目之 proxy 和每個 AD FS 設計的 proxy 硬體需求。  
   
-針對的方式，就可以聯盟 proxy 伺服器中的兩個主要 AD FS 範例設計案例，請查看[AD FS 設計對應您的部署目標](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)。  
+如範例的方式將同盟伺服器 proxy 放置在兩個主要的 AD FS 的設計案例，請參閱 < [AD FS 設計來對應您的部署目標](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)。  
 
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
   
 
