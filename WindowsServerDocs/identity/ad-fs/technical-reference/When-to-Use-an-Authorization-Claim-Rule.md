@@ -1,7 +1,7 @@
 ---
 ms.assetid: b734cbcb-342c-4a28-8ab5-b9cd990bb1c2
-title: "使用授權理賠要求規則"
-description: 
+title: 使用授權宣告規則的時機
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,96 +9,97 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 144e382692e8f2a6732f8c7c5b8a1dd6049192cb
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: d566113a7579805c8ae9b558a145878557de0958
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872329"
 ---
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-# <a name="when-to-use-an-authorization-claim-rule"></a>使用授權理賠要求規則
-當您需要輸入宣告類型並再適用於執行的動作，會判斷使用者是否會允許或無法存取您指定規則值，您可以使用在 Active Directory 同盟服務 \(AD FS\) 本規則。 當您使用此規則時，您通過或轉換宣告符合下列規則邏輯操作，根據您設定的規則選項：  
+# <a name="when-to-use-an-authorization-claim-rule"></a>使用授權宣告規則的時機
+您可以使用這項規則中 Active Directory Federation Services \(AD FS\)當您需要將傳入的宣告型別，然後再套用動作，藉此決定是否將允許或拒絕存取使用者為基礎的值，您在規則中指定。 當您使用此規則時，您會根據您在規則中設定的選項之一，傳遞或轉換符合下列規則邏輯的宣告。  
   
-|規則選項|邏輯規則|  
+|規則選項|規則邏輯|  
 |---------------|--------------|  
-|允許所有使用者|如果輸入宣告類型等於*任何宣告類型*和值等*的任何值*，問題然後取得的值等*允許*|  
-|允許此傳入理賠要求的使用者存取|如果輸入宣告類型等於*指定宣告類型*和值等*指定宣告值*，問題然後取得的值等*允許*|  
-|拒絕這個傳入理賠要求的使用者存取|如果輸入宣告類型等於*指定宣告類型*和值等*指定宣告值*，問題然後取得的值等*拒絕*|  
+|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」  且值等於「任何值」 ，則會發行值等於「允許」 |  
+|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」且值等於「指定的宣告值」，則會發行值等於「允許」的宣告|  
+|拒絕具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」 ，則會發行值等於「拒絕」 |  
   
-下列章節提供基本簡介取得規則，並提供時使用此規則有關的進一步詳細資料。  
+下列章節提供宣告規則的基本介紹，並進一步提供如何使用此規則的詳細資訊。  
   
-## <a name="about-claim-rules"></a>關於理賠要求規則  
-宣告規則表示商務邏輯操作，將需要連入宣告、 適用於條件的執行個體 \ （如果 x 然後 y\） 和產生傳出宣告依據條件的參數。 下列清單輪廓重要您進一步讀取之前，您必須知道的相關的提示取得規則本主題中：  
+## <a name="about-claim-rules"></a>關於宣告規則  
+宣告規則表示商務邏輯，會收取傳入宣告，對其套用條件的執行個體\(若 x 則 y\)和產生根據條件參數傳出宣告。 在您進一步閱讀本主題之前，請先閱讀下列清單，其中會概述關於宣告規則您應該知道的重要秘訣：  
   
--   AD FS snap\ 中管理，在理賠要求規則只能建立使用理賠要求規則範本  
+-   在 AD FS 管理嵌入式管理單元\-，宣告規則只能建立使用宣告規則範本  
   
--   宣告規則處理程序傳入宣告直接從宣告提供者 \ （例如 Active Directory 或其他聯盟 Service\） 或接受的輸出從轉換宣告提供者信任規則。  
+-   宣告規則處理程序內送宣告直接從宣告提供者\(Active Directory 或其他同盟服務等\)或宣告提供者信任上從輸出的接受轉換規則。  
   
--   宣告發行引擎順序特定的規則集中處理理賠要求規則。 藉由設定優先順序規則，可以進一步改善或篩選宣告專特定的規則設定中的上一個規則。  
+-   宣告規則的處理方式，是由宣告發行引擎依時間先後順序按照指定的規則集處理。 藉由設定規則優先順序，您可以進一步精簡或篩選由特定規則集內的上一個規則所產生的宣告。  
   
--   宣告規則範本一律會要求您指定傳入宣告類型。 不過，您可以使用單一規則相同宣告類型處理多個理賠要求值。  
+-   宣告規則範本一律會要求您指定傳入宣告類型。 不過，您可以使用單一規則和同一宣告類型處理多個宣告值。  
   
-如需詳細資訊理賠要求規則及宣告規則集合，請查看[的角色的取得規則](The-Role-of-Claim-Rules.md)。 如需規則的處理方式的相關資訊，請查看[的角色宣告引擎的](The-Role-of-the-Claims-Engine.md)。 宣告規則集合的處理方式的相關資訊，請查看[的角色宣告管線的](The-Role-of-the-Claims-Pipeline.md)。  
+如需詳細的宣告規則和宣告規則集的相關資訊，請參閱[規則的角色宣告](The-Role-of-Claim-Rules.md)。 如需有關規則的處理方式的詳細資訊，請參閱 < [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md)。 宣告規則集的處理方式的詳細資訊，請參閱[The Role of the Claims Pipeline](The-Role-of-the-Claims-Pipeline.md)。  
   
 ## <a name="permit-all-users"></a>允許所有使用者  
-當您使用 [允許所有使用者規則範本時，所有使用者將都可以存取信賴。 不過，您可以使用其他授權規則進一步的限制存取。 如果一個規則允許使用者存取信賴，另一個規則的使用者存取拒絕信賴，拒絕將會覆寫允許結果，使用者無法存取。  
+當您使用「允許所有使用者」規則範本時，所有的使用者都將可存取信賴憑證者。 不過，您可以使用其他授權規則進一步限制存取權。 如果一項規則允許使用者存取信賴憑證者，而另一個規則拒絕使用者存取信賴憑證者，拒絕結果將會覆寫允許結果，而拒絕使用者的存取。  
   
-使用者可以存取信賴從同盟服務可能仍然無法服務所信賴。  
+從同盟服務獲准存取信賴憑證者的使用者，仍可能遭信賴憑證者拒絕服務。  
   
-## <a name="permit-access-to-users-with-this-incoming-claim"></a>允許此傳入理賠要求的使用者存取  
-當您使用允許] 或 [拒絕型使用者在收到取得規則範本建立規則，並設定的條件，以允許時，您可以存取特定使用者的許可信賴根據類型及連入宣告的值。 例如，您可以使用此規則範本來建立，允許的值為網域系統管理員取得群組那些使用者規則。 如果一個規則允許使用者存取信賴，另一個規則的使用者存取拒絕信賴，拒絕將會覆寫允許結果，使用者無法存取。  
+## <a name="permit-access-to-users-with-this-incoming-claim"></a>允許具有這個傳入宣告的使用者存取  
+當您使用「根據傳入宣告允許或拒絕使用者」規則範本來建立規則和設定允許的條件時，您可以根據傳入宣告的類型和值，允許特定使用者存取信賴憑證者。 例如，您可以使用此規則範本建立下列規則：僅允許群組宣告值為 Domain Admins 的使用者。 如果一項規則允許使用者存取信賴憑證者，而另一個規則拒絕使用者存取信賴憑證者，拒絕結果將會覆寫允許結果，而拒絕使用者的存取。  
   
-使用者可以存取信賴從同盟服務可能仍然無法服務信賴。 如果您想要允許所有使用者存取信賴，使用都允許所有使用者規則範本。  
+從同盟服務獲准存取信賴憑證者的使用者，仍可能遭信賴憑證者拒絕服務。 如果您想要允許所有使用者存取信賴憑證者，請使用「允許所有使用者」規則範本。  
   
-## <a name="deny-access-to-users-with-this-incoming-claim"></a>拒絕這個傳入理賠要求的使用者存取  
-當您使用允許] 或 [拒絕型使用者在收到取得規則範本建立規則，並設定拒絕條件時，您可以根據類型及值連入宣告信賴拒絕使用者的存取權。 例如，您可以使用此規則範本建立會拒絕群組的所有使用者都取得值網域使用者的使用規則。  
+## <a name="deny-access-to-users-with-this-incoming-claim"></a>拒絕具有這個傳入宣告的使用者存取  
+當您使用「根據傳入宣告允許或拒絕使用者」規則範本來建立規則和設定拒絕的條件時，您可以根據傳入宣告的類型和值，拒絕使用者存取信賴憑證者。 例如，您可以使用此規則範本建立下列規則：拒絕群組宣告值為 Domain Users 的所有使用者。  
   
-如果您想要使用的拒絕條件，但也可讓存取特定使用者信賴，您必須稍後明確新增與允許條件以信賴那些使用者存取授權規則。  
+如果您想要使用拒絕條件，但同時允許特定使用者存取信賴憑證者，您後續必須明確地新增授權規則，以及讓這些使用者存取信賴憑證者的允許條件。  
   
-如果使用者無法存取宣告發行引擎處理規則設定時，進一步規則處理關機時，並在 AD FS 傳回 「 存取 「 錯誤的使用者要求。  
+如果使用者被拒絕存取，當宣告發行引擎處理規則集時，處理其他規則關閉時，與 AD FS 會傳回 「 拒絕存取 」 錯誤，使用者的要求。  
   
 ## <a name="authorizing-users"></a>授權使用者  
-AD FS 中, 授權規則用於發行允許或拒絕理賠要求的使用者或群組中的使用者是否會判斷 \ （根據理賠要求輸入 used\) 會允許或無法存取 Web\ 型指定信賴的資源。 授權規則只能信賴廠商信任上設定。  
+在 AD FS 中，授權規則用來發出許可或拒絕宣告，以決定使用者或一群使用者\(視使用的宣告類型而定\)允許存取 Web\-架構中指定的信賴憑證者的資源合作對象與否。 只可以在信賴憑證者信任上設定授權規則。  
   
-### <a name="authorization-rule-sets"></a>授權規則集合  
-其他授權規則集存在根據允許的類型或拒絕您需要進行的操作。 這些規則集包括：  
+### <a name="authorization-rule-sets"></a>授權規則集  
+視您需要設定的允許或拒絕作業類型之不同，會有不同的授權規則集。 這些規則集包括：  
   
--   **發行授權規則**： 本規則判斷使用者是否可以收到宣告信賴的並，因此可存取信賴。  
+-   **發行授權規則**：這些規則會決定使用者是否可以接收信賴憑證者的宣告，並且因此可存取信賴憑證者。  
   
--   **委派授權規則**： 本規則判斷使用者是否可做為另一位使用者信賴。 當使用者做為另一位使用者時，宣告要求的使用者仍然位於預付碼。  
+-   **委派授權規則**：這些規則會決定使用者是否可做為信賴憑證者的另一個使用者。 當使用者做為另一位使用者時，要求端使用者的相關宣告仍會放置在權杖中。  
   
--   **模擬授權規則**： 本規則判斷使用者是否可以完全模擬信賴的其他使用者。 模擬另一位使用者，所以功能非常強大信賴並不知道正在模擬使用者。  
+-   **模擬授權規則**：這些規則會決定使用者是否可完全模擬信賴憑證者的另一個使用者。 模擬另一個使用者是非常強大的功能，因為信賴憑證者並不知道使用者正被模擬。  
   
-如需詳細資訊授權規則程序如何納入宣告發行管線，查看宣告發行引擎的角色。  
+如需有關如何將授權規則程序融入宣告發行管線中的詳細資訊，請參閱「宣告發行引擎的角色」。  
   
 ### <a name="supported-claim-types"></a>支援的宣告類型  
-廣告 FSdefines 兩個宣告用來判斷使用者是否要允許或拒的類型。 這些取得類型統一資源識別碼 \(URIs\) 如下所示：  
+AD FS 會定義兩個用來判斷允許或拒絕使用者的宣告類型。 這些宣告類型的統一資源識別元\(Uri\)如下所示：  
   
-1.  **允許**: http:///\/schemas.microsoft.com\/authorization\/claims\/permit  
+1.  **允許**: http:\/\/schemas.microsoft.com\/授權\/宣告\/允許  
   
-2.  **拒絕**: http:///\/schemas.microsoft.com\/authorization\/claims\/deny  
+2.  **拒絕**: http:\/\/schemas.microsoft.com\/授權\/宣告\/拒絕  
   
-## <a name="how-to-create-this-rule"></a>如何建立本規則  
-您可以使用理賠要求規則語言或使用兩個授權規則來建立**允許所有使用者**規則範本或**允許] 或 [拒絕使用者根據傳入取得**AD FS 管理 snap\ 中的 [規則範本。 允許所有使用者規則範本不提供任何設定的選項。 不過，允許] 或 [拒絕使用者根據連入宣告規則範本提供下列設定選項：  
+## <a name="how-to-create-this-rule"></a>如何建立此規則  
+您可以建立使用宣告規則語言，或使用這兩個授權規則**允許所有使用者**規則範本或有**允許或拒絕使用者根據傳入宣告**的 AD FS 中的規則範本管理嵌入式管理單元\-中。 「允許所有使用者」規則範本未提供任何設定選項。 但「根據傳入宣告允許或拒絕使用者」規則範本則提供下列設定選項：  
   
--   指定名稱理賠要求規則  
+-   指定宣告規則名稱  
   
 -   指定傳入宣告類型  
   
 -   輸入傳入宣告值  
   
--   允許此傳入理賠要求的使用者存取  
+-   允許具有這個傳入宣告的使用者存取  
   
--   拒絕這個傳入理賠要求的使用者存取  
+-   拒絕具有這個傳入宣告的使用者存取  
   
-如需如何建立此範本後續的指示操作，[建立規則允許所有使用者](https://technet.microsoft.com/library/ee913577.aspx)或[上連入宣告建立規則允許或拒絕型使用者](https://technet.microsoft.com/library/ee913594.aspx)中的 AD FS 部署。  
+如需有關如何建立此範本的詳細資訊，請參閱[建立規則以允許所有使用者](https://technet.microsoft.com/library/ee913577.aspx)或是[連入宣告上建立規則以允許或拒絕使用者基礎](https://technet.microsoft.com/library/ee913594.aspx)AD FS 部署指南中。  
   
-## <a name="using-the-claim-rule-language"></a>使用語言理賠要求規則  
-如果宣告值符合自訂模式時，才應傳送理賠要求，您必須使用 [自訂規則。 如需詳細資訊，請查看[使用自訂理賠要求規則](When-to-Use-a-Custom-Claim-Rule.md)。  
+## <a name="using-the-claim-rule-language"></a>使用宣告規則語言  
+如果只有在宣告值符合自訂模式時才應傳送宣告，您必須使用自訂規則。 如需詳細資訊，請參閱 [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md)。  
   
-### <a name="example-of-how-to-create-an-authorization-rule-based-on-multiple-claims"></a>如何建立根據多宣告授權規則的範例  
-當使用理賠要求規則語言語法授權宣告，請理賠要求可以也會發出根據有多個索賠項目中的使用者原始宣告。 下列規則問題授權宣告使用者編輯器群組成員，並使用 Windows 驗證驗證時才：  
+### <a name="example-of-how-to-create-an-authorization-rule-based-on-multiple-claims"></a>說明如何根據多個宣告建立授權規則的範例  
+使用宣告規則語言語法來授權宣告時，也可以根據使用者原始宣告中存在的多個宣告來發出宣告。 只有在使用者屬於「編輯者」群組的成員，並且已使用 Windows 驗證通過驗證後，下列規則才會發出授權宣告：  
   
 ```  
 [type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod",   
@@ -107,22 +108,22 @@ value == "urn:federation:authentication:windows" ]
 => issue(type = "http://schemas.xmlsoap.org/claims/authZ", value = "Granted");  
 ```  
   
-### <a name="example-of-how-to-create-authorization-rules-that-will-delegate-who-can-create-or-remove-federation-server-proxy-trusts"></a>如何建立授權的範例規則，將會委派人員可以建立，或移除聯盟伺服器 proxy 信任  
-聯盟服務可以使用聯盟 proxy 伺服器重新導向 client 要求之前，同盟服務與聯盟伺服器 proxy 電腦之間必須先建立信任。 根據預設，建立 proxy 信任時其中一項下列認證提供成功 AD FS 聯盟伺服器 Proxy 設定精靈中：  
+### <a name="example-of-how-to-create-authorization-rules-that-will-delegate-who-can-create-or-remove-federation-server-proxy-trusts"></a>說明如何建立授權規則以委派可建立或移除同盟伺服器 Proxy 信任之人員的範例  
+必須先建立同盟服務與同盟伺服器 Proxy 電腦之間的信任，同盟服務才可以使用同盟伺服器 Proxy 重新導向用戶端要求。 根據預設，順利在 AD FS 同盟伺服器 Proxy 設定精靈中提供下列其中一個認證時，將會建立 Proxy 信任：  
   
--   服務帳號，並使用的 proxy 將保護同盟服務，  
+-   Proxy 所將保護的服務帳戶 (由同盟服務使用)  
   
--   Active Directory domain account 上所有的聯盟伺服器聯盟伺服器在本機系統管理員群組成員  
+-   在同盟伺服器陣列中的所有同盟伺服器上，屬於本機系統管理員群組成員的 Active Directory 網域帳戶  
   
-當您想要指定的使用者可以建立 proxy 信任指定同盟服務時，您可以使用下列委派方法。 此清單的方法是根據最安全且至少問題的方法委派 AD FS product 小組建議的優先順序。 它會需要使用只是一種方法，根據您的組織的需求：  
+當您想要指定哪些使用者可以建立給定同盟服務的 Proxy 信任時，您可以使用下列任何委派方法。 此方法清單的優先順序，將取決於 AD FS 產品小組在考量哪個委派方法最安全、問題最少之後所做出的建議。 您只需要根據組織的需求使用其中一個方法即可：  
   
-1.  在 Active Directory 中建立網域安全性群組 \ （例如，FSProxyTrustCreators\），將這個群組新增至本機系統管理員群組每個聯盟伺服器，並再新增只使用者帳號，您要委派新群組此權限。 這是慣用的方法。  
+1.  Active Directory 中建立網域安全性群組\(例如 FSProxyTrustCreators\)，將此群組新增至每個伺服陣列中的同盟伺服器上本機 Administrators 群組，然後新增 只在您想要的使用者帳戶若要委派到新的群組此權限。 這是慣用方法。  
   
-2.  新增使用者的網域 account 每個聯盟伺服器管理員群組。  
+2.  將使用者的網域帳戶新增至伺服器陣列中每個同盟伺服器的系統管理員群組。  
   
-3.  如果因為某些原因您無法使用這兩種方法，您也可以為這個項目的建立授權規則。 雖然不建議這樣做，因為可能複雜是否有此規則撰寫不正確，可能會發生的您可以使用 [自訂授權規則委派網域帳號可以也建立，或甚至移除之間指定同盟服務相關聯的所有聯盟伺服器 proxy 信任的 Active Directory。  
+3.  如果您因故無法使用其中一種方法，您也可以建立符合此用途的授權規則。 您可以使用自訂授權規則，指定哪些 Active Directory 網域使用者帳戶也可以建立、甚至移除與指定的同盟服務相關聯的所有同盟伺服器 Proxy 之間的信任。但我們不建議此做法，因為此規則若未正確撰寫，可能會導致複雜的狀況。  
   
-    如果您選擇方法 3 時，您可以使用下列語法規則發行，可讓指定的使用者的授權宣告 \ （在本案例，contoso\\frankm\） 來建立信任一或多個聯盟 proxy 伺服器同盟服務。 您必須套用此規則使用 Windows PowerShell 命令**Set\-ADFSProperties AddProxyAuthorizationRules**。  
+    如果您選擇方法 3，您可以使用下列規則語法發出授權宣告，讓指定的使用者\(在此案例中，contoso\\frankm\)建立信任的一或多個同盟伺服器 proxyFederation Service。 您必須套用此規則使用 Windows PowerShell 命令**設定\-ADFSProperties AddProxyAuthorizationRules**。  
   
     ```  
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", issuer=~"^AD AUTHORITY$" value == "contoso\frankm" ] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true")  
@@ -135,7 +136,7 @@ value == "urn:federation:authentication:windows" ]
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/proxytrustid", Issuer =~ "^SELF AUTHORITY$" ] => issue(store="_ProxyCredentialStore",types=("https://schemas.microsoft.com/authorization/claims/permit"),query="isProxyTrustProvisioned({0})", param=c.Value );  
     ```  
   
-    之後，如果您想要移除，讓使用者可以不再建立 proxy 信任的使用者，您可以回復至預設 proxy 信任的授權来移除的規則使用者建立 proxy 信任同盟服務的權限。 您必須也適用於此規則使用 Windows PowerShell 命令**Set\-ADFSProperties AddProxyAuthorizationRules**。  
+    如果您後續想要移除使用者，讓該使用者無法再建立 Proxy 信任，您可以還原至預設 Proxy 信任授權規則，以移除使用者建立 Proxy 對同盟服務之信任的權限。 您也必須套用此規則使用 Windows PowerShell 命令**設定\-ADFSProperties AddProxyAuthorizationRules**。  
   
     ```  
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-544", Issuer =~ "^AD AUTHORITY$"])   
@@ -146,6 +147,6 @@ value == "urn:federation:authentication:windows" ]
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/proxytrustid", Issuer =~ "^SELF AUTHORITY$" ] => issue(store="_ProxyCredentialStore",types=("https://schemas.microsoft.com/authorization/claims/permit"),query="isProxyTrustProvisioned({0})", param=c.Value );  
     ```  
   
-如需有關如何使用理賠要求規則語言，請查看[角色取得規則語言的](The-Role-of-the-Claim-Rule-Language.md)。  
+如需如何使用宣告規則語言的詳細資訊，請參閱[The Role of 宣告規則語言](The-Role-of-the-Claim-Rule-Language.md)。  
   
 

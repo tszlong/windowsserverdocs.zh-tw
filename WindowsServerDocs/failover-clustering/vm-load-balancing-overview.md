@@ -1,6 +1,6 @@
 ---
 ms.assetid: f0d4cecc-5a03-448c-bef9-86c4730b4eb0
-title: "一樣負載平衡概觀"
+title: 虛擬機器負載平衡概觀
 ms.prod: windows-server-threshold
 ms.technology: storage-failover-clustering
 ms.topic: article
@@ -8,49 +8,53 @@ author: bhattacharyaz
 manager: eldenc
 ms.author: subhatt
 ms.date: 09/19/2016
-ms.openlocfilehash: 0a106db25d476088898b914481e6041f20ce2e9e
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.openlocfilehash: 8b8ecee16c778ed26953be325fb88748fc458176
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59867749"
 ---
-# <a name="virtual-machine-load-balancing-overview"></a>一樣負載平衡概觀
+# <a name="virtual-machine-load-balancing-overview"></a>虛擬機器負載平衡概觀
 
-> 適用於：Windows Server（以每年次通道）、Windows Server 2016
+> 適用於：Windows Server （半年通道），Windows Server 2016
 
-按鍵考量的私人雲端部署，是大寫費用 (<abbr title="大寫費用">CapEx</abbr>) 才能進入執行。 常見的私人雲端部署，以避免置中容量實際澳地區的山峰資料傳輸期間新增冗餘但這增加<abbr title="大寫費用">CapEx</abbr>。 需要冗餘的會受到裝載某些節點虛擬更多的電腦不平衡私人雲朵 (<abbr title="虛擬電腦">Vm</abbr>) 與其他人的充分 （例如剛 rebooted 伺服器）。
+私用雲端部署的重要考量是資本支出 (<abbr title="資本支出">CapEx</abbr>) 才能進入實際執行環境。 是將備援新增至私人雲端部署，以在生產環境中的尖峰流量期間避免不足容量很常見，但這會增加<abbr title="資本支出">CapEx</abbr>。 備援性需求由不對稱的私人雲端，其中某些節點會裝載更多虛擬機器 (<abbr title="虛擬機器">Vm</abbr>) 和其他使用量過低 （例如重新啟動全新的伺服器）。
 
-## <a id="what-is-vm-load-balancing"></a>何謂一樣負載平衡？
-<abbr title="一樣">VM</abbr>負載平衡是，可讓您最佳化的節點容錯移轉叢集使用率 Windows Server 2016 的方塊中新功能。 它辨識覆致力的節點並重新散發<abbr title="虛擬電腦">Vm</abbr>在認可節點那些節點。 部分依照此功能的部分如下：
+<strong>簡短影片概觀</strong><br>（6 分）<br>
+> [!VIDEO https://channel9.msdn.com/Blogs/windowsserver/Virtual-Machine-Load-Balancing-in-Windows-Server-2016/player]
 
-* *0-中斷方案是*:<abbr title="虛擬電腦">Vm</abbr>的動態移轉到閒置節點。
-* *與現有叢集環境順暢整合*： 失敗原則，例如反相關性網域錯誤，可能的擁有者會生效。
-* *Heuristics 為 [平衡]*:<abbr title="一樣">VM</abbr>記憶體不足壓力時和 CPU 使用率節點。
-* *細微控制*： 預設的支援。 隨選或定期可以啟動。
-* *侵略閾值*： 三個閾值可根據您的部署的特性。
+## <a id="what-is-vm-load-balancing"></a>什麼是虛擬機器負載平衡？
+<abbr title="虛擬機器">VM</abbr>負載平衡是新的內建功能，可讓您最佳化容錯移轉叢集中節點的使用量的 Windows Server 2016 中。 它會識別過度認可的節點並重新分散<abbr title="虛擬機器">Vm</abbr>從這些節點，以在認可的節點。 這項功能的主要層面有些，如下所示：
 
-## <a id="feature-in-action"></a>重要訊息中的功能
-### <a id="new-node-added"></a>新增了一個新的節點容錯移轉叢集
-![新的節點新增至您容錯移轉叢集的圖形](media/vm-load-balancing/overview-VM-load-balancing-1.png)
+* *它是零停機時間的解決方案*:<abbr title="虛擬機器">Vm</abbr>是即時移轉到閒置的節點。
+* *與您現有的叢集環境的完美整合*:會遵守例如反親和性、 容錯網域和可能的擁有者的失敗原則。
+* *啟發學習法進行平衡*:<abbr title="虛擬機器">VM</abbr>記憶體不足的壓力和節點的 CPU 使用率。
+* *更精確地控制*:預設為啟用。 可以視需要或定期啟動。
+* *加強閾值*:三個臨界值可根據您部署的特性。
 
-當您新增新的容量容錯移轉叢集，<abbr title="一樣">VM</abbr>負載平衡功能自動餘額容量，從現有的節點，以 [新增] 節點以下列順序：
+## <a id="feature-in-action"></a>動作中的功能
+### <a id="new-node-added"></a>新的節點新增至您的容錯移轉叢集
+![新節點新增至您的容錯移轉叢集的圖形](media/vm-load-balancing/overview-VM-load-balancing-1.png)
 
-1. 在現有的節點中容錯移轉叢集評估壓力。
-2. 都會所有節點超過臨界值。
-3. 若要判斷平衡的優先順序都會節點以最高壓力。
-4. <abbr title="虛擬電腦">Vm</abbr>有 Live 移轉 （無時間） 節點超過容錯移轉叢集中新加入節點臨界值。
+當您將新的容量新增至容錯移轉叢集，<abbr title="虛擬機器">VM</abbr>自動平衡負載平衡功能的容量，從現有的節點，以新加入的節點，以下列順序：
 
-### <a id="recurring-load-balancing"></a>週期性負載平衡
-![圖形週期性 VM 負載平衡](media/vm-load-balancing/overview-VM-load-balancing-2.png)
+1. 容錯移轉叢集中現有的節點上評估的壓力。
+2. 識別在超過臨界值的所有節點。
+3. 具有最高的壓力節點識別判定優先順序的平衡。
+4. <abbr title="虛擬機器">Vm</abbr>是即時移轉 （不需要停機） 從超過臨界值設定為新加入的節點，容錯移轉叢集中的節點。
 
-設定為 [平衡] 定期，叢集節點上的壓力評估平衡每 30 分鐘的時間。 或者，壓力可評估的視。 以下是流程步驟：
+### <a id="recurring-load-balancing"></a>重複執行的負載平衡
+![重複執行的 VM 負載平衡的圖形](media/vm-load-balancing/overview-VM-load-balancing-2.png)
 
-1. 壓力評估私人雲端中的所有節點上。
-2. 都會所有節點超過閾值來改善，以及低於臨界值。
-3. 若要判斷平衡的優先順序都會節點以最高壓力。
-4. <abbr title="虛擬電腦">Vm</abbr>有 Live 移轉 （無時間） 節點超過至最小臨界值下節點臨界值。
+當設定為定期平衡，叢集節點上的壓力會評估平衡每隔 30 分鐘。 或者，不足的壓力，可以將隨評估。 以下是步驟的流程：
 
-## <a name="see-also"></a>也了
-* [一樣負載平衡深度探討](vm-load-balancing-deep-dive.md)
-* [容錯](failover-clustering-overview.md)
+1. 私人雲端中的所有節點上評估的壓力。
+2. 識別超過臨界值和臨界值以下的所有節點。
+3. 具有最高的壓力節點識別判定優先順序的平衡。
+4. <abbr title="虛擬機器">Vm</abbr>是即時移轉 （不需要停機） 從超過閾值，才有最小臨界值之下的節點的節點。
+
+## <a name="see-also"></a>另請參閱
+* [虛擬機器負載平衡深入探討](vm-load-balancing-deep-dive.md)
+* [容錯移轉叢集](failover-clustering-overview.md)
 * [HYPER-V 概觀](../virtualization/hyper-v/Hyper-V-on-Windows-Server.md)

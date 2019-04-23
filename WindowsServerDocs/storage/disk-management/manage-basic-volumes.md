@@ -1,6 +1,6 @@
 ---
-title: "管理基本磁碟區"
-description: "本文說明如何管理基本磁碟區"
+title: 管理基本磁碟區
+description: 本文說明如何管理基本磁碟區
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c75d887a6427673319999522b890d523f4276871
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870959"
 ---
 # <a name="manage-basic-volumes"></a>管理基本磁碟區
 
-> **適用於：**Windows 10、Windows 8.1、Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 基本磁碟是包含主要磁碟分割、延伸磁碟分割或邏輯磁碟機的實體磁碟。 基本磁碟上的磁碟分割和邏輯磁碟機即稱為基本磁碟區。 您只能在基本磁碟上建立基本磁碟區。
 
@@ -24,6 +25,6 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>另請參閱
 
--   [將掛接點資料夾路徑指派給磁碟機](assign-a-mount-point-folder-path-to-a-drive.md)
+-   [指派磁碟機的掛接點資料夾路徑](assign-a-mount-point-folder-path-to-a-drive.md)
 -   [延伸基本磁碟區](extend-a-basic-volume.md)
 -   [壓縮基本磁碟區](shrink-a-basic-volume.md)

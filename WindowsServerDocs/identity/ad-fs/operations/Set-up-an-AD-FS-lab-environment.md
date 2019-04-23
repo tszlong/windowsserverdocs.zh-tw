@@ -1,7 +1,7 @@
 ---
 ms.assetid: 276a7f7d-5faa-4c00-a51c-3fa511fe52f9
-title: "AD FS 實驗室設定"
-description: 
+title: 設定 AD FS 實驗室環境
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,62 +10,63 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 53d0e24f7fcb9efc64406dc6ed01f5bb1deb2277
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868079"
 ---
-# <a name="set-up-an-ad-fs-lab-environment"></a>AD FS 實驗室設定
+# <a name="set-up-an-ad-fs-lab-environment"></a>設定 AD FS 實驗室環境
 
->適用於： Windows Server 2012 R2
+>適用於：Windows Server 2012 R2
 
-本主題列出設定的測試環境，可以用來完成的逐步教學下列逐步解說指南中的步驟：  
+此主題概述設定測試環境以用於完成下列逐步解說指南中之逐步解說所需的步驟：  
   
--   [逐步解說： IOS 裝置加入的工作地點](Walkthrough--Workplace-Join-with-an-iOS-Device.md)  
+-   [逐步解說：Ios 裝置加入工作地點](Walkthrough--Workplace-Join-with-an-iOS-Device.md)  
   
--   [Windows 裝置的逐步解說： 地點加入](Walkthrough--Workplace-Join-with-a-Windows-Device.md)  
+-   [逐步解說：Windows 裝置加入工作地點](Walkthrough--Workplace-Join-with-a-Windows-Device.md)  
   
--   [逐步解說指南： 管理條件存取控制的風險](Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)  
+-   [逐步解說指南：使用條件式存取控制管理風險](Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)  
   
--   [逐步解說指南： 管理其他多因素驗證敏感的應用程式的風險](Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)  
+-   [逐步解說指南：透過機密應用程式的其他多因素驗證管理風險](Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)  
   
 > [!NOTE]  
-> 我們不建議在相同的電腦上安裝的網頁伺服器與聯盟伺服器。  
+> 建議您不要將網頁伺服器與同盟伺服器安裝在同一部電腦上。  
   
-若要設定此測試環境，請完成下列步驟：  
+若要設定使測試環境，請完成下列步驟：  
   
-1.  [步驟 1： 設定的網域控制站 (DC1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_1)  
+1.  [步驟 1：設定網域控制站 (DC1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_1)  
   
-2.  [步驟 2： 使用裝置的登記服務設定聯盟伺服器 (ADFS1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)  
+2.  [步驟 2：設定同盟伺服器 (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)  
   
-3.  [步驟 3： 設定網頁伺服器 (WebServ1) 及範例宣告型應用程式](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_5)  
+3.  [步驟 3：設定網頁伺服器 (WebServ1) 與範例宣告式應用程式](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_5)  
   
-4.  [步驟 4： 設定電腦 client (Client1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_10)  
+4.  [步驟 4：設定用戶端電腦 (Client1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_10)  
   
-## <a name="BKMK_1"></a>步驟 1： 設定的網域控制站 (DC1)  
-基於這項測試環境，您可以撥號您根 Active Directory domain **contoso.com** ，然後指定** pass@word1 **以系統管理員密碼。  
+## <a name="BKMK_1"></a>步驟 1:設定網域控制站 (DC1)  
+基於此測試環境的目的，您可以呼叫您的根 Active Directory 網域**contoso.com**並指定**pass@word1**做為系統管理員密碼。  
   
--   安裝 AD DS 角色服務，並安裝 Active Directory Domain Services (AD DS)，在 Windows Server 2012 R2 網域控制站讓您的電腦。 這個動作升級您的網域控制站建立一部分的 AD DS 結構描述。 如需詳細資訊和逐步指示，請查看[https://technet.microsoft.com/library/hh472162.aspx](https://technet.microsoft.com/library/hh472162.aspx)。  
+-   安裝 AD DS 角色服務，並安裝 Active Directory 網域服務 (AD DS)，讓電腦在 Windows Server 2012 R2 中的網域控制站。 這個動作會升級您的 AD DS 結構描述，做為網域控制站建立的一部分。 如需詳細資訊和逐步指示，請參閱 <<c0> [  https://technet.microsoft.com/ library/hh472162.aspx](https://technet.microsoft.com/library/hh472162.aspx)。  
   
-### <a name="BKMK_2"></a>建立測試 Active Directory 帳號  
-您的網域控制站功能之後，您可以在這個網域中建立測試群組和測試使用者帳號，並加入該群組帳號帳號。 您可以使用這些帳號完成中參考此主題中前面逐步解說指南的逐步教學。  
+### <a name="BKMK_2"></a>建立測試 Active Directory 帳戶  
+在您的網域控制站開始運作之後，您可以在此網域中建立測試群組與測試使用者帳戶，並將該使用者帳戶新增到群組帳戶。 您可以使用這些帳戶來完成此主題稍早所述之逐步解說指南中的逐步解說。  
   
-建立帳號：  
+建立下列帳戶：  
   
--   使用者：**劉小龍 Hatley**的下列認證： 使用者名稱： **RobertH**及密碼：**P@ssword**  
+-   使用者：**Robert Hatley**，認證如下：使用者名稱：**RobertH**和密碼： **P@ssword**  
   
--   群組：**財經**  
+-   群組：**財務**  
   
-如需如何建立使用者和群組帳號 Active Directory（廣告）有關的資訊，請查看[https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx)。  
+如需有關如何建立使用者和群組帳戶在 Active Directory (AD) 中的資訊，請參閱 < [ https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx ](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx)。  
   
-新增**劉小龍 Hatley**以帳號**財經**群組。 如需有關如何將使用者新增到群組 Active Directory 中資訊，請[https://technet.microsoft.com/library/cc737130%28v=ws.10%29.aspx](https://technet.microsoft.com/library/cc737130%28v=ws.10%29.aspx)。  
+將 **Robert Hatley** 帳戶加入 **Finance** 群組中。 如需如何將使用者新增至 Active Directory 中群組的資訊，請參閱[ https://technet.microsoft.com/library/cc737130%28v=ws.10%29.aspx ](https://technet.microsoft.com/library/cc737130%28v=ws.10%29.aspx)。  
   
-### <a name="create-a-gmsa-account"></a>建立 GMSA 帳號  
-在 Active Directory 同盟 Services (AD FS) 安裝和設定，就需要群組管理服務 Account (GMSA) account。  
+### <a name="create-a-gmsa-account"></a>建立 GMSA 帳戶  
+群組受管理服務帳戶 (GMSA) 帳戶在 Active Directory Federation Services (AD FS) 安裝和設定期間是必要的。  
   
-##### <a name="to-create-a-gmsa-account"></a>若要建立 GMSA account  
+##### <a name="to-create-a-gmsa-account"></a>建立 GMSA 帳戶  
   
-1.  Windows PowerShell 命令視窗中，輸入開放：  
+1.  開啟 Windows PowerShell 命令視窗並輸入：  
   
     ```  
     Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)  
@@ -73,198 +74,198 @@ ms.lasthandoff: 12/12/2017
   
     ```  
   
-## <a name="BKMK_4"></a>步驟 2： 使用裝置的登記服務設定聯盟伺服器 (ADFS1)  
-若要設定另一部一樣，安裝 Windows Server 2012 R2，並將它連接到網域**contoso.com**。之後您已經加入網域，設定電腦，然後繼續安裝並設定 AD FS 角色。  
+## <a name="BKMK_4"></a>步驟 2:使用「裝置註冊服務」設定同盟伺服器 (ADFS1)  
+若要設定另一部虛擬機器，安裝 Windows Server 2012 R2，並將它連線到網域**contoso.com**。 您已加入網域之後, 將電腦設定，然後繼續進行安裝和設定 AD FS 角色。  
   
-影片，請查看[Active Directory 同盟服務方法一系列影片： 安裝 AD FS 伺服器陣列](https://technet.microsoft.com/video/dn469436)。  
+如需影片，請參閱[Active Directory Federation Services 使用方法影片系列：安裝 AD FS 伺服器陣列](https://technet.microsoft.com/video/dn469436)。  
   
 ### <a name="install-a-server-ssl-certificate"></a>安裝伺服器 SSL 憑證  
-您必須在電腦本機存放區 ADFS1 伺服器上安裝伺服器安全通訊端層 (SSL) 憑證。 憑證必須具備下列屬性：  
+您必須在 ADFS1 伺服器上的本機電腦存放區中安裝伺服器安全通訊端層 (SSL) 憑證。 該憑證必須有下列屬性：  
   
--   主體名稱 (DATA-CN): adfs1.contoso.com  
+-   主體名稱 (CN)：adfs1.contoso.com  
   
--   主旨替代名稱 」 (DNS): adfs1.contoso.com  
+-   主體別名 (DNS)：adfs1.contoso.com  
   
--   主旨替代名稱 」 (DNS): enterpriseregistration.contoso.com  
+-   主體別名 (DNS)：enterpriseregistration.contoso.com  
   
-如需 SSL 憑證設定的詳細資訊，請查看[設定 SSL 日 TLS 網域中的網站上企業 CA 與](https://social.technet.microsoft.com/wiki/contents/articles/12485.configure-ssltls-on-a-web-site-in-the-domain-with-an-enterprise-ca.aspx)。  
+如需有關設定 SSL 憑證的詳細資訊，請參閱 [在具有企業 CA 之網域中的網站上設定 SSL/TLS](https://social.technet.microsoft.com/wiki/contents/articles/12485.configure-ssltls-on-a-web-site-in-the-domain-with-an-enterprise-ca.aspx)。  
   
-[Active Directory 同盟服務方法一系列的影片： 更新憑證](https://technet.microsoft.com/video/adfs-updating-certificates)。  
+[Active Directory Federation Services 使用方法影片系列：更新憑證](https://technet.microsoft.com/video/adfs-updating-certificates)。  
   
 ### <a name="install-the-ad-fs-server-role"></a>安裝 AD FS 伺服器角色  
   
-##### <a name="to-install-the-federation-service-role-service"></a>若要安裝同盟服務的角色  
+##### <a name="to-install-the-federation-service-role-service"></a>安裝 Federation Service 角色服務  
   
-1.  登入，使用系統管理員核對伺服器administrator@contoso.com。  
+1.  登入伺服器使用網域系統管理員帳戶administrator@contoso.com。  
   
-2.  伺服器管理員 [開始]。 若要開始伺服器管理員中，按一下 [**伺服器管理員**windows **[開始]**畫面上，或按一下 [**伺服器管理員**在 Windows 工作列上的 Windows 桌面。 在**快速入門**索引標籤的**歡迎使用**] 磚上**儀表板**頁面上，按一下**新增角色與功能**。 或者，您可以按一下**新增角色與功能**在**管理**功能表。  
+2.  啟動 [伺服器管理員]。 若要啟動 [伺服器管理員]，請按一下 Windows [開始]  畫面上的 [伺服器管理員]  ，或按一下 Windows 桌面上 Windows 工作列中的 [伺服器管理員]  。 在 [儀表板]  頁面之 [歡迎]  區段的 [快速入門]  索引標籤中，按一下 [新增角色及功能] 。 或者，您可以按一下 [管理] 功能表中的 [新增角色及功能]。  
   
-3.  在**在您開始之前**頁面上，按一下 [**下**。  
+3.  在 [在您開始前]  頁面上，按一下 [下一步] 。  
   
-4.  上**選取 [安裝類型**頁面上，按一下 [**以角色為基礎，或為基礎的功能的安裝**，然後按一下 [**下一步**。  
+4.  在 [選取安裝類型] 頁面上，按一下 [角色型或功能型安裝]，然後按 [下一步]。  
   
-5.  在**選取目的伺服器**頁面上，按一下 [**伺服器集區中選取 [伺服器**，確認的目標電腦已選取，然後按**下一步**。  
+5.  在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，確認已選取目標電腦，然後按一下 [下一步]。  
   
-6.  在**選擇伺服器角色**頁面上，按一下 [ **Active Directory 同盟服務**，然後按一下 [**下一步**。  
+6.  在 [選取伺服器角色]  頁面上，按一下 [Active Directory Federation Services] ，然後按一下 [下一步] 。  
   
-7.  在**選擇功能**頁面上，按一下 [**下**。  
+7.  在 [選取功能] 頁面上，按 [下一步]。  
   
-8.  在**Active Directory 同盟服務 (AD FS)**頁面上，按**下**。  
+8.  在 [Active Directory Federation Service (AD FS)]  頁面上，按一下 [下一步] 。  
   
-9. 在確認此資訊後**確認安裝選項**頁面上，選取**必要時自動重新開機目的伺服器**核取方塊，並再按**安裝**。  
+9. 驗證 [確認安裝選項]  頁面上的資訊之後，請選取 [需要時自動重新啟動目的伺服器]  核取方塊，然後按一下 [安裝] 。  
   
-10. 在**安裝進度**頁面，確認所有正確，安裝，然後按一下 [**關閉**。  
+10. 在 [安裝進度] 頁面上，確認每個項目都已正確安裝，然後按一下 [關閉]。  
   
-### <a name="configure-the-federation-server"></a>將聯盟伺服器設定  
-下一個步驟是設定聯盟伺服器。  
+### <a name="configure-the-federation-server"></a>設定同盟伺服器  
+下一個步驟是設定同盟伺服器。  
   
-##### <a name="to-configure-the-federation-server"></a>若要將聯盟伺服器設定  
+##### <a name="to-configure-the-federation-server"></a>設定同盟伺服器  
   
-1.  在伺服器管理員**儀表板**頁面上，按一下 [**通知**標幟，然後按一下 [**設定同盟服務，伺服器上**。  
+1.  在 [伺服器管理員] 的 [儀表板] 頁面上，按一下 [通知] 旗標，然後按一下 [設定伺服器上的 Federation Service]。  
   
-    **Active Directory 同盟服務設定精靈**開啟。  
+    [Active Directory Federation Service 設定精靈]  隨即開啟。  
   
-2.  在**歡迎使用**頁面上，選取**聯盟伺服器陣列中建立的第一個聯盟伺服器**，然後按一下 [**下一步**。  
+2.  在 [歡迎] 頁面上，選取 [在同盟伺服器陣列中建立第一部同盟伺服器]，然後按一下 [下一步]。  
   
-3.  在**連接到 AD DS**頁面上指定的 account 網域系統管理員權限的**contoso.com**這台電腦所加入的 Active Directory domain，然後按**下一步**。  
+3.  在 [連線到 AD DS] 頁面上，指定具有此電腦已加入之 **contoso.com** Active Directory 網域之網域系統管理員權限的帳戶，然後按一下 [下一步]。  
   
-4.  在**指定服務屬性**頁面上，執行下列命令，，然後按**下**:  
+4.  在 [指定服務內容]  頁面上執行下列動作，然後按一下 [下一步] ：  
   
-    -   匯入之前取得 SSL 憑證。 這是憑證所需的服務驗證憑證。 瀏覽至您的 SSL 憑證的位置。  
+    -   匯入您稍早取得的 SSL 憑證。 此憑證是必要的服務驗證憑證。 瀏覽到您的 SSL 憑證所在位置。  
   
-    -   若要提供您同盟服務的名稱，輸入**adfs1.contoso.com**。這個的值為您提供您退出 SSL 憑證在 Active Directory 憑證 Services (AD CS) 時的相同的值。  
+    -   若要為您的 Federation Service 提供名稱，請輸入 **adfs1.contoso.com**。 此值與您在 Active Directory 憑證服務 (AD CS) 中註冊 SSL 憑證時提供的值一樣。  
   
-    -   若要提供您同盟服務的顯示名稱，輸入**以 Contoso Corporation**。  
+    -   若要為您的同盟服務提供顯示名稱，請輸入 **Contoso Corporation**。  
   
-5.  在**指定服務 Account**頁面上，選取**現有的網域帳號使用者或群組管理服務 Account**，然後指定 GMSA account **fsgmsa**您建立您的網域控制站在建立時。  
+5.  在 [指定服務帳戶]  頁面上，選取 [Use an existing domain user account or group Managed Service Account] (使用現有的網域使用者帳戶或群組「受管理的服務帳戶」) ，然後指定您在建立網域控制站時建立的 GMSA 帳戶 **fsgmsa** 。  
   
-6.  在**指定設定資料庫**頁面上，選取**建立在使用 Windows 內部資料庫此伺服器上的資料庫**，然後按一下 [**下一步**。  
+6.  在 [指定設定資料庫]  頁面上，選取 [在此伺服器上使用 Windows 內部資料庫來建立資料庫] ，然後按一下 [下一步] 。  
   
-7.  在**評論選項**頁面，確認您的設定選項，然後按一下 [**下**。  
+7.  在 [檢閱選項] 頁面上，檢查您的設定選項，然後按一下 [下一步]。  
   
-8.  在**必要條件檢查**頁面上，確認所有必要條件檢查已成功完成，然後按**設定**。  
+8.  在 [先決條件檢查]  頁面上，確認所有先決條件檢查都已順利完成，然後按一下 [設定] 。  
   
-9. 在**結果**頁面上，檢視結果，請檢查是否已成功完成設定，然後按一下**完成同盟服務部署所需的下一個步驟**。  
+9. 在 [結果]  頁面上，檢閱結果並檢查設定是否已順利完成，然後按一下 [完成 Federation Service 部署所需的後續步驟] 。  
   
-### <a name="configure-device-registration-service"></a>設定裝置登記服務  
-下一個步驟是設定裝置登記服務 ADFS1 伺服器上。 影片，請查看[Active Directory 同盟服務方法一系列影片： 讓裝置登記服務](https://technet.microsoft.com/video/adfs-how-to-enabling-the-device-registration-service)。  
+### <a name="configure-device-registration-service"></a>設定裝置註冊服務  
+接下來的步驟是在 ADFS1 伺服器上設定「裝置註冊服務」。 如需影片，請參閱[Active Directory Federation Services 使用方法影片系列：啟用 Device Registration Service](https://technet.microsoft.com/video/adfs-how-to-enabling-the-device-registration-service)。  
   
-##### <a name="to-configure-device-registration-service-for-windows-server-2012-rtm"></a>若要設定裝置登記服務適用於 Windows Server 2012 RTM  
+##### <a name="to-configure-device-registration-service-for-windows-server-2012-rtm"></a>為 Windows Server 2012 RTM 設定裝置註冊服務  
   
 1.  > [!IMPORTANT]  
-    > **Windows Server 2012 R2 RTM 建置適用於下列步驟。**  
+    > **下列步驟適用於 Windows Server 2012 R2 RTM 組建。**  
   
-    Windows PowerShell 命令視窗中，輸入開放：  
+    開啟 Windows PowerShell 命令視窗並輸入：  
   
     ```  
     Initialize-ADDeviceRegistration  
     ```  
   
-    當系統提示您服務的帳號時，輸入**contosofsgmsa$**。  
+    當系統提示您為服務帳戶時，輸入**contosofsgmsa$**。  
   
-    現在，執行的 Windows PowerShell cmdlet。  
+    現在，執行 Windows PowerShell cmdlet。  
   
     ```  
     Enable-AdfsDeviceRegistration  
     ```  
   
-2.  ADFS1 伺服器上的**AD FS 管理**主機、 瀏覽至**驗證原則**。 選取 [**編輯全球主要驗證**。 選取核取方塊接下來**讓裝置驗證**，然後按一下 [ **[確定]**。  
+2.  在 ADFS1 伺服器上，在 [AD FS 管理] 主控台上，瀏覽到 [驗證原則]。 選取 [啟用全域主要驗證] 。 選取 [啟用裝置驗證] ，然後按一下 [確定] 。  
   
-### <a name="add-host-a-and-alias-cname-resource-records-to-dns"></a>主機 (A) 及別名 (CNAME) 資源記錄加入 DNS  
-在 DC1，您必須建立的網域名稱系統 」 (DNS) 下列記錄裝置登記服務。  
+### <a name="add-host-a-and-alias-cname-resource-records-to-dns"></a>將主機 (A) 與別名 (CNAME) 資源記錄新增至 DNS  
+在 DC1 上，您必須確定已針對「裝置註冊服務」建立下列網域名稱系統 (DNS) 記錄。  
   
-|項目|輸入|地址|  
+|進入|類型|地址|  
 |---------|--------|-----------|  
 |adfs1|主機 (A)|AD FS 伺服器的 IP 位址|  
 |enterpriseregistration|別名 (CNAME)|adfs1.contoso.com|  
   
-若要新增公司名稱 dns 伺服器聯盟和裝置登記服務主機 (A) 資源記錄，您可以使用下列程序。  
+您可以使用下列程序，針對同盟伺服器與「裝置註冊服務」將主機 (A) 資源記錄到新增公司 DNS 名稱伺服器。  
   
-系統管理員群組或相當於成員資格已完成此程序的最低需求。 檢視詳細資料使用適當帳號和超連結「https://go.microsoft.com/fwlink/?LinkId=83477「本機和網域預設群組 (https://go.microsoft.com/fwlink/p/?LinkId=83477) 群組成員資格。  
+若要完成此程序，至少需要 Administrators 群組的成員資格或同等權限。 檢閱詳細使用適當帳戶和群組成員資格中的超連結"https://go.microsoft.com/fwlink/?LinkId=83477「 本機與網域預設群組 (https://go.microsoft.com/fwlink/p/?LinkId=83477)。  
   
-##### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>加入主機 (A) 及別名 (CNAME) 資源記錄 DNS 伺服器聯盟  
+##### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>為您的同盟伺服器將主機 (A) 與別名 (CNAME) 資源記錄新增至 DNS  
   
-1.  在 DC1，從伺服器管理員中，在**工具**功能表上，按**DNS**打開 DNS 嵌入式管理單元。  
+1.  在 DC1 上，從 [伺服器管理員] 的 [工具] 功能表，按一下 [DNS] 以開啟 [DNS] 嵌入式管理單元。  
   
-2.  主控台依序展開 DC1、**正向對應區域**上, 按一下滑鼠右鍵**contoso.com**，然後按一下 [**新主機 （或 AAAA）**。  
+2.  在主控台樹狀目錄中，展開 [正向對應區域]，在 [contoso.com] 上按一下滑鼠右鍵，然後按一下 [新增主機 (A 或 AAAA)]。  
   
-3.  在**的名稱，**輸入您想要使用 AD FS 發電廠您的名稱。 本節中，輸入**adfs1**。  
+3.  在 [名稱]  中，輸入您要為 AD FS 陣列使用的名稱。 對於此逐步解說，請輸入 **adfs1**。  
   
-4.  在**的 IP 位址**，輸入 ADFS1 伺服器的 IP 位址。 按一下**新增主機**。  
+4.  在 [IP 位址] 中，輸入 ADFS1 伺服器的 IP 位址。 按一下 [新增主機] 。  
   
-5.  以滑鼠右鍵按一下**contoso.com**，然後按**新別名 (CNAME)**。  
+5.  在 [contoso.com] 上按一下滑鼠右鍵，然後按一下 [新增別名 (CNAME)]。  
   
-6.  在**新資源記錄**對話方塊中，輸入**enterpriseregistration**中**別名**方塊。  
+6.  在 [新增資源記錄] 對話方塊中，在 [別名名稱] 方塊中輸入 **enterpriseregistration**。  
   
-7.  在完全完整網域名稱 (FQDN) 的目標主機方塊中，輸入**adfs1.contoso.com**，然後按**[確定]**。  
+7.  在 [目標主機完整網域名稱 (FQDN)] 方塊中，輸入 **adfs1.contoso.com**，然後按一下 [確定]。  
   
     > [!IMPORTANT]  
-    > 在現實世界的部署，如果您的公司有多個使用者主體名稱 (UPN) 尾碼，您必須建立多個 CNAME 記錄 dns 這些 UPN 尾碼個。  
+    > 在真實世界的部署中，若您的公司有多個使用者主體名稱 (UPN) 尾碼，您必須建立多個 CNAME 記錄 (每個記錄適用於 DNS 中的一個 UPN 尾碼)。  
   
-## <a name="BKMK_5"></a>步驟 3： 設定網頁伺服器 (WebServ1) 及範例宣告型應用程式  
-設定一樣 (WebServ1) 來安裝 Windows Server 2012 R2 的作業系統，並將它連接到網域**contoso.com**。它已經加入網域之後，您就可以設定網頁伺服器角色加以安裝。  
+## <a name="BKMK_5"></a>步驟 3:設定網頁伺服器 (WebServ1) 與範例宣告式應用程式  
+安裝 Windows Server 2012 R2 作業系統，設定虛擬機器 (WebServ1)，並將它連線到網域**contoso.com**。 當它加入該網域後，您可以繼續安裝及設定「網頁伺服器」角色。  
   
-若要完成稍早本主題中所參照的逐步教學，您必須聯盟伺服器 (ADFS1) 受保護的範例應用程式。  
+若要完成此主題稍早所述的逐步解說，您必須有受您的同盟伺服器 (ADFS1) 所保護的簡單應用程式。  
   
-您可以下載身分基本知識的 Windows SDK ([https://www.microsoft.com/download/details.aspx?id=4451](https://www.microsoft.com/download/details.aspx?id=4451)，其中包含一個範例宣告型應用程式。  
+您可以下載 Windows Identity Foundation SDK ([https://www.microsoft.com/download/details.aspx?id=4451](https://www.microsoft.com/download/details.aspx?id=4451)，其中包含範例宣告式應用程式。  
   
-您必須先完成下列步驟來設定此範例宣告型應用程式與 web 伺服器。  
+您必須完成下列步驟，才能使用此宣告式應用程式來設定網頁伺服器。  
   
 > [!NOTE]  
-> 執行 Windows Server 2012 R2 作業系統的網頁伺服器經過這些步驟。  
+> 在執行 Windows Server 2012 R2 作業系統的 web 伺服器上過這些步驟。  
   
-1.  [安裝 Windows 的身分基礎與 Web 伺服器角色](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_15)  
+1.  [安裝網頁伺服器角色與 Windows Identity Foundation](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_15)  
   
-2.  [安裝 Windows SDK 的身分基礎](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_13)  
+2.  [安裝 Windows Identity Foundation SDK](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_13)  
   
-3.  [在設定簡單宣告應用程式](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_9)  
+3.  [在 IIS 中設定簡單宣告應用程式](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_9)  
   
-4.  [聯盟伺服器上建立信賴廠商信任](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_11)  
+4.  [在您的同盟伺服器上建立信賴憑證者信任](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_11)  
   
-### <a name="BKMK_15"></a>安裝 Windows 的身分基礎與 Web 伺服器角色  
+### <a name="BKMK_15"></a>安裝網頁伺服器角色與 Windows Identity Foundation  
   
 1.  > [!NOTE]  
-    > 您必須在 Windows Server 2012 R2 的安裝媒體來存取。  
+    > 您必須具有 Windows Server 2012 R2 安裝媒體的存取權。  
   
-    登入 WebServ1 使用** administrator@contoso.com **的密碼和** pass@word1 **。  
+    使用的登入 WebServ1 **administrator@contoso.com**和 密碼**pass@word1**。  
   
-2.  從伺服器管理員中，在**快速入門**索引標籤的**歡迎使用**] 磚上**儀表板**頁面上，按一下**新增角色與功能**。 或者，您可以按一下**新增角色與功能**在**管理**功能表。  
+2.  在 [伺服器管理員] 中，在 [儀表板]  頁面 之 [歡迎]  區段的 [快速入門]  索引標籤中，按一下 [新增角色及功能] 。 或者，您可以按一下 [管理] 功能表中的 [新增角色及功能]。  
   
-3.  在**在您開始之前**頁面上，按一下 [**下**。  
+3.  在 [在您開始前]  頁面上，按一下 [下一步] 。  
   
-4.  上**選取 [安裝類型**頁面上，按一下 [**以角色為基礎，或為基礎的功能的安裝**，然後按一下 [**下一步**。  
+4.  在 [選取安裝類型] 頁面上，按一下 [角色型或功能型安裝]，然後按 [下一步]。  
   
-5.  在**選取目的伺服器**頁面上，按一下 [**伺服器集區中選取 [伺服器**，確認的目標電腦已選取，然後按**下一步**。  
+5.  在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，確認已選取目標電腦，然後按一下 [下一步]。  
   
-6.  在**選取伺服器角色**頁面上，選取核取方塊接下來**網頁伺服器 (IIS)**，按一下 [**新增功能**，，然後按一下**下一步**。  
+6.  在 [選取伺服器角色]  頁面上，選取 [網頁伺服器 (IIS)] 旁的核取方塊，按一下 [新增功能] ，然後按一下 [下一步] 。  
   
-7.  在**選取功能**頁面上，選取**Windows 身分基本知識 3.5**，然後按一下 [**下一步**。  
+7.  在 [選取功能] 頁面上，選取 [Windows Identity Foundation 3.5]，然後按一下 [下一步]。  
   
-8.  在**網頁伺服器角色 (IIS)**頁面上，按**下**。  
+8.  在 [網頁伺服器 (IIS) 角色]  頁面上，按一下 [下一步] 。  
   
-9. 在**選擇角色服務**頁面上，選取 [展開**應用程式開發**。 選取 [ **ASP.NET 3.5**，按一下 [**新增功能**，然後按一下 [**下一步**。  
+9. 在 [選取角色服務] 頁面上，選取並展開 [應用程式開發]。 選取 [ASP.NET 3.5] ，按一下 [新增功能] ，然後按一下 [下一步] 。  
   
-10. 在**確認安裝選項**頁面上，按一下 [**指定替代來源路徑**。 Windows Server 2012 R2 的安裝媒體位於 Sxs directory 輸入的路徑。 例如，D:SourcesSxs。 按一下**[確定]**，然後按**安裝**。  
+10. 在 [確認安裝選項]  頁面上，按一下 [指定替代來源路徑] 。 輸入 [Sxs] 目錄，它位於 Windows Server 2012 R2 安裝媒體的路徑。 比方說 D:SourcesSxs。 按一下 [確定]，然後按一下 [安裝]。  
   
-### <a name="BKMK_13"></a>安裝 Windows SDK 的身分基礎  
+### <a name="BKMK_13"></a>安裝 Windows Identity Foundation SDK  
   
-1.  執行 WindowsIdentityFoundation-SDK-3.5.msi 安裝 Windows 的身分基本知識 SDK 3.5 (https://www.microsoft.com/download/details.aspx?id=4451)。 請選擇預設的選項。  
+1.  執行 Windowsidentityfoundation-sdk-3.5.msi 以安裝 Windows Identity Foundation SDK 3.5 (https://www.microsoft.com/download/details.aspx?id=4451)。 選擇所有預設選項。  
   
-### <a name="BKMK_9"></a>在設定簡單宣告應用程式  
+### <a name="BKMK_9"></a>在 IIS 中設定簡單宣告應用程式  
   
-1.  憑證存放區的電腦安裝有效 SSL 憑證。 憑證應包含您的網頁伺服器的名稱**webserv1.contoso.com**。  
+1.  在電腦憑證存放區中安裝有效的 SSL 憑證。 憑證應該包含您的網頁伺服器名稱 **webserv1.contoso.com**。  
   
-2.  複製到 C:Program 檔案 (x86) Windows 身分基本知識 SDKv3.5SamplesQuick StartWeb ApplicationPassiveRedirectBasedClaimsAwareWebApp 以 C:InetpubClaimapp。  
+2.  C:Program 檔案 (x86) Windows Identity Foundation SDKv3.5SamplesQuick StartWeb ApplicationPassiveRedirectBasedClaimsAwareWebApp 的內容複製到 C:InetpubClaimapp。  
   
-3.  編輯**Default.aspx.cs** ，讓任何宣告篩選發生檔案。 執行此步驟以確保的範例應用程式顯示所有宣告所發行的聯盟伺服器。 執行下列動作：  
+3.  編輯 **Default.aspx.cs** 檔案並停用宣告篩選。 執行此步驟的目的是要確定範例應用程式會顯示同盟伺服器發出的所有宣告。 執行下列動作：  
   
-    1.  開放**Default.aspx.cs**在文字編輯器中。  
+    1.  在文字編輯器中開啟 **Default.aspx.cs** 。  
   
-    2.  搜尋檔案的第二個`ExpectedClaims`。  
+    2.  搜尋該檔案中的第二個 `ExpectedClaims`執行個體。  
   
-    3.  查看整個意見`IF`聲明，並其括號。 表示意見，輸入 「 日日 」 （不含報價） 一行的開頭。  
+    3.  將整個 `IF` 陳述式及其大括弧變更為註解。 在行首加上 “//” (不含引號) 即可將該行變更為註解。  
   
-    4.  您`FOREACH`隱私權聲明應該看起來像此程式碼範例。  
+    4.  您的 `FOREACH` 陳述式現在看起來應該像此程式碼範例一樣。  
   
         ```  
         Foreach (claim claim in claimsIdentity.Claims)  
@@ -279,68 +280,68 @@ ms.lasthandoff: 12/12/2017
   
         ```  
   
-    5.  儲存，並關閉**Default.aspx.cs**。  
+    5.  儲存並關閉 **Default.aspx.cs**。  
   
-    6.  開放**web.config**在文字編輯器中。  
+    6.  在文字編輯器中開啟 **web.config** 。  
   
-    7.  移除整個`<microsoft.identityModel>`區段。 移除所有項目從`including <microsoft.identityModel>`最多及包括`</microsoft.identityModel>`。  
+    7.  移除整個 `<microsoft.identityModel>` 區段。 移除從 `including <microsoft.identityModel>` 一直到 (並包含) `</microsoft.identityModel>`之間的所有內容。  
   
-    8.  儲存，並關閉**web.config**。  
+    8.  儲存並關閉 **web.config**。  
   
-4.  **設定 IIS 管理員**  
+4.  **IIS 管理員設定**  
   
-    1.  開放**資訊網際網路服務 (IIS) 管理員**。  
+    1.  開啟 [網際網路資訊服務 (IIS) 管理員] 。  
   
-    2.  移至**應用程式集區**，以滑鼠右鍵按一下**DefaultAppPool**以選取 [**進階設定]**。 設定**載入的使用者設定檔**以**為 True**，然後按一下 [ **[確定]**。  
+    2.  移至 [應用程式集區] ，在 [DefaultAppPool]  上按一下滑鼠右鍵，然後選取 [進階設定] 。 將 [載入使用者設定檔]  設定為 [True] ，然後按一下 [確定] 。  
   
-    3.  以滑鼠右鍵按一下**DefaultAppPool**選取**設定基本**。 變更**.NET CLR 版本**以**.NET CLR 版本 v2.0.50727**。  
+    3.  在 [DefaultAppPool]  上按一下滑鼠右鍵，然後選取 [基本設定] 。 將 [.NET CLR 版本]  變更為 [.NET CLR 版本 v2.0.50727] 。  
   
-    4.  以滑鼠右鍵按一下**預設的網站**選取**編輯繫結**。  
+    4.  在 [預設的網站]  上按一下滑鼠右鍵，然後選取 [編輯繫結] 。  
   
-    5.  新增**HTTPS**繫結至連接埠**443**安裝 SSL 憑證。  
+    5.  使用您已安裝的 SSL 憑證，新增 **HTTPS** 繫結至 **443** 。  
   
-    6.  以滑鼠右鍵按一下**預設的網站**選取**新增應用程式**。  
+    6.  在 [預設的網站] 上按一下滑鼠右鍵，然後選取 [新增應用程式]。  
   
-    7.  為別名**claimapp**的實體路徑和**c:inetpubclaimapp**。  
+    7.  若要設定別名**claimapp**和 實體路徑**c:inetpubclaimapp**。  
   
-5.  若要設定**claimapp**若要搭配您的聯盟伺服器，執行下列動作：  
+5.  若要設定 **claimapp** 搭配您的同盟伺服器使用，請執行下列動作：  
   
-    1.  執行 FedUtil.exe 位於**C:Program 檔案 (x86) Windows 身分基本知識 SDKv3.5**。  
+    1.  執行 FedUtil.exe，它位於**C:Program 檔案 (x86) Windows Identity Foundation SDKv3.5**。  
   
-    2.  將應用程式設定位置設定**C:inetputclaimappweb.config**設為您的網站 URL URI 應用程式和**https://webserv1.contoso.com /claimapp/**。 按一下**下一步**。  
+    2.  若要設定應用程式設定位置**C:inetputclaimappweb.config**與應用程式 URI 設為您網站的 URL  **https://webserv1.contoso.com /claimapp/**。 按一下 [下一步] 。  
   
-    3.  選取 [**使用現有 STS** ，然後瀏覽至您的 AD FS 伺服器中繼資料 URL **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml**。 按一下**下一步**。  
+    3.  選取 **使用現有的 STS**並瀏覽至您的 AD FS 伺服器中繼資料 URL **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml**。 按一下 [下一步] 。  
   
-    4.  選取 [**停用的憑證鏈結驗證**，然後按一下 [**下**。  
+    4.  選取 [停用憑證鏈結驗證]，然後按一下 [下一步]。  
   
-    5.  選取 [**未加密**，然後按一下 [**下**。 在**提供宣告**頁面上，按**下**。  
+    5.  選取 [無加密]，然後按一下 [下一步]。 在 [提供的宣告]  頁面上，按一下 [下一步] 。  
   
-    6.  選取核取方塊旁邊**排程工作執行日常 WS 同盟中繼資料更新**。 按一下**完成**。  
+    6.  選取 [排定工作以執行每日 WS-Federation 中繼資料更新] 旁的核取方塊。 按一下 **[完成]**。  
   
-    7.  範例應用程式現在設定。 如果您在測試應用程式 URL **https://webserv1.contoso.com/claimapp**，它應該會重新導向至您的聯盟伺服器。 因為您未尚未設定信賴的派對信任聯盟伺服器應該會顯示錯誤頁面。 亦即，您不安全，AD FS 此測試應用程式。  
+    7.  您的範例應用程式已設定完成。 如果您在測試應用程式 URL **https://webserv1.contoso.com/claimapp**，它應該將您重新導向至您的同盟伺服器。 同盟伺服器應該會顯示錯誤頁面，因為您尚未設定信賴憑證者信任。 換句話說，您有未受保護 AD fs 此測試應用程式。  
   
-現在，您必須保護您的網頁伺服器使用 AD FS 上執行的範例應用程式。 您可以藉由信賴的派對信任新增聯盟伺服器 (ADFS1) 上執行此動作。 影片，請查看[Active Directory 同盟服務方法一系列影片： 新增可以方信任](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust)。  
+現在，您必須保護與 AD FS web 伺服器上執行範例應用程式。 您可以透過在您的同盟伺服器 (ADFS1) 上新增信賴憑證者信任來執行此動作。 如需影片，請參閱[Active Directory Federation Services 使用方法影片系列：新增信賴憑證者信任](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust)。  
   
-### <a name="BKMK_11"></a>聯盟伺服器上建立信賴廠商信任  
+### <a name="BKMK_11"></a>在您的同盟伺服器上建立信賴憑證者信任  
   
-1.  您聯盟伺服器上 (ADFS1)，在**AD FS 管理主控台**，瀏覽至**可以信任派對**，，然後按一下 [**新增可以方信任**。  
+1.  在您的同盟伺服器 (ADFS1) 上，在 [AD FS 管理] 主控台中，瀏覽到 [信賴憑證者信任]，然後按一下 [新增信賴憑證者信任]。  
   
-2.  在**選取資料來源**頁面上，選取 [**匯入信賴有關的資料發行 online 或本機網路上**，輸入中繼資料 URL **claimapp**，，然後按一下**下一步**。 執行 FedUtil.exe 建立中繼資料.xml 檔案。 這是位於   
-    **https://webserv1.contoso.com/claimapp/federationmetadata/2007-06/federationmetadata.xml**。  
+2.  在 [選取資料來源]  頁面上，選取 [匯入發佈到線上或區域網路的信賴憑證者相關資料] ，輸入 **claimapp**的中繼資料 URL，然後按 [下一步] 。 執行 FedUtil.exe 會建立中繼資料 .xml 檔案。 其位於   
+    **https://webserv1.contoso.com/claimapp/federationmetadata/2007-06/federationmetadata.xml**.  
   
-3.  在**指定顯示名稱**頁面上指定**顯示名稱**您信賴的派對信任的**claimapp**，然後按一下 [**下一步**。  
+3.  在 [指定顯示名稱]  頁面上，為您的信賴憑證者信任指定 **顯示名稱** ， **claimapp**，然後按一下 [下一步] 。  
   
-4.  在**設定現在多因素驗證嗎？**頁面上，選取**我不想指定多因素驗證設定信賴信任派對這次**，然後按一下**下一步**。  
+4.  在 [立即設定多因素驗證?]  頁面上，選取 [我目前不想為此信賴憑證者信任指定多因素驗證設定] ，然後按一下 [下一步] 。  
   
-5.  在**選擇發行授權規則**頁面上，選取**允許所有使用者存取此信賴**，然後按一下 [**下一步**。  
+5.  在 [選擇發佈授權規則] 頁面上，選取 [允許所有使用者存取此信賴憑證者]，然後按一下 [下一步]。  
   
-6.  在**準備好新增信任**頁面上，按一下 [**下**。  
+6.  在 [準備新增信任] 頁面上，按一下 [下一步]。  
   
-7.  在**編輯理賠要求規則**對話方塊中，按**[新增規則**。  
+7.  在 [編輯宣告規則] 對話方塊中，按一下 [新增規則]。  
   
-8.  在**選擇規則類型**頁面上，選取**傳送主張使用自訂規則**，然後按一下 [**下一步**。  
+8.  在 [選擇規則類型]  頁面上，選取 [使用自訂規則傳送宣告] ，然後按一下 [下一步] 。  
   
-9. 在**設定理賠要求規則**頁面上，在**理賠要求規則名稱**方塊中，輸入**所有宣告**。 在**自訂規則**方塊中，輸入下列理賠要求規則。  
+9. 在 [設定宣告規則] 頁面上的 [宣告規則名稱] 方塊中，輸入 **All Claims**。 在 [自訂規則] 方塊中，輸入下列宣告規則。  
   
     ```  
     c:[ ]  
@@ -348,19 +349,19 @@ ms.lasthandoff: 12/12/2017
   
     ```  
   
-10. 按一下**完成**，然後按**[確定]**。  
+10. 按一下 [完成] ，然後按一下 [確定] 。  
   
-## <a name="BKMK_10"></a>步驟 4： 設定電腦 client (Client1)  
-設定其他一樣，安裝 Windows 8.1。 這個一樣必須是相同的 virtual 網路的其他電腦上。 這台電腦應該不會以 Contoso 網域加入。  
+## <a name="BKMK_10"></a>步驟 4:設定用戶端電腦 (Client1)  
+設定另一部虛擬機器和安裝 Windows 8.1。 此虛擬機器必須位於與其他機器一樣的虛擬網路中。 此機器不應該加入 Contoso 網域。  
   
-Client 必須信任 SSL 憑證聯盟伺服器 (ADFS1)，您在設定使用[步驟 2： 設定聯盟伺服器 (ADFS1) 裝置登記服務的](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)。 它也必須驗證憑證的憑證撤銷資訊。  
+用戶端必須信任用於同盟伺服器 (ADFS1) 上，您在設定的 SSL 憑證[步驟 2:設定同盟伺服器 (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)。 它也必須能夠驗證憑證撤銷資訊。  
   
-您還必須設定並使用 Microsoft account Client1 登入。  
+您也必須設定 Microsoft 帳戶並使用它來登入 Client1。  
   
-## <a name="see-also"></a>也了  
-[Active Directory 同盟服務方法一系列影片： 安裝 AD FS 伺服器農場](https://technet.microsoft.com/video/dn469436)  
-[更新憑證 active Directory 同盟服務一系列影片方法：](https://technet.microsoft.com/video/adfs-updating-certificates)  
-[Active Directory 同盟服務方法一系列影片： 加入派對信任依賴](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust)  
-[Active Directory 同盟服務方法一系列的影片： 讓裝置登記服務](https://technet.microsoft.com/video/adfs-how-to-enabling-the-device-registration-service)  
-[Active Directory 同盟服務方法一系列的影片： 安裝應用程式網路 Proxy](https://technet.microsoft.com/video/dn469438)  
+## <a name="see-also"></a>另請參閱  
+[Active Directory Federation Services 使用方法影片系列：安裝 AD FS 伺服器陣列](https://technet.microsoft.com/video/dn469436)  
+[Active Directory Federation Services 使用方法影片系列：更新憑證](https://technet.microsoft.com/video/adfs-updating-certificates)  
+[Active Directory Federation Services 使用方法影片系列：新增信賴憑證者信任](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust)  
+[Active Directory Federation Services 使用方法影片系列：啟用 Device Registration Service](https://technet.microsoft.com/video/adfs-how-to-enabling-the-device-registration-service)  
+[Active Directory Federation Services 使用方法影片系列：安裝 Web 應用程式 Proxy](https://technet.microsoft.com/video/dn469438)  
   

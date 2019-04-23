@@ -1,41 +1,42 @@
 ---
 ms.assetid: de054ac2-a386-43ec-a537-c0de21549741
-title: "設定的網站連結屬性"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 設定站台連結屬性
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 495ed006ecac5458877191a14060c5fd4b746d96
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 4fa9a1fa8d2a463fe5f361a5a27ee2b9e3edc0f6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870359"
 ---
-# <a name="setting-site-link-properties"></a>設定的網站連結屬性
+# <a name="setting-site-link-properties"></a>設定站台連結屬性
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-間複寫發生根據連接物件的屬性。 當知識一致性檢查程式 (KCC) 建立連接物件時，它便會複寫排程的網站連結物件的屬性。 每個網站連結物件代表寬區域 (wan) 連接兩個或更多台。  
+根據連接物件的屬性，就會發生站台間複寫。 當知識一致性檢查程式 (KCC) 建立連線物件時，它會衍生自站台連結物件的屬性的複寫排程。 每個站台連結物件代表兩個或多個站台間廣域網路 (wan) 連線。  
   
-設定的網站連結物件的屬性包含下列步驟：  
+設定站台連結物件內容包含下列步驟：  
   
--   判斷該複寫路徑相關聯的成本。 KCC 判斷最便宜路由複寫之間複製相同的 directory 磁碟分割的兩個網站使用成本。  
+-   決定與該複寫路徑相關聯的成本。 修改 KCC 用來判斷最便宜的複寫相同的目錄磁碟分割的兩個站台間複寫路由的成本。  
   
--   判斷排程定義間複寫時間可能會發生。  
+-   決定排程，定義在哪些站台間複寫期間的時間可能會發生。  
   
--   判斷定義頻率複寫應該會發生在時間時允許複寫定義排程複寫間隔。  
+-   判斷複寫應該發生的頻率時允許複寫的時間期間定義在排程中所定義的複寫間隔。  
   
-## <a name="in-this-guide"></a>本指南  
+## <a name="in-this-guide"></a>本指南內容  
   
 -   [判斷成本](../../ad-ds/plan/Determining-the-Cost.md)  
   
--   [判斷排程](../../ad-ds/plan/Determining-the-Schedule.md)  
+-   [決定排程](../../ad-ds/plan/Determining-the-Schedule.md)  
   
--   [判斷長的時間間隔](../../ad-ds/plan/Determining-the-Interval.md)  
+-   [決定間隔](../../ad-ds/plan/Determining-the-Interval.md)  
   
 
 

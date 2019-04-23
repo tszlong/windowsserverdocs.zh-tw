@@ -1,6 +1,6 @@
 ---
 title: 安裝 Server Core
-description: 如何取得並安裝 Server Core 安裝在 Windows Server 2019、 Windows Server 2016 或 Windows Server （半年度管道）。
+description: 如何取得並安裝 Windows Server 2019、 Windows Server 2016 或 Windows Server （半年通道） 上的 Server Core 安裝。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,15 +15,15 @@ ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: d99cd0b028d08d5c3247541ce3a868676b60693d
-ms.sourcegitcommit: 7fc7271745e40f110c54918b55624cadd0d7ff98
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991795"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869019"
 ---
-# 安裝 Server Core
+# <a name="install-server-core"></a>安裝 Server Core
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
+> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
   
 當您第一次安裝 Windows Server 時，您會有下列安裝選項：
 
@@ -35,7 +35,7 @@ ms.locfileid: "8991795"
 -   Windows Server Datacenter
 -   Windows Server Datacenter 含桌面體驗
 
-當您安裝 Windows Server （半年度管道）、 包括版本 1709年、 1803、 及 1809，您會有下列安裝選項：
+當您安裝 Windows Server （半年通道），包括版本 1709年，1803，1809，您會有下列安裝選項：
 
 -   Windows Server Standard 
 -   Windows Server Datacenter
@@ -46,13 +46,13 @@ ms.locfileid: "8991795"
 
 >[!NOTE]
 >
->與 WindowsServer 某些更早的版本不同，您無法在安裝完成後在 Server Core 與桌面體驗伺服器之間進行轉換。 如果您安裝 Server Core，並稍後決定使用桌面體驗伺服器，您應該執行全新安裝。
+>與 Windows Server 某些更早的版本不同，您無法在安裝完成後在 Server Core 與桌面體驗伺服器之間進行轉換。 如果您安裝 Server Core，並稍後決定使用桌面體驗伺服器，您應該執行全新安裝。
 
 **使用者介面︰** 命令提示字元
 
 **在本機安裝、設定、解除安裝伺服器角色：** 在命令提示字元使用 Windows PowerShell。
 
-**安裝、 設定、 解除安裝伺服器角色從遠端 Windows 用戶端電腦 （或安裝含有桌面體驗的伺服器）：** 使用伺服器管理員、 遠端伺服器管理工具 (RSAT)、 Windows PowerShell 或 Windows Admin Center。
+**安裝、 設定、 從遠端解除安裝伺服器角色，從 Windows 用戶端電腦 （或已安裝桌面體驗的伺服器）：** 利用伺服器管理員、 遠端伺服器管理工具 (RSAT)、 Windows PowerShell 或 Windows Admin Center.
 
 >[!NOTE]
 >
@@ -62,7 +62,7 @@ ms.locfileid: "8991795"
 **範例中可用的伺服器角色：**
 
 - Active Directory 憑證服務
-- Active Directory 網域服務
+- Active Directory Domain Services
 - DHCP 伺服器
 - DNS 伺服器
 - 檔案服務 (包括檔案伺服器資源管理員)
@@ -71,7 +71,7 @@ ms.locfileid: "8991795"
 - 列印和文件服務
 - 串流處理媒體服務
 - 網頁伺服器 (包括 ASP.NET 子集)
-- WindowsServer 更新伺服器
+- Windows Server 更新伺服器
 - Active Directory Rights Management Server
 - 路由及遠端存取伺服器和下列子角色：
 - 遠端桌面服務連線代理人
@@ -79,22 +79,22 @@ ms.locfileid: "8991795"
 - 虛擬化
 - 大量啟用服務
 
-不包含在 Server Core 中的角色，請參閱[角色、 角色服務和功能不在 Windows Server 的 Server Core](../administration/server-core/server-core-removed-roles.md)。
+針對不包含在 Server Core 角色，請參閱[角色、 角色服務和功能不在 Windows Server 的 Server Core](../administration/server-core/server-core-removed-roles.md)。
 
-## 在 Windows Server 2019 或 Windows Server 2016 上安裝
+## <a name="installing-on-windows-server-2019-or-windows-server-2016"></a>在 Windows Server 2019 或 Windows Server 2016 安裝
 
-如需一般安裝步驟和選項適用於 Windows Server （長期維護通道），請參閱[Windows Server 安裝與升級](installation-and-upgrade.md)。
+如需一般的安裝步驟和選項適用於 Windows Server （長時間詞彙維護通道），請參閱[Windows Server 安裝與升級](installation-and-upgrade.md)。
 
-## Windows Server （半年度管道） 上安裝
+## <a name="installing-on-windows-server-semi-annual-channel"></a>Windows Server （半年通道） 上安裝
 
-適用於 Windows Server （半年度管道） 的安裝步驟是和安裝舊版的 Windows Server 一樣 (從。ISO 映像），有下列例外：
+安裝適用於 Windows Server （半年通道） 的步驟完全一樣安裝舊版的 Windows Server (從。ISO 映像），但有下列例外狀況：
 - 不支援從先前的 Windows Server to Windows Server 版本 1709 升級。 永遠需要全新安裝。
-   這表示，當您從 Windows 電腦桌面執行 setup.exe，安裝體驗不允許升級選項 （呈現灰色）。
-- 適用於 Windows Server （半年度管道） 沒有評估版本
-- 沒有 OEM 或零售版。 Windows Server （半年度管道） 只能透過 「 軟體保證 」 或忠誠計畫取得授權。
+   這表示，當您從 Windows 電腦的桌面上執行 setup.exe，安裝程式體驗不允許 [升級] 選項 （會變成灰色）。
+- 沒有適用於 Windows Server （半年通道） 的評估版本
+- 沒有 OEM 或零售版。 透過軟體保證或忠誠度方案時，即可只獲得 Windows Server （半年通道）。
 
 若要取得 Windows Server 版本 1709，請參閱[Windows Server 版本 1709 簡介](get-started-with-1709.md)。
 
-若要取得 Windows Server 版本 1803年， [，](get-started-with-1803.md)請參閱介紹 Windows Server 版本 1803年。
+若要取得 Windows Server 1803 版，請參閱[Introducing Windows Server，版本 1803年](get-started-with-1803.md)。
 
-什麼是新的 Windows Server 中，版本 1809，請參閱[的 Windows Server 版本 1809年中的新功能](whats-new-in-windows-server-1809.md)
+若要查看最新的 Windows Server 版 1809，請參閱[What's New in Windows Server 版本 1809年](whats-new-in-windows-server-1809.md)

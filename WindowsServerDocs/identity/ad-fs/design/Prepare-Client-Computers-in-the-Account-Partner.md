@@ -1,7 +1,7 @@
 ---
 ms.assetid: cea6011d-3753-4b95-aaa5-38d4e97d6e42
-title: "準備 Client Account 合作夥伴在的電腦"
-description: 
+title: 在帳戶夥伴中準備用戶端電腦
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,27 +10,28 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 0c5bdcb0a80b15a1905109229ddd20ee642a8dd7
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868519"
 ---
-# <a name="prepare-client-computers-in-the-account-partner"></a>準備 Client Account 合作夥伴在的電腦
+# <a name="prepare-client-computers-in-the-account-partner"></a>在帳戶夥伴中準備用戶端電腦
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-Client 電腦準備存取 Active Directory 同盟服務 \(AD FS\) 聯盟應用程式的系統管理員的身分 account 合作夥伴組織中的最簡單方式是使用群組原則。 群組原則提供方便您發送特定的憑證，並設定所需的所有用於存取聯盟應用程式的 client 電腦聯盟。  
+最簡單的方式，讓系統管理員帳戶中合作夥伴組織準備用戶端電腦存取 Active Directory Federation Services \(AD FS\)同盟應用程式是使用群組原則。 群組原則提供便利的方式，讓您將同盟所需的特定憑證和設定，推入到將用來存取同盟應用程式的所有用戶端電腦。  
   
-使 client 電腦可以順暢地進行存取聯盟應用程式，不需要憑證提示或受信任的網站相關的提示，建議部署之前 AD FS 針對您在組織中，首先準備每個 client 的電腦。 請考慮使用群組原則來自動：  
+使您的用戶端電腦可以順暢地存取同盟應用程式，而不需要憑證提示或受信任的網站相關的提示，建議您先準備每部用戶端電腦，再將 AD FS 部署大致上您的組織。 請考慮使用群組原則來自動進行：  
   
--   Internet Explorer 每個 client 在電腦上設定信任 account 聯盟伺服器。  
+-   設定 Internet Explorer 信任的帳戶同盟伺服器，每個用戶端電腦上。  
   
-    如需詳細資訊，請查看[設定 Client 電腦信任 Account 聯盟伺服器](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)。  
+    如需詳細資訊，請參閱 [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)。  
   
--   安裝適當 account 聯盟伺服器、資源聯盟伺服器，與 Web 伺服器安全通訊端層 \(SSL\) 憑證 \（或相當於憑證鏈結該受信任的 root\）每個 client 電腦上。  
+-   安裝適當的帳戶同盟伺服器、 資源同盟伺服器和網頁伺服器安全通訊端層\(SSL\)憑證\(或對等項目憑證鏈結至信任的根\)上每個用戶端電腦。  
   
-    如需詳細資訊，請查看[Client 電腦使用群組原則來散發憑證](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md)。  
+    如需詳細資訊，請參閱 <<c0> [ 發佈的憑證，透過使用群組原則的用戶端電腦](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md)。  
   
 
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

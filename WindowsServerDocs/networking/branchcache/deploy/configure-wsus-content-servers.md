@@ -1,6 +1,6 @@
 ---
-title: 設定 Windows Server Update Services (WSUS) 內容伺服器
-description: 本主題是 BranchCache 部署節目表適用於 Windows Server 2016 的示範如何將 BranchCache 部署最佳化分公司 WAN 頻寬分散與裝載快取模式中的一部分。
+title: 設定 Windows Server Update Services (WSUS) 內容伺服器
+description: 本主題是 BranchCache 部署指南的 Windows Server 2016 中，示範如何以最佳化 WAN 頻寬使用量，在分公司的分散式和裝載式快取模式部署 BranchCache 的一部分。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,18 +8,19 @@ ms.topic: get-started-article
 ms.assetid: 9724aa8d-e4ae-404c-bee6-cef1534cd3ca
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8200a0905f7bc5c403288a22faece5f84eac8af9
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: e8576282be92f02daf716da82ea75eddc755ee5c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59873839"
 ---
-# <a name="configure-windows-server-update-services-wsus-content-servers"></a>設定 Windows Server Update Services (WSUS) 內容伺服器
+# <a name="configure-windows-server-update-services-wsus-content-servers"></a>設定 Windows Server Update Services (WSUS) 內容伺服器
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-安裝 BranchCache 功能，並開始 BranchCache 服務之後, 必須 WSUS 伺服器設定儲存在本機電腦上的 [更新檔案。 
+安裝 BranchCache 功能啟動 BranchCache 服務後，WSUS 伺服器必須設定儲存在本機電腦上的更新檔案。 
 
-當您設定 WSUS 伺服器以儲存在本機電腦上的 [更新檔案時，將更新檔案和中繼資料更新下載，並儲存直接在 WSUS 伺服器。 這樣可確保 BranchCache client 電腦，會收到 Microsoft product 更新檔案 WSUS 伺服器而不是直接從 Microsoft 網站更新。  
+當您設定 WSUS 伺服器，來儲存在本機電腦上的更新檔案時，會下載更新中繼資料和更新檔，並儲存直接在 WSUS 伺服器時。 這可確保 BranchCache 用戶端電腦接收 Microsoft 產品更新檔案，從 WSUS 伺服器，而不是直接從 Microsoft Update 網頁站台。  
   
-如需 WSUS 同步，請查看[更新同步設定](https://technet.microsoft.com/en-us/library/mt612311.aspx)  
+如需有關 WSUS 同步處理的詳細資訊，請參閱[更新同步處理設定](https://technet.microsoft.com/library/mt612311.aspx)  

@@ -1,5 +1,5 @@
 ---
-title: "搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾概觀"
+title: 搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾概觀
 ms.prod: windows-server-threshold
 ms.technology: storage-work-folders
 ms.topic: article
@@ -9,14 +9,15 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.openlocfilehash: 48c7d771c7ec75a4bc340608a96410ea388418e9
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59874619"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰概觀
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：總覽
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
 本節中的主題提供使用 Active Directory 同盟服務 (AD FS) 與 Web 應用程式 Proxy 進行工作資料夾部署的指示。 其設計旨在協助您對於已準備透過內部部署或網際網路開始使用工作資料夾的用戶端電腦，建立運作正常的完整工作資料夾設定。  
   
@@ -36,7 +37,7 @@ ms.lasthandoff: 10/17/2017
   
 -   Windows Server 2012 R2 中 Active Directory® Domain Services 樹系具有架構延伸，以支援您在使用多部檔案伺服器時，自動將電腦和裝置轉介到正確的檔案伺服器。 最好在樹系中啟用 DNS，不過這不一定必要。  
   
--   網域控制站︰已啟用 AD DS 角色的伺服器，並且已設定網域 (例如測試範例 contoso.com)。  
+-   網域控制站：已啟用，AD DS 角色，且已設定網域的伺服器 (如測試範例中，contoso.com)。  
   
     網域控制站需要至少執行 Windows Server 2012 R2，才能支援 Workplace Join 的裝置註冊。 如果您不想使用 Workplace Join，您可以在網域控制站上執行 Windows Server 2012。  
   
@@ -50,7 +51,7 @@ ms.lasthandoff: 10/17/2017
   
 若是我們在本指南所涵蓋的測試環境，您應該擁有下圖所示的拓撲。 電腦可以是實體電腦或虛擬機器 (VM)。 
   
-![圖中顯示網際網路、DMZ 和 Contoso 網路區段。 網際網路區段︰Client2；DMZ：WAP 伺服器；Contoso 區段︰工作資料夾伺服器、網域控制站、AD FS 伺服器和 Client1](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
+![圖中顯示網際網路、DMZ 和 Contoso 網路區段。 在網際網路片段中：Client2;在 DMZ 中： 為 WAP 伺服器在 Contoso 片段中：工作資料夾伺服器、 網域控制站，AD FS 伺服器，以及 Client1](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
 
 ## <a name="deployment-overview"></a>部署概觀  
 在此主題群組中，您將在測試環境中透過範例逐步設定 AD FS、Web 應用程式 Proxy 和工作資料夾。 元件會以此順序設定︰  
@@ -68,15 +69,15 @@ ms.lasthandoff: 10/17/2017
 ## <a name="deployment-steps"></a>部署步驟  
 若要使用 Windows Server 使用者介面執行部署，請遵循這些主題中的步驟操作︰  
   
--   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 1 設定 AD FS](deploy-work-folders-adfs-step1.md)  
+-   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 1： 設定 AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 2 AD FS 後續設定工作](deploy-work-folders-adfs-step2.md)  
+-   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 2 中，AD FS 設定後工作](deploy-work-folders-adfs-step2.md)  
   
--   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 3 設定工作資料夾](deploy-work-folders-adfs-step3.md)  
+-   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 3，工作資料夾設定](deploy-work-folders-adfs-step3.md)  
   
--   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾 - 步驟 4 設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
+-   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 4： 設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
   
--   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 5 設定用戶端](deploy-work-folders-adfs-step5.md)  
+-   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 5 中設定用戶端](deploy-work-folders-adfs-step5.md)  
 
 ## <a name="see-also"></a>另請參閱  
 [工作資料夾概觀](Work-Folders-Overview.md)  

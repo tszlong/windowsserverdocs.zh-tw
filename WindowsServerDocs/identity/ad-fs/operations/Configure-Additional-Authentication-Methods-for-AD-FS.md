@@ -1,52 +1,62 @@
 ---
 ms.assetid: ddfbbda3-30ca-4537-af12-667efc6f63ff
-title: "AD fs 中設定額外的驗證方法"
-description: 
+title: Configure Additional Authentication Methods for AD FS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 05/31/2017
+ms.date: 10/04/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 65baa6f94e1efa1fa337eab477b18f947cf0bb2d
-ms.sourcegitcommit: 36d7b1dfd7da8e9f303d007a628e76149de000f2
+ms.openlocfilehash: 73de8908677b3f74651b10c29ef2abe62e484694
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868409"
 ---
-# <a name="configure-additional-authentication-methods-for-ad-fs"></a>AD fs 中設定額外的驗證方法
+# <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure Additional Authentication Methods for AD FS
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-為了讓多因素驗證 (MFA)，您必須選取至少一個額外的驗證方法。 根據預設，在 Windows Server 2012 R2 的 Active Directory 同盟 Services (AD FS) 在您可以選取憑證驗證（亦即，智慧卡架構的驗證）做為額外的驗證方法。
+若要啟用多因素驗證 (MFA)，您必須選取至少一個其他驗證方法。 根據預設，在 Windows Server 2012 r2 中的 Active Directory Federation Services (AD FS) 您可以選取憑證驗證 （亦即，智慧卡為基礎的驗證） 作為其他驗證方法。
 
 > [!NOTE]
-> 如果您選擇憑證驗證，確保的智慧卡憑證已確實提供，而且有釘選的需求。
+> 如果您選取憑證驗證，請確定已經安全佈建智慧卡憑證，且具有 PIN 要求。
 
-您知道，Microsoft Azure 會提供類似在雲端中的功能嗎？ 深入了解[Microsoft Azure 的身分方案](http://aka.ms/m2w274)。<br /><br />Microsoft Azure 建立混合式身分方案：<br /> - [深入了解 Azure 多因素驗證。](http://aka.ms/ey6o9r)<br /> - [管理適用於單一樹系混合式環境使用雲端驗證身分。](http://aka.ms/g1jat8)<br /> - [[管理其他多因素驗證敏感的應用程式的風險。](http://aka.ms/kt1bbm)|
+您知道 Microsoft Azure 在雲端中提供類似的功能嗎？ 深入了解 [Microsoft Azure 身分識別解決方案](http://aka.ms/m2w274)。<br /><br />在 Microsoft Azure 中建立混合式身分識別解決方案：<br /> - [深入了解 Azure Multi-factor Authentication。](http://aka.ms/ey6o9r)<br /> - [管理單一樹系混合式環境，使用雲端驗證的身分識別。](http://aka.ms/g1jat8)<br /> - [透過機密應用程式的其他多因素驗證管理風險。](http://aka.ms/kt1bbm)
 
-## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Microsoft 和第三方額外的驗證方法
-您也可以設定，並讓 Microsoft 和第三方驗證方法 AD FS 在 Windows Server 2012 R2。 安裝和使用廣告 FS 註冊之後, 您可以執行 MFA 全球或每個--信賴驗證原則的一部分。
+## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Microsoft 和協力廠商其他驗證方法
+您也可以設定及啟用 Microsoft 和 Windows Server 2012 R2 中的 AD FS 中的第三方驗證方法。 一旦安裝並註冊與 AD FS，您可以強制執行 MFA 作為全域或每一位信賴的驗證原則的一部分。
 
-以下是 Microsoft 和第三方提供者 MFA 方案的字母清單目前可在 Windows Server 2012 R2 AD fs。
+以下按字母排序列出的 Microsoft 和協力廠商提供者，目前有 MFA 供應項目可用於 Windows Server 2012 R2 中的 AD FS。
 
-||||
-|-|-|-|
-|**提供者**|**提供**|**連結，以了解更多**|
-|Gemalto|Gemalto 身分和安全性服務|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|
-|inWebo 技術|inWebo 驗證企業服務|[inWebo 企業驗證](http://www.inwebo.com)|
-|登入連絡人|登入人 MFA API 連接器 ad FS 2012 R2（公用搶鮮版）|[https://www.loginpeople.com](https://www.loginpeople.com)|
-|Microsoft Corp.|Microsoft Azure MFA|[逐步解說指南：管理敏感的應用程式與其他多因素驗證風險](https://technet.microsoft.com/library/dn280946.aspx)（看到執行「步驟 3）|
-|RSA，EMC 的安全性區域|Microsoft Active Directory 同盟服務的 RSA SecurID 驗證代理程式|[Microsoft Active Directory 同盟服務的 RSA SecurID 驗證代理程式](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)|
-|SafeNet，Inc.|AD fs SafeNet 驗證服務 (SAS) 代理程式|[SafeNet 驗證服務：AD FS 代理設定指南](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)|
-|Swisscom|行動裝置版 ID 驗證服務和特徵碼服務|[行動裝置版 ID 驗證服務](http://swisscom.ch/mid)|
-|Symantec|Symantec 驗證和 ID Protection Service (VIP)|[Symantec 驗證和 ID Protection Service (VIP)](http://www.symantec.com/vip-authentication-service)|
+|提供者|供應項目|更多資訊的連結|
+|-|-|-| 
+|aPersona|aPersona Microsoft ADFS sso 的自適性 Multi-factor Authentication|[aPersona ASM ADFS 配接器](https://www.apersona.com/adfs)|
+|Duo 安全性|適用於 AD FS duo MFA 配接器|[適用於 AD FS duo 驗證](https://duo.com/docs/adfs)|
+|Gemalto|Gemalto Identity & Security Services|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|
+|inWebo Technologies|inWebo Enterprise Authentication service|[inWebo 企業驗證](http://www.inwebo.com)|
+|Login People|適用於 AD FS 2012 R2 的 Login People MFA API 連接器 (Public Beta)|[https://www.loginpeople.com](https://www.loginpeople.com)|
+|Microsoft Corp.|Microsoft Azure MFA|[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](https://technet.microsoft.com/library/dn280946.aspx) (請參閱步驟 3)|
+Mideye | Adfs 的 mideye 驗證提供者 | [使用 Microsoft Active Directory Federation Service 的 mideye 雙因素驗證](https://www.mideye.com/support/administrators/documentation/integration/microsoft-adfs/)|
+|Okta | Active Directory Federation services Okta MFA | [Okta MFA Active Directory federation Services (ADFS)](https://help.okta.com/en/prod/Content/Topics/integrations/adfs-okta-int.htm)|
+|一個身分識別| Starling 2FA AD FS|[Starling 2FA AD FS 配接器](https://www.oneidentity.com/products/starling-two-factor-authentication/)|
+|一個身分識別| Defender AD FS|[Defender AD FS 配接器](https://www.oneidentity.com/products/defender/)|
+|Ping 身分識別|適用於 AD FS PingID MFA 配接器|[適用於 AD FS PingID MFA 配接器](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_PingIDforADFSSSO.html)|
+|RSA, The Security Division of EMC|RSA SecurID Authentication Agent for Microsoft Active Directory Federation Services|[RSA SecurID 驗證代理程式，Microsoft Active Directory Federation services](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)|
+|SafeNet，Inc.|SafeNet Authentication Service (SAS) Agent for AD FS|[SafeNet Authentication Service:AD FS Agent Configuration Guide](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)|
+|SecureMFA|SecureMFA OTP 提供者| [ADFS 多因素驗證提供者](https://www.securemfa.com/)|
+|Swisscom|Mobile ID Authentication Service and Signature Services|[行動裝置的識別碼驗證服務](http://swisscom.ch/mid)|
+|Symantec|Symantec Validation and ID Protection Service (VIP)|[Symantec 驗證和識別碼保護服務 (VIP)](http://www.symantec.com/vip-authentication-service)|
+|Trusona|基本 (無密碼的 MFA) 和高階主管 （基本 + 身分識別校訂）| [Trusona 多重要素驗證](https://www.trusona.com/solution-overview/)|
 
-## <a name="custom-authentication-method-for-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 AD FS 自訂的驗證方法
-現在，我們會提供 AD FS 在 Windows Server 2012 R2 建置您自己的自訂的驗證方法的指示操作。 如需詳細資訊，請查看[適用於在 Windows Server 2012 R2 AD FS 建置自訂驗證方法](https://go.microsoft.com/fwlink/?LinkID=511980)。
 
-## <a name="see-also"></a>也了
-[管理其他多因素驗證敏感的應用程式的風險](Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+## <a name="custom-authentication-method-for-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 中 AD FS 的自訂驗證方法
+我們現在會提供相關指示，以便針對 Windows Server 2012 R2 中的 AD FS 建立自己的自訂驗證方法。 如需詳細資訊，請參閱 [針對 Windows Server 2012 R2 中的 AD FS 建立自訂驗證方法](https://go.microsoft.com/fwlink/?LinkID=511980)。
+
+## <a name="see-also"></a>另請參閱
+[透過機密應用程式的其他多因素驗證管理風險](Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 
 

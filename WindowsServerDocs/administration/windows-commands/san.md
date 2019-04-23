@@ -1,0 +1,52 @@
+---
+title: San
+description: '適用於 Windows 命令主題 * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: d57c2df1-eb82-4b81-b8cd-e30564c6a929
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: a999254507de2d90494c1acfb906d4bcf26168aa
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872499"
+---
+# <a name="san"></a>San
+
+>適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+
+顯示或設定作業系統的存放區域網路 (san) 原則。
+> [!NOTE]
+> 此命令僅適用於 Windows 7 和 Windows Server 2008 R2。
+
+## <a name="syntax"></a>語法
+```
+san [policy={onlineAll | offlineAll | offlineShared}] [noerr]
+```
+### <a name="parameters"></a>參數
+|參數|描述|
+|-------|--------|
+|原則 = {onlineAll &#124; offlineAll &#124; offlineShared}]|設定目前開機的作業系統的 san 原則。 San 原則會決定新探索到的磁碟是否上線或維持離線狀態，以及它會變成讀取/寫入，或維持唯讀狀態。 將磁碟離線時，可讀取的磁碟配置，但沒有任何磁碟區裝置顯示隨插即用。 這表示沒有檔案系統，可掛接的磁碟上。 當磁碟在線上時，一或多個磁碟區裝置會安裝磁碟。 每個參數的說明如下：<br /><br />-   **onlineAll**。 指定所有新發現的磁碟都會處於線上並且成為讀取/寫入。 **重要：**   指定**onlineAll**共用磁碟的伺服器上可能會導致資料損毀。 因此，您不應該設定此原則，如果在伺服器之間共用磁碟，則除非伺服器是叢集的一部分。<br />-   **offlineAll**。 指定所有新發現的磁碟，但啟動磁碟將會離線 andread 專用的預設值。<br />-   **offlineShared**。 指定所有新發現不是存放在共用匯流排 （例如 SCSI 和 iSCSI） 的磁碟上線，並成為可讀寫。 會保持離線的磁碟會處於唯讀模式的預設值。<br /><br />如需詳細資訊，請參閱 < [VDS_san_POLICY 列舉](https://go.microsoft.com/fwlink/?LinkId=203815)(https://go.microsoft.com/fwlink/?LinkId=203815)。|
+|noerr|用於僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|
+## <a name="remarks"></a>備註
+-   如果命令指定不含任何參數，則會顯示目前的 san 原則。
+## <a name="BKMK_Examples"></a>範例
+若要檢視目前的原則，請輸入：
+```
+san
+```
+若要使所有新發現的磁碟，除了開機磁片，離線，並為唯讀，根據預設，輸入：
+```
+san policy=offlineAll
+```
+## <a name="additional-references"></a>其他參考資料
+-   [命令列語法關鍵](command-line-syntax-key.md)

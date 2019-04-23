@@ -7,19 +7,19 @@ ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
-Keywords: Storage Spaces Direct, S2D, maintenance
+Keywords: 儲存空間直接存取, S2D, 維護
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
 ms.openlocfilehash: 96ae0ad0d1def12ab68466f0a9ae60d0afcc2c17
-ms.sourcegitcommit: e73fbe1046a8bd2bf4f24ccffc11465ad8dfab1d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992521"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871219"
 ---
-# 將儲存空間直接存取伺服器離線以進行維護
+# <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>將儲存空間直接存取伺服器離線以進行維護
 
-> 適用於： Windows Server 2019、 Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016
 
 此主題說明如何使用 [直接儲存空間](storage-spaces-direct-overview.md) 正確地重新啟動或關閉伺服器。
 
@@ -30,7 +30,7 @@ ms.locfileid: "8992521"
    > [!IMPORTANT]
    > 若要在儲存空間直接存取叢集中安裝更新，請使用叢集感知更新 (CAU)，它會自動執行此主題中的程序，因此您不需要在安裝更新時手動執行。 如需詳細資訊，請參閱 [叢集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)。
 
-## 確認伺服器是否可安全離線。
+## <a name="verifying-its-safe-to-take-the-server-offline"></a>確認伺服器是否可安全離線。
 
 將伺服器離線以進行維護之前，確認所有磁碟區皆狀況良好。
 
@@ -55,7 +55,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 確認每個磁碟區 (虛擬磁碟) 的 **\[狀態\]** 欄皆顯示 **\[線上\]**。
 
-## 暫停和清空伺服器
+## <a name="pausing-and-draining-the-server"></a>暫停和清空伺服器
 
 在重新啟動或關閉伺服器之前，先暫停和清空任何角色，例如在其中執行的虛擬機器。 這也可以讓儲存空間直接存取能正常清除和認可資料，以確保該伺服器上執行的任何應用程式皆能完全掌握關機動作。
 
@@ -72,14 +72,14 @@ Suspend-ClusterNode -Drain
 
 ![Pause-Drain](media/maintain-servers/pause-drain.png)
 
-所有虛擬機器都將開始即時移轉至叢集中的其他伺服器。 這可能需要幾分鐘的時間。
+所有虛擬機器都將開始即時移轉至叢集中的其他伺服器。 這可能需要數分鐘。
 
    > [!NOTE]
    > 當您正確暫停並清空叢集結點時，Windows 會執行自動安全檢查以確保該程序可繼續執行。 如果磁碟區狀況不良，它將會停止，並提醒您繼續執行並不安全。
 
 ![Safety-Check](media/maintain-servers/safety-check.png)
 
-## 正在關閉伺服器
+## <a name="shutting-down-the-server"></a>正在關閉伺服器
 
 伺服器完成清空之後，將會在容錯移轉叢集管理員和 PowerShell 中顯示為 **\[已暫停\]**。
 
@@ -97,9 +97,9 @@ MyVolume2    Mirror                Incomplete        Warning      True          
 MyVolume3    Mirror                Incomplete        Warning      True           1 TB
 ```
 
-當節點會關閉，或從開始/停止叢集節點上服務，並應該不會造成問題時，不完整或降低操作狀態] 是正常現象。 所有的磁碟區仍保持連線且可存取。
+節點正在關閉，或開始/停止叢集服務在節點上，並應該不會造成問題時，未完成 」 或 「 已降級作業的狀態是正常現象。 所有的磁碟區仍保持連線且可存取。
 
-## 繼續執行伺服器
+## <a name="resuming-the-server"></a>繼續執行伺服器
 
 當您準備讓伺服器開始再次裝載工作負載時，請繼續執行。
 
@@ -119,9 +119,9 @@ Resume-ClusterNode –Failback Immediate
 
 ![Resume-Failback](media/maintain-servers/resume-failback.png)
 
-## 等候存放裝置重新同步
+## <a name="waiting-for-storage-to-resync"></a>等候存放裝置重新同步
 
-當伺服器繼續執行，發生時無法使用的任何新寫入需要重新同步。 此動作會自動執行。 使用智慧型變更追蹤時，您不需要掃描或同步處理*所有*資料，只需要針對變更部分執行這些動作。 此程序會進行調整以減少對於生產工作負載造成的影響。 根據暫停時間的長短以及寫入的新資料數量，系統可能需要數分鐘完成。
+當伺服器恢復時，無法使用時所發生的任何新寫入需要重新同步處理。 此動作會自動執行。 使用智慧型變更追蹤時，您不需要掃描或同步處理*所有*資料，只需要針對變更部分執行這些動作。 此程序會進行調整以減少對於生產工作負載造成的影響。 根據暫停時間的長短以及寫入的新資料數量，系統可能需要數分鐘完成。
 
 您必須等候重新同步完成才能將從叢集中的其他伺服器離線。
 
@@ -167,24 +167,24 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 您現在可以放心地暫停並重新啟動叢集中的其他伺服器。
 
-## 如何更新離線儲存空間直接存取的節點
-快速使用下列步驟，以路徑您儲存空間直接存取的系統。 它涉及排程維護期間，並在系統向下的修補功能。 如果有重大安全性更新，您需要套用快速或您可能需要確保在您的維護期間修補完成時，這個方法可能會為您。 此程序會帶來向下儲存空間直接存取叢集、 修補程式，並將它帶到所有最多一次。 取捨的是裝載資源的停機時間。
+## <a name="how-to-update-storage-spaces-direct-nodes-offline"></a>如何更新儲存空間直接存取節點離線
+快速使用下列步驟，以路徑儲存空間直接存取系統。 它包含排程的維護期間和關閉系統進行修補。 如果沒有快速地套用您所需要的重大安全性更新，或您可能需要確保修補完成維護視窗中，這個方法可能適合您。 此程序會關閉儲存空間直接存取叢集、 修補程式，並註冊一次將它帶。 缺點是裝載的資源的停機時間。
 
-1. 規劃您的維護期間。
-2. 離線虛擬磁碟。
-3. 停止離線儲存集區的叢集。 執行**停止叢集**cmdlet，或使用容錯移轉叢集管理員停止叢集。
-4. 將叢集服務**已停用**Services.msc 中每個節點上。 如此可防止叢集服務啟動時正在修補。
-5. 適用於 Windows Server 的累積更新，以及任何必要維護堆疊更新的所有節點。 （您可以在此同時，等待，因為叢集向下不是需要更新的所有節點）。  
-6. 重新啟動節點上，並確保所有項目看起來很美觀。
-7. 將叢集服務回到 [**自動**設定每個節點上。
-8. 啟動該叢集。 執行 **[開始] 畫面叢集**cmdlet，或使用容錯移轉叢集管理員。 
+1. 規劃維護期間。
+2. 將虛擬磁碟離線。
+3. 停止叢集，以讓存放集區離線。 執行**停止叢集**cmdlet 或使用容錯移轉叢集管理員來停止叢集。
+4. 將叢集服務設定為**已停用**中每個節點上的 Services.msc。 這可防止叢集服務啟動時所修正的項目。
+5. 適用於 Windows Server 累計更新以及任何必要的所有節點的服務堆疊更新。 （您可以在此同時，等候叢集已關閉，因為不需要更新所有節點）。  
+6. 重新啟動節點，並確定一切都沒問題。
+7. 設定叢集服務將會回到**自動**每個節點上。
+8. 啟動叢集。 執行**啟動叢集**cmdlet 或使用 [容錯移轉叢集管理員]。 
 
-   為它提供幾分鐘的時間。  請確定儲存集區狀況良好。
-9. 讓虛擬磁碟重新上線。
-10. 監視執行**Get 磁碟區**和**Get-VirtualDisk** cmdlet 的虛擬磁碟的狀態。
+   稍候幾分鐘。  請確定儲存體集區的狀況良好。
+9. 將帶上線的虛擬磁碟。
+10. 監視執行的虛擬磁碟的狀態**Get-volume**並**Get-virtualdisk** cmdlet。
 
 
-## 請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
 - [叢集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)

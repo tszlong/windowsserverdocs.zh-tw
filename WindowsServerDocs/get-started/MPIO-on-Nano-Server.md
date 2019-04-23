@@ -1,5 +1,5 @@
 ---
-title: Nano 伺服器上的 MPIO
+title: Nano Server 上的 MPIO
 description: 在 Nano 上設定多重路徑 I/O (MPIO)
 ms.prod: windows-server-threshold
 ms.service: na
@@ -13,15 +13,15 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d9ebfe72744ed26239587ef297b06361233425
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081989"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59874039"
 ---
-# <a name="mpio-on-nano-server"></a>Nano 伺服器上的 MPIO
+# <a name="mpio-on-nano-server"></a>Nano Server 上的 MPIO
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 

@@ -1,6 +1,6 @@
 ---
-title: "適用於帳號受管理的服務的新功能"
-description: "Windows Server 安全性"
+title: What's New for Managed Service Accounts
+description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,48 +14,49 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: cac55d04a40c84ce160eb3883d6095a7db0ef3be
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872179"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>功能與 #39; s 帳號受管理的服務的新工具
+# <a name="what39s-new-for-managed-service-accounts"></a>什麼&#39;的新的受管理的服務帳戶
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題適用於 IT 專業人員描述功能變更管理服務帳號導入的群組管理服務 Account (gMSA) 在 Windows Server 2012 和 Windows 8 中使用。
+本主題適用於 IT 專業人員的功能，受管理的服務帳戶群組受控服務帳戶 (gMSA) （Windows Server 2012 和 Windows 8 中引進，描述所做的變更。
 
-受管理的服務 account 的設計目的是提供服務及 Windows 服務和分享他們自己的網域帳號，而不需要手動管理所有的這些帳號密碼管理員 IIS 應用程式集區的工作。 完全受管理的核對提供管理自動密碼。
+受管理的服務帳戶主要用於提供服務與工作，例如 Windows 服務和 IIS 應用程式集區，以共用自己的網域帳戶，同時讓系統管理員不需手動管理這些帳戶的密碼。 這是一個提供自動密碼管理的受管理的網域帳戶。
 
-## <a name="versions"></a>管理服務帳號，在 Windows Server 2012 和 Windows 8 中的新功能
-下列描述在 Windows Server 2012 和 Windows 8 中的 MSA 做哪些功能變更。
+## <a name="versions"></a>什麼是 Windows Server 2012 和 Windows 8 中的受控服務帳戶的新功能
+以下說明的功能變更已對 Windows Server 2012 和 Windows 8 中的 MSA。
 
-### <a name="group-managed-service-accounts"></a>帳號群組受管理的服務
-核對網域中的伺服器設定之後，client 電腦就可以驗證，並連接到該服務。 之前，只有兩個 account 類型所提供的身分而不需要密碼管理。 但這些 account 類型限制：
+### <a name="group-managed-service-accounts"></a>群組受管理的服務帳戶
+在網域中為伺服器設定網域帳戶時，用戶端電腦可以驗證並連接至該服務。 之前只有兩種帳戶類型在不需要密碼管理的情況下提供身分識別。 但是這些帳戶類型有所限制：
 
--   電腦 account 限於網域伺服器，電腦受密碼
+-   電腦帳戶限制為一個網域伺服器，而且密碼受到電腦管理。
 
--   管理的服務 Account 受限於網域伺服器，並電腦管理密碼。
+-   受管理的服務帳戶限制為一個網域伺服器，而且密碼受到電腦管理。
 
-無法分享這些帳號跨多個系統。 因此，您必須定期維持為每個服務帳號，以避免垃圾的密碼到期每個系統。
+這些帳戶無法跨多個系統進行共用。 因此，您必須定期維護每個系統上的每個服務的帳戶，以防不必要的密碼過期狀況。
 
-**這項變更新增值為何？**
+**這個變更增加了什麼價值？**
 
-管理服務 Account 群組解決了這個問題，由於由 Windows Server 2012 網域控制站的密碼，並且可以擷取透過多個 Windows Server 2012 系統。 這將最小化藉由 Windows 處理密碼管理這些帳號的服務 account 管理負擔。
+群組受控服務帳戶會解決此問題，因為帳戶密碼由 Windows Server 2012 網域控制站管理，且可以擷取多個 Windows Server 2012 的系統。 這允許 Windows 處理這些帳戶的密碼管理，將服務帳戶的管理負擔降至最低。
 
-**有哪些方式各不相同？**
+**有哪些不同？**
 
-在電腦上可從一個伺服器管理執行 Windows Server 2012 或 Windows 8，可以建立和管理服務控制管理員，以便在許多執行個體的服務，例如部署伺服器陣列，透過 MSA 群組。 工具與公用程式，您用來管理受管理的服務，例如 IIS 應用程式集區管理員帳號，可以用於管理服務帳號群組。 網域系統管理員可以委派服務的系統管理員，可以管理整個週期管理服務 Account 或群組管理服務 Account 的服務管理。 現有 client 的電腦無法驗證到任何這類的服務，而不需要知道他們正在進行驗證的服務執行個體。
+在電腦上執行 Windows Server 2012 或 Windows 8 中，群組 MSA 可以建立和管理透過服務控制管理員中，如此多的執行個體的服務，例如透過伺服器陣列中，部署可從一部伺服器。 您用來管理受管理的服務帳戶的工具和公用程式，例如 IIS 應用程式集區管理員，可以搭配群組受管理的服務帳戶使用。 網域管理員可以將服務管理委派給服務管理員，以管理受管理的服務帳戶或群組受管理的服務帳戶的整個週期。 現有的用戶端電腦將能夠向任何這種服務進行驗證，而不需要知道它們向哪個服務執行個體進行驗證。
 
-### <a name="interoperability"></a>移除或已取代功能
-針對 Windows Server 2012、 Windows PowerShell cmdlet 管理群組管理服務帳號而伺服器管理服務帳號預設值。
+### <a name="interoperability"></a>已移除或過時的功能
+Windows Server 2012 中，Windows PowerShell cmdlet 預設為管理群組受控服務帳戶而非伺服器受管理服務帳戶。
 
-## <a name="see-also"></a>也了
+## <a name="see-also"></a>另請參閱
 
--   [群組多媒體受管理的服務帳號概觀](group-managed-service-accounts-overview.md)
+-   [群組受管理的服務帳戶概觀](group-managed-service-accounts-overview.md)
 
--   [Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)
+-   [Active Directory 網域服務概觀](active-directory-domain-services-overview.md)
 
--   [了解受管理的服務帳號:、 實作最佳做法，和疑難排解](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [受管理的服務帳戶：了解、 實作、 最佳做法和疑難排解](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

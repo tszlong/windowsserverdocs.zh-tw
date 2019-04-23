@@ -1,37 +1,38 @@
 ---
 ms.assetid: 2a25bf86-a8ec-4b1a-9cbb-924d5b574481
-title: "建立網域設計"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 建立網域設計
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 97e5877c287f2ade51211aa84a33643bfb53aa11
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 5b592f791245312d43fd2edc7b6d1e85deccc75d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868229"
 ---
 # <a name="creating-a-domain-design"></a>建立網域設計
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-建立網域設計的樹系的樹系擁有者負責。 建立網域設計包含函式檢查複寫需求和您的網路基礎結構，然後建立網域結構，讓 Active Directory Domain Services (AD DS) 的現有容量最有效的方式。 網域用於磁碟分割 directory，這樣可以散發和管理有效率企業 directory 中的資訊。 您的網域設計的目標是網路的放到最大的 Active Directory 同時確保複寫複寫拓撲未使用也有多少可用的網路的頻寬，並不會干擾每天操作您效率。  
+樹系擁有者會負責建立網域樹系設計的。 建立網域設計牽涉到函式檢查複寫需求和現有的網路基礎結構，然後再建立 啟用 Active Directory 網域服務 (AD DS) 網域結構的容量，以最有效率的方式。 網域會用來分割目錄，以便可以發佈並有效率地管理整個企業目錄中的資訊。 針對您網域的設計目標是網路的將 Active Directory 複寫拓撲，同時確保複寫不會使用太多的可用網路頻寬，並不會干擾您的每日作業的效率最大化。  
   
-## <a name="in-this-section"></a>在本區段中  
+## <a name="in-this-section"></a>本節內容  
   
--   [審查網域模型](../../ad-ds/plan/Reviewing-the-Domain-Models.md)  
+-   [檢閱網域模型](../../ad-ds/plan/Reviewing-the-Domain-Models.md)  
   
--   [判斷網域所需的數目](../../ad-ds/plan/Determining-the-Number-of-Domains-Required.md)  
+-   [判斷所需的網域數目](../../ad-ds/plan/Determining-the-Number-of-Domains-Required.md)  
   
--   [判斷是否升級現有的網域或部署新的網域](../../ad-ds/plan/Determining-Whether-to-Upgrade-Existing-Domains-or-Deploy-New-Domains.md)  
+-   [決定是否要升級現有的網域，或部署新的網域](../../ad-ds/plan/Determining-Whether-to-Upgrade-Existing-Domains-or-Deploy-New-Domains.md)  
   
 -   [指派網域名稱](../../ad-ds/plan/Assigning-Domain-Names.md)  
   
--   [選取 [樹系根網域](../../ad-ds/plan/Selecting-the-Forest-Root-Domain.md)  
+-   [選取樹系根網域](../../ad-ds/plan/Selecting-the-Forest-Root-Domain.md)  
   
 
 

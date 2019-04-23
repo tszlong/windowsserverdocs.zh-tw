@@ -1,6 +1,6 @@
 ---
-title: "加入 Launchpad（Macintosh 作業系統）的最上層類型"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 將頂層類別新增至啟動列 (Macintosh 作業系統)
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,18 +13,19 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: ae4eb5943d37b4a9d3b554af28cb425420782cf8
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869959"
 ---
-# <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>加入 Launchpad（Macintosh 作業系統）的最上層類型
+# <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>將頂層類別新增至啟動列 (Macintosh 作業系統)
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-您可以加入 Launchpad 執行 Macintosh 作業系統的電腦上的最上層的類型。 若要建立加入的最上層分類 Launchpad 增益集，您可以使用從這個頁面及使用方法主題的資訊的組合：新增工作和 Launchpad 分類嗎？在[Windows Server 方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。  
+您可以將頂層類別新增至執行 Macintosh 作業系統之電腦上的啟動列。 若要建立可新增頂層類別的啟動列增益集，您可以使用從這個頁面，然後使用說明主題的資訊的組合：將工作和類別新增至啟動列嗎？在  [Windows Server 解決方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。  
   
- 下例示範如何，您可以指定.launchpad 檔案中的最上層分類您 Launchpad 項目：  
+ 下列範例顯示如何將啟動列項目指定為 .launchpad 檔案中的頂層類別：  
   
 ```  
   
@@ -39,10 +40,10 @@ ms.lasthandoff: 12/12/2017
 </LaunchPad>  
 ```  
   
- 將最上層分類的項目，明細項目的編號屬性必須」Microsoft.Launchpad.HomeCategory」。  
+ 為了讓項目成為頂層類別，Category 元素的 Id 屬性必須是 "Microsoft.Launchpad.HomeCategory"。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)

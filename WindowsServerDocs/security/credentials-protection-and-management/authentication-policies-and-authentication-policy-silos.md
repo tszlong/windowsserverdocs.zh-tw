@@ -1,6 +1,6 @@
 ---
-title: "驗證原則和驗證原則筒倉"
-description: "Windows Server 安全性"
+title: 驗證原則和驗證原則定址接收器
+description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,236 +14,237 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 460837c79c0e0d2c48331ddaaffcd118fd16ebc1
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870609"
 ---
-# <a name="authentication-policies-and-authentication-policy-silos"></a>驗證原則和驗證原則筒倉
+# <a name="authentication-policies-and-authentication-policy-silos"></a>驗證原則和驗證原則定址接收器
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題適用於 IT 專業人員描述驗證原則筒倉和只這些筒倉帳號的原則。 它也會解釋限制帳號的範圍如何使用驗證原則。
+本主題適用於 IT 專業人員，說明驗證原則定址接收器以及限制這些定址接收器帳戶的原則。 它也會說明驗證原則如何用來限制帳戶的範圍。
 
-驗證原則筒倉和隨附原則提供包含高權限認證系統只所選的使用者、 電腦，或服務相關的方式。 筒倉可以定義，並使用 Active Directory 管理中心和 Active Directory Windows PowerShell cmdlet 管理在 Active Directory Domain Services (AD DS)。
+驗證原則定址接收器和伴隨的原則提供一個方法，將高權限認證限制在只與選取的使用者、電腦或服務相關的系統。 定址接收器可以定義和使用 Active Directory 管理中心和 Active Directory Windows PowerShell cmdlet 來管理 Active Directory 網域服務 (AD DS) 中。
 
-驗證原則筒倉是的容器的系統管理員可以指定帳號，電腦帳號，並帳號服務。 帳號的設定然後受驗證原則已經套用至該容器。 這降低需要系統管理員存取資源個人帳號，並可防止惡意使用者透過認證竊取存取其他資源。
+驗證原則定址接收器是一種容器，系統管理員可以對其指派使用者帳戶、電腦帳戶和服務帳戶。 然後便可使用套用至該容器的驗證原則來管理帳戶的集合。 這可減少系統管理員追蹤個別帳戶對於資源的存取，並可協助防止惡意使用者透過竊取認證來存取其他資源。
 
-在 Windows Server 2012 R2 推出的功能可讓您建立驗證原則筒倉，裝載高權限使用者的設定。 然後您可以指定容器此驗證原則特殊權限的帳號，可用於網域限制。 當帳號保護使用者安全性群組中，其他控制項會套用，例如專屬使用 Kerberos 通訊協定。
+在 Windows Server 2012 R2 中引進的功能可讓您建立驗證原則定址接收器，用以裝載一組高權限使用者。 然後您可以指派這個容器的驗證原則，限制網域中使用權限帳戶的位置。 當帳戶屬於 Protected Users 安全性群組時，會套用其他控制項，例如獨佔使用 Kerberos 通訊協定。
 
-這些功能，您可以限制高價值的主機的高價值 account 使用量。 例如，您可以建立新的樹系的系統管理員筒倉包含企業版、 架構，以及網域系統管理員。 然後，讓密碼，以及從系統網域控制站和網域系統管理員主機以外的智慧卡驗證會失敗，您可能會設定筒倉驗證原則的。
+您可以使用這些功能，限制高價值帳戶只能用於高價值主機。 例如，您可以建立新的樹系系統管理員定址接收器，其中包含企業、結構描述以及網域系統管理員。 之後您便可以使用驗證原則設定定址接收器，使得網域控制站及網域系統管理員主控台以外的系統，其密碼和智慧卡驗證都會失敗。
 
-適用於驗證原則筒倉和驗證原則設定的相關資訊，請查看[設定保護帳號如何](how-to-configure-protected-accounts.md)。
+如需設定驗證原則定址接收器和驗證原則的相關資訊，請參閱[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)。
 
-### <a name="about-authentication-policy-silos"></a>關於驗證原則筒倉
-驗證原則筒倉控制哪些帳號會受到筒倉和定義驗證原則套用到的成員。 您可以建立筒倉根據您的組織的需求。 筒倉的 Active Directory 物件的使用者、 電腦及服務在下表中的架構所定義。
+### <a name="about-authentication-policy-silos"></a>關於驗證原則定址接收器
+驗證原則定址接收器控制受到定址接收器限制的帳戶，並定義要套用至成員的驗證原則。 您可以根據組織的需求建立定址接收器。 定址接收器是使用者、電腦及服務的 Active Directory 物件，由下表中結構描述所定義。
 
-**Active Directory 架構的驗證原則筒倉**
+**驗證原則定址接收器的 active Directory 架構**
 
 |顯示名稱|描述|
 |--------|--------|
-|驗證原則筒倉|這個課程的執行個體定義驗證原則和相關的行為，適用於已指派的使用者、 電腦及服務。|
-|驗證原則筒倉|本等級容器可包含驗證原則筒倉物件。|
-|驗證原則筒倉執行|指定驗證原則筒倉是否執行。<br /><br />不執行，預設的原則時稽核模式。 專活動，表示可能成功和失敗，但保護不會套用至系統。|
-|指派的驗證原則筒倉 Backlink|這是屬性返回 msDS-AssignedAuthNPolicySilo 的連結。|
-|驗證原則筒倉成員|指定 AuthNPolicySilo 来指派的原則。|
-|驗證原則筒倉成員 Backlink|這是屬性返回 msDS-AuthNPolicySiloMembers 的連結。|
+|驗證原則定址接收器|此類別的執行個體定義指派的使用者、電腦及服務的驗證原則和相關的行為。|
+|驗證原則定址接收器|此類別的容器可以包含驗證原則定址接收器物件。|
+|強制執行驗證原則定址接收器|指定是否要強制執行驗證原則定址接收器。<br /><br />不強制執行時，原則預設處於稽核模式。 會產生表示可能成功和失敗的事件，但是不會在系統套用保護。|
+|指派的驗證原則定址接收器返回連結|這個屬性是 msDS-AssignedAuthNPolicySilo 的返回連結。|
+|驗證原則定址接收器成員|指定要指派給 AuthNPolicySilo 的主體。|
+|驗證原則定址接收器成員返回連結|這個屬性是 msDS-AuthNPolicySiloMembers 的返回連結。|
 
-驗證原則筒倉可以使用的 Active Directory 系統管理主控台 」 或 「 Windows PowerShell 來設定。 如需詳細資訊，請查看[設定保護帳號如何](how-to-configure-protected-accounts.md)。
+使用 Active Directory 管理主控台或 Windows PowerShell 可以設定驗證原則定址接收器。 如需詳細資訊，請參閱[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)。
 
 ### <a name="about-authentication-policies"></a>關於驗證原則
-驗證原則定義 Kerberos 通訊協定票證授與票證 (TGT) 期間屬性和驗證存取控制項條件帳號類型。 原則建置，以及控制稱為 [驗證原則筒倉 AD DS 容器。
+驗證原則定義帳戶類型的 Kerberos 通訊協定票證授與票證 (TGT) 的存留期屬性以及驗證存取控制條件。 此原則為基礎，並控制稱為驗證原則定址接收器的 AD DS 容器。
 
-驗證原則控制下列動作：
+驗證原則控制下列項目：
 
--   適用於帳號，它會設定為非儲值 TGT 期間。
+-   帳戶的 TGT 存留期，設定為不可更新。
 
--   帳號裝置需要使用密碼或憑證登入符合的條件。
+-   裝置帳戶需要符合的條件，才能使用密碼或憑證登入。
 
--   使用者和裝置需要驗證服務執行的一部分 account 符合的條件。
+-   使用者和裝置需要符合的條件，才能向屬於帳戶中部分執行的服務進行驗證。
 
-Active Directory account 類型判斷播報來電者的角色為下列其中一個動作：
+Active Directory 帳戶類型會決定呼叫者的角色，為下列其中一項：
 
 -   **使用者**
 
-    使用者必須，預設會嘗試使用 NTLM 驗證拒絕的受保護的使用者安全性群組成員。
+    使用者應該一律是 Protected Users 安全性群組的成員，它預設會拒絕使用 NTLM 進行驗證的嘗試。
 
-    您可以設定較短的值帳號 TGT 期間或限制的使用者 account 可以登入的裝置設定原則。 豐富運算式可以在控制使用者，他們的裝置需要驗證服務符合的條件驗證原則設定。
+    原則可以設定使用者帳戶的 TGT 存留期較短的值，或限制的使用者帳戶可以登入的裝置設定。 豐富的運算式可以控制使用者和他們的裝置必須向服務符合準則的驗證原則中設定。
 
-    如需詳細資訊請查看[受保護的使用者安全性群組](protected-users-security-group.md)。
+    如需詳細資訊，請參閱 [Protected Users 安全性群組](protected-users-security-group.md)。
 
 -   **服務**
 
-    獨立管理服務帳號，受管理的群組服務帳號或衍生帳號的所用的服務的這兩種類型的自訂 account 物件。 原則可以設定的裝置存取控制項條件，可用來管理的服務 account 認證限制的 Active Directory 身分特定裝置。 服務不應保護使用者安全性群組成員因為所有收到的驗證將會失敗。
+    將會使用獨立受管理的服務帳戶、群組受管理的服務帳戶，或衍生自這兩種服務帳戶類型的自訂帳戶物件。 原則可以設定裝置的存取控制條件，用來限制到特定裝置的 Active Directory 身分識別的受管理的服務帳戶認證。 服務一律不應該是 Protected Users 安全性群組的成員，因為所有連入驗證皆會失敗。
 
 -   **電腦**
 
-    使用電腦 account 物件或衍生從電腦 account 物件自訂 account 物件。 原則可以設定存取控制項條件，以便驗證使用者及裝置屬性 account 所需的。 電腦一律不應該保護使用者安全性群組成員因為所有收到的驗證將會失敗。 根據預設，取消所嘗試使用 NTLM 驗證。 適用於電腦帳號不應該設定 TGT 期間。
+    將會使用電腦帳戶物件或衍生自電腦帳戶物件的自訂帳戶物件。 原則可以根據使用者和裝置屬性，設定允許驗證帳戶所需的存取控制條件。 電腦一律不應該是 Protected Users 安全性群組的成員，因為所有連入驗證皆會失敗。 預設會拒絕使用 NTLM 進行驗證的嘗試。 電腦帳戶不應該設定 TGT 存留期。
 
 > [!NOTE]
-> 很可能不相關的原則，以驗證原則筒倉帳號一組設定驗證原則。 當您有保護單一帳號，您可以使用此策略。
+> 可以設定一組帳戶的驗證原則，而不將原則與驗證原則定址接收器關聯。 當您需要保護單一帳戶時，可以使用此策略。
 
-**Active Directory 架構的驗證原則**
+**驗證原則的 active Directory 架構**
 
-下表中的結構描述定義使用者、 電腦及服務的 Active Directory 物件的原則。
+使用者、電腦及服務的 Active Directory 物件的原則是由下表中結構描述來定義。
 
-|輸入|顯示名稱|描述|
+|類型|顯示名稱|描述|
 |----|--------|--------|
-|原則|驗證原則|這個課程的執行個體定義指派主體驗證原則的行為。|
-|原則|驗證原則|本等級容器可包含驗證原則物件。|
-|原則|執行驗證原則|指定是否執行此驗證原則。<br /><br />無法在執行，預設的原則在稽核模式，並專活動，表示可能成功和失敗，但保護不會套用至系統。|
-|原則|指派的驗證原則 Backlink|這是屬性返回 msDS-AssignedAuthNPolicy 的連結。|
-|原則|指派的驗證原則|指定 AuthNPolicy 應該這項原則套用。|
-|使用者|使用者驗證原則|指定 AuthNPolicy 應該會套用至已指派給此筒倉物件的使用者。|
-|使用者|使用者驗證原則 Backlink|這是屬性返回 msDS-UserAuthNPolicy 的連結。|
-|使用者|ms-DS-User-Allowed-To-Authenticate-To|此屬性用來判斷允許執行帳號服務驗證原則的集合。|
-|使用者|ms-DS-User-Allowed-To-Authenticate-From|此屬性用來判斷的裝置的使用者 account 有權限來登入的設定。|
-|使用者|使用者 TGT 期間|指定最大世紀 Kerberos TGT 發行給使用者 （以秒）。 結果 Tgt 的非儲值。|
-|電腦|電腦驗證原則|指定 AuthNPolicy 應該會套用到電腦已指派給此筒倉物件。|
-|電腦|電腦驗證原則 Backlink|這是屬性返回 msDS-ComputerAuthNPolicy 的連結。|
-|電腦|ms-DS-Computer-Allowed-To-Authenticate-To|此屬性用來判斷允許在的電腦帳號執行的服務驗證原則的設定。|
-|電腦|電腦 TGT 期間|指定最大值 （以秒） 的電腦發給 Kerberos TGT 的年齡。 若要變更此設定不建議。|
-|服務|服務驗證原則|指定 AuthNPolicy 應該會套用至已指派給此筒倉物件的服務。|
-|服務|服務驗證原則 Backlink|這是屬性返回 msDS-ServiceAuthNPolicy 的連結。|
-|服務|ms-DS-Service-Allowed-To-Authenticate-To|此屬性用來判斷的已獲授權的服務正在執行的服務帳號驗證原則設定。|
-|服務|ms-DS-Service-Allowed-To-Authenticate-From|此屬性用來判斷的裝置的服務 account 有權限來登入的設定。|
-|服務|服務 TGT 期間|指定發出 （以秒） 服務來 Kerberos TGT 世紀最大。|
+|原則|驗證原則|此類別的執行個體定義指派主體的驗證原則行為。|
+|原則|驗證原則|此類別的容器可以包含驗證原則物件。|
+|原則|強制執行驗證原則|指定是否要強制執行驗證原則。<br /><br />未強制執行時，原則預設處於稽核模式，而且會產生表示可能成功和失敗的事件，但不會在系統套用保護。|
+|原則|指派的驗證原則返回連結|這個屬性是 msDS-AssignedAuthNPolicy 的返回連結。|
+|原則|指派的驗證原則|指定套用到這個主體的 AuthNPolicy。|
+|使用者|使用者驗證原則|針對指派給這個定址接收器物件的使用者，指定要套用的 AuthNPolicy。|
+|使用者|使用者驗證原則返回連結|這個屬性是 msDS-UserAuthNPolicy 的返回連結。|
+|使用者|ms-DS-User-Allowed-To-Authenticate-To|這個屬性用來決定允許向使用者帳戶下執行之服務驗證的一組主體。|
+|使用者|ms-DS-User-Allowed-To-Authenticate-From|這個屬性用來決定使用者帳戶具有登入權限的一組裝置。|
+|使用者|使用者 TGT 存留期|指定發行給使用者的 Kerberos TGT 的最長使用期限 (以秒表示)。 結果 TGT 是不可更新。|
+|Computer|電腦驗證原則|針對指派給這個定址接收器物件的電腦，指定要套用的 AuthNPolicy。|
+|Computer|電腦驗證原則返回連結|這個屬性是 msDS-ComputerAuthNPolicy 的返回連結。|
+|Computer|ms-DS-Computer-Allowed-To-Authenticate-To|這個屬性用來決定允許向電腦帳戶下執行之服務驗證的一組主體。|
+|Computer|電腦 TGT 存留期|指定發行給電腦的 Kerberos TGT 的最長使用期限 (以秒表示)。 不建議變更這個設定。|
+|服務|服務驗證原則|針對指派給這個定址接收器物件的服務，指定要套用的 AuthNPolicy。|
+|服務|服務驗證原則返回連結|這個屬性是 msDS-ServiceAuthNPolicy 的返回連結。|
+|服務|ms-DS-Service-Allowed-To-Authenticate-To|這個屬性用來決定允許向服務帳戶下執行之服務驗證的一組主體。|
+|服務|ms-DS-Service-Allowed-To-Authenticate-From|這個屬性用來決定服務帳戶具有登入權限的一組裝置。|
+|服務|服務 TGT 存留期|指定發行給服務的 Kerberos TGT 的最長使用期限 (以秒表示)。|
 
-使用 Windows PowerShell 的 Active Directory 系統管理主控台驗證原則可以設定為每個筒倉。 如需詳細資訊，請查看[設定保護帳號如何](how-to-configure-protected-accounts.md)。
+使用 [Active Directory 管理主控台] 或 Windows PowerShell，可以為每個定址接收器設定驗證原則。 如需詳細資訊，請參閱[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)。
 
-## <a name="how-it-works"></a>它的運作方式
-本節驗證原則筒倉和驗證原則的受保護的使用者安全性群組和實作 Kerberos 通訊協定，以在 Windows 中搭配運作的方式。
+## <a name="how-it-works"></a>運作方式
+本節描述 Windows 中驗證原則定址接收器和驗證原則如何與 Protected Users 安全性群組和 Kerberos 通訊協定實作搭配運作。
 
--   [如何使用 Kerberos 通訊協定與筒倉驗證原則](#BKMK_HowKerbUsed)
+-   [Kerberos 通訊協定與驗證定址接收器和原則中的用法](#BKMK_HowKerbUsed)
 
 -   [如何限制使用者登入的運作方式](#BKMK_HowRestrictingSignOn)
 
 -   [限制服務票證發行的運作方式](#BKMK_HowRestrictingServiceTicket)
 
-**帳號受保護狀態**
+**受保護的帳戶**
 
-保護使用者安全性群組觸發網域中執行 Windows Server 2012 R2 的主要網域控制站的網域控制站和裝置主機電腦執行 Windows 8.1、 Windows Server 2012 R2 上的非可設定保護。 根據網域功能 account 的等級，保護使用者安全性群組成員進一步受保護的驗證方法支援在 Windows 中變更因為。
+Protected Users 安全性群組會觸發不可設定的保護裝置和執行 Windows Server 2012 R2 和 Windows 8.1 的主機電腦和網域中主要網域控制站執行 Windows Server 2012 R2 的網域控制站上。 根據帳戶的網域功能等級，Protected Users 安全性群組的成員會得到進一步保護，因為 Windows 支援的驗證方法有所變更。
 
--   使用 NTLM、 摘要驗證或 CredSSP 預設認證委派無法驗證保護使用者安全小組的成員。 在裝置上執行 Windows 8.1，可以使用其中一種這些安全性支援提供者 （層），將會失敗網域驗證，account 時的受保護的使用者安全性群組成員。
+-   Protected Users 安全性群組的成員無法使用 NTLM、摘要式驗證或 CredSSP 預設認證委派進行驗證。 在裝置上執行 Windows 8.1 使用任一這些安全性支援提供者 (Ssp)，該帳戶是 Protected Users 安全性群組的成員時，將會失敗網域驗證。
 
--   Kerberos 通訊協定不會預先驗證程序使用較弱 DES 或 RC4 加密類型。 這表示支援至少好一段加密類型，必須設定的網域。
+-   Kerberos 通訊協定不會在預先驗證處理程序中使用較弱的 DES 或 RC4 加密類型。 這表示網域必須設定為至少支援 AES 加密類型。
 
--   無法使用 Kerberos 限制或受限制地委派帳號委派。 這表示如果使用者的受保護的使用者安全性群組成員先前連接到其他系統可能會失敗。
+-   無法委派使用者的帳戶，透過 Kerberos 限制或未受限制委派。 這表示如果使用者是 Protected Users 安全性群組的成員，則先前到其他系統的連線可能會失敗。
 
--   藉由驗證原則和筒倉，您可以存取 Active Directory 管理中心透過是設定的四個小時的預設 Kerberos Tgt 期間設定。 這表示當超過四小時的時間，使用者必須驗證再試一次。
+-   四個小時的預設 Kerberos TGT 存留期，可透過 Active Directory 管理中心使用驗證原則和定址接收器來加以設定。 這表示經過四小時之後，使用者就必須再驗證一次。
 
-如需有關這個安全性群組的詳細資訊，請查看[的受保護的使用者如何群組運作](protected-users-security-group.md#BKMK_HowItWorks)。
+如需此安全性群組的詳細資訊，請參閱 [Protected Users 群組的運作方式](protected-users-security-group.md#BKMK_HowItWorks)。
 
-**筒倉和驗證原則**
+**定址接收器和驗證原則**
 
-驗證原則筒倉和驗證原則利用現有的 Windows 驗證基礎結構。 遭拒使用 NTLM 通訊協定，並用 Kerberos 通訊協定，以使用較加密類型。 驗證原則補充提供一種方式可設定的限制適用於帳號，除了限制帳號提供的服務和電腦的受保護的使用者安全性群組。 驗證原則的票證授與服務 (TGS) 換貨或 Kerberos 通訊協定驗證服務 （為） 期間執行。 如需有關如何使用 Windows Kerberos 通訊協定，以及變更所做支援驗證原則筒倉和驗證原則，查看：
+驗證原則定址接收器和驗證原則利用現有的 Windows 驗證基礎結構。 拒絕使用 NTLM 通訊協定，並使用具有較新加密類型的 Kerberos 通訊協定。 驗證原則除了為服務和電腦的帳戶提供限制之外，還提供一種方法將可設定的限制套用到帳戶，藉此輔助 Protected Users 安全性群組。 Kerberos 通訊協定驗證服務 (AS) 或票證授與服務 (TGS) 交換期間會強制執行驗證原則。 如需關於 Windows 如何使用 Kerberos 通訊協定，以及支援驗證原則定址接收器和驗證原則所做變更的詳細資訊，請參閱：
 
--   [版本 Kerberos 驗證 5 通訊協定的運作方式](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
+-   [Kerberos 版本 5 驗證通訊協定的運作方式](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
 
--   [變更 Kerberos 驗證](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)（Windows Server 2008 R2 和 Windows 7）
+-   [Kerberos 驗證的變更](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)（Windows Server 2008 R2 和 Windows 7）
 
-### <a name="BKMK_HowKerbUsed"></a>如何使用 Kerberos 通訊協定與驗證原則筒倉原則
-當核對連結到驗證原則筒倉，使用者登入時，安全性帳號管理員新增理賠要求驗證原則筒倉包含筒倉值類型。 此宣告帳號提供目標筒倉存取。
+### <a name="BKMK_HowKerbUsed"></a>如何驗證原則定址接收器和原則搭配使用 Kerberos 通訊協定
+當網域帳戶連結到驗證原則定址接收器且使用者登入時，安全性帳戶管理員會新增驗證原則定址接收器的宣告類型，其中將定址接收器做為值。 帳戶上的這個宣告提供存取目標定址接收器。
 
-驗證原則執行為網域控制站收到核對驗證服務要求，網域控制站傳回設定期間的非儲值 TGT （除非網域 TGT 期間是短）。
-
-> [!NOTE]
-> 核對必須設定的 TGT 期間，而且必須直接連結原則或透過筒倉成員資格間接連結。
-
-當驗證原則是以稽核模式，網域控制站上收到驗證服務要求核對的網域控制站會檢查是否允許驗證的裝置，讓它可以登入一則警告如果失敗。 稽核的驗證原則不會變更程序，所以如果不符合原則的需求，無法將會失敗驗證要求。
+當強制執行驗證原則且網域控制站上收到網域帳戶的驗證服務要求時，網域控制站會傳回已設定存留期的不可更新 TGT (除非網域 TGT 存留時間較短)。
 
 > [!NOTE]
-> 核對必須直接連接到原則或透過筒倉成員資格間接連結。
+> 網域帳戶必須有已設定的 TGT 存留期，而且必須直接連結到原則或間接透過定址接收器成員資格連結。
 
-當驗證原則執行與驗證服務裝甲時，核對驗證服務要求收到網域控制站時，網域控制站檢查驗證是否允許該裝置。 如果失敗，網域控制站傳回錯誤訊息，並登約會。
-
-> [!NOTE]
-> 核對必須直接連接到原則或透過筒倉成員資格間接連結。
-
-驗證原則是以稽核模式時，核對的網域控制站收到服務票證授與要求，網域控制站檢查是否允許要求的票證權限屬性憑證 (PAC) 的資料，以驗證，如果您無法登入一則警告訊息。 PAC 包含授權資訊，包括的使用者成員使用者有，權限的群組原則套用到使用者不同的類型。 這項資訊用來產生使用者存取預付碼。 如果是執行的驗證原則可讓使用者、 裝置或服務的驗證，驗證允許的網域控制站檢查基礎要求的票證 PAC 資料。 如果失敗，網域控制站傳回錯誤訊息，並登約會。
+當驗證原則處於稽核模式，而且網域控制站上收到網域帳戶的驗證服務要求時，網域控制站會檢查裝置是否允許驗證，以便出現失敗時可以記錄警告。 稽核的驗證原則不會變更處理程序，所以如果驗證要求不符合原則的需求，它們也不會失敗。
 
 > [!NOTE]
-> 核對必須將直接連結或透過筒倉成員資格稽核的驗證原則可讓使用者、 裝置或服務的驗證連結
+> 網域帳戶必須直接連結到原則或間接透過定址接收器成員資格連結。
 
-您可以使用單一驗證原則的所有成員筒倉，或您可以使用原則的不同的使用者、 電腦及帳號受管理的服務。
+當強制執行驗證原則且驗證服務受到防護，在網域控制站上收到網域帳戶的驗證服務要求時，網域控制站會檢查裝置是否允許驗證。 如果失敗，網域控制站會傳回錯誤訊息，並記錄事件。
 
-使用 Windows PowerShell 的 Active Directory 系統管理主控台驗證原則可以設定為每個筒倉。 如需詳細資訊，請查看[設定保護帳號如何](how-to-configure-protected-accounts.md)。
+> [!NOTE]
+> 網域帳戶必須直接連結到原則或間接透過定址接收器成員資格連結。
+
+當驗證原則處於稽核模式，而且票證授權服務要求會收到網域帳戶的網域控制站時，網域控制站會檢查是否允許根據要求的票證權限屬性憑證驗證(PAC) 資料，但會記錄一則警告訊息，如果它失敗。 PAC 包含各種類型的授權資料，包括使用者所屬的群組、使用者具有的權限以及套用到使用者的原則。 這項資訊用來產生使用者的存取權杖。 如果它是強制執行的驗證原則，允許驗證使用者、 裝置或服務時，允許驗證的網域控制站檢查會根據要求的票證 PAC 資料。 如果失敗，網域控制站會傳回錯誤訊息，並記錄事件。
+
+> [!NOTE]
+> 網域帳戶必須直接連結或透過定址器成員資格連結到稽核的驗證原則，允許驗證使用者、裝置或服務。
+
+您可以為定址接收器的所有成員使用單一驗證原則，或是為使用者、電腦和受管理的服務帳戶使用個別原則。
+
+使用 [Active Directory 管理主控台] 或 Windows PowerShell，可以為每個定址接收器設定驗證原則。 如需詳細資訊，請參閱[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)。
 
 ### <a name="BKMK_HowRestrictingSignOn"></a>如何限制使用者登入的運作方式
-這些驗證原則已經套用到帳號，因為它也適用於帳號所使用的服務。 如果您想要使用特定主機服務的密碼，則此設定會非常有用。 例如，群組管理設定帳號主機允許從 Active Directory Domain Services 擷取密碼的位置服務。 不過，該密碼可從任何主機的初始驗證。 藉由套用存取控制項條件，可以藉由限制只可以擷取密碼主機一組密碼達成額外的保護層級。
+因為這些驗證原則會被套用至帳戶，所以也會套用到服務使用的帳戶。 如果您想要對特定主機限制使用服務密碼，此設定非常有用。 例如，在允許主機從 Active Directory 網域服務擷取密碼之處，可設定群組受管理的服務帳戶。 不過，可以從所有主機使用該密碼於初始驗證。 藉由套用存取控制條件，可將密碼限制在可擷取密碼的一組主機，而建立額外的一層保護。
 
-當系統、 網路的服務，或其他區域服務的身分執行的服務連接到網路的服務時，它們會使用主機的電腦 account。 電腦帳號不會受到限制。 即使服務會使用許多 Windows 不是電腦帳號，它無法限制。
+當執行為系統、 網路服務或其他本機服務身分識別的服務連線到網路服務時，他們會使用主機的電腦帳戶。 不能限制電腦帳戶。 因此即使服務正在使用不是 Windows 主機的電腦帳戶，也不能限制它。
 
-特定的主機限制使用者登入需要驗證主機的身分網域控制站。 當使用 F:kerberos 驗證 Kerberos 保護 \ （即動態存取控制部分），金鑰 Distribution 中心隨附從中驗證使用者的主機 TGT。 使用這個裝甲 TGT 的 content 完成存取檢查以判斷是否允許該主機。
+為特定主機限制使用者登入，就必須將網域控制站驗證主機的身分識別。 使用 Kerberos 驗證搭配 Kerberos 防護 (這是動態存取控制的一部分) 時，會為金鑰發佈中心提供驗證使用者的主機 TGT。 這個防護的 TGT 內容可用來完成存取檢查，以判斷是否允許主機。
 
-當使用者登入 Windows，或預設的應用程式中，輸入他們網域認證 credential 提示字元中時，Windows 會將傳送網域控制站護身的為需求。 如果使用者傳送要求的電腦不支援，保護 \，例如電腦執行的是 Windows 7 或 Windows Vista、 要求失敗。
+當使用者登入 Windows 或在應用程式的認證提示中輸入其網域認證時，Windows 預設會將未防護的 AS-REQ 傳送給網域控制站。 如果使用者不支援的電腦傳送要求防護，例如執行 Windows 7 或 Windows Vista 的電腦要求會失敗。
 
-下面描述處理程序：
+下列清單描述該程序：
 
--   執行 Windows Server 2012 R2 網域中的網域控制站查詢使用者帳號，並判斷它設定的限制初始需要裝甲的要求驗證，驗證原則。
+-   網域且執行 Windows Server 2012 R2 的網域控制站會查詢使用者帳戶，並判斷它是否已設定了限制需要防護的要求的初始驗證驗證原則。
 
--   網域控制站將會失敗要求。
+-   網域控制站會拒絕要求。
 
--   因為需要護板，使用者可以嘗試使用電腦執行的是 Windows 8.1 或 Windows 8 功能的支援 Kerberos 保護 \ 來再試一次登入程序登入。
+-   因為需要防護，所以使用者可以嘗試使用執行 Windows 8.1 或 Windows 8，啟用支援 Kerberos 防護以重試一次登入程序的電腦登入。
 
--   Windows 會偵測到網域支援 Kerberos 保護 \ 傳送裝甲的為-複製到再試一次登入的要求。
+-   Windows 偵測到網域支援 Kerberos 防護，並傳送防護的 AS-REQ 來重試登入要求。
 
--   網域控制站執行存取檢查使用中，用於裝甲要求 TGT 設定的存取控制項條件和 client 作業系統的身分的資訊。
+-   網域控制站執行存取檢查，用來防護要求的 TGT 中使用設定的存取控制條件和用戶端作業系統的身分識別資訊。
 
--   如果您無法存取檢查，網域控制站請求。
+-   如果存取檢查失敗，網域控制站會拒絕要求。
 
-作業系統支援 Kerberos 保護 \，即使存取控制需求可在套用和必須符合才能存取。 使用者登入 Windows，或他們網域認證 credential 提示字元中輸入應用程式。 根據預設，Windows 會傳送給網域控制站護身的為需求。 如果使用者要求的支援護板，例如 Windows 8.1 或 Windows 8 的電腦傳送驗證原則的評估方式如下：
+即使作業系統支援 Kerberos 防護，也可以套用存取控制需求，而且授與存取權之前必須符合這些需求。 使用者登入 Windows，或在應用程式的認證提示中輸入其網域認證。 根據預設，Windows 會傳送未防護的 AS-REQ 給網域控制站。 如果使用者傳送要求從支援防護，例如 Windows 8.1 或 Windows 8 的電腦驗證原則會評估，如下所示：
 
-1.  執行 Windows Server 2012 R2 網域中的網域控制站查詢使用者帳號，並判斷它設定的限制初始需要裝甲的要求驗證，驗證原則。
+1.  網域且執行 Windows Server 2012 R2 的網域控制站會查詢使用者帳戶，並判斷它是否已設定了限制需要防護的要求的初始驗證驗證原則。
 
-2.  網域控制站執行存取檢查使用中，用於裝甲要求 TGT 設定的存取控制項條件和系統身分的資訊。 存取檢查成功。
+2.  網域控制站執行存取檢查，用來防護要求的 TGT 中使用設定的存取控制條件和系統的身分識別資訊。 存取檢查成功。
 
     > [!NOTE]
-    > 設定舊版群組限制，如果那些也必須符合。
+    > 如果設定了傳統的工作群組限制，則也必須符合這些限制。
 
-3.  網域控制站回覆與裝甲回覆 （以代表，），並驗證繼續。
+3.  網域控制站使用防護回覆 (AS-REP) 來回覆，然後繼續驗證。
 
 ### <a name="BKMK_HowRestrictingServiceTicket"></a>限制服務票證發行的運作方式
-時不允許帳號，並具有 TGT 的使用者，嘗試連接的服務 (例如下列程序發生，請打開需要驗證服務的服務主體名稱 (SPN) 由服務的應用程式，：
+當不允許的帳戶，並擁有 TGT 的使用者嘗試連線到服務 (例如開啟需要驗證服務所服務的服務主體名稱 (SPN) 識別的應用程式，下列順序發生：
 
-1.  在嘗試從 SPN 連接到 SPN1，Windows 會將傳送 TGS 需求網域控制站 SPN1 服務票證要求。
+1.  嘗試從 SPN 連線到 SPN1 時，Windows 會傳送一個 TGS-REQ 給要求 SPN1 服務票證的網域控制站。
 
-2.  執行 Windows Server 2012 R2 網域中的網域控制站尋找 SPN1 尋找服務的 Active Directory Domain Services 帳號，並判斷該設定的限制服務票證發行驗證原則 account。
+2.  執行 Windows Server 2012 R2 的網域的網域控制站 spn1 服務尋找 Active Directory 網域服務帳戶，並判斷會限制服務票證發行的驗證原則，設定帳戶。
 
-3.  網域控制站執行存取檢查使用中 TGT 設定的存取控制項條件和的使用者身分的資訊 存取檢查將會失敗。
+3.  網域控制站執行存取檢查使用中的 tgt。 設定的存取控制條件和使用者的身分識別資訊 存取檢查失敗。
 
-4.  網域控制站請求。
+4.  網域控制站會拒絕要求。
 
-因為 account 符合存取控制項條件驗證原則，來設定，並嘗試服務連接的使用者，有 TGT 時允許 account (例如打開應用程式所需要驗證服務由服務的 SPN)，下列程序發生：
+因為帳戶符合驗證原則所設定的存取控制條件，且擁有 TGT 的使用者嘗試連線到服務時允許的帳戶 (例如，開啟應用程式需要驗證服務也就是依服務的 SPN 識別），會發生下列結果：
 
-1.  在連接到 SPN1 嘗試，Windows 會將傳送 TGS 需求網域控制站 SPN1 服務票證要求。
+1.  嘗試連線到 SPN1 時，Windows 會傳送一個 TGS-REQ 給要求 SPN1 服務票證的網域控制站。
 
-2.  執行 Windows Server 2012 R2 網域中的網域控制站尋找 SPN1 尋找服務的 Active Directory Domain Services 帳號，並判斷該設定的限制服務票證發行驗證原則 account。
+2.  執行 Windows Server 2012 R2 的網域的網域控制站 spn1 服務尋找 Active Directory 網域服務帳戶，並判斷會限制服務票證發行的驗證原則，設定帳戶。
 
-3.  網域控制站執行存取檢查使用中 TGT 設定的存取控制項條件和的使用者身分的資訊 存取檢查成功。
+3.  網域控制站執行存取檢查使用中的 tgt。 設定的存取控制條件和使用者的身分識別資訊 存取檢查成功。
 
-4.  網域控制站回覆要求票證授與服務回覆 （TGS 代表） 使用。
+4.  網域控制站使用票證授與服務回覆 (TGS-REP) 回覆要求。
 
-## <a name="BKMK_ErrorandEvents"></a>相關的錯誤和資訊事件訊息
-下表描述保護使用者安全性群組相關聯的事件和適用於驗證原則筒倉驗證原則。
+## <a name="BKMK_ErrorandEvents"></a>相關聯的錯誤和資訊事件訊息
+下表描述與 Protected Users 安全性群組相關的事件，以及套用到驗證原則定址接收器的驗證原則。
 
-事件記錄的應用程式與服務登，在**Microsoft\Windows\Authentication**。
+事件會記錄在 **Microsoft\Windows\Authentication** 的應用程式及服務記錄檔中。
 
-疑難排解步驟使用這些事件，請查看[疑難排解驗證原則](how-to-configure-protected-accounts.md#BKMK_TroubleshootAuthnPolicies)和[疑難排解事件相關保護使用者](how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents)。
+如需使用這些事件的疑難排解步驟，請參閱[疑難排解驗證原則](how-to-configure-protected-accounts.md#BKMK_TroubleshootAuthnPolicies)和[疑難排解與 Protected Users 相關的事件](how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents)。
 
-|事件 ID 和登入|描述|
+|事件識別碼和記錄檔|描述|
 |----------|--------|
-|101<br /><br />**AuthenticationPolicyFailures-DomainController**|理由： NTLM 登入失敗就會發生驗證原則。<br /><br />事件被登入，表示該 NTLM 驗證失敗，因為存取控制限制的需要，這些限制不會套用到 NTLM 網域控制站。<br /><br />顯示 account、 裝置、 原則和筒倉名稱。|
-|105<br /><br />**AuthenticationPolicyFailures-DomainController**|理由： 不允許的特定裝置驗證是因為發生錯誤 Kerberos 限制。<br /><br />事件被登入網域控制站指出 Kerberos TGT 遭拒因為裝置不符合執行的存取控制限制。<br /><br />顯示帳號，裝置、 原則、 筒倉名稱、 和 TGT 期間。|
-|305<br /><br />**AuthenticationPolicyFailures-DomainController**|理由： 潛在 Kerberos 限制錯誤可能是因為不允許的特定裝置驗證。<br /><br />稽核模式，資訊的事件會登入網域控制站判斷是否 Kerberos TGT 都會無法因為裝置不符合存取控制限制。<br /><br />顯示帳號，裝置、 原則、 筒倉名稱、 和 TGT 期間。|
-|106<br /><br />**AuthenticationPolicyFailures-DomainController**|理由： 伺服器驗證不允許的使用者或裝置，因為發生錯誤 Kerberos 限制。<br /><br />事件被登入網域控制站指出 Kerberos 服務票證遭拒因為使用者、 裝置或兩者不符合執行的存取控制限制。<br /><br />裝置、 原則和筒倉顯示的名稱。|
-|306<br /><br />**AuthenticationPolicyFailures-DomainController**|理由： Kerberos 限制錯誤可能是因為驗證伺服器不允許的使用者或裝置。<br /><br />稽核模式，資訊的事件登入，表示該 Kerberos 服務票證都會無法因為使用者、 裝置或兩者不符合存取控制限制的網域控制站。<br /><br />裝置、 原則和筒倉顯示的名稱。|
+|101<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為設定了驗證原則，所以發生 NTLM 登入失敗。<br /><br />事件會記錄在網域控制站，指出 NTLM 驗證失敗，因為需要存取控制限制，而且這些限制不能套用到 NTLM。<br /><br />顯示帳戶、裝置、原則及定址接收器的名稱。|
+|105<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許來自特定裝置的驗證，所以發生 Kerberos 限制失敗。<br /><br />事件會記錄在網域控制站，指出 Kerberos TGT 被拒絕，因為裝置不符合強制執行的存取控制限制。<br /><br />顯示帳戶、裝置、原則、定址接收器的名稱以及 TGT 存留期。|
+|305<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許來自特定裝置的驗證，所以可能發生 Kerberos 限制失敗。<br /><br />在稽核模式中，資訊事件會記錄在網域控制站，以判斷是否因為裝置不符合存取控制限制而拒絕 Kerberos TGT。<br /><br />顯示帳戶、裝置、原則、定址接收器的名稱以及 TGT 存留期。|
+|106<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許使用者或裝置向伺服器驗證，所以發生 Kerberos 限制失敗。<br /><br />事件會記錄在網域控制站，指出 Kerberos TGT 被拒絕，因為使用者、裝置或兩者不符合強制執行的存取控制限制。<br /><br />顯示裝置、原則及定址接收器的名稱。|
+|306<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許使用者或裝置向伺服器驗證，所以可能發生 Kerberos 限制失敗。<br /><br />在稽核模式中，資訊事件會記錄在網域控制站，指出 Kerberos 服務票證將被拒絕，因為使用者、裝置或兩者不符合存取控制限制。<br /><br />顯示裝置、原則及定址接收器的名稱。|
 
-## <a name="see-also"></a>也了
-[如何設定帳號受保護狀態](how-to-configure-protected-accounts.md)
+## <a name="see-also"></a>另請參閱
+[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)
 
-[認證保護與管理](credentials-protection-and-management.md)
+[認證保護和管理](credentials-protection-and-management.md)
 
-[使用者安全性群組受保護狀態](protected-users-security-group.md)
+[Protected 的 Users 安全性群組](protected-users-security-group.md)
 
 

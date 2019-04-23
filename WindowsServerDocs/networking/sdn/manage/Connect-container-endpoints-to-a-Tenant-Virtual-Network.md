@@ -1,6 +1,6 @@
 ---
-title: 容器連接到 Virtual 網路
-description: 本主題是輔助的軟體定義網路上如何管理承租人工作負載和 Windows Server 2016 Virtual 網路的一部分。
+title: 將容器端點連線至租用戶虛擬網路
+description: 本主題中，我們示範您如何將容器端點連線至 SDN 透過所建立的現有租用戶虛擬網路。 您可以使用 l2 橋接 （及選擇性地 l2tunnel） 適用於 Windows libnetwork 外掛程式來建立容器網路上的租用戶 VM 的 docker 網路驅動程式。
 manager: ravirao
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,55 +12,63 @@ ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: pashort
 author: jmesser81
-ms.openlocfilehash: 801cf4b8f71935eb72d820d47e523a310fa64562
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/24/2018
+ms.openlocfilehash: 1968a4db9231459fe5858d9a0f3ba5e8f317ed1b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872739"
 ---
-# <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>連接到承租人 virtual 網路的容器端點
+# <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>將容器端點連線至租用戶虛擬網路
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題您顯示如何在連接的容器端點建立透過 Microsoft 軟體定義網路 (SDN) 堆疊現有承租人 virtual 網路。 我們將使用*l2bridge* (也可以*l2tunnel*) 的 Docker 建立容器網路上的容器主機（承租人）一樣的 Windows libnetwork 增益集可用的網路驅動程式。
+本主題中，我們示範您如何將容器端點連線至 SDN 透過所建立的現有租用戶虛擬網路。 您使用*l2 橋接*(並選擇性地*l2tunnel*) 適用於 Windows libnetwork 外掛程式來建立容器網路上的租用戶 VM 的 docker 網路驅動程式。
 
-如中所述[容器網路](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/management/container_networking)多個網路驅動程式都可以透過 windows Docker msdn 主題。 最適合 SDN 的驅動程式是*l2bridge*和*l2tunnel*。 這兩個驅動程式，每個容器端點會在與容器主機（承租人）一樣相同 virtual 子網路中。 IP 位址的容器端點會動態指派來主機網路服務 (HNS) 透過私人雲端增益集。 容器端點具有獨特的 IP 位址，但分享的容器主機（承租人）一樣層級 2 位址轉譯因為相同的 MAC 地址。 網路原則 (例如：Acl、封裝，並 QoS) 這些容器端點會執行實體 HYPER-V 主機時收到 Network Controller 的及上層管理系統所述。 有會稍微不同*l2bridge*和*l2tunnel*下面會解釋驅動程式。
+在 [容器的網路驅動程式](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)我們所討論的主題中，多個網路驅動程式都是透過在 Windows 上的 Docker。 適用於 SDN，使用*l2 橋接*並*l2tunnel*驅動程式。 這兩個驅動程式，每個容器端點會是容器主機 （租用戶） 的虛擬機器位於相同虛擬子網路中。 
 
-- **L2 橋接器**-上相同的容器主機一樣，並在相同的子網路中的容器端點能所有的網路流量橋接 HYPER-V virtual 開關切換至中。 容器端點的 Vm 的不同的容器主機或哪些是不同的子網路中有他們流量轉寄給實體 HYPER-V 主機。 因為容器主機上並在相同的子網路中間網路流量執行流向實體主機，會不執行任何網路原則。 跨主機或跨子網路容器網路流量僅會套用原則。  
- 
-- **L2 通道** - *所有*兩個容器端點間網路流量轉寄給實體 HYPER-V 主機無論主機或子網路。 跨子網路和跨主機的網路流量被執行網路原則。   
+主機網路服務 (HNS)，透過私用雲端外掛程式，以動態方式將容器端點的 IP 位址。 容器端點會有唯一的 IP 位址，但共用相同的 MAC 位址的容器主機 （租用戶） 的虛擬機器，因為第 2 層位址轉譯。 
+
+這些容器端點 （Acl、 封裝，以及 QoS） 的網路原則是所接收的網路控制站，在實體 HYPER-V 主機中強制執行，且定義在上層管理系統。 
+
+之間的差異*l2 橋接*並*l2tunnel*驅動程式：
+
+| l2bridge | l2tunnel |
+| --- | --- |
+|容器上的端點： <ul><li>相同的容器裝載的虛擬機器，並在相同的子網路上已在 HYPER-V 虛擬交換器橋接所有的網路流量。 </li><li>不同的容器裝載虛擬機器，或在不同的子網路上有其轉送到實體 HYPER-V 主機的流量。 </li></ul>因為在相同主機上和在相同的子網路中的容器之間的網路流量不會流動至實體主機，不會不取得強制執行網路原則。 網路原則適用於僅為跨主應用程式或跨子網路的容器的網路流量。 | *所有*兩個容器端點之間的網路流量轉送到實體的 HYPER-V 主機，無論主機或子網路。 網路原則套用到跨子網路和跨主應用程式網路流量。 |
+---
 
 >[!NOTE]
->這些網路功能模式連接 windows 容器端點承租人 virtual 網路 Azure 公用雲端中無法運作
+>這些網路模式不適用於 Azure 公用雲端中的租用戶虛擬網路連接的 windows 容器端點。
 
-## <a name="prerequistes"></a>Prerequistes
- * 使用網路控制器 SDN 基礎結構部署
- * 已建立承租人 virtual 網路
- * Windows 容器功能、與安裝 Docker HYPER-V 功能部署承租人一樣
+
+## <a name="prerequisites"></a>先決條件
+-  與網路控制卡部署的 SDN 基礎結構。
+-  已建立租用戶虛擬網路。
+-  Docker 安裝，以及啟用 HYPER-V 功能啟用了 Windows 容器功能的部署的租用戶虛擬機器。 HYPER-V 功能，才能安裝 l2 橋接和 l2tunnel 網路的數個二進位檔。
+
+   ```powershell
+   # To install HyperV feature without checks for nested virtualization
+   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
+   ```
 
 >[!Note]
->[巢的模擬](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting)和公開模擬延伸模組並不需要使用 HYPER-V 容器 HyperV 功能不需要安裝數個二進位檔 l2bridge 和 l2tunnel 網路
+>[巢狀虛擬化](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)公開虛擬化延伸模組則不需要除非使用 HYPER-V 容器。 
 
-```powershell
-# To install HyperV feature without checks for nested virtualization
-dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
-```
-
- 
 
 ## <a name="workflow"></a>工作流程
 
-1. [加入現有的 VM NIC 資源 Network Controller 透過多個 IP 設定](#Add)（HYPER-V 主機）
-2. [讓上的容器端點配置 CA IP 位址主機的網路 proxy](#Enable)（HYPER-V 主機） 
-3. [安裝私人雲端插件，以將 CA IP 位址指派給容器端點](#Install)(容器主機 VM) 
-4. [建立*l2bridge*或*l2tunnel*網路使用 docker](#Create) (容器主機 VM) 
+[1.將多個 IP 組態新增至現有 VM NIC 資源透過網路控制站 （HYPER-V 主機）](#1-add-multiple-ip-configurations)
+[2。啟用要配置的容器端點 （HYPER-V 主機） 的 CA IP 位址的主機上的網路 proxy ](#2-enable-the-network-proxy) 
+ [3。安裝外掛程式，以便在將 CA IP 位址指派給容器端點 (容器主機 VM) 的私人雲端](#3-install-the-private-cloud-plug-in) 
+ [4。建立*l2 橋接*或是*l2tunnel*使用 docker (容器主機 VM) 網路 ](#4-create-an-l2bridge-container-network)
  
 >[!NOTE]
->多個 IP 設定不支援透過 System Center 一樣管理員建立 VM NIC 資源。 建議的類部署建立 VM NIC 退出 band 使用網路控制器 PowerShell 資源。
+>透過 System Center Virtual Machine Manager 所建立的 VM NIC 資源不支援多個 IP 組態。 建議您使用這些部署類型，您會建立超出範圍使用網路控制站 PowerShell 的 VM NIC 資源。
 
-### <a name="Add"></a>1.新增多個 IP 設定
-
-針對此範例，我們假設 VM 而承租人一樣的已經有一 IP 設定的 IP 位址的 192.168.1.9 和 192.168.1.0 24 IP 子網路中的 'VNet1' VNet 資源 ID 和 VM 子網路資源的 'Subnet1' 已連接。 我們會將 192.168.1.101-192.168.1.110 10 容器 IP 位址。
+### <a name="1-add-multiple-ip-configurations"></a>1.新增多個 IP 組態
+在此步驟中，我們假設 VM NIC 的租用戶虛擬機器有一個 IP 組態與 IP 位址的 192.168.1.9 和 192.168.1.0/24 IP 子網路中附加至 'VNet1' VNet 資源識別碼和 「 Subnet1 」 的 VM 子網路資源。 我們會新增適用於容器的 10 個 IP 位址 192.168.1.101-從 192.168.1.110。
 
 ```powershell
 Import-Module NetworkController
@@ -110,29 +118,27 @@ foreach ($i in 1..10)
 New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties $vmnic.Properties -ConnectionUri $uri
 ```
 
-### <a name="Enable"></a>2.可讓網路 Proxy
+### <a name="2-enable-the-network-proxy"></a>2.啟用的網路 proxy
+在此步驟中，您可以啟用為容器主機的虛擬機器配置多個 IP 位址的網路 proxy。 
 
-[ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1>)
-
-此指令碼執行**HYPER-V 主機**，裝載容器主機（承租人）一樣，以便網路 proxy 配置多個 IP 位址的容器主機一樣。
+若要啟用的網路 proxy，請執行[ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1)上的指令碼**HYPER-V 主機**裝載容器主機 （租用戶） 的虛擬機器。
 
 ```powershell
 PS C:\> ConfigureMCNP.ps1
 ```
 
-### <a name="Install"></a>3.安裝外掛程式的私人雲端
+### <a name="3-install-the-private-cloud-plug-in"></a>3.安裝外掛程式的私用雲端
+在此步驟中，您安裝外掛程式，以允許與 HYPER-V 主機上的網路 proxy 通訊 HNS 項目。
 
-[InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)
+若要安裝外掛程式，請執行[InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)指令碼內**容器主機 （租用戶） 虛擬機器**。
 
-執行中的指令碼**容器主機（承租人）一樣**允許主機網路服務 (HNS) 以與網路 proxy HYPER-V 主機上。
 
 ```powershell
 PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
-### <a name="Create"></a>4。建立*l2bridge*容器網路 4。
-
-在**容器主機（承租人）一樣**使用`docker network create`以建立 l2bridge 網路的命令
+### <a name="4-create-an-l2bridge-container-network"></a>4.建立*l2 橋接*容器網路
+在此步驟中，您可以使用`docker network create`命令**容器主機 （租用戶） 虛擬機器**建立 l2 橋接網路。 
 
 ```powershell
 # Create the container network
@@ -143,8 +149,8 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 ```
 
 >[!NOTE]
->靜態 IP 指派不支援的*l2bridge*或*l2tunnel*容器網路時搭配 Microsoft SDN 堆疊。
+>不支援靜態 IP 指派*l2 橋接*或是*l2tunnel*容器網路時搭配 Microsoft SDN 堆疊。
 
-## <a name="more-information"></a>更多的資訊
-如需有關部署 SDN 基礎結構 infortation，[部署軟體定義網路基礎架構](https://technet.microsoft.com/en-us/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)。
+## <a name="more-information"></a>詳細資訊
+如需進一步瞭解部署 SDN 基礎結構的詳細資訊，請參閱[部署軟體定義網路基礎結構](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)。
 
