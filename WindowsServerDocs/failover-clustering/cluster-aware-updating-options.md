@@ -1,88 +1,89 @@
 ---
 ms.assetid: 2f4b6641-0ec2-4b1c-85fb-a1f1d16685c8
-title: "光彩感知更新進階選項] 並執行的設定檔的更新"
+title: 叢集感知更新進階選項和更新執行設定檔
 ms.topic: article
-ms.prod: storage-failover-clustering
+ms.prod: windows-server-threshold
 manager: dongill
 ms.author: jgerend
 author: JasonGerend
-ms.date: 6/7/2017
-description: "如何設定 [進階的選項]，以及適用於叢集更新 (CAU) 更新執行設定檔"
-ms.openlocfilehash: 5b6f035791a946ff96ff6a95a1f753ef505d54b4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.date: 08/06/2018
+description: 如何設定進階的選項和更新執行設定檔的叢集感知更新 (CAU)
+ms.openlocfilehash: 5fac31ad35422e623b98caaabdd9eae183e2e5d8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59830549"
 ---
-# <a name="cluster-aware-updating-advanced-options-and-updating-run-profiles"></a>進階選項]，然後執行設定檔的更新叢集更新
+# <a name="cluster-aware-updating-advanced-options-and-updating-run-profiles"></a>叢集感知更新進階選項和更新執行設定檔
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-本主題描述更新執行選項，您可以設定為[更新叢集](cluster-aware-updating.md)(CAU) 更新會執行。 當您使用 CAU UI 或 CAU Windows PowerShell cmdlet 適用的更新，或是設定自動更新的選項，就可以設定這些 [進階的選項]。
+本主題說明可以設定的更新執行 」 選項[Cluster-aware Updating](cluster-aware-updating.md) (CAU) 「 更新執行。 當您使用 CAU UI 或 CAU Windows PowerShell cmdlet 套用更新，或設定自行更新選項時，可以設定這些進階的選項。
 
-大部分的設定可以儲存 XML 檔案稱為更新執行設定檔，並針對較新的更新執行其他。 也可以叢集您的環境中使用所提供的 CAU 更新執行選項的預設值。
+大部分組態設定都可儲存成 XML 檔案，這稱為更新執行設定檔，可在之後的更新執行重複使用。 CAU 提供的「更新執行」選項預設值也可用於許多叢集環境。
 
-對更新執行設定檔及其他選項，您可以指定每個更新執行的相關資訊，請查看下列本主題稍後的區段：
+如需您可為每個更新執行指定的其他選項與更新執行設定檔的相關資訊，請參閱本主題稍後的下列各節：
 
-指定當您要求更新執行使用更新執行設定檔的選項，可以設定更新執行設定檔的選項
+您可以指定更新執行使用更新執行設定檔 」 選項可以設定 「 更新執行設定檔中的要求時的選項
 
-下表列出您可以設定 CAU 更新執行設定檔的選項。 
+下表列出您可在 CAU 更新執行設定檔中設定的選項。 
 
 > [!NOTE] 
-> 若要設定 PreUpdateScript 或 PostUpdateScript 選項，請確定已安裝 Windows PowerShell 和.NET Framework 4.6 或 4.5 且遠端 PowerShell 可以在每個節點叢集中。 如需詳細資訊，請查看設定中的遠端管理節點[需求與最佳做法叢集更新](cluster-aware-updating-requirements.md)。
+> 若要設定 [PreUpdateScript 或 PostUpdateScript] 選項，請確定安裝 Windows PowerShell 和.NET Framework 4.6 或 4.5 和叢集中的每個節點上已啟用 PowerShell 遠端。 如需詳細資訊，請參閱 < 設定節點以進行中的遠端管理[需求和叢集感知更新的最佳做法](cluster-aware-updating-requirements.md)。
 
 
-|選項|預設值。|詳細資料|  
+|選項|預設值|詳細資料|  
 |------------|-------------------|-------------|  
-|**StopAfter**|無限制的時間|之後，更新執行將會停止如果尚未完成的分鐘的時間。 **注意：**的執行指令碼，並執行更新整個程序如果指定更新前或更新後 PowerShell 指令碼，必須先完成在**StopAfter**的時間限制。|  
-|**WarnAfter**|根據預設，不出現任何警告|之後，如果尚未完成更新執行（包括更新前指令碼及更新後指令碼，如果設定），會顯示警告分鐘的時間。|  
-|**MaxRetriesPerNode**|3|最大的次數（包括更新前指令碼及更新後指令碼，如果設定）更新程序將會重試每個節點。 最大值是 64。|  
-|**MaxFailedNodes**|針對大部分叢集，大約一位第三個叢集節點數目的整數|在哪一個更新可能會失敗，可能是因為節點失敗或執行叢集服務停止節點的上限。 如果有一個更多節點失敗，就會停止更新執行。<br /><br /> 值的有效範圍是 0 到 1 小於叢集節點數目。|  
-|**RequireAllNodesOnline**|無|指定所有節點都必須 online，並開始更新之前，您可取得。|  
-|**RebootTimeoutMinutes**|15|重新節點（如果重新開機必要）和開始自動 [開始] 畫面的所有服務允許 CAU 分鐘的時間。 如果在重新開機程序未完成在這次，更新執行該節點標示為失敗。|  
-|**PreUpdateScript**|無|PowerShell 指令碼執行每個節點上開始更新之前，和之前節點置於維護模式路徑和檔案名稱。 必須副檔名**.ps1**，，路徑加上檔案名稱的總長度不可超過 260 個字元。 做為最佳做法，指令碼應該位於叢集存放裝置，或，以確保都可以存取所有叢集節點高度可用的網路檔案共用磁碟上。 如果指令碼位於檔案共用網路，請確認您設定朗讀您請求權限的檔案共用群組，每個人，然後限制以防止未經授權的使用者的檔案所竄改寫入權限。<br /><br /> 如果指定更新前指令碼，請確定您的設定，例如與的時間限制 (例如，**StopAfter**) 允許指令碼已成功執行設定。 這些限制跨越執行指令碼，並安裝更新，而不只安裝更新的處理程序整個程序。|  
-|**PostUpdateScript**|無|PowerShell 指令碼執行（之後節點離開維護模式）更新完成之後路徑和檔案名稱。 必須副檔名**.ps1**，路徑加上檔案名稱的總長度不可超過 260 個字元。 做為最佳做法，指令碼應該位於叢集存放裝置，或，以確保都可以存取所有叢集節點高度可用的網路檔案共用磁碟上。 如果指令碼位於檔案共用網路，請確認您設定朗讀您請求權限的檔案共用群組，每個人，然後限制以防止未經授權的使用者的檔案所竄改寫入權限。<br /><br /> 如果指定更新後指令碼，請確定您的設定，例如與的時間限制 (例如，**StopAfter**) 允許指令碼已成功執行設定。 這些限制跨越執行指令碼，並安裝更新，而不只安裝更新的處理程序整個程序。|  
-|**ConfigurationName**|這個設定只效果如果您執行指令碼。<br /><br /> 若您指定前更新或更新後指令碼，但是您不指定**ConfigurationName**，使用 PowerShell (Microsoft.PowerShell) 設定預設工作階段。|指定 PowerShell 工作階段組態定義工作階段中的指令碼 (指定的**PreUpdateScript**和**PostUpdateScript**) 執行，並可以限制的可執行的命令。|  
-|**CauPluginName**|**Microsoft.WindowsUpdatePlugin**|外掛程式您設定的使用預覽更新或執行更新執行叢集更新。 如需詳細資訊，請查看[運作方式叢集更新插](cluster-aware-updating-plug-ins.md)。|  
-|**CauPluginArguments**|無|一組*名稱 = 值*以插件，以使用，例如更新配對（引數）：<br /><br /> **Domain=Domain.local**<br /><br /> 這些*名稱 = 值*配對必須意義外掛程式您在指定的**CauPluginName**。<br /><br /> 若要指定引數使用 CAU UI，輸入*名稱*，長按 Tab 鍵，然後輸入適當的對應*值*。 按下 Tab 鍵，再試一次，以提供的下一步引數。 每個*名稱*和*值*會自動以等號（=）。 多個配對會自動以分號。<br /><br /> 預設值的**Microsoft.WindowsUpdatePlugin**會需要外掛程式，不引數。 不過，您可以指定選擇性引數，例如指定標準 Windows Update 代理程式查詢字串篩選更新外掛程式套用的設定。 適用於*名稱*，使用**查詢**，以及*值*，引號住完整查詢。<br /><br /> 如需詳細資訊，請查看[運作方式叢集更新插](cluster-aware-updating-plug-ins.md)。|  
+|**StopAfter**|不限時間|如果「更新執行」經過此時間 (分鐘) 尚未完成，則將予以停止。 **注意：** 如果您指定更新前或更新後的 PowerShell 指令碼，執行指令碼和執行更新的整個程序必須是完整內**StopAfter**時間限制。|  
+|**WarnAfter**|根據預設，不會顯示警告|如果「更新執行」(包括已設定的更新前指令碼及更新後指令碼) 經過此時間 (分鐘) 尚未完成，則將出現警告。|  
+|**MaxRetriesPerNode**|3|更新處理程序 (包括已設定的更新前指令碼及更新後指令碼) 在每個節點的重試次數上限。 上限為 64。|  
+|**MaxFailedNodes**|對大部分叢集而言，這個整數大概是叢集節點數的三分之一。|更新可以失敗的最大節點數，這可能是因為節點失敗或叢集服務停止執行。 如果再有一個節點失敗，「更新執行」就會停止。<br /><br /> 有效值的範圍是 0 到叢集節點數減 1。|  
+|**RequireAllNodesOnline**|None|指定所有節點都必須在線上且可搜尋，才能開始更新。|  
+|**RebootTimeoutMinutes**|15|CAU 允許重新啟動節點 (如有需要重新啟動) 與啟動所有自動啟動服務的時間 (分鐘)。 如果重新啟動程序未在此時間內完成，該節點上 「 更新執行標示為失敗。|  
+|**PreUpdateScript**|None|若要更新開始之前以及節點進入維護模式之前，每個節點上執行的 PowerShell 指令碼路徑和檔案名稱。 檔案名稱的副檔名必須是 **.ps1**，而且路徑加上檔案名稱的總長度不得超過 260 個字元。 最佳作法是讓指令碼位於叢集存放裝置的磁碟上，或在高可用性的網路檔案共用，以確保所有叢集節點永遠都能存取該指令碼。 如果指令碼位於網路檔案共用，請確定已設定檔案共用的 Everyone 群組讀取權限並禁止寫入存取，以防止未經授權的使用者竄改檔案。<br /><br /> 如果指定了更新前指令碼，請務必設定可讓指令碼順利執行的設定，像是時間限制 (例如 **StopAfter**)。 這些限制會套用到執行指令碼和安裝更新的整個處理程序中，而非只針對安裝更新的處理程序。|  
+|**PostUpdateScript**|None|（節點離開維護模式之後），就會完成更新之後執行的 PowerShell 指令碼路徑和檔案名稱。 檔案名稱的副檔名必須是 **.ps1**而且路徑加上檔案名稱的總長度不得超過 260 個字元。 最佳作法是讓指令碼位於叢集存放裝置的磁碟上，或在高可用性的網路檔案共用，以確保所有叢集節點永遠都能存取該指令碼。 如果指令碼位於網路檔案共用，請確定已設定檔案共用的 Everyone 群組讀取權限並禁止寫入存取，以防止未經授權的使用者竄改檔案。<br /><br /> 如果指定了更新後指令碼，請務必設定可讓指令碼順利執行的設定，像是時間限制 (例如 **StopAfter**)。 這些限制會套用到執行指令碼和安裝更新的整個處理程序中，而非只針對安裝更新的處理程序。|  
+|**ConfigurationName**|此設定只會在您執行指令碼時生效。<br /><br /> 如果您指定更新前指令碼或更新後指令碼，但您未指定**ConfigurationName**、 預設的工作階段會使用 PowerShell (Microsoft.PowerShell) 的設定。|指定定義工作階段指令碼的 PowerShell 工作階段設定 (藉由指定**PreUpdateScript**並**PostUpdateScript**) 會執行，而且會限制可以執行的命令。|  
+|**CauPluginName**|**Microsoft.WindowsUpdatePlugin**|設定讓叢集感知更新用來預覽更新或執行「更新執行」的外掛程式。 如需詳細資訊，請參閱 <<c0> [ 如何叢集感知更新外掛程式運作](cluster-aware-updating-plug-ins.md)。|  
+|**CauPluginArguments**|None|更新外掛程式使用的一組 *name=value* 組 (引數)，例如：<br /><br /> **Domain=Domain.local**<br /><br /> 對於您在 *CauPluginName* 中指定的外掛程式而言，這些 **name=value** 組必須是有意義的配對。<br /><br /> 若要使用 CAU UI 指定引數，請輸入 *name*，按下 Tab 鍵，然後輸入對應的 *value*。 再次按下 Tab 鍵即可提供下一個引數。 每個 *name* 及 *value* 都會自動以等號 (=) 分隔。 多個組會自動以分號分隔。<br /><br /> 預設值**Microsoft.WindowsUpdatePlugin**外掛程式不需要引數。 不過，您可以指定選用引數，例如指定標準 Windows Update Agent 查詢字串以篩選外掛程式套用的更新組。 針對*名稱*，使用**QueryString**，並針對*值*，以引號括住完整查詢。<br /><br /> 如需詳細資訊，請參閱 <<c0> [ 如何叢集感知更新外掛程式運作](cluster-aware-updating-plug-ins.md)。|  
   
-##  <a name="BKMK_runtime"></a>指定您要求更新執行選項  
- 下表列出您要求更新執行時，您可以指定（以外這些更新執行設定檔）的選項。 您可以設定更新執行設定檔的選項的相關資訊，會看到上述表格。  
+##  <a name="BKMK_runtime"></a> 指定當您要求 「 更新執行選項  
+ 下表列出要求「更新執行」時可以指定的選項 (「更新執行設定檔」選項以外的選項)。 如需可在「更新執行設定檔」中設定之選項的相關資訊，請參閱上一個表格。  
   
-|選項|預設值。|詳細資料|  
+|選項|預設值|詳細資料|  
 |------------|-------------------|-------------|  
-|**ClusterName**|無 <br>**注意：** CAU UI 不執行容錯移轉叢集節點中，或您想要參考容錯移轉叢集不同 CAU UI 在何處執行時才必須設定此選項。|在其上執行更新執行叢集 NetBIOS 名稱。|  
-|**認證**|目前 account 認證|管理權限目標叢集更新執行將會執行。 您可能已經必要的認證如果開始 CAU UI（或打開 PowerShell 工作階段，如果您正在使用 CAU PowerShell cmdlet）叢集具有系統管理員權限 account 從。|  
-|**NodeOrder**|根據預設，CAU 開頭擁有小數目叢集的角色，然後進行到的第二小的數字和等等節點節點。|叢集節點，其應該更新（如果可能的話）的順序的名稱。|  
+|**ClusterName**|None <br>**注意：** 只有在容錯移轉叢集節點沒有執行 CAU UI 時，或者您想參照執行 CAU UI 以外的其他容錯移轉叢集時，才必須設定這個選項。|要執行「更新執行」的叢集 NetBIOS 名稱。|  
+|**認證**|目前的帳戶認證|將要執行「更新執行」的目標叢集的系統管理認證。 您可以從已經擁有所需的認證啟動 CAU UI （或開啟的 PowerShell 工作階段中，如果您使用 CAU 的 PowerShell cmdlet） 在叢集具有系統管理員權限和權限的帳戶。|  
+|**NodeOrder**|根據預設，CAU 會從擁有最少叢集角色的節點開始，接著處理擁有第二少叢集角色的節點，依此類推。|依更新順序 (可能的話) 顯示的叢集節點名稱。|  
   
-##  <a name="BKMK_profile"></a>使用更新執行設定檔  
- 每個更新執行可以相關聯的特定更新執行的設定檔。 預設的更新執行的個人檔案儲存在*%windir%\cluster*資料夾。 如果您使用 CAU UI 遠端更新模式，您可以指定更新執行設定檔，適用於更新的時間，或者您可以使用的預設更新執行設定檔。 如果您正在使用 CAU 自我更新模式中，您可以匯入的設定指定更新執行的設定檔當您在設定自動更新的選項。 在這兩個案例中，您可以依據您的需求覆寫顯示的值對更新執行選項。 如果您想，您可以將儲存的更新執行選項更新執行設定檔相同的檔案名稱或其他檔案名稱。 下次您適用的更新，或設定自動更新的選項，CAU 自動選取更新執行設定檔先前選取。  
+##  <a name="BKMK_profile"></a> 使用更新執行設定檔  
+ 每個「更新執行」都可與特定更新執行設定檔建立關聯。 更新執行設定檔會儲存在預設 *%windir%\cluster*資料夾。 如果您使用 CAU UI 中遠端更新模式中，您可以在您套用更新，時間指定 「 更新執行設定檔，或者您可以使用預設更新執行設定檔。 如果您在自行更新模式使用 CAU，您可以匯入的設定指定更新執行設定檔設定自行更新選項時。 在這兩種情況下，您可視需要覆寫「更新執行」選項顯示的值。 如有需要，您可以將「更新執行」選項儲存為更新執行設定檔，檔案名稱不一定要相同。 下一次套用更新或設定自行更新選項時，CAU 會自動選取之前選取的更新執行設定檔。  
   
- 您可以修改現有更新執行的設定檔，或建立新的 homegroup，選取 [**建立修改更新執行設定檔或**在 CAU UI 中。
+ 您可以修改現有更新執行設定檔，或建立一個新方法是選取**建立或修改更新執行設定檔**在 CAU UI 中。
 
-以下是一些有關使用更新執行設定檔的重要事項：
+以下是使用更新執行設定檔的一些重要事項：
 
-* 更新執行設定檔不會儲存叢集特定資訊，例如系統管理員認證。 如果您使用 CAU 自我更新模式，請更新執行設定檔也不會儲存自我更新排程資訊。 這可讓您可以在所有容錯指定課程中分享更新執行設定檔。
-* 如果您在設定自動更新使用更新執行設定檔的選項稍後修改使用不同的值對更新執行選項的設定檔，不會自動變更設定自動更新。 若要套用新的更新執行設定，您必須再試一次設定自動更新的選項。
-* 執行設定檔編輯器很可惜不支援的檔案路徑包含空間，例如*C:\Program 檔案*。 因應措施可用，將您前和更新指令碼文章中不包含空間，或使用 PowerShell 專屬執行設定檔，將路徑引號執行時的路徑**叫用-CauRun**。
+* 「 更新執行設定檔不會儲存叢集特定資訊，例如系統管理認證。 如果您在自行更新模式使用 CAU，更新執行設定檔也不會儲存自行更新排程資訊。 這可以讓您在指定類別中的所有容錯移轉叢集間共用更新執行設定檔。
+* 如果您設定自行更新選項，使用 「 更新執行設定檔，並稍後再修改設定檔使用不同的值，如 「 更新執行 」 選項，則自行更新設定不會自動變更。 若要套用新的更新執行設定，您必須再次設定自行更新選項。
+* 執行設定檔編輯器不幸的是不支援檔案路徑包含空格，例如*C:\Program Files*。 因應措施，儲存您的前置和後更新指令碼中不包含空格，或使用 PowerShell 以獨佔方式來管理執行設定檔，執行時，將括住路徑的路徑**Invoke-caurun**。
 
-### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell 相同的命令
+### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell 對應的命令
   
- 當您執行時，您可以會匯入設定更新執行設定檔**叫用-CauRun**，**新增-CauClusterRole**，或**設定-CauClusterRole** cmdlet。  
+ 當您執行時，您可以會匯入設定從更新執行設定檔**Invoke-caurun**， **Add-cauclusterrole**，或**Set-cauclusterrole** cmdlet。  
   
- 下列範例執行掃描完整更新上並執行叢集名為*CONTOSO-FC1*，使用更新執行選項中指定的*C:\Windows\Cluster\DefaultParameters.xml*。 剩餘的 cmdlet 參數會使用預設值。  
+ 下列範例使用在 *C:\Windows\Cluster\DefaultParameters.xml* 指定的「更新執行」選項，在名為 *CONTOSO-FC1* 的叢集上執行掃描和完整的更新執行。 剩餘的 Cmdlet 參數使用預設值。  
   
 ```powershell  
 $MyRunProfile = Import-Clixml C:\Windows\Cluster\DefaultParameters.xml  
 Invoke-CauRun –ClusterName CONTOSO-FC1 @MyRunProfile   
 ```  
   
- 使用更新執行設定檔，您可以設定一致例外管理、時間範圍，以及其他操作參數更新容錯移轉叢集中重複的方式。 因為通常是一種容錯特定這些設定，例如「所有 Microsoft SQL Server 叢集」或「我關鍵性叢集」，您可能想要為每個更新執行設定檔依據種容錯它將會搭配。 此外，您可能想要管理更新執行上的設定檔的無障礙的容錯特定課程 IT 組織中的所有檔案共用。  
+ 使用更新執行設定檔，您可以重複更新容錯移轉叢集，並使用一致的例外狀況管理、時間界限與其他操作參數設定。 由於這些設定通常專用於某種容錯移轉叢集類別 (例如「所有 Microsoft SQL Server 叢集」或「我的業務關鍵叢集」)，您可以根據要使用的容錯移轉叢集類別來命名每個更新執行設定檔。 此外，您還可以在檔案共用管理更新執行設定檔，讓 IT 組織中特定類別的所有容錯移轉叢集都可存取。  
   
   
   
-## <a name="see-also"></a>也了
+## <a name="see-also"></a>另請參閱
 
--   [叢集更新](cluster-aware-updating.md)
+-   [叢集感知更新](cluster-aware-updating.md)
   
--   [Windows PowerShell 中的叢集更新 Cmdlet](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating)
+-   [在 Windows PowerShell 中的叢集感知更新 Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)

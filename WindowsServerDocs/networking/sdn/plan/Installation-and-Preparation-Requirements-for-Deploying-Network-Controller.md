@@ -1,120 +1,142 @@
 ---
-title: 安裝和部署 Network Controller 準備需求
-description: 準備您的資料中心部署 Network Controller 的您可以使用此主題。
-manager: brianlic
+title: 部署網路控制站需求
+description: 準備您的資料中心網路控制卡部署，需要一或多個電腦或 Vm 和一部電腦或 VM。 您可以部署網路控制站之前，您必須設定安全性群組、 記錄檔位置 （如有需要），以及動態 DNS 註冊。
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c50a2167a894871ea76fb96523c19531100648ce
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/10/2018
+ms.openlocfilehash: 9db7609f6f1273c46cba1dd29f81c297bb26f94b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829859"
 ---
-# <a name="installation-and-preparation-requirements-for-deploying-network-controller"></a>安裝和部署 Network Controller 準備需求
+# <a name="requirements-for-deploying-network-controller"></a>部署網路控制站需求
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-準備您的資料中心部署 Network Controller 的您可以使用此主題。  
+準備您的資料中心網路控制卡部署，需要一或多個電腦或 Vm 和一部電腦或 VM。 您可以部署網路控制站之前，您必須設定安全性群組、 記錄檔位置 （如有需要），以及動態 DNS 註冊。
+
+
+## <a name="network-controller-requirements"></a>網路控制站的需求
+
+網路控制卡部署需要一或多個電腦或 Vm 做為網路控制站，以及一部電腦或 VM 做為網路控制器管理用戶端。 
+
+- 所有 Vm 和計劃做為網路控制卡節點的電腦必須都執行 Windows Server 2016 Datacenter edition。 
+- 任何電腦或虛擬機器 (VM) 的安裝網路控制站必須執行 Windows Server 2016 Datacenter edition。 
+- 管理用戶端電腦或網路控制站的 VM 必須執行 Windows 10。 
+
   
-> [!NOTE]  
-> 本主題中，除了下列 Network Controller 的文件會提供。  
-> 
-> - [Network Controller](../technologies/network-controller/Network-Controller.md)
-> - [網路控制器可用性](../technologies/network-controller/network-controller-high-availability.md)
-> - [部署 Network Controller 使用 Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)  
-> - [安裝使用伺服器管理員 Network Controller 伺服器角色](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)  
+## <a name="configuration-requirements"></a>設定需求
 
-以下是您必須先部署 Network Controller 需要安裝、 軟體和其他需求和準備步驟。
-
-## <a name="installation-requirements"></a>安裝需求
-
-以下是 Network Controller 的安裝需求。
-
-- 針對 Windows Server 2016 部署，您可以上一或多個電腦、 一或多個 Vm 或的電腦和 Vm 部署網路控制器。 所有 Vm 和為 Network Controller 節點計劃的電腦必須都執行 Windows Server 2016 Datacenter edition。
-
-## <a name="software-requirements"></a>軟體需求
-
-網路控制器部署需要一或多個電腦或做為一部電腦與網路控制器，請 Vm VM 做為 Network Controller 的管理 client。 這些電腦或 Vm 必須執行下列作業系統。  
-
-- 任何電腦或一樣 (VM) 時，您可以安裝 Network Controller 必須執行 Windows Server 2016 Datacenter 版本。  
+在部署網路控制站，您必須設定安全性群組、 記錄檔位置 （如有需要），以及動態 DNS 註冊。
   
-- 管理 client 電腦或網路控制器 VM 必須執行 Windows 8、 Windows 8.1 或 Windows 10。  
+### <a name="step-1-configure-your-security-groups"></a>步驟 1. 設定您的安全性群組
   
-## <a name="additional-requirements"></a>額外需求
+您想要執行的第一件事是建立兩個安全性群組的 Kerberos 驗證。 
 
-以下是您必須先部署 Network Controller 需要額外的步驟。
-  
-### <a name="configure-security-groups"></a>設定安全性群組
-  
-如果電腦或網路控制器和管理 client Vm 加入網域的設定下列安全性群組 Kerberos 驗證。
+您建立群組的權限的使用者來： 
 
-- 建立安全性群組並新增所有的使用者設定 Network Controller 的權限。 例如，建立名為群組**網路控制器管理員**。 所有的使用者，您將這個群組也必須成員**網域使用者**群組中 Active Directory 使用者電腦。  
-  
-    > [!NOTE]  
-    > 如需有關 Active Directory 使用者電腦中建立群組，請查看[建立新的群組](https://technet.microsoft.com/en-us/library/cc783256(v=ws.10).aspx)。  
-
-- 建立安全性群組並新增所有的使用者設定及管理網路使用 Network Controller 的權限。  例如，建立新群組命名為**網路控制器使用者**。 您新增到新群組的使用者的所有也必須成員**網域使用者**群組中 Active Directory 使用者電腦。 使用代表狀態傳輸 \(REST\) 被執行所有 Network Controller 設定及管理。
-
-### <a name="configure-log-file-locations-if-needed"></a>視需要設定檔登入的位置
-
-您可以將網路控制器偵錯登 Network Controller 的電腦上 VM 或遠端檔案共用。 如果您想要儲存登入遠端檔案共用，請從網路控制器可以存取分享。
-
-### <a name="configure-dynamic-dns-registration-for-network-controller"></a>設定動態 DNS 登記 Network Controller
-  
-您可以將網路控制器叢集節點在相同的子網路或其他子網路上的部署。 
+1. 設定網路控制站<p>您可以群組命名為這個網路控制站的系統管理員，例如。 
+2.  設定和使用網路控制卡管理網路<p>您可以命名此群組的網域控制站使用者，例如。 若要設定及管理網路控制站使用具像狀態傳輸 (REST)。
 
 >[!NOTE]
->如果 Network Controller 節點上相同的子網路，您必須提供的網路控制器其餘 IP 位址，當您設定動態 DNS 登記 Network Controller 的。 如果節點上不同子網路，您必須提供的網路控制器其他 DNS 名稱，當您設定動態 DNS 登記。
+>所有您加入的使用者必須在 Active Directory 使用者和電腦的 Domain Users 群組的成員。
 
-如果網路控制器節點上不同子網路，您必須執行下列 DNS 設定：
+### <a name="step-2-configure-log-file-locations-if-needed"></a>步驟 2. 如有需要設定記錄檔位置
 
-- 部署程序期間建立 Network Controller 的 DNS 名稱
+您想要執行下一的步是設定來儲存網路控制卡偵錯記錄檔，網路控制站的電腦或 VM 上或遠端檔案共用上的檔案位置。 
 
-- 設定 DNS 伺服器上的網路控制器 DNS 名稱 DNS 動態更新
+>[!NOTE]
+>如果您在遠端檔案共用中儲存的記錄檔，請從網路控制站可以存取共用。
 
-- 只 Network Controller 節點僅 DNS 動態更新
 
-您可以使用下列程序，設定 DNS 動態更新，並只名稱記錄 Network Controller 的動態更新。
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>步驟 3。 網路控制站設定動態 DNS 註冊
+  
+最後，您想要執行下一的步是部署網路控制站相同的子網路或不同的子網路上的叢集節點。 
+
+|如果...  |則...  |
+|---------|---------|
+|位於相同的子網路， |您必須提供網路控制站的 REST IP 位址。 |
+|位於不同的子網路 |您必須提供您在部署程序期間建立的網路控制站的 REST DNS 名稱。 您也必須執行下列動作：<ul><li>設定網路控制站的 DNS 名稱的 DNS 動態更新 DNS 伺服器上。</li><li>限制只有網路控制卡節點 DNS 動態更新。</li></ul> |
+---
 
 > [!NOTE]
-> 資格在**網域系統管理員**，或相當於，才能執行這些程序最小值。
+> 中的成員資格**Domain Admins**，或同等權限，才能執行這些程序的最小值。
   
-#### <a name="to-allow-dns-dynamic-updates-for-a-zone"></a>若要允許 DNS 區域的動態更新
+1. 允許區域的 DNS 動態更新。
 
-1. 打開 DNS 管理員。
+   a. 開啟 DNS 管理員，並在主控台樹狀目錄中，以滑鼠右鍵按一下適用的區域，然後按**屬性**。 
+      
+   b. 在 **一般**索引標籤上，確認區域類型是否為**主要**或是**Active Directory 整合**。
 
-2. 主控台中適用的區域，以滑鼠右鍵按一下，然後按一下**屬性**。 這個區域的**屬性**對話方塊。
+   c.  在 **動態更新**，確認**只有安全**已選取，然後按一下**確定**。
 
-3. 在**一般**索引標籤上，確認區域類型 \**主要**或**Active Directory 整合**。
+2. 設定網路控制卡節點的 DNS 區域安全性權限
 
-4. 在**的動態更新**，確認**只有安全**選取。 未選取，如果變更的值**動態更新**以**僅限安全性**，然後按一下 [ **[確定]**。
+   a.  按一下 [安全性] 索引標籤，然後按一下 [進階]。 
 
-#### <a name="to-configure-dns-zone-security-permissions-for-network-controller-nodes"></a>設定 DNS Network Controller 節點區域的安全性權限
-
-1.  打開 DNS 管理員。
-
-2.  主控台中適用的區域，以滑鼠右鍵按一下，然後按一下**屬性**。 這個區域的**屬性**對話方塊。
-
-3.  按一下**安全性**索引標籤，然後按一下 [**進階]**。 **進階安全性設定]**對話方塊。
-
-4. 在**進階安全性設定]**，按一下 [**新增]**。 **的權限的項目**對話方塊。
+   b. 在 **進階安全性設定**，按一下**新增**。 
   
-5. 按一下**請選取主體**。 **選擇使用者、 電腦、 或群組**對話方塊。
+   c.  按一下 [**選取一個主體**]。 
 
-6. 在**選擇使用者、 電腦、 或群組**對話方塊中，按**物件類型**。 **物件類型**對話方塊。 
+   d. 在 [**選取使用者、 電腦、 服務帳戶或群組**] 對話方塊中，按一下**物件類型**。 
 
-7. 在**物件類型**，請選取**電腦**，然後按一下 [ **[確定]**。
+   e. 在 **物件類型**，選取**電腦**，然後按一下**確定**。
 
-8. 在**選擇使用者、 電腦、 或群組**對話方塊中，輸入您的部署的其中一個節點 Network Controller NetBIOS 名稱，然後按一下 [ **[確定]**。
+   f. 在 [**選取使用者、 電腦、 服務帳戶或群組**] 對話方塊中，在您部署中，輸入其中一個網路控制卡節點的 NetBIOS 名稱，然後按一下**確定**。
 
-9. 在**的權限的項目**，確保的值**輸入**是**允許**的值與**適用於**是**這個物件和所有系物件**。
+   g. 在 **權限項目**，確認下列值：
+
+      - **型別**= 允許
+      - **適用於**= 此物件及所有子系物件
   
-10. 在 [權限，選取 [**寫入所有屬性**和**Delete**，，然後按一下 [ **[確定]**。
+   h. 中**權限**，選取**寫入全部內容**並**刪除**，然後按一下 **[確定]**。
 
-11. 重複執行步驟**5**透過**10**的所有電腦和 Vm 中 Network Controller 叢集。
+3. 在網路控制卡叢集中重複的所有電腦和 Vm。
 
-如需詳細資訊，請查看[計劃軟體定義網路基礎架構](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)。
+### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步驟 4. 設定服務主體名稱，如果使用 Kerberos 式驗證
+
+如果網路控制站與管理用戶端通訊使用 Kerberos 驗證，您必須設定 Active Directory 中的網路控制站的服務主體名稱 (SPN)。 網路控制站會自動設定 SPN。 您只需要為提供網路控制站機器註冊，並修改 SPN 的權限。 如需詳細資訊，請參閱 <<c0> [ 設定服務主體名稱 (SPN)](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)。
+
+## <a name="deployment-options"></a>部署選項
+
+### <a name="network-controller-deployment"></a>網路控制站部署
+
+安裝程式包含三個虛擬機器上設定的網路控制卡節點是高可用性的。 也會顯示為兩個的租用戶與租用戶 2 的虛擬網路分成兩個虛擬子網路，以模擬 web 層和資料庫層。  
+
+![SDN NC 計劃](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
+
+### <a name="network-controller-and-software-load-balancer-deployment"></a>網路控制卡和軟體負載平衡器部署
+
+對於高可用性，有兩個或多個 SLB/MUX 節點。
+   
+![SDN NC 計劃](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
+  
+### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>網路控制站、 軟體負載平衡器，以及 RAS 閘道部署
+
+有三部閘道虛擬機器;兩個作用中，並有備援。
+
+![SDN NC 計劃](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
+  
+  
+  
+TP5 為基礎的部署自動化、 可用且可從這些子網路，就必須是一個 Active Directory。 如需有關 Active Directory 的詳細資訊，請參閱 < [Active Directory 網域服務概觀](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)。  
+  
+>[!IMPORTANT] 
+>如果您使用 VMM 部署，請確定您的基礎結構虛擬機器 (VMM 伺服器 AD/DNS，SQL Server，等等) 不裝載在任何圖表所示的四個主機上。  
+
+
+## <a name="next-steps"></a>後續步驟
+[軟體定義網路基礎結構的計劃](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)。
+
+## <a name="related-topics"></a>相關主題
+- [網路控制站](../technologies/network-controller/Network-Controller.md) 
+- [網路控制站的高可用性](../technologies/network-controller/network-controller-high-availability.md) 
+- [部署使用 Windows PowerShell 的網路控制站](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
+- [安裝網路控制卡伺服器角色，使用 伺服器管理員](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   

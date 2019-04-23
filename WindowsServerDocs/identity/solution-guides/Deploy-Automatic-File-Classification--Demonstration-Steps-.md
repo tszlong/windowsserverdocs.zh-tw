@@ -1,7 +1,7 @@
 ---
 ms.assetid: 01988844-df02-4952-8535-c87aefd8a38a
-title: "部署自動檔案分類（示範步驟）"
-description: 
+title: Deploy Automatic File Classification (Demonstration Steps)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,106 +9,107 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 1c5c0fa221e0d7375216426f838ba37bee852984
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 77fb8cc6e13cb82e4d07808c3ae77757a4b2de79
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826779"
 ---
-# <a name="deploy-automatic-file-classification-demonstration-steps"></a>部署自動檔案分類（示範步驟）
+# <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-本主題如何讓資源屬性 Active Directory 中的，分類規則的伺服器上建立的檔案，然後指定至該檔案伺服器上的檔案的資源屬性的值。 針對此範例中，會建立下列分類規則：  
+這個主題說明如何啟用 Active Directory 中的資源內容、在檔案伺服器上建立分類規則，然後將值指派給檔案伺服器上檔案的資源內容。 針對這個範例會建立下列分類規則：  
   
--   搜尋檔案 'Contoso 機密。' 字串一組內容分類規則 如果檔案中找到字串，影響資源屬性設定為 [高檔案。  
+-   搜尋一組檔案，' Contoso Confidential。 ' 字串內容分類規則 如果檔案中找到這個字串，檔案上的 [影響] 資源內容就會設為 [高]。  
   
--   搜尋檔案運算式符合社會安全至少 10 倍一個檔案中的一組內容分類規則。 如果找到模式時，檔案被歸類為個人資訊，以及個人辨識資訊資源屬性設為 [高。  
+-   利用規則運算式搜尋一組檔案，尋找一個檔案中至少有 10 次比對到身分證號碼的內容分類規則。 如果找到這個模式，則檔案會分類為包含個人識別資訊，且 [個人識別資訊] 資源內容會設為 [高]。  
   
-**本文件**  
+**在這份文件**  
   
--   [步驟 1：建立的資源屬性定義](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [步驟 1：建立資源內容定義](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
 -   [步驟 2：建立字串內容分類規則](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step2)  
   
--   [步驟 3：建立運算式內容分類規則](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
+-   [步驟 3：建立規則運算式內容分類規則](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [步驟 4：確認屬於檔案](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
+-   [步驟 4：確認分類檔案](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> 本主題包含範例 Windows PowerShell cmdlet 可供您將部分所述的程序。 如需詳細資訊，請查看[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Step1"></a>步驟 1：建立的資源屬性定義  
-影響和個人辨識資訊的資源屬性的功能，讓該檔案分類基礎結構可以使用這些的資源屬性標記網路共用資料夾中的掃描的檔案。  
+## <a name="BKMK_Step1"></a>步驟 1:建立資源內容定義  
+[影響] 和 [個人識別資訊] 資源內容已啟用，所以檔案分類基礎結構可以使用這些資源內容來標記網路共用資料夾上掃描到的檔案。  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
-#### <a name="to-create-resource-property-definitions"></a>若要建立的資源屬性定義  
+#### <a name="to-create-resource-property-definitions"></a>建立資源內容定義  
   
-1.  網域控制站在登入伺服器網域管理安全性群組成員。  
+1.  在網域控制站上，以 Domain Admins 安全性群組成員的身分登入伺服器。  
   
-2.  打開 Active Directory 系統管理員中心。 在伺服器管理員中，按一下**工具**，然後按**Active Directory 管理中心**。  
+2.  開啟「Active Directory 管理中心」。 在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [Active Directory 管理中心]。  
   
-3.  展開**動態存取控制**，然後按**資源屬性**。  
+3.  展開 [動態存取控制]，然後按一下 [資源內容]。  
   
-4.  以滑鼠右鍵按一下**影響**，然後按**可讓**。  
+4.  用滑鼠右鍵按一下 [影響]，然後按一下 [啟用]。  
   
-5.  以滑鼠右鍵按一下**個人辨識資訊**，然後按一下 [**可讓**。  
+5.  在 [個人識別資訊] 上按一下滑鼠右鍵，然後按一下 [啟用]。  
   
-![方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。  
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
 ```  
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=Impact_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'   
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>步驟 2：建立字串內容分類規則  
-字串內容分類規則掃描字串特定的檔案。 如果找到字串，您可以設定的資源屬性的值。 在此範例中，我們將會每個檔案，在網路共用資料夾，並尋找 'Contoso 機密。' 字串 如果找到字串，相關聯的檔案歸類為有高企業的影響。  
+## <a name="BKMK_Step2"></a>步驟 2:建立字串內容分類規則  
+字串內容分類規則會掃描檔案是否包含特定字串。 如果找到字串，則可以設定資源內容的值。 在此範例中，我們會掃描網路共用資料夾上的每個檔案，並尋找 'Contoso Confidential。' 字串 如果找到字串，關聯的檔案會被分類為具有高商業影響。  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
-#### <a name="to-create-a-string-content-classification-rule"></a>若要建立字串內容分類規則  
+#### <a name="to-create-a-string-content-classification-rule"></a>建立字串內容分類規則  
   
-1.  以系統管理員安全性群組成員登入該檔案伺服器。  
+1.  以本機 Administrators 安全性群組成員的身分登入檔案伺服器。  
   
-2.  Windows PowerShell 命令提示字元中，輸入**更新-FsrmClassificationPropertyDefinition**，然後按 ENTER 鍵。 這將會同步處理檔案伺服器的網域控制站上建立的屬性定義。  
+2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition** ，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。  
   
-3.  打開檔案伺服器資源管理員。 在伺服器管理員中，按一下**工具**，然後按**檔案伺服器資源管理員**。  
+3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
   
-4.  展開**分類管理**，以滑鼠右鍵按一下**分類規則**，然後按一下 [**設定分類排程**。  
+4.  展開 [分類管理] ，以滑鼠右鍵按一下 [分類規則] ，然後按一下 [設定分類排程] 。  
   
-5.  選取 [**讓修正的排程**核取方塊中，選取**允許連續分類的新檔案**核取方塊中，選擇星期幾以執行分類，然後按**[確定]**。  
+5.  選取 [啟用固定的排程]  核取方塊，選取 [允許對新檔案進行連續分類]  核取方塊，選擇每週中執行分類的日子，然後按一下 [確定] 。  
   
-6.  以滑鼠右鍵按一下**分類規則**，然後按**建立分類規則**。  
+6.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則] 。  
   
-7.  在**一般**索引標籤的**規則名稱**方塊中，輸入規則的名稱，例如**以 Contoso 機密**。  
+7.  在 [一般] 索引標籤的 [規則名稱] 方塊中，輸入規則的名稱，例如 **Contoso Confidential**。  
   
-8.  在**範圍**索引標籤上，按一下 [**新增**，並選擇應包含在此規則，例如 D:\Finance 文件中的資料夾。  
+8.  在 [範圍]  索引標籤上，按一下 [新增] ，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。  
   
     > [!NOTE]  
-    > 您也可以選擇領域動態命名空間。 如需有關分類規則的動態命名空間，請查看[新檔案伺服器資源管理員」中是在 Windows Server 2012 \[redirected\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
+    > 您也可以為範圍選擇動態命名空間。 如需分類規則的動態命名空間的詳細資訊，請參閱[什麼是檔案伺服器資源管理員的新功能 Windows Server 2012\[重新導向\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
   
-9. 在**分類**索引標籤上，進行下列設定：  
+9. 在 [分類] 索引標籤中，設定下列選項：  
   
-    -   在**選擇指派屬性檔案的方法**方塊中，請確定**內容器**選取。  
+    -   在 [選擇將內容指派給檔案的方法] 方塊中，確定已選取 [內容分類器]。  
   
-    -   在**選擇屬性指定的檔案以**方塊中，按一下 [**影響**。  
+    -   在 [選擇要指派給檔案的內容] 方塊中，按一下 [影響]。  
   
-    -   在**指定值**方塊中，按**高**。  
+    -   在 [指定值] 方塊中，按一下 [高]。  
   
-10. 在**參數**標頭下，按一下 [**設定**。  
+10. 在 [參數] 標題之下，按一下 [設定]。  
   
-11. 在**輸入運算式**欄中，選取**字串**。  
+11. 在 [運算式類型] 欄中，選取 [字串]。  
   
-12. 在**運算式**欄中，輸入**Contoso 機密**，然後按一下 [ **[確定]**。  
+12. 在 [運算式]  欄中，輸入 **Contoso Confidential**，然後按一下 [確定] 。  
   
-13. 在**評估類型**索引標籤，選取**重新評估現有屬性的值**核取方塊、按一下 [**覆寫現有的值**，然後按一下 [ **[確定]**。  
+13. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。  
   
-![方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。  
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
 ```  
 $date = Get-Date  
@@ -117,77 +118,78 @@ Set-FsrmClassification -Continuous -schedule $AutomaticClassificationScheduledTa
 New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -PropertyValue "3000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("StringEx=Min=1;Expr=Contoso Confidential") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step3"></a>步驟 3：建立運算式內容分類規則  
-運算式分類規則掃描模式符合運算式檔案。 如果找到符合運算式字串，您可以設定的資源屬性的值。 在此範例中，我們將會每個檔案，在網路共用資料夾，並尋找字串符合社交安全性數字 (XXX-XX-XXXX) 的模式。 如果找不到此模式，相關聯的檔案會被歸類為個人資訊。  
+## <a name="BKMK_Step3"></a>步驟 3:建立規則運算式內容分類規則  
+規則運算式分類規則會掃描檔案，尋找符合規則運算式的模式。 如果找到符合規則運算式的字串，則可以設定資源內容的值。 在這個範例中，我們會掃描網路共用資料夾上的每個檔案，尋找符合身份證號碼 (XXX-XX-XXXX) 模式的字串。 如果找到這種模式，關聯的檔案會被分類為包含個人識別資訊。  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
   
-#### <a name="to-create-a-regular-expression-content-classification-rule"></a>若要建立運算式內容分類規則  
+#### <a name="to-create-a-regular-expression-content-classification-rule"></a>建立規則運算式內容分類規則  
   
-1.  以系統管理員安全性群組成員登入該檔案伺服器。  
+1.  以本機 Administrators 安全性群組成員的身分登入檔案伺服器。  
   
-2.  Windows PowerShell 命令提示字元中，輸入**更新-FsrmClassificationPropertyDefinition**，然後按 ENTER 鍵。 這將會同步處理檔案伺服器的網域控制站的屬性定義。  
+2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition**，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。  
   
-3.  打開檔案伺服器資源管理員。 在伺服器管理員中，按一下**工具**，然後按**檔案伺服器資源管理員**。  
+3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
   
-4.  以滑鼠右鍵按一下**分類規則**，然後按**建立分類規則**。  
+4.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則] 。  
   
-5.  在**一般**索引標籤的**規則名稱**方塊中，輸入名稱分類規則，例如 PII 規則。  
+5.  在 [一般] 索引標籤上的 [規則名稱] 方塊中，輸入分類規則的名稱，例如「PII 規則」。  
   
-6.  在**範圍**索引標籤上，按一下 [**新增**，然後選擇 [的資料夾，應該會包含在此規則，例如 D:\Finance 文件。  
+6.  在 [範圍] 索引標籤上，按一下 [新增]，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。  
   
-7.  在**分類**索引標籤上，進行下列設定：  
+7.  在 [分類] 索引標籤中，設定下列選項：  
   
-    -   在**選擇指派屬性檔案的方法**方塊中，請確定**內容器**選取。  
+    -   在 [選擇將內容指派給檔案的方法] 方塊中，確定已選取 [內容分類器]。  
   
-    -   在**選擇屬性指定的檔案以**方塊中，按一下 [**個人辨識資訊**。  
+    -   在 [選擇要指派給檔案的內容]  方塊中，按一下 [個人識別資訊] 。  
   
-    -   在**指定值**方塊中，按**高**。  
+    -   在 [指定值] 方塊中，按一下 [高]。  
   
-8.  在**參數**標頭下，按一下 [**設定**。  
+8.  在 [參數] 標題之下，按一下 [設定]。  
   
-9. 在**輸入運算式**欄中，選取**運算式**。  
+9. 在 [運算式類型]  欄中，選取 [規則運算式] 。  
   
-10. 在**運算式**欄中，輸入**^（！000)([0-7]\d{2}|7([0-7]\d|7[012])) ([-] 嗎？)(?!00) \d\d\3（？！\d {4} $ 0000)**  
+10. 在 **運算式**資料行中輸入 **^ （？ ！000) ([0-7] \d{2}| 7([0-7]\d|7[012 ([-]？)(?!00) \d\d\3 （？ ！0000) \d{4}$**  
   
-11. 在**最小的項目**欄中，輸入**10**，然後按一下 [ **[確定]**。  
+11. 在 [發生次數下限] 欄中，輸入 **10**，然後按一下 [確定]。  
   
-12. 在**評估類型**索引標籤，選取**重新評估現有屬性的值**核取方塊、按一下 [**覆寫現有的值**，然後按一下 [ **[確定]**。  
+12. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。  
   
-![方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。  
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
 ```  
 New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=10;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step4"></a>步驟 4：驗證，正確地歸類檔案  
-您可以檢查檔案，正確歸類檢視檔案建立資料夾分類規則中所指定的屬性。  
+## <a name="BKMK_Step4"></a>步驟 4:確認檔案正確分類  
+您可以檢視分類規則中指定的資料夾中建立的檔案的內容，確認檔案已正確分類。  
   
-#### <a name="to-verify-that-the-files-are-classified-correctly"></a>若要確認檔案都正確分類  
+#### <a name="to-verify-that-the-files-are-classified-correctly"></a>確認檔案正確分類  
   
-1.  使用檔案伺服器資源管理員執行分類規則的檔案伺服器。  
+1.  在檔案伺服器上，使用 [檔案伺服器資源管理員] 執行分類規則。  
   
-    1.  按一下**分類管理**，以滑鼠右鍵按一下**分類規則**，然後按一下 [**分類的所有規則立即執行**。  
+    1.  按一下 [分類管理]，以滑鼠右鍵按一下 [分類規則]，然後按一下 [立即使用所有規則執行分類]。  
   
-    2.  按一下**等待完成分類**選項，然後按一下 [ **[確定]**。  
+    2.  按一下 [等待分類完成] 選項，然後再按一下 [確定]。  
   
     3.  關閉自動分類報告。  
   
-    4.  您可以使用 Windows PowerShell 使用下列命令：**開始-FSRMClassification '」RunDuration 0-確認：$false**  
+    4.  您可以使用 Windows PowerShell 的下列命令執行這個作業：**Start-FSRMClassification '"RunDuration 0 -Confirm:$false**  
   
-2.  瀏覽至分類規則，例如 D:\Finance 文件中所指定的資料夾。  
+2.  瀏覽至分類規則中指定的資料夾，例如 D:\Finance Documents。  
   
-3.  以滑鼠右鍵按一下該資料夾的檔案，然後按一下**屬性**。  
+3.  以滑鼠右鍵按一下該資料夾中的檔案，然後按一下 [內容]。  
   
-4.  按一下**分類**索引標籤，然後確認檔案已正確歸類。  
+4.  按一下 [分類]  索引標籤，並確認已正確分類檔案。  
   
-## <a name="BKMK_Links"></a>也了  
+## <a name="BKMK_Links"></a>另請參閱  
   
--   [案例︰ 使用分類取得深入了解您的資料](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [案例：使用分類來取得深入剖析資料](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
--   [自動檔案分類計劃](assetId:///e3c3bb4b-3034-42b7-b391-8ef5f5851955)  
+-   [規劃自動檔案分類](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
+
   
 -   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
   

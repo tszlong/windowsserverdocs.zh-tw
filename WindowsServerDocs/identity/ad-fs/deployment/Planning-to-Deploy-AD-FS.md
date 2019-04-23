@@ -1,7 +1,7 @@
 ---
 ms.assetid: c87dc32d-ab33-44d2-a46f-f9f878b4e5b4
-title: "部署 AD FS 計劃"
-description: 
+title: 計畫部署 AD FS
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,31 +10,32 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: ca9e53d7d98f3ae5e6b7b329e52d4979e8c10215
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59831689"
 ---
-# <a name="planning-to-deploy-ad-fs"></a>部署 AD FS 計劃
+# <a name="planning-to-deploy-ad-fs"></a>計畫部署 AD FS
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 
-您會收集關於您的環境資訊，您可以選擇在 Active Directory 同盟服務 \(AD FS\) 設計依照下列指導方針中的後[Windows Server 2012 中 AD FS 程式設計指南](https://technet.microsoft.com/library/dd807036.aspx)，就可以開始您的組織 AD FS 設計部署計劃。 已完成的設計和本主題中的資訊，您可以判斷部署 AD FS 您在組織中的執行的工作。  
+您收集有關您的環境的資訊，並在您決定在 Active Directory Federation Services 之後\(AD FS\)依照中的指導方針的設計[Windows Server 2012 中 AD FS 設計指南](https://technet.microsoft.com/library/dd807036.aspx)，您可以開始規劃組織的 AD FS 設計的部署。 完整的設計與本主題中的資訊，您就可以決定要執行部署組織中的 AD FS。  
   
-## <a name="reviewing-your-ad-fs-design"></a>審查您的 AD FS 設計  
-設計建構原始 AD FS 設計團隊組織不同於部署小組的實際會執行部署，請確定部署小組評論設計團隊的最終設計。 檢視關於設計下列重點：  
+## <a name="reviewing-your-ad-fs-design"></a>檢閱您的 AD FS 設計  
+建構的原始 AD FS 設計團隊設計您的組織不同於部署小組，可以實際實作部署，請確定部署團隊檢閱與設計小組的最終設計。 檢閱有關設計的下列各點：  
   
--   若要判斷在您的企業網路或周邊網路聯盟伺服器配置最佳實體拓撲設計團隊的策略。 本主題的文件可以參考部署小組所檢視的下列主題 AD FS 設計節目表中：  
+-   設計團隊決定在您的公司網路或周邊網路中放置同盟伺服器之最佳實體拓撲的策略。 本主題的詳細文件可以參照部署小組檢閱 AD FS 設計指南中的下列主題：  
   
     -   [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)  
   
-    -   [規劃伺服器聯盟的位置](https://technet.microsoft.com/library/dd807069.aspx)  
+    -   [規劃同盟伺服器的位置](https://technet.microsoft.com/library/dd807069.aspx)  
   
-    -   [規劃聯盟 Proxy 伺服器的位置](https://technet.microsoft.com/library/dd807130.aspx)  
+    -   [規劃同盟伺服器 Proxy 的位置](https://technet.microsoft.com/library/dd807130.aspx)  
   
-    很可能設計團隊，可能會使保留聯盟伺服器或聯盟伺服器 proxy 配置部署小組的主題。 部署小組負責然後文件並執行實體拓撲的伺服器。  
+    設計團隊可能將同盟伺服器或同盟伺服器 Proxy 放置位置的主題留給部署團隊決定。 接著，部署團隊必須負責記錄並實作伺服器的實體拓撲。  
   
--   適用於您組織的指定為宣告提供者、信賴，或兩者記載 AD FS 設計的範圍中企業的原因。 確定原因為何要部署 AD FS 與其他公司或組織哪些部署小組的成員，了解聯盟合作關係與有關。 確保部署小組的成員也會了解其他公司或組織限制 \（有限的硬體，不外部環境，以及如此 forth\），可能會限制的一些方式設計範圍。 合作夥伴公司的相關詳細資訊，請查看[規劃您部署](https://technet.microsoft.com/library/dd807083.aspx)。  
+-   將組織指定為宣告提供者、信賴憑證者或兩者的商業理由，屬於已記錄之 AD FS 設計的範圍。 請確定部署團隊的成員了解為什麼 AD FS 部署的原因，以及其他公司或組織為何牽涉到同盟合作關係。 確定部署團隊的成員也了解其他公司或組織的條件約束\(有限的硬體、 無外部網路環境中，等\)，可能會限制以某種方式設計的範圍。 如需有關夥伴組織的詳細資訊，請參閱[計畫您的部署](https://technet.microsoft.com/library/dd807083.aspx)。  
   
-之後設計團隊和部署團隊同意這些問題，就可以繼續 AD FS 設計的部署。 如需詳細資訊，請查看[實作您 AD FS 設計計劃](Implementing-Your-AD-FS-Design-Plan.md)。  
+之後的設計團隊與部署團隊同意這些問題，就可以繼續使用 AD FS 設計的部署。 如需詳細資訊，請參閱 [實作您的 AD FS 設計計畫](Implementing-Your-AD-FS-Design-Plan.md)。  

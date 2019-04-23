@@ -1,6 +1,6 @@
 ---
-title: "加入 Microsoft Online Service 合作夥伴合約合作夥伴資料錄資訊"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,53 +13,54 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 39ce43228cd7392bcc86de4a410c52676ce15047
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833039"
 ---
-# <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>加入 Microsoft Online Service 合作夥伴合約合作夥伴資料錄資訊
+# <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>   
- 如果您的 Office 365 Microsoft Online Service 合作夥伴合約 (MOSPA) 合作夥伴，以確保您的正確補償裝機費要求來自 Windows Server Essentials 透過 Office 365 整合模組，當您需要建立登錄按鍵包含您的合作夥伴資料錄驗證 (埠 ID)。 下列是讀取和通過註冊 Url Office 365 服務提供者。  
+ 如果您是 Office 365 的 Microsoft Online Service 合作夥伴合約 (MOSPA) 合作夥伴，以確保您獲得正確補償時的訂閱要求源自 Windows Server Essentials 透過 Office 365 整合模組中，您需要建立包含您的列名合作夥伴識別碼 （POR 識別碼） 的登錄機碼。 會讀取下列資訊，並透過 Office 365 註冊 URL 將資訊傳遞給服務提供者。  
   
 -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO  
   
--   輸入 = 字串值。  
+-   類型 = 字串值  
   
--   按鍵名稱 = 合作夥伴  
+-   機碼名稱 = Partner  
   
--   值 = 的 wintab-xxxxx，其中 wintab-xxxxx 是您埠 ID  
+-   值 = xxxxx，其中 xxxxx 是 POR ID  
   
-#### <a name="to-add-the-por-id-key-to-the-registry"></a>若要新增埠 ID 按鍵登錄  
+#### <a name="to-add-the-por-id-key-to-the-registry"></a>若要將 POR ID 機碼新增至登錄  
   
-1.  參考在電腦上，按一下 [ **[開始]**，輸入**regedit**，然後按 ENTER 鍵。  
+1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 ENTER。  
   
-2.  在左窗格中，展開**跳**，展開 [**軟體**，展開 [ **Microsoft**，然後展開 [ **Windows Server**。  
+2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、 **SOFTWARE**、 **Microsoft**，然後展開 **Windows Server**。  
   
-3.  以滑鼠右鍵按一下**Windows Server**，指向 [**新**，然後按一下 [**鍵**。  
+3.  以滑鼠右鍵按一下 **Windows Server**，指向 **[新增]**，然後按一下 **[機碼]**。  
   
-4.  輸入**MSO**鍵的名稱。  
+4.  輸入 **MSO** 做為機碼的名稱。  
   
-5.  以滑鼠右鍵按一下您剛鍵建立，，然後按一下**字串值**。  
+5.  以滑鼠右鍵按一下您剛才建立的機碼，然後按一下 **[字串值]**。  
   
-6.  輸入**合作夥伴**字串，然後按下 ENTER 的名稱。  
+6.  輸入 **Partner** 作為字串名稱，然後按 ENTER。  
   
-7.  以滑鼠右鍵按一下新的**合作夥伴**字串右窗格中，然後按一下 [**修改]**。  
+7.  在右窗格中，以滑鼠右鍵按一下新的 **Partner** 字串，然後按一下 **[修改]**。  
   
-8.  輸入您的埠 ID 在**數值資料**文字方塊，然後再按一下**[確定]**。  
+8.  在 **[數值資料]** 文字方塊中輸入您的 POR ID，然後按一下 **[確定]**。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
 
  [建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](../install/Additional-Customizations.md)   
- [準備部署映像](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](../install/Testing-the-Customer-Experience.md)
+ [其他自訂項目](../install/Additional-Customizations.md)   
+ [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

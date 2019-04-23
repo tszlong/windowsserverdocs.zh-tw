@@ -1,174 +1,176 @@
 ---
-title: 管理憑證的軟體定義網路
-description: 若要了解如何管理 Northbound 網路控制器和 Southbound 通訊的憑證部署軟體定義網路 (SDN) 在 Windows Server 2016 Datacenter 時，您可以使用此主題。
-manager: brianlic
+title: 管理軟體定義網路的憑證
+description: 您可以使用本主題以了解如何管理網路控制器 Northbound 和 Southbound 通訊的憑證，當您部署軟體定義網路 (SDN) 在 Windows Server 2016 Datacenter。
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3036de9161cabc2f3a85a1d3b2ce7739f0ff6bd3
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/22/2018
+ms.openlocfilehash: 618c2c4da60decc94f84c2a40cd4d2aa80d5f26b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59827569"
 ---
-# <a name="manage-certificates-for-software-defined-networking"></a>管理憑證的軟體定義網路
+# <a name="manage-certificates-for-software-defined-networking"></a>管理軟體定義網路的憑證
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-若要了解如何管理 Northbound 網路控制器和 Southbound 通訊的憑證在 Windows Server 2016 Datacenter 的軟體定義網路 \(SDN\) 部署您正在使用 System Center 一樣 Manager \(SCVMM\) 為您 SDN 管理 client 時，您可以使用此主題。
+您可以使用本主題來了解如何管理網路控制器 Northbound 和 Southbound 通訊的憑證，當您部署軟體定義網路\(SDN\)在 Windows Server 2016 Datacenter 及您使用系統Center Virtual Machine Manager \(SCVMM\)作為 SDN 管理用戶端。
 
 >[!NOTE]
->Network Controller 概觀資訊，請查看[Network Controller](../technologies/network-controller/Network-Controller.md)。
+>如需網路控制站的概觀資訊，請參閱[網路控制卡](../technologies/network-controller/Network-Controller.md)。
 
-如果您不使用 Kerberos 保護的網路控制器通訊，您可以使用 x.509 驗證、 授權及加密。
+如果您不使用 Kerberos 來保護網路控制站通訊，您可以使用 X.509 憑證進行驗證、 授權和加密。
 
-在 Windows Server 2016 Datacenter SDN 支援兩 self\ 簽章和憑證授權單位 \ (CA\)-簽署 x.509。 本主題提供逐步指示建立這些憑證，並將其套用的安全的網路控制器 Northbound 的通訊通道與管理戶端和 Southbound 通訊網路的裝置，例如軟體負載平衡器 \(SLB\)。
+Windows Server 2016 Datacenter 中的 SDN 支援這兩個自我\-簽章和憑證授權單位\(CA\)-簽署 X.509 憑證。 本主題提供建立這些憑證，並將其套用的保護與管理用戶端的網路控制器 Northbound 通訊通道的逐步指示與 Southbound 通訊與網路裝置，例如軟體負載平衡器\(SLB\)。
 .
-當您使用 certificate\ 驗證時，您必須註冊 Network Controller 節點上一會以下列方式使用的憑證。
+當您使用憑證\-型驗證，您必須註冊在網路控制卡節點上使用下列方式的一個憑證。
 
-1. 加密 Northbound 安全通訊端層 \(SSL\) Network Controller 節點和管理戶端，例如 System Center 一樣 Manager 間通訊。
-2. Network Controller 節點和 Southbound 裝置之間的服務，例如 HYPER-V 主機和軟體負載平衡器 \(SLBs\) 驗證。
+1. 加密 Northbound 通訊使用安全通訊端層\(SSL\)之間網路控制卡節點和管理用戶端，例如 System Center Virtual Machine Manager。
+2. 網路控制卡節點與 Southbound 裝置和服務，例如 HYPER-V 主機和軟體負載平衡器之間的驗證\(SLBs\)。
 
-## <a name="creating-and-enrolling-an-x509-certificate"></a>建立和註冊 X.509
+## <a name="creating-and-enrolling-an-x509-certificate"></a>建立和註冊的 X.509 憑證
 
-您可以建立和註冊 self\ 簽署的憑證或 CA 發行憑證。
+您可以建立並註冊自我\-簽署憑證或由 CA 所發出的憑證。
 
 >[!NOTE]
->當您使用 SCVMM 部署 Network Controller 時，您必須指定 X.509 憑證所使用的網路控制器服務範本設定期間加密 Northbound 通訊。
+>當您使用 SCVMM 來部署網路控制站時，您必須指定用來加密 Northbound 通訊在網路控制站服務範本的組態期間的 X.509 憑證。
 
 憑證設定必須包含下列值。
 
-- 值為**RestEndPoint**文字方塊必須的網路控制器完整網域名稱 \(FQDN\) 或 IP 位址。 
-- **RestEndPoint**值必須符合主體名稱 \ （一般的名稱、 CN\） X.509 憑證。
+- 值**RestEndPoint**文字方塊中必須是網路控制站完整網域名稱\(FQDN\)或 IP 位址。 
+- **RestEndPoint**值必須符合主體名稱\(常見的名稱、 CN\) X.509 憑證。
 
-### <a name="creating-a-self-signed-x509-certificate"></a>建立 Self\ 簽署 X.509 憑證
+### <a name="creating-a-self-signed-x509-certificate"></a>建立自我\-簽署的 X.509 憑證
 
-您可以建立自我的 X.509 憑證，並且私密金鑰與匯出 \ （受 password\） 依照下列步驟針對 single\ 節點和 multiple\ 節點 Network Controller 的部署。
+您可以建立自我簽署的 X.509 憑證，並將它匯出的私密金鑰\(受到密碼保護\)依照這些步驟的單一\-節點和多個\-節點網路控制站的部署.
 
-當您建立 self\ 簽署的憑證時，您可以使用下列指導方針。
+當您建立自我\-簽署憑證，您可以使用下列指導方針。
 
-- 您可以使用控制器其餘端點網路的 IP 位址 DnsName 參數-，但不是建議，因為您必須 Network Controller 節點是一個管理子網路中都位於 \ （例如在單一 rack\)
-- 對於多個節點 NC 部署，指定 DNS 名稱將會變成的網路控制器叢集 FQDN \ (DNS 主機 A 記錄會自動建立。 \) 
-- 單一節點 Network Controller 部署的 DNS 名稱可能 Network Controller 的主機名稱緊接著的完整網域名稱。
+- 您可以使用網路控制站的 REST 端點的 IP 位址的 DnsName 參數-但這因為它需要的網路控制卡節點都在單一管理子網路內不建議使用\(在單一機架上，例如\)
+- 針對多個節點 NC 部署，您指定的 DNS 名稱會變成網路控制站叢集的 FQDN \(DNS 主機 A 記錄會自動建立。\) 
+- 針對單一節點網路控制卡部署，DNS 名稱可以是網路控制站的主機名稱，後面接著完整網域名稱。
 
 #### <a name="multiple-node"></a>多個節點
 
-您可以使用[新-SelfSignedCertificate](https://technet.microsoft.com/en-us/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) Windows PowerShell 命令來建立 self\ 簽署的憑證。
+您可以使用[New-selfsignedcertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) Windows PowerShell 命令來建立自我\-簽署憑證。
 
 **語法**
 
     New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "<YourNCComputerName>" -DnsName @("<NCRESTName>")
 
-**使用範例**
+**使用方式範例**
 
     New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "MultiNodeNC" -DnsName @("NCCluster.Contoso.com")
 
 #### <a name="single-node"></a>單一節點
 
-您可以使用[新-SelfSignedCertificate](https://technet.microsoft.com/en-us/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) Windows PowerShell 命令來建立 self\ 簽署的憑證。
+您可以使用[New-selfsignedcertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) Windows PowerShell 命令來建立自我\-簽署憑證。
 
 **語法**
 
     New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "<YourNCComputerName>" -DnsName @("<NCFQDN>")
 
-**使用範例**
+**使用方式範例**
 
     New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "SingleNodeNC" -DnsName @("SingleNodeNC.Contoso.com")
 
-### <a name="creating-a-ca-signed-x509-certificate"></a>建立 CA\ 簽署 X.509 憑證
+### <a name="creating-a-ca-signed-x509-certificate"></a>建立 CA\-簽署的 X.509 憑證
 
-若要使用 CA 建立憑證，您必須已經部署 Active Directory 憑證服務 \(AD CS\) 公用基礎結構的 \(PKI\)。 
+若要建立使用 CA 的憑證，您必須已部署公開金鑰基礎結構\(PKI\)與 Active Directory 憑證服務\(AD CS\)。 
 
 >[!NOTE]
->您可以使用第三方 Ca 或工具，例如 openssl，以建立網路控制器，請使用的憑證不過特定 AD CS 本主題中的指示進行。 了解如何使用第三方 CA 或工具，以查看您正在使用的軟體的文件。
+>您可以使用協力廠商 Ca 或工具，例如 openssl，網路控制站，以建立使用的憑證，不過本主題中的指示僅適用於 AD CS。 若要了解如何使用協力廠商 CA 或工具，請參閱您使用軟體的說明文件。
 
-建立 CA 憑證包含下列步驟。
+建立 ca 的憑證包含下列步驟。
 
-1. 您組織的網域或安全性系統管理員可以設定憑證範本
-2. 您組織的 Controller 的網路管理員或 SCVMM 系統管理員會從 CA 要求一個新的憑證。
+1. 您或貴組織的網域或安全性系統管理員設定憑證範本
+2. 您或貴組織的網路控制站的系統管理員或 SCVMM 系統管理員從 CA 要求新憑證。
 
 #### <a name="certificate-configuration-requirements"></a>憑證設定需求
 
-當您設定的憑證範本下一個步驟中時，請確定您所設定的範本包含下列所需的項目。
+而下一個步驟中，您要設定憑證範本，請確定您所設定的範本包含下列必要的項目。
 
-1. 必須 HYPER-V 主機的 FQDN 憑證主體名稱。
-2. 憑證必須放在個人本機存放區 (我 – 憑證： \localmachine\my)
-3. 憑證必須有兩個伺服器的驗證 (EKU: 1.3.6.1.5.5.7.3.1) 和 Client 驗證 (EKU: 1.3.6.1.5.5.7.3.2) 應用程式原則。
+1. 憑證主體名稱必須是 HYPER-V 主機的 FQDN
+2. 憑證必須放在本機電腦個人存放區 (My-cert: \localmachine\my)
+3. 此憑證必須具有這兩個伺服器驗證 (EKU:1.3.6.1.5.5.7.3.1) 」 和 「 用戶端驗證 (EKU:1.3.6.1.5.5.7.3.2) 應用程式原則。
 
 >[!NOTE]
->如果個人 \ (我 – 憑證：\localmachine\my\) 憑證存放區 Hyper\ HYPER-V 主機上的有一個以上 X.509 主機完整網域名稱 \(FQDN\) 憑證的主體名稱 (DATA-CN)，請確定將會使用透過 SDN 憑證已 OID 1.3.6.1.4.1.311.95.1.1.1 與其他自訂增強鍵使用量屬性。 否則，網路控制器和主機間通訊可能無法運作。
+>如果個人\(我 – cert: \localmachine\my\)在 Hyper-v 上的憑證存放區\-主機有一個以上的 X.509 憑證的主體名稱 (CN) 與主機完整網域名稱\(FQDN\)，請確定將供 SDN 的憑證具有 OID 1.3.6.1.4.1.311.95.1.1.1 的其他自訂增強金鑰使用方法屬性。 否則，網路控制站與主機之間的通訊可能會無法運作。
 
 #### <a name="to-configure-the-certificate-template"></a>若要設定憑證範本
   
 >[!NOTE]
->您可以執行此程序之前，您應該檢視憑證需求和可用的憑證範本 \ [憑證範本主控台中。 您可以修改現有的範本或建立重複的現有的範本，然後修改您複製的範本。 建立現有範本一份建議。
+>執行此程序之前，您應該檢閱憑證需求和可用的憑證範本，在 [憑證範本] 主控台中。 您可以修改現有的範本或建立現有範本的複本，然後修改範本的複本。 建議您將建立現有範本的複本。
 
-1. 在 [伺服器 AD CS 安裝的位置，在伺服器管理員中，按一下**工具**，然後按一下 [**憑證授權單位**。 憑證授權單位 Microsoft Management Console \(MMC\) 開啟。 
-2. 在 MMC 中，按兩下 [CA 名稱，以滑鼠右鍵按一下**憑證範本**，然後按**管理**。
-3. [憑證範本主控台開啟。 詳細資料窗格中會顯示所有的憑證範本。
-4. 在詳細資料窗格中，按一下您要複製範本。
-5.  按一下**動作**，然後再按**複製範本**。 範本**屬性**對話方塊。
-6.  在範本**屬性**對話方塊中，於**主體名稱**索引標籤上，按一下 [**中要求提供**。 \ (此設定是必要的網路控制器 SSL 憑證。 \)
-7.  在範本**屬性**對話方塊中，於**處理要求**索引標籤時，請確定**允許私密金鑰匯出**選取。 也確保**簽章和加密**選取用途。
-8.  範本中**屬性**對話方塊中，於**擴充功能**索引標籤，選取**鍵使用**，然後按一下**編輯**。
-9.  在**簽章**，確認**數位簽章**選取。
-10.  範本中**屬性**對話方塊中，於**的擴充功能**索引標籤，選取**應用程式原則**，然後按一下**編輯**。
-11.  在**應用程式原則**，確保**Client 驗證**和**伺服器驗證**優先順序。
-12.  將儲存複本憑證範本唯一名稱，例如**Network Controller 範本**。
+1. 在伺服器上安裝 AD CS 是，在 [伺服器管理員] 中，按一下**工具**，然後按一下**憑證授權單位**。 憑證授權單位的 Microsoft Management Console \(MMC\)隨即開啟。 
+2. 在 MMC 中，按兩下 CA 名稱，以滑鼠右鍵按一下**憑證範本**，然後按一下**管理**。
+3. 憑證範本主控台隨即開啟。 在 [詳細資料] 窗格中，會顯示所有的憑證範本。
+4. 在 [詳細資料] 窗格中，按一下您想要複製的範本。
+5.  按一下 **動作**功能表，然後再按一下**複製範本**。 範本**屬性**對話方塊隨即開啟。
+6.  在範本中**屬性**對話方塊的 **主體名稱**索引標籤上，按一下 **在要求中提供**。 \(這是必要設定網路控制站的 SSL 憑證。\)
+7.  在範本中**屬性**對話方塊的 **處理要求**索引標籤上，確定**允許私密金鑰匯出**已選取。 也請確認**簽章和加密**選取用途。
+8.  在範本中**屬性**對話方塊的 **擴充功能**索引標籤上，選取**金鑰使用方法**，然後按一下**編輯**。
+9.  在 **簽章**，請確認**數位簽章**已選取。
+10.  在範本中**屬性**對話方塊的 **擴充功能**索引標籤上，選取**應用程式原則**，然後按一下**編輯**。
+11.  在**應用程式原則**，請確認**用戶端驗證**並**伺服器驗證**列出。
+12.  儲存憑證範本的複本的唯一名稱，例如**網路控制站範本**。
 
-#### <a name="to-request-a-certificate-from-the-ca"></a>若要從 CA 憑證
+#### <a name="to-request-a-certificate-from-the-ca"></a>若要向 CA 要求憑證
 
-您可以使用的憑證嵌入式管理單元要求憑證。 您可以要求任何預先設定並使用由系統管理員的身分處理憑證要求的 ca 憑證的類型。
+您可以使用 憑證嵌入式管理單元要求憑證。 您可以要求任何類型的預先設定和處理憑證要求的 CA 系統管理員所提供的憑證。
 
-**使用者**或**系統管理員**，才能完成此程序最小群組成員資格。
+**使用者**或本機**系統管理員**完成此程序所需的最小的群組成員資格。
 
-1. 打開憑證嵌入式管理單元電腦。
-2. 主控台中，按一下 [**的憑證 \(Local Computer\)**。 選取 [**個人**憑證存放區。
-3. 在**動作**功能表，指向 [* * 所有工作 * *，然後再按一下**要求新的憑證**以開始憑證註冊精靈。 按一下**下一步**。
-4. 選取 [**設定您的系統管理員的**憑證註冊原則和**下**。
-5. 選取 [ **Active Directory 註冊原則**\ （根據您設定在上一個 section\ CA 範本）。
-6. 展開**的詳細資料**區段，設定下列項目。
-    1. 確保**鍵使用量**包含兩 * * 數位簽章 * * 和**鍵加密**。
-    2. 確認**的應用程式原則**兩者都包含**伺服器驗證**\(1.3.6.1.5.5.7.3.1\) 和**Client 驗證**\(1.3.6.1.5.5.7.3.2\)。
-7. 按一下**屬性**。
-8. 在**主旨**索引標籤的**主體名稱**，請在**輸入**，選取**一般名稱**。 在 [值指定**網路控制器其餘端點**。
-9. 按一下**套用**，然後按**[確定]**。
-10. 按一下**註冊**。
+1. 開啟憑證嵌入式管理單元的電腦。
+2. 在主控台樹狀目錄中，按一下**憑證\(本機電腦\)**。 選取 **個人**憑證存放區。
+3. 在上**動作**功能表上，指向 * * 所有工作，然後按一下**要求新憑證**啟動 憑證註冊精靈。 按一下 [下一步] 。
+4. 選取 [**系統管理員設定**憑證註冊原則，然後按一下**下一步]**。
+5. 選取  **Active Directory 註冊原則**\(根據您在上一節中設定的 CA 範本\)。
+6. 依序展開**詳細資料**區段，然後設定下列項目。
+    1. 請確認**金鑰使用方法**同時包含 * * 數位簽章 * * 和**金鑰編密**。
+    2. 請確認**應用程式原則**同時包含**伺服器驗證** \(1.3.6.1.5.5.7.3.1\)並**用戶端驗證**\(1.3.6.1.5.5.7.3.2\)。
+7. 按一下 [內容] 。
+8. 在上**主旨**索引標籤**主體名稱**，請在**型別**，選取**一般名稱**。 在 [值] 中，指定**網路控制站的 REST 端點**。
+9. 按一下 [套用]，然後按一下 [確定]。
+10. 按一下 **\[註冊\]**。
 
-在憑證 MMC 中，按一下個人檢視您擁有退出從 CA 憑證存放區。
+在憑證 MMC 中，按一下要檢視您已從憑證的 CA 註冊的憑證之個人存放區。
 
-## <a name="exporting-and-copying-the-certificate-to-the-scvmm-library"></a>匯出和憑證複製到 SCVMM 媒體櫃
+## <a name="exporting-and-copying-the-certificate-to-the-scvmm-library"></a>匯出，並將憑證複製到 SCVMM 程式庫
 
-建立 self\ 簽署或 CA\ 簽署的憑證之後, 您必須使用私密金鑰匯出憑證 \(in.pfx format\) 私密金鑰不 \ （在 64 基本.cer format\) 從 「 憑證嵌入式管理單元。 
+建立自我之後\-簽署或 CA\-簽署憑證，您必須匯出憑證的私密金鑰\(.pfx 格式\)和不含私密金鑰\(Base-64.cer 格式\)從 [憑證] 嵌入式管理單元。 
 
-您必須再兩個匯出將檔案複製到**ServerCertificate.cr**和**NCCertificate.cr**資料夾，指定您匯入 NC 服務範本時間。
+您接著必須將複製到兩個匯出的檔案**ServerCertificate.cr**並**NCCertificate.cr**匯入 NC 服務範本時的時間所指定的資料夾。
 
-1. 打開憑證嵌入式管理單元 (certlm.msc)，並找出的憑證在本機電腦的個人憑證存放區。
-2. Right\ 按一下憑證，按一下 [**的所有任務**，然後按一下 [**匯出**。 憑證匯出精靈開啟。 按一下**下一步**。
-3. 選取 [ **[是]**匯出私密金鑰] 選項，按**下一步**。
-4. 選擇 [**個人資訊交換-PKCS #12 (。PFX)** ，並接受預設為**包含所有的憑證憑證路徑中**若有可能。
-5. 指派使用者或群組和憑證您要匯出的密碼，請按一下**下一步**。
-6. 若要匯出頁檔案，瀏覽您想要放置匯出的檔案的位置，它命名。
-7. 同樣地，匯出中的憑證。CER 格式。 注意： 若要匯出。CER 格式，取消選取 [是，匯出私密金鑰] 選項。
-8. 複製。PFX ServerCertificate.cr 資料夾。
-9. 複製。CER NCCertificate.cr 資料夾的檔案。
+1. 開啟憑證嵌入式管理單元 (certlm.msc) 並在本機電腦個人憑證存放區中找出憑證。
+2. 右\-按一下憑證，再按一下**所有工作**，然後按一下**匯出**。 \[憑證匯出精靈\] 隨即開啟。 按一下 [下一步] 。
+3. 選取  **是**，匯出私密金鑰 選項，按一下**下一步**。
+4. 選擇**個人資訊交換-PKCS #12 (。PFX)** 並接受預設值**包含憑證路徑中的所有憑證**的話。
+5. 指派使用者/群組以及您要匯出的憑證的密碼，請按一下**下一步**。
+6. 在要匯出頁面的檔案，瀏覽您要放置匯出的檔案，的位置，並提供名稱。
+7. 同樣地，以匯出憑證。CER 格式。 注意：若要匯出至。CER 格式，取消核取 [是，匯出私密金鑰] 選項。
+8. 複製。PFX 到 ServerCertificate.cr 資料夾。
+9. 複製。CER 檔案到 NCCertificate.cr 資料夾。
 
-當您完成後時，請重新整理 SCVMM 媒體櫃中的這些資料夾，並確定您有複製這些憑證。 請繼續進行網路控制器服務範本設定和部署。
+完成之後，重新整理 SCVMM 程式庫中的這些資料夾，並確定您已複製這些憑證。 繼續執行的網路控制站服務範本設定和部署。
 
-## <a name="authenticating-southbound-devices-and-services"></a>驗證 Southbound 裝置與服務 
+## <a name="authenticating-southbound-devices-and-services"></a>驗證 Southbound 裝置和服務 
 
-網路控制器通訊主機和 SLB MUX 裝置使用驗證憑證。 通訊的主機是 OVSDB 通訊協定與 SLB MUX 裝置通訊時 WCF 通訊協定。
+主機與 SLB MUX 裝置網路控制器通訊會使用憑證進行驗證。 與主機的通訊是透過 OVSDB 通訊協定，透過 WCF 通訊協定與 SLB MUX 裝置通訊時。
 
-### <a name="hyper-v-host-communication-with-network-controller"></a>Network Controller 的主機 HYPER-V 通訊
+### <a name="hyper-v-host-communication-with-network-controller"></a>與網路控制卡的 HYPER-V 主機通訊
 
-透過 OVSDB HYPER-V 主機的通訊，Network Controller 需要呈現主機上的憑證。 根據預設，SCVMM 挑選設定網路控制器上的 SSL 憑證，並使用它來進行 southbound 通訊的主機。
+透過 OVSDB 的 HYPER-V 主機的通訊，網路控制站必須出示的憑證到主機電腦。 根據預設，SCVMM 會挑選網路控制卡上設定的 SSL 憑證，並使用 southbound 與主機的通訊。
 
-這就是為何 SSL 憑證必須 Client 驗證 EKU 設定的原因。 此憑證已設定 「 伺服器 」 的其餘資源 \ （HYPER-V 主機以在 Network Controller 伺服器 resource\），並可執行 Windows PowerShell 命令**取得-NetworkControllerServer**。
+這是為什麼 SSL 憑證必須設定用戶端驗證 EKU 的原因。 此憑證已在 「 伺服器 」 REST 資源\(HYPER-V 主機會表示為伺服器資源的網路控制卡中\)，而且可以執行 Windows PowerShell 命令來檢視**取得 NetworkControllerServer**。
 
-以下是範例部分的伺服器的其餘部分資源。
+以下是在伺服器 REST 資源的部分範例。
 
       "resourceId": "host31.fabrikam.com",
       "properties": {
@@ -184,23 +186,23 @@ ms.lasthandoff: 03/28/2018
           }
         ],
 
-對於互加好友的驗證，HYPER-V 主機也必須通訊 Network Controller 的憑證。 
+進行相互驗證，HYPER-V 主機也必須有憑證才能與網路控制器通訊。 
 
-您可以註冊憑證授權單位 \(CA\) 的憑證。 如果您在主機上找不到根據 CA 憑證，SCVMM 建立自動簽署的憑證，並 provisions 該主機上。
+您可以註冊之憑證的憑證授權單位\(CA\)。 如果主機電腦上找不到基礎的 CA 憑證，SCVMM 會建立自我簽署的憑證，並在主機電腦上為它佈建。
 
-網路控制器和 HYPER-V 主機彼此必須信任的憑證。 必須位於 HYPER-V 主機憑證根憑證網路控制器受信任的根憑證授權單位儲存在本機電腦，，反之亦然。 
+網路控制站和憑證必須受到彼此信任的 HYPER-V 主機。 HYPER-V 主機憑證的根憑證必須存在於本機電腦，反之亦然，網路控制器受信任的根憑證授權單位存放區。 
 
-當您正在使用 self\ 簽署的憑證時，可確保 SCVMM 必要的憑證的本機電腦的受信任的根憑證授權單位存放區中。 
+當您使用自我\-簽署憑證，SCVMM 可確保所需的憑證會出現在本機電腦的受信任的根憑證授權單位存放區。 
 
-如果您使用根據 CA 憑證 HYPER-V 主機，您需要確保根憑證會出現 Network Controller 的受信任的根憑證授權單位網上商店的本機電腦上。
+如果您使用 HYPER-V 主機的基礎的 CA 憑證，您需要確保 CA 根憑證會出現在網路控制站的受信任的根憑證授權單位存放區，本機電腦上。
 
-### <a name="software-load-balancer-mux-communication-with-network-controller"></a>軟體與 Network Controller 負載平衡器 MUX 通訊
+### <a name="software-load-balancer-mux-communication-with-network-controller"></a>與網路控制卡軟體負載平衡器 MUX 通訊
 
-軟體負載平衡器 Multiplexor \(MUX\) 和 Network Controller 通訊 WCF 通訊協定進行驗證使用的憑證。
+軟體負載平衡器多工器\(MUX\)和網路控制卡的通訊是透過 WCF 通訊協定，而使用憑證進行驗證。
 
-根據預設，SCVMM 挑選 SSL 憑證網路控制器上的設定，以及使用它的 Mux 裝置 southbound 通訊。 在 「 NetworkControllerLoadBalancerMux 」 上設定此憑證將資源，並可透過執行 Powershell cmdlet**取得-NetworkControllerLoadBalancerMux**。
+根據預設，SCVMM 會挑選網路控制卡上設定的 SSL 憑證，並用於 southbound 通訊中的 Mux 裝置。 此憑證已在 「 NetworkControllerLoadBalancerMux"REST 資源和執行 Powershell cmdlet，即可檢視**Get NetworkControllerLoadBalancerMux**。
 
-其他 MUX 資源 \(partial\) 的範例：
+MUX REST 資源的範例\(部分\):
 
       "resourceId": "slbmux1.fabrikam.com",
       "properties": {
@@ -216,12 +218,12 @@ ms.lasthandoff: 03/28/2018
           }
         ],
 
-對於互加好友的驗證，您必須同時憑證 SLB MUX 的裝置上。 部署使用 SCVMM 軟體負載平衡器時，此憑證會自動設定來 SCVMM。
+進行相互驗證，您也必須將憑證上的 SLB MUX 裝置。 當您部署軟體負載平衡器使用 SCVMM 時，此憑證會自動設定 scvmm。
 
 >[!IMPORTANT]
->主機和 SLB 節點，很重要的受信任的根憑證授權單位憑證存放區中不包含任何憑證其中，「 發行至 「 不是 「 發行者 」 一樣。 發生這種情形，如果 Network Controller and southbound 裝置間通訊失敗。
+>在主機和 SLB 節點上，是嚴重的受信任的根憑證授權單位憑證存放區不包含任何憑證，「 發行至 」 不是 [發行者] 相同。 如果發生這種情況，網路控制站和 southbound 裝置之間的通訊將會失敗。
 
-Network Controller 及 SLB MUX 憑證必須信任彼此 \ （SLB MUX 憑證的根憑證必須在網路控制器電腦受信任的根憑證授權單位儲存和虎鉗 versa\）。 當您正在使用 self\ 簽署的憑證時，可確保 SCVMM 必要的憑證會出現在受信任的根憑證授權單位 」 中儲存的本機電腦。
+網路控制站和 SLB MUX 憑證必須受到彼此信任\(SLB MUX 憑證的根憑證必須位於受信任的根憑證授權單位儲存在網路控制站機器，反之亦然\)。 當您使用自我\-簽署憑證，SCVMM 可確保所需的憑證會出現在本機電腦存放區中受信任的根憑證授權單位。
 
 
 

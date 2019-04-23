@@ -1,6 +1,6 @@
 ---
-title: "委派 DFS 命名空間的管理權限"
-description: "本文描述如何委派 DFS 命名空間的管理權限，以及哪些群組預設可以執行命名空間工作"
+title: 委派 DFS 命名空間的管理權限
+description: 本文描述如何委派 DFS 命名空間的管理權限，以及哪些群組預設可以執行命名空間工作
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e584b49639a83e4ab1da142a999741ae4ac7ff84
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 7895432ca16dd13c6425d966f99104fc03db100d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829489"
 ---
 # <a name="delegate-management-permissions-for-dfs-namespaces"></a>委派 DFS 命名空間的管理權限
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用於：Windows Server 2019，Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
 
 下表描述預設可以執行基本命名空間工作的群組，以及委派執行這些工作之能力的方法：
 
@@ -31,4 +32,4 @@ ms.lasthandoff: 10/17/2017
 
 <br />
 
-\*管理獨立命名空間的委派管理權限無法使用 **\[委派\]** 索引標籤來授與使用者檢視和管理安全性的能力，除非使用者是命名空間伺服器上本機系統管理員群組的成員。 這個問題是因為 DFS 管理嵌入式管理單元無法從登錄擷取獨立命名空間的判別存取控制清單 (DACL)。 若要讓嵌入式管理單元顯示委派資訊，您必須遵循 Microsoft<sup>®</sup> 知識庫文章：[KB314837：如何管理遠端登錄存取權](http://go.microsoft.com/fwlink?linkid=46803)中的步驟執行
+\*委派管理權限來管理獨立命名空間並未授與使用者能夠檢視和管理所使用的安全性**委派**索引標籤上，除非該使用者是本機 Administrators 群組的成員上命名空間伺服器。 這個問題是因為 DFS 管理嵌入式管理單元無法從登錄擷取獨立命名空間的判別存取控制清單 (DACL)。 若要啟用嵌入式管理單元顯示委派資訊，您必須遵循的步驟，在 Microsoft<sup>®</sup>眭妎踱恅：[KB314837:如何管理登錄的遠端存取](https://go.microsoft.com/fwlink?linkid=46803)

@@ -1,6 +1,6 @@
 ---
-title: "取代 O365 整合模組購買-Try 端點 URL 支援 Microsoft Online Service 經銷商合約"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 在 Microsoft Online Service 經銷商合約的支援下，取代 O365 整合模組並購買/嘗試端點 URL
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,69 +13,70 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: b690cedd2f692cc6d11af6e05dd0cd4b4ea5a1d6
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833099"
 ---
-# <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>取代 O365 整合模組購買-Try 端點 URL 支援 Microsoft Online Service 經銷商合約
+# <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>在 Microsoft Online Service 經銷商合約的支援下，取代 O365 整合模組並購買/嘗試端點 URL
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
 ##  <a name="BKMK_O365"></a>   
- 如果您的 Microsoft Online Service 經銷商合約 (MOSRA) 合作夥伴，以確保客戶註冊交易處理透過您的入口網站，您必須更換端點使用 Windows Server Essentials 的 Office 365 整合模組 Url。  
+ 如果您是 Microsoft Online Service 經銷商合約 (MOSRA) 合作夥伴，以確保客戶註冊交易，會處理透過入口網站中，您必須取代 Windows Server Essentials 的 Office 365 整合模組所使用的端點 Url。  
   
- 整合模組使用下列四個端點 Url:  
+ 整合模組使用下列四個端點 URL：  
   
-1.  Office 365 企業版裝機費購買結束點。  
-  
-    -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
-  
-    -   輸入 = REG-SZ  
-  
-    -   按鍵名稱 = MOSRASTDBUY  
-  
-    -   值 = *wintab-xxxxx*，其中 wintab-xxxxx 是您的企業裝機費購買 URL。 例如，值 = http://syndicatepartner.office365.com/enterprisebuy.html  
-  
-2.  Office 365 企業版裝機費試用端點。  
+1.  Office 365 Enterprise 訂閱購買端點。  
   
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
   
-    -   輸入 = REG-SZ  
+    -   類型 = REG-SZ  
   
-    -   按鍵名稱 = MOSRASTDTRY  
+    -   機碼名稱 = MOSRASTDBUY  
   
-    -   值 = *wintab-xxxxx*，其中 wintab-xxxxx 是您的企業裝機費購買 URL。 例如，值 = http://syndicatepartner.office365.com/enterprisetry.html  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/enterprisebuy.html  
   
-3.  Office 365 小型企業 Premium 裝機費購買結束點。  
-  
-    -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
-  
-    -   輸入 = REG-SZ  
-  
-    -   按鍵名稱 = MOSRALITEBUY  
-  
-    -   值 = *wintab-xxxxx*，其中 wintab-xxxxx 是您的企業裝機費購買 URL。 例如，值 = http://syndicatepartner.office365.com/smallbizbuy.html  
-  
-4.  Office 365 小型企業 Premium 裝機費試用端點。  
+2.  Office 365 Enterprise 訂閱試用端點。  
   
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
   
-    -   輸入 = REG-SZ  
+    -   類型 = REG-SZ  
   
-    -   按鍵名稱 = MOSRALITETRY  
+    -   機碼名稱 = MOSRASTDTRY  
   
-    -   值 = *wintab-xxxxx*，其中 wintab-xxxxx 是您的企業裝機費購買 URL。 例如，值 = http://syndicatepartner.office365.com/smallbiztry.html  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/enterprisetry.html  
   
-#### <a name="to-add-an-endpoint-url-key-to-the-registry"></a>若要新增端點 URL 鍵登錄  
+3.  Office 365 Small Business Premium 訂閱購買端點。  
   
-1.  參考在電腦上，按一下 [ **[開始]**，輸入**regedit**，然後按 ENTER 鍵。  
+    -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
   
-2.  在左窗格中，展開**跳**，展開 [**軟體**，展開 [ **Microsoft**，展開 [ **Windows Server**，然後展開 [ **MSO**。  
+    -   類型 = REG-SZ  
   
-3.  如果 MSO 不存在，以滑鼠右鍵按一下**Windows Server**，指向 [**新**，按一下 [**鍵**，然後輸入**MSO**按鍵的名稱。  
+    -   機碼名稱 = MOSRALITEBUY  
   
-4.  MSO，以滑鼠右鍵按一下，然後按一下**字串值**。 輸入下列端點字串名稱名稱字串的其中一項：  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/smallbizbuy.html  
+  
+4.  Office 365 Small Business Premium 訂用帳戶試用端點。  
+  
+    -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
+  
+    -   類型 = REG-SZ  
+  
+    -   機碼名稱 = MOSRALITETRY  
+  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/smallbiztry.html  
+  
+#### <a name="to-add-an-endpoint-url-key-to-the-registry"></a>將端點 URL 機碼新增到登錄  
+  
+1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 ENTER。  
+  
+2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server** 及 **MSO**。  
+  
+3.  如果 MSO 不存在，請在 [Windows Server] 上按一下滑鼠右鍵，指向 [新增]，按一下 [機碼]，然後輸入 **MSO** 作為機碼的名稱。  
+  
+4.  以滑鼠右鍵按一下 MSO，然後按一下 **[字串值]**。 輸入下列其中一個端點字串名稱，當做字串的名稱：  
   
     -   MOSRASTDBUY  
   
@@ -85,19 +86,19 @@ ms.lasthandoff: 07/03/2017
   
     -   MOSRALITETRY  
   
-5.  以滑鼠右鍵按一下右窗格中的新字串，然後按一下**修改]**。  
+5.  在右窗格中，以滑鼠右鍵按一下新的字串，然後按一下 **[修改]**。  
   
-6.  輸入您在新的端點 URL**數值資料**文字方塊，然後再按一下**[確定]**。  
+6.  在 **[數值資料]** 文字方塊中輸入您的新端點 URL，然後按一下 **[確定]**。  
   
-7.  重複步驟 4 6 列出執行「步驟 4 在每個字串的名稱。  
+7.  針對在步驟 4 中列出的每個字串名稱重複步驟 4-6。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)[建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](../install/Additional-Customizations.md)   
- [準備部署映像](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](../install/Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)[建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
+ [其他自訂項目](../install/Additional-Customizations.md)   
+ [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

@@ -1,6 +1,6 @@
 ---
 title: QoS 常見問題集
-description: 本主題提供品質服務 (QoS) 原則，在 Windows Server 2016 中相關問題的解答。
+description: 本主題提供 Windows Server 2016 中的服務品質 (QoS) 原則的相關問題的解答。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,36 +8,37 @@ ms.assetid: 74c97a14-b957-4568-b48e-8963a674fdb3
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e63cd00a2016411e9f2c532c0e4c301dabdfd816
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: f9fb54cc3bda9a259188ae02fb2ef2836dd8718d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833749"
 ---
 # <a name="qos-policy-frequently-asked-questions"></a>QoS 原則常見問題集
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-以下被常見問題問題 – 與 QoS 原則 – 那些問題的解答。
+下列為常見問題集-與解答這些問題 – QoS 原則。
   
-1.  **我網域控制站會需要何種作業系統來執行使用 QoS 原則？**
+1.  **若要執行，才能使用 QoS 原則將我的網域控制站需要在哪些作業系統？**
   
-     Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008
+     Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2 或 Windows Server 2008
 
-2.  **何種作業系統支援 QoS 原則的應用程式的使用者或電腦？**
+2.  **使用者或電腦 QoS 原則的應用程式支援哪些作業系統？**
 
-     您可以將 QoS 原則套用到使用者或執行 Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows Server 2008 和 Windows Vista 的電腦。
+     您可以套用 QoS 原則到使用者或執行 Windows Server 2016、 Windows 10，Windows Server 2012 R2、 Windows 8.1、 Windows Server 2012，Windows 8、 Windows Server 2008 R2、 Windows Server 2008 和 Windows Vista 的電腦。
 
-3.  **QoS 原則套用到寄件者或收件者的流量嗎？**
+3.  **QoS 原則適用於寄件者或接收者的流量嗎？**
 
-     必須影響其輸出流量傳送的電腦上套用原則 QoS。 為了影響雙向流量的兩部電腦，QoS 原則需要套用至兩部電腦。
+     會影響其輸出流量傳送的電腦上，就必須套用 QoS 原則。 若要影響的兩部電腦的雙向流量，必須套用至這兩部電腦 QoS 原則。
 
-4.  **萬一發生衝突 QoS 原則部署至該相同電腦？**  
+4.  **如果衝突的 QoS 原則會部署到同一部電腦發生什麼事？**  
   
-     如果多項原則套用，更特定 QoS 原則優先。 例如，原則主機狀態的地址 (192.168.4.12）取得套用而較特定網路位址 (192.168.0.0 月 16）。 如果電腦層級和使用者層級原則相同的特定，而不是電腦層級 QoS 原則套用使用者層級 QoS 原則。 
+     如果多個原則套用時，更具體的 QoS 原則的優先順序較高。 比方說，取得套用原則，指出主機位址 (192.168.4.12)，而不是較不特定的網路位址 (192.168.0.0/16)。 如果電腦層級和使用者層級的原則有相同的精確性，而不是電腦層級 QoS 原則套用使用者層級 QoS 原則。 
 
-5.  **根據預設功能的 QoS 原則嗎？**
+5.  **預設啟用 QoS 原則嗎？**
 
-     否，預設不被支援 QoS 原則。 您必須建立以手動方式，可讓 QoS QoS 原則。  如需詳細資訊，請查看[管理 QoS 原則](qos-policy-manage.md)。
+     否，預設不會啟用 QoS 原則。 您必須建立 QoS 原則，以手動方式啟用 QoS。  如需詳細資訊，請參閱 <<c0> [ 管理 QoS 原則](qos-policy-manage.md)。
 
-本指南中第一次主題，請查看[品質服務 (QoS) 原則](qos-policy-top.md)。
+如本指南中的第一個主題，請參閱 <<c0> [ 服務品質 (QoS) 原則](qos-policy-top.md)。

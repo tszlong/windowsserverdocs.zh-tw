@@ -1,6 +1,6 @@
 ---
-title: "設定 Wireless 網路的支援"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 設定無線網路支援
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,43 +13,44 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: c5c98727b81bf37fdb3f90c612270462a51908c8
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833109"
 ---
-# <a name="configure-support-for-a-wireless-network"></a>設定 Wireless 網路的支援
+# <a name="configure-support-for-a-wireless-network"></a>設定無線網路支援
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-您可以設定 wireless 網路的支援的作業系統。 以便 wireless 伺服器上的支援，必須符合下列需求：  
+您可以設定作業系統以支援無線網路。 必須符合下列需求，才能在伺服器上啟用無線支援：  
   
--   伺服器必須安裝有線的網路介面卡。  
+-   伺服器必須已安裝有線的網路配接器。  
   
--   如果不支援的作業系統的網路介面卡必須預先安裝正確的驅動程式 wireless 網路介面卡。  
+-   如果作業系統不支援網路配接器，則必須為無線網路配接器預先安裝正確的驅動程式。  
   
--   必須開放讓和停用 wireless 網路介面卡的能力。 這樣的方法可能會包含儀表板中的上伺服器或自訂使用者介面的實體按鈕。 Product 手動應該提供讓和停用 wireless 網路介面卡的步驟。  
+-   必須提供啟用和停用無線網路配接器的功能。 要這麼做的方法可能包括在伺服器上使用實體按鈕，或在儀表板中使用自訂的使用者介面。 產品手冊應提供啟用和停用無線網路配接器的步驟。  
   
--   必須開放選取 wireless 網路，以將它連接的能力。 這應該來將自訂使用者介面新增至儀表板。 Product 手動應該提供的步驟進行選取及連接 wireless 網路。  
+-   必須提供選取無線網路及連接無線網路的功能。 您應該透過將自訂使用者介面加入至儀表板，來達到此目的。 產品手冊應提供選取及連接至無線網路的相關步驟。  
   
--   如果需要可支援 wireless 特定網路，必須提供延伸的使用者介面中儀表板。 在使用者介面可以按鈕或時限設定 Windows Server 2008 R2 在控制台中無線特定網路精靈的連結。  
+-   如果需要支援無線臨機操作網路的功能，則必須在儀表板中提供擴充的使用者介面。 此使用者介面可以是一個按鈕或連結，能夠啟動 Windows Server 2008 R2 的控制台中的「設定無線臨機操作網路精靈」。  
   
-## <a name="additional-considerations"></a>其他注意事項  
- 設定 wireless 網路的支援時，也應該被視為下列資訊：  
+## <a name="additional-considerations"></a>其他考量  
+ 設定無線網路支援時，也必須考量下列資訊：  
   
--   伺服器必須連接到花朵執行安裝程式與網路。  
+-   伺服器必須以有線方式連接至網路，才能執行設定。  
   
--   網路並具有花朵必須連接網路執行極金屬還原電腦。  
+-   執行裸機還原的網路電腦必須以有線方式連接至網路。  
   
--   伺服器必須連接的花朵執行極金屬還原伺服器的網路。  
+-   伺服器必須以有線方式連接至網路，才能執行伺服器的裸機還原。  
   
--   如果建立伺服器上的特定網路，讓使用者必須一律纜網路伺服器以取得網際網路連接到專用 wireless 網路介面卡的特定網路。  
+-   如果臨機操作網路是建立於伺服器上，則無線網路配接器專供臨機操作網路使用，所以使用者必須永遠將網路線接在伺服器上，以獲得網際網路連線。  
   
 > [!NOTE]
->  如需有關設定網路的連接，請[預先路由器](Preconfiguring-a-Router.md)。  
+>  如需設定網路連線的詳細資訊，請參閱[預先設定路由器](Preconfiguring-a-Router.md)。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)

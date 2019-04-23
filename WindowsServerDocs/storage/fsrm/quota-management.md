@@ -1,6 +1,6 @@
 ---
-title: "配額管理"
-description: "本文說明如何建立和管理配額"
+title: 配額管理
+description: 本文說明如何建立和管理配額
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 60436f12e07b8a3f16312829d53a2885c98f30ed
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: febcd6ab0744a7fddd024e1f0afdb93711e8939a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829539"
 ---
 # <a name="quota-management"></a>配額管理
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012、 Windows Server 2008 R2
 
 在檔案伺服器資源管理員 Microsoft<sup>®</sup> Management Console (MMC) 嵌入式管理單元的 **\[配額管理\]** 節點，您可以執行下列工作：
 
@@ -26,8 +27,8 @@ ms.lasthandoff: 10/17/2017
 
 例如，您可以：
 
--   將 200 MB 限制加諸使用者的個人伺服器資料夾，並在存放超過 180 MB 的空間後傳送電子郵件通知給自己和使用者。
--   在群組的共用資料夾上設定 500 MB 的彈性配額。 達到此存放限制時，群組中所有的使用者都會收到電子郵件通知，郵件中指出存放裝置配額已暫時擴充至 520 MB。此時使用者可刪除不必要的檔案，以符合預先設定的 500 MB 配額原則。
+-   200 mb (MB) 限制使用者的個人伺服器資料夾，以電子郵件通知傳送給您和使用者，在超過 180 MB 的儲存空間時取得控制權。
+-   在群組的共用資料夾設定彈性的 500 MB 配額。 當達到此存放限制時，群組中的所有使用者都會收到都通知的儲存體配額已暫時擴充至 520 MB，讓他們可以刪除不必要的檔案，以符合預先設定的 500 MB 配額原則的電子郵件。
 -   在暫存資料夾達到 2 GB 使用量時收到通知，但為了要讓服務持續執行於您的伺服器，並不限制該資料夾的配額。
 
 本節包含下列主題：
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/17/2017
 > [!Note]
 > 若要設定電子郵件通知和報告功能，您必須先設定檔案伺服器資源管理員的一般選項。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 

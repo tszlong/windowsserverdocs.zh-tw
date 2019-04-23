@@ -1,6 +1,6 @@
 ---
-title: 設定服務連接點所 Client 自動裝載快取探索
-description: 本指南部署 BranchCache 裝載快取模式執行的 Windows Server 2016 和 Windows 10 電腦上提供指示
+title: 依據服務連接點設定自動託管快取探索
+description: 本指南提供在執行 Windows Server 2016 和 Windows 10 電腦上的託管快取模式部署 BranchCache 的指示
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,62 +8,63 @@ ms.topic: article
 ms.assetid: ea1c34fd-5a33-4228-9437-9bb3d44230eb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b12fa6f9e11c8816d74c9013dd80b3fa38d0a478
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: bd77fc76a999517cb8372aec8dfad25b4dd5be3b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829719"
 ---
-#  <a name="configure-client-automatic-hosted-cache-discovery-by-service-connection-point"></a>設定服務連接點所 Client 自動裝載快取探索
+#  <a name="configure-client-automatic-hosted-cache-discovery-by-service-connection-point"></a>依據服務連接點設定自動託管快取探索
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-使用此程序中，您可以使用群組原則讓並執行下列 BranchCache\ 能力的 Windows 作業系統 domain\ 加入的電腦上設定 BranchCache 裝載快取模式。
+此程序可以使用群組原則來啟用，並在網域上設定 BranchCache 託管快取模式\-加入的電腦執行下列 BranchCache\-支援 Windows 作業系統。
 
 - Windows 10 企業版
 - Windows 10 教育版
-- Windows 8.1 企業版
+- Windows 8.1 Enterprise
 - Windows 8 企業版
 
 > [!NOTE]  
-> 若要設定 [加入網域的電腦是執行 Windows Server 2008 R2 或 Windows 7，查看 Windows Server 2008 R2 [BranchCache 部署指南](https://technet.microsoft.com/library/ee649232.aspx)。
+> 若要設定執行 Windows Server 2008 R2 或 Windows 7 的加入網域的電腦，請參閱 Windows Server 2008 R2 [BranchCache 部署指南](https://technet.microsoft.com/library/ee649232.aspx)。
 
-資格在**網域系統管理員**，或相當於的最低需求才能執行此程序。
+若要執行此程序，至少需要 **Domain Admins** 的成員資格或同等權限。
 
-### <a name="to-use-group-policy-to-configure-clients-for-hosted-cache-mode"></a>若要使用群組原則，將裝載快取模式的伺服器設定
+### <a name="to-use-group-policy-to-configure-clients-for-hosted-cache-mode"></a>若要使用群組原則來設定託管快取模式用戶端
 
-1. 在電腦上安裝所在的 Active Directory Domain Services 伺服器角色，開放伺服器管理員，選取 [本機伺服器，按一下 [**工具**，然後按**群組原則管理**。 群組原則管理主控台開啟。
+1. Active Directory 網域服務伺服器角色已安裝的電腦，開啟 伺服器管理員，選取 本機伺服器，按一下**工具**，然後按一下**群組原則管理**。 群組原則管理主控台隨即開啟。
 
-2. 在群組原則管理主控台中，展開下列路徑：**樹系：***corp.contoso.com*、**網域**、*corp.contoso.com*，**群組原則物件**，其中*corp.contoso.com* BranchCache client 電腦帳號您想要設定的網域名稱。
+2. 在 [群組原則管理] 主控台中，展開下列路徑：**樹系：** *corp.contoso.com*，**網域**， *corp.contoso.com*，**群組原則物件**，其中*corp.contoso.com*是您想要設定 BranchCache 用戶端電腦帳戶所在網域的名稱。
 
-3. Right\ 按一下**群組原則物件**，然後按一下 [**新增]**。 **新的 GPO**對話方塊。 在**名稱**，輸入名稱的新的群組原則物件 \(GPO\)。 如果您想要的物件 BranchCache Client 電腦的名稱，例如，輸入**BranchCache Client 電腦**。 按一下**[確定]**。
+3. 右\-按一下 **群組原則物件**，然後按一下**新增**。 **新的 GPO**對話方塊隨即開啟。 在 **名稱**，輸入新的群組原則物件的名稱\(GPO\)。 例如，如果您想要命名的物件 BranchCache 用戶端電腦，輸入**BranchCache 用戶端電腦**。 按一下 [確定] 。
 
-4. 在群組原則管理主控台中，確定**群組原則物件**已選取狀態，並在詳細資料窗格 right\-，按一下您剛 GPO 建立。 例如，如果您名 GPO BranchCache Client 部電腦上，按一下 right\ **BranchCache Client 電腦**。 按一下**編輯**。 群組原則編輯器] 管理主控台開啟。
+4. 在 [群組原則管理] 主控台中，確定**群組原則物件**已選取，在 [詳細資料] 窗格右邊\-按一下您剛才建立的 GPO。 例如，如果您名為 GPO BranchCache 用戶端電腦，以滑鼠右鍵\-按一下  **BranchCache 用戶端電腦**。 按一下 **\[編輯\]**。 群組原則管理編輯器主控台隨即開啟。
 
-5. 在群組原則編輯器] 管理主控台中，展開下列路徑：**電腦設定**，**原則**、**系統管理範本：原則定義 \(ADMX files\) 擷取的本機電腦**、**網路**、**BranchCache**。
+5. 在 [群組原則管理編輯器] 主控台中，展開下列路徑：**電腦設定**，**原則**，**系統管理範本：原則定義\(ADMX 檔案\)從本機電腦擷取**，**網路**， **BranchCache**。
 
-6. 按一下**BranchCache**，然後在詳細資料窗格中，double\ 按**打開 BranchCache**。 **上 BranchCache 關閉**對話方塊。
+6. 按一下  **BranchCache**，然後在 詳細資料 窗格中，連按兩下\-按一下 **開啟 BranchCache**。 **開啟 BranchCache**對話方塊隨即開啟。
   
-7.  在**上 BranchCache 關閉**對話方塊中，按一下 [**啟用**，，然後按一下 [ **[確定]**。
+7.  在 [**開啟 BranchCache** ] 對話方塊中，按一下**已啟用**，然後按一下 **[確定]**。
 
-8. 在群組原則編輯器] 管理主控台中，確定**BranchCache**仍然選取，然後在詳細資料窗格 double\ 按**讓自動裝載快取探索服務連接點來**。 原則設定對話方塊。
+8. 在 [群組原則管理編輯器] 主控台中，確定**BranchCache**是仍在選取狀態，然後在詳細資料窗格雙精度浮點數\-按一下**啟用自動託管快取探索的服務連線點**。 原則的 [設定] 對話方塊隨即開啟。
 
-9. 在**讓自動裝載快取探索服務連接點，**對話方塊中，按**啟用**，，然後按一下 [ **[確定]**。
+9. 在 **啟用自動託管快取探索服務連接點所** 對話方塊中，按一下**已啟用**，然後按一下  **確定**。
 
-10. 若要讓 client 電腦下載及快取的 BranchCache content 檔案 server\ 型內容伺服器：在群組原則編輯器] 管理主控台中，確定**BranchCache**仍然選取，然後在詳細資料窗格 double\ 按**BranchCache 網路的檔案**。 **設定 BranchCache 網路檔案的**對話方塊。 
-11. 在**設定 BranchCache 網路檔案的**對話方塊中，按**啟用**。 在**選項**，輸入數字，最大來回網路延遲時間，毫秒，然後按**[確定]**。
+10. 若要啟用 BranchCache 的檔案伺服器的用戶端電腦下載並快取內容\-型內容伺服器：在 群組原則管理編輯器 主控台中，確定**BranchCache**是仍在選取狀態，然後在詳細資料窗格雙精度浮點數\-按一下 **網路檔案的 BranchCache**。 **設定網路檔案的 BranchCache**對話方塊隨即開啟。 
+11. 在 [**設定網路檔案的 BranchCache** ] 對話方塊中，按一下**已啟用**。 在 **選項**，輸入數值，以毫秒為單位，最大的來回網路延遲時間，然後按一下 **確定**。
   
     > [!NOTE]
-    > 根據預設，client 電腦快取 content 檔案伺服器的如果超過 80 毫秒來回網路延遲。
+    > 根據預設，用戶端電腦快取從檔案伺服器的內容，如果超過 80 毫秒的來回網路延遲。
   
-12. 若要設定的配置 BranchCache 快取的每個 client 電腦上的硬碟空間：在群組原則編輯器] 管理主控台中，確定**BranchCache**仍然選取，然後在詳細資料窗格 double\-中，按一下**設定的使用 client 電腦快取的磁碟空間**。 **設定用於 client 電腦快取的磁碟空間的**對話方塊。 按一下**啟用**，然後在**選項**輸入數字，表示百分比的每個 client 電腦上使用 BranchCache 快取的硬碟空間值。 按一下**[確定]**。
+12. 若要設定的 BranchCache 快取的每個用戶端電腦上配置的硬碟空間量：在 [群組原則管理編輯器] 主控台中，確定**BranchCache**是仍在選取狀態，然後在詳細資料窗格雙精度浮點數\-按一下**設定的用戶端電腦快取所使用的磁碟空間百分比**. **設定的用戶端電腦快取所使用的磁碟空間百分比**對話方塊隨即開啟。 按一下  **Enabled**，然後在**選項**輸入數值，表示每個用戶端電腦上用於 BranchCache 快取的硬碟空間的百分比。 按一下 [確定] 。
 
-13. 天的區段是有效 client 電腦上 BranchCache 資料快取中指定的預設年代，：在群組原則編輯器] 管理主控台中，確定**BranchCache**仍然選取，然後在詳細資料窗格中，double\-按一下**區段的年齡設定資料快取中**。 **設定年齡區段的快取的資料在**對話方塊。 按一下**啟用**，然後在詳細資料窗格中輸入您想要的天數。 按一下**[確定]**。
+13. 若要指定預設的存留期，以天為單位，為其區段在中都有效用戶端電腦上的 BranchCache 資料快取：在 群組原則管理編輯器 主控台中，確定**BranchCache**是仍在選取狀態，然後在詳細資料窗格雙精度浮點數\-按一下 **中的資料快取設定的區段存留期**。 **中的資料快取設定的區段存留期**對話方塊隨即開啟。 按一下 **已啟用**，然後在 詳細資料 窗格中輸入您偏好的日數。 按一下 [確定] 。
 
-14. 視您的部署設定 client 電腦的其他 BranchCache 原則設定。
+14. 設定用戶端電腦的其他 BranchCache 原則設定，視您的部署。
 
-15. 分支 office client 電腦上重新整理群組原則來執行命令**gpupdate /force**，或 client 電腦重新開機一次。
+15. 分公司辦公室用戶端電腦上重新整理群組原則，執行命令**gpupdate /force**，或重新啟動用戶端電腦。
 
-您 BranchCache 裝載快取模式部署現已完成。
+BranchCache 託管快取模式部署現在已完成的。
 
-本指南技術的其他資訊，請查看[其他資源](11-Bc-Hcm-additional-resources.md)。
+如需其他有關本指南中的技術的詳細資訊，請參閱[額外的資源](11-Bc-Hcm-additional-resources.md)。

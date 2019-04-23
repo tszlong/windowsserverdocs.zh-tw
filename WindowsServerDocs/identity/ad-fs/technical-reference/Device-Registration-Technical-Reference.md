@@ -1,7 +1,7 @@
 ---
 ms.assetid: 69ec592a-5499-4249-8ba0-afa356a8ff75
-title: "裝置登記技術參考"
-description: 
+title: 裝置註冊技術參考
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,80 +10,81 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: fac6437e9b6c3893064769a8279c2cf96cbc47d6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833779"
 ---
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-# <a name="device-registration-technical-reference"></a>裝置登記技術參考
-裝置登記服務 \(DRS\) 是新的 Windows 服務中所包含的 Active Directory 同盟服務角色 Windows Server 2012 R2 上。  DRS 必須安裝和設定的所有 AD FS 陣列中聯盟伺服器上。  適用於部署 DRS 資訊，請查看[設定聯盟伺服器裝置登記服務與](https://technet.microsoft.com/library/dn486831.aspx)。  
+# <a name="device-registration-technical-reference"></a>裝置註冊技術參考
+Device Registration Service \(DRS\)是一種新的 Windows 服務，隨附於 Active Directory 同盟服務角色 Windows Server 2012 R2 上。  DRS 必須安裝並設定在 AD FS 伺服器陣列中的所有同盟伺服器上。  如需部署 DRS 的詳細資訊，請參閱 [使用裝置註冊服務設定同盟伺服器](https://technet.microsoft.com/library/dn486831.aspx)。  
   
-## <a name="active-directory-objects-created-when-a-device-is-registered"></a>建立係裝置時的 active Directory 物件  
-下列 Active Directory 物件的建成裝置登記服務的一部分。  
+## <a name="active-directory-objects-created-when-a-device-is-registered"></a>登錄裝置時所建立的 Active Directory 物件  
+下列 Active Directory 物件會建立為裝置註冊服務的一部分。  
   
-### <a name="device-registration-configuration"></a>裝置登記設定  
-裝置登記設定會儲存在 Active Directory 樹系的組態命名操作。 \ (例如，**CN\ = 裝置登記組態 CN\ = 服務 < 操作-naming\ configuration\->**\)。 此物件會建立時 Active Directory 樹系 initialed 的裝置登記。  
+### <a name="device-registration-configuration"></a>裝置註冊設定  
+裝置註冊設定會儲存在 Active Directory 樹系的設定命名內容中。 \(例如， **CN\=Device Registration Configuration，CN\=服務，< 組態\-命名\-內容 >**\)。 此物件是在為裝置註冊初始化 Active Directory 樹系時建立。  
   
-裝置登記設定包括下列項目：  
+裝置註冊設定包括下列項目：  
   
--   **發行者鍵**  
+-   **簽發者金鑰**  
   
-    用來發行 X.509 憑證，且已裝置相關聯的公開和私人金鑰。  私密金鑰是 DKM 受保護。  
+    用來發行與已登錄裝置相關聯的 X.509 憑證的公開和私密金鑰。  私密金鑰受 DKM 保護。  
   
--   **裝置登記服務設定**  
+-   **裝置註冊服務設定**  
   
-    與裝置登記服務相關的原則。  
+    與裝置註冊服務相關的原則。  
   
-### <a name="registered-devices-container"></a>且已的裝置容器  
-裝置物件的容器在其中一個網域中建立 Active Directory 樹系。  此物件的容器會包含所有的裝置的樹系 Active Directory 物件。  
+### <a name="registered-devices-container"></a>登錄的裝置容器  
+裝置物件容器會在 Active Directory 樹系中的其中一個網域下建立。  此物件容器會包含 Active Directory 樹系的所有裝置物件。  
   
-根據預設，AD FS 相同的網域中建立容器。  \ (例如，**CN\ = RegisteredDevices，DC\ = < 操作-naming\ default\->**\)。此物件會建立時 Active Directory 樹系 initialed 的裝置登記。  
+根據預設，容器是在 AD FS 的相同網域中建立。  \(例如， **CN\=RegisteredDevices，DC\=< 預設\-命名\-內容 >**\)。當裝置註冊初始化 Active Directory 樹系時，會建立此物件。  
   
-### <a name="registered-devices"></a>且已的裝置  
-裝置物件的 Active Directory 中新的輕量減重物件。  它們用來表示之間的關係：使用者、裝置和公司。  裝置物件使用定位邏輯裝置中的物件 Active Directory 實體裝置，AD FS 簽署的憑證。  
+### <a name="registered-devices"></a>登錄的裝置  
+裝置物件是 Active Directory 中的新的輕量型物件。  它們用來代表使用者、裝置與公司之間的關聯性。  裝置物件使用 AD FS 所簽署的憑證來錨定實體裝置至 Active Directory 中的邏輯裝置物件。  
   
-且已的裝置包括下列項目：  
+登錄的裝置包括下列元素：  
   
 -   **顯示名稱**  
   
-    裝置的易記名稱。  適用於 windows 的裝置，這是主機電腦的名稱。  
+    裝置的好記的名稱。  針對 Windows 裝置，這是電腦的主機名稱。  
   
--   **裝置 Id**  
+-   **裝置識別碼**  
   
-    GUID 所裝置登記伺服器。  
+    裝置註冊伺服器所產生的 GUID。  
   
 -   **憑證指紋**  
   
-    憑證指紋 X.509 憑證，且已裝置搭配使用。  
+    搭配登錄的裝置使用的 X.509 憑證的憑證指紋。  
   
 -   **OS 類型**  
   
-    作業系統類型的裝置上。  
+    裝置上的作業系統類別。  
   
--   **作業系統版本**  
+-   **OS 版本**  
   
-    在裝置上的作業系統版本。  
+    裝置上的作業系統版本。  
   
--   **已支援**  
+-   **已啟用**  
   
-    布林值，表示裝置是否尚未在 Active Directory 中。  只有讓的裝置已獲授權存取服務。  
+    指出是否已在 Active Directory 中啟用裝置的布林值。  僅允許已啟用的裝置存取服務。  
   
--   **大約上次的使用時間**  
+-   **預估上次使用時間**  
   
-    大約時間存取資源使用該裝置。  若要限制複寫流量，這才會更新一次每個 14 天。  
+    裝置用於存取資源的大約時間。  為了限制複寫流量，這僅會每隔 14 天更新一次。  
   
--   **且已擁有者**  
+-   **已註冊的擁有者**  
   
-    安全性身分 \(SID\) 工作場所加入此裝置的使用者。  
+    安全性身分識別\(SID\)這部裝置加入工作地點的使用者。  
   
-## <a name="ad-fsdrs-server-ssl-certificate-revocation-checking"></a>廣告 FS\ 日 DRS 伺服器 SSL 憑證撤銷檢查  
-加入的工作地點 client 檢查有效的 AD FS 伺服器 SSL 憑證。  AD FS 伺服器 SSL 憑證包含撤銷的憑證清單 \(CRL\) 端點，如果 client 必須瑞曲之戰指定驗證憑證的端點。  
+## <a name="ad-fsdrs-server-ssl-certificate-revocation-checking"></a>AD FS\/DRS 伺服器 SSL 憑證撤銷檢查  
+工作地點加入用戶端會檢查 AD FS 伺服器 SSL 憑證的有效性。  如果 AD FS 伺服器 SSL 憑證包含憑證撤銷清單\(CRL\)端點，用戶端必須能夠連線到指定來驗證憑證的端點。  
   
-如果您正在使用的測試環境並測試憑證授權單位 \(CA\) 然後您可以選擇不包含 CA 所發行的伺服器憑證中的端點 CRL 發行伺服器 SSL 憑證。  這樣可讓地點加入 client 略過 CRL 檢查。  
+如果您使用測試環境和測試憑證授權單位\(CA\)來發行您的伺服器 SSL 憑證，則您可以選擇在您的 CA 所發行的伺服器憑證中包含 CRL 端點。  如此能讓工作地方聯結用戶端略過 CRL 檢查。  
   
 > [!CAUTION]  
-> 不建議這樣 production 系統  
+> 永不建議對生產系統這麼做  
   
 

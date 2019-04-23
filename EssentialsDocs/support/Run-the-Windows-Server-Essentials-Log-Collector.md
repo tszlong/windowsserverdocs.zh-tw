@@ -1,6 +1,6 @@
 ---
-title: "執行 Windows Server Essentials 登入行程"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 執行 Windows Server Essentials 記錄檔收集器
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,78 +13,79 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 6b49fee7ca4a19d5a501cf96c1ce356f8242c81f
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59830919"
 ---
-# <a name="run-the-windows-server-essentials-log-collector"></a>執行 Windows Server Essentials 登入行程
-您可以在網路上伺服器或電腦的執行 Windows Server Essentials 登入行程。 如果您在登入行程執行伺服器，您可以僅限收集登伺服器。 如果您從網路的電腦執行的登入行程，您可以選擇收集登的伺服器，除了登該電腦。  
+# <a name="run-the-windows-server-essentials-log-collector"></a>執行 Windows Server Essentials 記錄檔收集器
+您可以在網路上，從伺服器或電腦執行 Windows Server Essentials Log Collector。 如果從伺服器執行記錄檔收集器，您只能收集伺服器中的記錄檔。 如果從網路電腦執行記錄檔收集器，則除了該電腦的記錄檔以外，您還可選擇收集伺服器中的記錄檔。  
   
- 您必須執行登入行程適當的系統管理員權限。 如果您收集登入檔案伺服器，您必須由伺服器管理員。如果您收集登入電腦上的檔案網路，您必須是 Client 管理員該電腦。  
+ 您必須有適當的管理權限才能執行記錄檔收集器。 如果您要收集伺服器的記錄檔，您必須是伺服器系統管理員；如果您要收集網路電腦上的記錄檔，您必須是該電腦的用戶端系統管理員。  
   
-#### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>若要使用精靈伺服器上執行，登入行程  
+#### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>使用精靈在伺服器上執行記錄檔收集器  
   
-1.  在**[開始]**頁面上的伺服器上，按一下 [ **Windows Server Essentials 登入行程**。  
-  
-    > [!NOTE]
-    >  -   如果登入行程程式未顯示在**[開始]**頁面中，瀏覽至**%system%\Program 檔案 (x86) \Windows Server Essentials 登入行程**，然後按兩下 [ **LogCollector**。  
-    > -   如果您無法登入以系統管理員權限的伺服器，登入行程會提示您輸入您的認證。  
-  
-2.  當系統提示您收集登入，檔案儲存的位置時，您可以選擇預設位置，**\\\ < ServerName\ > \logs**，或指定另一個位置。 若要接受預設的位置，請按一下**下一步**。 若要變更位置，請按一下**瀏覽]**，瀏覽至您想要登入檔案，儲存的資料夾，然後按一下 [**儲存**。  
+1.  在上**開始**頁面上的伺服器上，按一下**Windows Server Essentials Log Collector**。  
   
     > [!NOTE]
-    >  您不需要提供登入檔案的檔名。 登入行程名稱 zip 檔案集合串連電腦名稱，且該檔案的頻率。  
+    >  -   如果記錄檔收集器程式未出現在**開始**頁面上，瀏覽至 **%system%\Program 檔案 (x86) \Windows Server Essentials Log Collector**，然後按兩下**LogCollector**.  
+    > -   如果您不是以具有系統管理權限的身分登入伺服器，記錄檔收集器會提示您輸入您的認證。  
   
-3.  會收集登時，會顯示進度列。  
-  
-4.  若要檢視到收集登入檔案，請選取 [**開放登已儲存的檔案位置**核取方塊，然後按**關閉**以關閉精靈，並左登入收集檔案。  
-  
-#### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>若要使用精靈網路的電腦上執行，登入行程  
-  
-1.  瀏覽] **%system%\Program 檔案 (x86) \Windows Server Essentials 登入行程**，然後按兩下檔案**LogCollector.exe**。  
+2.  當系統提示您儲存所收集的記錄檔的位置時，您可以選擇預設位置，  **\\ \\< 伺服器名稱\>\logs**，或是指定其他位置。 如果接受預設位置，請按一下 [下一步] 。 如果要變更位置，請按一下 [瀏覽] ，瀏覽至您要儲存記錄檔的資料夾，然後按一下 [儲存] 。  
   
     > [!NOTE]
-    >  如果您無法登入的網路系統管理員權限的電腦，請輸入您的使用者名稱和密碼提示時，請然後按一下**下一步**。  
+    >  您不需提供記錄檔的檔案名稱。 記錄收集器會藉由串連的電腦名稱和檔案的時間戳記命名 zip 檔案集合。  
   
-2.  選取您想要如下所示會收集哪些登：  
+3.  收集記錄檔時，會顯示一個進度列。  
   
-    1.  選取 [**伺服器的檔案登入**核取方塊以收集登入伺服器上的檔案。  
+4.  如果要檢視記錄檔集合檔案的內容，請選取 [開啟儲存記錄檔的檔案位置]  核取方塊，然後按一下 [關閉]  來關閉精靈並開啟記錄檔集合檔案。  
   
-    2.  **（電腦）用電腦登入檔案**核取方塊已選取預設指示登入行程，會收集登從網路電腦正在執行。 如果您只想要收集伺服器登，清除**（電腦）用電腦登入檔案**核取方塊。  
+#### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>使用精靈在網路電腦上執行記錄檔收集器  
   
-    3.  按一下**下一步**。  
-  
-3.  出現提示時的 [由伺服器管理員中，輸入的使用者名稱和密碼，然後按一下 [**下一步**。  
-  
-4.  輸入或瀏覽至您想要儲存的登入檔案，然後再按一下位置**下一步**。  
+1.  瀏覽至 **%system%\Program 檔案 (x86) \Windows Server Essentials Log Collector**，然後按兩下檔案**LogCollector.exe**。  
   
     > [!NOTE]
-    >  您不需要提供登入檔案的檔名。 登入行程名稱 zip 檔案集合串連電腦名稱，且該檔案的頻率。  
+    >  如果您不是以具有系統管理權限的身分登入網路電腦，當系統提示時，請輸入您的使用者名稱和密碼，然後按 [下一步]。  
   
-5.  會收集登時，會顯示進度列。  
+2.  選取您想要收集的記錄檔，如下所示：  
   
-6.  若要檢視到收集登入檔案，請選取 [**開放登已儲存的檔案位置**核取方塊，然後按**關閉**以關閉精靈，並左登入收集檔案。  
+    1.  選取 [伺服器記錄檔] 核取方塊可收集伺服器上的記錄檔。  
   
-### <a name="running-the-log-collector-manually"></a>手動執行登入行程  
- 登入行程安裝之後，才能執行該工具建立排程的工作。 接下來，您可以執行從登入行程**排程工作管理員]**不用精靈中，如果有問題的起始精靈。  
+    2.  預設會選取 [用戶端電腦記錄檔 (這台電腦)]  核取方塊，表示記錄檔收集器會從執行的網路電腦收集記錄檔。 如果您想收集伺服器記錄檔，請清除 [用戶端電腦記錄檔 (這台電腦)] 核取方塊。  
   
-##### <a name="to-manually-run-the-log-collector-on-the-server"></a>手動執行伺服器上的 [在登入行程  
+    3.  按一下 [下一步] 。  
   
-1.  登入直接或從遠端伺服器。  
+3.  出現提示時，輸入伺服器系統管理員的使用者名稱和密碼，然後按一下 [下一步]。  
   
-2.  開放**工作排程器**。  
+4.  輸入或瀏覽至您要儲存記錄檔的位置，然後按一下 [下一步]。  
   
-3.  在 [根的**工作排程器程式庫**，瀏覽至排定的工作名為**LogCollector**。  
+    > [!NOTE]
+    >  您不需提供記錄檔的檔案名稱。 記錄收集器會藉由串連的電腦名稱和檔案的時間戳記命名 zip 檔案集合。  
   
-4.  以滑鼠右鍵按一下**LogCollector**，然後按**執行**。 登入行程地點登預設伺服器上的資料夾，在**\\\ < ServerName\ > \Logs**。 如果您尚未寫入權限的資料夾，或資料夾不存在，請登位於**< temp\ >**子目錄。  
+5.  收集記錄檔時，會顯示一個進度列。  
   
-##### <a name="to-manually-run-the-log-collector-on-a-network-computer"></a>若要手動網路的電腦上執行，登入行程  
+6.  如果要檢視記錄檔集合檔案的內容，請選取 [開啟儲存記錄檔的檔案位置]  核取方塊，然後按一下 [關閉]  來關閉精靈並開啟記錄檔集合檔案。  
   
-1.  登入直接或遠端電腦的網路。  
+### <a name="running-the-log-collector-manually"></a>手動執行記錄檔收集器  
+ 安裝記錄檔收集器之後，會建立一個排定的工作以執行工具。 如果啟動精靈發生問題，您之後就可從 [排定的工作管理員]  執行記錄檔收集器而不需使用精靈。  
   
-2.  開放**工作排程器**。  
+##### <a name="to-manually-run-the-log-collector-on-the-server"></a>在伺服器上手動執行記錄檔收集器  
   
-3.  在 [根的**工作排程器程式庫**，瀏覽至排定的工作名為**LogCollector**。  
+1.  以直接或遠端方式登入伺服器。  
   
-4.  以滑鼠右鍵按一下**LogCollector**，然後按**執行**。 登入行程地點登入**< temp\ >**在網路的電腦上的資料夾。
+2.  開啟 [工作排程器] 。  
+  
+3.  在 [工作排程器程式庫] 的根目錄中，瀏覽至名為 [LogCollector] 的排程工作。  
+  
+4.  以滑鼠右鍵按一下 [LogCollector] ，然後按一下 [執行] 。 記錄收集器會記錄檔放在預設資料夾的伺服器上，  **\\ \\< 伺服器名稱\>\Logs**。 如果您沒有在資料夾的寫入權限或資料夾不存在，將記錄檔放在 **< temp\>** 子目錄。  
+  
+##### <a name="to-manually-run-the-log-collector-on-a-network-computer"></a>在網路電腦上手動執行記錄檔收集器  
+  
+1.  以直接或遠端方式登入網路電腦。  
+  
+2.  開啟 [工作排程器] 。  
+  
+3.  在 [工作排程器程式庫] 的根目錄中，瀏覽至名為 [LogCollector] 的排程工作。  
+  
+4.  以滑鼠右鍵按一下 [LogCollector] ，然後按一下 [執行] 。 記錄收集器會放在記錄檔 **< temp\>** 網路電腦上的資料夾。
