@@ -1,6 +1,6 @@
 ---
-title: Delete DNS 資源記錄
-description: 本主題是在 Windows Server 2016 的 IP 位址管理 (IPAM) 管理組節目表的一部分。
+title: 刪除 DNS 資源記錄
+description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,41 +13,42 @@ ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f9ebfeca1da9e36cd00272113f2e86c33174074b
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 2d3c5f4f02cc1a8386bf12fe634620ba98f2f23a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883219"
 ---
-# <a name="delete-dns-resource-records"></a>Delete DNS 資源記錄
+# <a name="delete-dns-resource-records"></a>刪除 DNS 資源記錄
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用本主題以 delete 一或多個 DNS 資源記錄使用 IPAM client 主機。  
+若要使用 IPAM 用戶端主控台刪除一或多個 DNS 資源記錄，您可以使用本主題。  
   
-資格在**系統管理員**，或相當於，才能執行此程序最小值。  
+若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。  
   
-### <a name="to-delete-dns-resource-records"></a>若要移除 DNS 資源記錄  
+### <a name="to-delete-dns-resource-records"></a>若要刪除 DNS 資源記錄  
   
-1.  在伺服器管理員中，按一下**IPAM**。 顯示 IPAM client 主機。  
+1.  在 [伺服器管理員] 中，按一下**IPAM**。 IPAM 用戶端主控台隨即出現。  
   
-2.  在瀏覽窗格中，在**監視和管理**，按一下 [ **DNS 區域**。  瀏覽窗格中分為左上角的瀏覽窗格中，較低的瀏覽窗格。  
+2.  在 [導覽] 窗格中，在**監視與管理**，按一下**DNS 區域**。  瀏覽窗格會分割成上方瀏覽窗格和下方的瀏覽窗格中。  
   
-3.  按一下以展開**向前查詢**，以及您想要 delete 區域和資源記錄位於何處網域。 按一下的區域，然後在 [顯示] 窗格中，按一下**目前檢視]**。 按一下**資源記錄**。  
+3.  按一下以展開**正向對應**和您想要刪除的區域和資源記錄的所在位置的網域。 按一下在區域中，然後在 [顯示] 窗格中，按一下**目前檢視**。 按一下 **資源記錄**。  
   
-4.  在 [顯示] 窗格中，尋找並選取您想要 delete 資源記錄。  
+4.  在 [顯示] 窗格中，找出並選取您想要刪除的資源記錄。  
   
-    ![選取要 delete 資源記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_01.jpg)  
+    ![選取要刪除的資源記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_01.jpg)  
   
-5.  選取的記錄，以滑鼠右鍵按一下，然後按一下**Delete DNS 資源記錄**。  
+5.  將選取的記錄，以滑鼠右鍵按一下，然後按一下**刪除 DNS 資源記錄**。  
   
-    ![Delete 記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_02.jpg)  
+    ![刪除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_02.jpg)  
   
-6.  **Delete DNS 資源記錄**對話方塊。 確認已選取正確的 DNS 伺服器。 如果不是，按一下**的 DNS 伺服器**，然後選取您要移除的資源記錄的伺服器。 按一下**[確定]**。 IPAM 將的資源記錄移除 DNS 伺服器。  
+6.  **刪除 DNS 資源記錄**對話方塊隨即開啟。 確認已選取正確的 DNS 伺服器。 如果沒有，請按一下**DNS 伺服器**，然後選取您要刪除的資源記錄的伺服器。 按一下 [確定] 。 IPAM 會刪除的資源記錄的 DNS 伺服器。  
   
-    ![確認已選取正確的 DNS 伺服器，並移除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_03.jpg)  
+    ![確認已選取正確的 DNS 伺服器和刪除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_03.jpg)  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 [DNS 資源記錄管理](DNS-Resource-Record-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

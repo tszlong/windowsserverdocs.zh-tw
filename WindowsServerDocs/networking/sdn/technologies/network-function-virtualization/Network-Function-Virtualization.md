@@ -1,6 +1,6 @@
 ---
-title: 網路功能模擬
-description: 您可以使用本主題以深入了解網路功能模擬，可讓您部署 virtual 網路的裝置，例如 Datacenter 防火牆、multitenant RAS 閘道和軟體負載平衡 (SLB) 在 Windows Server 2016。
+title: 網路函式虛擬化
+description: 若要了解網路功能虛擬化，可讓您部署虛擬網路設備，例如資料中心防火牆、 多租用戶 RAS 閘道和軟體負載平衡 (SLB) Windows Server 2016 中，您可以使用本主題。
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,123 +12,124 @@ ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7caa9eef42cb7ab95a13d64c1dcd3639b1132eb3
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 59474a13d1cbce6a607f025caf3f6c1b839c7eed
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884549"
 ---
-# <a name="network-function-virtualization"></a>網路功能模擬
+# <a name="network-function-virtualization"></a>網路函式虛擬化
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用本主題以深入了解網路功能模擬，可讓您部署 virtual 網路的裝置，例如 Datacenter 防火牆 multitenant RAS 閘道，以及軟體負載平衡 \(SLB\) 多工器 \(MUX\)。
+您可以使用本主題來深入了解網路功能虛擬化，可讓您部署虛擬網路的設備，例如資料中心防火牆、 多租用戶 RAS 閘道，以及軟體負載平衡\(SLB\)多工器\(MUX\)。
   
 >[!NOTE]  
->本主題中，除了下列網路功能模擬文件會提供。  
-> - [Datacenter 防火牆概觀](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)  
-> - [適用於 SDN RAS 閘道](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)  
-> - [軟體負載平衡 SDN (SLB)](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)  
+>本主題中，除了下列網路功能虛擬化文件使用。  
+> - [資料中心防火牆概觀](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)  
+> - [適用於 SDN 的 RAS 閘道](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)  
+> - [軟體負載平衡 (SLB)，適用於 SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)  
   
-在今天的軟體定義資料中心硬體裝置（例如負載平衡器、防火牆、路由器、參數，等等）來執行網路功能的越來越正在擬化檔案為 virtual 裝置。 這「網路功能模擬」是伺服器模擬和網路模擬自然進展。 快速新興，建立的全新市場 virtual 裝置。 他們繼續產生興趣取得待發這兩個模擬平台和雲端服務。  
+在現今的軟體會逐漸所定義的資料中心，要由硬體設備 （例如負載平衡器、 防火牆、 路由器、 交換器等等） 的網路功能虛擬化為虛擬設備。 這個「網路功能虛擬化」是伺服器虛擬化和網路虛擬化的自然進展。 虛擬設備是快速的新興和建立全新的市場。 它們繼續產生感興趣並取得趨勢電子報，在這兩個虛擬化平台上部署和雲端服務。  
   
-Microsoft 以開始使用 Windows Server 2012 R2 的 virtual 應用裝置隨附的獨立閘道。 如需詳細資訊，請查看[Windows 伺服器閘道](https://technet.microsoft.com/library/dn313101.aspx)。 現在與 Windows Server 2016 Microsoft 會繼續以展開及投資網路功能模擬市場。  
+Microsoft 會包含獨立閘道，為從 Windows Server 2012 R2 的虛擬設備。 如需詳細資訊，請參閱 [Windows Server 閘道](https://technet.microsoft.com/library/dn313101.aspx)。 現在與 Windows Server 2016 的 Microsoft 會繼續展開，然後將心力灌注在網路函式虛擬化市場。  
   
-## <a name="virtual-appliance-benefits"></a>Virtual 應用裝置權益  
-Virtual 應用裝置，而且動態輕鬆變更，因為它是預先建置，自訂一樣。 它可以是一或多個虛擬電腦已封裝、更新，並為單位保留。 一起軟體定義網路 (SDN)，就會顯示靈活度和今天以雲端為基礎的基礎結構中所需的彈性。 例如：  
+## <a name="virtual-appliance-benefits"></a>虛擬設備的優點  
+虛擬設備是動態且易於變更，因為它是預先建置的自訂虛擬機器。 它可以是一或多個虛擬機器封裝、 更新和維護當做一個單位。 搭配使用軟體定義網路 (SDN)，您取得靈活度及現今的雲端式基礎結構中所需的彈性。 例如:   
   
--   SDN 呈現網路為集區與動態資源。  
+-   SDN 呈現為集區和動態資源的網路。  
   
--   幫助您承租人隔離 SDN。  
+-   SDN 可協助租用戶隔離。  
   
--   SDN 發揮最大的縮放比例和效能。  
+-   SDN 發揮最大的規模和效能。  
   
--   可讓順暢容量擴充和工作負載行動 virtual 裝置。  
+-   虛擬設備啟用無縫式的容量擴充和工作負載行動性。  
   
--   Virtual 設備最小化操作複雜。  
+-   虛擬設備降低操作複雜度。  
   
--   Virtual 設備可讓您輕鬆地取得、部署及管理預先整合的方案針對。  
+-   虛擬設備，可讓客戶輕鬆地取得、 部署及管理預先整合的解決方案。  
   
-    -   針對可以輕鬆地移動 virtual 應用裝置任何位置點一下在雲端中。  
+    -   客戶可以輕鬆地移動的虛擬應用裝置隨處在雲端中。  
   
-    -   針對可縮放 virtual 設備或向下動態根據要求。  
+    -   客戶可以相應增加虛擬設備，或向下動態地根據需求。  
   
-如需有關 Microsoft SDN 查看[軟體定義網路](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking--sdn-)。  
+如需有關 Microsoft SDN[軟體定義網路](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking--sdn-)。  
   
-### <a name="what-network-functions-are-being-virtualized"></a>網路功能的問題擬化檔案？  
-快速變大的市場模擬的網路功能。 下列網路功能的問題擬化檔案：  
+### <a name="what-network-functions-are-being-virtualized"></a>哪些網路函式會被虛擬化？  
+Marketplace 中的虛擬化的網路功能快速成長。 下列網路功能會被虛擬化：  
   
 -   **安全性**  
   
     -   防火牆  
   
-    -   防毒軟體  
+    -   防毒  
   
-    -   DDoS（分散式阻斷服務）  
+    -   DDoS （分散式阻斷服務）  
   
-    -   IPS ID（入侵防止系統日入侵偵測系統）  
+    -   IPS/IDS （入侵預防系統/入侵偵測系統）  
   
--   **應用程式日 WAN 最佳化**  
+-   **應用程式/WAN 最佳化程式**  
   
 -   **Edge**  
   
-    -   網站-閘道  
+    -   站對站閘道  
   
     -   L3 閘道  
   
     -   路由器  
   
-    -   切換  
+    -   參數  
   
     -   NAT  
   
-    -   負載平衡器（不一定是在 edge 中)  
+    -   負載平衡器 （不一定是在邊緣）  
   
     -   HTTP proxy  
   
-## <a name="why-microsoft-is-a-great-platform-for-virtual-appliances"></a>為何 Microsoft 會 virtual 裝置變得更好的平台  
-![網路 virtual 堆疊](../../../media/Network-Function-Virtualization/Microsoft-Network-Function-Virtualization.png)  
+## <a name="why-microsoft-is-a-great-platform-for-virtual-appliances"></a>Microsoft 為何虛擬設備的絕佳平台  
+![虛擬網路堆疊](../../../media/Network-Function-Virtualization/Microsoft-Network-Function-Virtualization.png)  
   
-Microsoft 平台經過工程設計為建置及部署 virtual 裝置變得更好的平台。 原因如下：  
+Microsoft 平台已工程化，是絕佳的平台，建置及部署虛擬應用裝置。 原因如下：  
   
--   Microsoft 提供與 Windows Server 2016 金鑰模擬的網路功能。  
+-   Microsoft 提供 Windows Server 2016 的重要的虛擬化的網路函式。  
   
--   您可以部署 virtual 應用廠商裝置的您的選擇。  
+-   您可以部署您所選擇的虛擬設備廠商。  
   
--   您可以部署、設定及管理您使用的是 Windows Server 2016 的 Microsoft Network Controller 的 virtual 裝置。 如需 Network Controller 的詳細資訊，請查看[Network Controller](../../../sdn/technologies/network-controller/Network-Controller.md)。  
+-   您可以部署、 設定及管理您與 Microsoft 網路控制卡隨附於 Windows Server 2016 的虛擬設備。 如需有關網路控制站的詳細資訊，請參閱[網路控制卡](../../../sdn/technologies/network-controller/Network-Controller.md)。  
   
--   HYPER-V 可以主機頂端來賓作業系統，您需要。  
+-   HYPER-V 可以裝載您需要的最上層的客體作業系統。  
   
-## <a name="network-function-virtualization-in-windows-server-2016"></a>Windows Server 2016 中的網路功能模擬  
+## <a name="network-function-virtualization-in-windows-server-2016"></a>Windows Server 2016 中的網路功能虛擬化  
   
-### <a name="virtual-appliances-functions-provided-by-microsoft"></a>Microsoft 所提供的 virtual 設備函式  
-提供下列 virtual 裝置與 Windows Server 2016:  
+### <a name="virtual-appliances-functions-provided-by-microsoft"></a>由 Microsoft 所提供的虛擬設備函式  
+Windows Server 2016 提供下列虛擬設備：  
   
 **軟體負載平衡器**  
   
-層級 4 負載平衡器在 datacenter 縮放作業。 這是在縮放 Azure 環境中部署的 Azure 負載平衡器版本類似。 如需 Microsoft 軟體負載平衡器，請查看[軟體負載平衡 (SLB) SDN 的](https://technet.microsoft.com/library/mt632286.aspx)。 如需 Microsoft Azure 負載平衡服務的詳細資訊，請查看[Microsoft Azure 負載平衡服務](https://azure.microsoft.com/blog/2014/04/08/microsoft-azure-load-balancing-services/)。  
+在資料中心大規模運作的第 4 層負載平衡器。 這是已在 Azure 環境中部署 Azure 的負載平衡器類似版本。 如需有關 Microsoft 軟體負載平衡器的詳細資訊，請參閱[軟體負載平衡 (SLB) 適用於 SDN](https://technet.microsoft.com/library/mt632286.aspx)。 如需有關 Microsoft Azure 負載平衡服務的詳細資訊，請參閱 < [Microsoft Azure 負載平衡服務](https://azure.microsoft.com/blog/2014/04/08/microsoft-azure-load-balancing-services/)。  
   
-**閘道**。 RAS 閘道提供所有下列閘道功能的組合。  
+**閘道**。 RAS 閘道提供下列閘道函式的所有組合。  
   
--   **網站-閘道**  
+-   **站對站閘道**  
   
-    RAS 閘道提供邊境閘道通訊協定 (BGP)-可讓您存取及管理他們的資源從遠端網站，以網站 VPN 連接到 tenants 並允許 virtual 資源中的雲端和承租人實體網路間網路流量的功能、multitenant 閘道。 如需 RAS 閘道的詳細資訊，請查看[RAS 閘道可用性](https://technet.microsoft.com/library/mt631692.aspx)和[RAS 閘道](https://technet.microsoft.com/library/mt626650.aspx)。  
+    RAS 閘道提供邊界閘道通訊協定 (BGP)-功能、 多租用戶閘道，可讓您的租用戶來存取和管理其資源，透過站對站 VPN 連線，從遠端站台，並可讓虛擬資源之間的網路流量流程雲端和租用戶實體網路中。 如需 RAS 閘道的詳細資訊，請參閱[RAS 閘道高可用性](https://technet.microsoft.com/library/mt631692.aspx)並[RAS 閘道](https://technet.microsoft.com/library/mt626650.aspx)。  
   
 -   **轉送閘道**  
   
-    RAS 閘道傳送 virtual 網路與控管提供者實體網路間流量。 例如，如果 tenants 建立一或多個 virtual 網路，必須存取實體網路裝載的提供者共用資源轉接閘道可以傳送 virtual 網路與提供使用者使用 virtual 服務所需的網路上的實體網路間流量。 如需詳細資訊，請查看[RAS 閘道可用性](https://technet.microsoft.com/library/mt631692.aspx)和[RAS 閘道](https://technet.microsoft.com/library/mt626650.aspx)。  
+    RAS 閘道路由傳送虛擬網路與主機的提供者實體網路之間的流量。 例如，如果租用戶建立一個或多個虛擬網路，而且需要在主機服務提供者的實體網路上的共用資源的存取權，轉送閘道可以路由傳送虛擬網路與實體網路，以提供使用者在工作之間的流量含有所需的服務的虛擬網路。 如需詳細資訊，請參閱 < [RAS 閘道高可用性](https://technet.microsoft.com/library/mt631692.aspx)並[RAS 閘道](https://technet.microsoft.com/library/mt626650.aspx)。  
   
 -   **GRE 通道閘道**  
   
-    GRE 根據承租人 virtual 網路之間外部網路的通道讓連接。 因為 GRE 通訊協定輕量型與支援 GRE 是網路的大部分裝置上，它會變成的資料加密不需要理想選擇的通道。 支援網站 (S2S) 通道 GRE 下轉接承租人 virtual 網路與承租人外部網路使用多承租人閘道之間的 如需 GRE 可愛的詳細資訊，請查看[在 Windows Server 2016 的 GRE 通道](https://technet.microsoft.com/library/dn765485.aspx)。  
+    GRE 式通道可啟用租用戶虛擬網路與外部網路之間的連線。 因為 GRE 通訊協定是輕量型且支援 GRE 是大部分的網路裝置上使用，它會變成的理想選擇通道，不需要資料加密。 站對站 (S2S) 通道中的 GRE 支援使用多租用戶閘道解決了在租用戶虛擬網路與租用戶外部網路之間轉送的問題。 如需 GRE 通道的詳細資訊，請參閱[Windows Server 2016 中的 GRE 通道](https://technet.microsoft.com/library/dn765485.aspx)。  
   
-**使用 BGP 路由控制平面**  
+**Bgp 路由的控制平面**  
   
-HYPER-V 網路模擬 (HNV) 路由控制項是控制平面，帶來客戶地址平面路徑和動態學習，然後更新分散式的 RAS 閘道路由器 virtual 網路中的邏輯，打造實體。 如需詳細資訊，請查看[RAS 閘道可用性](https://technet.microsoft.com/library/mt631692.aspx)和[RAS 閘道](https://technet.microsoft.com/library/mt626650.aspx)。  
+HYPER-V 網路虛擬化 (HNV) 路由的控制項是在控制平面，其帶有所有客戶地址平面路由，且會以動態方式學習，然後更新虛擬網路中的分散式的 RAS 閘道路由器的邏輯、 集中式的實體。 如需詳細資訊，請參閱 < [RAS 閘道高可用性](https://technet.microsoft.com/library/mt631692.aspx)並[RAS 閘道](https://technet.microsoft.com/library/mt626650.aspx)。  
   
-**散發多承租人防火牆**  
+**分散式的多租用戶防火牆**  
   
-防火牆保護網路 virtual 網路層的級。 原則會執行的每個承租人 VM SDN-vSwitch 連接埠。 保護所有流量：東西和北南。 原則會透過承租人入口網站推入和 Network Controller 它們分散至所有適用的主機。 如需分散式多承租人防火牆的詳細資訊，請查看[Datacenter 防火牆概觀](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。  
+防火牆保護虛擬網路的網路的層。 在每個租用戶 VM 的 SDN vSwitch 連接埠，會強制執行原則。 它能保護所有流量的流動： 東-西和北-南。 原則推送到租用戶入口網站，網路控制站將它們發佈至所有適用的主機。 如需有關分散式的多租用戶防火牆的詳細資訊，請參閱 <<c0> [ 資料中心防火牆概觀](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。  
   
 
 

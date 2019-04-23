@@ -1,6 +1,6 @@
 ---
-title: "存放裝置報告管理"
-description: "本文說明如何產生、排程和監視存放裝置報告"
+title: 存放裝置報告管理
+description: 本文說明如何產生、排程和監視存放裝置報告
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c0d750fd139865daa92319c1d1926dc5d36669b2
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885769"
 ---
 # <a name="storage-reports-management"></a>存放裝置報告管理
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 在檔案伺服器資源管理員 Microsoft<sup>®</sup> Management Console (MMC) 嵌入式管理單元的 **\[存放裝置報告管理\]** 節點，您可以執行下列工作：
 
@@ -33,13 +34,13 @@ ms.lasthandoff: 10/17/2017
 
 本節包含下列主題：
 
--   [排程一組報告](schedule-set-of-reports.md)
--   [產生隨選報告](generate-reports-on-demand.md)
+-   [排程一組報表](schedule-set-of-reports.md)
+-   [依需要產生報表](generate-reports-on-demand.md)
 
 > [!Note]
 > 若要設定電子郵件通知和某些報告功能，您必須先設定檔案伺服器資源管理員的一般選項。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 

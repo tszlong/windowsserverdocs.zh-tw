@@ -1,6 +1,6 @@
 ---
 title: BranchCache
-description: 本主題提供 Windows Server 2016 中 BranchCache 的概觀
+description: 本主題提供 Windows Server 2016 中的 BranchCache 的概觀
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,468 +12,469 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5540d89827b80a21bf23f6a2aa8f54f09dfde67a
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: ba334e4aee0232d939a52f1173885a5f457adbc8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883859"
 ---
 # <a name="branchcache"></a>BranchCache
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題，適用於資訊技術 (IT) 專業人員，提供概觀 BranchCache，包括 BranchCache 模式、的功能、功能，以及 BranchCache 功能，可在不同的作業系統資訊。
+本主題 (對象為資訊技術 (IT) 專家) 提供關於 BranchCache 的概觀資訊，包括 BranchCache 模式、特色、功能以及不同作業系統中可用的 BranchCache 功能。
 
 > [!NOTE]
-> 本主題中，除了下列 BranchCache 文件會提供。
+> 除了本主題之外，還提供下列 BranchCache 文件。
 > 
-> - [殼層 BranchCache 網路及 Windows PowerShell 命令](../branchcache/BranchCache-Network-Shell-and-Windows-PowerShell-Commands.md)
+> - [BranchCache 網路殼層與 Windows PowerShell 命令](../branchcache/BranchCache-Network-Shell-and-Windows-PowerShell-Commands.md)
 > -   [BranchCache 部署指南](../branchcache/deploy/BranchCache-Deployment-Guide.md)
 
-**誰會想要 BranchCache？**
+**誰會想要在 BranchCache？**
 
-如果您是系統管理員、網路、儲存方案架構或其他 IT 專業人員，BranchCache 您可能感興趣下列下底下：
+如果您是系統管理員、網路或儲存解決方案架構師或其他 IT 專業人員，下列情況可能會引起您對 BranchCache 的興趣：
 
-- 設計，或從分公司具有兩個或更多的所在位置和寬區域 (wan) 連接到主要辦公室組織的支援 IT 基礎結構。
+- 您為其設計或支援 IT 基礎結構的組織是擁有兩個以上的實體位置和從分公司連線到總公司的廣域網路 (WAN)。
 
-- 您設計或組織已部署雲端技術支援 IT 基礎架構與 WAN 連接使用遠端應用程式存取的資料與工作人員。
+- 您為其設計和支援 IT 基礎結構的組織是已部署雲端技術和員工用以存取在遠端位置的資料與應用程式的 WAN 連線。
 
-- 您想要最佳化 WAN 的頻寬，來減少分公司和主要辦公室間網路流量。
+- 您想要降低分公司與總公司之間的網路流量，以使 WAN 頻寬使用量達到最佳狀況。
 
-- 您有部署或計畫部署內容伺服器主要辦公室符合本主題中所述的設定。
+- 您已在總公司部署或規劃要部署符合本主題中所述設定的內容伺服器。
 
-- 在您分公司 client 的電腦執行 Windows 10、Windows 8.1、Windows 8 或 Windows 7。
+- 分公司中的用戶端電腦執行 Windows 10，Windows 8.1、 8 或 Windows 7。
 
-本主題包含下列的區段：
+本主題包含下列各節：
 
--   [BranchCache 為何？](#bkmk_what)
+-   [什麼是 BranchCache？](#bkmk_what)
 
 -   [BranchCache 模式](#BKMK_2)
   
--   [BranchCache 式內容伺服器](#BKMK_3)
+-   [啟用 BranchCache 內容伺服器](#BKMK_3)
   
--   [BranchCache 和雲端](#BKMK_3a)
+-   [BranchCache 與雲端](#BKMK_3a)
   
 -   [內容資訊版本](#bkmk_version)  
   
--   [如何 BranchCache 處理 content 更新中的檔案](#bkmk_handles)  
+-   [BranchCache 處理檔案中的內容更新的方式](#bkmk_handles)  
   
 -   [BranchCache 安裝指南](#BKMK_4)  
   
--   [作業系統版本 BranchCache](#bkmk_os)  
+-   [BranchCache 的作業系統版本](#bkmk_os)  
   
 -   [BranchCache 安全性](#bkmk_security)  
   
--   [內容流程和處理程序](#bkmk_flow)  
+-   [內容流程與程序](#bkmk_flow)  
   
 -   [快取安全性](#bkmk_cache)  
   
-## <a name="bkmk_what"></a>BranchCache 為何？
+## <a name="bkmk_what"></a>什麼是 BranchCache？
 
-BranchCache 是隨附於某些版本的 Windows Server 2016 和 Windows 10 作業系統、以及於某些版本的 Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2 和 Windows 7 的寬形區域網路 (WAN) 頻寬最佳化技術。 若要最佳化 WAN 的頻寬，當使用者存取 content 遠端伺服器上的，BranchCache 從您的主要辦公室擷取 content 或裝載的雲端內容伺服器和快取 content 分公司的位置，在電腦本機而不是透過 WAN 存取 content 分公司允許 client。
+BranchCache 是廣域網路 (WAN) 頻寬最佳化技術，在某些版本的 Windows Server 2016 和 Windows 10 作業系統，以及在某些版本的 Windows Server 2012 R2、 Windows 8.1、 Windows Server 2012、 Windows 8 內含、 Windows Server 2008 R2 和 Windows 7。 為了在使用者存取遠端伺服器的內容時將 WAN 頻寬最佳化，BranchCache 會從總公司或託管的雲端內容伺服器擷取內容，並在分公司快取內容，讓分公司的用戶端電腦可從本機存取內容而非透過 WAN。
   
-分公司，在 content 會儲存到快取的主機或，不伺服器提供分公司 client 電腦正在執行 Windows 10、Windows 8.1、Windows 8 或 Windows 7 中設定伺服器上。 Client 電腦要求 content 接收主要辦公室及 content 分公司快取之後，相同分公司其他電腦就可以取得 content 本機而不是從內容伺服器下載 content WAN 連結。
+在分公司，內容會儲存在會設定為託管快取，無伺服器可用時在分公司執行 Windows 10、 Windows 8.1，Windows 8 或 Windows 7 的用戶端電腦上的伺服器上。 用戶端電腦從總公司要求及接收內容之後，就會在分公司快取內容，同一分公司的其他電腦可以從本機取得內容，而非透過 WAN 連結從內容伺服器下載內容。
 
-當 client 電腦所做的相同 content 後續的要求時，戶端下載*內容資訊*來自而不是實際 content 伺服器。 使用的原始 content，區塊計算，而且非常小相較於在原始資料 content hashes 所組成內容資訊。 位於 client 的電腦上或在伺服器上的快取是否 client 電腦然後中找不到快取中的 content 分公司使用內容資訊。 Client 電腦」和「伺服器也保護快取的 content，使其無法存取未經授權的使用者使用內容資訊。
+之後用戶端電腦若要求相同的內容時，用戶端會從伺服器下載*內容資訊*，而非實際的內容。 內容資訊包含使用原始內容的區塊來計算的雜湊，比原始資料的內容更小。 用戶端電腦接著可以使用內容資訊，在分公司位於用戶端電腦或伺服器的快取中找出該內容。 用戶端電腦與伺服器也使用內容資訊來保護快取的內容，使未經授權的使用者無法存取。
 
-BranchCache 增加使用者生產力改善內容查詢回應時間戶端和中分公司伺服器，也可以協助改善網路效能降低流量透過 WAN 連結。
+BranchCache 可以改善分公司用戶端與伺服器的內容查詢回應時間，來增加使用者生產力，還可以降低 WAN 連結上的流量來協助改善網路效能。
 
 ## <a name="BKMK_2"></a>BranchCache 模式
-BranchCache 有兩種模式的作業：散發快取模式和裝載快取模式。
+BranchCache 有兩種作業模式：分散式快取模式與託管快取模式。
 
-當您在分散式快取模式部署 BranchCache 時，讓分公司內容快取分散在 client 的電腦。
+以分散式快取模式部署 BranchCache 時，分公司的內容快取會分散在用戶端電腦之間。
 
-當您在裝載快取模式部署 BranchCache 時，裝載內容快取分公司在上一個或更多伺服器電腦，稱為「裝載快取的伺服器。
+以託管快取模式部署 BranchCache 時，會在稱為託管快取伺服器的一或多部伺服器電腦上託管分公司的內容快取。
 
 > [!NOTE]
-> 您可以部署 BranchCache 使用這兩種模式，但只能有一個模式可以使用每個分公司。 例如，如果您有兩個分公司一個擁有伺服器，其中不，這您就可以裝載快取模式包含伺服器，同時部署 BranchCache 分散式快取 office，其中包含只有 client 電腦模式中的 office 部署 BranchCache。
+> 您可以使用上述兩種模式來部署 BranchCache，不過每間分公司只能使用一種模式。 例如，若您有兩間分公司，一間有伺服器，而另一間沒有，您可以在有伺服器的辦公室以託管快取模式部署 BranchCache，而在只有用戶端電腦的辦公室以分散式快取模式部署 BranchCache。
 
-下圖，BranchCache 部署在這兩種模式。  
+在下圖中，BranchCache 是以兩種模式來部署。  
 
 ![BranchCache 模式](../media/BranchCache/bc_modes.jpg)
 
-快取分散式的模式最適合小分公司不包含作為裝載快取伺服器本機伺服器。 快取分散式的模式可讓您在分公司額外的硬體與部署 BranchCache。
+沒有本機伺服器可做為託管快取伺服器使用的小型分公司，最適合使用分散式快取模式。 分散式快取模式可讓您部署 BranchCache，同時不需要另外在分公司部署硬體。
 
-您想要用來部署 BranchCache 分公司包含額外的基礎結構，例如一或多部執行其他工作負載，部署 BranchCache 模式裝載快取中有幫助的原因如下：
+如果您想要部署 BranchCache 的分公司包含其他基礎結構，例如執行其他工作負載的一或多部伺服器，以託管快取模式部署 BranchCache 較有利的原因如下：
 
-### <a name="increased-cache-availability"></a>增加快取的可用性
+### <a name="increased-cache-availability"></a>提升快取可用性
 
-裝載快取模式增加效率快取因為 content 使用即使離線 client 原始要求而且快取的資料。 因為都可使用裝載快取伺服器，更多 content 快取，可提供更大節省 WAN 的頻寬，並改進 BranchCache 效率。
+託管快取模式可提升快取效率，因為即使原來要求和快取資料的用戶端已經離線，您還是可以使用內容。 因為託管快取伺服器永遠可供使用，所以快取的內容越多，節省的 WAN 頻寬就越多，進而改善 BranchCache 的效率。
 
-### <a name="centralized-caching-for-multiple-subnet-branch-offices"></a>集中多子網路分公司快取
+### <a name="centralized-caching-for-multiple-subnet-branch-offices"></a>適用於多個子網路分公司的集中式快取
 
 
-快取分散式的模式單一子網路上的運作方式。 在多個子網路分公司已設定為 [快取分散式的模式，無法與 client 電腦上其他子網路共用檔案下載至一個子網路。 
+分散式快取模式可以在單一子網路上運作。 在有多個子網路而設定為分散式快取模式的分公司，下載到某個子網路的檔案無法與其他子網路的用戶端電腦共用。 
 
-因為戶端上其他子網路，無法探索您的已下載的檔案，檔案從主要辦公室內容伺服器取得，使用此程序 WAN 頻寬。
+因此，其他子網路的用戶端無法探索到已經下載的檔案，而會在過程中使用 WAN 頻寬從總公司的內容伺服器來取得檔案。
 
-在部署裝載快取模式時，但不是-分公司多子網路中的所有戶端可以都存取儲存在裝載快取伺服器上，即使戶端不同子網路上的單一快取。 此外，Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 中的 BranchCache 提供部署分公司每一部以上的裝載快取伺服器的能力。
+不過，當您部署託管快取模式時，就不會有這種情況，在多個子網路的分公司中，所有用戶端都可以存取儲存在託管快取伺服器上的單一快取，即使是位於不同子網路上的用戶端。 此外，Windows Server 2016、 Windows Server 2012 R2 和 Windows Server 2012 中的 BranchCache 可部署多部託管快取伺服器，每間分公司。
 
 > [!CAUTION]
-> 如果您使用 BranchCache SMB 快取的檔案和資料夾，做停用 Offline 檔案。 如果您停用 Offline 檔案，BranchCache SMB 快取運作不正常運作。
+> 如果您使用 BranchCache 對檔案和資料夾進行 SMB 快取，請勿停用離線檔案。 如果您停用離線檔案，BranchCache SMB 快取會無法正常運作。
 
-## <a name="BKMK_3"></a>BranchCache 式內容伺服器
+## <a name="BKMK_3"></a>啟用 BranchCache 內容伺服器
 
-當您部署 BranchCache 時，來源儲存 BranchCache 式內容伺服器中主要辦公室或雲端的資料中心。 BranchCache 所支援的內容伺服器下列類型：
+當您部署 BranchCache 時，來源內容會儲存在已啟用 BranchCache 內容伺服器在總公司或雲端資料中心內。 BranchCache 支援下列內容伺服器類型：
 
 > [!NOTE]
-> 僅限來源 content-也就是內容 client 電腦最初獲得 BranchCache 式內容伺服器-是 BranchCache 來加速。 Content client 電腦取得直接從其他來源，例如 Windows Update 或網際網路上的網頁伺服器可 client 的電腦不會快取裝載快取伺服器或與其他電腦中分公司然後共用。 如果您想要加速 content Windows 更新，但是，您可以安裝應用程式在您的主要辦公室或雲端的資料中心 Windows Server Update Services (WSUS) 伺服器並將其設定為 BranchCache 內容伺服器。
+> 只有來源內容-也就是內容的用戶端電腦一開始從啟用 BranchCache 的內容伺服器-取得會加速。 用戶端電腦或託管快取伺服器不會快取用戶端電腦直接從其他來源取得的內容，例如網際網路上的網頁伺服器或 Windows Update，然後與分公司的其他電腦共用。 如果您想要加速 Windows Update 內容，不過，您可以安裝在您的總公司或雲端資料中心的 Windows Server Update Services (WSUS) 應用程式伺服器並將它設定為 BranchCache 內容伺服器。
 
 ### <a name="web-servers"></a>網頁伺服器
 
-支援的網頁伺服器包含的電腦正在執行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的已安裝的網頁伺服器 (IIS) 伺服器角色，也會使用超傳輸通訊協定 (HTTP) 或 HTTP 安全 (HTTPS)。
+支援的網頁伺服器包括的電腦均執行 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 或 Windows Server 2008 R2 的已安裝網頁伺服器 (IIS) 伺服器角色以及使用超文字傳輸通訊協定 (HTTP) 或安全 HTTP （HTTPS)。
 
-此外，網頁伺服器必須安裝 BranchCache 功能。
+此外，網頁伺服器必須已安裝 BranchCache 功能。
 
 ### <a name="file-servers"></a>檔案伺服器
 
-支援的檔案伺服器包括的電腦是執行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 檔案服務伺服器角色與 BranchCache 適用於已安裝的角色服務網路的檔案。 
+支援的檔案伺服器包括執行 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 或 Windows Server 2008 R2 檔案服務伺服器角色和 BranchCache 的網路檔案 」 角色服務安裝的電腦。 
 
-這些檔案伺服器換貨資訊電腦之間，使用伺服器訊息區 (SMB)。 完成您的檔案伺服器的安裝之後，您必須也共用資料夾，以及 hash 代的共用資料夾，可讓 BranchCache 使用群組原則」或「本機電腦的原則。
+這些檔案伺服器使用伺服器訊息區 (SMB) 在電腦間交換資訊。 在完成安裝檔案伺服器之後，您還必須共用資料夾以及使用群組原則或本機電腦原則，針對共用資料夾啟用雜湊產生功能，來啟用 BranchCache。
 
 ### <a name="application-servers"></a>應用程式伺服器
 
-支援的應用程式伺服器包含電腦正在執行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012，或安裝 Windows Server 2008 R2 的背景聰明傳輸服務（位元），並支援。 
+支援的應用程式伺服器包括執行 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 的電腦或 Windows Server 2008 R2 使用背景智慧型傳送服務 (BITS) 安裝並啟用。 
 
-此外，應用程式伺服器必須安裝 BranchCache 功能。 做為範例的應用程式的伺服器，您可以為 BranchCache 內容伺服器部署 Microsoft Windows Server Update Services (WSUS) 和 Microsoft 系統 Center Configuration Manager 分支 Distribution 點伺服器。
+此外，應用程式伺服器必須已經安裝 BranchCache 功能。 做為應用程式伺服器的範例，您可以部署 Microsoft Windows Server Update Services (WSUS) 和 Microsoft System Center Configuration Manager 分支發佈點伺服器做為 BranchCache 內容伺服器。
 
-## <a name="BKMK_3a"></a>BranchCache 和雲端
+## <a name="BKMK_3a"></a>BranchCache 與雲端
 
-雲端龐大可能降低費用，並達到新層級的縮放比例，但移動工作負載原位依賴這些人可以增加網路成本和傷害生產力。 使用者預期高效能並不保養放置應用程式和資料。 
+雲端具有龐大潛力，可以降低操作費用並讓規模達到新的層次，不過讓仰賴進行工作的人員遠離工作負載，會增加網路成本和損害生產力。 使用者期望有高的效能，並不在意裝載其應用程式和資料的位置。 
 
-BranchCache 可以改進的應用程式網路效能，並減少頻寬耗用量的共用快取的資料。  它可以改善生產力分公司及總部，背景工作的位置在雲端中使用伺服器上的部署。
+BranchCache 可以改善網路應用程式效能和降低共用的資料快取耗用的頻寬。  工作者使用部署在雲端的伺服器，來改善分公司與總公司的生產力。
 
-因為 BranchCache 不需要新的硬體或網路拓撲變更，是很好方案改善辦公室位置與公開和私人雲朵之間的通訊。
+因為 BranchCache 不需要新硬體或是改變網路拓撲，這是改善辦公室位置與公開與私人雲端之間通訊的最佳解決方案。
 
 > [!NOTE]
-> 因為某些 Web proxy 無法處理標準 Content 編碼標頭，建議使用 BranchCache 不 HTTP 與超文字傳輸通訊協定安全 (HTTPS)。
+> 因為某些 Web proxy 無法處理非標準的內容編碼標頭，建議您在使用超文字傳輸通訊協定安全 (HTTPS) 和非 HTTP 使用 BranchCache。
   
-=== 適用於 Windows Server 2016 中的雲端技術的詳細資訊，請查看[軟體定義網路與 #40;SDN 與 #41;](../sdn/Software-Defined-Networking--SDN-.md).
+=== 如需有關 Windows Server 2016 中的雲端技術的詳細資訊，請參閱 <<c0> [ 軟體定義網路&#40;SDN&#41;](../sdn/Software-Defined-Networking--SDN-.md)。</c0>
   
 ## <a name="bkmk_version"></a>內容資訊版本
 
-有兩個版本的內容資訊：
+內容資訊有兩個版本：
 
-- 與執行 Windows Server 2008 R2 或 Windows 7 相容內容資訊稱為版本 1 或 V1。 V1 BranchCache 檔案區段，以檔案區段大於 V2，且有修正的大小。 大型修正的區段大小，而當使用者修改檔案長度的變更，這項變更區段失效，不僅失效所有的區段結尾的檔案。 下一步通話的另一位使用者分公司中變更檔案因此會導致降低 WAN 頻寬節省因為變更的 content 與所有 content 變更後的傳送 WAN 連結。
+- 與執行 Windows Server 2008 R2 和 Windows 7 的電腦相容的內容資訊稱為第 1 版或 V1。 如果是 V1 BranchCache 檔案分割，檔案區段比 V2 大，而且為固定大小。 由於大型的固定區段大小，當使用者進行修改檔案長度的變更時，不只變更的區段失效，到檔案結尾的所有區段都會失效。 因此，下次分公司的其他使用者呼叫變更的檔案時，會縮減節省的 WAN 頻寬，因為會透過 WAN 連結傳送變更的內容以及變更後的所有內容。
 
-- 版本 2 或 V2，稱為內容與執行 Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012，以及 Windows 8 電腦的資訊。 V2 內容資訊使用較小、變數大小更具彈性變更檔案中的區段。 這可以重複使用較舊版本的檔案從區段的可能性，當使用者存取更新的版本，造成這些變更的部分檔案的擷取內容伺服器，並使用較少 WAN 的頻寬增加。
+- 與執行 Windows Server 2016、 Windows 10，Windows Server 2012 R2、 Windows 8.1、 Windows Server 2012 和 Windows 8 的電腦相容的內容資訊稱為第 2 版或 V2。 V2 內容資訊使用較小且可變動大小的區段，較能容許檔案內的變更。 當使用者存取更新的版本時，這可以提升舊版檔案區段重複使用的可能性，讓他們只從內容伺服器擷取檔案中變更的部分，並使用較少的 WAN 頻寬。
 
-下表提供使用的 client，內容伺服器，而定內容資訊版本的相關資訊，並裝載快取伺服器作業系統您使用 BranchCache 部署。
+下表根據您在 BranchCache 部署所使用的用戶端、內容伺服器和託管快取伺服器作業系統，提供內容資訊版本的相關資訊。
 
 > [!NOTE]
-> 下表中的縮寫」OS」表示作業系統。
+> 下表中，縮寫"OS"代表作業系統。
 
-|Client 作業系統|內容伺服器作業系統|裝載快取伺服器作業系統|內容資訊版本|
+|用戶端 OS|內容伺服器 OS|託管快取伺服器 OS|內容資訊版本|
 |-------------|---------------------|--------------------------|-------------------------------|
-|Windows Server 2008 R2 和 Windows 7 |Windows Server 2012 或更新版本|Windows Server 2012 或更新版本;無分散式快取模式|V1|
-|Windows Server 2012 或更新版本;Windows 8 或更新版本|Windows Server 2008 R2 |Windows Server 2012 或更新版本;無分散式快取模式|V1|
+|Windows Server 2008 R2 和 Windows 7 |Windows Server 2012 或更新版本|Windows Server 2012 或更新版本;分散式快取模式無|V1|
+|Windows Server 2012 或更新版本;Windows 8 或更新版本|Windows Server 2008 R2 |Windows Server 2012 或更新版本;分散式快取模式無|V1|
 |Windows Server 2012 或更新版本;Windows 8 或更新版本| Windows Server 2012 或更新版本| Windows Server 2008 R2 |V1|
-|Windows Server 2012 或更新版本;Windows 8 或更新版本|Windows Server 2012 或更新版本|Windows Server 2012 或更新版本;無分散式快取模式|V2|
+|Windows Server 2012 或更新版本;Windows 8 或更新版本|Windows Server 2012 或更新版本|Windows Server 2012 或更新版本;分散式快取模式無|V2|
 
-有內容伺服器裝載快取伺服器正在執行 Windows Server 2016、Windows Server 2012 R2，以及 Windows Server 2012 時，他們使用內容資訊版本適合根據要求資訊 BranchCache client 的作業系統。 
+當您有內容伺服器和託管快取伺服器執行 Windows Server 2016、 Windows Server 2012 R2 和 Windows Server 2012 時，會使用適合的 BranchCache 用戶端的作業系統為基礎的內容資訊版本，要求資訊。 
 
-內容和裝載快取伺服器當電腦執行的是 Windows Server 2012 和 Windows 8 或更新版本作業系統要求 content 時，使用 V2 內容資訊。當要求時 content 執行 Windows Server 2008 R2 和 Windows 7 的電腦，內容和裝載快取伺服器使用 V1 內容資訊。
+當執行 Windows Server 2012 和 Windows 8 或更新版本的作業系統的電腦要求內容時，內容和託管快取伺服器會使用 V2 內容資訊;當執行 Windows Server 2008 R2 和 Windows 7 的電腦要求內容時，內容和託管快取伺服器使用 V1 內容資訊。
 
 >[!IMPORTANT]
->當您 BranchCache 部署分散式快取模式時，使用不同的內容資訊版本戶端不要共用 content 彼此。 例如，client 電腦執行的是 Windows 7 與 client 電腦執行相同分公司在已安裝 Windows 10 不分享 content 彼此。
+>在分散式快取模式部署 BranchCache 時，使用不同內容資訊版本的用戶端不會彼此共用內容。 例如，執行 Windows 7 的用戶端電腦和執行會安裝在同一分公司的 Windows 10 的用戶端電腦不會共用內容彼此。
   
-## <a name="bkmk_handles"></a>如何 BranchCache 處理 content 更新中的檔案
+## <a name="bkmk_handles"></a>BranchCache 處理檔案中的內容更新的方式
 
-時分公司使用者修改或更新的文件到，他們的變更會直接寫入中主要辦公室 BranchCache 的參與程度而內容伺服器。 使用者是否從內容伺服器下載文件或取得的其中一個裝載或分散快取中分公司也是如此。
+當分公司使用者修改，或更新文件的內容時，他們的變更會直接寫入中不需要 BranchCache 的涉入總公司的內容伺服器。 無論使用者是從內容伺服器下載文件，或是從分公司中的託管或分散式快取取得文件，都是如此。
 
-修改的檔案，在分公司不同 client 要求時，檔案的新的區段中主要辦公室伺服器下載並新增至該新分支」中分散式或裝載快取。 因為，分公司使用者永遠收到快取 content 的最新版本。
+分公司中的不同用戶端要求修改的檔案時，會從總公司伺服器下載檔案的新區段，並將其新增至該分公司的分散式或託管快取中。 因為這個緣故，分公司使用者一定會收到快取內容的最新版本。
 
 ## <a name="BKMK_4"></a>BranchCache 安裝指南
 
-您可以使用在 Windows Server 2016 伺服器管理員安裝 BranchCache 功能或服務檔案伺服器角色網路檔案角色服務 BranchCache。 若要判斷是否要安裝的角色服務或功能，您可以使用下表。
+您可以使用 Windows Server 2016 中的 伺服器管理員來安裝 BranchCache 功能或網路檔案的檔案服務伺服器角色的角色服務的 BranchCache。 您可以使用下表，來決定是否要安裝角色服務或功能。
 
-|功能|電腦的位置|安裝這個 BranchCache 項目|
+|功能|電腦位置|安裝這個 BranchCache 元素|
 |-----------------|---------------------|------------------------------------|
-|內容伺服器 \ (位元為基礎的應用程式 server\)|主要辦公室或雲端的資料中心|BranchCache 功能|
-|內容伺服器 \(Web server\)|主要辦公室或雲端的資料中心|BranchCache 功能|
-|內容伺服器 \（使用 SMB protocol\ 檔案伺服器）|主要辦公室或雲端的資料中心|BranchCache 網路檔案角色服務檔案服務伺服器角色|
-|伺服器裝載快取|分公司|BranchCache 功能的支援裝載快取伺服器模式|
-|BranchCache 式 client 電腦|分公司|不需; 安裝只要 BranchCache 與 BranchCache 模式可讓 \(distributed or hosted\) client 上|
+|內容伺服器\(BITS 型應用程式伺服器\)|總公司或雲端資料中心|BranchCache 功能|
+|內容伺服器\(Web 伺服器\)|總公司或雲端資料中心|BranchCache 功能|
+|內容伺服器\(使用 SMB 通訊協定的檔案伺服器\)|總公司或雲端資料中心|檔案服務伺服器角色的 [網路檔案的 BranchCache] 角色服務|
+|託管快取伺服器|分公司|啟用託管快取伺服器模式的 BranchCache 功能|
+|啟用 BranchCache 的用戶端電腦|分公司|不需; 安裝只要啟用 BranchCache 與 BranchCache 模式\(分散式或託管\)用戶端上|
 
-若要安裝的角色服務或功能，打開伺服器管理員並選取您想要讓 BranchCache 功能的電腦。 在伺服器管理員中，按一下**管理**，然後按**新增角色與功能**。 **新增角色與功能**開啟精靈。 為您執行精靈中，進行下列選項：
+若要安裝角色服務或功能，請開啟 [伺服器管理員]，然後選取您要啟用 BranchCache 功能的電腦。 在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [**新增角色及功能精靈**] 隨即開啟。 在執行精靈時，請選取下列項目：
 
-- 精靈頁面上的**選擇安裝類型**，請選取**以角色為基礎，或為基礎的功能的安裝**。
+- 在 [**選取安裝類型**] 精靈頁面上，選取 [**角色型或功能型安裝**]。
 
-- 精靈頁面上的**選取伺服器角色**，如果您正在安裝功能 BranchCache 檔案伺服器，展開 [**檔案與儲存空間服務**和**檔案和 iSCSI 服務**，，然後選取 [ **BranchCache 網路的檔案**。  若要節省磁碟空間，您也可以選取**資料 Deduplication**角色服務，然後再安裝並完成精靈。 如果您不要安裝伺服器 BranchCache 支援的檔案，不要安裝檔案與儲存空間服務角色 BranchCache 網路檔案角色服務使用。
+- 在精靈頁面**選取伺服器角色**，如果您正在安裝啟用 BranchCache 的檔案伺服器，展開**檔案和存放服務**並**檔案和 iSCSI 服務**，和然後選取**網路檔案的 BranchCache**。  為了節省磁碟空間，您也可以選取**重複資料刪除**角色服務，然後再繼續執行安裝並完成精靈。 如果您不要安裝啟用 BranchCache 的檔案伺服器，安裝檔案和存放服務角色與網路檔案 」 角色服務的 BranchCache。
 
-- 精靈頁面上的**選擇功能**，如果您要安裝的不是檔案伺服器內容伺服器，或您要安裝裝載快取伺服器、選取**BranchCache**，然後繼續安裝並完成精靈。 如果您不要安裝內容伺服器檔案伺服器或裝載快取伺服器以外，無法安裝 BranchCache 功能。
+- 在精靈頁面上**選取的功能**，如果您要安裝的內容伺服器，不是檔案伺服器或正在安裝託管快取伺服器，請選取**BranchCache**，然後繼續執行精靈若要安裝並完成。 如果您不想要安裝檔案伺服器或託管快取伺服器以外的內容伺服器，請不要安裝 BranchCache 功能。
   
-## <a name="bkmk_os"></a>作業系統版本 BranchCache
+## <a name="bkmk_os"></a>BranchCache 的作業系統版本
 
-以下是作業系統的一份不同類型的 BranchCache 功能的支援。
+以下是支援不同 BranchCache 功能類型的作業系統清單。
 
-### <a name="operating-systems-for-branchcache-client-computer-functionality"></a>作業系統 BranchCache client 電腦功能
+### <a name="operating-systems-for-branchcache-client-computer-functionality"></a>適用於 BranchCache 用戶端電腦功能的作業系統
 
-在下列作業系統提供 BranchCache 背景聰明傳輸服務（位元）、超文字傳輸通訊協定 (HTTP) 和伺服器訊息區 (SMB) 的支援。
+在下列作業系統會提供支援背景智慧型傳送服務 (BITS) 」、 「 超文字傳輸通訊協定 (HTTP) 和 「 伺服器訊息區塊 (SMB) 中的 BranchCache。
 
 - Windows 10 企業版
 
 - Windows 10 教育版
 
-- Windows 8.1 企業版
+- Windows 8.1 Enterprise
 
 - Windows 8 企業版
 
-- Windows 7 企業版
+- Windows 7 企業版
 
-- Windows 7 旗艦版
+- Windows 7 旗艦版
 
-在下列作業系統中，BranchCache 不支援 HTTP 和 SMB 功能，但支援 BranchCache 位元的功能。
+在下列作業系統中，BranchCache 不支援 HTTP 和 SMB 功能，但可支援 BranchCache 的位元的功能。
 
--   Windows 10 專業版、位元支援只
+-   Windows 10 專業版，位元僅支援
 
--   Windows 8.1 專業版，位元支援只
+-   Windows 8.1 專業版、 位元僅支援
 
--   Windows 8 專業版、位元支援只
+-   Windows 8 專業版，位元僅支援
 
--   Windows 7 專業版，位元支援只
+-   Windows 7 專業版、 位元僅支援
 
 > [!NOTE]
-> 無法使用 Windows Server 2008 或 Windows Vista 的作業系統中的預設 BranchCache。 在下列作業系統中，但是，如果您下載並安裝 Windows 管理架構的更新，BranchCache 功能適用於只背景聰明傳輸服務（位元）通訊協定。 如需詳細資訊，並下載 Windows Management Framework，請查看[Windows Management Framework（Windows PowerShell 2.0，WinRM 2.0，以及 4.0 位元）](https://go.microsoft.com/fwlink/?LinkId=188677)，https://go.microsoft.com/fwlink/?LinkId=188677。
+> 無法在 Windows Server 2008 或 Windows Vista 作業系統中預設使用 BranchCache。 在這些作業系統，不過，如果您下載並安裝 Windows Management Framework 更新，BranchCache 功能是適用於只有背景智慧型傳送服務 (BITS) 通訊協定。 如需詳細資訊，並下載 Windows Management Framework，請參閱[Windows Management Framework （Windows PowerShell 2.0，WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677)在 https://go.microsoft.com/fwlink/?LinkId=188677。
   
-### <a name="operating-systems-for-branchcache-content-server-functionality"></a>作業系統 BranchCache 內容伺服器功能
+### <a name="operating-systems-for-branchcache-content-server-functionality"></a>適用於 BranchCache 內容伺服器功能的作業系統
 
-您可以使用 Windows Server 2016、Windows Server 2012 R2，以及 Windows Server 2012 系列的作業系統為 BranchCache 內容伺服器。
+您可以使用 Windows Server 2016、 Windows Server 2012 R2 和 Windows Server 2012 系列作業系統做為 BranchCache 內容伺服器。
 
-此外，Windows Server 2008 R2 家庭的作業系統可做為 BranchCache 內容伺服器，使用下列例外：
+此外，Windows Server 2008 R2 系列產品的作業系統可以用做為 BranchCache 內容伺服器，但有下列例外狀況：
 
-- 不支援的 Windows Server 2008 R2 企業版與 HYPER-V Server Core 安裝 BranchCache。
+- Windows Server 2008 R2 Enterprise HYPER-V 與的 Server Core 安裝不支援 BranchCache。
 
-- 不支援的 Windows Server 2008 R2 Datacenter 與 HYPER-V Server Core 安裝 BranchCache。
+- HYPER-V 與 Windows Server 2008 R2 Datacenter 的 Server Core 安裝不支援 BranchCache。
 
-### <a name="operating-systems-for-branchcache-hosted-cache-server-functionality"></a>作業系統 BranchCache 裝載快取伺服器功能
+### <a name="operating-systems-for-branchcache-hosted-cache-server-functionality"></a>適用於 BranchCache 託管快取伺服器功能的作業系統
 
-您可以使用作業系統的 Windows Server 2016、Windows Server 2012 R2，以及 Windows Server 2012 系列 BranchCache 裝載快取的伺服器。
+BranchCache 託管快取伺服器，您可以使用 Windows Server 2016、 Windows Server 2012 R2 和 Windows Server 2012 系列的作業系統。
 
-此外，BranchCache 裝載快取的伺服器，可以使用下列 Windows Server 2008 R2 作業系統：
+此外，BranchCache 託管快取伺服器，可以使用下列 Windows Server 2008 R2 作業系統：
 
-- Windows Server 2008 R2 企業版
+- Windows Server 2008 R2 Enterprise
 
-- HYPER-V 與 Windows Server 2008 R2 企業版
+- 使用 HYPER-V 的 Windows Server 2008 R2 Enterprise
 
-- Windows Server 2008 R2 企業 Server Core 安裝
+- Windows Server 2008 R2 Enterprise Server Core 安裝
 
-- Windows Server 2008 R2 企業 Server Core 安裝 HYPER-V 使用
+- Windows Server 2008 R2 Enterprise Server Core 安裝踏上雲端
 
-- 適用於 Itanium 型系統的 Windows Server 2008 R2
+- 適用於 Itanium 型系統的 Windows Server 2008 R2
 
-- Windows Server 2008 R2 Datacenter
+- Windows Server 2008 R2 Datacenter
 
-- HYPER-V 與 Windows Server 2008 R2 Datacenter
+- 使用 HYPER-V 的 Windows Server 2008 R2 Datacenter
 
-- Windows Server 2008 R2 Datacenter Server Core 安裝 HYPER-V 使用
+- Windows Server 2008 R2 Datacenter Server Core 安裝踏上雲端
 
 ## <a name="bkmk_security"></a>BranchCache 安全性
 
-BranchCache 實作完美地搭配您現有的網路安全性架構，而不需要額外的設備或其他複雜的安全性設定的安全-設計的方法。
+BranchCache 實作是一種設計保護安全的方法，順利地與現有的網路安全性架構搭配使用，不需要額外的設備或複雜的安全性設定。
   
-非侵入式 BranchCache 且不會變更任何 Windows 驗證或授權處理程序。 部署 BranchCache 之後，驗證仍然會使用網域憑證，並不變功能的授權的存取清單控制項 (Acl) 中的方式。 此外，繼續運作，就像往常 BranchCache 部署其他設定。
+BranchCache 屬於非侵入性功能，不會更改任何 Windows 驗證或授權程序。 部署 BranchCache 之後，仍會使用網域認證執行驗證，而且使用存取控制清單 (ACL) 功能授權的方式不變。 此外，其他設定會繼續運作，如同部署 BranchCache 之前的運作方式。
 
-BranchCache 安全性模型根據建立 hashes 一系列的形式中繼資料。 這些 hashes 也稱為內容資訊。
+BranchCache 安全性模式是以建立的中繼資料為基礎，採取一系列雜湊的形式。 這些雜湊也稱為內容資訊。
 
-建立內容資訊之後，用於 BranchCache 訊息交換而不是實際的資料，以及交換使用支援的通訊協定（HTTP、HTTPS 和 SMB）。
+內容資訊建立之後，便可用於 BranchCache 訊息交換，而非使用實際資料，並使用支援的通訊協定 (HTTP、HTTPS 以及 SMB) 來進行交換。
 
-快取的資料會將保持在加密，並無法用無權存取 content 原始來源的存取。  戶端必須驗證，且可以擷取內容中繼資料和必須擁有存取的快取中本機 office 內容中繼資料之前授權原始內容來源。
+快取的資料會保持加密，用戶端若沒有從原始來源存取內容的權限，就無法加以存取。  用戶端必須先經過原始內容來源驗證和授權，才能抓取內容中繼資料，還必須擁有內容中繼資料，才能存取當地辦公室中的快取。
 
-### <a name="how-branchcache-generates-content-information"></a>如何 BranchCache 產生內容資訊
+### <a name="how-branchcache-generates-content-information"></a>BranchCache 如何產生內容資訊
 
-因為建立多個項目從內容資訊，都唯一內容資訊的值。 這些項目包括：
+因為內容資訊是從多個元素建立，所以內容資訊的值永遠是獨一無二。 這些元素如下：
 
-- （例如網頁或共用的檔案）要衍生 hashes 實際的 content。  
+- 從中衍生雜湊的實際內容 (例如網頁或共用檔案)。  
 
-- 設定參數，例如 hashing 演算法並封鎖大小。 若要產生內容資訊，內容伺服器 content 分為區段，然後在區塊細分區段。 BranchCache 使用安全密碼編譯 hashes 以找出並確認每個封鎖區段，支援 SHA256 hash 演算法。
+- 設定參數，例如雜湊演算法與區塊大小。 若要產生內容資訊，內容伺服器會將內容分割成區段，然後再將那些區段分割成區塊。 BranchCache 使用安全的密碼編譯雜湊，來識別和確認每個區塊與區段都支援 SHA256 雜湊演算法。
 
-- 伺服器密碼。 必須設定伺服器的密碼，也就是二進位任意長度的值與所有內容伺服器。
+- 伺服器密碼。 所有內容伺服器都必須使用伺服器密碼 (任意長度的二進位值) 進行設定。
 
 > [!NOTE]
-> 伺服器秘密使用確保 client 電腦不能本身產生內容資訊。 如此可防止惡意使用者暴力攻擊使用猜測 content 變更次要版本情形，client 存取先前的版本，但不一定目前的版本存取所有 BranchCache 式 client 的電腦。
+> 使用伺服器密碼可確保用戶端電腦不會自行產生內容資訊。 這樣可以在用戶端擁有舊版存取權，但無法存取目前版本的情況下，避免惡意使用者對啟用 BranchCache 用戶端電腦進行暴力密碼破解攻擊，猜出兩個版本內容間的些微變更。
 
-### <a name="content-information-details"></a>內容資訊的詳細資料
+### <a name="content-information-details"></a>內容資訊詳細資料
 
-BranchCache 做按鍵以衍生會傳送至授權戶端 content 特定 hash 伺服器密碼。 申請 hashing 演算法組合的伺服器機密資料的 Hash 與產生這個 hash。
+BranchCache 使用伺服器密碼做為金鑰，以衍生要傳送給授權用戶端的內容特定雜湊。 將雜湊演算法套用到合併的伺服器密碼，資料雜湊就可以產生這個雜湊。
 
-這個 hash 稱為區段密碼。 BranchCache 使用區段機密安全通訊。 此外，BranchCache 建立封鎖 Hash 清單中，這是 hashed 的資料封鎖清單，並 Hash 的資料，這由 hashing 封鎖 Hash 清單。
+這個雜湊稱為區段密碼。 BranchCache 使用區段密碼來保護通訊安全。 此外，BranchCache 會建立區塊雜湊清單 (雜湊的資料區塊清單)，以及由雜湊的資料區塊清單產生的資料雜湊。
 
-內容資訊包含：
+內容資訊包括下列各項：
 
-- 封鎖 Hash 清單：
+- 區塊雜湊清單：
 
     `BlockHashi = Hash(dataBlocki)   1<=i<=n`
 
-- Hash 的資料 (HoD):
+- 資料雜湊 (HoD)：
 
     `HoD = Hash(BlockHashList)`
 
-- 區段密碼 (Kp):
+- 區段密碼 (Kp)：
 
     `Kp = HMAC(Ks, HoD)`
 
-BranchCache 會使用等 Content 快取的通訊協定與擷取架構通訊協定來執行所需確保安全的快取，並擷取之間內容快取的資料的處理程序。
+BranchCache 使用同儕節點內容快取通訊協定與抓取架構通訊協定來實作必要的程序，以確保可在內容快取之間安全地快取和抓取資料。
 
-此外，BranchCache 控點的內容具有相同程度的處理和傳送本身的實際 content 時，它所使用的安全性資訊。
+此外，BranchCache 用以處理內容資訊的安全性等級，和它自己在處理和傳輸實際內容時的安全性等級相同。
 
-## <a name="bkmk_flow"></a>內容流程和處理程序
+## <a name="bkmk_flow"></a>內容流程與程序
 
-流程內容資訊和實際 content 分為四個階段中：
+內容資訊與實際內容的流程分成下列四個階段：
 
-1.  [BranchCache 處理程序：要求 content](#BKMK_8)
+1.  [BranchCache 程序：要求內容](#BKMK_8)
 
-2.  [BranchCache 處理程序：找出 content](#BKMK_9)
+2.  [BranchCache 程序：找出內容](#BKMK_9)
 
-3.  [BranchCache 處理程序：擷取 content](#BKMK_10)
+3.  [BranchCache 程序：擷取內容](#BKMK_10)
 
-4.  [BranchCache 處理程序：content 快取](#BKMK_11)
+4.  [BranchCache 程序：快取內容](#BKMK_11)
 
-下列區段描述這些階段。
+下列各節會說明這些階段。
 
-## <a name="BKMK_8"></a>BranchCache 處理程序：要求 content
+## <a name="BKMK_8"></a>BranchCache 程序：要求內容
 
-第一階段，分公司 client 電腦從遠端的位置，例如主要辦公室的內容伺服器要求 content，例如檔案或網頁。 內容伺服器驗證 client 電腦已授權接收要求的 content。 如果 client 電腦已獲得授權與同時內容伺服器 client BranchCache\ 功能，內容伺服器產生內容資訊。
+在第一個階段中，分公司的用戶端電腦會向遠端位置 (例如總公司) 的內容伺服器要求內容，例如檔案或網頁。 內容伺服器會確認已授權該用戶端電腦接收要求的內容。 如果用戶端電腦已經過授權，而且內容伺服器和用戶端 BranchCache\-啟用，內容伺服器會產生內容資訊。
 
-內容伺服器接著會內容資訊傳送到 client 電腦使用相同的通訊協定時使用的實際 content。 
+內容伺服器接著會使用和傳送實際內容時所使用的相同通訊協定，將內容資訊傳送至用戶端電腦。 
 
-例如，如果 client 電腦透過 HTTP 要求網頁，內容伺服器內容會將資訊傳送使用 HTTP。 因此，花朵層級的安全性保證 content 的並內容資訊都一樣。
+例如，如果用戶端電腦透過 HTTP 要求網頁，內容伺服器就會使用 HTTP 來傳送內容資訊。 因此，內容與內容資訊的有線等級安全性保證完全相同。
 
-收到內容資訊（Hash 的資料 + 區段密碼）的初始部分之後，client 電腦執行下列動作：
+在收到初始的內容資訊 (資料雜湊 + 區段密碼) 部分之後，用戶端電腦會執行下列動作：
 
 - 使用區段密碼 (Kp) 做為加密金鑰 (Ke)。
 
-- 從 HoD Kp 產生區段 ID (HoHoDk):
+- 從 HoD 與 Kp 產生區段識別碼 (HoHoDk)：
 
     `HoHoDk = HMAC(Kp, HoD + C), where C is the ASCII string "MS_P2P_CACHING" with NUL terminator.`
 
-在這個層級的主要威脅是區段密碼、的風險，但是 BranchCache 加密保護區段機密內容資料區塊。 BranchCache 會利用加密金鑰衍生從區段內容區塊是位於內容區段的密碼。
+這層的主要威脅在於區段密碼所面對的風險，不過 BranchCache 會加密內容資料區塊，以保護區段密碼。 BranchCache 的做法是在內容區塊所在的位置內，使用從內容區段的區段密碼所衍生的加密金鑰。
 
-這種方式可確保您擁有的伺服器密碼的不是實體，就無法探索實際 content 資料區塊中。 區段機密被視為具有相同程度的安全性純文字區段，因為知道特定的區段密碼可從同儕取得該區段並加以解密實體。 不會立即產生任何特定純文字知道伺服器密碼，但可以使用密碼文字，然後到 [可能部分部分已知暴力猜測攻擊資料公開衍生特定類型的資料。 伺服器密碼，因此，則會保留機密。
+這個方法可確保讓沒有伺服器密碼的實體，無法探索資料區塊中的實際內容。 區段密碼會以和純文字區段本身相同的安全性等級來處理，因為只要知道指定區段的區段密碼，就可以讓該實體從同儕節點取得該區段，然後加以解密。 知道伺服器密碼並不會立即產生任何特定純文字，但可以用來從加密文字衍生特定的資料類型，然後可能將一些部分已知的資料洩漏給暴力密碼破解攻擊。 因此，伺服器密碼應該保密。
   
-## <a name="BKMK_9"></a>BranchCache 處理程序：找出 content
+## <a name="BKMK_9"></a>BranchCache 程序：尋找內容
 
-內容資訊收到 client 電腦之後，client 使用區段 ID 中找不到要求的 content 本機分支 office 快取，不論該快取散發 client 電腦之間，或位於裝載快取的伺服器上。
+在用戶端電腦收到內容資訊之後，該用戶端會使用區段識別碼在分公司快取中找出要求的內容，不論該快取是分散在用戶端電腦之間，或是位於託管快取伺服器上。
 
-Client 電腦設定為裝載快取模式時，如果它設定伺服器裝載快取的電腦名稱，並連絡人擷取 content 至該伺服器。
+如果用戶端電腦設定為託管快取模式，就會設定託管快取伺服器的電腦名稱，並連絡該伺服器來抓取內容。
 
-如果 client 電腦設定為 [快取分散式的模式時，不過，可能會儲存 content 跨多個分公司在多部電腦上的快取。 Client 的電腦必須探索 content 所在擷取 content 之前。
+不過，如果用戶端電腦設定為分散式快取模式，該內容可能會儲存在分公司中多部電腦的多個快取中。 用戶端電腦必須先探索內容的所在位置，才能抓取該內容。
 
-當他們的設定分散式快取模式時，client 電腦使用找出 content 為基礎的 Web 服務動態探索（WS 探索）通訊協定探索通訊協定。 戶端傳送 WS 探索發現在網路上的快取的 content 多點的探查訊息。 檢查簡訊包含的區段 ID，讓用來檢查是否要求的 content 是否符合儲存在他們的快取 content 戶端。 用單點比對探查訊息查詢 client 的初始探查訊息回覆收到區段 ID 符合 content 本機快取。  
+在設定為分散式快取模式時，用戶端電腦會使用以 Web 服務動態探索 (WS-Discovery) 通訊協定為基礎的探索通訊協定，來找出內容。 用戶端會透過網路傳送 WS-Discovery 多點傳送 Probe 訊息，來探索快取的內容。 Probe 訊息包括區段識別碼，讓用戶端檢查要求的內容是否與儲存在快取中的內容相符。 如果區段識別碼符合本機快取的內容，收到初始 Probe 訊息的用戶端，就會使用單點傳播 Probe-Match 訊息來回覆查詢用戶端。  
 
-成功 WS-探索程序的事實執行探索 client 已正確內容資訊，所提供的內容伺服器，它要求 content 而定。
+對於要求的內容而言，WS-Discovery 程序的成功與否，取決於執行探索的用戶端是否擁有內容伺服器所提供的正確內容資訊。
 
-主要要求內容階段資料威脅，所以資訊洩漏、 內容資訊的存取權表示 content 授權的存取。 若要降低此風險，探索程序不會顯示內容的資訊，不顯示任何項目相關包含 content 純文字區段區段 ID 以外。
+在要求內容階段期間，資料的主要威脅是資訊洩漏，因為存取內容資訊意指授權存取內容。 若要減低這項風險，探索程序不可以顯示區段識別碼以外的內容資訊，才不會顯示任何有關包含內容的純文字區段。
 
-此外，惡意的使用者來執行相同子網路上的另一部 client 電腦可以查看原始內容來源後續路由器 BranchCache 探索傳輸。
+此外，惡意使用者在相同網路子網路上執行的其他用戶端電腦，可以看到經過路由器的原始內容來源的 BranchCache 探索流量。
 
-如果分公司中找不到要求的 content，client content 直接從內容伺服器要求透過 WAN 連結。
+如果在分公司找不到要求的內容，用戶端會透過 WAN 連結直接向內容伺服器要求該內容。
 
-收到 content 之後，就被新增到本機快取上或裝載快取的伺服器上。 若是如此，內容資訊會防止 client 或裝載快取伺服器本機快取中新增任何不符合 hashes content。 藉由符合 hashes 驗證 content 程序確保只有有效 content 快取中新增了，而且本機快取的完整性受保護。
+會在收到內容之後，新增至用戶端電腦或是託管快取伺服器上的本機快取。 在這種情況下，內容資訊可以避免用戶端或託管快取伺服器將不符合雜湊的任何內容新增至本機快取。 比對雜湊以確認內容的程序可確保只會將有效的內容新增至快取，並可保護本機快取的完整性。
 
-## <a name="BKMK_10"></a>BranchCache 處理程序： 擷取 content
+## <a name="BKMK_10"></a>BranchCache 程序：擷取內容
 
-Client 電腦內容主機會裝載快取伺服器或分散式快取模式 client 的電腦上尋找您想要的 content 之後 client 電腦開始擷取 content 的程序。
+用戶端電腦在內容主機 (託管快取伺服器或分散式快取模式用戶端電腦) 上找到所需的內容之後，用戶端電腦就會開始進行抓取內容的程序。
 
-第一次 client 電腦會傳送至內容主機，需要先封鎖要求。 要求包含找出您想要的 content 區段 ID 和封鎖範圍。 因為傳回只有一個封鎖，則封鎖範圍包括單一區塊。 （要求的多個區塊目前不支援。）Client 也會儲存在本機未完成要求清單中的要求。  
+首先，用戶端電腦會向內容主機傳送要求，以取得所需的第一個區塊。 該要求包含區段識別碼，以及可識別所需內容的區塊範圍。 因為只會傳回一個區塊，所以區塊範圍只包含單一區段。 (目前不支援要求多個區塊。)用戶端也會在本機的「未處理的要求」清單中儲存該要求。  
 
-在 client 從收到有效無法接受要求訊息，內容主機檢查內容主機內容快取中是否有封鎖指定在要求中。
+在收到有效的要求訊息從用戶端時，內容主機會檢查內容主機的內容快取中是否存在要求中指定的區塊。
 
-如果握有內容封鎖內容主機，則內容主機傳送包含區段 ID、 封鎖 ID、 加密的資料區塊，以及適用於加密封鎖初始化向量的回應。
+如果內容主機擁有該內容區塊，接著內容主機就會傳送回應，其中包含該區段識別碼、區塊識別碼、加密的資料區塊，以及用以加密該區塊的初始向量。
 
-如果內容主機不是處於擁有內容封鎖，內容主機傳送空白回應訊息。 這會通知 client 電腦內容主機，不需要要求的封鎖。 空回應訊息包含的區段 ID 和封鎖 ID 要求封鎖，以及零大小資料封鎖。
+如果內容主機沒有該內容區塊，內容主機就會傳送空白的回應訊息。 這樣可通知用戶端電腦，該內容主機並沒有要求的區塊。 空白的回應訊息包含區段識別碼與所要求區塊的區塊識別碼，以及大小為零的資料區塊。
 
-當 client 電腦收到回應從內容主機時，client 確認訊息對應要求簡訊未完成要求清單中。 （區段 ID 和封鎖索引必須符合未完成的要求。）
+用戶端電腦收到內容主機的回應時，用戶端會確認該訊息對應至其未處理的要求清單中的要求訊息。 (區段識別碼與區塊索引必須與未處理的要求相符。)
 
-如果此驗證程序未成功，且 client 的電腦不是對應要求訊息未完成要求清單中，client 電腦會捨棄訊息。
+如果這個驗證程序未成功，而且用戶端電腦的未處理要求清單中沒有對應的要求訊息，用戶端電腦就會捨棄該訊息。
 
-如果此驗證程序成功，且 client 的電腦未完成要求清單中有對應要求訊息，client 電腦解密封鎖。 Client 然後驗證解密的封鎖針對適當封鎖湊從內容原始內容伺服器的初次取得 client 的資訊。
+如果這個驗證程序成功，而且用戶端電腦的未處理要求清單中有對應的要求訊息，用戶端電腦就可以解密該區塊。 接著，用戶端會針對一開始從原始內容伺服器取得之內容資訊中的適當區塊雜湊，來驗證解密的區塊。
 
-如果成功驗證，解密的封鎖快取中儲存。
+如果區塊驗證成功，就會在快取中儲存解密的區塊。
 
-重複此程序，直到 client 具有區塊所需的所有為止。
+這個程序會重複執行，直到用戶端擁有所需的所有區塊。
 
 > [!NOTE]
-> 如果上一部電腦不存在完成 content 的區段，擷取通訊協定擷取，並從來源組合組合 content： 一組散發快取模式 client 電腦裝載快取伺服器，並-如果分公司快取不包含完整 content-中主要辦公室的原始內容伺服器。
+> 如果電腦上不存在完整的內容區段，抓取通訊協定就會從來源組合中抓取和組合內容：一組分散式快取模式用戶端電腦、託管快取伺服器，以及總公司中的原始內容伺服器 (如果分公司快取未含有完整的內容)。
 
-BranchCache 傳送內容資訊或 content 之前，請先加密資料。 BranchCache 加密回應訊息區塊。 在 Windows 7 BranchCache 使用的預設加密演算法為好一段-128、 加密金鑰是 Ke，而金鑰大小 128 的位元，依照加密演算法。 
+資料必須先加密，BranchCache 才能傳送內容資訊或內容。 BranchCache 會在回應訊息中加密區塊。 在 Windows 7 中，BranchCache 使用的預設加密演算法是 AES-128、 加密金鑰為 Ke，而金鑰大小是 128 位元，加密演算法所指定。 
 
-BranchCache 產生初始化向量適用於加密演算法，並使用加密金鑰來加密區塊。 BranchCache 然後記錄加密演算法與初始化向量訊息中。 
+BranchCache 會產生適用於加密演算法的初始化向量，並使用加密金鑰來加密區塊。 然後，BranchCache 會在訊息中記錄加密演算法與初始化向量。 
 
-伺服器戶端從未交換、 分享，或傳送彼此加密金鑰。 Client 從主控來源 content 內容伺服器接收加密金鑰。 然後，它會使用收到來自伺服器的它加密演算法和初始化向量，解密封鎖。 還有其他明確驗證或建置下載通訊協定的授權。
+伺服器與用戶端永遠不會交換、共用或彼此傳送加密金鑰。 用戶端會從裝載來源內容的內容伺服器收到加密金鑰。 然後使用加密演算法與從伺服器收到的初始化向量來解密區塊。 下載通訊協定中未內建任何明確的驗證或授權。
 
-### <a name="security-threats"></a>安全性威脅的攻擊
+### <a name="security-threats"></a>安全性威脅
 
-在這個層級的主要安全性威脅包括：
+這層的主要安全性威脅包括：
 
 - 竄改資料：
 
-  *波資料，為要求者 client 竄改資料*。 BranchCache 安全性型號使用 hashes 確認 client 都伺服器變更資料。  
+  *提供資料給要求者的用戶端竄改資料*。 BranchCache 安全性模式使用雜湊確認用戶端或伺服器是否均未更改資料。  
 
 - 資訊洩漏：  
 
-    *BranchCache 傳送加密的 content 至任何 client 指定區段 ID 適當的*。 區段 Id 是公用成員，讓任何 client 可以接收 content 加密。 不過，如果惡意的使用者會取得加密的 content，他們必須知道解密 content 加密金鑰。 上層通訊協定執行驗證，驗證，授權 client 會再提供內容資訊。 內容資訊的安全性與 content 本身提供的安全性，而且 BranchCache 從未公開內容資訊。  
+    *BranchCache 傳送指定適當區段識別碼的加密內容給任何用戶端*。 區段識別碼是公用的，因此任何用戶端都可以接收加密的內容。 不過，如果惡意使用者取得加密內容，他們必須知道加密金鑰才能解密內容。 上層通訊協定會執行驗證，然後指定內容資訊給驗證和授權的用戶端。 內容資訊的安全性等同於提供給內容本身的安全性，而且 BranchCache 絕不會洩露內容資訊。  
 
-    *攻擊者探查取得 content 網路*。  BranchCache 加密所有傳輸之間戶端使用 AES128 私密金鑰所在 Ke，從網路步阻止資料。  資料本身了，因此不較多或較少保護比如果 BranchCache 必須未使用的所有資訊洩漏內容下載內容伺服器的資訊受完全相同的方式。
+    *攻擊者窺探連線以取得內容*。  BranchCache 會使用密碼金鑰為 Ke 的 AES128 加密用戶端之間的所有傳輸，避免連線遭到窺探。  以和保護資料本身完全相同的方式，保護從內容伺服器下載的內容資訊，而且保護資訊洩露的程度相當於完全未使用 BranchCache。
 
 -   阻斷服務：
 
-    *Client 已被要求資料的*。 BranchCache 通訊協定整合佇列管理計數器及戶端避免過載計時器。
+    *資料的要求塞爆用戶端*。 BranchCache 通訊協定併入佇列管理計數器與計時器，避免用戶端超載。
 
-## <a name="BKMK_11"></a>BranchCache 處理程序： content 快取
+## <a name="BKMK_11"></a>BranchCache 程序：快取內容
 
-在分散式快取模式 client 電腦及位於分公司裝載快取伺服器，內容快取建立隨著時間的 content 擷取透過 WAN 連結。
+在分散式快取模式上，位於分公司的用戶端電腦與託管快取伺服器，內容快取是隨時間慢慢透過 WAN 連結抓取內容來建置。
 
-Client 電腦的設定裝載快取模式時，它們 content 加入自己本機快取，並也提供伺服器裝載快取的資料。 裝載快取通訊協定提供 content 及區段可用性的相關通知的裝載快取伺服器戶端機制。
+用戶端電腦設定為託管快取模式時，會將內容新增至它自己的本機快取，也會將資料提供給託管快取伺服器。 託管快取通訊協定提供機制，讓用戶端通知託管快取伺服器有關內容與區段可用性。
 
-上傳 content，裝載快取伺服器，client 通知伺服器它有可用的區段。 然後裝載快取伺服器擷取的所有資訊內容相關聯的非區段，並下載的區塊實際需要區段中。 重複此程序，直到 client 有提供裝載快取伺服器不需區段為止。
+若要將內容上傳至託管快取伺服器，用戶端要通知伺服器有可用的區段。 接著，託管快取伺服器會抓取與提供的區段相關聯的所有內容資訊，並下載區段內實際所需的區塊。 這個程序會重複執行，直到用戶端沒有可提供給託管快取伺服器的區段為止。
 
-若要使用裝載快取通訊協定更新裝載快取伺服器，您必須符合下列需求：
+若要使用託管快取通訊協定來更新託管快取伺服器，必須符合下列需求：
 
-- Client 電腦需要有一組區塊裝載快取伺服器提供區段中。 Client 必須提供內容資訊所提供的區段。這被組成區段 ID、 區段 Hash 的資料、 區段機密和所有封鎖 hashes 區段中所包含的清單。
+- 用戶端電腦必須要有區段內的一組區塊，可提供給託管快取伺服器。 用戶端必須要能針對提供的區段提供內容資訊；這是由區段識別碼、區段資料雜湊、區段密碼以及區段內含的所有區塊雜湊清單所構成。
 
-- 裝載快取的伺服器上執行 Windows Server 2008 R2 的裝載快取伺服器的憑證和相關的私密金鑰，然後在分公司 client 電腦必須信任的憑證授權單位發行憑證。 這可讓 client 以及伺服器成功參與 HTTPS 伺服器的驗證。
+- 為託管快取伺服器執行 Windows Server 2008 R2，託管快取伺服器憑證和相關聯的私密金鑰是必要的並在分公司的用戶端電腦必須信任發出憑證的憑證授權單位 (CA)。 這樣可讓用戶端與伺服器成功參與 HTTPS 伺服器驗證。
 
     > [!IMPORTANT]
-    > 裝載快取伺服器的憑證及相關的私密金鑰不需要執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 的裝載快取伺服器。  
+    > 執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 的託管快取伺服器不需要有託管快取伺服器憑證與相關聯的私密金鑰。  
 
-- Client 的電腦設定裝載快取伺服器及傳輸控制項通訊協定 (TCP) 連接埠號碼裝載快取伺服器聆聽 BranchCache 流量所在的電腦名稱。 此連接埠結合裝載快取伺服器的憑證。 伺服器裝載快取的電腦名稱的完整的網域名稱 (FQDN)，如果可能裝載快取伺服器成員網域的電腦。或如果裝載快取伺服器不網域成員可以是 NetBIOS 電腦的名稱。
+- 用戶端電腦已設定託管快取伺服器的電腦名稱，以及託管快取伺服器接聽 BranchCache 流量的傳輸控制通訊協定 (TCP) 連接埠號碼。 託管快取伺服器的憑證繫結至這個連接埠。 如果託管快取伺服器是網域成員電腦，託管快取伺服器的電腦名稱就可以是完整網域名稱 (FQDN)；如果託管快取伺服器不是網域成員，則可以是電腦的 NetBIOS 名稱。
 
-- 輸入封鎖要求積極接聽 client 的電腦。 連接埠它用心聆聽傳遞提供訊息的一部分從 client 裝載快取伺服器。 這可讓用於 BranchCache 通訊協定連接至 client 電腦擷取區段中的資料區塊裝載快取伺服器。
+- 用戶端電腦會主動接聽連入的區塊要求。 正在接聽的連接埠會做為提供訊息的一部分，從用戶端傳送至託管快取伺服器。 這樣可讓託管快取伺服器使用 BranchCache 通訊協定，連線到用戶端電腦來抓取區段中的資料區塊。
 
-- 開始聆聽傳入 HTTP 要求初始化時裝載快取伺服器。
+- 託管快取伺服器在初始化之後，開始接聽連入的 HTTP 要求。
 
-- 如果需要 client 電腦驗證設定裝載快取伺服器，client 和裝載快取伺服器所需的支援 HTTPS 驗證。
+- 如果設定託管快取伺服器要求用戶端電腦驗證，用戶端與託管快取伺服器兩者需要支援 HTTPS 驗證。
 
-### <a name="hosted-cache-mode-cache-population"></a>裝載快取模式快取擴展
+### <a name="hosted-cache-mode-cache-population"></a>託管快取模式快取擴展
 
-將 content 新增至分公司裝載快取伺服器的快取的一開始 client 傳送 INITIAL_OFFER_MESSAGE，包括區段編號。 區段中的 ID INITIAL_OFFER_MESSAGE 要求用於對應區段 Hash 的資料、 封鎖 hashes 的清單及區段機密擷取裝載快取伺服器封鎖快取。 如果裝載快取伺服器已經有特定的區段內容的所有資訊，以 INITIAL_OFFER_MESSAGE 回應將 [確定] 並下載封鎖不要求。
+將內容新增至分公司中託管快取伺服器的快取的程序開始，當用戶端傳送 INITIAL_OFFER_MESSAGE，其中包含區段識別碼。 INITIAL_OFFER_MESSAGE 要求中的區段識別碼用來從託管快取伺服器的區塊快取中擷取對應的區段資料雜湊、 區塊雜湊、 清單以及區段密碼。 如果託管快取伺服器已有特定區段的所有內容資訊，INITIAL_OFFER_MESSAGE 的回應會是 OK，而且不會再有下載區塊的要求。
 
-如果裝載快取伺服器未包含所有封鎖 hashes 區段中相關聯的資料提供組塊，感 INITIAL_OFFER_MESSAGE 的回應。 Client 再傳送 SEGMENT_INFO_MESSAGE 描述提供是單一區段。 裝載快取伺服器回應出現 [確定] 訊息，並開始遺失區塊所提供的下載 client 的電腦。
+如果託管快取伺服器還沒有所有提供的資料區塊 (其與區段的區塊雜湊相關聯)，INITIAL_OFFER_MESSAGE 的回應會是 INTERESTED。 接著，用戶端會傳送描述所提供單一區段的 SEGMENT_INFO_MESSAGE。 託管快取伺服器會以 OK 訊息回應，然後開始從提供的用戶端電腦下載缺少的區塊。
 
-區段 Hash 的資料、 封鎖 hashes 的清單及區段機密用來確保正在下載 content，未經竄改或變更。 然後加入下載的區塊裝載快取伺服器封鎖快取。
+區段資料雜湊、區塊雜湊清單以及區段密碼是用來確保下載的內容未經竄改或有所更改。 接著會將下載的區塊新增至託管快取伺服器的區塊快取。
 
 ## <a name="bkmk_cache"></a>快取安全性  
-本章節提供 BranchCache 如何保護快取的資料和裝載快取的伺服器上 client 電腦相關資訊。
+本節提供 BranchCache 如何在用戶端電腦與託管快取伺服器上保護快取資料的相關資訊。
 
-### <a name="client-computer-cache-security"></a>Client 電腦快取安全性
-最大的威脅資料儲存在 BranchCache 竄改。 如果攻擊可以竄改內容和內容快取中儲存的資訊，然後可能會使用此嘗試及上市的電腦使用 BranchCache 的攻擊。 攻擊者可以起始攻擊插入惡意軟體來其他資料取代。 BranchCache 藉由驗證使用封鎖 hashes 內容資訊中找到所有 content 降低這項重大威脅。 如果攻擊嘗試竄改這項資料，它會捨棄，並會取代有效資料來源。
+### <a name="client-computer-cache-security"></a>用戶端電腦快取安全性
+對於以 BranchCache 儲存的資料而言，最大的威脅就是遭到竄改。 如果攻擊者能夠竄改內容與快取中儲存的內容資訊，就可能會用來對使用 BranchCache 的電腦試圖發動攻擊。 攻擊者可以插入惡意軟體取代其他資料來開始發動攻擊。 BranchCache 可以使用在內容資訊中找到的區塊雜湊來驗證所有內容，藉以降低這項威脅。 如果攻擊者嘗試竄改這個資料，就會予以捨棄，並以原始來源的有效資料取代。
 
-資料儲存在 BranchCache 次要威脅是洩露。 快取分散式模式，client 快取只 content 它已要求。不過，該資料儲存在清除文字，和可能會有風險。 為了 BranchCache 服務只限制快取的存取，詳列於 ACL 檔案系統權限受本機快取。 
+對於以 BranchCache 儲存的資料而言，次要的威脅就是資訊洩露。 在分散式快取模式中，用戶端只會快取它自己要求的內容；不過，該資料是以純文字儲存，而可能有風險存在。 為了協助限制只能快取存取 BranchCache 服務，本機快取是由 ACL 中指定的檔案系統權限保護。 
 
-雖然 ACL 是有效的防止未經授權的使用者存取快取，可能是系統管理員權限的使用者存取快取的手動變更 ACL 中所指定的權限。 BranchCache 無法防護惡意管理 account 使用。
+雖然 ACL 在避免未經授權的使用者存取快取這方面很有成效，但擁有系統管理權限的使用者，可能以手動變更 ACL 中指定的權限，來取得快取的存取權。 BranchCache 無法保護惡意使用系統管理帳戶的狀況。
 
-未加密內容快取中儲存的資料，因此如果資料流失的問題，您可以使用例如 BitLocker 或加密檔案系統 (EFS) 加密技術。 使用 BranchCache 本機快取不會增加傳播分公司; 在的電腦透過資訊洩漏威脅快取包含複本存放磁碟上的其他地方未加密的檔案。 
+儲存在內容快取的資料並未加密，因此如果擔心資料洩露，您可以使用加密技術，例如 BitLocker 或加密檔案系統 (EFS)。 BranchCache 使用的本機快取不會增加分公司電腦所承受的資訊洩露威脅；該快取只包含以未加密形式存在其他位置的磁碟上的檔案複本。 
 
-加密整個磁碟是重要的環境中的用實體安全性難確保中。 例如，加密整個磁碟協助重要可能會移除分公司環境中的行動裝置版電腦上的資料的安全。
+若難以在環境中確保用戶端的實體安全性，加密整個磁碟是非常重要的。 例如，加密整個磁碟可以協助保護可能從分公司環境中移除的行動電腦上的敏感資料。
 
-### <a name="hosted-cache-server-cache-security"></a>裝載快取伺服器快取安全性
+### <a name="hosted-cache-server-cache-security"></a>託管快取伺服器快取安全性
 
-裝載快取模式，最大的裝載快取伺服器安全性威脅是洩露。 在裝載快取的環境中 BranchCache 行為分散式快取模式時，類似的方式與檔案系統的權限保護快取的資料。 不同的是裝載快取伺服器會儲存所有 content 要求分公司任何 BranchCache 式電腦，而非只單一 client 要求的資料。 未經授權入侵此快取的結果可能更多嚴重，因為資料更多風險。  
+在託管快取模式中，對於託管快取伺服器安全性而言，最大的威脅是資訊洩露。 處於託管快取環境中的 BranchCache 行為類似於分散式快取模式的方式，利用系統檔案權限來保護快取的資料。 不同之處在於，託管快取伺服器儲存分公司中任何啟用 BranchCache 的電腦要求的所有內容，而不是只有單一用戶端要求的資料。 未經授權入侵這個快取的後果可能十分嚴重，因為會讓更多資料暴露在風險中。  
   
-在裝載快取伺服器執行 Windows Server 2008 R2 裝載快取環境中，使用加密技術，例如 BitLocker 或 EFS 建議如果的分公司用的任何可跨 WAN 連結來存取敏感的資料。 磁碟加密運作只有當電腦已關閉攻擊者取得實體的存取權時，因為還有必要裝載快取，使實體存取。  電腦已或處於睡眠模式時，如果磁碟加密提供一些保護。
+在託管快取環境中託管快取伺服器正在執行 Windows Server 2008 R2，使用加密技術，例如 BitLocker 或 EFS 是建議您，如果任何分公司中的用戶端可以透過 WAN 連結存取敏感資料。 還務必要避免實際存取託管快取的狀況，因為當攻擊者取得實際存取權時，只有關閉電腦，磁碟加密才有效用。  如果電腦處於開啟狀態或睡眠模式，磁碟加密所能提供的保護極少。
 
 > [!NOTE]
-> 執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 的裝載快取伺服器以便使用其他加密技術不需要根據預設，所有的快取的資料加密。
+> 託管快取伺服器執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 預設會加密快取中的所有資料，因此不需要使用其他加密技術。
 
-即使 client 設定裝載快取模式，仍會在本機快取的資料，您可能想要保護除了裝載快取伺服器上的快取本機快取的步驟執行。
+即使用戶端設定為託管快取模式，仍會在本機快取資料，而除了託管快取伺服器上的快取，您可能也要採取步驟來保護本機快取。

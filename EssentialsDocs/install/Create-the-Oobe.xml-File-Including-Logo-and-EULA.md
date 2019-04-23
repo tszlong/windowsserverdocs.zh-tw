@@ -1,6 +1,6 @@
 ---
-title: "建立 Oobe.xml 檔案包括商標和使用者授權合約"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 建立包含標誌和 EULA 的 Oobe.xml 檔案
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,30 +13,31 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f8f99a2051e114b3c890f1cdac23aebf58689980
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884649"
 ---
-# <a name="create-the-oobexml-file-including-logo-and-eula"></a>建立 Oobe.xml 檔案包括商標和使用者授權合約
+# <a name="create-the-oobexml-file-including-logo-and-eula"></a>建立包含標誌和 EULA 的 Oobe.xml 檔案
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-您可以新增自己的終端使用者授權合約 (EULA) 初始設定，利用 Oobe.xml 檔案。 Oobe.xml 是用來提供文字與影像的初始設定，Windows 歡迎和其他網頁向使用者的檔案。 您可以新增多個要自訂根據終端使用者的語言及國家或地區選擇 content Oobe.xml 檔案。 如需詳細資訊，請查看[Windows 評定及 Windows 8 部署套件適用於](https://go.microsoft.com/fwlink/?LinkId=248694)的文件。  
+您可以使用 Oobe.xml 檔案，將自己的使用者授權合約 (EULA) 新增至「初始設定」。 Oobe.xml 是一個檔案，針對要呈現給使用者的「初始設定」、Windows 歡迎畫面和其他頁面，提供文字和影像。 您可以新增多個 Oobe.xml 檔案，以便根據使用者的語言和國家或地區選項自訂內容。 如需詳細資訊，請參閱 [Windows 8 的 Windows 評定及部署套件](https://go.microsoft.com/fwlink/?LinkId=248694) 文件。  
   
- 除了 Microsoft 使用者授權合約，會顯示在您的公司使用者授權合約。 Microsoft 使用者授權合約將會顯示在初始設定一般使用者體驗，期間的第一的使用者授權合約，然後您使用者授權合約將會顯示。 您的使用者授權合約可以隨時隨地放在伺服器上，而且您 Oobe.xml 檔案中指定的位置。  
+ 除了 Microsoft EULA 以外，也會顯示您公司的 EULA。 在使用者的初始設定經驗中，Microsoft EULA 會是第一個顯示的 EULA，接著會顯示您的 EULA。 您的 EULA 可放置於伺服器上的任意位置，而這是透過在 Oobe.xml 檔案中指定位置。  
   
-#### <a name="to-add-your-company-eula-and-logo"></a>新增您的公司使用者授權合約和商標  
+#### <a name="to-add-your-company-eula-and-logo"></a>新增您公司的 EULA 和標誌  
   
-1.  在文字編輯器中，例如記事本開放 Oobe.xml 檔案。  
+1.  在文字編輯器 (例如「記事本」) 中開啟 Oobe.xml 檔案。  
   
-2.  在 < logopath\ >< 日 logopath\ > 標籤，請輸入您商標檔案絕對的路徑。 此檔案應包含 32 位元可移植網路圖形 (.png) 檔案 240 x 100 像素的。  
+2.  在 < logopath\>< / logopath\>標籤中，輸入您標誌檔案的絕對路徑。 此檔案應包含 32 位元可攜式網路圖形 (.png) 檔案 (大小為 240x 100 像素)。  
   
-3.  在 < eulafilename\ >< 日 eulafilename\ > 標籤中，輸入絕對路徑使用者授權合約檔案。 使用者授權合約檔案必須是 rtf 格式 (.rtf) 檔案。  
+3.  在 < eulafilename&gt\>< / eulafilename&gt\>標籤中，輸入 EULA 檔案的絕對路徑。 EULA 檔案必須是 RTF 格式 (.rtf) 的檔案。  
   
-4.  在 < name\ >< 日 name\ > 標籤，請輸入您的公司名稱。  
+4.  在 < 名稱\>< / 名稱\>標籤中，輸入您的公司名稱。  
   
-     下列範例顯示標記 Oobe.xml 檔案中：  
+     下列範例顯示 Oobe.xml 檔案中的標記：  
   
     ```  
   
@@ -54,41 +55,41 @@ ms.lasthandoff: 12/12/2017
   
 5.  儲存檔案。  
   
-6.  將檔案 Oobe.xml 放在下列位置的其中之一：  
+6.  將 Oobe.xml 檔案放在下列其中一個位置：  
   
-    |Oobe.xml 位置|條件來判定位置|  
+    |Oobe.xml 位置|用於決定位置的條件|  
     |-----------------------|----------------------------------------|  
-    |%windir%\system32\oobe\info\|伺服器出貨單一國家/地區單一語言系統中。|  
-    |%windir%\system32\oobe\info\default\\ < language\ >|伺服器出貨單一國家/地區多語言系統中。|  
-    |< 國家/地區 > %windir%\system32\oobe\info\\ \ 和 %windir%\system32\oobe\info\\ < 國家/地區 > \\ < language\ > \|伺服器會以多個國家/地區出貨，並設定需要在每個國家/地區為基礎，每一個都有單一語言的自訂項目。 < 國家/地區 > 所在的國家或地區位置部署伺服器之後，而且 < language\ > 小數點的地區設定識別碼 (LCID) 版本的地理位置識別碼 (GeoID) 的小數點版本。|  
+    |%windir%\system32\oobe\info\|伺服器在單一國家/地區和單一語言系統出貨。|  
+    |%windir%\system32\oobe\info\default\\<language\>|伺服器會以單一國家/地區和多語言系統出貨。|  
+    |%windir%\system32\oobe\info\\< 國家/地區 > \ 和 %windir%\system32\oobe\info\\< 國家/地區 >\\< 語言\>\|伺服器會出貨至多個國家/地區 /區域和設定需要針對每個國家/地區，每個使用單一語言的自訂項目。 其中 < 國家/地區 > 是的國家或地區位置伺服器部署的是的地理位置識別碼 (GeoID) 的十進位版本和 < 語言\>是地區設定識別碼 (LCID) 的十進位版本。|  
   
- 如果您有白色文字與其他公司商標時，它可能會顯示因為藍色的背景設定流程中更好。  您也可以設定登錄金鑰和值指定此商標。  
+ 如果您另有白色文字的公司標誌，則此標誌可以在設定流程中的藍色背景顯示得更好。  您可以透過選擇設定登錄機碼和值來指定此標誌。  
   
-#### <a name="to-specify-a-company-logo-by-setting-the-oem-registry-key"></a>若要指定公司商標設定 OEM 登錄鍵  
+#### <a name="to-specify-a-company-logo-by-setting-the-oem-registry-key"></a>若要透過設定 OEM 登錄機碼來指定公司標誌  
   
-1.  在伺服器上，將滑鼠移到畫面的右上角，然後按一下**搜尋**。  
+1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。  
   
-2.  在搜尋方塊中，輸入**regedit**，然後按一下 [Regedit 應用程式。  
+2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit] 應用程式。  
   
-3.  在瀏覽窗格中，瀏覽至**跳**，展開 [**軟體**，展開 [ **Microsoft**，展開 [ **Windows Server**。 如果 OEM 金鑰不存在，建立按鍵，如下所示：  
+3.  在導覽窗格中，瀏覽至  **HKEY_LOCAL_MACHINE**，展開 **SOFTWARE**，展開 **Microsoft**，展開 **Windows Server**。 如果沒有 OEM 機碼，則按照下面方式建立：  
   
-    1.  以滑鼠右鍵按一下**Windows Server**，按一下 [**新**，然後按一下 [**鍵**。  
+    1.  以滑鼠右鍵按一下 **[Windows Server]**，按一下 **[新增]**，然後按一下 **[機碼]**。  
   
-    2.  按鍵名稱，輸入**OEM**。  
+    2.  機碼名稱請輸入 **OEM**。  
   
-4.  （選擇性）如果您要建立商標的項目，您可以建立不同的鍵來區分商標的語言版本。 例如，如果您擁有的商標英文與德文的版本，您可以建立 en-us-我們金鑰和 de-de 金鑰。 因為所有商標檔案儲存在相同的資料夾，您必須提供商標映像檔執行個體的每一種語言的唯一名稱。 例如，您可以建立稱為 LogoWithWhiteText_en.png 和 LogoWithWhiteText_de.png 檔案。  
+4.  (選用) 如果您要為標誌建立項目，可以建立不同的機碼以區分不同語言版本的標誌。 例如，如果您同時有英文版和德文版的標誌，可以建立 en-us 機碼和 de-de 機碼。 因為所有的標誌檔都會儲存在同一個資料夾，所以您必須提供標誌影像檔的多個執行個體，每個語言的檔案具備唯一的名稱。 例如，您可以建立名為 LogoWithWhiteText_en.png 和 LogoWithWhiteText_de.png 的檔案。  
   
-5.  任一以滑鼠右鍵按一下**OEM**或以滑鼠右鍵按一下適當的語言金鑰，請按 [**新**，然後按一下 [**字串值**。  
+5.  以滑鼠右鍵按一下 **OEM** ，或以滑鼠右鍵按一下適當的語言機碼，按一下 **[新增]**，然後按一下 **[字串值]**。  
   
-6.  輸入 LogoWithWhiteText 字串，並再按下 ENTER。  
+6.  請輸入「LogoWithWhiteText」作為字串，再按 ENTER。  
   
-7.  新的字串，以滑鼠右鍵按一下，然後按一下**修改]**。  
+7.  在滑鼠右鍵上按一下新字串，然後按一下 **[修改]**。  
   
-8.  輸入含有商標映像的路徑，然後按一下 [確定]。  
+8.  輸入含有標誌影像的路徑，然後按一下 [確定]。  
   
-## <a name="see-also"></a>也了  
- [開始使用 Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+## <a name="see-also"></a>另請參閱  
+ [與 Windows Server Essentials ADK 快速入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)

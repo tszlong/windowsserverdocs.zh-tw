@@ -1,6 +1,6 @@
 ---
-title: 建立連線的提供者的解決方案擴充功能
-description: 開發 Windows Admin Center SDK (Project Honolulu) 的解決方案擴充功能-建立連線的提供者
+title: 建立方案延伸模組的連線提供者
+description: 開發解決方案的擴充功能 Windows Admin Center SDK （專案檀香山）-建立連線提供者
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,40 +9,40 @@ ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 883fba96fcb71cb1c6e8162c1564d66924c4e24d
-ms.sourcegitcommit: be0144eb59daf3269bebea93cb1c467d67e2d2f1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4081135"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885649"
 ---
-# 建立連線的提供者的解決方案擴充功能
+# <a name="create-a-connection-provider-for-a-solution-extension"></a>建立方案延伸模組的連線提供者
 
->適用於：Windows Admin Center、Windows Admin Center 預覽版
+>適用於：Windows Admin Center，Windows Admin Center 預覽
 
-連線提供者中扮演重要角色在 Windows Admin Center 如何定義，並會與可連接的物件或多個目標進行通訊。 主要連線提供者會執行動作時正在進行連線，例如確保目標在線上且可以使用，以及確保能連線的使用者有存取目標權限。
+連線提供者會扮演著重要的角色，在 Windows Admin Center 如何定義及與可連接物件或多個目標通訊。 主要連接提供者執行動作，而要建立連線，例如確保目標在線上而且可用，並同時確保連線的使用者具有權限來存取目標。
 
-根據預設，Windows Admin Center 隨附於下列連線提供者：
+根據預設，Windows Admin Center 隨附下列連線提供者：
 
-* 伺服器
+* Server
 * Windows 用戶端
 * 容錯移轉叢集
 * HCI 叢集
 
-若要建立您自己的自訂連線提供者，請依照下列步驟：
+若要建立您自己自訂的連線提供者，請遵循下列步驟：
 
-* 新增至連接提供者詳細資料 ```manifest.json```
+* 新增到連線提供者詳細資料 ```manifest.json```
 * 定義連線狀態提供者
-* 在應用程式層級中實作連接提供者
+* 在 應用程式層中實作連接提供者
 
-## 新增 manifest.json 連接提供者的詳細資料
+## <a name="add-connection-provider-details-to-manifestjson"></a>將連線提供者詳細資料新增至 manifest.json
 
-現在，我們會逐步引導您需要知道要在您的專案中定義連線提供者```manifest.json```檔案。
+現在我們將詳細說明您需要知道要在您的專案中定義連線提供者```manifest.json```檔案。
 
-### 在 manifest.json 建立項目
+### <a name="create-entry-in-manifestjson"></a>Manifest.json 中建立項目
 
-```manifest.json```檔案位於 \src 資料夾，除了其他眾多包含定義的進入點到您的專案。 進入點的類型包括工具、 解決方案，以及連線提供者。 我們會定義連線提供者。
+```manifest.json```檔案位於 \src 資料夾中，而且在其他方面，包含定義的進入點到您的專案。 項目點的型別包含工具、 解決方案和連線提供者。 我們會定義連線提供者。
 
-以下是連接提供者中的項目 manifest.json 的範例：
+連線提供者中的項目 manifest.json 的範例如下：
 
 ``` json
     {
@@ -71,35 +71,35 @@ ms.locfileid: "4081135"
     },
 ```
 
-「 ConnnectionProvider 」 類型的進入點表示 Windows Admin Center 殼層的設定項目是將由解決方案所用來驗證連線狀態的提供者。 連線提供者進入點包含數個重要的屬性，定義如下：
+類型"connnectionProvider"的進入點表示 Windows Admin Center 殼層所設定的項目是方案將會用來驗證連線狀態的提供者。 連線提供者的進入點包含數個重要屬性，定義如下：
 
 | 屬性 | 描述 |
 | -------- | ----------- |
-| entryPointType | 這是必要的屬性。 有三個有效的值: 「 工具 」、 「 解決方案 」，以及 「 消費者 」。 | 
-| name | 識別連接提供者解決方案的範圍內。 這個值必須是唯一的完整的 Windows Admin Center 執行個體 （而不只是方案） 內。 |
-| path | 如果您將會設定解決方案所來表示 「 新增連接 「 UI，URL 路徑。 這個值必須對應到設定應用程式 routing.module.ts 檔案中的路線。 當方案進入點設定為使用連線 rootNavigationBehavior 時，這個路由將會載入的殼層來顯示新增連線 UI 的模組。 詳細資訊可在 [\] 區段中 rootNavigationBehavior。 |
-| displayName | 在此處輸入的值會顯示在右邊的殼層，黑色 Windows Admin Center 列使用者載入的解決方案連線頁面時的下方。 |
-| icon | 代表的解決方案下拉式功能表中，用以代表方案的圖示。 |
+| entryPointType | 這是必要的屬性。 有三個有效的值: 「 工具 」、 「 解決方案 」 和 「 消費者 」。 | 
+| name | 識別解決方案的範圍內的連線提供者。 此值必須是完整的 Windows Admin Center 執行個體 （而不只是方案） 內唯一的。 |
+| path | 如果它將會設定解決方案，表示 [新增連線] UI 中，URL 路徑。 此值必須對應到已在應用程式 routing.module.ts 檔案中的路由。 當方案進入點設定為使用連線 rootNavigationBehavior 時，此路由會載入殼層來顯示 新增連接 UI 的模組。 如需詳細資訊一節中上 rootNavigationBehavior。 |
+| displayName | 在此處輸入的值會顯示在殼層中，當使用者在載入解決方案的 [連線] 頁面上的黑色 Windows Admin Center 列下方的右邊。 |
+| 圖示 | 代表解決方案下拉式功能表中，用以代表方案的圖示。 |
 | description | 輸入的進入點的簡短描述。 |
-| 連線類型 | 代表將會載入，提供者的連線類型。 在此處輸入的值也會在方案進入點指定方案可以載入這些連線使用。 在此處輸入的值也會使用工具進入點中以表示該工具與這種類型相容。 在此處輸入這個值也會用於提交到 RPC 連線物件呼叫 「 新增視窗上 「，在應用程式層級的實作步驟。 |
-| connectionTypeName | 連線表格中用來代表使用您的連線提供者的連線。 此屬性預期會得到的型別複數的名稱。 |
-| connectionTypeUrlName | 用於建立 URL 表示載入的方案之後 Windows Admin Center 已連線到執行個體。 連線之後，以及目標之前，會使用此項目。 在此範例中，「 connectionexample 」 會是這個值 URL 中出現的位置：http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
-| connectionTypeDefaultSolution | 表示應該會載入連接提供者的預設元件。 這個值是的組合: [a] 頂端的資訊清單; 定義的延伸模組套件的名稱[b] 驚嘆號 （！）;[c] 方案進入點名稱。    針對專案，以副檔名 「 msft.sme.mySample-」，並使用名稱 「 範例 」 的解決方案進入點，此值會是 「 msft.sme.solutionExample 擴充功能 ！ 範例 」。 |
-| connectionTypeDefaultTool | 代表預設工具，應該會載入成功的連線。 這個屬性值組成的兩個部分，類似於 connectionTypeDefaultSolution。 這個值是的組合: [a] 頂端的資訊清單; 定義的延伸模組套件的名稱[b] 驚嘆號 （！）;[一開始就應該會載入工具 c] 工具進入點名稱。 針對專案，以副檔名 「 msft.sme.solutionExample-」，並使用名稱 「 範例 」 的解決方案進入點，此值會是 「 msft.sme.solutionExample 擴充功能 ！ 範例 」。 |
-| connectionStatusProvider | 請參閱 「 定義連線狀態提供者 」 區段 |
+| connectionType | 表示將會載入提供者的連接類型。 此處輸入的值也將使用在解決方案進入點中，但會指定解決方案可以載入這些連線。 此處輸入的值會也用於工具項目點，表示此工具會與此型別相容。 在此輸入此值也會用於送出至 RPC 的連接物件上的 「 新增視窗 」，在應用程式層的實作步驟中呼叫。 |
+| connectionTypeName | 表示使用您的連線提供者的連接，請使用 [連線] 表格中。 這應該是類型的複數名稱。 |
+| connectionTypeUrlName | 用於建立 URL，以代表載入的方案之後 Windows Admin Center 已連線到執行個體。 連線之後，以及目標之前，會使用此項目。 在此範例中，「 connectionexample"會是，這個值會出現在 URL 中： http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
+| connectionTypeDefaultSolution | 表示應該載入連線提供者的預設元件。 這個值是組成: [a] 頂端的資訊清單; 定義的延伸模組套件的名稱[b] 驚嘆號 （！）;[c] 方案進入點名稱。    專案副檔名"msft.sme.mySample-"，並具有名稱"example"的方案項目點，這個值會是"msft.sme.solutionExample 延伸模組 ！ 範例 」。 |
+| connectionTypeDefaultTool | 表示預設應該在成功連接之後載入的工具。 這個屬性值組成兩個部分，類似於 connectionTypeDefaultSolution。 這個值是組成: [a] 頂端的資訊清單; 定義的延伸模組套件的名稱[b] 驚嘆號 （！）;[一開始載入工具 c] 工具進入點名稱。 專案副檔名"msft.sme.solutionExample-"，並具有名稱"example"的方案項目點，這個值會是"msft.sme.solutionExample 延伸模組 ！ 範例 」。 |
+| connectionStatusProvider | 請一節 「 定義連線狀態提供者 」，參閱 |
 
-## 定義連線狀態提供者
+## <a name="define-connection-status-provider"></a>定義連線狀態提供者
 
-連線狀態提供者為的機制，目標驗證在線上且可以使用，以確保能連線的使用者有存取目標權限。 目前有兩種類型的連線狀態提供者： PowerShell 和 RelativeGatewayUrl。
+連接狀態提供者是用來在線上而且可用，驗證目標的機制，同時確保連線的使用者具有權限來存取目標。 目前有兩種類型的連線狀態提供者：PowerShell 和 RelativeGatewayUrl。
 
-*   PowerShell 連線狀態提供者
-    *   判斷目標是連線且可存取的 PowerShell 指令碼。 在下面定義的單一屬性 「 status 」，將物件必須傳回結果。
-*   RelativeGatewayUrl 連線狀態提供者
-    *   判斷目標是連線且可存取 rest 呼叫。 在下面定義的單一屬性 「 status 」，將物件必須傳回結果。
+*   PowerShell 連接狀態提供者
+    *   判斷目標是否為線上且可存取的 PowerShell 指令碼。 傳回的結果必須具有單一屬性 「 狀態 」 下, 面定義的物件。
+*   RelativeGatewayUrl 連接狀態提供者
+    *   判斷目標是否為線上且可存取的 rest 呼叫。 傳回的結果必須具有單一屬性 「 狀態 」 下, 面定義的物件。
 
-### 定義狀態
+### <a name="define-status"></a>定義狀態
 
-連線狀態提供者所需的單一屬性的物件會傳回```status```，符合下列格式：
+連線狀態提供者所傳回的物件具有單一屬性```status```符合下列格式：
 
 ``` json
 {
@@ -113,29 +113,29 @@ ms.locfileid: "4081135"
 
 狀態屬性：
 
-* Label
-    * 描述的狀態標籤傳回類型。 請注意，可以在執行階段中對應的標籤值。 請參閱下方的項目，適用於執行階段中的對應值。
+* ThisAddIn
+    * 標籤描述狀態傳回型別。 請注意，可以在執行階段對應標籤的值。 請參閱下方的項目，執行階段中的對應值。
 
 * 類型
-    * 狀態的傳回類型。 類型都有下列列舉值。 針對任何值為 2 或上方，平台會不瀏覽到已連接的物件，並將會在 UI 中顯示錯誤。
+    * 狀態傳回型別。 型別具有下列的列舉值。 任何值為 2 以上，平台會瀏覽至已連接的物件，並將在 UI 中顯示一個錯誤。
 
 類型：
 
-| 值 | 說明 |
+| 值 | 描述 |
 | ----- | ----------- |
 | 0 | Online |
 | 1 | 警告 |
-| 2 | Unauthorized |
+| 2 | 未經授權 |
 | 3 | 錯誤 |
 | 4 | 嚴重 |
-| 5 | Unknown |
+| 5 | 不明 |
 
 * 詳細資料
-    * 描述狀態的其他詳細資料傳回類型。
+    * 描述此狀態的其他詳細資料會傳回型別。
 
-### PowerShell 連線狀態提供者指令碼
+### <a name="powershell-connection-status-provider-script"></a>PowerShell 連接狀態提供者的指令碼
 
-連線狀態提供者 PowerShell 指令碼判斷目標是連線且可存取的 PowerShell 指令碼。 必須包含單一屬性為 「 status 」 物件傳回結果。 如下所示的範例指令碼。
+連線狀態提供者的 PowerShell 指令碼會判斷目標是否為線上且可存取的 PowerShell 指令碼。 傳回的結果必須具有 「 狀態 」 的單一屬性的物件。 如下所示的範例指令碼。
 
 範例 PowerShell 指令碼：
 
@@ -165,9 +165,9 @@ function Get-Status()
 Get-Status
 ```
 
-### 定義 RelativeGatewayUrl 連線狀態提供者方法
+### <a name="define-relativegatewayurl-connection-status-provider-method"></a>定義 RelativeGatewayUrl 連接狀態提供者方法
 
-連線狀態提供者```RelativeGatewayUrl```方法會呼叫 rest API 來判斷目標是否連線且可存取。 必須包含單一屬性為 「 status 」 物件傳回結果。 RelativeGatewayUrl 的連線提供者 manifest.json 中的項目範例如下所示。
+連接狀態提供者```RelativeGatewayUrl```方法會呼叫 rest API，以判斷目標是否線上且可存取。 傳回的結果必須具有 「 狀態 」 的單一屬性的物件。 如下所示的 RelativeGatewayUrl manifest.json 中的連線提供者項目範例。
 
 ``` json
     {
@@ -194,35 +194,35 @@ Get-Status
     },
 ```
 
-使用 RelativeGatewayUrl 附註：
+有關使用 RelativeGatewayUrl 注意事項：
 
-* 「 relativeGatewayUrl 」 指定位置，以取得從閘道 URL 的連線狀態。 此 URI 是從 /api 相對的。 如果 URL 中找到 $connectionName，它將會取代連線的名稱。
-* 所有 relativeGatewayUrl 屬性必須都執行主機閘道，可以達到這個目的藉由建立閘道擴充功能
+* 「 relativeGatewayUrl"會指定從閘道器 URL 取得的連接狀態的位置。 此 URI 是相對於 /api。 如果在 URL 中找到 $connectionName，則它會取代連接的名稱。
+* 對主應用程式閘道，這可以藉由建立閘道的擴充功能來達成，必須執行所有 relativeGatewayUrl 屬性
 
-### 在執行階段中的對應值
+### <a name="map-values-in-runtime"></a>在執行階段中的對應值
 
-傳回的物件可以用來格式化的狀態標籤與詳細資料值調整時間的提供者的 「 defaultValueMap 」 屬性中包含機碼和值。
+傳回的物件可以用來格式化的狀態中的標籤和詳細資料的值來微調時間包括提供者的 「 defaultValueMap"屬性中的索引鍵和值。
 
-為例，如果您新增下列值，任何時候該 「 defaultConnection_test 」 顯示做為值標籤或詳細資料，Windows Admin Center 將會自動將金鑰取代已設定的資源字串值。
+比方說，如果您加入下列的值時，隨時該 「 defaultConnection_test"顯示為標籤或詳細資料，值 Windows Admin Center 會自動取代金鑰設定的資源字串值。
 
 ``` json
     "defaultConnection_test": "resources:strings:addServer_status_defaultConnection_label"
 ```
 
-## 在應用程式層級中實作連接提供者
+## <a name="implement-connection-provider-in-application-layer"></a>在 應用程式層中實作連接提供者
 
-現在我們要在應用程式層中，實作連接提供者，藉由建立實作 OnInit Html5、css、angular、typescript 類別。 這個類別具有下列功能：
+現在我們要在應用程式層中實作連接提供者，藉由建立可實作 OnInit TypeScript 類別。 此類別具有下列功能：
 
-| 函式 | 描述 |
+| 函數 | 描述 |
 | -------- | ----------- |
-| 建構函式 (私人 appContextService: AppContextService，私人路由： ActivatedRoute) |  |
-| 公用 ngOnInit() |  |
-| 公用 onSubmit() | 包含邏輯以新增嘗試建立連線時，更新殼層 |
-| 公用 onCancel() | 其中包含取消加入嘗試連線時，更新殼層的邏輯 |
+| constructor(private appContextService:AppContextService，私用的路由：ActivatedRoute) |  |
+| public ngOnInit() |  |
+| public onSubmit() | 包含邏輯，以新增連線嘗試時更新 shell |
+| public onCancel() | 包含邏輯，以新增連線嘗試取消時，更新命令介面 |
 
-### 定義 onSubmit
+### <a name="define-onsubmit"></a>定義 onSubmit
 
-```onSubmit``` 問題 RPC 回呼來通知 「 新增連線 」 的殼層應用程式內容。 基本的呼叫會單獨使用 「 updateData 」，就像這樣：
+```onSubmit``` 問題 RPC 回呼來通知的 [新增連線] 殼層的應用程式內容。 基本的呼叫會使用 「 updateData"，就像這樣：
 
 ``` ts
 this.appContextService.rpc.updateData(
@@ -237,7 +237,7 @@ this.appContextService.rpc.updateData(
 );
 ```
 
-結果是一個連線內容，也就是符合下列結構的物件陣列：
+結果是連接屬性，也就是符合下列結構的物件的陣列：
 
 ``` ts
 
@@ -306,17 +306,17 @@ export const connectionTypeConstants = {
 };
 ```
 
-### 定義 onCancel
+### <a name="define-oncancel"></a>定義 onCancel
 
-```onCancel``` 藉由傳遞空白連線陣列取消 「 新增 」 嘗試連線：
+```onCancel``` 取消 [新增連線] 嘗試藉由傳遞陣列空白的連線：
 
 ``` ts
 this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcUpdateData>{ results: { connections: [] } });
 ```
 
-## 連線提供者範例
+## <a name="connection-provider-example"></a>連線提供者範例
 
-以下是完整 Html5、css、angular、typescript 類別實作連接提供者。 請注意，「 連線類型 」 字串，符合 「 連線類型 manifest.json 的連線提供者中所定義。
+以下是完整的 TypeScript 類別，實作連線提供者。 請注意，"connectionType 」 字串符合 「 connectionType manifest.json 中的連線提供者中所定義。
 
 ``` ts
 import { Component, OnInit } from '@angular/core';

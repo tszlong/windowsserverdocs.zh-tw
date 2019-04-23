@@ -1,63 +1,61 @@
 ---
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
-title: "尋找邏輯結構設計的額外的資源"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 尋找其他邏輯結構設計資源
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: a09b3e23b378b2d217f68ae3029e9436af8ddb1e
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 56b49993d2bc58381bfb3ad4d8f54b9d95ed5dd0
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883889"
 ---
-# <a name="finding-additional-resources-for-logical-structure-design"></a>尋找邏輯結構設計的額外的資源
+# <a name="finding-additional-resources-for-logical-structure-design"></a>尋找其他邏輯結構設計資源
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-您可以找到關於 Windows Server 2003 及 Windows Server 2008 TechCenter 網站上的 Active Directory Domain Services (AD DS) 下列文件：  
+您可以找到額外的資源邏輯結構設計下列有關 Active Directory 網域服務 (AD DS) 的文件中：  
   
--   設計拓撲網站的相關詳細資訊，請查看[設計網站拓撲適用於 Windows Server 2008 AD DS](Designing-the-Site-Topology.md)。  
-  
--   在擬建議的樹系協助您工作表網域、基礎結構網域名稱系統」(DNS) 和單位（組織單位）設計下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 從工作協助工具的 Windows Server 2003 部署套件 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))。  
-  
--   如需有關委派的驗證限制的委派，查看委派驗證 ([https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614))。  
-  
--   設定使用防火牆 AD DS 的相關詳細資訊，會看到網路分段防火牆在 Active Directory ([https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928))。  
-  
--   如需有關 Active Directory 網域升級到 Windows Server 2008 的詳細資訊，請查看[Windows Server 2008 和 Windows Server 2008 R2 AD DS 網域升級 Active Directory 網域](https://technet.microsoft.com/library/cc731188.aspx)。  
-  
--   重新建構 AD DS 網域與間的樹系的相關詳細資訊，會看到 3.1 Active Directory 移轉工具版移轉指南 ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))。  
-  
--   如需部署森林根網域的相關資訊，請查看[部署 Windows Server 2008 森林根網域](https://technet.microsoft.com/library/cc731174.aspx)。  
-  
--   如需部署 DNS 的相關資訊，請查看部署網域名稱系統」(DNS) ([https://go.microsoft.com/fwlink/?LinkId=93656](https://go.microsoft.com/fwlink/?LinkId=93656))。  
-  
--   如需 DNS 階層和名稱解析程序，查看 [DNS 技術參考 ([https://go.microsoft.com/fwlink/?LinkId=106636](https://go.microsoft.com/fwlink/?LinkId=106636))。 如需有關如何 DNS 支援 AD DS，查看 [DNS 支援的 Active Directory 技術參考 ([https://go.microsoft.com/fwlink/?LinkId=106660](https://go.microsoft.com/fwlink/?LinkId=106660))。  
-  
--   如需 WINS，查看 WINS 技術參考 ([https://go.microsoft.com/fwlink/?LinkId=106661](https://go.microsoft.com/fwlink/?LinkId=106661))。  
-  
--   如需有關建立分開命名空間，查看建立分開命名空間 ([https://go.microsoft.com/fwlink/?LinkID=106638](https://go.microsoft.com/fwlink/?LinkID=106638))。  
-  
--   設定服務主體名稱 (Spn) 的相關詳細資訊，會看到服務登入失敗，因為不正確設定 Spn ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304))。  
-  
--   如需有關如何委派修改 Spn 到附屬系統管理員權限的詳細資訊，請查看委派授權修改 Spn ([https://go.microsoft.com/fwlink/?LinkID=106639](https://go.microsoft.com/fwlink/?LinkID=106639))。  
-  
--   如需網域控制站憑證需求，查看 321051 中 Microsoft 知識庫 ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307))。  
-  
--   如需有關輕量型 Directory 存取通訊協定 (LDAP) 驗證安全通訊端層 (SSL) (LDAPS) 及相關的更新的 Windows Server 2003，查看 932834 中 Microsoft 知識庫 ([https://go.microsoft.com/fwlink/?LinkId=102308](https://go.microsoft.com/fwlink/?LinkId=102308)).  
-  
--   適用於群組原則基礎結構的相關詳細資訊，請查看 [設計群組原則基礎結構 ([https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655))。  
-  
--   如需唯讀網域控制站 (Rodc)，請查看 AD DS: Read-Only 網域控制站 ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616))。  
-  
--   如需有關精細的密碼，以及 account 鎖定原則，Step-by-Step 指南 Fine-Grained 密碼，以及 Account 鎖定原則設定 ([https://go.microsoft.com/fwlink/?LinkID=91477](https://go.microsoft.com/fwlink/?LinkID=91477))。  
-  
--   如需命名規格 AD DS，查看 909264 中 Microsoft 知識庫 ([https://go.microsoft.com/fwlink/?LinkID=106629](https://go.microsoft.com/fwlink/?LinkID=106629))。  
-  
+- 如需有關如何設計站台拓撲的詳細資訊，請參閱 <<c0> [ 設計站台拓撲的 Windows Server 2008 AD DS](Designing-the-Site-Topology.md)。  
 
-
+- 可協助您記錄提議的樹系、 網域、 網域名稱系統 (DNS) 基礎結構和組織單位 (OU) 設計的工作表，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 從工作協助Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))。  
+  
+- 如需委派的驗證和限制的委派的詳細資訊，請參閱 < 委派驗證 ([https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614))。  
+  
+- 如需設定防火牆供與 AD DS 的詳細資訊，請參閱 < 防火牆分段之網路中的 Active Directory ([https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928))。  
+  
+- 如需有關如何升級到 Windows Server 2008 的 Active Directory 網域的詳細資訊，請參閱 < [Windows Server 2008 和 Windows Server 2008 R2 AD DS 網域升級 Active Directory 網域](https://technet.microsoft.com/library/cc731188.aspx)。  
+  
+- 如需有關重新建構 AD DS 網域內和樹系之間的詳細資訊，請參閱 < Active Directory 遷移工具 3.1 版遷移指南 》 ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))。  
+  
+- 如需部署樹系根網域的詳細資訊，請參閱[部署 Windows Server 2008 樹系根網域](https://technet.microsoft.com/library/cc731174.aspx)。  
+  
+- 如需部署 DNS 的詳細資訊，請參閱 < 部署網域名稱系統 (DNS) ([https://go.microsoft.com/fwlink/?LinkId=93656](https://go.microsoft.com/fwlink/?LinkId=93656))。  
+  
+- 如需有關 DNS 階層和名稱解析程序的詳細資訊，請參閱 DNS 技術參考資料 ([https://go.microsoft.com/fwlink/?LinkId=106636](https://go.microsoft.com/fwlink/?LinkId=106636))。 DNS 如何支援 AD DS 的詳細資訊，請參閱 DNS 支援，如需 Active Directory 技術參考 ([https://go.microsoft.com/fwlink/?LinkId=106660](https://go.microsoft.com/fwlink/?LinkId=106660))。  
+  
+- 如需 WINS 的詳細資訊，請參閱 WINS 的技術參考 ([https://go.microsoft.com/fwlink/?LinkId=106661](https://go.microsoft.com/fwlink/?LinkId=106661))。  
+  
+- 如需建立脫離的命名空間的詳細資訊，請參閱 < 建立脫離的命名空間 ([https://go.microsoft.com/fwlink/?LinkID=106638](https://go.microsoft.com/fwlink/?LinkID=106638))。  
+  
+- 如需有關如何設定服務主體名稱 (Spn) 的詳細資訊，請參閱服務的登入失敗，因為未正確設定的 Spn ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304))。  
+  
+- 如需如何委派權限可以修改 Spn 以次級系統管理員的詳細資訊，請參閱 < 修改 spn 委派的權限 ([https://go.microsoft.com/fwlink/?LinkID=106639](https://go.microsoft.com/fwlink/?LinkID=106639))。  
+  
+- 如需有關網域控制站憑證需求的詳細資訊，請參閱 321051 在 Microsoft 知識庫文件 ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307))。  
+  
+- 如需關於輕量型目錄存取通訊協定 (LDAP) over Secure Sockets Layer (SSL) (LDAPS) 驗證和相關的更新適用於 Windows Server 2003，請參閱 932834 在 Microsoft 知識庫文件 ([ https://go.microsoft.com/fwlink/?LinkId=102308 ](https://go.microsoft.com/fwlink/?LinkId=102308)).  
+  
+- 如需群組原則基礎結構的詳細資訊，請參閱 < 設計群組原則基礎結構 ([https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655))。  
+  
+- 如需唯讀網域控制站 (Rodc) 的詳細資訊，請參閱 < AD DS:唯讀網域控制站 ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616))。  
+  
+- 如需更細緻的密碼與帳戶鎖定原則的詳細資訊，請參閱逐步指南 》 更細緻的密碼與帳戶鎖定原則設定 ([https://go.microsoft.com/fwlink/?LinkID=91477](https://go.microsoft.com/fwlink/?LinkID=91477))。  
+  
+- 如需在 AD DS 中的命名慣例的詳細資訊，請參閱知識庫文件 909264 Microsoft ([https://go.microsoft.com/fwlink/?LinkID=106629](https://go.microsoft.com/fwlink/?LinkID=106629))。  

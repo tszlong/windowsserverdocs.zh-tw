@@ -1,6 +1,6 @@
 ---
-title: "編輯配額範本內容"
-description: "本文說明如何編輯配額範本內容，以將變更擴展到由原始配額範本中建立的配額"
+title: 編輯配額範本內容
+description: 本文說明如何編輯配額範本內容，以將變更擴展到由原始配額範本中建立的配額
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 0362b30e16dacb354220c770899195240f3e19ee
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885779"
 ---
 # <a name="edit-quota-template-properties"></a>編輯配額範本內容
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 對配額範本進行變更時，您可以選擇將這些變更擴展到由原始配額範本中建立的配額。 您可以選擇只修改那些仍然符合原始範本的配額，或是修改所有衍生自原始範本的配額，無視於這些配額自建立以來所經過的任何修改。 這項功能提供一個可進行所有變更的中心點，以簡化配額內容的更新流程。
 
@@ -39,9 +40,9 @@ ms.lasthandoff: 10/17/2017
     -   如果您想要修改所有由原始範本中建立的現有配額，請選取 **\[將範本套用到所有的衍生配額\]**。
     -   如果您想要保持現有的配額不變，請選取 **\[不要將範本套用到衍生配額\]**。
 
-6.  按一下 **\[確定\]**。
+6.  按一下 [確定] 。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [配額管理](quota-management.md)
 -   [建立配額範本](create-quota-template.md)

@@ -1,6 +1,6 @@
 ---
-title: "在 Windows Server Essentials Launchpad 的概觀"
-description: "告訴您如何使用 Windows Server Essentials"
+title: Windows Server Essentials 中的啟動列概觀
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,91 +13,92 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 9c240320d990652a4669499d99c1fc3eba9e06fa
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883589"
 ---
-# <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>在 Windows Server Essentials Launchpad 的概觀
+# <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Windows Server Essentials 中的啟動列概觀
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-Windows Server Essentials Launchpad 是小型電腦第一次電腦連接到伺服器上安裝的應用程式。 Launchpad 提供驗證的使用者存取電腦備份、共用的檔案和媒體遠端 Web 存取網站包括 Windows Server Essentials 的按鍵功能。 使用者可以加入網域的電腦或非網域連接的電腦的存取這些功能。 Launchpad 也會提供即時的資訊和 health 相關通知的電腦。 系統管理員可以使用 Launchpad 存取伺服器儀表板，即使電腦無法連接到網路。  
+[Windows Server Essentials 啟動列] 是電腦第一次電腦連線到伺服器時安裝在電腦上的小型應用程式。 [啟動列] 可讓已驗證的使用者存取 Windows Server Essentials 的重要功能，包括電腦備份、共用檔案和媒體，以及「遠端 Web 存取」網站。 使用者可以從已加入網域的電腦或未加入網域的電腦存取這些功能。 [啟動列] 也提供有關電腦健康情況的即時資訊和通知。 即使電腦未連線到網路，系統管理員仍可使用 [啟動列] 來存取伺服器的 [儀表板]。  
   
- Oem 和獨立軟體廠商 (Isv) 的 Windows Server Essentials 開發增益集可以使用 Launchpad 延伸到電腦在網路上的增益集功能。  
+ 開發適用於 Windows Server Essentials 之增益集的 OEM 和獨立軟體廠商 (ISV) 可以使用 [啟動列] 將增益集功能延伸到網路上的電腦。  
   
- 在下列 Windows 作業系統支援 Windows Server Essentials Launchpad 使用：  
+ 下列的 Windows 作業系統支援使用 [Windows Server Essentials 啟動列]：  
   
--   **Windows 8**：所有版本。  
+-   **Windows 8**:所有版本。  
   
--   **Windows 7**：所有版本。  
--   **Windows 10**：所有版本。 
+-   **Windows 7**:所有版本。  
+-   **Windows 10**:所有版本。 
   
- 在下列作業系統不支援 Windows Server Essentials Launchpad 的使用：  
+ 下列的 Windows 作業系統不支援使用 [Windows Server Essentials 啟動列]：  
   
--   **其他伺服器]**：您不能在任何其他執行 Windows Server 作業系統的電腦上執行 Windows Server Essentials Launchpad。  
+-   **其他伺服器**：您無法在執行 Windows Server 作業系統的任何其他電腦上執行 [Windows Server Essentials 啟動列]。  
   
- 本主題：  
+ 本主題內容：  
   
--   [使用 Launchpad](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
+-   [使用 [啟動列]](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
   
--   [使用 Launchpad Mac 的電腦](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
+-   [使用 Mac 電腦的啟動列](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
   
-##  <a name="BKMK_Launchpad"></a>使用 Launchpad  
- 下列連結和資訊是適用於 Windows Server Essentials Launchpad。  
+##  <a name="BKMK_Launchpad"></a> 使用 [啟動列]  
+ [Windows Server Essentials 啟動列] 上提供下列連結和資訊。  
   
 ### <a name="backup"></a>備份  
- 按一下**備份**打開**屬性的備份**的電腦。 在**備份屬性**頁面上，您可以：  
+ 按一下 [備份]  以開啟電腦的 [備份內容]  。 在 [備份內容] 頁面上，您可以：  
   
--   [開始]，或停止備份。  
+-   開始或停止備份。  
   
--   檢視的狀態和詳細資料的最近備份。  
+-   檢視最新備份的狀態和詳細資料。  
   
--   指定管理電腦的電源備份執行時的方式。  
+-   指定當執行備份時如何管理電腦電源。  
   
- 了解如何使用 Launchpad 備份您的電腦資訊，請查看[管理 Client 備份](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。  
+ 如需如何使用啟動控制板來備份您的電腦資訊，請參閱[管理的用戶端備份](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。  
   
-### <a name="remote-web-access"></a>遠端存取  
- 按一下**遠端 Web 存取**打開網站遠端網路存取的網頁瀏覽器。 網站遠端網路存取可讓您連接到其他電腦及某些網路資源的 office 或從遠端使用網際網路的電腦位置的存取。 如遠端網站存取的相關詳細資訊，請查看[管理遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
+### <a name="remote-web-access"></a>遠端 Web 存取  
+ 按一下 [遠端 Web 存取] 以將網頁瀏覽器開啟至「遠端 Web 存取」網站。 「遠端 Web 存取」網站可讓您從辦公室內或從具有已啟用網際網路之電腦的遠端位置，連線到其他電腦並存取部分網路資源。 如需遠端 Web 存取的詳細資訊，請參閱[Manage Remote Web Access](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
   
-### <a name="shared-folders"></a>共用的資料夾  
- 按一下**的共用資料夾**以 Windows 檔案總管] 左伺服器上的共用資料夾的位置。 共用檔案和資料夾相關資訊，會看到此主題[管理伺服器資料夾](Manage-Server-Folders-in-Windows-Server-Essentials.md)。  
+### <a name="shared-folders"></a>共用資料夾  
+ 按一下 [共用資料夾] 以將 [Windows 檔案總管] 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾資訊，請參閱主題[Manage Server Folders](Manage-Server-Folders-in-Windows-Server-Essentials.md)。  
   
 ### <a name="dashboard"></a>儀表板  
- 按一下**儀表板**打開**登入**頁面存取 Windows Server Essentials 儀表板。 在您登入之後，遠端桌面連接到伺服器儀表板開啟。 如需儀表板的相關資訊，請查看[儀表板概觀](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)。  
+ 按一下 [儀表板]   以開啟 [登入]  頁面來存取 Windows Server Essentials 儀表板。 在您登入之後，就會開啟連到伺服器 [儀表板] 的「遠端桌面」連線。 如需儀表板的詳細資訊，請參閱[儀表板概觀](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)。  
   
 > [!NOTE]
->  若要使用這項功能，您必須的適當存取或權限伺服器登入。  
+>  若要使用這個功能，您必須具有適當的存取權或權限來登入伺服器。  
   
 ### <a name="microsoft-office-365"></a>Microsoft Office 365  
- **Microsoft Office 365**連結，才會出現在 Launchpad 使用者有 Office 365 account。 按一下**Microsoft Office 365**存取 Office 365 資源額外的連結。 如需詳細資訊，請查看[到使用 Microsoft Office 365 的快速入門指南](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)。  
+ 只有當使用者擁有 Office 365 帳戶時，[啟動列] 上才會顯示 [Microsoft Office 365]  連結。 按一下 [Microsoft Office 365]   以存取 Office 365 資源的其他連結。 如需詳細資訊，請參閱 <<c0> [ 使用 Microsoft Office 365 的快速入門指南](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)。  
   
-### <a name="computer-health-alerts"></a>電腦健康警示  
- 警示 Launchpad 上顯示，提供快速至於立即電腦的健康狀態。 若要檢視健康提醒的相關資訊，請按一下警示指示器打開警示檢視器。 健康警示會根據嚴重性等級檢視器中。 最嚴重警示會顯示在清單中。嚴重性警示稍後將出現在清單中。 如需有關電腦健康警告，請查看[管理系統健康](Manage-System-Health-in-Windows-Server-Essentials.md)。  
+### <a name="computer-health-alerts"></a>電腦健康狀態警示  
+ 顯示在 [啟動列] 上的警示可提供有關電腦立即健康情況的快速狀態。 若要檢視有關健康狀態警示的資訊，請按一下警示指示來開啟警示檢視器。 健康狀態警示會根據嚴重性層級顯示在檢視器中。 最嚴重的警示會顯示在清單中的最前面；較不嚴重的警示會顯示在清單中較後面的地方。 如需有關電腦健康情況警示的詳細資訊，請參閱[Manage System Health](Manage-System-Health-in-Windows-Server-Essentials.md)。  
   
-##  <a name="BKMK_Mac"></a>使用 Launchpad Mac 的電腦  
- 您可以連接 Mac® 電腦執行的 Mac OS X® 10.5 或更新版本的 Windows Server Essentials、Windows Server Essentials，或 Windows Server 2012 R2，或下載並安裝連接器軟體。 當您完成安裝連接器軟體時，您可以選擇會自動開始 Launchpad 在開機。  
+##  <a name="BKMK_Mac"></a> 使用 Mac 電腦的啟動列  
+ 您可以連接 Mac® 電腦執行 Mac OS X® 10.5 或更新版本的 Windows Server Essentials、 Windows Server Essentials 或 Windows Server 2012 R2 或下載並安裝連接器軟體。 當您安裝完連線程式軟體時，您可以選擇在啟動時自動啟動 [啟動列]。  
   
- Launchpad 是小型的應用程式的已驗證的使用者提供的存取權的伺服器，包括共用的檔案和媒體、增益集及遠端 Web 存取按鍵的功能。 Launchpad 也會提供即時的資訊和 health 相關通知的電腦。  
+ [啟動列] 是一個小型應用程式，可讓已驗證的使用者存取伺服器的重要功能，包括共用檔案和媒體、增益集及「遠端 Web 存取」。 [啟動列] 也提供有關電腦健康情況的即時資訊和通知。  
   
 > [!NOTE]
->  伺服器管理員無法使用的 Launchpad 或遠端 Web 存取 Mac 的電腦上開放伺服器儀表板及管理的伺服器。  
+>  伺服器系統管理員無法使用 Mac 電腦上的 [啟動列] 或 [遠端 Web 存取] 來開啟伺服器 [儀表板] 並管理伺服器。  
   
 ### <a name="backup"></a>備份  
- 按一下**備份**來設定電腦的時間備份您的電腦，以及變更電腦的時間設定。 如需有關電腦的時間，您的電腦製造商的文件。  
+ 按一下 [備份] 以設定 Time Machine 來備份您的電腦，以及變更 Time Machine 設定。 如需有關 Time Machine 的詳細資訊，請參閱您電腦製造商的文件。  
   
-### <a name="remote-web-access"></a>遠端存取  
- 按一下**遠端 Web 存取**打開網站遠端網路存取的網頁瀏覽器。 Web 遠端存取可讓您從網際網路的電腦使用的任何位置遠端存取的共用的檔案和資料夾的伺服器上。 您可以將檔案上傳、web 架構媒體播放，請播放的音樂和影片檢視圖片並播放投影片放映。 如需詳細資訊，請查看[使用遠端 Web 存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
+### <a name="remote-web-access"></a>遠端 Web 存取  
+ 按一下 **遠端 Web 存取**開啟遠端 Web 存取網站網頁瀏覽器。 遠端 Web 存取可讓您從任何具有啟用網際網路的電腦的遠端位置存取的共用的檔案和資料夾在伺服器上。 您可以上傳檔案、在 Web 型的「媒體播放」播放音樂和視訊，以及檢視圖片和播放投影片。 如需詳細資訊，請參閱 < [Use Remote Web Access](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
   
-### <a name="shared-folders"></a>共用的資料夾  
- 按一下**的共用資料夾**搜尋打開伺服器上的共用資料夾的位置。 適用於共用檔案和資料夾相關資訊，請查看[使用共用資料夾](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)。  
+### <a name="shared-folders"></a>共用資料夾  
+ 按一下 [共用資料夾] 以將 Finder 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾資訊，請參閱[Use Shared Folders](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)。  
   
-### <a name="computer-health-alerts"></a>電腦健康警示  
- 警示 Launchpad 上顯示，提供快速狀態的電腦立即 health 相關。 若要檢視健康提醒的相關資訊，請按一下警示指示器打開警示檢視器。 健康警示會根據嚴重性等級檢視器中。 最嚴重警示會出現在清單中的第一次。 嚴重性警示稍後將出現在清單中。  
+### <a name="computer-health-alerts"></a>電腦健康狀態警示  
+ 顯示在 [啟動列] 上的警示可提供有關電腦立即健康情況的快速狀態。 若要檢視有關健康狀態警示的資訊，請按一下警示指示來開啟警示檢視器。 健康狀態警示會根據嚴重性層級顯示在檢視器中。 最嚴重的警示會顯示在清單中的最前面。 較不嚴重的警示會顯示在清單中較後面的地方。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
--   [連接](../use/Get-Connected-in-Windows-Server-Essentials.md)  
+-   [連繫接軌](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   

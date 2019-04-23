@@ -1,5 +1,5 @@
 ---
-title: 開發 Nano 伺服器的 PowerShell Cmdlet
+title: 開發 Nano Server 的 PowerShell Cmdlet
 description: '移轉 CIM、.NET Cmdlet、C++ '
 ms.prod: windows-server-threshold
 ms.service: na
@@ -13,20 +13,20 @@ ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c669db414c4f12b6145a26a75b83449f43e8918
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082015"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59887679"
 ---
-# <a name="developing-powershell-cmdlets-for-nano-server"></a>開發 Nano 伺服器的 PowerShell Cmdlet
+# <a name="developing-powershell-cmdlets-for-nano-server"></a>開發 Nano Server 的 PowerShell Cmdlet
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
   
-## <a name="overview"></a>概觀  
+## <a name="overview"></a>總覽  
 Nano Server 預設會在所有 Nano Server 安裝中包含 PowerShell Core。 PowerShell Core 是縮減版 PowerShell，建置在 .NET Core 上，並於 Nano Server 和 Windows IoT 核心版等縮減版 Windows 上執行。 PowerShell Core 的運作方式與其他 PowerShell 版本 (例如 Windows Server 2016 上執行的 Windows PowerShell) 的運作方式相同。 不過，縮減版 Nano Server 表示並非 Windows Server 2016 中的所有 PowerShell 功能都可供 Nano Server 上的 PowerShell Core 使用。  
   
 如果您有想在 Nano Server 上執行的現成 PowerShell Cmdlet，或要開發新的 Cmdlet 以用於該目的，本主題包含的秘訣和建議有助於簡化工作。  
@@ -36,8 +36,8 @@ Nano Server 預設會在所有 Nano Server 安裝中包含 PowerShell Core。 Po
   
 從 5.1 版開始，PowerShell 提供代表各種功能集和平台相容性的不同版本。  
   
-- **Desktop Edition**︰建置在 .NET Framework 上，並與 Server Core 和 Windows Desktop 等完整版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。  
-- **Core Edition**︰建置在 .NET Core 上，並與 Nano Server 和 Windows IoT 等縮減版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。  
+- **Desktop Edition:** 在.NET Framework 上建置，並提供與指令碼和模組在完整使用量的 Server Core 等的 Windows 和 Windows 桌面版本上執行的 PowerShell 版本的相容性。  
+- **Core Edition:** 建置在.NET Core，並提供與指令碼和模組的縮減版 Nano Server 等的 Windows 和 Windows IoT 上執行的 PowerShell 版本相容性。  
   
 $PSVersionTable 的 PSEdition 屬性會顯示正在執行的 PowerShell 版本。  
 ```powershell  
@@ -110,7 +110,7 @@ At line:1 char:1
 [安裝 Nano Server](Getting-Started-with-Nano-Server.md) (也就是本文的最上層主題) 中提供在虛擬或實體機器上安裝 Nano Server 的快速入門和詳細步驟。  
   
 > [!NOTE]  
-> 若要在 Nano Server 上正確開發，使用 New-NanoServerImage 的 -Development 參數來安裝 Nano Server 會很有用。 這會啟用未簽署驅動程式的安裝、複製偵錯工具二進位檔、開啟偵錯用的連接埠、啟用測試簽署，以及啟用 AppX 套件的安裝，而不需要開發人員授權。 例如：  
+> 若要在 Nano Server 上正確開發，使用 New-NanoServerImage 的 -Development 參數來安裝 Nano Server 會很有用。 這會啟用未簽署驅動程式的安裝、複製偵錯工具二進位檔、開啟偵錯用的連接埠、啟用測試簽署，以及啟用 AppX 套件的安裝，而不需要開發人員授權。 例如:   
 >  
 >`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -Development`  
   
@@ -125,7 +125,7 @@ PowerShell 支援 Cmdlet 的一些實作類型，而您所使用的類型會決�
 * %windir%\system32\WindowsPowerShell\v1.0\Modules   
 * %ProgramFiles%\WindowsPowerShell\Modules   
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
-* \<您的產品安裝位置>   
+* \<您的產品安裝位置 >   
     
  在這些位置確認下列詳細資料：  
  * CIM Cmdlet 的副檔名為 .cdxml。  
@@ -160,11 +160,11 @@ SDK 模組也相依於要在 Visual Studio 2015 中安裝的下列功能：
 使用 SDK 模組之前，請先檢閱您的 Visual Studio 安裝，以確保符合這些先決條件。 請確定您在 Visual Studio 安裝期間選取並安裝上述功能，或修改您現有的 Visual Studio 2015 安裝以安裝此功能。  
   
 PowerShell Core SDK 模組包含下列 Cmdlet：  
-- New-NanoCSharpProject︰建立新的 Visual Studio C# 專案，該專案是以 Windows Server 2016 版 Nano Server 隨附的 CoreCLR 和 PowerShell Core 為目標。  
-- Show-SdkSetupReadMe︰在檔案總管中開啟 SDK 根資料夾，然後開啟 README.txt 檔案手動進行安裝。  
-- Install-RemoteDebugger︰在 Nano Server 電腦上安裝及設定 Visual Studio 遠端偵錯工具。  
-- Start-RemoteDebugger︰在執行 Nano Server 的遠端電腦上啟動遠端偵錯工具。  
-- Stop-RemoteDebugger︰在執行 Nano Server 的遠端電腦上停止遠端偵錯工具。  
+- New-NanoCSharpProject:建立新的 Visual StudioC#以 CoreCLR 和 PowerShell Core 包含在 Nano Server 的 Windows Server 2016 版本為目標的專案。  
+- Show-SdkSetupReadMe:在 [檔案總管] 中開啟 SDK 根資料夾，並開啟 README.txt 檔案手動進行安裝。  
+- Install-remotedebugger︰安裝和設定 Nano Server 電腦上的 Visual Studio 遠端偵錯工具。  
+- Start-remotedebugger︰在執行 Nano Server 的遠端電腦上啟動遠端偵錯工具。  
+- Stop-remotedebugger︰在執行 Nano Server 的遠端電腦上停止遠端偵錯工具。  
   
 如需如何使用這些 Cmdlet 的詳細資訊，請在安裝並匯入模組之後，在每個 Cmdlet 上執行 Get-Help，如下所示：  
   
@@ -182,7 +182,7 @@ PowerShell Core SDK 模組包含下列 Cmdlet：
   
 ### <a name="building-c-for-nano-server"></a>建置適用於 Nano Server 的 C#  
   
-在 Visual Studio 2015 中使用 `New-NanoCSharpProject` 建立 C# 專案之後，您可以直接在 Visual Studio 中按一下 **\[組建\]** 功能表，然後選取 **\[建置專案\]** 或 **\[建置方案\]** 加以建置。 產生的組件會以 Nano Server 隨附的正確 CoreCLR 和 PowerShell Core 為目標，而且您只能將這些組件複製到執行 Nano Server 的電腦，再加以使用。  
+在 Visual Studio 2015 中使用 `New-NanoCSharpProject` 建立 C# 專案之後，您可以直接在 Visual Studio 中按一下 [組建] 功能表，然後選取 [建置專案] 或 [建置方案] 加以建置。 產生的組件會以 Nano Server 隨附的正確 CoreCLR 和 PowerShell Core 為目標，而且您只能將這些組件複製到執行 Nano Server 的電腦，再加以使用。  
   
 ### <a name="building-managed-c-cppcli-for-nano-server"></a>建置適用於 Nano Server 的 Managed C++ (CPP/CLI)  
 CoreCLR 不支援 Managed C++。 移植到 CoreCLR 時，請在 C# 中重寫 Managed C++ 程式碼，並透過 PInvoke 進行所有原生呼叫。  
@@ -242,7 +242,7 @@ $result.RemoteAddress = 1.1.1.1
   
 ### <a name="migrating-from-wmi-net-to-mi-net"></a>從 WMI .NET 移轉至 MI .NET  
   
-不支援 [WMI.NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx)，因此使用舊版 API 的所有 Cmdlet 都必須移轉至支援的 WMI API：[MI.NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx)。 您可以直接透過 C# 或透過 CimCmdlets 模組中的 Cmdlet 來存取 MI .NET。   
+[WMI.NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx)不支援，因此使用舊版 API 的所有 cmdlet 必須都移轉到支援的 WMI API:[MI。NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx)。 您可以直接透過 C# 或透過 CimCmdlets 模組中的 Cmdlet 來存取 MI .NET。   
   
 ### <a name="cimcmdlets-module"></a>CimCmdlets 模組  
   

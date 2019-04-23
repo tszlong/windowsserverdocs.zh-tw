@@ -1,37 +1,38 @@
 ---
 ms.assetid: d8e61aa4-8e4b-4097-83ca-70cf61366b75
-title: "使用組織單位物件的管理委派"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 使用 OU 物件委派管理
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 8d0b4765304d8b302fc174c191af2c8e87a25304
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 39c4278270e4ab4fba9ff1062d2aa043d203a74b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886939"
 ---
-# <a name="delegating-administration-by-using-ou-objects"></a>使用組織單位物件的管理委派
+# <a name="delegating-administration-by-using-ou-objects"></a>使用 OU 物件委派管理
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-您可以使用組織單位 (Ou) 物件，例如使用者或電腦的系統管理委派組織單位指定的個人或群組中。 若要委派管理，使用組織單位，將的個人或群組的您委派系統管理員權限的群組、 放入組織單位，控制物件，然後管理工作委派的組織單位加入該群組。  
+您可以使用委派物件，例如使用者或電腦的系統管理的組織單位 (Ou) 內指定的個人或群組的 OU。 若要使用 OU 來委派管理，放置的個人或群組，您委派系統管理權限的群組放置到 OU，控制物件的集合，然後將系統管理工作委派給該群組的 ou。  
   
-Active Directory Domain Services (AD DS) 可讓您控制可在非常詳細層級委派管理工作。 例如，您可以指定; 中有完全控制所有物件群組僅限來建立、 delete，及管理使用者帳號組織單位; 中的權限指派另一個群組然後指派第三個群組右側來重設使用者 account 密碼。 您可以讓這些權限繼承權，使它們套用至任何 Ou 的放置在子的原始組織單位。  
+Active Directory 網域服務 (AD DS) 可讓您控制可以在非常詳細的層級委派的系統管理工作。 比方說，您可以將 OU; 中擁有的所有物件的完整控制權的一個群組的指派指派另一個群組的權限，才能建立、 刪除和管理 OU; 中的使用者帳戶然後指派第三個群組的權限只重設使用者帳戶密碼。 您可以進行這些權限繼承，使其套用至任何位於原始的 OU 的樹狀子目錄中的 Ou。  
   
-預設 Ou 容器 AD DS 在安裝期間建立及服務的系統管理員所控制。 如果您仍控制這些容器服務系統管理員，是最好的作法。 如果您需要委派中 directory 物件的控制，請建立其他 Ou 和置於這些 Ou 物件。 控制這些 Ou 委派給系統管理員適當的資料。 這樣可以委派中 directory 物件的控制，而不變更預設的控制項給定服務的系統管理員。  
+預設的 Ou 和容器在 AD DS 安裝期間建立，且受服務系統管理員。 如果服務系統管理員繼續控制這些容器，它是最佳。 如果您要委派控制物件在目錄中，建立其他 Ou，並將物件放在這些 Ou。 這些 Ou 的控制權，委派給適當的資料管理員。 這讓您能夠委派控制目錄中的物件，而不需要變更提供給服務系統管理員的預設控制項。  
   
-樹系擁有者判斷委派給組織單位擁有者授權層級。 這的範圍可從 [建立及管理只允許控制單一類型單一中組織單位物件的屬性組織單位中的物件的能力。 授與使用者的能力隱含建立組織單位物件授與使用者的能力來管理的任何物件，使用者會建立任何屬性。 此外，如果容器所建立的物件，使用者隱含有建立及管理任何物件的容器位於的能力。  
+樹系擁有者決定委派給 OU 擁有者的權限等級。 這可以介於能夠建立和操作來控制單一 OU 中的物件類型的單一屬性只允許 OU 中的物件。 授與使用者能夠以隱含方式建立的 OU 中的物件授與該使用者的能力，來操作任何屬性的任何使用者建立的物件。 此外，所建立的物件是容器，如果使用者以隱含方式能夠建立及操作會放在容器中的任何物件。  
   
-## <a name="in-this-section"></a>在本區段中  
+## <a name="in-this-section"></a>本節內容  
   
--   [預設容器和 Ou 的管理委派](../../ad-ds/plan/Delegating-Administration-of-Default-Containers-and-OUs.md)  
+-   [委派預設容器和 Ou 的系統的管理](../../ad-ds/plan/Delegating-Administration-of-Default-Containers-and-OUs.md)  
   
--   [Account Ou 和資源 Ou 的管理委派](../../ad-ds/plan/Delegating-Administration-of-Account-OUs-and-Resource-OUs.md)  
+-   [委派系統管理帳戶 Ou 與資源 Ou](../../ad-ds/plan/Delegating-Administration-of-Account-OUs-and-Resource-OUs.md)  
   
 
 

@@ -1,6 +1,6 @@
 ---
-title: "自動安裝在設定期間的增益集"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 安裝期間自動安裝增益集
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,30 +13,31 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d4c547c2fec8e2b11e5c1d9bde46e55e91c9d6fa
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884619"
 ---
-# <a name="automate-installation-of-add-ins-during-setup"></a>自動安裝在設定期間的增益集
+# <a name="automate-installation-of-add-ins-during-setup"></a>安裝期間自動安裝增益集
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a>在設定期間中自動安裝增益集  
- 在設定期間安裝增益集，請使用中所述 PostIC.cmd 方法[建立執行文章初始設定工作 PostIC.cmd 檔案](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)區段本文件。  
+##  <a name="BKMK_AddIns"></a> 在安裝期間自動安裝的增益集  
+ 要在安裝期間安裝增益集，可以使用本文件中 [Create the PostIC.cmd File for Running Post Initial Configuration Tasks](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) 一節中說明的 PostIC.cmd 方法進行。  
   
- 將下列項目新增至您 PostIC.cmd:  
+ 將下列項目新增到您的 PostIC.cmd：  
   
 ```  
 C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q  
 ```  
   
- 增益集，現在支援預先安裝並自訂解除安裝步驟。  
+ 增益集現在支援前置安裝和自訂解除安裝步驟。  
   
- 安裝所有之前的預先安裝步驟執行**.msi**中 addin.xml 指定的檔案。 互動模式中執行時，進度對話方塊將會顯示，但不需要進行的變更。 [取消] 按鈕已停用階段預先安裝。 若要實作預先安裝步驟，請在 [addin.xml （直接在套件） 中新增下列到：  
+ 安裝 addin.xml 中指定的所有 **.msi** 檔案之前，會先執行前置安裝步驟。 以互動模式執行時，將顯示進度對話方塊，但不會變更進度。 在前置安裝階段，會停用取消按鈕。 若要實作前置安裝步驟，請在 addin.xml 中新增下列內容 (直接位於 Package 下)：  
   
 > [!NOTE]
->  完全遵循下一個 xml 架構需要：  
+>  xml 結構描述需要嚴格遵循下列規定：  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -64,17 +65,17 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 <¦>  
 ```  
   
- Wherein **exefile**來執行預先安裝的步驟，增益集套件中的可執行檔，您必須指定。 **NormalArgs**指定引數傳送到 exefile 模式命令列互動時使用。 在此模式下，exefile 可以快顯功能表有些對話方塊的使用者互動。 **SilentArgs**指定使用命令列無訊息時模式傳遞至 exefile 引數 (-q 指定叫用 installaddin.exe 時)。 Exefile 應該不快顯功能表任何 windows 在此模式。 如果**IgnoreExitCode**指定為 true，以預先安裝步驟一定會被視為成功，否則結束代碼 0 表示成功、 1 表示取消，和其他值表示失敗。 標記**NormalArgs**， **SilentArgs**，並**IgnoreExitCode**是所有選用。  
+ 其中 **exefile** 是增益集套件中的可執行檔，用於執行前置安裝步驟，必須加以指定。 **NormalArgs** 指定在使用互動模式時，要在命令行中遞送給 exefile 的引數。 在此模式中，exefile 會快顯一些對話方塊，用來與使用者互動。 **SilentArgs** 指定在使用無訊息模式時，要在命令行中遞送給 exefile 的引數 (叫用 installaddin.exe 時，會指定 -q)。 在此模式中，exefile 不應快顯任何視窗。 如果將 **IgnoreExitCode** 指定為 true，將一律認為前置安裝步驟成功，否則將以結束碼 0 表示成功，1 表示取消，其他值表示失敗。 **NormalArgs**、 **SilentArgs**和 **IgnoreExitCode** 標記都是選用的。  
   
- 自訂解除安裝步驟可使用下列其中一項：  
+ 可針對下列任何情況使用自訂解除安裝步驟：  
   
--   取代建確認對話方塊。  
+-   取代內建確認對話方塊。  
   
--   填入解除安裝之前自訂的對話方塊。  
+-   在解除安裝之前填入自訂對話方塊。  
   
--   執行特定工作之前解除安裝。  
+-   在解除安裝之前執行特定的工作。  
   
- 若要實作解除安裝步驟，請在 [addin.xml （直接在套件） 中新增下列到：  
+ 若要實作解除安裝步驟，請在 addin.xml 中新增下列內容 (直接位於 Package 下)：  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -98,26 +99,26 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 </Package>  
 ```  
   
- Wherein**完整-path-到-exefile**指定 exefile 已安裝在系統。 **引數**是選擇性的並在指定的命令列 exefile 引數。 之前建解除安裝確認叫用 exefile 對話方塊彈出。  
+ 其中 **full-path-to-exefile** 表示 exefile 已安裝在系統中。 **Arguments** 是選用的，並可指定 exefile 的命令行引數。 exefile 會在快顯內建解除安裝確認對話方塊之前叫用。  
   
- Exefile 可以執行下列這個階段中的任務：  
+ exefile 可在此階段中執行下列工作：  
   
--   跳出有些對話方塊的使用者互動。  
+-   快顯某些對話方塊，用來與使用者互動。  
   
--   執行一些背景工作。  
+-   執行某些背景工作。  
   
- Exe 檔案結束代碼判斷解除安裝程序如何向前移動：  
+ 此 exe 檔案的結束碼會決定解除安裝程序如何推進：  
   
--   0： 使用者已經有確認一樣持續填入建確認對話方塊，而解除安裝程序。 （這種方式可以用來更換建確認對話方塊。）  
+-   0：解除安裝程序繼續執行，但不填入內建確認對話方塊，就如同使用者已確認那樣。 (可使用此方法來取代內建確認對話方塊)；  
   
--   1： 取消解除安裝程序，並取消的郵件最後會顯示使用者。 所有保持不變。  
+-   1：解除安裝程序取消，最終會向使用者顯示已取消的訊息。 一切保持不變；  
   
--   其他： 解除安裝程序就會繼續建確認] 對話方塊中，就像不存在自訂解除安裝步驟。  
+-   其他：解除安裝程序繼續執行內建確認對話方塊，就像自訂解除安裝步驟不存在一樣。  
   
- Exefile 傳回 0 或 1 以外的程式碼在相同的行為會導致 exefile 叫用的任何失敗。  
+ 任何叫用 exefile 失敗的情況，都會導致與 exefile 傳回非 0 或 1 字碼相同的行為。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)

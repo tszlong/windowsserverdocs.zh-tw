@@ -9,13 +9,13 @@ author: lizap
 ms.author: elizapo
 ms.date: 05/10/2018
 ms.openlocfilehash: c80738fe7ceda43a1a73adb0a8b1061bbb24319f
-ms.sourcegitcommit: 4b9b21ca1f366388a78ead7413cb581f2b23d4c6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "2712223"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886199"
 ---
-# 從 Windows Server 版本 1803 開始移除或計劃取代的功能
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>從 Windows Server 版本 1803 開始移除或計劃取代的功能
 
 > 適用於：Windows Server 版本 1803
 
@@ -25,18 +25,18 @@ ms.locfileid: "2712223"
 > - 您可以加入 [Windows 測試人員計畫](https://insider.windows.com)來優先存取 Windows Server 組建，這是測試功能變更的絕佳方式。
 > - 對其他版本有任何問題嗎？ 查看 [Windows Server 2016](deprecated-features.md) 和 [Windows Server 版本 1709](removed-features-1709.md) 的相關資訊。
 
-**清單隨時會變更，可能無法完全列出各項受影響的特色與功能。** 
+**清單會有所變更，且可能不會包含每個受影響的功能。** 
 
-## 我們在此版本中移除的功能
+## <a name="features-we-removed-in-this-release"></a>我們在此版本中移除的功能
 
 我們從 Windows Server 版本 1803 已安裝的產品映像中移除了下列特性與功能。 如果您沒有使用替代方法，依存於這些功能的應用程式或程式碼將無法在此版本中運作。   
 
 |功能    |您可以改用...|
 |-----------|--------------------|
-|[檔案複寫服務 (FRS)](https://support.microsoft.com/en-us/help/4025991/windows-server-version-1709-no-longer-supports-frs)|最早出現在 Windows Server 2003 R2 中的檔案複寫服務 (FRS) 已由 DFS 複寫取代。 您需要[透過 SYSVOL 將任何使用 FRS 的網域控制站都移轉至 DFS 複寫](https://blogs.technet.microsoft.com/filecab/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol/)。|
+|[檔案複寫服務](https://support.microsoft.com/en-us/help/4025991/windows-server-version-1709-no-longer-supports-frs)|最早出現在 Windows Server 2003 R2 中的檔案複寫服務 (FRS) 已由 DFS 複寫取代。 您需要[透過 SYSVOL 將任何使用 FRS 的網域控制站都移轉至 DFS 複寫](https://blogs.technet.microsoft.com/filecab/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol/)。|
 |Hyper-V 網路虛擬化 (HNV)|[網路虛擬化](../networking/sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)現已包含在 Windows Server 中做為[軟體定義網路](../networking/sdn/software-defined-networking.md) (SDN) 解決方案的一部分，這也包含網路控制卡、軟體負載平衡、使用者定義路由和存取控制清單。|
 
-## 我們不再開發的功能
+## <a name="features-were-no-longer-developing"></a>我們不再開發的功能
 
 我們不再主動開發這些功能，而且可能在未來更新中加以移除。 有些功能已取代為其他特色或功能，有些則暫時從不同的來源提供。 
 
@@ -55,5 +55,5 @@ ms.locfileid: "2712223"
 |[RemoteFX vGPU](../remote/remote-desktop-services/rds-remotefx-vgpu.md)|我們正在針對虛擬化環境開發新的圖形加速選項。 您也可以使用[不同的裝置指派 (DDA)](../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md) 做為替代方法。|
 |群組原則中的[軟體限制原則](../identity/software-restriction-policies/software-restriction-policies.md)|不要透過群組原則使用軟體限制原則，您可以使用 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/applocker/applocker-overview) 或 [Windows Defender 裝置控制](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control)來控制哪些應用程式使用者可以存取，以及什麼程式碼可以在核心中執行。|
 |使用 SAS 結構之共用設定的儲存空間|部署[儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)。 「儲存空格直接存取」支援使用 HLK 認證 SAS 機箱，但是要在非共用設定下使用，如[儲存空格直接存取硬體需求](../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md)中所述的。|
-|Windows Server Essentials 體驗|我們不再針對 Windows Server Standard 或 Windows Server Datacenter SKU 開發 Essentials 體驗角色。 如果您需要適用於中小型企業的簡單易用伺服器解決方案，請查看我們新的 [Microsoft 365 商務版](https://www.microsoft.com/microsoft-365/business)解決方案，或使用 [Windows Server 2016 Essentials](https://docs.microsoft.com/windows-server-essentials/get-started/get-started)。|
+|Windows Server Essentials 體驗|我們不再針對 Windows Server Standard 或 Windows Server Datacenter SKU 開發 Essentials 體驗角色。 如果您需要適用於中小型企業的簡單易用伺服器解決方案，請查看我們新的 [Microsoft 365 商務版](https://www.microsoft.com/microsoft-365/business)解決方案，或使用 [Windows Server 2016 Essentials](https://docs.microsoft.com/windows-server-essentials/get-started/get-started)。|
 

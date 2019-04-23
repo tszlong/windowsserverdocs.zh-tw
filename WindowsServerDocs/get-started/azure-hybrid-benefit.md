@@ -9,17 +9,17 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 3883eebbba70bfea0221e510863ee1a724a5f926
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5783670"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884079"
 ---
-# 適用於 Windows Server 的 Azure Hybrid Benefit
+# <a name="azure-hybrid-benefit-for-windows-server"></a>適用於 Windows Server 的 Azure Hybrid Benefit
 
->適用於︰Windows Server
+>適用於：Windows Server
 
-## Benefit 描述、規則與使用案例
+## <a name="benefit-description-rules-and-use-cases"></a>Benefit 描述、規則與使用案例
 
 適用於 Windows Server 的 Azure Hybrid Benefit 可讓您利用內部部署 Windows Server 授權搭配軟體保證，在 Azure 中節省高達 40% 的 Windows Server VM。  透過這項權益，客戶只需要支付基礎結構成本，因為軟體保證權益已涵蓋 Windows Server 的授權。  此權益適用於 Windows Server 2008R2、2012、2012R2 與 2016 版本的 Standard 和 Datacenter 版本。  這項權益在所有地區和 Sovereign 雲端都能使用。
 
@@ -37,7 +37,7 @@ ms.locfileid: "5783670"
 
 運用 Azure Hybrid Benefit 的 VM 只有 SA/訂閱期間才能在 Azure 中執行。 接近 SA/訂閱到期時間時，客戶可以選擇續約 SA/訂閱、關閉該 VM 的混合式權益功能或解除佈建使用混合式權益的 VM。 
 
-### 節省範例 
+### <a name="savings-examples"></a>節省範例 
 
 ![圖片 2](media/ahb02.png)
  
@@ -51,13 +51,13 @@ Windows Server 搭配 SA 需求參考表：
 
 幾個授權定位的設定範例：
 
-![圖片 4](media/ahb04.png)
-![圖片 5](media/ahb05.png)
+![圖 4](media/ahb04.png)
+![影像 5](media/ahb05.png)
 
  
 如果您想深入了解適用於 Windows Server 的 Azure Hybrid Benefit，請移至 Azure Hybrid Benefit 網站。
 
-## 如何維持合規性
+## <a name="how-to-maintain-compliance"></a>如何維持合規性
 
 想將 Azure Hybrid Benefit 應用至其 Windows Server VM 的客戶，必須先確認符合資格的授權數目，以及 SA/訂閱的涵蓋期間，然後才能啟用權益並套用上述指導方針以部署權益提供的正確 VM 數目。 如果您已經有搭配 Azure Hybrid Benefit 執行的 VM，您將需要清查正在執行多少單位，並根據您擁有的作用中 SA 授權進行檢查。  請連絡您的 Microsoft Enterprise Agreement 授權專家，來驗證您的 SA 授權定位。
 若要查看並計算訂閱中搭配適用於 Windows Server 的 Azure Hybrid Benefit 部署的所有虛擬電腦，您可以執行下列其中一個方法：
@@ -92,14 +92,14 @@ Windows Server 搭配 SA 需求參考表：
 
 可透過下列其中一個 Microsoft 授權管道組合，購買 Windows Server 軟體保證和/或訂閱：
 
-| 管道                      | Open     | OVS      | Select/ Select Plus  | MPSA       | EA/EAS   |
+| 頻道                      | 開啟     | OVS      | Select/ Select Plus  | MPSA       | EA/EAS   |
 |------------------------------|----------|----------|-----------------------|-----------|----------|
 | 一般大小 (裝置數)  | 5-250    | 5-250    | >250                  | >250      | >500     |
 | SA/訂閱            | 選擇性 | 內含 | 選擇性              | 選擇性  | 內含 |
 
 Microsoft 保留隨時稽核最終客戶以驗證其是否符合 Azure Hybrid Benefit 資格的權利。 
 
-## 部署指導 
+## <a name="deployment-guidance"></a>部署指導 
 
 我們已為所有擁有符合資格授權的客戶啟用預先建置庫映像可用性，無論其購買地點，此外也允許合作夥伴可以代表客戶執行部署。 
 

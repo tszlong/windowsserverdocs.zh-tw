@@ -1,6 +1,6 @@
 ---
-title: 設定 DNS 資源記錄存取領域
-description: 本主題是在 Windows Server 2016 的 IP 位址管理 (IPAM) 管理組節目表的一部分。
+title: 設定 DNS 資源記錄的存取範圍
+description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,40 +13,41 @@ ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 06c33a633975497e80863cc8d42b14a0f9ac8193
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 2e63c82ef0c58a9b4392ad8b9b1fc896d075ab71
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882909"
 ---
-# <a name="set-access-scope-for-dns-resource-records"></a>設定 DNS 資源記錄存取領域
+# <a name="set-access-scope-for-dns-resource-records"></a>設定 DNS 資源記錄的存取範圍
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-若要使用 IPAM client 主機設定 DNS 資源記錄存取範圍，您可以使用此主題。  
+若要使用 IPAM 用戶端主控台中設定 DNS 資源記錄的存取範圍，您可以使用本主題。  
   
-資格在**系統管理員**，或相當於，才能執行此程序最小值。  
+若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。  
   
-### <a name="to-set-access-scope-for-dns-resource-records"></a>若要設定 DNS 資源記錄存取範圍  
+### <a name="to-set-access-scope-for-dns-resource-records"></a>若要設定 DNS 資源記錄的存取範圍  
   
-1.  在伺服器管理員中，按一下**IPAM**。 顯示 IPAM client 主機。  
+1.  在 [伺服器管理員] 中，按一下**IPAM**。 IPAM 用戶端主控台隨即出現。  
   
-2.  在瀏覽窗格中，按一下**DNS 區域**。  在較低的瀏覽窗格中，展開**向前查詢**並瀏覽]，然後選取 [包含您想要變更其存取範圍資源記錄區域。  
+2.  在 [導覽] 窗格中，按一下**DNS 區域**。  在下方瀏覽窗格中，依序展開**正向對應**和瀏覽至並選取包含您想要變更其存取範圍的資源記錄的區域。  
   
-3.  在 [顯示] 窗格中，尋找並選取您想要變更其存取範圍資源記錄。  
+3.  在 [顯示] 窗格中，找出並選取您想要變更其存取範圍的資源記錄。  
   
-    ![選取資源記錄](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_02.jpg)  
+    ![選取的資源記錄](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_02.jpg)  
   
-4.  選取的 DNS 資源記錄上按一下滑鼠右鍵，然後按一下**設定存取範圍**。  
+4.  所選的 DNS 資源記錄，以滑鼠右鍵按一下，然後按一下**設定存取領域**。  
   
-    ![將存取範圍設定](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_03.jpg)  
+    ![設定存取領域](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_03.jpg)  
   
-5.  **設定存取範圍**對話方塊。 如果您需要為您的部署，按一下 [取消選取**繼承存取範圍家長的**。 在**選擇存取範圍**，選取項目，然後按一下 [ **[確定]**。  
+5.  **設定存取領域**對話方塊隨即開啟。 如果您的部署所需，按一下以取消選取**從父系繼承存取領域**。 在 **選取 存取領域**，選取一個項目，然後按一下 **確定**。  
   
-    ![選取存取領域](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_04.jpg)  
+    ![選取 存取領域](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_04.jpg)  
   
-## <a name="see-also"></a>也了  
-[以角色為基礎存取控制](Role-based-Access-Control.md)  
+## <a name="see-also"></a>另請參閱  
+[角色型存取控制](Role-based-Access-Control.md)  
 [管理 IPAM](Manage-IPAM.md)  
   
 

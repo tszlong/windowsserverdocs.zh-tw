@@ -1,6 +1,6 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
-title: "在 Windows Server 2016 中更新磁碟機韌體"
+title: 在 Windows Server 2016 中更新磁碟機韌體
 ms.prod: windows-server-threshold
 ms.author: toklima
 ms.manager: dmoss
@@ -8,14 +8,15 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 90019ed8425d72d30059be5d47458785cac34c73
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 50291bd4da05d9c2736c84443b444b9a43f46344
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884779"
 ---
 # <a name="updating-drive-firmware-in-windows-server-2016"></a>在 Windows Server 2016 中更新磁碟機韌體
->適用於：Windows 10、Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows 10、windows Server （半年通道），Windows Server 2016
 
 更新磁碟機韌體向來都是可能導致停機的麻煩工作，這就是我們要改善儲存空間、Windows Server 及 Windows 10 版本 1703 和更新版本的原因。 如果您的磁碟機支援 Windows 中所含的新韌體更新機制，則可以更新生產磁碟機的磁碟機韌體，而不造成停機。 不過，如果您要更新生產磁碟機的韌體，請務必閱讀在使用這個功能強大的新功能時如何將風險降到最低的提示。
 
@@ -29,11 +30,11 @@ ms.lasthandoff: 10/17/2017
 如需硬體是否支援 Windows 更新磁碟機韌體的相關資訊，請連絡解決方案廠商。
 以下是各種需求的連結︰
 
--   SATA：[Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - 在 **\[如果已實作\] 韌體下載和啟用**小節
+-   SATA:[Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) -在 **[如果實作\]韌體下載和啟用**區段
     
--   SAS：[Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - 在 **\[如果已實作\] 韌體下載和啟用**小節
+-   SAS:[Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) -在 **[如果實作\]韌體下載和啟用**區段
 
--   NVMe：[Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - 在 **5.7** 和 **5.8** 小節。
+-   NVMe:[Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) -在區段**5.7**並**5.8**。
 
 ## <a name="powershell-cmdlets"></a>PowerShell Cmdlet
 
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/17/2017
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-第一個 Cmdlet 提供裝置功能、韌體映像和修訂的詳細資訊。 在此情況下，機器只會包含有 1 個韌體插槽的單一 SATA SSD。 這裡提供一個範例：
+第一個 Cmdlet 提供裝置功能、韌體映像和修訂的詳細資訊。 在此情況下，機器只會包含有 1 個韌體插槽的單一 SATA SSD。 以下為範例：
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -104,7 +105,7 @@ Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.
 
 1. 檢閱韌體版本資訊，並確認更新可解決可能會影響您環境的問題，而且韌體不會包含任何可能會對您造成負面影響的已知問題。
 
-2. 在實驗室中於具有相同磁碟機的伺服器上安裝韌體 (如果有相同磁碟機的多個修訂，則包含磁碟機修訂)，並使用新的韌體測試正在進行載入的磁碟機。 如需執行綜合負載測試的相關資訊，請參閱[在 Windows Server 中使用綜合工作負載測試儲存空間效能](https://technet.microsoft.com/en-us/library/dn894707.aspx)。
+2. 在實驗室中於具有相同磁碟機的伺服器上安裝韌體 (如果有相同磁碟機的多個修訂，則包含磁碟機修訂)，並使用新的韌體測試正在進行載入的磁碟機。 如需執行綜合負載測試的相關資訊，請參閱[在 Windows Server 中使用綜合工作負載測試儲存空間效能](https://technet.microsoft.com/library/dn894707.aspx)。
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>使用儲存空間直接存取的自動化韌體更新
 
@@ -150,7 +151,7 @@ Windows Server 2016 包含儲存空間直接存取部署的健全狀況服務 (�
 ```powershell
 $SpacesDirect = Get-StorageSubSystem Clus*
 
-$CurrentDoc = $SpacesDirect | Get-StorageHealtHealth Service etting -Name "System.Storage.SupportedComponents.Document"
+$CurrentDoc = $SpacesDirect | Get-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document"
 
 $CurrentDoc.Value | Out-File <Path>
 ```
@@ -163,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-如果您想要查看作用中的健全狀況服務，並深入了解其推出機制，請看這部影片︰https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+如果您想要查看作用中的健全狀況服務，並深入了解其推出機制，看看這段影片： https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
@@ -194,7 +195,7 @@ $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponen
 
 ### <a name="what-happens-if-the-update-fails"></a>如果更新失敗，會發生什麼事
 
-更新可能會因各種原因而失敗，其中一部分是︰1) 磁碟機不支援讓 Windows 更新其韌體的正確命令。 在此情況下，新的韌體映像永遠不會啟用，而且磁碟機會繼續使用舊的映像運作。 2) 映像無法下載至或套用至這個磁碟機 (版本不符、影像損毀…)。 在此情況下，磁碟機會讓 activate 命令失敗。 同樣地，舊的韌體映像將會繼續使用函數。
+更新可能會因為各種原因而失敗，有些則：1） 的磁碟機不支援 Windows 更新其韌體的正確命令。 在此情況下，新的韌體映像永遠不會啟用，而且磁碟機會繼續使用舊的映像運作。 2) 映像無法下載至或套用至這個磁碟機 (版本不符、影像損毀…)。 在此情況下，磁碟機會讓 activate 命令失敗。 同樣地，舊的韌體映像將會繼續使用函數。
 
 如果磁碟機在韌體更新之後根本未回應，則您可能會在磁碟機韌體本身發現錯誤。 先測試實驗室環境中的所有韌體更新，再將它們放到生產環境中。 唯一的補救方式可能是更換磁碟機。
 

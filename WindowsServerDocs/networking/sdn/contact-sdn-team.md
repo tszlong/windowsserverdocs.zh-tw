@@ -1,6 +1,6 @@
 ---
-title: 請連絡雲端網路功能的小組與資料中心
-description: 此頁面的設計目的是針對上的最佳方法到達 SDN 小組在各種不同的環境中的通知。
+title: 請連絡資料中心和雲端網路團隊
+description: 此頁面被設計來通知客戶會在達到在不同內容中的 SDN 小組的最佳方法。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -8,41 +8,42 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: pashort
 author: kallie-b
-ms.openlocfilehash: 2906c1af3439c18f872fe6598338635d322c6d45
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: ff102fc02208bc12b99b50c3b16e3dc51f397d76
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884489"
 ---
-# <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡雲端網路功能的小組與資料中心
+# <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 
 > 適用於：Windows Server 2016
 
-Microsoft 的**軟體定義網路 \(SDN\)**和**容器網路**Datacenter 和雲端網路功能的小組所建立方案。 請使用這個頁面會小組-詢問問題、提供意見反應，以聯繫報告錯誤或功能的要求。
+Microsoft 的**軟體定義網路\(SDN\)** 並**容器網路功能**解決方案所建立的資料中心和雲端網路團隊。 請使用此頁面會連絡小組詢問問題，請提供意見反應，回報的 bug，或提出功能要求。
 
-有許多提供連絡 Microsoft 團隊，並時，請遵循我們的社群來使用途徑的所有 SDN 團隊我們盡力，以下是論壇似乎已最活躍的清單。 *這些按鍵資源的使用者，且因此都是我們最接近觀賞途徑。*
+有許多的途徑，連絡 Microsoft teams 中，而我們盡全力 SDN 小組遵循所有使用我們的社群途徑，而這裡是一份往往是最常使用的論壇。 *這些重要資源的使用者，且因此都是我們觀看最接近的途徑。*
 
-## [<a name="twitter"></a>Twitter](https://twitter.com/Microsoft_SDN)
+## <a name="twitterhttpstwittercommicrosoftsdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
-最近我們啟動 twitter 與我們卡[@Microsoft_SDN](https://twitter.com/Microsoft_SDN)。 歡迎使用 twitter 詢問問題、提供意見反應或文件功能日要求。
-> 除了您可以連絡問題日的意見反應/要求的位置，請考慮將 Twitter 地方以取得您的 [摘要] SDN 和 Windows 容器網路-Twitter 是第一個地方我們將會與相關的所有項目上**文章新聞**，宣布**的新功能**，指向所有社群我們**最新的部落格和資源**。
+我們最近推出的 Twitter 作為我們目前狀態[ @Microsoft_SDN ](https://twitter.com/Microsoft_SDN)。 請隨意提出問題、 提供意見反應或提出功能/文件要求使用我們的 Twitter 控制代碼。
+> 除了其中您可以連絡與問題/意見反應要求的位置，請考慮 Twitter 的地方以您的 「 摘要 」 上 SDN 和 Windows 容器網路功能-Twitter 是我們將第一個位置與相關的所有項目**張貼新聞**，宣布**新功能**指向的所有社群和我們**最新的部落格和資源**。
 
-## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([Microsoft 日 SDN 存放庫](https://github.com/Microsoft/SDN/issues))
-請[以下](https://github.com/Microsoft/SDN/issues)來提交透過我們的 GitHub 存放庫 SDN 小組的問題。 這是最好**疑難排解**或**回報 bug**。
+## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([Microsoft/SDN 存放庫](https://github.com/Microsoft/SDN/issues))
+移[此處](https://github.com/Microsoft/SDN/issues)提交給 SDN 小組透過我們的 GitHub 存放庫的問題。 這是最佳的起點**取得協助進行疑難排解**或是**回報 bug**。
 
-> GitHub 是與我們連絡包含更詳細的推文的方法輕鬆容納的項目類型比主題相關的最佳位置。 *需要協助您 SDN 部署嗎？ 有關我們的功能可能會如何符合您組織的唯一需要確定嗎？ 正在由潛在錯誤？* 所有原因 GitHub 問題送出以取得與我們連絡。
+> GitHub 是與我們連絡牽涉到比您無法輕易地容納在推文中的項目類型的更多詳細資料的主題相關的最佳位置。 *需要協助進行 SDN 部署嗎？確定我們的功能無法符合貴組織的獨特需求的方式？會保留由可能的 bug？* 取得與我們連絡，透過提交 GitHub 問題的所有好理由。
 
-## [<a name="microsoft-docs"></a>Microsoft 文件](https://docs.microsoft.com/)
-我們[容器網路功能的文件](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-networking)上可找到[Microsoft 的文件 (docs.microsoft.com)](https://docs.microsoft.com/)，其中**建註解功能**。 若要離開或回覆 Microsoft 文件只登中，捲動到底部，您想要參考的 Microsoft 文件頁面上的意見，讓，然後送出那里您的意見。
+## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
+我們[容器網路功能的文件](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)篇[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)，其中包含**註解的內建功能**。 若要保留或回覆 Microsoft 文件上的註解只的登入到您想要參考之 Microsoft Docs 頁面底部的捲軸，然後進行並提交您的意見。
 
-> [Microsoft 文件](https://docs.microsoft.com/)是 Microsoft 的新文件共同的網站。 雖然大部分的小組的[SDN 文件，](https://technet.microsoft.com/en-us/windows-server-docs/networking/sdn/software-defined-networking)會保留在 TechNet，我們[容器網路功能的文件](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-networking)現在已在 Microsoft 文件。
+> [Microsoft Docs](https://docs.microsoft.com/)是 Microsoft 的新統一文件網站。 雖然我們的小組的大部分[SDN 文件](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)會保留在 TechNet 上我們[容器網路功能的文件](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)現在是 Microsoft 文件上。
 
->*一般而言，如果您遇到主題 sparks 問題或離開您需要更多 Microsoft 文件，就留下意見與 Microsoft 團隊，可協助您分享您的意見反應的頁面上。*
+>*一般情況下，如果在 sparks 問題或離開您想要更多的 Microsoft 文件上遇到的主題，只留下註解，可協助 Microsoft 小組分享意見反映該頁面上。*
 
-## <a name="container-specific-forums"></a>容器專屬論壇
-歡迎使用任何通此頁面上提供意見反應有關容器和容器網路。 不過，如果您正在尋找適用於 Microsoft 主要論壇容器社群尤其，請參考下列：
-- [使用者語音](https://windowsserver.uservoice.com/forums/304624-containers)-適用於*功能的要求*
-- [Github（模擬存放庫）](https://github.com/Microsoft/Virtualization-Documentation) -搜尋適用於*疑難排解協助*和*報告錯誤*
+## <a name="container-specific-forums"></a>特定容器論壇
+歡迎使用此頁面上的任何管道，以提供對容器與容器網路功能的相關意見。 不過，如果您想要尋求 Microsoft 的主要論壇容器社群具體來說，請參閱下列：
+- [使用者心聲](https://windowsserver.uservoice.com/forums/304624-containers)-是最適合*功能要求*
+- [Github （虛擬化存放庫）](https://github.com/Microsoft/Virtualization-Documentation) -搜尋最佳*協助排解疑難*和*報告 bug*
 
-### <a name="not-seeing-the-forum-for-you"></a>未看到論壇了嗎？ 
-可能的話，建議使用我們的公用論壇使存取的問題和意見隨附我們的方式，可受惠談論社群。 不過，我們也辨識的電子郵件時只要慣用取得的方式與我們連絡。 如果您在其中的情形，請傳送給我們的電子郵件，sdn_feedback@microsoft.com我們就能將快樂聽到。
+### <a name="not-seeing-the-forum-for-you"></a>不會針對您看見論壇？ 
+可能的話，我們鼓勵大家使用我們的公開論壇，讓更廣大的社群受益於存取，問題是來自我們的註解。 不過，我們也體認到還有其中的電子郵件是單純是慣用的方式來與我們連絡的情況。 如果您使用其中一個這些情況下，請傳送電子郵件到sdn_feedback@microsoft.com，我們會很樂意聽取您。

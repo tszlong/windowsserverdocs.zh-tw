@@ -1,6 +1,6 @@
 ---
-title: 設定憑證範本 PEAP 和 EAP 需求
-description: 本主題提供使用的憑證的網路原則 Server 與 Windows Server 2016 中的遠端存取的相關資訊。
+title: 設定 PEAP 與 EAP 需求的憑證範本
+description: 本主題提供使用網路原則伺服器和 Windows Server 2016 中的遠端存取使用憑證的相關資訊。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,94 +8,101 @@ ms.topic: article
 ms.assetid: 2af0a1df-5c44-496b-ab11-5bc340dc96f0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e597a65982aeead907c9a41f17f1785a0bf81016
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 41f6f88705fa3d58be695fd825d960e7df21cd24
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885879"
 ---
-# <a name="configure-certificate-templates-for-peap-and-eap-requirements"></a>設定憑證範本 PEAP 和 EAP 需求
+# <a name="configure-certificate-templates-for-peap-and-eap-requirements"></a>設定 PEAP 與 EAP 需求的憑證範本
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-所有可用的網路存取驗證延伸驗證 Protocol\-Tls \(EAP\-TLS\)、保護延伸驗證 Protocol\ 傳輸層安全性 \(PEAP\-TLS\)、與 PEAP\ Microsoft 挑戰交換驗證通訊協定第 2 的憑證 \ (MS\-CHAP v2\) 必須符合的連接，請使用安全通訊端層日傳輸層級安全性 (SSL 日 TLS) 與 x.509 的需求。 Client 和伺服器的憑證有其他的需求。
+所有的憑證用於使用可延伸驗證通訊協定的網路存取驗證\-傳輸層安全性\(EAP\-TLS\)，受保護的可延伸驗證通訊協定\-傳輸層安全性\(PEAP\-TLS\)，與 PEAP\-Microsoft Challenge Handshake 驗證通訊協定第 2 版\(MS\-MS-CHAP v2\)必須符合 X.509 憑證的需求，並適用於使用安全通訊端層/傳輸層級安全性 (SSL/TLS) 的連線。 用戶端和伺服器憑證有其他需求。
 
 >[!IMPORTANT]
->本主題提供適用於設定憑證範本的指示。 若要使用這些指示執行，是需要您的部署 \(AD CS\) Active Directory 憑證服務使用您自己公用基礎結構 \(PKI\)。
+>本主題提供設定憑證範本的指示。 若要使用這些指示，則需要您已部署您自己公開金鑰基礎結構\(PKI\)與 Active Directory 憑證服務\(AD CS\)。
 
-## <a name="minimum-server-certificate-requirements"></a>最小伺服器的憑證需求
+## <a name="minimum-server-certificate-requirements"></a>最小的伺服器憑證需求
 
-使用 PEAP\-MS\-CHAP v2、PEAP\ TLS 或 EAP\ TLS 的驗證方法、NPS 伺服器必須使用伺服器的憑證，以符合最低伺服器的憑證。 
+使用 PEAP\-MS\-MS-CHAP v2，PEAP\-TLS 或 EAP\-作為驗證方法的 TLS，NPS 必須使用符合最小的伺服器憑證需求的伺服器憑證。 
 
-您可以設定 client 電腦驗證伺服器的憑證來使用**確認伺服器的憑證**上或在群組原則中的選項。 
+用戶端電腦可以設定為使用驗證伺服器憑證**確認伺服器憑證**用戶端電腦或群組原則中的選項。 
 
-Client 電腦接受伺服器的驗證嘗試時伺服器的憑證符合下列需求：
+當伺服器憑證符合下列需求時，用戶端電腦會接受伺服器的驗證嘗試：
 
-- 主體名稱包含的值。 如果您要執行的網路原則 Server (NPS) 空白主體名稱的憑證，不提供 NPS 伺服器的驗證憑證。 若要設定憑證範本主體名稱：
+- 主體名稱中包含的值。 如果您將憑證發行到您的伺服器執行網路原則伺服器 (NPS) 具有空白的主體名稱時，憑證無法使用。 若要驗證您的 NPS 若要設定主體名稱的憑證範本：
 
-    1. 打開憑證範本。
-    2. 在詳細資料窗格中，以滑鼠右鍵按一下您想要變更，然後按一下 [憑證範本**屬性**。
-    3. 按一下**主體名稱**索引標籤，然後按一下 [**組建這個 Active Directory 資訊的**。
-    4. 在**主體名稱的格式**，選取值以外**無**。
+    1. 開啟 [憑證範本]。
+    2. 在 詳細資料 窗格中，以滑鼠右鍵按一下您想要變更此項目，然後按一下 憑證範本**屬性**。
+    3. 按一下 **主體名稱**索引標籤，然後再按一下**Active Directory 資訊來建立**。
+    4. 在 **主體名稱格式**，選取的值不**無**。
 
-- 電腦上受信任的根憑證授權單位和並任何的失敗由 CryptoAPI 及檢查遠端存取原則的網路原則中指定的伺服器鏈結憑證。
+- 電腦憑證，伺服器鏈結到信任的根憑證授權單位 (CA) 而且不會失敗的遠端存取原則或網路原則中指定任何 CryptoAPI，所執行的檢查。
 
-- 電腦 NPS 伺服器或 VPN 伺服器的憑證會設定伺服器的驗證用途延伸鍵使用量（）。 （伺服器驗證的物件識別碼是 1.3.6.1.5.5.7.3.1）。
+- 在 NPS 或 VPN 伺服器的電腦憑證已使用伺服器驗證目的，在 擴充金鑰使用方法 (EKU) 延伸模組。 （伺服器驗證的物件識別元為 1.3.6.1.5.5.7.3.1）。
 
-- 設定伺服器的憑證其中演算法所需的值為**RSA**。 若要設定所需的密碼編譯設定：
+- 使用必要的密碼編譯設定來設定伺服器憑證：
 
-    1. 打開憑證範本。
-    2. 在詳細資料窗格中，以滑鼠右鍵按一下您想要變更，然後按一下 [憑證範本**屬性**。
-    3. 按一下**密碼編譯**索引標籤。在**的演算法名稱**，按一下 [ **RSA**。 確認**最小金鑰大小**設為**2048 年**。
+    1. 開啟 [憑證範本]。
+    2. 在 詳細資料 窗格中，以滑鼠右鍵按一下您想要變更此項目，然後按一下 憑證範本**屬性**。
+    3. 按一下  **Cryptography**索引標籤，並請務必設定下列各項：
+       - **提供者類別目錄：** 金鑰儲存提供者
+       - **演算法名稱：** RSA
+       - **提供者：** Microsoft 平台密碼編譯提供者
+       - **最小金鑰大小：** 2048
+       - **雜湊演算法：** SHA2
+    4. 按一下 [下一步] 。
 
-- 主體替代名稱 (SubjectAltName) 擴充功能，如果您使用，必須包含 DNS 伺服器的名稱。 若要設定憑證範本註冊伺服器名稱網域名稱系統」(DNS): 
+- 使用主體別名 (SubjectAltName) 延伸，如果使用，必須包含伺服器的 DNS 名稱。 若要設定註冊伺服器的網域名稱系統 (DNS) 名稱的憑證範本： 
 
-    1. 打開憑證範本。
-    2. 在詳細資料窗格中，以滑鼠右鍵按一下您想要變更，然後按一下 [憑證範本**屬性**。
-    3. 按一下**主體名稱**索引標籤，然後按一下 [**組建這個 Active Directory 資訊的**。
-    4. 在**在次要主體名稱包含這項資訊**、**DNS 名稱**。
+    1. 開啟 [憑證範本]。
+    2. 在 詳細資料 窗格中，以滑鼠右鍵按一下您想要變更此項目，然後按一下 憑證範本**屬性**。
+    3. 按一下 **主體名稱**索引標籤，然後再按一下**Active Directory 資訊來建立**。
+    4. 在 **在次要主體名稱中包含這項資訊**，選取**DNS 名稱**。
 
-使用 PEAP 和 EAP-TLS 時，NPS 伺服器電腦憑證存放區，使用下列例外顯示所有已安裝的憑證的清單：
+當使用 PEAP 與 EAP-TLS，NPSs 就會顯示一份所有已安裝的憑證在電腦憑證存放區，但有下列例外狀況：
 
-- 不會顯示憑證，並包含伺服器驗證用途。
+- 不會顯示不包含伺服器驗證目的，EKU 延伸中的憑證。
 
-- 不會顯示憑證，並包含主體名稱。
+- 不會顯示不包含主體名稱的憑證。
 
-- 登錄型並不會顯示憑證智慧卡登入。
+- 登錄為基礎並不會顯示智慧卡登入憑證。
 
-如需詳細資訊，請查看[適用於 802.1 X 的有線和無線部署部署伺服器憑證](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)。
+如需詳細資訊，請參閱 <<c0> [ 部署 802.1x 有線和無線部署的伺服器憑證](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)。
 
-## <a name="minimum-client-certificate-requirements"></a>最小 client 認證需求
+## <a name="minimum-client-certificate-requirements"></a>最低用戶端憑證需求
 
-EAP-TLS 或 PEAP-TLS，伺服器接受 client 驗證嘗試時憑證符合下列需求：
+透過 EAP-TLS 或 PEAP-TLS，伺服器會接受用戶端驗證嘗試，當憑證符合下列需求：
 
-- Client 憑證是由企業 CA 發行，或在 Active Directory Domain Services \(AD DS\) 使用者或電腦過去對應。
+- 企業 CA 所發出的用戶端憑證是否對應至使用者或電腦帳戶在 Active Directory 網域服務中\(AD DS\)。
 
-- 使用者或電腦 client 鏈結到加拿大信任的根憑證包含 EKU 擴充功能 Client 驗證目的 \（Client 驗證的物件識別碼是 1.3.6.1.5.5.7.3.2\），而失敗的由 CryptoAPI 和，詳列於遠端存取原則的網路原則檢查都 NPS 的網路原則中指定憑證物件識別碼檢查。
+- 在用戶端鏈結至信任的根 CA，使用者或電腦憑證 EKU 延伸中包含用戶端驗證目的\(用戶端驗證的物件識別碼是 1.3.6.1.5.5.7.3.2\)，且不會失敗檢查由 CryptoAPI 和之間指定的遠端存取原則或網路原則，也不在 NPS 網路原則中指定的憑證物件識別項檢查。
 
-- 不使用 802.1 X client 登錄為基礎的憑證可能是智慧卡登入或受密碼保護的憑證。
+- 802.1x 用戶端不會使用以登錄為基礎的憑證可能是智慧卡登入或受密碼保護的憑證。
 
-- 主旨另一種方式 \(SubjectAltName\) 副檔名憑證中的使用者的憑證，包含使用者主體名稱 \(UPN\)。 若要設定 UPN 憑證範本中：
+- 對於使用者憑證，主體別名\(SubjectAltName\)憑證中的延伸模組包含的使用者主體名稱\(UPN\)。 若要在憑證範本中設定 UPN:
 
-    1. 打開憑證範本。
-    2. 在詳細資料窗格中，以滑鼠右鍵按一下您想要變更，然後按一下 [憑證範本**屬性**。
-    3. 按一下**主體名稱**索引標籤，然後按一下 [**組建這個 Active Directory 資訊的**。
-    4. 在**在次要主體名稱包含這項資訊**，請選取**使用者主體名稱 \(UPN\)**。
+    1. 開啟 [憑證範本]。
+    2. 在 詳細資料 窗格中，以滑鼠右鍵按一下您想要變更此項目，然後按一下 憑證範本**屬性**。
+    3. 按一下 **主體名稱**索引標籤，然後再按一下**Active Directory 資訊來建立**。
+    4. 在 **在次要主體名稱中包含這項資訊**，選取**使用者主體名稱\(UPN\)**。
 
-- 適用於電腦的憑證，主題替代 \(SubjectAltName\) 副檔名憑證必須包含完整的網域名稱 \(FQDN\) 的 client，也稱為*的 DNS 名稱*。 在 [憑證範本設定此名稱：
+- 對於電腦憑證，主體別名\(SubjectAltName\)憑證中的延伸模組必須包含完整的網域名稱\(FQDN\)的用戶端，也稱為*DNS 名稱*。 若要設定此名稱在 憑證範本：
 
-    1. 打開憑證範本。
-    2. 在詳細資料窗格中，以滑鼠右鍵按一下您想要變更，然後按一下 [憑證範本**屬性**。
-    3. 按一下**主體名稱**索引標籤，然後按一下 [**組建這個 Active Directory 資訊的**。
-    4. 在**在次要主體名稱包含這項資訊**、**DNS 名稱**。
+    1. 開啟 [憑證範本]。
+    2. 在 詳細資料 窗格中，以滑鼠右鍵按一下您想要變更此項目，然後按一下 憑證範本**屬性**。
+    3. 按一下 **主體名稱**索引標籤，然後再按一下**Active Directory 資訊來建立**。
+    4. 在 **在次要主體名稱中包含這項資訊**，選取**DNS 名稱**。
 
-與 PEAP\ TLS EAP\ TLS，戶端會顯示憑證嵌入式管理單元，使用下列例外所有已安裝的憑證清單：
+使用 PEAP\-TLS 和 EAP\-TLS 用戶端就會顯示所有已安裝憑證的清單顯示在 [憑證] 嵌入式管理單元中，但有下列例外狀況：
 
-- Wireless 戶端不會顯示登錄架構和憑證智慧卡登入。 
+- 無線用戶端不會顯示登錄為基礎和智慧卡登入憑證。 
 
-- Wireless 戶端和 VPN 戶端不會顯示受密碼保護的憑證。 
+- 無線用戶端和 VPN 用戶端不會顯示受密碼保護的憑證。 
 
-- 不會顯示憑證，並包含 Client 驗證用途。
+- 不會顯示不包含用戶端驗證目的，EKU 延伸中的憑證。
 
 
-如需 NPS 的詳細資訊，請查看[的網路原則 Server (NPS)](nps-top.md)。
+如需 NPS 的詳細資訊，請參閱[網路原則伺服器 (NPS)](nps-top.md)。

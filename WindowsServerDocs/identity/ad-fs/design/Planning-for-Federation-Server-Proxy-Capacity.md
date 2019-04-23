@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3ecb6e87-17f1-4d38-97d2-9c4d52b7cf39
-title: "規劃區域的聯盟 Proxy 伺服器的容量"
-description: 
+title: 規劃同盟伺服器 Proxy 容量
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,40 +10,41 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 2e57f34b173c10e9e753c7f3b8dcd88d7bf6742c
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59888899"
 ---
-# <a name="planning-for-federation-server-proxy-capacity"></a>規劃區域的聯盟 Proxy 伺服器的容量
+# <a name="planning-for-federation-server-proxy-capacity"></a>規劃同盟伺服器 Proxy 容量
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-規劃區域的聯盟的 proxy 伺服器的容量，可協助您估計：  
+容量規劃同盟伺服器 proxy 可協助您評估：  
   
--   每個聯盟伺服器 proxy 適當的硬體需求。  
+-   每個同盟伺服器 proxy 適當的硬體需求。  
   
--   聯盟伺服器及聯盟伺服器 proxy 將每個組織中的數字。  
+-   同盟伺服器和同盟伺服器 proxy 放置在每個組織中的數字。  
   
-聯盟伺服器 proxy 重新導向從伺服器受保護的聯盟公司網路中的安全性權杖給聯盟使用者。 部署聯盟 proxy 伺服器的目的是讓使用者外部連接聯盟伺服器。 不會不確實權杖登入或寫入 AD FS 設定資料庫中的資料。 因此，聯盟 proxy 伺服器的硬體需求的通常低於聯盟伺服器的硬體需求。  
+同盟伺服器 proxy 重新導向至同盟使用者從公司網路中受保護的同盟伺服器的安全性權杖。 部署同盟伺服器 proxy 的目的是為了允許外部使用者連接到同盟伺服器。 它不會不會實際簽署權杖或 AD FS 組態資料庫中的資料寫入。 因此，同盟伺服器 proxy 的硬體需求是通常低於同盟伺服器的硬體需求。  
   
-聯盟 proxy 伺服器的每個要求的結果在要求中聯盟伺服器或聯盟伺服器發電廠，因為必須同時執行規劃伺服器聯盟和聯盟的 proxy 伺服器的容量。  
+因為每個同盟伺服器 proxy 的要求會導致同盟伺服器或同盟伺服器陣列的要求，必須以平行方式執行的同盟伺服器和同盟伺服器 proxy 容量規劃。  
   
-估計的山峰 sign\ 單元聯盟 proxy 伺服器秒需要了解使用模式的聯盟使用者將會透過聯盟 proxy 伺服器登入。 在許多部署，聯盟使用聯盟 proxy 伺服器登入的使用者都位於網際網路。 您可以藉由在現有的 Web 應用程式將會受到 AD FS 查看這些聯盟使用者的使用模式估計的山峰 sign\ 單元秒。  
+估計尖峰登\-集每秒的同盟伺服器 proxy 需要了解將登入，透過同盟伺服器 proxy 的同盟使用者的使用模式。 在許多部署中，使用同盟伺服器 proxy 登入的同盟的使用者位於網際網路上。 您可以估計尖峰登\-集查看的使用模式，其中每秒的同盟使用者，將受到 AD FS 的現有 Web 應用程式。  
   
 > [!NOTE]  
-> 針對 production 部署，我們建議您的兩個聯盟伺服器 proxy 部署每個聯盟伺服器發電廠執行個體。  
+> 生產環境部署中，我們建議針對每個同盟伺服器陣列部署的執行個體的兩個同盟伺服器 proxy 的最小值。  
   
-## <a name="estimate-the-number-of-federation-server-proxies-required-for-your-organization"></a>估計聯盟伺服器 proxy 您的組織所需的數目  
-您可以估計的數字之前所需 AD FS 聯盟伺服器 proxy 電腦，您必須先判斷聯盟伺服器，您將會在組織中部署總數。 如需如何執行此動作，請查看[規劃聯盟伺服器容量](Planning-for-Federation-Server-Capacity.md)。  
+## <a name="estimate-the-number-of-federation-server-proxies-required-for-your-organization"></a>估計同盟伺服器 proxy 所需的組織的數目  
+您可以估計數目之前所需 AD FS 同盟伺服器 proxy 電腦，您必須先判斷您組織中，您將部署的同盟伺服器的總數。 如需如何執行這項操作的詳細資訊，請參閱[同盟伺服器容量規劃](Planning-for-Federation-Server-Capacity.md)。  
   
-一旦您有認為同盟伺服器的數目乘這個數量的伺服器，連入聯盟驗證的百分比，要求您預期會進行外部使用者 \（位於公司 network\ 以外）。 這項計算的值，將提供您聯盟伺服器 proxy 將會處理您的外部使用者傳入驗證要求的預估數量。  
+一旦您決定的同盟伺服器數目乘以下列數量之伺服器的連入的同盟驗證的百分比會要求您預期會從外部使用者進行\(位於公司網路外部\). 這項計算的值會提供您將會處理連入驗證要求的外部使用者的同盟伺服器 proxy 的估計數目。  
   
-例如，如果建議的聯盟伺服器數目 3，您所預期的外部使用者將會進行驗證要求總數將約 60%總數聯盟的驗證要求的計算想等於 1.8 \ (3 X。60\)，您可以將最多 2。  因此，如此，您必須將有兩個聯盟伺服器 proxy 容納外部使用者的三個聯盟伺服器的驗證要求的電腦。  
+比方說，如果建議的同盟伺服器數目是 3，而您預期會從外部使用者進行的驗證要求的總數會大約 60%的同盟的驗證要求的總數您計算就會等於 1.8 \(3 X.60\)其中您可以藉由四捨五入最多 2 個。  因此，在此情況下，您必須部署兩個同盟伺服器 proxy 電腦，以容納之三個同盟伺服器的外部使用者驗證要求的負載。  
   
-AD FS product 小組所執行的測試，每個聯盟伺服器 proxy 的整體 CPU 使用率找會大幅低於觀察到的相同發電廠聯盟伺服器的 cpu。  單一測試，請在時同盟伺服器 CPU 已，它完全飽和，指出聯盟伺服器 proxy 提供的相同農地 proxy 服務的 CPU 觀察到，只有 20%使用量。 因此，我們的測試揭露的負載 CPU 聯盟伺服器 proxy，使用類似硬體規格所述先前在本區段中，可能會合理處理處理負載約三個聯盟伺服器。  
+在 AD FS 產品小組所執行的測試，每個同盟伺服器 proxy 上的整體 CPU 使用率找不到要大幅低於觀察到相同的伺服陣列的同盟伺服器的 CPU 使用率。  一項測試，而一部同盟伺服器 CPU 所指出，它已完全飽和，提供該相同的伺服陣列的 proxy 服務的同盟伺服器 proxy 的 CPU 已觀察到在只有 20%的使用率。 因此，我們的測試會顯示同盟伺服器 proxy，它會使用類似的硬體規格所述稍早在本節中，CPU 的負載可以合理地處理大約三個同盟伺服器的處理負載。  
   
-不過，錯誤容錯用途，我們建議針對每個您要部署的聯盟伺服器農場兩個聯盟伺服器 proxy 時最少提供。  
+不過，基於容錯功能，我們建議您部署的每個同盟伺服器陣列的兩個同盟伺服器 proxy 的最小值。  
   
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -1,6 +1,6 @@
 ---
-title: "建立配額"
-description: "本文說明如何以範本為基礎建立配額"
+title: 建立配額
+description: 本文說明如何以範本為基礎建立配額
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: f3c677f5ebf7dda44f4b99a64d0fbf8d2c72b92e
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883189"
 ---
 # <a name="create-a-quota"></a>建立配額
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 您可以透過範本或自訂內容建立配額。 下列程序說明如何根據範本建立配額 (建議)。 如果您需要利用自訂內容建立配額，則可將這些內容另存為範本以便日後重複使用。
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="to-create-a-quota-that-is-based-on-a-template"></a>若要建立以範本為基礎的配額
 
-1.  按一下 **\[配額管理\]** 中的 **\[配額範本\]** 節點。
+1.  按一下 [配額管理] 中的 [配額範本] 節點。
 
 2.  在 [結果] 窗格中，選取新配額要以之為基礎的範本。
 
@@ -46,9 +47,9 @@ ms.lasthandoff: 10/17/2017
 
 6.  在 **\[從這個配額範本衍生內容\]** 下方，您在步驟 2 中用來建立新配額的範本已預先選取 (不然也可以從清單選取其他範本)。 請注意，範本的內容會顯示在 **\[配額內容摘要\]** 下方。
 
-7.  按一下 **\[建立\]**。
+7.  按一下 [建立] 。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [配額管理](quota-management.md)
 -   [建立自動套用配額](create-auto-apply-quota.md)

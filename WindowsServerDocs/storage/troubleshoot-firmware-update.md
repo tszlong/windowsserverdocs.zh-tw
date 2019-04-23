@@ -1,6 +1,6 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
-title: "對磁碟機韌體更新進行疑難排解"
+title: 對磁碟機韌體更新進行疑難排解
 ms.prod: windows-server-threshold
 ms.author: toklima
 ms.manager: masriniv
@@ -9,21 +9,22 @@ ms.topic: article
 author: toklima
 ms.date: 04/18/2017
 ms.openlocfilehash: 7ee5c57839f32d71053e983fc14f76c481236779
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884159"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>對磁碟機韌體更新進行疑難排解
 
->適用於：Windows 10、Windows Server (半年度管道)、
+>適用於：Windows 10、windows Server （半年通道）
 
 Windows 10 版本 1703 和更新版本，以及 Windows Server (半年度管道) 包含可更新已使用韌體升級 AQ (其他辨識符號) 透過 PowerShell 取得認證之 HDD 和 SSD 韌體的功能。
 
 您可以在下列位置找到更多有關此功能的資訊：
 
-- [在 Windows Server 2016 中更新磁碟機韌體](update-firmware.md)
-- [在儲存空間直接存取中，不停機也能更新磁碟機韌體](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [更新 Windows Server 2016 中的磁碟機韌體](update-firmware.md)
+- [更新而不需要停機的磁碟機韌體，儲存空間直接存取](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 韌體更新可能會因為各種原因而失敗。 本文章的目的是要協助您進行進階疑難排解。
 
@@ -63,7 +64,7 @@ SupportsUpdate 欄位 (至少 SATA 和 NVMe 裝置的這個欄位) 將會指出�
 
 要驗證 SAS 裝置是否支援所需的命令集，有兩個方式可以選擇︰
 1.  透過 Update-StorageFirmware Cmdlet，以適當的韌體映像來試試看，或者
-2.  查閱 Windows Server Catalogue 來找出哪些 SAS 裝置已成功取得韌體更新 AQ (https://www.windowsservercatalog.com/)
+2.  請參閱 Windows Server 目錄來識別哪些 SAS 裝置已成功獲得 FW 更新 AQ （ https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>修復選項
 如果您測試中的特定裝置不支援適當命令集，請向廠商查詢以了解是否有更新的韌體提供所需的命令集，或是查閱 Windows Server 目錄以確認裝置是否有實作適當命令集的來源。
@@ -141,7 +142,7 @@ NumberOfRetriesDone 0
 
 若要收集這些進階記錄檔項目，請啟用記錄檔、重現韌體更新失敗，並儲存診斷記錄檔。
 
-以下是有關 SATA 裝置因下載映像無效 (事件識別碼：258) 而失敗的韌體更新範例：
+下載映像無效，因此，以下是範例 SATA 裝置失敗上的韌體更新 (事件識別碼：258):
 
 ``` 
 EventData
@@ -173,11 +174,11 @@ Parameter8Value 0
 ```
 
 上述事件的參數值 2 至 6 包含詳細的裝置資訊。 我們在這裡看到了各種 ATA 暫存器值。 ATA ACS 規格可以用來解碼下面的下載微碼命令失敗值：
-- 傳回碼：0 (0000 0000) (不適用 - 無意義，因為沒有傳輸任何承載)
-- 功能：15 (0000 1111) (位元 1 設定為 '1'，表示「中止」)
-- 磁區計數：0 (0000 0000) (不適用)
-- 磁碟機磁頭：160 (1010 0000) (不適用 – 只有過時的位元已設定)
-- 命令：146 (1001 0010) (位元 1 設定為 '1'，表示感應資料可用性)
+- 傳回碼：0 (0000 0000) (n/A-沒有任何意義，因為沒有承載的傳輸)
+- 功能：15 (0000 1111) （bit 1 設為 '1'，並指出 [中止]）
+- SectorCount:0 (0000 0000) (N/A)
+- DriveHead:160 (1010 0000) （n/A – 只有已過時的位元會設定）
+- 命令：146 (1001 0010) （bit 1 設為 '1' 表示的有意義的資料可用性）
 
 這就是說，韌體更新作業已由裝置中止。
 
