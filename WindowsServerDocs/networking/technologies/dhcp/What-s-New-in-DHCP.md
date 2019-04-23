@@ -1,6 +1,6 @@
 ---
-title: DHCP 中的新功能
-description: 本主題提供的動態主機設定通訊協定 (DHCP) 在 Windows Server 2016 中的新功能的概觀。
+title: DHCP 的新功能
+description: 本主題提供的動態主機設定通訊協定 (DHCP) 在 Windows Server 2016 的新功能的概觀。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-dhcp
@@ -8,43 +8,43 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f67e5dfd8aefcf408a41f6fc919665419f0ff1c9
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 73cc5134f7af5063c912ad578fa7d660b3194aa1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840229"
 ---
-# <a name="whats-new-in-dhcp"></a>DHCP 中的新功能
+# <a name="whats-new-in-dhcp"></a>DHCP 的新功能
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題描述新增或變更 Windows Server 2016 中的 「 動態主機設定通訊協定 」 (DHCP) 功能。
+本主題說明 Windows Server 2016 中新增或變更的動態主機設定通訊協定 (DHCP) 功能。
   
-DHCP 是設計用來減少的系統管理負擔和複雜的 TCP 日 IP\ 型網路，例如私人內部網路設定主機網際網路工程設計工作推動 (IETF) 標準。 使用 DHCP 伺服器服務，程序的 TCP/IP 設定戶端 DHCP 會自動執行。
+DHCP 是一種 Internet Engineering Task Force (IETF) 標準，旨在減輕管理負擔及複雜度上的 TCP/IP 設定主機\-架構的網路，如私人內部網路。 使用 DHCP 伺服器服務可以將 DHCP 用戶端設定 TCP/IP 的程序自動化。
 
-下列章節 DHCP 功能提供新功能和變更的相關資訊。
+下列各節會提供功能中 DHCP 的新功能和變更的相關資訊。
 
-## <a name="dhcp-subnet-selection-options"></a>DHCP 子網路選取選項
+## <a name="dhcp-subnet-selection-options"></a>子網路選取範圍的 DHCP 選項
 
-DHCP 現在支援 \(sub-option 5\) 118 與 82 選項。 您可以使用這些選項來讓您要求的 IP 位址特定子網路，以及從指定 IP 位址和範圍 DHCP proxy 戶端及轉送代理程式。
+DHCP 現在支援選項 118 和 82\(子選項 5\)。 您可以使用這些選項，以允許 DHCP proxy 用戶端和轉接代理來要求特定的子網路，並從特定的 IP 位址範圍和範圍的 IP 位址。
 
-如果您使用 DHCP 選項 118，例如執行 Windows Server 2016 和遠端存取伺服器角色 virtual 私人網路 \(VPN\) 伺服器設定 DHCP proxy client VPN 伺服器可以要求 IP 位址租用 VPN 戶端的特定的 IP 位址。
 
-如果您使用 DHCP 轉送代理 DHCP 選項 82，sub\ 選項 5 設定轉接可以要求 IP 位址租用 DHCP 戶端的特定的 IP 位址。
+如果您使用的設定為 DHCP 選項 82 DHCP 轉接代理，子\-選項 5，轉接代理程式可以要求來自特定 IP 位址範圍的 DHCP 用戶端的 IP 位址租用。
 
-如需詳細資訊，請查看[選擇 DHCP 子網路的選項](dhcp-subnet-options.md)。
+如需詳細資訊，請參閱 <<c0> [ 子網路選取範圍的 DHCP 選項](dhcp-subnet-options.md)。
 
-## <a name="new-logging-events-for-dns-registration-failures-by-the-dhcp-server"></a>新的登入事件 DHCP 伺服器 DNS 登記失敗
+## <a name="new-logging-events-for-dns-registration-failures-by-the-dhcp-server"></a>新的記錄事件，可由 DHCP 伺服器的 DNS 註冊失敗
 
-DHCP 現在包含登入的環境中 DHCP 伺服器 DNS 使用碼表進行登錄失敗 DNS 伺服器的活動。
+DHCP 現在包含伺服器 DNS 記錄登錄失敗的 DNS 伺服器的 dhcp 的情況下的記錄事件。
 
-如需詳細資訊，請查看[DHCP 登入事件 DNS 記錄登錄的](dhcp-dns-events.md)。
+如需詳細資訊，請參閱 < [DHCP 記錄事件的 DNS 記錄登錄](dhcp-dns-events.md)。
 
-## <a name="dhcp-nap-is-not-supported-in-windows-server-2016"></a>Windows Server 2016 不支援 DHCP NAP
+## <a name="dhcp-nap-is-not-supported-in-windows-server-2016"></a>Windows Server 2016 中不支援 DHCP 的 NAP
 
-網路存取保護 \(NAP\) 已在 Windows Server 2012 R2 取代和 Windows Server 2016 中 DHCP 伺服器角色不再支援 NAP。 如需詳細資訊，請查看[的功能已經移除或 Deprecated Windows Server 2012 R2 在](https://technet.microsoft.com/library/dn303411.aspx)。  
+網路存取保護\(NAP\) Windows Server 2012 r2 中已被取代，並在 Windows Server 2016 中的 DHCP 伺服器角色已不再支援 NAP。 如需詳細資訊，請參閱 < [Features Removed or Deprecated in Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx)。  
   
-NAP 支援 DHCP 伺服器角色與 Windows Server 2008、 推出和支援 Windows client 和伺服器作業系統之前的 Windows 10 與 Windows Server 2016。 下表摘要 NAP 在 Windows Server 的支援。  
+NAP 支援 DHCP 伺服器角色與 Windows Server 2008 中引進，而且支援 Windows 用戶端和伺服器作業系統中 Windows 10 和 Windows Server 2016 之前。 下表摘要說明在 Windows Server 中的 nap 的支援。  
   
 |作業系統|NAP 支援|  
 |--------------------|---------------|  
@@ -54,14 +54,14 @@ NAP 支援 DHCP 伺服器角色與 Windows Server 2008、 推出和支援 Window
 | Windows Server 2012 R2 |支援|  
 | Windows Server 2016|不支援|  
   
-NAP 部署，在執行作業系統，其支援 NAP DHCP 伺服器可以作為 NAP DHCP 執法方法 NAP 執法點。 如需 DHCP NAP 中相關資訊，請查看[檢查清單︰ 實作 DHCP 執法設計](https://technet.microsoft.com/library/dd314186.aspx)。  
+在 NAP 部署中，執行之作業系統的支援 NAP 的 DHCP 伺服器可以做為 NAP DHCP 強制方法的 NAP 強制端點。 如需有關 DHCP 的 NAP 的詳細資訊，請參閱[檢查清單：實作 DHCP 強制設計](https://technet.microsoft.com/library/dd314186.aspx)。  
   
-在 Windows Server 2016 DHCP 伺服器不會執行 NAP 原則，且 DHCP 領域無法 NAP\ 功能。 這也是 NAP 戶端 DHCP client 電腦傳送健康 \(SoH\) DHCP 要求的聲明。 如果執行 Windows Server 2016 的 DHCP 伺服器，如同任何 SoH 存在於處理這些要求。 DHCP 伺服器授與一般 DHCP 租用 client。 
+在 Windows Server 2016 中，DHCP 伺服器不會強制執行 NAP 原則，DHCP 領域不能是 NAP\-啟用。 也是 NAP 用戶端的 DHCP 用戶端電腦傳送健康狀態聲明\(SoH\)與 DHCP 要求。 如果 DHCP 伺服器執行 Windows Server 2016，如同任何 SoH 存在於處理這些要求。 DHCP 伺服器中，會授與一般的 DHCP 租用給用戶端。 
 
-如果執行 Windows Server 2016 的伺服器，轉送給支援 NAP 網路原則伺服器 \(NPS\) 驗證要求 RADIUS proxy，這些 NAP 戶端會評估 NPS 非 NAP\ 處理能力，和 NAP 處理失敗。
+如果執行 Windows Server 2016 的伺服器會將驗證要求轉送到網路原則伺服器的 RADIUS proxy \(NPS\)支援 NAP，這些 NAP 用戶端會評估為非 NAP 的 nps\-能力，以及處理失敗的 NAP。
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
--   [動態主機設定通訊協定」(DHCP)](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
+-   [動態主機設定通訊協定 (DHCP)](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
   
 

@@ -1,6 +1,6 @@
 ---
-title: "電腦加入新的 Windows Server Essentials server1"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 將電腦加入新的 Windows Server Essentials 伺服器 1
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,40 +13,41 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 1a67cda9e4b04e8d861232b48f45915fb2b460d1
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59836409"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>電腦加入新的 Windows Server Essentials server1
+# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>將電腦加入新的 Windows Server Essentials 伺服器 1
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
 ##  <a name="BKMK_JoinComputers"></a>   
- 移轉程序的下一個步驟是 client 電腦加入新的 Windows Server Essentials 網路和更新的群組原則設定。  
+ 移轉程序的下一個步驟是將用戶端電腦加入新的 Windows Server Essentials 網路與更新群組原則設定。  
   
 > [!NOTE]
->  如果 client 的電腦已經加入來源伺服器，您必須第一次解除連接器電腦上的軟體 client 之前，您可以將電腦連接到目的伺服器。  
+>  如果用戶端電腦已加入來源伺服器，首先必須解除安裝用戶端電腦上的連接器軟體，才可以將電腦連線到目的地伺服器。  
   
- Client 電腦連接到伺服器的程序也適用於已加入網域，或非加入網域的電腦。  
+ 將用戶端電腦連線到伺服器的程序，已加入網域或未加入網域的電腦是相同的。  
   
--   瀏覽] **http://***目的地-伺服器名稱***連接 /**並安裝 Windows Server 連接器軟體如如果這是新的電腦。  
-  
-> [!NOTE]
->  Windows Server 連接器軟體不支援執行 Windows XP 或 Windows Vista 的電腦。 如果您執行的是 Windows XP 或 Windows Vista 已經加入網域的電腦，您可以略過此步驟。  
-  
-### <a name="ensure-that-group-policy-has-updated"></a>確定已更新 [群組原則  
+-   瀏覽至**http://***目的地 servername***/connect**並安裝 Windows Server 連接器軟體，如同新電腦。  
   
 > [!NOTE]
->  這是選擇性的步驟，並只需要如果來源伺服器設定使用資料夾重新導向例如自訂群組原則設定。  
+>  Windows Server 連接器軟體不支援執行 Windows XP 或 Windows Vista 的電腦。 如果您有執行 Windows XP 或 Windows Vista 的電腦已經加入網域，您可以略過此步驟。  
   
- 來源伺服器和目的地伺服器仍然 online 時，您應該確定設定已複寫目的地伺服器 client 電腦群組原則。 在每個 client 的電腦上，執行下列步驟：  
+### <a name="ensure-that-group-policy-has-updated"></a>確定已更新群組原則  
   
-1.  打開在命令提示字元視窗。  
+> [!NOTE]
+>  這是選用步驟，只有在使用自訂群組原則設定 (例如資料夾重新導向) 來設定來源伺服器時才需要。  
   
-2.  在命令提示字元中，輸入**GPRESULT /R**，然後按 ENTER 鍵。  
+ 當來源伺服器與目的地伺服器仍保持線上狀態時，您應該確保群組原則設定已從目的地伺服器複寫到用戶端電腦上。 請在每部用戶端電腦上執行下列步驟：  
   
-3.  檢視其輸出套用群組原則中的區段:，確定它會列出目的伺服器，例如**DestinationSrv.Domain.local**。 例如：  
+1.  開啟命令提示字元視窗。  
+  
+2.  在命令提示字元中輸入 **GPRESULT /R**，然後按 Enter。  
+  
+3.  檢閱所產生的輸出，從已套用群組原則區段︰，並確保它會列出目的地伺服器上，這類**DestinationSrv.Domain.local**。 例如:   
   
     ```  
     USER SETTINGS  
@@ -60,12 +61,12 @@ ms.lasthandoff: 07/03/2017
   
     ```  
   
-4.  如果未列出目的伺服器，在命令提示字元中，輸入**gpupdate /force**，然後按 enter 鍵來重新整理群組原則設定。 然後再試一次執行先前的程序。  
+4.  如果未列出目的地伺服器，請在命令提示字元中，輸入 **gpupdate /force**，然後按 ENTER 重新整理群組原則設定。 然後重新執行先前的程序。  
   
-5.  如果仍未出現目的伺服器，可能會在群組原則設定錯誤或套用至特定 client 電腦發生錯誤。 如果未出現目的伺服器，請執行下列步驟：  
+5.  如果目的地伺服器仍未出現，可能是群組原則設定中發生錯誤，或將群組原則設定套用至此特定用戶端電腦時發生錯誤。 如果目的地伺服器沒有出現，請執行下列步驟：  
   
-    1.  按一下**[開始]**，按一下 [**執行**，輸入**rsop.msc**（設定原則結果），然後按 ENTER 鍵。  
+    1.  按一下 [開始] 、[執行] ，輸入 **rsop.msc** (原則的結果集)，然後按 ENTER。  
   
-    2.  展開樹上的 [X 與，直到您取得節點。  
+    2.  展開的樹狀目錄上它的 X，直到您取得節點。  
   
-    3.  以滑鼠右鍵按一下 [] 節點，然後按一下**檢視錯誤**群組原則設定失敗列出的電腦上的原因相關資訊。
+    3.  以滑鼠右鍵按一下節點，並按一下 [檢視錯誤]，了解群組原則設定為何在列示的電腦上失敗。

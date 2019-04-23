@@ -1,64 +1,67 @@
 ---
-title: 聚合型的網路介面卡 (NIC) 設定指南
-description: 本主題是匯集 NIC 設定節目表適用於 Windows Server 2016 的一部分。
+title: 聚合式的網路介面卡 (NIC) 設定指導方針
+description: 聚合式的網路介面卡 (NIC) 可讓您公開，讓主機分割服務可以存取遠端直接記憶體存取 (RDMA) 相同 HYPER-V 來賓使用的 TCP/IP 流量的 Nic 上的磁碟分割的主機虛擬 NIC (vNIC) 透過 RDMA。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: d7642338-9b33-4dce-8100-8b2c38d7127a
-manager: brianlic
+manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 42f7ef674da1754253ad72ae30ad505f29ba6a7d
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/13/2018
+ms.openlocfilehash: e9f5180285dda790e11cec543a109d0cb58edd2d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838839"
 ---
-# <a name="converged-network-interface-card-nic-configuration-guide"></a>聚合型的網路介面卡 \(NIC\) 設定指南
+# <a name="converged-network-interface-card-nic-configuration-guidance"></a>聚合式網路介面卡\(NIC\)設定指導方針
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-聚合型的網路介面卡 \(NIC\) 可讓您透過 host\ 磁碟分割 virtual NIC \(vNIC\) 公開 RDMA，以便主機的磁碟分割服務可以存取遠端直接記憶體存取 \(RDMA\) TCP/IP 流量使用 HYPER-V 來賓相同 Nic 上。
+聚合式的網路介面卡\(NIC\)可讓您透過主機公開 RDMA\-分割虛擬 NIC \(vNIC\) ，讓主機分割服務可以存取遠端直接記憶體存取\(RDMA\)相同 HYPER-V 來賓使用的 TCP/IP 流量的 Nic 上。
 
-之前「匯集 NIC」功能，想要使用 RDMA 管理 \(host partition\) 服務已需要使用專用的 RDMA\ 能力 Nic，即使如果頻寬繫結至 HYPER-V Virtual 開關切換至 Nic 提供。
+交集的 NIC 功能，管理之前\(裝載的磁碟分割\)想要使用 RDMA 的服務必須使用專用的 RDMA\-功能的 Nic，即使已繫結至 HYPER-V 的 Nic 上的頻寬無法虛擬交換器。
 
-與匯集 NIC 的兩個工作負載 \（管理使用者的 RDMA 與來賓 traffic\）可以共用相同的實體 Nic，可讓您更少 Nic 安裝在您的伺服器。
+以及聚合的 NIC，兩個工作負載\(管理使用者的 RDMA 和客體流量\)可以共用相同的實體 Nic，讓您可以在您伺服器中安裝較少的 Nic。
 
-當您匯集 NIC 部署 HYPER-V Virtual 參數與 Windows Server 2016 HYPER-V 主機時，在 HYPER-V 主機 vNICs 公開 RDMA 服務主機上的 RDMA 使用透過任何 Ethernet\ 型 RDMA 技術的處理程序。
-
->[!NOTE]
->若要使用匯集 NIC 技術，在您的伺服器認證的網路介面卡必須支援 RDMA。
-
-本指南兩個設定的指示，一個用於您的伺服器上具有單一安裝網路介面卡，也就是匯集 NIC; 基本部署部署和其他的指示您的伺服器上具有兩個或更多網路介面卡，安裝，也就是匯集 NIC 部署到切換 Embedded 小組 \(SET\) 團隊的能力 RDMA\ 網路介面卡。
-
-本指南包含下列主題。
-
-- [使用單一網路介面卡的聚合型的 NIC 設定](cnic-single.md)
-- [聚合型的 NIC 小組的 NIC 設定](cnic-datacenter.md)
-- [聚合型 NIC 實體切換設定](cnic-app-switch-config.md)
-- [疑難排解匯集 NIC 設定](cnic-app-troubleshoot.md)
-
-## <a name="prerequisites"></a>必要條件
-
-以下是匯集 NIC 基本和資料中心部署的必要條件
+當您部署交集的 NIC 使用 Windows Server 2016 HYPER-V 主機和 HYPER-V 虛擬交換器時，在 HYPER-V 主機 Vnic RDMA 對公開服務主機處理序使用任何乙太網路的 RDMA\-基礎 RDMA 技術。
 
 >[!NOTE]
->本指南範例，Mellanox ConnectX-3 Pro 40 Gbps 乙太網路卡使用，但是您可以使用任何的 Windows Server 認證 RDMA\ 能力網路介面卡的支援此功能。 如需相容的網路介面卡的相關資訊，查看 Windows Server Catalog 主題[區域網路卡](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)。
+>若要使用交集的 NIC 技術，在您的伺服器的認證的網路介面卡必須支援 RDMA。
 
-### <a name="basic-converged-nic-prerequisites"></a>基本匯集 NIC 必要條件
+本指南提供兩組指示，一個用於您的伺服器上具有單一網路介面卡安裝，也就是交集的 NIC; 的基本部署的部署和另一組指示您的伺服器上具有兩個或多個網路介面卡，安裝，也就是透過交換器內嵌小組的交集的 NIC 的部署\(設定\)小組的 RDMA\-支援網路介面卡。
 
-若要執行此基本匯集 NIC 設定節目表中的步驟，您必須符合下列。
 
-- 執行 Windows Server 2016 Datacenter edition 或 Windows Server 2016 Standard edition 兩部伺服器。
-- 一個 RDMA 處理能力，認證每個伺服器安裝網路介面卡。
-- 必須在每個伺服器上安裝 HYPER-V 伺服器角色。
+## <a name="prerequisites"></a>先決條件
 
-### <a name="datacenter-converged-nic-prerequisites"></a>Datacenter 匯集 NIC 必要條件
+以下是交集的 NIC 的基本和資料中心部署的必要條件
 
-若要執行此 datacenter 匯集 NIC 設定節目表中的步驟，您必須符合下列。
+>[!NOTE]
+>提供的範例，我們使用 Mellanox connectx-3 Pro 40 Gbps 乙太網路介面卡，但您可以使用任何 Windows Server 認證 RDMA\-支援這項功能的網路介面卡。 如需有關相容的網路介面卡的詳細資訊，請參閱 Windows Server Catalog [LAN 卡](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)。
 
-- 執行 Windows Server 2016 Datacenter edition 或 Windows Server 2016 Standard edition 兩部伺服器。
-- 有兩個 RDMA 處理能力，認證中每個伺服器安裝網路介面卡。
-- 必須在每個伺服器上安裝 HYPER-V 伺服器角色。
-- 您必須熟悉切換 Embedded 小組 \(SET\)，這是另一個方法 NIC 小組方案，您可以在 Windows Server 2016 中包含 HYPER-V 和軟體所定義網路 (SDN) 堆疊的環境中使用。 設定 HYPER-V Virtual 開關切換至整合 NIC 小組的某些功能。 如需詳細資訊，請查看[遠端直接記憶體存取 (RDMA) 和切換 Embedded 小組（設定）](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
+### <a name="basic-converged-nic-prerequisites"></a>基本的交集的 NIC 必要條件
 
+若要執行基本的交集的 NIC 設定本指南中的步驟，您必須擁有下列項目。
+
+- 執行 Windows Server 2016 Datacenter edition 或 Windows Server 2016 Standard edition 的兩部伺服器。
+- 一個具備 RDMA 功能，認證的每部伺服器上安裝的網路介面卡。
+- 每部伺服器上安裝 HYPER-V 伺服器角色。
+
+### <a name="datacenter-converged-nic-prerequisites"></a>資料中心交集的 NIC 的必要條件
+
+若要執行的資料中心交集的 NIC 設定本指南中的步驟，您必須擁有下列項目。
+
+- 執行 Windows Server 2016 Datacenter edition 或 Windows Server 2016 Standard edition 的兩部伺服器。
+- 兩個具備 RDMA 功能，認證的每部伺服器上安裝的網路介面卡。
+- 每部伺服器上安裝 HYPER-V 伺服器角色。
+- 您必須先熟悉 Switch Embedded Teaming\(設定\)、 替代的 NIC 小組解決方案包含 Windows Server 2016 中的 HYPER-V 和軟體定義網路 (SDN) 堆疊的環境中使用。 設定會將部分 NIC 小組功能整合到 HYPER-V 虛擬交換器。 如需詳細資訊，請參閱 <<c0> [ 遠端直接記憶體存取 (RDMA) 和 Switch Embedded Teaming (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
+
+## <a name="related-topics"></a>相關主題
+- [具有單一網路介面卡的交集的 NIC 設定](cnic-single.md)
+- [交集的 NIC 組合的 NIC 設定](cnic-datacenter.md)
+- [交集的 NIC 的實體交換器組態](cnic-app-switch-config.md)
+- [疑難排解交集 NIC 組態](cnic-app-troubleshoot.md)
+
+---

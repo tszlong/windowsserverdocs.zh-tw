@@ -11,13 +11,13 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
 ms.openlocfilehash: 1ae36a2e1be1559094dd55dba41fa9a468118260
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339456"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840059"
 ---
-# 虛擬化
+# <a name="virtualization"></a>虛擬化
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
@@ -41,7 +41,7 @@ Windows Server 中的虛擬化是建立軟體定義基礎結構所需的其中�
                     <div class="cardText">
                         <h3>受防護網狀架構與受防護的 VM</h3>
 <HR />
-                        <p>身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 \(HGS\) (通常是有三個節點的叢集)，加上一個或多個受防護主機，以及一組受防護 VM。</p>
+                        <p>身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構是由一個主機守護者服務所組成\(HGS\) -一般而言，叢集中的三個節點再加上一個或多個受守護的主機，以及一組受防護的 Vm。</p>
                      </div>
                   </div>
               </div>
@@ -99,7 +99,7 @@ Windows Server 中的虛擬化是建立軟體定義基礎結構所需的其中�
                         </div>
                     </div>
                     <div class="cardText">
-                       <h3>適用於企業的 Windows 10：將裝置用於工作的方式</h3>
+                       <h3>適用於企業的 Windows 10:若要使用裝置工作的方式</h3>
 <HR />
                        <p>Hyper-V 技術透過硬體虛擬化提供運算資源。 Hyper-V 會建立電腦的軟體版本 (稱為虛擬機器)，讓您用來執行作業系統和應用程式。 您可以同時執行多個虛擬機器，也能視需要建立和刪除它們。</p>
                      </div>
@@ -138,7 +138,7 @@ Windows Server 中的虛擬化是建立軟體定義基礎結構所需的其中�
 
 ---
 
-### 相關
+### <a name="related"></a>相關
 
 - Hyper-V 需要特定硬體來建立虛擬化環境。 如需詳細資訊，請參閱 [Windows Server 2016 上 Hyper-V 的系統需求](./hyper-v/system-requirements-for-hyper-v-on-windows.md)。 
 

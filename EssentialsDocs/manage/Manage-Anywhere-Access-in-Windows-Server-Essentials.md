@@ -1,6 +1,6 @@
 ---
-title: "管理的任何地方存取 Windows Server Essentials"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 管理 Windows Server Essentials 中的隨處存取
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,29 +13,30 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: c9857cc6dd056e36133736c4888b46505ec8c3c7
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838609"
 ---
-# <a name="manage-anywhere-access-in-windows-server-essentials"></a>管理的任何地方存取 Windows Server Essentials
+# <a name="manage-anywhere-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的隨處存取
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-當您已安裝 Windows Server Essentials 體驗角色關閉隨處存取功能、遠端 Web 存取、virtual 私人網路和 DirectAccess 在 Windows Server Essentials，或 Windows Server 2012 R2 上時，它們可讓存取伺服器資源從任何位置與任何時候，並在任何裝置上網際網路連接您網路的使用者。 下列主題討論設定遠端 Web 存取、virtual 私人網路 (VPN)，以及 DirectAccess 功能在您的伺服器上。  
+當您開啟隨處存取功能、 遠端 Web 存取、 虛擬私人網路和 DirectAccess 在 Windows Server Essentials 中，或 Windows Server 2012 R2 中已安裝的 Windows Server Essentials 體驗角色時，它們可讓您的網路若要從具有網際網路連線，在任何時間，並在任何裝置上的任何位置存取伺服器資源的使用者。 下列主題討論如何在伺服器上設定「遠端 Web 存取」、虛擬私人網路 (VPN)和 DirectAccess 功能。  
   
--   [管理網路遠端存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [管理遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
-     遠端 Web 存取提供串流對齊、方便觸控的瀏覽器體驗的應用程式和從幾乎任何地方資料，您可以連上網際網路存取並使用幾乎所有裝置。  
+     「遠端 Web 存取」提供有效率、支援觸控的瀏覽器體驗，可讓您從幾乎任何有網際網路連線的地方，使用幾乎任何裝置，都可以存取應用程式和資料。  
   
 -   [管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)  
   
-     連接私人網路 virtual (VPN) 可讓使用者在家或外出工作使用的基礎結構提供公用網路，例如網際網路存取私人網路上的伺服器。  
+     虛擬私人網路 (VPN) 連線可讓在家中或差旅中工作的使用者，使用公用網路 (例如網際網路) 所提供的基礎結構來存取私人網路上的伺服器。  
   
--   [DirectAccess 的設定](Configure-DirectAccess-in-Windows-Server-Essentials.md)  
+-   [設定 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md)  
   
-     DirectAccess 可讓您進行完美地連接到您的組織「度的網路從網際網路配備遠端位置而不需要連接私人網路 virtual (VPN)。 DirectAccess 提供的組織提升的生產力「度 s 行動裝置版人力所提供的相同連接體驗中與以外 office。  
+     DirectAccess 可讓您順暢地連線到您的組織 」 狀況的網路從而不必建立虛擬私人網路 (VPN) 連線，任何具備網際網路的遠端位置。 DirectAccess 提供提升產能為您的組織 」 狀況 s 行動工作力的供應項目相同的連線體驗在辦公室內外。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)

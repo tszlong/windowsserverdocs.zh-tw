@@ -1,29 +1,30 @@
 ---
 ms.assetid: 28ecaf5c-9131-406c-b211-a230162e462e
-title: "判斷排程"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 決定排程
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0ec953b34475c50e62553a9ba95e4d45d9904bf3
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: dee63ce0fb687b2b722ce64614c54388fc544433
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838999"
 ---
-# <a name="determining-the-schedule"></a>判斷排程
+# <a name="determining-the-schedule"></a>決定排程
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-您可以控制網站連結可用性設定排程的網站連結。 當複寫兩台穿過多個網站連結時，交叉之複寫排程的所有相關連結的判斷連接排程之間的兩個網站。  
+您可以設定站台連結的排程來控制站台連結的可用性。 當兩個站台間複寫會周遊多個站台連結時，在所有相關的連結上的複寫排程的交集會判斷兩個站台之間的連線排程。  
   
-計劃設定的網站連結排程，建立兩個重疊的排程之間包含直接彼此的網域控制站的網站連結。 除非您想要封鎖複寫資料傳輸期間尖峰使用預設（100%可用) 排程這些連結。 封鎖複寫，優先順序給其他流量，但您也會增加複寫延遲。  
+若要規劃設定站台連結排程，請建立包含彼此直接複寫的網域控制站的站台連結之間的兩個重疊的排程。 除非您想要封鎖在尖峰時段的複寫流量，請使用這些連結上的預設 （100 個可用百分比） 的排程。 封鎖的複寫，優先順序為其他流量，但您也會增加複寫延遲。  
   
-網域控制站儲存時間以國際標準時間 (UTC)。 本地時間的網站和電腦設定排程符合網站連結物件排程時間設定。 網域控制站連絡人的不同的網站和時區中的電腦，網域控制站排程會顯示時間設定依據本機電腦的網站的時間。  
+網域控制站儲存時間以 Coordinated Universal Time (UTC)。 在 站台連結物件排程的時間設定符合網站以及電腦所在的排程已設定為本地時間。 當網域控制站連絡不同站台和時區的電腦時，網域控制站上的排程會顯示根據電腦的站台的當地時間的時間設定。  
   
 
 

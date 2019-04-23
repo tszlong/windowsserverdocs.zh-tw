@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1115d276-00f6-4c23-9278-eedcc31295d8
-title: "確認您 Windows Server 2012 R2 聯盟伺服器操作"
-description: 
+title: 確認您 Windows Server 2012 R2 同盟伺服器作業
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,50 +10,51 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 2df8a00a953196d7ca19ea0d164abbbf6eefd829
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840739"
 ---
-# <a name="verify-your-windows-server-2012-r2-federation-server-is-operational"></a>確認您 Windows Server 2012 R2 聯盟伺服器操作
+# <a name="verify-your-windows-server-2012-r2-federation-server-is-operational"></a>確認您 Windows Server 2012 R2 同盟伺服器作業
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-您可以使用下列程序來確認聯盟伺服器操作。是的在相同網路的任何 client 可以瑞曲之戰新聯盟伺服器。  
+您可以使用下列程序來確認同盟伺服器可以運作，也就是說，相同網路上的所有用戶端都可以連線到新的同盟伺服器。  
   
-成員資格**使用者**，**備份電信業者**、**進階使用者**、**系統管理員**或相當於、 在本機電腦上的最低需求完成此程序。  檢視詳細資料使用適當的帳號，並群組成員資格，[本機和網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)。   
+本機電腦上 **Users**、**Backup Operators**、**Power Users**、**Administrators** 或具有同等權限的成員資格，至少需要完成此程序。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
-### <a name="procedure-1-to-verify-that-a-federation-server-is-operational"></a>程序 1︰ 驗證操作聯盟伺服器  
+### <a name="procedure-1-to-verify-that-a-federation-server-is-operational"></a>程序 1：確認該同盟伺服器運作正常  
   
-1.  要驗證網際網路資訊服務 \(IIS\) 正確設定聯盟伺服器上 client 的電腦位於聯盟伺服器相同樹系登入。  
+1.  若要確認 Internet Information Services \(IIS\)在同盟伺服器上，登入用戶端電腦位於相同的樹系的同盟伺服器已正確設定。  
   
-2.  打開瀏覽器視窗，在網址列輸入聯盟 DNS 伺服器的主機名稱，然後附加 \/adfs\/fs\/federationserverservice.asmx 新聯盟伺服器，例如：  
+2.  開啟瀏覽器視窗，在網址列中輸入同盟伺服器的 DNS 主機名稱，然後附加\/adfs\/fs\/為 federationserverservice.asmx 它適用於新的同盟伺服器，例如：  
   
     **https:\/\/fs1.fabrikam.com\/adfs\/fs\/federationserverservice.asmx**  
   
-3.  按下 ENTER，並完成聯盟伺服器電腦上的下一步程序。 如果您看見 [**這個網站的安全性憑證有問題**，按一下 [**瀏覽此網站繼續**。  
+3.  按 ENTER 鍵，然後在同盟伺服器電腦上完成下一個程序。 如果您看到 **[此網站的安全性憑證有問題]** 訊息，按一下 **[繼續瀏覽此網站]**。  
   
-    輸出預期會顯示的 XML 文件服務描述與。 如果出現此頁面，IIS 聯盟伺服器上的為成功正常運作且波頁面。  
+    預期的輸出是顯示 XML 以及服務描述文件。 如果出現此頁面，表示同盟伺服器上的 IIS 可以運作，而且成功提供頁面服務。  
   
-資格在**系統管理員**，或相當於、在本機電腦上的最低需求完成此程序。  檢視詳細資料使用適當的帳號，並群組成員資格，[本機和網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)。   
+若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
-### <a name="procedure-2-to-verify-that-a-federation-server-is-operational"></a>程序 2︰ 驗證操作聯盟伺服器  
+### <a name="procedure-2-to-verify-that-a-federation-server-is-operational"></a>程序 2:確認該同盟伺服器運作正常  
   
-1.  以系統管理員身分登入新的聯盟伺服器。  
+1.  以系統管理員身分登入新的同盟伺服器。  
   
-2.  在**[開始]**畫面中，輸入**事件檢視器]**，然後按 ENTER 鍵。  
+2.  在 **開始**畫面上，輸入**事件檢視器**，然後按 ENTER 鍵。  
   
-3.  在詳細資料窗格中，double\ 按一下**應用程式與服務登**，double\ 按**AD FS 事件**，然後按一下 [**系統管理員**。  
+3.  在詳細資料窗格中，按兩下\-按一下  **Applications and Services Logs**、 雙精度浮點\-按一下**AD FS 事件**，然後按一下 **管理員**。  
   
-4.  在**263**欄中，尋找事件 ID 100。 如果聯盟伺服器設定正確，您會看到新的事件-中的應用程式登入的事件檢視器 — 的事件編號 100。 事件此驗證聯盟伺服器是能順利與同盟服務通訊。  
+4.  在 [**事件識別碼**] 欄中，尋找事件識別碼為 100。 如果同盟伺服器的設定正確，您會看到新的事件-事件檢視器的應用程式記錄檔中，與事件識別碼為 100。 這個事件會確認同盟伺服器能夠成功與 Federation Service 進行通訊。  
   
-## <a name="see-also"></a>也了 
+## <a name="see-also"></a>另請參閱 
 
 [AD FS 部署](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 部署指南](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[部署聯盟伺服器陣列](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[部署同盟伺服器陣列](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
    
   
 

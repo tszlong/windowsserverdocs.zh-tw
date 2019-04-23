@@ -1,6 +1,6 @@
 ---
-title: Windows Admin Center SDK 案例研究 Lenovo
-description: Windows Admin Center SDK 案例研究 Lenovo
+title: Windows Admin Center SDK 案例研究-Lenovo
+description: Windows Admin Center SDK 案例研究-Lenovo
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
@@ -9,33 +9,33 @@ ms.date: 1/7/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: e93c05cc953433836c6b973c6b7bf0327840c181
-ms.sourcegitcommit: ebeec824f802f020d0ece17524ba43b1baeba893
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "8995324"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835819"
 ---
-# Lenovo XClarity 整合商擴充功能
+# <a name="lenovo-xclarity-integrator-extension"></a>Lenovo XClarity 整合器擴充功能
 
-## 整合式的硬體管理所有地方 ！
+## <a name="integrated-hardware-management-everywhere"></a>所有位置使用整合式的硬體管理 ！
 
-Windows Admin Center 的[Lenovo XClarity 整合商](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)擴充功能提供系統管理員可以直接從 Windows Admin Center 管理 Lenovo 基礎結構順暢的體驗。 XClarity 整合商擴充功能包括獨立的解決方案擴充功能，而且也會延伸現有的伺服器管理員、 容錯移轉叢集管理員，並啟用簡單的伺服器管理的單一且整合的 UI 中的超融合式叢集管理員解決方案。 
+[Lenovo XClarity 整合器](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)Windows Admin Center 的擴充功能提供系統管理員管理 Lenovo 基礎結構，直接從 Windows Admin Center 順暢的體驗。 XClarity 整合器延伸模組包含獨立方案延伸模組，並也可擴充現有的伺服器管理員、 容錯移轉叢集管理員 中和 Hyper-Converged 叢集管理員在單一、 統一的 UI 中的解決方案，讓簡單的伺服器管理。 
 
-XClarity 整合商延伸模組中包含的解決方案擴充功能可讓您一次連線到 Lenovo XClarity 系統管理員、 Lenovo 機架或塔伺服器或在整個底座中的所有伺服器。 一旦將伺服器加入，您可以看到已新增的所有節點的整體健康狀態。
+XClarity 整合器擴充功能中包含解決方案延伸可讓一次連接到 Lenovo XClarity 系統管理員、 Lenovo 機架或塔台伺服器或整個底座中的所有伺服器。 一旦伺服器加入時，您可以看到已新增的所有節點的整體健全狀況狀態。
 
-![Lenovo 擴充功能](../../media/extend-case-study-lenovo/lenovo-1.png)
+![Lenovo 延伸模組](../../media/extend-case-study-lenovo/lenovo-1.png)
 
-透過選取伺服器，您可以檢視伺服器的硬體詳細目錄、 可用的韌體更新、 警示、 事件、 記錄檔、 耗電量以及溫度。 您也可以執行作業，例如遠端控制和電源開/關。
+選取伺服器，您可以檢視伺服器的硬體清查、 可用的韌體更新、 警示、 事件、 記錄、 功率耗用量和溫度。 您也可以執行作業，例如遠端控制和電源開啟/關閉。
 
-![Lenovo 擴充功能](../../media/extend-case-study-lenovo/lenovo-2.png)
+![Lenovo 延伸模組](../../media/extend-case-study-lenovo/lenovo-2.png)
 
-管理伺服器內 Windows Admin Center，讓您可以順暢地管理您的基礎結構的軟體和硬體之間切換時提供工具擴充功能為相同的工具。
+管理伺服器內 Windows Admin Center，可讓您管理您的基礎架構軟體和硬體之間天衣無縫地切換時，相同的工具都有工具延伸模組。
 
-![Lenovo 擴充功能](../../media/extend-case-study-lenovo/lenovo-3.png)
+![Lenovo 延伸模組](../../media/extend-case-study-lenovo/lenovo-3.png)
 
-容錯移轉叢集和超融合式叢集的工具擴充功能提供儀表板顯示整體叢集硬體健康情況狀態、 警示狀態、 韌體一致性狀態和報告、 耗電量和溫度，以及風扇及電源供應健康情況狀態。
+容錯移轉叢集和超交集叢集的 [工具] 延伸模組提供儀表板顯示整體叢集硬體健全狀況狀態、 狀態警示、 韌體一致性狀態和報表中，功率耗用量和溫度和風扇和電源供應器健全狀況狀態。
 
 ![Lenovo 延伸模組](../../media/extend-case-study-lenovo/lenovo-4.png)
-![Lenovo 擴充功能](../../media/extend-case-study-lenovo/lenovo-5.png)
+![Lenovo 延伸模組](../../media/extend-case-study-lenovo/lenovo-5.png)
 
-深入了解 Windows Admin center [Lenovo 網站](https://support.lenovo.com/us/en/solutions/ht507549)上 Lenovo XClarity 整合商供應項目。
+深入了解 Windows Admin Center Lenovo XClarity 整合者供應項目上[Lenovo 網站](https://support.lenovo.com/us/en/solutions/ht507549)。

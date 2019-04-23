@@ -1,6 +1,6 @@
 ---
 title: vRSS 常見問題集
-description: 本主題中，您會發現一些常常見問題集和解答使用 vRSS。
+description: 本主題中，您會發現一些常被詢問問與答使用 vRSS。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -11,58 +11,58 @@ ms.date: 09/05/2018
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 3fafe6c39285e65a9d39a76cc6b652dac5c3efbd
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133814"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840239"
 ---
-# vRSS 常見問題集
+# <a name="vrss-frequently-asked-questions"></a>vRSS 常見問題集
 
-本主題中，您會發現一些常常見問題集和解答使用 vRSS。
+本主題中，您會發現一些常被詢問問與答使用 vRSS。
 
-## 實體網路介面卡，讓我搭配 vRSS 需求為何？
+## <a name="what-are-the-requirements-for-the-physical-network-adapters-that-i-use-with-vrss"></a>VRSS 搭配使用的實體網路介面卡的需求有哪些？
 
-網路介面卡必須是與虛擬機器佇列 \(VMQ\) 相容，而且必須有 10 gbps 連結速度或更多。
+網路介面卡必須與虛擬機器佇列相容\(VMQ\) ，而且必須連結速度的 10 Gbps 以上。
 
-如需詳細資訊，請參閱[計劃 vRSS 使用](vrss-plan.md)。
+如需詳細資訊，請參閱 <<c0> [ 計劃使用 vRSS](vrss-plan.md)。
 
-## 運作 vRSS hyper\ 執行緒處理器核心？
+## <a name="does-vrss-work-with-hyper-threaded-processor-cores"></a>VRSS 運作與超\-執行緒處理器核心？
 
-否。 VRSS 和 VMQ 忽略 hyper\ 執行緒處理器核心。
+資料分割 VRSS 和 VMQ 略過超\-執行緒處理器核心。
 
-## 運作 vRSS 的主機虛擬 Nic \(vNICs\)？
+## <a name="does-vrss-work-for-host-virtual-nics-vnics"></a>VRSS 運作的主機虛擬 Nic \(Vnic\)嗎？
 
-是。 使用 **-ManagementOS**參數，而不是**組 VMNetworkAdapter** Windows PowerShell 命令上的虛擬機器 \(VM\) 名稱和**啟用 NetAdapterRss**主機 vNIC 上。
+是的。 使用 **-ManagementOS**參數，而不是虛擬機器\(VM\)名稱上**Set-vmnetworkadapter** Windows PowerShell 命令和**啟用 NetAdapterRss**主機 vNIC 上。
 
-如需詳細資訊，請參閱[RSS 」 和 「 vRSS 的 Windows PowerShell 命令](vrss-wps.md)。
+如需詳細資訊，請參閱 < [Windows PowerShell 命令，RSS 和 vRSS](vrss-wps.md)。
 
-## 若要使用 vRSS 將 VM 需要在有多個邏輯處理器？
+## <a name="how-many-logical-processors-does-a-vm-need-to-use-vrss"></a>若要使用 vRSS 將 VM 需要在多少個邏輯處理器？
 
-虛擬機器必須要能夠使用 vRSS 的兩個或多個邏輯處理器 \(LPs\)。
+Vm 需要兩個或多個邏輯處理器\(LPs\)要能夠使用 vRSS。
 
-如需詳細資訊，請參閱[計劃 vRSS 使用](vrss-plan.md)。
+如需詳細資訊，請參閱 <<c0> [ 計劃使用 vRSS](vrss-plan.md)。
 
-## 是 vRSS 與 NIC 小組相容？
+## <a name="is-vrss-compatible-with-nic-teaming"></a>是 vRSS 與 NIC 小組相容？
 
-是。 如果您使用 NIC 小組，請務必正確設定 VMQ，若要使用的 NIC 小組的設定。 如需 NIC 小組部署和管理的詳細資訊，請參閱[NIC 小組](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)。
+是的。 如果您使用 NIC 小組，務必正確設定 VMQ 以搭配使用 NIC 小組設定。 如需 NIC 小組的部署和管理的詳細資訊，請參閱[NIC 小組](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)。
 
-## vRSS 已啟用，但如何知道是否正在運作？ 
+## <a name="vrss-is-enabled-but-how-do-i-know-if-it-is-working"></a>已啟用 vRSS，但是如何知道它是否正在運作？ 
 
-您將能夠告知 vRSS 正在運作中您的 VM 開啟工作管理員，並檢視虛擬處理器使用率。 如果有多個 vm 建立的連線，您可以看到多個核心上面 0%使用率。
+您可以告訴 vRSS 正在開啟工作管理員，在您的 VM，並檢視虛擬處理器使用率。 如果有多個 VM 建立的連接，您可以看到多個核心使用率超過 0%。
 
-由於在單一的 TCP 工作階段無法負載平衡跨多個邏輯處理器核心，您的 VM 必須接收多個 TCP 工作階段之前，您可以以觀察 vRSS 正常運作。
+因為單一 TCP 工作階段不能是負載平衡到多個邏輯處理器核心，您的 VM 必須可接收多個 TCP 工作階段之前，您可以觀察 vRSS 運作。
 
-如果 VM 會收到多個 TCP 工作階段，但您不會看到一個以上的 LP 核心上方 0%使用率，請確定您已完成所有主題中的[計劃 vRSS 利用](vrss-plan.md)準備步驟。
+如果 VM 正在接收多個 TCP 工作階段，但不是會看到多個 LP 核心使用率超過 0%，請確定您已完成所有準備步驟 > 主題中[計劃使用 vRSS](vrss-plan.md)。
 
-## 我想要在主應用程式，而不是所有的處理器無法使用。 它看起來就像每一個會略過。
+## <a name="im-looking-at-the-host-and-not-all-of-the-processors-are-being-used-it-looks-like-every-other-one-is-being-skipped"></a>我正在檢視主機，看來並非所有處理器都已使用。 似乎其他處理器都被忽略。
   
-檢查是否已啟用超執行緒。 設計 VMQ 和 vRSS 略過 hyper\ 執行緒的核心。
+檢查是否已啟用超執行緒。 VMQ 和 vRSS 專為略過超\-執行緒核心。
 
-## RSS 和 vRSS 上有不同的 Windows PowerShell 命令？
+## <a name="are-there-different-windows-powershell-commands-for-rss-and-vrss"></a>RSS 和 vRSS 上有不同的 Windows PowerShell 命令嗎？
 
-\ [是] 和 [否。 雖然在原生主機中的 RSS 和 RSS Vm 中的，您可以使用相同命令，vRSS 也會要求 VMQ，以啟用實體 nic-及 VM 與 vRSS 交換器連接埠上必須啟用。
+是和否。 雖然您可以使用相同的命令在原生的主控件中的 RSS 及 RSS 在 Vm 中的，vRSS 也需要啟用實體 NIC 和 VM 和 vRSS 交換器連接埠上啟用 VMQ。
 
-如需詳細資訊，請參閱[RSS 」 和 「 vRSS 的 Windows PowerShell 命令](vrss-wps.md)。
+如需詳細資訊，請參閱 < [Windows PowerShell 命令，RSS 和 vRSS](vrss-wps.md)。
 
 ---

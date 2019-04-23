@@ -1,0 +1,60 @@
+---
+title: convert mbr
+description: '適用於 Windows 命令主題 * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: a635a4c0-af73-4330-b021-51d483424537
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: da8d62567863bc38a5aa0b35a8f3fe4ee24cc888
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834609"
+---
+# <a name="convert-mbr"></a>convert mbr
+
+
+
+將具有 GUID 磁碟分割表格 (GPT) 磁碟分割樣式的空白基本磁碟轉換成具有主開機記錄 (MBR) 磁碟分割樣式的基本磁碟。
+
+> [!IMPORTANT]
+> 磁碟必須是空的才能將它轉換成 MBR 磁碟。 備份您的資料，然後再刪除轉換磁碟之前的 所有資料分割或磁碟區。
+
+如需如何使用此命令的相關資訊的指示，請參閱[將 GUID 磁碟分割表格磁碟變更為主要開機記錄磁碟](https://go.microsoft.com/fwlink/?LinkId=207050)(https://go.microsoft.com/fwlink/?LinkId=207050)。
+
+## <a name="syntax"></a>語法
+
+```
+convert mbr [noerr]
+```
+
+## <a name="parameters"></a>參數
+
+|參數|描述|
+|---------|-----------|
+|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|
+
+## <a name="remarks"></a>備註
+
+-   這項作業成功時，必須選取基本磁碟。 使用**選取磁碟**命令來選取基本磁碟，並將焦點移到它。
+
+## <a name="BKMK_examples"></a>範例
+
+若要從 GPT 磁碟分割樣式的基本光碟轉換成 MBR 磁碟分割樣式中，請輸入 >:
+```
+convert mbr
+```
+
+#### <a name="additional-references"></a>其他參考資料
+
+[命令列語法關鍵](command-line-syntax-key.md)
+

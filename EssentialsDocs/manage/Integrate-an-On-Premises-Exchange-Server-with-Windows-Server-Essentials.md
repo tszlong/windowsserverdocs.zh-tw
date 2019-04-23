@@ -1,6 +1,6 @@
 ---
-title: "與 Windows Server Essentials 整合先 Exchange Server"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 整合內部部署 Exchange Server 與 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,453 +12,442 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2020e08b94800a9750f095a2f772afb14ba5f0b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 59478c4c6c04c5b4912b32eff895df6a3cd2f8fa
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839179"
 ---
-# <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>與 Windows Server Essentials 整合先 Exchange Server
+# <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>整合內部部署 Exchange Server 與 Windows Server Essentials
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-本指南提供資訊和基本的指示來協助您整合 Exchange Server 執行執行的 Windows Server Essentials 的伺服器上場所伺服器並完成設定。  
+本指南提供資訊和基本指示，協助您設定和整合執行 Exchange Server 的內部部署伺服器與執行 Windows Server Essentials 的伺服器。  
   
- 本指南應該先部署的 Windows Server Essentials 網路上執行 Exchange Server 先伺服器。  
+ 嘗試在 Windows Server Essentials 網路部署執行 Exchange Server 的內部部署伺服器之前，請先閱讀本指南。  
   
 > [!NOTE]
->  Exchange Server 2010 不支援執行 Windows Server 2012 的電腦上安裝。  
+>  Exchange Server 2010 不支援在執行 Windows Server 2012 的電腦上進行安裝。  
   
 ## <a name="prerequisites"></a>必要條件  
- 安裝之前 Exchange Server Windows Server Essentials 網路上，請確定您完成的工作，本節所述。  
+ 在 Windows Server Essentials 網路上安裝 Exchange Server 之前，請確定您已完成本節所述的工作。  
   
--   [執行 Windows Server Essentials 的伺服器設定](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)  
+-   [設定執行 Windows Server Essentials 的伺服器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)  
   
--   [準備要安裝 Exchange Server 的第二個伺服器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SecondServer)  
+-   [準備在其上安裝 Exchange Server 的第二部伺服器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SecondServer)  
   
 -   [設定您的網際網路網域名稱](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)  
   
-###  <a name="BKMK_SetUpSBS8"></a>執行 Windows Server Essentials 的伺服器設定  
- 您必須已經設定執行 Windows Server Essentials 的伺服器。 這將會網域控制站伺服器 Exchange Server 執行。 如需有關如何設定 Windows Server Essentials 的資訊，請查看[安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)。  
+###  <a name="BKMK_SetUpSBS8"></a> 設定執行 Windows Server Essentials 的伺服器  
+ 您必須設定好執行 Windows Server Essentials 的伺服器。 這會是執行 Exchange Server 之伺服器的網域控制站。 如需有關如何設定 Windows Server Essentials 的資訊，請參閱[安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)。  
   
-###  <a name="BKMK_SecondServer"></a>準備要安裝 Exchange Server 的第二個伺服器  
- 您必須安裝 Exchange Server 上執行的版本的 Windows Server 作業系統的正式支援執行 Exchange Server 2010 第二部伺服器或 Exchange Server 2013。 然後您必須將第二部伺服器加入 Windows Server Essentials 網域。  
+###  <a name="BKMK_SecondServer"></a> 準備在其上安裝 Exchange Server 的第二部伺服器  
+ 您必須在執行 Windows Server 作業系統版本的第二部伺服器上安裝 Exchange Server，該作業系統版本正式支援執行 Exchange Server 2010 或 Exchange Server 2013。 接著，您必須將第二部伺服器加入 Windows Server Essentials 網域。  
   
- 了解如何加入 Windows Server Essentials 網域中的第二個伺服器的資訊，會看到網路中加入的第二個伺服器[連接](../use/Get-Connected-in-Windows-Server-Essentials.md)。  
+ 如需有關如何將第二部伺服器加入 Windows Server Essentials 網域的資訊，請參閱第二部伺服器加入網路中[連繫接軌](../use/Get-Connected-in-Windows-Server-Essentials.md)。  
   
 > [!NOTE]
->  Microsoft 不會支援執行 Windows Server Essentials 的伺服器上安裝 Exchange Server。  
+>  Microsoft 不支援在執行 Windows Server Essentials 的伺服器上安裝 Exchange Server。  
   
-###  <a name="BKMK_DomainNames"></a>設定您的網際網路網域名稱  
- 若要整合執行 Exchange Server 與 Windows Server Essentials 先伺服器，您必須已經登記完畢為您的企業有效網際網路網域名稱 (例如*contoso.com*)。 您還必須使用您的網域名稱提供者來建立需要 Exchange Server 的 DNS 資源記錄。  
+###  <a name="BKMK_DomainNames"></a> 設定您的網際網路網域名稱  
+ 若要整合執行 Exchange Server 的內部部署伺服器與 Windows Server Essentials，您必須為公司註冊有效的網際網路網域名稱 (例如 *contoso.com*)。 您還必須洽詢您的網域名稱提供者，以建立 Exchange Server 需要的 DNS 資源記錄。  
   
- 例如，如果您的公司網際網路的網域名稱是 contoso.com，而您想要使用的完整的網域名稱 (FQDN) *mail.contoso.com*參考 Exchange server 您先伺服器，以搭配您的網域名稱提供者來建立 DNS 資源記錄下表中。  
+ 例如，如果您的公司網際網路網域名稱為 contoso.com，您想使用完整網域名稱 (FQDN) *mail.contoso.com* 來參照執行 Exchange Server 的內部部署伺服器，請洽詢您的網域名稱提供者以建立下表中的 DNS 資源記錄。  
   
-|資源記錄名稱|使用碼表進行類型|使用碼表進行設定|描述|  
+|資源記錄名稱|記錄類型|記錄設定|描述|  
 |--------------------------|-----------------|--------------------|-----------------|  
-|電子郵件|主機 (A)|地址 =*指派給您的 ISP 公用 IP 位址*|Exchange Server 將會收到郵件傳送給 mail.contoso.com。<br /><br /> 在您的選取項目，您可以使用不同的名稱。|  
-|MX|「 郵件 」 交換程式 (MX)|主機名稱 = @<br /><br /> Address=mail.contoso.com<br /><br /> 喜好設定 = 0|提供的電子郵件訊息路由適用於email@contoso.com以到達您先伺服器執行 Exchange Server。|  
-|SPF|(TXT) 的文字|v = spf1 mx ~ 所有|資源記錄協助防止從您的伺服器為被視為垃圾郵件已傳送電子郵件。|  
-|autodiscover._tcp|服務 (SRV)|服務： _autodiscover<br /><br /> 通訊協定： _tcp<br /><br /> 優先順序： 0<br /><br /> 減重： 0<br /><br /> 連接埠： 443<br /><br /> 目標主機： mail.contoso.com|可讓 Microsoft Office Outlook 和行動裝置版裝置自動探索 Exchange server 您先伺服器。<br /><br /> **注意：**您也可以設定自動探索 (A) 主機的資源記錄及記錄指向上場所 server 執行 Exchange Server 的公用 IP 位址。 不過，如果您執行此選項，您必須也提供支援 mail.contoso.com 和 autodiscover.contoso.com 網域名稱主題替代名稱 （舊） SSL 憑證。|  
+|郵件|主機 (A)|位址=*您的 ISP 指派的公用 IP 位址*|Exchange Server 會接收傳送到 mail.contoso.com 的郵件。<br /><br /> 您可以使用自己選擇的其他名稱。|  
+|MX|郵件交換程式 (MX)|主機名稱=@<br /><br /> 位址=mail.contoso.com<br /><br /> 喜好設定=0|提供的電子郵件訊息路由email@contoso.com抵達您執行 Exchange Server 的內部部署伺服器。|  
+|SPF|文字 (TXT)|v=spf1 a mx ~all|協助防止將您伺服器傳送的電子郵件識別為垃圾郵件的資源記錄。|  
+|autodiscover._tcp|服務 (SRV)|服務：_autodiscover<br /><br /> 通訊協定：_tcp<br /><br /> 優先順序：0<br /><br /> 權數：0<br /><br /> 連接埠：443<br /><br /> 目標主機：mail.contoso.com|讓 Microsoft Office Outlook 和行動裝置自動探索執行 Exchange Server 的內部部署伺服器。<br /><br /> **注意：** 您也可以設定自動探索主機 (A) 資源記錄，並將記錄指向執行 Exchange Server 之內部部署伺服器的公用 IP 位址。 不過，如果您實作這個選項，也必須提供同時支援 mail.contoso.com 和 autodiscover.contoso.com 網域名稱的主體別名 (SAN) SSL 憑證。|  
   
 > [!NOTE]
->  -   取代*contoso.com*在此範例中，您登記網際網路網域名稱。  
+>  -   用您註冊的網際網路網域名稱取代這個範例中的 *contoso.com* 項目。  
   
- 您必須先伺服器執行 Exchange Server 的 FQDN 您使用執行 Windows Server Essentials 伺服器比選擇不同的 FQDN。 例如，您可以選擇使用*remote.contoso.com*以 FQDN 存取伺服器 Windows Server Essentials 執行從網際網路的電腦使用。 您可以使用*mail.contoso.com*以電子郵件傳送到您的先伺服器執行 Exchange Server 的 FQDN。  
+ 執行 Exchange Server 之內部部署伺服器的 FQDN 必須與執行 Windows Server Essentials 之伺服器使用的 FQDN 不同。 例如，您可以選擇使用 *remote.contoso.com* 做為電腦用來從網際網路存取執行 Windows Server Essentials 之伺服器的 FQDN。 您可以使用 *mail.contoso.com* 做為用來將電子郵件路由傳送到執行 Exchange Server 之內部部署伺服器的 FQDN。  
   
 ## <a name="install-exchange-server"></a>安裝 Exchange Server  
- Exchange Server 整合的功能在 Windows Server Essentials 支援下列 Exchange Server 版本：  
+ Windows Server Essentials 的 Exchange Server 整合功能支援下列 Exchange Server 版本：  
   
 -   Exchange Server 2013  
   
--   交換與 Service Pack 1 (SP1) Server 2010  
+-   Exchange Server 2010 含 Service Pack 1 (SP1)  
   
- 您在第二個伺服器上安裝 Exchange Server 之前，您必須先將目前的管理員，若要**企業系統管理員**群組。  
+ 在第二部伺服器上安裝 Exchange Server 之前，必須先將目前的系統管理員帳戶新增至 **Enterprise Admins** 群組。  
   
-#### <a name="to-add-the-current-administrator-account-to-the-enterprise-admins-group"></a>將目前的管理員新增至企業系統管理員群組  
+#### <a name="to-add-the-current-administrator-account-to-the-enterprise-admins-group"></a>將目前的系統管理員帳戶新增至 Enterprise Admins 群組  
   
 1.  以系統管理員身分登入 Windows Server Essentials。  
   
-2.  系統管理員身分執行 Windows PowerShell。  
+2.  以系統管理員身分執行 Windows PowerShell。  
   
-3.  Windows PowerShell 命令提示字元中，輸入**新增-ADGroupMember ˜Enterprise 管理員 $env： 使用者名稱**，然後按 Enter 鍵。  
+3.  在 Windows PowerShell 命令提示字元中，輸入**Add-adgroupmember"Enterprise Admins"$env： 使用者名稱**，然後按 Enter 鍵。  
   
-#### <a name="to-install-exchange-server"></a>若要安裝 Exchange Server  
+#### <a name="to-install-exchange-server"></a>安裝 Exchange Server  
   
 1.  以系統管理員身分登入第二部伺服器。  
   
-2.  打開網際網路瀏覽器，並瀏覽至[Exchange Server 部署小幫手]](https://go.microsoft.com/fwlink/p/?LinkID=249163)的網站。  
+2.  開啟網際網路瀏覽器，然後巡覽至 [Exchange Server 部署助理](https://go.microsoft.com/fwlink/p/?LinkID=249163) 網站。  
   
-3.  按一下**上的場所只**。  
+3.  按一下 [On-Premises Only]。  
   
-4.  按一下新的版本，您將會安裝 Exchange Server 安裝選項。  
-  
-    > [!NOTE]
-    >  如果您從安裝 Windows 的小型企業伺服器移轉，您應該選取適當的升級選項，包括移轉步驟。  
-  
-5.  在下一個頁面，接受預設設定，，然後按一下**下一步**。  
+4.  按一下您將安裝的 Exchange Server 版本的新安裝選項。  
   
     > [!NOTE]
-    >  如果您打算使用公用資料夾中 Exchange Server 的全新安裝時，變更該設定**[是]**。  
+    >  如果您是從 Windows Small Business Server 安裝進行移轉，應該選取涵蓋移轉步驟的適當升級選項。  
   
-6.  依照檢查清單中部署 Exchange Server 的逐步指示。  
+5.  在下一頁中，接受預設值，然後按 [下一頁]。  
   
-     Exchange Server 部署小幫手也可讓您：  
+    > [!NOTE]
+    >  如果您計畫要全新安裝的 Exchange Server 中使用公用資料夾，請將該設定變更為 [是] 。  
   
-    -   列印一份檢查清單。  
+6.  依照檢查清單中的逐步指示部署 Exchange Server。  
   
-    -   傳送電子郵件收件者的一份檢查清單。  
+     Exchange Server 部署助理也可讓您：  
   
-    -   下載為 PDF 檔案的檢查清單。  
+    -   列印檢查清單。  
+  
+    -   將檢查清單傳送給電子郵件收件者。  
+  
+    -   將檢查清單下載為 PDF 檔。  
   
 > [!NOTE]
->  -   您必須隨時 Exchange server 的伺服器上安裝管理工具。 在 Windows Server Essentials Exchange Server 整合的功能需要管理工具。  
-> -   如果您需要設定目錄，我們建議也設定**InternalUrl**會以相同的 URL 屬性**ExternalUrl**的每個 virtual directory 屬性。 如需詳細資訊，請查看[管理 Client 存取伺服器目錄](https://go.microsoft.com/fwlink/p/?LinkId=251058)Exchange Server 2010 online 協助網站。  
-> -   如果您想要存取 Outlook Web Access (OWA) 從網路存取網站上 Windows Server Essentials 中，您必須 OWA 設定的 URL 外部屬性。  
+>  -   您必須選擇將管理工具安裝在執行 Exchange Server 的伺服器上。 Windows Server Essentials 的 Exchange Server 整合功能需要管理工具。  
+> -   如果您需要設定虛擬目錄，建議您將每個虛擬目錄的 [InternalUrl]  屬性與 [ExternalUrl]  屬性設定成相同的 URL。 如需詳細資訊，請參閱 Exchange Server 2010 線上說明網站的 [管理用戶端存取伺服器虛擬目錄](https://go.microsoft.com/fwlink/p/?LinkId=251058) 。  
+> -   如果您要從 Windows Server Essentials 的遠端 Web 存取網站內存取 Outlook Web Access (OWA)，必須為 OWA 設定外部 URL 屬性。  
   
- 如果您在全新的安裝程式安裝 Exchange Server 2010，您也可以使用下列的指令碼 Exchange Server 設定。  
+ 如果您以初始狀態安裝的方式安裝 Exchange Server 2010，也可以使用下列指令碼安裝 Exchange Server。  
   
-#### <a name="to-use-scripts-to-set-up-exchange-server"></a>若要使用的指令碼設定 Exchange Server  
+#### <a name="to-use-scripts-to-set-up-exchange-server"></a>使用指令碼安裝 Exchange Server  
   
-1.  打開 「 記事本 」，並下列指令碼貼入新的檔案：  
+1.  開啟記事本，將下列指令碼貼到新檔案中：  
   
-     `Import-Module ServerManager`  
+```powershell
+Import-Module ServerManager
+
+Add-WindowsFeature NET-Framework,RSAT-ADDS,Web-Server,Web-Basic-Auth,Web-Windows-Auth,Web-Metabase,Web-Net-Ext,Web-Lgcy-Mgmt-Console,WAS-Process-Model,RSAT-Web-Server,Web-ISAPI-Ext,Web-Digest-Auth,Web-Dyn-Compression,NET-HTTP-Activation,Web-Asp-Net,Web-Client-Auth,Web-Dir-Browsing,Web-Http-Errors,Web-Http-Logging,Web-Http-Redirect,Web-Http-Tracing,Web-ISAPI-Filter,Web-Request-Monitor,Web-Static-Content,Web-WMI,RPC-Over-HTTP-Proxy  Restart
+```
   
-     `Add-WindowsFeature NET-Framework,RSAT-ADDS,Web-Server,Web-Basic-Auth,Web-Windows-Auth,Web-Metabase,Web-Net-Ext,Web-Lgcy-Mgmt-Console,WAS-Process-Model,RSAT-Web-Server,Web-ISAPI-Ext,Web-Digest-Auth,Web-Dyn-Compression,NET-HTTP-Activation,Web-Asp-Net,Web-Client-Auth,Web-Dir-Browsing,Web-Http-Errors,Web-Http-Logging,Web-Http-Redirect,Web-Http-Tracing,Web-ISAPI-Filter,Web-Request-Monitor,Web-Static-Content,Web-WMI,RPC-Over-HTTP-Proxy  �Restart`  
+2.  將檔案另存為 **InstallDependencies.ps1**。  
   
-2.  將檔案儲存為**InstallDependencies.ps1**。  
+3.  將 Exchange SSL 憑證複製到伺服器上的某個位置。  
   
-3.  伺服器上的位置複製 Exchange SSL 憑證。  
+4.  開啟新的記事本檔案，將下列文字複製到檔案：  
+
+```powershell
+param (
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "The path to your Certificate file, must be a *.pfx format")]
+    $CertPath = "c:\certificates\ExchangeCertificate.pfx",
+    [Security.SecureString]
+    [Parameter(Mandatory=$true, HelpMessage = "The password of your cert")]
+    $CertPassword = $null,
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "Domain Name, eg. contoso.com")]
+    $DomainName = "contoso.com",
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "Server IP Address, eg. 192.168.0.1")]
+    $ServerIpAddress = "192.168.0.1",
+    [string]
+    [Parameter(Mandatory=$true, HelpMessage = "Internal Ip Range, eg. 192.168.0.0-192.168.0.255")]
+    $InternalIpRange = "192.168.0.0-192.168.0.255"
+)
+
+#Import Exchange Certificate, and Enable it for POP IIS IMAP SMTP services.
+
+Import-ExchangeCertificate  -FileData ([Byte[]]$(Get-content -Path $CertPath  -Encoding byte  -ReadCount 0)) -Password:$CertPassword -Force | Enable-ExchangeCertificate -Services 'POP, IIS, IMAP, SMTP' -Force
+
+#New AcceptedDomain and set it to default
+
+New-AcceptedDomain  -Name "official name"  -DomainName $domainname
+
+Set-AcceptedDomain  -Identity "official name"  -MakeDefault $true
+
+#New EmailAddress Policy
+
+$address = "%m@" + $DomainName
+
+New-EmailAddressPolicy -Name "Windows Server Essentials Email Address Policy" -IncludedRecipients AllRecipients -EnabledPrimarySMTPAddressTemplate $address
+
+#Set owa and ecp VirtualDirectory ExternalUrl
+
+$hostname = "mail." + $DomainName
+
+$owa = "https://" + $hostname + "/owa"
+
+$ecp = "https://" + $hostname + "/ecp"
+
+$activesync = "https://" + $hostname + "/Microsoft-Server-ActiveSync"
+
+$oab = "https://" + $hostname + "/OAB"
+
+$ews = "https://" + $hostname + "/EWS/Exchange.asmx"
+
+Get-OwaVirtualDirectory | Set-OwaVirtualDirectory  -ExternalUrl $owa  -InternalUrl $owa
+
+Get-EcpVirtualDirectory | Set-EcpVirtualDirectory  -ExternalUrl $ecp  -InternalUrl $ecp
+
+Get-ActiveSyncVirtualDirectory | Set-ActiveSyncVirtualDirectory -ExternalUrl $activesync  -InternalUrl $activesync
+
+Get-OABVirtualDirectory | Set-OABVirtualDirectory -ExternalUrl $oab -InternalUrl $oab -RequireSSL:$true
+
+Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -ExternalUrl $ews -InternalUrl $ews -BasicAuthentication:$True -Force
+
+#Enable outlook Anywhere
+
+Enable-OutlookAnywhere  -ClientAuthenticationMethod:Basic  -ExternalHostname:$hostname  -SSLOffloading:$false
+
+#new receive/send connector
+
+$machinename = get-content env:computername
+
+$bindingIpaddress = $ServerIpAddress + ":25"
+
+$ReceiveConnectorName = $machinename + "\Default " + $machinename
+
+Set-ReceiveConnector $ReceiveConnectorName -RemoteIPRanges $InternalIpRange
+
+New-ReceiveConnector -Name "WSE Internet Receive Connector" -Usage "Internet" -Bindings $bindingIpaddress -Fqdn $hostname -Enabled $true -Server $machinename -AuthMechanism Tls,BasicAuth,BasicAuthRequireTLS,Integrated
+
+New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressSpaces 'SMTP:*;1' -IsScopedConnector $false -DNSRoutingEnabled $true -UseExternalDNSServersEnabled $true -SourceTransportServers $machinename
+```
+
+5.  在指令碼開頭的位置設定參數，反映您的網路環境。  
   
-4.  打開新的 「 記事本 」 檔案，並將下列文字複製檔案到：  
+6.  將檔案儲存為 **ConfigureExchange.ps1**。  
   
-     `param (`  
+7.  以系統管理員身分執行 Windows PowerShell。  
   
-     `[string]`  
+8.  在 Windows PowerShell 命令提示字元中輸入 **Set-ExecutionPolicy RemoteSigned**，然後按 Enter。  
   
-     `[Parameter(Mandatory=$true, HelpMessage = "The path to your Certificate file, must be a *.pfx format")]`  
+9. 執行指令碼 **InstallDependencies.ps1**。  
   
-     `$CertPath = "c:\certificates\ExchangeCertificate.pfx",`  
+10. 重新啟動伺服器，然後以系統管理員身分執行 Windows PowerShell。  
   
-     `[Security.SecureString]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "The password of your cert")]`  
-  
-     `$CertPassword = $null,`  
-  
-     `[string]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "Domain Name, eg. contoso.com")]`  
-  
-     `$DomainName = "contoso.com",`  
-  
-     `[string]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "Server IP Address, eg. 192.168.0.1")]`  
-  
-     `$ServerIpAddress = "192.168.0.1",`  
-  
-     `[string]`  
-  
-     `[Parameter(Mandatory=$true, HelpMessage = "Internal Ip Range, eg. 192.168.0.0-192.168.0.255")]`  
-  
-     `$InternalIpRange = "192.168.0.0-192.168.0.255"`  
-  
-     `)`  
-  
-     `#Import Exchange Certificate, and Enable it for POP IIS IMAP SMTP services.`  
-  
-     `Import-ExchangeCertificate  �FileData ([Byte[]]$(Get-content -Path $CertPath  �Encoding byte  �ReadCount 0)) -Password:$CertPassword -Force | Enable-ExchangeCertificate -Services 'POP, IIS, IMAP, SMTP' -Force`  
-  
-     `#New AcceptedDomain and set it to default`  
-  
-     `New-AcceptedDomain  �Name "official name"  �DomainName $domainname`  
-  
-     `Set-AcceptedDomain  �Identity "official name"  �MakeDefault $true`  
-  
-     `#New EmailAddress Policy`  
-  
-     `$address = "%m@" + $DomainName`  
-  
-     `New-EmailAddressPolicy -Name "Windows Server Essentials Email Address Policy" -IncludedRecipients AllRecipients -EnabledPrimarySMTPAddressTemplate $address`  
-  
-     `#Set owa and ecp VirtualDirectory ExternalUrl`  
-  
-     `$hostname = "mail." + $DomainName`  
-  
-     `$owa = "https://" + $hostname + "/owa"`  
-  
-     `$ecp = "https://" + $hostname + "/ecp"`  
-  
-     `$activesync = "https://" + $hostname + "/Microsoft-Server-ActiveSync"`  
-  
-     `$oab = "https://" + $hostname + "/OAB"`  
-  
-     `$ews = "https://" + $hostname + "/EWS/Exchange.asmx"`  
-  
-     `Get-OwaVirtualDirectory | Set-OwaVirtualDirectory  �ExternalUrl $owa  �InternalUrl $owa`  
-  
-     `Get-EcpVirtualDirectory | Set-EcpVirtualDirectory  �ExternalUrl $ecp  �InternalUrl $ecp`  
-  
-     `Get-ActiveSyncVirtualDirectory | Set-ActiveSyncVirtualDirectory -ExternalUrl $activesync  �InternalUrl $activesync`  
-  
-     `Get-OABVirtualDirectory | Set-OABVirtualDirectory -ExternalUrl $oab -InternalUrl $oab -RequireSSL:$true`  
-  
-     `Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -ExternalUrl $ews -InternalUrl $ews -BasicAuthentication:$True -Force`  
-  
-     `#Enable outlook Anywhere`  
-  
-     `Enable-OutlookAnywhere  �ClientAuthenticationMethod:Basic  �ExternalHostname:$hostname  �SSLOffloading:$false`  
-  
-     `#new receive/send connector`  
-  
-     `$machinename = get-content env:computername`  
-  
-     `$bindingIpaddress = $ServerIpAddress + ":25"`  
-  
-     `$RecevieConnectorName = $machinename + "\Default " + $machinename`  
-  
-     `Set-ReceiveConnector $RecevieConnectorName -RemoteIPRanges $InternalIpRange`  
-  
-     `New-ReceiveConnector -Name "WSE Internet Receive Connector" -Usage "Internet" -Bindings $bindingIpaddress -Fqdn $hostname -Enabled $true -Server $machinename -AuthMechanism Tls,BasicAuth,BasicAuthRequireTLS,Integrated`  
-  
-     `New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressSpaces 'SMTP:*;1' -IsScopedConnector $false -DNSRoutingEnabled $true -UseExternalDNSServersEnabled $true -SourceTransportServers $machinename`  
-  
-5.  設定的參數，以反映網路環境指令碼的開頭。  
-  
-6.  將檔案儲存為**ConfigureExchange.ps1**。  
-  
-7.  系統管理員身分執行 Windows PowerShell。  
-  
-8.  Windows PowerShell 命令提示字元中，輸入**設定為 ExecutionPolicy RemoteSigned**，然後按 Enter 鍵。  
-  
-9. 執行指令碼**InstallDependencies.ps1**。  
-  
-10. 將伺服器，然後執行的 Windows PowerShell 重新開機以系統管理員。  
-  
-11. Windows PowerShell 命令提示字元中，執行下列指令碼：  
+11. 在 Windows PowerShell 命令提示字元中，執行下列指令碼：  
   
      `E:\setup.com /mode:install /roles:mb,ht,ca /OrganizationName:"First Organization"`  
   
     > [!NOTE]
-    >  請務必在輸入正確的路徑 Exchange Server 安裝程式。  
+    >  務必輸入 Exchange Server 安裝程式的正確路徑。  
   
-12. Exchange Server 安裝完成後，請打開換貨管理殼層系統管理員的身分。  
+12. 當 Exchange Server 安裝完成後，以系統管理員身分開啟 Exchange 管理命令介面。  
   
-13. 換貨管理殼層命令提示字元中，輸入**設定為 ExecutionPolicy RemoteSigned**，然後按 Enter 鍵。  
+13. 在 Exchange 管理命令介面命令提示字元中，輸入 **Set-ExecutionPolicy RemoteSigned**，然後按 Enter 鍵。  
   
-14. 執行指令碼**ConfigureExchange.ps1**。  
+14. 執行指令碼 **ConfigureExchange.ps1**。  
   
-15. 重新開機伺服器。  
+15. 重新啟動伺服器。  
   
 > [!NOTE]
->  如果您選擇使用 SSL 公開受信任的憑證，而不是自我發行憑證，您可以依照指示建立憑證要求，並將其傳送到您選取憑證授權單位節目表設定中。 您也可以使用 Exchange PowerShell cmdlet 來建立憑證要求。 範例如下。  
+>  如果您決定使用公開的受信任的 SSL 憑證，而不是自行發出的憑證，您可以遵循建立憑證要求，並將它傳送至您選取的憑證授權單位安裝手冊 》 中的指示。 您也可以使用 Exchange PowerShell Cmdlet 建立憑證要求。 範例如下。  
 >   
 >  `New-ExchangeCertificate -GenerateRequest -SubjectName "C=US, S=Washington, L=Redmond, O=contoso, OU=contoso, CN=mail.contoso.com" -DomainName mail.contoso.com -PrivateKeyExportable $true | Set-Content -path "c:\Docs\MyCertRequest.req"`  
 >   
->  自訂的指令碼參數，以反映您網路的環境。  
+>  自訂指令碼參數以反映您的網路環境。  
   
-## <a name="post-installation-tasks"></a>安裝後工作  
- 本章節描述您可能需要安裝後階段包含適用於設定 Windows Server Essentials 網路上執行 Exchange Server 先伺服器的資訊中完成的伺服器設定工作。  
+## <a name="post-installation-tasks"></a>後續安裝工作  
+ 本節說明您可能需要在後續安裝階段完成的伺服器設定工作，其中包含設定 Windows Server Essentials 網路上執行 Exchange Server 之內部部署伺服器的特定資訊。  
   
-### <a name="add-the-public-email-domain-and-configure-the-email-address-policies"></a>新增電子郵件公用網域並設定電子郵件地址原則  
+### <a name="add-the-public-email-domain-and-configure-the-email-address-policies"></a>新增公用電子郵件網域和設定電子郵件地址原則  
   
 > [!NOTE]
->  如果您正在執行全新安裝，這是必要的工作。 如果您從 Windows 小型企業伺服器移轉，請略過此步驟。  
+>  這是執行初始狀態安裝的必要工作。 如果您是從 Windows Small Business Server 進行移轉，請略過這個步驟。  
   
- 必須指定您的電子郵件網域將接受預設網域中，並設定電子郵件地址原則。  
+ 您必須將電子郵件網域指定為預設公認的網域，然後設定電子郵件地址原則。  
   
-##### <a name="to-add-your-email-domain-as-the-default-accepted-domain"></a>若要將您的電子郵件的網域新增為預設值接受網域  
+##### <a name="to-add-your-email-domain-as-the-default-accepted-domain"></a>將您的電子郵件網域新增為預設公認的網域  
   
-1.  請依照下列指示 Exchange Server 文章中的[建立接受網域](https://go.microsoft.com/fwlink/p/?LinkId=249174)來新增接受的網域。  
+1.  遵循 Exchange Server 文章 [建立公認的網域](https://go.microsoft.com/fwlink/p/?LinkId=249174) 中的指示，加入接受的網域。  
   
-2.  第二個伺服器以系統管理員身分登入，開放 Exchange 管理主控台中，瀏覽至**傳輸中樞**索引標籤的**的組織設定**。  
+2.  以系統管理員身分登入第二部伺服器，開啟 Exchange 管理主控台，然後瀏覽至 [組織組態]  的 [集線傳輸] 索引標籤。  
   
-3.  換貨管理主控台工作窗格中，新接受的網域中，按一下滑鼠右鍵，然後按一下 [**設定為預設值**。  
+3.  在 Exchange 管理主控台工作窗格中，在新的公認的網域上按一下滑鼠右鍵，然後按一下 [設為預設值]。  
   
-4.  請依照下列指示 Exchange Server 文章中的[建立的電子郵件地址原則](https://go.microsoft.com/fwlink/p/?LinkId=249179)來建立新的電子郵件地址原則。 您可以接受電子郵件地址以外的預設值。 電子郵件地址，指定您的電子郵件公用網域。  
+4.  遵循 Exchange Server 文章 [建立電子郵件地址原則](https://go.microsoft.com/fwlink/p/?LinkId=249179) 中的指示，建立新的電子郵件地址原則。 您可以接受除了電子郵件地址之外的所有預設值。 電子郵件地址則指定您的公用電子郵件網域。  
   
 ### <a name="create-smtp-send-and-receive-connectors"></a>建立 SMTP 傳送和接收連接器  
   
 > [!NOTE]
 >  這是必要的工作。  
   
- 您必須設定 SMTP 傳送連接器及輸出日靠近花朵的電子郵件訊息傳輸 SMTP 接收的連接器。  
+ 您必須為電子郵件訊息的外寄/內送傳輸設定 SMTP 傳送連接器和 SMTP 接收連接器。  
   
- 若要建立 SMTP 傳送連接器，請依照下列 Exchange Server 文件中的指示[建立 SMTP 傳送連接器](https://technet.microsoft.com/library/aa997285.aspx)。  
+ 若要建立 SMTP 傳送連接器，請遵循 Exchange Server 文章 [建立 SMTP 傳送連接器](https://technet.microsoft.com/library/aa997285.aspx)中的指示。  
   
- 若要建立 SMTP 接收連接器，請依照下列 Exchange Server 文件中的指示[建立 SMTP 收到連接器](https://technet.microsoft.com/library/bb125159.aspx)。  
+ 若要建立 SMTP 接收連接器，請遵循 Exchange Server 文章 [建立 SMTP 接收連接器](https://technet.microsoft.com/library/bb125159.aspx)中的指示。  
   
- 選項，您可以參考稍早建立傳送的文件的指令碼，並使用 Exchange PowerShell cmdlet 接收連接器。  
+ 您可以選擇參考本文件前面的指令碼，利用 Exchange PowerShell Cmdlet 來建立傳送和接收連接器。  
   
-### <a name="configure-the-network-router"></a>設定路由器網路  
+### <a name="configure-the-network-router"></a>設定網路路由器  
   
 > [!NOTE]
->  如果您正在執行全新安裝，這是必要的工作。 如果您的移轉 Windows 小型企業伺服器，查看[的伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)設定網路的相關指示。  
+>  這是執行初始狀態安裝的必要工作。 如果您從 Windows Small Business Server 進行移轉，如需如何設定網路的相關指示，請參閱 [Migrate Server Data to Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md) 。  
   
- 最小，您必須在路由器上設定連接埠下列設定：  
+ 您至少必須在路由器設定下列連接埠設定：  
   
 |路由器連接埠|目的地 IP|目的地連接埠|注意|  
 |-----------------|--------------------|----------------------|----------|  
-|25 (SMTP)|內部 Exchange server 先伺服器的 IP。|25||  
-|80 (HTTP)|執行 Windows Server Essentials 的伺服器內部 IP|80||  
-|443 (HTTPS)|執行 Windows Server Essentials 的伺服器內部 IP|443||  
+|25 (SMTP)|執行 Exchange Server 的內部部署伺服器的內部 IP。|25||  
+|80 (HTTP)|執行 Windows Server Essentials 的伺服器的內部 IP|80||  
+|443 (HTTPS)|執行 Windows Server Essentials 的伺服器的內部 IP|443||  
   
- 如果您支援 POP3 或 IMAP 訊息通訊協定，您網路上的，您還必須設定連接埠 forwardings 這些通訊協定。 相關資訊，會看到一節**Client 存取伺服器**主題中的[Exchange 網路連接埠參考](https://go.microsoft.com/fwlink/p/?LinkId=250773)中 Exchange Server TechNet Library。  
+ 如果您的網路支援 POP3 或 IMAP 郵件通訊協定，還必須為這些通訊協定設定連接埠轉送。 如需相關資訊，請參閱 Exchange Server TechNet 文件庫 **Exchange 網路連接埠參照** 主題中的 [＜用戶端存取伺服器＞](https://go.microsoft.com/fwlink/p/?LinkId=250773) 一節。  
   
 > [!NOTE]
->  -   我們建議您設定靜態 IP 位址執行的 Windows Server Essentials 的伺服器，並執行 Exchange Server 的第二部伺服器。 了解如何設定執行 Windows Server 2003 或 Windows Server 2008 R2 的電腦上的靜態 IP 位址的指示，請查看[設定靜態 IP 位址](https://technet.microsoft.com/library/cc754203\(v=ws.10\).aspx)在 Windows Server TechNet Library  
+>  -   我們建議您為執行 Windows Server Essentials 的伺服器和執行 Exchange Server 的第二部伺服器設定靜態 IP 位址。 如需如何在執行 Windows Server 2003 或 Windows Server 2008 R2 的電腦上設定靜態 IP 位址的指示，請參閱 Windows Server TechNet 文件庫中的 [設定靜態 IP 位址](https://technet.microsoft.com/library/cc754203\(v=ws.10\).aspx) 。  
 >   
->      **注意：**的 DNS 伺服器設定應永遠指向執行的 Windows Server Essentials 的伺服器的 IP 位址。  
-> -   在路由器上，請確定執行的 Windows Server Essentials 的伺服器及 Exchange server 的伺服器的 IP 位址會保留，或超過 DHCP IP 位址範圍。  
-> -   在本區段中路由器設定假設您已指派給透過網際網路服務提供者 (ISP) 只有一個公用 IP 位址。 如果您有多個公用 IP 位址，您可以執行的 Windows Server Essentials 的伺服器，並執行 Exchange Server 的伺服器指定不同的 IP 位址，然後再建立連接埠 forwardings 根據公用 IP 位址。  
+>      **注意：** DNS 伺服器設定應該一律指向執行 Windows Server Essentials 的伺服器的 IP 位址。  
+> -   在路由器上，確定執行 Windows Server Essentials 的伺服器和執行 Exchange Server 的伺服器的 IP 位址已經保留，還是超出 DHCP IP 位址範圍。  
+> -   本節的路由器設定假設您只有一個由網際網路服務提供者 (ISP) 指派的公用 IP 位址。 如果您有多個公用 IP 位址，可以指派不同的 IP 位址給執行 Windows Server Essentials 的伺服器和執行 Exchange Server 的伺服器，然後根據公用 IP 位址建立連接埠轉送。  
   
-### <a name="enable-on-premises-exchange-server-integration-on-windows-server-essentials"></a>在 Windows Server Essentials 先 Exchange Server 整合  
-  
-> [!NOTE]
->  如果您要安裝 Windows 的小型企業伺服器移轉，我們建議您目前略過此步驟，並執行之後，您在解除安裝之前 Exchange Server 來源伺服器上安裝。  
-  
- 您安裝並將 Exchange server 的伺服器設定之後，您必須讓先 Exchange Server 整合執行的 Windows Server Essentials 的伺服器上。  
-  
-##### <a name="to-enable-on-premises-exchange-server-integration-from-the-dashboard"></a>若要從儀表板上場所 Exchange Server 整合  
-  
-1.  登入執行 Windows Server Essentials 的系統管理員的身分，以伺服器，然後打開儀表板。  
-  
-2.  在**Home**頁面上，按一下 [**連接至我的電子郵件服務**，然後按一下 [**整合 Exchange Server**。  
-  
-3.  在 [資訊] 窗格中，按一下**設定 Exchange Server 整合**。  
-  
-4.  請依照精靈中的指示進行。  
-  
-### <a name="configure-a-reverse-proxy"></a>設定反向 proxy  
+### <a name="enable-on-premises-exchange-server-integration-on-windows-server-essentials"></a>在 Windows Server Essentials 上啟用內部部署 Exchange Server 整合  
   
 > [!NOTE]
->  如果您有一個網際網路連接網際網路服務提供者，這是必要的工作。  
+>  如果您是從 Windows Small Business Server 安裝進行移轉，建議您現在略過這個步驟，在來源伺服器上解除安裝之前安裝的 Exchange Server 之後再執行這個步驟。  
   
- Exchange Server 與 Windows Server Essentials 支援某些遠端存取案例中網路使用者。 例如您在任何地方存取關閉執行的 Windows Server Essentials 的伺服器上，如果您可以從遠端存取遠端 Web 存取網站或 virtual 私人網路 (VPN) 遠端連接到 Windows Server Essentials 網路。 若要從遠端存取的電子郵件訊息，您必須使用 Outlook 隨處、 Outlook Web Access (OWA) 或 ActiveSync。  
+ 安裝並設定執行 Exchange Server 的伺服器之後，必須在執行 Windows Server Essentials 的伺服器上啟用內部部署 Exchange Server 整合。  
   
- 如果 Windows Server Essentials 和執行 Exchange Server 伺服器相同路由器連接兩個和只有一個輸入網際網路連接網際網路服務提供者所提供的路由器，您必須使用反向 proxy 方案路由傳送從依據目的主機名稱網際網路遠端存取要求不同類型。 我們建議您使用 Microsoft 支援 IIS 應用程式要求路由 (ARR) 做為您反向 proxy 方案的擴充功能。 更多有關應用程式要求路由 IIS 的詳細資訊，請造訪[的應用程式要求路由網站](https://go.microsoft.com/fwlink/p/?LinkId=249181)。  
+##### <a name="to-enable-on-premises-exchange-server-integration-from-the-dashboard"></a>從儀表板啟用內部部署 Exchange Server 整合  
   
-##### <a name="to-install-and-configure-application-request-routing"></a>安裝和設定路由應用程式要求  
+1.  以系統管理員身分登入執行 Windows Server Essentials 的伺服器，然後開啟儀表板。  
+  
+2.  在 [首頁] 頁面上，按一下 [連線到我的電子郵件服務]，然後按一下 [整合您的 Exchange Server]。  
+  
+3.  在資訊窗格中，按一下 [設定 Exchange Server 整合]。  
+  
+4.  遵循精靈的指示進行。  
+  
+### <a name="configure-a-reverse-proxy"></a>設定反向 Proxy  
+  
+> [!NOTE]
+>  如果您只有一個網際網路服務提供者提供的網際網路連線，這是必要工作。  
+  
+ Windows Server Essentials 和 Exchange Server 都支援網路使用者的一些遠端存取案例。 例如，如果您在執行 Windows Server Essentials 的伺服器上開啟「隨處存取」，可以從遠端存取「遠端 Web 存取」網站，或使用虛擬私人網路 (VPN) 遠端連線到 Windows Server Essentials 網路。 若要遠端存取電子郵件訊息，必須使用 Outlook 無所不在、Outlook Web Access (OWA) 或 ActiveSync。  
+  
+ 如果 Windows Server Essentials 和執行 Exchange Server 的伺服器連線到相同的路由器，而您的網際網路服務提供者只提供一個連線到路由器的連入網際網路連線，則您必須使用反向 Proxy 解決方案，根據目的地主機名稱，從網際網路路由傳送不同類型的遠端存取要求。 建議您使用 Microsoft 支援的 IIS 應用程式要求路由 (ARR) 延伸做為您的反向 Proxy 解決方案。 如需 IIS 應用程式要求路由的詳細資訊，請造訪 [應用程式要求路由網站](https://go.microsoft.com/fwlink/p/?LinkId=249181)。  
+  
+##### <a name="to-install-and-configure-application-request-routing"></a>安裝和設定應用程式要求路由  
   
 1.  以系統管理員身分登入 Windows Server Essentials。  
   
-2.  打開網際網路瀏覽器，並瀏覽至[的應用程式要求路由網站](https://go.microsoft.com/fwlink/p/?LinkId=249181)。  
+2.  開啟網際網路瀏覽器，巡覽至 [應用程式要求路由網站](https://go.microsoft.com/fwlink/p/?LinkId=249181)。  
   
-3.  ARR 在網站上，按一下 [**安裝**，然後依照指示安裝 ARR.  
+3.  在 ARR 網站上，按一下 [安裝]，然後依照指示安裝 ARR。  
   
     > [!NOTE]
-    >  ARR 安裝期間，您必須選取 URL 重新寫入模組。  
+    >  您必須在 ARR 安裝時選取 URL Rewrite Module。  
     >   
-    >  您可能會收到錯誤的 ARR 安裝未成功安裝 KB 2589179 ARR 2.5 的結尾。 您可以放心地忽略此錯誤。  
+    >  您可能會在 ARR 安裝最後收到錯誤，ARR 2.5 的 KB 2589179 未成功安裝。 您可以放心忽略這個錯誤。  
   
-4.  重新開機 ARR 安裝完成時，**遠端桌面閘道**如果這不執行的服務。  
-  
-    > [!NOTE]
-    >  在您安裝 ARR 後**遠端桌面閘道**服務可能會停止。 若要重新服務，請打開**服務**系統管理工具，並再重新開機**遠端桌面閘道**服務。  
-  
-5.  [下載適用於 ARR 2.5 KB2732764](https://go.microsoft.com/fwlink/?LinkID=258302)，並在執行 Windows Server Essentials 的伺服器上安裝的更新。  
-  
-6.  Exchange Server SSL 憑證檔案複製到執行 Windows Server Essentials 的伺服器。 憑證檔案必須包含私密金鑰，而且它必須使用 PFX 檔案格式。  
+4.  ARR 安裝完成時，如果 [遠端桌面閘道] 服務未執行，請將它重新啟動。  
   
     > [!NOTE]
-    >  如果您使用自我發行的憑證，請依照下列指示 Exchange Server 文章中的[匯出 Exchange 憑證](https://technet.microsoft.com/library/dd351274.aspx)若要匯出的憑證。  
+    >  安裝 ARR 之後，[遠端桌面閘道]  服務可能會停止。 若要手動重新啟動服務，請開啟 [服務] 系統管理工具，然後重新啟動 [遠端桌面閘道] 服務。  
   
-7.  根據您執行 Windows Server Essentials 的版本，請執行下列其中一個動作：  
+5.  [下載 ARR 2.5 的 KB2732764](https://go.microsoft.com/fwlink/?LinkID=258302)，然後在執行 Windows Server Essentials 的伺服器上安裝更新。  
   
-    -   在 Windows Server Essentials： 開放為系統管理員的身分在命令視窗中，然後打開 %ProgramFiles%\Windows Server\Bin directory  
+6.  將 Exchange Server 的 SSL 憑證檔案複製到執行 Windows Server Essentials 的伺服器上。 憑證檔案必須包含私密金鑰，而且必須使用 PFX 檔案格式。  
   
-    -   在 Windows Server Essentials： 開放為系統管理員的身分在命令視窗中，然後打開 %Windir%\System32\Essentials directory。  
+    > [!NOTE]
+    >  如果您使用自動發行憑證，請遵循 Exchange Server 文章 [匯出 Exchange 憑證](https://technet.microsoft.com/library/dd351274.aspx) 中的指示匯出憑證。  
   
-8.  根據您的安裝案例，請依照下列步驟來設定 ARR 的其中一個：  
+7.  視您目前執行的 Windows Server Essentials 版本而定，執行下列其中一項：  
   
-    -   如果您正在執行全新安裝，請執行下列命令：  
+    -   Windows Server essentials:以系統管理員身分開啟命令視窗，然後開啟 %ProgramFiles%\Windows Server\Bin 目錄。  
   
-         * * ARRConfig 組態憑證 * **的憑證檔案的路徑** * 主機 * **主機 Exchange Server 的名稱* ****  
+    -   Windows Server essentials:以系統管理員身分開啟命令視窗，然後開啟 %Windir%\System32\Essentials 目錄。  
+  
+8.  根據您的安裝情況，依照下列其中一個步驟來設定 ARR：  
+  
+    -   如果您執行初始狀態安裝，請執行下列命令：  
+  
+         * * ARRConfig config-cert * **憑證檔案路徑** *-主機名稱 * * *Exchange Server 的主機名稱* ****  
   
         > [!NOTE]
-        >  例如;* * ARRConfig 組態憑證***c:\temp\certificate.pfx***主機 ***mail.contoso.com***  
+        >  例如，* * ARRConfig config-cert ***c:\temp\certificate.pfx*** -hostname ***mail.contoso.com***  
         >   
-        >  取代*mail.contoso.com*的憑證來保護您的網域名稱。  
+        >  用受憑證保護的網域名稱取代 *mail.contoso.com* 。  
   
-    -   在您的移轉 Windows 小型企業伺服器，執行下列命令：  
+    -   如果您是從 Windows Small Business Server 進行移轉，執行下列命令：  
   
-         * * ARRConfig 組態憑證 * **的憑證檔案的路徑** * 主機 * **主機名稱 Exchange Server 的** * targetserver * **伺服器 Exchange Server 的完整名稱* ****  
+         * * ARRConfig config-cert * **憑證檔案路徑** *-主機名稱 * * *Exchange Server 的主機名稱** *-targetserver * * *Exchange Server 的伺服器名稱* ****  
   
-         例如;* * ARRConfig 組態憑證***c:\temp\certificate.pfx***主機***mail.contoso.com*** targetserver * * * ExchangeSvr * * *  
+         For example; **ARRConfig config  -cert ***c:\temp\certificate.pfx***  -hostnames ***mail.contoso.com*** -targetserver ***ExchangeSvr*****  
   
-         取代*mail.contoso.com*以您的網域名稱。 取代*ExchangeSvr*以 server 執行 Exchange Server 的完整名稱。  
+         用您的網域名稱取代 *mail.contoso.com* 。 用執行 Exchange Server 的伺服器名稱取代 *ExchangeSvr*。  
   
 9. 出現提示時，輸入憑證的密碼。  
   
 > [!NOTE]
->  -   必須包含您所提供的主機名稱在您購買 Exchange Server SSL 憑證。  
-> -   如果您有多個主機名稱，可用於 （，） 逗號分隔它們。  
+>  -   您提供的主機名稱必須包含在您為 Exchange Server 購買的 SSL 憑證中。  
+> -   如果您有多個主機名稱，請使用逗號 (,) 加以分隔。  
   
- 若要確認該設定的運作方式，請嘗試存取 OWA 網站伺服器執行 Exchange Server (https://mail。 *yourdomainname*.com 日 owa) 未加入網域的電腦。 若要疑難排解連接的問題，您也可以使用 online [Microsoft 遠端連接分析器](https://go.microsoft.com/fwlink/p/?LinkId=249455)工具。  
+ 若要驗證組態是否能運作，請嘗試存取執行 Exchange Server 之伺服器的 OWA 網站 (https://mail。 (https://mail.*您的網域名稱*.com/owa)。 若要疑難排解連線問題，您也可以使用線上 [Microsoft 遠端連線分析程式](https://go.microsoft.com/fwlink/p/?LinkId=249455) 工具。  
   
-### <a name="configure-split-dns-for-exchange-server"></a>設定分割 DNS Exchange Server 的  
+### <a name="configure-split-dns-for-exchange-server"></a>為 Exchange Server 設定分割 DNS  
   
 > [!NOTE]
 >  這是建議的工作。  
   
- 分割 DNS 可讓您的主機同名，根據起始 DNS 要求 DNS 設定不同的 IP 位址。 如果 client 電腦在企業網路，DNS 要求解析 IP 位址。 如果 client 電腦上，DNS 要求解析網際網路 IP 位址。 這是透明使用者。  
+ 分割 DNS 可讓您根據 DNS 產生要求的位置，為相同主機名稱的 DNS 設定不同 IP 位址。 如果用戶端電腦位於內部網路，DNS 要求會解析為內部網路 IP 位址。 如果用戶端電腦位於網際網路，DNS 要求會解析為網際網路 IP 位址。 使用者並不會察覺。  
   
- 我們建議您設定分割 DNS 的方式，讓使用者可以隨時存取 Exchange Server 使用主機相同名稱的服務，無論他們的位置。  
+ 我們建議設定分割 DNS 的方式是：不論使用者的位置為何，一律使用相同主機名稱存取 Exchange Server 服務。  
   
-##### <a name="to-configure-split-dns-for-exchange-server"></a>若要設定分割 DNS Exchange Server 的  
+##### <a name="to-configure-split-dns-for-exchange-server"></a>為 Exchange Server 設定分割 DNS  
   
-1.  Windows Server Essentials 為系統管理員的身分登入，然後打開 DNS 管理員。  
+1.  以系統管理員身分登入 Windows Server Essentials，然後開啟 DNS 管理員。  
   
-2.  DNS Manager 主控台樹上，您的伺服器，以滑鼠右鍵按一下，然後按一下 [**新增區域]**。 **新增區精靈]**會顯示。  
+2.  在 DNS 管理員主控台樹狀目錄中，以滑鼠右鍵按一下您的伺服器，然後按一下 [新增區域] 。 [新增區域精靈] 隨即顯示。  
   
-3.  在**區域類型**頁面精靈的接受預設選項，然後按一下 [**下**。  
+3.  在精靈的 [區域類型] 頁面上，接受預設選項，然後按 [下一步]。  
   
-4.  在**Active Directory 區域複寫領域**頁面，接受預設選項，然後按一下 [**下**。  
+4.  在 [Active Directory 區域複寫領域]  頁面上，接受預設選項，然後按 [下一步] 。  
   
-5.  上**轉寄或反向對應區域**頁面上，請接受或選取**正向對應區域**，然後按一下 [**下一步**。  
+5.  在 [正向或反向對應區域] 頁面上，接受或選取 [正向對應區域]，然後按 [下一步]。  
   
-6.  在**區域名稱**頁面上，輸入您的伺服器 （例如; 執行 Exchange Server 的 FQDN*mail.contoso.com*)，然後按**下**。  
+6.  在 [ **e Name&amp;** 頁面上，輸入 （例如，執行 Exchange Server 之伺服器的 FQDN*mail.contoso.com*)，然後按一下**下一步]**。  
   
-7.  在**動態更新**頁面上，接受預設選項，按一下 [**下一步**，然後按一下 [**完成**。  
+7.  在 [動態更新] 頁面上，接受預設選項，按 [下一步]，然後按一下 [完成]。  
   
-8.  在 DNS Manager 主控台新正向對應的區域，以滑鼠右鍵按一下，然後按一下**（A 或 AAAA） 的新主機**。  
+8.  在 DNS 管理員主控台樹狀目錄中，以滑鼠右鍵按一下新的正向對應區域，然後按一下 [新增主機 (A 或 AAAA)] 。  
   
-9. 在**新主機**頁面中，保留**名稱**欄位空白，輸入您執行的 Exchange Server 的伺服器內部 IP 位址，然後按一下**新增主機**。  
+9. 在 [新增主機] 頁面上，將 [名稱] 欄位保留空白，輸入執行 Exchange Server 之伺服器的內部網路 IP 位址，然後按一下 [新增主機]。  
   
     > [!NOTE]
-    >  當您離開**名稱**欄位中空白，伺服器預設使用家長網域名稱。  
+    >  將 [名稱]  欄位保留空白時，伺服器預設會使用父系網域名稱。  
   
-10. 在**新主機**頁面上，按**完成**。  
+10. 在 [新增主機]  頁面上，按一下 [完成] 。  
   
 > [!NOTE]
->  如果您使用 ActiveSync，但無法同步處理電子郵件的一些信箱帳號，判斷是否那些帳號有一或多個例如網域系統管理員受保護的群組成員。 可協助您修正這個問題的相關的相關資訊，請查看[Exchange ActiveSync 傳回 HTTP 500 錯誤](https://technet.microsoft.com/library/dd439375\(EXCHG.80\).aspx)。  
+>  如果您使用 ActiveSync 但無法同步處理部分信箱帳戶的電子郵件，請判斷這些帳戶是否為一或多個受保護群組 (例如 Domain Administrators 群組) 的成員。 如需可協助您解決此問題的相關資訊，請參閱 [Exchange ActiveSync 傳回 HTTP 500 錯誤](https://technet.microsoft.com/library/dd439375\(EXCHG.80\).aspx)。  
   
-## <a name="related-topics"></a>相關的主題  
- 整合先 Exchange Server 的相關詳細資訊，會看到以下的各節。  
+## <a name="related-topics"></a>相關主題  
+ 如需有關整合內部部署 Exchange Server 的詳細資訊，請參閱下列各節。  
   
-### <a name="what-happens-if-i-disable-exchange-integration"></a>萬一停用整合換貨？  
- 停用與先 Exchange Server 整合，如果您不會再無法使用 Windows Server Essentials 儀表板檢視、 建立，或管理 Exchange Server 信箱。  
+### <a name="what-happens-if-i-disable-exchange-integration"></a>如果停用 Exchange 整合，會發生什麼事？  
+ 如果您停用與內部部署 Exchange Server 的整合，您將不能再使用 Windows Server Essentials 的儀表板檢視、建立或管理 Exchange Server 信箱。  
   
-### <a name="what-do-i-need-to-know-about-email-accounts"></a>我需要知道的相關電子郵件帳號項目？  
- 設定電子郵件裝載的方案伺服器上。 從裝載的電子郵件提供者，例如 Microsoft Office 365、 方案可以提供網路使用者的個人電子郵件帳號。 當您新增使用者 Account 精靈在執行 Windows Server Essentials 建立帳號時，精靈會嘗試帳號加入提供裝載的電子郵件方案。 在此同時，精靈將電子郵件名稱 （別名） 指派給使用者，並設定信箱 （配額） 的最大值。 最大大小信箱會根據您所使用的電子郵件提供者而有所不同。 新增帳號之後, 您可以繼續從使用者的屬性頁面管理信箱別名和配額資訊。 適用於完整的帳號和裝載的電子郵件提供者管理，使用管理主控台裝載提供者。 根據您的提供者，您可以存取他們管理主控台從 web 架構入口網站，或伺服器儀表板中的索引標籤。  
+### <a name="what-do-i-need-to-know-about-email-accounts"></a>我需要知道電子郵件帳戶的什麼資訊？  
+ 託管的電子郵件解決方案是在您的伺服器設定。 從託管的電子郵件提供者，例如 Microsoft Office 365 解決方案可以為網路使用者提供個別的電子郵件帳戶。 當您在 Windows Server Essentials 執行「新增使用者帳戶精靈 」建立使用者帳戶時，精靈會嘗試將使用者帳戶新增至可用的託管電子郵件解決方案。 在此同時，精靈會將電子郵件名稱 (別名) 指派給使用者，並設定信箱 (配額) 的最大大小。 信箱的最大大小會根據您使用的電子郵件提供者而有所不同。 新增使用者帳戶之後，您可以繼續從使用者的 [內容] 頁面管理信箱別名和配額資訊。 如果要完整管理您的使用者帳戶及託管的電子郵件提供者，請使用託管的提供者的管理主控台。 視您的提供者而定，您可以從網頁式的入口網站，或從伺服器儀表板中的索引標籤，存取其管理主控台。  
   
- 使用者別名建議名稱為您提供時，您可以執行 [新增使用者 Account 精靈別名傳送裝載的電子郵件提供者。 例如，如果使用者別名*FrankM*，可能會使用者 s 電子郵件地址* FrankM@Contoso.com *。  
+ 您在執行「新增使用者帳戶精靈 」時提供的別名會傳送至託管的電子郵件提供者，做為使用者別名的建議名稱。 比方說，如果使用者別名為*FrankM*，可能是使用者的電子郵件地址*FrankM@Contoso.com*。  
   
- 此外的密碼，您的使用者，在 [新增使用者 Account 精靈中的設定將會起始密碼方案裝載的電子郵件中的使用者。  
+ 此外，您為使用者在「新增使用者帳戶精靈」中設定的密碼將會在託管的電子郵件解決方案中做為使用者的初始密碼。  
   
- 最後，如果您使用 Delete 使用者 Account 精靈伺服器上 delete 使用者，精靈也會傳送要求裝載的電子郵件提供者來 delete 使用者從，以及他們的系統。 提供者可能 delete 帳號 s 和 account 相關聯的電子郵件。  
+ 最後，如果您在伺服器上使用「刪除使用者帳戶精靈」刪除使用者，精靈也會將要求傳送至託管的電子郵件提供者，同時從他們的系統刪除使用者。 提供者可能會刪除使用者帳戶與帳戶相關聯的電子郵件。  
   
- 有關使用者如何設定所需的電子郵件 client 軟體或如何存取電子郵件帳號，請參考裝載的電子郵件提供者所提供的協助文件。  
+ 如需有關如何設定必要電子郵件用戶端軟體或如何存取電子郵件帳戶的使用者資訊，請參閱託管的電子郵件提供者所提供的說明文件。  
   
-### <a name="what-is-a-mailbox-quota"></a>信箱配額為何？  
- 信箱限額就是配置網路使用者 s 換貨信箱資料儲存空間量。  
+### <a name="what-is-a-mailbox-quota"></a>什麼是信箱配額？  
+ 配置給網路使用者的 Exchange 信箱資料的儲存體空間數量就是所謂的信箱配額。  
   
- 當您執行**設定 Exchange Server 整合**工作儀表板，精靈將頁面加入新增使用者 Account 精靈，可讓您選擇是否執行信箱配額，以及指定配額大小。 根據預設，**執行信箱配額**選取 [選項 （），以及使用者信箱指派 2 GB 的儲存空間。 換貨的系統管理員可以自訂符合企業需求的信箱配額設定。  
+ 當您執行儀表板上的 [設定 Exchange Server 整合] 工作時，精靈會將頁面新增至「新增使用者帳戶精靈」，讓您選擇是否強制執行信箱配額，並指定配額大小。 根據預設，[強制信箱配額] 選項為已選取 (開啟)，使用者信箱會被指派 2 GB 的儲存空間。 Exchange 系統管理員可以自訂信箱配額設定，以符合其商務需求。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
--   [Windows Server Essentials 的系統需求](../get-started/system-requirements.md)  
+-   [適用於 Windows Server Essentials 的系統需求](../get-started/system-requirements.md)  
   
 -   [管理電子郵件服務整合](Manage-Email-Service-Integration-in-Windows-Server-Essentials.md)  
   

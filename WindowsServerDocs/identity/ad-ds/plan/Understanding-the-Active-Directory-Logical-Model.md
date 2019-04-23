@@ -1,44 +1,45 @@
 ---
 ms.assetid: 62708b2e-4090-4cf7-8ae6-a557f31f561f
-title: "了解 Active Directory 邏輯模型"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 了解 Active Directory 邏輯模型
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0f8cdc4789d1b3008f3b53104e5517d4ef1e65b9
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 0e909d4e9c1fb26aa0f7cb97a7dc06192db5cc21
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834269"
 ---
 # <a name="understanding-the-active-directory-logical-model"></a>了解 Active Directory 邏輯模型
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-Active Directory Domain Services (AD DS) 設計您邏輯結構涉及定義您 directory 中容器之間的關聯。 這些關聯性可能根據委派權限，例如系統需求，或也可以透過操作需求，例如需要控制複寫定義。  
+Active Directory 網域服務 (AD DS) 設計您的邏輯結構，需要定義您的目錄中的容器之間的關聯性。 這些關聯性可能會根據系統管理的需求，例如 委派權限，或可能由操作的需求，例如控制複寫的需求。  
   
-則設計 Active Directory 邏輯結構之前，請務必以了解 Active Directory 邏輯模型。 AD DS 是分散式的資料庫來儲存及管理網路資源，以及應用程式特定資料的相關資訊從 directory 功能的應用程式。 AD DS 成階層包含結構，讓組織項目（例如，使用者、電腦與裝置）的網路系統管理員。 最上層容器是樹。 森林中的網域，並網域中的組織單位 (Ou)。 因為它是不受影響的實體部署，例如網域控制站在每種網域和網路拓撲所需的層面稱為邏輯模型。  
+在設計您的 Active Directory 邏輯結構之前，務必了解 Active Directory 邏輯模型。 AD DS 是一個分散式的資料庫，儲存和管理目錄的應用程式的網路資源，以及應用程式專屬資料的相關資訊。 AD DS 可讓系統管理員，來組織 （例如使用者、 電腦及裝置） 將網路項目，為階層式內含項目結構。 最上層容器是樹系。 樹系內網域，而網域內組織單位 (Ou)。 這被稱為邏輯模型，因為它是獨立的部署，例如每個網域和網路拓撲內所需的網域控制站數目的實體層面。  
   
-## <a name="active-directory-forest"></a>Active Directory 森林  
-樹系是一或多個 Active Directory 網域共用相同的邏輯結構的集合 directory 架構（課程和屬性定義）、directory 設定（網站與複寫資訊），與通用（樹系的搜尋功能）。 在相同的樹系的網域自動雙向、轉移信任關係的連結。  
+## <a name="active-directory-forest"></a>Active Directory 樹系  
+樹系是共用通用的邏輯結構的一或多個 Active Directory 網域的集合目錄結構描述 （類別和屬性定義）、 目錄組態 （站台與複寫資訊） 和通用類別目錄 （全樹系搜尋功能）。 相同的樹系中網域具有雙向、 可轉移的信任關係，會自動連結。  
   
-## <a name="active-directory-domain"></a>Active Directory domain  
-Active Directory 森林中的磁碟分割網域。 分割資料，讓組織複寫只需要的位置資料。 如此一來，directory 可以全球有限的頻寬，在網路上縮放。 此外，網域支援許多其他核心管理相關功能包括：  
+## <a name="active-directory-domain"></a>Active Directory 網域  
+網域是 Active Directory 樹系中的分割區。 分割資料，可讓組織僅以需要的地方複寫資料。 如此一來，目錄可以全域擴充可用的頻寬有限的網路。 此外，網域會支援其他核心數函式與系統管理，包括：  
   
--   全網路使用者的身分。 網域讓使用者建立一次並加入網域所在的樹系的任何電腦上所參照的身分。 網域構成網域控制站用來儲存確實帳號及使用者認證（例如密碼或憑證）。  
+-   整個網路的使用者身分識別。 網域可以讓使用者身分，來建立一次並參考已加入網域所在樹系的任何電腦上。 建立網域的網域控制站用來安全地儲存使用者帳戶和使用者認證 （例如密碼或憑證）。  
   
--   驗證。 網域控制站提供驗證使用者服務，並提供額外的授權資料，例如使用者群組成員資格，可以用來控制資源網路上的存取權。  
+-   驗證。 網域控制站提供驗證服務的使用者，並提供額外的授權資料，例如使用者群組成員資格，可用來控制網路上資源的存取權。  
   
--   標示為信任的關聯。 網域可以透過信任擴充驗證服務自己的樹系外網域中的使用者。  
+-   信任關係。 網域可以擴充到他們自己的樹系之外網域中的使用者驗證服務，透過信任。  
   
--   複寫。 網域定義 directory 包含不足提供網域服務的資料，再將它複製之間的網域控制站的磁碟分割。 如此一來，所有網域控制站的同儕網域中的，並為單位管理。  
+-   複寫。 網域會定義包含充足的資料來提供網域服務，並再將它複製網域控制站之間的目錄磁碟分割。 如此一來，所有網域控制站都是在網域中的對等，並做為一個單位管理。  
   
 ## <a name="active-directory-organizational-units"></a>Active Directory 組織單位  
-Ou 可用於形成的容器階層網域中。 Ou 用於群組物件給系統管理員使用群組原則的應用程式或授權委派例如。 控制項（透過組織單位，它中的物件）由存取控制清單 (Acl) 在 [組織單位和組織單位中的物件。 若要加速管理大量物件，AD DS 支援委派權限的概念。 透過委派，擁有者可以轉移到其他使用者或群組的完整或有限管理控制物件。 因為它有助於跨多個以執行管理工作受信任的人散發大量物件的管理委派務必。  
+Ou 可以用於網域內形成的容器階層架構。 基於管理目的，例如群組原則的應用程式或委派權限，Ou 用來群組物件。 （對 OU 和其中的物件） 控制由存取控制清單 (Acl) OU 及 OU 中的物件。 為了方便管理大量的物件，AD DS 支援委派權限的概念。 透過委派，擁有者可以傳輸到其他使用者或群組的完整或有限的系統管理控制權的物件。 委派是人員的很重要，因為它有助於將大量物件的管理跨多個受信任可以執行管理工作。  
   
 
 

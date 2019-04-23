@@ -1,22 +1,24 @@
 ---
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
-title: "ReFS 上的區塊複製"
-description: 
+title: ReFS 上的區塊複製
+description: ''
 author: gawatu
 ms.author: gawatu
 manager: gawatu
-ms.date: 12/6/2016
+ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-file-systems
-ms.openlocfilehash: 25cc523eaa2ed266e5b07c53ede4bc9e9be20e93
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 54165700209320eee50fc63d98d78cbf4a92d053
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838109"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS 上的區塊複製
->適用於：Windows Server (半年度管道)、Windows Server 2016
+
+>適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
 
 區塊複製會指示檔案系統代表應用程式複製一個範圍的檔案位元組，其中目的檔案可能與來源檔案相同或不同。 然而，複製作業因為會觸發基礎實體資料昂貴的讀取與寫入，所以成本高昂。 
 
@@ -63,7 +65,7 @@ ReFS 透過保留各個邏輯叢集的參考計數，讓檔案間的隔離不中
 ## <a name="see-also"></a>另請參閱
 
 -   [ReFS 概觀](refs-overview.md)
--   [ReFS 完整性資料流](integrity-streams.md)
+-   [ReFS 的完整性資料流](integrity-streams.md)
 -   [儲存空間直接存取概觀](../storage-spaces/storage-spaces-direct-overview.md)
 -   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
 -   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)

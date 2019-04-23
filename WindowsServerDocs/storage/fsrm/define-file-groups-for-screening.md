@@ -1,6 +1,6 @@
 ---
-title: "定義檢測的檔案群組"
-description: "本文說明如何定義檔案群組，以建立檔案檢測、檔案檢測例外或 [檔案: 依檔案群組列表] 存放裝置報告的命名空間"
+title: 定義檢測的檔案群組
+description: '本文說明如何定義檔案群組，以建立檔案檢測、檔案檢測例外或 [檔案: 依檔案群組列表] 存放裝置報告的命名空間'
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6e043692500370b6c084a4db068027d13afc957f
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838429"
 ---
 # <a name="define-file-groups-for-screening"></a>定義檢測的檔案群組
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 *檔案群組*可用來定義檔案檢測、檔案檢測例外或 **\[檔案: 依檔案群組列表\]** 存放裝置報告的命名空間。 其中包含一組依下列設定分組的檔案名稱模式：
 
@@ -40,11 +41,11 @@ ms.lasthandoff: 10/17/2017
 
     -   在 **\[包含的檔案\]** 方塊中，為您要在檔案群組中包含的每一組檔案輸入檔案名稱模式，然後按一下 **\[新增\]**。
     -   在 **\[排除的檔案\]** 方塊中，為您要從檔案群組中排除的每一組檔案輸入檔案名稱模式，然後按一下 **\[新增\]**。
-        請注意，適用標準萬用字元規則；例如，**\*.exe** 會選取所有的可執行檔。
+        請注意，適用標準萬用字元規則，例如 **\*.exe**選取所有可執行檔。
 
-5.  按一下 **\[確定\]**。
+5.  按一下 [確定] 。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [建立檔案檢測](create-file-screen.md)

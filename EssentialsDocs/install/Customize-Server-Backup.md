@@ -1,6 +1,6 @@
 ---
-title: "自訂伺服器備份"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 自訂伺服器備份
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,59 +13,60 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d18dca276bccdf672664a5a3c2bd28e0221fff94
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838539"
 ---
 # <a name="customize-server-backup"></a>自訂伺服器備份
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-## <a name="turn-off-server-backup-by-default"></a>關閉預設伺服器備份  
- 您可以選擇預設關閉伺服器備份。 您需要將值設定**HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** 1 以讓此選項。  
+## <a name="turn-off-server-backup-by-default"></a>根據預設，會關閉 Server Backup  
+ 您可以選擇根據預設關閉 Server Backup。 您需要將 **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** 的值設定為 1，以便啟用此選項。  
   
- 此設定時，不會透過儀表板或 Launchpad 公開伺服器備份使用者介面。 這可讓您使用協力廠商應用程式的伺服器備份。  
+ 設定此機碼時，不會透過儀表板或啟動列公開 Server Backup 使用者介面。 這可讓您利用 Server Backup 的協力廠商應用程式。  
   
-#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>若要新增 ServerBackup\ProviderDisabled 嗎？登錄檔案與設定的值為 1  
+#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>若要新增 ServerBackup\ProviderDisabled 嗎？登錄機碼並將值設為 1  
   
-1.  在伺服器上，按一下 [ **[開始]**，按一下 [**執行**，輸入**regedit**在**開放**] 文字方塊中，然後按一下 [ **[確定]**。  
+1.  在伺服器上，請依序按一下 **[開始]** 及 **[執行]**，並在 **[開啟]** 文字方塊中輸入 **regedit**，然後按一下 **[確定]**。  
   
-2.  在瀏覽窗格中，展開**跳**，展開 [**軟體**，展開 [ **Microsoft**，展開 [ **Windows Server**，然後展開**ServerBackup**。  
+2.  在瀏覽窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server** 及 **ServerBackup**。  
   
-3.  以滑鼠右鍵按一下**ServerBackup**，按一下 [**新**，然後按一下 [ **DWARD 值**。  
+3.  在 **ServerBackup** 上按一下滑鼠右鍵，按一下 **[新增]**，然後按一下 **[DWARD 值]**。  
   
-4.  名稱，輸入**ProviderDisabled**。  
+4.  名稱輸入 **ProviderDisabled**。  
   
-5.  以滑鼠右鍵按一下名稱，請選取 [**修改**，輸入**1**的數值資料，然後再按一下**[確定]**。  
+5.  以滑鼠右鍵按一下名稱，選取 [修改] ，值資料輸入 **1** ，然後按一下 [確定] 。  
   
-## <a name="turn-on-server-backup"></a>打開伺服器備份  
- 如果這建立已關閉，您可以關閉伺服器備份上**ProviderDisabled**（如之前所述本文件）登錄金鑰。  
+## <a name="turn-on-server-backup"></a>開啟 Server Backup  
+ 您可以將建立 **ProviderDisabled** 登錄機碼時關閉的伺服器備份開啟 (如本文件之前所述)。  
   
- 您需要 delete 按鍵**HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled**為了讓預設伺服器備份變更 [開始] 畫面的服務類型 Windows Server 伺服器備份服務，伺服器重新開機。  
+ 您需要刪除 **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** 機碼，以便啟用預設的伺服器備份，請變更 Windows Server Server Backup Service 的服務啟動類型，然後重新啟動伺服器。  
   
-#### <a name="to-delete-serverbackupproviderdisabled-registry-key"></a>若要 delete ServerBackup\ProviderDisabled 嗎？登錄鍵  
+#### <a name="to-delete-serverbackupproviderdisabled-registry-key"></a>若要刪除 ServerBackup\ProviderDisabled 嗎？登錄機碼  
   
-1.  在伺服器上，將滑鼠移到畫面的右上角，然後按一下**搜尋**。  
+1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。  
   
-2.  在搜尋方塊中，輸入**regedit**，然後按**Regedit**應用程式。  
+2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]  應用程式。  
   
-3.  在瀏覽窗格中，展開**跳**，展開 [**軟體**，展開 [ **Microsoft**，展開 [ **Windows Server**，然後展開**ServerBackup**。  
+3.  在瀏覽窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server** 及 **ServerBackup**。  
   
-4.  以滑鼠右鍵按一下**ProviderDisabled**，然後按**Delete**。  
+4.  在 **[ProviderDisabled]** 上按一下滑鼠右鍵，然後按一下 **[刪除]**。  
   
-#### <a name="change-the-start-type-of-windows-server-server-backup-service"></a>變更 [開始] 畫面的 Windows Server 伺服器備份服務類型  
+#### <a name="change-the-start-type-of-windows-server-server-backup-service"></a>變更 Windows Server Server Backup Service 的啟動類型  
   
-1.  在伺服器上，將滑鼠移到畫面的右上角，然後按一下**搜尋**。  
+1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。  
   
-2.  在搜尋方塊中，輸入**services.msc**，然後按**服務**應用程式。  
+2.  在 [搜尋] 方塊中，輸入 **services.msc**，然後按一下 **Services** 應用程式。  
   
-3.  在 [服務] 窗格中，以滑鼠右鍵按一下**Windows Server 伺服器備份服務**，按一下 [**屬性**。  
+3.  在服務窗格中，在 **[Windows Server Server Backup Service]** 上按一下滑鼠右鍵，然後按一下 **[內容]**。  
   
-4.  在**一般**索引標籤，選取**自動**的**開機輸入**。  
+4.  在 **[一般]** 索引標籤中，選取 **[自動]** 作為 **[啟動類型]**。  
   
-5.  按一下**[確定]**來關閉對話方塊。  
+5.  按一下 **[確定]** 關閉對話方塊。  
   
-#### <a name="restart-the-server"></a>重新開機伺服器  
+#### <a name="restart-the-server"></a>重新啟動伺服器  
   
-1.  在伺服器上，將滑鼠移到畫面的右下角按**設定**，按一下 [**電源**，然後按一下 [重新開機。
+1.  在伺服器上，將滑鼠移至畫面的右上角，按一下 **[設定]**，然後按一下 **[電源]**，然後按一下 [重新啟動]。

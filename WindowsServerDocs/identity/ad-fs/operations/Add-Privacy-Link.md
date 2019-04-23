@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1ca6f87f-7272-4767-b609-3e295ac7d32f
-title: "新增連結隱私權"
-description: 
+title: 新增隱私權連結
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,25 +10,26 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 81a453b45693b8222bdfc0231885b506fdfcd2fc
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59836799"
 ---
-# <a name="add-privacy-link"></a>新增連結隱私權 
+# <a name="add-privacy-link"></a>新增隱私權連結 
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-若要新增的隱私權連結，會顯示在 sign\ 在頁面上，使用下列的 Windows PowerShell cmdlet 和語法。  
+若要新增隱私權連結會顯示在登\-在頁面上，使用下列 Windows PowerShell cmdlet 和語法。  
 
-![新增連結隱私權](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
+![新增隱私權連結](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
   
  
 `Set-AdfsGlobalWebContent -PrivacyLink https://fs1.contoso.com/privacy/ -PrivacyLinkText Privacy`  
  
   
 > [!IMPORTANT]  
-> `linkText`在這個 cmdlet 參數不需要，除非您要使用預設值，也就是比另一個值*隱私權*。 使用預設的優點是之當地語系化 client 所有的地區設定。 自訂 sign\ 頁面會之後，自訂的優先順序。因此，您應該自訂為所有要支援的語言。 所有自訂的 content 參數的地區設定。 當您設定當地語系化的 content 時，您應該設定 country\ 無地區設定的第一次，，例如「en-us」，您在設定之前國家與地區 region\ 特定的設定，例如「en\-我們」。  
+> 此 Cmdlet 的 `linkText` 並非必要參數，除非您使用其他值，而不是預設的 *Privacy*。 使用預設的優點是頁面會根據所有用戶端地區設定來當地語系化。 號後面\-頁面中為自訂，自訂會有優先順序; 因此，您應該自訂您想要支援的所有語言。 所有的自訂內容皆接受地區設定參數。 當您設定當地語系化的內容時，您應該設定國家/地區\-較少的地區設定第一個，例如，"en"，然後再設定 country 和 region\-特定地區設定，例如"en\-我們"。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

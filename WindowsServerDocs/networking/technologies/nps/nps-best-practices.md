@@ -1,6 +1,6 @@
 ---
 title: 網路原則伺服器最佳做法
-description: 本主題提供部署及管理 Windows Server 2016 中的網路原則伺服器的最佳做法。
+description: 本主題提供部署和管理 Windows Server 2016 中的網路原則伺服器的最佳作法。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,105 +8,106 @@ ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5a9a68965d0d19504352ad67f7ab268b3d344fb2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 6cbd606edec06a80767ee997ef6a1397b66b7843
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834229"
 ---
 # <a name="network-policy-server-best-practices"></a>網路原則伺服器最佳做法
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-若要深入了解部署及管理的網路原則伺服器 \(NPS\) 最佳做法，您可以使用此主題。
+您可以使用本主題來了解部署和管理網路原則伺服器的最佳做法\(NPS\)。
 
-下列章節提供最佳做法 NPS 部署的其他方面。
+下列各節提供 NPS 部署的不同層面的最佳作法。
 
-## <a name="accounting"></a>計量
+## <a name="accounting"></a>帳戶處理
 
-以下是 NPS 登入的最佳做法的規範。
+以下是 NPS 記錄的最佳作法。
 
-有兩種類型的計量，或在 NPS 登入：
+有兩種類型的計量，或記錄，在 NPS 中：
 
-- NPS 的事件登入。 您可以在 [系統及安全性事件登使用使用碼表進行 NPS 事件的事件登入。 這是主要用於稽核和連接嘗試進行疑難排解。
+- Nps 事件記錄。 您可以使用將 NPS 事件記錄的事件記錄系統及安全性事件記錄檔中。 這主要用於稽核和疑難排解連線嘗試。
 
-- 登入驗證使用者以及計量要求。 您可以登入的使用者來登入文字的格式或資料庫格式] 底下的 [檔案驗證及計量要求或您可以到儲存程序 SQL Server 2000 資料庫中登入。 要求登入主要用於連接分析及計費用途，並也適用於做為安全性調查工具，為您提供攻擊追蹤活動的方法。
+- 使用者驗證與帳戶處理要求記錄。 您可以記錄到以文字格式或資料庫格式記錄檔的使用者驗證和帳戶處理要求，或是記錄中的 SQL Server 2000 資料庫的預存程序。 要求記錄主要用於連線分析及計費用途，而且也做為安全性調查工具，讓您追蹤攻擊活動的方法很有用。
 
-若要使用最有效的 NPS 登入：
+若要讓最有效利用 NPS 記錄：
 
-- 關閉 [在登入 \(initially\) 會計記錄和驗證。 修改這些選項之後在您判斷適合您的環境。
+- 開啟記錄功能\(最初\)進行驗證和帳戶處理記錄。 之後您決定適合您的環境，請修改這些選取項目。
 
-- 確定事件登入的容量不足以維護您登的設定。
+- 請確定事件記錄已即足以維持您的記錄檔的容量。
 
-- 因為他們無法重新建立損壞或刪除時備份定期登入的所有檔案。
+- 備份定期執行的所有記錄檔，因為它們無法重新建立損毀或刪除時。
 
-- 使用 RADIUS 課程屬性追蹤使用和簡化的部門或使用者收取使用的驗證。 雖然唯一的每個要求自動的課程屬性，重複記錄可能存在於的案例位置的存取伺服器回覆遺失，重新傳送要求。 您可能需要從您以精確追蹤使用量登 delete 重複要求。
+- 使用 RADIUS 類別屬性來追蹤使用情況和簡化的部門或使用者的使用量費用的識別。 雖然自動產生的類別屬性是唯一的每個要求，重複的記錄可能會存在到存取伺服器回覆時遺失，而且在重新傳送要求。 您可能需要刪除重複的要求，從您的記錄檔，才能正確地追蹤使用狀況。
 
-- 如果您的網路存取伺服器以及 RADIUS proxy 伺服器會定期傳送虛構連接要求訊息給 NPS 確認 online NPS 伺服器，請使用**ping 使用者名稱**登錄設定。 這項設定設定為自動不處理拒絕這些 false 連接要求 NPS。 此外，NPS 記錄交易涉及虛構中的使用者名稱任何登入檔案，讓事件登入變得更容易上尚未取得共識。
+- 如果您的網路存取伺服器和 RADIUS proxy 伺服器定期虛構的連線將要求訊息傳送到 NPS 確認 NPS 處於線上狀態，請使用**ping 使用者名稱**登錄設定。 此設定會設定 NPS 自動拒絕這些 false 的連線要求，而不需處理它們。 此外，NPS 不會記錄交易涉及的虛構的使用者名稱中任何記錄檔，讓您更輕鬆地解譯事件記錄檔。
 
-- 停用 NAS 通知轉接。 您可以停用的 [開始] 畫面與停止訊息從網路存取伺服器 (Nas) 遠端 RADIUS 伺服器成員群組該 IS NPS 中設定。 如需詳細資訊，請查看[停用 NAS 通知轉寄](nps-disable-nas-notifications.md)。
+- 停用 NAS 通知轉寄。 您可以停用轉送的開始和停止訊息從網路存取伺服器 (Nas) 的遠端 RADIUS 伺服器的成員群組在 NPS 中設定該 IS。 如需詳細資訊，請參閱 <<c0> [ 停用 NAS 通知轉寄](nps-disable-nas-notifications.md)。
 
-如需詳細資訊，請查看[設定的網路原則伺服器計量](nps-accounting-configure.md)。
+如需詳細資訊，請參閱 <<c0> [ 設定網路原則伺服器 Accounting](nps-accounting-configure.md)。
 
-- 若要提供錯誤移轉及冗餘 SQL Server 登入，放置執行 SQL Server 不同子網路上的兩部電腦。 使用 SQL Server**建立發行精靈**來設定資料庫複製兩部伺服器。 如需詳細資訊，請查看[SQL Server 技術文件](https://msdn.microsoft.com/library/ms130214.aspx)和[SQL Server 複寫](https://msdn.microsoft.com/library/ms151198.aspx)。
+- 若要使用 SQL Server 記錄提供容錯移轉和備援能力，將放在不同的子網路上執行 SQL Server 的兩部電腦。 使用 SQL Server**建立發行集精靈**設定兩部伺服器之間的資料庫複寫。 如需詳細資訊，請參閱 < [SQL Server 技術文件](https://msdn.microsoft.com/library/ms130214.aspx)並[SQL Server 複寫](https://msdn.microsoft.com/library/ms151198.aspx)。
 
 ## <a name="authentication"></a>驗證
 
-以下是進行驗證的最佳做法。
+以下是驗證的最佳作法。
 
-- 使用穩固驗證保護延伸驗證通訊協定 \(PEAP\) 和延伸驗證通訊協定 \(EAP\) 憑證為基礎的驗證方法。 請勿使用僅輸入密碼的驗證方法，因為它們可以很容易各種不同的攻擊，並不安全。 Wireless 安全驗證，使用 PEAP\-MS\-CHAP v2 建議，因為 NPS 伺服器使用者證明他們的身分使用者名稱與密碼時使用伺服器的憑證，以 wireless 戶端證明的身分。  如需有關如何使用 NPS wireless 部署的詳細資訊，請查看[架構部署密碼 802.1 X 驗證 Wireless 存取](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access)。
-- 部署自己憑證授權單位 \(CA\) Active Directory 使用&reg;當您使用穩固憑證式驗證方法、PEAP 和 EAP，例如，需要的伺服器上的憑證 NPS 伺服器使用憑證服務 \(AD CS\)。 您也可以使用您的 CA 憑證電腦和使用者憑證註冊。 如需有關伺服器的憑證部署至 NPS 及遠端存取伺服器，查看[適用於 802.1 X 的有線和無線部署部署伺服器憑證](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)。
+- 使用憑證型驗證方法，例如受保護的可延伸驗證通訊協定\(PEAP\)和可延伸驗證通訊協定\(EAP\)增強式驗證。 請勿使用僅需密碼的驗證方法，因為它們是容易受到各式各樣的攻擊，而且不安全。 為安全的無線驗證，使用 PEAP\-MS\-MS-CHAP v2 建議，因為 NPS 給無線用戶端證明其身分識別，使用伺服器憑證，而使用者證明其身分識別與使用者名稱和密碼。  如需無線部署中使用 NPS 的詳細資訊，請參閱[部署密碼型 802.1x 驗證無線存取](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access)。
+- 部署您自己的憑證授權單位\(CA\)與 Active Directory&reg;憑證服務\(AD CS\)當您使用強式憑證為基礎的驗證方法，例如 PEAP 與 EAP 時，需要伺服器憑證 NPSs 上使用。 您也可以使用您的 CA 註冊電腦憑證和使用者憑證。 如需有關如何將伺服器憑證部署至 NPS 及遠端存取伺服器的詳細資訊，請參閱 <<c0> [ 部署 802.1x 有線和無線部署的伺服器憑證](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)。
 
-## <a name="client-computer-configuration"></a>Client 電腦設定
+## <a name="client-computer-configuration"></a>用戶端電腦設定
 
-以下是 client 電腦設定為最佳做法的規範。
+以下是用戶端電腦設定的最佳作法。
 
-- 自動使用群組原則設定您網域成員 802.1 X client 電腦的所有。 如需詳細資訊，請查看」設定無線 (IEEE 802.11) 的網路原則」主題中的區段[無線存取部署](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/e-wireless-access-deployment#bkmk_policies)。
+- 自動使用群組原則來設定所有的網域成員 802.1x 用戶端電腦。 如需詳細資訊，請參閱 「 設定無線網路 (IEEE 802.11) 原則 」 主題中的一節[無線存取部署](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/e-wireless-access-deployment#bkmk_policies)。
 
 ## <a name="installation-suggestions"></a>安裝建議
 
-以下是安裝 NPS 的最佳做法。
+以下是安裝 NPS 的最佳作法。
 
-- 安裝之前 NPS，安裝和使用本機的驗證方法將它們設定為在 NPS RADIUS 戶端之前您的網路存取伺服器的每個測試。
+- 在安裝 NPS 之前, 安裝，並測試每個網路存取伺服器設定為 NPS 中的 RADIUS 用戶端之前，請使用本機的驗證方法。
 
-- 您安裝和設定 NPS 之後，將設定儲存使用 Windows PowerShell 命令[匯出-NpsConfiguration](https://technet.microsoft.com/en-us/library/jj872749.aspx)。 儲存 NPS 組態的每次您重新設定 NPS 伺服器這個命令。
+- 在安裝和設定 NPS 之後，儲存設定使用 Windows PowerShell 命令[匯出 NpsConfiguration](https://technet.microsoft.com/library/jj872749.aspx)。 每次您重新設定 NPS 使用此命令儲存 NPS 設定。
 
 >[!CAUTION]
->- 匯出的 NPS 設定檔包含加密共用的密碼 RADIUS 戶端和遠端 RADIUS 伺服器群組成員。 因此，請確定您將檔案儲存在安全的位置。
->- 匯出程序不包含匯出之檔案的 Microsoft SQL Server 的登入設定。 如果您匯入到另一個 NPS 伺服器匯出的檔案，您必須手動設定 SQL Server 登入新的伺服器上。
+>- 匯出的 NPS 的組態檔包含未加密共用的密碼 RADIUS 用戶端和遠端 RADIUS 伺服器群組的成員。 基於這個原因，請確定您將檔案儲存到安全的位置。
+>- 匯出程序不在匯出的檔案包含 Microsoft SQL Server 記錄設定。 如果您將匯出的檔案匯入另一部 NPS，您必須手動設定 SQL Server 記錄新的伺服器上。
 
-## <a name="performance-tuning-nps"></a>調整 NPS 效能
+## <a name="performance-tuning-nps"></a>效能微調 NPS
 
-以下是效能調整 NPS 的最佳做法。
+以下是效能微調 NPS 的最佳作法。
 
-- 若要最佳化 NPS 驗證和授權回應時間和網路流量最小化，安裝 NPS 網域控制站。
+- 若要最佳化 NPS 驗證和授權回應時間，並將網路流量降到最低，請在網域控制站上安裝 NPS。
 
-- 萬用主體名稱 \(UPNs\) 或 Windows Server 2008 和 Windows Server 2003 網域使用時，NPS 使用通用驗證使用者。 最小化時所需執行此動作，請安裝 NPS 通用伺服器或相同通用伺服器子網路上的伺服器上。
+- 當通用主體名稱\(Upn\)或使用 Windows Server 2008 和 Windows Server 2003 的網域，NPS 會使用通用類別目錄來驗證使用者。 若要執行這項操作所花費的時間降到最低，請在通用類別目錄伺服器或與通用類別目錄伺服器位於相同子網路上的伺服器上安裝 NPS。
 
-- 當您有遠端設定 RADIUS 伺服器群組，NPS 連接要求原則，在您清除**在下列遠端 RADIUS 伺服器群組錄製計量伺服器上的資訊**核取方塊，這些群組仍會傳送網路存取伺服器 \(NAS\) 開始和停止訊息通知。 這會建立不必要的網路流量。 若要排除此流量，來停用 NAS 個人伺服器每個遠端 RADIUS 伺服器群組中的通知轉接清除**向前網路 [開始] 畫面與停止此伺服器通知**核取方塊。
+- 當您擁有設定的遠端 RADIUS 伺服器群組，而且 NPS 連線要求原則，在您清除**記錄下列遠端 RADIUS 伺服器群組中的伺服器上的帳戶處理資訊**核取方塊，這些群組仍是傳送的網路存取伺服器\(NAS\)啟動和停止通知訊息。 這會建立不必要的網路流量。 若要排除這個流量，清除停用每個遠端 RADIUS 伺服器群組中的個別伺服器的 NAS 通知轉寄**轉送網路開始和停止通知到這個伺服器**核取方塊。
 
-## <a name="using-nps-in-large-organizations"></a>使用大型的組織 NPS
+## <a name="using-nps-in-large-organizations"></a>在大型組織中使用 NPS
 
-以下是使用大型的組織 NPS 最佳做法。
+以下是在大型組織中使用 NPS 的最佳作法。
 
-- 如果您正在使用的網路原則限制存取所有但某些群組，會建立萬用適用於所有使用者您要允許存取權限的群組，並建立授與此通用群組的存取權的網路原則。 不要將所有使用者的通用群組中，直接將尤其是當您有許多人在您的網路。 不過，建立通用群組中，並將使用者新增這些群組到不同群組。
+- 如果您使用網路原則來限制存取的所有但特定群組，就會建立所有您要允許存取時，使用者的萬用群組，然後再建立這個萬用群組的存取權的網路原則。 請勿將放所有的使用者直接將萬用群組中，尤其是如果您有大量的網路上。 相反地，建立屬於萬用群組中，並將使用者新增至這些群組的個別群組。
 
-- 使用參照使用者盡可能使用者主體名稱。 使用者可能無論網域成員資格相同的使用者主體名稱。 這個做法提供延展性，可能需要在組織中有大量的網域。
+- 使用使用者主體名稱來參照使用者盡可能。 使用者可以擁有相同使用者主體名稱，而不論網域成員資格。 這項作法提供具有大量網域的組織中所需的延展性。
 
-- 如果您的網域控制站以外的電腦上安裝的網路原則伺服器 \(NPS\) NPS 伺服器接收大量驗證要求秒，您可以增加允許 NPS 伺服器之間的網域控制站同時驗證的數目改善 NPS 效能。 如需詳細資訊，請查看 
+- 如果您安裝網路原則伺服器\(NPS\)網域以外的電腦上控制站與 NPS 伺服器正在接收大量每秒的驗證要求，您可以增加的數目，以改善 NPS 效能NPS 與網域控制站之間允許的同時驗證。 如需詳細資訊，請參閱本主題中的 
 
 ## <a name="security-issues"></a>安全性問題
 
-以下是最佳做法減少安全性問題。
+以下是減少安全性問題的最佳作法。
 
-當您的遠端管理 NPS 伺服器時，請不要純文字在網路上傳送敏感或機密資料（例如，共用的密碼或密碼）。 有兩個 NPS 伺服器的遠端管理建議的方法：
+當您從遠端管理 NPS 時，請不要透過網路以純文字傳送敏感或機密資料 （例如，共用的密碼或密碼）。 有兩種 NPSs 的遠端系統管理的建議的方法：
 
-- 使用遠端桌面服務存取 NPS 伺服器。 當您使用遠端桌面服務時，伺服器 client 之間將不會傳送資料。 遠端桌面服務 client，稱為 windows 遠端桌面連接到傳送只使用者介面（例如，桌面作業系統和 NPS 主機映像）伺服器的&reg;10。 Client 傳送鍵盤和滑鼠輸入，這在本機伺服器遠端桌面服務功能的處理。 當遠端桌面服務使用者登入時，他們就可以檢視只他們個人 client 工作階段，這由伺服器，各自獨立。 此外，遠端桌面連接提供 client 之間伺服器 128 元加密。
+- 您可以使用遠端桌面服務來存取 NPS。 當您使用遠端桌面服務時，並不會將資料傳送用戶端與伺服器之間。 僅使用者介面 （例如，作業系統桌面和 NPS 主控台映像） 的伺服器會傳送至名為在 Windows 中的遠端桌面連線的遠端桌面服務用戶端&reg;10。 用戶端會傳送鍵盤和滑鼠輸入，其中已啟用遠端桌面服務的伺服器在本機處理。 遠端桌面服務使用者登入時，他們可以檢視只有其個別的用戶端工作階段，伺服器所管理而且彼此獨立。 此外，遠端桌面連線會提供用戶端與伺服器之間的 128 位元加密。
 
-- 用於機密資料加密網際網路通訊協定的安全性 (IPsec)。 您可以使用 IPsec 加密 NPS 伺服器和您使用管理 NPS client 遠端電腦之間的通訊。 若要從遠端管理的伺服器，您可以安裝[遠端伺服器管理工具適用於 Windows 10 的](https://www.microsoft.com/download/details.aspx?id=45520)上。 安裝之後，請使用 Microsoft Management Console (MMC) NPS 伺服器嵌入式管理單元新增至主機。
+- 您可以使用網際網路通訊協定安全性 (IPsec) 來加密機密資料。 您可以使用 IPsec 來加密 NPS 與您用來管理 NPS 的遠端用戶端電腦之間的通訊。 若要從遠端管理伺服器，您可以安裝[遠端伺服器管理工具適用於 Windows 10](https://www.microsoft.com/download/details.aspx?id=45520)用戶端電腦上。 安裝完成後，請將 NPS 嵌入式管理單元到主控台中使用 Microsoft Management Console (MMC)。
 
 >[!IMPORTANT]
->您可以安裝遠端伺服器管理工具適用於 Windows 10 完整版本的 Windows 10 專業版或 Windows 10 企業版只在。
+>您可以只在 Windows 10 專業版或 Windows 10 企業版的完整版本上安裝遠端伺服器管理工具適用於 Windows 10。
 
-如需 NPS 的詳細資訊，請查看[的網路原則 Server (NPS)](nps-top.md)。
+如需 NPS 的詳細資訊，請參閱[網路原則伺服器 (NPS)](nps-top.md)。
 

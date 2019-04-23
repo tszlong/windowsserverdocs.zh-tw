@@ -1,0 +1,1 @@
+**[深入了解一律開啟 」 VPN 技術](../vpn/always-on-vpn/always-on-vpn-technology-overview.md)。** 針對此部署，您必須安裝新的遠端存取伺服器是執行 Windows Server 2016 中，以及修改某些現有的基礎結構部署。

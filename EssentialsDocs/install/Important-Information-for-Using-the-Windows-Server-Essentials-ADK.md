@@ -1,6 +1,6 @@
 ---
-title: "使用 Windows Server Essentials ADK 重要資訊"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 關於使用 Windows Server Essentials ADK 的重要資訊
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,40 +13,41 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 4dec1fdf01538ca119b991675f932d2d8ec1e097
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838639"
 ---
-# <a name="important-information-for-using-the-windows-server-essentials-adk"></a>使用 Windows Server Essentials ADK 重要資訊
+# <a name="important-information-for-using-the-windows-server-essentials-adk"></a>關於使用 Windows Server Essentials ADK 的重要資訊
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-建立和自訂 Windows Server Essentials 的映像，您使用工具] 中的許多[Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248647)，但在 Windows 8 ADK，以及 Windows Server Essentials ADK 一些重要不同。  
+若要建立及自訂的 Windows Server Essentials 映像，您使用多個中的工具[Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248647)，但有一些重要的差異，Windows 8 ADK 和 Windows Server Essentials ADK 之間。  
   
- 您應該下列重要不同注意：  
+ 您應該注意下列重要差異：  
   
--   在 [已變更部分設定**%windir%\setup\script\SetupComplete.cmd**。 如果您想要使用這個命令時，您可以新增額外的 cmdlines，但不要移除現有的行。  
+-   **%windir%\setup\script\SetupComplete.cmd** 中的某些設定已變更。 如果要使用此命令，您可以新增其他命令行，但請勿移除現有的行。  
   
 ## <a name="working-with-passwords"></a>使用密碼  
   
--   若要設定的系統管理員密碼Admin@123和自動登入在 Install.wim\unattend.xml 支援。 因此，您不需要重新輸入密碼許多次期間伺服器的初次設定。 如果有自訂的 unattend.xml\ 根卸除式媒體，此設定將會被覆寫，且您將需要設定密碼，以及登入期間開機...  
+-   系統管理員密碼會設為Admin@123而且 Install.wim\unattend.xml 會啟用自動登入。 因此，在初始化設定伺服器期間，您不必多次重新輸入密碼。 如果您的卸除式媒體的根目錄中有自訂的 unattend.xml，此設定會被覆寫，而且您將需要設定密碼並且在啟動期間登入...  
   
--   在初始設定，使用者會建立新 account 和密碼提示。 這個新帳號變成作業系統的網路系統管理員負責。 系統管理員帳號，並自動登入然後已停用。 您可以使用的品質保證測試的 cfg.ini 檔案自動執行此程序。  
+-   在初始設定期間，會提示使用者建立新的帳戶和密碼。 這個新帳戶會成為作業系統的網路系統管理員帳戶。 然後 Administrator 帳戶和自動登入會停用。 您可以藉由使用 cfg.ini 檔案來進行品質保證測試，自動化這個程序。  
   
--   請參考[Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)文件，以建立 unattend.xml\ 檔案的詳細資訊。  
+-   請參閱 [Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248694) 文件，以取得有關建立 unattend.xml 檔案的詳細資料。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
- [開始使用 Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [與 Windows Server Essentials ADK 快速入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
 
- [開始使用 Windows Server Essentials ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [與 Windows Server Essentials ADK 快速入門](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](../install/Additional-Customizations.md)   
- [準備部署映像](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](../install/Testing-the-Customer-Experience.md)
+ [其他自訂項目](../install/Additional-Customizations.md)   
+ [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

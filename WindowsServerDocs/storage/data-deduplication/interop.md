@@ -1,6 +1,6 @@
 ---
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
-title: "重複資料刪除互通性"
+title: 重複資料刪除互通性
 ms.technology: storage-deduplication
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -9,14 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
 ms.openlocfilehash: 2a28be1bdd22915182cbdbb2726ab9d37422e889
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834429"
 ---
 # <a name="data-deduplication-interoperability"></a>重複資料刪除互通性
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server （半年通道），Windows Server 2016
 
 ## <a id="supported"></a>支援
 
@@ -60,14 +61,14 @@ Windows Server Backup 可以依原樣備份最佳化的磁碟區 (亦即，不�
     wbadmin get versions
     ```
 
-    此輸出版本識別碼會是一個日期和時間字串，例如︰08/18/2016-06:22。
+    此輸出版本識別碼會是日期和時間的字串，例如：08/18/2016-06:22.
 
 4. 還原整個磁碟區。
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **--或--**  
+    **--OR--**  
 
     還原特定資料夾 (在此案例中為 E:\Docs 資料夾)：
     ```PowerShell
@@ -78,10 +79,10 @@ Windows Server Backup 可以依原樣備份最佳化的磁碟區 (亦即，不�
 ### <a id="unsupported-refs"></a>ReFS
 Windows Server 2016 不支援 ReFS 格式化磁碟區上的重複資料刪除。 [在 Windows Server Storage UserVoice 上投票給 Windows Server vNext 的這個項目](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/7962813-support-deduplication-on-refs)。
 
-### <a id="unsupported-windows-client"></a>Windows 10 (用戶端作業系統)
+### <a id="unsupported-windows-client"></a>Windows 10 （用戶端作業系統）
 Windows 10 不支援重複資料刪除。 Windows 社群中有數篇熱門部落格文章說明如何將二進位檔從 Windows Server 2016 移除並安裝在 Windows 10，但是這個案例在「重複資料刪除」的開發過程中還未經驗證。 [在 Windows Server Storage UserVoice 上投票給 Windows 10 vNext 的這個項目](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os)。
 
-### <a id="unsupported-windows-search"></a>Windows 搜尋
+### <a id="unsupported-windows-search"></a>Windows Search
 Windows 搜尋不支援重複資料刪除。 重複資料刪除會使用重新分析點，而使得 Windows 搜尋無法編製索引，因此 Windows 搜尋會略過所有重複資料刪除的檔案，並將之排除在索引內容之外。 因此，對重複資料刪除磁碟區的搜尋結果可能不完整。 [在 Windows Server Storage UserVoice 上投票給 Windows Server vNext 的這個項目](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/17888647-make-windows-search-service-work-with-data-dedupli)。
 
 ### <a id="unsupported-robocopy"></a>Robocopy

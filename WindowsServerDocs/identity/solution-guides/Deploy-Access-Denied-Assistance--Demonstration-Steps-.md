@@ -1,7 +1,7 @@
 ---
 ms.assetid: b035e9f8-517f-432a-8dfb-40bfc215bee5
-title: "部署存取的協助（示範步驟）"
-description: 
+title: Deploy Access-Denied Assistance (Demonstration Steps)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,68 +10,69 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 5201441ba884fe4658b917919e60c7d20530341b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835579"
 ---
-# <a name="deploy-access-denied-assistance-demonstration-steps"></a>部署存取的協助（示範步驟）
+# <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-本主題如何設定存取的協助，並確認正常運作。  
+這個主題說明如何設定拒絕存取時的協助，並確認它可以正常運作。  
   
-**本文件**  
+**在這份文件**  
   
--   [步驟 1：設定存取的協助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
+-   [步驟 1：設定拒絕存取時的協助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
   
 -   [步驟 2：設定電子郵件通知設定](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
   
--   [步驟 3：確認已正確設定存取的協助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
+-   [步驟 3：確認已正確設定拒絕存取時的協助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
   
 > [!NOTE]  
-> 本主題包含範例 Windows PowerShell cmdlet 可供您將部分所述的程序。 如需詳細資訊，請查看[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_1"></a>步驟 1：設定存取的協助  
-您可以使用群組原則、設定存取的網域中的協助，或您可以設定協助排列每個檔案伺服器上使用「檔案伺服器資源管理員」主控台。 您也可以變更特定檔案伺服器上的共用資料夾的存取的訊息。  
+## <a name="BKMK_1"></a>步驟 1:設定拒絕存取時的協助  
+您可以使用群組原則設定網域內拒絕存取時的協助，或者您可以使用 [檔案伺服器資源管理員] 主控台在每個檔案伺服器上個別設定協助。 您也可以變更檔案伺服器上特定共用資料夾的拒絕存取訊息。  
   
-您可以使用群組原則，如下所示設定網域存取的協助：  
+您可以使用群組原則設定網域拒絕存取時的協助，如下所示：  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
-#### <a name="to-configure-access-denied-assistance-by-using-group-policy"></a>若要使用群組原則設定存取的協助  
+#### <a name="to-configure-access-denied-assistance-by-using-group-policy"></a>使用群組原則設定拒絕存取時的協助  
   
-1.  開放群組原則管理。 在伺服器管理員中，按一下**工具**，然後按**群組原則管理**。  
+1.  開啟 [群組原則管理]。 在 [伺服器管理員] 按一下 [工具]，然後按一下 [群組原則管理]。  
   
-2.  適當的群組原則，以滑鼠右鍵按一下，然後按一下**編輯**。  
+2.  以滑鼠右鍵按一下適當的群組原則，然後按一下 [編輯] 。  
   
-3.  按一下**電腦設定**，按一下 [**原則**，按一下 [**系統管理範本]**，按一下**系統**，，然後按一下 [ **Access-Denied 協助**。  
+3.  依序按一下 [電腦設定] 、[原則] 、[系統管理範本] 、[系統] ，然後按一下 [拒絕存取時的協助] 。  
   
-4.  以滑鼠右鍵按一下**自訂訊息存取錯誤的**，然後按一下 [**編輯**。  
+4.  以滑鼠右鍵按一下 [自訂拒絕存取錯誤訊息] ，然後按一下 [編輯] 。  
   
-5.  選取 [**啟用**選項。  
+5.  選取 [啟用] 選項。  
   
 6.  設定下列選項：  
   
-    1.  在**無法存取的使用者顯示以下訊息**方塊中，輸入訊息使用者將會看到他們時無法檔案或資料夾的存取。  
+    1.  在 [對存取時遭到拒絕的使用者顯示下列訊息]  方塊中，輸入使用者被拒絕存取檔案或資料夾時看到的訊息。  
   
-        您可以新增巨集的訊息，會將自訂的文字。 巨集包括：  
+        您可以將巨集新增到訊息，它會插入自訂文字。 巨集包括：  
   
-        -   **[原始檔案路徑]**的原始的檔案路徑存取的使用者。  
+        -   **[原始檔案路徑]** 使用者存取的原始檔案路徑。  
   
-        -   **[原始的檔案路徑資料夾]**上層資料夾的存取的使用者的原始檔案路徑。  
+        -   **[原始檔案路徑資料夾]** 使用者存取的原始檔案路徑的上層資料夾。  
   
-        -   **[管理電子郵件]**系統管理員的電子郵件收件者的清單。  
+        -   **[系統管理員電子郵件]** 系統管理員的電子郵件收件者清單。  
   
-        -   **[資料擁有者電子郵件]**資料擁有者的電子郵件收件者清單。  
+        -   **[資料擁有者電子郵件]** 資料擁有者的電子郵件收件者清單。  
   
-    2.  選取 [**讓使用者要求協助**核取方塊。  
+    2.  選取 [允許使用者請求協助]  核取方塊。  
   
-    3.  保留其他預設設定。  
+    3.  保留其餘的預設設定。  
   
-![方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。  
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\Windows\ADR\AccessDenied" -ValueName AllowEmailRequests -Type DWORD -value 1  
@@ -85,149 +86,149 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 ```  
   
-或者，您可以設定存取的協助排列每個檔案伺服器上使用「檔案伺服器資源管理員」主控台。  
+或者，您可以使用 [檔案伺服器資源管理員] 主控台，在每個檔案伺服器上個別設定拒絕存取時的協助。  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
   
-#### <a name="to-configure-access-denied-assistance-by-using-file-server-resource-manager"></a>使用檔案伺服器資源管理員進行存取的協助  
+#### <a name="to-configure-access-denied-assistance-by-using-file-server-resource-manager"></a>使用檔案伺服器資源管理員設定拒絕存取時的協助  
   
-1.  打開檔案伺服器資源管理員。 在伺服器管理員中，按一下**工具**，然後按**檔案伺服器資源管理員**。  
+1.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
   
-2.  以滑鼠右鍵按一下**（本機）檔案伺服器資源管理員**，然後按一下 [**設定選項**。  
+2.  以滑鼠右鍵按一下 [檔案伺服器資源管理員 (本機)]，然後按一下 [設定選項]。  
   
-3.  按一下**Access-Denied 協助**索引標籤。  
+3.  按一下 [拒絕存取時的協助]  索引標籤。  
   
-4.  選取 [**可以存取的協助**核取方塊。  
+4.  選取 [啟用拒絕存取時的協助]  核取方塊。  
   
-5.  在**無法檔案或資料夾的存取的使用者顯示以下訊息**方塊中，輸入訊息使用者將會看到他們時無法檔案或資料夾的存取。  
+5.  在 [對存取資料夾或檔案時遭到拒絕的使用者顯示下列訊息] 方塊中，輸入使用者被拒絕存取檔案或資料夾時看到的訊息。  
   
-    您可以新增巨集的訊息，會將自訂的文字。 巨集包括：  
+    您可以將巨集新增到訊息，它會插入自訂文字。 巨集包括：  
   
-    -   **[原始檔案路徑]**的原始的檔案路徑存取的使用者。  
+    -   **[原始檔案路徑]** 使用者存取的原始檔案路徑。  
   
-    -   **[原始的檔案路徑資料夾]**上層資料夾的存取的使用者的原始檔案路徑。  
+    -   **[原始檔案路徑資料夾]** 使用者存取的原始檔案路徑的上層資料夾。  
   
-    -   **[管理電子郵件]**系統管理員的電子郵件收件者的清單。  
+    -   **[系統管理員電子郵件]** 系統管理員的電子郵件收件者清單。  
   
-    -   **[資料擁有者電子郵件]**資料擁有者的電子郵件收件者清單。  
+    -   **[資料擁有者電子郵件]** 資料擁有者的電子郵件收件者清單。  
   
-6.  按一下**設定電子郵件要求**，請選取**可讓使用者要求協助**核取方塊，並再按**[確定]**。  
+6.  按一下 [設定電子郵件要求]，選取 [允許使用者請求協助] 核取方塊，然後按一下 [確定]。  
   
-7.  按一下**預覽**如果您想要查看的錯誤訊息給使用者。  
+7.  如果您想要查看使用者會看到的錯誤訊息，按一下 [預覽]  。  
   
-8.  按一下**[確定]**。  
+8.  按一下 [確定] 。  
   
-![方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
   
 ```  
 Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the user will see in the error message dialog box." -Enabled:$true -AllowRequests:$true  
 ```  
   
-設定存取的協助之後，您必須所有的檔案類型的可以使用群組原則。  
+設定拒絕存取時的協助之後，您必須使用群組原則為所有檔案類型啟用。  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
   
-#### <a name="to-configure-access-denied-assistance-for-all-file-types-by-using-group-policy"></a>若要使用群組原則的所有檔案類型的設定存取的協助  
+#### <a name="to-configure-access-denied-assistance-for-all-file-types-by-using-group-policy"></a>使用群組原則為所有檔案類型設定拒絕存取時的協助  
   
-1.  開放群組原則管理。 在伺服器管理員中，按一下**工具**，然後按**群組原則管理**。  
+1.  開啟 [群組原則管理]。 在 [伺服器管理員] 按一下 [工具]，然後按一下 [群組原則管理]。  
   
-2.  適當的群組原則，以滑鼠右鍵按一下，然後按一下**編輯**。  
+2.  以滑鼠右鍵按一下適當的群組原則，然後按一下 [編輯] 。  
   
-3.  按一下**電腦設定**，按一下 [**原則**，按一下 [**系統管理範本]**，按一下**系統**，，然後按一下 [ **Access-Denied 協助**。  
+3.  依序按一下 [電腦設定] 、[原則] 、[系統管理範本] 、[系統] ，然後按一下 [拒絕存取時的協助] 。  
   
-4.  以滑鼠右鍵按一下**的所有檔案類型，可以存取的協助 client**，然後按一下 [**編輯**。  
+4.  以滑鼠右鍵按一下 [為用戶端上所有檔案類型啟用拒絕存取時的協助] ，然後按一下 [編輯] 。  
   
-5.  按一下**啟用**，然後按**[確定]**。  
+5.  按一下 [已啟用]，然後按一下 [確定]。  
   
-![方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。 
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。 
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explore" -ValueName EnableShellExecuteFileStreamCheck -Type DWORD -value 1  
   
 ```  
   
-您也可以使用 [檔案伺服器資源管理員」主控台檔案伺服器上指定的每個共用資料夾不同存取的訊息。  
+您也可以使用 [檔案伺服器資源管理員] 主控台，為檔案伺服器上的每個共用資料夾指定個別拒絕存取訊息。  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
   
-#### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>若要指定的共用資料夾不同存取的訊息使用檔案伺服器資源管理員  
+#### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>使用檔案伺服器資源管理員為共用資料夾指定個別拒絕存取訊息  
   
-1.  打開檔案伺服器資源管理員。 在伺服器管理員中，按一下**工具**，然後按**檔案伺服器資源管理員**。  
+1.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
   
-2.  展開**（本機）檔案伺服器資源管理員**，然後按一下 [**管理分類**。  
+2.  以滑鼠右鍵按一下 [檔案伺服器資源管理員 (本機)] ，然後按一下 [分類管理] 。  
   
-3.  以滑鼠右鍵按一下**分類屬性**，然後按一下 [**設定資料夾管理屬性**。  
+3.  以滑鼠右鍵按一下 [分類屬性] ，然後按一下 [設定資料夾管理屬性] 。  
   
-4.  在**屬性**方塊中，按一下 [ **Access-Denied 協助訊息**，然後按一下 [**新增**。  
+4.  在 [屬性] 方塊中，按一下 [拒絕存取時的協助訊息]，然後按一下 [新增]。  
   
-5.  按一下**瀏覽]**，然後選擇 [應該會有自訂存取的郵件資料夾。  
+5.  按一下 [瀏覽]，然後選擇應該具有自訂拒絕存取訊息的資料夾。  
   
-6.  在**值**方塊中輸入時，他們無法存取該資料夾中的資源必須向使用者的訊息。  
+6.  在 [值]方塊中，輸入使用者無法存取資料夾中資源時應該看到的訊息。  
   
-    您可以新增巨集的訊息，會將自訂的文字。 巨集包括：  
+    您可以將巨集新增到訊息，它會插入自訂文字。 巨集包括：  
   
-    -   **[原始檔案路徑]**的原始的檔案路徑存取的使用者。  
+    -   **[原始檔案路徑]** 使用者存取的原始檔案路徑。  
   
-    -   **[原始的檔案路徑資料夾]**上層資料夾的存取的使用者的原始檔案路徑。  
+    -   **[原始檔案路徑資料夾]** 使用者存取的原始檔案路徑的上層資料夾。  
   
-    -   **[管理電子郵件]**系統管理員的電子郵件收件者的清單。  
+    -   **[系統管理員電子郵件]** 系統管理員的電子郵件收件者清單。  
   
-    -   **[資料擁有者電子郵件]**資料擁有者的電子郵件收件者清單。  
+    -   **[資料擁有者電子郵件]** 資料擁有者的電子郵件收件者清單。  
   
-7.  按一下**[確定]**，然後按**關閉**。  
+7.  按一下 [確定]，然後按一下 [關閉]。  
   
-![方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。 
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。 
   
 ```  
 Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Value "Type the text that the user will see in the error message dialog box."  
 ```  
   
-## <a name="BKMK_2"></a>步驟 2：設定電子郵件通知設定  
-您必須設定電子郵件通知設定，將會傳送訊息存取的協助每個檔案伺服器上。  
+## <a name="BKMK_2"></a>步驟 2:設定電子郵件通知設定  
+您必須在將會傳送拒絕存取時的協助訊息的每個檔案伺服器上設定電子郵件通知設定。  
   
-[執行此步驟，使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[執行此步驟中使用 Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
-1.  打開檔案伺服器資源管理員。 在伺服器管理員中，按一下**工具**，然後按**檔案伺服器資源管理員**。  
+1.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
   
-2.  以滑鼠右鍵按一下**（本機）檔案伺服器資源管理員**，然後按一下 [**設定選項**。  
+2.  以滑鼠右鍵按一下 [檔案伺服器資源管理員 (本機)]，然後按一下 [設定選項]。  
   
-3.  按一下**的電子郵件通知**索引標籤。  
+3.  按一下 [電子郵件通知] 索引標籤。  
   
-4.  下列設定：  
+4.  設定下列設定：  
   
-    -   在**SMTP 伺服器名稱或 IP 位址**方塊中，輸入您的組織 SMTP 伺服器的 IP 位址的名稱。  
+    -   在 [SMTP 伺服器名稱或 IP 位址]  方塊中，輸入您組織中 SMTP 伺服器 IP 位址的名稱。  
   
-    -   在**預設的系統管理員收件者**和**預設 '電子郵件地址從]**方塊中，輸入檔案伺服器管理員中的電子郵件地址。  
+    -   在 **預設系統管理員收件者**並**預設 'From' 電子郵件地址**方塊中，輸入檔案伺服器系統管理員電子郵件地址。  
   
-5.  按一下**傳送測試電子郵件]**以確保電子郵件通知設定正確。  
+5.  按一下 [傳送測試電子郵件]，確保已正確設定電子郵件通知。  
   
-6.  按一下**[確定]**。  
+6.  按一下 [確定] 。  
   
-![方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 相當於命令 * * *  
+![解決方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
   
-下列 Windows PowerShell cmdlet 執行上述程序相同的功能。 輸入每個 cmdlet 上一行，，即使它們可能會出現換透過以下幾個行因為格式設定的限制。
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
   
 ```  
 set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com" -FromEmailAddress "fileadmin@contoso.com"  
 ```  
   
-## <a name="BKMK_3"></a>步驟 3：確認已正確設定存取的協助  
-您可以檢查存取的協助正確設定所需執行的 Windows 8 嘗試存取共用或中的檔案共用它們不擁有的存取權的使用者。 訊息存取的出現時，使用者應該會看到**要求協助**按鈕。 按一下要求協助按鈕後，使用者可以指定存取的原因，然後資料夾擁有者或檔案伺服器管理員傳送電子郵件。 資料夾擁有者或檔案伺服器管理員可確認您的電子郵件貨送到時包含適當的詳細資訊。  
+## <a name="BKMK_3"></a>步驟 3:確認已正確設定拒絕存取時的協助  
+您可以確認正在執行 Windows 8 會嘗試存取的共用或中的檔案共用，它們不需要存取權的使用者拒絕存取時的協助正確設定。 拒絕存取訊息出現時，使用者應該會看到 [要求協助]  按鈕。 按一下 [要求協助] 按鈕後，使用者可以指定存取的原因，然後傳送電子郵件給資料夾擁有者或檔案伺服器系統管理員。 資料夾擁有者或檔案伺服器系統管理員可以確認您的電子郵件已到達，且包含適當的詳細資料。  
   
 > [!IMPORTANT]  
-> 如果您想要存取的協助確認所遇到的使用者身分執行的 Windows Server 2012，您必須先連接檔案共用安裝桌面體驗。  
+> 如果您想要在執行 Windows Server 2012 的使用者驗證拒絕存取時的協助，您必須在連接到檔案共用之前先安裝桌面體驗。  
   
-## <a name="BKMK_Links"></a>也了  
+## <a name="BKMK_Links"></a>另請參閱  
   
--   [案例：存取的協助](Scenario--Access-Denied-Assistance.md)  
+-   [案例：拒絕存取時的協助](Scenario--Access-Denied-Assistance.md)  
   
--   [規劃存取的協助](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
+-   [規劃拒絕存取時的協助](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
 -   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
   

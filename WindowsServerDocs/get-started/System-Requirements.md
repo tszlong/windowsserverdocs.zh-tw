@@ -15,28 +15,28 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 29183c62830cbe9e26cce4e0ce4543b554f0ed65
-ms.sourcegitcommit: 3883eebbba70bfea0221e510863ee1a724a5f926
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5783740"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59837309"
 ---
-# 系統需求
+# <a name="system-requirements"></a>系統需求
 
->適用於：Windows Server (半年度管道)、Windows Server 2016 
+>適用於：Windows Server （半年通道），Windows Server 2016 
 
 本主題說明執行 Windows Server&reg; 2016 或 Windows Server 版本 1709 的最低系統需求。
 
 
 > [!Note]  
-> 此版本建議使用全新安裝。  
+> 此版本建立使用全新安裝。  
 >   
 
 > [!NOTE]  
 > 如果在安裝的時候，您選擇 [伺服器核心] 選項進行安裝，您應該要注意這不會安裝任何 GUI 元件，且您將無法使用伺服器管理員來安裝或取消安裝這些 GUI 元件。 如果您需要 GUI 功能，請務必在您安裝 Windows Server 2016 時選擇 [含桌面體驗的伺服器] 選項。 如需詳細資訊，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)  
 
 
-## 檢閱系統需求  
+## <a name="review-system-requirements"></a>檢閱系統需求  
 下列是 Windows Server 2016 的預估系統需求。 如果您的電腦低於「最低」需求，則無法正確安裝本產品。 視系統設定以及安裝的應用程式和功能而定，實際需求會有所不同。
 
 除非另行指定，否則這些最低系統需求適用於所有的安裝選項 ([Server Core]、[含桌面體驗的伺服器] 和 [Nano 伺服器]) 以及 Standard 和 Datacenter 版本。  
@@ -45,7 +45,7 @@ ms.locfileid: "5783740"
 > 因為有太多可能的部署方式，所以不太可能提出一般通用的「建議」系統需求。 請參閱每一個要部署的伺服器角色相關文件，取得更多有關特定伺服器角色所需資源的詳細資料。 為了達到最佳效果，可執行測試部署，判斷特定部署案例的適當系統需求。  
 
 
-## 處理器  
+## <a name="processor"></a>處理器  
 處理器效能不僅取決於處理器的時脈頻率，也取決於處理器核心的數目及處理器快取的大小。 下列是本產品的處理器需求：  
 
 **最低需求**：  
@@ -55,9 +55,9 @@ ms.locfileid: "5783740"
 - 支援 CMPXCHG16b、LAHF/SAHF 與 PrefetchW  
 - 支援第二層地址翻譯 (EPT 或 NPT)  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx)是您可用來確認哪些您的 CPU 具有這些功能的工具。
+[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx)是的工具，您可以用來確認您 CPU 具有這些功能。
 
-## RAM  
+## <a name="ram"></a>RAM  
 下列是本產品的預估 RAM 需求：  
 
 **最低需求**：  
@@ -72,7 +72,7 @@ ms.locfileid: "5783740"
 > -   在您嘗試安裝此版本的虛擬機器上配置 800 MB 以上的 RAM。 安裝完成之後，您可以根據實際的伺服器設定來變更配置，儘量減少為 512 MB RAM。  
 > -   用 SHIFT+F10 中斷此版本在虛擬機器上的開機程序。 在開啟的命令提示字元中，使用 Diskpart.exe 建立並格式化安裝磁碟分割。 執行 **Wpeutil createpagefile /path=C:\pf.sys** (假設您建立的安裝磁碟分割為 C:)。 關閉命令提示字元，繼續進行安裝。  
 
-## 儲存體控制器和磁碟空間需求  
+## <a name="storage-controller-and-disk-space-requirements"></a>儲存體控制器和磁碟空間需求  
 執行 Windows Server 2016 的電腦必須包含符合 PCI Express 架構規格的儲存裝置介面卡。 伺服器上歸類為硬碟機的永續性存放裝置不能為 PATA。 針對開機、分頁或資料磁碟機，Windows Server 2016 不允許使用 ATA/PATA/IDE/EIDE。  
 
 下列是系統磁碟分割的預估 **最小** 磁碟空間需求。  
@@ -87,7 +87,7 @@ ms.locfileid: "5783740"
     > -   如果您透過網路安裝系統。  
     > -   具有 16 GB RAM 以上的電腦將需要更多的磁碟空間，以供分頁、休眠及傾印檔案使用。  
 
-## 網路介面卡需求  
+## <a name="network-adapter-requirements"></a>網路介面卡需求  
 
 此版本中使用的網路介面卡應該包含這些功能：  
 
@@ -100,7 +100,7 @@ ms.locfileid: "5783740"
 
 
 
-## 其他需求  
+## <a name="other-requirements"></a>其他需求  
 執行此版本的電腦也必須具備下列各項：  
 
 
@@ -125,10 +125,10 @@ ms.locfileid: "5783740"
 >- 實作 2.0 版的 TPM 必須隨附 SHA-256 PCR 記憶體組，並實作 SHA-256 的 PCR 0 至 23。 可接受 TPM 隨附可同時用於 SHA-1 與 SHA-256 度量的單一可切換 PCR 記憶體組。  
 >- 關閉 TPM 的 UEFI 選項並非必要。  
 
-## 安裝 Nano 伺服器  
-如需將 Windows Server 2016 安裝為 Nano 伺服器的詳細步驟，請參閱[安裝 Nano 伺服器](Getting-Started-with-Nano-Server.md)。
+## <a name="installation-of-nano-server"></a>安裝 Nano 伺服器  
+如需安裝 Windows Server 2016 作為 Nano 伺服器的詳細步驟，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)。
 
-## 其他資源
+## <a name="additional-resources"></a>其他資源
 - [Windows 處理器需求](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Windows Server 2016 Standard 和 Datacenter 版本的比較](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
 - [Windows 10 系統需求 ](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)

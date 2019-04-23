@@ -1,6 +1,6 @@
 ---
-title: "從 Windows Server Essentials 轉換到 Windows Server 2012 R2 標準"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 從 Windows Server 2012 Essentials 轉換到 Windows Server 2012 R2 Standard
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,67 +13,68 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d371e24b17310c0687666185f56fe07a135ff91f
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840079"
 ---
-# <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>從 Windows Server Essentials 轉換到 Windows Server 2012 R2 標準
+# <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>從 Windows Server 2012 Essentials 轉換到 Windows Server 2012 R2 Standard
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-Windows Server 2016 是時引進新的技術，可讓您輕鬆地轉換到雲端運算支援您目前的工作負載雲端準備作業系統。 Windows Server 2016 content 有助於讓您準備就緒。
+Windows Server 2016 是雲端就緒作業系統，支援您目前的工作負載，同時還引入新的技術，可讓您輕鬆地轉換到雲端運算。 Windows Server 2016 內容可協助您做好準備。
 
- Windows Server Essentials 支援最多 25 位使用者和 50 裝置。 當您的企業需要超過這個限制時，您可以從 Windows Server Essentials 執行就地授權轉換到 Windows Server 2012 R2 標準保持不相容的授權。  
+ Windows Server Essentials 最多支援 25 位使用者及 50 台裝置。 當您的業務需求超過限制時，您可以從 Windows Server Essentials 中執行的就地授權轉換為 Windows Server 2012 R2 Standard 以維持授權相容性。  
   
- 您轉換到 Windows Server 2012 標準 R2 之後，移除使用者 account 和裝置限制，但之獨特功能（例如儀表板、遠端 Web 存取和 client 電腦備份）的 Windows Server essentials 仍然可用。 不過，技術限制這些功能的支援 100 帳號及 200 裝置的最大值。 Client 電腦的備份功能將會支援最多 75 裝置的備份。  
+ 在轉換為 Windows Server 2012 R2 Standard 後，會移除使用者帳戶和裝置限制，但所特有 （例如儀表板、 遠端 Web 存取和用戶端電腦備份） 的 Windows Server Essentials 的功能仍然可使用。 不過，這些功能的技術限制最多支援 100 個使用者帳戶和 200 台裝置。 用戶端電腦的備份功能將支援最多 75 裝置的備份。  
   
 > [!IMPORTANT]
->   Windows Server 2012 標準 R2 每個使用者或您的環境中的裝置需要 client 存取授權 (CAL)。 這是與 Windows Server Essentials，這並不會使用 CAL 型號和並未隨附任何 Cal 不同。 當您從 Windows Server Essentials 轉換到 Windows Server 2012 標準 R2，您必須購買適當的數字和您的環境（針對大部分購買使用者 Cal）Cal 類型。  
+>   Windows Server 2012 R2 Standard 每個使用者或裝置在您的環境中需要用戶端存取使用權 (CAL)。 這是不同於 Windows Server Essentials 中，不使用 CAL 模型，並不隨附任何 Cal。 當從 Windows Server Essentials 轉換到 Windows Server 2012 R2 Standard，您必須購買適當數量和類型的 Cal （大部分客戶是購買使用者 Cal） 環境。  
   
-## <a name="before-the-transition"></a>之前轉換  
+## <a name="before-the-transition"></a>轉換之前  
   
--   之前的 Windows Server Essentials 轉換到 Windows Server 2012 標準 R2，您應該完整備份 server 的資料。  
+-   再從 Windows Server Essentials 轉換到 Windows Server 2012 R2 Standard，您應該完整備份伺服器資料。  
   
     > [!IMPORTANT]
-    >  Server 的完整備份，而您無法還原伺服器它已在之前轉換的狀態。  
+    >  若未完整備份伺服器，就無法將伺服器還原成轉換之前的狀態。  
   
--   此外，請確定您讀取並了解終端使用者授權合約 (EULA)，適用於 Windows Server 2012 標準 R2。 若要檢視使用者授權合約：  
+-   此外，請確認您已閱讀並了解針對 Windows Server 2012 R2 Standard 的終端使用者授權合約 (EULA)。 若要檢視 EULA：  
   
-    1.  以系統管理員身分開放在命令視窗。  
+    1.  以系統管理員身分開啟命令視窗。  
   
     2.  執行下列命令：  
   
-         **dism /online /set-edition: ServerStandard /geteula:***使用者授權合約路徑*(其中*使用者授權合約路徑*代表您要儲存檔案使用者授權合約; 的位置，例如：C:\ws8std_eula.rtf)。 請務必.rtf 當做副檔名。  
+         **dism /online-/set-edition: ServerStandard /geteula:** *eula 路徑*(其中*eula 路徑*代表您要儲存 EULA 檔案的位置，例如：C:\ws8std_eula.rtf)。 務必使用 .rtf 做為副檔名。  
   
-    3.  打開儲存檔案的位置，然後按兩下 [打開該檔案。  
+    3.  開啟您儲存檔案的位置，然後按兩下檔案將它開啟。  
   
-## <a name="transition-to--windows-server-2012-r2-standard"></a>Windows Server 2012 R2 標準轉換  
- 之後，您有要轉換的 Windows Server Essentials 到 Windows Server 2012 R2 標準，完成這兩個步驟：  
+## <a name="transition-to--windows-server-2012-r2-standard"></a>轉換到 Windows Server 2012 R2 Standard  
+ 之後，您已決定從 Windows Server Essentials 為 Windows Server 2012 R2 Standard，完成這兩個步驟的轉換：  
   
-1.  適用於 Windows Server 2012 標準 R2 和適當數目的使用者及/或您的環境裝置 client 存取授權購買的授權。  
+1.  Windows Server 2012 R2 Standard 和適當數目的使用者和/或裝置用戶端存取使用權，為您的環境購買的授權。  
   
-     您也可以購買授權的 Windows Server 2012 標準 R2 零售插座，代理商，或是的協助下[Microsoft 合作夥伴](https://pinpoint.microsoft.com/SelectCulture.aspx)。  
+     向零售商、 經銷商或透過的協助，您可以針對 Windows Server 2012 R2 Standard 購買的授權[Microsoft 合作夥伴](https://pinpoint.microsoft.com/SelectCulture.aspx)。  
   
     > [!NOTE]
-    >  如果您購買最初的 Windows Server 2012 標準 R2 並執行安裝您有兩個 virtual 執行個體的 Windows Server Essentials 為您降級權限，您不需要任何其他購買。  
+    >  如果您購買 Windows Server 2012 R2 Standard 一開始，並執行降級權限，為 Windows Server Essentials 安裝其中一種將兩個虛擬執行個體，則您不需要購買任何其他項目。  
     >   
-    >  如果您購買 Windows Server 2012 標準 R2 透過大量授權頻道，您可以針對 Windows Server 2012 R2 標準從大量授權服務中心 (VLSC) 下載 ISO 映像和 product 金鑰。  
+    >  如果大量授權通路購買 Windows Server 2012 R2 Standard，您可以針對 Windows Server 2012 R2 Standard 從大量授權服務中心 (VLSC) 下載的 ISO 映像和產品金鑰。  
     >   
-    >  如果您購買 Windows Server 2012 標準 R2 從任何其他頻道，您可以從 Windows Server Essentials 的下載 ISO 映像和評估 product 鍵[TechNet 評估中心](https://technet.microsoft.com/evalcenter/jj659306.aspx)。 下一個步驟中所述執行轉換會將評估 product 轉換 product 完全授權與支援。  
+    >  如果您購買 Windows Server 2012 R2 Standard 從所有其他通路，您可以從 Windows Server essentials 下載的 ISO 映像和評估產品金鑰[TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)。 執行下個步驟所述的轉換會將評估產品轉換成完整授權和支援的產品。  
   
-2.  打開 Windows PowerShell 以系統管理員的身分，並執行下列命令：  
+2.  以系統管理員身分開啟 Windows PowerShell，然後執行下列命令：  
   
-     **dism /online /set-edition: ServerStandard /accepteula /productkey:***Product 鍵*(其中*Product 鍵*是您的 Windows Server 2012 標準 R2 複本 product 鍵)。  
+     **dism /online /set-edition:ServerStandard /accepteula /productkey:***產品金鑰*(其中*產品金鑰*是您的 Windows Server 2012 R2 Standard 複本的產品金鑰)。  
   
-     伺服器重新開機才能完成轉換程序。  
+     伺服器會重新啟動以完成轉換程序。  
   
- 切換後, 的 Windows Server Essentials 功能維持在伺服器上和操之在 100 使用者和 200 裝置的支援。  
+ 轉換之後，Windows Server Essentials 功能會保留在伺服器上，並支援最多 100 位使用者和 200 台裝置。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
 
--   [伺服器資料移轉到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [將伺服器資料移轉到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
--   [伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [將伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
