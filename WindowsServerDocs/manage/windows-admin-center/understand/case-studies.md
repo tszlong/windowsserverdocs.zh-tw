@@ -6,28 +6,28 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 57be88f8618331ec78086fdc2720d04ab73072e6
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.openlocfilehash: 61f447f68ec6c85ed1554e176c78c4caec5dfde4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2073899"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855699"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center 案例研究
 
->適用於：Windows Admin Center、Windows Admin Center 預覽版
+>適用於：Windows Admin Center，Windows Admin Center 預覽
 
 ## <a name="learn-about-how-our-customers-have-used-windows-admin-center-to-improve-their-productivity-and-reduce-costs"></a>了解我們的客戶如何使用 Windows Admin Center 來改善其生產力並降低成本。
 
 - [Ava6](#ava6)
 - [Comparex](#comparex)
 - [Convergent Computing](#convergent-computing)
-- [FZI 資訊技術研究中心 (FZI Research Center for Information Technology)](#fzi-research-center-for-information-technology)
-- [GVC Group](#gvc-group)
-- [Inside Technologies](#inside-technologies)
-- [SecureGUARD / COPA-DATA](#secureguard-copa-data)
+- [資訊技術的 FZI Research Center](#fzi-research-center-for-information-technology)
+- [GVC 群組](#gvc-group)
+- [深入探討技術](#inside-technologies)
+- [SecureGUARD / COPA 資料](#secureguard-copa-data)
 - [VaiSulWeb](#vaisulweb)
 
 ## <a name="ava6"></a>Ava6
@@ -36,13 +36,13 @@ ms.locfileid: "2073899"
 
 Ava6 採用 Windows Server 2016 Core、Hyper-V、容錯移轉叢集和 S2D。 
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 Ava6 第一個 Windows Admin Center 的使用案例是 Hyper-V 和容錯移轉叢集，並且正在評估超融合式叢集。
 
 Windows Admin Center 協助 Ava6 管理部署在 Core Edition 中的 Windows Server，特別適用於驅動程式管理。  Windows Admin Center 特別在管理 VM 方面為客戶提供較佳的 Hyper-V 及容錯移轉叢集體驗，並向客戶預示超融合式解決方案的 GUI 即將到來。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 Ava6 已將 Windows Admin Center 部署為單一執行個體，以便進行 VM 管理。
 
@@ -54,13 +54,13 @@ Ava6 的客戶對 Windows Admin Center 的印象深刻，並且喜歡其 Hyper-V
 
 Comparex 採用 Windows Server 2012R2、Windows Server 2016、Windows 10、Hyper-V、 容錯移轉叢集、儲存空間直接存取、PowerShell、RDP over HTML、Azure AD 和應用程式 Proxy、檔案伺服器以及 Azure Site Recovery。
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 Comparex 負責為其客戶執行和管理數千部伺服器，並做為客戶的諮詢顧問，根據需求提供最佳的伺服器管理解決方案。
 
 Comparex 正在尋找適用於小型至中型企業、易於使用且可遠端存取的伺服器管理解決方案。  尋找一應俱全且以現代化具安全性的方式進行的伺服器管理，已顯見是一項重大挑戰。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 Comparex 正在執行以伺服器為基礎的 Windows Admin Center 安裝，以便存取和管理其示範實驗室，有助於減輕額外 VPN 及 RDP 步驟的負荷。  Comparex 的顧問也會其筆記型電腦中執行 Windows Admin Center，以協助其環境中的客戶，而不需要明確的 RDP 存取。
 
@@ -72,13 +72,13 @@ Windows Admin Center 為 Comparex 節省了許多日常業務上的時間，不�
 
 Convergent Computing 採用 Windows Server 2016 (Nano、Core、Datacenter、Standard 和 Hyper-V) 和 Windows Server 2012R2 (Server Core、Datacenter、Standard 和 Hyper-V)。
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 Convergent Computing 會採用他們向客戶推薦的技術，並發現 Windows Admin Center 在託管的資料中心和安全 (隔離) 的內部部署工作環境上符合客戶的確切需求。
 
 Convergent Computing 有三個不同環境：託管、安全和 Web 作業。  這些環境搭配 Windows Server Nano、Core、Cluster 和 Hyper-V 版本的組合執行。  Windows Admin Center 讓他們可以從單一位置集中管理多個伺服器和服務，提供最佳化使用量和簡易管理平台。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 Convergent Computing 採用 Windows Admin Center 來管理三個包含 40 多部主機、執行超過 200 項工作負載的環境。
 
@@ -90,13 +90,13 @@ Convergent Computing 採用 Windows Admin Center 來管理三個包含 40 多部
 
 FZI 採用 Windows Server 2016、Windows 10、Hyper-V、儲存空間直接存取和容錯移轉叢集。
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 FZI 一直在尋找可在容錯移轉叢集和超融合式叢集中管理 Hyper-V Server 的方式。
 
 FZI 一直在尋找一種可在其網域內部與外部系統間快速切換的功能以集中管理這些系統的方式。  Windows Admin Center 可讓他們完全在同一個位置來達成這些目標。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 FZI 有多個 Windows Admin Center 安裝，不僅做為連接其所管理之基礎結構的伺服器安裝，同時也做為系統管理員用於自行管理其測試伺服器的桌面模式安裝。
 
@@ -108,13 +108,13 @@ Windows Admin Center 可讓 FZI 加快他們執行工作的速度，例如每月
 
 GVC Group 使用搭配許多角色 (Hyper-V、WSFC、AD-DS、Fileserver 等等) 的 Windows Server 2016，以及 System Center 產品 (包括 SCCM 和 SCOM)。
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 GVC Group 在高度受監管的市場中營運，需要將系統部署到全球許多地點。  當地規定有時會要求系統的管理必須是在伺服器運作所在的同一個國家/地區中執行。  Windows Admin Center 讓 GVC Group 可以運用全球資源，同時還能在本地系統上執行管理工作。
 
 GVC Group 必須以許多地區設定來部署伺服器，同時還提供可靠且具高可用性的解決方案。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 GVC Group 已在虛擬化環境中搭配負載平衡器部署 Windows Admin Center，使伺服器得以在遠端位置進行管理。
 
@@ -126,31 +126,31 @@ GVC Group 已在虛擬化環境中搭配負載平衡器部署 Windows Admin Cent
 
 Inside Technologies 廣泛採用各種 Windows Server 技術，包括 Hyper-V 和儲存空間。
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 Inside Technologies 主要需要一種方法，以便在始終保持連線、整合高度安全性且不需使用 VPN 的環境中，為其客戶提供新工具。
 
 Inside Technologies 有一群極重視正常運作時間的客戶，一直在尋找可讓他們輕鬆管理其伺服器的工具，既不公開 RDP，也沒有 VPN 加入的複雜性。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 Inside Technologies 已將 Windows Admin Center 部署在單一伺服器，以管理其環境中的所有資產。
 
 Inside Technologies 正在使用 Windows Admin Center，在歸功於多重要素驗證所增加的安全性下，透過 Azure Activity Directory 整合從遠端管理他們的客戶。  Windows Admin Center 上儀表板提供改善的可見度，可以更清楚了解每部伺服器上各個角色的狀態，讓您使用 PowerShell 輕鬆進行巨細靡遺的管理。  Inside Technologies has realized 已實現相對於針對每個角色使用不同主控台的管理方式，縮短管理伺服器所需時間的目標。
 
-## <a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
+## <a id="secureguard-copa-data"></a>SecureGUARD / COPA 資料
 
 [SecureGUARD GmbH](http://www.secureguard.at/) 運用一系列產品和自訂工程服務，協助各家公司解決安全性與雲端基礎結構方面的複雜 IT 問題。 SecureGUARD 建置 IT 安全性設備以及以 Microsoft Windows Server 為基礎的設備，而近來則在打造雲端基礎結構的機架等級融合式設備。 SecureGUARD 是應用程式開發與資料中心的 Microsoft 金級合作夥伴。
  
 [COPA-DATA](https://www.copadata.com) 開發可用作端對端 (從現場層級直到雲端和行動裝置) 工業 IoT 解決方案的「zenon」軟體解決方案。 COPA-DATA 已將系統部署到世界各地食品與飲料、能源與基礎建設、汽車以及製藥產業部門中的各家公司。
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 COPA-DATA 已實作 SecureGUARD GmbH 在 2017 年底所設計和實作的 4 節點超融合式叢集，用來裝載他們內部基礎結構和測試伺服器。
 
 COPA-DATA 發現本身已受限於其舊有的 IT基礎結構。 具體地說，使用約 60 部虛擬機器來監控和運作其基礎結構已形成真正的挑戰，IT 部門顯得力有未逮。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 COPA-DATA 使用 Windows Admin Center 來監控和運作其實體及虛擬伺服器基礎結構，完全可從一個瀏覽器視窗中存取。 像佈建新虛擬機器，或者檢視實體伺服器或 VM 效能資料這樣的工作，現在只要在 Windows Admin Center Web 介面簡單按一下滑鼠即可完成。
 
@@ -162,13 +162,13 @@ COPA-DATA 使用 Windows Admin Center 來監控和運作其實體及虛擬伺服
 
 VaiSulWeb 採用 Windows Server 2016 和 2012 R2，並搭配使用 Hyper-V、容錯移轉叢集、儲存空間直接存取、檔案伺服器、SQL Server、IIS 和 WSL。
 
-### **<a name="the-challenge"></a>挑戰**
+### <a name="the-challenge"></a>**所面臨的挑戰**
 
 VaiSulWeb 一直希望可在部署資源時運用 Server Core 敏捷性與效率，同時又能保持管理這些資源的方便性。  VaiSulWeb 會使用 PowerShell 自動化處理簡單工作，並使用 UI 來完成較複雜的工作。
 
 因為可透過 Windows Admin Center 進行管理的能力提升，再加上可擴充 Windows Admin Center 提供自訂體驗的功能，VaiSulWeb 在部署 Windows Server Core 時已信心大增。
 
-### **<a name="the-solution"></a>解決方案**
+### <a name="the-solution"></a>**解決方案**
 
 VaiSulWeb 在各種不同的案例中進行部署，包含容錯移轉叢集和融合式 Hyper。  他們在 Windows 10 工作站和 Windows Server 上都部署了 Windows Admin Center，用來管理其資產。
 

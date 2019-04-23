@@ -1,7 +1,7 @@
 ---
-title: 建立 VM 與網路或 VLAN 連接至 Virtual 房客
-description: 本主題是輔助的軟體定義網路上如何管理承租人工作負載和 Windows Server 2016 Virtual 網路的一部分。
-manager: brianlic
+title: 建立 VM 並連線至租用戶虛擬網路或 VLAN
+description: 在本主題中，我們告訴您如何建立租用戶 VM，並將它連接至任一虛擬網路建立的 HYPER-V 網路虛擬化或以虛擬區域網路 (VLAN)。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,187 +12,155 @@ ms.topic: article
 ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 001eb3efa073e4ffbdfad41f88949303159a7274
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/24/2018
+ms.openlocfilehash: e23e6c020c12dd4900caa368daae0cc6dbeceaf4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856809"
 ---
-# <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>建立 VM 與網路或 VLAN 連接至 Virtual 房客
+# <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>建立 VM 並連線至租用戶虛擬網路或 VLAN
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用此主題建立房客 virtual 電腦 \(VM\) 並連接到任一 Virtual 的網路，您的 HYPER-V 網路模擬建立或 virtual 本機的區域網路 \(VLAN\) VM。 
+本主題中，您可以建立租用戶 VM，並將它連接至任一虛擬網路建立的 HYPER-V 網路虛擬化或以虛擬區域網路 (VLAN)。 您可以使用 Windows PowerShell 網路控制卡 cmdlet 來連線至虛擬網路或連線到 VLAN NetworkControllerRESTWrappers。
 
-本主題包含下列各節。
+您可以使用本主題中所述的程序來部署虛擬應用裝置。 您可以使用一些額外的步驟設定設備來處理，或檢查非固定格式或從其他 Vm 虛擬網路上的資料封包。
 
-- [建立 VM 及使用 Windows PowerShell Network Controller cmdlet 連接 Virtual 網路](#bkmk_vn)
-- [建立 VM，以及連接至 VLAN 使用 NetworkControllerRESTWrappers](#bkmk_vlan)
+本主題中的各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。 
 
-## <a name="requirements"></a>需求
-之前，請先執行下列區段中的程序，請注意下列需求。
 
-1. 您必須建立 VM 網路介面卡的靜態媒體存取控制 \(MAC\) 位址，讓 VM 生命不會變更 VM 的 MAC 地址。 
->[!NOTE]
->如果 VM MAC 位址變更 VM 生命，Network Controller 無法設定所需的網路介面卡的原則。 若並未設定為網路介面卡的原則，將無法處理網路流量的網路介面卡和所有通訊網路的問題將會都失敗。 
+## <a name="prerequisites"></a>先決條件
 
-2. 如果 VM 需要在開機網路存取權，請務必不開始在最後的設定步驟-上 VM 網路介面卡連接埠設定介面 ID 後 VM。 如果您開始 VM，才能完成此步驟，VM 無法通訊網路上 Network Controller 中建立網路介面控制器已套用所有適用的原則-Virtual 的網路原則，直到存取控制清單 \(ACLs\) 和服務 \(QoS\) 品質。
+1. VM 網路介面卡使用靜態 MAC 位址建立 VM 的存留期。<p>如果在 VM 存留期期間，變更 MAC 位址，網路控制站無法設定網路介面卡所需的原則。 未設定網路原則防止處理網路流量的網路介面卡，並與網路的所有通訊會都失敗。  
 
-您也可以使用的程序部署 virtual 設備本主題中所述。 有幾個額外的步驟，您可以設定設備處理，或查看 flow 或其他 Vm Virtual 網路上的資料封包。
+2. 如果 VM 需要網路存取，在啟動時，不會啟動 VM 之前之後在 VM 上的網路介面卡通訊埠設定的介面識別碼。 如果您之前設定的介面識別碼，啟動 VM，網路介面不存在時，VM 無法通訊在網路控制站，並套用所有原則的網路上。
 
->[!IMPORTANT]
->以下的各節包含包含許多參數值範例範例 Windows PowerShell 命令。 請確認值是適用於您的部署，執行下列命令之前，先取代範例值這些命令列中。  
+3. 如果您需要針對此網路介面的自訂 Acl，然後建立 ACL 現在使用主題中的指示[使用存取控制清單 (Acl) 來管理資料中心網路流量](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
 
-## <a name="bkmk_vn"></a>建立 VM 及使用 Windows PowerShell Network Controller cmdlet 連接 Virtual 網路
+請確定您已經有建立虛擬網路才能使用此範例命令。 如需詳細資訊，請參閱 <<c0> [ 建立、 刪除或更新租用戶虛擬網路](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks)。
 
-這一節包含下列主題。
+## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>建立 VM，並使用 Windows PowerShell 網路控制卡 cmdlet 連接到虛擬網路
 
-1.  [建立 VM VM 網路介面卡的靜態的 MAC 位址](#bkmk_create)
-2.  [取得，其中包含您要的網路介面卡連接子的網路 Virtual 網路](#bkmk_getvn)
-3.  [Network Controller 中建立網路介面物件](#bkmk_object)
-4.  [執行個體識別碼取得 Network Controller 的網路介面](#bkmk_getinstance)
-5.  [設定介面 ID HYPER-V VM 網路介面卡連接埠](#bkmk_setinstance)
-6.  [[開始] VM](#bkmk_start)
 
-### <a name="bkmk_create"></a>建立 VM VM 網路介面卡的靜態的 MAC 位址
+1. 建立 VM 網路介面卡具有靜態 MAC 位址的 VM。 
 
-建立 VM 網路介面卡的靜態的 MAC 位址，請使用下列命令範例。
-
+   ```PowerShell    
+   New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
     
-    New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
+   Set-VM -Name "MyVM" -ProcessorCount 4
     
-    Set-VM -Name "MyVM" -ProcessorCount 4
+   Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   ```
+
+2. 取得包含您要連接的網路介面卡的子網路的虛擬網路。
+
+   ```Powershell 
+   $vnet = get-networkcontrollervirtualnetwork -connectionuri $uri -ResourceId “Contoso_WebTier”
+   ```
+
+3. 網路控制卡中建立網路介面物件。
+
+   >[!TIP]
+   >在此步驟中，您可以使用自訂的 ACL。
+
+   ```PowerShell
+   $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
+   $vmnicproperties.PrivateMacAddress = "001122334455" 
+   $vmnicproperties.PrivateMacAllocationMethod = "Static" 
+   $vmnicproperties.IsPrimary = $true 
+
+   $vmnicproperties.DnsSettings = new-object Microsoft.Windows.NetworkController.NetworkInterfaceDnsSettings
+   $vmnicproperties.DnsSettings.DnsServers = @("24.30.1.11", "24.30.1.12")
     
-    Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   $ipconfiguration = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfiguration
+   $ipconfiguration.resourceid = "MyVM_IP1"
+   $ipconfiguration.properties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
+   $ipconfiguration.properties.PrivateIPAddress = “24.30.1.101”
+   $ipconfiguration.properties.PrivateIPAllocationMethod = "Static"
     
-
-### <a name="bkmk_getvn"></a>取得，其中包含您要的網路介面卡連接子的網路 Virtual 網路
-確定您已經有建立 Virtual 網路才能使用此範例中的命令。 如需詳細資訊，請查看[建立、Delete 或更新承租人 Virtual 網路](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks)。
-
-若要取得 Virtual 網路，使用下列命令範例。
-
+   $ipconfiguration.properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+   $ipconfiguration.properties.subnet.ResourceRef = $vnet.Properties.Subnets[0].ResourceRef
     
-    $vnet = get-networkcontrollervirtualnetwork -connectionuri $uri -ResourceId “Contoso_WebTier”
-    
+   $vmnicproperties.IpConfigurations = @($ipconfiguration)
+   New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
+   ```
 
->[!NOTE]
->如果您需要自訂 Acl 此網路介面，然後建立 ACL 現在主題中使用的指示來[使用存取控制清單 (Acl) 來管理 Datacenter 網路流量流程](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
+4. 取得從網路控制站的網路介面執行個體識別碼。
 
-### <a name="bkmk_object"></a>Network Controller 中建立網路介面物件
-
-Network Controller 中建立網路介面物件，請使用下列命令範例。
-
->[!NOTE]
->如果您建立自訂 ACL 上述步驟之後，您現在使用。
-
-    
-    $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
-    $vmnicproperties.PrivateMacAddress = "001122334455" 
-    $vmnicproperties.PrivateMacAllocationMethod = "Static" 
-    $vmnicproperties.IsPrimary = $true 
-
-    $vmnicproperties.DnsSettings = new-object Microsoft.Windows.NetworkController.NetworkInterfaceDnsSettings
-    $vmnicproperties.DnsSettings.DnsServers = @("24.30.1.11", "24.30.1.12")
-    
-    $ipconfiguration = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfiguration
-    $ipconfiguration.resourceid = "MyVM_IP1"
-    $ipconfiguration.properties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
-    $ipconfiguration.properties.PrivateIPAddress = “24.30.1.101”
-    $ipconfiguration.properties.PrivateIPAllocationMethod = "Static"
-    
-    $ipconfiguration.properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
-    $ipconfiguration.properties.subnet.ResourceRef = $vnet.Properties.Subnets[0].ResourceRef
-    
-    $vmnicproperties.IpConfigurations = @($ipconfiguration)
-    New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
-    
-
-### <a name="bkmk_getinstance"></a>執行個體識別碼取得 Network Controller 的網路介面
-若要執行個體識別碼網路介面 Network Controller，使用下列命令範例。
-
-    
+   ```PowerShell 
     $nic = Get-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId "MyVM-Ethernet1"
-    
+   ```
 
-### <a name="bkmk_setinstance"></a>設定介面 ID HYPER-V VM 網路介面卡連接埠
-設定介面 ID 上 HYPER-V VM 網路介面卡連接埠，使用下列命令範例。
+5. HYPER-V VM 上網路介面卡通訊埠設定的介面識別碼。
 
->[!NOTE]
->您必須執行下列命令，HYPER-V 主機上安裝 VM 的位置。
+   >[!NOTE]
+   >您必須執行這些命令，在 HYPER-V 主機上已安裝的 VM。
 
+   ```PowerShell 
+   #Do not change the hardcoded IDs in this section, because they are fixed values and must not change.
     
-    #Do not change the hardcoded IDs in this section, because they are fixed values and must not change.
+   $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
     
-    $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
+   $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
     
-    $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
+   $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNics
     
-    $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNics
+   if ($CurrentFeature -eq $null)
+   {
+   $Feature = Get-VMSystemSwitchExtensionPortFeature -FeatureId $FeatureId
     
-    if ($CurrentFeature -eq $null)
-    {
-    $Feature = Get-VMSystemSwitchExtensionPortFeature -FeatureId $FeatureId
+   $Feature.SettingData.ProfileId = "{$($nic.InstanceId)}"
+   $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
+   $Feature.SettingData.CdnLabelString = "TestCdn"
+   $Feature.SettingData.CdnLabelId = 1111
+   $Feature.SettingData.ProfileName = "Testprofile"
+   $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
+   $Feature.SettingData.VendorName = "NetworkController"
+   $Feature.SettingData.ProfileData = 1
     
-    $Feature.SettingData.ProfileId = "{$($nic.InstanceId)}"
-    $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
-    $Feature.SettingData.CdnLabelString = "TestCdn"
-    $Feature.SettingData.CdnLabelId = 1111
-    $Feature.SettingData.ProfileName = "Testprofile"
-    $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
-    $Feature.SettingData.VendorName = "NetworkController"
-    $Feature.SettingData.ProfileData = 1
+   Add-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNics
+   }
+   else
+   {
+   $CurrentFeature.SettingData.ProfileId = "{$($nic.InstanceId)}"
+   $CurrentFeature.SettingData.ProfileData = 1
     
-    Add-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNics
-    }
-    else
-    {
-    $CurrentFeature.SettingData.ProfileId = "{$($nic.InstanceId)}"
-    $CurrentFeature.SettingData.ProfileData = 1
-    
-    Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
-    }
-    
+   Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
+   }
+   ```
 
-### <a name="bkmk_start"></a>[開始] VM
-若要開始 VM 中，使用下列命令範例。
+6. 啟動 VM。
 
-    
+   ```PowerShell
     Get-VM -Name “MyVM” | Start-VM 
-    
-您現在順利建立 VM、連接 VM 房客 Virtual 網路，並開始 VM，使其可以處理承租人工作負載。
+   ```
 
-## <a name="bkmk_vlan"></a>建立 VM，以及連接至 VLAN 使用 NetworkControllerRESTWrappers
+您已成功建立 VM、 VM 連線至租用戶虛擬網路，並啟動 VM，讓它可以處理租用戶工作負載。
 
-這一節包含下列主題。
-
-1. [建立 VM 和指派靜態 MAC 位址](#bkmk_mac)
-2. [設定 VLAN ID VM 網路介面卡](#bkmk_vid)
-3. [取得的邏輯網路子網路，並建立網路介面](#bkmk_subnet)
-4. [執行個體識別碼設定 HYPER-V 連接埠](#bkmk_instance)
-5. [[開始] VM](#bkmk_startvlan)
+## <a name="create-a-vm-and-connect-to-a-vlan-by-using-networkcontrollerrestwrappers"></a>建立 VM，並使用 NetworkControllerRESTWrappers 連接到 VLAN
 
 
-###<a name="bkmk_mac"></a>建立 VM 和指派靜態 MAC 位址
-建立 VM，並將靜態媒體存取控制 \(MAC\) 位址指派給 VM 中，您可以使用下列命令範例。
+1. 建立 VM，並指派靜態 MAC 位址給 VM。
 
-    New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
+   ```PowerShell
+   New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
 
-    Set-VM -Name "MyVM" -ProcessorCount 4
+   Set-VM -Name "MyVM" -ProcessorCount 4
 
-    Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
+   ```
 
-###<a name="bkmk_vid"></a>設定 VLAN ID VM 網路介面卡
-若要設定 VLAN ID 的網路介面卡，您可以使用下列範例命令。
+2. 設定 VM 網路介面卡的 VLAN ID。
 
+   ```PowerShell
+   Set-VMNetworkAdapterIsolation –VMName “MyVM” -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
+   ```
 
-    Set-VMNetworkAdapterIsolation –VMName “MyVM” -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
+3. 取得的邏輯網路子網路，並建立網路介面。 
 
-
-###<a name="bkmk_subnet"></a>取得的邏輯網路子網路，並建立網路介面
-
-取得的邏輯網路子網路，並建立網路介面使用的邏輯網路子網路，您可以使用下列命令範例。
-
-
+   ```PowerShell
     $logicalnet = get-networkcontrollerLogicalNetwork -connectionuri $uri -ResourceId "00000000-2222-1111-9999-000000000002"
 
     $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
@@ -216,50 +184,49 @@ Network Controller 中建立網路介面物件，請使用下列命令範例。
     $vnic = New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
 
     $vnic.InstanceId
-    
+   ```
 
-###<a name="bkmk_instance"></a>執行個體識別碼設定 HYPER-V 連接埠
-若要設定的執行個體識別碼 HYPER-V 連接埠，您可以使用下列命令範例 HYPER-V 主機上 VM 所在的位置。
+4. 設定 HYPER-V 通訊埠的執行個體識別碼。
 
-  
-    #The hardcoded Ids in this section are fixed values and must not change.
-    $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
+   ```PowerShell  
+   #The hardcoded Ids in this section are fixed values and must not change.
+   $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
 
-    $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
+   $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
 
-    $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNic
+   $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNic
         
-    if ($CurrentFeature -eq $null)
-    {
-        $Feature = Get-VMSystemSwitchExtensionFeature -FeatureId $FeatureId
+   if ($CurrentFeature -eq $null)
+   {
+       $Feature = Get-VMSystemSwitchExtensionFeature -FeatureId $FeatureId
         
-        $Feature.SettingData.ProfileId = "{$InstanceId}"
-        $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
-        $Feature.SettingData.CdnLabelString = "TestCdn"
-        $Feature.SettingData.CdnLabelId = 1111
-        $Feature.SettingData.ProfileName = "Testprofile"
-        $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
-        $Feature.SettingData.VendorName = "NetworkController"
-        $Feature.SettingData.ProfileData = 1
+       $Feature.SettingData.ProfileId = "{$InstanceId}"
+       $Feature.SettingData.NetCfgInstanceId = "{56785678-a0e5-4a26-bc9b-c0cba27311a3}"
+       $Feature.SettingData.CdnLabelString = "TestCdn"
+       $Feature.SettingData.CdnLabelId = 1111
+       $Feature.SettingData.ProfileName = "Testprofile"
+       $Feature.SettingData.VendorId = "{1FA41B39-B444-4E43-B35A-E1F7985FD548}"
+       $Feature.SettingData.VendorName = "NetworkController"
+       $Feature.SettingData.ProfileData = 1
                 
-        Add-VMSwitchExtensionFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNic
-    }        
-    else
-    {
-        $CurrentFeature.SettingData.ProfileId = "{$InstanceId}"
-        $CurrentFeature.SettingData.ProfileData = 1
+       Add-VMSwitchExtensionFeature -VMSwitchExtensionFeature  $Feature -VMNetworkAdapter $vmNic
+   }        
+   else
+   {
+       $CurrentFeature.SettingData.ProfileId = "{$InstanceId}"
+       $CurrentFeature.SettingData.ProfileData = 1
 
-        Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
-    }
+       Set-VMSwitchExtensionPortFeature -VMSwitchExtensionFeature $CurrentFeature  -VMNetworkAdapter $vmNic
+   }
+   ```
 
+5. 啟動 VM。
 
-###<a name="bkmk_startvlan"></a>[開始] VM
-若要開始 VM 中，您可以使用下列範例命令。
+   ```PowerShell
+   Get-VM -Name “MyVM” | Start-VM 
+   ```
 
-
-    Get-VM -Name “MyVM” | Start-VM 
-
-您現在順利建立 VM、連接 VM VLAN，並開始 VM，使其可以處理承租人工作負載。
+您已成功建立 VM，VM 連接至 VLAN，並啟動 VM，讓它可以處理租用戶工作負載。
 
   
 

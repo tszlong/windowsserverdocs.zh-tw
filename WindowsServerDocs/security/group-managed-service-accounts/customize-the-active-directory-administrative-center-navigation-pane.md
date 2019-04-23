@@ -1,7 +1,7 @@
 ---
-title: "自訂 Active Directory 管理中心瀏覽窗格"
+title: 自訂 Active Directory 管理中心瀏覽窗格
 ms.prod: windows-server-threshold
-description: "Windows Server 安全性"
+description: Windows Server 安全性
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
@@ -12,41 +12,42 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: e7b1128d93912f724225905bedd38131f8aab0b2
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854839"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>自訂 Active Directory 管理中心瀏覽窗格
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-  您可以瀏覽 Active Directory 管理中心瀏覽窗格中，使用樹狀檢視中，其為 Active Directory 使用者和電腦主機樹類似，或使用清單檢視。
+  使用樹狀檢視中，也就是類似於 Active Directory 使用者和電腦主控台樹狀目錄中，或使用清單檢視，您可以瀏覽 Active Directory 管理中心瀏覽窗格。
 
- 不論使用樹檢視或 [清單檢視] 中，您可以自訂您的 Active Directory 管理中心瀏覽窗格中依照本身需求加以從本機網域或任何外部的網域新增各種不同的容器 \ (也就是不是本機的網域的網域建立 [本機 domain\ 與信任）到另一個節點以瀏覽窗格中。 自訂 Active Directory 管理中心瀏覽窗格中，可提供更快速地存取 Active Directory 物件。 如需詳細資訊，請查看[Active Directory 管理中心管理不同網域](manage-different-domains-in-active-directory-administrative-center.md)。
+ 不論您使用 [樹狀] 檢視或 [清單] 檢視，您可以自訂您的 Active Directory 管理中心瀏覽窗格隨時藉由新增各種容器從本機網域或任何外部網域\(亦即，本機網域以外的網域其與本機網域建立的信任\)來瀏覽窗格中，為不同的節點。 自訂 Active Directory 管理中心瀏覽窗格可以更快速地存取 Active Directory 物件。 如需詳細資訊，請參閱 <<c0> [ 在 Active Directory 管理中心管理不同網域](manage-different-domains-in-active-directory-administrative-center.md)。
 
- 此外，若要進一步自訂瀏覽窗格中，您可以將重新命名或移除手動新增的瀏覽窗格節點、建立重複的節點或它們向上或向下移動瀏覽窗格中。
+ 而且，若要進一步自訂瀏覽窗格，您可以重新命名或移除這些手動新增的瀏覽窗格節點、建立這些節點的重複項目，或在瀏覽窗格內上下移動節點。
 
 > [!NOTE]
->  您無法自訂預設本地網域節點。
+>  您不可以自訂預設本機網域節點
 
 ### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>若要自訂 Active Directory 管理中心瀏覽窗格
 
-1.  在 Active Directory 管理中心瀏覽窗格中，按一下您想要修改節點 right\。 您也可以修改位置或節點的名稱，或您可以建立的重複項目。
+1.  在 [Active Directory 管理中心瀏覽] 窗格中，以滑鼠右鍵\-按一下您想要修改的節點。 您可以修改節點的位置或名稱，或者您可以建立一個複本。
 
-2.  按一下下列命令的其中一個動作︰
+2.  按一下其中一個下列的命令：
 
     -   **重新命名**
 
-    -   **建立重複節點**
+    -   **建立重複的節點**
 
     -   **移除**
 
-    -   **向上移動**
+    -   **上移**
 
     -   **向下移動**
 
- 使用 [清單檢視] 中，您可以利用最近使用的 \(MRU\) 的清單。 最近使用自動時，會顯示在瀏覽節點您所瀏覽至少容器，此瀏覽節點中。 您也可以檢視常用目前清單中，展開階層連結 Active Directory 管理中心視窗頂端列。 常用清單一律會包含您造訪過的特定瀏覽節點上次三種容器。 每當您選取特定容器，此容器會新增到最近使用」清單的頂端，常用清單中的最後一個容器並移除。
+ 藉由使用清單檢視中，您可以利用最近使用的\(MRU\)清單。 當您瀏覽這個瀏覽節點中的至少一個容器 MRU 清單會自動顯示瀏覽節點底下。 您也可以藉由展開階層連結列頂端的 [Active Directory 管理中心] 視窗來檢視目前的 MRU 清單。 MRU 清單一律會包含您在特定瀏覽節點內造訪的最後三個容器。 每次選取特定容器時，這個容器都會新增至 MRU 清單頂端，並從 MRU 清單中移除最後一個容器。
 
   
 

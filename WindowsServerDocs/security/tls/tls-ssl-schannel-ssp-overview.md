@@ -1,6 +1,6 @@
 ---
-title: "TLS-SSL (Schannel SSP) 概觀"
-description: "Windows Server 安全性"
+title: TLS/SSL 概觀 (安全通道 SSP)
+description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,52 +12,46 @@ ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: afd0b70264dba1e720f95e40d3d201c2c5bf1c64
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.date: 05/16/2018
+ms.openlocfilehash: a6571e5e06e07fd62ad4cf39bab322b45c90a9f9
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59848599"
 ---
-# <a name="tls---ssl-schannel-ssp-overview"></a>TLS-SSL (Schannel SSP) 概觀
+# <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL 概觀 (安全通道 SSP)
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016 中，Windows 10
 
-本主題適用於 IT 專業人員導入 TLS 日 SSL 實作使用 Schannel 安全性服務提供者 (SSP)，描述實用的應用程式，Microsoft 實作，與軟體需求，以及其他資源變更適用於 Windows Server 2012 和 Windows 8 的 windows。
+本主題適用於 IT 專業人員介紹透過描述實際應用，使用安全通道安全性服務提供者 (SSP) 的 Windows 中 TLS 和 SSL 實作的變更在 Microsoft 實作中，與軟體需求，再加上Windows Server 2012 和 Windows 8 的其他資源。
 
-**您表示：**
+## <a name="BKMK_OVER"></a>描述
+安全通道是安全性支援提供者 (SSP)，可以實作安全通訊端層 (SSL) 和傳輸層安全性 (TLS) 網際網路標準驗證通訊協定。
 
--   [Schannel 安全性套件](https://msdn.microsoft.com/library/ms678421.aspx)
+安全性支援提供者介面 (SSPI) 是 Windows 系統所使用的 API，可以執行包含驗證在內的安全性相關功能。 SSPI 可以做幾個 Ssp，包括安全通道 SSP 的通用介面
 
--   [安全通道](https://msdn.microsoft.com/library/windows/desktop/aa380123.aspx)
+TLS 1.0、 1.1 和 1.2 版，SSL 2.0 和 3.0 版，以及資料包傳輸層安全性\(DTLS\)通訊協定版本 1.0，以及私人通訊傳輸\(PCT\)通訊協定為基礎公開金鑰密碼編譯。 安全通道驗證通訊協定組合提供這些通訊協定。 所有的安全通道通訊協定都使用用戶端/伺服器模型。
 
--   [傳輸層安全性通訊協定](https://msdn.microsoft.com/library/windows/desktop/aa380516.aspx)
+## <a name="BKMK_APP"></a>應用程式
+當您管理網路時遇到的一個問題是，要保護在未受信任網路的應用程式之間傳送的資料安全。 您可以使用 TLS 和 SSL 來驗證伺服器和用戶端電腦，然後使用通訊協定加密已驗證對象之間的訊息。
 
-## <a name="BKMK_OVER"></a>TLS\SSL \(Schannel\) 描述
-Schannel 是實作的安全通訊端層 \(SSL\) 和 Tls \(TLS\) 安全性支援提供者 \(SSP\) 網際網路標準驗證通訊協定。
+例如，您可以針對下列項目使用 TLS/SSL：
 
-安全性支援提供者介面 \(SSPI\) 是用來執行 security\ 相關的功能包括驗證 windows API。 做為數個安全性支援提供者 \(SSPs\)，包括 Schannel SSP.常見介面 SSPI 函式
-
-1.0，1.1、1.2 安全通訊端層 \(SSL\) 通訊協定，2.0 和 3.0 資料流 Tls \(DTLS\) 1.0 版，並私人通訊傳輸 \(PCT\) 通訊協定的 Tls \(TLS\) 通訊協定版本根據公開加密。 安全性通道 \(Schannel\) 驗證通訊協定提供這些通訊協定。 所有 Schannel 通訊協定都使用 client\ 日伺服器模型。
-
-## <a name="BKMK_APP"></a>實用的應用程式
-有一個問題，您可以管理網路時保護資料未受信任的網路上的應用程式之間傳送。 您可以使用 TLS\SSL 驗證伺服器和 client 電腦，然後使用通訊協定加密已驗證的對象之間的訊息。
-
-例如，您可以使用適用於 TLS\SSL:
-
--   SSL\ 保護交易 e\ 商務網站
-
--   證存取 SSL\ 安全的網站
-
+-   與電子商務網站的 SSL 安全保護交易
+-   已驗證的用戶端對於 SSL 安全保護網站的存取
 -   遠端存取
-
 -   SQL 存取
+-   電子郵件
 
--   E\ 郵件
-
-## <a name="BKMK_SOFT"></a>軟體需求
-使用 client\server 模型 TLS\SSL 通訊協定，並為基礎的憑證驗證，這需要公開基礎結構。
+## <a name="BKMK_SOFT"></a>需求
+TLS 和 SSL 通訊協定會使用用戶端/伺服器模型，並以憑證驗證，而這需要公開金鑰基礎結構為基礎。
 
 ## <a name="BKMK_INSTALL"></a>伺服器管理員資訊
-實作 TLS、SSL 或 Schannel 所需的任何設定步驟。
+沒有實作 TLS、 SSL 或安全通道所需的組態步驟。
 
+## <a name="see-also"></a>另請參閱 ##
+
+-   [安全通道安全性封裝](https://docs.microsoft.com/windows/desktop/com/schannel)
+-   [安全通道](https://docs.microsoft.com/windows/desktop/SecAuthN/secure-channel)
+-   [傳輸層安全性通訊協定](https://docs.microsoft.com/windows/desktop/SecAuthN/transport-layer-security-protocol)

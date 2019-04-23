@@ -1,6 +1,6 @@
 ---
-title: 安裝 BranchCache 功能，並設定裝載快取伺服器服務連接點，
-description: 本指南部署 BranchCache 裝載快取模式執行的 Windows Server 2016 和 Windows 10 電腦上提供指示
+title: 安裝 BranchCache 功能並依據服務連接點設定託管快取伺服器
+description: 本指南提供在執行 Windows Server 2016 和 Windows 10 電腦上的託管快取模式部署 BranchCache 的指示
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,55 +8,56 @@ ms.topic: article
 ms.assetid: 9adf420b-5a58-4e59-9906-71bd58f757fd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 854ff9f80a2221a857fab4e6ea7f7c8e6d51f1ef
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 6619b09df0d4c161148d22091337a5039c7ea3af
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849649"
 ---
-# <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>安裝 BranchCache 功能，並設定裝載快取伺服器服務連接點，
+# <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>安裝 BranchCache 功能並依據服務連接點設定託管快取伺服器
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-您可以使用此程序 BranchCache」功能在伺服器上安裝裝載快取，HCS1，並設定為隊伍登記服務連接點伺服器 \(SCP\) Active Directory Domain Services \(AD DS\) 中的。
+在託管快取伺服器 HCS1，安裝 BranchCache 功能，並設定要登錄服務連接點的伺服器，您可以使用此程序\(SCP\) Active Directory 網域服務中\(AD DS\).
 
-當您使用 AD DS SCP 登記裝載快取的伺服器時，SCP 可 client 自動查詢 SCP AD DS 探索裝載快取的伺服器設定正確的電腦。 在本文稍後提供如何設定 client 電腦上的指示執行此動作。
+當您使用 SCP，AD DS 中註冊託管快取伺服器時，SCP 可讓用戶端自動探索託管快取伺服器，透過查詢 SCP 的 AD DS 已正確設定的電腦。 稍後在本指南提供如何設定用戶端電腦上執行此動作的指示。
 
 >[!IMPORTANT]
->執行此程序之前，您必須加入網域的電腦和電腦靜態 IP 位址設定。
+>執行此程序之前，您必須將電腦加入網域，並使用靜態 IP 位址設定電腦。
 
-若要執行此程序，您必須是系統管理員群組成員。
+若要執行此程序，您必須是 Administrators 群組成員。
 
-## <a name="to-install-the-branchcache-feature-and-configure-the-hosted-cache-server"></a>若要安裝 BranchCache 功能和設定裝載快取伺服器  
+## <a name="to-install-the-branchcache-feature-and-configure-the-hosted-cache-server"></a>安裝 BranchCache 功能及設定託管快取伺服器  
 
-1. 以系統管理員身分執行 Windows PowerShell 伺服器電腦。 輸入下列命令，，然後按 ENTER 鍵。
+1. 在 系統管理員身分執行 Windows PowerShell 的伺服器電腦。 輸入下列命令，然後按 ENTER。
 
     ``` 
     Install-WindowsFeature BranchCache
     ```
 
-2.  若要將電腦設定為裝載快取伺服器之後安裝的 BranchCache 功能，並在 AD DS 登記服務連接點，Windows PowerShell 中，輸入下列命令，然後按 ENTER 鍵。
+2.  若要將電腦設定為託管快取伺服器之後安裝 BranchCache 功能，並在 AD DS 中登錄服務連接點，在 Windows PowerShell 中，輸入下列命令，然後按 ENTER 鍵。
 
     ```  
     Enable-BCHostedServer -RegisterSCP
     ```  
 
-3. 若要確認裝載快取伺服器設定，輸入下列命令，然後按 ENTER。
+3. 若要確認託管快取伺服器組態，請輸入下列命令，然後按 ENTER。
 
     ```  
     Get-BCStatus  
     ```  
   
-    命令的結果顯示所有方面 BranchCache 安裝的狀態。 以下是一些 BranchCache 設定和正確的值為每個項目：  
+    命令的結果會顯示您 BranchCache 安裝的各個層面的狀態。 以下是幾個 BranchCache 設定和正確的值，每個項目：  
   
-    -   BranchCacheIsEnabled: True
+    -   BranchCacheIsEnabled:True
 
-    -   HostedCacheServerIsEnabled: True
+    -   HostedCacheServerIsEnabled:True
 
-    -   HostedCacheScpRegistrationEnabled: True
+    -   HostedCacheScpRegistrationEnabled:True
 
-4. 若要準備您的資料套件複製到裝載快取的伺服器內容伺服器的步驟，不論是找出裝載快取的伺服器上現有共用或建立新的資料夾和，使其可以存取您內容伺服器的共用資料夾。 建立內容伺服器上的資料套件之後，您將此裝載快取伺服器上的共用資料夾複製資料的套件。
+4. 若要準備內容伺服器中的資料套件複製到您的託管快取伺服器的步驟，可能是識別託管快取伺服器上現有的共用，或建立新的資料夾，並使其可從您的內容伺服器存取共用資料夾。 您內容的伺服器上建立資料套件之後，您會將資料封裝複製此託管快取伺服器上的共用資料夾。
   
-5. 如果您的部署一部以上的裝載快取伺服器，請重複此程序各個伺服器上。
+5. 如果您要部署多部託管快取伺服器，重複此程序在每一部伺服器上。
 
-若要繼續使用此快速入門，請查看[移動及調整大小裝載快取與 #40; 選用和 #41;](6-Bc-Move-Resize-Cache.md).
+若要繼續進行本指南，請參閱[移動和調整託管快取&#40;選擇性&#41;](6-Bc-Move-Resize-Cache.md)。

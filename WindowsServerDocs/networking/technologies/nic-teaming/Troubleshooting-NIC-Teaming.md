@@ -1,7 +1,7 @@
 ---
-title: 疑難排解 NIC 小組
-description: 本主題提供疑難排解 NIC 小組中的 Windows Server 2016 的相關資訊。
-manager: brianlic
+title: 對 NIC 小組進行疑難排解
+description: 本主題提供疑難排解 Windows Server 2016 中的 NIC 小組的資訊。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,54 +13,54 @@ ms.topic: article
 ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 634ec1a5eee0cd661ca89c2673e5b74abd458cd6
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/13/2018
+ms.openlocfilehash: d39dc6a4dcf5dca8186b0599fb479ed5ae684e0f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856249"
 ---
-# <a name="troubleshooting-nic-teaming"></a>疑難排解 NIC 小組
+# <a name="troubleshooting-nic-teaming"></a>對 NIC 小組進行疑難排解
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題提供資訊疑難排解 NIC 小組，並包含下列區段，描述問題 NIC 小組的可能原因。  
+本主題中，我們會討論如何疑難排解 「 NIC 小組，例如硬體與實體交換器交割，並。  當硬體實作的標準通訊協定不符合規格時，NIC 小組的效能可能會受到影響。 此外，根據組態，NIC 小組可能會傳送封包從相同的 IP 位址，以操控實體交換器上的安全性功能的多個 MAC 位址。
+
   
--   [硬體不符合規格](#bkmk_hardware)  
+## <a name="hardware-that-doesnt-conform-to-specification"></a>不符合規格的硬體  
   
--   [實體切換安全性功能](#bkmk_switch)  
+一般作業期間，NIC 小組可能會傳送封包從相同的 IP 位址，還具有多個 MAC 位址。 根據通訊協定標準，這些封包接收者必須解析成特定的 MAC 位址，而不是從接收的封包回應的 MAC 位址的主機或 VM 的 IP 位址。  正確實作的位址解析通訊協定 （ARP 和 ndp 底下） 的用戶端會傳送具有正確的目的地 MAC 位址的封包，也就是 VM 或擁有該 IP 位址的主機的 MAC 位址。 
   
--   [停用，並讓使用 Windows PowerShell](#bkmk_ps)  
+某些內嵌的硬體不會正確地實作位址解析通訊協定，並也可能會不明確 IP 位址解析成使用 ARP 或 ndp 底下的 MAC 位址。  例如，存放區域網路 (SAN) 控制器可能會以這種方式執行。 不合格的裝置接收之封包從複製的來源 MAC 位址，並將它作為對應的傳出封包，導致傳送至錯誤的目的地 MAC 位址的封包中的目的地 MAC 位址。 因為這個緣故，封包會與 HYPER-V 虛擬交換器所卸除，因為它們不符合任何已知的目的地。  
   
-## <a name="bkmk_hardware"></a>硬體不符合規格  
-當規格標準通訊協定實作硬體不符合時，可能會影響 NIC 小組效能。  
+如果您需要疑難排解連線到 SAN 的控制站或其他內嵌硬體，您應該採取封包擷取，以判斷 ARP 或 ndp 底下，，如果正確地實作您的硬體，並連絡您的硬體廠商以取得支援。  
+
   
-在正常運作，NIC 小組可能會傳送封包從相同的 IP 位址，但有多個不同的來源媒體存取控制 (MAC) 位址。 通訊協定標準，根據這些封包接收器必須解析的主機或 VM 的 IP 位址特定的 MAC 位址，而非回應的 MAC 地址，收到一封包。  戶端正確實作地址解析度通訊協定的 IPv4 位址解析度通訊協定 (ARP) 或 IPv6 的鄰居探索通訊協定 (NDP)，將會傳送具有正確的目的地的 MAC 位址（VM 或主機的擁有該 IP 位址的 MAC 位址）封包。  
+## <a name="physical-switch-security-features"></a>實體交換器的安全性功能  
+根據組態，NIC 小組可能會傳送封包從相同的 IP 位址，以操控實體交換器上的安全性功能的多個來源 MAC 位址。 比方說，動態 ARP 檢查或 IP 來源防護時，特別是當實體切換並不知道的連接埠是小組，其發生於當您在 交換器獨立模式中設定 NIC 小組的一部分。 檢查切換記錄檔來判斷是否交換器的安全性功能會造成連線問題。 
   
-不過，有些 embedded 硬體不正確實作的地址解析度通訊協定，並也可能會不明確 IP 位址解析使用 ARP 或 NDP 的 MAC 位址。  存放裝置區域網路（舊）控制器，是裝置的這種方式可以執行的範例。 非符合裝置中收到的封包複製來源所包含的 MAC 位址，並使用它做目的地的相對應的輸出封包 MAC 位址。  
+## <a name="disabling-and-enabling-network-adapters-by-using-windows-powershell"></a>停用，並透過使用 Windows PowerShell 中啟用網路介面卡  
+
+NIC 小組失敗的常見原因是，小組介面已停用，在許多情況下，不小心執行一連串的命令時。  這一系列特定的命令不會啟用所有停用，因為停用所有基礎的實體成員的 Nic 移除 NIC 小組介面 NetAdapters。 
+
+在此情況下，NIC 小組介面不會再顯示在 Get-netadapter，，因為這個緣故，**啟用 NetAdapter \*** 不會啟用 NIC 小組。 **啟用 NetAdapter \*** 命令，不過，啟用的成員 Nic，然後 （短時間） 之後會重新建立小組介面。 小組介面會保留在 「 停用 」 狀態，直到重新啟用，允許網路流量，以開始流動。 
+
+下列 Windows PowerShell 的命令順序可能會不小心停用 team 介面：  
   
-這會傳送到錯誤目的地的 MAC 位址封包。 因此，封包所中斷 HYPER-V Virtual 開關切換至因為它們不符合所有已知的目的地。  
-  
-如果您有無法連接到舊控制器或其他 embedded 硬體，您應該需要封包擷取判斷是否硬體正確實作 ARP 或 NDP，並連絡您的硬體製造商以尋求支援。  
-  
-## <a name="bkmk_switch"></a>實體切換安全性功能  
-根據設定，NIC 小組可能會傳送封包從相同的 IP 位址的數個不同的來源 MAC 地址。  這可以成為了安全性使動態 ARP 檢查或 IP 來源例如實體開關切換至上的功能，尤其是實體切換並不知道的連接埠是小組的成員。 這種情形您設定切換獨立模式中的 [NIC 小組。  您應該會檢查切換登判斷是否切換安全性功能會造成連接 NIC 小組的問題。  
-  
-## <a name="bkmk_ps"></a>停用，並讓網路介面卡，使用 Windows PowerShell  
-失敗 NIC 小組的一個常見原因是在小組介面停用。 很多時候，介面會意外停用，執行下列命令 Windows PowerShell 順序時：  
-  
-```  
+```PowerShell 
 Disable-NetAdapter *  
 Enable-NetAdapter *  
 ```  
   
-這一系列命令不讓所有停用它 NetAdapters。  
+
   
-這是因為停用所有的基礎實體成員 Nic 會導致介面移除，且不會再出現在 Get-NetAdapter NIC 小組。 因此，**讓-NetAdapter \ ***命令無法讓 NIC 團隊，因為的介面卡，會被移除。  
-  
-**讓-NetAdapter \ ***命令，但可以讓成員 Nic，然後（片刻）會重新建立小組介面。 在這個情況，小組介面仍會在」已停用「狀態因為它未重新讓。 之後，它會重新建立讓小組介面，可讓開始重新排列網路流量。  
-  
-## <a name="see-also"></a>也了  
-[NIC 小組](NIC-Teaming.md)  
+## <a name="related-topics"></a>相關主題  
+- [NIC 小組](NIC-Teaming.md):在本主題中，我們提供您的網路介面卡 (NIC) 小組概觀 Windows Server 2016 中。 NIC 小組可讓您將介於 1 到 32 到一或多個以軟體為基礎的虛擬網路介面卡的實體 Ethernet 網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。   
+
+- [NIC 小組 MAC 位址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md):當您設定 NIC 小組與交換器獨立模式和位址雜湊或動態配置資源負載分配時，小組所使用的媒體存取控制 (MAC) 位址的輸出流量的主要 NIC 小組成員。 主要的 NIC 小組成員會將作業系統從一組初始的小組成員所選取的網路介面卡。
+
+- [NIC 小組設定](nic-teaming-settings.md):本主題中，我們會提供您的 NIC 小組 」 屬性，例如小組的概觀，以及負載平衡模式。 我們也提供您關於待命配接器設定和主要小組介面屬性的詳細資料。 如果您有至少兩個網路介面卡在 NIC 小組時，您不需要指定容錯移轉的待命介面卡。
   
 
 

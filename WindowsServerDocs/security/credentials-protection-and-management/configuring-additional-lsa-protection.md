@@ -1,6 +1,6 @@
 ---
-title: "設定其他 LSA 保護"
-description: "Windows Server 安全性"
+title: 設定額外的 LSA 保護
+description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,181 +13,192 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: fcfb0dab10d28413cf4ad06dd583274f217c91fa
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: bd5863a46f77fd4ac53c8559ff17279271dc5c46
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849689"
 ---
-# <a name="configuring-additional-lsa-protection"></a>設定其他 LSA 保護
+# <a name="configuring-additional-lsa-protection"></a>設定額外的 LSA 保護
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題適用於 IT 專業人員如何設定以防止危及認證的程式碼注入本機安全性授權單位 (LSA) 處理程序額外的保護。
+這個適用於 IT 專業人員的主題說明如何為本機安全性授權 (LSA) 處理程序設定額外的保護，以避免可能洩漏認證的程式碼插入。
 
-LSA，包括本機安全性授權單位伺服器服務 (LSASS) 處理程序，驗證使用者的本機和遠端登入增益集，並執行本機安全性原則。 Windows 8.1 作業系統提供其他 LSA 避免朗讀記憶體和注入由未受保護的處理程序的程式碼保護。 新增的安全性提供的認證 LSA 儲存和管理。 LSA 的受保護的程序設定可在 Windows 8.1 中，設定，但無法在 Windows RT 8.1 中設定。 在 [安全開機搭配使用此設定時，停用 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa 登錄鍵已經不會生效，因為達成額外的保護。
+LSA 包含本機安全性授權伺服器服務 (LSASS) 處理程序，會驗證使用者的本機和遠端登入，以及強制執行本機安全性原則。 Windows 8.1 作業系統會提供額外的 LSA 來防止讀取記憶體和插入未受保護的處理程序程式碼保護。 這為 LSA 儲存和管理的認證提供了額外的安全性。 LSA 的受保護的處理程序設定可以設定在 Windows 8.1 中，但不是能設定 Windows RT 8.1 中。 當此設定與安全開機一起搭配使用時，因為停用 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa 登錄機碼沒有作用，所以會有額外的保護。
 
-### <a name="protected-process-requirements-for-plug-ins-or-drivers"></a>受保護的程序需求插或驅動程式
-適用於 LSA 外掛程式或驅動程式成功載入受保護的程序，必須符合下列條件：
+### <a name="protected-process-requirements-for-plug-ins-or-drivers"></a>外掛程式或驅動程式的受保護處理程序需求
+LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為受保護的處理程序：
 
 1.  簽章驗證
 
-    「受保護的模式需要的任何外掛程式載入 LSA 數位簽章使用 Microsoft 簽章。 因此，將無法載入 LSA 在任何插未經簽署或不登入 Microsoft 簽章。 這些插範例包括智慧卡驅動程式、密碼編譯插，以及密碼篩選。
+    受保護的模式要求載入 LSA 中的所有外掛程式都要以 Microsoft 簽章進行數位簽署。 因此，未簽署或沒有以 Microsoft 簽章進行簽署的所有外掛程式將無法載入 LSA。 例如，智慧卡驅動程式、加密編譯外掛程式，以及密碼篩選器等外掛程式。
 
-    使用 WHQL 憑證來簽署需要 LSA 插的驅動程式，例如智慧卡驅動程式。 如需詳細資訊，請查看[WHQL 發行簽章（Windows 驅動程式）](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx)。
+    屬於驅動程式的 LSA 外掛程式 (例如，智慧卡驅動程式) 需要使用 WHQL 認證進行簽署。 如需詳細資訊，請參閱 < [WHQL 版本簽章](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx)。
 
-    必須簽署 LSA 插不具有 WHQL 認證處理程序，使用[檔案服務 LSA 登入](https://go.microsoft.com/fwlink/?LinkId=392590)。
+    沒有 WHQL 認證程序的 LSA 外掛程式必須使用[適用於 LSA 的檔案簽署服務](https://go.microsoft.com/fwlink/?LinkId=392590)進行簽署。
 
-2.  遵循 Microsoft 安全性開發週期 (SDL) 處理程序指導方針
+2.  遵守 Microsoft 安全性開發週期 (SDL) 程序指引
 
-    所有插必須符合適用 SDL 處理程序指導方針。 如需詳細資訊，請查看[Microsoft 安全性開發週期 (SDL) 附錄](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx)。
+    所有外掛程式都必須符合適用的 SDL 程序指引。 如需詳細資訊，請參閱 [Microsoft 安全性開發週期 (SDL) 附錄](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx)。
 
-    即使插的適當簽署使用 Microsoft 簽章，不符合 SDL 程序可能會導致無法載入外掛程式。
+    即使外掛程式經過 Microsoft 簽章的適當簽署，與 SDL 程序不相容也可能無法載入外掛程式。
 
-#### <a name="recommended-practices"></a>建議的做法
-使用下面完全測試 LSA 保護會讓之前廣泛地部署的功能：
+#### <a name="recommended-practices"></a>建議做法
+全面部署功能之前，先使用以下清單徹底測試 LSA 保護是否已啟用：
 
--   找出的所有 LSA 插與在組織中使用的驅動程式。 
-    這包括非 Microsoft 的驅動程式或插例如智慧卡驅動程式與密碼編譯插，以及任何內部開發用來執行密碼篩選或密碼變更通知的軟體。
+-   識別您組織中使用的所有 LSA 外掛程式和驅動程式。 
+    這包含非 Microsoft 驅動程式，或智慧卡驅動程式和加密編譯外掛程式等外掛程式，以及用於強制執行密碼篩選器或密碼變更通知的所有內部開發軟體。
 
--   請確定的所有 LSA 插以數位簽署的憑證 Microsoft 外掛程式不會載入。
+-   確認所有 LSA 外掛程式都以 Microsoft 憑證進行數位簽署，才不會無法載入外掛程式。
 
--   請確定所有正確簽署插，可以順利 LSA 載入並執行如預期般運作。
+-   確認所有經過正確簽署的外掛程式可順利載入 LSA 中，且依預期執行。
 
--   使用稽核登找出 LSA 插和驅動程式無法執行受保護的程序。
+-   使用稽核記錄識別無法以受保護的處理程序執行的 LSA 外掛程式和驅動程式。
 
-## <a name="how-to-identify-lsa-plug-ins-and-drivers-that-fail-to-run-as-a-protected-process"></a>如何找出 LSA 插和驅動程式無法執行受保護的程序
-這一節中所述的事件位於 [可操作 \ [應用程式及服務 Logs\Microsoft\Windows\CodeIntegrity 登入。 他們可以協助您找出 LSA 插和驅動程式載入因為登入的原因而失敗。 若要管理這些活動，您可以使用**wevtutil**命令列工具。 此工具的相關資訊，請查看[Wevtutil](../../administration/windows-commands/Wevtutil.md)。
+#### <a name="limitations-introduced-with-enabled-lsa-protection"></a>啟用 LSA 保護所引入的限制
 
-### <a name="before-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>之前中選擇：如何找出插和載入 lsass.exe 驅動程式
-您可以找出 LSA 插和驅動程式，將無法載入 LSA 保護模式中使用的稽核模式。 在稽核模式時，系統將會產生事件登，找出的所有插和驅動程式，將無法載入 LSA 下，如果 LSA 保護會讓。 訊息是登入，而不會封鎖插或驅動程式。
+如果已啟用 LSA 保護，您無法偵錯自訂的 LSA 外掛程式。
+這是受保護的程序之後，您就無法偵錯工具附加至 LSASS。
+一般情況下，沒有任何支援的方法，若要偵錯執行的受保護處理程序。
 
-##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>編輯登錄的 Lsass.exe 約定稽核模式一部電腦上
+## <a name="how-to-identify-lsa-plug-ins-and-drivers-that-fail-to-run-as-a-protected-process"></a>如何識別無法以受保護的處理程序執行的 LSA 外掛程式和驅動程式
+本節中描述的事件位於 [應用程式及服務記錄檔\Microsoft\Windows\CodeIntegrity] 底下的作業記錄中。 這些事件可以協助您識別因為簽署原因而無法載入的 LSA 外掛程式和驅動程式。 您可以使用 **wevtutil** 命令列工具管理這些事件。 如需此工具的相關資訊，請參閱 [Wevtutil](../../administration/windows-commands/Wevtutil.md)。
 
-1.  打開作業系統 (RegEdit.exe)，並瀏覽至位於登錄鍵：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 檔案執行 Options\LSASS.exe。
+### <a name="before-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>選擇之前：如何識別 lsass.exe 載入的外掛程式和驅動程式
+您可以使用稽核模式識別無法在 LSA 保護模式中載入的 LSA 外掛程式和驅動程式。 在稽核模式中，系統會產生事件記錄檔，識別當 LSA 保護模式啟用時，無法在 LSA 載入的所有外掛程式和驅動程式。 系統會記錄這些訊息，但不會封鎖外掛程式或驅動程式。
 
-2.  設定的值登錄鍵**AuditLevel = dword:00000008**。
+##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>透過編輯登錄在單一電腦上針對 Lsass.exe 啟用稽核模式
 
-3.  電腦重新開機。
+1.  開啟 [登錄編輯程式] (RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe。
+
+2.  將登錄機碼的值設定為 **AuditLevel=dword:00000008**。
+
+3.  重新啟動電腦。
 
 分析事件 3065 和事件 3066 的結果。
 
--   **事件 3065**：此事件記錄的程式碼完整性檢查以判斷處理程序 (通常是 lsass.exe) 嘗試載入不符合安全性需求共用區段特定驅動程式。 不過，系統原則設定，因為影像已載入允許。
+在此之後，您可能會看到這些事件在事件檢視器：Microsoft Windows-Codeintegrity/運作：
 
--   **事件 3066**：此事件記錄的程式碼完整性檢查以判斷處理程序 (通常是 lsass.exe) 嘗試載入未符合 Microsoft 登入層級需求特定驅動程式。 不過，系統原則設定，因為影像已載入允許。
+-   **事件 3065**：此事件記錄了程式碼完整性檢查判斷某個處理程序 (通常是 lsass.exe) 嘗試載入不符合共用區段安全性需求的特定驅動程式。 但是由於所設定的系統原則，允許載入映像。
+
+-   **事件 3066**:此事件記錄了程式碼完整性檢查判斷某個處理程序 (通常是 lsass.exe) 嘗試載入不符合 Microsoft 簽署等級需求的特定驅動程式。 但是由於所設定的系統原則，允許載入映像。
 
 > [!IMPORTANT]
-> 這些操作事件不專時附加，在系統核心偵錯工具。
+> 系統上附加和啟用核心偵錯工具時，不會產生這些操作事件。
 > 
-> 如果外掛程式或驅動程式包含共用區段，3066 事件的事件 3065 登。 移除共用區段應該避免這兩個事件發生除非外掛程式不符合 Microsoft 登入層級的需求。
+> 如果外掛程式或驅動程式包含共用區段，會以事件 3065 記錄事件 3066。 除非外掛程式不符合 Microsoft 簽署等級需求，否則移除共用區段應該可以避免同時發生這兩個事件。
 
-若要以便稽核模式網域中的多部電腦，您可以使用適用於群組原則登錄 Client 端延伸部署 Lsass.exe 稽核層級登錄值。 您需要修改 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 檔案執行 Options\LSASS.exe 登錄金鑰。
+若要為網域中的多部電腦啟用稽核模式，您可以使用群組原則的登錄用戶端延伸，部署 Lsass.exe 稽核等級登錄值。 您需要修改 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe 登錄機碼。
 
-##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>若要建立 GPO AuditLevel 值設定
+##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>在 GPO 中建立 AuditLevel 值設定
 
-1.  打開群組原則管理主控台 (GPMC)。
+1.  開啟 [群組原則管理主控台] (GPMC)。
 
-2.  建立新群組原則物件 (GPO) 網域層級的連結或組織單位，其中包含您電腦帳號的連結。 或者，您可以選取 GPO 已經部署。
+2.  建立新的群組原則物件 (GPO)，該物件在網域層級連結或連結到包含您電腦帳戶的組織單位。 您也可以選取已經部署的 GPO。
 
-3.  GPO 上按一下滑鼠右鍵，然後按一下**編輯**打開群組原則管理編輯器。
+3.  在 GPO 上按一下滑鼠右鍵，然後按一下 [編輯] 開啟 [群組原則管理編輯器]。
 
-4.  展開**電腦設定**，展開 [**的喜好設定**，然後展開 [**的 Windows 設定**。
+4.  依序展開 [電腦設定]、[喜好設定] 及 [Windows 設定]。
 
-5.  以滑鼠右鍵按一下**登錄**，指向 [**新**，然後按一下 [**登錄項目**。 **新登錄屬性**對話方塊中出現。
+5.  在 [登錄] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [登錄項目]。 隨即顯示 [新登錄內容] 對話方塊。
 
-6.  在**Hive**清單中，按**跳。**
+6.  在  **Hive**清單中，按一下**HKEY_LOCAL_MACHINE。**
 
-7.  在**鍵路徑**清單中，瀏覽] **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 檔案執行 Options\LSASS.exe**。
+7.  在 [機碼路徑] 清單中，瀏覽到 **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**。
 
-8.  在**值名稱**方塊中，輸入**AuditLevel**。
+8.  在 [值名稱] 方塊中輸入 **AuditLevel**。
 
-9. 在**值類型**方塊中，按一下以選取**呼叫完成**。
+9. 在 [數值類型] 方塊中，按一下以選取 [REG_DWORD]。
 
-10. 在**數值資料**方塊中，輸入**00000008**。
+10. 在 [數值資料] 方塊中輸入 **00000008**。
 
-11. 按一下**[確定]**。
+11. 按一下 [確定] 。
 
 > [!NOTE]
-> Gpo 才會生效，必須網域中的所有網域控制站都複製 GPO 變更。
+> GPO 變更必須複寫到網域中的所有網域控制站，GPO 才會生效。
 
-來選擇中的多部電腦上的其他 LSA 保護，您可以使用登錄 Client 端延伸適用於群組原則來修改 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。 了解如何執行此步驟，請查看[如何設定額外的 LSA 保護認證的](#BKMK_HowToConfigure)本主題中。
+若要選擇多部電腦上的額外 LSA 保護，您可以透過修改 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa，使用群組原則的登錄用戶端延伸。 執行方法的相關步驟，請參閱本主題中的[如何設定認證的額外 LSA 保護](#BKMK_HowToConfigure)。
 
-### <a name="after-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>之後中選擇：如何找出插和載入 lsass.exe 驅動程式
-找出 LSA 插和驅動程式無法載入 LSA 保護模式，您可以使用事件登入。 當支援的受保護的 LSA 程序時，系統會產生找出的所有插和驅動程式無法在 LSA 載入的事件登。
+### <a name="after-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>選擇之後：如何識別 lsass.exe 載入的外掛程式和驅動程式
+您可以使用事件記錄檔識別無法在 LSA 保護模式中載入的 LSA 外掛程式和驅動程式。 當 LSA 受保護的處理程序啟用時，系統會產生事件記錄檔，可識別無法在 LSA 載入的所有外掛程式和驅動程式。
 
 分析事件 3033 和事件 3063 的結果。
 
--   **事件 3033**：此事件記錄的程式碼完整性檢查判斷處理程序 (通常是 lsass.exe) 嘗試載入的驅動程式，不符合 Microsoft 登入層級的需求。
+在此之後，您可能會看到這些事件在事件檢視器：Microsoft Windows-Codeintegrity/運作：
 
--   **事件 3063**：此事件記錄的程式碼完整性檢查以判斷處理程序 (通常是 lsass.exe) 嘗試載入的驅動程式，不符合安全性需求共用區段。
+-   **事件 3033**:此事件記錄了程式碼完整性檢查判斷某個處理程序 (通常是 lsass.exe) 嘗試載入不符合 Microsoft 簽署等級需求的驅動程式。
 
-共用的章節通常程式設計技術，允許執行個體資料與使用的相同的安全性層級的其他處理程序進行互動的結果。 這可以建立安全性弱點。
+-   **事件 3063**:此事件記錄了程式碼完整性檢查判斷某個處理程序 (通常是 lsass.exe) 嘗試載入不符合共用區段安全性需求的驅動程式。
 
-## <a name="BKMK_HowToConfigure"></a>如何設定認證其他 LSA 保護
-在裝置上執行 Windows 8.1（含或 UEFI 安全開機不），設定可能是執行此一節中所述的程序。 針對執行 Windows RT 8.1 的裝置，一律會支援 lsass.exe 保護，並不會被關閉。
+共用區段通常是程式設計技術的結果，可讓執行個體資料與使用相同資訊安全內容的其他處理程序互動。 這可能產生安全性弱點。
 
-### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>X86 型或 x64 型或不使用安全開機和 UEFI 的裝置
-X86 型或 x64 型在裝置上使用，以及 UEFI 安全開機的 UEFI 變數設定 UEFI 韌體中使用登錄鍵可以 LSA 保護。 設定會儲存在韌體中，無法刪除或變更登錄鍵 UEFI 變數。 UEFI 變數必須重設。
+## <a name="BKMK_HowToConfigure"></a>如何設定認證的額外 LSA 保護
+在裝置上執行 Windows 8.1 （或不含安全開機或 UEFI），設定可執行這一節所述的程序。 對於執行 Windows RT 8.1 裝置，lsass.exe 保護永遠啟用，，和不能關閉。
 
-x86 型或 x64 型不支援 UEFI 或安全開機的裝置已停用，無法儲存在韌體中的 LSA 保護的設定和只依賴登錄金鑰的狀態。 在本案例中，就可以使用裝置的遠端存取停用 LSA 保護。
+### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>在使用或不使用安全開機和 UEFI 的 x86 型或 x64 型裝置上
+在使用安全開機和 UEFI 的 x86 型或 x64 型裝置上，當啟用 LSA 保護時，會使用登錄機碼在 UEFI 韌體中設定 UEFI 變數。 此設定儲存在韌體中時，無法刪除或在登錄機碼中變更 UEFI 變數。 UEFI 變數必須重設。
 
-您可以使用下列程序，讓或停用 LSA 保護：
+不支援 UEFI 或停用安全開機的 x86 型或 x64 型裝置無法將 LSA 保護的設定儲存在韌體中，而是僅依賴登錄機碼。 在此情況下，透過遠端存取裝置可以停用 LSA 保護。
 
-##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>若要讓 LSA 一部電腦上的保護
+您可以使用以下程序啟用或停用 LSA 保護：
 
-1.  打開作業系統 (RegEdit.exe)，並瀏覽至位於登錄鍵：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
+##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>啟用單一電腦上的 LSA 保護
 
-2.  設定的值登錄鍵: [RunAsPPL」= dword:00000001。
+1.  開啟 [登錄編輯程式] (RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
 
-3.  電腦重新開機。
+2.  將登錄機碼的值設定為："RunAsPPL"= dword:00000001。
 
-##### <a name="to-enable-lsa-protection-using-group-policy"></a>若要讓 LSA 保護使用群組原則
+3.  重新啟動電腦。
 
-1.  打開群組原則管理主控台 (GPMC)。
+##### <a name="to-enable-lsa-protection-using-group-policy"></a>使用群組原則啟用 LSA 保護
 
-2.  建立新的 GPO 連結網域層級，或包含您電腦帳號組織單位，連結。 或者，您可以選取 GPO 已經部署。
+1.  開啟 [群組原則管理主控台] (GPMC)。
 
-3.  GPO 上按一下滑鼠右鍵，然後按一下**編輯**打開群組原則管理編輯器。
+2.  建立新的 GPO，該物件在網域層級連結或連結到包含您電腦帳戶的組織單位。 您也可以選取已經部署的 GPO。
 
-4.  展開**電腦設定**，展開 [**的喜好設定**，然後展開 [**的 Windows 設定**。
+3.  在 GPO 上按一下滑鼠右鍵，然後按一下 [編輯] 開啟 [群組原則管理編輯器]。
 
-5.  以滑鼠右鍵按一下**登錄**，指向 [**新**，然後按一下 [**登錄項目**。 **新登錄屬性**對話方塊中出現。
+4.  依序展開 [電腦設定]、[喜好設定] 及 [Windows 設定]。
 
-6.  在**Hive**清單中，按**跳**。
+5.  在 [登錄] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [登錄項目]。 隨即顯示 [新登錄內容] 對話方塊。
 
-7.  在**鍵路徑**清單中，瀏覽] **SYSTEM\CurrentControlSet\Control\Lsa**。
+6.  在 [登錄區] 清單中，按一下 [**HKEY_LOCAL_MACHINE**]。
 
-8.  在**值名稱**方塊中，輸入**RunAsPPL**。
+7.  在 **機碼路徑**清單中，瀏覽至**SYSTEM\CurrentControlSet\Control\Lsa**。
 
-9. 在**值類型**方塊中，按**呼叫完成**。
+8.  在 **值的名稱**方塊中，輸入**RunAsPPL**。
 
-10. 在**數值資料**方塊中，輸入**00000001**。
+9. 在 [數值類型] 方塊中，按一下 [REG_DWORD]。
 
-11. 按一下**[確定]**。
+10. 在 **值的資料**方塊中，輸入**00000001**。
 
-##### <a name="to-disable-lsa-protection"></a>若要停用 LSA 保護
+11. 按一下 [確定] 。
 
-1.  打開作業系統 (RegEdit.exe)，並瀏覽至位於登錄鍵：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
+##### <a name="to-disable-lsa-protection"></a>停用 LSA 保護
 
-2.  從登錄鍵 delete 下列值:「RunAsPPL「= dword:00000001。
+1.  開啟 [登錄編輯程式] (RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
 
-3.  使用 [本機安全性授權單位 (LSA) 受保護的處理程序退出工具 delete 如果裝置使用 [安全開機的 UEFI 變數。
+2.  從登錄機碼刪除下列值："RunAsPPL"= dword:00000001。
 
-    適用於退出工具的相關詳細資訊，請查看[下載本機安全性授權單位 (LSA) 受保護的處理程序退出官方的 Microsoft 下載中心」的](https://www.microsoft.com/download/details.aspx?id=40897)。
+3.  如果裝置使用安全開機，使用本機安全性授權 (LSA) 受保護的處理程序選擇退出工具刪除 UEFI 變數。
 
-    如需有關管理安全開機的詳細資訊，請查看[UEFI 韌體](https://technet.microsoft.com/library/hh824898.aspx)。
+    如需選擇退出工具的詳細資訊，請參閱[從 Microsoft 官方下載中心下載本機安全性授權 (LSA) 受保護的處理程序選擇退出](https://www.microsoft.com/download/details.aspx?id=40897)。
+
+    如需管理安全開機的詳細資訊，請參閱 [UEFI 韌體](https://technet.microsoft.com/library/hh824898.aspx)。
 
     > [!WARNING]
-    > 當安全開機已關閉時，則會重設所有的安全開機和相關 UEFI 設定。 停用 LSA 保護所有其他方式失敗時，才，您應該會關閉安全開機。
+    > 安全開機關閉時，會重設所有與安全開機和 UEFI 相關的設定。 您應該只在所有其他停用 LSA 保護的方法都失敗後，才關閉安全開機。
 
-### <a name="verifying-lsa-protection"></a>確認 LSA 保護
-若要探索如果 LSA 開始使用受保護模式開始使用 Windows 時，搜尋下列 WinInit 事件在**系統**在登入**Windows 登**:
+### <a name="verifying-lsa-protection"></a>驗證 LSA 保護
+若要確認 Windows 啟動時 LSA 是否在受保護模式下啟動，請在 [Windows 記錄] 的 [系統] 記錄檔中搜尋下列 WinInit 事件：
 
--   12: LSASS.exe 受保護層級的處理程序以開始使用：4
+-   12：LSASS.exe 已以受保護的處理程序方式啟動，層級為：4
 
 ## <a name="additional-resources"></a>其他資源
-[認證保護與管理](credentials-protection-and-management.md)
+[認證保護和管理](credentials-protection-and-management.md)
 
-[登入服務 LSA 檔案](https://go.microsoft.com/fwlink/?LinkId=392590)
+[LSA 的檔案簽署服務](https://go.microsoft.com/fwlink/?LinkId=392590)
 
 

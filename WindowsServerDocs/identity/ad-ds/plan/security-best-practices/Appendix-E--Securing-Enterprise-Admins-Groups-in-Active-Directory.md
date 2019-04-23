@@ -1,318 +1,319 @@
 ---
 ms.assetid: f643099e-f9c6-476f-9378-5a9228c39b33
-title: "附錄 E-保護企業 Active Directory 中的系統管理員群組"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 附錄 E-保護 Active Directory 中的 Enterprise Admins 群組
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 714bc0ab3fe15d09f4ccabb3f35d9b4519e5459c
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 976eb8c7159c8349b72bee05a5248b5cc116d96b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856719"
 ---
-# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>在 Active Directory 中附錄 e 保護企業管理員群組
+# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E：保護 Active Directory 中的 Enterprise Admins 群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 
-## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>在 Active Directory 中附錄 e 保護企業管理員群組  
-企業系統管理員 (EA) 群組中，位於森林根網域中，應包含在日常，可能的根網域的管理員，除了不使用者所述的保護提供[附錄 d 保護建系統管理員帳號 Active Directory 在](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)。  
+## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E：保護 Active Directory 中的 Enterprise Admins 群組  
+Enterprise Admins (EA) 群組，該表格位於樹系根網域中，應該包含在日常，與可能的例外狀況的根網域的系統管理員帳戶，沒有任何使用者，提供保護中所述[附錄 d:保護 Active Directory 中的內建的 Administrator 帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)。  
 
-企業系統管理員是，預設的森林中的每個網域中的系統管理員群組成員。 您不應該移除 EA 群組的每個網域中的系統管理員群組因為發生的樹系損壞復原案例中，EA 權限可能會有需。 安全的樹系企業系統管理員群組逐步指示，請依照下列為所述。  
+企業系統管理員 」 是，根據預設，每個樹系中網域系統管理員群組的成員。 您不應該移除每個網域中的系統管理員群組從 EA 群組，因為樹系災害復原案例中，萬一 EA 權限可能會需要。 應該保護樹系的 Enterprise Admins 群組中的逐步指示，請依照下列所述。  
 
-森林中的企業系統管理員群組：  
+樹系中 Enterprise Admins 群組：  
 
-1.  Gpo 連結到 Ou 包含成員伺服器及工作站每個網域中的，在企業系統管理員應該新增到下列使用者權限在**電腦設定 \ 原則 \windows 安全性設定本機 Settings\User 權限指派**:  
+1.  在 Gpo 連結到 Ou 包含成員伺服器和工作站，每個網域中的，Enterprise Admins 群組應該新增到下列中的使用者權限**電腦設定 \ 原則 \windows 設定 \ 安全性設定 \ 本機 Policies\使用者權限指派**:  
 
-    -   拒絕從網路存取此電腦  
+    -   拒絕從網路存取這台電腦  
 
-    -   拒絕以分批登入  
+    -   拒絕以批次工作登入  
 
-    -   拒絕登入即服務  
+    -   拒絕以服務方式登入  
 
-    -   在本機拒絕登入  
+    -   拒絕本機登入  
 
-    -   透過遠端桌面服務拒絕登入  
+    -   拒絕透過遠端桌面服務登入  
 
-2.  稽核屬性或企業系統管理員群組成員資格任何修改傳送通知的設定。  
+2.  設定稽核，傳送警示，如果對屬性或 Enterprise Admins 群組的成員資格進行任何修改。  
 
-### <a name="step-by-step-instructions-for-removing-all-members-from-the-enterprise-admins-group"></a>移除所有成員從系統管理員企業群組逐步指示  
+### <a name="step-by-step-instructions-for-removing-all-members-from-the-enterprise-admins-group"></a>從 Enterprise Admins 群組中移除所有成員的逐步指示  
 
-1.  在**伺服器管理員**，按一下 [**工具**，並按一下 [ **Active Directory 使用者和電腦**。  
+1.  在**伺服器管理員**，按一下**工具**，然後按一下**Active Directory 使用者和電腦**。  
 
-2.  如果您不管理主控台中，森林根網域以滑鼠右鍵按一下<Domain>、，然後按一下 [**變更網域**(其中<Domain>是您所管理的網域名稱)。  
+2.  如果您不想要管理根網域樹系中，在主控台樹狀目錄中，以滑鼠右鍵按一下<Domain>，然後按一下**變更網域**(其中<Domain>是您目前正在管理的網域名稱)。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)  
 
-3.  在**變更網域**對話方塊中，按**瀏覽]**，選取 [樹系，根網域，按一下 [ **[確定]**。  
+3.  在 [**變更網域**] 對話方塊中，按一下**瀏覽**，選取樹系根網域，然後按一下 **[確定]**。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_44.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_44.gif)  
 
-4.  若要移除的所有成員從 EA 群組：  
+4.  若要從 EA 群組中移除所有成員：  
 
-    1.  按兩下**企業系統管理員**群組，然後按一下 [**成員**索引標籤。  
+    1.  按兩下**Enterprise Admins**群組，然後按一下**成員** 索引標籤。  
 
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_45.gif)  
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_45.gif)  
 
-    2.  選取的群組成員，請按一下**移除**，按一下 [**是**，並按一下 [ **[確定]**。  
+    2.  選取群組的成員，然後按一下**移除**，按一下**是**，然後按一下**確定**。  
 
-5.  EA 群組的所有成員都移除了重複步驟 2。  
+5.  在移除所有群組成員的 EA 之前，請重複步驟 2。  
 
-### <a name="step-by-step-instructions-to-secure-enterprise-admins-in-active-directory"></a>逐步指示安全企業 Active Directory 中的系統管理員  
+### <a name="step-by-step-instructions-to-secure-enterprise-admins-in-active-directory"></a>保護 Active Directory 中的 Enterprise Admins 的逐步指示  
 
-1.  在**伺服器管理員**，按一下 [**工具**，並按**群組原則管理**。  
+1.  在 **伺服器管理員**，按一下**工具**，然後按一下**群組原則管理**。  
 
-2.  在主控台中，展開<Forest>\Domains\\<Domain>，然後**群組原則物件**(其中<Forest>樹系的名稱和<Domain>是您想要設定群組原則設定的網域名稱)。  
+2.  在主控台樹狀目錄中，依序展開<Forest>\Domains\\<Domain>，然後**群組原則物件**(其中<Forest>樹系的名稱和<Domain>是您想要的網域名稱群組原則設定）。  
 
     > [!NOTE]  
-    > 樹系包含多網域中應該每個需要保護企業系統管理員群組網域中建立 GPO 類似。  
+    > 在包含多個網域的樹系應該需要 Enterprise Admins 群組來保護每個網域中建立類似的 GPO。  
 
-3.  在主機上按一下滑鼠右鍵**群組原則物件**，按一下 [**新增]**。  
+3.  在主控台樹狀目錄中，以滑鼠右鍵按一下**群組原則物件**，然後按一下**新增**。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)  
 
-4.  在**新的 GPO**對話方塊中，輸入<GPO Name>，按一下**[確定]** (其中<GPO Name>是此 GPO 的名稱)。  
+4.  在**新的 GPO**  對話方塊中，輸入<GPO Name>，然後按一下**確定** (其中<GPO Name>此 GPO 的名稱)。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)  
 
-5.  在詳細資料窗格中，以滑鼠右鍵按一下<GPO Name>，並按一下 [**編輯**。  
+5.  在 [詳細資料] 窗格中，以滑鼠右鍵按一下<GPO Name>，然後按一下**編輯**。  
 
-6.  瀏覽至**電腦設定 \ 原則 \windows 安全性設定本機原則**，按一下 [**權限指派使用者]**。  
+6.  瀏覽至**電腦設定 \ 原則 \windows 設定 \ 本機原則**，然後按一下**使用者權限指派**。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_48.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_48.gif)  
 
-7.  設定使用者權限以避免企業系統管理員群組成員存取伺服器成員和工作站在網路上執行下列：  
+7.  設定使用者權限，以防止 Enterprise Admins 群組的成員透過網路存取成員伺服器和工作站，執行下列動作：  
 
     1.  按兩下**拒絕從網路存取這台電腦**，然後選取**定義這些原則設定**。  
 
-    2.  按一下**[新增使用者或群組**，按一下 [**瀏覽]**。  
+    2.  按一下 **新增使用者或群組**然後按一下**瀏覽**。  
 
-    3.  輸入**企業系統管理員**，按一下 [**檢查名稱]**，並按一下 [ **[確定]**。  
+    3.  型別**Enterprise Admins**，按一下**檢查名稱**，然後按一下**確定**。  
 
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_49.gif)  
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_49.gif)  
 
-    4.  按一下**[確定]**，以及**[確定]**一次。  
+    4.  按一下  **確定**，並**確定**一次。  
 
-8.  設定使用者權限以避免企業系統管理員群組成員分批身分登入，方法如下：  
+8.  設定使用者權限，以防止 Enterprise Admins 群組的成員無法以批次工作登入執行下列動作：  
 
-    1.  按兩下**拒絕以分批登入**，然後選取**定義這些原則設定**。  
+    1.  按兩下**拒絕以批次工作登入**，然後選取**定義這些原則設定**。  
 
-    2.  按一下**[新增使用者或群組**，按一下 [**瀏覽]**。  
-
-        > [!NOTE]  
-        > 在 [樹系包含多網域，按一下 [**位置**，然後選取 [樹系的根網域。  
-
-    3.  輸入**企業系統管理員**，按一下 [**檢查名稱]**，並按一下 [ **[確定]**。  
-
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_50.gif)  
-
-    4.  按一下**[確定]**，以及**[確定]**一次。  
-
-9. 設定使用者權限防止 EA 群組成員登入以服務，方法如下：  
-
-    1.  按兩下**以服務的 Deny 登入**，然後選取**定義這些原則設定**。  
-
-    2.  按一下**[新增使用者或群組**，然後按一下 [**瀏覽]**。  
+    2.  按一下 **新增使用者或群組**然後按一下**瀏覽**。  
 
         > [!NOTE]  
-        > 在 [樹系包含多網域，按一下 [**位置**，然後選取 [樹系的根網域。  
+        > 在包含多個網域樹系中，按一下**位置**和選取的樹系根網域。  
 
-    3.  輸入**企業系統管理員**，按一下 [**檢查名稱]**，並按一下 [ **[確定]**。  
+    3.  型別**Enterprise Admins**，按一下**檢查名稱**，然後按一下**確定**。  
 
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_51.gif)  
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_50.gif)  
 
-    4.  按一下**[確定]**，以及**[確定]**一次。  
+    4.  按一下  **確定**，並**確定**一次。  
 
-10. 設定使用者權限以避免企業系統管理員群組成員登入本機成員伺服器以及工作站，方法如下：  
+9. 設定使用者權限，以防止 EA 群組的成員登入為服務執行下列動作：  
 
-    1.  按兩下**在本機拒絕登入**，然後選取**定義這些原則設定**。  
+    1.  按兩下**拒絕以服務登**，然後選取**定義這些原則設定**。  
 
-    2.  按一下**[新增使用者或群組**，然後按一下 [**瀏覽]**。  
-
-        > [!NOTE]  
-        > 在 [樹系包含多網域，按一下 [**位置**，然後選取 [樹系的根網域。  
-
-    3.  輸入**企業系統管理員**，按一下 [**檢查名稱]**，並按一下 [ **[確定]**。  
-
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_52.gif)  
-
-    4.  按一下**[確定]**，以及**[確定]**一次。  
-
-11. 設定使用者權限以避免企業系統管理員群組成員存取成員伺服器，並透過遠端桌面服務工作站，方法如下：  
-
-    1.  按兩下**透過遠端桌面服務拒絕登入**，然後選取**定義這些原則設定**。  
-
-    2.  按一下**[新增使用者或群組**，然後按一下 [**瀏覽]**。  
+    2.  按一下 **新增使用者或群組**，然後按一下**瀏覽**。  
 
         > [!NOTE]  
-        > 在 [樹系包含多網域，按一下 [**位置**，然後選取 [樹系的根網域。  
+        > 在包含多個網域樹系中，按一下**位置**和選取的樹系根網域。  
 
-    3.  輸入**企業系統管理員**，按一下 [**檢查名稱]**，並按一下 [ **[確定]**。  
+    3.  型別**Enterprise Admins**，按一下**檢查名稱**，然後按一下**確定**。  
 
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_53.gif)  
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_51.gif)  
 
-    4.  按一下**[確定]**，以及**[確定]**一次。  
+    4.  按一下  **確定**，並**確定**一次。  
 
-12. 結束**群組原則編輯器] 管理**，按一下 [**檔案**，並按**結束**。  
+10. 設定使用者權限，以防止 Enterprise Admins 群組的成員登入本機成員伺服器和工作站執行下列動作：  
 
-13. 在**群組原則管理**，將 GPO 連結到工作站 Ou 與成員伺服器，方法如下：  
+    1.  按兩下**拒絕本機登入**，然後選取**定義這些原則設定**。  
 
-    1.  瀏覽至<Forest>\Domains\\<Domain> (其中<Forest>是樹系的名稱及<Domain>是您想要設定群組原則設定的網域名稱)。  
+    2.  按一下 **新增使用者或群組**，然後按一下**瀏覽**。  
 
-    2.  以滑鼠右鍵按一下組織單位，將會套用至 GPO，然後按一下**的現有 GPO 連結**。  
+        > [!NOTE]  
+        > 在包含多個網域樹系中，按一下**位置**和選取的樹系根網域。  
 
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_54.gif)  
+    3.  型別**Enterprise Admins**，按一下**檢查名稱**，然後按一下**確定**。  
 
-    3.  選取您剛建立 GPO 並按一下 [ **[確定]**。  
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_52.gif)  
 
-        ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_55.gif)  
+    4.  按一下  **確定**，並**確定**一次。  
 
-    4.  建立包含工作站所有其他 Ou 的連結。  
+11. 設定使用者權限，以防止 Enterprise Admins 群組的成員存取成員伺服器和工作站，透過遠端桌面服務，執行下列動作：  
 
-    5.  建立所有其他 Ou 包含成員伺服器的連結。  
+    1.  按兩下**拒絕透過遠端桌面服務登入**，然後選取**定義這些原則設定**。  
 
-    6.  樹系包含多網域中應該每個需要保護企業系統管理員群組網域中建立 GPO 類似。  
+    2.  按一下 **新增使用者或群組**，然後按一下**瀏覽**。  
+
+        > [!NOTE]  
+        > 在包含多個網域樹系中，按一下**位置**和選取的樹系根網域。  
+
+    3.  型別**Enterprise Admins**，按一下**檢查名稱**，然後按一下**確定**。  
+
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_53.gif)  
+
+    4.  按一下  **確定**，並**確定**一次。  
+
+12. 若要結束**群組原則管理編輯器**，按一下**檔案**，然後按一下**結束**。  
+
+13. 在 **群組原則管理**，將 GPO 連結到成員伺服器和工作站的 Ou，執行下列動作：  
+
+    1.  瀏覽至<Forest>\Domains\\ <Domain> (其中<Forest>樹系的名稱和<Domain>是您要將群組原則設定的網域名稱)。  
+
+    2.  以滑鼠右鍵按一下 OU GPO 會套用至，然後按一下**連結到現有的 GPO**。  
+
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_54.gif)  
+
+    3.  選取您剛才建立的 GPO，然後按一下**確定**。  
+
+        ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_55.gif)  
+
+    4.  建立連結至包含工作站的所有其他 Ou。  
+
+    5.  建立連結至包含成員伺服器的所有其他 Ou。  
+
+    6.  在包含多個網域的樹系應該需要 Enterprise Admins 群組來保護每個網域中建立類似的 GPO。  
 
 > [!IMPORTANT]  
-> 如果捷徑伺服器可用來管理網域控制站和 Active Directory，確定捷徑伺服器位於組織單位此 Gpo 不連結。  
+> 如果跳躍伺服器用來管理網域控制站和 Active Directory，請確定跳躍伺服器都位於此未連結 Gpo OU 中。  
 
-### <a name="verification-steps"></a>步驟驗證  
+### <a name="verification-steps"></a>驗證步驟  
 
-#### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>請檢查 「 Deny 從網路存取此電腦] GPO 設定  
-從任何成員伺服器或 GPO 變更 （例如 「 捷徑伺服器） 」 不會受到影響的工作站，嘗試透過受 GPO 變更網路存取成員伺服器或工作站。 要檢查 GPO 設定，請嘗試將系統磁碟機對應使用**網路使用**命令執行下列步驟：  
+#### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>確認 「 拒絕從網路存取這台電腦 」 GPO 設定  
+從任何成員伺服器或工作站 GPO 變更 （例如 「 跳躍伺服器 」） 不會受到影響，嘗試存取的成員伺服器或工作站 GPO 變更的影響網路上。 若要確認 GPO 設定，請嘗試使用對應的系統磁碟機**NET USE**命令藉由執行下列步驟：  
 
-1.  登入本機使用為 EA 群組成員。  
+1.  在本機使用 EA 群組的成員帳戶登入。  
 
-2.  使用滑鼠，將滑鼠指標移動到畫面的右上角或右下角。 當**常用**列出現時，按**搜尋**。  
+2.  使用滑鼠，請將指標移到螢幕的右上或右下角。 當**常用鍵**列出現時，按一下**搜尋**。  
 
-3.  在**搜尋**方塊中，輸入**命令提示字元**，以滑鼠右鍵按一下**命令提示字元**，，然後按一下**以系統管理員身分執行**打開提升權限的命令提示字元。  
+3.  在**搜尋**方塊中，輸入**命令提示字元**，以滑鼠右鍵按一下**命令提示字元**，然後按一下**系統管理員身分執行**開啟已提升權限命令提示字元。  
 
-4.  核准提高權限提示，請按一下**[是]**。  
+4.  當系統提示您核准提升權限，按一下**是**。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)  
 
-5.  在**命令提示字元**視窗中，輸入**網路使用 \\\<Server Name>\c$**，其中<Server Name>是您嘗試在網路上存取的工作站成員伺服器的名稱。  
+5.  在 **命令提示字元**視窗中，輸入**net 使用\\ \\\<伺服器名稱\>\c$**，其中\<伺服器名稱\>是成員伺服器或您嘗試透過網路存取的工作站的名稱。  
 
-6.  下列螢幕擷取畫面顯示應該會出現錯誤訊息。  
+6.  下列螢幕擷取畫面會顯示應該會出現錯誤訊息。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_57.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_57.gif)  
 
-#### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>確認 [拒絕登入分批為 「 GPO 設定  
+#### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>確認 「 拒絕登入以批次工作 」 GPO 設定  
 
-從任何成員伺服器或受到 GPO 變更工作站，登入本機。  
+從任何成員伺服器或工作站 GPO 變更的影響，在本機登入。  
 
-##### <a name="create-a-batch-file"></a>建立批次檔案  
+##### <a name="create-a-batch-file"></a>建立批次檔  
 
-1.  使用滑鼠，將滑鼠指標移動到畫面的右上角或右下角。 當**常用**列出現時，按**搜尋**。  
+1.  使用滑鼠，請將指標移到螢幕的右上或右下角。 當**常用鍵**列出現時，按一下**搜尋**。  
 
-2.  在**搜尋**方塊中，輸入**「 記事本 」**，並按**記事本**。  
+2.  中**搜尋**方塊中，輸入**記事本**，然後按一下**記事本**。  
 
-3.  在**[記事本]**，輸入**dir c:**。  
+3.  在 **記事本**，型別**dir c:**。  
 
-4.  按一下**檔案**，按一下 [**儲存為**。  
+4.  按一下 **檔案**，然後按一下**另存新檔**。  
 
-5.  在**檔案**名稱] 方塊中，輸入** <Filename>.bat** (其中<Filename>是新的 「 批次檔案的名稱)。  
+5.  在 **檔案**名稱方塊中，輸入 **<Filename>.bat** (其中<Filename>是新的批次檔的名稱)。  
 
-##### <a name="schedule-a-task"></a>排程工作  
+##### <a name="schedule-a-task"></a>排程的工作  
 
-1.  使用滑鼠，將滑鼠指標移動到畫面的右上角或右下角。 當**常用**列出現時，按**搜尋**。  
+1.  使用滑鼠，請將指標移到螢幕的右上或右下角。 當**常用鍵**列出現時，按一下**搜尋**。  
 
-2.  在**搜尋**方塊中，輸入**工作排程器**，並按**工作排程器**。  
+2.  在 **搜尋**方塊中，輸入**工作排程器**，然後按一下**工作排程器**。  
 
     > [!NOTE]  
-    > 在電腦上執行 Windows 8 的**搜尋**方塊中，輸入**排程工作**，並按**排程工作**。  
+    > 在電腦上執行 Windows 8 中，在**搜尋**方塊中，輸入**排程工作**，然後按一下**排程工作**。  
 
-3.  按一下**動作**，按一下 [**建立工作**。  
+3.  按一下 **動作**，然後按一下**建立工作**。  
 
-4.  在**建立工作**對話方塊中，輸入** <Task Name> ** (其中<Task Name>是新工作的名稱)。  
+4.  在 [**建立工作**] 對話方塊中，輸入**<Task Name>** (其中<Task Name>是新工作的名稱)。  
 
-5.  按一下**動作**索引標籤，然後按**新增]**。  
+5.  按一下 **動作**索引標籤，然後按一下**新增**。  
 
-6.  在**動作**欄位中，選取**開始程式]**。  
+6.  在 **動作**欄位中，選取**啟動程式**。  
 
-7.  在**程式日指令碼**，按一下 [**瀏覽**，找出並選取 [建立在 「 批次檔案**建立批次檔案**區段，然後按一下**開放**。  
+7.  底下**程式或指令碼**，按一下**瀏覽**，找出並選取 批次檔中建立**建立批次檔**區段，然後按一下 **開啟**.  
 
-8.  按一下**[確定]**。  
+8.  按一下 [確定] 。  
 
-9. 按一下**一般**索引標籤。  
+9. 按一下 [一般] 索引標籤。  
 
-10. 在**安全性選項**欄位中，按**變更使用者或群組**。  
+10. 在 **安全性選項**欄位中，按一下**變更使用者或群組**。  
 
-11. 輸入 account 成員 EAs 群組的名稱，請按一下**檢查名稱]**，按一下 [ **[確定]**。  
+11. 輸入 EAs 群組的成員帳戶的名稱，再按一下**檢查名稱**，然後按一下**確定**。  
 
-12. 選取 [**是否使用者登入或不執行**，然後選取**不要儲存密碼**。 任務將只可以存取本機電腦資源。  
+12. 選取 **不論使用者登入與否均執行**，然後選取**不要儲存密碼**。 工作將只包含本機電腦資源的存取權。  
 
-13. 按一下**[確定]**。  
+13. 按一下 [確定] 。  
 
-14. 應該會出現一個對話方塊，要求帳號認證執行的工作。  
+14. 應該會出現一個對話方塊，要求的使用者帳戶的認證來執行工作。  
 
-15. 輸入認證之後, 請按**[確定]**。  
+15. 輸入認證之後，按一下**確定**。  
 
-16. 應該會出現一個對話方塊類似下列。  
+16. 應該會出現如下所示的對話方塊。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_58.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_58.gif)  
 
-#### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>確認 [拒絕登入即服務 」 GPO 設定  
+#### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>確認 「 拒絕登入為服務 」 GPO 設定  
 
-1.  從任何成員伺服器或受到 GPO 變更工作站，登入本機。  
+1.  從任何成員伺服器或工作站 GPO 變更的影響，在本機登入。  
 
-2.  使用滑鼠，將滑鼠指標移動到畫面的右上角或右下角。 當**常用**列出現時，按**搜尋**。  
+2.  使用滑鼠，請將指標移到螢幕的右上或右下角。 當**常用鍵**列出現時，按一下**搜尋**。  
 
-3.  在**搜尋**方塊中，輸入**服務**，並按**服務**。  
+3.  在 **搜尋**方塊中，輸入**服務**，然後按一下**服務**。  
 
-4.  找出並按兩下 [**列印多工緩衝處理器**。  
+4.  找出並按兩下**列印多工緩衝處理器**。  
 
-5.  按一下**登入**索引標籤。  
+5.  单击 **“登录”** 选项卡。  
 
-6.  在**以登入**，請選取**此 account**。  
+6.  底下**身分登入**，選取**此帳戶**。  
 
-7.  按一下**瀏覽**，輸入名稱為 EAs 群組成員後，按**檢查名稱**，並按一下 [ **[確定]**。  
+7.  按一下 **瀏覽**，輸入 EAs 群組的成員帳戶的名稱，按一下**檢查名稱**，然後按一下**確定**。  
 
-8.  在**的密碼：**和**確認密碼**、 輸入選取的 account 的密碼，然後按一下 [ **[確定]**。  
+8.  底下**密碼：** 並**確認密碼**，輸入所選的帳戶的密碼，然後按一下**確定**。  
 
-9. 按一下**[確定]**三次。  
+9. 按一下 **確定**三次。  
 
-10. 以滑鼠右鍵按一下**列印多工緩衝處理器**服務，然後選取 [**重新開機**。  
+10. 以滑鼠右鍵按一下**列印多工緩衝處理器**服務，然後選取**重新啟動**。  
 
-11. 服務會重新開始時，應該會顯示對話方塊中，如下所示。  
+11. 重新啟動服務時，應該會出現如下所示的對話方塊。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_59.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_59.gif)  
 
-#### <a name="revert-changes-to-the-printer-spooler-service"></a>還原已變更的印表機多工緩衝處理器服務  
+#### <a name="revert-changes-to-the-printer-spooler-service"></a>還原的列印多工緩衝處理器服務的變更  
 
-1.  從任何成員伺服器或受到 GPO 變更工作站，登入本機。  
+1.  從任何成員伺服器或工作站 GPO 變更的影響，在本機登入。  
 
-2.  使用滑鼠，將滑鼠指標移動到畫面的右上角或右下角。 當**常用**列出現時，按**搜尋**。  
+2.  使用滑鼠，請將指標移到螢幕的右上或右下角。 當**常用鍵**列出現時，按一下**搜尋**。  
 
-3.  在**搜尋**方塊中，輸入**服務**，並按**服務**。  
+3.  在 **搜尋**方塊中，輸入**服務**，然後按一下**服務**。  
 
-4.  找出並按兩下 [**列印多工緩衝處理器**。  
+4.  找出並按兩下**列印多工緩衝處理器**。  
 
-5.  按一下**登入**索引標籤。  
+5.  单击 **“登录”** 选项卡。  
 
-6.  在**以登入**，請選取**本機系統**帳號，並按**[確定]**。  
+6.  底下**身分登入**，選取**本機系統**帳戶，再按一下**確定**。  
 
-#### <a name="verify-deny-log-on-locally-gpo-settings"></a>確認 [拒絕登入本機 」 GPO 設定  
+#### <a name="verify-deny-log-on-locally-gpo-settings"></a>確認 「 拒絕本機登入 」 GPO 設定  
 
-1.  從任何成員伺服器或工作站受到 GPO 變更，嘗試登入本機使用為 EA 群組成員。 應該會出現一個對話方塊類似下列。  
+1.  從任何成員伺服器或工作站 GPO 變更的影響，嘗試在本機使用 EA 群組的成員帳戶登入。 應該會出現如下所示的對話方塊。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_60.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_60.gif)  
 
-#### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>確認 [拒絕登入遠端桌面服務透過 「 GPO 設定  
+#### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>確認 「 拒絕透過登入遠端桌面服務 」 GPO 設定  
 
-1.  使用滑鼠，將滑鼠指標移動到畫面的右上角或右下角。 當**常用**列出現時，按**搜尋**。  
+1.  使用滑鼠，請將指標移到螢幕的右上或右下角。 當**常用鍵**列出現時，按一下**搜尋**。  
 
-2.  在**搜尋**方塊中，輸入**遠端桌面連接**，然後按一下 [**遠端桌面連接**。  
+2.  在 **搜尋**方塊中，輸入**遠端桌面連線**，然後按一下**遠端桌面連線**。  
 
-3.  在**電腦**欄位中，輸入您想要連接，然後按一下 [電腦名稱**連接**。 （您也可以輸入 IP 位址，而不是電腦名稱）。  
+3.  在 **電腦**欄位中，輸入您想要連接，然後按一下 電腦名稱**Connect**。 （您也可以輸入的 IP 位址，而非電腦名稱）。  
 
-4.  出現提示時，提供的認證為 EA 群組成員。  
+4.  出現提示時，提供 EA 群組成員的帳戶認證。  
 
-5.  應該會出現一個對話方塊類似下列。  
+5.  應該會出現如下所示的對話方塊。  
 
-    ![系統管理員群組安全企業版](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_61.gif)  
+    ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_61.gif)  

@@ -1,6 +1,6 @@
 ---
-title: "安裝 Windows Server Essentials 移轉模式 1"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 以移轉模式 1 安裝 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,74 +13,75 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 808a4b1e120fa559d603b34ad006b18de6b94378
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847689"
 ---
-# <a name="install-windows-server-essentials-in-migration-mode1"></a>安裝 Windows Server Essentials 移轉模式 1
+# <a name="install-windows-server-essentials-in-migration-mode1"></a>以移轉模式 1 安裝 Windows Server Essentials
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-您可以在您網路上執行的 Windows Server Essentials，讓只有一個伺服器，必須網路的網域控制站伺服器。  
+您可以在執行 Windows Server Essentials，您網路上只有一部伺服器，該伺服器必須是網域控制站的網路。  
   
- 當您安裝 Windows Server Essentials 移轉模式時，在安裝精靈會執行下列工作：  
+ 當您安裝 Windows Server Essentials 以移轉模式時，安裝精靈會執行下列工作：  
   
-1.  安裝和 Windows Server Essentials 伺服器軟體設定目的伺服器上。  
+1.  安裝和設定目的地伺服器上的 Windows Server Essentials 伺服器軟體。  
   
-2.  更新至最新版本的網域結構描述。  
+2.  將網域架構更新至最新版本。  
   
-3.  加入網域現有目的伺服器。 來源伺服器和目的地伺服器可以已經成員相同的網域之前完成此移轉程序。 移轉完成之後，您必須從網路移除來源伺服器 21 天中。  
+3.  將目的地伺服器加入現有網域。 移轉程序完成之前，來源伺服器與目的地伺服器可以是相同網域的成員。 移轉完成之後，您必須在 21 天內從網路中移除來源伺服器。  
   
     > [!WARNING]
-    >  錯誤訊息會新增至事件登入期間 21 日優惠直到您移除您的網路來源伺服器每一天。 將文字的訊息會顯示 「 FSMO 角色檢查偵測到條件授權原則遵守退出的環境中。 管理伺服器必須按住主要網域控制站和網域命名主要 Active Directory 角色。 請移至管理伺服器的 Active Directory 角色現在。 此伺服器將會自動關閉如果中的第一次此條件偵測到的時間 21 天無法修正問題。 」 21 日優惠期間之後來源伺服器會關閉。  
+    >  在您從網路移除來源伺服器之前的 21 天寬限期內，每天都會有一則錯誤訊息新增至事件記錄檔。 訊息文字為：「FSMO 角色檢查偵測到您的環境中有一個條件不符合授權原則。 管理伺服器必須具有網域主控站和網域命名主要 Active Directory 角色。 請立即將 Active Directory 角色移至管理伺服器。 如果從第一次偵測到這個情況後的 21 天內未修正此問題，將會自動關閉這部伺服器。」 21 天寬限期之後，會關閉來源伺服器。  
   
-4.  從來源伺服器的操作 （也稱為彈性的單一主機操作或 FSMO） 主機傳送到目的伺服器。 操作主機角色是標準資料傳輸與更新程式方法不足時使用的特定的網域控制站工作。 網域控制站伺服器目的地時，它必須按住作業主機角色。  
+4.  從來源伺服器將操作主機 (也稱為彈性單一主機操作或 FSMO) 角色轉移到目的地伺服器。 操作主機角色是特殊化的網域控制站工作，主要用於不適合使用標準資料傳送與更新方法的情況。 當目的地伺服器成為網域控制站時，它必須擁有操作主機角色。  
   
-5.  設定為通用伺服器的目的地的伺服器。 管理分散式的資料存放庫網域控制站伺服器通用。 它包含每個物件 Active Directory 森林中的每個網域中的搜尋、 部分表示。  
+5.  將目的地伺服器設定成通用類別目錄伺服器。 通用類別目錄伺服器是負責管理分散式資料儲存機制的網域控制站。 它包含 Active Directory 樹系中每個網域之每個物件的可搜尋、部分表示。  
   
-6.  設定目標伺服器網站授權伺服器。  
+6.  將目的地伺服器設定成站台授權伺服器。  
   
-##  <a name="BKMK_Install"></a>目的地伺服器上安裝 Windows Server Essentials  
- 若要安裝 Windows Server Essentials 設定目標伺服器移轉模式中，執行下列程序。  
+##  <a name="BKMK_Install"></a> 在目的地伺服器上安裝 Windows Server Essentials  
+ 若要安裝和設定 Windows Server Essentials 以移轉模式在目的地伺服器上，執行下列程序。  
   
-#### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>目的地伺服器上安裝 Windows Server Essentials  
+#### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>若要在目的地伺服器上安裝 Windows Server Essentials  
   
-1.  關閉目的伺服器上與 Windows Server Essentials DVD1 插入 DVD 光碟機。 如果您看到的訊息，詢問您是否想要從 CD 或 DVD 開機，請按任意鍵來執行動作。  
-  
-    > [!NOTE]
-    >  如果目的伺服器支援的 USB 快閃磁碟機開機，您可以使用**Windows 7 USB/DVD 下載工具**來建立可開機的 USB 快閃磁碟機從 Windows Server Essentials 的 ISO 檔案。 使用 USB 快閃磁碟機可以大幅加速，安裝程序因為快閃磁碟機朗讀資料更快地比 DVD-ROM 光碟機。 建立可開機的 USB 快閃磁碟機之後，您可以新增回應檔案到快閃磁碟機。 您可以[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)Microsoft 網上商店網站可用。  
+1.  開啟目的地伺服器上與 Windows Server Essentials DVD1 插入 DVD 光碟機。 如果您看到一則訊息，詢問您是否要從 CD 或 DVD 開機，請按任一鍵以執行這項操作。  
   
     > [!NOTE]
-    >  如果目的伺服器不會從 DVD 開機時，電腦重新開機，並檢查以確保 BIOS 設定**DVD-ROM**中列出的第一次開機順序。 如需如何變更 BIOS 設定開機順序，查看您的硬體製造商。  
+    >  如果目的地伺服器支援從 USB 快閃磁碟機開機，您可以使用**Windows 7 USB/DVD 下載工具**從 Windows Server Essentials 的 ISO 檔案建立可開機的 USB 快閃磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)免費 Microsoft Store 網站。  
   
-2.  按一下**安裝新**。  
+    > [!NOTE]
+    >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。  
   
-3.  如果您不會顯示在清單中內部硬碟，請按一下**載入驅動程式**並安裝必要的驅動程式，才能繼續。  
+2.  按一下 [新的安裝] 。  
   
-4.  選取核取方塊，確認所有檔案和資料夾主要硬碟繼續嗎、，然後按一下**安裝**。  
+3.  如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]，並在繼續前先安裝必要的驅動程式。  
   
-5.  在**選擇伺服器安裝模式**頁面上，按一下 [**伺服器移轉**，然後提供移轉所需的資訊。  
+4.  選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]。  
   
-6.  當**您伺服器順利**訊息會出現，按一下 [**關閉**。  
+5.  在 [選擇伺服器的安裝模式] 頁面上，按一下 [伺服器移轉]，然後提供必要的移轉資訊。  
   
- 安裝完成後，您會自動登入的使用者管理員和您所提供的移轉回應檔案中的密碼。  
+6.  當 [已成功移轉您的伺服器]  訊息出現，請按一下 [關閉] 。  
+  
+ 安裝完成後，會自動以您在移轉回應檔案中提供的系統管理員使用者帳戶與密碼登入。  
   
 > [!NOTE]
->  若要解除鎖定的桌面，安裝 Windows Server Essentials 時，請使用建管理員並留密碼。  
+>  若要解除鎖定桌面，安裝 Windows Server Essentials 時，使用內建的 administrator 帳戶並將密碼保持空白。  
   
-##  <a name="BKMK_VerifyTheHealthOfDC"></a>請確認網域控制站的健康狀態  
- 移轉的之前，您應該確定都良好的網域控制站和 Windows Server Essentials 的網路。  
+##  <a name="BKMK_VerifyTheHealthOfDC"></a> 確認網域控制站的健全狀況  
+ 繼續進行移轉之前，您應該確保網域控制站與 Windows Server Essentials 網路的狀況良好。  
   
- 下表列出的工具，可供您診斷問題目的伺服器上網路並網域中：  
+ 下表列出您可以用來診斷目的地伺服器、網路和網域問題的工具：  
   
 |工具|描述|  
 |----------|-----------------|  
-|Netdiag|可協助找出網路與連接的問題。 如需詳細資訊，並下載，請查看[Netdiag](https://go.microsoft.com/fwlink/?LinkId=217388)。|  
-|Dcdiag.exe|分析網域控制站森林或企業版中的狀態，並報告來協助您進行疑難排解的問題。 如需詳細資訊，並下載，請查看[Dcdiag](https://go.microsoft.com/fwlink/?LinkId=217389)。|  
-|Repadmin.exe|可協助您診斷複寫網域控制站之間的問題。 這項工具會需要執行的命令列參數。 如需詳細資訊，並下載，請查看[Repadmin](https://go.microsoft.com/fwlink/?LinkId=217387)。|  
+|Netdiag|協助隔離網路和連線問題。 如需詳細資訊及下載資訊，請參閱 [Netdiag](https://go.microsoft.com/fwlink/?LinkId=217388)。|  
+|Dcdiag.exe|分析樹系或企業的網域控制站狀態，然後回報問題以協助您疑難排解。 如需詳細資訊及下載資訊，請參閱 [Dcdiag](https://go.microsoft.com/fwlink/?LinkId=217389)。|  
+|Repadmin.exe|協助您診斷網域控制站間的複寫問題。 這個工具需要命令列參數才能執行。 如需詳細資訊及下載資訊，請參閱 [Repadmin](https://go.microsoft.com/fwlink/?LinkId=217387)。|  
   
- 您應該會修正移轉進行之前，請先這些工具報告所有的問題。  
+ 您應該修正這些工具回報的所有問題，然後再繼續移轉作業。  
   
 > [!NOTE]
->  如果您打算移轉到另一個先 Exchange server 的電子郵件，請查看[和 Windows Server Essentials 整合 On 先 Exchange Server](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md)的資訊，了解如何設定您在場所 Exchange server。
+>  如果您打算將電子郵件移轉到其他內部部署 Exchange server，請參閱[整合內部部署 Exchange Server 與 Windows Server Essentials](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md)如需有關如何設定您的內部部署 Exchange server 資訊。

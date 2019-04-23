@@ -1,6 +1,6 @@
 ---
 ms.assetid: e22d84a5-113d-4bec-b484-036ed29f0c28
-title: 加入的任何裝置 SSO 和順暢的第二個工作地點因數驗證跨公司應用程式
+title: 從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,58 +9,59 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4926eb32a0bbffb092ec02ca2508fe97d52d1466
-ms.sourcegitcommit: 46439194e5deb0fa5f338b428f95dd6b5b799337
+ms.openlocfilehash: 0ee22afd6fdec96ab69d915e4730bb834d2ab8ad
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855519"
 ---
-# <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>加入的任何裝置 SSO 和順暢的第二個工作地點因數驗證跨公司應用程式
+# <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
 
->適用於： Windows Server 2012 R2
+>適用於：Windows Server 2012 R2
 
-快速消費者裝置，並普遍資訊存取權的數目增加變更連絡人察覺技術的方式。 常使用的資訊技術整天輕鬆存取的資訊，以及模糊傳統工作和家庭生命之間的邊界。 這些轉移邊界附帶信念技術選取及自訂使用者人物簡介預覽、活動及排程調整的個人-應該延伸到地點。 若要調整的個人消費者裝置連接到企業網路越來越需求，我們引進下列值建議：
+消費性裝置數目與資訊存取需求的快速增加正在變更人們對其科技的看待方式。 今日對於資訊技術的持續使用與簡單的資訊存取方式，使得工作與居家生活的界線越來越模糊。 這些正在變動的界線會伴隨著一個信念技術選取和自訂以符合使用者的人物、 活動和排程該個人-應該延伸到工作地點。 為了配合讓個人消費性裝置連線到企業網路這種持續成長的需求，我們引進了下列價值主張：
 
--   系統管理員可以控制者可存取應用程式、 使用者、 裝置和位置為基礎的公司資源。
+-   系統管理員可以根據應用程式、使用者、裝置與位置，來控制誰可以存取公司資源。
 
--   員工可以在任何裝置上存取應用程式與地方，資料。 員工可以在瀏覽器應用程式或企業中使用單一登入。
+-   員工可以隨時從任何裝置存取應用程式與資料。 員工可以在瀏覽器應用程式與企業應用程式中使用「單一登入」。
 
-## <a name="key-concepts-introduced-in-the-solution"></a>主要概念方案
+## <a name="key-concepts-introduced-in-the-solution"></a>此解決方案引進的重要概念
 
-### <a name="workplace-join"></a>加入的工作地點
-使用工作地點加入，資訊的背景工作就可以加入存取公司資源和服務的公司的工作地點電腦使用個人裝置。 當您到您的工作場所加入您的個人裝置時，在 [已知的裝置，並提供順暢的第二個因數驗證和單一登入的工作地點資源和應用程式。 當裝置已加入所加入的工作地點時，可以擷取屬性裝置的 directory 從磁碟機條件存取為了授權的應用程式的安全性權杖發行。 Windows 8.1 和 iOS 6.0 + 和 Android 4.0 + 裝置可以使用工作地點加入加入。
+### <a name="workplace-join"></a>工作地方聯結
+透過使用「加入工作地點網路」，資訊工作者可以讓其個人裝置加入公司工作地點電腦所在的網路，以存取公司資源與裝置。 當您將個人裝置加入到您的工作地點時，它會成為已知裝置並提供無縫式次要因素驗證與「單一登入」，讓您可以存取工作地點資源與應用程式。 當裝置是使用「加入工作地點網路」加入時，您可以從目錄擷取裝置屬性，以針對授權簽發應用程式安全性權杖目的提供條件式存取。 可使用 [加入工作地點網路] 來加入 Windows 8.1 與 iOS 6.0+ 和 Android 4.0+ 裝置。
 
-### <a name="BKMK_DRS"></a>Azure Active Directory 裝置登記服務
-地點加入 Azure Active Directory 裝置登記服務是由可能。 當裝置已加入所加入的工作地點時，服務 provisions 裝置在 Azure Active Directory 物件，並會用來表示裝置的身分本機裝置上設定按鍵。 此裝置的身分裝載的雲端和先在應用程式再使用與存取控制規則。
+### <a name="BKMK_DRS"></a>Azure Active Directory 裝置註冊服務
+可使用 Azure Active Directory 裝置註冊服務來執行 [加入工作地點網路]。 使用 [加入工作地點網路] 加入裝置時，服務會在 Azure Active Directory 中佈建裝置物件，然後在本機裝置上設定可用來代表裝置身分識別的金鑰。 接著可針對雲端和內部部署中裝載的應用程式，搭配使用此裝置身分識別與存取控制規則。
 
-如需關於 Azure Active Directory 裝置登記服務的詳細資訊，請查看[Azure Active Directory 裝置登記服務概觀](https://msdn.microsoft.com/6a14cb1f-a058-4453-8ede-d9f4a66a7073.aspx)。
+如需詳細資訊，請參閱 < [Azure Active Directory 中的裝置管理簡介](https://docs.microsoft.com/azure/active-directory/device-management-introduction)。
 
-### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>為順暢的第二個工作地點加入因素驗證
-公司可以管理相關資訊存取及磁碟機控管時授消費者與企業資源存取裝置的相容性風險。 在裝置上的工作地點加入提供給系統管理員下列功能：
+### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>透過「加入工作地點網路」提供無縫式次要因素驗證
+公司可以管理與資訊存取相關的風險並進行合規性控管，同時將對公司資源的存取權授消費性裝置。 裝置上的「加入工作地點網路」為系統管理員提供下列功能：
 
--   裝置驗證辨識已知的裝置。 系統管理員可以使用此資訊來資源磁碟機條件存取和控制存取。
+-   透過裝置驗證識別已知裝置。 系統管理員可以使用此資訊來允許條件式存取並控制對資源的存取。
 
--   提供更順暢登入體驗的使用者存取公司資源來自信任的裝置。
+-   為使用者提供更好的無縫式登入體驗，讓其可以從信任的裝置存取公司資源。
 
 ### <a name="single-sign-on"></a>單一登入
-單一登入 (SSO) 在本案例的範圍是減少密碼提示輸入存取公司資源已知的裝置的使用者的功能。 這項功能，表示使用者接到生命 SSO 存取公司應用程式和資源此裝置上的一次。 如果裝置使用工作地點加入，係使用此裝置的使用者會取得七天預設持續 SSO]。 此使用者有順暢登入體驗在相同的工作階段，或在新增工作階段。
+本案例中的單一登入 (SSO) 功能可以減少當使用者從已知裝置存取公司資源時會看到的密碼提示次數。 此功能表示在 SSO 存留期中，系統只會提示使用者輸入一次密碼，使用者就可以從該裝置存取公司應用程式與資源。 若裝置使用「加入工作地點網路」，已登錄使用此裝置的使用者會取得永續性 SSO (預設有效期是七天)。 此使用者在相同的工作階段中或新的工作階段中可擁有無縫式登入體驗。
 
-## <a name="solution-overview"></a>方案概觀
-此方案的一部分，您了解如何使用工作地點加入支援的裝置，並且在公司資源體驗單一登入。
+## <a name="solution-overview"></a>解決方案概觀
+在此解決方案中，您將了解如何在支援的裝置上使用 [加入工作地點網路]，以及如何使用 [單一登入] 來存取公司資源。
 
 > [!NOTE]
-> 您必須支援 Windows 8.1，iOS 6.0 + 和 Android 4.0 + 裝置，以及裝置物件寫入返回設定 Azure Active Directory 裝置登記、查看[上場所條件使用 Azure Active Directory 裝置登記服務的存取逐步指南](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+> 若要支援 Windows 8.1、iOS 6.0+ 和 Android 4.0+ 裝置，您必須設定 Azure Active Directory 裝置註冊以及裝置物件寫回，請參閱 [使用 Azure Active Directory 裝置註冊設定內部部署條件式存取](https://msdn.microsoft.com/library/azure/dn788908.aspx)
 
-此方案需要會引導您進行下列逐步解說步驟：
+此解決方案指南會帶您完成下列逐步解說步驟：
 
-1.  [Windows 裝置的逐步解說： 地點加入](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [逐步解說：Windows 裝置加入工作地點](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [逐步解說： IOS 裝置加入的工作地點](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [逐步解說：Ios 裝置加入工作地點](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [使用 Android 裝置的逐步解說：地點加入](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [逐步解說：Android 裝置工作地點](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
-## <a name="see-also"></a>也了
-[設定聯盟伺服器裝置登記服務與](../deployment/configure-a-federation-server-with-device-registration-service.md)
+## <a name="see-also"></a>另請參閱
+[使用裝置註冊服務設定同盟伺服器](../deployment/configure-a-federation-server-with-device-registration-service.md)
 
 
 

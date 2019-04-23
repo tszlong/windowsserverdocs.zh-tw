@@ -1,6 +1,6 @@
 ---
-title: "將磁碟移到另一部電腦"
-description: "本文說明如何將磁碟移到另一部電腦"
+title: 將磁碟移到另一部電腦
+description: 本文說明如何將磁碟移到另一部電腦
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6b235ce8e5b936940629d5977a17bbc729efbe82
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853999"
 ---
 # <a name="move-disks-to-another-computer"></a>將磁碟移到另一部電腦
 
-> **適用於：**Windows 10、Windows 8.1、Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 本節說明將磁碟移到另一部電腦時要採取的步驟，以及相關聯的考量。 您可能會想要先列印此程序或抄下步驟，再試著將磁碟移到另一部電腦。
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/17/2017
 
 3.  以滑鼠右鍵按一下您要解除安裝的磁碟，然後按一下 **\[解除安裝\]**。
 
-4.  在 **\[確認裝置移除\]** 對話方塊中，按一下 **\[確定\]**。
+4.  在 [**確認裝置移除**] 對話方塊中，按一下 [**確定**]。
 
 ## <a name="remove-dynamic-disks"></a>移除動態磁碟
 

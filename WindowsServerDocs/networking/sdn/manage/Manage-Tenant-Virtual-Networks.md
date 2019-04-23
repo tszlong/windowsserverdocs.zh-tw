@@ -1,6 +1,6 @@
 ---
-title: 管理承租人 Virtual 網路
-description: 本主題是輔助的軟體定義網路上如何管理承租人工作負載和 Windows Server 2016 Virtual 網路的一部分。
+title: 管理租用戶虛擬網路
+description: 本主題是軟體定義網路上如何管理租用戶工作負載和指南 Windows Server 2016 中的虛擬網路的一部分。
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,24 +12,25 @@ ms.topic: article
 ms.assetid: 5905532b-626d-4b35-99a3-72a063e25809
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 05007c3a0aecd086ea3285dee4d6bead09537832
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 078fc880ea324a26b6c94abe1bffeff9feca5847
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59852369"
 ---
-# <a name="manage-tenant-virtual-networks"></a>管理承租人 Virtual 網路
+# <a name="manage-tenant-virtual-networks"></a>管理租用戶虛擬網路
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以在本區段中使用主題管理承租人 HYPER-V 網路模擬 Virtual 網路，您有部署軟體定義網路使用主題之後[部署使用指令碼軟體定義網路基礎結構，](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。  
+您可以在本節中使用的主題，來管理租用戶為 HYPER-V 網路虛擬化虛擬網路，您已部署軟體定義網路使用本主題後[部署使用指令碼軟體定義網路基礎結構](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).  
   
-本節下列主題。  
+本節包含下列主題：  
   
-- [了解使用 Virtual 網路與 Vlan](Understanding-Usage-of-Virtual-Networks-and-VLANs.md)  
-- [用於管理 Datacenter 網路流量存取控制清單 (Acl)](use-acls-for-traffic-flow.md)  
-- [建立、Delete，或更新承租人 Virtual 網路](Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)  
-- [新增 Virtual 閘道承租人 Virtual 網路](Add-a-Virtual-Gateway-to-a-Tenant-Virtual-Network.md)
-- [連接到承租人 virtual 網路的容器端點](Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)
+- [了解虛擬網路和 Vlan 的使用情形](Understanding-Usage-of-Virtual-Networks-and-VLANs.md)  
+- [使用存取控制清單 (Acl) 來管理資料中心網路流量](use-acls-for-traffic-flow.md)  
+- [建立、 刪除或更新租用戶虛擬網路](Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)  
+- [新增至租用戶虛擬網路的虛擬閘道](Add-a-Virtual-Gateway-to-a-Tenant-Virtual-Network.md)
+- [將容器端點連線至租用戶虛擬網路](Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)
 
 

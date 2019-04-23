@@ -1,6 +1,6 @@
 ---
-title: "建立伺服器復原 DVD 多語言的支援"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 針對多語言支援建立伺服器復原 DVD
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,71 +13,72 @@ ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: ac547f97b48e4cd0ebf87e0935cadc2c539b4d0b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854999"
 ---
-# <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>建立伺服器復原 DVD 多語言的支援
+# <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>針對多語言支援建立伺服器復原 DVD
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-##  <a name="BKMK_MLHeadedRecovery"></a>在本機管理的伺服器上建立的伺服器設定和伺服器修復多個語言支援 DVD  
+##  <a name="BKMK_MLHeadedRecovery"></a> 本機管理的伺服器上建立的伺服器安裝程式和多語言支援的伺服器復原 DVD  
   
 > [!NOTE]
->  中所述，您必須先建立多種語言的 Windows 映像[逐步解說：多種語言的 Windows 映像建立](https://technet.microsoft.com/library/jj126995)您新增到 install.wim Windows Server Essentials langauage 套件之前。  
+>  中所述，您必須先建立多語系 Windows 映像[逐步解說：多語系 Windows 映像建立](https://technet.microsoft.com/library/jj126995)新增 Windows Server Essentials 語言套件加入 install.wim 之前。  
   
- 有兩個階段的設定：Windows 預先安裝環境 (Windows PE\) 與初始設定。 根據預設，不會顯示在初始設定中的選取項目頁面語言。  
+ 安裝有兩個階段：Windows 預先安裝環境 (Windows PE) 和初始設定。 根據預設，將不會在初始設定中顯示語言選取頁面。  
   
--   OEM 的遠端管理安裝或 OEM 預先安裝案例，您需要新增登錄按鍵使用下列命令以在初始設定中顯示語言選取項目頁面。  
+-   對於 OEM 遠端管理的安裝或 OEM 預先安裝情況，您需要使用下列命令來新增登錄機碼，以便在初始設定中顯示語言選取頁面。  
   
     ```  
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
     ```  
   
     > [!IMPORTANT]
-    >  當 Oem 實驗室中建立映像時，必須選擇**英文**以安裝 Windows PE\ 階段的語言。  
+    >  OEM 在實驗室中建立映像時，必須在 Windows PE 安裝階段期間選擇 **英文** 做為語言。  
   
--   經銷商選項套件 (ROK) 案例中，針對接收 DVD 和或許，某些硬體。 客戶應該可以在 [Windows PE\ 設定] 中選取語言，並在初始設定不會再顯示 [選擇語言] 頁面。  
+-   針對經銷商選項套件 (ROK) 案例，客戶會收到 DVD，可能也會收到一些硬體。 客戶應該可以在 Windows PE 安裝期間選取語言，在初始設定期間不再顯示語言選取頁面。  
   
- 您也可以在出貨含有多種語言的單一 dual 層 DVD。  
+ 您可以選擇提供包含多個語言的單一雙層 DVD。  
   
- 本章節告訴您如何將 Windows 設定中新增語言支援。 自訂 Windows PE\ 3.0 工具主要是部署映像服務與管理 (DISM)，此命令列工具。 此方案可讓如下：  
+ 本節說明如何為 Windows 安裝程式新增語言支援。 用來自訂 Windows PE 3.0 的主要工具為「部署映像服務與管理 (DISM)」，它是命令列工具。 此解決方案適用於下列情況：  
   
-1.  建立多語系安裝  
+1.  建立多語言安裝  
   
-2.  建立媒體散發  
+2.  建立可散佈的媒體  
   
-### <a name="prerequisites"></a>必要條件  
- 若要新增支援多種語言設定，您需要：  
+### <a name="prerequisites"></a>先決條件  
+ 若要為 Windows 安裝程式新增多語言支援，您將需要下列項目：  
   
 
--   提供的所有工具和來源檔案都需要建立自訂的 WinPE 映像的技術人員電腦。 如需詳細資訊，請查看[準備技術電腦](Prepare-the-Technician-Computer.md)。  
+-   可提供建立自訂 WinPE 映像所需之所有工具與來源檔案的技術人員電腦。 如需詳細資訊，請參閱 [Prepare the Technician Computer](Prepare-the-Technician-Computer.md)。  
 
--   提供的所有工具和來源檔案都需要建立自訂的 WinPE 映像的技術人員電腦。 如需詳細資訊，請查看[準備技術電腦](../install/Prepare-the-Technician-Computer.md)。  
+-   可提供建立自訂 WinPE 映像所需之所有工具與來源檔案的技術人員電腦。 如需詳細資訊，請參閱 [Prepare the Technician Computer](../install/Prepare-the-Technician-Computer.md)。  
 
   
 -   Windows Server Essentials DVD。  
   
 -   Windows Server Essentials 語言套件 DVD。  
   
-###  <a name="BKMK_Steps"></a>新增多個語言支援  
- 若要將多種語言支援 Windows 安裝至您更新 Install.wim 加入 Windows Server 2012 和 Windows Server Essentials 的語言套件，以將它。  
+###  <a name="BKMK_Steps"></a> 新增多語言支援  
+ 您可以將多種語言支援新增至 Windows 安裝程式更新 Install.wim 來加上 Windows Server 2012 和 Windows Server Essentials 語言套件新增至它。  
   
 #### <a name="update-installwim"></a>更新 Install.wim  
- 在此步驟，您將 Windows Server 2012 和 Windows Server Essentials 的語言套件 Install.wim 加入。  
+ 在此步驟中，您將 Windows Server 2012 和 Windows Server Essentials 語言套件加入 Install.wim。  
   
 > [!NOTE]
->  請確認您的 Windows Server 2012 安裝語言套件。 這樣可確保您收到的適當的商標。 Windows Server 2012 多語系使用者介面語言套件可以使用[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)。中所述，請依照指示執行[逐步解說：上建立多語系多種語言的 Windows 映像建立](https://technet.microsoft.com/library/jj126995.aspx)上建立多語系 Windows 映像，才能您新增到 Windows Server Essentials 的語言套件 Install.wim。  
+>  請確認您在 Windows Server 2012 的安裝語言套件。 如此可確保您會有適當的商標。 Windows Server 2012 多語系使用者介面語言套件，還有[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)。 請遵循指示中所述[逐步解說：建立多國語言的多語系 Windows 映像建立](https://technet.microsoft.com/library/jj126995.aspx)您新增 Windows Server Essentials 語言套件加入 install.wim 之前，建立多國語言 Windows 映像。  
 >   
->  Windows Server Essentials 的語言套件，可在語言套件，\Language Packs\\ < CultureName\ > 媒體。  
+>  Windows Server Essentials 語言套件可用於在 \Language 組件語言套件媒體\\< CultureName\>。  
   
 > [!NOTE]
->  並非所有的語言套件可能無法使用之前版本的 Windows Server 2012。  
+>  並非所有語言組件可能無法使用之前的 Windows Server 2012 版本。  
   
-###### <a name="to-add-language-packs-to-installwim"></a>若要加入 Install.wim 語言套件  
+###### <a name="to-add-language-packs-to-installwim"></a>若要將語言套件新增至 Install.wim  
   
-1.  [新增到 Install.wim 作業系統和 product 語言套件，如下所示（此範例中使用法文）：  
+1.  將作業系統及產品語言套件新增至 Install.wim，如下所示 (此範例使用法文)：  
   
     ```  
     Dism /Mount-Wim /WimFile:C:\my_distribution\sources\install.wim /index:1 /MountDir:C:\InstallMount  
@@ -88,33 +89,33 @@ ms.lasthandoff: 12/12/2017
     ```  
   
 
-2.  [新增語言的特定檔案支援建立 Client 的備份還原 USB 快閃磁碟機，使用此程序中所述[還原媒體組建多語言 Client](Build-Multi-Language-Client-Restore-Media.md)。  
+2.  新增語言特定的檔案，以支援建立用戶端備份還原 USB 快閃磁碟機，使用程序中所述[建置多語言用戶端還原媒體](Build-Multi-Language-Client-Restore-Media.md)。  
 
-2.  [新增語言的特定檔案支援建立 Client 的備份還原 USB 快閃磁碟機，使用此程序中所述[還原媒體組建多語言 Client](../install/Build-Multi-Language-Client-Restore-Media.md)。  
+2.  新增語言特定的檔案，以支援建立用戶端備份還原 USB 快閃磁碟機，使用程序中所述[建置多語言用戶端還原媒體](../install/Build-Multi-Language-Client-Restore-Media.md)。  
 
   
-3.  Lang.ini 中的檔案鬆散以反映的其他語言支援使用媒體重新建立`DISM /Gen-LangINI`命令，例如：  
+3.  使用 `DISM /Gen-LangINI` 命令，在可攜式儲存媒體中重新建立 Lang.ini 檔案，以反映其他語言支援，例如：  
   
     ```  
     Dism /image:C:\InstallMount /Gen-LangINI /distribution:C:\my_distribution  
   
     ```  
   
-4.  儲存變更回映像使用`DISM /unmount /commit`命令，例如：  
+4.  使用 `DISM /unmount /commit` 命令，將您的變更存回映像中，例如：  
   
     ```  
     Dism /Unmount-Wim /MountDir:C:\InstallMount /Commit  
     ```  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
 
  [建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](../install/Additional-Customizations.md)   
- [準備部署映像](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](../install/Testing-the-Customer-Experience.md)
+ [其他自訂項目](../install/Additional-Customizations.md)   
+ [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

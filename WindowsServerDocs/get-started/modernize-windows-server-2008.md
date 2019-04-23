@@ -11,20 +11,20 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: 4127eab613abb429a200f513a11b944e05da0f76
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339366"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851339"
 ---
-# 升級 Windows Server 2008 與 Windows Server 2008 R2
+# <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>升級 Windows Server 2008 與 Windows Server 2008 R2
 
-Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年 1 月 14 結束。 有兩個可用的現代化路徑：內部部署升級，或是透過在 Azure 中重新裝載來移轉。 **如果您在 Azure 中重新裝載，您可以免費移轉您現有的 Server 映像。**
+Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年 1 月 14 結束。 有兩個現代化路徑：在內部部署升級或藉由在 Azure 中重新裝載的移轉。 **如果您重新裝載在 Azure 中，您可以移轉您現有伺服器的映像的免費。**
 
 ![說明從 Windows Server 2008 升級路徑的流程圖](media/WS08_upgrade_paths.png)
 
 
-## 內部部署升級
+## <a name="on-premises-upgrade"></a>內部部署升級
 如果您想要將伺服器保留在內部部署，且您執行的是 Windows Server 2008 或 Windows Server 2008 R2，則您必須先[升級為 Windows Server 2012/2012 R2](installation-and-upgrade.md#upgrading-to-windows-server-2012-r2)，才能[升級為 Windows Server 2016](installation-and-upgrade.md#upgrading-to-windows-server-2016)。 當您升級時，您仍可選擇透過重新裝載的方式移轉至 Azure。
 
 請參閱[從 Windows Server 2008 R2 或 Windows Server 2008 升級](installation-and-upgrade.md#upgrading-from-windows-server-2008-r2-or-windows-server-2008)，以了解內部部署升級選項的詳細資訊。
@@ -32,7 +32,7 @@ Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年
 如果您執行的是 Windows Server 2003，您必須[升級為 Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff972408(v%3dws.10)) (英文)。 請參閱 [Windows Server 2008 升級路徑](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd979563(v=ws.10)) (英文)，以了解內部部署升級選項的詳細資訊。
 
 
-## 移轉至 Azure
+## <a name="migrate-to-azure"></a>移轉至 Azure
 您可以將內部部署的 Windows Server 2008 與 Windows Server 2008 R2 伺服器移轉至 Azure，在此您可以繼續在虛擬機器上執行這些伺服器。 在 Azure 中，您將持續符合規範、變得更安全，並在您的工作中新增雲端創意。 移轉至 Azure 的優點包括：
 
 - Azure 中的安全性更新。
@@ -49,12 +49,12 @@ Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年
 為了幫助您了解如何分析現有 IT 資源、評估您擁有的項目，以及瞭解將特定服務與應用程式移至雲端、將工作負載保留在內部部署，或升級為最新版 Windows Server 的優點，請參閱 [Windows Server 移轉手冊](https://go.microsoft.com/fwlink/?linkid=872689) (英文)。
 
 
-## 與 Windows Server 平行升級 SQL Server 2008/2008 R2
+## <a name="upgrade-sql-server-20082008-r2-in-parallel-with-your-windows-servers"></a>與 Windows Server 平行升級 SQL Server 2008/2008 R2
 
 ![SQL Server 標誌](media/sqlr2.jpg)
 
 如果您執行的是 SQL Server 2008/2008 R2，您可以升級為 SQL Server [2016](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) 或 [2017](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017)。
 
 
-## 其他資源
+## <a name="additional-resources"></a>其他資源
 [Microsoft Azure](https://docs.microsoft.com/azure/#pivot=products)

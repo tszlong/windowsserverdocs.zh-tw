@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7d230527-f4fe-4572-8838-0b354ee0b06b
-title: "需要新增描述宣告"
-description: 
+title: 新增宣告描述
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,48 +10,49 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 0e388ef656d3b690da62b077cb9f9e678a771e64
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851429"
 ---
-# <a name="add-a-claim-description"></a>需要新增描述宣告
+# <a name="add-a-claim-description"></a>新增宣告描述
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-Account 合作夥伴組織中的系統管理員建立宣告代表使用者的成員資格群組中的角色或代表部分的使用者，例如使用者的員工驗證數字的相關資料。
+在帳戶夥伴組織，系統管理員會建立宣告來代表使用者的群組或角色的成員資格，或代表使用者，例如，使用者的員工識別碼有關的一些資料。
 
-在資源合作夥伴組織中，系統管理員建立對應宣告來表示群組和被視為資源使用者的使用者。 因為資源合作夥伴資源合作夥伴組織，連入宣告 account 合作夥伴公司地圖中傳出宣告都能接受 account 協力廠商提供的認證。 
+在資源夥伴組織中，系統管理員會建立對應的宣告，來表示群組和可辨認為資源使用者的使用者。 因為資源夥伴中帳戶夥伴組織的對應資源夥伴組織中的連入宣告連出宣告是可以接受帳戶夥伴所提供的認證。 
 
-您可以使用下列程序新增理賠要求。
+您可以使用下列程序，以新增宣告。
 
-資格在**系統管理員**，或相當於、在本機電腦上的最低需求完成此程序。  檢視詳細資料使用適當的帳號，並群組成員資格，[本機和網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)。
+若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。
 
 ## <a name="to-add-a-claim-description"></a>若要新增宣告描述
 
-1. 在伺服器管理員中，按一下**工具**，然後選取 [ **AD FS 管理**。 
+1. 在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。 
 
-2.  展開**服務**和按右鍵**新增宣告描述**。
+2.  依序展開**服務**在以滑鼠右鍵按一下**新增宣告描述**。
 ![新增宣告描述](media\Add-a-Claim-Description\claimdesc1.png)
 
-3.  在 [新增取得描述對話方塊中，在**顯示名稱**，輸入群組或本理賠要求的角色所辨識的唯一名稱。
+3.  在 新增宣告描述對話方塊中，於**顯示名稱**，輸入群組或角色，此宣告識別的唯一名稱。
 
 4.  新增**簡短名稱**。
 
-5.  在**取得識別碼**，輸入 URI 群組或角色宣告將會使用您的相關聯的。
+5.  在 **宣告識別碼**，輸入群組或角色，您將使用的宣告相關聯的 URI。
 
-6.  在**描述**，輸入文字的最佳描述此宣告的用途。
+6.  底下**描述**，輸入最能描述此宣告的用途的文字。
 
-7.  根據您的組織的需求，選取下列核取方塊，視需要此宣告發行至聯盟中繼資料：
+7.  根據您組織的需求，選取下列核取方塊，視需要將此宣告發佈至同盟中繼資料：
 
 
-    - 若要發行讓合作夥伴知道這台，可接受此宣告此宣告，請按一下 [**將此宣告聯盟中繼資料中發行為宣告類型可接受此同盟服務**。
-    - 若要發行讓合作夥伴注意，此伺服器可以發出此宣告此宣告，請按一下**將此宣告聯盟中繼資料中發行為此同盟服務可以傳送宣告類型**。
+    - 若要發行此宣告，讓合作夥伴知道此伺服器可以接受此宣告，請按一下**同盟中繼資料中發行此宣告為可接受此 Federation Service 的宣告型別**。
+    - 若要發行此宣告，讓合作夥伴知道此伺服器可以發出此宣告，請按一下**同盟中繼資料中發行此宣告為此同盟服務可傳送的宣告型別**。
 
-8.  按一下**[確定]**。
+8.  按一下 [確定] 。
 
 ![新增宣告描述](media\Add-a-Claim-Description\claimdesc2.png)
 
   
-## <a name="see-also"></a>也了  
-[AD FS 作業](../../ad-fs/AD-FS-2016-Operations.md) 
+## <a name="see-also"></a>另請參閱  
+[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 
