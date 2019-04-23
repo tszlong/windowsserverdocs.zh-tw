@@ -1,6 +1,6 @@
 ---
-title: "管理網域名稱和網域名稱提供者"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 管理網域名稱和網域名稱提供者
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,25 +13,26 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 1b35c5866f3d90d6c5b5acf7687caaccce83de09
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879669"
 ---
 # <a name="manage-domain-names-and-domain-name-providers"></a>管理網域名稱和網域名稱提供者
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-管理第三個層級網域名稱和網域名稱提供者，您可以在本區段中使用此資訊。  
+您可以使用本節中的資訊，來管理第三層網域名稱和網域名稱提供者。  
   
- 這一節包含下列主題：  
+ 本節包含下列主題：  
   
--   [新增第三個層級網域名稱](Add-Third-Level-Domain-Names.md)  
+-   [新增第三層網域名稱](Add-Third-Level-Domain-Names.md)  
   
--   [更換網域名稱提供者清單](Replace-the-List-of-Domain-Name-Providers.md)  
+-   [取代網域名稱提供者清單](Replace-the-List-of-Domain-Name-Providers.md)  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)

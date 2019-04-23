@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0379abc3-25c7-46ab-9a6b-80a5152365b0
-title: "AD FS 中自訂 Web 主題"
-description: 
+title: 在 AD FS 中的自訂網頁佈景主題
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,49 +10,50 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 300c9fda84285ddfc52a4f47ea0198deb6fd33ef
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882289"
 ---
-# <a name="custom-web-themes-in-ad-fs"></a>AD FS 中自訂 Web 主題 
+# <a name="custom-web-themes-in-ad-fs"></a>在 AD FS 中的自訂網頁佈景主題 
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-預設稱為「已推出的 out\ of\-the\-方塊的主題。 您可以匯出預設的主題，並使用它，以便您可以快速開始。 您可以自訂的外觀及操作，包括配置修改著、匯入並套用這個新的主題，並可以使用的自訂的外觀及操作。 使用著也可讓您輕鬆地使用您的網路設計工具。  
+已出貨的佈景主題\-的\-\-] 方塊中，稱為 [預設值。 您可以匯出預設佈景主題，並利用它加快開始的過程。 您可以自訂包含配置的外觀和行為，方法是修改 .css 檔案、匯入並套用這個新佈景主題，然後就可以使用自訂的外觀和行為。 使用 .css 檔案也可讓您更輕鬆地使用 Web 設計工具。  
   
-下列 cmdlet 建立自訂 web 主題，請重複的預設網頁主題。  
+下列 Cmdlet 建立自訂網頁佈景主題，它會複製預設網頁佈景主題。  
   
   
 `New-AdfsWebTheme –Name custom –SourceName default ` 
 
   
-您可以修改著並使用新藉著設定的新網頁主題。 若要匯出 web 主題，請使用下列 cmdlet。  
+您可以修改 .css 檔案，並使用新的 .css 檔案來設定新的網頁佈景主題。 若要匯出網頁佈景主題，請使用下列 Cmdlet。  
   
 
     Export-AdfsWebTheme –Name default –DirectoryPath c:\theme  
 
   
-若要將著套用到新的主題，使用下列 cmdlet。  
+若要將 .css 檔案套用至新的佈景主題，請使用下列 Cmdlet。  
   
 
     Set-AdfsWebTheme –TargetName custom –StyleSheet @{path=”c:\NewTheme.css”}  
   
   
-下列 cmdlet 會建立新的樣式自訂 web 主題。  
+下列 Cmdlet 會從新的樣式表建立自訂網頁佈景主題。  
   
   
 `New-AdfsWebTheme –Name custom –StyleSheet @{path=”c:\NewTheme.css”} –RTLStyleSheetPath c:\NewRtlTheme.css ` 
   
   
   
-AD FS 来套用的自訂 web 主題，請使用下列 cmdlet。  
+若要將自訂網頁佈景主題套用至 AD FS 中，使用下列 cmdlet。  
   
 
 `Set-AdfsWebConfig -ActiveThemeName custom`  
 
   
-若要新增 AD FS JavaScript，使用下列 cmdlet。  
+若要將 JavaScript 新增至 AD FS 中，使用下列 cmdlet。  
   
  
     Set-AdfsWebTheme -TargetName custom -AdditionalFileResource @{Uri=’ /adfs/portal/script/onload.js’;path="D:\inetpub\adfsassets\script\onload.js"}  

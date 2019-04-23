@@ -1,83 +1,84 @@
 ---
 ms.assetid: fde99b44-cb9f-49bf-b888-edaeabe6b88d
-title: "模擬的網域控制站複製測試廠商應用程式的指導方針"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 適用於應用程式廠商的虛擬網域控制站複製測試指導方針
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 72c4e818f82d3252c45776b26fb59e095893f2c7
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 0b2303bc837cdaf9f6e7ebd4b3ccbf6c66aa7ad2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879339"
 ---
-# <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>模擬的網域控制站複製測試廠商應用程式的指導方針
+# <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>適用於應用程式廠商的虛擬網域控制站複製測試指導方針
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-本主題解釋廠商應用程式應該考慮協助確保您自己的應用程式仍會繼續執行如預期般模擬的網域控制站 DC 複製程序完成之後。 其涵蓋的那些層面複製程序，感興趣的應用程式廠商並可能需要額外的測試案例。 已複製有模擬的網域控制站在自己的應用程式，適用於驗證的應用程式廠商是鼓勵清單中社群內容本主題，以及所在的使用者可以深入了解驗證您的組織的網站連結底部的應用程式的名稱。  
+本主題說明應用程式廠商應該考慮的事項以協助確保其應用程式會繼續如預期般虛擬的網域控制站 (DC) 複製程序完成之後運作。 該感興趣的應用程式廠商和可能需要額外測試的案例，其中會涵蓋這些層面複製程序。 已驗證他們的應用程式，適用於已複製的虛擬化的網域控制站上的應用程式廠商會建議清單中社群內容底部的 本主題中，以及連結的應用程式名稱您使用者可以了解更多關於驗證組織的網站。  
   
-## <a name="overview-of-virtualized-dc-cloning"></a>模擬俠複製概觀  
-複製程序模擬的網域控制站在詳細資料中所述的方式[Active Directory Domain Services (AD DS) 模擬 (層級 100) 簡介](https://technet.microsoft.com/library/hh831734.aspx)和[擬化檔案網域控制站技術參考 (層級 300)](https://technet.microsoft.com/library/jj574214.aspx)。 應用程式廠商觀點，這些都是評估的影響複製到您的應用程式時，請考慮事項：  
+## <a name="overview-of-virtualized-dc-cloning"></a>虛擬化 DC 複製概觀  
+虛擬化的網域控制站複製程序已詳[Active Directory 網域服務 (AD DS) 虛擬化 (等級 100) 簡介](https://technet.microsoft.com/library/hh831734.aspx)和[虛擬化網域控制站技術參考 (技術等級 300)](https://technet.microsoft.com/library/jj574214.aspx)。 從應用程式廠商的觀點來看，這些是評估您的應用程式複製的影響時，需要考量的一些考量：  
   
--   原始電腦不已損壞。 它會保持在網路上，與戶端互動。 重新命名] 移除 DNS 記錄原始電腦的位置，然而來源網域控制站的原始記錄保留。  
+-   原始的電腦不會損毀。 它會保持在網路上，與用戶端互動。 不同於重新命名，其中會移除原始電腦的 DNS 記錄，保留來源網域控制站的原始記錄。  
   
--   複製過程新電腦一開始執行的時間在舊電腦的身分短暫車載機起始複製程序，而且進行所需的變更。 建立記錄主機相關的應用程式應該確保複製的電腦不會不會覆寫相關原始主機記錄複製程序期間。  
+-   在複製過程中，新的電腦一開始執行短暫的舊電腦的身分識別之下的時間內起始複製程序，並完成必要的變更之前。 建立主機的相關記錄的應用程式應該確定複製的電腦不會在複製程序期間複寫原始的主機記錄。  
   
--   複製是只模擬的網域控制站的特定部署功能不複製其他伺服器角色通用擴充功能。 尤其是不支援部分伺服器角色複製：  
+-   複製是特定的部署功能對於唯一的虛擬的網域控制站，不複製其他伺服器角色的一般用途延伸模組。 特別是不支援複製某些伺服器角色：  
   
-    -   動態主機設定通訊協定」(DHCP)  
+    -   動態主機設定通訊協定 (DHCP)  
   
-    -   Active Directory 憑證 Services (AD CS)  
+    -   Active Directory 憑證服務 (AD CS)  
   
-    -   Active Directory 輕量 Directory Services (AD LDS)  
+    -   Active Directory 輕量型目錄服務 (AD LDS)  
   
--   複製程序的一部分，表示原本俠整個 VM 複製時，讓該 VM 上的任何應用程式狀態也複製。 驗證狀態本機主機上複製 DC，這項變更適應應用程式，或如果介入，例如服務重新開機。  
+-   複製程序的一部分，會複製整個 VM，表示原始的 DC，因此也會複製該 VM 上的任何應用程式狀態。 驗證應用程式適應這項變更中複製的 DC 上的本機主機的狀態或任何介入的情況下是必要項目，例如重新啟動服務。  
   
--   複製的一部分，新的 DC 取得新電腦的身分和條款本身為複本俠拓撲中。 驗證是否應用程式電腦的身分，如其名稱、 帳號，SID，而定。 它會自動適用於電腦的身分複製上的變更會嗎？ 如果該應用程式快取的資料，請確定它不依賴電腦可能會快取的身分資料。  
+-   在複製時，新的 DC 取得新的機器身分識別和佈建本身為複本 DC 拓樸中。 驗證是否取決於機器識別，例如其名稱、 帳戶、 SID 和等等的應用程式。 沒有它自動調整機器身分識別在複製品上的變更嗎？ 如果該應用程式會快取資料，請確定它不會依賴可能會快取的機器身分識別資料。  
   
-## <a name="what-is-interesting-for-application-vendors"></a>何謂廠商應用程式的有趣？  
+## <a name="what-is-interesting-for-application-vendors"></a>什麼是有趣的應用程式廠商？  
   
 ### <a name="customdccloneallowlistxml"></a>CustomDCCloneAllowList.xml  
-無法執行應用程式或服務的網域控制站複製直到應用程式或服務可能是：  
+無法複製網域控制站執行您的應用程式或服務，直到應用程式或服務是：  
   
--   使用取得-ADDCCloningExcludedApplicationList Windows PowerShell cmdlet 來新增至 CustomDCCloneAllowList.xml 檔案  
+-   使用 Get-addccloningexcludedapplicationlist Windows PowerShell cmdlet 新增至 CustomDCCloneAllowList.xml 檔案  
   
--或者-  
+- 或者 -  
   
--   已移除網域控制站  
+-   移除網域控制站  
   
-第一次使用者執行取得-ADDCCloningExcludedApplicationList cmdlet，它會傳回服務和應用程式的網域控制站上執行，但並非預設服務和應用程式可以複製支援清單中的清單。 根據預設，您的應用程式或服務將不會列出。 若要新增到清單的應用程式與服務可以放心地的應用程式或服務複製，取得-ADDCCloningExcludedApplicationList cmdlet 再試一次-GenerateXML 選項以將它新增到 CustomDCCloneAllowList.xml 檔案使用者執行。 如需詳細資訊，請查看[步驟 2： 執行取得 ADDCCloningExcludedApplicationList cmdlet](https://technet.microsoft.com/library/hh831734.aspx#bkmk6_run_get_addccloningexcludedapplicationlist_cmdlet)。  
+第一次使用者執行 Get-addccloningexcludedapplicationlist cmdlet，它會傳回一份服務和網域控制站上執行，但不在服務和支援複製的應用程式的預設清單中的應用程式。 根據預設，您的服務或應用程式將不會列出。 若要新增您的服務或應用程式清單的應用程式和服務可以安全地複製，使用者執行 Get-addccloningexcludedapplicationlist cmdlet 一次使用-GenerateXML 選項，以將其新增到 CustomDCCloneAllowList.xml 檔案。 如需詳細資訊，請參閱[步驟 2:執行 Get-addccloningexcludedapplicationlist cmdlet](https://technet.microsoft.com/library/hh831734.aspx#bkmk6_run_get_addccloningexcludedapplicationlist_cmdlet)。  
   
-### <a name="distributed-system-interactions"></a>分散式的系統交互  
-通常是在本機電腦隔離的服務可能通過或失敗時參與複製。 顧慮簡短的一段時間同時有兩個主機電腦的執行個體網路上有分散式的服務。 這可能會顯示為嘗試拉資訊，從系統的夥伴有新的身分廠商為登記完畢複製的服務執行個體。 或兩個服務可能推播資訊到 AD DS 資料庫在同一時間使用不同的結果。 例如，它不確定哪一部電腦將會進行通訊網路的網域控制站的 Windows 進行測試技術 (WTT) 服務的兩部電腦時。  
+### <a name="distributed-system-interactions"></a>分散式的系統的互動  
+通常是隔離到本機電腦的服務傳遞，或是參與複製時失敗。 分散式的服務不必擔心有同時在短暫的時間內的網路上的主機電腦的兩個執行個體。 這可能會顯示為嘗試提取來自夥伴系統的資訊複製為新的廠商身分識別具有註冊所在的服務執行個體。 或服務的兩個執行個體可能會發送到 AD DS 資料庫資訊同時與不同的結果。 比方說，它不具決定性的網域控制站網路上有 Windows 測試技術 (WTT) 服務的兩部電腦時，會與傳送哪一部電腦。  
   
-分散式 DNS 伺服器服務，複製程序仔細避免覆寫來源網域控制站的 DNS 記錄時複製網域控制站開始使用新的 IP 位址。  
+各地的 DNS 伺服器服務中，複製程序仔細可避免複製網域控制站啟動新的 IP 位址時，覆寫的來源網域控制站的 DNS 記錄。  
   
-您不應該依賴移除您所有的舊身分結束複製到電腦。 新的網域控制站新操作在升級之後，選取 [Sysprep 清理額外的狀態的電腦執行提供者。 例如，它是電腦的此時移除舊憑證，並變更密碼編譯密碼，可以存取電腦。  
+您不應該依賴要移除所有舊的身分識別的結尾複製的電腦。 新的網域控制站升級在新的內容後，選取 Sysprep 提供者會在執行以清除其他電腦的狀態。 比方說，它是在此時會移除舊憑證的電腦，且電腦可存取的密碼編譯密碼已變更。  
   
-有多少物件的從 PDC 複製就是最大倍不同的複製時機。 較舊的媒體增加完成複製所需的時間。  
+最重要的因素而異的複製時間會有多少物件會從 PDC 複寫。 較舊的媒體會增加完整複製所需的時間。  
   
-您的應用程式或服務不明，因為它將會繼續執行。 複製程序不會變更非 Windows 服務的狀態。  
+因為您的服務或應用程式不明時，它會保持執行。 複製程序不會變更非 Windows 服務的狀態。  
   
-此外，新的電腦有不同與原始電腦的 IP 位址。 這些行為可能會造成副作用服務或根據服務或應用程式的處理方式此環境中的應用程式。  
+此外，新的電腦有不同的 IP 位址，與原始電腦。 這些行為可能會造成副作用，您的服務或應用程式，取決於服務或應用程式在此環境中運作的方式。  
   
-## <a name="additional-scenarios-suggested-for-testing"></a>其他案例，建議的測試  
+## <a name="additional-scenarios-suggested-for-testing"></a>建議用於測試的其他案例  
   
 ### <a name="cloning-failure"></a>複製失敗  
-服務廠商應該測試此案例，因為當複製失敗電腦開機至 Directory 服務修復模式 (DSRM)，一種安全模式。 此時電腦尚未完成複製。 某些狀態可能會變更，且部分狀態可能仍會是原始的網域控制站的。 本案例，以了解哪些影響它能在您的應用程式測試。  
+服務供應商應該測試此案例中，因為當複製失敗時在電腦開機到目錄服務修復模式 (DSRM)，一種安全模式。 此時電腦尚未完成複製。 某些狀態可能已變更，某些狀態可能仍會從原始網域控制站。 測試這個案例，以了解它可以對您的應用程式產生的影響。  
   
-便會失敗複製，嘗試複製網域控制站複製的權限授與它不。 若是如此，電腦將會有只變更的 IP 位址，仍然可以大部分的原始的網域控制站的狀態。 如需有關複製網域控制站權限授與的詳細資訊，請查看[步驟 1： 複製的權限授與的來源模擬的網域控制站](https://technet.microsoft.com/library/hh831734.aspx#bkmk4_grant_source)。  
+若要引發的複製失敗，嘗試複製網域控制站，但不授與它要複製的權限。 在此情況下，電腦將會只變更 IP 位址，且仍有大部分的原始網域控制站的狀態。 如需有關如何授與網域控制站可以被複製的詳細資訊，請參閱[步驟 1:要複製的權限授與來源虛擬的網域控制站](https://technet.microsoft.com/library/hh831734.aspx#bkmk4_grant_source)。  
   
-### <a name="pdc-emulator-cloning"></a>複製肯定  
-還有其他重新開機時肯定複製因為廠商服務和應用程式應該測試本案例。 此外，大部分的複製身分暫時允許互動肯定複製程序期間的新複製到執行。  
+### <a name="pdc-emulator-cloning"></a>複製的 PDC 模擬器  
+服務和應用程式的廠商應該測試這個案例，因為當 PDC 模擬器會複製會有額外的重新開機。 此外，以允許新的複製品與 PDC 模擬器互動在複製程序期間的暫時性身分識別下執行大部分的複製。  
   
-### <a name="writable-versus-read-only-domain-controllers"></a>唯讀模式網域控制站與寫入  
-服務和應用程式的供應商應測試複製使用相同的網域控制站類型 (也就是寫入或唯讀網域控制站)，才能執行預計服務。  
+### <a name="writable-versus-read-only-domain-controllers"></a>唯讀網域控制站與可寫入  
+服務和應用程式的廠商應該測試使用相同類型的網域控制站複製 (也就是在可寫入或唯讀網域控制站)，規劃服務上執行。  
   
 
 

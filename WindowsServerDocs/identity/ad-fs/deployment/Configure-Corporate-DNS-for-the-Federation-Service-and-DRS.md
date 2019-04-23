@@ -1,7 +1,7 @@
 ---
 ms.assetid: aca4a4fa-b12c-4eed-a499-f9aedb7d2fd6
-title: "設定 DRS 與同盟服務的公司 DNS"
-description: 
+title: 設定同盟服務與 DRS 的公司 DNS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,52 +10,53 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 9b66bed99cbc2ac2cdf116579adaea282c45fabe
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876389"
 ---
-# <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>設定 DRS 與同盟服務的公司 DNS
+# <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>設定同盟服務與 DRS 的公司 DNS
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
   
-## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>步驟 6： 新增主機 \(A\) 和別名 \(CNAME\) 資源記錄公司 DNS DRS 和同盟服務  
-您必須同盟服務的公司網域名稱系統 \(DNS\) 和裝置登記服務您設定在上一個步驟中新增下列資源記錄。  
+## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>步驟 6：將主機新增\(A\)和別名\(CNAME\)同盟服務和 DRS 的公司 DNS 資源記錄  
+您必須加入公司網域名稱系統中的下列資源記錄\(DNS\)您的 federation service 和您在上一個步驟中設定的裝置註冊服務。  
   
-|項目|輸入|地址|  
+|進入|類型|地址|  
 |---------|--------|-----------|  
-|federation\_service\_name|主機 \(A\)|AD FS 伺服器的 IP 位址設定前面 AD FS 伺服器陣列負載平衡器 IP 位址|  
-|enterpriseregistration|別名 \(CNAME\)|federation\_server\_name.contoso.com|  
+|federation\_service\_name|主機\(A\)|在 AD FS 伺服器或 AD FS 伺服器陣列之前已設定的負載平衡器的 IP 位址的 IP 位址|  
+|enterpriseregistration|別名\(CNAME\)|federation\_server\_name.contoso.com|  
   
-您可以將主機 \(CNAME\) 資源 \(A\) 和別名記錄新增至企業 DNS 伺服器聯盟和裝置登記服務使用下列程序。  
+您可以使用下列程序，新增的主機\(A\)和別名\(CNAME\)公司 DNS，同盟伺服器和裝置註冊服務的資源記錄。  
   
-資格在**系統管理員**，或相當於，才能完成此程序的最低需求。  檢視詳細資料使用適當的帳號，並群組成員資格，[本機和網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)。   
+中的成員資格**系統管理員**，或同等權限，才能完成此程序的最低需求。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
-#### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>新增 DNS 伺服器聯盟主機 \(CNAME\) 資源 \(A\) 和別名記錄  
+#### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>若要新增的主機\(A\)和別名\(CNAME\) dns 資源記錄您的同盟伺服器  
   
-1.  在您網域控制站在伺服器管理員中，在**工具**功能表上，按一下 [ **DNS**打開 DNS snap\ 中。  
+1.  您網域控制站上，在 [伺服器管理員] 中，在**工具**功能表上，按一下**DNS**以開啟 DNS 嵌入式管理單元\-中。  
   
-2.  在主控台中，展開**domain\_controller\_name**節點中，展開**正向對應區域**，right\ 按**domain\_name**，，然後按一下**新主機 \(A or AAAA\)**。  
+2.  在主控台樹狀目錄中，依序展開**網域\_控制器\_名稱**節點，展開**正向對應區域**，以滑鼠右鍵\-按一下**網域\_名稱**，然後按一下**新的主控件\(A 或 AAAA\)**。  
   
-3.  在**名稱**方塊中，輸入要使用 AD FS 發電廠您的名稱。  
+3.  在 **名稱**方塊中，輸入要使用您的 AD FS 伺服器陣列的名稱。  
   
-4.  在**的 IP 位址**方塊中，輸入您聯盟伺服器的 IP 位址。 按一下**新增主機**。  
+4.  在 [**IP 位址**] 方塊中，輸入您的同盟伺服器的 IP 位址。 按一下 [新增主機] 。  
   
-5.  Right\ 按一下**domain\_name**節點，然後再按**新別名 \(CNAME\)**。  
+5.  右\-按一下 **網域\_名稱**節點，然後再按一下**新別名\(CNAME\)**。  
   
-6.  在**新資源記錄**對話方塊中，輸入**enterpriseregistration**中**別名**方塊。  
+6.  在 [新增資源記錄] 對話方塊中，在 [別名名稱] 方塊中輸入 **enterpriseregistration**。  
   
-7.  中的完整網域名稱 \(FQDN\) 的目標主機方塊中，輸入**federation\_service\_farm\_name.domain\_name.com**，然後按**[確定]**。  
+7.  在 完整的網域名稱\(FQDN\)的目標主機 方塊中，輸入**同盟\_服務\_伺服陣列\_name.domain\_名稱.com**，，然後按一下 **確定**。  
   
     > [!IMPORTANT]  
-    > 在現實世界的部署，如果您的公司有多個使用者主體名稱 \(UPN\) 尾碼，您必須建立多個 CNAME 記錄每個 dns 這些 UPN 尾碼。  
+    > 在真實世界部署中，如果您的公司有多個使用者主體名稱\(UPN\)尾碼，您必須為每一個 UPN 尾碼，在 DNS 中建立多個 CNAME 記錄。  
   
-## <a name="see-also"></a>也了 
+## <a name="see-also"></a>另請參閱 
 
 [AD FS 部署](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 部署指南](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[部署聯盟伺服器陣列](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[部署同盟伺服器陣列](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   
 

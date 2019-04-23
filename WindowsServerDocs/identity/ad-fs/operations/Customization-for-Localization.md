@@ -1,7 +1,7 @@
 ---
 ms.assetid: 38bbc002-a8fa-4211-9328-4ef67fca0acf
-title: "自訂當地語系化"
-description: 
+title: 當地語系化的自訂
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,20 +10,21 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: ac206d5aa8af970b65a014955ac66a8cf2835eb6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882029"
 ---
-# <a name="customization-for-localization"></a>自訂當地語系化 
+# <a name="customization-for-localization"></a>當地語系化的自訂 
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-可能是為非英文當地語系化網頁。 請留意下列考量當您將當地語系化。  
+可以將網頁內容當地語系化成英文以外的語言。 進行當地語系化時，請注意下列考量。  
   
-自訂 content 之後，自訂的優先順序。因此，您應該自訂為所有要支援的語言。 所有自訂的 content 參數的地區設定。 當您設定當地語系化的 content 時，設定無 country\ 的地區設定的第一次，，例如「en-us，「您設定的國家與地區特定 region\ 如之前「en\-我們」。  
+在自訂內容之後，自訂會有較高的優先順序；因此，您應該自訂您想要支援的所有語言。 所有的自訂內容皆接受地區設定參數。 當您設定當地語系化的內容時，會將其設定與國家/地區\-較少的地區設定第一個，例如，"en"，然後再設定 country 和 region\-特定地區設定，例如 「 en-us\-我們"。  
   
-以下範例顯示一些額外的程式碼範例。  
+以下顯示某些額外的程式碼範例。  
   
     
     Set-AdfsWebTheme -TargetName default -Logo @{Locale="";Path="c:\contoso.png"}  
@@ -31,7 +32,7 @@ ms.lasthandoff: 12/12/2017
     Set-AdfsWebTheme -TargetName default -Illustration @{Locale="";Path="c:\illustration.png"}  
 
   
-以下範例顯示一些額外的程式碼範例。  
+以下顯示某些額外的程式碼範例。  
   
  
     Set-AdfsGlobalWebContent -ErrorPageDescriptionText "This is Contoso's error page description" –locale "en"  
@@ -41,7 +42,7 @@ ms.lasthandoff: 12/12/2017
     Set-AdfsGlobalWebContent -ErrorPageDescriptionText "Il s'agit de description de page erreur de Contoso" –locale "fr"  
  
   
-如果您想要自訂網頁所需的 Unicode 輸入英文以外的語言，我們建議您使用 Windows PowerShell ISE。 如需詳細資訊請查看[引進 Windows PowerShell ISE](https://technet.microsoft.com/library/dd315244.aspx)。  
+如果您想要 web 內容自訂為英文以外且需要 Unicode 輸入的語言，我們建議您使用 Windows PowerShell ISE。 如需詳細資訊，請參閱 [Windows PowerShell ISE 簡介](https://technet.microsoft.com/library/dd315244.aspx)。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md) 

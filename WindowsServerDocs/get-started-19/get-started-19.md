@@ -1,6 +1,6 @@
 ---
-title: 入門
-description: 伺服器的基本概念︰ 系統需求、 版本資訊
+title: 開始使用
+description: 伺服器的基本概念： 系統需求、 版本資訊
 ms.prod: windows-server-threshold
 ms.service: na
 manager: jasgroce
@@ -11,15 +11,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5604edf201213f8758b697dc683717f312941e0f
-ms.sourcegitcommit: b69683f1485e1a87d41557e1765660da5dcf04be
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4408684"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878329"
 ---
-# 開始使用 Windows Server 2019
+# <a name="get-started-with-windows-server-2019"></a>開始使用 Windows Server 2019
 
->適用於： Windows Server 2019
+>適用於：Windows Server 2019
 
 
 <hr />
@@ -36,7 +36,7 @@ ms.locfileid: "4408684"
                                         </div>
                                         <div class="cardText">
                                             <h3>有何新功能？</h3>
-                                            <p>了解什麼是 Windows Server 2019 中的新功能</p>
+                                            <p>了解 Windows Server 2019 的新功能</p>
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@ ms.locfileid: "4408684"
                     </div>
                     <div class="cardText">
                         <h3>維護通道</h3>
-                        <p>更清楚地規劃您的部署和修補排程由我們的長期維護通道 (LTSB) 和半年通道 (SAC) 之間的差異發行了解。</p>
+                        <p>更妥善地規劃您的部署，並透過我們的長期維護通道 (LTSB) 和半年通道 (SAC) 之間的差異發行的了修補排程。</p>
                     </div>
                 </div>
             </div>
@@ -75,8 +75,8 @@ ms.locfileid: "4408684"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>安裝 |升級 |移轉</h3>
-                        <p>數種方法，您可以移至 Windows Server 2019 中。 您新安裝、 升級就地，或將應用程式和伺服器角色移轉，探索最好的方法。</p>
+                        <h3>安裝 | 升級 | 移轉</h3>
+                        <p>數種方式，您可以移至 Windows Server 2019 中。 無論您是新安裝、 升級就地，還是移轉應用程式和伺服器角色，會發現最好的方法。</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@ ms.locfileid: "4408684"
                     </div>
                     <div class="cardText">
                         <h3>系統需求</h3>
-                        <p>安裝和執行 Windows Server 2019 最低硬體需求。</p>
+                        <p>若要安裝和執行 Windows Server 2019 最低硬體需求。</p>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@ ms.locfileid: "4408684"
                     </div>
                     <div class="cardText">
                         <h3>啟用</h3>
-                        <p>啟用本身，Windows Server 2019 的基本資訊和其他的作業系統，使用 Windows Server 2019。</p>
+                        <p>啟用 Windows Server 2019 本身的基本資訊和其他作業系統，使用 Windows Server 2019。</p>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@ ms.locfileid: "4408684"
                     </div>
                     <div class="cardText">
                         <h3>Windows Server 2019 和 Microsoft Server 應用程式相容性</h3>
-                        <p>需要取得 SQL 使用 Windows Server 2019，或尋找步驟來取得執行 Exchange 嗎？ 本主題會連結到適用於相容的 Microsoft 應用程式的文件。</p>                    </div>
+                        <p>需要取得使用 Windows Server 2019 的 SQL 或尋找要執行 exchange 的步驟嗎？ 本主題會連結至相容的 Microsoft 應用程式的文件。</p>                    </div>
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@ ms.locfileid: "4408684"
                     </div>
                     <div class="cardText">
                         <h3>功能隨選安裝</h3>
-                        <p>功能隨選安裝 (Fod) 是可以隨時新增的 Windows Server 功能封裝。 </p>
+                        <p>依需求 (FODs) 的功能都可以隨時新增的 Windows Server 功能套件。 </p>
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@ ms.locfileid: "4408684"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>標準 |Datacenter 版本比較</h3>
+                        <h3>Standard | Datacenter Edition 比較</h3>
                         <p>Windows Server Standard 和 Datacenter Edition 有不同的功能。 了解您需要哪一個。</p>
                     </div>
                 </div>

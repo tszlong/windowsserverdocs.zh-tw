@@ -1,35 +1,48 @@
 ---
 ms.assetid: 20dff664-2370-469b-96a8-df1acf7c7f12
-title: "其他 Resources_12"
+title: 其他資源
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
-ms.service: 
+ms.service: ''
 ms.suite: na
 ms.technology: identity-adds
 ms.tgt_pltfrm: na
-author: Femila
-ms.date: 05/31/2017
-appliesto: Windows Server Technical Preview
-description: 
-manager: femila
-ms.author: femila
-ms.openlocfilehash: 230f6bc64d25a63ee3d83fa2693cebb33f2489a2
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/07/2018
+ms.openlocfilehash: fceca3c9316cb35a76f1936072bde4225b6f24e7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877449"
 ---
-# <a name="additional-resources12"></a>其他 Resources_12
+# <a name="additional-resources"></a>其他資源
 
->適用於： Windows Server Technical Preview
+>適用於：Windows Server
 
+如需使用 Repadmin.exe，來管理 Active Directory 複寫的詳細資訊，請參閱下列資源： 
 
-<developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd">
-  <introduction>
-    <para>使用管理複寫 Active Directory Repadmin.exe 的詳細資訊，會看到以下的資源：</para><list class="bullet"><listItem><para>監視和疑難排解 Active Directory 複寫使用 Repadmin (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=122830</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=122830</linkUri></externalLink>)</para></listItem></list><para>的特定的事件，這登入的 Active Directory 問題的相關資訊，請查看下列資源：</para><list class="bullet"><listItem><para>Active Directory (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=122877</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=122877</linkUri></externalLink>)</para></listItem></list><para>有關 Active Directory 已知的問題與最佳做法，請查看下列資源：</para><list class="bullet"><listItem><para>適用於建立網域和信任的樹系的已知問題 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128784</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128784</linkUri></externalLink>)</para></listItem><listItem><para>，管理網域信任的樹系的最佳做法 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128785</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128785</linkUri></externalLink>)</para></listItem><listItem><para>已知的問題備份上 Active Directory Domain Services (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128793</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128793</linkUri></externalLink>)</para></listItem><listItem><para>授權還原已知的問題 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128788</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128788</linkUri></externalLink>)</para></listItem><listItem><para>最佳做法授權還原 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128791</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128791</linkUri></externalLink>)</para></listItem><listItem><para>中遠端網站加入網域控制站的已知問題 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128794</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128794</linkUri></externalLink>)</para></listItem><listItem><para>中遠端網站加入網域控制站的最佳做法 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128796</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128796</linkUri></externalLink>)</para></listItem></list><para>的一般資訊，了解如何管理和設定主動式 Directory Domain Services (AD DS)，以及它的運作方式，請查看下列的資源：</para><list class="bullet"><listItem><para>管理作業 Active Directory (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=128798</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=128798</linkUri></externalLink>)</para></listItem><listItem><para>Active Directory 集合 (<externalLink><linkText>https://go.microsoft.com/fwlink/?LinkId=34157</linkText><linkUri>https://go.microsoft.com/fwlink/?LinkId=34157</linkUri></externalLink>)</para></listItem></list>
-  </introduction>
-  <relatedTopics />
-</developerConceptualDocument>
+- [監視和疑難排解 Active Directory 複寫使用 Repadmin](https://go.microsoft.com/fwlink/?LinkId=122830)
 
+如需 Active Directory 問題所記錄的特定事件資訊，請參閱下列資源：
 
+- [Active Directory](https://go.microsoft.com/fwlink/?LinkId=122877)
+
+如需已知問題和最佳作法的 Active Directory 的資訊，請參閱下列資源：
+
+- [建立網域和樹系信任的已知的問題](https://go.microsoft.com/fwlink/?LinkId=128784)
+- [最佳做法來管理網域和樹系信任](https://go.microsoft.com/fwlink/?LinkId=128785)
+- [備份 Active Directory 網域服務的已知的問題](https://go.microsoft.com/fwlink/?LinkId=128793)
+- [進行系統授權還原的已知的問題](https://go.microsoft.com/fwlink/?LinkId=128788)
+- [進行系統授權還原的最佳作法](https://go.microsoft.com/fwlink/?LinkId=128791) 
+- [新增在遠端站台的網域控制站的已知的問題](https://go.microsoft.com/fwlink/?LinkId=128794)
+- [新增網域控制站，在遠端站台的最佳作法](https://go.microsoft.com/fwlink/?LinkId=128796)
+
+如需如何管理和設定 Active Directory 網域服務 (AD DS)，以及其運作方式的一般資訊，請參閱下列資源：
+
+- [管理 Active Directory 作業](https://go.microsoft.com/fwlink/?LinkId=128798)
+- [Active Directory 集合](<https://go.microsoft.com/fwlink/?LinkId=34157)

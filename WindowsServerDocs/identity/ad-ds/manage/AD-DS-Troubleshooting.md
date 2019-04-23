@@ -1,31 +1,31 @@
 ---
 ms.assetid: fd3bc84a-48eb-4f00-9dc2-846bf2c2668b
-title: "疑難排解 AD DS"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+title: 對 AD DS 進行疑難排解
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 258cd45c762e8766336bd114f3125ad87a405643
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 88513a889bc361f5733fc6b18f3d261dbcb2f1b1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876469"
 ---
-# <a name="ad-ds-troubleshooting"></a>疑難排解 AD DS
+# <a name="ad-ds-troubleshooting"></a>對 AD DS 進行疑難排解
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用於：Windows Server 2016, Windows Server 2012 R2
 
-本文件包含疑難排解建議和程序的診斷並修正問題的複寫 Active Directory 可能會發生。 
+本節包含疑難排解建議和程序來診斷和修正問題，可能會發生在 Active Directory 複寫。
 
-本文主要焦某 Directory 服務事件登入訊息和工具為基礎的錯誤訊息，可能會回報 Repadmin.exe 和 Dcdiag.exe 工具來回應。 這些工具，可在執行 Windows Server 2016 中的所有網域控制站或 2012 R2 上。 您也可以執行的 Windows 10 的成員伺服器上安裝遠端伺服器管理工具 (RSAT)。 
+此內容的主要著重在目錄服務事件記錄檔訊息，並可能 Repadmin.exe 和 Dcdiag.exe 工具所報告的工具為基礎的錯誤訊息的回應。 這些工具可在執行 Windows Server 2016 的所有網域控制站或 2012 R2 上。 您也可以在執行 Windows 10 的成員伺服器上安裝遠端伺服器管理工具 (RSAT)。
 
-安裝 RSAT 相關資訊，會看到 [遠端伺服器安裝工具]。(https://www.microsoft.com/en-us/download/details.aspx?id=45520)
+如需安裝 RSAT 的詳細資訊，請參閱文章[遠端伺服器管理工具](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)。
 
-[設定電腦，以取得疑難排解 Active Directory](../manage/troubleshoot/Configuring-a-Computer-for-Troubleshooting.md)
+[設定電腦的 Active Directory 疑難排解](../manage/troubleshoot/Configuring-a-Computer-for-Troubleshooting.md)
 
-[Active Directory 複寫問題進行疑難排解](../manage/troubleshoot/Troubleshooting-Active-Directory-Replication-Problems.md)
-
+[疑難排解 Active Directory 複寫問題](../manage/troubleshoot/Troubleshooting-Active-Directory-Replication-Problems.md)

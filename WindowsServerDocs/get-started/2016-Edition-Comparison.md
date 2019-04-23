@@ -15,18 +15,18 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "1534004"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882049"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 Standard 和 Datacenter 版本的比較
 
-> 適用於︰WindowsServer 2016
+> 適用於：Windows Server 2016
   
 ## <a name="locks-and-limits"></a>鎖定與限制
-|鎖定與限制|WindowsServer 2016 Standard|WindowsServer 2016 Datacenter|  
+|鎖定與限制|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|---------------------------|  
 |使用者數目上限|以 CAL 為依據|以 CAL 為依據|
 |SMB 連線數上限|16777216|16777216|
@@ -43,7 +43,7 @@ ms.locfileid: "1534004"
 |DLNA 轉碼器和網路媒體串流|是，若以桌面體驗安裝為伺服器|是，若以桌面體驗安裝為伺服器|
 
 ## <a name="server-roles"></a>伺服器角色
-|可用的 Windows Server 角色|角色服務|WindowsServer 2016 Standard|WindowsServer 2016 Datacenter|  
+|可用的 Windows Server 角色|角色服務|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|----------|---------------------------|  
 |Active Directory 憑證服務| |是|是|
 |Active Directory Domain Services| |是|是|
@@ -77,12 +77,12 @@ ms.locfileid: "1534004"
 |大量啟用服務| |是|是|
 |Web 服務 (IIS)| |是|是|
 |Windows 部署服務| |是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
-|WindowsServer Essentials 體驗| |是|是|
-|WindowsServer Update Services| |是|是|
+|Windows Server Essentials 體驗| |是|是|
+|Windows Server Update Services| |是|是|
 
 ## <a name="features"></a>功能
 
-|可透過伺服器管理員 (或 PowerShell) 安裝的 Windows Server 功能|WindowsServer 2016 Standard|WindowsServer 2016 Datacenter|  
+|可透過伺服器管理員 (或 PowerShell) 安裝的 Windows Server 功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|---------------------------|  
 |.NET Framework 3.5|是|是|
 |.NET Framework 4.6|是|是|
@@ -146,7 +146,7 @@ ms.locfileid: "1534004"
 |WoW64 支援|已安裝|已安裝|
 |XPS 檢視器|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 
-|正式運作的功能|WindowsServer 2016 Standard|WindowsServer 2016 Datacenter|  
+|正式運作的功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|---------------------------|  
 |最佳做法分析程式|是|是|
 |直接存取|是|是|
@@ -166,7 +166,7 @@ ms.locfileid: "1534004"
 |儲存空間直接存取|否|是|
 |大量啟用服務|是|是|
 |VSS (磁碟區陰影複製服務) 整合|是|是|
-|WindowsServer Update Services|是|是|
+|Windows Server Update Services|是|是|
 |Windows 系統資源管理員|是|是|
 |伺服器授權記錄|是|是|
 |已繼承的啟用|若託管於 Datacenter 則作為客體|可為主機或客體|

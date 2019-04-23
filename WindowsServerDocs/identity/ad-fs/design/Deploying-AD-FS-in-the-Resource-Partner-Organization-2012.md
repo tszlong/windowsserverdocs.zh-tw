@@ -1,7 +1,7 @@
 ---
 ms.assetid: 39acccd9-0402-49ca-8ce1-b239e1e7e455
-title: "資源合作夥伴組織中部署 AD FS"
-description: 
+title: 在資源夥伴組織中部署 AD FS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,29 +10,30 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: a20fab1cca4c33485fd599de5525c7a718e9598e
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882319"
 ---
-# <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>資源合作夥伴組織中部署 AD FS
+# <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>在資源夥伴組織中部署 AD FS
 
 >適用於：Windows Server 2012
 
-在 Active Directory 同盟服務 \(AD FS\) 資源合作夥伴公司代表的組織的網頁伺服器可能會受到 resource\ 端聯盟伺服器。 聯盟伺服器在資源合作夥伴使用的由 account 協力廠商提供的網頁伺服器位於資源合作夥伴宣告的安全性權杖。  
+資源夥伴組織中 Active Directory Federation Services \(AD FS\)代表之 Web 伺服器可能會受到保護的資源的組織\-側邊的同盟伺服器。 在資源夥伴同盟伺服器會使用帳戶夥伴提供的網頁伺服器都位於資源夥伴的宣告所產生的安全性權杖。  
   
-在您要提供存取同盟服務或應用程式許多不同的使用者案例中，部分使用者位於不同的組織，您可以設定資源聯盟伺服器，您可以將多個 account 協力廠商部署。  
+在您要提供存取同盟服務或應用程式給許多不同使用者的情況下，某些使用者位於不同的組織 — 您可以設定資源同盟伺服器，以便您可以部署多個帳戶夥伴。  
   
-如需了解如何設定及設定資源合作夥伴組織的詳細資訊，請查看[檢查清單︰ 設定資源合作夥伴組織](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)。  
+如需如何安裝和設定資源夥伴組織的詳細資訊，請參閱[檢查清單：Configuring the Resource Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)。  
   
-## <a name="in-this-section"></a>在本區段中  
+## <a name="in-this-section"></a>本節內容  
   
--   [檢視資源合作夥伴聯盟伺服器的角色](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)  
+-   [Review the Role of the Federation Server in 資源夥伴](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)  
   
--   [檢視聯盟伺服器 Proxy 資源夥伴中的角色](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
+-   [檢閱資源夥伴中的同盟伺服器 proxy 角色](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
   
--   [判斷您聯盟應用程式中的策略資源合作夥伴](Determine-Your-Federated-Application-Strategy-in-the-Resource-Partner.md)  
+-   [決定資源夥伴中的同盟應用程式策略](Determine-Your-Federated-Application-Strategy-in-the-Resource-Partner.md)  
   
 
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

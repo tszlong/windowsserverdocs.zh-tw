@@ -1,37 +1,38 @@
 ---
 ms.assetid: b432980c-601f-492b-924e-7427419c8457
-title: "Adprep.exe 所做的變更"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Changes Made by Adprep.exe
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 2f28d2a19b09e258f2b42226a9b20b540a6e9f7d
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: d6b656c3a7d335a493c406908f31cb885498d5e3
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877479"
 ---
-# <a name="changes-made-by-adprepexe"></a>Adprep.exe 所做的變更
+# <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-本主題描述 Adprep.exe 可在 Windows Server 2012 R2 和 Windows Server 2012 中對。  
+本主題說明可在 Windows Server 2012 R2 和 Windows Server 2012 中 Adprep.exe 的變更。  
   
--   [樹系的更新](../../../ad-ds/deploy/RODC/Forest-Wide-Updates.md)  
+-   [全樹系更新](../../../ad-ds/deploy/RODC/Forest-Wide-Updates.md)  
   
 -   [全網域更新](../../../ad-ds/deploy/Domain-Wide-Updates.md)  
   
--   [Read-Only 網域控制站的更新](../../../ad-ds/deploy/RODC/Read-Only-Domain-Controller-Updates.md)  
+-   [唯讀網域控制站更新](../../../ad-ds/deploy/RODC/Read-Only-Domain-Controller-Updates.md)  
   
--   [架構更新](../../../ad-ds/deploy/Schema-Updates.md)  
+-   [結構描述更新](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>也了  
-[Windows Server 2008 R2: < 附錄的變更 Adprep.exe 支援 AD DS](https://technet.microsoft.com/library/dd378876.aspx)  
-[Windows Server 2008: < 附錄的變更 Adprep.exe 支援 AD DS](https://technet.microsoft.com/library/cc770703.aspx)  
+## <a name="see-also"></a>另請參閱  
+[Windows Server 2008 R2:變更 Adprep.exe 以支援 AD DS 的附錄](https://technet.microsoft.com/library/dd378876.aspx)  
+[Windows Server 2008:變更 Adprep.exe 以支援 AD DS 的附錄](https://technet.microsoft.com/library/cc770703.aspx)  
   
 
 

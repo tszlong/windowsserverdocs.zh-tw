@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5e334c4e-75a7-453c-83e8-5ab4243cc685
-title: "建立的第一個聯盟伺服器聯盟伺服器陣列"
-description: 
+title: 在同盟伺服器陣列中建立第一部同盟伺服器
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,61 +10,62 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: af0aa61f0d16d4ca567b140c95d74445d09f1cf3
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879299"
 ---
-# <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>建立的第一個聯盟伺服器聯盟伺服器陣列
+# <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>在同盟伺服器陣列中建立第一部同盟伺服器
 
- >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+ >適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-您安裝同盟服務的角色，並在電腦上設定所需的憑證之後，您就可以設定電腦成為聯盟伺服器。 您可以使用下列程序來設定電腦變得新聯盟伺服器陣列使用 AD FS 聯盟伺服器設定精靈中的第一個聯盟伺服器。  
+安裝 Federation Service 角色服務後，當您在電腦上設定必要的憑證，您就能夠將電腦設定為同盟伺服器。 若要將電腦要成為新的同盟伺服器陣列，使用 AD FS 同盟伺服器設定精靈的第一個同盟伺服器設定，您可以使用下列程序。  
   
-建立的第一個聯盟伺服器發電廠中的動作也會建立新的同盟服務，並讓這台電腦的主要聯盟伺服器。 這表示這部電腦，將會使用 AD FS 設定資料庫 read\/寫入複本設定。 所有其他聯盟伺服器此必須複製將它們儲存在本機 AD FS 設定資料庫他們僅限 read\ 複本主要聯盟伺服器上所做的任何變更。 如需有關這個複寫程序，請查看[的角色 AD FS 設定資料庫的](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
+在陣列中建立第一部同盟伺服器也會建立新的 Federation Service 並使此電腦成為主要同盟伺服器。 這表示這台電腦就會以讀取設定\/寫入 AD FS 設定資料庫的複本。 此伺服器陣列中的所有其他同盟伺服器必須複寫到其讀取主要同盟伺服器進行任何變更\-份其本機儲存的 AD FS 設定資料庫。 如需有關此複寫程序的詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
 > [!NOTE]  
-> 聯盟網路 Single\-Sign\-On \(SSO\) 設計，您必須至少一個聯盟伺服器 account 合作夥伴組織和資源合作夥伴組織中的至少一個聯盟伺服器。 如需詳細資訊，請查看[放置聯盟伺服器](https://technet.microsoft.com/library/dd807127.aspx)。  
+> 同盟網頁單一\-號\-上\(SSO\)設計中，您必須在帳戶夥伴組織中的至少一部同盟伺服器和資源夥伴組織中的至少一部同盟伺服器. 如需詳細資訊，請參閱[同盟伺服器放置位置](https://technet.microsoft.com/library/dd807127.aspx)。  
   
-資格網域系統管理員」，或獲得寫入存取 Active Directory 中程式資料容器委派的核對最小，才能完成此程序。  
+若要完成此程序，至少需要 Domain Admins 的成員資格或已被授與寫入 Active Directory 中「程式資料」容器之權限的受委派網域帳戶。  
   
-### <a name="to-create-the-first-federation-server-in-a-federation-server-farm"></a>若要建立的第一個聯盟伺服器聯盟伺服器陣列中  
+### <a name="to-create-the-first-federation-server-in-a-federation-server-farm"></a>在同盟伺服器陣列中建立第一部同盟伺服器  
   
-1.  有兩種方法可以開始 AD FS 聯盟伺服器設定精靈。 若要開始精靈中，執行下列其中一個動作：  
+1.  有兩種方式可以啟動 AD FS 同盟伺服器設定精靈。 若要啟動該精靈，請執行下列其中一個動作：  
   
-    -   同盟服務角色服務安裝完成後，開放 AD FS 管理 snap\ 中，按一下**AD FS 聯盟伺服器設定精靈**上的連結**概觀**頁面或**控制項**窗格。  
+    -   Federation Service 角色服務安裝完成之後，開啟 AD FS 管理嵌入式管理單元\-中，按一下  **AD FS 同盟伺服器設定精靈**上的連結**概觀**頁面或在**動作**窗格。  
   
-    -   隨時之後安裝精靈完成，開放 Windows 檔案總管] 瀏覽至**C:\\Windows\\ADFS**資料夾，然後 double\ 按**FsConfigWizard.exe**。  
+    -   安裝精靈已完成，請開啟 Windows 檔案總管中之後, 隨時瀏覽至**c:\\Windows\\ADFS**資料夾，，然後按兩下\-按一下**FsConfigWizard.exe**.  
   
-2.  在**歡迎**頁面上，確認**建立新的同盟服務**已選取，然後按一下 [**下一步**。  
+2.  在 [歡迎] 頁面上，確認已選取 [建立新的 Federation Service]，然後按一下 [下一步]。  
   
-3.  上**選取 Stand\-只或發電廠部署**頁面上，按一下 [**新聯盟伺服器陣列**，然後按一下 [**下一步**。  
+3.  在上**選取，就能\-Alone 或伺服陣列部署**頁面上，按一下**新同盟伺服器陣列**，然後按一下**下一步**。  
   
-4.  在**同盟服務名稱指定**頁面上，確認**SSL 憑證**，會顯示正確。 如果這不是正確的憑證，選取適當的憑證的**SSL 憑證**清單中。  
+4.  在 [指定 Federation Service 名稱] 頁面上，確認顯示的 [SSL 憑證] 是正確的。 若這不是正確的憑證，請從 [SSL 憑證] 清單中選取適當憑證。  
   
-    這個憑證也從安全通訊端層 \(SSL\) 設定為預設值的網站。 如果只有一個 SSL 憑證設定預設值的網站，該憑證呈現及自動選取 [使用。 多個 SSL 憑證的網站，預設設定，如果以下列出這些所有憑證，您必須從他們中選取。 不 SSL 設定為預設值的網站時，也可在本機電腦上的個人化的憑證存放區憑證的清單。  
+    此憑證會產生從 Secure Sockets Layer \(SSL\)在預設的網站的設定。 若「預設的網站」只設定一個 SSL 憑證，則會出示該憑證並自動選取該憑證以供使用。 若已為「預設的網站」設定多個 SSL 憑證，則此處會列出所有那些憑證，而且您必須從中選取一個憑證。 若沒有為「預設的網站」設定 SSL 設定，則會從本機電腦上個人憑證存放區中可用的憑證產生清單。  
   
     > [!NOTE]  
-    > 精靈將不允許您若 SSL 憑證已設定為 IIS 覆寫憑證。 這樣可確保任何預期會保留先前 IIS 組態 SSL 憑證。 若要替代這項限制時，您可以移除憑證或重新手動 IIS Management Console 的設定。  
+    > 若已為 IIS 設定 SSL 憑證，精靈將不會允許您覆寫該憑證。 這樣可確保先前為 IIS 設定的 SSL 憑證都會被保留。 為因應此限制，您可以移除該憑證或使用 [IIS 管理主控台] 手動重新設定憑證。  
   
-5.  如果您已經選取 AD FS 資料庫存在，**現有 AD FS 設定資料庫偵測到**頁面隨即顯示。 是否出現該頁面，請按一下**Delete 資料庫**，然後按一下 [**下**。  
+5.  如果您已選取的 AD FS 資料庫的話**AD FS 組態資料庫偵測到現有的**頁面隨即出現。 若出現該頁面，請按一下 [刪除資料庫]，然後按一下 [下一步]。  
   
     > [!CAUTION]  
-    > 只有當您確定此 AD FS 資料庫中的資料並不重要或不使用正式作業聯盟伺服器陣列中，選取此選項。  
+    > 只有當您確定此 AD FS 資料庫中的資料並不重要或不使用生產同盟伺服器陣列中，請選取此選項。  
   
-6.  在**指定服務帳號**頁面上，按**瀏覽]**。 在**瀏覽**對話方塊中，尋找網域帳號，做為服務中帳號這個新的聯盟伺服器發電廠，然後按一下 [ **[確定]**。 輸入密碼、確認，請然後按一下**下一步**。  
+6.  在 [指定服務帳戶] 頁面上，按一下 [瀏覽]。 在 [瀏覽] 對話方塊中，尋找將做為這個新的同盟伺服器陣列之服務帳戶使用的網域帳戶，然後按一下 [確定]。 輸入此帳戶的密碼並再次確認，然後按一下 [下一步]。  
   
     > [!NOTE]  
-    > 查看[手動設定聯盟伺服器陣列服務 Account](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md)的詳細資訊指定聯盟伺服器陣列服務負責。 聯盟伺服器陣列中的每個聯盟伺服器必須指定相同服務負責發電廠才能正常運作。 例如，如果建立服務 account contoso\\ADFS2SVC，聯盟伺服器角色您設定，並將參與相同發電廠每一部電腦必須 contoso\\ADFS2SVC 此步驟，精靈中指定聯盟伺服器設定陣列才能正常運作。  
+    > 請參閱[手動設定同盟伺服器陣列的 服務帳戶](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md)如需指定同盟伺服器陣列的服務帳戶的詳細資訊。 同盟伺服器陣列中的每部同盟伺服器都必須指定相同的服務帳戶，陣列才能運作。 例如，如果已建立的服務帳戶為 contoso\\ADFS2SVC，您為同盟伺服器角色設定，將會參與相同的伺服陣列的每一部電腦都必須指定 contoso\\ADFS2SVC 在此步驟同盟伺服器設定精靈的伺服器陣列才能運作。  
   
-7.  在**適用於設定準備**頁面上，檢視詳細資料。 若出現正確設定，請按一下**下一步**來設定 AD FS 使用這些設定。  
+7.  在 [準備套用設定] 頁面上，檢閱詳細資料。 如果設定正確，請按一下**下一步**若要開始設定 AD FS 使用這些設定。  
   
-8.  在**設定結果**頁面上，檢視結果。 所有的設定步驟完成時，按**關閉**以結束精靈。  
+8.  在 [設定結果] 頁面上，檢閱結果。 當所有的組態步驟都完成後時，按一下**關閉**結束精靈。  
   
     > [!IMPORTANT]  
-    > 基於安全部署，成品解析度並加以回覆偵測是當您使用 AD FS 聯盟伺服器設定精靈設定聯盟伺服器陣列停用。 精靈會自動設定 Windows 內部資料庫儲存服務設定資料。 您可能會但是，誤復原這項變更，進而成品解析度端點使用**的端點**節點 snap\ 中 AD FS 管理或 Enable\-ADFSEndpoint cmdlet Windows PowerShell 中的。 請務必重新使從此端點進行處於停用狀態，當您在一起使用聯盟伺服器陣列及 Windows 內部資料庫設定預設設定。  
+    > 基於安全的部署目的，當您使用 [AD FS 同盟伺服器設定精靈] 來設定同盟伺服器陣列時，會停用成品解析與回覆偵測。 此精靈會自動設定「Windows 內部資料庫」來儲存服務設定資料。 您可能會不過，錯誤地復原這項變更藉由使用 [成品解析] 端點**端點**AD FS 管理嵌入式管理單元中的節點\-中，或啟用\-ADFSEndpoint cmdletWindows PowerShell。 請小心，不要重新設定預設設定，這樣當您使用同盟伺服器陣列搭配「Windows 內部資料庫」時，此端點才能維持停用狀態。  
   
 ## <a name="additional-references"></a>其他參考資料  
-[檢查清單︰ 設定聯盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)  
+[檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

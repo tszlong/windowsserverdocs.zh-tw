@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Online 備份服務工作自訂上登入"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 自訂註冊 Microsoft Online Backup Service 工作
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,25 +13,26 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: cd148e0e58cd80dbff7f7884ead95dc1e46b6257
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879929"
 ---
-# <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>Microsoft Online 備份服務工作自訂上登入
+# <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>自訂註冊 Microsoft Online Backup Service 工作
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-根據預設，**Microsoft Online 備份 service 登入**工作上**裝置**] 索引標籤的儀表板開啟 Microsoft Online 備份 Service 的網站。 網站提供服務的相關資訊，可協助您希望服務，並下載必要的軟體。  
+依照預設，儀表板的 **[裝置]** 標籤上的 **[註冊 Microsoft Online Backup Service]** 工作會開啟 Microsoft Online Backup Service 網站。 該網站提供服務相關資訊，並協助您訂閱服務及下載所需的軟體。  
   
- 您可以自訂**適用於 Microsoft Online 備份服務登入**工作兩種方式：  
+ 您可以用兩種方式自訂 **[註冊 Microsoft Online Backup Service]** 工作：  
   
--   您可以取代預設的網站 URL 的 URL，表示自訂使用者體驗。 若要取代預設的 URL，請打開作業系統、建立：**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl**，然後按鍵的值為指定自訂的 URL。  
+-   您可以將預設網站的 URL 取代為代表自訂使用者經驗的 URL。 若要取代預設的 URL，請開啟登錄編輯程式，並建立登錄機碼：**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl**，然後指定自訂的 URL 做為機碼的值。  
   
--   您可以隱藏工作。 若要隱藏工作，請打開作業系統和建立：**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled**。  
+-   您可以隱藏工作。 若要隱藏工作，請開啟登錄編輯程式，並建立登錄機碼：**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled**。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)

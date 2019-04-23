@@ -1,6 +1,6 @@
 ---
-title: "排程一組報告"
-description: "本文說明如何建立一組定期報告"
+title: 排程一組報告
+description: 本文說明如何建立一組定期報告
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 15b69e723af3a30375beae73782ab122c68f8880
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879719"
 ---
 # <a name="schedule-a-set-of-reports"></a>排程一組報告
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 若要按照定期排程產生一組報告，請排程*報告工作*。 報告工作會指定要產生的報告與使用的參數、報告要針對的磁碟區與資料夾、產生報告的頻率以及儲存檔案的格式。
 
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/17/2017
     -   按一下報告標籤，然後按一下 **\[編輯參數\]**。
     -   在 **\[報告參數\]** 對話方塊中，視需要編輯參數，然後按一下 **\[確定\]**。
 
-    -   若要查看所有已選取報告的參數清單，請按一下 **\[檢視選取的報告\]**。 然後按一下 **\[關閉\]**。
+    -   若要查看所有已選取報告的參數清單，請按一下 **\[檢視選取的報告\]**。 然後按一下 [關閉]。
 
 5.  若要指定儲存報告的格式：
 
@@ -76,7 +77,7 @@ ms.lasthandoff: 10/17/2017
 
 此外，您還可以檢視報告的目前狀態 (報告是否正在執行)、上次執行時間和執行結果，以及下一次排程的執行時間。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [存放裝置報告管理](storage-reports-management.md)
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

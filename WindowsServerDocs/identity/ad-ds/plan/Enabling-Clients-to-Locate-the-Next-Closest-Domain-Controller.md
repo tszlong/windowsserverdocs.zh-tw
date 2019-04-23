@@ -1,61 +1,58 @@
 ---
 ms.assetid: 7dd905ea-4235-4519-8400-31b4fa0ed1bf
-title: "讓用來找出的下一步接近網域控制站戶端"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+title: 讓用戶端找出下一個最近的網域控制站
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 39b1b79bba944c10b0c74c4bb18f6dcf80f8230e
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 7550bdcea4e7b06d31463744bfdc3319c012c62c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880359"
 ---
-# <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>讓用來找出的下一步接近網域控制站戶端
+# <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>讓用戶端找出下一個最近的網域控制站
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
-如果您執行 Windows Server 2008 或 Windows Server 2008 R2 網域控制站，您可以讓 client 的電腦可執行 Windows Vista、Windows 7、Windows Server 2008 或 Windows Server 2008 R2 網域控制站進而更有效率地找出**嘗試下一個接近網站**群組原則設定。 此設定來簡化網路流量，尤其是有許多分公司和網站大型企業来協助改善網域控制站定位器（DC 定位）。  
-  
-這個新的設定會影響您設定的網站連結費用，因為它會影響網域控制站位於的訂單。 適用於企業的有許多中樞網站和分公司，確保您的戶端無法透過下一步接近中樞網站時接近中樞網站中找不到網域控制站可大幅降低網路上的 Active Directory 傳輸。  
-  
-一般的最佳做法，您應該簡化您的網站拓撲和網站連結成本盡可能如果您可以**嘗試下一個接近網站**設定。 許多中樞網站的企業，這可以簡化您將處理中的一個台中戶端需要無法到另一個網站的網域控制站的任何計劃。  
-  
-根據預設，**嘗試下一個接近網站**設定為無法支援。 未設定時，當 DC 定位會使用下列演算法來找出網域控制站：  
-  
--   嘗試尋找網域控制站在相同的網站。  
-  
--   如果不網域控制站於相同的網站，請嘗試網域中找到的任何網域控制站。  
-  
-> [!NOTE]  
-> 這是 DC 定位用在 Active Directory 舊版相同的演算法。 如需詳細資訊，請查看 [DNS 支援 Active Directory 運作方式 ([https://go.microsoft.com/fwlink/?LinkId=108587](https://go.microsoft.com/fwlink/?LinkId=108587))。  
-  
-如果您可以**嘗試下一個接近網站**設定，DC 定位使用下列的演算法尋找網域控制站：  
-  
--   嘗試尋找網域控制站在相同的網站。  
-  
--   如果不網域控制站提供相同的網站，請嘗試尋找網域控制站在下一個最接近的網站。 網站是靠近有成本較高的網站連結比其他網站成本較低的網站連結。  
-  
--   如果不網域控制站於下一個最接近的網站，請嘗試網域中找到的任何網域控制站。  
-  
-根據預設，DC 定位不會將包含唯讀網域控制站 (RODC) 時，它會判斷最接近的下一步網站的任何網站。 此外，因為僅限 Windows Server 2008 和 Windows Server 2008 R2 網域控制站支援下一步接近網站的功能，當 client 取得回應執行較舊版本的 Windows Server 的網域控制站的 DC 定位行為相同時再設定會不支援。  
-  
-例如，假設網站拓撲四個網站的圖的網站連結值。 在此範例中，所有的網域控制站的寫入網域控制站的 Windows Server 2008 或 Windows Server 2008 R2 執行。  
-  
-![讓用來尋找俠戶端](media/Enabling-Clients-to-Locate-the-Next-Closest-Domain-Controller/beff4087-fb2a-463b-96ac-d440a9e29b75.gif)  
-  
-當**嘗試下一個接近網站**群組原則設定時在此範例中，如果 client 的電腦可執行 Windows Vista、Windows 7、Windows Server 2008，或 Windows Server 2008 R2 Site_B 在嘗試找出網域控制站，第一次嘗試尋找 Site_B 自己的網域控制站。 如果不提供 Site_B，它會嘗試尋找網域控制站 Site_A 中。  
-  
-未設定時，如果 client 會嘗試尋找網域控制站 Site_A、Site_C，或 Site_D Site_B 中已不網域控制站。  
-  
-> [!NOTE]  
-> **嘗試下一個接近網站**自動網站涵蓋範圍搭配設定的運作方式。 例如如果的下一步接近網站不網域控制站，DC 定位會嘗試尋找網域控制站自動網站涵蓋範圍執行該網站。  
-  
-套用**嘗試下一個接近網站**設定，您可以建立群組原則物件 (GPO) 並連結到您的組織的適當物件或修改讓它會影響所有戶端執行 Windows Vista、Windows 7、Windows Server 2008 或 Windows Server 2008 R2 網域中的預設網域原則。 如需詳細資訊，了解如何設定**嘗試下一個接近網站**設定，請[可讓戶端中找不到網域控制站下一步接近網站](https://technet.microsoft.com/library/cc772592.aspx)。  
-  
+如果您有執行 Windows Server 2008 或更新版本的網域控制站時，您可以讓它可以執行 Windows Vista 的用戶端電腦或更新版本或 Windows Server 2008 或更新版本才可啟用更有效率地找到網域控制站**試用下一步最接近的站台**群組原則設定。 這項設定可以協助簡化網路流量，特別是在有許多的分公司與站台的大型企業提升網域控制站定位程式 （DC 定位程式）。
 
+這個新的設定可能會影響設定站台連結成本，因為它會影響網域控制站位於的順序。 對於具有許多中樞站台和分公司的企業，您可以確保，用戶端容錯移轉至下一個最接近的中樞站台最接近的中樞站台中找不到網域控制站，大幅減少在網路上的 Active Directory 流量。
 
+一般的最佳作法是，您應該簡化您的站台拓撲，以及站台連結成本是盡量如果您啟用**嘗試下一個最接近的網站**設定。 在企業中具有許多的中樞站台，這可簡化您進行處理，在一個站台的用戶端需要容錯移轉至另一個站台中的網域控制站的情況下的任何方案。
+
+根據預設，**嘗試下一個最接近的網站**未啟用設定。 不啟用此設定時，DC 定位程式會使用下列演算法來尋找網域控制站：
+
+- 嘗試尋找網域控制站位於相同站台。
+- 如果沒有網域控制站位於相同的站台，嘗試尋找網域中的任何網域控制站。
+
+> [!NOTE]
+> 這是在舊版的 Active Directory 中的 DC 定位程式使用相同的演算法。 如需詳細資訊，請參閱文章[如何 Active Directory 的運作方式的 DNS 支援](https://go.microsoft.com/fwlink/?LinkId=108587)。
+
+如果您啟用**嘗試下一個最接近的網站**設定，DC 定位程式會使用下列演算法來尋找網域控制站：
+
+- 嘗試尋找網域控制站位於相同站台。
+- 如果沒有網域控制站位於相同的站台，請嘗試在下一個最接近的網站尋找網域控制站。 網站是接近其是否比另一個站台成本較高站台連結成本較低站台連結。
+- 如果沒有網域控制站功能在下一個最接近的網站，嘗試尋找網域中的任何網域控制站。
+
+**嘗試下一個最接近的網站**設定協同運作，能使用自動站台涵蓋範圍。 例如，如果下一個最接近的網站不有任何網域控制站，DC 定位程式會嘗試尋找網域控制站，可針對該站台執行自動站台涵蓋範圍。
+
+根據預設，DC 定位程式不會考慮包含唯讀網域控制站 (RODC)，它會決定下一個最接近的網站時的任何網站。 此外，用戶端會從執行版本早於 Windows Server 2008 的網域控制站，取得回應，DC 定位程式行為時，然後設定未啟用時相同。
+
+例如，假設站台拓撲有四個網站，在下圖中的站台連結值。 在此範例中，所有網域控制站都是執行 Windows Server 2008 或更新版本的可寫入網域控制站。
+
+![讓用戶端找到 dc](media/Enabling-Clients-to-Locate-the-Next-Closest-Domain-Controller/beff4087-fb2a-463b-96ac-d440a9e29b75.gif)
+
+當**嘗試下一個最接近的網站**如果 Site_B 中的用戶端電腦嘗試找出網域控制站在此範例中，啟用群組原則設定，它會先嘗試自己 Site_B 中尋找網域控制站。 如果沒有在 Site_B，它會嘗試尋找 Site_A 中的網域控制站。
+
+如果未啟用此設定，用戶端會嘗試尋找網域控制站 Site_A、 Site_C 或 Site_D 中，如果沒有網域控制站位於 Site_B。
+
+> [!NOTE]
+> **嘗試下一個最接近的網站**設定協同運作，能使用自動站台涵蓋範圍。 例如，如果下一個最接近的網站不有任何網域控制站，DC 定位程式會嘗試尋找網域控制站，可針對該站台執行自動站台涵蓋範圍。
+
+若要套用**嘗試下一個最接近的網站**設定，您可以建立群組原則物件 (GPO)，並將它連結至適當的物件中，為您的組織，或您可以修改預設網域原則，就會影響執行 Windows 的所有用戶端Vista 或更新版本和 Windows Server 2008 或更新版本的網域中。 如需有關如何設定**嘗試下一個最接近的網站**設定，請參閱[允許用戶端中下一個最接近的網站尋找網域控制站](https://technet.microsoft.com/library/cc772592.aspx)。

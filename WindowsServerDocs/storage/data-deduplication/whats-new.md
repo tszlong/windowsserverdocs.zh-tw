@@ -1,6 +1,6 @@
 ---
 ms.assetid: d11acbc2-40c6-4ab2-9514-2bc3ad81499a
-title: "重複資料刪除的新功能"
+title: 重複資料刪除的新功能
 ms.technology: storage-deduplication
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -9,14 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 4a69221548d9defff5a45413ccfe824f9788755a
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876449"
 ---
 # <a name="whats-new-in-data-deduplication"></a>重複資料刪除的新功能
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server （半年通道），Windows Server 2016
 
 [重複資料刪除](overview.md)在 Windows Server 2016 已經最佳化，效能、彈性都相當好，並能以私人雲端規模加以管理。 如需 Windows Server 2016 中軟體定義儲存堆疊的詳細資訊，請參閱 [Windows Server 2016 中儲存空間的新功能](../whats-new-in-storage.md)。
 
@@ -26,9 +27,9 @@ ms.lasthandoff: 10/17/2017
 |---------------|----------------|-------------|
 | [支援大型磁碟區](whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變換設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重複資料刪除支援最高 64 TB 的磁碟區大小。 |
 | [支援大型檔案](whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，完全支援最高 1 TB 大小的檔案。 |
-| [支援 Nano 伺服器](whats-new.md#nano-server-support) | 新增 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
-| [簡化的備份支援](whats-new.md#simple-backup-support) | 新增 | Windows Server 2012 R2 是透過一系列的手動設定步驟來支援虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx))。 Windows Server 2016 已加入新的預設使用類型 (Backup)，以便順暢地針對虛擬備份應用程式部署重複資料刪除。|
-| [支援叢集 OS 輪流升級](whats-new.md#cluster-upgrade-support) | 新增 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
+| [適用於 Nano Server 的支援](whats-new.md#nano-server-support) | 新的 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
+| [簡化的備份支援](whats-new.md#simple-backup-support) | 新的 | Windows Server 2012 R2 是透過一系列的手動設定步驟來支援虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx))。 Windows Server 2016 已加入新的預設使用類型 (Backup)，以便順暢地針對虛擬備份應用程式部署重複資料刪除。|
+| [支援叢集 OS 輪流升級](whats-new.md#cluster-upgrade-support) | 新的 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
 
 ## <a name="large-volume-support"></a>支援大型磁碟區
 
@@ -53,7 +54,7 @@ ms.lasthandoff: 10/17/2017
 **有哪些不同？**  
 在 Windows Server 2016 中，重複資料刪除功能會利用新的資料流對應結構和其他「內部」增強功能，提升最佳化輸送量和存取效能。 此外，重複資料刪除處理管線現在可以在容錯移轉 (而不是重新啟動) 之後，繼續進行最佳化。 這些變更使得您即使對高達 1 TB 的檔案進行重複資料刪除，還是能有相當高的效能。
 
-## <a name="nano-server-support"></a>支援 Nano 伺服器
+## <a name="nano-server-support"></a>適用於 Nano Server 的支援
 **這個變更增加了什麼價值？**  
 Nano 伺服器是 Windows Server 2016 中新的無周邊部署選項，所需的系統資源使用量最小、大幅加快啟動速度，而且需要的更新與重新啟動次數比 Windows Server Core 部署選項更少。 Nano 伺服器上完全支援重複資料刪除功能。 如需 Nano 伺服器的詳細資訊，請參閱[開始使用 Nano 伺服器](../../get-started/getting-started-with-nano-server.md)。
 

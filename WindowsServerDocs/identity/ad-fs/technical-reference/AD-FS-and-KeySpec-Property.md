@@ -1,6 +1,6 @@
 ---
-title: "Active Directory 同盟服務和憑證鍵規格屬性資訊"
-description: 
+title: Active Directory Federation Services 和憑證金鑰規格屬性資訊
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,21 +10,22 @@ ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: db58fcce054f34c4b0a3f6725456badae9fd0468
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879309"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS 和憑證 KeySpec 屬性資訊
-按鍵規格 (」 KeySpec 」) 是憑證與鍵相關聯的屬性。 它會指定憑證相關聯的私密金鑰可用來登入、 加密，或兩者。   
+金鑰規格 ("KeySpec 」) 是憑證與金鑰相關聯的屬性。 它會指定與憑證相關聯的私用金鑰是否可以用於簽署、 加密，或兩者。   
 
-例如，不正確的 KeySpec 值可能會造成 AD FS 和 Web 應用程式 Proxy 錯誤：
+這類 KeySpec 值不正確可能會導致 AD FS 和 Web 應用程式 Proxy 錯誤：
 
 
-- AD FS 事件登入 （但 SChannel 36888 和 36874 事件可能登入） 的建立 SSL 日 TLS 連接 AD FS 或應用程式網路 Proxy，失敗
-- AD FS 或 WAP 登入失敗形成根據的驗證] 頁面上，以顯示在頁面上的任何錯誤訊息。
+- 若要建立 AD FS 或 Web Application Proxy 的 SSL/TLS 連線與記錄 （雖然可能會記錄 36888 和 36874 的安全通道事件） 的 AD FS 事件不失敗
+- 在 AD FS 或 WAP 登入失敗表單型的驗證 頁面上，並沒有顯示在頁面上的錯誤訊息。
 
-您可能會看到事件木頭中的動作：
+您可能會看到下列事件記錄檔中：
 
     Log Name:      AD FS Tracing/Debug
     Source:        AD FS Tracing
@@ -38,79 +39,79 @@ ms.lasthandoff: 07/03/2017
     Description:
     Ignore corrupted SSO cookie.
 
-## <a name="what-causes-the-problem"></a>問題的原因
-KeySpec 方便的按鍵發生或擷取由 Microsoft CryptoAPI (CAPI)，從 Microsoft 舊版密碼編譯儲存提供者 (CSP)，可以使用方式。
+## <a name="what-causes-the-problem"></a>造成此問題的原因
+KeySpec 屬性會識別產生或擷取由 Microsoft CryptoAPI (CAPI)，從 Microsoft 傳統密碼編譯儲存體提供者 (CSP) 的金鑰用法。
 
-KeySpec 值為**1**，或**AT_KEYEXCHANGE**，可用於簽署及加密。  為**2**，或**AT_SIGNATURE**，僅用來登入。
+KeySpec 值**1**，或**AT_KEYEXCHANGE**，可用來簽署和加密。  值為**2**，或**AT_SIGNATURE**，只用來簽署。
 
-最常見的 KeySpec 錯誤設定所使用的值為 2 的簽署憑證權杖以外的憑證。  
+最常見 KeySpec 組態錯誤以外的權杖簽署憑證的憑證使用的值為 2。  
 
-對於使用密碼編譯下一代 (CNG) 提供者程式其鍵憑證，還有金鑰規格的概念，並 KeySpec 值一定會零。
+對於憑證的金鑰產生使用 Cryptography Next Generation (CNG) 提供者，沒有索引鍵的規格中，概念，和 KeySpec 值一律為零。
 
-了解如何檢查 KeySpec 有效值下方。 
+了解如何檢查有有效的 KeySpec 值以下。 
 
 ### <a name="example"></a>範例
-範例舊版 CSP 為 Microsoft 增強密碼編譯提供者。 
+舊版的 CSP 的範例是 Microsoft Enhanced Cryptographic Provider。 
 
-Microsoft RSA CSP 大型物件格式包含識別字演算法，請**CALG_RSA_KEYX**或**CALG_RSA_SIGN**，分別服務要求其中一個 * * AT_KEYEXCHANGE * * 或**AT_SIGNATURE**鍵。
+Microsoft RSA CSP 金鑰 blob 格式包含演算法識別項，請**CALG_RSA_KEYX**或是**CALG_RSA_SIGN**，分別針對服務要求 * * AT_KEYEXCHANGE * * 或**AT_簽章**索引鍵。
   
-RSA 演算法識別碼，如下所示對應至 KeySpec 值
+RSA 金鑰演算法識別項對應至 KeySpec 值，如下所示
 
-| 支援的提供者演算法| 適用於 CAPI 通話鍵規格值 |
+| 支援的提供者演算法| 金鑰規格 CAPI 呼叫的值 |
 | --- | --- |
-|可用來登入和解密 CALG_RSA_KEYX: RSA 鍵| AT_KEYEXCHANGE (或 KeySpec = 1 台)|
-僅限金鑰的 CALG_RSA_SIGN: RSA 簽章 |AT_SIGNATURE (或 KeySpec = 2)|
+|CALG_RSA_KEYX:可以用於簽署及解密的 RSA 金鑰| AT_KEYEXCHANGE (或 KeySpec = 1)|
+CALG_RSA_SIGN:金鑰的 RSA 簽章 |AT_SIGNATURE (或 KeySpec = 2)|
 
-## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 值和相關的意義。
-以下是各種 KeySpec 值的意義︰
+## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 值和相關聯的意義
+以下是各種 KeySpec 值的意義：
 
-|Keyspec 值。|表示|建議使用的 AD FS 使用|
+|Keyspec 值|方法|建議的 AD FS 使用|
 | --- | --- | --- |
-|0|憑證的 CNG 憑證|僅限 SSL 憑證|
-|1|適用於傳統 CAPI (非 CNG) 憑證，按鍵可用來登入和解密|    SSL，預付碼簽章權杖解密，服務通訊憑證|
-|2|適用於傳統 CAPI (非 CNG) 憑證，可以使用按鍵僅適用於登入|不建議|
+|0|憑證的 CNG 憑證|只使用 SSL 憑證|
+|1|舊版的 CAPI (非 CNG) 憑證，金鑰可以用於簽署及解密|    SSL，權杖簽署、 權杖解密，服務通訊憑證|
+|2|舊版的 CAPI (非 CNG) 憑證，可以使用的金鑰只能用於簽章|不建議使用|
 
-## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>若要查看您的憑證 KeySpec 值如何 / 下鍵
-若要查看憑證值，您可以使用**certutil**命令列工具。  
+## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>如何檢查 KeySpec 值，為您的憑證 / 金鑰
+若要查看您可以使用的憑證值**certutil**命令列工具。  
 
-以下是範例： **certutil-v – 儲存我**。  這會傾印畫面憑證的資訊。
+以下是範例： **certutil – v – 儲存我**。  這會將傾印至畫面的憑證資訊。
 
 ![Keyspec 憑證](media/AD-FS-and-KeySpec-Property/keyspec1.png)
 
-在 CERT_KEY_PROV_INFO_PROP_ID 尋找兩個項目：
+下兩件事 CERT_KEY_PROV_INFO_PROP_ID 外觀：
 
 
-1. **提供者類型：**這表示還是憑證使用舊版的密碼編譯儲存提供者 (CSP) 的金鑰儲存提供者以在較新的憑證下一代 (CNG) Api。  任何為零表示舊版的提供者。
-2.  **KeySpec:** AD FS 憑證 KeySpec 有效值如下：
+1. **提供者類型：** 這代表是否使用舊版的密碼編譯儲存體提供者 (CSP) 的憑證或金鑰儲存提供者基礎上較新的憑證 Next Generation (CNG) Api。  任何非零的值會指出舊版的提供者。
+2.  **KeySpec:** AD FS 憑證的有效 KeySpec 值如下：
 
-    舊版 CSP 提供者 （如提供者類型為 0 不相同）：
+    舊版的 CSP 提供者 (不等於 0 的 ProviderType):
     
-    |AD FS 憑證用途|有效 KeySpec 值|
+    |AD FS 憑證用途|有效的 KeySpec 值|
     | --- | --- |
     |服務通訊|1|
     |權杖解密|1|
-    |權杖登入|1 到 2|
+    |權杖簽署|1 和 2|
     |SSL|1|
 
     CNG 提供者 (提供者類型 = 0):
-    |AD FS 憑證用途|有效 KeySpec 值|
+    |AD FS 憑證用途|有效的 KeySpec 值|
     | --- | --- |   
     |SSL|0|
 
-## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>如何變更您的憑證 keyspec 支援的值
-變更 KeySpec 值，不需要的憑證會重新發生，或重新是發行憑證授權單位。  變更 KeySpec 重新匯入的完整憑證和 PFX 檔案從私密金鑰憑證存放區，使用下列步驟：
+## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>如何將您的憑證 keyspec 變更為支援的值
+KeySpec 值變更時，不需要重新產生或重新發行憑證授權單位憑證。  可以變更 KeySpec 重新匯入完整的憑證和私密金鑰的 PFX 檔案從憑證存放區使用下列步驟：
 
 
-1. 首先，查看並錄製現有的憑證的私人按鍵權限，它們可以重新設定必要之後重新匯入。
-2. 匯出包括私密金鑰檔案 PFX 憑證。
-3. 執行下列步驟針對每個 AD FS 和 WAP 伺服器
-    1. Delete 憑證 (從 AD FS 日 WAP 伺服器)
-    2. 打開提升權限的 PowerShell 命令提示字元及匯入 PFX 檔案，使用下列 cmdlet 語法，指定 AT_KEYEXCHANGE 值 （適用於所有 AD FS 憑證目的） 每個 AD FS 和 WAP 伺服器上：
-        1. C:\ > certutil-importpfx certfile.pfx AT_KEYEXCHANGE
+1. 首先，檢查和記上現有的憑證私用金鑰的權限，使它們可以重新設定視之後重新匯入。
+2. 匯出包括私密金鑰的 PFX 檔案的憑證。
+3. 執行下列步驟，為每個 AD FS 和 WAP 伺服器
+    1. 刪除憑證 (來自 AD FS / WAP 伺服器)
+    2. 開啟提升權限的 PowerShell 命令提示字元，並匯入 PFX 檔案的每部 AD FS 和 WAP 伺服器上使用下列 cmdlet 語法，請指定 AT_KEYEXCHANGE 值 （這適用於所有的 AD FS 憑證用途）：
+        1. C:\>certutil-importpfx certfile.pfx AT_KEYEXCHANGE
         2. 輸入 PFX 密碼
-    3. 上述完成之後，執行下列動作
-        1. 檢查私人按鍵權限
-        2. 重新開機 adfs 或 wap 服務
+    3. 上述完成後，請執行下列
+        1. 檢查私用金鑰的權限
+        2. 重新啟動 adfs 或 wap 服務
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 使用應用程式負載平衡 DNS 原則
-description: 本主題是 DNS 原則案例指南適用於 Windows Server 2016 的一部分
+title: 使用 DNS 原則進行應用程式負載平衡
+description: 本主題是 DNS 原則案例指南的 Windows Server 2016 的一部分
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-dns
@@ -8,67 +8,68 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d156c258b971c45bf1c4c20739440bd5cc9e239f
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 1bb3e6695a7ec8fc7d950873403df023b4def3d8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59881609"
 ---
-# <a name="use-dns-policy-for-application-load-balancing"></a>使用應用程式負載平衡 DNS 原則
+# <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 原則進行應用程式負載平衡
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用本主題以了解如何設定執行的應用程式負載平衡 DNS 原則。
+您可以使用本主題以了解如何設定 DNS 原則以執行應用程式負載平衡。
 
-之前版本的 Windows Server DNS 只提供負載平衡所使用的回應循環配置資源。但是，您可以在 Windows Server 2016、 dns 設定 DNS 負載平衡] 應用程式的原則。
+舊版的 Windows Server DNS 只提供負載平衡使用循環配置資源回應;但是，使用 Windows Server 2016 中 DNS 時，您可以設定應用程式負載平衡的 DNS 原則。
 
-當您完成部署多個應用程式時，您可以使用 DNS 原則，以平衡不同的應用程式執行個體，藉此動態應用程式的配置流量載入間流量載入。
+當您部署的應用程式的多個執行個體時，您可以使用 DNS 原則來平衡不同的應用程式執行個體，藉此以動態方式配置應用程式的 流量負載之間的流量負載。
 
 ## <a name="example-of-application-load-balancing"></a>應用程式負載平衡的範例
 
-以下是您如何使用的應用程式負載平衡 DNS 原則的範例。
+以下是如何使用 DNS 原則，以及在應用程式負載平衡的範例。
 
-此範例中使用虛構公司-Contoso 禮品服務-提供 online gifing 服務，並其網站名為**contosogiftservices.com**。
+此範例使用虛構公司 Contoso 禮物服務-它會提供線上 gifing 服務，且具有名為網站**contosogiftservices.com**。
 
-多個能源各有不同的 IP 位址裝載 contosogiftservices.com 網站。
+Contosogiftservices.com 網站裝載於多個資料中心各有不同的 IP 位址。
 
-北美洲，以 Contoso 禮品服務主要市場，三個能源裝載網站： 伊利諾州芝加哥、 達拉斯、 傳送與西雅圖縣。
+在北美地區，也就是 Contoso 禮物服務的主要市場，網站裝載於三個資料中心：芝加哥，IL 德克薩斯州達拉斯，華盛頓州西雅圖市。
 
-西雅圖網頁伺服器具有最佳硬體設定，並為兩個網站倍載入處理。 Contoso 禮品服務想要以下列方式導向的應用程式流量。
+西雅圖網頁伺服器具有最佳的硬體組態，而且可以處理兩倍的負載，做為其他兩個站台。 Contoso 禮物服務想要以下列方式導向的應用程式流量。
 
-- 西雅圖網頁伺服器包含更多資源，因為一半的應用程式的用導向這個伺服器
-- Datacenter 達拉斯、 傳送導向的應用程式的用一季
-- 伊利諾州芝加哥，datacenter 導向的應用程式的用一季
+- 西雅圖 Web 伺服器包括更多資源，因此應用程式的用戶端的下半部會導向到此伺服器
+- 一季的應用程式的用戶端會被導向至德克薩斯州達拉斯資料中心
+- 一季的應用程式的用戶端會被導向至芝加哥，IL，資料中心
 
-下圖描述此案例。
+下圖說明此案例。
 
-![DNS 應用程式負載平衡 DNS 原則](../../media/Dns-App-Lb/dns-app-lb.jpg)
+![DNS 應用程式負載平衡使用 DNS 原則](../../media/Dns-App-Lb/dns-app-lb.jpg)
 
 
-### <a name="how-application-load-balancing-works"></a>應用程式如何負載平衡運作
+### <a name="how-application-load-balancing-works"></a>如何在應用程式的負載平衡的運作
 
-您已經設定好之後 DNS 原則的應用程式的 DNS 伺服器載入平衡使用此案例，DNS 伺服器回應 50%的西雅圖網頁伺服器位址，25%的達拉斯網頁伺服器位址，以及 25%的芝加哥網址伺服器的時間。
+設定之後 DNS 伺服器與應用程式的 DNS 原則載入平衡使用此範例案例中，DNS 伺服器回應的 50%的西雅圖 Web 伺服器位址，25%的時間與 Dallas Web 伺服器位址，並使用時間 25%的時間芝加哥 Web 伺服器位址。
 
-因此的 DNS 伺服器接收每個四個查詢，它看具有兩個回應西雅圖和一個每個達拉斯和芝加哥。
+因此對於每個 DNS 伺服器收到四個的查詢，它會回應兩個回應 Seattle 和每個代表 Dallas 和芝加哥。
 
-負載平衡 DNS 原則的一個可能的問題，是 DNS 記錄 DNS client 並解析日 LDNS，這可能會干擾負載平衡，因為 client 或解析不要傳送查詢 DNS 伺服器的快取。
+負載平衡使用 DNS 原則可能有一個問題是由 DNS 用戶端和解析程式/LDNS，可能會干擾負載平衡，因為解析程式的用戶端不要傳送查詢到 DNS 伺服器的 DNS 記錄的快取。
 
-您可以使用較低的 Time\ to\ 動態 \(TTL\) 值應負載平衡 DNS 記錄降低效果的這個問題。
+您可以使用低的時間，以避免此行為的影響\-要\-Live \(TTL\) DNS 記錄，應該進行負載平衡的值。
 
 ### <a name="how-to-configure-application-load-balancing"></a>如何設定應用程式負載平衡
 
-下列區段會顯示如何設定 DNS 負載平衡] 應用程式的原則。
+下列各節會示範如何設定應用程式負載平衡的 DNS 原則。
 
 #### <a name="create-the-zone-scopes"></a>建立區域範圍
 
-您必須先建立領域的區域 contosogiftservices.com 資料中心裝載的位置。
+您必須先建立的範圍的區域 contosogiftservices.com 資料中心裝載的位置。
 
-時區領域是區域的唯一執行個體。 DNS 區域可以有多個區域領域，與每個包含 DNS 記錄它自己設定的區域範圍。 相同記錄可能會出現在多個領域，以不同的 IP 位址或相同的 IP 位址。
+區域範圍內是區域的唯一的執行個體。 DNS 區域可以有多個區域範圍，與包含它自己的 DNS 記錄集的每個區域範圍。 同一筆記錄中可以存在多個領域，具有不同 IP 位址或相同的 IP 位址。
 
 >[!NOTE]
->根據預設，區域領域存在於 DNS 區域。 這個區域領域作為區域，具有相同的名稱，並在這個領域中工作舊版 DNS 作業。
+>根據預設，在區域範圍存在於 DNS 區域。 此區域範圍作為區域，具有相同的名稱，此範圍上運作的舊版 DNS 作業。
 
-您可以使用下列的 Windows PowerShell 命令來建立區域範圍。
+您可以使用下列 Windows PowerShell 命令來建立區域範圍。
     
     Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
     
@@ -76,19 +77,19 @@ ms.lasthandoff: 03/28/2018
     
     Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "ChicagoZoneScope"
 
-如需詳細資訊，請查看[新增-DnsServerZoneScope](https://technet.microsoft.com/library/mt126267.aspx)
+如需詳細資訊，請參閱[新增 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-####<a name="bkmk_records"></a>若要的區域領域加入資料
+####<a name="bkmk_records"></a>將記錄新增至區域範圍
 
-現在，您必須新增到區域領域代表網頁伺服器主機記錄。
+現在，您必須新增至多個區域範圍表示 web 伺服器主機的記錄。
 
-在**SeattleZoneScope**，您可以將使用碼表進行 www.contosogiftservices.com IP 位址 192.0.0.1，位於西雅圖資料中心。
+在  **SeattleZoneScope**，您可以將位於西雅圖的資料中心記錄 www.contosogiftservices.com 192.0.0.1 的 IP 位址。
 
-在**ChicagoZoneScope**，您可以新增的 IP 位址 182.0.0.1 相同使用碼表進行 \(www.contosogiftservices.com\) 芝加哥資料中心。
+在  **ChicagoZoneScope**，您可以將相同的記錄新增\(www.contosogiftservices.com\)具有 IP 位址 182.0.0.1 芝加哥資料中心內。
 
-同樣地，在**DallasZoneScope**，您可以新增的 IP 位址 162.0.0.1 記錄 \(www.contosogiftservices.com\) 芝加哥資料中心。
+同樣地，在**DallasZoneScope**，您可以新增一筆資料錄\(www.contosogiftservices.com\)具有 IP 位址 162.0.0.1 芝加哥資料中心內。
 
-您可以使用下列 Windows PowerShell 命令若要的區域領域加入資料。
+您可以使用下列 Windows PowerShell 命令，將記錄新增至區域範圍。
     
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
     
@@ -97,22 +98,22 @@ ms.lasthandoff: 03/28/2018
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "162.0.0.1" -ZoneScope "DallasZoneScope"
     
 
-如需詳細資訊，請查看[新增-DnsServerResourceRecord](https://technet.microsoft.com/library/jj649925.aspx)。
+如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ####<a name="bkmk_policies"></a>建立 DNS 原則
 
-您所建立的磁碟分割 （區域領域） 並新增了記錄之後，您必須建立 DNS 原則，連入查詢分配這些範圍，讓 50%的查詢 contosogiftservices.com 交給西雅圖 datacenter 中的網頁伺服器的 IP 位址和其他同樣視訊光碟之間芝加哥與達拉斯資料中心。
+您已建立資料分割 （區域範圍），您已新增記錄之後，您必須建立散發傳入的查詢這些領域中，讓 50%的 contosogiftservices.com 的查詢會回應的 IP 位址與 web 的 DNS 原則在芝加哥和達拉斯的資料中心之間平均分散在西雅圖資料中心和其餘的伺服器。
 
-您可以使用下列的 Windows PowerShell 命令建立的餘額下列三種資料中心上的應用程式資料傳輸 DNS 原則。
+您可以使用下列 Windows PowerShell 命令來建立應用程式流量平衡這些三個資料中心之間的 DNS 原則。
 
 >[!NOTE]
->在下列運算式範例命令 – ZoneScope 」 SeattleZoneScope，2。ChicagoZoneScope，1。DallasZoneScope，1 」 設定的 DNS 伺服器的包含參數組合陣列 \ < ZoneScope\，> \ < weight\ >。
+>在下面的運算式範例命令 – ZoneScope"SeattleZoneScope，2;ChicagoZoneScope，1;DallasZoneScope，1-設定 DNS 伺服器陣列，其中包含參數的組合\<ZoneScope\>，\<權數\>。
     
-    Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW – -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
+    Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
     
 
-如需詳細資訊，請查看[新增-DnsServerQueryResolutionPolicy](https://technet.microsoft.com/library/mt126273.aspx)。  
+如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。  
 
-您現在已成功建立 DNS 原則，以提供應用程式負載平衡三個不同的資料中心中的網頁伺服器上。
+您現在已成功建立提供應用程式的負載分散在三個不同的資料中心的 Web 伺服器的 DNS 原則。
 
-您可以建立數千 DNS 原則根據您的資料傳輸管理的需求，且所有的新原則已經套用動態-不需要重新 DNS 伺服器-連入查詢。
+您可以建立數以千計的 DNS 原則根據您的流量管理需求，而且所有新的原則都會套用動態-不需要重新啟動 DNS 伺服器-在傳入的查詢。

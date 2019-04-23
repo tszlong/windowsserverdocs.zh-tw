@@ -1,7 +1,7 @@
 ---
-title: 新增 Virtual 閘道承租人 Virtual 網路
-description: 本主題是輔助的軟體定義網路上如何管理承租人工作負載和 Windows Server 2016 Virtual 網路的一部分。
-manager: brianlic
+title: 將虛擬閘道新增到租用戶虛擬網路
+description: 了解如何使用 Windows PowerShell cmdlet 及指令碼，以供您的租用戶虛擬網路的站台對站連線能力。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,304 +12,284 @@ ms.topic: article
 ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 351cafd1466c4b3c20e907ea221c9f58129b3443
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: 6d31cde5252cd7f7e8d286d6f8886f779d17735d
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875809"
 ---
-# <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>新增 Virtual 閘道承租人 Virtual 網路
+# <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>將虛擬閘道新增到租用戶虛擬網路 
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016 
 
-您可以使用本主題以了解如何設定承租人 Virtual 閘道、使用 Windows PowerShell cmdlet 和指令碼，提供您 tenants' Virtual 網路網站-連接到他們的組織的網站和網際網路。   
+了解如何使用 Windows PowerShell cmdlet 及指令碼，以供您的租用戶虛擬網路的站台對站連線能力。 在本主題中，您可以將租用戶的 RAS 閘道是使用網路控制站的閘道集區成員的執行個體的虛擬閘道。 RAS 閘道支援多達一百個租用戶，根據每個租用戶所使用的頻寬。 網路控制站會自動決定最佳的 RAS 閘道，以在您的租用戶部署新的虛擬閘道時使用。  
+
+每個虛擬閘道對應至特定租用戶，並且包含一或多個網路連線 （站對站 VPN 通道），並選擇性地邊界閘道通訊協定 (BGP) 連線。 當您提供站台對站連線能力時，您的客戶可以其租用戶的虛擬網路連線到外部網路，例如租用戶的企業網路、 服務提供者網路或網際網路中。
   
-RAS 閘道支援最多個數百 tenants，根據承租人每個使用的頻寬。 您可以使用 Network Controller 新增承租人 Virtual 閘道 RAS 閘道成員閘道集區的執行個體。 Network Controller 會自動判斷要為您 tenants 部署新的 Virtual 閘道時使用的最佳 RAS 閘道。  
-  
-每個 Virtual 閘道對應到特定的承租人，並由一或多個網路連接（網站-VPN 通道），（選擇性）邊境閘道通訊協定 (BGP) 連接。 這可讓您針對他們承租人 Virtual 網路連接到外部網路，例如房客企業網路，網路服務提供者或網際網路。  
-  
-當部署承租人 Virtual 閘道時，您有下列設定選項：  
-  
-**網路連接選項**  
-- IPSec 網站-virtual 私人網路 (VPN)   
-- 一般路由壓縮 (GRE)   
-- 層級 3 轉接  
-  
-**BGP 設定選項**  
-- BGP 路由器設定  
-- BGP 等設定  
-- BGP 路由原則設定  
-  
-Windows PowerShell 範例指令碼和本主題中的命令示範如何部署承租人 virtual 閘道 RAS 閘道使用這些選項。  
-  
-本主題包含下列各節。  
-  
-- [新增房客 virtual 閘道](#bkmk_addgwy)  
-- [新增網站-VPN 上網房客（IPsec、GRE 或 L3）](#bkmk_s2s1)  
-- [為 BGP 路由器設定閘道](#bkmk_bgp1)  
-- [設定閘道所有連接三種類型 (IPsec，GRE，L3) 和 BGP](#bkmk_all3)  
-- [修改或移除閘道 Virtual 網路](#bkmk_modify)  
+**當您部署一個租用戶的虛擬閘道時，您會有下列的組態選項：**  
+
+| 網路連線選項 | BGP 設定選項  |
+|---------|---------|
+|<ul><li>IPSec 站對站虛擬私人網路 (VPN)</li><li>一般路由封裝 (GRE)</li><li>第三層轉送</li></ul>     |<ul><li>BGP 路由器設定</li><li>BGP 對等組態</li><li>BGP 路由原則組態</li></ul>         |
+---
+
+本主題中的命令與 Windows PowerShell 範例指令碼示範如何部署 RAS 閘道，與每個選項上的租用戶虛擬閘道。  
   
    
 >[!IMPORTANT]  
->此主題中執行的範例 Windows PowerShell 命令與指令碼所提供的任何之前，您必須變更所有變數值，因此值是適用於您的部署。  
-  
-## <a name="bkmk_addgwy"></a>新增房客 virtual 閘道  
-  
-步驟 1：確認中 Network Controller 存在閘道共用物件。  
-```  
-$uri = "https://ncrest.contoso.com"   
-  
-# Retrieve the Gateway Pool configuration  
-$gwPool = Get-NetworkControllerGatewayPool -ConnectionUri $uri  
-  
-# Display in JSON format  
-$gwPool | ConvertTo-Json -Depth 2   
-  
-  
-```  
-步驟 2：驗證子網路，以用來傳送承租人的 Virtual 的網路退出封包在於 Network Controller;並擷取是可用於路由 virtual 網路和閘道承租人之間 virtual 子網路。  
-  
-```  
-$uri = "https://ncrest.contoso.com"   
-  
-# Retrieve the Tenant Virtual Network configuration  
-$Vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri  -ResourceId "Contoso_Vnet1"   
-  
-# Display in JSON format  
-$Vnet | ConvertTo-Json -Depth 4   
-  
-# Retrieve the Tenant Virtual Subnet configuration  
-$RoutingSubnet = Get-NetworkControllerVirtualSubnet -ConnectionUri $uri  -ResourceId "Contoso_WebTier" -VirtualNetworkID $vnet.ResourceId   
-  
-# Display in JSON format  
-$RoutingSubnet | ConvertTo-Json -Depth 4   
-  
-```  
-步驟 3：建立 virtual 閘道 JSON 物件，並將它新增到網路控制器。  
-  
-```  
-# Create a new object for Tenant Virtual Gateway  
-$VirtualGWProperties = New-Object Microsoft.Windows.NetworkController.VirtualGatewayProperties   
-  
-# Update Gateway Pool reference  
-$VirtualGWProperties.GatewayPools = @()   
-$VirtualGWProperties.GatewayPools += $gwPool   
-  
-# Specify the Virtual Subnet that is to be used for routing between the gateway and Virtual Network   
-$VirtualGWProperties.GatewaySubnets = @()   
-$VirtualGWProperties.GatewaySubnets += $RoutingSubnet   
-  
-# Update the rest of the Virtual Gateway object properties  
-$VirtualGWProperties.RoutingType = "Dynamic"   
-$VirtualGWProperties.NetworkConnections = @()   
-$VirtualGWProperties.BgpRouters = @()   
-  
-# Add the new Virtual Gateway for tenant   
-$virtualGW = New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_VirtualGW" -Properties $VirtualGWProperties -Force   
-  
-```  
-  
-## <a name="bkmk_s2s1"></a>新增網站-VPN 上網房客（IPsec、GRE 或 L3）  
-  
-您可以建立-網站 VPN 連接 IPsec、GRE，或層級 3 (L3) 轉寄使用下列範例為每個閘道類型。  
-  
-### <a name="ipsec-vpn-site-to-site-network-connection"></a>IPsec VPN 網站-網路  
-  
-建立網路連接 JSON 物件，並將它新增到網路控制器。  
-  
-```  
-# Create a new object for Tenant Network Connection  
-$nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
-  
-# Update the common object properties  
-$nwConnectionProperties.ConnectionType = "IPSec"   
-$nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
-$nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
-  
-# Update specific properties depending on the Connection Type  
-$nwConnectionProperties.IpSecConfiguration = New-Object Microsoft.Windows.NetworkController.IpSecConfiguration   
-$nwConnectionProperties.IpSecConfiguration.AuthenticationMethod = "PSK"   
-$nwConnectionProperties.IpSecConfiguration.SharedSecret = "P@ssw0rd"   
-  
-$nwConnectionProperties.IpSecConfiguration.QuickMode = New-Object Microsoft.Windows.NetworkController.QuickMode   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.PerfectForwardSecrecy = "PFS2048"   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.AuthenticationTransformationConstant = "SHA256128"   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.CipherTransformationConstant = "DES3"   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeSeconds = 1233   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.IdleDisconnectSeconds = 500   
-$nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeKiloBytes = 2000   
-  
-$nwConnectionProperties.IpSecConfiguration.MainMode = New-Object Microsoft.Windows.NetworkController.MainMode   
-$nwConnectionProperties.IpSecConfiguration.MainMode.DiffieHellmanGroup = "Group2"   
-$nwConnectionProperties.IpSecConfiguration.MainMode.IntegrityAlgorithm = "SHA256"   
-$nwConnectionProperties.IpSecConfiguration.MainMode.EncryptionAlgorithm = "AES256"   
-$nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeSeconds = 1234   
-$nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeKiloBytes = 2000   
-  
-# L3 specific configuration (leave blank for IPSec)  
-$nwConnectionProperties.IPAddresses = @()   
-$nwConnectionProperties.PeerIPAddresses = @()   
-  
-# Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
-$nwConnectionProperties.Routes = @()   
-$ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
-$ipv4Route.DestinationPrefix = "14.1.10.1/32"   
-$ipv4Route.metric = 10   
-$nwConnectionProperties.Routes += $ipv4Route   
-  
-# Tunnel Destination (Remote Endpoint) Address  
-$nwConnectionProperties.DestinationIPAddress = "10.127.134.121"   
-  
-# Add the new Network Connection for the tenant  
-New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_IPSecGW" -Properties $nwConnectionProperties -Force   
-  
-  
-```  
-### <a name="gre-vpn-site-to-site-network-connection"></a>GRE VPN 網站-網路  
-  
-建立網路連接 JSON 物件，並將它新增到網路控制器。  
-  
-```  
-# Create a new object for the Tenant Network Connection  
-$nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
-  
-# Update the common object properties  
-$nwConnectionProperties.ConnectionType = "GRE"   
-$nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
-$nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
-  
-# Update specific properties depending on the Connection Type  
-$nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
-$nwConnectionProperties.GreConfiguration.GreKey = 1234   
-  
-# Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
-$nwConnectionProperties.Routes = @()   
-$ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
-$ipv4Route.DestinationPrefix = "14.2.20.1/32"   
-$ipv4Route.metric = 10   
-$nwConnectionProperties.Routes += $ipv4Route   
-  
-# Tunnel Destination (Remote Endpoint) Address  
-$nwConnectionProperties.DestinationIPAddress = "10.127.134.122"   
-  
-# L3 specific configuration (leave blank for GRE)  
-$nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
-$nwConnectionProperties.IPAddresses = @()   
-$nwConnectionProperties.PeerIPAddresses = @()   
-  
-# Add the new Network Connection for the tenant  
-New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_GreGW" -Properties $nwConnectionProperties -Force   
-  
-```  
-### <a name="l3-forwarding-network-connection"></a>L3 轉寄網路  
-  
-若要設定 L3 轉寄網路，您還必須設定相對應的邏輯網路。   
-  
-步驟 1: 邏輯的網路設定 L3 轉寄網路。  
-  
-```  
-# Create a new object for the Logical Network to be used for L3 Forwarding  
-$lnProperties = New-Object Microsoft.Windows.NetworkController.LogicalNetworkProperties  
-  
-$lnProperties.NetworkVirtualizationEnabled = $false  
-$lnProperties.Subnets = @()  
-  
-# Create a new object for the Logical Subnet to be used for L3 Forwarding and update properties  
-$logicalsubnet = New-Object Microsoft.Windows.NetworkController.LogicalSubnet  
-$logicalsubnet.ResourceId = "Contoso_L3_Subnet"  
-$logicalsubnet.Properties = New-Object Microsoft.Windows.NetworkController.LogicalSubnetProperties  
-$logicalsubnet.Properties.VlanID = 1001  
-$logicalsubnet.Properties.AddressPrefix = "10.127.134.0/25"  
-$logicalsubnet.Properties.DefaultGateways = "10.127.134.1"  
-  
-$lnProperties.Subnets += $logicalsubnet  
-  
-# Add the new Logical Network to Network Controller  
-$vlanNetwork = New-NetworkControllerLogicalNetwork -ConnectionUri $uri -ResourceId "Contoso_L3_Network" -Properties $lnProperties -Force  
-  
-```  
-步驟 2：建立網路連接 JSON 物件，並將它新增到網路控制器。  
-  
-```  
-# Create a new object for the Tenant Network Connection  
-$nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
-  
-# Update the common object properties  
-$nwConnectionProperties.ConnectionType = "L3"   
-$nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
-$nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
-  
-# GRE specific configuration (leave blank for L3)  
-$nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
-  
-# Update specific properties depending on the Connection Type  
-$nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
-$nwConnectionProperties.L3Configuration.VlanSubnet = $vlanNetwork.properties.Subnets[0]   
-  
-$nwConnectionProperties.IPAddresses = @()   
-$localIPAddress = New-Object Microsoft.Windows.NetworkController.CidrIPAddress   
-$localIPAddress.IPAddress = "10.127.134.55"   
-$localIPAddress.PrefixLength = 25   
-$nwConnectionProperties.IPAddresses += $localIPAddress   
-  
-$nwConnectionProperties.PeerIPAddresses = @("10.127.134.65")   
-  
-# Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
-$nwConnectionProperties.Routes = @()   
-$ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
-$ipv4Route.DestinationPrefix = "14.2.20.1/32"   
-$ipv4Route.metric = 10   
-$nwConnectionProperties.Routes += $ipv4Route   
-  
-# Add the new Network Connection for the tenant  
-New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_L3GW" -Properties $nwConnectionProperties -Force   
-  
-```  
-  
-## <a name="bkmk_bgp1"></a>為 BGP 路由器設定閘道  
-  
-您可以使用下列範例指令碼閘道設定為邊境閘道通訊協定 (BGP) 路由器。  
-  
-### <a name="add-a-bgp-router-for-the-tenant"></a>新增承租人 BGP 路由器  
-  
-建立 BGP 路由器 JSON 物件，並將它新增到網路控制器。  
-  
-```  
-# Create a new object for the Tenant BGP Router  
-$bgpRouterproperties = New-Object Microsoft.Windows.NetworkController.VGwBgpRouterProperties   
-  
-# Update the BGP Router properties  
-$bgpRouterproperties.ExtAsNumber = "0.64512"   
-$bgpRouterproperties.RouterId = "192.168.0.2"   
-$bgpRouterproperties.RouterIP = @("192.168.0.2")   
-  
-# Add the new BGP Router for the tenant  
-$bgpRouter = New-NetworkControllerVirtualGatewayBgpRouter -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_BgpRouter1" -Properties $bgpRouterProperties -Force   
-   
-  
-```  
-### <a name="add-a-bgp-peer-for-this-tenant-corresponding-to-the-site-to-site-vpn-network-connection-added-above"></a>新增對 BGP 等這個承租人，上方新增網站到 VPN 網路連接到對應  
-  
-建立 BGP 等 JSON 物件，並將它新增到網路控制器。  
-  
-```  
-# Create a new object for Tenant BGP Peer  
-$bgpPeerProperties = New-Object Microsoft.Windows.NetworkController.VGwBgpPeerProperties   
-  
-# Update the BGP Peer properties  
-$bgpPeerProperties.PeerIpAddress = "14.1.10.1"   
-$bgpPeerProperties.AsNumber = 64521   
-$bgpPeerProperties.ExtAsNumber = "0.64521"   
-  
-# Add the new BGP Peer for tenant  
-New-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -BgpRouterName $bgpRouter.ResourceId -ResourceId "Contoso_IPSec_Peer" -Properties $bgpPeerProperties -Force   
-  
-```  
-## <a name="bkmk_all3"></a>設定閘道所有連接三種類型 (IPsec，GRE，L3) 和 BGP  
-（選擇性）您可以將結合所有上述步驟，並設定承租人 virtual 閘道所有連接三個選項：   
-  
-```  
+>您執行的任何範例 Windows PowerShell 命令和提供的指令碼之前，您必須變更所有變數的值，這樣的值是適用於您的部署。  
+  
+1.  請確認閘道集區物件存在於網路控制站。 
+
+    ```PowerShell
+    $uri = "https://ncrest.contoso.com"   
+      
+    # Retrieve the Gateway Pool configuration  
+    $gwPool = Get-NetworkControllerGatewayPool -ConnectionUri $uri  
+      
+    # Display in JSON format  
+    $gwPool | ConvertTo-Json -Depth 2   
+     
+    ```  
+
+2.  請確認用於租用戶的虛擬網路外部的封包路由的子網路存在網路控制卡中。 您也會擷取用於租用戶閘道和虛擬網路之間路由的虛擬子網路。  
+  
+    ```PowerShell 
+    $uri = "https://ncrest.contoso.com"   
+      
+    # Retrieve the Tenant Virtual Network configuration  
+    $Vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri  -ResourceId "Contoso_Vnet1"   
+      
+    # Display in JSON format  
+    $Vnet | ConvertTo-Json -Depth 4   
+      
+    # Retrieve the Tenant Virtual Subnet configuration  
+    $RoutingSubnet = Get-NetworkControllerVirtualSubnet -ConnectionUri $uri  -ResourceId "Contoso_WebTier" -VirtualNetworkID $vnet.ResourceId   
+      
+    # Display in JSON format  
+    $RoutingSubnet | ConvertTo-Json -Depth 4   
+      
+    ```  
+
+3.  建立新的租用戶的虛擬閘道物件，然後更新閘道集區參考。  您也會指定用於路由之間的閘道和虛擬網路的虛擬子網路。  指定虛擬子網路之後您可以更新虛擬閘道物件屬性的其餘部分，然後租用戶中新增新的虛擬閘道。
+  
+    ```PowerShell  
+    # Create a new object for Tenant Virtual Gateway  
+    $VirtualGWProperties = New-Object Microsoft.Windows.NetworkController.VirtualGatewayProperties   
+      
+    # Update Gateway Pool reference  
+    $VirtualGWProperties.GatewayPools = @()   
+    $VirtualGWProperties.GatewayPools += $gwPool   
+      
+    # Specify the Virtual Subnet that is to be used for routing between the gateway and Virtual Network   
+    $VirtualGWProperties.GatewaySubnets = @()   
+    $VirtualGWProperties.GatewaySubnets += $RoutingSubnet   
+      
+    # Update the rest of the Virtual Gateway object properties  
+    $VirtualGWProperties.RoutingType = "Dynamic"   
+    $VirtualGWProperties.NetworkConnections = @()   
+    $VirtualGWProperties.BgpRouters = @()   
+      
+    # Add the new Virtual Gateway for tenant   
+    $virtualGW = New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_VirtualGW" -Properties $VirtualGWProperties -Force   
+      
+    ```  
+  
+4. 使用 IPsec，GRE，建立站對站 VPN 連線或圖層的 3 個 (L3) 轉寄。  
+
+   >[!TIP]
+   >（選擇性） 您可以結合所有先前的步驟，並使用所有的三個連線選項設定租用戶的虛擬閘道。  如需詳細資訊，請參閱 <<c0> [ 所有這三種連線類型 (IPsec，GRE，L3) 中設定閘道和 BGP](#configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)。
+  
+   **IPsec VPN 站對站網路連線**
+  
+   ```PowerShell  
+   # Create a new object for Tenant Network Connection  
+   $nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
+  
+   # Update the common object properties  
+   $nwConnectionProperties.ConnectionType = "IPSec"   
+   $nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
+   $nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
+  
+   # Update specific properties depending on the Connection Type  
+   $nwConnectionProperties.IpSecConfiguration = New-Object Microsoft.Windows.NetworkController.IpSecConfiguration   
+   $nwConnectionProperties.IpSecConfiguration.AuthenticationMethod = "PSK"   
+   $nwConnectionProperties.IpSecConfiguration.SharedSecret = "P@ssw0rd"   
+  
+   $nwConnectionProperties.IpSecConfiguration.QuickMode = New-Object Microsoft.Windows.NetworkController.QuickMode   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.PerfectForwardSecrecy = "PFS2048"   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.AuthenticationTransformationConstant = "SHA256128"   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.CipherTransformationConstant = "DES3"   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeSeconds = 1233   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.IdleDisconnectSeconds = 500   
+   $nwConnectionProperties.IpSecConfiguration.QuickMode.SALifeTimeKiloBytes = 2000   
+  
+   $nwConnectionProperties.IpSecConfiguration.MainMode = New-Object Microsoft.Windows.NetworkController.MainMode   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.DiffieHellmanGroup = "Group2"   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.IntegrityAlgorithm = "SHA256"   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.EncryptionAlgorithm = "AES256"   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeSeconds = 1234   
+   $nwConnectionProperties.IpSecConfiguration.MainMode.SALifeTimeKiloBytes = 2000   
+  
+   # L3 specific configuration (leave blank for IPSec)  
+   $nwConnectionProperties.IPAddresses = @()   
+   $nwConnectionProperties.PeerIPAddresses = @()   
+  
+   # Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
+   $nwConnectionProperties.Routes = @()   
+   $ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
+   $ipv4Route.DestinationPrefix = "14.1.10.1/32"   
+   $ipv4Route.metric = 10   
+   $nwConnectionProperties.Routes += $ipv4Route   
+  
+   # Tunnel Destination (Remote Endpoint) Address  
+   $nwConnectionProperties.DestinationIPAddress = "10.127.134.121"   
+  
+   # Add the new Network Connection for the tenant  
+   New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_IPSecGW" -Properties $nwConnectionProperties -Force   
+  
+   ```  
+
+   **GRE VPN 站對站網路連線**
+  
+   ```PowerShell  
+   # Create a new object for the Tenant Network Connection  
+   $nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
+  
+   # Update the common object properties  
+   $nwConnectionProperties.ConnectionType = "GRE"   
+   $nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
+   $nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
+  
+   # Update specific properties depending on the Connection Type  
+   $nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
+   $nwConnectionProperties.GreConfiguration.GreKey = 1234   
+  
+   # Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
+   $nwConnectionProperties.Routes = @()   
+   $ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
+   $ipv4Route.DestinationPrefix = "14.2.20.1/32"   
+   $ipv4Route.metric = 10   
+   $nwConnectionProperties.Routes += $ipv4Route   
+  
+   # Tunnel Destination (Remote Endpoint) Address  
+   $nwConnectionProperties.DestinationIPAddress = "10.127.134.122"   
+  
+   # L3 specific configuration (leave blank for GRE)  
+   $nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
+   $nwConnectionProperties.IPAddresses = @()   
+   $nwConnectionProperties.PeerIPAddresses = @()   
+  
+   # Add the new Network Connection for the tenant  
+   New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_GreGW" -Properties $nwConnectionProperties -Force   
+  
+   ```  
+
+   **L3 轉送網路連線**<p>
+   為 L3 轉送網路連線才能正常運作，您必須設定對應的邏輯網路。   
+  
+   1. 設定邏輯網路 l3 轉送網路連線。  <br>
+  
+      ```PowerShell  
+      # Create a new object for the Logical Network to be used for L3 Forwarding  
+      $lnProperties = New-Object Microsoft.Windows.NetworkController.LogicalNetworkProperties  
+      
+      $lnProperties.NetworkVirtualizationEnabled = $false  
+      $lnProperties.Subnets = @()  
+      
+      # Create a new object for the Logical Subnet to be used for L3 Forwarding and update properties  
+      $logicalsubnet = New-Object Microsoft.Windows.NetworkController.LogicalSubnet  
+      $logicalsubnet.ResourceId = "Contoso_L3_Subnet"  
+      $logicalsubnet.Properties = New-Object Microsoft.Windows.NetworkController.LogicalSubnetProperties  
+      $logicalsubnet.Properties.VlanID = 1001  
+      $logicalsubnet.Properties.AddressPrefix = "10.127.134.0/25"  
+      $logicalsubnet.Properties.DefaultGateways = "10.127.134.1"  
+      
+      $lnProperties.Subnets += $logicalsubnet  
+      
+      # Add the new Logical Network to Network Controller  
+      $vlanNetwork = New-NetworkControllerLogicalNetwork -ConnectionUri $uri -ResourceId "Contoso_L3_Network" -Properties $lnProperties -Force  
+      
+      ```  
+
+   2. 建立網路連線的 JSON 物件，並將它新增至網路控制站。  
+  
+      ```PowerShell 
+      # Create a new object for the Tenant Network Connection  
+      $nwConnectionProperties = New-Object Microsoft.Windows.NetworkController.NetworkConnectionProperties   
+      
+      # Update the common object properties  
+      $nwConnectionProperties.ConnectionType = "L3"   
+      $nwConnectionProperties.OutboundKiloBitsPerSecond = 10000   
+      $nwConnectionProperties.InboundKiloBitsPerSecond = 10000   
+      
+      # GRE specific configuration (leave blank for L3)  
+      $nwConnectionProperties.GreConfiguration = New-Object Microsoft.Windows.NetworkController.GreConfiguration   
+      
+      # Update specific properties depending on the Connection Type  
+      $nwConnectionProperties.L3Configuration = New-Object Microsoft.Windows.NetworkController.L3Configuration   
+      $nwConnectionProperties.L3Configuration.VlanSubnet = $vlanNetwork.properties.Subnets[0]   
+      
+      $nwConnectionProperties.IPAddresses = @()   
+      $localIPAddress = New-Object Microsoft.Windows.NetworkController.CidrIPAddress   
+      $localIPAddress.IPAddress = "10.127.134.55"   
+      $localIPAddress.PrefixLength = 25   
+      $nwConnectionProperties.IPAddresses += $localIPAddress   
+      
+      $nwConnectionProperties.PeerIPAddresses = @("10.127.134.65")   
+      
+      # Update the IPv4 Routes that are reachable over the site-to-site VPN Tunnel  
+      $nwConnectionProperties.Routes = @()   
+      $ipv4Route = New-Object Microsoft.Windows.NetworkController.RouteInfo   
+      $ipv4Route.DestinationPrefix = "14.2.20.1/32"   
+      $ipv4Route.metric = 10   
+      $nwConnectionProperties.Routes += $ipv4Route   
+      
+      # Add the new Network Connection for the tenant  
+      New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_L3GW" -Properties $nwConnectionProperties -Force   
+      
+      ```  
+  
+5. 將閘道設定為 BGP 路由器，並將它新增至網路控制卡。 
+  
+   1. 新增租用戶 BGP 路由器。  
+
+      ```PowerShell  
+      # Create a new object for the Tenant BGP Router  
+      $bgpRouterproperties = New-Object Microsoft.Windows.NetworkController.VGwBgpRouterProperties   
+      
+      # Update the BGP Router properties  
+      $bgpRouterproperties.ExtAsNumber = "0.64512"   
+      $bgpRouterproperties.RouterId = "192.168.0.2"   
+      $bgpRouterproperties.RouterIP = @("192.168.0.2")   
+      
+      # Add the new BGP Router for the tenant  
+      $bgpRouter = New-NetworkControllerVirtualGatewayBgpRouter -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -ResourceId "Contoso_BgpRouter1" -Properties $bgpRouterProperties -Force   
+      
+      ```  
+
+   2. 新增此租用戶，對應至上述新增的站對站 VPN 網路連線的 BGP 對等。  
+  
+      ```PowerShell
+      # Create a new object for Tenant BGP Peer  
+      $bgpPeerProperties = New-Object Microsoft.Windows.NetworkController.VGwBgpPeerProperties   
+      
+      # Update the BGP Peer properties  
+      $bgpPeerProperties.PeerIpAddress = "14.1.10.1"   
+      $bgpPeerProperties.AsNumber = 64521   
+      $bgpPeerProperties.ExtAsNumber = "0.64521"   
+      
+      # Add the new BGP Peer for tenant  
+      New-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId $virtualGW.ResourceId -BgpRouterName $bgpRouter.ResourceId -ResourceId "Contoso_IPSec_Peer" -Properties $bgpPeerProperties -Force   
+      
+      ```  
+
+## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>（選擇性步驟）所有這三種連線類型 (IPsec，GRE，L3) 中設定閘道和 BGP  
+（選擇性） 您可以結合上述所有步驟，並使用所有的三個連線選項中設定租用戶的虛擬閘道：   
+  
+```PowerShell  
 # Create a new Virtual Gateway Properties type object  
 $VirtualGWProperties = New-Object Microsoft.Windows.NetworkController.VirtualGatewayProperties  
   
@@ -475,48 +455,50 @@ $VirtualGWProperties.BgpRouters += $bgpRouter
 New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_VirtualGW" -Properties $VirtualGWProperties -Force  
   
 ```  
-## <a name="bkmk_modify"></a>修改或移除閘道 Virtual 網路  
+
+## <a name="modify-a-gateway-for-a-virtual-network"></a>修改虛擬網路閘道  
+
   
-您可以使用下列範例指令碼修改或移除現有閘道。  
-  
-### <a name="modify-the-configuration-of-an-existing-gateway"></a>修改現有閘道的設定  
-您可以使用下列命令來修改現有閘道。  
-  
-步驟 1：擷取元件的設定，並將它儲存在變數  
-  
-```  
+**擷取元件的組態，並將它儲存在變數中**
+
+```PowerShell  
 $nwConnection = Get-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW"  
 ```  
-步驟 2：瀏覽變數結構瑞曲之戰需要的屬性，並將它設為更新值  
+
+**瀏覽要觸達所需的內容，並將它設定為更新值的變數結構**
   
-```  
+```PowerShell  
 $nwConnection.properties.IpSecConfiguration.SharedSecret = "C0mplexP@ssW0rd"  
 ```  
-步驟 3：新增修改更換上 Network Controller 的較舊的組態設定  
-  
-```  
+
+**新增取代較舊的組態，網路控制卡上修改過的組態**
+ 
+```PowerShell  
 New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId $nwConnection.ResourceId -Properties $nwConnection.Properties -Force  
 ```  
-### <a name="remove-a-gateway"></a>移除閘道  
-若要移除個人閘道功能或整個閘道，您可以使用下列的 Windows PowerShell 命令。  
-  
-#### <a name="remove-a-network-connection"></a>移除上網  
-```  
+
+
+## <a name="remove-a-gateway-from-a-virtual-network"></a>移除虛擬網路閘道 
+若要移除個別的閘道功能或整個閘道，您可以使用下列 Windows PowerShell 命令。  
+
+**移除網路連線**  
+```PowerShell  
 Remove-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW" -Force  
 ```  
-#### <a name="remove-a-bgp-peer"></a>移除 BGP 等  
-```  
+
+**移除 BGP 對等** 
+```PowerShell  
 Remove-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -BgpRouterName "Contoso_BgpRouter1" -ResourceId "Contoso_IPSec_Peer" -Force  
 ```  
-#### <a name="remove-a-bgp-router"></a>移除 BGP 路由器  
-```  
+
+**移除 BGP 路由器**
+```PowerShell  
 Remove-NetworkControllerVirtualGatewayBgpRouter -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_BgpRouter1" -Force  
-```  
-#### <a name="remove-a-gateway"></a>移除閘道  
-```  
+```
+
+**移除閘道器**  
+```PowerShell  
 Remove-NetworkControllerVirtualGateway -ConnectionUri $uri -ResourceId "Contoso_VirtualGW" -Force   
 ```  
-  
-  
 
-
+---

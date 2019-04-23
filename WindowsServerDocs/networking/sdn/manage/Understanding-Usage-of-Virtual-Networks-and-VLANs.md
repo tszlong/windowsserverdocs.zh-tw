@@ -1,7 +1,7 @@
 ---
-title: 了解使用 Virtual 網路與 Vlan
-description: 本主題是輔助的軟體定義網路上如何管理承租人工作負載和 Windows Server 2016 Virtual 網路的一部分。
-manager: brianlic
+title: 了解虛擬網路和 Vlan 的使用方式
+description: 本主題中，您會了解 HYPER-V 網路虛擬化的虛擬網路和它們之間的差異與虛擬區域網路 (Vlan)。 使用 HYPER-V 網路虛擬化，您可以建立重疊虛擬網路，也稱為 虛擬網路。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,28 +12,33 @@ ms.topic: article
 ms.assetid: 84ac2458-3fcf-4c4f-acfe-6105443dd83f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fcf84c5c1f0be2fa1c7524592f8d02e4b11d3a2b
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/26/2018
+ms.openlocfilehash: d126e97a91e4c61ecff00cc2b5a527618b2d4d0f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875529"
 ---
-# <a name="understanding-usage-of-virtual-networks-and-vlans"></a>了解使用 Virtual 網路與 Vlan
+# <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>了解虛擬網路和 Vlan 的使用方式
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用本主題以深入了解 HYPER-V 網路模擬 Virtual 網路，以及如何有所不同區域網路 (Vlan)。  
+本主題中，您會了解 HYPER-V 網路虛擬化的虛擬網路和它們之間的差異與虛擬區域網路 (Vlan)。 使用 HYPER-V 網路虛擬化，您可以建立重疊虛擬網路，也稱為 虛擬網路。
+
+
+
   
-軟體定義網路 (SDN) 在 Windows Server 2016 中根據程式設計覆疊 virtual 網路 Virtual 切換 HYPER-V 中的原則。 您可以建立覆疊 virtual 網路，也稱為 Virtual 網路，HYPER-V 網路模擬。   
+軟體定義網路 (SDN) Windows Server 2016 中根據程式設計覆疊內的虛擬網路的 HYPER-V 虛擬交換器的原則。 您可以建立重疊虛擬網路，也稱為 HYPER-V 網路虛擬化的虛擬網路。 
   
-當部署 HYPER-V 網路模擬時，會建立覆疊網路封裝覆疊-或通道-標題 （例如，VXLAN 或 NVGRE） 和層級 3 IP 和層級 2 乙太網路標頭底圖 （或實體） 從網路與原始承租人一樣的層級 2 乙太網路畫面。 覆疊網路 virtual 都會來 24 元 Virtual 網路識別碼 (VNI) 維護承租人流量隔離，並允許重疊的 IP 位址。 VNI 組成 virtual 子網路 ID (VSID)、 邏輯切換 ID 和通道 id。  
+當您部署 HYPER-V 網路虛擬化時，覆疊網路被建立的封裝原始租用戶虛擬機器的第 2 層乙太網路框架重疊或通道標頭 （例如 VXLAN 或 NVGRE） 和第 3 層 IP 與第 2 層乙太網路標頭為 （或實體） 網路。 重疊虛擬網路會識別由 24 位元虛擬網路識別碼 (VNI) 維護租用戶流量隔離，並允許重疊的 IP 位址。 VNI 組成虛擬子網路識別碼 (VSID)、 邏輯交換器的識別碼，以及通道識別碼。  
   
-此外，每個承租人，以便在多個 （每個由 VNI） 的 virtual 子網路首碼直接傳送彼此指派路由網域 （類似 virtual 路由並轉接-VRF）。 跨-承租人 （或跨路由網域） 而不需透過閘道路由不支援。   
+此外，每個租用戶會指派路由網域 （類似於虛擬路由和轉送-VRF），以便在多個虛擬子網路首碼 （每個由 VNI） 可以直接路由傳送彼此。 跨租用戶 （或跨路由網域） 而不會通過閘道不支援路由。   
   
-使用的通道每個承租人的封裝的流量之實體網路會以邏輯網路稱為邏輯網路提供者。 這提供者邏輯網路包含了一或多個子網路，每由 IP 首碼，或者，VLAN 802.1q 標記。  
+每個租用戶封裝的流量經過通道的實體網路被以稱為提供者邏輯網路的邏輯網路。 此提供者邏輯網路是由一個或多個子網路所組成，每一個由 IP 前置詞，並選擇性地 802.1q VLAN 標記。  
   
-您可以建立其他邏輯網路且子網路基礎結構用途以執行管理傳輸，儲存的資料傳輸移轉流量等。  
+您可以建立其他的邏輯網路和子網路來執行管理流量，儲存體流量，基礎結構進行即時移轉流量等。  
   
-Microsoft SDN 不支援使用 Vlan 隔離的承租人網路。 承租人隔離被透過僅使用 HYPER-V 網路模擬覆疊網路 Virtual 和封裝。 
+Microsoft SDN 不支援使用 Vlan 隔離的租用戶網路。 租用戶隔離是僅透過 HYPER-V 網路虛擬化重疊虛擬網路和封裝來完成。 
 
 

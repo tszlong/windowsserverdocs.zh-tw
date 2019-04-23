@@ -1,6 +1,6 @@
 ---
-title: Network Controller
-description: 本主題提供 Windows Server 2016 中 Network Controller 的概觀。
+title: 網路控制卡
+description: 本主題提供 Windows Server 2016 中的網路控制站的概觀。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -8,127 +8,128 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: acb9abbd716e9930fb01431e7004abb72a7da10c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 7ace628c6ae9802c0c65d360aedfac8c80ac5537
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875679"
 ---
-# <a name="network-controller"></a>Network Controller
+# <a name="network-controller"></a>網路控制卡
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-新的 Windows Server 2016 中 Network Controller 提供管理、設定、監視，以及疑難排解 virtual 和實體網路基礎結構，在您的資料中心自動化打造、程式化的點。 
+新增在 Windows Server 2016 中，網路控制站提供集中式、 可程式化的自動化點來管理、 設定、 監視和疑難排解您的資料中心內的虛擬和實體網路基礎結構。 
 
-您可以使用網路控制器，請將網路基礎結構，而不是執行手動設定網路的裝置和服務的設定。
+使用網路控制器時，您可以自動化網路基礎結構的設定，而不用執行網路裝置與服務的手動設定。
 
 > [!NOTE]
-> 本主題中，除了下列 Network Controller 的文件會提供。
-> - [網路控制器可用性](network-controller-high-availability.md)
-> - [安裝和部署 Network Controller 準備需求](../../plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)  
-> - [部署 Network Controller 使用 Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)  
-> - [安裝使用伺服器管理員 Network Controller 伺服器角色](Install-the-Network-Controller-server-role-using-Server-Manager.md)
-> - [後 Post-Deployment 步驟 Network Controller](post-deploy-steps-nc.md)
-> - [網路控制器 Cmdlet](https://technet.microsoft.com/library/mt576401.aspx) 
+> 本主題中，除了下列的網路控制卡文件使用。
+> - [網路控制站的高可用性](network-controller-high-availability.md)
+> - [安裝和部署網路控制站準備需求](../../plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)  
+> - [部署使用 Windows PowerShell 的網路控制站](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)  
+> - [安裝網路控制卡伺服器角色，使用 伺服器管理員](Install-the-Network-Controller-server-role-using-Server-Manager.md)
+> - [網路控制站的部署後步驟](post-deploy-steps-nc.md)
+> - [網路控制站 Cmdlet](https://technet.microsoft.com/library/mt576401.aspx) 
 
 ## <a name="bkmk_overview"></a>網路控制器概觀
 
-Network Controller 高度可用和擴充伺服器角色，並且提供一個應用程式的程式設計介面，可讓與網路通訊的 Network Controller \(API\) 和第二個的 API，讓您與 Network Controller。
+網路控制器是高度可用且可擴充的伺服器角色，並提供一個應用程式開發介面\(API\) ，可讓網路控制站進行通訊的網路，並可讓您的第二個 API與網路控制站進行通訊。
 
-您可以部署 Network Controller 的非網域環境和網域。 在網域環境中，Network Controller 驗證使用者與網路的裝置使用 Kerberos;在非網域環境中，您必須部署驗證的憑證。
+您可以部署網域與非網域環境中的網路控制站。 在網域環境中，網路控制站會驗證使用者和網路裝置使用 Kerberos;在非網域環境中，您必須部署憑證來進行驗證。
 
 >[!IMPORTANT]
->不要部署實體主機上的 Network Controller 伺服器角色。 若要部署 Network Controller，您必須安裝網路控制站伺服器角色 HYPER-V 一樣上 \(VM\) HYPER-V 主機上安裝。 有三種不同的 Hyper\ HYPER-V 主機上 Vm 上安裝 Network Controller 之後，您必須讓 Hyper\ HYPER-V 主機的網路軟體定義 \(SDN\) 加到使用 Windows PowerShell 命令 Network Controller 的主機**新-NetworkControllerServer**。 如此一來，您會讓 SDN 軟體負載平衡器函式。 如需詳細資訊，請查看[新-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>不會部署在實體主機上的網路控制卡伺服器角色。 若要部署網路控制站，您必須為 HYPER-V 虛擬機器上安裝網路控制卡伺服器角色\(VM\)安裝於 HYPER-V 主機。 在三個不同的 Hyper-v Vm 上安裝網路控制站之後\-Hyperv 主機，您必須啟用 Hyper-v\-的軟體定義網路的 HYPER-V 主機\(SDN\)加上要使用網路控制站的主機Windows PowerShell 命令**新增 NetworkControllerServer**。 如此一來，您將使 SDN 軟體負載平衡器，函式。 如需詳細資訊，請參閱 <<c0> [ 新增 NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
 
-Network Controller 通訊網路的裝置、服務與元件使用 Southbound API。 Southbound api，Network Controller 可以探索網路的裝置、偵測服務設定，以及收集所有的網路所需的資訊。 此外，Southbound API 提供 Network Controller 路徑，以將資訊傳送至網路基礎結構，例如您所做的變更設定。
+網路控制器會使用 Southbound API 和網路裝置、服務和元件通訊。 利用 Southbound API，網路控制器可以探索網路裝置、偵測服務組態，以及收集所有您所需的網路相關資訊。 此外，Southbound API 可提供路徑讓網路控制器將資訊傳送至網路基礎結構，例如您所做的組態變更。
 
-網路控制器 Northbound API 為您提供從網路控制器收集網路的資訊，並使用它來監視和設定網路的能力。
+網路控制器 Northbound API 會提供您從網路控制器收集網路資訊，並使用它來監視和設定網路的能力。
 
-網路控制器 Northbound API 可讓您設定、監視、的疑難排解，以及使用 Windows PowerShell、代表狀態傳輸 \(REST\) API 或管理應用程式的圖形使用者介面，例如 System Center 一樣 Manager 中部署網路上的新裝置。
+網路控制器 Northbound API 可讓您設定、 監視、 疑難排解和部署新的裝置，在網路上使用 Windows PowerShell，代表性狀態傳輸\(REST\) API 或管理應用程式圖形化使用者介面中，例如 System Center Virtual Machine Manager。
 
 >[!NOTE]
->以其他介面係網路控制器 Northbound API。
+>網路控制器 Northbound API 會實作為 REST 介面。
 
-您可以使用管理應用程式，例如 System Center 一樣 Manager \(SCVMM\) 和 System Center Operations Manager \(SCOM\)，來管理 datacenter 網路 Network Controller 的因為 Network Controller 可讓您設定、監控計畫，及的疑難排解網路基礎結構其控制。
+您可以使用 管理應用程式，例如 System Center Virtual Machine Manager 管理您的資料中心網路與網路控制卡\(SCVMM\)，和 System Center Operations Manager \(SCOM\)，因為網路控制器可讓您設定，監視、 發展以及疑難排解受其控制的網路基礎結構。
 
-使用 Windows PowerShell、REST API 或管理應用程式，您可以使用 Network Controller 管理下列實體和 virtual 網路基礎結構：
+使用 Windows PowerShell、REST API 或管理應用程式時，您可以使用網路控制器來管理下列實體和虛擬網路基礎結構：
 
-- HYPER-V Vm 和 virtual 切換
+- HYPER-V VM 和虛擬交換器
 
-- Datacenter 防火牆
+- 資料中心防火牆
 
-- 遠端存取服務 \(RAS\) Multitenant 閘道、Virtual 閘道和閘道集區
+- 遠端存取服務\(RAS\)多租用戶閘道、 虛擬閘道，以及閘道集區
 
 - 軟體負載平衡器
 
-下圖系統管理員會直接與 Network Controller 管理工具互動。 Network Controller 提供資訊的網路基礎結構，包括 virtual 和實體基礎結構，管理工具，並可設定的變更依據使用工具時，系統管理員的動作。  
+在下圖中，系統管理員會使用與網路控制器直接互動的管理工具。 網路控制站提供網路基礎結構，包括虛擬和實體基礎結構，管理工具的相關資訊並根據系統管理員的動作時使用此工具的組態變更。  
 
 ![網路控制器概觀](../../../media/Network-Controller/NetController_overview.png)  
 
-如果您要部署 Network Controller 實驗室測試環境中，您可以在 HYPER-V 一樣執行 Network Controller 伺服器角色 \(VM\) HYPER-V 主機上安裝。
+如果您要在測試實驗室環境中部署網路控制站，您可以在 HYPER-V 虛擬機器上執行網路控制卡伺服器角色\(VM\)安裝於 HYPER-V 主機。
 
-可用性高較大的資料中心，您可以使用的三個或更多 HYPER-V 主機上已安裝的三個 Vm 部署叢集。 如需詳細資訊，請查看[網路控制器可用性](network-controller-high-availability.md)。
+較大的資料中心內的高可用性，您可以使用三個或多個 HYPER-V 主機所安裝的三個 Vm 來部署叢集。 如需詳細資訊，請參閱 <<c0> [ 網路控制站的高可用性](network-controller-high-availability.md)。
 
 ## <a name="bkmk_features"></a>網路控制器功能
 
-下列 Network Controller 功能可讓您如何設定及管理 virtual 和實體網路的裝置和服務。  
+下列網路控制器功能可讓您設定與管理虛擬和實體網路裝置和服務。  
   
 -   [防火牆管理](#bkmk_firewall)  
   
 -   [軟體負載平衡器管理](#bkmk_slb)  
   
--   [管理 virtual 網路](#bkmk_virtual)  
+-   [虛擬網路管理](#bkmk_virtual)  
   
 -   [RAS 閘道管理](#bkmk_gateway)
 
 >[!IMPORTANT]
->網路控制器備份與還原不是在 Windows Server 2016 中目前可用。
+>網路控制卡備份和還原不是目前無法在 Windows Server 2016。
   
 ### <a name="bkmk_firewall"></a>防火牆管理
 
-此 Network Controller 功能可讓您設定及管理允許日拒絕存取控制免針對您的工作負載 Vm 東日西和北日南網路流量在您的資料中心。 免之 vSwitch 連接埠工作負載 Vm 中，讓分散在您的工作負載 datacenter 中。 使用 Northbound API，您可以定義傳入和傳出工作負載 VM 流量免。 您也可以設定來登入的資料傳輸已允許或拒絕規則每個防火牆規則。  
+此網路控制器功能可讓您設定與管理允許/拒絕防火牆存取控制規則，以存取資料中心內東/西和北/南網路流量的工作負載 VM。 防火牆規則會套用在工作負載 VM 的 vSwitch 連接埠，因此它們會分散到資料中心的所有工作負載。 使用 Northbound API 時，您可以定義來自工作負載 VM 之傳入和傳出流量的防火牆規則。 您也可以設定每個防火牆規則，以記錄規則允許或拒絕的流量。  
 
-如需詳細資訊，請查看[Datacenter 防火牆概觀](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。
+如需詳細資訊，請參閱 <<c0> [ 資料中心防火牆概觀](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。
 
 ### <a name="bkmk_slb"></a>軟體負載平衡器管理
 
-此 Network Controller 功能可讓您讓多個主機相同的工作負載、可用性和延展性伺服器。  
+此網路控制器功能可讓您啟用多部伺服器，以裝載相同的工作負載，並提供高度可用性和延展性。  
   
-如需詳細資訊，請查看[軟體負載平衡和 #40;SLB 與 #41;適用於 SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。  
+如需詳細資訊，請參閱 <<c0> [ 軟體負載平衡&#40;SLB&#41;適用於 SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。</c0>  
   
-### <a name="bkmk_virtual"></a>管理 virtual 網路
+### <a name="bkmk_virtual"></a>虛擬網路管理
 
-這個 Network Controller 的功能可讓您部署及設定 HYPER-V 網路模擬，包括 HYPER-V Virtual 切換和個人 Vm 上的 virtual 網路介面卡以及市集並散發 virtual 的網路原則。
+此網路控制器功能可讓您部署與設定 HYPER-V 網路虛擬化 (包括個別 VM 上的 HYPER-V 虛擬交換器和虛擬網路介面卡)，並且儲存及散發虛擬網路原則。
 
-Network Controller 支援網路模擬一般路由封裝 (NVGRE) 和 Virtual 最具擴充性的區域網路 (VXLAN)。
+網路控制器支援網路虛擬化 Generic Routing Encapsulation (NVGRE) 和虛擬可延伸區域網路 (VXLAN)。
 
 ### <a name="bkmk_gateway"></a>RAS 閘道管理
 
-此 Network Controller 功能可讓您部署、設定及管理虛擬電腦 (Vm) 提供您 tenants 閘道服務 RAS 閘道集區的成員。 Network Controller 可讓您將會自動部署 Vm RAS 閘道執行下列閘道功能：
+此網路控制器功能可讓您部署、 設定及管理屬於 RAS 閘道集區，提供閘道服務給您的租用戶的虛擬機器 (Vm)。 網路控制站可讓您自動部署具有下列閘道功能執行 RAS 閘道的 Vm:
 
 > [!NOTE]
-> 在 System Center 一樣管理員 RAS 閘道稱為 Windows 伺服器閘道。
+> 在 「 System Center Virtual Machine Manager 」 中，RAS 閘道是名為 Windows Server 閘道。
 
-- 新增從叢集移除閘道 Vm 並指定備份所需的層級。
+- 從叢集新增和移除閘道 VM 並指定所需的備份層級。
 
-- 網站-virtual 私人網路 (VPN) 閘道器連接遠端承租人網路和您使用 IPsec 的資料中心。
+- 在遠端租用戶網路與資料中心之間使用 IPsec 的站對站虛擬私人網路 (VPN) 閘道連線。
 
-- 網站-VPN 閘道器連接遠端承租人網路和您使用一般路由封裝 (GRE) 的資料中心。
+- 在遠端租用戶網路與資料中心之間使用 Generic Routing Encapsulation (GRE) 的站對站 VPN 閘道連線。
 
-- 層級 3 轉接功能。
+- 層級 3 轉送功能。
 
-- 邊境閘道通訊協定 (BGP) 路由，可讓您管理您 tenants' VM 網路與他們遠端網站間網路流量的路由。
+- 邊界閘道通訊協定 (BGP) 路由，可讓您管理的租用戶 VM 網路和其遠端站台之間的網路流量路由。
 
-Network Controller 可以放不同閘道房客的不同連接。 您可以使用單一公用 IP 的所有閘道器連接或有不同公用 Ip 的子集的連接。 Network Controller 登所有閘道設定和狀態變更，可用於稽核和進行疑難排解。
+網路控制站可以在個別閘道上放置不同的租用戶的連線。 您可以使用所有的閘道連線的單一公用 IP，或有不同的公用 Ip 子集的連線。 網路控制卡會記錄所有閘道組態和狀態變更時，它可以用於稽核和疑難排解之用。
 
-適用於 BGP 的詳細資訊，請查看[邊境閘道通訊協定與 #40;BGP 和 #41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md).
+如需有關 BGP 的詳細資訊，請參閱 <<c0> [ 邊界閘道協定&#40;BGP&#41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)。</c0>
 
-適用於 RAS 閘道詳細資訊，請查看[適用於 SDN RAS 閘道](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)。
+如需有關 RAS 閘道的詳細資訊，請參閱[適用於 SDN 的 RAS 閘道](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)。
 
-## <a name="network-controller-deployment-options"></a>網路控制器部署選項
+## <a name="network-controller-deployment-options"></a>網路控制站部署選項
 
-若要使用 System Center 一樣 Manager \(VMM\) 部署網路控制器，請查看[設定中 VMM fabric SDN Network Controller](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)。
+若要使用 System Center Virtual Machine Manager 部署網路控制卡\(VMM\)，請參閱[設定 VMM 光纖中的 SDN 網路控制站](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)。
 
-若要部署 Network Controller 使用指令碼，查看[部署軟體定義網路基礎結構使用指令碼](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
+若要部署網路控制站使用指令碼，請參閱[部署軟體定義網路基礎結構使用的指令碼](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
 
-若要部署使用 Windows PowerShell 網路控制器，請查看[使用 Windows PowerShell 部署 Network Controller](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
+若要部署使用 Windows PowerShell 的網路控制站，請參閱[部署網路控制站使用 Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 204f5fe9-3611-4da0-b057-a386004b4598
-title: "了解金鑰 Active Directory 同盟服務概念"
-description: 
+title: 了解金鑰的 Active Directory Federation Services 概念
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,46 +10,47 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 27282c6b88b0457af3b4cf031fdadced7b40268c
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878129"
 ---
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-# <a name="understanding-key-ad-fs-concepts"></a>了解金鑰 AD FS 概念
-建議您了解重要概念 Active Directory 同盟服務熟悉其功能設定。  
+# <a name="understanding-key-ad-fs-concepts"></a>了解重要的 AD FS 概念
+建議您深入了解的重要概念，如 Active Directory Federation Services，並熟悉其功能集。  
   
 > [!TIP]  
-> 您可以找到其他 AD FS 資源連結，以[AD FS 內容地圖](https://social.technet.microsoft.com/wiki/contents/articles/2735.aspx)頁面上的 Microsoft TechNet Wiki。 此頁面由 AD FS 社群的成員，並會定期監視 AD FS Product 小組。  
+> 您可以在 Microsoft TechNet Wiki 上的 [AD FS 內容地圖](https://social.technet.microsoft.com/wiki/contents/articles/2735.aspx) 頁面找到其他 AD FS 資源連結。 此頁面是由 AD FS 社群的成員管理，而且 AD FS 產品小組會不定期監控此頁面。  
   
-## <a name="ad-fs-terminology-used-in-this-guide"></a>本指南使用 AD FS 詞彙  
+## <a name="ad-fs-terminology-used-in-this-guide"></a>此指南中使用的 AD FS 詞彙  
   
-|AD FS 詞彙|解析度|  
+|AD FS 詞彙|定義|  
 |--------------|--------------|  
-|Account 合作夥伴公司|聯盟合作夥伴組織所代表宣告同盟服務提供者信任。 Account 合作夥伴公司包含會存取 Web\ 為基礎的資源協力廠商應用程式的使用者。|  
-|Account 聯盟伺服器|聯盟 account 合作夥伴組織伺服器。 Account 聯盟伺服器問題的安全性權杖根據驗證使用者的使用者。 伺服器驗證使用者、擷取相關屬性與屬性存放區的群組成員資格資訊、套件宣告，此資訊會產生及簽署的安全性權杖 \（包含 claims\）回到使用者，在自己的組織中使用或傳送到協力廠商的組織。|  
-|AD FS 設定資料庫|資料庫用來儲存的所有設定資料，表示單一 AD FS 執行個體或同盟服務。 此組態資料 SQL Server 資料庫中可以儲存或使用 Windows 內部資料庫功能隨附在 Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2。 </br></br>您可以建立 AD FS 設定資料庫 SQL Server 使用 Fsconfig.exe command\ 列工具和 Windows 內部資料庫中使用 AD FS 聯盟伺服器設定精靈。|  
-|宣告提供者|提供給使用者宣告組織。 查看 account 合作夥伴組織。|  
-|宣告提供者信任|Snap\ 中 AD FS 管理，宣告提供者信任的資源合作夥伴代表組織信任關係資源合作夥伴組織中的資源將會存取其帳號中通常會建立信任物件。 宣告提供者信任物件組成各種識別碼、名稱，以及找出這合作夥伴到本機同盟服務的規則。|  
-|本機宣告提供者信任|信任物件代表 AD LDS 或 third\ 廠商 LDAP\ 型目錄 AD FS 發電廠中。 本機宣告提供者信任物件包含許多不同的識別碼、名稱，以及找出到本機同盟服務此 LDAP\ 型 directory 規則。|  
-|聯盟中繼資料|資料格式聯繫設定宣告提供者和之前的宣告提供者信任和信賴的派對信任的正確設定信賴之間的資訊。 資料格式安全性判斷提示標記語言 \(SAML\) 2.0，以定義和延伸 WS\-同盟。|  
-|聯盟伺服器|Windows Server AD FS 聯盟伺服器設定精靈使用聯盟伺服器角色做已設定。 聯盟伺服器問題權杖，做為同盟服務的一部份。|  
-|聯盟伺服器 proxy|Windows Server AD FS 聯盟伺服器 Proxy 設定精靈使用做為已設定中間 proxy 服務網際網路 client 之間位於公司網路上有防火牆同盟服務。|  
-|主要聯盟伺服器|Windows Server 已聯盟伺服器角色使用 AD FS 聯盟伺服器設定精靈中，並具有 AD FS 設定資料庫 read\/寫入複本。 </br></br> 當您使用 AD FS 聯盟伺服器設定精靈，並選取 [建立新的同盟服務，以及陣列中將該電腦的第一個聯盟伺服器建立主要聯盟伺服器。 所有其他聯盟伺服器此必須複製僅限 read\ 複本儲存在本機 AD FS 設定資料庫主要聯盟伺服器上所做的變更。 字詞「主要聯盟伺服器」不適用於所有聯盟伺服器同樣讀取並儲存在 SQL Server 設定資料庫寫入 AD FS 設定資料庫儲存 SQL 資料庫中。|  
-|仰賴派對|組織接收並處理主張。 查看資源合作夥伴組織。|  
-|可以廠商信任|AD FS 管理 snap\ 中，可以廠商信任信任物件通常被建立中：<br /><br />-Account 合作夥伴代表組織中信任關係的帳號存取資源合作夥伴組織中的資源。<br />-資源代表同盟服務與 web\ 為基礎的單一應用程式之間的信任的合作夥伴組織。<br /><br />信賴的派對信任物件組成各種識別碼、名稱，以及找出這協力廠商或到本機同盟服務 web\ 應用程式規則。|  
-|資源聯盟伺服器|資源合作夥伴組織中聯盟伺服器。 資源聯盟伺服器通常問題的安全性權杖給使用者根據發出 account 聯盟伺服器的安全性權杖。 伺服器收到的安全性權杖，確認簽章，適用於製作您想要傳出宣告 unpackaged 宣告理賠要求規則邏輯操作，產生新的安全性權杖 \（傳出 claims\) 為基礎中收到的安全性權杖、資訊和簽署新回到使用者權杖，最後的 Web 應用程式。|  
-|資源合作夥伴公司|聯盟合作夥伴由信賴廠商信任同盟服務中。 資源合作夥伴問題 claims\ 為基礎的安全性權杖包含發行的 Web\ 為基礎的應用程式中 account 合作夥伴使用者都可以存取。|  
+|帳戶夥伴組織|由 Federation Service 中之宣告提供者信任代表的同盟夥伴組織。 帳戶夥伴組織包含會存取 Web 的使用者\-資源夥伴中的應用程式。|  
+|帳戶同盟伺服器|帳戶夥伴組織中的同盟伺服器。 帳戶同盟伺服器會根據使用者驗證簽發安全性權杖。 伺服器會驗證使用者，擷取相關的屬性和屬性存放區的群組成員資格資訊、 此資訊封裝到宣告、 產生和簽署安全性權杖\(其中包含宣告\)若要傳回給使用者 — 要用於自己的組織，或傳送給夥伴組織。|  
+|AD FS 設定資料庫|用來儲存代表單一 AD FS 執行個體或 Federation Service 之所有設定資料的資料庫。 這項組態資料可以儲存在 SQL Server 資料庫，或使用 Windows 內部資料庫 」 功能隨附於 Windows Server 2016、 Windows Server 2012 和 2012 R2 和 Windows Server 2008 和 2008 R2。 </br></br>您可以使用 Fsconfig.exe 命令的 SQL server 中建立的 AD FS 設定資料庫\-列工具並使用 AD FS 同盟伺服器設定精靈的 Windows 內部資料庫。|  
+|宣告提供者|提供宣告給其使用者的組織。 請參閱＜帳戶夥伴組織＞。|  
+|宣告提供者信任|在 AD FS 管理嵌入式管理單元\-中，宣告提供者信任的信任物件通常建立來代表該組織的信任關係中的資源夥伴組織中的帳戶將會存取資源的資源夥伴組織。 宣告提供者信任物件由各種識別碼、名稱與規則組成，可讓本機 Federation Service 識別此夥伴。|  
+|本機宣告提供者信任|信任物件，代表 AD LDS 或第三個\-方 LDAP\-基礎 AD FS 伺服器陣列中的目錄。 本機宣告提供者信任物件包含的各種不同的識別項、 名稱和規則來識別此 LDAP\-基礎讓本機 Federation Service 的目錄。|  
+|同盟中繼資料|一種資料格式，此資料格式用於在宣告提供者與信賴憑證者之間溝通設定資訊，以進行適當的宣告提供者信任與信賴憑證者信任設定。 安全性聲明標記語言中定義的資料格式\(SAML\) 2.0 中，而且它將會擴充 WS-I 中\-同盟。|  
+|同盟伺服器|已使用 AD FS 同盟伺服器設定精靈，以扮演同盟伺服器角色的 Windows 伺服器。 同盟伺服器會簽發權杖並做為 Federation Service 的一部分。|  
+|同盟伺服器 Proxy|已使用 AD FS 同盟伺服器 Proxy 設定精靈，以做為 Windows Server 的中繼 proxy 服務之間的網際網路用戶端與位於公司網路防火牆後方之 Federation Service。|  
+|主要同盟伺服器|Windows Server 已設定同盟伺服器角色，使用 AD FS 同盟伺服器設定精靈中，有讀取\/寫入 AD FS 設定資料庫的複本。 </br></br> 當您使用 AD FS 同盟伺服器設定精靈，並選取要建立新的 Federation Service，並將該電腦的設定，第一部同盟伺服器陣列中的選項，會建立在主要同盟伺服器。 此伺服器陣列中的所有其他同盟伺服器必須複寫到讀取主要同盟伺服器上所做的變更\-只會儲存在本機的 AD FS 設定資料庫複本。 當 AD FS 設定資料庫是儲存在 SQL 資料庫中時，「主要同盟伺服器」一詞不適用，因為在此情況下，所有同盟伺服器都能讀取及寫入儲存在 SQL Server 上的設定資料庫。|  
+|信賴憑證者|接收並處理宣告的組織。 請參閱＜資源夥伴組織＞。|  
+|信賴憑證者信任|在 AD FS 管理嵌入式管理單元\-中，信賴憑證者信任是通常在中建立的信任物件：<br /><br />來代表該組織的帳戶存取資源，資源夥伴組織中的信任關係中的帳戶夥伴組織。<br />資源夥伴組織來代表 Federation Service 之間的單一 web 信任\-基礎的應用程式。<br /><br />信賴憑證者信任物件包含各種不同的識別項、 名稱和規則來識別此夥伴或 web\-讓本機 Federation Service 的應用程式。|  
+|資源同盟伺服器|資源夥伴組織中的同盟伺服器。 資源同盟伺服器通常會根據帳戶同盟伺服器簽發的安全性權杖來簽發安全性權杖給使用者。 伺服器接收安全性權杖、 驗證簽章、 適用於宣告規則邏輯的未封裝的宣告，以產生所需的連出宣告、 產生新的安全性權杖\(與連出宣告\)根據資訊在連入的安全性權杖中，並簽署新的權杖傳回給使用者且最終在 Web 應用程式。|  
+|資源夥伴組織|由  Federation Service 中之信賴憑證者信任所代表的同盟夥伴。 資源夥伴會簽發宣告\-基礎的安全性權杖，其中包含已發佈的 Web\-帳戶夥伴中的使用者可以存取的應用程式。|  
   
-## <a name="overview-of-ad-fs"></a>AD FS 的概觀  
-AD FS 是提供 client 電腦的身分存取方案 \（內部或外部您 network\）順暢 SSO 存取受保護的 Internet\ 攝影機的應用程式或服務，即使帳號，應用程式位於完全不同的網路或組織中使用。  
+## <a name="overview-of-ad-fs"></a>AD FS 概觀  
+AD FS 是提供用戶端電腦的身分識別存取解決方案\(內部或外部網路\)無縫式 SSO 存取受保護的網際網路\-面向的應用程式或服務，即使使用者帳戶和應用程式位於相同網路或組織。  
   
-當應用程式或服務是一個網路而在其他網路帳號時，通常會提示使用者次要認證對方嘗試存取應用程式或服務時。 這些次要認證代表使用者的身分領域的應用程式或服務的所在位置中。 它們通常需要 Web 伺服器，讓它可以最適合授權裝載的應用程式或服務。  
+當應用程式或服務位於某個網路，而使用者帳戶位於另一個網路，一般而言，當使用者嘗試存取應用程式或服務時，系統會提示使用者提供第二個認證。 這些第二個認證代表應用程式或服務所在網路的使用者身分識別。 裝載應用程式或服務的網頁伺服器通常會要求使用者提供第二個認證，以便進行最適當的授權決策。  
   
-AD FS 使用組織可以略過次要認證要求提供信任關係 \(federation trusts\) 這些組織可供投影使用者的數位身分及存取權限受信任合作夥伴。 在這個聯盟環境中，每個組織管理自己的身分，會繼續，但每個組織也確實專案和接受其他組織的身分。  
+使用 AD FS 時，組織可以透過提供信任關係免除要求第二個認證\(同盟信任\)這些組織可以使用使用者的數位身分識別與存取權限投射到信任合作夥伴。 在此同盟環境中，每個組織會繼續管理其自己的身分識別，但每個組織也都可以安全地投射並接受來自其他組織的身分識別。  
   
--   [此屬性存放區的角色](The-Role-of-Attribute-Stores.md)  
+-   [角色的屬性存放區](The-Role-of-Attribute-Stores.md)  
   
 -   [AD FS 設定資料庫的角色](The-Role-of-the-AD-FS-Configuration-Database.md)  
   
@@ -63,8 +64,8 @@ AD FS 使用組織可以略過次要認證要求提供信任關係 \(federation 
   
 -   [宣告規則語言的角色](The-Role-of-the-Claim-Rule-Language.md)  
   
--   [判斷理賠要求規則範本使用類型](Determine-the-Type-of-Claim-Rule-Template-to-Use.md)  
+-   [判斷要使用的宣告規則範本類型](Determine-the-Type-of-Claim-Rule-Template-to-Use.md)  
   
--   [AD FS 中使用 Uri 的方式](How-URIs-Are-Used-in-AD-FS.md)  
+-   [在 AD FS 中的 Uri 使用方式](How-URIs-Are-Used-in-AD-FS.md)  
   
 

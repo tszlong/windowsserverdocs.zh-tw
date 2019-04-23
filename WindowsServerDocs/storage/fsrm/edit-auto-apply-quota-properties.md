@@ -1,6 +1,6 @@
 ---
-title: "編輯自動套用配額內容"
-description: "本文說明如何編輯自動套用配額內容"
+title: 編輯自動套用配額內容
+description: 本文說明如何編輯自動套用配額內容
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: aa2155268d42293ade925d53da5e29142d13aae4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878059"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>編輯自動套用配額內容
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 對自動套用配額進行變更時，您可以選擇將這些變更擴展到自動套用配額路徑中的現有配額。 您可以選擇只修改那些仍然符合原始自動套用配額的配額，或是修改自動套用配額路徑中的所有配額，無視於這些配額自建立以來所經過的任何修改。 這項功能提供一個可進行所有變更的中心點，以簡化衍生於自動套用配額之配額的內容更新流程。
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/17/2017
 
 3.  在 **\[從這個配額範本衍生內容\]** 中，選取您要套用的配額範本。 您可以在摘要清單方塊中檢閱每個配額範本的內容。
 
-4.  按一下 **\[確定\]**。 這樣會開啟 **\[更新衍生自自動套用配額的配額\]** 對話方塊。
+4.  按一下 [確定] 。 這樣會開啟 **\[更新衍生自自動套用配額的配額\]** 對話方塊。
 
 5.  選取您要套用的更新類型：
 
@@ -39,9 +40,9 @@ ms.lasthandoff: 10/17/2017
     -   如果您想要修改自動套用配額路徑中的所有現有配額，請選取 **\[將自動套用配額套用到所有的衍生配額\]**。
     -   如果您想要保持現有的配額不變，但是會讓修改過的自動套用配額對自動套用配額路徑中新的子資料夾生效時，請選取 **\[不要將自動套用配額套用到衍生配額\]**。
 
-6.  按一下 **\[確定\]**。
+6.  按一下 [確定] 。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [配額管理](quota-management.md)
 -   [建立自動套用配額](create-auto-apply-quota.md)
