@@ -1,52 +1,51 @@
 ---
-title: "廣告樹系復原步驟還原樹系"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 07/07/2017
+title: AD 樹系復原還原的樹系的步驟
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.technology: identity-adfs
-ms.openlocfilehash: 29988c262897649173e039cc052bb64f38a1a0ca
-ms.sourcegitcommit: 84a2bdcb92ba6af45781fab9727617e50fa5e911
+ms.technology: identity-adds
+ms.openlocfilehash: 1712d3a636160f82495539afdd42ab2ee85ffae2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861469"
 ---
-#<a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>廣告樹系復原步驟還原樹系 
+# <a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>AD 樹系復原還原的樹系的步驟
 
->適用於： Windows Server 2016、 Windows Server 2012 和 2012 R2、 Windows Server 2008 和 2008 R2
+>適用於：Windows Server 2016 中，Windows Server 2012 和 2012 R2 中，Windows Server 2008 和 2008 R2
 
-本章節復原樹系提供建議路徑的概觀。 樹系修復的步驟稍後描述在詳細資料。  
+本節概述建議的途徑來復原樹系。 樹系復原步驟稍後會說明在 詳細資料。  
   
- 下列清單摘要高階修復的步驟：  
+下列清單摘要說明在高層級的復原步驟：  
   
-1.  [找出問題](AD-Forest-Recovery-Identify-the-Problem.md)  
-  
-     搭配 IT 與 Microsoft 支援服務來判斷範圍問題的可能原因，並與所有企業關鍵評估可能救濟權利。 通常總樹系修復應該最後一個選項。  
-  
-2.  [選擇如何復原森林](AD-Forest-Recovery-Determine-how-to-Recover.md)  
-  
-     完成初稿判斷是必要的樹系修復之後，步驟它的準備： 判斷目前的樹系結構，找出俠每個執行時，可以選擇要俠還原為每個網域中，並確保離線拍攝的所有寫入網域控制站的功能。  
-  
-3.  [執行初始復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
-  
-     隔離，復原一個網域控制站的每個網域、 清理，並重新網域。 重設特殊權限的帳號，並修正造成安全性漏洞，在此階段中的問題。  
-  
-4.  [剩餘的網域控制站重新部署](AD-Forest-Recovery-Restore-Additional-DCs.md)  
-  
-     重新部署樹系返回為失敗之前的狀態。 這個步驟會需要是適用於您的特定的設計與需求。 模擬的網域控制站複製可協助促進此程序。  
-  
-5.  [清理](AD-Forest-Recovery-Cleanup.md)  
-  
-     還原功能後，如有需要重新設定名稱解析，並取得運作 LOB 應用程式。  
+1. [找出問題](AD-Forest-Recovery-Identify-the-Problem.md)  
 
+   使用 IT 和 Microsoft 支援服務以判斷問題和可能的原因的範圍和評估所有的商務專案關係人可能的補救方法。 在許多情況下總計的樹系復原應該是最後一個選項。  
   
- 最小化 reintroducing 危險資料插入復原樹系的可能性設計本文中的步驟操作。 您可能需要修改因素的步驟執行：  
-  
--   擴充性  
--   遠端管理  
--   復原的速度  
+2. [決定如何復原樹系](AD-Forest-Recovery-Determine-how-to-Recover.md)  
 
+   判斷需要樹系復原時之後，完整的初稿步驟，準備： 判斷目前的樹系結構，可識別每個 DC 執行時，決定哪些 DC 為每個網域中，還原的函式，並確定所有的可寫入網域控制站會使其離線。  
+
+3. [執行初始的復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
+
+   在隔離中，復原每個網域一個網域控制站、 清除它們，並重新連線的網域。 重設特殊權限的帳戶，並修正在這個階段中的 安全性破壞所造成的問題。  
+  
+4. [重新部署剩餘網域控制站](AD-Forest-Recovery-Restore-Additional-DCs.md)  
+
+   重新部署的樹系，以還原為在失敗前的狀態。 此步驟中需要特定的設計和需求進行調整。 複製虛擬的網域控制站，可協助加速此程序。  
+
+5. [清除](AD-Forest-Recovery-Cleanup.md)  
+
+   還原功能之後，視需要重新設定名稱解析，並取得工作的 LOB 應用程式。  
+
+本指南中的步驟被設計來重新將危險資料到已復原的樹系的可能性降至最低。 您可能必須修改這些步驟來處理這類的因素：  
+  
+- 延展性  
+- 遠端管理能力  
+- 復原的速度  

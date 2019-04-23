@@ -1,6 +1,6 @@
 ---
-title: "自訂儲存空間"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 自訂儲存空間
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,24 +13,25 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d1b88a0b06931b38072674db403d1c1b75d8af05
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844289"
 ---
 # <a name="customize-storage-spaces"></a>自訂儲存空間
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-預先儲存空間設定獲得更好的使用者體驗，您可以從 PostIC.cmd 執行儲存空間設定指令碼。 完成之後，您的 Windows Server Essentials 安裝的儲存空間設定指令碼必須的目標電腦上，執行。
+若要預先設定儲存空間以提升使用者體驗，您可以執行 PostIC.cmd 的儲存空間設定指令碼。 完成 Windows Server Essentials 安裝之後，必須在目標電腦上執行儲存空間設定指令碼。
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)[建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](../install/Additional-Customizations.md)   
- [準備部署映像](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](../install/Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)[建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
+ [其他自訂項目](../install/Additional-Customizations.md)   
+ [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

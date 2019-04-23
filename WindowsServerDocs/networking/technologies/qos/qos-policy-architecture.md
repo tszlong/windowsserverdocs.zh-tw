@@ -1,6 +1,6 @@
 ---
 title: QoS 原則架構
-description: 本主題提供概觀品質服務 (QoS) 原則，讓您可以使用群組原則優先順序網路流量頻寬特定應用程式和 Windows Server 2016 中的服務。
+description: 本主題概述的服務品質 (QoS) 原則，可讓您使用群組原則來設定特定的應用程式和服務 Windows Server 2016 中的網路流量頻寬優先順序。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,41 +8,42 @@ ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 00d36604c57add6bf9f45b0166b08c1fb15be467
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: bad37ba3558137b02ae495fe8dd9be2c903cdd97
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843139"
 ---
 # <a name="qos-policy-architecture"></a>QoS 原則架構
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用本主題以深入了解 QoS 原則的架構。
+您可以使用本主題來深入了解 QoS 原則的架構。
 
-下圖顯示原則為主 QoS 的架構。
+下圖顯示以原則為基礎的 QoS 的架構。
 
 ![QoS 原則的架構](../../media/QoS/QoS-Policy-Architecture.jpg)
 
-原則為主 QoS 的架構所組成下列元件：
+原則式 QoS 的架構是由下列元件所組成：
 
-- **群組原則 Client 服務**。 Windows 的服務管理使用者和電腦群組原則設定。
+- **群組原則用戶端服務**。 管理使用者和電腦設定群組原則設定 Windows 服務。
 
-- **群組原則引擎**。 使用者和電腦群組原則設定擷取 Active Directory 開機時和定期群組原則 Client 服務的元件檢查對 \（預設每 90 minutes\）。 如果偵測到的變更，群組原則引擎擷取的新群組原則設定。 群組原則引擎處理傳入 Gpo 和 QoS 原則更新時通知 QoS Client 側邊擴充功能。
+- **群組原則引擎**。 在啟動時，並定期從 Active Directory 擷取使用者和電腦設定群組原則設定群組原則用戶端服務的元件會檢查變更\(根據預設，每隔 90 分鐘\)。 如果偵測到變更，群組原則引擎會擷取新的群組原則設定。 群組原則引擎會處理傳入的 Gpo，並通知 QoS 用戶端延伸 QoS 原則更新時。
 
-- **QoS 用側邊延伸**。 等待 QoS 原則已變更群組原則引擎的指示，會通知 QoS 偵測模組群組原則 Client 服務的元件。
+- **QoS 用戶端延伸**。 群組原則用戶端服務會等候 QoS 原則已變更的群組原則引擎的指示，並通知 QoS 偵測模組元件。
 
-- **TCP/IP 堆疊**。 TCP/IP 堆疊包含 IPv4 和 IPv6 整合的支援與支援的 Windows 篩選平台。 
+- **TCP/IP 堆疊**。 TCP/IP 堆疊包含 IPv4 和 IPv6 的整合式的支援和支援 Windows 篩選平台。 
 
-- **檢查 QoS**。 中的指示 QoS Client 側邊擴充功能，從 QoS 原則變更等待 TCP/IP 堆疊模組元件擷取 QoS 原則設定，並互動傳輸層並 Pacer.sys 內部標記的流量符合 QoS 原則。
+- **QoS 檢查**。 模組內的 TCP/IP 堆疊可等候 QoS 用戶端延伸 QoS 原則變更的指示，擷取 QoS 原則設定，並與在內部標示符合 QoS 流量的傳輸層和 Pacer.sys 互動的元件原則。
 
-- **NDIS 6.x**。 標準介面之間核心模式網路驅動程式和 Windows Server 和 Client 的作業系統中的作業系統。 NDIS 6.x 支援輕量的篩選器簡化驅動程式模型 NDIS 中繼驅動程式和迷你連接埠驅動程式，可提供更好的效能。
+- **NDIS 6.x**。 核心模式網路驅動程式和 Windows Server 和用戶端作業系統中的作業系統之間的標準介面。 NDIS 6.x 支援輕量型篩選器，這是針對 NDIS 中繼驅動程式和 miniport 驅動程式簡化的驅動程式模型提供更佳的效能。
 
-- **QoS 網路提供者介面 \(NPI\)**。 Interface 互動 Pacer.sys 核心模式驅動程式。
+- **QoS 網路提供者介面\(NPI\)**。 核心模式驅動程式，用以與 Pacer.sys 互動的介面。
 
-- **Pacer.sys**。 NDIS 6.x 輕量 filter 驅動程式的控制項封包排程原則為主 QoS 和流量的應用程式使用一般 QoS \(GQoS\) 和控制資料傳輸 \(TC\) Api。 Pacer.sys 取代 Psched.sys Windows Server 2003 及 Windows XP 中。 安裝 Pacer.sys 與 QoS 封包排程元件從網路或介面卡的屬性。
+- **Pacer.sys**。 NDIS 6.x 輕量型篩選器驅動程式，控制封包排程原則為依據的 QoS 和採用 Generic QoS 的應用程式的流量\(GQoS\)和流量控制\(TC\) Api。 Pacer.sys 取代在 Windows Server 2003 和 Windows XP 中的 Psched.sys。 Pacer.sys 被隨 QoS 封包排程器元件從 網路連線或配接器的屬性。
 
-本指南下一步主題，請查看[QoS 原則案例](qos-policy-scenarios.md)。
+如本指南中的下一個主題，請參閱 < [QoS 原則案例](qos-policy-scenarios.md)。
 
-本指南中第一次主題，請查看[品質服務 (QoS) 原則](qos-policy-top.md)。
+如本指南中的第一個主題，請參閱 <<c0> [ 服務品質 (QoS) 原則](qos-policy-top.md)。
 

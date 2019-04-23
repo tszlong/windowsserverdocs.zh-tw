@@ -1,7 +1,7 @@
 ---
-title: 建立新的 NIC 團隊主機電腦上 VM
-description: 本主題提供 NIC 的聯合設定的相關資訊，讓您了解您必須，讓您在 Windows Server 2016 中設定新 NIC 團隊時選取的項目。
-manager: brianlic
+title: 在主機電腦或 VM 上建立新的 NIC 小組
+description: 本主題中，您會建立新的 NIC 小組，在主機電腦上或在執行 Windows Server 2016 的 HYPER-V 虛擬機器 (VM)。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,142 +13,196 @@ ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6a9866d1f4e72b3c77c3233b5e5582d250cfe6a2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/13/2018
+ms.openlocfilehash: 3518436f08a0e7fe0ea8fed06724b11df6acccea
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864629"
 ---
-# <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>建立新的 NIC 團隊主機電腦上 VM
+# <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>在主機電腦或 VM 上建立新的 NIC 小組
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題提供 NIC 的聯合設定的相關資訊，讓您了解您必須，讓您設定新 NIC 團隊時選取的項目。 本主題包含下列各節。  
+本主題中，您會建立新的 NIC 小組，在主機電腦上或在執行 Windows Server 2016 的 HYPER-V 虛擬機器 (VM)。  
+
+## <a name="network-configuration-requirements"></a>網路設定需求  
+您可以建立新的 NIC 小組之前，您必須部署兩個連接到不同的實體交換器的網路介面卡的 HYPER-V 主機。 您也必須設定網路介面卡來自相同的 IP 位址範圍的 IP 位址。  
+
+實體交換器、 HYPER-V 虛擬交換器、 區域網路 (LAN)、 與 VM 中建立一個 NIC 小組的 NIC 小組需求如下：  
   
--   [選擇小組模式](#bkmk_teaming)  
+-   執行 HYPER-V 的電腦必須有兩個或多個網路介面卡。  
   
--   [選擇負載平衡模式](#bkmk_lb)  
+-   如果連接到多部實體交換器的網路介面卡，實體交換器必須位於相同的第 2 層子網路。  
   
--   [選擇待命介面卡設定](#bkmk_standby)  
+-   您必須使用 HYPER-V 管理員 或 Windows PowerShell 來建立兩個外部的 HYPER-V 虛擬交換器，每個連接至不同的實體網路介面卡。  
   
--   [使用主要小組介面屬性](#bkmk_primary)  
+-   VM 必須連接到您建立這兩個外部虛擬交換器。  
   
-> [!NOTE]  
-> 如果您已經了解這些設定項目，您可以使用下列程序，設定 NIC 小組。  
->   
-> -   [建立新 NIC 團隊，在 VM 中](../../technologies/nic-teaming/Create-a-New-NIC-Team-in-a-VM.md)  
-> -   [建立新的 NIC 小組](../../technologies/nic-teaming/Create-a-New-NIC-Team.md)  
+-   NIC 小組，在 Windows Server 2016 中，支援使用在 Vm 中的兩個成員的小組。 您可以建立較大規模的小組，但不支援。
   
-當您建立新的 NIC 團隊時，您必須設定下列 NIC 小組屬性。  
+-   如果您要在 VM 中設定 NIC 小組，您必須選取**小組模式**的_交換器獨立_並**負載平衡模式**的_位址雜湊_. 
+
+
+
+## <a name="step-1-configure-the-physical-and-virtual-network"></a>步驟 1. 設定實體和虛擬網路  
+在此程序中，您可以建立兩個外部的 HYPER-V 虛擬交換器、 將 VM 連接到交換器，然後設定交換器的 VM 連線。  
+ 
+
+### <a name="prerequisites"></a>必要條件
+  
+您必須擁有成員資格**系統管理員**，或同等權限。  
+  
+### <a name="procedure"></a>程序
+  
+1.  在 HYPER-V 主機上，開啟 [HYPER-V 管理員] 中，並按一下 [動作] 底下**虛擬交換器管理員**。  
+  
+    ![虛擬交換器管理員](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv.jpg)  
+  
+2.  在 [虛擬交換器管理員]，請確定**外部**已選取，然後按一下**建立虛擬交換器**。  
+  
+    ![建立虛擬交換器](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv_02.jpg)  
+  
+3.  在 虛擬交換器內容，輸入**名稱**的虛擬交換器，並新增**備忘稿**視。  
+  
+4.  在 **連線類型**，請在**外部網路**，選取您要連接的虛擬交換器的實體網路介面卡。  
+  
+5.  設定您的部署，額外的參數屬性，然後按一下**確定**。  
+  
+6.  重複上述步驟，以建立第二個的外部虛擬交換器。 第二個的外部交換器連線至不同的網路介面卡。  
+  
+7.  在 HYPER-V 管理員 中，在**虛擬機器**，以滑鼠右鍵按一下您想要設定，然後按一下 VM**設定**。<p>VM**設定**對話方塊隨即開啟。  
+
+8.  請確定不會啟動 VM。 如果啟動時，在關閉之前執行的 VM 設定。  
+  
+8.  在 **硬體**，按一下**網路介面卡**。  
+  
+    ![網路介面卡](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_01.jpg)  
+  
+9. 在 **網路介面卡**屬性，選取您在先前步驟中建立的虛擬交換器的其中一個，然後按一下**套用**。  
+  
+    ![選取的虛擬交換器](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_02.jpg)  
+  
+10. 在 **硬體**，按一下以展開旁邊的加號 （+）**網路介面卡**。 
+
+11. 按一下 **進階功能**啟用 NIC 小組使用圖形化使用者介面。 
+
+    >[!TIP]
+    >您也可以啟用 NIC 小組使用 Windows PowerShell 命令： 
+    >
+    >```PowerShell
+    >Set-VMNetworkAdapter -VMName <VMname> -AllowTeaming On
+    >```
+   
+    a. 選取 **動態**MAC 位址。 
+
+    b. 按一下以選取**受保護網路**。 
+
+    c.  按一下以選取**啟用此網路介面卡，以在客體作業系統中之小組的**。 
+
+    d. 按一下 [確定] 。  
+  
+    ![將網路介面卡新增至小組](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_05.jpg)  
+  
+13. 在中新增第二個網路介面卡，在 HYPER-V 管理員 中，**虛擬機器**相同的 VM，以滑鼠右鍵按一下，然後按一下 **設定**。<p>VM**設定**對話方塊隨即開啟。  
+  
+14. 在 **新增硬體**，按一下**網路介面卡**，然後按一下**新增**。  
+  
+    ![新增網路介面卡](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_06.jpg)  
+  
+15. 在 **網路介面卡**屬性，選取您在先前步驟中建立第二個虛擬交換器，然後按一下**套用**。  
+  
+    ![適用於虛擬交換器](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_07.jpg)  
+  
+16. 在 **硬體**，按一下以展開旁邊的加號 （+）**網路介面卡**。 
+
+17. 按一下 **進階功能**，向下捲動至**NIC 小組**，然後按一下以選取**啟用此網路介面卡，以在客體作業系統中之小組的**。 
+
+18. 按一下 [確定] 。  
+  
+_**恭喜您 ！**_  您已設定的實體和虛擬網路。  現在您可以繼續建立新的 NIC 小組。  
+
+## <a name="step-2-create-a-new-nic-team"></a>步驟 2. 建立新的 NIC 小組
+  
+當您建立新的 NIC 小組時，您必須設定的 NIC 小組 」 屬性：  
   
 -   小組名稱  
   
--   會員卡  
+-   成員介面卡  
   
 -   小組模式  
   
 -   負載平衡模式  
   
--   待命介面卡  
+-   待命的配接器  
   
-您也可以選擇設定主要小組介面並設定 virtual 區域網路 (VLAN) 數字。  
+您也可以設定主要小組介面，並設定虛擬 LAN (VLAN) 數字。  
   
-下圖範例屬性的值某些 NIC 小組所在顯示這些 NIC 小組屬性。  
-  
-![NIC 小組屬性](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_06_properties.jpg)  
-  
-## <a name="bkmk_teaming"></a>選擇小組模式  
-這些選項 Teaming 模式**切換獨立**，**靜態小組**，並**連結彙總控制通訊協定 (LACP)**。 靜態小組與 LACP 是切換相關模式。 為獲得最佳的所有三種 Teaming 模式 NIC 小組效能，建議您使用的動態通訊負載平衡模式。  
-  
-**切換不受影響**  
-  
-切換獨立模式、切換或 NIC 小組成員連接都不知道的卡 NIC 小組的成員，並不判斷如何 NIC 小組成員-網路流量的參數反而 NIC 小組分散輸入的網路流量 NIC 小組的成員。  
-  
-當您的動態通訊使用切換獨立模式時，根據修改動態負載平衡演算法所 TCP 連接埠地址湊散發網路流量載入。 動態負載平衡演算法重新分配，以便個人流程傳輸可以從一個作用中的小組成員移到另一個最佳化小組成員頻寬利用流程。 演算法考量，轉散發流量都可能造成-單傳遞封包，因此所需的步驟來降到最低的可能性太可能。  
-  
-**切換相關**  
-  
-切換相關模式，若要切換的 NIC 小組成員連接判斷如何輸入的網路流量的 NIC 小組成員。 切換已完成獨立如何網路流量分配 NIC 小組的成員。  
-  
-> [!IMPORTANT]  
-> 切換相關小組需要的所有小組成員都連接到相同的實體切換或多底座切換的共用多底座之間切換來電顯示。  
-  
-靜態 Teaming 需要您手動設定開關切換至和主機找出團隊的連結。 因為這是靜態設定的方案，還有協助開關切換至任何其他通訊協定，並找出正確主機插入纜長度或其他錯誤都可能造成失敗執行小組。 伺服器級參數通常被支援此模式。  
-  
-然而靜態團隊合作，LACP 小組模式動態辨識連接主機和開關切換至之間的連結。 此動態連接可自動建立的團隊，理論上但很少做法、擴充和降低信用團隊的只要傳輸或收到從等實體 LACP 封包。 所有伺服器級參數都支援 LACP，而所有的網路電信業者以系統管理員讓 LACP 切換連接埠。 當您設定的 LACP Teaming 模式時，NIC 小組永遠運作 LACP 的作用中模式中的簡短計時器。  不是目前可用來修改計時器或變更 LACP 模式。  
-  
-當您的動態通訊使用切換相關模式時，根據修改動態負載平衡演算法所 TransportPorts 位址湊散發網路流量載入。  動態負載平衡演算法重新分配最佳化小組成員頻寬利用流程。 個人流程傳輸可移動使用團隊成員到另一個動態通訊的一部分。 演算法考量，轉散發流量都可能造成-單傳遞封包，因此所需的步驟來降到最低的可能性太可能。  
-  
-在所有切換相關設定、使用切換判斷如何輸入流量的小組成員。  切換預期地合理流量分散至所有的小組成員，但會有以判斷它會如何的完全獨立。  
-  
-## <a name="bkmk_lb"></a>選擇負載平衡模式  
-這些選項負載平衡 distribution 模式**位址 Hash**，**HYPER-V 連接埠**，並**動態**。  
-  
-**地址 Hash**  
-  
-此負載平衡模式下建立 hash 為基礎的地址元件封包。 然後，指派的其中一個可用的介面卡該 hash 值封包。 通常只這個機制是不足，無法使用的介面卡上建立合理的餘額。  
-  
-您可以使用 Windows PowerShell 來指定下列 hashing 函式元件值。  
-  
--   來源和目的地的 TCP 連接埠和來源和目的地的 IP 位址。 此為預設值，當您選取 [**位址 Hash**以負載平衡模式。  
-  
--   來源和目的地的 IP 位址只。  
-  
--   來源和目的地的 MAC 位址只。  
-  
-TCP 連接埠湊建立資料傳輸串流，導致小串流可以獨立 NIC 小組成員間移動，最細微的散發。 不過，您無法使用 TCP 連接埠湊的流量的 TCP 不是或 UDP 為基礎，或位置的 TCP 與 UDP 連接埠隱藏從堆疊，例如 IPsec 保護資料傳輸。 在這些案例中，會自動湊使用的 IP 位址湊或 MAC 位址湊如果流量不 IP 流量，就會使用。  
-  
-**HYPER-V 連接埠**  
-  
-使用 HYPER-V 連接埠模式 NIC 團隊 HYPER-V 主機上的設定是優點。 Vm 有獨立的 MAC 地址，因為 VM 的 MAC 位址-或 VM HYPER-V Virtual 開關已連接到連接埠-可以來進行除法運算 NIC 小組成員間網路流量的基礎。  
-  
-> [!IMPORTANT]  
-> 使用 HYPER-V 連接埠負載平衡模式 NIC 團隊，在 Vm 中建立無法設定。 使用位址湊改為負載平衡模式。  
-  
-相鄰切換永遠看見一個連接埠上有特定的 MAC 地址，因為開關切換至會在多個連結根據目的地 MAC (VM MAC) 位址分配輸入載入（流量來自切換至主機）。 這是適合一樣佇列 (VMQs) 使用時，因為特定而流量希望抵達有佇列。  
-  
-不過，如果主機只有少數 Vm，此模式下可能無法達到細微達成平衡良好的通訊。 此模式下也將會限制單一 VM（亦即，從單一切換連接埠流量）可在單一介面頻寬。 NIC 小組而不使用的來源的 MAC 地址，因為可能會以多個連接埠切換的 MAC 位址設定 VM 有時候，id 使用 HYPER-V 虛擬切換連接埠。  
-  
-**動態**  
-  
-此負載平衡模式使用最佳的兩種模式中的每個層面，並將它們結合成單一的模式：  
-  
--   輸出載入分散根據 hash 的 TCP 連接埠和 IP 位址。  動態模式也 rebalances 載入即時使輸出指定的流程可能前和往後小組成員之間移動。  
-  
--   輸入的載入視訊光碟相同的方式做為 HYPER-V 連接埠模式。  
-  
-在此模式下輸出載入的動態平衡依據 flowlets 的概念。 人性化語音有端的文字與句子自然休息，如同 TCP 流程（TCP 通訊串流）也有自然發生符號。 兩個這類分符號間流量的 TCP 的部分稱為 flowlet。  
-  
-動態模式演算法偵測到的 flowlet 邊界遇到-例如時 TCP 流程-中發生的不足長度分演算法必要時，會自動 rebalances 給其他小組成員流程。  在有時演算法可能也會定期重新平衡不包含任何 flowlets 流程。 因此，相關性之間 TCP 流程和小組成員可以變更在任何時候動態平衡演算法平衡的小組成員工作負載的運作方式。  
-  
-小組設定切換獨立或切換相關模式的其中之一，建議您使用動態 distribution 模式來獲得最佳效能。  
-  
-還有此規則例外時 NIC 小組有兩個小組成員，設定切換獨立模式，有一個 NIC 作用中的功能，主動日待命模式和其他待命的設定。 透過此 NIC 小組設定，位址 Hash distribution 提供稍微提升效能比動態 distribution。  
-  
-## <a name="bkmk_standby"></a>選擇待命介面卡設定  
-待命介面卡有無（所有的網路卡主動式）或 NIC 團隊，做為待命介面卡未選取的小組時使用中的特定網路介面卡的選擇。 當您設定 NIC 待命介面卡時，網路流量是傳送到或處理的介面卡，除非，直到作用中的 NIC 失敗時。 作用中的 NIC 失敗之後，待命而變成作用中，並處理程序網路流量。 如果和所有小組成員會都還原到服務，待命小組成員會傳回至待命狀態。  
-  
-如果您有兩個-NIC 團隊，並選擇一個 NIC 設定為待命介面卡，您遺失的頻寬，有兩種使用中 Nic 彙總優點。  
-  
-> [!IMPORTANT]  
-> 您不需要指定待命介面卡，以達成容錯。容錯都有時 NIC 小組中有兩個以上的網路介面卡。  
-  
-## <a name="bkmk_primary"></a>使用主要小組介面屬性  
-若要存取主要小組介面對話方塊中，您必須按一下連結以下圖表反白顯示。  
-  
-![主要小組介面屬性](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_10_primaryteaminterface.jpg)  
-  
-按下反白顯示的連結，以下後**新小組介面**對話方塊。  
-  
-![新的小組介面對話方塊](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_newteaminterface.jpg)  
-  
-如果您使用 Vlan，您可以使用此對話方塊中，指定的 VLAN 數字。  
-  
-不論您使用 Vlan，您可以指定 tNIC NIC 小組的名稱。  
-  
-## <a name="see-also"></a>也了  
-[建立新 NIC 團隊，在 VM 中](../../technologies/nic-teaming/Create-a-New-NIC-Team-in-a-VM.md)  
-[NIC 小組](NIC-Teaming.md)  
-  
+如需這些設定的詳細資訊，請參閱 < [NIC 小組設定](nic-teaming-settings.md)。
 
+### <a name="prerequisites"></a>先決條件
 
+您必須擁有成員資格**系統管理員**，或同等權限。  
+  
+### <a name="procedure"></a>程序
+  
+1.  在 [伺服器管理員] 中，按一下 [本機伺服器]。  
+  
+2.  在**屬性**窗格中，在第一欄中，尋找**NIC 小組**，然後按一下**已停用**連結。<p>**NIC 小組**對話方塊隨即開啟。<p>![NIC 小組 對話方塊](../../media/Create-a-New-NIC-Team/nict_02_nicteaming.jpg)  
+  
+3.  在 **配接器和介面**，選取您想要新增至 NIC 小組的一或多個網路介面卡。  
+  
+4.  按一下 **工作**，然後按一下**將加入至新的小組**。<p>**新的小組** 對話方塊隨即開啟並顯示網路介面卡和小組成員。  
+  
+5.  在 **小組名稱**，輸入新的 NIC 小組的名稱，然後按一下**其他屬性**。  
+  
+6.  在 **其他屬性**，針對選取的值：
+
+    - **小組模式**。 小組模式的選項都會**交換器獨立**並**交換器相依**。 交換器相依模式包含**靜態小組**並**連結彙總控制通訊協定 (LACP)**。 
+      
+      - **交換器獨立。** [!INCLUDE [switch-independent-shortdesc-include](../../includes/switch-independent-shortdesc-include.md)]
+      
+      - **交換器相依。** [!INCLUDE [switch-dependent-shortdesc-include](../../includes/switch-dependent-shortdesc-include.md)] 
+      
+        | | |
+        |---|---|
+        |**靜態小組** | 您需要手動設定參數和主應用程式，以找出哪些連結形成小組。 因為這是以靜態方式設定的解決方案時，沒有任何其他的通訊協定，可協助交換器和主機，以識別不正確插入纜線或其他錯誤，可能會造成小組失敗來執行。 伺服器等級的交換器通常會支援這個模式。 |
+        |**連結彙總控制通訊協定 (LACP)** |不同於靜態小組 LACP 小組模式動態識別於主機與交換器之間連線的連結。 這個動態的連線可以自動建立的小組，理論上，但很少作法、 擴充和縮減小組中，只要傳輸或接收 LACP 封包，從對等實體。 所有伺服器等級的交換器都支援 LACP，和所有需要網路操作員，由系統管理員啟用 LACP 交換器連接埠上。 當您設定的 LACP 小組模式時，NIC 小組一律運作 LACP 的主動模式中使用簡短的計時器。  若要修改的計時器，或變更 LACP 模式目前使用任何選項不。 |
+        ---
+    
+    - **負載平衡模式**。 負載平衡分配模式的選項都會**位址雜湊**， **HYPER-V 通訊埠**，並**動態**。
+    
+       - **位址雜湊。** [!INCLUDE [address-hash-shortdesc-include](../../includes/address-hash-shortdesc-include.md)]
+       
+       - **HYPER-V 通訊埠。** [!INCLUDE [hyper-v-port-shortdesc-include](../../includes/hyper-v-port-shortdesc-include.md)]
+       
+       - **動態的。** [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
+    
+    - **待命的配接器**。 待命配接器的選項都會**無 （所有介面卡使用）** 或您選擇的 NIC 小組，做為待命配接器中的特定網路介面卡。
+   
+   > [!TIP]  
+   > 如果您要設定 NIC 小組在虛擬機器 (VM) 中，您必須選取**小組模式**的_交換器獨立_並**負載平衡模式**的_位址雜湊_。  
+  
+7.  如果您想要設定主要小組介面名稱，或將 VLAN 號碼指派給 NIC 小組，按一下右邊的連結**主要小組介面**。<p>**新的小組介面**對話方塊隨即開啟。<p>![新的小組介面](../../media/Create-a-New-NIC-Team/nict_newteaminterface.jpg)  
+  
+8.  根據您的需求，執行下列其中一項動作：  
+  
+    -   提供 tNIC 介面名稱。  
+  
+    -   設定 VLAN 成員資格： 按一下**特定 VLAN**輸入 VLAN 資訊。 例如，如果您想要將此 NIC 小組新增至 帳戶處理的 VLAN 編號 44，型別會計 44-VLAN。   
+  
+9. 按一下 [確定] 。  
+
+_**恭喜您 ！**_  您已在主機電腦或 VM 上建立新的 NIC 小組。
+
+## <a name="related-topics"></a>相關主題
+- [NIC 小組](NIC-Teaming.md):在本主題中，我們提供您的網路介面卡 (NIC) 小組概觀 Windows Server 2016 中。 NIC 小組可讓您將介於 1 到 32 到一或多個以軟體為基礎的虛擬網路介面卡的實體 Ethernet 網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。   
+
+- [NIC 小組 MAC 位址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md):當您設定 NIC 小組與交換器獨立模式和位址雜湊或動態配置資源負載分配時，小組所使用的媒體存取控制 (MAC) 位址的輸出流量的主要 NIC 小組成員。 主要的 NIC 小組成員會將作業系統從一組初始的小組成員所選取的網路介面卡。
+
+- [NIC 小組設定](nic-teaming-settings.md):本主題中，我們會提供您的 NIC 小組 」 屬性，例如小組的概觀，以及負載平衡模式。 我們也提供您關於待命配接器設定和主要小組介面屬性的詳細資料。 如果您有至少兩個網路介面卡在 NIC 小組時，您不需要指定容錯移轉的待命介面卡。
+
+- [疑難排解 NIC 小組](Troubleshooting-NIC-Teaming.md):本主題中，我們會討論如何疑難排解 「 NIC 小組，例如硬體、 實體交換器 securities 和停用或啟用使用 Windows PowerShell 的網路介面卡。 
+
+---

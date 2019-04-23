@@ -1,6 +1,6 @@
 ---
 title: 部署 BranchCache
-description: 本主題是 BranchCache 部署節目表適用於 Windows Server 2016 的示範如何將 BranchCache 部署最佳化分公司 WAN 頻寬分散與裝載快取模式中的一部分
+description: 本主題是 BranchCache 部署指南的 Windows Server 2016 中，示範如何以最佳化 WAN 頻寬使用量，在分公司的分散式和裝載式快取模式部署 BranchCache 的一部分
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -9,28 +9,29 @@ ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e3c163e60777258c403b812adc19d6a598608052
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 80184322719292c4776923e4023e783eb632c26e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59862049"
 ---
 # <a name="deploy-branchcache"></a>部署 BranchCache
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-下列章節提供部署 BranchCache 分散與裝載快取模式中的相關資訊。  
+下列各節提供分散式和裝載式快取模式部署 BranchCache 的相關資訊。  
   
 -   [安裝和設定內容伺服器](Install-and-Configure-Content-Servers.md)  
   
--   [部署裝載快取伺服器與 #40; 選擇性和 #41;](deploy-hosted-cache-servers.md)  
+-   [部署託管快取伺服器&#40;選擇性&#41;](deploy-hosted-cache-servers.md)  
   
--   [Prehashing 和預先載入內容裝載快取伺服器與 #40; 選擇性和 #41;](prehashing-and-preloading.md)  
+-   [預先雜湊處理並預先載入內容在託管快取伺服器上的&#40;選擇性&#41;](prehashing-and-preloading.md)  
   
--   [設定 BranchCache Client 的電腦](Configure-BranchCache-Client-Computers.md)  
+-   [設定 BranchCache 用戶端電腦](Configure-BranchCache-Client-Computers.md)  
   
 > [!NOTE]  
-> 本文中的程序中不包含那些案例指示**使用者 Account 控制項**對話方塊要求您的權限才能繼續。 如果此對話方塊同時執行程序本指南，如果對話方塊一個因應以您的動作，按一下 [**繼續**。  
+> 本指南的程序不包含開啟 [使用者帳戶控制] 對話方塊來要求權限以繼續執行的說明。 如果執行本指南的程序時此對話方塊開啟，或此對話方塊因回應您的動作而開啟，請按一下 [繼續]。  
   
 
 

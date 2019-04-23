@@ -1,145 +1,145 @@
 ---
-title: 磁碟機儲存空間直接存取的倍數的考量
+title: 磁碟機儲存空間直接存取的對稱性的考量
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
-Keywords: Storage Spaces Direct
+Keywords: 儲存空間直接存取
 ms.localizationpriority: medium
 ms.openlocfilehash: 629e49a0c1919286d8e4f418b3e99d69e720f4fd
-ms.sourcegitcommit: f2ef58003da6de049c7c4b578f789a97e0a0f512
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5591844"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59866879"
 ---
-# 磁碟機儲存空間直接存取的倍數的考量 
+# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>磁碟機儲存空間直接存取的對稱性的考量 
 
-> 適用於： Windows Server 2019、 Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016
 
-[儲存空間直接存取](storage-spaces-direct-overview.md)最適合當每個伺服器有完全相同的磁碟機。
+[儲存空間直接存取](storage-spaces-direct-overview.md)時每一部伺服器具有完全相同的磁碟機的效果最佳。
 
-事實上，我們發現這並非永遠可行： 儲存空間直接存取設計來執行年和縮放比例拓展您的組織的需求。 時至今日，您可以購買寬廣 3 TB 磁碟機;下一年，它可能會變成無法尋找應用程式太小。 因此，支援的混合和比一些量。
+事實上，我們認為這不一定總是可行：儲存空間直接存取被設計來執行年和小數位數，隨著您組織的需要增長。 現在，您可能會購買 spacious 3TB 硬碟;明年，您可能無法找到的太小。 因此，支援一定程度的混合和-比對。
 
-本主題說明限制式，並提供支援和不支援的設定的範例。
+本主題說明的條件約束，並提供支援和不支援的組態範例。
 
-## 限制式
+## <a name="constraints"></a>限制式
 
-### 類型
+### <a name="type"></a>類型
 
-所有伺服器都應該都有相同[的磁碟機類型](choosing-drives.md#drive-types)。
+所有伺服器都應該都有相同[類型的磁碟機](choosing-drives.md#drive-types)。
 
-例如，如果一個伺服器有 NVMe，它們應該*所有*有 NVMe。
+例如，如果一部伺服器具有 NVMe，它們應該*所有*有 NVMe。
 
-### 數字
+### <a name="number"></a>Number
 
-所有伺服器都應該都有相同數量的每個類型的磁碟機。
+所有伺服器都應該都有相同數目的每個類型的磁碟機。
 
-例如，如果一個伺服器有六個 SSD，它們應該*所有*有六個 SSD。
-
-   > [!NOTE]
-   > 它沒有關係的不同暫時期間失敗或新增或移除磁碟機的磁碟機數目。
-
-### 型號
-
-我們建議使用相同的模型和可行的韌體版本的磁碟機。 如果您不能請務必小心選取儘可能類似的磁碟機。 我們不建議混合和比驟然不同的效能或耐力特性的相同類型的磁碟機 （除非一個快取，另一個是容量） 因為儲存空間直接存取的平均分散 IO，以便不會區分根據模型.
+例如，如果一部伺服器有六個 SSD，它們應該*所有*有六個 SSD。
 
    > [!NOTE]
-   > 它沒有關係來混合和比對類似 SATA 和 SAS 磁碟機。
+   > 它是沒問題暫時發生故障時或在新增或移除磁碟機不同的磁碟機數目。
 
-### 大小
+### <a name="model"></a>型號
 
-我們建議使用相同的大小儘可能的磁碟機。 使用不同大小的容量磁碟機，可能會導致某些不穩定的容量，並使用不同大小的快取磁碟機可能不會改善快取的效能。 請參閱下一節，如需詳細資訊。
+我們建議使用磁碟機的韌體版本，請盡可能與相同的模型。 如果無法處理，請小心選取盡可能相似的磁碟機。 我們建議不要混合及符合具有相當不同的效能或耐力特性之相同類型的磁碟機 （除非其中一個是快取和另一個則是容量） 因為儲存空間直接存取的平均分散 IO，並不會區分根據模型.
+
+   > [!NOTE]
+   > 它是可以混合與比對類似 SATA 和 SAS 磁碟機。
+
+### <a name="size"></a>大小
+
+我們建議使用的相同大小的磁碟機。 使用不同大小的容量磁碟機可能會導致某些無法使用的容量，並使用不同大小的快取磁碟機可能無法改善快取效能。 請參閱下一節，如需詳細資訊。
 
    > [!WARNING]
-   > 在伺服器間的不同容量磁碟機大小可能會導致出現不合適的容量。
+   > 在伺服器之間的不同容量磁碟機大小可能會導致擱置的容量。
 
-## 了解： 容量不平衡
+## <a name="understand-capacity-imbalance"></a>了解： 容量負載失衡的影響
 
-儲存空間直接存取是健全，容量不平衡跨磁碟機和跨伺服器。 即使不平衡嚴重，所有項目將會繼續運作。 不過，取決於數個因素，每個伺服器中未提供的容量可能無法使用。
+儲存空間直接存取是強固的容量不平衡跨磁碟機和跨伺服器。 即使不平衡的狀態為嚴重，所有項目將會繼續運作。 不過，根據許多因素，在每一部伺服器中無法使用的容量可能會無法使用。
 
-若要查看為什麼發生這種情況，請考慮以下簡化的圖例。 每個彩色的方塊代表鏡像的資料複本。 例如，方塊 \ 對標示為 A、 A'，和 ' 是三個複本的相同的資料。 若要接受伺服器容錯功能，這些複本，*必須*儲存在不同的伺服器。
+若要查看發生的原因，請考慮下面的的簡化的圖例。 每個彩色的方塊都代表一份鏡像資料。 比方說，方塊標示為 A、 A'，和 ' 是相同資料的三個複本。 若要接受伺服器的容錯功能，這些複本*必須*儲存在不同的伺服器。
 
-### 出現不合適的容量
+### <a name="stranded-capacity"></a>擱置的容量
 
-繪製，伺服器 1 (10 TB) 和伺服器 2 (10 TB) 是完整。 伺服器 3 有較大的磁碟機，因此其總容量較大 (15 TB)。 不過，若要更多的三向鏡像資料儲存在伺服器 3 上需要伺服器 1 和 2 伺服器上的複本太，已完整。 無法使用伺服器 3 上剩餘的 5 個 TB 容量 – *」 困 」* 的容量。
+繪製，伺服器 1 (10 TB) 和伺服器 2 (10 TB) 已滿。 伺服器 3 具有較大的磁碟機，因此其總容量較大的 (15 TB)。 不過，伺服器 3 上儲存更多的三向鏡像資料需要在伺服器 1 」 和 「 伺服器 2 上的複本，這些區塊已滿。 無法使用伺服器 3 上的剩餘 5 TB 的容量一樣，它是 *「 受困 」* 容量。
 
-![三向鏡像，三部伺服器，困容量](media/drive-symmetry-considerations/Size-Asymmetry-3N-Stranded.png)
+![三向鏡像，三部伺服器，受困的容量](media/drive-symmetry-considerations/Size-Asymmetry-3N-Stranded.png)
 
-### 最佳的位置
+### <a name="optimal-placement"></a>最佳的位置
 
-相反地，使用四部伺服器 10 TB、 10 TB、 10 TB，及 15 TB 容量和三向鏡像復原類型，它** 能夠有效地複本放置在使用所有可用容量，做為繪製的方式。 這可能是，每當儲存空間直接存取的配置將會尋找，並使用最佳的位置，離開沒有出現不合適的容量。
+相反地，使用四部伺服器的 10 TB，10 TB，10 TB，15 TB 容量和三向鏡像復原時，它*是*能夠有效地將複本放在使用所有可用的容量，以繪製方式。 這是可行的每當的儲存空間直接存取的配置器會尋找，並使用最佳的位置，留下任何擱置的容量。
 
-![三向鏡像，四部伺服器，沒有出現不合適的容量](media/drive-symmetry-considerations/Size-Asymmetry-4N-No-Stranded.png)
+![三向鏡像、 四部伺服器、 任何擱置的容量](media/drive-symmetry-considerations/Size-Asymmetry-4N-No-Stranded.png)
 
-數目伺服器、 復原功能、 容量不平衡和其他因素的嚴重性會影響是否出現不合適的容量。 **最為謹慎起見一般規則是假設每個伺服器中提供的唯一容量保證可以使用。**
+伺服器、 復原功能、 容量不平衡的狀態，以及其他因素的嚴重性的數目會影響是否有擱置的容量。 **最審慎的一般規則是假設每一部伺服器中可用的唯一容量保證能夠使用。**
 
-## 了解： 快取不平衡
+## <a name="understand-cache-imbalance"></a>了解： 快取不平衡
 
-儲存空間直接存取是要快取不平衡健全跨磁碟機和跨伺服器。 即使不平衡嚴重，所有項目將會繼續運作。 此外，儲存空間直接存取一律使用又所有可用的快取。
+儲存空間直接存取是強固快取不平衡跨磁碟機和跨伺服器。 即使不平衡的狀態為嚴重，所有項目將會繼續運作。 此外，儲存空間直接存取一律會使用到最滿所有可用的快取。
 
-不過，使用不同大小的快取磁碟機可能會不改善快取效能統一或如預期般再： 僅使用較大的快取磁碟機的[磁碟機繫結](understand-the-cache.md#server-side-architecture)到 IO 可能會看到改善的效能。 儲存空間直接存取 IO 平均分散繫結並不會以便區分根據快取的容量比例。
+不過，使用不同大小的快取磁碟機可能無法改善快取效能一致的方式或透過可預測方式： 只 IO[磁碟機繫結](understand-the-cache.md#server-side-architecture)具有較大的快取磁碟機可能會看見改善的效能。 儲存空間直接存取 IO 平均分散繫結，並不會區分根據快取-容量的比例。
 
 ![快取不平衡](media/drive-symmetry-considerations/Cache-Asymmetry.png)
 
    > [!TIP]
-   > 若要深入了解快取的繫結的[了解快取](understand-the-cache.md)，請參閱。
+   > 請參閱[了解快取](understand-the-cache.md)若要深入了解快取繫結。
 
-## 設定範例
+## <a name="example-configurations"></a>範例組態
 
-以下是一些支援及不支援的組態：
+以下是一些支援和不支援的組態：
 
-### ![支援](media/drive-symmetry-considerations/supported.png) 支援： 伺服器之間的不同模型
+### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-models-between-servers"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援： 伺服器之間的不同模型
 
-前兩個伺服器使用 NVMe 模型 「 X 」，但第三個伺服器使用 NVMe 模型的 「 Z 」，也就是非常類似。
+前兩個伺服器使用 NVMe 模型"X"，但第三個伺服器使用 NVMe 模型"Z"，這是非常類似。
 
 | 伺服器 1                    | 伺服器 2                    | 伺服器 3                    |
 |-----------------------------|-----------------------------|-----------------------------|
-| 2 NVMe 模型 X x （快取）    | 2 NVMe 模型 X x （快取）    | 2 NVMe 模型 Z x （快取）    |
-| 10 x SSD 模型 Y （容量） | 10 x SSD 模型 Y （容量） | 10 x SSD 模型 Y （容量） |
+| （快取） 的 2 倍 NVMe 模型 X    | （快取） 的 2 倍 NVMe 模型 X    | （快取） 的 2 倍 NVMe 模型 Z    |
+| （容量） 的 10 倍的 SSD 模型 Y | （容量） 的 10 倍的 SSD 模型 Y | （容量） 的 10 倍的 SSD 模型 Y |
 
-支援此設定。
+這項支援。
 
-### ![支援](media/drive-symmetry-considerations/supported.png) 支援： 伺服器內的不同模型
+### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-models-within-server"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援： 伺服器內的不同模型
 
-每個伺服器使用一些不同的混合的 HDD 模型 」 Y 」 和 「 Z 」，非常類似。 每個伺服器都有 10 個總 HDD。
+每一部伺服器會使用一些不同的"Y"和"Z"，非常類似的 HDD 模型組合。 每一部伺服器具有 10 個總 HDD。
 
 | 伺服器 1                   | 伺服器 2                   | 伺服器 3                   |
 |----------------------------|----------------------------|----------------------------|
-| 2 SSD 模型 X x （快取）    | 2 SSD 模型 X x （快取）    | 2 SSD 模型 X x （快取）    |
-| 7 x HDD 模型 Y （容量） | 5 x HDD 模型 Y （容量） | 1 x HDD 模型 Y （容量） |
-| 3 x HDD 模型 Z （容量） | 5 x HDD 模型 Z （容量） | 9 x HDD 模型 Z （容量） |
+| （快取） 的 2 倍 SSD 模型 X    | （快取） 的 2 倍 SSD 模型 X    | （快取） 的 2 倍 SSD 模型 X    |
+| 7 倍 HDD 模型 Y （容量） | 5 x HDD 模型 Y （容量） | 1 倍的 HDD 模型 Y （容量） |
+| （容量） 的 3 倍 HDD 模型 Z | （容量） 的 5 倍的 HDD 模型 Z | 9 倍的 HDD 模型 Z （容量） |
 
-支援此設定。
+這項支援。
 
-### ![支援](media/drive-symmetry-considerations/supported.png) 支援： 在伺服器間的不同大小
+### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-sizes-across-servers"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援： 在伺服器之間的不同大小
 
-前兩個伺服器使用至少 4 TB HDD，但在第三個伺服器使用非常類似 6 TB HDD。
+前兩個伺服器使用 4 TB HDD，但第三個伺服器會使用非常類似 6 TB HDD。
 
 | 伺服器 1                | 伺服器 2                | 伺服器 3                |
 |-------------------------|-------------------------|-------------------------|
 | 2 x 800 GB NVMe （快取） | 2 x 800 GB NVMe （快取） | 2 x 800 GB NVMe （快取） |
 | 4 x 4 TB HDD （容量） | 4 x 4 TB HDD （容量） | 4 x 6 TB HDD （容量） |
 
-支援此設定，雖然它會導致出現不合適的容量。
+這被支援，但它會導致擱置的容量。
 
-### ![支援](media/drive-symmetry-considerations/supported.png) 支援： 伺服器內的不同大小
+### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-sizes-within-server"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援： 伺服器內的不同大小
 
-每個伺服器使用 1.2 TB 與 1.6 TB 的非常類似 SSD 的一些不同混合。 每個伺服器有 4 個總 SSD。
+每一部伺服器會使用一些不同的 1.2 TB，而非常類似 1.6 TB SSD 組合。 每一部伺服器有 4 個總和的 SSD。
 
 | 伺服器 1                 | 伺服器 2                 | 伺服器 3                 |
 |--------------------------|--------------------------|--------------------------|
 | 3 x 1.2 TB SSD （快取）   | 2 x 1.2 TB SSD （快取）   | 4 x 1.2 TB SSD （快取）   |
 | 1 x 1.6 TB SSD （快取）   | 2 x 1.6 TB SSD （快取）   | -                        |
-| 20 x 4 TB HDD （容量） | 20 x 4 TB HDD （容量） | 20 x 4 TB HDD （容量） |
+| 20 x 4TB HDD （容量） | 20 x 4TB HDD （容量） | 20 x 4TB HDD （容量） |
 
-支援此設定。
+這項支援。
 
-### ![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援： 不同類型的跨伺服器的磁碟機
+### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-different-types-of-drives-across-servers"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援： 不同類型的伺服器上的磁碟機
 
-1 的伺服器有 NVMe，但其他不。
+伺服器 1 NVMe，但其他人。
 
 | 伺服器 1            | 伺服器 2            | 伺服器 3            |
 |---------------------|---------------------|---------------------|
@@ -147,41 +147,41 @@ ms.locfileid: "5591844"
 | -                   | 6 x SSD （快取）     | 6 x SSD （快取）     |
 | 18 x HDD （容量） | 18 x HDD （容量） | 18 x HDD （容量） |
 
-這不受支援。 類型的磁碟機應該是每個伺服器中的相同。
+不支援這個狀況。 類型的磁碟機應該是相同的每一部伺服器。
 
-### ![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援： 在伺服器間的每一種類型的不同數目
+### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-different-number-of-each-type-across-servers"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援： 在伺服器之間的每種類型的不同數目
 
-伺服器 3 有比其他更多的磁碟機。
+伺服器 3 具有比其他更多的磁碟機。
 
 | 伺服器 1            | 伺服器 2            | 伺服器 3            |
 |---------------------|---------------------|---------------------|
 | 2 x NVMe （快取）    | 2 x NVMe （快取）    | 4 x NVMe （快取）    |
 | 10 x HDD （容量） | 10 x HDD （容量） | 20 x HDD （容量） |
 
-這不受支援。 每個類型的磁碟機數目應該是每個伺服器中的相同。
+不支援這個狀況。 每個類型的磁碟機數目應該是相同的每一部伺服器。
 
-### ![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援： 只有 HDD 磁碟機
+### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-only-hdd-drives"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援： 僅 HDD 磁碟機
 
-所有伺服器都必須僅連接的 HDD 磁碟機。
+所有伺服器都具有僅連接的 HDD 磁碟機。
 
 |伺服器 1|伺服器 2|伺服器 3|
 |-|-|-| 
 |18 x HDD （容量） |18 x HDD （容量）|18 x HDD （容量）|
 
-這不受支援。 您需要新增兩個快取磁碟機 （NvME 或 SSD） 連接到每個伺服器的最小值。
+不支援這個狀況。 您要新增的兩個快取磁碟機 （NvME 或 SSD） 附加至每個伺服器的最小值。
 
-## 摘要
+## <a name="summary"></a>總結
 
-若要翻新，叢集中的每個伺服器應該有相同的磁碟機類型和相同數量的每個類型。 它支援來混合和比對磁碟機模型和磁碟機大小，如有需要使用上述的考量。
+若要總而言之，在叢集中的每一部伺服器應該具有相同類型的磁碟機和相同數目的每個型別。 它支援混合和比對磁碟機模型和磁碟機大小如有需要但有上述考量事項。
 
-| 限制式                               |               |
+| 條件約束                               |               |
 |------------------------------------------|---------------|
-| 相同類型的每個伺服器中的磁碟機     | **必要**  |
-| 相同數量的每個伺服器中的每個類型 | **必要**  |
-| 每個伺服器中的相同磁碟機模型        | 建議執行   |
-| 在每個伺服器中的相同磁碟機大小         | 建議執行   |
+| 相同類型的每一部伺服器中的磁碟機     | **所需**  |
+| 相同數目的每種類型的每一部伺服器 | **所需**  |
+| 每一部伺服器中的相同磁碟機模型        | 建議   |
+| 每一部伺服器中的相同磁碟機大小         | 建議   |
 
-## 請參閱
+## <a name="see-also"></a>另請參閱
 
-- [儲存空間直接存取的硬體需求](storage-spaces-direct-hardware-requirements.md)
+- [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)
 - [儲存空間直接存取概觀](storage-spaces-direct-overview.md)

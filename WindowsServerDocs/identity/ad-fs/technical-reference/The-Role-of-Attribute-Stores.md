@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4ddb927d-d65e-491d-840a-16049c083d13
-title: "此屬性存放區的角色"
-description: 
+title: 屬性存放區的角色
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,35 +10,36 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 730411ed7efbb9cf0db3d7e94a486cec4c363849
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860409"
 ---
- >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+ >適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-# <a name="the-role-of-attribute-stores"></a>此屬性存放區的角色
-Active Directory 同盟服務使用的字詞 」 屬性商店 「 參考目錄或資料庫組織用來儲存其帳號，其相關聯的屬性的值。 它的身分提供者組織中設定之後，AD FS 從存放區擷取這些屬性的值，並建立宣告，根據該資訊，以便 Web 應用程式或服務裝載信賴的派對組織中可以做出適當的授權，只要聯盟使用者 \ 嘗試應用程式或服務存取 （account 其會儲存在身分提供者 organization\ 使用者）。  
+# <a name="the-role-of-attribute-stores"></a>屬性存放區的角色
+Active Directory Federation Services 使用 「 屬性存放區 」 一詞指的目錄或組織用來儲存其使用者帳戶及其相關聯的屬性值的資料庫。 設定身分識別提供者組織中之後，AD FS 從存放區擷取這些屬性的值，並建立根據該資訊，如此的 Web 應用程式或信賴憑證者的合作對象組織中裝載的服務可以進行適當的宣告當同盟使用者，授權決策\(使用者帳戶會儲存在身分識別提供者組織\)嘗試存取應用程式或服務。  
   
-如需有關如何專宣告，請查看[宣告角色](The-Role-of-Claims.md)。  
+如需有關如何產生宣告的詳細資訊，請參閱＜ [The Role of Claims](The-Role-of-Claims.md)＞。  
   
-## <a name="how-attribute-stores-fit-in-with-your-ad-fs-deployment-goals"></a>如何儲存屬性符合使用 AD FS 部署目標  
-使用者屬性存放區的位置，以及位置從中驗證使用者判斷您如何設計支援的使用者身分 AD FS。 根據屬性存放區的位置，讓使用者將會存取應用程式 \ （內部網路或 Internet\），您可以使用其中一項下列部署目標：  
+## <a name="how-attribute-stores-fit-in-with-your-ad-fs-deployment-goals"></a>屬性存放區如何符合您的 AD FS 部署目標  
+使用者屬性存放區位置和從中驗證使用者的位置會決定您如何設計來支援使用者身分識別的 AD FS。 根據屬性存放區所在的位置和使用者存取應用程式\(在內部網路或網際網路上\)，您可以使用下列的部署目標：  
   
--   [提供您 Active Directory 使用者存取您宣告感知應用程式和服務](https://technet.microsoft.com/library/dd807071.aspx)-這個目標，在組織中的使用者存取 AD FS – 保護的應用程式或服務 \ （您自己的應用程式或服務或合作夥伴的應用程式或 service\） 時，使用者在公司 intranet 登入 Active Directory。  
+-   [提供您的 Active Directory Users Access Your Claims-aware Applications and Services](https://technet.microsoft.com/library/dd807071.aspx)— 在此目標中，您的組織中的使用者存取的 AD FS 保護的應用程式或服務\(自己的應用程式或服務或合作夥伴的應用程式或服務\)當使用者登入至 Active Directory 公司內部網路。  
   
--   [其他公司的服務和應用程式提供您 Active Directory 使用者存取](https://technet.microsoft.com/library/dd807123.aspx)-這個目標，在組織中的使用者存取 AD FS – 保護的應用程式或服務 \ （您自己的應用程式或服務或合作夥伴的應用程式或 service\） 時，使用者登入公司內部網路並登入時遠端從網際網路屬性存放區。  
+-   [應用程式和其他組織的服務提供您的 Active Directory Users Access](https://technet.microsoft.com/library/dd807123.aspx)— 在此目標中，您的組織中的使用者存取的 AD FS 保護的應用程式或服務\(自己的應用程式或服務或合作夥伴的應用程式或服務\)當使用者登入公司內部網路和其遠端登入來自網際網路的屬性存放區。  
   
--   [在另一部組織存取的使用者提供您宣告感知應用程式和服務](https://technet.microsoft.com/library/dd807099.aspx)-這個目標，在另一部在組織中的使用者帳號位於屬性存放在該組織公司的企業網路，必須存取 AD FS – 保護您的組織中的應用程式。 Consumer\ 為基礎的使用者帳號，您組織的周邊網路屬性存放區位於必須 ad FS – 保護您的組織中的應用程式提供的存取權時，也可以運作這個目標。  
+-   [提供使用者在另一個組織存取 Your Claims-aware Applications and Services](https://technet.microsoft.com/library/dd807099.aspx)— 在此目標，另一個組織中的使用者帳戶位於該組織的公司內部網路上的屬性存放區中必須存取的 AD FS –在您的組織中受保護的應用程式。 此目標也適用於當取用者\-位於您組織的周邊網路中的屬性存放區中的基礎的使用者帳戶必須具有存取權提供給 AD FS 保護您組織中的應用程式。  
   
-您可以根據屬性存放區的位置，您的組織其他需求結合幾個部署目標以完成部署 AD FS 的設計。  
+根據屬性存放區位置和其他組織的需求，您可以結合數個部署目標來完成您的 AD FS 部署的設計。  
   
-## <a name="attribute-stores-that-are-supported-by-ad-fs"></a>屬性 AD FS 所支援的商店  
-AD FS 支援各種 directory 和資料庫儲存，您可以使用解壓縮 administrator\ 定義屬性的值與填入主張使用這些值。 AD FS 支援的任何下列目錄或資料庫屬性商店：  
+## <a name="attribute-stores-that-are-supported-by-ad-fs"></a>AD FS 支援的屬性存放區  
+AD FS 支援各種不同的目錄和資料庫儲存了您可用於擷取系統管理員\-定義屬性值，並填入宣告這些值。 AD FS 支援任何下列目錄或資料庫做為屬性存放區：  
   
--   在 Windows Server 2003 active Directory Active Directory Domain 服務 \(AD DS\) Windows Server 2008、 Windows Server 2012 和 2012 R2 中 AD DS 和 Windows Server 2016。 
+-   Windows Server 2003 Active Directory 網域服務中的 active Directory \(AD DS\) Windows Server 2012 和 2012 r2 中的 Windows Server 2008 AD DS 和 Windows Server 2016 中。 
   
--   所有的 Microsoft SQL Server 2005、 SQL Server 2008、 SQL Server 2012、 SQL Server 2014，以及 SQL Server 2016 的版本  
+-   Microsoft SQL Server 2005，SQL Server 2008，SQL Server 2012、 SQL Server 2014 和 SQL Server 2016 的所有版本  
   
 -   自訂屬性存放區  
   

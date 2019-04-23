@@ -1,7 +1,7 @@
 ---
 ms.assetid: 30657638-5709-48c5-87aa-98f688e07b4c
-title: "檢查清單-實作 Web SSO 設計"
-description: 
+title: 檢查清單-實作網頁 SSO 設計
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,27 +10,28 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 265daf3acb9632aa92f85962abc44a6a9ea8dfed
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864039"
 ---
-# <a name="checklist-implementing-a-web-sso-design"></a>檢查清單︰ 實作 Web SSO 設計
+# <a name="checklist-implementing-a-web-sso-design"></a>檢查清單：實作網頁 SSO 設計
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-此家長檢查清單包含 cross\ 參考重要的概念有關 Active Directory 同盟服務 \(AD FS\) Single\ Sign\ 上 \(SSO\) 設計網頁連結。 它也包含附屬檢查清單可協助您完成工作，才能執行這項設計的連結。  
+此父檢查清單包含跨\-參照有關 Web 單一的重要概念的連結\-號\-上\(SSO\)設計 Active Directory Federation Services \(AD FS\). 它也包含次檢查清單連結，其中的資訊可協助您完成實作此設計所需執行的工作。  
   
 > [!NOTE]  
-> 完成此訂單中的檢查清單中的工作。 當參考連結可讓您的概念主題或附屬檢查清單時，返回本主題之後您檢視的概念主題或完成附屬檢查清單中的工作，讓您可以繼續檢查清單中的其餘的工作。  
+> 請依序完成此檢查清單中的工作。 當參照連結將您導向概念性主題或次檢查清單時，請在檢閱概念性主題或完成次檢查清單中的工作之後返回此主題，以便您可以繼續執行此檢查清單中的其餘工作。  
   
-![Web sso](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**檢查清單︰ 實作 Web SSO 設計**  
+![網頁 sso](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**檢查清單：實作網頁 SSO 設計**  
   
 ||工作|參考資料|  
 |-|--------|-------------|  
-|![Web sso](media/icon_checkboxo.gif)|檢視的網頁 SSO 設計的相關重要的概念，並判斷來自訂此需求貴組織的設計，您可以使用哪些 AD FS 部署目標。 **注意：**|![Web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[網站 SSO 設計](https://technet.microsoft.com/library/dd807033.aspx)<br /><br />![Web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[找出您 AD FS 部署務目標](https://technet.microsoft.com/library/dd807053.aspx)|  
-|![Web sso](media/icon_checkboxo.gif)|檢視的硬體、軟體、憑證，網域名稱系統 \(DNS\)、屬性市集中和 client 需求部署您在組織中的 AD FS。|![Web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[附錄 a：審查 AD FS 需求](https://technet.microsoft.com/library/ff678034.aspx)|  
-|![Web sso](media/icon_checkboxo.gif)|根據您的設計計劃，安裝一或多個聯盟伺服器，或周邊網路中的企業網路。 **注意：**網站 SSO 設計需要只有一個聯盟伺服器成功功能。 單一聯盟伺服器的作用中宣告提供者角色信賴的派對角色。|![Web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單︰ 設定好聯盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)|  
-|![Web sso](media/icon_checkboxo.gif)|\(Optional\) 判斷您的組織是否需要聯盟伺服器 proxy 周邊網路中的。|![Web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單︰ 設定好聯盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)|  
-|![Web sso](media/icon_checkboxo.gif)|根據您的網頁 SSO 設計方案和您想要使用的方式，新增適當屬性市集中，可以廠商信任宣告，並取得規則同盟服務。|![Web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單︰ 設定 Account 合作夥伴公司](Checklist--Configuring-the-Account-Partner-Organization.md)|  
-|![Web sso](media/icon_checkboxo.gif)|如果您是系統管理員可以在資源合作夥伴組織，讓 claims\ 您網頁瀏覽器應用程式、Web 服務應用程式或 Microsoft® Office SharePoint® 伺服器應用程式使用 WIF 和 WIF 的 SDK。 **注意：**|![Web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows 身分基本知識](https://go.microsoft.com/fwlink/?LinkId=122266)<br /><br />![Web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows 身分基本知識 SDK](https://go.microsoft.com/fwlink/?LinkId=122266)| 
+|![網頁 sso](media/icon_checkboxo.gif)|檢閱有關網頁 SSO 設計的重要概念，並判斷哪一個 AD FS 部署目標，您可以使用來自訂此設計，以符合您組織的需求。 **注意：** |![網頁 sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[網頁 SSO 設計](https://technet.microsoft.com/library/dd807033.aspx)<br /><br />![網頁 sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[識別您的 AD FS 部署目標](https://technet.microsoft.com/library/dd807053.aspx)|  
+|![網頁 sso](media/icon_checkboxo.gif)|檢閱硬體、 軟體、 憑證、 網域名稱系統\(DNS\)、 屬性存放區，並針對您的組織中部署 AD FS 用戶端需求。|![網頁 sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[附錄 a:檢閱 AD FS 需求](https://technet.microsoft.com/library/ff678034.aspx)|  
+|![網頁 sso](media/icon_checkboxo.gif)|根據您的設計計畫，請在公司網路或周邊網路中安裝一或多個同盟伺服器。 **注意：** 網頁 SSO 設計中需要能順利運作的只有一部同盟伺服器。 在單一同盟伺服器會作為宣告提供者角色與信賴憑證者的合作對象角色。|![網頁 sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)|  
+|![網頁 sso](media/icon_checkboxo.gif)|\(選擇性\)判斷您的組織是否需要在周邊網路中的同盟伺服器 proxy。|![網頁 sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)|  
+|![網頁 sso](media/icon_checkboxo.gif)|根據您的網頁 SSO 設計計畫與您想要的使用方式而定，新增適當的屬性存放區、信賴憑證者信任與宣告規則至 Federation Service。|![網頁 sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：設定帳戶夥伴組織](Checklist--Configuring-the-Account-Partner-Organization.md)|  
+|![網頁 sso](media/icon_checkboxo.gif)|如果您是資源夥伴組織中的系統管理員，宣告\-可讓您的 Web 瀏覽器應用程式、 Web 服務應用程式或使用 WIF 與 WIF SDK 的 Microsoft® Office SharePoint® Server 應用程式。 **注意：** |![網頁 sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266)<br /><br />![網頁 sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows Identity Foundation SDK](https://go.microsoft.com/fwlink/?LinkId=122266)| 

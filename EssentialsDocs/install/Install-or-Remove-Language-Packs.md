@@ -1,6 +1,6 @@
 ---
-title: "安裝或移除語言套件"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 安裝或移除語言套件
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,55 +13,56 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: a41b491bbe4b4a8ee7f9743dc85e5bdaffb08496
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860089"
 ---
 # <a name="install-or-remove-language-packs"></a>安裝或移除語言套件
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
 > [!NOTE]
->  中所述，您必須先建立多種語言的 Windows 映像[的語言套件和部署](https://technet.microsoft.com/library/hh824829)之前您將 Windows Server Essentials 語言套件。  
+>  中所述，您必須先建立多語系 Windows 映像[語言套件與部署](https://technet.microsoft.com/library/hh824829)新增 Windows Server Essentials 語言套件之前。  
   
- 語言套件只適用於建立多語言映像。 在本區段中的資訊是適用於安裝或移除語言套件，在 Windows Server Essentials。  
+ 語言套件只能用來建立多語言映像。 在本節中的資訊是安裝或移除語言套件，Windows Server Essentials 上的特定項目。  
   
 > [!NOTE]
->  如果您想要執行 client 的電腦不支援 ja-jp，例如東亞語言的初始設定 (IC) 以及英文不包含在伺服器上多語系映像，IC 網頁將會顯示的方塊。 多語您建立映像必須包含英文預設值為英文 IC 網頁。  
+>  如果您想從不支援東亞語言 (如 ja-jp) 的用戶端電腦執行初始設定 (IC)，且伺服器上的多語言映像不含英文，則 IC 網頁將會顯示方塊。 若要讓 IC 網頁預設為英文，您所建立的多語言映像必須包含英文。  
   
-## <a name="adding-language-packs-to-an-image"></a>新增語言套件的影像  
- 語言套件可用的自訂項目 OEM dvd。 建議您複製的語言套件到電腦的技術人員語言套件新增至映像前。  
+## <a name="adding-language-packs-to-an-image"></a>將語言套件新增至映像  
+ OEM 自訂 DVD 提供語言套件。 建議您先將語言套件複製至技術人員電腦，之後才將語言套件新增至映像。  
   
- 若要安裝語言套件，您必須使用下列命令：  
+ 您必須使用下列命令來安裝語言套件：  
   
- **dism.exe /online /Add-Package /PackagePath:C: \\ < 完整 cab directory\ 檔案路徑 > \lp.cab**  
+ **dism.exe /online /enable-feature /Add-Package /PackagePath:C:\\< cab 檔案目錄的完整路徑\>\lp.cab**  
   
- 例如，下列命令示範如何新增德國語言套件：  
+ 例如，下列命令顯示如何新增德文語言套件：  
   
  **dism.exe /online /Add-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
 > [!IMPORTANT]
->  您必須也適用於 Windows Server Essentials 完全當地語系化作業系統的語言套件。  
+>  您也必須套用語言套件，才能將作業系統完全當地語系化的 Windows Server essentials。  
   
-## <a name="removing-language-packs-from-an-image"></a>移除語言套件的影像  
- 若要移除您不想要包含影像中的語言套件，您可以使用下列命令：  
+## <a name="removing-language-packs-from-an-image"></a>從映像中移除語言套件  
+ 您可以使用下列命令來移除不再想要併入映像的語言套件：  
   
- **dism.exe /online /Remove-Package /PackagePath:C: \\ < 完整 cab directory\ 檔案路徑 > \lp.cab**  
+ **dism.exe /online /enable-feature /Remove-Package /PackagePath:C:\\< cab 檔案目錄的完整路徑\>\lp.cab**  
   
- 例如，下列命令示範如何移除德國語言套件：  
+ 例如，下列命令顯示如何移除德文語言套件：  
   
  **dism.exe /online /Remove-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
 
  [建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](../install/Additional-Customizations.md)   
- [準備部署映像](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](../install/Testing-the-Customer-Experience.md)
+ [其他自訂項目](../install/Additional-Customizations.md)   
+ [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

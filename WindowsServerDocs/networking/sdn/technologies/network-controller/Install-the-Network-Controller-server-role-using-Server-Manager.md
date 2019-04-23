@@ -1,6 +1,6 @@
 ---
 title: 安裝網路控制站伺服器角色使用伺服器管理員
-description: 本主題提供有關如何使用 Windows Server 2016 伺服器管理員安裝網路控制站伺服器角色的指示操作。
+description: 本主題提供有關如何使用 Windows Server 2016 中的 伺服器管理員安裝網路控制卡伺服器角色的指示。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -9,61 +9,62 @@ ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 15cb1ef3bad7038cc97784504807b44b4920def6
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 699e2ca5c4ec33099d0ad948523b6f587ad118e4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859059"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>安裝網路控制站伺服器角色使用伺服器管理員
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-本主題提供有關如何使用伺服器管理員安裝網路控制站伺服器角色的指示操作。
+本主題提供有關如何使用伺服器管理員安裝網路控制卡伺服器角色的指示。
 
 >[!IMPORTANT]
->不要部署實體主機上的 Network Controller 伺服器角色。 若要部署 Network Controller，您必須安裝網路控制站伺服器角色 HYPER-V 一樣上 \(VM\) HYPER-V 主機上安裝。 有三種不同的 Hyper\ HYPER-V 主機上 Vm 上安裝 Network Controller 之後，您必須讓 Hyper\ HYPER-V 主機的網路軟體定義 \(SDN\) 加到使用 Windows PowerShell 命令 Network Controller 的主機**新-NetworkControllerServer**。 如此一來，您會讓 SDN 軟體負載平衡器函式。 如需詳細資訊，請查看[新-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>不會部署在實體主機上的網路控制卡伺服器角色。 若要部署網路控制站，您必須為 HYPER-V 虛擬機器上安裝網路控制卡伺服器角色\(VM\)安裝於 HYPER-V 主機。 在三個不同的 Hyper-v Vm 上安裝網路控制站之後\-Hyperv 主機，您必須啟用 Hyper-v\-的軟體定義網路的 HYPER-V 主機\(SDN\)加上要使用網路控制站的主機Windows PowerShell 命令**新增 NetworkControllerServer**。 如此一來，您將使 SDN 軟體負載平衡器，函式。 如需詳細資訊，請參閱 <<c0> [ 新增 NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
   
-Network Controller 安裝之後，您必須使用 Windows PowerShell 命令的額外 Network Controller 的設定。 如需詳細資訊，請查看[使用 Windows PowerShell 部署 Network Controller](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)。  
+安裝網路控制站之後，您必須使用 Windows PowerShell 命令進行其他的網路控制站設定。 如需詳細資訊，請參閱 <<c0> [ 部署網路控制站使用 Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)。  
   
-### <a name="to-install-network-controller"></a>若要安裝網路控制器  
+### <a name="to-install-network-controller"></a>若要安裝網路控制站  
   
-1.  在伺服器管理員中，按一下**管理**，然後按**新增角色與功能**。 開啟精靈新增角色與功能]。 按一下**下一步**。  
+1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能精靈] 隨即開啟。 按一下 [下一步] 。  
   
-2.  在**選擇安裝類型**，讓 [設定預設值，按一下 [**下一步**。  
+2.  在 [**選取安裝類型**，保留預設值，然後按一下**下一步]**。  
   
-3.  在**選擇目的地伺服器**，選擇您要安裝網路控制器，請然後按一下 [的伺服器**下**。  
+3.  在 **選取目的地伺服器**，選擇您想要用來安裝網路控制站，然後按一下的伺服器**下一步**。  
   
-4.  在**選取伺服器角色**，請在**角色**，按一下 [ **Network Controller**。  
+4.  在 **選取伺服器角色**，請在**角色**，按一下 **網路控制卡**。  
   
     ![網路控制站伺服器角色](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
-5.  **新增所需的網路控制器功能**對話方塊。 按一下**[新增功能**。  
+5.  **新增功能所需的網路控制卡**對話方塊隨即開啟。 按一下 **將功能加入**。  
   
-    ![Network Controller 新增功能](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_06.jpg)  
+    ![將功能加入網路控制站](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_06.jpg)  
   
-6.  在**選取伺服器角色**，按一下 [**下**。  
+6.  在 [**選取伺服器角色**，按一下**下一步]**。  
   
     ![按 [下一步]](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
-7.  在**選擇功能**，按一下 [**下**。  
+7.  在 [**選取的功能**，按一下**下一步]**。  
   
-8.  在**Network Controller**按**下**。  
+8.  在 **網路控制卡**按一下 **下一步**。  
   
-9. 在**確認安裝選項**，檢視您的選擇。 安裝 Network Controller 需要重新開機之後精靈會執行。 因此，按一下 [**必要時自動重新開機目的伺服器**。 **新增角色與功能精靈**對話方塊。 按一下**[是]**。  
+9. 在 **確認安裝選項**，檢閱您的選擇。 安裝網路控制站必須執行精靈之後，重新啟動電腦。 基於這個原因，請按一下**需要時自動重新啟動目的地伺服器**。 **新增角色及功能精靈**對話方塊隨即開啟。 按一下 [ **是**]。  
   
-    ![新增角色與精靈中的功能](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
+    ![新增角色及功能精靈](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   
-10. 在**確認安裝選項**，按一下 [**安裝**。  
+10. 在 [確認安裝選項] 中，按一下 [安裝]。  
   
-11. Network Controller 伺服器角色伺服器上安裝目的，並再重新開機伺服器。  
+11. 網路控制卡伺服器角色安裝在目的地伺服器上，並再重新啟動伺服器。  
   
-12. 電腦重新開機之後，登入電腦，來檢視伺服器管理員確認 Network Controller 安裝。  
+12. 在電腦重新啟動之後，登入電腦，並驗證網路控制站安裝伺服器管理員中檢視。  
   
     ![伺服器管理員](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
-## <a name="see-also"></a>也了  
-[Network Controller](Network-Controller.md)  
+## <a name="see-also"></a>另請參閱  
+[網路控制站](Network-Controller.md)  
   
 
 

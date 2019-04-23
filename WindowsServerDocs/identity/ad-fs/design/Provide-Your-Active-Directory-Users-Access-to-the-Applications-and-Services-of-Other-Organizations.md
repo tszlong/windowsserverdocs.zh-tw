@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2d62386c-b466-4a54-b6fa-5d16cda120d8
-title: "提供您的 Active Directory 使用者存取權的應用程式與其他公司的服務"
-description: 
+title: 為 Active Directory 使用者提供其他組織的應用程式與服務的存取權
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,40 +10,41 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: d50d26c5c654e5c91b82f6f209e21f257221c12d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843579"
 ---
-# <a name="provide-your-active-directory-users-access-to-the-applications-and-services-of-other-organizations"></a>提供您的 Active Directory 使用者存取權的應用程式與其他公司的服務
+# <a name="provide-your-active-directory-users-access-to-the-applications-and-services-of-other-organizations"></a>為 Active Directory 使用者提供其他組織的應用程式與服務的存取權
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-這個 Active Directory 同盟服務 \(AD FS\) 部署目標組建上的目標[提供您 Active Directory 使用者存取您宣告感知應用程式與服務](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)。  
+這個 Active Directory Federation Services \(AD FS\)中的目標為基礎的部署目標[提供 Your Active Directory Users Access to Your Claims-aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)。  
   
-當您是系統管理員 account 合作夥伴組織和您有提供員工聯盟的存取部署目標裝載另一個組織中的資源：  
+當您在帳戶夥伴組織中身為系統管理員，且部署目標是為員工提供同盟存取，以存取其他組織內裝載的資源時：  
   
--   員工的公司網路 Active Directory domain 登入可用來存取多個 Web\ 為基礎的應用程式或服務、在另一家中的應用程式或服務時，所受到 AD FS，single\ sign\ 上 \(SSO\) 功能。 如需詳細資訊，請查看[的聯盟網路 SSO 設計](Federated-Web-SSO-Design.md)。  
+-   登入公司網路中 Active Directory 網域的員工可以使用單一\-號\-上\(SSO\)功能，可存取多個 Web\-基礎應用程式或服務，其中受保護的 AD FS 中，當應用程式或服務位於不同的組織。 如需詳細資訊，請參閱 [Federated Web SSO Design](Federated-Web-SSO-Design.md)。  
   
-    例如，Fabrikam 可能會想公司網路員工有聯盟裝載中 Contoso Web 服務的存取。  
+    例如，Fabrikam 可能想要公司網路員工對於裝載於 Contoso 的 Web 服務具有同盟存取權。  
   
--   Active Directory domain 登入遠端員工可從聯盟伺服器聯盟 AD FS – 保護 Web\ 型應用程式或其他組織裝載的服務存取您在組織中取得權杖 AD FS。  
+-   遠端登入 Active Directory 網域的員工可以從您的組織同盟 AD FS 保護的 Web 存取中的同盟伺服器取得 AD FS 權杖\-基礎應用程式或服務所裝載的另一個組織。  
   
-    例如，Fabrikam 可能會想有同盟服務的存取 AD FS – 保護裝載中 Contoso，而不需要將 Fabrikam 公司網路上的 Fabrikam 員工其遠端員工。  
+    例如，Fabrikam 可能想要遠端員工具有同盟存取 AD FS 保護的服務裝載於 Contoso，而不要求 Fabrikam 員工位於 Fabrikam 公司網路。  
   
-除了中所述的基礎元件[提供您 Active Directory 使用者存取您宣告感知應用程式與服務](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)，將會變暗下圖，下列元件所需的此部署目標：  
+除了 [Provide Your Active Directory Users Access to Your Claims-Aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md) 所述的基本元件 (它們在下圖中加上陰影來表示) 之外，這項部署目標也需要下列元件：  
   
--   **考慮合作夥伴聯盟伺服器 proxy:**員工可從網際網路存取同盟的服務或應用程式可以使用此 AD FS 元件進行驗證。 根據預設，這元件執行表單驗證，但它也可以執行基本驗證。 您也可以設定此元件執行安全通訊端層 \(SSL\) client 驗證，如果在您的組織員工呈現的憑證。 如需詳細資訊，請查看[放置聯盟 Proxy 伺服器](Where-to-Place-a-Federation-Server-Proxy.md)。  
+-   **帳戶夥伴同盟伺服器 proxy:** 從網際網路存取同盟的服務或應用程式的員工可以使用此 AD FS 元件來執行驗證。 根據預設，此元件會執行表單驗證，但它也可以執行基本驗證。 您也可以設定此元件以執行安全通訊端層\(SSL\)用戶端驗證，如果貴組織的員工有憑證可呈現的話。 如需詳細資訊，請參閱 [Where to Place a Federation Server Proxy](Where-to-Place-a-Federation-Server-Proxy.md)。  
   
--   **周邊 DNS:**這個實作網域名稱系統 \(DNS\) 提供主機周邊網路的名稱。 如需有關如何周邊 DNS 聯盟 proxy 伺服器設定的詳細資訊，請查看[聯盟的 Proxy 伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
+-   **周邊網路 DNS：** 這項實作的網域名稱系統\(DNS\)提供周邊網路的主機名稱。 如需如何設定同盟伺服器 proxy 的周邊網路 DNS 的詳細資訊，請參閱[同盟伺服器 Proxy 的名稱解析需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
--   **遠端員工：**員工遠端存取 Web\ 為基礎的應用程式 \（透過支援 Web browser\) 或 Web\ 服務 \（透過 application\)，使用有效的憑證，從公司網路時，員工時離站使用網際網路。 在遠端位置員工的 client 電腦會直接與聯盟伺服器 proxy 產生預付碼和驗證的應用程式或服務通訊。  
+-   **遠端員工：** 遠端員工會存取 Web\-架構的應用程式\(透過支援的網頁瀏覽器\)或 Web\-型服務\(透過應用程式\)，使用有效的認證，從公司網路，而員工是公司時則使用網際網路。 在遠端位置中的員工的用戶端電腦會直接與同盟伺服器 proxy，來產生權杖，並向應用程式或服務通訊。  
   
-檢視後連結主題中的資訊，就可以開始中的步驟來部署這個目標[檢查清單︰ 實作聯盟網路 SSO 設計](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)。  
+檢閱連結主題中的資訊之後，您可以開始部署此目標中的步驟[檢查清單：實作同盟的網頁 SSO 設計](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)。  
   
-下圖顯示每個此 AD FS 部署目標的必要元件。  
+下圖顯示每個此 AD FS 部署目標所需的元件。  
   
 ![存取您的應用程式](media/50af4837-31e0-451f-a942-e705c2300065.gif)  
   
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

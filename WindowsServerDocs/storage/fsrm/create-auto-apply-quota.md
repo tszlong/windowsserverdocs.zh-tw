@@ -1,6 +1,6 @@
 ---
-title: "建立自動套用配額"
-description: "本文說明如何以配額範本為基礎建立自動套用配額"
+title: 建立自動套用配額
+description: 本文說明如何以配額範本為基礎建立自動套用配額
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: e2837df448434252470d783a6c06f0690ba09021
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847919"
 ---
 # <a name="create-an-auto-apply-quota"></a>建立自動套用配額
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
 
 您可以利用自動套用配額，將配額範本指派給上層磁碟區或資料夾。 檔案伺服器資源管理員接著就會自動根據該範本產生配額。 配額會針對每個現有的子資料夾和未來建立的子資料夾產生。
 
@@ -34,12 +35,12 @@ ms.lasthandoff: 10/17/2017
 
 5.  在 **\[從這個配額範本衍生內容\]** 中，從下拉式清單選取您要套用的配額範本。 請注意，每個範本的內容都會顯示在 **\[配額內容摘要\]** 下方。
 
-6.  按一下 **\[建立\]**。
+6.  按一下 [建立] 。
 
 > [!Note]
 > 您可以選取 **\[配額\]** 節點然後選取 **\[重新整理\]**，來檢查所有自動產生的配額。 將會列出每個子資料夾的個別配額套以及上層磁碟區或資料夾的自動套用配額設定檔。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [配額管理](quota-management.md)
 -   [編輯自動套用配額內容](edit-auto-apply-quota-properties.md)

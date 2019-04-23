@@ -1,0 +1,1 @@
+**[深入了解的功能比較一律開啟 」 VPN 和 DirectAccess](../vpn/vpn-map-da.md)。** 類似於 DirectAccess，一律開啟 」 VPN 有，許多安全性、 連線、 驗證和其他選項。

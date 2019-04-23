@@ -1,94 +1,95 @@
 ---
 ms.assetid: 34244b53-1206-4f5b-8c4d-3ebf574d8e24
-title: "認證竊取帳號吸引"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 常成為認證竊取目標的帳戶
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: ae1bfe017e8b21c3abfcdc137153b0fd379053fa
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 8e5d2b01f73127f84f700dab3518b66687f0294f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59863099"
 ---
-# <a name="attractive-accounts-for-credential-theft"></a>認證竊取帳號吸引
+# <a name="attractive-accounts-for-credential-theft"></a>常成為認證竊取目標的帳戶
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-認證竊取攻擊就是在其中一開始攻擊最高權限 （根，系統管理員或根據使用中的作業系統系統，） 的存取權的網路，然後使用免費工具從其他登入帳號的工作階段解壓縮認證的電腦。 系統設定，根據這些認證可以 hashes、 門票或甚至純文字密碼的形式解壓縮。 如果任何收割後的認證區域 （例如，在 Windows 中，系統管理員帳號或根帳號 OSX、 UNIX，或 Linux） 的網路上的其他電腦上有可能是帳號，攻擊者提供的認證到其他電腦傳播危害到其他電腦，並取得帳號兩種特定類型的憑證嘗試在網路:  
+認證竊取攻擊是指以攻擊者一開始取得最高的權限 （「 根 」、 「 管理員 」 或 「 系統中，根據使用中的作業系統 」） 存取網路，然後再使用免費工具，來擷取認證的電腦工作階段內的其他登入的帳戶。 根據系統組態，可擷取這些認證的雜湊、 票證或甚至是純文字密碼形式。 如果任何蒐集到的認證可能會存在於網路 （例如，在 Windows，系統管理員帳戶或在 OSX、 UNIX 或 Linux 根帳戶） 上的其他電腦上的本機帳戶，攻擊者會提供認證給其他電腦上網路傳播至其他電腦遭到入侵，並嘗試取得的兩個特定類型的帳戶認證：  
 
-1.  有特殊權限的網域帳號 broad 和深度的權限 （也就是帳號有多部電腦上與 Active Directory 中的系統管理員等級權限）。 這些帳號不可能的 Active Directory 中的最高權限群組成員，但它們可能會被授與系統管理員等級權限許多伺服器和工作站網域或森林，讓它們在 Active Directory 有效地權力特殊權限群組成員。 在大部分案例中，帳號授與權限等級高 broad 負責 Windows 基礎結構所有的服務帳號，因此隨時可評估服務帳號幅度和深度的權限。  
+1.  使用廣泛並深入的權限 （也就是帳戶具有系統管理員層級權限，多部電腦上與 Active Directory） 的特殊權限的網域帳戶。 這些帳戶可能不到任何 Active Directory 中的最高特殊權限群組的成員，但他們可能已被授與系統管理員層級權限跨許多伺服器和工作站的網域或樹系，使其可有效地一樣強大在 Active Directory 中的特殊權限群組的成員。 在大部分情況下，獲得高的層級的權限在廣泛的 Windows 基礎結構的通關的帳戶是服務帳戶，讓服務帳戶應該一律會評估這部伺服器的廣度與深度的權限。  
 
-2.  「 非常重要的人員] (VIP) 網域帳號。 本文件處在 VIP account 是攻擊想 （診斷作業和其他重要資訊），資訊的存取權的任何帳號或任何帳號，可以用來完全掌控存取該資訊。 這些帳號的範例包括：  
+2.  「 很重要的 Person 」 (VIP) 的網域帳戶。 在本文件的內容中，VIP 帳戶就可以存取資訊 （智慧財產權和其他機密資訊），攻擊者想要的任何帳戶可用來授與攻擊者存取權，該資訊的任何帳戶。 這些使用者帳戶的範例包括：  
 
-    1.  高階主管其帳號存取敏感公司資訊  
+    1.  帳戶可以存取公司機密資訊的主管  
 
-    2.  帳號，有義務維護主管所使用的應用程式與電腦之人員協助 Desk 人員  
+    2.  技術支援人員負責維護的電腦和主管所使用的應用程式的帳戶  
 
-    3.  帳號法律員工是否可以存取組織超出定約和合約文件自己公司或組織 client 的文件  
+    3.  法律的人員具有存取組織的 bid 和合約文件，文件是否為自己的組織或用戶端組織的帳戶  
 
-    4.  管線 product 規劃存取計劃與規格你有公司的開發人員，無論你會公司的類型  
+    4.  產品規劃人員可存取的產品計劃與規格中的公司開發管線，無論公司的產品類型  
 
-    5.  其帳號用於存取研究資料、 product 遭遇或任何其他研究攻擊感興趣的研究人員  
+    5.  研究人員的帳戶用來存取研究資料、 產品的公式或攻擊者感興趣的任何其他參考資料  
 
-因為在 Active Directory 高度授權的帳號傳播危害和操作 VIP 帳號或他們可以存取的資料，認證竊取攻擊的最適合帳號是帳號，在 Active Directory 中的企業系統管理員，網域系統管理員及系統管理員群組成員。  
+最有用的帳戶的認證竊取攻擊傳播入侵和操作 VIP 帳戶或他們可以存取的資料，則可以使用 Active Directory 中的高特殊權限的帳戶，因為是 Enterprise Admins 的成員的帳戶Domain Admins 和系統管理員群組在 Active Directory 中。  
 
-因為網域控制站的 AD DS 資料庫存放庫中，網域控制站在 Active Directory 擁有完整存取權的所有資料網域控制站的也針對洩露是否同時認證竊取攻擊，或一或多個高特殊權限的 Active Directory 之後已遭入侵帳號。 雖然許多發行 （和許多攻擊） 專注於網域系統管理員群組成員資格描述 pass hash 和其他認證竊取攻擊時 (中所述[減少 Active Directory 攻擊](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md))，可用於的列在此處群組成員 account 危害整個 AD DS 安裝。  
+AD DS 資料庫的儲存機制的網域控制站和網域控制站在 Active Directory 中具有完整存取權的所有資料，因為網域控制站也目標的入侵，無論是在平行使用認證竊取攻擊，或之後一或多個高特殊權限的 Active Directory 帳戶已遭盜用。 雖然許多發行集 （和許多攻擊者） 著重於 Domain Admins 群組成員資格時描述 pass-雜湊和其他認證竊取攻擊 (中所述[減少 Active Directory 的攻擊面](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md))其中任一此處所列的群組成員的帳戶可以用來危害整個 AD DS 安裝。  
 
 > [!NOTE]  
-> 完整 pass hash 和其他認證竊取攻擊相關資訊，請查看[Mitigating Pass--Hash (PTH) 攻擊和其他認證竊取技術](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)中列出的白皮書[附錄 m： 文件連結，並建議朗讀](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)。 如需來判斷對手攻擊的有時稱為 「 進階持續威脅 」 (APTs)，請查看[判斷對手和目標攻擊](https://www.microsoft.com/download/details.aspx?id=34793)。  
+> 完整傳遞-雜湊和其他認證竊取攻擊的詳細資訊，請參閱[緩解傳遞-雜湊 (PTH) 攻擊和其他認證竊取技術](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)（英文） 白皮書中所列[附錄 M:文件連結與建議閱讀資料](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)。 如需詳細的敵人攻擊的詳細資訊，這有時稱為 「 進階持續威脅 」 (Apt)，請參閱[決定敵人和目標的攻擊](https://www.microsoft.com/download/details.aspx?id=34793)。  
 
-## <a name="activities-that-increase-the-likelihood-of-compromise"></a>增加危害的可能性的活動  
-因為的認證竊取目標通常是非常有特殊權限的網域帳號，VIP 帳號，很重要的系統管理員會了解增加成功憑證竊取攻擊的機率的活動。 攻擊者也針對 VIP 帳號，如果 Vip 不提供高等級的系統上或網域中的權限，但其認證竊取需要其他類型的攻擊，例如上工程 VIP 提供機密資訊。 或攻擊者必須先取得哪一個 VIP 的快取認證系統有特殊權限的存取。 因此，增加認證竊取以下所述的可能性的活動的著重於防止取得高特殊權限管理的認證。 這些活動的攻擊者會危害取得權限的認證系統的常見的機制。  
+## <a name="activities-that-increase-the-likelihood-of-compromise"></a>增加的洩露可能性的活動  
+因為高特殊權限的網域帳戶和 VIP 帳戶的認證竊取目標通常是，務必讓系統管理員的活動，增加的認證竊取攻擊成功的可能性。 雖然如果 Vip 系統不會提供高水準的系統上，或在網域中的權限，攻擊者也會以 VIP 帳戶，其認證遭竊會需要其他類型的攻擊，例如社交工程提供祕密資訊的 VIP。 或者，攻擊者必須先取得特殊權限的存取的 VIP 快取認證的系統。 因為這個緣故，提高此處所述的認證竊取的可能性的活動是主要著重於防止取得高特殊權限的系統管理認證的作業。 這些活動是常見的攻擊者會如何破壞系統，以取得特殊權限的認證的機制。  
 
-### <a name="logging-on-to-unsecured-computers-with-privileged-accounts"></a>登入不安全的帳號特殊權限的電腦  
-讓成功認證竊取攻擊核心弱點是登入電腦，而不安全帳號，是針對整個環境深特殊權限的行為。 這些登入可以錯誤以下所述的各種組態的結果。  
+### <a name="logging-on-to-unsecured-computers-with-privileged-accounts"></a>不安全的電腦，使用具有特殊權限的帳戶登入  
+可讓認證竊取攻擊成功的核心弱點可能會是登入電腦不是安全使用大致的帳戶和整個環境深特殊權限的動作。 這些登入可以是此處所述的各種設定錯誤的結果。  
 
-#### <a name="not-maintaining-separate-administrative-credentials"></a>不維護不同管理認證  
-雖然這較少，評定各種 AD DS 安裝，但我們發現 IT 員工單一帳號使用所有他們的作品。 Account 的至少一個 Active Directory 中的最高特殊權限群組成員，且相同的員工使用登入他們的工作站在早上、 查看他們的電子郵件帳號，瀏覽網際網路網站和下載 content 到他們的電腦。 當使用本機系統管理員權限與權限授與帳號執行時的使用者時，他們公開本機電腦，以完成危害。 當那些帳號也 Active Directory 中最有特殊權限群組成員，他們將公開整個樹系危害，讓您很輕鬆攻擊者的 Active Directory 和 Windows 環境完整控制權。  
+#### <a name="not-maintaining-separate-administrative-credentials"></a>不維護個別的系統管理認證  
+雖然這是相當罕見，評估不同的 AD DS 安裝，我們發現使用單一帳戶的所有工作的 IT 員工。 至少其中一個 Active Directory 中的最高特殊權限群組的成員，並且是相同的帳戶的員工用來在早上登入他們的工作站、 檢查其電子郵件、 瀏覽網際網路網站，並下載內容，其電腦。 當使用者執行與被授與本機系統管理員權限和權限的帳戶時，它們會公開本機電腦，才能完成洩露。 當這些帳戶也是在 Active Directory 中的最高權限群組的成員時，它們會公開入侵，整個樹系，輕鬆地透過極簡方式攻擊者取得完整的控制權，Active Directory 和 Windows 環境的集。  
 
-同樣地，在某些環境中，我們發現的相同使用者名稱和密碼用於根帳號非 Windows 電腦上在可用的 Windows 環境，可從 Windows 系統反之亦然 UNIX 或 Linux 系統擴充危害攻擊。
+同樣地，在某些環境中，我們發現，相同的使用者名稱和密碼會用於在非 Windows 電腦上的根帳戶因為會使用在 Windows 環境中，可讓攻擊者若要從 UNIX 或 Linux 系統的入侵延伸到 Windows 系統反之亦然。
 
-#### <a name="logons-to-compromised-workstations-or-member-servers-with-privileged-accounts"></a>登入危害的工作站或成員伺服器帳號特殊權限  
-高度授權的核對危害的工作站或成員伺服器互動方式登入以使用時，該危害的電腦可能蒐認證登入系統任何 account 從集。  
+#### <a name="logons-to-compromised-workstations-or-member-servers-with-privileged-accounts"></a>遭盜用的工作站或成員伺服器，使用具有特殊權限的帳戶登入  
+高特殊權限的網域帳戶來登入以互動方式的入侵的工作站或成員伺服器，該遭到入侵的電腦，可能會取得從登入系統的任何帳戶的認證。  
 
 #### <a name="unsecured-administrative-workstations"></a>不安全的系統管理工作站  
-許多組織中的 IT 人員都使用多個帳號。 一個 account 用來登入員工的工作站，而且這些都是 IT 人員，因為它們通常本機系統管理員權限上工作站。 有時候，UAC 會向左功能，讓使用者在至少會收到分割存取權杖在登入時，並必須時所需的權限提高。 時維護活動執行這些使用者，他們通常使用本機安裝的管理工具，並提供認證網域權限帳號，選取 [**系統管理員身分執行**選項，或是地提供認證出現提示時。 看起來適當此設定，但它將會公開危害因為環境：  
+在許多組織來說，IT 人員會使用多個帳戶。 一個帳戶用於員工的工作站，登入，他們因為這些都是 IT 人員，通常會有本機系統管理員權限在其工作站上。 在某些情況下，UAC 會保持啟用，讓使用者至少會收到分割存取權杖在登入時，並必須提高權限時所需權限。 當這些使用者正在執行維護活動時，它們通常使用本機安裝的管理工具，並提供其網域權限的帳戶，方法是選取的認證**系統管理員身分執行**選項或提供的認證，當系統提示您。 雖然這項設定可能都不適合的它會公開入侵，因為環境：  
 
--   員工用來登入他們工作站 [一般] 帳號本機系統管理員權限，電腦很容易受到[下載磁碟機，](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)中的使用者相信安裝惡意程式碼的攻擊。  
+-   員工使用自己的工作站登入的 「 一般 」 的使用者帳戶具有本機系統管理員權限、 電腦容易遭受[偷渡式下載](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)所在使用者相信安裝惡意程式碼的攻擊。  
 
--   惡意程式碼已安裝的部分管理帳號，現在可以使用電腦擷取按鍵，剪貼、 螢幕擷取畫面，以及存放於記憶體認證，任何，可能會導致曝光強大核對的憑證。  
+-   惡意程式碼會安裝在系統管理帳戶的內容，該電腦可以現在用來擷取按鍵輸入、 剪貼簿內容、 螢幕擷取畫面和常駐記憶體的認證，任何一項都可能會導致公開的功能強大的網域認證帳戶。  
 
-本案例中的問題將有兩個。 首先，本機和網域管理用於不同帳號，雖然電腦為不安全，並不保護針對竊取帳號。 第二，定期帳號和管理 account 獲得過權利與權限。  
+在此案例中的問題有兩個。 首先，雖然本機和網域系統管理使用不同的帳戶，但電腦不安全，並不會保護防止帳戶。 第二，一般使用者帳戶和系統管理帳戶已被授與過多的權利與權限。  
 
-### <a name="browsing-the-internet-with-a-highly-privileged-account"></a>瀏覽高度授權 Account 與網際網路  
-使用者登入電腦的本機系統管理員群組的電腦上，或是的 Active Directory，以及人特殊權限群組成員帳號，然後瀏覽網際網路 （或危害的內部） 公開本機電腦和 directory 危害。  
+### <a name="browsing-the-internet-with-a-highly-privileged-account"></a>瀏覽網際網路具有高特殊權限的帳戶  
+登入帳戶屬於本機 Administrators 群組的電腦上，或是 Active Directory 中的特殊權限群組的成員，以及誰然後瀏覽網際網路 （或遭入侵的內部網路） 與電腦的使用者公開 （expose) 的本機電腦，用來危害目錄。  
 
-存取惡意的網站與執行系統管理員權限的瀏覽器，可以允許存款中操作有特殊權限使用者的本機電腦上的惡意程式碼的攻擊。 如果使用者在電腦上有本機系統管理員權限，攻擊可能欺騙使用者下載惡意程式碼或打開電子郵件附件，利用應用程式的安全漏洞利用使用者的權限來擷取本機快取使用電腦所有使用者的認證。 如果使用者透過企業系統管理員，網域系統管理員 」，或在 Active Directory 中的系統管理員群組成員資格 directory 中有系統管理員權限，可以擷取網域認證攻擊者，並使用它們來降低整個 AD DS 網域或森林，而不需要危害森林中的任何其他電腦。  
+使用具有系統管理權限執行的瀏覽器存取惡意的網站可以讓攻擊者存款的特殊權限的使用者內容中的本機電腦上的惡意程式碼。 如果使用者在電腦上具有本機系統管理員權限，攻擊者可以欺騙使用者下載惡意程式碼或開啟電子郵件附件，對於利用應用程式弱點及運用使用者的權限，才能擷取在本機快取在電腦上的所有作用中使用者的認證。 如果使用者具有系統管理權限在目錄中被中 Enterprise Admins、 Domain Admins 或 Active Directory 中的系統管理員群組的成員資格，攻擊者可以擷取網域認證，並使用它們來危害整個 AD DS 網域或樹系中，而不需入侵任何樹系中的其他電腦。  
 
-### <a name="configuring-local-privileged-accounts-with-the-same-credentials-across-systems"></a>使用所有系統相同的認證本機特殊權限的帳號設定  
-設定遭竊從坡資料庫危害所有其他使用相同的認證的電腦使用一部電腦上的許多或所有電腦讓認證的相同本機系統管理員 account 名稱與密碼。 最小，您應該使用不同的密碼本機系統管理員帳號在每個加入網域的系統。 可能也唯一名稱本機系統管理員帳號，但足以確保認證不能用於其他系統使用各系統有特殊權限本機帳號不同的密碼。  
+### <a name="configuring-local-privileged-accounts-with-the-same-credentials-across-systems"></a>設定本機的特殊權限的帳戶，在系統中相同的認證  
+設定從一部電腦，用來危害所有使用相同的認證之其他電腦的 SAM 資料庫竊取的多個或所有電腦啟用認證相同的本機系統管理員帳戶名稱和密碼。 至少，您應該使用不同的密碼本機系統管理員帳戶的每個已加入網域的系統。 本機系統管理員帳戶也可能唯一名稱，但不足以確保認證無法使用於其他系統上每個系統的特殊權限的本機帳戶使用不同的密碼。  
 
-### <a name="overpopulation-and-overuse-of-privileged-domain-groups"></a>Overpopulation 和的網域特殊權限的群組超額使用  
-攻擊者會授與網域中 EA、 DA 或 BA 群組成員資格建立目標。 越大成員數個群組，較大的可能性授權的使用者可能不小心濫用認證，並將它們認證竊取公開攻擊。 每個工作站或伺服器特殊權限的網域使用者登入時提供的特殊權限的使用者的認證可能會被收集和使用危害的網域 AD DS 和樹系可能機制。  
+### <a name="overpopulation-and-overuse-of-privileged-domain-groups"></a>Overpopulation 和過度使用的特殊權限的網域群組  
+在 EA、 DA 或 BA 網域中群組的成員資格授與攻擊者建立目標。 大量的這些群組的成員，較大的可能性，特殊權限的使用者可能會不小心誤用認證和公開 （expose） 這些認證竊取攻擊。 每個工作站或伺服器登入的特殊權限的網域使用者提供的特殊權限的使用者的認證可能是蒐集到，且用來危害 AD DS 網域和樹系可能的機制。  
 
 ### <a name="poorly-secured-domain-controllers"></a>不安全的網域控制站  
-網域控制站儲存的網域 AD DS 資料庫的複本。 唯讀模式網域控制站在本機資料庫的複本包含 directory，這都有特殊權限的網域帳號，預設的帳號子集的認證。 讀取寫入網域控制站，每個網域控制站維護完整 AD DS 資料庫，包括不僅等網域系統管理員權限使用者的認證的複本，但有特殊權限的帳號，例如網域控制站帳號或的網域 Krbtgt 帳號，也就是 KDC 相關聯的那個服務網域控制站上。 如果不必要的網域控制站功能的其他應用程式的網域控制站上安裝或網域控制站並未嚴格修補及安全攻擊可能危害它們透過未弱點，或他們可能會利用直接在安裝惡意軟體的其他攻擊。  
+網域控制站裝載網域的 AD DS 資料庫的複本。 唯讀網域控制站，如果資料庫的本機複本會包含只有部分在目錄中，都不會是預設的特殊權限的網域帳戶的帳戶的認證。 讀寫網域控制站上，每個網域控制站維護 AD DS 資料庫、 包含不只適用於特殊權限的使用者，例如 Domain Admins，但具有特殊權限的帳戶，例如網域控制站帳戶或網域的 Krbtgt 認證的完整複本帳戶，是在網域控制站的 KDC 服務相關聯的帳戶。 如果不是必要的網域控制站功能的其他應用程式安裝在網域控制站上，或是網域控制站不會嚴格修補並受到保護，攻擊者可能會透過未修補的弱點，或者危害可能會利用其他直接是在其上安裝惡意軟體的攻擊媒介。  
 
-## <a name="privilege-elevation-and-propagation"></a>提高權限和傳  
-使用攻擊方法，無論 Active Directory 永遠為目標，當 Windows 環境受到攻擊，因為它最終控制存取至任何攻擊。 這不 」 表示針對整個 directory，但是。 特定帳號，伺服器，並基礎結構元件通常攻擊 Active Directory 的主要目標。 這些帳號所述方式，如下所示。  
+## <a name="privilege-elevation-and-propagation"></a>權限提升和傳用  
+不論使用的攻擊方法，Active Directory 一律為目標的 Windows 環境遭受攻擊時，此，因為它最終還是會控制存取權以任何攻擊者想。 這不表示針對整個目錄，不過。 通常是 Active Directory 的攻擊的主要目標的特定帳戶、 伺服器和基礎結構元件。 這些帳戶會如下所述。  
 
-### <a name="permanent-privileged-accounts"></a>永久特殊權限的帳號  
-由於引入 Active directory 之後，這可能使用高度特殊權限帳號建置 Active Directory 樹系然後代理人的權利和權限，才能執行日常的系統管理帳號權限較低。 在 Active Directory 中企業系統管理員，網域系統管理員 」 或系統管理員群組成員資格只有需要暫時並不常實作日常管理最低權限的方法環境中。  
+### <a name="permanent-privileged-accounts"></a>永久特殊權限的帳戶  
+因為 Active Directory 的引進，它已經可以使用具有高度權限的帳戶，以建置 Active Directory 樹系並再將委派權限和執行較低權限帳戶的日常管理工作所需的權限。 在 Active Directory 中 Enterprise Admins、 Domain Admins 或 Administrators 群組的成員資格才需要暫時及不常實作最低權限的方法，可每日管理的環境中。  
 
-永久特殊權限的帳號是放在 [權限的群組並左有每天從帳號。 如果您的組織到網域系統管理員 」 的網域群組地點五個帳號，這些五個帳號可以目標的 24 小時星期 7 天、。 不過，帳號使用網域系統管理員權限的實際需要是通常只會針對特定全網域設定，以及簡短一段時間。  
+永久特殊權限的帳戶是放置於特殊權限的群組和有保留每日的帳戶。 如果您的組織會將五個帳戶放入網域的 Domain Admins 群組，這些五個帳戶可以是目標的 24 小時一天、 一週七天。 不過，實際需要使用以網域系統管理員權限的帳戶是通常僅適用於特定的全網域的組態，和短的時間。  
 
-### <a name="vip-accounts"></a>VIP 帳號  
-在 Active Directory 破壞常被忽略的目標是 「 非常重要的人員] （或 Vip） 帳號是在組織中。 有特殊權限的帳號為目標，因為這些帳號可以權限授與對攻擊者，讓他們危害，或甚至破壞目標的系統上，為先前在本區段中所述。  
+### <a name="vip-accounts"></a>VIP 帳戶  
+在 Active Directory 缺口經常被忽略的目標是 「 非常重要的 person 」 （或 Vip） 的帳戶組織中。 特殊權限的帳戶為目標，因為這些帳戶可以存取權授與攻擊者，可讓它們危害或甚至摧毀目標的系統，如先前所述，這一節。  
 
-### <a name="privilege-attached-active-directory-accounts"></a>[權限連接 「 Active Directory 帳號  
-[權限連接 「 Active Directory 帳號的網域帳號不所做的任何最高的 Active Directory 中權限，但改為獲得高階上許多伺服器工作站環境中的權限的群組成員。 這些帳號是最常網域型加入網域的系統上，為基礎結構大型區段上執行的應用程式通常會執行服務設定帳號。 雖然這些帳號 Active Directory 中有不權限，如果高權限在系統大量授權，他們可以用於危害，或甚至破壞大量區段的基礎結構，要達到有特殊權限的 Active Directory account 危害相同的效果。  
+### <a name="privilege-attached-active-directory-accounts"></a>「 特殊權限連結 」 的 Active Directory 帳戶  
+「 特殊權限連結 」 的 Active Directory 帳戶是未進行任何最高層級的權限，在 Active Directory，但改為已授與權限，在許多伺服器上的高層級的群組成員的網域帳戶和在環境中的工作站。 這些帳戶會設定已加入網域的系統，通常執行的應用程式的基礎結構的大型區段上執行服務的大部分通常以網域為基礎的帳戶。 雖然這些帳戶在 Active Directory 中，有沒有權限，如果他們所獲得大量的系統上的高特殊權限，他們可以用來危害或甚至摧毀基礎結構，達到相同的效果遭到入侵的大型區段特殊權限的 Active Directory 帳戶。  

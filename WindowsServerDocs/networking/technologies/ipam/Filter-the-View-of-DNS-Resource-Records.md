@@ -1,6 +1,6 @@
 ---
-title: 篩選 DNS 資源記錄檢視
-description: 本主題是在 Windows Server 2016 的 IP 位址管理 (IPAM) 管理組節目表的一部分。
+title: 篩選 DNS 資源記錄的檢視
+description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,53 +13,54 @@ ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 35c0e822daa9f2c8c49ae7e6f2f40ec0411cb6fa
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: fed5e1f923d3560b91f514d1e59d79b847557c8b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847799"
 ---
-# <a name="filter-the-view-of-dns-resource-records"></a>篩選 DNS 資源記錄檢視
+# <a name="filter-the-view-of-dns-resource-records"></a>篩選 DNS 資源記錄的檢視
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-您可以使用此主題篩選 IPAM client 主機的資源 DNS 記錄的檢視。  
+您可以使用本主題篩選 IPAM 用戶端主控台中的 DNS 資源記錄的檢視。  
   
-資格在**系統管理員**，或相當於，才能執行此程序最小值。  
+若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。  
   
-### <a name="to-filter-the-view-of-dns-resource-records"></a>篩選 DNS 資源記錄檢視  
+### <a name="to-filter-the-view-of-dns-resource-records"></a>若要篩選 DNS 資源記錄的檢視  
   
-1.  在伺服器管理員中，按一下**IPAM**。 顯示 IPAM client 主機。  
+1.  在 [伺服器管理員] 中，按一下**IPAM**。 IPAM 用戶端主控台隨即出現。  
   
-2.  在瀏覽窗格中，在**監視和管理**，按一下 [ **DNS 區域**。  瀏覽窗格中分為左上角的瀏覽窗格中，較低的瀏覽窗格。  
+2.  在 [導覽] 窗格中，在**監視與管理**，按一下**DNS 區域**。  瀏覽窗格會分割成上方瀏覽窗格和下方的瀏覽窗格中。  
   
-3.  在較低的瀏覽窗格中，按一下 [**向前查詢**。 顯示窗格搜尋結果中，會顯示 IPAM 管理 DNS 向前搜尋的所有區域。  
+3.  在下方瀏覽窗格中，按一下**正向對應**。 在顯示窗格搜尋結果中，會顯示所有受 IPAM 管理 DNS 正向對應區域。  
   
-4.  按一下您想要檢視和篩選其的記錄的區域。  
+4.  區域中按一下您想要檢視和篩選的記錄。  
   
-5.  在 [顯示] 窗格中，按一下**目前的檢視**，然後按一下 [**資源記錄**。 [顯示] 窗格中顯示的資源記錄區域。  
+5.  在 [顯示] 窗格中，按一下**目前檢視**，然後按一下**資源記錄**。 區域的資源記錄會顯示在 [顯示] 窗格中。  
   
-6.  在 [顯示] 窗格中，按一下**[新增條件**。  
+6.  在 [顯示] 窗格中，按一下**新增準則**。  
   
-    ![[新增條件](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_01.jpg)  
+    ![新增準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_01.jpg)  
   
-7.  從下拉式清單中選取的條件。 如果您想要檢視的特定記錄類型，例如，按**記錄類型**。  
+7.  從下拉式清單中選取的準則。 例如，如果您想要檢視特定記錄類型，按一下**記錄類型**。  
   
-    ![選取 [條件](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_02.jpg)  
+    ![選取準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_02.jpg)  
   
-8.  按一下**新增**。  
+8.  按一下 **\[新增\]**。  
   
-    ![[新增條件](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_03.jpg)  
+    ![新增準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_03.jpg)  
   
-9. **錄製輸入**以搜尋參數中新增了。 輸入您要尋找的記錄類型的文字。 例如，如果您想要檢視只 SRV 記錄，輸入**SRV**。  
+9. **記錄類型**加入做為搜尋參數。 輸入您想要尋找的記錄類型的文字。 例如，如果您想要檢視僅有的 SRV 記錄時，輸入**SRV**。  
   
-    ![指定您要尋找的記錄類型](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_04.jpg)  
+    ![指定您想要尋找的記錄類型](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_04.jpg)  
   
-10. 按下 ENTER。 DNS 資源記錄篩選依據條件，並搜尋您所指定的句子。  
+10. 按 ENTER 鍵。 DNS 資源記錄會根據準則篩選，並搜尋您指定的片語。  
   
-    ![執行篩選](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_05.jpg)  
+    ![執行篩選器](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_05.jpg)  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
 [DNS 資源記錄管理](DNS-Resource-Record-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

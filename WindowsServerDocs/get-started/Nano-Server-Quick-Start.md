@@ -12,15 +12,15 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 488d0bed661cf2078d20e491a8c68b2a29a42b73
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2081990"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859519"
 ---
 # <a name="nano-server-quick-start"></a>Nano Server 快速入門
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
@@ -37,13 +37,13 @@ ms.locfileid: "2081990"
   
 1.  將 *NanoServerImageGenerator* 資料夾從 Windows Server 2016 ISO 中的 \NanoServer 資料夾複製到您硬碟上的資料夾。  
   
-2.  以系統管理員身分啟動 Windows PowerShell，將目錄變更為您放置 NanoServerImageGenerator 資料夾的資料夾，然後使用下列命令匯入模組： `Import-Module .\NanoServerImageGenerator -Verbose`  
+2.  身為管理員，將目錄變更為您放置 NanoServerImageGenerator 資料夾，然後匯入的模組資料夾中啟動 Windows PowerShell `Import-Module .\NanoServerImageGenerator -Verbose`  
 >[!NOTE]  
->您可能需要調整 Windows PowerShell 執行原則。 `Set-ExecutionPolicy RemoteSigned` 應該適用。  
+>您可能需要調整 Windows PowerShell 執行原則。 `Set-ExecutionPolicy RemoteSigned` 應該正常運作。  
   
 3.  執行下列命令為 Standard Edition 建立設定電腦名稱並包含 Hyper-V **客體驅動程式**的 VHD，該命令會提示您輸入新 VHD 的系統管理員密碼：  
   
-    `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>` where  
+    `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>` 其中  
   
     -   **-MediaPath <媒體的根目錄路徑\>** 指定 Windows Server 2016 ISO 內容的根目錄路徑。 例如，如果您已將 ISO 內容複製到 d:\TP5ISO，您將使用該路徑。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "2081990"
   
 7.  取得 Nano Server 虛擬機器的 IP 位址，並使用 Windows PowerShell 遠端執行功能或其他遠端管理工具來連線到虛擬機器及從遠端進行管理。  
   
-**實體電腦上的 Nano Server**  
+**在實體電腦上的 Nano Server**  
   
 您也可以使用預先安裝的裝置驅動程式，建立將要在實體電腦上執行 Nano Server 的 VHD。 如果您的硬體為了開機或連線到網路所需的驅動程式尚未提供，請遵循本指南之＜新增其他驅動程式＞一節中的步驟。  
   
@@ -78,14 +78,14 @@ ms.locfileid: "2081990"
   
 1.  將 *NanoServerImageGenerator* 資料夾從 Windows Server 2016 ISO 中的 \NanoServer 資料夾複製到您硬碟上的資料夾。  
   
-2.  以系統管理員身分啟動 Windows PowerShell，將目錄變更為您放置 NanoServerImageGenerator 資料夾的資料夾，然後使用下列命令匯入模組： `Import-Module .\NanoServerImageGenerator -Verbose`  
+2.  身為管理員，將目錄變更為您放置 NanoServerImageGenerator 資料夾，然後匯入的模組資料夾中啟動 Windows PowerShell `Import-Module .\NanoServerImageGenerator -Verbose`  
   
 >[!NOTE]  
->您可能需要調整 Windows PowerShell 執行原則。 `Set-ExecutionPolicy RemoteSigned` 應該適用。  
+>您可能需要調整 Windows PowerShell 執行原則。 `Set-ExecutionPolicy RemoteSigned` 應該正常運作。  
   
 3.  執行下列命令來建立設定電腦名稱並包含 OEM 驅動程式和 Hyper-V 的 VHD，該命令會提示您輸入新 VHD 的系統管理員密碼：  
   
-    `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering` where  
+    `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering` 其中  
   
     -   **-MediaPath <媒體的根目錄路徑\>** 指定 Windows Server 2016 ISO 內容的根目錄路徑。 例如，如果您已將 ISO 內容複製到 d:\TP5ISO，您將使用該路徑。  
   

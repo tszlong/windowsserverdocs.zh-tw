@@ -9,32 +9,32 @@ ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
 ms.openlocfilehash: 39fbb92645d39a46613f2142d0258c78a6ba425b
-ms.sourcegitcommit: 4df1bc940338219316627ad03f0525462a05a606
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8977995"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59842659"
 ---
-# 管理 Server Core 伺服器
+# <a name="administer-a-server-core-server"></a>管理 Server Core 伺服器
 
->適用於：Windows Server (半年度管道) 和 Windows Server 2016
+>適用於：Windows Server （半年通道） 和 Windows Server 2016
 
-Server Core 沒有 UI，因為您需要使用 Windows PowerShell cmdlet、 命令列工具或遠端工具來執行基本的系統管理工作。 下列各節概述的 PowerShell cmdlet 和命令用於基本的工作。 您也可以使用[Windows Admin Center](../../manage/windows-admin-center/overview.md)，目前在公用預覽，統一的管理入口網站來管理您的安裝。 
+因為 Server Core 沒有 UI，您需要使用 Windows PowerShell cmdlet、 命令列工具或遠端工具來執行基本管理工作。 下列各節說明的 PowerShell cmdlet 和命令用來執行基本工作。 您也可以使用[Windows Admin Center](../../manage/windows-admin-center/overview.md)，統一的管理入口網站，目前處於公開預覽狀態，來管理您的安裝。 
 
-## 使用 PowerShell cmdlet 的系統管理工作
-您可以使用下列資訊來執行基本的系統管理工作，使用 Windows PowerShell cmdlet。
+## <a name="administrative-tasks-using-powershell-cmdlets"></a>使用 PowerShell cmdlet 的系統管理工作
+使用下列資訊來執行基本的系統管理工作，使用 Windows PowerShell cmdlet。
 
-### 設定靜態 IP 位址
-當您安裝 Server Core 伺服器時，預設就會有 A DHCP 位址。 如果您需要為靜態 IP 位址，您可以設定它使用下列步驟。
+### <a name="set-a-static-ip-address"></a>設定靜態 IP 位址
+當您安裝在 Server Core 伺服器時，依預設它的 DHCP 位址。 如果您需要靜態 IP 位址，您可以設定它使用下列步驟。
 
-若要檢視您目前的網路設定，請使用**Get NetIPConfiguration**。
+若要檢視目前的網路設定，請使用**Get NetIPConfiguration**。
 
-若要檢視您已經在使用的 IP 位址，請使用**Get-netipaddress**。
+若要檢視您已經使用的 IP 位址，請使用**Get NetIPAddress**。
 
-若要設定靜態 IP 位址，執行下列動作： 
+若要設定靜態 IP 位址，執行下列作業： 
 
-1. 執行**Get NetIPInterface**。 
-2. 請注意您 IP 的介面或**InterfaceDescription**字串的**IfIndex**欄中的數字。 如果您有多個網路介面卡，請注意的數字或字串對應到您想要設定的靜態 IP 位址的介面。
+1. 執行**Get-netipinterface**。 
+2. 請注意中的之數字**IfIndex** IP 介面的資料行或**InterfaceDescription**字串。 如果您有多張網路介面卡，請注意數字或字串對應至您想要設定靜態 IP 位址的介面。
 3. 執行下列 cmdlet 來設定靜態 IP 位址：
 
    ```powershell
@@ -42,165 +42,165 @@ Server Core 沒有 UI，因為您需要使用 Windows PowerShell cmdlet、 命�
    ```
 
    其中：
-   - **InterfaceIndex**是**IfIndex**與步驟 2 的值。 （在我們的範例，12）
-   - **IPAddress**是您想要設定的靜態 IP 位址。 （在範例中，191.0.2.2）
-   - **PrefixLength**是您要設定的 IP 位址的首碼長度 （另一個表單的子網路遮罩）。 （如我們的範例中，24）
-   - **DefaultGateway**是預設閘道 IP 位址。 （如我們的範例中，192.0.2.1）
-4. 若要設定的 DNS 用戶端伺服器位址，請執行下列 cmdlet: 
+   - **InterfaceIndex**的值**IfIndex**從步驟 2。 （在我們範例中為 12）
+   - **IPAddress**是您想要設定靜態 IP 位址。 （在本例中，191.0.2.2）
+   - **PrefixLength**是您所設定的 IP 位址的首碼長度 （子網路遮罩的另一個形式）。 （適用於我們範例中為 24）
+   - **DefaultGateway**是預設閘道的 IP 位址。 （適用於我們範例中為 192.0.2.1）
+4. 執行下列 cmdlet 來設定 DNS 用戶端伺服器位址： 
 
    ```powershell
    Set-DNSClientServerAddress –InterfaceIndex 12 -ServerAddresses 192.0.2.4
    ```
    
    其中：
-   - **InterfaceIndex**是 IfIndex 與步驟 2 的值。
+   - **InterfaceIndex** IfIndex 步驟 2 中的值。
    - **ServerAddresses**是您的 DNS 伺服器的 IP 位址。
-5. 若要新增多個 DNS 伺服器，請執行下列 cmdlet: 
+5. 若要新增多部 DNS 伺服器，請執行下列 cmdlet: 
 
    ```powershell
    Set-DNSClientServerAddress –InterfaceIndex 12 -ServerAddresses 192.0.2.4,192.0.2.5
    ```
 
-   其中，在此範例中， **192.0.2.4**和**192.0.2.5**是這兩個 IP 位址的 DNS 伺服器。
+   在此範例中的位置**192.0.2.4**並**192.0.2.5 都**是這兩個 DNS 伺服器的 IP 位址。
 
-如果您需要切換成使用 DHCP，執行**組 DnsClientServerAddress – InterfaceIndex 12 – ResetServerAddresses**。
+如果您需要改為使用 DHCP，執行**組 DnsClientServerAddress – InterfaceIndex 12 – ResetServerAddresses**。
 
-### 加入網域
-您可以使用下列 cmdlet，將電腦加入網域。
+### <a name="join-a-domain"></a>加入網域
+您可以使用下列 cmdlet 來將電腦加入網域。
 
-1. 執行**新增電腦**。 將會提示您提供這兩個認證以加入網域和網域名稱。
-2. 如果您需要將網域使用者帳戶新增到本機 Administrators 群組，請在命令提示字元 （不在 PowerShell 視窗） 中執行下列命令：
+1. 執行**新增電腦**。 這兩種認證以加入網域和網域名稱，將會提示您。
+2. 如果您需要將網域使用者帳戶新增至本機 Administrators 群組，請在命令提示字元 （不在 [PowerShell] 視窗中） 執行下列命令：
 
    ```
    net localgroup administrators /add <DomainName>\<UserName>
    ```
-3. 重新啟動電腦。 您可以執行**重新啟動電腦**。
+3. 重新啟動電腦。 您可以藉由執行**Restart-computer**。
 
-### 重新命名伺服器
-您可以使用下列步驟來重新命名伺服器。
+### <a name="rename-the-server"></a>重新命名伺服器
+您可以使用下列步驟，重新命名伺服器。
 
-1. 判斷目前的**主機名稱**或**ipconfig**命令的伺服器名稱。
-2. 執行**重新命名電腦-ComputerName \<new_name\ >**。
+1. 判斷目前的伺服器名稱**hostname**或是**ipconfig**命令。
+2. 執行**Rename-computer-ComputerName \<new_name\>**。
 3. 重新啟動電腦。
 
-### 啟動伺服器
+### <a name="activate-the-server"></a>啟用伺服器
 
-執行**slmgr.vbs – ipk\<productkey\ >**。 然後執行**slmgr.vbs /ato –**。 如果啟動成功，您將不會收到的訊息。
+執行**slmgr.vbs – ipk\<productkey\>**。 然後執行**slmgr.vbs – ato**。 如果啟用成功時，您將不會收到的訊息。
 
 > [!NOTE]
-> 您也可以啟用伺服器透過電話，使用[金鑰管理服務 (KMS) 伺服器](../../get-started/server-2016-activation.md)，或從遠端。 若要從遠端啟用，請從遠端電腦，執行下列 cmdlet: 
+> 您也可以啟用伺服器電話，使用[金鑰管理服務 (KMS) 伺服器](../../get-started/server-2016-activation.md)，或遠端電腦上。 若要從遠端啟動，請從遠端電腦執行下列 cmdlet: 
 
 >```powershell
 >**cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato**
 >```
  
-### 設定 Windows 防火牆
+### <a name="configure-windows-firewall"></a>設定 Windows 防火牆
 
-您可以使用 Windows PowerShell cmdlet 和指令碼的 Server Core 電腦上的本機設定 Windows 防火牆。 您可以使用它來設定 Windows 防火牆的 cmdlet，請參閱[NetSecurity](/powershell/module/netsecurity/?view=win10-ps) 。
+您可以在 Server Core 電腦上，在本機使用 Windows PowerShell Cmdlet 和指令檔設定 Windows 防火牆。 請參閱[NetSecurity](/powershell/module/netsecurity/?view=win10-ps) cmdlet 可用來設定 Windows 防火牆。
 
-### 啟用 Windows PowerShell 遠端執行功能
+### <a name="enable-windows-powershell-remoting"></a>啟用 Windows PowerShell 遠端執行功能
 
-您可以啟用 Windows PowerShell 遠端執行功能，在其中命令型別在 Windows PowerShell 中執行另一部電腦上的一部電腦。 啟用與**Enable-psremoting**的 Windows PowerShell 遠端執行功能。
+您可以啟用 Windows PowerShell 遠端執行功能，這個功能可讓在一部電腦上輸入的 Windows PowerShell 命令在另一部電腦上執行。 啟用與 Windows PowerShell 遠端**Enable-psremoting**。
 
-如需詳細資訊，請參閱[有關遠端常見問題集](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)
+如需詳細資訊，請參閱[關於遠端常見問題集](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)
 </br>
 
-## 從命令列的系統管理工作
-您可以使用下列的參考資訊，從命令列執行系統管理工作。
+## <a name="administrative-tasks-from-the-command-line"></a>從命令列系統管理工作
+若要從命令列執行系統管理工作，使用下列參考資訊。
 
-### 設定及安裝
+### <a name="configuration-and-installation"></a>設定與安裝
 |工作 | 命令 |
 |-----|-------|
-|設定本機系統管理員密碼| **淨使用者系統管理員** \* |
-|將電腦加入網域| **netdom 加入 %computername%****/domain:\<domain\ > /userd:\<domain\\username\ > /passwordd:**\* <br> 重新啟動電腦。|
-|確認已變更網域| **set** |
-|從網域移除電腦|**netdom 移除 \ < computername\ >**| 
-|將使用者新增到本機系統管理員群組|**net 熟知的系統管理員 / 新增 \ < domain\\username\ >** |
-|移除使用者從本機系統管理員群組|**淨熟知的系統管理員 /delete \ < domain\\username\ >** |
-|將使用者新增到本機電腦|**淨使用者 \ < domain\username\ > * / 新增** |
-|新增群組到本機電腦|**淨熟知 \ < 群組名稱 \ > / 新增**|
-|變更已加入網域的電腦名稱|**netdom renamecomputer %computername%/NewName:\<new 電腦名稱 \ > /userd:\<domain\\username\ > /passwordd:** * |
+|設定本機系統管理密碼| **net 使用者系統管理員** \* |
+|將電腦加入網域| **netdom join %computername%** **/domain:\<網域\>/userd:\<網域\\username\> /passwordd:**\* <br> 重新啟動電腦。|
+|確認網域已變更| **set** |
+|從網域移除電腦|**netdom 移除\<computername\>**| 
+|將使用者新增至本機 Administrators 群組|**net localgroup 系統管理員 / 新增\<網域\\使用者名稱\>** |
+|從本機 Administrators 群組移除使用者|**net localgroup 管理員 /delete\<網域\\使用者名稱\>** |
+|將使用者新增至本機電腦|**net 使用者\<domain\username\> * /** |
+|將群組新增至本機電腦|**net localgroup\<群組名稱\>/add**|
+|變更加入網域之電腦的名稱|**netdom renamecomputer %computername%/NewName:\<新的電腦名稱\>/userd:\<網域\\username\> /passwordd:** * |
 |確認新的電腦名稱|**set**| 
-|變更工作群組中的電腦的名稱|**netdom renamecomputer \ < currentcomputername\ > /NewName: \ < newcomputername\ >** <br>重新啟動電腦。|
-|停用分頁檔案管理|**wmic 電腦系統的位置名稱 ="< computername\ >"設定 AutomaticManagedPagefile = False**| 
-|設定分頁檔|**wmic pagefileset 其中名稱 ="< 路徑/filename\ >"設定 InitialSize = \ < initialsize\ >，MaximumSize = \ < maxsize\ >** <br>*檔案路徑/名稱*所在的路徑和*initialsize*分頁檔的名稱是開始分頁檔，位元組為單位的大小而*maxsize*是分頁檔，以位元組為單位的大小上限。|
-|變更為靜態 IP 位址|**ipconfig/所有** <br>記錄的相關資訊，或將它重新導向至文字檔案 (**ipconfig/所有 > ipconfig.txt**)。<br>**netsh 介面 ipv4 顯示介面**<br>確認介面清單。<br>**netsh 介面 ipv4 設定位址名稱 \ < 識別碼從介面 list\ > 來源 = 靜態位址 = \ < 慣用的 IP \ [email address\ > 閘道 = \ < 閘道 \ [email address\ >**<br>執行**ipconfig/所有**到 vierfy DHCP 功能已啟用已設定為**否**。|
-|設定靜態的 DNS 位址。|**netsh 介面 ipv4 新增 dnsserver 名稱 \<name 或網路介面 card\ ID = > 位址 = \<IP 地址的主要 DNS server\ > 索引 = 1 <br> **netsh 介面 ipv4 新增 dnsserver 名稱 = \<name 的次要 DNS server\ >地址 = 次要 DNS server\ \<IP 位址 > 索引 = 2 \] * * <br> 重複執行適當地新增額外的伺服器。<br>執行**ipconfig/所有**來確認位址是正確的。|
-|從靜態 IP 位址變更提供 DHCP IP 位址|**netsh 介面 ipv4 設定位址名稱 = \ < 本機層中的 IP 位址 > 來源 = DHCP** <br>執行**Ipconfig/所有**驗證 DCHP 啟用是否已設定為 **[是]**。|
-|輸入產品金鑰|**slmgr.vbs – ipk \ < 產品 key\ >**| 
-|啟動本機伺服器|**slmgr.vbs /ato**| 
-|從遠端啟動伺服器|**cscript slmgr.vbs – ipk \ < 產品 key\ > \ < 伺服器名稱 \ > \ < username\ > \ < password\ >** <br>**cscript slmgr.vbs /ato \ < servername\ > \ < username\ > \ < password\ >** <br>透過執行，以取得電腦的 GUID **cscript slmgr.vbs-未** <br> 執行**cscript slmgr.vbs-dli \<GUID\ >** <br>驗證授權狀態會設定為**已授權 （啟用）**。
+|變更工作群組中電腦的名稱|**netdom renamecomputer \<currentcomputername\> /NewName:\<newcomputername\>** <br>重新啟動電腦。|
+|停用分頁檔管理|**wmic computersystem where name="\<computername\>" set AutomaticManagedPagefile=False**| 
+|設定分頁檔|**wmic pagefileset where name=”\<path/filename\>” set InitialSize=\<initialsize\>,MaximumSize=\<maxsize\>** <br>其中*路徑/filename*是分頁檔的名稱與路徑*initialsize*是起始分頁檔的大小，以位元組為單位，並*maxsize*的大小上限分頁檔，以位元組為單位。|
+|變更到靜態 IP 位址|**ipconfig /all** <br>記錄的相關資訊，或將它重新導向至文字檔案 (**ipconfig /all > ipconfig.txt**)。<br>**netsh 介面 ipv4 顯示介面**<br>確認有介面清單。<br>**netsh interface ipv4 設定位址名稱\<識別碼，從介面清單\>來源 = 靜態位址 =\<慣用的 IP 位址\>閘道 =\<閘道位址\>**<br>執行**ipconfig /all**來設定為 已啟用 DHCP 的 vierfy **No**。|
+|設定靜態 DNS 位址。|**netsh interface ipv4 新增 dnsserver 名稱 =\<網路介面卡的名稱或識別碼\>地址 =\<的主要 DNS 伺服器的 IP 位址\>索引 = 1 <br>** netsh interface ipv4 新增dnsserver 名稱 =\<次要 DNS 伺服器的名稱\>地址 =\<次要 DNS 伺服器 IP 位址\>索引 = 2 * * <br> 重複執行視需要新增額外的伺服器。<br>執行**ipconfig /all**確認位址正確無誤。|
+|從靜態 IP 位址變更為 DHCP 提供的 IP 位址|**netsh interface ipv4 設定位址名稱 =\<的本機系統的 IP 位址\>來源 = DHCP** <br>執行**Ipconfig /all**若要確認 DHCP 啟用已設定為**是**。|
+|輸入產品金鑰|**slmgr.vbs –ipk \<product key\>**| 
+|從本機啟用伺服器|**slmgr.vbs -ato**| 
+|從遠端啟用伺服器|**cscript slmgr.vbs – ipk\<產品金鑰\>\<伺服器名稱\>\<username\>\<密碼\>** <br>**cscript slmgr.vbs -ato \<servername\> \<username\> \<password\>** <br>藉由執行取得電腦的 GUID **cscript slmgr.vbs-未** <br> 執行**cscript slmgr.vbs-dli \<GUID\>** <br>確認授權狀態會設為 **（啟動） 的已授權**。
 
 
-### 網路功能及防火牆
+### <a name="networking-and-firewall"></a>網路功能和防火牆
 
 |工作|命令| 
 |----|-------|
-|設定您要使用 proxy 伺服器的伺服器|**netsh Winhttp 設定 proxy \ < servername\ >: \ < 連接埠 \<sequence >** <br>**注意：** Server Core 安裝無法存取網際網路，透過都需要密碼來允許連線的 proxy。|
-|設定您的伺服器來略過 proxy 的網際網路位址|**netsh winttp 設定 proxy \ < servername\ >: \ < 連接埠 \<sequence > 略過清單 ="< 不可以 >"**| 
+|將伺服器設定為使用 proxy 伺服器|**netsh Winhttp 設定 proxy \<servername\>:\<連接埠號碼\>** <br>**注意：** Server Core 安裝無法透過需要的密碼，才能允許連線的 proxy 存取網際網路。|
+|將伺服器設定為略過網際網路位址的 proxy|**netsh winttp set proxy \<servername\>:\<port number\> bypass-list="\<local\>"**| 
 |顯示或修改 IPSEC 設定|**netsh ipsec**| 
 |顯示或修改 NAP 設定|**netsh nap**| 
-|顯示或修改實際地址翻譯的 IP|**arp**| 
-|顯示或設定的本機的路由表|**路由**| 
+|顯示或修改 IP 位址轉譯為實體位址|**arp**| 
+|顯示或設定本機路由表|**route**| 
 |檢視或設定 DNS 伺服器設定|**nslookup**| 
-|顯示通訊協定統計資料和目前的 TCP/IP 網路連線|**netstat**| 
-|顯示通訊協定統計資料和目前的 TCP/IP 連線使用 NetBIOS 透過 TCP/IP (NBT)|**nbtstat**| 
-|顯示躍點變得網路連線|**pathping**| 
-|追蹤躍點變得網路連線|**tracert**| 
-|顯示多點傳送的路由器的設定|**mrinfo**| 
-|啟用遠端管理的防火牆|**netsh advfirewall 防火牆設定規則群組 = 「 Windows 防火牆遠端管理 」 的新啟用 = 是**| 
+|顯示通訊協定統計資料以及目前的 TCP/IP 網路連線|**netstat**| 
+|顯示通訊協定統計資料和目前的 TCP/IP 連線使用 NetBIOS over TCP/IP (NBT)|**nbtstat**| 
+|顯示網路連線的躍點|**pathping**| 
+|追蹤網路連線的躍點|**tracert**| 
+|顯示多點傳送路由器的設定|**mrinfo**| 
+|啟用防火牆的遠端管理|**netsh advfirewall 防火牆設定的規則群組 = 「 Windows 防火牆遠端管理 」 的新 enable = yes**| 
  
 
-### 更新、 錯誤報告，和意見反應
+### <a name="updates-error-reporting-and-feedback"></a>更新、 錯誤報告及意見反應
 
 |工作|命令| 
 |----|-------|
-|安裝更新|**wusa \ < update\ >.msu /quiet**| 
-|清單已安裝的更新|**systeminfo**| 
-|移除更新|**展開 /f:\* \ < update\ >.msu c:\test** <br>瀏覽至 c:\test\] 和 [開啟 \ < update\ >.xml 在文字編輯器中的。<br>取代**安裝****移除**，並儲存檔案。<br>**pkgmgr /n:\ < update\ >.xml**|
+|安裝更新|**wusa\<更新\>.msu /quiet**| 
+|列出已安裝的更新|**systeminfo**| 
+|移除更新|**展開 /f\* \<更新\>.msu c:\test** <br>瀏覽至 c:\test\，並開啟\<更新\>在文字編輯器中的.xml。<br>取代**安裝**具有**移除**並儲存檔案。<br>**pkgmgr /n:\<update\>.xml**|
 |設定自動更新|若要確認目前的設定: * * cscript %systemroot%\system32\scregedit.wsf /AU /v * *<br>若要啟用自動更新： **cscript scregedit.wsf /AU 4** <br>若要停用自動更新： **cscript %systemroot%\system32\scregedit.wsf /AU 1**| 
-|啟用錯誤報告|若要確認目前的設定： **serverWerOptin /query** <br>若要自動傳送詳細的報告： **serverWerOptin / 詳細** <br>若要自動傳送摘要報告： **serverWerOptin /summary** <br>若要停用錯誤報告： **serverWerOptin /disable**|
-|參與 「 客戶經驗改進計畫 (CEIP)|若要確認目前的設定： **serverCEIPOptin /query** <br>若要啟用 CEIP: **serverCEIPOptin 情況下** <br>若要停用 CEIP: **serverCEIPOptin /disable**|
+|啟用錯誤報告|若要確認目前的設定： **serverWerOptin /query** <br>若要自動傳送詳細的報告： **serverWerOptin / 詳細** <br>若要自動傳送摘要報告： **serverWerOptin 沒有指定 /summary** <br>若要停用錯誤報告： **serverWerOptin /disable**|
+|參與客戶經驗改進計畫 (CEIP)|若要確認目前的設定： **serverCEIPOptin /query** <br>若要啟用 CEIP: **serverCEIPOptin /enable** <br>若要停用 CEIP: **serverCEIPOptin /disable**|
 
-### 服務、 處理程序和效能
+### <a name="services-processes-and-performance"></a>服務、程序以及效能
 
 |工作|命令| 
 |----|-------|
-|列出正在執行的服務|**sc 查詢**或**net start**| 
-|啟動服務|**sc 開始 \<service name\ >** 或**net 開始 \<service name\ >**| 
-|停止服務|**sc stop \<service name\ >** 或**net stop \<service name\ >**| 
-|擷取執行應用程式及相關聯的處理程序的清單|**Tasklist**||強制停止處理程序|執行**tasklist**擷取的程序識別碼 (PID)，然後執行**taskkill /PID \<process ID\ >**|
+|列出執行中的服務|**sc 查詢**或**net start**| 
+|啟動服務|**sc start\<服務名稱\>** 或是**net start\<服務名稱\>**| 
+|停止服務|**sc stop\<服務名稱\>** 或是**net stop\<服務名稱\>**| 
+|擷取執行中應用程式與相關處理程序的清單|**tasklist**||強制停止處理程序|執行**tasklist**擷取處理序識別碼 (PID)，然後執行**taskkill /PID\<處理序識別碼\>**|
 |啟動工作管理員|**taskmgr**| 
-|建立和管理事件追蹤工作階段和效能記錄檔|若要建立計數器、 追蹤、 設定資料收集或 API: **logman ceate** <br>查詢的資料收集器屬性： **logman 查詢** <br>開始或停止資料收集： **logman start\ | 停止** <br>若要刪除的行程： **logman 刪除** <br> 若要更新收集器的屬性： **logman 更新** <br>若要從 XML 檔案匯入資料收集器集，或將它匯出為 XML 檔案： **logman import\ | 匯出**|
+|建立和管理事件追蹤工作階段和效能記錄檔|若要建立計數器、 追蹤、 設定資料收集或 API: **logman 建立** <br>查詢資料收集器屬性： **logman 查詢** <br>若要啟動或停止資料收集： **logman start\|停止** <br>若要刪除收集器： **logman 刪除** <br> 若要更新收集器的屬性： **logman 更新** <br>從 XML 檔案匯入資料收集器集合工具，或將它匯出至 XML 檔案： **logman 匯入\|匯出**|
 
-### 事件記錄檔
+### <a name="event-logs"></a>事件記錄檔
 
 |工作|命令| 
 |----|-------|
 |清單事件記錄檔|**wevtutil el**| 
-|查詢中指定的記錄檔的事件|**wevtutil qe /f:text \ < 記錄名稱 \ >**| 
-|匯出事件記錄檔|**wevtutil epl \ < 記錄名稱 \ >**| 
-|清除事件記錄檔|**wevtutil cl \ < 記錄名稱 \ >**| 
+|查詢中指定的記錄檔的事件|**wevtutil qe /f:text \<log name\>**| 
+|匯出事件記錄檔|**wevtutil epl\<記錄檔名稱\>**| 
+|清除事件記錄檔|**wevtutil cl\<記錄檔名稱\>**| 
 
 
-### 磁碟和檔案系統
+### <a name="disk-and-file-system"></a>磁碟和檔案系統
 
 |工作|命令|
 |----|-------|
-|管理磁碟分割|如需命令的完整清單，請執行**diskpart /？**|  
-|管理軟體 RAID|如需命令的完整清單，請執行**diskraid /？**|  
-|管理磁碟區掛接點|如需命令的完整清單，請執行**mountvol /？**| 
-|重組磁碟區|如需命令的完整清單，請執行**磁碟重組 /？**|  
-|轉換成 NTFS 檔案系統的磁碟區|**將轉換 \ < 磁碟區 letter\ > /FS:NTFS**| 
-|壓縮的檔案|如需命令的完整清單，請執行**壓縮 /？**|  
-|管理開啟的檔案|如需命令的完整清單，請執行**openfiles /？**|  
-|管理 VSS 資料夾|如需命令的完整清單，請執行**vssadmin /？**| 
-|管理檔案系統|如需命令的完整清單，請執行**fsutil /？**||確認檔案的簽章|**sigverif /？**| 
-|取得檔案或資料夾的擁有權|如需命令的完整清單，請執行**icacls /？**| 
+|管理磁碟分割|命令的完整清單，針對執行**diskpart /？**|  
+|管理軟體 RAID|命令的完整清單，針對執行**diskraid /？**|  
+|管理磁碟區掛接點|命令的完整清單，針對執行**mountvol /？**| 
+|重組磁碟區|命令的完整清單，針對執行**重組 /？**|  
+|將磁碟區轉換為 NTFS 檔案系統|**轉換\<磁碟區代號\>/fs: ntfs**| 
+|壓縮檔案|命令的完整清單，針對執行**壓縮 /？**|  
+|管理開啟的檔案|命令的完整清單，針對執行**openfiles /？**|  
+|管理 VSS 資料夾|命令的完整清單，針對執行**vssadmin /？**| 
+|管理檔案系統|命令的完整清單，針對執行**fsutil /？**||驗證檔案簽章|**sigverif /?**| 
+|取得檔案或資料夾的擁有權|命令的完整清單，針對執行**icacls /？**| 
  
-### 硬體
+### <a name="hardware"></a>硬體
 
 |工作|命令| 
 |----|-------|
-|新增新的硬體裝置的驅動程式|將驅動程式複製到在 %homedrive%\\\ < 驅動程式 folder\ > 資料夾。 執行**pnputil-i-%homedrive%\\\<driver folder\ > \\\<driver\ >.inf**|
-|移除硬體裝置的驅動程式|如需載入的驅動程式清單，請執行**sc 查詢類型 = 驅動程式**。 然後執行**sc 刪除 \<service_name\ >**|
+|新增新硬體裝置的驅動程式|將驅動程式複製到 %homedrive%資料夾\\\<驅動程式資料夾\>。 執行**pnputil-i-a %homedrive%\\\<驅動程式資料夾\>\\\<驅動程式\>.inf**|
+|移除硬體裝置的驅動程式|如需載入的驅動程式的清單，執行**sc 查詢類型 = 驅動程式**。 然後執行**sc delete \<service_name\>**|

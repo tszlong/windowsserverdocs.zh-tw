@@ -1,7 +1,7 @@
 ---
 ms.assetid: ef91f1d8-2991-4d90-b687-5fa189737c88
-title: "AD FS 伺服器容量的計劃"
-description: 
+title: 規劃 AD FS 伺服器容量
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,96 +10,97 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 484dd08edef85b91e777f8963f175a6172c75430
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847389"
 ---
-# <a name="planning-for-ad-fs-server-capacity"></a>AD FS 伺服器容量的計劃
+# <a name="planning-for-ad-fs-server-capacity"></a>規劃 AD FS 伺服器容量
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
   
 > [!NOTE]  
-> 本主題提供 content 不會反映實際測試伺服器執行 Windows Server 2012 上執行。 本主題會更新之後，已經執行所需的測試。  
+> 本主題中提供的內容不會反映實際測試在執行 Windows Server 2012 的伺服器上執行。 一旦執行必要的測試之後，即會更新這個主題。  
   
-容量的 Active Directory 同盟服務計劃 \(AD FS\) 預測使用高峰同盟服務，並計劃的程序，或 scaling\ 接 AD FS 伺服器部署符合這些載入需求。  
+Active Directory Federation Services 的容量規劃\(AD FS\)程序會預測您的 Federation Service 尖峰使用量，以及規劃或調整\-AD FS 伺服器部署以符合這些載入需求。  
   
-本章節描述部署指導方針聯盟伺服器和聯盟 proxy 伺服器的角色，並根據實驗室測試 AD FS product 團隊，Microsoft 執行。 本文的目的是可協助您：  
+本章節描述同盟伺服器與同盟伺服器 proxy 角色的部署指引，並根據實驗室測試 Microsoft 的 AD FS 產品小組所執行的。 此內容的目的是要協助您：  
   
--   仔細估計您組織的特定 AD FS 部署，例如 AD FS 伺服器數目的硬體需求。  
+-   仔細評估您的組織特定 AD FS 部署，例如 AD FS 伺服器數目的硬體需求。  
   
--   準確投影 sign\ 中要求，成長，計劃的預期的山峰使用量，並確保 AD FS 部署處理預期尖峰使用的功能。  
+-   精確地專案正負號的預期的尖峰使用量\-在要求中，請規劃成長，並確認 AD FS 部署能夠處理該預期的尖峰使用量。  
   
-您繼續朗讀此容量計劃 content 之前，我們建議您先完成的工作順序下列兩個表格中所示。 在第一次，我們提供建議的工作，有助於連結提供這個容量規劃討論相關操作。  
+在您繼續閱讀這個容量規劃內容之前，建議您先依照以下兩個表格中所示的順序來完成工作。 在第一個表格中，我們提供建議工作的連結，以協助提供適用於這個容量規劃討論的相關內容。  
   
-|建議使用的工作|描述|參考資料|  
+|建議的工作|描述|參考資料|  
 |--------------------|---------------|-------------|  
-|了解部署 AD FS 聯盟伺服器及聯盟的 proxy 伺服器的需求|檢視重要硬體與軟體需求必要部署聯盟伺服器及聯盟的 proxy 伺服器。|[答附錄審查 AD FS 需求](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
-|選取 [AD FS，您將會在組織中部署設定資料庫類型|您可以開始使用容量計劃的資料在本區段中之前，先將判斷 AD FS 設定資料庫類型部署，Windows 內部資料庫 \(WID\) 或結構化查詢語言 \(SQL\) 資料庫。|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md);<br /><br />[AD FS 部署拓撲注意事項](AD-FS-Deployment-Topology-Considerations.md)|  
-|判斷拓撲配置，請使用 AD FS 設定資料庫選擇新的類型|一旦您已經使用您的部署中認為 AD FS 設定資料庫的類型，您將需要考慮哪些部署拓撲最接近，您將需要位置聯盟伺服器和聯盟 proxy 伺服器 production 環境中。|[判斷您 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)|  
-|了解金鑰 AD FS 相關容量計劃的條款|審查定義的常見容量計畫使用 AD FS 容量討論計劃的條款。|查看一節[AD FS 容量計劃的條款](Planning-for-AD-FS-Server-Capacity.md#bk_terms)本主題|  
+|了解部署 AD FS 同盟伺服器和同盟伺服器 proxy 的需求|檢閱部署同盟伺服器和同盟伺服器 Proxy 所需的重要硬體和軟體需求。|[附錄 a:檢閱 AD FS 需求](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
+|選取您將部署在組織中的 AD FS 設定資料庫類型|使用本節中的容量規劃資料之前，您必須先判斷哪一個 AD FS 設定資料庫的類型將會部署，可能是 Windows 內部資料庫\(WID\)或結構化查詢語言\(SQL\)資料庫。|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md);<br /><br />[AD FS 部署拓撲考量](AD-FS-Deployment-Topology-Considerations.md)|  
+|決定要和新的 AD FS 設定資料庫選項搭配使用的拓撲配置類型|一旦決定要在部署中使用的 AD FS 設定資料庫類型之後，就需要考量哪一個部署拓撲最符合您需要在實際執行環境內放置同盟伺服器和同盟伺服器 Proxy 的位置。|[判斷您的 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)|  
+|了解主要 AD FS 相關容量規劃詞彙|檢閱常用容量規劃使用 AD FS 容量規劃討論的詞彙的定義。|請參閱本主題中標題為 [AD FS 容量規劃詞彙](Planning-for-AD-FS-Server-Capacity.md#bk_terms)的小節。|  
   
-之後您已經檢視 content 上表，您現在可以完成下一個表格必要的工作。  
+在檢閱上表的內容之後，您現在可以完成下表中的必要工作。  
   
-|必要條件工作|描述|參考資料|  
+|必要的工作|描述|參考資料|  
 |---------------------|---------------|-------------|  
-|下載 AD FS 容量計畫縮放試算表|AD FS 容量規劃縮放試算表可協助您判斷聯盟伺服器 AD FS 聯盟伺服器發電廠部署所需的數目。 如何使用這個試算表指示可用的中的下一步的工作如下所提供的連結。|[AD FS 容量計劃試算表](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacityPlanning.xlsx)|  
-|收集會需要單一 sign\ 上 \(SSO\) 存取目標 claims\ 感知應用程式和預期的使用高峰相關的存取權的使用者的資料|收集此使用者資料將用於輸入操作 AD FS 容量規劃縮放試算表中所需的值。|[估計聯盟伺服器，您的組織數目](Planning-for-Federation-Server-Capacity.md#bk_estimatefs)|  
-|AD FS 容量計劃試算表適用於 Windows Server 2016|Windows Server 2016 的更新的規劃工作表|[AD FS Windows Server 2016 容量計劃](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
+|下載 AD FS 容量規劃調整大小試算表|AD FS 容量規劃調整大小試算表可協助您判斷所需的 AD FS 同盟伺服器陣列部署的同盟伺服器數目。 以下提供的連結中有如何使用這個試算表的指示，可供第二個工作使用。|[AD FS 容量規劃試算表](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacityPlanning.xlsx)|  
+|收集資料需要單一的正負號的使用者數目\-上\(SSO\)存取目標宣告\-感知應用程式和預期的尖峰使用量與這個存取相關聯|您收集的這個使用者資料將用於 AD FS 容量規劃調整大小試算表內所需的輸入值。|[評估貴組織的同盟伺服器的數目](Planning-for-Federation-Server-Capacity.md#bk_estimatefs)|  
+|AD FS 容量規劃試算表適用於 Windows Server 2016|更新適用於 Windows Server 2016 的規劃工作表|[AD FS 的 Windows Server 2016 的容量規劃](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
   
-## <a name="bk_terms"></a>AD FS 容量計劃的條款  
-下表描述這個容量計劃 AD FS 設計指南一節中常使用的重要條款。 AD FS 條款的完整清單，請查看[了解主要 AD FS 概念](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)。  
+## <a name="bk_terms"></a>AD FS 容量規劃詞彙  
+下表描述這個容量規劃章節的 AD FS 設計指南中經常使用的重要詞彙。 如需的 AD FS 詞彙的更完整清單，請參閱 < [Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)。  
   
-|詞彙|解析度|  
+|詞彙|定義|  
 |--------|--------------|  
-|使用者人數|估計的使用者，都必須在一段指定時間，通常是澳地區的山峰活動時間提交要求服務數目。|  
-|作用中的使用者|大約平均數目系統，但不是一定提交在一段指定時間的要求上的作用中的使用者。|  
-|定義的使用者|理論上最大的使用者計數，通常為基礎的使用者有定義帳號，在系統中。|  
-|要求秒|數字可能用提交的要求 \（時談論載入 system\ 上）或處理伺服器 \（時談論伺服器 throughput\）在第二個。 這個度量用規劃伺服器的處理器和的記憶體容量。|  
-|目標伺服器的回應速度與使用量|繫結的範圍可接受伺服器效能計量成功。 通常，若的回應性低於或使用量超過目標，系統會被視為多載，而是必要的更多的容量。|  
-|Windows 內部資料庫 \(WID\)|可使用另一種 SQL Server 中某些 AD FS 部署預設 AD FS 設定資料庫。|  
+|並行使用者|在指定時段內 (通常是尖峰活動期間)，預期會提交要求給服務的使用者估計數目。|  
+|作用中的使用者|在指定時段內，系統上處於作用中狀態但不一定會提交要求之使用者的大約平均數目。|  
+|定義的使用者|理論上的使用者計數上限，通常會以已在系統中定義帳戶之使用者的數目為依據。|  
+|每秒要求數目|可能是用戶端所提交的要求數目\(在談論系統上的負載\)或未處理的伺服器\(談論伺服器輸送量時\)中第二個。 規劃伺服器處理器和記憶體容量時會使用此衡量標準。|  
+|目標伺服器的回應性與使用率|繫結可接受的伺服器效能範圍的成功衡量標準。 通常，如果回應性低於目標或使用率超過目標，便會將系統視為已超載且需更多容量。|  
+|Windows 內部資料庫\(WID\)|可用來當做替代 SQL Server 中特定的 AD FS 部署預設的 AD FS 設定資料庫。|  
   
-## <a name="configuration-environment-used-during-ad-fs-testing"></a>AD FS 測試期間所使用的設定環境  
-本節設定環境的 AD FS product 小組用來執行它測試。 小組效能和延展性測試聯盟 server 的資料收集，使用下列電腦的硬體、軟體和網路設定：  
+## <a name="configuration-environment-used-during-ad-fs-testing"></a>AD FS 測試期間使用的設定環境  
+本節說明 AD FS 產品小組用來執行其測試設定環境。 小組會使用下列電腦硬體、軟體及網路設定，來蒐集測試同盟伺服器時的效能與延展性資料：  
   
--   雙重 Quad Core 2.27 gigahertz \(GHz\) \(8 cores\)  
+-   雙四核心 2.27 ghz \(GHz\) \(8 個核心\)  
   
--   16\ GB 的 RAM  
+-   16\-GB RAM  
   
--   Windows Server 2008 R2、企業版  
-  
--   Gigabit 網路  
-  
-> [!NOTE]  
-> 16 GB 的 ram 測試期間聯盟伺服器上使用，雖然中等更多記憶體大小，例如為 4 GB 的每個聯盟伺服器可用於大多數 AD FS 部署。 在這個 AD FS 容量計劃網頁結果提供 AD FS 容量規劃試算表和為基礎的每個聯盟伺服器會使用約假設提供建議 4 GB 的 RAM 的大多數 AD FS production 環境。  
-  
-Product 小組聯盟伺服器 proxy 測試收集效能和延展性資料用於下列設定：  
-  
--   雙重 Quad Core 2.24 GHz \(4 cores\)  
-  
--   4\ GB 的 RAM  
-  
--   Windows Server 2008 R2、企業版  
+-   Windows Server 2008 R2 Enterprise Edition  
   
 -   Gigabit 網路  
   
 > [!NOTE]  
-> AD FS 伺服器容量建議可以根據您選擇的特定環境中使用的硬體及網路設定的規格大幅，而有所不同。 點參考資料，以提供本文中的縮放指南根據使用量目標 80%前面所提到的電腦上。  
+> 雖然在測試期間在同盟伺服器上使用 16 GB 的 RAM，更適合的記憶體大小，例如 4 GB 的 RAM，每一部同盟伺服器可以用於大部分的 AD FS 部署。 提供建議，在此 AD FS 容量規劃內容，以及提供 AD FS 容量規劃試算表的結果為基礎的假設，每一部同盟伺服器會使用大約 4 GB 的 RAM 的大部分的 AD FS 生產環境環境。  
   
-## <a name="measure-ad-fs-server-capacity"></a>AD FS 測量伺服器容量  
-通常會影響伺服器的效能與擴充性的硬體元件的 CPU、記憶體、磁碟、和網路介面卡。 幸好，每個元件 AD FS 需要很少的記憶體和磁碟空間需求。 網路連接是那裏的需求。 因此，聯盟伺服器聯盟的 proxy 伺服器上所執行的測試專注在衡量伺服器容量的兩個主要區域：  
+產品小組會使用下列設定，來蒐集適用於同盟伺服器 Proxy 測試的效能與延展性資料：  
   
--   **尖峰秒 AD FS 要求：** sign\ 中要求處理秒聯盟伺服器上的數字。 這個度量單位可協助您判斷多少同時使用者可以登入指定的伺服器。 了解這個度量單位效果效能，您可以搭配 CPU 消耗度量單位使用這個度量單位。  
+-   雙四核心 2.24 GHz \(4 核心\)  
   
--   **CPU 消耗：**百分比的 cpu 測量容量。 這個度量單位可協助您判斷發生整體 CPU 載入根據秒的傳入 sign\ 中要求數目。  
+-   4\-GB RAM  
   
-## <a name="continue-reading-more-about-ad-fs-capacity-planning"></a>繼續朗讀 AD FS 容量計劃有關更多  
-您已經完成的必要條件工作，並具有熟悉相關的條款和硬體需求之後，您可以使用下列其他容量計畫 content 可協助您判斷您的部署所需的 AD FS 伺服器數目建議：  
+-   Windows Server 2008 R2 Enterprise Edition  
   
--   [規劃聯盟伺服器容量](Planning-for-Federation-Server-Capacity.md)  
+-   Gigabit 網路  
   
--   [規劃區域的聯盟 Proxy 伺服器的容量](Planning-for-Federation-Server-Proxy-Capacity.md)  
+> [!NOTE]  
+> 對於 AD FS 伺服器的容量建議可以變化相當大，視您選擇的硬體和網路設定來指定環境中的規格而定。 基於參考目的，本內容中提供的大小調整指導方針是以稍早所提及之電腦上 80 % 的使用率目標為依據。  
   
-## <a name="see-also"></a>也了
-[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+## <a name="measure-ad-fs-server-capacity"></a>測量 AD FS 伺服器容量  
+一般而言，影響伺服器效能和延展性的硬體元件為 CPU、記憶體、磁碟及網路介面卡。 幸運的是，每個 AD FS 元件需要極少的記憶體和磁碟空間需求。 網路連線是一個顯著的需求。 因此，在同盟伺服器和同盟伺服器 Proxy 上執行的載入測試會集中在兩個用於測量伺服器容量的主要領域上：  
+  
+-   **每秒的尖峰 AD FS 要求：** 正負號的數字\-在同盟伺服器上每秒處理的要求。 這個度量單位能夠協助您決定可同時登入指定伺服器的使用者數目。 您可以使用這個度量單位搭配 CPU 消耗度量單位，來了解這個度量單位對於效能的影響。  
+  
+-   **CPU 耗用量：** 衡量 CPU 容量的百分比。 此測量可協助您判斷內送的正負號的數字為基礎的發生的整體 CPU 負載\-每秒的要求。  
+  
+## <a name="continue-reading-more-about-ad-fs-capacity-planning"></a>繼續閱讀以深入了解 AD FS 容量規劃  
+您已完成的必要工作，並具有熟悉相關的詞彙與硬體需求之後，您可以使用下列的額外容量規劃內容，協助您判斷所需的 AD FS 伺服器建議的數目您部署：  
+  
+-   [規劃同盟伺服器容量](Planning-for-Federation-Server-Capacity.md)  
+  
+-   [規劃同盟伺服器 Proxy 容量](Planning-for-Federation-Server-Proxy-Capacity.md)  
+  
+## <a name="see-also"></a>另請參閱
+[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

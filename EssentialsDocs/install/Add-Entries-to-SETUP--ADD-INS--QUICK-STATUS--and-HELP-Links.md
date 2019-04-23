@@ -1,6 +1,6 @@
 ---
-title: "將項目新增至 [設定、增益集，快速狀態，並協助連結"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 將項目新增至「設定」、「增益集」、「快速狀態」和「說明連結」
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,41 +13,42 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 6d3303f2c6d84932ad9d5dee8a547cd478447732
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864389"
 ---
-# <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>將項目新增至 [設定、增益集，快速狀態，並協助連結
+# <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>將項目新增至「設定」、「增益集」、「快速狀態」和「說明連結」
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-您可以加入工作，**安裝**，**增益集**、**快速狀態**工作清單，以及您可以新增儀表板中的 [首頁] 頁面的社群連結區段連結。 工作及以下連結會將 XML 檔案名稱為 OEMHomePageContent.home 檔案或 %ProgramFiles%\Windows Server\Bin\Addins\Home 命名 OEMHomePageContent.dll embedded 的資源檔案新增至這些清單和章節。 Embedded 的資源檔案，可以用於將工作和您所新增的連結文字。 .Home 檔案包含 XML 定義的任務和的連結。  
+您可以將工作新增至 **[設定]**、 **[增益集]**、 **[快速狀態]** 工作清單，並且可以將連結加新增至儀表板首頁中的 [社群連結] 區段。 將名為 OEMHomePageContent.home 檔案的 XML 檔案或名為 OEMHomePageContent.dll 的內嵌資源檔放在 %ProgramFiles%\Windows Server\Bin\Addins\Home 中，即可將工作和連結新增至這些清單和區段。 可使用內嵌資源檔來本地語系化新增的工作和連結中的文字。 .home 檔案包含工作和連結的 XML 定義。  
   
-## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>設定、增益集，快速狀態工作清單加入工作，並加入協助工作連結  
- 您可以加入工作，**安裝**，**增益集**、**快速狀態**工作清單及以下連結**協助**定義的任務和連結使用 XML，工作選擇性建立 embedded 的資源檔案，並安裝在伺服器上的檔案。 如果正在不資源檔案伺服器上安裝 XML 檔案，它必須命名 OEMHomePageContent.home。 如果組件用於安裝 XML 檔案和資源檔案，它必須名 OEMHomePageContent.dll 和必須簽署的驗證碼。  
+## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>將工作新增至 [設定]、[增益集]、[快速狀態] 工作清單，並且將連結新增至 [說明] 工作  
+ 您可以藉由使用 XML 定義工作和連結，選擇性地建立內嵌資源檔，並且將此檔案安裝在伺服器上，即可將工作新增至 **[設定]**、**[增益集]****[快速狀態]** 工作清單，並且將連結新增至 **[說明]** 工作。 如果 XML 檔案安裝在沒有資源檔的伺服器上，其名稱必須為 OEMHomePageContent.home。 如果使用組件來安裝 XML 檔案和資源檔，其名稱必須為 OEMHomePageContent.dll，並且必須簽署 Authenticode。  
   
-### <a name="define-the-tasks-and-links"></a>定義任務和的連結  
- 您可以建立.home 檔案，使用文字編輯器例如記事本或如果您正在也建立了 embedded 的資源檔案使用 Visual Studio 2010 或更高版本定義檔案。 下列程序示範如何建立檔案使用 Visual Studio 2010 或更高版本。  
+### <a name="define-the-tasks-and-links"></a>定義工作和連結  
+ 您可以使用文字編輯器 (如記事本) 來建立 .home 檔案，如果您還要建立內嵌資源檔，可使用 Visual Studio 2010 或更高版本來定義檔案。 下列程序顯示如何使用 Visual Studio 2010 或更高版本來建立檔案。  
   
-##### <a name="to-define-the-tasks-and-links"></a>定義任務和的連結  
+##### <a name="to-define-the-tasks-and-links"></a>若要定義工作和連結  
   
-1.  打開 Visual Studio 2010 或更高版本系統管理員的身分，以滑鼠右鍵按一下 [開始] 功能表中的程式，並選取 [**系統管理員身分執行**。  
+1.  用滑鼠右鍵按一下 [開始] 功能表中的程式，然後選取 **[以系統管理員身分執行]**，以系統管理員身分開啟 Visual Studio 2010 或更高版本。  
   
-2.  按一下**檔案**，按一下 [**新**，然後按一下 [**專案**。  
+2.  依序按一下 **[檔案]**、 **[新增]**，然後按一下 **[專案]**。  
   
-3.  在**範本**窗格中，按**程式庫**，輸入**OEMHomePageContent**在**名稱**方塊，然後再按一下**[確定]**。  
+3.  在 **[範本]** 窗格中，按一下 **[類別庫]**，在 **[名稱]** 方塊中輸入 **OEMHomePageContent** ，然後按一下 **[確定]**。  
   
-4.  Delete Class1.cs 檔案。  
+4.  刪除 Class1.cs 檔案。  
   
-5.  以滑鼠右鍵按一下新增專案中，按一下**新增**，然後按**新項目**。  
+5.  在新專案上按一下滑鼠右鍵，按一下 **[新增]**，然後按一下 **[新增項目]**。  
   
-6.  在**範本**窗格中，按**XML 檔案**，輸入**OEMHomePageContent.home**在**名稱**方塊，然後再按一下**新增**。  
+6.  在 [範本]  窗格中，按一下 [XML 檔案] ，在 [名稱]  方塊中輸入 **OEMHomePageContent.home** ，然後按一下 [新增] 。  
   
     > [!NOTE]
-    >  如果您正在安裝 XML 檔案不資源檔案，它必須命名 OEMHomePageContent.home。 如果在組件包含它，它可提供任何名稱，只要有.home 擴充功能。  
+    >  如果安裝沒有資源檔的 XML 檔案，其名稱必須為 OEMHomePageContent.home。 如果它包含在組件中，則可以是任何名稱，只要具有 .home 副檔名即可。  
   
-7.  新增下列程式碼 XML OEMHomePageContent.home 檔案：  
+7.  將下列 XML 程式碼新增至 OEMHomePageContent.home 檔案中：  
   
     ```  
   
@@ -96,25 +97,25 @@ ms.lasthandoff: 12/12/2017
     </Tasks>  
     ```  
   
-     位置：  
+     其中：  
   
     |屬性|描述|  
     |---------------|-----------------|  
-    |名稱（工作）|清單中顯示的名稱。 如果您建立 embedded 的資源檔案，此屬性的值為字串資源。|  
-    |描述（工作）|工作的描述。 如果您建立 embedded 的資源檔案，此屬性的值為字串資源。|  
-    |來電顯示（工作）|工作的識別碼。 此必須是 GUID。 建立新的 GUID 適用於**exe**工作，但的**通用**工作，您使用的 GUID 時所定義子] 索引標籤的 [工作] 窗格中的工作。如需有關建立 GUID 的詳細資訊，請查看[建立 Guid (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)。|  
-    |影像|此欄位會忽略。|  
-    |名稱（動作）|顯示名稱的工作。|  
-    |輸入（動作）|描述類型的工作。 工作可以下列其中一個動作:-**全球**工作，**exe**，或 url 工作。 A**全球**工作是定義窗格工作子索引標籤中時建立的相同全球工作。如需有關建立通用工作，可用來取得開始工作或一般工作清單的 [首頁] 頁面這兩個子] 索引標籤的 [工作] 窗格中，查看 œCreating 支援類別嗎？在 œHow 以：建立子索引標籤嗎？[Windows Server 方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。 **Exe**工作可以用來執行應用程式取得開始工作，或列出一般工作。|  
-    |exelocation|工作相關聯的應用程式的路徑。 此屬性僅適用於**exe**工作。|  
-    |replaceid|這項工作會取代工作識別碼。|  
-    |組件|組件會提供實作快速狀態查詢課程 AssemblyName。 組件必須位於程式 files\ windows server\bin\\。|  
-    |課|名稱課程實作快速狀態查詢。 必須實作課程**ITaskStatusQuery**介面。|  
-    |職稱（連結）|顯示連結的文字。 如果您建立 embedded 的資源檔案，此屬性的值為字串資源。|  
-    |描述（連結）|連結目的地的描述。 如果您建立 embedded 的資源檔案，此屬性的值為字串資源。|  
-    |ShellExecPath|應用程式或 URL 的路徑。<br /><br /> **注意：**中 ShellExecPath 屬性支援環境變數。|  
+    |Name (Task)|針對清單中的工作所顯示的名稱。 如果您建立內嵌資源檔，則此屬性的值便是字串資源。|  
+    |description (Task)|工作的描述。 如果您建立內嵌資源檔，則此屬性的值便是字串資源。|  
+    |id (Task)|工作的識別碼。 此識別碼必須是 GUID。 您可為 **exe** 工作建立新 GUID，但是對於 **global** 工作，您會使用您為子索引標籤的工作窗格定義工作時所建立的 GUID。如需有關建立 GUID 的詳細資訊，請參閱 [建立 GUID (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)。|  
+    |image|此欄位將被忽略。|  
+    |Name (Action)|顯示工作名稱。|  
+    |Type (Action)|描述工作類型。 工作可以是下列工作之一：**global** 工作、**exe** 或 url 工作。 **global** 工作是您為子索引標籤的工作窗格定義工作時所建立的相同全域工作。如需子索引標籤的工作窗格及首頁的快速入門工作 」 或 「 一般工作清單中建立可以使用全域工作的詳細資訊，請參閱 œCreating 支援類別？在 < 如何：建立子索引標籤嗎？[Windows Server 解決方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。 **exe** 工作可用於從「快速入門工作」或「一般工作」清單執行應用程式。|  
+    |exelocation|與工作關聯的應用程式路徑。 這個屬性只適用於 **exe** 工作。|  
+    |replaceid|此工作所取代之工作的識別碼。|  
+    |assembly|提供類別來實作快速狀態查詢的組件的 AssemblyName。 組件必須位於 Program files\ windows server\bin\\。|  
+    |class|實作快速狀態查詢的類別的名稱。 類別需要實作 **ITaskStatusQuery** 介面。|  
+    |Title (link)|針對連結顯示的文字。 如果您建立內嵌資源檔，則此屬性的值便是字串資源。|  
+    |Description (link)|連結目的地的描述。 如果您建立內嵌資源檔，則此屬性的值便是字串資源。|  
+    |ShellExecPath|應用程式或 URL 的路徑。<br /><br /> **注意：** ShellExecPath 屬性中支援的環境變數。|  
   
-     下列範例顯示如何應用程式定義的連結：  
+     下列程式碼範例顯示如何定義應用程式的連結：  
   
     ```  
     <Links>  
@@ -122,7 +123,7 @@ ms.lasthandoff: 12/12/2017
     </Links>  
     ```  
   
-     下列範例顯示如何定義網頁連結：  
+     下列程式碼範例顯示如何定義網頁的連結：  
   
     ```  
     <Links>  
@@ -130,50 +131,50 @@ ms.lasthandoff: 12/12/2017
     </Links>  
     ```  
   
-8.  變更代表您的工作或連結屬性的值。  
+8.  變更屬性值以表示您的工作或連結。  
   
-9. 在**總管**，以滑鼠右鍵按一下**OEMHomePageContent.home**，然後按一下 [**屬性**。  在**屬性**窗格中，在**建置動作**、選取**Embedded 資源**。  
+9. 在 **[方案總管]** 中的 **[OEMHomePageContent.home]** 上按一下滑鼠右鍵，然後按一下 **[內容]**。  在 **[內容]** 窗格中的 **[建立動作]** 下，選取 **[內嵌資源]**。  
   
 10. 儲存 OEMHomePageContent.home 檔案。  
   
- 以了解如何實作查詢快速狀態，請參考文件和範例在[Windows Server 方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。  
+ 如需瞭解如何實作快速狀態查詢，請參閱 [Windows Server 解決方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)中的文件與範例。  
   
-#### <a name="change-the-status-of-a-setupadd-ins-task"></a>變更的設定日增益集工作的狀態  
- 列出的安裝程式與增益集的工作可切換的狀態完成（適用於 Add-ins 設定）和尚未完成（不的 Add-ins 設定）。  
+#### <a name="change-the-status-of-a-setupadd-ins-task"></a>變更設定/增益集工作的狀態  
+ 列在「設定」/「增益集」的工作，可在已完成 (已為增益集設定) 和未完成 (沒有為增益集設定) 狀態之間切換。  
   
- 當您定義將您新的工作相關聯的應用程式時，您可以使用 SetTaskStatus 方法 Microsoft.WindowsServerSolutions.Administration.ObjectModel.TaskStatusHelper 命名空間（包含，但無法在 Windows Server 方案 SDK 記載）的變更工作的狀態。 例如您可能會核取記號從變成灰色 green SetTaskStatus 使用呼叫方法 TaskStatus.Complete 列舉值 (SetTaskStatus (id TaskStatus.Complete)，其中**id**是識別碼工作)。 列舉值，可以使用的 TaskStatus.Complete、TaskStatus.Incomplete 或 TaskStatus.Hidden。  
+ 當您定義與新工作關聯的應用程式時，可以使用 Microsoft.WindowsServerSolutions.Administration.ObjectModel.TaskStatusHelper 命名空間的 SetTaskStatus 方法 (包括但未載明於「Windows Server 解決方案 SDK」中)，來變更工作的狀態。 例如，呼叫具有 TaskStatus.Complete 列舉值的 SetTaskStatus 方法 (SetTaskStatus(id, TaskStatus.Complete)，其中 **id** 是工作識別碼)，就可以將核取記號從灰色變更為綠色。 可用的列舉值是 TaskStatus.Complete、TaskStatus.Incomplete 或 TaskStatus.Hidden。  
   
 ##### <a name="replace-tasks"></a>取代工作  
- 您可以取代工作 GUID 加入 replaceid 屬性工作定義的預定取得開始工作或的一般工作清單中的工作。 下表列出的工作，可以要求更換儀表板中的對應識別碼：  
+ 您可以將工作的 GUID 新增至工作定義的 replaceid 屬性，以取代在「快速入門工作」或「一般工作」清單中預先定義的工作。 下表列出可以在儀表板中取代的工作和對應識別碼：  
   
-|工作的名稱|識別碼|  
+|工作名稱|識別碼|  
 |---------------|----------------|  
-|取得適用於其他 Microsoft 你更新|8412D35A-13EE-4112-AE0B-F7DBC83EA83D|  
-|設定伺服器的備份|F68B3F3F-19DE-499D-9ACB-4BB41B8FF420|  
-|隨處存取設定|8991302D-676A-4A7C-B244-D1E08AE0EFEA|  
-|設定電子郵件通知|DE6F2B36-F19C-4FAF-998B-9772300E3530|  
-|新增帳號|6D5B5D5F-2EC7-4B1F-9580-4DB084B278B1|  
-|新增資料夾伺服器|03F1F438-D94E-439B-A9F7-0C817C37D625|  
-|隨處存取-快速狀態|6093B462-1F04-4212-8804-9BC823070FAD|  
-|伺服器備份-快速狀態|156947D8-21DC-45FE-A9A8-2F80AE304191|  
-|伺服器資料夾-快速狀態|C657E8AB-AC1F-4AA1-8E80-5AF6BB27C314|  
-|使用中的使用者帳號-快速狀態|68BCB125-CE8F-467F-B65B-56AD45A614B5|  
-|電子郵件通知-快速狀態|75AB06E7-A679-4D62-A5EC-65362FE4F9DB|  
-|快速狀態的電腦-|7966A974-D52D-4F5D-B37F-05C1B73CEEF3|  
+|取得其他 Microsoft 產品的更新|8412D35A-13EE-4112-AE0B-F7DBC83EA83D|  
+|設定伺服器備份|F68B3F3F-19DE-499D-9ACB-4BB41B8FF420|  
+|設定隨處存取|8991302D-676A-4A7C-B244-D1E08AE0EFEA|  
+|設定電子郵件警示通知|DE6F2B36-F19C-4FAF-998B-9772300E3530|  
+|新增使用者帳戶|6D5B5D5F-2EC7-4B1F-9580-4DB084B278B1|  
+|新增伺服器帳戶|03F1F438-D94E-439B-A9F7-0C817C37D625|  
+|隨處存取 - 快速狀態|6093B462-1F04-4212-8804-9BC823070FAD|  
+|伺服器備份 - 快速狀態|156947D8-21DC-45FE-A9A8-2F80AE304191|  
+|伺服器資料夾 - 快速狀態|C657E8AB-AC1F-4AA1-8E80-5AF6BB27C314|  
+|使用中的使用者帳戶 - 快速狀態|68BCB125-CE8F-467F-B65B-56AD45A614B5|  
+|電子郵件警示 - 快速狀態|75AB06E7-A679-4D62-A5EC-65362FE4F9DB|  
+|電腦 - 快速狀態|7966A974-D52D-4F5D-B37F-05C1B73CEEF3|  
   
-##### <a name="optional-create-the-resource-file"></a>（選擇性）建立資源檔案  
- 如果您想要將您加入了開始工作、一般工作和社群連結的工作中的文字，您必須建立組件包含.home 檔案和。定義字串 home.resx 檔案。  
+##### <a name="optional-create-the-resource-file"></a>(選用) 建立資源檔  
+ 如果想要將新增至「快速入門工作」、「一般工作」和「社群連結」的工作中的文字當地語系化，您必須建立含有 .home 檔和 .home.resx 檔 (用來定義文字字串) 的組件。  
   
-###### <a name="to-create-the-resource-file"></a>若要建立的資源檔案  
+###### <a name="to-create-the-resource-file"></a>若要建立資源檔  
   
-1.  以滑鼠右鍵按一下您建立您的工作專案中，按一下**新增**，然後按一下 [**新項目**。  
+1.  在您為工作建立的專案上按一下滑鼠右鍵，按一下 **[新增]**，然後按一下 **[新增項目]**。  
   
-2.  在**範本**窗格中，按**資源檔案**，輸入**OEMHomePageContent.home.resx**在**名稱**方塊，然後再按一下**新增**。  
+2.  在 **[範本]** 窗格中，按一下 **[資源檔案]**，在 **[名稱]** 方塊中輸入 **OEMHomePageContent.home.resx**，然後按一下 **[新增]**。  
   
     > [!NOTE]
-    >  資源檔案可以提供任何名稱，只要有。home.resx 擴充功能。  
+    >  資源檔可以命名為任何名稱，只要具有 .home.resx 副檔名即可。  
   
-3.  每個任務或您新增的連結，您必須符合的任務和連結的項目所定義 OEMHomePageContent.home 檔案中的 OEMHomePageContent.home.resx 檔案新增字串及值。 下列範例顯示資源檔案均的結構 Tasks.xml 檔案的範例：  
+3.  對於您新增的每一個工作或連結，您必須將字串和值新增至符合 OEMHomePageContent.home 檔案中所定義之 Task 和 Link 元素的 OEMHomePageContent.home.resx 檔案。 下列程式碼範例顯示針對資源檔結構化的 Tasks.xml 檔案範例：  
   
     ```  
   
@@ -194,26 +195,26 @@ ms.lasthandoff: 12/12/2017
     ```  
   
     > [!NOTE]
-    >  在所使用的當地語系化屬性識別碼能空間。  
+    >  用於當地語系化屬性中的識別碼不能包含空格。  
   
-4.  新增 MyTask、MyTaskDescription、MyActionName，以及 IconForAction 資源名稱.resx 檔案以適當的值。  
+4.  將 MyTask、MyTaskDescription、MyActionName 和 IconForAction 資源名稱及適當的值新增至 .resx 檔案。  
   
-5.  儲存 OEMHomePageContent.home.resx 檔案，以及然後方案。  
+5.  儲存 OEMHomePageContent.home.resx 檔案，然後建置方案。  
   
-#####  <a name="BKMK_SignAssembly"></a>登入驗證碼簽章組的件  
- 您必須在作業系統中使用的驗證碼登入一組件。 如需有關登入一組件，請查看[簽章和檢查的驗證碼的程式碼](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)。  
+#####  <a name="BKMK_SignAssembly"></a> 登入具有 Authenticode 簽章的組件  
+ 您必須使用 Authenticode 來簽署組件，才能在作業系統中使用這些組件。 如需簽署組件的相關詳細資訊，請參閱 [使用 Authenticode 簽署和檢查程式碼](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)。  
   
 ##### <a name="install-the-task-files"></a>安裝工作檔案  
- 建立.home 之後和。home.resx 檔案，您必須安裝在伺服器上。  
+ 建立 .home 和 .home.resx 檔案之後，您必須在伺服器上安裝這些檔案。  
   
-###### <a name="to-install-the-task-files"></a>若要安裝的工作檔案  
+###### <a name="to-install-the-task-files"></a>若要安裝工作檔案  
   
-1.  請確定您的方案，不會出現錯誤的組建。  
+1.  確定您的方案建置無誤。  
   
-2.  如果您未建立 embedded 的資源檔案，OEMHomePageContent.home 檔案複製到**%ProgramFiles%\Windows Server\Bin\Addins\Home**在伺服器上。 如果您建立 embedded 的資源檔案，請複製 OEMHomePageContent.dll 檔案**%ProgramFiles%\Windows Server\Bin\Addins\Home**在伺服器上。  
+2.  如果您未建立內嵌資源檔，請將 OEMHomePageContent.home 檔案複製到伺服器上的 **%ProgramFiles%\Windows Server\Bin\Addins\Home** 中。 如果您已建立內嵌資源檔，請將 OEMHomePageContent.dll 檔案複製到伺服器上的 **%ProgramFiles%\Windows Server\Bin\Addins\Home** 中。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他的自訂項目](Additional-Customizations.md)   
- [準備部署映像](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)
+ [其他自訂項目](Additional-Customizations.md)   
+ [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
