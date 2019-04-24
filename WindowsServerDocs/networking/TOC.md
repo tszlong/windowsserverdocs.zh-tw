@@ -1,4 +1,4 @@
-# [網路](Networking.md)
+# [網路功能](Networking.md)
 ## [Windows Server 支援的網路功能案例](windows-server-supported-networking-scenarios.md)
 
 ## [網路的新功能](What-s-New-in-Networking.md)
@@ -18,7 +18,7 @@
 ###### [在 CA1 上設定 CDP 及 AIA 延伸模組](core-network-guide/cncg/server-certs/Configure-the-cdP-and-AIA-Extensions-on-CA1.md)
 ###### [將 CA 憑證與 CRL 複製到虛擬目錄](core-network-guide/cncg/server-certs/copy-the-CA-Certificate-and-CRL-to-the-Virtual-directory.md)
 ###### [設定伺服器憑證範本](core-network-guide/cncg/server-certs/Configure-the-Server-Certificate-Template.md)
-###### [設定伺服器憑證自動註冊](core-network-guide/cncg/server-certs/Configure-Server-Certificate-Autoenrollment.md)
+###### [設定電腦憑證自動註冊](core-network-guide/cncg/server-certs/Configure-Server-Certificate-Autoenrollment.md)
 ###### [重新整理群組原則](core-network-guide/cncg/server-certs/Refresh-Group-Policy.md)
 ###### [驗證伺服器憑證的伺服器註冊](core-network-guide/cncg/server-certs/verify-Server-Enrollment-of-a-Server-Certificate.md)
 #### [部署密碼型 802.1X 驗證無線存取](core-network-guide/cncg/wireless/a-deploy-8021X-wireless-access.md)
@@ -46,7 +46,7 @@
 ##### [安裝和設定內容伺服器](branchcache/deploy/Install-and-Configure-Content-Servers.md)
 ###### [安裝使用 BranchCache 功能的內容伺服器](branchcache/deploy/Install-Content-Servers-that-Use-the-BranchCache-Feature.md)
 ####### [安裝 BranchCache 功能](branchcache/deploy/Install-the-BranchCache-Feature.md)
-####### [設定 Windows Server Update Services (WSUS) 內容伺服器](branchcache/deploy/configure-wsus-content-servers.md)
+####### [設定 Windows Server Update Services (WSUS) 內容伺服器](branchcache/deploy/configure-wsus-content-servers.md)
 ###### [安裝檔案服務內容伺服器](branchcache/deploy/Install-File-Services-Content-Servers.md)
 ####### [設定檔案服務伺服器角色](branchcache/deploy/Configure-the-File-Services-server-role.md)
 ######## [將新的檔案伺服器作為內容伺服器安裝](branchcache/deploy/Install-a-New-File-Server-as-a-Content-Server.md)
@@ -59,8 +59,8 @@
 ######### [建立 BranchCache 雜湊發行群組原則物件 (GPO)](branchcache/deploy/create-the-BranchCache-Hash-Publication-Group-Policy-Object.md)
 ######### [設定 BranchCache 雜湊發行 GPO](branchcache/deploy/Configure-the-BranchCache-Hash-Publication-Group-Policy-Object.md)
 ####### [啟用檔案共用的 BranchCache (選用)](branchcache/deploy/enable-bc-on-file-share.md)
-##### [部署託管快取伺服器 (選用)](branchcache/deploy/deploy-hosted-cache-servers.md)
-##### [在託管快取伺服器上預先雜湊處理並預先載入內容 (選用)](branchcache/deploy/prehashing-and-preloading.md)
+##### [部署託管快取伺服器 (選擇性)](branchcache/deploy/deploy-hosted-cache-servers.md)
+##### [在託管快取伺服器上預先雜湊處理並預先載入內容 (選擇性)](branchcache/deploy/prehashing-and-preloading.md)
 ##### [設定 BranchCache 用戶端電腦](branchcache/deploy/Configure-BranchCache-Client-computers.md)
 ###### [使用群組原則設定網域成員用戶端電腦](branchcache/deploy/Use-Group-Policy-to-Configure-Domain-Member-Client-computers.md)
 ###### [使用 Windows PowerShell 設定非網域成員用戶端電腦](branchcache/deploy/Use-Windows-powershell-to-Configure-Non-Domain-Member-Client-computers.md)
@@ -70,7 +70,7 @@
 ## [DirectAccess](../remote/remote-access/da-stub.md) 
 
 ## [網域名稱系統 (DNS)](dns/dns-top.md)
-### [Windows Server 中 DNS 用戶端的新功能](dns/What-s-New-in-DNS-Client.md)
+### [Windows Server 中 DNS 用戶端的新功能](dns/What-s-New-in-DNS-Client.md)
 ### [Windows Server 中 DNS 伺服器的新功能](dns/What-s-New-in-DNS-Server.md)
 ### [DNS 原則案例指導方針](dns/deploy/DNS-Policy-Scenario-Guide.md)
 #### [DNS 原則概觀](dns/deploy/DNS-Policies-Overview.md)
@@ -88,7 +88,7 @@
 ### [DHCP 的新功能](technologies/dhcp/What-s-New-in-DHCP.md)
 #### [DHCP 子網路選擇選項](technologies/dhcp/dhcp-subnet-options.md)
 #### [DNS 記錄註冊的 DHCP 記錄事件](technologies/dhcp/dhcp-dns-events.md)
-### [使用 Windows PowerShell 部署 DHCP](technologies/dhcp/dhcp-deploy-wps.md)
+### [使用 Windows PowerShell 部署 AD DHCP](technologies/dhcp/dhcp-deploy-wps.md)
 
 ## [高效能網路功能 (HPN)](technologies/hpn/hpn-top.md)
 ### [網路卸載和最佳化技術](technologies/hpn/network-offload-and-optimization.md)
@@ -97,7 +97,7 @@
 #### [僅限硬體 (HO) 功能和技術](technologies/hpn/hpn-hardware-only-features.md)
 #### [NIC 進階內容](technologies/hpn/hpn-nic-advanced-properties.md)
 
-### [Insider Preview](technologies/hpn/hpn-insider-preview.md)
+### [Insider preview](technologies/hpn/hpn-insider-preview.md)
 ### [在 vSwitch 中接收區段聯合 (RSC)](technologies/hpn/rsc-in-the-vswitch.md)
 
 ### [聚合式 NIC 設定指導方針](technologies/conv-nic/cnic-top.md)
@@ -106,7 +106,7 @@
 #### [實體交換器設定](technologies/conv-nic/cnic-app-switch-config.md)
 #### [疑難排解聚合式 NIC](technologies/conv-nic/cnic-app-troubleshoot.md)
 
-### [資料中心橋接 \(DCB\)](technologies/dcb/dcb-top.md)
+### [\(資料中心橋接 (DCB)\)](technologies/dcb/dcb-top.md)
 #### [安裝 DCB](technologies/dcb/dcb-install.md)
 #### [管理 DCB](technologies/dcb/dcb-manage.md)
 
@@ -180,7 +180,7 @@
 #### [設定遠端 RADIUS 伺服器群組](technologies/nps/nps-crp-rrsg-configure.md)
 #### [管理搭配 NPS 使用的憑證](technologies/nps/nps-manage-certificates.md)
 ##### [設定 PEAP 與 EAP 需求的憑證範本](technologies/nps/nps-manage-cert-requirements.md)
-#### [管理 NPSs](technologies/nps/nps-manage-servers.md)
+#### [管理 NPS](technologies/nps/nps-manage-servers.md)
 ##### [設定多重主目錄電腦上的 NPS](technologies/nps/nps-multihomed-configure.md)
 ##### [設定 NPS UDP 連接埠資訊](technologies/nps/nps-udp-ports-configure.md)
 ##### [停用 NAS 通知轉送](technologies/nps/nps-disable-nas-notifications.md)
@@ -227,7 +227,7 @@
 ### [Windows Server 中的 SDN 概觀](sdn/software-defined-networking.md)
 
 ### [SDN 技術](sdn/technologies/Software-Defined-Networking-Technologies.md)
-#### [Hyper-V 網路虛擬](sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md)
+#### [Hyper-V 網路虛擬化](sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md)
 ##### [Hyper-V 網路虛擬化概觀](sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server.md)
 ##### [Hyper-V 網路虛擬化技術詳細資料](sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-technical-details-windows-server.md)
 ##### [Hyper-V 網路虛擬化的新功能](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)
@@ -236,7 +236,7 @@
 ##### [網路控制卡高可用性](sdn/technologies/network-controller/network-controller-high-availability.md)
 ##### [使用伺服器管理員安裝網路控制卡伺服器角色](sdn/technologies/network-controller/Install-the-Network-Controller-server-role-using-server-manager.md)
 ##### [網路控制卡的部署後步驟](sdn/technologies/network-controller/post-deploy-steps-nc.md)
-#### [網路功能虛擬化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)
+#### [網路函式虛擬化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)
 ##### [資料中心防火牆概觀](sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)
 ##### [適用於 SDN 的 RAS 閘道](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)
 ###### [RAS 閘道的新功能](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)
@@ -291,7 +291,7 @@
 
 ### [SDN 的 System Center 技術](sdn/Sc-Tech-for-Sdn.md)
 ### [Microsoft Azure 和 SDN](sdn/Azure_and_Sdn.md)
-### [請連絡資料中心和雲端網路團隊](sdn/contact-sdn-team.md)
+### [連絡資料中心和雲端網路小組](sdn/contact-sdn-team.md)
 
 ## [虛擬私人網路 (VPN)](technologies/vpn-stub.md)
 
@@ -304,6 +304,6 @@
 ### [設定高精確度的系統](windows-time-service/configuring-systems-for-high-accuracy.md)
 ### [適用於可追蹤性的 Windows Time](windows-time-service/windows-time-for-traceability.md)
 ### [Windows Time 服務技術參考資料](windows-time-service/windows-time-service-tech-ref.md)
-#### [Windows Time 服務的運作方式](windows-time-service/How-the-Windows-Time-Service-Works.md)
-#### [Windows Time 服務工具和設定](windows-time-service/Windows-Time-Service-Tools-and-Settings.md)
+#### [Windows 時間設定服務的運作方式](windows-time-service/How-the-Windows-Time-Service-Works.md)
+#### [Windows 時間服務工具和設定](windows-time-service/Windows-Time-Service-Tools-and-Settings.md)
 
