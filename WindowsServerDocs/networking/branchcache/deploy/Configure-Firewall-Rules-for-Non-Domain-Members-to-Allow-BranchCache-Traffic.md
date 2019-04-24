@@ -1,6 +1,6 @@
 ---
-title: 設定適用於非網域成員允許 BranchCache 流量免
-description: 本主題是 BranchCache 部署節目表適用於 Windows Server 2016 的示範如何將 BranchCache 部署最佳化分公司 WAN 頻寬分散與裝載快取模式中的一部分
+title: 將非網域成員的防火牆規則設定為允許 BranchCache 流量
+description: 本主題是 BranchCache 部署指南的 Windows Server 2016 中，示範如何以最佳化 WAN 頻寬使用量，在分公司的分散式和裝載式快取模式部署 BranchCache 的一部分
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,47 +8,48 @@ ms.topic: get-started-article
 ms.assetid: da956be0-c92d-46ea-99eb-85e2bd67bf07
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e5f744141efc35bb493bcd95fad53eafbbc3f78d
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
-ms.translationtype: MT
+ms.openlocfilehash: 288865f0237969e0bed7e105f8d539759984275e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834769"
 ---
-# <a name="configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic"></a>設定適用於非網域成員允許 BranchCache 流量免
+# <a name="configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic"></a>將非網域成員的防火牆規則設定為允許 BranchCache 流量
 
->適用於：Windows Server（以每年次管道）、Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2016
 
-設定第三方防火牆你並手動設定，允許快取分散式的模式執行 BranchCache 免 client 電腦，您可以使用此主題中的資訊。  
+若要設定協力廠商防火牆產品，並手動設定防火牆規則以允許 BranchCache 分散式快取模式中執行的用戶端電腦，您可以使用本主題中的資訊。  
   
 > [!NOTE]  
-> -   如果您已經設定 BranchCache client 電腦使用群組原則、 群組原則設定覆寫任何手動 client 電腦套用原則設定。  
-> -   如果您有部署 BranchCache DirectAccess 使用，您可以使用此主題中設定設定允許 BranchCache 流量 IPsec 規則。  
+> -   如果您已設定 BranchCache 用戶端電腦使用群組原則，群組原則設定覆寫任何手動設定来套用原則的用戶端電腦。  
+> -   如果您已部署 BranchCache，有了 DirectAccess 之後，您可以使用本主題中的設定來設定以允許 BranchCache 流量的 IPsec 規則。  
   
-資格在**系統管理員**，或相當於的最低需求變更這些設定。  
+中的成員資格**系統管理員**，或同等權限才能進行這些設定變更最小值。  
   
-## <a name="ms-pccrd-peer-content-caching-and-retrieval-discovery-protocol"></a>[MS PCCRD]: 對等內容快取，並擷取探索通訊協定  
-快取分散式的戶端必須允許輸入 / 輸出 MS-PCCRD 流量的 Web 服務動態探索 （WS 探索） 通訊協定中執行。  
+## <a name="ms-pccrd-peer-content-caching-and-retrieval-discovery-protocol"></a>[MS-PCCRD]:對等內容的快取和抓取探索通訊協定  
+分散式快取的用戶端必須允許輸入和輸出 MS PCCRD 流量，這執行中的 Web 服務動態探索 (Ws-discovery) 通訊協定。  
   
-防火牆設定必須允許多點的流量輸入 / 輸出流量除了。 您可以使用下列設定來設定防火牆例外分散式快取模式。  
+防火牆設定必須允許多點傳送的流量，除了輸入和輸出流量。 您可以使用下列設定來設定防火牆例外以執行分散式快取模式。  
   
-多點 IPv4 傳送： 239.255.255.250  
+IPv4 多點傳送：239.255.255.250  
   
-多點 IPv6 傳送： FF02::C  
+IPv6 多點傳送：FF02::C  
   
-輸入流量： 本機連接埠： 3702，遠端連接埠： 暫時  
+輸入流量：本機連接埠：3702，遠端連接埠： 暫時  
   
-輸出流量： 本機連接埠： 暫時、 遠端連接埠： 3702  
+輸出流量：本機連接埠： 暫時的遠端連接埠：3702  
   
-計畫： %systemroot%\system32\svchost.exe （BranchCache 服務 [PeerDistSvc]）  
+程式： %systemroot%\system32\svchost.exe （BranchCache 服務 [PeerDistSvc]）  
   
-## <a name="ms-pccrr-peer-content-caching-and-retrieval-retrieval-protocol"></a>[MS PCCRR]: 對等內容快取，並擷取： 擷取通訊協定  
-快取分散式的戶端必須允許輸入 / 輸出 MS-PCCRR 流量的 HTTP 1.1 通訊協定執行如要求意見 (RFC) 2616年中所述。  
+## <a name="ms-pccrr-peer-content-caching-and-retrieval-retrieval-protocol"></a>[MS-PCCRR]:對等內容的快取和擷取：擷取通訊協定  
+分散式快取的用戶端必須允許輸入和輸出 MS PCCRR 流量，如要求建議 (RFC) 2616年中所述，在 HTTP 1.1 通訊協定中執行。  
   
-防火牆設定必須允許輸入 / 輸出流量。 您可以使用下列設定來設定防火牆例外分散式快取模式。  
+防火牆設定必須允許輸入和輸出流量。 您可以使用下列設定來設定防火牆例外以執行分散式快取模式。  
   
-輸入流量： 本機連接埠： 80、 遠端連接埠： 暫時  
+輸入流量：本機連接埠：80，遠端連接埠： 暫時  
   
-輸出流量： 本機連接埠： 暫時、 遠端連接埠： 80  
+輸出流量：本機連接埠： 暫時的遠端連接埠：80  
   
 
 
