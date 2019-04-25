@@ -1,0 +1,50 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: 超融合式基礎結構文件
+metadata:
+  document_id: null
+  title: 超融合式基礎結構文件
+  description: 超融合式基礎結構文件
+  text: 合併軟體定義運算、儲存體與網路功能到單一叢集，以提供高效能、成本效益與可輕鬆調整規模的虛擬化
+  keywords: 'Windows Server, Windows Server 2016, hyper-v, sdn, 儲存空間直接存取, wssd'
+  ms.localizationpriority: high
+  author: coreyp-at-msft
+  ms.author: coreyp
+  ms.topic: article
+  ms.devlang: na
+sections:
+  - title: null
+  - items:
+      - type: markdown
+        text: 合併軟體定義運算、儲存體與網路功能到單一叢集，以提供高效能、成本效益與可輕鬆調整規模的虛擬化。
+  - items:
+      - type: list
+        style: cards
+        className: cardsI
+        columns: 2
+        items:
+          - href: ../virtualization/hyper-v/index.md
+            html: <p>將伺服器硬體虛擬化可讓您在超融合式叢集中的多部伺服器上執行虛擬機器</p>
+            image:
+              src: ../media/i-virtualize.svg
+            title: Hyper-V
+          - href: ../storage/storage-spaces/storage-spaces-direct-overview.md
+            html: <p>將儲存體硬體虛擬化可讓您在跨超融合式叢集中所有伺服器散佈的虛擬化磁碟區集區上建立磁碟區。</p>
+            image:
+              src: ../media/i-store.svg
+            title: 儲存空間直接存取
+          - href: ../failover-clustering/failover-clustering-overview.md
+            html: <p>將多部伺服器組成群組，以便工作負載 (例如虛擬機器) 可以在叢集中的任何伺服器上執行，進而獲得伺服器之間的負載平衡與容錯移轉功能。</p>
+            image:
+              src: ../media/i-cluster.svg
+            title: 容錯移轉叢集
+          - href: 'https://docs.microsoft.com/windows-server/networking/sdn/'
+            html: <p>將您的網路硬體虛擬化可讓您動態建立及管理會從底層實體網路抽取您工作負載的網路與原則。</p>
+            image:
+              src: ../media/i-network.svg
+            title: 軟體定義的網路功能
+          - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
+            html: <p>搭配來自您選擇之合作夥伴且經認證的硬體解決方案使用 Windows Server 虛擬化與叢集技術有助於在調整軟體定義資料中心時排除不定因素。</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
+            title: Windows Server 軟體定義 (WSSD)

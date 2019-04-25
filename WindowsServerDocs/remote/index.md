@@ -1,5 +1,5 @@
 ---
-title: 遠端
+title: 遙控
 description: 運用遠端存取和伺服器管理的指導方針
 ms.prod: windows-server-threshold
 layout: LandingPage
@@ -10,13 +10,13 @@ ms.author: coreyp
 manager: dougkim
 ms.localizationpriority: high
 ms.openlocfilehash: e714f7d296a85ee9b3aad71230e62ac2c1673138
-ms.sourcegitcommit: 23e0a68e21985d709e029e7771d3c52d6815bcb4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6507724"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59891449"
 ---
-# 遠端
+# <a name="remote"></a>遙控
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
@@ -38,7 +38,7 @@ ms.locfileid: "6507724"
                                         </div>
                                         <div class="cardText">
                                             <h3>遠端桌面服務</h3><hr />
-                                            <p>遠端桌面服務可讓使用者存取安裝在遠端桌面工作階段主機（RDSession 主機）伺服器上的 Windows 程式，或存取完整的 Windows 桌面。 使用遠端桌面服務，使用者可以從公司網路內或從網際網路存取 RDSession 主機伺服器。</p>
+                                            <p>遠端桌面服務可讓使用者存取安裝在遠端桌面工作階段主機 (RD 工作階段主機) 伺服器上的 Windows 程式，或存取完整 Windows 桌面。 使用遠端桌面服務，使用者即可從公司網路內或網際網路來存取 RD 工作階段主機伺服器。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@ ms.locfileid: "6507724"
                                         </div>
                                         <div class="cardText">
                                             <h3>遠端存取</h3><hr />
-                                            <p>遠端存取伺服器角色包含 DirectAccess 和虛擬私人網路 (VPN)、區域網路 (LAN) 路由，以及 Web 應用程式 Proxy。 RAS 讓您能夠為遠端員工提供網路連線能力、站對站 VPN 以便透過網際網路連接到遠端辦公室位置，以及 RAS 閘道，其中具有多租用戶和邊界閘道協定 (BGP)，適用於企業和雲端服務提供者 (CSP) 的功能。</p>
+                                            <p>遠端存取伺服器角色包含 DirectAccess 和虛擬私人網路 (VPN)、區域網路 (LAN) 路由，以及 Web 應用程式 Proxy。 RAS 讓您能夠為遠端員工提供網路連線能力、站對站 VPN 以便透過網際網路連接到遠端辦公室位置，以及 RAS 閘道，其中具有多租用戶和邊界閘道協定 ((BGP)，適用於企業和雲端服務提供者 (CSP) 的功能)。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ ms.locfileid: "6507724"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Multipoint 服務</h3><hr />
+                                            <h3>MultiPoint 服務</h3><hr />
                                             <p>本部落格文章討論如何使用 Microsoft 技術保護您的資料中心和雲端投資免於新興威脅。  </p>
                                         </div>
                                     </div>

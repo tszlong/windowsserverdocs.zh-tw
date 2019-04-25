@@ -1,0 +1,89 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: 軟體定義網路 (SDN)
+metadata:
+  document_id: null
+  title: 軟體定義網路 (SDN)
+  description: 了解軟體定義網路 (SDN) 的功能、技術和部署。
+  text: 軟體定義網路 (SDN) 允許您以動態方式管理您的資料中心網路連線，以滿足工作負載和應用程式的需求。 即使在部署新工作負載或跨虛擬或實體網路移動工作負載時，也可以大規模一致地實作網路原則。
+  keywords: 'Windows Server, Windows Server 2016, 軟體定義網路, sdn'
+  ms.localizationpriority: medium
+  author: shortpatti
+  ms.author: pashort
+  ms.date: 09/04/2018
+  ms.topic: article
+  ms.devlang: na
+sections:
+  - title: 深入了解
+  - items:
+      - type: markdown
+        text: 準備好實作軟體定義網路，這會虛擬化您的網路抽象實體硬體網路項目，例如交換器和路由器。
+  - items:
+      - type: list
+        style: cards
+        className: cardsE
+        columns: 3
+        items:
+          - href: \windows-server\networking\sdn\sdn-whats-new
+            html: <p>了解 SDN 的新功能和更新功能。</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_whats-new.svg'
+            title: 適用於 Windows Server 2019 的 SDN 的新功能
+          - href: \windows-server\networking\sdn\software-defined-networking
+            html: <p>了解如何集中設定和管理實體和虛擬網路裝置。</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
+            title: 軟體定義網路 (SDN) 概觀
+          - href: \windows-server\networking\sdn\technologies\Software-Defined-Networking-Technologies
+            html: <p>了解 Windows Server 2016 中包含的 SDN 技術。</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
+            title: SDN 架構的重要元件
+          - href: \windows-server\networking\sdn\security\sdn-security-top
+            html: <p>了解如何實作和管理 SDN 的安全性，包括驗證和虛擬加密。</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_security-management.svg'
+            title: SDN 的安全性
+          - href: 'https://youtu.be/f501zUUcXD0'
+            html: <p>觀看 Windows Server SDN 工程師 Greg Cusanza 及 Matt McSpirit 示範 Windows Server 2016 中的軟體定義網路功能。</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_video.svg'
+            title: Microsoft SDN 機制
+  - title: 入門
+    items:
+      - type: paragraph
+        text: 規劃、設定及管理實體與虛擬網路裝置，例如您資料中心內的路由器、交換器與閘道。
+      - type: list
+        style: cards
+        className: cardsE
+        columns: 3
+        items:
+          - href: \windows-server\networking\sdn\plan\Plan-a-Software-Defined-Network-Infrastructure
+            html: <p>探索需要哪些技能來部署 SDN 基礎結構。</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_design.svg'
+            title: 規劃 SDN 基礎結構
+          - href: \windows-server\networking\sdn\deploy\Deploy-a-Software-Defined-Network-Infrastructure
+            html: <p>部署功能完整之基礎結構所需的所有技術。 </p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_deploy.svg'
+            title: 部署 SDN 基礎結構
+          - href: \windows-server\networking\sdn\plan\Plan-a-Software-Defined-Network-Infrastructure
+            html: <p> </p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_management.svg'
+            title: 管理 SDN 基礎結構
+          - href: \windows-server\networking\sdn\troubleshoot\troubleshoot-windows-server-software-defined-networking-stack
+            html: <p> </p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_debug.svg'
+            title: 針對 SDN 基礎結構進行疑難排解和診斷
+  - items:
+      - type: list
+        style: cards
+        className: cardsL
+        items:
+          - title: SDN 學習資源
+            html: |-
+              <p><a class="barLink" href="https://blogs.technet.microsoft.com/networking/2017/03/06/troubleshoot-configuring-sdn-ras-gateway-vpn-bandwidth-settings-in-virtual-machine-manager/">疑難排解在 VMM 中設定 SDN RAS 閘道 VPN 頻寬設定</a></p></div>
+              <p><a class="barLink" href="https://download.microsoft.com/download/1/5/A/15AC87E7-E99C-4E98-B6AF-9346790AD2DF/Software_Defined_Networking_is_built_in_with_Windows_Server_2016_solution_brief_EN_US.pdf/">Microsoft 軟體定義網路功能資料工作表</a></p></div>
