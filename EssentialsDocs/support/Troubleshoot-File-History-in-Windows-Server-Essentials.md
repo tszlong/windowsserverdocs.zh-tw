@@ -1,6 +1,6 @@
 ---
-title: "在 Windows Server Essentials 檔案歷史的疑難排解"
-description: "告訴您如何使用 Windows Server Essentials"
+title: Windows Server Essentials 中的檔案歷程記錄問題疑難排解
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,82 +13,83 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 34442565b54b089064c1fa19317a24f591e44fda
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868599"
 ---
-# <a name="troubleshoot-file-history-in-windows-server-essentials"></a>在 Windows Server Essentials 檔案歷史的疑難排解
+# <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Windows Server Essentials 中的檔案歷程記錄問題疑難排解
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集 
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials 
   
-## <a name="troubleshoot-issues-with-user-file-history-backups"></a>疑難排解使用者檔案歷史備份的問題  
- 下列問題可能會發生時管理檔案歷史備份的使用者或電腦已加入到執行 Windows Server Essentials 的伺服器。  
+## <a name="troubleshoot-issues-with-user-file-history-backups"></a>使用者檔案歷程記錄備份問題疑難排解  
+ 針對新增至執行 Windows Server Essentials 之伺服器的使用者或電腦管理檔案歷程記錄備份時，可能會發生下列問題。  
   
-### <a name="file-history-data-is-not-automatically-deleted"></a>不會自動刪除檔案歷史資料  
- 歷史檔案的資料可能如果不會自動取得刪除：  
+### <a name="file-history-data-is-not-automatically-deleted"></a>檔案歷程記錄資料不會自動刪除  
+ 檔案歷程記錄資料在下列情況可能不會自動刪除：  
   
--   刪除帳號，您選擇不 delete s 檔案歷史資料、帳號，並加入手動 delete 資料。  
+-   刪除使用者帳戶時，您會選擇不刪除使用者帳戶的檔案歷程記錄資料，並選擇手動刪除資料。  
   
--   當您嘗試 delete 檔案歷史資料時、檔案歷史資料是使用其他處理程序。  
+-   當您嘗試刪除檔案歷程記錄資料時，其他處理序正在使用檔案歷程記錄資料。  
   
- 若要修正這個問題的相關，您必須手動 delete 使用下列程序檔案歷史：  
+ 若要解決這個問題，您必須使用下列程序手動刪除檔案歷程記錄：  
   
-####  <a name="BKMK_manuallyDelete"></a>若要手動 delete 檔案歷史備份的使用者或電腦  
+####  <a name="BKMK_manuallyDelete"></a> 若要以手動方式刪除使用者或電腦的檔案歷程記錄備份  
   
 1.  以系統管理員身分登入伺服器。  
   
-2.  系統管理員身分執行檔案總管]。  
+2.  以系統管理員身分執行檔案總管。  
   
-3.  瀏覽到檔案的備份歷史的資料夾。 預設位置為 C:\ServerFolders\File 歷史備份。  
+3.  巡覽至 File History Backups 資料夾。 預設位置為 C:\ServerFolders\File History Backups。  
   
-4.  Delete 儲存備份檔案歷史的共用的資料夾：  
+4.  刪除儲存檔案歷程記錄備份的共用資料夾：  
   
-    -   Delete 使用者的檔案歷史，以 delete s 使用者名稱的檔案歷史備份子資料夾。  
+    -   若要刪除的使用者檔案歷程記錄，請刪除具有使用者的名稱的檔案歷程記錄備份子資料夾。  
   
-    -   Delete 檔案歷史的電腦，以 delete 電腦名稱的檔案歷史備份子資料夾。 例如，如果她可以開始使用她新的膝上型電腦，< MyComputer02\ > 之後，使用者淘汰 < MyComputer01\ > 想 delete C:\ServerFolders\File 歷史 Backups\\ < MyAccount\ > \\ < MyComputer01\ > 之後您確認使用者她已經傳送的所有檔案與資料夾到她新的膝上型電腦，而且有不需要的檔案歷史未來。  
+    -   若要刪除電腦的檔案歷程記錄，請刪除具有電腦名稱的檔案歷程記錄備份子資料夾。 例如，如果使用者已停用 < MyComputer01\>上新的膝上型電腦，開始工作之後 < MyComputer02\>，您會將刪除 C:\ServerFolders\File History Backups\\< MyAccount\> \\< MyComputer01\>她已所有檔案和資料夾都傳輸至新的膝上型電腦，並在未來有 「 檔案歷程記錄不需要與使用者驗證之後。  
   
-### <a name="cannot-apply-file-history-setting-to-a-new-user"></a>無法將檔案歷史設定套用到新的使用者  
- 若要新增的使用者名稱是已被從 Windows Server Essentials 使用者的使用者名稱相同的新的使用者，Windows Server Essentials 嘗試來建立資料夾，以儲存新使用者的檔案歷史時的新使用者的檔案歷史設定可能會失敗因為命名衝突。 若要修正這個問題的相關，您可以重新命名刪除使用者的檔案歷史資料夾。  
+### <a name="cannot-apply-file-history-setting-to-a-new-user"></a>無法將檔案歷程記錄設定套用至新使用者  
+ 如果您新增的使用者與已從 Windows Server Essentials 中刪除的使用者具有相同的使用者名稱，由於 Windows Server Essentials 嘗試建立用於儲存新使用者之檔案歷程記錄的資料夾時發生命名衝突，因此新使用者的檔案歷程記錄設定可能會失敗。 若要解決這個問題，您可以重新命名已刪除使用者的 File History 資料夾。  
   
-##### <a name="to-locate-user-file-history-on-the-server"></a>若要在伺服器上尋找使用者檔案歷史  
-  
-1.  以系統管理員身分登入伺服器。  
-  
-2.  Windows Server Essentials 儀表板，請按一下**存放裝置**。  
-  
-3.  在**資料夾伺服器**索引標籤上，記下該檔案的備份歷史資料夾的位置。 預設位置為 %SystemDrive%\ServerFolders\File 歷史 Backups\\。  
-  
-##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>修正檔案歷史的相關問題，有新的使用者名稱衝突使用  
+##### <a name="to-locate-user-file-history-on-the-server"></a>在伺服器上找到使用者檔案歷程記錄  
   
 1.  以系統管理員身分登入伺服器。  
   
-2.  系統管理員身分執行檔案總管]。  
+2.  在 [Windows Server Essentials 儀表板] 上，按一下 [存放裝置] 。  
   
-3.  瀏覽到檔案的備份歷史的資料夾。 預設位置為 C:\ServerFolders\File 歷史備份。  
+3.  在 [伺服器資料夾] 索引標籤上，記下 File History Backups 資料夾的位置。 預設位置為 %SystemDrive%\ServerFolders\File History Backups\\。  
   
-     歷史檔案的備份] 資料夾已經每個使用者 account 已加入到 Windows Server Essentials 的子資料夾。 歷史姓氏使用者的檔案，例如會儲存檔案歷史 Backups\JohnSmith 的子資料夾中。  
+##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>解決發生名稱衝突之新使用者的檔案歷程記錄問題  
   
-4.  重新命名您刪除，例如，使用者的子資料夾**<*的使用者名稱*> _Deleted * *。 如果您不再需要的使用者的檔案歷史，您可以 delete 資料夾。  
+1.  以系統管理員身分登入伺服器。  
   
-
-5.  您現在可以新增新的使用者。 指示，請查看 [新增使用者帳號嗎？在[管理帳號](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
+2.  以系統管理員身分執行檔案總管。  
   
-### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳號，但仍使用者的檔案歷史  
- 有時候網路系統管理員可以選擇要移除的使用者或電腦的伺服器，但保留檔案歷史備份未來使用。 當您不再需要的檔案歷史時，移除伺服器上的共用資料夾使用者或電腦的檔案歷史備份資料夾。 若要這樣做，請查看[以手動方式 delete 的使用者或電腦歷史檔案備份到](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
-
-5.  您現在可以新增新的使用者。 指示，請查看 [新增使用者帳號嗎？在[管理帳號](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
+3.  巡覽至 File History Backups 資料夾。 預設位置為 C:\ServerFolders\File History Backups。  
   
-### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳號，但仍使用者的檔案歷史  
- 有時候網路系統管理員可以選擇要移除的使用者或電腦的伺服器，但保留檔案歷史備份未來使用。 當您不再需要的檔案歷史時，移除伺服器上的共用資料夾使用者或電腦的檔案歷史備份資料夾。 若要這樣做，請查看[以手動方式 delete 的使用者或電腦歷史檔案備份到](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
-
+     檔案歷程記錄備份資料夾針對已新增至 Windows Server Essentials 的每個使用者帳戶，各包含一個子資料夾。 例如，使用者 John Smith 的檔案歷程記錄會儲存在子資料夾 File History Backups\JohnSmith 中。  
   
-## <a name="see-also"></a>也了  
-  
--   [管理 Client 備份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)  
+4.  重新命名已刪除，例如，使用者的子資料夾 **< *UserName*> _Deleted**。 如果您不再需要使用者的檔案歷程記錄，您可以刪除該資料夾。  
   
 
--   [Windows Server Essentials 的支援](Support-Windows-Server-Essentials.md)
+5.  您現在可以新增使用者。 如需指示，請參閱 < 新增使用者帳戶？在 [管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
+  
+### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳戶，但保留使用者的檔案歷程記錄  
+ 在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要執行這項作業，請參閱 [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
 
--   [Windows Server Essentials 的支援](../support/Support-Windows-Server-Essentials.md)
+5.  您現在可以新增使用者。 如需指示，請參閱 < 新增使用者帳戶？在 [管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
+  
+### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳戶，但保留使用者的檔案歷程記錄  
+ 在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要執行這項作業，請參閱 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
+
+  
+## <a name="see-also"></a>另請參閱  
+  
+-   [管理用戶端備份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)  
+  
+
+-   [支援 Windows Server Essentials](Support-Windows-Server-Essentials.md)
+
+-   [支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Essentials 新增為成員伺服器"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 新增 Windows Server Essentials 做為成員伺服器
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,79 +13,80 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 8fb73f8186d3984c9e93f7a6e39cb72a54db1e58
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875419"
 ---
-# <a name="add-windows-server-essentials-as-a-member-server"></a>Windows Server Essentials 新增為成員伺服器
+# <a name="add-windows-server-essentials-as-a-member-server"></a>新增 Windows Server Essentials 做為成員伺服器
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-此主題適用於已安裝 Windows Server Essentials 體驗角色執行 Windows Server 2012 標準 R2、Windows Server 2012 R2 Datacenter 或 Windows Server 2016 的伺服器。 本文件中的其餘部分，在 Windows Server Essentials 體驗角色將稱為 Windows Server Essentials。  
+本主題適用於執行 Windows Server 2012 R2 Standard、 Windows Server 2012 R2 Datacenter 或 Windows Server 2016 已安裝的 Windows Server Essentials 體驗角色的伺服器。 在本文件的其餘部分，Windows Server Essentials 體驗角色會稱為 Windows Server Essentials。  
   
 > [!NOTE]
->   Windows Server Essentials 只能為網域控制站部署。 本文件 Windows Server Essentials 不包含 Windows Server Essentials。  
+>   只能部署 Windows Server Essentials 為網域控制站。 在本文件中，Windows Server Essentials 不包含 Windows Server Essentials。  
   
- Windows Server Essentials 不需要將 Windows 網域中的主要伺服器。 您可以為成員伺服器的 Windows Server Essentials 加入現有的 Active Directory domain 環境並充分利用簡單的資料保護、遠端存取的安全，以及它所提供的雲端整合功能。 此外，Windows Server Essentials 可以在現有的 Active Directory 環境中部署，而不需要為網域控制站。 這可讓您會延伸儲存空間，或使用分公司本機存放區與管理。  
+ Windows Server Essentials 不需要是 Windows 網域內的主要伺服器。 您可以將 Windows Server Essentials 加入現有的 Active Directory 網域環境成為成員伺服器，然後利用它所提供的簡單資料保護、安全遠端存取，以及雲端整合功能。 此外，Windows Server Essentials 不需要是網域控制站，就可以部署在現有的 Active Directory 環境中。 這可讓您擴充儲存空間，或是利用分公司進行本機存放和系統管理。  
   
- 您可以在下列案例中加入 Windows Server Essentials:  
+ 您可以在下列情況新增 Windows Server Essentials：  
   
--   加入 Windows Server Essentials 分公司位置中，它加入的網域控制站位於的原生的工具主要辦公室在不同的位置。 您可以在此成員伺服器上的最佳頻寬使用量 BranchCache 功能關閉。  
+-   在分公司地點新增 Windows Server Essentials，並且使用原生工具將它加入位於不同地點之總公司的網域控制站。 您可以在此成員伺服器上開啟 BranchCache 功能以使用最佳的頻寬。  
   
--   新增成員伺服器為協助延長您網路上的儲存空間透過新增額外的伺服器資料夾成員伺服器上的 Windows Server Essentials 網路在 Windows Server Essentials。  
+-   新增 Windows Server Essentials 為成員伺服器內的有助於擴充您的網路上的儲存體成員伺服器上新增額外的伺服器資料夾的 Windows Server Essentials 網路。  
   
--   Windows Server Essentials 新增為本機 office 成員伺服器，如果您執行的 Windows Server Essentials 的主要伺服器裝載在 Microsoft Azure 或第三方主裝載。 有 Windows Server Essentials 為最佳化頻寬使用您本機 office 網站有助於在成員伺服器。  
+-   新增 Windows Server Essentials 為成員伺服器在當地分公司，如果您執行 Windows Server Essentials 的主要伺服器裝載於 Microsoft Azure 或協力廠商主機服務提供者所裝載。 在當地分公司讓 Windows Server Essentials 成為成員伺服器有助於最佳化頻寬使用量。  
   
-## <a name="adding-windows-server-essentials-as-a-member-server"></a>Windows Server Essentials 新增為成員伺服器  
- Windows Server Essentials 為成員伺服器加入現有的 Active Directory 環境中執行 Windows Server 2012 R2 或 Windows Server Essentials 的主要伺服器，您必須完成以下步驟：  
+## <a name="adding-windows-server-essentials-as-a-member-server"></a>新增 Windows Server Essentials 為成員伺服器  
+ 若要新增 Windows Server Essentials 為成員伺服器，在現有的 Active Directory 環境中執行 Windows Server 2012 R2 或 Windows Server Essentials 的主要伺服器，您必須完成下列步驟：  
   
-1.  加入到工作群組執行 Windows Server Essentials 的伺服器。  
+1.  將執行 Windows Server Essentials 的伺服器加入工作群組。  
   
-2.  加入的網域主要 Windows Server Essentials 伺服器執行 Windows Server Essentials 的伺服器。  
+2.  加入主要的 Windows Server Essentials 伺服器的網域中執行 Windows Server Essentials 的伺服器。  
   
-3.  設定 Windows Server Essentials 體驗從伺服器管理員。  
+3.  設定 Windows Server Essentials 體驗伺服器管理員 中。  
   
-#### <a name="to-join-windows-server-essentials-to-a-workgroup-or-domain"></a>Windows Server Essentials 加入網域或工作群組  
+#### <a name="to-join-windows-server-essentials-to-a-workgroup-or-domain"></a>將 Windows Server Essentials 加入工作群組或網域  
   
-1.  完成您的第二個伺服器上安裝 Windows Server Essentials 之後，關閉 [設定 Windows Server Essentials 精靈。  
+1.  在第二部伺服器上完成 Windows Server Essentials 安裝之後，關閉「設定 Windows Server Essentials 精靈」。  
   
-2.  在**搜尋**方塊中，輸入**系統設定**，並在搜尋結果中，按一下 [**檢視進階系統設定**。  
+2.  在 [搜尋]  方塊中，輸入 **System Settings**，然後在搜尋結果中，按一下 [檢視進階系統設定] 。  
   
-3.  在**系統屬性**，按一下 [**電腦名稱**索引標籤。  
+3.  在 [系統內容] 中，按一下 [電腦名稱] 索引標籤。  
   
-4.  在**電腦名稱**，請在**網域**區段中，按一下 [**變更**。  
+4.  在 [電腦名稱] 的 [網域] 區段中，按一下 [變更]。  
   
-5.  在**電腦名稱日網域變更**，請在**成員**區段中，選擇您要加入執行以 Windows Server Essentials 的伺服器**群組**或**網域**。  
+5.  在 **電腦名稱/網域變更**，請在**成員**區段中，選擇是否要執行 Windows Server Essentials 的伺服器加入**工作群組**或是**網域**。  
   
-    -   伺服器加入位於工作群組中，輸入**群組**，然後按一下 [ **[確定]**。  
+    -   若要將伺服器加入工作群組，請輸入 **workgroup**，然後按一下 [確定]。  
   
-    -   此伺服器加入現有的 Active Directory domain 中，輸入的網域名稱，然後按一下**[確定]**。  
+    -   若要將這部伺服器加入現有的 Active Directory 網域，請輸入網域名稱，然後按一下 [確定]。  
   
-6.  重新開機伺服器適用於所做的變更。  
+6.  重新啟動伺服器以套用變更。  
   
- 您已加入您的主要伺服器的網域伺服器之後，您可以繼續在伺服器管理員中執行設定的 Windows Server Essentials 精靈設定 Windows Server Essentials。  
+ 將伺服器加入您的主要伺服器的網域之後，您可以繼續執行設定 Windows Server Essentials 精靈] 從 [伺服器管理員來設定 Windows Server Essentials。  
   
-#### <a name="to-configure-windows-server-essentials-experience-on-a-member-server"></a>若要設定成員伺服器上的 Windows Server Essentials 的體驗  
+#### <a name="to-configure-windows-server-essentials-experience-on-a-member-server"></a>在成員伺服器上設定 Windows Server Essentials 體驗  
   
-1.  （選擇性）視需要變更伺服器名稱]。  
+1.  (選擇性) 如果需要，變更伺服器名稱。  
   
     > [!IMPORTANT]
     >  設定 Windows Server Essentials 體驗之後，您無法變更伺服器名稱。  
   
-2.  使用您的網域管理員過去登入伺服器。  
+2.  使用您的網域系統管理員帳戶登入伺服器。  
   
-3.  打開伺服器管理員。  
+3.  開啟伺服器管理員。  
   
-4.  在旗標通知區域中**伺服器管理員**、 [旗標，然後**設定 Windows Server Essentials**。  
+4.  在 [伺服器管理員] 的旗標通知區域中，按一下旗標，然後按一下 [設定 Windows Server Essentials]。  
   
-5.  伺服器設定為成員伺服器，選擇，然後按一下**下一步**。  
+5.  選擇是否要將伺服器設定為成員伺服器，然後按 [下一步]。  
   
-6.  按一下**設定**若要開始設定。 設定程序會需要約 10 分鐘的時間來完成。  
+6.  按一下 [設定] 開始設定。 設定過程需要花費大約 10 分鐘的時間。  
   
-7.  在桌面上按一下儀表板圖示以開始伺服器儀表板。 在首頁上完成**開始**上所列之工作**設定**索引標籤。  
+7.  在桌面上，按一下 儀表板圖示以啟動 伺服器儀表板。 在 [首頁] 頁面上，完成 [設定]  索引標籤上所列的 [快速入門]  工作。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
 
 -   [安裝 Windows Server Essentials](Install-Windows-Server-Essentials.md)

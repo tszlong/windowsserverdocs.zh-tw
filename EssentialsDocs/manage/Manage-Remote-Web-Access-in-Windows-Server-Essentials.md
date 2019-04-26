@@ -1,6 +1,6 @@
 ---
-title: "管理 Windows Server Essentials 遠端存取"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 在 Windows Server Essentials 中管理遠端 Web 存取
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,203 +13,204 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: de01b2fd2395377b6e7b3349b9862eb0e51a59b8
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869999"
 ---
-# <a name="manage-remote-web-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 遠端存取
+# <a name="manage-remote-web-access-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理遠端 Web 存取
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
  
- 遠端 Web Access 與 Windows Server Essentials 體驗角色安裝 Windows Server 2012 R2 或 Windows Server Essentials 中, 提供精簡、方便觸控的瀏覽器體驗的應用程式和從幾乎任何地方資料，您可以連上網際網路存取並使用幾乎所有裝置。 若要使用遠端網站存取的功能，您必須先將它使用設定任何地方存取精靈，並再設定您的路由器和網域名稱。  
+ 在 Windows Server Essentials 中，或安裝 Windows Server Essentials 體驗角色與 Windows Server 2012 R2 中的遠端 Web 存取提供簡化、 支援觸控的瀏覽器體驗從幾乎任何地方存取應用程式和資料您有網際網路連線，使用幾乎任何裝置。 若要使用遠端 Web 存取功能，您必須先使用 [設定隨處存取精靈] 開啟該功能，然後設定您的路由器和網域名稱。  
   
-## <a name="in-this-topic"></a>本主題  
+## <a name="in-this-topic"></a>本主題內容  
   
--   [關閉並設定遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [開啟和設定遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [設定您的路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [設定路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
   
 -   [設定您的網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [自訂遠端存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [自訂遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_4)  
   
--   [疑難排解遠端存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [疑難排解遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_5)  
   
-##  <a name="BKMK_1"></a>關閉並設定遠端 Web 存取  
- 下列主題可協助您將並設定遠端 Web 存取：  
+##  <a name="BKMK_1"></a> 開啟和設定遠端 Web 存取  
+ 下列主題將協助您開啟和設定遠端 Web 存取：  
   
--   [遠端存取 Web 概觀](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)  
+-   [遠端 Web 存取概觀](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)  
   
--   [關閉遠端存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)  
+-   [開啟遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)  
   
 -   [變更您的地區](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Region)  
   
--   [管理網路存取權限](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ManagePerms)  
+-   [管理遠端 Web 存取的權限](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ManagePerms)  
   
--   [安全網路遠端存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SecureRWA)  
+-   [安全的遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SecureRWA)  
   
--   [管理使用者遠端 Web Access 與 VPN](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ManageRWAVPN)  
+-   [管理遠端 Web 存取和 VPN 使用者](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ManageRWAVPN)  
   
-###  <a name="BKMK_Overview"></a>遠端存取 Web 概觀  
- 當您離開您的 office 時，您可以開放網頁瀏覽器，並從任何地方存取網際網路存取遠端 Web 存取。 在遠端網路存取，您可以：  
+###  <a name="BKMK_Overview"></a> 遠端 Web 存取概觀  
+ 當您不在辦公室時，您可以開啟網頁瀏覽器，並從具有網際網路存取的任何地方存取遠端 Web 存取。 在遠端 Web 存取，您可以：  
   
--   存取共用的檔案和資料夾的伺服器上。  
+-   存取伺服器上的共用檔案和資料夾。  
   
--   存取您的伺服器或網路上的電腦。 這表示您可以如同您坐在前面它在您的 office 存取網路電腦的桌面。  
+-   存取您在網路上的伺服器和電腦。 這表示您可以存取連線到網路之電腦的桌面，就好像您置身於辦公室中坐在電腦前一樣。  
   
-  遠端 Web 存取不打開預設。 當您執行任何地方存取精靈設定時，該精靈將會設定您的路由器和連接網際網路。 遠端 Web 存取您電腦之後，您可以設定您的伺服器的網域名稱及自訂遠端 Web 存取。 您也可以設定路由器再試一次您變更路由器如果。  
+  遠端 Web 存取不被開啟預設值。 當您執行 [設定隨處存取精靈] 時，精靈會嘗試設定您的路由器和網際網路連線能力。 開啟遠端 Web 存取之後，您可以設定您的伺服器的網域名稱，並自訂遠端 Web 存取。 如果您變更路由器，您也可以再設定一次路由器。  
   
- 存取網路上的存取權限未自動授與當您新增新的使用者 account。 當您新增帳號時，您可以選擇允許存取共用的資料夾、[媒體櫃、電腦、首頁連結，並伺服器儀表板。 您也可以指定不允許使用遠端網站存取的使用者。  
+ 存取遠端 Web 存取的權限不會自動授與當您新增新的使用者帳戶。 當您新增使用者帳戶時，您可以選擇允許存取共用資料夾、媒體櫃、電腦、首頁連結，以及伺服器 [儀表板]。 您也可以指定要使用遠端 Web 存取，都不允許的使用者。  
   
- 存取網路設定為每個使用者帳號顯示在**使用者**索引標籤上的 Windows Server Essentials 儀表板。 若要變更遠端 Web 存取設定，帳號，以滑鼠右鍵按一下，然後按一下**檢視 account 屬性**。  
+ 「 遠端 Web 存取 」 設定上會顯示每個使用者帳戶**使用者**Windows Server Essentials 儀表板 索引標籤。 若要變更 「 遠端 Web 存取 」 設定，以滑鼠右鍵按一下 使用者帳戶，然後**檢視帳戶內容**。  
   
-###  <a name="BKMK_TurnOnRWA"></a>關閉遠端存取  
- 您可以關閉遠端網站存取的任何地方存取精靈設定伺服器儀表板執行。  
+###  <a name="BKMK_TurnOnRWA"></a> 開啟遠端 Web 存取  
+ 您可以從伺服器儀表板執行 [設定隨處存取精靈] 開啟遠端 Web 存取。  
   
-##### <a name="to-turn-on-remote-web-access"></a>若要在網頁上的存取  
+##### <a name="to-turn-on-remote-web-access"></a>開啟遠端 Web 存取  
   
-1.  打開儀表板。  
+1.  開啟 [儀表板]。  
   
-2.  按一下**設定**，然後按一下 [**隨處存取**索引標籤。  
+2.  按一下 [設定] ，然後按一下 [隨處存取]  索引標籤。  
   
-3.  按一下**設定**。 設定任何地方存取精靈會出現。  
+3.  按一下**設定**。 此時會出現 [設定隨處存取精靈]。  
   
-4.  在**選擇隨處存取功能，可讓**頁面上，選取**遠端 Web 存取**核取方塊。  
+4.  在 [選擇要啟用的隨處存取功能]  頁面上，選取 [遠端 Web 存取]  核取方塊。  
   
-5.  請依照下列指示完成精靈。  
+5.  遵循指示以完成精靈。  
   
-###  <a name="BKMK_Region"></a>變更您的地區  
- 您必須變更地區設定，在 Windows Server Essentials 的網路系統管理員。  
+###  <a name="BKMK_Region"></a> 變更您的地區  
+ 您必須是網路系統管理員，才能在 Windows Server Essentials 中變更地區設定。  
   
-##### <a name="to-change-the-region-setting"></a>若要變更的地區設定  
+##### <a name="to-change-the-region-setting"></a>變更地區設定  
   
-1.  在電腦上已連接到 Windows Server Essentials，開放儀表板。  
+1.  在連線到 Windows Server Essentials 的電腦上，開啟 [儀表板]。  
   
-2.  按一下**設定**。  
+2.  按一下 [設定]。  
   
-3.  在**一般**索引標籤上，按一下 [下拉式清單中的**伺服器的國家/地區位置**一節。  
+3.  在 [一般]  索引標籤上，按一下 [伺服器的國家/地區位置]  區段中的下拉式清單。  
   
-4.  從下拉式清單中，選取新的區域，然後按一下**套用]**來將接受新的地區設定。  
+4.  從下拉式清單中選取新的地區，然後按一下 [套用]  來接受新的地區設定。  
   
-###  <a name="BKMK_ManagePerms"></a>管理網路存取權限  
- 當您在 Windows Server Essentials 新增帳號時，新的使用者允許預設來使用遠端存取的網頁。 如果您選擇不要允許遠端網站存取的使用者帳號，並找出使用者必須使用遠端網路存取，您可以更新使用者 account s 屬性。  
+###  <a name="BKMK_ManagePerms"></a> 管理遠端 Web 存取的權限  
+ 當您在 Windows Server Essentials 中新增使用者帳戶時，預設會允許新的使用者使用「遠端 Web 存取」。 如果您選擇不允許遠端 Web 存取使用者帳戶，然後尋找 使用者必須使用遠端 Web 存取，您可以更新使用者帳戶的內容。  
   
-##### <a name="to-manage-remote-web-access-permissions-for-a-user-account"></a>若要管理使用者 account 遠端網路存取權限  
+##### <a name="to-manage-remote-web-access-permissions-for-a-user-account"></a>管理使用者帳戶的遠端 Web 存取權限  
   
-1.  儀表板，登入，然後按一下**使用者**。  
+1.  登入 [儀表板]，然後按一下 [使用者] 。  
   
-2.  按一下您想要管理，然後按一下 [使用者 account**檢視 account 屬性**在**工作**窗格。  
+2.  按一下您想要管理的使用者帳戶，然後按一下 [工作]  窗格中的 [檢視帳戶內容]  。  
   
-3.  在**屬性**對話方塊中，按**隨處存取**索引標籤。  
+3.  在 [內容]  對話方塊中，按一下 [隨處存取]  索引標籤。  
   
-4.  在**隨處存取**索引標籤，選取**可讓遠端 Web Access 與網路服務] 應用程式存取**核取方塊，允許使用者連接到使用遠端 Web 存取伺服器。  
+4.  在 [隨處存取]  索引標籤上，選取 [允許遠端 Web 存取，以及對 Web 服務應用程式的存取]  核取方塊，以允許使用者使用「遠端 Web 存取」來連線到伺服器。  
   
-5.  按一下**套用**，然後按**[確定]**。  
+5.  按一下 [套用]，然後按一下 [確定]。  
   
- 如需詳細資訊，請查看[管理使用者帳號](Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
+ 如需詳細資訊，請參閱 < [Manage User Accounts](Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
   
-###  <a name="BKMK_SecureRWA"></a>安全網路遠端存取  
- Windows Server Essentials 使用安全性憑證來協助保護交換軟體與網頁瀏覽器資訊的安全。 當您在電腦上安裝的連接器軟體時，Windows Server Essentials 的安全性憑證已新增至您的電腦上受信任的憑證清單。 當他們會離開您的 office 存取遠端 Web 存取的使用者的最佳方式是使用筆記型電腦已安裝的連接器軟體。  
+###  <a name="BKMK_SecureRWA"></a> 安全的遠端 Web 存取  
+ Windows Server Essentials 使用安全性憑證來協助保護軟體與網頁瀏覽器之間交換的資訊。 當您在電腦上安裝連線程式軟體時，Windows Server Essentials 的安全性憑證會新增到您電腦上的受信任憑證清單中。 當使用者不在您辦公室時，讓他們存取「遠端 Web 存取」的最佳方式，就是使用已安裝連接程式軟體的可攜式電腦。  
   
 > [!WARNING]
->  使用公用位置從遠端 Web 存取或受信任的其他電腦的使用者應該確定離開自動電腦之前，請先登入時網站，或在用完他們的工作階段。  
+>  使用者如果是從公共場所或其他不受信任的電腦使用「遠端 Web 存取」，應該確保在離開電腦或已完成其工作階段時登出網站。  
   
-###  <a name="BKMK_ManageRWAVPN"></a>管理使用者遠端 Web Access 與 VPN  
- 您可以連接到 Windows Server Essentials 並存取所有資源是儲存在伺服器上使用 VPN。 這是您的電腦與網路帳號，可以用來連接的 VPN 連接到 Windows Server Essentials 伺服器裝載設定使用 client 的尤其是實用。 Windows Server Essentials 裝載伺服器上的所有新建立的使用者帳號必須使用 VPN 第一次登入 client 的電腦。  
+###  <a name="BKMK_ManageRWAVPN"></a> 管理遠端 Web 存取和 VPN 使用者  
+ 您可以使用 VPN 來連線到 Windows Server Essentials，並存取您所有儲存在伺服器上的資源。 當您有已設定網路帳戶的用戶端電腦且那些帳戶可透過 VPN 連線來連線到託管的 Windows Server Essentials 伺服器時，這會特別有用。 所有在託管的 Windows Server Essentials 伺服器上新建立的使用者帳戶，在第一次登入用戶端電腦時都必須使用 VPN。  
   
-##### <a name="to-set-vpn-and-remote-web-access-permissions-for-network-users"></a>若要設定網路使用者的 VPN 和遠端網路存取權限  
+##### <a name="to-set-vpn-and-remote-web-access-permissions-for-network-users"></a>設定網路使用者的 VPN 和遠端 Web 存取權限  
   
-1.  打開儀表板。  
+1.  開啟 [儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者] 。  
   
-3.  在清單中的使用者帳號，選取您想要從遠端存取桌面的權限授與帳號。  
+3.  在使用者帳戶清單中，選取您想要授與桌面遠端存取權限的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**屬性**。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **屬性**。  
   
-5.  在**< 使用者 Account\ > 屬性**，按一下 [**隨處存取**索引標籤。  
+5.  在  **< 使用者帳戶\>屬性**，按一下 **隨處存取** 索引標籤。  
   
-6.  在**隨處存取**索引標籤上，執行下列動作：  
+6.  在 [隨處存取] 索引標籤上，執行下列動作：  
   
-    1.  若要讓使用者使用 VPN 伺服器連接，請選取 [**允許 Virtual 私人網路 (VPN)**核取方塊。  
+    1.  若要允許使用者使用 VPN 來連線到伺服器，請選取 [允許虛擬私人網路 (VPN)] 核取方塊。  
   
-    2.  若要讓使用者透過遠端 Web 存取伺服器連接，請選取 [**允許遠端 Web Access 與網路服務] 應用程式存取**核取方塊。  
+    2.  若要允許使用者使用「遠端 Web 存取」來連線到伺服器，請選取 [允許遠端 Web 存取，以及對 Web 服務應用程式的存取] 核取方塊。  
   
-7.  按一下**套用**，然後按**[確定]**。  
+7.  按一下 [套用]，然後按一下 [確定]。  
   
-##  <a name="BKMK_2"></a>設定您的路由器  
- 當您設定遠端 Web 存取您的伺服器時，請設定任何地方存取精靈會嘗試在路由器設定。 如果您變更路由器或是變更路由器上的設定，您必須重新執行設定您的路由器精靈。 如需詳細資訊，下列主題：  
+##  <a name="BKMK_2"></a> 設定路由器  
+ 當您設定伺服器來進行「遠端 Web 存取」時，[設定隨處存取精靈] 會嘗試設定路由器。 如果您變更路由器或變更路由器上的設定，必須重新執行 [設定您的路由器精靈]。 如需詳細資訊，請參閱下列主題：  
   
--   [設定您的路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpRouter)  
+-   [設定路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpRouter)  
   
--   [取代路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ReplaceRouter)  
+-   [更換路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ReplaceRouter)  
   
--   [定義的網路位置](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_NetworkLocation)  
+-   [定義網路位置](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_NetworkLocation)  
   
--   [可讓遠端桌面服務 ActiveX 控制項](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ActiveX)  
+-   [啟用遠端桌面服務 ActiveX 控制項](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ActiveX)  
   
-###  <a name="BKMK_SetUpRouter"></a>設定您的路由器  
- 在此步驟，Windows Server Essentials 會嘗試使用的命令 UPnP 自動設定您的路由器。 若要這樣做，您的路由器必須支援 UPnP 標準，而且 UPnP 設定必須會在您的路由器支援。  
+###  <a name="BKMK_SetUpRouter"></a> 設定路由器  
+ 在這個步驟中， Windows Server Essentials 會使用 UPnP 命令嘗試自動設定您的路由器。 若要這樣做，路由器必須支援 UPnP 標準，而且必須在路由器上啟用 UPnP 設定。  
   
 > [!NOTE]
->  您的網路設定與 Windows Server Essentials 的網路支援的需求依循。 在您的網路應該只是其中一個路由器。  
+>  您的網路設定應該要符合 Windows Server Essentials 支援的網路需求。 您的網路上應該只有一個路由器。  
   
- 如果來設定您網域名稱精靈未設定路由器，您必須手動轉送 443 連接埠。 了解如何設定您的路由器上的連接埠轉送資訊，請查看[路由器設定](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx)。  
+ 如果路由器不是透過 [設定您的網域名稱精靈] 進行設定，您必須手動轉送連接埠 443。 如需如何在路由器上設定連接埠轉送，請參閱 [路由器設定](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx)。  
   
-###  <a name="BKMK_ReplaceRouter"></a>取代路由器  
- 取代 s 製造商的指示，請依據路由器，並執行設定您的路由器精靈設定新路由器。  
+###  <a name="BKMK_ReplaceRouter"></a> 更換路由器  
+ 更換路由器根據製造商指示，然後再執行 設定您路由器的精靈來設定新的路由器。  
   
-##### <a name="to-set-up-your-new-router"></a>若要將您新路由器設定  
+##### <a name="to-set-up-your-new-router"></a>設定新路由器  
   
-1.  Windows Server Essentials 儀表板，請按一下**設定**。  
+1.  在 [Windows Server Essentials 儀表板] 上，按一下 [設定] 。  
   
-2.  按一下**隨處存取**索引標籤，然後在**路由器**區段中，按一下 [**設定**。 設定您的路由器精靈開始。  
+2.  按一下 [隨處存取]  索引標籤，然後在 [路由器]  區段中，按一下 [設定] 。 [設定您的路由器精靈] 隨即啟動。  
   
-3.  請依照精靈中的指示來完成您的新路由器設定。  
+3.  依照精靈中的指示來完成新路由器的設定。  
   
-###  <a name="BKMK_NetworkLocation"></a>定義的網路位置  
- 網路位置是當您連上網路時，適用於 Windows 的網路設定的集合。 設定而有所不同，您可以根據您所使用的網路類型自訂。 網路位置設定會判斷是否某些功能（例如檔案和印表機共用、網路探索與公用資料夾共用）已關閉。 當您需要連接至不同的網路，網路位置非常有用。  
+###  <a name="BKMK_NetworkLocation"></a> 定義網路位置  
+ 網路位置是當您連線到網路時，Windows 會套用的網路設定集合。 設定會依據您使用的網路類型而有所不同並且可以自訂。 網路位置的設定可決定是否要開啟或關閉特定功能 (例如檔案和印表機共用、網路探索，以及公用資料夾共用)。 當您需要連線到不同的網路時，網路位置相當有用。  
   
- 例如，您可能會擁有您使用工作和家庭膝上型電腦。 當您在 office，您連接到 office 網路。 不過，當您進入首頁、您使用您的膝上型電腦存取和播放影片和音樂的已儲存在家用伺服器上。 當您連接到新的網路，並在指定的位置輸入時，Windows 會將指派網路設定檔，會預設為該位置的類型。 下次當您連上網路，Windows 會辨識網路，並自動將指派的正確設定。 這會將層級的安全性，以協助保護您的電腦上的資訊，並只網路功能，您需要的該位置將會亮。  
+ 例如，您可能擁有一部在家及在工作上使用的膝上型電腦。 當您在辦公室時，您會連線到辦公室網路。 不過，當您回到家時，則會使用膝上型電腦來存取及播放儲存在家用伺服器上的影片和音樂。 當您連線到新網路並指定位置類型時，Windows 會指派一個為該類型的位置預設的網路設定檔。 下次您連線到該網路時，Windows 會認出該網路並自動指派正確的設定。 這會增添一層安全性來協助保護您的電腦上的資訊，並且只會開啟您就該位置所需的網路功能。  
   
- 有四種網路位置：  
+ 網路位置有四種：  
   
--   **家用網路**選擇此網路家用網路或當您知道，並信任的人員和網路上的裝置。 家用網路上的電腦可屬於家用群組。 網路探索已家用網路，讓您可以看到網路上的其他電腦和裝置，並讓其他網路使用者來查看您的電腦。  
+-   **家用網路** 如果是家用網路，或您認識並信任網路上的人員和裝置時，請選擇這種網路。 家用網路上的電腦可以屬於家用群組。 家用網路有開啟網路探索，這可讓您看見網路上的其他電腦和裝置，並讓其他網路使用者看見您的電腦。  
   
--   **工作的網路**選擇小 office 的此網路或其他地點的網路。 網路探索，可讓您在網路上查看其他電腦和裝置，並讓其他網路使用者來查看您的電腦，在根據預設，但您無法建立或加入家用群組。  
+-   **工作場所網路** 如果是小型辦公室或其他工作場所網路，請選擇這種網路。 預設會開啟網路探索，這可讓您看見網路上的其他電腦和裝置，並讓其他網路使用者看見您的電腦，但是您無法建立或加入家用群組。  
   
--   **公用網路**選擇此網路公用地點（例如咖啡館或機場）。 保留您的電腦會看到到其他電腦，並協助保護您的電腦免於惡意軟體與網際網路的設計目的是此位置。 家用群組並不適用於公用網路，網路探索已關閉。 如果您正在直接連接到網際網路不用路由器，或如果您有連接行動式寬頻，您也應該選擇此選項。  
+-   **公用網路** 如果是公共場所 (例如咖啡館或機場)，請選擇這種網路。 這個位置的設計目的是要讓其他電腦無法看見您的電腦，並協助保護您的電腦免於受到來自網際網路的惡意軟體侵害。 公用網路上無法使用家用群組，並且已關閉網路探索。 如果您是直接連線到網際網路而沒有使用路由器，或是有行動式寬頻連線，則也應該選擇這個選項。  
   
--   **網域**選擇這個網域這些企業工作，例如網路。 控制您的網路系統管理員，這種類型的網路位置，並且無法選取或變更。  
+-   **網域** 如果是企業工作場所之類的網域，請選擇這種網路。 這種類型的網路位置是由您的網路系統管理員所控制，無法被選取或變更。  
   
-###  <a name="BKMK_ActiveX"></a>可讓遠端桌面服務 ActiveX 控制項  
- 遠端桌面服務 ActiveX 控制項，可讓您存取您的家用或企業電腦，透過網際網路，從使用遠端 Web 存取其他電腦。  
+###  <a name="BKMK_ActiveX"></a> 啟用遠端桌面服務 ActiveX 控制項  
+ 遠端桌面服務 ActiveX 控制項可讓您存取您的家用或公司電腦，透過網際網路，從另一部電腦使用遠端 Web 存取。  
   
-##### <a name="to-enable-remote-desktop-services-activex-controls"></a>若要讓遠端桌面服務 ActiveX 控制項  
+##### <a name="to-enable-remote-desktop-services-activex-controls"></a>啟用遠端桌面服務 ActiveX 控制項  
   
-1.  在 Internet Explorer 中，按一下 [**工具**，然後按**網際網路選項]**。  
+1.  在 Internet Explorer 中，按一下 [工具] ，然後按一下 [網際網路選項] 。  
   
-2.  在**安全性**索引標籤上，按**自訂層級**。  
+2.  在 [安全性] 索引標籤上，按一下 [自訂層級]。  
   
-3.  在**ActiveX 控制項以及插**區段中，執行下列動作：  
+3.  在 [ActiveX 控制項與外掛程式]  區段中，執行下列動作：  
   
-    1.  在**下載簽署 ActiveX 控制項**，按一下 [**提示**。  
+    1.  在 [下載已簽署的 ActiveX 控制項] 底下，按一下 [提示] 。  
   
-    2.  在**執行 ActiveX 控制項及插**，按一下 [**支援**。  
+    2.  在 [執行 ActiveX 控制項與外掛程式] 底下，按一下 [啟用]。  
   
-4.  按一下**[確定]**若接受變更並關閉對話方塊要兩次。  
+4.  按一下 [確定] 兩次來接受變更並關閉對話方塊。  
   
-##  <a name="BKMK_3"></a>設定您的網域名稱  
- 遠端 Web 存取您電腦之後，您可以設定為您執行的 Windows Server Essentials 的伺服器的網域名稱。 如果您打算使用遠端 Web 存取從遠端電腦，這是必要的步驟。 如需詳細資訊，下列主題：  
+##  <a name="BKMK_3"></a> 設定您的網域名稱  
+ 開啟「遠端 Web 存取」之後，您便可以為執行 Windows Server Essentials 的伺服器設定網域名稱。 如果您打算從遠端電腦使用遠端 Web 存取，這是必要步驟。 如需詳細資訊，請參閱下列主題：  
   
 -   [網域名稱概觀](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_DNOverview)  
   
--   [了解 Microsoft 的個人化的網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_PersonalizedNames)  
+-   [了解 Microsoft 個人化網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_PersonalizedNames)  
   
 -   [使用新的或現有的網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UseNewName)  
   
--   [設定的網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpName)  
+-   [設定網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpName)  
   
 -   [選擇網域名稱服務提供者](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ChooseProvider)  
   
@@ -217,252 +218,252 @@ ms.lasthandoff: 12/12/2017
   
 -   [選擇網域名稱前置詞](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Prefixes)  
   
--   [選擇的網域名稱延伸模組](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Extension)  
+-   [選擇網域名稱擴充功能](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Extension)  
   
 -   [更新或升級您的網域名稱服務](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UpdateService)  
   
--   [匯出或匯入您伺服器上的憑證](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ExportCert)  
+-   [匯出或匯入您的伺服器上的憑證](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ExportCert)  
   
--   [手動設定的網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetNameManually)  
+-   [手動設定網域名稱](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetNameManually)  
   
 -   [尋找您的網域名稱服務提供者](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Find)  
   
-###  <a name="BKMK_DNOverview"></a>網域名稱概觀  
- 網域名稱辨識您的伺服器上。 在至少兩個組件包含網域名稱：頂端層級的網域名稱 (TLD) 及第二個層級的網域名稱。 例如，contoso.com，在 com TLD，以 contoso 且的第二個層級的網域名稱。  
+###  <a name="BKMK_DNOverview"></a> 網域名稱概觀  
+ 網域名稱可唯一識別您在網際網路上的伺服器。 網域名稱至少包含兩個部分：頂層網域名稱 (TLD) 和次層網域名稱。 例如，在 contoso.com 中，com 是 TLD，而 contoso 是次層網域名稱。  
   
- 離開您的 office 時，您可以使用您的網域名稱存取伺服器上的共用的檔案或網路上的電腦。 當您離開，您也可以管理您的伺服器。 例如，您進行登記 contoso.com 您的伺服器。 當您離開您的 office 時，您可以開放網頁瀏覽器在您的膝上型電腦和輸入**contoso.com**來連接遠端 Web 存取您在 Windows Server Essentials 設定的執行個體的地址文字方塊中。  
+ 當您不在辦公室時，您可以使用您的網域名稱來存取伺服器上的共用檔案或網路上的電腦。 您也可以在外出時管理您的伺服器。 例如，您可以為您的伺服器登錄 contoso.com。 當您不在辦公室時，您可以開啟您膝上型電腦上的網頁瀏覽器，然後在網址文字方塊中輸入 **contoso.com**，以連線到您在 Windows Server Essentials 上設定的「遠端 Web 存取」執行個體。  
   
-###  <a name="BKMK_PersonalizedNames"></a>了解 Microsoft 的個人化的網域名稱  
- Microsoft 的個人化的網域名稱包含下列功能：  
+###  <a name="BKMK_PersonalizedNames"></a> 了解 Microsoft 個人化網域名稱  
+ Microsoft 個人化網域名稱包含下列特色：  
   
--   遠端 Web 存取自訂的網域名稱 (例如，*yourhostname*。remotewebaccess.com)。 您的網域名稱是與您的公用 IP 位址。  
+-   遠端 Web 存取的自訂網域名稱 (例如*yourhostname*。 remotewebaccess.com)。 您的網域名稱會與公用 IP 位址關聯。  
   
--   DNS 動態更新服務通訊協定，讓您公用 IP 位址變更時，將不會中斷遠端 Web 存取使用您的網域名稱。 通常，為您的組織 s 寬頻連接網際網路服務提供者 (Isp) 提供動態可變更的公用 IP 位址。  
+-   DNS 動態更新通訊協定服務，讓您的公用 IP 位址變更時，不會中斷遠端 Web 存取使用您的網域名稱。 一般而言，組織 s 寬頻連線的網際網路服務提供者 (Isp) 提供可變更的動態公用 IP 位址。  
   
--   信任的憑證相關聯的網域名稱。  
+-   一個與網域名稱關聯的受信任憑證。  
   
- 將 Microsoft 的個人化的網域名稱整合與您的伺服器，您必須 Microsoft account（先前稱為 [Windows Live ID）。 如果您不 Microsoft account，您可以申請在[Microsoft Hotmail](https://login.live.com/)的網站。  
+ 若要將 Microsoft 個人化網域名稱與您的伺服器整合，您需要有 Microsoft 帳戶 (先前稱為 Windows Live ID)。 如果您沒有 Microsoft 帳戶，您可以在 [Microsoft Hotmail](https://login.live.com/) 網站申請一個帳戶。  
   
 > [!IMPORTANT]
->  Windows Live 允許特殊字元的伺服器不支援 Microsoft account 密碼。 如果您使用 Microsoft 個人化的網域，請確定您的 Microsoft account 密碼包含伺服器支援的字元。 伺服器不支援使用字元 $，/、'，以及 %。  
+>  Windows Live 允許您在 Microsoft 帳戶密碼中使用伺服器不支援的特殊字元。 如果您使用 Microsoft 個人化網域，請確定您的 Microsoft 帳戶密碼只包含伺服器支援的字元。 伺服器不支援使用 $、/、' 及 % 字元。  
   
-###  <a name="BKMK_UseNewName"></a>使用新的或現有的網域名稱  
- 若要自動設定您在執行 Windows Server Essentials 的伺服器上的網域名稱，您必須使用設定您網域名稱精靈中列出的網域名稱服務提供者。 您可以選擇要取得新的網域名稱，或使用現有的網域名稱。 執行下列其中一個動作：  
+###  <a name="BKMK_UseNewName"></a> 使用新的或現有的網域名稱  
+ 若要在執行 Windows Server Essentials 的伺服器上自動設定您的網域名稱，您必須使用 [設定您的網域名稱精靈] 中所列的網域名稱服務提供者。 您可以選擇取得新網域名稱或使用現有的網域名稱。 執行下列其中一項：  
   
--   如果您想要取得新的網域名稱的其中一個網域名稱服務提供者所列的精靈中，按一下**我想要設定新的網域名稱**。  
+-   如果您想要從精靈所列的其中一個網域名稱服務提供者取得新的網域名稱，請按一下 [我要設定新的網域名稱] 。  
   
--   如果您現有的網域名稱您購買的其中一個支援的網域名稱服務提供者，您可以使用 [設定您網域名稱精靈設定伺服器的網域名稱。 按一下**我想要使用已經擁有的網域名稱**，然後輸入的網域名稱和**設定好您的網域名稱**文字方塊。 您必須提供的使用者名稱和密碼，您用來購買的網域名稱。  
+-   如果您有向其中一個支援的網域名稱服務提供者購買的現有網域名稱，您可以使用 [設定您的網域名稱精靈] 來設定您伺服器的網域名稱。 請按一下 [我要使用我已有的網域名稱]，然後在 [設定您的網域名稱] 文字方塊中輸入網域名稱。 您必須提供您用來購買網域名稱的使用者名稱和密碼。  
   
--   如果您有您購買的網域名稱服務提供者，不支援 Windows Server Essentials，從現有的網域名稱，並想要設定您的伺服器的網域名稱使用設定您網域名稱精靈，您可以在其中一個列出精靈中的網域名稱服務提供者傳輸的網域名稱。 按一下**我想要使用已經擁有的網域名稱**，輸入的網域名稱**的網域名稱**文字方塊中，並依照指示傳輸的網域名稱網域名稱服務提供者的網站上。  
+-   如果您有向 Windows Server Essentials 不支援的網域名稱服務提供者購買的現有網域名稱，而您想要使用 [設定您的網域名稱精靈] 來設定您伺服器的網域名稱，您可以將該網域名稱轉移給精靈所列的其中一個網域名稱服務提供者。 按一下 **我想要使用的網域名稱已經入手**，輸入中的網域名稱**網域名稱**文字，然後依照指示來轉移網域名稱在網域名稱服務提供者的網站上.  
   
-###  <a name="BKMK_SetUpName"></a>設定的網域名稱  
- 當您將在網頁上的存取時，您可以選擇設定伺服器的網際網路網域名稱。  
+###  <a name="BKMK_SetUpName"></a> 設定網域名稱  
+ 當您開啟「遠端 Web 存取」時，您可以選擇設定伺服器的網際網路網域名稱。  
   
-##### <a name="to-set-up-or-manage-an-internet-domain-name"></a>若要設定，或管理網際網路網域名稱  
+##### <a name="to-set-up-or-manage-an-internet-domain-name"></a>設定或管理網際網路網域名稱  
   
-1.  打開儀表板。  
+1.  開啟 [儀表板]。  
   
-2.  按一下**伺服器設定**，然後按一下 [**隨處存取**索引標籤。  
+2.  按一下 [伺服器設定]，然後按一下 [隨處存取] 索引標籤。  
   
-3.  在**的網域名稱**區段中，按**設定**。  
+3.  在 [網域名稱] 區段中，按一下 [設定]。  
   
-4.  請依照下列指示完成精靈。 如果您不會已經擁有的網域名稱和認證，精靈可協助您尋找的網域名稱提供者購買的網域名稱和認證，或您可以取得個人化的 Microsoft 網域名稱。  
+4.  遵循指示以完成精靈。 如果您尚未擁有網域名稱和憑證，精靈會協助您尋找網域名稱提供者來購買網域名稱和憑證，或者您也可以取得個人化的 Microsoft 網域名稱。  
   
-###  <a name="BKMK_ChooseProvider"></a>選擇網域名稱服務提供者  
- 您應該選擇您想要使用的網域名稱擴充功能的支援的網域名稱服務提供者。 設定您網域名稱精靈會包含對符合資格，您可以使用每個 s 提供者的網站連結提供者的清單。 按一下**其他資訊]**以取得相關的服務和價格提供者所提供資訊的每個 s 提供者名稱旁邊的連結。  
+###  <a name="BKMK_ChooseProvider"></a> 選擇網域名稱服務提供者  
+ 您應該選擇支援您想要使用之網域名稱延伸的網域名稱服務提供者。 設定您的網域名稱精靈包含一份完整的提供者，您可以使用每個提供者的網站的連結。 按一下 **更多資訊**若要取得之服務和提供者提供的價格的相關資訊的每個提供者的名稱旁邊的連結。  
   
 > [!NOTE]
->  有些網域名稱服務提供者會提供 broad 國際地區和其他提供較小的市場。 因此，部分的提供者可能不會提供的網站時，會被翻譯成您的喜好設定的語言。  
+>  有些網域名稱服務提供者服務廣泛的國際地區，有些則服務較小的市場。 因此，有些提供者可能不提供轉譯成您慣用語言的網站。  
   
- 當您購買了您的網域名稱時，您也可以考慮從您的網域名稱服務提供者購買的網域名稱系統」(DNS) 動態更新通訊協定服務。 DNS 動態更新通訊協定是一種服務，可讓任何人在網際網路上獲得資源區域網路上的存取權時，該網路的 IP 位址會不斷。 或您可以購買靜態 IP 位址從網際網路服務提供者 (ISP) 來確保不會變更您的 IP 位址。  
+ 當您購買網域名稱時，您可能也會考慮向您的網域名稱服務提供者購買網域名稱系統 (DNS) 動態更新通訊協定服務。 DNS 動態更新通訊協定是一項服務，可讓網際網路上的任何人在即使網路 IP 位址不斷變更的情況下，仍能存取本機網路上的資源。 或者，您也可以向您的網際網路服務提供者 (ISP) 購買靜態的 IP 位址，以確保您的 IP 位址不會變更。  
   
-###  <a name="BKMK_ChooseDomainName"></a>選擇網域名稱  
- 選擇辨識您的業務伺服器的名稱。 例如，如果您的公司名稱 Contoso Ltd，您可以選擇 Contoso 唯一找出您的家用或企業伺服器上。 如果無法使用的網域名稱，請嘗試另一個名稱，或可能東西完全不同的變化。  
+###  <a name="BKMK_ChooseDomainName"></a> 選擇網域名稱  
+ 選擇可唯一識別您商用伺服器的名稱。 例如，如果您的公司名稱是 Contoso Ltd.，您可能會選擇 Contoso 來唯一識別您在網際網路上的家用或商用伺服器。 如果無法使用該網域名稱，請嘗試該名稱的另一種變異，或嘗試完全不同的名稱。  
   
- 輸入的名稱可以包含下列動作：  
+ 您輸入的名稱可以包含下列內容：  
   
--   最大 63 個字元  
+-   最多 63 個字元  
   
--   （英文或您當地語系化的字元）的字母、數字或連字號（-）。 名稱必須開始與結束字母與數字。  
+-   字母 (英文或您當地語系化的字元)、數字或連字號 (-)。 名稱的開頭和結尾必須是字母或數字。  
   
     > [!NOTE]
-    >  並非區分大小寫網域名稱。  
+    >  網域名稱並不區分大小寫。  
   
-###  <a name="BKMK_Prefixes"></a>選擇網域名稱前置詞  
- 網域名稱包含階層標籤。  
+###  <a name="BKMK_Prefixes"></a> 選擇網域名稱前置詞  
+ 網域名稱是由階層式標籤所組成。  
   
- **最上層網域擴充功能**的最右邊的標籤，網域名稱。 例如，在 www.contoso.com，com 是最上層的網域名稱擴充功能。  
+ **頂層網域延伸**是網域名稱中最右邊的標籤。 例如，在 www.contoso.com 中，com 是最上層網域名稱擴充功能。  
   
- **第二層級網域名稱**的最上層的網域名稱副檔名旁的標籤。 通常建立根據公司名稱，你或服務的第二層級網域名稱。 例如，在 www.contoso.com，contoso 是第二層級網域名稱，獲選公司名稱 Contoso 醫藥。 第二層級網域有時稱為主機，關聯的 IP 位址。  
+ **次層網域名稱**是頂層網域名稱延伸旁的標籤。 次層網域名稱通常是根據公司名稱、產品或服務來建立的。 例如，在 www.contoso.com 中，contoso 是第二層網域名稱，且已選定為公司名稱 Contoso Pharmaceuticals。 次層網域有時也稱為主機名稱，它會有一個關聯的 IP 位址。  
   
- **網域名稱前置詞**辨識子。 找出服務、裝置或地區都可子網域名稱。 例如 Contoso 醫藥想要讓遠端使用者來登入遠端網路存取，但不是想讓網站將在公開發行，可讓他們建立只允許使用者的適當權限存取網站子。 將 remote.contoso.com 子，以 Contoso 醫藥設定，而且遠端的網域名稱前置詞。  
+ **網域名稱前置碼**可識別子網域。 子網域名稱可用來識別服務、裝置或地區。 例如，Contoso Pharmaceuticals 想要讓遠端使用者可以登入「遠端 Web 存取」，但是不想要將網站提供給大眾使用，因此它們會建立一個只允許具有適當權限之使用者存取網站的子網域。 Contoso Pharmaceuticals 會設定 remote.contoso.com 做為子網域，而 remote 就是網域名稱前置碼。  
   
 > [!TIP]
->  我們建議使用預設的**遠端**為您的網域名稱。  
+>  建議您使用預設的 **Remote** 做為您網域名稱的前置碼。  
   
-###  <a name="BKMK_Extension"></a>選擇的網域名稱延伸模組  
- 當您選擇您的網際網路網站的網域名稱時，您也需要指定您要使用的網域名稱擴充功能。 依照任何網域名稱句點字母，可擴充功能。 （正式字詞的擴充功能是 TLD 的最上層網域）。  
+###  <a name="BKMK_Extension"></a> 選擇網域名稱擴充功能  
+ 當您為網際網路網站選擇網域名稱時，您也需要指定您想要使用的網域名稱延伸。 延伸是由任何網域名稱最後一個句點後面的字母來識別。 （延伸模組的正式術語是最上層的網域或 TLD）。  
   
- 有兩個主要網域擴充功能可供您的類型：一般和國家代碼。  
+ 您可以使用的網域延伸主要有兩種類型：一般和國碼 (地區碼)。  
   
-#### <a name="generic-top-level-domains"></a>一般的最上層網域  
- 一般網域擴充功能是三個或更多的字母長度，且通常會由特定類型的組織。  
+#### <a name="generic-top-level-domains"></a>一般頂層網域  
+ 一般網域延伸的長度為三個或更多個字母，而且通常是供特定類型的組織使用。  
   
- **一般的最上層網域的範例**  
+ **一般頂層網域的範例**  
   
-|網域擴充功能|描述|  
+|網域延伸|描述|  
 |----------------------|-----------------|  
-|.com|通常會由 commercial 組織，但它可以使用的任何人。|  
-|.net|針對公司所提供的網路基礎結構服務。|  
-|.org|原本是非營利代理商與其他公司落不到另一個一般的最上層網域分類所使用。 任何人都可以使用。|  
-|.edu|使用限制教育組織。|  
+|.com|通常是供商業組織使用，但也可供任何人使用。|  
+|.net|專為提供網路基礎結構服務的企業而設計。|  
+|.org|原先是供非營利機構及其他不屬於另一個一般頂層網域類別的企業使用。 可供任何人使用。|  
+|.edu|僅限教育性組織使用。|  
   
-#### <a name="country-code-top-level-domains"></a>國家代碼最上層的網域  
- 這些網域擴充功能有兩個字母的長度。 它們是設計用來的國家或地區使用該代碼的相關聯的組織使用。 部分國家代碼最上層的網域的使用，該國家 / 地區的限制。 有些則可供使用的任何人。  
+#### <a name="country-code-top-level-domains"></a>國碼 (地區碼) 頂層網域  
+ 這些網域延伸的長度為兩個字母。 它們是為了供與該代碼關聯之國家或地區中的組織使用而設計。 有些國碼 (地區碼) 頂層網域僅限該國家或地區的公民使用。 其他則可供任何人使用。  
   
- **最上層的國家代碼網域範例**  
+ **國家/地區程式碼的最上層網域的範例**  
   
-|網域擴充功能|描述|  
+|網域延伸|描述|  
 |----------------------|-----------------|  
-|編碼可能為.ca|使用的網站，加拿大|  
-|.cn|適用於中國的網站來使用|  
-|.de|使用的網站，德國|  
-|。co.uk|英國的網站來使用|  
+|.ca|供位於加拿大的網站使用|  
+|.cn|供位於中國的網站使用|  
+|.de|供位於德國的網站使用|  
+|.co.uk|供位於英國的網站使用|  
   
- 若要檢視的最上層的網域的完整清單，請查看[網站網際網路受指派的數字授權單位](https://go.microsoft.com/fwlink/?LinkId=117438)。  
+ 若要檢視頂層網域的完整清單，請參閱 [網際網路指定編號機構網站](https://go.microsoft.com/fwlink/?LinkId=117438)。  
   
-#### <a name="if-a-domain-extension-is-not-available-to-select-in-the-set-up-domain-name-wizard"></a>如果無法使用以選取 [設定網域名稱精靈中的網域延伸模組  
- 當您執行設定網域名稱精靈時，精靈會檢查您的系統資訊，以判斷您的國家或地區。 精靈會再顯示當地的參與提供者支援網域擴充。 如果您想要的網域擴充功能不會出現在清單中，您必須選擇不同的網域擴充功能，以繼續。 精靈會傳回清單中選取擴充功能。  
+#### <a name="if-a-domain-extension-is-not-available-to-select-in-the-set-up-domain-name-wizard"></a>如果 [設定網域名稱精靈] 中沒有某個網域延伸可供選取  
+ 當您執行 [設定網域名稱精靈] 時，精靈會查看您的系統資訊來判斷您的國家或地區。 然後，精靈會只顯示您地區中的參與提供者支援的網域延伸。 如果您想要的網域延伸並未出現在清單中，您就必須選擇不同的網域延伸才能繼續。 從精靈所傳回的清單中選取一個延伸。  
   
-###  <a name="BKMK_UpdateService"></a>更新或升級您的網域名稱服務  
- 您可能需要更新或升級您的網域名稱服務，如果您購買的網域名稱，但不是購買的憑證。 您必須憑證您的網域名稱從您的網域名稱服務提供者。  
+###  <a name="BKMK_UpdateService"></a> 更新或升級您的網域名稱服務  
+ 如果您購買了網域名稱，但未購買憑證，您就可能需要更新或升級您的網域名稱服務。 您必須從網域名稱服務提供者取得您網域名稱的憑證。  
   
 > [!NOTE]
->  使用您網域名稱服務提供者以判斷您需要的憑證類型。 憑證可以提供便宜的憑證。 不過，您應該檢視的文件和若要判斷是否變得更好符合您的企業需要更高版本層級的安全性憑證中的功能。  
+>  請與您的網域名稱服務提供者合作來判斷您所需的憑證類型。 憑證可以是所提供的其中一種便宜憑證。 不過，您應該檢閱較高層級安全性憑證的文件和功能，以判斷其是否較符合您的業務需求。  
   
-###  <a name="BKMK_ExportCert"></a>匯出或匯入您伺服器上的憑證  
- 如果您想要建立的備份的憑證，或使用它在另一部伺服器，您必須匯出憑證。 如需有關匯出憑證的資訊，請查看[匯出憑證](https://go.microsoft.com/fwlink/p/?LinkId=214362)。  
+###  <a name="BKMK_ExportCert"></a> 匯出或匯入您的伺服器上的憑證  
+ 如果您想要建立一份憑證備份，或在另一部伺服器上使用它，您就必須匯出憑證。 如需有關匯出憑證的資訊，請參閱 [匯出憑證](https://go.microsoft.com/fwlink/p/?LinkId=214362)。  
   
-###  <a name="BKMK_SetNameManually"></a>手動設定的網域名稱  
- 如果您選擇此選項，伺服器不監視或維持您的網域名稱和它不會不會通知您是否有設定的問題。 您也可以考慮此選項如果下列其中一項：  
+###  <a name="BKMK_SetNameManually"></a> 手動設定網域名稱  
+ 如果您選擇這個選項，伺服器不會監視或維護您的網域名稱，也不會警告您是否有設定的問題。 如果符合下列任一條件，您可能也會考慮這個選項：  
   
--   不合作夥伴網域名稱提供者會列出您的國家或地區。  
+-   未列出您國家或地區的合作網域名稱提供者。  
   
--   中列出的網域協力廠商提供者不支援您的網域名稱擴充功能。  
+-   所列的合作網域提供者不支援您的網域名稱延伸。  
   
--   您的網域名稱提供者目前不是合作夥伴，從現有的網域名稱，並不想要傳送的網域名稱與 Windows Server Essentials 支援的網域名稱提供者。  
+-   您有一個從目前並非合作夥伴之網域名稱提供者取得的現有網域名稱，而且您不想要將該網域名稱轉移給 Windows Server Essentials 支援的網域名稱提供者。  
   
--   精靈未列出您想要使用的網域名稱擴充功能，但擴充功能可從目前不是合作夥伴的網域名稱提供者。  
+-   精靈未列出您想要使用的網域名稱延伸，但目前並非合作夥伴的網域名稱提供者可提供該延伸。  
   
- 如果您選擇手動設定您的網域名稱，用來建立您的網域 A 記錄您網域名稱服務提供者。  
+ 如果您選擇手動設定您的網域名稱，請使用網域名稱服務提供者來建立您網域的 A 記錄。  
   
 ##### <a name="to-create-an-a-record"></a>若要建立 A 記錄  
   
-1.  選擇主應用程式名稱，例如遠端。 這是網域名稱前置詞。 網域名稱前置詞加上您的網域名稱將會定義 URL 打開遠端 Web 存取登入頁面。例如，**http://remote.contoso.com**。  
+1.  決定主機名稱，例如遠端。 這是網域名稱首碼。 網域名稱首碼加上您的網域名稱會定義開啟 「 遠端 Web 存取登入頁面; 的 URL例如， **http://remote.contoso.com**。  
   
-2.  網域名稱服務提供者組態儀表板（通常是在其網頁），在建立 A 記錄主機，而且在步驟 1 名稱。 請確定您 A 記錄指定 IP 位址 WAN 側邊（網際網路面對側邊）您的路由器上的 IP 位址。 請洽詢您的路由器的文件以尋找您的 WAN IP 位址。  
+2.  網域名稱服務提供者設定儀表板中 （通常在他們的網頁中），建立您在步驟 1 中決定的主機名稱的 A 記錄。 確定您在 A 記錄中指定的 IP 位址 （網際網路連結端） 您路由器 WAN 端上的 IP 位址。 請參閱您的路由器文件，找出您的 WAN IP 位址。  
   
-3.  建議您連絡網際網路服務提供者 (ISP) 購買靜態 IP 位址，您的網路。 這樣可確保的 IP 位址不會變更，以及您 DNS 項目不會變成過時。  
+3.  建議向您的網際網路服務提供者 (ISP) 購買網路的靜態 IP 位址。 這可確保 IP 位址不會變更，而且您的 DNS 項目不會過時。  
   
-     如果您無法從您的 ISP 取得靜態 IP 位址] 選項，您也可以考慮網域名稱系統」(DNS) 動態更新通訊協定服務購買從您的網域名稱服務提供者或其他服務提供者。 DNS 動態更新通訊協定是一種服務，可以保留您的網路 WAN IP 位址最新狀態，即使您的 IP 位址變更的 IP 位址可以是您的網域名稱解析。  
+     如果您沒有可從 ISP 取得靜態 IP 位址的選項，您也可以考慮向您的網域名稱服務提供者或其他服務提供者，購買網域名稱系統 (DNS) 動態更新通訊協定服務。 DNS 動態更新通訊協定是一項服務，可讓您網路的 WAN IP 位址保持在最新狀態，使得即使 IP 位址發生變更，也能將 IP 位址解析成您的網域名稱。  
   
-4.  匯入精靈會提示您信任的憑證。 如果您不信任的憑證，您可以取得，其中一個支援的網域名稱提供者精靈中列出的其中一個或購買來自信任您所選擇的提供者。 如需受信任的憑證的詳細資訊，請連絡您的網域名稱提供者。  
+4.  當精靈提示時，匯入受信任的憑證。 如果您沒有受信任的憑證，可以從精靈所列的其中一個支援的網域名稱提供者取得憑證，或是向您選擇的受信任提供者購買憑證。 如需受信任的憑證的詳細資訊，請連絡您的網域名稱提供者。  
   
-###  <a name="BKMK_Find"></a>尋找您的網域名稱服務提供者  
+###  <a name="BKMK_Find"></a> 尋找您的網域名稱服務提供者  
   
-##### <a name="to-find-the-domain-name-service-provider-for-your-domain-name"></a>若要尋找您的網域名稱網域名稱服務提供者  
+##### <a name="to-find-the-domain-name-service-provider-for-your-domain-name"></a>尋找您網域名稱的網域名稱服務提供者  
   
-1.  打開網頁瀏覽器，然後輸入**www.internic.com**來移至網際網路首頁的網址列中。  
+1.  開啟網頁瀏覽器，然後在網址列中輸入 **www.internic.com** 以前往 Internic 首頁。  
   
-2.  在首頁網際網路上，按一下 [ **Whois**。  
+2.  在 Internic 首頁上，按一下 [Whois]。  
   
-3.  在**Whois**方塊中，輸入您的網域名稱 (例如 contoso.com)。  
+3.  在 [Whois]  方塊中，輸入您的網域名稱 (例如 contoso.com)。  
   
-4.  按一下**網域**選項，然後按一下 [**提交**。  
+4.  按一下 [Domain]  選項，然後按一下 [Submit] 。  
   
-5.  在搜尋結果中，您的網域名稱服務提供者的名稱會列在**登錄器**。  
+5.  在搜尋結果中，您網域名稱服務提供者的名稱會列在 [Registrar] 底下。  
   
-##  <a name="BKMK_4"></a>自訂遠端存取  
- 您可以自訂遠端 Web 存取網站加個人商標或背景影像。 您也可以新增 [首頁] 頁面上的連結，這項資訊會提供給所有使用者的。 如需詳細資訊，下列主題：  
+##  <a name="BKMK_4"></a> 自訂遠端 Web 存取  
+ 您可以新增個人標誌或背景影像來自訂您的遠端 Web 存取站台。 您也可以在首頁新增連結，讓所有使用者看到這些資訊。 如需詳細資訊，請參閱下列主題：  
   
--   [自訂遠端存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)  
+-   [自訂遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)  
   
--   [自訂背景和標誌映像](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeImages)  
+-   [自訂背景和標誌的映像](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeImages)  
   
--   [修復遠端存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_RepairRWA)  
+-   [修復遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_RepairRWA)  
   
-###  <a name="BKMK_CustomizeRWA"></a>自訂遠端存取  
- 您可以自訂遠端 Web 存取藉由變更網站的標題、變更背景影像和商標，並新增至其他網站上的 [首頁] 頁面的連結。  
+###  <a name="BKMK_CustomizeRWA"></a> 自訂遠端 Web 存取  
+ 您可以透過變更網站標題、變更背景影像和標誌，以及在首頁上新增其他網站的連結，來自訂「遠端 Web 存取」。  
   
-##### <a name="to-customize-remote-web-access"></a>若要自訂遠端 Web 存取  
+##### <a name="to-customize-remote-web-access"></a>自訂遠端 Web 存取  
   
-1.  打開儀表板。  
+1.  開啟 [儀表板]。  
   
-2.  按一下**設定**，然後按一下 [**隨處存取**索引標籤。  
+2.  按一下 [設定] ，然後按一下 [隨處存取]  索引標籤。  
   
-3.  在**網站設定**區段中，按**自訂]**。  
+3.  在 [網站設定] 區段中，按一下 [自訂]。  
   
-4.  當您自訂遠端網路存取權，請按一下**[確定]**。 測試您的變更，在網頁上的存取。  
+4.  完成「遠端 Web 存取」自訂之後，按一下 [確定] 。 測試您在「遠端 Web 存取」上的變更。  
   
-###  <a name="BKMK_CustomizeImages"></a>自訂背景和標誌映像  
- 本節映像，您可以使用來自訂遠端網站存取的資訊。  
+###  <a name="BKMK_CustomizeImages"></a> 自訂背景和標誌的映像  
+ 本節提供您可用來自訂「遠端 Web 存取」的影像相關資訊。  
   
-#### <a name="image-size"></a>影像大小  
- **商標映像**  
+#### <a name="image-size"></a>映像大小  
+ **標誌影像**  
   
- 建議您使用的是 32 x 32 個像素商標映像。 大型影像的壓縮到 32 x 32 和延伸 32 x 32，可能會變形的小型影像。  
+ 建議您使用 32x32 像素的標誌影像。 較大的影像會壓縮成 32x32，較小的影像則會伸展成 32x32，這可能會導致影像變形。  
   
  **背景影像**  
   
- 雖然不的大小上限背景影像，最好建議使用約 800 x 500 像素的影像。 背景影像位於登入頁面的中心（水平和垂直）。 為了讓登入頁面上的文字朗讀輕鬆的背景影像中心應該彩色燈號。  
+ 背景影像並無大小限制，但為獲得最佳結果，建議使用大約 800x500 像素的影像。 背景影像會在登入頁面置中 (水平和垂直)。 為了讓登入頁面上的文字容易閱讀，背景影像的中央應該採用淺色。  
   
-#### <a name="image-file-types"></a>影像檔案類型  
- 下列影像檔案類型，可以用於取代預設背景和網站商標：  
+#### <a name="image-file-types"></a>影像檔類型  
+ 下列影像檔類型可用來取代預設背景和網站標誌：  
   
--   點陣圖 *.bmp、\*.dib（\*.rle）  
+-   點陣圖 (*.bmp， \*.dib \*.rle)  
   
--   GIF（位置）  
+-   GIF (*.gif)  
   
 -   PNG (*.png)  
   
 -   JPG (*.jpg)  
   
-###  <a name="BKMK_RepairRWA"></a>修復遠端存取  
- 修復精靈可協助您偵測及修正的相關問題與您的路由器或網域名稱。 有兩種遠端 Web Access 與找出問題：  
+###  <a name="BKMK_RepairRWA"></a> 修復遠端 Web 存取  
+ [修復精靈] 可以協助您偵測和解決路由器或網域名稱的問題。 有兩種方法可以找出「遠端 Web 存取」問題：  
   
--   中設定伺服器儀表板上的任何地方存取索引標籤，以及問題的描述紅色 x 會顯示的圖示。  
+-   在 [儀表板] 上的 [伺服器設定] 中，於 [隨處存取] 索引標籤上，會顯示帶有紅色 X 及問題描述的圖示。  
   
--   通知的警示檢視器中。  
+-   [警示檢視器] 中的警示。  
   
 > [!NOTE]
->  您將在網頁上的存取，才可以使用修復精靈。 打開遠端網站存取的相關資訊，請查看[上遠端 Web 存取關閉](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)。  
+>  在您開啟「遠端 Web 存取」之後，才能使用 [修復精靈]。 如需開啟遠端 Web 存取的詳細資訊，請參閱 [Turn on Remote Web Access](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)。  
   
-##### <a name="to-repair-remote-web-access"></a>若要修復遠端 Web 存取  
+##### <a name="to-repair-remote-web-access"></a>修復遠端 Web 存取  
   
-1.  登入儀表板。  
+1.  登入 [儀表板]。  
   
-2.  按一下**設定**，然後按一下 [**隨處存取**索引標籤。  
+2.  按一下 [設定] ，然後按一下 [隨處存取]  索引標籤。  
   
-3.  按一下**修復**。 **修復遠端 Web 存取**精靈開始。  
+3.  按一下 [修復]。 [修復遠端 Web 存取]  精靈隨即啟動。  
   
-4.  按一下**下一步**。 精靈會分析網頁上的存取、辨識的問題，並嘗試修復該問題。  
+4.  按一下 [下一步] 。 精靈會分析「遠端 Web 存取」、識別問題所在，然後嘗試修復該問題。  
   
-5.  如果您收到通知精靈完成時，您可以按一下**再試一次**來再試一次修復此問題。 如果您繼續接收的警示，查看其他資訊的問題和疑難排解步驟的警示。  
+5.  如果您在精靈完成時收到警示，您可以按一下 [重試]  來重新嘗試修復問題。 如果您持續收到警示，請查看警示以了解問題和疑難排解步驟的其他相關資訊。  
   
-##  <a name="BKMK_5"></a>疑難排解遠端存取  
+##  <a name="BKMK_5"></a> 疑難排解遠端 Web 存取  
   
--   [疑難排解遠端 Web 存取連接](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
+-   [遠端 Web 存取連線問題疑難排解](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
   
--   [疑難排解防火牆](../support/Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
+-   [疑難排解您的防火牆](../support/Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
   
--   [疑難排解隨時隨地存取](../support/Troubleshoot-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [隨處存取問題疑難排解](../support/Troubleshoot-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
 -   [遠端桌面選項](Remote-desktop-options.md)  
   
--   [使用遠端存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [使用遠端 Web 存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [管理隨時隨地存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [管理隨處存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)

@@ -1,6 +1,6 @@
 ---
-title: "管理使用者帳號，在 Windows Server Essentials"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 在 Windows Server Essentials 中管理使用者帳戶
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,621 +13,622 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 91175836e4453860b17d2655e6a5a831645de410
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59873449"
 ---
-# <a name="manage-user-accounts-in-windows-server-essentials"></a>管理使用者帳號，在 Windows Server Essentials
+# <a name="manage-user-accounts-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理使用者帳戶
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-Windows Server Essentials 儀表板的使用者頁面集中資訊及協助您的工作管理小型企業網路上的使用者帳號。 概觀使用者儀表板，請查看[儀表板概觀](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)。  
+[Windows Server Essentials 儀表板] 的 [使用者] 頁面集中了可幫助您管理您小型企業網路上使用者帳戶的資訊和工作。 如需使用者儀表板的概觀，請參閱 <<c0> [ 儀表板概觀](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)。  
   
   
-##  <a name="BKMK_ManageAccounts"></a>管理使用者帳號  
- 下列主題會提供有關如何使用 Windows Server Essentials 儀表板的使用者帳號伺服器上的資訊：  
+##  <a name="BKMK_ManageAccounts"></a> 管理使用者帳戶  
+ 下列主題提供有關如何使用 [Windows Server Essentials 儀表板] 來管理伺服器上的使用者帳戶資訊：  
   
--   [[新增使用者 account](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)  
+-   [新增使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)  
   
--   [移除帳號](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Remove)  
+-   [移除使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Remove)  
   
--   [檢視帳號](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage3)  
+-   [檢視使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage3)  
   
--   [變更帳號的顯示名稱](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage4)  
+-   [變更使用者帳戶的顯示名稱](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage4)  
   
--   [啟動帳號](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage5)  
+-   [啟用使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage5)  
   
--   [停用帳號](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage6)  
+-   [停用使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage6)  
   
--   [了解帳號](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage7)  
+-   [了解使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage7)  
   
--   [管理使用者帳號使用儀表板](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
+-   [管理使用者帳戶使用的儀表板](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
   
-###  <a name="BKMK_Manage1"></a>[新增使用者 account  
- 當您新增帳號時，已指派的使用者可以登入網路，您可以讓使用者存取網路資源，例如共用的資料夾和遠端 Web 存取網站的權限。 Windows Server Essentials 包含 [新增使用者 Account 精靈可協助您：  
+###  <a name="BKMK_Manage1"></a> 新增使用者帳戶  
+ 在您新增使用者帳戶之後，所指派的使用者便可以登入網路，而您可以授與該使用者存取網路資源 (例如共用資料夾和「遠端 Web 存取」網站) 的權限。 Windows Server Essentials 包含 [新增使用者帳戶精靈]，可協助您：  
   
--   提供使用者 account 名稱和密碼。  
+-   提供使用者帳戶的名稱和密碼。  
   
--   定義帳號，以系統管理員或使用者標準。  
+-   將帳戶定義為系統管理員或標準使用者。  
   
--   選取的共用的資料夾帳號可以存取。  
+-   選取使用者帳戶可以存取的共用資料夾。  
   
--   指定帳號是否遠端存取該網路。  
+-   指定使用者帳戶是否能夠遠端存取網路。  
   
--   如果有的話，請選取 [電子郵件選項。  
+-   選取電子郵件選項 (如果適用)。  
   
--   如果有的話，請指派的 Microsoft Online Services account （稱為在 Windows Server Essentials 的 Office 365 account）。  
+-   如果適用的話，請指派 （又稱為 Windows Server Essentials 中的 Office 365 帳戶） 的 Microsoft Online Services 帳戶。  
   
--   指派給使用者群組 (僅限 Windows Server Essentials)。  
+-   指派使用者群組 (僅 Windows Server Essentials)。  
   
 > [!NOTE]
->  -   Microsoft Azure Active Directory (Azure AD) 不支援 ASCII 非字元。 如果您的伺服器整合使用 Azure AD，請使用您的密碼，任何非 ASCII 字元。  
-> -   只有如果您安裝的增益集，可提供的電子郵件服務提供的電子郵件的選項。  
+>  -   Microsoft Azure Active Directory (Azure AD) 中不支援非 ASCII 字元。 如果您的伺服器與 Azure AD 整合，請勿使用在您的密碼，任何非 ASCII 字元。  
+> -   只有在您所安裝的增益集能夠提供電子郵件服務時，才可使用電子郵件選項。  
   
-##### <a name="to-add-a-user-account"></a>若要新增的使用者 account  
+##### <a name="to-add-a-user-account"></a>新增使用者帳戶  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者]。  
   
-3.  在**使用者工作**窗格中，按**新增使用者帳號**。 [新增使用者 Account 精靈會出現。  
+3.  在 [使用者工作]   窗格中，按一下 [新增使用者帳戶] 。 [新增使用者帳戶精靈] 會隨即出現。  
   
-4.  請依照下列指示完成精靈。  
+4.  遵循指示以完成精靈。  
   
-###  <a name="BKMK_Remove"></a>移除帳號  
- 當您選擇移除伺服器帳號時，精靈刪除選取的 account。 因此，您不再可以使用 account 網路登入或存取的任何網路資源。 選項，您也可以 delete 使用者 account 在此同時，您移除 account 的檔案。 如果您不希望永久移除帳號，您可以停用帳號改為暫停資源網路的存取權。  
+###  <a name="BKMK_Remove"></a> 移除使用者帳戶  
+ 當您選擇從伺服器中移除使用者帳戶時，精靈會刪除選取的帳戶。 因此，您無法再使用該帳戶來登入網路，或存取任何網路資源。 您也可以選擇在移除使用者帳戶的同時刪除該帳戶的檔案。 如果您不想要永久移除使用者帳戶，可以改為停用使用者帳戶以暫停其網路資源存取權。  
   
 > [!IMPORTANT]
->  如果使用者 account Microsoft online account 指派，當您移除帳號，online 也會移除帳號的 Microsoft Online Services，使用者的資料，包括電子郵件已受到資料保留在 Microsoft Online Services 的原則。 如果您想要保留使用者資料的 online 帳號，停用帳號，而不是將它移除。 如需詳細資訊，請查看[適用於使用者管理 Online 帳號](Manage-Online-Accounts-for-Users.md)。  
+>  如果使用者帳戶具有 Microsoft 線上帳戶指派，當您移除使用者帳戶，線上帳戶也會移除從 Microsoft Online Services，而使用者的資料，包括電子郵件，受限於資料保留原則，在 Microsoft Online Services。 如果您想要保留線上帳戶的使用者資料，請停用該使用者帳戶，而不要將它移除。 如需詳細資訊，請參閱 <<c0> [ 管理之使用者的線上帳戶](Manage-Online-Accounts-for-Users.md)。  
   
-##### <a name="to-remove-a-user-account"></a>若要移除的使用者 account  
+##### <a name="to-remove-a-user-account"></a>移除使用者帳戶  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者]。  
   
-3.  在清單中的使用者帳號，選取您想要移除的使用者 account。  
+3.  在使用者帳戶清單中，選取您想要移除的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**移除帳號**。 Delete 使用者 Account 精靈會出現。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **移除使用者帳戶**。 [刪除使用者帳戶精靈] 隨即出現。  
   
-5.  在**您想要保留檔案嗎？**頁面的精靈中，您可以選擇 delete 使用者的檔案，包含歷史檔案的備份，重新導向的資料夾的使用者 account。 若要讓使用者的檔案，空白核取方塊。 選擇之後，按一下 [**下一步**。  
+5.  在上**您想要保留檔案嗎？** 頁面在精靈中，您可以選擇刪除使用者的檔案，包括檔案歷程記錄備份和重新導向的資料夾的使用者帳戶。 若要讓使用者留 s 檔案，將核取方塊保留空白。 選取完成後，請按 [下一步] 。  
   
-6.  按一下**Delete account**。  
+6.  按一下 [刪除帳戶]。  
   
 > [!NOTE]
->  之後您移除帳號，account 不會再出現在清單中帳號。 如果您選擇 delete 檔案，伺服器永久刪除使用者的資料夾的**使用者**資料夾伺服器從**檔案歷史備份**伺服器資料夾。  
+>  移除使用者帳戶之後，該帳戶就不會再出現在使用者帳戶清單中。 如果您選擇刪除檔案時，伺服器就會永久刪除使用者的資料夾**使用者**伺服器資料夾和從**File History Backups**伺服器資料夾。  
 >   
->  如果您擁有的整合式電子郵件提供者，也會移除的電子郵件帳號，指派給使用者 account。  
+>  如果您使用的是整合式電子郵件服務，則指派給該使用者帳戶的電子郵件帳戶也會一併被移除。  
   
-###  <a name="BKMK_Manage3"></a>檢視帳號  
- **使用者**Windows Server Essentials 儀表板的區段會顯示網路帳號的清單。 清單也提供每個 account 的其他資訊。  
+###  <a name="BKMK_Manage3"></a> 檢視使用者帳戶  
+ [Windows Server Essentials 儀表板] 的 [使用者] 區段會顯示網路使用者帳戶的清單。 這份清單也會提供各帳戶的其他相關資訊。  
   
-##### <a name="to-view-a-list-of-user-accounts"></a>若要檢視帳號清單  
+##### <a name="to-view-a-list-of-user-accounts"></a>檢視使用者帳戶清單  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在主要瀏覽列中，按一下 [**使用者**。  
+2.  在主瀏覽列上，按一下 [使用者] 。  
   
-3.  儀表板顯示目前的帳號清單。  
+3.  [儀表板] 會顯示目前的使用者帳戶清單。  
   
-##### <a name="to-view-or-change-properties-for-a-user-account"></a>若要檢視，或變更帳號屬性  
+##### <a name="to-view-or-change-properties-for-a-user-account"></a>檢視或變更使用者帳戶的內容  
   
-1.  在清單中的使用者帳號，選取您要檢視，或變更屬性的 account。  
+1.  在使用者帳戶清單中，選取您想要檢視或變更內容的帳戶。  
   
-2.  在**< 使用者 Account\ > 工作**窗格中，按**檢視 account 屬性**。 **屬性**頁面上的使用者 account 顯示。  
+2.  在  **< 使用者帳戶\>工作**窗格中，按一下 **檢視帳戶內容**。 使用者帳戶的 [內容]  頁面隨即出現。  
   
-3.  按一下 [索引標籤，以顯示該 account 功能的屬性。  
+3.  按一下索引標籤以顯示該帳戶功能的內容。  
   
-4.  若要儲存您對使用者 account 屬性的任何變更，請按一下**套用]**。  
+4.  若要儲存您對使用者帳戶內容所做的任何變更，請按一下 [套用]。  
   
-###  <a name="BKMK_Manage4"></a>變更帳號的顯示名稱  
- 顯示名稱為的名稱會出現在**名稱**欄在**使用者**頁面的儀表板。 變更顯示名稱不會變更登入或登入的使用者 account 名稱。  
+###  <a name="BKMK_Manage4"></a> 變更使用者帳戶的顯示名稱  
+ 顯示名稱是在 [儀表板] 的 [使用者]  頁面中，出現於 [名稱]  欄中的名稱。 變更顯示名稱並不會變更使用者帳戶的登入名稱。  
   
-##### <a name="to-change-the-display-name-for-a-user-account"></a>若要變更使用者 account 的顯示名稱  
+##### <a name="to-change-the-display-name-for-a-user-account"></a>變更使用者帳戶的顯示名稱  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者]。  
   
-3.  在清單中的使用者帳號，選取您想要變更使用者 account。  
+3.  在使用者帳戶清單中，選取您想要變更的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**檢視 account 屬性**。 **屬性**頁面上的使用者 account 顯示。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **檢視帳戶內容**。 使用者帳戶的 [內容]  頁面隨即出現。  
   
-5.  在**一般**索引標籤上，輸入新的**名字**並**姓氏**做為帳號，然後按一下**[確定]**。  
+5.  在 [一般]索引標籤上，為使用者帳戶輸入新的 [名字] 和 [姓氏]，然後按一下 [確定]。  
   
-     新的顯示名稱會出現在清單中帳號。  
+     新顯示名稱會出現在使用者帳戶清單中。  
   
-###  <a name="BKMK_Manage5"></a>啟動帳號  
- 當您帳號，已指派的使用者可以登入的 account 有權限，例如共用的資料夾和遠端 Web 存取網站的網路及存取網路資源。  
-  
-> [!NOTE]
->  您可以僅限啟動帳號，停用。 移除伺服器之後，您無法啟動帳號。  
-  
-##### <a name="to-activate-a-user-account"></a>若要啟動帳號  
-  
-1.  打開 Windows Server Essentials 儀表板。  
-  
-2.  在瀏覽列中，按一下 [**使用者**。  
-  
-3.  在清單檢視中，選取您想要啟動使用者 account。  
-  
-4.  在**< 使用者 Account\ > 工作**窗格中，按**啟動帳號**。  
-  
-5.  在 [確認] 視窗中，按一下**[是]**以確認您的動作。  
+###  <a name="BKMK_Manage5"></a> 啟用使用者帳戶  
+ 在您啟用使用者帳戶之後，所指派的使用者便可以登入帳戶並存取帳戶擁有權限的網路資源 (例如共用資料夾和「遠端 Web 存取」網站)。  
   
 > [!NOTE]
->  Account 狀態啟動帳號後，會顯示**使用**。 使用者 account 重新取得的相同的存取權限已指派之前 account 停用。  
+>  您只能啟用已停用的使用者帳戶。 將使用者帳戶從伺服器中移除之後，您就無法再啟用該帳戶。  
+  
+##### <a name="to-activate-a-user-account"></a>啟用使用者帳戶  
+  
+1.  開啟 [Windows Server Essentials 儀表板]。  
+  
+2.  在瀏覽列上，按一下 [使用者]。  
+  
+3.  在清單檢視中，選取您想要啟用的使用者帳戶。  
+  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **啟用使用者帳戶**。  
+  
+5.  在確認視窗中，按一下 [是] 來確認您的動作。  
+  
+> [!NOTE]
+>  啟用使用者帳戶之後，該帳戶的狀態就會顯示為 [使用中] 。 如某權限曾於停用前指派至此使用者帳戶，此時便能重新予以取得。  
 >   
->  如果您擁有的整合式電子郵件提供者，將也會啟動指派給使用者 account 的電子郵件帳號。  
+>  如果您有整合式電子郵件提供者，則指派給該使用者帳戶的電子郵件帳戶也會一併被啟用。  
   
-###  <a name="BKMK_Manage6"></a>停用帳號  
- 當您停用帳號時，請暫時暫停 account 伺服器的存取權。 此功能，因為已指派的使用者無法使用 account 存取網路資源，例如共用資料夾或存取的網頁網站，直到您啟動 account。  
+###  <a name="BKMK_Manage6"></a> 停用使用者帳戶  
+ 當您停用使用者帳戶時，會暫停帳戶對伺服器的存取權。 因此，所指派的使用者會無法使用該帳戶來存取網路資源 (例如共用資料夾或「遠端 Web 存取」網站)，直到您啟用帳戶為止。  
   
- 如果使用者 account 受指派的 Microsoft online 帳號，online 帳號也已停用。 使用者無法使用 Office 365 和其他 online services 您希望，但保留使用者的資料，包括電子郵件中的 Microsoft Online Services 的資源。  
-  
-> [!NOTE]
->  您只可以帳號，目前已停用。  
-  
-##### <a name="to-deactivate-a-user-account"></a>若要停用帳號  
-  
-1.  打開 Windows Server Essentials 儀表板。  
-  
-2.  在瀏覽列中，按一下 [**使用者**。  
-  
-3.  在清單檢視中，選取您想要停止帳號。  
-  
-4.  在**< 使用者 Account\ > 工作**窗格中，按**停用帳號**。  
-  
-5.  在 [確認] 視窗中，按一下**[是]**以確認您的動作。  
+ 如果使用者帳戶已被指派 Microsoft 線上帳戶，該線上帳戶也會一併被停用。 使用者無法使用 Office 365 和其他線上服務訂閱，但使用者的資料，包括電子郵件，會保留在 Microsoft Online Services 中的資源。  
   
 > [!NOTE]
->  停用帳號之後，account 狀態會顯示**非使用中**。  
+>  您只能停用目前使用中的使用者帳戶。  
+  
+##### <a name="to-deactivate-a-user-account"></a>停用使用者帳戶  
+  
+1.  開啟 [Windows Server Essentials 儀表板]。  
+  
+2.  在瀏覽列上，按一下 [使用者]。  
+  
+3.  在清單檢視中，選取您想要停用的使用者帳戶。  
+  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **停用使用者帳戶**。  
+  
+5.  在確認視窗中，按一下 [是] 來確認您的動作。  
+  
+> [!NOTE]
+>  停用使用者帳戶之後，該帳戶的狀態就會顯示為 [非使用中] 。  
 >   
->  如果您擁有的整合式電子郵件提供者，電子郵件帳號指派給使用者 account 將也會停用。  
+>  如果您有整合式電子郵件提供者，則指派給該使用者帳戶的電子郵件帳戶也會一併被停用。  
   
-###  <a name="BKMK_Manage7"></a>了解帳號  
- Windows Server Essentials，這可讓存取資訊，會儲存在伺服器上，可讓使用者建立和管理他們的設定和檔案的人員帳號提供的重要資訊。 使用者可以登入在網路上的任何電腦如果他們使用的是 Windows Server Essentials 帳號，他們使用的是電腦的存取權限。 使用者存取它們帳號，使用者名稱與密碼。  
+###  <a name="BKMK_Manage7"></a> 了解使用者帳戶  
+ 使用者帳戶可提供重要的資訊給 Windows Server Essentials，讓個人能夠存取儲存在伺服器上的資訊，並讓個別的使用者能夠建立及管理他們的檔案和設定。 使用者如果擁有 Windows Server Essentials 使用者帳戶及電腦存取權限，便可以登入網路上的任何電腦。 使用者是以其使用者名稱和密碼來存取其使用者帳戶。  
   
- 有兩個主要帳號類型。 每個輸入可讓使用者控制電腦的不同層級：  
+ 使用者帳戶的類型主要有兩種。 每一種類型各提供使用者不同層級的電腦控制權：  
   
--   **標準**帳號是日常的願景。 標準 account 可協助保護您的網路，以防止使用者變更會影響其他使用者，例如刪除檔案或變更網路設定。  
+-   **標準**帳戶是用於日常運算。 標準帳戶可防止使用者進行影響其他使用者的變更 (例如刪除檔案或變更網路設定)，從而協助您保護網路。  
   
--   **系統管理員**帳號提供最多的控制權電腦網路。 您應該指派管理員考量需要時才類型。  
+-   **系統管理員**帳戶提供最充分的電腦網路控制權。 您應該只有在必要時才指派系統管理員帳戶類型。  
   
-###  <a name="BKMK_Manage8"></a>管理使用者帳號使用儀表板  
- Windows Server Essentials 可讓您可以使用 Windows Server Essentials 儀表板執行一般管理工作。 根據預設，**使用者**頁面上的儀表板包含兩個索引標籤**使用者**和**使用者群組]**。  
-  
-> [!NOTE]
->  -   如果您執行 Windows Server Essentials 的 Office 365 的伺服器整合，新的索引標籤稱為**通訊群組**也新增了在**使用者**頁面的儀表板。  
-> -   在 Windows Server Essentials，**使用者**頁面上的儀表板包含只有一個索引標籤-**使用者**。  
-  
- **使用者**索引標籤包含動作：  
-  
--   一份帳號，它會顯示：  
-  
-    -   使用者名稱。  
-  
-    -   登入的使用者 account 名稱。  
-  
-    -   是否帳號有任何地方存取權限。 任何地方存取權限的使用者 account 是**允許**或**不允許**。  
-  
-    -   此使用者帳號歷史檔案是否受 「 執行 Windows Server Essentials 的伺服器。 使用者 account 檔案歷史狀態是**管理**或**不受管理的**。  
-  
-    -   已指派給使用者 account 的存取層級。 您可以指定任一個**標準使用者**存取或**系統管理員**帳號存取。  
-  
-    -   使用者 account 狀態。 使用者 account 可以**使用**，**非使用中**，或**完整**。  
-  
-    -   在 Windows Server Essentials，如果伺服器整合 Office 365 或 Windows Intune，會顯示 Microsoft online account。  
-  
-    -   在 Windows Server Essentials，如果伺服器整合使用 Microsoft Office 365，會顯示使用者 account 的 Office 365 帳號 （在 Windows Server Essentials 的 Microsoft online 帳號為已知） 的狀態。  
-  
--   選取的帳號的其他資訊的詳細資料窗格。  
-  
--   工作] 窗格中，其中包含：  
-  
-    -   檢視及移除帳號，並變更密碼，例如使用者 account 管理工作一組。  
-  
-    -   可讓您全球設定或變更所有使用者帳號，在網路設定的工作。  
-  
- 下表描述各種不同的使用者 account 工作，可從**使用者**索引標籤。 一些工作 account 特定的使用者且都是只顯示當您在清單中選取 [使用者 account。  
+###  <a name="BKMK_Manage8"></a> 管理使用者帳戶使用的儀表板  
+ Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 根據預設，**使用者**儀表板 頁面包含兩個索引標籤**使用者**並**使用者群組**。  
   
 > [!NOTE]
->  如果您是與 Windows Server Essentials 整合 Office 365，才可使用其他工作。 如需詳細資訊，請查看[適用於使用者管理 Online 帳號](Manage-Online-Accounts-for-Users.md)。  
+>  -   如果您整合您的伺服器執行 Windows Server Essentials 與 Office 365 時，新的索引標籤便會呼叫**發佈群組**中還會新增**使用者**儀表板。  
+> -   在 Windows Server Essentials**使用者**儀表板 頁面只包含單一索引標籤-**使用者**。  
   
-### <a name="user-account-tasks-in-the-dashboard"></a>儀表板中的使用者 account 工作  
+ [使用者] 索引標籤包含下列各項：  
   
-|工作的名稱|描述|  
+-   一份使用者帳戶清單，當中顯示：  
+  
+    -   使用者的名稱。  
+  
+    -   使用者帳戶的登入名稱。  
+  
+    -   使用者帳戶是否具有「隨處存取」權限。 使用者帳戶的「隨處存取」權限是 [允許]  或 [不允許] 。  
+  
+    -   這個使用者帳戶的「檔案歷程記錄」是否受執行 Windows Server Essentials 的伺服器管理。 使用者帳戶的「檔案歷程記錄」狀態是 [受管理]  或 [不受管理] 。  
+  
+    -   指派給使用者帳戶的存取權層級。 您可以為使用者帳戶指派 [標準使用者] 存取權或 [系統管理員] 存取權。  
+  
+    -   使用者帳戶狀態。 使用者帳戶可以是 [使用中] 、[非使用中] 或 [不完整] 。  
+  
+    -   在 Windows Server Essentials 中，如果伺服器與 Office 365 或 Windows Intune 整合會顯示 Microsoft 線上帳戶。  
+  
+    -   在 Windows Server Essentials 中，如果伺服器與 Microsoft Office 365 整合，就會顯示使用者帳戶的 Office 365 帳戶 （又稱作 Microsoft 線上帳戶的 Windows Server Essentials 中） 的狀態。  
+  
+-   一個詳細資料窗格，含有所選使用者帳戶的其他相關資訊。  
+  
+-   一個包含下列資訊的工作窗格：  
+  
+    -   一組使用者帳戶系統管理工作，例如檢視和移除使用者帳戶，以及變更密碼。  
+  
+    -   可讓您全域設定或變更網路中所有使用者帳戶之設定的工作。  
+  
+ 下表說明可從 [使用者] 索引標籤使用的各種使用者帳戶工作。部分工作是使用者帳戶特定的工作，只有當您選取清單中的某個使用者帳戶時才能看見。  
+  
+> [!NOTE]
+>  如果您使用 Windows Server Essentials 整合 Office 365，則會有其他工作變成可用。 如需詳細資訊，請參閱 <<c0> [ 管理之使用者的線上帳戶](Manage-Online-Accounts-for-Users.md)。  
+  
+### <a name="user-account-tasks-in-the-dashboard"></a>儀表板中的使用者帳戶工作  
+  
+|工作名稱|描述|  
 |---------------|-----------------|  
-|檢視 account 屬性|可讓您以檢視及變更選取的帳號的屬性，指定資料夾的存取權限 account。|  
-|停用帳號|停用帳號網路或存取網路資源，例如共用的資料夾或的印表機無法登入。|  
-|啟動帳號|使用者 account 會變成網路可以登入，可以存取網路資源，所定義 account 權限。|  
-|移除帳號|可讓您移除選取的使用者 account。|  
-|變更使用者密碼|可讓您重設選取的帳號網路密碼。|  
-|[新增使用者 account|會開始新增使用者 Account 精靈，如此可讓您建立單一的新使用者 account 具有標準使用者存取的系統管理員。|  
-|指派的 Microsoft online account|將選取的區域網路使用者帳號 Microsoft online account。<br /><br /> 當您的伺服器整合 Microsoft online 服務，例如 Office 365，會顯示這項工作。|  
-|加入 Microsoft online 帳號|加入 Microsoft online 帳號，並將它們相關聯的區域網路使用者帳號。<br /><br /> 當您的伺服器整合 Microsoft online 服務，例如 Office 365，會顯示這項工作。|  
-|設定密碼原則|可讓您可以變更密碼原則的網路。|  
-|匯入 Microsoft online 帳號|執行 Microsoft online services 的帳號大量匯入到本機網路。<br /><br /> 當您的伺服器整合 Microsoft online 服務，例如 Office 365，會顯示這項工作。|  
-|重新整理|重新整理使用者] 索引標籤。<br /><br /> 這個任務適用於 Windows Server Essentials。|  
-|變更檔案歷史設定|可讓您變更檔案歷史設定，例如備份頻率或備份的持續時間。<br /><br /> 這個任務適用於 Windows Server Essentials。|  
-|匯出所有遠端連接|建立。所有遠端伺服器連接過去 30 天之後發生的 CSV 格式的檔案。|  
+|檢視帳戶內容|可讓您檢視和變更所選使用者帳戶的內容，以及指定該帳戶的資料夾存取權限。|  
+|停用使用者帳戶|已停用的使用者帳戶無法登入網路或存取網路資源 (例如共用資料夾或印表機)。|  
+|啟用使用者帳戶|已啟用的使用者帳戶可以登入網路，並可依據帳戶權限的定義存取網路資源。|  
+|移除使用者帳戶|可讓您移除選取的使用者帳戶。|  
+|變更使用者帳戶密碼|可讓您重設所選使用者帳戶的網路密碼。|  
+|新增使用者帳戶|啟動 [新增使用者帳戶精靈]，可讓您建立具有標準使用者存取權或系統管理員存取權的單一新使用者帳戶。|  
+|指派 Microsoft 線上帳戶|將 Microsoft 線上帳戶新增到選取的區域網路使用者帳戶中 。<br /><br /> 當您的伺服器已與 Microsoft 線上服務 (例如 Office 365) 整合時，就會顯示這項工作。|  
+|新增 Microsoft 線上帳戶|新增 Microsoft 線上帳戶並將它們與區域網路的使用者帳戶建立關聯。<br /><br /> 當您的伺服器已與 Microsoft 線上服務 (例如 Office 365) 整合時，就會顯示這項工作。|  
+|設定密碼原則|可讓您變更您網路的密碼原則值。|  
+|匯入 Microsoft 線上帳戶|執行將帳戶從 Microsoft 線上服務大量匯入到區域網路的工作。<br /><br /> 當您的伺服器已與 Microsoft 線上服務 (例如 Office 365) 整合時，就會顯示這項工作。|  
+|重新整理|重新整理 [使用者] 索引標籤。<br /><br /> 這項工作是適用於 Windows Server Essentials。|  
+|變更檔案歷程記錄設定|可讓您變更「檔案歷程記錄」設定，例如備份頻率或備份期間。<br /><br /> 這項工作是適用於 Windows Server Essentials。|  
+|匯出所有遠端連線|將過去 30 天所有連到伺服器的遠端連線建立為一個 .CSV 格式檔案。|  
   
-##  <a name="BKMK_ManageAccess"></a>存取和密碼管理  
- 下列主題會提供有關如何使用 Windows Server Essentials 儀表板管理使用者 account 密碼和使用者存取伺服器上的共用資料夾：  
+##  <a name="BKMK_ManageAccess"></a> 密碼管理和存取  
+ 下列主題提供有關如何使用 [Windows Server Essentials 儀表板] 來管理使用者帳戶密碼和使用者對伺服器上共用資料夾之存取權的資訊：  
   
--   [變更或重設使用者 account 的密碼](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access1)  
+-   [變更或重設使用者帳戶的密碼](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access1)  
   
--   [您應該會了解如何密碼原則](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access3)  
+-   [您應該了解密碼原則](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access3)  
   
 -   [變更密碼原則](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access4)  
   
--   [層級的共用資料夾的存取權](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access5)  
+-   [共用資料夾的存取權的層級](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access5)  
   
--   [保留存取及管理帳號已移除的使用者的檔案](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access6)  
+-   [保留和管理存取權已移除的使用者帳戶的檔案](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access6)  
   
--   [同步 DSRM 密碼的網路系統管理員密碼](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access7)  
+-   [與網路系統管理員密碼同步處理 DSRM 密碼](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access7)  
   
--   [允許帳號遠端桌面](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access8)  
+-   [遠端桌面權限授與使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access8)  
   
--   [讓使用者存取伺服器上的資源](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access9)  
+-   [讓使用者能夠存取伺服器上的資源](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access9)  
   
--   [變更帳號遠端存取權限](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access10)  
+-   [變更使用者帳戶的遠端存取權限](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access10)  
   
--   [變更帳號 virtual 私人網路權限](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access11)  
+-   [變更使用者帳戶的虛擬私人網路權限](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access11)  
   
--   [變更存取帳號內部共用資料夾](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access12)  
+-   [內部共用資料夾的 「 變更 」 權限，使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access12)  
   
--   [讓使用者帳號，建立到其電腦的遠端桌面工作階段](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access13)  
+-   [允許使用者帳戶，以建立其電腦的遠端桌面工作階段](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access13)  
   
-###  <a name="BKMK_Access1"></a>變更或重設使用者 account 的密碼  
- 若要變更或重設使用者密碼，請依照下列步驟執行。  
+###  <a name="BKMK_Access1"></a> 變更或重設使用者帳戶的密碼  
+ 若要變更或重設使用者帳戶密碼，請依照下列步驟執行。  
   
-##### <a name="to-reset-the-password-for-a-user-account"></a>若要重設使用者 account 的密碼  
+##### <a name="to-reset-the-password-for-a-user-account"></a>重設使用者帳戶的密碼  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者]。  
   
-3.  在清單中的使用者帳號，選取您想要重設使用者 account。  
+3.  在使用者帳戶清單中，選取您想要重設的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**變更使用者 account 密碼**。 [變更使用者 Account 密碼精靈會出現。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **變更使用者帳戶密碼**。 [變更使用者帳戶密碼精靈] 隨即出現。  
   
-5.  輸入使用者帳號，新的密碼，然後輸入密碼來確認它。  
+5.  輸入使用者帳戶的新密碼，然後再次輸入密碼來進行確認。  
   
-6.  按一下**變更密碼**。  
+6.  按一下 [變更密碼] 。  
   
-7.  向使用者提供新的密碼。  
+7.  將新密碼提供給使用者。  
   
     > [!IMPORTANT]
-    >  -   您可能無法變更您的密碼，如果您的密碼原則為**永久有效的密碼**。  
-    > -   不支援 Azure AD 非 ASCII 字元。 因此，如果您的伺服器整合使用 Azure AD 時，請勿使用任何非 ASCII 字元您的密碼。  
-    > -   Microsoft online account （中 Office 365 account 與 Windows Server Essentials 已知） 已指派給使用者，如果 online 密碼同步處理的密碼。 使用者將使用新密碼來登入在伺服器上或是登入 Office 365。 如需詳細資訊，請查看[適用於使用者管理 Online 帳號](Manage-Online-Accounts-for-Users.md)。  
+    >  -   如果您帳戶的密碼原則已設定為 [密碼永久有效]，您就無法變更密碼。  
+    > -   在 Azure AD 中不支援非 ASCII 字元。 因此，如果您的伺服器已與 Azure AD 整合，請勿不在密碼中使用任何非 ASCII 字元。  
+    > -   如果 Microsoft 線上帳戶 （就在 Windows Server Essentials 為 Office 365 帳戶） 指派給使用者，密碼會同步處理線上帳戶密碼。 使用者將使用新密碼來登入伺服器或登入 Office 365。 如需詳細資訊，請參閱 <<c0> [ 管理之使用者的線上帳戶](Manage-Online-Accounts-for-Users.md)。  
   
-###  <a name="BKMK_Access3"></a>您應該會了解如何密碼原則  
- 密碼原則是一組規則的定義使用者建立和使用密碼的方式。 協助防止未經授權的存取權的使用者資料和其他資訊會儲存在伺服器上的原則。 密碼原則會套用到所有的使用者帳號存取該網路。  
+###  <a name="BKMK_Access3"></a> 您應該了解密碼原則  
+ 密碼原則是一組定義使用者如何建立和使用密碼的規則。 這個原則可協助防止對使用者資料和儲存在伺服器上的其他資訊進行未經授權的存取。 密碼原則會套用到所有存取網路的使用者帳戶。  
   
- Windows Server Essentials 密碼原則有 3 個主要元素，如下所示：  
+ Windows Server Essentials 密碼原則是由三個主要元素組成，如下所示：  
   
--   **密碼長度**。  較長的時間密碼是，更安全。 空白的密碼並不安全。  
+-   **密碼長度**。  密碼越長越安全。 空白密碼不安全。  
   
--   **複雜密碼**。  複雜密碼包含混合和小寫 (為-z，A Z)，(0-9)，以及非字母符號的基底 (例如; ！，@，#、 _、-)。 複雜密碼的較容易未經授權的存取。 包含的使用者名稱、 生日或其他個人資訊的密碼不提供安全性。  
+-   **密碼複雜性**。  複雜密碼包含大寫與小寫字母 (a 到 z、A 到 Z)、基本數字 (0-9) 及非字母符號 (例如 !、@、#、_、-) 的混合組合。 複雜密碼是較不容易受到未經授權的存取利用。 包含使用者名稱、生日日期或其他個人資訊的密碼無法提供適當的安全性。  
   
--   **密碼年齡**。  Windows Server Essentials 需要使用者變更密碼至少一次每個 180 天。 選項，您可以選擇將永久有效的密碼。  
+-   **密碼使用期限**。  Windows Server Essentials 要求使用者至少每 180 天變更一次他們的密碼。 您也可以選擇讓密碼永久有效。  
   
- 若要讓您更輕鬆地在您的電腦網路實作密碼原則、 Windows Server Essentials 提供簡單的工具，可讓您設定或變更密碼原則任一下列四個預先定義的原則設定檔：  
+ 為了讓您更容易在您的電腦網路上實作密碼原則，Windows Server Essentials 提供一個簡單工具，可讓您將密碼原則設定或變更成下列四個預先定義之原則設定檔中的任何一個：  
   
--   **低**。  使用者可以指定任何不是空白的密碼。  
+-   **弱式**。  使用者可以指定任何不是空白的密碼。  
   
--   **媒體**。  這些密碼必須包含至少 5 個字元。 不需要複雜密碼。  
+-   **中等**。  這些密碼必須至少包含 5 個字元。 不需要使用複雜密碼。  
   
--   **媒體強**。  必須包含至少 5 字元，這些密碼，並必須包含字母、 數字和符號。  
+-   **中等強度**。  這些密碼必須至少包含 5 個字元，而且必須包含字母、數字及符號。  
   
--   **強**。  必須包含至少 7 字元，這些密碼，並必須包含字母、 數字和符號。 這些密碼更安全，但可能會更難以記住使用者。  
-  
-    > [!NOTE]
-    >  密碼不能的使用者名稱或電子郵件地址。  
-    >   
-    >  如果您使用 Office 365 整合，整合執行**強**密碼原則，和更新的原則，包含下列需求：  
-    >   
-    >  -   密碼必須包含 8 16 字元。  
-    > -   密碼不能空格或 Office 365 郵件名稱。  
-  
- 根據預設，安裝伺服器將預設密碼的原則設定為**強**選項。  
-  
-###  <a name="BKMK_Access4"></a>變更密碼原則  
- 使用下列程序，設定或變更密碼原則任何四個預先定義的原則設定檔。  
-  
-##### <a name="to-change-the-password-policy"></a>若要變更密碼原則  
-  
-1.  打開 Windows Server Essentials 儀表板，，然後按一下**使用者**。  
-  
-2.  在**使用者工作**窗格中，按**設定密碼原則**。  
-  
-3.  在**變更密碼原則，**畫面上，移動滑設定的層級的力量的密碼。  
-  
-     Microsoft 建議您將密碼越設定為**強**。  
+-   **強式**。  這些密碼必須至少包含 7 個字元，而且必須包含字母、數字及符號。 這些密碼更安全，但可能會讓使用者更難記住。  
   
     > [!NOTE]
-    >  選項，您也可以選取**永久有效的密碼**。 此設定為較不安全，並讓我們不建議。  
+    >  密碼不能包含使用者名稱或電子郵件地址。  
+    >   
+    >  如果您已與 Office 365 整合，此整合會強制使用 [強式]  密碼原則，並且會更新該原則以包含下列要求條件：  
+    >   
+    >  -   密碼必須包含 8 16 個字元。  
+    > -   密碼不能包含空格或 Office 365 電子郵件名稱。  
   
-4.  按一下**變更原則**。  
+ 根據預設，伺服器安裝會將預設密碼原則設定為**強式**選項。  
   
-###  <a name="BKMK_Access5"></a>層級的共用資料夾的存取權  
- 做為最佳做法，您應該指派最低使用權限提供仍可讓使用者執行所需的工作。  
+###  <a name="BKMK_Access4"></a> 變更密碼原則  
+ 您可以使用下列程序將密碼原則設定或變更成四個預先定義之原則設定檔中的任何一個。  
   
- 您有伺服器上的共用資料夾三個存取設定：  
+##### <a name="to-change-the-password-policy"></a>變更密碼原則  
   
--   **讀取/寫入**。  如果您想要讓使用者 account 的權限來建立、 變更或 delete 共用資料夾中的任何檔案，請選擇這個設定。  
+1.  開啟 [Windows Server Essentials 儀表板]，然後按一下 [使用者] 。  
   
--   **唯讀**。  如果您想要讓使用者 account 的權限只讀取的共用資料夾中的檔案，請選擇這個設定。 唯讀存取帳號無法建立、 變更或 delete 共用資料夾中的任何檔案。  
+2.  在 [使用者工作]  窗格中，按一下 [設定密碼原則] 。  
   
--   **不能存取**。  如果您不想要存取的共用資料夾中的任何檔案帳號，請選擇這個設定。  
+3.  在 [變更密碼原則]  畫面中，移動滑桿來設定密碼強度的層級。  
   
-###  <a name="BKMK_Access6"></a>保留存取及管理帳號已移除的使用者的檔案  
- 網路系統管理員可以移除帳號，並選擇要保留使用者 s 未來使用的檔案。 在本案例中，移除的帳號不再可用來登入網路。不過，這位使用者的檔案將會儲存在共用資料夾，這可使用另一位使用者。  
+     Microsoft 建議您將密碼強度設定為 [強式]。  
+  
+    > [!NOTE]
+    >  您也可以選擇選取 [密碼永久有效]。 這個設定較不安全，所以並不建議選取。  
+  
+4.  按一下 [變更原則]。  
+  
+###  <a name="BKMK_Access5"></a> 共用資料夾的存取權的層級  
+ 最佳做法是指派最低可用又仍可讓使用者執行必要工作的權限。  
+  
+ 針對伺服器上的共用資料夾，您有三個可用的存取設定：  
+  
+-   **讀取/寫入**。  如果您想要讓使用者帳戶有建立、變更及刪除共用資料夾中任何檔案的權限，請選擇這個設定。  
+  
+-   **唯讀**。  如果您想要讓使用者帳戶只有讀取共用資料夾中檔案的權限，請選擇這個設定。 具有唯讀存取權的使用者帳戶無法建立、變更或刪除共用資料夾中的任何檔案。  
+  
+-   **不允許存取**。  如果您不想要讓使用者帳戶存取共用資料夾中的任何檔案，請選擇這個設定。  
+  
+###  <a name="BKMK_Access6"></a> 保留和管理存取權已移除的使用者帳戶的檔案  
+ 網路系統管理員可以移除使用者帳戶，並選擇保留使用者的檔案，供日後使用。 在這個案例中，已移除的使用者帳戶無法再被用來登入網路；不過，這位使用者的檔案將會儲存在共用資料夾中，可以與其他使用者共用。  
   
 > [!IMPORTANT]
->  請注意，如果您移除已受指派的 Microsoft online account 帳號，也會移除 online 帳號，及使用者資料，包括電子郵件，皆受 Microsoft Online Services 的資料保留原則。 適用於 online account 使用者資料的保留，停用帳號，而不是將它移除。 如需詳細資訊，請查看[適用於使用者管理 Online 帳號](Manage-Online-Accounts-for-Users.md)。  
+>  請注意，如果您移除已被指派 Microsoft 線上帳戶的使用者帳戶，該線上帳戶也會一併被移除，而使用者資料 (包括電子郵件) 的去留則取決於 Microsoft Online Services 中的資料保留原則。 若要保留線上帳戶的使用者資料，請停用該使用者帳戶，而不要將它移除。 如需詳細資訊，請參閱 <<c0> [ 管理之使用者的線上帳戶](Manage-Online-Accounts-for-Users.md)。  
   
-##### <a name="to-remove-a-user-account-but-retain-access-to-the-user-s-files"></a>若要移除帳號，但保留使用者的檔案的存取權  
+##### <a name="to-remove-a-user-account-but-retain-access-to-the-user-s-files"></a>若要移除的使用者帳戶，但保留使用者的檔案的存取權  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者]。  
   
-3.  在清單中的使用者帳號，選取您想要移除的使用者 account。  
+3.  在使用者帳戶清單中，選取您想要移除的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**移除帳號**。 Delete 使用者 Account 精靈會出現。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **移除使用者帳戶**。 [刪除使用者帳戶精靈] 隨即出現。  
   
-5.  在**您想要保留檔案嗎？**頁面上，請確定**Delete 包括備份檔案歷史及此帳號重新導向的資料夾的檔案**核取方塊已清除、，然後按一下**下一步**。  
+5.  在 [您要保留檔案嗎?]  頁面上，確定 [刪除此使用者帳戶的檔案 (包括檔案歷程記錄備份與重新導向的資料夾)]  核取方塊已取消選取，然後按 [下一步] 。  
   
-     確認頁面會顯示警告您正在刪除帳號，但保留檔案。  
+     確認頁面隨即出現，警告您正在刪除帳戶但會保留檔案。  
   
-6.  按一下**Delete account**若要移除的使用者帳號。  
+6.  按一下 [刪除帳戶]  來移除使用者帳戶。  
   
- 已移除使用者 account 之後，系統管理員可以讓共用資料夾其他使用者 account 存取。  
+ 移除使用者帳戶之後，系統管理員可以將共用資料夾的存取權提供給另一個使用者帳戶。  
   
-##### <a name="to-give-a-user-account-permission-to-access-a-shared-folder"></a>若要讓使用者 account 共用的資料夾的存取權限  
+##### <a name="to-give-a-user-account-permission-to-access-a-shared-folder"></a>授與使用者帳戶存取共用資料夾的權限  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**儲存**，然後按一下 [**伺服器資料夾**索引標籤。  
+2.  在瀏覽列上，按一下 [存放] ，然後按一下 [伺服器資料夾]  索引標籤。  
   
-3.  在清單的資料夾中，選取 [**使用者**資料夾。  
+3.  在資料夾清單中，選取 [使用者]  資料夾。  
   
-4.  在**使用者工作**窗格中，按**打開資料夾**。 Windows 檔案總管開啟並顯示到**使用者**資料夾。  
+4.  在 [使用者工作] 窗格中，按一下 [開啟資料夾]。 [Windows 檔案總管] 隨即開啟並顯示 [使用者] 資料夾的內容。  
   
-5.  以滑鼠右鍵按一下您想要分享，然後按一下 [使用者 account 資料夾**屬性**。  
+5.  在您想要共用之使用者帳戶的資料夾上按一下滑鼠右鍵，然後按一下 [內容] 。  
   
-6.  在**< 使用者 Account\ > 屬性**，按一下 [**共用**索引標籤，然後按一下 [**共用**。  
+6.  在  **< 使用者帳戶\>屬性**，按一下 **共用**索引標籤，然後再按一下**共用**。  
   
-7.  在**檔案共用**視窗中，輸入，或選取您想要共用資料夾，然後按一下 [使用者 account 名稱**新增]**。  
+7.  在 [檔案共用]  視窗中，輸入或選取您想要與其共用資料夾的使用者帳戶名稱，然後按一下 [新增] 。  
   
-8.  選擇 [**的權限等級**您想要帳號，並再按**共用**。  
+8.  選擇要讓使用者帳戶擁有的 [權限層級]  ，然後按一下 [共用] 。  
   
-###  <a name="BKMK_Access7"></a>同步 DSRM 密碼的網路系統管理員密碼  
- Directory 服務還原模式 (DSRM) 為修復或復原 Active Directory 特殊開機模式。 作業系統使用 DSRM Active Directory 失敗是否需要還原電腦登入。 如果您的網路系統管理員密碼及密碼 DSRM 不同，將不會載入 DSRM。  
+###  <a name="BKMK_Access7"></a> 與網路系統管理員密碼同步處理 DSRM 密碼  
+ 「目錄服務還原模式」(DSRM) 是一種可修復或復原 Active Directory 的特殊開機模式。 當 Active Directory 失敗或需要還原時，作業系統會使用 DSRM 來登入電腦。 如果您的網路系統管理員密碼和 DSRM 密碼不同，DSRM 將不會載入。  
   
- Windows Server Essentials 的全新、 第一次安裝期間計畫將設定您在設定期間，或移轉回應檔案中指定的網路系統管理員密碼 DSRM 密碼。 當您變更您的網路系統管理員密碼 （如同建議通常會增加的伺服器安全性每個 60 天） 時，以 DSRM 不轉送變更密碼。 這會導致密碼不相符。 發生這種情形，如果您可以使用下列方案以手動或自動 DSRM 密碼同步您的網路系統管理員的密碼。  
+ 在乾淨、第一次的 Windows Server Essentials 安裝中，程式會將 DSRM 密碼設定為您在安裝期間或在移轉回應檔案中指定的網路系統管理員帳戶密碼。 當您變更您的網路系統管理員密碼 (一般建議是每 60 天變更一次以增加伺服器安全性) 時，密碼變更並不會轉送給 DSRM。 這會導致密碼不相符。 如果發生這種情況，您可以使用下列解決方案來手動或自動與 DSRM 密碼同步處理您網路系統管理員密碼。  
   
-##### <a name="to-manually-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>若要手動同步的網路系統管理員帳號 DSRM 密碼  
+##### <a name="to-manually-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>手動將 DSRM 密碼同步至網路系統管理員帳戶  
   
-1.  在命令提示字元中執行`ntdsutil.exe`打開 ntdsutil 工具。  
+1.  在命令提示字元中，執行 `ntdsutil.exe` 以開啟 ntdsutil 工具。  
   
-2.  若要重設密碼 DSRM，輸入**設定 dsrm 密碼**。  
+2.  若要重設 DSRM 密碼，請輸入 **set dsrm password**。  
   
-3.  若要同步的網域控制站的 DSRM 密碼與目前的網路系統管理員的帳號，請輸入：  
+3.  若要同步的網域控制站上的 DSRM 密碼與目前的網路系統管理員的帳戶，請輸入：  
   
-     **同步核對從** *< current_network_administrator_account >*，然後按 Enter 鍵。  
+     **從網域帳戶的同步處理** *< current_network_administrator_account&gt >*，然後按 Enter 鍵。  
   
- 您將會定期變更的密碼的網路管理員帳號，以確保 DSRM 密碼都相同的網路系統管理員目前的密碼，我們建議您自動建立排程工作，因為每天同步 DSRM 密碼的網路系統管理員密碼。  
+ 由於您將會定期變更網路系統管理員帳戶的密碼，因此為了確保 DSRM 密碼永遠與目前的網路系統管理員密碼相同，建議您建立一個排程工作來每日自動將 DSRM 密碼同步至網路系統管理員密碼。  
   
-##### <a name="to-automatically-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>若要自動同步處理的網路系統管理員帳號 DSRM 密碼  
+##### <a name="to-automatically-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>自動將 DSRM 密碼同步至網路系統管理員帳戶  
   
-1.  從伺服器，請打開**系統管理工具]**，然後按兩下 [**工作排程器**。  
+1.  從伺服器開啟 [系統管理工具] ，然後按兩下 [工作排程器] 。  
   
-2.  在 [工作排程器**動作**窗格中，按**建立工作**。  
+2.  在 [工作排程器] 的 [動作]  窗格中，按一下 [建立工作] 。  
   
-3.  在**名稱**文字] 方塊中，輸入名稱，例如工作**AutoSync DSRM 密碼**，]，然後選取**以最高的權限來執行**選項。  
+3.  在 [名稱]  文字方塊中，輸入工作的名稱 (例如 **自動同步 DSRM 密碼**)，然後選取 [以最高權限執行]  選項。  
   
-4.  定義何時執行工作：  
+4.  定義工作的執行時機：  
   
-    1.  在**建立工作**對話方塊中，按一下 [**觸發程序**索引標籤，然後按一下 [**新增]**。  
+    1.  在 [建立工作] 對話方塊中，按一下 [觸發程序] 索引標籤，然後按一下 [新增]。  
   
-    2.  在**新觸發程序**對話方塊中，選擇循環，指定循環長的時間間隔，然後選擇開始的時間。  
+    2.  在 [新增觸發程序] 對話方塊中，選取您的週期選項、指定週期間隔中，然後選擇開始時間。  
   
         > [!NOTE]
-        >  做為最佳做法，您應該設定執行每天在非商業時間工作。  
+        >  最佳做法是設定讓工作每日在非上班時間執行。  
   
-    3.  按一下**[確定]**以儲存您的變更，並回到**建立工作**對話方塊。  
+    3.  按一下 [確定] 以儲存變更並返回 [建立工作]對話方塊。  
   
 5.  定義工作動作：  
   
-    1.  按一下**動作**索引標籤，然後按一下 [**新增]**。 **動作]**對話方塊中出現。  
+    1.  按一下 [動作] 索引標籤，然後按一下 [新增]。 [新增動作] 對話方塊隨即出現。  
   
-    2.  在**動作**清單中，按一下 [**程式 [開始]**，然後瀏覽至**C:\WINDOWS\SYSTEM32\ntdsutil.exe**。  
+    2.  在 [動作] 清單中，按一下 [啟動程式]，然後瀏覽至 **C:\WINDOWS\SYSTEM32\ntdsutil.exe**。  
   
-    3.  在**新增引數**（選擇性） 的文字方塊中，輸入的下列命令 （您必須包含引號）：**設定核對 SBS_network_administrator_account q q dsrm 密碼同步**其中*SBS_network_administrator_account*是目前的網路系統管理員 s account 名稱。  
+    3.  在**新增引數**（選擇性） 文字方塊方塊中，輸入下列內容 （必須包含引號）：**將 dsrm 密碼同步處理設定從網域帳戶 SBS_network_administrator_account q q**其中*SBS_network_administrator_account*是目前的網路系統管理員的帳戶名稱。  
   
-6.  按一下**[確定]**兩次，若要儲存工作，並關閉**建立工作**對話方塊。 新的任務會出現在**作用中的工作**區段**工作排程**。  
+6.  按一下 [確定]  兩次來儲存工作並關閉 [建立工作]  對話方塊。 新工作會出現在 [工作排程] 的 [進行中工作] 區段中。  
   
-###  <a name="BKMK_Access8"></a>允許帳號遠端桌面  
- 在 Windows Server Essentials 的預設安裝網路使用者無權來連接遠端電腦或其他網路上的資源。  
+###  <a name="BKMK_Access8"></a> 遠端桌面權限授與使用者帳戶  
+ 在 Windows Server Essentials 的預設安裝中，網路使用者沒有可對電腦或網路上其他資源建立遠端連線的權限。  
   
- 網路使用者可以連接遠端到網路資源之前，您必須第一次設定隨處存取。 隨處存取設定之後，使用者可以存取檔案、 應用程式，以及 office 網路中的電腦的任何位置與網際網路連接裝置。  
+ 您必須先設定「隨處存取」，網路使用者才能對網路資源建立遠端連線。 在您設定「隨處存取」之後，使用者便可以從任何位置的裝置，透過網際網路連線來存取您辦公室網路中的檔案、應用程式及電腦。  
   
- 隨處存取精靈設定可讓您兩種遠端存取的方法：  
+ [設定隨處存取精靈] 可讓您啟用兩種遠端存取方法：  
   
--   Virtual 私人網路 (VPN)  
+-   虛擬私人網路 (VPN)  
   
--   遠端存取  
+-   遠端 Web 存取  
   
- 當您執行精靈中時，您也可以選擇允許所有使用者的目前與新增帳號隨處存取。  
+ 執行精靈時，您也可以選擇允許所有目前和新加入的使用者帳戶使用「隨處存取」。  
   
- 隨處存取設定，請打開儀表板**Home**頁面上，按一下 [**設定**，，然後按一下 [**設定隨處存取**。  
+ 若要設定「隨處存取」，請開啟 [儀表板] 的 [首頁]  ，按一下 [設定] ，然後按一下 [設定隨處存取] 。  
   
- 如需任何地方存取的相關資訊，請查看[管理隨處存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。  
+ 如需隨處存取的詳細資訊，請參閱[Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。  
   
-###  <a name="BKMK_Access9"></a>讓使用者存取伺服器上的資源  
-  本節適用於已安裝 Windows Server Essentials 體驗角色執行 Windows Server 2012 標準 R2 或 Windows Server 2012 R2 Datacenter server 或執行的是 Windows Server Essentials 或 Windows Server Essentials，伺服器。  
+###  <a name="BKMK_Access9"></a> 讓使用者能夠存取伺服器上的資源  
+  本節適用於執行 Windows Server Essentials 或 Windows Server Essentials 的伺服器或執行已安裝的 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 的伺服器。  
   
- 如果您希望使用者使用遠端存取，並/或已登入電腦，當您完成伺服器連接電腦時，您可以建立新的網路帳號網路的電腦上的使用者在伺服器上使用儀表板。 如需有關建立帳號，請查看[[新增使用者 account](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。 建立的使用者帳號之後, 您必須 client 電腦的使用者提供的網路使用者名稱和密碼資訊，讓他們可以利用 Launchpad 存取伺服器上的資源。  
+ 如果您希望使用者使用遠端存取和 (或) 擁有個別的使用者帳戶，在您完成將電腦連線到伺服器的工作之後，可以使用 [儀表板] 為伺服器上連線到網路之電腦的使用者建立新的網路使用者帳戶。 如需建立使用者帳戶的詳細資訊，請參閱 [Add a user account](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。 建立使用者帳戶之後, 您必須將網路使用者名稱和密碼資訊提供給用戶端電腦的使用者，這樣他們才可以使用 [啟動列] 來存取伺服器上的資源。  
   
- 為您建立的每個使用者帳號您可以設定 account 屬性使用者透過下列存取：  
+ 針對您建立的每個使用者帳戶，您都可以透過使用者帳戶內容設定下列項目的存取權：  
   
--   **共用資料夾**。  預設的網路系統管理員可以**讀取/寫入**有權限所有的共用的資料夾和標準使用者帳號**唯讀**資料夾公司的權限。 如果支援媒體串流處理時，您可以指定資料夾的存取權限標準登入電腦下列共用資料夾：**音樂**，**圖片**、**錄製電視**，和**影片**。 您可以設定的權限存取上的共用的資料夾帳號**的共用資料夾**索引標籤上的使用者 account 屬性。  
+-   **共用資料夾**。  根據預設，網路系統管理員會有所有共用資料夾的 [讀取/寫入] 權限，而標準使用者帳戶會有 [公司] 資料夾的 [唯讀] 權限。 如果已啟用媒體串流處理，您便可以為個別的標準使用者帳戶指派下列共用資料夾的資料夾存取權限：[音樂]、[圖片]、[錄製的節目] 以及 [視訊]。 您可以在使用者帳戶內容的 [共用資料夾] 索引標籤上，設定使用者帳戶對共用資料夾的存取權限。  
   
--   **隨處存取**。  預設的網路系統管理員可以使用 VPN 或遠端 Web 存取存取伺服器資源。 對於標準使用者帳號，您必須設定使用者 account 權限在**隨處存取**索引標籤。  
+-   **隨處存取**。  根據預設，網路系統管理員可以使用 VPN 或「遠端 Web 存取」來存取伺服器資源。 針對標準使用者帳戶，您必須在 [隨處存取]  索引標籤上設定使用者帳戶權限。  
   
--   **存取電腦**。  預設的網路系統管理員可以存取網路中的所有的電腦。 不過的標準帳號您可以設定個人使用者 account 權限存取網路上的電腦上的**電腦存取**索引標籤上的使用者 account 屬性。  
+-   **電腦存取**。  根據預設，網路系統管理員可以存取網路中的所有電腦。 不過，針對標準使用者帳戶，您可以在使用者帳戶內容的 [電腦存取] 索引標籤上，設定個別的使用者帳戶權限來存取網路上的電腦。  
   
-##### <a name="to-edit-user-account-properties-in-windows-server-essentials-2012-r2"></a>若要編輯的使用者 account 屬性，在 Windows Server Essentials 2012 R2  
+##### <a name="to-edit-user-account-properties-in-windows-server-essentials-2012-r2"></a>在 Windows Server Essentials 2012 R2 中編輯使用者帳戶內容  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者] 。  
   
-3.  在清單中的使用者帳號，選取您要編輯的使用者 account。  
+3.  在使用者帳戶清單中，選取您想要編輯的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**檢視 account 屬性**。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **檢視帳戶內容**。  
   
-5.  在**< 使用者 Account\ > 屬性**，執行下列動作：  
+5.  在  **< 使用者帳戶\>屬性**，執行下列動作：  
   
-    1.  在**的共用資料夾**索引標籤上，視需要設定分享的每個資料夾的資料夾適當權限。  
+    1.  在 [共用資料夾] 索引標籤上，視需要為每個共用資料夾設定適當的資料夾權限。  
   
-    2.  在**隨處存取**索引標籤：  
+    2.  在 [隨處存取] 索引標籤上：  
   
-        1.  若要讓使用者使用 VPN 伺服器連接，請選取 [**允許 Virtual 私人網路 (VPN)**核取方塊。  
+        1.  若要允許使用者使用 VPN 來連線到伺服器，請選取 [允許虛擬私人網路 (VPN)] 核取方塊。  
   
-        2.  若要讓使用者透過遠端 Web 存取伺服器連接，請選取 [**允許遠端 Web Access 與網路服務] 應用程式存取**核取方塊。  
+        2.  若要允許使用者使用「遠端 Web 存取」來連線到伺服器，請選取 [允許遠端 Web 存取，以及對 Web 服務應用程式的存取] 核取方塊。  
   
-    3.  在**電腦存取**索引標籤上，選取您想要存取的使用者的網路電腦。  
+    3.  在 [電腦存取] 索引標籤上，選取您想要讓使用者存取的網路電腦。  
   
-##### <a name="to-edit-user-account-properties-in-windows-server-essentials-2012"></a>若要編輯的使用者 account 屬性 Windows Server 程式集 2012 」 中  
+##### <a name="to-edit-user-account-properties-in-windows-server-essentials-2012"></a>在 Windows Server Essentials 2012 中編輯使用者帳戶內容  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者] 。  
   
-3.  在清單中的使用者帳號，選取您要編輯的使用者 account。  
+3.  在使用者帳戶清單中，選取您想要編輯的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**屬性**。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **屬性**。  
   
-5.  在**< 使用者 Account\ > 屬性**，執行下列動作：  
+5.  在  **< 使用者帳戶\>屬性**，執行下列動作：  
   
-    1.  在**一般**索引標籤，選取**使用者都可以檢視網路健康警示**如果帳號需要存取網路健康報告。  
+    1.  如果使用者帳戶需要存取網路健康情況報告，請在 [一般]  索引標籤上，選取 [使用者可以檢視網路健康狀態警示]  。  
   
-    2.  在**的共用資料夾**索引標籤上，視需要設定分享的每個資料夾的資料夾適當權限。  
+    2.  在 [共用資料夾] 索引標籤上，視需要為每個共用資料夾設定適當的資料夾權限。  
   
-    3.  在**隨處存取**索引標籤：  
+    3.  在 [隨處存取] 索引標籤上：  
   
-        1.  若要讓使用者使用 VPN 伺服器連接，請選取 [**允許 Virtual 私人網路 (VPN)**核取方塊。  
+        1.  若要允許使用者使用 VPN 來連線到伺服器，請選取 [允許虛擬私人網路 (VPN)] 核取方塊。  
   
-        2.  若要讓使用者透過遠端 Web 存取伺服器連接，請選取 [**允許遠端 Web Access 與網路服務] 應用程式存取**核取方塊。  
+        2.  若要允許使用者使用「遠端 Web 存取」來連線到伺服器，請選取 [允許遠端 Web 存取，以及對 Web 服務應用程式的存取] 核取方塊。  
   
-    4.  在**電腦存取**索引標籤上，選取您想要存取的使用者的網路電腦。  
+    4.  在 [電腦存取] 索引標籤上，選取您想要讓使用者存取的網路電腦。  
   
-###  <a name="BKMK_Access10"></a>變更帳號遠端存取權限  
- 使用者可以存取資源位於從遠端伺服器上使用 virtual 私人網路 (VPN)、 遠端網路存取或其他網路服務] 應用程式。 根據預設，遠端存取權限的亮起來網路使用者當您設定 Windows Server Essentials 隨處存取使用儀表板。  
+###  <a name="BKMK_Access10"></a> 變更使用者帳戶的遠端存取權限  
+ 使用者可以藉由使用虛擬私人網路 (VPN)、「遠端 Web 存取」或其他 Web 服務應用程式，從遠端位置存取位於伺服器上的資源。 當您使用 [儀表板] 來設定 Windows Server Essentials 中的「隨處存取」時，預設會為網路使用者開啟遠端存取權限。  
   
-##### <a name="to-change-remote-access-permissions-for-a-user-account"></a>若要變更使用者 account 遠端存取權限  
+##### <a name="to-change-remote-access-permissions-for-a-user-account"></a>變更使用者帳戶的遠端存取權限  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者]。  
   
-3.  在清單中的使用者帳號，選取您想要變更使用者 account。  
+3.  在使用者帳戶清單中，選取您想要變更的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**檢視 account 屬性**。 **屬性**頁面上的使用者 account 顯示。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **檢視帳戶內容**。 使用者帳戶的 [內容]  頁面隨即出現。  
   
-5.  在**隨處存取**索引標籤上，執行下列動作：  
+5.  在 [隨處存取] 索引標籤上，執行下列動作：  
   
-    -   選取 [**允許 Virtual 私人網路 (VPN)**核取方塊，允許使用者連伺服器上使用 VPN。  
+    -   選取 [允許虛擬私人網路 (VPN)]  核取方塊，以允許使用者使用 VPN 來連線到伺服器。  
   
-    -   選取 [**允許遠端 Web Access 與網路服務] 應用程式存取**核取方塊，允許使用者透過遠端 Web 存取伺服器連接。  
+    -   選取 [允許遠端 Web 存取，以及對 Web 服務應用程式的存取] 核取方塊，以允許使用者使用「遠端 Web 存取」來連線到伺服器。  
   
-6.  按一下**套用**，然後按**[確定]**。  
+6.  按一下 [套用]，然後按一下 [確定]。  
   
-###  <a name="BKMK_Access11"></a>變更帳號 virtual 私人網路權限  
- 您可以使用 (VPN) virtual 私人網路連接到 Windows Server Essentials 並存取所有您儲存在伺服器的資源。 這是您的電腦與網路帳號，可以用來連接的 VPN 連接到 Windows Server Essentials 伺服器裝載設定使用 client 的尤其是實用。 Windows Server Essentials 裝載伺服器上的所有新建立的使用者帳號必須使用 VPN 第一次登入 client 的電腦。  
+###  <a name="BKMK_Access11"></a> 變更使用者帳戶的虛擬私人網路權限  
+ 您可以使用虛擬私人網路 (VPN) 來連線到 Windows Server Essentials，並存取您所有儲存在伺服器上的資源。 當您有已設定網路帳戶的用戶端電腦且那些帳戶可透過 VPN 連線來連線到託管的 Windows Server Essentials 伺服器時，這會特別有用。 所有在託管的 Windows Server Essentials 伺服器上新建立的使用者帳戶，在第一次登入用戶端電腦時都必須使用 VPN。  
   
-##### <a name="to-change-vpn-permissions-for-network-users"></a>若要變更 VPN 網路使用者的權限  
+##### <a name="to-change-vpn-permissions-for-network-users"></a>變更網路使用者的 VPN 權限  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者] 。  
   
-3.  在清單中的使用者帳號，選取您想要從遠端存取桌面的權限授與的使用者 account。  
+3.  在使用者帳戶清單中，選取您想要授與桌面遠端存取權限的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**屬性**。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **屬性**。  
   
-5.  在**< 使用者 Account\ > 屬性**，按一下 [**隨處存取**索引標籤。  
+5.  在  **< 使用者帳戶\>屬性**，按一下 **隨處存取** 索引標籤。  
   
-6.  在**隨處存取**索引標籤，讓使用者使用 VPN、 連接到伺服器選取**允許 Virtual 私人網路 (VPN)**核取方塊。  
+6.  若要允許使用者使用 VPN 來連線到伺服器，請在 [隨處存取]  索引標籤上，選取 [允許虛擬私人網路 (VPN)]  核取方塊。  
   
-7.  按一下**套用**，然後按**[確定]**。  
+7.  按一下 [套用]，然後按一下 [確定]。  
   
-###  <a name="BKMK_Access12"></a>變更存取帳號內部共用資料夾  
- 您可以管理任何伺服器上的共用資料夾的存取權的工作，利用**資料夾伺服器**索引標籤的儀表板。 根據預設，下列伺服器資料夾會建立當您安裝 Windows Server Essentials:  
+###  <a name="BKMK_Access12"></a> 內部共用資料夾的 「 變更 」 權限，使用者帳戶  
+ 您可以使用 [儀表板] 之 [伺服器資料夾]  索引標籤上的工作，來管理伺服器上任何共用資料夾的存取權。 安裝 Windows Server Essentials 時，預設會建立下列伺服器資料夾：  
   
--   **Client 電腦備份**。  用來儲存 client 電腦建立的備份，Windows Server 備份。 不會共用此伺服器資料夾。  
+-   **用戶端電腦備份**。  用來儲存 Windows Server Backup 所建立的用戶端電腦備份。 這個伺服器資料夾不是共用資料夾。  
   
--   **公司**。  用來儲存和存取您的組織網路使用者的相關文件。  
+-   **公司**。  用來供網路使用者儲存及存取與您組織相關的文件。  
   
--   **檔案歷史備份**。  根據預設，Windows Server Essentials 儲存檔案使用檔案歷史所建立的備份。 不會共用此伺服器資料夾。  
+-   **檔案歷程記錄備份**。  Windows Server Essentials 預設會儲存使用「檔案歷程記錄」建立的檔案備份。 這個伺服器資料夾不是共用資料夾。  
   
--   **資料夾重新導向**。  用來儲存和存取資料夾的資料夾重新導向網路使用者的設定。 不會共用此伺服器資料夾。  
+-   **資料夾重新導向**。  用來供網路使用者儲存及存取為資料夾重新導向設定的資料夾。 這個伺服器資料夾不是共用資料夾。  
   
--   **音樂**。  用來儲存和存取網路使用者的音樂檔案。 當您要共用的媒體建立資料夾。  
+-   **音樂**。  用來供網路使用者儲存及存取音樂檔案。 當您開啟媒體共用時，就會建立這個資料夾。  
   
--   **圖片**。  用來儲存和存取網路使用者的圖片。 當您要共用的媒體建立資料夾。  
+-   **圖片**。  用來供網路使用者儲存及存取圖片。 當您開啟媒體共用時，就會建立這個資料夾。  
   
--   **錄製電視**。  用來儲存和存取錄製的網路使用者的電視節目。 當您要共用的媒體建立資料夾。  
+-   **錄製的節目**。  用來供網路使用者儲存及存取錄製的電視節目。 當您開啟媒體共用時，就會建立這個資料夾。  
   
--   **影片**。  用來儲存和存取網路使用者的影片。 當您要共用的媒體建立資料夾。  
+-   **視訊**。  用來供網路使用者儲存及存取視訊。 當您開啟媒體共用時，就會建立這個資料夾。  
   
--   **使用者**。  用來儲存和存取網路使用者的檔案。 使用者特定資料夾自動也在**使用者**伺服器的每個網路帳號，您所建立的資料夾。  
+-   **使用者**。  用來供網路使用者儲存及存取檔案。 在 [使用者]  伺服器資料夾中，會自動為您建立的每個網路使用者帳戶產生一個使用者特定資料夾。  
   
-##### <a name="to-change-access-to-a-shared-folder-for-a-user-account"></a>若要變更帳號使用者的共用資料夾的存取  
+##### <a name="to-change-access-to-a-shared-folder-for-a-user-account"></a>變更使用者帳戶的共用資料夾存取權  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  按一下**存放裝置**，然後按一下 [**伺服器資料夾**。  
+2.  按一下 [存放]，然後按一下 [伺服器資料夾]。  
   
-3.  瀏覽並選取 [伺服器] 資料夾，您想要修改權限。  
+3.  瀏覽並選取您想要修改權限的伺服器資料夾。  
   
-4.  在 [工作] 窗格中，按一下**檢視資料夾屬性**。  
+4.  在工作窗格中，按一下 [檢視資料夾內容] 。  
   
-5.  在**< FolderName\ > 屬性**，按一下 [**共用**，並選取適當的使用者存取層級列出的帳號，然後按一下 [**套用]**。  
+5.  在  **< FolderName\>屬性**，按一下 **共用**，並選取適當的使用者存取層級，針對列出的使用者帳戶，然後按一下**套用**。  
   
     > [!NOTE]
-    >  您無法修改共用的權限的**檔案歷史備份**，**資料夾重新導向**，並**使用者**伺服器資料夾。 因此，不包含下列伺服器資料夾的資料夾屬性**共用**索引標籤。  
+    >  您無法修改 [檔案歷程記錄備份] 、[資料夾重新導向] 及 [使用者]  伺服器資料夾的共用權限。 因此，這些伺服器資料夾的資料夾內容也就沒有包含 [共用] 索引標籤。  
   
-###  <a name="BKMK_Access13"></a>讓使用者帳號，建立到其電腦的遠端桌面工作階段  
-  本節適用於已安裝 Windows Server Essentials 體驗角色執行 Windows Server 2012 標準 R2 或 Windows Server 2012 R2 Datacenter server 或執行的是 Windows Server Essentials 或 Windows Server Essentials，伺服器。  
+###  <a name="BKMK_Access13"></a> 允許使用者帳戶，以建立其電腦的遠端桌面工作階段  
+  本節適用於執行 Windows Server Essentials 或 Windows Server Essentials 的伺服器或執行已安裝的 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 的伺服器。  
   
- 網路系統管理員可以存取他們網路的電腦從遠端位置允許的網路使用者給予權限。  
+ 網路系統管理員可以將權限授與網路使用者，以允許他們從遠端位置存取他們的網路電腦。  
   
-##### <a name="to-enable-users-to-access-their-network-computers-from-a-remote-location"></a>若要讓使用者可以存取他們網路的電腦從遠端位置  
+##### <a name="to-enable-users-to-access-their-network-computers-from-a-remote-location"></a>讓使用者從遠端位置存取他們的網路電腦  
   
-1.  打開 Windows Server Essentials 儀表板。  
+1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [**使用者**。  
+2.  在瀏覽列上，按一下 [使用者] 。  
   
-3.  在清單中的使用者帳號，選取您想要從遠端存取桌面權限授與帳號。  
+3.  在使用者帳戶清單中，選取您想要授與桌面遠端存取權限的使用者帳戶。  
   
-4.  在**< 使用者 Account\ > 工作**窗格中，按**屬性**。  
+4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **屬性**。  
   
-5.  在**< 使用者 Account\ > 屬性**，按一下 [**電腦存取**索引標籤。  
+5.  在  **< 使用者帳戶\>屬性**，按一下 **電腦存取** 索引標籤。  
   
-6.  選取您想要這個帳號，將無法存取遠端電腦上，，然後按一下 [電腦**[確定]**。  
+6.  選取您要讓這個使用者帳戶能夠遠端存取的電腦，然後按一下 [確定] 。  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
--   [Online 帳號管理使用者](Manage-Online-Accounts-for-Users.md)  
+-   [管理使用者線上帳戶](Manage-Online-Accounts-for-Users.md)  
   
--   [連接](../use/Get-Connected-in-Windows-Server-Essentials.md)  
+-   [連繫接軌](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   

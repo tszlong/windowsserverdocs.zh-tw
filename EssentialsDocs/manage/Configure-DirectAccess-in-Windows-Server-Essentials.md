@@ -1,6 +1,6 @@
 ---
-title: "在 Windows Server Essentials 設定 DirectAccess"
-description: "告訴您如何使用 Windows Server Essentials"
+title: 在 Windows Server Essentials 中設定 DirectAccess
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,278 +13,279 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: cc336dcd2a5418aa79254108c941a02147112e8f
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860679"
 ---
-# <a name="configure-directaccess-in-windows-server-essentials"></a>在 Windows Server Essentials 設定 DirectAccess
+# <a name="configure-directaccess-in-windows-server-essentials"></a>在 Windows Server Essentials 中設定 DirectAccess
 
->適用於：Windows Server 2016 Essentials 程式集 Windows Server 2012 R2、Windows Server 2012 程式集
+>適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
-本主題提供逐步指示設定 Windows Server Essentials DirectAccess，可讓您的行動裝置版工作人員順暢連接到您的組織的網路從網際網路配備遠端位置而連接私人網路 virtual (VPN)。 DirectAccess 可以提供行動裝置版的背景工作相同連接的體驗中及 office 外從他們 Windows 8.1、 Windows 8 和 Windows 7 的電腦。  
+本主題提供讓您順暢地連線到您的組織的網路從任何具備網際網路的遠端位置不須建立的行動工作人員的 Windows Server Essentials 中設定 DirectAccess 的逐步指示虛擬私人網路 (VPN) 連線。 DirectAccess 可以讓行動工作者無論在辦公室內外的相同連線體驗從他們的 Windows 8.1，Windows 8 和 Windows 7 電腦。  
   
- 在 Windows Server Essentials，如果網域中包含一部以上的 Windows Server Essentials 伺服器，DirectAccess 必須設定的網域控制站。  
+ 在 Windows Server Essentials 中，如果網域包含一部以上的 Windows Server Essentials 伺服器，DirectAccess 必須設定網域控制站上。  
   
 > [!NOTE]
->  本主題提供適用於設定 DirectAccess，當您的 Windows Server Essentials 伺服器的網域控制站的指示。 如果 Windows Server Essentials 伺服器網域成員，請遵循指示來設定的網域成員 DirectAccess[新增的 DirectAccess 現有遠端存取 (VPN) 部署到](https://technet.microsoft.com/library/jj574220.aspx)改為。  
+>  本主題提供您的 Windows Server Essentials 伺服器時的網域控制站設定 DirectAccess 的指示。 如果 Windows Server Essentials 的伺服器是網域成員，請依照下列指示中的網域成員上設定 DirectAccess[將 DirectAccess 加入現有的遠端存取 (VPN) 部署](https://technet.microsoft.com/library/jj574220.aspx)改。  
   
 ## <a name="process-overview"></a>程序概觀  
- 若要在 Windows Server Essentials 設定 DirectAccess，請完成下列步驟。  
+ 若要在 Windows Server Essentials 中設定 DirectAccess，請完成下列步驟。  
   
 > [!IMPORTANT]
->  本指南使用的程序在 Windows Server Essentials 設定 DirectAccess 之前，您必須讓 VPN 伺服器上。 適用於的指示，請查看[管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。  
+>  本指南中使用的程序在 Windows Server Essentials 中設定 DirectAccess 之前，您必須在伺服器上啟用 VPN。 如需相關指示，請參閱 <<c0> [ 管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。  
   
--   [步驟 1： 新增到您 server 的遠端存取管理工具](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddRAM)  
+-   [步驟 1：將遠端存取管理工具新增至您的伺服器](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddRAM)  
   
--   [步驟 2： 靜態 IP 位址變更網路介面卡伺服器的位址](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddStaticIP)  
+-   [步驟 2：將伺服器的網路介面卡位址變更為靜態 IP 位址](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddStaticIP)  
   
--   [步驟 3： 準備網路位置伺服器的憑證和 DNS 記錄](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)  
+-   [步驟 3：準備網路位置伺服器憑證和 DNS 記錄](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)  
   
-    -   [步驟 3a： 完整存取權限授 Authenticated Users 與 Web 伺服器的憑證範本](#BKMK_GrantFullPermissions)  
+    -   [步驟 3a:授與完整的權限給 Authenticated Users Web 伺服器 s 憑證範本](#BKMK_GrantFullPermissions)  
   
-    -   [步驟 3b： 註冊一般的名稱解析外部網路，網路位置伺服器的憑證](#BKMK_EnrollaCertificate)  
+    -   [步驟 3b：註冊網路位置伺服器，無法從外部網路解析的一般名稱的憑證](#BKMK_EnrollaCertificate)  
   
-    -   [步驟 3 c： 新增新的主機上的 DNS 伺服器，並將它對應的 Windows Server Essentials 伺服器地址](#BKMK_MapNewHosttoServerAddress)  
+    -   [步驟 3c：加入新的主機上的 DNS 伺服器，並將它對應到 Windows Server Essentials 伺服器位址](#BKMK_MapNewHosttoServerAddress)  
   
--   [步驟 4： 建立 DirectAccess client 電腦安全性群組](#BKMK_AddSecurityGroup)  
+-   [步驟 4：建立 DirectAccess 用戶端電腦的安全性群組](#BKMK_AddSecurityGroup)  
   
--   [步驟 5： 讓和設定 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableConfigureDA)  
+-   [步驟 5：啟用和設定 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableConfigureDA)  
   
-    -   [步驟 5a: DirectAccess 可以使用遠端存取管理主控台](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
+    -   [步驟 5a:使用 「 遠端存取管理主控台啟用 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
   
-    -   [步驟 5b： 移除無效 IPv6Prefix RRAS GPO (僅限 Windows Server Essentials)](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
+    -   [步驟 5b:移除 RRAS GPO (只有 Windows Server Essentials) 中的 無效的 IPv6Prefix](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
   
-    -   [步驟 5 c： 讓 client 電腦執行的 Windows 7 企業版使用 DirectAccess](#BKMK_Step4cWindows7Setup)  
+    -   [步驟 5c:讓執行 Windows 7 企業版使用 DirectAccess 的用戶端電腦](#BKMK_Step4cWindows7Setup)  
   
-    -   [步驟 5 d︰ 將網路位置伺服器設定](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
+    -   [步驟 5d:設定網路位置伺服器](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
   
-    -   [步驟 5e： 新增略過 CA 憑證，當您建立 IPsec 頻道登錄按鍵](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
+    -   [步驟 5e:新增登錄機碼，在建立 IPsec 通道時略過 CA 憑證](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
   
--   [步驟 6： 設定 DirectAccess 伺服器的名稱解析原則的資料表設定](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NRPT)  
+-   [步驟 6：設定 DirectAccess 伺服器的名稱解析原則表格設定](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NRPT)  
   
--   [步驟 7： 設定 DirectAccess 伺服器 Gpo 的 TCP 與 UDP 免](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_TCPUDP)  
+-   [步驟 7：設定 DirectAccess 伺服器 Gpo 的 TCP 和 UDP 防火牆規則](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_TCPUDP)  
   
--   [若要聆聽 IP-HTTPS 介面執行 「 步驟 8: DNS64 變更設定](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS64)  
+-   [步驟 8：為接聽 IP-HTTPS 介面將 DNS64 設定變更](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS64)  
   
--   [步驟 9： 保留 WinNat 服務連接埠](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_ExemptPort)  
+-   [步驟 9:保留 WinNat 服務的連接埠](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_ExemptPort)  
   
--   [步驟 10： 重新開機 WinNat 服務](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_WinNAT)  
+-   [步驟 10:重新啟動 WinNat 服務](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_WinNAT)  
   
 > [!NOTE]
->  [附錄： 使用 Windows PowerShell 來 DirectAccess 設定](#BKMK_AppendixBPowerShellScript)提供執行 DirectAccess 設定，您可以使用 Windows PowerShell 指令碼。  
+>  [附錄：使用 Windows PowerShell 設定 DirectAccess](#BKMK_AppendixBPowerShellScript)提供可供您執行 DirectAccess 設定的 Windows PowerShell 指令碼。  
   
-##  <a name="BKMK_AddRAM"></a>步驟 1： 新增到您 server 的遠端存取管理工具  
+##  <a name="BKMK_AddRAM"></a> 步驟 1:將遠端存取管理工具新增到您的伺服器  
   
-#### <a name="to-add-remote-access-management-tools"></a>若要新增遠端存取管理工具  
+#### <a name="to-add-remote-access-management-tools"></a>新增遠端存取管理工具  
   
-1.  在伺服器上，在左下角的 [開始] 頁面上，按一下 [**伺服器管理員**圖示。  
+1.  在 伺服器 [開始] 頁面的左下角，按一下 [伺服器管理員] 圖示。  
   
-     在 Windows Server Essentials，您將需要搜尋伺服器管理員打開它。 在 [開始] 頁面上，輸入**伺服器管理員**，然後按一下 [**伺服器管理員**中的搜尋結果。 若要將伺服器管理員釘選到 [開始] 畫面、 上伺服器管理員中搜尋結果中，按一下滑鼠右鍵，然後按一下**釘選到開始畫面]**。  
+     在 Windows Server Essentials 中，您必須搜尋伺服器管理員加以開啟。 在 [開始] 頁面中，輸入 **Server Manager**，然後在搜尋結果中按一下 [伺服器管理員]  。 如果要將伺服器管理員固定至 開始 頁面，在搜尋結果中以滑鼠右鍵按一下 伺服器管理員，然後按一下 釘選到 開始 畫面 。  
   
-2.  如果**使用者 Account 控制項**會顯示警告訊息，按**是**。  
+2.  如果顯示 [使用者帳戶控制]  警告訊息，按一下 [是] 。  
   
-3.  在伺服器管理員儀表板中，按一下**管理**，然後按一下 [**新增角色與功能**。  
+3.  在 [伺服器管理員] 儀表板中按一下 [管理]，然後按一下 [新增角色及功能]。  
   
-4.  新增角色與功能精靈中，執行下列動作：  
+4.  在 [新增角色及功能精靈] 中，執行下列動作：  
   
-    1.  在**安裝類型**頁面上，按**以角色為基礎，或為基礎的功能的安裝**。  
+    1.  在 [安裝類型]  頁面上，按一下 [角色型或功能型安裝] 。  
   
-    2.  在**伺服器選取項目頁面**(或**選取目的伺服器**Windows Server Essentials] 頁面)，按一下 [**伺服器集區中選取 [伺服器**。  
+    2.  在上**伺服器選取項目頁面**(或**選取目的地伺服器**Windows Server Essentials 中的頁面)，按一下 **從伺服器集區選取伺服器**。  
   
-    3.  在**功能**頁面中，展開**遠端伺服器管理工具 （已安裝）**，展開 [**遠端存取管理工具 （已安裝）**，展開 [**角色管理工具 （已安裝）**，展開 [**遠端存取管理工具**，，然後選取 [**遠端存取 GUI 及命令列工具**。  
+    3.  在 [功能]  頁面上，展開 [遠端伺服器管理工具 (已安裝)] ，展開 [遠端存取管理工具 (已安裝)] ，展開 [角色管理工具 (已安裝)] ，展開 [遠端存取管理工具] ，然後選取 [遠端存取 GUI 和命令列工具] 。  
   
-    4.  請依照下列指示完成精靈。  
+    4.  遵循指示以完成精靈。  
   
-##  <a name="BKMK_AddStaticIP"></a>步驟 2： 靜態 IP 位址變更網路介面卡伺服器的位址  
- DirectAccess 必須靜態 IP 位址的介面卡。 您需要變更您的伺服器上的區域網路介面卡的 IP 位址。  
+##  <a name="BKMK_AddStaticIP"></a> 步驟 2:將伺服器的網路介面卡位址變更為靜態 IP 位址  
+ DirectAccess 需要使用靜態 IP 位址的介面卡。 您需要變更伺服器上區域網路介面卡的 IP 位址。  
   
-#### <a name="to-add-a-static-ip-address"></a>若要新增的靜態 IP 位址  
+#### <a name="to-add-a-static-ip-address"></a>新增靜態 IP 位址  
   
-1.  在 [開始] 頁面上，請打開**[控制台]**。  
+1.  在 [開始] 頁面中，開啟 [控制台]。  
   
-2.  按一下**網路和網際網路**，然後按**網路狀態和工作檢視**。  
+2.  按一下 [網路和網際網路] ，然後按一下 [檢視網路狀態及工作] 。  
   
-3.  在工作窗格中的**網路和共用中心]**，按一下 [**變更介面卡設定**。  
+3.  在 [網路和共用中心] 的工作窗格中，按一下 [變更介面卡設定]。  
   
-4.  本機網路介面卡，以滑鼠右鍵按一下，然後按一下**屬性**。  
+4.  在區域網路介面卡上按一下滑鼠右鍵，然後按一下 [內容]。  
   
-5.  在**網路**索引標籤上，按一下 [**網際網路通訊協定第 4 版本 (TCP 日 IPv4)**，然後按一下 [**屬性**。  
+5.  在 [網路功能]  索引標籤中，按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)] ，然後按一下 [內容] 。  
   
-6.  在**一般**索引標籤上，按**使用下列的 IP 位址**，然後輸入您想要使用的 IP 位址。  
+6.  在 [一般]  索引標籤上，按一下 [使用下列 IP 位址] ，然後輸入您要使用的 IP 位址。  
   
-     子網路遮罩的預設值出現自動在**子網路遮罩**方塊。 接受預設值，或輸入您想要使用的子網路遮罩值。  
+     [子網路遮罩] 方塊中會自動顯示子網路遮罩的預設值。 接受預設值，或輸入您要使用的子網路遮罩。  
   
-7.  在**預設閘道**方塊中，輸入您的預設閘道 IP 位址。  
+7.  在 [預設閘道] 方塊中，輸入預設閘道的 IP 位址。  
   
-8.  在**慣用 DNS 伺服器]**方塊中，輸入您的 DNS 伺服器的 IP 位址。  
+8.  在 [慣用 DNS 伺服器] 方塊中，輸入 DNS 伺服器的 IP 位址。  
   
     > [!NOTE]
-    >  使用的 IP 位址指派給您的網路介面卡 DHCP (例如，192.168.X.X)，而不是網路回送 (例如，127.0.0.1)。 若要指定 IP 位址，請執行**ipconfig**在 [命令提示字元。  
+    >  使用 DHCP 指派給您的網路介面卡的 IP 位址 (例如，192.168.X.X)，不要使用回送網路 (例如，127.0.0.1)。 如果要查詢指派的 IP 位址，請在命令提示字元執行 **ipconfig** 。  
   
-9. 在**其他 DNS 伺服器**方塊中，輸入您替代的 DNS 伺服器的 IP 位址，如果有任何。  
+9. 在 [其他 DNS 伺服器] 方塊中，輸入其他 DNS 伺服器的 IP 位址 (如果有的話)。  
   
-10. 按一下**[確定]**，然後按**關閉**。  
+10. 按一下 [確定]，然後按一下 [關閉]。  
   
 > [!IMPORTANT]
->  請確定您設定路由器向前連接埠 80 和 443 伺服器的新靜態 IP 位址。  
+>  務必設定路由器將連接埠 80 和 443 轉送到伺服器的新靜態 IP 位址。  
   
-##  <a name="BKMK_DNS"></a>步驟 3： 準備網路位置伺服器的憑證和 DNS 記錄  
- 若要準備網路位置伺服器的憑證和 DNS 記錄，執行下列工作：  
+##  <a name="BKMK_DNS"></a> 步驟 3:準備網路位置伺服器的憑證和 DNS 記錄  
+ 如果要準備網路位置伺服器的憑證和 DNS 記錄，請執行下列工作：  
   
--   [步驟 3a： 完整存取權限授 Authenticated Users 與 Web 伺服器的憑證範本](#BKMK_GrantFullPermissions)  
+-   [步驟 3a:授與完整的權限給 Authenticated Users Web 伺服器 s 憑證範本](#BKMK_GrantFullPermissions)  
   
--   [步驟 3b： 註冊一般的名稱解析外部網路，網路位置伺服器的憑證](#BKMK_EnrollaCertificate)  
+-   [步驟 3b：註冊網路位置伺服器，無法從外部網路解析的一般名稱的憑證](#BKMK_EnrollaCertificate)  
   
--   [步驟 3 c： 新增新的主機上的 DNS 伺服器，並將它對應至的 Windows Server Essentials 伺服器的位址。](#BKMK_MapNewHosttoServerAddress)  
+-   [步驟 3c：加入新的主機上的 DNS 伺服器，並將它對應到 Windows Server Essentials 伺服器位址。](#BKMK_MapNewHosttoServerAddress)  
   
-###  <a name="BKMK_GrantFullPermissions"></a>步驟 3a： 完整存取權限授 Authenticated Users 與 Web 伺服器的憑證範本  
- 驗證使用者的憑證授權單位網頁伺服器的憑證範本完整存取權限授與是您第一項工作。  
+###  <a name="BKMK_GrantFullPermissions"></a> 步驟 3a:授與完整的權限給 Authenticated Users Web 伺服器 s 憑證範本  
+ 您第一項工作是授與來驗證使用者的憑證授權單位的 Web 伺服器的憑證範本完整權限。  
   
-####  <a name="BKMK_ToGrantFullPermissions"></a>Web 伺服器的驗證使用者完整權限授與 s 憑證範本  
+####  <a name="BKMK_ToGrantFullPermissions"></a> 若要授與完整的權限給 Authenticated Users Web 伺服器 s 憑證範本  
   
-1.  在**[開始]**頁面上，開放**憑證授權單位**。  
+1.  在 [開始]  頁面上，開啟 [憑證授權單位] 。  
   
-2.  主控台中在**憑證授權單位 （本機）**，展開 [ **< servername\ >-CA**，以滑鼠右鍵按一下**憑證範本**，，然後按一下**管理**。  
+2.  在主控台樹狀目錄中下,**憑證授權單位 （本機）**，展開 **< 伺服器名稱\>-CA**，以滑鼠右鍵按一下**憑證範本**，然後按一下**管理**。  
   
-3.  在**憑證授權單位 （本機）**，以滑鼠右鍵按一下**網頁伺服器**，然後按一下 [**屬性**。  
+3.  在 [憑證授權單位 (本機)] 中的 [網頁伺服器] 上按一下滑鼠右鍵，然後按一下 [內容] 。  
   
-4.  網頁伺服器] 功能表中上**安全性**索引標籤上，按一下 [ **Authenticated Users**、 選取**完全控制**，，然後按一下**[確定]**。  
+4.  在 [網頁伺服器] 內容的 [安全性]  索引標籤上，按一下 [已驗證使用者] ，選取 [完全控制] ，然後按一下 [確定] 。  
   
-5.  重新開機**Active Directory 憑證服務**。 在 [控制台] 中，請打開**檢視 [本機服務**。 在清單中的服務，以滑鼠右鍵按一下**Active Directory 憑證服務**，然後按**重新開機**。  
+5.  重新啟動 [Active Directory 憑證服務]。 在 [控制台] 中，開啟 [檢視本機服務]。 在服務清單中，以滑鼠右鍵按一下 [Active Directory 憑證服務] ，然後按一下 [重新啟動] 。  
   
-###  <a name="BKMK_EnrollaCertificate"></a>步驟 3b： 註冊一般的名稱解析外部網路，網路位置伺服器的憑證  
- 接下來，註冊一般的名稱解析外部網路，網路位置伺服器的憑證。  
+###  <a name="BKMK_EnrollaCertificate"></a> 步驟 3b:以無法從外部網路解析的一般名稱註冊網路位置伺服器的憑證  
+ 接著，以無法從外部網路解析的一般名稱註冊網路位置伺服器的憑證。  
   
-####  <a name="BKMK_ToEnrollaCertificate"></a>若要註冊網路位置伺服器的憑證  
+####  <a name="BKMK_ToEnrollaCertificate"></a> 若要註冊網路位置伺服器的憑證  
   
-1.  在**[開始]**頁面上，開放**mmc** (Microsoft Management Console)。  
+1.  在 [開始] 頁面上，開啟 [mmc] (Microsoft 管理主控台)。  
   
-2.  如果**使用者 Account 控制項**會顯示警告訊息，按**是**。  
+2.  如果出現 [使用者帳戶控制]  警告訊息，按一下 [是] 。  
   
-     Microsoft Management Console (MMC) 開啟。  
+     此時會開啟 Microsoft Management Console (MMC)。  
   
-3.  在**檔案**功能表上，按**新增/移除嵌入式管理單元**。  
+3.  在 [檔案] 功能表中，按一下 [新增/移除嵌入式管理單元]。  
   
-4.  在**新增或遠端嵌入式管理單元]**方塊中，按一下 [**憑證**，然後按一下 [**新增**。  
+4.  在 [新增或移除嵌入式管理單元]  方塊中，按一下 [憑證] ，然後按一下 [新增] 。  
   
-5.  在**憑證嵌入式管理單元**頁面上，按一下 [**電腦 account**，然後按一下 [**下一步**。  
+5.  在 [憑證嵌入式管理單元] 頁面上，按一下 [電腦帳戶]，然後按 [下一步]。  
   
-6.  在**選擇電腦**頁面上，按一下 [**本機電腦**，按一下 [**完成**，，然後按一下**[確定]**。  
+6.  在 [選取電腦]  頁面上，依序按一下 [本機電腦] 、[完成] ，然後按一下 [確定] 。  
   
-7.  在主控台中，展開**憑證 （本機電腦）**，展開**個人**，以滑鼠右鍵按一下**憑證**，然後在**所有工作**，按一下**要求新的憑證**。  
+7.  在主控台樹狀目錄中，展開 [憑證 (本機電腦)] ，展開 [個人] ，以滑鼠右鍵按一下 [憑證] ，然後在 [所有工作] 中按一下 [要求新憑證] 。  
   
-8.  憑證註冊精靈出現時，按一下**下一步**。  
+8.  當 [憑證註冊精靈] 出現時，按一下 [下一步] 。  
   
-9. 在**選擇憑證註冊原則**頁面上，按一下 [**下**。  
+9. 在 [選取憑證註冊原則] 頁面上，按一下 [下一步]。  
   
-10. 在**要求憑證**頁面上，選取**網頁伺服器**核取方塊，，然後按一下 [**所需的詳細資訊註冊這個憑證**。  
+10. 在 [要求憑證] 頁面上，選取 [網頁伺服器] 核取方塊，然後按一下 [需要更多資訊才能註冊此憑證]。  
   
-11. 在**憑證屬性**方塊中，輸入下列設定為**主體名稱**:  
+11. 在 [憑證內容] 方塊中，為 [主體名稱]  輸入下列設定：  
   
-    1.  適用於**輸入**、**一般名稱**。  
+    1.  對於 [類型]，請選取 [一般名稱]。  
   
-    2.  適用於**值**，輸入名稱的網路位置伺服器 (例如，DirectAccess-NLS.contoso.local)，然後按一下 [**新增]**。  
+    2.  在 [值] 輸入網路位置伺服器的名稱 (例如，DirectAccess-NLS.contoso.local)，然後按一下 [新增]。  
   
-    3.  按一下**[確定]**，然後按**Enroll**。  
+    3.  按一下 [確定]，然後按一下 [註冊]。  
   
-12. 當憑證註冊完成時，按**完成**。  
+12. 當憑證註冊完成時，按一下 [完成] 。  
   
-###  <a name="BKMK_MapNewHosttoServerAddress"></a>步驟 3 c： 新增新的主機上的 DNS 伺服器，並將它對應的 Windows Server Essentials 伺服器地址  
- 若要完成 DNS 設定，新增新的主機上的 DNS 伺服器，並將它對應至的 Windows Server Essentials 伺服器的位址。  
+###  <a name="BKMK_MapNewHosttoServerAddress"></a> 步驟 3c:在 DNS 伺服器新增主機，並將它對應到 Windows Server Essentials 伺服器位址  
+ 若要完成 DNS 設定，DNS 伺服器上加入新的主機，並將它對應到 Windows Server Essentials 伺服器位址。  
   
-####  <a name="BKMK_ToMapNewHosttoServerAddress"></a>若要對應主機新的 Windows Server Essentials 伺服器地址  
+####  <a name="BKMK_ToMapNewHosttoServerAddress"></a> 新主機對應到 Windows Server Essentials 伺服器位址  
   
-1.  在 [開始] 頁面上，開放 DNS 管理員。 若要打開 DNS 管理員，搜尋**dnsmgmt.msc**，然後按一下 [ **dnsmgmt.msc**在結果中。  
+1.  在 [開始] 頁面中，開啟 [DNS 管理員]。 如果要開啟 [DNS 管理員]，請搜尋 **dnsmgmt.msc**，然後在結果中按一下 [dnsmgmt.msc]  。  
   
-2.  DNS Manager 主控台樹上，依序展開本機伺服器、**正向對應區域**，以滑鼠右鍵按一下伺服器的網域尾碼的區域，然後按一下**新主機 （或 AAAA）**。  
+2.  在 DNS 管理員主控台樹狀目錄中，展開 本機伺服器中，展開**正向對應區域**，以滑鼠右鍵按一下含有伺服器網域尾碼的區域，然後按一下**新增主機 （A 或 AAAA）**。  
   
-3.  輸入名稱與 (例如，NLS.contoso.local DirectAccess) 伺服器的 IP 位址，以及其對應伺服器位址 (例如，192.168.x.x)。  
+3.  輸入伺服器的名稱和 IP 位址 (例如，DirectAccess-NLS.contoso.local) 以及對應的伺服器位址 (例如，192.168.x.x)。  
   
-4.  按一下**新增主機**，按一下 [ **[確定]**，然後按一下 [**完成**。  
+4.  依序按一下 [新增主機]、[確定]，然後按一下 [完成]。  
   
-##  <a name="BKMK_AddSecurityGroup"></a>步驟 4： 建立 DirectAccess client 電腦安全性群組  
- 接下來，建立使用 DirectAccess client 電腦安全性群組，然後將電腦帳號新增到群組。  
+##  <a name="BKMK_AddSecurityGroup"></a> 步驟 4:為 DirectAccess 用戶端電腦建立安全性群組  
+ 接下來，請建立要用於 DirectAccess 用戶端電腦的安全性群組，然後將電腦帳戶新增至該群組。  
   
-#### <a name="to-add-a-security-group-for-client-computers-that-use-directaccess"></a>若要新增用 DirectAccess client 電腦安全性群組  
+#### <a name="to-add-a-security-group-for-client-computers-that-use-directaccess"></a>為使用 DirectAccess 的用戶端電腦新增安全性群組  
   
-1.  在伺服器管理員儀表板中，按一下**工具**，然後按一下 [ **Active Directory 使用者和電腦**。  
+1.  在 [伺服器管理員儀表板] 中，按一下 [工具]，然後按一下 [Active Directory 使用者和電腦]。  
   
     > [!NOTE]
-    >  如果您看不到**Active Directory 使用者和電腦**在**工具**功能表，您需要安裝的功能。 若要安裝 Active Directory 使用者和群組，系統管理員身分執行下列 Windows PowerShell cmdlet: `Install-WindowsFeature RSAT-ADDS-Tools`。 如需詳細資訊，請查看[安裝或移除遠端伺服器管理工具套件](https://technet.microsoft.com/library/cc730825.aspx)。  
+    >  如果在 [工具] 功能表上看不到 [Active Directory 使用者和電腦]，則需要安裝此功能。 若要安裝 Active Directory 使用者和群組，請以系統管理員身分執行下列 Windows PowerShell Cmdlet：`Install-WindowsFeature RSAT-ADDS-Tools`。 如需詳細資訊，請參閱 [安裝或移除遠端伺服器管理工具套件](https://technet.microsoft.com/library/cc730825.aspx)。  
   
-2.  主控台中，展開伺服器、 以滑鼠右鍵按一下**使用者**，按一下 [**新**，然後按一下 [**群組**。  
+2.  在主控台樹狀目錄中，展開伺服器，以滑鼠右鍵按一下 [使用者] ，按一下 [新增] ，然後按一下 [群組] 。  
   
-3.  輸入群組的名稱、 群組範圍，以及群組類型 （建立安全性群組），然後按一下**[確定]**。  
+3.  輸入群組名稱、範圍群組和群組類型 (建立安全性群組)，然後按一下 [確定]。  
   
- 新的安全性群組新增至**使用者**資料夾。  
+ 新的安全性群組就會新增到 [使用者] 資料夾。  
   
-#### <a name="to-add-computer-accounts-to-the-security-group"></a>若要將電腦新增帳號安全性群組  
+#### <a name="to-add-computer-accounts-to-the-security-group"></a>將電腦帳戶新增至安全性群組  
   
-1.  在伺服器管理員儀表板中，按一下**工具**，然後按一下 [ **Active Directory 使用者和電腦**。  
+1.  在 [伺服器管理員儀表板] 中，按一下 [工具]，然後按一下 [Active Directory 使用者和電腦]。  
   
-2.  主控台中展開 [伺服器]，然後按一下**使用者**。  
+2.  在主控台樹狀目錄中，展開伺服器，然後按一下 [使用者]。  
   
-3.  在帳號及伺服器上的安全性群組的清單中，以滑鼠右鍵按一下您建立的 DirectAccess，安全性群組，然後按一下**屬性**。  
+3.  在伺服器上的使用者帳戶和安全性群組清單中，以滑鼠右鍵按一下您為 DirectAccess 建立的安全性群組，然後按一下 [內容]。  
   
-4.  在**成員**索引標籤上，按**新增]**。  
+4.  在 [成員]  索引標籤上，按一下 [新增] 。  
   
-5.  在對話方塊中，輸入您想要加入該群組，並名稱以 （;） 分號來分隔電腦帳號的名稱。 然後按一下**檢查名稱]**。  
+5.  在對話方塊中，輸入您想要新增到群組的電腦帳戶名稱，並以分號 (;) 分隔名稱。 然後按一下 [檢查名稱]。  
   
-6.  電腦帳號驗證之後，請按一下**[確定]**。 然後按一下**[確定]**再試一次。  
+6.  驗證電腦帳戶後，按一下 [確定]。 然後再按一下 [確定]。  
   
 > [!NOTE]
->  您也可以使用**的成員**索引標籤中新增 account 安全性群組的電腦 account 屬性。  
+>  您也可以使用電腦帳戶內容中的 [隸屬於]  索引標籤，將帳戶新增到安全性群組。  
   
-##  <a name="BKMK_EnableConfigureDA"></a>步驟 5： 讓和設定 DirectAccess  
- 讓和 Windows Server Essentials 中設定 DirectAccess，您必須完成以下步驟：  
+##  <a name="BKMK_EnableConfigureDA"></a> 步驟 5:啟用和設定 DirectAccess  
+ 若要啟用在 Windows Server Essentials 中設定 DirectAccess，您必須完成下列步驟：  
   
--   [步驟 5a: DirectAccess 可以使用遠端存取管理主控台](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
+-   [步驟 5a:使用 「 遠端存取管理主控台啟用 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
   
--   [步驟 5b： 移除無效 IPv6Prefix RRAS GPO (僅限 Windows Server Essentials)](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
+-   [步驟 5b:移除 RRAS GPO (只有 Windows Server Essentials) 中的 無效的 IPv6Prefix](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
   
--   [步驟 5 c： 讓 client 電腦執行的 Windows 7 企業版使用 DirectAccess](#BKMK_Step4cWindows7Setup)  
+-   [步驟 5c:讓執行 Windows 7 企業版使用 DirectAccess 的用戶端電腦](#BKMK_Step4cWindows7Setup)  
   
--   [步驟 5 d︰ 將網路位置伺服器設定](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
+-   [步驟 5d:設定網路位置伺服器](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
   
--   [步驟 5e： 新增略過 CA 憑證，當您建立 IPsec 頻道登錄按鍵](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
+-   [步驟 5e:新增登錄機碼，在建立 IPsec 通道時略過 CA 憑證](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
   
-###  <a name="BKMK_EnableDA"></a>步驟 5a: DirectAccess 可以使用遠端存取管理主控台  
- 本章節提供支援在 Windows Server Essentials DirectAccess 逐步指示。 如果您有 VPN 伺服器上您尚未設定，您應該此程序您在開始之前，做。 適用於的指示，請查看[管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。  
+###  <a name="BKMK_EnableDA"></a> 步驟 5a:使用遠端存取管理主控台啟用 DirectAccess  
+ 本節提供逐步指示來啟用 Windows Server Essentials 中的 DirectAccess。 如果您尚未在伺服器上設定 VPN，您應在此程序開始前先行設定。 如需相關指示，請參閱 <<c0> [ 管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。  
   
-##### <a name="to-enable-directaccess-by-using-the-remote-access-management-console"></a>若要讓 DirectAccess 使用遠端存取管理主控台  
+##### <a name="to-enable-directaccess-by-using-the-remote-access-management-console"></a>使用遠端存取管理主控台啟用 DirectAccess  
   
-1.  在 [開始] 頁面上，請打開**遠端存取管理**。  
+1.  在 [開始] 頁面中，開啟 [遠端存取管理]。  
   
-2.  在讓 DirectAccess 精靈中，執行下列動作：  
+2.  在 [啟用 DirectAccess 精靈] 中，執行下列動作：  
   
-    1.  檢視**DirectAccess 必要條件**，按一下 [**下**。  
+    1.  檢閱 [DirectAccess 先決條件]，按一下 [下一步]。  
   
-    2.  在**選擇群組**索引標籤，新增您先前建立的 DirectAccess 戶端安全性群組。 (如果您無法建立安全性群組，請查看[執行 「 步驟 4： 建立電腦安全性群組 DirectAccess client 的](#BKMK_AddSecurityGroup)的指示操作。)  
+    2.  在 [選取群組]  索引標籤上，新增您稍早為 DirectAccess 用戶端建立的安全性群組。 (如果您尚未建立安全性群組，請參閱[步驟 4:建立安全性群組的 DirectAccess 用戶端電腦](#BKMK_AddSecurityGroup)如需相關指示。)  
   
-    3.  在**選取的群組**索引標籤上，按一下 [**讓 DirectAccess 僅限行動裝置版電腦的**如果您想要讓行動裝置版的電腦使用 DirectAccess 遠端存取伺服器，並再按**下一步**。  
+    3.  如果您想要讓攜帶型電腦使用 DirectAccess 從遠端存取伺服器，請在 [選取群組] 索引標籤上，按一下 [僅針對攜帶型電腦啟用 DirectAccess]，然後按 [下一步]。  
   
-    4.  在**網路拓撲**，選取的伺服器，拓撲，然後按**下**。  
+    4.  在 [網路拓撲] 中，選取伺服器的拓撲，然後按 [下一步] 。  
   
-    5.  在**DNS 尾碼搜尋清單**，視需要新增其他 DNS 尾碼 client 電腦，然後按**下**。  
+    5.  在 [DNS 尾碼搜尋清單] 中，視需要新增用戶端電腦的其他 DNS 尾碼，然後按 [下一步] 。  
   
         > [!NOTE]
-        >  根據預設，讓 DirectAccess 精靈已經加入網域目前 DNS 尾碼。 不過，您可以新增多個視。  
+        >  根據預設，啟用 DirectAccess 精靈已經新增目前網域的 DNS 尾碼。 但是，您可以視需要新增更多尾碼。  
   
-    6.  檢視群組原則物件 (Gpo) 會套用到，並視需要進行修改。  
+    6.  檢閱要套用的群組原則物件 (GPO)，並視需要進行修改。  
   
-    7.  按一下**下一步**，然後按**完成**。  
+    7.  按 [下一步] ，然後按一下 [完成] 。  
   
-    8.  重新存取的遠端管理服務來提升權限模式中執行下列 Windows PowerShell 命令：  
+    8.  以提升的權限執行下列 Windows PowerShell 命令來重新啟動遠端存取管理服務：  
   
         ```powershell  
         Restart-Service RaMgmtSvc   
         ```  
   
-###  <a name="BKMK_RemoveIPv6"></a>步驟 5b： 移除無效 IPv6Prefix RRAS GPO (僅限 Windows Server Essentials)  
+###  <a name="BKMK_RemoveIPv6"></a> 步驟 5b:移除 RRAS GPO (只有 Windows Server Essentials) 中的 無效的 IPv6Prefix  
   本節適用於執行 Windows Server Essentials 的伺服器。  
   
- 打開 Windows PowerShell 系統管理員的身分，執行下列命令：  
+ 以系統管理員身分開啟 Windows PowerShell，然後執行下列命令：  
   
 ```powershell  
 gpupdate  
@@ -293,136 +294,136 @@ Remove-GPRegistryValue -Name "DirectAccess Server Settings" -Key $key.Name -Valu
 gpupdate  
 ```  
   
-###  <a name="BKMK_Step4cWindows7Setup"></a>步驟 5 c： 讓 client 電腦執行的 Windows 7 企業版使用 DirectAccess  
- 如果您有 client 電腦執行的 Windows 7 企業版，完成下列步驟，讓 DirectAccess 從那些電腦。  
+###  <a name="BKMK_Step4cWindows7Setup"></a> 步驟 5c:讓執行 Windows 7 企業版使用 DirectAccess 的用戶端電腦  
+ 如果您有執行 Windows 7 企業版的用戶端電腦，請完成下列程序，以從那些電腦啟用 DirectAccess。  
   
-##### <a name="to-enable--windows-7-enterprise-computers-to-use-directaccess"></a>若要讓 Windows 7 企業版電腦進行使用 DirectAccess  
+##### <a name="to-enable--windows-7-enterprise-computers-to-use-directaccess"></a>若要啟用 Windows 7 企業版電腦使用 DirectAccess  
   
-1.  在伺服器 s 的 [開始] 畫面，請打開**遠端存取管理**。  
+1.  在伺服器 [開始] 頁面中，開啟**遠端存取管理**。  
   
-2.  在遠端存取管理主控台中，按一下 [**設定**。 然後，在**設定的詳細資料**窗格中，在**執行 「 步驟 2**，按一下 [**編輯**。  
+2.  在 [遠端存取管理] 主控台中，按一下 [設定] 。 然後在 [設定詳細資料] 窗格的 [步驟 2] 下方，按一下 [編輯]。  
   
-     遠端存取伺服器安裝精靈開啟。  
+     [遠端存取伺服器安裝精靈] 便會開啟。  
   
-3.  在**驗證**索引標籤上，選擇將 （您可以選擇 Windows Server Essentials 伺服器的憑證） 的受信任的根憑證憑證授權單位憑證。 按一下**讓 Windows 7 client 電腦連接透過 DirectAccess**，然後按一下 [**下一步**。  
+3.  在 **驗證**索引標籤上，選擇將做為受信任的根憑證 （您可以選擇 Windows Server Essentials 伺服器的 CA 憑證） 的憑證授權單位 (CA) 憑證。 按一下 [啟用 Windows 7 用戶端電腦透過 DirectAccess 進行連線]，然後按一下 [下一步]。  
   
-4.  請依照下列指示完成精靈。  
+4.  遵循指示以完成精靈。  
   
 > [!IMPORTANT]
->  還有一個已知的問題，適用於 Windows 7 企業版電腦連接到 DirectAccess，如果 Windows Server Essentials 伺服器未隨附 UR1 預先安裝。 若要讓 DirectAccess 連接的環境中，您必須執行其他步驟執行：  
+>  沒有已知的問題，如果 Windows Server Essentials 伺服器未隨附預先安裝 UR1，透過 DirectAccess 連線的 Windows 7 企業版電腦。 如果要在該環境中啟用 DirectAccess 連線，您必須執行下列額外步驟：  
 >   
->  1.  Hotfix 中所述[Microsoft 知識庫 (KB) 文件 2796394](https://support.microsoft.com/kb/2796394) Windows Server Essentials 伺服器上。 然後，重新伺服器。  
-> 2.  然後 hotfix 中所述[Microsoft 知識庫 (KB) 文件 2615847](https://support.microsoft.com/kb/2615847)在每個 Windows 7 的電腦上。  
+>  1.  安裝中所述的 hotfix [Microsoft 知識庫 (KB) 文件 2796394](https://support.microsoft.com/kb/2796394) Windows Server Essentials 伺服器上。 然後重新啟動伺服器。  
+> 2.  然後安裝中所述的 hotfix [Microsoft 知識庫 (KB) 文件 2615847](https://support.microsoft.com/kb/2615847)每一部 Windows 7 電腦上。  
 >   
->      此問題已在 Windows Server Essentials 解析。  
+>      Windows Server Essentials 中已解決此問題。  
   
-###  <a name="BKMK_NLS"></a>步驟 5 d︰ 將網路位置伺服器設定  
- 本章節提供逐步指示執行設定的網路位置伺服器設定。  
+###  <a name="BKMK_NLS"></a> 步驟 5d:設定網路位置伺服器  
+ 本節提供設定網路位置伺服器各項設定的逐步指示。  
   
 > [!NOTE]
->  在您開始之前，請複製到 < SystemDrive\ > \inetpub\wwwroot 資料夾 < SystemDrive\ > \Program Files\Windows Server\Bin\WebApps\Site\insideoutside 資料夾。 也複製 < SystemDrive\ > \Program Files\Windows Server\Bin\WebApps\Site 資料夾 < SystemDrive\ > \Program Files\Windows Server\Bin\WebApps\Site\insideoutside 資料夾 default.aspx 檔案。  
+>  在開始之前，將內容複製 < SystemDrive\>\inetpub\wwwroot 資料夾 < SystemDrive\>files\windows Server\Bin\WebApps\Site\insideoutside 資料夾。 也將 default.aspx 檔案複製 < SystemDrive\>files\windows Server\Bin\WebApps\Site 資料夾至 < 系統磁碟機\>files\windows Server\Bin\WebApps\Site\insideoutside 資料夾。  
   
-##### <a name="to-configure-the-network-location-server"></a>若要設定的網路位置伺服器  
+##### <a name="to-configure-the-network-location-server"></a>設定網路位置伺服器  
   
-1.  在 [開始] 頁面上，請打開**遠端存取管理**。  
+1.  在 [開始] 頁面中，開啟 [遠端存取管理]。  
   
-2.  在遠端存取管理主控台中，按一下 [**設定**，並在**遠端存取安裝**中的詳細資料窗格中，**執行 「 步驟 3**，按一下**編輯**。  
+2.  在 [遠端存取管理] 主控台中，按一下 [設定]，然後在 [遠端存取設定] 詳細資料窗格的 [步驟 3] 中，按一下 [編輯]。  
   
-3.  在遠端存取伺服器安裝精靈中，在**網路位置伺服器**索引標籤，選取**部署遠端存取伺服器上的網路位置伺服器**，，然後選取 [先前發行的憑證 (中[執行 「 步驟 3： 準備網路位置伺服器的憑證和 DNS 記錄](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS))。  
+3.  在遠端存取伺服器安裝精靈，在**網路位置伺服器**索引標籤上，選取**網路位置伺服器部署於遠端存取伺服器**，然後選取 已使用的憑證先前發行 (在[步驟 3:準備網路位置伺服器憑證和 DNS 記錄](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS))。  
   
-4.  請依照下列指示完成精靈，並再按**完成**。  
+4.  依照指示完成精靈，然後按一下 [完成] 。  
   
-###  <a name="BKMK_CA"></a>步驟 5e： 新增略過 CA 憑證，當您建立 IPsec 頻道登錄按鍵  
- 您的下一個步驟是設定來建立 IPsec 頻道時，請略過 CA 憑證伺服器。  
+###  <a name="BKMK_CA"></a> 步驟 5e:新增登錄機碼，在建立 IPsec 通道時略過 CA 憑證  
+ 下一步是設定伺服器設在建立 IPsec 通道時略過 CA 憑證。  
   
-##### <a name="to-add-a-registry-key-to-bypass-the-ca-certification"></a>若要新增略過 CA 憑證登錄按鍵  
+##### <a name="to-add-a-registry-key-to-bypass-the-ca-certification"></a>新增登錄機碼以略過 CA 憑證  
   
-1.  在 [開始] 頁面上，請打開**regedit** （作業系統）。  
+1.  在 [開始] 頁面中，開啟 [regedit]  (登錄編輯程式)。  
   
-2.  在作業系統，展開**跳**，展開**系統**，展開 [ **CurrentControlSet**，展開 [**服務**，展開 [ **IKEEXT**。  
+2.  在 [登錄編輯程式] 中，依序展開 [HKEY_LOCAL_MACHINE]、[系統]、[CurrentControlSet]、[服務]、[IKEEXT]。  
   
-3.  在**IKEEXT**，以滑鼠右鍵按一下**參數**，按一下 [**新**，然後按一下 [ **DWORD （32 位元） 值**。  
+3.  在 [IKEEXT] 下方，以滑鼠右鍵按一下 [參數]，按一下 [新增]，然後按一下 [DWORD (32 位元) 值].  
   
-4.  重新命名新加入的值，以**ikeflags**。  
+4.  將新增的值重新命名為 **ikeflags**。  
   
-5.  按兩下**ikeflags**設定，**輸入**以**十六進位**，將值設定為**8000**，，然後按一下 [ **[確定]**。  
+5.  連按兩下 [ikeflags] ，將 [類型]  設為 [十六進位] ，將值設為 **8000**，然後按一下 [確定] 。  
   
 > [!NOTE]
->  您可以使用下列 Windows PowerShell 命令提升權限模式，新增登錄該鍵：  
+>  您可以提升的權限使用下列 Windows PowerShell 命令來新增此登錄機碼：  
 >   
 >  `Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\IKEEXT\Parameters -Name ikeflags -Type DWORD -Value 0x8000`  
   
-##  <a name="BKMK_NRPT"></a>步驟 6： 設定 DirectAccess 伺服器的名稱解析原則的資料表設定  
- 本節指示 DirectAccess client gpo，編輯內部位址 （例如項目以 contoso.local 尾碼） 的名稱解析原則的資料表 (NPRT) 項目，然後設定 IPHTTPS 介面地址。  
+##  <a name="BKMK_NRPT"></a> 步驟 6:設定 DirectAccess 伺服器的名稱解析原則表格設定  
+ 本節提供為 DirectAccess 用戶端 GPO 編輯內部位址 (例如，尾碼是 contoso.local 的項目) 的名稱解析原則表格 (NPRT) 項目，然後設定 IPHTTPS 介面位址的指示。  
   
-#### <a name="to-configure-name-resolution-policy-table-entries"></a>若要設定的名稱解析原則的資料表項目  
+#### <a name="to-configure-name-resolution-policy-table-entries"></a>設定名稱解析原則表格項目  
   
-1.  在 [開始] 頁面上，請打開**群組原則管理**。  
+1.  在 [開始] 頁面中，開啟 [群組原則管理]。  
   
-2.  在群組原則管理主控台中，按一下 [預設樹系和網域，以滑鼠右鍵按一下**DirectAccess Client 設定**，然後按**編輯**。  
+2.  在 [群組原則管理] 主控台中，按一下預設樹系及網域，用滑鼠右鍵按一下 [DirectAccess 用戶端設定]，然後按一下 [編輯]。  
   
-3.  按一下**電腦設定**，按一下 [**原則**，按一下 [**的 Windows 設定**，，然後按一下**名稱解析原則**。 選擇命名空間與您的 DNS 尾碼相同的項目，然後按一下**編輯規則**。  
+3.  依序按一下 [電腦設定]、[原則]、[Windows 設定]，然後按一下 [名稱解析原則]。 選擇命名空間與您的 DNS 尾碼相同的項目，然後按一下 [編輯規則]。  
   
-4.  按一下**適用於 DirectAccess DNS 設定**索引標籤。然後選取 [**在此規則 DirectAccess 讓 DNS 設定**。 在 [DNS 伺服器清單新增 IP-HTTPS 介面 IPv6 位址。  
+4.  按一下 [DirectAccess 的 DNS 設定] 索引標籤，然後選取 [啟用此規則中 DirectAccess 的 DNS 設定]。 在 DNS 伺服器清單中新增 IP-HTTPS 介面的 IPv6 位址。  
   
     > [!NOTE]
-    >  您可以使用下列 Windows PowerShell 命令來取得 IPv6 位址：  
+    >  您可以使用以下 Windows PowerShell 命令取得 IPv6 位址：  
     >   
     >  `(Get-NetIPInterface -InterfaceAlias IPHTTPSInterface | Get-NetIPAddress -PrefixLength 128)[1].IPAddress`  
   
-##  <a name="BKMK_TCPUDP"></a>步驟 7： 設定 DirectAccess 伺服器 Gpo 的 TCP 與 UDP 免  
- 本節設定 DirectAccess 伺服器 Gpo 的 TCP 與 UDP 免逐步指示。  
+##  <a name="BKMK_TCPUDP"></a> 步驟 7:設定 DirectAccess 伺服器 GPO 的 TCP 和 UDP 防火牆規則  
+ 本節包含設定 DirectAccess 伺服器 GPO 的 TCP 和 UDP 防火牆規則的逐步指示。  
   
-#### <a name="to-configure-firewall-rules"></a>若要設定免  
+#### <a name="to-configure-firewall-rules"></a>設定防火牆規則  
   
-1.  在 [開始] 頁面上，請打開**群組原則管理**。  
+1.  在 [開始] 頁面中，開啟 [群組原則管理]。  
   
-2.  在群組原則管理主控台中，按一下 [預設樹系和網域，以滑鼠右鍵按一下**DirectAccess 伺服器設定**，然後按**編輯**。  
+2.  在 [群組原則管理] 主控台中，按一下預設樹系及網域，用滑鼠右鍵按一下 [DirectAccess 伺服器設定] ，然後按一下 [編輯] 。  
   
-3.  按一下**電腦設定**，按一下 [**原則**，按一下 [ **Windows 設定**，按一下**的安全性設定**，按一下 [ **Windows 防火牆使用進階安全性**，按一下 [下一步層級**Windows 防火牆使用進階安全性**，，然後按一下 [**輸入規則**。 以滑鼠右鍵按一下**網域名稱 （TCP 單元） 伺服器**，然後按**屬性**。  
+3.  依序按一下 [電腦設定] 、[原則] 、[Windows 設定] 、[安全性設定] 、[具有進階安全性的 Windows 防火牆] 、下一層的 [具有進階安全性的 Windows 防火牆] ，然後按一下 [輸入規則] 。 在 [網域名稱伺服器 (TCP-In)] 上按一下滑鼠右鍵，然後按一下 [內容]。  
   
-4.  按一下**範圍**索引標籤，在**區域 IP 位址**清單中，將新增的 IP-HTTPS 介面 IPv6 位址。  
+4.  按一下 [領域] 索引標籤，然後在 [本機 IP 位址] 清單中，新增 IP-HTTPS 介面的 IPv6 位址。  
   
-5.  重複執行相同的程序適用於**（UDP 入） 的網域名稱伺服器**。  
+5.  在 [網域名稱伺服器 (UDP-In)] 重複相同的程序。  
   
-##  <a name="BKMK_DNS64"></a>若要聆聽 IP-HTTPS 介面執行 「 步驟 8: DNS64 變更設定  
- 您必須變更聆聽使用 Windows PowerShell 命令下列的 IP-HTTPS 介面 DNS64 設定。  
+##  <a name="BKMK_DNS64"></a> 步驟 8:將 DNS64 設定變更為接聽 IP-HTTPS 介面  
+ 您必須使用以下 Windows PowerShell 命令，將 DNS64 設定變更為接聽 IP-HTTPS 介面。  
   
 ```powershell  
 Set-NetDnsTransitionConfiguration  �AcceptInterface IPHTTPSInterface  
 ```  
   
-##  <a name="BKMK_ExemptPort"></a>步驟 9： 保留 WinNat 服務連接埠  
- 使用下列的 Windows PowerShell 命令保留 WinNat 服務連接埠。 取代您的 Windows Server Essentials 伺服器的實際 IPv4 位址] 192.168.1.100 」。  
+##  <a name="BKMK_ExemptPort"></a> 步驟 9:保留 WinNat 服務的連接埠  
+ 使用下列 Windows PowerShell 命令以保留 WinNat 服務的連接埠。 Windows Server Essentials 伺服器的實際 IPv4 位址取代"192.168.1.100"。  
   
 ```powershell  
 Set-NetNatTransitionConfiguration  �IPv4AddressPortPool @("192.168.1.100, 10000-47000")  
 ```  
   
 > [!IMPORTANT]
->  若要避免連接埠衝突應用程式，請務必您保留 WinNat 服務連接埠範圍不包含 6602 連接埠。  
+>  為避免與應用程式的連接埠衝突，請確定您為 WinNat 服務保留的連接埠範圍未包含連接埠 6602。  
   
-##  <a name="BKMK_WinNAT"></a>步驟 10： 重新開機 WinNat 服務  
- 將 Windows NAT 驅動程式 (WinNat) 服務來執行下列 Windows PowerShell 命令重新開機。  
+##  <a name="BKMK_WinNAT"></a> 步驟 10:重新啟動 WinNat 服務  
+ 執行以下 Windows PowerShell 命令以重新啟動 Windows NAT 驅動程式 (WinNat) 服務。  
   
 ```powershell  
 Restart-Service winnat  
 ```  
   
-##  <a name="BKMK_AppendixBPowerShellScript"></a>使用 Windows PowerShell 來 DirectAccess 設定附錄：  
- 本章節告訴您如何設定及使用 Windows PowerShell 來設定 DirectAccess。  
+##  <a name="BKMK_AppendixBPowerShellScript"></a> 附錄：使用 Windows PowerShell 安裝 DirectAccess  
+ 本節說明如何使用 Windows PowerShell 安裝與設定 DirectAccess。  
   
 ### <a name="preparation"></a>準備  
- 設定您的伺服器的 DirectAccess 您開始之前，您必須先完成下列動作：  
+ 開始設定 DirectAccess 的伺服器之前，您必須完成以下各項：  
   
-1.  依照中的程序[執行 「 步驟 3： 準備網路位置伺服器的憑證和 DNS 記錄](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)新使用者註冊憑證名為**DirectAccess-NLS.contoso.com** (位置**contoso.com**由您的實際內部網域名稱取代)，以及新增 DNS 記錄網路位置伺服器 (NLS)。  
+1.  請依照下列中的程序[步驟 3:準備網路位置伺服器憑證和 DNS 記錄](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)名為的憑證**Directaccess-nls.contoso.com** (其中**contoso.com**實際取代內部網域名稱），並將網路位置伺服器 (NLS) 的 DNS 記錄。  
   
-2.  新增安全性群組名為**DirectAccessClients**在 Active Directory，再新增 client 電腦，您想要提供 DirectAccess 的功能。 如需詳細資訊，請查看[執行 「 步驟 4： 建立電腦安全性群組 DirectAccess client 的](#BKMK_AddSecurityGroup)。  
+2.  在 Active Directory 新增名為 **DirectAccessClients** 的安全性群組，然後新增您要為其提供 DirectAccess 功能的用戶端電腦。 如需詳細資訊，請參閱[步驟 4:建立安全性群組的 DirectAccess 用戶端電腦](#BKMK_AddSecurityGroup)。  
   
 ### <a name="commands"></a>命令  
   
 > [!IMPORTANT]
->  Windows Server Essentials，您不需要不必要 IPv6 前置詞 GPO 中移除。 Delete 的程式碼區段，以下列標籤： `# [WINDOWS SERVER 2012 ESSENTIALS ONLY] Remove the unnecessary IPv6 prefix GPO`。  
+>  在 Windows Server Essentials 中，您不需要移除不必要的 IPv6 首碼 GPO。 刪除含有下列標籤的程式碼區段： `# [WINDOWS SERVER 2012 ESSENTIALS ONLY] Remove the unnecessary IPv6 prefix GPO`。  
   
 ```powershell  
 # Add Remote Access role if not installed yet  
@@ -506,8 +507,8 @@ Set-NetNatTransitionConfiguration  �IPv4AddressPortPool @("192.168.1.100, 1000
 Restart-Service winnat  
 ```  
   
-## <a name="see-also"></a>也了  
+## <a name="see-also"></a>另請參閱  
   
--   [管理隨時隨地存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [管理隨處存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)
