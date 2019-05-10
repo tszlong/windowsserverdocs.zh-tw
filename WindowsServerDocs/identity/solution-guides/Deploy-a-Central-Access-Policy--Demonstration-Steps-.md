@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 16973b32407985ffc3f66bf5ac579384a756b5d0
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59817139"
@@ -206,7 +206,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 > [!IMPORTANT]  
 > 在上列 Cmdlet 範例中，FinanceAdmin 群組和使用者的安全性識別碼 (SID) 是在建立時決定，因此會與範例不同。 例如，為 FinanceAdmin 群組提供的 SID 值 (S-1-5-21-1787166779-1215870801-2157059049-1113)，必須以您在部署時建立的 FinanceAdmin 群組的實際 SID 取代。 您可以使用 Windows PowerShell 查詢此群組的 SID 值，將該值指派給變數，然後在這裡使用的變數。 如需詳細資訊，請參閱[Windows PowerShell 秘訣：使用 Sid](https://go.microsoft.com/fwlink/?LinkId=253545)。  
   
-您現在應該會有集中存取規則，允許人員存取相同國家和相同部門的文件。 這個規則允許 FinanceAdmin 群組編輯文件，也允許 FinanceException 群組讀取文件。 這個規則只針對分類為「財務」的文件。  
+您現在應該會有集中存取規則，允許人員存取相同國家/地區和相同部門的文件。 這個規則允許 FinanceAdmin 群組編輯文件，也允許 FinanceException 群組讀取文件。 這個規則只針對分類為「財務」的文件。  
   
 #### <a name="to-add-a-central-access-rule-to-a-central-access-policy"></a>將集中存取規則新增到集中存取原則  
   

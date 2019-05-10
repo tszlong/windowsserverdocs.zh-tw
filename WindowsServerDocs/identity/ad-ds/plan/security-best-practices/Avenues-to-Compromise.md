@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 916bffd4f83e5c72816035542772342010e1a67c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59874479"
@@ -46,7 +46,7 @@ ms.locfileid: "59874479"
 ## <a name="initial-breach-targets"></a>初始的入侵目標  
 沒有人刻意建置公開危及組織的 IT 基礎結構。 當第一次建構 Active Directory 樹系時，通常是原始和目前。 年來傳遞，並取得新的作業系統和應用程式，就會新增至樹系。 所辨識的 Active Directory 提供的管理性優點是，越來越多的內容新增至目錄、 更多人會將其電腦或應用程式整合與 AD DS 和升級網域以支援大部分所提供的新功能目前的 Windows 作業系統版本。 項目也會發生一段時間，不過，是即使在加入新的基礎結構，可能不，以及它們一開始是維護基礎結構的其他部分，系統和應用程式正常運作，因此不會接收注意及組織開始忘了，他們有不會刪除其舊版的基礎結構。 根據我們在評估遭入侵的基礎結構，請參閱較舊、 較大，且更複雜的環境，就越可能會有多個常被入侵的弱點執行個體。  
   
-無論攻擊者的動機，大部分的資訊安全性缺口與一或兩個系統遭到入侵啟動一次。 這些初始事件或進入點的網路，通常會利用弱點，可能已獲得修正，但不是。 [2012年資料缺口調查報告 (DBIR)](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)，所產生的 Verizon 風險小組與幾個國家安全機構及其他公司的年度研究，說明攻擊的 96%"不是高度困難，"，而且"缺口 97%已經適當透過簡單或中間的控制項。 」 這些結果可能是常被入侵的弱點，請依照下列的直接結果。  
+無論攻擊者的動機，大部分的資訊安全性缺口與一或兩個系統遭到入侵啟動一次。 這些初始事件或進入點的網路，通常會利用弱點，可能已獲得修正，但不是。 [2012年資料缺口調查報告 (DBIR)](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)，所產生的 Verizon 風險小組與幾個國家/地區安全機構及其他公司的年度研究，說明攻擊的 96%"不是高度困難，"，而且"缺口 97%已經適當透過簡單或中間的控制項。 」 這些結果可能是常被入侵的弱點，請依照下列的直接結果。  
   
 ### <a name="gaps-in-antivirus-and-antimalware-deployments"></a>防毒和反惡意程式碼部署中的間距  
 *法律編號八個：過期的惡意程式碼掃描器完全才稍微優於沒有掃描器。* - [十大不變法則安全性 （2.0 版）](https://technet.microsoft.com/security/hh278941.aspx)  

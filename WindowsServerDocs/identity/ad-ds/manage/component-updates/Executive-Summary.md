@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: a3eecec9d47f91bb6a9ba549abc3bf62482b2f49
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59863279"
@@ -183,7 +183,7 @@ ms.locfileid: "59863279"
 |7|排除高特殊權限的群組中的永久成員資格。|戰術|預防|  
 |8|實作控制項，以授與時所需的權限群組中的暫時成員資格。|戰術|預防|  
 |9|實作安全的系統管理主機。|戰術|預防|  
-|10|使用應用程式白名單的網域控制站、 系統管理的主機和其他機密的系統上。|戰術|預防|  
+|10|使用應用程式允許清單的網域控制站、 系統管理的主機和其他機密的系統上。|戰術|預防|  
 |11|識別重要資產，並設定其安全性的優先順序和監視。|戰術|兩者|  
 |12|實作的目錄，其支援基礎結構，並加入網域的系統管理的最低權限的角色型存取控制。|策略|預防|  
 |13|隔離舊版系統和應用程式。|戰術|預防|  

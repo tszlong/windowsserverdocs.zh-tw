@@ -10,7 +10,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 665e411eda834a59c6dbe3581611b9b58bd006f2
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59833569"
@@ -67,11 +67,11 @@ ms.locfileid: "59833569"
   
 -   **最大回應**。 這是的回應，回應會暫停執行時，伺服器將會對用戶端發出的最大數目。  
   
--   **白名單的網域**。 這是要從 RRL 設定排除的網域清單。  
+-   **允許清單的網域**。 這是要從 RRL 設定排除的網域清單。  
   
--   **白名單的子網路**。 這是要從 RRL 設定排除的子網路的清單。  
+-   **允許清單的子網路**。 這是要從 RRL 設定排除的子網路的清單。  
   
--   **白名單 server 介面**。 這是一份要排除 RRL 設定的 DNS 伺服器介面。  
+-   **允許清單 server 介面**。 這是一份要排除 RRL 設定的 DNS 伺服器介面。  
   
 ## <a name="dane-support"></a>圖表支援
 

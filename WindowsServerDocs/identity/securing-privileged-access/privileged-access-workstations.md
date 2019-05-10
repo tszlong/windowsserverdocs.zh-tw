@@ -842,7 +842,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       如需有關 Windows Hello for Business 讀取[Windows hello 企業版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)文章。
    * **Azure 多因素驗證**:Azure multi-factor authentication (MFA) 提供安全性的第二個驗證因素，以及增強的保護，透過監視和機器學習式分析。  Azure MFA 不僅可以保護 Azure 系統管理員的安全，還可以保護其他許多解決方案，包括 Web 應用程式、Azure Active Directory，以及內部部署解決方案 (例如遠端存取和遠端桌面)。  如需有關 Azure 多重要素驗證的詳細資訊，請參閱[多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication)一文。
 
-2. **列入白名單受信任的應用程式使用 Windows Defender 應用程式控制及/或 AppLocker**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
+2. **列入允許清單受信任的應用程式使用 Windows Defender 應用程式控制及/或 AppLocker**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
 
    * **AppLocker**:AppLocker 可協助系統管理員控制哪些應用程式可以指定系統上執行。  AppLocker 可以透過群組原則集中加以控制，而且可以套用至特定的使用者或群組 (針對以 PAW 使用者為目標的應用)。  如需有關 AppLocker 的詳細資訊，請參閱 TechNet 文章 [AppLocker 概觀](https://technet.microsoft.com/library/hh831440.aspx)。
    * **Windows Defender 應用程式控制**： 的新 Windows Defender 應用程式控制功能提供增強的硬體為基礎的應用程式控制項，與 AppLocker，不同的是不能覆寫受影響的裝置上。  如同 AppLocker，Windows Defender 應用程式控制可透過群組原則控制且以特定使用者為目標。  如需有關如何限制 Windows Defender 應用程式控制的應用程式使用的詳細資訊，請參閱[Windows Defender 應用程式控制項部署指南](https://docs.microsoft.com/en-gb/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。

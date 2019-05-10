@@ -15,7 +15,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 12485ddb9cbb70766c018e8f99caa91cfa6ee9da
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59861329"
@@ -59,7 +59,7 @@ ms.locfileid: "59861329"
   
 2.  負載平衡器上外部網路自助-Ip-131.107.0.245 （網際網路）、 131.107.1.245  
   
-    周邊網路 （也稱為非軍事區域和 DMZ） 是在外部網路上的負載平衡器和遠端存取伺服器之間。  
+    周邊網路 （也稱為周邊網路和 DMZ） 是在外部網路上的負載平衡器和遠端存取伺服器之間。  
   
 3.  IP 位址的遠端存取伺服器的周邊網路-131.107.1.102、 131.107.1.103  
   
