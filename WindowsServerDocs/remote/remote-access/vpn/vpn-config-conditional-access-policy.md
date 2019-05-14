@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 ms.reviewer: deverette
 ms.openlocfilehash: 8c00855c50de79efa1b48c7b8762e1b679db4a87
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59870279"
@@ -60,7 +60,7 @@ ms.locfileid: "59870279"
 
     b. 按一下 **選取**。
 
-    c.  在上**選取 **頁面上，選取**VPN 使用者**群組，並再按**選取**。
+    c.  在上 **選取** 頁面上，選取**VPN 使用者**群組，並再按**選取**。
 
     d. 在 **使用者和群組**頁面上，按一下**完成**。
 

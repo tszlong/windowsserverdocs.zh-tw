@@ -15,7 +15,7 @@ manager: dongill
 ms.author: elizapo
 ms.openlocfilehash: 07490e34517ec607070e2cb3014367d103b8d938
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59856029"
@@ -27,7 +27,7 @@ ms.locfileid: "59856029"
   
 1.  在站台模式中開啟 MultiPoint 管理員，然後按一下**首頁** 索引標籤。  
   
-2.  底下*電腦名稱***工作**，按一下 **新增或移除 MultiPoint 伺服器**。 **新增或移除 MultiPoint 伺服器**畫面啟動並開始探索區域網路子網路可以使用 MultiPoint 管理員管理的其他伺服器。  
+2.  底下*電腦名稱* **工作**，按一下 **新增或移除 MultiPoint 伺服器**。 **新增或移除 MultiPoint 伺服器**畫面啟動並開始探索區域網路子網路可以使用 MultiPoint 管理員管理的其他伺服器。  
   
 3.  執行下列其中一項：  
   

@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 6d3303f2c6d84932ad9d5dee8a547cd478447732
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59864389"
@@ -26,7 +26,7 @@ ms.locfileid: "59864389"
 您可以將工作新增至 **[設定]**、 **[增益集]**、 **[快速狀態]** 工作清單，並且可以將連結加新增至儀表板首頁中的 [社群連結] 區段。 將名為 OEMHomePageContent.home 檔案的 XML 檔案或名為 OEMHomePageContent.dll 的內嵌資源檔放在 %ProgramFiles%\Windows Server\Bin\Addins\Home 中，即可將工作和連結新增至這些清單和區段。 可使用內嵌資源檔來本地語系化新增的工作和連結中的文字。 .home 檔案包含工作和連結的 XML 定義。  
   
 ## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>將工作新增至 [設定]、[增益集]、[快速狀態] 工作清單，並且將連結新增至 [說明] 工作  
- 您可以藉由使用 XML 定義工作和連結，選擇性地建立內嵌資源檔，並且將此檔案安裝在伺服器上，即可將工作新增至 **[設定]**、**[增益集]****[快速狀態]** 工作清單，並且將連結新增至 **[說明]** 工作。 如果 XML 檔案安裝在沒有資源檔的伺服器上，其名稱必須為 OEMHomePageContent.home。 如果使用組件來安裝 XML 檔案和資源檔，其名稱必須為 OEMHomePageContent.dll，並且必須簽署 Authenticode。  
+ 您可以藉由使用 XML 定義工作和連結，選擇性地建立內嵌資源檔，並且將此檔案安裝在伺服器上，即可將工作新增至 **[設定]**、**[增益集]** **[快速狀態]** 工作清單，並且將連結新增至 **[說明]** 工作。 如果 XML 檔案安裝在沒有資源檔的伺服器上，其名稱必須為 OEMHomePageContent.home。 如果使用組件來安裝 XML 檔案和資源檔，其名稱必須為 OEMHomePageContent.dll，並且必須簽署 Authenticode。  
   
 ### <a name="define-the-tasks-and-links"></a>定義工作和連結  
  您可以使用文字編輯器 (如記事本) 來建立 .home 檔案，如果您還要建立內嵌資源檔，可使用 Visual Studio 2010 或更高版本來定義檔案。 下列程序顯示如何使用 Visual Studio 2010 或更高版本來建立檔案。  

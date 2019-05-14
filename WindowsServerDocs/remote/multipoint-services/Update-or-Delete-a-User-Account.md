@@ -15,7 +15,7 @@ manager: dongill
 ms.author: elizapo
 ms.openlocfilehash: 4b8631af3278daaf1ee005616e7922ee7febeacf
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59857309"
@@ -27,7 +27,7 @@ ms.locfileid: "59857309"
   
 2.  在 [使用者] 欄位中，按一下您想要修改的帳戶。  
   
-3.  底下*使用者名***工作**，按一下適當的工作。  
+3.  底下*使用者名* **工作**，按一下適當的工作。  
   
     |選取的項目工作|描述|  
     |----------------------|---------------|  
