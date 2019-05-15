@@ -14,7 +14,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: cc24893b1a227501959002ea2d81c62813855d4a
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59883629"
@@ -31,7 +31,7 @@ ms.locfileid: "59883629"
 
 -   「 錯誤 0x80070643:在安裝期間的嚴重錯誤 」
 
--   「 未執行某些服務。 檢查下列服務 [...]]
+-   「 未執行某些服務。 檢查下列服務 [...]
 
 ## <a name="computer-has-not-reported-status"></a>電腦沒有回報狀態
 此訊息會產生在 WSUS 主控台中，當 WSUS 用戶端電腦不會傳送資訊至 WSUS 伺服器，以表示其目前的更新狀態。 WSUS 用戶端電腦，而不是在 WSUS 伺服器，通常會產生此問題。
