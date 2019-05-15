@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: e6d57f95379fce80bec9cb5e8445b28f887123c8
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59826729"
@@ -49,8 +49,8 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{sl\|組記錄} \<Logname > [/ e:\<已啟用 >] [/ i:\<隔離 >] [/ 助您在使用：\<Logpath >] [/ rt:\<保留 >] [/ ab:\<自動 >] [/ ms:\<MaxSize >] [/ l\<層級 >] [/ k\<關鍵字 >] [/ ca:\<通道 >] [/ c:\<組態 >]|修改指定的記錄檔的組態。|
 |{ep\|列舉發行者}|顯示本機電腦上的事件發佈者。|
 |{gp\|取得發行者} \<Publishername > [/ ge:\<中繼資料 >] [/ gm:\<訊息 >] [/ f:\<格式 >]]|顯示指定的事件發行者的組態資訊。|
-|{im\|安裝資訊清單}\<資訊清單 >|從資訊清單，會安裝事件發佈者與記錄檔。 如需有關事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft Developers Network (MSDN) 網站上的 Windows 事件記錄檔 SDK (https://msdn.microsoft.com)。|
-|{um\|解除安裝資訊清單}\<資訊清單 >|從資訊清單，解除安裝所有的發行者和記錄檔。 如需有關事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft Developers Network (MSDN) 網站上的 Windows 事件記錄檔 SDK (https://msdn.microsoft.com)。|
+|{im\|安裝資訊清單}\<資訊清單 >|從資訊清單，會安裝事件發佈者與記錄檔。 如需有關事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft Developers Network (MSDN) 網站上的 Windows 事件記錄檔 SDK ( https://msdn.microsoft.com)。|
+|{um\|解除安裝資訊清單}\<資訊清單 >|從資訊清單，解除安裝所有的發行者和記錄檔。 如需有關事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft Developers Network (MSDN) 網站上的 Windows 事件記錄檔 SDK ( https://msdn.microsoft.com)。|
 |{qe\|查詢事件}\<路徑 > [/ lf:\<記錄檔 >] [/ sq:\<Structquery >] [/ 問\<查詢 >] [/ bm:\<書籤 >] [/ sbm:\<Savebm >] [/ rd:\<方向 >] [/ f\<格式 >] [/ 高度：\<地區設定 >] [/ c:\<計數 >] [/ e:\<項目 >]|讀取事件記錄檔，從記錄檔，或使用結構化的查詢中的事件。 根據預設，您提供的記錄檔名稱\<路徑 >。 不過，如果您使用 **/lf**選項，然後\<路徑 > 必須是記錄檔的路徑。 如果您使用 **/sq**參數，\<路徑 > 必須是包含結構化的查詢的檔案路徑。|
 |{gli \| get loginfo} \<Logname > [/ lf:\<記錄檔 >]|顯示相關的事件記錄檔或記錄檔的狀態資訊。 如果 **/lf**使用選項時， \<Logname > 是一個記錄檔的路徑。 您可以執行**wevtutil el**取得記錄檔名稱的清單。|
 |{epl\|匯出記錄}\<路徑 > \<Exportfile > [/ lf:\<記錄檔 >] [/ sq:\<Structquery >] [/ 問：\<查詢 >] [/ ow:\<覆寫 >]|匯出事件從事件記錄檔，從記錄檔，或使用結構化的查詢，來指定的檔案。 根據預設，您提供的記錄檔名稱\<路徑 >。 不過，如果您使用 **/lf**選項，然後\<路徑 > 必須是記錄檔的路徑。 如果您使用 **/sq**選項，\<路徑 > 必須是包含結構化的查詢的檔案路徑。 \<Exportfile > 是要儲存匯出的事件檔案的路徑。|
@@ -70,7 +70,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |/ms:\<MaxSize>|設定記錄檔的大小上限，以位元組為單位。 記錄大小下限為 1048576 個位元組 (1024 KB) 和記錄檔一律是 64 kb 的倍數，讓您輸入的值會隨之四捨五入。|
 |/l:\<層級 >|定義記錄層級篩選。 \<層級 > 可以是任何有效的層級值。 此選項只適用於使用專用的工作階段記錄檔。 您可以移除層級篩選，藉由設定<Level>設為 0。|
 |/k:\<關鍵字 >|指定記錄檔的關鍵字篩選器。 \<關鍵字 > 可以是任何有效的 64 位元的關鍵字遮罩。 此選項只適用於使用專用的工作階段記錄檔。|
-|/ca:\<通道 >|設定事件記錄檔的存取權限。 \<通道 > 已使用 Security Descriptor Definition Language (SDDL) 的安全性描述元。 如需 SDDL 格式的詳細資訊，請參閱 Microsoft Developers Network (MSDN) 網站 (https://msdn.microsoft.com)。|
+|/ca:\<通道 >|設定事件記錄檔的存取權限。 \<通道 > 已使用 Security Descriptor Definition Language (SDDL) 的安全性描述元。 如需 SDDL 格式的詳細資訊，請參閱 Microsoft Developers Network (MSDN) 網站 ( https://msdn.microsoft.com)。|
 |/c:\<設定 >|指定組態檔的路徑。 這個選項就會讀取組態檔中定義的記錄檔屬性\<組態 >。 如果您使用此選項，您必須指定<Logname>參數。 記錄檔名稱會讀取組態檔。|
 |/ge:\<中繼資料 >|取得可以由這個發行者引發事件的中繼資料資訊。 \<中繼資料 > 可以是 true 或 false。|
 |/gm:\<訊息 >|顯示實際的訊息，而不是數字的訊息識別碼。 \<訊息 > 可以是 true 或 false。|

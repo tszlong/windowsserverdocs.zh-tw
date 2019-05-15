@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59833319"
@@ -534,7 +534,7 @@ ms.locfileid: "59833319"
   
 3.  以滑鼠右鍵按一下 **Providers**，指向 **[新增]**，然後按一下 **[機碼]**。  
   
-4.  輸入提供者的識別項作為機碼的名稱。 識別碼是您在 [Add an implementation of the IDomainSignupProvider interface to the assembly](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)的步驟 8 中為提供者定義的 GUID。  
+4.  輸入提供者的識別項作為機碼的名稱。 識別碼是您在 [將 IDomainSignupProvider 介面的實作新增至組件](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)的步驟 8 中為提供者定義的 GUID。  
   
 5.  以滑鼠右鍵按一下您剛才建立的機碼，然後按一下 **[字串值]**。  
   
