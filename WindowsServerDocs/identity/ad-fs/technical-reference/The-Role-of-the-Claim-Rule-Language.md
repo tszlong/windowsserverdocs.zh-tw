@@ -11,7 +11,7 @@ ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
 ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59855689"
@@ -75,7 +75,7 @@ AD FS 也會提供一組預先定義的宣告發佈和接受規則範本，可�
   
 |條件描述|條件語法範例|  
 |-------------------------|----------------------------|  
-|此規則有一個條件來檢查是否有兩個輸入宣告，每個都有指定的宣告類型 ("http://test/name"和"http://test/email」)。 如果兩個符合的宣告位於輸入宣告中，則規則會將名稱宣告複製到輸出宣告集。|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
+|此規則有一個條件來檢查是否有兩個輸入宣告，每個都有指定的宣告類型 ("http://test/name" 和 "http://test/email」)。 如果兩個符合的宣告位於輸入宣告中，則規則會將名稱宣告複製到輸出宣告集。|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
   
 #### <a name="regular--condition-examples"></a>一般-條件範例  
 下表提供一般運算式的範例為基礎的條件。  

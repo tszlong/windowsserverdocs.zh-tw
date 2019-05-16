@@ -10,7 +10,7 @@ ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
 ms.openlocfilehash: a26b784c18049ee473a191abc7bfa0a5d253d15e
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59883029"
@@ -132,7 +132,7 @@ Add-WindowsFeature ADFS-Federation –IncludeManagementTools
   
 1.  開啟伺服器管理員。  
   
-2.  在 \[伺服器管理員\] 視窗上方，按一下 **\[通知\]** 旗標，然後按一下 **\[設定此伺服器上的 Federation Service\]**.。  
+2.  在 \[伺服器管理員\] 視窗上方，按一下 **\[通知\]** 旗標，然後按一下 **\[設定此伺服器上的 Federation Service\]**。  
   
 3.  \[Active Directory 同盟服務設定精靈\] 隨即啟動。 在 **\[連線到 AD DS\]** 頁面上，輸入您想要用作 AD FS 帳戶的網域管理員帳戶，然後按 **\[下一步\]**。  
   
