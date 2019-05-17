@@ -13,7 +13,7 @@ ms.author: kathyDav
 ms.date: 12/06/2016
 ms.openlocfilehash: 196a32d57877662ccd73647835e16af9348135c8
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59845289"
@@ -71,7 +71,7 @@ ms.locfileid: "59845289"
   
 3.  按一下 [顯示選項] 。  
   
-    ![如果螢幕擷取畫面左下方的顯示選項] 對話方塊的 [出呼叫。](media/HyperV-VMConnect-DisplayConfig.png)  
+    ![如果螢幕擷取畫面左下方的顯示選項 對話方塊的 出呼叫。](media/HyperV-VMConnect-DisplayConfig.png)  
   
 4.  選取 [本機資源]。  
   
