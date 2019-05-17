@@ -10,7 +10,7 @@ ms.date: 07/09/2018
 ms.author: jgerend
 ms.openlocfilehash: b977af31663b675a56c65e06a2a0d60b1d2ad811
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59857139"
@@ -129,7 +129,7 @@ ms.locfileid: "59857139"
 8. 選取 **停用繼承**，然後選取**繼承的轉換成此物件的明確權限的權限**。
 9. 中所述設定權限[必要的權限的檔案共用裝載漫遊使用者設定檔](#required-permissions-for-the-file-share-hosting-roaming-user-profiles)且顯示下列螢幕擷取畫面中，移除未列出的群組和帳戶權限，並加入特殊您在步驟 1 中建立的漫遊使用者設定檔使用者和電腦群組的權限。
     
-    ![進階安全性設定] 視窗顯示在 [表 1 中所述的權限](media\advanced-security-user-profiles.jpg)
+    ![進階安全性設定 視窗顯示在 表 1 中所述的權限](media\advanced-security-user-profiles.jpg)
     
     **圖 1** 設定漫遊使用者設定檔共用的權限
 10. 如果您選擇 [SMB 共用 - 進階]  設定檔，在 [管理屬性]  頁面上，選取 [使用者檔案]  資料夾使用方式值。
