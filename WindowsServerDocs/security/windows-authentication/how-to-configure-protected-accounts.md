@@ -14,7 +14,7 @@ manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 5dab9ff9924d8afe05bd6b033ca513172d9aaeff
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59829499"
@@ -198,7 +198,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
     > [!NOTE]  
     > **支援**也可以設定，但因為網域是在 Windows Server 2012 R2 網域功能等級，讓網域控制站永遠提供宣告將會讓使用者宣告型存取檢查時使用非宣告感知裝置與主機連線到發生宣告感知的服務。  
   
-    ![在 * * 選項] 中，在下拉式清單方塊中，選取 [永遠提供宣告](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)  
+    ![在 * * 選項 中，在下拉式清單方塊中，選取 永遠提供宣告](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)  
   
     > [!WARNING]  
     > 設定**未受防護的驗證要求失敗**將會導致來自不支援 Kerberos 防護，例如 Windows 7 和舊版作業系統，或操作之任何作業系統的驗證失敗系統從 Windows 8 尚未明確設定來支援它。  
