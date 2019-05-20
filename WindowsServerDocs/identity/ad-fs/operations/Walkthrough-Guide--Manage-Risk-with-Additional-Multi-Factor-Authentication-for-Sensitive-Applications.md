@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 414f37e86f0072863e5fa2f107c39e5518e560ec
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59860859"
@@ -245,7 +245,7 @@ ms.locfileid: "59860859"
 
     如果您設定憑證驗證作為其他驗證方法時，預設訊息文字是**選取您想要用於驗證的憑證。如果您取消此作業，請關閉瀏覽器，然後再試一次。**
 
-    如果您設定 Windows Azure Multi-factor Authentication 做為其他驗證方法，預設訊息文字是 [系統將會撥打電話以完成驗證]。 。如需使用 Windows Azure Multi-Factor Authentication 登入並使用偏好驗證方法各種選項的詳細資訊，請參閱 Windows Azure Multi-Factor Authentication 概觀。
+    如果您設定 Windows Azure Multi-factor Authentication 做為其他驗證方法，預設訊息文字是 [系統將會撥打電話以完成驗證]。 。如需使用 Windows Azure Multi-Factor Authentication 登入並使用偏好驗證方法各種選項的詳細資訊，請參閱 [Windows Azure Multi-Factor Authentication 概觀](https://technet.microsoft.com/library/dn249479.aspx)。
 
 ## <a name="see-also"></a>另請參閱
 [管理機密應用程式透過其他多因素驗證的風險](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)

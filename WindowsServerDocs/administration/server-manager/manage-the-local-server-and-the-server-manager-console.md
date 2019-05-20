@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 1f22578cc54a22464fe5d9208731fe681be30481
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59832979"
@@ -26,7 +26,7 @@ ms.locfileid: "59832979"
 
 在 Windows Server 中，伺服器管理員可讓您同時管理本機伺服器 （如果您在 Windows Server 上並不是在以 Windows 為基礎的用戶端作業系統上執行伺服器管理員） 和執行 Windows Server 2008 和較新版 Windows 的遠端伺服器伺服器作業系統。
 
-**本機伺服器**頁面在 [伺服器管理員] 中顯示伺服器屬性、 事件、 服務和效能計數器資料，並對本機伺服器的 Best Practices Analyzer (BPA) 結果。 事件、服務、BPA 和效能磚的運作方式與在角色和伺服器群組頁面上相同。 如需有關設定這些磚中顯示之資料的詳細資訊，請參閱 [View 和 Configure Performance, Event, 和 Service Data 和 [Run Best Practices Analyzer Scans 和 Manage Scan Results。
+**本機伺服器**頁面在 [伺服器管理員] 中顯示伺服器屬性、 事件、 服務和效能計數器資料，並對本機伺服器的 Best Practices Analyzer (BPA) 結果。 事件、服務、BPA 和效能磚的運作方式與在角色和伺服器群組頁面上相同。 如需關於設定這些磚中所顯示資料的詳細資訊，請參閱[檢視與設定效能、事件及服務資料](view-and-configure-performance-event-and-service-data.md)以及[執行最佳做法分析程式掃描與管理掃描結果](run-best-practices-analyzer-scans-and-manage-scan-results.md)。
 
 功能表命令和伺服器管理員主控台標題列中的設定全域套用至您的伺服器集區中的所有伺服器，並可讓您使用伺服器管理員來管理整個伺服器集區。
 
@@ -104,7 +104,7 @@ ms.locfileid: "59832979"
 遠端桌面服務、 IP 位址管理以及檔案和存放服務角色首頁中 伺服器管理員中顯示的資料不會自動重新整理。 重新整理以手動的方式，藉由按下顯示這些頁面中的資料**F5**或按一下**重新整理**在伺服器管理員主控台標題，當您在這些頁面上。
 
 ### <a name="add-or-remove-roles-or-features"></a>新增或移除角色或功能
-開啟新增角色及功能精靈，並移除角色及功能精靈 和可讓您新增或移除角色、 角色服務與功能至伺服器，在您的伺服器集區中的命令**管理**功能表的 伺服器管理員主控台中，而**工作**功能表**角色及功能**角色或群組頁面上的圖格。 如需如何新增或移除角色或功能的詳細資訊，請參閱 [Install or Uninstall Roles, Role Services, or Features](install-or-uninstall-roles-role-services-or-features.md)。
+開啟新增角色及功能精靈，並移除角色及功能精靈 和可讓您新增或移除角色、 角色服務與功能至伺服器，在您的伺服器集區中的命令**管理**功能表的 伺服器管理員主控台中，而**工作**功能表**角色及功能**角色或群組頁面上的圖格。 如需如何新增或移除角色或功能的詳細資訊，請參閱[安裝或解除安裝角色、 角色服務或功能](install-or-uninstall-roles-role-services-or-features.md)。
 
 在 [伺服器管理員] 中，角色和功能資料會顯示在系統中，也稱為系統預設 GUI 語言或在作業系統安裝期間選取的語言的基礎語言。
 
