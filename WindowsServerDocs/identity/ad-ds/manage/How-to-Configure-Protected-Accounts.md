@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: d2a832d17c4f6ab926aeb44ea3598c1c2ea932b8
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59890859"
@@ -192,7 +192,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)
 
-2.  在 [選項] 下的下拉式清單方塊中，選取 [永遠提供宣告]。
+2.  在 **[選項]** 下的下拉式清單方塊中，選取 **[永遠提供宣告]** 。
 
     > [!NOTE]
     > **支援**也可以設定，但因為網域是在 Windows Server 2012 R2 網域功能等級，讓網域控制站永遠提供宣告將會讓使用者宣告型存取檢查時使用非宣告感知裝置與主機連線到發生宣告感知的服務。

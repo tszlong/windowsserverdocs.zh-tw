@@ -11,7 +11,7 @@ ms.topic: article
 ms.date: 10/16/2017
 ms.openlocfilehash: b55063c3c5ea41b43573e6322b5efb36d2dad90e
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59828329"
@@ -57,7 +57,7 @@ fsutil resource [stop] <RmRootPathname>
 |setavailable|指定交易式資源管理員將會把可用性擺在一致性。|
 |setconsistent|指定交易式資源管理員會偏好一致性，而非可用性。|
 |setlog|變更交易式資源管理員的已執行的特性。|
-|成長|指定交易式資源管理員記錄檔可以成長的數量。<br /><br />可以指定成長參數如下所示：<br /><br />-使用格式的容器數目：*容器 ***容器**<br />-使用格式的百分比：*Percent***percent**|
+|成長|指定交易式資源管理員記錄檔可以成長的數量。<br /><br />可以指定成長參數如下所示：<br /><br />-使用格式的容器數目：*容器***容器**<br />-   使用格式的百分比：*Percent***percent**|
 |<containers>|指定交易式資源管理員所使用的資料物件。|
 |maxextent|指定容器的最大數目，指定交易式資源管理員。|
 |minextent|指定容器的最小數目，指定交易式資源管理員。|

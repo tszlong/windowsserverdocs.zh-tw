@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 6997e878b2bb7b77a5920ad7398ef7c2301cc8c0
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59813189"
@@ -67,7 +67,7 @@ defrag <volume> [/<Parameter>]*
 -   磁碟區必須至少 15%的可用空間**重組**完整且適當地重組。 **重組**成一個排序的區域會使用此空間檔案片段。 如果磁碟區有可用空間，低於 15%**重組**會只有部分進行磁碟重組。 若要增加磁碟區上的可用空間，刪除不必要的檔案，或將它們移至另一個磁碟。
 -   雖然**重組**是分析和重組磁碟區，它會顯示閃爍的游標。 當**重組**已完成的分析，重組磁碟區，它會顯示 [分析] 報表，磁碟重組報告或這兩份報告，然後結束命令提示字元。
 -   根據預設，**重組**顯示分析 」 和 「 磁碟重組報告的摘要，如果您未指定 **/a**或是 **/v**參數。
--   您可以將報表傳送給文字檔案輸入 **> ***FileName.txt*，其中*FileName.txt*是您指定的檔案名稱。 例如：`defrag volume /v > FileName.txt`
+-   您可以將報表傳送給文字檔案輸入 **>** *FileName.txt*，其中*FileName.txt*是您指定的檔案名稱。 例如：`defrag volume /v > FileName.txt`
 -   若要中斷的磁碟重組程序，在命令列，請按**CTRL + C**。
 -   執行**重組**命令和磁碟重組工具會互斥。 如果您使用磁碟重組工具重組磁碟區，而且您執行**重組**命令的命令列**重組**命令就會失敗。 相反地，如果您執行**重組**命令和開啟磁碟重組工具，磁碟重組工具 中的磁碟重組選項都無法使用。
 
