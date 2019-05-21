@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 5cd84269a5ac1a85d4b6cf359cc97f478a500c4f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59825979"
@@ -32,7 +32,7 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 ### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|/a [<Inetaddr>] [/n <ifaceaddr>]|顯示目前的 arp 快取表格，為所有介面。 /N 參數會區分大小寫。<br /><br />若要顯示特定的 IP 位址的 arp 快取項目，請使用**arp/a**具有*Inetaddr*參數，其中*Inetaddr*是 IP 位址。 如果*Inetaddr*未指定，會使用第一個適當的介面。<br /><br />若要顯示特定介面的 arp 快取表格，請使用 **/n * * * ifaceaddr*參數搭配 **/a**參數位置*ifaceaddr*是 IP 位址指派給介面。|
+|/a [<Inetaddr>] [/n <ifaceaddr>]|顯示目前的 arp 快取表格，為所有介面。 /N 參數會區分大小寫。<br /><br />若要顯示特定的 IP 位址的 arp 快取項目，請使用**arp/a**具有*Inetaddr*參數，其中*Inetaddr*是 IP 位址。 如果*Inetaddr*未指定，會使用第一個適當的介面。<br /><br />若要顯示特定介面的 arp 快取表格，請使用 **/n***ifaceaddr* 參數搭配 **/a**參數位置*ifaceaddr*是 IP 位址指派給介面。|
 |/g [<Inetaddr>] [/n <ifaceaddr>]|與相同 **/a**。|
 |[/d <Inetaddr> [<ifaceaddr>]|刪除項目特定的 IP 位址，其中*Inetaddr*是 IP 位址。<br /><br />若要刪除特定介面的資料表中的項目，請使用*ifaceaddr*參數所在*ifaceaddr*是指派給介面的 IP 位址。<br /><br />若要刪除所有項目，使用星號 (\*) 取代萬用字元*Inetaddr*。|
 |/s <Inetaddr> <Etheraddr> [<ifaceaddr>]|將靜態項目加入至 arp 快取解析的 IP 位址*Inetaddr*的實體位址*Etheraddr*。<br /><br />若要新增靜態 arp 快取項目至特定介面的資料表，請使用*ifaceaddr*參數所在*ifaceaddr*是指派給介面的 IP 位址。|

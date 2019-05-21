@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 7cc1207f36d3a921b49cc3ecd02acf3fe4fa243c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59827369"
@@ -31,7 +31,7 @@ ms.locfileid: "59827369"
   
 1.  在目的地伺服器上，開啟 [群組原則管理] 系統管理工具。  
   
-2.  在 **群組原則管理**，展開 **樹系: * * * YourNetworkDomainName*，展開**網域**，展開*YourNetworkDomainName*然後展開**群組原則物件**。  
+2.  在 **群組原則管理**，展開 **樹系:***YourNetworkDomainName*，展開**網域**，展開*YourNetworkDomainName*然後展開 **群組原則物件** 。  
   
 3.  以滑鼠右鍵按一下 [SBS 群組原則資料夾重新導向] ，然後按一下 [刪除] 。  
   
