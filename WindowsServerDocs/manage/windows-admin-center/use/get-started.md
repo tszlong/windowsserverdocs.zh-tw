@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: 61fdd70e53a49b704e11f71f0e5eb3176c31c378
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876009"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63742655"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows Admin Center
 
@@ -64,7 +64,7 @@ ms.locfileid: "59876009"
 
     ![](../media/launch/addserver2.png)
 
-   **-- OR --**  
+   **-- OR --**
 
 **大量匯入多部伺服器**
 
@@ -73,6 +73,18 @@ ms.locfileid: "59876009"
     ![](../media/launch/import-servers.png)
 
  2. 按一下 **瀏覽**和選取文字的檔案，包含逗號或換行分隔，您想要新增之伺服器的 Fqdn 清單。
+
+    **-- OR --**
+
+**藉由搜尋 Active Directory 中新增伺服器**
+
+ 1. 在 [**加入伺服器連接**頁面上，選擇**搜尋 Active Directory** ] 索引標籤。
+
+    ![](../media/launch/search-ad.png)
+
+ 2. 輸入您的搜尋準則，然後按一下**搜尋**。 支援萬用字元 （*）。
+
+ 3. 搜尋完成後-選取一或多個結果，選擇性地新增標記，然後按一下**新增**。
 
 ## <a name="authenticate-with-the-managed-node"></a>向受管理的節點 ##
 
@@ -142,9 +154,6 @@ Windows Admin Center 會支援數種機制，用來驗證與受管理的節點�
 
 Windows Admin Center Preview 包含 PowerShell 模組匯入或匯出您的連線清單。
 
->[!IMPORTANT]
->Windows Admin Center 部署為 Windows Server 上的閘道服務時，才支援匯入和匯出的 PowerShell 模組的連線。
-
 ```powershell
 # Load the module
 Import-Module "$env:ProgramFiles\windows admin center\PowerShell\Modules\ConnectionTools"
@@ -158,7 +167,7 @@ Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 
 ### <a name="csv-file-format-for-importing-connections"></a>匯入連線的 CSV 檔案格式
 
-CSV 檔案格式的開頭的三個標題： ```"name","type","tags"```，後面接著新行上的每個連線。
+CSV 檔案的格式會啟動包含四個標題```"name","type","tags","groupId"```，後面接著新行上的每個連線。
 
 **名稱**是連線的 FQDN
 
@@ -173,15 +182,17 @@ CSV 檔案格式的開頭的三個標題： ```"name","type","tags"```，後面�
 
 **標記**會以管道分隔。
 
+**groupId**用於共用的連線。 使用值```global```在本專欄中讓此共用的連線。
+
 ### <a name="example-csv-file-for-importing-connections"></a>範例 CSV 檔案匯入連線
 
 ```
-"name","type","tags"
+"name","type","tags","groupId"
 "myServer.contoso.com","msft.sme.connection-type.server","hyperv"
 "myDesktop.contoso.com","msft.sme.connection-type.windows-client","hyperv"
-"mycluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016"
+"teamcluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016","global"
 "myHCIcluster.contoso.com,"msft.sme.connection-type.hyper-converged-cluster","myHCIcluster|hyperv|JIT|WS2019"
-"myclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016"
+"teamclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016","global"
 "myHCIclusterNode.contoso.com","msft.sme.connection-type.server","myHCIcluster|hyperv|JIT|WS2019"
 ```
 
@@ -270,7 +281,7 @@ CSV 檔案格式的開頭的三個標題： ```"name","type","tags"```，後面�
    RdgToWacCsv -RDGfilepath "path\to\myRDCManfile.rdg"
    ```
 
-3. 匯入所產生的。中的 CSV 檔案，以 Windows Admin Center 和所有 RDCMan 群組階層將以連接清單中的標記來表示。 如需詳細資訊，請參閱 <<c0> [ 使用 PowerShell 匯入或匯出您的連線 （含標記）](#use-powershell-to-import-or-export-your-connections-(with-tags))。
+3. 匯入所產生的。中的 CSV 檔案，以 Windows Admin Center 和所有 RDCMan 群組階層將以連接清單中的標記來表示。 如需詳細資訊，請參閱 <<c0> [ 使用 PowerShell 匯入或匯出您的連線 （含標記）](#use-powershell-to-import-or-export-your-connections-with-tags)。
 
 ## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>檢視 Windows Admin Center 中使用的 PowerShell 指令碼
 

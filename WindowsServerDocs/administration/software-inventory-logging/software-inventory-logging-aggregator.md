@@ -262,7 +262,7 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
         -   這會指告 Windows Server 中的 SIL 將清查資料傳送至何處，以及要用於驗證的憑證。
 
             > [!IMPORTANT]
-            > 請確定 TargetUri 值中有 “https://’。
+            > 請確定 TargetUri 值中有 “https://’ 。
 
         -   具有此指紋的企業用戶端憑證必須安裝在 **\localmachine\MY**，或使用 **certmgr.msc** 將憑證安裝在 [本機電腦 -> 個人] 存放區。
 

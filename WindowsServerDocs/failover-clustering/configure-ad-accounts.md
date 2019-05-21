@@ -6,17 +6,17 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 2fcc6047a0e85170754d8f05d10f728a4c529049
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 454783a13b834ef705bd896155195750de2b183c
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871959"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772720"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>在 Active Directory 中設定的叢集帳戶
 
 
-適用於：Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2 和 Windows Server 2008
+適用於：Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2 和 Windows Server 2008
 
 在 Windows Server 中，當您建立的容錯移轉叢集，並設定叢集的服務或應用程式中，容錯移轉叢集精靈建立必要的 Active Directory 電腦帳戶 （也稱為電腦物件），並提供特定的權限。 精靈會建立叢集本身的電腦帳戶 （此帳戶也稱為叢集名稱物件或 CNO） 和大部分類型的叢集的服務和應用程式的電腦帳戶在 HYPER-V 虛擬機器的例外狀況。 容錯移轉叢集精靈會自動設定這些帳戶的權限。 如果變更的權限，他們必須變更回符合叢集需求。 本指南會說明這些 Active Directory 帳戶與權限，提供有關背景，為重要的是，並說明設定和管理帳戶的步驟。
       
@@ -113,7 +113,7 @@ ms.locfileid: "59871959"
 
 ### <a name="planning-ahead-for-password-resets-and-other-account-maintenance"></a>事先計劃，密碼重設和其他帳戶維護
 
-容錯移轉叢集的系統管理員有時可能需要重設叢集名稱帳戶的密碼。 這個動作需要特定的權限**重設密碼**權限。 因此，若要編輯的叢集名稱帳戶的權限 （透過使用 [Active Directory 使用者和電腦] 嵌入式管理單元） 的最佳作法是給叢集的系統管理員**重設密碼**叢集的權限名稱的帳戶。 如需詳細資訊，請參閱 <<c0> [ 帳戶的名稱與叢集的密碼問題的疑難排解步驟](#steps_for_troubleshooting_password_problems_with_the_cluster_name_account)稍後在本指南中。
+容錯移轉叢集的系統管理員有時可能需要重設叢集名稱帳戶的密碼。 這個動作需要特定的權限**重設密碼**權限。 因此，若要編輯的叢集名稱帳戶的權限 （透過使用 [Active Directory 使用者和電腦] 嵌入式管理單元） 的最佳作法是給叢集的系統管理員**重設密碼**叢集的權限名稱的帳戶。 如需詳細資訊，請參閱 <<c0> [ 帳戶的名稱與叢集的密碼問題的疑難排解步驟](#steps-for-troubleshooting-password-problems-with-the-cluster-name-account)稍後在本指南中。
 
 ## <a name="steps-for-configuring-the-account-for-the-person-who-installs-the-cluster"></a>為叢集安裝人員設定帳戶的步驟
 
