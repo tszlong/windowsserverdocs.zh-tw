@@ -223,7 +223,7 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 雖然您應該*安裝*重複資料刪除，來源和目的地伺服器上 (請參閱[安裝和啟用重複資料刪除](../data-deduplication/install-enable.md))，不重要到*啟用*重複資料刪除，在目的地伺服器上。 儲存體複本可讓您只能在來源伺服器上的寫入。 因為重複資料刪除會寫入至磁碟區，應該只能在來源伺服器上執行。 
 
 ## <a name="FAQ17"></a> 如何報告與儲存體複本 」 或 「 本指南的問題？  
-如需「儲存複本」的技術協助，您可以張貼於 [Microsoft TechNet 論壇](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。 https://windowsserver.uservoice.com站台是慣用的設計變更要求，因為它可讓您的客戶提供支援和意見反應，對您的想法。
+如需「儲存複本」的技術協助，您可以張貼於 [Microsoft TechNet 論壇](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。  https://windowsserver.uservoice.com 站台是慣用的設計變更要求，因為它可讓您的客戶提供支援和意見反應，對您的想法。
 
 
 
