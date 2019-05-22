@@ -15,7 +15,7 @@ ms.author: elizapo
 ms.date: 08/04/2016
 ms.openlocfilehash: 2302b570370085d528dc588105ea3e1fb50670fb
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59852069"
@@ -27,7 +27,7 @@ ms.locfileid: "59852069"
   
 2.  按一下您要自動登入的站台名稱。  
   
-3.  在 [工作] 下，按一下 [Configure station] (設定站台)。 [設定站台] 頁面隨即開啟。  
+3.  在 [工作] 下，按一下 [Configure station]\(設定站台)。 [設定站台] 頁面隨即開啟。  
   
 4.  選取 **自動登入使用下列資訊**，然後輸入**使用者帳戶**名稱。  
   

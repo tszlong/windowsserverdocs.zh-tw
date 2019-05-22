@@ -196,7 +196,7 @@ ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查�
 ||||  
 |-|-|-|  
 |測試名稱|通訊協定<br /><br />已使用|說明與附註|  
-|VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|驗證您在現有的協力廠商網域控制站上具有 [讓電腦及使用者帳戶受信賴，以進行委派] (SeEnableDelegationPrivilege) 權限。 這需要您所建構的 tokenGroups 屬性的存取權。<br /><br />在連線 Windows Server 2003 網域控制站時不會使用。 在升級之前，您必須手動確認此權限。|  
+|VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|驗證您在現有的協力廠商網域控制站上具有 [讓電腦及使用者帳戶受信賴，以進行委派]\(SeEnableDelegationPrivilege) 權限。 這需要您所建構的 tokenGroups 屬性的存取權。<br /><br />在連線 Windows Server 2003 網域控制站時不會使用。 在升級之前，您必須手動確認此權限。|  
 |VerifyADPrep<br /><br />先決條件 (樹系)|LDAP|使用 rootDSE namingContexts 屬性和結構描述命名內容 fsmoRoleOwner 屬性探索並連線架構主機。 判斷 AD DS 安裝需要哪些準備作業 (forestprep、domainprep 或 rodcprep)。 驗證結構描述 objectVersion 是否為預期的值，及其是否需要進一步的延伸。|  
 |VerifyADPrep<br /><br />先決條件 (網域和 RODC)|LDAP|使用 rootDSE namingContexts 屬性和基礎架構容器 fsmoRoleOwner 屬性探索並連線基礎架構主機。 如果是 RODC 安裝，這項測試會探索網域命名主機並確定其在線上。|  
 |CheckGroup<br /><br />成員資格|LDAP、<br /><br />RPC over SMB (LSARPC)|視作業而定，驗證使用者是否為 Domain Admins 或 Enterprise Admins 群組的成員 (新增或降級網域控制站為 DA，新增或移除網域為 EA)|  

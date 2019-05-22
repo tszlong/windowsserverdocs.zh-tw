@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 007256fffde11899d930c9197cade6d3bf9be42c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59868779"
@@ -66,7 +66,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 ### <a name="config"></a>設定
 指定使用者名稱對應的一般設定。 使用此命令的引數有下列選項： **-r &lt;dddd&gt;:&lt;hh&gt;:&lt;mm&gt;**  -指定的重新整理間隔更新 Windows 和 NIS 資料庫天數、 小時和分鐘。 最小間隔為 5 分鐘。
-**-i {yes | 沒有}** -開啟簡單對應 (**是**) 或 [關閉] (**沒有**)。 根據預設，簡單的對應是在上。
+**-i {yes | 沒有}** -開啟簡單對應 (**是**) 或 [關閉]\(**沒有**)。 根據預設，簡單的對應是在上。
 **新增**-建立新的對應使用者或群組。 使用此命令的引數有下列選項：
 
 |選項|定義|

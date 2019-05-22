@@ -11,7 +11,7 @@ ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 53d0e24f7fcb9efc64406dc6ed01f5bb1deb2277
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59868079"
@@ -137,7 +137,7 @@ ms.locfileid: "59868079"
   
     -   若要為您的同盟服務提供顯示名稱，請輸入 **Contoso Corporation**。  
   
-5.  在 [指定服務帳戶]  頁面上，選取 [Use an existing domain user account or group Managed Service Account] (使用現有的網域使用者帳戶或群組「受管理的服務帳戶」) ，然後指定您在建立網域控制站時建立的 GMSA 帳戶 **fsgmsa** 。  
+5.  在 [指定服務帳戶]  頁面上，選取 [Use an existing domain user account or group Managed Service Account]\(使用現有的網域使用者帳戶或群組「受管理的服務帳戶」) ，然後指定您在建立網域控制站時建立的 GMSA 帳戶 **fsgmsa** 。  
   
 6.  在 [指定設定資料庫]  頁面上，選取 [在此伺服器上使用 Windows 內部資料庫來建立資料庫] ，然後按一下 [下一步] 。  
   

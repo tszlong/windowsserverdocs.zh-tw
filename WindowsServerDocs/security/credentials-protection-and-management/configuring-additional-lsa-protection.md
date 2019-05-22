@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: bd5863a46f77fd4ac53c8559ff17279271dc5c46
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59849689"
@@ -71,7 +71,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 ##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>透過編輯登錄在單一電腦上針對 Lsass.exe 啟用稽核模式
 
-1.  開啟 [登錄編輯程式] (RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe。
+1.  開啟 [登錄編輯程式]\(RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe。
 
 2.  將登錄機碼的值設定為 **AuditLevel=dword:00000008**。
 
@@ -94,7 +94,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 ##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>在 GPO 中建立 AuditLevel 值設定
 
-1.  開啟 [群組原則管理主控台] (GPMC)。
+1.  開啟 [群組原則管理主控台]\(GPMC)。
 
 2.  建立新的群組原則物件 (GPO)，該物件在網域層級連結或連結到包含您電腦帳戶的組織單位。 您也可以選取已經部署的 GPO。
 
@@ -146,7 +146,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 ##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>啟用單一電腦上的 LSA 保護
 
-1.  開啟 [登錄編輯程式] (RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
+1.  開啟 [登錄編輯程式]\(RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
 
 2.  將登錄機碼的值設定為："RunAsPPL"= dword:00000001。
 
@@ -154,7 +154,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 ##### <a name="to-enable-lsa-protection-using-group-policy"></a>使用群組原則啟用 LSA 保護
 
-1.  開啟 [群組原則管理主控台] (GPMC)。
+1.  開啟 [群組原則管理主控台]\(GPMC)。
 
 2.  建立新的 GPO，該物件在網域層級連結或連結到包含您電腦帳戶的組織單位。 您也可以選取已經部署的 GPO。
 
@@ -178,7 +178,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 ##### <a name="to-disable-lsa-protection"></a>停用 LSA 保護
 
-1.  開啟 [登錄編輯程式] (RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
+1.  開啟 [登錄編輯程式]\(RegEdit.exe)，並瀏覽到位於下列位置的登錄機碼：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa。
 
 2.  從登錄機碼刪除下列值："RunAsPPL"= dword:00000001。
 

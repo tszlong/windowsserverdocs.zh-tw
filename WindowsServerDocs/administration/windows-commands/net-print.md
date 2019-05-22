@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 441a61756869442fb91d26bfacc64bbeb8b902f4
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59826009"
@@ -27,7 +27,7 @@ ms.locfileid: "59826009"
 顯示指定的印表機佇列或指定的列印工作的相關資訊，或控制項指定的列印工作。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)這份文件的區段。
 > [!NOTE]
-> 此命令已被取代，在 Windows 7 和 Windows Server 2008 R2。 不過，您可以執行許多相同的工作使用 prnjobs、 Windows Management Instrumentation (WMI) 或 Windows PowerShell cmdlet。 如需詳細資訊，請參閱 < [prnjobs](prnjobs.md)， [Windows Management Instrumentation](https://go.microsoft.com/fwlink/?LinkID=29991) (https://go.microsoft.com/fwlink/?LinkID=29991)， [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) (https://go.microsoft.com/fwlink/?LinkID=128426)，以及[TechNet Script Center 組件庫](https://go.microsoft.com/fwlink/?LinkId=164635)(https://go.microsoft.com/fwlink/?LinkId=164635)。
+> 此命令已被取代，在 Windows 7 和 Windows Server 2008 R2。 不過，您可以執行許多相同的工作使用 prnjobs、 Windows Management Instrumentation (WMI) 或 Windows PowerShell cmdlet。 如需詳細資訊，請參閱 < [prnjobs](prnjobs.md)， [Windows Management Instrumentation](https://go.microsoft.com/fwlink/?LinkID=29991) (https://go.microsoft.com/fwlink/?LinkID=29991)， [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) (https://go.microsoft.com/fwlink/?LinkID=128426)，以及[TechNet Script Center 組件庫](https://go.microsoft.com/fwlink/?LinkId=164635)\(https://go.microsoft.com/fwlink/?LinkId=164635)。
 ## <a name="syntax"></a>語法
 ```
 Net print {\\<computerName>\<Sharename> | 

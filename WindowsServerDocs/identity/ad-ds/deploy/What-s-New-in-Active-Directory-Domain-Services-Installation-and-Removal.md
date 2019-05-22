@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 66455a9ec4eb8a6ff6bfcfa387aeb59acb3ddcc2
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59821349"
@@ -114,7 +114,7 @@ AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決�
 - 架構主機可用性檢查：如果安裝精靈判斷需要執行 adprep /forestprep，它會確認架構主機已經連線，否則會失敗。  
 - 基礎結構主機可用性檢查：如果安裝精靈判斷需要執行 adprep /domainprep，它會確認基礎結構主機已經連線，否則會失敗。
 
-從舊版 [Active Directory 安裝精靈] (dcpromo.exe) 開始執行的其他先決條件檢查包括：  
+從舊版 [Active Directory 安裝精靈]\(dcpromo.exe) 開始執行的其他先決條件檢查包括：  
 
 - 樹系名稱驗證：確定樹系名稱是有效的，而且目前不存在。  
 - NetBIOS 名稱驗證：檢查提供的 NetBIOS 名稱是有效的，而且與現有名稱沒有衝突。  

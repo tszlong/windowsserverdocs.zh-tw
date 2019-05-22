@@ -49,4 +49,4 @@ AD DS 站台與關聯的工作站，藉由比較工作站的 IP 位址與每個�
 
 表示在某個位置中的每個地區網域的使用者數目是其中一個因素會決定設置地區網域控制站和通用類別目錄伺服器，也就是站台拓撲設計程序的下一個步驟。 比方說，規劃放置區域網域控制站在包含 100 個以上區域的網域使用者，因此他們可以仍登入加入網域的 WAN 連結失敗時的位置。  
   
-記錄的位置，會在每個位置，以及代表每個位置中的每個網域的使用者數目表示的網域。 若要協助您列出的網域和每個位置中的使用者數目為工作表，請參閱[工作輔助工具的 Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558)，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟 [網域和使用者在每個位置] (DSSTOPO_3.doc)。  
+記錄的位置，會在每個位置，以及代表每個位置中的每個網域的使用者數目表示的網域。 若要協助您列出的網域和每個位置中的使用者數目為工作表，請參閱[工作輔助工具的 Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558)，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟 [網域和使用者在每個位置]\(DSSTOPO_3.doc)。  
