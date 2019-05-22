@@ -5,16 +5,16 @@ author: billmath
 ms.author: billmath
 manager: mtillman
 ms.reviewer: anandyadavMSFT
-ms.date: 02/13/2019
+ms.date: 03/29/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a5b5f895a0575094f8f1af950bde82e1d56325b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8d9acd1adcb8d9566b154abfef940e21609a6684
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829119"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64773379"
 ---
 # <a name="ad-fs-help-diagnostics-analyzer"></a>AD FS 說明診斷分析器
 
@@ -32,15 +32,15 @@ AD FS 具有許多功能，它提供用於驗證與應用程式開發的廣泛�
 
 ## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>步驟 1：安裝 AD FS 伺服器上的 ADFSToolbox 模組
 
-若要執行[診斷分析器](https://aka.ms/adfsdiagnosticsanalyzer)，您必須先安裝 ADFSToolbox PowerShell 模組。 如果 AD FS 伺服器已連線到網際網路，您就可以直接從 PowerShell gallery 安裝 ADFSToolbox 模組。 如果沒有連線到網際網路，複製 GitHub 存放庫手動安裝。 
+若要執行[診斷分析器](https://aka.ms/adfsdiagnosticsanalyzer)，您必須先安裝 ADFSToolbox PowerShell 模組。 如果 AD FS 伺服器已連線到網際網路，您就可以直接從 PowerShell gallery 安裝 ADFSToolbox 模組。 如果沒有連線到網際網路，複製 GitHub 存放庫手動安裝。
 
 ![AD FS 診斷分析器-安裝程式](media/ad-fs-diagonostics-analyzer/step1.png)
 
 ### <a name="setup-using-powershell-gallery"></a>使用 PowerShell 資源庫安裝
 
 如果 AD FS 伺服器有網際網路連線，建議您使用安裝 ADFSToolbox 模組直接從 PowerShell 資源庫使用下列 PowerShell 命令。
- 
-   ```powershell 
+
+   ```powershell
     Install-Module -Name ADFSToolbox -force
     Import-Module ADFSToolbox -force
    ```
@@ -51,8 +51,8 @@ ADFSToolbox 模組可以安裝以手動方式從 GitHub 直接。 遵循以下�
 1. 下載[存放庫](https://github.com/Microsoft/adfsToolbox/archive/master.zip)
 2. 解壓縮下載的檔案，並將 adfsToolbox master 資料夾複製到 %SYSTEMDRIVE%\\Program Files\\WindowsPowerShell\\模組\\。
 3. 匯入 PowerShell 模組。 在提升權限的 PowerShell 視窗中執行下列命令：
- 
-   ```powershell 
+
+   ```powershell
     Import-Module ADFSToolbox -Force
    ```
 
@@ -78,6 +78,11 @@ ADFSToolbox 模組可以安裝以手動方式從 GitHub 直接。 遵循以下�
 
 按一下 **上傳**完成上傳，然後移至下一個步驟。
 
+
+透過 Microsoft 帳戶登入，您的診斷結果可以儲存以供稍後檢視，以及可以傳送給 Microsoft 支援。 如果在您開啟支援案例的任何時間點，Microsoft 將能夠檢視診斷分析器結果，並協助更快將您的問題進行疑難排解。
+
+![AD FS 診斷分析器工具登入](media/ad-fs-diagonostics-analyzer/sign_in_step.png)
+
 ## <a name="step-3-view-diagnostics-analysis-and-resolve-any-issues"></a>步驟 3：檢視診斷的分析，並解決任何問題
 
 有四個區段的測試結果：
@@ -87,19 +92,15 @@ ADFSToolbox 模組可以安裝以手動方式從 GitHub 直接。 遵循以下�
 3. 不適用：本節包含已未執行，因為它們不是適用於特定的伺服器執行命令的測試清單。
 4. 傳遞：本節包含測試傳遞，且有使用者動作項目清單。
 
-每項測試結果會顯示說明的測試和解決方式步驟的詳細資料：
+![AD FS 診斷分析器工具-測試結果 清單](media/ad-fs-diagonostics-analyzer/step3a_v2.png)每項測試結果會顯示說明的測試和解決方式步驟的詳細資料：
 
 1. 測試名稱：已執行的測試名稱
 2. 詳細資料：在測試期間執行整體作業的描述
 3. 解決步驟：建議的步驟來解決此問題，測試所反白顯示
 
-![AD FS 診斷分析器工具-測試結果清單](media/ad-fs-diagonostics-analyzer/step3a.png)
-
-![AD FS 診斷分析器工具失敗解決方式](media/ad-fs-diagonostics-analyzer/step3b.png)
+![AD FS 診斷分析器工具失敗解決方式](media/ad-fs-diagonostics-analyzer/step3b_v2.png)
 
 ## <a name="next"></a>下一個
 
 - [使用 AD FS 說明 troublehshooting 輔助線](https://aka.ms/adfshelp/troubleshooting )
-- [疑難排解 AD FS](ad-fs-tshoot-overview.md)
-
- 
+- [AD FS 疑難排解](ad-fs-tshoot-overview.md)

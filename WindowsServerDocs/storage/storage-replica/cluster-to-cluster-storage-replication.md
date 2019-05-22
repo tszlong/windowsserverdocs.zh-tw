@@ -7,29 +7,27 @@ ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
-ms.date: 10/11/2017
-description: 如何使用儲存體複本，將一個叢集中的磁碟區複寫到另一個執行 Windows Server 2016 Datacenter Edition 的叢集。
-ms.openlocfilehash: 46bd5a53ff0e704844f10264a9f3a6fbe0e4d512
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 04/26/2019
+description: 如何使用儲存體複本在一個叢集中的磁碟區複寫至另一個執行 Windows Server 的叢集。
+ms.openlocfilehash: 2e3245320b2ef7035ac600ff783684083f3f929a
+ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838659"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65699904"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>叢集對叢集儲存體複寫
 
-> 適用於：Windows Server （半年通道），Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
 
-現在可於 Windows Server 2016 Datacenter Edition 中使用叢集對叢集複寫，包括使用儲存空間直接存取來複寫叢集 (也就是不共用，直接連結存放裝置)。 管理與設定類似於伺服器對伺服器複寫。  
+儲存體複本可以包括使用儲存空間直接存取叢集複寫的叢集之間複寫的磁碟區。 管理與設定類似於伺服器對伺服器複寫。  
 
 您將在叢集對叢集設定中，設定這些電腦與存放裝置，其中一個叢集會將自己那組存放裝置複寫為另一叢集與它那組存放裝置。 雖然並非必要，但這些節點及其存放裝置應位在不同的實體網站。  
-
-Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存體複本進行叢集對叢集複寫，不過 Azure Site Recovery 未來將能夠設定此案例。
 
 > [!IMPORTANT]
 > 這項測試中的四部伺服器即為範例。 您可以使用任意數量的 Microsoft 支援目前為儲存空間直接存取叢集的 8，64 共用存放裝置叢集的每個叢集中的伺服器。  
 >   
-> 本指南並未涵蓋設定儲存空間直接存取的內容。 如需設定儲存空間直接存取的資訊，請參閱 [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)。  
+> 本指南並未涵蓋設定儲存空間直接存取的內容。 如需設定儲存空間直接存取的資訊，請參閱[儲存空間直接存取概觀](../storage-spaces/storage-spaces-direct-overview.md)。  
 
 本逐步解說使用下列環境做為範例：  
 
@@ -46,7 +44,7 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
 ## <a name="prerequisites"></a>先決條件  
 
 * Active Directory Domain Services 樹系 (不需要執行 Windows Server 2016)。  
-* 至少在四部伺服器 (兩個叢集各有兩部伺服器) 安裝 Windows Server 2016 Datacenter Edition。 最多可支援兩個各有 64 節點的叢集。  
+* 4-128 兩部伺服器 （兩個叢集的 2 到 64 伺服器） 執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition。 如果您執行 Windows Server 2019，您可以改為使用 Standard Edition 如果您要確定複寫單一磁碟區的大小上限為 2 TB。  
 * 兩組存放裝置，使用 SAS JBOD、光纖通道 SAN、共用 VHDX、儲存空間直接存取或 iSCSI 目標。 儲存體應包含 HDD 和 SSD 兩者混合的媒體。 您必須設定每組存放裝置只能供各自的叢集使用，叢集之間不得共用存取。  
 * 每組存放裝置必須允許建立至少兩個虛擬磁碟，一個供複寫的資料使用，另一個供記錄檔使用。 實體存放裝置的所有資料磁碟上，必須都要有相同的磁區大小。 實體存放裝置的所有記錄檔磁碟上，必須都要有相同的磁區大小。  
 * 每部伺服器上至少要有一個乙太網路/TCP 連線，以進行同步複寫，但最好是 RDMA。   
@@ -59,7 +57,7 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
 
 ## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>步驟 1：佈建作業系統、功能、角色、儲存體及網路
 
-1.  使用 Windows Server 2016 Datacenter **(桌面體驗)** 的安裝類型，在所有四個伺服器節點上安裝 Windows Server 2016。 請不要選擇標準版 (如果有的話)，因為當中不包含儲存體複本。  
+1.  Windows server 的安裝類型的所有四個伺服器節點上安裝 Windows Server **（桌面體驗）**。 
 
 2.  新增網路資訊並加入網域，然後予以重新啟動。  
 
@@ -95,7 +93,7 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,Failover-Clustering,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        如需這些步驟的詳細資訊，請參閱[安裝或解除安裝角色、角色服務或功能](https://technet.microsoft.com/library/hh831809.aspx)  
+        如需這些步驟的詳細資訊，請參閱[安裝或解除安裝角色、角色服務或功能](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)  
 
 9. 如下所示設定儲存體：  
 
@@ -109,37 +107,37 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
     > -   記錄檔磁碟區應該使用 Flash 架構的儲存體，例如 SSD。  Microsoft 建議記錄檔儲存體應該要比資料儲存體更快。 記錄檔磁碟區不得用於其他工作負載。
     > -   資料磁碟可以使用 HDD、SSD 或階層式組合，而且可以使用鏡像或同位空間，或是 RAID 1 或 10、RAID 5 或 RAID 50。  
     > -   記錄磁碟區必須至少 8 GB，根據預設，而且可能是較大或較小的大小根據記錄需求。
-    > -   當使用儲存空間直接存取 (S2D) 和 NVME 或 SSD 快取，您會看到大於比預期增加設定 S2D 叢集之間的儲存體複本複寫時的延遲。 延遲的變更會按比例高出許多非使用中的效能 + 容量設定而且沒有 HDD 層和容量層 NVME 和 SSD 時，您會看到。
+    > -   當使用儲存空間直接存取 （儲存空間直接存取） 和 NVME 或 SSD 快取，您會看到大於比預期的增加的設定儲存空間直接存取叢集之間的儲存體複本複寫時的延遲。 延遲的變更會按比例高出許多非使用中的效能 + 容量設定而且沒有 HDD 層和容量層 NVME 和 SSD 時，您會看到。
 
-由於 NVME 相較於較慢的媒體的極低的延遲所結合的 SR 的記錄機制內的架構限制，會發生此問題。 使用 S2D 快取時，所有的 IO 的 SR 記錄檔，以及所有最近讀取/寫入 IO 的應用程式，不會進行快取中，且永遠不會在效能或容量層。 也就是說，SR 的所有活動都發生在相同的速度媒體-此設定不支援不建議使用 (請參閱 https://aka.ms/srfaq記錄建議的)。 
+    由於 NVME 相較於較慢的媒體的極低的延遲所結合的 SR 的記錄機制內的架構限制，會發生此問題。 當使用儲存空間直接存取儲存體空間直接存取快取，所有的 IO 的 SR 記錄檔，以及所有最近讀取/寫入 IO 的應用程式，不會進行快取中，且永遠不會在容量或效能層。 也就是說，SR 的所有活動都發生在相同的速度媒體-此設定不支援不建議使用 (請參閱 https://aka.ms/srfaq記錄建議的)。 
 
-當使用 Hdd S2D，您無法停用，或避免快取。 因應措施，如果僅使用 SSD 和 NVME，您可以設定只是效能和容量層。 當使用該組態，並只使用這些服務在僅限容量層上的資料磁碟區的效能層級上放置 SR 記錄檔，可避免上述的高延遲問題。 無法混合使用更快且較慢的 Ssd 和 NVME 沒有完成相同。
+    當使用儲存空間直接存取 Hdd，您無法停用，或避免快取。 因應措施，如果僅使用 SSD 和 NVME，您可以設定只是效能和容量層。 當使用該組態，並只使用這些服務在僅限容量層上的資料磁碟區的效能層級上放置 SR 記錄檔，可避免上述的高延遲問題。 無法混合使用更快且較慢的 Ssd 和 NVME 沒有完成相同。
 
-此因應措施當然不是理想，有些客戶可能無法進行使用它。 SR 小組正在最佳化並減少這些人的瓶頸，就會發生在未來的更新的記錄機制。 沒有任何 ETA 這麼做，但可用時，以進行測試，請點選 客戶，將更新本常見問題集。 
+    此因應措施當然不是理想，有些客戶可能無法進行使用它。 SR 小組正在最佳化並減少這些人的瓶頸，就會發生在未來的更新的記錄機制。 沒有任何 ETA 這麼做，但可用時，以進行測試，請點選 客戶，將更新本常見問題集。 
 
-    -   **對於 JBOD 機箱：**  
+-   **對於 JBOD 機箱：**  
 
-        1.  請確定每個叢集只能看到該網站的存放裝置機箱，同時已正確設定 SAS 連線。  
+1. 請確定每個叢集只能看到該網站的存放裝置機箱，同時已正確設定 SAS 連線。  
 
-        2.  遵循[在獨立伺服器上部署儲存空間](https://technet.microsoft.com/library/jj822938.aspx)中提供的**步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
+2. 遵循[在獨立伺服器上部署儲存空間](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
 
-    -   **Iscsi 目標儲存體：**  
+-   **Iscsi 目標儲存體：**  
 
-        1.  請確定每個叢集只能看到該網站的儲存體機箱。 如果使用 iSCSI，您應該使用一張以上的網路介面卡。  
+1. 請確定每個叢集只能看到該網站的儲存體機箱。 如果使用 iSCSI，您應該使用一張以上的網路介面卡。  
 
-        2.  使用廠商的文件來佈建儲存體。 如果使用 Windows iSCSI 目標，請參閱 [iSCSI 目標區塊儲存體，作法](https://technet.microsoft.com/library/hh848268.aspx)。  
+2. 使用廠商的文件來佈建儲存體。 如果使用 Windows iSCSI 目標，請參閱 [iSCSI 目標區塊儲存體，作法](../iscsi/iscsi-target-server.md)。  
 
-    -   **FC SAN 儲存體：**  
+-   **FC SAN 儲存體：**  
 
-        1.  請確定每個叢集只能看到該網站的儲存體機箱，同時您已將主機適當地分區。  
+1. 請確定每個叢集只能看到該網站的儲存體機箱，同時您已將主機適當地分區。  
 
-        2.  使用廠商的文件來佈建儲存體。  
+2. 使用廠商的文件來佈建儲存體。  
 
-    -   **儲存空間直接：**  
+-   **儲存空間直接：**  
 
-        1.  確定每個叢集只能透過部署儲存空間直接存取看到該網站的存放裝置機箱。 (https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
+1. 確定每個叢集只能透過部署儲存空間直接存取看到該網站的存放裝置機箱。 (https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
 
-        2.  確定 SR 記錄檔磁碟區一定位在最快速的快閃存放裝置，而資料磁碟區位在較慢的高容量存放裝置上。
+2. 確定 SR 記錄檔磁碟區一定位在最快速的快閃存放裝置，而資料磁碟區位在較慢的高容量存放裝置上。
 
 10. 啟動 Windows PowerShell，然後使用 `Test-SRTopology` Cmdlet 來判斷您是否符合所有儲存體複本需求。 您可以在僅查看需求的模式中，使用此 Cmdlet 進行快速測試，還可以在評估長時間執行效能的模式中使用。  
 例如，  
@@ -159,7 +157,7 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
     ![此圖顯示複寫拓撲報告結果](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
 ## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>步驟 2：設定兩個向外延展檔案伺服器容錯移轉叢集  
-您現在將建立兩個標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以複寫。 您可以直接在叢集節點上，或從包含 Windows Server 2016 RSAT 管理工具的遠端管理電腦，執行下列所有步驟。  
+您現在將建立兩個標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以複寫。 您可以先執行所有步驟，直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端管理電腦。  
 
 ### <a name="graphical-method"></a>圖形化方法  
 
@@ -172,10 +170,10 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
 4.  設定檔案共用見證或雲端見證。  
 
     > [!NOTE]  
-    > Windows Server 2016 現在包含雲端 (Azure) 見證選項。 您可以選擇此仲裁選項，而不是檔案共用見證。  
+    > WIndows Server 現在包含雲端 (Azure) 的選項-見證。 您可以選擇此仲裁選項，而不是檔案共用見證。  
 
     > [!WARNING]  
-    > 如需仲裁設定的詳細資訊，請參閱[設定和管理 Windows Server 2012 容錯移轉叢集中的仲裁](https://technet.microsoft.com/library/jj612870.aspx)中的＜見證設定＞一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx)。  
+    > 如需仲裁設定的詳細資訊，請參閱**見證設定**一節[設定及管理仲裁](../../failover-clustering/manage-cluster-quorum.md)。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。  
 
 5.  在 **Redmond** 網站中將一部磁碟新增至叢集 CSV。 若要這樣做，在 [存放裝置] 區段的 [磁碟] 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]。  
 
@@ -204,17 +202,17 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
     ```  
 
     > [!NOTE]  
-    > Windows Server 2016 現在包含雲端 (Azure) 見證選項。 您可以選擇此仲裁選項，而不是檔案共用見證。  
+    > WIndows Server 現在包含雲端 (Azure) 的選項-見證。 您可以選擇此仲裁選項，而不是檔案共用見證。  
 
     > [!WARNING]  
-    > 如需仲裁設定的詳細資訊，請參閱[設定和管理 Windows Server 2012 容錯移轉叢集中的仲裁](https://technet.microsoft.com/library/jj612870.aspx)中的＜見證設定＞一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx)。  
+    > 如需仲裁設定的詳細資訊，請參閱**見證設定**一節[設定及管理仲裁](../../failover-clustering/manage-cluster-quorum.md)。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。  
 
 4.  使用[設定向外延展檔案伺服器](https://technet.microsoft.com/library/hh831718.aspx)中的指示，在兩個叢集上建立叢集向外延展檔案伺服器  
 
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>步驟 3：設定使用 Windows PowerShell 的叢集對叢集複寫  
-現在您將使用 Windows PowerShell 來設定叢集對叢集複寫。 您可以直接在節點上，或從包含 Windows Server 2016 RSAT 管理工具的遠端管理電腦，執行下列所有步驟  
+現在您將使用 Windows PowerShell 來設定叢集對叢集複寫。 您可以直接在節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端管理電腦執行所有步驟  
 
-1.  第一個叢集完整存取權授與另一個叢集執行**授與 SRAccess** cmdlet 的第一個叢集，在任何節點上或遠端電腦上。  
+1.  第一個叢集完整存取權授與另一個叢集執行**授與 SRAccess** cmdlet 的第一個叢集，在任何節點上或遠端電腦上。  Windows Server 遠端伺服器管理工具
 
     ```PowerShell
     Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
@@ -300,9 +298,9 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
 
 ## <a name="step-4-manage-replication"></a>步驟 4：管理複寫
 
-現在您即將管理和操作叢集對叢集複寫。 您可以直接在叢集節點上，或從包含 Windows Server 2016 RSAT 管理工具的遠端管理電腦，執行下列所有步驟。  
+現在您即將管理和操作叢集對叢集複寫。 您可以先執行所有步驟，直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端管理電腦。  
 
-1.  使用 **Get-ClusterGroup** 或 **Failover Cluster Manager**，判斷目前的複寫來源與目的地，還有其狀態。  
+1.  使用 **Get-ClusterGroup** 或 **Failover Cluster Manager**，判斷目前的複寫來源與目的地，還有其狀態。  Windows Server 遠端伺服器管理工具
 
 2.  若要測量複寫效能，請在來源和目的地節點上使用 **Get-Counter** Cmdlet。 計數器名稱如下：  
 
@@ -358,7 +356,7 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](https://technet.microsoft.com/library/hh849685.aspx)。  
+    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)。  
 
 3.  若要移動一個網站的複寫方向，請使用 **Set-SRPartnership** Cmdlet。  
 
@@ -367,14 +365,14 @@ Windows Server 2016 Datacenter Edition 中沒有圖形化工具可設定儲存�
     ```  
 
     > [!NOTE]  
-    > 正在進行初始同步處理時，Windows Server 2016 不會阻止角色切換，因為如果您尚未完成初始複寫，即嘗試切換，可能會導致資料遺失。 在完成初始同步處理之前，請勿強制切換方向。
+    > Windows Server 中，不會阻止角色切換，初始同步處理正在進行時，因為如果您嘗試切換，才能完成初始複寫，它會導致資料遺失。 在完成初始同步處理之前，請勿強制切換方向。
 
     檢查事件記錄檔，以查看複寫方向變更以及復原模式發生的情況，接著予以調解。 然後寫入 IO 就可以寫入新的來源伺服器所擁有的儲存體。 變更複寫方向，將會在先前的來源電腦上封鎖寫入 IO。  
 
     > [!NOTE]  
     > 複寫時，目的地叢集磁碟永遠會顯示為 [線上 (沒有存取權)]。  
 
-4.  若要在 Windows Server 2016 中變更預設的 8 GB 記錄檔大小，請在來源和目的地儲存體複本群組上使用 **Set-SRGroup**。  
+4.  若要變更預設 8 GB 記錄檔大小，請使用**Set-srgroup**來源和目的地儲存體複本群組上。  
 
     > [!IMPORTANT]  
     > 預設記錄檔大小為 8 GB。 根據 **Test-SRTopology** Cmdlet 的結果，您可能會決定以較高或較低的值來使用 -LogSizeInBytes。  
