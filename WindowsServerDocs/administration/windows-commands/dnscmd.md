@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 39478e9b7dd8e8c69ed07f5d431486a7ed96b9cb
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59815499"
@@ -822,11 +822,11 @@ dnscmd [<ServerName>] /zoneadd <ZoneName> <Zonetype> [/dp <FQDN>|{/ 網域 | / �
 建立檔案備份的虛設常式區域。  
 **/dsstub <MasterIPaddress> [<MasterIPaddress>...]**  
 建立 active directory 整合式的虛設常式區域。  
-* * / 轉寄站<MasterIPaddress>[<MasterIPaddress>].../ 檔案 <FileName>**  
+**/轉寄站<MasterIPaddress>[<MasterIPaddress>].../ 檔案 <FileName>**  
 指定建立的區域轉送到其他 DNS 伺服器無法解析的查詢。  
 **/dsforwarder**  
 指定建立的 active directory 整合的區域轉送到其他 DNS 伺服器無法解析的查詢。  
-* * /dp <FQDN> {/ 網域 | /enterprise | / 舊版} * *  
+**/dp <FQDN> {/ 網域 | /enterprise | / 舊版}**  
 指定用來儲存區域的目錄磁碟分割。  
 **<FQDN>**  
 指定的目錄磁碟分割的 FQDN。  
@@ -869,14 +869,14 @@ dnscmd [<ServerName>] /zonedelete <ZoneName> [/dsdel] [/f] ```
 **/f**  
 執行命令，而不要求確認。 # # # 範例，請參閱[範例 9： 刪除區域的 DNS 伺服器從](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)。  
 ### <a name="BKMK_25"></a>dnscmd /zoneexport  
-建立文字檔案，其中列出指定區域的資源記錄。 # # # 語法 'dnscmd [<ServerName>] /zoneexport <ZoneName> <ZoneExportFile>' # # # 參數 * *<ServerName>**  
+建立文字檔案，其中列出指定區域的資源記錄。 # # # 語法 'dnscmd [<ServerName>] /zoneexport <ZoneName> <ZoneExportFile>' # # # 參數 **<ServerName>**  
 指定 DNS 伺服器來管理，以表示本機電腦的語法、 IP 位址、 FQDN 或主機名稱。 如果省略這個參數，則會使用本機伺服器。  
 **<ZoneName>**  
 指定區域的名稱。  
 **<ZoneExportFile>**  
 指定要建立的檔案名稱。 # # # 備註- **zoneexport**作業會建立 active directory 整合的區域以進行疑難排解的資源記錄的檔案。 根據預設，此命令會建立檔案位於預設為 %systemroot%/System32/Dns 目錄的 [DNS] 目錄中。 # # # 範例，請參閱[範例 10:區域資源記錄清單匯出至檔案](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)。  
 ### <a name="BKMK_26"></a>dnscmd /zoneinfo  
-會顯示一節的指定區域的登錄設定: * * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>* * # # # 語法```  
+會顯示一節的指定區域的登錄設定: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>** # # # 語法```  
 dnscmd [<ServerName>] /zoneinfo <ZoneName> [<Setting>] ```  
 #### Parameters  
 **<ServerName>**  
@@ -884,7 +884,7 @@ dnscmd [<ServerName>] /zoneinfo <ZoneName> [<Setting>] ```
 **<ZoneName>**  
 指定區域的名稱。  
 **<Setting>**  
-您可以個別指定任何設定**zoneinfo**命令所傳回。 如果您未指定的設定，則會傳回所有設定。 # # # 備註- **zoneinfo**命令會顯示位於 DNS 區域在層級的登錄設定 * * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>* *。 -若要顯示伺服器層級的登錄設定，請使用[資訊](#BKMK_12)命令。 -若要查看您可以使用此命令顯示的設定清單，請參閱[config](#BKMK_3)命令。 # # # 範例，請參閱[範例 11:顯示 RefreshInterval 設定從登錄](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)或[範例 12:顯示過時設定從登錄](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)。  
+您可以個別指定任何設定**zoneinfo**命令所傳回。 如果您未指定的設定，則會傳回所有設定。 # # # 備註- **zoneinfo**命令會顯示位於 DNS 區域在層級的登錄設定 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>**。 -若要顯示伺服器層級的登錄設定，請使用[資訊](#BKMK_12)命令。 -若要查看您可以使用此命令顯示的設定清單，請參閱[config](#BKMK_3)命令。 # # # 範例，請參閱[範例 11:顯示 RefreshInterval 設定從登錄](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)或[範例 12:顯示過時設定從登錄](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)。  
 ### <a name="BKMK_27"></a>dnscmd /zonepause  
 暫停指定的區域，則會忽略查詢要求。 # # # 語法```  
 dnscmd [<ServerName>] /zonepause <ZoneName> ```  
@@ -961,7 +961,7 @@ dnscmd [<ServerName>] /zoneresetsecondaries <ZoneName> {/ noxfr | / 不安全 | 
 指定的區域傳輸僅會授與的伺服器清單。 這個參數必須緊接著的 IP 位址或主要伺服器使用的位址。  
 **<SecurityIPaddresses>**  
 列出從主要伺服器接收區域轉送的 IP 位址。 會使用這個參數只能搭配 **/securelist**參數。  
-* * / nonotify |通知 / |/notifylist <NotifyIPaddresses>**  
+**/nonotify |通知 / |/notifylist <NotifyIPaddresses>**  
 指定的變更通知只會傳送到特定的次要伺服器：  
 **/nonotify**  
 指定沒有變更通知會傳送到次要伺服器。  
@@ -993,7 +993,7 @@ dnscmd [<ServerName>] /zoneresettype <ZoneName> <Zonetype> [/ overwrite_mem | /o
 建立檔案備份的虛設常式區域。  
 **/dsstub <MasterIPaddress>[,<MasterIPaddress>...]**  
 建立 active directory 整合式的虛設常式區域。  
-* * / 轉寄站<MasterIPaddress[,<MasterIPaddress>].../ 檔案<FileName>**  
+**/轉寄站<MasterIPaddress[,<MasterIPaddress>].../ 檔案<FileName>**  
 指定建立的區域轉送到其他 DNS 伺服器無法解析的查詢。  
 **/dsforwarder**  
 指定建立的 active directory 整合的區域轉送到其他 DNS 伺服器無法解析的查詢。  

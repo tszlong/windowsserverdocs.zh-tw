@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 613ff4c80a80ed4f3207cb0c1ead6db12c723e85
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59815379"
@@ -43,7 +43,7 @@ ms.locfileid: "59815379"
   
 1.  在目的地伺服器上，開啟 [群組原則管理] 系統管理工具。  
   
-2.  在 **群組原則管理**，展開 **樹系: * * * YourNetworkDomainName*，展開**網域**，展開*YourNetworkDomainName*然後展開**群組原則物件**。  
+2.  在 **群組原則管理**，展開 **樹系:*** YourNetworkDomainName*，展開**網域**，展開*YourNetworkDomainName*然後展開 **群組原則物件** 。  
   
 3.  以滑鼠右鍵按一下您想要刪除的原則，然後按一下 [刪除] 。  
   

@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f8cf1b12a8fffe2a6e3389aad518ac96bc136cc9
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59872169"
@@ -314,13 +314,13 @@ ms.locfileid: "59872169"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>從行動裝置登入遠端 Web 存取  
   
-1.  開啟網頁瀏覽器並輸入**https://***< 您的網域名稱\>***/遠端**的網址列中。  請確定您在 https 中包含 s。  
+1.  開啟網頁瀏覽器並輸入**https://***<您的網域名稱\>***/遠端**的網址列中。  請確定您在 https 中包含 s。  
   
 2.  在 遠端 Web 存取登入頁面上，在文字方塊中，輸入您的使用者名稱和密碼，然後按一下箭號。 這會將您登入行動裝置版本的「遠端 Web 存取」。  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>切換到桌面版本的遠端 Web 存取  
   
-1.  開啟網頁瀏覽器並輸入**https://***< 您的網域名稱\>***/遠端**的網址列中。  請確定您在 https 中包含 s。  
+1.  開啟網頁瀏覽器並輸入**https://***<您的網域名稱\>***/遠端**的網址列中。  請確定您在 https 中包含 s。  
   
 2.  在遠端 Web 存取登入頁面上，輸入您的使用者名稱和密碼的文字方塊中，按一下**檢視桌面版本**，然後按一下箭號。 這會將您登入桌面版本的「遠端 Web 存取」。  
   
@@ -328,7 +328,7 @@ ms.locfileid: "59872169"
   
 1.  登出。  
   
-2.  開啟網頁瀏覽器並輸入**https://***< 您的網域名稱\>***/遠端/m**的網址列中。 請確定您在 https 中包含 s。  
+2.  開啟網頁瀏覽器並輸入**https://***<您的網域名稱\>***/遠端/m**的網址列中。 請確定您在 https 中包含 s。  
   
 3.  會顯示行動版的遠端 Web 存取。 在 遠端 Web 存取登入頁面上，在文字方塊中，輸入您的使用者名稱和密碼，然後按一下箭號。 登入行動版的遠端 Web 存取。  
   
