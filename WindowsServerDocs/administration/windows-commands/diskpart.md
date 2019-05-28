@@ -5,15 +5,14 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 54b34b6d8849caecae2123ddab91a658a4692ba3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 3cc0667b54dba75d892795f6520664ce7a7a62a5
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849339"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192654"
 ---
 # <a name="diskpart-commands"></a>DiskPart 命令
-
 
 適用於：Windows 10，Windows 8.1，Windows 8、 Windows 7、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 和 Windows Server 2008 R2 及 Windows Server 2008
 
@@ -31,11 +30,8 @@ DiskPart 命令可協助您管理您的電腦磁碟機 （磁碟、 磁碟分割
 
 `diskpart`
 
-
 > [!IMPORTANT]
-> 在本機的成員資格<STRONG>系統管理員</STRONG>群組或對等項目，是執行 DiskPart 所需的最小。 
-<br>
-
+> 在本機的成員資格**系統管理員**群組或對等項目，是執行 DiskPart 所需的最小。 
 
 在 Diskpart 命令直譯器，您可以執行下列命令：
 
@@ -121,4 +117,3 @@ DiskPart 命令可協助您管理您的電腦磁碟機 （磁碟、 磁碟分割
 [命令列語法關鍵](command-line-syntax-key.md)
 
 [Windows PowerShell 中的儲存體 Cmdlet](https://docs.microsoft.com/en-us/powershell/module/storage/)
-

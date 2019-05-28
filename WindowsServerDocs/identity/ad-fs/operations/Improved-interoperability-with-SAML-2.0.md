@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4f55eaacec8ee0eb41e1980f1aa15c6256f8b979
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4148614ba35ce29f567edb08b94e115d3f9152e9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818729"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189097"
 ---
 # <a name="improved-interoperability-with-saml-20"></a>使用 SAML 2.0 改進互通性
 
->適用於：Windows Server 2016
+
 
   
 Windows Server 2016 中的 AD FS 包含其他 SAML 通訊協定支援，包括支援匯入包含多個實體的中繼資料為基礎的信任。  這可讓您設定 AD FS 以參與 confederations InCommon 同盟等其他符合 eGov 2.0 標準的實作。   

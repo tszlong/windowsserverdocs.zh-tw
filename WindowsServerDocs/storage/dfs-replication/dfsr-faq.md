@@ -6,17 +6,17 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: f1d77b6640bc0d6a5832a5a19c80d9d0af5d2b00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3782667e54f5e6b52c07645704b95fc9e7409a27
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832659"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476065"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)
 
 
-更新日期：2013 年 10 月 9日日
+更新日期：2019 年 4 月 30日日
 
 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
 
@@ -631,7 +631,7 @@ DFS 複寫不會合併檔案，就會發生衝突時。 不過，它會嘗試保
 
 ### <a name="is-there-a-way-to-force-a-complete-replication-of-all-files-including-unchanged-files"></a>是否有強制完整的複寫，包括未變更的檔案的所有檔案的方法？
 
-資料分割 如果 DFS 複寫會將檔案視為相同，它不會複寫它們。 如果尚未複寫變更的檔案，DFS 複寫會自動將它們複寫時設定為執行這項操作。 若要覆寫設定的排程，請使用 WMI 方法**ForceReplicate()**。 不過，這是只覆寫的排程，並不會強制複寫變更或完全相同的檔案。
+資料分割 如果 DFS 複寫會將檔案視為相同，它不會複寫它們。 如果尚未複寫變更的檔案，DFS 複寫會自動將它們複寫時設定為執行這項操作。 若要覆寫設定的排程，請使用 WMI 方法**ForceReplicate()** 。 不過，這是只覆寫的排程，並不會強制複寫變更或完全相同的檔案。
 
 ### <a name="what-happens-if-the-primary-member-suffers-a-database-loss-during-initial-replication"></a>如果主要成員資料庫遺失初始複寫期間發生什麼事？
 
@@ -730,7 +730,7 @@ DFS 複寫不會合併檔案，就會發生衝突時。 不過，它會嘗試保
 <tr class="header">
 <th>Date</th>
 <th>描述</th>
-<th>原因</th>
+<th>`Reason`</th>
 </tr>
 </thead>
 <tbody>

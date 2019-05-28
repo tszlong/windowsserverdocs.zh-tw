@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 376cec7f3a4fb1f988ac5d458b05220c7b9de970
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b883126f60950c0015b3a21e2ca5abc251b25b84
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857689"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190464"
 ---
 # <a name="where-to-place-a-federation-server"></a>放置同盟伺服器的位置
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 安全性最佳做法是，Active Directory Federation Services 的地方\(AD FS\)同盟伺服器的防火牆前面，並連接至您公司的網路，以避免曝露在網際網路。 這很重要，因為同盟伺服器擁有完整權限可授與安全性權杖。 因此，它們應該像網域控制站一樣受到保護。 如果同盟伺服器遭到入侵，惡意使用者能夠為所有 Web 應用程式，Active Directory 同盟服務所保護的同盟伺服器發出完整存取權杖\(AD FS\)中所有的資源夥伴組織。  
   
@@ -40,4 +38,4 @@ ms.locfileid: "59857689"
 如需有關如何在周邊網路中設定伺服器發佈的詳細資訊，請參閱 [Where to Place a Federation Server Proxy](Where-to-Place-a-Federation-Server-Proxy.md)。 如需有關如何設定 ISA Server 以發佈伺服器的資訊，請參閱 <<c0> [ 建立安全的網頁發行規則](https://go.microsoft.com/fwlink/?LinkId=75182)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

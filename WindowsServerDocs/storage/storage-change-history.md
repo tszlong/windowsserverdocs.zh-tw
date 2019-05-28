@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 03/08/2019
+ms.date: 03/25/2019
 description: 在內部部署儲存體文件中適用於 Windows Server IT 專業人員的全新和更新主題。
-ms.openlocfilehash: 3eb2f0e8dd05612d1c160ffe53791db3c1ef1828
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fa3da6e14c36fecfa48c3688a36518babb257920
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851089"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192683"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中的儲存空間主題變更歷程記錄
 
@@ -24,10 +24,19 @@ ms.locfileid: "59851089"
 
 > 如果您想要尋求更新歷程記錄，適用於 Windows Server，請參閱[Windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
+## <a name="may-2019"></a>2019 年 5 月
+
+|新增或已變更的主題                                        |描述|
+|---                                                         |---           |
+|[刪除磁碟區](storage-spaces/delete-volumes.md)| 新的        |
+|[建立磁碟區](storage-spaces/create-volumes.md)| 已新增的步驟和影片中 Windows Admin Center 建立磁碟區。|
+|[延伸磁碟區](storage-spaces/resize-volumes.md)| 已新增的步驟，並調整大小的 Windows Admin Center 中的磁碟區的影片。|
+
 ## <a name="march-2019"></a>2019 年 3 月
 
 |新增或已變更的主題                                        |描述|
 |---                                                         |---           |
+|[使用 Azure 監視器的監視](storage-spaces/configure-azure-monitor.md)| 新的|
 |[將儲存空間直接存取叢集升級到 Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新的        |
 |[DFS 複寫](dfs-replication/dfsr-overview.md)        | 從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))文件庫|
 
@@ -41,33 +50,33 @@ ms.locfileid: "59851089"
 
 |新增或已變更的主題                                        |描述|
 |---                                                         |---           |
-|[了解及監視儲存體重新同步處理](storage-spaces/understand-storage-resync.md)|新主題|
+|[了解和監視存放裝置重新同步](storage-spaces/understand-storage-resync.md)|新主題|
 
 ## <a name="december-2018"></a>2018 年 12 月
 
 |新增或已變更的主題                                        |描述|
 |---                                                         |---           |
 |[若要移轉的伺服器使用儲存體移轉服務](storage-migration-service/migrate-data.md)| 加入一些說明我們如何傳輸檔案 |
-|[叢集對叢集儲存體複本跨 Azure 區域](storage-replica/cluster-to-cluster-azure-cross-region.md)|新增的驗證步驟|
-|[在 Azure 中的相同區域內的叢集對叢集儲存體複本](storage-replica/cluster-to-cluster-azure-one-region.md)|新增的驗證步驟|
+|[Azure 中跨地區的叢集對叢集儲存體複本](storage-replica/cluster-to-cluster-azure-cross-region.md)|新增的驗證步驟|
+|[Azure 中相同地區的叢集對叢集儲存體複本](storage-replica/cluster-to-cluster-azure-one-region.md)|新增的驗證步驟|
 |[常見問題集的儲存體複本](storage-replica/storage-replica-frequently-asked-questions.md)| 已新增的支援陳述式進行重複資料刪除|
 
 ## <a name="november-2018"></a>2018 年 11 月
 
 |新增或已變更的主題                                        |描述|
 |---                                                         |---           |
-|[巢狀的恢復功能](storage-spaces/nested-resiliency.md)    | 新主題    |
+|[巢狀復原](storage-spaces/nested-resiliency.md)    | 新主題    |
 |[儲存體移轉服務的已知問題](storage-migration-service/known-issues.md)   | 新主題    |
 |[DFS 複寫：常見問題集 (FAQ)](dfs-replication/dfsr-faq.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/)文件庫|
-|[移轉至 DFS 複寫的 SYSVOL 複寫](dfs-replication/migrate-sysvol-to-dfsr.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
-|[SMB:檔案及印表機共用連接埠應該開啟](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
+|[將 SYSVOL 複寫移轉至 DFS 複寫](dfs-replication/migrate-sysvol-to-dfsr.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
+|[SMB：檔案和印表機共用連接埠應該開啟](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
 |[磁碟區陰影複製服務](file-server/volume-shadow-copy-service.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
 
 ## <a name="october-2018"></a>2018 年 10 月
 
 |新增或已變更的主題|描述|
 |---|---|
-|[儲存體中最新消息](whats-new-in-storage.md)|更新以涵蓋的 Windows Server 2019 新功能|
+|[儲存空間的新功能](whats-new-in-storage.md)|更新以涵蓋的 Windows Server 2019 新功能|
 |[儲存體複本的已知問題](storage-replica/storage-replica-known-issues.md)|已新增新的更新的詳細資訊。|
 
 ## <a name="september-2018"></a>2018 年 9 月
@@ -78,14 +87,14 @@ ms.locfileid: "59851089"
 |[若要移轉的伺服器使用儲存體移轉服務](storage-migration-service/migrate-data.md)| 新主題 |
 |[儲存體移轉服務常見問題集 (faq)](storage-migration-service/faq.md)| 新主題 |
 | [iSCSI 目標伺服器](iscsi/iscsi-target-server.md) | 從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
-| [iSCSI 目標伺服器的延展性限制](iscsi/iscsi-target-server-limits.md) |從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
+| [iSCSI 目標伺服器延展性限制](iscsi/iscsi-target-server-limits.md) |從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 
 ## <a name="june-2018"></a>2018 年 6 月
 
 |新增或已變更的主題|描述|
 |---|---|
 |[伺服器對伺服器儲存體複寫](storage-replica/server-to-server-storage-replication.md)|已新增有關使用 Azure Vm，包括 ExpressRoute 的詳細資訊。|
-|[叢集設定](storage-spaces/cluster-sets.md)| 新主題|
+|[叢集集合](storage-spaces/cluster-sets.md)| 新主題|
 
 ## <a name="may-2018"></a>2018 年 5 月
 
@@ -110,7 +119,7 @@ ms.locfileid: "59851089"
 |[資料夾重新導向、 離線檔案和漫遊使用者設定檔的概觀](folder-redirection/folder-redirection-rup-overview.md)|移轉多個主題，從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[檔案共用使用 SMB 3 通訊協定](file-server/file-server-smb-overview.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[改善的 SMB 直接傳輸的檔案伺服器的效能](file-server/smb-direct.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
-|[SMB 的安全性增強功能](file-server/smb-security.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
+|[SMB 安全性增強功能](file-server/smb-security.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 
 ## <a name="march-2018"></a>2018 年 3 月
 
@@ -141,11 +150,11 @@ ms.locfileid: "59851089"
 |新增或已變更的主題|描述|
 |---|---|
 |[變更磁碟機代號](disk-management/change-a-drive-letter.md)|新主題。|
-|[疑難排解磁碟管理](disk-management/troubleshooting-disk-management.md)|重寫[磁碟的狀態為 未初始化或磁碟已遺失完全](disk-management/troubleshooting-disk-management.md#disk-not-initialized)區段以新增廣泛的疑難排解步驟，根據客戶要求。|
-|[初始化新的磁碟](disk-management/initialize-new-disks.md)|重寫，以嘗試讓它更容易了解並解決客戶問題。|
+|[針對磁碟管理問題進行疑難排解](disk-management/troubleshooting-disk-management.md)|重寫[磁碟的狀態為 未初始化或磁碟已遺失完全](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)區段以新增廣泛的疑難排解步驟，根據客戶要求。|
+|[初始化新磁碟](disk-management/initialize-new-disks.md)|重寫，以嘗試讓它更容易了解並解決客戶問題。|
 |[規劃中儲存空間直接存取磁碟區](storage-spaces/plan-volumes.md)|新增彙總四個節點和大型叢集上可用的復原類型的資料表。|
 |[ReFS 概觀](refs/refs-overview.md)|釐清鏡像加速同位建議的工作負載，而且對 ReFS 及 NTFS 更正支援的檔案和磁碟區大小。|
-|[鏡像加速同位檢查](refs/mirror-accelerated-parity.md)|已釐清的建議，以將大量寫入檔案放在個別的目錄。|
+|[鏡像加速的同位](refs/mirror-accelerated-parity.md)|已釐清的建議，以將大量寫入檔案放在個別的目錄。|
 |[儲存體複本的已知問題](storage-replica/storage-replica-known-issues.md)|已加入新的資訊。|
 
 ## <a name="november-2017"></a>2017 年 11 月
@@ -229,7 +238,7 @@ ms.locfileid: "59851089"
 |[擴充儲存空間直接存取中的磁碟區](storage-spaces/resize-volumes.md)|新主題。|
 |[ReFS 概觀](refs/refs-overview.md)|新主題。|
 |[了解儲存空間直接存取](storage-spaces/understand-storage-spaces-direct.md)|新的連結清單。|
-|[規劃的儲存空間直接存取](storage-spaces/plan-storage-spaces-direct.md)|新的連結清單。|
+|[規劃儲存空間直接存取](storage-spaces/plan-storage-spaces-direct.md)|新的連結清單。|
 |[部署儲存空間直接存取](storage-spaces/deploy-storage-spaces-direct.md)|新的連結清單。|
 |[管理儲存空間直接存取](storage-spaces/manage-storage-spaces-direct.md)|新主題。|
 |[常見問題集的儲存體複本](storage-replica/storage-replica-frequently-asked-questions.md)|已更新的連接埠需求並釐清延伸複寫磁碟區的運作方式。|

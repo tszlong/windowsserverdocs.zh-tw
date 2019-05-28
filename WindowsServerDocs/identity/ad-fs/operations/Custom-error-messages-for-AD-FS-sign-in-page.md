@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a015c27f784d5b1f488f984450612820d4a06b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8bcc653cc9eb9adb6d31331463d01774d4faec1a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828979"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189225"
 ---
 # <a name="custom-error-messages-for-ad-fs-sign-in-page"></a>AD FS 登入頁面的自訂錯誤訊息  
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 您可以設定自訂錯誤訊息，以符合組織需求。 下圖顯示自訂的錯誤頁面描述，以及一般錯誤訊息。 使用下列 Windows PowerShell cmdlet 自訂錯誤訊息。  
   

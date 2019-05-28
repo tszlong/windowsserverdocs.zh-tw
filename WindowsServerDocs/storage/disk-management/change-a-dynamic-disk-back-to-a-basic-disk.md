@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d018b417aeba21e2b1303fd9e72b58b4e2fc334f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7655ca78868d40d354b5260fa99fcfa3a21d0de
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836049"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192754"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>將動態磁碟變更回基本磁碟
 
@@ -26,22 +26,20 @@ ms.locfileid: "59836049"
 
 ## <a name="changing-a-dynamic-disk-back-to-a-basic-disk"></a>將動態磁碟變更回基本磁碟
 
--   [使用 Windows 介面](#BKMK_WINUI)
--   [使用命令列](#BKMK_CMD)
+-   [使用 Windows 介面](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface)
+-   [使用命令列](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line)
 
 > [!NOTE]
 > 您必須至少是**備份操作員**或**系統管理員**群組的成員，才能完成這些步驟。
 
-<a href="" id="BKMK_WINUI"></a>
 #### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface"></a>若要使用 Windows 介面將動態磁碟變更回基本磁碟
+
 1.  備份要從動態轉換為基本之磁碟上的所有磁碟區。
 
-2.  在 [磁碟管理] 中，以滑鼠右鍵按一下每個要轉換為基本磁碟的動態磁碟，然後針對磁碟上的每個磁碟區按一下 **\[刪除磁碟區\]**。
+2.  在 [磁碟管理] 中，以滑鼠右鍵按一下每個要轉換為基本磁碟的動態磁碟，然後針對磁碟上的每個磁碟區按一下 **\[刪除磁碟區\]** 。
 
-3.  刪除磁碟上的所有磁碟區後，按右鍵，然後按一下 **\[轉換成基本磁碟\]**。
+3.  刪除磁碟上的所有磁碟區後，按右鍵，然後按一下 **\[轉換成基本磁碟\]** 。
 
-
-<a href="" id="BKMK_CMD"></a>
 #### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line"></a>若要使用命令列將動態磁碟變更回基本磁碟
 
 1.  備份要從動態轉換為基本之磁碟上的所有磁碟區。

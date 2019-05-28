@@ -12,18 +12,18 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 06/22/2018
+ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 79a6b264c38b4b843c2887c6a3eb6f236480243d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0c10cf6c9355b5f7457a5f17babdfb44aaa679b2
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828959"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976794"
 ---
 # <a name="compare-the-client-apps"></a>比較用戶端應用程式
 
->適用於：Windows 10，Windows 8.1，Windows Server 2012 R2 中，Windows Server 2016
+>適用於：Windows 10，Windows 8.1、 Windows Server 2019、 Windows Server 2016、windows Server 2012 R2
 
 我們經常被詢問不同的遠端桌面用戶端應用程式如何互相比較。 它們全都執行相同的動作嗎？ 以下是這些問題的答案。
 
@@ -39,7 +39,7 @@ ms.locfileid: "59828959"
 |-------------|-------------------------------|-----------|---------|-----|-------|------------|
 | 鍵盤    | X                             | X         | X       | X   | X     | X          |
 | 滑鼠       | X                             | X         | X       | X*    | X     | X          |
-| 觸控       | X                             | X         | X       | X   |       |            |
+| 觸控       | X                             | X         | X       | X   |       | X （Edge 及 IE 不應是支援） |
 | 其他       | 手寫筆                           |           |         |     |       |            |
 * 檢視[遠端桌面 iOS Beta 用戶端支援的輸入裝置的清單](remote-desktop-ios.md#supported-input-devices)。
 

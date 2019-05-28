@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 709bb8ae7135126b53ce426c981ee16705234cd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d36bb79dd1b71bc435ba9a9af9977e886d58d61
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862529"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190231"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>自訂 AD FS 使用者登入
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 AD FS 提供幾個選項來自訂及量身打造使用者經驗的系統管理員以符合其公司的需要。  下列網頁將做為自訂的中央位置。  您可以使用下表快速尋找您的自訂選項。
 

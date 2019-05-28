@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
 ms.technology: identity-adfs
-ms.openlocfilehash: 6d06c017601003e3b93df32f5fa50190ce54541d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 347b4783e82a6561334f8757029b1fddec6a85a3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864799"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189079"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>多重要素驗證及外部驗證提供者自訂 
 
->適用於：Windows Server 2016, Windows Server 2012 R2
+
 
 在 AD FS 中，支援多重要素驗證提供\-的\-\- 方塊中。 例如，您可以設定 AD FS，以使用內建\-中作為第二個因素驗證的憑證驗證。 您也可以使用外部驗證提供者。 這種方法可以讓 AD FS，以整合其他服務，例如 Azure multi-factor Authentication，或您可以開發自己的提供者。 請參閱[解決方案指南：使用多個管理風險\-因素存取控制](https://technet.microsoft.com/library/dn280937.aspx)如需有關如何註冊使用 AD FS 的外部驗證提供者。  
   

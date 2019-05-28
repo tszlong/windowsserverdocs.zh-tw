@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 305bf0cece742c961604dacda7e27b8eac8065e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 677d3136305cbddd29f2fd782be33ae1e824d096
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812219"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188546"
 ---
->適用於：Windows Server 2016, Windows Server 2012 R2
-
 # <a name="how-uris-are-used-in-ad-fs"></a>AD FS 中的 URI 使用方式
 統一資源識別項\(URI\)是用來當做唯一識別碼的字元字串。  在 AD FS 中，URI 可用來識別合作夥伴網路位址和設定物件。  用來識別合作夥伴網路位址時，URI 一律是 URL。  用來識別設定物件時，URI 可能是 URN 或 URL。  如需更多關於 URI 的一般資訊，請參閱 [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) 和 [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453)。  
   
@@ -63,7 +61,7 @@ URI 的路徑語法以階層方式組織，並分隔所有 「\/"字元或所有
   
 下表提供其他範例。  
   
-|AD FS 設定資料庫中的信賴憑證者識別碼|要求訊息中的信賴憑證者識別碼|要求識別碼是否與設定識別項相符？|原因|  
+|AD FS 設定資料庫中的信賴憑證者識別碼|要求訊息中的信賴憑證者識別碼|要求識別碼是否與設定識別項相符？|`Reason`|  
 |------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|----------|  
 |http:\/\/contoso.com|http:\/\/contoso.com|TRUE|完全相符|  
 |http:\/\/contoso.com\/|http:\/\/contoso.com|TRUE|會忽略尾端斜線|  

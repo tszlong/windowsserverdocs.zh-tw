@@ -9,16 +9,14 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 37b8c4b9b07e3111fce1bfc0a9aae10c8754bb3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6612c05e664b50c5a50b10b712b91715cc85d230
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884629"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189877"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>設定 AD FS 外部鎖定保護
-
->適用於：Windows Server 2012 R2
 
 在 Windows Server 2012 R2 上的 AD FS，我們引進了一項稱為外部網路鎖定的安全性功能。  利用此功能，AD FS 會 「 停止 」 的一段時間驗證以外的 「 惡意 」 的使用者帳戶。  這可防止您的使用者帳戶遭鎖定在 Active Directory 中。  除了保護您的使用者 AD 帳戶解除鎖定，AD FS 外部網路鎖定也會防止暴力密碼破解攻擊
 
@@ -95,7 +93,7 @@ Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -Ex
 
 ## <a name="additional-references"></a>其他參考資料  
 - [保護 Active Directory Federation Services 的最佳做法](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
-- [AD FS Powershell Commandlet 存取權委派給非系統管理員使用者](delegate-ad-fs-pshell-access.md)
+- [將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者](delegate-ad-fs-pshell-access.md)
 - [Set-AdfsProperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
 
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)

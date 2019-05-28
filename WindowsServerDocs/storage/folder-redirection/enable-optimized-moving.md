@@ -8,27 +8,27 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 98fd5d50645ad454204dcf9dabf58e97c246ab1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7bdf30a4f721568add4e7902245da2a803b72db1
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853989"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475872"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>啟用最佳化的移動的資料夾重新導向
 
->適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2012、 Windows Server 2012 R2、 Windows Server 2016
+>適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 中，Windows Server （半年通道）
 
 本主題描述如何執行的重新導向的資料夾 （資料夾重新導向） 最佳化的移至新的檔案共用。 如果您啟用這個原則設定，當系統管理員將裝載重新導向的資料夾的檔案共用，並更新重新導向的資料夾，在 群組原則的目標路徑時，快取的內容會只是重新命名在本機的離線檔案快取，而不需要任何延遲或使用者的潛在資料遺失。
 
 先前，系統管理員無法變更目標路徑的重新導向的資料夾，在 群組原則，然後讓用戶端將檔案複製在受影響的使用者下次登入，導致延遲的登入。 或者，系統管理員無法移動的檔案共用，然後更新目標資料夾路徑的重新導向群組原則中。 不過，在本機用戶端電腦之間移動的首次同步處理做移動之後的任何變更會遺失。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 最佳化的移動具有下列需求：
 
 - 資料夾重新導向必須設定。 如需詳細資訊，請參閱[部署資料夾重新導向與離線檔案](deploy-folder-redirection.md)。
-- 用戶端電腦必須執行 Windows 10，Windows 8.1，Windows 8、 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012。
+- 用戶端電腦必須執行 Windows 10、 Windows 8.1，Windows 8、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 或 Windows Server （半年通道）。
 
 ## <a name="step-1-enable-optimized-move-in-group-policy"></a>步驟 1：啟用群組原則中的最佳化的移動
 

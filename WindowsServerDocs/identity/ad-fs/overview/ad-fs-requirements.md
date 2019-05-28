@@ -9,16 +9,16 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9a5155dd31b9f8f86fac532aa33cd9f7389d8a48
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 235030ea913f2fe1860efaa00bdb4641ac56750d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815119"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188678"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
->適用於：Windows Server 2016
+
 
 部署 AD FS 的需求如下：  
   

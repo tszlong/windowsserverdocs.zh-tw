@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afb4b10a0d347367780dbaf19b764f2cabd480d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eb5c9650b95703f1316e6f5f179b910d22574f68
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819539"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222959"
 ---
 # <a name="echo"></a>echo
 
@@ -26,7 +26,7 @@ ms.locfileid: "59819539"
 
 顯示訊息，或開啟或關閉回應功能的命令。 如果未指定參數，使用**echo**會顯示目前的回應設定。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+如需如何使用此命令的範例，請參閱[範例](#examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -49,9 +49,9 @@ echo [on | off]
 -   當**echo**已關閉，不會顯示命令提示字元中，這是在命令提示字元視窗。 若要顯示命令提示字元中，輸入**上回應。**
 -   如果在批次檔中使用**上回應**並**關閉回應**不會影響在命令提示字元設定。
 -   若要避免回應特定的命令批次檔中，插入 at 符號 (@) 前面的命令。 若要避免回應的批次檔中的所有命令，包括**echo off**命令在檔案開頭。
--   若要顯示的管道 (**|**) 或重新導向字元 (**<** 或是**>**) 當您使用**echo**，使用管道或重新導向字元正前方的插入號 (^) (例如**^|**， **^>**，或 **^<**). 若要顯示插入號，請連續輸入兩個插入號 (**^^**)。
+-   若要顯示的管道 ( **|** ) 或重新導向字元 (**<** 或是**>**) 當您使用**echo**，使用管道或重新導向字元正前方的插入號 (^) (例如**^|**， **^>**，或 **^<** ). 若要顯示插入號，請連續輸入兩個插入號 ( **^^** )。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a>範例
 
 若要顯示目前**echo**設定中，輸入：
 ```

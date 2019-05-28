@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 553ff059693c7b0c0e6f0364d82c1adbca661097
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e3d1e5d86afbef2fdabd211047f513d31a40300
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887249"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190319"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>AD FS 支援憑證驗證的替代主機名稱繫結
-
->適用於：Windows Server 2016
 
 在許多網路上的本機防火牆原則可能不允許流量透過非標準連接埠 49443 等。 嘗試完成之前 Windows Server 2016 中的 AD FS 的 AD FS 使用的憑證驗證時，這會成為問題。 這是因為您不能有裝置驗證和使用者憑證驗證的不同繫結到相同主機上。 預設連接埠 443 繫結至接收裝置憑證，並無法改變以支援在相同的通道中的多個繫結。 結果是，智慧卡驗證就無法運作，而且使用者已知道因為沒有真正發生的指示，發生了什麼事。  
   

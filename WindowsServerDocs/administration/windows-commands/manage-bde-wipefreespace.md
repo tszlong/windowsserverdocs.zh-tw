@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8750094e7357a3aefa307d24abd1470fbf8d2a71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7cf99a9124f78189de223018608d9864e51d7897
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867169"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564686"
 ---
 # <a name="manage-bde-wipefreespace"></a>管理 power shell:WipeFreeSpace
 
 
 
-抹除移除已存在的空間中的任何資料片段的磁碟區上的可用空間。 磁碟區上執行此命令使用 「 使用空間只加密？ 加密方法會提供相同的層級的保護 「 完整磁碟區加密？ 加密方法。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+抹除移除已存在的空間中的任何資料片段的磁碟區上的可用空間。 使用 「 僅使用空間 」 加密方法加密的磁碟區上執行此命令會提供相同的層級的保護 「 完整磁碟區加密 」 加密方法。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
 ```
-manage-bde –WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
 ### <a name="parameters"></a>參數
@@ -49,7 +49,7 @@ manage-bde –WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/
 ```
 manage-bde -w C:
 ```
-下列範例說明如何利用 **-w**命令搭配 **– 取消**參數，以取消清除 c 磁碟機上的可用空間
+下列範例說明如何利用 **-w**命令搭配 **-取消**參數，以取消清除 c 磁碟機上的可用空間
 ```
 manage-bde -w -Cancel C:
 ```

@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: aa205c46bf67dc25a55232b799bdd39fee4ac3c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09f26e256793d30936496f7a936550acb7b20025
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812209"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188348"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>使用傳遞或篩選宣告規則的時機
 您可以使用這項規則中 Active Directory Federation Services \(AD FS\)當您需要採取特定的傳入宣告類型，然後再套用，以決定應該發生何種輸出動作根據傳入宣告中的值。 當您使用此規則時，您會根據您在規則中設定的選項之一，傳遞或篩選任何與下表中的規則邏輯相符的宣告。  
   
@@ -47,7 +45,7 @@ ms.locfileid: "59812209"
 使用此動作時，將會以傳出宣告的形式傳遞指定宣告類型的所有傳入宣告值。 例如，當傳入宣告類型指定為角色宣告類型時，所有的傳入宣告值會個別複製到新的傳出宣告，且傳出宣告的類型為「角色」。  
   
 ## <a name="filtering-a-claim"></a>篩選宣告  
-在 AD FS 的詞彙*宣告篩選*方法來篩選或限制傳入宣告值，以便只有特定的值會傳遞，或透過傳送為連出宣告。 此功能的運作有賴 [傳遞或篩選傳入宣告] 規則範本。 在此規則的屬性內，您可以設定篩選傳入值的條件，而只讓與您指定的條件相符的值傳遞。  
+在 AD FS 的詞彙*宣告篩選*方法來篩選或限制傳入宣告值，以便只有特定的值會傳遞，或透過傳送為連出宣告。 此功能的運作有賴 [傳遞或篩選傳入宣告]  規則範本。 在此規則的屬性內，您可以設定篩選傳入值的條件，而只讓與您指定的條件相符的值傳遞。  
   
 例如，您可以使用此規則，在傳入宣告類型符合「角色」宣告類型時僅傳遞符合宣告值「購買者」的宣告，或者您可以僅發出關於使用者名稱的宣告，而不是包含使用者身分證號碼的宣告。  
   

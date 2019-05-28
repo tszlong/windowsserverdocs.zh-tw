@@ -5,38 +5,37 @@ description: 適用於 AD FS 2016 的常見問題集
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 12/07/2018
+ms.date: 04/17/2019
 ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d8014cd72e66642ea9200afd6cd4266cbccba30c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fdd31a8b7c2c6ef87d1d22d901b5c6ca69b5c70d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826809"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188723"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (Faq)
 
->適用於：Windows Server 2016
 
 下列文件是常見問題與 Active Directory Federation Services 首頁。  文件已分割成的問題類型為基礎的群組。
 
-## <a name="deployment"></a>部署 
+## <a name="deployment"></a>部署
 
 ### <a name="how-can-i-upgrademigrate-from-previous-versions-of-ad-fs"></a>如何可以升級/從移轉舊版 AD FS
 您可以升級 AD FS，使用下列其中一項：
 
 
 - Windows Server 2012 R2 到 Windows Server 2016 AD FS 的 AD FS
-    - [升級至 Windows Server 2016 使用 WID 資料庫中的 AD FS](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)
-    - [升級至 Windows Server 2016 使用 SQL database 中的 AD FS](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)
+    - [升級至使用 WID 資料庫的 Windows Server 2016 AD FS](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)
+    - [升級至使用 SQL 資料庫的 Windows Server 2016 AD FS](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)
 - Windows Server 2012 AD FS Windows Server 2012 R2 AD fs
     - [移轉至 Windows Server 2012 R2 上的 AD FS](https://technet.microsoft.com/library/dn486815.aspx)
 - Windows Server 2012 AD fs 的 AD FS 2.0
     - [移轉至 Windows Server 2012 上的 AD FS](https://technet.microsoft.com/library/jj647765.aspx)
-- AD FS 1.x AD fs 2.0 
+- AD FS 1.x AD fs 2.0
     - [從 AD FS 升級 AD fs 2.0 的 1.x](https://technet.microsoft.com/library/ff678035.aspx)
 
 如果您需要從 AD FS 2.0 或 2.1 （Windows Server 2008 R2 或 Windows Server 2012） 升級，您必須使用內建指令碼 （位於 C:\Windows\ADFS）。
@@ -54,29 +53,29 @@ HTTP/2 支援已新增在 Windows Server 2016 中，但 HTTP/2 無法用於用�
 1. 您必須手動管理更新權杖簽署憑證，因為 Azure AD 不能存取同盟中繼資料。 如需手動更新權杖簽署憑證的詳細資訊，請參閱[更新 Office 365 和 Azure Active Directory 的同盟憑證](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. 您無法利用舊版驗證流程 （例如 ExO proxy 驗證流程）
 
-### <a name="what-are-load-balancing-requirements-for-ad-fs-and-wap-servers"></a>AD FS 和 WAP 伺服器的負載平衡需求有哪些？ 
+### <a name="what-are-load-balancing-requirements-for-ad-fs-and-wap-servers"></a>AD FS 和 WAP 伺服器的負載平衡需求有哪些？
 
-AD FS 是無狀態的系統。 因此，負載平衡是相當簡單的登入。 以下是負載平衡系統的重要建議。 
+AD FS 是無狀態的系統。 因此，負載平衡是相當簡單的登入。 以下是負載平衡系統的重要建議。
 
 
 - 不應使用 IP 同質性設定負載平衡器。 這可能過度負載放在特定 Exchange Online 的情況下您伺服器的子集。
-- 負載平衡器必須不終止 HTTPS 連線，並重新初始化在 ADFS 伺服器的新連接。 
-- 負載平衡器應確保 HTTP 封包中的來源 ip 應該轉譯，連接的 IP 位址，傳送至 ADFS 時。 負載平衡器無法傳送 HTTP 封包中的來源 IP，負載平衡器必須新增 （或附加時現有的） IP 位址，以 x-轉送標頭。 針對特定 IP 能夠正確處理相關功能 （禁用 IP、 外部網路智慧鎖定，...），而且可能會導致降低的安全性，如果設定不當，這是必要的。 
+- 負載平衡器必須不終止 HTTPS 連線，並重新初始化在 ADFS 伺服器的新連接。
+- 負載平衡器應確保 HTTP 封包中的來源 ip 應該轉譯，連接的 IP 位址，傳送至 ADFS 時。 負載平衡器無法傳送 HTTP 封包中的來源 IP，負載平衡器必須新增 （或附加時現有的） IP 位址，以 x-轉送標頭。 針對特定 IP 能夠正確處理相關功能 （禁用 IP、 外部網路智慧鎖定，...），而且可能會導致降低的安全性，如果設定不當，這是必要的。
 - 負載平衡器應支援 SNI。 在事件沒有，請確定 AD FS 已建立來處理非 SNI 支援用戶端的 HTTPS 繫結。
-- 負載平衡器應該使用 AD FS HTTP 健康情況探查端點來偵測如果 AD FS 或 WAP 伺服器已啟動並執行，並將它們排除，如果 [確定] 就不會傳回 200。 
+- 負載平衡器應該使用 AD FS HTTP 健康情況探查端點來偵測如果 AD FS 或 WAP 伺服器已啟動並執行，並將它們排除，如果 [確定] 就不會傳回 200。
 
-### <a name="what-multi-forest-configurations-are-supported-by-ad-fs"></a>支援多樹系設定 AD FS？ 
+### <a name="what-multi-forest-configurations-are-supported-by-ad-fs"></a>支援多樹系設定 AD FS？
 
-AD FS 支援多個多樹系的組態，並依賴基礎的 AD DS 信任網路，來驗證使用者跨多個受信任的領域。 我們強烈建議 2 向樹系信任，因為這是更簡單的安裝程式，以確保信任子系統可正確運作而不發生問題。 此外， 
+AD FS 支援多個多樹系的組態，並依賴基礎的 AD DS 信任網路，來驗證使用者跨多個受信任的領域。 我們強烈建議 2 向樹系信任，因為這是更簡單的安裝程式，以確保信任子系統可正確運作而不發生問題。 此外，
 
-- 如果發生其中一種方式的樹系信任，例如 DMZ 樹系包含合作夥伴的身分識別，建議部署 corp 樹系中的 ADFS 和 DMZ 樹系視為透過 LDAP 連線的另一個本機宣告提供者信任。 萬一您不能採用此選項，您必須執行 「 信任 」 中 「 受信任樹系 」 的 「 信任 」 的樹系中具有完整存取權的使用者使用服務帳戶的樹系中的 ADFS。
-- 雖然網域層級信任支援，並且可以運作，但我們強烈建議您移至樹系層級的信任模式。 此外，您必須確保 UPN 路由和 NETBIOS 名稱解析的名稱需要精確地運作。 
+- 如果發生其中一種方式的樹系信任，例如 DMZ 樹系包含合作夥伴的身分識別，建議部署 corp 樹系中的 ADFS 和 DMZ 樹系視為透過 LDAP 連線的另一個本機宣告提供者信任。 在此情況下整合式 Windows 驗證並不適用於 DMZ 樹系使用者，他們必須執行密碼驗證，因為這是 ldap 唯一支援的機制。 萬一您不能採用此選項，您必須設定其他的 ADFS，在 DMZ 樹系中，然後將它加入做為宣告提供者信任的 ADFS 中 corp 樹系中。 使用者必須執行首頁領域探索，但 Windows 整合式驗證和密碼驗證會運作。 請為 corp 樹系中的 ADFS 將無法從 DMZ 樹系取得使用者的額外使用者資訊，請在 ADFS 中 DMZ 樹系中的發行規則中做出適當變更。
+- 雖然網域層級信任支援，並且可以運作，但我們強烈建議您移至樹系層級的信任模式。 此外，您必須確保 UPN 路由和 NETBIOS 名稱解析的名稱需要精確地運作。
 
 
 
 ## <a name="design"></a>設計
 
-### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>適用於 AD FS 可使用哪些協力廠商的多重要素驗證提供者？ 
+### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>適用於 AD FS 可使用哪些協力廠商的多重要素驗證提供者？
 以下是我們已了解的協力廠商提供者的清單。  可能一律有可用，我們不知道，我們會更新清單，因為我們了解這些提供者。
 
 - [Gemalto 身分識別與安全性服務](http://www.gemalto.com/identity)
@@ -85,7 +84,7 @@ AD FS 支援多個多樹系的組態，並依賴基礎的 AD DS 信任網路，�
 - [RSA SecurID 驗證代理程式，Microsoft Active Directory Federation services](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)
 - [SafeNet 驗證服務 (SAS) 代理程式，適用於 AD FS](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)
 - [Swisscom 公司行動裝置識別碼驗證服務](http://swisscom.ch/mid)
-- [Symantec 驗證和識別碼保護服務 (VIP)](http://www.symantec.com/vip-authentication-service) 
+- [Symantec 驗證和識別碼保護服務 (VIP)](http://www.symantec.com/vip-authentication-service)
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>協力廠商 proxy 與 AD FS 支援？
 沒錯，協力廠商 proxy 可以位於 Web 應用程式 Proxy，但是必須支援的任何協力廠商 proxy [MS ADFSPIP 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)用來取代 Web 應用程式 Proxy。
@@ -107,14 +106,14 @@ Apple 已發行一組稱為 App Transport Security (ATS) 可能會影響從 AD f
 
 您可以啟用和停用 SSL 2.0、 3.0 和 TLS 版本 1.0、 1.1 及 1.2 使用[管理 AD FS 中的 SSL 通訊協定](../operations/Manage-SSL-Protocols-in-AD-FS.md)。
 
-若要確保您的 AD FS 和 WAP 伺服器交涉只支援 ATP 的 TLS 加密套件，您可以停用所有的加密套件不在[ATP 符合規範的加密套件的清單](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)。  若要這樣做，請使用[Windows TLS PowerShell cmdlet](https://technet.microsoft.com/itpro/powershell/windows/tls/index)。 
+若要確保您的 AD FS 和 WAP 伺服器交涉只支援 ATP 的 TLS 加密套件，您可以停用所有的加密套件不在[ATP 符合規範的加密套件的清單](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)。  若要這樣做，請使用[Windows TLS PowerShell cmdlet](https://technet.microsoft.com/itpro/powershell/windows/tls/index)。
 
 ## <a name="developer"></a>開發人員
 
 ### <a name="when-generating-an-idtoken-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-idtoken"></a>產生針對 AD 驗證的使用者使用 ADFS id_token 時, 如何"sub"的宣告產生的 id_token 中？
 "Sub"宣告的值是用戶端識別碼的雜湊 + 錨點宣告值。
 
-### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>什麼是重新整理語彙基元/存取權杖的存留期，當使用者透過登入遠端的宣告提供者信任透過 WS-27001/27002、fed/SAML-P？ 
+### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>什麼是重新整理語彙基元/存取權杖的存留期，當使用者透過登入遠端的宣告提供者信任透過 WS-27001/27002、fed/SAML-P？
 重新整理權杖的存留期會從遠端的宣告提供者信任的 ADFS 取得權杖的存留期。 存取權杖的存留期會為其發出存取權杖的信賴憑證者合作對象的權杖存留期。
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>我要傳回設定檔和電子郵件的範圍，以及除了 OpenId 範圍。 我可以取得使用領域的其他資訊？ 如何在 AD FS 中的作業？
@@ -131,19 +130,29 @@ Apple 已發行一組稱為 App Transport Security (ATS) 可能會影響從 AD f
 
     "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
 
-### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>可以傳遞的資源值的範圍值，例如如何針對 Azure AD 完成要求的一部分？ 
-使用 AD FS 伺服器 2019年上，您現在可以傳遞內嵌在 scope 參數中的資源值。 範圍參數現在可以按照空格分隔的清單，其中每個項目是資源/範圍的結構。 例如  
+### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>可以傳遞的資源值的範圍值，例如如何針對 Azure AD 完成要求的一部分？
+使用 AD FS 伺服器 2019年上，您現在可以傳遞內嵌在 scope 參數中的資源值。 範圍參數現在可以按照空格分隔的清單，其中每個項目是資源/範圍的結構。 例如：  
 **< 建立有效的範例要求 >**
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>AD FS 支援 PKCE 延伸模組？
-AD FS 伺服器 2019年中的支援證明金鑰的程式碼 Exchange (PKCE) OAuth 授權碼授與流程 
+AD FS 伺服器 2019年中的支援證明金鑰的程式碼 Exchange (PKCE) OAuth 授權碼授與流程
+
+### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>AD FS 支援哪些允許的範圍？
+- aza-如果使用[Broker 的用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)和 scope 參數會包含"aza"的範圍，如果伺服器發出新的主要重新整理權杖，並將它設定 refresh_token 的欄位中的回應，以及設定如果其中一個會強制執行的新主要重新整理權杖的存留期 refresh_token_expires_in 欄位。
+- openid-可讓應用程式要求使用 OpenID Connect 授權通訊協定。
+- logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，可用來以互動方式登入已驗證的使用者。 在 AD FS 伺服器會省略來自回應的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈結或 CMC 完整 PKI 的回應。 提供的更多詳細資料[此處](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)。 
+- user_impersonation-user_impersonation 範圍，才能成功從 AD FS 要求代表的存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[建置多層式應用程式使用代理者 (OBO) 使用 OAuth 與 AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)。
+- vpn_cert-vpn_cert 範圍可讓要求 VPN 憑證，可用來建立 VPN 連線使用 EAP-TLS 驗證的應用程式。 這不再支援。
+- 電子郵件-可讓應用程式要求登入使用者的電子郵件宣告。 這不再支援。 
+- 設定檔-可讓應用程式要求設定檔相關的登入使用者的宣告。 這不再支援。 
+
 
 ## <a name="operations"></a>操作
 
-### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>如何取代 AD FS 的 SSL 憑證？ 
+### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>如何取代 AD FS 的 SSL 憑證？
 AD FS SSL 憑證不是在 AD FS 管理嵌入式管理單元中找到的 AD FS 服務通訊憑證相同。  若要變更 AD FS SSL 憑證，您必須使用 PowerShell。 請遵循下列文章中的指導方針：
 
-[在 AD FS 和 WAP 2016 中管理 SSL 憑證](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+[管理 AD FS 和 WAP 2016 中的 SSL 憑證](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
 
 ### <a name="how-can-i-enable-or-disable-tlsssl-settings-for-ad-fs"></a>如何啟用或停用 TLS/SSL 設定，適用於 AD FS
 若要停用或啟用 SSL 通訊協定和加密套件，使用下列方法：
@@ -160,6 +169,9 @@ AD FS SSL 憑證不是在 AD FS 管理嵌入式管理單元中找到的 AD FS �
 
 ### <a name="how-can-i-configure-promptlogin-behavior-for-ad-fs"></a>如何設定提示適用於 AD FS = 登入行為？
 如需如何設定提示字元 = 登入，請參閱[Active Directory Federation Services 提示 = 登入參數支援](../operations/AD-FS-Prompt-Login.md)。
+
+### <a name="how-can-i-change-the-ad-fs-service-account"></a>如何變更 AD FS 服務帳戶？
+若要變更 AD FS 服務帳戶，請依照下列指示使用 AD FS 工具箱[服務帳戶的 Powershell 模組](https://github.com/Microsoft/adfsToolbox/tree/master/serviceAccountModule)。 
 
 ### <a name="how-can-i-configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>如何設定與 AD FS 搭配使用 Windows 整合式驗證 (WIA) 的瀏覽器？
 
@@ -213,11 +225,11 @@ HTTP Strict Transport Security (HSTS) 是 web 安全性原則機制，可協助�
 ADFS userinfo 端點一律會傳回 OpenID 標準中所指定的主體宣告。 AD FS 不提供透過 UserInfo 端點要求的其他宣告。 如果您需要在 ID 權杖中的其他宣告，請參閱[AD FS 中自訂識別碼權杖](../development/custom-id-tokens-in-ad-fs.md)。
 
 ### <a name="why-do-i-see-a-lot-of-1021-errors-on-my-ad-fs-servers"></a>為什麼我的 AD FS 伺服器上看到許多 1021年錯誤？
-無效的資源上存取 AD FS 資源 00000003-0000-0000-c000-000000000000 通常會記錄此事件。 此錯誤被因為它嘗試取得存取權杖的 Azure AD Graph 服務的用戶端的錯誤行為。 因為資源不存在於 AD FS 上，這會導致 AD FS 伺服器上的事件識別碼 1021年。 它可以安全地忽略任何警告或錯誤的 AD FS 上的資源 00000003-0000-0000-c000-000000000000。 
+無效的資源上存取 AD FS 資源 00000003-0000-0000-c000-000000000000 通常會記錄此事件。 此錯誤被因為它嘗試取得存取權杖的 Azure AD Graph 服務的用戶端的錯誤行為。 因為資源不存在於 AD FS 上，這會導致 AD FS 伺服器上的事件識別碼 1021年。 它可以安全地忽略任何警告或錯誤的 AD FS 上的資源 00000003-0000-0000-c000-000000000000。
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>為何我會看見警告，以將 AD FS 服務帳戶新增至 Enterprise Key Admins 群組的失敗？
 只有在具有 PDC FSMO 角色的 Windows 2016 網域控制站存在網域中時，會建立此群組。 若要解決此錯誤，您可以手動建立群組，依照以下提供必要的權限之後將服務帳戶新增為群組的成員。
-1.  開啟 [Active Directory 使用者和電腦] 。 
+1.  開啟 [Active Directory 使用者和電腦]  。
 2.  **以滑鼠右鍵按一下**您的網域名稱，從 [導覽] 窗格和**按一下**屬性。
 3.  **按一下**安全性 （如果 安全性 索引標籤，開啟進階功能檢視 功能表中）。
 4.  **按一下**進階。 **按一下**新增。 **按一下**選取一個主體。
@@ -230,15 +242,15 @@ ADFS userinfo 端點一律會傳回 OpenID 標準中所指定的主體宣告。 
 
 同盟的使用者可能會遇到使用 Android ADAL 程式庫失敗的應用程式的 Azure ad 的驗證。 應用程式會收到**AuthenticationException**當它嘗試顯示登入頁面。 在 chrome 中的 AD FS 登入頁面可能會叫出為不安全。
 
-Android-所有版本和所有裝置-不支援下載額外的憑證，從**authorityInformationAccess**憑證欄位。 這是 Chrome 瀏覽器的則為 true。 如果整個憑證鏈結不會從 AD FS，任何遺失中繼憑證的伺服器驗證憑證會導致此錯誤。 
+Android-所有版本和所有裝置-不支援下載額外的憑證，從**authorityInformationAccess**憑證欄位。 這是 Chrome 瀏覽器的則為 true。 如果整個憑證鏈結不會從 AD FS，任何遺失中繼憑證的伺服器驗證憑證會導致此錯誤。
 
-此問題的適當解決方案是設定 AD FS 和 WAP 伺服器來傳送必要的中繼憑證，以及 SSL 憑證。 
+此問題的適當解決方案是設定 AD FS 和 WAP 伺服器來傳送必要的中繼憑證，以及 SSL 憑證。
 
-當匯出 SSL 憑證，從一部電腦，若要匯入到電腦的個人存放區，AD FS 和 WAP 伺服器，請務必匯出私密金鑰並選取**個人資訊交換-PKCS #12**。 
+當匯出 SSL 憑證，從一部電腦，若要匯入到電腦的個人存放區，AD FS 和 WAP 伺服器，請務必匯出私密金鑰並選取**個人資訊交換-PKCS #12**。
 
-很重要的核取方塊**盡可能包含憑證路徑中的所有憑證**勾選，以及**匯出所有延伸的內容**。 
+很重要的核取方塊**盡可能包含憑證路徑中的所有憑證**勾選，以及**匯出所有延伸的內容**。  
 
-在 Windows 伺服器上執行 certlm.msc 並匯入 *。電腦的個人憑證存放區的 PFX。 這會導致將整個憑證鏈結至 ADAL 程式庫伺服器。 
+在 Windows 伺服器上執行 certlm.msc 並匯入 *。電腦的個人憑證存放區的 PFX。 這會導致將整個憑證鏈結至 ADAL 程式庫伺服器。
 
 >[!NOTE]
 > 憑證存放區的網路負載平衡器也應該更新以包含整個憑證鏈結，如果有的話
@@ -264,9 +276,9 @@ IdP 所簽發的權杖是否少於 1 小時的 validty，不會發出重新整�
 4.  加入新的憑證
 
     a. netsh http 新增 sslcert hostnameport=fs.contoso.com:443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
-    
+
     b. netsh http add sslcert hostnameport=localhost:443 certhash=CERTTHUMBPRINT appid={5d89a20c-beab-4389-9447-324788eb944a} certstorename=MY sslctlstorename=AdfsTrustedDevices
-    
+
     c.  netsh http 新增 sslcert hostnameport=fs.contoso.com:49443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
 
 5. 重新啟動選取的伺服器上的 ADFS 服務
@@ -277,9 +289,9 @@ IdP 所簽發的權杖是否少於 1 小時的 validty，不會發出重新整�
     a. Set-WebApplicationProxySslCertificate -Thumbprint " CERTTHUMBPRINT"
 
 9. 重新啟動選取的 WAP 伺服器上的服務
-10. 將選取的 WAP 和 AD FS 伺服器放回生產環境中。 
-    
-其餘的 AD FS 和 WAP 伺服器，以類似的方式執行更新。 
+10. 將選取的 WAP 和 AD FS 伺服器放回生產環境中。
+
+其餘的 AD FS 和 WAP 伺服器，以類似的方式執行更新。
 
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>ADFS 時，支援 Web 應用程式 Proxy (WAP) 伺服器位於 Azure Web 應用程式 Firewall(WAF) 嗎？
 ADFS 和 Web 應用程式伺服器支援不會在端點執行 SSL 終止的任何防火牆。 此外，ADFS/WAP 伺服器有內建的機制，以防止跨站台指令碼、 ADFS proxy 的常見 web 攻擊並滿足所定義的所有需求[MS ADFSPIP 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)。

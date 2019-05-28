@@ -11,19 +11,19 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 48319e057da9c815a77349bba34996f89973d85a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3c88ef5ee700bb3906746402bf6cc8916976800
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850499"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192775"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>應該在 HYPER-V 中建立 1 或 2 代虛擬機器嗎？
 
 >適用於：Windows 10，Windows Server 2016、 Microsoft HYPER-V Server 2016、windows Server 2019，Microsoft HYPER-V Server 2019
 
-> [!WARNING]
-> 如果您打算不斷上傳 Windows 虛擬機器 (VM) 從內部部署至 Microsoft Azure**只有第 1 代 Vm** VHD 檔案格式且具有固定大小的磁碟支援。 如需有關如何上傳 Windows VHD 或 VHDX 的詳細資訊，請參閱 <<c0> [ 準備 Windows VHD 或 VHDX 以上傳至 Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
+> [!NOTE]
+> 如果您打算不斷上傳 Windows 虛擬機器 (VM) 從內部部署 Microsoft Azure、 第 1 代和第 2 代 Vm 的 VHD 檔案格式，而且有固定大小的磁碟支援。 請參閱[第 2 代 Vm 在 Azure 上](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2)若要深入了解 Azure 上支援的第 2 代功能。 如需有關如何上傳 Windows VHD 或 VHDX 的詳細資訊，請參閱 <<c0> [ 準備 Windows VHD 或 VHDX 以上傳至 Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
 
 您選擇来建立第 1 代或第 2 代虛擬機器取決於您想要安裝和您想要用來部署虛擬機器的開機方法上的客體作業系統。 我們建議您建立以充分利用的功能，例如安全開機，除非其中一個下列的陳述式，則為 true 的第 2 代虛擬機器：  
 

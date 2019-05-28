@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ac206d5aa8af970b65a014955ac66a8cf2835eb6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3cf209756c27c72836c7e2e1e58e84f3f5af2ca9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882029"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189181"
 ---
 # <a name="customization-for-localization"></a>當地語系化的自訂 
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 可以將網頁內容當地語系化成英文以外的語言。 進行當地語系化時，請注意下列考量。  
   

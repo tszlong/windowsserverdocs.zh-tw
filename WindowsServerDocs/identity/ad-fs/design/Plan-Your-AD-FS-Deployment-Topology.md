@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7e41f7728c42912ec6ce680e1ed0c6a906a33392
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00c43a56d9b57a2ae2c8b9aeca56807fe1d1841f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821709"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191183"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>規劃您的 AD FS 部署拓撲
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 規劃部署的 Active Directory Federation Services 的第一個步驟\(AD FS\)是要判斷正確的部署拓撲以符合您組織的需求。  
   
@@ -78,6 +76,6 @@ AD FS 會使用資料庫來儲存設定和 — 在某些情況下，交易資料
 -   [使用 SQL Server 的同盟伺服器陣列](Federation-Server-Farm-Using-SQL-Server.md)  
   
 ## <a name="see-also"></a>另請參閱  
-[Windows Server 2012 R2 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

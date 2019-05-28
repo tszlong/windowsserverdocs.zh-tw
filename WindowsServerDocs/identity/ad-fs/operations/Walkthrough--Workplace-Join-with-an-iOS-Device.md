@@ -9,16 +9,15 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c9c66b5bbe5fff83010859abe6ea4759d5bc4be0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 42b71667758f392d641c5262e34322f8b21cfad9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853629"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188909"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>逐步解說：將 iOS 裝置加入工作地點網路
 
->適用於：Windows Server 2012 R2
 
 > [!IMPORTANT] 
 > 這個方法會只完全在內部部署客戶與相關項目。 混合式或僅限雲端的客戶必須使用這個方法來註冊其 iOS 裝置。 而且這個方法不相容時的內部客戶決定將移至雲端。 必須取消註冊裝置，並將它向雲端中。 
@@ -46,25 +45,25 @@ ms.locfileid: "59853629"
 
 2.  登入該網頁使用公司網域帳戶： **roberth@contoso.com**和 密碼： **P@ssword**。
 
-3.  系統會提示您安裝設定檔。 在 [安裝設定檔]  畫面上，按一下 [安裝] 。
+3.  系統會提示您安裝設定檔。 在 [安裝設定檔]  畫面上，按一下 [安裝]  。
 
-4.  當系統提示您確認安裝設定檔時，請按一下 [立即安裝]。
+4.  當系統提示您確認安裝設定檔時，請按一下 [立即安裝]  。
 
 5.  若您的裝置要求您輸入 PIN 以解除鎖定裝置，系統會提示您輸入 PIN。
 
-6.  當您看到 [設定檔已安裝]  畫面時，表示設定檔已安裝完成。 按一下 [完成] 。
+6.  當您看到 [設定檔已安裝]  畫面時，表示設定檔已安裝完成。 按一下 [完成]  。
 
     返回到 Safari。 會顯示一個訊息通知您您可以關閉或離開 Safari。
 
 > [!TIP]
-> 若要檢視或移除「加入工作地點網路」設定檔，請在您的 iOS 裝置上瀏覽到 [設定]，按一下 [一般]，然後按一下 [設定檔]。
+> 若要檢視或移除「加入工作地點網路」設定檔，請在您的 iOS 裝置上瀏覽到 [設定]  ，按一下 [一般]  ，然後按一下 [設定檔]  。
 
 ## <a name="see-also"></a>另請參閱
 
 
 - [從任何裝置加入工作地點網路提供 SSO 和無縫式次要因素驗證，跨公司應用程式](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-- [設定適用於 Windows Server 2012 R2 中的 AD FS 實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [逐步解說：Windows 裝置加入工作地點](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [在 Windows Server 2012 R2 設定 AD FS 實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+- [逐步解說：將 Windows 裝置加入工作地點網路](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
 
 

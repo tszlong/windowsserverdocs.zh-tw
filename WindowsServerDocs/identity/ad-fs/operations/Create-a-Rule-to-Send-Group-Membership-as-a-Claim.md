@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 96ab653393fbc5f0a4306db53f84c2d9ba6c7f5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c9c4cdb881d77fe902776551b4e99061e67660ea
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847449"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189376"
 ---
 # <a name="create-a-rule-to-send-group-membership-as-a-claim"></a>建立規則以宣告方式傳送群組成員資格
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 做為宣告規則範本，在 Active Directory Federation Services 使用傳送群組成員資格\(AD FS\)，您可以建立一個規則，便可讓您選取 Active Directory 安全性群組，以宣告形式傳送。 這項規則，根據您選取的群組，將會發出單一宣告。 例如，您可以使用此規則範本來建立規則，它會傳送值是系統管理員的群組宣告，如果使用者是 Domain Admins 安全性群組的成員。 此規則只應該用於本機 Active Directory 網域中的使用者。  
   
@@ -102,7 +100,7 @@ ms.locfileid: "59847449"
 6.  在上**設定規則**頁面**宣告規則名稱**中輸入此規則的顯示名稱**使用者的群組**按一下**瀏覽**，然後選取群組底下**傳出宣告類型**選取所需的宣告型別，然後在 **傳出宣告類型**輸入的值。  
 ![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group2.PNG)  
 
-7.  按一下 **[完成]**。  
+7.  按一下 **[完成]** 。  
   
 8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。  
 
@@ -111,9 +109,9 @@ ms.locfileid: "59847449"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：建立信賴憑證者信任宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[檢查清單：建立宣告規則的宣告提供者信任](https://technet.microsoft.com/library/ee913564.aspx)  
+[檢查清單：為宣告提供者信任建立宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

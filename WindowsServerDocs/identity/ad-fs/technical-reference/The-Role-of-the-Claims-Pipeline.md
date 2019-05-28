@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5076a686b5d0b9a539f6cad8594aaf84dccc3edb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7891f1d0b96df84e8ac4f3eb670f30350d3c194c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887059"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188437"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="the-role-of-the-claims-pipeline"></a>宣告管線的角色
 宣告管線中 Active Directory Federation Services \(AD FS\)表示宣告必須行經同盟服務才可發行的路徑。 Federation Service 會管理整個端\-至\-結束處理程序宣告行經宣告管線，其中也包括宣告規則引擎的 宣告規則處理的各個階段。  
   

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 1245b88a42b80218b5557dc89f2b97b5d0059d44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852539"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034670"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>受防護的 Vm，可供租用戶-若要定義受防護的 VM 建立虛擬機器防護資料
 
@@ -35,7 +35,7 @@ ms.locfileid: "59852539"
 
 然後您可以建立防護資料檔案：
 
-- [建立虛擬機器防護資料檔案，並新增守護者](#create-a-shielding-data-file-and-add-guardians)
+- [建立虛擬機器防護資料檔案，並新增守護者](#create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard)
 
 
 ## <a name="obtain-a-certificate-for-remote-desktop-connection"></a>取得遠端桌面連線的憑證
@@ -211,7 +211,7 @@ New-HgsGuardian -Name "Owner" -GenerateCertificates
 您需要擁有者的憑證和其對應的私密金鑰 unshield 虛擬機器，因此請確定這些憑證可備份及保護防止遭竊。
 擁有者憑證的存取權的攻擊者可以使用它們來啟動受防護的虛擬機器，或變更其安全性設定。
 
-如果您要匯入從您想要用來執行您的虛擬機器 （您主要資料中心、 備份的資料中心等），執行下列命令，針對每個受防護網狀架構的守護者資訊[從您的受防護網狀架構擷取中繼資料檔案](#Select-trusted-fabrics).
+如果您要匯入從您想要用來執行您的虛擬機器 （您主要資料中心、 備份的資料中心等），執行下列命令，針對每個受防護網狀架構的守護者資訊[從您的受防護網狀架構擷取中繼資料檔案](#select-trusted-fabrics).
 
 ```powershell
 Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
@@ -220,7 +220,7 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 > [!TIP]
 > 如果您使用自我簽署的憑證或憑證向 HGS 已過期，您可能需要使用`-AllowUntrustedRoot`及/或`-AllowExpired`旗標來略過安全性檢查的匯入 HgsGuardian 命令。
 
-您也必須[取得磁碟區簽章目錄](#Get-the-volume-signature-catalog-file)針對每個您想要使用與此虛擬機器防護資料檔案的範本磁碟和[防護資料回應檔案](#Create-an-answer-file)允許作業系統完成其特製化的工作自動。
+您也必須[取得磁碟區簽章目錄](#get-the-volume-signature-catalog-file)針對每個您想要使用與此虛擬機器防護資料檔案的範本磁碟和[防護資料回應檔案](#create-an-answer-file)允許作業系統完成其特製化的工作自動。
 最後，決定是否要讓您完全受防護或剛剛啟用 vTPM 的 VM。
 使用`-Policy Shielded`完全受防護的 vm 或`-Policy EncryptionSupported`vTPM 啟用 允許基本的主控台連線的 VM 和 PowerShell Direct。
 
@@ -242,5 +242,5 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 
 ## <a name="see-also"></a>另請參閱
 
-- [部署受防護的 Vm](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [受防護網狀架構與受防護的 Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

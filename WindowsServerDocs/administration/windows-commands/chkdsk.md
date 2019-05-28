@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 26aad48db4a5f0a593dfcb29160031a0c9f3dc75
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c5272ba0a5ff7c0a30f61631bb6c8dac6552ef0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886859"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192606"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -35,7 +35,7 @@ ms.locfileid: "59886859"
 > [!IMPORTANT]
 > **注意：** Chkdsk 只用於本機磁碟中。 此命令不能與已透過網路重新導向本機磁碟機代號。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+如需如何使用此命令的範例，請參閱[範例](#examples)。
 
 ##<a name="syntax"></a>語法
 
@@ -60,7 +60,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |/b|只限 NTFS:清除的磁碟區上的錯誤叢集清單，並重新掃描有錯誤的所有已配置和可用叢集。 **/ b**內含的功能 **/r**。 映像至新的硬碟磁碟機的磁碟區之後，使用此參數。|
 |/?|在命令提示字元顯示說明。|
 
-##<a name="remarks"></a>備註
+## <a name="remarks"></a>備註
 
 -   略過的磁碟區檢查
 
@@ -114,7 +114,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 -   **Chkdsk**命令，使用不同的參數，可從修復主控台。
 -   不常重新啟動的伺服器，您可能想要**chkntfs**或**fsutil 中途查詢**之前執行 chkdsk 的命令，以判定磁碟區的已變更位元是否已設定。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a>範例
 
 如果您想要檢查磁碟機 D 中的和已修正錯誤的 Windows 中，輸入：
 ```

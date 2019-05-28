@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e429c87a2194ecfaf02c3d6c579eda75293250d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a280d540d09c6fdcb7846d1cf545856869be1152
+ms.sourcegitcommit: b190fac4bfa5599751a60d3fc3b4c4a64dd9afd7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827509"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66008969"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>複寫錯誤 1753：端點對應表中無更多可用的端點
 
@@ -194,7 +194,6 @@ Windows Server 2008 或 Windows Server 2008 R2： 從來源 DC 的主控台，�
           <code>c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs primary DNS Server IP &gt;
 c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs secondary DNS Server IP&gt;</code>
           <para>確認 NSLOOKUP 所傳回的 IP 位址 「 擁有 」 主機名稱 / 來源 DC 的安全性識別：</para>
-
           <code>C:&gt;NBTSTAT -A &lt;IP address returned by NSLOOKUP in the step above&gt;</code>
           <para>或</para>
           <para>登入來源 DC 的主控台，從命令提示字元執行"IPCONFIG"並確認來源 DC 擁有上述 NSLOOKUP 命令所傳回的 IP 位址</para>

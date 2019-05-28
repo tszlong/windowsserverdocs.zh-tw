@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5c7cec9ad92605f3dc98f8ce8fb7853a7ae61299
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0206197b24f13d80019cbc864057e99e195ebc4b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863689"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191145"
 ---
 # <a name="planning-your-deployment"></a>規劃您的部署
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 當您在規劃跨\-組織\(同盟\-基礎\)共同作業使用 Active Directory Federation Services \(AD FS\)，先判斷您的組織將裝載在網際網路上的其他組織存取 Web 資源或如果您要為員工提供 Web 資源的存取權，您組織中。 這個決定會影響您如何部署 AD FS 中，而且它是在您的 AD FS 基礎結構的規劃。  
   
@@ -33,17 +31,17 @@ ms.locfileid: "59863689"
   
 ## <a name="in-this-section"></a>本節內容  
   
--   [安全規劃和部署的 AD FS 的最佳作法](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)  
+-   [安全規劃和部署 AD FS 的最佳做法](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)  
   
--   [規劃互通性與 AD FS 1.x](Planning-for-Interoperability-with-AD-FS-1.x.md)  
+-   [規劃與 AD FS 1.x 的互通性](Planning-for-Interoperability-with-AD-FS-1.x.md)  
   
 -   [使用身分識別委派的時機](When-to-Use-Identity-Delegation.md)  
   
--   [帳戶夥伴組織中部署 AD FS](Deploying-AD-FS-in-the-Account-Partner-Organization-2012.md)  
+-   [在帳戶夥伴組織中部署 AD FS](Deploying-AD-FS-in-the-Account-Partner-Organization-2012.md)  
   
--   [資源夥伴組織中部署 AD FS](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
+-   [在資源夥伴組織中部署 AD FS](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 
 

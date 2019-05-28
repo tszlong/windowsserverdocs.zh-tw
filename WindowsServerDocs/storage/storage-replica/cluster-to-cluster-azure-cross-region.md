@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 41f435c3d537cbfd204dfa869d750b22200deb33
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d9999f786639ff4aa303ed34ade14849cda8feec
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891129"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475904"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure 中跨地區的叢集對叢集儲存體複本
+
+> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
+
 您可以在 Azure 中設定叢集對叢集儲存體複本，跨區域的應用程式。 在下列範例中，我們使用雙節點叢集，但不限於雙節點叢集的叢集對叢集儲存體複本。 下圖是兩個節點的儲存空間直接存取叢集可以彼此通訊、 位於相同的網域，而且跨區域。
 
 請觀看以下影片的程序的完整逐步解說。
@@ -31,7 +34,7 @@ ms.locfileid: "59891129"
 
     例如， **SR AZ2AZ**中**美國西部 2**並**SR AZCROSS**中**美國中西部**，如上所示。
 
-2. 建立兩個[可用性設定組](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM)，其中每個資源群組中的每個叢集
+2. 建立兩個[可用性設定組](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM)，其中每個叢集的每個資源群組中。
     - 可用性設定組 (**az2azAS1**) 中 (**SR AZ2AZ**)
     - 可用性設定組 (**azcross-AS**) 中 (**SR AZCROSS**)
 
@@ -41,7 +44,7 @@ ms.locfileid: "59891129"
 
 4. 建立兩個網路安全性群組
    - 建立[網路安全性群組](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**az2az NSG**) 中的第一個資源群組 (**SR AZ2AZ**)。
-   - 建立[網路安全性群組](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**azcross NSG**) 中的第二個資源群組 (**SR AZCROSS**)。 
+   - 建立[網路安全性群組](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**azcross NSG**) 中的第二個資源群組 (**SR AZCROSS**)。
 
    加入這兩個網路安全性群組的 RDP:3389 的一項輸入的安全性規則。 您可以選擇移除此規則，一旦完成您的設定。
 
@@ -72,10 +75,10 @@ ms.locfileid: "59891129"
 
    以下是範例 PowerShell 命令
    ```powershell
-      New-Cluster -Name SRAZC1 -Node az2az1,az2az2 – StaticAddress 10.3.0.100
+      New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
    ```
    ```powershell
-      New-Cluster -Name SRAZCross -Node azcross1,azcross2 – StaticAddress 10.0.0.10
+      New-Cluster -Name SRAZCross -Node azcross1,azcross2 –StaticAddress 10.0.0.10
    ```
 
 7. 啟用儲存空間直接存取。
@@ -172,7 +175,7 @@ ms.locfileid: "59891129"
    ```powershell
      Grant-SRAccess -ComputerName az2az1 -Cluster SRAZCross
    ```
-如果您使用 Windows Server 2016 也執行這個命令：
+如果您使用 Windows Server 2016，也執行這個命令：
 
    ```powershell
      Grant-SRAccess -ComputerName azcross1 -Cluster SRAZC1

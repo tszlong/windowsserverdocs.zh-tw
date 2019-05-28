@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1310792158995608e8f477b6df9d6cf7c0284571
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c6aa91956f4a90b32b82e6c970e68b3164c732f0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822249"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191719"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
-
->適用於：Windows Server 2012 R2
 
 您必須符合部署 AD FS 時的各種需求如下：  
   
@@ -348,6 +346,6 @@ AD FS 支援使用終端使用者工作地點加入其裝置的動作期間佈�
 執行安裝和初始設定的 AD FS 系統管理員必須具有網域系統管理員權限，本機網域中\(換句話說，網域加入同盟伺服器。\)  
   
 ## <a name="see-also"></a>另請參閱  
-[Windows Server 2012 R2 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 31c2e048c3c125d0ea60610b049501151d7aa823
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6150b52030734c57b345aea731302650bcbddbfd
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830779"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192134"
 ---
 # <a name="implementing-your-ad-fs-design-plan"></a>實作您的 AD FS 設計計畫
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 下列環境的條件和需求都是在 Active Directory 同盟服務的實作中的重要因素\(AD FS\)設計計劃：  
   
@@ -41,4 +39,4 @@ ms.locfileid: "59830779"
   
 -   [檢查清單：實作網頁 SSO 設計](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [檢查清單：實作同盟的網頁 SSO 設計](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [檢查清單：實作同盟網頁 SSO 設計](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  

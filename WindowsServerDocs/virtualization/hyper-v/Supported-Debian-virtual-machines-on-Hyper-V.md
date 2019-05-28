@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 6ec089f501a0999a4460501dbc4d03428d36af40
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 129783dc980be6e471ecadb2cdbffee900e3396e
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863829"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222831"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>在 HYPER-V 上支援的 Debian 虛擬機器
 
@@ -35,9 +35,9 @@ ms.locfileid: "59863829"
 |**功能**|**Windows Server 作業系統版本**|**9.0-9.6 (stretch)**|**8.0-8.11 (jessie)**|**7.0 7.11 (wheezy)**|
 |-|-|-|-|-|
 |**可用性**||內建|內建|內建 （註 6）|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_core)**|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 正確時間|2019, 2016|&#10004;請注意 8||
-|**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Networking)**|
+|**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|
 |大型訊框|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|
 |VLAN 標記和主幹連線|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|
 |即時移轉|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|
@@ -45,28 +45,28 @@ ms.locfileid: "59863829"
 |vRSS|2019、 2016、 2012 R2|&#10004;請注意 8|||
 |TCP 分割和總和檢查碼卸載|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;請注意 8|||
 |SR-IOV|2019, 2016|&#10004;請注意 8||
-|**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Storage)**|
+|**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|
 |VHDX 調整大小|2019、 2016、 2012 R2|&#10004;附註 1|&#10004;附註 1|&#10004;附註 1|
 |虛擬光纖通道|2019、 2016、 2012 R2|||
 |即時虛擬機器備份|2019、 2016、 2012 R2|&#10004;附註 4 5|&#10004;附註 4 5|&#10004;附註 4|
 |修剪支援|2019、 2016、 2012 R2|&#10004;請注意 8|||
 |SCSI WWN|2019、 2016、 2012 R2|&#10004;請注意 8||
-|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Memory)**|
+|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|
 |PAE 核心支援|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|
 |MMIO 間距的組態|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|
 |動態記憶體的熱新增|2019、 2016、 2012 R2，2012年|&#10004;請注意 8|||
 |動態記憶體-佔用|2019、 2016、 2012 R2，2012年|&#10004;請注意 8|||
 |執行階段記憶體大小調整|2019, 2016|&#10004;請注意 8|||
-|**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Video)**|
+|**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|
 |Hyper-v 特定視訊裝置|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;||
-|**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Misc)**|
+|**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|
 |索引鍵 / 值組|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;附註 4|&#10004;附註 4||
 |非遮罩式插斷|2019、 2016、 2012 R2|&#10004;|&#10004;|
 |從主機到客體檔案複製|2019、 2016、 2012 R2|&#10004;附註 4|&#10004;附註 4||
 |lsvmbus 命令|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|||
 |HYPER-V 通訊端|2019, 2016|&#10004;請注意 8|||
 |PCI 通過/DDA|2019, 2016|&#10004;請注意 8|||
-|**[第 2 代虛擬機器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_gen2)**|
+|**[第 2 代虛擬機器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|
 |使用 UEFI 開機|2019、 2016、 2012 R2|&#10004;請注意 7|&#10004;請注意 7||
 |安全開機|2019, 2016|||
 

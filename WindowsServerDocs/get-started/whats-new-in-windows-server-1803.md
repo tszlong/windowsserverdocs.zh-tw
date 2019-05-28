@@ -8,18 +8,18 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: c4f80b668b91e65b6c8bc528e14f52a1d117a3c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a489d3f8958304d685116186f5db9e1c854114bf
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823089"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976545"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 的新功能
 
 >適用於：Windows Server (半年度管道)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;本節內容說明 Windows Server 版本 1803 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱[Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要深入了解 Windows 的最新功能，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)。 本章節內容說明的新功能和 Windows Server，1803年版中已變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱[Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
 
 ## <a name="windows-admin-center"></a>Windows Admin Center
 

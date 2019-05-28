@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 11d2d567f9264dca53a3426263a172649d7d7c11
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f034c2eeafe9d52569e8181bbbb2e582b1059d51
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826649"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188865"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>逐步解說指南：使用條件式存取控制管理風險
 
->適用於：Windows Server 2012 R2
+
 
 
 ## <a name="about-this-guide"></a>關於本指南
@@ -66,27 +66,27 @@ ms.locfileid: "59826649"
     您將會獲得應用程式的存取權。
 
 ## <a name="BKMK_3"></a>步驟 3:根據使用者資料設定條件式存取控制原則
-在這個步驟中，您將根據使用者群組成員資格資料設定存取控制原則。 換句話說，您將為代表範例應用程式 ( **claimapp** ) 的信賴憑證者信任，在同盟伺服器上設定 [發行授權規則] 。 此規則的邏輯**Robert Hatley** AD 使用者將被發給存取此應用程式，因為他屬於所需的宣告**財務**群組。 您已新增**Robert Hatley**帳戶**財務**群組中[適用於 Windows Server 2012 R2 中的 AD FS 設定實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)。
+在這個步驟中，您將根據使用者群組成員資格資料設定存取控制原則。 換句話說，您將為代表範例應用程式 ( **claimapp** ) 的信賴憑證者信任，在同盟伺服器上設定 [發行授權規則]  。 此規則的邏輯**Robert Hatley** AD 使用者將被發給存取此應用程式，因為他屬於所需的宣告**財務**群組。 您已新增**Robert Hatley**帳戶**財務**群組中[適用於 Windows Server 2012 R2 中的 AD FS 設定實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)。
 
 您可以使用 AD FS 管理主控台或透過 Windows PowerShell 完成此工作。
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-the-ad-fs-management-console"></a>透過 AD FS 管理主控台根據使用者資料來設定條件式存取控制原則
 
-1.  在 AD FS 管理主控台中，瀏覽到 [信任關係] ，然後到 [信賴憑證者信任] 。
+1.  在 AD FS 管理主控台中，瀏覽到 [信任關係]  ，然後到 [信賴憑證者信任]  。
 
-2.  選取代表您範例應用程式 (**claimapp**) 的信賴憑證者信任，然後在 [執行]  窗格或在此信賴憑證者信任按一下滑鼠右鍵，選取 [編輯宣告規則] 。
+2.  選取代表您範例應用程式 (**claimapp**) 的信賴憑證者信任，然後在 [執行]  窗格或在此信賴憑證者信任按一下滑鼠右鍵，選取 [編輯宣告規則]  。
 
-3.  在 [編輯 claimapp 宣告規則]  視窗中，選取 [發行授權規則]  索引標籤，然後按一下 [新增規則] 。
+3.  在 [編輯 claimapp 宣告規則]  視窗中，選取 [發行授權規則]  索引標籤，然後按一下 [新增規則]  。
 
-4.  在 [新增發行授權宣告規則精靈] 中，選取 [選取規則範本] 頁面上的 [根據連入宣告允許或拒絕使用者]  宣告規則範本，然後按 [下一步] 。
+4.  在 [新增發行授權宣告規則精靈]  中，選取 [選取規則範本]  頁面上的 [根據連入宣告允許或拒絕使用者]  宣告規則範本，然後按 [下一步]  。
 
-5.  在 [設定規則] 頁面上，執行下列所有動作，然後按一下 [完成]：
+5.  在 [設定規則]  頁面上，執行下列所有動作，然後按一下 [完成]  ：
 
     1.  輸入宣告規則的名稱，例如 **TestRule**。
 
-    2.  選取 [群組 SID]  作為 [連入宣告類型] 。
+    2.  選取 [群組 SID]  作為 [連入宣告類型]  。
 
-    3.  按一下 [瀏覽] ，輸入 **Finance** 作為 AD 測試群組的名稱，然後針對 [連入宣告值]  欄位加以解析。
+    3.  按一下 [瀏覽]  ，輸入 **Finance** 作為 AD 測試群組的名稱，然後針對 [連入宣告值]  欄位加以解析。
 
     4.  選取 [拒絕具有這個傳入宣告的使用者的存取]  選項。
 

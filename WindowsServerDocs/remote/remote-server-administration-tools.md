@@ -12,12 +12,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: cc4b0eb51b477ec175040b46c9563f81955c0be3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 748010e80cf2b54926ca226a7af8c49f1aa16800
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846209"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192638"
 ---
 # <a name="remote-server-administration-tools"></a>遠端伺服器管理工具
 
@@ -89,38 +89,38 @@ RSAT 可讓 IT 系統管理員管理的 Windows 10 電腦的 Windows 伺服器�
 
 2.  如果您將下載的套件儲存到本機電腦或共用，根據您要安裝這些工具的電腦架構而定，按兩下安裝程式 **WindowsTH-KB2693643-x64.msu** 或 **WindowsTH-KB2693643-x86.msu**。
 
-3.  當 [Windows Update Standalone Installer] 對話方塊提示您安裝更新時，按一下 [是]。
+3.  當 [Windows Update Standalone Installer]  對話方塊提示您安裝更新時，按一下 [是]  。
 
-4.  閱讀並接受授權條款。 按一下 [我接受] 。
+4.  閱讀並接受授權條款。 按一下 [我接受]  。
 
 5.  安裝需要數分鐘的時間才會完成。
 
 ##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>（之後 RSAT 套件安裝） 解除安裝遠端伺服器管理工具適用於 Windows 10
 
-1.  在桌面上依序按一下 [開始]、[所有應用程式]、[Windows 系統]，然後按 [控制台]。
+1.  在桌面上依序按一下 [開始]  、[所有應用程式]  、[Windows 系統]  ，然後按 [控制台]  。
 
-2.  在 [程式集] 之下，按一下 [解除安裝程式]。
+2.  在 [程式集]  之下，按一下 [解除安裝程式]  。
 
-3.  按一下 [檢視安裝的更新] 。
+3.  按一下 [檢視安裝的更新]  。
 
-4.  以滑鼠右鍵按一下 [Microsoft Windows 更新 (KB2693643)]，然後按一下 [解除安裝]。
+4.  以滑鼠右鍵按一下 [Microsoft Windows 更新 (KB2693643)]  ，然後按一下 [解除安裝]  。
 
-5.  當詢問您是否確定要解除安裝更新時，按一下 [是] 。
+5.  當詢問您是否確定要解除安裝更新時，按一下 [是]  。
 S
 ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>若要關閉特定工具 （之後安裝 RSAT 套件）
 
-1.  在桌面上依序按一下 [開始]、[所有應用程式]、[Windows 系統]，然後按 [控制台]。
+1.  在桌面上依序按一下 [開始]  、[所有應用程式]  、[Windows 系統]  ，然後按 [控制台]  。
 
-2.  按一下 [程式集] ，然後按一下 [程式和功能]  中的 [開啟或關閉 Windows 功能] 。
+2.  按一下 [程式集]  ，然後按一下 [程式和功能]  中的 [開啟或關閉 Windows 功能]  。
 
-3.  在 [Windows 功能] 對話方塊中，展開 [遠端伺服器管理工具]，然後展開 [角色管理工具] 或 [功能管理工具]。
+3.  在 [Windows 功能]  對話方塊中，展開 [遠端伺服器管理工具]  ，然後展開 [角色管理工具]  或 [功能管理工具]  。
 
 4.  清除您想要關閉的任何工具的核取方塊。
 
     > [!NOTE]
     > 如果您關閉伺服器管理員，必須重新啟動電腦，而且工具可以從存取**工具**必須從開啟的 [伺服器管理員] 功能表**系統管理工具**資料夾。
 
-5.  當您完成關閉不要使用的工具時，按一下 [確定]。
+5.  當您完成關閉不要使用的工具時，按一下 [確定]  。
 
 ### <a name="run-remote-server-administration-tools"></a>執行遠端伺服器管理工具
 
@@ -128,8 +128,8 @@ S
 > 安裝遠端伺服器管理工具的 Windows 10 之後,**系統管理工具**資料夾會顯示在**開始**功能表。 您可以從下列位置存取工具。
 >
 > -   **工具**伺服器管理員 主控台中的功能表。
-> -   [控制台\系統及安全性\系統管理工具]。
-> -   儲存 [管理工具]  資料夾的捷徑至桌面 (請以滑鼠右鍵按一下 [控制台\系統及安全性\管理工具]  連結，然後再按一下 [建立捷徑] 。
+> -   [控制台\系統及安全性\系統管理工具]  。
+> -   儲存 [管理工具]  資料夾的捷徑至桌面 (請以滑鼠右鍵按一下 [控制台\系統及安全性\管理工具]  連結，然後再按一下 [建立捷徑]  。
 
 安裝為遠端伺服器管理工具適用於 Windows 10 的一部分的工具無法用來管理本機用戶端電腦。 不論您執行此工具，您必須指定遠端伺服器或多部遠端伺服器的詳細資訊，用來執行此工具。 因為大部分工具都已整合使用伺服器管理員，您想要使用中的工具管理伺服器之前，管理伺服器集區的 伺服器管理員的遠端伺服器加入**工具**功能表。 如需如何將伺服器新增到伺服器集區以及建立自訂伺服器群組的詳細資訊，請參閱＜ [將伺服器新增到伺服器管理員](https://go.microsoft.com/fwlink/p/?LinkId=241353) ＞和＜ [建立和管理伺服器群組](https://go.microsoft.com/fwlink/?LinkId=247328)＞。
 
@@ -137,15 +137,15 @@ S
 
 ##### <a name="to-start-server-manager-on-a-client-computer"></a>在用戶端電腦上啟動伺服器管理員
 
-1.  在 [開始]  功能表上，按一下 [所有應用程式] ，然後按 [管理工具] 。
+1.  在 [開始]  功能表上，按一下 [所有應用程式]  ，然後按 [管理工具]  。
 
-2.  在 [管理工具]  資料夾中，按一下 [伺服器管理員] 。
+2.  在 [管理工具]  資料夾中，按一下 [伺服器管理員]  。
 
 雖然它們並未列在 伺服器管理員主控台**工具**功能表、 Windows PowerShell cmdlet 和命令提示字元管理工具也會安裝角色與功能的遠端伺服器管理工具的一部分。 例如，如果您使用提高的使用者權限 （以系統管理員身分執行），開啟 Windows PowerShell 工作階段，並執行 cmdlet `Get-Command -Module RDManagement`，結果會包含一份現在都可在之後的本機電腦上執行的遠端桌面服務 cmdlet安裝遠端伺服器管理工具，只要 cmdlet 的目標為執行全部或一部分的遠端桌面服務角色的遠端伺服器。
 
 ##### <a name="to-start-windows-powershell-with-elevated-user-rights-run-as-administrator"></a>使用提升的使用者權限啟動 Windows PowerShell (以系統管理員身分執行)
 
-1.  在 [開始] 功能表上，依序按一下 [所有應用程式]、[Windows 系統] 和 [Windows PowerShell]。
+1.  在 [開始]  功能表上，依序按一下 [所有應用程式]  、[Windows 系統]  和 [Windows PowerShell]  。
 
 2.  若要從桌面以系統管理員身分執行 Windows PowerShell，請以滑鼠右鍵按一下**Windows PowerShell**捷徑，然後再按一下**系統管理員身分執行**。
 
@@ -196,5 +196,3 @@ S
 ## <a name="see-also"></a>另請參閱
 >- [適用於 Windows 10 的遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkID=404281)
 >- [Windows vista、 Windows 7、windows 8、windows、 Windows Server 2008、 Windows Server 2008 R2、 Windows Server 2012 和 Windows Server 2012 R2 的遠端伺服器管理工具 (RSAT)](https://go.microsoft.com/fwlink/p/?LinkID=221055)
-
-

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 101cab68d7c79bb107f1d6ef73900d9a4475b6ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c690f81620f97622a2f068b07c36e0a6c59e90d4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861299"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190345"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Windows Server 2016 AD FS 中的存取控制原則
-
->適用於：Windows Server 2016
 
   
 ## <a name="access-control-policy-templates-in-ad-fs"></a>在 AD FS 存取控制原則範本  
@@ -85,11 +83,11 @@ AD FS 包含數個內建的存取控制原則範本。  指定的目標具有相
   
 5.  在底部，選取 加上底線**特定**  
   
-6.  從視窗也彈出中，選取**驗證**從下拉式清單。  按一下 [確定]。  
+6.  從視窗也彈出中，選取**驗證**從下拉式清單。  按一下 [確定]  。  
   
     ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP6.PNG)  
   
-7.  按一下 [確定]。 按一下 [確定]。  
+7.  按一下 [確定]  。 按一下 [確定]  。  
   
     ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP7.PNG)  
   
@@ -108,11 +106,11 @@ AD FS 包含數個內建的存取控制原則範本。  指定的目標具有相
   
 5.  在底部，選取 加上底線**特定**  
   
-6.  從視窗也彈出中，選取**參數指定當指派的存取控制原則**。  按一下 [確定]。  
+6.  從視窗也彈出中，選取**參數指定當指派的存取控制原則**。  按一下 [確定]  。  
   
     ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP8.PNG)  
   
-7.  按一下 [確定]。 按一下 [確定]。  
+7.  按一下 [確定]  。 按一下 [確定]  。  
   
     ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP9.PNG)  
   
@@ -131,15 +129,15 @@ AD FS 包含數個內建的存取控制原則範本。  指定的目標具有相
   
 5.  在底部，選取 加上底線**特定**  
   
-6.  從視窗也彈出中，選取**驗證**從下拉式清單。  按一下 [確定]。  
+6.  從視窗也彈出中，選取**驗證**從下拉式清單。  按一下 [確定]  。  
   
 7.  在除了 下，勾選方塊旁**從使用特定的信任層級的裝置**  
   
 8.  在底部下除外，請選取 加上底線**特定**  
   
-9. 從視窗也彈出中，選取**受控**從下拉式清單。  按一下 [確定]。  
+9. 從視窗也彈出中，選取**受控**從下拉式清單。  按一下 [確定]  。  
   
-10. 按一下 [確定]。 按一下 [確定]。  
+10. 按一下 [確定]  。 按一下 [確定]  。  
   
     ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP10.PNG)  
   
@@ -158,13 +156,13 @@ AD FS 包含數個內建的存取控制原則範本。  指定的目標具有相
   
 5.  在底部，選取 加上底線**特定**群組旁邊的第一個條件時，  
   
-6.  從視窗也彈出中，選取**參數指定已指派原則**。  按一下 [確定]。  
+6.  從視窗也彈出中，選取**參數指定已指派原則**。  按一下 [確定]  。  
   
 7.  在底部，選取 加上底線**特定**第二個條件旁邊的宣告  
   
-8.  從視窗也彈出中，選取**參數指定當指派的存取控制原則**。  按一下 [確定]。  
+8.  從視窗也彈出中，選取**參數指定當指派的存取控制原則**。  按一下 [確定]  。  
   
-9. 按一下 [確定]。 按一下 [確定]。  
+9. 按一下 [確定]  。 按一下 [確定]  。  
   
 ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP12.PNG)  
   

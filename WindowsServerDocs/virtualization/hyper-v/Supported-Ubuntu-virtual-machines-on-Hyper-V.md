@@ -11,12 +11,12 @@ ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 11/19/2018
-ms.openlocfilehash: afba885fc49ba129c0ef452704cbfe9f9cf884ba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b58193ec570cf0d94b6c95018b8c00c813331986
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834039"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222646"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>在 HYPER-V 上支援的 Ubuntu 虛擬機器
 
@@ -39,9 +39,9 @@ ms.locfileid: "59834039"
 |**功能**|**Windows Server 作業系統版本**|**18.10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|**12.04 LTS**|
 |-|-|-|-|-|-|-|
 |**可用性**||內建|內建|內建|內建|內建|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_core)**|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 正確時間|2019, 2016|&#10004;|&#10004;|&#10004;|||
-|**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Networking)**|||||||
+|**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|||||||
 |大型訊框|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |VLAN 標記和主幹連線|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |即時移轉|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -49,32 +49,32 @@ ms.locfileid: "59834039"
 |vRSS|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |TCP 分割和總和檢查碼卸載|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;|||
-|**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Storage)**||||||
+|**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||
 |VHDX 調整大小|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |虛擬光纖通道|2019、 2016、 2012 R2|&#10004;附註 2|&#10004;附註 2|&#10004;附註 2|&#10004;附註 2||
 |即時虛擬機器備份|2019、 2016、 2012 R2|&#10004;請注意 3、 4、 6|&#10004;請注意 3、 4、 5|&#10004;請注意 3、 4、 5|&#10004;請注意 3、 4、 5||
 |修剪支援|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Memory)**||||||
+|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**||||||
 |PAE 核心支援|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |MMIO 間距的組態|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體的熱新增|2019、 2016、 2012 R2，2012年|&#10004;請注意 7、 8、 9|&#10004;請注意 7、 8、 9|&#10004;請注意 7、 8、 9|&#10004;請注意 7、 8、 9||
 |動態記憶體-佔用|2019、 2016、 2012 R2，2012年|&#10004;請注意 7、 8、 9|&#10004;請注意 7、 8、 9|&#10004;請注意 7、 8、 9|&#10004;請注意 7、 8、 9||
 |執行階段記憶體大小調整|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Video)**|||||||
+|**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||
 |HYPER-V 特定視訊裝置|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Misc)**||||||
+|**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**||||||
 |索引鍵/值組|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;附註 6 10|&#10004;請注意 5、 10|&#10004;請注意 5、 10|&#10004;請注意 5、 10|&#10004;請注意 5、 10|
 |非遮罩式插斷|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |從主機到客體檔案複製|2019、 2016、 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |lsvmbus 命令|2019、 2016、 2012 R2、WINDOWS SERVER 2012、WINDOWS 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |HYPER-V 通訊端|2019, 2016||||||
 |PCI 通過/DDA|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||
-|**[第 2 代虛擬機器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_gen2)**||||||
+|**[第 2 代虛擬機器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**||||||
 |使用 UEFI 開機|2019、 2016、 2012 R2|&#10004;請注意 11、 12|&#10004;請注意 11、 12|&#10004;請注意 11、 12|&#10004;請注意 11、 12||
 |安全開機|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||
 
-## <a name="BKMK_notes"></a>附註
+## <a name="notes"></a>附註
 
 1. 如果靜態 IP 資料隱碼攻擊可能無法運作**網路管理員**已針對指定的 Hyper-v 特定網路介面卡，虛擬機器上設定。 若要確保能夠順利運作的靜態 IP 資料隱碼請確定網路管理員完全關閉，或已關閉特定的網路介面卡透過其**ifcfg ethX**檔案。
 
@@ -184,7 +184,7 @@ ms.locfileid: "59834039"
 
 * [支援 CentOS 和 Red Hat Enterprise Linux 在 HYPER-V 上的虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [在 HYPER-V 上支援的 Debian 虛擬機器](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Hyper-V 上支援的 Debian 虛擬機器](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
 * [在 HYPER-V 上支援的 Oracle Linux 虛擬機器](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 

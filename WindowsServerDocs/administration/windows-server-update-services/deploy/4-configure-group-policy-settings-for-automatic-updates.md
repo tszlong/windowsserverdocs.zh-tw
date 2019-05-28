@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08cc0b31aa123aadd57a0ea5ddbbeb96bffc3d6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 69b433ee3e0f57398db1e7814d2de24df7dd1696
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880099"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222927"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步驟 4：設定自動更新的群組原則設定
 
@@ -27,69 +27,69 @@ ms.locfileid: "59880099"
 
 本主題包含兩個主要區段：
 
-[WSUS 用戶端更新的群組原則設定](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_PolSettings)、 提供規範指引和行為的相關詳細資料的 Windows 更新和維護排程器設定群組原則 」 的 Windows Update 與 WSUS 用戶端可以互動方式控制若要取得自動更新。
+[WSUS 用戶端更新的群組原則設定](#group-policy-settings-for-wsus-client-updates)、 提供規範指引和行為的相關詳細資料的 Windows 更新和維護排程器設定群組原則 」 的 Windows Update 與 WSUS 用戶端可以互動方式控制若要取得自動更新。
 
-[補充資訊](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_Supplemental)具有下列各節：
+[補充資訊](#supplemental-information)具有下列各節：
 
--   [存取 Windows Update 設定，群組原則中的](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_OpenGPO)，以提供一般指引是有關使用群組原則管理編輯器] 和 [存取的更新服務原則 」 擴充功能和中的維護排程器設定的相關資訊群組原則。
+-   [存取 Windows Update 設定，群組原則中的](#accessing-the-windows-update-settings-in-group-policy)，以提供一般指引是有關使用群組原則管理編輯器] 和 [存取的更新服務原則 」 擴充功能和中的維護排程器設定的相關資訊群組原則。
 
--   [變更 WSUS 與本指南為](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_changes)： 熟悉 WSUS 3.2 和先前版本的系統管理員，本節會提供目前和過去版本的 WSUS 與本指南的主要差異的簡短摘要。
+-   [變更 WSUS 與本指南為](#changes-to-wsus-relevant-to-this-guide)： 熟悉 WSUS 3.2 和先前版本的系統管理員，本節會提供目前和過去版本的 WSUS 與本指南的主要差異的簡短摘要。
 
--   [詞彙和定義](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_Terms)： 與 WSUS 和更新本指南中所使用的服務相關的各種詞彙的定義。
+-   [詞彙和定義](#terms-and-definitions)： 與 WSUS 和更新本指南中所使用的服務相關的各種詞彙的定義。
 
-## <a name="BKMK_PolSettings"></a>WSUS 用戶端更新的群組原則設定
+## <a name="group-policy-settings-for-wsus-client-updates"></a>WSUS 用戶端更新的群組原則設定
 本節提供大約三個擴充功能的群組原則的資訊。 在這些擴充功能中，您將找到可供您設定 WSUS 用戶端可以接收自動更新 Windows update 的互動方式的設定。
 
--   [電腦組態&gt;Windows Update 原則設定](#BKMK_computerPol)
+-   [電腦組態&gt;Windows Update 原則設定](#computer-configuration--windows-update-policy-settings)
 
--   [電腦組態&gt;維護排程器原則設定](#BKMK_MtncScheduler)
+-   [電腦組態&gt;維護排程器原則設定](#computer-configuration--maintenance-scheduler-policy-settings)
 
--   [使用者設定&gt;Windows Update 原則設定](#BKMK_UserPol)
+-   [使用者設定&gt;Windows Update 原則設定](#user-configuration--windows-update-policy-settings)
 
 > [!NOTE]
-> 本主題假設您已經使用並熟悉群組原則。 如果您不熟悉群組原則，它會建議您檢閱中的資訊[的補充資訊](#BKMK_Supplemental)這份文件，然後再嘗試設定的 WSUS 原則設定一節。
+> 本主題假設您已經使用並熟悉群組原則。 如果您不熟悉群組原則，它會建議您檢閱中的資訊[的補充資訊](#supplemental-information)這份文件，然後再嘗試設定的 WSUS 原則設定一節。
 
-### <a name="BKMK_computerPol"></a>電腦設定 > Windows Update 原則設定
+### <a name="computer-configuration--windows-update-policy-settings"></a>電腦設定 > Windows Update 原則設定
 本節提供下列電腦為基礎的原則設定的詳細資訊：
 
--   [允許自動更新立即安裝](#BKMK_comp1)
+-   [允許自動更新立即安裝](#allow-automatic-updates-immediate-installation)
 
--   [允許非系統管理員會收到更新通知](#BKMK_comp2)
+-   [允許非系統管理員會收到更新通知](#allow-non-administrators-to-receive-update-notifications)
 
--   [允許來自內部網路 Microsoft 更新服務位置的已簽署的更新](#BKMK_comp3)
+-   [允許來自內部網路 Microsoft 更新服務位置的已簽署的更新](#allow-signed-updates-from-an-intranet-microsoft-update-service-location)
 
--   [自動更新偵測頻率](#BKMK_comp4)
+-   [自動更新偵測頻率](#automatic-updates-detection-frequency)
 
--   [設定自動更新](#BKMK_comp5)
+-   [設定自動更新](#configure-automatic-updates)
 
--   [延遲重新啟動已排程的安裝](#BKMK_comp6)
+-   [延遲重新啟動已排程的安裝](#delay-restart-for-scheduled-installations)
 
--   [不會調整關閉關閉 Windows] 對話方塊中的預設選項來 [安裝更新並關機 」](#BKMK_comp7)
+-   [不會調整關閉關閉 Windows] 對話方塊中的預設選項來 [安裝更新並關機 」](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
--   [不會顯示 [安裝更新並關機] 選項在 Windows 下關閉對話方塊](#BKMK_comp8)
+-   [不會顯示 [安裝更新並關機] 選項在 Windows 下關閉對話方塊](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
--   [啟用用戶端為目標](#BKMK_comp9)
+-   [啟用用戶端為目標](#enable-client-side-targeting)
 
--   [啟用自動喚醒電腦以安裝排程的更新的 Windows Update 電源管理](#BKMK_comp10)
+-   [啟用自動喚醒電腦以安裝排程的更新的 Windows Update 電源管理](#enabling-windows-update-power-management-to-automatically-wake-up-the-computer-to-install-scheduled-updates)
 
--   [使用以排程的自動登入的使用者不自動重新啟動更新安裝](#BKMK_comp11)
+-   [使用以排程的自動登入的使用者不自動重新啟動更新安裝](#no-auto-restart-with-logged-on-users-for-scheduled-automatic-updates-installations)
 
--   [再重新啟動已排程的安裝提示](#BKMK_comp12)
+-   [再重新啟動已排程的安裝提示](#re-prompt-for-restart-with-scheduled-installations)
 
--   [重新排程自動更新排程的安裝](#BKMK_comp13)
+-   [重新排程自動更新排程的安裝](#reschedule-automatic-updates-scheduled-installations)
 
--   [指定內部網路 Microsoft 更新服務位置](#BKMK_comp14)
+-   [指定內部網路 Microsoft 更新服務位置](#specify-intranet-microsoft-update-service-location)
 
--   [開啟 建議的更新，透過自動更新](#BKMK_comp15)
+-   [開啟 建議的更新，透過自動更新](#turn-on-recommended-updates-via-automatic-updates)
 
--   [開啟軟體通知](#BKMK_comp16)
+-   [開啟軟體通知](#turn-on-software-notifications)
 
 GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*PolicyName* > **電腦設定** > **原則** > **系統管理範本** > **Windows 元件** > **Windows Update**。
 
 > [!NOTE]
 > 根據預設，將不會設定這些設定。
 
-#### <a name="BKMK_comp1"></a>允許自動更新立即安裝
+#### <a name="allow-automatic-updates-immediate-installation"></a>允許自動更新立即安裝
 指定是否自動更新會自動安裝不會中斷 Windows 服務或重新啟動 Windows 的更新。
 
 |支援的作業：|排除：|
@@ -108,7 +108,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_comp2"></a>允許非系統管理員會收到更新通知
+#### <a name="allow-non-administrators-to-receive-update-notifications"></a>允許非系統管理員會收到更新通知
 指定非系統管理使用者是否會收到更新通知設定自動更新原則設定。
 
 |支援的作業：|排除：|
@@ -130,7 +130,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_comp3"></a>允許來自內部網路 Microsoft 更新服務位置的已簽署的更新
+#### <a name="allow-signed-updates-from-an-intranet-microsoft-update-service-location"></a>允許來自近端內部網路 Microsoft 更新服務位置的已簽署更新
 指定是否自動更新會接受在內部網路 Microsoft 更新服務位置找到更新時，Microsoft 以外的實體所簽署的更新。
 
 |支援的作業：|排除：|
@@ -173,7 +173,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 如果啟用此設定時，您可以指定的強制的電腦重新啟動發生之前安裝更新後經過的時間量。
 
-#### <a name="BKMK_comp4"></a>自動更新偵測頻率
+#### <a name="automatic-updates-detection-frequency"></a>自動更新偵測頻率
 指定 Windows 用來判斷檢查可用更新之前的等待時間，以小時為單位。 確實等待時間的決定方式，是使用這裡指定的時數減去所指定時數的 0 到 20%。 比方說，如果此原則用來指定 20 小時偵測頻率，要套用此原則的所有用戶端會檢查更新 16 個與 20 小時之間的任何位置。
 
 |支援的作業：|排除：|
@@ -197,7 +197,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 如果啟用此設定時，您可以指定 Windows Update 檢查更新前所等待的時間間隔 （以小時為單位）。
 
-#### <a name="BKMK_comp5"></a>設定自動更新
+#### <a name="configure-automatic-updates"></a>設定自動更新
 指定指定這台電腦上是否啟用自動更新。
 
 |支援的作業：|排除：|
@@ -212,10 +212,10 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |-|-|
 |**原則設定狀態**|**行為**|
 |**未設定**|指定使用自動更新不會在群組原則層級指定。 不過，電腦的系統管理員仍然可以設定自動更新在控制台中。|
-|**已啟用**|指定當電腦已上線，且可用的更新搜尋 Windows Update 中使用其網際網路連線時，會辨識 Windows。<br /><br />啟用時，您就會允許本機系統管理員使用 Windows Update 控制台來選取其選擇的組態選項。 不過，將不允許本機系統管理員，以停用自動更新設定。<br /><br />-   **2-我下載和通知我安裝**<br />    當 Windows 更新找到套用到電腦的更新時，就會有可供下載的更新會通知使用者。 使用者接著可以執行 Windows Update 下載及安裝任何可用的更新。<br />-   **3-自動下載和通知我安裝**（預設值）<br />    Windows Update 會尋找適用的更新並將它們下載在背景中;使用者未收到通知或在程序期間中斷。 下載完成時，會通知使用者，有準備好要安裝的更新。 然後，使用者可以執行 Windows Update 以安裝下載的更新。<br />-   **4-自動下載和排程安裝**<br />    您可以指定排程，在此群組原則設定中使用的選項。 如果未指定排程，所有安裝的預設排程會每天上午 3:00 如果任何更新需要重新啟動以完成安裝程序，Windows 會自動重新啟動電腦。 （如果使用者登入電腦準備好重新啟動 Windows 時，使用者將會通知並選擇延遲重新啟動。）**注意：** 啟動 Windows 8，您可以設定要在安裝期間自動維護，而不是使用特定的排程，繫結至 Windows Update 的更新。 自動維護所時電腦不在使用中，安裝更新，以及避免電腦以電池電源執行時，安裝更新。 如果無法安裝更新天內自動維護，Windows Update 會立即安裝更新。 暫止的重新啟動，則會通知使用者。 擱置重新啟動才會發生意外資料遺失的潛在問題時。    您可以在 GPME 維護排程器設定中，位於路徑中，指定排程選項*PolicyName* > **電腦組態** >  **原則** > **系統管理範本** > **Windows 元件** > **維護排程器** > **自動維護啟用界限**。 請參閱標題為此參考章節：[維護排程器設定](#BKMK_MtncScheduler)，設定詳細資料。    **5-允許本機系統管理員選擇設定**<br />-指定是否允許本機系統管理員使用 [自動更新] 控制台中選取他們所選擇的組態選項，例如，不論本機系統管理員可以選擇排定的安裝時間。<br />    本機系統管理員不可停用自動更新的設定。|
+|**已啟用**|指定當電腦已上線，且可用的更新搜尋 Windows Update 中使用其網際網路連線時，會辨識 Windows。<br /><br />啟用時，您就會允許本機系統管理員使用 Windows Update 控制台來選取其選擇的組態選項。 不過，將不允許本機系統管理員，以停用自動更新設定。<br /><br />-   **2-我下載和通知我安裝**<br />    當 Windows 更新找到套用到電腦的更新時，就會有可供下載的更新會通知使用者。 使用者接著可以執行 Windows Update 下載及安裝任何可用的更新。<br />-   **3-自動下載和通知我安裝**（預設值）<br />    Windows Update 會尋找適用的更新並將它們下載在背景中;使用者未收到通知或在程序期間中斷。 下載完成時，會通知使用者，有準備好要安裝的更新。 然後，使用者可以執行 Windows Update 以安裝下載的更新。<br />-   **4-自動下載和排程安裝**<br />    您可以指定排程，在此群組原則設定中使用的選項。 如果未指定排程，所有安裝的預設排程會每天上午 3:00 如果任何更新需要重新啟動以完成安裝程序，Windows 會自動重新啟動電腦。 （如果使用者登入電腦準備好重新啟動 Windows 時，使用者將會通知並選擇延遲重新啟動。）**注意：** 啟動 Windows 8，您可以設定要在安裝期間自動維護，而不是使用特定的排程，繫結至 Windows Update 的更新。 自動維護所時電腦不在使用中，安裝更新，以及避免電腦以電池電源執行時，安裝更新。 如果無法安裝更新天內自動維護，Windows Update 會立即安裝更新。 暫止的重新啟動，則會通知使用者。 擱置重新啟動才會發生意外資料遺失的潛在問題時。    您可以在 GPME 維護排程器設定中，位於路徑中，指定排程選項*PolicyName* > **電腦組態** >  **原則** > **系統管理範本** > **Windows 元件** > **維護排程器** > **自動維護啟用界限**。 請參閱標題為此參考章節：[維護排程器設定](#computer-configuration--maintenance-scheduler-policy-settings)，設定詳細資料。    **5-允許本機系統管理員選擇設定**<br />-指定是否允許本機系統管理員使用 [自動更新] 控制台中選取他們所選擇的組態選項，例如，不論本機系統管理員可以選擇排定的安裝時間。<br />    本機系統管理員不可停用自動更新的設定。|
 |**已停用**|指定的任何用戶端更新，可從公用的 Windows Update 服務必須以手動方式從網際網路下載和安裝。|
 
-#### <a name="BKMK_comp6"></a>延遲重新啟動已排程的安裝
+#### <a name="delay-restart-for-scheduled-installations"></a>延遲重新啟動已排程的安裝
 指定自動更新會繼續進行已排程的重新啟動之前等候的時間的量。
 
 |支援的作業：|排除：|
@@ -234,7 +234,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 如果啟用此設定時，您可以使用此選項以指定的時間 （以分鐘為單位） 的自動更新前所等待進行已排程的重新啟動。
 
-#### <a name="BKMK_comp7"></a>不會調整關閉關閉 Windows] 對話方塊中的預設選項來 [安裝更新並關機 」
+#### <a name="do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog"></a>不會調整關閉關閉 Windows 對話方塊中的預設選項來安裝更新並關機
 此原則設定可讓您指定是否**安裝更新並關機**的預設選項為允許選項**關閉關閉 Windows**  對話方塊。
 
 |支援的作業：|排除：|
@@ -274,7 +274,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_comp8"></a>不會顯示 [安裝更新並關機] 選項在 Windows 下關閉對話方塊
+#### <a name="do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog"></a>不會顯示安裝更新並關機 選項在 Windows 下關閉對話方塊
 指定是否**安裝更新並關機**選項會顯示在**向下 Windows 關閉** 對話方塊。
 
 |支援的作業：|排除：|
@@ -290,7 +290,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_comp9"></a>啟用用戶端為目標
+#### <a name="enable-client-side-targeting"></a>啟用用戶端目標
 指定的目標群組名稱或 WSUS 主控台中所設定要從 WSUS 接收更新的名稱。
 
 |支援的作業：|排除：|
@@ -312,7 +312,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 您可以使用此空間來指定一或多個目標群組名稱。
 
-#### <a name="BKMK_comp10"></a>啟用自動喚醒電腦以安裝排程的更新的 Windows Update 電源管理
+#### <a name="enabling-windows-update-power-management-to-automatically-wake-up-the-computer-to-install-scheduled-updates"></a>啟用自動喚醒電腦以安裝排程的更新的 Windows Update 電源管理
 指定 Windows Update 是否會用來排程要安裝的更新時自動喚醒電腦從休眠狀態的 Windows 電源管理] 或 [電源選項的功能。
 
 只有當 Windows Update 設定為自動安裝更新，會自動喚醒電腦。 如果電腦處於休眠狀態，排程的安裝時間發生，且有要套用的更新時，Windows Update 會使用 Windows 電源管理] 或 [電源選項的功能，自動喚醒電腦以安裝更新。 Windows 更新也會喚醒電腦並安裝更新，如果其在安裝期限，就會發生。
@@ -332,7 +332,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_comp11"></a>使用以排程的自動登入的使用者不自動重新啟動更新安裝
+#### <a name="no-auto-restart-with-logged-on-users-for-scheduled-automatic-updates-installations"></a>有使用者登入時不自動重新開機以完成排定的自動更新安裝
 指定，若要完成排程的安裝，自動更新將會等候任何使用者登入，而不會引發自動重新啟動電腦的使用者重新啟動電腦。
 
 |支援的作業：|排除：|
@@ -351,7 +351,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_comp12"></a>再重新啟動已排程的安裝提示
+#### <a name="re-prompt-for-restart-with-scheduled-installations"></a>再次提示排程安裝所需的重新啟動
 指定自動更新會再次提示輸入排程的重新啟動之前要等待的時間的量。
 
 |支援的作業：|排除：|
@@ -373,7 +373,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 啟用時，您可以使用此設定選項來指定 （以分鐘為單位） 的持續時間，系統會提示使用者重新排程的重新啟動前經過的時間。
 
-#### <a name="BKMK_comp13"></a>重新排程自動更新排程的安裝
+#### <a name="reschedule-automatic-updates-scheduled-installations"></a>重新排程已經排程好的自動更新安裝
 指定自動更新後電腦啟動時，進行先前錯過排程安裝之前，先, 等候的時間的量。
 
 如果狀態設為**未設定**，錯過排程的安裝將會發生一分鐘之後電腦是下一步, 開始。
@@ -394,7 +394,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 啟用此原則設定時，您可以用它來指定下次啟動電腦之後的分鐘數、 已排程的安裝，未接受將稍早就會發生。
 
-#### <a name="BKMK_comp14"></a>指定內部網路 Microsoft 更新服務位置
+#### <a name="specify-intranet-microsoft-update-service-location"></a>指定內部網路 Microsoft 更新服務位置
 指定託管來自 Microsoft Update 之更新的內部伺服器。 然後，您可以使用 WSUS 自動更新您的網路上的 電腦。
 
 |支援的作業：|排除：|
@@ -425,7 +425,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |設定偵測更新的內部網路更新服務|http://wsus01:8530|
 |設定內部網路統計伺服器|http://IntranetUpd01|
 
-#### <a name="BKMK_comp15"></a>開啟 建議的更新，透過自動更新
+#### <a name="turn-on-recommended-updates-via-automatic-updates"></a>開啟 建議的更新，透過自動更新
 指定是否自動更新將會提供重要和建議從 WSUS 的更新。
 
 |支援的作業：|排除：|
@@ -441,7 +441,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_comp16"></a>開啟軟體通知
+#### <a name="turn-on-software-notifications"></a>開啟軟體通知
 此原則設定可讓您控制是否使用者會看到有關從 Microsoft Update 服務的精選軟體的詳細的增強型的通知訊息。 增強的通知訊息傳達的值，並將升級的安裝和使用選用的軟體。 此原則設定是在您允許 Microsoft Update 服務的使用者存取較為鬆懈的環境中使用。
 
 如果您不使用 Microsoft Update 服務，「 軟體通知 」 原則設定沒有任何作用。
@@ -464,16 +464,16 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-### <a name="BKMK_MtncScheduler"></a>電腦組態 > 維護排程器原則設定
+### <a name="computer-configuration--maintenance-scheduler-policy-settings"></a>電腦組態 > 維護排程器原則設定
 在 [設定自動更新] 設定中，您選取的選項**4-自動下載和排程安裝**，您可以指定排程執行 Windows 8 和 Windows RT 的電腦在 GPMC 中的維護排程器設定 如果您未在 「 設定自動更新 」 設定中選取第 4 個選項，則您不需要為了自動更新這些設定。 維護排程器設定都位於路徑中：*PolicyName* > **電腦組態** > **原則** > **系統管理範本** > **Windows 元件** > **維護排程器**。 維護排程器擴充功能的群組原則包含下列設定：
 
--   [自動維護啟用界限](#BKMK_comp5a)
+-   [自動維護啟用界限](#automatic-maintenance-activation-boundary)
 
--   [自動維護隨機延遲](#BKMK_comp5b)
+-   [自動維護隨機延遲](#automatic-maintenance-random-delay)
 
--   [自動喚醒原則](#BKMK_comp5c)
+-   [自動喚醒原則](#automatic-wakeup-policy)
 
-#### <a name="BKMK_comp5a"></a>自動維護啟用界限
+#### <a name="automatic-maintenance-activation-boundary"></a>自動維護啟用界限
 此原則可讓您設定 「 自動維護啟用界限 」 設定。
 
 維護啟用界限會自動維護開始每日排定的時間。
@@ -492,7 +492,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |**已啟用**|啟用此原則設定會覆寫任何預設或已修改中的用戶端電腦上設定的設定**控制台中** > **行動作業中心** >  **自動維護**(或在某些用戶端版本**維護**)。|
 |**已停用**|如果您設定此原則設定為**已停用**、 每日排定的時間中指定**行動作業中心** > **自動維護**，控制項中將會套用面板。|
 
-#### <a name="BKMK_comp5b"></a>自動維護隨機延遲
+#### <a name="automatic-maintenance-random-delay"></a>自動維護隨機延遲
 此原則設定可讓您設定的自動維護的啟用隨機延遲。
 
 維護隨機延遲是時間的到哪自動維護，將會延遲它啟用的界限從開始量。 此設定可用於虛擬機器，隨機維護可能的效能需求。
@@ -513,7 +513,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |**已啟用**|自動維護，將會延遲到指定的時間量其啟用界限從開始。|
 |**已停用**|任何隨機的延遲會不套用到自動維護。|
 
-#### <a name="BKMK_comp5c"></a>自動喚醒原則
+#### <a name="automatic-wakeup-policy"></a>自動喚醒原則
 此原則設定可讓您設定自動維護喚醒原則。
 
 維護喚醒原則會指定是否自動維護應該對喚醒要求每日排程的維護作業的電腦。
@@ -535,14 +535,14 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |**已啟用**|如果您啟用此原則設定，自動維護會嘗試設定作業系統喚醒原則，並讓每日排程的時間喚醒要求，如有必要。|
 |**已停用**|如果您停用此原則設定，在中指定的喚醒設為**行動作業中心** > **自動維護**控制台會套用。|
 
-### <a name="BKMK_UserPol"></a>使用者設定 > Windows Update 原則設定
+### <a name="user-configuration--windows-update-policy-settings"></a>使用者設定 > Windows Update 原則設定
 本節提供下列的使用者為基礎的原則設定的詳細資訊：
 
--   [不會在關閉關閉 Windows] 對話方塊中顯示 [安裝更新並關機 」 選項](#BKMK_Client1)
+-   [不會在關閉關閉 Windows] 對話方塊中顯示 [安裝更新並關機 」 選項](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
--   [在對話方塊中關閉 Windows 關閉不調整以 「 安裝更新並關機 」 的預設選項](#BKMK_Client2)
+-   [在對話方塊中關閉 Windows 關閉不調整以 「 安裝更新並關機 」 的預設選項](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
--   [移除使用所有的 Windows Update 功能的存取權](#BKMK_Client3)
+-   [移除使用所有的 Windows Update 功能的存取權](#remove-access-to-use-all-windows-update-features)
 
 在 GPMC 中電腦的自動更新的使用者設定位於路徑中：*PolicyName* > **使用者設定** > **原則** > **系統管理範本** >  **Windows 元件** > **Windows Update**。 濆婞剢謅電腦組態和使用者設定群組原則中的延伸模組會以相同的順序列出的設定時**設定**] 索引標籤的 [Windows Update 原則選取要排序的設定依字母順序。
 
@@ -552,7 +552,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 > [!TIP]
 > 針對每個這些設定，您可以使用下列步驟來啟用、 停用，或設定之間瀏覽：
 
-#### <a name="BKMK_Client1"></a>不會在關閉關閉 Windows 對話方塊中顯示 安裝更新並關機 選項
+#### <a name="do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog-box"></a>不會在關閉關閉 Windows 對話方塊中顯示 安裝更新並關機 選項
 指定是否**安裝更新並關機**選項會顯示在**向下 Windows 關閉** 對話方塊。
 
 |支援的作業：|排除：|
@@ -568,7 +568,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 沒有此設定選項。
 
-#### <a name="BKMK_Client2"></a>在對話方塊中關閉 Windows 關閉不調整以 「 安裝更新並關機 」 的預設選項
+#### <a name="do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog-box"></a>在對話方塊中關閉 Windows 關閉不調整以 「 安裝更新並關機 」 的預設選項
 指定是否**安裝更新並關機**的預設選項為允許選項**關閉關閉 Windows**  對話方塊。
 
 |支援的作業：|排除：|
@@ -586,8 +586,8 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |**已停用**|指定是否**安裝更新並關機**選項將會在 預設 選項**減少 Windows 關閉**對話方塊中，如果有可供使用者選取 關機時安裝更新關閉電腦關機的選項。|
 
 **選項：** 沒有此設定選項。
-
-#### <a name="BKMK_Client3"></a>移除使用所有的 Windows Update 功能的存取權
+    
+#### <a name="remove-access-to-use-all-windows-update-features"></a>移除對使用所有 Windows Update 功能的存取
 此設定可讓您移除 Windows Update 的 WSUS 用戶端存取。
 
 |支援的作業：|排除：|
@@ -603,10 +603,10 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 請參閱**已啟用**資料表中的這項設定。
 
-## <a name="BKMK_Supplemental"></a>補充資訊
+## <a name="supplemental-information"></a>補充資訊
 本節提供有關使用開啟以及儲存 WSUS 設定中的群組原則和定義，本指南中所使用的其他資訊。 對於熟悉舊版的 WSUS （WSUS 3.2 和先前版本） 的系統管理員，會簡單地摘要說明 WSUS 版本之間差異的表格。
 
-### <a name="BKMK_OpenGPO"></a>存取 Windows Update 設定，在 群組原則
+### <a name="accessing-the-windows-update-settings-in-group-policy"></a>存取 Windows Update 設定，在 群組原則
 接下來的程序描述如何開啟您的網域控制站上 GPMC。 然後程序會說明如何進行編輯，開啟現有網域層級群組原則物件 (GPO)，或建立新的網域層級 GPO，並開啟它進行編輯。
 
 > [!NOTE]
@@ -627,7 +627,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
     -  **若要建立新的群組原則物件，並開啟進行編輯**:
         1.  以滑鼠右鍵按一下您要建立新的群組原則物件，並按一下 的網域**在這個網域中建立 GPO 並連結到**。
 
-        2.  在 **新的 GPO**，請在**名稱**，輸入新群組原則物件的名稱，然後按一下**確定**。
+        2.  在 **新的 GPO**，請在**名稱**，輸入新群組原則物件的名稱，然後按一下 **確定** 。
 
         3.  新的群組原則物件，以滑鼠右鍵按一下，然後按一下**編輯**。 此時會開啟 GPME。
 
@@ -668,7 +668,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
     -   若要捨棄所有未儲存的變更並關閉對話方塊，按一下**取消**。
 
-### <a name="BKMK_changes"></a>WSUS 與本文相關的變更
+### <a name="changes-to-wsus-relevant-to-this-guide"></a>WSUS 與本文相關的變更
 下表摘要說明目前和過去版本的 WSUS 與本指南的主要差異。
 
 |Windows Server 和 WSUS 版本|描述|
@@ -676,7 +676,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 | 使用 WSUS 6.0 及後續版本的 Windows Server 2012 R2|從 Windows Server 2012 開始，WSUS 伺服器角色與作業系統整合和 WSUS 用戶端相關聯的群組原則設定的是，根據預設，包含在群組原則。|
 | Windows Server 2008 （和舊版的 Windows Server） 與 WSUS 3.2 和更早版本|Windows Server 2008 （和舊版的 Windows Server） 使用 WSUS 3.2 （及更早版本） 的版本中管理 WSUS 用戶端的群組原則設定不會包含在這些 Windows Server 作業系統。 原則設定位於 WSUS 系統管理範本中，**然後**。 在這些伺服器版本中，WSUS 系統管理範本必須先新增到群組原則管理主控台 (GPMC) 才能設定 WSUS 用戶端設定。|
 
-### <a name="BKMK_Terms"></a>詞彙和定義
+### <a name="terms-and-definitions"></a>詞彙和定義
 以下是本指南中使用的詞彙的清單。
 
 |詞彙|定義|

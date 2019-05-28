@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 6/11/2017
 description: 工作資料夾概觀 - 這是 Windows Server 中的一種伺服器角色，可提供使用者一致的方式來存取電腦和裝置中的工作檔案。
-ms.openlocfilehash: dd32b84e6442ec55414da27ea94ef16eeab769eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3e3c86efb2f781dc88cac6851ea22f19c6ae812
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890479"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222849"
 ---
 # <a name="work-folders-overview"></a>工作資料夾概觀
 
@@ -24,18 +24,18 @@ ms.locfileid: "59890479"
   
 如果您想要下載或使用 Windows 10，Windows 7 或 Android 或 iOS 裝置上的工作資料夾，請參閱下列各項：
 
--   [適用於 Windows 10 的工作資料夾](https://support.microsoft.com/help/12370/windows-10-work-folders)
--   [工作資料夾適用於 Windows 7 （64 位元下載）](https://www.microsoft.com/download/details.aspx?id=42558)
--   [工作資料夾適用於 Windows 7 （32 位元下載）](https://www.microsoft.com/download/details.aspx?id=42559)
+- [適用於 Windows 10 的工作資料夾](https://support.microsoft.com/help/12370/windows-10-work-folders)
+- [工作資料夾適用於 Windows 7 （64 位元下載）](https://www.microsoft.com/download/details.aspx?id=42558)
+- [工作資料夾適用於 Windows 7 （32 位元下載）](https://www.microsoft.com/download/details.aspx?id=42559)
 - [適用於 iOS 的工作資料夾](https://itunes.apple.com/app/work-folders/id950878067)
 - [適用於 Android 的工作資料夾](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
-##  <a name="BKMK_OVER"></a> 角色描述  
+## <a name="role-description"></a>角色說明  
  利用工作資料夾，除了公司電腦，使用者可以在個人電腦和裝置 (通常稱為「帶您自己的裝置 (BYOD)」) 上儲存和存取工作檔案。 使用者獲得方便儲存工作檔案的位置，而他們能夠從任何地方存取這類檔案。 組織將檔案儲存在集中管理的檔案伺服器上，並選擇性地指定使用者裝置原則 (例如加密和鎖定畫面密碼)，藉此維持對公司資料的控制權。  
   
  工作資料夾可利用資料夾重新導向、離線檔案和主資料夾的現有部署進行部署。 工作資料夾會將使用者檔案儲存在伺服器上稱為 *sync share* 的資料夾中。 您可以指定已包含使用者資料的資料夾，使您可以採用工作資料夾而不需要移轉伺服器和資料，或立即分階段廢除現有的解決方案。  
   
-##  <a name="BKMK_APP"></a> 實際的應用程式  
+## <a name="practical-applications"></a>實際應用  
  系統管理員可使用工作資料夾提供使用者其工作檔案的存取權，同時保持集中式的存放裝置以及對於組織資料的控制。 工作資料夾的一些特定應用包括︰  
   
 -   提供單一存取點，讓使用者可從其工作及個人電腦和裝置存取工作檔案  
@@ -50,7 +50,8 @@ ms.locfileid: "59890479"
   
 -   使用容錯移轉叢集搭配工作資料夾以提供高可用性的解決方案  
   
-##  <a name="BKMK_NEW"></a> 重要的功能  
+## <a name="important-functionality"></a>重要功能
+
  工作資料夾包含下列功能。  
   
 |功能|可用性|描述|  
@@ -60,7 +61,8 @@ ms.locfileid: "59890479"
 |工作資料夾與 Windows 的整合|Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7（需要下載）|工作資料夾可在 Windows 電腦中提供下列功能：<br /><br /> -   可設定及監視工作資料夾的控制台項目<br />-   可輕鬆存取工作資料夾檔案的檔案總管整合<br />-   同步引擎可將檔案傳入及傳出中央檔案伺服器，同時將電池壽命和系統效能最大化|  
 |適用於裝置的工作資料夾 App|Android<br /><br /> Apple iPhone 和 iPad®|可讓常見的裝置存取工作資料夾檔案的 App|  
   
-##  <a name="BKMK_New"></a> 新功能和變更  
+## <a name="new-and-changed-functionality"></a>新功能和變更的功能
+  
  下表描述工作資料夾的一些重大變更。  
   
 |特色/功能|新功能或更新功能？|描述|  
@@ -70,7 +72,7 @@ ms.locfileid: "59890479"
 |已和 Windows 資訊保護 (WIP) 整合|已新增至 Windows 10 版本 1607|如果系統管理員已部署 WIP，工作資料夾可在電腦上加密資料以強制執行資料保護。 此加密方式使用與企業 ID 相關聯的金鑰，可使用如 Microsoft Intune 等支援的行動裝置管理套件以遠端方式加以清除。|  
 |Microsoft Office 整合|已新增至 Windows 10 版本 1511|在 Windows 8.1 中，您可以按一下或點選此電腦，並瀏覽到電腦上的工作資料夾位置以瀏覽 Office App 中的工作資料夾。 在 Windows 10 中，瀏覽工作資料夾會變得更為容易，因為您可以將其新增至 Office 在儲存或開啟檔案時顯示的位置清單中。 如需詳細資訊，請參閱 [Windows 10 中的工作資料夾](https://windows.microsoft.com/windows-10/work-folders-in-windows-10) 和  [使用工作資料夾作為 Microsoft Office 中的位置進行疑難排解](https://social.technet.microsoft.com/wiki/contents/articles/32881.troubleshooting-using-work-folders-as-a-place-in-microsoft-office.aspx)。|  
   
-##  <a name="BKMK_SOFT"></a> 軟體需求  
+## <a name="software-requirements"></a>軟體需求
 
 工作資料夾對檔案伺服器和網路基礎結構具有下列軟體需求：  
   
@@ -118,7 +120,7 @@ ms.locfileid: "59890479"
   
 -   Windows 7 電腦必須加入您組織的網域 (它們無法加入工作群組)。  
   
--   本機 NTFS 格式的磁碟機上具有足夠可用空間，可用來在工作資料夾中存放所有使用者的檔案，如果工作資料夾位於系統磁碟機，還需要額外 6 GB 的可用空間，如預設的指定。 工作資料夾預設會使用下列位置︰**%USERPROFILE%\Work Folders**  
+-   本機 NTFS 格式的磁碟機上具有足夠可用空間，可用來在工作資料夾中存放所有使用者的檔案，如果工作資料夾位於系統磁碟機，還需要額外 6 GB 的可用空間，如預設的指定。 工作資料夾預設會使用下列位置︰ **%USERPROFILE%\Work Folders**  
   
      不過，使用者在設定期間可以變更位置 (支援的位置包括 microSD 記憶卡和使用 NTFS 檔案系統格式化的 USB 磁碟機，如果磁碟機被移除，則會停止同步)。  
   
@@ -126,7 +128,7 @@ ms.locfileid: "59890479"
   
 -   工作資料夾不支援復原用戶端虛擬機器的虛擬機器狀態。 請改為使用系統映像備份或其他備份應用程式，從用戶端虛擬機器內部執行備份和還原作業。  
   
-##  <a name="BKMK_Comparison"></a> 相較於其他同步處理技術的工作資料夾  
+## <a name="work-folders-compared-to-other-sync-technologies"></a>工作資料夾與其他同步技術進行比較  
 
 下表討論各種 Microsoft 同步技術如何定位以及何時使用。  
   
@@ -141,7 +143,7 @@ ms.locfileid: "59890479"
 > [!NOTE]
 >  除了列於上表中的同步技術以外，Microsoft 還提供其他的複寫技術，包括針對伺服器對伺服器複寫所設計的 DFS 複寫，以及設計為分公司 WAN 加速技術的 BranchCache。 如需詳細資訊，請參閱 [DFS 命名空間和 DFS 複寫](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) 和 [BranchCache 概觀](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)  
   
-##  <a name="BKMK_INSTALL"></a> 伺服器管理員資訊  
+## <a name="server-manager-information"></a>伺服器管理員資訊  
 
 工作資料夾為檔案和存放服務角色的一部分。 您可以使用 \[新增角色及功能精靈\] 或 `Install-WindowsFeature` Cmdlet 來安裝工作資料夾。 這兩種方法都可執行下列動作︰  
   
@@ -151,12 +153,13 @@ ms.locfileid: "59890479"
   
 -   安裝 SyncShare Windows PowerShell 模組以管理伺服器上的工作資料夾  
   
-##  <a name="BKMK_Azure"></a> 與 Windows Azure 虛擬機器的互通性  
+## <a name="interoperability-with-windows-azure-virtual-machines"></a>與 Windows Azure 虛擬機器的互通性
+
  您可以在 Windows Azure 的虛擬機器上執行此 Windows Server 角色服務。 此案例已透過 Windows Server 2012 R2 和 Windows Server 2016 進行測試。  
   
 若要深入瞭解如何開始使用 Windows Azure 虛擬機器，請造訪 [Windows Azure 網站](http://www.windowsazure.com/documentation/services/virtual-machines)。  
   
-##  <a name="BKMK_LINKS"></a> 另請參閱  
+## <a name="see-also"></a>另請參閱  
  如需其他相關資訊，請參閱下列資源。  
   
 |內容類型|參考|  

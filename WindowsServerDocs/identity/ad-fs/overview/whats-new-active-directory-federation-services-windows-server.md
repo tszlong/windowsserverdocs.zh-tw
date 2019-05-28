@@ -5,21 +5,19 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 02/26/2019
+ms.date: 04/23/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: faa0590dc38921a56952aa54bf38243b6ff84d82
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fbb289c16d82da79aded49e3af4134ac7f6df325
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867709"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188703"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory 同盟服務的新功能
 
-
->適用於：Windows Server 2019，Windows Server 2016
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2019"></a>在 Active Directory 同盟服務的 Windows Server 2019 最新消息
 
@@ -27,7 +25,7 @@ ms.locfileid: "59867709"
 更新受保護的登入，AD FS 2019 中可用的簡短摘要如下：
 - **外部驗證提供者，為主要**-客戶可以現在使用第 3 方驗證產品，做為第一個因素，並公開密碼做為第一個因素。 在外部驗證提供者可以在其中證明 2 個因素的情況下，它可以宣告 MFA。 
 - **密碼驗證作為其他驗證**-客戶有完整支援的收件匣選項，以使用密碼，僅針對其他因素之後密碼較少的選項使用做為第一個因素。 這可改善客戶體驗從 ADFS 2016 的客戶必須下載 github 配接器因為是受支援。 
-- **隨插即用的威脅模組 Framework** -客戶現在可以建置自己的隨插即用來封鎖特定類型的要求在預先驗證階段的模組中。 這可讓您將雲端智慧，例如 Identity protection 封鎖有風險的使用者或有風險的交易的登入的客戶更容易。
+- **隨插即用的風險評定模組**-客戶現在可以建置自己的隨插即用來封鎖特定類型的要求在預先驗證階段的模組中。 這可讓您將雲端智慧，例如 Identity protection 封鎖有風險的使用者或有風險的交易的登入的客戶更容易。  如需詳細資訊，請參閱[建置外掛程式與 AD FS 2019 風險評估模型](../../ad-fs/development/ad-fs-risk-assessment-model.md) 
 - **ESL 改進**-藉由新增下列功能改善了 ESL QFE 2016
     - 可讓客戶為稽核模式時受保護的 「 傳統 」 的外部網路鎖定自 ADFS 2012 r2 起可用的功能。 目前 2016年客戶必須在稽核模式中的沒有保護。 
     - 可讓獨立的鎖定閾值，熟悉的位置。 這可讓多個執行個體，以變換密碼最少的影響與一般的服務帳戶執行的應用程式。 
@@ -89,7 +87,7 @@ ms.locfileid: "59867709"
  
 使用 AD FS 伺服器 2019年上，您現在可以傳遞內嵌在 scope 參數中的資源值。 這是與一個可以如何針對 Azure AD 的驗證也一致。 
 
-範圍參數現在可以按照空格分隔的清單，其中每個項目是資源/範圍的結構。 例如  
+範圍參數現在可以按照空格分隔的清單，其中每個項目是資源/範圍的結構。 例如：  
 
 **< 建立有效的範例要求 >**
 > [!NOTE]
@@ -112,7 +110,7 @@ D. AD FS 轉換"code_verifier 」，並將它與比較 「 t(code_verifier)"(b)�
 
 #### <a name="faq"></a>常見問題集 
 **Q.** 可以傳遞的資源值的範圍值，例如如何針對 Azure AD 完成要求的一部分？ 
-</br>**A.** 使用 AD FS 伺服器 2019年上，您現在可以傳遞內嵌在 scope 參數中的資源值。 範圍參數現在可以按照空格分隔的清單，其中每個項目是資源/範圍的結構。 例如  
+</br>**A.** 使用 AD FS 伺服器 2019年上，您現在可以傳遞內嵌在 scope 參數中的資源值。 範圍參數現在可以按照空格分隔的清單，其中每個項目是資源/範圍的結構。 例如：  
 **< 建立有效的範例要求 >**
 
 **Q.** AD FS 支援 PKCE 延伸模組？

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4b06992bfb398b66988ad4882217a8a83738365e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e67c04c98a53f4f1db36e6586fa77bcf181a8d5a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876569"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188972"
 ---
 # <a name="update-password-customization"></a>更新密碼的自訂 
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 在某些情況下，使用者可能無法連線到公司網路以變更帳戶密碼。 特別是遠離公司辦公室的員工，這可能會造成問題。 在這些特定的情況下，只有連線到網際網路才能使用更新密碼頁面。  
   

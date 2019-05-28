@@ -9,12 +9,12 @@ ms.assetid: 9c7a67e0-0953-479c-8736-ccb356230bde
 ms.author: pashort
 author: shortpatti
 ms.date: 06/20/2018
-ms.openlocfilehash: c76483031bdca184e0943738a8c921776440d1fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0439c0f45a604f6b3ef90369f5fe77a59568d9d7
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829029"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222580"
 ---
 # <a name="network-policy-server-nps"></a>網路原則伺服器 (NPS)
 
@@ -39,10 +39,10 @@ ms.locfileid: "59829029"
 
 NPS 可讓您集中設定和管理網路存取驗證、 授權和帳戶處理下列功能：
 
-- **RADIUS 伺服器**。 NPS 會執行集中化的驗證、 授權和帳戶處理為無線、 驗證交換器、 遠端存取撥號和虛擬私人網路 (VPN) 連線。 當您使用 NPS 做為 RADIUS 伺服器時，可以設定網路存取伺服器 (例如無線存取點與 VPN 伺服器) 做為 NPS 中的 RADIUS 用戶端。 您也可以設定 NPS 用來授權連線要求的網路原則，並且可以設定 RADIUS 帳戶處理，讓 NPS 將計量資訊記錄到本機硬碟上或 Microsoft SQL Server 資料庫中的記錄檔。 如需詳細資訊，請參閱 < [RADIUS 伺服器](#bkmk_server)。
-- **RADIUS proxy**。 當您使用 NPS 做為 RADIUS proxy 時，您會設定連線要求原則，告訴哪些連線要求轉送到其他 RADIUS 伺服器，以及哪些 RADIUS 伺服器，您想要將連線要求轉送到 NPS。 您也可以設定 NPS 轉送要由遠端 RADIUS 伺服器群組中一或多部電腦記錄的計量資料。 若要設定 NPS 做為 RADIUS proxy 伺服器，請參閱下列主題。 如需詳細資訊，請參閱 < [RADIUS proxy](#bkmk_proxy)。
+- **RADIUS 伺服器**。 NPS 會執行集中化的驗證、 授權和帳戶處理為無線、 驗證交換器、 遠端存取撥號和虛擬私人網路 (VPN) 連線。 當您使用 NPS 做為 RADIUS 伺服器時，可以設定網路存取伺服器 (例如無線存取點與 VPN 伺服器) 做為 NPS 中的 RADIUS 用戶端。 您也可以設定 NPS 用來授權連線要求的網路原則，並且可以設定 RADIUS 帳戶處理，讓 NPS 將計量資訊記錄到本機硬碟上或 Microsoft SQL Server 資料庫中的記錄檔。 如需詳細資訊，請參閱 < [RADIUS 伺服器](#radius-server)。
+- **RADIUS proxy**。 當您使用 NPS 做為 RADIUS proxy 時，您會設定連線要求原則，告訴哪些連線要求轉送到其他 RADIUS 伺服器，以及哪些 RADIUS 伺服器，您想要將連線要求轉送到 NPS。 您也可以設定 NPS 轉送要由遠端 RADIUS 伺服器群組中一或多部電腦記錄的計量資料。 若要設定 NPS 做為 RADIUS proxy 伺服器，請參閱下列主題。 如需詳細資訊，請參閱 < [RADIUS proxy](#radius-proxy)。
     - [設定連線要求原則](nps-crp-configure.md)
-- **RADIUS 帳戶處理**。 您可以設定 NPS 事件記錄到本機記錄檔或 Microsoft SQL Server 的本機或遠端執行個體。 如需詳細資訊，請參閱 < [NPS 記錄](#bkmk_logging)。
+- **RADIUS 帳戶處理**。 您可以設定 NPS 事件記錄到本機記錄檔或 Microsoft SQL Server 的本機或遠端執行個體。 如需詳細資訊，請參閱 < [NPS 記錄](#nps-logging)。
 
 >[!IMPORTANT]
 >網路存取保護\(NAP\)，健康情況登錄授權單位\(HRA\)，以及主機認證授權通訊協定\(HCAP\) Windows Server 2012 R2 中已被取代和 Windows Server 2016 中無法使用。 如果您有稍早於 Windows Server 2016 使用作業系統的 NAP 部署，您無法移轉至 Windows Server 2016 的 NAP 部署。
@@ -66,7 +66,7 @@ NPS 提供不同的功能，視您安裝的 Windows Server 版本而定。
 
 您可以使用 NPS 做為 RADIUS 伺服器、 RADIUS proxy，或兩者。
 
-### <a name="bkmk_server"></a>RADIUS 伺服器
+### <a name="radius-server"></a>RADIUS 伺服器
 
 NPS 是 Microsoft 實作的 RADIUS 標準指定網際網路工程任務推動小組所\(IETF\) Rfc 2865 與 2866年中。 為 RADIUS 伺服器，NPS 會執行集中化的連線驗證、 授權和帳戶處理的許多類型的網路存取權，包括無線、 驗證交換器、 撥號和虛擬私人網路\(VPN\)遠端存取，以及路由器對路由器連線。
 
@@ -97,7 +97,7 @@ RADIUS 伺服器可以存取使用者帳戶資訊，而且可以檢查網路存�
 
 ![NPS 做為 RADIUS 伺服器](../../media/Nps-Server/Nps-Server.jpg)
 
-### <a name="bkmk_proxy"></a>RADIUS proxy
+### <a name="radius-proxy"></a>RADIUS Proxy
 
 為 RADIUS proxy，NPS 會轉送驗證和帳戶處理訊息到 NPS 與其他 RADIUS 伺服器。 因為 RADIUS 用戶端之間的 RADIUS proxy，以提供路由的 RADIUS 訊息，您可以使用 NPS\(也稱為網路存取伺服器\)和執行使用者驗證、 授權和帳戶處理的 RADIUS 伺服器嘗試連線。 
 
@@ -183,7 +183,7 @@ RADIUS 伺服器可以存取使用者帳戶資訊，而且可以檢查網路存�
 - [設定遠端 RADIUS 伺服器群組](nps-crp-rrsg-configure.md)
 - [設定連線要求原則](nps-crp-configure.md)
 
-## <a name="bkmk_logging"></a>NPS 記錄
+## <a name="nps-logging"></a>NPS 記錄
 
 NPS 記錄也稱為 RADIUS 帳戶處理。 設定 NPS 記錄您的需求，是否使用 NPS 做為 RADIUS 伺服器、 proxy 或任何組合，這些設定。
 

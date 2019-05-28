@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 83383d3e1c75c7a6e6c8b42c010a17ceebf51e88
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ec111954bbe39a3089072f41778990546b6287e5
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848109"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191289"
 ---
 # <a name="identifying-your-ad-fs-deployment-goals"></a>識別您的 AD FS 部署目標
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 正確識別您的 Active Directory Federation Services \(AD FS\)部署目標是在 AD FS 設計專案成功不可或缺。 視您的組織和您想要提供的資訊技術的參與程度大小而定\(IT\)人員在任何夥伴組織中的資料行會形成專案小組，可以清楚表達真實\-願景聲明中的全球部署問題。 請確定這個小組成員了解在其中部署專案必須移動，以達到您的 AD FS 部署目標的方向。  
   
@@ -32,5 +30,5 @@ ms.locfileid: "59848109"
 |將某一個目標或組合的預先定義的 AD FS 部署目標對應至現有的 AD FS 設計|-   [將您的部署目標對應至 AD FS 設計](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)|  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

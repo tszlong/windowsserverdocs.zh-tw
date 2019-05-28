@@ -1,6 +1,6 @@
 ---
 title: 用於應用程式資料的向外延展檔案伺服器概觀
-description: Windows Server 201 R2、 Windows Server 2012 和 Windows Server 2016 的向外延展檔案伺服器功能的概觀。
+description: Windows Server 201 R2 和 Windows Server 2012 的向外延展檔案伺服器功能的概觀。
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04e25e9c69062611d9d14c220614f148ac5de770
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884769"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476146"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>用於應用程式資料的向外延展檔案伺服器概觀
 
->適用於：Windows Server 2012 R2 中，Windows Server 2012 中，Windows Server 2016
+>適用於：Windows Server 2012 R2, Windows Server 2012
 
 「向外延展檔案伺服器」功能是為了提供向外延展檔案共用而設計的，可供檔案型伺服器應用程式存放裝置持續使用。 向外延展檔案共用提供從相同叢集的多個節點共用相同資料夾的功能。 此案例主要說明如何規劃和部署向外延展檔案伺服器。
 

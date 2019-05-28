@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e660c1dabcc5a683fa74068ea148fd4efbeee569
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f2a6df6a9c9a5cbdfa9c64bc6521e92f4982a15
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890209"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191728"
 ---
-# <a name="ad-fs-design-guide-in-windows-server-2012"></a>Windows Server 2012 中的 AD FS 設計指南
+# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server 中的 AD FS 設計指南 
 
->適用於：Windows Server 2012
+
   
 > [!NOTE]  
 > 如需如何在 Windows Server 2012 R2 部署 AD FS 的詳細資訊，請參閱[Windows Server 2012 R2 AD FS 部署指南](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)。  
@@ -42,16 +42,16 @@ ms.locfileid: "59890209"
   
 -   [將您的部署目標對應至 AD FS 設計](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)  
   
--   [判斷您的 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)  
+-   [決定您的 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)  
   
--   [規劃部署](Planning-Your-Deployment.md)  
+-   [規劃您的部署](Planning-Your-Deployment.md)  
   
 -   [規劃同盟伺服器的位置](Planning-Federation-Server-Placement.md)  
   
 -   [規劃同盟伺服器 Proxy 的位置](Planning-Federation-Server-Proxy-Placement.md)  
   
--   [AD FS 伺服器容量規劃](Planning-for-AD-FS-Server-Capacity.md)  
+-   [規劃 AD FS 伺服器容量](Planning-for-AD-FS-Server-Capacity.md)  
   
--   [附錄 a:檢閱 AD FS 需求](Appendix-A--Reviewing-AD-FS-Requirements.md)  
+-   [附錄 A：檢閱 AD FS 需求](Appendix-A--Reviewing-AD-FS-Requirements.md)  
   
 

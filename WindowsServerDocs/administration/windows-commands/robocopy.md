@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: c4218331f716dc530e01f28a295cebd83c0e6616
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a10b3d3877e9511164d298bcc1dab11540e6f596
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818109"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188203"
 ---
 # <a name="robocopy"></a>robocopy
-
-
 
 將資料複製檔案。
 
@@ -38,7 +36,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |---------|-----------|
 |\<來源 >|指定來源目錄的路徑。|
 |\<目的地 >|指定的目的地目錄的路徑。|
-|\<檔案 >|指定要複製的檔案。 您可以使用萬用字元 (**&#42;** 或是 **？**)，如果您想要。 如果**檔案**未指定參數，  **\*。\*** 做為預設值。|
+|\<檔案 >|指定要複製的檔案。 您可以使用萬用字元 (**&#42;** 或是 **？** )，如果您想要。 如果**檔案**未指定參數，  **\*。\*** 做為預設值。|
 |\<Options>|指定要搭配使用的選項**robocopy**命令。|
 
 ### <a name="copy-options"></a>複製選項
@@ -46,7 +44,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |選項|描述|
 |------|-----------|
 |/s|複製子目錄。 請注意，此選項會排除空的目錄。|
-|/e|複製子目錄。 請注意，這個選項會包含空的目錄。 如需詳細資訊，請參閱[備註](#BKMK_remarks)。|
+|/e|複製子目錄。 請注意，這個選項會包含空的目錄。 如需詳細資訊，請參閱[備註](#remarks)。|
 |/lev:\<N >|複製只傳回前*N*來源目錄樹狀結構的層級。|
 |/z|將檔案複製可重新啟動模式。|
 |/b|將檔案複製備份 」 模式。|
@@ -59,8 +57,8 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/nocopy|不複製任何檔案資訊 (適用於 **/清除**)。|
 |/secfix|修正檔案安全性的所有檔案，甚至是略過的。|
 |/timfix|修正檔案的時間所有檔案，甚至是略過的。|
-|/purge|目的地檔案和目錄不再存在於來源中刪除。 如需詳細資訊，請參閱[備註](#BKMK_remarks)。|
-|/mir|鏡像目錄樹狀結構 (相當於 **/e**加上 **/清除**)。 如需詳細資訊，請參閱[備註](#BKMK_remarks)。|
+|/purge|目的地檔案和目錄不再存在於來源中刪除。 如需詳細資訊，請參閱[備註](#remarks)。|
+|/mir|鏡像目錄樹狀結構 (相當於 **/e**加上 **/清除**)。 如需詳細資訊，請參閱[備註](#remarks)。|
 |/mov|移動檔案，並複製之後從來源刪除它們。|
 |/move|移動檔案和目錄，並複製之後從來源刪除它們。|
 |/a+:[RASHCNET]|將指定的屬性加入至複製的檔案中。|
@@ -70,14 +68,19 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/256|關閉很長的路徑 （長度超過 256 個字元） 的支援。|
 |/ mon:\<N >|監視來源，並會在再次執行，當多個*N*偵測到變更。|
 |/mot:\<M >|監視來源，並執行中再次*M*分鐘如果偵測到變更。|
-|/MT[:N]|建立具有多執行緒的複本*N*執行緒。 *N*必須是介於 1 到 128 之間的整數。 預設值*N*為 8。</br>**/MT**參數無法搭配 **/IPG**並 **/EFSRAW**參數。</br>輸出使用的重新導向 **/log**以提升效能的選項。</br>注意：/MT 參數適用於 Windows Server 2008 R2 和 Windows 7。|
+|/MT[:N]|建立具有多執行緒的複本*N*執行緒。 *N*必須是介於 1 到 128 之間的整數。 預設值*N*為 8。</br>**/MT**參數無法搭配 **/IPG**並 **/EFSRAW**參數。</br>輸出使用的重新導向 **/log**以提升效能的選項。</br>注意:/MT 參數適用於 Windows Server 2008 R2 和 Windows 7。|
 |/rh:hhmm-hhmm|指定新的複本可能已啟動的執行的時間。|
 |/pf|檢查每個檔案 （沒有每個階段） 上，執行時間。|
 |/ipg:n|指定間的封包間距，以釋放在緩慢的行上的頻寬。|
-|/sl|遵循符號連結，並將複製的目標。|
+|/sl|不遵循符號連結，並改為建立一份連結。|
 
 > [!IMPORTANT]
-> 使用時 **/SECFIX**複製選項，指定您想要複製也使用其中一個其他複本選項的安全性資訊的類型：</br>> -   **/COPYALL**</br>&GT;- **/COPY:O**</br>&GT;- **/COPY:S**</br>&GT;- **/COPY:U**</br>> -   **/SEC**
+> 使用時 **/SECFIX**複製選項，指定您想要複製也使用其中一個其他複本選項的安全性資訊的類型：
+>- **/COPYALL**
+>- **/COPY:O**
+>- **/COPY:S**
+>- **/COPY:U**
+>- **/SEC**
 
 ### <a name="file-selection-options"></a>檔案選擇的選項
 
@@ -87,7 +90,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/m|只檔案，複製**封存**屬性設定，並且重設**封存**屬性。|
 |/ia:[RASHCNETO]|包含任何指定的屬性會設定的檔案。|
 |/xa:[RASHCNETO]|會排除任何指定的屬性設定的檔。|
-|/xf \<FileName>[ ...]|排除符合指定之名稱或路徑的檔案。 請注意，*檔名*可包含萬用字元 (**&#42;** 並**嗎？**)。|
+|/xf \<FileName>[ ...]|排除符合指定之名稱或路徑的檔案。 請注意，*檔名*可包含萬用字元 (**&#42;** 並**嗎？** )。|
 |/xd \<Directory>[ ...]|排除符合指定的名稱和路徑的目錄。|
 |/xc|排除已變更的檔案。|
 |/xn|排除較新的檔案。|
@@ -168,7 +171,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 > [!NOTE]
 > 任何大於 8，表示複製作業期間發生至少一個錯誤的值。
 
-### <a name="BKMK_remarks"></a>註解
+### <a name="remarks"></a>備註
 
 -   **/Mir**選項相當於 **/e**加上 **/清除**一個些許的不同行為的選項：  
     -   具有 **/e**加上 **/清除**選項，如果目的地目錄存在，目的地目錄的安全性設定不覆寫。

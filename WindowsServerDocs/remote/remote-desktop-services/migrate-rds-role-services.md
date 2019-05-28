@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 73beb1539420f4b4aad818ffe0b0bdaabe901748
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63037dd7e32320b6e640396e20344e5678ed91dd
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870259"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034437"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>將您的遠端桌面服務部署移轉至 Windows Server 2016
 
@@ -28,8 +28,8 @@ ms.locfileid: "59870259"
 
 如需有關升級程序和需求的詳細資訊，請參閱 <<c0> [ 升級您的遠端桌面服務部署至 Windows Server 2016](upgrade-to-rds-2016.md)。
 
-若要移轉遠端桌面服務部署中使用下列步驟： 
-- [移轉 RD 連線代理人伺服器](#migrate-rd-connection-broker-servers) 
+若要移轉遠端桌面服務部署中使用下列步驟：
+- [移轉 RD 連線代理人伺服器](#migrate-rd-connection-broker-servers)
 - [移轉工作階段集合](#migrate-session-collections)
 - [移轉虛擬桌面集合](#migrate-virtual-desktop-collections)
 - [移轉 RD Web 存取伺服器](#migrate-rd-web-access-servers)
@@ -54,7 +54,7 @@ ms.locfileid: "59870259"
 
 請遵循下列步驟來將 Windows Server 2012 R2 中的工作階段集合移轉到 Windows Server 2016 中的工作階段集合。
 > [!IMPORTANT] 
-> 只有在成功完成上一個步驟中之後，才能移轉工作階段集合[移轉的 RD 連線代理人伺服器](#Migrate-RD-Connection-Broker-servers)。
+> 只有在成功完成上一個步驟中之後，才能移轉工作階段集合[移轉的 RD 連線代理人伺服器](#migrate-rd-connection-broker-servers)。
 
 1. [升級的工作階段集合](Upgrade-to-RDSH-2016.md)從 Windows Server 2012 R2 到 Windows Server 2016。
 2. 新增到工作階段集合中執行 Windows Server 2016 的新 RD 工作階段主機伺服器。
@@ -69,7 +69,7 @@ ms.locfileid: "59870259"
 請遵循下列步驟來移轉虛擬桌面集合從執行 Windows Server 2016 之目的地伺服器執行 Windows Server 2012 R2 的來源伺服器。
 
 > [!IMPORTANT] 
-> 只有在成功完成上一個步驟中之後，才能移轉虛擬桌面集合[移轉的 RD 連線代理人伺服器](#Migrate-RD-Connection-Broker-servers)。
+> 只有在成功完成上一個步驟中之後，才能移轉虛擬桌面集合[移轉的 RD 連線代理人伺服器](#migrate-rd-connection-broker-servers)。
 
 1. [升級虛擬桌面集合](Upgrade-to-RDVH-2016.md)從伺服器執行 Windows Server 2012 R2 到 Windows Server 2016。
 2. 將新的 Windows Server 2016 RD 虛擬主機伺服器新增到虛擬桌面集合。
@@ -85,14 +85,14 @@ ms.locfileid: "59870259"
 請遵循下列步驟以移轉 RD Web 存取伺服器：
 - 將目的地伺服器的遠端桌面服務部署到執行 Windows Server 2016 並安裝 RD Web 角色
 - 使用[IIS Web Deploy 工具](https://www.iis.net/)若要從目前的 RD Web 存取伺服器時使用的 RD Web 網站設定移轉到執行 Windows Server 2016 的目的地伺服器。
-- [移轉憑證](#Migrate-certificates)到目的地伺服器執行 Windows Server 2016。
+- [移轉憑證](#migrate-certificates)到目的地伺服器執行 Windows Server 2016。
 - 從遠端桌面服務的部署移除來源伺服器  
 
 ## <a name="migrate-rdgateway-servers"></a>移轉 RD 閘道伺服器
 請遵循下列步驟來移轉 RD 閘道伺服器：
 - 將目的地伺服器的遠端桌面服務部署到執行 Windows Server 2016 並安裝 RD 閘道角色
 - 使用[IIS Web Deploy 工具](https://www.iis.net/)將從目前的 RD 閘道伺服器的 RD 閘道端點設定移轉到目的地伺服器執行 Windows Server 2016。
-- [移轉憑證](#Migrate-certificates)到目的地伺服器執行 Windows Server 2016。
+- [移轉憑證](#migrate-certificates)到目的地伺服器執行 Windows Server 2016。
 - 從遠端桌面服務的部署移除來源伺服器  
 
 ## <a name="migrate-rdlicensing-servers"></a>移轉 RD 授權伺服器
@@ -100,7 +100,7 @@ ms.locfileid: "59870259"
 請遵循下列步驟以從執行 Windows Server 2016 之目的地伺服器執行 Windows Server 2012 或 Windows Server 2012 R2 的來源伺服器移轉 RD 授權伺服器。
 
 1. [移轉遠端桌面服務用戶端存取使用權 (RDS Cal)](migrate-rds-cals.md)從來源伺服器到目的地伺服器。
-2. 編輯**部署內容**中**伺服器管理員**（這通常是在第一部 RD 連線代理人伺服器上執行） 的遠端桌面管理伺服器上將只有新的 RD 授權執行 Windows Server 2016 的伺服器。
+2. 編輯**部署內容**中 **伺服器管理員**（這通常是在第一部 RD 連線代理人伺服器上執行） 的遠端桌面管理伺服器上將只有新的 RD 授權執行 Windows Server 2016 的伺服器。
 3. 停用來源 RD 授權伺服器：在 **遠端桌面授權管理員**、 以滑鼠右鍵按一下適當的伺服器、 將滑鼠停留**進階**選取**停用伺服器**，然後遵循精靈中的步驟.
 4. 從中的部署移除來源 RD 授權伺服器**伺服器管理員**遠端桌面管理伺服器上。
 

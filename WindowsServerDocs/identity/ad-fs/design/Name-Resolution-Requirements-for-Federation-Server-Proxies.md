@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a94e4de181cd8794d479bbd6695a94658aba0f86
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8aef8b3d8f1e6dde4f960a3bee5a93964d07c72b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855019"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191280"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>同盟伺服器 Proxy 的名稱解析需求
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 當網際網路上的用戶端電腦嘗試存取由 Active Directory Federation Services 保護的應用程式\(AD FS\)，他們必須先進行驗證的同盟伺服器。 在大部分情況下，同盟伺服器通常不是直接從網際網路存取。 因此，網際網路用戶端電腦必須重新導向至同盟伺服器 proxy 改為。 您可以藉由新增適當的網域名稱系統來完成成功的重新導向\(DNS\)記錄到您的 DNS 區域或面對網際網路的區域。  
   
@@ -69,4 +67,4 @@ ms.locfileid: "59855019"
 如需如何修改周邊網路和網際網路 DNS 區域的詳細資訊，請參閱[設定中的 DNS 區域，可同時在周邊網路和網際網路用戶端的同盟伺服器 Proxy 的名稱解析](../../ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: e63aa5d53f01fbff3029c6896556d92c9c99aa50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ede63ab08d204c29555b28ae3a73795291c321c
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857679"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222480"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>管理 WSUS 用戶端電腦和 WSUS 電腦群組
 
@@ -29,10 +29,10 @@ ms.locfileid: "59857679"
 ## <a name="managing-client-computers"></a>管理用戶端電腦
 選取其中一個電腦群組中**電腦**下方的節點**選項**電腦就會在 [詳細資料] 窗格中顯示該群組中。 如果電腦被指派給多個群組，它會出現在這兩個群組的清單中。 如果您在清單中選取電腦，您可以看到其屬性，其中包含有關電腦的更新，例如安裝的狀態或特定電腦的更新的偵測狀態的一般詳細資料。 您可以依狀態篩選特定的電腦群組下的電腦的清單。 預設值會顯示唯一的電腦所需的更新，或其已安裝失敗;不過，您可以依任何狀態來篩選顯示。 按一下 **重新整理**之後變更的狀態篩選。
 
-您也可以管理 [電腦] 頁面，其中包含建立群組，並為其指派的電腦上的電腦群組。 如需管理電腦群組的詳細資訊，請參閱 < 管理電腦群組中的下一步 本指南中，區段和區段[1.5。規劃 WSUS 電腦群組](../plan/plan-your-wsus-deployment.md#BKMK_1.5)在步驟 1:準備部署 WSUS 的 WSUS 部署指南 》。
+您也可以管理 [電腦] 頁面，其中包含建立群組，並為其指派的電腦上的電腦群組。 如需管理電腦群組的詳細資訊，請參閱 < 管理電腦群組中的下一步 本指南中，區段和區段[1.5。規劃 WSUS 電腦群組](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups)在步驟 1:準備部署 WSUS 的 WSUS 部署指南 》。
 
 > [!NOTE]
-> 您必須先設定連絡 WSUS 伺服器，才能從該伺服器管理的用戶端電腦。 直到您執行這項工作中，您的 WSUS 伺服器將無法辨識您的用戶端電腦，並不會顯示在 [電腦] 頁面的清單中。 如需設定用戶端電腦的詳細資訊，請參閱[1.5。規劃 WSUS 電腦群組](../plan/plan-your-wsus-deployment.md#BKMK_1.5)的步驟 1:準備部署 WSUS，及步驟 3:設定 WSUS，WSUS 部署指南中。
+> 您必須先設定連絡 WSUS 伺服器，才能從該伺服器管理的用戶端電腦。 直到您執行這項工作中，您的 WSUS 伺服器將無法辨識您的用戶端電腦，並不會顯示在 [電腦] 頁面的清單中。 如需設定用戶端電腦的詳細資訊，請參閱[1.5。規劃 WSUS 電腦群組](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups)的步驟 1:準備部署 WSUS，及步驟 3:設定 WSUS，WSUS 部署指南中。
 
 ## <a name="controlling-when-wsus-client-computers-install-updates"></a>控制 WSUS 用戶端電腦安裝更新的時機
 當 WSUS 用戶端電腦安裝更新時，有兩種方法可以控制：
@@ -55,6 +55,6 @@ WSUS 允許您針對用戶端電腦選擇更新，這樣就可以確保特定電
 您可以使用下列其中一種方法，將電腦指派給電腦群組：以伺服器端為目標或以用戶端為目標。 使用伺服器端為目標，您以手動方式移動一或多個用戶端電腦至一部電腦群組一次。 使用用戶端為目標，您可以使用群組原則或編輯用戶端電腦上的登錄設定，讓這些電腦自動新增到先前建立的電腦群組。 此程序可以編寫指令碼，並一次部署到多部電腦。 您必須指定目標的方法，您將使用在 WSUS 伺服器，選取兩個選項的其中一項上**電腦**一節**選項**頁面。
 
 > [!NOTE]
-> 如果 WSUS 伺服器是在複寫模式中執行，這部伺服器上就不能建立電腦群組。 必須是 WSUS 伺服器階層的根 WSUS 伺服器上建立複本伺服器的用戶端所需的所有電腦群組。 如需複寫模式的詳細資訊，請參閱[執行的 WSUS 複本模式](running-wsus-replica-mode.md)如需伺服器端和用戶端為目標的詳細資訊，請參閱下一節和[1.5。規劃 WSUS 電腦群組](../plan/plan-your-wsus-deployment.md#BKMK_1.5)的步驟 1:在 WSUS 部署指南中，以準備部署 WSUS。
+> 如果 WSUS 伺服器是在複寫模式中執行，這部伺服器上就不能建立電腦群組。 必須是 WSUS 伺服器階層的根 WSUS 伺服器上建立複本伺服器的用戶端所需的所有電腦群組。 如需複寫模式的詳細資訊，請參閱[執行的 WSUS 複本模式](running-wsus-replica-mode.md)如需伺服器端和用戶端為目標的詳細資訊，請參閱下一節和[1.5。規劃 WSUS 電腦群組](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups)的步驟 1:在 WSUS 部署指南中，以準備部署 WSUS。
 
 

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a14b1a1e0f91002b201869e4c68187ffaf3f8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eaec563157a77fd4e782842a81e5b59e49a5ea09
+ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865079"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65621295"
 ---
 # <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>使用 Robocopy 將 DFS 複寫預置檔案
 
@@ -28,17 +28,17 @@ ms.locfileid: "59865079"
 
 若要使用 Robocopy 預置 DFS 複寫的檔案，請遵循下列步驟：
 
-1. [下載並安裝最新版的 Robocopy。](#step-1:-download-and-install-the-latest-version-of-robocopy)
-2. [穩固將複寫的檔案。](#step-2:-stabilize-files-that-will-be-replicated)
-3. [將複寫的檔案複製到目的地伺服器。](#step-3:-copy-the-replicated-files-to-the-destination-server)
+1. [下載並安裝最新版的 Robocopy。](#step-1-download-and-install-the-latest-version-of-robocopy)
+2. [穩固將複寫的檔案。](#step-2-stabilize-files-that-will-be-replicated)
+3. [將複寫的檔案複製到目的地伺服器。](#step-3-copy-the-replicated-files-to-the-destination-server)
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 因為預先植入，並不直接包含 DFS 複寫，您只需要符合執行使用 Robocopy 檔案複製的需求。
 
 - 您需要在來源和目的地伺服器上本機 Administrators 群組成員的帳戶。
 
-- 您將用來將檔案複製的伺服器上安裝最新版的 Robocopy — 在來源伺服器或目的地伺服器;您必須安裝最新版本的作業系統版本。 如需指示，請參閱[步驟 2:穩定將複寫的檔案](#step-2:-stabilize-files-that-will-be-replicated)。 除非您從執行 Windows Server 2003 R2 的伺服器檔案預先植入，您可以在來源或目的地伺服器上執行 Robocopy。 目的地伺服器上，這通常會有較新的作業系統版本，可讓您存取最新版本的 Robocopy。
+- 您將用來將檔案複製的伺服器上安裝最新版的 Robocopy — 在來源伺服器或目的地伺服器;您必須安裝最新版本的作業系統版本。 如需指示，請參閱[步驟 2:穩定將複寫的檔案](#step-2-stabilize-files-that-will-be-replicated)。 除非您從執行 Windows Server 2003 R2 的伺服器檔案預先植入，您可以在來源或目的地伺服器上執行 Robocopy。 目的地伺服器上，這通常會有較新的作業系統版本，可讓您存取最新版本的 Robocopy。
 
 - 請確定該足夠的儲存空間可在目的地磁碟機上。 不想要複製到路徑上建立資料夾：Robocopy 必須建立根資料夾。
     
@@ -63,7 +63,7 @@ ms.locfileid: "59865079"
     
     ```robocopy.exe kbqfe "<operating system version>"```
     
-    例如，輸入**robocopy.exe kbqfe"Windows Server 2008 R2"**。
+    例如，輸入**robocopy.exe kbqfe"Windows Server 2008 R2"** 。
 
 3. 找出並下載具有最高的識別碼號碼 （也就是最新版本） 的 hotfix。
 
@@ -105,7 +105,7 @@ ms.locfileid: "59865079"
     |「\<目的地複寫資料夾路徑\>"|指定將儲存的 preseeded 的檔資料夾的路徑。<br><br>目的資料夾必須在目的地伺服器上已經存在。 若要取得相符的檔案雜湊，當它 preseeds 檔案 Robocopy 時，必須建立根資料夾。|
     |/e|將複製子目錄和其檔案，以及空的子目錄。|
     |/b|將檔案複製備份 」 模式。|
-    |/ copyal|複製所有的檔案資訊，包括資料、 屬性、 時間戳記、 NTFS 存取控制清單 (ACL)、 擁有者資訊和稽核資訊。|
+    |/copyall|複製所有的檔案資訊，包括資料、 屬性、 時間戳記、 NTFS 存取控制清單 (ACL)、 擁有者資訊和稽核資訊。|
     |/r:6|重試作業六次發生錯誤時。|
     |/w:5|會等候 5 秒，重試之間。|
     |MT:64|同時複製 64 的檔案。|

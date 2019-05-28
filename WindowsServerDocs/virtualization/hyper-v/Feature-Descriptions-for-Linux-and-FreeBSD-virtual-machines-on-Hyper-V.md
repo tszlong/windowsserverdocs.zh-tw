@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 944f8e9d902953ab4d6da0750603a2c40fa9e96d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a574275f6d3495a9cc9bff36fa785f28a7cd8d6f
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844889"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222879"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>在 HYPER-V 上的 Linux 和 FreeBSD 虛擬機器的功能描述
 
@@ -24,7 +24,7 @@ ms.locfileid: "59844889"
 
 使用 Linux 和 FreeBSD 虛擬機器上時，本文會說明中的元件，例如核心、 網路、 儲存體和記憶體可用的功能。
 
-## <a name="BKMK_core"></a>核心
+## <a name="core"></a>核心
 
 |**功能**|**描述**|
 |-|-|
@@ -37,7 +37,7 @@ ms.locfileid: "59844889"
 |HYPER-V 特定的存放裝置|這項功能會授與高效能儲存體裝置的存取權連接至虛擬機器。|
 |HYPER-V 特定網路裝置|這項功能會高效能的存取權授與連接至虛擬機器的網路介面卡。|
 
-## <a name="BKMK_Networking"></a>網路功能
+## <a name="networking"></a>網路功能
 
 |**功能**|**描述**|
 |-|-|
@@ -50,7 +50,7 @@ ms.locfileid: "59844889"
 |大型接收卸載 (LRO)|藉由彙總到較大的緩衝區，並減少 CPU 額外負荷的多個封包的高頻寬連線的輸入的輸送量的增加。|
 |SR-IOV|單一根目錄 I/O 裝置使用 DDA 允許來賓存取權，以降低的延遲，並增加的輸送量的特定 nic 介面卡的部分。 SR-IOV 需要在主機上的最新狀態的實體函式 (PF) 驅動程式和客體上的虛擬函式 (VF) 驅動程式。|
 
-## <a name="BKMK_Storage"></a>儲存體
+## <a name="storage"></a>儲存體
 
 |**功能**|**描述**|
 |-|-|
@@ -60,7 +60,7 @@ ms.locfileid: "59844889"
 |修剪支援|修剪提示通知的磁碟機，某些先前所配置的磁區不再需要應用程式，且可加以清除。 通常在應用程式透過檔案，讓大型的空間配置，然後自我管理的配置檔案，例如虛擬硬碟檔案時，會運用這個程序。|
 |SCSI WWN|Storvsc 驅動程式擷取的裝置連接至虛擬機器的節點與連接埠的全球名稱 (WWN) 資訊，並建立適當的 sysfs 檔案。 |
 
-## <a name="BKMK_Memory"></a>記憶體
+## <a name="memory"></a>記憶體
 
 |**功能**|**描述**|
 |-|-|
@@ -70,13 +70,13 @@ ms.locfileid: "59844889"
 |動態記憶體-佔用|主應用程式可以動態增加或減少虛擬機器可以使用的記憶體數量，在作業時。 佈建之前，系統管理員會啟用動態記憶體的虛擬機器設定 面板中，並指定虛擬機器的啟動記憶體、 最小記憶體和最大記憶體。 您可以變更虛擬機器時無法停用動態記憶體的作業和只有最小值和最大值設定。 （它是最佳的作法，來指定這些記憶體大小為 128 MB 的倍數）。<br /><br />當虛擬機器第一次啟動時可用的記憶體是否等於**啟動記憶體**。 由於應用程式工作負載的記憶體需求增加時 HYPER-V 可能會動態配置到虛擬機器 （請見上方） 的熱新增機制透過更多的記憶體。 隨著記憶體需求的降低 HYPER-V 可能會自動取消佈建的球形文字說明機制透過虛擬機器的記憶體。 HYPER-V 會取消佈建下列記憶體**最小記憶體**參數。<br /><br />HYPER-V 管理員中的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器內的記憶體統計資料會顯示最高的已配置的記憶體數量。<br /><br />如需詳細資訊，請參閱 < [HYPER-V 動態記憶體概觀](https://technet.microsoft.com/library/hh831766.aspx)。<br /><br />|
 |執行階段記憶體大小調整|系統管理員可以設定可用的記憶體數量的虛擬機器時在作業中，增加記憶體 （「 熱新增 」），或減少 （「 熱移除 」）。 記憶體時，會傳回至 HYPER-V 上，透過 balloon 驅動程式 （請參閱 「 動態記憶體-佔用 」）。 Balloon 驅動程式會維護最小可用的記憶體之後佔用，稱為 「 下限 」，因此指派的記憶體數量無法會縮小到低於目前的需求，再加上此 floor 數量。 HYPER-V 管理員中的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器內的記憶體統計資料會顯示最高的已配置的記憶體數量。 （它是最佳的作法，若要指定記憶體值為 128 MB 的倍數）。|
 
-## <a name="BKMK_Video"></a>Video
+## <a name="video"></a>視訊
 
 |**功能**|**描述**|
 |-|-|
 |Hyper-v 特定視訊裝置|這項功能會針對虛擬機器提供高效能圖形和優異的解析度。 此裝置不提供增強的工作階段模式或 RemoteFX 功能。|
 
-## <a name="BKMK_Misc"></a>其他
+## <a name="miscellaneous"></a>其他
 
 |**功能**|**描述**|
 |-|-|
@@ -87,7 +87,7 @@ ms.locfileid: "59844889"
 |HYPER-V 通訊端|這是主機和客體作業系統之間的其他通訊通道。 若要載入，並使用 HYPER-V 通訊端核心模組，請參閱[讓您自己的整合服務](https://msdn.microsoft.com/virtualization/hyperv_on_windows/develop/make_mgmt_service)。|
 |PCI 通過/DDA|Windows Server 2016 系統管理員可以通過 PCI Express 的裝置，透過不連續的裝置指派機制。 常見的裝置是網路卡、 圖形卡和特殊的存放裝置。 虛擬機器將會需要適當的驅動程式使用公開的硬體。 硬體必須指派給虛擬機器，才能使用。<br /><br />如需詳細資訊，請參閱 <<c0> [ 離散的裝置指派-描述和背景](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/)。<br /><br />DDA 是 SR-IOV 網路功能的必要條件。 虛擬通訊埠必須要指派給虛擬機器和虛擬機器必須使用正確的虛擬函式 (VF) 驅動程式進行多工裝置。|
 
-## <a name="BKMK_gen2"></a>第 2 代虛擬機器
+## <a name="generation-2-virtual-machines"></a>第 2 代虛擬機器
 
 |**功能**|**描述**|
 |-|-|
@@ -98,7 +98,7 @@ ms.locfileid: "59844889"
 
 * [支援 CentOS 和 Red Hat Enterprise Linux 在 HYPER-V 上的虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [在 HYPER-V 上支援的 Debian 虛擬機器](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Hyper-V 上支援的 Debian 虛擬機器](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
 * [在 HYPER-V 上支援的 Oracle Linux 虛擬機器](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 

@@ -1,0 +1,42 @@
+---
+title: 移除或取代開頭為 Windows Server 版 1903年計劃的功能
+description: 以下是一份功能和產品中，已移除的功能在 Windows Server，版本 1903，釋出，或需要考量的後續版本中的潛在取代已開始。 適用對象是在商業環境中更新作業系統的 IT 專業人員。
+ms.prod: windows-server-threshold
+ms.technology: server-general
+ms.topic: article
+ms.date: 05/21/2019
+author: jasongerend
+ms.author: jgerend
+manager: daveba
+ms.openlocfilehash: e2f51af55ba7005cb20d8a1c22f6ba9edc20c704
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983418"
+---
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>移除或取代開頭為 Windows Server 版 1903年計劃的功能
+
+>適用於：Windows Server 版 1903，
+
+以下是一份功能和產品中，已移除的功能在 Windows Server，版本 1903，釋出，或需要考量的後續版本中的潛在取代已開始。 適用對象是在商業環境中更新作業系統的 IT 專業人員。 **這份清單會在後續版本中有所變更，並可能不會包含每個受影響的功能。**
+
+另請參閱[功能移除，或計劃取代啟動 Windows Server 2019](removed-features-19.md)。
+
+## <a name="features-were-no-longer-developing"></a>我們不再開發的功能
+
+我們不再主動開發這些功能，並可能移除它們未來的更新。 有些功能已取代為其他特色或功能，有些則暫時從不同的來源提供。 
+
+如果您有建議取代任何這些功能的意見反應要分享，可以使用[意見反應中樞 App](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)。 
+
+| 功能 | 相反地，您可以使用 |
+|-----------|---------------------|
+|Wi-fi WEP 和 [tkip] (**新**)| 使用較舊的 WEP 和 TKIP 加密的 Wi-fi 網路不使用 AES，WPA2 等 WPA3 一樣安全。 在 Windows 10 版本 1903，連接到 WEP 或 TKIP 網路會顯示一則警告訊息的網路不安全，但沒有任何訊息會顯示在 Windows Server 版 1903年。 在未來版本將不允許任何連接到 Wi-fi 網路使用這些舊的密碼。 如需安全性風險，WEP 和 [tkip] 的詳細資訊，請參閱此[部落格文章](https://go.microsoft.com/fwlink/p/?linkid=2008426)。|
+|XDDM 型遠端顯示驅動程式 (**新**)|從這個版本開始，遠端桌面服務使用 Windows 顯示驅動程式模型 (WDDM) 以間接顯示驅動程式 (IDD) 單一工作階段的遠端桌面。 支援 Windows 2000 顯示驅動程式模型 (XDDM) 基礎遠端顯示驅動程式將會在未來版本中移除。 使用 XDDM 型遠端顯示驅動程式的獨立軟體廠商應該規劃移轉至 WDDM 驅動程式模型。 如需有關實作遠端顯示間接的顯示器驅動程式 Isv 可以連絡[ rdsdev@microsoft.com ](mailto:rdsdev@microsoft.com)。|
+|UCS 記錄收集工具 (**新**)|UCS 記錄收集工具，而不明確適用於搭配 Windows Server 仍是在 Windows 10 上的意見反應中樞所取代。|
+|在 HYPER-V 中的金鑰儲存體磁碟機|我們不會再正努力在 HYPER-V 中的金鑰儲存區的磁碟機功能。 如果您使用第 1 代 Vm，請參閱[層代 1 VM 虛擬化安全性](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v)如接下來的選項的相關資訊。 如果您要建立新的 Vm 會使用更安全的解決方案的 TPM 裝置的第 2 代虛擬機器。 |
+|受信任的平台模組 (TPM) 管理主控台|先前在 TPM 管理主控台中提供的資訊現在已提供下載[**裝置的安全性**](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/wdsc-device-security)頁面[Windows Defender 資訊安全中心](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/windows-defender-security-center)。|
+|主機守護者服務的 Active Directory 證明模式|我們不會再開發主機守護者服務的 Active Directory 證明模式-相反地，我們已新增新的證明模式中，[裝載金鑰證明](../security/guarded-fabric-shielded-vm/guarded-fabric-create-host-key.md)，這是最簡單且同樣為相容，則為基礎的 Active Directory證明。  這個新模式提供的安裝體驗、 更簡易的管理與 Active Directory 證明比較少的基礎結構相依性的對等功能。 主機金鑰證明有超過所需，哪些 Active Directory 證明沒有其他硬體需求，因此所有現有的系統仍與新的模式相容。 請參閱[部署受防護主機](../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)的證明選項的相關資訊。|
+|OneSync 服務|OneSync 服務同步處理的郵件、 行事曆和人員的應用程式的資料。 我們已加入 Outlook 應用程式提供相同的同步處理的同步處理引擎。|
+|遠端差異壓縮 API 支援|遠端差異壓縮 API 支援啟用同步處理的資料與遠端來源，使用壓縮技術，透過網路傳送的資料量降到最低。 這項支援目前沒有使用任何 Microsoft 產品。|
+|WFP 輕量型篩選器的交換器擴充功能|WFP 輕量型篩選器的交換器擴充功能可讓開發人員建置[簡單的網路封包篩選適用於 HYPER-V 虛擬交換器擴充功能](https://docs.microsoft.com/en-us/windows-hardware/drivers/network/using-virtual-switch-filtering)。 您可以建立完整的篩選擴充功能來達到相同的功能。 因此，我們將移除此擴充功能在未來。|

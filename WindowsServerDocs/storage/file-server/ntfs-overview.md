@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 556110fe7bed1aed002ef6d985324ff5171e770e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f85e321381adcf607c3504005a0a3448ab0f098a
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885369"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63738443"
 ---
 # <a name="ntfs-overview"></a>NTFS 概觀
 
@@ -25,7 +25,7 @@ NTFS-最新版本的 Windows 和 Windows Server 的主要檔案系統，提供�
 
 ## <a name="practical-applications"></a>實際應用
 
-### <a name="increased-reliability"></a>增加的可靠性
+### <a name="increased-reliability"></a>提高的穩定性
 
 NTFS 會使用它的記錄檔和檢查點資訊，在系統失敗後重新啟動電腦時，還原的檔案系統一致性。 不良磁區發生錯誤後 NTFS 以動態方式重新對應包含損壞的磁區，來配置新的叢集資料、 將標示為已損毀，在原始叢集中，而且不再使用舊叢集的叢集。 比方說，在伺服器當機之後 NTFS 可以復原資料的重新執行其記錄檔。
 

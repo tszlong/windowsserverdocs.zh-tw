@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 923710fac426f63d2c38d9b9a68c92427783abb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 413cf51e5ceb1c4507b71fb77ee6005807a0ff13
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890009"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476183"
 ---
 # <a name="troubleshooting-file-server-resource-manager"></a>檔案伺服器資源管理員疑難排解
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server 2019，Windows Server 2016、 Windows Server （半年通道）、 Windows Server 2012 R2、 Windows Server 2012 中，Windows Server 2008 R2
 
 本節列出使用檔案伺服器資源管理員時，可能會遇到的常見問題。
 
@@ -59,5 +59,5 @@ ms.locfileid: "59890009"
 
 -   **原因**:您可能會有巢狀的配額，其中的子資料夾的配額衍生自其父資料夾的配額的限制較嚴格的限制。 例如，您可能已將 100 MB的配額限制套用至上層資料夾，又分別將 200 MB 的配額限制套用至其每個子資料夾。 如果上層資料夾中總共儲存了 50 MB 的資料 (其子資料夾中儲存的資料總和)，則每一個子資料夾將會列出只有 50 MB 的可用空間。
 
--   **解決方案**：底下**配額管理**，按一下**配額**。 在 **\[結果\]** 窗格中，選取您要進行疑難排解的配額項目。 在 **\[動作\]** 窗格中，按一下 **\[檢視影響資料夾的配額\]**，然後尋找套用至上層資料夾的配額。 這樣可讓您找出哪些上層資料夾配額的存放限制設定比您所選取的配額還要低。
+-   **解決方案**：底下**配額管理**，按一下**配額**。 在 **\[結果\]** 窗格中，選取您要進行疑難排解的配額項目。 在 **\[動作\]** 窗格中，按一下 **\[檢視影響資料夾的配額\]** ，然後尋找套用至上層資料夾的配額。 這樣可讓您找出哪些上層資料夾配額的存放限制設定比您所選取的配額還要低。
 

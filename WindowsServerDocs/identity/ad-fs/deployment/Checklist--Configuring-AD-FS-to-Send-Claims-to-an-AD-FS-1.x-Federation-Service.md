@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bdfd06a28f8ccaa04014024a235cd19512adb181
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd4c436c806074f63bf51f497429532d7be32f75
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887029"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192410"
 ---
 # <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-federation-service"></a>檢查清單：設定 AD FS 來傳送至 AD FS 1.x Federation Service 的宣告
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
   
 ## <a name="checklist-configuring-ad-fs-to-send-claims-to-an-adfs1x-federation-service"></a>檢查清單：設定 AD FS 以將宣告傳送至 AD FS 1.x Federation Service  
 此檢查清單包含設定 Active Directory 同盟服務所需的工作\(AD FS\)來傳送宣告可以理解的 AD fs 1 的 Windows Server 2012 中的 Federation Service。*x* Federation Service。  

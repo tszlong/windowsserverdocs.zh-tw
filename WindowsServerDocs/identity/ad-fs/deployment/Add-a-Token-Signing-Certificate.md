@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8a94e0724d6fd2a04e2fbfc22b3054b49d87f440
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac9f9b95ad6226a8e3b7012e317899f1d48c60c9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826149"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192472"
 ---
 # <a name="add-a-token-signing-certificate"></a>新增權杖簽署憑證
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 在 Active Directory Federation Services 中的同盟伺服器\(AD FS\)要求權杖\-簽署憑證讓攻擊者無法改變或盜用安全性權杖，以嘗試取得未經授權的存取為同盟的資源。 每個語彙基元\-簽署憑證包含私密金鑰的密碼編譯金鑰和用來數位簽章的公開金鑰\(透過私密金鑰\)安全性權杖。 稍後，夥伴同盟伺服器會收到這些機碼之後，他們驗證真實性\(透過公開金鑰\)加密的安全性權杖。  
   

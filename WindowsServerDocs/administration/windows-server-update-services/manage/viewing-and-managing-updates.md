@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd517be0de3ba6ca97ca11f4bbe8f59111a01216
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2ffc6680239fa468b058b74f9acf26d22f2b65f
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870949"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222615"
 ---
 # <a name="viewing-and-managing-updates"></a>檢視和管理更新
 
@@ -60,7 +60,7 @@ ms.locfileid: "59870949"
 
 2.  在 **動作**窗格中，按一下**新的更新檢視**。
 
-3.  在 **新增更新的檢視**視窗底下**步驟 1： 選取 屬性**，選取您要篩選更新檢視的屬性：
+3.  在 **新增更新的檢視**視窗底下**步驟 1： 選取 屬性** ，選取您要篩選更新檢視的屬性：
 
     -   選取更新處於特定分類來篩選更新屬於其中一或多個更新分類。
 
@@ -76,7 +76,7 @@ ms.locfileid: "59870949"
 
 5.  在下**步驟 3:指定的名稱**，提供您的新檢視的名稱。
 
-6.  按一下 [確定] 。
+6.  按一下 [確定]  。
 
 您的新檢視會出現在樹狀檢視窗格下方的更新。 它將會顯示，例如當您選取中間窗格中的標準檢視。
 
@@ -127,7 +127,7 @@ ms.locfileid: "59870949"
 
 -   更新檔案：實際的檔案，才能在電腦上安裝更新。
 
-當將更新同步處理至 WSUS 伺服器時，中繼資料和更新檔案會儲存在兩個不同的位置。 中繼資料會儲存在 WSUS 資料庫中。 在您的 WSUS 伺服器上或 Microsoft Update 伺服器上，根據您的同步處理選項的設定方式，就可以儲存更新檔案。 如果您選擇儲存在 Microsoft Update 伺服器上的更新檔案，當時的同步處理; 下載僅中繼資料核准 WSUS 主控台中，透過更新，然後用戶端電腦取得直接從 Microsoft Update 在安裝期間更新檔案。 如需儲存更新選項的詳細資訊，請參閱下一節[1.3。選擇 WSUS 儲存策略](../plan/plan-your-wsus-deployment.md#BKMK_1.3.)的步驟 1:準備部署 WSUS，WSUS 部署指南中。
+當將更新同步處理至 WSUS 伺服器時，中繼資料和更新檔案會儲存在兩個不同的位置。 中繼資料會儲存在 WSUS 資料庫中。 在您的 WSUS 伺服器上或 Microsoft Update 伺服器上，根據您的同步處理選項的設定方式，就可以儲存更新檔案。 如果您選擇儲存在 Microsoft Update 伺服器上的更新檔案，當時的同步處理; 下載僅中繼資料核准 WSUS 主控台中，透過更新，然後用戶端電腦取得直接從 Microsoft Update 在安裝期間更新檔案。 如需儲存更新選項的詳細資訊，請參閱下一節[1.3。選擇 WSUS 儲存策略](../plan/plan-your-wsus-deployment.md#13-choose-a-wsus-storage-strategy)的步驟 1:準備部署 WSUS，WSUS 部署指南中。
 
 您要設定並執行同步處理期間，新增電腦及電腦群組與部署定期更新。 下列清單提供您可能執行的 wsus 更新電腦的一般工作的範例。
 

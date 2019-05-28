@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: af227d9e87ddb73f194dd46c8ce45fcdf12a34cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2544001b871a1eda2c03005c384a99d5209e7282
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872549"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190550"
 ---
 # <a name="when-to-use-identity-delegation"></a>使用身分識別委派的時機
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
   
 ## <a name="what-is-identity-delegation"></a>身分識別委派是什麼？  
 身分識別委派是 Active Directory Federation Services 的功能\(AD FS\) ，可讓系統管理員\-指定帳戶，模擬使用者。 模擬使用者的帳戶稱為*委派*。 若有許多分散式應用程式，且必須針對原始要求的授權鏈結中的每個應用程式、資料庫或服務循序執行一系列存取控制檢查，則此委派功能相當重要。 許多真實\-世界的案例存在中 Web 應用程式 「 前端 」 必須擷取資料，從更安全 「 後端 」，例如連接到 Microsoft SQL Server 資料庫的 Web 服務。  
@@ -61,4 +59,4 @@ AD FS 不會限制哪些使用者可以模擬。 您設定 AD FS 身分識別委
 開發人員有數個選項，它們可以用來適當地設計 Web 前端\-結束應用程式或服務，將委派要求重新導向到 AD FS 的電腦。 如需如何自訂 Web 應用程式來使用身分識別委派的詳細資訊，請參閱 [Windows Identity Foundation SDK](https://go.microsoft.com/fwlink/?LinkId=122266)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

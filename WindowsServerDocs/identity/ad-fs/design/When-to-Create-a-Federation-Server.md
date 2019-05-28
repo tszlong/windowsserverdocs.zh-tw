@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8013764b88a1061cfcaa3a507466c111bfd59aad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e61c734780baa1482670af3f24697c10345b292
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864809"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190595"
 ---
 # <a name="when-to-create-a-federation-server"></a>建立同盟伺服器的時機
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 當您建立同盟 serverin Active Directory Federation Services \(AD FS\)，提供您的組織可以用一種方法：  
   
@@ -40,7 +38,7 @@ ms.locfileid: "59864809"
   
 -   [網頁 SSO 設計](Web-SSO-Design.md)  
   
--   [同盟的網頁 SSO 設計](Federated-Web-SSO-Design.md)  
+-   [同盟網頁 SSO 設計](Federated-Web-SSO-Design.md)  
   
 如有必要，組織部署同盟網頁 SSO 設計，可以設定在單一同盟伺服器，使其運作在帳戶夥伴角色和資源夥伴角色。 在此情況下，同盟伺服器可能會產生安全性聲明標記語言\(SAML\)它自己的組織或權杖的要求重新路由到組織中的使用者帳戶為基礎的權杖為基礎的使用者帳戶所在的位置.  
   
@@ -79,5 +77,5 @@ ms.locfileid: "59864809"
 如需如何設定的先決條件以部署同盟伺服器所需的詳細資訊，請參閱[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3671283720d515cd3e3e609d98e02343c15892
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab80b6d73a40256d5935635c9afc55b7c53727d3
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860769"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63737828"
 ---
 # <a name="deploy-network-file-system"></a>部署網路檔案系統
 
@@ -82,7 +82,7 @@ NFS 支援混合使用以 Windows 為基礎和以 UNIX 為基礎作業系統的�
 
 ### <a name="install-network-file-system-on-the-server-with-windows-powershell"></a>使用 Windows PowerShell 的伺服器上安裝網路檔案系統
 
-1. 啟動 Windows PowerShell。 用滑鼠右鍵按一下工作列上的 PowerShell 圖示，然後選取 [以系統管理員身分執行] 。
+1. 啟動 Windows PowerShell。 用滑鼠右鍵按一下工作列上的 PowerShell 圖示，然後選取 [以系統管理員身分執行]  。
 2. 執行下列 Windows PowerShell 命令：
 
 ```PowerShell
@@ -115,12 +115,12 @@ Import-Module NFS
 2. [伺服器管理員] 將自動啟動。 如果沒有自動啟動，請選取**開始**，型別**servermanager.exe**，然後選取**伺服器管理員**。
 3. 在左側，選取**檔案和存放服務**，然後選取**共用**。
 4. 選取 **若要建立檔案共用，請啟動 新增共用精靈**。
-5. 在上**選取設定檔**頁面上，選取**NFS 共用-快速**或是**NFS 共用-進階**，然後選取**下一步**。
-6. 在 [**共用位置**頁面上，選取一部伺服器和磁碟區，然後選取**下一步]**。
-7. 在 [**共用名稱**頁面中指定的新共用的名稱，然後選取**下一步]**。
+5. 在上**選取設定檔**頁面上，選取**NFS 共用-快速**或是**NFS 共用-進階**，然後選取**下一步** 。
+6. 在 [**共用位置**頁面上，選取一部伺服器和磁碟區，然後選取**下一步]** 。
+7. 在 [**共用名稱**頁面中指定的新共用的名稱，然後選取**下一步]** 。
 8. 在 **驗證**頁面上，指定您想要使用此共用的驗證方法。
 9. 在 **共用的權限**頁面上，選取**新增**，然後指定主機、 用戶端群組或您想要共用的權限授與的 netgroup。
-10. 在 **權限**，設定您想要有此項目，然後選取使用者的存取控制項的型別**確定**。
+10. 在 **權限**，設定您想要有此項目，然後選取使用者的存取控制項的型別 **確定** 。
 11. 在 **確認**頁面上，檢閱您的設定，然後選取**建立**建立 NFS 檔案共用。
 
 ### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell 對應的命令

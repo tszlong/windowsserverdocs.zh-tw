@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 67b122353ca9dff3a4df6cbfac56b16bed52b539
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: df1afc77afffd9b737965215a5c9d96f278c8129
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848079"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191675"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>安全規劃和部署 AD FS 的最佳做法
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 本主題提供可協助您規劃和評估安全性，當您設計您的 Active Directory Federation Services (AD FS) 部署的最佳做法資訊。 本主題會檢閱和評估會影響您的 AD FS 使用的整體安全性的考量事項的起始點。 這個主題中的資訊是用來補充及延伸現有安全性規劃及其他設計最佳做法。  
   
@@ -146,4 +145,4 @@ ms.locfileid: "59848079"
     若要提供更安全的服務和資料隔離，您可以針對所有屬性存放區查閱命令建立預存程序。 您可以建立資料庫角色，然後授與權限以執行預存程序。 將 AD FS Windows 服務的服務識別指派給此資料庫角色中。 AD FS Windows 服務應該不能執行任何其他 SQL 陳述式，不用於查閱屬性的適當預存程序。 以這種方式鎖定對 SQL Server 資料庫的存取，可降低受到「權限提高」攻擊的風險。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

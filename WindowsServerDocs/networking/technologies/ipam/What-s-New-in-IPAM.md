@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: f2f2f1a5-ac2f-41b7-a495-98ad0e2a9b20
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1305f889339fb4ca6815912924ba2232cfaf4cab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 04838cba63805d20ba31629ed9c8e95290046320
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880749"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624682"
 ---
 # <a name="whats-new-in-ipam"></a>IPAM 的新功能
 
@@ -43,7 +43,7 @@ IPAM 企業網路或雲端服務提供者 (CSP) 網路上提供高度可自訂�
 ### <a name="EIP"></a>增強的 IP 位址管理  
 下列功能改善 IPAM 位址的管理功能。  
 >[!NOTE]
->如需 IPAM 的 Windows PowerShell 命令參考，請參閱[Windows PowerShell 中的 IP 位址管理 (IPAM) 伺服器 Cmdlet](https://technet.microsoft.com/library/jj553807.aspx)。  
+>如需 IPAM 的 Windows PowerShell 命令參考，請參閱[Windows PowerShell 中的 IP 位址管理 (IPAM) 伺服器 Cmdlet](https://docs.microsoft.com/en-us/powershell/module/ipamserver/)。  
   
 #### <a name="support-for-31-32-and-128-subnets"></a>支援/31/32，，/128 用於子網路  
 Windows Server 2016 現在支援/31/32，，/128 子網路中的 IPAM。 例如，兩個位址的子網路 (/ 31 IPv4) 可能需要交換器之間的點對點連結。 此外，某些參數可能需要單一的回送位址 (/ 32 用於 IPv4，/128 用於 IPv6)。  
@@ -57,7 +57,7 @@ Windows Server 2016 現在支援/31/32，，/128 子網路中的 IPAM。 例如�
 >[!NOTE]
 >此函式不會實際配置的子網路，它只會報告其可用性。 不過，cmdlet 輸出可以輸送到**新增 IpamSubnet**命令來建立子網路。  
   
-如需詳細資訊，請參閱 <<c0> [ 尋找 IpamFreeSubnet](https://technet.microsoft.com/library/mt712782.aspx)。  
+如需詳細資訊，請參閱 <<c0> [ 尋找 IpamFreeSubnet](https://docs.microsoft.com/en-us/powershell/module/ipamserver/Find-IpamFreeSubnet)。  
   
 #### <a name="find-free-address-ranges-with-find-ipamfreerange"></a>**尋找與尋找 IpamFreeRange 可用的位址範圍**  
   
@@ -68,7 +68,7 @@ Windows Server 2016 現在支援/31/32，，/128 子網路中的 IPAM。 例如�
 > [!NOTE]
 > 此函式不會實際配置的範圍，它只會報告其可用性。 不過，cmdlet 輸出可以輸送到**新增 IpamRange**命令來建立範圍。  
   
-如需詳細資訊，請參閱 <<c0> [ 尋找 IpamFreeRange](https://technet.microsoft.com/library/mt712772.aspx)。  
+如需詳細資訊，請參閱 <<c0> [ 尋找 IpamFreeRange](https://docs.microsoft.com/en-us/powershell/module/ipamserver/Find-IpamFreeRange)。  
   
 ### <a name="EDNS"></a>增強的 DNS 服務管理  
 Windows Server 2016 中的 IPAM 現在支援以檔案為基礎，且已加入網域的 DNS 伺服器的探索，IPAM 執行所在的 Active Directory 樹系中。  
@@ -129,5 +129,5 @@ Windows Server 2012 r2 中 IPAM 無法探索及管理屬於與 IPAM 伺服器相
   
 -   DHCP 領域  
   
-如需詳細資訊，請參閱 <<c0> [ 管理角色型存取控制使用 Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)並[Windows PowerShell 中的 IP 位址管理 (IPAM) 伺服器 Cmdlet](https://technet.microsoft.com/library/jj553807.aspx)。  
+如需詳細資訊，請參閱 <<c0> [ 管理角色型存取控制使用 Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)並[Windows PowerShell 中的 IP 位址管理 (IPAM) 伺服器 Cmdlet](https://docs.microsoft.com/en-us/powershell/module/ipamserver/)。  
 

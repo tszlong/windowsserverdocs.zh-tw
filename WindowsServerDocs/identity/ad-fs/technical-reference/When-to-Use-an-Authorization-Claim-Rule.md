@@ -9,23 +9,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d566113a7579805c8ae9b558a145878557de0958
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6b852a580bdc0ea02643d478dc51b5cbcd2eac4b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872329"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188315"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="when-to-use-an-authorization-claim-rule"></a>使用授權宣告規則的時機
 您可以使用這項規則中 Active Directory Federation Services \(AD FS\)當您需要將傳入的宣告型別，然後再套用動作，藉此決定是否將允許或拒絕存取使用者為基礎的值，您在規則中指定。 當您使用此規則時，您會根據您在規則中設定的選項之一，傳遞或轉換符合下列規則邏輯的宣告。  
   
 |規則選項|規則邏輯|  
 |---------------|--------------|  
-|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」  且值等於「任何值」 ，則會發行值等於「允許」 |  
-|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」且值等於「指定的宣告值」，則會發行值等於「允許」的宣告|  
-|拒絕具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」 ，則會發行值等於「拒絕」 |  
+|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」  且值等於「任何值」  ，則會發行值等於「允許」 |  
+|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」  ，則會發行值等於「允許」  的宣告|  
+|拒絕具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」  ，則會發行值等於「拒絕」 |  
   
 下列章節提供宣告規則的基本介紹，並進一步提供如何使用此規則的詳細資訊。  
   

@@ -5,34 +5,30 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.date: 01/05/2017
+ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: b504c3396200502a09467ae97a36f9de613e4820
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d36961558066197a54f42d27a3560d653bd81f2
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830329"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976626"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
 >適用於：Windows Server 2016
 
-<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">本節內容說明 Windows Server&reg; 2016 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。  
-   
-<br>
-<br>
-<br>
-<br>
-<br>
-## <a name="computevirtualizationvirtualizationmd"></a>[計算](../virtualization/virtualization.md)  
+<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">若要深入了解 Windows 的最新功能，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)。 本節內容說明 Windows Server&reg; 2016 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。  
+
+## <a name="computevirtualizationvirtualizationmd"></a>[計算](../virtualization/virtualization.md)
+
 「虛擬化」領域包含 IT 專業人員可用來設計、部署及維護 Windows Server 的虛擬化產品與功能。  
 
 ### <a name="general"></a>一般  
@@ -67,7 +63,7 @@ Windows Server 2016 提供新的 Hyper-V 型受防護虛擬機器，保護遭入
 
 如需使用受防護虛擬機器的詳細資料和指示，請參閱[適用於 Windows Server 2016 的受防護 VM 和受防護網狀架構驗證指南 (TPM)](https://aka.ms/shieldedvms)。  
 
-## <a name="identity-and-accessidentityidentity-and-accessmd"></a>[身分識別和存取](../identity/Identity-and-Access.md)  
+## <a name="identity-and-accessidentityidentity-and-accessmd"></a>[身分識別與存取](../identity/Identity-and-Access.md)  
 「身分識別」中的新功能可提升組織保護 Active Directory 環境的能力，並協助他們移轉至僅限雲端的部署和混合式部署，其中有些應用程式與服務會裝載於雲端，而其他則會裝載於內部部署上。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 憑證服務  
@@ -208,5 +204,5 @@ Windows Server 2016 的 IIS 10.0 Web 伺服器提供新功能，包括︰
 
 
 ## <a name="see-also"></a>另請參閱  
--   [版本資訊：Windows Server 2016 的重要問題](Windows-Server-2016-GA-Release-Notes.md)  
+-   [版本資訊：Windows Server 2016 中的重要問題](Windows-Server-2016-GA-Release-Notes.md)  
 

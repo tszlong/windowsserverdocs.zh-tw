@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 29b7b61f7edc20edda7bc18b82db17447badc0f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c20e2da3e629743ab4d4d4cf1da16a6e69093ecf
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834249"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192578"
 ---
 # <a name="extend-a-basic-volume"></a>延伸基本磁碟區
 
@@ -25,30 +25,26 @@ ms.locfileid: "59834249"
 
 ## <a name="extending-a-basic-volume"></a>延伸基本磁碟區
 
--   [使用 Windows 介面](#BKMK_WINUI)
--   [使用命令列](#BKMK_CMD)
+-   [使用 Windows 介面](#to-extend-a-basic-volume-using-the-windows-interface)
+-   [使用命令列](#to-extend-a-basic-volume-using-a-command-line)
 
-<a href="" id="BKMK_WINUI"></a>
 #### <a name="to-extend-a-basic-volume-using-the-windows-interface"></a>若要使用 Windows 介面延伸基本磁碟區
 
-1.  在 [磁碟管理員] 中，以滑鼠右鍵按一下您想要延伸的基本磁碟區。
+1. 在 [磁碟管理員] 中，以滑鼠右鍵按一下您想要延伸的基本磁碟區。
 
-2.  按一下 **\[延伸磁碟區\]**。
+2. 按一下 **\[延伸磁碟區\]** 。
 
-3.  遵循畫面上的指示操作。
+3. 遵循畫面上的指示操作。
 
-<a href="" id="BKMK_CMD"></a>
 #### <a name="to-extend-a-basic-volume-using-a-command-line"></a>若要使用命令列延伸基本磁碟區
 
-1.  開啟命令提示字元，然後輸入 `diskpart`：
+1. 開啟命令提示字元，然後輸入 `diskpart`：
 
-2.  在 **DISKPART** 提示中輸入 `list volume`。 記下您要延伸的基本磁碟區。
+2. 在 **DISKPART** 提示中輸入 `list volume`。 記下您要延伸的基本磁碟區。
 
-3.  在 **DISKPART** 提示中輸入 `select volume <volumenumber>`。 這樣就會選取您要延伸至相同磁碟中連續空白空間的基本磁碟區 *volumenumber*。
+3. 在 **DISKPART** 提示中輸入 `select volume <volumenumber>`。 這樣就會選取您要延伸至相同磁碟中連續空白空間的基本磁碟區 *volumenumber*。
 
-4.  在 **DISKPART** 提示中輸入 `extend [size=<size>]`。 這樣就會以*大小*單位為 MB 的幅度延伸選取的磁碟區。
-
-<br />
+4. 在 **DISKPART** 提示中輸入 `extend [size=<size>]`。 這樣就會以*大小*單位為 MB 的幅度延伸選取的磁碟區。
 
 | 值 | 描述 |
 | --- | --- |
@@ -64,5 +60,3 @@ ms.locfileid: "59834249"
 ## <a name="see-also"></a>另請參閱
 
 -   [命令列語法標記法](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

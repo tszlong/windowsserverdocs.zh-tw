@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 52a08ae7eaee81c00985d5334f9abeaa84e30879
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 05fcaf402347d16bf8c28528d402664ae5f99165
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814159"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476057"
 ---
 # <a name="file-screening-management"></a>檔案檢測管理
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server 2019，Windows Server 2016、 Windows Server （半年通道）、 Windows Server 2012 R2、 Windows Server 2012 中，Windows Server 2008 R2
 
 在檔案伺服器資源管理員 Microsoft® Management Console (MMC) 嵌入式管理單元的 **\[檔案檢測管理\]** 節點，您可以執行下列工作：
 
@@ -35,7 +35,7 @@ ms.locfileid: "59814159"
 -   [定義檢測的檔案群組](define-file-groups-for-screening.md)
 -   [建立檔案檢測](create-file-screen.md)
 -   [建立檔案檢測例外](create-file-screen-exception.md)
--   [建立檔案檢測範本](create-file-screen-template.md)
+-   [-建立檔案檢測範本](create-file-screen-template.md)
 -   [編輯檔案檢測範本內容](edit-file-screen-template-properties.md)
 
 > [!Note]

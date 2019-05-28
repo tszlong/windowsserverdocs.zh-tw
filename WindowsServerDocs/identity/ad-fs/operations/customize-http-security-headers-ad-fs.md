@@ -9,15 +9,14 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cd3ad4e6547194a971d8a51ecb95ee56f5e4e8c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 54b0e055d6cfde5e5c69540ac804a38cbceb1e59
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822719"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188775"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>自訂 AD FS 2019 的 HTTP 安全性回應標頭 
-適用於：Windows Server 2019 
  
 若要防範常見的安全性弱點，並讓系統管理員能夠充分利用最新的瀏覽器為基礎的保護機制，AD FS 2019 新增自訂 HTTP 安全性回應標頭的功能AD FS 所傳送。 這透過引進的兩個新的 cmdlet 來完成：`Get-AdfsResponseHeaders`和`Set-AdfsResponseHeaders`。  
  
@@ -235,4 +234,4 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 ## <a name="next"></a>下一個
 
 - [使用 AD FS 說明 troublehshooting 輔助線](https://aka.ms/adfshelp/troubleshooting )
-- [疑難排解 AD FS](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)
+- [AD FS 疑難排解](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

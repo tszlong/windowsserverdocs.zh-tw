@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b66bed99cbc2ac2cdf116579adaea282c45fabe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cd8febf9eff300b1a83d22828874b4a577b8af36
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876389"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192323"
 ---
 # <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>設定同盟服務與 DRS 的公司 DNS
-
->適用於：Windows Server 2016, Windows Server 2012 R2
   
 ## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>步驟 6：將主機新增\(A\)和別名\(CNAME\)同盟服務和 DRS 的公司 DNS 資源記錄  
 您必須加入公司網域名稱系統中的下列資源記錄\(DNS\)您的 federation service 和您在上一個步驟中設定的裝置註冊服務。  
@@ -36,15 +34,15 @@ ms.locfileid: "59876389"
   
 1.  您網域控制站上，在 [伺服器管理員] 中，在**工具**功能表上，按一下**DNS**以開啟 DNS 嵌入式管理單元\-中。  
   
-2.  在主控台樹狀目錄中，依序展開**網域\_控制器\_名稱**節點，展開**正向對應區域**，以滑鼠右鍵\-按一下**網域\_名稱**，然後按一下**新的主控件\(A 或 AAAA\)**。  
+2.  在主控台樹狀目錄中，依序展開**網域\_控制器\_名稱**節點，展開**正向對應區域**，以滑鼠右鍵\-按一下**網域\_名稱**，然後按一下**新的主控件\(A 或 AAAA\)** 。  
   
 3.  在 **名稱**方塊中，輸入要使用您的 AD FS 伺服器陣列的名稱。  
   
-4.  在 [**IP 位址**] 方塊中，輸入您的同盟伺服器的 IP 位址。 按一下 [新增主機] 。  
+4.  在 [**IP 位址**] 方塊中，輸入您的同盟伺服器的 IP 位址。 按一下 [新增主機]  。  
   
-5.  右\-按一下 **網域\_名稱**節點，然後再按一下**新別名\(CNAME\)**。  
+5.  右\-按一下 **網域\_名稱**節點，然後再按一下**新別名\(CNAME\)** 。  
   
-6.  在 [新增資源記錄] 對話方塊中，在 [別名名稱] 方塊中輸入 **enterpriseregistration**。  
+6.  在 [新增資源記錄]  對話方塊中，在 [別名名稱]  方塊中輸入 **enterpriseregistration**。  
   
 7.  在 完整的網域名稱\(FQDN\)的目標主機 方塊中，輸入**同盟\_服務\_伺服陣列\_name.domain\_名稱.com**，，然後按一下 **確定**。  
   

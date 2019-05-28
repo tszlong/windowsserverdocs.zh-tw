@@ -4,17 +4,17 @@ description: 從 KMS 伺服器啟動 Windows 產品所需的識別碼
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: jaimeo
+author: jasongerend
+ms.author: jgerend
 ms.localizationpriority: medium
-ms.date: 10/02/2018
-ms.tgt_pltfrm: na
+ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 57ce4c4d7623c2a424efbdf0ff117ede8fad726b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2aac6db7bb9e118d672190c95f0d73294474f75
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847029"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976532"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
@@ -29,9 +29,9 @@ ms.locfileid: "59847029"
 
 如果您將電腦從 KMS 主機、MAK 或 Windows 零售版轉換成 KMS 用戶端，請從下表安裝適用的安裝識別碼 (GVLK)。 若要安裝用戶端安裝識別碼，請開啟 在用戶端，型別系統管理命令提示字元**slmgr /ipk\<安裝識別碼\>** ，然後按**Enter**。
 
-| 如果您想要...                                                                                                                                                                                          | ...使用這些資源                                                                                                         |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| 在大量啟用情況之外啟用 Windows (也就您嘗試啟用零售版的 Windows)，**這些識別碼將無法運作**。                                                     | 在零售版的 Windows 中使用下列連結：                                                                              |
+| 如果您想要...    | ...使用這些資源   |
+|--------------------|------------------------|
+| 在大量啟用情況之外啟用 Windows (也就您嘗試啟用零售版的 Windows)，**這些識別碼將無法運作**。 | 在零售版的 Windows 中使用下列連結： |
 | 修正嘗試啟用 Windows 8.1、 Windows Server 2012 R2 或更新版本的系統時，收到此錯誤：「錯誤：0xC004F050 軟體授權服務報告指出產品金鑰無效」… | 如果 KMS 主機執行 Windows 8.1、Windows Server 2012 R2、Windows 8 或 Windows Server 2012，請在 KMS 主機上[安裝此更新](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) 。 |
 
 -   [取得 Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
@@ -43,15 +43,14 @@ ms.locfileid: "59847029"
 
 >   如果您是執行 Windows Server 2008 R2 或 Windows 7，請留意以 KMS 主機作為 Windows 10 用戶端的支援更新。
 
-
 ## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半年通道版本
 
-### <a name="windows-server-version-1809"></a>Windows Server 版 1809
-| 作業系統版本       | KMS 用戶端安裝識別碼          |
-|--------------------------------|-------------------------------|
-| Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D  | 
-| Windows Server Standard | N2KJX-J94YW-TQVFB-DG9YT-724CC  |
+### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server、 版本 1903 和 Windows Server 版 1809
 
+| 作業系統版本  | KMS 用戶端安裝識別碼          |
+|---------------------------|-------------------------------|
+| Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D |
+| Windows Server Standard   | N2KJX-J94YW-TQVFB-DG9YT-724CC |
 
 ### <a name="windows-server-version-1803"></a>Windows Server 版本 1803
 

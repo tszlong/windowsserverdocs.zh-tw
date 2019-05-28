@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a66fe7a274756de9bed9f6b14f5b9e491e5b623
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63d90d52b55357b5de823f2ca5e0a9fa2a3468e6
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819579"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222994"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>在 [伺服器管理員] 中設定遠端管理
 
@@ -38,54 +38,54 @@ ms.locfileid: "59819579"
 
 如需如何新增要管理，或從工作群組電腦是執行伺服器管理員管理遠端伺服器的伺服器的詳細資訊，請參閱[將伺服器新增到伺服器管理員](add-servers-to-server-manager.md)。
 
-## <a name="BKMK_remote"></a>啟用或停用遠端管理
+## <a name="enabling-or-disabling-remote-management"></a>啟用或停用遠端管理
 在 Windows Server 2016 中，預設會啟用遠端管理。 您可以連接到正在使用伺服器管理員從遠端執行 Windows Server 2016 的電腦之前，伺服器管理員遠端管理必須啟用在目的地電腦上，如果已停用。 本節中的程序說明如何停用遠端管理，以及如何重新啟用已停用的遠端管理。 在 [伺服器管理員] 主控台中，本機伺服器的遠端管理狀態會顯示在**屬性**區域**本機伺服器**頁面。
 
 即使已經啟用遠端管理，除了內建的 Administrator 帳戶以外的本機系統管理員帳戶可能沒有遠端管理伺服器的權限。 遠端使用者帳戶控制 (UAC) **LocalAccountTokenFilterPolicy**登錄設定必須設為允許的內建的 administrator 帳戶以外的系統管理員群組，從遠端管理本機帳戶伺服器。
 
-在 Windows Server 2016 中，伺服器管理員會依賴 Windows 遠端管理 (WinRM) 和分散式元件物件模型 (DCOM) 才能進行遠端通訊。 所控制的設定**設定遠端管理**對話方塊只會影響使用 WinRM 進行遠端通訊的伺服器管理員與 Windows PowerShell 組件。 它們不會影響使用 DCOM 進行遠端通訊的組件的 伺服器管理員。 例如，伺服器管理員會使用 WinRM 來與執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 的遠端伺服器通訊，但會使用 DCOM 來與執行 Windows Server 2008 的伺服器和 Windows Server 2008 R2，通訊但並沒有[Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)或是[Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)套用更新。 Microsoft Management Console (mmc) 和其他舊版管理工具會使用 DCOM。 如需如何變更這些設定的詳細資訊，請參閱[若要設定 dcom 的 mmc 或其他工具的遠端管理](#BKMK_dcom)本主題中。
+在 Windows Server 2016 中，伺服器管理員會依賴 Windows 遠端管理 (WinRM) 和分散式元件物件模型 (DCOM) 才能進行遠端通訊。 所控制的設定**設定遠端管理**對話方塊只會影響使用 WinRM 進行遠端通訊的伺服器管理員與 Windows PowerShell 組件。 它們不會影響使用 DCOM 進行遠端通訊的組件的 伺服器管理員。 例如，伺服器管理員會使用 WinRM 來與執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 的遠端伺服器通訊，但會使用 DCOM 來與執行 Windows Server 2008 的伺服器和 Windows Server 2008 R2，通訊但並沒有[Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)或是[Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)套用更新。 Microsoft Management Console (mmc) 和其他舊版管理工具會使用 DCOM。 如需如何變更這些設定的詳細資訊，請參閱[若要設定 dcom 的 mmc 或其他工具的遠端管理](#to-configure-mmc-or-other-tool-remote-management-over-dcom)本主題中。
 
 > [!NOTE]
 > 本節中的程序僅能在執行 Windows Server 的電腦上完成。 您無法啟用或停用遠端管理執行 Windows 10 使用這些程序，因為用戶端作業系統無法使用伺服器管理員管理的電腦上。
 
 -   若要啟用 WinRM 遠端管理，請選取下列其中一項程序。
 
-    -   [若要使用 Windows 介面啟用伺服器管理員遠端管理](#BKMK_windows)
+    -   [若要使用 Windows 介面啟用伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
 
-    -   [若要使用 Windows PowerShell 啟用伺服器管理員遠端管理](#BKMK_ps)
+    -   [若要使用 Windows PowerShell 啟用伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-windows-powershell)
 
-    -   [若要使用命令列啟用伺服器管理員遠端管理](#BKMK_cmdline)
+    -   [若要使用命令列啟用伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-the-command-line)
 
-    -   [若要啟用伺服器管理員與 Windows PowerShell 遠端管理有關較早版本的 Windows Server](#BKMK_old)
+    -   [若要啟用伺服器管理員與 Windows PowerShell 遠端管理有關較早版本的 Windows Server](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
 
 -   若要停用 WinRM 和伺服器管理員遠端管理，請選取下列程序的其中一個。
 
-    -   [使用群組原則停用遠端管理](#BKMK_disableGP)
+    -   [使用群組原則停用遠端管理](#to-disable-remote-management-by-using-group-policy)
 
-    -   [若要使用回應檔案，自動安裝期間停用遠端管理](#BKMK_unattend)
+    -   [若要使用回應檔案，自動安裝期間停用遠端管理](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
 
--   若要設定 DCOM 遠端管理，請參閱[設定 DCOM 遠端管理](#BKMK_dcom)。
+-   若要設定 DCOM 遠端管理，請參閱[設定 DCOM 遠端管理](#to-configure-mmc-or-other-tool-remote-management-over-dcom)。
 
-### <a name="BKMK_windows"></a>若要使用 Windows 介面啟用伺服器管理員遠端管理
+### <a name="to-enable-server-manager-remote-management-by-using-the-windows-interface"></a>使用 Windows 介面啟用伺服器管理員遠端管理
 
 1.  > [!NOTE]
     > 所控制的設定**設定遠端管理**對話方塊不會影響使用 DCOM 進行遠端通訊的組件的 伺服器管理員。
 
-    在您想要遠端管理的電腦，開啟 伺服器管理員，如果它不是已開啟。 在 Windows 工作列上按一下 [伺服器管理員]。 在 **開始**畫面上，按一下**伺服器管理員**圖格。
+    在您想要遠端管理的電腦，開啟 伺服器管理員，如果它不是已開啟。 在 Windows 工作列上按一下 [伺服器管理員]  。 在 **開始**畫面上，按一下**伺服器管理員**圖格。
 
 2.  在 **屬性**區域**本機伺服器**頁面上，按一下超連結值**遠端管理**屬性。
 
-3.  執行下列其中一項動作，然後按一下 [確定] 。
+3.  執行下列其中一項動作，然後按一下 [確定]  。
 
     -   若要讓這部電腦無法從遠端管理使用伺服器管理員 （或如果已安裝的 Windows PowerShell），請清除**啟用遠端管理這部伺服器從其他電腦**核取方塊。
 
     -   若要讓使用伺服器管理員] 或 [Windows PowerShell 從遠端管理這部電腦，請選取**啟用遠端管理這部伺服器從其他電腦**。
 
-### <a name="BKMK_ps"></a>若要使用 Windows PowerShell 啟用伺服器管理員遠端管理
+### <a name="to-enable-server-manager-remote-management-by-using-windows-powershell"></a>使用 Windows PowerShell 啟用伺服器管理員遠端管理
 
 1.  在您想要遠端管理的電腦，執行下列命令來使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
-    -   在 Windows 桌面上，用滑鼠右鍵按一下工作列上的 [Windows PowerShell]，然後按一下 [以系統管理員身分執行]。
+    -   在 Windows 桌面上，用滑鼠右鍵按一下工作列上的 [Windows PowerShell]  ，然後按一下 [以系統管理員身分執行]  。
 
     -   在 Windows 上**開始**畫面上，以滑鼠右鍵按一下**Windows PowerShell**，然後在應用程式列中，按一下 **系統管理員身分執行**。
 
@@ -93,7 +93,7 @@ ms.locfileid: "59819579"
 
     **Configure-SMremoting.exe -enable**
 
-### <a name="BKMK_cmdline"></a>若要使用命令列啟用伺服器管理員遠端管理
+### <a name="to-enable-server-manager-remote-management-by-using-the-command-line"></a>使用命令列啟用伺服器管理員遠端管理
 
 1.  在想要遠端管理的電腦上，以提升的使用者權限開啟命令提示字元工作階段。 若要這樣做，請在**開始**畫面上，輸入**cmd**，以滑鼠右鍵按一下**命令提示字元**圖格時，它會顯示在**應用程式**結果，並然後在應用程式列中，按一下**系統管理員身分執行**。
 
@@ -109,17 +109,17 @@ ms.locfileid: "59819579"
 
     -   若要檢視目前的遠端管理設定，請輸入**SMremoting.exe-取得**，然後按 ENTER 鍵。
 
-### <a name="BKMK_old"></a>若要啟用伺服器管理員與 Windows PowerShell 遠端管理有關較早版本的 Windows Server
+### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>在舊版的 Windows Server 上啟用伺服器管理員與 Windows PowerShell 遠端管理
 
 -   執行下列其中一項：
 
-    -   若要啟用遠端管理執行 Windows Server 2012 的伺服器上，請參閱[若要使用 Windows 介面啟用伺服器管理員遠端管理](#BKMK_windows)本主題中。
+    -   若要啟用遠端管理執行 Windows Server 2012 的伺服器上，請參閱[若要使用 Windows 介面啟用伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)本主題中。
 
     -   若要啟用遠端管理執行 Windows Server 2008 R2 的伺服器上，請參閱[使用伺服器管理員遠端管理](https://go.microsoft.com/fwlink/?LinkID=137378)Windows Server 2008 R2 說明中。
 
     -   若要啟用遠端管理執行 Windows Server 2008 的伺服器上，請參閱[啟用，並在 Windows PowerShell 中使用遠端命令](https://go.microsoft.com/fwlink/p/?LinkId=242565)。
 
-### <a name="BKMK_dcom"></a>若要設定 dcom 的 mmc 或其他工具的遠端管理
+### <a name="to-configure-mmc-or-other-tool-remote-management-over-dcom"></a>若要設定 dcom 的 mmc 或其他工具的遠端管理
 
 1.  執行下列其中一項以開啟 [具有進階安全性的 Windows 防火牆] 嵌入式管理單元。
 
@@ -127,7 +127,7 @@ ms.locfileid: "59819579"
 
     -   在 **開始**畫面上，輸入**WF.msc**，然後按一下 嵌入式管理單元 圖格，當它出現在**應用程式**結果。
 
-2.  在樹狀目錄窗格中選取 [輸入規則] 。
+2.  在樹狀目錄窗格中選取 [輸入規則]  。
 
 3.  確認下列防火牆規則的例外狀況已啟用，而且不由群組原則設定已停用。 如果有任一個規則未啟用，請繼續下一個步驟。
 
@@ -143,7 +143,7 @@ ms.locfileid: "59819579"
 
 5.  關閉 [具有進階安全性的 Windows 防火牆] 嵌入式管理單元。
 
-### <a name="BKMK_disableGP"></a>使用群組原則停用遠端管理
+### <a name="to-disable-remote-management-by-using-group-policy"></a>使用群組原則停用遠端管理
 
 1.  執行下列命令以開啟 本機群組原則編輯器。
 
@@ -153,11 +153,11 @@ ms.locfileid: "59819579"
 
 2.  開啟**電腦設定 \ 系統管理範本 \windows 元件 \windows 遠端管理 (WinRM) \WinRM 服務**。
 
-3.  在內容窗格中，按兩下 [允許透過 WinRM 進行遠端伺服器管理]。
+3.  在內容窗格中，按兩下 [允許透過 WinRM 進行遠端伺服器管理]  。
 
 4.  在 [允許透過 WinRM 進行遠端伺服器管理]  原則設定的對話方塊中，選取 [停用]  以停用遠端管理。 按一下 [確定]  以儲存變更，然後關閉原則設定對話方塊。
 
-### <a name="BKMK_unattend"></a>若要使用回應檔案，自動安裝期間停用遠端管理
+### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>在自動安裝期間使用回應檔案停用遠端管理
 
 1.  使用 Windows 系統映像管理員 (Windows SIM) 建立 Windows Server 2016 安裝的自動的安裝回應檔案。 如需如何建立回應檔案，並使用 Windows SIM 的詳細資訊，請參閱[什麼是 Windows 系統映像管理員？](https://technet.microsoft.com/library/cc766347.aspx)和[逐步：適用於 IT 專業人員的基本 Windows 部署](https://technet.microsoft.com/library/dd349348.aspx)。
 
@@ -166,7 +166,7 @@ ms.locfileid: "59819579"
 3.  若要停用您要套用回應檔案的所有伺服器上的預設伺服器管理員遠端管理，請設定**Microsoft-Windows-Web-Services-for-Management-Core \EnableServerremoteManagement**到**False**.
 
     > [!NOTE]
-    > 這項設定會在作業系統安裝程序期間停用遠端管理。 進行這項設定不會防止系統管理員啟用伺服器管理員遠端管理伺服器上，在作業系統安裝完成後。 系統管理員可以啟用伺服器管理員 中的步驟一次所使用的遠端管理[藉由使用 Windows 介面設定伺服器管理員遠端管理](#BKMK_windows)或[使用啟用伺服器管理員遠端管理Windows PowerShell](#BKMK_ps)本主題中。
+    > 這項設定會在作業系統安裝程序期間停用遠端管理。 進行這項設定不會防止系統管理員啟用伺服器管理員遠端管理伺服器上，在作業系統安裝完成後。 系統管理員可以啟用伺服器管理員 中的步驟一次所使用的遠端管理[藉由使用 Windows 介面設定伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)或[使用啟用伺服器管理員遠端管理Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell)本主題中。
     > 
     > 如果您依預設停用遠端管理，做為一部分的自動安裝，而且未在安裝之後再次啟用伺服器上的遠端管理時，要套用這個回應檔案的伺服器不能完全管理使用伺服器管理員。 伺服器執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 （和具有預設停用遠端管理） 會產生 [伺服器管理員] 主控台中管理性狀態錯誤之後新增至伺服器管理員伺服器集區。
 
