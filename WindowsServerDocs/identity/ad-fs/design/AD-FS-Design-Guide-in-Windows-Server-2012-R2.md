@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 498b399818fb8c9e463f9990fa13c87648c0a33d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d15f680f28c54da75100a03f7b85e880442d9be
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822149"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191744"
 ---
-# <a name="ad-fs-design-guide-in-windows-server-2012-r2"></a>Windows Server 2012 R2 中的 AD FS 設計指南
-
->適用於：Windows Server 2016, Windows Server 2012 R2
+# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server 中的 AD FS 設計指南 
 
 Active Directory Federation Services \(AD FS\)提供簡化、 安全的身分識別同盟和網頁單一登\-上\(SSO\)終端使用者想要存取應用程式的功能在 AD FS\-保護企業、 同盟協力廠商組織，或在雲端中。  
   
@@ -35,7 +33,7 @@ Active Directory Federation Services \(AD FS\)提供簡化、 安全的身分識
   
 -   [規劃您的 AD FS 部署拓撲](Plan-Your-AD-FS-Deployment-Topology.md)  
   
--   [AD FS 需求](AD-FS-Requirements.md)  
+-   [AD FS 需求](AD-FS-Requirements.md)  
   
   
 ## <a name="see-also"></a>另請參閱  

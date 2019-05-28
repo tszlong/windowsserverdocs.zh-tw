@@ -9,16 +9,15 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6e56c95bb3284615d8cc9487e70ca32abbb0f22b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13969958c9b4e0539993142d680cb6c34dc10750
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855559"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190247"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>在 Windows Server 2012 R2 和 Windows Server 2012 AD FS 存取控制原則
 
->適用於：Windows Server 2012 R2 和 Windows Server 2012 
 
 這篇文章中所述的原則會讓使用兩種類型的宣告  
   
@@ -76,11 +75,11 @@ AD FS 端點上所需的 Windows 10 的加入網域並登入。
   
 3.  在**編輯宣告規則**對話方塊中，選取**發佈授權規則**索引標籤，然後再按**新增規則**開始宣告規則精靈。  
   
-4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 5.  在 **設定規則**頁面的 **宣告規則名稱**，這項規則，如範例的顯示名稱 」 的所需的範圍之外的任何 IP 宣告時拒絕 」 的型別。 底下**自訂規則**中，輸入或貼上以下的宣告規則語言語法 （取代 「 x-ms-轉送-用戶端-ip 」 是有效的 IP 運算式使用上述的值）：  
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  按一下 **[完成]**。 確認新的規則，會出現在 發行授權規則清單之前為預設值**允許所有使用者存取**（雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的規則。  如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：  </br>
+6.  按一下 **[完成]** 。 確認新的規則，會出現在 發行授權規則清單之前為預設值**允許所有使用者存取**（雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的規則。  如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：  </br>
     
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
@@ -99,28 +98,28 @@ AD FS 端點上所需的 Windows 10 的加入網域並登入。
   
 3.  在**編輯宣告規則**對話方塊中，選取**發佈授權規則**索引標籤，然後再按**新增規則**開始宣告規則精靈。  
   
-4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 5.  在 **設定規則**頁面的 **宣告規則名稱**，輸入範例 」 的所需的範圍之外的任何 IP 宣告是否發出 ipoutsiderange 宣告 」 這項規則的顯示名稱。 底下**自訂規則**中，輸入或貼上以下的宣告規則語言語法 （取代 「 x-ms-轉送-用戶端-ip 」 是有效的 IP 運算式使用上述的值）：  
     
     `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  按一下 **[完成]**。 確認新的規則，會出現在**發佈授權規則**清單。  
+6.  按一下 **[完成]** 。 確認新的規則，會出現在**發佈授權規則**清單。  
   
 7.  接下來，在**編輯宣告規則**對話方塊的 **發佈授權規則**索引標籤上，按一下 **新增規則**再次啟動 宣告規則精靈。  
   
-8.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+8.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 9. 在 **設定規則**頁面的 **宣告規則名稱**，這項規則，如範例的顯示名稱 「 如果沒有所需的範圍之外的 IP，而且有非 EAS x-ms-用戶端-應用程式宣告，拒絕的類型"。 底下**自訂規則**中，輸入或貼上下列宣告規則語言語法：  
   
 
     `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
   
-10. 按一下 **[完成]**。 確認新的規則，會出現在**發佈授權規則**清單。  
+10. 按一下 **[完成]** 。 確認新的規則，會出現在**發佈授權規則**清單。  
   
 11. 接下來，在**編輯宣告規則**對話方塊的 **發佈授權規則**索引標籤上，按一下 **新增規則**再次啟動 宣告規則精靈。  
   
-12. 在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+12. 在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 13. 在 **設定規則**頁面的 **宣告規則名稱**中，輸入此規則的顯示名稱，例如 「 檢查應用程式宣告是否存在 」。 底下**自訂規則**中，輸入或貼上下列宣告規則語言語法：  
   
@@ -128,16 +127,16 @@ AD FS 端點上所需的 Windows 10 的加入網域並登入。
     NOT EXISTS([Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
     ```  
   
-14. 按一下 **[完成]**。 確認新的規則，會出現在**發佈授權規則**清單。  
+14. 按一下 **[完成]** 。 確認新的規則，會出現在**發佈授權規則**清單。  
   
 15. 接下來，在**編輯宣告規則**對話方塊的 **發佈授權規則**索引標籤上，按一下 **新增規則**再次啟動 宣告規則精靈。  
   
-16. 在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+16. 在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 17. 在 **設定規則**頁面的 **宣告規則名稱**中，輸入此規則的顯示名稱，例如 「 拒絕 ipoutsiderange true 與應用程式的使用者失敗 」。 底下**自訂規則**中，輸入或貼上下列宣告規則語言語法：  
   
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. 按一下 **[完成]**。 確認新的規則會立即顯示在上一個規則之下，之前為預設值允許所有使用者存取規則 （雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的發行授權規則清單中。  </br>如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+18. 按一下 **[完成]** 。 確認新的規則會立即顯示在上一個規則之下，之前為預設值允許所有使用者存取規則 （雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的發行授權規則清單中。  </br>如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. 若要將新的規則，儲存在**編輯宣告規則**對話方塊方塊中，按一下 [確定]。 產生的清單看起來應該如下所示。  
   
      ![發佈授權規則](media/Access-Control-Policies-W2K12/clientaccess2.png )  
@@ -152,22 +151,22 @@ AD FS 端點上所需的 Windows 10 的加入網域並登入。
   
 3.  在**編輯宣告規則**對話方塊中，選取**發佈授權規則**索引標籤，然後再按**新增規則**開始宣告規則精靈。  
   
-4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 5.  在 **設定規則**頁面的 **宣告規則名稱**，輸入範例 」 的所需的範圍之外的任何 IP 宣告是否發出 ipoutsiderange 宣告 」 這項規則的顯示名稱。 底下**自訂規則**中，輸入或貼上以下的宣告規則語言語法 （取代 「 x-ms-轉送-用戶端-ip 」 是有效的 IP 運算式使用上述的值）：  </br>
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  按一下 **[完成]**。 確認新的規則，會出現在**發佈授權規則**清單。  
+6.  按一下 **[完成]** 。 確認新的規則，會出現在**發佈授權規則**清單。  
   
 7.  接下來，在**編輯宣告規則**對話方塊的 **發佈授權規則**索引標籤上，按一下 **新增規則**再次啟動 宣告規則精靈。  
   
-8.  在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+8.  在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 9. 在 **設定規則**頁面的 **宣告規則名稱**，這項規則，如範例的顯示名稱 「 如果沒有所需的範圍之外的 IP，而且端點不是/adfs/ls，拒絕 」 的型別。 底下**自訂規則**中，輸入或貼上下列宣告規則語言語法：  
   
  
     `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
   
-10. 按一下 **[完成]**。 確認新的規則，會出現在 發行授權規則清單之前為預設值**允許所有使用者存取**（雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的規則。  </br></br> 如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：  
+10. 按一下 **[完成]** 。 確認新的規則，會出現在 發行授權規則清單之前為預設值**允許所有使用者存取**（雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的規則。  </br></br> 如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：  
   
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
   
@@ -186,34 +185,34 @@ AD FS 端點上所需的 Windows 10 的加入網域並登入。
   
 3.  在**編輯宣告規則**對話方塊中，選取**發佈授權規則**索引標籤，然後再按**新增規則**開始宣告規則精靈。  
   
-4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+4.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 5.  在 **設定規則**頁面的 **宣告規則名稱**，輸入這項規則的顯示名稱，如範例 」 的所需的範圍之外的任何 IP 宣告是否發出 ipoutsiderange 宣告。 」 底下**自訂規則**中，輸入或貼上以下的宣告規則語言語法 （取代 「 x-ms-轉送-用戶端-ip 」 是有效的 IP 運算式使用上述的值）：  
   
       
     `c1:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  按一下 **[完成]**。 確認新的規則，會出現在**發佈授權規則**清單。  
+6.  按一下 **[完成]** 。 確認新的規則，會出現在**發佈授權規則**清單。  
   
 7.  接下來，在**編輯宣告規則**對話方塊的 **發佈授權規則**索引標籤上，按一下 **新增規則**再次啟動 宣告規則精靈。  
   
-8.  在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+8.  在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 9. 在 **設定規則**頁面的 **宣告規則名稱**中，輸入此規則的顯示名稱，例如 檢查群組 SID。 底下**自訂規則**中，輸入或貼上以下的宣告規則語言語法 (取代"groupsid 」 您使用的 AD 群組的實際 SID 取代):  
    
     `NOT EXISTS([Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. 按一下 **[完成]**。 確認新的規則，會出現在**發佈授權規則**清單。  
+10. 按一下 **[完成]** 。 確認新的規則，會出現在**發佈授權規則**清單。  
   
 11. 接下來，在**編輯宣告規則**對話方塊的 **發佈授權規則**索引標籤上，按一下 **新增規則**再次啟動 宣告規則精靈。  
   
-12. 在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步**。  
+12. 在 **選取規則範本**頁面的 **宣告規則範本，** 選取**使用自訂規則傳送宣告**，然後按一下**下一步** 。  
   
 13. 在 **設定規則**頁面的 **宣告規則名稱**中，輸入此規則的顯示名稱，例如 「 拒絕使用者使用 ipoutsiderange true 和 groupsid 失敗 」。 底下**自訂規則**中，輸入或貼上下列宣告規則語言語法：  
    
     `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. 按一下 **[完成]**。 確認新的規則會立即顯示在上一個規則之下，之前為預設值允許所有使用者存取規則 （雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的發行授權規則清單中。  </br></br>如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：  
+14. 按一下 **[完成]** 。 確認新的規則會立即顯示在上一個規則之下，之前為預設值允許所有使用者存取規則 （雖然看起來稍早在清單中，「 拒絕 」 規則都有優先權） 的發行授權規則清單中。  </br></br>如果您沒有預設值允許的存取規則，您可以加入一個，如下所示使用宣告規則語言的程式清單的結尾：  
    
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 

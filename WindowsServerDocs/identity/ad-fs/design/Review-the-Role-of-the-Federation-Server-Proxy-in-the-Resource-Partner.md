@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 31e285e863e4316a8e0a65f9b68c27442290927d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 377baa8f282f3886284a53b686944fe145b1b15e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862889"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190894"
 ---
 # <a name="review-the-role-of-the-federation-server-proxy-in-the-resource-partner"></a>檢閱資源夥伴中的同盟伺服器 Proxy 角色
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 在 Active Directory Federation Services 中的同盟伺服器 proxy \(AD FS\)可以函式中一或多個下列角色，根據您設定伺服器以符合資源夥伴組織的需求的方式：  
   
@@ -32,5 +30,5 @@ ms.locfileid: "59862889"
 > 需要協助降低硬體數量和必要的憑證數目時，同盟伺服器 proxy 可以位於與 Web 伺服器相同的電腦。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

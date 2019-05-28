@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e7fb8e71afed1c0eb6b55857835d95f2dd0ec9d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca0b25480eedfc6471837ab8ae83b0d1d522e61e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875719"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191660"
 ---
 # <a name="certificate-requirements-for-federation-server-proxies"></a>同盟伺服器 Proxy 的憑證需求
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 在 Active Directory Federation Services 的同盟伺服器 proxy 角色中執行的伺服器\(AD FS\)才能使用安全通訊端層\(SSL\)伺服器驗證憑證。 同盟伺服器 proxy 會使用 SSL 伺服器驗證憑證，保護網頁伺服器與 Web 用戶端之間通訊流量的安全。  
   
@@ -36,4 +34,4 @@ ms.locfileid: "59875719"
 如果任何憑證，您使用具有憑證撤銷清單\(Crl\)，具有已設定的憑證的伺服器必須能夠連絡發佈 Crl 的伺服器。 CRL 的類型決定了要使用的連接埠。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

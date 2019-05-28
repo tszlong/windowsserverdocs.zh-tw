@@ -9,16 +9,15 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 615faf4153949aa4ad989f017068d1809fca26b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820869"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189664"
 ---
 # <a name="configuring-alternate-login-id"></a>設定替代登入識別碼
 
->適用於：Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2
 
 ## <a name="what-is-alternate-login-id"></a>替代的登入識別碼為何？
 在大部分情況下，使用者會使用其 UPN （使用者主體名稱） 來登入他們的帳戶。 不過，在某些環境由於公司的原則或內部部署的特定業務應用程式相依性中，使用者可能使用其他形式的登入。 
@@ -39,7 +38,7 @@ Active Directory Federation Services (AD FS) 可讓同盟應用程式使用 AD F
 ## <a name="end-user-experience-with-alternate-login-id"></a>使用替代登入識別碼的使用者體驗
 使用者體驗是根據使用替代登入識別碼的驗證方法而有所不同。目前那里三種不同的方式，在其中使用替代登入識別碼可達成。  其中包括：
 
-- **規則的驗證 （舊版）**-使用基本驗證通訊協定。
+- **規則的驗證 （舊版）** -使用基本驗證通訊協定。
 - **新式驗證**-Active Directory 驗證程式庫 ADAL 型登入帶入應用程式。 這可讓登入功能，例如 Multi-factor Authentication (MFA)、 SAML 型協力廠商身分識別提供者與 Office 用戶端應用程式，智慧卡和憑證型驗證。
 - **混合式新式驗證**-提供所有新式驗證的優點，並提供使用者存取使用從雲端取得的授權權杖的內部部署應用程式的能力。
 
@@ -127,18 +126,19 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $
 
 下列額外的設定，使用者體驗已大幅改善，與您可以在組織中達到接近零的替代識別碼的使用者驗證的提示。
 
-##### <a name="step-1-update-to-required-office-version"></a>步驟 1. 更新所需的 office 版本
-Office 1712 版 （組建沒有 8827.2148） 和更新版本已更新處理的替代識別碼 」 案例的驗證邏輯。 若要使用新的邏輯，用戶端電腦需要更新 office 1712 版 （組建沒有 8827.2148） 和上方。
+##### <a name="step-1-update-to-required-office-version"></a>步驟 1. 若要更新所需的 Office 版本
+Office 1712 版 （組建沒有 8827.2148） 和更新版本已更新處理的替代識別碼 」 案例的驗證邏輯。 若要使用新的邏輯，用戶端電腦需要更新 Office 1712 版 （組建沒有 8827.2148） 和上方。
 
-##### <a name="step-2-configure-registry-for-impacted-users-using-group-policy"></a>步驟 2. 設定為使用群組原則的受影響使用者的登錄
+##### <a name="step-2-update-to-required-windows-version"></a>步驟 2. 若要更新所需的 Windows 版本
+Windows 1709 版和更新版本已更新處理的替代識別碼 」 案例的驗證邏輯。 以充分利用新的邏輯，用戶端電腦需要更新至 Windows 1709 版和更新版本。
+
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步驟 3。 設定為使用群組原則的受影響使用者的登錄
 Office 應用程式仰賴推入的目錄系統管理員，來識別 「 替代識別碼 」 環境的資訊。 下列登錄機碼需要為了驗證而不會顯示其他任何提示的替代識別碼的使用者的 office 應用程式設定
 
 |加入 Regkey|Regkey 資料名稱、 類型和值|Windows 7/8|Windows 10|描述|
 |-----|-----|-----|-----|-----|
 |HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要項|必要項|此 regkey 的值是在組織的租用戶中驗證的自訂網域名稱。 比方說，Contoso corp 可以提供此 regkey 在 Contoso.com 的值，如果 Contoso.com 是其中一個租用戶 Contoso.onmicrosoft.com 中的已驗證的自訂網域名稱。|
 HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|所需的 Outlook 2016 專業增強版|所需的 Outlook 2016 專業增強版|此 regkey 的值可以是 1 / 0 表示 Outlook 應用程式是否應該與互動的改良的替代識別碼驗證邏輯。|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableADALatopWAMOverride</br>REG_DWORD</br>1|不適用|必要。|這可確保 Office 不會使用 WAM 因為 WAM 不支援 alt 識別碼。|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableAADWAM</br>REG_DWORD</br>1|不適用|必要。|這可確保 Office 不會使用 WAM 因為 WAM 不支援 alt 識別碼。|
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要項|必要項|此 regkey 可用來設定為受信任的區域中的網際網路設定的 STS。 標準的 ADFS 部署建議的 ADFS 命名空間加入 Internet explorer 的近端內部網路區域|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>額外的設定之後新的驗證流程

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b4ec08182e2523b0fcb16088ec9c1d094a5923fe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4a13332cd7cf6361824f05ead4568a45211cc70a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836529"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191024"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>為其他組織的使用者提供您的宣告感知應用程式與服務的存取權
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 在 Active Directory Federation Services 資源夥伴組織中的系統管理員時\(AD FS\) ，而且您有部署目標是另一個組織中的使用者提供同盟的存取\(帳戶夥伴組織\)宣告\-感知應用程式或 Web\-型服務，它位於您的組織\(資源夥伴組織\):  
   
@@ -49,4 +48,4 @@ ms.locfileid: "59836529"
 ![存取您的宣告](media/75358b16-2a6f-4e16-9cc4-b0e614480305.gif)  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

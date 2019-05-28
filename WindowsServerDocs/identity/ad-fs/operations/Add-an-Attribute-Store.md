@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 11baba5bfdb699f120a506feb8361db21d26cff1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 103ee707c88f4e88b231a833f739cf75b6503e18
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837859"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190105"
 ---
 # <a name="add-an-attribute-store"></a>新增屬性存放區
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 使用者帳戶和電腦帳戶需要受保護的 Active Directory Federation Services 資源的存取權\(AD FS\)會儲存在屬性存放區，例如 Active Directory 網域服務\(AD DS\). 宣告發行引擎會使用屬性存放區，來收集資料所需發出宣告。 從屬性存放區的資料然後投射為宣告。  
   
@@ -47,7 +46,7 @@ ms.locfileid: "59837859"
  
 ![新增屬性存放區](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4.  按一下 [確定] 。  
+4.  按一下 [確定]  。  
   
 ## <a name="additional-references"></a>其他參考資料  
 

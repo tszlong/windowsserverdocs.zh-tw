@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d2b60ce593c2ca7eb902595ee6a42850cb7605d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dbceb19d31738bdc5b628a9a2b069e5d3022d145
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870839"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190949"
 ---
 # <a name="review-the-role-of-the-federation-server-proxy-in-the-account-partner"></a>檢閱帳戶夥伴中的同盟伺服器 Proxy 的角色
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 Active Directory Federation Services 的帳戶夥伴組織的周邊網路中的同盟伺服器 proxy 的主要角色\(AD FS\)是從登入用戶端電腦收集驗證認證透過網際網路，並將這些認證傳遞給同盟伺服器，其位於帳戶夥伴組織公司網路內。 用戶端電腦的帳戶會儲存在帳戶夥伴的屬性存放區。  
   
@@ -35,4 +33,4 @@ Active Directory Federation Services 的帳戶夥伴組織的周邊網路中的�
   
 
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d3a7e05e4d16565b17b69de254e353df749bbc3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11cdd9c75ca588ebeac9387e6512fee439621bf8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839229"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192165"
 ---
 # <a name="distribute-certificates-to-client-computers-by-using-group-policy"></a>使用群組原則發佈給用戶端電腦的憑證
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 
 您可以使用下列程序，將資料放入適當的安全通訊端層\(SSL\)憑證\(或對等項目憑證鏈結至信任的根\)針對帳戶同盟伺服器，資源同盟伺服器，並在帳戶夥伴樹系中，使用群組原則的每部用戶端電腦的網頁伺服器。  
@@ -35,11 +33,11 @@ ms.locfileid: "59839229"
   
 4.  在主控台樹狀目錄中，開啟**電腦組態\\原則\\Windows 設定\\安全性設定\\公開金鑰原則**，以滑鼠右鍵\-按一下**受信任的根憑證授權單位**，然後按一下**匯入**。  
   
-5.  在 [**歡迎使用憑證匯入精靈**頁面上，按一下**下一步]**。  
+5.  在 [**歡迎使用憑證匯入精靈**頁面上，按一下**下一步]** 。  
   
-6.  在上**匯入檔案**頁面上，輸入適當的憑證檔案的路徑\(，例如\\ \\fs1\\c$\\fs1.cer\)，然後按一下**下一步**。  
+6.  在上**匯入檔案**頁面上，輸入適當的憑證檔案的路徑\(，例如\\ \\fs1\\c$\\fs1.cer\)，然後按一下**下一步** 。  
   
-7.  在上**憑證存放區**頁面上，按一下**將所有憑證都放入以下的存放**，然後按一下**下一步**。  
+7.  在上**憑證存放區**頁面上，按一下**將所有憑證都放入以下的存放**，然後按一下**下一步** 。  
   
 8.  在 **完成憑證匯入精靈**頁面上，確認您所提供的資訊正確無誤後，，然後按一下**完成**。  
   
