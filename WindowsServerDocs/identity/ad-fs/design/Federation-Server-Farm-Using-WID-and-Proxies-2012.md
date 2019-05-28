@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4bd815daccdd72a8c612b9b728ce12378c1926e7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19e73e43a863ec60fbc9da09b24173220bb331ed
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817619"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191363"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>使用 WID 和 Proxy 的同盟伺服器陣列
-
->適用於：Windows Server 2012
 
 Active Directory Federation Services 使用此部署拓撲\(AD FS\)等同於同盟伺服器陣列含有 Windows Internal Database \(WID\)拓撲，但它將同盟伺服器 proxy若要支援外部使用者的周邊網路。 同盟伺服器 proxy 重新導向至同盟伺服器陣列均來自公司網路外部的用戶端驗證要求。  
   
@@ -51,4 +49,4 @@ Active Directory Federation Services 使用此部署拓撲\(AD FS\)等同於同�
 如需如何設定您的網路環境使用與同盟伺服器或同盟伺服器 proxy 的詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)或[名稱同盟伺服器 Proxy 的解析度需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

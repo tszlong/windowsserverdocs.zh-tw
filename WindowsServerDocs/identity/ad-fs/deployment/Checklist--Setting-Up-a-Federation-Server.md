@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 44448088184d86874e91855d8a51ef40d8cea049
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d46fc3246ed6ead54d58f44aaed0e8863ea189a6
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880499"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192340"
 ---
 # <a name="checklist-setting-up-a-federation-server"></a>檢查清單：設定同盟伺服器
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 這份檢查清單包括部署工作所需準備同盟伺服器角色在 Active Directory Federation Services 中執行 Windows Server® 2012年的伺服器\(AD FS\)。  
   

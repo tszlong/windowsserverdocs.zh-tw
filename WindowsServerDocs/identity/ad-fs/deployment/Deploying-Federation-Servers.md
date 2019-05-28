@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 225e6b52ed46eef6f2ccacb5b0d9c6e6d880f475
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f3b2e1ce901df1df1a232dfba51c292c8e1c29c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847169"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192177"
 ---
 # <a name="deploying-federation-servers"></a>部署同盟伺服器
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 若要部署同盟伺服器在 Active Directory Federation Services \(AD FS\)，完成每一項工作中[檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)。  
   
@@ -28,7 +26,7 @@ ms.locfileid: "59847169"
 ## <a name="about-federation-servers"></a>有關同盟伺服器  
 同盟伺服器是執行 Windows Server 2008 搭配 AD FS 軟體安裝的電腦已設定以做為同盟伺服器角色。 同盟伺服器進行驗證，或從其他組織中的使用者帳戶及可以位於任何地方在網際網路的用戶端電腦的要求路由傳送。  
   
-在電腦上安裝 AD FS 軟體，並使用 AD FS 同盟伺服器設定精靈來設定同盟伺服器角色的動作，就會在同盟伺服器。 它也會使 AD FS 管理嵌入式管理單元\-中在該電腦上可用**開始\\系統管理工具\\**功能表，讓您可以指定下列項目：  
+在電腦上安裝 AD FS 軟體，並使用 AD FS 同盟伺服器設定精靈來設定同盟伺服器角色的動作，就會在同盟伺服器。 它也會使 AD FS 管理嵌入式管理單元\-中在該電腦上可用**開始\\系統管理工具\\** 功能表，讓您可以指定下列項目：  
   
 -   AD FS 主機名稱，其中夥伴組織和應用程式會傳送權杖的要求和回應  
   

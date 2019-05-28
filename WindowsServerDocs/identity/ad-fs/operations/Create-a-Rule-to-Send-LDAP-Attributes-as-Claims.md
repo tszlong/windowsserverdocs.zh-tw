@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e9762e4bc50a1c2b862999af5269a0da376ec9a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00ea4f9f868b9c82c2a0859be971db26394251a3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887609"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189346"
 ---
 # <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>建立規則，以宣告形式傳送 LDAP 屬性
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 使用傳送 LDAP 屬性做為 Active Directory Federation Services 中的宣告規則範本\(AD FS\)，您可以建立會選取從輕量型目錄存取通訊協定的屬性規則\(LDAP\)屬性存放區，例如 Active Directory，以傳送宣告給信賴憑證者的合作對象。 比方說，您可以使用此規則範本來建立宣告規則，就會擷取屬性值已驗證的使用者，從 a Send LDAP Attributes **displayName**並**telephoneNumber** Active目錄屬性，並接著將這些值傳送為兩個不同的連出宣告。  
   
@@ -108,9 +107,9 @@ ms.locfileid: "59887609"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：建立信賴憑證者信任宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[檢查清單：建立宣告規則的宣告提供者信任](https://technet.microsoft.com/library/ee913564.aspx)  
+[檢查清單：為宣告提供者信任建立宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
