@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7a55ddc3caea1002ab51ce4f992b36673ea312b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3229e6ccb07c925a900b298a8332c5e48cefefe7
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825639"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564670"
 ---
 # <a name="seceditgeneraterollback"></a>Secedit:generaterollback
 
@@ -44,11 +44,11 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 ## <a name="remarks"></a>備註
 
-如果記錄檔的路徑未提供，預設的記錄檔 (*systemroot*\Users \*UserAccount*\My Documents\Security\Logs\*DatabaseName*.log) 會使用。
+如果記錄檔的路徑未提供，預設的記錄檔 (*systemroot*\Users \*UserAccount *\My Documents\Security\Logs\*DatabaseName*.log) 會使用。
 
 從 Windows Server 2008、windows`Secedit /refreshpolicy`已取代為`gpupdate`。 如需如何重新整理的安全性設定資訊，請參閱[Gpupdate](gpupdate.md)。
 
-成功執行此命令將狀態 」 工作已順利完成。 嗎？ 與記錄檔僅所述的安全性範本與安全性原則設定之間不相符。 它會列出這些在安全性不符。
+成功執行此命令將狀態 」 工作已順利完成。 」 與記錄檔僅所述的安全性範本與安全性原則設定之間不相符。 它會列出這些在安全性不符。
 
 如果指定現有的復原範本，則此命令會覆寫它。 您可以使用下列命令來建立新的復原範本。 沒有額外的參數所需的其中一個條件。
 

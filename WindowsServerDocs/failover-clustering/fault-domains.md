@@ -8,23 +8,41 @@ ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: f5c64bb8f8b7d4b8d13c76c4e94cfcf52ee32c30
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18b7a932cc8a22c356fde89baa316c0532ebc374
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821469"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475996"
 ---
-# <a name="fault-domain-awareness-in-windows-server-2016"></a>Windows Server 2016 中的容錯網域感知
+# <a name="fault-domain-awareness"></a>容錯網域感知
 
-> 適用於：Windows Server 2016
+> 適用於：Windows Server 2019 和 Windows Server 2016
 
-「容錯移轉叢集」可讓多部伺服器共同合作以提供高可用性，或透過另一種方式來提供節點容錯功能。 但是，現今的企業需要其基礎結構以往更高的可用性。 為了達到類似雲端的存留時間，即使是不太可能發生的項目 (例如，底座故障、機架中斷或天然災害) 都必須受到保護。 這就是為什麼容錯移轉叢集 Windows Server 2016 中導入了底座、 機架和站台容錯功能。
+「容錯移轉叢集」可讓多部伺服器共同合作以提供高可用性，或透過另一種方式來提供節點容錯功能。 但是，現今的企業需要其基礎結構以往更高的可用性。 為了達到類似雲端的存留時間，即使是不太可能發生的項目 (例如，底座故障、機架中斷或天然災害) 都必須受到保護。 這就是為什麼容錯移轉叢集 Windows Server 2016 中引進了底座、 機架和站台容錯功能。
+
+## <a name="fault-domain-awareness"></a>容錯網域感知
 
 容錯網域和容錯功能是密切相關的概念。 容錯網域是一組共用單一失敗點的硬體元件。 若要容錯到特定層級，您在該層級上需要有多個容錯網域。 例如，若要進行機架容錯，您的伺服器和資料必須散佈於多個機架上。
 
 這段短片將介紹 Windows Server 2016 中的容錯網域的概觀：  
 [![按一下此影像，以監看 Windows Server 2016 中的容錯網域的概觀](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+
+### <a name="fault-domain-awareness-in-windows-server-2019"></a>在 Windows Server 2019 的容錯網域感知
+
+Windows Server 2019 的容錯網域感知功能，但它預設會停用，而且必須透過 Windows 登錄啟用。
+
+若要啟用在 Windows Server 2019 的容錯網域感知，請移至 Windows 登錄，並設定 （Get-叢集）。AutoAssignNodeSite 登錄機碼設為 1。
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=1
+```
+
+若要停用 Windows 2019 的容錯網域感知，請移至 Windows 登錄並設定 （Get-叢集）。AutoAssignNodeSite 登錄機碼設為 0。
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=0
+```
 
 ## <a name="benefits"></a>優點
 - **儲存空間，包括儲存空間直接存取會使用容錯網域充分保護資料安全。**  
@@ -103,7 +121,7 @@ Remove-ClusterFaultDomain -Name "Rack A"
 ```
 
 ### <a name="defining-fault-domains-with-xml-markup"></a>以 XML 標記定義容錯網域
-容錯網域可以使用 XML 語法來指定。 我們建議您使用慣用的文字編輯器，例如 [Visual Studio Code] (可在*[這裡](https://code.visualstudio.com/)* 免費取得) 或 [記事本]，來建立可儲存並重複使用的 XML 文件。  
+容錯網域可以使用 XML 語法來指定。 我們建議您使用慣用的文字編輯器，例如 [Visual Studio Code] (可在 *[這裡](https://code.visualstudio.com/)* 免費取得) 或 [記事本]，來建立可儲存並重複使用的 XML 文件。  
 
 這段短片示範使用 XML 標記來指定容錯網域的用法。
 
@@ -176,5 +194,6 @@ Set-ClusterFaultDomainXML -XML $xml
 [![按一下以查看短片示範加入容錯網域中的位置描述項中的值](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
 ## <a name="see-also"></a>另請參閱  
--   [Windows Server 2016](../get-started/windows-server-2016.md)  
--   [Windows Server 2016 中的儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md) 
+- [開始使用 Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
+- [開始使用 Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)  
+-   [儲存空間直接存取概觀](../storage/storage-spaces/storage-spaces-direct-overview.md) 

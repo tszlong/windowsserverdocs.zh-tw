@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aa2e22f74323bb6cabfc644ca67e17a7fcbd3fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8ec9748056b296bb0c74250b36c762fb86fa90ad
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851019"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564658"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
@@ -44,7 +44,7 @@ Pwlauncher {/enable | /disable}
 
 ## <a name="remarks"></a>備註
 
-最大的障礙，使用者想要使用 Windows To Go 取得他們的電腦，從 USB 開機。 這是傳統上由輸入韌體，並嘗試不同的設定選項，直到電腦已正確設定。 這對大多數使用者的簡單工作並不是非常危險，因為韌體中包含可以使系統變成無法使用，如果使用不正確的選項。 若要協助減輕這個問題，Windows 8and 更新版本的作業系統包含一個功能稱為 「 Windows To Go 啟動選項？ 可讓使用者能夠設定他們的電腦從 Windows 內從 USB 開機，而未曾輸入其韌體，只要其韌體支援從 USB 開機。 啟用系統一律從 USB 開機時，第一次會具有您應該考慮的影響。 例如，包含惡意程式碼的 USB 裝置可能會不小心開機至危害系統，或多個 USB 磁碟機無法插入會導致開機衝突。 基於這個理由，預設組態會有 Windows To Go 啟動選項依預設停用。 此外，系統管理員權限，才能設定 Windows To Go 啟動選項。 如果您啟用 Windows To Go 啟動選項使用 pwlauncher 命令列工具或**變更 Windows To Go 啟動選項**電腦會嘗試從任何之前插入電腦的 USB 裝置開機應用程式已啟動。
+最大的障礙，使用者想要使用 Windows To Go 取得他們的電腦，從 USB 開機。 這是傳統上由輸入韌體，並嘗試不同的設定選項，直到電腦已正確設定。 這對大多數使用者的簡單工作並不是非常危險，因為韌體中包含可以使系統變成無法使用，如果使用不正確的選項。 為了協助解決這個問題，Windows 8and 更新版本的作業系統包含名為 「 Windows To Go 啟動選項 」 一項功能，可讓使用者能夠設定他們的電腦從 Windows 內從 USB 開機-不需要不斷輸入其韌體，只要其韌體支援從 USB 開機。 啟用系統一律從 USB 開機時，第一次會具有您應該考慮的影響。 例如，包含惡意程式碼的 USB 裝置可能會不小心開機至危害系統，或多個 USB 磁碟機無法插入會導致開機衝突。 基於這個理由，預設組態會有 Windows To Go 啟動選項依預設停用。 此外，系統管理員權限，才能設定 Windows To Go 啟動選項。 如果您啟用 Windows To Go 啟動選項使用 pwlauncher 命令列工具或**變更 Windows To Go 啟動選項**電腦會嘗試從任何之前插入電腦的 USB 裝置開機應用程式已啟動。
 
 ## <a name="BKMK_examples"></a>範例
 

@@ -11,12 +11,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: e7c43a1b9173d347a3b6d6e1f8bd9127c62bd081
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2668f9fa21c8efbad455d82c7e110ff89b729187
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880219"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222874"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>建立 HYPER-V 虛擬機器的虛擬交換器
 
@@ -24,9 +24,9 @@ ms.locfileid: "59880219"
   
 虛擬交換器可讓建立與其他電腦通訊的 HYPER-V 主機上的虛擬機器。 當您第一次在 Windows Server 上安裝 HYPER-V 角色時，您可以建立虛擬交換器。 若要建立其他虛擬交換器，請使用 HYPER-V 管理員] 或 [Windows PowerShell。 若要深入了解虛擬交換器，請參閱[HYPER-V 虛擬交換器](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)。  
   
-虛擬機器網路可以是一個複雜的主題。 而且有數種新的虛擬交換器功能，您可能想要使用 like [Switch Embedded Teaming (SET)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#bkmk_sswitchembedded)。 但基本的網路功能是很容易進行。 本主題涵蓋的內容，讓您可以在 HYPER-V 中建立網路的虛擬機器。 若要深入了解您可以設定您的網路基礎結構，檢閱[網路](../../../networking/Networking.md)文件。   
+虛擬機器網路可以是一個複雜的主題。 而且有數種新的虛擬交換器功能，您可能想要使用 like [Switch Embedded Teaming (SET)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set)。 但基本的網路功能是很容易進行。 本主題涵蓋的內容，讓您可以在 HYPER-V 中建立網路的虛擬機器。 若要深入了解您可以設定您的網路基礎結構，檢閱[網路](../../../networking/Networking.md)文件。   
   
-## <a name="BKMK_HyperVMan"></a>使用 HYPER-V 管理員建立虛擬交換器  
+## <a name="create-a-virtual-switch-by-using-hyper-v-manager"></a>使用 HYPER-V 管理員建立虛擬交換器  
   
 1.  開啟 [HYPER-V 管理員] 中，選取 HYPER-V 主機電腦的名稱。  
   
@@ -59,13 +59,13 @@ ms.locfileid: "59880219"
   
     ![顯示的 VLAN ID 選項的螢幕擷取畫面](../media/Hyper-V-NewSwitch-VLAN.png)  
   
-8.  按一下 [確定] 。  
+8.  按一下 [確定]  。  
   
 9. 按一下 [ **是**]。  
   
     ![會顯示 「 暫止的變更可能會中斷網路連線 」 訊息的螢幕擷取畫面](../media/Hyper-V-NewVSwitch-DisruptNetwork.png)  
   
-## <a name="BKMK_WPS"></a>使用 Windows PowerShell 建立虛擬交換器  
+## <a name="create-a-virtual-switch-by-using-windows-powershell"></a>使用 Windows PowerShell 建立虛擬交換器  
   
 1.  在 Windows 桌面上，按一下 \[開始\] 按鈕，然後輸入 **Windows PowerShell** 名稱的任何一部分。  
   
@@ -99,7 +99,7 @@ ms.locfileid: "59880219"
 
   
 ## <a name="next-step"></a>後續步驟  
-[在 HYPER-V 中建立虛擬機器](Create-a-virtual-machine-in-Hyper-V.md)  
+[在 Hyper-V 中建立虛擬機器](Create-a-virtual-machine-in-Hyper-V.md)  
   
 
 

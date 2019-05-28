@@ -8,12 +8,12 @@ author: cosmosdarwin
 ms.date: 09/07/2018
 Keywords: 儲存空間直接存取
 ms.localizationpriority: medium
-ms.openlocfilehash: 828a3265c9770bab0158067c4f856866d03e3d42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1916d2d5e4d1fc846bec19826437b200afe36f42
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870859"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772218"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>效能歷程記錄的儲存空間直接存取
 
@@ -153,7 +153,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 磁碟區是由儲存空間，會使用簡單的雙向鏡像或三向鏡像復原時，叢集中的節點數目而定。 修復磁碟機或伺服器故障，就像任何其他磁碟區中儲存空間直接存取之後。
 
-磁碟區會使用 ReFS，但不是叢集共用磁碟區 (CSV)，所以才會出現在 叢集群組擁有者節點上。 除了自動建立，沒有特別關於此磁碟區： 您可以看到它，瀏覽它、 調整其大小，或刪除它 （不建議）。 如果發生錯誤，請參閱[疑難排解](#troubleshooting)。 
+磁碟區會使用 ReFS，但不是叢集共用磁碟區 (CSV)，所以才會出現在 叢集群組擁有者節點上。 除了自動建立，沒有特別關於此磁碟區： 您可以看到它，瀏覽它、 調整其大小，或刪除它 （不建議）。 如果發生錯誤，請參閱[疑難排解](#troubleshooting)。
 
 ### <a name="object-discovery-and-data-collection"></a>物件探索和資料集合
 
@@ -163,7 +163,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="handling-measurement-gaps"></a>處理度量的間距
 
-當度量會合併成較不精細的系列跨越更多的時間，如中所述[時間表](#Timeframes)，遺漏資料的期間會排除。 比方說，如果伺服器已關閉 30 分鐘，然後執行 50%的 CPU 在接下來的 30 分鐘內，`ClusterNode.Cpu.Usage`平均時數會正確地記錄為 50%（不是 25%)。
+當度量會合併成較不精細的系列跨越更多的時間，如中所述[時間表](#timeframes)，遺漏資料的期間會排除。 比方說，如果伺服器已關閉 30 分鐘，然後執行 50%的 CPU 在接下來的 30 分鐘內，`ClusterNode.Cpu.Usage`平均時數會正確地記錄為 50%（不是 25%)。
 
 ### <a name="extensibility-and-customization"></a>擴充和自訂功能
 
@@ -206,7 +206,7 @@ Stop-ClusterPerformanceHistory -DeleteHistory
 
 ### <a name="the-cmdlet-doesnt-work"></a>此 cmdlet 無法運作
 
-之類的錯誤訊息 「*' 取得 ClusterPerf' 詞彙無法辨識為 cmdlet 名稱*」 表示此功能不是沒有或未安裝。 請確認您有 17692 或更新版本的 Windows Server Insider Preview 組建，您已安裝容錯移轉叢集，以及您執行儲存空間直接存取。
+之類的錯誤訊息 「 *' 取得 ClusterPerf' 詞彙無法辨識為 cmdlet 名稱*」 表示此功能不是沒有或未安裝。 請確認您有 17692 或更新版本的 Windows Server Insider Preview 組建，您已安裝容錯移轉叢集，以及您執行儲存空間直接存取。
 
    > [!NOTE]
    > 這項功能不提供 Windows Server 2016 或更早版本。

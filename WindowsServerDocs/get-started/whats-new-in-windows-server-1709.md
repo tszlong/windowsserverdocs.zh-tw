@@ -7,25 +7,25 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d63721dde484756e67b68bcff078257c130ae36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825489"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976732"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 的新功能
 
 >適用於：Windows Server (半年度管道)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要深入了解 Windows 的最新功能，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
    
 
 ## <a name="new-cadence-of-releases"></a>新的發行頻率
 
 從這個版本開始，您有兩個接收 Windows Server 功能更新的選項：
-- **長期維護通道 (LTSC)**:這是如往常般企業 5 年的主流支援及 5 年的延伸支援。 您可以選擇升級至下一輪每隔 2-3 年發行一次的 LTSC 版本，使用過去 20 年同樣的支援方式。
-- **半年通道 (SAC)**:這是軟體保證權益，而且完全支援在生產環境中。 不同之處在於，提供 18 個月的支援，並且每 6 個月會有新的版本。
+- **長期維護通道 (LTSC)** :這是如往常般企業 5 年的主流支援及 5 年的延伸支援。 您可以選擇升級至下一輪每隔 2-3 年發行一次的 LTSC 版本，使用過去 20 年同樣的支援方式。
+- **半年通道 (SAC)** :這是軟體保證權益，而且完全支援在生產環境中。 不同之處在於，提供 18 個月的支援，並且每 6 個月會有新的版本。
 
 下表提供發行通道的摘要說明。
 
@@ -36,7 +36,7 @@ ms.locfileid: "59825489"
 | 可用性  | 軟體保證或 Azure (雲端託管)  | 所有通道 |
 | 命名慣例  | Windows Server 版本 YYMM  | Windows Server YYYY |
 
-如需詳細資訊，請參閱 [Windows Server 半年通道概觀](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)。
+如需詳細資訊，請參閱 <<c0> [ 比較的服務通道](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)。
 
 ## <a name="application-containers-and-micro-services"></a>應用程式容器和微服務
 
@@ -70,7 +70,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 **容器儲存空間 – SMB 全域對應的持續性資料磁碟區**。 在 Windows Server 版本 1709，我們已新增對應 SMB 檔案共用至容器內部磁碟機代號的支援，這就稱為 SMB 全域對應。 這個對應的磁碟機接著便可供本機伺服器上的所有使用者存取，使資料磁碟區上的容器 I/O 可以透過掛接磁碟機到達基礎檔案共用。 如需詳細資訊，請參閱[叢集共用磁碟區 (CSV)、儲存空間直接存取 (S2D)、SMB 全域對應的相關容器儲存空間支援](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/)。
 
-**虛擬機器組態檔格式 (已更新)**。 已針對設定版本為 8.2 及更高版本的虛擬機器新增額外檔案 (.vmgs)。 VMGS 表示 VM 來賓狀態，而且是全新內部檔案，包含先前屬於 VM 執行階段狀態檔案一部分的裝置狀態。
+**虛擬機器組態檔格式 (已更新)** 。 已針對設定版本為 8.2 及更高版本的虛擬機器新增額外檔案 (.vmgs)。 VMGS 表示 VM 來賓狀態，而且是全新內部檔案，包含先前屬於 VM 執行階段狀態檔案一部分的裝置狀態。
 
 ## <a name="security-and-assurance"></a>安全性和保證
 
@@ -115,7 +115,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 **Windows 網路功能類似於 Linux kubernetes**:Windows 是現在與 Linux 同等就網路而言。 客戶可以在任何環境 (包括 Azure、內部部署) 中，以及在使用與 Linux 所支援相同網路基本項目和拓撲的協力廠商雲端堆疊上，部署混合作業系統 Kubernetes 叢集，而不需要任何工作負載或交換器擴充功能。
 
 **核心網路堆疊**:核心網路堆疊的數個功能都已獲得改善。 如需這些功能的詳細資訊，請參閱 [Windows 10 Creators Update 中的核心網路堆疊功能](https://blogs.technet.microsoft.com/networking/2017/07/13/core-network-stack-features-in-the-creators-update-for-windows-10/)。
-- **TCP 快速開啟 (TFO)**:已新增支援 TFO 來最佳化 TCP 3 向交握程序。 TFO 使用標準三向交握在第一次連線上建立安全 TFO Cookie。  與相同伺服器的後續連線會使用 TFO Cookie 而不使用三向交握，以便在沒有耗費來回行程時間的情況下進行連線。
+- **TCP 快速開啟 (TFO)** :已新增支援 TFO 來最佳化 TCP 3 向交握程序。 TFO 使用標準三向交握在第一次連線上建立安全 TFO Cookie。  與相同伺服器的後續連線會使用 TFO Cookie 而不使用三向交握，以便在沒有耗費來回行程時間的情況下進行連線。
 - **三次方**:實驗性 Windows 原生實作的三次方，TCP 壅塞控制演算法使用。 下列命令會分別啟用或停用 CUBIC。
 
     ```
@@ -140,7 +140,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
     ```
 
     - **ISATAP 和 6to4**:針對未來的淘汰過程 Creators Update 會有預設停用這些技術。
-- **死閘道偵測 (DGD)**:DGD 演算法自動連線期間轉換到另一個閘道無法連線至目前的閘道時。 在此版本中，已將演算法改善為定期重新探查網路環境。
+- **死閘道偵測 (DGD)** :DGD 演算法自動連線期間轉換到另一個閘道無法連線至目前的閘道時。 在此版本中，已將演算法改善為定期重新探查網路環境。
 - [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) 是 Windows PowerShell 中執行各種網路診斷的內建 Cmdlet。  在此版本中，我們增強此 Cmdlet，以提供有關路由選取及來源位址選取的詳細資訊。
 
 **軟體定義網路**
