@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: f80425b6f062040c51357353038fd07ff0a79ae6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0eb9265513d5ca18da1150d3be6752d364b7cd1a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812169"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192076"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>與 AD FS 1.x 互通
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 Active Directory Federation Services 之間的互通性\(AD FS\)在 Windows Server® 2012年和 AD FS 1。*x*，完成一或多個下列的工作，視您組織的需求而定：  
   

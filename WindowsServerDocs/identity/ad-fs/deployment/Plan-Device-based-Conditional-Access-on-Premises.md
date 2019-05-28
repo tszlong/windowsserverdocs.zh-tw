@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d878134824ea14a511ad59520d8f6522a14693b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffd7131f7f3772ab47b62c9755008fe3b1c4b274
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854239"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192074"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>規劃裝置型條件式存取內部部署
 
->適用於：Windows Server 2016
 
 本文件說明在混合式案例中，在內部部署目錄已連線到使用 Azure AD Connect 的 Azure AD 的裝置為基礎的條件式存取原則。     
 

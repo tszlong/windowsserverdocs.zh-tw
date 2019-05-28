@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d50d26c5c654e5c91b82f6f209e21f257221c12d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc0cbb461a48d04ddaa677d4de2369ef58fd5390
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843579"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190965"
 ---
 # <a name="provide-your-active-directory-users-access-to-the-applications-and-services-of-other-organizations"></a>為 Active Directory 使用者提供其他組織的應用程式與服務的存取權
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 這個 Active Directory Federation Services \(AD FS\)中的目標為基礎的部署目標[提供 Your Active Directory Users Access to Your Claims-aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)。  
   
@@ -47,4 +45,4 @@ ms.locfileid: "59843579"
 ![存取您的應用程式](media/50af4837-31e0-451f-a942-e705c2300065.gif)  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f0eef89e651585d48ba87d14bc782efa49087669
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ade2a8304288d102608c81a0c29155478e5a4b7b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824829"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189428"
 ---
 # <a name="create-a-rule-to-send-claims-using-a-custom-rule"></a>建立規則使用自訂規則傳送宣告
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 藉由使用**使用自訂規則傳送宣告**Active Directory Federation Services (AD FS) 中的範本，您可以建立自訂宣告規則的標準規則範本不符合需求的情況下您組織。 自訂宣告規則以宣告規則語言撰寫，並必須複製到**自訂規則**才能使用規則集內的文字方塊。 如需建構進階規則的語法資訊，請參閱 < [The Role of 宣告規則語言](../../ad-fs/technical-reference/The-Role-of-the-Claim-Rule-Language.md)。  
   
@@ -47,7 +46,7 @@ ms.locfileid: "59824829"
 6.  在 **設定規則**頁面的 **宣告規則名稱**，輸入此規則的顯示名稱。 底下**自訂規則**中，輸入或貼上您想為此規則的宣告規則語言語法。  
 ![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)     
 
-7.  按一下 **[完成]**。  
+7.  按一下 **[完成]** 。  
   
 8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。   
   
@@ -70,7 +69,7 @@ ms.locfileid: "59824829"
 6.  在 **設定規則**頁面的 **宣告規則名稱**，輸入此規則的顯示名稱。 底下**自訂規則**中，輸入或貼上您想為此規則的宣告規則語言語法。  
 ![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)     
 
-7.  按一下 **[完成]**。  
+7.  按一下 **[完成]** 。  
   
 8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。   
 
@@ -118,16 +117,16 @@ ms.locfileid: "59824829"
 6.  在 **設定規則**頁面的 **宣告規則名稱**，輸入此規則的顯示名稱。 底下**自訂規則**中，輸入或貼上您想為此規則的宣告規則語言語法。  
 ![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom2.PNG)     
 
-7.  按一下 **[完成]**。  
+7.  按一下 **[完成]** 。  
   
 8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：建立信賴憑證者信任宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[檢查清單：建立宣告規則的宣告提供者信任](https://technet.microsoft.com/library/ee913564.aspx)  
+[檢查清單：為宣告提供者信任建立宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

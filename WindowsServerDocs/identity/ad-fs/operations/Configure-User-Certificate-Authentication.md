@@ -9,16 +9,15 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d5c2d84c263517a4c81622ca02538796ccd9da71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d819ea036029fbe7cfde9ad5a445db6b2b42c96
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817499"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189704"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>設定使用者憑證驗證的 AD FS
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 AD FS 可設定為 x509 使用者憑證驗證，使用其中一個模式中所述[這篇文章](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)。 這項功能可以使用[與 Azure Active Directory](https://blogs.msdn.microsoft.com/samueld/2016/07/19/adfs-certauth-aad-o365/)或本身來啟用用戶端和裝置佈建與使用者憑證，以存取 AD FS 內部網路或外部網路的資源。
 
@@ -43,7 +42,7 @@ AD FS 可設定為 x509 使用者憑證驗證，使用其中一個模式中所�
 
 
 ## <a name="troubleshooting"></a>疑難排解
-- 如果憑證的驗證要求失敗與 HTTP 204 「 無內容檔案從 https://certauth.fs.contoso.com」 回應，確認根和中繼 CA 憑證已安裝，分別以受信任的根 CA 和憑證存放區上所有的中繼 CA同盟伺服器。
+- 如果憑證的驗證要求失敗與 HTTP 204 「 沒有內容，從 https:\//certauth.fs.contoso.com 」 回應，確認根和中繼 CA 憑證已安裝，分別以受信任的根 CA 和中繼 CA 憑證會儲存所有的同盟伺服器上。
 - 如果因不明原因而失敗的驗證憑證要求，將用戶端憑證匯出到.cer 檔案，然後執行命令 
 
 `certutil -f -urlfetch -verify certificatefilename.cer`

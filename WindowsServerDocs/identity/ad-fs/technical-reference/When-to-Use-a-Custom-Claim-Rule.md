@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b08622cd9eefa153e2fe8403fbe85077644182f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e566de4df2895dfa2ed1104f85c1429881ff5bbf
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813109"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188294"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="when-to-use-a-custom-claim-rule"></a>使用自訂宣告規則的時機
 您可以撰寫自訂宣告規則中 Active Directory Federation Services \(AD FS\)使用宣告規則語言，這是宣告發行引擎用來以程式設計方式產生、 轉換、 通過和篩選宣告。 藉由使用自訂規則，您可以透過比標準規則範本更複雜的邏輯來建立規則。 當您想要執行下列作業時，請考慮使用自訂規則：  
   

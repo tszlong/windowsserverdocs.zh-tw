@@ -9,23 +9,22 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 39c735e9dde0fd60c7eb9ccfe0af890bdc5a5950
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c8e72f1075b984506f9f992cd45cf853b50bddeb
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838319"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191916"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 
->適用於：Windows Server 2019，Windows Server 2016
 
 
-## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Windows Server 2012 R2 或 2016 AD FS 伺服器陣列升級至 Windows Server 2019 
+## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Windows Server 2012 R2 或 2016 AD FS 伺服器陣列升級至 Windows Server 2019
 下列文件將說明如何使用 WID 資料庫時，AD fs 的 Windows Server 2019 升級您的 AD FS 伺服器陣列。  
 
 ### <a name="ad-fs-farm-behavior-levels-fbl"></a>AD FS 伺服器陣列行為層級 (FBL)  
-在適用於 Windows Server 2016 AD FS 中，引進了伺服器陣列行為層級 (FBL)。 這是整個伺服陣列的設定會決定可以使用功能的 AD FS 伺服器陣列。 
+在適用於 Windows Server 2016 AD FS 中，引進了伺服器陣列行為層級 (FBL)。 這是整個伺服陣列的設定會決定可以使用功能的 AD FS 伺服器陣列。
 
 下表列出 FBL 值由 Windows Server 版本：
 | Windows Server 版本  | FBL | AD FS 設定資料庫名稱 |
@@ -59,7 +58,7 @@ AD FS 伺服器的更新版本可聯結至 AD FS 2012 R2 或 2016年伺服器陣
 
 ##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>若要升級您的 AD FS 伺服器陣列至 Windows Server 2019 伺服陣列行為層級  
 
-1.  使用伺服器管理員，在 Windows Server 2019 上安裝 Active Directory Federation Services 角色 
+1.  使用伺服器管理員，在 Windows Server 2019 上安裝 Active Directory Federation Services 角色
 
 2.  使用 AD FS 設定精靈，將新的 Windows Server 2019 伺服器加入現有的 AD FS 伺服器陣列。  
 
@@ -77,45 +76,56 @@ AD FS 伺服器的更新版本可聯結至 AD FS 2012 R2 或 2016年伺服器陣
 
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)  
 
-6.  每個 Web 應用程式 proxy，請重新設定 WAP 藉由在提升權限的視窗執行下列 PowerShell 命令：  
-```powershell
-$trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
-Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
-```
-
-7.  現在在 Windows Server 2016 的同盟伺服器上開啟 AD FS 管理。 請注意，現在所有的系統管理功能會出現，因為已移轉到此伺服器的主要角色。  
+6.  現在在 Windows Server 2016 的同盟伺服器上開啟 AD FS 管理。 請注意，現在所有的系統管理功能會出現，因為已移轉到此伺服器的主要角色。  
 
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)  
 
-8.  如果您要升級 AD FS 2012 R2 伺服器陣列至 2016年或 2019年，伺服器陣列升級時需要 AD 結構描述是至少層級 85。  若要升級的結構描述、 使用 「 Windows Server 2016 安裝媒體，開啟命令提示字元並瀏覽至 support\adprep 目錄。 執行下列命令：  `adprep /forestprep`
+7.  如果您要升級 AD FS 2012 R2 伺服器陣列至 2016年或 2019年，伺服器陣列升級時需要 AD 結構描述是至少層級 85。  若要升級的結構描述、 使用 「 Windows Server 2016 安裝媒體，開啟命令提示字元並瀏覽至 support\adprep 目錄。 執行下列命令：  `adprep /forestprep`
 
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)  
 
     完成後執行 `adprep/domainprep`
     >[!NOTE]
-    >然後再執行下一個步驟，請確定 Windows Server 為最新的設定從執行 Windows Update。 繼續此程序，直到不需要進一步更新。 
-    > 
-    
+    >然後再執行下一個步驟，請確定 Windows Server 為最新的設定從執行 Windows Update。 繼續此程序，直到不需要進一步更新。
+    >
+
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)  
 
-9. 現在在 Windows Server 2016 伺服器上開啟 PowerShell 並執行下列 cmdlet:
+8. 現在在 Windows Server 2016 伺服器上開啟 PowerShell 並執行下列 cmdlet:
     >[!NOTE]
     > 所有 2012 R2 的伺服器必須從伺服器陣列中都移除，才能執行下一個步驟。
- 
+
     `Invoke-AdfsFarmBehaviorLevelRaise`  
 
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)  
 
-10. 出現提示時，請輸入 Y。這會開始引發層級。 一旦完成後您成功地提出 FBL。  
+9. 出現提示時，請輸入 Y。這會開始引發層級。 一旦完成後您成功地提出 FBL。  
 
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)  
 
-11. 現在，如果您移至 AD FS 管理，您會看到已新增的更新版本的 AD FS 版本的新功能 
+10. 現在，如果您移至 AD FS 管理，您會看到已新增的更新版本的 AD FS 版本的新功能
 
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)  
 
-13. 同樣地，您可以使用 PowerShell cmdlt:`Get-AdfsFarmInformation`以顯示您目前的 FBL。  
+11. 同樣地，您可以使用 PowerShell cmdlt:`Get-AdfsFarmInformation`以顯示您目前的 FBL。  
 
     ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)  
-    
 
+12. 若要升級為最新的層級，每個 Web 應用程式 proxy，WAP 伺服器重新設定 WAP 藉由在提升權限的視窗執行下列 PowerShell 命令：  
+    ```powershell
+    $trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
+    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+    ```
+    從叢集移除舊的伺服器，並保留只的 WAP 伺服器執行最新的伺服器版本中，已藉由執行下列 Powershell 指令程式來重新設定上面。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -ConnectedServersName WAPServerName1, WAPServerName2
+    ```
+    藉由執行 Get WebApplicationProxyConfiguration commmandlet 檢查 WAP 組態。 ConnectedServersName 會反映來自上一個命令執行的伺服器。
+    ```powershell
+    Get-WebApplicationProxyConfiguration
+    ```
+    若要升級的 WAP 伺服器 ConfigurationVersion，執行下列 Powershell 命令。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
+    ```
+    這將會完成 WAP 伺服器的升級。

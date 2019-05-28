@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 6a7602cddcaee274d42213cd9365f6d1722dab79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5426ea929037e59d2105fb2b3b06d4ebfdb7a577
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852909"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192293"
 ---
 # <a name="configure-performance-monitoring"></a>設定效能監視
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
   
 ## <a name="bkmk_ConfigurePerfMon"></a>  
 AD FS 包含自己專屬的效能計數器，可協助您監視同盟伺服器與同盟伺服器 proxy 電腦的效能。 若要使用效能監視器來監視 AD FS 伺服器的效能，最好建立新的資料收集器集合，並將 AD FS 計數器新增至該檢視。 下列程序描述如何設定效能監視適用於 AD FS。  
@@ -31,7 +29,7 @@ AD FS 包含自己專屬的效能計數器，可協助您監視同盟伺服器�
   
     建立新的資料收集器集合工具精靈隨即出現。  
   
-3.  中**建立新的資料收集器集合工具**，如**名稱**輸入新的資料收集器集的名稱\(例如 < AD FS 效能 >\)，按一下 [**手動建立\(進階\)**，然後按一下**下一步]**。  
+3.  中**建立新的資料收集器集合工具**，如**名稱**輸入新的資料收集器集的名稱\(例如 < AD FS 效能 >\)，按一下 [**手動建立\(進階\)** ，然後按一下**下一步]** 。  
   
 4.  要包含的資料類型，請確認**建立資料記錄檔**已選取，然後按一下 針對以下資料類型的核取方塊：**效能計數器**，**事件追蹤資料**，**系統設定資訊**。  
   
@@ -41,9 +39,9 @@ AD FS 包含自己專屬的效能計數器，可協助您監視同盟伺服器�
   
 6.  當系統提示您新增事件追蹤提供者時，按一下**新增**，選取**AD FS 事件**並**AD FS 追蹤**從提供者清單。  
   
-7.  當系統會提示您新增監視，請按一下 [登錄機碼**下一步]**。  
+7.  當系統會提示您新增監視，請按一下 [登錄機碼**下一步]** 。  
   
-8.  當系統提示您指定要儲存的效能資料的位置時，您可以接受預設位置\( * *%systemdrive%\\PerfLogs\\管理員\\* * * < 資料\_行程\_設定 >*，然後按一下**下一步**。  
+8.  當系統提示您指定要儲存的效能資料的位置時，您可以接受預設位置\( * *%systemdrive%\\PerfLogs\\管理員\\* * * < 資料\_行程\_設定 >* ，然後按一下**下一步** 。  
   
 9. 當系統提示您建立資料收集器集合工具時，選取**儲存並關閉**，然後按一下**完成**。  
   

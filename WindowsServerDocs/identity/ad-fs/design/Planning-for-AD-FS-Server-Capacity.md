@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 484dd08edef85b91e777f8963f175a6172c75430
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0191c822ec068c5486a1b0d5da4c1ae2ee9e4d31
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847389"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191105"
 ---
 # <a name="planning-for-ad-fs-server-capacity"></a>規劃 AD FS 伺服器容量
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
   
 > [!NOTE]  
@@ -36,9 +35,9 @@ Active Directory Federation Services 的容量規劃\(AD FS\)程序會預測您�
   
 |建議的工作|描述|參考資料|  
 |--------------------|---------------|-------------|  
-|了解部署 AD FS 同盟伺服器和同盟伺服器 proxy 的需求|檢閱部署同盟伺服器和同盟伺服器 Proxy 所需的重要硬體和軟體需求。|[附錄 a:檢閱 AD FS 需求](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
+|了解部署 AD FS 同盟伺服器和同盟伺服器 proxy 的需求|檢閱部署同盟伺服器和同盟伺服器 Proxy 所需的重要硬體和軟體需求。|[附錄 A：檢閱 AD FS 需求](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
 |選取您將部署在組織中的 AD FS 設定資料庫類型|使用本節中的容量規劃資料之前，您必須先判斷哪一個 AD FS 設定資料庫的類型將會部署，可能是 Windows 內部資料庫\(WID\)或結構化查詢語言\(SQL\)資料庫。|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md);<br /><br />[AD FS 部署拓撲考量](AD-FS-Deployment-Topology-Considerations.md)|  
-|決定要和新的 AD FS 設定資料庫選項搭配使用的拓撲配置類型|一旦決定要在部署中使用的 AD FS 設定資料庫類型之後，就需要考量哪一個部署拓撲最符合您需要在實際執行環境內放置同盟伺服器和同盟伺服器 Proxy 的位置。|[判斷您的 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)|  
+|決定要和新的 AD FS 設定資料庫選項搭配使用的拓撲配置類型|一旦決定要在部署中使用的 AD FS 設定資料庫類型之後，就需要考量哪一個部署拓撲最符合您需要在實際執行環境內放置同盟伺服器和同盟伺服器 Proxy 的位置。|[決定您的 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)|  
 |了解主要 AD FS 相關容量規劃詞彙|檢閱常用容量規劃使用 AD FS 容量規劃討論的詞彙的定義。|請參閱本主題中標題為 [AD FS 容量規劃詞彙](Planning-for-AD-FS-Server-Capacity.md#bk_terms)的小節。|  
   
 在檢閱上表的內容之後，您現在可以完成下表中的必要工作。  
@@ -103,4 +102,4 @@ Active Directory Federation Services 的容量規劃\(AD FS\)程序會預測您�
 -   [規劃同盟伺服器 Proxy 容量](Planning-for-Federation-Server-Proxy-Capacity.md)  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

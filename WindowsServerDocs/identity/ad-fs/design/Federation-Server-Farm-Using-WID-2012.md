@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: bb4e5f88f3d62511b185a2b4317416169717c860
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0f3d8c70a41d512e7cd33282524bc401ce84600
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851399"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191427"
 ---
 # <a name="federation-server-farm-using-wid"></a>使用 WID 的同盟伺服器陣列
-
->適用於：Windows Server 2012
 
 Active Directory Federation Services 的預設拓撲\(AD FS\)同盟伺服器陣列，使用 Windows 內部資料庫\(WID\)，其中包含裝載最多五部同盟伺服器的程式組織 Federation Service。 在此拓撲中，AD FS 會使用 WID，做為存放區的所有同盟伺服器會加入該伺服陣列的 AD FS 組態資料庫。 伺服器陣列會複寫並維護伺服器陣列中每部伺服器之設定資料庫的 Federation Service 資料。  
   
@@ -75,4 +73,4 @@ NLB 主機可以使用用戶端將要求配置到個別的同盟伺服器到此 
 如需如何設定同盟伺服器使用的網路環境的詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)中 AD FS 設計指南。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

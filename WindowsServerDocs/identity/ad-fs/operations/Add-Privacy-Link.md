@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 81a453b45693b8222bdfc0231885b506fdfcd2fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3617335a179ab419982ab57343999ad4fcaf522a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836799"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190159"
 ---
 # <a name="add-privacy-link"></a>新增隱私權連結 
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 若要新增隱私權連結會顯示在登\-在頁面上，使用下列 Windows PowerShell cmdlet 和語法。  
 

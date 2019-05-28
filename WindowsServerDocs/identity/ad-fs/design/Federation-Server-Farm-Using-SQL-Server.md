@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e26b7cac971f472bc8b5e48e3dc8cd2592dc22ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 585d0195b096056ba769f4e9a08d5c4d2156b96a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814779"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191446"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>使用 SQL Server 的同盟伺服器陣列
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 Active Directory Federation Services 使用此拓撲\(AD FS\)不同於使用 Windows 內部資料庫的同盟伺服器陣列\(WID\)部署拓撲中，它不會複寫到資料伺服器陣列中每部同盟伺服器。 相反地，伺服器陣列中的所有同盟伺服器可以讀取，並將資料寫入至儲存在執行 Microsoft SQL Server 位於公司網路中的伺服器的通用資料庫。  
   
@@ -163,6 +161,6 @@ AD FS 的 SQL Server 伺服器陣列節點的觀點來看，從 AlwaysOn 可用�
   
 ## <a name="see-also"></a>另請參閱  
 [規劃您的 AD FS 部署拓撲](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Windows Server 2012 R2 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

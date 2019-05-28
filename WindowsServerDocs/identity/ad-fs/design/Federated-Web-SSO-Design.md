@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b85f49ac0556bf9b3542a23514d7fcbf82d2d88e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f7454279f234f65136b9fe6649a6e96ea53e5d51
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865139"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191514"
 ---
 # <a name="federated-web-sso-design"></a>同盟網頁 SSO 設計
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 同盟網頁單一\-登\-上\(SSO\) Active Directory Federation Services 中的設計\(AD FS\)牽涉到安全的通訊，跨越多個防火牆、 周邊網路和名稱\-解析伺服器 — 除了整個網際網路路由基礎結構。  
   
@@ -37,15 +35,15 @@ ms.locfileid: "59865139"
   
 在此範例中，Fabrikam 是身分識別或帳戶提供者。 同盟網頁 SSO 設計的 Fabrikam 部分會使用下列的 AD FS 部署目標：  
   
--   [您 Active Directory 使用者提供存取權的應用程式和其他組織的服務](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)  
+-   [為 Active Directory 使用者提供其他組織的應用程式與服務的存取權](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)  
   
 Contoso 是資源提供者。 同盟網頁 SSO 設計的 Contoso 部分會達成下列的 AD FS 部署目標：  
   
--   [提供使用者在另一個組織存取您宣告感知應用程式和服務](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
+-   [為其他組織的使用者提供您的宣告感知應用程式與服務的存取權](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
--   [提供您的 Active Directory 使用者存取您的宣告感知應用程式和服務](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
+-   [為 Active Directory 使用者提供宣告感知應用程式與服務的存取權](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
 如需您可用來規劃和部署同盟網頁 SSO 設計的詳細工作的清單，請參閱[檢查清單：實作同盟的網頁 SSO 設計](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

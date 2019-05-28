@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2a89bab2fd1af1a1d7234da29f2025b4b12d6774
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b01e2ae567155cd3d53d6d7972bfd0b9ec0cf51b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861799"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192276"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>為電腦設定同盟伺服器 Proxy 角色
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 電腦設定所需的憑證，並已安裝 Federation Service Proxy 角色服務之後，您就能夠設定電腦成為同盟伺服器 proxy。 您可以使用下列程序，讓電腦以同盟伺服器 Proxy 角色運作。  
   
@@ -37,19 +35,19 @@ ms.locfileid: "59861799"
   
     -   隨時安裝精靈完成，請開啟 Windows 檔案總管後，瀏覽至**c:\\Windows\\ADFS**資料夾，，然後按兩下\-按一下**FspConfigWizard.exe**.  
   
-2.  另一種方式是啟動該精靈，然後按一下 [歡迎] 頁面上的 [下一步]。  
+2.  另一種方式是啟動該精靈，然後按一下 [歡迎]  頁面上的 [下一步]  。  
   
-3.  在 [指定 Federation Service 名稱] 頁面上，在 [Federation Service 名稱] 下輸入代表此電腦將以 Proxy 角色運作之 Federation Service 的名稱。  
+3.  在 [指定 Federation Service 名稱]  頁面上，在 [Federation Service 名稱]  下輸入代表此電腦將以 Proxy 角色運作之 Federation Service 的名稱。  
   
-4.  根據您的特定網路需求而定，判斷您是否需要使用 HTTP Proxy 伺服器來將要求轉送到 Federation Service。 若需要，請選取 [傳送要求給此 Federation Service 時使用 HTTP Proxy 伺服器] 核取方塊，在 [HTTP Proxy 伺服器位址] 下輸入 Proxy 伺服器的位址，按一下 [測試連線] 以檢查連線功能，然後按一下 [下一步]。  
+4.  根據您的特定網路需求而定，判斷您是否需要使用 HTTP Proxy 伺服器來將要求轉送到 Federation Service。 若需要，請選取 [傳送要求給此 Federation Service 時使用 HTTP Proxy 伺服器]  核取方塊，在 [HTTP Proxy 伺服器位址]  下輸入 Proxy 伺服器的位址，按一下 [測試連線]  以檢查連線功能，然後按一下 [下一步]  。  
   
 5.  當您收到提示時，請指定在此同盟伺服器 Proxy 與 Federation Service 之間建立信任關係時所需的憑證。  
   
     根據預設，只有同盟服務或本機內建的成員所使用的服務帳戶\\Administrators 群組可以授權同盟伺服器 proxy。  
   
-6.  在 [準備套用設定] 頁面上，檢閱詳細資料。 若設定正確，請按一下 [下一步] 開始使用這些  Proxy 設定來設定此電腦。  
+6.  在 [準備套用設定]  頁面上，檢閱詳細資料。 若設定正確，請按一下 [下一步]  開始使用這些  Proxy 設定來設定此電腦。  
   
-7.  在 [設定結果] 頁面上，檢閱結果。 當所有的組態步驟都完成後時，按一下**關閉**結束精靈。  
+7.  在 [設定結果]  頁面上，檢閱結果。 當所有的組態步驟都完成後時，按一下**關閉**結束精靈。  
   
     沒有任何 Microsoft Management Console \(MMC\)貼齊\-可用來管理同盟伺服器 proxys 中。 若要設定您組織中的每個同盟伺服器 proxys 的設定，請使用 Windows PowerShell cmdlet。  
   

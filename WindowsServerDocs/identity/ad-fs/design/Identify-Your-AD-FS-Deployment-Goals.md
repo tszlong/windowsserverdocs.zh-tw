@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f618add4c4803142b3bd7278908834a412f30999
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b881553431be873ed9883da67a7989527d7d288
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862569"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191273"
 ---
 # <a name="identify-your-ad-fs-deployment-goals"></a>識別您的 AD FS 部署目標
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 正確識別您的 Active Directory Federation Services \(AD FS\)部署目標是在 AD FS 設計專案成功不可或缺。 設定優先順序，並且可能是合併部署目標，使您可以設計和部署 AD FS 使用互動的方法。 您可以利用現有的、 記錄、 且預先定義的 AD FS 部署目標，與 AD FS 設計和開發有效的解決方案，為您的情況。  
   
@@ -93,6 +91,6 @@ ms.locfileid: "59862569"
 -   有一個以上的驗證提供者可用時的使用者驗證選項。  
   
 ## <a name="see-also"></a>另請參閱  
-[Windows Server 2012 R2 中 AD FS 設計指南](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Windows Server 2012 R2 中的 AD FS 設計指南](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ca9e53d7d98f3ae5e6b7b329e52d4979e8c10215
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1459cade5071374ca39d453b9915a68e4bcfe539
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831689"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192036"
 ---
 # <a name="planning-to-deploy-ad-fs"></a>計畫部署 AD FS
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 
 您收集有關您的環境的資訊，並在您決定在 Active Directory Federation Services 之後\(AD FS\)依照中的指導方針的設計[Windows Server 2012 中 AD FS 設計指南](https://technet.microsoft.com/library/dd807036.aspx)，您可以開始規劃組織的 AD FS 設計的部署。 完整的設計與本主題中的資訊，您就可以決定要執行部署組織中的 AD FS。  

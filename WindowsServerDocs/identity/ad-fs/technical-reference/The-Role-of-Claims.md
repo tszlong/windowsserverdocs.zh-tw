@@ -9,20 +9,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: df35348cb51a9021f4aaa2fc6516cb119bdb8b8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 542d7a24e29b52dd3fa0d7ea6a9b2d27fb620d8d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849429"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188499"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="the-role-of-claims"></a>宣告的角色
-宣告中\-型的識別模型宣告同盟程序中扮演著關鍵角色，它們是由其中的重要元件的所有 Web 結果\-判斷基礎的驗證和授權要求。 此模型可讓組織以標準化方式跨安全性與企業界限安全地投射數位身分識別與權限或「宣告」。  
+宣告中\-型的識別模型宣告同盟程序中扮演著關鍵角色，它們是由其中的重要元件的所有 Web 結果\-判斷基礎的驗證和授權要求。 此模型可讓組織以標準化方式跨安全性與企業界限安全地投射數位身分識別與權限或「宣告」  。  
   
 ## <a name="what-are-claims"></a>什麼是宣告？  
-最簡單的形式，在宣告是只要*陳述式* \(，例如名稱、 識別、 群組\)，提出有關使用者的主要用來授權存取宣告\-架構的應用程式位於網際網路上的任何位置。 每個聲明都對應到宣告中儲存的「值」。  
+最簡單的形式，在宣告是只要*陳述式* \(，例如名稱、 識別、 群組\)，提出有關使用者的主要用來授權存取宣告\-架構的應用程式位於網際網路上的任何位置。 每個聲明都對應到宣告中儲存的「值」  。  
   
 ### <a name="how-claims-are-sourced"></a>如何為宣告進行溯源  
 Active Directory Federation Services 中的 Federation Service \(AD FS\)定義同盟夥伴之間交換的宣告。 不過，在可以這樣做之前，它必須使用抓取的值或計算的值來填入宣告或為宣告進行溯源。 每個宣告值都代表使用者、群組或實體的值，而且能讓您以下列兩種方式之一進行溯源：  
@@ -36,7 +34,7 @@ Active Directory Federation Services 中的 Federation Service \(AD FS\)定義�
 ### <a name="how-claims-flow"></a>宣告的流程  
 其他實體依賴宣告 for Web 中執行授權工作的值為\-其裝載的應用程式。 這些合作對象指*信賴憑證者的合作對象*AD FS 管理嵌入式管理單元中\-中。 Federation Service 負責仲介許多不同實體之間的信任。 它旨在處理方向，從最初的宣告，也稱為組織宣告信任宣告交換*宣告提供者*AD FS 管理嵌入式管理單元中\-在中，信賴憑證者的合作對象。 接著，信賴憑證者會使用這些宣告來做出授權決策。  
   
-使用此程序的宣告傳遞流程稱為「宣告管線」。 宣告在宣告管線中的傳遞流程有三個步驟：  
+使用此程序的宣告傳遞流程稱為「宣告管線」  。 宣告在宣告管線中的傳遞流程有三個步驟：  
   
 1.  從宣告提供者接收的宣告會由宣告提供者信任上的接受轉換規則處理。 這些規則決定會接受來自宣告提供者的哪些宣告。  
   

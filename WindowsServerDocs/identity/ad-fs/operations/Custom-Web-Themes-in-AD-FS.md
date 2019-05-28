@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 300c9fda84285ddfc52a4f47ea0198deb6fd33ef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2bce52a5704706ad72799d00879e2f4e48f9d703
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882289"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189252"
 ---
 # <a name="custom-web-themes-in-ad-fs"></a>在 AD FS 中的自訂網頁佈景主題 
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 已出貨的佈景主題\-的\-\-] 方塊中，稱為 [預設值。 您可以匯出預設佈景主題，並利用它加快開始的過程。 您可以自訂包含配置的外觀和行為，方法是修改 .css 檔案、匯入並套用這個新佈景主題，然後就可以使用自訂的外觀和行為。 使用 .css 檔案也可讓您更輕鬆地使用 Web 設計工具。  
   

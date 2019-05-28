@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 50f50cd4e096b107a2b58ac05328ff8ed413f2dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: be20996d1df3898b8ff23422759e810a4b333b3d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860269"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189544"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>建立規則來傳遞或篩選傳入宣告
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 使用 「 傳遞或篩選傳入宣告 」 規則範本在 Active Directory Federation Services \(AD FS\)，您可以通過所有的連入宣告與所選的宣告類型。 您也可以篩選連入宣告的值與所選的宣告類型。 例如，您可以使用此規則範本來建立規則，它會傳送所有連入群組宣告。 您也可以使用這項規則，將使用者主體名稱\(UPN\)結尾的宣告@fabrikam。  
   
@@ -39,7 +37,7 @@ ms.locfileid: "59860269"
 4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  在上**設定規則**頁面**宣告規則名稱**中輸入此規則的顯示名稱**傳入宣告類型**在清單中，選取的宣告類型，然後再選取其中一個下列選項，視您組織的需求而定：  
@@ -70,7 +68,7 @@ ms.locfileid: "59860269"
 4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  在上**設定規則**頁面**宣告規則名稱**中輸入此規則的顯示名稱**傳入宣告類型**在清單中，選取的宣告類型，然後再選取其中一個下列選項，視您組織的需求而定：  
@@ -108,7 +106,7 @@ ms.locfileid: "59860269"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)    
 
 6.  在上**設定規則**頁面**宣告規則名稱**中輸入此規則的顯示名稱**傳入宣告類型**在清單中，選取的宣告類型，然後再選取其中一個下列選項，視您組織的需求而定：  

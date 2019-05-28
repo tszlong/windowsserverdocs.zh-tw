@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 32e60f2c2d9e4fced04061ace44882b792e1a3bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b781d6fe99864b13d6e7f8ab65f3a14d205c2aa6
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825649"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190801"
 ---
 # <a name="service-communications-certificates"></a>服務通訊憑證
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 同盟伺服器需要服務通訊憑證的使用案例中使用 WCF 訊息安全性。  
   

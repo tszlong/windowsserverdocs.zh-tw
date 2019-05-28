@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cddc5d890114dec7e0053b16701db6f03c3cbbdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c79524a011336d676fa2e80936e1254a8d2dd6b2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889849"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189686"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>設定內部網路表單型驗證不支援 WIA 的裝置
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 根據預設，Active Directory Federation Services (AD FS) 在 Windows Server 2012 R2 中使用任何應用程式內組織的內部網路 （內部網路） 發生的驗證要求中啟用 Windows 整合式驗證 (WIA)其驗證的瀏覽器。 比方說，這些可以是瀏覽器為基礎的應用程式，使用 WS-同盟或 SAML 通訊協定和豐富的應用程式使用 OAuth 通訊協定。 WIA 提供順暢的登入的應用程式的使用者，而不必手動輸入其認證。 不過，某些裝置和瀏覽器不支援 WIA 的而且從這些裝置的驗證要求失敗的結果。 此外，交涉到 NTLM 某些瀏覽器上的體驗並不理想。 建議的方法是針對這類裝置和瀏覽器的表單型驗證的遞補。
 

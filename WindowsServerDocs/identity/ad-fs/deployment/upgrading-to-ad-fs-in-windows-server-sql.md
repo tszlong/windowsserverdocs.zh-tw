@@ -9,16 +9,15 @@ ms.prod: windows-server-threshold
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 59b761e69da5b1c1e27fea71b32447b19d2b83c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8ada2ae5c9fcdb77f35200581848041f222ed7f3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812079"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191960"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>升級至 SQL server 的 Windows Server 2016 中的 AD FS
 
->適用於：Windows Server 2016
 
 
 ## <a name="moving-from-a-windows-server-2012-r2-ad-fs-farm-to-a-windows-server-2016-ad-fs-farm"></a>從 Windows Server 2012 R2 AD FS 伺服器陣列移至 Windows Server 2016 AD FS 伺服器陣列  
@@ -44,46 +43,46 @@ Windows Server 2016 AD FS 伺服器新增到 Windows Server 2012 R2 的伺服器
 
 以下架構圖說明用來驗證和記錄步驟，安裝程式。
 
-![Architecture](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png) 
+![Architecture](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
 
 
 #### <a name="join-the-windows-2016-ad-fs-server-to-the-ad-fs-farm"></a>AD FS 伺服器陣列中加入 Windows 2016 AD FS 伺服器
 
 1.  使用 Windows Server 2016 上的 伺服器管理員安裝 Active Directory Federation Services 角色  
 
-2.  使用 AD FS 設定精靈，將新的 Windows Server 2016 伺服器加入現有的 AD FS 伺服器陣列。  在 [**歡迎**畫面上，按一下**下一步]**。
+2.  使用 AD FS 設定精靈，將新的 Windows Server 2016 伺服器加入現有的 AD FS 伺服器陣列。  在 [**歡迎**畫面上，按一下**下一步]** 。
  ![加入伺服器陣列](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
 3.  上**連接到 Active Directory 網域服務**螢幕、 s**指定系統管理員帳戶**具有執行同盟服務設定，按 的權限**下一步**.
-4.  在 [**指定的伺服器陣列**畫面中，輸入 SQL server 和執行個體的名稱，然後按**下一步]**。
+4.  在 [**指定的伺服器陣列**畫面中，輸入 SQL server 和執行個體的名稱，然後按**下一步]** 。
 ![加入伺服器陣列](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
-5.  在 **指定 SSL 憑證**畫面上，指定的憑證並按一下 **下一步**。
+5.  在 **指定 SSL 憑證**畫面上，指定的憑證並按一下 **下一步** 。
 ![加入伺服器陣列](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
-6.  在 **指定服務帳戶**畫面上，指定服務帳戶並按一下 **下一步**。 
-7.  在 **檢閱選項**畫面上，檢閱選項並按一下 **下一步**。 
+6.  在 **指定服務帳戶**畫面上，指定服務帳戶並按一下 **下一步** 。
+7.  在 **檢閱選項**畫面上，檢閱選項並按一下 **下一步** 。
 8.  在 **必要條件檢查**畫面上，確認所有先決條件檢查通過，然後按一下**設定**。
 9.  在 **結果**畫面中，確定該伺服器已成功設定，然後按一下**關閉**。
- 
-   
+
+
 #### <a name="remove-the-windows-server-2012-r2-ad-fs-server"></a>移除 Windows Server 2012 R2 AD FS 伺服器
 
 >[!NOTE]
 >您不需要設定主要 AD FS 伺服器使用組 AdfsSyncProperties-角色時使用 SQL 資料庫。  這是因為所有節點被視為主要在此設定。
 
-1.  在 伺服器管理員使用 Windows Server 2012 R2 AD FS 伺服器上**移除角色及功能**下方**管理**。 
+1.  在 伺服器管理員使用 Windows Server 2012 R2 AD FS 伺服器上**移除角色及功能**下方**管理**。
 ![移除伺服器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
-2.  在 [在您開始前] 畫面上，按 [下一步]。
-3.  在 [**伺服器選取項目**畫面上，按一下**下一步]**。
-4.  在 **伺服器角色**畫面上，取消核取旁**Active Directory Federation Services** ，按一下 **下一步**。
+2.  在 [在您開始前]  畫面上，按 [下一步]  。
+3.  在 [**伺服器選取項目**畫面上，按一下**下一步]** 。
+4.  在 **伺服器角色**畫面上，取消核取旁**Active Directory Federation Services** ，按一下 **下一步** 。
 ![移除伺服器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png)
-5.  在 [**功能**畫面上，按一下**下一步]**。
+5.  在 [**功能**畫面上，按一下**下一步]** 。
 6.  在 **確認**畫面上，按一下**移除**。
 7.  完成之後，重新啟動伺服器。
-     
+
 #### <a name="raise-the-farm-behavior-level-fbl"></a>引發伺服器陣列行為層級 (FBL)
 在此步驟之前，您需要確保 forestprep 及 domainprep，具有 Active Directory 環境上執行，且 Active Directory 有 Windows Server 2016 結構描述。  這份文件開始使用 Windows 2016 的網域控制站，並不需要執行這些，因為 AD 安裝時執行它們。
 
 >[!NOTE]
->開始之前下列程序，請確定 Windows Server 2016 為最新的設定從執行 Windows Update。  繼續此程序，直到不需要進一步更新。 
+>開始之前下列程序，請確定 Windows Server 2016 為最新的設定從執行 Windows Update。  繼續此程序，直到不需要進一步更新。
 
 1. 現在在 Windows Server 2016 伺服器上開啟 PowerShell，並執行下列命令： **$cred = Get-credential**然後按 enter 鍵。
 2. 輸入 SQL Server 具有管理員權限的認證。
@@ -93,3 +92,24 @@ Windows Server 2016 AD FS 伺服器新增到 Windows Server 2012 R2 的伺服器
 3. 現在，如果您移至 AD FS 管理，您會看到已新增適用於 Windows Server 2016 中的 AD FS 的新節點  
 4. 同樣地，您可以使用 PowerShell cmdlet:若要顯示您目前的 FBL get AdfsFarmInformation。  
 ![完成更新](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
+
+#### <a name="upgrade-the-configuration-version-of-existing-wap-servers"></a>升級現有的 WAP 伺服器的設定版本
+1. 每個 Web 應用程式 proxy，請重新設定 WAP 藉由在提升權限的視窗執行下列 PowerShell 命令：  
+    ```powershell
+    $trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
+    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+    ```
+2. 從叢集移除舊的伺服器，並保留只的 WAP 伺服器執行最新的伺服器版本中，已藉由執行下列 Powershell 指令程式來重新設定上面。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -ConnectedServersName WAPServerName1, WAPServerName2
+    ```
+3. 藉由執行 Get WebApplicationProxyConfiguration commmandlet 檢查 WAP 組態。 ConnectedServersName 會反映來自上一個命令執行的伺服器。
+    ```powershell
+    Get-WebApplicationProxyConfiguration
+    ```
+4. 若要升級的 WAP 伺服器 ConfigurationVersion，執行下列 Powershell 命令。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
+    ```
+5. 請確認 ConfigurationVersion 已升級使用 Get WebApplicationProxyConfiguration Powershell 命令。
+    

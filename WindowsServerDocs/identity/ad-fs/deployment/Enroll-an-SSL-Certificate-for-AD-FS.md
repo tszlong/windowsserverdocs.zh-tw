@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 12f544ad0d037c4ae7a9789238186b7ded311bdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e80927f2670614d2949f4e67cc158319f05c5fa0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825239"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192149"
 ---
 # <a name="enroll-an-ssl-certificate-for-ad-fs"></a>註冊 AD FS 的 SSL 憑證
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 Active Directory Federation Services \(AD FS\)需要安全通訊端層憑證\(SSL\)同盟伺服器陣列中每部同盟伺服器上的伺服器驗證。 伺服陣列中每部同盟伺服器上，可以使用相同的憑證。 您必須準備好憑證和私密金鑰。 例如，如果 .pfx 檔案內有憑證和私密金鑰，您可以直接將該檔案匯入 Active Directory Federation Services 設定精靈。 此 SSL 憑證必須包含下列內容：  
   

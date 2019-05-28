@@ -9,27 +9,25 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: bf36f12803b8ba621f2249b53ad868fcd8f6c4a7
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855689"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188465"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="the-role-of-the-claim-rule-language"></a>宣告規則語言的角色
 Active Directory Federation Services (AD FS) 宣告規則語言做為系統管理的建置組塊，行為之傳入和傳出宣告，而宣告引擎做為宣告規則語言中的邏輯的處理引擎，定義自訂規則。 如需有關如何由宣告引擎處理所有規則，請參閱 < [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md)。  
   
 ## <a name="creating-custom-claim-rules-using-the-claim-rule-language"></a>使用宣告規則語言建立自訂宣告規則  
-AD FS 提供系統管理員下列選項來定義自訂規則，它們可以用來判斷身分識別宣告與宣告規則語言的行為。 您可以使用本主題中的宣告規則語言語法範例來建立自訂規則，以便列舉、加入、刪除和修改宣告以符合您的組織需求。 您可以在 [使用自訂宣告傳送宣告] 規則範本中鍵入宣告規則語言語法，以建立自訂的規則。  
+AD FS 提供系統管理員下列選項來定義自訂規則，它們可以用來判斷身分識別宣告與宣告規則語言的行為。 您可以使用本主題中的宣告規則語言語法範例來建立自訂規則，以便列舉、加入、刪除和修改宣告以符合您的組織需求。 您可以在 [使用自訂宣告傳送宣告]  規則範本中鍵入宣告規則語言語法，以建立自訂的規則。  
   
 規則會以分號分隔彼此。  
   
 如需使用自訂規則時機的詳細資訊，請參閱[使用自訂宣告規則的時機](When-to-Use-a-Custom-Claim-Rule.md)。  
   
 ## <a name="using-claim-rule-templates-to-learn-about-the-claim-rule-language-syntax"></a>使用宣告規則範本來了解宣告規則語言語法  
-AD FS 也會提供一組預先定義的宣告發佈和接受規則範本，可用來實作常見宣告規則的宣告。 在給定信任的 [編輯宣告規則] 對話方塊中，您可以建立預先定義的規則，並檢視組成該規則的宣告規則語言語法，方法是按一下該規則的 [檢視規則語言] 索引標籤。 使用本節的資訊和 [檢視規則語言] 技術可深入了解如何建構您自己的自訂規則。  
+AD FS 也會提供一組預先定義的宣告發佈和接受規則範本，可用來實作常見宣告規則的宣告。 在給定信任的 [編輯宣告規則]  對話方塊中，您可以建立預先定義的規則，並檢視組成該規則的宣告規則語言語法，方法是按一下該規則的 [檢視規則語言]  索引標籤。 使用本節的資訊和 [檢視規則語言]  技術可深入了解如何建構您自己的自訂規則。  
   
 如需詳細的宣告規則和宣告規則範本的詳細資訊，請參閱[規則的角色宣告](The-Role-of-Claim-Rules.md)。  
   
@@ -160,6 +158,6 @@ exists([issuer == "MSFT"])
 規則主體只能包含單一發佈陳述式。 如果不使用 Exists 函數來使用條件，則每當條件組件符合時，會執行一次規則主體。  
   
 ## <a name="additional-references"></a>其他參考資料  
-[建立規則，以使用自訂規則傳送宣告](https://technet.microsoft.com/library/dd807049.aspx)  
+[建立規則使用自訂規則傳送宣告](https://technet.microsoft.com/library/dd807049.aspx)  
   
 

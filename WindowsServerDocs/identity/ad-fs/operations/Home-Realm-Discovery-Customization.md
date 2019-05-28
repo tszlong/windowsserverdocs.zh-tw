@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1198d8b76f2ecdad728e2de6ce7a5c0d053f779f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e91306ecd8ef08dd6af9173ead314a39dd5d2eff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868929"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189126"
 ---
 # <a name="home-realm-discovery-customization"></a>主領域探索自訂
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 當 AD FS 用戶端第一次要求的資源時，資源同盟伺服器會具有領域用戶端的任何資訊。 資源同盟伺服器會回應至 AD FS 用戶端**用戶端領域探索**頁面上，其中使用者從清單中選取主領域。 清單值是由宣告提供者信任的顯示名稱屬性填入。 您可以使用下列 Windows PowerShell cmdlet 來修改和自訂 AD FS 主領域探索體驗。  
   

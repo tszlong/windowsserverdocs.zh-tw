@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e7c991cf87bc0e6914e158f0878bcadbede3c22
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91a0122198639bf75e9e43e9da9edf68dd0453d9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816229"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190685"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>建立同盟伺服器陣列的時機
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 請考慮在 Active Directory Federation Services 中建立同盟伺服器陣列\(AD FS\)當您有較大的 AD FS 部署，且您想要提供容錯、 負載\-平衡或延展性，讓您組織 Federation Service。 在相同的網路中建立兩個或多個同盟伺服器、 設定每個使用相同的 Federation Service，以及加入每一部伺服器的公開金鑰的語彙基元 act\-簽章憑證至 AD FS 管理嵌入式管理單元\-中建立同盟伺服器陣列。  
   
@@ -55,4 +53,4 @@ ms.locfileid: "59816229"
 |指向相同的 SQL Server 執行個體|如果 AD FS 設定資料庫會儲存在 SQL database 中，新的同盟伺服器必須指向相同的 SQL Server 執行個體，以便新的伺服器可以參與伺服器陣列可由伺服陣列中的其他同盟伺服器。|  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

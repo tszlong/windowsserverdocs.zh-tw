@@ -9,16 +9,16 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0ee22afd6fdec96ab69d915e4730bb834d2ab8ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9d6161666be89673cff6ef1a975d3205fa4b5c9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855519"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189094"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
 
->適用於：Windows Server 2012 R2
+
 
 消費性裝置數目與資訊存取需求的快速增加正在變更人們對其科技的看待方式。 今日對於資訊技術的持續使用與簡單的資訊存取方式，使得工作與居家生活的界線越來越模糊。 這些正在變動的界線會伴隨著一個信念技術選取和自訂以符合使用者的人物、 活動和排程該個人-應該延伸到工作地點。 為了配合讓個人消費性裝置連線到企業網路這種持續成長的需求，我們引進了下列價值主張：
 
@@ -54,11 +54,11 @@ ms.locfileid: "59855519"
 
 此解決方案指南會帶您完成下列逐步解說步驟：
 
-1.  [逐步解說：Windows 裝置加入工作地點](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [逐步解說：將 Windows 裝置加入工作地點網路](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [逐步解說：Ios 裝置加入工作地點](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [逐步解說：將 iOS 裝置加入工作地點網路](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [逐步解說：Android 裝置工作地點](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [逐步解說：將 Android 裝置加入工作場所網路](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>另請參閱
 [使用裝置註冊服務設定同盟伺服器](../deployment/configure-a-federation-server-with-device-registration-service.md)

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 46692653ba10558a9236bd321127591bc7c8a275
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2af0950e52d800202235bf674545f6c47e9cd88
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838379"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190777"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>搭配使用 AD DS 宣告與 AD FS
   
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
   
 您可以使用 Active Directory 網域服務，以啟用更豐富的同盟應用程式的存取控制\(AD DS\)\-發給使用者和裝置宣告，以及 Active Directory Federation Services \(AD FS\).  
   
@@ -80,4 +79,4 @@ ms.locfileid: "59838379"
 如需如何建立所需發出的 AD DS 宣告以搭配 AD FS 的宣告規則的詳細資訊，請參閱[建立規則來轉換傳入宣告](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,15 @@ ms.date: 01/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ef30df61c28eb8302c94cf756ba8c8a7b5849520
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 73ff3fc6df872edd29735ee96c0918144250d5f1
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850769"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190037"
 ---
 # <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS 登入頁面的進階自訂
 
->適用於：Windows Server 2016, Windows Server 2012 R2
   
 ## <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>進階自訂的 AD FS 登\-頁面中  
 Windows Server 2012 R2 中的 AD FS 提供內建\-中支援可用來自訂登\-體驗中。 對於大多數的這些案例中，內建\-在 Windows PowerShell cmdlet 都是所需。  建議您使用內建\-在 Windows PowerShell 命令，以自訂標準的項目適用於 AD FS 登入\-盡可能的經驗。  請參閱[AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)如需詳細資訊。  

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 05f1ea6830237813e6fd2bd6a172f467e8d81065
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0f8dca425f644952c36a289ec72651f6383e846
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839079"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192192"
 ---
 # <a name="deploying-a-federation-server-farm"></a>部署同盟伺服器陣列
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 若要部署同盟伺服器陣列，請依序完成此檢查清單中的工作。 當參考連結將您導向到觀念性主題時，請在檢閱觀念性主題之後返回此檢查清單，然後再繼續此檢查清單中其餘的工作。  
   

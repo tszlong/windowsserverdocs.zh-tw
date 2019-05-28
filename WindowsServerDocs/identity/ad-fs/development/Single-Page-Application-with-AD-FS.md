@@ -1,5 +1,5 @@
 ---
-title: 建置使用 OAuth 和 ADAL 的單一頁面 web 應用程式。使用 AD FS 2016 JS
+title: 建置使用 OAuth 和 ADAL 的單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
 description: 逐步解說中提供對 AD FS 進行驗證的指示，使用 ADAL for JavaScript 保護 AngularJS 架構的單一頁面應用程式
 author: billmath
 ms.author: billmath
@@ -8,16 +8,14 @@ ms.date: 06/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 78ab9f5d7c3e75650a4efb171d3b9281c56c63d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1292c7e6cd1dec6926516880c34fe60fb97a9ec8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865299"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190496"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016"></a>建置使用 OAuth 和 ADAL 的單一頁面 web 應用程式。使用 AD FS 2016 JS
-
->適用於：Windows Server 2016
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>建置使用 OAuth 和 ADAL 的單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
 
 本逐步解說會提供指示，對 AD FS 保護 AngularJS javascript 中使用 ADAL 進行驗證以單一頁面應用程式，使用 ASP.NET Web API 後端實作。
 
@@ -157,7 +155,7 @@ ms.locfileid: "59865299"
 ## <a name="running-the-solution"></a>執行解決方案
 清除方案，重新建置方案並予以執行。 如果您想要查看其詳細的追蹤，請啟動 Fiddler，並啟用 HTTPS 解密。
 
-瀏覽器將會載入的 SPA，您會看到下列畫面：
+瀏覽器 （使用 Chrome 瀏覽器） 會載入的 SPA，您會看到下列畫面：
 
 ![註冊用戶端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 

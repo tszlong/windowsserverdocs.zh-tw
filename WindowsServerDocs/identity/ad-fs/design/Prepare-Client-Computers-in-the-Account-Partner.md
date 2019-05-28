@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c5bdcb0a80b15a1905109229ddd20ee642a8dd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3a746ec003cf312ffe0b9804f84a55c98aa8089
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868519"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190986"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>在帳戶夥伴中準備用戶端電腦
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 最簡單的方式，讓系統管理員帳戶中合作夥伴組織準備用戶端電腦存取 Active Directory Federation Services \(AD FS\)同盟應用程式是使用群組原則。 群組原則提供便利的方式，讓您將同盟所需的特定憑證和設定，推入到將用來存取同盟應用程式的所有用戶端電腦。  
   
@@ -34,4 +32,4 @@ ms.locfileid: "59868519"
   
 
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

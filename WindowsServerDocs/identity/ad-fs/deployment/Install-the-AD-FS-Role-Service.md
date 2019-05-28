@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9851134d1ad73092ee44c34c99bc2d873d20ca07
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffa9b20d4d7b5c84b0e29ac446b8aa6f3a932850
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831169"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192120"
 ---
 # <a name="install-the-ad-fs-role-service"></a>安裝 AD FS 角色服務
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 您可以使用下列程序在現有的同盟伺服器陣列中執行 Windows Server 2012 R2 同盟伺服器陣列中第一個同盟伺服器或同盟伺服器的電腦上安裝 AD FS 角色服務。  
   
@@ -26,23 +24,23 @@ ms.locfileid: "59831169"
   
 ### <a name="to-install-the-ad-fs-server-role-via-the-add-roles-and-features-wizard"></a>若要安裝 AD FS 伺服器角色，透過新增角色及功能精靈  
   
-1.  開啟伺服器管理員。 若要開啟 [伺服器管理員]，按一下**伺服器管理員**上**開始**畫面上，或**伺服器管理員**桌面上工作列中。 在 [儀表板] 頁面上 [歡迎使用] 磚的 [快速入門] 索引標籤中，按一下 [新增角色及功能]。 或者，您可以按一下 [管理] 功能表中的 [新增角色及功能]。  
+1.  開啟伺服器管理員。 若要開啟 [伺服器管理員]，按一下**伺服器管理員**上**開始**畫面上，或**伺服器管理員**桌面上工作列中。 在 [儀表板]  頁面上 [歡迎使用]  磚的 [快速入門]  索引標籤中，按一下 [新增角色及功能]  。 或者，您可以按一下 [管理]  功能表中的 [新增角色及功能]  。  
   
-2.  在 [在您開始前]  頁面上，按一下 [下一步] 。  
+2.  在 [在您開始前]  頁面上，按一下 [下一步]  。  
   
-3.  在上**選取安裝類型**頁面上，按一下**角色\-型或功能型\-基礎安裝**，然後按一下**下一步**。  
+3.  在上**選取安裝類型**頁面上，按一下**角色\-型或功能型\-基礎安裝**，然後按一下**下一步** 。  
   
-4.  在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，確認已選取目標電腦，然後按一下 [下一步]。  
+4.  在 [選取目的地伺服器]  頁面上，按一下 [從伺服器集區選取伺服器]  ，確認已選取目標電腦，然後按一下 [下一步]  。  
   
-5.  在 [選取伺服器角色]  頁面上，按一下 [Active Directory Federation Services] ，然後按一下 [下一步] 。  
+5.  在 [選取伺服器角色]  頁面上，按一下 [Active Directory Federation Services]  ，然後按一下 [下一步]  。  
   
-6.  在 [選取功能] 頁面上，按 [下一步]。 所需的必要條件是您預先選取。 您沒有選取任何其他功能。  
+6.  在 [選取功能]  頁面上，按 [下一步]  。 所需的必要條件是您預先選取。 您沒有選取任何其他功能。  
   
-7.  在 [ **Active Directory Federation Service \(AD FS\)** 頁面上，按一下**下一步]**。  
+7.  在 [ **Active Directory Federation Service \(AD FS\)** 頁面上，按一下**下一步]** 。  
   
 8.  在確認資訊之後**確認安裝選項**頁面上，按一下**安裝**。  
   
-9. 在 [安裝進度] 頁面上，確認每個項目都已正確安裝，然後按一下 [關閉]。  
+9. 在 [安裝進度]  頁面上，確認每個項目都已正確安裝，然後按一下 [關閉]  。  
   
 ### <a name="to-install-the-ad-fs-server-role-via-windows-powershell"></a>若要安裝 AD FS 伺服器角色，透過 Windows PowerShell  
   

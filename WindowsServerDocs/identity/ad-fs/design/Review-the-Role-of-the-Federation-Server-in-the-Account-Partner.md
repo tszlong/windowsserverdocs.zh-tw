@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0914d32e8f24d5e7db0a25c733342c1bde3e0329
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5bc304277b872bd9b99b79b84694dd0cb1eb73ba
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835129"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190879"
 ---
 # <a name="review-the-role-of-the-federation-server-in-the-account-partner"></a>檢閱帳戶夥伴中的同盟伺服器角色
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 同盟伺服器在 Active Directory Federation Services \(AD FS\)做為安全性權杖簽發者。 同盟伺服器產生宣告式帳戶位於區域屬性的值存放區並將其封裝到安全性權杖，以便使用者可以順暢地存取 Web\-瀏覽器\-架構的應用程式\(使用單一登\-上\(SSO\) \)資源夥伴組織中所裝載。  
   
@@ -31,4 +29,4 @@ ms.locfileid: "59835129"
 > 您可以設定帳戶夥伴組織中的同盟伺服器電腦之前，您必須先將電腦加入至其中的同盟伺服器將用來驗證來自該樹系的使用者的 Active Directory 樹系中任何網域。 如需詳細資訊，請參閱[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bdfb086c8177e72c074ac5b5b1a38aac49c4082c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e28d050a9aa40c015af16a665e90535cb810b4ff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886749"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192326"
 ---
 # <a name="configure-client-computers-to-trust-the-account-federation-server"></a>設定用戶端電腦信任帳戶同盟伺服器
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 讓用戶端電腦可以成功地存取同盟應用程式使用 Active Directory Federation Services \(AD FS\)，您必須先設定 Internet Explorer 設定每個用戶端電腦上，讓瀏覽器信任帳戶同盟伺服器。 您可以手動或透過群組原則，根據您的系統管理喜好設定，藉由完成下列程序的其中一個。  
   
@@ -37,7 +35,7 @@ ms.locfileid: "59886749"
   
 4.  按一下 **進階**，然後在**將這個網站新增到區域**，輸入完整網域名稱系統\(DNS\)帳戶同盟伺服器的名稱\(比方說，https:\/\/fs1.fabrikam.com\)，然後按一下**新增**。  
   
-5.  按 [確定] 三次。  
+5.  按 [確定]  三次。  
   
 ## <a name="configuring-internet-explorer-settings-by-using-grouppolicy"></a>使用群組原則來設定 Internet Explorer 設定  
 大部分的部署，我們建議您若要將適當的 Internet Explorer 設定推送到每部用戶端電腦使用群組原則。  

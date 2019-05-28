@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e2ad7d1467abd6d69077b515b8c69a65f7e70f19
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c399467a8bb70e723a86618aa37fc54425f4e7d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865589"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189054"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>使用條件式存取控制管理風險
 
->適用於：Windows Server 2012 R2
+
 
 
 -   [AD FS 中的重要概念-條件式存取控制](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
@@ -32,9 +32,9 @@ AD FS 中的存取控制透過發行授權宣告規則，用來發出許可或�
 
 |規則選項|規則邏輯|
 |---------------|--------------|
-|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」  且值等於「任何值」 ，則會發行值等於「允許」 |
-|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」且值等於「指定的宣告值」，則會發行值等於「允許」的宣告|
-|拒絕具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」 ，則會發行值等於「拒絕」 |
+|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」  且值等於「任何值」  ，則會發行值等於「允許」 |
+|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」  ，則會發行值等於「允許」  的宣告|
+|拒絕具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」  ，則會發行值等於「拒絕」 |
 
 如需有關這些規則選項和邏輯的詳細資訊，請參閱 [When to Use an Authorization Claim Rule](https://technet.microsoft.com/library/ee913560.aspx)。
 
@@ -106,7 +106,7 @@ Windows Server 2012 r2 中的 AD FS 中的條件式存取控制提供下列優�
 |主體別名|憑證的其中一個替代名稱。|
 |序號|憑證的序號。|
 |簽章演算法|建立憑證簽章所用的演算法。|
-|主體|來自憑證的主體。|
+|Subject|來自憑證的主體。|
 |主體金鑰識別碼|憑證的主體金鑰識別碼。|
 |主體名稱|來自憑證的主體辨別名稱。|
 |V2 範本名稱|發行或續約憑證時所用的版本 2 憑證範本名稱。 這是 Microsoft 特定的值。|

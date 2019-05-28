@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e4d463f5f25fe85dc95d767c9c75b722e60b012
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b5aa22ad99529d99e2d7381a434916e8e749f185
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852029"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188759"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 中的 AD FS 自訂
 
->適用於：Windows Server 2016
 
 回應意見反應與組織使用 AD FS，在中，我們已新增額外的工具，來自訂使用者的登入 AD FS 保護的個別應用程式的體驗。  
 現在除了指定每個應用程式 web 內容，例如描述文字和連結，您可以指定每個應用程式的整個網頁佈景主題。  這包括標誌、 圖例、 樣式表或整個 onload.js 檔案。  

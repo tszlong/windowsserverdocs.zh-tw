@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4bde30f694c6490962edaa0c3fe1543e74ba7fd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9cc40920d366c973ace06a0b6d438a1c2d84b03e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842979"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190506"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>放置同盟伺服器 Proxy 的位置
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 您可以將 Active Directory Federation Services \(AD FS\)同盟伺服器 proxy 在周邊網路中提供一個對抗可能來自網際網路的惡意使用者的保護層。 同盟伺服器 proxy 非常適合於周邊網路環境，因為它們沒有用來建立權杖之私用金鑰的存取權。 不過，同盟伺服器 proxy 可以有效率地路由傳送連入要求已獲授權可以產生這些權杖的同盟伺服器。  
   
@@ -53,4 +51,4 @@ ms.locfileid: "59842979"
 > 同盟伺服器或同盟伺服器 proxy 需要連線經過 ssl 保護安全性權杖的內容。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

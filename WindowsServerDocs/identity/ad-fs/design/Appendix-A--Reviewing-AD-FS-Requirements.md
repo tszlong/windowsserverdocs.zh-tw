@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d5cfb5de77843eebfc152b9c79ac55bab1fa7727
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e90df713f08dd387a2438b34839d16efe6e470f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818169"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191689"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>附錄 A：檢閱 AD FS 需求
-
->適用於：Windows Server 2012
 
 使您的 Active Directory Federation Services (AD FS) 部署中的公司夥伴可以順利進行共同作業，您必須先確定您的公司網路基礎結構已設定為帳戶支援 AD FS 需求，命名解析及憑證。 AD FS 具有下列類型的需求：  
   
@@ -182,4 +180,4 @@ AD FS 同盟伺服器 Proxy 角色讓使用者能夠從外部使用 SSL 用戶�
 若要在某些情況下支援特定的驗證強度需求，也能夠設定 AD FS，以建立宣告來指出使用者已通過驗證。 信賴憑證者接著可以使用此宣告來做出授權決定。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

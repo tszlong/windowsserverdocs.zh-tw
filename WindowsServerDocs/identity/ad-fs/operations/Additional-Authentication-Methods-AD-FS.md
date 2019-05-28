@@ -8,16 +8,15 @@ ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 68cd67dc14d3407985579a49e2f8603634fafdb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0d5754a4622df9ca26a80bd4e32c355dda0f684
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824429"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190059"
 ---
-# <a name="configure-3rd-party-authenticaiton-providers-as-primary-authentication-in-ad-fs-2019"></a>將第 3 方驗證提供者設定為 ad FS 2019 的主要驗證
+# <a name="configure-3rd-party-authentication-providers-as-primary-authentication-in-ad-fs-2019"></a>將第 3 方驗證提供者設定為 ad FS 2019 的主要驗證
 
->適用於：Windows Server 2019
 
 組織會遇到試圖暴力密碼破解攻擊、 入侵，或否則鎖定使用者帳戶，藉由傳送密碼型驗證要求。  為了協助保護組織免於遭到入侵，AD FS 引進了功能，例如外部網路的 「 智慧 」 鎖定和封鎖的 IP 位址。  
 

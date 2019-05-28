@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 265daf3acb9632aa92f85962abc44a6a9ea8dfed
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b2e09addbdc192bc6ce93a4402e6a6e61873ad56
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864039"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192359"
 ---
 # <a name="checklist-implementing-a-web-sso-design"></a>檢查清單：實作網頁 SSO 設計
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 此父檢查清單包含跨\-參照有關 Web 單一的重要概念的連結\-號\-上\(SSO\)設計 Active Directory Federation Services \(AD FS\). 它也包含次檢查清單連結，其中的資訊可協助您完成實作此設計所需執行的工作。  
   

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3300c16be6d516d7ec0bf4d0c3a025e59e6126b6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 06cc4bd37905f6bb7afbc513ffce216104654aba
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834519"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191476"
 ---
 # <a name="determine-your-ad-fs-deployment-topology"></a>決定您的 AD FS 部署拓撲
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 規劃部署的 Active Directory Federation Services 的第一個步驟\(AD FS\)是要判斷正確的部署拓撲以符合的單一登\-上\(SSO\)需要的程式組織。 在本節中的主題描述您可以使用 AD FS 使用的各種部署拓撲。 其中也會說明與每個部署拓撲相關聯的優點與限制，讓您能夠針對特定的商業需求選取最適當的拓撲。  
   
@@ -45,5 +43,5 @@ ms.locfileid: "59834519"
 您完成選取您的 AD FS 部署拓撲之後，我們建議您檢閱本主題[AD FS 伺服器容量規劃](Planning-for-AD-FS-Server-Capacity.md)來判斷您要部署到支援此拓撲的伺服器建議的數目。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

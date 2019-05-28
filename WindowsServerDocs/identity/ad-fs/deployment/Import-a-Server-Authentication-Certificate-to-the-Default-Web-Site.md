@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7bc890c744de5cd86d4e8b0418e75512518f656c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da91a3e8c34c86f7fd03ca875b3800fdb6001750
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880939"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192107"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>將伺服器驗證憑證匯入預設的網站中
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 您從憑證授權單位取得伺服器驗證憑證之後\(CA\)，您必須手動安裝該憑證預設網站上的每個同盟伺服器或伺服器陣列中的同盟伺服器 proxy。  
   
@@ -35,17 +33,17 @@ ms.locfileid: "59880939"
   
 1.  在 **開始**畫面上，輸入**Internet Information Services \(IIS\) Manager**，然後按 ENTER 鍵。  
   
-2.  在主控台樹狀目錄中，按一下 [ComputerName]。  
+2.  在主控台樹狀目錄中，按一下 [ComputerName]  。  
   
 3.  在中央窗格中，按兩下\-按一下 **伺服器憑證**。  
   
-4.  在 [動作] 窗格中，按一下 [匯入]。  
+4.  在 [動作]  窗格中，按一下 [匯入]  。  
   
 5.  在 **匯入憑證** 對話方塊中，按一下  **...** 按鈕。  
   
-6.  瀏覽到 pfx 憑證檔案的位置並選取該檔案，然後按一下 [開啟]。  
+6.  瀏覽到 pfx 憑證檔案的位置並選取該檔案，然後按一下 [開啟]  。  
   
-7.  輸入該憑證的密碼，然後按一下 [確定]。  
+7.  輸入該憑證的密碼，然後按一下 [確定]  。  
   
 ## <a name="additional-references"></a>其他參考資料  
 [檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)  

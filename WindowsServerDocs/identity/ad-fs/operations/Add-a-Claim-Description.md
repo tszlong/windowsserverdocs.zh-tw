@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0e388ef656d3b690da62b077cb9f9e678a771e64
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 454d261aa520778a6129ac9809f53894937b036a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851429"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190137"
 ---
 # <a name="add-a-claim-description"></a>新增宣告描述
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 在帳戶夥伴組織，系統管理員會建立宣告來代表使用者的群組或角色的成員資格，或代表使用者，例如，使用者的員工識別碼有關的一些資料。
 
@@ -49,7 +48,7 @@ ms.locfileid: "59851429"
     - 若要發行此宣告，讓合作夥伴知道此伺服器可以接受此宣告，請按一下**同盟中繼資料中發行此宣告為可接受此 Federation Service 的宣告型別**。
     - 若要發行此宣告，讓合作夥伴知道此伺服器可以發出此宣告，請按一下**同盟中繼資料中發行此宣告為此同盟服務可傳送的宣告型別**。
 
-8.  按一下 [確定] 。
+8.  按一下 [確定]  。
 
 ![新增宣告描述](media\Add-a-Claim-Description\claimdesc2.png)
 

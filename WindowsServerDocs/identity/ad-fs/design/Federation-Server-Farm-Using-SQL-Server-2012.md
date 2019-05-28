@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a0fff975b9cb278e59686323d2bd72e641597573
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66c8bae2fbccca2bf618e46ffd3ccc05cb52f911
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863949"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191501"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>使用 SQL Server 的同盟伺服器陣列
-
->適用於：Windows Server 2012
 
 Active Directory Federation Services 使用此拓撲\(AD FS\)不同於使用 Windows 內部資料庫的同盟伺服器陣列\(WID\)部署拓撲中，它不會複寫到資料伺服器陣列中每部同盟伺服器。 相反地，伺服器陣列中的所有同盟伺服器可以讀取，並將資料寫入至儲存在執行 Microsoft SQL Server 位於公司網路中的伺服器的通用資料庫。  
   
@@ -65,4 +63,4 @@ Microsoft Information Technology \(IT\)部門使用的 SQL Server 資料庫鏡�
 如需如何設定您的網路環境使用與同盟伺服器或同盟伺服器 proxy 的詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)或[名稱同盟伺服器 Proxy 的解析度需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
