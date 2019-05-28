@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 831ca8266c3ec18ffb83227dcb2d39b3f953ad1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1586c8c63e46452075b4106c944670395734142
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838049"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034408"
 ---
 # <a name="smb-security-enhancements"></a>SMB 安全性增強功能
 
@@ -73,7 +73,7 @@ SMB 加密應該視為機密資料要受到保護，以免攔截攻擊的任何�
 Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 ```
 
-下一節中所述的安全方言交涉功能會防止攔截攻擊降級 （這會將未加密的存取） 的 SMB 2.0 從 SMB 3.0 的連線。 不過，它無法防止降級為 SMB 1.0 時，也可能會導致未加密的存取。 若要保證 SMB 3.0 用戶端永遠以存取加密的共用使用 SMB 加密，您必須停用 SMB 1.0 伺服器。 (如需指示，請參閱下節[停用 SMB 1.0](#disabling-smb-1.0)。)如果 **– RejectUnencryptedAccess**設定會保留其預設值為 **$true**，僅支援加密的 SMB 3.0 用戶端可以存取檔案共用 （SMB 1.0 用戶端也會遭到拒絕）。
+下一節中所述的安全方言交涉功能會防止攔截攻擊降級 （這會將未加密的存取） 的 SMB 2.0 從 SMB 3.0 的連線。 不過，它無法防止降級為 SMB 1.0 時，也可能會導致未加密的存取。 若要保證 SMB 3.0 用戶端永遠以存取加密的共用使用 SMB 加密，您必須停用 SMB 1.0 伺服器。 (如需指示，請參閱下節[停用 SMB 1.0](#disabling-smb-10)。)如果 **– RejectUnencryptedAccess**設定會保留其預設值為 **$true**，僅支援加密的 SMB 3.0 用戶端可以存取檔案共用 （SMB 1.0 用戶端也會遭到拒絕）。
 
 >[!NOTE]
 >* SMB 加密使用進階加密標準 (AES)-CCM 演算法來加密和解密資料。 AES CCM 也會提供 （簽章） 加密的檔案共用，不論 SMB 簽章設定的驗證資料完整性。 如果您想要啟用 SMB 簽署未加密，您可以繼續執行這項操作。 如需詳細資訊，請參閱 <<c0> [ 基本概念的 SMB 簽章](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
@@ -84,7 +84,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 
 ## <a name="secure-dialect-negotiation"></a>安全的方言交涉
 
-SMB 3.0 可以偵測嘗試要降級的 SMB 2.0 或 SMB 3.0 通訊協定或用戶端與伺服器交涉的功能的攔截層攻擊。 用戶端或伺服器所偵測到這類的攻擊時，中斷連線，並會記錄事件識別碼為 1005年，Microsoft Windows SmbServer/Operational 事件記錄檔中。 安全方言交涉無法偵測或防止從 SMB 2.0 或 3.0 為 SMB 1.0 的降級。 基於這個原因，並利用 SMB 加密的完整功能，我們強烈建議您停用 SMB 1.0 伺服器。 如需詳細資訊，請參閱 <<c0> [ 停用 SMB 1.0](#disabling-smb-1.0)。
+SMB 3.0 可以偵測嘗試要降級的 SMB 2.0 或 SMB 3.0 通訊協定或用戶端與伺服器交涉的功能的攔截層攻擊。 用戶端或伺服器所偵測到這類的攻擊時，中斷連線，並會記錄事件識別碼為 1005年，Microsoft Windows SmbServer/Operational 事件記錄檔中。 安全方言交涉無法偵測或防止從 SMB 2.0 或 3.0 為 SMB 1.0 的降級。 基於這個原因，並利用 SMB 加密的完整功能，我們強烈建議您停用 SMB 1.0 伺服器。 如需詳細資訊，請參閱 <<c0> [ 停用 SMB 1.0](#disabling-smb-10)。
 
 下一節中所述的安全方言交涉功能可防止攔截攻擊降級 SMB 3 （這會將未加密的存取） 的 SMB 2; 的連線不過，它無法防止降級為 SMB 1，也可能會導致未加密的存取。 如需有關使用稍早的 SMB 的非 Windows 實作的潛在問題的詳細資訊，請參閱[Microsoft Knowledge Base](http://support.microsoft.com/kb/2686098)。
 

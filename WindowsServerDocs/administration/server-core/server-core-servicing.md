@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: f51ffae5ed8f91cca386eb209e7a1d8cc664ceeb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b19512a6f34e13469433aba6051f1232824beb0e
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817349"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034152"
 ---
 # <a name="patch-a-server-core-installation"></a>修補程式的 Server Core 安裝
 
@@ -20,7 +20,7 @@ ms.locfileid: "59817349"
 
 您可以修補伺服器，以下列方式執行 Server Core 安裝：
 
-- **使用 Windows Update，自動或使用 Windows Server Update Services (WSUS)**。 使用 Windows Update，自動或透過命令列工具或 Windows Server Update Services (WSUS)，您可以服務執行 Server Core 安裝的伺服器。
+- **使用 Windows Update，自動或使用 Windows Server Update Services (WSUS)** 。 使用 Windows Update，自動或透過命令列工具或 Windows Server Update Services (WSUS)，您可以服務執行 Server Core 安裝的伺服器。
 
 - **手動**。 即使在不使用 Windows update 或 WSUS 的組織中，您可以手動套用更新。
 
@@ -66,7 +66,7 @@ Server Core 中加入新的更新之前，它會是個不錯的主意，請參�
 Wuauclt /detectnow 
 ```
 
-根據所安裝的更新，您可能需要重新啟動電腦，但系統將不會通知您。 若要判斷是否已完成安裝程序，請使用工作管理員來確認**Wuauclt**或是**Trusted Installer**程序目前並未執行。 您也可以使用中的方法[檢視您的 Server Core 伺服器上安裝的更新](#view-the-updates-installed-on-your-Server-Core-server)檢查已安裝的更新清單。
+根據所安裝的更新，您可能需要重新啟動電腦，但系統將不會通知您。 若要判斷是否已完成安裝程序，請使用工作管理員來確認**Wuauclt**或是**Trusted Installer**程序目前並未執行。 您也可以使用中的方法[檢視您的 Server Core 伺服器上安裝的更新](#view-the-updates-installed-on-your-server-core-server)檢查已安裝的更新清單。
 
 ## <a name="patch-the-server-with-wsus"></a>修補與 WSUS 伺服器 
 

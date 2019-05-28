@@ -8,18 +8,18 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4d0ff53b9118db1dd6ba5af94b3e627bf1597e0c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b5658676d08318d88ddee44a0589db5873b4660b
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889019"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034296"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>準備移轉 AD FS 2.0 同盟伺服器至 Windows Server 2012 R2 上的 AD FS
 
 本文件說明如何將 AD FS 2.0 或 Windows Server 2012 的同盟伺服器陣列移轉至 Windows Server 2012 R2 AD FS 伺服器陣列。  步驟可以搭配 AD FS 伺服器陣列使用 WID 或 SQL Server 為基礎的資料庫。  
   
--   [移轉程序概述](prepare-migrate-ad-fs-server-r2.md#migrate-process-outline)  
+-   [移轉程序概述](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
 -   [Windows Server 2012 R2 中的新 AD FS 功能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
@@ -29,7 +29,8 @@ ms.locfileid: "59889019"
   
 -   [其他移轉工作和考量](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
   
-##  <a name="migration-process-outline"></a>移轉程序概述  
+##  <a name="migration-process-outline"></a>移轉程序概述
+
  若要完成從 AD FS 同盟伺服器陣列至 Windows Server 2012 R2 的移轉，您必須完成下列工作：  
   
 1.  匯出、記錄和備份現有 AD FS 陣列中的下列設定資料。 如需如何完成這些工作的詳細指示，請參閱[移轉 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)。  

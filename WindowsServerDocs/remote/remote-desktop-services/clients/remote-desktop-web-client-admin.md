@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb819a7f91646c61b84c3ee70550af6033ba340
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf10f7f7444967247e51065bc6138fc0afd5ed1a
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865969"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976785"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -248,7 +248,36 @@ ms.locfileid: "59865969"
     > [!NOTE]
     > 如果 RD 工作階段主機及 RD 代理人伺服器共用相同的電腦，設定只 RD 代理人伺服器憑證。 如果 RD 工作階段主機及 RD 代理人伺服器使用不同的電腦，兩者都必須使用唯一的憑證設定。
 
-* **主體別名 (SAN)** 每個憑證必須設定為電腦的**完全完整網域名稱 (FQDN)**。 **一般名稱 (CN)** 必須符合每個憑證的 SAN。
+* **主體別名 (SAN)** 每個憑證必須設定為電腦的**完全完整網域名稱 (FQDN)** 。 **一般名稱 (CN)** 必須符合每個憑證的 SAN。
+
+## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>如何預先設定的遠端桌面 web 用戶端使用者設定
+本節會告訴您如何使用 PowerShell 來設定遠端桌面 web 用戶端部署的設定。 這些 PowerShell cmdlet 可控制使用者能夠變更設定根據貴組織的安全性考量，或供工作流程。 下列設定都位於**設定**web 用戶端的側邊面板。 
+
+### <a name="suppress-telemetry"></a>隱藏遙測
+根據預設，使用者可以選擇啟用或停用傳送給 Microsoft 的遙測資料的集合。 如需 Microsoft 收集遙測資料的資訊，請參閱我們的隱私權聲明中的連結透過**關於**側邊面板。
+
+身為管理員，您可以選擇隱藏遙測收集您使用下列 PowerShell cmdlet 的部署：
+
+   ```PowerShell
+    Set-RDWebClientDeploymentSetting -SuppressTelemetry $true
+   ```
+
+根據預設，使用者可能選取以啟用或停用遙測。 布林值 **$false**會比對預設用戶端行為。 布林值 **$true**停用遙測，並會限制使用者啟用遙測。
+
+### <a name="remote-resource-launch-method"></a>遠端資源啟動方法
+根據預設，使用者可以選擇啟動 （1） 瀏覽器或 （2） 藉由下載.rdp 檔案以處理另一個在其電腦上已安裝的用戶端的遠端資源。 身為管理員，您可以選擇限制遠端資源啟動方法，為您的部署，使用下列 Powershell 命令：
+
+   ```PowerShell
+    Set-RDWebClientDeploymentSetting -LaunchResourceInBrowser ($true|$false)
+   ```
+ 根據預設，使用者可以選取這兩種啟動方法。 布林值 **$true**會強制使用者啟動瀏覽器中的資源。 布林值 **$false**會強制使用者下載.rdp 檔案来處理的本機安裝的 RDP 用戶端啟動的資源。
+
+### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>重設為預設值的 RDWebClientDeploymentSetting 組態
+若要重設所有的部署層級的 web 用戶端設定為預設設定，執行下列 PowerShell cmdlet:
+
+   ```PowerShell
+    Reset-RDWebClientDeploymentSetting 
+   ```
 
 ## <a name="troubleshooting"></a>疑難排解
 

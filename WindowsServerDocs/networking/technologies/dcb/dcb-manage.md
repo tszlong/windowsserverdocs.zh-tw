@@ -8,12 +8,12 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3912bb6048a06a4656b5b27ccec8f8fb3f5b114b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: daed746fe798ae253956d0977827d0e205bb8b3e
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847409"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034573"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理資料中心橋接 (DCB)
 
@@ -39,7 +39,7 @@ ms.locfileid: "59847409"
 2. 網路介面卡上啟用 DCB。 請參閱[啟用，並顯示網路介面卡上的 DCB 設定](#bkmk_enabledcb)。
 
 >[!NOTE]
->如果您想要從 DCBX 透過交換器設定 DCB，請參閱[DCBX 設定](#BKMK_DCBX_Settings)
+>如果您想要從 DCBX 透過交換器設定 DCB，請參閱[DCBX 設定](#dcb-configuration-on-network-adapters)。
 
 DCBX 願意元是 DCB 規格所述。 如果在裝置上的願意位元會設為 true，該裝置是願意接受從透過 DCBX 遠端裝置的設定。 如果在裝置上的願意位元設為 false 時，裝置會拒絕所有的設定嘗試從遠端裝置，並強制執行只有的本機設定。
 
