@@ -8,21 +8,21 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4706372b06d0554196b692c3ddcda145dee5bae5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6eb6f2acd420ae657a5c1b698e9733751378552
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848169"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476089"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>容錯移轉叢集硬體需求及存放選項
 
-適用於：Windows Server 2012 R2 中，Windows Server 2012 中，Windows Server 2016
+適用於：Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 您需要下列硬體才能建立容錯移轉叢集。 若要得到 Microsoft 的支援，所有硬體必須通過您執行的 Windows Server 版本的認證，而且完整的容錯移轉叢集解決方案必須通過 [驗證設定精靈] 中的所有測試。 如需驗證容錯移轉叢集的詳細資訊，請參閱[驗證容錯移轉叢集的硬體](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>)。
 
 - **伺服器**：建議您使用包含相同或類似元件的一組相符電腦。
-- **網路介面卡和纜線 (用於網路通訊)**：如果您使用 iSCSI，則每張網路介面卡只能專用於網路通訊或 iSCSI，不能同時用於兩者。
+- **網路介面卡和纜線 (用於網路通訊)** ：如果您使用 iSCSI，則每張網路介面卡只能專用於網路通訊或 iSCSI，不能同時用於兩者。
 
     在連接叢集節點的網路結構中，避免發生單一失敗點。 例如，您可以透過多種不同的網路連接叢集節點。 或者，您可以使用小組的網路介面卡、 備援交換器、 備援路由器或可移除單點失敗之類似硬體建構的一個網路連線您的叢集節點。
 
@@ -61,7 +61,7 @@ ms.locfileid: "59848169"
 部署容錯移轉叢集的存放區域網路 (SAN) 時，請依照下列指導方針：
 
 - **確認存放裝置的相容性**：向製造商與廠商確認存放裝置，包括存放裝置使用的驅動程式、韌體及軟體，與您所執行的 Windows Server 版本中的容錯移轉叢集相容。
-- **隔離存放裝置 (每部裝置一個叢集)**：不同叢集的伺服器不得存取同一個存放裝置。 在大多數情況下，用於某一組叢集伺服器的 LUN 應透過 LUN 遮罩或分區，與所有其他伺服器隔離。
+- **隔離存放裝置 (每部裝置一個叢集)** ：不同叢集的伺服器不得存取同一個存放裝置。 在大多數情況下，用於某一組叢集伺服器的 LUN 應透過 LUN 遮罩或分區，與所有其他伺服器隔離。
 - **考慮使用多重路徑 I/O 軟體或網路介面卡小組**：在高度可用的存放裝置網狀架構中，您可以使用多重路徑 I/O 軟體或網路介面卡小組 (也稱為負載平衡及容錯移轉，又稱 LBFO) 來部署具備多個主機匯流板介面卡的容錯移轉叢集。 這樣可提供最高層級的備援和可用性。 對於 Windows Server 2012 R2 或 Windows Server 2012，您的多重路徑解決方案必須以 Microsoft 多重路徑 I/O (MPIO)。 雖然 Windows Server 的作業系統已包含一或多個 DSM，但是您的硬體廠商通常會為硬體提供 MPIO 裝置專屬模組 (DSM)。
 
     如需 LBFO 的相關詳細資訊，請參閱[NIC 小組概觀](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)在 Windows Server 技術文件庫中。

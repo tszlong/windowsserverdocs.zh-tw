@@ -13,12 +13,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 05/22/2018
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 4cc9bc5c288eb063f333fa598dbb3511f7be5966
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5c8df2abd826df2745e10ed773ef50d6cf45c60b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820469"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192686"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -28,34 +28,32 @@ ms.locfileid: "59820469"
 
 若要尋找特定命令的相關資訊，下列 A-Z、0-9 功能表中，按一下此命令會啟動，字母，然後按一下命令名稱。
 
-[A](#BKMK_a) |
-[B](#BKMK_b) | 
-[C](#BKMK_c) | 
-[D](#BKMK_d) | 
-[E](#BKMK_e)  | 
- [F](#BKMK_f) | 
-[G](#BKMK_g) | 
-[H](#BKMK_h) | 
-[我](#BKMK_i) |
- [J](#BKMK_j) | 
-[K](#BKMK_k) | 
-[L](#BKMK_l) | 
-[M](#BKMK_m) | 
-[N](#BKMK_n) | 
- [O](#BKMK_o) | 
-[P](#BKMK_p) | 
-[Q](#BKMK_q) | 
-[R](#BKMK_r)  | 
-[S](#BKMK_s) | 
-[T](#BKMK_t) | 
-[U](#BKMK_u) | 
-[V](#BKMK_v) | 
- [W](#BKMK_w) | 
-[X](#BKMK_x) | 
-[Y](#BKMK_y) | 
-[Z](#BKMK_z)
+[A](#a) |
+[B](#b) | 
+[C](#c) | 
+[D](#d) | 
+[E](#e)  | 
+ [F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[我](#i) |
+ [J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+ [O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r)  | 
+[S](#s) | 
+[T](#t) | 
+[U](#u) | 
+[V](#v) | 
+ [W](#w) | 
+[X](#x) |Y |Z
 
-## <a name="BKMK_PREREQ"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 此 PDF 中包含的資訊適用於：
 
 -   Windows Server 2019
@@ -68,7 +66,7 @@ ms.locfileid: "59820469"
 -   Windows 10
 -   Windows 8.1
 
-### <a name="BKMK_OVR"></a>命令殼層概觀
+### <a name="command-shell-overview"></a>命令殼層概觀
 命令殼層的內建於 Windows 自動使用者帳戶管理或夜間備份，這類的例行工作批次 (.bat) 檔案的第一個殼層。 使用 Windows Script Host 中，您可以執行更複雜的指令碼命令殼層中。 如需詳細資訊，請參閱 < [cscript](cscript.md)或是[wscript](wscript.md)。 您可以使用指令碼，比您可以藉由使用使用者介面，更有效率地執行作業。 指令碼會接受在命令列可用的所有命令。
 
 Windows 具有兩個命令殼層：命令殼層並[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每個介面會提供您和作業系統或應用程式，提供一個環境，可自動化 IT 作業之間的直接通訊的軟體程式。
@@ -89,37 +87,35 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 > 
 > 若要設定**reg_DWOrd**值，請使用特定的函式的控制字元的十六進位值 (例如**0 9**  索引標籤和**0 08**會退格鍵)。 使用者指定的設定值優先於電腦設定，以及命令列選項的優先順序高於登錄設定。
 
-## <a name="BKMK_CmdRef"></a>命令列參照 A-Z
+## <a name="command-line-reference-a-z"></a>命令列參照 A-Z
 若要尋找特定的 Windows 命令，資訊在下列 [A-Z] 功能表中，按一下此命令會啟動，字母，然後按一下命令名稱。
 
-[A](#BKMK_a) |
-[B](#BKMK_b) | 
-[C](#BKMK_c) | 
-[D](#BKMK_d) | 
-[E](#BKMK_e)  | 
- [F](#BKMK_f) | 
-[G](#BKMK_g) | 
-[H](#BKMK_h) | 
-[我](#BKMK_i) |
- [J](#BKMK_j) | 
-[K](#BKMK_k) | 
-[L](#BKMK_l) | 
-[M](#BKMK_m) | 
-[N](#BKMK_n) | 
- [O](#BKMK_o) | 
-[P](#BKMK_p) | 
-[Q](#BKMK_q) | 
-[R](#BKMK_r)  | 
-[S](#BKMK_s) | 
-[T](#BKMK_t) | 
-[U](#BKMK_u) | 
-[V](#BKMK_v) | 
- [W](#BKMK_w) | 
-[X](#BKMK_x) | 
-[Y](#BKMK_y) | 
-[Z](#BKMK_z)
+[A](#a) |
+[B](#b) | 
+[C](#c) | 
+[D](#d) | 
+[E](#e)  | 
+ [F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[我](#i) |
+ [J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+ [O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r)  | 
+[S](#s) | 
+[T](#t) | 
+[U](#u) | 
+[V](#v) | 
+ [W](#w) | 
+[X](#x) |Y |Z)
 
-### <a name="BKMK_a"></a>A
+### <a name="a"></a>A 
 -   [append](append.md)
 -   [arp](arp.md)
 -   [assoc](assoc.md)
@@ -131,7 +127,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [autoconv](autoconv.md)
 -   [autofmt](autofmt.md)
 
-### <a name="BKMK_b"></a>B
+### <a name="b"></a>B
 -   [bcdboot](bcdboot.md)
 -   [bcdedit](bcdedit.md)
 -   [bdehdcfg](bdehdcfg.md)
@@ -139,9 +135,9 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
   -   [bitsadmin addfile](bitsadmin-addfile.md)
   -   [bitsadmin addfileset](bitsadmin-addfileset.md)
   -   [bitsadmin addfilewithranges](bitsadmin-addfilewithranges.md)
-  -   [bitsadmin 取消](bitsadmin-cancel.md)
-  -   [bitsadmin 完成](bitsadmin-complete.md)
-  -   [bitsadmin 建立](bitsadmin-create.md)
+  -   [bitsadmin cancel](bitsadmin-cancel.md)
+  -   [bitsadmin complete](bitsadmin-complete.md)
+  -   [bitsadmin create](bitsadmin-create.md)
   -   [bitsadmin getaclflags](bitsadmin-getaclflags.md)
   -   [bitsadmin getbytestotal](bitsadmin-getbytestotal.md)
   -   [bitsadmin getbytestransferred](bitsadmin-getbytestransferred.md)
@@ -169,17 +165,17 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
   -   [bitsadmin getreplyprogress](bitsadmin-getreplyprogress.md)
   -   [bitsadmin getstate](bitsadmin-getstate.md)
   -   [bitsadmin gettype](bitsadmin-gettype.md)
-  -   [bitsadmin 說明](bitsadmin-help.md)
-  -   [bitsadmin 資訊](bitsadmin-info.md)
-  -   [bitsadmin 清單](bitsadmin-list.md)
+  -   [bitsadmin help](bitsadmin-help.md)
+  -   [bitsadmin info](bitsadmin-info.md)
+  -   [bitsadmin list](bitsadmin-list.md)
   -   [bitsadmin listfiles](bitsadmin-listfiles.md)
-  -   [bitsadmin 監視器](bitsadmin-monitor.md)
+  -   [bitsadmin monitor](bitsadmin-monitor.md)
   -   [bitsadmin nowrap](bitsadmin-nowrap.md)
   -   [bitsadmin rawreturn](bitsadmin-rawreturn.md)
   -   [bitsadmin removecredentials](bitsadmin-removecredentials.md)
   -   [bitsadmin replaceremoteprefix](bitsadmin-replaceremoteprefix.md)
   -   [bitsadmin reset](bitsadmin-reset.md)
-  -   [bitsadmin 繼續](bitsadmin-resume.md)
+  -   [bitsadmin resume](bitsadmin-resume.md)
   -   [bitsadmin setaclflag](bitsadmin-setaclflag.md)
   -   [bitsadmin setcredentials](bitsadmin-setcredentials.md)
   -   [bitsadmin setdescription](bitsadmin-setdescription.md)
@@ -191,7 +187,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
   -   [bitsadmin setpriority](bitsadmin-setpriority.md)
   -   [bitsadmin setproxysettings](bitsadmin-setproxysettings.md)
   -   [bitsadmin setreplyfilename](bitsadmin-setreplyfilename.md)
-  -   [bitsadmin 暫止](bitsadmin-suspend.md)
+  -   [bitsadmin suspend](bitsadmin-suspend.md)
   -   [bitsadmin takeownership](bitsadmin-takeownership.md)
   -   [bitsadmin 傳輸](bitsadmin-transfer.md)
   -   [bitsadmin util](bitsadmin-util.md)
@@ -204,22 +200,22 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
   -   [bootcfg default](bootcfg-default.md)
   -   [bootcfg delete](bootcfg-delete.md)
   -   [bootcfg ems](bootcfg-ems.md)
-  -   [bootcfg 查詢](bootcfg-query.md)
+  -   [bootcfg query](bootcfg-query.md)
   -   [bootcfg raw](bootcfg-raw.md)
   -   [bootcfg rmsw](bootcfg-rmsw.md)
   -   [bootcfg timeout](bootcfg-timeout.md)
 -   [break](break_1.md)
 
-### <a name="BKMK_c"></a>C
+### <a name="c"></a>C
 -   [cacls](cacls_1.md)
 -   [call](call.md)
 -   [cd](cd.md)
 -   [certreq](certreq_1.md)
 -   [certutil](certutil.md)
 -   [change](change.md)
-  -   [變更登入](change-logon.md)
-  -   [變更連接埠](change-port.md)
-  -   [變更使用者](change-user.md)
+  -   [change logon](change-logon.md)
+  -   [change port](change-port.md)
+  -   [change user](change-user.md)
 -   [chcp](chcp.md)
 -   [chdir](chdir_1.md)
 -   [chglogon](chglogon.md)
@@ -242,7 +238,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [cprofile](cprofile.md)
 -   [cscript](cscript.md)
 
-### <a name="BKMK_d"></a>D
+### <a name="d"></a>D
 -   [date](date.md)
 -   [dcgpofix](dcgpofix.md)
 -   [defrag](defrag.md)
@@ -261,7 +257,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [doskey](doskey.md)
 -   [driverquery](driverquery.md)
 
-### <a name="BKMK_e"></a>E
+### <a name="e"></a>E
 -   [echo](echo.md)
 -   [edit](edit.md)
 -   [endlocal](endlocal.md)
@@ -274,7 +270,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [expand](expand.md)
 -   [extract](extract.md)
 
-### <a name="BKMK_f"></a>F
+### <a name="f"></a>F
 -   [fc](fc.md)
 -   [find](find.md)
 -   [findstr](findstr.md)
@@ -283,22 +279,22 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [fondue](fondue.md)
 -   [for](for.md)
 -   [forfiles](forfiles.md)
--   [格式](format.md)
+-   [format](format.md)
 -   [freedisk](freedisk.md)
 -   [fsutil](fsutil.md)
   -   [fsutil 8dot3name](fsutil-8dot3name.md) 
-  -   [fsutil 行為](fsutil-behavior.md) 
-  -   [Fsutil 檔案](fsutil-file.md)
+  -   [fsutil behavior](fsutil-behavior.md) 
+  -   [fsutil file](fsutil-file.md)
   -   [fsutil fsinfo](fsutil-fsinfo.md)
   -   [fsutil hardlink](fsutil-hardlink.md)
   -   [fsutil objectid](fsutil-objectid.md)
   -   [fsutil quota](fsutil-quota.md)
-  -   [fsutil 修復](fsutil-repair.md)
+  -   [fsutil repair](fsutil-repair.md)
   -   [fsutil reparsepoint](fsutil-reparsepoint.md)
-  -   [Fsutil 資源](fsutil-resource.md)
+  -   [fsutil resource](fsutil-resource.md)
   -   [fsutil sparse](fsutil-sparse.md)
-  -   [fsutil 階層處理](fsutil-tiering.md)
-  -   [Fsutil 交易](fsutil-transaction.md)
+  -   [fsutil tiering](fsutil-tiering.md)
+  -   [fsutil transaction](fsutil-transaction.md)
   -   [fsutil usn](fsutil-usn.md)
   -   [fsutil volume](fsutil-volume.md)
   -   [fsutil wim](fsutil-wim.md)
@@ -306,7 +302,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [ftype](ftype.md)
 -   [fveupdate](fveupdate.md)
 
-### <a name="BKMK_g"></a>G
+### <a name="g"></a>G
 -   [getmac](getmac.md)
 -   [gettype](gettype.md)
 -   [goto](goto.md)
@@ -315,12 +311,12 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [gpupdate](gpupdate.md)
 -   [graftabl](graftabl.md)
 
-### <a name="BKMK_h"></a>H
+### <a name="h"></a>H
 -   [說明](help.md)
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="BKMK_i"></a>I
+### <a name="i"></a>I
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -328,10 +324,10 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [ipxroute](ipxroute.md)
 -   [irftp](irftp.md)
 
-### <a name="BKMK_j"></a>J
+### <a name="j"></a>J
 -   [jetpack](jetpack.md)
 
-### <a name="BKMK_k"></a>K
+### <a name="k"></a>K
 -   [klist](klist.md)
 -   [ksetup](ksetup.md)
   -   [ksetup:setrealm](ksetup-setrealm.md)
@@ -359,21 +355,21 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [ktmutil](ktmutil.md)
 -   [ktpass](ktpass.md)
 
-### <a name="BKMK_l"></a>L
+### <a name="l"></a>L
 -   [label](label.md)
 -   [lodctr](lodctr.md)
 -   [logman](logman.md)
-  -   [logman 建立](logman-create.md)
-  -   [logman 查詢](logman-query.md)
+  -   [logman create](logman-create.md)
+  -   [logman query](logman-query.md)
   -   [logman start & 124;停止](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
-  -   [logman 更新](logman-update.md)
+  -   [logman update](logman-update.md)
   -   [logman 匯入 & bi&#124;匯出](logman-import-export.md)
 -   [logoff](logoff.md)
 -   [lpq](lpq.md)
 -   [lpr](lpr.md)
 
-### <a name="BKMK_m"></a>M
+### <a name="m"></a>M
 -   [macfile](macfile.md)
 -   [makecab](makecab.md)
 -   [manage-bde](manage-bde.md)
@@ -401,7 +397,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [mklink](mklink.md)
 -   [mmc](mmc.md)
 -   [mode](mode.md)
--   [更多](more.md)
+-   [more](more.md)
 -   [mount](mount.md)
 -   [mountvol](mountvol.md)
 -   [move](move.md)
@@ -414,12 +410,12 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [msinfo32](msinfo32.md)
 -   [mstsc](mstsc.md)
 
-### <a name="BKMK_n"></a>N
+### <a name="n"></a>N
 -   [nbtstat](nbtstat.md)
 -   [netcfg](netcfg.md)
 -   [netsh](netsh.md)
 -   [netstat](netstat.md)
--   [網路列印](net-print.md)
+-   [Net print](net-print.md)
 -   [nfsadmin](nfsadmin.md)
 -   [nfsshare](nfsshare.md)
 -   [nfsstat](nfsstat.md)
@@ -431,32 +427,32 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
   -   [nslookup ls](nslookup-ls.md)
   -   [nslookup lserver](nslookup-lserver.md)
   -   [nslookup root](nslookup-root.md)
-  -   [nslookup 伺服器](nslookup-server.md)
-  -   [nslookup 組](nslookup-set.md)
-  -   [設定所有的 nslookup](nslookup-set-all.md)
-  -   [nslookup set 類別](nslookup-set-class.md)
+  -   [nslookup server](nslookup-server.md)
+  -   [nslookup set](nslookup-set.md)
+  -   [nslookup set all](nslookup-set-all.md)
+  -   [nslookup set class](nslookup-set-class.md)
   -   [nslookup set d2](nslookup-set-d2.md)
-  -   [nslookup 設定偵錯](nslookup-set-debug.md)
-  -   [nslookup 設定網域](nslookup-set-domain.md)
-  -   [nslookup 設定連接埠](nslookup-set-port.md)
+  -   [nslookup set debug](nslookup-set-debug.md)
+  -   [nslookup set domain](nslookup-set-domain.md)
+  -   [nslookup set port](nslookup-set-port.md)
   -   [nslookup set querytype](nslookup-set-querytype.md)
-  -   [nslookup 設定 recurse](nslookup-set-recurse.md)
-  -   [nslookup 設定重試](nslookup-set-retry.md)
-  -   [nslookup 設定根目錄](nslookup-set-root.md)
-  -   [nslookup 設定搜尋](nslookup-set-search.md)
-  -   [nslookup 設定 srchlist](nslookup-set-srchlist.md)
-  -   [nslookup 設定逾時](nslookup-set-timeout.md)
-  -   [nslookup 設定類型](nslookup-set-type.md)
+  -   [nslookup set recurse](nslookup-set-recurse.md)
+  -   [nslookup set retry](nslookup-set-retry.md)
+  -   [nslookup set root](nslookup-set-root.md)
+  -   [nslookup set search](nslookup-set-search.md)
+  -   [nslookup set srchlist](nslookup-set-srchlist.md)
+  -   [nslookup set timeout](nslookup-set-timeout.md)
+  -   [nslookup set type](nslookup-set-type.md)
   -   [nslookup set vc](nslookup-set-vc.md)
-  -   [nslookup 檢視](nslookup-view.md)
+  -   [nslookup view](nslookup-view.md)
 -   [ntbackup](ntbackup.md)
 -   [ntcmdprompt](ntcmdprompt.md)
 -   [ntfrsutl](ntfrsutl.md)
 
-### <a name="BKMK_o"></a>O
+### <a name="o"></a>O
 -   [openfiles](openfiles.md)
 
-### <a name="BKMK_p"></a>P
+### <a name="p"></a>P
 -   [pagefileconfig](pagefileconfig.md)
 -   [path](path.md)
 -   [pathping](pathping.md)
@@ -482,14 +478,14 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [pushd](pushd.md)
 -   [pushprinterconnections](pushprinterconnections.md)
 
-### <a name="BKMK_q"></a>Q
+### <a name="q"></a>Q
 -   [qappsrv](qappsrv.md)
 -   [qprocess](qprocess.md)
 -   [查詢](query.md)
 -   [quser](quser.md)
 -   [qwinsta](qwinsta.md)
 
-### <a name="BKMK_r"></a>R
+### <a name="r"></a>R
 -   [rcp](rcp.md)
 -   [rd](rd.md)
 -   [rdpsign](rdpsign.md)
@@ -514,7 +510,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [rename](rename.md)
 -   [repair-bde](repair-bde.md)
 -   [replace](replace.md)
--   [重設工作階段](reset-session.md)
+-   [reset session](reset-session.md)
 -   [rexec](rexec.md)
 -   [risetup](risetup.md)
 -   [rmdir](rmdir.md)
@@ -526,7 +522,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [rundll32](rundll32.md)
 -   [rwinsta](rwinsta.md)
 
-### <a name="BKMK_s"></a>S
+### <a name="s"></a>S
 -   [schtasks](schtasks.md)
 -   [scwcmd](Scwcmd.md)
   -   [scwcmd: analyze](scwcmd-analyze.md)
@@ -560,7 +556,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [sysocmgr](sysocmgr.md)
 -   [systeminfo](systeminfo.md)
 
-### <a name="BKMK_t"></a>T
+### <a name="t"></a>T
 -   [takeown](takeown.md)
 -   [tapicfg](tapicfg.md)
 -   [taskkill](taskkill.md)
@@ -585,17 +581,17 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [typeperf](typeperf.md)
 -   [tzutil](tzutil.md)
 
-### <a name="BKMK_u"></a>U
+### <a name="u"></a>U
 -   [unlodctr](unlodctr_1.md)
 
-### <a name="BKMK_v"></a>V
+### <a name="v"></a>V
 -   [ver](ver.md)
 -   [verifier](verifier.md)
 -   [verify](verify_1.md)
 -   [vol](vol.md)
 -   [vssadmin](vssadmin.md)- 
 
-### <a name="BKMK_w"></a>W
+### <a name="w"></a>W
 -   [waitfor](waitfor.md)
 -   [wbadmin](wbadmin.md)
   -   [Wbadmin 啟用備份](wbadmin-enable-backup.md)
@@ -626,5 +622,5 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [wmic](wmic.md)
 -   [wscript](wscript.md)
 
-### <a name="BKMK_x"></a>X
+### <a name="x"></a>X
 -   [xcopy](xcopy.md)

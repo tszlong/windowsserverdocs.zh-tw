@@ -13,20 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ba51cdb49501492c1fa38c6c93933f4aee90d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea306127be9497c21a5b8efa9fd3f0fa2433014c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890459"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192666"
 ---
 # <a name="findstr"></a>findstr
 
-
-
 搜尋模式的檔案中的文字。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+如需如何使用此命令的範例，請參閱[範例](#examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -88,7 +86,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
     b.*ing
     ```
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a>範例
 
 使用空格來分隔多個搜尋字串，除非前面加上引數 **/c**。
 

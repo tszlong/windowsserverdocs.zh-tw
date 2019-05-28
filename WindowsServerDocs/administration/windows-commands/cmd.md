@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 966ac7f70984dff6d26265e07a26a6eebcde9fb6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d9b99dbe7e26190e87c5dfc9de29980b9cb2f43
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874389"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192594"
 ---
 # <a name="cmd"></a>Cmd
-
-
 
 啟動命令直譯器，Cmd.exe 的新執行個體。 如果未指定參數，使用**cmd**顯示作業系統的版本和著作權資訊。
 
@@ -68,7 +66,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |8|灰色|
 |9|淺藍色|
 |a|淺綠色|
-|b|淡藍|
+|B|淡藍|
 |c|淡紅色|
 |d|淺紫|
 |E|淺黃色|
@@ -104,6 +102,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 > [!CAUTION]
 > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
+
 -   啟用和停用擴充命令
 
     在 Windows XP 中預設會啟用命令延伸模組。 您可以使用停用這些特定處理序 **/e： 關閉**。 您可以啟用或停用所有的延伸模組**cmd**電腦或使用者的工作階段，藉由設定下列的命令列選項**REG_DWORD**值：
@@ -114,28 +113,29 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     設定**REG_DWORD**設為值**0 × 1** （啟用） 或**0 × 0** （停用） 在登錄中使用 Regedit.exe。 使用者指定的設定值優先於電腦設定，以及命令列選項的優先順序高於登錄設定。
 
->     [!CAUTION]
->     Incorrectly editing the registry may severely damage your system. Before making changes to the registry, you should back up any valued data on the computer.
+> [!CAUTION]
+> 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
     When you enable command extensions, the following commands are affected:  
-    -   **assoc**
-    -   **call**
-    -   **chdir (cd)**
-    -   **color**
-    -   **del (erase)**
-    -   **endlocal**
-    -   **for**
-    -   **ftype**
-    -   **goto**
-    -   **if**
-    -   **mkdir (md)**
-    -   **popd**
-    -   **prompt**
-    -   **pushd**
-    -   **set**
-    -   **setlocal**
-    -   **shift**
-    -   **start** (also includes changes to external command processes)
+    -  **assoc**
+    -  **call**
+    -  **chdir (cd)**
+    -  **color**
+    -  **del (erase)**
+    -  **endlocal**
+    -  **for**
+    -  **ftype**
+    -  **goto**
+    -  **if**
+    -  **mkdir (md)**
+    -  **popd**
+    -  **prompt**
+    -  **pushd**
+    -  **set**
+    -  **setlocal**
+    -  **shift**
+    -  **start** (also includes changes to external command processes)
+
 -   啟用延遲的環境變數擴充
 
     如果您啟用延遲的環境變數擴充，您可以使用環境變數的值替換成在執行階段的驚嘆號字元。

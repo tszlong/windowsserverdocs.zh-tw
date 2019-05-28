@@ -13,12 +13,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: befd784f4a2179c121992057e298d4ea9068c11b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0aa81ef3633adf27a25b45b3b7c00082d83bf0bb
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862079"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034620"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>建立站台的 Windows 10 企業版虛擬桌面
 此選用的設定，MultiPoint 服務中，主要是用於重要的應用程式需要有自己的執行個體，用戶端作業系統的每個使用者的情況。 範例包括無法在 Windows Server 安裝的應用程式和應用程式無法在相同的主機電腦上執行多個執行個體。  
@@ -26,7 +26,7 @@ ms.locfileid: "59862079"
 > [!NOTE]  
 > 因此，建議您使用預設 MultiPoint 服務工作階段，這些虛擬桌面，也稱為 VDI 會更大量的資源比預設 MultiPoint 服務桌面工作階段，可能的話。  
   
-## <a name="prerequisites"></a>必要條件  
+## <a name="prerequisites"></a>先決條件  
 若要準備建立站台虛擬桌面時，請確定您的 MultiPoint 服務系統符合下列需求：      
   
 |硬體|需求|         |
@@ -44,13 +44,13 @@ ms.locfileid: "59862079"
 ## <a name="procedures"></a>程序  
 請使用下列程序來：  
   
--   [建立適用於虛擬桌面範本](#a-namebkmkcreateatemplateacreate-a-template-for-virtual-desktops)  
+-   [建立適用於虛擬桌面範本](#create-a-template-for-virtual-desktops)  
   
--   [從範本建立虛擬桌面](#BKMK_CreateVirtualDesktopsfromTemplate)  
+-   [從範本建立虛擬桌面](#create-virtual-machine-desktops-from-the-template)  
   
--   [複製現有的虛擬桌面範本](#BKMK_CopyExiistingVirtualDesktopTemplate)  
+-   [複製現有的虛擬桌面範本](#copy-an-existing-virtual-desktop-template)  
   
-### <a name="BKMK_CreateaTemplate"></a>建立適用於虛擬桌面範本  
+### <a name="create-a-template-for-virtual-desktops"></a>建立適用於虛擬桌面範本  
 您可以建立您的虛擬桌面範本之前，您必須啟用 MultiPoint Server 的虛擬桌面功能。  
   
 ##### <a name="to-enable-the-virtual-desktop-feature"></a>若要啟用虛擬桌面功能  
@@ -98,7 +98,7 @@ ms.locfileid: "59862079"
 4.  選取您想要自訂，請按一下範本**自訂範本**，然後按一下**確定**。  
   
     > [!NOTE]  
-    > 若要建立虛擬桌面站台未使用的範本可用。 如果您想要更新已在使用範本，您必須使用來進行範本的複本**匯入範本**稍後所述的工作中[複製現有的虛擬桌面範本](#BKMK_CopyExiistingVirtualDesktopTemplate)。  
+    > 若要建立虛擬桌面站台未使用的範本可用。 如果您想要更新已在使用範本，您必須使用來進行範本的複本**匯入範本**稍後所述的工作中[複製現有的虛擬桌面範本](#copy-an-existing-virtual-desktop-template)。  
   
     範本會在 HYPER-V 中，開啟**VM Connect**視窗中，並自動登入使用內建的 Administrator 帳戶執行。  
   
@@ -111,7 +111,7 @@ ms.locfileid: "59862079"
   
 6.  您完成設定您的系統之後，按兩下**CompleteCustomization**上執行 Sysprep 並關閉範本的系統管理員的桌面捷徑。 進行自訂時，Sysprep 工具會移除所有的唯一系統資訊，以準備 Windows 安裝映像。  
   
-### <a name="BKMK_CreateVirtualDesktopsfromTemplate"></a>從範本建立的虛擬機器桌面  
+### <a name="create-virtual-machine-desktops-from-the-template"></a>從範本建立的虛擬機器桌面  
 使用您的虛擬桌面範本設定您想要您已準備好開始建立虛擬桌面桌上型電腦的方式。 連接到 MultiPoint Server 電腦的每個站台時，會建立虛擬桌面。 下次使用者登入站台，他們會看到虛擬桌面，而不是工作階段為基礎的桌面顯示之前。  
   
 > [!NOTE]  
@@ -141,7 +141,7 @@ ms.locfileid: "59862079"
 > [!NOTE]  
 > 如果任何本機站台的使用者帳戶登入，您必須登出工作階段，以取得連線到其中的新建立的站台的虛擬桌面站台。  
   
-### <a name="BKMK_CopyExiistingVirtualDesktopTemplate"></a>複製現有的虛擬桌面範本  
+### <a name="copy-an-existing-virtual-desktop-template"></a>複製現有的虛擬桌面範本  
 您可以使用下列程序來建立複製現有的虛擬桌面範本，您可以自訂，並使用。 這可能是適用於下列情況：  
   
 -   若要使您可以從主要的範本建立虛擬桌面站台，請從 MultiPoint Server 的主機電腦上的網路共用複製主要的範本。  

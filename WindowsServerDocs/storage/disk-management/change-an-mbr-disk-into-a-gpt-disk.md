@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8af76edbdb5fc2aa5768811f01c563aab1a89fc6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f6aba72c329ba380f9617f484c4cf754fbcbb363
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849599"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192735"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>將 MBR 磁碟轉換成 GPT 磁碟
 
@@ -23,25 +23,19 @@ ms.locfileid: "59849599"
 
 只要磁碟沒有包含任何磁碟分割或磁碟區，就可以將磁碟從 MBR 變更為 GPT 磁碟分割樣式。
 
-
 > [!NOTE]
 > 轉換磁碟之前，請備份所有資料，並關閉任何正在存取磁碟的程式。
 
-
 > [!NOTE]
 > 您必須至少是**備份操作員**或**系統管理員**群組的成員，才能完成這些步驟。
-
-<a id="BKMK_WINUI"></a>
 
 ## <a name="converting-using-the-windows-interface"></a>轉換使用 Windows 介面
 
 1.  備份或移動您要轉換成 GPT 磁碟的基本 MBR 磁碟上的資料。
 
-2.  如果磁碟包含任何磁碟分割或磁碟區，請個別按右鍵，然後按一下 **\[刪除磁碟分割\]** 或**\[刪除磁碟區\]**。
+2.  如果磁碟包含任何磁碟分割或磁碟區，請個別按右鍵，然後按一下 **\[刪除磁碟分割\]** 或 **\[刪除磁碟區\]** 。
 
-3.  以滑鼠右鍵按一下要變更成 GPT 磁碟的 MBR 磁碟，然後按一下 **\[轉換成 GPT 磁碟\]**。
-
-<a id="BKMK_CMD"></a>
+3.  以滑鼠右鍵按一下要變更成 GPT 磁碟的 MBR 磁碟，然後按一下 **\[轉換成 GPT 磁碟\]** 。
 
 ## <a name="converting-using-a-command-line"></a>轉換使用命令列
 
@@ -49,7 +43,7 @@ ms.locfileid: "59849599"
 
 1.  備份或移動您要轉換成 GPT 磁碟的基本 MBR 磁碟上的資料。
 
-2.  開啟提升權限的命令提示字元，方式為：以滑鼠右鍵按一下 **\[命令提示字元\]**，然後選擇 **\[以系統管理員身分執行\]**。
+2.  開啟提升權限的命令提示字元，方式為：以滑鼠右鍵按一下 **\[命令提示字元\]** ，然後選擇 **\[以系統管理員身分執行\]** 。
 
 3. 輸入 `diskpart`。 如果磁碟未包含任何磁碟分割或磁碟區，請跳至步驟 6。
 
@@ -64,14 +58,12 @@ ms.locfileid: "59849599"
 
 7.  在 **DISKPART** 提示中輸入 `convert gpt`。
 
-<br />
-
 | 值  | 描述  |
 | ----- | ----|
-| <p>**清單中的磁碟**</p> | <p>顯示磁碟的清單和這些磁碟的相關資訊，例如大小、可用空間數量、磁碟是基本還是動態磁碟，以及磁碟使用的是主開機記錄 (MBR) 還是 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。 標示有星號 (*) 的磁碟具有焦點。</p> |
-| <p>**選取磁碟** <em>disknumber</em></p> | <p>選取指定的磁碟 (其中 <em>disknumber</em> 是磁碟編號)，並讓它成為焦點。</p> |
-| <p>**clean**</p> | <p>從焦點所在的磁碟移除所有的磁碟分割或磁碟區。</p>  |
-| <p>**轉換 gpt**</p>| <p>將使用主開機記錄 (MBR) 磁碟分割樣式的空白基本磁碟轉換成使用 GUID 磁碟分割表格 (GPT) 磁碟分割樣式的基本磁碟。</p> |
+| **清單中的磁碟** | 顯示磁碟的清單和這些磁碟的相關資訊，例如大小、可用空間數量、磁碟是基本還是動態磁碟，以及磁碟使用的是主開機記錄 (MBR) 還是 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。 標示有星號 (*) 的磁碟具有焦點。 |
+| **選取磁碟** *disknumber* | 選取指定的磁碟 (其中 *disknumber* 是磁碟編號)，並讓它成為焦點。 |
+| **clean** | 從焦點所在的磁碟移除所有的磁碟分割或磁碟區。  |
+| **轉換 gpt**| 將使用主開機記錄 (MBR) 磁碟分割樣式的空白基本磁碟轉換成使用 GUID 磁碟分割表格 (GPT) 磁碟分割樣式的基本磁碟。 |
 
 ## <a name="see-also"></a>另請參閱
 

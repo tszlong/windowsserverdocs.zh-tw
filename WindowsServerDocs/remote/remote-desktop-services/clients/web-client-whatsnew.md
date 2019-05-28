@@ -11,18 +11,34 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 02/22/2019
+ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2746127c15753ac8f4f6067eef068fe97b425829
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 15218af2f084e9c998d89250aace1d763d03b42a
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844549"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976332"
 ---
 # <a name="whats-new-for-the-remote-desktop-web-client"></a>什麼是新的遠端桌面 web 用戶端？
 
 我們會定期更新[遠端桌面 web 用戶端](remote-desktop-web-client.md)、 新增功能和修正問題。 查看最新的更新。
+
+   >[!NOTE]
+    >我們已變更版本控制系統的 web 用戶端。 從 1.0.18.0 版開始，所有的 web 用戶端版本將包含數字 （以 「 W.X.Y.Z"的格式）。 遠端桌面 web 用戶端的版本號碼的最後一定會以 0 (比方說，W.X.Y.0)。 每個 Windows 虛擬桌面 web 用戶端版本將會變更的最後一位數，直到下一步 的遠端桌面 web 用戶端版本 (例如 1.0.18.1)。
+
+## <a name="updates-for-version-10180"></a>更新版本，1.0.18.0
+*發行的日期：5/14/2019*
+
+- 新增的資源啟動方法設定 索引標籤，讓使用者在瀏覽器中開啟資源，或下載要處理的另一個用戶端的.rdp 檔案中的組態。 此設定可能會設定由您的管理員。這項功能可在系統管理員設定的相關詳細資料[web 用戶端安裝程式文件](remote-desktop-web-client-admin.md)。
+- 遠端工作階段中的色彩轉譯問題，啟用就越逼真的固定的色彩。
+- 摘要的遠端資源的錯誤相關的修改過的錯誤訊息。 
+- 已新增的支援更多 office 快速鍵，例如特殊的貼上 (Ctrl + Alt + V)。
+- 新增的鍵盤快速鍵，讓使用者叫用 Windows 鍵，在遠端工作階段 (alt+f3)
+- 嘗試使用過期的密碼進行驗證的使用者更新的錯誤訊息。
+- 在 [所有資源] 頁面上的重新整理的摘要 UI。
+- 解析重疊的對話工作階段期間發生的重新連線。
+- 修正資源工作列中的遠端資源圖示大小。 
 
 ## <a name="updates-for-version-1011"></a>如需版本 1.0.11 的更新
 *發行的日期：2/22/2019*

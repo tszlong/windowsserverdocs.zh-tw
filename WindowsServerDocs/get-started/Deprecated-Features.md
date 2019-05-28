@@ -1,33 +1,32 @@
 ---
 title: Windows Server 2016 已移除或過時的功能
-description: 已移除或已計劃在發行版本中移除的特性與功能。
-ms.custom: na
+description: Windows Server 2016 中，已從產品的目前版本中移除，或已計劃 （已過時） 的後續版本中移除的功能清單。 適用對象是在商業環境中更新作業系統的 IT 專業人員。
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 05/02/2017
+ms.date: 05/21/2019
 ms.assetid: 5d10c5f9-ebac-49a0-b808-c0b1702e0437
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 20178a3be14c076623f647fa139e013528de9a69
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83855cf7e4fa86a932298dd15735dc5bf7277dfb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858159"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976599"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 已移除或過時的功能
 
 >適用於：Windows Server 2016
 
-以下清單列出的 Windows Server 2016 特性與功能已從目前的產品版本中移除，或已計劃可能會從後續版本中移除 (已過時)。 適用對象是在商業環境中更新作業系統的 IT 專業人員。 本清單在後續版本可能會有變更，且可能無法涵括每一項過時的功能。 如需特定功能或替代功能的詳細資訊，請參閱該功能的文件。  
+以下清單列出的 Windows Server 2016 特性與功能已從目前的產品版本中移除，或已計劃可能會從後續版本中移除 (已過時)。 適用對象是在商業環境中更新作業系統的 IT 專業人員。 本清單在後續版本可能會有變更，且可能無法涵括每一項過時的功能。 如需特定功能或替代功能的詳細資訊，請參閱該功能的文件。
 
-## <a name="features-removed-from-windows-server-2016"></a>Windows Server 2016 已移除的功能 
+如需功能已經移除或更新版本中已被取代的資訊，請參閱[功能移除，或計劃取代啟動 Windows Server 2019](../get-started-19/removed-features-19.md)。
+
+## <a name="features-removed-from-windows-server-2016"></a>Windows Server 2016 已移除的功能
+
 下列特性與功能已從這個版本的 Windows Server 2016 中移除。 除非您使用其他替代方法，否則與這些功能相依的應用程式、程式碼或使用方式，將無法在這個版本中運作。  
 
 > [!NOTE]  

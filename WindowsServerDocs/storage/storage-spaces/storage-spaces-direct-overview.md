@@ -6,16 +6,16 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 03/06/2019
+ms.date: 03/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 儲存空間直接存取，可讓您使用內部儲存體的叢集伺服器成軟體定義存放裝置解決方案的 Windows Server 的一項功能的概觀。
 ms.localizationpriority: medium
-ms.openlocfilehash: 25de20b398f780f5da07b6b6cf4d396a7d12204a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 87e7f2549578ba1ceb62772ca7ed156aed115c5f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823889"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192784"
 ---
 # <a name="storage-spaces-direct-overview"></a>儲存空間直接存取概觀
 
@@ -27,144 +27,40 @@ ms.locfileid: "59823889"
 
 儲存空間的其他應用程式，例如共用 SAS 叢集和兩部獨立伺服器，請參閱 <<c0> [ 儲存空間概觀](overview.md)。 如果您要尋找的資訊的 Windows 10 電腦上使用儲存空間，請參閱[Windows 10 中的儲存空間](https://support.microsoft.com/help/12438/windows-10-storage-spaces)。
 
-<table>
-    <tr style="border: 0;">
-        <td style="padding: 5px; border: 0;">
-            <strong>了解</a></strong>
-            <ul>
-              <li>概觀 (您在此處)</li>
-              <li><a href="understand-the-cache.md">了解快取</a></li>
-              <li><a href="storage-spaces-fault-tolerance.md">錯誤容錯] 和 [儲存體效率</a></li>
-              <li><a href="drive-symmetry-considerations.md">磁碟機對稱性考量</a></li>
-              <li><a href="understand-storage-resync.md">了解及監視儲存體重新同步處理</a></li>
-              <li><a href="understand-quorum.md">了解叢集和集區仲裁</a></li>
-              <li><a href="cluster-sets.md">叢集設定</a></li>
-            </ul>
-        </td>
-        <td style="padding: 5px; border: 0;">
-            <strong>計劃</a></strong>
-            <ul>
-              <li><a href="storage-spaces-direct-hardware-requirements.md">硬體需求</a></li>
-              <li><a href="csv-cache.md">使用 CSV 在記憶體中讀取快取</li>
-              <li><a href="choosing-drives.md">選擇磁碟機</a></li>
-              <li><a href="plan-volumes.md">規劃磁碟區</a></li>
-              <li><a href="storage-spaces-direct-in-vm.md">使用客體 VM 叢集</a></li>
-              <li><a href="storage-spaces-direct-disaster-recovery.md">災害復原</a></li>
-            </ul>
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 5px; border: 0;">
-            <strong>部署</a></strong>
-            <ul>
-                    <li><a href="deploy-storage-spaces-direct.md">部署儲存空間直接存取</a></li>
-                    <li><a href="create-volumes.md">建立磁碟區</a></li>
-              <li><a href="nested-resiliency.md">巢狀的恢復功能</a></li>
-              <li><a href="../../failover-clustering/manage-cluster-quorum.md">設定仲裁</a></li>
-              <li><a href="upgrade-storage-spaces-direct-to-windows-server-2019.md">將儲存空間直接存取叢集升級到 Windows Server 2019</a></li>
-            </ul>
-        </td>        
-        <td style="padding: 5px; border: 0;">
-            <strong>管理</a></strong>
-            <ul>
-              <li><a href="../../manage/windows-admin-center/use/manage-hyper-converged.md">使用 Windows Admin Center 來管理</a></li>
-              <li><a href="add-nodes.md">新增伺服器或磁碟機</a></li>
-              <li><a href="maintain-servers.md">將伺服器離線進行維護</li>
-              <li><a href="remove-servers.md">移除伺服器</a></li>
-              <li><a href="resize-volumes.md">延伸磁碟區</a></li>
-              <li><a href="../update-firmware.md">更新磁碟機韌體</a></li>
-              <li><a href="performance-history.md">效能歷程記錄</a></li>
-              <li><a href="delimit-volume-allocation.md">分隔磁碟區的配置</a></li>
-            </ul>
-        </td>
-    </tr>
-    <tr style="border: 0;">
-         <td style="padding: 5px; border: 0;">
-            <strong>疑難排解</a></strong>
-            <ul>
-              <li><a href="storage-spaces-states.md">健全狀況和操作狀態的疑難排解</a></li>
-              <li><a href="data-collection.md">收集診斷資料與儲存空間直接存取</a></li>
-            </ul>
-         <td style="padding: 5px; border: 0;">
-            <strong>近期部落格文章</a></strong>
-            <ul>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/">使用儲存空間直接存取的 13.7 百萬 IOPS： 超交集基礎結構的新業界記錄</a></li>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/">超交集基礎結構，在 Windows Server 2019-倒數時鐘會立即啟動 ！</a></li>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/">從 Windows Server 高峰會的五個大公告</a></li>
-              <li><a href="https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/">10,000 的儲存空間直接存取叢集和計算...</a></li>
-            </ul>
-</table>
+|       |       |
+|   -   |   -   |
+|**了解**<br><ul><li>概觀 (您在此處)</li><li>[了解快取](understand-the-cache.md)</li><li>[容錯與儲存空間效率](storage-spaces-fault-tolerance.md)<li>[磁碟機對稱考量](drive-symmetry-considerations.md)</li><li>[了解和監視存放裝置重新同步](understand-storage-resync.md)</li><li>[了解叢集和集區仲裁](understand-quorum.md)</li><li>[叢集集合](cluster-sets.md)</li>|**規劃**<br><ul><li>[硬體需求](storage-spaces-direct-hardware-requirements.md)</li><li>[使用 CSV 記憶體內部讀取快取](csv-cache.md)</li><li>[選擇磁碟機](choosing-drives.md)</li><li>[規劃磁碟區](plan-volumes.md)</li><li>[使用客體 VM 叢集](storage-spaces-direct-in-vm.md)</li><li>[嚴重損壞修復](storage-spaces-direct-disaster-recovery.md)</li>|
+|**部署**<br><ul><li>[部署儲存空間直接存取](deploy-storage-spaces-direct.md)</li><li>[建立磁碟區](create-volumes.md)</li><li>[巢狀復原](nested-resiliency.md)</li><li>[設定仲裁](../../failover-clustering/manage-cluster-quorum.md)</li><li>[將儲存空間直接存取叢集升級到 Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li>|**管理**<br><ul><li>[使用 Windows Admin Center 管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[新增伺服器或磁碟機](add-nodes.md)</li><li>[使伺服器離線以進行維護](maintain-servers.md)</li><li>[移除伺服器](remove-servers.md)</li><li>[延伸磁碟區](resize-volumes.md)</li><li>[刪除磁碟區](delete-volumes.md)</li><li>[更新磁碟機韌體](../update-firmware.md)</li><li>[效能歷程記錄](performance-history.md)</li><li>[限定磁碟區配置](delimit-volume-allocation.md)</li><li>[超交集叢集上使用 Azure 監視器](configure-azure-monitor.md)</li>|
+|**疑難排解**<br><ul><li>[健全狀況和操作狀態的疑難排解](storage-spaces-states.md)</li><li>[收集診斷資料與儲存空間直接存取](data-collection.md)</li>|**近期部落格文章**<br><ul><li>[使用儲存空間直接存取的 13.7 百萬 IOPS： 超交集基礎結構的新業界記錄](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[超交集基礎結構，在 Windows Server 2019-倒數時鐘會立即啟動 ！](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[從 Windows Server 高峰會的五個大公告](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10,000 的儲存空間直接存取叢集和計算...](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li>|
 
 ## <a name="videos"></a>影片
 
 **快速的影片概觀 （5 分鐘）**
 
-<iframe src="https://www.youtube-nocookie.com/embed/raeUiNtMk0E" width="560" height="315" allowfullscreen></iframe>
+> [!Video https://www.youtube-nocookie.com/embed/raeUiNtMk0E]
 
 **儲存空間直接存取在 Microsoft Ignite 2018 （1 小時）**
 
-[YouTube 上觀看](https://www.youtube.com/watch?v=5kaUiW3qo30)
+> [!Video https://www.youtube-nocookie.com/embed/5kaUiW3qo30]
 
 **儲存空間直接存取在 Microsoft Ignite 2017 （1 小時）**
 
-[YouTube 上觀看](https://www.youtube.com/watch?v=YDr2sqNB-3c)
+> [!Video https://www.youtube-nocookie.com/embed/YDr2sqNB-3c]
 
 **啟動事件，在 Microsoft Ignite 2016 （1 小時）**
 
-[YouTube 上觀看](https://www.youtube.com/watch?v=-LK2ViRGbWs)
+> [!Video https://www.youtube-nocookie.com/embed/LK2ViRGbWs]
 
 ## <a name="key-benefits"></a>主要優點
 
-<table>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>為了簡單起見。</b> 15 分鐘內搞定從執行 Windows Server 2016 的業界標準伺服器到您的第一個儲存空間直接存取叢集。 對於 System Center 使用者而言，部署只需一個核取方塊。
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/performance-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>無可比擬的效能。</b> 不論是全快閃式或混合式，由於儲存空間直接存取的 Hypervisor 內嵌架構、其內建的讀取/寫入快取，以及對於在 PCIe 匯流排上直接裝載尖端 NVMe 磁碟機的支援，讓它具有一致性且低延遲的特性，輕鬆超越<a href="https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/">每部伺服器 150,000 個混合式 4k 隨機 IOPS</a>。
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>容錯功能。</b> 內建的恢復功能會處理磁碟機、 伺服器或元件失敗的持續可用性。 也可針對較大型的部署設定<a href="../../failover-clustering/fault-domains.md">底座和機架容錯</a>。 當硬體故障時，只需進行交換；軟體會自行修復，不需複雜的管理步驟。
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>資源效率。</b> 清除編碼可提供多達 2.4 倍的儲存空間效率，透過獨特的創新 (例如本機重建程式碼和 ReFS 即時分層) 來將這些獲益延展至硬碟機和混合式熱/冷工作負載，同時將 CPU 耗用量降到最低，以便讓資源回到最需要它們的地方 (VM)。
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>管理性。</b> 使用<a href="../storage-qos/storage-qos-overview.md">存放裝置 QoS 控制項</a>，利用每個 VM 之 IOPS 的最小值和最大值限制來抑制過度忙碌的 VM。 <a href="../../failover-clustering/health-service-overview.md">健全狀況服務</a>提供連續的內建監視和警示，而新的 API 可讓您輕鬆收集豐富、整個叢集的效能和容量計量。
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:100px">
-            <img src="media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png" width="100" alt="">
-        </td>
-        <td style="padding: 10px; border: 0;">
-            <b>延展性。</b> 如果每個叢集的儲存空間最大可達 1 拍位元組 (1,000 TB)，則最多可擴展到 16 部伺服器和超過 400 個磁碟機。 若要向外延展，只需新增磁碟機或新增更多伺服器；儲存空間直接存取就會自動將新的磁碟機上架，並開始使用它們。 存放裝置效率與效能在規模上可如預期般提升。
-        </td>
-    </tr>
-</table>
+|       |       |
+|   -   |   -   |
+|![簡潔](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png)   |**為了簡單起見。** 15 分鐘內搞定從執行 Windows Server 2016 的業界標準伺服器到您的第一個儲存空間直接存取叢集。 對於 System Center 使用者而言，部署只需一個核取方塊。       |
+|![無可比擬的效能](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **無可比擬的效能。** 不論是全快閃式或混合式，由於儲存空間直接存取的 Hypervisor 內嵌架構、其內建的讀取/寫入快取，以及對於在 PCIe 匯流排上直接裝載尖端 NVMe 磁碟機的支援，讓它具有一致性且低延遲的特性，輕鬆超越[每部伺服器 150,000 個混合式 4k 隨機 IOPS](https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/)。      |
+|![容錯移轉](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   |**容錯功能。** 內建的復原功能會使用持續可用性，來處理磁碟機、伺服器或元件失敗。 也可針對較大型的部署設定[底座和機架容錯](../../failover-clustering/fault-domains.md)。 當硬體故障時，只需進行交換；軟體會自行修復，不需複雜的管理步驟。       |
+|![資源效率](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png)   |**資源效率。** 清除編碼可提供多達 2.4 倍的儲存空間效率，透過獨特的創新 (例如本機重建程式碼和 ReFS 即時分層) 來將這些獲益延展至硬碟機和混合式熱/冷工作負載，同時將 CPU 耗用量降到最低，以便讓資源回到最需要它們的地方 (VM)。       |
+|![管理性](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png)   | **管理性**。 使用[存放裝置 QoS 控制項](../storage-qos/storage-qos-overview.md)，利用每個 VM 之 IOPS 的最小值和最大值限制來抑制過度忙碌的 VM。 [健全狀況服務](../../failover-clustering/health-service-overview.md)提供連續的內建監視和警示，而新的 API 可讓您輕鬆收集豐富、整個叢集的效能和容量計量。      |
+|![延展性](media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png)   |**延展性**。 如果每個叢集的儲存空間最大可達 1 拍位元組 (1,000 TB)，則最多可擴展到 16 部伺服器和超過 400 個磁碟機。 若要向外延展，只需新增磁碟機或新增更多伺服器；儲存空間直接存取就會自動將新的磁碟機上架，並開始使用它們。 存放裝置效率與效能在規模上可如預期般提升。       |
 
 ## <a name="deployment-options"></a>部署選項
 
@@ -227,7 +123,7 @@ ms.locfileid: "59823889"
 | [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | 圖形    | 內含 |
 | 伺服器管理員和容錯移轉叢集管理員                                 | 圖形    | 內含 |
 | Windows PowerShell                                                        | 命令列 | 內含 |
-| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) & [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | 圖形    | 付費     |
+| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | 圖形    | 付費     |
 
 ## <a name="get-started"></a>立即開始
 
@@ -235,10 +131,10 @@ ms.locfileid: "59823889"
 
 ## <a name="see-also"></a>另請參閱
 
--   [錯誤容錯] 和 [儲存體效率](storage-spaces-fault-tolerance.md)
--   [儲存體複本](../storage-replica/storage-replica-overview.md)
--   [儲存體，且 Microsoft 部落格](https://blogs.technet.microsoft.com/filecab/)
--   [搭配 iWARP 的儲存空間直接存取輸送量](https://blogs.technet.microsoft.com/filecab/2017/03/13/storage-spaces-direct-throughput-with-iwarp) (TechNet 部落格)
--   [容錯移轉叢集的 Windows Server 最新消息](../../failover-clustering/whats-new-in-failover-clustering.md)  
--   [存放裝置服務品質](../storage-qos/storage-qos-overview.md)
--   [Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)
+- [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)
+- [儲存體複本](../storage-replica/storage-replica-overview.md)
+- [儲存體，且 Microsoft 部落格](https://blogs.technet.microsoft.com/filecab/)
+- [搭配 iWARP 的儲存空間直接存取輸送量](https://blogs.technet.microsoft.com/filecab/2017/03/13/storage-spaces-direct-throughput-with-iwarp) (TechNet 部落格)
+- [容錯移轉叢集的 Windows Server 最新消息](../../failover-clustering/whats-new-in-failover-clustering.md)  
+- [存放裝置服務品質](../storage-qos/storage-qos-overview.md)
+- [Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)

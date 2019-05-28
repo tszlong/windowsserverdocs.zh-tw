@@ -8,18 +8,21 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: 2a28be1bdd22915182cbdbb2726ab9d37422e889
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9453811b0f76b249c245990293ba82cf5a6e0867
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834429"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624636"
 ---
 # <a name="data-deduplication-interoperability"></a>重複資料刪除互通性
 
-> 適用於：Windows Server （半年通道），Windows Server 2016
+> 適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2019
 
 ## <a id="supported"></a>支援
+
+### <a id="supported-ReFS"></a>ReFS
+重複資料刪除時，支援 Windows Server 2019。 
 
 ### <a id="supported-clusters"></a>容錯移轉叢集
 
@@ -76,8 +79,6 @@ Windows Server Backup 可以依原樣備份最佳化的磁碟區 (亦即，不�
     ```
 
 ## <a id="unsupported"></a>不支援
-### <a id="unsupported-refs"></a>ReFS
-Windows Server 2016 不支援 ReFS 格式化磁碟區上的重複資料刪除。 [在 Windows Server Storage UserVoice 上投票給 Windows Server vNext 的這個項目](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/7962813-support-deduplication-on-refs)。
 
 ### <a id="unsupported-windows-client"></a>Windows 10 （用戶端作業系統）
 Windows 10 不支援重複資料刪除。 Windows 社群中有數篇熱門部落格文章說明如何將二進位檔從 Windows Server 2016 移除並安裝在 Windows 10，但是這個案例在「重複資料刪除」的開發過程中還未經驗證。 [在 Windows Server Storage UserVoice 上投票給 Windows 10 vNext 的這個項目](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os)。

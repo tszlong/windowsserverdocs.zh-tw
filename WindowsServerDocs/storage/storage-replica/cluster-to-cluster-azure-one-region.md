@@ -1,23 +1,26 @@
 ---
-title: Azure 中相同地區的叢集對叢集儲存體複本
-description: 在 Azure 中的相同區域內的叢集對叢集儲存體複寫
+title: 叢集對叢集儲存體複本在 Azure 中的相同區域內
+description: 叢集對叢集儲存體複寫，在 Azure 中的相同區域內
 keywords: 儲存體複本，伺服器管理員、 Windows Server、 Azure、 叢集、 相同的區域
 author: arduppal
 ms.author: arduppal
-ms.date: 12/19/2017
+ms.date: 04/26/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 8dbfab96404f5c98b9861476c0bc654af1bda775
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4371192d44878d3c953374b8d307b4d5612869f5
+ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829139"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65461982"
 ---
-# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure 中相同地區的叢集對叢集儲存體複本
-您可以在 Azure 中設定叢集對叢集儲存體複本在相同區域內。 在下列範例中，我們使用雙節點叢集，但不限於雙節點叢集的叢集對叢集儲存體複本。 下圖是兩個節點的儲存空間直接存取叢集，可以彼此通訊，會在相同的網域中，並在相同區域內。
+# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>叢集對叢集儲存體複本在 Azure 中的相同區域內
+
+> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
+
+您可以在 Azure 中設定叢集對叢集儲存體複寫，在相同區域內。 在下列範例中，我們使用雙節點叢集，但不限於雙節點叢集的叢集對叢集儲存體複本。 下圖是兩個節點的儲存空間直接存取叢集，可以彼此通訊，會在相同的網域中，並在相同區域內。
 
 觀看以下影片的程序的完整逐步解說。
 
@@ -57,10 +60,10 @@ ms.locfileid: "59829139"
     
 9. 建立叢集 (**SRAZC1**， **SRAZC2**)。 以下是我們的範例 PowerShell 命令
 ```PowerShell
-    New-Cluster -Name SRAZC1 -Node az2az1,az2az2 – StaticAddress 10.3.0.100
+    New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
 ```
 ```PowerShell
-    New-Cluster -Name SRAZC2 -Node az2az3,az2az4 – StaticAddress 10.3.0.101
+    New-Cluster -Name SRAZC2 -Node az2az3,az2az4 –StaticAddress 10.3.0.101
 ```
 10. 啟用儲存空間直接存取
 ```PowerShell

@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6099dac7d77e37b761785b4f58b6106472e5ba1e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f30bfcd531731e3a0d14350536ddf418c50f3ea0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827949"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475953"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>使用者設定檔與事件疑難排解
 
->適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2012、 Windows Server 2012 R2 和 Windows Server 2016。
+>適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 和 Windows Server （半年通道）。
 
 本主題討論如何疑難排解問題載入和卸載的使用者設定檔，使用事件和追蹤記錄檔。 下列各節說明如何使用三個事件記錄檔會記錄使用者設定檔資訊。
 
@@ -30,7 +30,7 @@ ms.locfileid: "59827949"
 1. 啟動事件檢視器。 若要這樣做，請開啟**控制台中**，選取**系統及安全性**，然後在**系統管理工具**區段中，選取**檢視事件記錄檔**. [事件檢視器] 視窗隨即開啟。
 2. 在主控台樹狀目錄中，第一次瀏覽至**Windows 記錄檔**，然後**應用程式**。
 3. 在 [動作] 窗格中，選取**篩選目前的記錄**。 [篩選目前的記錄檔] 對話方塊隨即開啟。
-4. 在 **事件來源**方塊中，選取**使用者設定檔服務**核取方塊，然後選取**確定**。
+4. 在 **事件來源**方塊中，選取**使用者設定檔服務**核取方塊，然後選取 **確定** 。
 5. 檢閱事件，並特別注意的錯誤事件的清單。
 6. 當您發現值得注意的事件時，選取事件日誌線上說明連結以顯示其他資訊和疑難排解程序。
 7. 若要執行進一步的疑難排解，附註的日期和時間的值得注意的事件，，然後檢查作業的記錄檔 （如步驟 2 中所述） 以檢視有關使用者設定檔服務所執行的錯誤或警告的事件發生時間前後的詳細資料。
@@ -58,7 +58,7 @@ ms.locfileid: "59827949"
 1. 在 **動作**窗格中的 事件檢視器中，選取**檢視**，然後選取**顯示分析與偵錯記錄檔**。
 2. 瀏覽至**Applications and Services Logs**，然後**Microsoft**，然後**Windows**，然後**User Profile Service**，然後**診斷**。
 3. 選取 **啟用記錄**，然後選取**是**。 這可讓診斷的記錄檔，將會啟動記錄。
-4. 如果您需要更多詳細資訊，請參閱[步驟 4:建立和解碼追蹤](#step-4:-creating-and-decoding-a-trace)如需有關如何建立追蹤記錄檔。
+4. 如果您需要更多詳細資訊，請參閱[步驟 4:建立和解碼追蹤](#step-4-creating-and-decoding-a-trace)如需有關如何建立追蹤記錄檔。
 5. 當您完成疑難排解問題時，瀏覽至**診斷**記錄檔中，選取**停用記錄**，選取**檢視**，然後清除 **顯示分析與偵錯記錄檔**核取方塊以隱藏分析與偵錯記錄。
 
 ## <a name="step-4-creating-and-decoding-a-trace"></a>步驟 4：建立和解碼追蹤
@@ -70,7 +70,7 @@ ms.locfileid: "59827949"
 以下是如何建立和使用者設定檔服務的解碼追蹤：
 
 1. 登入，使用者所遭遇問題，使用屬於本機 Administrators 群組的成員帳戶的電腦。
-2. 從提升權限的命令提示字元輸入下列命令，其中*\<路徑\>* 是本機資料夾路徑，您先前已建立，例如 c:\\記錄檔：
+2. 從提升權限的命令提示字元輸入下列命令，其中 *\<路徑\>* 是本機資料夾路徑，您先前已建立，例如 c:\\記錄檔：
         
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets

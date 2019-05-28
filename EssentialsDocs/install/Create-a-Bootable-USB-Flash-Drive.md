@@ -12,12 +12,12 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2716ffb7ce8f74d7c729565064de91e0598d0753
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb62a460c09fdb2874bcc051176a05e88cee19e7
+ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884679"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65621276"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>建立可開機的 USB 快閃磁碟機
 
@@ -50,9 +50,9 @@ ms.locfileid: "59884679"
   
 6.  輸入 `clean`，然後按 ENTER。 此命令會刪除 USB 快閃磁碟機的所有資料。  
   
-7.  若要在 USB 快閃磁碟機上建立新的主要磁碟分割，輸入 `create part pri`，然後按 ENTER。  
+7.  若要在 USB 快閃磁碟機上建立新的主要磁碟分割，輸入 `create partition primary`，然後按 ENTER。  
   
-8.  若要選取您剛才建立的磁碟分割，輸入 `select part 1`，然後按 ENTER。  
+8.  若要選取您剛才建立的磁碟分割，輸入 `select partition 1`，然後按 ENTER。  
   
 9. 若要將磁碟分割格式化，輸入 `format fs=ntfs quick`，然後按 ENTER。  
   

@@ -13,12 +13,12 @@ ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 6d31cde5252cd7f7e8d286d6f8886f779d17735d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b76019232be5091440c3e0cf5ad85569cbe0d4dc
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875809"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034489"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>將虛擬閘道新增到租用戶虛擬網路 
 
@@ -100,7 +100,7 @@ ms.locfileid: "59875809"
 4. 使用 IPsec，GRE，建立站對站 VPN 連線或圖層的 3 個 (L3) 轉寄。  
 
    >[!TIP]
-   >（選擇性） 您可以結合所有先前的步驟，並使用所有的三個連線選項設定租用戶的虛擬閘道。  如需詳細資訊，請參閱 <<c0> [ 所有這三種連線類型 (IPsec，GRE，L3) 中設定閘道和 BGP](#configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)。
+   >（選擇性） 您可以結合所有先前的步驟，並使用所有的三個連線選項設定租用戶的虛擬閘道。  如需詳細資訊，請參閱 <<c0> [ 所有這三種連線類型 (IPsec，GRE，L3) 中設定閘道和 BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)。
   
    **IPsec VPN 站對站網路連線**
   

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: df8057bf8afb51cbd9ca2ec704144b5863bdf064
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5c01daa86b52f3f175d763d09b4c779affef9681
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878979"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192416"
 ---
 # <a name="checklist-configuring-the-account-partner-organization"></a>檢查清單：設定帳戶夥伴組織
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 帳戶夥伴組織包含會存取 Web 的使用者\-資源夥伴中的應用程式。 此組織中的系統管理員必須使用 AD FS 管理嵌入式管理單元\-中建立信賴憑證者信任來代表資源夥伴組織其信任關聯性。 接著，資源夥伴系統管理員必須建立每個帳戶夥伴組織，他們想要信任的宣告提供者信任。  
   
@@ -45,7 +43,7 @@ ms.locfileid: "59878979"
 |![設定帳戶夥伴組織](media/icon_checkboxo.gif)|決定您想要新增至 AD FS 的屬性存放區的類型。 然後，新增 屬性存放區使用 AD FS 管理嵌入式管理單元\-中。|![設定帳戶夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[角色的屬性存放區](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)<br /><br />![設定帳戶夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增屬性存放區](../../ad-fs/operations/Add-an-Attribute-Store.md)|  
 |![設定帳戶夥伴組織](media/icon_checkboxo.gif)|如果您將需要將宣告傳送至或 AD FS 1.0 或 1.1 同盟服務使用來自使用者的 資源夥伴的宣告，請參閱連結的權限，如需如何設定 AD FS 與 AD FS 的舊版交互操作。 如果資源夥伴組織也使用 AD FS 來傳送，或使用您的組織宣告，您可以略過此步驟，並繼續進行此檢查清單中的下一個工作。|![設定帳戶夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃互通性與 AD FS 1.x](https://technet.microsoft.com/library/ff678040.aspx)|  
 |![設定帳戶夥伴組織](media/icon_checkboxo.gif)|第一部同盟伺服器在帳戶夥伴組織中的部署之後，建立信賴憑證者的合作對象信任關係，使用 AD FS 管理嵌入式管理單元\-中。 您可以手動輸入資源夥伴的資料或使用資源夥伴組織系統管理員提供給您的同盟中繼資料 URL，建立信賴憑證者信任。 您可以使用同盟中繼資料自動擷取資源夥伴的資料。 **注意：** 如果資源夥伴發佈它的同盟中繼資料或可以提供它的檔案複本，建議您自動擷取資料，因為比較省時。|![設定帳戶夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[信賴憑證者合作對象信任手動建立](../../ad-fs/operations/Create-a-Relying-Party-Trust.md)<br /><br />![設定帳戶夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[建立信賴憑證者合作對象信任使用同盟中繼資料](../../ad-fs/operations/Create-a-Relying-Party-Trust.md)|  
-|![設定帳戶夥伴組織](media/icon_checkboxo.gif)|根據您組織的需求，建立一或多個宣告規則設定為每個信賴憑證者信任指定 AD FS 管理嵌入式管理單元中\-中，因此會適當地發出宣告。|![設定帳戶夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[檢查清單：建立信賴憑證者信任宣告規則](Checklist--Creating-Claim-Rules-for-a-Relying-Party-Trust.md)|  
+|![設定帳戶夥伴組織](media/icon_checkboxo.gif)|根據您組織的需求，建立一或多個宣告規則設定為每個信賴憑證者信任指定 AD FS 管理嵌入式管理單元中\-中，因此會適當地發出宣告。|![設定帳戶夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[檢查清單：為信賴憑證者信任建立宣告規則](Checklist--Creating-Claim-Rules-for-a-Relying-Party-Trust.md)|  
 |![設定帳戶夥伴組織](media/icon_checkboxo.gif)|如果不存在，就必須建立宣告描述的因應組織的需求。 AD FS 隨附一組預設的宣告描述會公開在 AD FS 管理嵌入式管理單元中\-中。|![設定帳戶夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增宣告描述](../../ad-fs/operations/Add-a-Claim-Description.md)|  
 |![設定帳戶夥伴組織](media/icon_checkboxo.gif)|決定您的組織是否需要使用授權，或限制指定的帳戶 」 做為 」 或模擬其他使用者的身分識別委派。 這通常是需求時 front\-結束的 Web 應用程式必須搭配 回到互動\-端 Web 服務。|![設定帳戶夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[使用身分識別委派的時機](https://technet.microsoft.com/library/dd807122.aspx)|  
 |![設定帳戶夥伴組織](media/icon_checkboxo.gif)|準備同盟的用戶端電腦：<br /><br />-新增至用戶端瀏覽器的信任的網站清單的帳戶夥伴同盟伺服器的 URL。<br />-使用群組原則，將適當的安全通訊端層\(SSL\)到用戶端電腦的憑證。|![設定帳戶夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[帳戶夥伴中準備用戶端電腦](https://technet.microsoft.com/library/dd807114(v=ws.11).aspx)<br /><br />![設定帳戶夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[信任帳戶同盟伺服器設定用戶端電腦](Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)<br /><br />![設定帳戶夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[發佈的憑證，透過使用群組原則的用戶端電腦](Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md)| 

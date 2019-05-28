@@ -1,6 +1,6 @@
 ---
-title: 自訂使用 OpenID Connect 或 OAuth 與 AD FS 2016 時，要在 id_token 中發出的宣告
-description: 在 AD FS 2016 中自訂識別碼權杖 conecpts 技術概觀
+title: 自訂宣告要在與 AD FS 2016 使用 OpenID Connect 或 OAuth 時的 id_token 中發出或更新版本
+description: 在 AD FS 2016 或更新版本中的自訂 id k 概念技術概觀
 author: anandyadavmsft
 ms.author: billmath
 manager: mtillman
@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: 8c8e14f22a4bca5b6d32e841814a58a4b4ddca01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4f9a2880aa91b7a600cdb40238bead7d565e6bc
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820639"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976957"
 ---
-# <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016"></a>自訂使用 OpenID Connect 或 OAuth 與 AD FS 2016 時，要在 id_token 中發出的宣告
+# <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>自訂宣告要在與 AD FS 2016 使用 OpenID Connect 或 OAuth 時的 id_token 中發出或更新版本
 
 ## <a name="overview"></a>總覽
-發行項[此處](enabling-openId-connect-with-ad-fs.md)示範如何建置使用 AD FS，如 OpenID Connect 登入的應用程式。 不過，根據預設在只有一組固定的 id_token 中可用的宣告。 AD FS 2016 有自訂的 id_token 中 OpenID Connect 案例能力。
+發行項[此處](native-client-with-ad-fs.md)示範如何建置使用 AD FS，如 OpenID Connect 登入的應用程式。 不過，根據預設在只有一組固定的 id_token 中可用的宣告。 AD FS 2016 和更新版本有自訂 id_token OpenID Connect 案例中的功能。
 
 ## <a name="when-are-custom-id-token-used"></a>當為自訂的 ID 語彙基元，用嗎？
 在某些情況下就可以用戶端應用程式沒有它正在嘗試存取的資源。 因此，它實際上不需要存取權杖。 在這種情況下，用戶端應用程式基本上需要只識別碼權杖，但有一些額外的宣告，以協助功能。
@@ -32,7 +32,7 @@ ms.locfileid: "59820639"
 
 1.  response_mode 會設定為 form_post
 2.  只有公用用戶端可以取得自訂宣告在識別碼權杖
-3.  信賴憑證者的合作對象識別碼都應該是相同用戶端識別碼
+3.  信賴憑證者的合作對象識別項 （Web API 識別碼） 應該是相同用戶端識別碼
 
 ### <a name="scenario-2"></a>案例 2
 
@@ -40,86 +40,186 @@ ms.locfileid: "59820639"
 
 具有[KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) AD FS 伺服器上安裝
 1.  response_mode 會設定為 form_post
-2.  將範圍 allatclaims 指派至用戶端 – RP 組。
+2.  公用和機密用戶端可以取得自訂宣告在識別碼權杖
+3.  將範圍 allatclaims 指派至用戶端 – RP 組。
 若要將指派範圍，可以使用 Grant ADFSApplicationPermission cmdlet，如下列範例所示：
 
 ``` powershell
 Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient" -ServerRoleIdentifier "https://rp/fedpassive" -ScopeNames "allatclaims","openid"
 ```
 
-## <a name="creating-an-oauth-application-to-handle-custom-claims-in-id-token"></a>建立 OAuth 應用程式的識別碼權杖中的自訂宣告
-使用文件[此處](Enabling-OpenId-Connect-with-AD-FS-2016.md)建立應用程式應用程式使用的 OpenID Connect 的 AD FS 登入。 然後遵循下列步驟來設定 AD FS 中的應用程式，來接收識別碼權杖和自訂宣告。
+## <a name="creating-and-configuring-an-oauth-application-to-handle-custom-claims-in-id-token"></a>建立及設定 OAuth 應用程式的識別碼權杖中的自訂宣告
+請遵循下列步驟來建立和設定 AD FS 中的應用程式，來接收識別碼權杖和自訂宣告。
 
-### <a name="create-the-application-group-in-ad-fs-2016"></a>在 AD FS 2016 中建立應用程式群組
+### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>建立和設定 AD FS 2016 或更新版本中的應用程式群組
 
-1.  建立新的範本，如下所示，為基礎的應用程式群組稱為 CustomTokenClient。
+1. 在 AD FS 管理中，以滑鼠右鍵按一下應用程式群組，然後選取**加入應用程式群組**。
 
-![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
+2. 在 應用程式群組精靈 中，針對名稱輸入**ADFSSSO**然後在 用戶端-伺服器應用程式選取**存取的 web 應用程式的原生應用程式**範本。 按一下 [下一步]  。
 
-2. 此範本會建立機密用戶端。 記下識別碼，並將傳回的 URI 指定為 VS 專案 SSL URL。
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
+3. 複製**用戶端識別元**值。  它會用於稍後做為值的應用程式的 web.config 檔案中的 ida: ClientId。
 
-3.  在下一個步驟中，選取**產生共用祕密**建立用戶端認證，並複製產生的用戶端認證。
+4. 輸入下列**重新導向 URI:**  -  **https://localhost:44320/** 。  按一下 **\[新增\]** 。 按一下 [下一步]  。
 
-![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-4. 按一下 [**下一步]** 繼續完成精靈。
+5. 在 **設定 Web API**畫面上，輸入下列**識別項** -  **https://contoso.com/WebApp** 。  按一下 **\[新增\]** 。 按一下 [下一步]  。  這個值會用於稍後**ida: ResourceID**應用程式 web.config 檔案中。
 
-![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
-### <a name="create-the-relying-party"></a>建立信賴憑證者的合作對象
-若要新增自訂宣告，在 [識別碼] 語彙基元，您必須建立其宣告會新增識別碼權杖中的 RP。 使用 [新增信賴憑證者信任精靈] 建立新的信賴憑證者合作對象，如下所示：
- 
-![信賴憑證者的合作對象](media/Custom-Id-Tokens-in-AD-FS/rpsnap1.png)
+6. 在 [**選擇存取控制原則**畫面上，選取**允許所有人**然後按一下**下一步]** 。
 
-建立信賴憑證者的合作對象之後，請以滑鼠右鍵按一下信賴憑證者的合作對象項目，然後選取**編輯宣告發佈原則**新增宣告發行規則。 新增必要的自訂宣告的識別碼權杖，如下所示：
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
-![信賴憑證者的合作對象](media/Custom-Id-Tokens-in-AD-FS/rpsnap2.png)
+7. 上**設定應用程式權限**畫面上，確定**openid**並**allatclaims**已選取，然後按一下**下一步** 。
 
-### <a name="assign-allatclaims-scope-to-the-pair-of-client-and-relying-party"></a>將"allatclaims 」 範圍指派給對用戶端和信賴憑證者的合作對象
-使用 PowerShell 在 AD FS 伺服器上，指派新的 allatclaims 範圍，下列範例中所指定 (變更的 clientID 和伺服器：
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
 
-``` powershell
-Grant-AdfsApplicationPermission -ClientRoleIdentifier "5db77ce4-cedf-4319-85f7-cc230b7022e0" -ServerRoleIdentifier "https://customidrp1/" -ScopeNames "allatclaims","openid"
-```
+8. 在 [**摘要**畫面上，按一下**下一步]** 。  
 
->[!NOTE]
->根據您的應用程式設定中變更 ClientRoleIdentifier 和 ServerRoleIdentifier
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
 
-## <a name="test-the-custom-claims-in-id-token"></a>在識別碼權杖中測試自訂宣告
+9. 在  **Complete**畫面上，按一下**關閉**。
 
-然後，使用相同的位元，您一律用來存取宣告的程式碼，您就可以看到將成為 id_token 的一部分的其他宣告。
-例如，在.NET MVC 範例應用程式中，開啟其中一個控制器檔案，然後輸入類似的程式碼如下：
+10. 在 AD FS 管理] 中，按一下 [應用程式群組，以取得所有的應用程式群組的清單。 以滑鼠右鍵按一下**ADFSSSO** ，然後選取**屬性**。 選取  **ADFSSSO-Web API** ，按一下 **編輯...**
 
+    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.png)
 
-``` code
-    [Authorize]
-    public ActionResult About()
-    {
+11. 在  **ADFSSSO-Web API 屬性**畫面上，選取**發佈轉換規則**索引標籤，然後按一下 **新增規則...**
 
-        ClaimsPrincipal cp = ClaimsPrincipal.Current;
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
 
-        string userName = cp.FindFirst(ClaimTypes.GivenName).Value;
-        ViewBag.Message = String.Format("Hello {0}!", userName);
-        return View();
+12. 在 **新增轉換宣告規則精靈** 畫面上，選取**使用自訂規則傳送宣告**從下拉式清單按一下**下一步**
 
-    }
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
+
+13. 在上**新增轉換宣告規則精靈** 畫面上，輸入**ForCustomIDToken**中**宣告規則名稱**下列宣告中的規則和**自訂規則**. 按一下 **完成**
+
+  ```  
+  x:[]
+  => issue(claim=x);  
+  ```
+
+  ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
 
 ```
 
 >[!NOTE]
->請留意，在 Oauth2 要求中需要 resource 參數。
->
->不正確的範例：
->
->**https&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token & 範圍 = openid redirect_uri = https&#58;//myportal/auth & nonce = b3ceb943fc756d927777 client_id = 6db3ec2a-075a-4c 72 9b22 ca7ab60cb4e7& 狀態 = 42c2c156aef47e8d0870 資源 = 6db3ec2a-075a-4c 72 9b22 ca7ab60cb4e7**
->
->好的例子：
->
->**https&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token & 範圍 = openid redirect_uri = https&#58;//myportal/auth & nonce = b3ceb943fc756d927777 client_id = 6db3ec2a-075a-4c 72 9b22 ca7ab60cb4e7& 狀態 = 42c2c156aef47e8d0870 resource = https&#58;//customidrp1/ & response_mode = form_post**
->
->如果資源參數不是您可能會收到錯誤或沒有任何自訂宣告的權杖要求中。
+>You can also use PowerShell to assign the allatclaims and openid scopes
+>``` powershell
+Grant-AdfsApplicationPermission -ClientRoleIdentifier "[Client ID from #3 above]" -ServerRoleIdentifier "[Identifier from #5 above]" -ScopeNames "allatclaims","openid"
+```
+
+### <a name="download-and-modify-the-sample-application-to-emit-custom-claims-in-idtoken"></a>下載並修改的範例應用程式，以發出在 id_token 中的自訂宣告
+
+本節討論如何下載範例 Web 應用程式，並在 Visual Studio 中修改它。   我們將使用 Azure AD 範例所[此處](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect)。  
+
+若要下載範例專案，使用 Git Bash，並輸入下列命令：  
+
+```  
+git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect  
+```  
+
+![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_1.PNG)
+
+#### <a name="to-modify-the-app"></a>若要修改應用程式
+
+1.  開啟使用 Visual Studio 範例。  
+
+2.  因此，所有遺漏的 Nuget 還原，請重建應用程式。  
+
+3.  開啟 web.config 檔案。  讓尋找，如下所示，請修改下列值：  
+
+    ```  
+    <add key="ida:ClientId" value="[Replace this Client Id from #3 above under section Create and configure an Application Group in AD FS 2016 or later]" />  
+    <add key="ida:ResourceID" value="[Replace this with the Web API Identifier from #5 above]"  />
+    <add key="ida:ADFSDiscoveryDoc" value="https://[Your ADFS hostname]/adfs/.well-known/openid-configuration" />  
+    <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />      
+    <add key="ida:AADInstance" value="https://login.microsoftonline.com/{0}" />-->  
+    <add key="ida:PostLogoutRedirectUri" value="[Replace this with the Redirect URI from #4 above]" />  
+    ```  
+
+    ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_2.PNG)  
+
+4.  開啟 Startup.Auth.cs 檔案，並進行下列變更：  
+
+    -   調整 OpenId Connect 中介軟體的初始化邏輯以下列變更：  
+
+        ```  
+        private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];  
+        //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];  
+        //private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];  
+        private static string metadataAddress = ConfigurationManager.AppSettings["ida:ADFSDiscoveryDoc"];
+        private static string resourceId = ConfigurationManager.AppSettings["ida:ResourceID"];
+        private static string postLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];  
+        ```  
+
+    -   註解下列：  
+
+            ```  
+            //string Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);  
+            ```
+
+          ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_3.PNG)
+
+    -   進一步向下，修改的 OpenId Connect 中介軟體選項，如下所示：  
+
+        ```  
+        app.UseOpenIdConnectAuthentication(  
+            new OpenIdConnectAuthenticationOptions  
+            {  
+                ClientId = clientId,  
+                //Authority = authority,  
+                Resource = resourceId,
+                MetadataAddress = metadataAddress,  
+                PostLogoutRedirectUri = postLogoutRedirectUri,
+                RedirectUri = postLogoutRedirectUri
+        ```  
+
+        ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_4.PNG)
+
+5.  開啟 HomeController.cs 檔案，並進行下列變更：  
+
+    -   加入下列內容：  
+
+            ```  
+            using System.Security.Claims;  
+            ```
+
+    -   更新 about （） 方法，如下所示：  
+
+        ```  
+        [Authorize]
+        public ActionResult About()
+        {
+            ClaimsPrincipal cp = ClaimsPrincipal.Current;
+            string userName = cp.FindFirst(ClaimTypes.WindowsAccountName).Value;
+            ViewBag.Message = String.Format("Hello {0}!", userName);
+            return View();
+        }
+        ```  
+
+        ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_5.PNG)
+
+### <a name="test-the-custom-claims-in-id-token"></a>在識別碼權杖中測試自訂宣告
+
+一旦已進行上述變更，請按 f5 鍵。 這會顯示 [範例] 頁面。 按一下 登入。
+
+![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_6.PNG)
+
+您將會重新導向到 AD FS 登入頁面。 請繼續進行並登入。
+
+![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_7.PNG)
+
+這項作業成功之後，您應該看到您現在登入。
+
+![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_8.PNG)
+
+按一下 [關於] 連結。 您會看到 Hello [Username] 會從識別碼權杖中的使用者名稱宣告
+
+![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_9.PNG)
 
 ## <a name="next-steps"></a>後續步驟
 [AD FS 開發](../../ad-fs/AD-FS-Development.md)  

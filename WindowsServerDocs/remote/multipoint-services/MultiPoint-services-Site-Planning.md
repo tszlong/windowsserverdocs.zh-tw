@@ -13,12 +13,12 @@ ms.assetid: 063783cd-d748-489e-b175-46eadc993f7a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 60d2e1fedc018136f5668d55a8afb2e0574d94de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da27467efb842368167b7a315056506e99331e8d
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845069"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034594"
 ---
 # <a name="multipoint-services-site-planning"></a>MultiPoint 服務網站規劃
 您應該考慮將會部署一或多部執行 MultiPoint 服務和其相關聯的站台的位置。  
@@ -86,11 +86,11 @@ ms.locfileid: "59845069"
 ## <a name="using-additional-hubs"></a>使用其他中樞  
 其他中樞可用來簡化安裝。 有三種類型的 MultiPoint 服務系統所使用的中樞：  
   
--   [站台集線器](#Station-hubs)  
+-   [站台集線器](#station-hubs)  
   
--   [中繼集線器](#Intermediate-hubs)  
+-   [中繼集線器](#intermediate-hubs)  
   
--   [下游集線器](#Downstream-hubs)  
+-   [下游集線器](#downstream-hubs)  
   
 ### <a name="station-hubs"></a>站台集線器  
 站台集線器是 MultiPoint 服務站相關聯的外部中樞。 至少，站台集線器會有鍵盤插入入它。 它也有其他的週邊設備連接。 站台集線器可以是一般的 USB 集線器的 USB 2.0 或更新版本的規格的符合。 如果強大的裝置將會以它們的外掛程式，就應該從外部供電站台集線器。  

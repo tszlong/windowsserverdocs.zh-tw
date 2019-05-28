@@ -2,22 +2,22 @@
 title: DFS 命名空間概觀
 ms.prod: windows-server-threshold
 ms.author: jgerend
-ms.manager: brianlic
+ms.manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 10/15/2018
+ms.date: 05/09/2019
 description: 本主題說明 DFS 命名空間，這是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。
-ms.openlocfilehash: 0f80e5a25254513702c25ce895a28c4cb1e0f2b4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 33b5a36c9f13179286a95735621272f79983231c
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844249"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613191"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空間概觀
 
-> 適用於：Windows Server 2019，Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+> 適用於：Windows Server 2019，Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008、 Windows Server （半年通道）
 
 DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。 因此可以為使用者提供共用資料夾的虛擬檢視，其中單一路徑即可通向位於多部伺服器上的檔案，如下圖所示：
 
@@ -42,11 +42,12 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 
 執行下列作業系統的伺服器除了單一獨立命名空間之外，還可以裝載多個網域型命名空間。 
 
-- Windows Server (半年度管道)
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2 Datacenter/企業版
+- Windows Server 2008 R2 Datacenter edition 和 Enterprise Edition
+- Windows Server (半年度管道)
 
 執行下列作業系統的伺服器可以裝載單一獨立命名空間：
 
@@ -68,17 +69,17 @@ DFS 命名空間與 DFS 複寫是檔案和存放服務角色中的一部分。 D
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>使用 [伺服器管理員] 安裝 DFS
 
-1. 開啟 [伺服器管理員]，按一下 [管理]，然後按一下 [新增角色及功能]。 [新增角色及功能精靈] 隨即顯示。
+1. 開啟 [伺服器管理員]，按一下 [管理]  ，然後按一下 [新增角色及功能]  。 [新增角色及功能精靈] 隨即顯示。
 
-2. 在 [伺服器選取項目] 頁面上，選取想要安裝 DFS 的伺服器或離線虛擬機器的虛擬硬碟 (VHD)。
+2. 在 [伺服器選取項目]  頁面上，選取想要安裝 DFS 的伺服器或離線虛擬機器的虛擬硬碟 (VHD)。
 
 3. 選取您要安裝的角色服務及功能。
 
-    - 若要安裝 DFS 命名空間服務，請選取 **\[伺服器角色\]** 頁面上的 **\[DFS 命名空間\]**。
+    - 若要安裝 DFS 命名空間服務，請選取 **\[伺服器角色\]** 頁面上的 **\[DFS 命名空間\]** 。
 
-    - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具] 、[角色管理工具] 、[檔案服務工具] ，然後選取 [DFS 管理工具] 。
+    - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具]  、[角色管理工具]  、[檔案服務工具]  ，然後選取 [DFS 管理工具]  。
 
-         [DFS 管理工具] 會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 命名空間模組及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
+         [DFS 管理工具]  會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 命名空間模組及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
 
 ### <a name="to-install-dfs-by-using-windows-powershell"></a>使用 Windows PowerShell 安裝 DFS
 

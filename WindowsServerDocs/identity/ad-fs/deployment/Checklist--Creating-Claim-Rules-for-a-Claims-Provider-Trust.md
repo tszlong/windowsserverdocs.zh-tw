@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 6b0ece3274b0e0a2a0d5e18e3c0ebf10ded67ebe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 708919691f88cc49d1f2bd74d8f4255e1a854353
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848209"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192386"
 ---
 # <a name="checklist-creating-claim-rules-for-a-claims-provider-trust"></a>檢查清單：建立宣告規則的宣告提供者信任
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 此檢查清單包含工作的規劃、 設計，以及部署與宣告提供者相關聯的宣告規則 Active Directory Federation Services \(AD FS\)。  
   

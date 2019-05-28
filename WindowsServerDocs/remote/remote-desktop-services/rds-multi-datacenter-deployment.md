@@ -13,16 +13,16 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 7d895b1098c4d8cdf162c77f35209b7308872d60
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 2d12062f302c28a8124e0aa49af7f441e77ffe33
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849959"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222797"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>建立異地備援、 多重資料中心針對災害復原的 RDS 部署
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016
 
 您可以運用在 Azure 中的多個資料中心，來啟用遠端桌面服務部署災害復原。 不同於標準的高可用性的 RDS 部署 (如所述[遠端桌面服務架構](desktop-hosting-logical-architecture.md))、 單一 Azure 區域 （例如西歐） 中使用的資料中心、 多重資料中心部署，使用資料中心在多個地理位置，增加您的部署-一個 Azure 資料中心的可用性可能會無法使用，但是太多個區域會當機，在相同的時間。 藉由部署異地備援的 RDS 架構，您可以啟用發生嚴重失敗的整個區域的容錯移轉。
 
@@ -44,7 +44,7 @@ ms.locfileid: "59849959"
 
 ![使用多個 Azure 區域的 RDS 部署](media/rds-ha-multi-region.png)
 
-建立異地備援部署的第二個 Azure 區域中複寫整個 RDS 部署。 此架構會使用主動-被動模型中，一次只能有一個 RDS 部署正在執行。 VNet 對 VNet 連線可讓兩個環境之間的通訊方式。 RDS 部署會根據單一 Active Directory 樹系/網域，並跨兩個部署的 AD 伺服器複寫，表示使用者可以登入使用相同的認證可能是部署。 雙節點叢集儲存空間直接存取 (S2D) 向外延展檔案伺服器 (SOFS) 上儲存使用者設定和資料儲存在使用者設定檔磁碟 (UPD)。 第二個相同 S2D 叢集已部署在第二個 （被動） 區域中，並使用儲存體複本複寫到被動的部署使用者設定檔使用中的。 Azure 流量管理員用來自動導向至任何部署的使用者是目前作用中-從使用者觀點來看，他們可存取部署使用單一的 URL 並不知道它們最終會使用的哪一個區域。
+建立異地備援部署的第二個 Azure 區域中複寫整個 RDS 部署。 此架構會使用主動-被動模型中，一次只能有一個 RDS 部署正在執行。 VNet 對 VNet 連線可讓兩個環境之間的通訊方式。 RDS 部署會根據單一 Active Directory 樹系/網域，並跨兩個部署的 AD 伺服器複寫，表示使用者可以登入使用相同的認證可能是部署。 雙節點叢集儲存空間直接存取向外延展檔案伺服器 (SOFS) 上儲存使用者設定和資料儲存在使用者設定檔磁碟 (UPD)。 第二個相同的儲存空間直接存取叢集部署在第二個 （被動） 區域中，並使用儲存體複本複寫到被動的部署使用者設定檔使用中的。 Azure 流量管理員用來自動導向至任何部署的使用者是目前作用中-從使用者觀點來看，他們可存取部署使用單一的 URL 並不知道它們最終會使用的哪一個區域。
 
 
 您*無法*建立非高可用的 RDS 部署中每個區域，但如果即使單一 VM 重新啟動在一個區域，會發生容錯移轉，因而增加的容錯移轉期間發生的可能性相關聯的效能影響。
@@ -74,8 +74,8 @@ ms.locfileid: "59849959"
 
    > [!NOTE]
    > 您可以佈建儲存體，以手動方式 （而不是使用 PowerShell 指令碼和範本）： 
-   >1. 部署[2 個節點的 S2D SOFS](rds-storage-spaces-direct-deployment.md) RG A 來儲存您的使用者設定檔磁碟 (Upd) 中。
-   >2. 部署第二個、 相同的 S2D SOFS，RG B 中-請務必在每個叢集中使用相同的儲存體數量。
+   >1. 部署[兩個節點儲存空間直接存取 SOFS](rds-storage-spaces-direct-deployment.md) RG A 來儲存您的使用者設定檔磁碟 (Upd) 中。
+   >2. 部署第二個、 相同儲存空間直接存取 SOFS RG B 中-請務必在每個叢集中使用相同的儲存體數量。
    >3. 設定好[非同步複寫的儲存體複本](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)兩者之間。
 
 ### <a name="enable-upds"></a>啟用 Upd
@@ -85,7 +85,7 @@ ms.locfileid: "59849959"
 
 若要啟用這兩個部署的 Upd，請執行下列作業：
 
-1. 執行[組 RDSessionCollectionConfiguration cmdlet](https://technet.microsoft.com/itpro/powershell/windows/remote-desktop/set-rdsessioncollectionconfiguration)啟用主要 （使用中） 部署-使用者設定檔磁碟的來源磁碟區 （您在步驟 7 中建立的部署步驟中） 提供檔案共用的路徑。
+1. 執行[組 RDSessionCollectionConfiguration cmdlet](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration)啟用主要 （使用中） 部署-使用者設定檔磁碟的來源磁碟區 （您在步驟 7 中建立的部署步驟中） 提供檔案共用的路徑。
 2. 使目的地磁碟區變成來源磁碟區 （這會掛接磁碟區並使其可存取次要部署），請反轉儲存體複本方向。 您可以執行**Set-srpartnership** cmdlet 來執行這項操作。 例如: 
 
    ```powershell
@@ -105,10 +105,10 @@ ms.locfileid: "59849959"
 
 請注意，流量管理員會需要端點，以傳回 200 確定以回應 GET 要求，以標示為 「 良好 」。 RDS 的範本建立的 publicIP 物件會有作用，但不是新增路徑增補。 相反地，您可以讓使用者使用流量管理員 URL 「 / RDWeb"附加，例如： ```http://deployment.trafficmanager.net/RDWeb```
 
-藉由部署 Azure 流量管理員與優先順序路由方法，您可以防止終端使用者存取被動部署，而作用中的部署正常運作。 如果終端使用者存取被動部署和儲存體複本方向尚未已切換為容錯移轉，請在使用者登入時會停止回應，部署嘗試，並無法存取檔案共用，在被動的 S2D 叢集-最終部署將會放棄，並提供使用者的暫存設定檔中。  
+藉由部署 Azure 流量管理員與優先順序路由方法，您可以防止終端使用者存取被動部署，而作用中的部署正常運作。 如果終端使用者存取被動部署，而且儲存體複本方向尚未已切換為容錯移轉，在使用者登入時會停止回應部署嘗試，並無法存取檔案共用，在被動的儲存空間直接存取叢集-最終部署將會放棄，並授與使用者的暫存設定檔。  
 
 ### <a name="deallocate-vms-to-save-resources"></a>若要儲存資源的虛擬機器解除配置 
-設定這兩個部署之後，您就可以選擇性地關閉，並解除配置的次要 RDS 基礎結構和 RDSH Vm 來節省成本，在這些 Vm 上。 S2D SOFS 和 AD 伺服器 Vm 必須永遠維持啟用使用者帳戶和設定檔同步處理的次要/被動部署中執行。  
+設定這兩個部署之後，您就可以選擇性地關閉，並解除配置的次要 RDS 基礎結構和 RDSH Vm 來節省成本，在這些 Vm 上。 儲存空間直接存取 SOFS 和 AD 伺服器 Vm 必須永遠維持啟用使用者帳戶和設定檔同步處理的次要/被動部署中執行。  
 
 在容錯移轉時，您必須啟動已解除配置的 Vm。 此部署組態的優點就是較低的成本，但代價是容錯移轉時間。 如果在使用中的部署中發生嚴重失敗，您必須以手動方式啟動被動部署，或您將需要自動化指令碼來偵測失敗並會自動啟動被動部署。 在任一情況下，可能需要幾分鐘的時間取得被動部署，執行且可供使用者登入，因而導致服務停機一段時間。 這種停機情形而定的時間量它會啟動 RDS 基礎結構和 RDSH Vm （通常是 2-4 分鐘，如果 Vm 已啟動，以平行方式而不是以序列方式），以及時間讓被動叢集上線 （它相依於叢集的大小通常是 2 的磁碟，每個節點的 2 個節點叢集的 2 到 4 分鐘)。 
 
@@ -123,7 +123,7 @@ ms.locfileid: "59849959"
 
 ## <a name="failover"></a>容錯移轉
 
-在主動-被動部署的情況下容錯移轉會要求您開始次要部署的 Vm。 您可以手動方式或透過自動化指令碼。 在 S2D SOFS 的重大容錯移轉的情況下變更儲存體複本合作關係的方向，使目的地磁碟區會變成來源磁碟區。 例如: 
+在主動-被動部署的情況下容錯移轉會要求您開始次要部署的 Vm。 您可以手動方式或透過自動化指令碼。 在儲存空間直接存取 SOFS 的重大容錯移轉的情況下變更儲存體複本合作關係的方向，使目的地磁碟區會變成來源磁碟區。 例如: 
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"

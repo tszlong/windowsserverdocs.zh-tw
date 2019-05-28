@@ -4,25 +4,30 @@ description: Windows Server 2019 新功能的完整概觀，包括桌面體驗�
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 4c454fc397b662e313d5cfb7ed02a83dc7059207
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 05/21/2019
+ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871839"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976548"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
-本主題說明 Windows Server 2019 中的一些新功能。 Windows Server 2019 建置在 Windows Server 2016 的強大基礎，且四個索引鍵的佈景主題方面帶來眾多革新：混合式雲端、 安全性、 應用程式平台和超交集基礎結構 (HCI)。 若要了解 Windows Server 版本 1809 的新功能，請參閱 [Windows Server 版本 1809 的新功能](../get-started/whats-new-in-windows-server-1809.md)。
+> 適用於：Windows Server 2019
+
+本主題說明 Windows Server 2019 中的一些新功能。 Windows Server 2019 建置在 Windows Server 2016 的強大基礎，且四個索引鍵的佈景主題方面帶來眾多革新：混合式雲端、 安全性、 應用程式平台和超交集基礎結構 (HCI)。
+
+若要了解 Windows Server 半年通道發行的新功能，請參閱[What's New in Windows Server](../get-started/whats-new-in-windows-server.md)。 
 
 ## <a name="general"></a>一般
 
 ### <a name="desktop-experience"></a>桌面體驗
 
-因為 Windows Server 2019 是長期維護通道 (LTSC) 發行，所以包含<b>桌面體驗</b>。 (它不會包含在 Windows Server 1709 版、 Server、 版本 1803、 或 Windows Server 版 1809，因為半年通道\(SAC\)版本不包含所設計的桌面體驗; 他們嚴格的伺服器Core 和 Nano Server 容器映像版本。）如同 Windows Server 2016 中，作業系統安裝期間您可以選擇 Server Core 安裝或 Server 之間使用桌面體驗。
+因為 Windows Server 2019 是長期維護通道 (LTSC) 發行，所以包含<b>桌面體驗</b>。 (半年通道\(SAC\)版本不包含所設計的桌面體驗; 它們絕對是 Server Core 和 Nano Server 容器映像版本。)如同 Windows Server 2016 中，作業系統安裝期間您可以選擇 Server Core 安裝或 Server 之間使用桌面體驗。
 
 ### <a name="system-insights"></a>系統深入解析
 
@@ -132,7 +137,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 以下是容錯移轉叢集的新功能清單。 如需詳細資訊，請參閱[容錯移轉叢集的新功能](../failover-clustering/whats-new-in-failover-clustering.md)。
 
-- **叢集設定**
+- **叢集集合**
 - **Azure 可感知叢集**
 - **跨網域的叢集移轉**
 - **USB 見證**
@@ -148,7 +153,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 現在可以使用相同的 Docker 精靈，在相同容器主機上執行 Windows 和 Linux 容器。 這可讓您擁有異質性容器主機環境，同時提供彈性給應用程式開發人員。
 
-### <a name="building-support-for-kubernetes"></a>建置 Kubernetes 支援
+### <a name="built-in-support-for-kubernetes"></a>針對 Kubernetes 的內建支援
 
 Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通道發行版本，持續改進計算、網路功能和儲存空間。 即將推出的 Kubernetes 版本中會提供更多詳細資料。
 

@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db264181ef8e5e3632f3312ade61183cac3fc8f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c31098a7dc151b29def2f3615da1e969ff8c5664
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853079"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222946"
 ---
 # <a name="taskkill"></a>taskkill
 
 >適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 結束一個或多個工作或處理序。 處理序可以依處理序識別碼或映像名稱結束。 **taskkill**會取代**kill**工具。
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+如需如何使用此命令的範例，請參閱[範例](#examples)。
 
 ## <a name="syntax"></a>語法
 ```
@@ -37,13 +37,13 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |/s \<computer>|指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。|
 |/u\<網域 >\\\<使用者名稱 >|所指定的使用者帳戶權限執行命令*使用者名稱*或是*網域*\\*UserName*。 **/u**可以指定只有當 **/s**指定。 預設值是目前登入的電腦，會發出命令之使用者的權限。|
 |/p \<Password>|指定在指定的使用者帳戶的密碼 **/u**參數。|
-|/fi \<Filter>|將篩選套用至選取的一組工作。 您可以使用一個以上的篩選器，或使用萬用字元 (**\***) 來指定所有的工作或映像名稱。 請參閱下面的[有效的篩選條件名稱的資料表](#BKMK_table)，運算子和值。|
+|/fi \<Filter>|將篩選套用至選取的一組工作。 您可以使用一個以上的篩選器，或使用萬用字元 ( **\*** ) 來指定所有的工作或映像名稱。 請參閱下面的[有效的篩選條件名稱的資料表](#filter-names-operators-and-values)，運算子和值。|
 |/pid \<ProcessID>|指定要終止之處理序的處理序識別碼。|
-|/im \<ImageName>|指定要終止之處理序的映像名稱。 使用萬用字元 (**\***) 來指定所有映像名稱。|
+|/im \<ImageName>|指定要終止之處理序的映像名稱。 使用萬用字元 ( **\*** ) 來指定所有映像名稱。|
 |/f|指定強制終止處理序。 遠端處理程序; 會忽略這個參數所有的遠端程序會強制終止。|
 |/t|終止指定的處理序和任何子處理序啟動它。|
 
-#### <a name="BKMK_table"></a>篩選條件名稱、 運算子和值
+#### <a name="filter-names-operators-and-values"></a>篩選條件名稱、 運算子和值
 |篩選器名稱|有效的運算子|有效的值|
 |--------|----------|----------|
 |STatUS|eq、ne|RUNNING &#124; NOT RESPONDING &#124; UNKNOWN|
@@ -59,7 +59,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 ## <a name="remarks"></a>備註
 * 當指定遠端系統時，不支援的 WINDOWTITLE 和狀態篩選器。
-* 萬用字元 (**\***) 會接受 **/im**選項只有在已套用篩選時，才。
+* 萬用字元 ( **\*** ) 會接受 **/im**選項只有在已套用篩選時，才。
 * 遠端處理序終止時永遠執行強制，無論 **/f**指定選項。
 * 提供電腦名稱，主機名稱篩選條件會導致關閉，停止所有處理程序。
 * 您可以使用**tasklist**來判斷處理序識別碼 (PID) 處理序終止。

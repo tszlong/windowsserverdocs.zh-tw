@@ -7,18 +7,18 @@ ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: 45d8364adf9d3db24a8e6d8f7bc91178ce7d1551
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1b9271ceac99ac9b21cbfac902ba133d66815df4
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881129"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476119"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>簡化 SMB 多重通道和多個 NIC 的叢集網路
 
-> 適用於：Windows Server （半年通道），Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016
 
-簡化 SMB 多重通道和多-<abbr title="網路介面卡">NIC</abbr>叢集網路，是在 Windows Server 2016 中，可讓使用多個 Nic 位於相同的叢集網路子網路，並會自動啟用 SMB 多重通道的新功能。  
+簡化 SMB 多重通道和多-<abbr title="網路介面卡">NIC</abbr>叢集網路，是一項功能，可讓您使用多個 Nic 位於相同的叢集網路子網路，並會自動啟用 SMB 多重通道。
 
 簡化 SMB 多重通道和多個 NIC 的叢集網路提供下列優點：  
 - 容錯移轉叢集會自動識別節點所使用的相同交換器上的所有 Nic / 相同子網路-不需要另外設定。  
@@ -31,7 +31,7 @@ ms.locfileid: "59881129"
 -   使用相同的交換器每一部伺服器，多個 Nic / 子網路。  
 
 ## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>如何充分利用多個 NIC 的叢集網路 」 和 「 簡化的 SMB 多重通道  
-本節說明如何利用新的多個 NIC 的叢集網路和簡化的 SMB 多通路功能的 Windows Server 2016 中。  
+本節說明如何利用新的多個 NIC 的叢集網路 」 和 「 簡化的 SMB 多通路功能。  
 
 ### <a name="use-at-least-two-networks-for-failover-clustering"></a>使用至少兩個網路的容錯移轉叢集   
 雖然很罕見，但可能會失敗的網路交換器-仍最佳做法是使用容錯移轉叢集的兩個以上的網路。 找到的所有網路會都用於叢集活動訊號。 請避免使用容錯移轉叢集的單一網路，以避免單一失敗點。 在理想情況下，應該會有多個實體的通訊路徑在叢集中節點之間任何單一失敗點。  
@@ -58,7 +58,7 @@ ms.locfileid: "59881129"
 **圖 4:自動 IPv6 連結本機 (fe80) 位址的資源設定**  
 
 ## <a name="throughput-and-fault-tolerance"></a>輸送量和容錯功能  
-Windows Server 2016 會自動偵測 NIC 功能，並會嘗試使用最快的可能組態中的每個 NIC。 會組合使用介面卡的 Nic、 Nic 使用 RSS，並具備 RDMA 功能的 Nic 都可以用。 下表摘要說明取捨時使用這些技術。 使用多個 RDMA Nic 時，最大輸送量是來達成。 如需詳細資訊，請參閱 < [SMB Mutlichannel 的基本概念](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/)。
+Windows Server 2019 和 Windows Server 2016 自動偵測 NIC 功能，並會嘗試使用最快的可能組態中的每個 NIC。 會組合使用介面卡的 Nic、 Nic 使用 RSS，並具備 RDMA 功能的 Nic 都可以用。 下表摘要說明取捨時使用這些技術。 使用多個 RDMA Nic 時，最大輸送量是來達成。 如需詳細資訊，請參閱 < [SMB Mutlichannel 的基本概念](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/)。
 
 ![舉例說明如何針對各種不同的 NIC 組態的輸送量和容錯](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)  
 **圖 5:針對各種不同的 NIC conifigurations 負載的輸送量和容錯功能**   

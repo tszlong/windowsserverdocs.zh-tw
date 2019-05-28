@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4c73d84a6a32a90f5a5a60f0a0f6e6405ea3b729
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41902de1253654eb3eac6176d6e8b7c50dc39663
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818089"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192404"
 ---
 # <a name="checklist-configuring-the-resource-partner-organization"></a>檢查清單：設定資源夥伴組織
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 資源夥伴組織包含 Web 伺服器裝載 Web\-會由帳戶夥伴中的使用者存取的應用程式。 此組織中的系統管理員必須使用 AD FS 管理嵌入式管理單元\-中建立宣告提供者信任，表示其與帳戶夥伴組織的信任關聯性。 接著，帳戶夥伴系統管理員必須建立信賴憑證者信任的每個帳戶夥伴組織，他們想要信任。  
   
@@ -46,5 +44,5 @@ ms.locfileid: "59818089"
 |![設定資源夥伴組織](media/icon_checkboxo.gif)|決定您想要新增至 AD FS 的屬性存放區的類型。 然後，新增 屬性存放區使用 AD FS 管理嵌入式管理單元\-中。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[角色的屬性存放區](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)<br /><br />![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增屬性存放區](../../ad-fs/operations/Add-an-Attribute-Store.md)|  
 |![設定資源夥伴組織](media/icon_checkboxo.gif)|如果您將需要將宣告傳送至或 AD FS 1.0 或 1.1 同盟服務取用者會使用帳戶夥伴的宣告，請參閱連結的權限，如需如何設定 AD FS 與 AD FS 的舊版交互操作。 如果帳戶夥伴組織也使用 AD FS 來傳送，或使用您的組織宣告，您可以略過此步驟，並繼續進行此檢查清單中的下一個工作。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃互通性與 AD FS 1.x](https://technet.microsoft.com/library/ff678040.aspx)|  
 |![設定資源夥伴組織](media/icon_checkboxo.gif)|部署資源夥伴組織中的第一部同盟伺服器之後，請使用 AD FS 管理嵌入式管理單元建立宣告提供者信任關係\-中。 輸入帳戶夥伴以手動方式的相關資料，或使用帳戶夥伴組織的系統管理員提供給您的同盟中繼資料 URL，您可以建立宣告提供者信任。 您可以使用同盟中繼資料自動擷取資源夥伴的資料。 **注意：** 如果帳戶夥伴發佈其同盟中繼資料，或可供您使用其檔案複本，我們建議您先自動擷取資料因為它可以節省時間。|![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[信賴憑證者合作對象信任手動建立](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually)<br /><br />![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[建立信賴憑證者合作對象信任使用同盟中繼資料](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|根據您組織的需求，建立一或多個宣告規則集於每個宣告提供者信任指定 AD FS 管理嵌入式管理單元中\-中讓連入宣告將會傳遞給，轉換，或適當地為對應資源夥伴中對應的宣告。|![設定資源夥伴組織](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：建立宣告規則的宣告提供者信任](Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|根據您組織的需求，建立一或多個宣告規則集於每個宣告提供者信任指定 AD FS 管理嵌入式管理單元中\-中讓連入宣告將會傳遞給，轉換，或適當地為對應資源夥伴中對應的宣告。|![設定資源夥伴組織](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：為宣告提供者信任建立宣告規則](Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)|  
 |![設定資源夥伴組織](media/icon_checkboxo.gif)|\(選擇性\)的描述可能有一個不存在，如果要建立的宣告會滿足您組織的需求。 AD FS 包含一組預設的宣告描述會公開在 AD FS 管理嵌入式管理單元中\-中。|![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增宣告描述](../../ad-fs/operations/Add-a-Claim-Description.md)|  

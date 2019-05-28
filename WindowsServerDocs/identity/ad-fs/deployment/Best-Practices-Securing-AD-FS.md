@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 38de2bca413ce7f8aeda2af4392f9a616641b189
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 958bf8455d03ddc04395fafe83e70a49c7659c96
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873069"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192439"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory Federation Services 的最佳做法
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 本文件提供安全的規劃和部署 Active Directory Federation Services (AD FS) 和 Web 應用程式 Proxy 的最佳作法。  它包含這些元件和其他安全性設定之組織中特定的使用案例和安全性需求與建議的預設行為的相關資訊。
 
@@ -39,7 +38,7 @@ ms.locfileid: "59873069"
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect 和同盟伺服器 /WAP
 下表描述的連接埠和通訊協定所需的 Azure AD Connect 伺服器與同盟 /WAP 伺服器之間的通訊。  
 
-通訊協定 |連接埠 |描述
+Protocol |連接埠 |描述
 --------- | --------- |---------
 HTTP|80 (TCP/UDP)|用來下載 Crl （憑證撤銷清單） 來驗證 SSL 憑證。
 HTTPS|443(TCP/UDP)|用來與 Azure AD 同步處理。
@@ -48,14 +47,14 @@ WinRM|5985| WinRM 接聽程式
 ### <a name="wap-and-federation-servers"></a>WAP 和同盟伺服器
 下表描述的連接埠和同盟伺服器與 WAP 伺服器之間通訊所需的通訊協定。
 
-通訊協定 |連接埠 |描述
+Protocol |連接埠 |描述
 --------- | --------- |---------
 HTTPS|443(TCP/UDP)|用於驗證。
 
 ### <a name="wap-and-users"></a>WAP 和使用者
 下表描述的連接埠和通訊協定所需的使用者與 WAP 伺服器之間的通訊。
 
-通訊協定 |連接埠 |描述
+Protocol |連接埠 |描述
 --------- | --------- |--------- |
 HTTPS|443(TCP/UDP)|用於裝置驗證。
 TCP|49443 (TCP)|用於憑證驗證。

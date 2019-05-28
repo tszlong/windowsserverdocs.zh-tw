@@ -11,25 +11,67 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/06/2018
+ms.date: 05/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0722ee739a9e2ed429018d3a311cceeeb4ec2d9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e2b79a1f914bdbc971299493ca00680e2504fbd3
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827299"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476024"
 ---
 # <a name="whats-new-for-the-remote-desktop-client-on-android"></a>什麼是遠端桌面用戶端，在 Android 上的新功能？
 
 我們會定期更新[適用於 Android 的遠端桌面用戶端](remote-desktop-android.md)、 新增功能和修正問題。 查看最新的更新。
 
+## <a name="updates-for-version-8170"></a>更新版本，8.1.70
+
+*發行的日期：05/06/2019*
+
+- 處理具有波陷顯示裝置的正確所造成的內容，而不調整大小的工作階段的問題。
+- 已修正的問題其中一些 Chromebook 裝置並未使用 Enter 鍵。
+- 已修正的問題未載入某些遠端資源摘要 URL 的位置。
+
+## <a name="updates-for-version-8169"></a>更新版本，8.1.69
+
+*發行的日期：04/22/2019*
+
+- 小幅度 bug 修正和改進功能。
+
+## <a name="updates-for-version-8168"></a>更新版本，8.1.68
+
+*發行的日期：04/15/2019*
+
+- 已修正的問題未載入遠端資源摘要 URL 的位置。
+- 已修正的問題的電話大小上執行 Android 9.0 Samsung DeX 的第一次啟動應用程式的啟動位置。
+- 更新的應用程式圖示。
+- 其他錯誤修正。
+
+## <a name="updates-for-version-8167"></a>更新版本，8.1.67
+
+*發行的日期：03/28/2019*
+
+- 已修正的問題已在遠端工作階段中鍵入時重複執行的按鍵。
+
+## <a name="updates-for-version-8166"></a>更新版本，8.1.66
+
+*發行的日期：03/19/2019*
+
+- 新增初始的支援[Windows 的虛擬桌面](https://aka.ms/wvd)。
+- 已修正導致顯示一些 Chromebook 裝置和 DeX 案例在畫面底部的黑色區域的問題。
+- 新增 Samsung DeX，隱藏底部工作列的沈浸式模式支援。
+- 已新增的支援的 Samsung DeX 遠端工作階段傳送中繼和 Alt 鍵從實體鍵盤。
+- 遠端工作階段 （Android 7.0 +） 的內容為基礎的滑鼠指標目前更新
+- 其他錯誤修正。
+
 ## <a name="updates-for-version-8161"></a>更新版本，8.1.61
+
 *發行的日期：07/05/2018*
 
 - 新增初始的 Samsung DeX （Android 8.0 +） 支援。
 
 ## <a name="updates-for-version-8160"></a>更新版本，8.1.60
+
 *發行的日期：04/30/2018*
 
 - 若要解決 CredSSP 加密 oracle 補救 CVE-2018年-0886年中所述的更新。

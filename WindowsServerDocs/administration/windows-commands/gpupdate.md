@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61131d2bf253c66d93408bc66b78d1dca2502087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d358c47bd278cf11c4bab6887302bf6d053529ec
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840589"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192663"
 ---
 # <a name="gpupdate"></a>gpupdate
 
 
 
-更新群組原則設定。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+更新群組原則設定。 如需如何使用此命令的範例，請參閱[範例](#examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -48,7 +48,7 @@ gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] 
 
 -   **Gpupdate**命令適用於 Windows Server 2008 R2、 Windows Server 2008、 Windows 7 旗艦版、 Windows 7 專業版、 Windows Vista Ultimate、 Windows Vista Enterprise 和 Windows Vista Business。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="examples"></a>範例
 
 強制所有的群組原則設定，無論是否有變更的背景更新。
 ```

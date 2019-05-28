@@ -13,12 +13,12 @@ ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 31c1579dc840f6f4eb805ac4e10f51192a6b4c99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d671d044896ae9e71edad8302f06f2a21fe50772
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816189"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034550"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>使用 Windows PowerShell 部署網路控制卡
 
@@ -31,19 +31,19 @@ ms.locfileid: "59816189"
 
 本主題涵蓋下列各節。
 
-- [安裝網路控制卡伺服器角色](#bkmk_role)
+- [安裝網路控制卡伺服器角色](#install-the-network-controller-server-role)
 
-- [設定網路控制卡的叢集](#bkmk_configure)
+- [設定網路控制卡的叢集](#configure-the-network-controller-cluster)
 
-- [設定網路控制站應用程式](#bkmk_app)
+- [設定網路控制站應用程式](#configure-the-network-controller-application)
 
-- [網路控制站部署驗證](#bkmk_validation)
+- [網路控制站部署驗證](#network-controller-deployment-validation)
 
-- [網路控制站的其他 Windows PowerShell 命令](#bkmk_ps)
+- [網路控制站的其他 Windows PowerShell 命令](#additional-windows-powershell-commands-for-network-controller)
 
-- [網路控制站組態指令碼範例](#bkmk_script)
+- [網路控制站組態指令碼範例](#sample-network-controller-configuration-script)
 
-- [非 Kerberos 部署的部署後步驟](#bkmk_nonkerb)
+- [非 Kerberos 部署的部署後步驟](#post-deployment-steps-for-non-kerberos-deployments)
 
 ## <a name="install-the-network-controller-server-role"></a>安裝網路控制卡伺服器角色
 

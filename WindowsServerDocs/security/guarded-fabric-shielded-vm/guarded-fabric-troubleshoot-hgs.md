@@ -7,12 +7,12 @@ ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 2dc9a612fa9760a6ca5f05efe1c287fd0872a1d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 05888ce57b5b922fc330d9deab430d329fede69b
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861249"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222537"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>疑難排解 「 主機守護者服務
 
@@ -93,7 +93,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 HSM 品牌/系列      | 建議
 ----------------------|-------------
 Gemalto SafeNet       | 請確定金鑰使用方式屬性，在憑證要求檔案設定為 0xa0，允許用於簽署和加密憑證。 此外，您必須授與 gMSA 帳戶*讀取*使用本機憑證管理員工具的私密金鑰存取權 （請參閱上述步驟）。
-Thales nShield        | 請確定每一個 HGS 節點可存取包含簽署和加密金鑰的安全園地。 您不需要設定 gMSA 特定權限。
+nCipher nShield        | 請確定每一個 HGS 節點可存取包含簽署和加密金鑰的安全園地。 您不需要設定 gMSA 特定權限。
 Utimaco CryptoServers | 確定金鑰使用方式屬性，在憑證要求檔案設定為 0x13 等，讓要用於加密、 解密和簽署的憑證。
 
 ### <a name="certificate-requests"></a>憑證要求

@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bc54b1e33d09e7f2b9eea01e4f09fb83f13dc1af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8684926beb0f0c911ac384970d15ba7d25f84079
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832879"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475925"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>啟用永遠離線模式更快速地存取檔案
 
->適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2012、 Windows Server 2012 R2、 Windows Server 2016
+>適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012、 Windows Server 2012 R2 和 Windows （半年通道）
 
 本文件說明如何使用永遠離線模式的離線檔案，以提供更快速地存取快取的檔案和資料夾重新導向。 永遠離線也提供較低的頻寬使用量，因為使用者會永遠離線工作，即使當他們連線透過高速網路連線。
 
@@ -41,7 +41,7 @@ ms.locfileid: "59832879"
 3. 在主控台樹狀目錄中，以滑鼠右鍵按一下您要設定離線檔案設定，然後選取的 GPO**編輯**。 **群組原則管理編輯器**隨即出現。
 4. 在主控台樹狀目錄中，在**電腦組態**，展開**原則**，展開**系統管理範本**，展開**網路**，展開 **離線檔案**。
 5. 以滑鼠右鍵按一下**設定低速連結模式**，然後選取**編輯**。 **設定低速連結模式**視窗會出現。
-6. 選取 [已啟用] 。
+6. 選取 [已啟用]  。
 7. 在 **選項**方塊中，選取**顯示**。 **視窗中顯示內容**會出現。
 8. 在 **值名稱**方塊中，指定您要啟用永遠離線模式的檔案共用。
 9. 若要啟用永遠離線模式的所有檔案共用上，輸入**\***。

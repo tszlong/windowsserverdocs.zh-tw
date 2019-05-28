@@ -9,20 +9,21 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5638db30f1f2dc149ef9254d2f89e3fed33ea052
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 984ba6993f63aa5bf22a25e4276f6d1b5e7d14ab
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857179"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192554"
 ---
 # <a name="ad-fs-development"></a>AD FS 開發
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
-本文件包含適用於 Windows Server 2016 的 AD FS 的所有文件逐步解說的清單。 這包括下列項目：  
+本文件包含一份所有適用於 AD FS 開發這些文件逐步解說。 這包括下列項目：  
   
  
+
+- [建置使用 AD FS 2019 風險評估模型的外掛程式](../ad-fs/development/ad-fs-risk-assessment-model.md)
   
 * [建置 web 應用程式使用 OpenID Connect 與 AD FS 2016](../ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)  
 
@@ -41,6 +42,7 @@ ms.locfileid: "59857179"
 - [與 AD FS 的身分識別委派](../ad-fs/development/ad-fs-identity-delegation.md)
 
 - [單一登出的 OpenID Connect 與 AD FS 2016](../ad-fs/development/ad-fs-logout-openid-connect.md)
+
 
 
 

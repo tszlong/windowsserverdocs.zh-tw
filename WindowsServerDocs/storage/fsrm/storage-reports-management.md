@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c0d750fd139865daa92319c1d1926dc5d36669b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62215aa802e2509be5305aef53069ae9643562f1
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885769"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476094"
 ---
 # <a name="storage-reports-management"></a>存放裝置報告管理
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server 2019，Windows Server 2016、 Windows Server （半年通道）、 Windows Server 2012 R2、 Windows Server 2012 中，Windows Server 2008 R2
 
 在檔案伺服器資源管理員 Microsoft<sup>®</sup> Management Console (MMC) 嵌入式管理單元的 **\[存放裝置報告管理\]** 節點，您可以執行下列工作：
 
@@ -34,8 +34,8 @@ ms.locfileid: "59885769"
 
 本節包含下列主題：
 
--   [排程一組報表](schedule-set-of-reports.md)
--   [依需要產生報表](generate-reports-on-demand.md)
+-   [排程一組報告](schedule-set-of-reports.md)
+-   [產生隨選報告](generate-reports-on-demand.md)
 
 > [!Note]
 > 若要設定電子郵件通知和某些報告功能，您必須先設定檔案伺服器資源管理員的一般選項。

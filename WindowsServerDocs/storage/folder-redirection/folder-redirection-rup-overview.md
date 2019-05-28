@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3cf32cd718b906f16fc09901284d8520177df8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824279"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475905"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 
->適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2012、 Windows Server 2012 R2、 Windows Server 2016
+>適用於：Windows 10、windows 8、windows、 Windows 8.1、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012、windows Server 2012 R2
 
 本主題討論資料夾重新導向、 離線檔案 （用戶端快取或 CSC） 以及漫遊使用者設定檔 （有時稱為 RUP） 技術，包括最新消息，以及何處可以找到其他資訊。
 
@@ -76,7 +76,7 @@ Windows 8，Windows Server 2012 之前使用者需要在線上及離線模式，
 使用成本感知同步處理後，Windows 會在使用者使用計量付費網路連線 (例如 4G 行動網路) 以及用戶接近或超過其寬頻限制或是漫遊在其他提供者的網路時，停用背景同步處理。
 
 >[!NOTE]
->計量付費的網路連線通常會有低於預設的 35 毫秒延遲值，如轉換成離線 （慢速連線） 模式，在 Windows 8、windows Server 2012 和 Windows Server 2016 中的來回網路延遲。 因此，這些連線通常會自動轉換成離線 (慢速連線) 模式。
+>計量付費的網路連線通常會有低於預設的 35 毫秒延遲值，如轉換成離線 （慢速連線） 模式，在 Windows 8、 Windows Server 2019、 Windows Server 2016 和 Windows Server 中的來回網路延遲2012。 因此，這些連線通常會自動轉換成離線 (慢速連線) 模式。
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>成本感知同步處理增加了什麼價值？
 
@@ -107,7 +107,7 @@ Windows 8，Windows Server 2012 之前使用者需要在線上及離線模式，
 
 若要限制下載私密使用者資料到主要電腦，資料夾重新導向及漫遊使用者設定檔技術會在使用者登入電腦時執行下列邏輯檢查：
 
-1. Windows 作業系統檢查新的群組原則設定 ([只下載主要電腦上的漫遊設定檔] 及 [只重新導向主要電腦上的資料夾])，以判斷 Active Directory 網域服務 (AD DS) 中的 **msDS-Primary-Computer** 屬性是否影響漫遊使用者設定檔或套用資料夾重新導向的決定。
+1. Windows 作業系統檢查新的群組原則設定 ([只下載主要電腦上的漫遊設定檔]  及 [只重新導向主要電腦上的資料夾]  )，以判斷 Active Directory 網域服務 (AD DS) 中的 **msDS-Primary-Computer** 屬性是否影響漫遊使用者設定檔或套用資料夾重新導向的決定。
 2. 如果這個原則設定啟用主要電腦支援，Windows 會確認 AD DS 結構描述支援 **msDS-Primary-Computer** 屬性。 若是如此，Windows 會判斷使用者登入的電腦是否被指定為該使用者的主要電腦，如下所示：
     1. 如果這部電腦是其中一部使用者主要電腦，Windows 會套用漫遊使用者設定檔及資料夾重新導向設定。
     2. 如果這部電腦不是其中一部使用者主要電腦，Windows 會載入使用者快取的本機設定檔 (如果存在的話) 或建立新的本機設定檔。 Windows 也會依據先前套用的群組原則設定所指定的移除動作 (保存在本機資料夾重新導向設定中)，移除任何現有的重新導向資料夾。
@@ -123,7 +123,7 @@ Windows 8，Windows Server 2012 之前使用者需要在線上及離線模式，
 若要指定主要電腦，您的環境必須符合下列需求：
 
 - 必須更新 Active Directory 網域服務 (AD DS) 結構描述，以包含 Windows Server 2012 結構描述和條件 （安裝 Windows Server 2012 或更新版本的網域控制站會自動更新結構描述）。 如需有關如何升級 AD DS 結構描述的詳細資訊，請參閱 <<c0> [ 網域控制站升級到 Windows Server 2016](../../identity/ad-ds/deploy/upgrade-domain-controllers.md)。
-- 用戶端電腦必須執行 Windows 10，Windows 8.1，Windows 8、 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012，並加入至您要管理 Active Directory 網域。
+- 用戶端電腦必須執行 Windows 10，Windows 8.1，Windows 8、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012，並加入至您要管理 Active Directory 網域。
 
 ## <a name="more-information"></a>詳細資訊
 

@@ -6,22 +6,22 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 12/19/2018
+ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 0e010f0319b46e04cf9aa15cde9552af1191ab22
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e832dce3eed7d0e5103254fb48683726b82af2e6
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824709"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475941"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
 
 本主題包含關於「儲存體複本」的常見問題集 (FAQ) 解答。
 
-## <a name="FAQ1"></a> Azure 上支援的儲存體複本？  
+## <a name="FAQ1"></a> Azure 上支援的儲存體複本？
 是的。 您可以搭配 Azure 使用下列案例：
 
 1. 在 Azure 內的伺服器對伺服器複寫 （同步或非同步之間在一或兩個資料中心容錯網域，IaaS Vm 或以非同步方式兩個不同區域之間）
@@ -29,12 +29,12 @@ ms.locfileid: "59824709"
 3. 在 Azure 內的叢集對叢集複寫 （同步或非同步之間在一或兩個資料中心容錯網域，IaaS Vm 或以非同步方式兩個不同區域之間）
 4. 叢集對叢集 Azure 與內部部署之間的非同步複寫 （使用 VPN 或 Azure ExpressRoute）
 
-在 Azure 中的客體叢集上的進一步資訊，參閱：[部署 Microsoft Azure 中的 IaaS VM 客體叢集](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/)。
+在 Azure 中的客體叢集上的進一步資訊，參閱：[部署 Microsoft Azure 中的 IaaS VM 客體叢集](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
 重要注意事項：
 
 1. Azure 不支援共用的 VHDX 客體叢集，因此 Windows 容錯移轉叢集虛擬機器必須使用傳統的共用儲存體永續性磁碟保留叢集或儲存空間直接存取的 iSCSI 目標。
-2. Azure Resource Manager 範本在叢集的儲存空間直接存取基礎儲存體複本[跨 Azure 區域的災害復原建立儲存空間直接存取 (S2D) 的 SOFS 叢集與儲存體複本](https://aka.ms/azure-storage-replica-cluster)。  
+2. Azure Resource Manager 範本在叢集的儲存空間直接存取基礎儲存體複本[跨 Azure 區域的災害復原建立儲存空間直接存取 SOFS 叢集與儲存體複本](https://aka.ms/azure-storage-replica-cluster)。  
 3. 叢集 （叢集 Api 的叢集之間的存取權授與必要） 的 Azure 中的 RPC 通訊的叢集需要設定網路存取 cno。 TCP 連接埠 49152 上方，您必須允許 TCP 連接埠 135 和動態的範圍。 參考[建置 Windows Server 容錯移轉叢集在 Azure IAAS VM – 第 2 個網路與建立](https://blogs.technet.microsoft.com/askcore/2015/06/24/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation/)。  
 4. 可以使用雙節點客體叢集，其中每個節點時，適用於非對稱式叢集複寫的儲存體複本使用回送 iSCSI。 但這可能會有很差的效能，且應僅適用於非常有限的工作負載或測試。  
 
@@ -80,7 +80,7 @@ Update-SmbMultichannelConnection
     Set-SRNetworkConstraint -SourceComputerName sr-srv01 -SourceRGName group1 -SourceNWInterface "Cluster Network 1","Cluster Network 2" -DestinationComputerName sr-srv03 -DestinationRGName group2 -DestinationNWInterface "Cluster Network 1","Cluster Network 2"  
 
 ## <a name="FAQ4"></a> 可以設定一對多的複寫或可轉移 (A 到 B 到 C) 複寫嗎？  
-不在 Windows Server 2016 中。 這個版本只支援伺服器、叢集或延展式叢集節點的一對一複寫。 這可能會在未來版本中變更。 當然，您可以設定特定磁碟區組的各種伺服器間任一方向的複寫。 例如，伺服器 1 可以將其 D 磁碟區複寫到伺服器 2，並從伺服器 3 複寫其 E 磁碟區。
+否，儲存體複本支援伺服器、 叢集或延展式叢集節點的只有一對一的複寫。 這可能會在未來版本中變更。 當然，您可以設定特定磁碟區組的各種伺服器間任一方向的複寫。 例如，伺服器 1 可以將其 D 磁碟區複寫到伺服器 2，並從伺服器 3 複寫其 E 磁碟區。
 
 ## <a name="FAQ5"></a> 我是否可以擴大或縮小複寫所複寫的儲存體複本的磁碟區？  
 您可以增加 (延伸) 磁碟區，而不是進行壓縮。 根據預設，儲存體複本防止系統管理員延伸複寫磁碟區。在調整大小之前，在來源群組上使用 `Set-SRGroup -AllowVolumeResize $TRUE` 選項。 例如: 
@@ -90,9 +90,9 @@ Update-SmbMultichannelConnection
 3. 使用對來源電腦： `Set-SRGroup -Name YourRG -AllowVolumeResize $FALSE` 
 
 ## <a name="FAQ6"></a>可以將目的地磁碟區上線的唯讀存取權嗎？  
-不在 Windows Server 2016 RTM (亦即所謂的「RS1」版本) 中。 當複寫開始，儲存體複本會卸載目的地磁碟區。 
+不在 Windows Server 2016 中。 當複寫開始，儲存體複本會卸載目的地磁碟區。 
 
-不過，現已可以在 Windows Server 版本 1709 中掛接目的地存放裝置，這項功能稱為「測試容錯移轉」。 若要這樣做，您必須有目前未於目的地複寫的未使用磁碟區或者 NTFS 或 ReFS 格式化磁碟區。 然後便可暫時掛接已複寫存放裝置的快照集以作測試或備份之用。 
+不過，在 Windows Server 2019 和 Windows Server 半年通道版起，1709，掛接的目的地儲存體選項，就可以使用-這項功能稱為 「 測試容錯移轉 」。 若要這樣做，您必須有目前未於目的地複寫的未使用磁碟區或者 NTFS 或 ReFS 格式化磁碟區。 然後便可暫時掛接已複寫存放裝置的快照集以作測試或備份之用。 
 
 例如，若要建立測試容錯移轉，藉以在目的地伺服器「SRV2」的複寫群組「RG2」中複寫磁碟區「D:」，以及在 SRV2 上安裝未經複寫的「T:」磁碟機：
 
@@ -107,7 +107,7 @@ Update-SmbMultichannelConnection
 您只能將測試容錯移轉功能用於短期暫時作業。 此功能並不適合長期使用。 使用時，複寫會持續對實際目的地磁碟區進行。 
 
 ## <a name="FAQ7"></a> 我可以延展式叢集中設定向外延展檔案伺服器 (SOFS) 嗎？  
-儘管技術上可行，但這不是 Windows Server 2016 中的建議設定，因為連絡 SOFS 的計算節點中缺少站台感知。 如果使用校園距離的網路，其中的延遲通常以子毫秒，這項設定通常適用於沒有任何問題。   
+儘管技術上可行，但這不是建議的設定，因為連絡 SOFS 的計算節點中的站台感知缺少。 如果使用校園距離的網路，其中的延遲通常以子毫秒，這項設定通常適用於沒有任何問題。   
 
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。  
 
@@ -117,7 +117,7 @@ Update-SmbMultichannelConnection
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。  
 
 ## <a name="FAQ8"></a>設定儲存空間直接存取與儲存體複本延展式叢集中？  
-Windows Server 2016 中不支援此設定。  這可能會在未來版本中變更。 如果設定叢集對叢集複寫，「儲存體複本」可完全支援「向外延展檔案伺服器」和 Hyper-V 伺服器，包括使用「儲存空間直接存取」。  
+這不是 Windows Server 中支援的設定。 這可能會在未來版本中變更。 如果設定叢集對叢集複寫，「儲存體複本」可完全支援「向外延展檔案伺服器」和 Hyper-V 伺服器，包括使用「儲存空間直接存取」。  
 
 ## <a name="FAQ9"></a>如何設定非同步複寫？  
 
@@ -126,10 +126,10 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 ## <a name="FAQ10"></a>如何防止延展式叢集的自動容錯移轉？  
 若要防止自動容錯移轉，您可以使用 PowerShell 來設定 `Get-ClusterNode -Name "NodeName").NodeWeight=0`。 這將會在災害復原網站中移除每個節點上的投票。 接著，您可以在主要網站的節點上使用 `Start-ClusterNode -PreventQuorum`，以及在災害網站的節點上使用 `Start-ClusterNode -ForceQuorum`，以強制執行容錯移轉。 沒有任何圖形化選項可防止自動容錯移轉，且不建議防止自動容錯移轉。  
 
-## <a name="FAQ11"></a>如何停用虛擬機器復原功能？  
+## <a name="FAQ11"></a>如何停用虛擬機器復原功能？
 若要避免執行，因而暫停虛擬機器，而不是災害復原站台到將進行容錯移轉從新的 HYPER-V 虛擬機器復原功能，請執行 `(Get-Cluster).ResiliencyDefaultPeriod=0`  
 
-## <a name="FAQ12"></a> 如何減少初始同步處理時間？  
+## <a name="FAQ12"></a> 如何減少初始同步處理時間？
 
 您可以使用精簡佈建的儲存體做為一種方式來加速初始同步時間。 「儲存體複本」會查詢並自動使用精簡佈建的儲存體，包括非叢集儲存空間、Hyper-V 動態磁碟與 SAN LUN。  
 
@@ -139,11 +139,9 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 2. 還原快照集或快照集為基礎的還原備份-還原到目的地磁碟區，磁碟區為基礎的快照集應該有區塊配置的最小差異。 這會是下一個最有效方法，因為區塊都可能由於正在鏡像映像的磁碟區快照集比對。
 3. 複製的檔案-從來未曾使用過在目的地上建立新的磁碟區，然後執行完整的 robocopy /MIR 樹狀目錄中複製的資料，有可能是區塊相符項目。 使用 Windows 檔案總管或複製樹狀結構的某些部分將不會建立多區塊相符項目。 手動複製這些檔案是最有效的方法，來植入。
 
-
-
 ## <a name="FAQ13"></a> 我是否可以委派使用者管理複寫？  
 
-您可以使用 Windows Server 2016 中的 `Grant-SRDelegation` Cmdlet。 這可讓您在伺服器對伺服器、叢集對叢集及延展式複寫案例中設定特定使用者，就像擁有建立、修改或移除複寫的權限，而不需是本機系統管理員群組的成員。 例如:   
+您可以使用`Grant-SRDelegation`cmdlet。 這可讓您在伺服器對伺服器、叢集對叢集及延展式複寫案例中設定特定使用者，就像擁有建立、修改或移除複寫的權限，而不需是本機系統管理員群組的成員。 例如:   
 
     Grant-SRDelegation -UserName contso\tonywang  
 
@@ -158,7 +156,7 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 
     vssadmin list shadows
      vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
-您也可以使用排程的工作，定期排程此工具來執行。 如需使用 VSS 的詳細資訊，請檢閱 [Vssadmin](https://technet.microsoft.com/library/cc754968.aspx)。 備份記錄檔磁碟區時沒有任何需要或值。 嘗試這麼做時，VSS 將會加以忽略。
+您也可以使用排程的工作，定期排程此工具來執行。 如需使用 VSS 的詳細資訊，請檢閱 [Vssadmin](../../administration/windows-commands/vssadmin.md)。 備份記錄檔磁碟區時沒有任何需要或值。 嘗試這麼做時，VSS 將會加以忽略。
 使用 Windows Server Backup、Microsoft Azure 備份、Microsoft DPM 或其他快照，只要 VSS、虛擬機器或以檔案為基礎的技術是在磁碟區層內運作，就受到「儲存體複本」所支援。 「儲存體複本」不支援以區塊為基礎的備份及還原。
 
 ## <a name="FAQ14"></a> 設定複寫來限制頻寬使用量？
@@ -185,7 +183,7 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 
  445 (SMB-複寫的傳輸通訊協定、 叢集 RPC 管理通訊協定) 5445 (iWARP SMB-使用 iWARP RDMA 網路功能時，才需要) 5985 (WSManHTTP-適用於 WMI/CIM/PowerShell 管理通訊協定)
 
-注意：Test-srtopology cmdlet 需要 ICMPv4/ICMPv6，但不是能用於複寫或管理。
+注意:Test-srtopology cmdlet 需要 ICMPv4/ICMPv6，但不是能用於複寫或管理。
 
 ## <a name="FAQ15.5"></a>記錄磁碟區的最佳作法有哪些？
 記錄檔的最佳大小差異極大，每個環境和工作負載，而決定多少撰寫您的工作負載執行的 IO。 
@@ -204,13 +202,13 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 只從來源叢集的資料磁碟應該是備份。 儲存體複本記錄檔磁碟應該不會備份因為儲存體複本作業的備份可能會發生衝突。
 
 ## <a name="FAQ16"></a> 為什麼要選擇與叢集對叢集伺服器對伺服器拓撲與延展式叢集？  
-儲存體複本有三個主要設定：延展式叢集、叢集對叢集和伺服器對伺服器。 各有不同的優點。
+儲存體複本共有三種主要的設定： 自動縮放叢集、 叢集對叢集和伺服器對伺服器。 各有不同的優點。
 
 延展式叢集拓撲非常適合需要可透過協調流程自動容錯移轉的工作負載，例如 Hyper-V 私人雲端叢集和 SQL Server FCI。 其中也有使用 [容錯移轉叢集管理員] 的內建圖形介面。 透過持續保留使用 [儲存空間]、SAN、iSCSI 及 RAID 的傳統非對稱式叢集共用存放架構。 您只使用 2 個節點就可以執行這種拓撲。
 
 叢集對叢集拓撲使用兩個不同的叢集，非常適合需要手動容錯移轉的系統管理員，尤其是在佈建第二網站作災害復原之用，而非日常使用時。 協調流程為手動。 延展式叢集，與儲存空間直接存取可以用於此組態中 （含警告-請參閱儲存體複本常見問題集和叢集對叢集文件）。 您只使用 4 個節點就可以執行這種拓撲。 
 
-伺服器對伺服器拓撲非常適合執行無法納入叢集之硬體的客戶。 這需要手動容錯移轉及協調流程。 適用於分公司與中央資料中心之間的低成本部署，尤其是在使用非同步複寫時。 此設定通常可以取代用於單一主機災害復原案例之受 DFSR 保護的檔案伺服器執行個體。
+伺服器對伺服器拓撲非常適合執行無法納入叢集之硬體的客戶。 這需要手動容錯移轉及協調流程。 它相當適合分公司與中央資料中心之間的低成本部署的尤其是使用非同步複寫。 此設定通常可以取代用於單一主機災害復原案例之受 DFSR 保護的檔案伺服器執行個體。
 
 在所有情況下，這些拓撲都支援在實體硬體及虛擬機器上執行。 在虛擬機器時，基礎 Hypervisor 不需要 Hyper-V；可以是 VMWare、KVM、Xen 等。
 
@@ -221,6 +219,12 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 是，資料 Deduplcation 支援與儲存體複本。 在來源伺服器上的磁碟區上啟用重複資料刪除，並在複寫期間，目的地伺服器接收重複資料刪除磁碟區的複本。
 
 雖然您應該*安裝*重複資料刪除，來源和目的地伺服器上 (請參閱[安裝和啟用重複資料刪除](../data-deduplication/install-enable.md))，不重要到*啟用*重複資料刪除，在目的地伺服器上。 儲存體複本可讓您只能在來源伺服器上的寫入。 因為重複資料刪除會寫入至磁碟區，應該只能在來源伺服器上執行。 
+
+## <a name="FAQ19"></a> 我可以複寫 Windows Server 2019 與 Windows Server 2016？
+
+不幸的是，我們不支援建立*新*Windows Server 2019 和 Windows Server 2016 資料庫之間的關係。 您可以放心地升級的伺服器或叢集到 Windows Server 2019 以及任何執行 Windows Server 2016*現有*合作關係會繼續運作。
+
+不過，若要取得 Windows Server 2019 的提升的複寫效能，此合作關係中的所有成員必須都執行 Windows Server 2019 時，必須刪除現有的合作關係和相關聯的複寫群組，然後重新建立它們，以植入的資料 （無論是當建立合作關係中 Windows Admin Center 或新增 SRPartnership cmdlet）。
 
 ## <a name="FAQ17"></a> 如何報告與儲存體複本 」 或 「 本指南的問題？  
 如需「儲存複本」的技術協助，您可以張貼於 [Microsoft TechNet 論壇](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。  https://windowsserver.uservoice.com 站台是慣用的設計變更要求，因為它可讓您的客戶提供支援和意見反應，對您的想法。
@@ -236,4 +240,4 @@ Windows Server 2016 中不支援此設定。  這可能會在未來版本中變�
 
 ## <a name="see-also"></a>另請參閱  
 - [儲存體概觀](../storage.md)  
-- [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)  
+- [儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)  

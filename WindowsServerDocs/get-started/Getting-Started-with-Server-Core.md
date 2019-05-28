@@ -1,25 +1,22 @@
 ---
 title: 安裝 Server Core
 description: 如何取得並安裝 Windows Server 2019、 Windows Server 2016 或 Windows Server （半年通道） 上的 Server Core 安裝。
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
-ms.date: 1/04/2019
+ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: d99cd0b028d08d5c3247541ce3a868676b60693d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6f685ce29088b56bb243d21315787ab90e6863a4
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869019"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976724"
 ---
 # <a name="install-server-core"></a>安裝 Server Core
 
@@ -35,7 +32,7 @@ ms.locfileid: "59869019"
 -   Windows Server Datacenter
 -   Windows Server Datacenter 含桌面體驗
 
-當您安裝 Windows Server （半年通道），包括版本 1709年，1803，1809，您會有下列安裝選項：
+當您安裝 Windows Server （半年通道） 時，您會有下列安裝選項：
 
 -   Windows Server Standard 
 -   Windows Server Datacenter
@@ -74,10 +71,10 @@ ms.locfileid: "59869019"
 - Windows Server 更新伺服器
 - Active Directory Rights Management Server
 - 路由及遠端存取伺服器和下列子角色：
-- 遠端桌面服務連線代理人
-- 授權
-- 虛擬化
-- 大量啟用服務
+   - 遠端桌面服務連線代理人
+   - 授權
+   - 虛擬化
+   - 大量啟用服務
 
 針對不包含在 Server Core 角色，請參閱[角色、 角色服務和功能不在 Windows Server 的 Server Core](../administration/server-core/server-core-removed-roles.md)。
 
@@ -88,13 +85,12 @@ ms.locfileid: "59869019"
 ## <a name="installing-on-windows-server-semi-annual-channel"></a>Windows Server （半年通道） 上安裝
 
 安裝適用於 Windows Server （半年通道） 的步驟完全一樣安裝舊版的 Windows Server (從。ISO 映像），但有下列例外狀況：
+
 - 不支援從先前的 Windows Server to Windows Server 版本 1709 升級。 永遠需要全新安裝。
    這表示，當您從 Windows 電腦的桌面上執行 setup.exe，安裝程式體驗不允許 [升級] 選項 （會變成灰色）。
 - 沒有適用於 Windows Server （半年通道） 的評估版本
 - 沒有 OEM 或零售版。 透過軟體保證或忠誠度方案時，即可只獲得 Windows Server （半年通道）。
 
-若要取得 Windows Server 版本 1709，請參閱[Windows Server 版本 1709 簡介](get-started-with-1709.md)。
+如需 半年通道的詳細資訊，請參閱[比較的服務通道](../get-started-19/servicing-channels-19.md)。
 
-若要取得 Windows Server 1803 版，請參閱[Introducing Windows Server，版本 1803年](get-started-with-1803.md)。
-
-若要查看最新的 Windows Server 版 1809，請參閱[What's New in Windows Server 版本 1809年](whats-new-in-windows-server-1809.md)
+若要查看新功能 Windows Server 半年通道，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)

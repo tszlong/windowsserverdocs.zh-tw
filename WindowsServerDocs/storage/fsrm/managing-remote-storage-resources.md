@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 583c36f399848cf67c6f3a850e62015b224768d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29870c33e17c75fe25601237d7de47302662d21f
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836629"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476172"
 ---
 # <a name="managing-remote-storage-resources"></a>管理遠端儲存資源
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server 2019，Windows Server 2016、 Windows Server （半年通道）、 Windows Server 2012 R2、 Windows Server 2012 中，Windows Server 2008 R2
 
 若要管理遠端電腦上的儲存資源，您有兩個選擇：
 
@@ -36,5 +36,5 @@ ms.locfileid: "59836629"
 
 本節包含下列主題：
 
--   [連線到遠端電腦](connect-to-remote-computer.md)
+-   [連線至遠端電腦](connect-to-remote-computer.md)
 -   [命令列工具](command-line-tools.md)

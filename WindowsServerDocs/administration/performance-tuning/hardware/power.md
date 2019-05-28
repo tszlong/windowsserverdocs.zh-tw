@@ -7,22 +7,22 @@ ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5261c856a0a29f9f58526e4f9580a16bbed5be56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5fe91888188796c96d5da80e8f9bd3ed627b9d43
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874299"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564735"
 ---
 # <a name="server-hardware-power-considerations"></a>伺服器硬體能力的考量
 
 請務必辨識增加企業和資料中心環境中的能源效率的重要性。 高效能和低能源使用情形通常是衝突的目標，但仔細選取伺服器元件，您可以得到它們之間的正確平衡點。 下列各節會列出 power 特性和功能的伺服器硬體元件的指導方針。
 
-## <a name="processor-recommendations"></a>處理器建議
+## <a name="processor-recommendations"></a>處理器建議事項
 
 作業系統電壓、 快取大小，以及處理程序技術的頻率會影響處理器的能源耗用量。 處理器具有熱設計，點 (TDP) 提供的能源耗量，相對於其他模型的基本指示的評等。
 
-一般情況下，選擇符合您的效能目標的最低 tdp，才能在處理器。 此外，較新的層代的處理器通常較多的能源效率，而且它們可能會公開更多的電源狀態，適用於 Windows 的電源管理演算法，可讓所有層級的效能更好的電源管理。 或者，他們可能會使用一些新的 「 合作式嗎？ Microsoft 已開發出與硬體製造商協力合作關係中的電源管理技術。
+一般情況下，選擇符合您的效能目標的最低 tdp，才能在處理器。 此外，較新的層代的處理器通常較多的能源效率，而且它們可能會公開更多的電源狀態，適用於 Windows 的電源管理演算法，可讓所有層級的效能更好的電源管理。 或者，可能會使用一些新的 「 合作 」 的電源管理技術，Microsoft 已開發出與硬體製造商協力合作。
 
 如需合作式電源管理技術的詳細資訊，請參閱 > 裡面的共同作業中的處理器效能控制項[進階組態與電源介面規格](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf)。
 
@@ -36,7 +36,7 @@ ms.locfileid: "59874299"
 ## <a name="disks-recommendations"></a>磁碟的建議
 較高的 RPM 表示增加的能源耗用量。 SSD 磁碟機是更強大的高效率比旋轉式磁碟機。 此外，2.5 英吋磁碟機通常需要較少的電量比 3.5 英吋磁碟機。
 
-## <a name="network-and-storage-adapter-recommendations"></a>網路和儲存體配接器建議
+## <a name="network-and-storage-adapter-recommendations"></a>網路和儲存裝置介面卡建議
 某些配接器會降低在閒置期間的能源耗用量。 這是很重要的考量，10 Gb 網路介面卡和高頻寬 (4-8 Gb) 儲存體的連結。 這類裝置會消耗大量的能源。
 
 
@@ -69,6 +69,6 @@ Windows Server 2016 啟用選擇性暫停 USB 裝置的預設值。 不過，撰
 
 ## <a name="see-also"></a>另請參閱
 - [伺服器硬體的效能考量](index.md)
-- [電力和效能調整](power/power-performance-tuning.md)
-- [處理器電源管理調整](power/processor-power-management-tuning.md)
-- [建議您平衡的方案參數](power/recommended-balanced-plan-parameters.md)
+- [電源與效能調整](power/power-performance-tuning.md)
+- [處理器電源管理](power/processor-power-management-tuning.md)
+- [建議的平衡方案參數](power/recommended-balanced-plan-parameters.md)

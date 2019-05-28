@@ -13,12 +13,12 @@ ms.assetid: deae35b9-7647-42b8-b6bf-45645a44c9c4
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: e1f3260fdbbd82a97c3b0949936afc6a04ec5e5a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3c0fd18ded0621c550546a2f0108b573cc67767
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887839"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222516"
 ---
 # <a name="hyper-v-virtual-machine-connection"></a>HYPER-V 虛擬機器連線
 
@@ -48,9 +48,9 @@ ms.locfileid: "59887839"
 |連接到 DVD 映像\(.iso 檔案\)或 虛擬磁碟片\(.vfd 檔案\)|選取 **媒體**。<br /><br />第 2 代虛擬機器不支援虛擬軟碟機。 如需詳細資訊，請參閱 <<c0> [ 應該在 HYPER-V 中建立 1 或 2 代虛擬機器？](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)。|  
 |使用 Hyper-v 主機的本機資源\-V 虛擬機器，例如 USB 快閃磁碟機|開啟加強的工作階段模式，在 HYPER-V 主機、 使用 VMConnect 來連線至虛擬機器，並在連接之前，選擇您想要使用的本機資源。 如需特定步驟，請參閱[Hyper-v 上使用本機資源\-V 虛擬機器搭配 VMConnect](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)。|  
 |儲存虛擬機器的 VMConnect 設定變更。|在 Windows PowerShell 或命令提示字元中執行下列命令：<br /><br />`VMConnect.exe <ServerName> <VMName> \/edit`|  
-|防止 VMConnect 使用者接管另一位使用者 VMConnect 工作階段|[開啟 HYPER-V 主機上的 增強的工作階段模式](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#BKMK_OVER)。<br /><br />不需要增強式開啟的工作階段模式可能會造成安全性和隱私權風險。 如果使用者已連接並登入連接到相同的虛擬機器的虛擬機器透過 VMConnect 和其他授權的使用者、 工作階段會接手第二個使用者和第一位使用者將會遺失工作階段。 第二個使用者將能夠檢視第一位使用者的桌面、 文件和應用程式。|
+|防止 VMConnect 使用者接管另一位使用者 VMConnect 工作階段|[開啟 HYPER-V 主機上的 增強的工作階段模式](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#turn-on-enhanced-session-mode-on-a-hyper-v-host)。<br /><br />不需要增強式開啟的工作階段模式可能會造成安全性和隱私權風險。 如果使用者已連接並登入連接到相同的虛擬機器的虛擬機器透過 VMConnect 和其他授權的使用者、 工作階段會接手第二個使用者和第一位使用者將會遺失工作階段。 第二個使用者將能夠檢視第一位使用者的桌面、 文件和應用程式。|
 |管理 integration services 或可讓 VM 與 HYPER-V 主機通訊的元件| 在執行 Windows 10 或 Windows Server 2016 的 HYPER-V 主機，您無法管理搭配 VMConnect integration services。 請參閱下列主題： <br />- [開啟/關閉 整合服務，從 HYPER-V 主機](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics) <br />- [開啟/關閉 integration services，從 Windows 虛擬機器](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#manage-integration-services-from-guest-os-windows)<br />- [開啟/關閉 整合服務，從 Linux 虛擬機器](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#manage-integration-services-from-guest-os-linux) <br />- [新的更新虛擬機器的整合服務](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#integration-service-maintenance)  <br />對於執行 Windows Server 2012 或 Windows Server 2012 R2 的主機，請參閱[Integration Services](https://technet.microsoft.com/library/dn798297(v=ws.11).aspx)。|
-|VMConnect 視窗大小調整|您可以變更 VMConnect 視窗，執行 Windows 作業系統的第 2 代虛擬機器的大小。 若要這樣做，您可能需要開啟加強的工作階段模式，在 HYPER-V 主機。 如需詳細資訊，請參閱 <<c0> [ 開啟 HYPER-V 主機上的 增強的工作階段模式](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#BKMK_OVER)。 對於執行 Ubuntu 的虛擬機器，請參閱[HYPER-V VM 中變更 Ubuntu 螢幕解析度](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)。|
+|VMConnect 視窗大小調整|您可以變更 VMConnect 視窗，執行 Windows 作業系統的第 2 代虛擬機器的大小。 若要這樣做，您可能需要開啟加強的工作階段模式，在 HYPER-V 主機。 如需詳細資訊，請參閱 <<c0> [ 開啟 HYPER-V 主機上的 增強的工作階段模式](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#turn-on-enhanced-session-mode-on-a-hyper-v-host)。 對於執行 Ubuntu 的虛擬機器，請參閱[HYPER-V VM 中變更 Ubuntu 螢幕解析度](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)。|
 
 
 ## <a name="keyboard-shortcuts"></a>鍵盤快速鍵  

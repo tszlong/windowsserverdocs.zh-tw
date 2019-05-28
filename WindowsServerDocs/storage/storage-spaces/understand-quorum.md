@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 24890b191db8bc6934132857e830d4f77c394b02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66d4796a6ffb453f6edb5fed20dba29b70f7ec4b
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879969"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476112"
 ---
 # <a name="understanding-cluster-and-pool-quorum"></a>了解叢集和集區仲裁
 
@@ -27,7 +27,7 @@ ms.locfileid: "59879969"
 
 仲裁會決定叢集可承受同時仍維持上線的失敗次數。 仲裁被設計來處理案例的叢集節點子集間的通訊發生問題時，讓多部伺服器不嘗試同時裝載資源群組，並同時寫入相同的磁碟。 擁有這個概念的仲裁，叢集會強制停止其中一個子集的節點，以確保只有一個，則為 true 的擁有者的特定資源群組中的叢集服務。 一旦已停止的節點同樣可以與節點的主要群組通訊，它們就會自動重新加入叢集，並啟動叢集服務。
 
-在 Windows Server 2016 中，有兩個都有自己的仲裁機制系統的元件：
+在 Windows Server 2019 和 Windows Server 2016 中，有兩個都有自己的仲裁機制系統的元件：
 
 - <strong>叢集仲裁</strong>:這會在叢集層級 （也就是您可以遺失節點且有維持叢集）
 - <strong>集區仲裁</strong>:這會在集區層級上啟用儲存空間直接存取時 （也就是可以遺失節點和磁碟機，然後保持運作的集區）。 存放集區已設計來在叢集和非叢集的情況下，這也是為什麼它們有不同的仲裁的機制。
@@ -229,5 +229,5 @@ ms.locfileid: "59879969"
 
 ## <a name="more-information"></a>詳細資訊
 
-- [設定及管理仲裁](../../failover-clustering/manage-cluster-quorum.md)
+- [設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)
 - [部署雲端見證](../../failover-clustering/deploy-cloud-witness.md)

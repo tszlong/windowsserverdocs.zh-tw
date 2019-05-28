@@ -1,29 +1,27 @@
 ---
 title: Windows Server 安裝與升級
-description: ''
-ms.custom: na
+description: 如何安裝、 升級或移轉至較新版本的 Windows Server。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.date: 07/12/2018
+ms.date: 05/14/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98f876bd-63ff-4c3a-95d4-a8dd8d0d119c
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: c3b9070fc6cb9227ccfa445e23983d9e91fe5c82
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f859253188c46d3e34e7a6ae504bf3eeafbae75c
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859189"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613179"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Windows Server 安裝與升級
 
 >適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012 中，Windows Server 2008 R2 及 Windows Server 2008
+
+尋找適用於 Windows Server 2019 嗎？ 請參閱[安裝、 升級或移轉至 Windows Server 2019](../get-started-19/install-upgrade-migrate-19.md)。
 
 > [!IMPORTANT]
 > Windows Server 2008 R2 與 Windows Server 2008 的延伸支援於 2020 年 1 月結束。 [深入了解您的升級選項](#upgrading-from-windows-server-2008-r2-or-windows-server-2008)。
@@ -31,13 +29,14 @@ ms.locfileid: "59859189"
 是該移轉至較新 Windows Server 版本的時候了嗎？ 根據您目前正在執行的版本，會有許多選項供您用來完成此作業。
 
 ## <a name="installation"></a>安裝
+
 如果您想要在相同硬體上移轉至較新版本的 Windows Server，有一個必定有效的方法就是**全新安裝**，您只要直接在同一個硬體的舊版作業系統上安裝新版作業系統即可，這樣也會刪除先前的作業系統。 這是最簡單的方法，但是您必須先備份資料並規劃重新安裝應用程式。 有幾個事項需要注意，例如系統需求，因此請務必檢查 [Windows Server 2016](https://go.microsoft.com/fwlink/?LinkID=825558)、[Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418) 和 [Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx) 的詳細資料。
 
 從任何發行前版本 (例如 Windows Server 2016 Technical Preview) 移轉至發行版本 (Windows Server 2016) 時，一定要進行全新安裝。
 
 ## <a name="migration-recommended-for-windows-server-2016"></a>移轉 (建議使用 Windows Server 2016)
 
-Windows Server [移轉] 文件可協助您一次將一個角色或功能從執行 Windows Server 的來源電腦移轉至另一台執行相同或較新版本 Windows Server 的目的地電腦。 針對上述用途，我們將「移轉」定義為移動一個角色或功能及其資料到不同的電腦，而不是升級同一台電腦上的功能。 這是用來將現有工作負載及資料移到較新 Windows Server 版本的建議方式。 若要開始進行此作業，請查看 Windows Server 2016 的[伺服器角色升級和移轉矩陣](https://go.microsoft.com/fwlink/?LinkId=828595)。
+Windows Server 移轉文件可協助您從另一部執行 Windows Server，相同或較新版本的目的地電腦執行 Windows Server 的來源電腦一次移轉一個角色或功能。 針對上述用途，我們將「移轉」定義為移動一個角色或功能及其資料到不同的電腦，而不是升級同一台電腦上的功能。 這是用來將現有工作負載及資料移到較新 Windows Server 版本的建議方式。 若要開始使用，請[伺服器角色升級和移轉矩陣](https://go.microsoft.com/fwlink/?LinkId=828595)適用於 Windows Server。
 
 ## <a name="cluster-os-rolling-upgrade"></a>叢集作業系統輪流升級
 叢集作業系統輪流升級是 Windows Server 2016 中的新功能，可讓系統管理員將叢集節點的作業系統從 Windows Server 2012 R2 升級至 Windows Server 2016，而不需停止 Hyper-V 或「向外延展檔案伺服器」工作負載。 這項功能可讓您避免可能影響服務等級協定的停機時間。 [Cluster operating system rolling upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級) 會更詳細地討論這項新功能。
@@ -65,7 +64,7 @@ Windows Server [移轉] 文件可協助您一次將一個角色或功能從執�
 如需詳細資訊 (包括升級的重要注意事項和限制、Windows Server 2016 版本之間的授權轉換，以及評估版到零售版的轉換)，請參閱 [Windows Server 2016 支援的升級路徑](https://go.microsoft.com/fwlink/?LinkId=828602)。
  
 >[!NOTE]
->注意：不支援將 Server Core 安裝切換到含桌面的伺服器安裝，以及將含桌面的伺服器安裝切換到 Server Core 安裝的升級。 如果您要升級或轉換的舊版作業系統為 Server Core 安裝，結果仍然會是新版作業系統的 Server Core 安裝。
+>注意:不支援將 Server Core 安裝切換到含桌面的伺服器安裝，以及將含桌面的伺服器安裝切換到 Server Core 安裝的升級。 如果您要升級或轉換的舊版作業系統為 Server Core 安裝，結果仍然會是新版作業系統的 Server Core 安裝。
  
 從舊版 Windows Server 零售版升級至 Windows Server 2016 零售版的支援路徑快速參考表：
 
@@ -139,7 +138,7 @@ Windows Server [移轉] 文件可協助您一次將一個角色或功能從執�
 
 中所述[升級 Windows Server 2008 和 Windows Server 2008 R2](modernize-windows-server-2008.md)，Windows Server 2008 R2 和 Windows Server 2008 的延伸的支援結束的 2020 年 1 月中。 若要不確保在支援的任何間距，您需要升級至支援的 Windows Server 版本，或移至在 Azure 中重新裝載[特製化 Windows Server 2008 R2 Vm](uploading-specialized-WS08-image-to-azure.md)。 請參閱[適用於 Windows Server 移轉指南](https://go.microsoft.com/fwlink/?linkid=872689)資訊和規劃移轉/升級的考量。
 
-對於內部部署伺服器，沒有任何直接的升級路徑，從 Windows Server 2008 R2 至 Windows Server 2016 或更新版本。 相反地，先升級到 Windows Server 2012 R2，然後[升級到 Windows Server 2016](#Upgrading-to-Windows-Server-2016)。
+對於內部部署伺服器，沒有任何直接的升級路徑，從 Windows Server 2008 R2 至 Windows Server 2016 或更新版本。 相反地，先升級到 Windows Server 2012 R2，然後[升級到 Windows Server 2016](#upgrading-to-windows-server-2016)。
 
 當您打算升級，請留意以下的指導方針升級至 Windows Server 2012 R2 的中間的階梯。
 

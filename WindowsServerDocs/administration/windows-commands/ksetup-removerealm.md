@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f62208d6576890529be80b1c6cb3cc073a2b4e6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 579b0772e4642389b90aa370dad80a3eebea9d34
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853359"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564723"
 ---
 # <a name="ksetupremoverealm"></a>ksetup:removerealm
 
@@ -40,13 +40,13 @@ ksetup /removerealm <RealmName>
 
 ## <a name="remarks"></a>備註
 
-領域名稱會儲存在登錄中的兩個地方：**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**並**\CurrentControlSet\Control\Lsa\Kerberos**。
+領域名稱會儲存在登錄中的兩個地方：**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**並 **\CurrentControlSet\Control\Lsa\Kerberos**。
 
 您無法從網域控制站移除預設領域名稱，因為這將會重設其 DNS 資訊，並將它移除可能會導致網域控制站無法使用。
 
 ## <a name="BKMK_Examples"></a>範例
 
-不小心設定領域名稱拼字錯誤 」。COM 嗎？ CORP.本機電腦上CONTOSO。CON
+不小心設定領域名稱拼錯".COM"的本機電腦上為 CORP.CONTOSO。CON
 ```
 ksetup /setrealm CORP.CONTOSO.CON
 ```

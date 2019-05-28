@@ -8,16 +8,16 @@ author: bhattacharyaz
 manager: eldenc
 ms.author: subhatt
 ms.date: 09/19/2016
-ms.openlocfilehash: 8b8ecee16c778ed26953be325fb88748fc458176
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 125dd7421cc1876c07983016498a9689d8a507ac
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867749"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475993"
 ---
 # <a name="virtual-machine-load-balancing-overview"></a>虛擬機器負載平衡概觀
 
-> 適用於：Windows Server （半年通道），Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016
 
 私用雲端部署的重要考量是資本支出 (<abbr title="資本支出">CapEx</abbr>) 才能進入實際執行環境。 是將備援新增至私人雲端部署，以在生產環境中的尖峰流量期間避免不足容量很常見，但這會增加<abbr title="資本支出">CapEx</abbr>。 備援性需求由不對稱的私人雲端，其中某些節點會裝載更多虛擬機器 (<abbr title="虛擬機器">Vm</abbr>) 和其他使用量過低 （例如重新啟動全新的伺服器）。
 
@@ -25,7 +25,7 @@ ms.locfileid: "59867749"
 > [!VIDEO https://channel9.msdn.com/Blogs/windowsserver/Virtual-Machine-Load-Balancing-in-Windows-Server-2016/player]
 
 ## <a id="what-is-vm-load-balancing"></a>什麼是虛擬機器負載平衡？
-<abbr title="虛擬機器">VM</abbr>負載平衡是新的內建功能，可讓您最佳化容錯移轉叢集中節點的使用量的 Windows Server 2016 中。 它會識別過度認可的節點並重新分散<abbr title="虛擬機器">Vm</abbr>從這些節點，以在認可的節點。 這項功能的主要層面有些，如下所示：
+<abbr title="虛擬機器">VM</abbr>負載平衡是 Windows Server 2019 和可讓您最佳化容錯移轉叢集中節點的使用量的 Windows Server 2016 中的內建功能。 它會識別過度認可的節點並重新分散<abbr title="虛擬機器">Vm</abbr>從這些節點，以在認可的節點。 這項功能的主要層面有些，如下所示：
 
 * *它是零停機時間的解決方案*:<abbr title="虛擬機器">Vm</abbr>是即時移轉到閒置的節點。
 * *與您現有的叢集環境的完美整合*:會遵守例如反親和性、 容錯網域和可能的擁有者的失敗原則。

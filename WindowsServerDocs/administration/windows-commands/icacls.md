@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 20b2150b1135467cce43ae23bfdc275a5da22141
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2639b8bb913bcd604a7c79015545006a23e1d0f2
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852639"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222952"
 ---
 # <a name="icacls"></a>icacls
 
@@ -26,7 +26,7 @@ ms.locfileid: "59852639"
 
 顯示或修改指定檔案上的判別存取控制清單 (DACL)，及套用預存的 DACL 到指定目錄中的檔案。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+如需如何使用此命令的範例，請參閱[範例](#examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -121,15 +121,15 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
         **WA** （寫入屬性）
 -   繼承的權限可能會在其中一個*為永久*表單中，而且它們只會套用至目錄：
 
-    **(OI)**： 物件繼承
+    **(OI)** ： 物件繼承
 
-    **(CI)**： 容器繼承
+    **(CI)** ： 容器繼承
 
-    **(IO)**： 只有繼承
+    **(IO)** ： 只有繼承
 
-    **(NP)**： 不會傳播繼承
+    **(NP)** ： 不會傳播繼承
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a>範例
 
 若要儲存所有檔案的 Dacl C:\Windows 目錄及其子目錄 ACLFile 檔案中，請輸入：
 ```

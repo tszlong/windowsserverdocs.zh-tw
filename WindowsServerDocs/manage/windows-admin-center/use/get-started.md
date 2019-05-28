@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: ff1f949c764473a63eafa25346949d710699dbd1
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63742655"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222724"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows Admin Center
 
@@ -114,7 +114,7 @@ Windows Admin Center 會支援數種機制，用來驗證與受管理的節點�
 
 **本機系統管理員密碼解決方案 (LAPS)**
 
-如果您的環境使用[LAPS](https://technet.microsoft.com/mt227395.aspx)，您可以使用 LAPS 認證來向受管理的節點。 **如果您使用這種情況下，請**[提供意見反應](http://aka.ms/WACFeedback)。
+如果您的環境使用[LAPS](https://technet.microsoft.com/mt227395.aspx)，您必須安裝在您的 Windows 10 電腦上的 Windows Admin Center，您可以使用 LAPS 認證來向受管理的節點。 **如果您使用這種情況下，請**[提供意見反應](http://aka.ms/WACFeedback)。
 
 ## <a name="using-tags-to-organize-your-connections"></a>使用標記來組織您的連線
 

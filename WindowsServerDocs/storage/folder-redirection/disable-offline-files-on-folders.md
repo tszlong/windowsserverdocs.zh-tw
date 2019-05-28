@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: adc93906cb7ff958fc1db7b00abdc557623e764e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b006742c9256c357d9aff3fb1b765dbed087383a
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834199"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475874"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>停用個別重新導向的資料夾上的離線檔案
 
->適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2012、 Windows Server 2012 R2、 Windows Server 2016
+>適用於：Windows 10，Windows 8、 Windows 8.1、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012、windows Server 2012 R2 Windows （半年通道）
 
 本主題描述如何停用離線檔案快取上使用資料夾重新導向來重新導向至網路共用的個別資料夾。 這讓您能夠指定要從本機快取中排除的資料夾，減少離線檔案快取大小和時間必須同步處理離線檔案。
 
@@ -29,7 +29,7 @@ ms.locfileid: "59834199"
 若要停用離線檔案快取特定的資料夾重新導向，您的環境必須符合下列必要條件。
 
 - 含有已加入網域的用戶端電腦的 Active Directory 網域服務 (AD DS) 網域。 沒有任何樹系或網域功能等級需求或結構描述的需求。
-- 執行 Windows 10，Windows 8.1，Windows 8、 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 的用戶端電腦。
+- 用戶端電腦執行 Windows 10，Windows 8.1，Windows 8、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 或 Windows （半年通道）。
 - 具有安裝群組原則管理的電腦。
 
 ## <a name="disabling-offline-files-on-individual-redirected-folders"></a>停用個別重新導向的資料夾上的離線檔案
@@ -46,7 +46,7 @@ ms.locfileid: "59834199"
 3. 在主控台樹狀目錄中，以滑鼠右鍵按一下您要設定資料夾重新導向設定，然後選取的 GPO**編輯**。 群組原則管理編輯器隨即出現。
 4. 在主控台樹狀目錄中，在**使用者設定**，展開**原則**，展開**系統管理範本**，展開**系統**，及依序展開**資料夾重新導向**。
 5. 以滑鼠右鍵按一下**不會自動進行特定的重新導向的資料夾可以使用離線**，然後選取**編輯**。 **執行不會自動提供特定的資料夾重新導向離線** 視窗隨即出現。
-6. 選取 [已啟用] 。 在 **選項**窗格中選取的資料夾，不應提供離線選取適當的核取方塊。 選取 [確定]。
+6. 選取 [已啟用]  。 在 **選項**窗格中選取的資料夾，不應提供離線選取適當的核取方塊。 選取 [確定]。 
 
 ### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell 對應的命令
 

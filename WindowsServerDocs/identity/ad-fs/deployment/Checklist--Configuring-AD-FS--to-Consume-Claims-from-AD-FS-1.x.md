@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: fe99487d3a770547af36f69722b442d0e2cbb8b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41a71ff49d211d294768c0e4a55692ced3f2d844
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828289"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192455"
 ---
 # <a name="checklist-configuring-ad-fs--to-consume-claims-from-ad-fs-1x"></a>檢查清單：設定 AD FS 使用宣告從 AD FS 1.x
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
   
 ## <a name="checklist-configuring-ad-fs-to-consume-claims-from-adfs1x"></a>檢查清單：設定 AD FS 使用宣告從 AD FS 1.x  
 此檢查清單包含設定 Active Directory 同盟服務所需的工作\(AD FS\) Windows Server 2012 使用 AD FS 1 所傳送的宣告中的 Federation Service。*x* Federation Service。  

@@ -10,12 +10,12 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c1c64336af9c72b97539d2ded750ee4414fccb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 71b56a0bc4f53879ebaf3610f60dded39484375b
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868179"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222357"
 ---
 # <a name="get-started-with-windows-server-2016"></a>開始使用 Windows Server 2016
 
@@ -24,7 +24,7 @@ ms.locfileid: "59868179"
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
 
-<img src="../media/landing-icons/getstarted.png" style='float:left; padding:.5em;' alt="Icon showing a box with a checkmark"> 這個集合所包含的詳細資訊可協助您判斷是否準備好移至 Windows Server 2016。 檢查系統需求、升級選項，以及移至 Windows Server 2016 的其他資訊之後，即可回到主要 [Windows Server 2016](Windows-Server-2016.md) 中樞，並開始往下安裝您需要的最佳版本和安裝選項。 
+![顯示具有一個核取記號的方塊圖示](../media/landing-icons/getstarted.png)這個集合包含可協助您判斷您是否準備好移往 Windows Server 2016 的詳細的資訊。 檢查系統需求、升級選項，以及移至 Windows Server 2016 的其他資訊之後，即可回到主要 [Windows Server 2016](Windows-Server-2016.md) 中樞，並開始往下安裝您需要的最佳版本和安裝選項。 
 
 >[!Note]
 > 若要下載 Windows Server 2016，請參閱 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)。
@@ -36,7 +36,7 @@ ms.locfileid: "59868179"
 ## <a name="release-notes-important-issues-in-windows-serverwindows-server-2016-ga-release-notesmd"></a>[版本資訊：Windows Server 的重要問題](Windows-Server-2016-GA-Release-Notes.md)
 未避免或解決時可能會造成嚴重問題的問題。
 
-## <a name="recommendations-for-moving-to-windows-server-2016recommendations-moving-to-server2016md"></a>[移至 Windows Server 2016 的建議](Recommendations-moving-to-Server2016.md)
+## <a name="recommendations-for-moving-to-windows-server-2016recommendations-moving-to-server2016md"></a>[移至 Windows Server 2016 的建議](Recommendations-moving-to-Server2016.md)
 在各種情況下使用 Windows Server 2016 的可用方法完整表格。
 
 ## <a name="features-removed-or-deprecated-in--windows-server-2016deprecated-featuresmd"></a>[移除或 Windows Server 2016 中已被取代的功能](deprecated-features.md)

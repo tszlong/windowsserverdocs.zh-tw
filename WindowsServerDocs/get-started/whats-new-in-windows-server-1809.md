@@ -4,21 +4,22 @@ description: Windows Server 版本 1809 的新功能
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
+ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 32868a4a5044360bf596e26d497138bccf6692bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d268550112236daecbe3dc1a9d9da21bc8ec67fb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834409"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976636"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Windows Server 版本 1809 的新功能
 
 >適用於：Windows Server (半年度管道)
 
-本主題說明 Windows Server 版本 1809 中的一些新功能。 若要了解 Windows Server 2019 中的新功能，請參閱 [Windows Server 2019 的新功能](../get-started-19/whats-new-19.md)。
+若要深入了解 Windows 的最新功能，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)。 本主題說明 Windows Server 版本 1809 中的一些新功能。
 
 ## <a name="container-networking-with-kubernetes"></a>搭配 Kubernetes 的容器網路功能
 
@@ -41,7 +42,7 @@ Windows Server 版本 1809 已改進使用群組受管理的服務帳戶 (gMSA) 
 * Windows 上的 Linux 容器
 * [低的額外延遲背景傳輸 (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
 * 虛擬工作負載的網路效能改進功能
-* [Demand (FOD) 的 server Core 應用程式相容性功能 ](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [Demand (FOD) 的 server Core 應用程式相容性功能](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
 * [Storage Migration Service (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * 儲存體複本
 * 系統深入解析 

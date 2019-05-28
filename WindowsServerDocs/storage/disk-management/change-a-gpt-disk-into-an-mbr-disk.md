@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1ae755b9c41d66ce5f907f600be17547398acc1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c42cffec0ddc1ae480ae67982147e9f186f0e50a
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839579"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222867"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>轉換成 MBR 磁碟的 GPT 磁碟
 
@@ -29,23 +29,19 @@ ms.locfileid: "59839579"
 > [!NOTE]
 > 您必須至少是**備份操作員**或**系統管理員**群組的成員，才能完成這些步驟。
 
-<a id="BKMK_WINUI"></a>
-
 ## <a name="converting-using-the-windows-interface"></a>轉換使用 Windows 介面
 
 1.  備份或移動您要轉換成 MBR 磁碟的基本 GPT 磁碟上的所有磁碟區。
 
-2.  如果磁碟包含任何磁碟分割或磁碟區，請個別按右鍵，然後按一下 **\[刪除磁碟區\]**。
+2.  如果磁碟包含任何磁碟分割或磁碟區，請個別按右鍵，然後按一下 **\[刪除磁碟區\]** 。
 
-3.  以滑鼠右鍵按一下要變更成 MBR 磁碟的 GPT 磁碟，然後按一下 **\[轉換成 MBR 磁碟\]**。
-
-<a id="BKMK_CMD"></a>
+3.  以滑鼠右鍵按一下要變更成 MBR 磁碟的 GPT 磁碟，然後按一下 **\[轉換成 MBR 磁碟\]** 。
 
 ## <a name="converting-using-a-command-line"></a>轉換使用命令列
 
 1.  備份或移動您要轉換成 MBR 磁碟的基本 GPT 磁碟上的所有磁碟區。
 
-2.  開啟提升權限的命令提示字元，方式為：以滑鼠右鍵按一下 **\[命令提示字元\]**，然後選擇 **\[以系統管理員身分執行\]**。
+2.  開啟提升權限的命令提示字元，方式為：以滑鼠右鍵按一下 **\[命令提示字元\]** ，然後選擇 **\[以系統管理員身分執行\]** 。
 
 3. 輸入 `diskpart`。 如果磁碟未包含任何磁碟分割或磁碟區，請跳至步驟 6。
 
