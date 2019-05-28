@@ -7,18 +7,18 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 06/04/2018
+ms.date: 04/26/2019
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: 620d339a505da77649d65537abc92f301760d40d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd0a160213e69e59194e1f775040c12769f1eb5e
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821289"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772486"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>使用儲存體複本的伺服器對伺服器儲存體複寫
 
-> 適用於：Windows Server （半年通道），Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
 
 您可以使用儲存體複本設定兩部伺服器來同步處理資料，讓每個都有相同磁碟區的相同複本。 本主題提供這種伺服器對伺服器複寫組態的一些背景，以及如何設定和管理環境。
 
@@ -28,10 +28,10 @@ ms.locfileid: "59821289"
 > [!video https://www.microsoft.com/videoplayer/embed/3aa09fd4-867b-45e9-953e-064008468c4b?autoplay=false]
 
 
-## <a name="prerequisites"></a>必要條件  
+## <a name="prerequisites"></a>先決條件  
 
 * Active Directory 網域服務樹系 （不需要執行 Windows Server 2016）。  
-* 在兩部伺服器安裝 Windows Server 2016 Datacenter Edition。  
+* 執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的兩部伺服器。 如果您執行 Windows Server 2019，您可以改為使用 Standard Edition 如果您要確定複寫單一磁碟區的大小上限為 2 TB。  
 * 使用 SAS JBOD、光纖通道 SAN、iSCSI 目標，或本機 SCSI/SATA 儲存體的兩組儲存體。 儲存體應包含 HDD 和 SSD 兩者混合的媒體。 您必須設定每組儲存體只能供各自的伺服器使用，不得共用存取。  
 * 每組存放裝置必須允許建立至少兩個虛擬磁碟，一個供複寫的資料使用，另一個供記錄檔使用。 實體存放裝置的所有資料磁碟上，必須都要有相同的磁區大小。 實體存放裝置的所有記錄檔磁碟上，必須都要有相同的磁區大小。  
 * 每部伺服器上至少要有一個乙太網路/TCP 連線，以進行同步複寫，但最好是 RDMA。   
@@ -52,7 +52,7 @@ ms.locfileid: "59821289"
 
 | 系統                        | 作業系統                                            | 所需的     |
 |-------------------------------|-------------------------------------------------------------|------------------|
-| 兩部伺服器 <br>（任何的內部部署硬體、 Vm 及雲端 Vm，包括 Azure Vm 的混合）| Windows Server （半年通道） 或 Windows Server 2016 Datacenter edition | 儲存體複本  |
+| 兩部伺服器 <br>（任何的內部部署硬體、 Vm 及雲端 Vm，包括 Azure Vm 的混合）| Windows Server 2019、 Windows Server 2016 或 Windows Server （半年通道） | 儲存體複本  |
 | 一部電腦                     | Windows 10                                                  | Windows Admin Center |
 
 > [!NOTE]
@@ -86,7 +86,7 @@ ms.locfileid: "59821289"
 
 ## <a name="provision-os"></a>步驟 2:佈建作業系統、功能、角色、儲存體及網路
 
-1.  使用 Windows Server 2016 Datacenter **(桌面體驗)** 的安裝類型，在兩個伺服器節點上安裝 Windows Server 2016。 如果有的話，不要選擇標準版，因為它不包含儲存體複本。
+1.  Windows Server 的安裝類型兩個伺服器節點上安裝 Windows Server **（桌面體驗）** 。 
  
     若要使用 Azure VM 連線到您的網路透過 ExpressRoute，請參閱[加入 Azure VM 連線到透過 ExpressRoute 網路](#add-azure-vm-expressroute)。
 
@@ -129,7 +129,7 @@ ms.locfileid: "59821289"
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        如需這些步驟的詳細資訊，請參閱[安裝或解除安裝角色、角色服務或功能](http://technet.microsoft.co/library/hh831809.aspx)  
+        如需這些步驟的詳細資訊，請參閱[安裝或解除安裝角色、角色服務或功能](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)  
 
 8.  如下所示設定儲存體：  
 
@@ -155,7 +155,7 @@ ms.locfileid: "59821289"
 
         1.  請確定每個叢集只能看到該網站的儲存體機箱。 如果使用 iSCSI，您應該使用一張以上的網路介面卡。    
 
-        2.  使用廠商的文件來佈建儲存體。 如果使用 Windows iSCSI 目標，請參閱 [iSCSI 目標區塊儲存體，作法](https://technet.microsoft.com/library/hh848268.aspx)。  
+        2.  使用廠商的文件來佈建儲存體。 如果使用 Windows iSCSI 目標，請參閱 [iSCSI 目標區塊儲存體，作法](../iscsi/iscsi-target-server.md)。  
 
     - **FC SAN 儲存體：**  
 
@@ -210,7 +210,7 @@ ms.locfileid: "59821289"
 
 ### <a name="using-windows-powershell"></a>使用 Windows PowerShell
 
-現在，您將使用 Windows PowerShell 設定伺服器對伺服器複寫。 您必須直接在節點上，或從包含 Windows Server 2016 RSAT 管理工具的遠端管理電腦，執行下列所有步驟。  
+現在，您將使用 Windows PowerShell 設定伺服器對伺服器複寫。 您必須先執行所有步驟，直接在節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端管理電腦。  
 
 1. 請確定您以系統管理員身分使用提升權限的 Powershell 主控台。  
 2. 設定伺服器對伺服器複寫時，要指定來源和目的地磁碟、來源和目的地記錄檔、來源和目的地節點，以及記錄檔大小。  
@@ -314,7 +314,7 @@ ms.locfileid: "59821289"
 
 ## <a name="step-4-manage-replication"></a>步驟 4：管理複寫
 
-現在您將會管理與操作伺服器對伺服器複寫的基礎結構。 您可以直接在節點上，或從包含 Windows Server 2016 RSAT 管理工具的遠端管理電腦，執行下列所有步驟。  
+現在您將會管理與操作伺服器對伺服器複寫的基礎結構。 您可以先執行所有步驟，直接在節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端管理電腦。  
 
 1.  使用 `Get-SRPartnership` 和 `Get-SRGroup` 來判斷目前的複寫來源與目的地及其狀態。  
 
@@ -372,7 +372,7 @@ ms.locfileid: "59821289"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](https://technet.microsoft.com/library/hh849685.aspx)。  
+    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)。  
 
 3.  若要移動一個網站的複寫方向，請使用 `Set-SRPartnership` Cmdlet。  
 
@@ -381,7 +381,7 @@ ms.locfileid: "59821289"
     ```  
 
     > [!WARNING]  
-    > 正在進行初始同步處理時，Windows Server 2016 不會阻止角色切換，因為如果您尚未完成初始複寫，即嘗試切換，可能會導致資料遺失。 完成初始同步處理之前，請勿強制切換方向。  
+    > Windows Server 中，不會阻止角色切換，初始同步處理正在進行時，因為如果您嘗試切換，才能完成初始複寫，它會導致資料遺失。 完成初始同步處理之前，請勿強制切換方向。  
 
     檢查事件記錄檔，以查看複寫方向變更以及復原模式發生的情況，接著予以調解。 然後寫入 IO 就可以寫入新的來源伺服器所擁有的儲存體。 變更複寫方向，將會在先前的來源電腦上封鎖寫入 IO。  
 
@@ -410,7 +410,7 @@ ms.locfileid: "59821289"
 如果這些不會成為裹足不前的因素，儲存體複本可讓您使用這個較新的技術取代 DFS 複寫伺服器。   
 高階程序為︰  
 
-1.  在兩部伺服器上安裝 Windows Server 2016，並設定您的儲存體。 這可能表示升級一組現有的伺服器或全新安裝。  
+1.  兩部伺服器上安裝 Windows Server，並設定您的儲存體。 這可能表示升級一組現有的伺服器或全新安裝。  
 2.  請確定您想要複寫的任何資料存在於一個或多個資料磁碟區上，而不是在 C: 磁碟機上。   
 a.  您也可以使用備份或檔案複本，在另一部伺服器上植入資料以節省時間，並使用精簡佈建的儲存體。 與 DFS 複寫不同的是，不需要使類似中繼資料的安全性完全相符。  
 3.  共用您的來源伺服器上的資料並使它可存取 DFS 命名空間。 為確保伺服器名稱變更為嚴重損壞網站中的伺服器名稱時仍然可以存取該伺服器，此作業相當重要。  
@@ -440,9 +440,9 @@ b.  我們強烈建議啟用 [磁碟區陰影複製]，並使用 VSSADMIN 或您
 1. [建立 Azure VM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)使用下列設定 （如 圖 5 所示）：
     - **公用 IP 位址**:None
     - **虛擬網路**:選取新增使用 ExpressRoute 的資源群組中所記下的虛擬網路。
-    - **網路安全性群組 （防火牆）**:選取您先前建立的網路安全性群組。
+    - **網路安全性群組 （防火牆）** :選取您先前建立的網路安全性群組。
     ![建立顯示 ExpressRoute 網路設定的虛擬機器](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-    **圖 5:選取 ExpressRoute 網路設定時建立 VM**
+    **圖 5:選取 xpressRoute 網路設定時建立 VM**
 1. 建立 VM 之後，請參閱[步驟 2:佈建作業系統、 功能、 角色、 儲存體和網路](#provision-os)。
 
 

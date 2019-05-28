@@ -9,16 +9,15 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fa96fbeed1445b1add2e5de3aad45ad369a6cafa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0df290248f049b3f8a823e902cefa860fa074091
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847219"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189848"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已註冊的裝置設定內部部署條件式存取
 
->適用於：Windows Server 2016, Windows Server 2012 R2  
 
 下列文件將引導您完成安裝和設定內部部署條件式存取與已註冊的裝置。
 
@@ -87,9 +86,9 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
->注意：以下命令需要 Active Directory 系統管理工具，如果您的同盟伺服器也不是網域控制站，請先利用下面的步驟 1 來安裝工具。  否則略過步驟 1。  
+>注意:以下命令需要 Active Directory 系統管理工具，如果您的同盟伺服器也不是網域控制站，請先利用下面的步驟 1 來安裝工具。  否則略過步驟 1。  
 
-1.  執行 **\[新增角色及功能\]** 精靈，然後選取 **\[遠端伺服器管理工具\]** -> **\[角色管理工具\]** -> **\[AD DS 及 AD LDS 工具\]** -> 選擇 **\[Windows PowerShell 的 Active Directory 模組\]** 及 **\[AD DS 工具\]**。
+1.  執行 **\[新增角色及功能\]** 精靈，然後選取 **\[遠端伺服器管理工具\]**  ->  **\[角色管理工具\]**  ->  **\[AD DS 及 AD LDS 工具\]** -> 選擇 **\[Windows PowerShell 的 Active Directory 模組\]** 及 **\[AD DS 工具\]** 。
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
   
@@ -99,7 +98,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
     `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
 3.  在快顯視窗上按 [是]。
 
->注意：如果 AD FS 服務已設定要使用 GMSA 帳戶，請依格式「domain\accountname$」輸入帳戶名稱
+>注意:如果 AD FS 服務已設定要使用 GMSA 帳戶，請依格式「domain\accountname$」輸入帳戶名稱
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
 
@@ -190,7 +189,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 - 上述容器中類型為 msDS-DeviceRegistrationService 的物件  
 
 ### <a name="see-it-work"></a>查看其運作方式  
-若要評估的新宣告和原則，請先註冊裝置。  例如，您可以使用系統設定] 應用程式的 Windows 10 電腦]-> [關於，Azure AD Join 或進行自動裝置註冊額外的步驟，您可以設定 Windows 10 網域聯結[此處](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)。  如需加入 Windows 10 行動裝置，請參閱文件[此處](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)。  
+若要評估的新宣告和原則，請先註冊裝置。  例如，您可以使用系統設定 應用程式的 Windows 10 電腦]-> [關於，Azure AD Join 或進行自動裝置註冊額外的步驟，您可以設定 Windows 10 網域聯結[此處](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)。  如需加入 Windows 10 行動裝置，請參閱文件[此處](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)。  
 
 對於最簡單的評估，登入 AD FS 使用宣告的清單會顯示測試應用程式。 您會看到新的宣告包括 isManaged、 isCompliant 和 trusttype。  如果您啟用 Microsoft Passport for work 時，您也會看到 prt 宣告。  
  

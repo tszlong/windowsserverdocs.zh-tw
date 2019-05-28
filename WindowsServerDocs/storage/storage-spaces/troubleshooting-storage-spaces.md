@@ -9,23 +9,25 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf3cb5703a90976dce15abbd0c9fdd1d4aa24ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 48099ad15465b885ccaf562bcf94b4bafdeff388
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812629"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772633"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>疑難排解的儲存空間直接存取
+
+> 適用於：Windows Server 2019，Windows Server 2016
 
 您可以使用下列資訊來疑難排解您的儲存空間直接存取部署。
 
 一般情況下，開始進行下列步驟：
 
-1. 確認 SSD 品牌/型號已通過認證，使用 Windows Server Catalog 的 Windows Server 2016。 與廠商確認，磁碟機支援儲存空間直接存取。
+1. 確認 SSD 品牌/型號已通過認證的 Windows Server 2016 和 Windows Server 2019 使用 Windows Server Catalog。 與廠商確認，磁碟機支援儲存空間直接存取。
 2. 檢查任何故障的磁碟機的儲存體。 您可以使用 儲存體管理軟體來檢查磁碟機的狀態。 如果任何磁碟機故障，請與您的廠商。 
 3. 更新儲存體和磁碟機韌體，如有必要。
-   請確定所有節點上安裝最新的 Windows 更新。 您可以取得最新的更新從 Windows Server 2016 [ https://aka.ms/update2016 ](https://aka.ms/update2016)。
+   請確定所有節點上安裝最新的 Windows 更新。 您可以取得最新的更新從 Windows Server 2016 [Windows 10 和 Windows Server 2016 更新歷程記錄](https://aka.ms/update2016)以及從 Windows Server 2019 [Windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619)。
 4. 網路介面卡驅動程式和韌體更新。
 5. 執行叢集驗證及檢閱儲存空間直接存取 > 一節，並確認會正確報告將會使用快取的磁碟機和任何錯誤。
 
@@ -195,7 +197,8 @@ Volume Name:
     
 ## <a name="event-5120-with-statusiotimeout-c00000b5"></a>STATUS_IO_TIMEOUT c00000b5 5120 事件 
 
->[!重要} 若要減少發生這些徵兆時套用的更新與修正的機會，建議使用下列存放裝置維護模式的程序來安裝[2018 年 10 月 18 日，Windows Server 2016 的累積更新](https://support.microsoft.com/help/4462928)或更新版本時節點目前已安裝 Windows Server 2016 的累積更新從發行[8，2018 年](https://support.microsoft.com/help/4103723)要[2018 年 10 月 9 日](https://support.microsoft.com/help/KB4462917)。
+> [!Important]
+> **適用於 Windows Server 2016:** 若要減少發生這些徵兆時套用的更新與修正的機會，建議使用下列存放裝置維護模式的程序來安裝[2018 年 10 月 18 日，累計更新，適用於 Windows Server 2016](https://support.microsoft.com/help/4462928)或更新版本時節點目前已安裝 Windows Server 2016 的累積更新從發行[2018 5 月 8 日](https://support.microsoft.com/help/4103723)要[2018 年 10 月 9 日](https://support.microsoft.com/help/KB4462917)。
 
 重新啟動 Windows Server 2016 上的節點，從已發行的累計更新之後，您可能會收到事件 5120 STATUS_IO_TIMEOUT c00000b5 [8，2018 年 KB 4103723](https://support.microsoft.com/help/4103723)到[2018 年 10 月 9 日 KB 4462917](https://support.microsoft.com/help/4462917)安裝。
 
@@ -217,11 +220,7 @@ Event ID: 1135
 Description: Cluster node 'NODENAME'was removed from the active failover cluster membership. The Cluster service on this node may have stopped. This could also be due to the node having lost communication with other active nodes in the failover cluster. Run the Validate a Configuration wizard to check your network configuration. If the condition persists, check for hardware or software errors related to the network adapters on this node. Also check for failures in any other network components to which the node is connected such as hubs, switches, or bridges.
 ```
 
-2018 年 5 月 8 日的累計更新儲存空間直接存取叢集內 SMB 網路工作階段中新增 SMB 復原處理中引進的變更。 這麼做是為了改善暫時性網路失敗的恢復功能並改善 RoCE 如何處理網路壅塞。
-
-這些改進也不小心增加 SMB 連線嘗試重新連線時的逾時和逾時的等候，重新啟動節點時。 這些問題可能會影響在壓力下的系統。 在規劃的停機時間，最多 60 秒的 IO 暫停也觀察到系統等候逾時的連線時。
-
-若要修正此問題，請安裝[2018 年 10 月 18 日，Windows Server 2016 的累積更新](https://support.microsoft.com/help/4462928)或更新版本。
+引進在 2018 年 5 月 8，Windows Server 2016 中，已將 SMB 彈性處理儲存空間直接存取叢集內 SMB 網路工作階段的累積更新的變更。 這麼做是為了改善暫時性網路失敗的恢復功能並改善 RoCE 如何處理網路壅塞。 這些改進也不小心增加 SMB 連線嘗試重新連線時的逾時和逾時的等候，重新啟動節點時。 這些問題可能會影響在壓力下的系統。 在規劃的停機時間，最多 60 秒的 IO 暫停也觀察到系統等候逾時的連線時。若要修正此問題，請安裝[2018 年 10 月 18 日，Windows Server 2016 的累積更新](https://support.microsoft.com/help/4462928)或更新版本。
 
 *請注意*此更新將對齊 SMB 連線逾時，若要修正此問題的 CSV 逾時。 它未實作的變更，若要停用即時的傾印產生因應措施一節所述。
     
@@ -302,7 +301,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 有兩種方式可檢查： 
      
  
-1. 使用叢集記錄檔。 在 [選擇的文字編輯器中開啟叢集記錄檔，並搜尋"[=== SBL 磁碟 ===]。 」 這會在節點所產生的記錄檔的磁碟清單。 
+1. 使用叢集記錄檔。 在 選擇的文字編輯器中開啟叢集記錄檔，並搜尋"[=== SBL 磁碟 ===]。 這會在節點所產生的記錄檔的磁碟清單。 
 
      快取已啟用磁碟範例：請注意這裡的狀態是 CacheDiskStateInitializedAndBound，而且沒有出現 GUID 的以下。 
 
@@ -455,4 +454,4 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 >[!NOTE]
 > 個別的 Oem 可能會根據 Intel P3x00 系列使用唯一的韌體版本字串的 NVMe 裝置的裝置。 如需詳細資訊的最新的韌體版本，請連絡您的 OEM。
 
-如果您在您的 Intel P3x00 系列的 NVMe 裝置為基礎的部署中使用的硬體，我們建議您立即套用最新可用的韌體 (至少維護版本 8)。 這[Microsoft 支援服務文章](https://support.microsoft.com/en-us/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda)提供此問題的其他資訊。 
+如果您在您的 Intel P3x00 系列的 NVMe 裝置為基礎的部署中使用的硬體，我們建議您立即套用最新可用的韌體 (至少維護版本 8)。 這[Microsoft 支援服務文章](https://support.microsoft.com/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda)提供此問題的其他資訊。 

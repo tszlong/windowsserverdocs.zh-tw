@@ -4,16 +4,16 @@ description: 已知的問題與疑難排解支援儲存體移轉服務，例如�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 02/27/2019
+ms.date: 05/14/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: f5fefab2c1b7ba8b62ffd6734217eab9a13ae95e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e1cfd2b0ea3bc4d7802cb4a6d2a8c1493d5511a1
+ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888869"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65699690"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體移轉服務的已知問題
 
@@ -54,7 +54,7 @@ Windows Admin Center 存放裝置移轉服務延伸模組是版本繫結至只�
 
 若要解決此問題，不是預期的移轉目的地，在 Windows Server 2019 電腦上安裝儲存體移轉服務，然後連接到該伺服器與 Windows Admin Center，並執行移轉。
 
-我們想要的 Windows Server 的未來版本中修正此問題。 請開啟支援案例，透過[Microsoft 支援服務](https://support.microsoft.com)要求建立向下的移植此修正程式。
+我們已修正此 Windows Server 的未來版本中。 請開啟支援案例，透過[Microsoft 支援服務](https://support.microsoft.com)要求建立向下的移植此修正程式。
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-edition"></a>儲存體移轉服務不會包含於 Windows Server 2019 評估版
 
@@ -103,14 +103,82 @@ Windows Server 2019 的未來版本中，我們已修正此問題。
 
 ## <a name="cutover-fails-when-migrating-between-networks"></a>當網路之間進行移轉時，發生完全移轉會失敗的狀況
 
-移轉至目的地 VM 時的來源，例如 Azure IaaS 執行個體，與不同的網路中執行完全移轉將會失敗，來源使用靜態 IP 位址時。 
+移轉至目的地電腦在與來源，例如 Azure IaaS 執行個體不同的網路中執行時完全移轉將會失敗，當來源使用靜態 IP 位址。 
 
 此行為是根據設計，以防止使用者、 應用程式，以及透過 IP 位址連線的指令碼自移轉後的連線問題。 當 IP 位址從舊的來源電腦移動到新的目的地目標時，它將不會符合新的網路子網路資訊和可能是 DNS 和 WINS。
 
 若要解決這個問題，請在相同網路上執行的電腦移轉。 然後將該電腦移至新的網路，並重新指派其 IP 資訊。 比方說，如果移轉至 Azure IaaS，第一次移轉到本機的 VM，然後使用 Azure Migrate 轉移至 Azure 的 VM。  
 
-Windows Server 2019 的未來版本中，我們已修正此問題。 我們現在將可讓您指定並不會變更目的地伺服器的網路設定的移轉。 我們可能會發行更新至現有版本的 Windows Server 2019 一般每月的更新週期的一部分。 
+我們已修正此問題，未來版本的 Windows Admin Center 中。 我們現在將可讓您指定並不會變更目的地伺服器的網路設定的移轉。 發行時，將在此列出的更新延伸模組。 
 
+## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>目的端 proxy 和認證系統管理權限的驗證警告
+
+當驗證的傳輸作業，您會看到下列警告：
+
+ > **認證具有系統管理權限。**
+ > 警告：從遠端動作不適用的。
+ > **註冊目的地的 proxy。**
+ > 警告：找不到目的端 proxy。
+
+如果您尚未安裝儲存體移轉服務 Proxy 服務的 Windows Server 2019 目的地電腦上，或 destinaton 電腦是 Windows Server 2016 或 Windows Server 2012 R2，此行為是預設行為。 建議您移轉到 Windows Server 2019 電腦安裝的大幅改善的傳輸效能的 proxy。  
+
+## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>某些檔案不會清查或傳輸、 錯誤 5 「 拒絕存取 」
+
+當清查或將檔案從來源傳輸至目的地電腦時，使用者已移除系統管理員群組的權限的檔案無法移轉。 檢查儲存體移轉服務 Proxy 的偵錯顯示：
+
+  記錄檔名稱：    Microsoft-Windows-StorageMigrationService-Proxy/偵錯來源：      Microsoft-Windows-StorageMigrationService-Proxy Date:        2/26/2019 上午 9:00:04 事件識別碼：    10000 的工作類別：沒有任何層級：       錯誤的關鍵字：      
+  使用者：        網路服務的電腦： srv1.contoso.com 描述：
+
+  [錯誤] 02/26/2019-09:00:04.860 傳輸錯誤\\srv1.contoso.com\public\indy.png:（5） 存取遭拒。
+堆疊追蹤： 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.OpenFile （字串的檔名、 DesiredAccess desiredAccess、 ShareMode shareMode、 CreationDisposition creationDisposition、 FlagsAndAttributes flagsAndAttributes）在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile （FileInfo 檔案） 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile （字串路徑）在 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer() Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo()Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer() [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs::TryTransfer::55]
+
+
+這個問題被因為其中備份特殊權限不正在叫用的移轉儲存體服務中的程式碼缺失。 
+
+若要解決此問題，請安裝[Windows Update 2019 年 4 月 2 日 — KB4490481 (OS 組建 17763.404)](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) orchestrator 電腦和目的地電腦上如果那里安裝 proxy 服務。 請確定來源移轉使用者帳戶是來源電腦和儲存體移轉服務協調器的本機系統管理員。 請確定目的地移轉使用者帳戶是在目的地電腦和儲存體移轉服務協調器上的本機系統管理員。 
+
+## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用儲存體移轉服務預置資料時，DFSR 雜湊不符
+
+使用儲存體移轉服務將檔案傳輸到新的目的地，然後設定 DFS 複寫 (DFSR) 複寫該資料與現有的 DFSR 伺服器透過 presseded 複寫或 DFSR 資料庫複製，所有檔案 experiemce 雜湊不相符，會重新複寫。 資料流、 安全性串流、 大小和完全比對之後使用 SMS 來傳送所有出現的屬性。 Examing ICACLS 檔案或 DFSR 資料庫複製偵錯記錄檔會顯示：
+
+原始程式檔：
+
+  icacls d:\test\Source:
+
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png D:AI(A;;FA;;;BA)(A;;0x1200a9;;;DD)(A;;0x1301bf;;;DU)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)
+
+目的地檔案：
+
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
+
+DFSR 偵錯記錄檔：
+
+  找不到 20190308 10:18:53.116 3948 DBCL 4045 [警告] DBClone::IDTableImportUpdate 不相符記錄。 
+
+  本機 ACL 雜湊： 1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 LastWriteTime:20190308 18:09:44.876 FileSizeLow:1131654 FileSizeHigh:0屬性： 32 
+
+  複製 ACL 雜湊：**DDC4FCE4 DDF329C4-977CED6D F4D72A5B** LastWriteTime:20190308 18:09:44.876 FileSizeLow:1131654 FileSizeHigh:0屬性： 32 
+
+這個問題被因為儲存體移轉服務用來設定安全性稽核的 Acl (SACL) 文件庫中的程式碼缺失。 SACL 是空白，導致 DFSR 正確識別的雜湊不相符時，會不小心設定非 null 的 SACL。 
+
+若要解決這個問題，請繼續使用如 Robocopy[預先植入的 DFSR 和 DFSR 資料庫複製作業](../dfs-replication/preseed-dfsr-with-robocopy.md)而非儲存體移轉服務。 我們正在調查此問題，並想要解決此問題在 Windows Server 和可能的向前移植 Windows Update 的更新的版本。 
+
+## <a name="error-404-when-downloading-csv-logs"></a>下載 CSV 時的 404 錯誤記錄檔
+
+嘗試將下載在傳送作業結尾的傳輸或錯誤記錄檔時，您會收到錯誤訊息：
+
+  $jobname:傳送記錄檔： ajax 錯誤 404
+
+如果您未啟用 [檔案及印表機共用 (Smb-in)] 上的防火牆規則的 orchestrator 伺服器，預期此錯誤。 下載 Windows Admin Center 檔案需要連線的電腦上的連接埠 TCP/445 (SMB)。  
+
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>錯誤 「 無法移轉儲存體上的任何端點 」 時正在傳輸，從 Windows Server 2008 R2
+
+嘗試將從 Windows Server 2008 R2 的來源電腦傳送資料時，沒有資料 trasnfers，您會收到錯誤訊息：  
+
+  無法傳送儲存體的任何端點。
+0x9044
+
+如果您的 Windows Server 2008 R2 電腦不已套用所有重大和重要更新，從 Windows Update，預期此錯誤。 無論儲存體移轉服務，仍一律建議修補 Windows Server 2008 R2 的電腦，基於安全考量，因為該作業系統並不包含較新版本的 Windows Server 的安全性改進功能。
 
 ## <a name="see-also"></a>另請參閱
 

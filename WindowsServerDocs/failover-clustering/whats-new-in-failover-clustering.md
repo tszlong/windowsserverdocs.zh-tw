@@ -8,22 +8,22 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: b4fa59aa62acba5c89f20c191da2c3c1b776b1ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3c0792347aaa70fe80d346cc51cbc44b73c42f39
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884749"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476015"
 ---
 # <a name="whats-new-in-failover-clustering"></a>容錯移轉叢集的新功能
 
-> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
+> 適用於：Windows Server 2019，Windows Server 2016
 
-本主題說明容錯移轉叢集的 Windows Server 2019，Windows Server 2016 中新的和變更功能和 Windows Server 半年通道釋出。
+本主題說明容錯移轉叢集的 Windows Server 2019 和 Windows Server 2016 的新的和變更功能。
 
 ## <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
-- **叢集設定**
+- **叢集集合**
 
     叢集設定可讓您增加在單一軟體定義資料中心 (SDDC) 解決方案之外的叢集中目前的限制中的伺服器數目。 這可以藉由將分組至叢集 set--鬆散偶合的多個容錯移轉叢集群組的多個叢集： 計算、 儲存體和超融合式。
     與叢集設定中，您可以移動線上虛擬機器 （即時移轉） 在叢集中的叢集之間設定。
@@ -158,7 +158,7 @@ HYPER-V 或向外延展檔案伺服器容錯移轉叢集可以立即輕鬆升級
 
 -   **健康情況不良節點的隔離區：** 狀況不良的節點遭到隔離，並不會再允許加入叢集。 這可防止造成負面影響的其他節點和整體叢集 flapping 的節點。 
 
-設定的詳細資訊的虛擬機器計算復原工作流程和節點隔離控制您的節點放置在 [隔離] 或 [隔離的方式，請參閱[Windows Server 2016 中的虛擬機器計算復原功能](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)。 
+設定的詳細資訊的虛擬機器計算復原工作流程和節點隔離控制您的節點放置在 [隔離] 或 隔離的方式，請參閱[Windows Server 2016 中的虛擬機器計算復原功能](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)。 
 
 **儲存復原**在 Windows Server 2016 中，虛擬機器是暫時性儲存體失敗更有彈性。 改進的虛擬機器復原功能可協助保存租用戶虛擬機器的工作階段狀態發生儲存體中斷的情況。 做法是聰明且快速的虛擬機器儲存體基礎結構問題的回應。 
 

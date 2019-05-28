@@ -9,16 +9,14 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0b0d4d085a94631b70df81fd53bff974d8425611
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3719277c80eae2bf2a4d923146920d17546601d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877759"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188726"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 的單一登入設定
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 單一登入 (SSO) 可讓使用者進行一次驗證及存取多個資源，而不需要額外的認證的提示。  這篇文章描述 SSO，以及可讓您自訂此行為的組態設定的預設 AD FS 的行為。  
 
@@ -203,7 +201,7 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
 **未註冊的裝置，但 KMSI 嗎？** 取得 PSSO / 永續性 SSO <p>
 如果：
  - [x] 管理員已啟用 KMSI 功能 [AND]
- - [x] 使用者按一下表單登入頁面上 [KMSI 核取方塊
+ - [x] 使用者按一下表單登入頁面上 KMSI 核取方塊
  
 **最好知道：** <br>
 同盟使用者不需要**LastPasswordChangeTimestamp**同步處理的屬性會發出工作階段 cookie 並重新整理權杖具有**12 小時的最大壽命 」 值**。<br>
