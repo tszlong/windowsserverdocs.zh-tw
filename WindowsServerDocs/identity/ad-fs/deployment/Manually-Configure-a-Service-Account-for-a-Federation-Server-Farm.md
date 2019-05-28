@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7d215c80c03236df9479aff8046981741dfc83e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b027bff4645203c44e228f11c651b767fa4502e0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838149"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192064"
 ---
 # <a name="manually-configure-a-service-account-for-a-federation-server-farm"></a>手動設定同盟伺服器陣列的服務帳戶
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 如果您想要在 Active Directory Federation Services 中設定同盟伺服器陣列環境\(AD FS\)，您必須建立並設定專用的服務帳戶在 Active Directory 網域服務中\(AD DS\)伺服器陣列所在的位置。 接著，您必須將該陣列中的每部同盟伺服器設定為使用此帳戶。 當您想要讓用戶端電腦驗證同盟伺服器使用 Windows 整合式驗證 AD FS 伺服器陣列中的任何公司網路上，您必須在組織中完成下列工作。  
 
@@ -32,7 +30,7 @@ ms.locfileid: "59838149"
   
 1.  建立專用的使用者\/服務身分識別提供者組織中的 Active Directory 樹系中的帳戶。 此帳戶，才能在伺服陣列案例中運作，並允許通過的 Kerberos 驗證通訊協定\-透過每個同盟伺服器上的驗證。 此帳戶僅適用於同盟伺服器陣列的用途。  
   
-2.  編輯使用者帳戶內容，然後選取 [密碼永久有效] 核取方塊。 此動作可確保此服務帳戶的功能不會因為網域密碼變更需求而中斷。  
+2.  編輯使用者帳戶內容，然後選取 [密碼永久有效]  核取方塊。 此動作可確保此服務帳戶的功能不會因為網域密碼變更需求而中斷。  
   
     > [!NOTE]  
     > 針對此專用帳戶使用 Network Service 帳戶將會導致隨機失敗 (當嘗試透過「Windows 整合式驗證」存取時)，因為 Kerberos 票證無法在伺服器之間彼此驗證。  

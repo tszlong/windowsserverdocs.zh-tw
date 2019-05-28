@@ -12,12 +12,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 34442565b54b089064c1fa19317a24f591e44fda
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 12a9ba285757a37a8fc32a73e52ac3003db80a6d
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868599"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63721018"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Windows Server Essentials 中的檔案歷程記錄問題疑難排解
 
@@ -56,9 +56,9 @@ ms.locfileid: "59868599"
   
 1.  以系統管理員身分登入伺服器。  
   
-2.  在 [Windows Server Essentials 儀表板] 上，按一下 [存放裝置] 。  
+2.  在 [Windows Server Essentials 儀表板] 上，按一下 [存放裝置]  。  
   
-3.  在 [伺服器資料夾] 索引標籤上，記下 File History Backups 資料夾的位置。 預設位置為 %SystemDrive%\ServerFolders\File History Backups\\。  
+3.  在 [伺服器資料夾]  索引標籤上，記下 File History Backups 資料夾的位置。 預設位置為 %SystemDrive%\ServerFolders\File History Backups\\。  
   
 ##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>解決發生名稱衝突之新使用者的檔案歷程記錄問題  
   

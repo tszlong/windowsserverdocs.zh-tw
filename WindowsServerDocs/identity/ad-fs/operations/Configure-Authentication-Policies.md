@@ -3,22 +3,20 @@ ms.assetid: 8e7015bc-c489-4ec7-8b6e-3ece90f72317
 title: 使用驗證原則
 description: ''
 author: billmath
-ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7faffb7ccbb4b0ea3c65329d18f915d7dafcd46f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: billmath
+ms.openlocfilehash: 9345f995af2f256dddcbcbd7d05c4bf6170b563e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861789"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189865"
 ---
 # <a name="configure-authentication-policies"></a>使用驗證原則
-
->適用於：Windows Server 2012 R2
 
 在 Windows Server 2012 r2 中的 AD FS 中存取控制項，及增強以包括使用者、 裝置、 位置和驗證資料的多重要素驗證機制。 這些增強功能可讓您透過使用者介面或透過 Windows PowerShell，來管理存取權限授與 AD FS 的風險\-保護應用程式，透過多重\-因素存取控制和多重\-根據使用者的身分識別或群組的成員資格、 網路位置、 工作場所的裝置資料的 authentication\-加入，並驗證狀態時多\-authentication \(MFA\)執行。  
   

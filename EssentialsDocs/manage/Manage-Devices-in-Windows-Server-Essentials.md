@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 288d62a3fe4d9073ba2c0e3fdff385d8317f20d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d740b71a2c3b9ed8ddb0ecfae6da2cf7d4f689a5
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815109"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720407"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的裝置
 
@@ -38,13 +38,13 @@ ms.locfileid: "59815109"
 -   [檢視電腦內容](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
 ##  <a name="BKMK_1"></a> 使用儀表板管理裝置  
- Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 [儀表板] 的 [裝置] 頁面提供下列各項：  
+ Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 [儀表板] 的 [裝置]  頁面提供下列各項：  
   
 -   一份網路電腦清單，當中顯示：  
   
     -   電腦的名稱  
   
-    -   電腦的狀態 ([線上] 或 [離線])  
+    -   電腦的狀態 ([線上]  或 [離線]  )  
   
     -   電腦描述  
   
@@ -66,7 +66,7 @@ ms.locfileid: "59815109"
   
 1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列上，按一下 [裝置]。  
+2.  在瀏覽列上，按一下 [裝置]  。  
   
 3.  在清單窗格中檢視網路中所有電腦的狀態。  
   
@@ -96,13 +96,13 @@ ms.locfileid: "59815109"
   
 1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列上，按一下 [使用者]。  
+2.  在瀏覽列上，按一下 [使用者]  。  
   
 3.  在使用者帳戶清單中，選取您想要變更的使用者帳戶。  
   
 4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **檢視帳戶內容**。 使用者帳戶的 [內容]  頁面隨即出現。  
   
-5.  在 [電腦存取] 索引標籤上，選取這個使用者可以從遠端存取的電腦，然後按一下 [確定]。  
+5.  在 [電腦存取]  索引標籤上，選取這個使用者可以從遠端存取的電腦，然後按一下 [確定]  。  
   
 ##  <a name="BKMK_3"></a> 從伺服器移除電腦  
  當您使用 [儀表板] 將電腦從執行 Windows Server Essentials 的伺服器中移除時，它就不再受伺服器管理。 如此一來，在將它從網路中移除之後，伺服器就會停止建立電腦備份或監視它的健康情況。  
@@ -116,7 +116,7 @@ ms.locfileid: "59815109"
   
 2.  在瀏覽列中，按一下 [裝置]  索引標籤。  
   
-3.  在電腦清單中，於您想要從網路中移除的電腦上按一下滑鼠右鍵，然後按一下 [移除電腦]。  
+3.  在電腦清單中，於您想要從網路中移除的電腦上按一下滑鼠右鍵，然後按一下 [移除電腦]  。  
   
 ##  <a name="BKMK_5"></a> 設定資料夾重新導向和安全性的群組原則設定  
  您可以使用 [Windows Server Essentials 儀表板] 來設定「群組原則」並將它部署到 Windows Server Essentials 網路中的電腦。 Windows Server Essentials 中的「群組原則」包括會影響 Windows Update、Windows Defender 及網路防火牆的資料夾重新導向和安全性設定。  
@@ -125,24 +125,24 @@ ms.locfileid: "59815109"
   
 1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列上，按一下 [裝置] 。  
+2.  在瀏覽列上，按一下 [裝置]  。  
   
-3.  適用於 Windows Server Essentials:在全域 [使用者工作] 窗格中，按一下 [實作群組原則]。  
+3.  適用於 Windows Server Essentials:在全域 [使用者工作]  窗格中，按一下 [實作群組原則]  。  
   
-     適用於 Windows Server Essentials:在全域 [裝置工作] 窗格中，按一下 [實作群組原則]。  
+     適用於 Windows Server Essentials:在全域 [裝置工作]  窗格中，按一下 [實作群組原則]  。  
   
 4.  [實作群組原則精靈] 隨即開啟。  
   
-5.  在精靈的 [啟用資料夾重新導向群組原則] 頁面上，您可以選擇您想要重新導向的使用者資料夾。  
+5.  在精靈的 [啟用資料夾重新導向群組原則]  頁面上，您可以選擇您想要重新導向的使用者資料夾。  
   
-6.  在精靈的 [啟用安全性原則設定]  頁面上，您可以選擇啟用 [Windows Update] 、[Windows Defender] 及 [網路防火牆] 的「群組原則」設定。  
+6.  在精靈的 [啟用安全性原則設定]  頁面上，您可以選擇啟用 [Windows Update]  、[Windows Defender]  及 [網路防火牆]  的「群組原則」設定。  
   
 7.  按一下 [完成]  來實作「群組原則」設定。  
   
 ##  <a name="BKMK_7"></a> 連線到網路電腦使用遠端桌面工作階段  
  若要從遠端存取您的 Windows Server Essentials 網路電腦，您不在辦公室時，使用網頁瀏覽器來登入您的組織 s 遠端 Web 存取 」 網站，然後在**電腦**索引標籤上，按一下名稱電腦。  
   
- [狀態] 欄會顯示您是否可以連線到網路上的某部電腦，並且可包含下列值：  
+ [狀態]  欄會顯示您是否可以連線到網路上的某部電腦，並且可包含下列值：  
   
 -   **有**  
   
@@ -167,7 +167,7 @@ ms.locfileid: "59815109"
   
 1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在主瀏覽列上，按一下 [裝置]。  
+2.  在主瀏覽列上，按一下 [裝置]  。  
   
 3.  [儀表板] 會顯示目前的電腦清單。  
   
@@ -175,11 +175,11 @@ ms.locfileid: "59815109"
   
 1.  在電腦清單中，選取您想要檢視或變更內容的帳戶。  
   
-2.  在  **< 電腦名稱\>工作**窗格中，按一下 **檢視電腦內容**。 電腦的 [內容] 頁面隨即出現。  
+2.  在  **< 電腦名稱\>工作**窗格中，按一下 **檢視電腦內容**。 電腦的 [內容]  頁面隨即出現。  
   
 3.  按一下索引標籤以顯示該電腦的內容。  
   
-4.  若要儲存您對電腦內容所做的任何變更，請按一下 [套用] 。  
+4.  若要儲存您對電腦內容所做的任何變更，請按一下 [套用]  。  
   
 ## <a name="see-also"></a>另請參閱  
   

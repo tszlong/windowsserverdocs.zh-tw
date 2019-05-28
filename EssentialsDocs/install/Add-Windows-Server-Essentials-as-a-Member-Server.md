@@ -12,12 +12,12 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8fb73f8186d3984c9e93f7a6e39cb72a54db1e58
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 413c1d5d3bec7f002b73e9861aa119d495c5cfb2
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875419"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63717118"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>新增 Windows Server Essentials 做為成員伺服器
 
@@ -51,17 +51,17 @@ ms.locfileid: "59875419"
   
 1.  在第二部伺服器上完成 Windows Server Essentials 安裝之後，關閉「設定 Windows Server Essentials 精靈」。  
   
-2.  在 [搜尋]  方塊中，輸入 **System Settings**，然後在搜尋結果中，按一下 [檢視進階系統設定] 。  
+2.  在 [搜尋]  方塊中，輸入 **System Settings**，然後在搜尋結果中，按一下 [檢視進階系統設定]  。  
   
-3.  在 [系統內容] 中，按一下 [電腦名稱] 索引標籤。  
+3.  在 [系統內容]  中，按一下 [電腦名稱]  索引標籤。  
   
-4.  在 [電腦名稱] 的 [網域] 區段中，按一下 [變更]。  
+4.  在 [電腦名稱]  的 [網域]  區段中，按一下 [變更]  。  
   
 5.  在 **電腦名稱/網域變更**，請在**成員**區段中，選擇是否要執行 Windows Server Essentials 的伺服器加入**工作群組**或是**網域**。  
   
-    -   若要將伺服器加入工作群組，請輸入 **workgroup**，然後按一下 [確定]。  
+    -   若要將伺服器加入工作群組，請輸入 **workgroup**，然後按一下 [確定]  。  
   
-    -   若要將這部伺服器加入現有的 Active Directory 網域，請輸入網域名稱，然後按一下 [確定]。  
+    -   若要將這部伺服器加入現有的 Active Directory 網域，請輸入網域名稱，然後按一下 [確定]  。  
   
 6.  重新啟動伺服器以套用變更。  
   
@@ -78,11 +78,11 @@ ms.locfileid: "59875419"
   
 3.  開啟伺服器管理員。  
   
-4.  在 [伺服器管理員] 的旗標通知區域中，按一下旗標，然後按一下 [設定 Windows Server Essentials]。  
+4.  在 [伺服器管理員]  的旗標通知區域中，按一下旗標，然後按一下 [設定 Windows Server Essentials]  。  
   
-5.  選擇是否要將伺服器設定為成員伺服器，然後按 [下一步]。  
+5.  選擇是否要將伺服器設定為成員伺服器，然後按 [下一步]  。  
   
-6.  按一下 [設定] 開始設定。 設定過程需要花費大約 10 分鐘的時間。  
+6.  按一下 [設定]  開始設定。 設定過程需要花費大約 10 分鐘的時間。  
   
 7.  在桌面上，按一下 儀表板圖示以啟動 伺服器儀表板。 在 [首頁] 頁面上，完成 [設定]  索引標籤上所列的 [快速入門]  工作。  
   
