@@ -9,23 +9,21 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 1122ee3814f656a7229dc2946d7441d525de5ae2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f7a65687ac07c9f7d9a814b50c4090c70817b4f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869669"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192366"
 ---
 # <a name="checklist-implementing-a-federated-web-sso-design"></a>檢查清單：實作同盟網頁 SSO 設計
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 此父檢查清單包含跨\-參考有關同盟的 Web 單一的重要概念的連結\-號\-上\(SSO\)設計 Active Directory Federation services \(AD FS\)。 它也包含次檢查清單連結，其中的資訊可協助您完成實作此設計所需執行的工作。  
   
 > [!NOTE]  
 > 請依序完成此檢查清單中的工作。 當參照連結將您導向概念性主題或次檢查清單時，請在檢閱概念性主題或完成次檢查清單中的工作之後返回此主題，以便您可以繼續執行此檢查清單中的其餘工作。  
   
-![同盟網頁 sso](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**檢查清單：實作同盟的網頁 SSO 設計**  
+![同盟網頁 sso](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**檢查清單：實作同盟網頁 SSO 設計**  
   
 ||工作|參考資料|  
 |-|--------|-------------|  

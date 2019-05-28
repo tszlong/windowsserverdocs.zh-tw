@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c7b7ea2c8d9a08a4cbf6c89c2de2482043efe25b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5ed8ee500582e0e687a2b52e83d99fc3cb8f147f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885559"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188339"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="when-to-use-a-transform-claim-rule"></a>使用轉換宣告規則的時機
 您可以使用這項規則中 Active Directory Federation Services \(AD FS\)當您需要將傳入宣告類型對應至傳出宣告類型，然後再套用動作，以決定應該發生何種輸出，以值為基礎，在連入宣告產生。 當您使用此規則時，您會根據您在規則中設定的選項之一傳遞或轉換符合下列規則邏輯的宣告，如下表中所述。  
   

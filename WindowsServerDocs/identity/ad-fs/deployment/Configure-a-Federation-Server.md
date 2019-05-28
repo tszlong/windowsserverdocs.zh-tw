@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 13ce514dc5f3f70217a26c898cde6fe24d4967c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2f597994aa74f453903e09f7d3eefd83f26faba
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847379"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192267"
 ---
 # <a name="configure-a-federation-server"></a>設定同盟伺服器
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 安裝 Active Directory Federation Services 之後\(AD FS\)角色服務在您的電腦，您已準備好將此電腦成為同盟伺服器設定。 您可以執行下列其中一個步驟：  
   
@@ -33,15 +31,15 @@ ms.locfileid: "59847379"
 > [!NOTE]  
 > 請確定您具有網域系統管理員權限或擁有可用的網域系統管理員認證，才能執行此程序。  
   
-1.  在 [伺服器管理員] 的 [儀表板] 頁面上，按一下 [通知] 旗標，然後按一下 [設定伺服器上的 Federation Service]。  
+1.  在 [伺服器管理員] 的 [儀表板]  頁面上，按一下 [通知]  旗標，然後按一下 [設定伺服器上的 Federation Service]  。  
   
     [Active Directory Federation Service 設定精靈]  隨即開啟。  
   
-2.  在 [歡迎] 頁面上，選取 [在同盟伺服器陣列中建立第一部同盟伺服器]，然後按一下 [下一步]。  
+2.  在 [歡迎]  頁面上，選取 [在同盟伺服器陣列中建立第一部同盟伺服器]  ，然後按一下 [下一步]  。  
   
 3.  在上**連線到 AD DS**頁面上，指定 Active directory 使用網域系統管理員權限的帳戶\(AD\)這部電腦已加入的網域，然後再按一下**下一步**.  
   
-4.  在 [指定服務內容]  頁面上執行下列動作，然後按一下 [下一步] ：  
+4.  在 [指定服務內容]  頁面上執行下列動作，然後按一下 [下一步]  ：  
   
     -   匯入.pfx 檔案，其中包含安全通訊端層\(SSL\)憑證和您稍早取得的金鑰。 在 [步驟 2:註冊適用於 AD FS 的 SSL 憑證](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md)，您已取得此憑證，並將它複製到您想要設定為同盟伺服器的電腦上。 若要匯入.pfx 檔案，透過精靈，請按一下**匯入**，然後瀏覽至檔案的位置。 系統會提示您時，輸入.pfx 檔案的密碼。  
   
@@ -57,16 +55,16 @@ ms.locfileid: "59847379"
     > [!WARNING]  
     > 如果您想要使用 gMSA 帳戶，您必須至少一個網域控制站執行 Windows Server 2012 作業系統的環境中。  
     >   
-    > 如果 gMSA 選項已停用，而且您看到錯誤訊息，例如**群組受控服務帳戶不可以使用，因為未設定 KDS 根金鑰**，您也可以執行下列 Windows 網域中啟用 gMSA網域控制站，執行 Windows Server 2012 或更新版本上，您的 Active Directory 網域中的 PowerShell 命令： `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`。 然後返回精靈中，按一下**上一步**，然後按一下**下一步**若要重新\-輸入**指定服務帳戶**頁面。 應該已啟用 gMSA 選項。 您可以選取它，並輸入您想要使用 gMSA 帳戶名稱。  
+    > 如果 gMSA 選項已停用，而且您看到錯誤訊息，例如**群組受控服務帳戶不可以使用，因為未設定 KDS 根金鑰**，您也可以執行下列 Windows 網域中啟用 gMSA網域控制站，執行 Windows Server 2012 或更新版本上，您的 Active Directory 網域中的 PowerShell 命令： `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`。 然後返回精靈中，按一下**上一步**，然後按一下**下一步** 若要重新\-輸入**指定服務帳戶**頁面。 應該已啟用 gMSA 選項。 您可以選取它，並輸入您想要使用 gMSA 帳戶名稱。  
   
-6.  在 [**指定設定資料庫**頁面上，指定 AD FS 設定資料庫，然後按一下**下一步]**。 您可以建立一個資料庫在此電腦上使用 Windows Internal Database \(WID\)，或者您可以指定的位置和 Microsoft SQL server 執行個體名稱。  
+6.  在 [**指定設定資料庫**頁面上，指定 AD FS 設定資料庫，然後按一下**下一步]** 。 您可以建立一個資料庫在此電腦上使用 Windows Internal Database \(WID\)，或者您可以指定的位置和 Microsoft SQL server 執行個體名稱。  
   
     如需詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
     > [!IMPORTANT]  
     > 如果您想要建立 AD FS 伺服器陣列，並使用 SQL Server 來儲存設定資料，您可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012 和 SQL Server 2014。  
   
-7.  在 [檢閱選項] 頁面上，檢查您的設定選項，然後按一下 [下一步]。  
+7.  在 [檢閱選項]  頁面上，檢查您的設定選項，然後按一下 [下一步]  。  
   
 8.  在  **Pre\-必要檢查**頁面上，確認所有先決條件檢查都順利完成，然後按一下**設定**。  
   
@@ -118,7 +116,7 @@ ms.locfileid: "59847379"
         Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscred  
         ```  
   
-        若要取得的值 **< 憑證\_指紋 >**，請執行`dir Cert:\LocalMachine\My`，然後選取 SSL 憑證的指紋。 值 **< 同盟\_服務\_名稱 >** 是同盟服務，例如 fs.contoso.com 的名稱。  
+        若要取得的值 **< 憑證\_指紋 >** ，請執行`dir Cert:\LocalMachine\My`，然後選取 SSL 憑證的指紋。 值 **< 同盟\_服務\_名稱 >** 是同盟服務，例如 fs.contoso.com 的名稱。  
   
         > [!NOTE]  
         > 如果這不是第一次執行此命令，新增`OverwriteConfiguration`參數。  
@@ -141,13 +139,13 @@ ms.locfileid: "59847379"
   
 ### <a name="to-add-a-federation-server-to-an-existing-federation-server-farm-via-the-active-directory-federation-service-configuration-wizard"></a>若要將同盟伺服器新增至現有的同盟伺服器陣列透過 Active Directory Federation Service 組態精靈  
   
-1.  在 [伺服器管理員] 的 [儀表板] 頁面上，按一下 [通知] 旗標，然後按一下 [設定伺服器上的 Federation Service]。  
+1.  在 [伺服器管理員] 的 [儀表板]  頁面上，按一下 [通知]  旗標，然後按一下 [設定伺服器上的 Federation Service]  。  
   
     [Active Directory Federation Service 設定精靈]  隨即開啟。  
   
-2.  在上**歡迎**頁面上，選取**新增至同盟伺服器陣列的同盟伺服器**，然後按一下**下一步**。  
+2.  在上**歡迎**頁面上，選取**新增至同盟伺服器陣列的同盟伺服器**，然後按一下**下一步** 。  
   
-3.  在 [**連線到 AD DS**頁面上，指定帳戶使用網域系統管理員權限適用於 AD 這台電腦已加入的網域，然後按一下**下一步]**。  
+3.  在 [**連線到 AD DS**頁面上，指定帳戶使用網域系統管理員權限適用於 AD 這台電腦已加入的網域，然後按一下**下一步]** 。  
   
 4.  在 **指定的伺服器陣列**頁面上，提供使用 WID 伺服器陣列中的主要同盟伺服器的名稱，或指定的資料庫主機名稱和現有的同盟伺服器陣列，並使用 SQL Server 資料庫執行個體名稱。  
   
@@ -164,7 +162,7 @@ ms.locfileid: "59847379"
     > [!IMPORTANT]  
     > 您所指定的帳戶必須與此伺服器陣列中主要同盟伺服器使用的帳戶相同的帳戶。  
   
-7.  在 [檢閱選項] 頁面上，檢查您的設定選項，然後按一下 [下一步]。  
+7.  在 [檢閱選項]  頁面上，檢查您的設定選項，然後按一下 [下一步]  。  
   
 8.  在  **Pre\-必要檢查**頁面上，確認所有先決條件檢查都順利完成，然後按一下**設定**。  
   

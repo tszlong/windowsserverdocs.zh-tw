@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c968f0702d56b56d0a80459e5cf0c9e658c56741
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3a39f9d51ed8243118522ae37bc7d205a7ea416
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857189"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192136"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>匯出伺服器驗證憑證的私密金鑰部分
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 在 Active Directory Federation Services 的每一部同盟伺服器\(AD FS\)伺服陣列必須具有伺服器驗證憑證的私密金鑰存取權。 如果您要實作同盟伺服器或 Web 伺服器的伺服器陣列，您必須有單一驗證憑證。 此憑證必須由企業憑證授權單位核發\(CA\)，而且必須可匯出私密金鑰。 伺服器驗證憑證的私密金鑰必須可匯出，以便可提供給陣列中的所有伺服器使用。  
   
@@ -35,7 +33,7 @@ ms.locfileid: "59857189"
   
 1.  在 **開始**畫面上，輸入**Internet Information Services \(IIS\) Manager**，然後按 ENTER 鍵。  
   
-2.  在主控台樹狀目錄中，按一下 [ComputerName]。  
+2.  在主控台樹狀目錄中，按一下 [ComputerName]  。  
   
 3.  在中央窗格中，按兩下\-按一下 **伺服器憑證**。  
   
@@ -45,7 +43,7 @@ ms.locfileid: "59857189"
   
 6.  在 **檔案名稱**，類型 **c:\\* * * NameofCertificate*，然後按一下**開啟**。  
   
-7.  輸入該憑證的密碼並再次確認，然後按一下 [確定]。  
+7.  輸入該憑證的密碼並再次確認，然後按一下 [確定]  。  
   
 8.  檢查系統是否已在您指定的位置建立您指定的檔案，以驗證是否成功匯出。  
   

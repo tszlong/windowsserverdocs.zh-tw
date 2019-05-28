@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fac6437e9b6c3893064769a8279c2cf96cbc47d6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2e373f45088105a7ac9ca5cb43fbebc6452ccb9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833779"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188579"
 ---
->適用於：Windows Server 2016, Windows Server 2012 R2
-
 # <a name="device-registration-technical-reference"></a>裝置註冊技術參考
 Device Registration Service \(DRS\)是一種新的 Windows 服務，隨附於 Active Directory 同盟服務角色 Windows Server 2012 R2 上。  DRS 必須安裝並設定在 AD FS 伺服器陣列中的所有同盟伺服器上。  如需部署 DRS 的詳細資訊，請參閱 [使用裝置註冊服務設定同盟伺服器](https://technet.microsoft.com/library/dn486831.aspx)。  
   
@@ -25,7 +23,7 @@ Device Registration Service \(DRS\)是一種新的 Windows 服務，隨附於 Ac
 下列 Active Directory 物件會建立為裝置註冊服務的一部分。  
   
 ### <a name="device-registration-configuration"></a>裝置註冊設定  
-裝置註冊設定會儲存在 Active Directory 樹系的設定命名內容中。 \(例如， **CN\=Device Registration Configuration，CN\=服務，< 組態\-命名\-內容 >**\)。 此物件是在為裝置註冊初始化 Active Directory 樹系時建立。  
+裝置註冊設定會儲存在 Active Directory 樹系的設定命名內容中。 \(例如， **CN\=Device Registration Configuration，CN\=服務，< 組態\-命名\-內容 >** \)。 此物件是在為裝置註冊初始化 Active Directory 樹系時建立。  
   
 裝置註冊設定包括下列項目：  
   
@@ -40,7 +38,7 @@ Device Registration Service \(DRS\)是一種新的 Windows 服務，隨附於 Ac
 ### <a name="registered-devices-container"></a>登錄的裝置容器  
 裝置物件容器會在 Active Directory 樹系中的其中一個網域下建立。  此物件容器會包含 Active Directory 樹系的所有裝置物件。  
   
-根據預設，容器是在 AD FS 的相同網域中建立。  \(例如， **CN\=RegisteredDevices，DC\=< 預設\-命名\-內容 >**\)。當裝置註冊初始化 Active Directory 樹系時，會建立此物件。  
+根據預設，容器是在 AD FS 的相同網域中建立。  \(例如， **CN\=RegisteredDevices，DC\=< 預設\-命名\-內容 >** \)。當裝置註冊初始化 Active Directory 樹系時，會建立此物件。  
   
 ### <a name="registered-devices"></a>登錄的裝置  
 裝置物件是 Active Directory 中的新的輕量型物件。  它們用來代表使用者、裝置與公司之間的關聯性。  裝置物件使用 AD FS 所簽署的憑證來錨定實體裝置至 Active Directory 中的邏輯裝置物件。  

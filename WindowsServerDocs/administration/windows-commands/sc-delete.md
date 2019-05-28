@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b60127cf957a30d147c9992c74c01e37e5b8bf89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 68af5f118b2cc9d7941abddccd2a1bc7fde4c6d0
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871919"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222930"
 ---
 # <a name="sc-delete"></a>Sc delete
 
@@ -26,7 +26,7 @@ ms.locfileid: "59871919"
 
 從登錄刪除一個服務子機碼。 如果服務正在執行，或另一個處理序已開啟的控制代碼給服務，服務會標示為刪除。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+如需如何使用此命令的範例，請參閱[範例](#examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -46,7 +46,7 @@ sc [<ServerName>] delete [<ServiceName>]
 
 使用**新增或移除程式**上**控制台**刪除 DHCP、 DNS 或任何其他內建的作業系統服務。 請注意，**新增或移除程式**才不會移除服務，登錄子機碼，但它也會解除安裝服務，並刪除任何捷徑。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a>範例
 
 若要刪除的服務子機碼**NewServ**從本機電腦上登錄中，輸入：
 ```

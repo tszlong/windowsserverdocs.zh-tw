@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: bd15df5360a50e417881d83319344dbdf48f35fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2af1bfc295469d43e59593d69d4ba88f476e427
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829639"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034146"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>AD 樹系復原-Windows Server 2003 復原
 
@@ -22,9 +22,9 @@ ms.locfileid: "59829639"
 
 本主題包含執行 Windows Server 2003 的網域控制站 (Dc) 的樹系修復程序。 樹系復原的一般程序並無不同，使用 Windows Server 2003 Dc，但特定程序可能會因為不同的工具不同。 比方說，Ntdsutil.exe 可以用來備份和還原網域控制站執行 Windows Server 2003 Dc，而 Windows Server Backup 或 Wbadmin.exe 是用於執行 Windows Server 2008 的網域控制站或更新版本。  
   
-- [備份系統狀態資料](#Backing-up-the-System-State-data)  
-- [執行非系統授權還原](#Performing-a-nonauthoritative restore)  
-- [安裝和設定 DNS 伺服器服務](#Install-and-configure-the-DNS-Server-service)  
+- [備份系統狀態資料](#backing-up-the-system-state-data)  
+- [執行非系統授權還原](#performing-a-nonauthoritative-restore)  
+- [安裝和設定 DNS 伺服器服務](#install-and-configure-the-dns-server-service)
 
 ## <a name="backing-up-the-system-state-data"></a>備份系統狀態資料
 您可以使用下列程序來備份系統狀態資料，以及您已選取目前的備份作業，執行 Windows Server 2003 DC 的任何其他資料。 Windows Server 2003 包含 Ntbackup 工具，可用來備份系統狀態資料。  
@@ -57,7 +57,7 @@ Windows Server 2003 網域控制站上還原系統狀態資料，您需要也重
 ### <a name="to-perform-a-nonauthoritative-restore"></a>若要執行非系統授權還原
   
 1. 啟動 DC 之後，請按 F8 以重新啟動電腦以目錄服務還原模式 (DSRM)。  
-2. 選取 **目錄服務還原模式 （Windows 網域控制站只）**。  
+2. 選取 **目錄服務還原模式 （Windows 網域控制站只）** 。  
 3. 選取您想要在還原模式中啟動的作業系統。  
 4. （您只能使用本機電腦帳戶，沒有網域登入選項可） 的系統管理員身分登入。  
 5. 在命令提示字元中，輸入**ntbackup**，然後按 ENTER 鍵。  
@@ -89,11 +89,11 @@ Windows Server 2003 網域控制站上還原系統狀態資料，您需要也重
   
 1. 開啟 [Windows 元件精靈]。 若要開啟精靈：  
 
-   - 按一下 [開始]、[控制台]，然後按一下 [新增或移除程式]。  
+   - 按一下 [開始]  、[控制台]  ，然後按一下 [新增或移除程式]  。  
    - 按一下 **新增/移除 Windows 元件**。  
 
 2. 在 **元件**，選取**Networking Services**核取方塊，然後按一下**詳細資料**。  
-3. 在 **的網路服務的子元件**，選取**網域名稱系統 (DNS)** 核取方塊，按一下  **確定**，然後按一下 **下一步**。  
+3. 在 **的網路服務的子元件**，選取**網域名稱系統 (DNS)** 核取方塊，按一下  **確定** ，然後按一下 **下一步** 。  
 4. 如果系統提示您，在**檔案複製來源**，輸入散發檔案的完整路徑，然後按一下**確定**。  
 
    安裝之後，完成下列步驟來設定 DNS 伺服器。  
@@ -119,12 +119,12 @@ Windows Server 2003 網域控制站上還原系統狀態資料，您需要也重
 
 ## <a name="next-steps"></a>後續步驟
 
-- [AD 樹系復原-必要條件](AD-Forest-Recovery-Prerequisties.md)  
+- [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)  
 - [AD 樹系復原-設計自訂的樹系復原計劃](AD-Forest-Recovery-Devising-a-Plan.md)  
 - [AD 樹系復原-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
 - [AD 樹系復原-判斷如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [AD 樹系復原-執行初始的復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)  
+- [AD 樹系復原 - 程序](AD-Forest-Recovery-Procedures.md)  
 - [AD 樹系復原-常見問題集](AD-Forest-Recovery-FAQ.md)  
 - [AD 樹系復原-復原 Multidomain 樹系內的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
 - [AD 樹系復原與 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md) 

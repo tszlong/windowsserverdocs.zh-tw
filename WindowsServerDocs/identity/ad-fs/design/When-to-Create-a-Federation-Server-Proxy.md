@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1f0253dfb5a690371dae1a2bfcb6b7520077d473
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b41c2194940c85e39e5a3724f747dd12c2544259
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883199"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190642"
 ---
 # <a name="when-to-create-a-federation-server-proxy"></a>建立同盟伺服器 Proxy 的時機
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 建立您組織中的同盟伺服器 proxy 將額外的安全性層級加入至您的 Active Directory Federation Services \(AD FS\)部署。 請考慮部署同盟伺服器 proxy 在貴組織的周邊網路中，當您想要：  
   
@@ -38,4 +36,4 @@ ms.locfileid: "59883199"
 如需如何設定所有必要條件部署同盟伺服器 proxy 所需的一般資訊，請參閱[檢查清單：設定同盟伺服器 Proxy](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f46675ff4c471af743fd8782c1e3036e7c546256
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cdd0b32b50f676007a6cc922bc15b95bb61323be
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839339"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189670"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>建立非宣告感知信賴憑證者信任
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 在 AD FS 管理嵌入式管理單元\-中，非\-宣告\-感知信賴憑證者信任是建立來代表 federation service 與單一 web 之間的信任物件\-不是應用程式宣告\-注意並透過 Web Application Proxy 的存取。  
   
@@ -37,19 +36,19 @@ ms.locfileid: "59839339"
 3.  在 **歡迎**頁面上，選擇**非宣告感知**，按一下 **啟動**。  
 ![信賴憑證者的合作對象](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG) 
   
-4.  在上**指定顯示名稱**頁面上，輸入中的名稱**顯示名稱**下方**備忘稿**輸入此信賴憑證者信任的描述，然後按一下**下一步**.  
+4.  在上**指定顯示名稱**頁面上，輸入中的名稱**顯示名稱**下方**備忘稿**輸入此信賴憑證者信任的描述，然後按一下**下一步** .  
 ![信賴憑證者的合作對象](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
 
-5. 在 [設定識別碼] 頁面上，指定此信賴憑證者的一或多個識別碼，按一下 [新增] 以將它們新增到清單中，然後按一下 [下一步]。  
+5. 在 [設定識別碼]  頁面上，指定此信賴憑證者的一或多個識別碼，按一下 [新增]  以將它們新增到清單中，然後按一下 [下一步]  。  
 ![信賴憑證者的合作對象](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
 
-6.  在 [**選擇存取控制原則**選取原則，然後按一下**下一步]**。  如需有關存取控制原則的詳細資訊，請參閱 < [AD FS 中的存取控制原則](Access-Control-Policies-in-AD-FS.md)。 
+6.  在 [**選擇存取控制原則**選取原則，然後按一下**下一步]** 。  如需有關存取控制原則的詳細資訊，請參閱 < [AD FS 中的存取控制原則](Access-Control-Policies-in-AD-FS.md)。 
 ![信賴憑證者的合作對象](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
-7. 在 [準備新增信任] 頁面上，檢閱設定，然後按一下 [下一步] 以儲存您的信賴憑證者信任資訊。  
+7. 在 [準備新增信任]  頁面上，檢閱設定，然後按一下 [下一步]  以儲存您的信賴憑證者信任資訊。  
    ![信賴憑證者的合作對象](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
 
-8. 在 [完成] 頁面上，按一下 [關閉]。 此動作會自動顯示 [編輯宣告規則] 對話方塊。  
+8. 在 [完成]  頁面上，按一下 [關閉]  。 此動作會自動顯示 [編輯宣告規則]  對話方塊。  
 ![信賴憑證者的合作對象](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
   
 ## <a name="see-also"></a>另請參閱  

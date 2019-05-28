@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 129cd83be4cd8302bd170ba87aad58c50f636006
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f1d38e23d7f1671f729b03b7e6f8000471d2e9f9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815849"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188655"
 ---
 # <a name="determine-the-type-of-claim-rule-template-to-use"></a>決定要使用的宣告規則範本類型
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 設計 Active Directory 同盟服務很重要的一部分\(AD FS\)基礎結構會判斷一組完整的宣告規則 — 和哪個對應的宣告規則範本，您應該用來建立它們，為每個夥伴將會參與向您的組織的同盟。 您在 AD FS 管理嵌入式管理單元中使用宣告規則範本建立規則\-中。  
   

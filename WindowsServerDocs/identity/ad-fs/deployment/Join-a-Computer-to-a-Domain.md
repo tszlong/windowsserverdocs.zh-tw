@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 811f5296143637974cf82e59d57665f8a96f1c8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 02df9659ee3a1121c0cee3f7c5fa21b91c36b87c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884109"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192049"
 ---
 # <a name="join-a-computer-to-a-domain"></a>將電腦加入網域
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 Active Directory Federation services \(AD FS\)正常運作，每個函式的同盟伺服器必須加入網域的電腦。 同盟伺服器 proxy 可能加入網域，但這不是需求。  
   
@@ -32,13 +30,13 @@ Active Directory Federation services \(AD FS\)正常運作，每個函式的同�
   
 2.  瀏覽至**系統及安全性**，然後按一下**系統**。  
   
-3.  在 [電腦名稱、網域及工作群組設定] 底下，按一下 [變更設定] 。  
+3.  在 [電腦名稱、網域及工作群組設定]  底下，按一下 [變更設定]  。  
   
-4.  在 [電腦名稱]  索引標籤中，按一下 [變更] 。  
+4.  在 [電腦名稱]  索引標籤中，按一下 [變更]  。  
   
 5.  底下**隸屬**，按一下**網域**，輸入您想要以聯結，然後按一下 這台電腦的網域名稱**確定**。  
   
-6.  按一下 **[確定]**，然後重新啟動電腦。  
+6.  按一下 **[確定]** ，然後重新啟動電腦。  
   
 ## <a name="additional-references"></a>其他參考資料  
 [檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)  

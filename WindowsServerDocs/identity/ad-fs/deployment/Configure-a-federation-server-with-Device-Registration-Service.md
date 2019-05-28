@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 511a039afd47cf7570fffdcaf17842e0eccc5683
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f1367f03ea8a9ba96bfe4bae1c324deff92576f0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843059"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192264"
 ---
 # <a name="configure-a-federation-server-with-device-registration-service"></a>使用裝置註冊服務設定同盟伺服器
-
->適用於：Windows Server 2012 R2
 
 您可以啟用 Device Registration Service \(DRS\)在同盟伺服器之後完成的程序[步驟 4:Configure a Federation Server](https://technet.microsoft.com/library/dn303424.aspx)。 裝置註冊服務提供上架機制，可無縫式次要因素驗證、 持續性的單一登\-上\(SSO\)，與需要存取公司的取用者的條件式存取資源。 如需 DRS 的詳細資訊，請參閱[從任何裝置加入工作地點網路提供 SSO 和無縫式第二個因素 Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)  
   

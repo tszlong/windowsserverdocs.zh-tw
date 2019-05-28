@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f287261ce6cb56e40385ef4de922045153819a23
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a1082b873f65a9f98b25425a392b2c62de8ca22
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877559"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191011"
 ---
 # <a name="planning-for-interoperability-with-ad-fs-1x"></a>規劃與 AD FS 1.x 的互通性
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 Active Directory Federation Services \(AD FS\)執行 Windows Server® 2012年的同盟伺服器可以與這兩個 AD FS 1.0 交互操作\(隨 Windows Server 2003 R2\) Federation Service 與 AD FS1.1\(與 Windows Server 2008 或 Windows Server 2008 R2 一起安裝\)Federation Service。 支援下列任何互通性組合：  
   
@@ -49,4 +47,4 @@ AD FS 1。*x*\-相容的宣告是可以了解 AD fs 1 和 Windows Server 2012 �
 > AD FS 1。*x*同盟服務可解譯開頭為統一資源識別項的僅傳入宣告類型\(URI\)的 http://schemas.xmlsoap.org/claims/。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

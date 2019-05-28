@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b914141a0445febd3961b688aadc2f444b2eee7b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 02311522ee229eeaf0b27ce8d39090a9529b99ae
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816259"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192196"
 ---
 # <a name="deploying-federation-server-proxies"></a>部署同盟伺服器 Proxy
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 若要部署在 Active Directory Federation Services 中的同盟伺服器 proxy \(AD FS\)，完成每一項工作中[檢查清單：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
   

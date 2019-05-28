@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fe113eb7fe5cb096ff1e94150b929682d137b24b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e05043d029636ddeb3a24349897ac61a713b2a7
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871949"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034117"
 ---
 # <a name="perform-initial-recovery"></a>執行初始的復原  
 
@@ -22,9 +22,9 @@ ms.locfileid: "59871949"
 
 本章節包含下列步驟：  
 
-- [還原每個網域中的第一個可寫入的網域控制站](#Restore-the-first-writeable-domain-controller-in-each-domain)  
-- [重新連線到網路的每個還原的可寫入網域控制站](#Reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
-- [將通用類別目錄新增至樹系根網域的網域控制站](#Add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
+- [還原每個網域中的第一個可寫入的網域控制站](#restore-the-first-writeable-domain-controller-in-each-domain)  
+- [重新連線到網路的每個還原的可寫入網域控制站](#reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
+- [將通用類別目錄新增至樹系根網域的網域控制站](#add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
 
 ## <a name="restore-the-first-writeable-domain-controller-in-each-domain"></a>還原每個網域中的第一個可寫入的網域控制站  
 
@@ -151,12 +151,12 @@ ms.locfileid: "59871949"
 
 ## <a name="next-steps"></a>後續步驟
 
-- [AD 樹系復原-必要條件](AD-Forest-Recovery-Prerequisties.md)  
+- [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)  
 - [AD 樹系復原-設計自訂的樹系復原計劃](AD-Forest-Recovery-Devising-a-Plan.md)  
 - [AD 樹系復原-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
 - [AD 樹系復原-判斷如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [AD 樹系復原-執行初始的復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)  
+- [AD 樹系復原 - 程序](AD-Forest-Recovery-Procedures.md)  
 - [AD 樹系復原-常見問題集](AD-Forest-Recovery-FAQ.md)  
 - [AD 樹系復原-復原 Multidomain 樹系內的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
 - [AD 樹系復原與 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)  

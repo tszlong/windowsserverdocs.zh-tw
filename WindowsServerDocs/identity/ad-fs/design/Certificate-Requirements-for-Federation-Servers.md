@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 369c0e9e7ab1ef25baee1c35379cc66b886f20d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce301f6320ed3347b1ee802f57c2b2ebd4394970
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827099"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191636"
 ---
 # <a name="certificate-requirements-for-federation-servers"></a>同盟伺服器的憑證需求
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 在任何 Active Directory Federation Services \(AD FS\)設計，必須使用各種憑證來保護通訊，並協助執行網際網路用戶端與同盟伺服器之間的使用者驗證。 每一部同盟伺服器必須擁有服務通訊憑證和權杖\-簽署憑證，才能參與 AD FS 通訊之前。 下表描述與同盟伺服器相關聯的憑證類型。  
   
@@ -55,4 +53,4 @@ AD FS 不需要 CA 所簽發的憑證。 但是，SSL 憑證\(也會使用預設
 如果您使用的任何憑證具有 CRL，含有已設定憑證的伺服器就必須能夠連絡發佈 CRL 的伺服器。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

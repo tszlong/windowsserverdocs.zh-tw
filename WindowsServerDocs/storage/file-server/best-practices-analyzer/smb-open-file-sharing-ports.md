@@ -7,12 +7,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: b6ad1f1f8573fc380e999e5ec2091cea8ebb8aa1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d761e4532a5be92d43e09904e9df8f2aa61b6bb8
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820359"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63738468"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB:檔案及印表機共用連接埠應該開啟
 
@@ -69,7 +69,7 @@ ms.locfileid: "59820359"
 
 2.  在左窗格中，按一下**進階設定**，然後在主控台樹狀目錄中，按一下**輸入規則**。
 
-3.  底下**輸入規則**，找出規則**檔案及印表機共用 (NB-工作階段-In)** 並**檔案及印表機共用 (Smb-in)**。
+3.  底下**輸入規則**，找出規則**檔案及印表機共用 (NB-工作階段-In)** 並**檔案及印表機共用 (Smb-in)** 。
 
 4.  每個規則，該規則，以滑鼠右鍵按一下，然後按一下 **啟用規則**。
 

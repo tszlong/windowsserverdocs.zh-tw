@@ -9,17 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3745a0ab9d313223c611e58864dd6b4d747f0624
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c87b76224d1ac5dbe3befc837fad8879d0b9a1ef
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881039"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189405"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>建立規則，以傳送 AD FS 1.x 相容宣告
-
->適用於：Windows Server 2016, Windows Server 2012 R2
-
 
 在您使用 Active Directory Federation Services 的情況下\(AD FS\)將會執行 AD FS 1.0 同盟伺服器收到的問題宣告\(Windows Server 2003 R2\)或 AD FS 1.1 \(Windows Server 2008 或 Windows Server 2008 R2\)，您必須執行下列動作：  
   
@@ -62,7 +59,7 @@ ms.locfileid: "59881039"
 4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -104,7 +101,7 @@ ms.locfileid: "59881039"
 4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -147,7 +144,7 @@ ms.locfileid: "59881039"
 4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -191,7 +188,7 @@ ms.locfileid: "59881039"
 4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -252,7 +249,7 @@ ms.locfileid: "59881039"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)  
   
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -301,7 +298,7 @@ ms.locfileid: "59881039"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
   
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)   
   
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -332,9 +329,9 @@ ms.locfileid: "59881039"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：建立信賴憑證者信任宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[檢查清單：建立宣告規則的宣告提供者信任](https://technet.microsoft.com/library/ee913564.aspx)  
+[檢查清單：為宣告提供者信任建立宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

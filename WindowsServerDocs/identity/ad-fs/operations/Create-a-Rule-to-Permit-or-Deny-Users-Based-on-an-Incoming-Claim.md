@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 167e43d49c08d0e39549bf46888118f985e3876d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72fe425b040f83a217a144976265c7754830c91b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863769"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189499"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>建立規則依據傳入宣告允許或拒絕使用者 
 
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 在 Windows Server 2016 中，您可以使用**存取控制原則**建立規則，以允許或拒絕使用者根據傳入宣告。  Windows Server 2012 r2 中使用**允許或拒絕使用者根據傳入宣告**規則範本，在 Active Directory Federation Services \(AD FS\)，您可以建立會授與的授權規則或拒絕使用者存取信賴憑證者的合作對象為基礎的類型和傳入宣告的值。 
 
@@ -98,10 +97,10 @@ ms.locfileid: "59863769"
 3.  右\-按一下 選取的信任，然後按一下**編輯宣告規則**。  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)   
 
-4.  中**編輯宣告規則** 對話方塊中，按一下**發佈授權規則** 索引標籤或**委派授權規則** 索引標籤\(依據的型別您需要的授權規則\)，然後按一下**加入規則**以啟動**新增的授權宣告規則精靈**。  
+4.  中**編輯宣告規則** 對話方塊中，按一下**發佈授權規則** 索引標籤或**委派授權規則** 索引標籤\(依據的型別您需要的授權規則\)，然後按一下**加入規則**以啟動**新增的授權宣告規則精靈** 。  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
-5.  在上**選取規則範本**頁面的 **宣告規則範本**，選取**允許或拒絕使用者根據傳入宣告**從清單中，然後按一下  **下一步**。  
+5.  在上**選取規則範本**頁面的 **宣告規則範本**，選取**允許或拒絕使用者根據傳入宣告**從清單中，然後按一下  **下一步** 。  
 ![建立規則](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny1.PNG)
 
 6.  在上**設定規則**頁面**宣告規則名稱**中輸入此規則的顯示名稱**傳入宣告類型**下在清單中，選取的宣告類型**內送宣告值**輸入值，或按一下 瀏覽\(是否可用\)並選取一個值，然後選取下列選項之一，視您組織的需求而定：  
@@ -110,14 +109,14 @@ ms.locfileid: "59863769"
   
     -   **拒絕具有這個傳入宣告的使用者存取**  
 ![建立規則](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny2.PNG)  
-7.  按一下 **[完成]**。  
+7.  按一下 **[完成]** 。  
   
 8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：建立信賴憑證者信任宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

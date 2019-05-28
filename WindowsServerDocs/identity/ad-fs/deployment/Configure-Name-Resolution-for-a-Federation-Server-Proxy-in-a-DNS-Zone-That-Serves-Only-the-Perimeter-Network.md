@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 32b8e3cc133ce95872881115608bb8cfb17b2427
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d046c720c5c6250b6efa03e068aa66e2a6bbe3d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816009"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192302"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>在僅適用於周邊網路的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 以便在 Active Directory 同盟服務的同盟伺服器的名稱解析可以順利運作\(AD FS\)的一或多個網域名稱系統中的案例\(DNS\)區域提供只周邊網路網路，下列必須完成工作：  
   
@@ -58,13 +57,13 @@ ms.locfileid: "59816009"
   
 1.  在周邊網路的 DNS 伺服器，開啟 [DNS] 嵌入式管理單元\-中。 按一下 **開始**，指向**系統管理工具**，然後按一下**DNS**。  
   
-2.  在主控台樹狀目錄中，以滑鼠右鍵\-按一下適用的正向對應區域，然後按一下**新主機\(A 或 AAAA\)**。  
+2.  在主控台樹狀目錄中，以滑鼠右鍵\-按一下適用的正向對應區域，然後按一下**新主機\(A 或 AAAA\)** 。  
   
 3.  在 **名稱**，輸入只有同盟伺服器的電腦名稱。 例如，若為完整的網域名稱\(FQDN\) fs.fabrikam.com，輸入**fs**。  
   
 4.  在  **IP 位址**，比方說，輸入新的同盟伺服器 proxy 的 IP 位址**131.107.27.68**。  
   
-5.  按一下 [新增主機] 。  
+5.  按一下 [新增主機]  。  
   
 ## <a name="additional-references"></a>其他參考資料  
 [檢查清單：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  

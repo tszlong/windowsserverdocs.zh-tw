@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9ec4150a7d3adfaac786219d253e1d0898c18204
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31e2e1b04383adc8bec12e7290a7acec80e0402f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876519"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190786"
 ---
 # <a name="stand-alone-federation-server-using-wid"></a>使用 WID 的獨立同盟伺服器
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 獨立\-單獨的同盟伺服器在 Active Directory Federation Services \(AD FS\)裝載 Federation Service 設定為使用 Windows 內部資料庫的單一伺服器所組成\(WID\). 此 AD FS 拓撲是測試實驗室。 我們不建議您這麼做為生產環境因為它有限制為只有一部同盟伺服器，而且它不能相應增加為更多的伺服器。  
   
@@ -45,4 +43,4 @@ ms.locfileid: "59876519"
   
 
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

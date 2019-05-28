@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8935760cad272d5b82edb675cda85caf0456565f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c33475d7420383448439e2b769562e55127c7b0e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859439"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190635"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>建立同盟伺服器 Proxy 伺服器陣列的時機
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 請考慮安裝其他的同盟伺服器 proxy，當您有大型的 Active Directory Federation Services \(AD FS\)部署，而您想要提供容錯、 負載\-平衡和延展性您的 proxy 部署。 在相同的周邊網路中建立兩個或多個同盟伺服器 proxy 及設定每個要保護相同的 AD FS Federation Service 會建立同盟伺服器 proxy 伺服器陣列。  
   
@@ -39,4 +37,4 @@ ms.locfileid: "59859439"
 如需有關加入新的同盟伺服器 proxy，若要建立同盟伺服器 proxy 伺服器陣列的詳細資訊，請參閱[檢查清單：設定同盟伺服器 Proxy](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

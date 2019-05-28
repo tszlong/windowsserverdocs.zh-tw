@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: dffd886ffd0bedd429918f72408b2d13d9fa1bdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea537aa61cd7bfbe05ed1dd151eddd4a0bfc5ca7
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859169"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188305"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>使用「以宣告方式傳送群組成員資格」規則的時機
 您可以使用這項規則中 Active Directory Federation Services \(AD FS\)當您想要發出新的傳出宣告值只有這些使用者是指定的 Active Directory 安全性群組的成員。 使用這項規則時，您只需針對您指定且符合規則邏輯的群組發出單一宣告，如下表所述。  
   

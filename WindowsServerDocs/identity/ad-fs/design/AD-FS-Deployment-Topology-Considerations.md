@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: bbd3ec26e5fb0ce9857f2c9e5321300fb835b303
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c5a3c85d40baee137ecdf7a1a5507b25361cac6d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834589"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191768"
 ---
 # <a name="ad-fs-deployment-topology-considerations"></a>AD FS 部署拓撲考量
-
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 本主題描述可協助您規劃和設計的 Active Directory Federation Services 的重要考量事項\(AD FS\)部署拓撲，以在生產環境中使用。 本主題會檢閱和評估會影響哪些功能可供您之後部署 AD FS 的考量事項的起始點。 例如，視資料庫而定您選擇儲存 AD FS 設定資料庫的型別，最終將決定您是否可以實作特定安全性聲明標記語言\(SAML\)需要 SQL 的功能伺服器。  
   
@@ -31,9 +29,9 @@ AD FS 功能
   
 |功能|受到 WID 支援？|受到 SQL Server 支援？|關於這個功能的詳細資訊|  
 |-----------|---------------------|----------------------------|---------------------------------------|  
-|同盟伺服器陣列部署|是，限制為 30 的同盟伺服器，每個伺服陣列|是的。 沒有限制您可以在單一伺服陣列中部署的同盟伺服器數目|[判斷您的 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)|  
-|SAML 成品解析**附註：** 這個功能並非 Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 案例的必要功能。|否|是|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[安全規劃和部署的 AD FS 的最佳作法](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
-|SAML\/WS\-同盟權杖重新執行偵測|否|是|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[安全規劃和部署的 AD FS 的最佳作法](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
+|同盟伺服器陣列部署|是，限制為 30 的同盟伺服器，每個伺服陣列|是的。 沒有限制您可以在單一伺服陣列中部署的同盟伺服器數目|[決定您的 AD FS 部署拓撲](Determine-Your-AD-FS-Deployment-Topology.md)|  
+|SAML 成品解析**附註：** 這個功能並非 Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 案例的必要功能。|否|是|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[安全規劃和部署 AD FS 的最佳做法](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
+|SAML\/WS\-同盟權杖重新執行偵測|否|是|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[安全規劃和部署 AD FS 的最佳做法](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
   
 資料庫功能  
   
@@ -66,4 +64,4 @@ AD FS 功能
 -   網路負載平衡\(NLB\)  
   
 ## <a name="see-also"></a>另請參閱
-[Windows Server 2012 中 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

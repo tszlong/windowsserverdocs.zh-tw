@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e47dbecdeee620d3a237ad8d8c41a550d3ef069c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 06f2f0d1fb48c6b9dea89762a30fdf77643d0e53
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860779"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188566"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="the-role-of-claim-rules"></a>宣告規則的角色
 Active Directory Federation Services 中的 Federation Service 的主要功能\(AD FS\)是發行包含一組宣告的權杖。 AD FS 接受並發行哪些宣告的決定是由宣告規則管理。  
   
@@ -56,7 +54,7 @@ AD FS 包含一組預先定義的宣告規則範本是設計用來幫助您輕�
 如需如何使用宣告規則語言語法的詳細資訊，請參閱[The Role of 宣告規則語言](The-Role-of-the-Claim-Rule-Language.md)AD FS 部署指南中。  
   
 > [!TIP]  
-> 您可以檢視與規則相關聯的宣告規則語言，方法是隨時按一下宣告規則的屬性上的 [檢視規則語言] 按鈕。  
+> 您可以檢視與規則相關聯的宣告規則語言，方法是隨時按一下宣告規則的屬性上的 [檢視規則語言]  按鈕。  
   
 ### <a name="how-to-create-a-claim-rule"></a>如何建立宣告規則  
 宣告規則是針對同盟服務內的每一個同盟的信任關聯性分別建立，不會跨多個信任共用。 您可以從宣告規則範本建立規則、使用宣告規則語言從頭開始撰寫規則，或使用 Windows PowerShell 自訂規則。  

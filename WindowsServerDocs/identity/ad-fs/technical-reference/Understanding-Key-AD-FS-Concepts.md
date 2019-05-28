@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 27282c6b88b0457af3b4cf031fdadced7b40268c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac666539170bb7aabf0b7f58a7ef003ebe87c2a8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878129"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188389"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="understanding-key-ad-fs-concepts"></a>了解重要的 AD FS 概念
 建議您深入了解的重要概念，如 Active Directory Federation Services，並熟悉其功能集。  
   
@@ -66,6 +64,6 @@ AD FS 是提供用戶端電腦的身分識別存取解決方案\(內部或外部
   
 -   [判斷要使用的宣告規則範本類型](Determine-the-Type-of-Claim-Rule-Template-to-Use.md)  
   
--   [在 AD FS 中的 Uri 使用方式](How-URIs-Are-Used-in-AD-FS.md)  
+-   [AD FS 中的 URI 使用方式](How-URIs-Are-Used-in-AD-FS.md)  
   
 

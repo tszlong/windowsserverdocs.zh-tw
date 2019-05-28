@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3372e1f051ba7f900753a4961d948ddabdef6f4d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40f1f4952730fad0749a173fdc968714d043b1c1
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867619"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188514"
 ---
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
-
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>AD FS 設定資料庫的角色
 AD FS 設定資料庫會儲存代表 Active Directory Federation Services 的單一執行個體的所有設定資料\(AD FS\) \(亦即 Federation Service\)。 AD FS 設定資料庫定義了供 Federation Service 識別夥伴、憑證、屬性存放區、宣告與這些關聯實體之各種相關資料所需的參數集。 您可以將這項組態資料儲存在 Microsoft SQL Server® 資料庫或 Windows 內部資料庫中\(WID\)隨附於 Windows Server® 2008年、 Windows Server 2008 R2 和 Windows Server® 2012年的功能。  
   
@@ -96,9 +94,9 @@ WID 同步程序也支援遞增傳輸，可提供更有效率的變更傳輸。 
 > 如果您是帳戶夥伴組織中的系統管理員，請確定指派或繫結 SSL 憑證鏈結根憑證的 「 Windows 根憑證計劃的成員，在 IIS 中同盟被動網站\( <ComputerName>\\站台\\Default Web Site\\adfs\\ls\)伺服陣列中的所有帳戶同盟伺服器上。 此動作非常重要，它可以讓您不需要在資源同盟伺服器上手動將 SSL 憑證新增至本機電腦「受信任的人」憑證存放區，以及避免資源同盟伺服器無法解析在您的組織中發佈的成品。  
   
 ### <a name="samlws---federation-token-replay-detection"></a>SAML/WS-同盟權杖重新執行偵測  
-「權杖重新執行」一詞指的是帳戶夥伴組織中的瀏覽器用戶端嘗試多次傳送接收自帳戶同盟伺服器的相同權杖以向資源同盟伺服器驗證的動作。  當使用者按一下其瀏覽器中的 [上一頁] 按鈕試圖重新傳送驗證頁面時，會發生此動作。  
+「權杖重新執行」  一詞指的是帳戶夥伴組織中的瀏覽器用戶端嘗試多次傳送接收自帳戶同盟伺服器的相同權杖以向資源同盟伺服器驗證的動作。  當使用者按一下其瀏覽器中的 [上一頁]  按鈕試圖重新傳送驗證頁面時，會發生此動作。  
   
-AD FS 提供稱為「權杖重新執行偵測」的功能，可偵測使用相同權杖的多個權杖要求並予以捨棄。 權杖重新執行偵測啟用這項功能時，保護完整性的驗證要求，在這兩個 WS\-同盟被動設定檔與 SAML WebSSO 設定檔，藉由確定相同的權杖永遠不會使用一次以上。 在安全性要求非常高的情況下 (例如使用資訊站時)，應該啟用此功能。  
+AD FS 提供稱為「權杖重新執行偵測」  的功能，可偵測使用相同權杖的多個權杖要求並予以捨棄。 權杖重新執行偵測啟用這項功能時，保護完整性的驗證要求，在這兩個 WS\-同盟被動設定檔與 SAML WebSSO 設定檔，藉由確定相同的權杖永遠不會使用一次以上。 在安全性要求非常高的情況下 (例如使用資訊站時)，應該啟用此功能。  
   
 在資訊站範例中，當使用者登出網站之後，稍後惡意使用者可以嘗試使用瀏覽器歷程記錄來重新傳送前一位使用者載入的同盟驗證頁面。 此功能可以減輕此顧慮，方式是儲存帳戶夥伴組織進行之成功驗證的其他相關資訊，以偵測後續的權杖重新執行並防止惡意使用者進行多次驗證嘗試。  
   

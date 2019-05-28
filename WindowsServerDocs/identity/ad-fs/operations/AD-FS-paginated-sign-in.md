@@ -8,16 +8,15 @@ ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2b11454427a65e37604b430a63b5ed745f4a2bb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 946e99448d13bf6782c10bce5a0b8566da4deb17
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864449"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190383"
 ---
 # <a name="ad-fs-paginated-sign-in"></a>AD FS 進行登入分頁
 
->適用於：Windows Server 2019
 
 適用於 AD FS 2019，我們已重新設計的登入 UI。  現在，AD FS 登入將會有相同的外觀及操作，Azure ad。  這會提供使用者更一致登入體驗、 併入置中和已編頁的使用者流程。 
 
@@ -60,4 +59,4 @@ ms.locfileid: "59864449"
 
 • 對於使用者而言不打算將其伺服器升級至 AD FS 2019 但仍想要新的設計：[在 Active Directory Federation Services 中使用 Azure AD UX 網頁佈景主題](azure-ux-web-theme-in-ad-fs.md)
 
-• 自訂的中央位置：[AD FS 使用者登入自訂](ad-fs-user-sign-in-customization.md)
+• 自訂的中央位置：[自訂 AD FS 使用者登入](ad-fs-user-sign-in-customization.md)

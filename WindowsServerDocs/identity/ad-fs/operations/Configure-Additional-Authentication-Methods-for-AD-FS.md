@@ -9,16 +9,14 @@ ms.date: 10/04/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 73de8908677b3f74651b10c29ef2abe62e484694
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 88c4d976b9808d254dc1681ce9eee3ca556824ab
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868409"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189786"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure Additional Authentication Methods for AD FS
-
->適用於：Windows Server 2016, Windows Server 2012 R2
 
 若要啟用多因素驗證 (MFA)，您必須選取至少一個其他驗證方法。 根據預設，在 Windows Server 2012 r2 中的 Active Directory Federation Services (AD FS) 您可以選取憑證驗證 （亦即，智慧卡為基礎的驗證） 作為其他驗證方法。
 

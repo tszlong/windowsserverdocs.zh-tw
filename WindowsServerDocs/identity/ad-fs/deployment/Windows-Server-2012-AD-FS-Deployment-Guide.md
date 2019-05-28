@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3e555d1003878e12320cb8557bd205ac24e1bbb3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6be56c25cc6f639f73842f57cdf48a6339dccf9c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882439"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191849"
 ---
 # <a name="windows-server-2012-ad-fs-deployment-guide"></a>Windows Server 2012 AD FS 部署指南
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 
 您可以使用 Active Directory® Federation Services \(AD FS\)與 Windows Server® 2012年作業系統，若要建立的同盟身分識別管理解決方案延伸至分散式的識別驗證，以及授權服務，以 Web\-基礎跨組織及平台界限的應用程式。 透過部署 AD FS，您就可以將組織現有的識別身分管理功能延伸至網際網路。  
   
@@ -60,13 +59,13 @@ ms.locfileid: "59882439"
   
 ## <a name="in-this-guide"></a>本指南內容  
   
--   [規劃部署 AD FS](Planning-to-Deploy-AD-FS.md)  
+-   [計畫部署 AD FS](Planning-to-Deploy-AD-FS.md)  
   
--   [實作 AD FS 設計計畫](Implementing-Your-AD-FS-Design-Plan.md)  
+-   [實作您的 AD FS 設計計畫](Implementing-Your-AD-FS-Design-Plan.md)  
   
 -   [檢查清單：實作網頁 SSO 設計](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [檢查清單：實作同盟的網頁 SSO 設計](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [檢查清單：實作同盟網頁 SSO 設計](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
   
 -   [設定夥伴組織](Configuring-Partner-Organizations.md)  
   
@@ -76,4 +75,4 @@ ms.locfileid: "59882439"
   
 -   [部署同盟伺服器 Proxy](Deploying-Federation-Server-Proxies.md)  
   
--   [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)  
+-   [與 AD FS 1.x 互通](Interoperating-with-AD-FS-1.x.md)  

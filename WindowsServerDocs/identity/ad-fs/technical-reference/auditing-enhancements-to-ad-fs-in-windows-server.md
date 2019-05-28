@@ -9,16 +9,15 @@ ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3d622686a3cc34316f0cf5187839785195c2f104
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f6e4abb4255281be85b7fa928566f681bcf2de2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880229"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188357"
 ---
 # <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Windows Server 2016 AD FS 的稽核增強功能
 
->適用於：Windows Server 2016
 
 目前，在 AD FS 適用於 Windows Server 2012 R2 都是針對單一要求和記錄檔中的相關資訊產生的多個稽核事件，或權杖發行活動是不存在 （在某些版本的 AD FS 中） 或跨多個稽核事件呈現。 預設的 AD FS 稽核事件會關閉由於其詳細資訊的本質。  
     Windows Server 2016 中的 AD fs 版本中，稽核已變得更有效率又相較之下較為。  
