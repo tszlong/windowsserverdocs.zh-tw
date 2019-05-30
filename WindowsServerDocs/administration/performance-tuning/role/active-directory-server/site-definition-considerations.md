@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e5c5f8b7cf5c028fbfa5d72c4bc1218565d4087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814019"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266641"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>獲得正確位置的網域控制站和站台考量
 
@@ -64,7 +64,7 @@ ms.locfileid: "59814019"
 
     -   您可以使用 DnsAvoidRegisterRecords 來排除效能不佳執行或高延遲的網域控制站，例如衛星站台，從一般的定位器的廣告中。 如需詳細資訊，請參閱 <<c0> [ 如何來最佳化網域控制站或通用類別目錄存在於用戶端的站台外的位置](https://support.microsoft.com/kb/306602)。
 
-        **附註**  大約 50%到用戶端可以取用的網域控制站數目的實際限制。 這些應該是最大站台最佳且最高的容量的網域控制站。
+        > [!Note]   沒有實際限制為大約 50%到用戶端可以取用的網域控制站數目。 這些應該是最大站台最佳且最高的容量的網域控制站。
 
          
 
@@ -79,6 +79,6 @@ ms.locfileid: "59814019"
 ## <a name="see-also"></a>另請參閱
 - [效能微調 Active Directory 伺服器](index.md)
 - [硬體考量](hardware-considerations.md)
-- [LDAP 的考量](ldap-considerations.md)
-- [ADDS 效能疑難排解](troubleshoot.md) 
-- [Active Directory 網域服務的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)
+- [LDAP 考量](ldap-considerations.md)
+- [針對 ADDS 效能問題進行疑難排解](troubleshoot.md) 
+- [Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)

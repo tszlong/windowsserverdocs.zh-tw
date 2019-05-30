@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4f6ab2e52284895d2e7918364c24bbb69f2b1c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81bb333e2bb776bc75789b52ab41d7ef64016f51
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853509"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266471"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util 和 setieproxy
 
@@ -47,7 +47,7 @@ bitsadmin /Util /SetIEProxy <Account> <Usage>[/Conn <ConnectionName>]
 > [!IMPORTANT]
 > 您必須執行此命令從提升權限的命令提示字元，才能順利完成。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a>範例
 
 下列範例會設定網路服務帳戶的 proxy 使用方式。
 

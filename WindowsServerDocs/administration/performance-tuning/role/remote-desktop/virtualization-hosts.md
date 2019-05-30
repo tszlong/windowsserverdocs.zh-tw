@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1893c0d2689657a5213b2d59e8d83cea0fc3a0db
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 0aa359644f5e9bf85f4e013e6571276716ed0218
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63722718"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266618"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>效能微調遠端桌面虛擬化主機
 
@@ -40,14 +40,14 @@ Windows Server 2016 支援兩種類型的虛擬桌面、 個人虛擬桌面和�
 
 Windows Server 2012 R2 中引入，重複資料刪除支援開啟檔案的最佳化。 若要使用重複資料刪除磁碟區上執行的虛擬機器，虛擬機器檔案必須儲存在個別的主控件，從 HYPER-V 主機上。 如果同一部電腦上執行 HYPER-V 和重複資料刪除，其中兩項功能將系統資源爭用，並對整體效能造成負面影響。
 
-磁碟區必須也設定為使用 「 虛擬桌面基礎結構 (VDI)？ 重複資料刪除最佳化類型。 您可以使用伺服器管理員來設定此 (**檔案和存放服務** - &gt; **磁碟區** - &gt; **重複資料刪除設定**)或者，使用下列 Windows PowerShell 命令：
+磁碟區也必須設定為使用 「 虛擬桌面基礎結構 (VDI) 」 重複資料刪除最佳化類型。 您可以使用伺服器管理員來設定此 (**檔案和存放服務** - &gt; **磁碟區** - &gt; **重複資料刪除設定**)或者，使用下列 Windows PowerShell 命令：
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
-**附註**  開啟檔案的重複資料刪除最佳化僅支援 VDI 案例與 HYPER-V 透過 SMB 3.0 使用遠端存放裝置。
-
+> [!Note]
+> 開啟檔案的資料重複資料刪除最佳化僅支援 VDI 案例與 HYPER-V 透過 SMB 3.0 使用遠端存放裝置。
 
 ### <a name="memory"></a>記憶體
 

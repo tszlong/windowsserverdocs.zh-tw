@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc24893b1a227501959002ea2d81c62813855d4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 77a4702ddab987cb3adda7627badb790e3102952
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883629"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308551"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS 訊息和疑難排解秘訣
 
@@ -57,7 +57,7 @@ ms.locfileid: "59883629"
 
 > 嘗試連線到 WSUS 伺服器時，發生錯誤。 多種原因所造成的就會發生此錯誤。 請如果問題持續發生，連絡網路系統管理員。 按一下 重設嘗試連線到伺服器的伺服器節點。
 
-除了上述項目，再嘗試存取 WSUS 系統管理網站的 URL (亦即， http://CM12CAS:8530)失敗，錯誤：
+除了上述項目，再嘗試存取 WSUS 系統管理網站的 URL (亦即， `http://CM12CAS:8530`) 失敗，錯誤：
 
 > HTTP 錯誤 503。 無法使用服務。
 

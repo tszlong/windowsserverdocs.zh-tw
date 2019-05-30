@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 04/12/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 3208c20e8bf9f4cfab4340aa33b24175bbc72dda
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ee3c4ba5d6c3dc911ab318ade9a46b279317496f
+ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188335"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66260252"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -128,6 +128,7 @@ ms.locfileid: "66188335"
 
 了解我們最新發行的功能：
 
+- 版本 1904.1-維護用於改善穩定性的閘道外掛程式的更新。
 - 版本[1904年](https://aka.ms/wac1904)是最新 GA 版本引進 Azure 混合式服務的工具，並將先前的 GA 通道在預覽中的功能。
 - 版本[1903年](https://aka.ms/wac1903)會從 Azure 監視器，若要從 Active Directory 和新工具，來管理 Active Directory、 DHCP 和 DNS 中新增伺服器或電腦的連線能力的電子郵件通知。
 - 版本[1902年](https://aka.ms/wac1902)加入軟體定義網路 (SDN) 管理，包括新的 SDN 工具來管理 Acl、 閘道連線，以及邏輯網路上的共用的連線清單與改善。

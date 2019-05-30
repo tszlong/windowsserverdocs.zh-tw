@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 6091edd7aa7f790f6029ca6b6ae402bf1b7e61ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c775dd5a3011115bbb031c0b9e4e24a8911d378e
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877019"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63748401"
 ---
 # <a name="install-and-manage-extensions"></a>安裝和管理擴充功能
 
@@ -36,7 +36,7 @@ Windows Admin Center 支援多個摘要，而且您可以檢視和管理封裝�
 1. 按一下 **設定**在右上角的按鈕 > 在左窗格中，按一下**延伸模組**。
 2. 在右窗格中，按一下**摘要** 索引標籤。
 3. 按一下 **新增**按鈕以新增另一個的摘要。 NuGet 摘要，請輸入摘要 URL NuGet V2。 NuGet 摘要提供者或系統管理員應該能夠提供的 URL 資訊。 檔案共用，請輸入檔案的完整路徑 (.nupkg) 的延伸模組套件檔案會儲存共用的。
-4. 按一下 **\[新增\]**。 如果閘道必須執行在提升權限模式下，才能進行這項變更，將會看到 UAC 提高權限提示。
+4. 按一下 **\[新增\]** 。 如果閘道必須執行在提升權限模式下，才能進行這項變更，將會看到 UAC 提高權限提示。
 
 **可用的擴充功能**清單會顯示從所有已註冊的延伸模組。 您可以檢查每個延伸模組是使用哪一個摘要**套件摘要**資料行。
 
@@ -85,9 +85,6 @@ $feedUrlBase = "https://aka.ms/sme-extension-feed"
 >適用於：Windows Admin Center，Windows Admin Center 預覽
 
 Windows Admin Center Preview 包含 PowerShell 模組來管理您的閘道擴充功能。
-
->[!IMPORTANT]
->管理閘道與 PowerShell 模組的延伸模組時，才支援 Windows Admin Center 會部署為 Windows Server 上的閘道服務。
 
 ```powershell
 # Add the module to the current session

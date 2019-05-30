@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b11064e6b3bd2590d5712afdb7afc69de1ed83f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6869ee5f39f1719a3c71025207ef9ffe740492ff
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889699"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266782"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>透過主要-次要部署使用地理位置流量管理的 DNS 原則
 
@@ -28,7 +28,7 @@ ms.locfileid: "59889699"
 >[!NOTE]
 >如需 AXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF)[要求的註解 5936](https://tools.ietf.org/rfc/rfc5936.txt)。 如需 IXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF)[要求的註解 1995年](https://tools.ietf.org/html/rfc1995)。  
   
-## <a name="bkmk_example"></a>主要-次要地理位置型流量管理範例  
+## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>主要-次要地理位置型流量管理範例  
 以下是如何，您可以在主要-次要部署中使用 DNS 原則以達到根據用戶端，執行 DNS 查詢的實體位置的流量重新導向的範例。  
   
 這個範例會使用兩個虛構公司服務-Contoso 的雲端服務提供 web 與網域託管解決方案，為 Woodgrove 餐飲業，它會提供在多個城市的食物傳遞服務全球各地且具有網站 woodgrove.com。  
@@ -45,14 +45,14 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
   
 ![主要-次要地理位置型流量管理範例](../../media/Dns-Policy_PS1/dns_policy_primarysecondary1.jpg)  
    
-## <a name="bkmk_works"></a>DNS 主要-次要系統的運作方式
+## <a name="how-the-dns-primary-secondary-system-works"></a>DNS 主要-次要系統的運作方式
 
 當您部署在主要-次要 DNS 部署的地理位置流量管理時，務必了解如何正常進行之前了解區域範圍層級傳輸的傳輸的主要-次要區域。 下列各節提供區域和區域範圍層級傳輸的資訊。  
   
-- [在 DNS 主要-次要部署的區域轉送](#bkmk_zone)  
-- [傳輸中的 DNS 主要-次要部署的區域範圍層級](#bkmk_scope)  
+- [在 DNS 主要-次要部署的區域轉送](#zone-transfers-in-a-dns-primary-secondary-deployment)  
+- [傳輸中的 DNS 主要-次要部署的區域範圍層級](#zone-scope-level-transfers-in-a-dns-primary-secondary-deployment)  
   
-### <a name="bkmk_zone"></a>在 DNS 主要-次要部署的區域轉送
+### <a name="zone-transfers-in-a-dns-primary-secondary-deployment"></a>在 DNS 主要-次要部署的區域轉送
 
 您可以建立 DNS 主要-次要部署，並執行下列步驟同步區域。  
 1. 當您安裝 DNS 時，主要 DNS 伺服器上建立主要區域。  
@@ -62,7 +62,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
 5. 需要時，主要伺服器會將通知傳送的次要伺服器有關區域的更新。  
 6. 次要伺服器進行增量區域傳輸要求 (IXFR)。 因為這個緣故，次要伺服器都能保持與主要伺服器同步。   
   
-### <a name="bkmk_scope"></a>傳輸中的 DNS 主要-次要部署的區域範圍層級
+### <a name="zone-scope-level-transfers-in-a-dns-primary-secondary-deployment"></a>傳輸中的 DNS 主要-次要部署的區域範圍層級
 
 流量管理方案需要額外的步驟，來分割至多個不同的區域範圍的區域。 基於這個原因，則需要在區域範圍內將資料傳送到次要伺服器，並將原則和 DNS 用戶端子網路傳輸到次要伺服器進行額外步驟。   
   
@@ -78,7 +78,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
   
 在區域範圍內任何進一步的更新，如 IXFR 通知會傳送至次要伺服器，使用相同的選擇 RR。 收到該通知的區域範圍會包含該選擇的 RR IXFR request 接著相同的程序如上面所述。  
   
-## <a name="bkmk_config"></a>如何設定主要-次要地理位置流量管理的 DNS 原則
+## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>如何設定主要-次要地理位置流量管理的 DNS 原則
 
 開始之前，請確定您已完成的步驟 > 主題中的所有[地理位置與主要伺服器，根據流量管理的使用 DNS 原則](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)，且您的主要 DNS 伺服器已設定區域，區域範圍，DNS 用戶端子網路和 DNS 原則。  
   
@@ -87,11 +87,11 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
   
 若要設定主要-次要地理位置基礎查詢回應的 DNS 原則，您必須執行下列步驟。  
   
-- [建立次要區域](#bkmk_secondary)  
-- [設定在主要區域的區域轉送設定](#bkmk_zonexfer)  
-- [複製 DNS 用戶端的子網路](#bkmk_client)  
-- [次要伺服器上建立的區域範圍](#bkmk_zonescopes)  
-- [設定 DNS 原則](#bkmk_dnspolicy)  
+- [建立次要區域](#create-the-secondary-zones)  
+- [設定在主要區域的區域轉送設定](#configure-the-zone-transfer-settings-on-the-primary-zone)  
+- [複製 DNS 用戶端的子網路](#copy-the-dns-client-subnets)  
+- [次要伺服器上建立的區域範圍](#create-the-zone-scopes-on-the-secondary-server)  
+- [設定 DNS 原則](#configure-dns-policy)  
   
 下列各節提供詳細的設定指示。  
   
@@ -99,7 +99,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
 >下列各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。  
 ><br>中的成員資格**DnsAdmins**，或同等權限，才能執行下列程序。  
   
-### <a name="bkmk_secondary"></a>建立次要區域
+### <a name="create-the-secondary-zones"></a>建立次要區域
 
 您可以建立您想要複寫至 SecondaryServer1 和 SecondaryServer2 區域的次要複本 （假設指令程式正在執行遠端從單一管理用戶端）。   
   
@@ -115,7 +115,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
 
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerSecondaryZone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)。  
   
-### <a name="bkmk_zonexfer"></a>設定在主要區域的區域轉送設定
+### <a name="configure-the-zone-transfer-settings-on-the-primary-zone"></a>設定在主要區域的區域轉送設定
 
 您必須設定主要區域設定以便：
 
@@ -134,7 +134,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
 如需詳細資訊，請參閱 <<c0> [ 組 DnsServerPrimaryZone](https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)。  
   
   
-### <a name="bkmk_client"></a>複製 DNS 用戶端的子網路
+### <a name="copy-the-dns-client-subnets"></a>複製 DNS 用戶端的子網路
 
 您必須將 DNS 用戶端的子網路從主要伺服器複製次要伺服器。
   
@@ -148,7 +148,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
 
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。  
   
-### <a name="bkmk_zonescopes"></a>次要伺服器上建立的區域範圍
+### <a name="create-the-zone-scopes-on-the-secondary-server"></a>次要伺服器上建立的區域範圍
 
 您必須在次要伺服器上建立的區域範圍。 在 DNS 中的區域範圍也會開始從主要伺服器要求 XFRs。 在主要伺服器上的區域範圍上的任何變更，與包含的區域範圍資訊的通知會傳送到次要伺服器。 然後，次要伺服器就可以使用累加式變更中，來更新其區域範圍。  
   
@@ -165,7 +165,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
   
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。  
   
-### <a name="bkmk_dnspolicy"></a>設定 DNS 原則
+### <a name="configure-dns-policy"></a>設定 DNS 原則
 
 建立子網路之後，資料分割 （區域範圍），而且您已新增記錄，您必須建立連接的子網路和資料分割的原則，以便中 DNS 用戶端子網路的其中一個來源的查詢時，會傳回查詢回應正確的範圍內的區域。 沒有任何原則所需的對應預設區域範圍。  
   

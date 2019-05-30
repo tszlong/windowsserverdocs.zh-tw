@@ -9,13 +9,13 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.date: 05/24/2019
-ms.openlocfilehash: c9af38720df79918bed3404995e81a7f93a10744
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.date: 05/29/2019
+ms.openlocfilehash: e76b7862549814d5453717c40cec45e341141d7a
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222890"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308597"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Server Core 應用程式相容性功能隨選安裝 (FOD)
 
@@ -156,7 +156,7 @@ ms.locfileid: "66222890"
 1. Windows Server 和 Server FOD ISO 映像檔案下載至 Windows 電腦上的本機資料夾。
 
    - 如果您有大量授權，您就可以下載的 Windows Server 和 Server FOD ISO 映像檔[Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx)。
-   - Server FOD ISO 映像檔上也會提供[Microsoft 評估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server)或在[Visual Studio 入口網站](https://visualstudio.microsoft.com)訂閱者。
+   - Server FOD ISO 映像檔也會提供有關版本上的長期維護通道[Microsoft 評估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server)或在[Visual Studio 入口網站](https://visualstudio.microsoft.com)訂閱者。
 
 2. 開啟身為系統管理員的 PowerShell 工作階段，然後使用下列命令來掛接為磁碟機的映像檔：
 

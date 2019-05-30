@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4ad399e62e1aa76b76b6109e28845b2615efa0fe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fb940effaae7989dec397e539b64160c87828d5a
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882279"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266710"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>步驟 2 規劃 「 遠端存取 」 部署
 
@@ -31,11 +31,11 @@ ms.locfileid: "59882279"
   
 |工作|描述|  
 |----|--------|  
-|[規劃用戶端部署策略](#bkmk_21client)|決定哪些受管理的電腦會設定為 DirectAccess 用戶端。|  
-|[規劃遠端存取伺服器的部署策略](#bkmk_22server)|規劃如何部署遠端存取伺服器。|  
-|[規劃基礎結構伺服器的組態](#bkmk_23Infservers)|規劃遠端存取部署，包括 DirectAccess 網路位置伺服器、 DNS 伺服器和 DirectAccess 管理伺服器中的基礎結構伺服器。|  
+|[規劃用戶端部署策略](#plan-a-client-deployment-strategy)|決定哪些受管理的電腦會設定為 DirectAccess 用戶端。|  
+|[規劃遠端存取伺服器的部署策略](#plan-a-remote-access-server-deployment-strategy)|規劃如何部署遠端存取伺服器。|  
+|[規劃基礎結構伺服器的組態](#plan-the-infrastructure-servers-configurations)|規劃遠端存取部署，包括 DirectAccess 網路位置伺服器、 DNS 伺服器和 DirectAccess 管理伺服器中的基礎結構伺服器。|  
   
-## <a name="bkmk_21client"></a>規劃用戶端部署策略  
+## <a name="plan-a-client-deployment-strategy"></a>規劃用戶端部署策略  
 規劃用戶端部署時，需要做三個決定：  
   
 1.  將 DirectAccess 可攜帶型電腦，或指定的安全性群組中的每一部電腦嗎？  
@@ -70,7 +70,7 @@ ms.locfileid: "59882279"
   
         用戶端需要一種解析本機名稱。 如果您允許 DirectAccess 用戶端使用本機名稱解析，使用者便可以使用本機 DNS 伺服器來解析名稱。 當使用者選擇使用本機 DNS 伺服器進行名稱解析時，DirectAccess 不會傳送單一標籤名稱解析要求到內部公司 DNS 伺服器。 它改用本機名稱解析 （藉由使用連結-本機多點傳送名稱解析 (LLMNR) 和 NetBios over TCP/IP 通訊協定）。  
   
-## <a name="bkmk_22server"></a>規劃遠端存取伺服器的部署策略  
+## <a name="plan-a-remote-access-server-deployment-strategy"></a>規劃遠端存取伺服器的部署策略  
 您必須先在規劃部署遠端存取伺服器時的決策包括：  
   
 -   **網路拓撲**  
@@ -110,7 +110,7 @@ ms.locfileid: "59882279"
   
     設定遠端存取之前，決定是否您要提供 VPN 存取給遠端用戶端。 您應該提供 VPN 存取，如果您有貴組織中不支援 DirectAccess 連線的用戶端電腦 （比方說，它們未受管理或執行不支援 DirectAccess 的作業系統）。 遠端存取伺服器安裝精靈 可讓您設定 （藉由使用 DHCP 或靜態位址集區），如何指派 IP 位址和 VPN 用戶端驗證 （藉由使用 Active Directory 或 RADIUS 伺服器） 的方式。  
   
-## <a name="bkmk_23Infservers"></a>規劃基礎結構伺服器的組態  
+## <a name="plan-the-infrastructure-servers-configurations"></a>規劃基礎結構伺服器的組態  
 遠端存取 」 需要三種類型的基礎結構伺服器：  
   
 -   **網路位置伺服器**  
@@ -119,9 +119,9 @@ ms.locfileid: "59882279"
   
 -   **管理伺服器** 
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a>另請參閱  
   
--   [步驟 1：規劃遠端存取基礎結構](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
+-   [步驟 1：規劃遠端存取基礎架構](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
   
 
 

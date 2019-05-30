@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1c47986cda3f091033274aa2c59a656ec861a98f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 909be9e4bbcd12b00fd60ff061b1f4e2ede34546
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189709"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308543"
 ---
 # <a name="create-a-claims-provider-trust"></a>建立宣告提供者信任
 
@@ -38,7 +38,7 @@ ms.locfileid: "66189709"
 5.  在 [指定顯示名稱]  頁面上，輸入 [顯示名稱]  ，在 [記事]  底下，輸入此宣告提供者信任的描述，然後按 [下一步]  。  
 ![宣告提供者信任](media/Create-a-Claims-Provider-Trust/addclaim4.PNG)     
 
-6.  在 **設定 URL**頁面上，指定**WS-同盟被動式 URL**的話，按一下 **下一步** 。
+6.  在 **設定 URL**頁面上，指定**WS-同盟被動式 URL**的話，按一下 **下一步**。
 ![宣告提供者信任](media/Create-a-Claims-Provider-Trust/addclaim5.PNG)     
 
 8. 在 [設定識別碼]  頁面的 [宣告提供者信任識別碼]  底下，輸入適當的識別碼，然後按 [下一步]  。  
@@ -57,7 +57,7 @@ ms.locfileid: "66189709"
 若要新增宣告提供者信任，使用 AD FS 管理嵌入式管理單元，自動從夥伴已經發佈到區域網路或網際網路的同盟中繼資料匯入有關夥伴的設定資料來執行下列程序資源夥伴組織中的同盟伺服器。
 
 >[!NOTE]
->雖然長久以來的常見的作法是使用憑證具有不完整的主機名稱，例如 https://myserver，這些憑證沒有安全性價值，並且可以讓攻擊者模擬 Federation Service 會發佈同盟中繼資料。 因此，當查詢同盟中繼資料，您應該只使用完整的網域名稱這類 https://myserver.contoso.com。
+>雖然長久以來的常見的作法是使用憑證搭配非完整的主機名稱，例如 https:\//myserver，這些憑證沒有安全性價值，並且可以讓攻擊者模擬正發佈同盟的同盟服務中繼資料。 因此，當查詢同盟中繼資料，您應該只使用完整的網域名稱這類`https://myserver.contoso.com`。
 
 1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
   
@@ -67,7 +67,7 @@ ms.locfileid: "66189709"
 3.  在 [歡迎使用]  頁面上按一下 [開始]  。 
 ![宣告提供者信任](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)    
   
-4.  在 [選取資料來源]  頁面，按一下 [匯入於線上或區域網路上發行的宣告提供者相關資料]  。 在 同盟中繼資料位址 （主機名稱或 URL），鍵入**同盟中繼資料 URL**或 主機合作夥伴，命名，然後按一下**下一步** 。
+4.  在 [選取資料來源]  頁面，按一下 [匯入於線上或區域網路上發行的宣告提供者相關資料]  。 在 同盟中繼資料位址 （主機名稱或 URL），鍵入**同盟中繼資料 URL**或 主機合作夥伴，命名，然後按一下**下一步**。
 ![宣告提供者信任](media/Create-a-Claims-Provider-Trust/addclaim10.PNG)    
 
 5.  在 [指定顯示名稱] 頁面中輸入**顯示名稱**下方資訊輸入此宣告提供者信任的描述，然後按一下 [**下一步]** 。

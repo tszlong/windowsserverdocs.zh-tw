@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8d23cc1bb5739b47c755d90c927cbcf82b8da7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5e1ee9b7c1ade184cf17b867b7fce10ab8885f0f
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825019"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64771885"
 ---
 # <a name="color"></a>color
 
@@ -44,25 +44,27 @@ color [[<B>]<F>]
 
 ## <a name="remarks"></a>備註
 
--   下表列出有效的十六進位數字，您可以使用的值作為*B*並*F*。  
-    |值|色彩|
-    |-----|-----|
-    |0|黑色|
-    |1|藍色|
-    |2|綠色|
-    |3|青色|
-    |4|紅色|
-    |5|紫色|
-    |6|黃色|
-    |7|白皮書|
-    |8|灰色|
-    |9|淺藍色|
-    |A|淺綠色|
-    |B|淡藍|
-    |C|淡紅色|
-    |D|淺紫|
-    |E|淺黃色|
-    |F|亮白色|
+-   下表列出有效的十六進位數字，您可以使用的值作為*B*並*F*。
+
+|值|色彩|
+|-----|-----|
+|0|黑色|
+|1|藍色|
+|2|綠色|
+|3|青色|
+|4|紅色|
+|5|紫色|
+|6|黃色|
+|7|白皮書|
+|8|灰色|
+|9|淺藍色|
+|A |淺綠色|
+|B|淡藍|
+|C|淡紅色|
+|D|淺紫|
+|E|淺黃色|
+|F|亮白色|
+    
 -   請勿使用空格字元間*B*並*F*。
 -   如果您指定只有一個十六進位數字，對應的色彩做為前景色彩和背景色彩會設為預設色彩。
 -   若要設定預設的命令提示字元視窗色彩，請按一下 命令提示字元 視窗左上角，按一下 **預設值**，按一下**色彩**索引標籤，然後再按您想要用於的色彩**畫面文字**並**畫面背景**。

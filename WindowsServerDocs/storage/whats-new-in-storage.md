@@ -7,19 +7,49 @@ ms.manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 10/22/2019
-ms.openlocfilehash: b8b6b1145e5b921fac64c47cbfb1e7489fa3f41e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 05/29/2019
+ms.openlocfilehash: 5469d663f64fdb453e03863f409b675473d3f6aa
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847239"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308565"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>在 Windows Server 中的儲存體中最新消息
 
 >適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
 
 本主題說明在 Windows Server 2019，Windows Server 2016 中的儲存體中新增和變更功能和 Windows Server 半年通道釋出。
+
+## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1903"></a>在 Windows Server 2019 和 Windows Server 版 1903年的儲存體中最新消息
+
+這一版的 Windows Server 加入了下列變更和技術。
+
+### <a name="storage-migration-service-now-migrates-local-accounts-clusters-and-linux-servers"></a>本機帳戶、 叢集和 Linux 伺服器，現在會將移轉存放裝置移轉服務
+
+儲存體移轉服務可讓您更輕鬆地移轉到新版的 Windows Server 的伺服器。 它提供圖形化工具清查伺服器上的資料，然後將資料和設定傳送至較新的伺服器 — 完全不需要應用程式或使用者不必變更任何項目。
+
+當使用這個版本的 Windows Server 來協調移轉時，我們已新增下列功能：
+
+- 將本機使用者和群組移轉至新的伺服器
+- 從容錯移轉叢集移轉儲存體
+- 使用 Samba 的 Linux 伺服器從移轉存放裝置
+- 使用 Azure 檔案同步來更輕鬆地同步至 Azure 的已移轉的共用
+- 移轉到新的網路，例如 Azure
+
+如需儲存體移轉服務的詳細資訊，請參閱[儲存體移轉服務概觀](storage-migration-service/overview.md)。
+
+### <a name="system-insights-disk-anomaly-detection"></a>系統 Insights 磁碟異常偵測
+
+[系統 Insights](../manage/system-insights/overview.md)是預測性分析功能，在本機上分析 Windows Server 系統資料，並提供深入了解伺服器的正常運作。 它隨附許多內建功能，但我們已新增能夠在安裝額外的功能，透過 Windows Admin Center，從磁碟異常偵測。
+
+磁碟異常偵測是一項新功能會反白顯示時磁碟運作*不同*比平常。 雖然不同不一定是一件壞事，看到這些異常時間可以是在系統上的問題進行疑難排解時很有幫助。
+
+這項功能也適用於執行 Windows Server 2019 的伺服器。
+
+### <a name="windows-admin-center-enhancements"></a>Windows Admin Center 增強功能
+
+新版的 Windows Admin Center 已推出，Windows Server 中加入新的功能。 如需最新的功能資訊，請參閱[Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>在 Windows Server 2019 和 Windows Server 版 1809年的儲存體中最新消息
 
@@ -41,7 +71,7 @@ ms.locfileid: "59847239"
 
 - **重複資料刪除和壓縮 ReFS 磁碟區**
 
-    重複資料刪除和壓縮 ReFS 檔案系統的相同磁碟區上儲存最多 10 倍的更多的資料。 (它有[只需要按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)開啟 Windows Admin Center 使用。)可變大小區塊存放區，以使用選用的壓縮最大化節省率，而多執行緒的後置處理架構，會保留效能影響最小。 支援最多 64 TB 磁碟區和每個檔案最多 1 TB。
+    具有重複資料刪除和壓縮 ReFS 檔案系統的相同磁碟區上儲存最多十倍更多資料。 (它有[只需要按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)開啟 Windows Admin Center 使用。)可變大小區塊存放區，以使用選用的壓縮最大化節省率，而多執行緒的後置處理架構，會保留效能影響最小。 支援的磁碟區最多 64 TB 及將重複資料刪除第一次的 4 TB 的每個檔案。
 
 - **持續性記憶體的原生支援**
 
@@ -268,4 +298,4 @@ ReFS 引入下列改善：
 這些為 Windows Server 2016 的新功能。 
 
 ## <a name="see-also"></a>另請參閱  
-* [什麼是 Windows Server 2016 新功能](../get-started/what-s-new-in-windows-server-2016.md)  
+* [Windows Server 2016 中的新功能](../get-started/what-s-new-in-windows-server-2016.md)  

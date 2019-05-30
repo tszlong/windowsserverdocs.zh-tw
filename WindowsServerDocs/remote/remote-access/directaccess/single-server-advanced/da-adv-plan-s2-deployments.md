@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 83dd3c737c616574750fecf51184996aba5703f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31209b3770fb910c843b6fd39d6e76b8672088a9
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845299"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266760"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>步驟 2 規劃進階 DirectAccess 部署
 
@@ -28,13 +28,13 @@ ms.locfileid: "59845299"
   
 |工作|描述|  
 |----|--------|  
-|[2.1 用戶端部署規劃](#bkmk_21client)|規劃如何讓用戶端電腦使用 DirectAccess 進行連線。 決定哪些受管理的電腦將被設定為 DirectAccess 用戶端，以及計劃在用戶端電腦上部署「網路連線助理」或「DirectAccess 連線助理」。|  
-|[2.2 為 DirectAccess 伺服器部署的的計劃](#bkmk_22server)|規劃如何部署 DirectAccess 伺服器。|  
-|[2.3 規劃基礎結構伺服器](#bkmk_23Infservers)|為您的 DirectAccess 部署規劃基礎結構伺服器，包括 DirectAccess 網路位置伺服器、「網域名稱系統」(DNS) 伺服器，以及 DirectAccess 管理伺服器。|  
-|[2.4 規劃應用程式伺服器](#bkmk_AppServers)|為 IPv4 和 IPv6 應用程式伺服器做規劃，並視需要考量 DirectAccess 用戶端電腦與內部應用程式伺服器之間是否需要端對端驗證。|  
-|[2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端](#bkmk_DAandVPN)|部署 DirectAccess 搭配協力廠商 VPN 用戶端時，可能必須設定登錄值，才能讓兩個遠端存取解決方案緊密並存。|  
+|[2.1 用戶端部署規劃](#21-plan-for-client-deployment)|規劃如何讓用戶端電腦使用 DirectAccess 進行連線。 決定哪些受管理的電腦將被設定為 DirectAccess 用戶端，以及計劃在用戶端電腦上部署「網路連線助理」或「DirectAccess 連線助理」。|  
+|[2.2 為 DirectAccess 伺服器部署的的計劃](#22-plan-for-directaccess-server-deployment)|規劃如何部署 DirectAccess 伺服器。|  
+|[2.3 規劃基礎結構伺服器](#23-plan-infrastructure-servers)|為您的 DirectAccess 部署規劃基礎結構伺服器，包括 DirectAccess 網路位置伺服器、「網域名稱系統」(DNS) 伺服器，以及 DirectAccess 管理伺服器。|  
+|[2.4 規劃應用程式伺服器](#24-plan-application-servers)|為 IPv4 和 IPv6 應用程式伺服器做規劃，並視需要考量 DirectAccess 用戶端電腦與內部應用程式伺服器之間是否需要端對端驗證。|  
+|[2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端](#25-plan-directaccess-and-third-party-vpn-clients)|部署 DirectAccess 搭配協力廠商 VPN 用戶端時，可能必須設定登錄值，才能讓兩個遠端存取解決方案緊密並存。|  
   
-## <a name="bkmk_21client"></a>2.1 用戶端部署規劃  
+## <a name="21-plan-for-client-deployment"></a>2.1 為用戶端部署做規劃  
 規劃用戶端部署時，需要做三個決定：  
   
 1.  DirectAccess 將僅供攜帶型電腦使用，或是可供任何電腦使用？  
@@ -43,7 +43,7 @@ ms.locfileid: "59845299"
   
 2.  哪些安全性群組將包含 DirectAccess 用戶端電腦？  
   
-    DirectAccess 用戶端設定包含在 DirectAccess 用戶端 GPO 中。 這個 GPO 會套用到屬於您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的電腦。 您可以指定將安全性群組包含在任何支援的網域中。 如需詳細資訊，請參閱下一節[1.7 規劃 Active Directory 網域服務](da-adv-plan-s1-infrastructure.md#bkmk_16AD)。  
+    DirectAccess 用戶端設定包含在 DirectAccess 用戶端 GPO 中。 這個 GPO 會套用到屬於您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的電腦。 您可以指定將安全性群組包含在任何支援的網域中。 如需詳細資訊，請參閱下一節[1.7 規劃 Active Directory 網域服務](da-adv-plan-s1-infrastructure.md#17-plan-active-directory-domain-services)。  
   
     設定 DirectAccess 之前，您應該先建立安全性群組。 您可以在完成 DirectAccess 部署之後將電腦新增到安全性群組，但是如果您新增的用戶端電腦位於與安全性群組不同的網域，用戶端 GPO 將不會套用到這些用戶端。 例如，如果您在網域 A 中為 DirectAccess 用戶端建立 SG1，並稍後從網域 B 將用戶端新增到這個群組，則用戶端 GPO 將不會套用到來自網域 B 的用戶端。為了避免這個問題，請為每個包含 DirectAccess 用戶端電腦的網域建立一個新的用戶端安全性群組。 或者，如果您不想要建立新的安全性群組，請使用新網域的新 GPO 名稱來執行 Windows PowerShell Cmdlet **Add-DAClient**。  
   
@@ -71,7 +71,7 @@ ms.locfileid: "59845299"
   
         用戶端需要一個在本機解析名稱的方式。 如果您允許 DirectAccess 用戶端使用本機名稱解析，使用者便可以使用本機 DNS 伺服器來解析名稱。 當使用者選擇使用本機 DNS 伺服器來進行名稱解析時，DirectAccess 就不會傳送單一標籤名稱的解析要求給公司內部 DNS 伺服器。 它會改用本機名稱解析 (藉由使用「連結-本機多點傳送名稱解析」(LLMNR) 和 NetBIOS over TCP/IP 通訊協定)。  
   
-## <a name="bkmk_22server"></a>2.2 為 DirectAccess 伺服器部署的的計劃  
+## <a name="22-plan-for-directaccess-server-deployment"></a>2.2 為 DirectAccess 伺服器部署做規劃  
 當您計劃部署 DirectAccess 伺服器時，請考量下列決定：  
   
 -   **網路拓撲**  
@@ -82,7 +82,7 @@ ms.locfileid: "59845299"
   
     -   **一張網路介面卡**。 在此設定中，DirectAccess 伺服器會安裝在邊緣裝置 (例如防火牆或路由器) 後面。 網路介面卡會連線到內部網路。  
   
-    如需有關如何為您的部署選取拓撲的詳細資訊，請參閱 < [1.1 規劃網路拓樸和設定](da-adv-plan-s1-infrastructure.md#bkmk_11Networksvrtopsettings)。  
+    如需有關如何為您的部署選取拓撲的詳細資訊，請參閱 < [1.1 規劃網路拓樸和設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)。  
   
 -   **ConnectTo 位址**  
   
@@ -98,7 +98,7 @@ ms.locfileid: "59845299"
   
 -   **IPv6 首碼**  
   
-    如果「遠端存取伺服器安裝精靈」偵測到網路介面卡上已部署 IPv6，它就會自動填入內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。 如果自動產生的首碼對您的原生 IPv6 基礎結構來說不正確，您就必須手動變更它們。 如需詳細資訊，請參閱 < [1.1 規劃網路拓樸和設定](da-adv-plan-s1-infrastructure.md#bkmk_11Networksvrtopsettings)。  
+    如果「遠端存取伺服器安裝精靈」偵測到網路介面卡上已部署 IPv6，它就會自動填入內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。 如果自動產生的首碼對您的原生 IPv6 基礎結構來說不正確，您就必須手動變更它們。 如需詳細資訊，請參閱 < [1.1 規劃網路拓樸和設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)。  
   
 -   **驗證**  
   
@@ -106,7 +106,7 @@ ms.locfileid: "59845299"
   
     -   **使用者驗證**。 您可以讓使用者使用 Active Directory 認證或雙因素驗證來進行驗證。 如需有關使用雙因素驗證進行驗證的詳細資訊，請參閱 <<c0> [ 使用 OTP 驗證部署遠端存取](https://technet.microsoft.com/library/hh831379.aspx)。  
   
-    -   **電腦驗證**。 您可以設定讓電腦驗證使用憑證，或使用 DirectAccess 伺服器做為  Kerberos Proxy 來代表用戶端。 如需詳細資訊，請參閱 < [1.3 規劃憑證需求](da-adv-plan-s1-infrastructure.md#bkmk_12CAsandCerts)。  
+    -   **電腦驗證**。 您可以設定讓電腦驗證使用憑證，或使用 DirectAccess 伺服器做為  Kerberos Proxy 來代表用戶端。 如需詳細資訊，請參閱 < [1.3 規劃憑證需求](da-adv-plan-s1-infrastructure.md#13-plan-certificate-requirements)。  
   
     -   **Windows 7 用戶端**。 根據預設，執行 Windows 7 的用戶端電腦無法連線到 Windows Server 2012 R2 或 Windows Server 2012 DirectAccess 部署。 如果您有貴組織中執行 Windows 7 的用戶端，而且它們需要遠端存取內部資源，您可以允許它們連線。 任何您想要允許存取內部資源的用戶端電腦都必須是您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的成員。  
   
@@ -117,16 +117,16 @@ ms.locfileid: "59845299"
   
     設定 DirectAccess 之前，請先決定您是否要提供 VPN 存取給不支援 DirectAccess 的遠端用戶端。 如果您的組織中有不支援 DirectAccess 連線的用戶端電腦 (因為它們未受管理，或是執行不支援 DirectAccess 的作業系統) ，您就應該提供 VPN 存取。 「遠端存取伺服器安裝精靈」可讓您設定 IP 位址的指派方式 (藉由使用 DHCP 或從靜態位址集區)，以及 VPN 用戶端的驗證方式 (藉由使用 Active Directory 或「遠端驗證撥號服務」(RADIUS) 伺服器)。  
   
-## <a name="bkmk_23Infservers"></a>2.3 規劃基礎結構伺服器  
+## <a name="23-plan-infrastructure-servers"></a>2.3 規劃基礎結構伺服器  
 DirectAccess 需要三種類型的基礎結構伺服器：  
   
--   **DNS 伺服器**。 如需詳細資訊，請參閱 [1.4 規劃 DNS 需求](da-adv-plan-s1-infrastructure.md#bkmk_14Dns)  
+-   **DNS 伺服器**。 如需詳細資訊，請參閱 [1.4 規劃 DNS 需求](da-adv-plan-s1-infrastructure.md#14-plan-dns-requirements)  
   
--   **網路位置伺服器**。 如需詳細資訊，請參閱 [1.5 規劃網路位置伺服器](da-adv-plan-s1-infrastructure.md#bkmk_14NLS)  
+-   **網路位置伺服器**。 如需詳細資訊，請參閱 [1.5 規劃網路位置伺服器](da-adv-plan-s1-infrastructure.md#15-plan-the-network-location-server)  
   
--   **管理伺服器**。 如需詳細資訊，請參閱 [1.6 規劃管理伺服器](da-adv-plan-s1-infrastructure.md#bkmk_15mgmtservers)  
+-   **管理伺服器**。 如需詳細資訊，請參閱 [1.6 規劃管理伺服器](da-adv-plan-s1-infrastructure.md#16-plan-management-servers)  
   
-## <a name="bkmk_AppServers"></a>2.4 規劃應用程式伺服器  
+## <a name="24-plan-application-servers"></a>2.4 規劃應用程式伺服器  
 應用程式伺服器是用戶端電腦可透過 DirectAccess 連線存取的公司網路上伺服器。 識別應用程式伺服器的方式是將它們新增到安全性群組中。 接著，應用程式伺服器 GPO 就會套用到該群組。  
   
 > [!NOTE]  
@@ -136,7 +136,7 @@ DirectAccess 需要三種類型的基礎結構伺服器：
   
 根據預設，當您將驗證延伸到應用程式伺服器時，DirectAccess 用戶端與應用程式伺服器之間的資料裝載會受到加密。 您可以選擇不將流量加密，而只使用驗證。 不過，這是安全性方面不如使用驗證和加密，而且它支援僅針對執行 Windows Server 2008 R2 或 Windows Server 2012 作業系統的應用程式伺服器。  
   
-## <a name="bkmk_DAandVPN"></a>2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端  
+## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端  
 有些協力廠商 VPN 用戶端不會在 [網路連線] 資料夾中建立連線。 這可能導致在已建立 VPN 連線且有內部網路連線能力時，DirectAccess 將它判斷為沒有內部網路連線能力。 當協力廠商 VPN 用戶端藉由將其介面定義為「網路裝置介面規格」(NDIS) 端點類型來登錄這些介面時，就會發生這種情況。 您可以藉由在 DirectAccess 用戶端上將下列登錄值設定為 1，讓這些類型的 VPN 用戶端並存：  
   
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
@@ -149,7 +149,7 @@ DirectAccess 需要三種類型的基礎結構伺服器：
   
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
   
-## <a name="BKMK_Links"></a>上一個步驟  
+## <a name="previous-step"></a>上一步  
   
 -   [步驟 1：規劃 DirectAccess 基礎結構](da-adv-plan-s1-infrastructure.md)  
   

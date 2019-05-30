@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7f008dbdb49692e4901ebd03310710b2fbf4bd71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8fa5886d31ea9e8969b02551b49ae744415fca80
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844419"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266732"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步驟 1 規劃遠端存取基礎結構
 
@@ -30,16 +30,16 @@ ms.locfileid: "59844419"
   
 |工作|描述|  
 |----|--------|  
-|[規劃網路拓樸和伺服器設定](#BKMK_Network)|決定在何處放置遠端存取伺服器 （在邊緣或在網路位址轉譯 (NAT) 裝置或防火牆後面），並規劃 IP 位址和路由。|  
-|[規劃防火牆需求](#BKMK_Firewall)|規劃透過邊緣防火牆允許遠端存取。|  
-|[規劃憑證需求](#bkmk_12CAsandcerts)|如果您將會使用 Kerberos 通訊協定或憑證進行用戶端驗證，並規劃您的網站憑證決定。<br /><br />IP-HTTPS 是 DirectAccess 用戶端透過 IPv4 網路建立 IPv6 流量通道時所使用的轉換通訊協定。 決定是否要使用發行的憑證授權單位 (CA)，或使用遠端存取伺服器自動發出自我簽署的憑證的憑證，進行 IP-HTTPS 驗證伺服器。|  
-|[規劃 DNS 需求](#BKMK_DNS)|規劃遠端存取伺服器、 基礎結構伺服器、 本機名稱解析選項和用戶端連線的網域名稱系統 (DNS) 設定。| 
-|[規劃網路位置伺服器設定](#BKMK_Location)|決定如何將網路位置伺服器網站放在您的組織 （在遠端存取伺服器或替代伺服器），以及規劃憑證需求，如果網路位置伺服器將會位於遠端存取伺服器。 **注意：** DirectAccess 用戶端會使用網路位置伺服器來判斷它們是否位於內部網路。|  
-|[規劃管理伺服器的組態](#BKMK_Management)|計劃遠端管理用戶端時，會用到的管理伺服器 (例如更新伺服器)。 **注意：** 系統管理員可以使用網際網路，從遠端管理位於公司網路外部的 DirectAccess 用戶端電腦。|  
-|[規劃 Active Directory 需求](#BKMK_ActiveDirectory)|規劃您的網域控制站、 Active Directory 需求、 用戶端驗證和多個網域結構。|  
-|[規劃群組原則物件建立](#BKMK_GPOs)|決定 Gpo 為何需要在您的組織，以及如何建立和編輯 Gpo。|  
+|[規劃網路拓樸和伺服器設定](#plan-network-topology-and-settings)|決定在何處放置遠端存取伺服器 （在邊緣或在網路位址轉譯 (NAT) 裝置或防火牆後面），並規劃 IP 位址和路由。|  
+|[規劃防火牆需求](#plan-firewall-requirements)|規劃透過邊緣防火牆允許遠端存取。|  
+|[規劃憑證需求](#plan-certificate-requirements)|如果您將會使用 Kerberos 通訊協定或憑證進行用戶端驗證，並規劃您的網站憑證決定。<br /><br />IP-HTTPS 是 DirectAccess 用戶端透過 IPv4 網路建立 IPv6 流量通道時所使用的轉換通訊協定。 決定是否要使用發行的憑證授權單位 (CA)，或使用遠端存取伺服器自動發出自我簽署的憑證的憑證，進行 IP-HTTPS 驗證伺服器。|  
+|[規劃 DNS 需求](#plan-dns-requirements)|規劃遠端存取伺服器、 基礎結構伺服器、 本機名稱解析選項和用戶端連線的網域名稱系統 (DNS) 設定。| 
+|[規劃網路位置伺服器設定](#plan-the-network-location-server-configuration)|決定如何將網路位置伺服器網站放在您的組織 （在遠端存取伺服器或替代伺服器），以及規劃憑證需求，如果網路位置伺服器將會位於遠端存取伺服器。 **注意：** DirectAccess 用戶端會使用網路位置伺服器來判斷它們是否位於內部網路。|  
+|[規劃管理伺服器的組態](#plan-management-servers-configuration)|計劃遠端管理用戶端時，會用到的管理伺服器 (例如更新伺服器)。 **注意：** 系統管理員可以使用網際網路，從遠端管理位於公司網路外部的 DirectAccess 用戶端電腦。|  
+|[規劃 Active Directory 需求](#plan-active-directory-requirements)|規劃您的網域控制站、 Active Directory 需求、 用戶端驗證和多個網域結構。|  
+|[規劃群組原則物件建立](#plan-group-policy-object-creation)|決定 Gpo 為何需要在您的組織，以及如何建立和編輯 Gpo。|  
   
-## <a name="BKMK_Network"></a>規劃網路拓樸和設定  
+## <a name="plan-network-topology-and-settings"></a>規劃網路拓撲與設定  
 當您規劃您的網路時，您需要考量網路介面卡拓撲，設定 IP 位址和 ISATAP 的需求。  
   
 ### <a name="plan-network-adapters-and-ip-addressing"></a>規劃網路介面卡和 IP 位址  
@@ -86,7 +86,7 @@ ISATAP，才能進行遠端管理 DirectAccessclients，DirectAccess 管理伺�
 > [!IMPORTANT]  
 > 確定，您不需要公用 IP 位址在 DirectAccess 伺服器的內部介面上。 如果您有內部介面上的公用 IP 位址，透過 ISATAP 的連線可能會失敗。  
   
-### <a name="BKMK_Firewall"></a>規劃防火牆需求  
+### <a name="plan-firewall-requirements"></a>規劃防火牆需求  
 如果遠端存取伺服器位於邊緣防火牆後面，當遠端存取伺服器位於 IPv4 網際網路時，遠端存取流量就會需要下列例外狀況：  
   
 -   為 ip-https:傳輸控制通訊協定 (TCP) 目的地連接埠 443 和 TCP 來源連接埠 443 輸出。  
@@ -121,7 +121,7 @@ ISATAP，才能進行遠端管理 DirectAccessclients，DirectAccess 管理伺�
   
 -   針對 Teredo:適用於所有 IPv4/IPv6 流量的 ICMP  
   
-### <a name="bkmk_12CAsandcerts"></a>規劃憑證需求  
+### <a name="plan-certificate-requirements"></a>規劃憑證需求  
 有三種情況需要憑證，當您部署單一遠端存取伺服器。  
   
 -   **IPsec 驗證**:IPsec 的憑證需求包括電腦憑證，當他們建立 IPsec 連線與遠端存取伺服器，供 DirectAccess 用戶端電腦和遠端存取伺服器用來建立電腦憑證與 DirectAccess 用戶端的 IPsec 連線。  
@@ -160,7 +160,7 @@ ISATAP，才能進行遠端管理 DirectAccessclients，DirectAccess 管理伺�
   
 -   針對**增強金鑰使用方法**欄位中，使用伺服器驗證物件識別碼 (OID)。  
   
--   在 [CRL 發佈點] 欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
+-   在 [CRL 發佈點]  欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
   
     > [!NOTE]  
     > 這只是需要執行 Windows 7 的用戶端。  
@@ -174,7 +174,7 @@ ISATAP，才能進行遠端管理 DirectAccessclients，DirectAccess 管理伺�
 #### <a name="plan-website-certificates-for-the-network-location-server"></a>規劃網路位置伺服器的網站憑證  
 當您規劃網路位置伺服器網站時，請考慮下列：  
   
--   在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
+-   在 [主體]  欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
   
 -   針對**增強金鑰使用方法**欄位中，使用伺服器驗證 OID。  
   
@@ -183,7 +183,7 @@ ISATAP，才能進行遠端管理 DirectAccessclients，DirectAccess 管理伺�
 > [!NOTE]  
 > 請確定 IP-HTTPS 和網路位置伺服器憑證有主體名稱。 如果憑證使用的替代名稱，它不會接受由遠端存取精靈。  
   
-#### <a name="BKMK_DNS"></a>規劃 DNS 需求  
+#### <a name="plan-dns-requirements"></a>規劃 DNS 需求  
 本章節將說明用戶端的 DNS 需求及遠端存取部署中的伺服器。  
   
 ##### <a name="directaccess-client-requests"></a>DirectAccess 用戶端要求  
@@ -227,7 +227,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 您可以使用其他網址，透過 HTTP 或 PING，以建立其他連線能力檢查器。 每個連線能力檢查器都必須有一個 DNS 項目。  
   
-##### <a name="BKMK_DNSServer"></a>DNS 伺服器需求  
+##### <a name="dns-server-requirements"></a>DNS 伺服器需求  
   
 -   為 DirectAccess 用戶端，您必須使用執行 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008、 Windows Server 2003、 或任何支援 IPv6 的 DNS 伺服器的 DNS 伺服器。  
   
@@ -235,7 +235,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 -   CRL 發佈點的 FQDN 必須是可解析使用網際網路 DNS 伺服器。 例如，如果 URL https://crl.contoso.com/crld/corp-DC1-CA.crl處於**CRL 發佈點**欄位的 IP-HTTPS 憑證的遠端存取伺服器，您必須確定，解析 FQDN crld.contoso.com 使用網際網路 DNS 伺服器。  
   
-#### <a name="BKMK_NameResolution"></a>本機名稱解析的的計劃  
+#### <a name="plan-for-local-name-resolution"></a>本機名稱解析的的計劃  
 當您打算為本機名稱解析時，請考慮下列：  
   
 ##### <a name="nrpt"></a>NRPT  
@@ -285,7 +285,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 -   **使用本機名稱解析為任何種類的 （最不安全） 的 DNS 解析錯誤**:這是最不安全的選項，因為可能透過本機名稱解析將內部網路伺服器的名稱洩露到本機子網路。  
   
-#### <a name="BKMK_Location"></a>規劃網路位置伺服器設定  
+#### <a name="plan-the-network-location-server-configuration"></a>規劃網路位置伺服器設定  
 網路位置伺服器是一個用來偵測 DirectAccess 用戶端是否位於公司網路中的網站。 公司網路中的用戶端不會使用 DirectAccess 來連線到內部資源;但是請改為直接連接。  
   
 遠端存取伺服器上或您組織中的另一部伺服器可以裝載網路位置伺服器網站。 如果您裝載網路位置伺服器遠端存取伺服器上的，網站會在您部署遠端存取時自動建立。 如果您裝載在執行 Windows 作業系統的另一部伺服器上的網路位置伺服器，您必須確定 Internet Information Services (IIS) 已安裝在該伺服器上，並已建立網站。 遠端存取不會設定網路位置伺服器上的設定。  
@@ -309,7 +309,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
 ##### <a name="plan-certificates-for-the-network-location-server"></a>規劃網路位置伺服器憑證  
 當您取得要用於網路位置伺服器網站憑證時，請考慮下列各項：  
   
--   在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
+-   在 [主體]  欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
   
 -   針對**增強金鑰使用方法**欄位中，使用伺服器驗證 OID。  
   
@@ -318,7 +318,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
 ##### <a name="plan-dns-for-the-network-location-server"></a>規劃網路位置伺服器的 DNS  
 DirectAccess 用戶端會嘗試連線到網路位置伺服器，以判斷它們是否位於內部網路上。 內部網路上的用戶端必須能夠解析網路位置伺服器的名稱，但是當它們位於網際網路上時，則必須防止它們解析該伺服器的名稱。 為了確保這種情況，預設會將網路位置伺服器的 FQDN 新增到 NRPT 中做為豁免規則。  
   
-### <a name="BKMK_Management"></a>規劃管理伺服器的設定  
+### <a name="plan-management-servers-configuration"></a>規劃管理伺服器的設定  
 DirectAccess 用戶端會起始與提供服務，例如 Windows Update 和防毒更新的管理伺服器通訊。 DirectAccess 用戶端也會使用 Kerberos 通訊協定向網域控制站，然後才存取內部網路。 在進行 DirectAccess 用戶端遠端管理時，管理伺服器會與用戶端電腦進行通訊來執行管理功能 (例如軟體或硬體清查評定)。 「遠端存取」可以自動探索某些管理伺服器，包括：  
   
 -   網域控制站：自動探索的網域控制站被執行的網域來包含用戶端電腦和遠端存取伺服器相同的樹系中的所有網域。  
@@ -333,7 +333,7 @@ DirectAccess 用戶端會起始與提供服務，例如 Windows Update 和防毒
   
 -   起始 DirectAccess 用戶端連線的管理伺服器必須完全支援 IPv6，，透過原生的 IPv6 位址，或使用 ISATAP 所指派的位址。  
   
-### <a name="BKMK_ActiveDirectory"></a>規劃 Active Directory 需求  
+### <a name="plan-active-directory-requirements"></a>規劃 Active Directory 需求  
 遠端存取會使用 Active Directory，如下所示：  
   
 -   **驗證**:基礎結構通道會使用 NTLMv2 驗證進行連接到遠端存取伺服器的電腦帳戶，帳戶必須是 Active Directory 網域中。 內部網路通道會使用使用者的 Kerberos 驗證，來建立內部網路通道。  
@@ -380,7 +380,7 @@ Windows Server 2012 中的遠端存取，您可以選擇使用內建的 Kerberos
   
 可能的話，一般的網域名稱尾碼應該被新增到 NRPT 遠端存取部署期間。 例如，如果您有 domain1.corp.contoso.com 和 domain2.corp.contoso.com 這兩個網域，您可以不用將兩個項目新增到 NRPT 中，而是新增一個通用的 DNS 尾碼項目 (其中網域名稱尾碼為 corp.contoso.com)。 這會自動在相同的根網域。 必須以手動方式新增不在相同的根目錄中的網域。  
   
-### <a name="BKMK_GPOs"></a>規劃群組原則物件建立  
+### <a name="plan-group-policy-object-creation"></a>規劃群組原則物件建立  
 當您設定遠端存取時，DirectAccess 設定會收集到群組原則物件 (Gpo)。 兩個 Gpo 會填入 DirectAccess 設定，並將其散發，如下所示：  
   
 -   **DirectAccess 用戶端 GPO**:這個 GPO 包含用戶端設定，包括 IPv6 轉換技術設定、 NRPT 項目和連線安全性規則具有進階安全性的 Windows 防火牆。 這個 GPO 會套用到為用戶端電腦指定的安全性群組。  
@@ -453,7 +453,7 @@ Windows Server 2012 中的遠端存取，您可以選擇使用內建的 Kerberos
   
 2.  開啟**遠端存取管理**。  
   
-3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成之後，伺服器將會還原為未設定的狀態，以及您可以重新進行設定。  
+3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]  。 完成之後，伺服器將會還原為未設定的狀態，以及您可以重新進行設定。  
   
 
 

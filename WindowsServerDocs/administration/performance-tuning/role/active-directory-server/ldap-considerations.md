@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9032988c65581ea602451d224f40719b932ab7f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 79f95c88c49d384f8a13b8808c63a0dc00de53cb
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821689"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266625"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>您可以在 ADDS 效能微調的 LDAP 考量
 
@@ -49,7 +49,7 @@ ms.locfileid: "59821689"
 
     -   **NTDS\\要求延遲**– 這是受限於多久要求所需程序。 Active Directory 逾時要求之後 120 秒 （預設值），不過，大部分應該執行速度更快並極長時間執行的查詢應該取得隱藏在整體的數字。 尋找此基準，而不是絕對臨界值的變更。
 
-        **附註**  高的值也可以是指標的延遲，在 「 proxy 處理嗎？ 其他的網域和 CRL 檢查的要求。
+        > [!Note]   這裡最高值也可以要求其他的網域和 CRL 檢查的"proxy"延遲的指標。
 
 
     -   **NTDS\\估計佇列延遲**– 這在理想情況下應該接近 0，以獲得最佳效能，這表示要求花費沒有正在等待的時間。
@@ -64,7 +64,7 @@ ms.locfileid: "59821689"
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Active Directory Advisor 套件
 
--   搜尋使用以外的任何篩選條件 」 (objectClass =\*)？ 使用上階的索引。
+-   搜尋使用以外的任何篩選條件 」 (objectClass =\*) 」，使用祖系的索引。
 
 ### <a name="other-index-considerations"></a>其他索引考量
 
@@ -102,6 +102,6 @@ ms.locfileid: "59821689"
 ## <a name="see-also"></a>另請參閱
 - [效能微調 Active Directory 伺服器](index.md)
 - [硬體考量](hardware-considerations.md)
-- [獲得正確位置的網域控制站和站台考量](site-definition-considerations.md)
-- [ADDS 效能疑難排解](troubleshoot.md) 
-- [Active Directory 網域服務的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)
+- [適當地放置網域控制站與站台考量](site-definition-considerations.md)
+- [針對 ADDS 效能問題進行疑難排解](troubleshoot.md) 
+- [Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)

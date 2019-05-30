@@ -136,13 +136,7 @@
 #### [移除伺服器](storage-spaces/remove-servers.md)
 #### [更新磁碟機韌體](update-firmware.md)
 #### [延伸磁碟區](storage-spaces/resize-volumes.md)
-### 疑難排解
-#### [疑難排解案例](storage-spaces/troubleshooting-storage-spaces.md)
-#### [健康情況與操作狀態](storage-spaces/storage-spaces-states.md)
-#### [收集資料](storage-spaces/data-collection.md)
-#### [常見問題集](storage-spaces/storage-spaces-direct-faq.md)
-### Insider Preview
-#### [叢集集合](storage-spaces/cluster-sets.md)
+#### [刪除磁碟區](storage-spaces/delete-volumes.md)
 #### [效能歷程記錄](storage-spaces/performance-history.md)
 ##### [磁碟機](storage-spaces/performance-history-for-drives.md)
 ##### [網路介面卡](storage-spaces/performance-history-for-network-adapters.md)
@@ -153,6 +147,12 @@
 ##### [叢集](storage-spaces/performance-history-for-clusters.md)
 ##### [指令碼範例](storage-spaces/performance-history-scripting.md)
 #### [限定磁碟區配置](storage-spaces/delimit-volume-allocation.md)
+#### [使用 Azure 監視器進行監視](storage-spaces/configure-azure-monitor.md)
+### 疑難排解
+#### [疑難排解案例](storage-spaces/troubleshooting-storage-spaces.md)
+#### [健康情況與操作狀態](storage-spaces/storage-spaces-states.md)
+#### [收集資料](storage-spaces/data-collection.md)
+#### [常見問題集](storage-spaces/storage-spaces-direct-faq.md)
 ## [工作資料夾](work-folders/work-folders-overview.md)
 ### [設計工作資料夾實作](work-folders/plan-work-folders.md)
 ### [部署工作資料夾](work-folders/deploy-work-folders.md)

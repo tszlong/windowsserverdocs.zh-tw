@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 4b9deb4fc7fbfccf569250e965274009764054f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a98e1a876c972b0f146ff37aff0a77399b684e99
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849329"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308554"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin 範例
 
@@ -28,7 +28,7 @@ ms.locfileid: "59849329"
 
 **/Transfer**參數是執行下列工作的捷徑。 此參數會建立作業、 將檔案加入工作、 在傳輸佇列中，作業就會啟動和完成的工作。 BITSAdmin 會繼續在 MS-DOS 視窗中顯示進度資訊，直到傳送完成或發生錯誤。
 
-**bitsadmin /transfer myDownloadJob /download /priority 正常 https://downloadsrv/10mb.zipc:\\10mb.zip**
+**bitsadmin /transfer myDownloadJob /download /priority 正常 `https://downloadsrv/10mb.zip c:\\10mb.zip`**
 
 ## <a name="create-a-download-job"></a>建立下載工作
 

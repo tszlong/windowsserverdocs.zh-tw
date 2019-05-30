@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: grcusanz; AnPaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: dfb8d997c6e04381e5be0ba2c3a7ca27a851df50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0e173039c45faa100a434b69a9faa736ff7c9b53
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891319"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034130"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>效能微調軟體定義網路
 
@@ -30,7 +30,7 @@ Windows Server 2016 中的軟體定義網路 (SDN) 是由網路控制卡、Hyper
 
 ## <a name="hyper-v-host-networking"></a>Hyper-V 主機網路功能
 
-使用 SDN 時，適用 [Hyper-V 伺服器的效能微調](../../role/remote-desktop/session-hosts.md)指南的 [Hyper-V 網路 I/O 效能](#netio)一節中提供的指導方針，不過這一節涵蓋要確保使用 SDN 時達到最佳效能所必須遵循的其他指導方針。
+使用 SDN 時，適用「[Hyper-V 伺服器的效能微調](../../role/remote-desktop/session-hosts.md)」指南中 Hyper-V 網路 I/O 效能一節提供的指導方針，不過這一節涵蓋要確保使用 SDN 時達到最佳效能所必須遵循的其他指導方針。
 
 ### <a name="physical-network-adapter-nic-teaming"></a>實體網路介面卡 (NIC) 小組
 

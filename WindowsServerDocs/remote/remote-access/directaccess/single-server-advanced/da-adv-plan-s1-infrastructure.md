@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: cd94c1a05ba52a590d6f84122f81764f52b1ae47
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01005b5d69a48b01a1735e690a4a97c46094da23
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880959"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266778"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步驟 1 規劃進階 DirectAccess 基礎結構
 
@@ -26,27 +26,27 @@ ms.locfileid: "59880959"
 
 為單一伺服器上的進階 DirectAccess 部署做規劃的第一步，就是規劃部署所需的基礎結構。 本主題描述基礎結構規劃步驟。 這些規劃工作不需要依特定的順序完成。  
   
-|工作|描述|  
+|工作|描述| 
 |----|--------|  
-|[1.1 規劃網路拓撲與設定](#bkmk_11Networksvrtopsettings)|決定 DirectAccess 伺服器的放置位置 (在邊緣，或在「網路位址轉譯」(NAT) 裝置或防火牆後面)，並規劃 IP 位址指定、路由及強制通道。|  
-|[1.2 規劃防火牆需求](#bkmk_ConfigFirewalls)|為允許 DirectAccess 流量通過邊緣防火牆做規劃。|  
-|[1.3 規劃憑證需求](#bkmk_12CAsandCerts)|決定是否要使用 Kerberos 或憑證進行用戶端驗證，以及規劃您的網站憑證。 IP-HTTPS 是 DirectAccess 用戶端透過 IPv4 網路建立 IPv6 流量通道時所使用的轉換通訊協定。 決定是要使用憑證授權單位 (CA) 簽發的憑證，還是使用 DirectAccess 伺服器自動簽發的自我簽署憑證，向 IP-HTTPS 伺服器進行驗證。|  
-|[1.4 規劃 DNS 需求](#bkmk_14Dns)|規劃 DirectAccess 伺服器、基礎結構伺服器、本機名稱解析選項及用戶端連線的「網域名稱系統」(DNS) 設定。|  
-|[1.5 規劃網路位置伺服器](#bkmk_14NLS)|DirectAccess 用戶端會使用網路位置伺服器來判斷它們是否位於內部網路。 決定要將網路位置伺服器網站放在您組織中的哪個位置 (DirectAccess 伺服器上或替代伺服器上)，如果網路位置伺服器位於 DirectAccess 伺服器上，則規劃憑證需求。|  
-|[1.6 規劃管理伺服器](#bkmk_15mgmtservers)|您可以從遠端管理位於公司網路外部網際網路上的 DirectAccess 用戶端電腦。 計劃遠端管理用戶端時，會用到的管理伺服器 (例如更新伺服器)。|  
-|[1.7 規劃 Active Directory 網域服務](#bkmk_16AD)|為您的網域控制站、Active Directory 需求、用戶端驗證及多個網域做規劃。|  
-|[1.8 規劃群組原則物件](#bkmk_17GPOs)|決定您組織中所需的 GPO，以及如何建立或編輯 GPO。|  
+|[1.1 規劃網路拓撲與設定](#11-plan-network-topology-and-settings)|決定 DirectAccess 伺服器的放置位置 (在邊緣，或在「網路位址轉譯」(NAT) 裝置或防火牆後面)，並規劃 IP 位址指定、路由及強制通道。|  
+|[1.2 規劃防火牆需求](#12-plan-firewall-requirements)|為允許 DirectAccess 流量通過邊緣防火牆做規劃。|  
+|[1.3 規劃憑證需求](#13-plan-certificate-requirements)|決定是否要使用 Kerberos 或憑證進行用戶端驗證，以及規劃您的網站憑證。 IP-HTTPS 是 DirectAccess 用戶端透過 IPv4 網路建立 IPv6 流量通道時所使用的轉換通訊協定。 決定是要使用憑證授權單位 (CA) 簽發的憑證，還是使用 DirectAccess 伺服器自動簽發的自我簽署憑證，向 IP-HTTPS 伺服器進行驗證。|  
+|[1.4 規劃 DNS 需求](#14-plan-dns-requirements)|規劃 DirectAccess 伺服器、基礎結構伺服器、本機名稱解析選項及用戶端連線的「網域名稱系統」(DNS) 設定。|  
+|[1.5 規劃網路位置伺服器](#15-plan-the-network-location-server)|DirectAccess 用戶端會使用網路位置伺服器來判斷它們是否位於內部網路。 決定要將網路位置伺服器網站放在您組織中的哪個位置 (DirectAccess 伺服器上或替代伺服器上)，如果網路位置伺服器位於 DirectAccess 伺服器上，則規劃憑證需求。|  
+|[1.6 規劃管理伺服器](#16-plan-management-servers)|您可以從遠端管理位於公司網路外部網際網路上的 DirectAccess 用戶端電腦。 計劃遠端管理用戶端時，會用到的管理伺服器 (例如更新伺服器)。|  
+|[1.7 規劃 Active Directory 網域服務](#17-plan-active-directory-domain-services)|為您的網域控制站、Active Directory 需求、用戶端驗證及多個網域做規劃。|  
+|[1.8 規劃群組原則物件](#18-plan-group-policy-objects)|決定您組織中所需的 GPO，以及如何建立或編輯 GPO。|  
   
-## <a name="bkmk_11Networksvrtopsettings"></a>1.1 規劃網路拓撲與設定  
+## <a name="11-plan-network-topology-and-settings"></a>1.1 規劃網路拓撲和設定  
 本節說明如何為您的網路做規劃，包括：  
   
--   [1.1.1 規劃網路介面卡和 IP 位址](#BKMK_NA)  
+-   [1.1.1 規劃網路介面卡和 IP 位址](#111-plan-network-adapters-and-ip-addressing)  
   
--   [1.1.2 規劃 IPv6 內部網路連線](#bkmk_intranet)  
+-   [1.1.2 規劃 IPv6 內部網路連線](#112-plan-ipv6-intranet-connectivity)  
   
--   [1.1.3 為強制通道的計劃](#bkmk_force)  
+-   [1.1.3 為強制通道的計劃](#113-plan-for-force-tunneling)  
   
-### <a name="BKMK_NA"></a>1.1.1 規劃網路介面卡和 IP 位址  
+### <a name="111-plan-network-adapters-and-ip-addressing"></a>1.1.1 規劃網路介面卡和 IP 位址指定  
   
 1.  識別您想要使用的網路介面卡拓撲。 可以使用下列任一拓撲來設定 DirectAccess：  
   
@@ -76,7 +76,7 @@ ms.locfileid: "59880959"
     > -   如果 DirectAccess 伺服器只有一張網路介面卡，您就無法使用 Teredo。  
     > -   原生 IPv6 用戶端電腦不需要任何轉換技術，即可透過原生 IPv6 連線到 DirectAccess 伺服器。  
   
-### <a name="bkmk_intranet"></a>1.1.2 規劃 IPv6 內部網路連線  
+### <a name="112-plan-ipv6-intranet-connectivity"></a>1.1.2 規劃 IPv6 內部網路連線  
 若要管理遠端 DirectAccess 用戶端，就必須使用 IPv6。 IPv6 可讓 DirectAccess 管理伺服器連線到位於網際網路上的 DirectAccess 用戶端來進行遠端管理。  
   
 > [!NOTE]  
@@ -85,7 +85,7 @@ ms.locfileid: "59880959"
 > -   在 DirectAccess 部署中不支援內部網站自動通道定址通訊協定 (ISATAP)。  
 > -   使用 IPv6 時，您可以使用下列 Windows PowerShell 命令啟用 DNS64 的 IPv6 主機 (AAAA) 資源記錄查詢： **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**。  
   
-### <a name="bkmk_force"></a>1.1.3 為強制通道的計劃  
+### <a name="113-plan-for-force-tunneling"></a>1.1.3 為強制通道做規劃  
 使用 IPv6 和「名稱解析原則表格」(NRPT) 時，DirectAccess 用戶端預設會分隔其內部網路和網際網路流量，如下所示：  
   
 -   DNS 名稱會查詢內部網路完整網域名稱 (FQDN)，並透過在 DirectAccess 伺服器建立的通道，或直接與內部網路伺服器，交換所有內部網路流量。 來自 DirectAccess 用戶端的內部網路流量是 IPv6 流量。  
@@ -113,7 +113,7 @@ ms.locfileid: "59880959"
 > 1.  為 ipv6.msftncsi.com 新增一個 NRPT 項目，並依據 DNS64 將它解析為內部網站 (可以是 IPv4 網站)。  
 > 2.  為 dns.msftncsi.com 新增一個 NRPT 項目，並在公司 DNS 伺服器解析它，以傳回 IPv6 主機 (AAAA) 資源記錄 fd3e:4f5a:5b81::1。 (只使用 DNS64 來傳送這個 FQDN 的主機 (A) 資源記錄的查詢可能沒有作用，因為它是在僅支援 IPv4 的部署中設定的，因此您應該將它設定為直接在公司 DNS 解析)。  
   
-## <a name="bkmk_ConfigFirewalls"></a>1.2 規劃防火牆需求  
+## <a name="12-plan-firewall-requirements"></a>1.2 規劃防火牆需求  
 如果 DirectAccess 伺服器是在邊緣防火牆後面，當 DirectAccess 伺服器位於 IPv4 網際網路上時，必須為「遠端存取」流量設定下列例外：  
   
 -   Teredo 流量-使用者資料包通訊協定 (UDP) 目的地連接埠 3544 輸入，及 UDP 來源連接埠 3544 輸出。  
@@ -145,20 +145,20 @@ ms.locfileid: "59880959"
   
 -   所有 IPv4 和 IPv6 流量的 ICMP (僅使用 Teredo 時)  
   
-## <a name="bkmk_12CAsandCerts"></a>1.3 規劃憑證需求  
+## <a name="13-plan-certificate-requirements"></a>1.3 規劃憑證需求  
 部署單一 DirectAccess 伺服器時，有三種情況需要憑證：  
   
--   [1.3.1 規劃用於 IPsec 驗證的電腦憑證](#BKMK_compcert)  
+-   [1.3.1 規劃用於 IPsec 驗證的電腦憑證](#131-plan-computer-certificates-for-ipsec-authentication)  
   
     IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAccess 伺服器之間建立 IPsec 連線時所使用的電腦憑證，以及 DirectAccess 伺服器用來與 DirectAccess 用戶端建立 IPsec 連線的電腦憑證。  
   
     Windows Server 2012 中的 directaccess 您可能不一定要使用這些 IPsec 憑證。 DirectAccess 伺服器也可以做為 Kerberos Proxy 來執行 IPsec 驗證，而不需要憑證。 如果使用 Kerberos 通訊協定，它會透過 SSL 運作，而 Kerberos Proxy 會使用針對此目的為 IP-HTTPS 設定的憑證。 某些企業案例 (包括多站台部署和單次密碼 (OTP) 用戶端驗證) 需要使用的是憑證驗證，而不是 Kerberos 通訊協定。  
   
--   [1.3.2 規劃 IP-HTTPS 的憑證](#bkmk_iph)  
+-   [1.3.2 規劃 IP-HTTPS 的憑證](#132-plan-certificates-for-ip-https)  
   
     當您設定「遠端存取」時，DirectAccess 伺服器會自動設定為做為 IP-HTTPS 接聽程式。 IP-HTTPS 站台需要有網站憑證，而用戶端電腦必須要能夠連線到憑證撤銷清單 (CRL) 站台來查看該憑證是否在清單中。  
   
--   [1.3.3 規劃網路位置伺服器網站憑證](#bkmk_webnlc)  
+-   [1.3.3 規劃網路位置伺服器網站憑證](#133-plan-website-certificates-for-the-network-location-server)  
   
     網路位置伺服器是一個用來偵測用戶端電腦是否位於公司網路中的網站。 網路位置伺服器需要網站憑證。 DirectAccess 用戶端必須要能夠連線到 CRL 站台來查看該憑證是否在清單中。  
   
@@ -170,7 +170,7 @@ ms.locfileid: "59880959"
 ||自我簽署憑證：<br /><br />您可以將自我簽署憑證用於 IP-HTTPS 伺服器；不過，您必須確定外部可以使用 CRL 發佈點。<br /><br />自我簽署憑證無法在多站台部署中使用。|自我簽署憑證：<br /><br />您可以將自我簽署憑證用於網路位置伺服器網站。<br /><br />自我簽署憑證無法在多站台部署中使用。|  
 ||**建議**<br /><br />公用 CA：<br /><br />建議使用公用 CA 來簽發 IP-HTTPS 憑證。 這可確保外部可以使用 CRL 發佈點。|  
   
-### <a name="BKMK_compcert"></a>1.3.1 規劃用於 IPsec 驗證的電腦憑證  
+### <a name="131-plan-computer-certificates-for-ipsec-authentication"></a>1.3.1 規劃用於 IPsec 驗證的電腦憑證  
 如果您使用憑證式 IPsec 驗證，DirectAccess 伺服器和用戶端都必須取得電腦憑證。 安裝憑證的最簡單方式就是為電腦憑證設定群組原則型自動註冊。 這可確保所有網域成員都會從企業 CA 取得憑證。 如果您的組織中並未設定企業 CA，請參閱 [Active Directory 憑證服務](https://technet.microsoft.com/library/cc770357.aspx)。  
   
 這個憑證具有下列需求：  
@@ -179,18 +179,18 @@ ms.locfileid: "59880959"
   
 -   用戶端憑證和伺服器憑證應該鏈結到相同的根憑證。 在 DirectAccess 組態設定中必須選取這個根憑證。  
   
-### <a name="bkmk_iph"></a>1.3.2 規劃 IP-HTTPS 的憑證  
+### <a name="132-plan-certificates-for-ip-https"></a>1.3.2 規劃 IP-HTTPS 的憑證  
 DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺服器上安裝 HTTPS 網站憑證。 規劃時，請考量下列各項：  
   
 -   建議使用公用 CA，以便讓憑證撤銷清單 (CRL) 立即可用。  
   
--   在 [主體] 欄位中，指定 DirectAccess 伺服器之網際網路介面卡的 IPv4 位址，或 IP-HTTPS URL (ConnectTo 位址) 的 FQDN。 如果 DirectAccess 伺服器位於 NAT 裝置後面，應該指定 NAT 裝置的公用名稱或位址。  
+-   在 [主體]  欄位中，指定 DirectAccess 伺服器之網際網路介面卡的 IPv4 位址，或 IP-HTTPS URL (ConnectTo 位址) 的 FQDN。 如果 DirectAccess 伺服器位於 NAT 裝置後面，應該指定 NAT 裝置的公用名稱或位址。  
   
 -   憑證的一般名稱必須符合 IP-HTTPS 站台的名稱。  
   
--   在 [增強金鑰使用方法] 欄位中，使用伺服器驗證物件識別碼 (OID)。  
+-   在 [增強金鑰使用方法]  欄位中，使用伺服器驗證物件識別碼 (OID)。  
   
--   在 [CRL 發佈點] 欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
+-   在 [CRL 發佈點]  欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
   
 -   IP-HTTPS 憑證必須具有私密金鑰。  
   
@@ -260,7 +260,7 @@ DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺
   
     3.  開啟 IP-HTTPS 狀態設定，並將 URL 變更為 **https://<DirectAccess 伺服器名稱 (例如 server.contoso.com)>: 44500/IPHTTPS**。  
   
-    4.  按一下 **[套用]**。  
+    4.  按一下 **[套用]** 。  
   
 2.  修改用戶端 GPO 中的 Kerberos Proxy 用戶端設定。  
   
@@ -268,42 +268,42 @@ DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺
   
     2.  開啟 IPHTTPS 狀態設定，並將 URL 變更為 **https://<DirectAccess 伺服器名稱 (例如 server.contoso.com)>: 44500/IPHTTPS**。  
   
-    3.  按一下 **[套用]**。  
+    3.  按一下 **[套用]** 。  
   
 3.  修改用戶端 IPsec 原則設定以使用 ComputerKerb 和 UserKerb。  
   
     1.  在 [群組原則編輯器] 中，瀏覽至 [電腦設定] => [原則] => [Windows 設定] => [安全性設定] => [具有進階安全性的 Windows 防火牆]。  
   
-    2.  按一下 [連線安全性規則]，然後按兩下 [IPsec 規則]。  
+    2.  按一下 [連線安全性規則]  ，然後按兩下 [IPsec 規則]  。  
   
-    3.  在 [驗證] 索引標籤中，按一下 [進階]。  
+    3.  在 [驗證]  索引標籤中，按一下 [進階]  。  
   
     4.  針對 Auth1：移除現有的驗證方法，然後以 ComputerKerb 取代它。 針對 Auth2：移除現有的驗證方法，然後以 UserKerb 取代它。  
   
-    5.  按一下 [套用]，然後按一下 [確定]。  
+    5.  按一下 [套用]  ，然後按一下 [確定]  。  
   
 若要完成使用 IP-HTTPS 非標準連接埠的手動程序，請在用戶端電腦和 DirectAccess 伺服器上執行 **gpupdate /force**。  
   
-### <a name="bkmk_webnlc"></a>1.3.3 規劃網路位置伺服器網站憑證  
+### <a name="133-plan-website-certificates-for-the-network-location-server"></a>1.3.3 規劃網路位置伺服器的網站憑證  
 為網路位置伺服器網站做規劃時，請考量下列各項：  
   
--   在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
+-   在 [主體]  欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
   
--   在 [增強金鑰使用方法] 欄位中，使用「伺服器驗證 OID」。  
+-   在 [增強金鑰使用方法]  欄位中，使用「伺服器驗證 OID」。  
   
--   在 [CRL 發佈點] 欄位中，使用連線到內部網路的 DirectAccess 用戶端可存取的 CRL 發佈點。 這個 CRL 發佈點應該要無法從內部網路之外存取。  
+-   在 [CRL 發佈點]  欄位中，使用連線到內部網路的 DirectAccess 用戶端可存取的 CRL 發佈點。 這個 CRL 發佈點應該要無法從內部網路之外存取。  
   
 -   如果您稍後打算要設定多站台或叢集部署，憑證名稱就不應該與任何將新增到部署中的 DirectAccess 伺服器的內部名稱相符。  
   
     > [!NOTE]  
     > 請確定 IP-HTTPS 和網路位置伺服器的憑證具有**主體名稱**。 如果憑證沒有**主體名稱**，但是有**別名**，「遠端存取精靈」將不會接受它。  
   
-## <a name="bkmk_14Dns"></a>1.4 規劃 DNS 需求  
+## <a name="14-plan-dns-requirements"></a>1.4 規劃 DNS 需求  
 本節說明「遠端存取」部署中 DirectAccess 用戶端要求和基礎結構伺服器的 DNS 需求。 它包含以下各小節：  
   
--   [1.4.1 為 DNS 伺服器需求的的計劃](#bkmk_dnsserverrequirements)  
+-   [1.4.1 為 DNS 伺服器需求的的計劃](#141-plan-for-dns-server-requirements)  
   
--   [1.4.2 為本機名稱解析做規劃](#bkmk_dnslocalname)  
+-   [1.4.2 為本機名稱解析做規劃](#142-plan-for-local-name-resolution)  
   
 **DirectAccess 用戶端要求**  
   
@@ -316,7 +316,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
 您可以指定用戶端使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱這類 https://internal。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS64 或內部網路上的 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
   
 > [!NOTE]  
-> 請注意，在「遠端存取管理主控台」中將新尾碼新增到 NRPT 中時，只要按一下 [偵測]，即可自動探索到該尾碼的預設 DNS 伺服器。  
+> 請注意，在「遠端存取管理主控台」中將新尾碼新增到 NRPT 中時，只要按一下 [偵測]  ，即可自動探索到該尾碼的預設 DNS 伺服器。  
   
 自動偵測的運作方式如下：  
   
@@ -361,7 +361,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
     您可以透過 HTTP 使用其他網址或使用 **ping**，來建立其他連線能力檢查器。 每個連線能力檢查器都必須有一個 DNS 項目。  
   
-### <a name="bkmk_dnsserverrequirements"></a>1.4.1 為 DNS 伺服器需求的的計劃  
+### <a name="141-plan-for-dns-server-requirements"></a>1.4.1 為 DNS 伺服器需求做規劃  
 以下是部署 DirectAccess 時的 DNS 需求。  
   
 -   為 DirectAccess 用戶端，您必須使用執行 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008 或任何其他支援 IPv6 的 DNS 伺服器的 DNS 伺服器。  
@@ -373,7 +373,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 -   必須可以使用 DNS 伺服器來解析可透過網際網路存取之 CRL 發佈點的 FQDN。 比方說，如果 URL https://crl.contoso.com/crld/corp-DC1-CA.crl處於**CRL 發佈點**欄位的 IP-HTTPS 憑證的 DirectAccess 伺服器，您必須確定，解析 FQDN crld.contoso.com 使用網際網路 DNS 伺服器。  
   
-### <a name="bkmk_dnslocalname"></a>1.4.2 為本機名稱解析做規劃  
+### <a name="142-plan-for-local-name-resolution"></a>1.4.2 為本機名稱解析做規劃  
 為本機名稱解析做規劃時，請考量下列問題：  
   
 **NRPT**  
@@ -421,11 +421,11 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 -   **如果名稱不存在於 DNS，則使用本機名稱解析**。 這是最安全的選項，因為 DirectAccess 用戶端只會針對內部網路 DNS 伺服器無法解析的伺服器名稱執行本機名稱解析。 如果可以連線到內部網路 DNS 伺服器，就會解析內部網路伺服器的名稱。 如果無法連線到內部網路 DNS 伺服器，或是有其他類型的 DNS 錯誤，也不會透過本機名稱解析將內部網路伺服器名稱遺漏到子網路。  
   
--   **若名稱不存在於 DNS 或無法連絡 DNS 伺服器 (當用戶端電腦位於私人網路)，則使用本機名稱解析 (建議選項)**。 這是建議使用的選項，因為它可允許只在無法連線到內部網路 DNS 伺服器時，才在私人網路上使用本機名稱解析。  
+-   **若名稱不存在於 DNS 或無法連絡 DNS 伺服器 (當用戶端電腦位於私人網路)，則使用本機名稱解析 (建議選項)** 。 這是建議使用的選項，因為它可允許只在無法連線到內部網路 DNS 伺服器時，才在私人網路上使用本機名稱解析。  
   
--   **對於任何類型的 DNS 解析錯誤，都使用本機名稱解析 (最不安全)**。 這是最不安全的選項，因為可能透過本機名稱解析將內部網路伺服器的名稱洩露到本機子網路。  
+-   **對於任何類型的 DNS 解析錯誤，都使用本機名稱解析 (最不安全)** 。 這是最不安全的選項，因為可能透過本機名稱解析將內部網路伺服器的名稱洩露到本機子網路。  
   
-## <a name="bkmk_14NLS"></a>1.5 規劃網路位置伺服器  
+## <a name="15-plan-the-network-location-server"></a>1.5 規劃網路位置伺服器  
 網路位置伺服器是一個用來偵測 DirectAccess 用戶端是否位於公司網路中的網站。 公司網路中的用戶端不會使用 DirectAccess 來連線到內部資源，而是會直接連線。  
   
 網路位置伺服器網站可以裝載在 DirectAccess 伺服器上，或是組織中的另一部伺服器上。 如果您將網路位置伺服器裝載在 DirectAccess 伺服器上，當您安裝「遠端存取」伺服器角色時，系統就會自動建立該網站。 如果您將網路位置伺服器裝載在組織中執行 Windows 作業系統的另一部伺服器上，您必須確定該伺服器上已安裝 Internet Information Services (IIS)，並且已建立該網站。 DirectAccess 不會在遠端網路位置伺服器上設定設定值。  
@@ -447,23 +447,23 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
 ### <a name="151-plan-certificates-for-the-network-location-server"></a>1.5.1 規劃網路位置伺服器的憑證  
 當您在取得要用於網路位置伺服器的網站憑證時，請考量下列各項：  
   
-1.  在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
+1.  在 [主體]  欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
   
-2.  在 [增強金鑰使用方法] 欄位中，使用「伺服器驗證 OID」。  
+2.  在 [增強金鑰使用方法]  欄位中，使用「伺服器驗證 OID」。  
   
-3.  在 [CRL 發佈點] 欄位中，使用連線到內部網路的 DirectAccess 用戶端可存取的 CRL 發佈點。 這個 CRL 發佈點應該要無法從內部網路之外存取。  
+3.  在 [CRL 發佈點]  欄位中，使用連線到內部網路的 DirectAccess 用戶端可存取的 CRL 發佈點。 這個 CRL 發佈點應該要無法從內部網路之外存取。  
   
 ### <a name="152-plan-dns-for-the-network-location-server"></a>1.5.2 規劃網路位置伺服器的 DNS  
 DirectAccess 用戶端會嘗試連線到網路位置伺服器，以判斷它們是否位於內部網路上。 內部網路上的用戶端必須能夠解析網路位置伺服器的名稱，但是當它們位於網際網路上時，則必須防止它們解析該伺服器的名稱。 為了確保這種情況，預設會將網路位置伺服器的 FQDN 新增到 NRPT 中做為豁免規則。  
   
-## <a name="bkmk_15mgmtservers"></a>1.6 規劃管理伺服器  
+## <a name="16-plan-management-servers"></a>1.6 規劃管理伺服器  
 DirectAccess 用戶端會起始與提供服務 (例如 Windows Update 和防毒更新) 之管理伺服器的通訊。 DirectAccess 用戶端也會在存取內部網路之前，先使用 Kerberos 通訊協定連線到網域控制站來進行驗證。 在進行 DirectAccess 用戶端遠端管理時，管理伺服器會與用戶端電腦進行通訊來執行管理功能 (例如軟體或硬體清查評定)。 「遠端存取」可以自動探索某些管理伺服器，包括：  
   
 -   網域控制站-自動探索的網域控制站被執行中的 DirectAccess 伺服器和用戶端電腦相同的樹系的所有網域。  
   
 -   System Center Configuration Manager 伺服器-自動探索的 System Center Configuration Manager 伺服器會針對與 DirectAccess 伺服器和用戶端電腦位於相同樹系的所有網域。  
   
-初次設定 DirectAccess 時，就會自動偵測網域控制站和 System Center Configuration Manager 伺服器。 偵測到的網域控制站不會顯示在主控台中，但是可以使用 Windows PowerShell cmdlet 來擷取設定**Get-damgmtserver-Type All**。 如果修改了網域控制站或 System Center Configuration Manager 伺服器，在 [遠端存取管理主控台] 中按一下 [重新整理管理伺服器]，就會重新整理管理伺服器清單。  
+初次設定 DirectAccess 時，就會自動偵測網域控制站和 System Center Configuration Manager 伺服器。 偵測到的網域控制站不會顯示在主控台中，但是可以使用 Windows PowerShell cmdlet 來擷取設定**Get-damgmtserver-Type All**。 如果修改了網域控制站或 System Center Configuration Manager 伺服器，在 [遠端存取管理主控台] 中按一下 [重新整理管理伺服器]  ，就會重新整理管理伺服器清單。  
   
 **管理伺服器需求**  
   
@@ -471,12 +471,12 @@ DirectAccess 用戶端會起始與提供服務 (例如 Windows Update 和防毒�
   
 -   對 DirectAccess 用戶端起始連線的管理伺服器必須完全支援 IPv6 (藉由原生 IPv6 位址或使用 ISATAP 所指派的位址)。  
   
-## <a name="bkmk_16AD"></a>1.7 規劃 Active Directory 網域服務  
+## <a name="17-plan-active-directory-domain-services"></a>1.7 規劃 Active Directory 網域服務  
 本節說明 DirectAccess 如何使用 Active Directory 網域服務 (AD DS)，其中包括下列各小節：  
   
--   [1.7.1 規劃用戶端驗證](#bkmk_clientauth)  
+-   [1.7.1 規劃用戶端驗證](#171-plan-client-authentication)  
   
--   [1.7.2 規劃多個網域](#bkmk_multiple)  
+-   [1.7.2 規劃多個網域](#172-plan-multiple-domains)  
   
 DirectAccess 會使用 AD DS 和 Active Directory 群組原則物件 (Gpo)，如下所示：  
   
@@ -518,7 +518,7 @@ DirectAccess 會使用 AD DS 和 Active Directory 群組原則物件 (Gpo)，如
 > -   DirectAccess 伺服器不可以是網域控制站。  
 > -   用於 DirectAccess 的 AD DS 網域控制站不可以是能從 DirectAccess 伺服器的外部網際網路介面卡連到的網域控制站 (也就是說，介面卡不得在 Windows 防火牆的網域設定檔中)。  
   
-### <a name="bkmk_clientauth"></a>1.7.1 規劃用戶端驗證  
+### <a name="171-plan-client-authentication"></a>1.7.1 規劃用戶端驗證  
 DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用內建的 Kerberos Proxy 以使用者名稱和密碼來進行驗證。  
   
 選擇使用 AD DS 認證來進行驗證時，DirectAccess 會使用一個利用「電腦 Kerberos」進行第一次驗證和「使用者 Kerberos」進行第二次驗證的安全性通道。 使用此模式來進行驗證時，DirectAccess 會使用一個可存取 DNS 伺服器、網域控制站及內部網路上其他伺服器的單一安全性通道。  
@@ -535,28 +535,28 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 -   內部網路通道會使用電腦憑證認證進行第一次驗證，並使用「使用者 Kerberos」進行第二次驗證。  
   
-### <a name="bkmk_multiple"></a>1.7.2 規劃多個網域  
+### <a name="172-plan-multiple-domains"></a>1.7.2 規劃多個網域  
 管理伺服器清單應該包括來自所有含安全性群組之網域的網域控制站，其中這些安全性群組皆包括 DirectAccess 用戶端電腦。 它應該包含所有含使用者帳戶的網域，其中這些使用者帳戶皆可能使用設定為 DirectAccess 用戶端的電腦。 這可確保當使用者不是與所使用的用戶端電腦位於相同網域時，系統會以使用者網域中的網域控制站來驗證使用者。 如果網域位於相同的樹系中，便會自動執行此動作。  
   
 > [!NOTE]  
-> 如果有安全性群組中的電腦被用來做為不同樹系中的用戶端電腦或應用程式伺服器，系統並不會自動偵測這些樹系的網域控制站。 您可以在 [遠端存取管理主控台] 中執行 [重新整理管理伺服器] 工作來偵測這些網域控制站。  
+> 如果有安全性群組中的電腦被用來做為不同樹系中的用戶端電腦或應用程式伺服器，系統並不會自動偵測這些樹系的網域控制站。 您可以在 [遠端存取管理主控台] 中執行 [重新整理管理伺服器]  工作來偵測這些網域控制站。  
   
 進行「遠端存取部署」時，可能的話，應該將通用的網域名稱尾碼新增到「名稱解析原則表格」(NRPT) 中。 例如，如果您有 domain1.corp.contoso.com 和 domain2.corp.contoso.com 這兩個網域，您可以不用將兩個項目新增到 NRPT 中，而是新增一個通用的 DNS 尾碼項目 (其中網域名稱尾碼為 corp.contoso.com)。 如果網域位於相同的根目錄，這會自動新增，但如果網域不是位於相同的根目錄，則必須手動新增。  
   
-如果「Windows 網際網路名稱服務」(WINS) 是部署在多網域環境中，您就必須在 DNS 中部署 WINS 正向對應區域。 如需詳細資訊，請參閱 <<c0>  **單一標籤名稱**中[1.4.2 為本機名稱解析做規劃](#bkmk_dnslocalname)稍早在本文件中的區段。  
+如果「Windows 網際網路名稱服務」(WINS) 是部署在多網域環境中，您就必須在 DNS 中部署 WINS 正向對應區域。 如需詳細資訊，請參閱 <<c0>  **單一標籤名稱**中[1.4.2 為本機名稱解析做規劃](#142-plan-for-local-name-resolution)稍早在本文件中的區段。  
   
-## <a name="bkmk_17GPOs"></a>1.8 規劃群組原則物件  
+## <a name="18-plan-group-policy-objects"></a>1.8 規劃群組原則物件  
 本節說明「群組原則物件」(GPO) 在您「遠端存取」基礎結構中扮演的角色，其中包括下列各小節：  
   
--   [1.8.1 設定自動建立的 Gpo](#bkmk_autoGPO)  
+-   [1.8.1 設定自動建立的 Gpo](#181-configure-automatically-created-gpos)  
   
--   [1.8.2 設定手動建立的 Gpo](#bkmk_manualGPO)  
+-   [1.8.2 設定手動建立的 Gpo](#182-configure-manually-created-gpos)  
   
--   [1.8.3 在多網域控制站的環境中管理 Gpo](#bkmk_multiDC)  
+-   [1.8.3 在多網域控制站的環境中管理 Gpo](#183-manage-gpos-in-a-multi-domain-controller-environment)  
   
--   [1.8.4 管理有限權限的遠端存取 Gpo](#bkmk_manageGPO)  
+-   [1.8.4 管理有限權限的遠端存取 Gpo](#184-manage-remote-access-gpos-with-limited-permissions)  
   
--   [1.8.5 從已刪除的 GPO 復原](#bkmk_delGPO)  
+-   [1.8.5 從已刪除的 GPO 復原](#185-recover-from-a-deleted-gpo)  
   
 您設定「遠端存取」時所設定的 DirectAccess 設定會被收集到 GPO 中。 下列類型的 GPO 會被填入 DirectAccess 設定，並依下列方式分配：  
   
@@ -588,7 +588,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 如果沒有正確的權限 (列在接下來的小節中) 來連結 GPO，系統會發出警告。 「遠端存取」操作將會繼續，但是不會建立連結。 如果系統發出這個警告，則即使稍後新增權限，也不會自動建立連結。 系統管理員將必須改為手動建立連結。  
   
-### <a name="bkmk_autoGPO"></a>1.8.1 設定自動建立的 Gpo  
+### <a name="181-configure-automatically-created-gpos"></a>1.8.1 設定自動建立的 GPO  
 使用自動建立的 GPO 時，請考量下列各項。  
   
 自動建立的 GPO 會根據位置和連結目標參數進行套用，如下所示：  
@@ -611,7 +611,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 -   我們建議「遠端存取」系統管理員要具備每個所需網域的 GPO「讀取」權限。 這可讓「遠端存取」確認建立 GPO 時不會有名稱重複的 GPO 存在。  
   
-### <a name="bkmk_manualGPO"></a>1.8.2 設定手動建立的 Gpo  
+### <a name="182-configure-manually-created-gpos"></a>1.8.2 設定手動建立的 GPO  
 使用手動建立的 GPO 時，請考量下列各項：  
   
 -   GPO 應該在執行「遠端存取安裝精靈」之前就要存在。  
@@ -620,7 +620,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 -   系統會搜尋整個網域來尋找 GPO 連結。 如果 GPO 在網域中並沒有被連結，系統就會在網域根目錄中自動建立一個連結。 如果沒有可建立連結的必要權限，系統就會發出警告。  
   
-### <a name="bkmk_multiDC"></a>1.8.3 在多網域控制站的環境中管理 Gpo  
+### <a name="183-manage-gpos-in-a-multi-domain-controller-environment"></a>1.8.3 在多網域控制站環境中管理 GPO  
 每個 GPO 都是由特定的網域控制站管理，如下所示：  
   
 -   伺服器 GPO 會由與該伺服器關聯之 Active Directory 站台中的其中一個網域控制站管理。 如果該站台中的網域控制站是唯讀的，伺服器 GPO 便會由最接近 DirectAccess 伺服器的可寫入網域控制站管理。  
@@ -639,9 +639,9 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 -   修改設定之後，您必須等候系統將變更複寫到與 GPO 關聯的網域控制站。 在複寫完成之前，請勿使用「遠端存取管理主控台」或「遠端存取」PowerShell Cmdlet 來進行其他變更。 如果在複寫完成前在兩個網域控制站上編輯 GPO，可能會發生合併衝突，這可能會導致「遠端存取」設定損毀。  
   
-您也可以使用 [群組原則管理主控台] 中的 [變更網域控制站] 對話方塊，或使用 Windows PowerShell Cmdlet **Open-NetGPO**，來變更預設設定，讓所做的變更使用您指定的網域控制站。  
+您也可以使用 [群組原則管理主控台] 中的 [變更網域控制站]  對話方塊，或使用 Windows PowerShell Cmdlet **Open-NetGPO**，來變更預設設定，讓所做的變更使用您指定的網域控制站。  
   
--   若要在 [群組原則管理主控台] 中這麼做，請在網域或站台容器上按一下滑鼠右鍵，然後按一下 [變更網域控制站]。  
+-   若要在 [群組原則管理主控台] 中這麼做，請在網域或站台容器上按一下滑鼠右鍵，然後按一下 [變更網域控制站]  。  
   
 -   若要在 Windows PowerShell 中這麼做，請為 **Open-NetGPO** Cmdlet 指定 **DomainController** 參數 。 例如，若要使用名為 europe-dc.corp.contoso.com 的網域控制站，在名為 domain1\DA_Server_GPO _Europe 的 GPO 上啟用 Windows 防火牆中的私人和公用設定檔，請輸入：  
   
@@ -651,7 +651,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
     Save-NetGPO -GpoSession $gpoSession  
     ```  
   
-### <a name="bkmk_manageGPO"></a>1.8.4 管理有限權限的遠端存取 Gpo  
+### <a name="184-manage-remote-access-gpos-with-limited-permissions"></a>1.8.4 使用有限的權限管理遠端存取 GPO  
 若要管理「遠端存取」部署，「遠端存取」系統管理員必須對部署中使用的 GPO 具有完整的 GPO 權限 (「讀取」、「編輯」、「刪除」及「修改」安全性權限)。 這是因為「遠端存取管理主控台」和「遠端存取」PowerShell 模組會從「遠端存取 GPO」(也就是用戶端、伺服器及應用程式伺服器 GPO) 讀取設定及將設定寫入這些 GPO。  
   
 在許多組織中，負責 GPO 操作的網域系統管理員與負責「遠端存取」設定的「遠端存取」系統管理員不是同一人。 這些組織可能有限制「遠端存取」系統管理員對網域中的 GPO 擁有完整權限的政策。 網域系統管理員可能也必須先檢閱原則設定，才能將原則設定套用到網域中的任何電腦。  
@@ -668,7 +668,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 ![管理遠端存取 Gpo](../../../media/Step-1-Plan-the-DirectAccess-Infrastructure/DA_Plan_Advanced_Step1_GPOS.png)  
   
-### <a name="bkmk_delGPO"></a>1.8.5 從已刪除的 GPO 復原  
+### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 從已刪除的 GPO 復原  
 如果不小心刪除了某個用戶端、DirectAccess 伺服器或應用程式伺服器 GPO，而且沒有備份可用，您就必須移除組態設定，然後重新設定。 如果有備份可用，您便可以從備份還原 GPO。  
   
 [遠端存取管理主控台] 會顯示下列錯誤訊息：**GPO<GPO name>找不到**。 若要移除組態設定，請執行下列步驟：  
@@ -677,9 +677,9 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 2.  開啟 [遠端存取管理主控台]。  
   
-3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成之後，伺服器將會還原到未設定的狀態。  
+3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]  。 完成之後，伺服器將會還原到未設定的狀態。  
   
-## <a name="BKMK_Links"></a>下一個步驟  
+## <a name="next-step"></a>後續步驟  
   
 -   [步驟 2：規劃 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
   

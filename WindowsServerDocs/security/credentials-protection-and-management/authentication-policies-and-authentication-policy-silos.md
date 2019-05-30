@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 460837c79c0e0d2c48331ddaaffcd118fd16ebc1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55dd38c966fea8448231b06cde9c1dd63b024197
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870609"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266765"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>驗證原則和驗證原則定址接收器
 
@@ -230,7 +230,7 @@ Protected Users 安全性群組會觸發不可設定的保護裝置和執行 Win
 
 事件會記錄在 **Microsoft\Windows\Authentication** 的應用程式及服務記錄檔中。
 
-如需使用這些事件的疑難排解步驟，請參閱[疑難排解驗證原則](how-to-configure-protected-accounts.md#BKMK_TroubleshootAuthnPolicies)和[疑難排解與 Protected Users 相關的事件](how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents)。
+如需使用這些事件的疑難排解步驟，請參閱[疑難排解驗證原則](how-to-configure-protected-accounts.md#troubleshoot-authentication-policies)和[疑難排解與 Protected Users 相關的事件](how-to-configure-protected-accounts.md#troubleshoot-events-related-to-protected-users)。
 
 |事件識別碼和記錄檔|描述|
 |----------|--------|
@@ -245,6 +245,6 @@ Protected Users 安全性群組會觸發不可設定的保護裝置和執行 Win
 
 [認證保護和管理](credentials-protection-and-management.md)
 
-[Protected 的 Users 安全性群組](protected-users-security-group.md)
+[Protected Users 安全性群組](protected-users-security-group.md)
 
 

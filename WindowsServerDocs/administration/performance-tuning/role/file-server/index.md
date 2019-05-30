@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: d6dc2739ae45b29bdfd854c1b81b0c8962c8f107
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ed9e9c6e2280aa69408455a111eddb3af7f88750
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891409"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266701"
 ---
 # <a name="performance-tuning-for-file-servers"></a>檔案伺服器的效能微調
 
@@ -94,7 +94,7 @@ ms.locfileid: "59891409"
 
     預設值是 10 秒。 這是目錄快取逾時。
 
-    **注意**   此參數可控制沒有目錄租用時的目錄中繼資料快取。
+    > [!Note]   此參數可控制沒有目錄租用時的目錄中繼資料快取。
 
      
 

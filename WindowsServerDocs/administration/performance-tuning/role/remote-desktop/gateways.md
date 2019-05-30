@@ -7,22 +7,24 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7619d2e2ce394c7f06826d6ebe36bccfa43344ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70b27d45acbfb046d52271a50ca7deffb226b8d0
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842569"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266723"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>效能微調遠端桌面閘道
 
-**附註**  在 Windows 8 及更新版本和 Windows Server 2012 R2 +，遠端桌面閘道 （RD 閘道） 也支援 TCP、 UDP 和舊版的 RPC 傳輸。 大部分的下列資料有關舊版 RPC 傳輸。 如果未使用舊版的 RPC 傳輸，不適用這一節。
+> [!Note]
+> 在 Windows 8 及更新版本和 Windows Server 2012 R2 +，遠端桌面閘道 （RD 閘道） 支援 TCP、 UDP 和舊版的 RPC 傳輸。 大部分的下列資料有關舊版 RPC 傳輸。 如果未使用舊版的 RPC 傳輸，不適用這一節。
 
 本主題說明的效能相關的參數，協助改善客戶部署的效能及仰賴客戶的網路使用量模式 tunings。
 
 基本上，RD 閘道會執行許多的封包轉送遠端桌面連線執行個體與客戶的網路中的 RD 工作階段主機伺服器執行個體之間的作業。
 
-**附註**   RPC 傳輸只適用的下列參數。
+> [!Note]
+> RPC 傳輸只適用於下列的參數。
 
 Internet Information Services (IIS) 和 RD 閘道匯出下列的登錄參數，以協助改善在 RD 閘道的系統效能。
 

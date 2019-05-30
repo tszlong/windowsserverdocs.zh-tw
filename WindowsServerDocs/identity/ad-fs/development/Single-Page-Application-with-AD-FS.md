@@ -8,12 +8,12 @@ ms.date: 06/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 1292c7e6cd1dec6926516880c34fe60fb97a9ec8
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 24a9caba7a2745973d7c69c3bd7bc42717e7a06c
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190496"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266688"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>建置使用 OAuth 和 ADAL 的單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
 
@@ -78,13 +78,19 @@ ms.locfileid: "66190496"
 ## <a name="registering-the-public-client-in-ad-fs"></a>在 AD FS 中註冊公開用戶端
 在此範例中，WebAPI 會設定為接聽 https://localhost:44326/。 應用程式群組**存取的 web 應用程式的網頁瀏覽器**可用來設定隱含授與流程應用程式。
 
-1. 開啟 AD FS 管理主控台，然後按一下**加入應用程式群組**。 中**新增應用程式群組精靈**輸入名稱的應用程式、 描述，然後選取**存取的 web 應用程式的網頁瀏覽器**從範本**用戶端-伺服器應用程式**區段，如下所示  <br>![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+1. 開啟 AD FS 管理主控台，然後按一下**加入應用程式群組**。 中**新增應用程式群組精靈**輸入名稱的應用程式、 描述，然後選取**存取的 web 應用程式的網頁瀏覽器**從範本**用戶端-伺服器應用程式**區段，如下所示
 
-2. 在下一頁**原生應用程式**、 提供的應用程式用戶端識別碼和重新導向 URI，如下所示  <br>![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
+    ![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+
+2. 在下一頁**原生應用程式**、 提供的應用程式用戶端識別碼和重新導向 URI，如下所示
+
+    ![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
 
 3. 在下一頁**套用存取控制原則**保留的權限與*允許所有人*
 
-4. [摘要] 頁面看起來應該類似下方所示  <br>![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
+4. [摘要] 頁面看起來應該類似下方所示
+
+    ![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
 
 5. 按一下 [**下一步]** 完成的應用程式群組，並關閉精靈。
 

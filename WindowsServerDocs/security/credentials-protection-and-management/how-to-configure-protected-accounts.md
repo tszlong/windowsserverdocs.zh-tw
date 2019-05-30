@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f2effdb7a82a25c810bc041475e760145de492d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 9bd03beb81d4a3031b80d0633607efea2f2fe1f7
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864609"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266814"
 ---
 # <a name="how-to-configure-protected-accounts"></a>如何設定受保護的帳戶
 
@@ -25,11 +25,11 @@ ms.locfileid: "59864609"
 
 透過傳遞雜湊 (Pass-the-hash，PtH) 攻擊，攻擊者可以使用使用者的密碼 (或其他認證系出項) 的基礎 NTLM 雜湊來向遠端伺服器或服務驗證。 Microsoft 先前已 [發佈指導方針](https://www.microsoft.com/download/details.aspx?id=36036) 以減輕傳遞雜湊的攻擊。  Windows Server 2012 R2 包含新的功能，可協助減輕此類攻擊進一步。 如需協助防範認證竊取之安全性功能的詳細資訊，請參閱 [認證保護和管理](https://technet.microsoft.com/library/dn408190.aspx)。 此主題說明如何設定下列新功能：  
   
--   [受保護的使用者](how-to-configure-protected-accounts.md#BKMK_AddtoProtectedUsers)  
+-   [受保護的使用者](#protected-users)  
   
--   [驗證原則](how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicies)  
+-   [驗證原則](#authentication-policies)  
   
--   [驗證原則定址接收器](how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicySilos)  
+-   [驗證原則定址接收器](#authentication-policy-silos)  
   
 Windows 8.1 與 Windows Server 2012 R2 都內建額外的安全防護功能以協助防範認證竊取，下列主題涵蓋這些功能：  
   
@@ -37,7 +37,7 @@ Windows 8.1 與 Windows Server 2012 R2 都內建額外的安全防護功能以�
   
 -   [LSA 保護](https://technet.microsoft.com/library/dn408187)  
   
-## <a name="BKMK_AddtoProtectedUsers"></a>受保護的使用者  
+## <a name="protected-users"></a>Protected Users  
 Protected Users 是新的全域安全性群組，您可以將新的或現有的使用者新增到其中。 Windows 8.1 裝置和 Windows Server 2012 R2 主機有特殊的行為，與此群組來防範認證竊取的成員。 群組的成員，Windows 8.1 裝置或 Windows Server 2012 R2 主機不是快取 Protected Users 不支援的認證。 如果使用者登入執行 Windows 的版本早於 Windows 8.1 的裝置，此群組的成員會有任何額外的保護。  
   
 誰已登入 Windows 8.1 的裝置群組的 Protected users 的成員，和 Windows Server 2012 R2 主機可以*不再*使用：  
@@ -75,14 +75,14 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
   
 -   **變更密碼**每位使用者，然後再將帳戶新增到 Protected Users 群組，或確定密碼是在執行 Windows Server 2008 的網域控制站上最近已變更或更新版本。  
   
-### <a name="BKMK_Prereq"></a>使用受保護的帳戶需求  
+### <a name="requirements-for-using-protected-accounts"></a>使用受保護的帳戶的需求  
 受保護的帳戶有下列部署需求：  
   
 -   若要提供對 Protected Users 的用戶端限制，主機必須執行 Windows 8.1 或 Windows Server 2012 R2。 使用者只需以 Protected Users 群組的成員帳戶登入。 在此情況下，可以建立 Protected Users 群組所[傳輸網域主控站 (PDC) 模擬器角色](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)為執行 Windows Server 2012 R2 的網域控制站。 該群組物件複寫到其他網域控制站之後，可以在執行舊版 Windows Server 的網域控制站上裝載 PDC 模擬器角色。  
   
 -   若要提供網域控制站端限制，針對受保護的使用者，亦即限制使用 NTLM 驗證，以及其他限制，網域功能等級必須是 Windows Server 2012 R2。 如需功能等級的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../../identity/ad-ds/active-directory-functional-levels.md)。  
   
-### <a name="BKMK_TrubleshootingEvents"></a>疑難排解與 Protected Users 相關的事件  
+### <a name="troubleshoot-events-related-to-protected-users"></a>疑難排解與 Protected Users 相關的事件  
 本節涵蓋的新記錄檔可協助疑難排解與 Protected Users 相關的事件，以及 Protected Users 影響變更的方式，以疑難排解票證授權票證 (TGT) 到期或委派的問題。  
   
 #### <a name="new-logs-for-protected-users"></a>Protected Users 的新記錄檔  
@@ -106,13 +106,13 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
   
 ![受保護的帳戶](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
-### <a name="BKMK_AuditAuthNattempts"></a>稽核驗證嘗試  
-若要對 **Protected Users** 群組的成員明確稽核驗證嘗試，您可以繼續收集安全性記錄檔稽核事件或在新的操作系統管理記錄檔中收集資料。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](https://technet.microsoft.com/library/dn486813.aspx)  
+### <a name="audit-authentication-attempts"></a>稽核驗證嘗試  
+若要對 **Protected Users** 群組的成員明確稽核驗證嘗試，您可以繼續收集安全性記錄檔稽核事件或在新的操作系統管理記錄檔中收集資料。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](https://technet.microsoft.com/library/dn486813.aspx)。  
   
-### <a name="BKMK_ProvidePUdcProtections"></a>提供服務和電腦的 DC 端保護  
+### <a name="provide-dc-side-protections-for-services-and-computers"></a>提供服務與電腦的 DC 端保護  
 服務與電腦的帳戶不能是 **Protected Users** 的成員。 本節說明可對這些帳戶提供的網域控制站型保護：  
   
--   拒絕 NTLM 驗證：僅可透過 [NTLM 封鎖原則](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)設定  
+-   拒絕 NTLM 驗證：只可透過設定[NTLM 封鎖原則](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)。  
   
 -   拒絕 Kerberos 預先驗證中的資料加密標準 (DES)：Windows Server 2012 R2 網域控制站不接受 DES，電腦帳戶除非因為隨附 Kerberos 的 Windows 的每個版本也支援 RC4，它們會設定為 DES。  
   
@@ -127,7 +127,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
   
     ![受保護的帳戶](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
-## <a name="BKMK_CreateAuthNPolicies"></a>驗證原則  
+## <a name="authentication-policies"></a>驗證原則  
 「驗證原則」是 AD DS 中包含驗證原則物件的新容器。 驗證原則可以指定設定，協助降低認證竊取的機會，例如限制帳戶的 TGT 存留期或新增其他與宣告相關條件。  
   
 在 Windows Server 2012 中，動態存取控制 」 引進稱為集中存取原則，以讓您輕鬆地在整個組織設定檔案伺服器的 Active Directory 樹系範圍物件類別。 Windows Server 2012 r2 中新的物件類別稱為 「 驗證原則 (objectClass Msds-authnpolicies) 可用來驗證設定套用至 Windows Server 2012 R2 網域中的帳戶類別。 Active Directory 帳戶類別包括：  
@@ -155,7 +155,7 @@ TGS 交換是帳戶的 TGT 用來建立驗證者以要求服務票證的位置�
   
 AP 交換通常會發生在應用程式通訊協定內的資料，且不會受到驗證原則的影響。  
   
-如需詳細資訊，請參閱 [如何 Kerberos 版本 5 驗證通訊協定運作] (https://technet.microsoft.com/library/cc772815(v=WS.10.aspx。  
+如需詳細資訊，請參閱 [Kerberos 版本 5 驗證通訊協定的運作方式](https://technet.microsoft.com/library/cc772815(v=WS.10.aspx))。  
   
 ### <a name="overview"></a>總覽  
 驗證原則提供一種方式可將設定的限制套用到帳戶，並對服務與電腦的帳戶提供限制，來彌補 Protected Users 的不足。 在 AS 交換或 TGS 交換期間，會強制實行驗證原則。  
@@ -172,7 +172,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
   
 -   產生 TGS 交換的用戶端 (使用者、服務、電腦) 或裝置必須符合的存取控制條件  
   
-### <a name="BKMK_ReqForAuthnPolicies"></a>使用驗證原則的需求  
+### <a name="requirements-for-using-authentication-policies"></a>使用驗證原則的需求  
   
 |原則|需求|  
 |-----|--------|  
@@ -193,7 +193,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
   
     ![受保護的帳戶](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)  
   
-2.  在 [選項]  下的下拉式清單方塊中，選取 [永遠提供宣告]  。  
+2.  在 **[選項]** 下的下拉式清單方塊中，選取 **[永遠提供宣告]** 。  
   
     > [!NOTE]  
     > **支援**也可以設定，但因為網域是在 Windows Server 2012 R2 網域功能等級，讓網域控制站永遠提供宣告將會讓使用者宣告型存取檢查時使用非宣告感知裝置與主機連線到發生宣告感知的服務。  
@@ -329,7 +329,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
   
 ![受保護的帳戶](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)  
   
-### <a name="BKMK_TroubleshootAuthnPolicies"></a>疑難排解驗證原則  
+### <a name="troubleshoot-authentication-policies"></a>疑難排解驗證原則  
   
 #### <a name="determine-the-accounts-that-are-directly-assigned-an-authentication-policy"></a>判斷已直接指派驗證原則的帳戶  
 [驗證原則] 中的 [帳戶] 區段會顯示已直接套用原則的帳戶。  
@@ -339,7 +339,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>使用驗證原則失敗-網域控制站的系統管理記錄檔  
 新**驗證原則失敗-網域控制站**下方的系統管理記錄檔**Applications and Services Logs** > **Microsoft**  >  **Windows** > **驗證**已建立以輕鬆地探索因為驗證原則失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]  。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](https://technet.microsoft.com/library/dn486813.aspx)。  
   
-### <a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>使用 Windows PowerShell 管理驗證原則  
+### <a name="manage-authentication-policies-by-using-windows-powershell"></a>使用 Windows PowerShell 管理驗證原則  
 此命令會建立一個名為 **TestAuthenticationPolicy**的驗證原則。 **UserAllowedToAuthenticateFrom** 參數指定使用者可透過名為 someFile.txt 之檔案中的 SDDL 字串，從其驗證的裝置。  
   
 ```  
@@ -371,7 +371,7 @@ PS C:\> Remove-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1
 PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthenticationPolicy  
 ```  
   
-## <a name="BKMK_CreateAuthNPolicySilos"></a>驗證原則定址接收器  
+## <a name="authentication-policy-silos"></a>驗證原則定址接收器  
 「驗證原則定址接收器」是使用者、電腦及服務帳戶在 AD DS 中的新容器 (objectClass msDS-AuthNPolicySilos)。 它們可以協助保護高價值的帳戶。 雖然所有組織都必須保護 Enterprise Admins、 Domain Admins 與 Schema Admins 群組的成員，因為那些帳戶可能會被攻擊者用來存取樹系中的任何項目，但是其他帳戶可能也都需要保護。  
   
 某些組織會建立專屬的帳戶並套用群組原則設定，限制本機和遠端互動式登入和系統管理員權限，以隔離工作負載。 驗證原則定址接收器則建立一種方式，定義使用者、電腦與受管理的服務帳戶之間的關係，來補足這件工作。 帳戶只能屬於一個定址接收器。 您可以為每個類型的帳戶設定驗證原則以便控制：  
@@ -429,7 +429,7 @@ PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthe
   
     ![受保護的帳戶](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)  
   
-### <a name="BKMK_ManageAuthnSilosUsingPSH"></a>使用 Windows PowerShell 管理驗證原則定址接收器  
+### <a name="manage-authentication-policy-silos-by-using-windows-powershell"></a>使用 Windows PowerShell 管理驗證原則定址接收器  
 此命令會建立驗證原則定址接收器物件，並強制使用。  
   
 ```  

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b402195f90977aa63299c1a2a550ba310a4513
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 081e5caeb7fb458b367f035b9995929de84a5528
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832339"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266563"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -41,14 +41,14 @@ bitsadmin /AddFileWithRanges <Job> <RemoteURL> <LocalName> <RangeList>
 
 ## <a name="more-information"></a>更多資訊
 
--   語彙基元**eof**是有效的長度值中的位移和長度組內 *\<RangeList >*。 它會指示服務，以讀取至指定的檔案結尾。
+-   語彙基元**eof**是有效的長度值中的位移和長度組內 *\<RangeList >* 。 它會指示服務，以讀取至指定的檔案結尾。
 -   請注意 AddFileWithRanges 將會失敗，錯誤碼 0x8020002c，當這類指定以及另一個範圍，使用相同的位移、 長度為零的範圍：C:\bits > bitsadmin /addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:0、 100:5
 
     錯誤訊息：無法將檔案新增至作業-0x8020002c。 位元組範圍清單包含一些重疊的範圍，不支援。
 
     因應措施： 請勿第一次指定零長度的範圍。 例如： bitsadmin /addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:5、 100:0。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a>範例
 
 下列範例會指示將從位移 0，100 個位元組位移的 2000 中，從 100 個位元組的位元，並從剩餘的位元組位移 5000 到檔案結尾。
 ```
