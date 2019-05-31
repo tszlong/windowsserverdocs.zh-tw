@@ -38,6 +38,7 @@
 ##### [虛擬網域控制站技術參考 (等級 300)](ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)
 ###### [虛擬網域控制站架構](ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md)
 ###### [虛擬網域控制站的部署與設定](ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md)
+###### [在 Azure 虛擬機器上執行 Active Directory](ad-ds/deploy/virtual-dc/adds-on-azure-vm.md)
 ###### [使用 Hyper-V 的虛擬網域控制站](ad-ds/get-started/virtual-dc/virtualized-domain-controllers-hyper-v.md)
 ###### [虛擬網域控制站的疑難排解](ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)
 ###### [虛擬網域控制站技術參考附錄](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-appendix.md)
@@ -365,6 +366,9 @@
 
 
 ### [AD FS 開發](ad-fs/AD-FS-Development.md)
+
+#### [建置適用於 AD FS 的自訂驗證方法](ad-fs/development/ad-fs-build-custom-auth-method.md)
+#### [使用 AD FS 2019 風險評估模型建置外掛程式](ad-fs/development/ad-fs-risk-assessment-model.md)
 #### [AD FS 中的自訂識別碼權杖](ad-fs/development/Custom-Id-Tokens-in-AD-FS.md)
 #### [Windows Server 2016 中的 AD FS 代表驗證](ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server.md)
 #### [透過 AD FS 2016 啟用 OpenId Connect](ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)
