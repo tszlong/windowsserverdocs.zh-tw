@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81678768bb2b5fcfd7f2f2d067562e78e93dc549
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c4756627d19d296d02fa11ac67ef80080ddf318
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848849"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441362"
 ---
 # <a name="set-option"></a>Set 選項
 
@@ -34,13 +34,13 @@ set option {[differential | plex] [transportable] [[rollbackrecover] [txfrecover
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|[差異 | plex]|指定給提供者建立的陰影複製的類型。|
-|[transportable]|指定陰影複製是不尚未匯入。 中繼資料.cab 檔案稍後可用來匯入陰影複製到相同或不同的電腦。|
-|[rollbackrecover]|表示要使用的寫入器*n>* 期間**PostSnapshot**事件。 這非常有用，如果陰影複製將用於復原 （例如，使用資料採礦）。|
-|[txfrecover]|請在建立期間的交易上一致的陰影複製要求 VSS。|
-|[noautorecover]|停駐點寫入器和檔案系統執行陰影複製到交易一致狀態的任何復原變更。 **Noautorecover**不能搭配**txfrecover**或是**rollbackrecover**。|
+|     參數     |                                                                                                  描述                                                                                                  |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   [差異   |                                                                                                     plex]                                                                                                     |
+|  [transportable]  |                       指定陰影複製是不尚未匯入。 中繼資料.cab 檔案稍後可用來匯入陰影複製到相同或不同的電腦。                       |
+| [rollbackrecover] |                     表示要使用的寫入器*n>* 期間**PostSnapshot**事件。 這非常有用，如果陰影複製將用於復原 （例如，使用資料採礦）。                      |
+|   [txfrecover]    |                                                               請在建立期間的交易上一致的陰影複製要求 VSS。                                                                |
+|  [noautorecover]  | 停駐點寫入器和檔案系統執行陰影複製到交易一致狀態的任何復原變更。 **Noautorecover**不能搭配**txfrecover**或是**rollbackrecover**。 |
 
 #### <a name="additional-references"></a>其他參考資料
 

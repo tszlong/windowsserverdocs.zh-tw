@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c10cf6c9355b5f7457a5f17babdfb44aaa679b2
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 0e001b590f524711185e3dd70db3bc52a9b8d9af
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976794"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447121"
 ---
 # <a name="compare-the-client-apps"></a>比較用戶端應用程式
 
@@ -35,12 +35,13 @@ ms.locfileid: "65976794"
 
 ### <a name="input-redirection"></a>輸入重新導向
 
-| 重新導向 | 遠端桌面<br> 連線 | 通用 | Android | iOS | macOS | web 用戶端 |
-|-------------|-------------------------------|-----------|---------|-----|-------|------------|
-| 鍵盤    | X                             | X         | X       | X   | X     | X          |
-| 滑鼠       | X                             | X         | X       | X*    | X     | X          |
-| 觸控       | X                             | X         | X       | X   |       | X （Edge 及 IE 不應是支援） |
-| 其他       | 手寫筆                           |           |         |     |       |            |
+| 重新導向 | 遠端桌面<br> 連線 | 通用 | Android | iOS | macOS |          web 用戶端           |
+|-------------|-------------------------------|-----------|---------|-----|-------|-------------------------------|
+|  鍵盤   |               X               |     X     |    X    |  X  |   X   |               X               |
+|    滑鼠    |               X               |     X     |    X    | X\* |   X   |               X               |
+|    觸控    |               X               |     X     |    X    |  X  |       | X （Edge 及 IE 不應是支援） |
+|    其他    |              手寫筆              |           |         |     |       |                               |
+
 * 檢視[遠端桌面 iOS Beta 用戶端支援的輸入裝置的清單](remote-desktop-ios.md#supported-input-devices)。
 
 ### <a name="port-redirection"></a>連接埠重新導向   

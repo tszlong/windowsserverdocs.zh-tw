@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 4371192d44878d3c953374b8d307b4d5612869f5
-ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
+ms.openlocfilehash: 9cf998087e23f45fe5981aef6d1ff5b7b4e85b9b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65461982"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447617"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>叢集對叢集儲存體複本在 Azure 中的相同區域內
 
@@ -30,7 +30,7 @@ ms.locfileid: "65461982"
 第二部分
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
 
-![架構圖顯示在 Azure 中的叢集對叢集儲存體複本相同的區域內。](media\Cluster-to-cluster-azure-one-region\architecture.png)
+![架構圖顯示在 Azure 中的叢集對叢集儲存體複本相同的區域內。](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
 > 參考的所有範例都專屬於上圖。
 
@@ -58,41 +58,43 @@ ms.locfileid: "65461982"
 8. 在我們的範例中，網域控制站**az2azDC**具有私人 IP 位址 (10.3.0.8)。 虛擬網路中 (**az2az Vnet**) 變更 10.3.0.8 的 DNS 伺服器。 連接到"Contoso.com"的所有節點，並提供"contosoadmin"的系統管理員權限。
    - 從所有節點的 contosoadmin 身分登入。 
     
-9. 建立叢集 (**SRAZC1**， **SRAZC2**)。 以下是我們的範例 PowerShell 命令
-```PowerShell
+9. 建立叢集 (**SRAZC1**， **SRAZC2**)。 
+   以下是我們的範例 PowerShell 命令
+   ```PowerShell
     New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
-```
-```PowerShell
+   ```
+   ```PowerShell
     New-Cluster -Name SRAZC2 -Node az2az3,az2az4 –StaticAddress 10.3.0.101
-```
+   ```
 10. 啟用儲存空間直接存取
-```PowerShell
+    ```PowerShell
     Enable-clusterS2D
-```   
+    ```   
    
-   每個叢集建立虛擬磁碟和磁碟區。 其中的資料，另一個記錄檔。 
+    每個叢集建立虛擬磁碟和磁碟區。 其中的資料，另一個記錄檔。 
    
 11. 建立內部的標準 SKU[負載平衡器](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)每個叢集 (**azlbr1**，**azlbr2**)。 
    
-   提供的叢集 IP 位址為靜態私人 IP 位址的負載平衡器。
-   - azlbr1 = > 前端 IP:10.3.0.100 (挑選未使用的 IP 位址與虛擬網路 (**az2az Vnet**) 子網路)
-   - 建立每個負載平衡器後端集區。 加入相關聯的叢集節點。
-   - 建立健康狀態探查： 連接埠 59999
-   - 建立負載平衡規則：允許 HA 連接埠與啟用浮動 IP。 
+    提供的叢集 IP 位址為靜態私人 IP 位址的負載平衡器。
+    - azlbr1 = > 前端 IP:10.3.0.100 (挑選未使用的 IP 位址與虛擬網路 (**az2az Vnet**) 子網路)
+    - 建立每個負載平衡器後端集區。 加入相關聯的叢集節點。
+    - 建立健康狀態探查： 連接埠 59999
+    - 建立負載平衡規則：允許 HA 連接埠與啟用浮動 IP。 
    
-   提供的叢集 IP 位址為靜態私人 IP 位址的負載平衡器。
-   - azlbr2 = > 前端 IP:10.3.0.101 (挑選未使用的 IP 位址與虛擬網路 (**az2az Vnet**) 子網路)
-   - 建立每個負載平衡器後端集區。 加入相關聯的叢集節點。
-   - 建立健康狀態探查： 連接埠 59999
-   - 建立負載平衡規則：允許 HA 連接埠與啟用浮動 IP。 
+    提供的叢集 IP 位址為靜態私人 IP 位址的負載平衡器。
+    - azlbr2 = > 前端 IP:10.3.0.101 (挑選未使用的 IP 位址與虛擬網路 (**az2az Vnet**) 子網路)
+    - 建立每個負載平衡器後端集區。 加入相關聯的叢集節點。
+    - 建立健康狀態探查： 連接埠 59999
+    - 建立負載平衡規則：允許 HA 連接埠與啟用浮動 IP。 
    
 12. 每個叢集節點，開啟連接埠 59999 （健康情況探查）。 
    
     每個節點上執行下列命令：
-```PowerShell
-netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
-```   
-13. 指示要接聽的連接埠 59999 上的 健康情況探查訊息，並回應從目前擁有這項資源的節點叢集。 執行一次從任何一個叢集節點，每個叢集。 
+    ```PowerShell
+    netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
+    ```   
+13. 指示要接聽的連接埠 59999 上的 健康情況探查訊息，並回應從目前擁有這項資源的節點叢集。 
+    執行一次從任何一個叢集節點，每個叢集。 
     
     在我們的範例，請務必變更"ILBIP 「 根據您的組態值。 執行下列命令，從任何一個節點**az2az1**/**az2az2**:
 
@@ -113,16 +115,16 @@ netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=al
     [int]$ProbePort = 59999
     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
     ```   
-   請確定這兩個叢集可以連接 / 彼此通訊。 
+    請確定這兩個叢集可以連接 / 彼此通訊。 
 
-   請使用容錯移轉叢集管理員中的 「 連線到叢集 」 功能連線到另一個叢集，或檢查另一個叢集會回應來自其中一個目前的叢集節點。  
+    請使用容錯移轉叢集管理員中的 「 連線到叢集 」 功能連線到另一個叢集，或檢查另一個叢集會回應來自其中一個目前的叢集節點。  
    
-   ```PowerShell
+    ```PowerShell
      Get-Cluster -Name SRAZC1 (ran from az2az3)
-   ```
-   ```PowerShell
+    ```
+    ```PowerShell
      Get-Cluster -Name SRAZC2 (ran from az2az1)
-   ```   
+    ```   
 
 15. 建立這兩個叢集的雲端見證。 建立兩個[儲存體帳戶](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM)(**az2azcw**， **az2azcw2**) 在相同的資源群組中每個叢集的 azure 一個 (**SR AZ2AZ**)。
 
@@ -135,25 +137,25 @@ netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=al
 
 18. 設定叢集對叢集儲存體複本。
    
-   授與存取權從一個叢集至兩個方向的另一個叢集：
+    授與存取權從一個叢集至兩個方向的另一個叢集：
 
-   在我們的範例：
+    在我們的範例：
 
-   ```PowerShell
+    ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
-   ```
-如果您使用 Windows Server 2016 也執行這個命令：
+    ```
+    如果您使用 Windows Server 2016 也執行這個命令：
 
-   ```PowerShell
+    ```PowerShell
       Grant-SRAccess -ComputerName az2az3 -Cluster SRAZC1
-   ```   
+    ```   
    
 19. 建立叢集 SRPartnership:</ol>
 
- - 叢集**SRAZC1**。
-   - 磁碟區的位置:-c:\ClusterStorage\DataDisk1
-   - 記錄位置:-g:
- - 叢集**SRAZC2**
+    - 叢集**SRAZC1**。
+    - 磁碟區的位置:-c:\ClusterStorage\DataDisk1
+    - 記錄位置:-g:
+    - 叢集**SRAZC2**
     - 磁碟區的位置:-c:\ClusterStorage\DataDisk2
     - 記錄位置:-g:
 

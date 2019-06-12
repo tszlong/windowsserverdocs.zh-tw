@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 767d9e0760f29023aaf049ad108792f17dac309f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e45f0c3c988c86a2428c3beb8bafc29b7b16bc0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856959"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446931"
 ---
 # <a name="step-12-test-directaccess-connectivity"></a>步驟 12 測試 DirectAccess 連線
 
@@ -34,7 +34,7 @@ ms.locfileid: "59856959"
   
 - 測試 2 EDGE1 透過網際網路的 DirectAccess 連線  
   
-## <a name="prerequisites"></a>先決條件  
+## <a name="prerequisites"></a>必要條件  
 這兩個用戶端電腦連線到公司網路，並再重新啟動這兩個用戶端電腦。  
   
 ## <a name="policy"></a>請確認用戶端有正確的群組原則  
@@ -71,32 +71,32 @@ ms.locfileid: "59856959"
   
 ## <a name="EDGE1"></a>測試從 EDGE1 透過網際網路的 DirectAccess 連線  
   
-1.  請拔除 2-EDGE1 來自網際網路的網路。  
+1. 請拔除 2-EDGE1 來自網際網路的網路。  
   
-2.  將 CLIENT1 和 CLIENT2 從公司網路交換器拔除，並將其連接到網際網路交換器。 等候 30 秒。  
+2. 將 CLIENT1 和 CLIENT2 從公司網路交換器拔除，並將其連接到網際網路交換器。 等候 30 秒。  
   
-3.  在 CLIENT1 上，在 Windows PowerShell 視窗中，輸入**ipconfig /all**按 ENTER 鍵。  
+3. 在 CLIENT1 上，在 Windows PowerShell 視窗中，輸入**ipconfig /all**按 ENTER 鍵。  
   
-4.  檢查 ipconfig 命令的輸出。  
+4. 檢查 ipconfig 命令的輸出。  
   
-    用戶端電腦現在已連線到網際網路，並具有公用的 IPv4 位址。 當 DirectAccess 用戶端具有公用的 IPv4 位址時，它會使用 Teredo 或 IP-HTTPS IPv6 轉換技術，來建立通道的 IPv6 訊息以透過 IPv4 網際網路的 DirectAccess 用戶端和遠端存取伺服器之間。 請注意，Teredo 慣用的轉換技術。  
+   用戶端電腦現在已連線到網際網路，並具有公用的 IPv4 位址。 當 DirectAccess 用戶端具有公用的 IPv4 位址時，它會使用 Teredo 或 IP-HTTPS IPv6 轉換技術，來建立通道的 IPv6 訊息以透過 IPv4 網際網路的 DirectAccess 用戶端和遠端存取伺服器之間。 請注意，Teredo 慣用的轉換技術。  
   
-5.  在 Windows PowerShell 視窗中，輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中時用戶端電腦連線到公司網路的名稱解析項目。  
+5. 在 Windows PowerShell 視窗中，輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中時用戶端電腦連線到公司網路的名稱解析項目。  
   
-6.  停用 Teredo 介面，以確保用戶端電腦使用 IP-HTTPS 連線到公司網路，使用下列命令：  
+6. 停用 Teredo 介面，以確保用戶端電腦使用 IP-HTTPS 連線到公司網路，使用下列命令：  
   
-    ```  
-    netsh interface teredo set state disable  
-    ```  
+   ```  
+   netsh interface teredo set state disable  
+   ```  
   
-7.  確定您已連線透過 EDGE1。 型別**netsh 介面 httpstunnel 顯示介面**按 ENTER 鍵。  
+7. 確定您已連線透過 EDGE1。 型別**netsh 介面 httpstunnel 顯示介面**按 ENTER 鍵。  
   
-    輸出應包含 URL: https://edge1.contoso.com:443/IPHTTPS。  
+   輸出應包含 URL: https://edge1.contoso.com:443/IPHTTPS。  
   
-    > [!TIP]  
-    > 在 CLIENT1 上，您也可以執行下列 Windows PowerShell 命令：**取得 NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連線與目前作用中的設定檔。  
+   > [!TIP]  
+   > 在 CLIENT1 上，您也可以執行下列 Windows PowerShell 命令：**取得 NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連線與目前作用中的設定檔。  
   
-8.  在 Windows PowerShell 視窗中，輸入**ping app1**按 ENTER 鍵。 您應該會看到來自指派到 APP1，在此案例中是 2001:db8:1::3 的回覆的 IPv6 位址。  
+8. 在 Windows PowerShell 視窗中，輸入**ping app1**按 ENTER 鍵。 您應該會看到來自指派到 APP1，在此案例中是 2001:db8:1::3 的回覆的 IPv6 位址。  
   
 9. 在 Windows PowerShell 視窗中，輸入**ping 2-app1**按 ENTER 鍵。 您應該會看到來自指派給 2-APP1，在此案例中是 2001:db8:2::3 的 IPv6 位址。  
   
@@ -104,17 +104,17 @@ ms.locfileid: "59856959"
   
     Ping APP2 的功能很重要，因為成功，表示您仍可連線使用 nat64/dns64，因為 APP2 IPv4 唯一的資源。  
   
-11. 開啟 Internet Explorer，在 Internet Explorer 網址列中，輸入**https://app1/** 按 ENTER 鍵。 您將會看到 APP1 上的預設 IIS 網站。  
+11. 開啟 Internet Explorer，在 Internet Explorer 網址列中，輸入 **https://app1/** 按 ENTER 鍵。 您將會看到 APP1 上的預設 IIS 網站。  
   
-12. 在 Internet Explorer 網址列中，輸入**https://2-app1/** 按 ENTER 鍵。 2-APP1 上，您會看到預設的網站。  
+12. 在 Internet Explorer 網址列中，輸入 **https://2-app1/** 按 ENTER 鍵。 2-APP1 上，您會看到預設的網站。  
   
-13. 在 Internet Explorer 網址列中，輸入**https://app2/** 按 ENTER 鍵。 您將會看到 APP2 上的預設網站。  
+13. 在 Internet Explorer 網址列中，輸入 **https://app2/** 按 ENTER 鍵。 您將會看到 APP2 上的預設網站。  
   
-14. 在 **開始**畫面上，輸入**\\\2-App1\Files**，然後按 ENTER 鍵。 按兩下 範例文字檔案。  
+14. 在 **開始**畫面上，輸入<strong>\\\2-App1\Files</strong>，然後按 ENTER 鍵。 按兩下 範例文字檔案。  
   
     這示範了您仍可連線到檔案伺服器，透過 EDGE1 連線時 corp2.corp.contoso.com 網域中。  
   
-15. 在 **開始**畫面上，輸入**\\\App2\Files**，然後按 ENTER 鍵。 按兩下 [新文字文件] 檔案。  
+15. 在 **開始**畫面上，輸入<strong>\\\App2\Files</strong>，然後按 ENTER 鍵。 按兩下 [新文字文件] 檔案。  
   
     這示範了您仍可連線到 IPv4 唯一伺服器使用 SMB 來取得資源網域中的資源。  
   
@@ -154,43 +154,43 @@ ms.locfileid: "59856959"
   
 ## <a name="DAConnect"></a>測試 2 EDGE1 透過網際網路的 DirectAccess 連線  
   
-1.  連線到網際網路的網路的 2 EDGE1。  
+1. 連線到網際網路的網路的 2 EDGE1。  
   
-2.  從網際網路的網路，請拔除 EDGE1。  
+2. 從網際網路的網路，請拔除 EDGE1。  
   
-3.  在 CLIENT1 上，開啟提升權限的 Windows PowerShell 視窗。  
+3. 在 CLIENT1 上，開啟提升權限的 Windows PowerShell 視窗。  
   
-4.  在 Windows PowerShell 視窗中，輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中時用戶端電腦連線到公司網路的名稱解析項目。  
+4. 在 Windows PowerShell 視窗中，輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中時用戶端電腦連線到公司網路的名稱解析項目。  
   
-5.  確定您已連線到 2 EDGE1。 型別**netsh 介面 httpstunnel 顯示介面**按 ENTER 鍵。  
+5. 確定您已連線到 2 EDGE1。 型別**netsh 介面 httpstunnel 顯示介面**按 ENTER 鍵。  
   
-    輸出應包含 URL: https://2-edge1.contoso.com:443/IPHTTPS。  
+   輸出應包含 URL: https://2-edge1.contoso.com:443/IPHTTPS。  
   
-    > [!TIP]  
-    > 在 CLIENT1 上，您也可以執行下列命令：**取得 NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連線與目前作用中的設定檔。  
+   > [!TIP]  
+   > 在 CLIENT1 上，您也可以執行下列命令：**取得 NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連線與目前作用中的設定檔。  
   
-    > [!NOTE]  
-    > CLIENT1 會自動變更的伺服器透過它連線到公司資源。 如果命令的輸出會顯示連接至 EDGE1，等候約五分鐘，並再試一次。  
+   > [!NOTE]  
+   > CLIENT1 會自動變更的伺服器透過它連線到公司資源。 如果命令的輸出會顯示連接至 EDGE1，等候約五分鐘，並再試一次。  
   
-6.  在 Windows PowerShell 視窗中，輸入**ping app1**按 ENTER 鍵。 您應該會看到來自指派到 APP1，在此案例中是 2001:db8:1::3 的回覆的 IPv6 位址。  
+6. 在 Windows PowerShell 視窗中，輸入**ping app1**按 ENTER 鍵。 您應該會看到來自指派到 APP1，在此案例中是 2001:db8:1::3 的回覆的 IPv6 位址。  
   
-7.  在 Windows PowerShell 視窗中，輸入**ping 2-app1**按 ENTER 鍵。 您應該會看到來自指派給 2-APP1，在此案例中是 2001:db8:2::3 的 IPv6 位址。  
+7. 在 Windows PowerShell 視窗中，輸入**ping 2-app1**按 ENTER 鍵。 您應該會看到來自指派給 2-APP1，在此案例中是 2001:db8:2::3 的 IPv6 位址。  
   
-8.  在 Windows PowerShell 視窗中，輸入**ping app2**按 ENTER 鍵。 您應該會看到來自 EDGE1 指派給在此情況下是 fd 的 APP2 之 NAT64 位址**c9:9f4e:eb1b**: 7777::a00:4。 請注意，粗體顯示的值會因地址的產生方式而有所不同。  
+8. 在 Windows PowerShell 視窗中，輸入**ping app2**按 ENTER 鍵。 您應該會看到來自 EDGE1 指派給在此情況下是 fd 的 APP2 之 NAT64 位址**c9:9f4e:eb1b**: 7777::a00:4。 請注意，粗體顯示的值會因地址的產生方式而有所不同。  
   
-    Ping APP2 的功能很重要，因為成功，表示您仍可連線使用 nat64/dns64，因為 APP2 IPv4 唯一的資源。  
+   Ping APP2 的功能很重要，因為成功，表示您仍可連線使用 nat64/dns64，因為 APP2 IPv4 唯一的資源。  
   
-9. 開啟 Internet Explorer，在 Internet Explorer 網址列中，輸入**https://app1/** 按 ENTER 鍵。 您將會看到 APP1 上的預設 IIS 網站。  
+9. 開啟 Internet Explorer，在 Internet Explorer 網址列中，輸入 **https://app1/** 按 ENTER 鍵。 您將會看到 APP1 上的預設 IIS 網站。  
   
-10. 在 Internet Explorer 網址列中，輸入**https://2-app1/** 按 ENTER 鍵。 您將會看到 APP2 上的預設網站。  
+10. 在 Internet Explorer 網址列中，輸入 **https://2-app1/** 按 ENTER 鍵。 您將會看到 APP2 上的預設網站。  
   
-11. 在 Internet Explorer 網址列中，輸入**https://app2/** 按 ENTER 鍵。 APP3 上，您會看到預設的網站。  
+11. 在 Internet Explorer 網址列中，輸入 **https://app2/** 按 ENTER 鍵。 APP3 上，您會看到預設的網站。  
   
-12. 在 **開始**畫面上，輸入**\\\App1\Files**，然後按 ENTER 鍵。 按兩下 範例文字檔案。  
+12. 在 **開始**畫面上，輸入<strong>\\\App1\Files</strong>，然後按 ENTER 鍵。 按兩下 範例文字檔案。  
   
     這示範了您能夠連線到透過 2 EDGE1 連線時 corp.contoso.com 網域中的檔案伺服器。  
   
-13. 在 **開始**畫面上，輸入**\\\App2\Files**，然後按 ENTER 鍵。 按兩下 [新文字文件] 檔案。  
+13. 在 **開始**畫面上，輸入<strong>\\\App2\Files</strong>，然後按 ENTER 鍵。 按兩下 [新文字文件] 檔案。  
   
     這示範了您仍可連線到 IPv4 唯一伺服器使用 SMB 來取得資源網域中的資源。  
   

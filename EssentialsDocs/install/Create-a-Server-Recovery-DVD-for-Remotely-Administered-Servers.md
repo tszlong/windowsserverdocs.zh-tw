@@ -12,12 +12,12 @@ ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7bfe1686ac84962cdb4ab1cde8d6ca5226cb9d44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 999887f09c27c1df481cb5e46579942424a2847b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844349"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433618"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>針對遠端管理的伺服器建立伺服器復原 DVD
 
@@ -83,11 +83,11 @@ ms.locfileid: "59844349"
 ####  <a name="BKMK_Collecting"></a> 步驟 2:收集原廠重設映像與 XML 檔案  
  若要將伺服器重設為原廠預設值，則必須擷取下列兩個映像：  
   
--   系統磁碟機映像  
+- 系統磁碟機映像  
   
--   系統保留磁碟分割  
+- 系統保留磁碟分割  
   
- 為了擷取這些映像，我們提供 GenDiskXML.exe 工具。 GenDiskXML.exe 也會收集復原程序用來重新建立磁碟設定且名為 disk.xml 的檔案。  
+  為了擷取這些映像，我們提供 GenDiskXML.exe 工具。 GenDiskXML.exe 也會收集復原程序用來重新建立磁碟設定且名為 disk.xml 的檔案。  
   
 1.  在 Sysprep 之後，使用任何 64 位元版本的 Windows PE 將系統重新開機。  
   
@@ -117,29 +117,29 @@ ms.locfileid: "59844349"
 > [!NOTE]
 >  列出的檔案名稱必須完全相符。  
   
-1.  精靈頁面上會有其他說明的連結。 若此 .chm 檔案存在，則會覆寫網頁說明的 FWLink。 說明檔案位於：  
+1. 精靈頁面上會有其他說明的連結。 若此 .chm 檔案存在，則會覆寫網頁說明的 FWLink。 說明檔案位於：  
   
-     < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\RestartHelp.chm  
+    < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\RestartHelp.chm  
   
-2.  此檔案包含客戶在精靈頁面上所看見的文字。 這些文字會說明如何將伺服器開機至復原模式。 其控制項是可捲動的，它會對可新增的文字數量施以實用的限制。  
+2. 此檔案包含客戶在精靈頁面上所看見的文字。 這些文字會說明如何將伺服器開機至復原模式。 其控制項是可捲動的，它會對可新增的文字數量施以實用的限制。  
   
-     下列檔案是用來取代精靈中的範例圖片，主要與商標有關。 它必須是 .png 檔案。 檔案大小必須是 256 像素 x 256 像素，否則會在於精靈中顯示時遭到截斷。  
+    下列檔案是用來取代精靈中的範例圖片，主要與商標有關。 它必須是 .png 檔案。 檔案大小必須是 256 像素 x 256 像素，否則會在於精靈中顯示時遭到截斷。  
   
-     < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\RestartInstructions.rtf  
+    < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\RestartInstructions.rtf  
   
-3.  < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\ServerImage.png  
+3. < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\ServerImage.png  
   
- 轉換伺服器復原 DVD 以支援多個語言時，請確定執行下列作業：  
+   轉換伺服器復原 DVD 以支援多個語言時，請確定執行下列作業：  
   
-1.  您一律必須有 en-us 資料夾。 伺服器復原應用程式若找不到與其執行所在之用戶端電腦相符的文化特性專屬檔案，則會切換至 en-us。  
+4. 您一律必須有 en-us 資料夾。 伺服器復原應用程式若找不到與其執行所在之用戶端電腦相符的文化特性專屬檔案，則會切換至 en-us。  
   
-2.  在您所建立的每個文化特性資料夾中，新增三個自訂檔案 (.png、.chm 及 .rtf)。  
+5. 在您所建立的每個文化特性資料夾中，新增三個自訂檔案 (.png、.chm 及 .rtf)。  
   
-3.  複製這兩個文化特性資料夾從 語言套件\\< CultureName\>\Server Recovery 伺服器復原 DVD 的根目錄。 例如: ES 及 ES-ES 這兩個資料夾將會複製到 DVD 的根目錄，以支援西班牙文。  
+6. 複製這兩個文化特性資料夾從 語言套件\\< CultureName\>\Server Recovery 伺服器復原 DVD 的根目錄。 例如: ES 及 ES-ES 這兩個資料夾將會複製到 DVD 的根目錄，以支援西班牙文。  
   
-4.  完成 ISO 檔案。  
+7. 完成 ISO 檔案。  
   
- 支援的文化特性名稱包括：  
+   支援的文化特性名稱包括：  
 
 |-|-|  
 |- cs-CZ<br /><br /> -DE-DE<br /><br /> -英文<br /><br /> - es-ES<br /><br /> - fr-FR<br /><br /> -HU-HU<br /><br /> -IT-IT<br /><br /> -若為 JA-JP<br /><br /> - ko-KR<br /><br /> - nl-NL|- pl-PL<br /><br /> - pt-BR<br /><br /> - pt-PT<br /><br /> -RU-RU<br /><br /> - sv-SE<br /><br /> - tr-TR<br /><br /> - zh-CN<br /><br /> - zh-HK<br /><br /> - zh-TW
@@ -166,7 +166,7 @@ ms.locfileid: "59844349"
   
 2.  按兩下 **setup.exe**。 伺服器復原精靈會提示您執行客戶將會進行的相同程序。  
   
-3.  按一下 **[從備份還原伺服器]**，然後遵循精靈中的指示作業。  
+3.  按一下 **[從備份還原伺服器]** ，然後遵循精靈中的指示作業。  
   
 ## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   

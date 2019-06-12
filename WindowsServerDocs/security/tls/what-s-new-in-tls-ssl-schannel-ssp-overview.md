@@ -13,12 +13,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 48dabb5ad83b82f0a93992ad8c24456a8a8e7ef5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1af556200c9dd497bac835f1480479cca075dab
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873089"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447278"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS-SSL (安全通道 SSP) 的概觀
 
@@ -31,7 +31,7 @@ ms.locfileid: "59873089"
 TLS 和 SSL 安全通道 SSP 中的 Microsoft 實作的相關資訊，請參閱[TLS/SSL 技術參考 (2003)](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)。
 
 
-##<a name="tlsssl-schannel-ssp-features"></a>TLS/SSL (安全通道 SSP) 功能
+## <a name="tlsssl-schannel-ssp-features"></a>TLS/SSL (安全通道 SSP) 功能
 以下說明安全通道 SSP 中 TLS 的功能
 
 ### <a name="tls-session-resumption"></a>TLS 工作階段繼續
@@ -84,7 +84,7 @@ Windows Server 2012 中的受信任的簽發者清單已使用憑證存放區;�
 
 -   如果已為網站設定特定的認證存放區，則會將之做為來源
 
--   如果應用程式定義的存放區中沒有任何憑證，則安全通道會檢查本機電腦上的 [用戶端驗證簽發者] 存放區，且如果出現憑證，則將該存放區做為來源。 如果任一存放區都找不到任何憑證，則會檢查信任根目錄存放區。
+-   如果應用程式定義的存放區中沒有任何憑證，則安全通道會檢查本機電腦上的 [用戶端驗證簽發者]  存放區，且如果出現憑證，則將該存放區做為來源。 如果任一存放區都找不到任何憑證，則會檢查信任根目錄存放區。
 
 -   如果全域或本機存放區都沒有憑證，將會使用安全通道提供者**受信任的根憑證授權單位**儲存做為受信任的簽發者清單的來源。 （這是 Windows Server 2008 R2 的行為）。
 

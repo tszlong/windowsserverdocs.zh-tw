@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 4376dbb2c172a82c4ab64dc63acefbc37457110f
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: bf346844337740f7585070ff78de4e7f61f25624
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476036"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447266"
 ---
 # <a name="data-deduplication-overview"></a>重複資料刪除概觀
 
@@ -28,7 +28,7 @@ ms.locfileid: "65476036"
 
 ## <a name="why-is-dedup-useful"></a>為何有用的重複資料刪除？
 
-重複資料刪除可協助存放裝置系統管理員降低與重複資料相關聯的成本。 大型資料集通常會有「許多」 **<u></u>** 重複資料，使得儲存資料的成本增加。 例如: 
+重複資料刪除可協助存放裝置系統管理員降低與重複資料相關聯的成本。 大型資料集通常會有「許多」 **<u></u>** 重複資料，使得儲存資料的成本增加。 例如:
 
 - 使用者的檔案共用可能有許多相同或類似的檔案複本。
 - 虛擬機器與虛擬機器之間的虛擬化客體可能幾乎完全相同。
@@ -69,7 +69,7 @@ VDI 伺服器 (例如<a href="https://technet.microsoft.com/library/cc725560.asp
                     <li><b>遠端存取</b>:使用者可以存取企業應用程式，例如家用電腦、 kiosk、 低階硬體，以及非 Windows 作業系統的裝置。</li>
                     <li><b>分公司存取</b>:VDI 部署可以提供較佳的應用程式效能，分支辦公室工作人員需要存取集中式的資料存放區。 有時資料密集應用程式沒有最適合緩速連線使用的用戶端/伺服器通訊協定。</li>
                 </ul>
-VDI 部署是最佳的重複資料刪除候選項目，原因是為使用者驅動遠端桌面的虛擬硬碟基本上完全相同。 此外，重複資料刪除有助於處理所謂的「VDI 開機壅塞情況」  ，也就是許多使用者一早同時登入其桌面時，造成存放裝置效能驟降的情況。
+VDI 部署是最佳的重複資料刪除候選項目，原因是為使用者驅動遠端桌面的虛擬硬碟基本上完全相同。 此外，重複資料刪除有助於處理所謂的「VDI 開機壅塞情況」，也就是許多使用者一早同時登入其桌面時，造成存放裝置效能驟降的情況。
             </td>
         </tr>
         <tr>
@@ -83,7 +83,7 @@ VDI 部署是最佳的重複資料刪除候選項目，原因是為使用者驅�
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-other.png" alt="Illustration of other workloads" /></td>
             <td style="vertical-align:top">
                 <b>其他工作負載</b><br />
-                [其他工作負載也可能是重複資料刪除功能的絕佳候選項目](install-enable.md#enable-dedup-candidate-workloads)。
+                <a href="install-enable.md#enable-dedup-candidate-workloads" data-raw-source="[Other workloads may also be excellent candidates for Data Deduplication](install-enable.md#enable-dedup-candidate-workloads)">其他工作負載也可能是重複資料刪除功能的絕佳候選項目</a>。
             </td>
         </tr>
     </tbody>

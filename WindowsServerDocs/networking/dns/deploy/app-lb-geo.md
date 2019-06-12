@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 806c0cdeedb44db44fc0ec5218124f516a6f70e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f76163e6b064ac3225ab4d755afd548e1cb720b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852549"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446417"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>使用 DNS 原則進行具有地理位置感知的應用程式負載平衡
 
@@ -45,7 +45,7 @@ DNS 系統管理員也會想從其他位置中所有的資料中心之間平均�
 >[!IMPORTANT]
 >下列各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。
 
-###<a name="bkmk_clientsubnets"></a>建立 DNS 用戶端的子網路
+### <a name="bkmk_clientsubnets"></a>建立 DNS 用戶端的子網路
 
 您必須先識別的子網路或 IP 位址空間的北美洲與歐洲地區。
 
@@ -61,7 +61,7 @@ DNS 用戶端的子網路是從中查詢傳送至 DNS 伺服器的 IPv4 或 IPv6
     
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
-###<a name="bkmk_zscopes2"></a>建立區域範圍
+### <a name="bkmk_zscopes2"></a>建立區域範圍
 
 用戶端子網路已備妥之後，您必須分割區域 contosogiftservices.com 為不同的區域範圍，每個資料中心。
 
@@ -85,7 +85,7 @@ DNS 用戶端的子網路是從中查詢傳送至 DNS 伺服器的 IPv4 或 IPv6
 
 如需詳細資訊，請參閱[新增 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records2"></a>將記錄新增至區域範圍
+### <a name="bkmk_records2"></a>將記錄新增至區域範圍
 
 現在，您必須新增至多個區域範圍表示 web 伺服器主機的記錄。
 
@@ -98,7 +98,7 @@ DNS 用戶端的子網路是從中查詢傳送至 DNS 伺服器的 IPv4 或 IPv6
 
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-###<a name="bkmk_policies2"></a>建立 DNS 原則
+### <a name="bkmk_policies2"></a>建立 DNS 原則
 
 您已建立資料分割 （區域範圍），您已新增記錄之後，您必須建立將傳入的查詢分散到這些領域的 DNS 原則。
 

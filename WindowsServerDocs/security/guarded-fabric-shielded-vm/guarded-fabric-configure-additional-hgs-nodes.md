@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 10/22/2018
-ms.openlocfilehash: a89337457cc71ffee78e3f73fecc2262f1fb38e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0741845bdbd8bfbea00df21d1fe810a27fc6a3b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855199"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443858"
 ---
 # <a name="configure-additional-hgs-nodes"></a>設定其他 HGS 節點
 
@@ -28,7 +28,7 @@ ms.locfileid: "59855199"
 |新的 HGS 樹系  | [使用 PFX 檔案](#dedicated-hgs-forest-with-pfx-certificates) | [使用憑證指紋](#dedicated-hgs-forest-with-certificate-thumbprints) |
 |現有的防禦樹系 |  [使用 PFX 檔案](#existing-bastion-forest-with-pfx-certificates) | [使用憑證指紋](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 請確定每個額外的節點： 
 - 具有相同的硬體和軟體設定為主要節點 
@@ -151,6 +151,6 @@ HGS 一律會公開 HTTP 和 HTTPS 連接埠進行通訊。
 
 ## <a name="next-step"></a>後續步驟
 
->[!div class="nextstepaction"]
-[驗證 HGS 設定](guarded-fabric-verify-hgs-configuration.md)
+> [!div class="nextstepaction"]
+> [驗證 HGS 設定](guarded-fabric-verify-hgs-configuration.md)
 

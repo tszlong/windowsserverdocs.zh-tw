@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 077a3a64-2fa3-4994-9711-ec1fbdc081ba
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 83d12826bd8128bc38d84c252045d74cf416457e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7f4c7e1418e541e1f913c8a20cbda3456c1c3802
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882879"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446605"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>監視「遠端存取」伺服器及其元件的操作狀態
 
@@ -33,7 +33,7 @@ ms.locfileid: "59882879"
   
 #### <a name="to-monitor-the-remote-access-server-operations-status"></a>若要監視遠端存取伺服器操作狀態  
   
-1.  在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [遠端存取管理]。  
+1.  在 [伺服器管理員]  中，按一下 [工具]  ，然後按一下 [遠端存取管理]  。  
   
 2.  按一下 **儀表板**瀏覽至**遠端存取報告**中**遠端存取管理主控台**。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "59882879"
   
 4.  按一下 **重新整理**下方**工作**重新載入的操作狀態的右窗格中。 操作狀態會自動重新整理每隔五分鐘，這是預設重新整理間隔。 若要變更預設重新整理間隔，請按一下**設定重新整理間隔**。  
   
-![Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

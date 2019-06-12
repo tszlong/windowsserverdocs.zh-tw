@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: beecef692b2ac01e6cb6c36892fec16e55b08209
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3b2eb55c11348c3abcb1ef9e234cd19ba727758
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835169"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446597"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>步驟 2 設定多站台的基礎結構
 
@@ -61,7 +61,7 @@ ms.locfileid: "59835169"
   
 8.  關閉 Active Directory 站台及服務。  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -108,7 +108,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 3.  在 **選取伺服器角色**頁面上，選取**Active Directory 網域服務**。 按一下 [**將功能加入**當出現提示，然後按一下**下一步]** 三次。  
   
-4.  在 [確認] 頁面上，按一下 [安裝]。  
+4.  在 [確認]  頁面上，按一下 [安裝]  。  
   
 5.  安裝成功完成時，按一下**此伺服器升級為網域控制站**。  
   
@@ -116,7 +116,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 7.  在 **網域**，輸入網域名稱; 例如，corp.contoso.com。  
   
-8.  底下**提供的認證來執行這項作業**，按一下**變更**。 在  **Windows 安全性**對話方塊方塊中，提供可以安裝其他網域控制站帳戶的使用者名稱和密碼。 若要安裝其他網域控制站，您必須是 Enterprise Admins 群組或 Domain Admins 群組的成員。 完成提供認證之後，按 [下一步]。  
+8.  底下**提供的認證來執行這項作業**，按一下**變更**。 在  **Windows 安全性**對話方塊方塊中，提供可以安裝其他網域控制站帳戶的使用者名稱和密碼。 若要安裝其他網域控制站，您必須是 Enterprise Admins 群組或 Domain Admins 群組的成員。 完成提供認證之後，按 [下一步]  。  
   
 9. 在 **網域控制站選項**頁面上，執行下列動作：  
   
@@ -129,15 +129,15 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
             > [!NOTE]  
             > 如果您選取要安裝 DNS 伺服器選項，您可能會收到訊息，指出無法建立 DNS 委派 DNS 伺服器，而且您應該以手動方式建立的 DNS 伺服器，以確保可靠的名稱解析的 DNS 委派。 如果您要安裝其他網域控制站的樹系根網域或樹狀目錄根網域中，您不必建立 DNS 委派。 在此情況下，按一下**是**和可忽略此訊息。  
   
-        -   **通用類別目錄 (GC)**」 預設會選取此選項。 它會新增通用類別目錄，唯讀目錄磁碟分割至網域控制站，並啟用通用類別目錄搜尋功能。  
+        -   **通用類別目錄 (GC)** 」 預設會選取此選項。 它會新增通用類別目錄，唯讀目錄磁碟分割至網域控制站，並啟用通用類別目錄搜尋功能。  
   
-        -   **唯讀網域控制站 (RODC)**」 預設不會選取此選項。 它可讓其他網域控制站唯讀的;也就是讓網域控制站的 RODC。  
+        -   **唯讀網域控制站 (RODC)** 」 預設不會選取此選項。 它可讓其他網域控制站唯讀的;也就是讓網域控制站的 RODC。  
   
     2.  在 **站台名稱**，從清單中選取站台。  
   
-    3.  底下**輸入目錄服務還原模式 (DSRM) 密碼**，請在**密碼**並**確認密碼**兩次，輸入強式密碼，然後按一下 [ **下一步]**。 針對必須離線執行的工作，以 DSRM 啟動 AD DS，就必須使用此密碼。  
+    3.  底下**輸入目錄服務還原模式 (DSRM) 密碼**，請在**密碼**並**確認密碼**兩次，輸入強式密碼，然後按一下 [ **下一步]** 。 針對必須離線執行的工作，以 DSRM 啟動 AD DS，就必須使用此密碼。  
   
-10. 在 [ **DNS 選項**頁面上，選取**更新 DNS 委派**核取方塊，如果您想要更新 DNS 委派，在角色安裝期間，然後按一下**下一步]**。  
+10. 在 [ **DNS 選項**頁面上，選取**更新 DNS 委派**核取方塊，如果您想要更新 DNS 委派，在角色安裝期間，然後按一下**下一步]** 。  
   
 11. 在 **其他選項**頁面上，輸入或瀏覽資料庫檔案、 目錄服務記錄檔和系統磁碟區 (SYSVOL) 檔案的磁碟區及資料夾的位置。 視需要指定複寫選項，然後按一下**下一步**。  
   
@@ -156,7 +156,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 1.  在主要網域控制站中，按一下**開始**，然後按一下**Active Directory 使用者和電腦**。  
   
-2.  在主控台樹狀目錄中，以滑鼠右鍵按一下您要加入新的群組，例如 corp.contoso.com/Users 的資料夾。 指向 [新增]，然後按一下 [群組]。  
+2.  在主控台樹狀目錄中，以滑鼠右鍵按一下您要加入新的群組，例如 corp.contoso.com/Users 的資料夾。 指向 [新增]  ，然後按一下 [群組]  。  
   
 3.  在 **新增物件-群組**對話方塊的 **群組名稱**，輸入新的群組，例如 Win7_Clients_Entrypoint1 的名稱。  
   
@@ -164,13 +164,13 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 5.  若要將電腦新增至新的安全性群組中，按兩下 安全性群組，然後在 **< 群組名稱 > 屬性** 對話方塊中，按一下**成員** 索引標籤。  
   
-6.  在 [成員]  索引標籤上，按一下 [新增] 。  
+6.  在 [成員]  索引標籤上，按一下 [新增]  。  
   
 7.  選取 Windows 7 電腦新增到這個安全性群組，然後再按**確定**。  
   
 8.  重複此程序來建立每個進入點，所需的安全性群組。  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -301,7 +301,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>設定散發的最佳化  
-進行組態變更時，伺服器 Gpo 傳播到遠端存取伺服器時，才套用變更。 若要減少設定散發時，遠端存取會自動選取的可寫入的網域控制站也就是超連結"https://technet.microsoft.com/library/cc978016.aspx「 最接近的遠端存取伺服器時建立其伺服器 GPO。  
+進行組態變更時，伺服器 Gpo 傳播到遠端存取伺服器時，才套用變更。 若要減少設定散發時，遠端存取會自動選取的可寫入的網域控制站也就是超連結"<https://technet.microsoft.com/library/cc978016.aspx>「 最接近的遠端存取伺服器時建立其伺服器 GPO。  
   
 在某些情況下，它可能需要以手動方式修改以獲得最佳的設定散發時管理以伺服器 GPO 的網域控制站：  
   

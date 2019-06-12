@@ -10,12 +10,12 @@ ms.date: 03/16/2018
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 1a4d28e168e7ce328ac125d12a07cb0c133e2d0e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc87bf87a79f5f7e13069ad1a58be0dc940a558e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852119"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447785"
 ---
 # <a name="top-support-solutions-for-windows-server"></a>Windows Server 的最佳支援解決方案
 
@@ -84,10 +84,9 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
                         <p><a href="https://technet.microsoft.com/library/ee939272.aspx">如何疑難排解金鑰管理服務 (KMS)</a></p>
 <hr>
                         <p><a href="https://technet.microsoft.com/library/ff793439.aspx">大量啟用疑難排解</a></p>
-<hr>                       
-                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">啟用錯誤碼</a></p>
+<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">啟用錯誤碼</a></p>
 <hr>
-                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows 安裝可能會失敗，錯誤"輸入的產品金鑰不符合任何一個 Windows 映像可供安裝。輸入不同的產品金鑰 」</a></p>
+                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows 安裝可能會失敗，錯誤&quot;輸入的產品金鑰不符合任何可供安裝的 Windows 映像。輸入不同的產品金鑰&quot;</a></p>
                     </div>
                 </div>
             </div>
@@ -138,8 +137,7 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
                         <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">如何使用 Azure Active Directory 設定自動註冊的 Windows 網域的裝置</a>
 <hr>
                         <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">設定宣告的發行</a></p>
-<hr>  
-                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">設定 AD FS 驗證 LDAP 目錄中儲存的使用者</a></p>
+<hr><br/>                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">設定 AD FS 驗證 LDAP 目錄中儲存的使用者</a></p>
 <hr>
                         <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">AD FS 支援憑證驗證的替代主機名稱繫結</a></p>
 <hr>

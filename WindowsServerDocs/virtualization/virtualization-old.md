@@ -9,12 +9,12 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: b3b018037d788d47fafe7d3adda50cfb5831ab56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6dbb5be6d836462c9a24078dbec3700b09b08fc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829909"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446055"
 ---
 # <a name="virtualization"></a>虛擬化
 
@@ -41,7 +41,7 @@ Windows Server 虛擬化技術包括 HYPER-V、 HYPER-V 虛擬交換器，以及
                     </div>
                     <div class="cardText">
                         <h3>受防護網狀架構與受防護的 VM</h3>
-                        <p>身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構是由一個主機守護者服務所組成\(HGS\) -一般而言，叢集中的三個節點再加上一個或多個受守護的主機，以及一組受防護的 Vm。</p>
+                        <p>身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS)-一般而言，三個節點叢集-加上一個或多個受防護主機和一組受防護的 Vm。</p>
                     </div>
                 </div>
             </div>
@@ -101,11 +101,11 @@ Windows Server 虛擬化技術包括 HYPER-V、 HYPER-V 虛擬交換器，以及
                     </div>
                     <div class="cardText">
                         <h3>Hyper-V 虛擬交換器</h3>
-                        <p>Hyper\-V 虛擬交換器是軟體\-基礎層\-隨附於所有版本的 Hyper-v 中的 2 個乙太網路交換器\-V。</p>
+                        <p>Hyper-V 虛擬交換器是一種軟體式 Layer-2 乙太網路交換器，隨附在所有版本的 Hyper-V 中。</p>
 
-                        <p>超\-V 虛擬交換器在 Hyper-v\-管理員在您安裝 Hyper-v 之後\-V 伺服器角色。</p>
+                        <p>安裝 Hyper-V 伺服器角色之後，即可在 Hyper-V 管理員中使用 Hyper-V 虛擬交換器。</p>
 
-                        <p>包含在 Hyper-v\-V 虛擬交換器是以程式設計方式管理和可擴充的功能，可讓您將虛擬機器連接到虛擬網路與實體網路。</p> 
+                        <p>隨附的 Hyper-V 虛擬交換器是以程式設計方式管理和可擴充的功能，能讓您將虛擬機器連線到虛擬網路和實體網路。</p> 
 
                         <p>此外，Hyper-V 虛擬交換器提供安全性、隔離以及服務層級的原則強化。</p>
                     </div>
@@ -128,7 +128,7 @@ Windows Server 虛擬化技術包括 HYPER-V、 HYPER-V 虛擬交換器，以及
                     </div>
                     <div class="cardText">
                         <h3>Windows 容器</h3>
-                        <p>Windows 容器會提供作業系統\-層級可讓多個隔離的應用程式在單一系統上執行的虛擬化。 此功能包括兩種不同類型的容器執行階段，能提供不同程度的應用程式隔離。</p>
+                        <p>Windows 容器可提供作業系統層級的虛擬化，讓多個隔離的應用程式在單一系統上執行。 此功能包括兩種不同類型的容器執行階段，能提供不同程度的應用程式隔離。</p>
                     </div>
                 </div>
             </div>

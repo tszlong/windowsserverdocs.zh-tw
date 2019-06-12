@@ -9,12 +9,12 @@ ms.prod: windows-server-threshold
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: db58fcce054f34c4b0a3f6725456badae9fd0468
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32b0d08f678e9e612bb0ce9cc38d254564bd9b2f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879309"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444096"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS 和憑證 KeySpec 屬性資訊
 金鑰規格 ("KeySpec 」) 是憑證與金鑰相關聯的屬性。 它會指定與憑證相關聯的私用金鑰是否可以用於簽署、 加密，或兩者。   
@@ -53,8 +53,8 @@ KeySpec 值**1**，或**AT_KEYEXCHANGE**，可用來簽署和加密。  值為**
 ### <a name="example"></a>範例
 舊版的 CSP 的範例是 Microsoft Enhanced Cryptographic Provider。 
 
-Microsoft RSA CSP 金鑰 blob 格式包含演算法識別項，請**CALG_RSA_KEYX**或是**CALG_RSA_SIGN**，分別針對服務要求 * * AT_KEYEXCHANGE * * 或**AT_簽章**索引鍵。
-  
+Microsoft RSA CSP 金鑰 blob 格式包含演算法識別項，請**CALG_RSA_KEYX**或是**CALG_RSA_SIGN**，分別針對服務要求<strong>AT_KEYEXCHANGE * * 或 * * AT_簽章</strong>索引鍵。
+
 RSA 金鑰演算法識別項對應至 KeySpec 值，如下所示
 
 | 支援的提供者演算法| 金鑰規格 CAPI 呼叫的值 |
@@ -82,21 +82,22 @@ CALG_RSA_SIGN:金鑰的 RSA 簽章 |AT_SIGNATURE (或 KeySpec = 2)|
 
 
 1. **提供者類型：** 這代表是否使用舊版的密碼編譯儲存體提供者 (CSP) 的憑證或金鑰儲存提供者基礎上較新的憑證 Next Generation (CNG) Api。  任何非零的值會指出舊版的提供者。
-2.  **KeySpec:** AD FS 憑證的有效 KeySpec 值如下：
+2. **KeySpec:** AD FS 憑證的有效 KeySpec 值如下：
 
-    舊版的 CSP 提供者 (不等於 0 的 ProviderType):
-    
-    |AD FS 憑證用途|有效的 KeySpec 值|
-    | --- | --- |
-    |服務通訊|1|
-    |權杖解密|1|
-    |權杖簽署|1 和 2|
-    |SSL|1|
+   舊版的 CSP 提供者 (不等於 0 的 ProviderType):
 
-    CNG 提供者 (提供者類型 = 0):
-    |AD FS 憑證用途|有效的 KeySpec 值|
-    | --- | --- |   
-    |SSL|0|
+   |AD FS 憑證用途|有效的 KeySpec 值|
+   | --- | --- |
+   |服務通訊|1|
+   |權杖解密|1|
+   |權杖簽署|1 和 2|
+   |SSL|1|
+
+   CNG 提供者 (提供者類型 = 0):
+
+   |AD FS 憑證用途|有效的 KeySpec 值|
+   | --- | --- |   
+   |SSL|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>如何將您的憑證 keyspec 變更為支援的值
 KeySpec 值變更時，不需要重新產生或重新發行憑證授權單位憑證。  可以變更 KeySpec 重新匯入完整的憑證和私密金鑰的 PFX 檔案從憑證存放區使用下列步驟：

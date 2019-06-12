@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a1f47273ab3be6faa762df2fb90d6486bc0ed2d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6d7a5aa7b699f5a8f24c4a36ee8ae314768329b4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849019"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446867"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>監視「遠端存取」伺服器上現有的負載
 
@@ -35,9 +35,9 @@ ms.locfileid: "59849019"
   
 #### <a name="to-use-the-monitoring-dashboard-to-monitor-the-remote-access-server-load"></a>若要使用監視儀表板監視遠端存取伺服器負載  
   
-1.  在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [遠端存取管理]。  
+1.  在 [伺服器管理員]  中，按一下 [工具]  ，然後按一下 [遠端存取管理]  。  
   
-2.  按一下 [儀表板] 以瀏覽到 [遠端存取管理主控台] 中的 [遠端存取儀表板]。  
+2.  按一下 [儀表板]  以瀏覽到 [遠端存取管理主控台]  中的 [遠端存取儀表板]  。  
   
 3.  在監視儀表板，請注意**遠端用戶端狀態**圖格內**伺服器狀態**圖格。 此圖格會列出連接的遠端用戶端總數、 已連線的 DirectAccess 用戶端總數等的連線過去 24 小時內的使用者數目上限的統計資料。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "59849019"
   
 3.  按一下 **新增**中 （以綠色的字形圖示表示） 的按鈕**效能監視器**工具列。  
   
-4.  從清單中的**可用的計數器**，選取中的所有計數器**RAS**並**RAmgmtsvc**類別目錄，然後再按一下**新增 >>**.  
+4.  從清單中的**可用的計數器**，選取中的所有計數器**RAS**並**RAmgmtsvc**類別目錄，然後再按一下**新增 >>** .  
   
 5.  同樣地，從清單**可用的計數器**，選取中的所有計數器**IPsec 連線**分類，，然後按一下**新增 >>。**  
   
@@ -59,7 +59,7 @@ ms.locfileid: "59849019"
   
 **效能監視器**以圖形方式現在會顯示所選取的伺服器負載統計資料。  
   
-![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

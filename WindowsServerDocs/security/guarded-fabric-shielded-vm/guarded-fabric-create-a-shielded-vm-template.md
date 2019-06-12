@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: e00322186ea34784048366bf17881af742cb4444
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d9f07d2e6e93d4f8d198c2fc3b62c28c940bdefb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853689"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447516"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>建立 Windows 受防護的 VM 範本磁碟
 
@@ -27,10 +27,10 @@ ms.locfileid: "59853689"
 
 首先準備的 OS 磁碟，您便會執行經由受防護的範本磁碟建立精靈。 此磁碟將用於您的租用戶 Vm 的 OS 磁碟。 您可以使用任何現有的工具來建立此磁碟，例如 Microsoft 桌面映像服務管理員 」 (DISM)，或以手動方式設定具有空白的 VHDX 的 VM 並安裝到該磁碟上的作業系統。 當設定磁碟，它必須遵守下列需求，專屬於第 2 代及/或受防護的 Vm: 
 
-| Vhdx 的需求 | 原因 |
+| Vhdx 的需求 | `Reason` |
 |-----------|----|
 |必須是 GUID 磁碟分割表格 (GPT) 磁碟 | 所需的第 2 代虛擬機器，才能支援 UEFI|
-|磁碟類型必須是**基本**相對於**動態**。 <br>注意：這是指邏輯磁碟類型，而不"動態擴充的 」 VHDX 支援之功能的 HYPER-V。 | BitLocker 不支援動態磁碟。|
+|磁碟類型必須是**基本**相對於**動態**。 <br>注意:這是指邏輯磁碟類型，而不"動態擴充的 」 VHDX 支援之功能的 HYPER-V。 | BitLocker 不支援動態磁碟。|
 |磁碟會有至少兩個資料分割。 一個磁碟分割必須包含 Windows 安裝所在的磁碟機。 這是 BitLocker 將要加密的磁碟機。 另一個磁碟分割為作用中的磁碟分割，其中包含開機載入器並不會加密，以便可以啟動電腦。|所需的 BitLocker|
 |檔案系統是 NTFS | 所需的 BitLocker|
 |安裝在 VHDX 上的作業系統可以是下列其中一項：<br>Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10，Windows 8.1，Windows 8| 需要支援第 2 代虛擬機器和 Microsoft 安全開機範本|
@@ -68,7 +68,7 @@ ms.locfileid: "59853689"
 
 4. 開始**範本磁碟精靈**從**系統管理工具**資料夾，在 [開始] 功能表上，或輸入**TemplateDiskWizard.exe**在命令提示字元。
 
-5. 在 **憑證**頁面上，按一下**瀏覽**顯示一份憑證。 選取用來準備磁碟範本的憑證。 按一下 **[確定]**，然後按 **[下一步]**。
+5. 在 **憑證**頁面上，按一下**瀏覽**顯示一份憑證。 選取用來準備磁碟範本的憑證。 按一下 **[確定]** ，然後按 **[下一步]** 。
 
 6. 在虛擬磁碟 頁面上，按一下**瀏覽**，選取您已備妥的 VHDX，然後按一下**下一步**。
 
@@ -102,9 +102,9 @@ ms.locfileid: "59853689"
 
     b. 以滑鼠右鍵按一下磁碟，然後按一下**屬性**。
 
-    c.  針對**作業系統**，展開清單並選取安裝在磁碟上的作業系統。 選取作業系統會向 VMM 指出 VHDX 不是空白。
+    c. 針對**作業系統**，展開清單並選取安裝在磁碟上的作業系統。 選取作業系統會向 VMM 指出 VHDX 不是空白。
 
-    d. 更新內容之後，按一下 [確定]。
+    d. 更新內容之後，按一下 [確定]  。
 
 磁碟名稱旁邊的小盾牌圖示會表示為已備妥的範本磁碟的磁碟，受防護的 vm。 您也可以以滑鼠右鍵按一下資料行標頭和切換**防護**看到指出磁碟是否適用於一般或受防護的 VM 部署的文字表示的資料行。
 
@@ -116,9 +116,9 @@ ms.locfileid: "59853689"
 
 1. 在 **程式庫**工作區中，按一下**建立 VM 範本**頂端的 首頁 索引標籤。
 
-2. 在 [選取來源] 頁面上，按一下 [使用現有的 VM 範本或存放於程式庫的虛擬硬碟]，然後按一下 [瀏覽]。
+2. 在 [選取來源]  頁面上，按一下 [使用現有的 VM 範本或存放於程式庫的虛擬硬碟]  ，然後按一下 [瀏覽]  。
 
-3. 在出現的視窗中，選取已備妥的範本磁碟從 VMM 程式庫。 若要更輕鬆地識別哪些磁碟已準備，以滑鼠右鍵按一下資料行標頭，並啟用**防護**資料行。 按一下 [ **[確定]** 再**下一步]**。
+3. 在出現的視窗中，選取已備妥的範本磁碟從 VMM 程式庫。 若要更輕鬆地識別哪些磁碟已準備，以滑鼠右鍵按一下資料行標頭，並啟用**防護**資料行。 按一下 [ **[確定]** 再**下一步]** 。
 
 4. 指定 VM 範本名稱和選擇性描述，然後再按一下**下一步**。
 
@@ -163,10 +163,10 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 
 ## <a name="next-step"></a>後續步驟
 
->[!div class="nextstepaction"]
-[建立虛擬機器防護資料檔案](guarded-fabric-tenant-creates-shielding-data.md)
+> [!div class="nextstepaction"]
+> [建立虛擬機器防護資料檔案](guarded-fabric-tenant-creates-shielding-data.md)
 
 ## <a name="see-also"></a>另請參閱
 
 - [裝載服務提供者設定步驟，針對受防護主機和受防護的 Vm](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [受防護網狀架構與受防護的 Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

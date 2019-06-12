@@ -7,20 +7,20 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9abbf85ef28ff20506558fba7dd3f5e5ee603a70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e785ee17bf68c07d965816480baa0d59062fc434
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879139"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447427"
 ---
 # <a name="initialize-the-hgs-cluster-using-key-mode-in-an-existing-bastion-forest"></a>初始化 HGS 叢集使用現有的防禦樹系中的索引鍵模式
 
->適用於：Windows Server 2019
-
->[!div class="step-by-step"]
-[«在新樹系中安裝 HGS](guarded-fabric-install-hgs-in-a-bastion-forest.md)
-[建立主應用程式金鑰»](guarded-fabric-create-host-key.md)
+> 適用於：Windows Server 2019
+> 
+> [!div class="step-by-step"]
+> [«在新樹系中安裝 HGS](guarded-fabric-install-hgs-in-a-bastion-forest.md)
+> [建立主應用程式金鑰»](guarded-fabric-create-host-key.md)
 
 Active Directory 網域服務將會安裝在電腦上，但應保持未設定。
 

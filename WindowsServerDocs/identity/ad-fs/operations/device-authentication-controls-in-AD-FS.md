@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d66cfde20060229844c34abeea85dd83b802ddad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f52d3d237573e4ed0028e228ff80273862a0aaf2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822819"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444639"
 ---
 # <a name="device-authentication-controls-in-ad-fs"></a>在 AD FS 中的裝置驗證控制項
 下列文件會示範如何啟用 Windows Server 2016 和 2012 R2 中的裝置驗證控制項。
@@ -43,7 +43,7 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 它有下列值：
  - SignedToken:只有 PRT
  - PKeyAuth:PRT + PKeyAuth
- - ClientTLS:PRT + clientTLS 
+ - ClientTLS:PRT + clientTLS
  - 所有：上述所有檔案
 
 如您所見，PRT 是一部分的所有裝置的驗證方法，讓作用中的預設方法永遠啟用`DeviceAuthenticationEnabled`設為`$true`。
@@ -53,6 +53,14 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ```
+
+>[!NOTE]
+> 在 ADFS 2019`DeviceAuthenticationMethod`可以搭配`Set-AdfsRelyingPartyTrust`命令。
+
+``` powershell
+PS:\>Set-AdfsRelyingPartyTrust -DeviceAuthenticationMethod ClientTLS
+```
+
 >[!NOTE]
 > 啟用裝置驗證 (設定`DeviceAuthenticationEnabled`要`$true`) 表示`DeviceAuthenticationMethod`隱含地設定為`SignedToken`，這等同於**PRT**。
 
@@ -60,8 +68,8 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationMethod All
 ```
->[!NOTE]
->預設裝置驗證方法是`SignedToken`。  其他的值為**PKeyAuth，* * * ClientTLS，** 並**所有**。
+> [!NOTE]
+> 預設裝置驗證方法是`SignedToken`。  其他的值為**PKeyAuth，** <strong>ClientTLS，</strong>並**所有**。
 
 意義`DeviceAuthenticationMethod`值已稍微變更，因為 AD FS 2016 已發行。  請參閱下表根據更新層級的每個值的意義：
 

@@ -11,14 +11,14 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: b891f61ff2c930591c33805d0e3bc595ebf196f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7331418c1926958da07c94bca9ff9f871134f3fa
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850489"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439877"
 ---
-#<a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
+# <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 
 >適用於：Windows 10、windows Server 2016
 
@@ -38,7 +38,7 @@ Windows 10 更新的下載項目可能很大，因為每個套件包含所有先
 
 -  **使用[商務用 Windows Update](https://technet.microsoft.com/itpro/windows/manage/waas-manage-updates-wufb)** 管理的企業裝置不需要任何變更，也能受益於快速更新傳遞支援。
 
-##<a name="how-isvs-can-take-advantage-of-express"></a>如何 Isv 可以利用 Express
+## <a name="how-isvs-can-take-advantage-of-express"></a>如何 Isv 可以利用 Express
 
 Isv 可以使用 WSUS 和 WU 用戶端來支援快速更新傳遞。 Microsoft 建議下列三個步驟，請在下列各節更詳細地討論：
 
@@ -64,7 +64,7 @@ WSUS 會做為 Windows update 的介面，並管理說明需要下載的快速�
 
 ### <a name="BKMK_2"></a>步驟 2:指定並填入 ISV 檔案快取 
 
-####<a name="specify-the-isv-file-cache"></a>指定 ISV 檔案快取
+#### <a name="specify-the-isv-file-cache"></a>指定 ISV 檔案快取
 
 新用戶端群組原則和行動裝置管理 (MDM) 設定中詳述[**組態服務提供者參考**](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference)定義 ISV 檔案快取的位置。
 
@@ -82,10 +82,10 @@ ISV 檔案快取的其他下載位置在設定時，有兩個選項：
  
     這個方法會設定 WU 用戶端進行下載到 localhost 的要求。 這可讓 ISV 用戶端代理程式，來處理這些要求和視需要完成的下載要求的路由。
 
->[!IMPORTANT]
->ISV 檔案快取需要下列項目：                                                          
-                                                                                                                                   >- 伺服器必須是根據 RFC 相容的 HTTP 1.1: <http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
-                                                                                                                                   >具體來說，web 伺服器需要支援                                                                                                                                                                                                                                      [ **HEAD** ](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)並[**取得**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm)要求<br>                                                                                                                                                                                                                                                                                                  部分範圍要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -保持連線<br>                                                                                                                                                                                                                                                                                                                                                                                                                            -請勿使用"-Transfer-encoding： 區塊？                                                                                                 
+> [!IMPORTANT]
+> ISV 檔案快取需要下列項目：                                                          
+> - 伺服器必須是根據 RFC 相容的 HTTP 1.1: <http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
+> 具體來說，web 伺服器需要支援                                                                                                                                                                                                                                      [ **HEAD** ](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)並[**取得**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm)要求<br>                                                                                                                                                                                                                                                                                                  部分範圍要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -保持連線<br>                                                                                                                                                                                                                                                                                                                                                                                                                            -請勿使用"-Transfer-encoding： 區塊 」                                                                                                 
 
 #### <a name="populate-the-isv-file-cache"></a>填入 ISV 檔案快取
 
@@ -95,15 +95,15 @@ ISV 檔案快取必須填入受管理用戶端上安裝的更新相關聯的檔�
 
 1. 使用[WSUS Api](https://msdn.microsoft.com/en-us/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx)存取更新的檔案路徑和檔案名稱 MU 服務。
 
-    WSUS 伺服器上的每個更新的中繼資料可包含更新的檔案路徑和檔案名稱，在 Microsoft Update，如下所示 (Microsoft Update 中的主機名稱粗體，後面接著檔案路徑和檔案名稱): **http://download.windowsupdate.com**c/msdownload/更新 /software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
+    WSUS 伺服器上的每個更新的中繼資料可包含更新的檔案路徑和檔案名稱，在 Microsoft Update，如下所示 (Microsoft Update 中的主機名稱粗體，後面接著檔案路徑和檔案名稱): **<http://download.windowsupdate.com>** c/msdownload/更新 /software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
 
 2. 從 Microsoft Update 下載檔案，並將它們儲存在 ISV 檔案快取中使用這兩種方法的其中一個： 
 
- - 使用的儲存區檔案**與相同的資料夾路徑，MU 服務**
+   - 使用的儲存區檔案**與相同的資料夾路徑，MU 服務**
 
- - 使用的儲存區檔案**ISV 定義的資料夾路徑**
+   - 使用的儲存區檔案**ISV 定義的資料夾路徑**
 
-    有 HTTP 伺服器 （或 localhost） 重新導向**HTTP GET**參考 MU 資料夾路徑和檔案名稱，到 ISV 檔案位置的要求。
+     有 HTTP 伺服器 （或 localhost） 重新導向**HTTP GET**參考 MU 資料夾路徑和檔案名稱，到 ISV 檔案位置的要求。
 
 ### <a name="BKMK_3"></a>步驟 3:將設定 ISV 用戶端代理程式以導向 WU 用戶端操作
 
@@ -132,15 +132,15 @@ ISV 檔案快取必須填入受管理用戶端上安裝的更新相關聯的檔�
 
 - 對於支援「快速」的作業系統更新，服務上有儲存兩種版本的檔案裝載︰
 
- - **完整版**-基本上取代的更新二進位檔案的本機版本
+  - **完整版**-基本上取代的更新二進位檔案的本機版本
 
- - **Express 版本**-包含差異需要修補現有的二進位檔，在裝置上。 
+  - **Express 版本**-包含差異需要修補現有的二進位檔，在裝置上。 
 
-   完整版和 Express 版本中已掃描階段的一部分下載到用戶端更新的中繼資料參考。 
+    完整版和 Express 版本中已掃描階段的一部分下載到用戶端更新的中繼資料參考。 
 
-   **快速下載的運作方式，如下所示：**
+    **快速下載的運作方式，如下所示：**
 
-   WU 用戶端會嘗試下載 Express 第一次，並在某些情況下 fall 回到完整檔案如有需要 （例如，如果要透過不支援位元組範圍要求的 proxy）。
+    WU 用戶端會嘗試下載 Express 第一次，並在某些情況下 fall 回到完整檔案如有需要 （例如，如果要透過不支援位元組範圍要求的 proxy）。
 
   1. 當 WU 用戶端起始 Express 下載**WU 用戶端會先下載虛設常式**，這是 Express 封裝的一部分。
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32345b22395107f4a2c3d88894126d4e5e0875a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 36dc7f861e88cf991af57dda2f150107c6870f0f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842359"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441047"
 ---
 # <a name="telnet-send"></a>telnet： 傳送
 
@@ -30,16 +30,18 @@ ms.locfileid: "59842359"
 sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|ao|傳送 telnet 命令中止的輸出。|  
-|ayt|傳送那里為您的 telnet 命令。|  
-|brk|傳送 telnet 命令 brk。|  
-|esc|傳送目前的 telnet 逸出字元。|  
-|ip|傳送 telnet 命令中斷處理序。|  
-|同步處理|傳送 telnet 命令同步處理。|  
-|<string>|將您輸入任何字串傳送到 telnet 伺服器。|  
-|?|顯示說明此命令相關聯。|  
+
+| 參數 |                     描述                      |
+|-----------|------------------------------------------------------|
+|    ao     |       傳送 telnet 命令中止的輸出。        |
+|    ayt    |       傳送那里為您的 telnet 命令。       |
+|    brk    |            傳送 telnet 命令 brk。            |
+|    esc    |      傳送目前的 telnet 逸出字元。      |
+|    ip     |     傳送 telnet 命令中斷處理序。     |
+|   同步處理   |           傳送 telnet 命令同步處理。           |
+| <string>  | 將您輸入任何字串傳送到 telnet 伺服器。 |
+|     ?     |     顯示說明此命令相關聯。      |
+
 ## <a name="BKMK_Examples"></a>範例  
 傳送可讓您有會到 telnet 伺服器。  
 ```  

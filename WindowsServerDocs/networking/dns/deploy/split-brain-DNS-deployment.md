@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4ec4bc8e77e8411101b9a2b83a85ad5e1a0765b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c74bb2ee2f1647716c8c38e392434a5b7f01805f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873499"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446389"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 原則進行分割\-大腦 DNS 部署
 
@@ -33,7 +33,7 @@ ms.locfileid: "59873499"
 - [拆分式 DNS 部署的範例](#bkmk_sbexample)
 - [DNS 選擇性的遞迴控制項範例](#bkmk_recursion)
 
-##<a name="bkmk_sbexample"></a>拆分式 DNS 部署的範例
+## <a name="bkmk_sbexample"></a>拆分式 DNS 部署的範例
 以下是如何使用 DNS 原則來完成先前所述的拆分式 DNS 案例的範例。
 
 本節包含下列主題：
@@ -57,7 +57,7 @@ ms.locfileid: "59873499"
 ![拆分式 DNS 部署](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-##<a name="bkmk_sbhow"></a>拆分式 DNS 部署的運作方式
+## <a name="bkmk_sbhow"></a>拆分式 DNS 部署的運作方式
 
 當 DNS 伺服器設定的所需的 DNS 原則時，會將每個名稱解析要求評估的 DNS 伺服器上的原則。
 
@@ -67,7 +67,7 @@ ms.locfileid: "59873499"
 
 因此，在本例中，私人 IP (10.0.0.56) 所接收的 DNS 查詢的 www.career.contoso.com 收到的 DNS 回應，其中包含內部 IP 位址;和公用網路介面所接收的 DNS 查詢會收到包含公用 IP 位址 （這是一般的查詢解析相同） 的預設區域範圍中的 DNS 回應。  
 
-##<a name="bkmk_sbconfigure"></a>如何設定的拆分式 DNS 部署
+## <a name="bkmk_sbconfigure"></a>如何設定的拆分式 DNS 部署
 若要使用 DNS 原則中設定 DNS Split-Brain 部署，您必須使用下列步驟。
 
 - [建立區域範圍](#bkmk_zscopes)  
@@ -79,12 +79,12 @@ ms.locfileid: "59873499"
 >[!IMPORTANT]
 >下列各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。 
 
-###<a name="bkmk_zscopes"></a>建立區域範圍
+### <a name="bkmk_zscopes"></a>建立區域範圍
 
 區域範圍內是區域的唯一的執行個體。 DNS 區域可以有多個區域範圍，與包含它自己的 DNS 記錄集的每個區域範圍。 同一筆記錄中可以存在多個領域，具有不同 IP 位址或相同的 IP 位址。 
 
->[!NOTE]
->根據預設，在區域範圍存在於 DNS 區域。 此區域範圍作為區域，具有相同的名稱，此範圍上運作的舊版 DNS 作業。 此預設區域範圍將會裝載外部 www.career.contoso.com 的版本。
+> [!NOTE]
+> 根據預設，在區域範圍存在於 DNS 區域。 此區域範圍作為區域，具有相同的名稱，此範圍上運作的舊版 DNS 作業。 此預設區域範圍將會裝載外部 www.career.contoso.com 的版本。
 
 您可以使用下列範例命令，來分割區域範圍 contoso.com 建立內部區域範圍。 內部區域範圍，將用於保留 www.career.contoso.com 內部版本。
 
@@ -92,11 +92,11 @@ ms.locfileid: "59873499"
 
 如需詳細資訊，請參閱[新增 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records"></a>將記錄新增至區域範圍
+### <a name="bkmk_records"></a>將記錄新增至區域範圍
 
 下一個步驟是新增代表 Web 伺服器主機為兩個區域範圍-內部和預設 （適用於外部的用戶端） 的記錄。 
 
-在內部區域範圍內，資料錄**www.career.contoso.com**會新增的 IP 位址 10.0.0.39，也就是私人的 ip 位址; 以及預設區域範圍中相同的記錄， **www.career.contoso.com**，是新增使用 65.55.39.10 的 IP 位址。
+在內部區域範圍內，資料錄<strong>www.career.contoso.com</strong>會新增的 IP 位址 10.0.0.39，也就是私人的 ip 位址; 以及預設區域範圍中相同的記錄， <strong>www.career.contoso.com</strong>，是新增使用 65.55.39.10 的 IP 位址。
 
 否 **– ZoneScope**記錄被新增到預設區域範圍時，將會提供在下列範例命令中的參數。 這是將記錄新增至 vanilla 區域類似。
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-###<a name="bkmk_policies"></a>建立 DNS 原則
+### <a name="bkmk_policies"></a>建立 DNS 原則
 
 您已識別的外部網路和內部網路的伺服器介面，而且您已建立的區域範圍之後，您必須建立連線的內部和外部的區域範圍的 DNS 原則。
 

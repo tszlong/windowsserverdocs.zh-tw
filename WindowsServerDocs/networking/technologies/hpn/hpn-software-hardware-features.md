@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/12/2018
-ms.openlocfilehash: a58d1e14dc8f543f25ef241f2a65054599136031
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 98857a5a6d665728c1aab2a6a2df64997d4166b0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817389"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446220"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>軟體和硬體 (SH) 整合功能和技術
 
@@ -51,11 +51,12 @@ DCB，Windows Server 會使用優先順序型流量控制 (PFC)，於 IEEE 802.1
 
 ## <a name="hyper-v-network-virtualization"></a>Hyper-V 網路虛擬化
 
-| | |
-|---|---|
-| **v1 (HNVv1)**             | Windows Server 2012 中引入，HYPER-V 網路虛擬化 (HNV) 可讓共用的實體網路基礎結構之上將客戶網路虛擬化。 幾乎不需要變更需要在實體網路網狀架構上，HNV 讓服務提供者來部署和跨三個雲端的任何位置移轉租用戶工作負載彈性： 服務提供者雲端、 私人雲端或 Microsoft Azure 公用雲端。                                         |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       **v1 (HNVv1)**       |                     Windows Server 2012 中引入，HYPER-V 網路虛擬化 (HNV) 可讓共用的實體網路基礎結構之上將客戶網路虛擬化。 幾乎不需要變更需要在實體網路網狀架構上，HNV 讓服務提供者來部署和跨三個雲端的任何位置移轉租用戶工作負載彈性： 服務提供者雲端、 私人雲端或 Microsoft Azure 公用雲端。                     |
 | **v2 NVGRE (HNVv2 NVGRE)** | 在 Windows Server 2016 和 System Center Virtual Machine Manager 中，Microsoft 會提供一個端對端網路虛擬化解決方案，可包含 RAS 閘道、 軟體負載平衡、 網路控制站，以及更多。 如需詳細資訊，請參閱 < [Windows Server 2016 中的 HYPER-V 網路虛擬化概觀](https://technet.microsoft.com/windows-server-docs/networking/sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server)。 |
-| **v2 VxLAN (HNVv2 VxLAN)** | 在 Windows Server 2016 中，是 SDN-擴充功能，您透過網路控制卡管理的一部分。    |
+| **v2 VxLAN (HNVv2 VxLAN)** |                                                                                                                                                                                        在 Windows Server 2016 中，是 SDN-擴充功能，您透過網路控制卡管理的一部分。                                                                                                                                                                                        |
+
 ---
 
 ## <a name="ipsec-task-offload-ipsecto"></a>IPsec 工作卸載 (IPsecTO) 

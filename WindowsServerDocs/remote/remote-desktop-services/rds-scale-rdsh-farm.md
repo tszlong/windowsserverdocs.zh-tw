@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: d243994a68c0bf4f0584f68475a185acb9cb73d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865489"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446518"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>新增 RD 工作階段主機伺服器陣列來相應放大您的遠端桌面服務部署
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016
 
 您可以改善可用性和延展性的 RDS 部署加上的遠端桌面工作階段主機 (RDSH) 伺服器陣列。   
   
@@ -39,8 +39,8 @@ ms.locfileid: "59865489"
    3. 輸入網域系統管理員認證。 
    4. 重新啟動伺服器或 vm。
 4. 加入新的 RD 工作階段主機伺服器陣列：
->[!NOTE] 
-> 步驟 1： 建立 RDMS 虛擬機器的公用 IP 位址，才需要，如果您要用於 RDMS 中的 vm，而且它還沒有指派的 IP 位址。
+   >[!NOTE] 
+   > 步驟 1： 建立 RDMS 虛擬機器的公用 IP 位址，才需要，如果您要用於 RDMS 中的 vm，而且它還沒有指派的 IP 位址。
    
    1. 建立執行遠端桌面管理服務 (RDMS) 的虛擬機器的公用 IP 位址。 RDMS 虛擬機器通常會執行 「 RD 連線代理人 」 角色的第一個執行個體的虛擬機器。  
        1. 在 Azure 入口網站中，按一下**瀏覽 > 資源群組**，按一下 部署的資源群組，然後按一下 RDMS 虛擬機器 (例如，Contoso-Cb1)。  

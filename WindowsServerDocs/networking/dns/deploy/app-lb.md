@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1bb3e6695a7ec8fc7d950873403df023b4def3d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dca60fc0e216b1b873bd4f94dd1b01174d80fc14
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881609"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446438"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 原則進行應用程式負載平衡
 
@@ -79,7 +79,7 @@ Contosogiftservices.com 網站裝載於多個資料中心各有不同的 IP 位�
 
 如需詳細資訊，請參閱[新增 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-####<a name="bkmk_records"></a>將記錄新增至區域範圍
+#### <a name="bkmk_records"></a>將記錄新增至區域範圍
 
 現在，您必須新增至多個區域範圍表示 web 伺服器主機的記錄。
 
@@ -100,7 +100,7 @@ Contosogiftservices.com 網站裝載於多個資料中心各有不同的 IP 位�
 
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-####<a name="bkmk_policies"></a>建立 DNS 原則
+#### <a name="bkmk_policies"></a>建立 DNS 原則
 
 您已建立資料分割 （區域範圍），您已新增記錄之後，您必須建立散發傳入的查詢這些領域中，讓 50%的 contosogiftservices.com 的查詢會回應的 IP 位址與 web 的 DNS 原則在芝加哥和達拉斯的資料中心之間平均分散在西雅圖資料中心和其餘的伺服器。
 

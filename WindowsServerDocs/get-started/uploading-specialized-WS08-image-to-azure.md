@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: af98a219a4a5aa708df9c648f1b245a21e95f016
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 425197d3462762c60a7371fc6ca529ad1b70e7ef
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827809"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443368"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>將 Windows Server 2008/2008 R2 專用映像上傳至 Azure 
 
@@ -29,20 +29,20 @@ ms.locfileid: "59827809"
 - 如果您尚未將 Windows Server 2008 Service Pack 2 (SP2) (英文) 安裝在您的映像上，請下載並安裝 SP2。
 
 - 設定遠端桌面 (RDP) 設定。
-   1. 移至 \[控制台\]  >  \[系統設定\]。   
-   2. 選取左側功能表中的 \[遠端設定\]。
+  1. 移至 \[控制台\]   >   \[系統設定\]。   
+  2. 選取左側功能表中的 \[遠端設定\]  。
 
-   ![系統設定螢幕擷取畫面，反白顯示 \[遠端設定\]。](media/1a_remote_settings.png)
+     ![系統設定螢幕擷取畫面，反白顯示 \[遠端設定\]。](media/1a_remote_settings.png)
 
-   3. 選取 \[系統內容\] 中的 \[遠端\] 索引標籤。   
+  3. 選取 \[系統內容\] 中的 \[遠端\]  索引標籤。   
 
-   ![系統內容中遠端索引標籤的螢幕擷取畫面。](media/2c_sysprops.png)
+     ![系統內容中遠端索引標籤的螢幕擷取畫面。](media/2c_sysprops.png)
 
-   4. 選取 \[允許來自執行任何版本之遠端桌面的電腦進行連線 (較不安全)\]。   
-   5. 按一下 \[套用\]，再按一下 \[確定\]。
+  4. 選取 \[允許來自執行任何版本之遠端桌面的電腦進行連線 (較不安全)\]。   
+  5. 按一下 \[套用\]  ，再按一下 \[確定\]  。
 - 設定 Windows 防火牆設定。   
    1. 在系統管理員模式的命令提示字元處，輸入 “**wf.msc**” 以進入 Windows 防火牆與進階安全性設定。   
-   2. 依 \[連接埠\] 排序發現的項目，然後選取 \[連接埠 3389\]。   
+   2. 依 \[連接埠\]  排序發現的項目，然後選取 \[連接埠 3389\]  。   
      ![螢幕擷取畫面的 WIndows 防火牆設定的輸入的規則。](media/3b_inboundrules.png)   
    3. 為設定檔中啟用遠端桌面 (TCP IN):**網域**，**私人**，以及**公用**（如上所示）。
 
@@ -51,11 +51,11 @@ ms.locfileid: "59827809"
 
 目前的已知錯誤會造成所上傳映像的系統管理員密碼在 24 小時內到期。 請依照下列步驟避免此問題： 
 
-1. 移至 \[開始\] >  \[執行\]
+1. 移至 \[開始\]   >   \[執行\]
 2. 輸入 **lusrmgr.msc**
-3. 選取 \[本機使用者和群組\] 下方的 \[使用者\]
-4. 以滑鼠右鍵按一下 \[系統管理員\]，然後選取 \[內容\]
-5. 選取 **密碼永久有效**，然後選取 **[確定]**
+3. 選取 \[本機使用者和群組\] 下方的 \[使用者\] 
+4. 以滑鼠右鍵按一下 \[系統管理員\]  ，然後選取 \[內容\] 
+5. 選取 **密碼永久有效**，然後選取 **[確定]** 
 ![螢幕擷取畫面的系統管理員內容。](media/6_adminprops.png)
 
 ## <a name="uploading-the-image-vhd"></a>上傳映像 VHD
@@ -92,20 +92,20 @@ Login-AzureRmAccount
 4.  複製內容中 Blob 儲存體的 URL。
 5.  使用於上方提供的指令碼將映像上傳至新的儲存體 Blob。
 6.  為您的 VHD 建立[磁碟](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
-     a. 移至 \[磁碟\]，按一下 \[新增\]。  
+     a. 移至 \[磁碟\]，按一下 \[新增\]  。  
      b. 輸入磁碟的名稱。 選取您要使用的訂用帳戶、設定區域，然後選擇帳戶類型。   
-     c.  對於 \[來源類型\]，選取儲存體。 瀏覽至使用指令碼建立的 Blob VHD 位置。  
+     c. 對於 \[來源類型\]，選取儲存體。 瀏覽至使用指令碼建立的 Blob VHD 位置。  
      d. 選取 Windows 的 OS 類型和大小 (預設值：1023).   
-     e. 按一下 [建立] 。   
+     e. 按一下 [建立]  。   
 
-7.  移至 \[已建立磁碟\]，按一下 \[建立 VM\]。   
+7.  移至 \[已建立磁碟\]，按一下 \[建立 VM\]  。   
      a. 命名 VM。   
      b. 選取您在步驟 5 (在此您已上傳磁碟) 中建立的現有群組。   
-     c.  為您的 VM 選擇大小與 SKU 計劃。   
+     c. 為您的 VM 選擇大小與 SKU 計劃。   
      d. 在設定頁面上選取網路介面。 確定網路介面的下列規則已指定：
  
         PORT:3389 Protocol: TCP Action: Allow Priority: 1000 Name: ‘RDP-Rule’.   
-     e. 按一下 [建立] 。
+     e. 按一下 [建立]  。
 
 
 

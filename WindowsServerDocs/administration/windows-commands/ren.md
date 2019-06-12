@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c239dd1f1f8d03d761e45505634da10f19ed08cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 34c761cb08916d277f8f7f1c58d57a05ed2c8daf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842019"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441816"
 ---
 # <a name="ren"></a>ren
 
@@ -37,19 +37,19 @@ rename [<Drive>:][<Path>]<FileName1> <FileName2>
 
 |參數|描述|
 |---------|-----------|
-|[\<Drive>:][\<Path>]\<FileName1>|指定的位置和檔案名稱或一組您想要重新命名的檔案。 *FileName1*可以包含萬用字元 (**&#42;** 並 **？**)。|
+|[\<Drive>:][\<Path>]\<FileName1>|指定的位置和檔案名稱或一組您想要重新命名的檔案。 *FileName1*可以包含萬用字元 ( **&#42;** 並 **？** )。|
 |\<FileName2>|指定檔案的新名稱。 您可以使用萬用字元來指定多個檔案的新名稱。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   重新命名檔案時，您無法指定新的磁碟機或路徑。
--   您無法使用**ren**命令，在磁碟機重新命名檔案，或將檔案移至不同的目錄。
--   您可以使用萬用字元 (**&#42;** 並 **？**) 中*FileName*參數。 表示中的萬用字元的字元*FileName2*將會在對應的字元完全相同*FileName1*。
--   *FileName2*必須是唯一的檔案名稱。 如果*FileName2*符合現有的檔案名稱， **ren**顯示下列訊息：  
-    ```
-    Duplicate file name or file not found
-    ```
+- 重新命名檔案時，您無法指定新的磁碟機或路徑。
+- 您無法使用**ren**命令，在磁碟機重新命名檔案，或將檔案移至不同的目錄。
+- 您可以使用萬用字元 ( **&#42;** 並 **？** ) 中*FileName*參數。 表示中的萬用字元的字元*FileName2*將會在對應的字元完全相同*FileName1*。
+- *FileName2*必須是唯一的檔案名稱。 如果*FileName2*符合現有的檔案名稱， **ren**顯示下列訊息：  
+  ```
+  Duplicate file name or file not found
+  ```
 
 ## <a name="BKMK_examples"></a>範例
 

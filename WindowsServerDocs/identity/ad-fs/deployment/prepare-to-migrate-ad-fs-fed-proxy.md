@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f207993580e6fd06c9ff185e58e5b7e81af60252
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b2275af0934413fa2de02de720d609feda7392c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847829"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444457"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-proxy"></a>準備移轉 AD FS 2.0 同盟伺服器 Proxy
 
@@ -35,13 +35,13 @@ ms.locfileid: "59847829"
 > [!NOTE]
 >  這個步驟是選擇性的，因為作業系統升級期間會保留這個憑證。  
   
-2.  將 AD FS 2.0 同盟 Proxy 屬性匯出至檔案。 您可以使用 Windows PowerShell 來執行此動作。  
+2. 將 AD FS 2.0 同盟 Proxy 屬性匯出至檔案。 您可以使用 Windows PowerShell 來執行此動作。  
   
 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，將同盟 Proxy 屬性匯出至檔案： `PSH:> Get-ADFSProxyProperties | out-file “.\proxyproperties.txt”`。  
   
-3.  請確定您知道帳戶的認證，且此帳戶必須是 AD FS 同盟伺服器的系統管理員帳戶或 AD FS 同盟服務據以執行的服務帳戶。  此為 Proxy 信任安裝的必要資訊。  
+3. 請確定您知道帳戶的認證，且此帳戶必須是 AD FS 同盟伺服器的系統管理員帳戶或 AD FS 同盟服務據以執行的服務帳戶。  此為 Proxy 信任安裝的必要資訊。  
   
- 完成此步驟就會開始收集設定 AD FS 同盟伺服器 Proxy 所需的下列資訊：  
+   完成此步驟就會開始收集設定 AD FS 同盟伺服器 Proxy 所需的下列資訊：  
   
 -   AD FS 同盟服務名稱  
   

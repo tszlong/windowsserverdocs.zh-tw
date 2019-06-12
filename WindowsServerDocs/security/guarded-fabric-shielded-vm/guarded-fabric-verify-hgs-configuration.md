@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 43b2a90eaa987e96b716e10259f75ffaf9f136a4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 954393126333bf04d2aa46a01089d88bc91151cb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832569"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447319"
 ---
 # <a name="verify-the-hgs-configuration"></a>驗證 HGS 設定
 
@@ -38,6 +38,6 @@ If failures did occur, please review the remediation steps provided or see the T
 
 ## <a name="next-step"></a>後續步驟
 
->[!div class="nextstepaction"]
-[部署受防護的主機](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
+> [!div class="nextstepaction"]
+> [部署受防護主機](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
 

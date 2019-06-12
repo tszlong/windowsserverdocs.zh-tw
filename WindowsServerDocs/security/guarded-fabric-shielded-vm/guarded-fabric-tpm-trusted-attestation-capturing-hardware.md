@@ -7,13 +7,13 @@ ms.assetid: 915b1338-5085-481b-8904-75d29e609e93
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 12/12/2018
-ms.openlocfilehash: 82171eee10a06cad6bb3ac30e8f771086975c242
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 04/01/2019
+ms.openlocfilehash: 61f56eea59d11264047a9c7b8b6734617ad1802f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841659"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447337"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>授權使用 TPM 型證明的受防護的主機
 
@@ -99,8 +99,11 @@ Windows Server 2019 導入了新的方法，可證明，稱為*v2 證明*，其�
 
 3.  適用於參考主機的 CI 原則：
 
-    1.  將二進位的 CI 原則檔案 (HW1CodeIntegrity.p7b) 複製到下列位置參考主機 （檔案名稱必須完全符合） 上：<br>
-        **C:\\Windows\\System32\\CodeIntegrity\\SIPolicy.p7b**
+    1.  執行下列命令來設定要使用您的 CI 原則的電腦。 您也可以部署的 CI 原則[群組原則](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)或是[System Center Virtual Machine Manager](https://docs.microsoft.com/en-us/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)。
+
+        ```powershell
+        Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+        ```
 
     2.  重新啟動主機，以套用原則。
 
@@ -117,8 +120,8 @@ Windows Server 2019 導入了新的方法，可證明，稱為*v2 證明*，其�
 5.  CI 原則套用至所有主機 （使用相同的硬體和軟體組態） 使用下列命令：
 
     ```powershell
-    Copy-Item -Path '<Path to HW1CodeIntegrity\_enforced.p7b>' -Destination 'C:\Windows\System32\CodeIntegrity\SIPolicy.p7b'
-
+    Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+    
     Restart-Computer
     ```
 
@@ -167,5 +170,5 @@ Windows Server 2019 導入了新的方法，可證明，稱為*v2 證明*，其�
 
 ## <a name="next-step"></a>後續步驟
 
->[!div class="nextstepaction"]
-[確認證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [!div class="nextstepaction"]
+> [確認證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)

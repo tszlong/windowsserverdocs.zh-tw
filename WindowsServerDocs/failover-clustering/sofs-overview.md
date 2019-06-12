@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: e38c53c3458c3f66f24ea2ddaa66febf508c4568
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476146"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442453"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>用於應用程式資料的向外延展檔案伺服器概觀
 
@@ -177,25 +177,25 @@ ms.locfileid: "65476146"
 <td>檔案管理</td>
 <td>資料夾重新導向</td>
 <td>是</td>
-<td>不建議使用*</td>
+<td>不建議使用<em></td>
 </tr>
 <tr class="odd">
 <td>檔案管理</td>
 <td>離線檔案 (用戶端快取)</td>
 <td>是</td>
-<td>不建議使用*</td>
+<td>不建議</em></td>
 </tr>
 <tr class="even">
 <td>檔案管理</td>
 <td>漫遊使用者設定檔</td>
 <td>是</td>
-<td>不建議使用*</td>
+<td>不建議使用<em></td>
 </tr>
 <tr class="odd">
 <td>檔案管理</td>
 <td>主目錄</td>
 <td>是</td>
-<td>不建議使用*</td>
+<td>不建議</em></td>
 </tr>
 <tr class="even">
 <td>檔案管理</td>
@@ -256,13 +256,13 @@ ms.locfileid: "65476146"
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">容錯移轉叢集</a></td>
-<td>容錯移轉叢集以支援向外延展檔案伺服器的 Windows Server 2012 中新增下列功能：分散式的網路名稱、 向外延展檔案伺服器資源類型、 叢集共用磁碟區 (CSV) 2 及向外延展檔案伺服器高可用性角色。 如需這些功能的詳細資訊，請參閱<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">的新功能 [重新導向] Windows Server 2012 中容錯移轉叢集</a>。</td>
+<td>容錯移轉叢集以支援向外延展檔案伺服器的 Windows Server 2012 中新增下列功能：分散式的網路名稱、 向外延展檔案伺服器資源類型、 叢集共用磁碟區 (CSV) 2 及向外延展檔案伺服器高可用性角色。 如需這些功能的詳細資訊，請參閱<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">功能&#39;新增 [重新導向] Windows Server 2012 中容錯移轉叢集的 s</a>。</td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">伺服器訊息區</a></td>
 <td>SMB 3.0 新增了下列功能以支援向外延展檔案伺服器的 Windows Server 2012 中：SMB 透明容錯移轉、SMB 多重通道和 SMB 直接傳輸。<br />
 <br />
-Windows Server 2012 R2 中 smb 的新功能和變更資訊，請參閱<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">What's New in Windows Server 中的 SMB</a>。</td>
+Windows Server 2012 R2 中 smb 的新功能和變更資訊，請參閱<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">功能&#39;新的 Windows Server 中 smb 的 s</a>。</td>
 </tr>
 </tbody>
 </table>

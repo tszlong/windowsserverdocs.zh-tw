@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 684f3418bf336af4959282e7a8c2088d22a8c8dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a1775a40761e4a489cc39535514d75174edffa5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865129"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442995"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>使用 HYPER-V 的虛擬化網域控制站
 
@@ -64,7 +64,7 @@ Rodc 的相關資訊，請參閱[唯讀網域控制站的規劃與部署指南 �
 
 使用虛擬機器讓您能夠有許多不同的網域控制站組態。 請仔細考慮必須指定界限和信任您的 Active Directory 拓樸中，會影響虛擬機器的方式。 下表說明可能的組態，Active Directory 網域控制站和主機 （HYPER-V 伺服器） 和其來賓電腦 （在 HYPER-V 伺服器上執行的虛擬機器）。
 
-|電腦|設定 1|Configuration 2|
+|Machine|設定 1|Configuration 2|
 |-------|---------------|---------------|
 |主機|工作群組或成員的電腦|工作群組或成員的電腦|
 |Guest|網域控制站|工作群組或成員的電腦|
@@ -191,19 +191,19 @@ Rodc 的其中一個優點是能夠將它們放在其中實體安全性無法保
 
 HYPER-V 等虛擬化平台，提供方便的功能，可讓管理、 維護、 備份，以及移轉電腦更容易許多。 不過，下列常見的部署做法與功能應不適用於虛擬網域控制站：
 
-   - 若要確保 Active Directory 寫入的持久性，不會部署虛擬網域控制站的資料庫檔案 (Active Directory 資料庫 (NTDS。DIT)，記錄檔和 SYSVOL) 虛擬 IDE 磁碟上。 相反地，建立連接至虛擬 SCSI 控制器的第二個 VHD，並確保該資料庫、 記錄和 SYSVOL 期間的放置虛擬機器的 SCSI 磁碟上安裝網域控制站。  
-   - 請勿在您要設定的網域控制站的虛擬機器上實作差異磁碟的虛擬硬碟 (Vhd)。 這樣很容易就能還原為之前的版本，它也會降低效能。 如需 VHD 類型的詳細資訊，請參閱[新的虛擬硬碟精靈](https://go.microsoft.com/fwlink/?linkid=137279)。  
-   - 不會部署新的 Active Directory 網域及樹系，在一份已不先備妥使用系統準備工具 (Sysprep) 的 Windows Server 作業系統上。 如需執行 Sysprep 的詳細資訊，請參閱[Sysprep （系統準備） 概觀](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
+- 若要確保 Active Directory 寫入的持久性，不會部署虛擬網域控制站的資料庫檔案 (Active Directory 資料庫 (NTDS。DIT)，記錄檔和 SYSVOL) 虛擬 IDE 磁碟上。 相反地，建立連接至虛擬 SCSI 控制器的第二個 VHD，並確保該資料庫、 記錄和 SYSVOL 期間的放置虛擬機器的 SCSI 磁碟上安裝網域控制站。  
+- 請勿在您要設定的網域控制站的虛擬機器上實作差異磁碟的虛擬硬碟 (Vhd)。 這樣很容易就能還原為之前的版本，它也會降低效能。 如需 VHD 類型的詳細資訊，請參閱[新的虛擬硬碟精靈](https://go.microsoft.com/fwlink/?linkid=137279)。  
+- 不會部署新的 Active Directory 網域及樹系，在一份已不先備妥使用系統準備工具 (Sysprep) 的 Windows Server 作業系統上。 如需執行 Sysprep 的詳細資訊，請參閱[Sysprep （系統準備） 概觀](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
 
-      > [!WARNING]
-      > 不支援在網域控制站上執行 Sysprep。
+   > [!WARNING]
+   > 不支援在網域控制站上執行 Sysprep。
 
-   - 為了協助防止潛在的更新序列號碼 (USN) 復原情況，請勿使用代表已部署的網域控制站，來部署其他網域控制站的 VHD 檔案的複本。 如需有關 USN 復原的詳細資訊，請參閱 < [USN 和 USN 回復](#usn-and-usn-rollback)。
-      - Windows Server 2012 和更新版本，可讓 「 複製網域控制站的映像，如果他們想要部署其他網域控制站時，請準備正確的系統管理員
-   - 請勿使用 HYPER-V 匯出 」 功能來匯出虛擬機器執行的網域控制站。
-      - Windows Server 2012 及更新版本，匯出和匯入的網域控制站的虛擬客體被處理像在非權威還原因為偵測到世代識別碼變更，而且未針對複製。
-      - 請確定您不使用客體再匯出。
-  - 您可以使用 HYPER-V 複寫將網域控制站的第二個非使用中複本。 如果您啟動複寫的映像，您也需要執行適當的清除，基於相同理由，做為匯出的 DC 來賓映像之後，未使用的來源。
+- 為了協助防止潛在的更新序列號碼 (USN) 復原情況，請勿使用代表已部署的網域控制站，來部署其他網域控制站的 VHD 檔案的複本。 如需有關 USN 復原的詳細資訊，請參閱 < [USN 和 USN 回復](#usn-and-usn-rollback)。
+   - Windows Server 2012 和更新版本，可讓 「 複製網域控制站的映像，如果他們想要部署其他網域控制站時，請準備正確的系統管理員
+- 請勿使用 HYPER-V 匯出 」 功能來匯出虛擬機器執行的網域控制站。
+  - Windows Server 2012 及更新版本，匯出和匯入的網域控制站的虛擬客體被處理像在非權威還原因為偵測到世代識別碼變更，而且未針對複製。
+  - 請確定您不使用客體再匯出。
+    - 您可以使用 HYPER-V 複寫將網域控制站的第二個非使用中複本。 如果您啟動複寫的映像，您也需要執行適當的清除，基於相同理由，做為匯出的 DC 來賓映像之後，未使用的來源。
 
 ## <a name="physical-to-virtual-migration"></a>實體對虛擬的移轉
 
@@ -244,23 +244,23 @@ System Center Virtual Machine Manager (VMM) 2008年提供統一的管理實體�
 
 若要將網域控制站虛擬機器的效能最佳化，並確保 Active Directory 寫入的持久性，使用下列建議來儲存作業系統、 Active Directory，以及 VHD 檔案：
 
-   - **客體儲存體**。 儲存 Active Directory 資料庫檔案 (Ntds.dit)、 記錄檔和 SYSVOL 檔案從作業系統檔案的個別虛擬磁碟上。 建立連接至虛擬 SCSI 控制器的第二個 VHD，並儲存虛擬機器的虛擬 SCSI 磁碟上的資料庫、 記錄和 SYSVOL。 虛擬 SCSI 磁碟提供更高的效能相較於虛擬 IDE，並支援強制 Unit Access (FUA)。 FUA 可確保作業系統寫入和讀取資料直接從媒體安裝略過所有快取機制。
+- **客體儲存體**。 儲存 Active Directory 資料庫檔案 (Ntds.dit)、 記錄檔和 SYSVOL 檔案從作業系統檔案的個別虛擬磁碟上。 建立連接至虛擬 SCSI 控制器的第二個 VHD，並儲存虛擬機器的虛擬 SCSI 磁碟上的資料庫、 記錄和 SYSVOL。 虛擬 SCSI 磁碟提供更高的效能相較於虛擬 IDE，並支援強制 Unit Access (FUA)。 FUA 可確保作業系統寫入和讀取資料直接從媒體安裝略過所有快取機制。
 
-   > [!NOTE]
-   > 如果您打算要用於虛擬 DC 客體中的 Bitlocker，您需要確定其他磁碟區都已設定為 「 自動解除鎖定 」。
-   > 詳細資訊設定自動解除鎖定可在[啟用 BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
+  > [!NOTE]
+  > 如果您打算要用於虛擬 DC 客體中的 Bitlocker，您需要確定其他磁碟區都已設定為 「 自動解除鎖定 」。
+  > 詳細資訊設定自動解除鎖定可在[啟用 BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
 
-   - **裝載的 VHD 檔案的儲存體**。 建議：裝載 VHD 檔案的儲存體建議位址儲存的體。 為達最佳效能，不要儲存磁碟是經常使用的其他服務或應用程式，例如主機 Windows 作業系統安裝所在的系統磁碟上的 VHD 檔案。 儲存在不同的磁碟分割，從主機作業系統上的每個 VHD 檔案和任何其他 VHD 檔案。 理想的設定是儲存在個別的實體磁碟機上的每個 VHD 檔案。  
+- **裝載的 VHD 檔案的儲存體**。 建議：裝載 VHD 檔案的儲存體建議位址儲存的體。 為達最佳效能，不要儲存磁碟是經常使用的其他服務或應用程式，例如主機 Windows 作業系統安裝所在的系統磁碟上的 VHD 檔案。 儲存在不同的磁碟分割，從主機作業系統上的每個 VHD 檔案和任何其他 VHD 檔案。 理想的設定是儲存在個別的實體磁碟機上的每個 VHD 檔案。  
 
-    主機的實體磁碟系統也必須滿足**至少一個**的下列準則，以符合需求的虛擬化工作負載資料完整性：  
+  主機的實體磁碟系統也必須滿足**至少一個**的下列準則，以符合需求的虛擬化工作負載資料完整性：  
 
-      - 系統會使用伺服器類別磁碟 （SCSI、 光纖通道）。  
-      - 系統可確保磁碟已連接到電池供電的快取主機匯流排介面卡 (HBA)。  
-      - 系統會使用儲存體控制器 （例如 RAID 系統），做為儲存體裝置。  
-      - 系統可確保磁碟能夠受到不斷電供應系統 (UPS)。  
-      - 系統可確保磁碟寫入快取功能已停用。  
+   - 系統會使用伺服器類別磁碟 （SCSI、 光纖通道）。  
+   - 系統可確保磁碟已連接到電池供電的快取主機匯流排介面卡 (HBA)。  
+   - 系統會使用儲存體控制器 （例如 RAID 系統），做為儲存體裝置。  
+   - 系統可確保磁碟能夠受到不斷電供應系統 (UPS)。  
+   - 系統可確保磁碟寫入快取功能已停用。  
 
-   - **傳遞磁碟與固定 VHD**。 有許多方式來設定虛擬機器儲存體。 VHD 檔案使用時，因為在建立時配置的固定大小 Vhd 記憶體固定大小 Vhd 是動態 Vhd 比更有效率。 傳遞磁碟，虛擬機器可用來存取實體的儲存媒體，更會針對效能最佳化。 傳遞磁碟基本上是實體磁碟或連接至虛擬機器的邏輯單元編號 (Lun)。 傳遞磁碟不支援快照集功能。 因此，傳遞磁碟都是慣用的硬碟設定，因為不建議使用具有網域控制站的快照集。  
+- **傳遞磁碟與固定 VHD**。 有許多方式來設定虛擬機器儲存體。 VHD 檔案使用時，因為在建立時配置的固定大小 Vhd 記憶體固定大小 Vhd 是動態 Vhd 比更有效率。 傳遞磁碟，虛擬機器可用來存取實體的儲存媒體，更會針對效能最佳化。 傳遞磁碟基本上是實體磁碟或連接至虛擬機器的邏輯單元編號 (Lun)。 傳遞磁碟不支援快照集功能。 因此，傳遞磁碟都是慣用的硬碟設定，因為不建議使用具有網域控制站的快照集。  
 
 若要減少 Active Directory 資料損毀的可能性，請使用虛擬 SCSI 控制器：
 
@@ -320,11 +320,11 @@ System Center Virtual Machine Manager (VMM) 2008年提供統一的管理實體�
 
 使用在下圖中的程序，來判斷要還原您的虛擬的網域控制站的最佳方式。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
 
 在 rodc 方面，還原程序和決策會更簡單。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
 
 ## <a name="restoring-the-system-state-backup-of-a-virtual-domain-controller"></a>還原虛擬網域控制站系統狀態備份
 
@@ -360,22 +360,22 @@ System Center Virtual Machine Manager (VMM) 2008年提供統一的管理實體�
 4. 輸入新名稱**從備份還原資料庫**，然後按 ENTER 鍵。
 5. 按兩下您剛才建立開啟的值**編輯 DWORD （32 位元） 值** 對話方塊中，然後按**1**中**數值資料** 方塊中。 **備份項目從還原的資料庫**在執行 Windows 2000 Server Service Pack 4 (SP4)，隨附於更新的 Windows Server 2003 的網域控制站會提供選項[如何偵測從 Windows Server 2003、 Windows Server 2008 和 Windows Server 2008 R2 中的 USN 回復和復原](https://go.microsoft.com/fwlink/?linkid=137182)中安裝的 Microsoft 知識庫和 Windows Server 2008。
 6. 正常模式重新啟動網域控制站。
-7. 網域控制站重新啟動時，請開啟 事件檢視器。 若要開啟 [事件檢視器]，請按一下 [開始]，再按一下 [控制台]，連按兩下 [系統管理工具]，再連按兩下 [事件檢視器]。
+7. 網域控制站重新啟動時，請開啟 事件檢視器。 若要開啟 [事件檢視器]，請按一下 [開始]  ，再按一下 [控制台]  ，連按兩下 [系統管理工具]  ，再連按兩下 [事件檢視器]  。
 8. 依序展開**Application and Services Logs**，然後按一下**Directory Services**記錄檔。 請確定事件會出現在 [詳細資料] 窗格中。
 9. 以滑鼠右鍵按一下**Directory Services**記錄，然後**尋找**。 在**Find what**，型別**1109年**，然後按一下 **尋找下一個**。
 10. 您應該會看到至少一個事件識別碼 1109年項目。 如果看不到此項目，請繼續下一個步驟。 否則，按兩下項目，然後檢閱 確認更新已對 InvocationID 的文字：
 
-   ```
-   Active Directory has been restored from backup media, or has been configured to host an application partition. 
-   The invocationID attribute for this directory server has been changed. 
-   The highest update sequence number at the time the backup was created is <time>
+    ```
+    Active Directory has been restored from backup media, or has been configured to host an application partition. 
+    The invocationID attribute for this directory server has been changed. 
+    The highest update sequence number at the time the backup was created is <time>
 
-   InvocationID attribute (old value):<Previous InvocationID value>
-   InvocationID attribute (new value):<New InvocationID value>
-   Update sequence number:<USN>
+    InvocationID attribute (old value):<Previous InvocationID value>
+    InvocationID attribute (new value):<New InvocationID value>
+    Update sequence number:<USN>
 
-   The InvocationID is changed when a directory server is restored from backup media or is configured to host a writeable application directory partition.
-   ```
+    The InvocationID is changed when a directory server is restored from backup media or is configured to host a writeable application directory partition.
+    ```
 
 11. 關閉 [事件檢視器]。
 12. 使用登錄編輯程式來確認中的值**DSA 上一個還原計數**相當於先前的值加一。 如果這不是正確的值，而且您無法在事件檢視器中的事件識別碼 1109年到的項目，確認目前的網域控制站的服務組件。 您無法再試一次在相同的 VHD 上的這個程序。 您可以再試一次將 VHD 或尚未啟動以正常模式啟動透過步驟 1 的不同 VHD 的複本上。
@@ -418,7 +418,7 @@ Active Directory 網域服務 (AD DS) 會使用更新序列號碼 (Usn) 來追�
 
 例如，假設 VDC1 和 DC2 都是相同的網域中的兩個網域控制站。 在適當的還原的情況下重設 invocationID 值時下, 圖會顯示有關 VDC1 DC2 的認知。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
 
 ## <a name="usn-rollback"></a>USN 復原
 
@@ -445,7 +445,7 @@ USN 復原可能會造成在許多方面，比方說，當使用舊的虛擬硬�
 
 下圖顯示當 VDC2，虛擬機器執行的目的地網域控制站偵測到 USN 回復時，就會發生事件的順序。 在此圖中，偵測到 USN 回復，就會發生在 VDC2 上複寫協力電腦偵測到 VDC2 傳送目的地網域控制站，這表示 VDC2 的資料庫已還原回看到最新 USN 值時時間不正確。
 
-![](media\virtualized-domain-controller-architecture\\Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
 
 如果目錄服務事件記錄檔會報告事件識別碼 2095年，請立即完成下列程序。
 
@@ -470,7 +470,7 @@ USN 復原可能無法偵測在兩種情況的其中一個：
 
 在第二個的情況下，範圍的 Usn 適用於兩組不同的變更。 這個過程可以偵測不到持續很長。 每次修改，在這段期間所建立物件時，會偵測到延遲物件，並回報為 事件檢視器中的事件識別碼 1988年。 下圖顯示如何 USN 復原可能無法偵測在這種情況下。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
 
 ## <a name="read-only-domain-controllers"></a>唯讀網域控制站
 

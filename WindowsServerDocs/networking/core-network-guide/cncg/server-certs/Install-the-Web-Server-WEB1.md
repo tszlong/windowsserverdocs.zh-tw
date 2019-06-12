@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f51c9e38-98bb-49c1-9d39-427d07021499
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ef4f10a6ac1998850758f2c9db86bfd950c1ad70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 15da16094a47a2492dc9054e0671c3709fe23362
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833279"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446451"
 ---
 # <a name="install-the-web-server-web1"></a>安裝網頁伺服器 WEB1
 
@@ -35,13 +35,13 @@ Windows Server 2016 中的網頁伺服器 (IIS) 角色提供安全、 容易管�
 `Install-WindowsFeature Web-Server -IncludeManagementTools`  
 
 1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能精靈] 隨即開啟。  
-2.  在 [在您開始前] 中，按 [下一步]。  
+2.  在 [在您開始前]  中，按 [下一步]  。  
 
 **附註**   
 **在您開始前**如果您先前已執行 [新增角色及功能精靈]，而且您選取未顯示的 [新增角色及功能精靈] 的頁面**略過此頁面預設**在該時間。  
 
-3.  在 [安裝類型] 頁面上，按 [下一步]。  
-4.  在 [**伺服器選取項目**頁面上，按一下**下一步]**。  
-5.  在 [**伺服器角色**頁面上，選取**網頁伺服器 (IIS)**，然後按一下**下一步]**。  
-6.  在您接受所有的預設網頁伺服器設定之後，按 [下一步]，然後按一下 [安裝]。  
-7.  確認所有安裝成功，然後按一下 [關閉]。
+3. 在 [安裝類型]  頁面上，按 [下一步]  。  
+4. 在 [**伺服器選取項目**頁面上，按一下**下一步]** 。  
+5. 在 [**伺服器角色**頁面上，選取**網頁伺服器 (IIS)** ，然後按一下**下一步]** 。  
+6. 在您接受所有的預設網頁伺服器設定之後，按 [下一步]  ，然後按一下 [安裝]  。  
+7. 確認所有安裝成功，然後按一下 [關閉]  。

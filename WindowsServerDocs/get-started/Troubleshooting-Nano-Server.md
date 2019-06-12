@@ -12,12 +12,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f5d3e352cd022853a1602c67c3aaf2530cfc696
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e832d35f1ae3bbdba256b3531a22f93b69cadbb3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813639"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443388"
 ---
 # <a name="troubleshooting-nano-server"></a>針對 Nano Server 進行疑難排解
 
@@ -43,8 +43,8 @@ Nano 伺服器包含修復主控台，確保即使錯誤網路組態干擾與 Na
 -   有些畫面會在畫面的最後一行顯示其他功能。 例如，如果您瀏覽網路介面卡，F4 會停用網路介面卡。  
   
 修復主控台可讓您檢視與設定網路介面卡和 TCP/IP 設定，以及防火牆規則。
-> [!NOTE]  
-    > 修復主控台只支援基本鍵盤功能。 不支援鍵盤背光、10 個按鍵區段和鍵盤配置切換 (例如 Caps Lock 和 Number Lock)。 只支援英文鍵盤和字元集。
+> [!NOTE]
+> 修復主控台只支援基本鍵盤功能。 不支援鍵盤背光、10 個按鍵區段和鍵盤配置切換 (例如 Caps Lock 和 Number Lock)。 只支援英文鍵盤和字元集。
 
 ## <a name="accessing-nano-server-over-a-serial-port-with-emergency-management-services"></a>使用緊急管理服務透過序列連接埠存取 Nano 伺服器  
 緊急管理服務 (EMS) 可讓您執行基本疑難排解、取得網路狀態，以及使用終端機模擬器透過序列連接埠開啟主控台工作階段 (包括 CMD/PowerShell)。 這會取代使用鍵盤和監視器進行伺服器疑難排解的需求。 如需 EMS 的詳細資訊，請參閱 [Emergency Management Services Technical Reference](https://technet.microsoft.com/library/cc784411(v=ws.10).aspx) (緊急管理服務技術參照)。

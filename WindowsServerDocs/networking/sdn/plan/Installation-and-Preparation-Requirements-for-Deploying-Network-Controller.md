@@ -9,12 +9,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: pashort
 author: shortpatti
 ms.date: 08/10/2018
-ms.openlocfilehash: 9db7609f6f1273c46cba1dd29f81c297bb26f94b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51ba991397a7c35ee0198f8e75c67b2f99b7c7bc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829859"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446314"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署網路控制站需求
 
@@ -31,13 +31,13 @@ ms.locfileid: "59829859"
 - 任何電腦或虛擬機器 (VM) 的安裝網路控制站必須執行 Windows Server 2016 Datacenter edition。 
 - 管理用戶端電腦或網路控制站的 VM 必須執行 Windows 10。 
 
-  
+
 ## <a name="configuration-requirements"></a>設定需求
 
 在部署網路控制站，您必須設定安全性群組、 記錄檔位置 （如有需要），以及動態 DNS 註冊。
-  
+
 ### <a name="step-1-configure-your-security-groups"></a>步驟 1. 設定您的安全性群組
-  
+
 您想要執行的第一件事是建立兩個安全性群組的 Kerberos 驗證。 
 
 您建立群組的權限的使用者來： 
@@ -57,33 +57,35 @@ ms.locfileid: "59829859"
 
 
 ### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>步驟 3。 網路控制站設定動態 DNS 註冊
-  
+
 最後，您想要執行下一的步是部署網路控制站相同的子網路或不同的子網路上的叢集節點。 
 
-|如果...  |則...  |
-|---------|---------|
-|位於相同的子網路， |您必須提供網路控制站的 REST IP 位址。 |
-|位於不同的子網路 |您必須提供您在部署程序期間建立的網路控制站的 REST DNS 名稱。 您也必須執行下列動作：<ul><li>設定網路控制站的 DNS 名稱的 DNS 動態更新 DNS 伺服器上。</li><li>限制只有網路控制卡節點 DNS 動態更新。</li></ul> |
+
+|         如果...         |                                                                                                                                                         則...                                                                                                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  位於相同的子網路，  |                                                                                                                                您必須提供網路控制站的 REST IP 位址。                                                                                                                                 |
+| 位於不同的子網路 | 您必須提供您在部署程序期間建立的網路控制站的 REST DNS 名稱。 您也必須執行下列動作：<ul><li>設定網路控制站的 DNS 名稱的 DNS 動態更新 DNS 伺服器上。</li><li>限制只有網路控制卡節點 DNS 動態更新。</li></ul> |
+
 ---
 
 > [!NOTE]
 > 中的成員資格**Domain Admins**，或同等權限，才能執行這些程序的最小值。
-  
+
 1. 允許區域的 DNS 動態更新。
 
    a. 開啟 DNS 管理員，並在主控台樹狀目錄中，以滑鼠右鍵按一下適用的區域，然後按**屬性**。 
-      
+
    b. 在 **一般**索引標籤上，確認區域類型是否為**主要**或是**Active Directory 整合**。
 
-   c.  在 **動態更新**，確認**只有安全**已選取，然後按一下**確定**。
+   c. 在 **動態更新**，確認**只有安全**已選取，然後按一下**確定**。
 
 2. 設定網路控制卡節點的 DNS 區域安全性權限
 
-   a.  按一下 [安全性] 索引標籤，然後按一下 [進階]。 
+   a.  按一下 [安全性]  索引標籤，然後按一下 [進階]  。 
 
    b. 在 **進階安全性設定**，按一下**新增**。 
-  
-   c.  按一下 [**選取一個主體**]。 
+
+   c. 按一下 [**選取一個主體**]。 
 
    d. 在 [**選取使用者、 電腦、 服務帳戶或群組**] 對話方塊中，按一下**物件類型**。 
 
@@ -95,8 +97,8 @@ ms.locfileid: "59829859"
 
       - **型別**= 允許
       - **適用於**= 此物件及所有子系物件
-  
-   h. 中**權限**，選取**寫入全部內容**並**刪除**，然後按一下 **[確定]**。
+
+   h. 中**權限**，選取**寫入全部內容**並**刪除**，然後按一下 **[確定]** 。
 
 3. 在網路控制卡叢集中重複的所有電腦和 Vm。
 
@@ -115,19 +117,19 @@ ms.locfileid: "59829859"
 ### <a name="network-controller-and-software-load-balancer-deployment"></a>網路控制卡和軟體負載平衡器部署
 
 對於高可用性，有兩個或多個 SLB/MUX 節點。
-   
+
 ![SDN NC 計劃](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
-  
+
 ### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>網路控制站、 軟體負載平衡器，以及 RAS 閘道部署
 
 有三部閘道虛擬機器;兩個作用中，並有備援。
 
 ![SDN NC 計劃](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
-  
-  
-  
+
+
+
 TP5 為基礎的部署自動化、 可用且可從這些子網路，就必須是一個 Active Directory。 如需有關 Active Directory 的詳細資訊，請參閱 < [Active Directory 網域服務概觀](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)。  
-  
+
 >[!IMPORTANT] 
 >如果您使用 VMM 部署，請確定您的基礎結構虛擬機器 (VMM 伺服器 AD/DNS，SQL Server，等等) 不裝載在任何圖表所示的四個主機上。  
 
@@ -136,7 +138,7 @@ TP5 為基礎的部署自動化、 可用且可從這些子網路，就必須是
 [軟體定義網路基礎結構的計劃](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)。
 
 ## <a name="related-topics"></a>相關主題
-- [網路控制站](../technologies/network-controller/Network-Controller.md) 
+- [網路控制卡](../technologies/network-controller/Network-Controller.md) 
 - [網路控制站的高可用性](../technologies/network-controller/network-controller-high-availability.md) 
-- [部署使用 Windows PowerShell 的網路控制站](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
-- [安裝網路控制卡伺服器角色，使用 伺服器管理員](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   
+- [使用 Windows PowerShell 部署網路控制卡](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
+- [使用伺服器管理員安裝網路控制卡伺服器角色](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   

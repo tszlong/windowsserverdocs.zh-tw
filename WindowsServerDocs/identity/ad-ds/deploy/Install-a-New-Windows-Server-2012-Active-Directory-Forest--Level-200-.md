@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 187db7e201e98ae97268b96c2e4faa202a9a5372
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40471354af5434e77a300303572ccce639ba2489
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874829"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443781"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
 
@@ -88,15 +88,15 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSForest.png)  
   
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Dcpromo.exe 不再包含圖形化精靈，因而不會再安裝角色或功能二進位檔。 嘗試透過 Explorer Shell 執行 Dcpromo.exe 會傳回：  
->   
-> 「 Active Directory 網域服務安裝精靈會重新放置在 [伺服器管理員] 中。 如需詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=220921。 」  
->   
+> 
+> 「 Active Directory 網域服務安裝精靈會重新放置在 [伺服器管理員] 中。 如需詳細資訊，請參閱<https://go.microsoft.com/fwlink/?LinkId=220921>。 」  
+> 
 > 與在舊版的作業系統中一樣，嘗試執行 Dcpromo.exe /unattend 仍會安裝二進位檔，但會發出警告：  
->   
-> 「 Dcpromo 自動的作業取代適用於 Windows PowerShell 的 ADDSDeployment 模組。 如需詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=220924。 」  
->   
+> 
+> 「 Dcpromo 自動的作業取代適用於 Windows PowerShell 的 ADDSDeployment 模組。 如需詳細資訊，請參閱<https://go.microsoft.com/fwlink/?LinkId=220924>。 」  
+> 
 > dcpromo.exe 在 Windows Server 2012 中是不建議使用的功能 ，因此它將不會包含在未來的 Windows 版本中，在此作業系統中也不會有進一步的增強。 系統管理員應停止繼續使用它，如果他們想透過命令列建立網域控制站，應改用支援的 Windows PowerShell 模組。  
   
 #### <a name="prerequisite-checking"></a>先決條件檢查  
@@ -117,7 +117,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
   
 -   按一下儀表板歡迎使用磚上的 [新增其他要管理的伺服器]   
   
--   按一下 [管理] 功能表，然後選取 [新增伺服器]  
+-   按一下 [管理]  功能表，然後選取 [新增伺服器]   
   
 -   以滑鼠右鍵按一下 [所有伺服器]  ，選擇 [新增伺服器]   
   
@@ -133,7 +133,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
   
 -   匯入 (使用以 CR/LF 區隔的伺服器文字檔清單)  
   
-按一下 [立即尋找] 即可傳回該電腦加入的 Active Directory 網域中的伺服器清單，請從伺服器清單中按一下一或多個伺服器名稱。 按一下向右箭號，將伺服器新增到 [已選取] 清單。 使用 [新增伺服器] 對話方塊將選取的伺服器新增至儀表板角色群組。 或按一下 [管理]，然後按一下 [建立伺服器群組]，或按一下儀表板上 [歡迎使用伺服器管理員] 磚上的 [建立伺服器群組] 來建立自訂的伺服器群組。  
+按一下 [立即尋找]  即可傳回該電腦加入的 Active Directory 網域中的伺服器清單，請從伺服器清單中按一下一或多個伺服器名稱。 按一下向右箭號，將伺服器新增到 [已選取]  清單。 使用 [新增伺服器]  對話方塊將選取的伺服器新增至儀表板角色群組。 或按一下 [管理]  ，然後按一下 [建立伺服器群組]  ，或按一下儀表板上 [歡迎使用伺服器管理員]  磚上的 [建立伺服器群組]  來建立自訂的伺服器群組。  
   
 > [!NOTE]  
 > 新增伺服器程序不會驗證伺服器是上線或可存取狀態。 不過，任何無法連線的伺服器在下次重新整理時將於伺服器管理員的 [管理性] 檢視中加上旗標。  
@@ -146,30 +146,30 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddADDSToAnotherServer.png)  
   
-您也可以使用現有的網域控制站上的 [伺服器管理員儀表板] 來選取已預先選取好角色的遠端伺服器 AD DS 安裝，方法是在 AD DS 儀表板磚上按一下滑鼠右鍵，然後選取 [將 AD DS 新增至另一部伺服器] 。 這樣會叫用 **Install-WindowsFeature AD-Domain-Services**。  
+您也可以使用現有的網域控制站上的 [伺服器管理員儀表板] 來選取已預先選取好角色的遠端伺服器 AD DS 安裝，方法是在 AD DS 儀表板磚上按一下滑鼠右鍵，然後選取 [將 AD DS 新增至另一部伺服器]  。 這樣會叫用 **Install-WindowsFeature AD-Domain-Services**。  
   
-執行伺服器管理員的電腦會自行加入集區。 如果要在此安裝 AD DS 角色，只要按一下 [管理]  功能表，再按一下 [新增角色及功能] 。  
+執行伺服器管理員的電腦會自行加入集區。 如果要在此安裝 AD DS 角色，只要按一下 [管理]  功能表，再按一下 [新增角色及功能]  。  
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ManageAddRoles.png)  
   
 #### <a name="installation-type"></a>安裝類型  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectInstallationType.png)  
   
-[安裝類型]  對話方塊提供不支援 Active Directory 網域服務的選項：[遠端桌面服務案例型安裝] 。 該選項只允許在多伺服器分散式工作負載中的遠端桌面服務。 如果您選取該選項，AD DS 則無法安裝。  
+[安裝類型]  對話方塊提供不支援 Active Directory 網域服務的選項：[遠端桌面服務案例型安裝]  。 該選項只允許在多伺服器分散式工作負載中的遠端桌面服務。 如果您選取該選項，AD DS 則無法安裝。  
   
-安裝 AD DS 時，請始終保留預設的選取項目：[角色型或功能型安裝]。  
+安裝 AD DS 時，請始終保留預設的選取項目：[角色型或功能型安裝]  。  
   
 #### <a name="server-selection"></a>伺服器選項  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectDestinationServer.png)  
   
-[伺服器選取項目] 對話方塊可讓您從先前已加入集區的伺服器中選擇其中之一 (只要其可供存取)。 執行伺服器管理員的本機伺服器會自動成為可存取狀態。  
+[伺服器選取項目]  對話方塊可讓您從先前已加入集區的伺服器中選擇其中之一 (只要其可供存取)。 執行伺服器管理員的本機伺服器會自動成為可存取狀態。  
   
 此外，您可以選取離線 Hyper-V VHD 檔案與 Windows Server 2012 作業系統，伺服器管理員會透過元件服務直接新增角色。 這可讓您在進一步設定虛擬伺服器之前，先使用必要的元件佈建虛擬伺服器。  
   
 #### <a name="server-roles-and-features"></a>伺服器角色與功能  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectServerRoles.png)  
   
-如果您想升級網域控制站，請選取 [Active Directory 網域服務] 角色。 所有 Active Directory 管理功能和必要服務都會自動安裝 (即使它們明顯是另一個角色的一部分或在 [伺服器管理員] 介面中不是已選取狀態也一樣)。  
+如果您想升級網域控制站，請選取 [Active Directory 網域服務]  角色。 所有 Active Directory 管理功能和必要服務都會自動安裝 (即使它們明顯是另一個角色的一部分或在 [伺服器管理員] 介面中不是已選取狀態也一樣)。  
   
 伺服器管理員也會提供一個資訊對話方塊，其中顯示此角色以隱含方式安裝的管理功能；這等同於 **-IncludeManagementTools** 引數。  
   
@@ -182,14 +182,14 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 #### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)  
   
-[Active Directory 網域服務] 對話方塊提供有限的需求及最佳做法資訊。 它主要是確認您已選擇 AD DS 角色 」 未出現此畫面，如果您未選取 AD DS。  
+[Active Directory 網域服務]  對話方塊提供有限的需求及最佳做法資訊。 它主要是確認您已選擇 AD DS 角色 」 未出現此畫面，如果您未選取 AD DS。  
   
 #### <a name="confirmation"></a>確認  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Confirmation.png)  
   
 在角色安裝開始之前，[確認]  對話方塊是最後的檢查點。 它提供在角色安裝後視需要重新啟動電腦的選項，但 AD DS 安裝不需要重新開機。  
   
-透過按一下 [安裝]，您可以確認您已經準備好開始安裝角色。 開始安裝角色後即無法取消。  
+透過按一下 [安裝]  ，您可以確認您已經準備好開始安裝角色。 開始安裝角色後即無法取消。  
   
 #### <a name="results"></a>結果  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Results.png)  
@@ -235,9 +235,9 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 #### <a name="deployment-configuration"></a>部署設定  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddNewForest.png)  
   
-[伺服器管理員] 會從 [部署設定] 頁面開始升級每個網域控制站。 這個頁面及後續頁面的剩餘選項及必要欄位會隨著您選取的部署操作而變更。  
+[伺服器管理員] 會從 [部署設定]  頁面開始升級每個網域控制站。 這個頁面及後續頁面的剩餘選項及必要欄位會隨著您選取的部署操作而變更。  
   
-如果要建立新的 Active Directory 樹系，請按一下 [新增樹系] 。 您必須提供有效的根網域名稱。名稱不可以是單一標籤 (例如，名稱必須是 *contoso.com* 或類似格式，不能只有 *contoso*)，而且必須使用允許的 DNS 網域命名需求。  
+如果要建立新的 Active Directory 樹系，請按一下 [新增樹系]  。 您必須提供有效的根網域名稱。名稱不可以是單一標籤 (例如，名稱必須是 *contoso.com* 或類似格式，不能只有 *contoso*)，而且必須使用允許的 DNS 網域命名需求。  
   
 如需有效網域名稱的詳細資訊，請參閱知識庫文章 [Active Directory 中的電腦、網域、網站及 OU 的命名慣例](https://support.microsoft.com/kb/909264)。  
   
@@ -251,27 +251,27 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 #### <a name="domain-controller-options"></a>網域控制站選項  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)  
   
-[網域控制站選項] 可讓您設定新的樹系根網域的 [樹系功能等級] 和 [網域功能等級]。 根據預設，這些設定是在新樹系根網域的 Windows Server 2012。 Windows Server 2012 樹系功能等級不提供透過 Windows Server 2008 R2 樹系功能等級的任何新功能。 Windows Server 2012 的網域功能等級，才能只實作新的 Kerberos 設定 「 永遠提供宣告 」 和 「 失敗的未受防護的驗證要求 」。 Windows Server 2012 中的功能等級的主要用途是要限制允許的最小作業系統需求的網域控制站的參與。 換句話說，您可以指定 Windows Server 2012 網域功能層級唯一網域控制站執行 Windows Server 2012 可以代管網域。  Windows Server 2012 實作呼叫新網域控制站旗標**DS_WIN8_REQUIRED**中**DSGetDcName**專門尋找 Windows Server 2012 網域控制站的 NetLogon 的函式。 就何種作業系統可在網域控制站上執行而言，這可讓您彈性擁有更同質或異質的樹系。  
+[網域控制站選項]  可讓您設定新的樹系根網域的 [樹系功能等級]  和 [網域功能等級]  。 根據預設，這些設定是在新樹系根網域的 Windows Server 2012。 Windows Server 2012 樹系功能等級不提供透過 Windows Server 2008 R2 樹系功能等級的任何新功能。 Windows Server 2012 的網域功能等級，才能只實作新的 Kerberos 設定 「 永遠提供宣告 」 和 「 失敗的未受防護的驗證要求 」。 Windows Server 2012 中的功能等級的主要用途是要限制允許的最小作業系統需求的網域控制站的參與。 換句話說，您可以指定 Windows Server 2012 網域功能層級唯一網域控制站執行 Windows Server 2012 可以代管網域。  Windows Server 2012 實作呼叫新網域控制站旗標**DS_WIN8_REQUIRED**中**DSGetDcName**專門尋找 Windows Server 2012 網域控制站的 NetLogon 的函式。 就何種作業系統可在網域控制站上執行而言，這可讓您彈性擁有更同質或異質的樹系。  
   
 如需網域控制站定位的詳細資訊，請檢閱 [目錄服務功能](https://msdn.microsoft.com/library/ms675900(VS.85).aspx)。  
   
 唯一一個可設定的網域控制站功能為 DNS 伺服器選項。 Microsoft 建議分散式環境中的所有網域控制站都提供 DNS 服務以獲得高可用性，這就是為什麼在任何模式或網域中安裝網域控制站時，預設會選取此選項。 建立新的樹系根網域時，通用類別目錄和唯讀的網域控制站選項都無法使用；第一個網域控制站必須是 GC，不可以是唯讀的網域控制站 (RODC)。  
   
-指定的 [目錄服務還原模式密碼] 必須遵守套用至伺服器的密碼原則，預設不需為強式密碼；只需是非空白密碼。 務必選擇複雜的強式密碼，或者最好是使用複雜密碼。  
+指定的 [目錄服務還原模式密碼]  必須遵守套用至伺服器的密碼原則，預設不需為強式密碼；只需是非空白密碼。 務必選擇複雜的強式密碼，或者最好是使用複雜密碼。  
   
 #### <a name="dns-options-and-dns-delegation-credentials"></a>DNS 選項與 DNS 委派認證  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestDNSOptions.png)  
   
 [DNS 選項]  頁面可讓您設定 DNS 委派，並提供替代的 DNS 系統管理認證。  
   
-安裝新的 Active Directory 樹系根網域時，若在 [網域控制站選項] 頁面上選取 [DNS 伺服器]，則您無法在 Active Directory 網域服務設定精靈中設定 DNS 選項或委派 。 在現有的 DNS 伺服器基礎結構中建立新的樹系根 DNS 區域時，會提供 [建立 DNS 委派]  選項。 此選項可讓您提供替代的 DNS 系統管理認證，擁有更新 DNS 區域的權限。  
+安裝新的 Active Directory 樹系根網域時，若在 [網域控制站選項]  頁面上選取 [DNS 伺服器]  ，則您無法在 Active Directory 網域服務設定精靈中設定 DNS 選項或委派 。 在現有的 DNS 伺服器基礎結構中建立新的樹系根 DNS 區域時，會提供 [建立 DNS 委派]  選項。 此選項可讓您提供替代的 DNS 系統管理認證，擁有更新 DNS 區域的權限。  
   
 如需是否需要建立 DNS 委派的詳細資訊，請參閱 [了解區域委派](https://technet.microsoft.com/library/cc771640.aspx)。  
   
 #### <a name="additional-options"></a>其他選項  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestAdditionalOptions.png)  
   
-[其他選項] 頁面會顯示網域的 NetBIOS 名稱，並可讓您覆寫它。 根據預設，NetBIOS 網域名稱符合 [部署設定]  頁面所提供之完整網域名稱最左邊的標籤。 例如，如果您提供的完整的網域名稱是 corp.contoso.com，則預設的 NetBIOS 網域名稱是 CORP。  
+[其他選項]  頁面會顯示網域的 NetBIOS 名稱，並可讓您覆寫它。 根據預設，NetBIOS 網域名稱符合 [部署設定]  頁面所提供之完整網域名稱最左邊的標籤。 例如，如果您提供的完整的網域名稱是 corp.contoso.com，則預設的 NetBIOS 網域名稱是 CORP。  
   
 如果名稱為 15 個字元或更短，且不與其他 NetBIOS 名稱衝突，則名稱不變。 如果名稱與其他 NetBIOS 名稱衝突，系統會在名稱後方附加數字。 如果名稱超過 15 個字元，精靈會提供縮短且具唯一性的建議。 在任一狀況下，精靈都會先透過 WINS 查閱與 NetBIOS 廣播來驗證名稱未使用。  
   
@@ -280,14 +280,14 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 #### <a name="paths"></a>路徑  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPaths.png)  
   
-[路徑] 頁面能讓您覆寫 AD DS 資料庫、資料庫交易記錄以及 SYSVOL 共用的預設資料夾位置。 預設位置一律是 %systemroot%(如 C:\Windows) 的子目錄。  
+[路徑]  頁面能讓您覆寫 AD DS 資料庫、資料庫交易記錄以及 SYSVOL 共用的預設資料夾位置。 預設位置一律是 %systemroot%(如 C:\Windows) 的子目錄。  
   
 #### <a name="review-options-and-view-script"></a>檢閱選項和檢視指令碼  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestReviewOptions.png)  
   
 [檢閱選項]  頁面可讓您在開始安裝之前先驗證設定，並確保它們符合您的需求。 使用 [伺服器管理員] 時，這不是能停止安裝的最後機會。 這只是可讓您在繼續設定前確認設定的選項。  
   
-[伺服器管理員] 中的 [檢閱選項]  頁面也提供選用的 [檢視指令碼]  按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如:   
+[伺服器管理員] 中的 [檢閱選項]  頁面也提供選用的 [檢視指令碼]  按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如:  
   
 ```powershell 
 #  
@@ -320,7 +320,7 @@ Install-ADDSForest `
   
 安裝新的樹系根網域時，[伺服器管理員] 的 [Active Directory 網域服務設定精靈] 會叫用一系列的模組化測試。 這些測試會提醒您建議的修復選項。 您可以視需要執行多次測試。 必須通過所有先決條件測試，網域控制站程序才能繼續。  
   
-[先決條件檢查] 也會提供諸如影響舊版作業系統之安全性變更的相關資訊。  
+[先決條件檢查]  也會提供諸如影響舊版作業系統之安全性變更的相關資訊。  
   
 如需特定先決條件檢查的詳細資訊，請參閱 [Prerequisite Checking](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
   
@@ -367,7 +367,7 @@ ServerManager 模組公開 Windows PowerShell 的新 DISM 模組中角色安裝�
 Get-Command -module ServerManager  
 ```  
   
-例如:   
+例如:  
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetCommand.png)  
   
@@ -383,7 +383,7 @@ Install-WindowsFeature -name AD-Domain-Services
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools  
 ```  
   
-例如:   
+例如:  
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallWinFeature.png)  
   
@@ -417,7 +417,7 @@ Get-WindowsFeature | where displayname -like "*active dir*"
 Get-WindowsFeature | where {$_.displayname - like "*active dir*"}  
 ```  
   
-使用 Windows PowerShell 管線，您可以建立可讀取的結果。 例如:   
+使用 Windows PowerShell 管線，您可以建立可讀取的結果。 例如:  
   
 ```powershell  
 Install-WindowsFeature | Format-List  
@@ -451,7 +451,7 @@ Install-addsforest
 > [!NOTE]  
 > 如果您想變更依據 DNS 網域名稱首碼自動產生的 15 個字元名稱，或是這個名稱超過 15 個字元，必須使用 **-DomainNetBIOSName** 引數。  
   
-對等的伺服器管理員部署設定 ADDSDeployment Cmdlet 與引數為：  
+對等的伺服器管理員部署設定  ADDSDeployment Cmdlet 與引數為：  
   
 ```powershell  
 Install-ADDSForest  
@@ -497,7 +497,7 @@ Install-ADDSForest
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如:   
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如:  
   
 ```powershell  
 $file = "c:\pw.txt"  
@@ -544,7 +544,7 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
   
 使用選擇性的 **Whatif** 引數搭配 **Install-ADDSForest** Cmdlet 來檢閱設定資訊。 這可讓您看到明確和隱含的 Cmdlet 引數值。  
   
-例如:   
+例如:  
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSPaths.png)  
   

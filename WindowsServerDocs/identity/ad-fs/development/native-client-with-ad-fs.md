@@ -9,12 +9,12 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: e85a97fa08e4c77588b17aee08ee03e0b897a74c
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 15bb6f1e39f64ff19ebb5515188ee944e277d3b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976862"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445485"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>建置原生用戶端應用程式使用 OAuth 公用用戶端與 AD FS 2016 或更新版本
 
@@ -88,11 +88,11 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 
 **App.config**
 
-* 新增金鑰**ida： 授權單位**描述 AD FS 服務的值。 例如： https://fs.contoso.com/adfs/ 
+* 新增金鑰**ida： 授權單位**描述 AD FS 服務的值。 例如： https://fs.contoso.com/adfs/
 * 修改**ida: ClientId**的值索引鍵**用戶端識別碼**中**原生應用程式**應用程式群組建立期間在 AD FS 中的頁面。 比方說，3f07368b-6efd-4f50-a330-d93853f4c855
-* 修改**todo:todo:TodoListResourceId**中的值取代**識別項**中**設定 Web API**應用程式群組建立期間在 AD FS 中的頁面。 例如： https://localhost:44321/ 
-* 修改**todo:TodoListBaseAddress**中的值取代**識別項**中**設定 Web API**應用程式群組建立期間在 AD FS 中的頁面。 例如： https://localhost:44321/ 
-* 設定的值**ida: RedirectUri**中的值取代**重新導向 URI**中**原生應用程式**應用程式群組建立期間在 AD FS 中的頁面。 例如： https://ToDoListClient 
+* 修改**todo:todo:TodoListResourceId**中的值取代**識別項**中**設定 Web API**應用程式群組建立期間在 AD FS 中的頁面。 例如： https://localhost:44321/
+* 修改**todo:TodoListBaseAddress**中的值取代**識別項**中**設定 Web API**應用程式群組建立期間在 AD FS 中的頁面。 例如： https://localhost:44321/
+* 設定的值**ida: RedirectUri**中的值取代**重新導向 URI**中**原生應用程式**應用程式群組建立期間在 AD FS 中的頁面。 例如： https://ToDoListClient
 * 為了方便閱讀，您可以移除 / 註解的索引鍵**ida： 租用戶**並**ida: AADInstance**。
 
   ![應用程式設定](media/native-client-with-ad-fs-2016/app_configfile.PNG)
@@ -163,7 +163,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 
 在此步驟中，原生應用程式重新導向至 AD FS 和 Web api 收到 ID 權杖和存取權杖
 
-3.  輸入執行 文字 方塊中的項目，然後按一下 新增項目。 在此步驟中，應用程式向外連到 Web API，以新增待辦事項項目，以及若要這樣做，請提供存取權杖來取得從 AD FS 的 WebAPI。 Web API 會比對的對象數值，以確認權杖是針對它，因此會驗證權杖的簽章使用從同盟中繼資料資訊。
+3. 輸入執行 文字 方塊中的項目，然後按一下 新增項目。 在此步驟中，應用程式向外連到 Web API，以新增待辦事項項目，以及若要這樣做，請提供存取權杖來取得從 AD FS 的 WebAPI。 Web API 會比對的對象數值，以確認權杖是針對它，因此會驗證權杖的簽章使用從同盟中繼資料資訊。
 
 ![登入](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 

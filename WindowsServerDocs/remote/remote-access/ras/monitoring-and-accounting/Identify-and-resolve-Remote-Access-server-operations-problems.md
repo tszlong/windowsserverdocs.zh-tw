@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c58ff97e286f91610a321801d177a2977349fa78
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1a289700efc35b8a515084c738746333cb0c9838
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840459"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446887"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>識別並解決「遠端存取」伺服器操作問題
 
@@ -57,9 +57,9 @@ IP 協助程式服務 (IPHlpSvc) 主機 IPv6 轉換技術 （例如 IP-HTTPS，6
   
 ##### <a name="to-identify-the-details-and-take-corrective-action"></a>若要識別詳細資料，並採取更正動作  
   
-1.  在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [遠端存取管理]。  
+1.  在 [伺服器管理員]  中，按一下 [工具]  ，然後按一下 [遠端存取管理]  。  
   
-2.  按一下 [儀表板] 以瀏覽到 [遠端存取管理主控台] 中的 [遠端存取儀表板]。  
+2.  按一下 [儀表板]  以瀏覽到 [遠端存取管理主控台]  中的 [遠端存取儀表板]  。  
   
 3.  請確定您的遠端存取伺服器已在左窗格中，選取，然後在中間窗格中，按一下**操作狀態**。  
   
@@ -92,7 +92,7 @@ IP 協助程式服務 (IPHlpSvc) 主機 IPv6 轉換技術 （例如 IP-HTTPS，6
   
 2.  在這份**Services**，向下捲動並以滑鼠右鍵按一下**IP 協助程式**，然後按一下 **啟動**。  
   
-![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

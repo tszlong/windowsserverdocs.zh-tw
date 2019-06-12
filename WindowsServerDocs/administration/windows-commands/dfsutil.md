@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 245f8fb2e6419d22da3e2e76eebd9f801ab90664
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45545b4e12d31c293ead5b18b83efd50d7bc37bb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821479"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439657"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -53,13 +53,13 @@ command </parameter> </param2>
 如果您指定的物件\(例如命名空間伺服器\)命令結尾的大部分命令將不需要進一步的參數或命令顯示物件的相關資訊。 比方說，當使用 dfsutil Root 命令時，您可以將命名空間根目錄附加至命令，以檢視根的相關資訊。
 
 ## <a name="BKMK_Examples"></a>範例
-<Here is where you put a detailed description of your example.>
+&lt;以下是範例的您在其中放置您的詳細的描述。&gt;
 
 ```
 This /is /the /example /of /calling /command /with /parameters
 ```
 
-<Here is where you put a detailed description of another example.>
+&lt;以下是您在其中放置另一個範例的詳細的描述。&gt;
 
 ```
 This /is /a:different /example

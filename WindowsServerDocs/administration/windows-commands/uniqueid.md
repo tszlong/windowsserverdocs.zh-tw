@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4cad6607e13d2657433e4e78ce8e65beff73aa9d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d237f4d6d3562e3787efe28ca98f9dc553d74898
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857509"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440748"
 ---
 # <a name="uniqueid"></a>uniqueid
 
@@ -37,10 +37,10 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|id={\<dword> | <GUID>}|MBR 磁碟指定簽章的十六進位格式的四個位元組 (DWORD) 值。</br>若為 GPT 磁碟，指定的 GUID 識別碼。|
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|
+|  參數   |                                                                                             描述                                                                                              |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id={\<dword> |                                                                                               <GUID>}                                                                                                |
+|    noerr     | 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。 |
 
 ## <a name="remarks"></a>備註
 

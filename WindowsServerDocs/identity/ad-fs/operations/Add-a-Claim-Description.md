@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 454d261aa520778a6129ac9809f53894937b036a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1023ca7da02d2a1f6af42f68892dc4c5c8f1a2bf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190137"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444375"
 ---
 # <a name="add-a-claim-description"></a>新增宣告描述
 
@@ -31,27 +31,29 @@ ms.locfileid: "66190137"
 
 1. 在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。 
 
-2.  依序展開**服務**在以滑鼠右鍵按一下**新增宣告描述**。
-![新增宣告描述](media\Add-a-Claim-Description\claimdesc1.png)
+2. 依序展開**服務**在以滑鼠右鍵按一下**新增宣告描述**。
+   ![新增宣告描述](media/Add-a-Claim-Description/claimdesc1.png)
 
-3.  在 新增宣告描述對話方塊中，於**顯示名稱**，輸入群組或角色，此宣告識別的唯一名稱。
+3. 在 新增宣告描述對話方塊中，於**顯示名稱**，輸入群組或角色，此宣告識別的唯一名稱。
 
-4.  新增**簡短名稱**。
+4. 新增**簡短名稱**。
 
-5.  在 **宣告識別碼**，輸入群組或角色，您將使用的宣告相關聯的 URI。
+5. 在 **宣告識別碼**，輸入群組或角色，您將使用的宣告相關聯的 URI。
 
-6.  底下**描述**，輸入最能描述此宣告的用途的文字。
+6. 底下**描述**，輸入最能描述此宣告的用途的文字。
 
-7.  根據您組織的需求，選取下列核取方塊，視需要將此宣告發佈至同盟中繼資料：
+7. 根據您組織的需求，選取下列核取方塊，視需要將此宣告發佈至同盟中繼資料：
 
 
-    - 若要發行此宣告，讓合作夥伴知道此伺服器可以接受此宣告，請按一下**同盟中繼資料中發行此宣告為可接受此 Federation Service 的宣告型別**。
-    - 若要發行此宣告，讓合作夥伴知道此伺服器可以發出此宣告，請按一下**同盟中繼資料中發行此宣告為此同盟服務可傳送的宣告型別**。
+~~~
+- To publish this claim to make partners aware that this server can accept this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can accept**.
+- To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
+~~~
 
-8.  按一下 [確定]  。
+8. 按一下 [確定]  。
 
-![新增宣告描述](media\Add-a-Claim-Description\claimdesc2.png)
+![新增宣告描述](media/Add-a-Claim-Description/claimdesc2.png)
 
-  
+
 ## <a name="see-also"></a>另請參閱  
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 

@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a3e8e444f715fe2ae0f0ccd858d90e8664be00c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 38e44ab2f803d8ec8940dbba7574a9f37389112a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877769"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444458"
 ---
 # <a name="verify-the-ad-fs-20-migration-to-windows-server-2012-r2"></a>確認 AD FS 2.0 移轉到 Windows Server 2012 R2
 
@@ -27,7 +27,7 @@ ms.locfileid: "59877769"
   
 如果在瀏覽器視窗終可看到同盟伺服器中繼資料，不會出現任何 SSL 錯誤或警告，則您的同盟伺服器便是運作正常。  
   
-2.  您也可以瀏覽到 AD FS 登入頁面 (Federation Service 名稱後面加上 `adfs/ls/idpinitiatedsignon.htm`，例如，`https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`)。  這會顯示 AD FS 登入頁面，您可以使用網域系統管理員認證登入。  
+2. 您也可以瀏覽到 AD FS 登入頁面 (Federation Service 名稱後面加上 `adfs/ls/idpinitiatedsignon.htm`，例如，`https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`)。  這會顯示 AD FS 登入頁面，您可以使用網域系統管理員認證登入。  
   
 > [!IMPORTANT]
 >  確定透過將您的 Federation Service 名稱 (例如，`https://fs.contoso.com`) 新增至瀏覽器內部網路區域的方式，將您的瀏覽器設定為信任同盟伺服器角色。  

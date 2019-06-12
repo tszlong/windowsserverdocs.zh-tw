@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 0421faaa910a1d679d809b88c0b4d2c94ba694b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e2e4975c4ab9ebb7ec68834f380255292426393
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852469"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447221"
 ---
 # <a name="running-data-deduplication"></a>執行重複資料刪除
 
@@ -49,10 +49,10 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 
 [最佳化工作](understand.md#job-info-optimization)失敗的一個指標是最佳化比率有向下趨勢，這可能表示最佳化工作跟不上變更或變換的速率。 您可以使用 [`Get-DedupStatus`](https://technet.microsoft.com/library/hh848437.aspx) PowerShell Cmdlet 來檢查最佳化比率。
 
-> [!Important]  
+> [!Important]
 > `Get-DedupStatus` 有兩個欄位與最佳化比率相關：`OptimizedFilesSavingsRate`和`SavingsRate`。 這兩者都是需要追蹤的重要值，但每一個都具有獨特的意義。
-- `OptimizedFilesSavingsRate` 僅適用於 「 原則 」 的檔案進行最佳化 (`space used by optimized files after optimization / logical size of optimized files`)。
-- `SavingsRate` 適用於整個磁碟區 (`space used by optimized files after optimization / total logical size of the optimization`)。
+> - `OptimizedFilesSavingsRate` 僅適用於 「 原則 」 的檔案進行最佳化 (`space used by optimized files after optimization / logical size of optimized files`)。
+> - `SavingsRate` 適用於整個磁碟區 (`space used by optimized files after optimization / total logical size of the optimization`)。
 
 ## <a id="disabling-dedup"></a>停用重複資料刪除
 若要關閉重複資料刪除，請執行[取消最佳化工作](understand.md#job-info-unoptimization)。 若要復原磁碟區最佳化，請執行下列命令：

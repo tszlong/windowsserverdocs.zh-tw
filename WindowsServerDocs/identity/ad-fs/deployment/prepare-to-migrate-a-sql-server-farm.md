@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 284e02174b4a8c06f114640223d289dc63ea3a26
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f735c45582bc9d1746f18c0ac7c9888a4b3ac88
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890389"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445567"
 ---
 # <a name="prepare-to-migrate-a-sql-server-farm"></a>準備移轉 SQL Server 伺服器陣列  
  若要準備移轉屬於 SQL Server 伺服器陣列到 Windows Server 2012 的 AD FS 2.0 同盟伺服器，您必須匯出，並從這些伺服器備份的 AD FS 組態資料。  
@@ -38,21 +38,21 @@ ms.locfileid: "59890389"
 >   
 >  這個步驟是選擇性的，因為此憑證儲存在本機電腦個人憑證存放區中，作業系統升級時會予以保留。  
   
-2.  匯出不是在 AD FS 內部產生的權杖簽署、權杖加密或服務通訊憑證及金鑰。  
+2. 匯出不是在 AD FS 內部產生的權杖簽署、權杖加密或服務通訊憑證及金鑰。  
   
 您可以使用 Windows PowerShell 來檢視伺服器上 AD FS 使用的所有憑證。 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令來檢視您的伺服器上使用中的所有憑證`PSH:>Get-ADFSCertificate`。 這個命令的輸出包括指定每個憑證存放區位置的 StoreLocation 與 StoreName 值。  
   
 > [!NOTE]
 >  或者，您可以使用[匯出伺服器驗證憑證的私用金鑰部分](Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)中的指導方針，將每個憑證及其私密金鑰匯出至 .pfx 檔案。 這個步驟是選擇性的，因為作業系統升級期間會保留所有外部憑證。  
   
-3.  備份應用程式設定檔。 在其他設定中，這個檔案包含原則資料庫連接字串。  
+3. 備份應用程式設定檔。 在其他設定中，這個檔案包含原則資料庫連接字串。  
   
 若要備份應用程式設定檔，必須手動將 `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config` 檔案複製到備份伺服器上安全的位置。  
   
 > [!NOTE]
 >  記錄 SQL Server 連接字串之後"policystore connectionstring ="在下列檔案： `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`。 當您還原原始的 AD FS 設定同盟伺服器上時，您會需要此字串。  
   
-4.  記錄 AD FS 2.0 同盟服務帳戶的身分識別和此帳戶的密碼。  
+4. 記錄 AD FS 2.0 同盟服務帳戶的身分識別和此帳戶的密碼。  
   
 若要尋找識別值，請檢查**登入身分**資料行**AD FS 2.0 Windows 服務**中**Services**主控台，然後手動記錄這個值。  
   

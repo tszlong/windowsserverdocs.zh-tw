@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 241b2b776a68cf5aec68a4d331201a07f0e5ea53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9aafaa34d5c16e45681e88b1ce60e99a9ad2842
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844649"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447089"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>使用效能計數器來診斷應用程式在遠端桌面工作階段主機上的效能問題
 
@@ -25,11 +25,11 @@ ms.locfileid: "59844649"
 
 下圖顯示從用戶端應用程式的粗略的表示法的使用者輸入流程。
 
-![遠端桌面-使用者輸入流程從使用者的遠端桌面用戶端應用程式](.\media\rds-user-input.png)
+![遠端桌面-使用者輸入流程從使用者的遠端桌面用戶端應用程式](./media/rds-user-input.png)
 
 使用者輸入延遲計數器測量 （在一段時間） 排入佇列的輸入與當它會取用中應用程式之間的最大的差異[傳統的訊息迴圈](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop)，如以下流程圖所示：
 
-![遠端桌面-使用者輸入延遲的效能計數器的流程](.\media\rds-user-input-delay.png)
+![遠端桌面-使用者輸入延遲的效能計數器的流程](./media/rds-user-input-delay.png)
 
 此計數器的一個重要的詳細資料是它在可設定的間隔內，報告的最大使用者輸入的延遲。 這是到達應用程式，可能會影響速度的重要且可見的動作，例如輸入的輸入所花費的時間最長。
 
@@ -52,13 +52,13 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 接下來，重新啟動伺服器。 然後，開啟效能監視器，並選取加號 （+），如下列螢幕擷取畫面所示。
 
-![遠端桌面-螢幕擷取畫面顯示如何加入使用者輸入延遲效能計數器](.\media\rds-add-user-input-counter-screen.png)
+![遠端桌面-螢幕擷取畫面顯示如何加入使用者輸入延遲效能計數器](./media/rds-add-user-input-counter-screen.png)
 
 之後，您應該會看到 [新增計數器] 對話方塊中，您可以在其中選取**每個處理序的使用者輸入延遲**或是**每個工作階段的使用者輸入延遲**。
 
-![遠端桌面-螢幕擷取畫面顯示如何加入每個工作階段的使用者輸入的延遲](.\media\rds-user-delay-per-session.png)
+![遠端桌面-螢幕擷取畫面顯示如何加入每個工作階段的使用者輸入的延遲](./media/rds-user-delay-per-session.png)
 
-![遠端桌面-螢幕擷取畫面顯示如何加入每個處理序的使用者輸入的延遲](.\media\rds-user-delay-per-process.png)
+![遠端桌面-螢幕擷取畫面顯示如何加入每個處理序的使用者輸入的延遲](./media/rds-user-delay-per-process.png)
 
 如果您選取**每個處理序的使用者輸入延遲**，您會看到**所選物件的執行個體**（亦即，處理序） 中```SessionID:ProcessID <Process Image>```格式。
 
@@ -69,7 +69,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 計數器中，便會啟動時將它報告的使用者輸入的延遲。 請注意，最大調整規模設定為 100 （毫秒） 預設。 
 
-![遠端桌面-每個效能監視器中的程序的使用者輸入延遲活動範例](.\media\rds-sample-user-input-delay-perfmon.png)
+![遠端桌面-每個效能監視器中的程序的使用者輸入延遲活動範例](./media/rds-sample-user-input-delay-perfmon.png)
 
 接下來，讓我們看看**每個工作階段的使用者輸入延遲**。 每個工作階段識別碼的執行個體，其計數器會顯示使用者輸入的延遲之任何處理序內指定的工作階段。 此外，有兩個名為"Max"（最大使用者輸入延遲跨所有工作階段） 和 「 平均 」 (平均 acorss 所有工作階段) 的執行個體。
 
@@ -89,7 +89,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 現在讓我們看看您會看到在報表中的應用程式的效能會降低。 下圖顯示使用者從遠端使用 Microsoft Word 中的數據。 在此情況下，RDSH 伺服器的效能會隨著時間降低為更多使用者登入。
 
-![遠端桌面-執行 Microsoft Word 的 RDSH 伺服器的範例效能圖表](.\media\rds-user-input-perf-graph.png)
+![遠端桌面-執行 Microsoft Word 的 RDSH 伺服器的範例效能圖表](./media/rds-user-input-perf-graph.png)
 
 以下是如何讀取圖形的幾行：
 
@@ -104,7 +104,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 使用此效能計數器時記住的重點是，它報告的使用者輸入的延遲預設為 1000 毫秒間隔。 如果設定效能計數器範例間隔屬性 （如下列螢幕擷取畫面所示） 到不同的任何項目，則回報的值會不正確。
 
-![遠端桌面-效能監控的屬性](.\media\rds-user-input-perfmon-properties.png)
+![遠端桌面-效能監控的屬性](./media/rds-user-input-perfmon-properties.png)
 
 若要修正此問題，您可以設定下列登錄機碼，以符合您想要使用的間隔 （以毫秒為單位）。 例如，如果我們變更範例每隔 x 秒到 5 秒，我們需要將這個金鑰設為 5000 毫秒。
 
@@ -125,7 +125,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 這是看起來像是如果您開啟這兩個金鑰：
 
-![遠端桌面-效能監視器，在這兩個索引鍵](.\media\rds-user-input-delay-with-two-counters.png)
+![遠端桌面-效能監視器，在這兩個索引鍵](./media/rds-user-input-delay-with-two-counters.png)
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>使用非 Microsoft 工具使用新的計數器
 

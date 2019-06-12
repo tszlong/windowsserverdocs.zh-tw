@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b433ee3e0f57398db1e7814d2de24df7dd1696
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 9205565486b75edcd550174fc89990a5aa2d69b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222927"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439856"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步驟 4：設定自動更新的群組原則設定
 
@@ -420,10 +420,11 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 
 **選項：** 啟用此原則設定時，您必須指定內部網路更新服務偵測更新時，會使用 WSUS 用戶端，以及網際網路統計資料伺服器的更新 WSUS 用戶端會將上傳統計資料。 範例值：
 
-|設定選項：|範例值：|
-|----------|---------|
-|設定偵測更新的內部網路更新服務|http://wsus01:8530|
-|設定內部網路統計伺服器|http://IntranetUpd01|
+
+|                    設定選項：                    |    範例值：    |
+|-------------------------------------------------------|----------------------|
+| 設定偵測更新的內部網路更新服務 |  http://wsus01:8530  |
+|          設定內部網路統計伺服器           | http://IntranetUpd01 |
 
 #### <a name="turn-on-recommended-updates-via-automatic-updates"></a>開啟 建議的更新，透過自動更新
 指定是否自動更新將會提供重要和建議從 WSUS 的更新。
@@ -586,7 +587,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |**已停用**|指定是否**安裝更新並關機**選項將會在 預設 選項**減少 Windows 關閉**對話方塊中，如果有可供使用者選取 關機時安裝更新關閉電腦關機的選項。|
 
 **選項：** 沒有此設定選項。
-    
+
 #### <a name="remove-access-to-use-all-windows-update-features"></a>移除對使用所有 Windows Update 功能的存取
 此設定可讓您移除 Windows Update 的 WSUS 用戶端存取。
 
@@ -627,7 +628,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
     -  **若要建立新的群組原則物件，並開啟進行編輯**:
         1.  以滑鼠右鍵按一下您要建立新的群組原則物件，並按一下 的網域**在這個網域中建立 GPO 並連結到**。
 
-        2.  在 **新的 GPO**，請在**名稱**，輸入新群組原則物件的名稱，然後按一下 **確定** 。
+        2.  在 **新的 GPO**，請在**名稱**，輸入新群組原則物件的名稱，然後按一下**確定**。
 
         3.  新的群組原則物件，以滑鼠右鍵按一下，然後按一下**編輯**。 此時會開啟 GPME。
 

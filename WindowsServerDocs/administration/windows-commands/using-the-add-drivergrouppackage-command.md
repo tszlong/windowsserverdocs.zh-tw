@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b32d72a1317683e4c1bbeb2d6101d1315b69148e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad9d180e2cf2110d36ebc82211af3a495a0e0b6b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862639"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440737"
 ---
 # <a name="using-the-add-drivergrouppackage-command"></a>使用新增 DriverGroupPackage 命令
 
@@ -30,12 +30,14 @@ ms.locfileid: "59862639"
 wdsutil /add-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Name>] {/DriverPackage:<Name> | /PackageId:<ID>}
 ```
 ## <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|/DriverGroup:<Group Name>|指定驅動程式群組的名稱。|
-|/ 伺服器：<Server name>|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果沒有指定伺服器名稱時，會使用本機伺服器。|
-|/DriverPackage:<Name>|指定驅動程式套件新增至群組的名稱。 如果驅動程式套件不能唯一識別名稱，您必須指定此選項。|
-|/PackageId:<ID>|指定封裝識別碼。 若要尋找封裝識別碼，請按一下 封裝位於驅動程式群組 (或**所有封裝**節點)，以滑鼠右鍵按一下封裝，然後按一下**屬性**。 套件識別碼會列在**一般**索引標籤，例如： **{DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}**。|
+
+|         參數         |                                                                                                                                               描述                                                                                                                                               |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /DriverGroup:<Group Name> |                                                                                                                                 指定驅動程式群組的名稱。                                                                                                                                 |
+|   / 伺服器：<Server name>   |                                                                                  指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果沒有指定伺服器名稱時，會使用本機伺服器。                                                                                  |
+|   /DriverPackage:<Name>   |                                                                      指定驅動程式套件新增至群組的名稱。 如果驅動程式套件不能唯一識別名稱，您必須指定此選項。                                                                       |
+|      /PackageId:<ID>      | 指定封裝識別碼。 若要尋找封裝識別碼，請按一下 封裝位於驅動程式群組 (或**所有封裝**節點)，以滑鼠右鍵按一下封裝，然後按一下**屬性**。 套件識別碼會列在**一般**索引標籤，例如： **{DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}** 。 |
+
 ## <a name="BKMK_examples"></a>範例
 若要新增驅動程式套件，請輸入下列其中一項：
 ```

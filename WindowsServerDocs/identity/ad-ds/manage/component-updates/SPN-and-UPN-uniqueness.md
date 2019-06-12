@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: c9a769fdd9fb7d13c47da465b25bc59e7f55237f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13259f7f12a37c4ceb8bdd2e35ae2fe131ec35cf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856739"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442811"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 的唯一性
 
@@ -51,7 +51,7 @@ ms.locfileid: "59856739"
   
 **資料表 SEQ 表格\\\*阿拉伯文 2:UPN 和 SPN 的唯一性錯誤碼**  
   
-|十進位|Hex|符號|字串|  
+|Decimal|Hex|符號|字串|  
 |-----------|-------|------------|----------|  
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給加入/修改的 SPN 值不是唯一的全樹系。|  
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給加入/修改的 UPN 值不是唯一的全樹系。|  
@@ -81,7 +81,7 @@ ms.locfileid: "59856739"
   
 **圖 SEQ Figure \\ \* ARABIC 2 事件識別碼錯誤 8648 2974年**  
   
-事件 2974年會列出已封鎖的值和一份已包含該值的一或多個物件 （最多 10 個）。  在下圖中，您可以看到該 UPN 屬性值***dhunt@blue.contoso.com***已在其他四個物件。  由於這是 Windows Server 2012 R2 中的新功能，則當下層網域控制站處理的 「 寫入 」 嘗試還是會發生重複的 UPN 和 Spn 意外建立混合式環境中。  
+事件 2974年會列出已封鎖的值和一份已包含該值的一或多個物件 （最多 10 個）。  在下圖中，您可以看到該 UPN 屬性值 **<em>dhunt@blue.contoso.com</em>** 已在其他四個物件。  由於這是 Windows Server 2012 R2 中的新功能，則當下層網域控制站處理的 「 寫入 」 嘗試還是會發生重複的 UPN 和 Spn 意外建立混合式環境中。  
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   

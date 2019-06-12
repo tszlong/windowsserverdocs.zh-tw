@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5a605ef6438bfa6a2afe4963b8206f9dc84a3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09c98d1bd7d2caa8e4cfaea68f9875b25da94003
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869349"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444651"
 ---
 # <a name="networking"></a>網路功能
 
@@ -43,7 +43,7 @@ ms.locfileid: "59869349"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h2><a href="../networking/What-s-New-in-Networking.md">什麼是網路新功能</a></h2>
+                                        <h2><a href="../networking/What-s-New-in-Networking.md">什麼&#39;的新網路功能</a></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@ ms.locfileid: "59869349"
                                         <div class="cardText">
                                         <h3><a href="https://docs.microsoft.com/windows-server/networking/sdn/">軟體定義網路 (SDN)</a><hr /></h3>您可以使用本主題來了解 Windows Server、System Center 和 Microsoft Azure 中提供的 SDN 技術。</p>
                         
-                                        <p><b>注意：</b> 適用於 HYPER-V 主機和虛擬機器\(Vm\)執行 SDN 基礎結構伺服器，例如網路控制卡和軟體負載平衡節點，您必須安裝 Windows Server Datacenter edition。 適用於 HYPER-V 主機只包含租用戶工作負載 Vm 連線至 SDN\-控制網路，您可以執行 Windows Server Standard edition。</p>                                        </div>
+                                        <p><b>注意：</b> 對於 HYPER-V 主機並執行 SDN 基礎結構伺服器，例如網路控制站和軟體負載平衡節點的虛擬機器 (Vm) 中，您必須安裝 Windows Server Datacenter edition。 對於包含唯一的租用戶工作負載會連接到 SDN 控制網路的 Vm 的 HYPER-V 主機，您可以執行 Windows Server Standard edition。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ ms.locfileid: "59869349"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-controller/Network-Controller.md">網路控制站</a><hr /></h3>網路控制站提供集中式、可程式化的自動化點，可以管理、設定、監視和疑難排解資料中心內的虛擬和實體網路基礎結構。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-controller/Network-Controller.md">網路控制卡</a><hr /></h3>網路控制站提供集中式、可程式化的自動化點，可以管理、設定、監視和疑難排解資料中心內的虛擬和實體網路基礎結構。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ ms.locfileid: "59869349"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md">軟體負載平衡&#40;SLB&#41;適用於 SDN</a><hr /></h3>雲端服務提供者\(Csp\)以及要部署軟體定義網路 (SDN) Windows Server 2016 中的企業可以使用軟體負載平衡\(SLB\)來平均地分散到租用戶和租用戶在 虛擬網路資源之間的客戶網路流量。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md">軟體負載平衡&#40;SLB&#41;適用於 SDN</a><hr /></h3>雲端服務提供者 (Csp) 和要部署軟體定義網路 (SDN) Windows Server 2016 中的企業可以使用軟體負載平衡 (SLB) 將租用戶和租用戶客戶網路流量在虛擬網路資源之間平均地分散。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@ ms.locfileid: "59869349"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md">適用於 SDN 的 RAS 閘道</a><hr /></h3>RAS 閘道，這是軟體為基礎，多租用戶，邊界閘道協定\(BGP\)功能的路由器，在 Windows Server 2016 中，專為雲端服務提供者\(Csp\)和裝載的企業多個租用戶虛擬網路使用 HYPER-V 網路虛擬化。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md">適用於 SDN 的 RAS 閘道</a><hr /></h3>RAS 閘道，也就是以軟體為基礎，多租用戶、 邊界閘道通訊協定 (BGP) 功能的路由器，在 Windows Server 2016 中，被專為雲端服務提供者 (Csp) 和裝載使用 HYPER-V 網路的多個租用戶虛擬網路的企業虛擬化。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@ ms.locfileid: "59869349"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md">網路功能虛擬化</a><hr /></h3>在軟體定義的資料中心網路由硬體設備正在執行的函式\(例如負載平衡器、 防火牆、 路由器、 交換器等等\)越來越虛擬化為虛擬設備。 這個「網路功能虛擬化」是伺服器虛擬化和網路虛擬化的自然進展。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md">網路功能虛擬化</a><hr /></h3>在軟體定義的資料中心，會逐漸正在要由硬體設備 （例如負載平衡器、 防火牆、 路由器、 交換器等等） 的網路功能虛擬化為虛擬設備。 這&quot;網路功能虛擬化&quot;是伺服器虛擬化和網路虛擬化的自然進展。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@ ms.locfileid: "59869349"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="branchcache/BranchCache.md">BranchCache</a><hr /></h3>
-                                        <p>BranchCache 是廣域網路\(WAN\)頻寬最佳化技術。 為了在使用者存取遠端伺服器的內容時將 WAN 頻寬最佳化，BranchCache 會從總公司或託管的雲端內容伺服器擷取內容，並在分公司快取內容，讓分公司的用戶端電腦可從本機存取內容而非透過 WAN。</p>
+                                        <p>BranchCache 是廣域網路 (WAN) 頻寬最佳化技術。 為了在使用者存取遠端伺服器的內容時將 WAN 頻寬最佳化，BranchCache 會從總公司或託管的雲端內容伺服器擷取內容，並在分公司快取內容，讓分公司的用戶端電腦可從本機存取內容而非透過 WAN。</p>
                     </div>
                 </div>
             </div>
@@ -247,8 +247,8 @@ ms.locfileid: "59869349"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="dns/dns-top.md">網域名稱系統 (DNS)"></a><hr /></h3>
-                                        <p>網域名稱系統 \(DNS\) 是其中一個構成 TCP/IP 通訊協定的業界標準套件，而且 DNS 用戶端和 DNS 伺服器可以一起為電腦和使用者提供電腦名稱到 IP 位址對應名稱解析服務。</p>
+                                        <h3><a href="dns/dns-top.md">網域名稱系統 (DNS)&quot;&gt;</a><hr /></h3>
+                                        <p>網域名稱系統 (DNS) 是其中一個構成 TCP/IP 通訊協定的業界標準套件，並在一起的 DNS 用戶端和 DNS 伺服器提供 電腦名稱到 IP 位址對應名稱解析服務的電腦和使用者。</p>
                     </div>
                 </div>
             </div>
@@ -266,7 +266,7 @@ ms.locfileid: "59869349"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="technologies/dhcp/dhcp-top.md">動態主機設定通訊協定&#40;DHCP&#41;</a><hr /></h3>
-                                        <p>動態主機設定通訊協定 \(DHCP\) 是會自動提供網際網路通訊協定 \(IP\) 主機及其 IP 位址和其他相關設定資訊 (例如子網路遮罩與預設閘道) 的用戶端/伺服器通訊協定。</p>
+                                        <p>動態主機設定通訊協定 (DHCP) 是一種用戶端/伺服器通訊協定，會自動提供網際網路通訊協定 (IP) 主機，其 IP 位址及其他相關的組態資訊，例如子網路遮罩及預設閘道。</p>
                     </div>
                 </div>
             </div>
@@ -284,7 +284,7 @@ ms.locfileid: "59869349"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md">HYPER-V 網路虛擬化</a><hr /></h3>
-                                        <p>Hyper-V 網路虛擬化 \(HNV\) 可以在共用的實體網路基礎結構之上將客戶網路虛擬化。</p>
+                                        <p>HYPER-V 網路虛擬化 (HNV) 可讓您共用的實體網路基礎結構之上將客戶網路虛擬化。</p>
                     </div>
                 </div>
             </div>
@@ -301,7 +301,7 @@ ms.locfileid: "59869349"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md">HYPER-V 虛擬交換器</a><hr /></h3>
+                                        <h3><a href="../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md">Hyper-V 虛擬交換器</a><hr /></h3>
                                         <p>Hyper-V 虛擬交換器是一種軟體式 Layer-2 乙太網路交換器，安裝 Hyper-V 伺服器角色時會隨附在 Hyper-V 管理員中。 交換器包含以程式設計方式管理和可擴充的功能，將虛擬機器連線到虛擬網路和實體網路。 此外，Hyper-V 虛擬交換器提供安全性、隔離以及服務層級的原則強化。 </p>
                     </div>
                 </div>
@@ -320,7 +320,7 @@ ms.locfileid: "59869349"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="technologies/ipam/ipam-top.md">IP 位址管理&#40;IPAM&#41;</a><hr /></h3>
-                                        <p>IP 位址管理 \(IPAM\) 是一個整合的工具套件，能夠在您 IP 位址基礎結構的端對端規劃、部署、管理及監視上提供豐富的使用者體驗。 IPAM 會自動探索 IP 位址基礎結構伺服器和網域名稱系統\(DNS\)您網路上的伺服器，並可讓您從中央介面管理它們。 </p>
+                                        <p>IP 位址管理 (IPAM) 是一個整合的工具，可啟用端對端規劃、 部署、 管理和監視 IP 位址基礎結構，具有豐富的使用者體驗的套件。 IPAM 會自動探索您網路上的 IP 位址基礎結構伺服器和網域名稱系統 (DNS) 伺服器，並可讓您從中央介面管理這些伺服器。 </p>
                     </div>
                 </div>
             </div>
@@ -338,7 +338,7 @@ ms.locfileid: "59869349"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="technologies/Network-Load-Balancing.md">網路負載平衡</a><hr /></h3>
-                                        <p>網路負載平衡 \(NLB\) 會使用 TCP/IP 網路通訊協定，將流量分散到數台伺服器。 針對非 SDN 的部署，NLB 可藉由在負載增加時新增額外的伺服器，來確保無狀態應用程式 (例如，執行網際網路資訊服務 \(IIS\) 的網頁伺服器) 是可擴充的。</p>
+                                        <p>網路負載平衡 (NLB) 會將流量分散到數部伺服器使用 TCP/IP 網路通訊協定。 針對非 SDN 部署，NLB 可確保無狀態的應用程式，例如執行 Internet Information Services (IIS) 網頁伺服器是可調整，新增更多的伺服器，在負載增加時。</p>
                     </div>
                 </div>
             </div>
@@ -400,7 +400,7 @@ ms.locfileid: "59869349"
                                         <div class="cardText">
                                         <h3><a href="technologies/netsh/netsh.md">網路殼層 (Netsh)</a><hr /></h3>
                                         <p>
-您可以使用網路殼層\(netsh\)網路公用程式來管理 Windows Server 2016 和 Windows 10 中的網路技術。</p>
+您可以使用網路殼層 (netsh) 網路公用程式來管理 Windows Server 2016 和 Windows 10 中的網路技術。</p>
                     </div>
                 </div>
             </div>
@@ -419,7 +419,7 @@ ms.locfileid: "59869349"
                                         <div class="cardText">
                                         <h3><a href="technologies/network-subsystem/net-sub-performance-top.md">網路子系統效能調整</a><hr /></h3>
                                         <p>
-本主題提供有關選擇正確的網路介面卡，為您的伺服器工作負載，排序網路介面、 網路相關效能計數器以及效能調整網路介面卡和相關的網路技術，例如接收端調整\(RSS\)，接收端聯合\(RSC\)，和其他人。</p>
+本主題提供有關選擇正確的網路介面卡，為您的伺服器工作負載，排序網路介面、 網路相關效能計數器以及效能調整網路介面卡和相關的網路技術，例如接收端調整 (RSS)、 接收端聯合 (RSC)，和其他項目。</p>
                     </div>
                 </div>
             </div>
@@ -474,7 +474,7 @@ NIC 小組可讓您將實體的乙太網路介面卡群組為一或多個以軟�
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="technologies/wins/wins-top.md">Windows Internet Name Service (WINS)</a><hr /></h3>
+                                        <h3><a href="technologies/wins/wins-top.md">Windows 網際網路名稱服務 (WINS)</a><hr /></h3>
                                         <p>
 Windows 網際網路名稱服務 (WINS) 是舊版電腦名稱登錄與解析服務，可將電腦 NetBIOS 名稱對應至 IP 位址。 建議使用 DNS 而不要使用 WINS。</p>
                     </div>
@@ -495,7 +495,7 @@ Windows 網際網路名稱服務 (WINS) 是舊版電腦名稱登錄與解析服�
                                         <div class="cardText">
                                         <h3><a href="../remote/remote-access/remote-access.md">遠端存取</a><hr /></h3>
                                         <p>
-您可以使用遠端存取技術，例如 DirectAccess 和虛擬私人網路\(VPN\)若要讓遠端工作者連線到內部網路資源。 此外，您可以使用遠端存取區域網路\(LAN\)路由，以及 Web 應用程式 Proxy。 這可為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以允許任何裝置上的使用者從公司網路外部存取這些應用程式。</p>
+您可以使用遠端存取技術，例如 DirectAccess 和虛擬私人網路 (VPN)，若要讓遠端工作者連線到內部網路資源。 此外，您可以使用遠端存取區域網路 (LAN) 路由，以及 Web 應用程式 Proxy。 這可為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以允許任何裝置上的使用者從公司網路外部存取這些應用程式。</p>
 
                                         <p>如需有關 Web 應用程式 Proxy，也就是遠端存取伺服器角色的角色服務，請參閱<a href="https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server">Windows Server 2016 中的 Web 應用程式 Proxy</a></p>
                     </div>
@@ -518,7 +518,7 @@ Windows 網際網路名稱服務 (WINS) 是舊版電腦名稱登錄與解析服�
                                         <p>
 Windows 容器網路功能可讓您使用業界標準工具和工作流程，來建立和管理用於連線 Windows 10 和 Windows Server 主機上容器端點的網路。 Windows 容器網路支援多拓撲，包括私人、flat-L2 和 routed-L3。</p>
 
-                                        <p>也支援是重疊，您可以建立在本機主機上使用 Docker、 Kubernetes 或 Windows PowerShell，透過與 Windows 主機網路服務通訊的外掛程式\(HNS\)。 您可以建立和管理多重\-節點的叢集網路，透過較高的層級的協調流程系統，透過每個節點的 HNS 本機代理程式通訊。</p>
+                                        <p>也支援是重疊，您可以建立在本機主機上使用 Docker、 Kubernetes 或 Windows PowerShell，透過通訊與 Windows 主機網路服務 (HNS) 的外掛程式。 您可以建立及管理透過更高的層級的協調流程系統的多節點叢集網路通訊透過每個節點的 HNS 本機代理程式。</p>
                     </div>
                 </div>
             </div>
@@ -539,7 +539,7 @@ Windows 容器網路功能可讓您使用業界標準工具和工作流程，來
                                         <p>
 DirectAccess 和 VPN 是 Remote Accessserver 角色的角色服務。</p>
 
-                                        <p>當您安裝遠端存取 VPN 伺服器時，您可以使用虛擬私人網路\(VPN\)跨網際網路-提供您與您組織的網路連線的遠端員工，同時維持資訊隱私權與加密的連線。</p>
+                                        <p>當您安裝遠端存取 VPN 伺服器時，您可以使用虛擬私人網路 (VPN) 提供您連線的遠端員工對您的組織網路網際網路-同時維持與加密的連線資訊隱私權.</p>
 
                                        <p> 運用 Windows Server 遠端存取 VPN (以及 Windows 10 用戶端電腦)，您可以部署 Always On VPN。 Always On VPN 能讓您管理永遠保持連線的遠端 VPN 用戶端，同時也方便遠端工作者，讓他們不再需要手動連線和中斷連線您組織網路的 VPN。</p>
 
@@ -557,4 +557,4 @@ DirectAccess 和 VPN 是 Remote Accessserver 角色的角色服務。</p>
 
 - Windows Server 2012 和 Windows Server 2012 R2 [網路功能概觀](https://technet.microsoft.com/library/hh831357.aspx)
 - Windows Server 2008 和 Windows Server 2008 R2 [網路功能](https://technet.microsoft.com/library/cc753940)
-- Windows Server 2003 [Windows Server 2003/2003 R2 停用內容](https://www.microsoft.com/download/details.aspx?id=53314)
+- Windows Server 2003 [Windows Server 2003/2003 R2 退場內容](https://www.microsoft.com/download/details.aspx?id=53314)

@@ -12,12 +12,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c669db414c4f12b6145a26a75b83449f43e8918
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3376d03a2e9f02b20aba608de0228efd7dfddea
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887679"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443625"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>開發 Nano Server 的 PowerShell Cmdlet
 
@@ -110,7 +110,7 @@ At line:1 char:1
 [安裝 Nano Server](Getting-Started-with-Nano-Server.md) (也就是本文的最上層主題) 中提供在虛擬或實體機器上安裝 Nano Server 的快速入門和詳細步驟。  
   
 > [!NOTE]  
-> 若要在 Nano Server 上正確開發，使用 New-NanoServerImage 的 -Development 參數來安裝 Nano Server 會很有用。 這會啟用未簽署驅動程式的安裝、複製偵錯工具二進位檔、開啟偵錯用的連接埠、啟用測試簽署，以及啟用 AppX 套件的安裝，而不需要開發人員授權。 例如:   
+> 若要在 Nano Server 上正確開發，使用 New-NanoServerImage 的 -Development 參數來安裝 Nano Server 會很有用。 這會啟用未簽署驅動程式的安裝、複製偵錯工具二進位檔、開啟偵錯用的連接埠、啟用測試簽署，以及啟用 AppX 套件的安裝，而不需要開發人員授權。 例如:  
 >  
 >`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -Development`  
   
@@ -127,9 +127,9 @@ PowerShell 支援 Cmdlet 的一些實作類型，而您所使用的類型會決�
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
 * \<您的產品安裝位置 >   
     
- 在這些位置確認下列詳細資料：  
- * CIM Cmdlet 的副檔名為 .cdxml。  
- * .NET Cmdlet 的副檔名為 .dll，或已安裝 .psd1 檔案所列 GAC 之 RootModule、ModuleToProcess 或 NestedModules 欄位下的組件。  
+  在這些位置確認下列詳細資料：  
+  * CIM Cmdlet 的副檔名為 .cdxml。  
+  * .NET Cmdlet 的副檔名為 .dll，或已安裝 .psd1 檔案所列 GAC 之 RootModule、ModuleToProcess 或 NestedModules 欄位下的組件。  
 * PowerShell 指令碼 Cmdlet 的副檔名為 .psm1 或 .ps1。   
   
 ## <a name="porting-cim-cmdlets"></a>移植 CIM Cmdlet  
@@ -182,7 +182,7 @@ PowerShell Core SDK 模組包含下列 Cmdlet：
   
 ### <a name="building-c-for-nano-server"></a>建置適用於 Nano Server 的 C#  
   
-在 Visual Studio 2015 中使用 `New-NanoCSharpProject` 建立 C# 專案之後，您可以直接在 Visual Studio 中按一下 [組建] 功能表，然後選取 [建置專案] 或 [建置方案] 加以建置。 產生的組件會以 Nano Server 隨附的正確 CoreCLR 和 PowerShell Core 為目標，而且您只能將這些組件複製到執行 Nano Server 的電腦，再加以使用。  
+在 Visual Studio 2015 中使用 `New-NanoCSharpProject` 建立 C# 專案之後，您可以直接在 Visual Studio 中按一下 [組建]  功能表，然後選取 [建置專案]  或 [建置方案]  加以建置。 產生的組件會以 Nano Server 隨附的正確 CoreCLR 和 PowerShell Core 為目標，而且您只能將這些組件複製到執行 Nano Server 的電腦，再加以使用。  
   
 ### <a name="building-managed-c-cppcli-for-nano-server"></a>建置適用於 Nano Server 的 Managed C++ (CPP/CLI)  
 CoreCLR 不支援 Managed C++。 移植到 CoreCLR 時，請在 C# 中重寫 Managed C++ 程式碼，並透過 PInvoke 進行所有原生呼叫。  

@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4577e65fe5dd2193fe7256cc555e859a78824b4b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35d6322f053c7a02dc1df5430b28f771f57a1ad7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867939"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442576"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>對應至樹系設計模型的設計需求
 
@@ -89,13 +89,13 @@ ms.locfileid: "59867939"
 
 - 組織建立的資料隔離的樹系可以信任來自其他樹系、 網域，但來自其他樹系的使用者必須不會包含在下列其中一項：  
 
-   - 負責服務管理或群組可以管理的服務系統管理員群組成員資格的群組  
+  - 負責服務管理或群組可以管理的服務系統管理員群組成員資格的群組  
 
-   - 已儲存受保護的資料的電腦的系統管理控制權的群組  
+  - 已儲存受保護的資料的電腦的系統管理控制權的群組  
 
-   - 群組可存取受保護的資料或群組所負責的使用者物件或群組物件具有存取權管理受保護的資料  
+  - 群組可存取受保護的資料或群組所負責的使用者物件或群組物件具有存取權管理受保護的資料  
 
-   如果任何這些群組中包含來自其他樹系的使用者，則於隔離的樹系的洩露和受保護資料揭露，可能會導致另一個樹系的洩露。  
+    如果任何這些群組中包含來自其他樹系的使用者，則於隔離的樹系的洩露和受保護資料揭露，可能會導致另一個樹系的洩露。  
 
 - 可以設定其他樹系信任組織的樹系建立的資料隔離，因此在隔離的樹系中的使用者可以存取其他樹系中的資源。 不過，從隔離的樹系的使用者必須永遠不會以互動方式登入到信任的樹系中的工作站。 信任的樹系中的電腦可能遭到惡意軟體，而且可用來擷取使用者的登入認證。  
 

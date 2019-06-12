@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0257c4d15db4fc54e55ef430f6f2eea9cea2ec4d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65a272873a60d74efcf417a16fdc84670f5878da
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882819"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446999"
 ---
 # <a name="realm-names"></a>領域名稱
 
@@ -28,7 +28,7 @@ User-name RADIUS 屬性是字元字串，其中通常包含 使用者帳戶位�
 
 - **Example\user1**。 在此範例中，領域名稱**範例**前置詞; 同時它也是作用中的目錄名稱&reg;網域服務\(AD DS\)網域。
 
-- **user1@example.com**. 在此範例中，領域名稱**example.com**是尾碼，以及 DNS 網域名稱或 AD DS 網域的名稱。
+- <strong>user1@example.com</strong>. 在此範例中，領域名稱**example.com**是尾碼，以及 DNS 網域名稱或 AD DS 網域的名稱。
 
 您可以使用設計和部署 RADIUS 基礎結構時，連線要求原則中設定的領域名稱，以確保連接要求會路由傳送來自 RADIUS 用戶端，也稱為網路存取伺服器，可以的 RADIUS 伺服器驗證和授權連線要求。
 

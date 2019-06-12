@@ -8,12 +8,12 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 270fb6efd63e6355c410ee45d09e6fd16b14222b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2380060894ff2f365451bbabfd41b8aa7e6792a0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867989"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445291"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>AD FS 中的複合驗證和 AD DS 宣告
 Windows Server 2012 增強藉由引進複合驗證的 Kerberos 驗證。  複合驗證可讓包含兩個身分識別的 Kerberos 票證授權服務 (TGS) 要求︰ 
@@ -87,21 +87,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 >SQL 式伺服器陣列中的 PowerShell 命令可能會執行任何成員的伺服器陣列的 AD FS 伺服器上。
 
 ### <a name="step-5--add-the-claim-description-to-ad-fs"></a>步驟 5：新增至 AD FS 宣告描述
-1.  伺服器陣列中加入下列的理賠申請描述。 此理賠申請描述 ADFS 2012 R2 中預設存在並不需要以手動方式加入。
-2.  在 [AD FS 管理] 底下**服務**，以滑鼠右鍵按一下**宣告描述**，然後選取**新增宣告描述**
-3.  輸入的理賠申請描述中的下列資訊
-    - 顯示名稱：[Windows 裝置群組] 
-    - 宣告描述: 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' '
+1. 伺服器陣列中加入下列的理賠申請描述。 此理賠申請描述 ADFS 2012 R2 中預設存在並不需要以手動方式加入。
+2. 在 [AD FS 管理] 底下**服務**，以滑鼠右鍵按一下**宣告描述**，然後選取**新增宣告描述**
+3. 輸入的理賠申請描述中的下列資訊
+   - 顯示名稱：[Windows 裝置群組] 
+   - 宣告描述: '<https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup>' '
 4. 勾選這兩個方塊。
-5. 按一下 [確定] 。
+5. 按一下 [確定]  。
 
 ![宣告描述](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
 
 6. 使用的 PowerShell，您可以使用**新增 AdfsClaimDescription** cmdlet。
-``` powershell
-Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
--ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
-```
+   ``` powershell
+   Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
+   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
+   ```
 
 
 >[!NOTE]
@@ -118,10 +118,10 @@ Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schema
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  重新啟動 ADFS 服務。
+2. 重新啟動 ADFS 服務。
 
 >[!NOTE]
->一旦 'CompoundIdentitySupported' 設為 true，安裝新的伺服器 (2012R2/2016) 失敗，並出現下列錯誤： 在同一個 gMSA **Install-adserviceaccount:無法安裝服務帳戶。錯誤訊息：' 提供的內容不符合目標。 '**.
+>一旦 'CompoundIdentitySupported' 設為 true，安裝新的伺服器 (2012R2/2016) 失敗，並出現下列錯誤： 在同一個 gMSA **Install-adserviceaccount:無法安裝服務帳戶。錯誤訊息：' 提供的內容不符合目標。 '** .
 >
 >**解決方案**：暫時設 $false CompoundIdentitySupported。 這個步驟會導致停止發出 WindowsDeviceGroup 宣告的 ADFS。 Set-adserviceaccount-身分識別 「 ADFS 服務帳戶 」 CompoundIdentitySupported: $false 安裝新的伺服器上的 gMSA，然後再啟用 回到 $True CompoundIdentitySupported。
 停用 CompoundIdentitySupported，然後再重新啟用不需要重新啟動 ADFS 服務。
@@ -129,23 +129,23 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 ### <a name="step-7-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>步驟 7：更新 AD FS 宣告提供者信任的 Active Directory
 
 1. 更新 AD FS 宣告提供者信任的 Active Directory 'WindowsDeviceGroup' 宣告中包含下列的 '傳遞' 宣告規則。
-2.  在 [ **AD FS 管理**，按一下**宣告提供者信任**並在右窗格中，用滑鼠右鍵按一下**Active Directory** ，然後選取**編輯宣告規則]**.
+2.  在 [ **AD FS 管理**，按一下**宣告提供者信任**並在右窗格中，用滑鼠右鍵按一下**Active Directory** ，然後選取**編輯宣告規則]** .
 3.  在 **編輯宣告規則的 Active Directory**按一下 **加入規則**。
 4.  在 **新增轉換宣告規則精靈**選取**傳遞或篩選傳入宣告**然後按一下**下一步**。
 5.  新增顯示名稱，然後選取**Windows 裝置群組**從**傳入宣告類型**下拉式清單。
-6.  按一下 **[完成]**。  按一下 **套用**並**確定**。 
+6.  按一下 **[完成]** 。  按一下 **套用**並**確定**。 
 ![宣告描述](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>步驟 8：在信賴憑證者合作對象有 'WindowsDeviceGroup' 宣告，新增類似的 '傳遞' 轉換' 宣告規則。
-2.  在**AD FS 管理**，按一下**信賴憑證者信任**並在右窗格中，用滑鼠右鍵按一下您的 RP 並選取**編輯宣告規則**。
-3.  在 **發佈轉換規則**按一下 **加入規則**。
-4.  在 **新增轉換宣告規則精靈**選取**傳遞或篩選傳入宣告**然後按一下**下一步**。
-5.  新增顯示名稱，然後選取**Windows 裝置群組**從**傳入宣告類型**下拉式清單。
-6.  按一下 **[完成]**。  按一下 **套用**並**確定**。
-![宣告描述](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
+2. 在**AD FS 管理**，按一下**信賴憑證者信任**並在右窗格中，用滑鼠右鍵按一下您的 RP 並選取**編輯宣告規則**。
+3. 在 **發佈轉換規則**按一下 **加入規則**。
+4. 在 **新增轉換宣告規則精靈**選取**傳遞或篩選傳入宣告**然後按一下**下一步**。
+5. 新增顯示名稱，然後選取**Windows 裝置群組**從**傳入宣告類型**下拉式清單。
+6. 按一下 **[完成]** 。  按一下 **套用**並**確定**。
+   ![宣告描述](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
-##<a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>設定 AD FS Windows Server 2016 中的步驟
+## <a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>設定 AD FS Windows Server 2016 中的步驟
 以下將詳細說明適用於 Windows Server 2016 的 AD FS 上設定複合驗證的步驟。
 
 ### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>步驟 1：啟用 KDC 支援宣告、 複合驗證以及 Kerberos 防護的預設網域控制站原則
@@ -189,10 +189,10 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  重新啟動 ADFS 服務。
+2. 重新啟動 ADFS 服務。
 
 >[!NOTE]
->一旦 'CompoundIdentitySupported' 設為 true，安裝新的伺服器 (2012R2/2016) 失敗，並出現下列錯誤： 在同一個 gMSA **Install-adserviceaccount:無法安裝服務帳戶。錯誤訊息：' 提供的內容不符合目標。 '**.
+>一旦 'CompoundIdentitySupported' 設為 true，安裝新的伺服器 (2012R2/2016) 失敗，並出現下列錯誤： 在同一個 gMSA **Install-adserviceaccount:無法安裝服務帳戶。錯誤訊息：' 提供的內容不符合目標。 '** .
 >
 >**解決方案**：暫時設 $false CompoundIdentitySupported。 這個步驟會導致停止發出 WindowsDeviceGroup 宣告的 ADFS。 Set-adserviceaccount-身分識別 「 ADFS 服務帳戶 」 CompoundIdentitySupported: $false 安裝新的伺服器上的 gMSA，然後再啟用 回到 $True CompoundIdentitySupported。
 停用 CompoundIdentitySupported，然後再重新啟用不需要重新啟動 ADFS 服務。
@@ -200,19 +200,19 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 ### <a name="step-5-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>步驟 5：更新 AD FS 宣告提供者信任的 Active Directory
 
 1. 更新 AD FS 宣告提供者信任的 Active Directory 'WindowsDeviceGroup' 宣告中包含下列的 '傳遞' 宣告規則。
-2.  在 [ **AD FS 管理**，按一下**宣告提供者信任**並在右窗格中，用滑鼠右鍵按一下**Active Directory** ，然後選取**編輯宣告規則]**.
+2.  在 [ **AD FS 管理**，按一下**宣告提供者信任**並在右窗格中，用滑鼠右鍵按一下**Active Directory** ，然後選取**編輯宣告規則]** .
 3.  在 **編輯宣告規則的 Active Directory**按一下 **加入規則**。
 4.  在 **新增轉換宣告規則精靈**選取**傳遞或篩選傳入宣告**然後按一下**下一步**。
 5.  新增顯示名稱，然後選取**Windows 裝置群組**從**傳入宣告類型**下拉式清單。
-6.  按一下 **[完成]**。  按一下 **套用**並**確定**。 
+6.  按一下 **[完成]** 。  按一下 **套用**並**確定**。 
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>步驟 6：在信賴憑證者合作對象有 'WindowsDeviceGroup' 宣告，新增類似的 '傳遞' 轉換' 宣告規則。
-2.  在**AD FS 管理**，按一下**信賴憑證者信任**並在右窗格中，用滑鼠右鍵按一下您的 RP 並選取**編輯宣告規則**。
-3.  在 **發佈轉換規則**按一下 **加入規則**。
-4.  在 **新增轉換宣告規則精靈**選取**傳遞或篩選傳入宣告**然後按一下**下一步**。
-5.  新增顯示名稱，然後選取**Windows 裝置群組**從**傳入宣告類型**下拉式清單。
-6.  按一下 **[完成]**。  按一下 **套用**並**確定**。
+2. 在**AD FS 管理**，按一下**信賴憑證者信任**並在右窗格中，用滑鼠右鍵按一下您的 RP 並選取**編輯宣告規則**。
+3. 在 **發佈轉換規則**按一下 **加入規則**。
+4. 在 **新增轉換宣告規則精靈**選取**傳遞或篩選傳入宣告**然後按一下**下一步**。
+5. 新增顯示名稱，然後選取**Windows 裝置群組**從**傳入宣告類型**下拉式清單。
+6. 按一下 **[完成]** 。  按一下 **套用**並**確定**。
 
 ## <a name="validation"></a>驗證
 若要驗證 'WindowsDeviceGroup' 宣告的版本，請建立測試的宣告感知應用程式使用.Net 4.6。 使用 WIF SDK 4.0。

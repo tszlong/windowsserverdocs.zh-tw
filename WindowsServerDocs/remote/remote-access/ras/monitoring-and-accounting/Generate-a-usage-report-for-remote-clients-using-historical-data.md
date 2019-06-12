@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bb122990c1baf1db8a2edbbbecba8b8cdf8a264d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa82ba8e2fc3fe19b9e73f602605d3ef76f4b9a5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833759"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446907"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>使用歷程記錄資料來產生遠端用戶端的使用狀況報告
 
@@ -33,7 +33,7 @@ ms.locfileid: "59833759"
   
 #### <a name="to-enable-accounting-on-the-remote-access-server"></a>若要啟用遠端存取伺服器上的計量  
   
-1.  在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [遠端存取管理]。  
+1.  在 [伺服器管理員]  中，按一下 [工具]  ，然後按一下 [遠端存取管理]  。  
   
 2.  按一下  **REPORTING**瀏覽至**遠端存取報告**中**遠端存取管理主控台**。  
   
@@ -45,11 +45,11 @@ ms.locfileid: "59833759"
   
 #### <a name="to-generate-the-usage-report"></a>若要產生使用量報告  
   
-1.  在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [遠端存取管理]。  
+1.  在 [伺服器管理員]  中，按一下 [工具]  ，然後按一下 [遠端存取管理]  。  
   
 2.  按一下  **REPORTING**瀏覽至**遠端存取報告**中**遠端存取管理主控台**。  
   
-3.  在中間窗格中，按一下行事曆中的日期選取的報表時間長度**開始日期：** 並**結束日期：**，然後按一下**產生報告**。  
+3.  在中間窗格中，按一下行事曆中的日期選取的報表時間長度**開始日期：** 並**結束日期：** ，然後按一下**產生報告**。  
   
 4.  您會看到已連線到遠端存取伺服器上，選取的時間和其相關的詳細統計資料內的使用者清單。 按一下清單中的第一個資料列。 當您選取一個資料列時，遠端使用者活動會顯示在 [預覽] 窗格中。 現在，選取**伺服器載入統計資料** 索引標籤以查看歷程記錄的負載在伺服器上的 預覽 窗格中。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "59833759"
 >   
 > 遠端存取計量為基礎的概念**工作階段**。 相對於**連接**，則**工作階段**以遠端用戶端 IP 位址和使用者名稱的組合唯一識別。 比方說，如果電腦通道由遠端用戶端，其名稱是 Client1，一個工作階段將會建立並儲存在計量資料庫。 當的使用者稍後具名的 User1 會從該用戶端連接會傳遞 （但電腦通道仍然處於作用中） 時，工作階段會記錄為個別的工作階段。 工作階段的差別是保留電腦通道與使用者通道之間的差異。  
   
-![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

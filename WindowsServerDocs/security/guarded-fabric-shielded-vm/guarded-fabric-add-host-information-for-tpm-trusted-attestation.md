@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 215764f48fc8cfa2b28f4b5f6ca7dfeeb53b9cce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 3647c9708ad68dec0ac13c85fced2b12150ccf60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851269"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447197"
 ---
 >適用於：Windows Server 2019，Windows Server （半年通道），Windows Server 2016
 
@@ -22,7 +22,7 @@ ms.locfileid: "59851269"
 TPM 模式中，網狀架構系統管理員擷取三種類型的主控件的詳細資訊，每個要加入至 HGS 設定的需求：
 
 - 針對每個 HYPER-V 主機的 TPM 識別碼 (EKpub)
-- 程式碼完整性原則，允許的二進位檔的 HYPER-V 主機的允許清單
+- 程式碼完整性原則，允許的二進位檔的 HYPER-V 主機的白名單
 - 相同類別的硬體上執行 TPM 基準 （開機測量） 表示一組的 HYPER-V 主機
 
 系統管理員會在 網狀架構之後擷取的資訊，將它新增至 HGS 設定，如下列程序中所述。
@@ -57,5 +57,5 @@ TPM 模式中，網狀架構系統管理員擷取三種類型的主控件的詳�
 
 ## <a name="next-step"></a>後續步驟
 
->[!div class="nextstepaction"]
-[確認證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [!div class="nextstepaction"]
+> [確認證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)

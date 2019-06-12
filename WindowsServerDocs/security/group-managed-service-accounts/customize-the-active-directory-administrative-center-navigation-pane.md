@@ -11,12 +11,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e7b1128d93912f724225905bedd38131f8aab0b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a4cab0246226cf22a1b7212b832a902783952407
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854839"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446500"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>自訂 Active Directory 管理中心瀏覽窗格
 
@@ -33,21 +33,21 @@ ms.locfileid: "59854839"
 
 ### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>若要自訂 Active Directory 管理中心瀏覽窗格
 
-1.  在 [Active Directory 管理中心瀏覽] 窗格中，以滑鼠右鍵\-按一下您想要修改的節點。 您可以修改節點的位置或名稱，或者您可以建立一個複本。
+1. 在 [Active Directory 管理中心瀏覽] 窗格中，以滑鼠右鍵\-按一下您想要修改的節點。 您可以修改節點的位置或名稱，或者您可以建立一個複本。
 
-2.  按一下其中一個下列的命令：
+2. 按一下其中一個下列的命令：
 
-    -   **重新命名**
+   -   **重新命名**
 
-    -   **建立重複的節點**
+   -   **建立重複的節點**
 
-    -   **移除**
+   -   **移除**
 
-    -   **上移**
+   -   **上移**
 
-    -   **向下移動**
+   -   **向下移動**
 
- 藉由使用清單檢視中，您可以利用最近使用的\(MRU\)清單。 當您瀏覽這個瀏覽節點中的至少一個容器 MRU 清單會自動顯示瀏覽節點底下。 您也可以藉由展開階層連結列頂端的 [Active Directory 管理中心] 視窗來檢視目前的 MRU 清單。 MRU 清單一律會包含您在特定瀏覽節點內造訪的最後三個容器。 每次選取特定容器時，這個容器都會新增至 MRU 清單頂端，並從 MRU 清單中移除最後一個容器。
+   藉由使用清單檢視中，您可以利用最近使用的\(MRU\)清單。 當您瀏覽這個瀏覽節點中的至少一個容器 MRU 清單會自動顯示瀏覽節點底下。 您也可以藉由展開階層連結列頂端的 [Active Directory 管理中心] 視窗來檢視目前的 MRU 清單。 MRU 清單一律會包含您在特定瀏覽節點內造訪的最後三個容器。 每次選取特定容器時，這個容器都會新增至 MRU 清單頂端，並從 MRU 清單中移除最後一個容器。
 
   
 

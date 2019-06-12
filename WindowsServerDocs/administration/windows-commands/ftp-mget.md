@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1160ec742dde318141da720bd35b7d60ab805bb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e43bf8b6e7067a31b3ec51336b0b43845ab88f63
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888419"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438606"
 ---
 # <a name="ftp-mget"></a>ftp: mget
 
@@ -30,9 +30,11 @@ ms.locfileid: "59888419"
 mget <remoteFile>[ ]  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<remoteFile>|指定要複製到本機電腦的遠端檔案。|  
+
+|  參數   |                        描述                        |
+|--------------|-----------------------------------------------------------|
+| <remoteFile> | 指定要複製到本機電腦的遠端檔案。 |
+
 ## <a name="BKMK_Examples"></a>範例  
 將遠端檔案複製**a.exe**並**b.exe**到本機電腦使用目前的檔案傳輸類型。  
 ```  

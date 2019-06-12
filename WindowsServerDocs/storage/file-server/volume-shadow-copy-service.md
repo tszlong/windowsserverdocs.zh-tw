@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7b61a0494b8a63168b40bfaed42dedf0fff40c35
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d67f15d65feb28fb05fc056fd3c34c04cee80d09
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887259"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447763"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -97,7 +97,7 @@ Windows 功能和使用 VSS 的應用程式包括下列項目：
 > 如果寫入器會保留在超過 60 秒，或如果需要超過 10 秒認可的陰影複製提供者的凍結狀態，可能會中止建立陰影複製。 
 <br>
 
-9.  要求者可以重試程序 （請返回步驟 1），或通知系統管理員稍後再試一次。  
+9. 要求者可以重試程序 （請返回步驟 1），或通知系統管理員稍後再試一次。  
       
 10. 如果成功建立陰影複製，則磁碟區陰影複製服務會傳回給要求者的陰影複製的位置資訊。 在某些情況下，陰影複製暫時可為讀寫磁碟區讓該 VSS 和一或多個應用程式可以修改的內容的陰影複製之前完成的陰影複製。 VSS 和應用程式進行其轉變工作之後，陰影複製會變成唯讀狀態。 這個階段會呼叫自動復原，它用來復原檔案系統或應用程式的任何交易上陰影複製磁碟區陰影複製建立之前未完成。  
       
@@ -136,7 +136,7 @@ Windows 功能和使用 VSS 的應用程式包括下列項目：
 </colgroup>
 <thead>
 <tr class="header">
-<th>時間</th>
+<th>Time</th>
 <th>來源資料 （「 狀態 」 和 「 資料 」）</th>
 <th>陰影複製 （狀態和資料）</th>
 </tr>
@@ -177,7 +177,7 @@ Windows 功能和使用 VSS 的應用程式包括下列項目：
 </colgroup>
 <thead>
 <tr class="header">
-<th>時間</th>
+<th>Time</th>
 <th>來源資料 （「 狀態 」 和 「 資料 」）</th>
 <th>陰影複製 （狀態和資料）</th>
 </tr>
@@ -376,12 +376,12 @@ VSS 被設計來建立整個磁碟區的陰影複製。 暫存檔案，例如分
 
 > [!NOTE]
 > <STRONG>FilesNotToSnapshot</STRONG>登錄機碼專門用於只能由應用程式。 嘗試使用它的使用者將會遇到限制，如下所示：
-<br>
-<UL>
-<LI>它無法刪除使用 [舊版] 功能建立在 Windows Server 的陰影複製的檔案。<BR><BR>
-<LI>從共用資料夾的陰影複製，而無法刪除檔案。<BR><BR>
-<LI>它可以刪除檔案，從利用所建立的陰影複製[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)公用程式，但是它不能刪除的檔案使用所建立的陰影複製[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)公用程式。<BR><BR>
-<LI>從陰影複製以最佳方式為基礎，會刪除檔案。 這表示它們不一定要刪除。<BR><BR></LI></UL>
+> <br>
+> <UL>
+> <LI>它無法刪除使用 [舊版] 功能建立在 Windows Server 的陰影複製的檔案。<BR><BR>
+> <LI>從共用資料夾的陰影複製，而無法刪除檔案。<BR><BR>
+> <LI>它可以刪除檔案，從利用所建立的陰影複製<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a>公用程式，但是它不能刪除的檔案使用所建立的陰影複製<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a>公用程式。<BR><BR>
+> <LI>從陰影複製以最佳方式為基礎，會刪除檔案。 這表示它們不一定要刪除。<BR><BR></LI></UL>
 
 
 如需詳細資訊，請參閱 <<c0> [ 排除的檔案，從陰影複製](http://go.microsoft.com/fwlink/?linkid=180904)(http://go.microsoft.com/fwlink/?LinkId=180904) MSDN 上。
@@ -456,7 +456,7 @@ DiskShadow 是可用來管理所有的硬體和軟體快照集，您可以在系
       
   - **匯入**:匯入傳送陰影複製  
       
-  - **公開 （expose)**:（如磁碟機代號，例如） 公開的持續性的陰影複製  
+  - **公開 （expose)** :（如磁碟機代號，例如） 公開的持續性的陰影複製  
       
   - **還原**:會還原回指定的陰影複製磁碟區  
       

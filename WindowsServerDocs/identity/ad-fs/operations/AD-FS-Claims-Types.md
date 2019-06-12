@@ -9,18 +9,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1e37aded450555d293806d1ed8903a51e3df9424
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0ffa4273a2c776a16f3ea0ce77d1b3a528481468
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839139"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445167"
 ---
-#<a name="client-access-policy-claim-types-in-ad-fs"></a>用戶端存取原則的宣告在 AD FS 中的類型
+# <a name="client-access-policy-claim-types-in-ad-fs"></a>用戶端存取原則的宣告在 AD FS 中的類型
 
 若要提供額外的要求內容資訊，用戶端存取原則會使用 AD FS 會產生從處理的要求標頭資訊的下列宣告類型。  如需詳細資訊，請參閱[宣告引擎的角色](../technical-reference/the-role-of-the-claims-engine.md)。
 
-##<a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
+## <a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
 
 宣告類型： `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
@@ -32,8 +32,8 @@ ms.locfileid: "59839139"
     >![注意]公司網路上的用戶端的 IP 位址會顯示為組織的連出 proxy 或閘道的外部介面 IP 位址。
 
 - 一或多個 IP 位址
-    - 如果 Exchange Online 無法判斷連線的用戶端的 IP 位址，它會根據設定值 x 轉送的標頭值，可以包含在 HTTP 型的非標準標頭要求，並支援許多用戶端，負載平衡器和市面上的 proxy。
-    - 指出用戶端 IP 位址和每個傳遞要求的 proxy 位址的多個 IP 位址會以逗號分隔。
+  - 如果 Exchange Online 無法判斷連線的用戶端的 IP 位址，它會根據設定值 x 轉送的標頭值，可以包含在 HTTP 型的非標準標頭要求，並支援許多用戶端，負載平衡器和市面上的 proxy。
+  - 指出用戶端 IP 位址和每個傳遞要求的 proxy 位址的多個 IP 位址會以逗號分隔。
 
     >![注意]Exchange Online 的基礎結構相關的 IP 位址將不會出現在清單中。
 

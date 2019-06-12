@@ -11,12 +11,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 5f253bd4952d8a347e97eafdb38d86fa98024b8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd5650724272422d09e87b7eecf10f825b00fabf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839939"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447046"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>管理 Active Directory 管理中心的不同網域
 
@@ -52,31 +52,31 @@ ms.locfileid: "59839939"
 
 ### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2：若要管理的 Active Directory 管理中心內，而使用目前的登入認證集選取的執行個體中的外部網域
 
-1.  若要開啟 Active Directory 管理中心，按一下**開始**，按一下**系統管理工具**，然後按一下**Active Directory 管理中心**。
+1. 若要開啟 Active Directory 管理中心，按一下**開始**，按一下**系統管理工具**，然後按一下**Active Directory 管理中心**。
 
-    > [!NOTE]
-    >  若要開啟 Active Directory 管理中心內的另一個方法是按一下**開始**，按一下**執行**，然後輸入**dsac.exe**。
+   > [!NOTE]
+   >  若要開啟 Active Directory 管理中心內的另一個方法是按一下**開始**，按一下**執行**，然後輸入**dsac.exe**。
 
-2.  若要開啟 **新增瀏覽節點**，附近的 Active Directory 管理中心 視窗頂端，按一下**新增瀏覽節點**如下圖所示。
+2. 若要開啟 **新增瀏覽節點**，附近的 Active Directory 管理中心 視窗頂端，按一下**新增瀏覽節點**如下圖所示。
 
-     ![螢幕擷取畫面顯示 [新增瀏覽節點] UI](media/click_add_nav_nodes.gif)
+    ![螢幕擷取畫面顯示 [新增瀏覽節點] UI](media/click_add_nav_nodes.gif)
 
-    > [!NOTE]
-    >  若要開啟的另一種方式**新增瀏覽節點**是右\-Active Directory 管理中心瀏覽窗格中的空白空間的任何位置按一下，然後按一下**新增瀏覽節點**.
+   > [!NOTE]
+   >  若要開啟的另一種方式**新增瀏覽節點**是右\-Active Directory 管理中心瀏覽窗格中的空白空間的任何位置按一下，然後按一下**新增瀏覽節點**.
 
-3.  在 **新增瀏覽節點**，按一下**連線至其他網域**如下圖所示。
+3. 在 **新增瀏覽節點**，按一下**連線至其他網域**如下圖所示。
 
-     ![螢幕擷取畫面顯示 [新增瀏覽節點] * * 連接到其他網域 * * UI](media/add_nav_nodes.gif)
+    ![螢幕擷取畫面顯示 [新增瀏覽節點] * * 連接到其他網域 * * UI](media/add_nav_nodes.gif)
 
-4.  在**連接到**，輸入您想要管理的外部網域名稱\(比方說， **contoso.com**\)，然後按一下**確定**。
+4. 在**連接到**，輸入您想要管理的外部網域名稱\(比方說， **contoso.com**\)，然後按一下**確定**。
 
-5.  當您成功連接到外部網域時，瀏覽中的資料行**新增瀏覽節點**] 視窗中，選取 [新增至 Active Directory 管理中心瀏覽窗格的容器和然後按一下**確定**。
+5. 當您成功連接到外部網域時，瀏覽中的資料行**新增瀏覽節點**] 視窗中，選取 [新增至 Active Directory 管理中心瀏覽窗格的容器和然後按一下**確定**。
 
- 如需有關自訂 Active Directory 管理中心瀏覽窗格的詳細資訊，請參閱 <<c0> [ 來自訂 Active Directory 管理中心瀏覽窗格](customize-the-active-directory-administrative-center-navigation-pane.md)。
+   如需有關自訂 Active Directory 管理中心瀏覽窗格的詳細資訊，請參閱 <<c0> [ 來自訂 Active Directory 管理中心瀏覽窗格](customize-the-active-directory-administrative-center-navigation-pane.md)。
 
- 您也可以開啟 Active Directory 管理中心內使用一組登入認證與您目前的登入認證集不同。 下列程序中的命令很有用，如果您以標準使用者認證執行 Active Directory 管理中心的電腦登入，但您想要使用這台電腦上的 Active Directory 管理中心來管理您以系統管理員身分的本機網域。 \(此命令也相當有用，如果您想要使用 Active Directory 管理中心遠端管理一組與您目前的登入認證集不同的認證與您本機網域不同的外部網域。 不過，外部網域必須與本機網域建立的信任。\)
+   您也可以開啟 Active Directory 管理中心內使用一組登入認證與您目前的登入認證集不同。 下列程序中的命令很有用，如果您以標準使用者認證執行 Active Directory 管理中心的電腦登入，但您想要使用這台電腦上的 Active Directory 管理中心來管理您以系統管理員身分的本機網域。 \(此命令也相當有用，如果您想要使用 Active Directory 管理中心遠端管理一組與您目前的登入認證集不同的認證與您本機網域不同的外部網域。 不過，外部網域必須與本機網域建立的信任。\)
 
- 完成此程序沒有最低群組成員資格的限制。
+   完成此程序沒有最低群組成員資格的限制。
 
 ### <a name="to-manage-a-domain-using-logon-credentials-that-are-different-from-the-current-set-of-logon-credentials"></a>使用和目前的登入認證集不同的登入認證來管理網域
 

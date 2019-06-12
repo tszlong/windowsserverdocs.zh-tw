@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c99a934987e320baaec0e56c69f36eda5a32819
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4282da2011c39daec0315a7f3836d5517f29debb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852679"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440200"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -74,14 +74,14 @@ wbadmin start systemstaterecovery
 
 ## <a name="BKMK_examples"></a>範例
 
--   若要執行的備份系統狀態復原，從 03/31/2013年上午 9:00，輸入：  
-    ```
-    wbadmin start systemstaterecovery -version:03/31/2013-09:00
-    ```  
--   若要執行系統狀態復原的備份從 2013 年 04 月 30 日，上午 9:00 儲存在共用資源上\\ \\servername\share for server01 中，類型：  
-    ```
-    wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
-    ```
+- 若要執行的備份系統狀態復原，從 03/31/2013年上午 9:00，輸入：  
+  ```
+  wbadmin start systemstaterecovery -version:03/31/2013-09:00
+  ```  
+- 若要執行系統狀態復原的備份從 2013 年 04 月 30 日，上午 9:00 儲存在共用資源上\\ \\servername\share for server01 中，類型：  
+  ```
+  wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
+  ```
 
 #### <a name="additional-references"></a>其他參考資料
 

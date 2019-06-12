@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c1fd2bc1026d9aee25c591cf5c91a1c59f66ee0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4d2b8a9c35b106a237b47d1bd062026469af59a0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834489"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444487"
 ---
 #  <a name="prepare-to-migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>準備移轉獨立的 AD FS 同盟伺服器或單一節點 AD FS 伺服器陣列  
  
@@ -43,14 +43,14 @@ ms.locfileid: "59834489"
 >   
 >  匯出 SSL 憑證是選擇性的，因為此憑證儲存在本機電腦個人憑證存放區中，作業系統升級時會予以保留。  
   
-2.  記錄 AD FS 服務通訊、權杖解密與權杖簽署憑證的設定。  若要檢視所使用的所有憑證，請開啟 Windows PowerShell 並執行下列命令以將 AD FS cmdlet 新增至您的 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令來建立檔案中的使用中的所有憑證的清單 `PSH:>Get-ADFSCertificate | Out-File “.\certificates.txt”`  
+2. 記錄 AD FS 服務通訊、權杖解密與權杖簽署憑證的設定。  若要檢視所使用的所有憑證，請開啟 Windows PowerShell 並執行下列命令以將 AD FS cmdlet 新增至您的 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令來建立檔案中的使用中的所有憑證的清單 `PSH:>Get-ADFSCertificate | Out-File “.\certificates.txt”`  
   
 > [!NOTE]
 >  或者，除了所有自我簽署憑證以外，您也可以匯出不是內部產生的任何權杖簽署、權杖加密或服務通訊憑證以及金鑰。 您可以使用 Windows PowerShell 來檢視伺服器上使用中的所有憑證。 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell`。 然後執行下列命令來檢視您的伺服器上使用中的所有憑證`PSH:>Get-ADFSCertificate`。 這個命令的輸出包括指定每個憑證存放區位置的 StoreLocation 與 StoreName 值。 然後，您可以使用[匯出伺服器驗證憑證的私用金鑰部分](Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)中的指導方針，將每個憑證及其私密金鑰匯出至 .pfx 檔案。  
 >   
 >  匯出這些憑證是選擇性的，因為作業系統升級期間會保留所有外部憑證。  
   
-3.  匯出 AD FS 2.0 federation service 屬性，例如 federation service 名稱、 federation service 顯示名稱和同盟伺服器識別碼的檔案。  
+3. 匯出 AD FS 2.0 federation service 屬性，例如 federation service 名稱、 federation service 顯示名稱和同盟伺服器識別碼的檔案。  
   
 若要匯出 federation service 屬性，開啟 Windows PowerShell 並執行下列命令以將 AD FS cmdlet 新增至您的 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令以匯出 federation service 屬性： `PSH:> Get-ADFSProperties | Out-File “.\properties.txt”`。  
   
@@ -63,7 +63,7 @@ ms.locfileid: "59834489"
 |識別碼|Federation Service 識別碼|  
 |DisplayName|Federation Service 顯示名稱|  
   
-4.  備份應用程式設定檔。 在其他設定中，這個檔案包含原則資料庫連接字串。  
+4. 備份應用程式設定檔。 在其他設定中，這個檔案包含原則資料庫連接字串。  
   
 若要備份應用程式設定檔，必須手動將 `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config` 檔案複製到備份伺服器上安全的位置。  
   
@@ -72,18 +72,18 @@ ms.locfileid: "59834489"
 >   
 >  以下是 WID 連接字串的範例：`“Data Source=\\.\pipe\mssql$microsoft##ssee\sql\query;Initial Catalog=AdfsConfiguration;Integrated Security=True"`。 以下是 SQL Server 連接字串的範例： `"Data Source=databasehostname;Integrated Security=True"`。  
   
-5.  記錄 AD FS 2.0 同盟服務帳戶的身分識別和此帳戶的密碼。  
+5. 記錄 AD FS 2.0 同盟服務帳戶的身分識別和此帳戶的密碼。  
   
 若要尋找識別值，請檢查 [服務]  主控台中 [AD FS 2.0 Windows 服務]  的 [登入身分]  欄位，然後手動記錄這個值。  
   
 > [!NOTE]
 >  若為獨立 Federation Service，則會使用內建的網路服務帳戶。  在這種情況下，您不需要密碼。  
   
-6.  將啟用的 AD FS 端點清單匯出至檔案。  
+6. 將啟用的 AD FS 端點清單匯出至檔案。  
   
 若要這樣做，請開啟 Windows PowerShell 並執行下列命令以將 AD FS cmdlet 新增至您的 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，以啟用的 AD FS 端點清單匯出至檔案： `PSH:> Get-ADFSEndpoint | Out-File “.\endpoints.txt”`。  
   
-7.  將任何自訂宣告描述匯出至檔案。  
+7. 將任何自訂宣告描述匯出至檔案。  
   
 若要這樣做，請開啟 Windows PowerShell 並執行下列命令以將 AD FS cmdlet 新增至您的 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，將任何自訂宣告描述匯出至檔案： `Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`。  
   

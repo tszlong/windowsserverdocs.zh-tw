@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: f3f34b4c86854bfc55cf4b1b57a0fd3c2baf2ffc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3cce07ba5b3d2cc89f1363bbb2af5acd048c0466
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839249"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445947"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>控制您的工具在解決方案中的可見性 #
 
@@ -90,10 +90,10 @@ SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當�
 | operatingSystemVersion | version_string (例如："10.1.*") |
 | productType | 數字 |
 | clusterFqdn | 字串 |
-| isHyperVRoleInstalled | 布林值 |
-| isHyperVPowershellInstalled | 布林值 |
-| isManagementToolsAvailable | 布林值 |
-| isWmfInstalled | 布林值 |
+| isHyperVRoleInstalled | boolean |
+| isHyperVPowershellInstalled | boolean |
+| isManagementToolsAvailable | boolean |
+| isWmfInstalled | boolean |
 
 清查陣列中的每個物件必須符合下列的 json 結構：
 
@@ -129,7 +129,7 @@ SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當�
 | version | 版本號碼 (例如：10.1.*) |
 | 數字 | 數字的值 |
 | 字串 | 字串值 |
-| 布林值 | true 或 false |
+| boolean | true 或 false |
 
 #### <a name="value-types"></a>實值型別 ####
 
@@ -137,7 +137,7 @@ SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當�
 
 * 字串
 * 數字
-* 布林值
+* boolean
 
 格式正確的清查條件集看起來像這樣：
 
@@ -194,6 +194,7 @@ SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當�
 }
 ```
 State 屬性是重要的值，會控制要顯示或隱藏您在 [工具] 清單中的延伸模組的決策。  允許的值包括：
+
 | 值 | 描述 |
 | ---- | ----------- |
 | 可用 | 擴充功能應該會顯示在 [工具] 清單中。 |

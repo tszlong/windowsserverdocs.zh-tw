@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6bd107aca6c6f33cdf5f88e5b48a52fdea8d2086
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: a29406880481f0e4e257105e94bc1a33ee661164
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189339"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444438"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>建立規則轉換傳入宣告
 
@@ -38,7 +38,7 @@ ms.locfileid: "66189339"
 4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
 
 6.  在 **設定規則**頁面的 **宣告規則名稱**，輸入此規則的顯示名稱。 在 **傳入宣告類型**，在清單中選取的宣告類型。 在 **連出的宣告型別**在清單中，選取 宣告類型，然後選取下列選項，取決於您的組織需求的其中一個：  
@@ -72,7 +72,7 @@ ms.locfileid: "66189339"
 4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
 
 6.  在 **設定規則**頁面的 **宣告規則名稱**，輸入此規則的顯示名稱。 在 **傳入宣告類型**，在清單中選取的宣告類型。 在 **連出的宣告型別**在清單中，選取 宣告類型，然後選取下列選項，取決於您的組織需求的其中一個：  
@@ -113,7 +113,7 @@ ms.locfileid: "66189339"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
   
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)   
 
 6.  在 **設定規則**頁面的 **宣告規則名稱**，輸入此規則的顯示名稱。 在 **傳入宣告類型**，在清單中選取的宣告類型。 在 **連出的宣告型別**在清單中，選取 宣告類型，然後選取下列選項，取決於您的組織需求的其中一個：  
@@ -130,9 +130,9 @@ ms.locfileid: "66189339"
 >   
 > 如需有關動態存取控制案例的詳細資訊，請參閱 <<c0> [ 動態存取控制內容藍圖](../../solution-guides/dynamic-access-control--scenario-overview.md)或是[搭配 AD FS 使用 AD DS 宣告](https://technet.microsoft.com/library/hh831504.aspx)。  
   
-7.  按一下 **[完成]** 。  
+7. 按一下 **[完成]** 。  
   
-8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。  
+8. 在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  

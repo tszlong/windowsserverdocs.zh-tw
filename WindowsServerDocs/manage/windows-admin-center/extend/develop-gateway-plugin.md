@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 93cee5b8e3611a264119947103d22d9aa3b9a56b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66e36a349fc6bd38a77ccf4f00d380788ea4b422
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834389"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445951"
 ---
 # <a name="develop-a-gateway-plugin"></a>開發閘道外掛程式
 
@@ -69,7 +69,7 @@ Windows 系統管理程序重新啟動之後，您將能夠執行您的自訂閘
 
 ### <a name="optional-attach-to-plugin-for-debugging"></a>選擇性：附加至偵錯的外掛程式
 
-在 Visual Studio 2017 中，從 偵錯 功能表中，選取 附加至處理序 」。 在下一步 視窗中，捲動以查看可用的處理序清單並選取 SMEDesktop.exe，然後按一下 連結。 一次偵錯工具啟動時，您可以將中斷點置於您的功能的程式碼，然後練習透過上述的 URL 格式。 我們的範例專案 (功能名稱：「 範例 Uno") 的 URL 是: 「 http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno"
+在 Visual Studio 2017 中，從 偵錯 功能表中，選取 附加至處理序 」。 在下一步 視窗中，捲動以查看可用的處理序清單並選取 SMEDesktop.exe，然後按一下 連結。 一次偵錯工具啟動時，您可以將中斷點置於您的功能的程式碼，然後練習透過上述的 URL 格式。 我們的範例專案 (功能名稱：「 範例 Uno") 的 URL 是: 「<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>使用 Windows Admin Center CLI 中建立 [工具] 延伸模組 ##
 
@@ -104,8 +104,8 @@ npm install
 
 既然您已使用 Windows Admin Center CLI 來建立擴充功能，您已準備好加入您的自訂閘道外掛程式，連接您的工具擴充功能，依照下列步驟：
 
-- 新增[空的模組](guides\add-module.md)
-- 使用您[自訂閘道外掛程式](guides\use-custom-gateway-plugin.md)工具延伸模組中
+- 新增[空的模組](guides/add-module.md)
+- 使用您[自訂閘道外掛程式](guides/use-custom-gateway-plugin.md)工具延伸模組中
  
 ## <a name="build-and-side-load-your-extension"></a>組建和側邊載入您的延伸模組
 

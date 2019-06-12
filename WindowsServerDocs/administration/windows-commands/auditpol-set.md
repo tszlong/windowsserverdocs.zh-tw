@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9c0fb17620147d2de5b991c1a9a0fb95e782677
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8778401efb272a167aaa3d9abb4ecafc67e5f50d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826989"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435108"
 ---
 # <a name="auditpol-set"></a>auditpol set
 
@@ -37,18 +37,20 @@ auditpol /set
 [/option:<option name> /value: <enable>|<disable>]
 ```
 ## <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|/user|設定針對每個使用者稽核原則類別目錄或子類別目錄所指定的安全性主體。 必須指定類別或子類別目錄的選項，為安全性識別元 (SID) 或名稱。|
-|包含|指定了 /user;表示使用者的每個使用者原則，將會導致即使它不由系統稽核原則產生的稽核。 這項設定是預設值，並會自動套用，如果既未 / 包含也 /exclude 參數明確指定。|
-|/exclude|指定了 /user;表示使用者的每位使用者的原則會稽核隱藏不論系統稽核原則。 使用者是本機 Administrators 群組的成員，會忽略此設定。|
-|/category|全域唯一識別碼 (GUID) 或名稱所指定的一或多個稽核類別。 如果未不指定任何使用者，會設定系統原則。|
-|/subcategory|一或多個稽核子類別的 GUID 或名稱所指定。 如果未不指定任何使用者，會設定系統原則。|
-|/success|指定成功稽核。 此設定是預設值，並會自動套用，如果收錄 /success 或 /failure 參數明確指定。 此設定必須搭配參數，指出是否要啟用或停用此設定。|
-|/failure|指定失敗稽核。 此設定必須搭配參數，指出是否要啟用或停用此設定。|
-|/option|設定 CrashOnAuditFail、 FullprivilegeAuditing、 AuditBaseObjects，還是 AuditBasedirectories 選項的稽核原則。|
-|/sd|設定用來委派存取稽核原則的安全性描述元。 必須使用 Security Descriptor Definition Language (SDDL) 指定的安全性描述元。 安全性描述元必須判別存取控制清單 (DACL)。|
-|/?|在命令提示字元顯示說明。|
+
+|  參數   |                                                                                                                                          描述                                                                                                                                           |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /user     |                                        設定針對每個使用者稽核原則類別目錄或子類別目錄所指定的安全性主體。 必須指定類別或子類別目錄的選項，為安全性識別元 (SID) 或名稱。                                         |
+|   包含   | 指定了 /user;表示使用者的每個使用者原則，將會導致即使它不由系統稽核原則產生的稽核。 這項設定是預設值，並會自動套用，如果既未 / 包含也 /exclude 參數明確指定。 |
+|   /exclude   |                                指定了 /user;表示使用者的每位使用者的原則會稽核隱藏不論系統稽核原則。 使用者是本機 Administrators 群組的成員，會忽略此設定。                                |
+|  /category   |                                                                            全域唯一識別碼 (GUID) 或名稱所指定的一或多個稽核類別。 如果未不指定任何使用者，會設定系統原則。                                                                             |
+| /subcategory |                                                                                         一或多個稽核子類別的 GUID 或名稱所指定。 如果未不指定任何使用者，會設定系統原則。                                                                                          |
+|   /success   |                 指定成功稽核。 此設定是預設值，並會自動套用，如果收錄 /success 或 /failure 參數明確指定。 此設定必須搭配參數，指出是否要啟用或停用此設定。                 |
+|   /failure   |                                                                                  指定失敗稽核。 此設定必須搭配參數，指出是否要啟用或停用此設定。                                                                                   |
+|   /option    |                                                                                   設定 CrashOnAuditFail、 FullprivilegeAuditing、 AuditBaseObjects，還是 AuditBasedirectories 選項的稽核原則。                                                                                    |
+|     /sd      |                 設定用來委派存取稽核原則的安全性描述元。 必須使用 Security Descriptor Definition Language (SDDL) 指定的安全性描述元。 安全性描述元必須判別存取控制清單 (DACL)。                 |
+|      /?      |                                                                                                                              在命令提示字元顯示說明。                                                                                                                              |
+
 ## <a name="remarks"></a>備註
 為每位使用者的原則和系統原則的所有設定作業，您必須撰寫或該物件上的完全控制權限設定中的安全性描述元。 您也可以執行設定作業所擁有**管理稽核及安全性記錄**(SeSecurityPrivilege) 使用者權限。 不過，此權限可讓其他不需要執行 set 作業的存取。
 ## <a name="BKMK_examples"></a>範例
@@ -73,14 +75,14 @@ auditpol /set /category:"detailed Tracking" /success:enable
 ```
 > [!NOTE]
 > 失敗的設定不會改變。
-若要設定物件存取和系統的類別 （這隱含的子類別目錄會列出因為） 和子類別目錄的嘗試失敗的隱藏項目和成功嘗試的稽核 Guid 所指定的系統稽核原則，請輸入：
-```
-auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69ae-11d9-bed3-505054503030}, /failure:disable /success:enable
-```
-### <a name="example-for-auditing-options"></a>範例中的稽核選項
-若要設定的稽核選項為 CrashOnAuditFail 選項的啟用狀態，請輸入：
-```
-auditpol /set /option:CrashOnAuditFail /value:enable
-```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法關鍵](command-line-syntax-key.md)
+> 若要設定物件存取和系統的類別 （這隱含的子類別目錄會列出因為） 和子類別目錄的嘗試失敗的隱藏項目和成功嘗試的稽核 Guid 所指定的系統稽核原則，請輸入：
+> ```
+> auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69ae-11d9-bed3-505054503030}, /failure:disable /success:enable
+> ```
+> ### <a name="example-for-auditing-options"></a>範例中的稽核選項
+> 若要設定的稽核選項為 CrashOnAuditFail 選項的啟用狀態，請輸入：
+> ```
+> auditpol /set /option:CrashOnAuditFail /value:enable
+> ```
+> #### <a name="additional-references"></a>其他參考資料
+> [命令列語法關鍵](command-line-syntax-key.md)

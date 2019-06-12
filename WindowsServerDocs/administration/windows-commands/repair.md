@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940b0931671d5f3c2137fafe4ae73b7cecd0160e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e4b9cde10e11558aaa95edda94921144dac1f86
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821189"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441799"
 ---
 # <a name="repair"></a>修復
 
@@ -36,11 +36,11 @@ repair disk=<n> [align=<n>] [noerr]
   
 ## <a name="parameters"></a>參數  
   
-|參數|描述|  
-|-------|--------|  
-|disk\=<n>|指定將會取代故障的磁碟區的動態磁碟。|  
-|align\=<n>|對齊最接近對齊界限的所有磁碟區或分割區範圍。 *n*是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。|  
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|  
+| 參數  |                                                                                             描述                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| disk\=<n>  |                                                                 指定將會取代故障的磁碟區的動態磁碟。                                                                 |
+| align\=<n> |          對齊最接近對齊界限的所有磁碟區或分割區範圍。 *n*是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。           |
+|   noerr    | 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。 |
   
 ## <a name="remarks"></a>備註  
   

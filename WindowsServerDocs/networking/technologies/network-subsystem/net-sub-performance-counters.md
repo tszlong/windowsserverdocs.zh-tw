@@ -8,12 +8,12 @@ ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e5e8abbc19482bcd0dd5670065cde59d5be3169a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcb0c1c5a08a306fbd9b419d0c458c3bc54e1786
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824349"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446201"
 ---
 # <a name="network-related-performance-counters"></a>網路相關的效能計數器
 
@@ -31,43 +31,43 @@ ms.locfileid: "59824349"
 
 下列效能計數器會與網路資源使用率。  
   
--   IPv4, IPv6  
+- IPv4, IPv6  
   
-    -   接收資料包數/秒  
+  -   接收資料包數/秒  
   
-    -   傳送的資料包/秒  
+  -   傳送的資料包/秒  
   
--   TCPv4, TCPv6  
+- TCPv4, TCPv6  
   
-    -   Segments Received/sec  
+  -   Segments Received/sec  
   
-    -   傳送的區段/秒  
+  -   傳送的區段/秒  
   
-    -   Segments Retransmitted/sec  
+  -   Segments Retransmitted/sec  
   
--   網路 Interface(*)，網路介面卡 (\*)  
+- 網路 Interface(*)，網路介面卡 (\*)  
   
-    -   Bytes Received/sec  
+  - Bytes Received/sec  
   
-    -   傳送的位元組/秒  
+  - 傳送的位元組/秒  
   
-    -   Packets Received/sec  
+  - Packets Received/sec  
   
-    -   傳送的封包/秒  
+  - 傳送的封包/秒  
   
-    -   輸出佇列長度  
+  - 輸出佇列長度  
   
-     此計數器是輸出封包佇列長度\(封包中\)。 如果值大於 2，就會發生延遲。 您應該找出瓶頸，以及如果您可以將它消除。 NDIS 排入佇列的要求，因為這個長度應該一律是 0。  
+    此計數器是輸出封包佇列長度\(封包中\)。 如果值大於 2，就會發生延遲。 您應該找出瓶頸，以及如果您可以將它消除。 NDIS 排入佇列的要求，因為這個長度應該一律是 0。  
   
--   處理器資訊  
+- 處理器資訊  
   
-    -   % Processor Time  
+  - % Processor Time  
   
-    -   Interrupts/sec  
+  - Interrupts/sec  
   
-    -   DPCs Queued/sec  
+  - DPCs Queued/sec  
   
-     此計數器是在 Dpc 已加入邏輯處理器 DPC 佇列的平均速率。 每個邏輯處理器有它自己 DPC 佇列。 此計數器會測量 Dpc 加入至佇列，而不是 Dpc 佇列的數目的速率。 它會顯示在最後兩個範例中，除以樣本間隔的持續時間中未觀察到的值之間的差異。  
+    此計數器是在 Dpc 已加入邏輯處理器 DPC 佇列的平均速率。 每個邏輯處理器有它自己 DPC 佇列。 此計數器會測量 Dpc 加入至佇列，而不是 Dpc 佇列的數目的速率。 它會顯示在最後兩個範例中，除以樣本間隔的持續時間中未觀察到的值之間的差異。  
   
 ##  <a name="bkmk_np"></a> 潛在網路問題  
 

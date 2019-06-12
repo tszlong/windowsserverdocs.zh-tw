@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 02/05/2019
-ms.openlocfilehash: 6b67208176b426f52d3c5106f8de09ad334d3b01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87878eba785c0e1cc50454a74b2af4a159e88e12
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829529"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443658"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>確認可以證明的受防護的主機 
 
@@ -52,16 +52,16 @@ ms.locfileid: "59829529"
         Get-HgsTrace -RunDiagnostics -Detailed
 
     > [!IMPORTANT]
-    > 如果您使用 Windows Server 2019 或 Windows 10 版本 1809年，並使用程式碼完整性原則，`Get-HgsTrace`可能傳回的失敗**程式碼完整性原則 Active**診斷。
+    > 如果您使用 Windows Server 2019 或 Windows 10 版本 1809年，並使用程式碼完整性原則，`Get-HgsTrace`傳回的失敗**程式碼完整性原則 Active**診斷。
     > 僅失敗診斷時，您可以放心忽略此結果。
 
 ## <a name="next-step"></a>後續步驟
 
->[!div class="nextstepaction"]
-[部署受防護的 Vm](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+> [!div class="nextstepaction"]
+> [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
 ## <a name="see-also"></a>另請參閱
 
 - [部署主機守護者服務 (HGS)](guarded-fabric-deploying-hgs-overview.md)
-- [部署受防護的 Vm](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 

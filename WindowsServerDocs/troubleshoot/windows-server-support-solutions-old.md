@@ -9,12 +9,12 @@ ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: b283eed38e991886fc72de0e8f8cdbc209972fa7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1eb52f28fcd5afe62df33cd56208f2ab506e7194
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820519"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453154"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Windows Server 2016 的最佳支援解決方案
 
@@ -27,15 +27,15 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
 
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>適用於安裝或升級 Windows Server 的解決方案
 
-- [解決 Windows 10 升級錯誤：適用於 IT 專業人員的技術資訊](\windows\deployment\upgrade\resolve-windows-10-upgrade-errors)
+- [解決 Windows 10 升級錯誤：適用於 IT 專業人員的技術資訊](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
 - [適用於 Windows 10 版本 1607年和 Windows Server 2016 的服務堆疊更新：2017 年 8 月 8日日](https://support.microsoft.com/en-US/help/4035631)
 - [升級至 Windows 10 版本 1607年和 Windows Server 2016 相容性更新：2017 年 8 月 3日日](https://support.microsoft.com/en-US/help/4033524)
 - [在以 Windows 為基礎的 Azure Vm 上不支援就地升級](https://support.microsoft.com/en-US/help/4014997)
-- [適用於 Windows Server 2016 的升級和轉換選項](..\get-started\supported-upgrade-paths.md)
-- [伺服器角色升級和移轉矩陣適用於 Windows Server 2016](..\get-started\server-role-upgradeability-table.md)
-- [Windows Server 安裝與升級](..\get-started\installation-and-upgrade.md)
-- [版本資訊：Windows Server 2016 的重要問題](..\get-started\windows-server-2016-ga-release-notes.md)
-- [移至 Windows Server 2016 的建議](..\get-started\recommendations-moving-to-server2016.md)
+- [適用於 Windows Server 2016 的升級和轉換選項](../get-started/supported-upgrade-paths.md)
+- [伺服器角色升級和移轉矩陣適用於 Windows Server 2016](../get-started/server-role-upgradeability-table.md)
+- [Windows Server 安裝與升級](../get-started/installation-and-upgrade.md)
+- [版本資訊：Windows Server 2016 中的重要問題](../get-started/windows-server-2016-ga-release-notes.md)
+- [移至 Windows Server 2016 的建議](../get-started/recommendations-moving-to-server2016.md)
 
 ## <a name="solutions-for-volume-activation"></a>大量啟用解決方案
 - [Windows Server 2016 Activation](../get-started/server-2016-activation.md)
@@ -61,14 +61,14 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
 - [設定 AD FS 驗證 LDAP 目錄中儲存的使用者](../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md)
 - [AD FS 支援憑證驗證的替代主機名稱繫結](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [防範密碼攻擊](https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/)
-- [升級至 Windows Server 2016 使用 WID 資料庫中的 AD FS](../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md)
+- [升級至使用 WID 資料庫的 Windows Server 2016 AD FS](../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md)
 - [Windows 10 登入 – 的啟用 AD FS 使用的裝置驗證](../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md)
 - [在 AD FS 和 Windows Server 2016 中的 WAP 中管理 SSL 憑證](../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md)
 - [在 Windows Server 2016 AD FS 存取控制原則](../identity/ad-fs/operations/access-control-policies-in-ad-fs.md)
 
 ## <a name="solutions-related-to-active-directory-replication"></a>與 Active Directory 複寫相關的解決方案
 
-- [疑難排解 Active Directory 複寫問題](../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md)
+- [進行 Active Directory 複寫問題疑難排解](../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md)
 - [從 Microsoft 下載中心下載 Active Directory 複寫狀態的工具](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
 - [e2e:如何疑難排解常見的 Active Directory 複寫錯誤](https://support.microsoft.com/kb/3108513)
 - [疑難排解 AD 複寫錯誤 8606:若要建立物件所提供的屬性不足](https://support.microsoft.com/kb/2028495)

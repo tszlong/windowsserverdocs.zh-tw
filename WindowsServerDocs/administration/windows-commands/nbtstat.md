@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0193152674dc934aa4f2d3be4dec54afc3066951
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e670b1490f1c4c54b8cf377d48755849faa16f8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867699"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437127"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -34,19 +34,19 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|-------|--------|
-|/a <remoteName>|顯示遠端電腦的 NetBIOS 名稱資料表所在*remoteName*是遠端電腦的 NetBIOS 電腦名稱。 NetBIOS 名稱表格是對應至該電腦上執行的 NetBIOS 應用程式清單中的 NetBIOS 名稱。|
-|/A <IPaddress>|顯示遠端電腦的 IP 位址 （在小數點十進位表示法） 所指定的遠端電腦的 NetBIOS 名稱資料表。|
-|/c|顯示內容的 netbios 命名快取、 NetBIOS 名稱的資料表和其已解析的 IP 位址。|
-|/n|顯示本機電腦的 NetBIOS 名稱資料表。 狀態**註冊**表示已經註冊名稱，透過廣播或 WINS 伺服器。|
-|/r|顯示 NetBIOS 名稱解析的統計資料。 在執行 Windows XP 或 Windows Server 2003 設定為使用 WINS 的電腦，此參數會傳回已解決的名稱的數目和已註冊使用廣播和 WINS。|
-|/R|清除的 NetBIOS 名稱快取內容，然後再重新載入 # 預先 tagged 項目**Lmhosts**檔案。|
-|/RR|釋出，然後更新 WINS 伺服器已註冊在本機電腦的 NetBIOS 名稱。|
-|/s|會顯示 NetBIOS 用戶端和伺服器工作階段，嘗試將轉換的目的地 IP 位址的名稱。|
-|/S|會顯示 NetBIOS 用戶端和伺服器工作階段，根據目的地 IP 位址只列出在遠端電腦。|
-|<Interval>|會重新顯示所選的統計資料，暫停中指定的秒數*間隔*每部顯示器之間。 按下 CTRL + C 來停止重新統計資料。 如果省略這個參數，則**nbtstat**列印目前的組態資訊一次。|
-|/?|在命令提示字元顯示說明。|
+|    參數    |                                                                                                                         描述                                                                                                                         |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /a <remoteName> |    顯示遠端電腦的 NetBIOS 名稱資料表所在*remoteName*是遠端電腦的 NetBIOS 電腦名稱。 NetBIOS 名稱表格是對應至該電腦上執行的 NetBIOS 應用程式清單中的 NetBIOS 名稱。     |
+| /A <IPaddress>  |                                                           顯示遠端電腦的 IP 位址 （在小數點十進位表示法） 所指定的遠端電腦的 NetBIOS 名稱資料表。                                                            |
+|       /c        |                                                                        顯示內容的 netbios 命名快取、 NetBIOS 名稱的資料表和其已解析的 IP 位址。                                                                         |
+|       /n        |                                            顯示本機電腦的 NetBIOS 名稱資料表。 狀態**註冊**表示已經註冊名稱，透過廣播或 WINS 伺服器。                                             |
+|       /r        |      顯示 NetBIOS 名稱解析的統計資料。 在執行 Windows XP 或 Windows Server 2003 設定為使用 WINS 的電腦，此參數會傳回已解決的名稱的數目和已註冊使用廣播和 WINS。       |
+|       /R        |                                                                      清除的 NetBIOS 名稱快取內容，然後再重新載入 # 預先 tagged 項目**Lmhosts**檔案。                                                                      |
+|       /RR       |                                                                           釋出，然後更新 WINS 伺服器已註冊在本機電腦的 NetBIOS 名稱。                                                                            |
+|       /s        |                                                                          會顯示 NetBIOS 用戶端和伺服器工作階段，嘗試將轉換的目的地 IP 位址的名稱。                                                                           |
+|       /S        |                                                                          會顯示 NetBIOS 用戶端和伺服器工作階段，根據目的地 IP 位址只列出在遠端電腦。                                                                          |
+|   <Interval>    | 會重新顯示所選的統計資料，暫停中指定的秒數*間隔*每部顯示器之間。 按下 CTRL + C 來停止重新統計資料。 如果省略這個參數，則**nbtstat**列印目前的組態資訊一次。 |
+|       /?        |                                                                                                            在命令提示字元顯示說明。                                                                                                             |
 
 ## <a name="remarks"></a>備註
 
@@ -63,7 +63,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |區域名稱|與連接相關聯的本機 NetBIOS 名稱。|
     |遠端主機|名稱或 IP 位址與遠端的電腦相關聯。|
     |<03>|NetBIOS 名稱的最後一個位元組轉換為十六進位。 每個 NetBIOS 名稱是 16 個字元。 此最後一個位元組會經常有特殊意義，因為相同的名稱可能會出現數次的電腦上，只有不同的最後一個位元組。 例如，< 20 > 是以 ASCII 文字的空間。|
-    |型別|名稱類型。 名稱可以是唯一的名稱或群組名稱。|
+    |type|名稱類型。 名稱可以是唯一的名稱或群組名稱。|
     |狀態|是否在遠端電腦上的 NetBIOS 服務正在執行 （登錄） 或重複的電腦名稱已註冊相同的服務 （衝突）。|
     |State|NetBIOS 連線的狀態。|
 

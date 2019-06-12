@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 3782667e54f5e6b52c07645704b95fc9e7409a27
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 280104977e295ce0c9ccb05b806442ccaa73667b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476065"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447237"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)
 
@@ -431,9 +431,9 @@ DFS 複寫的複寫群組的所有其他成員上的檔案重新命名的下一�
 <tbody>
 <tr class="even">
 <td><p>Windows Server 2012 R2</p></td>
-<td><p>是*</p></td>
+<td><p>[是]<em></p></td>
 <td><p>沒有</p></td>
-<td><p>是*</p></td>
+<td><p>是</em></p></td>
 </tr>
 <tr class="odd">
 <td><p>Windows Server 2012</p></td>

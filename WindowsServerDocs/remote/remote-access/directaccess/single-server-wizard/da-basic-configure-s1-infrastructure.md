@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 75a47b6a6cb0a345d1d6e46ac8807bba6a895ace
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fd4b691a4b2bf6cc66a3b833eef8eca9f93dccc5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820939"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446101"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>步驟 1 設定基本 DirectAccess 基礎結構
 
@@ -40,7 +40,7 @@ ms.locfileid: "59820939"
 > 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
 ## <a name="ConfigNetworkSettings"></a>設定伺服器網路設定  
-在 IPv4 和 IPv6 同時存在的環境中，單一伺服器部署需要下列網路介面設定。 您可以使用 [Windows 網路和共用中心] 中的 [變更介面卡設定] 設定所有 IP 位址。  
+在 IPv4 和 IPv6 同時存在的環境中，單一伺服器部署需要下列網路介面設定。 您可以使用 [Windows 網路和共用中心]  中的 [變更介面卡設定]  設定所有 IP 位址。  
   
 -   邊緣拓撲  
   
@@ -114,15 +114,15 @@ ms.locfileid: "59820939"
   
 1.  在內部網路 DNS 伺服器上，執行**dnsmgmt.msc**然後按 ENTER 鍵。  
   
-2.  在 [DNS 管理員] 主控台的左窗格中，展開您網域的正向對應區域。 在網域上按一下滑鼠右鍵，按一下 [新增主機 (A 或 AAAA)]。  
+2.  在 [DNS 管理員]  主控台的左窗格中，展開您網域的正向對應區域。 在網域上按一下滑鼠右鍵，按一下 [新增主機 (A 或 AAAA)]  。  
   
-3.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入網路位置伺服器網站的 DNS 名稱 (這是 DirectAccess 用戶端用來連線到網路位置伺服器的名稱)。 在 [IP 位址] 方塊中，輸入網路位置伺服器的 IPv4 位址，然後按一下 [新增主機]。 在 [DNS] 對話方塊中，按一下 [確定]。  
+3.  在 [新增主機]  對話方塊的 [名稱 (如果空白就使用父系網域名稱)]  方塊中，輸入網路位置伺服器網站的 DNS 名稱 (這是 DirectAccess 用戶端用來連線到網路位置伺服器的名稱)。 在 [IP 位址]  方塊中，輸入網路位置伺服器的 IPv4 位址，然後按一下 [新增主機]  。 在 [DNS]  對話方塊中，按一下 [確定]  。  
   
-4.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入 Web 探查的 DNS 名稱 (預設 Web 探查的名稱是 directaccess-webprobehost)。 在 [IP 位址] 方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]。 為 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [DNS] 對話方塊中，按一下 [確定]。  
+4.  在 [新增主機]  對話方塊的 [名稱 (如果空白就使用父系網域名稱)]  方塊中，輸入 Web 探查的 DNS 名稱 (預設 Web 探查的名稱是 directaccess-webprobehost)。 在 [IP 位址]  方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]  。 為 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [DNS]  對話方塊中，按一下 [確定]  。  
   
-5.  按一下 [完成] 。  
+5.  按一下 [完成]  。  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -148,43 +148,43 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 #### <a name="to-join-the-remote-access-server-to-a-domain"></a>將遠端存取伺服器加入網域  
   
-1.  在 [伺服器管理員] 中，按一下 [本機伺服器]。 在詳細資料窗格中，按一下 [電腦名稱] 旁邊的連結。  
+1.  在 [伺服器管理員] 中，按一下 [本機伺服器]  。 在詳細資料窗格中，按一下 [電腦名稱]  旁邊的連結。  
   
-2.  在 [系統內容]  對話方塊上，按一下 [電腦名稱]  索引標籤。在 [電腦名稱]  索引標籤中，按一下 [變更] 。  
+2.  在 [系統內容]  對話方塊上，按一下 [電腦名稱]  索引標籤。在 [電腦名稱]  索引標籤中，按一下 [變更]  。  
   
-3.  在 [電腦名稱] 中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於] 下面，按一下 [網域] ，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定] 。  
+3.  在 [電腦名稱]  中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]  下面，按一下 [網域]  ，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]  。  
   
-4.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]。  
+4.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]  。  
   
-5.  在出現對話方塊並顯示您的網域的歡迎頁面時，按一下 [確定] 。  
+5.  在出現對話方塊並顯示您的網域的歡迎頁面時，按一下 [確定]  。  
   
-6.  當提示您必須重新啟動電腦時，按一下 [確定] 。  
+6.  當提示您必須重新啟動電腦時，按一下 [確定]  。  
   
-7.  按一下 [系統內容]  對話方塊中的 [關閉] 。  
+7.  按一下 [系統內容]  對話方塊中的 [關閉]  。  
   
-8.  當提示您重新啟動電腦時，請按一下 [立即重新啟動] 。  
+8.  當提示您重新啟動電腦時，請按一下 [立即重新啟動]  。  
   
 #### <a name="to-join-client-computers-to-the-domain"></a>將用戶端電腦加入網域  
   
 1.  執行**explorer.exe**。  
   
-2.  在 [電腦] 圖示上按一下滑鼠右鍵，然後按一下 [內容]。  
+2.  在 [電腦] 圖示上按一下滑鼠右鍵，然後按一下 [內容]  。  
   
-3.  在 [系統] 頁面上，按一下 [進階系統設定]。  
+3.  在 [系統]  頁面上，按一下 [進階系統設定]  。  
   
-4.  在 [系統內容] 的 [電腦名稱] 索引標籤上，按一下 [變更]。  
+4.  在 [系統內容]  的 [電腦名稱]  索引標籤上，按一下 [變更]  。  
   
-5.  在 [電腦名稱] 中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於] 下面，按一下 [網域] ，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定] 。  
+5.  在 [電腦名稱]  中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]  下面，按一下 [網域]  ，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]  。  
   
-6.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]。  
+6.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]  。  
   
-7.  在出現對話方塊並顯示您的網域的歡迎頁面時，按一下 [確定] 。  
+7.  在出現對話方塊並顯示您的網域的歡迎頁面時，按一下 [確定]  。  
   
-8.  當提示您必須重新啟動電腦時，按一下 [確定] 。  
+8.  當提示您必須重新啟動電腦時，按一下 [確定]  。  
   
-9. 按一下 [系統內容] 對話方塊中的 [關閉]。 出現提示時，按一下 [立即重新啟動]。  
+9. 按一下 [系統內容]  對話方塊中的 [關閉]。 出現提示時，按一下 [立即重新啟動]  。  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -216,17 +216,17 @@ Restart-Computer
   
 ### <a name="Sec_Group"></a>為 DirectAccess 用戶端建立安全性群組  
   
-1.  執行**dsa.msc**。 在 [Active Directory 使用者和電腦] 主控台的左窗格中，展開將包含安全性群組的網域，在 [使用者] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [群組]。  
+1.  執行**dsa.msc**。 在 [Active Directory 使用者和電腦]  主控台的左窗格中，展開將包含安全性群組的網域，在 [使用者]  上按一下滑鼠右鍵，指向 [新增]  ，然後按一下 [群組]  。  
   
-2.  在 [新增物件 - 群組] 對話方塊中的 [群組名稱] 之下，輸入安全性群組的名稱。  
+2.  在 [新增物件 - 群組]  對話方塊中的 [群組名稱]  之下，輸入安全性群組的名稱。  
   
-3.  在 [群組領域] 之下按一下 [全域]，在 [群組類型] 之下按一下 [安全性]，然後按一下 [確定]。  
+3.  在 [群組領域]  之下按一下 [全域]  ，在 [群組類型]  之下按一下 [安全性]  ，然後按一下 [確定]  。  
   
-4.  連按兩下 DirectAccess 用戶端電腦安全性群組，然後在 [內容] 對話方塊中，按一下 [成員] 索引標籤。  
+4.  連按兩下 DirectAccess 用戶端電腦安全性群組，然後在 [內容] 對話方塊中，按一下 [成員]  索引標籤。  
   
-5.  在 [成員]  索引標籤上，按一下 [新增] 。  
+5.  在 [成員]  索引標籤上，按一下 [新增]  。  
   
-6.  在 [選取使用者、連絡人、電腦或服務帳戶] 對話方塊中，選取您想要啟用 DirectAccess 的用戶端電腦，然後按一下 [確定]。  
+6.  在 [選取使用者、連絡人、電腦或服務帳戶]  對話方塊中，選取您想要啟用 DirectAccess 的用戶端電腦，然後按一下 [確定]  。  
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows PowerShell 對等的命令**  
   

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 216af933aee643ee56feff71c59d9ecc2e62998c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 036d6d0543687e7f82caf3dfd2c3bb0b4a981181
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842989"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445057"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 中的用戶端存取控制原則
 在 Active Directory Federation Services 2.0 的用戶端存取原則可讓您限制或授予使用者存取資源。  本文件說明如何啟用 AD FS 2.0 中的用戶端存取原則以及如何設定的最常見的案例。
@@ -52,11 +52,13 @@ Active Directory 宣告提供者信任中，建立新的接受轉換規則通過
     `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
 
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
+~~~
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+~~~
 
 ### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>步驟 3：更新 Microsoft Office 365 識別平台信賴憑證者信任
 
@@ -160,16 +162,16 @@ Active Directory 宣告提供者信任中，建立新的接受轉換規則通過
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>在上述案例中使用宣告規則語言語法的描述
 
-|描述|宣告規則語言語法|
-|-----|-----| 
-|預設的 AD FS 規則，以允許所有使用者存取。 Microsoft Office 365 識別平台信賴憑證者信任發行授權規則清單中，應該已有此規則。|=> issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");| 
-|將此子句加入至新的自訂規則指定的要求是來自同盟伺服器 proxy （亦即，它有 x ms proxy 標頭）
-所有規則都包含這個建議。|exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"])| 
-|用來建立要求是從用戶端，以定義可接受的範圍中的 IP。|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value=~"customer-provided public ip address regex"])| 
-|這個子句用來指定是否正在存取的應用程式不是 Microsoft.Exchange.ActiveSync 應該會拒絕要求。|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value=="Microsoft.Exchange.ActiveSync"])| 
-|此規則可讓您判斷是否呼叫是透過網頁瀏覽器，並將不會遭到拒絕。|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])| 
-|此規則會指出只有特定的 Active Directory 群組 （根據 SID 值） 中的使用者應該被拒絕。 無法加入這個陳述式，表示一群使用者會被允許，不論位置為何。|exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "{Group SID value of allowed AD group}"])| 
-|這是必要的子句，以符合所有先前的條件時，發出拒絕。|=> issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");|
+|                                                                                                   描述                                                                                                   |                                                                     宣告規則語言語法                                                                     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|              預設的 AD FS 規則，以允許所有使用者存取。 Microsoft Office 365 識別平台信賴憑證者信任發行授權規則清單中，應該已有此規則。              |                                  => issue(Type = "<https://schemas.microsoft.com/authorization/claims/permit>", Value = "true");                                   |
+|                               將此子句加入至新的自訂規則指定的要求是來自同盟伺服器 proxy （亦即，它有 x ms proxy 標頭）                                |                                                                                                                                                                    |
+|                                                                                 所有規則都包含這個建議。                                                                                  |                                    exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
+|                                                         用來建立要求是從用戶端，以定義可接受的範圍中的 IP。                                                         | NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", Value=~"customer-provided public ip address regex"]) |
+|                                    這個子句用來指定是否正在存取的應用程式不是 Microsoft.Exchange.ActiveSync 應該會拒絕要求。                                     |       NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>", Value=="Microsoft.Exchange.ActiveSync"])        |
+|                                                      此規則可讓您判斷是否呼叫是透過網頁瀏覽器，並將不會遭到拒絕。                                                      |              NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", Value == "/adfs/ls/"])               |
+| 此規則會指出只有特定的 Active Directory 群組 （根據 SID 值） 中的使用者應該被拒絕。 無法加入這個陳述式，表示一群使用者會被允許，不論位置為何。 |             exists([Type == "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", Value =~ "{Group SID value of allowed AD group}"])              |
+|                                                                這是必要的子句，以符合所有先前的條件時，發出拒絕。                                                                 |                                   => issue(Type = "<https://schemas.microsoft.com/authorization/claims/deny>", Value = "true");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>建立 IP 位址範圍運算式
 
@@ -271,4 +273,4 @@ AD FS 追蹤事件會記錄到 AD FS 2.0 的偵錯記錄檔。 若要啟用追�
 
 ## <a name="related"></a>相關
 如需新的宣告類型詳細資訊，請參閱[AD FS 宣告型別](AD-FS-Claims-Types.md)。
- 
+

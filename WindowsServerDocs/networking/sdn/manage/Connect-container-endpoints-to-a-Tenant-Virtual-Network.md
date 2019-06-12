@@ -13,12 +13,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: pashort
 author: jmesser81
 ms.date: 08/24/2018
-ms.openlocfilehash: 1968a4db9231459fe5858d9a0f3ba5e8f317ed1b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb9c7157ffb07233e41e1c933f6775f1cd0766a9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872739"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446356"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>將容器端點連線至租用戶虛擬網路
 
@@ -34,9 +34,11 @@ ms.locfileid: "59872739"
 
 之間的差異*l2 橋接*並*l2tunnel*驅動程式：
 
-| l2bridge | l2tunnel |
-| --- | --- |
-|容器上的端點： <ul><li>相同的容器裝載的虛擬機器，並在相同的子網路上已在 HYPER-V 虛擬交換器橋接所有的網路流量。 </li><li>不同的容器裝載虛擬機器，或在不同的子網路上有其轉送到實體 HYPER-V 主機的流量。 </li></ul>因為在相同主機上和在相同的子網路中的容器之間的網路流量不會流動至實體主機，不會不取得強制執行網路原則。 網路原則適用於僅為跨主應用程式或跨子網路的容器的網路流量。 | *所有*兩個容器端點之間的網路流量轉送到實體的 HYPER-V 主機，無論主機或子網路。 網路原則套用到跨子網路和跨主應用程式網路流量。 |
+
+|                                                                                                                                                                                                                                                                            l2bridge                                                                                                                                                                                                                                                                            |                                                                                                 l2tunnel                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 容器上的端點： <ul><li>相同的容器裝載的虛擬機器，並在相同的子網路上已在 HYPER-V 虛擬交換器橋接所有的網路流量。 </li><li>不同的容器裝載虛擬機器，或在不同的子網路上有其轉送到實體 HYPER-V 主機的流量。 </li></ul>因為在相同主機上和在相同的子網路中的容器之間的網路流量不會流動至實體主機，不會不取得強制執行網路原則。 網路原則適用於僅為跨主應用程式或跨子網路的容器的網路流量。 | *所有*兩個容器端點之間的網路流量轉送到實體的 HYPER-V 主機，無論主機或子網路。 網路原則套用到跨子網路和跨主應用程式網路流量。 |
+
 ---
 
 >[!NOTE]
@@ -60,10 +62,10 @@ ms.locfileid: "59872739"
 ## <a name="workflow"></a>工作流程
 
 [1.將多個 IP 組態新增至現有 VM NIC 資源透過網路控制站 （HYPER-V 主機）](#1-add-multiple-ip-configurations)
-[2。啟用要配置的容器端點 （HYPER-V 主機） 的 CA IP 位址的主機上的網路 proxy ](#2-enable-the-network-proxy) 
- [3。安裝外掛程式，以便在將 CA IP 位址指派給容器端點 (容器主機 VM) 的私人雲端](#3-install-the-private-cloud-plug-in) 
- [4。建立*l2 橋接*或是*l2tunnel*使用 docker (容器主機 VM) 網路 ](#4-create-an-l2bridge-container-network)
- 
+[2。啟用要配置的容器端點 （HYPER-V 主機） 的 CA IP 位址的主機上的網路 proxy](#2-enable-the-network-proxy)
+[3。安裝外掛程式，以便在將 CA IP 位址指派給容器端點 (容器主機 VM) 的私人雲端](#3-install-the-private-cloud-plug-in)
+[4。建立*l2 橋接*或是*l2tunnel*使用 docker (容器主機 VM) 網路](#4-create-an-l2bridge-container-network)
+
 >[!NOTE]
 >透過 System Center Virtual Machine Manager 所建立的 VM NIC 資源不支援多個 IP 組態。 建議您使用這些部署類型，您會建立超出範圍使用網路控制站 PowerShell 的 VM NIC 資源。
 
@@ -101,10 +103,10 @@ foreach ($i in 1..10)
         $resourceid += "0$i"
         $ipstr = "192.168.1.10$i"
     }
-    
+
     $newipconfig.ResourceId = $resourceid
     $props.PrivateIPAddress = $ipstr    
-    
+
     $props.PrivateIPAllocationMethod = "Static"
     $props.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
     $props.Subnet.ResourceRef = $vmsubnet.ResourceRef

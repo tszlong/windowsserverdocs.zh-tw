@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ba7454f58255ba7a66624a5c59b062da9f871063
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0f4fb73941c5d6667d3c13356b6f29178d73788f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865939"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447679"
 ---
 # <a name="mirror-accelerated-parity"></a>鏡像加速的同位
 
@@ -100,12 +100,12 @@ ReFS 壓縮透過釋放鏡像中的空間來供經常存取的資料使用，解
 ### <a name="performance-counters"></a>效能計數器
 
 ReFS 維護效能計數器，協助評估鏡像加速同位的效能。 
--   如上方〈寫入同位〉章節所述，ReFS 在鏡像中找不到可用空間時，會直接寫入同位。 一般而言，當鏡像層的填滿速度比 ReFS 將資料循環至同位更快時，就會發生這種情形。 換句話說，ReFS 循環跟不上擷取率。 下方的效能計數器可識別 ReFS 直接寫入同位的時機：
-```
-ReFS\Data allocations slow tier/sec
-ReFS\Metadata allocations slow tier/sec
-```
--   如果這些計數器不是零，表示 ReFS 將資料循環出鏡像的速度不夠快。 若要協助改善此點，您可以變更循環積極程度或提高鏡像層的大小。
+- 如上方〈寫入同位〉章節所述，ReFS 在鏡像中找不到可用空間時，會直接寫入同位。 一般而言，當鏡像層的填滿速度比 ReFS 將資料循環至同位更快時，就會發生這種情形。 換句話說，ReFS 循環跟不上擷取率。 下方的效能計數器可識別 ReFS 直接寫入同位的時機：
+  ```
+  ReFS\Data allocations slow tier/sec
+  ReFS\Metadata allocations slow tier/sec
+  ```
+- 如果這些計數器不是零，表示 ReFS 將資料循環出鏡像的速度不夠快。 若要協助改善此點，您可以變更循環積極程度或提高鏡像層的大小。
 
 ### <a name="rotation-aggressiveness"></a>旋轉加強
 

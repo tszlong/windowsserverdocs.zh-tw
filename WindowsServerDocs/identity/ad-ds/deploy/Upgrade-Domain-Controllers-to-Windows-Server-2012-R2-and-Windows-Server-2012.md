@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e3b44dbc1c869680db91f5e9732a50504d80e7b8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 6dda30bd15bedab8ea5ca8ca2e9597e1cc196e43
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877499"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443049"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -76,7 +76,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 |-----------|---------------|  
 |[Workplace Join](https://technet.microsoft.com/library/dn280945.aspx)|可讓資訊工作者將其個人裝置與公司聯結，以存取公司資源和服務。|  
 |[Web 應用程式 Proxy](https://technet.microsoft.com/library/dn280942.aspx)|運用新的遠端存取角色服務提供 Web 應用程式的存取。|  
-|[Active Directory Federation Services](https://technet.microsoft.com/library/hh831502.aspx)|AD FS 簡化了部署與改良功能，讓使用者可以從個人裝置存取資源，並協助 IT 部門管理存取控制。|  
+|[Active Directory 同盟服務](https://technet.microsoft.com/library/hh831502.aspx)|AD FS 簡化了部署與改良功能，讓使用者可以從個人裝置存取資源，並協助 IT 部門管理存取控制。|  
 |[SPN 和 UPN 的唯一性](https://technet.microsoft.com/library/dn535779.aspx)|執行 Windows Server 2012 R2 的網域控制站會阻止建立重複的服務主體名稱 (Spn) 和使用者主體名稱 (Upn)。|  
 |[Winlogon 自動重新啟動登入 (ARSO)](https://technet.microsoft.com/library/dn535772.aspx)|讓鎖定螢幕應用程式可在 Windows 8.1 裝置上重新啟動並使用。|  
 |[TPM 金鑰證明](https://technet.microsoft.com/library/dn581921.aspx)|讓 CA 以密碼編譯方式證明發行的憑證中，憑證要求者私密金鑰實際上受信賴平台模組 (TPM) 的保護。|  
@@ -127,7 +127,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 |**案例**|**建議的設定**|  
 |**受管理的 WSUS**<br /><br />-安裝每週一次的更新<br />-重新啟動星期五晚上 11 點|設定機器自動安裝，防止在需要的時間之前重新開機<br /><br />**原則**：設定自動更新 (啟用)<br /><br />設定自動更新：4-自動下載和排程安裝<br /><br />**原則**：與登入的使用者 （停用） 不自動重新啟動<br /><br />**WSUS 期限**：設定為星期五晚上 11 點|  
 |**受管理的 WSUS**<br /><br />-安裝錯開於不同時間/不同天|為應該一起更新的不同電腦群組設定目標群組<br /><br />為先前的案例使用上述步驟<br /><br />為不同的目標群組設定不同期限|  
-|**非 WSUS 管理的-不支援期限**<br /><br />-安裝錯開於不同的時間|**原則**：設定自動更新 (啟用)<br /><br />設定自動更新：4-自動下載和排程安裝<br /><br />**登錄機碼：** 啟用 Microsoft 知識庫文章所述的登錄機碼[2835627](https://support.microsoft.com/kb/2835627)<br /><br />**原則：** 自動維護隨機延遲 (啟用)<br /><br />將 [定期維護隨機延遲] 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<br /><br />更新會安裝在已設定的維護時間加上隨機延遲<br /><br />-重新啟動每一部機器會進行 3 天後<br /><br />或者，為每個電腦群組設定不同的維護時間|  
+|**非 WSUS 管理的-不支援期限**<br /><br />-安裝錯開於不同的時間|**原則**：設定自動更新 (啟用)<br /><br />設定自動更新：4-自動下載和排程安裝<br /><br />**登錄機碼：** 啟用 Microsoft 知識庫文章所述的登錄機碼[2835627](https://support.microsoft.com/kb/2835627)<br /><br />**原則：** 自動維護隨機延遲 (啟用)<br /><br />將 [定期維護隨機延遲]  設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<br /><br />更新會安裝在已設定的維護時間加上隨機延遲<br /><br />-重新啟動每一部機器會進行 3 天後<br /><br />或者，為每個電腦群組設定不同的維護時間|  
 
 如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](http://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。  
 
@@ -150,8 +150,8 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
    - Adprep.exe 只有一個版本，可以視需要在執行 Windows Server 2008 或更新版本的 64 位元伺服器執行。 它可以在遠端執行，而且如果目標作業主機角色裝載在 32 位元作業系統或 Windows Server 2003 上，就必須要在遠端執行。  
 - **Dcpromo.exe 已被取代**
    - Dcpromo 已被取代，雖然 Windows Server 2012 中只有它仍然可以執行以回應檔案或命令列參數，讓組織有時間將現有的自動化轉換到新的 Windows PowerShell 安裝選項。  
--   **使用者帳戶停用 LMHash**
-   - Windows Server 2008、Windows Server 2008 R2 和 Windows Server 2012 安全性範本的安全預設會啟用 NoLMHash 原則，此原則在 Windows 2000 和 Windows Server 2003 網域控制站的安全性範本為停用。 可使用知識庫文章 [946405](https://support.microsoft.com/kb/946405)中的步驟，視需要停用與 LMHash 相依之用戶端的 NoLMHash 原則。  
+- **使用者帳戶停用 LMHash**
+  - Windows Server 2008、Windows Server 2008 R2 和 Windows Server 2012 安全性範本的安全預設會啟用 NoLMHash 原則，此原則在 Windows 2000 和 Windows Server 2003 網域控制站的安全性範本為停用。 可使用知識庫文章 [946405](https://support.microsoft.com/kb/946405)中的步驟，視需要停用與 LMHash 相依之用戶端的 NoLMHash 原則。  
 
 從 Windows Server 2008 開始，網域控制站也有下列安全預設設定，相較於執行 Windows Server 2003 或 Windows 2000 網域控制站。
 
@@ -283,7 +283,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 |-----------|---------|  
 |[Microsoft Configuration Manager 2007](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2007 含 SP2 (包含 Configuration Manager 2007 R2 和 Configuration Manager 2007 R3)：<br /><br />-   Windows 8 Pro<br />-Windows 8 企業版<br />-   Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter**附註：** 雖然這些都會提供完整支援做為用戶端，但並沒有規劃新增部署這些做為作業系統的支援 (使用 Configuration Manager 2007 作業系統部署功能)。 同時，也沒有任何 Windows Server 2012 的 SKU 支援站台伺服器或站台系統。|  
 |[Microsoft SharePoint 2007](https://support.microsoft.com/kb/2728964)|Microsoft Office SharePoint Server 2007 不能安裝在 Windows Server 2012 上。|  
-|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在  <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<br /><br />在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<br /><br />SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<br /><br />SharePoint Server 2010 必要條件安裝程式 (PrerequisiteInstaller.exe) 失敗，發生錯誤 「 此程式有相容性問題 」。 按一下 [執行而不取得說明的程式] 會顯示錯誤 「 正在驗證能否安裝 SharePoint &#124; SharePoint Server 2010 （不含 service pack) 無法安裝在 Windows Server 2012。 」|  
+|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在 <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<br /><br />在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<br /><br />SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<br /><br />SharePoint Server 2010 必要條件安裝程式 (PrerequisiteInstaller.exe) 失敗，發生錯誤 「 此程式有相容性問題 」。 按一下 [執行而不取得說明的程式] 會顯示錯誤 「 正在驗證能否安裝 SharePoint &#124; SharePoint Server 2010 （不含 service pack) 無法安裝在 Windows Server 2012。 」|  
 |[Microsoft SharePoint 2013](https://technet.microsoft.com/library/cc262485(v=office.15).aspx)|伺服器陣列中的資料庫伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<br /><br />含內建資料庫的單一伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<br /><br />伺服器陣列中的前端網頁伺服器和應用程式伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter。|  
 |[Microsoft System Center Configuration Manager 2012](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Configuration Manager Service Pack 1：<br /><br />Microsoft 會在發行 Service Pack 1 時，在我們的用戶端支援基礎新增下列作業系統：<br /><br />-   Windows 8 Pro<br />-Windows 8 企業版<br />-   Windows Server 2012 Standard<br />-   Windows Server 2012 Datacenter<br /><br />所有站台伺服器角色 (包含站台伺服器、SMS 提供者和管理點) 都可以部署在含下列作業系統版本的伺服器：<br /><br />-   Windows Server 2012 Standard<br />-   Windows Server 2012 Datacenter|  
 |[Microsoft Lync Server 2013](https://technet.microsoft.com/library/gg412883.aspx)|Lync Server 2013 需要搭配 Windows Server 2008 R2 或 Windows Server 2012。 它不能在 Server Core 安裝上執行， 可以在 [虛擬伺服器](https://technet.microsoft.com/library/gg399035.aspx)上執行。|  

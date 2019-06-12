@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 8053a14a74797cccce4c441d41f1f1623ba0ad6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 872647f09898bf8ae08ee69f28b717d28abf7c78
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879439"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447301"
 ---
 # <a name="manage-transport-layer-security-tls"></a>管理傳輸層安全性 (TLS)
 
@@ -39,22 +39,22 @@ ms.locfileid: "59879439"
 
 若要設定預設 TLS 加密套件順序，您可以使用 SSL 加密套件順序群組原則設定。
 
-1.  從 [群組原則管理] 主控台中，移至**電腦組態** > **系統管理範本** > **網路** >  **SSL 組態設定**。
-2.  按兩下**SSL 加密套件順序**，然後按一下**已啟用**選項。
-3.  以滑鼠右鍵按一下**SSL 加密套件**方塊，然後選取**選取所有**從快顯功能表。
+1. 從 [群組原則管理] 主控台中，移至**電腦組態** > **系統管理範本** > **網路** >  **SSL 組態設定**。
+2. 按兩下**SSL 加密套件順序**，然後按一下**已啟用**選項。
+3. 以滑鼠右鍵按一下**SSL 加密套件**方塊，然後選取**選取所有**從快顯功能表。
 
-    ![群組原則設定](../media/Transport-Layer-Security-protocol/ssl-cipher-suite-order-gp-setting.png)
+   ![群組原則設定](../media/Transport-Layer-Security-protocol/ssl-cipher-suite-order-gp-setting.png)
 
-4.  以滑鼠右鍵按一下選取的文字，然後選取**複製**從快顯功能表。
-5.  將文字貼到文字編輯器，例如 notepad.exe，並更新與新的加密套件順序 清單中。
+4. 以滑鼠右鍵按一下選取的文字，然後選取**複製**從快顯功能表。
+5. 將文字貼到文字編輯器，例如 notepad.exe，並更新與新的加密套件順序 清單中。
 
-    > [!NOTE]
-    > TLS 加密套件順序清單必須嚴格的逗號分隔格式。 每個加密套件字串會以逗號 （，） 到右邊，它的結尾。 
+   > [!NOTE]
+   > TLS 加密套件順序清單必須嚴格的逗號分隔格式。 每個加密套件字串會以逗號 （，） 到右邊，它的結尾。 
+   > 
+   > 此外，加密套件的清單是限制為 1023 個字元。
 
-    > 此外，加密套件的清單是限制為 1023 個字元。
-
-6.  取代列入**SSL 加密套件**與更新的已排序清單。
-7.  按一下 [**確定**] 或 [**套用**]。
+6. 取代列入**SSL 加密套件**與更新的已排序清單。
+7. 按一下 [**確定**] 或 [**套用**]。
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-mdm"></a>使用 MDM 設定 TLS 加密套件順序
 
@@ -124,7 +124,7 @@ Windows 無法使用具名的曲線之後系統管理員會從電腦移除曲線
 1.  在 Windows 10 和 Windows Server 2016 上，使用**certutil.exe** Windows 中加入新的已註冊具名的曲線。
 2.  從該相同的電腦，開啟群組原則管理主控台 (GPMC)，建立新的群組原則物件，並編輯它。
 3.  瀏覽至**電腦設定 |喜好設定 |Windows 設定 |登錄**。  以滑鼠右鍵按一下**登錄**。 將滑鼠停留**的新**，然後選取**收集項**。 重新命名以符合曲線名稱的集合項目。 您將建立一個登錄收集項目，每個登錄機碼底下*HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters*。
-4.  藉由加入新設定新建立的群組原則喜好設定登錄收集**登錄項目**下方所列的每個登錄值*HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters\[curveName]*。
+4.  藉由加入新設定新建立的群組原則喜好設定登錄收集**登錄項目**下方所列的每個登錄值*HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters\[curveName]* 。
 5.  部署群組原則物件，包含要應該會收到新的具名的曲線的 Windows 10 和 Windows Server 2016 電腦的群組原則登錄收集項目。
 
     ![GPP 散發曲線](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

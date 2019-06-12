@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: c775dd5a3011115bbb031c0b9e4e24a8911d378e
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 9038fd480ed105aed3949b0c48dffc7eab94f970
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63748401"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445891"
 ---
 # <a name="install-and-manage-extensions"></a>安裝和管理擴充功能
 
@@ -58,7 +58,7 @@ Windows Admin Center 支援多個摘要，而且您可以檢視和管理封裝�
 
 1. 在具有網際網路連線的另一部電腦，開啟網頁瀏覽器並瀏覽至下列 URL: [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
 
-  * 您可能需要建立帳戶，msft sme.myget.org 和登入若要檢視延伸模組套件。
+   * 您可能需要建立帳戶，msft sme.myget.org 和登入若要檢視延伸模組套件。
 
 2. 按一下您想要檢視套件詳細資料頁面安裝封裝的名稱。
 3. 按一下 **下載**連結套件詳細資料頁面的右側窗格中，並下載.nupkg 檔案延伸模組。

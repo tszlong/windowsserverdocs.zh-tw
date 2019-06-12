@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33fd9447a79346127714a5e5e73977611eba483c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c36475dacb8664352f4ab270878357118d281c60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829469"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446426"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>使用 DNS 原則以時間為基礎進行智慧型 DNS 回應
 
@@ -107,7 +107,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 #### <a name="bkmk_records"></a>將記錄新增至區域範圍  
 現在，您必須新增代表 web 伺服器主機的兩個區域範圍的記錄。  
   
-例如，在**SeattleZoneScope**，記錄**www.contosogiftservices.com**新增 IP 位址 192.0.0.1，位於西雅圖的資料中心。 同樣地，在**DublinZoneScope**，記錄**www.contosogiftservices.com**加上在都柏林的資料中心的 IP 位址 141.1.0.3  
+例如，在**SeattleZoneScope**，記錄<strong>www.contosogiftservices.com</strong>新增 IP 位址 192.0.0.1，位於西雅圖的資料中心。 同樣地，在**DublinZoneScope**，記錄<strong>www.contosogiftservices.com</strong>加上在都柏林的資料中心的 IP 位址 141.1.0.3  
   
 您可以使用下列 Windows PowerShell 命令，將記錄新增至區域範圍。  
   

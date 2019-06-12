@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59958481a7c832aca7bc25d7d4d3ebbf4e8ef80c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b582334d7b79b2badbb86818be1093b6a5f55080
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835039"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440810"
 ---
 # <a name="tskill"></a>tskill
 
@@ -36,6 +36,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 ```
 
 ## <a name="parameters"></a>參數
+
 |參數|描述|
 |-------|--------|
 |\<ProcessID>|指定您想要結束處理序的識別碼。|
@@ -47,19 +48,19 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   您可以使用**tskill**結束屬於您，這些處理序，除非您是系統管理員。 系統管理員具有完整存取權**tskill**函式，並可以結束處理程序在其他使用者工作階段中執行。
--   當所有工作階段中執行的處理序結束時，工作階段也會結束。
--   如果您使用*ProcessName*和 **/server: * * * ServerName*參數，您也必須指定 **/id: * * * SessionID*或  **/a**參數。
+- 您可以使用**tskill**結束屬於您，這些處理序，除非您是系統管理員。 系統管理員具有完整存取權**tskill**函式，並可以結束處理程序在其他使用者工作階段中執行。
+- 當所有工作階段中執行的處理序結束時，工作階段也會結束。
+- 如果您使用*ProcessName*並 **/server:** <em>ServerName</em>參數，您也必須指定其中一個 **/id:** <em>SessionID</em>或 **/a**參數。
 
 ## <a name="BKMK_examples"></a>範例
--   若要結束處理程序 6543，輸入：
-    ```
-    tskill 6543
-    ```
--   若要結束處理程序 「 總管 」 工作階段 5 上執行，請輸入：
-    ```
-    tskill explorer /id:5
-    ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)
+- 若要結束處理程序 6543，輸入：
+  ```
+  tskill 6543
+  ```
+- 若要結束處理程序 「 總管 」 工作階段 5 上執行，請輸入：
+  ```
+  tskill explorer /id:5
+  ```
+  #### <a name="additional-references"></a>其他參考資料
+  [命令列語法重點](command-line-syntax-key.md)
+  [遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)

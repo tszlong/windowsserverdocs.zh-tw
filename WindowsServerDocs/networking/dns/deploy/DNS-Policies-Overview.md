@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ad8fa904f43bb51871e5063eaddedd0762d54d95
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c4d8f9bb6c56e8f90a90cd4e77565a39211f719
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814299"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446433"
 ---
 # <a name="dns-policies-overview"></a>DNS 原則概觀
 
@@ -35,7 +35,7 @@ ms.locfileid: "59814299"
 ## <a name="new-concepts"></a>新的概念  
 若要建立原則，以支援以上所列的案例，就必須能夠識別群組的區域，而其他項目之間的網路上的用戶端群組中的記錄。 這些項目是由下列的新 DNS 物件表示：  
 
-- **用戶端的子網路：** 用戶端的子網路物件所表示的查詢會提交到 DNS 伺服器的 IPv4 或 IPv6 子網路。 您可以建立子網路，以稍後定義會根據所要求所來自的子網路套用的原則。 例如，在核心分裂 DNS 情況，例如名稱解析的要求*www.microsoft.com*可以回答內部 IP 位址給用戶端從內部的子網路，與不同的 IP 位址，在外部的用戶端子網路。
+- **用戶端的子網路：** 用戶端的子網路物件所表示的查詢會提交到 DNS 伺服器的 IPv4 或 IPv6 子網路。 您可以建立子網路，以稍後定義會根據所要求所來自的子網路套用的原則。 例如，在核心分裂 DNS 情況，例如名稱解析的要求<em>www.microsoft.com</em>可以回答內部 IP 位址給用戶端從內部的子網路，與不同的 IP 位址，在外部的用戶端子網路。
 
 - **遞迴範圍：** 遞迴領域都是唯一的執行個體的一組控制遞迴 DNS 伺服器上的設定。 遞迴範圍包含的轉寄站清單，並指定是否會啟用遞迴功能。 DNS 伺服器可以有許多的遞迴範圍。 DNS 伺服器遞迴原則可讓您選擇一組查詢的遞迴範圍。 如果 DNS 伺服器不是授權特定查詢，DNS 伺服器遞迴原則可讓您控制如何解決這些查詢。 您可以指定使用，以及是否使用遞迴的轉寄站。
 
@@ -44,11 +44,11 @@ ms.locfileid: "59814299"
 ## <a name="types-of-policy"></a>類型的原則
 
 DNS 原則會區分依層級和類型。 您可以使用查詢解析原則，以定義如何處理查詢，以及區域傳輸原則，以定義如何發生區域轉送。 您可以套用在伺服器層級或區域層級的每種原則類型。
-  
+
 ### <a name="query-resolution-policies"></a>查詢解析原則
 
 您可以使用 DNS 查詢解析原則來指定如何傳入查詢由 DNS 伺服器所處理的解決方法。 每個 DNS 查詢解析原則包含下列元素：  
-  
+
 |欄位|描述|可能值|  
 |---------|---------------|-------------------|  
 |**名稱**|原則名稱|-最多 256 個字元<br />-可以包含有效檔案名稱的任何字元|  
@@ -64,18 +64,19 @@ DNS 原則會區分依層級和類型。 您可以使用查詢解析原則，以
 
 DNS 原則準則欄位是由兩個項目所組成：
 
-|名稱|描述|範例值|
-|--------|---------------|-----------------|
-|**用戶端子網路**|預先定義的用戶端的子網路名稱。 用來驗證傳送查詢的子網路。|-   **EQ、 西班牙，法國**-解析為 true，如果子網路識別為西班牙或法國<br />-   **NE、 加拿大、 墨西哥**-解析為 true，如果用戶端的子網路是加拿大和墨西哥以外的任何子網路|  
-|**傳輸通訊協定**|傳輸通訊協定查詢中使用。 可能的項目都**UDP**和**TCP**|-   **EQ,TCP**<br />-   **EQ,UDP**|  
-|**網際網路通訊協定**|在查詢中使用的網路通訊協定。 可能的項目都**IPv4**和**IPv6**|-   **EQ,IPv4**<br />-   **EQ,IPv6**|  
-|**伺服器介面的 IP 位址**|內送的 DNS 伺服器網路介面的 IP 位址|-   **EQ,10.0.0.1**<br />-   **EQ,192.168.1.1**|  
-|**FQDN**|可能會使用萬用字元的 FQDN，在查詢中，記錄|-   **EQ、 www.contoso.com** -解析加到 rue 只当查詢正在嘗試解決*www.contoso.com* FQDN<br />-   **EQ、\*。 contoso.com\*。 woodgrove.com** -解析為 true，如果查詢是在結束任何記錄*contoso.com***或***woodgrove.com*|  
-|**查詢類型**|（A、 SVR、 TXT） 進行查詢的記錄類型|-   **EQ、 TXT、 SRV** -會解析為 true，如果查詢要求 TXT**或**SRV 記錄<br />-   **EQ、 MX** -解析為 true，如果查詢要求 MX 記錄|  
-|**當日時間**|在收到查詢的日期時間|-   **22:00-23:00、 10:00-12:00，EQ** -會解析為 true，如果查詢收到之間上午 10 點及中午**或**下午 10 點與下午 11 點|  
-  
+
+|              名稱               |                                         描述                                          |                                                                                                                               範例值                                                                                                                               |
+|---------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        **用戶端子網路**        | 預先定義的用戶端的子網路名稱。 用來驗證傳送查詢的子網路。 |                             -   **EQ、 西班牙，法國**-解析為 true，如果子網路識別為西班牙或法國<br />-   **NE、 加拿大、 墨西哥**-解析為 true，如果用戶端的子網路是加拿大和墨西哥以外的任何子網路                             |
+|     **傳輸通訊協定**      |        傳輸通訊協定查詢中使用。 可能的項目都**UDP**和**TCP**        |                                                                                                                    -   **EQ,TCP**<br />-   **EQ,UDP**                                                                                                                     |
+|      **網際網路通訊協定**      |        在查詢中使用的網路通訊協定。 可能的項目都**IPv4**和**IPv6**        |                                                                                                                   -   **EQ,IPv4**<br />-   **EQ,IPv6**                                                                                                                    |
+| **伺服器介面的 IP 位址** |                   內送的 DNS 伺服器網路介面的 IP 位址                   |                                                                                                              -   **EQ,10.0.0.1**<br />-   **EQ,192.168.1.1**                                                                                                              |
+|            **FQDN**             |            可能會使用萬用字元的 FQDN，在查詢中，記錄            | -   **EQ、 www.contoso.com** -解析加到 rue 只当查詢正在嘗試解決<em>www.contoso.com</em> FQDN<br />-   **EQ、\*。 contoso.com\*。 woodgrove.com** -解析為 true，如果查詢是在結束任何記錄*contoso.com***或***woodgrove.com* |
+|         **查詢類型**          |                          （A、 SVR、 TXT） 進行查詢的記錄類型                          |                                                  -   **EQ、 TXT、 SRV** -會解析為 true，如果查詢要求 TXT**或**SRV 記錄<br />-   **EQ、 MX** -解析為 true，如果查詢要求 MX 記錄                                                   |
+|         **當日時間**         |                              在收到查詢的日期時間                               |                                                                    -   **22:00-23:00、 10:00-12:00，EQ** -會解析為 true，如果查詢收到之間上午 10 點及中午**或**下午 10 點與下午 11 點                                                                    |
+
 使用上的表做為起點下, 表可用來定義用來比對任何類型的記錄，但來自 10.0.0.0/24 子網路中的用戶端透過 TCP 8 與透過下午 10 點之間的 contoso.com 網域中的 SRV 記錄的查詢準則我介面 10.0.0.3:  
-  
+
 |名稱|值|  
 |--------|---------|  
 |用戶端子網路|EQ,10.0.0.0/24|  
@@ -84,48 +85,48 @@ DNS 原則準則欄位是由兩個項目所組成：
 |FQDN|EQ,*.contoso.com|  
 |查詢類型|NE,SRV|  
 |當日時間|EQ,20:00-22:00|  
-  
+
 只要他們擁有的處理順序的不同值您可以建立指定多個查詢的相同層級，解決原則。 當多個原則可供使用時，DNS 伺服器會以下列方式處理傳入的查詢：  
-  
+
 ![DNS 原則處理](../../media/DNS-Policies-Overview/DNSQueryResolutionPolicyFlowchart.png)  
-  
+
 ### <a name="recursion-policies"></a>遞迴原則  
 遞迴原則是一種特殊**型別**伺服器層級原則。 遞迴原則來控制 DNS 伺服器執行遞迴查詢的方式。 遞迴原則適用於僅當查詢處理到達遞迴路徑。 您可以選擇一組查詢的遞迴的 DENY 或略過的值。 或者，您可以選擇一組的一組查詢的轉寄站。  
-  
+
 您可以使用的遞迴原則實作 Split-brain DNS 組態。 在此組態中，DNS 伺服器執行遞迴查詢，用戶端的一組當 DNS 伺服器不會執行該查詢的其他用戶端的遞迴。  
-  
+
 遞迴原則包含相同的項目包含一般的 DNS 查詢解析原則，以及下表中的項目：  
-  
+
 |名稱|描述|  
 |--------|---------------|  
 |**套用於遞迴**|指定此原則應該只使用遞迴。|  
 |**遞迴範圍**|遞迴領域的名稱。|  
-  
+
 > [!NOTE]  
 > 只能在伺服器層級建立遞迴原則。  
-  
+
 ### <a name="zone-transfer-policies"></a>區域傳輸原則  
 區域傳輸原則會控制是否允許區域轉送，或不是由您的 DNS 伺服器。 您可以在伺服器層級或區域層級建立原則的區域轉送。 伺服器層級原則會套用在 DNS 伺服器發生的每個區域轉送查詢。 區域層級原則僅套用於 DNS 伺服器上裝載的區域上的查詢。 區域層級原則的最常見用途是實作已封鎖 」 或 「 安全 」 清單。  
-  
+
 > [!NOTE]  
 > 區域傳輸原則只能使用拒絕或忽略做為動作。  
-  
+
 您可以使用伺服器層級的區域傳輸原則下，拒絕指定之子網路為 contoso.com 網域的區域轉送：  
-  
+
 ```  
 Add-DnsServerZoneTransferPolicy -Name DenyTransferOfContosoToFabrikam -Zone contoso.com -Action DENY -ClientSubnet "EQ,192.168.1.0/24"  
 ```  
-  
+
 只要他們擁有的處理順序的不同值您可以建立指定多個區域轉送的相同層級的原則。 當多個原則可供使用時，DNS 伺服器會以下列方式處理傳入的查詢：  
-  
+
 ![DNS 區域傳輸的多個原則的程序](../../media/DNS-Policies-Overview/DNSPolicyZone.png)  
-  
+
 ## <a name="managing-dns-policies"></a>DNS 的管理原則  
 您可以建立和使用 PowerShell 管理 DNS 原則。 下列範例會瀏覽不同的範例案例，您可以透過 DNS 原則設定：  
-  
+
 ### <a name="traffic-management"></a>流量管理  
 您可以將 FQDN，以根據 DNS 用戶端的位置不同的伺服器為基礎的流量。 下列範例示範如何建立管理原則來將客戶引導至北美的資料中心的特定子網路從和到歐洲資料中心的另一個子網路的流量。  
-  
+
 ```  
 Add-DnsServerClientSubnet -Name "NorthAmericaSubnet" -IPv4Subnet "172.21.33.0/24"  
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "172.17.44.0/24"  
@@ -136,52 +137,52 @@ Add-DnsServerResourceRecord -ZoneName "Contoso.com" -A -Name "www" -IPv4Address 
 Add-DnsServerQueryResolutionPolicy -Name "NorthAmericaPolicy" -Action ALLOW -ClientSubnet "eq,NorthAmericaSubnet" -ZoneScope "NorthAmericaZoneScope,1" -ZoneName "Contoso.com"  
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "EuropeZoneScope,1" -ZoneName contoso.com  
 ```  
-  
+
 前兩行指令碼會建立用戶端北美洲與歐洲的子網路物件。 在這之後的兩行建立 contoso.com 網域，其中每個區域內的區域範圍。 這兩行之後，將不同的 IP 位址、 一個用於歐洲、 北美洲的另一個 ww.contoso.com 每個區域中建立記錄。 最後，指令碼的最後一行會建立兩個 DNS 查詢解析原則，一個套用至北美地區的子網路，另一個則是歐洲子網路。  
-  
+
 ### <a name="block-queries-for-a-domain"></a>區塊查詢的網域  
 您可以使用封鎖查詢的 DNS 查詢解析原則至網域。 下列範例會封鎖所有 treyresearch.net 的查詢：  
-  
+
 ```  
 Add-DnsServerQueryResolutionPolicy -Name "BlackholePolicy" -Action IGNORE -FQDN "EQ,*.treyresearch.com"  
 ```  
-  
+
 ### <a name="block-queries-from-a-subnet"></a>從子網路的區塊查詢  
 您也可以封鎖來自特定子網路的查詢。 下列指令碼會建立 172.0.33.0/24 的子網路，並接著會建立原則，以忽略來自子網路的所有查詢：  
-  
+
 ```  
 Add-DnsServerClientSubnet -Name "MaliciousSubnet06" -IPv4Subnet 172.0.33.0/24  
 Add-DnsServerQueryResolutionPolicy -Name "BlackholePolicyMalicious06" -Action IGNORE -ClientSubnet  "EQ,MaliciousSubnet06"  
 ```  
-  
+
 ### <a name="allow-recursion-for-internal-clients"></a>允許遞迴內部的用戶端  
 您可以使用 DNS 查詢解析原則來控制遞迴。 下列範例可用來針對內部的用戶端，啟用遞迴功能，同時停用核心分裂情況中的外部用戶端。  
-  
+
 ```  
 Set-DnsServerRecursionScope -Name . -EnableRecursion $False   
 Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True  
 Add-DnsServerQueryResolutionPolicy -Name "SplitBrainPolicy" -Action ALLOW -ApplyOnRecursion -RecursionScope "InternalClients" -ServerInterfaceIP  "EQ,10.0.0.34"  
 ```  
-  
+
 指令碼中的第一行變更預設遞迴範圍，只是命名為"。"（點） 停用遞迴功能。 第二行則會建立名為的遞迴領域*InternalClients*使用遞迴已啟用。 第三行會建立要套用的原則和新建立的遞迴透過 server 介面具有 10.0.0.34 為 IP 位址傳入任何查詢的範圍。  
-  
+
 ### <a name="create-a-server-level-zone-transfer-policy"></a>建立伺服器層級的區域傳輸原則  
 您可以使用 DNS 區域傳輸原則來控制更細微的表單中的區域轉送。 下列範例指令碼可用來指定子網路上的任何伺服器允許區域轉送：  
-  
+
 ```  
 Add-DnsServerClientSubnet -Name "AllowedSubnet" -IPv4Subnet 172.21.33.0/24  
 Add-DnsServerZoneTransferPolicy -Name "NorthAmericaPolicy" -Action IGNORE -ClientSubnet "ne,AllowedSubnet"  
 ```  
-  
+
 指令碼中的第一行會建立名為的子網路物件*AllowedSubnet* ip 封鎖 172.21.33.0/24。 第二行建立區域傳輸原則以允許對任何 DNS 伺服器上先前建立的子網路的區域轉送。  
-  
+
 ### <a name="create-a-zone-level-zone-transfer-policy"></a>建立區域層級的區域傳輸原則  
 您也可以建立區域層級的區域傳輸原則。 下列範例會略過任何 contoso.com 來自 10.0.0.33 IP 位址的伺服器介面進行區域轉送要求：  
-  
+
 ```  
 Add-DnsServerZoneTransferPolicy -Name "InternalTransfers" -Action IGNORE -ServerInterfaceIP "ne,10.0.0.33" -PassThru -ZoneName "contoso.com"  
 ```  
-  
+
 ## <a name="dns-policy-scenarios"></a>DNS 原則案例
 
 如需如何使用 DNS 原則進行特定案例的資訊，請參閱本指南中的下列主題。

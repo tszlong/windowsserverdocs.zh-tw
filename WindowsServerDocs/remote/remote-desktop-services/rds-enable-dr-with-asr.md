@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e3f9db4afb37452b4fd5d0229b385492b915fe45
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7aa25602c71e5d114be7ae59c5e3ce168844d700
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859009"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446555"
 ---
 # <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>啟用使用 Azure Site Recovery 的 RDS 的災害復原
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016
 
 若要確保使用的 RDS 部署適當地設定災害復原，您需要保護所有的元件，可讓您的 RDS 部署：
 
@@ -29,7 +29,7 @@ ms.locfileid: "59859009"
 - SQL Server 層
 - RDS 元件
 - 網路元件
- 
+
 ## <a name="configure-active-directory-and-dns-replication"></a>設定 Active Directory 和 DNS 複寫
 
 您需要為您的 RDS 部署災害復原站台的 Active Directory 才能運作。 您有根據的複雜程度的 RDS 部署的兩個選擇：
@@ -47,9 +47,10 @@ ms.locfileid: "59859009"
 
 根據您的 RDS 部署類型中，您可以啟用 Azure Site Recovery 中 （如在下表中所列） 的不同元件 Vm 的保護。 設定相關的 Azure Site Recovery 元素根據您的 Vm 會部署 HYPER-V 或 VMWare 上。
 
-| 部署類型                              | 保護的步驟                                                                                                                                                                                      |
-|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| (Unmanaged) 的個人虛擬桌面         |  1.請確定所有虛擬化主機已準備安裝 RDVH 角色。    </br>2.連接代理程式。  </br>3.個人桌面。 </br>4.金級範本 VM。 </br>5.Web 存取，授權伺服器與閘道伺服器 |
-| （使用任何 UPD 管理） 的集區虛擬桌面 |  1.所有虛擬化主機準備安裝 RDVH 角色。  </br>2.連接代理程式。  </br>3.金級範本 VM。 </br>4.Web 存取，授權伺服器與閘道伺服器。                                  |
-| Remoteapp 和桌面工作階段 (沒有 UPD)     |  1.工作階段主機。  </br>2.連接代理程式。 </br>3.Web 存取，授權伺服器與閘道伺服器。                                                                                                          |                                                                                                                                      |
+
+|               部署類型                |                                                                                                     保護的步驟                                                                                                     |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     (Unmanaged) 的個人虛擬桌面     | 1.請確定所有虛擬化主機已準備安裝 RDVH 角色。    </br>2.連接代理程式。  </br>3.個人桌面。 </br>4.金級範本 VM。 </br>5.Web 存取，授權伺服器與閘道伺服器 |
+| （使用任何 UPD 管理） 的集區虛擬桌面 |                    1.所有虛擬化主機準備安裝 RDVH 角色。  </br>2.連接代理程式。  </br>3.金級範本 VM。 </br>4.Web 存取，授權伺服器與閘道伺服器。                    |
+|   Remoteapp 和桌面工作階段 (沒有 UPD)   |                                                          1.工作階段主機。  </br>2.連接代理程式。 </br>3.Web 存取，授權伺服器與閘道伺服器。                                                           |
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e9a2b2162fcf11385a5a866372e57338df87c541
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e9a5b397127e9eb88352fb4d7bc28955023d4b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850589"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447210"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>在命名空間上啟用存取型列舉
 
@@ -43,7 +43,7 @@ ms.locfileid: "59850589"
 
 ## <a name="to-enable-access-based-enumeration-by-using-the-windows-interface"></a>若要使用 Windows 介面啟用存取型列舉
 
-1.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於適當的命名空間上按一下滑鼠右鍵，再按一下 **\[內容\]**。
+1.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於適當的命名空間上按一下滑鼠右鍵，再按一下 **\[內容\]** 。
 
 2.  按一下 **\[進階\]** 索引標籤，然後選取 **\[啟用此命名空間的存取型列舉\]** 核取方塊。
 
@@ -64,13 +64,13 @@ ms.locfileid: "59850589"
 
 ## <a name="to-control-folder-visibility-by-using-the-windows-interface"></a>若要使用 Windows 介面控制資料夾可見性
 
-1.  在主控台的 **\[命名空間\]** 節點下方，找到您要控制可見性的含目標資料夾，以滑鼠右鍵按一下它，然後按一下 **\[屬性\]**。
+1.  在主控台的 **\[命名空間\]** 節點下方，找到您要控制可見性的含目標資料夾，以滑鼠右鍵按一下它，然後按一下 **\[屬性\]** 。
 
 2.  按一下 [**進階**] 索引標籤。
 
-3.  按一下 **\[設定 DFS 資料夾的明確檢視權限]**，然後按一下 **\[設定檢視權限\]**。
+3.  按一下 **\[設定 DFS 資料夾的明確檢視權限]** ，然後按一下 **\[設定檢視權限\]** 。
 
-4.  按一下 **\[新增\]** 或 **\[移除\]**，新增或移除群組或使用者。
+4.  按一下 **\[新增\]** 或 **\[移除\]** ，新增或移除群組或使用者。
 
 5.  若要允許使用者查看 DFS 資料夾，請選取群組或使用者，然後選取 **\[允許\]** 核取方塊。
 
@@ -78,15 +78,15 @@ ms.locfileid: "59850589"
 
 ## <a name="to-control-folder-visibility-by-using-a-command-line"></a>若要使用命令列控制資料夾可見性
 
-1.  在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
+1. 在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
 
-2.  輸入下列命令，其中*&lt;DFSPath&gt;* 是 DFS 資料夾 （連結），路徑 *< 網域\\帳戶 >* 是群組或使用者帳戶的名稱和 *（...）* 會取代其他的存取控制項目 (Ace):
+2. 輸入下列命令，其中 *&lt;DFSPath&gt;* 是 DFS 資料夾 （連結），路徑 *< 網域\\帳戶 >* 是群組或使用者帳戶的名稱和 *（...）* 會取代其他的存取控制項目 (Ace):
 
-    ```
-    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
-    ```
+   ```
+   dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
+   ```
 
-    例如，若要取代現有的使用權限，可讓 Domain Admins 和 CONTOSO\\訓練員群組 Read (R) 存取\\contoso.office\public\training 資料夾中，輸入下列命令：
+   例如，若要取代現有的使用權限，可讓 Domain Admins 和 CONTOSO\\訓練員群組 Read (R) 存取\\contoso.office\public\training 資料夾中，輸入下列命令：
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -104,6 +104,6 @@ ms.locfileid: "59850589"
 ## <a name="see-also"></a>另請參閱
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)
--   [委派管理 DFS 命名空間的權限](delegate-management-permissions-for-dfs-namespaces.md)
+-   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
 -   [安裝 DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
 -   [使用存取型列舉中的繼承的權限](using-inherited-permissions-with-access-based-enumeration.md)

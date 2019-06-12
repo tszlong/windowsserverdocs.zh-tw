@@ -12,12 +12,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 781ed17fb07d2aecd4bb0b7bc672056096ab8060
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e94659c62db574dc8779c8246d471ab401414ddb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837059"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435801"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>開始使用安裝與開機事件集合
 
@@ -135,7 +135,7 @@ ms.locfileid: "59837059"
   
 1.  在目標電腦上，啟動 Regedit.exe 並尋找此登錄機碼：  
   
-    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**. 各種記錄工作階段會列為此機碼底下的子機碼。 **\[Setup Platform\]**、**\[NT Kernel Logger\]** 和 **\[Microsoft-Windows-Setup\]** 都可能選擇來與「安裝與開機事件集合」搭配使用，但建議的選項是 **\[EventLog-System\]**。 這些機碼在[設定和啟動自動記錄工具工作階段](https://msdn.microsoft.com/library/windows/desktop/aa363687(v=vs.85).aspx)中有詳細說明。  
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**. 各種記錄工作階段會列為此機碼底下的子機碼。 **\[Setup Platform\]** 、 **\[NT Kernel Logger\]** 和 **\[Microsoft-Windows-Setup\]** 都可能選擇來與「安裝與開機事件集合」搭配使用，但建議的選項是 **\[EventLog-System\]** 。 這些機碼在[設定和啟動自動記錄工具工作階段](https://msdn.microsoft.com/library/windows/desktop/aa363687(v=vs.85).aspx)中有詳細說明。  
   
 2.  在 EventLog-System 機碼中，將 **LogFileMode** 的值從 **0x10000180** 變更為 **0x10080180**。 如需有關這些設定詳細資料的詳細資料，請參閱[記錄模式常數](https://msdn.microsoft.com/library/windows/desktop/aa364080(v=vs.85).aspx)。  
   
@@ -148,7 +148,7 @@ ms.locfileid: "59837059"
   
 ##### <a name="to-specify-a-network-adapter"></a>若要指定網路介面卡  
   
-1.  在目標電腦上，開啟 \[裝置管理員\]、展開 **\[網路介面卡\]**、尋找您要使用的網路介面卡，然後在其上按一下滑鼠右鍵。  
+1.  在目標電腦上，開啟 \[裝置管理員\]、展開 **\[網路介面卡\]** 、尋找您要使用的網路介面卡，然後在其上按一下滑鼠右鍵。  
   
 2.  在開啟的功能表，按一下**屬性**，然後按一下**詳細資料** 索引標籤。展開的功能表中**屬性**欄位中，捲動以尋找**位置資訊**（清單是可能不按照字母順序），然後按一下它。 值會是格式的字串**PCI 匯流排 X，Y 的裝置、 函式 Z**。請記下的 X.Y.Z;這些是您需要下列的命令匯流排參數。  
   
@@ -299,7 +299,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
 ## <a name="starting-the-event-collector-service"></a>啟動事件收集器服務  
 將有效的設定檔儲存在收集器電腦並設定好目標電腦之後，只要重新啟動目標電腦，就會立即對收集器進行連線並開始收集事件。  
   
-收集器服務本身的記錄 (這不同於服務所收集的安裝與開機資料) 可以在 Microsoft-Windows-BootEvent-Collector/Admin 底下找到。 如需事件的圖形化介面，請使用事件檢視器。 建立新的檢視；展開 **\[應用程式及服務記錄檔\]**，然後展開 **\[Microsoft\]** 和 **\[Windows\]**。 找到 **\[BootEvent-Collector\]**、將其展開，然後尋找 **\[Admin\]**。  
+收集器服務本身的記錄 (這不同於服務所收集的安裝與開機資料) 可以在 Microsoft-Windows-BootEvent-Collector/Admin 底下找到。 如需事件的圖形化介面，請使用事件檢視器。 建立新的檢視；展開 **\[應用程式及服務記錄檔\]** ，然後展開 **\[Microsoft\]** 和 **\[Windows\]** 。 找到 **\[BootEvent-Collector\]** 、將其展開，然後尋找 **\[Admin\]** 。  
 
 -   使用 Windows PowerShell: `Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin`  
   
@@ -311,7 +311,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
   
 ||錯誤|錯誤描述|徵兆|潛在問題|  
 |-|---------|---------------------|-----------|---------------------|  
-|Dism.exe|87|功能名稱選項在此內容中無法辨識||- 如果拼錯功能名稱，即可能發生此情況。 確認您的拼字正確無誤，然後再試一次。<br />- 確認此功能可在您使用中的作業系統版本上使用。 在 Windows PowerShell 中，執行 **dism /online /get-features &#124; ?{$_ -match "boot"}**。 如果沒有傳回相符項目，您可能執行的是不支援此功能的版本。|  
+|Dism.exe|87|功能名稱選項在此內容中無法辨識||- 如果拼錯功能名稱，即可能發生此情況。 確認您的拼字正確無誤，然後再試一次。<br />- 確認此功能可在您使用中的作業系統版本上使用。 在 Windows PowerShell 中，執行 **dism /online /get-features &#124; ?{$_ -match "boot"}** 。 如果沒有傳回相符項目，您可能執行的是不支援此功能的版本。|  
 |Dism.exe|0x800f080c|功能\<名稱 > 不明。||與上述相同|  
   
 ### <a name="troubleshooting-the-collector"></a>收集器疑難排解  
@@ -335,23 +335,23 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
       
  **若要疑難排解收集器的建議的方法：**  
    
- 1. 首先，確認收集器已接收到目標的連線 (只有在目標開始傳送訊息時，才會建立檔案)   
-```  
-Get-SbecForwarding  
-```  
-如果傳回的訊息應表示有來自此目標的連線，則問題可能出在自動記錄工具設定。 如果沒有傳回任何訊息，問題在於要開始使用的 KDNET 連線。 若要診斷 KDNET 連線問題，請嘗試檢查兩端的連線 (亦即來自收集器和來自目標的連線)。  
+1. 首先，確認收集器已接收到目標的連線 (只有在目標開始傳送訊息時，才會建立檔案)   
+   ```  
+   Get-SbecForwarding  
+   ```  
+   如果傳回的訊息應表示有來自此目標的連線，則問題可能出在自動記錄工具設定。 如果沒有傳回任何訊息，問題在於要開始使用的 KDNET 連線。 若要診斷 KDNET 連線問題，請嘗試檢查兩端的連線 (亦即來自收集器和來自目標的連線)。  
   
 2. 若要確認擴充的診斷從收集器，將此選項可\<收集器 > 組態檔的項目：  
-\<collector ... minlog="verbose">  
-這會允許提供有關每個收到封包的訊息。  
+   \<collector ... minlog="verbose">  
+   這會允許提供有關每個收到封包的訊息。  
 3. 檢查是否任何封包都收到了。 或者，您可能還需要在詳細資訊模式下將記錄直接寫入記錄檔，而不是透過 ETW 來查看。 若要這樣做，請將此選項可\<收集器 > 組態檔的項目：  
-\<collector ... minlog="verbose" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
+   \<collector ... minlog="verbose" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
       
 4. 檢查事件記錄檔是否有關於所收到封包的資訊。 檢查是否任何封包都收到了。 如果封包已收到但不正確，請檢查事件訊息以取得詳細資料。  
 5. KDNET 會從目標端將一些診斷資訊寫入至登錄。 查詢   
-**HKLM\SYSTEM\CurrentControlSet\Services\kdnet** 是否有訊息。  
-  KdInitStatus (DWORD) 在成功時為 0，而錯誤時，則顯示錯誤碼  
-  KdInitErrorString = 錯誤的說明 (如果沒有錯誤，也會包含參考訊息)  
+   **HKLM\SYSTEM\CurrentControlSet\Services\kdnet** 是否有訊息。  
+   KdInitStatus (DWORD) 在成功時為 0，而錯誤時，則顯示錯誤碼  
+   KdInitErrorString = 錯誤的說明 (如果沒有錯誤，也會包含參考訊息)  
   
 6. 對目標執行 Ipconfig.exe，並檢查其回報的裝置名稱。 如果 KDNET 正確載入，裝置名稱應該類似 "kdnic" 這樣，而不是原始廠商的介面卡名稱。  
 7. 檢查是否已為目標設定 DHCP。 KDNET 絕對需要 DHCP。  

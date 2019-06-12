@@ -11,12 +11,12 @@ ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
 author: KBDAzure
 ms.author: kathydav
 ms.date: 01/17/2017
-ms.openlocfilehash: a33912e09d664296f6eda964c40177353718d49c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9be61fbc860e9d8c5cbc020d6dd4082722e32509
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851539"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812094"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>使用沒有容錯移轉叢集的即時移轉來移動虛擬機器
 
@@ -28,11 +28,13 @@ ms.locfileid: "59851539"
 
 - 使用者帳戶是本機 HYPER-V Administrators 群組或在來源和目的地電腦上的 Administrators 群組的成員。 
   
-- 在 Windows Server 2016 或 Windows Server 2012 R2 中的 HYPER-V 角色安裝在來源和目的地伺服器上，並設定為即時移轉。 您可以執行即時移轉虛擬機器至少為執行 Windows Server 2016 和 Windows Server 2012 R2 的主機之間第 5 版。 <br>版本升級的指示，請參閱[更新虛擬機器版本，在 Windows 10 或 Windows Server 2016 的 HYPER-V 中](..\deploy\Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 如需安裝指示，請參閱[設定即時移轉的主機](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)。 
-  
+- 在 Windows Server 2016 或 Windows Server 2012 R2 中的 HYPER-V 角色安裝在來源和目的地伺服器上，並設定為即時移轉。 您可以執行即時移轉虛擬機器至少為執行 Windows Server 2016 和 Windows Server 2012 R2 的主機之間第 5 版。
+
+    版本升級的指示，請參閱[更新虛擬機器版本，在 Windows 10 或 Windows Server 2016 的 HYPER-V 中](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 如需安裝指示，請參閱[設定即時移轉的主機](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)。
+
 - 除非來源或目的地伺服器上安裝工具，在執行 Windows Server 2016 或 Windows 10 的電腦上安裝 HYPER-V 管理工具會將它們從該處執行。  
    
-## <a name="BKMK_Step3"></a>使用 HYPER-V 管理員，移動執行中虛擬機器  
+## <a name="use-hyper-v-manager-to-move-a-running-virtual-machine"></a>使用 HYPER-V 管理員，移動執行中虛擬機器  
   
 1.  開啟 \[Hyper-V 管理員\]。 (從 [伺服器管理員] 中，按一下**工具** >>**HYPER-V 管理員**。)  
   
@@ -42,7 +44,7 @@ ms.locfileid: "59851539"
   
 4.  您可以使用精靈頁面來選擇移動、 目的地伺服器和選項的類型。
   
-5.  在 [摘要] 頁面上檢視您的選擇，然後按一下 [完成]。  
+5.  在 [摘要]  頁面上檢視您的選擇，然後按一下 [完成]  。  
 
 ## <a name="use-windows-powershell-to-move-a-running-virtual-machine"></a>使用 Windows PowerShell 來移動執行中虛擬機器
   
@@ -74,10 +76,10 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 1. 從 HYPER-V 管理員] 中，在**虛擬機器**] 窗格中，以滑鼠右鍵按一下 [虛擬機器，然後按一下 [設定。
 2. 在 [導覽] 窗格中，依序展開**處理器**然後按一下**相容性**。
 3. 請檢查**移轉至具有不同處理器版本的電腦**。
-4. 按一下 [確定] 。
+4. 按一下 [確定]  。
  
- 若要使用 Windows PowerShell，使用[Set-vmprocessor](https://technet.microsoft.com/library/hh848533.aspx) cmdlet:
+   若要使用 Windows PowerShell，使用[Set-vmprocessor](https://technet.microsoft.com/library/hh848533.aspx) cmdlet:
  
-  ```
-  PS C:\> Set-VMProcessor TestVM -CompatibilityForMigrationEnabled $true
-  ```
+   ```
+   PS C:\> Set-VMProcessor TestVM -CompatibilityForMigrationEnabled $true
+   ```

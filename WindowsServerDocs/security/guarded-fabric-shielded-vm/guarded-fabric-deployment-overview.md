@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: d63726e7046896c9ef7aa0c3b3d85237bc3f788d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e1ef34370b1459cd55705bc0069b49a572de303
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879059"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447537"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>受防護網狀架構部署的快速入門
 
@@ -107,7 +107,7 @@ TPM 模式中，三個項目則是必要項目：
 
 1.  A_公開簽署金鑰_(或_EKpub_) 從每個 HYPER-V 主機上的 TPM 2.0。 若要擷取 EKpub，使用`Get-PlatformIdentifier`。 
 2.  A_硬體基準_。 如果每個 HYPER-V 主機的完全相同，則單一的基準。 您只需要 如果他們不這樣做，則您必須另一個用於硬體的每個類別。 高可信度電腦運算小組記錄檔，或 TCGlog 的格式為基準。 TCGlog 包含 UEFI 韌體，透過核心，至於其中完全啟動主機從主機執行的所有項目。 若要擷取硬體基準，安裝 HYPER-V 角色和 「 主機守護者 HYPER-V 支援功能，並使用`Get-HgsAttestationBaselinePolicy`。 
-3.  A_程式碼完整性原則_。 如果每個 HYPER-V 主機的完全相同，則單一的 CI 原則。 您只需要 如果他們不這樣做，則您必須另一個用於硬體的每個類別。 Windows Server 2016 和 Windows 10 有新形式的 CI 原則，稱為 「 強制_hvci 施行 Hypervisor 程式碼完整性 （原則）_。 Hvci 原則提供增強的強制，並可確保，主機只允許執行信任的系統管理員允許它執行的二進位檔。 這些指示會包裝在新增至 HGS 的 CI 原則。 HGS 會測量每一部主機的 CI 原則之前它們要允許執行受防護的 Vm。 若要擷取的 CI 原則，請使用`New-CIPolicy`。 原則必須再轉換成其二進位格式使用`ConvertFrom-CIPolicy`。
+3.  A_程式碼完整性原則_。 如果每個 HYPER-V 主機的完全相同，則單一的 CI 原則。 您只需要 如果他們不這樣做，則您必須另一個用於硬體的每個類別。 Windows Server 2016 和 Windows 10 有新形式的 CI 原則，稱為 「 強制_hvci 施行 Hypervisor 程式碼完整性 （原則）_ 。 Hvci 原則提供增強的強制，並可確保，主機只允許執行信任的系統管理員允許它執行的二進位檔。 這些指示會包裝在新增至 HGS 的 CI 原則。 HGS 會測量每一部主機的 CI 原則之前它們要允許執行受防護的 Vm。 若要擷取的 CI 原則，請使用`New-CIPolicy`。 原則必須再轉換成其二進位格式使用`ConvertFrom-CIPolicy`。
 
 ![擷取身分識別、 基準和 CI 原則](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 
@@ -165,5 +165,5 @@ Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
 
 ## <a name="next-step"></a>後續步驟
 
->[!div class="nextstepaction"]
-[HGS 必要條件](guarded-fabric-prepare-for-hgs.md)
+> [!div class="nextstepaction"]
+> [HGS 必要條件](guarded-fabric-prepare-for-hgs.md)

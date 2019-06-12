@@ -12,20 +12,20 @@ ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7fed7e71f7ac163437fe5d32da7c867f93fbcf00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bc83686f76c49773203d63a88894841f65ffd1d9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869969"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433767"
 ---
-#<a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials 中的新功能
+# <a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials 中的新功能
 
 > 適用於：Windows Server 2016 Essentials
 
 以下是新增和增強的 Windows Server 2016 Essentials 中的功能。
 
-##<a name="integration-with-azure-site-recovery-servicesazure-site-recovery-services-integrationmd"></a>[使用 Azure Site Recovery 服務的整合](azure-site-recovery-services-integration.md)
+## <a name="integration-with-azure-site-recovery-servicesazure-site-recovery-services-integrationmd"></a>[使用 Azure Site Recovery 服務的整合](azure-site-recovery-services-integration.md)
 
 **其用途**-虛擬機器的保護失敗，或主機伺服器上失敗，容錯移轉與 Azure Site Recovery 服務的受保護的虛擬機器執行維護業務續航力之前在內部部署虛擬機器時或修復和可用主機伺服器。 
 
@@ -40,7 +40,7 @@ ms.locfileid: "59869969"
 
 
 
-##<a name="support-for-larger-deploymentssupport-for-larger-deploymentsmd"></a>[支援較大的部署](support-for-larger-deployments.md) 
+## <a name="support-for-larger-deploymentssupport-for-larger-deploymentsmd"></a>[支援較大的部署](support-for-larger-deployments.md) 
 
 有些較大的小型企業會需要更多的功能和容量，以有效地實作 Windows Server Essentials。 Windows Server 2016 Essentials 藉由新增支援較大的部署，但有提供增強的管理能力的網域、 使用者和裝置：                                                                                                                                                                                                 
 

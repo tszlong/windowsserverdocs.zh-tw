@@ -14,12 +14,12 @@ ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d39dc6a4dcf5dca8186b0599fb479ed5ae684e0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a6af3cbd038e97d889269b83d72c77c50680e513
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856249"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446177"
 ---
 # <a name="troubleshooting-nic-teaming"></a>對 NIC 小組進行疑難排解
 
@@ -44,7 +44,7 @@ ms.locfileid: "59856249"
 
 NIC 小組失敗的常見原因是，小組介面已停用，在許多情況下，不小心執行一連串的命令時。  這一系列特定的命令不會啟用所有停用，因為停用所有基礎的實體成員的 Nic 移除 NIC 小組介面 NetAdapters。 
 
-在此情況下，NIC 小組介面不會再顯示在 Get-netadapter，，因為這個緣故，**啟用 NetAdapter \*** 不會啟用 NIC 小組。 **啟用 NetAdapter \*** 命令，不過，啟用的成員 Nic，然後 （短時間） 之後會重新建立小組介面。 小組介面會保留在 「 停用 」 狀態，直到重新啟用，允許網路流量，以開始流動。 
+在此情況下，NIC 小組介面不會再顯示在 Get-netadapter，，因為這個緣故，**啟用 NetAdapter \\** * 不會啟用 NIC 小組。 **啟用 NetAdapter \\** * 命令，不過，啟用的成員 Nic，然後 （短時間） 之後會重新建立小組介面。 小組介面會保留在 「 停用 」 狀態，直到重新啟用，允許網路流量，以開始流動。 
 
 下列 Windows PowerShell 的命令順序可能會不小心停用 team 介面：  
   

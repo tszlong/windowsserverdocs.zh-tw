@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 769a4165cfd82056a904c79c41e96fb666d05e43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d4cdcd11e0eb334064ddefec0eda775ffccff2c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842269"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446477"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>部署 802.1 X 有線和無線部署的伺服器憑證
 
@@ -66,8 +66,8 @@ ms.locfileid: "59842269"
 本指南提供如何部署 Windows Server 2016 中使用 AD CS 和網頁伺服器 (IIS) 伺服器角色的伺服器憑證的指示。 以下是本指南中執行的程序的必要條件。  
 
 - 您必須部署核心網路使用 Windows Server 2016 核心網路指南，或您必須已安裝且您的網路上運作正常，才會進行核心網路指南中提供的技術。 這些技術包括 TCP/IP v4，DHCP，Active Directory 網域服務 (AD DS)、 DNS 及 NPS。  
->[!NOTE]
->Windows Server 2016 核心網路指南位於 Windows Server 2016 技術文件庫。 如需詳細資訊，請參閱 <<c0> [ 核心網路指南](../../../core-network-guide/Core-Network-Guide.md)。
+  >[!NOTE]
+  >Windows Server 2016 核心網路指南位於 Windows Server 2016 技術文件庫。 如需詳細資訊，請參閱 <<c0> [ 核心網路指南](../../../core-network-guide/Core-Network-Guide.md)。
 
 - 您必須閱讀本指南，以確保您已準備此部署在執行部署之前規劃一節。  
 - 您必須在本指南中在其中出現的順序執行步驟。 請勿往前跳並部署您的 CA，沒有執行到部署伺服器或您的部署的步驟將會失敗。  

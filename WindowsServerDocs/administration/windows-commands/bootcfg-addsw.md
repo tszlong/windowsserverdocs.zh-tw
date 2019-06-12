@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 768e9c5bcf8a5d272927d013ff4accf5c3237219
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a056cec15bf804dafed4c4d39a80386e58c87fea
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862869"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434878"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
@@ -31,17 +31,19 @@ ms.locfileid: "59862869"
 bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumRAM>] [/bv] [/so] [/ng] /id <OSEntryLineNum>
 ```
 ## <a name="parameters"></a>參數
-|詞彙|定義|
-|----|-------|
-|/s <computer>|指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。|
-|/u <Domain>\\<User>|使用指定的使用者帳戶權限執行命令<User>或是<Domain> \\ <User>。 預設值是目前登入的使用者發出命令的電腦上的權限。|
-|/p <Password>|指定在指定的使用者帳戶的密碼 **/u**參數。|
-|/mm <MaximumRAM>|指定最大的 RAM 數量，以 mb 為單位，可以使用的作業系統。 值必須等於或大於 32 Mb。|
-|/bv|新增 **/basevideo**選項設為指定<OSEntryLineNum>，將導向作業系統使用標準的 VGA 模式來安裝的視訊驅動程式。|
-|/so|新增 **/sos**選項設為指定*OSEntryLineNum*，導向至顯示裝置驅動程式名稱，而正在載入作業系統。|
-|/ng|新增 **/noguiboot**選項設為指定<OSEntryLineNum>，停用出現之前 CTRL + ALT + del 登入提示的進度列。|
-|/id <OSEntryLineNum>|Boot.ini 檔案加入作業系統載入選項的 [operating systems] 區段中指定的作業系統項目行號。 [Operating systems] 區段標頭之後的第一行會是 1。|
-|/?|在命令提示字元顯示說明。|
+
+|         詞彙         |                                                                                                            定義                                                                                                            |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /s <computer>     |                                                        指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。                                                        |
+| /u <Domain>\\<User>  |               使用指定的使用者帳戶權限執行命令<User>或是<Domain> \\ <User>。 預設值是目前登入的使用者發出命令的電腦上的權限。               |
+|    /p <Password>     |                                                                      指定在指定的使用者帳戶的密碼 **/u**參數。                                                                       |
+|   /mm <MaximumRAM>   |                                          指定最大的 RAM 數量，以 mb 為單位，可以使用的作業系統。 值必須等於或大於 32 Mb。                                          |
+|         /bv          |                                    新增 **/basevideo**選項設為指定<OSEntryLineNum>，將導向作業系統使用標準的 VGA 模式來安裝的視訊驅動程式。                                     |
+|         /so          |                                      新增 **/sos**選項設為指定*OSEntryLineNum*，導向至顯示裝置驅動程式名稱，而正在載入作業系統。                                      |
+|         /ng          |                                         新增 **/noguiboot**選項設為指定<OSEntryLineNum>，停用出現之前 CTRL + ALT + del 登入提示的進度列。                                          |
+| /id <OSEntryLineNum> | Boot.ini 檔案加入作業系統載入選項的 [operating systems] 區段中指定的作業系統項目行號。 [Operating systems] 區段標頭之後的第一行會是 1。 |
+|          /?          |                                                                                               在命令提示字元顯示說明。                                                                                               |
+
 ## <a name="BKMK_examples"></a>範例
 下列範例示範如何使用**bootcfg /addsw**命令：
 ```

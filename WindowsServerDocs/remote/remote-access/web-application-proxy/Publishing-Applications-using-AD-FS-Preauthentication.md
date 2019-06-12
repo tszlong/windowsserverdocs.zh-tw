@@ -8,12 +8,12 @@ ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: web-app-proxy
-ms.openlocfilehash: c7dab1dbf97d2dcbda1fe0375e61300f2a1cc373
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca4d8661f8f0252334bdecbde85603d8af5e2d2a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862239"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446817"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>使用 AD FS 預先驗證發佈應用程式
 
@@ -101,34 +101,34 @@ ms.locfileid: "59862239"
   
 1.  在 Web 應用程式 Proxy 伺服器上，在遠端存取管理主控台中，在**瀏覽**窗格中，按一下**Web 應用程式 Proxy**，然後在**工作** 窗格中，按一下**發佈**。  
   
-2.  在 [發行新應用程式精靈] 的 [歡迎] 頁面上，按 [下一步]。  
+2.  在 [發行新應用程式精靈]  的 [歡迎]  頁面上，按 [下一步]  。  
   
-3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)**，然後按一下**下一步]**。  
+3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)** ，然後按一下**下一步]** 。  
   
-4.  在 [支援的用戶端] 頁面上，選取 [Web 和 MSOFBA]，然後按 [下一步]。  
+4.  在 [支援的用戶端]  頁面上，選取 [Web 和 MSOFBA]  ，然後按 [下一步]  。  
   
-5.  在 [信賴憑證者] 頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]。  
+5.  在 [信賴憑證者]  頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]  。  
   
-6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步] ：  
+6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步]  ：  
   
-    -   在 [名稱] 方塊中，輸入易記的應用程式名稱。  
+    -   在 [名稱]  方塊中，輸入易記的應用程式名稱。  
   
         這個名稱僅用於 [遠端存取管理] 主控台中已發行應用程式的清單中。  
   
-    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://sp.contoso.com/app1/。  
+    -   在 [外部 URL]  方塊中，輸入這個應用程式的外部 URL，例如 https://sp.contoso.com/app1/。  
   
     -   在 [外部憑證]  清單中，選取主體涵蓋外部 URL 的憑證。  
   
-    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值比方說， https://sp/app1/。  
+    -   在 [後端伺服器 URL]  方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值比方說， https://sp/app1/。  
   
         > [!NOTE]  
         > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但是不能轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入外部 URL https://apps.contoso.com/app1/以及後端伺服器 URL 的 https://app-server/app1/。 不過，您無法在此輸入的外部 URL https://apps.contoso.com/app1/以及後端伺服器 URL 的 https://apps.contoso.com/internal-app1/。  
   
-7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行] 。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
+7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行]  。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
   
-8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
+8.  在 [結果]  頁面上，確認已成功發行應用程式，然後按一下 [關閉]  。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -181,36 +181,36 @@ Web 應用程式 Proxy 可以用來發行使用整合式 Windows 驗證，應用
   
 1.  在 Web 應用程式 Proxy 伺服器上，在遠端存取管理主控台中，在**瀏覽**窗格中，按一下**Web 應用程式 Proxy**，然後在**工作** 窗格中，按一下**發佈**。  
   
-2.  在 [發行新應用程式精靈] 的 [歡迎] 頁面上，按 [下一步]。  
+2.  在 [發行新應用程式精靈]  的 [歡迎]  頁面上，按 [下一步]  。  
   
-3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)**，然後按一下**下一步]**。  
+3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)** ，然後按一下**下一步]** 。  
   
-4.  在 [支援的用戶端] 頁面上，選取 [Web 和 MSOFBA]，然後按 [下一步]。  
+4.  在 [支援的用戶端]  頁面上，選取 [Web 和 MSOFBA]  ，然後按 [下一步]  。  
   
-5.  在 [信賴憑證者] 頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]。  
+5.  在 [信賴憑證者]  頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]  。  
   
-6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步] ：  
+6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步]  ：  
   
-    -   在 [名稱] 方塊中，輸入易記的應用程式名稱。  
+    -   在 [名稱]  方塊中，輸入易記的應用程式名稱。  
   
         這個名稱僅用於 [遠端存取管理] 主控台中已發行應用程式的清單中。  
   
-    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://owa.contoso.com/。  
+    -   在 [外部 URL]  方塊中，輸入這個應用程式的外部 URL，例如 https://owa.contoso.com/。  
   
     -   在 [外部憑證]  清單中，選取主體涵蓋外部 URL 的憑證。  
   
-    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值比方說， https://owa/。  
+    -   在 [後端伺服器 URL]  方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值比方說， https://owa/。  
   
         > [!NOTE]  
         > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但是不能轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入外部 URL https://apps.contoso.com/app1/以及後端伺服器 URL 的 https://app-server/app1/。 不過，您無法在此輸入的外部 URL https://apps.contoso.com/app1/以及後端伺服器 URL 的 https://apps.contoso.com/internal-app1/。  
   
     -   在 [後端伺服器 SPN]  方塊中，輸入後端伺服器的服務主體名稱，例如，HTTP/owa.contoso.com。  
   
-7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行] 。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
+7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行]  。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
   
-8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
+8.  在 [結果]  頁面上，確認已成功發行應用程式，然後按一下 [關閉]  。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -235,7 +235,7 @@ Web 應用程式 Proxy 支援從 Microsoft Office 用戶端，例如 Microsoft W
   
 以下說明使用 MS OFBA 通訊協定使用宣告式驗證的用戶端的驗證流程。 這個案例的驗證可以在 URL 或內文中使用應用程式權杖。  
   
-1.  使用者正在使用 Office 程式，他從 [最近的文件] 清單中，開啟 SharePoint 網站上的一個檔案。  
+1.  使用者正在使用 Office 程式，他從 [最近的文件]  清單中，開啟 SharePoint 網站上的一個檔案。  
   
 2.  Office 程式會顯示一個包含瀏覽控制項的視窗，要求使用者輸入認證。  
   
@@ -284,19 +284,19 @@ HTTP 基本驗證是許多通訊協定，用來連接豐富型用戶端，包括
   
 1.  在 Web 應用程式 Proxy 伺服器上，在遠端存取管理主控台中，在**瀏覽**窗格中，按一下**Web 應用程式 Proxy**，然後在**工作** 窗格中，按一下**發佈**。  
   
-2.  在 [發行新應用程式精靈] 的 [歡迎] 頁面上，按 [下一步]。  
+2.  在 [發行新應用程式精靈]  的 [歡迎]  頁面上，按 [下一步]  。  
   
-3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)**，然後按一下**下一步]**。  
+3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)** ，然後按一下**下一步]** 。  
   
 4.  在 **支援的用戶端**頁面上，選取**HTTP 基本**，然後按一下 **下一步**。  
   
     如果您想要啟用對 Exchange 的存取，只能從已加入工作場所的裝置，請選取**啟用存取，只會針對工作場所加入裝置** 方塊中。 如需詳細資訊，請參閱[從任何裝置加入工作地點網路提供 SSO 和無縫式第二個因素 Authentication Across Company Applications](https://technet.microsoft.com/library/dn280945.aspx)。  
   
-5.  在 [信賴憑證者] 頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]。 請注意，此清單僅包含上宣告信賴憑證者的合作對象。  
+5.  在 [信賴憑證者]  頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]  。 請注意，此清單僅包含上宣告信賴憑證者的合作對象。  
   
-6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步] ：  
+6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步]  ：  
   
-    -   在 [名稱] 方塊中，輸入易記的應用程式名稱。  
+    -   在 [名稱]  方塊中，輸入易記的應用程式名稱。  
   
         這個名稱僅用於 [遠端存取管理] 主控台中已發行應用程式的清單中。  
   
@@ -304,13 +304,13 @@ HTTP 基本驗證是許多通訊協定，用來連接豐富型用戶端，包括
   
     -   在 [外部憑證]  清單中，選取主體涵蓋外部 URL 的憑證。  
   
-    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值例如，mail.contoso.com。  
+    -   在 [後端伺服器 URL]  方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值例如，mail.contoso.com。  
   
-7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行] 。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
+7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行]  。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
   
-8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
+8.  在 [結果]  頁面上，確認已成功發行應用程式，然後按一下 [關閉]  。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -347,7 +347,7 @@ Add-WebApplicationProxyApplication
 > [!NOTE]  
 > Web 應用程式 Proxy 發佈只有支援使用 OAuth 2.0 通訊協定的 Microsoft Store 應用程式。  
   
-在 AD FS 管理主控台中，您必須確定 OAuth 端點已啟用 proxy。 若要查看 OAuth 端點是否已啟用 Proxy，請開啟 AD FS 管理主控台，展開 [服務] ，按一下 [端點] ，在 [端點]  清單中，找到 OAuth 端點，確定 [Proxy 已啟用]  欄位為 [是] 。  
+在 AD FS 管理主控台中，您必須確定 OAuth 端點已啟用 proxy。 若要查看 OAuth 端點是否已啟用 Proxy，請開啟 AD FS 管理主控台，展開 [服務]  ，按一下 [端點]  ，在 [端點]  清單中，找到 OAuth 端點，確定 [Proxy 已啟用]  欄位為 [是]  。  
   
 使用 Microsoft Store 應用程式的用戶端的驗證流程如下所述：  
   
@@ -389,34 +389,34 @@ Add-WebApplicationProxyApplication
   
 1.  在 Web 應用程式 Proxy 伺服器上，在遠端存取管理主控台中，在**瀏覽**窗格中，按一下**Web 應用程式 Proxy**，然後在**工作** 窗格中，按一下**發佈**。  
   
-2.  在 [發行新應用程式精靈] 的 [歡迎] 頁面上，按 [下一步]。  
+2.  在 [發行新應用程式精靈]  的 [歡迎]  頁面上，按 [下一步]  。  
   
-3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)**，然後按一下**下一步]**。  
+3.  在 [**預先驗證**頁面上，按一下**Active Directory Federation Services (AD FS)** ，然後按一下**下一步]** 。  
   
 4.  在 **支援的用戶端**頁面上，選取**OAuth2** ，然後按一下 **下一步**。  
   
-5.  在 [信賴憑證者] 頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]。  
+5.  在 [信賴憑證者]  頁面上，從信賴憑證者的清單中選取想要發行之應用程式的信賴憑證者，然後按 [下一步]  。  
   
-6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步] ：  
+6.  在 [發行設定]  頁面上，執行下列動作，然後按 [下一步]  ：  
   
-    -   在 [名稱] 方塊中，輸入易記的應用程式名稱。  
+    -   在 [名稱]  方塊中，輸入易記的應用程式名稱。  
   
         這個名稱僅用於 [遠端存取管理] 主控台中已發行應用程式的清單中。  
   
-    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://server1.contoso.com/app1/。  
+    -   在 [外部 URL]  方塊中，輸入這個應用程式的外部 URL，例如 https://server1.contoso.com/app1/。  
   
     -   在 [外部憑證]  清單中，選取主體涵蓋外部 URL 的憑證。  
   
         若要確定您的使用者可以存取您的應用程式，即使他們沒有輸入 HTTPS URL 中，選取**啟用的 HTTP 至 HTTPS 重新導向** 方塊中。  
   
-    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值比方說， https://sp/app1/。  
+    -   在 [後端伺服器 URL]  方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 應該只在後端伺服器 URL 不同; 如果變更會自動輸入此值比方說， https://sp/app1/。  
   
         > [!NOTE]  
         > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但是不能轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入外部 URL https://apps.contoso.com/app1/以及後端伺服器 URL 的 https://app-server/app1/。 不過，您無法在此輸入的外部 URL https://apps.contoso.com/app1/以及後端伺服器 URL 的 https://apps.contoso.com/internal-app1/。  
   
-7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行] 。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
+7.  在 [確認]  頁面上，檢查設定，然後按一下 [發行]  。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
   
-8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
+8.  在 [結果]  頁面上，確認已成功發行應用程式，然後按一下 [關閉]  。  
   
 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -441,7 +441,7 @@ Add-WebApplicationProxyApplication
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [疑難排解 Web 應用程式 Proxy](https://technet.microsoft.com/library/dn770156.aspx)  
+-   [對 Web 應用程式 Proxy 進行疑難](https://technet.microsoft.com/library/dn770156.aspx)排解  
   
 -   [透過 Web 應用程式 Proxy 發佈應用程式](https://technet.microsoft.com/library/dn383659.aspx)  
   

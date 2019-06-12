@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 89506d0f7445f0df230945f45a31d4f58390c5c1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475905"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812415"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 
@@ -46,11 +46,11 @@ ms.locfileid: "65475905"
 
 下表說明這個版本中可用的資料夾重新導向、離線檔案以及漫遊使用者設定檔的一些主要變更。
 
-|特色/功能|新功能或更新功能？|描述|
-|---|---|---|
-|永遠離線模式|新的|永遠離線工作，即使透過高速網路連線連接時也一樣，提供較快的檔案存取速度及較低的頻寬使用量。|
-|成本感知同步處理|新的|當使用者在使用有使用量限制的計量付費連線或在其他提供者網路上漫遊時，協助使用者避免執行高資料使用成本的同步作業。|
-|主要電腦支援|新的|可以讓您限制只能在使用者的主要電腦上使用資料夾重新導向、漫遊使用者設定檔或兩者。|
+| 特色/功能 | 新功能或更新功能？ | 描述 |
+| --- | --- | --- |
+| 永遠離線模式 | 新的 | 永遠離線工作，即使透過高速網路連線連接時也一樣，提供較快的檔案存取速度及較低的頻寬使用量。 |
+| 成本感知同步處理 | 新的 | 當使用者在使用有使用量限制的計量付費連線或在其他提供者網路上漫遊時，協助使用者避免執行高資料使用成本的同步作業。 |
+| 主要電腦支援 | 新的 | 可以讓您限制只能在使用者的主要電腦上使用資料夾重新導向、漫遊使用者設定檔或兩者。 |
 
 ## <a name="always-offline-mode"></a>永遠離線模式
 
@@ -75,8 +75,8 @@ Windows 8，Windows Server 2012 之前使用者需要在線上及離線模式，
 
 使用成本感知同步處理後，Windows 會在使用者使用計量付費網路連線 (例如 4G 行動網路) 以及用戶接近或超過其寬頻限制或是漫遊在其他提供者的網路時，停用背景同步處理。
 
->[!NOTE]
->計量付費的網路連線通常會有低於預設的 35 毫秒延遲值，如轉換成離線 （慢速連線） 模式，在 Windows 8、 Windows Server 2019、 Windows Server 2016 和 Windows Server 中的來回網路延遲2012。 因此，這些連線通常會自動轉換成離線 (慢速連線) 模式。
+> [!NOTE]
+> 計量付費的網路連線通常會有低於預設的 35 毫秒延遲值，如轉換成離線 （慢速連線） 模式，在 Windows 8、 Windows Server 2019、 Windows Server 2016 和 Windows Server 中的來回網路延遲2012。 因此，這些連線通常會自動轉換成離線 (慢速連線) 模式。
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>成本感知同步處理增加了什麼價值？
 
@@ -129,10 +129,10 @@ Windows 8，Windows Server 2012 之前使用者需要在線上及離線模式，
 
 如需其他相關資訊，請參閱下列資源。
 
-|內容類型|參考|
-|---|---|
-|產品評估|[使用可靠的檔案服務和儲存體支援資訊工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[什麼是離線檔案新](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（Windows 7 和 Windows Server 2008 R2）<br>[新功能適用於 Windows Vista 的離線檔案](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中的離線檔案變更](<https://technet.microsoft.com/library/2007.11.offline.aspx>)(TechNet Magazine)|
-|部署|[部署資料夾重新導向、 離線檔案和漫遊使用者設定檔](deploy-folder-redirection.md)<br>[實作使用者資料集中化解決方案：資料夾重新導向和離線檔案技術驗證與部署](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫遊使用者資料部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[設定 Windows 7 電腦之新離線檔案功能的逐步指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[實作資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003)|
-|工具及設定|[MSDN 上的離線檔案](https://msdn.microsoft.com/library/cc296092.aspx)<br>[離線檔案群組原則參考](https://msdn.microsoft.com/library/ms878937.aspx)(Windows 2000)|
-|社群資源|[檔案服務和儲存體論壇](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[嗨，Scripting Guy ！如何搭配在 Windows 中的離線檔案功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[嗨，Scripting Guy ！如何啟用和停用離線檔案？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)|
-相關技術|[身分識別和存取在 Windows Server](../../identity/identity-and-access.md)<br>[Windows Server 中的儲存體](../storage.md)<br>[遠端存取與伺服器管理](../../remote/index.md)|
+| 內容類型 | 參考 |
+| --- | --- |
+| 產品評估 | [使用可靠的檔案服務和儲存體支援資訊工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[什麼是離線檔案新](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（Windows 7 和 Windows Server 2008 R2）<br>[新功能適用於 Windows Vista 的離線檔案](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中的離線檔案變更](<https://technet.microsoft.com/library/2007.11.offline.aspx>)(TechNet Magazine) |
+| 部署 | [部署資料夾重新導向、 離線檔案和漫遊使用者設定檔](deploy-folder-redirection.md)<br>[實作使用者資料集中化解決方案：資料夾重新導向和離線檔案技術驗證與部署](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫遊使用者資料部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[設定 Windows 7 電腦之新離線檔案功能的逐步指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[實作資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003) |
+| 工具及設定 | [MSDN 上的離線檔案](https://msdn.microsoft.com/library/cc296092.aspx)<br>[離線檔案群組原則參考](https://msdn.microsoft.com/library/ms878937.aspx)(Windows 2000) |
+| 社群資源 | [檔案服務和儲存體論壇](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[嗨，Scripting Guy ！如何搭配在 Windows 中的離線檔案功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[嗨，Scripting Guy ！如何啟用和停用離線檔案？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
+| 相關技術|[身分識別和存取在 Windows Server](../../identity/identity-and-access.md)<br>[Windows Server 中的儲存體](../storage.md)<br>[遠端存取與伺服器管理](../../remote/index.md) |

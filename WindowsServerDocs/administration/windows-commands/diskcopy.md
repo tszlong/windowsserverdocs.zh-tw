@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 5b9343dc2f6b4c74da5a9d89a2ea804b702248cc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: aadb3a77cda7f1403cd2f04ced12c17617f046df
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841169"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439576"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -84,9 +84,9 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 > [!NOTE]
 > 您無法使用**xcopy**複製啟動磁碟。
--   了解**diskcopy**結束代碼
+> -   了解**diskcopy**結束代碼
 
-    下表說明每個結束代碼。  
+    The following table explains each exit code.  
     |結束代碼|描述|
     |---------|-----------|
     |0|複製作業已順利完成|
@@ -94,7 +94,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
     |3|發生嚴重的硬體錯誤|
     |4|發生初始化錯誤|
 
-    若要處理所傳回的結束代碼**diskcomp**，您可以使用*ERRORLEVEL*環境變數**如果**批次程式中的命令列。
+    To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
 ## <a name="BKMK_examples"></a>範例
 

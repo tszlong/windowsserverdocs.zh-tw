@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38582706dfa5db2b5069415b81dafc533c8a89b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5ed2ef8b1d0238a3608dabdd165a255855a304d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822099"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440869"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -68,102 +68,101 @@ tsecimp /d
         每個**線條**項目，您可以設定**移除**屬性。 如果您設定這個屬性時，使用者不會再指派該線路裝置。 如果未設定這個屬性，則使用者會取得該線路裝置的存取。 如果線路裝置不是供使用者使用，會不提供任何錯誤。
 
 ## <a name="examples"></a>範例
--   下列範例 XML 程式碼區段說明上述定義的項目的正確用法。  
-    -   下列程式碼中移除指派給 User1 的所有線路裝置。  
-        ```
-        <UserList>
-          <User NoMerge="1">
-            <DomainUser>domain1\user1</DomainUser>
-          </User>
-        </UserList>
-        ```  
-    -   下列程式碼中移除指派位址為 99999 的一行之前指派給 User1 的所有線路裝置。 User1 將有沒有指派其他線路裝置指派，而不論任何線路裝置是否先前指派。  
-        ```
-        <UserList>
-          <User NoMerge="1">
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   下列程式碼將 user1 新增一個線路裝置，而不會刪除任何之前指派的線路裝置。  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   下列程式碼新增線路位置 99999 並移除 User1 的存取權的線路位址 88888。  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-              <Line Remove="1">
-                <Address>88888</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   下列程式碼會新增永久裝置 1000年並移除 User1 的存取權的線路位址 88888。  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <PermanentID>1000</PermanentID>
-              </Line>
-              <Line Remove="1">
-                <Address>88888</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        
-        ```  
--   下列範例輸出會出現後面 **/d**來顯示目前的 TAPI 設定指定命令列選項。 每個電話語音提供者，會列出相關聯的線路裝置，以及地址和與每個線路裝置相關聯的使用者。  
+- 下列範例 XML 程式碼區段說明上述定義的項目的正確用法。  
+  - 下列程式碼中移除指派給 User1 的所有線路裝置。  
+    ```
+    <UserList>
+      <User NoMerge="1">
+        <DomainUser>domain1\user1</DomainUser>
+      </User>
+    </UserList>
+    ```  
+  - 下列程式碼中移除指派位址為 99999 的一行之前指派給 User1 的所有線路裝置。 User1 將有沒有指派其他線路裝置指派，而不論任何線路裝置是否先前指派。  
+    ```
+    <UserList>
+      <User NoMerge="1">
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - 下列程式碼將 user1 新增一個線路裝置，而不會刪除任何之前指派的線路裝置。  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - 下列程式碼新增線路位置 99999 並移除 User1 的存取權的線路位址 88888。  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+          <Line Remove="1">
+            <Address>88888</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - 下列程式碼會新增永久裝置 1000年並移除 User1 的存取權的線路位址 88888。  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <PermanentID>1000</PermanentID>
+          </Line>
+          <Line Remove="1">
+            <Address>88888</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+
+
+~~~
+    ```  
+~~~
+-   The following sample output appears after the **/d** command-line option is specified to display the current TAPI configuration. For each telephony provider, the associated line devices are listed, as well as the addresses and users associated with each line device.  
     ```
     NDIS Proxy TAPI Service Provider
             Line: "WAN Miniport (L2TP)"
                     Permanent ID: 12345678910
-    
+
     NDIS Proxy TAPI Service Provider
             Line: "LPT1DOMAIN1\User1"
                     Permanent ID: 12345678910
-    
+
     Microsoft H.323 Telephony Service Provider
             Line: "H323 Line"
                     Permanent ID: 123456
                     Addresses:
                             BLDG1-TAPI32
-    
+
     ```
 
-#### <a name="additional-references"></a>其他參考資料
+#### Additional references
 
-[命令列語法關鍵](command-line-syntax-key.md)
+[Command-Line Syntax Key](command-line-syntax-key.md)
 
-[命令殼層概觀](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[Command shell overview](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)

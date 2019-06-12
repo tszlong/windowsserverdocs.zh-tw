@@ -12,12 +12,12 @@ ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bdd523efa1b1819bde4edb40f29d664df2a07db2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a2742c974535d9e92ac88c289ff02f6f1d0d10c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847399"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435865"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>在 Windows Server Essentials 中遠端工作
 
@@ -28,7 +28,7 @@ ms.locfileid: "59847399"
  下列主題可協助您從遠端存取伺服器資源：  
   
 
--   [Windows Server Essentials 中使用遠端 Web 存取](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+-   [在 Windows Server Essentials 中使用遠端 Web 存取](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
   
 -   [使用 VPN 來連線到 Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
@@ -38,7 +38,7 @@ ms.locfileid: "59847399"
   
 -   [使用 Microsoft Office 365 與 Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
 
--   [Windows Server Essentials 中使用遠端 Web 存取](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+-   [在 Windows Server Essentials 中使用遠端 Web 存取](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
   
 -   [使用 VPN 來連線到 Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
@@ -66,7 +66,7 @@ ms.locfileid: "59847399"
   
 1.  在用戶端電腦上按 Ctrl + Alt + Delete。  
   
-2.  在登入畫面按一下 [切換使用者]。  
+2.  在登入畫面按一下 [切換使用者]  。  
   
 3.  按一下畫面右下角的網路登入圖示。  
   
@@ -88,11 +88,11 @@ ms.locfileid: "59847399"
   
  您可以從 Windows Phone 市集下載這兩個應用程式中的任何一個：  
   
--   [安裝適用於 Windows Phone 的 My Server](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
+- [安裝適用於 Windows Phone 的 My Server](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
   
--   [安裝適用於 Windows Phone 的 My Server 2012 R2](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
+- [安裝適用於 Windows Phone 的 My Server 2012 R2](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
   
- 如需有關 My Server phone 應用程式的詳細資訊，請參閱部落格文章[適用於 Windows Server Essentials 的 My Server phone 應用程式](http://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)。 如需 My Server 2012 R2 Phone 應用程式的詳細資訊，請參閱部落格文章 [My Server 2012 R2 Windows 和 Windows Phone 應用程式](http://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx)。  
+  如需有關 My Server phone 應用程式的詳細資訊，請參閱部落格文章[適用於 Windows Server Essentials 的 My Server phone 應用程式](http://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)。 如需 My Server 2012 R2 Phone 應用程式的詳細資訊，請參閱部落格文章 [My Server 2012 R2 Windows 和 Windows Phone 應用程式](http://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx)。  
   
 ##  <a name="BKMK_O365"></a> 使用 Microsoft Office 365 與 Windows Server Essentials  
 

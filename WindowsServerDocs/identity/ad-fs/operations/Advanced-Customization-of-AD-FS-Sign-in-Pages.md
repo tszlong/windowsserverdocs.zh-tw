@@ -9,12 +9,12 @@ ms.date: 01/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 73ff3fc6df872edd29735ee96c0918144250d5f1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ee7bef2afe61500fe75b2d3c61b92b902f9757fa
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190037"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444258"
 ---
 # <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS 登入頁面的進階自訂
 
@@ -104,33 +104,33 @@ if (loginMessage)
 ```  
   
 ### <a name="example-2-accept-sam-account-name-as-a-login-format-on-an-ad-fs-form-based-sign-in-page"></a>範例 2： 接受 SAM\-作為登入格式，在 AD FS 表單上的帳戶名稱\-基礎登\-頁面中  
-預設 AD FS 表單\-基礎登\-頁面中支援的使用者主體名稱的登入格式\(Upn\) \(比方說， **johndoe@contoso.com** \)或網域限定 sam\-帳戶名稱\( **contoso\\johndoe**或是**contoso.com\\johndoe**\)。 所有的使用者是來自相同的網域，而且他們只知道 sam\-帳戶名稱，您可能要支援使用者可供登入的案例中運用 sam\-帳戶只有名稱。 您可以將下列程式碼新增至 onload.js 以支援此案例中，只要您想要使用的網域取代網域"contoso.com"中的範例如下。  
+預設 AD FS 表單\-基礎登\-頁面中支援的使用者主體名稱的登入格式\(Upn\) \(比方說， <strong>johndoe@contoso.com</strong> \)或網域限定 sam\-帳戶名稱\( **contoso\\johndoe**或是**contoso.com\\johndoe**\)。 所有的使用者是來自相同的網域，而且他們只知道 sam\-帳戶名稱，您可能要支援使用者可供登入的案例中運用 sam\-帳戶只有名稱。 您可以將下列程式碼新增至 onload.js 以支援此案例中，只要您想要使用的網域取代網域"contoso.com"中的範例如下。  
   
 ```  
 if (typeof Login != 'undefined'){  
-    Login.submitLoginRequest = function () {   
-    var u = new InputUtil();  
-    var e = new LoginErrors();  
-    var userName = document.getElementById(Login.userNameInput);  
-    var password = document.getElementById(Login.passwordInput);  
-    if (userName.value && !userName.value.match('[@\\\\]'))   
-    {  
-        var userNameValue = 'contoso.com\\' + userName.value;  
-        document.forms['loginForm'].UserName.value = userNameValue;  
-    }  
+    Login.submitLoginRequest = function () {   
+    var u = new InputUtil();  
+    var e = new LoginErrors();  
+    var userName = document.getElementById(Login.userNameInput);  
+    var password = document.getElementById(Login.passwordInput);  
+    if (userName.value && !userName.value.match('[@\\\\]'))   
+    {  
+        var userNameValue = 'contoso.com\\' + userName.value;  
+        document.forms['loginForm'].UserName.value = userNameValue;  
+    }  
   
-    if (!userName.value) {  
-       u.setError(userName, e.userNameFormatError);  
-       return false;  
-    }  
+    if (!userName.value) {  
+       u.setError(userName, e.userNameFormatError);  
+       return false;  
+    }  
   
-    if (!password.value)   
-    {  
-        u.setError(password, e.passwordEmpty);  
-        return false;  
-    }  
-    document.forms['loginForm'].submit();  
-    return false;  
+    if (!password.value)   
+    {  
+        u.setError(password, e.passwordEmpty);  
+        return false;  
+    }  
+    document.forms['loginForm'].submit();  
+    return false;  
 };  
 }  
   

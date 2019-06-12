@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: 如何在虛擬機器客體叢集中-例如，在 Microsoft Azure 中部署儲存空間直接存取。
 ms.localizationpriority: medium
-ms.openlocfilehash: a741475d09ab7f7ab29f158ef55378ca9a37beac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b99e750b78654df48ad3b412269511d047e3057c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841019"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447817"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>在客體虛擬機器叢集中使用儲存空間直接存取
 

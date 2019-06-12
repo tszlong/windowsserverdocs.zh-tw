@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c4e1ed4697666062bb90f4a9c65054a3dd73661
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f2f787915f2b941d6c098d44de1bb0e04dbd491
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848049"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436909"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
@@ -30,12 +30,14 @@ ms.locfileid: "59848049"
 lserver <DNSDomain> 
 ```
 ## <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|<DNSDomain>|指定新的 DNS 網域的預設伺服器。|
-|{help &#124; ?}|顯示的簡短摘要**nslookup**子命令。|
+
+|    參數    |                      描述                      |
+|-----------------|-------------------------------------------------------|
+|   <DNSDomain>   | 指定新的 DNS 網域的預設伺服器。  |
+| {help &#124; ?} | 顯示的簡短摘要**nslookup**子命令。 |
+
 ## <a name="remarks"></a>備註
--   **Lserver**命令會使用初始伺服器查詢指定的 DNS 網域的相關資訊。 這是相對於**server**命令，這個命令會使用目前的預設伺服器。
-## <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[nslookup 伺服器](nslookup-server.md)
+- **Lserver**命令會使用初始伺服器查詢指定的 DNS 網域的相關資訊。 這是相對於**server**命令，這個命令會使用目前的預設伺服器。
+  ## <a name="additional-references"></a>其他參考資料
+  [命令列語法重點](command-line-syntax-key.md)
+  [nslookup 伺服器](nslookup-server.md)

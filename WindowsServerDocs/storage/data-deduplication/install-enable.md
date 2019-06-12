@@ -9,12 +9,12 @@ manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
 description: 在 Windows Server 上安裝「重複資料刪除」的方式，取決於工作負載是否是不錯的「重複資料刪除」候選，並且在磁碟區上啟用「重複資料刪除」。
-ms.openlocfilehash: 153b064b158028c696bad4eeb00764d3e10822e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9ea3a144ae68ba9a51cdad66d493a7b962d3838
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814899"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447275"
 ---
 # <a name="install-and-enable-data-deduplication"></a>安裝並啟用重複資料刪除
 > 適用於 Windows Server (半年度管道)、Windows Server 2016
@@ -29,9 +29,9 @@ ms.locfileid: "59814899"
 > [KB4025334](https://support.microsoft.com/kb/4025334) 包含重複資料刪除的修正彙總套件，包括重要的可靠性修正，我們極力建議您在 Windows Server 2016 上使用重複資料刪除時安裝它。
 
 ### <a id="install-dedup-via-server-manager"></a>使用伺服器管理員安裝重複資料刪除
-1. 在 [新增角色及功能精靈] 中，選取 [伺服器角色]，然後選取 [重複資料刪除]。  
+1. 在 [新增角色及功能精靈] 中，選取 [伺服器角色]  ，然後選取 [重複資料刪除]  。  
 ![安裝重複資料刪除透過伺服器管理員： 從伺服器角色中選取重複資料刪除](media/install-dedup-via-server-manager-1.png)
-2. 按一下 [下一步]  直到 [安裝]  按鈕被啟用，然後按一下 [安裝] 。  
+2. 按一下 [下一步]  直到 [安裝]  按鈕被啟用，然後按一下 [安裝]  。  
 ![安裝重複資料刪除透過伺服器管理員： 按一下 [安裝]](media/install-dedup-via-server-manager-2.png)
 
 ### <a id="install-dedup-via-powershell"></a>使用 PowerShell 安裝重複資料刪除
@@ -46,7 +46,7 @@ ms.locfileid: "59814899"
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
     <br />
-    **-- OR --**
+    <strong>-- OR --</strong>
     <br />
     使用 PowerShell 遠端執行功能遠端連線至 Nano 伺服器執行個體，然後使用 DISM 安裝重複資料刪除：  
     
@@ -59,7 +59,7 @@ ms.locfileid: "59814899"
 ### <a id="enable-dedup-candidate-workloads"></a>判斷哪些工作負載的重複資料刪除候選項目
 重複資料刪除可透過減少重複資料所耗用的磁碟空間量，有效地將伺服器應用程式的資料消耗量成本降至最低。 啟用重複資料刪除之前，請務必了解您工作負載的特性，以確保存放裝置能夠發揮最大效能。 有兩種工作負載類別需要考量：
 
-* 「建議的工作負載」，此類別已證明同時具有能高度受益於重複資料刪除的兩個資料集，且具有與重複資料刪除之後續處理模型相容的資源耗用量模式。 建議您一律在下列的工作負載上[啟用重複資料刪除](install-enable.md#enable-dedup-lights-on)：
+*  「建議的工作負載」，此類別已證明同時具有能高度受益於重複資料刪除的兩個資料集，且具有與重複資料刪除之後續處理模型相容的資源耗用量模式。 建議您一律在下列的工作負載上[啟用重複資料刪除](install-enable.md#enable-dedup-lights-on)：
     * 提供共用的一般用途檔案伺服器 (GPFS)，例如小組共用、使用者主資料夾、工作資料夾，以及軟體開發共用。
     * 虛擬桌面基礎結構 (VDI) 伺服器。
     * 虛擬備份應用程式，例如 [Microsoft Data Protection Manager (DPM)](https://technet.microsoft.com/library/hh758173.aspx)。
@@ -114,13 +114,13 @@ ms.locfileid: "59814899"
 * [備份](understand.md#usage-type-backup)：專為虛擬備份應用程式調整，例如 [Microsoft DPM](https://technet.microsoft.com/library/hh758173.aspx)
 
 #### <a id="enable-dedup-via-server-manager"></a>使用伺服器管理員啟用重複資料刪除
-1. 選取伺服器管理員中的 [檔案和存放服務]。  
+1. 選取伺服器管理員中的 [檔案和存放服務]  。  
 ![按一下 檔案和存放服務](media/enable-dedup-via-server-manager-1.PNG)
-2. 從 [檔案和存放服務] 中，選取 [磁碟區]。  
+2. 從 [檔案和存放服務]  中，選取 [磁碟區]  。  
 ![按一下 磁碟區](media/enable-dedup-via-server-manager-2.png)
-3. 在所需的磁碟區上按一下滑鼠右鍵，然後選取 [設定重複資料刪除]。  
+3. 在所需的磁碟區上按一下滑鼠右鍵，然後選取 [設定重複資料刪除]  。  
 ![按一下 設定重複資料刪除](media/enable-dedup-via-server-manager-3.png)
-4. 從下拉式清單方塊中選取所需的 [使用類型]，然後選取 [確定]。  
+4. 從下拉式清單方塊中選取所需的 [使用類型]  ，然後選取 [確定]  。  
 ![清單中選取所需的使用類型，從下拉式清單](media/enable-dedup-via-server-manager-4.png)
 5. 如果您是執行建議的工作負載，即大功告成。 針對其他工作負載，請參閱[其他考量](#enable-dedup-sometimes-considerations)。
 

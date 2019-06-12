@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 8e05043d029636ddeb3a24349897ac61a713b2a7
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 9883d337520c3920f8638ddfe5f6bd393e31fd2f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034117"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442866"
 ---
 # <a name="perform-initial-recovery"></a>執行初始的復原  
 
@@ -126,7 +126,7 @@ ms.locfileid: "65034117"
 
 - 若要修正名稱解析，建立 DNS 委派記錄，並設定 DNS 轉寄和根提示，視需要。 執行**repadmin /replsum**檢查網域控制站之間的複寫。 
 - 如果還原網域控制站不直接複寫協力電腦，複寫復原將會更快藉由建立它們之間的暫時連線物件。 
-- 若要驗證中繼資料清除作業，請執行**Repadmin /viewlist \*** 樹系中的所有網域控制站的清單。 執行**Nltest /DCList:** *< 網域\>* 取得一份網域中的所有網域控制站。 
+- 若要驗證中繼資料清除作業，請執行**Repadmin /viewlist \\** * 如需在樹系中的所有網域控制站的清單。 執行**Nltest /DCList:** *< 網域\>* 取得一份網域中的所有網域控制站。 
 - 若要檢查 DC 和 DNS 的健全狀況，請執行 DCDiag /v 來報告錯誤，在樹系中的所有網域控制站上。 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>將通用類別目錄新增至樹系根網域的網域控制站

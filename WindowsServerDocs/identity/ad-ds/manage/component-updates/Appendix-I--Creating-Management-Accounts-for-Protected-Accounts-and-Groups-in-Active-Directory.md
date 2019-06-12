@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: c71b96f6c44cfc2b14b4c5d203f876e55cc728ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e90c2c075ba2dc2b63e9a18c9eba192116265b90
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855629"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443521"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附錄 i:建立管理帳戶的受保護的帳戶和 Active Directory 中的群組
 
@@ -60,7 +60,7 @@ ms.locfileid: "59855629"
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
-3.  在您剛剛建立的群組上按一下滑鼠右鍵，按一下 [內容]，然後按一下 [物件] 索引標籤。在群組的**物件屬性**對話方塊中，選取**保護物件以防止被意外刪除**，這不僅可以防止其他授權使用者刪除群組，但也將它移到另一個 OU 除非屬性是第一個取消選取此選項。  
+3.  在您剛剛建立的群組上按一下滑鼠右鍵，按一下 [內容]  ，然後按一下 [物件]  索引標籤。在群組的**物件屬性**對話方塊中，選取**保護物件以防止被意外刪除**，這不僅可以防止其他授權使用者刪除群組，但也將它移到另一個 OU 除非屬性是第一個取消選取此選項。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)  
   
@@ -71,7 +71,7 @@ ms.locfileid: "59855629"
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_118.png)  
   
-5.  如果您有不這麼做，請在**Active Directory 使用者和電腦**主控台中，按一下**檢視**，然後選取**進階功能**。 以滑鼠右鍵按一下您剛建立的群組，請按一下**屬性**，然後按一下**安全性** 索引標籤。在 安全性  索引標籤上，按一下 進階 。  
+5.  如果您有不這麼做，請在**Active Directory 使用者和電腦**主控台中，按一下**檢視**，然後選取**進階功能**。 以滑鼠右鍵按一下您剛建立的群組，請按一下**屬性**，然後按一下**安全性** 索引標籤。在 安全性  索引標籤上，按一下 進階  。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_119.png)  
   
@@ -121,11 +121,11 @@ ms.locfileid: "59855629"
 
 3. 以滑鼠右鍵按一下 OU，然後按一下 **的新**然後按一下**使用者**。  
 
-4. 在 [**新增物件-使用者**對話方塊中，輸入您想要的命名資訊的帳戶，然後按一下**下一步]**。  
+4. 在 [**新增物件-使用者**對話方塊中，輸入您想要的命名資訊的帳戶，然後按一下**下一步]** 。  
 
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_122.png)  
   
-5. 提供初始使用者帳戶密碼，清除**使用者必須變更密碼在下次登入時**，選取**使用者不得變更密碼**並**帳戶已停用**，及按一下 [**下一步]**。  
+5. 提供初始使用者帳戶密碼，清除**使用者必須變更密碼在下次登入時**，選取**使用者不得變更密碼**並**帳戶已停用**，及按一下 [**下一步]** 。  
 
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_123.png)  
 
@@ -150,80 +150,80 @@ ms.locfileid: "59855629"
   
 10. 在 **物件**索引標籤上，選取**保護物件以防止被意外刪除**。 這不僅可以防止物件被刪除 （甚至是由授權的使用者），但可防止它被移到不同的 OU，在 AD DS 階層中，除非變更屬性的權限的使用者第一次清除核取方塊。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_125.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_125.png)  
 
 11. 按一下 [**遙控器**] 索引標籤。  
 
 12. 清除**啟用遠端控制**旗標。 它永遠不應該是所需的支援人員來連接到此帳戶的工作階段，以實作修正。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_126.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_126.png)  
 
-   > [!NOTE]  
-   > 在 Active Directory 中的每個物件應該有指定的 IT 擁有者和指定的商務擁有者，如中所述[洩露的規劃](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)。 如果您要追蹤的 Active Directory 中的 AD DS 物件 （而不是外部資料庫） 的擁有權，您應該在這個物件的內容中輸入適當的擁有權資訊。  
-   >
-   > 在此情況下，業務擁有者很可能是 IT 部門，andthere 沒有下也很 IT 擁有者的業務擁有者，禁止。 建立物件的擁有權的重點是要讓您識別連絡人，變更所需的物件，可能是年從初始建立時。  
+    > [!NOTE]  
+    > 在 Active Directory 中的每個物件應該有指定的 IT 擁有者和指定的商務擁有者，如中所述[洩露的規劃](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)。 如果您要追蹤的 Active Directory 中的 AD DS 物件 （而不是外部資料庫） 的擁有權，您應該在這個物件的內容中輸入適當的擁有權資訊。  
+    >
+    > 在此情況下，業務擁有者很可能是 IT 部門，andthere 沒有下也很 IT 擁有者的業務擁有者，禁止。 建立物件的擁有權的重點是要讓您識別連絡人，變更所需的物件，可能是年從初始建立時。  
 
 13. 按一下 [**組織**] 索引標籤。  
 
 14. 在您的 AD DS 物件標準中，輸入所需的任何資訊。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_127.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_127.png)  
 
 15. 按一下 [**撥入**] 索引標籤。  
 
 16. 在 **網路存取權限**欄位中，選取**拒絕存取**。此帳戶應該永遠不需要透過遠端連接。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_128.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_128.png)  
 
-   > [!NOTE]  
-   > 不太這個帳戶將用於登入您的環境中的唯讀網域控制站 (Rodc)。 不過，應該情況曾經需要帳戶來登入 RODC，您應該將此帳戶新增至拒絕的 RODC 密碼複寫群組，讓不在 RODC 上快取其密碼。  
-   >
-   > 雖然每次使用之後應該重設帳戶的密碼，而且應該停用的帳戶，實作這項設定並沒有帳戶，造成不利的影響，而且可能有所幫助系統管理員忘記重設的帳戶所在的情況下密碼和停用它。  
+    > [!NOTE]  
+    > 不太這個帳戶將用於登入您的環境中的唯讀網域控制站 (Rodc)。 不過，應該情況曾經需要帳戶來登入 RODC，您應該將此帳戶新增至拒絕的 RODC 密碼複寫群組，讓不在 RODC 上快取其密碼。  
+    >
+    > 雖然每次使用之後應該重設帳戶的密碼，而且應該停用的帳戶，實作這項設定並沒有帳戶，造成不利的影響，而且可能有所幫助系統管理員忘記重設的帳戶所在的情況下密碼和停用它。  
 
-17. 按一下 [隸屬於] 索引標籤。  
+17. 按一下 [隸屬於]  索引標籤。  
 
-18. 按一下 **\[新增\]**。  
+18. 按一下 **\[新增\]** 。  
 
 19. 型別**Denied RODC Password Replication Group**中**選取使用者、 連絡人、 電腦**對話方塊中，然後按一下**檢查名稱**。 當群組的名稱會加上底線，物件選擇器中時，按一下**確定**並確認帳戶現在是在下列螢幕擷取畫面顯示兩個群組的成員。 並未新增帳戶到任何受保護的群組。  
 
-20. 按一下 [確定] 。  
+20. 按一下 [確定]  。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
 21. 按一下 **安全性**索引標籤，然後按一下**進階**。  
 
 22. 在 [**進階安全性設定**] 對話方塊中，按一下**停用繼承**並複製做為明確的權限繼承的權限，然後按一下**新增**。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_130.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_130.png)  
 
 23. 在 [ **[帳戶] 的權限項目**] 對話方塊中，按一下**選取一個主體**並新增您在上一個程序中建立的群組。 捲動到底部的 [] 對話方塊中，按一下**全部清除**移除所有預設權限。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_131.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_131.png)  
 
 24. 捲動至頂端**權限項目** 對話方塊。 請確認**型別**下拉式清單設為**允許**，然後在**適用於**下拉式清單中，選取**只有這個物件**。  
 
 25. 在 **權限**欄位中，選取**讀取全部內容**，**讀取權限**，和**重設密碼**。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_132.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_132.png)  
 
 26. 在 **屬性**欄位中，選取**讀取 userAccountControl**並**撰寫 userAccountControl**。  
 
-27. 按一下 [ **[確定]**， **[確定]** 中再次**進階安全性設定**] 對話方塊。  
+27. 按一下 [ **[確定]** ， **[確定]** 中再次**進階安全性設定**] 對話方塊。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_133.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_133.png)  
 
-   > [!NOTE]  
-   > **UserAccountControl**屬性可控制多個帳戶設定選項。 您無法授與變更只有部分設定選項，當您授與給屬性的寫入權限的權限。  
+    > [!NOTE]  
+    > **UserAccountControl**屬性可控制多個帳戶設定選項。 您無法授與變更只有部分設定選項，當您授與給屬性的寫入權限的權限。  
 
 28. 在 **群組或使用者名稱**欄位**安全性**索引標籤上，移除不應該允許存取或管理帳戶的任何群組。 請勿移除拒絕 Ace，已設定的任何群組，例如 Everyone 群組和自助計算帳戶 (設定時該 ACE**使用者不得變更密碼**旗標已啟用的帳戶建立期間。 也請勿移除您剛才加入的群組、 系統帳戶或群組，例如 EA、 DA、 BA，還是 Windows Authorization Access Group。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_134.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_134.png)  
 
 29. 按一下 **進階**並確認 進階安全性設定 對話方塊中看起來類似下列螢幕擷取畫面。  
 
-30. 按一下 [ **[確定]**，並**確定**] 以關閉帳戶的 [屬性] 對話方塊。  
+30. 按一下 [ **[確定]** ，並**確定**] 以關閉帳戶的 [屬性] 對話方塊。  
 
-   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_135.png)  
+    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_135.png)  
 
 31. 安裝程式的第一個管理帳戶現已完成的。 您將在稍後的程序中測試帳戶。  
 
@@ -251,56 +251,56 @@ SIEM 解決方案會取自涉及的安全性來源 （例如，事件記錄檔�
   
 在此情況下，您將會被授與新建立的管理帳戶，以允許他們閱讀及成員屬性的群組物件上的寫入。 不過，AdminSDHolder 物件不是群組物件和群組屬性不會顯示在圖形化的 ACL 編輯器。 它是基於這個理由，您將實作透過 Dsacls 命令列公用程式的權限變更。 若要授與 （已停用） 的管理帳戶權限可修改受保護群組的成員資格，請執行下列步驟：  
   
-1.  登入網域控制站，最好是網域控制站持有 PDC 模擬器 (PDCE) 角色，已成為 DA 群組成員的網域中的使用者帳戶的認證。  
+1. 登入網域控制站，最好是網域控制站持有 PDC 模擬器 (PDCE) 角色，已成為 DA 群組成員的網域中的使用者帳戶的認證。  
   
-    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_136.png)  
+   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_136.png)  
   
-2.  開啟提升權限的命令提示字元，以滑鼠右鍵按一下**命令提示字元**然後按一下**系統管理員身分執行**。  
+2. 開啟提升權限的命令提示字元，以滑鼠右鍵按一下**命令提示字元**然後按一下**系統管理員身分執行**。  
   
-    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_137.gif)  
+   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_137.gif)  
   
-3.  當系統提示您核准提升權限，按一下**是**。  
+3. 當系統提示您核准提升權限，按一下**是**。  
   
-    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
+   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
   
-    > [!NOTE]  
-    > 如需提高權限和使用者帳戶控制 (UAC) 在 Windows 中的詳細資訊，請參閱[UAC 處理程序和互動](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)TechNet 網站上。  
+   > [!NOTE]  
+   > 如需提高權限和使用者帳戶控制 (UAC) 在 Windows 中的詳細資訊，請參閱[UAC 處理程序和互動](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)TechNet 網站上。  
   
-4.  在命令提示字元中 （以取代您的網域特定資訊） 的型別**Dsacls [您的網域中的 AdminSDHolder 物件的辨別名稱] [管理帳戶 UPN] /G: RPWP; 成員**。  
+4. 在命令提示字元中 （以取代您的網域特定資訊） 的型別**Dsacls [您的網域中的 AdminSDHolder 物件的辨別名稱] [管理帳戶 UPN] /G: RPWP; 成員**。  
   
-    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_139.gif)  
+   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_139.gif)  
   
-    前一個命令 （這是不區分大小寫） 的運作方式，如下所示：  
+   前一個命令 （這是不區分大小寫） 的運作方式，如下所示：  
   
-    -   Dsacls 設定，或顯示的目錄物件的 Ace  
+   - Dsacls 設定，或顯示的目錄物件的 Ace  
   
-    -   CN = AdminSDHolder，CN = System，DC = TailSpinToys，DC = msft 識別要修改的物件  
+   - CN = AdminSDHolder，CN = System，DC = TailSpinToys，DC = msft 識別要修改的物件  
   
-    -   /G 表示正在設定 ACE 的授與  
+   - /G 表示正在設定 ACE 的授與  
   
-    -   PIM001@tailspintoys.msft 是使用者主體名稱 (UPN) 的 Ace 會授與的安全性主體  
+   - PIM001@tailspintoys.msft 是使用者主體名稱 (UPN) 的 Ace 會授與的安全性主體  
   
-    -   RPWP 授與讀取屬性和寫入屬性的權限  
+   - RPWP 授與讀取屬性和寫入屬性的權限  
   
-    -   成員是屬性 （屬性） 的名稱上的使用權限設定  
+   - 成員是屬性 （屬性） 的名稱上的使用權限設定  
   
-    如需使用詳細資訊**Dsacls**，不含任何參數，在命令提示字元中輸入 Dsacls。  
+   如需使用詳細資訊**Dsacls**，不含任何參數，在命令提示字元中輸入 Dsacls。  
   
-    如果您已建立網域的多個管理帳戶，您應該執行的每個帳戶的 Dsacls 命令。 完成 AdminSDHolder 物件上的 ACL 組態後，您應該強制執行，或等候完成其排程的執行的 SDProp。 如需強制執行的 SDProp，請參閱 「 手動執行 SDProp 」 中[附錄 c:受保護的帳戶和 Active Directory 中的群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
+   如果您已建立網域的多個管理帳戶，您應該執行的每個帳戶的 Dsacls 命令。 完成 AdminSDHolder 物件上的 ACL 組態後，您應該強制執行，或等候完成其排程的執行的 SDProp。 如需強制執行的 SDProp，請參閱 「 手動執行 SDProp 」 中[附錄 c:受保護的帳戶和 Active Directory 中的群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
   
-    執行 SDProp 後，您可以確認您對 AdminSDHolder 物件所做的變更，已套用至網域中的受保護群組。 您無法驗證此 AdminSDHolder 物件上的 ACL 檢視先前所述的理由，但您可以確認，已藉由檢視受保護群組上的 Acl 套用的權限。  
+   執行 SDProp 後，您可以確認您對 AdminSDHolder 物件所做的變更，已套用至網域中的受保護群組。 您無法驗證此 AdminSDHolder 物件上的 ACL 檢視先前所述的理由，但您可以確認，已藉由檢視受保護群組上的 Acl 套用的權限。  
   
-5.  在  **Active Directory 使用者和電腦**，確認您已啟用**進階功能**。 若要這樣做，請按一下**檢視**，找出**Domain Admins**群組中，以滑鼠右鍵按一下群組，然後按一下**屬性**。  
+5. 在  **Active Directory 使用者和電腦**，確認您已啟用**進階功能**。 若要這樣做，請按一下**檢視**，找出**Domain Admins**群組中，以滑鼠右鍵按一下群組，然後按一下**屬性**。  
   
-6.  按一下 [**安全性**索引標籤，然後按一下**進階**以開啟**Domain Admins 的進階安全性設定**] 對話方塊。  
+6. 按一下 [**安全性**索引標籤，然後按一下**進階**以開啟**Domain Admins 的進階安全性設定**] 對話方塊。  
   
-    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_140.gif)  
+   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_140.gif)  
   
-7.  選取 **管理帳戶的允許 ACE**然後按一下**編輯**。 確認帳戶已被授與，只有**讀取成員**並**寫入成員**DA 群組，然後按一下 的權限**確定**。  
+7. 選取 **管理帳戶的允許 ACE**然後按一下**編輯**。 確認帳戶已被授與，只有**讀取成員**並**寫入成員**DA 群組，然後按一下 的權限**確定**。  
   
-8.  按一下  **確定**中**進階安全性設定** 對話方塊中，然後按一下 **確定** 以關閉 資料群組的 屬性 對話方塊。  
+8. 按一下  **確定**中**進階安全性設定** 對話方塊中，然後按一下 **確定** 以關閉 資料群組的 屬性 對話方塊。  
   
-    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_141.gif)  
+   ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_141.gif)  
   
 9. 您可以重複上述步驟，在網域中其他受保護群組權限應該是相同的受保護的所有群組。 您現在已完成建立及設定此網域中的受保護群組的管理帳戶。  
   

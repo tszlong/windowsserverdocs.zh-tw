@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: b32b4879ad454d1154c3d65dbf690cdaae73d76c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fed0587b74873005f14a216bac22f952bcc65a4f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827219"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447292"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Windows Server 的安全性和保證 
 
@@ -71,7 +71,7 @@ ms.locfileid: "59827219"
 此白皮書所提供的概觀，說明受防護的 VM 如何提供更強大的整體安全性以避免竄改。                                         
 
 ## <a name="privileged-access-management"></a>Microsoft Azure Active Directory
-### <a name="securing-privileged-accesshttpstechnetmicrosoftcomwindows-server-docssecuritysecuring-privileged-accesssecuring-privileged-access"></a>[保護特殊權限的存取](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
+### <a name="securing-privileged-accesshttpstechnetmicrosoftcomwindows-server-docssecuritysecuring-privileged-accesssecuring-privileged-access"></a>[保護特殊權限存取](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
 說明如何保護特殊權限存取的藍圖。 此藍圖是結合伺服器安全性團隊、Microsoft IT、Azure 團隊和 Microsoft 諮詢服務的專業知識建置而成                           
 
 ### <a name="just-in-time-administration-with-microsoft-identity-managerhttpstechnetmicrosoftcomlibrarymt150258aspx"></a>[Just in Time Administration Microsoft Identity Manager](https://technet.microsoft.com/library/mt150258.aspx)
@@ -90,7 +90,7 @@ Just Enough Administration 示範逐步解說。
 ### <a name="protect-derived-domain-credentials-with-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectioncredential-guardcredential-guard"></a>[使用 Credential Guard 保護衍生的網域認證](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
 Credential Guard 使用以虛擬化為基礎的安全性來隔離機密資料，使得只有特殊權限的系統軟體可以存取這些資料。 對這些密碼的未經授權存取會導致認證竊取攻擊，例如傳遞雜湊 (Pass-the-Hash) 或傳遞票證 (Pass-The-Ticket)。 Credential Guard 可透過保護 NTLM 密碼雜湊和 Kerberos 票證授權票證來防止這些攻擊。
 
-### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[保護遠端 Credential Guard 使用遠端桌面認證](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
+### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[使用 Remote Credential Guard 保護遠端桌面認證](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
 Remote Credential Guard 可協助您將 Kerberos 要求重新導向回要求連線的裝置，藉以透過遠端桌面連線保護您的認證。 它也會針對遠端桌面工作階段，提供單一登入體驗。                                                                                                        |
 ### <a name="credential-guard-demo-videohttpswwwyoutubecomwatchveupkogsl7yk"></a>[Credential Guard 示範影片](https://www.youtube.com/watch?v=eUpKOGSl7yk)
 這段 5 分鐘的影片示範 Credential Guard 和 Remote Credential Guard。         
@@ -111,7 +111,7 @@ Device Guard 是 WDAC 與 Hypervisor 保護的程式碼完整性 (HVCI) 的組�
 ### <a name="windows-defenderhttpstechnetmicrosoftcomwindows-server-docssecuritywindows-defenderwindows-defender-overview-windows-server"></a>[Windows Defender](https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server)
 Windows Defender 提供主動式偵測功能來封鎖已知的惡意程式碼。 Windows Defender 預設已開啟並最佳化，以支援 Windows Server 中的各種伺服器角色。
 
-##<a name="detecting-and-responding-to-threats"></a>偵測及回應威脅
+## <a name="detecting-and-responding-to-threats"></a>偵測及回應威脅
 ### <a name="security-threat-analysis-using-microsoft-operations-management-suitehttpschannel9msdncomeventsignite2015brk3464"></a>[使用 Microsoft Operations Management Suite 的安全性威脅分析](https://channel9.msdn.com/events/ignite/2015/brk3464)
 此 Ignite 簡報將討論如何使用 Operational Insights 執行安全性威脅分析。
 

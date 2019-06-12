@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 945a5f4cf0e6c491479b095671ff5e77416c6fa3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7cde62cb23c69a425522e40ed65ee2d40ef28268
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877589"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445624"
 ---
 # <a name="migrate-the-ad-fs-web-agent"></a>移轉 AD FS 網路代理程式
 
@@ -21,14 +21,14 @@ ms.locfileid: "59877589"
   
 > [!IMPORTANT]
 >  移轉的 AD FS 1.1 Windows 權杖型代理程式只能與隨 Windows Server 2008 R2 或 Windows Server 2008 一起安裝的 AD FS 1.1 同盟服務搭配運作。 如需詳細資訊，請參閱 [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)。  
->   
+> 
 >  移轉的 AD FS 1.1 宣告感知網路代理程式可與下列項目搭配運作：  
->   
->  -   隨 Windows Server 2008 R2 或 Windows Server 2008 一起安裝的 AD FS 1.1 同盟服務  
-> -   安裝在 Windows Server 2008 R2 或 Windows Server 2008 上的 AD FS 2.0 同盟服務  
-> -   與 Windows Server 2012 安裝的 AD FS 同盟服務  
->   
->  如需詳細資訊，請參閱 [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)。  
+> 
+> - 隨 Windows Server 2008 R2 或 Windows Server 2008 一起安裝的 AD FS 1.1 同盟服務  
+>   -   安裝在 Windows Server 2008 R2 或 Windows Server 2008 上的 AD FS 2.0 同盟服務  
+>   -   與 Windows Server 2012 安裝的 AD FS 同盟服務  
+> 
+>   如需詳細資訊，請參閱 [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)。  
   
   
 ## <a name="next-steps"></a>後續步驟

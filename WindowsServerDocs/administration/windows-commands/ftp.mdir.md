@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ac1e7cd50fe4d9325c272f74a7b81971c8bb12a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4ec445c3e367a46dc40d10a37c0b3b8e53a10e3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878209"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438336"
 ---
 # <a name="ftp-mdir"></a>ftp: mdir
 
@@ -30,24 +30,26 @@ ms.locfileid: "59878209"
 mdir <remoteFile>[ ] <LocalFile>  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<remoteFile>|指定目錄或檔案的項目，您要查看清單。|  
-|<LocalFile>|指定本機檔案以儲存清單。 此為必要參數。|  
+
+|  參數   |                               描述                                |
+|--------------|--------------------------------------------------------------------------|
+| <remoteFile> |   指定目錄或檔案的項目，您要查看清單。   |
+| <LocalFile>  | 指定本機檔案以儲存清單。 此為必要參數。 |
+
 ## <a name="remarks"></a>備註  
--   您可以使用**mdir**來指定多個檔案。  
--   指定*remoteFile*  
-    輸入連字號 (**-**) 若要在遠端電腦上使用目前的工作目錄。  
--   指定*本機檔案*  
-    輸入連字號 (**-**) 若要在螢幕上顯示的清單。  
-## <a name="BKMK_Examples"></a>範例  
-顯示的目錄清單**dir1**並**dir2**畫面上  
-```  
-mdir dir1 dir2 -  
-```  
-儲存的合併的目錄清單**dir1**並**dir2**在本機的檔案稱為**dirlist.txt**  
-```  
-mdir dir1 dir2 dirlist.txt  
-```  
-## <a name="additional-references"></a>其他參考資料  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+- 您可以使用**mdir**來指定多個檔案。  
+- 指定*remoteFile*  
+  輸入連字號 ( **-** ) 若要在遠端電腦上使用目前的工作目錄。  
+- 指定*本機檔案*  
+  輸入連字號 ( **-** ) 若要在螢幕上顯示的清單。  
+  ## <a name="BKMK_Examples"></a>範例  
+  顯示的目錄清單**dir1**並**dir2**畫面上  
+  ```  
+  mdir dir1 dir2 -  
+  ```  
+  儲存的合併的目錄清單**dir1**並**dir2**在本機的檔案稱為**dirlist.txt**  
+  ```  
+  mdir dir1 dir2 dirlist.txt  
+  ```  
+  ## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  

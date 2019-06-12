@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 如何使用儲存體複本在一個叢集中的磁碟區複寫至另一個執行 Windows Server 的叢集。
-ms.openlocfilehash: 2e3245320b2ef7035ac600ff783684083f3f929a
-ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.openlocfilehash: 9d4b7eb05576095abd5d8c905211b2a5e88555bd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65699904"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447629"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>叢集對叢集儲存體複寫
 
@@ -57,7 +57,7 @@ ms.locfileid: "65699904"
 
 ## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>步驟 1：佈建作業系統、功能、角色、儲存體及網路
 
-1.  Windows server 的安裝類型的所有四個伺服器節點上安裝 Windows Server **（桌面體驗）**。 
+1.  Windows server 的安裝類型的所有四個伺服器節點上安裝 Windows Server **（桌面體驗）** 。 
 
 2.  新增網路資訊並加入網域，然後予以重新啟動。  
 
@@ -139,8 +139,8 @@ ms.locfileid: "65699904"
 
 2. 確定 SR 記錄檔磁碟區一定位在最快速的快閃存放裝置，而資料磁碟區位在較慢的高容量存放裝置上。
 
-10. 啟動 Windows PowerShell，然後使用 `Test-SRTopology` Cmdlet 來判斷您是否符合所有儲存體複本需求。 您可以在僅查看需求的模式中，使用此 Cmdlet 進行快速測試，還可以在評估長時間執行效能的模式中使用。  
-例如，  
+3. 啟動 Windows PowerShell，然後使用 `Test-SRTopology` Cmdlet 來判斷您是否符合所有儲存體複本需求。 您可以在僅查看需求的模式中，使用此 Cmdlet 進行快速測試，還可以在評估長時間執行效能的模式中使用。  
+   例如，  
 
    ```PowerShell
    MD c:\temp
@@ -148,13 +148,13 @@ ms.locfileid: "65699904"
    Test-SRTopology -SourceComputerName SR-SRV01 -SourceVolumeName f: -SourceLogVolumeName g: -DestinationComputerName SR-SRV03 -DestinationVolumeName f: -DestinationLogVolumeName g: -DurationInMinutes 30 -ResultPath c:\temp        
    ```
 
-      > [!IMPORTANT]
-      > 在指定的來源磁碟區上，若在評估期間使用的測試伺服器沒有任何寫入 IO 負載，請考慮新增工作負載，否則不會產生有用的報告。 您應該使用和實際執行類似的工作負載來測試，才能看出實際的數字與建議的記錄檔大小。 或者，只要在測試期間，將一些檔案複製到來源磁碟區，或下載並執行 [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) 以產生寫入 IO 即可。 例如，會寫入 D: 磁碟區長達五分鐘的少量 IO 工作負載範例︰  
-      > `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`  
+     > [!IMPORTANT]
+     > 在指定的來源磁碟區上，若在評估期間使用的測試伺服器沒有任何寫入 IO 負載，請考慮新增工作負載，否則不會產生有用的報告。 您應該使用和實際執行類似的工作負載來測試，才能看出實際的數字與建議的記錄檔大小。 或者，只要在測試期間，將一些檔案複製到來源磁碟區，或下載並執行 [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) 以產生寫入 IO 即可。 例如，會寫入 D: 磁碟區長達五分鐘的少量 IO 工作負載範例︰  
+     > `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`  
 
-11. 檢查 **TestSrTopologyReport.html** 報告，確定您符合儲存體複本需求。  
+4. 檢查 **TestSrTopologyReport.html** 報告，確定您符合儲存體複本需求。  
 
-    ![此圖顯示複寫拓撲報告結果](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
+   ![此圖顯示複寫拓撲報告結果](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
 ## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>步驟 2：設定兩個向外延展檔案伺服器容錯移轉叢集  
 您現在將建立兩個標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以複寫。 您可以先執行所有步驟，直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端管理電腦。  
@@ -175,7 +175,7 @@ ms.locfileid: "65699904"
     > [!WARNING]  
     > 如需仲裁設定的詳細資訊，請參閱**見證設定**一節[設定及管理仲裁](../../failover-clustering/manage-cluster-quorum.md)。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。  
 
-5.  在 **Redmond** 網站中將一部磁碟新增至叢集 CSV。 若要這樣做，在 [存放裝置] 區段的 [磁碟] 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]。  
+5.  在 **Redmond** 網站中將一部磁碟新增至叢集 CSV。 若要這樣做，在 [存放裝置]  區段的 [磁碟]  節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]  。  
 
 6.  使用[設定向外延展檔案伺服器](https://technet.microsoft.com/library/hh831718.aspx)中的指示，在兩個叢集上建立叢集向外延展檔案伺服器  
 
@@ -195,7 +195,7 @@ ms.locfileid: "65699904"
     New-Cluster -Name SR-SRVCLUSB -Node SR-SRV03,SR-SRV04 -StaticAddress <your IP here>  
     ```  
 
-3.  在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的每個叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如:   
+3.  在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的每個叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如:  
 
     ```PowerShell  
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
@@ -212,89 +212,89 @@ ms.locfileid: "65699904"
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>步驟 3：設定使用 Windows PowerShell 的叢集對叢集複寫  
 現在您將使用 Windows PowerShell 來設定叢集對叢集複寫。 您可以直接在節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端管理電腦執行所有步驟  
 
-1.  第一個叢集完整存取權授與另一個叢集執行**授與 SRAccess** cmdlet 的第一個叢集，在任何節點上或遠端電腦上。  Windows Server 遠端伺服器管理工具
+1. 第一個叢集完整存取權授與另一個叢集執行**授與 SRAccess** cmdlet 的第一個叢集，在任何節點上或遠端電腦上。  Windows Server 遠端伺服器管理工具
 
-    ```PowerShell
-    Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
-    ```  
+   ```PowerShell
+   Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
+   ```  
 
-2.  第二個叢集完整存取權授與另一個叢集執行**授與 SRAccess** cmdlet，在第二個叢集中任何節點上的或遠端電腦上。  
+2. 第二個叢集完整存取權授與另一個叢集執行**授與 SRAccess** cmdlet，在第二個叢集中任何節點上的或遠端電腦上。  
 
-    ```PowerShell
-    Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
-    ```  
+   ```PowerShell
+   Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
+   ```  
 
-3.  設定叢集對叢集複寫時，要指定來源和目的地磁碟、來源和目的地的記錄檔、來源和目的地叢集名稱，以及記錄檔大小。 您可以在本機伺服器上，或使用遠端管理電腦，執行此命令。  
+3. 設定叢集對叢集複寫時，要指定來源和目的地磁碟、來源和目的地的記錄檔、來源和目的地叢集名稱，以及記錄檔大小。 您可以在本機伺服器上，或使用遠端管理電腦，執行此命令。  
 
-    ```powershell  
-    New-SRPartnership -SourceComputerName SR-SRVCLUSA -SourceRGName rg01 -SourceVolumeName c:\ClusterStorage\Volume2 -SourceLogVolumeName f: -DestinationComputerName SR-SRVCLUSB -DestinationRGName rg02 -DestinationVolumeName c:\ClusterStorage\Volume2 -DestinationLogVolumeName f:  
-    ```  
+   ```powershell  
+   New-SRPartnership -SourceComputerName SR-SRVCLUSA -SourceRGName rg01 -SourceVolumeName c:\ClusterStorage\Volume2 -SourceLogVolumeName f: -DestinationComputerName SR-SRVCLUSB -DestinationRGName rg02 -DestinationVolumeName c:\ClusterStorage\Volume2 -DestinationLogVolumeName f:  
+   ```  
 
-    > [!WARNING]  
-    > 預設記錄檔大小為 8 GB。 根據 **Test-SRTopology** Cmdlet 的結果，您可能會決定以較高或較低的值來使用 **-LogSizeInBytes**。  
+   > [!WARNING]  
+   > 預設記錄檔大小為 8 GB。 根據 **Test-SRTopology** Cmdlet 的結果，您可能會決定以較高或較低的值來使用 **-LogSizeInBytes**。  
 
-4.  若要取得複寫來源和目的地狀態，請使用 **Get-SRGroup** 與 **Get-SRPartnership**，如下所示︰  
+4. 若要取得複寫來源和目的地狀態，請使用 **Get-SRGroup** 與 **Get-SRPartnership**，如下所示︰  
 
-    ```powershell
-    Get-SRGroup  
-    Get-SRPartnership  
-    (Get-SRGroup).replicas  
-    ```  
+   ```powershell
+   Get-SRGroup  
+   Get-SRPartnership  
+   (Get-SRGroup).replicas  
+   ```  
 
-5.  判斷複寫進度，如下所示︰  
+5. 判斷複寫進度，如下所示︰  
 
-    1.  在來源伺服器上，執行下列命令，並檢查 5015、5002、5004、1237、5001 及 2200 事件︰
+   1.  在來源伺服器上，執行下列命令，並檢查 5015、5002、5004、1237、5001 及 2200 事件︰
         
-        ```PowerShell
-        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
-        ```
-    2.  在目的地伺服器上，執行下列命令來查看可顯示建立合作關係的儲存體複本事件。 此事件會說明已複製的位元組數目和所花費的時間。 範例：  
-        
-        ```powershell
-        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
-        ```
-        以下是輸出的範例：
-        
-        ```
-        TimeCreated  : 4/8/2016 4:12:37 PM  
-        ProviderName : Microsoft-Windows-StorageReplica  
-        Id           : 1215  
-        Message      : Block copy completed for replica.  
-            ReplicationGroupName: rg02  
-            ReplicationGroupId:  
-            {616F1E00-5A68-4447-830F-B0B0EFBD359C}  
-            ReplicaName: f:\  
-            ReplicaId: {00000000-0000-0000-0000-000000000000}  
-            End LSN in bitmap:  
-            LogGeneration: {00000000-0000-0000-0000-000000000000}  
-            LogFileId: 0  
-            CLSFLsn: 0xFFFFFFFF  
-            Number of Bytes Recovered: 68583161856  
-            Elapsed Time (seconds): 117  
-        ```
-    3. 或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如: 
-
        ```PowerShell
-       (Get-SRGroup).Replicas | Select-Object numofbytesremaining
+       Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
        ```
+   2.  在目的地伺服器上，執行下列命令來查看可顯示建立合作關係的儲存體複本事件。 此事件會說明已複製的位元組數目和所花費的時間。 範例：  
+        
+       ```powershell
+       Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
+       ```
+       以下是輸出的範例：
+        
+       ```
+       TimeCreated  : 4/8/2016 4:12:37 PM  
+       ProviderName : Microsoft-Windows-StorageReplica  
+       Id           : 1215  
+       Message      : Block copy completed for replica.  
+           ReplicationGroupName: rg02  
+           ReplicationGroupId:  
+           {616F1E00-5A68-4447-830F-B0B0EFBD359C}  
+           ReplicaName: f:\  
+           ReplicaId: {00000000-0000-0000-0000-000000000000}  
+           End LSN in bitmap:  
+           LogGeneration: {00000000-0000-0000-0000-000000000000}  
+           LogFileId: 0  
+           CLSFLsn: 0xFFFFFFFF  
+           Number of Bytes Recovered: 68583161856  
+           Elapsed Time (seconds): 117  
+       ```
+   3. 或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如:
 
-       和進度範例 (將不會終止) 一樣：  
+      ```PowerShell
+      (Get-SRGroup).Replicas | Select-Object numofbytesremaining
+      ```
 
-       ```PowerShell
-         while($true) {  
-         $v = (Get-SRGroup -Name "Replication 2").replicas | Select-Object numofbytesremaining  
-         [System.Console]::Write("Number of bytes remaining: {0}`n", $v.numofbytesremaining)  
-         Start-Sleep -s 5  
-        }
-        ```
+      和進度範例 (將不會終止) 一樣：  
+
+      ```PowerShell
+        while($true) {  
+        $v = (Get-SRGroup -Name "Replication 2").replicas | Select-Object numofbytesremaining  
+        [System.Console]::Write("Number of bytes remaining: {0}`n", $v.numofbytesremaining)  
+        Start-Sleep -s 5  
+       }
+       ```
 
 6. 在目的地叢集中的目的地伺服器上，執行下列命令，並檢查 5009、1237、5001、5015、5005 及 2200 事件，即可了解處理進度。 此序列中應該不會有任何錯誤警告。 其中將會有許多指出進度的 1237 事件。  
     
    ```PowerShell
    Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
    ```
-   > [!NOTE]  
-        > 複寫時，目的地叢集磁碟永遠會顯示為 [線上 (沒有存取權)]。  
+   > [!NOTE]
+   > 複寫時，目的地叢集磁碟永遠會顯示為 [線上 (沒有存取權)]  。  
 
 ## <a name="step-4-manage-replication"></a>步驟 4：管理複寫
 
@@ -370,7 +370,7 @@ ms.locfileid: "65699904"
     檢查事件記錄檔，以查看複寫方向變更以及復原模式發生的情況，接著予以調解。 然後寫入 IO 就可以寫入新的來源伺服器所擁有的儲存體。 變更複寫方向，將會在先前的來源電腦上封鎖寫入 IO。  
 
     > [!NOTE]  
-    > 複寫時，目的地叢集磁碟永遠會顯示為 [線上 (沒有存取權)]。  
+    > 複寫時，目的地叢集磁碟永遠會顯示為 [線上 (沒有存取權)]  。  
 
 4.  若要變更預設 8 GB 記錄檔大小，請使用**Set-srgroup**來源和目的地儲存體複本群組上。  
 

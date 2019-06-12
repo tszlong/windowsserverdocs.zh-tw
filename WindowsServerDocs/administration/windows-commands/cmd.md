@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d9b99dbe7e26190e87c5dfc9de29980b9cb2f43
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 581e9a3bad8323c79839a4487b7da045e9cfec21
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192594"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811233"
 ---
 # <a name="cmd"></a>Cmd
 
@@ -76,10 +76,12 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 -   使用多個命令
 
-    若要使用的多個命令\<字串 >，藉此命令分隔符號分隔**&&** 並將其括在引號內。 例如:   
+    若要使用的多個命令\<字串 >，藉此命令分隔符號分隔 **&&** 並將其括在引號內。 例如:
+
     ```
     "<Command>&&<Command>&&<Command>"
-    ```  
+    ``` 
+ 
 -   處理引號
 
     如果您指定 **/c**或 **/k**， **cmd**程序的其餘部分*字串*和引號會保留，只有當所有下列的條件成立：  

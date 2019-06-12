@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8684926beb0f0c911ac384970d15ba7d25f84079
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ddf6a816e417c2eddff090df8dba841a894a3255
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475925"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447668"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>啟用永遠離線模式更快速地存取檔案
 
@@ -44,7 +44,7 @@ ms.locfileid: "65475925"
 6. 選取 [已啟用]  。
 7. 在 **選項**方塊中，選取**顯示**。 **視窗中顯示內容**會出現。
 8. 在 **值名稱**方塊中，指定您要啟用永遠離線模式的檔案共用。
-9. 若要啟用永遠離線模式的所有檔案共用上，輸入**\***。
+9. 若要啟用永遠離線模式的所有檔案共用上，輸入 * *\\* * *。
 10. 在 **值**方塊中，輸入**延遲 = 1**毫秒，以設定延遲臨界值，然後選取**確定**。
 
 >[!NOTE]

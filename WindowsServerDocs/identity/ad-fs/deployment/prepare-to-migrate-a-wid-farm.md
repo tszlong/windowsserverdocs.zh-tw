@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4985a8d16614bd12bce991e196d105464d37634d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a0e4bb77003ab24e0e31268509fb8667a671bea6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845059"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445531"
 ---
 # <a name="prepare-to-migrate-an-ad-fs-20-wid-farm"></a>準備移轉 AD FS 2.0 WID 伺服器陣列  
  若要準備移轉屬於 Windows 內部資料庫 (WID) 伺服器陣列到 Windows Server 2012 的 AD FS 2.0 同盟伺服器，您必須匯出，並從這些伺服器備份的 AD FS 組態資料。  
@@ -38,14 +38,14 @@ ms.locfileid: "59845059"
 >   
 >  這個步驟是選擇性的，因為此憑證儲存在本機電腦個人憑證存放區中，作業系統升級時會予以保留。  
   
-2.  除了所有自我簽署憑證以外，匯出不是內部產生的任何權杖簽署、權杖加密或服務通訊憑證以及金鑰。  
+2. 除了所有自我簽署憑證以外，匯出不是內部產生的任何權杖簽署、權杖加密或服務通訊憑證以及金鑰。  
   
 您可以使用 Windows PowerShell 來檢視伺服器上使用中的所有憑證。 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令來檢視您的伺服器上使用中的所有憑證`PSH:>Get-ADFSCertificate`。 這個命令的輸出包括指定每個憑證存放區位置的 StoreLocation 與 StoreName 值。  然後，您可以使用[匯出伺服器驗證憑證的私用金鑰部分](Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)中的指導方針，將每個憑證及其私密金鑰匯出至 .pfx 檔案。  
   
 > [!NOTE]
 >  這個步驟是選擇性的，因為作業系統升級期間會保留所有外部憑證。  
   
-3.  記錄 AD FS 2.0 同盟服務帳戶的身分識別和此帳戶的密碼。  
+3. 記錄 AD FS 2.0 同盟服務帳戶的身分識別和此帳戶的密碼。  
   
 若要尋找識別值，請檢查**登入身分**資料行**AD FS 2.0 Windows 服務**中**Services**主控台，然後手動記錄這個值。  
   
