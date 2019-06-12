@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/18/2019
 description: 本文說明將 Windows Server 2019 叢集從一個網域移到另一個
 ms.localizationpriority: medium
-ms.openlocfilehash: bcfd458c94d33820f434cde3313dc069fc42ffd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1054de942e807f00586903683faeaf695ec2f033
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875939"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452936"
 ---
 # <a name="failover-cluster-domain-migration"></a>容錯移轉叢集網域移轉
 
@@ -46,7 +46,7 @@ Microsoft 不提供支援，系統管理員嘗試移動資源從某個網域，�
 
 第一個選項涉及摧毀叢集，並重建新的網域中。
 
-![終結並重新建置](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-1.gif)
+![終結並重新建置](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-1.gif)
 
 動畫所示，此選項是破壞性的步驟要：
 
@@ -56,7 +56,7 @@ Microsoft 不提供支援，系統管理員嘗試移動資源從某個網域，�
 
 第二個選項是較不具破壞性，但需要額外的硬體，如此新的叢集時就需要建立新的網域中。  新的網域中的叢集之後，執行叢集移轉精靈來移轉資源。 請注意，這不會將資料移轉-您必須使用另一個工具來移轉資料，例如[儲存體移轉服務](../storage/storage-migration-service/overview.md)（一旦新增叢集支援）。
 
-![建置和移轉](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-2.gif)
+![建置和移轉](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-2.gif)
 
 動畫所示，此選項不是破壞性，但確實需要不同的硬體或從現有的叢集中的節點比已移除。
 
@@ -76,7 +76,7 @@ Microsoft 不提供支援，系統管理員嘗試移動資源從某個網域，�
 
 若要完成此程序是從某個網域變更叢集中，加入工作群組，再回復成新的網域。  若要摧毀叢集、 重建叢集，請安裝應用程式等需要不一定需要。 比方說，看起來應該像這樣：
 
-![移轉](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-3.gif)
+![移轉](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
 
 ## <a name="migrating-a-cluster-to-a-new-domain"></a>移轉至新網域的叢集
 

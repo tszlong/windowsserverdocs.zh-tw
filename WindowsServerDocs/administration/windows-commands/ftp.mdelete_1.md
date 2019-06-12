@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9390f8e5b0bded92a553b3057d122dace3fc665a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b342f9d728e91085d5edf2f8e1ece00b48bec8d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851609"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438324"
 ---
 # <a name="ftp-mdelete1"></a>ftp: mdelete_1
 
@@ -30,9 +30,11 @@ ms.locfileid: "59851609"
 mdelete <remoteFile>[ ]  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<remoteFile>|指定要刪除的遠端檔案。|  
+
+|  參數   |             描述              |
+|--------------|--------------------------------------|
+| <remoteFile> | 指定要刪除的遠端檔案。 |
+
 ## <a name="BKMK_Examples"></a>範例  
 刪除遠端檔案**a.exe**並**b.exe**。  
 ```  

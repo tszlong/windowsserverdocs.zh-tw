@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: christianmontoya
 ms.localizationpriority: medium
-ms.openlocfilehash: e60cf70f1f91ad87046bedf024fe9afc459075b6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8b1baf642ffa3c8e8a0a2cfc70d2f49b58f208b3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860509"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446578"
 ---
 # <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>將 Azure AD Domain Services 與 RDS 部署整合
 
@@ -37,7 +37,7 @@ ms.locfileid: "59860509"
 
 使用下列資訊來部署 RDS 與 Azure AD DS
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 您可以從 Azure AD，以使用在 RDS 部署中，將您的身分識別才能[設定 Azure AD，以儲存您的使用者身分識別的雜湊的密碼](/azure/active-directory-domain-services/active-directory-ds-getting-started-password-sync)。 產自---雲端中的組織不需要進行任何額外的變更，在他們的目錄;不過，在內部部署組織必須允許密碼雜湊同步處理並儲存在 Azure AD 中，可能不允許某些組織中。 使用者必須進行這項設定變更後重設其密碼。
 
@@ -51,26 +51,26 @@ ms.locfileid: "59860509"
 2. 設定 RDS 您可以使用 Azure 範本，或以手動方式部署 RDS。
    - 使用[現有 AD 範本](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)。 請確定下列自訂：
    
-      - **設定**
-         - **资源组**：使用您想要用來建立 RDS 資源的資源群組。
+     - **設定**
+       - **资源组**：使用您想要用來建立 RDS 資源的資源群組。
          > [!NOTE] 
          > 現在此值必須是 Azure resource manager 虛擬網路所在的相同的資源群組的權限。
 
-         - **Dns 標籤首碼**:輸入的 URL 想要用來存取 RD Web 的使用者。
-         - **Ad 網域名稱**:輸入您 Azure AD 執行個體，例如"contoso.onmicrosoft.com"或"contoso.com"的完整名稱。
-         - **Ad Vnet-name**並**Ad 子網路名稱**:輸入您在建立 Azure resource manager 虛擬網路時使用的相同值。 這是 RDS 資源要連線的子網路。
-         - **系統管理員使用者名稱**並**系統管理員密碼**:輸入成員的系統管理員使用者的認證**AAD DC 系統管理員**群組在 Azure AD 中。
+       - **Dns 標籤首碼**:輸入的 URL 想要用來存取 RD Web 的使用者。
+       - **Ad 網域名稱**:輸入您 Azure AD 執行個體，例如"contoso.onmicrosoft.com"或"contoso.com"的完整名稱。
+       - **Ad Vnet-name**並**Ad 子網路名稱**:輸入您在建立 Azure resource manager 虛擬網路時使用的相同值。 這是 RDS 資源要連線的子網路。
+       - **系統管理員使用者名稱**並**系統管理員密碼**:輸入成員的系統管理員使用者的認證**AAD DC 系統管理員**群組在 Azure AD 中。
    
-      - **範本**
-         - 移除的所有屬性**dnsServers**： 在選取之後**編輯範本**從 Azure 快速入門範本 頁面中，搜尋"dnsServers 」，並都移除屬性。 
+     - **範本**
+        - 移除的所有屬性**dnsServers**： 在選取之後**編輯範本**從 Azure 快速入門範本 頁面中，搜尋"dnsServers 」，並都移除屬性。 
 
-            比方說，然後再移除**dnsServers**屬性：
+           比方說，然後再移除**dnsServers**屬性：
       
-            ![Azure 快速入門範本具有 dnsSettings 屬性](media/rds-remove-dnssettings-before.png)
+           ![Azure 快速入門範本具有 dnsSettings 屬性](media/rds-remove-dnssettings-before.png)
 
-            而以下是相同的檔案之後移除屬性,：
+           而以下是相同的檔案之後移除屬性,：
 
-            ![Azure 快速入門範本，以移除 dnsSettings 屬性](media/rds-remove-dnssettings-after.png)
+           ![Azure 快速入門範本，以移除 dnsSettings 屬性](media/rds-remove-dnssettings-after.png)
    
    - [手動部署 RDS](rds-deploy-infrastructure.md)。 
 

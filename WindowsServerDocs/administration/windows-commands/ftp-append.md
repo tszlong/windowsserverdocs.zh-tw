@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23fa04b86d9c26fb30b74eebe8caef8498b90a12
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9580d725120bb32a9b915d37cdbc173bfb17b859
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879029"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438839"
 ---
 # <a name="ftp-append"></a>ftp： 附加
 
@@ -30,10 +30,12 @@ ms.locfileid: "59879029"
 append <LocalFile> [remoteFile]  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<LocalFile>|指定要新增的本機檔案。|  
-|[remoteFile]|指定要在遠端電腦上的檔案<LocalFile>加入。|  
+
+|  參數   |                               描述                                |
+|--------------|--------------------------------------------------------------------------|
+| <LocalFile>  |                     指定要新增的本機檔案。                     |
+| [remoteFile] | 指定要在遠端電腦上的檔案<LocalFile>加入。 |
+
 ## <a name="remarks"></a>備註  
 如果*remoteFile*省略，則*LocalFile*名稱來取代遠端檔案名稱。  
 ## <a name="BKMK_Examples"></a>範例  

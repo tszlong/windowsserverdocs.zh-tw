@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4b00c773462569f005a73f535b1a872ae7b389db
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9322da3142c584c7b9d0a28396a1d1fd62ce6ee
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859899"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446398"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>使用 DNS 原則進行 DNS 查詢上的篩選套用
 
@@ -45,7 +45,7 @@ DNS 原則中的查詢篩選器可讓您設定 DNS 伺服器回應 DNS 查詢和
 >[!NOTE]
 >本主題中的範例命令會使用 Windows PowerShell 命令**新增 DnsServerQueryResolutionPolicy**。 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。 
 
-##<a name="bkmk_block1"></a>從網域的區塊查詢
+## <a name="bkmk_block1"></a>從網域的區塊查詢
 
 在某些情況下，您可能想要封鎖的網域，您已識別為惡意的或不符合您組織的使用方式指導方針的網域的 DNS 名稱解析。 您可以使用 DNS 原則，以完成封鎖查詢的網域。
 
@@ -60,7 +60,7 @@ Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicy" -Action IGNORE -FQDN 
 >[!NOTE]
 >當您設定**動作**具有值的參數**忽略**，DNS 伺服器設定為完全捨棄查詢但未收到回覆。 這會造成惡意網域的逾時時間，DNS 用戶端。
 
-##<a name="bkmk_block2"></a>從子網路的區塊查詢
+## <a name="bkmk_block2"></a>從子網路的區塊查詢
 此範例中，使用中，您可以封鎖來自子網路的查詢如果它找到的惡意程式碼受到感染，並嘗試連絡惡意網站使用您的 DNS 伺服器。 
 
 ` Add-DnsServerClientSubnet -Name "MaliciousSubnet06" -IPv4Subnet 172.0.33.0/24 -PassThru
@@ -73,14 +73,14 @@ Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyMalicious06" -Action IG
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyMalicious06" -Action IGNORE -ClientSubnet  "EQ,MaliciousSubnet06" –FQDN “EQ,*.contosomalicious.com” -PassThru
 `
 
-##<a name="bkmk_block3"></a>封鎖查詢的類型
+## <a name="bkmk_block3"></a>封鎖查詢的類型
 您可能需要封鎖您的伺服器上的查詢特定類型的名稱解析。 例如，您可以封鎖 'ANY' 查詢，因為它可以用來建立 amplification 攻擊的惡意行為。
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyQType" -Action IGNORE -QType "EQ,ANY" -PassThru
 `
 
-##<a name="bkmk_allow1"></a>允許查詢只從網域
+## <a name="bkmk_allow1"></a>允許查詢只從網域
 您不能只使用 DNS 原則封鎖的查詢，您可以使用它們來自動核准來自特定網域或子網路的查詢。 當您設定允許清單時，DNS 伺服器只會處理查詢，從允許的網域，同時封鎖來自其他網域的所有其他查詢。
 
 下列範例命令可讓只在電腦和裝置來查詢 DNS 伺服器的最大網域 contoso.com 和子網域。
@@ -89,7 +89,7 @@ Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyQType" -Action IGNORE -
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicyDomain" -Action IGNORE -FQDN "NE,*.contoso.com" -PassThru 
 `
 
-##<a name="bkmk_allow2"></a>允許查詢只能從子網路
+## <a name="bkmk_allow2"></a>允許查詢只能從子網路
 您也可以建立允許清單 IP 子網路，以便不來自這些子網路的所有查詢都會被都忽略。
 
 `
@@ -99,7 +99,7 @@ Add-DnsServerClientSubnet -Name "AllowedSubnet06" -IPv4Subnet 172.0.33.0/24 -Pas
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicySubnet” -Action IGNORE -ClientSubnet  "NE, AllowedSubnet06" -PassThru
 `
 
-##<a name="bkmk_allow3"></a>允許只有特定 QTypes
+## <a name="bkmk_allow3"></a>允許只有特定 QTypes
 您可以套用允許列出 QTYPEs。 
 
 比方說，如果您有外部查詢 DNS 伺服器介面 164.8.1.1 的客戶，只有特定 QTYPEs 可進行查詢，例如 SRV 或 TXT 記錄進行名稱解析，或進行監視的內部伺服器所使用的其他 QTYPEs 時。

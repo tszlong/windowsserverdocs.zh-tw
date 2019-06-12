@@ -12,12 +12,12 @@ ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3c48d2abb7fd8431f40f76f8eece5c4142be4c75
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11372589528fcc78e0053bc7002449b53cb3181d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846549"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436039"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 的防火牆
  
@@ -27,13 +27,13 @@ ms.locfileid: "59846549"
   
 ### <a name="to-run-the-repair-anywhere-access-wizard"></a>執行 [修復隨處存取精靈]  
   
-1.  開啟 [儀表板]。  
+1. 開啟 [儀表板]。  
   
-2.  按一下 [設定] ，再按一下 [隨處存取]  索引標籤，然後按一下 [修復] 。  
+2. 按一下 [設定]  ，再按一下 [隨處存取]  索引標籤，然後按一下 [修復]  。  
   
-3.  請遵循 [修復隨處存取精靈] 中的指示。  
+3. 請遵循 [修復隨處存取精靈] 中的指示。  
   
- 如果您使用進階的網路安裝程式或使用非 Microsoft 防火牆，您可能需要在防火牆上開啟其他連接埠。 下表中的連接埠已向 Internet Assigned Numbers Authority (IANA) 註冊。  
+   如果您使用進階的網路安裝程式或使用非 Microsoft 防火牆，您可能需要在防火牆上開啟其他連接埠。 下表中的連接埠已向 Internet Assigned Numbers Authority (IANA) 註冊。  
   
 |連接埠號碼|描述|  
 |-----------------|-----------------|  

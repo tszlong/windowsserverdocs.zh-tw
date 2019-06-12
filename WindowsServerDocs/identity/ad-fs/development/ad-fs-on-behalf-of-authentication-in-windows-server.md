@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f98141745cb5bc8355d1ad3c37e72b4710eb4fc9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 047f297cfaabff3cbbd45057a4198e2fd2e747de
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190625"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445457"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>建置使用代理者 (OBO) 使用 OAuth 與 AD FS 2016 或更新版本的多層式應用程式
 
@@ -229,22 +229,24 @@ WebAPIOBO | 後端 web api，供 ToDoService 用來執行必要的作業，當�
 * 在控制器中加入下列程式碼
 
 
-        using System;
-        using System.Collections.Generic;
-        using System.Linq;
-        using System.Net;
-        using System.Net.Http;
-        using System.Web.Http;
-        namespace WebAPIOBO.Controllers
+~~~
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using System.Net.Http;
+    using System.Web.Http;
+    namespace WebAPIOBO.Controllers
+    {
+        public class WebAPIOBOController : ApiController
         {
-            public class WebAPIOBOController : ApiController
+            public IHttpActionResult Get()
             {
-                public IHttpActionResult Get()
-                {
-                    return Ok("WebAPI via OBO");
-                }
+                return Ok("WebAPI via OBO");
             }
         }
+    }
+~~~
 
 此程式碼只會傳回字串，當任何人都針對 WebAPI WebAPIOBO 將 Get 要求
 
@@ -272,15 +274,14 @@ WebAPIOBO | 後端 web api，供 ToDoService 用來執行必要的作業，當�
 * 開啟 Web.config 檔案
 * 修改下列索引鍵
 
-| Key | 值 |
-|:-----|:-------|
-|ida:Audience| 指定在設定 ToDoListService WebAPI，比方說，AD fs ToDoListService 的識別碼 https://localhost:44321/|
-|ida:ClientID| 指定在設定 ToDoListService WebAPI，比方說，AD fs ToDoListService 的識別碼 https://localhost:44321/ </br>**它是非常重要的 ida： 對象和 ida: ClientID 符合每個其他**|
-|ida:ClientSecret| 這是當您在 AD FS 中設定 ToDoListService 用戶端時，AD FS 將會產生的密碼|
-|ida:AdfsMetadataEndpoint| 這是您的 AD FS 中繼資料 URL 如例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml|
-|ida:OBOWebAPIBase| 這是我們將使用後端 API，例如呼叫的基底地址 https://localhost:44300|
-|ida:Authority| 這是您的 AD FS 服務的 URL 範例 https://fs.anandmsft.com/adfs/|
-
+| Key                      | 值                                                                                                                                                                                                                   |
+|:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ida:Audience             | 指定在設定 ToDoListService WebAPI，比方說，AD fs ToDoListService 的識別碼 https://localhost:44321/                                                                                         |
+| ida:ClientID             | 指定在設定 ToDoListService WebAPI，比方說，AD fs ToDoListService 的識別碼 <https://localhost:44321/> </br>**它是非常重要的 ida： 對象和 ida: ClientID 符合每個其他** |
+| ida:ClientSecret         | 這是當您在 AD FS 中設定 ToDoListService 用戶端時，AD FS 將會產生的密碼                                                                                                                   |
+| ida:AdfsMetadataEndpoint | 這是您的 AD FS 中繼資料 URL 如例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
+| ida:OBOWebAPIBase        | 這是我們將使用後端 API，例如呼叫的基底地址 https://localhost:44300                                                                                                                     |
+| ida:Authority            | 這是您的 AD FS 服務的 URL 範例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 中索引鍵的所有其他 ida: XXXXXXX **appsettings**可以標記為註解或刪除節點
 

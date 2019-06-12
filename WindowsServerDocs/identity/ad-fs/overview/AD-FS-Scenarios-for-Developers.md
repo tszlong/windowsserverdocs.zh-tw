@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a3156eefc4af52fb7daefb618c689b78fef5efc
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: fb1bc5776ea4d24f274c79563d9e346b104de6d9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188825"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444227"
 ---
 # <a name="ad-fs-scenarios-for-developers"></a>適合開發人員使用的 AD FS 案例
 
@@ -115,7 +115,7 @@ AD FS 2016|在 PowerShell 中|AD FS 管理
 1.  原生用戶端應用程式起始的 ADAL 程式庫呼叫流程。  這會觸發瀏覽器為基礎 HTTP GET 至 AD FS 授權端點：  
   
 **授權要求：**  
-取得 https://fs.contoso.com/adfs/oauth2/authorize?  
+取得 <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 參數|值  
 ---------|---------  
@@ -126,9 +126,9 @@ redirect_uri|重新導向 URI 的應用程式群組中的原生應用程式
   
 **授權要求的回應：**  
 如果使用者未登入之前，會提示使用者輸入認證。    
-AD FS 會透過做為 redirect_uri 的查詢元件中的"code"參數傳回授權碼回應。  例如: HTTP/1.1 302 已找到位置：  **http://redirect_uri:80/?code=&lt; 程式碼&gt;。**  
+AD FS 會透過做為 redirect_uri 的查詢元件中的"code"參數傳回授權碼回應。  例如: HTTP/1.1 302 找到位置：  **<http://redirect_uri:80/?code=&lt;code&gt>;。**  
   
-2.  然後，原生用戶端會傳送的程式碼，以及下列參數，對 AD FS 權杖端點：  
+2. 然後，原生用戶端會傳送的程式碼，以及下列參數，對 AD FS 權杖端點：  
   
 **權杖的要求：**  
 貼文 https://fs.contoso.com/adfs/oauth2/token  
@@ -144,7 +144,7 @@ redirect_uri|重新導向 URI 的應用程式群組中的原生應用程式
 **權杖要求的回應：**  
 AD FS 會使用 access_token、 refresh_token 和在本文中的 id_token 以 HTTP 200 回應。  
   
-3.  原生應用程式接著會將上述回應的 access_token 部分做授權標頭在 HTTP 要求傳送至 web API。  
+3. 原生應用程式接著會將上述回應的 access_token 部分做授權標頭在 HTTP 要求傳送至 web API。  
   
 ### <a name="single-sign-on-behavior"></a>單一登入行為  
 後續的用戶端要求中，1 小時 （依預設） access_token 仍然會有效快取中，而且新的要求將不會觸發任何 AD fs 的流量。  自動將 adal 從快取擷取的 access_token。  
@@ -177,9 +177,9 @@ refresh_token|在初始權杖要求的回應中的 AD FS 所發出的重新整�
   
 ![通訊協定流程的描述](media/ADFS_DEV_4.png)  
   
-1.  授權要求中透過瀏覽器，會將傳送 HTTP GET 至 AD FS Web 應用程式起始授權端點  
-**授權要求**:  
-取得 https://fs.contoso.com/adfs/oauth2/authorize?  
+1. 授權要求中透過瀏覽器，會將傳送 HTTP GET 至 AD FS Web 應用程式起始授權端點  
+   **授權要求**:  
+   取得 <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 參數|值  
 ---------|---------  
@@ -190,13 +190,13 @@ redirect_uri|重新導向 URI 的應用程式群組中的 web 應用程式 （�
   
 授權要求的回應：  
 如果使用者未登入之前，會提示使用者輸入認證。  
-AD FS 會藉由例如做為 redirect_uri，查詢元件中的"code"參數傳回授權碼回應：HTTP/1.1 302 已找到位置： https://webapp.contoso.com/?code=&lt; 程式碼&gt;。  
+AD FS 會藉由例如做為 redirect_uri，查詢元件中的"code"參數傳回授權碼回應：HTTP/1.1 302 找到位置： <https://webapp.contoso.com/?code=&lt;code&gt>;。  
   
-2.  由於上述的 302，瀏覽器會起始 HTTP GET 至 web 應用程式，例如：取得 http://redirect_uri:80/?code=&lt; 程式碼&gt;。   
+2. 由於上述的 302，瀏覽器會起始 HTTP GET 至 web 應用程式，例如：取得<http://redirect_uri:80/?code=&lt;code&gt>;。   
   
-3.  Web 應用程式，接收過程式碼，此時會起始對 AD FS 的權杖端點，傳送下列要求  
-**權杖的要求：**  
-貼文 https://fs.contoso.com/adfs/oauth2/token  
+3. Web 應用程式，接收過程式碼，此時會起始對 AD FS 的權杖端點，傳送下列要求  
+   **權杖的要求：**  
+   貼文 https://fs.contoso.com/adfs/oauth2/token  
   
 參數|值  
 ---------|---------  
@@ -210,7 +210,7 @@ client_secret|應用程式群組中的 web 應用程式 （伺服器應用程式
 **權杖要求的回應：**  
 AD FS 會使用 access_token、 refresh_token 和在本文中的 id_token 以 HTTP 200 回應。  
 宣告  
-4.  Web 應用程式則可能會耗用 access_token 上述之回應的一部分 （在 web 應用程式本身在其中裝載資源案例），否則為將它傳送為授權標頭在 HTTP 要求到 web API。  
+4. Web 應用程式則可能會耗用 access_token 上述之回應的一部分 （在 web 應用程式本身在其中裝載資源案例），否則為將它傳送為授權標頭在 HTTP 要求到 web API。  
   
 #### <a name="single-sign-on-behavior"></a>單一登入行為  
 雖然存取權杖仍然有效 （1 小時） （依預設） 用戶端的快取中，您可能會認為，第二個要求能與上述-原生用戶端案例相同，新的要求不會觸發對 AD FS 的任何流量的存取權杖將會自動為會從快取擷取的 ADAL。  不過，就可以在 web 應用程式可以傳送不同的授權和權杖要求，其前身，透過不同的 URL 連結，如範例所示。  
@@ -245,7 +245,7 @@ client_secret|Web 應用程式 （伺服器應用程式），應用程式群組�
 1.  授權要求中透過瀏覽器，會將傳送 HTTP GET 至 AD FS Web 應用程式起始授權端點  
   
 **授權要求：**  
-取得 https://fs.contoso.com/adfs/oauth2/authorize?  
+取得 <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 參數|值  
 ---------|---------  
@@ -260,9 +260,9 @@ redirect_uri|重新導向 URI 的應用程式群組中的 web 應用程式 （�
 AD FS 會以 HTTP 200 和表單，其中包含以下的 做為隱藏項目：  
 * 程式碼： 授權碼  
 * id_token: JWT 權杖中包含描述使用者驗證的宣告  
-2.  表單會自動張貼到 web 應用程式，傳送至 web 應用程式的程式碼，並在 id_token 的 redirect_uri。  
+* 表單會自動張貼到 web 應用程式，傳送至 web 應用程式的程式碼，並在 id_token 的 redirect_uri。  
   
-3.  Web 應用程式，接收過程式碼，此時會起始對 AD FS 的權杖端點，傳送下列要求  
+3. Web 應用程式，接收過程式碼，此時會起始對 AD FS 的權杖端點，傳送下列要求  
   
 **權杖的要求：**  
 貼文 https://fs.contoso.com/adfs/oauth2/token
@@ -281,7 +281,7 @@ client_secret|Web 應用程式 （伺服器應用程式），應用程式群組�
 **權杖要求的回應：**  
 AD FS 會使用 access_token、 refresh_token 和在本文中的 id_token 以 HTTP 200 回應。  
   
-4.  Web 應用程式則可能會耗用 access_token 上述之回應的一部分 （在 web 應用程式本身在其中裝載資源案例），否則為將它傳送為授權標頭在 HTTP 要求到 web API。  
+4. Web 應用程式則可能會耗用 access_token 上述之回應的一部分 （在 web 應用程式本身在其中裝載資源案例），否則為將它傳送為授權標頭在 HTTP 要求到 web API。  
   
 #### <a name="single-sign-on-behavior"></a>單一登入行為  
 單一登入行為會與上述的 Oauth 2.0 機密用戶端流程相同。  

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7090657a0936aed0f4b2e79007f69d7b082b0b8f
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: f9b5d2b0d5acfcbde52131c29704e38d835d048e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63750642"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447557"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在獨立伺服器上部署儲存空間
 
@@ -39,7 +39,7 @@ ms.locfileid: "63750642"
 >[!NOTE]
 >本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱 < [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用獨立的 Windows Server 2012−based 伺服器上的儲存空間，請確定您想要使用的實體磁碟符合下列必要條件。
 
@@ -141,7 +141,7 @@ Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToA
 6. 在 [**選取的儲存體配置**頁面上，選取所需的版面配置，然後選取**下一步]** 。
     
     >[!NOTE]
-    >如果您選取的配置，其中您沒有足夠的實體磁碟，您就會收到一則錯誤訊息，當您選取**下一步** 。 如需使用和磁碟需求一個版面配置資訊，請參閱[必要條件](#prerequisites))。
+    >如果您選取的配置，其中您沒有足夠的實體磁碟，您就會收到一則錯誤訊息，當您選取**下一步**。 如需使用和磁碟需求一個版面配置資訊，請參閱[必要條件](#prerequisites))。
 
 7. 如果您選取**鏡像**因為儲存配置，而且您會在集區中，有五個或多個磁碟**設定的復原設定**頁面會隨即出現。 選取下列其中一個選項：
     
@@ -150,20 +150,20 @@ Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToA
 
 8. 在 [**指定的佈建的型別**頁面上，選取其中一個下列的選項，然後選取**下一步]** 。
     
-      - **精簡**
+   - **精簡**
         
-        使用精簡佈建時，會視需要配置空間。 這會將可用存放區的使用情況最佳化。 不過，由於這可讓您超額配置存放區，因此您必須小心監視有多少磁碟空間可用。
+     使用精簡佈建時，會視需要配置空間。 這會將可用存放區的使用情況最佳化。 不過，由於這可讓您超額配置存放區，因此您必須小心監視有多少磁碟空間可用。
     
-      - **固定**
+   - **固定**
         
-        使用固定佈建時，會在建立虛擬磁碟時立即配置儲存容量。 因此，固定佈建會從儲存集區使用與虛擬磁碟大小相等的空間。
+     使用固定佈建時，會在建立虛擬磁碟時立即配置儲存容量。 因此，固定佈建會從儲存集區使用與虛擬磁碟大小相等的空間。
     
-    >[!TIP]
-    >使用「儲存空間」，您便可以將精簡佈建和固定佈建的虛擬磁碟建立在同一個儲存集區中。 例如，您可以使用精簡佈建的虛擬磁碟來裝載資料庫，使用固定佈建的虛擬磁碟來裝載關聯的記錄檔。
+     >[!TIP]
+     >使用「儲存空間」，您便可以將精簡佈建和固定佈建的虛擬磁碟建立在同一個儲存集區中。 例如，您可以使用精簡佈建的虛擬磁碟來裝載資料庫，使用固定佈建的虛擬磁碟來裝載關聯的記錄檔。
 
 9. 在 [指定的虛擬磁碟的大小]  頁面上，執行下列動作：
     
-    如果您選取了精簡佈建在上一個步驟中，在**虛擬磁碟大小**方塊中，輸入虛擬磁碟大小，選取單位 (**MB**， **GB**，或**TB**)，然後選取**下一步** 。
+    如果您選取了精簡佈建在上一個步驟中，在**虛擬磁碟大小**方塊中，輸入虛擬磁碟大小，選取單位 (**MB**， **GB**，或**TB**)，然後選取**下一步**。
     
     如果您選取了固定佈建在上一個步驟中，選取下列其中一項：
     
@@ -225,7 +225,7 @@ New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1
 
 2. 在 [**在您開始之前**頁面上，選取**下一步]** 。
 
-3. 在 **選取 伺服器和磁碟**頁面上，執行下列作業，並選取**下一步** 。
+3. 在 **選取 伺服器和磁碟**頁面上，執行下列作業，並選取**下一步**。
     
     1. 在  **Server**區域中，選取您想要佈建磁碟區所在的伺服器。
     

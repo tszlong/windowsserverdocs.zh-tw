@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 77fb8cc6e13cb82e4d07808c3ae77757a4b2de79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8d1ea7a428b2d03649a7a9347421d717be3f468a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826779"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445829"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -48,15 +48,15 @@ ms.locfileid: "59826779"
   
 1.  在網域控制站上，以 Domain Admins 安全性群組成員的身分登入伺服器。  
   
-2.  開啟「Active Directory 管理中心」。 在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [Active Directory 管理中心]。  
+2.  開啟「Active Directory 管理中心」。 在 [伺服器管理員] 中，按一下 [工具]  ，然後按一下 [Active Directory 管理中心]  。  
   
-3.  展開 [動態存取控制]，然後按一下 [資源內容]。  
+3.  展開 [動態存取控制]  ，然後按一下 [資源內容]  。  
   
-4.  用滑鼠右鍵按一下 [影響]，然後按一下 [啟用]。  
+4.  用滑鼠右鍵按一下 [影響]  ，然後按一下 [啟用]  。  
   
-5.  在 [個人識別資訊] 上按一下滑鼠右鍵，然後按一下 [啟用]。  
+5.  在 [個人識別資訊]  上按一下滑鼠右鍵，然後按一下 [啟用]  。  
   
-![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell 對等命令****  
+![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -76,38 +76,38 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition** ，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。  
   
-3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
+3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]  ，然後按一下 [檔案伺服器資源管理員]  。  
   
-4.  展開 [分類管理] ，以滑鼠右鍵按一下 [分類規則] ，然後按一下 [設定分類排程] 。  
+4.  展開 [分類管理]  ，以滑鼠右鍵按一下 [分類規則]  ，然後按一下 [設定分類排程]  。  
   
-5.  選取 [啟用固定的排程]  核取方塊，選取 [允許對新檔案進行連續分類]  核取方塊，選擇每週中執行分類的日子，然後按一下 [確定] 。  
+5.  選取 [啟用固定的排程]  核取方塊，選取 [允許對新檔案進行連續分類]  核取方塊，選擇每週中執行分類的日子，然後按一下 [確定]  。  
   
-6.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則] 。  
+6.  在 [分類規則]  上按一下滑鼠右鍵，然後按一下 [建立分類規則]  。  
   
-7.  在 [一般] 索引標籤的 [規則名稱] 方塊中，輸入規則的名稱，例如 **Contoso Confidential**。  
+7.  在 [一般]  索引標籤的 [規則名稱]  方塊中，輸入規則的名稱，例如 **Contoso Confidential**。  
   
-8.  在 [範圍]  索引標籤上，按一下 [新增] ，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。  
+8.  在 [範圍]  索引標籤上，按一下 [新增]  ，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。  
   
     > [!NOTE]  
     > 您也可以為範圍選擇動態命名空間。 如需分類規則的動態命名空間的詳細資訊，請參閱[什麼是檔案伺服器資源管理員的新功能 Windows Server 2012\[重新導向\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
   
-9. 在 [分類] 索引標籤中，設定下列選項：  
+9. 在 [分類]  索引標籤中，設定下列選項：  
   
-    -   在 [選擇將內容指派給檔案的方法] 方塊中，確定已選取 [內容分類器]。  
+    -   在 [選擇將內容指派給檔案的方法]  方塊中，確定已選取 [內容分類器]  。  
   
-    -   在 [選擇要指派給檔案的內容] 方塊中，按一下 [影響]。  
+    -   在 [選擇要指派給檔案的內容]  方塊中，按一下 [影響]  。  
   
-    -   在 [指定值] 方塊中，按一下 [高]。  
+    -   在 [指定值]  方塊中，按一下 [高]  。  
   
-10. 在 [參數] 標題之下，按一下 [設定]。  
+10. 在 [參數]  標題之下，按一下 [設定]  。  
   
-11. 在 [運算式類型] 欄中，選取 [字串]。  
+11. 在 [運算式類型]  欄中，選取 [字串]  。  
   
-12. 在 [運算式]  欄中，輸入 **Contoso Confidential**，然後按一下 [確定] 。  
+12. 在 [運算式]  欄中，輸入 **Contoso Confidential**，然後按一下 [確定]  。  
   
-13. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。  
+13. 在 [評估類型]  索引標籤上，選取 [重新評估現有的內容值]  核取方塊，按一下 [覆寫現有的值]  ，然後按一下 [確定]  。  
   
-![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell 對等命令****  
+![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -129,33 +129,33 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition**，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。  
   
-3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
+3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]  ，然後按一下 [檔案伺服器資源管理員]  。  
   
-4.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則] 。  
+4.  在 [分類規則]  上按一下滑鼠右鍵，然後按一下 [建立分類規則]  。  
   
-5.  在 [一般] 索引標籤上的 [規則名稱] 方塊中，輸入分類規則的名稱，例如「PII 規則」。  
+5.  在 [一般]  索引標籤上的 [規則名稱]  方塊中，輸入分類規則的名稱，例如「PII 規則」。  
   
-6.  在 [範圍] 索引標籤上，按一下 [新增]，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。  
+6.  在 [範圍]  索引標籤上，按一下 [新增]  ，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。  
   
-7.  在 [分類] 索引標籤中，設定下列選項：  
+7.  在 [分類]  索引標籤中，設定下列選項：  
   
-    -   在 [選擇將內容指派給檔案的方法] 方塊中，確定已選取 [內容分類器]。  
+    -   在 [選擇將內容指派給檔案的方法]  方塊中，確定已選取 [內容分類器]  。  
   
-    -   在 [選擇要指派給檔案的內容]  方塊中，按一下 [個人識別資訊] 。  
+    -   在 [選擇要指派給檔案的內容]  方塊中，按一下 [個人識別資訊]  。  
   
-    -   在 [指定值] 方塊中，按一下 [高]。  
+    -   在 [指定值]  方塊中，按一下 [高]  。  
   
-8.  在 [參數] 標題之下，按一下 [設定]。  
+8.  在 [參數]  標題之下，按一下 [設定]  。  
   
-9. 在 [運算式類型]  欄中，選取 [規則運算式] 。  
+9. 在 [運算式類型]  欄中，選取 [規則運算式]  。  
   
 10. 在 **運算式**資料行中輸入 **^ （？ ！000) ([0-7] \d{2}| 7([0-7]\d|7[012 ([-]？)(?!00) \d\d\3 （？ ！0000) \d{4}$**  
   
-11. 在 [發生次數下限] 欄中，輸入 **10**，然後按一下 [確定]。  
+11. 在 [發生次數下限]  欄中，輸入 **10**，然後按一下 [確定]  。  
   
-12. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。  
+12. 在 [評估類型]  索引標籤上，選取 [重新評估現有的內容值]  核取方塊，按一下 [覆寫現有的值]  ，然後按一下 [確定]  。  
   
-![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell 對等命令****  
+![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -170,9 +170,9 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 1.  在檔案伺服器上，使用 [檔案伺服器資源管理員] 執行分類規則。  
   
-    1.  按一下 [分類管理]，以滑鼠右鍵按一下 [分類規則]，然後按一下 [立即使用所有規則執行分類]。  
+    1.  按一下 [分類管理]  ，以滑鼠右鍵按一下 [分類規則]  ，然後按一下 [立即使用所有規則執行分類]  。  
   
-    2.  按一下 [等待分類完成] 選項，然後再按一下 [確定]。  
+    2.  按一下 [等待分類完成]  選項，然後再按一下 [確定]  。  
   
     3.  關閉自動分類報告。  
   
@@ -180,13 +180,13 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 2.  瀏覽至分類規則中指定的資料夾，例如 D:\Finance Documents。  
   
-3.  以滑鼠右鍵按一下該資料夾中的檔案，然後按一下 [內容]。  
+3.  以滑鼠右鍵按一下該資料夾中的檔案，然後按一下 [內容]  。  
   
 4.  按一下 [分類]  索引標籤，並確認已正確分類檔案。  
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [案例：使用分類來取得深入剖析資料](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [案例：使用分類深入了解您的資料](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
 -   [規劃自動檔案分類](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
 

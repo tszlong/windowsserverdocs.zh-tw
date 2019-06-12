@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e353f2f97ef55e806d991b45018755847fca0364
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b120cf990abe2024fd6c96ca2f1ef11fa2350ae
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871399"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437537"
 ---
 # <a name="makecab"></a>makecab
 
@@ -31,15 +31,17 @@ makecab [/v[n]] [/d var=<value> ...] [/l <dir>] <source> [<destination>]
 makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|<source>|若要壓縮的檔案。|
-|<destination>|提供給壓縮的檔案的檔案名稱。 如果省略，則原始程式檔名稱的最後一個字元是以底線 (_) 取代，並做為目的地。|
-|/f <directives_file>|副檔名**makecab**指示詞 （可能會重複）。|
-|/d var=<value>|定義具有指定值的變數。|
-|/l <dir>|將目的地位置 （預設為目前的目錄）。|
-|/v[<n>]|設定偵錯的詳細資訊層級 (0 = none，...，3 = full)。|
-|/?|在命令提示字元顯示說明。|
+
+|      參數       |                                                                        描述                                                                        |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       <source>       |                                                                     若要壓縮的檔案。                                                                     |
+|    <destination>     | 提供給壓縮的檔案的檔案名稱。 如果省略，則原始程式檔名稱的最後一個字元是以底線 (_) 取代，並做為目的地。 |
+| /f <directives_file> |                                                   副檔名**makecab**指示詞 （可能會重複）。                                                   |
+|    /d var=<value>    |                                                          定義具有指定值的變數。                                                           |
+|       /l <dir>       |                                               將目的地位置 （預設為目前的目錄）。                                               |
+|       /v[<n>]        |                                                    設定偵錯的詳細資訊層級 (0 = none，...，3 = full)。                                                     |
+|          /?          |                                                           在命令提示字元顯示說明。                                                            |
+
 ## <a name="remarks"></a>備註
 -   請參閱[Microsoft 封包格式](https://go.microsoft.com/fwlink/?LinkId=226852)directive_file 有關 MSDN 上。
 

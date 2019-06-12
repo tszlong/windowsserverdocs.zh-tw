@@ -9,12 +9,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 75ab011ed4931af3d5a03a38b3f7a7f0cfecbe3d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189664"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444917"
 ---
 # <a name="configuring-alternate-login-id"></a>設定替代登入識別碼
 
@@ -31,9 +31,9 @@ Active Directory Federation Services (AD FS) 可讓同盟應用程式使用 AD F
 
 ## <a name="alternate-id-in-azure-ad"></a>在 Azure AD 中的替代識別碼
 組織可能要在下列案例中使用替代識別碼：
-1.  非可路由，例如內部部署網域名稱。 Contoso.local，因此預設的使用者主體名稱為非可路由傳送 (jdoe@contoso.local)。 無法變更現有的 UPN 由於本機應用程式相依性或公司原則。 Azure AD 和 Office 365 需要完全是網際網路可路由傳送的 Azure AD 目錄相關聯的所有網域尾碼。 
-2.  在內部部署 UPN 不相同使用者的電子郵件地址來登入 Office 365 使用者使用電子郵件地址和無法使用 UPN，因為組織的條件約束。
-在上述案例中，使用 AD FS 的替代識別碼可讓使用者登入 Azure AD 而不需要修改您的內部部署 Upn。 
+1. 非可路由，例如內部部署網域名稱。 Contoso.local，因此預設的使用者主體名稱為非可路由傳送 (jdoe@contoso.local)。 無法變更現有的 UPN 由於本機應用程式相依性或公司原則。 Azure AD 和 Office 365 需要完全是網際網路可路由傳送的 Azure AD 目錄相關聯的所有網域尾碼。 
+2. 在內部部署 UPN 不相同使用者的電子郵件地址來登入 Office 365 使用者使用電子郵件地址和無法使用 UPN，因為組織的條件約束。
+   在上述案例中，使用 AD FS 的替代識別碼可讓使用者登入 Azure AD 而不需要修改您的內部部署 Upn。 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>使用替代登入識別碼的使用者體驗
 使用者體驗是根據使用替代登入識別碼的驗證方法而有所不同。目前那里三種不同的方式，在其中使用替代登入識別碼可達成。  其中包括：
@@ -81,7 +81,7 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID <
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID mail -LookupForests contoso.com,fabrikam.com
 ```
 
-3.  若要停用這項功能，請設定這兩個參數為 null 的值。
+3. 若要停用這項功能，請設定這兩個參數為 null 的值。
 
 ``` powershell
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $NULL -LookupForests $NULL
@@ -155,6 +155,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 ## <a name="applications-and-user-experience-after-the-additional-configuration"></a>應用程式和使用者體驗的其他組態之後
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>非 Exchange 和 Skype for Business 用戶端
+
 |Client|支援陳述式|備註|
 | ----- | -----|-----|
 |Microsoft Teams|支援|<li>Microsoft Teams 支援 AD FS (SAML-P、 Ws-fed、 Ws-trust 和 OAuth) 和新式驗證。</li><li> 例如通道、 聊天室和檔案功能的核心 Microsoft Teams 運作並提供替代的登入識別碼。</li><li>第 1 個和第 3 方應用程式必須由客戶個別調查。 這是因為每個應用程式有自己支援的驗證通訊協定。</li>|     
@@ -173,7 +174,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 |Outlook Web Access|支援|支援|
 |Outlook for Android、 IOS 和 Windows Phone 行動裝置應用程式|支援|支援|
 |商務用 Skype / Lync|支援，可使用任何額外的提示|支援 （除非另有註明） 但沒有使用者造成混淆的可能性。</br></br>在行動裝置的用戶端，替代識別碼時，才支援的 SIP 位址 = 電子郵件地址 = 替代識別碼 」。</br></br> 使用者可能需要登入兩次 Skype 商務桌面用戶端，第一次使用內部部署 UPN，然後使用 「 替代識別碼 」。 （請注意，「 登入位址 」 實際上 SIP 位址可能不是 「 使用者名稱 」 相同，不過通常是）。 第一次出現提示時提供使用者名稱，使用者應該輸入 UPN，即使它已不正確地預先填入的替代識別碼或 SIP 位址。 在使用者按下使用 UPN、 使用者名稱提示隨即再度出現，這次使用的 UPN 預先填入登入。 若要完成登入程序，的此時使用者必須以 「 替代識別碼取代此項，然後按一下 登入。 在行動裝置的用戶端，使用者應該在內部部署使用者識別碼在中輸入 [進階] 頁面中，使用 SAM 樣式格式 (domain\username)，不是 UPN 格式。</br></br>成功登入之後，商務用 onedrive 或 Lync 的 Skype 說 「 Exchange 需要您的認證，「 如果您需要提供有效的信箱所在的認證。 若信箱已在雲端中您需要提供 「 替代識別碼 」。 如果信箱在內部部署您需要提供內部部署 UPN。| 
- 
+
 ## <a name="additional-details--considerations"></a>其他詳細資訊和考量
 
 -   替代登入識別碼功能僅適用於同盟的環境與 AD FS 部署。  不支援在下列情況：
@@ -211,12 +212,12 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 
 
-**錯誤案例**|**在 登入體驗的影響**|**事件**|
----------|---------|---------
-無法取得 SAMAccountName 使用者物件的值|登入失敗|事件識別碼 364 MSIS8012 的例外狀況訊息：找不到使用者的 samAccountName: '{0}'。|
-CanonicalName 屬性不能存取|登入失敗|事件識別碼 364 MSIS8013 的例外狀況訊息：CanonicalName: '{0}' 的使用者:'{1}' 是不正確的格式。|
-在一個樹系中找到多個使用者物件|登入失敗|事件識別碼 364 MSIS8015 的例外狀況訊息：找到多個使用者帳戶與身分識別 '{0}'中的樹系'{1}' 與身分識別： {2}|
-跨多個樹系中找到多個使用者物件|登入失敗|事件識別碼 364 MSIS8014 的例外狀況訊息：找到多個使用者帳戶與身分識別 '{0}' 樹系中： {1}|
+|                       **錯誤案例**                        | **在 登入體驗的影響** |                                                              **事件**                                                              |
+|--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| 無法取得 SAMAccountName 使用者物件的值 |          登入失敗           |                  事件識別碼 364 MSIS8012 的例外狀況訊息：找不到使用者的 samAccountName: '{0}'。                   |
+|        CanonicalName 屬性不能存取         |          登入失敗           |               事件識別碼 364 MSIS8013 的例外狀況訊息：CanonicalName: '{0}' 的使用者:'{1}' 是不正確的格式。                |
+|        在一個樹系中找到多個使用者物件        |          登入失敗           | 事件識別碼 364 MSIS8015 的例外狀況訊息：找到多個使用者帳戶與身分識別 '{0}'中的樹系'{1}' 與身分識別： {2} |
+|   跨多個樹系中找到多個使用者物件    |          登入失敗           |           事件識別碼 364 MSIS8014 的例外狀況訊息：找到多個使用者帳戶與身分識別 '{0}' 樹系中： {1}            |
 
 ## <a name="see-also"></a>另請參閱
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)

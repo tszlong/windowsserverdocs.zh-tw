@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bc4be8be747c31d60d75c90ad3aa831dd8dff93
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7db6caf4e63ea59fa40892679d3de0cfaca661e9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838299"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438022"
 ---
 # <a name="ksetuplistrealmflags"></a>ksetup:listrealmflags
 
@@ -50,7 +50,7 @@ None
 |0x08|NcSupported|此領域支援名稱標準化，可讓 DNS 和領域命名標準。|
 |0x80|RC4|此領域支援 RC4 加密，以啟用跨領域信任，允許使用 TLS。|
 
-在登錄中儲存領域旗標**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\*** 領域-名稱 *。 此項目依預設不存在於登錄中。 您可以使用[Ksetup:addrealmflags](ksetup-addrealmflags.md)來填入登錄的命令。
+在登錄中儲存領域旗標**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>領域名稱</em>。 此項目依預設不存在於登錄中。 您可以使用[Ksetup:addrealmflags](ksetup-addrealmflags.md)來填入登錄的命令。
 
 ## <a name="BKMK_Examples"></a>範例
 

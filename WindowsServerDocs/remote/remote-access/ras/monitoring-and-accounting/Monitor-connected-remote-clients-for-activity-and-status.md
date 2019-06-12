@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 468854d6e03bbc2abee3b9fce7f7960c7c25cfd3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2a38e5682b03cdb37ff88332317122b6addd000c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879709"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446874"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>監視連線的遠端用戶端以查看其活動和狀態
 
@@ -33,7 +33,7 @@ ms.locfileid: "59879709"
   
 #### <a name="to-monitor-remote-client-activity-and-status"></a>若要監視遠端用戶端活動和狀態  
   
-1.  在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [遠端存取管理]。  
+1.  在 [伺服器管理員]  中，按一下 [工具]  ，然後按一下 [遠端存取管理]  。  
   
 2.  按一下  **REPORTING**瀏覽至**遠端存取報告**中**遠端存取管理主控台**。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "59879709"
   
 4.  您會看到的使用者會連線到遠端存取伺服器，以及詳細的清單及其相關的統計資料。 按一下清單中，對應至用戶端的第一個資料列。 當您選取一個資料列時，遠端使用者活動會顯示在 [預覽] 窗格中。  
   
-![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)Windows PowerShell 對等命令 * * *  
+![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等的命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

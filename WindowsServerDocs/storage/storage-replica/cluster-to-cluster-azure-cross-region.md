@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: d9999f786639ff4aa303ed34ade14849cda8feec
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 95f3e9e929d6a28279f526eec6dbdf0427bd74c0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475904"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447581"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure 中跨地區的叢集對叢集儲存體複本
 
@@ -25,7 +25,7 @@ ms.locfileid: "65475904"
 請觀看以下影片的程序的完整逐步解說。
 > [!video https://www.microsoft.com/en-us/videoplayer/embed/RE26xeW]
 
-![架構圖展示 C2C SR 中 Azure 具有相同的區域。](media\Cluster-to-cluster-azure-cross-region\architecture.png)
+![架構圖展示 C2C SR 中 Azure 具有相同的區域。](media/Cluster-to-cluster-azure-cross-region/architecture.png)
 > [!IMPORTANT]
 > 參考的所有範例都專屬於上圖。
 
@@ -68,7 +68,7 @@ ms.locfileid: "65475904"
    變更網域控制站私用 IP 位址的虛擬網路的 DNS 伺服器。
    - 在範例中，網域控制站**az2azDC**具有私人 IP 位址 (10.3.0.8)。 虛擬網路中 (**az2az Vnet**並**azcross VNET**) 變更 10.3.0.8 的 DNS 伺服器。 
 
-    在此範例中，連接到"contoso.com"的所有節點，並提供"contosoadmin"的系統管理員權限。
+     在此範例中，連接到"contoso.com"的所有節點，並提供"contosoadmin"的系統管理員權限。
    - 從所有節點的 contosoadmin 身分登入。 
  
 6. 建立叢集 (**SRAZC1**， **SRAZCross**)。
@@ -106,87 +106,87 @@ ms.locfileid: "65475904"
 
 9. 建立[虛擬網路閘道](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM)的 Vnet 對 Vnet 連線能力。
 
- - 建立第一個虛擬網路閘道 (**az2az VNetGateway**) 的第一個資源群組中 (**SR AZ2AZ**)
- - 閘道類型 = VPN 和 VPN 類型 = 路由式
+   - 建立第一個虛擬網路閘道 (**az2az VNetGateway**) 的第一個資源群組中 (**SR AZ2AZ**)
+   - 閘道類型 = VPN 和 VPN 類型 = 路由式
 
- - 建立第二個虛擬網路閘道 (**azcross VNetGateway**) 的第二個資源群組中 (**SR AZCROSS**)
- - 閘道類型 = VPN 和 VPN 類型 = 路由式
+   - 建立第二個虛擬網路閘道 (**azcross VNetGateway**) 的第二個資源群組中 (**SR AZCROSS**)
+   - 閘道類型 = VPN 和 VPN 類型 = 路由式
 
- - 從第一個虛擬網路閘道，以第二個虛擬網路閘道中建立的 Vnet 對 Vnet 連線。 提供共用的金鑰
+   - 從第一個虛擬網路閘道，以第二個虛擬網路閘道中建立的 Vnet 對 Vnet 連線。 提供共用的金鑰
 
- - 從第一個虛擬網路閘道的第二個虛擬網路閘道中建立的 Vnet 對 Vnet 連線。 如上述步驟所提供，請提供相同的共用的金鑰。 
+   - 從第一個虛擬網路閘道的第二個虛擬網路閘道中建立的 Vnet 對 Vnet 連線。 如上述步驟所提供，請提供相同的共用的金鑰。 
 
 10. 每個叢集節點，開啟連接埠 59999 （健康情況探查）。
 
-   每個節點上執行下列命令：
+    每個節點上執行下列命令：
 
-   ```powershell
+    ```powershell
       netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
-   ```
+    ```
 
 11. 指示要接聽的連接埠 59999 上的 健康情況探查訊息，並回應從目前擁有這項資源的節點叢集。
 
-   執行一次從任何一個叢集節點，每個叢集。 
+    執行一次從任何一個叢集節點，每個叢集。 
     
-   在我們的範例，請務必變更"ILBIP 「 根據您的組態值。 執行下列命令，從任何一個節點**az2az1**/**az2az2**
+    在我們的範例，請務必變更"ILBIP 「 根據您的組態值。 執行下列命令，從任何一個節點**az2az1**/**az2az2**
 
-   ```PowerShell
+    ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
-   ```
+    ```
 
 12. 執行下列命令，從任何一個節點**azcross1**/**azcross2**
-   ```PowerShell
+    ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.0.0.10" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
-   ```
+    ```
 
-   請確定這兩個叢集可以連接 / 彼此通訊。
+    請確定這兩個叢集可以連接 / 彼此通訊。
 
-   請使用容錯移轉叢集管理員中的 「 連線到叢集 」 功能連線到另一個叢集，或檢查另一個叢集會回應來自其中一個目前的叢集節點。
+    請使用容錯移轉叢集管理員中的 「 連線到叢集 」 功能連線到另一個叢集，或檢查另一個叢集會回應來自其中一個目前的叢集節點。
 
-   範例中，我們已經使用：
-   ```powershell
+    範例中，我們已經使用：
+    ```powershell
       Get-Cluster -Name SRAZC1 (ran from azcross1)
-   ```
-   ```powershell
+    ```
+    ```powershell
       Get-Cluster -Name SRAZCross (ran from az2az1) 
-   ```
+    ```
 
 13. 建立這兩個叢集的雲端見證。 建立兩個[儲存體帳戶](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM)(**az2azcw**，**azcrosssa**) 在 Azure 中，每個資源群組中每個叢集的其中一個 (**SR AZ2AZ**， **SR-AZCROSS**)。
    
-   - 從 [存取金鑰] 中複製的儲存體帳戶名稱和金鑰
-   - 建立雲端見證，從 [容錯移轉叢集管理員]，並使用上述的帳戶名稱和金鑰來建立它。 
+    - 從 [存取金鑰] 中複製的儲存體帳戶名稱和金鑰
+    - 建立雲端見證，從 [容錯移轉叢集管理員]，並使用上述的帳戶名稱和金鑰來建立它。 
 
 14. 執行[叢集驗證測試](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)再繼續進行下一個步驟
 
 15. 啟動 Windows PowerShell，然後使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) Cmdlet 來判斷您是否符合所有儲存體複本需求。 您可以在僅查看需求的模式中，使用此 Cmdlet 進行快速測試，還可以在評估長時間執行效能的模式中使用。
  
 16. 設定叢集對叢集儲存體複本。
-授與存取權從一個叢集至兩個方向的另一個叢集：
+    授與存取權從一個叢集至兩個方向的另一個叢集：
 
-   從我們的範例：
-   ```powershell
+    從我們的範例：
+    ```powershell
      Grant-SRAccess -ComputerName az2az1 -Cluster SRAZCross
-   ```
-如果您使用 Windows Server 2016，也執行這個命令：
+    ```
+    如果您使用 Windows Server 2016，也執行這個命令：
 
-   ```powershell
+    ```powershell
      Grant-SRAccess -ComputerName azcross1 -Cluster SRAZC1
-   ```
+    ```
 
 17. 建立兩個叢集 SR-夥伴關係：</ol>
 
-   - 叢集**SRAZC1**
+    - 叢集**SRAZC1**
       - 磁碟區的位置:-c:\ClusterStorage\DataDisk1
       - 記錄位置:-g:
-   - 叢集**SRAZCross**
+    - 叢集**SRAZCross**
       - 磁碟區的位置:-c:\ClusterStorage\DataDiskCross
       - 記錄位置:-g:
 

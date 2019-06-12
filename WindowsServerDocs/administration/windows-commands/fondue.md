@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09708c239b5399f3284c42877970443cc2605cbe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcbbbf80f25f77d1feb83f358401e4d14da3d354
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817149"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439226"
 ---
 # <a name="fondue"></a>fondue
 
@@ -30,11 +30,13 @@ ms.locfileid: "59817149"
 fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-ux:{all | rebootRequest}]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|/featurename: <*feature_name*>|指定您想要啟用的 Windows 選擇性功能的名稱。 您可以只讓每個命令列的一項功能。 若要啟用多項功能，請使用 fondue.exe 每項功能。|
-|/caller-name: <*sys.sysprocesses*>|當您從指令碼或批次檔呼叫 fondue.exe 時，請指定程式或處理序名稱。 如果發生錯誤的程式名稱加入 SQM 報表，您可以使用此選項。|
-|/hide-ux:{all &#124; rebootRequest}|使用**所有**隱藏所有訊息都包括進度和權限的要求，若要存取 Windows Update 的使用者。 如果需要的權限，則作業會失敗。<br /><br />使用**rebootRequest**只能隱藏要求重新啟動電腦的權限的使用者訊息。 如果控制項重新開機要求的指令碼，請使用此選項。|
+
+|              參數              |                                                                                                                                                                     描述                                                                                                                                                                     |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  /featurename: <*feature_name*>   |                                                                               指定您想要啟用的 Windows 選擇性功能的名稱。 您可以只讓每個命令列的一項功能。 若要啟用多項功能，請使用 fondue.exe 每項功能。                                                                                |
+|    /caller-name: <*sys.sysprocesses*>    |                                                                                 當您從指令碼或批次檔呼叫 fondue.exe 時，請指定程式或處理序名稱。 如果發生錯誤的程式名稱加入 SQM 報表，您可以使用此選項。                                                                                 |
+| /hide-ux:{all &#124; rebootRequest} | 使用**所有**隱藏所有訊息都包括進度和權限的要求，若要存取 Windows Update 的使用者。 如果需要的權限，則作業會失敗。<br /><br />使用**rebootRequest**只能隱藏要求重新啟動電腦的權限的使用者訊息。 如果控制項重新開機要求的指令碼，請使用此選項。 |
+
 ## <a name="BKMK_Examples"></a>範例
 若要啟用 Microsoft.NET Framework 3.5，請輸入：
 ```
@@ -45,6 +47,6 @@ fondue.exe /enable-feature:NETFX3
 fondue.exe /enable-feature:NETFX3 /caller-name:Admin.bat /hide-ux:all
 ```
 ## <a name="additional-references"></a>其他參考資料
--   [命令列語法關鍵](command-line-syntax-key.md)
-## <a name="see-also"></a>另請參閱
-[Microsoft.NET Framework 3.5 部署考量](https://go.microsoft.com/fwlink/?LinkId=248869)
+- [命令列語法關鍵](command-line-syntax-key.md)
+  ## <a name="see-also"></a>另請參閱
+  [Microsoft.NET Framework 3.5 部署考量](https://go.microsoft.com/fwlink/?LinkId=248869)

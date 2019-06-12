@@ -9,12 +9,12 @@ ms.date: 10/16/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 7426c3ede013905ba65a659baead928d3e2bbadf
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 6722d537c85ce913080224f229f2889e47f41274
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034568"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812351"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 >適用於：Windows Server 2016 中，Windows Server 2012 R2，Windows Server 2012 中，Windows 10 或更新版本
@@ -22,69 +22,70 @@ ms.locfileid: "65034568"
 本主題中，您會了解工具及設定 Windows 時間服務 (W32Time)。 
 
 如果您只想要同步處理已加入網域的用戶端電腦的時間，請參閱[設定為自動網域時間同步處理用戶端電腦](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)。 如需有關如何設定 Windows 時間服務的其他主題，請參閱[尋找 Windows 時間服務的組態資訊的位置](https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-time-service-top)。  
-  
->[!CAUTION]  
->您應該使用 Net time 命令來設定，或是將 Windows 時間服務正在執行時的時間。  
+
+> [!CAUTION]  
+> 您應該使用 Net time 命令來設定，或是將 Windows 時間服務正在執行時的時間。  
 >
->此外，在較舊的電腦上，執行 Windows XP 或更早版本，命令 Net time /querysntp 顯示的電腦設定為同步處理，與網路時間通訊協定 (NTP) 伺服器的名稱，但只有在電腦的時間用戶端時，才使用該 NTP 伺服器設定為 NTP 或 AllSync。 該命令之後已被取代。  
-  
+> 此外，在較舊的電腦上，執行 Windows XP 或更早版本，命令 Net time /querysntp 顯示的電腦設定為同步處理，與網路時間通訊協定 (NTP) 伺服器的名稱，但只有在電腦的時間用戶端時，才使用該 NTP 伺服器設定為 NTP 或 AllSync。 該命令之後已被取代。  
+
 大部分的網域成員電腦有時間用戶端類型的 NT5DS，這表示它們同步處理時間與網域階層。 這只是一般例外狀況是做為主要網域控制站 (PDC) 模擬器操作主機，樹系根網域，這通常設定為與外部時間來源同步處理時間的網域控制站。 若要檢視電腦的時間用戶端組態，請執行 W32tm /query /configuration 命令，從提升權限的命令提示字元中啟動 Windows Server 2008 和 Windows Vista 中，並讀取**型別**命令輸出中的行。 如需詳細資訊，請參閱 < [Windows 時間服務的運作方式](https://docs.microsoft.com/windows-server/networking/windows-time-service/How-the-Windows-Time-Service-Works)。 您可以執行命令**reg 查詢 HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters**讀取的值並**NtpServer**命令輸出中。  
-  
+
 > [!IMPORTANT]  
 > 在 Windows Server 2016 之前, W32Time 服務並非設計時間緊迫的應用程式的需求。  不過，Windows Server 2016 的更新現在可讓您實作的解決方案 1 毫秒精確度您網域中的。  請參閱[Windows 2016 正確時間](accurate-time.md)並[來設定 Windows 時間服務的高精確度的環境支援界限](https://docs.microsoft.com/windows-server/networking/windows-time-service/support-boundary)如需詳細資訊。  
-  
+
 ## <a name="windows-time-service-tools"></a>Windows 時間服務工具  
 下列工具是 Windows 時間服務相關聯。  
-  
+
 #### <a name="w32tmexe-windows-time"></a>W32tm.exe:Windows Time  
 **分類**  
 
 此工具會安裝為 Windows XP、 Windows Vista、 Windows 7、 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2 預設安裝的一部分。  
-  
+
 **版本相容性**  
-  
+
 此工具適用於 Windows XP、 Windows Vista、 Windows 7、 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2 預設安裝。  
-  
+
 W32tm.exe 用來設定 Windows 時間服務設定。 也可用來診斷問題的時間服務。 W32tm.exe 是慣用的命令列工具設定、 監視或疑難排解 Windows 時間服務。  
-  
+
 下表描述可搭配 W32tm.exe 的參數。  
-  
+
 **W32tm.exe 主要參數**  
-  
-|參數|描述|  
-|-------------|---------------|  
-|W32tm /？|W32tm 命令列說明|  
-|W32tm /register|註冊執行為服務的時間服務，並將預設組態新增至登錄。|  
-|W32tm / 取消註冊|取消註冊的時間服務，並從登錄移除所有組態資訊。|  
-|w32tm /monitor<br /><br />[/domain:<domain name>] [/computers:<name>[,<name>[,<name>...]]] [/threads:<num>]|網域-指定要監視的網域。 如果指定沒有網域名稱，或指定網域或電腦都不選項時，會使用預設網域。 此選項可能會使用一次以上。<br /><br />電腦-監視指定的電腦清單。 電腦名稱以不含空格的逗號分隔。 如果名稱前面會加上 ' *'，它會被視為 PDC。 此選項可能會使用一次以上。<br /><br />執行緒-指定要同時分析的電腦數目。 預設值為 3。 允許的範圍是 1 到 50 個。|  
-|w32tm /ntte <NT time epoch>|在轉換 NT 系統時間，(10 ^-7) s 時間間隔，從 0 h 1-Jan 1601，到可讀取的格式。|  
-|w32tm /ntpte <NTP time epoch>|在轉換 NTP 時間，(2 ^-32) s 時間間隔，從 0 h 1-Jan 1900 年到可讀取的格式。|  
-|w32tm /resync<br /><br />[/computer:<computer>]<br /><br />[/nowait]<br /><br />[/rediscover]<br /><br />[/soft]|告訴電腦應該重新同步處理其時鐘儘速，丟出所有累積的錯誤統計資料。<br /><br />電腦：<computer> -指定應重新同步處理的電腦。 如果未指定，本機電腦將重新同步處理。<br /><br />nowait-不會等待發生; 重新同步處理立即傳回。 否則，等候傳回之前完成重新同步處理的詳細資訊。<br /><br />重新探索-重新偵測的網路組態，並重新探索網路來源，然後重新同步處理。<br /><br />soft-重新同步處理使用現有的錯誤統計資料。 不實用，提供的相容性。|  
-|w32tm /stripchart<br /><br />/computer:<target><br /><br />[/period:<refresh>]<br /><br />[/dataonly]<br /><br />[/ 範例：<count>]<br/><br/>[/rdtsc]<br/>|顯示這台電腦，另一部電腦之間的時間誤差長條圖。<br /><br />電腦：<target> -要測量的位移對電腦。<br /><br />期限：<refresh> -樣本，以秒為單位之間的時間。 預設值為 2 秒。<br /><br />dataonly-只顯示的資料而不需要圖形。<br /><br />範例：<count> -收集<count>範例，然後停止。 如果未指定，將會收集樣本直到**Ctrl + C**按下。<br/><br/>rdtsc： 如需每個範例中，此選項會列印以及 RdtscStart，標題的逗點分隔值 RdtscEnd、 FileTime、 RoundtripDelay、 NtpOffset 而不是文字圖形。<br/><ul><li>[RdtscStart – RDTSC （讀取時間戳記計數器）](https://en.wikipedia.org/wiki/Time_Stamp_Counter)值收集之前產生 NTP 要求。</li><li>RdtscEnd – RDTSC （讀取時間戳記計數器） 收集只 NTP 回應已收到並處理之後的值。</li><li>FileTime – NTP 要求中使用的本機 FILETIME 值。</li><li>RoundtripDelay – 時間經過之間產生 NTP 要求的秒數，並根據 NTP 往返計算處理收到的 NTP 回應，計算。</li><li>根據 NTP 位移計算，計算 NTPOffset – 位移，以在本機電腦與 NTP 伺服器之間，秒的時間。</li></ul>|
-|w32tm /config<br /><br />[/computer:<target>]<br /><br />[/update]<br /><br />[/manualpeerlist:<peers>]<br /><br />[/syncfromflags:<source>]<br /><br />[/LocalClockDispersion:<seconds>]<br /><br />[/reliable:(YES&#124;NO)]<br /><br />[/largephaseoffset:<milliseconds>]|電腦：<target> -調整的設定排除<target>。 如果未指定，預設為本機電腦。<br /><br />更新-通知的組態已變更，使變更生效的時間服務。<br /><br />manualpeerlist:<peers> -若要設定手動對等電腦清單<peers>，這是以空格分隔的 DNS 和/或 IP 位址清單。 當指定多個對等，這個選項就必須括以引號括住。<br /><br />syncfromflags:<source> -設定 NTP 用戶端應該從同步處理哪些來源。 <source> 應該是這些關鍵字的逗號分隔清單 （不區分大小寫）：<br /><br />手動-包含從手動對等電腦清單中的對等。<br /><br />DOMHIER-同步處理網域階層中的網域控制站 (DC)。<br /><br />LocalClockDispersion:<seconds> -會設定內部時鐘，不能從其設定的來源取得的時間時，會假設 W32Time 的精確度。<br /><br />可靠: ([是]&#124;否)-設定這台電腦是否為可靠時間來源。<br /><br />這項設定才有意義的網域控制站上。<br /><br />是-這部電腦是可靠的時間服務。<br /><br />否-這部電腦不可靠的時間服務。<br /><br />largephaseoffset:<milliseconds> -設定本機的時間差異和網路 W32Time 會考慮突然增加的時間。|  
-|w32tm /tz|顯示目前的時區設定。|  
-|w32tm /dumpreg<br /><br />[/ 子機碼：<key>]<br /><br />[/computer:<target>]|顯示指定的登錄機碼相關聯的值。<br /><br />預設索引鍵是 HKLM\System\CurrentControlSet\Services\W32Time<br /><br />（時間服務根目錄機碼）。<br /><br />子機碼：<key> -顯示子機碼相關聯的值<key>的預設索引鍵。<br /><br />電腦：<target> -查詢電腦的登錄設定 <target>|  
-|w32tm /query [/computer:<target>] {/source &#124; /configuration &#124; /peers &#124; /status} [/verbose]|這個參數是第一次進行適用於 Windows Vista 和 Windows Server 2008 的 Windows 時間用戶端版本。<br /><br />顯示電腦的 Windows 時間服務資訊。<br /><br />**電腦：<target>**  -查詢的資訊**<target>**。 如果未指定，預設值是本機電腦。<br /><br />**來源**-顯示的時間來源。<br /><br />**設定**-顯示執行的階段，並設定來自何處的設定。 在詳細模式中，會顯示為未定義或未使用設定的太。<br /><br />**對等體**-顯示對等及其狀態的清單。<br /><br />**狀態**-顯示 Windows 時間服務的狀態。<br /><br />**verbose** -設定要顯示的詳細資訊的詳細資訊模式。|  
-|w32tm /debug {/ 停用&#124;{] / [啟用 /file:<name> /大小：<bytes> /entries:<value> [/truncate]}}|這個參數是第一次進行適用於 Windows Vista 和 Windows Server 2008 的 Windows 時間用戶端版本。<br /><br />啟用或停用本機電腦 Windows 時間服務私用的記錄檔。<br /><br />**停用**-停用的私用的記錄檔。<br /><br />**啟用**-啟用私用的記錄檔。<br /><br />-   **檔案：<name>**  -請指定絕對檔案名稱。<br />-   **大小：<bytes>**  -指定循環記錄的大小上限。<br />-   **項目：<value>**  -包含旗標編號所指定，和以指定應該記錄的資訊類型的逗號分隔的清單。 有效的數字是 0 到 300。 數字的範圍是有效的除了單一數字，例如 0-100,103 106。 0-300 的值為記錄所有資訊。<br /><br />**截斷**-截斷檔案，若有的話。|  
+
+
+|                                                                                                                                  參數                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                   W32tm /？                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      W32tm 命令列說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|                                                                                                                               W32tm /register                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  註冊執行為服務的時間服務，並將預設組態新增至登錄。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|                                                                                                                              W32tm / 取消註冊                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     取消註冊的時間服務，並從登錄移除所有組態資訊。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|                                                                                 w32tm /monitor<br /><br />[/domain:<domain name>] [/computers:<name>[,<name>[,<name>...]]] [/threads:<num>]                                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                 網域-指定要監視的網域。 如果指定沒有網域名稱，或指定網域或電腦都不選項時，會使用預設網域。 此選項可能會使用一次以上。<br /><br />電腦-監視指定的電腦清單。 電腦名稱以不含空格的逗號分隔。 如果名稱前面會加上 '\*'，它會被視為 PDC。 此選項可能會使用一次以上。<br /><br />執行緒-指定要同時分析的電腦數目。 預設值為 3。 允許的範圍是 1 到 50 個。                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|                                                                                                                         w32tm /ntte <NT time epoch>                                                                                                                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   在轉換 NT 系統時間，(10 ^-7) s 時間間隔，從 0 h 1-Jan 1601，到可讀取的格式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|                                                                                                                        w32tm /ntpte <NTP time epoch>                                                                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      在轉換 NTP 時間，(2 ^-32) s 時間間隔，從 0 h 1-Jan 1900 年到可讀取的格式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|                                                                               w32tm /resync<br /><br />[/computer:<computer>]<br /><br />[/nowait]<br /><br />[/rediscover]<br /><br />[/soft]                                                                               |                                                                                                                                                                                                                                                                                                                                                                      告訴電腦應該重新同步處理其時鐘儘速，丟出所有累積的錯誤統計資料。<br /><br />電腦：<computer> -指定應重新同步處理的電腦。 如果未指定，本機電腦將重新同步處理。<br /><br />nowait-不會等待發生; 重新同步處理立即傳回。 否則，等候傳回之前完成重新同步處理的詳細資訊。<br /><br />重新探索-重新偵測的網路組態，並重新探索網路來源，然後重新同步處理。<br /><br />soft-重新同步處理使用現有的錯誤統計資料。 不實用，提供的相容性。                                                                                                                                                                                                                                                                                                                                                                      |
+|                                                          w32tm /stripchart<br /><br />/computer:<target><br /><br />[/period:<refresh>]<br /><br />[/dataonly]<br /><br />[/ 範例：<count>]<br/><br/>[/rdtsc]<br/>                                                          |                            顯示這台電腦，另一部電腦之間的時間誤差長條圖。<br /><br />電腦：<target> -要測量的位移對電腦。<br /><br />期限：<refresh> -樣本，以秒為單位之間的時間。 預設值為 2 秒。<br /><br />dataonly-只顯示的資料而不需要圖形。<br /><br />範例：<count> -收集<count>範例，然後停止。 如果未指定，將會收集樣本直到**Ctrl + C**按下。<br/><br/>rdtsc： 如需每個範例中，此選項會列印以及 RdtscStart，標題的逗點分隔值 RdtscEnd、 FileTime、 RoundtripDelay、 NtpOffset 而不是文字圖形。<br/><ul><li>[RdtscStart – RDTSC （讀取時間戳記計數器）](https://en.wikipedia.org/wiki/Time_Stamp_Counter)值收集之前產生 NTP 要求。</li><li>RdtscEnd – RDTSC （讀取時間戳記計數器） 收集只 NTP 回應已收到並處理之後的值。</li><li>FileTime – NTP 要求中使用的本機 FILETIME 值。</li><li>RoundtripDelay – 時間經過之間產生 NTP 要求的秒數，並根據 NTP 往返計算處理收到的 NTP 回應，計算。</li><li>根據 NTP 位移計算，計算 NTPOffset – 位移，以在本機電腦與 NTP 伺服器之間，秒的時間。</li></ul>                             |
+| w32tm /config<br /><br />[/computer:<target>]<br /><br />[/update]<br /><br />[/manualpeerlist:<peers>]<br /><br />[/syncfromflags:<source>]<br /><br />[/LocalClockDispersion:<seconds>]<br /><br />[/reliable:(YES&#124;NO)]<br /><br />[/largephaseoffset:<milliseconds>] | 電腦：<target> -調整的設定排除<target>。 如果未指定，預設為本機電腦。<br /><br />更新-通知的組態已變更，使變更生效的時間服務。<br /><br />manualpeerlist:<peers> -若要設定手動對等電腦清單<peers>，這是以空格分隔的 DNS 和/或 IP 位址清單。 當指定多個對等，這個選項就必須括以引號括住。<br /><br />syncfromflags:<source> -設定 NTP 用戶端應該從同步處理哪些來源。 <source> 應該是這些關鍵字的逗號分隔清單 （不區分大小寫）：<br /><br />手動-包含從手動對等電腦清單中的對等。<br /><br />DOMHIER-同步處理網域階層中的網域控制站 (DC)。<br /><br />LocalClockDispersion:<seconds> -會設定內部時鐘，不能從其設定的來源取得的時間時，會假設 W32Time 的精確度。<br /><br />可靠: ([是]&#124;否)-設定這台電腦是否為可靠時間來源。<br /><br />這項設定才有意義的網域控制站上。<br /><br />是-這部電腦是可靠的時間服務。<br /><br />否-這部電腦不可靠的時間服務。<br /><br />largephaseoffset:<milliseconds> -設定本機的時間差異和網路 W32Time 會考慮突然增加的時間。 |
+|                                                                                                                                  w32tm /tz                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              顯示目前的時區設定。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                                                                                                  w32tm /dumpreg<br /><br />[/ 子機碼：<key>]<br /><br />[/computer:<target>]                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                顯示指定的登錄機碼相關聯的值。<br /><br />預設索引鍵是 HKLM\System\CurrentControlSet\Services\W32Time<br /><br />（時間服務根目錄機碼）。<br /><br />子機碼：<key> -顯示子機碼相關聯的值<key>的預設索引鍵。<br /><br />電腦：<target> -查詢電腦的登錄設定 <target>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                                                                                  w32tm /query [/computer:<target>] {/source &#124; /configuration &#124; /peers &#124; /status} [/verbose]                                                                                   |                                                                                                                                                                                                                                                                                                                  這個參數是第一次進行適用於 Windows Vista 和 Windows Server 2008 的 Windows 時間用戶端版本。<br /><br />顯示電腦的 Windows 時間服務資訊。<br /><br />**電腦：<target>**  -查詢的資訊 **<target>** 。 如果未指定，預設值是本機電腦。<br /><br />**來源**-顯示的時間來源。<br /><br />**設定**-顯示執行的階段，並設定來自何處的設定。 在詳細模式中，會顯示為未定義或未使用設定的太。<br /><br />**對等體**-顯示對等及其狀態的清單。<br /><br />**狀態**-顯示 Windows 時間服務的狀態。<br /><br />**verbose** -設定要顯示的詳細資訊的詳細資訊模式。                                                                                                                                                                                                                                                                                                                   |
+|                                                                                       w32tm /debug {/ 停用&#124;{] / [啟用 /file:<name> /大小：<bytes> /entries:<value> [/truncate]}}                                                                                       |                                                                                                                                                                                                                                                                         這個參數是第一次進行適用於 Windows Vista 和 Windows Server 2008 的 Windows 時間用戶端版本。<br /><br />啟用或停用本機電腦 Windows 時間服務私用的記錄檔。<br /><br />**停用**-停用的私用的記錄檔。<br /><br />**啟用**-啟用私用的記錄檔。<br /><br />-   **檔案：<name>**  -請指定絕對檔案名稱。<br />-   **大小：<bytes>**  -指定循環記錄的大小上限。<br />-   **項目：<value>**  -包含旗標編號所指定，和以指定應該記錄的資訊類型的逗號分隔的清單。 有效的數字是 0 到 300。 數字的範圍是有效的除了單一數字，例如 0-100,103 106。 0-300 的值為記錄所有資訊。<br /><br />**截斷**-截斷檔案，若有的話。                                                                                                                                                                                                                                                                          |
 
 ---  
 如需詳細資訊**W32tm.exe**，請參閱說明及支援中心，在 Windows XP、 Windows Vista、 Windows 7、 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2。  
-  
+
 ## <a name="windows-time-service-registry-entries"></a>Windows 時間服務登錄項目
 下列的登錄項目是與 Windows 時間服務相關聯。  
-  
+
 這項資訊被提供做為參考，用於疑難排解或確認必要的設定會套用。 建議您不要直接編輯登錄除非沒有其他替代方案。 登錄的修改不會驗證登錄編輯程式或 Windows 之前套用，而且如此一來，可以儲存不正確的值。 這可能導致無法復原的錯誤，在系統中。  
-  
+
 可能的話，請使用群組原則或其他 Windows 工具，例如 Microsoft Management Console (MMC)，來完成工作，而不是直接編輯登錄。 如果您必須編輯登錄，必須非常小心。  
-  
+
 > [!WARNING]  
 > 有些系統管理範本檔案 (System.adm) 中設定的群組原則物件 (GPO) 設定的預設值是不同於對應的預設登錄項目。 如果您打算使用 GPO 來設定任何 Windows 時間設定值，請確定您檢閱[Windows 時間服務群組原則設定的預設值為不同於 Windows Server 2003 中的對應 Windows 時間服務登錄項目](https://go.microsoft.com/fwlink/?LinkId=186066). 此問題適用於 Windows Server 2008 R2、 Windows Server 2008、 Windows Server 2003 R2 和 Windows Server 2003。  
-  
+
 許多 Windows 時間服務的登錄項目並具有相同名稱的群組原則設定相同。 群組原則設定會對應至位於具有相同名稱的登錄項目：  
-  
+
 >**HKLM\SYSTEM\CurrentControlSet\Services\W32Time\\**
 
-  
+
 在此登錄位置中有數個登錄機碼。 Windows 時間設定會儲存在值中，所有這些機碼：
 
 * [參數](#hklmsystemcurrentcontrolsetservicesw32timeparameters)
@@ -107,51 +108,53 @@ W32time 金鑰建立的原則。  當您移除該原則時，然後也會移除�
 **HKLM\SYSTEM\CurrentControlSet\Services\W32time**
 
 某些參數會儲存在登錄中的時脈週期，而有些則以秒為單位。 轉換為秒時脈週期時間：  
-  
+
 -   1 分鐘 = 60 秒  
-  
+
 -   1 秒 = 1000 毫秒  
-  
+
 -   1 ms = 10,000 的時脈週期，在 Windows 系統上，在所述[DateTime.Ticks 屬性](https://docs.microsoft.com/dotnet/api/system.datetime.ticks?redirectedfrom=MSDN&view=netframework-4.7.2#System_DateTime_Ticks)。  
-  
+
 例如，5 分鐘就會變成 5\*60\*1000年\*10000 = 3000000000 時鐘刻度。 
 
 所有版本都包括 Windows 7、 Windows 8，Windows 10，Windows Server 2008 和 Windows Server 2008 R2 中，Windows Server 2012 中，Windows Server 2012 r2 中，Windows Server 2016。  某些項目才有提供的較新的 Windows 版本。
 
 #### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
 
-|登錄項目|Version|描述|
-|------------------------------------|---------------|----------------------------|
-|AllowNonstandardModeCombinations|全部|項目指出允許非標準模式組合時，會在對等之間的同步處理。 網域成員的預設值為 1。 獨立用戶端和伺服器的預設值為 1。|
-|NtpServer|全部|項目會指定對等的電腦將會從中取得時間戳記，其中包含一或多個 DNS 名稱或 IP 位址，每一行的以逗號分隔清單。 每個 DNS 名稱或列出的 IP 位址必須是唯一的。 連線到網域的電腦必須與更可靠的時間來源，例如官方美國時鐘同步。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 為對稱的主動-如需有關此模式的詳細資訊，請參閱[Windows 時間伺服器：3.3 作業模式](https://go.microsoft.com/fwlink/?LinkId=208012)。</li><li>0x08 用戶端</li></ul><br />這個網域成員上的登錄項目沒有預設值。 在獨立的用戶端和伺服器上的預設值是 time.windows.com,0x1。<br /><br />注意:如需有關可用的 NTP 伺服器的詳細資訊，請參閱[Microsoft Knowledge Base 文章 262680-可在網際網路的簡易網路時間通訊協定 (SNTP) 時間伺服器的清單](https://go.microsoft.com/fwlink/?LinkId=186067)|
-|ServiceDll|全部|項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 此 DLL，網域成員與獨立的用戶端和伺服器上的預設位置是 %windir%\system32\w32time.dll。  |
-|ServiceMain|全部|項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員上的預設值是 SvchostEntry_W32Time。 在獨立的用戶端和伺服器上的預設值是 SvchostEntry_W32Time。  "|
-|類型|全部|項目會指出其對等互連，接受從同步處理：  <ul><li>**NoSync**。 時間服務不會同步處理與其他來源。</li><li>**NTP.** 從伺服器中所指定的時間服務同步處理**NtpServer**。 登錄項目。</li><li>**NT5DS**。 時間服務同步處理與網域階層中。  </li><li>**AllSync**。 時間服務會使用所有可用的同步處理機制。  </li></ul>網域成員上的預設值是**NT5DS**。 在獨立的用戶端和伺服器上的預設值是**NTP**。   |
+|          登錄項目          | Version |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|----------------------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AllowNonstandardModeCombinations |   全部   |                                                                                                                                                                                                                                                                                                                                                                                                              項目指出允許非標準模式組合時，會在對等之間的同步處理。 網域成員的預設值為 1。 獨立用戶端和伺服器的預設值為 1。                                                                                                                                                                                                                                                                                                                                                                                                              |
+|            NtpServer             |   全部   | 項目會指定對等的電腦將會從中取得時間戳記，其中包含一或多個 DNS 名稱或 IP 位址，每一行的以逗號分隔清單。 每個 DNS 名稱或列出的 IP 位址必須是唯一的。 連線到網域的電腦必須與更可靠的時間來源，例如官方美國時鐘同步。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 為對稱的主動-如需有關此模式的詳細資訊，請參閱[Windows 時間伺服器：3.3 作業模式](https://go.microsoft.com/fwlink/?LinkId=208012)。</li><li>0x08 用戶端</li></ul><br />這個網域成員上的登錄項目沒有預設值。 在獨立的用戶端和伺服器上的預設值是 time.windows.com,0x1。<br /><br />注意:如需有關可用的 NTP 伺服器的詳細資訊，請參閱[Microsoft Knowledge Base 文章 262680-可在網際網路的簡易網路時間通訊協定 (SNTP) 時間伺服器的清單](https://go.microsoft.com/fwlink/?LinkId=186067) |
+|            ServiceDll            |   全部   |                                                                                                                                                                                                                                                                                                                                                              項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 此 DLL，網域成員與獨立的用戶端和伺服器上的預設位置是 %windir%\system32\w32time.dll。                                                                                                                                                                                                                                                                                                                                                               |
+|           ServiceMain            |   全部   |                                                                                                                                                                                                                                                                                                                                                       項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員上的預設值是 SvchostEntry_W32Time。 在獨立的用戶端和伺服器上的預設值是 SvchostEntry_W32Time。  "                                                                                                                                                                                                                                                                                                                                                       |
+|               類型               |   全部   |                                                                                                                                                                                                                                  項目會指出其對等互連，接受從同步處理：  <ul><li>**NoSync**。 時間服務不會同步處理與其他來源。</li><li>**NTP.** 從伺服器中所指定的時間服務同步處理**NtpServer**。 登錄項目。</li><li>**NT5DS**。 時間服務同步處理與網域階層中。  </li><li>**AllSync**。 時間服務會使用所有可用的同步處理機制。  </li></ul>網域成員上的預設值是**NT5DS**。 在獨立的用戶端和伺服器上的預設值是**NTP**。                                                                                                                                                                                                                                   |
+
 ---
 #### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config
 
-|登錄項目|Version|描述|
-|------------------------------------|---------------|----------------------------|
-|AnnounceFlags|全部|項目會控制此電腦是否標示為可靠時間伺服器。 電腦不會標示為可靠，除非它也會標示為時間伺服器。<br /> -0x00 不是時間的伺服器  <br /> -0x01 永遠時間伺服器  <br /> -0x02 自動時間伺服器  <br /> -0x04 永遠可靠時間伺服器  <br /> -0x08 自動的可靠時間伺服器  <br />網域成員的預設值為 10。 獨立用戶端和伺服器的預設值為 10。|
-|EventLogFlags|全部|項目會控制時間服務記錄的事件。  <br />階段跳躍點：0x1  <br />原始碼變更：0x2  <br />網域成員上的預設值為 2。 在獨立的用戶端和伺服器上的預設值為 2。  |
-|FrequencyCorrectRate|全部|項目會控制時鐘已更正的速率。 如果此值太小，時鐘會不穩定，而 overcorrects。 如果值太大，時鐘就會需要很長的時間同步處理。 網域成員上的預設值為 4。 在獨立的用戶端和伺服器上的預設值為 4。  <br /><br />請注意，0 FrequencyCorrectRate 登錄項目值無效。 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2 電腦上，如果值設定為 0 的 Windows 時間服務將會自動將它變更 1。  |
-|HoldPeriod|全部|項目會控制一段時間的突然增加偵測已停用才能快速地讓本機電腦時鐘同步處理到。 表示該時間的時間範例為關閉的秒數，和通常具有一致的方式傳回的好時機範例之後收到突然增加。 網域成員上的預設值為 5。 在獨立的用戶端和伺服器上的預設值為 5。  |
-|LargePhaseOffset|全部|項目時間位移大於或等於 10 這個值會指定<sup>-7</sup>秒會被視為突然增加。 網路中斷等大量的流量可能會導致突然增加。 除非它持續很長一段時間，將會忽略突然增加。 網域成員上的預設值為 50000000。 在獨立的用戶端和伺服器上的預設值為 50000000。  |
-|LastClockRate|全部|項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員上的預設值是 156250。 在獨立的用戶端和伺服器上的預設值是 156250。  |
-|LocalClockDispersion|全部|項目會控制散佈情況 （以秒為單位），您必須假設當來源是內建的 CMOS 時鐘的唯一時間。 網域成員上的預設值為 10。 在獨立的用戶端和伺服器上的預設值為 10。|
-|MaxAllowedPhaseOffset|全部|項目會指定 W32Time 嘗試使用的時鐘速度來調整電腦時鐘的最大位移 （以秒為單位）。 當時間差超過此速率時，W32Time 直接設定電腦時鐘。 網域成員的預設值為 300。 獨立用戶端和伺服器的預設值為 1。  [如需詳細資訊，請參閱下面的](#maxallowedphaseoffset-information)。|
-|MaxClockRate|全部|項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員的預設值是 155860。 獨立用戶端和伺服器的預設值是 155860。  |
-|MaxNegPhaseCorrection|全部|項目會指定最大的負數時間修正，以秒為單位，可讓服務。 如果服務會判定豇槲颾變更是必要項，它會記錄事件。 特殊案例：0xffffffff 則表示務必先時間修正。 網域成員的預設值為 0xFFFFFFFF。 獨立用戶端和伺服器的預設值為 54000 (15 小時)。  |
-|MaxPollInterval|全部|項目會指定最大時間間隔，log2 （秒），允許系統輪詢間隔。 請注意，系統必須根據在排定的間隔進行輪詢，而提供者可以拒絕來產生要求若要這樣做時的範例。 網域控制站的預設值為 10。 網域成員的預設值為 15。 獨立用戶端和伺服器的預設值為 15。  |
-|MaxPosPhaseCorrection|全部|項目會指定最大正時間修正，以秒為單位，可讓服務。 如果服務會判定豇槲颾變更是必要項，它會記錄事件。 特殊案例：0xffffffff 則表示務必先時間修正。 網域成員的預設值為 0xFFFFFFFF。 獨立用戶端和伺服器的預設值為 54000 (15 小時)。  |
-|MinClockRate|全部|項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員的預設值是 155860。 獨立用戶端和伺服器的預設值是 155860。  |
-|MinPollInterval|全部|項目會指定最小的間隔，log2 （秒），允許系統輪詢間隔。 請注意，雖然系統不會比這更頻繁地要求範例，提供者，可以產生有時非排定的時間間隔的範例。 網域控制站的預設值為 6。 網域成員的預設值為 10。 獨立用戶端和伺服器的預設值為 10。  |
-|PhaseCorrectRate|全部|項目會控制在更正階段錯誤的速率。 指定較小的值會快速更正階段錯誤，但可能會導致變得不穩定的時鐘。 如果值太大而無法，花較長的時間，若要更正階段錯誤。 <br /><br />網域成員上的預設值為 1。 在獨立的用戶端和伺服器上的預設值為 7。<br /><br />注意:0 是 PhaseCorrectRate 登錄項目值無效。 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2 電腦上，如果值設定為 0，Windows 時間服務會自動變更它設為 1。  |
-|PollAdjustFactor|全部|項目會控制的決策，以增加或減少系統的輪詢間隔。 值愈大，造成輪詢間隔設定為減少錯誤數量越小。 網域成員上的預設值為 5。 在獨立的用戶端和伺服器上的預設值為 5。 |
-|SpikeWatchPeriod|全部|項目會指定為可疑的位移必須保存的時間長度之前它會接受成正確 （以秒為單位）。 網域成員上的預設值為 900。 在獨立的用戶端和工作站上的預設值為 900。  |
-|TimeJumpAuditOffset|全部|不帶正負號的整數，指出時間跳躍稽核臨界值，以秒為單位。 如果時間服務藉由直接設定時鐘調整的本機時鐘時間的更正程序超過此值，時間服務就會記錄稽核事件。|
-|UpdateInterval|全部|項目會指定階段更正調整之間的時鐘刻度數目。 網域控制站的預設值為 100。 網域成員的預設值為 30,000。 獨立用戶端和伺服器的預設值是 360,000。  <br /><br />**附註**：零是 UpdateInterval 登錄項目值無效。 在電腦上執行 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2，如果值設定為 0 的 Windows 時間服務會自動變更它設為 1。<br /><br />下列三個登錄項目不屬於 W32Time 預設組態，但可以新增至登錄，以取得更高的記錄功能。 藉由變更 EventLogFlags 設定群組原則物件編輯器 」 中的值，可以修改系統事件記錄檔記錄的資訊。 根據預設，時間服務會在事件檢視器中建立記錄檔，每次它切換到新的時間來源。<br /><br />**警告**：有些系統管理範本檔案 (System.adm) 中設定的群組原則物件 (GPO) 設定的預設值是不同於對應的預設登錄項目。 如果您打算使用 GPO 來設定任何 Windows 時間設定值，請確定您檢閱[Windows 時間服務群組原則設定的預設值為不同於 Windows Server 2003 中的對應 Windows 時間服務登錄項目](https://go.microsoft.com/fwlink/?LinkId=186066). 此問題適用於 Windows Server 2008 R2、 Windows Server 2008、 Windows Server 2003 R2 和 Windows Server 2003。 |
-|UtilizeSslTimeData|發佈 Windows 10 組建 1511|為 1 的項目指出 W32Time，將會使用多個 SSL 加上時間戳記來植入是非常不準確的時鐘。|
+|    登錄項目     |          Version           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-----------------------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     AnnounceFlags     |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              項目會控制此電腦是否標示為可靠時間伺服器。 電腦不會標示為可靠，除非它也會標示為時間伺服器。<br /> -0x00 不是時間的伺服器  <br /> -0x01 永遠時間伺服器  <br /> -0x02 自動時間伺服器  <br /> -0x04 永遠可靠時間伺服器  <br /> -0x08 自動的可靠時間伺服器  <br />網域成員的預設值為 10。 獨立用戶端和伺服器的預設值為 10。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|     EventLogFlags     |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          項目會控制時間服務記錄的事件。  <br />階段跳躍點：0x1  <br />原始碼變更：0x2  <br />網域成員上的預設值為 2。 在獨立的用戶端和伺服器上的預設值為 2。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| FrequencyCorrectRate  |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    項目會控制時鐘已更正的速率。 如果此值太小，時鐘會不穩定，而 overcorrects。 如果值太大，時鐘就會需要很長的時間同步處理。 網域成員上的預設值為 4。 在獨立的用戶端和伺服器上的預設值為 4。  <br /><br />請注意，0 FrequencyCorrectRate 登錄項目值無效。 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2 電腦上，如果值設定為 0 的 Windows 時間服務將會自動將它變更 1。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|      HoldPeriod       |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   項目會控制一段時間的突然增加偵測已停用才能快速地讓本機電腦時鐘同步處理到。 表示該時間的時間範例為關閉的秒數，和通常具有一致的方式傳回的好時機範例之後收到突然增加。 網域成員上的預設值為 5。 在獨立的用戶端和伺服器上的預設值為 5。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|   LargePhaseOffset    |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        項目時間位移大於或等於 10 這個值會指定<sup>-7</sup>秒會被視為突然增加。 網路中斷等大量的流量可能會導致突然增加。 除非它持續很長一段時間，將會忽略突然增加。 網域成員上的預設值為 50000000。 在獨立的用戶端和伺服器上的預設值為 50000000。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|     LastClockRate     |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員上的預設值是 156250。 在獨立的用戶端和伺服器上的預設值是 156250。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| LocalClockDispersion  |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        項目會控制散佈情況 （以秒為單位），您必須假設當來源是內建的 CMOS 時鐘的唯一時間。 網域成員上的預設值為 10。 在獨立的用戶端和伺服器上的預設值為 10。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| MaxAllowedPhaseOffset |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        項目會指定 W32Time 嘗試使用的時鐘速度來調整電腦時鐘的最大位移 （以秒為單位）。 當時間差超過此速率時，W32Time 直接設定電腦時鐘。 網域成員的預設值為 300。 獨立用戶端和伺服器的預設值為 1。  [如需詳細資訊，請參閱下面的](#maxallowedphaseoffset-information)。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|     MaxClockRate      |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員的預設值是 155860。 獨立用戶端和伺服器的預設值是 155860。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| MaxNegPhaseCorrection |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              項目會指定最大的負數時間修正，以秒為單位，可讓服務。 如果服務會判定豇槲颾變更是必要項，它會記錄事件。 特殊案例：0xffffffff 則表示務必先時間修正。 網域成員的預設值為 0xFFFFFFFF。 獨立用戶端和伺服器的預設值為 54000 (15 小時)。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|    MaxPollInterval    |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     項目會指定最大時間間隔，log2 （秒），允許系統輪詢間隔。 請注意，系統必須根據在排定的間隔進行輪詢，而提供者可以拒絕來產生要求若要這樣做時的範例。 網域控制站的預設值為 10。 網域成員的預設值為 15。 獨立用戶端和伺服器的預設值為 15。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| MaxPosPhaseCorrection |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              項目會指定最大正時間修正，以秒為單位，可讓服務。 如果服務會判定豇槲颾變更是必要項，它會記錄事件。 特殊案例：0xffffffff 則表示務必先時間修正。 網域成員的預設值為 0xFFFFFFFF。 獨立用戶端和伺服器的預設值為 54000 (15 小時)。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|     MinClockRate      |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          項目是由 W32Time 維護。 它包含保留的資料，可由 Windows 作業系統，此設定的任何變更可能會造成無法預期的結果。 網域成員的預設值是 155860。 獨立用戶端和伺服器的預設值是 155860。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|    MinPollInterval    |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              項目會指定最小的間隔，log2 （秒），允許系統輪詢間隔。 請注意，雖然系統不會比這更頻繁地要求範例，提供者，可以產生有時非排定的時間間隔的範例。 網域控制站的預設值為 6。 網域成員的預設值為 10。 獨立用戶端和伺服器的預設值為 10。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|   PhaseCorrectRate    |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           項目會控制在更正階段錯誤的速率。 指定較小的值會快速更正階段錯誤，但可能會導致變得不穩定的時鐘。 如果值太大而無法，花較長的時間，若要更正階段錯誤。 <br /><br />網域成員上的預設值為 1。 在獨立的用戶端和伺服器上的預設值為 7。<br /><br />注意:0 是 PhaseCorrectRate 登錄項目值無效。 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2 電腦上，如果值設定為 0，Windows 時間服務會自動變更它設為 1。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|   PollAdjustFactor    |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       項目會控制的決策，以增加或減少系統的輪詢間隔。 值愈大，造成輪詢間隔設定為減少錯誤數量越小。 網域成員上的預設值為 5。 在獨立的用戶端和伺服器上的預設值為 5。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|   SpikeWatchPeriod    |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    項目會指定為可疑的位移必須保存的時間長度之前它會接受成正確 （以秒為單位）。 網域成員上的預設值為 900。 在獨立的用戶端和工作站上的預設值為 900。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|  TimeJumpAuditOffset  |            全部             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            不帶正負號的整數，指出時間跳躍稽核臨界值，以秒為單位。 如果時間服務藉由直接設定時鐘調整的本機時鐘時間的更正程序超過此值，時間服務就會記錄稽核事件。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|    UpdateInterval     |            全部             | 項目會指定階段更正調整之間的時鐘刻度數目。 網域控制站的預設值為 100。 網域成員的預設值為 30,000。 獨立用戶端和伺服器的預設值是 360,000。  <br /><br />**附註**：零是 UpdateInterval 登錄項目值無效。 在電腦上執行 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2，如果值設定為 0 的 Windows 時間服務會自動變更它設為 1。<br /><br />下列三個登錄項目不屬於 W32Time 預設組態，但可以新增至登錄，以取得更高的記錄功能。 藉由變更 EventLogFlags 設定群組原則物件編輯器 」 中的值，可以修改系統事件記錄檔記錄的資訊。 根據預設，時間服務會在事件檢視器中建立記錄檔，每次它切換到新的時間來源。<br /><br />**警告**：有些系統管理範本檔案 (System.adm) 中設定的群組原則物件 (GPO) 設定的預設值是不同於對應的預設登錄項目。 如果您打算使用 GPO 來設定任何 Windows 時間設定值，請確定您檢閱[Windows 時間服務群組原則設定的預設值為不同於 Windows Server 2003 中的對應 Windows 時間服務登錄項目](https://go.microsoft.com/fwlink/?LinkId=186066). 此問題適用於 Windows Server 2008 R2、 Windows Server 2008、 Windows Server 2003 R2 和 Windows Server 2003。 |
+|  UtilizeSslTimeData   | 發佈 Windows 10 組建 1511 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             為 1 的項目指出 W32Time，將會使用多個 SSL 加上時間戳記來植入是非常不準確的時鐘。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+
 ---
 若要讓 W32Time 記錄必須加入下列登錄項目：  
 
@@ -200,106 +203,114 @@ W32time 金鑰建立的原則。  當您移除該原則時，然後也會移除�
 |CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2  
 ``` 
 CurrentTimeOffset 是以時脈週期，其中的 1 毫秒 = 10000 時鐘的 Windows 系統上的刻度為單位。  
-  
+
 SystemClockRate 和 PhaseCorrectRate 也是以時脈週期單位。 若要取得 SystemClockRate，您可以使用下列命令，並將它從時鐘刻度使用的公式的秒數的秒數轉換 * 1000年\*10000:  
-  
+
 ```  
 W32tm /query /status /verbose  
 ClockRate: 0.0156000s  
 ```  
-  
+
 SystemclockRate 是時鐘的系統上的速度。 您可以使用 156000 的秒數做為範例，SystemclockRate 會是 = 0.0156000 \* 1000年\*10000 = 156000 時鐘刻度。  
-  
+
 MaxAllowedPhaseOffset 也是以秒為單位。 若要將它轉換成時鐘刻度，將 MaxAllowedPhaseOffset * 1000年\*10000。  
-  
+
 下列兩個範例示範如何套用  
+
+**範例 1**：4 分鐘的時間不同 （例如，您的時間是上午 11:05 及時間範例收到來自對等電腦應該正確上午 11:09）。
   
-**範例 1**：4 分鐘的時間不同 （例如，您的時間是上午 11:05 及時間範例收到來自對等電腦應該正確上午 11:09）。  
 ```
 phasecorrectRate = 1  
-  
+
 UpdateInterval = 30000 (clock ticks)  
-  
+
 systemclockRate = 156000 (clock ticks)  
-  
+
 MaxAllowedPhaseOffset = 10min = 600 seconds = 600*1000\*10000=6000000000 clock ticks  
-  
+
 |currentTimeOffset| = 4mins = 4*60\*1000\*10000 = 2400000000 ticks  
-  
+
 Is CurrentTimeOffset < MaxAllowedPhaseOffset?  
-  
+
 2400000000 < 6000000000 = TRUE  
 ```
+
 並沒有滿足上述方程式嗎？ 
+
 ```
 (|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2)  
-  
+
 Is 2,400,000,000 / (30000*1) < 156000/2  
-  
+
 Is 80,000 < 78,000  
-  
+
 NO/FALSE  
 ```  
+
 因此 W32tm 會設定時鐘回立即。  
-  
+
 > [!NOTE]  
 > 在此情況下，如果您想要設定時鐘回緩慢，您會需要調整 PhaseCorrectRate 或 updateInterval 在登錄中的也可確保方程式結果，true 值。  
-  
-**範例 2**：3 分鐘的時間不同。  
+
+**範例 2**：3 分鐘的時間不同。 
+ 
 ```  
 phasecorrectRate = 1  
-  
+
 UpdateInterval = 30000 (clock ticks)  
-  
+
 systemclockRate = 156000 (clock ticks)  
-  
+
 MaxAllowedPhaseOffset = 10min = 600 seconds = 600*1000\*10000=6000000000 clock ticks  
-  
+
 currentTimeOffset = 3mins = 3*60\*1000\*10000 = 1800000000 clock ticks  
-  
+
 Is CurrentTimeOffset < MaxAllowedPhaseOffset?  
-  
+
 1800000000 < 6000000000 = TRUE  
 ```  
+
 並沒有滿足上述方程式嗎？
+
 ```
 (|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2)  
-  
+
 Is 3 mins (1,800,000,000) / (30000*1) < 156000/2  
-  
+
 Is 60,000 < 78,000  
-  
+
 YES/TRUE  
 ```  
+
 在此情況下時鐘就會設定緩時變。  
-  
+
 ## <a name="windows-time-service-group-policy-settings"></a>Windows 時間服務群組原則設定  
 您可以使用群組原則物件編輯器來設定大部分的 W32Time 參數。 這包括設定電腦以是 NTPServer 或 NTPClient，設定的時間同步處理機制，以及設定電腦才能可靠時間來源。  
-  
+
 > [!NOTE]  
 > Windows 時間服務的群組原則設定可以在 Windows Server 2003、 Windows Server 2003 R2、 Windows Server 2008 和 Windows Server 2008 R2 網域控制站上設定，並且可以只套用在執行 Windows Server 2003、 Windows Server 的電腦2003 R2、 Windows Server 2008 和 Windows Server 2008 R2。  
-  
+
 您可以找到設定用來設定群組原則物件編輯器嵌入式管理單元中的下列位置的 W32Time 的群組原則：  
-  
+
 -   Computer Configuration\Administrative Templates\System\Windows Time Service  
-  
+
     設定**全域組態設定**這裡。  
-  
+
 -   Computer Configuration\Administrative Templates\System\Windows Time Service\Time Providers  
-  
+
     設定**Windows NTP 用戶端**此處的設定。  
-  
+
     啟用**Windows NTP 用戶端**這裡。  
-  
+
     啟用**Windows NTP 伺服器**這裡。  
-  
+
 > [!WARNING]  
 > 有些系統管理範本檔案 (System.adm) 中設定的群組原則物件 (GPO) 設定的預設值是不同於對應的預設登錄項目。 如果您打算使用 GPO 來設定任何 Windows 時間設定值，請確定您檢閱[Windows 時間服務群組原則設定的預設值為不同於 Windows Server 2003 中的對應 Windows 時間服務登錄項目](https://go.microsoft.com/fwlink/?LinkId=186066). 此問題適用於 Windows Server 2008 R2、 Windows Server 2008、 Windows Server 2003 R2 和 Windows Server 2003。  
-  
+
 下表列出與 Windows 時間服務和相關聯的每個設定的預先設定的值相關聯的全域群組原則設定。 如需有關每個設定的詳細資訊，請參閱中對應的登錄項目[Windows 時間服務登錄項目](#windows-time-service-registry-entries)稍早在本主題。 下列設定包含在單一 GPO，稱為**全域組態設定**。  
-  
+
 **Windows 時間與相關聯的全域群組原則設定**  
-  
+
 |群組原則設定|預先設定的值|  
 |------------------------|------------------|  
 |AnnounceFlags|10|  
@@ -317,11 +328,11 @@ YES/TRUE
 |PollAdjustFactor|5|  
 |SpikeWatchPeriod|90|  
 |UpdateInterval|100|  
-  
+
 下表列出可用的設定**設定 Windows NTP 用戶端**GPO 和 Windows 時間服務相關聯的預設的值。 如需有關每個設定的詳細資訊，請參閱中對應的登錄項目[Windows 時間服務登錄項目](#windows-time-service-registry-entries)稍早在本主題。  
-  
+
 **Windows 時間與相關聯的 NTP 用戶端群組原則設定**  
-  
+
 |群組原則設定|預設值|  
 |------------------------|-----------------|  
 |NtpServer|time.windows.com,0x1|  
@@ -331,15 +342,15 @@ YES/TRUE
 |ResolvePeerBackoffMaxTimes|7|  
 |SpecialPollInterval|3600|  
 |EventLogFlags|0|  
-  
+
 ## <a name="network-ports-used-by-the-windows-time-service"></a>Windows 時間服務所使用的網路連接埠  
 Windows 時間遵循 NTP 規格，其中的時間同步處理的所有通訊需要用到的 UDP 連接埠 123。 此連接埠已由 Windows 時間保留且仍保留隨時。 每當電腦的時鐘進行同步處理，或提供另一部電腦的時間，該通訊會對 UDP 連接埠 123。  
-  
+
 > [!NOTE]  
 > 如果您有多個網路介面卡 （也稱為多重主目錄電腦） 的電腦，您無法選擇性地啟用網路介面卡為基礎的 Windows Time 服務。  
-  
+
 ## <a name="related-information"></a>相關的資訊  
 下列資源會包含與這一節的其他資訊。  
-  
+
 -   RFC *1305年*IETF RFC 資料庫中  
 

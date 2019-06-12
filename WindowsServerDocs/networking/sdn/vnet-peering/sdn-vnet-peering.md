@@ -9,12 +9,12 @@ ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 58596387d79f3f212a472f00c2785bacc278e855
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: aab4ec7c69ec5b52eae926cd1065d777415b1124
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821909"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446216"
 ---
 # <a name="virtual-network-peering"></a>虛擬網路對等互連
 
@@ -36,20 +36,20 @@ ms.locfileid: "59821909"
 
 虛擬網路對等互連有幾個需求和限制：
 
--   對等互連的虛擬網路必須：
+- 對等互連的虛擬網路必須：
 
-    -   有非重疊的 IP 位址空間
+  -   有非重疊的 IP 位址空間
 
-    -   由相同的網路控制卡管理
+  -   由相同的網路控制卡管理
 
--   一旦您對等互連虛擬網路與另一個虛擬網路，您無法加入或刪除位址空間中的位址範圍。
+- 一旦您對等互連虛擬網路與另一個虛擬網路，您無法加入或刪除位址空間中的位址範圍。
 
-   >[!TIP]
-   >如果您需要新增位址範圍：<ol><li>移除對等互連。</li><li>新增位址空間。</li><li>新增對等互連一次。</li></ol>
+  >[!TIP]
+  >如果您需要新增位址範圍：<ol><li>移除對等互連。</li><li>新增位址空間。</li><li>新增對等互連一次。</li></ol>
 
--   因為虛擬網路對等互連是介於兩個虛擬網路，則沒有任何衍生的可轉移關聯性儲存跨對等互連上。 比方說，如果您對等互連 virtualNetworkA 與 virtualNetworkB 與 virtualNetworkC virtualNetworkB，則 virtualNetworkA 不取得對等互連與 virtualNetworkC。
+- 因為虛擬網路對等互連是介於兩個虛擬網路，則沒有任何衍生的可轉移關聯性儲存跨對等互連上。 比方說，如果您對等互連 virtualNetworkA 與 virtualNetworkB 與 virtualNetworkC virtualNetworkB，則 virtualNetworkA 不取得對等互連與 virtualNetworkC。
 
-    [在此映像]
+  [在此映像]
 
 ## <a name="connectivity"></a>連線能力
 

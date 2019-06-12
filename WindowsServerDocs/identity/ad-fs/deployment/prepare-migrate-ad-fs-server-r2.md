@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b5658676d08318d88ddee44a0589db5873b4660b
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: cb301d0d68f00625ccea8c11d315b9defffe40f3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034296"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444531"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>準備移轉 AD FS 2.0 同盟伺服器至 Windows Server 2012 R2 上的 AD FS
 
@@ -45,17 +45,17 @@ ms.locfileid: "65034296"
   
 下列任何自訂設定必須手動移轉：  
   
- -   服務設定：  
+- 服務設定：  
   
-     -   由企業或公開憑證授權單位所發出的非預設權杖簽署和權杖解密憑證。  
+  - 由企業或公開憑證授權單位所發出的非預設權杖簽署和權杖解密憑證。  
   
-     -   AD FS 使用的 SSL 伺服器驗證憑證。  
+  - AD FS 使用的 SSL 伺服器驗證憑證。  
   
-     -   AD FS 使用的服務通訊憑證 (根據預設，這和 SSL 憑證的憑證相同)。  
+  - AD FS 使用的服務通訊憑證 (根據預設，這和 SSL 憑證的憑證相同)。  
   
-      -   任何 Federation Service 屬性的非預設值，例如 AutoCertificateRollover 或 SSO 存留期。  
+    -   任何 Federation Service 屬性的非預設值，例如 AutoCertificateRollover 或 SSO 存留期。  
   
-      -   非預設的 AD FS 端點設定和宣告描述。  
+    -   非預設的 AD FS 端點設定和宣告描述。  
   
 -   Active Directory 宣告提供者信任的自訂宣告規則。  
   
@@ -63,11 +63,11 @@ ms.locfileid: "65034296"
   
 如需詳細資訊，請參閱[移轉 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)。  
   
-2.  建立一個 Windows Server 2012 R2 同盟伺服器陣列。  
+2. 建立一個 Windows Server 2012 R2 同盟伺服器陣列。  
   
-3.  將原始設定資料匯入到這個新的 Windows Server 2012 R2 AD FS 陣列。  
+3. 將原始設定資料匯入到這個新的 Windows Server 2012 R2 AD FS 陣列。  
   
-4.  設定和自訂 AD FS 登入頁面。  
+4. 設定和自訂 AD FS 登入頁面。  
   
 ##  <a name="new-ad-fs-functionality-in-windows-server-2012-r2"></a>Windows Server 2012 R2 中 AD FS 的新功能  
  變更影響 Windows Server 2012 R2 中的下列 AD FS 功能從 AD FS 2.0 或 Windows Server 2012 中的 AD FS 移轉：  
@@ -109,27 +109,27 @@ ms.locfileid: "65034296"
   
  適用於 Windows Server 2012 R2 上執行函式的 AD FS，您的 Active Directory 網域必須執行下列其中一項：  
   
--   Windows Server 2012 R2  
+- Windows Server 2012 R2  
   
--   Windows Server 2012  
+- Windows Server 2012  
   
--   Windows Server 2008 R2  
+- Windows Server 2008 R2  
   
--   Windows Server 2008  
+- Windows Server 2008  
   
- 如果您打算使用群組受控服務帳戶 (gMSA) 做為服務帳戶，適用於 AD FS，您必須至少一個網域控制站執行 Windows Server 2012 或 Windows Server 2012 R2 作業系統的環境中。  
+  如果您打算使用群組受控服務帳戶 (gMSA) 做為服務帳戶，適用於 AD FS，您必須至少一個網域控制站執行 Windows Server 2012 或 Windows Server 2012 R2 作業系統的環境中。  
   
- 如果您打算部署 AD Workplace Join 的裝置註冊服務 (DRS)，AD FS 部署的一部分時，AD DS 架構必須更新為 Windows Server 2012 R2 等級。 更新結構描述有三種方法：  
+  如果您打算部署 AD Workplace Join 的裝置註冊服務 (DRS)，AD FS 部署的一部分時，AD DS 架構必須更新為 Windows Server 2012 R2 等級。 更新結構描述有三種方法：  
   
 1.  在現有的 Active Directory 樹系中，從 Windows Server 2012 R2 作業系統 DVD 的 \support\adprep 資料夾在任何執行 Windows Server 2008 或更新版本的 64 位元伺服器上執行 adprep /forestprep。 在這種情況下，不需要安裝其他網域控制站，而且也不需要升級現有的網域控制站。  
   
 您必須是裝載架構主機之網域中的 Schema Admins 群組、Enterprise Admins 群組及 Domain Admins 群組的成員，才可以執行 adprep/forestprep。  
   
-2.  在現有的 Active Directory 樹系中安裝執行 Windows Server 2012 R2 的網域控制站。 在這種情況下，adprep /forestprep 會在安裝網域控制站時自動執行。  
+2. 在現有的 Active Directory 樹系中安裝執行 Windows Server 2012 R2 的網域控制站。 在這種情況下，adprep /forestprep 會在安裝網域控制站時自動執行。  
   
 在安裝網域控制站期間，您可能需要指定其他認證才能執行 adprep /forestprep。  
   
-3.  在執行 Windows Server 2012 R2 的伺服器上安裝 AD DS 來建立新的 Active Directory 樹系。 在此情況下，adprep /forestprep 不必執行，因為具有所有必要的容器和物件以支援 DRS 會一開始建立結構描述。  
+3. 在執行 Windows Server 2012 R2 的伺服器上安裝 AD DS 來建立新的 Active Directory 樹系。 在此情況下，adprep /forestprep 不必執行，因為具有所有必要的容器和物件以支援 DRS 會一開始建立結構描述。  
   
 ### <a name="sql-server-support-for-ad-fs-in-windows-server-2012-r2"></a>SQL Server 支援 Windows Server 2012 R2 的 AD FS  
  如果您要建立一個 AD FS 陣列並使用 SQL Server 儲存您的設定資料，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。  

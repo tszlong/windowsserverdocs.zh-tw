@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c150a7e27242f4ef082150b89156c7b5ed81568
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87c4466ba1bf89f9eb548d7d7ed134246c810811
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873369"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438697"
 ---
 # <a name="ftp-hash1"></a>ftp: hash_1
 
@@ -32,12 +32,12 @@ hash
 ### <a name="parameters"></a>參數  
 無  
 ## <a name="remarks"></a>備註  
--   資料區塊的大小為 2048 個位元組。  
--   根據預設，**雜湊**已關閉。  
-## <a name="BKMK_Examples"></a>範例  
-切換數字符號 （#） 所列印的每個資料區塊傳輸。  
-```  
-hash  
-```  
-## <a name="additional-references"></a>其他參考資料  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+- 資料區塊的大小為 2048 個位元組。  
+- 根據預設，**雜湊**已關閉。  
+  ## <a name="BKMK_Examples"></a>範例  
+  切換數字符號 （#） 所列印的每個資料區塊傳輸。  
+  ```  
+  hash  
+  ```  
+  ## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  

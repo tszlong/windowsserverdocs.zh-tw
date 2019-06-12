@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42622fdf19cdd50b76d32989769874cbd05e9f4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 526363db3ecff4a9138c9cf13cbf330196e14ced
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826939"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439258"
 ---
 # <a name="finger"></a>finger
 
@@ -30,12 +30,14 @@ ms.locfileid: "59826939"
 finger [-l] [<User>] [@<Host>] [...]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|-l|長的清單格式顯示使用者資訊。|
-|<User>|指定您想要了解哪種資訊的使用者。 如果您省略*使用者*參數**手指**顯示指定電腦上的所有使用者的相關資訊。|
-|@<Host>|指定遠端電腦執行的手指服務，您要尋找的使用者資訊。 您可以指定電腦名稱或 IP 位址。|
-|/?|在命令提示字元顯示說明。|
+
+| 參數 |                                                                            描述                                                                            |
+|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    -l     |                                                          長的清單格式顯示使用者資訊。                                                           |
+|  <User>   | 指定您想要了解哪種資訊的使用者。 如果您省略*使用者*參數**手指**顯示指定電腦上的所有使用者的相關資訊。 |
+|  @<Host>  |        指定遠端電腦執行的手指服務，您要尋找的使用者資訊。 您可以指定電腦名稱或 IP 位址。        |
+|    /?     |                                                               在命令提示字元顯示說明。                                                                |
+
 ## <a name="remarks"></a>備註
 多個User@Host可以指定參數。
 您必須在前面**手指**連字號 （-），而不是斜線 （/） 的參數。

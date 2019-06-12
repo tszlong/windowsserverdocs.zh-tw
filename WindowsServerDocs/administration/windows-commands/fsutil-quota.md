@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 2daa2f6253a406ccad68677e1877215a1c610328
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e844d73348ee31f309f44895831ded9a2e6365c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835289"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439067"
 ---
 # <a name="fsutil-quota"></a>fsutil 配額
 >適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows 10，Windows Server 2012 R2、 Windows 8.1、 Windows Server 2012 中，Windows 8、 Windows Server 2008 R2、 Windows 7
@@ -36,18 +36,18 @@ fsutil quota [violations]
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|-------------|---------------|
-|停用|停用追蹤的配額和指定的磁碟區上的強制執行。|
-|強制執行|會強制執行指定的磁碟區上的配額使用量。|
-|modify|修改現有的磁碟配額，或建立新的配額。|
-|查詢|列出現有的磁碟配額。|
-|追蹤|追蹤磁碟上指定的磁碟區的使用量。|
-|違規|搜尋系統和應用程式記錄檔，並顯示訊息來指出，偵測到配額違規或使用者已達到配額閾值或配額限制。|
-|\<VolumePath>|必要。 指定磁碟機名稱，後面接著冒號或格式的 GUID**磁碟區 {***GUID***}**。|
-|\<臨界值 >|設定的限制 （以位元組為單位） 發出警告。 這是必要的參數**fsutil 配額修改**命令。|
-|\<限制 >|設定最大允許的磁碟使用量 （以位元組為單位）。 這是必要的參數**fsutil 配額修改**命令。|
-|\<UserName>|指定網域或使用者名稱。 這是必要的參數**fsutil 配額修改**命令。|
+|   參數   |                                                                                    描述                                                                                    |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    停用    |                                                         停用追蹤的配額和指定的磁碟區上的強制執行。                                                          |
+|    強制執行    |                                                                   會強制執行指定的磁碟區上的配額使用量。                                                                   |
+|    modify     |                                                              修改現有的磁碟配額，或建立新的配額。                                                              |
+|     查詢     |                                                                            列出現有的磁碟配額。                                                                            |
+|     追蹤     |                                                                    追蹤磁碟上指定的磁碟區的使用量。                                                                     |
+|  違規   | 搜尋系統和應用程式記錄檔，並顯示訊息來指出，偵測到配額違規或使用者已達到配額閾值或配額限制。 |
+| \<VolumePath> |                                  必要。 指定磁碟機名稱，後面接著冒號或格式的 GUID**磁碟區 {** <em>GUID</em> **}** 。                                  |
+| \<臨界值 >  |                            設定的限制 （以位元組為單位） 發出警告。 這是必要的參數**fsutil 配額修改**命令。                            |
+|   \<限制 >    |                                設定最大允許的磁碟使用量 （以位元組為單位）。 這是必要的參數**fsutil 配額修改**命令。                                |
+|  \<UserName>  |                                      指定網域或使用者名稱。 這是必要的參數**fsutil 配額修改**命令。                                       |
 
 ## <a name="remarks"></a>備註
 
@@ -62,7 +62,7 @@ fsutil quota [violations]
 fsutil quota query Volume{928842df-5a01-11de-a85c-806e6f6e6963}
 ```
 
-若要列出的磁碟區指定磁碟機代號，現有的磁碟配額**c:**，型別：
+若要列出的磁碟區指定磁碟機代號，現有的磁碟配額**c:** ，型別：
 
 ```
 Fsutil quota query C:

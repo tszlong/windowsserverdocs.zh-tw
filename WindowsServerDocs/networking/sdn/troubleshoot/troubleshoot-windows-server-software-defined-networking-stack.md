@@ -9,12 +9,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: pashort
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: b6d4ff37186e66bec54794f8d6c9fd8a83e23e7d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eeb0c335e4afd3c6835a04421a15073aeab6cdc6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845389"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446245"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>對 Windows Server 軟體定義網路堆疊進行疑難排解
 
@@ -34,17 +34,17 @@ ms.locfileid: "59845389"
 * **在原則的應用程式中的錯誤**  
      從網路控制卡的原則未傳遞至 HYPER-V 主機時，大幅延遲和/或不是最新 （比方說，在即時移轉） 之後的所有 HYPER-V 主機上。  
 * **設定漂移或軟體 bug**  
- 已卸除的封包中所產生的資料路徑相關問題。  
+  已卸除的封包中所產生的資料路徑相關問題。  
 
 * **外部錯誤與 NIC 硬體 / 驅動程式或為網路網狀架構**  
- 異常工作卸載 （例如 VMQ) 或為網路網狀架構設定錯誤 （例如 MTU)   
+  異常工作卸載 （例如 VMQ) 或為網路網狀架構設定錯誤 （例如 MTU)   
 
- 這份疑難排解指南會檢查每個這些錯誤類別目錄，並建議最佳作法和診斷工具可用來識別並修正錯誤。  
+  這份疑難排解指南會檢查每個這些錯誤類別目錄，並建議最佳作法和診斷工具可用來識別並修正錯誤。  
 
 ## <a name="diagnostic-tools"></a>診斷工具  
 
 之前討論的疑難排解工作流程的每個這些類型的錯誤，讓我們來檢查可用的診斷工具。   
-  
+
 若要使用的網路控制站 （控制路徑） 的診斷工具，您必須先安裝 RSAT NetworkController 功能並匯入``NetworkControllerDiagnostics``模組：  
 
 ```  
@@ -53,7 +53,7 @@ Import-Module NetworkControllerDiagnostics
 ```  
 
 若要使用 HNV 診斷 （資料路徑） 的診斷工具，您必須匯入``HNVDiagnostics``模組：
-  
+
 ```  
 # Assumes RSAT-NetworkController feature has already been installed
 Import-Module hnvdiagnostics   
@@ -63,12 +63,12 @@ Import-Module hnvdiagnostics
 這些 cmdlet 會記載在 TechNet 上[網路控制站診斷 Cmdlet 主題](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/)。 它們幫助識別控制路徑之間網路控制卡節點以及在網路控制站和 HYPER-V 主機上執行之 NC 主機代理程式的網路原則一致性的問題。
 
  _偵錯 ServiceFabricNodeStatus_並_Get NetworkControllerReplica_必須從一部網路控制卡節點虛擬機器中執行 cmdlet。 所有其他 NC 診斷 cmdlet 可以執行從已連線到網路控制站和在網路控制站管理安全性群組 (Kerberos) 或具有存取 X.509 憑證來管理網路控制站的任何主機。 
-   
+
 ### <a name="hyper-v-host-diagnostics"></a>HYPER-V 主機診斷  
 這些 cmdlet 會記載在 TechNet 上[HYPER-V 網路虛擬化 (HNV) 診斷 Cmdlet 主題](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)。 它們可協助識別租用戶虛擬機器 （東/西） 之間的資料路徑中的問題和透過 SLB VIP （北/南） 的輸入流量。 
 
 _偵錯 VirtualMachineQueueOperation_， _Get CustomerRoute_， _Get PACAMapping_， _Get ProviderAddress_， _Get VMNetworkAdapterPortId_， _Get VMSwitchExternalPortId_，和_測試 EncapOverheadSettings_都可以從任何 Hyper-v 主機執行的所有本機測試。 其他指令程式會叫用透過網路控制站的資料路徑測試，並因此需要存取網路控制站指定為 descried 上方。
- 
+
 ### <a name="github"></a>GitHub
 [Microsoft/SDN GitHub 存放庫](https://github.com/microsoft/sdn)有一些範例指令碼和這些內建 cmdlet 為基礎的工作流程。 特別是，在找到診斷的指令碼[診斷](https://github.com/Microsoft/sdn/diagnostics)資料夾。 請協助我們對這些指令碼，提交提取要求。
 
@@ -98,7 +98,6 @@ Fetching ResourceType:     networkInterfaces
 Fetching ResourceType:     virtualGateways
 Fetching ResourceType:     loadbalancerMuxes
 Fetching ResourceType:     Gateways
-
 ```
 
 如下所示的範例設定狀態訊息：
@@ -121,7 +120,7 @@ Message:          Host is not Connected.
 
 下表顯示錯誤碼、 訊息和後續追蹤動作，才會根據所觀察到的組態狀態的清單。
 
-  
+
 | **Code**| **Message**| **動作**|  
 |--------|-----------|----------|  
 | 不明| 未知的錯誤| |  
@@ -199,7 +198,7 @@ Debug-ServiceFabricNodeStatus [-ServiceTypeName] <Service Module>
 - HelperService
 - UpdateService
 
-檢查為 ReplicaStatus**就緒**而且 HealthState **[確定]**。
+檢查為 ReplicaStatus**就緒**而且 HealthState **[確定]** 。
 
 在生產環境中部署已與多節點網路控制站，您也可以查看每項服務的主要在哪一個節點，以及其個別的複本狀態。
 
@@ -215,7 +214,7 @@ ReplicaStatus : Ready
 
 ```
 檢查複本狀態是否已準備好針對每個服務。
- 
+
 #### <a name="check-for-corresponding-hostids-and-certificates-between-network-controller-and-each-hyper-v-host"></a>檢查有對應的 HostIDs 和網路控制站與每一部 HYPER-V 主機之間的憑證 
 在 HYPER-V 主機上，執行下列命令來檢查 HostID 對應網路控制站上的伺服器資源的執行個體識別碼
 
@@ -238,7 +237,7 @@ Properties       : Microsoft.Windows.NetworkController.ServerProperties
 *補救*如果使用 SDNExpress 指令碼或手動部署，更新 HostId 金鑰在登錄中，以符合伺服器資源的執行個體識別碼。 如果使用 VMM 從 VMM 刪除 HYPER-V 伺服器，請重新啟動 HYPER-V 主機 （實體伺服器） 上的網路控制站主機代理程式，並移除 HostId 登錄機碼。 然後，重新新增到 VMM 伺服器。
 
 
-檢查 (SouthBound) 之間進行通訊的 HYPER-V 主機 （NC 主機代理程式服務） 和網路控制站節點 （主機名稱會是憑證的主體名稱） 的 HYPER-V 主機所使用的 X.509 憑證的指紋相同。 也請檢查網路控制站的 REST 憑證有主體名稱*CN =<FQDN or IP>*。
+檢查 (SouthBound) 之間進行通訊的 HYPER-V 主機 （NC 主機代理程式服務） 和網路控制站節點 （主機名稱會是憑證的主體名稱） 的 HYPER-V 主機所使用的 X.509 憑證的指紋相同。 也請檢查網路控制站的 REST 憑證有主體名稱*CN =<FQDN or IP>* 。
 
 ```  
 # On Hyper-V Host
@@ -272,7 +271,7 @@ Thumbprint                                Subject
 - 受信任的根授權單位  
 
 *補救*如果多個憑證有相同的主體名稱為 HYPER-V 主機上，網路控制站主機代理程式會隨機選擇要呈現給網路控制站。 這可能不符合已知網路控制站的伺服器資源的憑證指紋。 在此情況下，刪除其中一個使用相同的主體名稱，在 HYPER-V 主機上的憑證，然後再重新啟動網路控制站主機代理程式服務。 如果可以仍然連接，請刪除具有相同的主體名稱，在 HYPER-V 主機上的其他憑證，並刪除對應的伺服器資源，在 VMM 中。 然後，重新建立伺服器資源，進而產生新的 X.509 憑證，並將它安裝在 HYPER-V 主機上的 VMM 中。
-  
+
 
 #### <a name="check-the-slb-configuration-state"></a>檢查 SLB 組態狀態
 SLB 設定狀態可以判斷要偵錯 NetworkController cmdlet 的輸出的一部分。 此 cmdlet 也會輸出目前的網路控制站在 JSON 檔案中，從每個 HYPER-V 主機 （伺服器） 的所有 IP 組態，然後從主機代理程式的資料庫資料表的本機網路原則的資源集。 
@@ -305,7 +304,7 @@ SLB 設定狀態的資訊可在_診斷 slbstateResults.Json_此目錄中的檔�
    * Mux 路由-此區段會包含所有該特定 mux 的路由通告每個 SLB Mux 部署的列出一個值。
  * 租用戶
    * VipConsolidatedState-此區段會列出連線狀態每個租用戶 VIP 包括通告的路由前置詞、 HYPER-V 主機和 DIP 端點。
-    
+
 > [!NOTE]
 > SLB 狀態可以是直接使用 reflection [DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1)上可用的指令碼[Microsoft SDN GitHub 存放庫](https://github.com/microsoft/sdn)。 
 
@@ -486,9 +485,8 @@ ComputerName         : SA18N30-2
 IsDeleted            : False
 
 <snip> ...
-
 ```
- 
+
 #### <a name="check-mtu-and-jumbo-frame-support-on-hnv-provider-logical-network"></a>檢查 HNV 提供者邏輯網路上的 MTU 和巨大框架支援
 
 HNV 提供者邏輯網路中另一個常見的問題是實體的網路連接埠和/或乙太網路卡沒有夠大的 MTU 設定為處理從 VXLAN （或 NVGRE） 封裝的額外負荷。 
@@ -527,7 +525,6 @@ Physical Nic  <NIC> Ethernet Adapter #2 can support SDN traffic. Encapoverhead v
 Cannot send jumbo packets to the destination. Physical switch ports may not be configured to support jumbo packets.
 
 # TODO: Success Results aftering updating MTU on physical switch ports
-
 ```
 
 *補救*
@@ -550,7 +547,6 @@ CA IP Address CA MAC Address    Virtual Subnet ID PA IP Address
 10.254.254.1  40-1D-D8-B7-1C-06              4115 10.10.182.66
 192.168.1.1   40-1D-D8-B7-1C-06              4114 10.10.182.66
 192.168.1.4   00-1D-D8-B7-1C-05              4114 10.10.182.66
-
 ```
 >[!NOTE]
 > 如果您預期的 CA-PA 對應不會在指定的租用戶 VM 的輸出，請檢查網路控制站上的 VM NIC 和 IP 組態的資源_Get NetworkControllerNetworkInterface_ cmdlet。 而且請檢查 NC 主機代理程式與網路控制卡節點之間建立的連接。
@@ -600,10 +596,10 @@ PA 路由資訊：
 
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
- 
+
  <snip> ...
 
-4.  [租用戶]檢查有任何分散式的防火牆原則會指定虛擬子網路或 VM 上會封鎖流量的網路介面。    
+4. [租用戶]檢查有任何分散式的防火牆原則會指定虛擬子網路或 VM 上會封鎖流量的網路介面。    
 
 查詢在 sa18.nttest.microsoft.com 網域 sa18n30nc 在示範環境中找到網路控制站的 REST API。
 
@@ -624,7 +620,7 @@ PA 路由資訊：
 下列各節提供記錄和追蹤的進階診斷資訊。
 
 ### <a name="network-controller-centralized-logging"></a>網路控制站的集中式記錄 
- 
+
 網路控制站可自動收集偵錯工具記錄檔，並將它們儲存在集中位置。 當您第一次，或稍後部署網路控制站時，可以啟用記錄檔收集。 記錄檔會收集從網路控制站，而且網路受網路控制卡的項目： 裝載機器、 軟體負載平衡器 (SLB) 和閘道機器。 
 
 這些記錄包含網路控制卡叢集、 網路控制站應用程式、 閘道記錄檔、 SLB、 虛擬網路和分散式的防火牆的偵錯記錄檔。 每當新主機/SLB/閘道新增到網路控制站時，記錄會啟動這些機器上。 同樣地，從網路控制卡移除主機/SLB/閘道時，記錄會停止這些機器上。

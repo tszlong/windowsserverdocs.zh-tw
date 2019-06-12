@@ -13,12 +13,12 @@ author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: ec41e85949cb61c8130d8765b4786eefe39ebd0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 475b6a0b24b811008ee213c1604d98d9aa9eb092
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855589"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447031"
 ---
 # <a name="whats-new-in-credential-protection"></a>認證保護中最新消息
 
@@ -49,7 +49,7 @@ ms.locfileid: "59855589"
 
 從 Windows 10 1507年版與 Windows Server 2016 中，如果已加入網域的裝置可註冊其繫結的公開金鑰與 Windows Server 2016 網域控制站 (DC)，然後裝置可以向使用 Kerberos PKINIT 的公用金鑰Windows Server 2016 DC 驗證。
 
-從 Windows Server 2016 開始，Kdc 會支援使用 Kerberos 信任驗證。  
+從 Windows Server 2016 開始，Kdc 會支援使用 Kerberos 信任驗證。  
 
 [深入了解公用金鑰的支援，針對已加入網域的裝置和 Kerberos 信任](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "59855589"
 
 ### <a name="rolling-public-key-only-users-ntlm-secrets"></a>輪流公用金鑰唯一使用者的 NTLM 密碼
 
-從 Windows Server 2016 網域功能等級 (DFL)，網域控制站可以支援輪流公用金鑰唯一使用者的 NTLM 祕密。 這項功能是在較低的 DFLs 中找不到。
+從 Windows Server 2016 網域功能等級 (DFL)，網域控制站可以支援輪流公用金鑰唯一使用者的 NTLM 祕密。 這項功能是在較低的 DFLs 中找不到。
 
 > [!WARNING] 
 > 將網域控制站加入網域，以循環 DC 已更新至少 2016 年 11 月 8 日服務執行之前啟用的 NTLM 祕密的 DC 的損毀的風險。 
@@ -73,12 +73,12 @@ ms.locfileid: "59855589"
 1. 從 Active Directory 管理中心，以滑鼠右鍵按一下左窗格上的網域，然後選取**屬性**。
 
     ![網域屬性](../media/Credentials-Protection-And-Management/domain-properties.png)
-    
+
 2. 選取 **啟用輪流即將過期的 NTLM 祕密在註冊時，才能使用 Microsoft Passport 或智慧卡進行互動式登入的使用者**。
 
     ![Autoroll 過期 NTLM 祕密](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)
 
-3. 按一下 [確定] 。 
+3. 按一下 [確定]  。 
 
 ### <a name="allowing-network-ntlm-when-user-is-restricted-to-specific-domain-joined-devices"></a>當使用者限制為特定的已加入網域的裝置時，允許網路 NTLM
 

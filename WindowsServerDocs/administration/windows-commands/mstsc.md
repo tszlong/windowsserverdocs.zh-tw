@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17c050a3504e763488a34bd19faad80558847965
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b6f89c1e3b0d36f14dbd55f9e6994c788305b30d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868819"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437181"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -37,19 +37,20 @@ mstsc.exe /migrate
 ```
 
 ## <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|<Connection File>|指定的.rdp 連線檔案的名稱。|
-|/v:<Server[:<Port>]|指定在遠端電腦和 （選擇性） 您要連接的連接埠號碼。|
-|/admin|連線到管理伺服器的工作階段。|
-|/f|以全螢幕模式中啟動遠端桌面連線。|
-|/w:<Width>|指定遠端桌面 視窗的寬度。|
-|/h:<Height>|指定的遠端桌面 視窗的高度。|
-|/public|以公用模式執行遠端桌面。 在公用模式中，密碼和點陣圖不會快取。|
-|/span|遠端桌面寬度和高度與本機虛擬桌面，橫跨多個監視器，如有必要，便會比對。|
-|/edit <Connection File>|開啟指定的.rdp 檔案，以進行編輯。|
-|/migrate|將移轉至新的.rdp 連線檔案建立與用戶端連線管理員的舊版連線檔案。|
-|/?|在命令提示字元顯示說明。|
+
+|        參數        |                                                         描述                                                         |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+|    <Connection File>    |                                   指定的.rdp 連線檔案的名稱。                                    |
+|   /v:<Server[:<Port>]   |                指定在遠端電腦和 （選擇性） 您要連接的連接埠號碼。                 |
+|         /admin          |                                   連線到管理伺服器的工作階段。                                   |
+|           /f            |                                    以全螢幕模式中啟動遠端桌面連線。                                    |
+|       /w:<Width>        |                                      指定遠端桌面 視窗的寬度。                                      |
+|       /h:<Height>       |                                     指定的遠端桌面 視窗的高度。                                      |
+|         /public         |                  以公用模式執行遠端桌面。 在公用模式中，密碼和點陣圖不會快取。                  |
+|          /span          | 遠端桌面寬度和高度與本機虛擬桌面，橫跨多個監視器，如有必要，便會比對。 |
+| /edit <Connection File> |                                         開啟指定的.rdp 檔案，以進行編輯。                                          |
+|        /migrate         |       將移轉至新的.rdp 連線檔案建立與用戶端連線管理員的舊版連線檔案。       |
+|           /?            |                                            在命令提示字元顯示說明。                                             |
 
 ## <a name="remarks"></a>備註
 -   為 Default.rdp 會儲存每個使用者，為使用者的文件資料夾中的隱藏檔案。 使用者建立.rdp 檔會儲存預設會在使用者的文件 資料夾，但可以儲存在任何位置。
@@ -64,7 +65,7 @@ mstsc.exe /migrate
     ```
     mstsc /edit filename.rdp
     ```
-    
+
 #### <a name="additional-references"></a>其他參考資料
 -   [命令列語法關鍵](command-line-syntax-key.md)
 -   [遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)

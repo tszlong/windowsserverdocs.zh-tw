@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 49b3f6f68bf30ff197b51643f9f1b8f36cc76f19
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3077aa54163ed9548ae3f45f8c673c731b8ef73b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825969"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446654"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>步驟 5 的測試 DirectAccess 連線從網際網路，並透過叢集
 
@@ -35,27 +35,27 @@ CLIENT1 已準備好進行測試的 DirectAccess。
   
 ## <a name="test-directaccess-connectivity-from-the-internet"></a>測試從網際網路的 DirectAccess 連線  
   
-1.  從公司網路交換器拔除 CLIENT1，並將它連線到網際網路交換器。 等候 30 秒。  
+1. 從公司網路交換器拔除 CLIENT1，並將它連線到網際網路交換器。 等候 30 秒。  
   
-2.  在提升權限的 Windows PowerShell 視窗中輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中時用戶端電腦連線到公司網路的名稱解析項目。  
+2. 在提升權限的 Windows PowerShell 視窗中輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中時用戶端電腦連線到公司網路的名稱解析項目。  
   
-3.  在 Windows PowerShell 視窗中，輸入**Get-dnsclientnrptpolicy**按 ENTER 鍵。  
+3. 在 Windows PowerShell 視窗中，輸入**Get-dnsclientnrptpolicy**按 ENTER 鍵。  
   
-    輸出會顯示「名稱解析原則表格」(NRPT) 的目前設定。 這些設定會指出所有連線。 遠端存取 」 DNS 伺服器，IPv6 位址 2001:db8:1::2 因應解決 corp.contoso.com。 另外，請注意指出名稱 nls.corp.contoso.com 獲得豁免的 NRPT 項目；豁免清單上的名稱不會得到「遠端存取」DNS 伺服器的回應。 您可以 ping 遠端存取 」 DNS 伺服器 IP 位址，以確認連線到遠端存取伺服器;例如，您可以 ping 2001:db8:1::2。  
+   輸出會顯示「名稱解析原則表格」(NRPT) 的目前設定。 這些設定會指出所有連線。 遠端存取 」 DNS 伺服器，IPv6 位址 2001:db8:1::2 因應解決 corp.contoso.com。 另外，請注意指出名稱 nls.corp.contoso.com 獲得豁免的 NRPT 項目；豁免清單上的名稱不會得到「遠端存取」DNS 伺服器的回應。 您可以 ping 遠端存取 」 DNS 伺服器 IP 位址，以確認連線到遠端存取伺服器;例如，您可以 ping 2001:db8:1::2。  
   
-4.  在 Windows PowerShell 視窗中，輸入**ping app1**按 ENTER 鍵。 您應該會看到來自的 IPv6 位址為 APP1，在此案例中是 2001:db8:1::3 的回覆。  
+4. 在 Windows PowerShell 視窗中，輸入**ping app1**按 ENTER 鍵。 您應該會看到來自的 IPv6 位址為 APP1，在此案例中是 2001:db8:1::3 的回覆。  
   
-5.  在 Windows PowerShell 視窗中，輸入**ping app2**按 ENTER 鍵。 您應該會看到來自 EDGE1 指派給 APP2 之 NAT64 位址 (在此案例中為 fdc9:9f4e:eb1b:7777::a00:4) 的回覆。  
+5. 在 Windows PowerShell 視窗中，輸入**ping app2**按 ENTER 鍵。 您應該會看到來自 EDGE1 指派給 APP2 之 NAT64 位址 (在此案例中為 fdc9:9f4e:eb1b:7777::a00:4) 的回覆。  
   
-    Ping APP2 的功能很重要，因為成功，表示您仍可連線使用 nat64/dns64，因為 APP2 IPv4 唯一的資源。  
+   Ping APP2 的功能很重要，因為成功，表示您仍可連線使用 nat64/dns64，因為 APP2 IPv4 唯一的資源。  
   
-6.  讓 Windows PowerShell 視窗開啟，以供下一個程序。  
+6. 讓 Windows PowerShell 視窗開啟，以供下一個程序。  
   
-7.  開啟 Internet Explorer，在 Internet Explorer 網址列中，輸入**https://app1/** 按 ENTER 鍵。 您將會看到 APP1 上的預設 IIS 網站。  
+7. 開啟 Internet Explorer，在 Internet Explorer 網址列中，輸入 **https://app1/** 按 ENTER 鍵。 您將會看到 APP1 上的預設 IIS 網站。  
   
-8.  在 Internet Explorer 網址列中，輸入**https://app2/** 按 ENTER 鍵。 您將會看到 APP2 上的預設網站。  
+8. 在 Internet Explorer 網址列中，輸入 **https://app2/** 按 ENTER 鍵。 您將會看到 APP2 上的預設網站。  
   
-9. 在 **開始**畫面上，輸入**\\\App2\Files**，然後按 ENTER 鍵。 按兩下 [新文字文件] 檔案。  
+9. 在 **開始**畫面上，輸入<strong>\\\App2\Files</strong>，然後按 ENTER 鍵。 按兩下 [新文字文件] 檔案。  
   
     這示範了您仍可連線到 IPv4 唯一伺服器使用 SMB 來取得資源網域中的資源。  
   
@@ -69,20 +69,20 @@ CLIENT1 已準備好進行測試的 DirectAccess。
   
 ## <a name="test-directaccess-client-connectivity-through-the-cluster"></a>測試叢集透過 DirectAccess 用戶端連線  
   
-1.  EDGE2 執行正常關機程序。  
+1. EDGE2 執行正常關機程序。  
   
-    若要檢視伺服器的狀態，執行這些測試時，您可以使用網路負載平衡管理員。  
+   若要檢視伺服器的狀態，執行這些測試時，您可以使用網路負載平衡管理員。  
   
-2.  在 CLIENT1 上，在 Windows PowerShell 視窗中，輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中的名稱解析項目。  
+2. 在 CLIENT1 上，在 Windows PowerShell 視窗中，輸入**ipconfig /flushdns**按 ENTER 鍵。 這會排清可能仍存在於用戶端 DNS 快取中的名稱解析項目。  
   
-3.  在 Windows PowerShell 視窗中，偵測 APP1 和 APP2。 您應該從這兩個這些資源收到回覆。  
+3. 在 Windows PowerShell 視窗中，偵測 APP1 和 APP2。 您應該從這兩個這些資源收到回覆。  
   
-4.  在 **開始**畫面上，輸入**\\\app2\files**。 您應該會看到 APP2 電腦上的共用的資料夾。 開啟 APP2 上的檔案共用的能力會指出第二個通道，需要進行 Kerberos 驗證的使用者，正常運作。  
+4. 在 **開始**畫面上，輸入<strong>\\\app2\files</strong>。 您應該會看到 APP2 電腦上的共用的資料夾。 開啟 APP2 上的檔案共用的能力會指出第二個通道，需要進行 Kerberos 驗證的使用者，正常運作。  
   
-5.  開啟 Internet Explorer 中，然後再開啟網站 https://app1/和 https://app2/。 開啟兩個網站的能力可讓您確認第一個和第二個通道已啟動而且可以正常運作。 關閉 Internet Explorer。  
+5. 開啟 Internet Explorer 中，然後再開啟網站 https://app1/和 https://app2/。 開啟兩個網站的能力可讓您確認第一個和第二個通道已啟動而且可以正常運作。 關閉 Internet Explorer。  
   
-6.  啟動 EDGE2 電腦。  
+6. 啟動 EDGE2 電腦。  
   
-7.  在 EDGE1 上執行正常關機程序。  
+7. 在 EDGE1 上執行正常關機程序。  
   
-8.  等候 5 分鐘，然後返回 CLIENT1。 執行步驟 2-5。 這可確認 CLIENT1 已能夠以透明方式容錯移轉至 EDGE2 之後 EDGE1 變成無法使用。
+8. 等候 5 分鐘，然後返回 CLIENT1。 執行步驟 2-5。 這可確認 CLIENT1 已能夠以透明方式容錯移轉至 EDGE2 之後 EDGE1 變成無法使用。

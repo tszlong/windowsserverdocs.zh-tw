@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37568998d6d5870d2c97dbd487c5708b1e1e5a51
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a03bb9766ffe62a80e8661bf8ce2a8eea2ce536b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830239"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438562"
 ---
 # <a name="ftp-mkdir"></a>ftp: mkdir
 
@@ -30,9 +30,11 @@ ms.locfileid: "59830239"
 mkdir <directory>  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<directory>|指定新的遠端目錄的名稱。|  
+
+|  參數  |                   描述                   |
+|-------------|-------------------------------------------------|
+| <directory> | 指定新的遠端目錄的名稱。 |
+
 ## <a name="BKMK_Examples"></a>範例  
 建立名為的目錄**dir1**遠端電腦上。  
 ```  

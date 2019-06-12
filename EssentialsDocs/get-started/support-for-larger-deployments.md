@@ -12,14 +12,14 @@ ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c60e5f73c88a225fbd1067992894f9d20da745ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a99698519524c3b5050dc534d61921560522528c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860479"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433875"
 ---
-#<a name="support-for-larger-deployments"></a>大型部署支援
+# <a name="support-for-larger-deployments"></a>大型部署支援
 
 >適用於：Windows Server 2016 Essentials
 
@@ -34,7 +34,7 @@ Windows Server Essentials 現在支援使用較大型的部署：
 - 若要指定在指定的網域控制站的能力
 - 最多 500 個使用者和 500 個裝置的支援
 
-##<a name="support-for-multiple-domains"></a>支援多個網域
+## <a name="support-for-multiple-domains"></a>支援多個網域
 
 Windows server 2012 R2 Essentials 支援的每一部伺服器，也就是必要的只有一個網域和 Essentials 伺服器必須是樹系的根。 仍然需要網域和樹系時，Windows Server 2016 Essentials 體驗角色現在可以部署在 Windows Server 2016 Standard 或 Datacenter 支援多個網域。
 
@@ -42,7 +42,7 @@ Windows server 2012 R2 Essentials 支援的每一部伺服器，也就是必要�
 
  Windows Server Essentials 2012 R2 會封鎖任何服務來運用 Azure Active Directory，例如 Office 365，部署多個網域控制站的位置。 原因是，本機網域控制站與 Azure Active Directory 之間的帳戶和密碼同步處理可能會導致帳戶認證未同步的密碼。Windows Server 2016 Essentials 中已移除這項限制。
 
-##<a name="ability-to-specify-a-designated-domain-controller"></a>若要指定在指定的網域控制站的能力
+## <a name="ability-to-specify-a-designated-domain-controller"></a>若要指定在指定的網域控制站的能力
 
 您現在可以選擇指定的網域控制站會改善 Active Directory 網域物件，擷取時間，以及協調跨網域中其他網域控制站的同步處理的帳戶變更。
 
@@ -50,7 +50,7 @@ Windows server 2012 R2 Essentials 支援的每一部伺服器，也就是必要�
 
 ![螢幕擷取畫面顯示的設定會控制面板在前景與背景的 Windows Server Essentials 儀表板。 目前選取的 [設定] 控制台中的 [指定網域控制站] 頁面。](media/larger-deployments-1.PNG)
 
-##<a name="support-for-500-users-and-500-devices"></a>500 位使用者和 500 個裝置的支援
+## <a name="support-for-500-users-and-500-devices"></a>500 位使用者和 500 個裝置的支援
 -------------------------------------
 
 支援的使用者和 Windows Server 2012 R2 Essentials 中的裝置數目上限是 25 到 50，分別。 隨著 Windows Server Essentials 體驗伺服器角色，該限制已增加為 100 位使用者和 200 台裝置。

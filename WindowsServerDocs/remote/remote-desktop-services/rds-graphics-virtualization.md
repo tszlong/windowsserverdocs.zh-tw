@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
-ms.openlocfilehash: 7cf7fdf3510fcaaa955bd0031fb3564fe4372472
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af5d5ce89561c89d8468627e20dfdb6f35eca5ef
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875799"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447117"
 ---
 # <a name="which-graphics-virtualization-technology-is-right-for-you"></a>哪一種圖形虛擬化技術是最適合您？
 
@@ -43,12 +43,12 @@ ms.locfileid: "59875799"
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU 
 RemoteFX vGPU 是一種圖形虛擬化技術，可讓分散於客體作業系統以啟用 （請參閱上述的第一個圖形） 的知識工作者案例 GPU 的處理能力。 Windows Server 2016 中的已大幅提升，允許進一步的增強功能的 GPU 高載的情況下，例如設計工具的應用程式和資料視覺效果。 其他功能改良，包括：
 
--   支援第 2 代客體 Vm、 Windows Server 2016 客體 Vm 和 Windows 用戶端 HYPER-V 主機。
-   >[!NOTE] 
-   > Windows Server 2016 客體 VM; 不支援遠端桌面工作階段主機1 個工作階段可以裝載每個 Windows Server 2016 客體 VM。
+- 支援第 2 代客體 Vm、 Windows Server 2016 客體 Vm 和 Windows 用戶端 HYPER-V 主機。
+  >[!NOTE] 
+  > Windows Server 2016 客體 VM; 不支援遠端桌面工作階段主機1 個工作階段可以裝載每個 Windows Server 2016 客體 VM。
 
--   改進的應用程式相容性和穩定性。
--   VM 連線增強的工作階段模式，允許透過 VM 連線至 VM 已啟用 RemoteFX vGPU USB 和剪貼簿的重新導向。
+- 改進的應用程式相容性和穩定性。
+- VM 連線增強的工作階段模式，允許透過 VM 連線至 VM 已啟用 RemoteFX vGPU USB 和剪貼簿的重新導向。
 
 如需詳細資訊，請參閱[設定安裝及設定遠端桌面服務的 RemoteFX vGPU](rds-remotefx-vgpu.md)。
 

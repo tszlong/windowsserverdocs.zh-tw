@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65ccaf23b0e19319383952f3a1ca436aaf4d06fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a637abc91dd3342afb3a2723d1b3a835be149122
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856459"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436325"
 ---
 # <a name="path"></a>path
 
@@ -37,12 +37,12 @@ path ;
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|[\<Drive>:]<Path>|指定的磁碟機和目錄中的命令路徑設定。|
-|;|區隔中的命令路徑的目錄。 如果未指定其他參數，使用 **;** 清除現有的命令路徑，從 PATH 環境變數，並指示只在目前的目錄中搜尋的 Cmd.exe。|
-|%PATH%|將命令路徑附加至現有的 PATH 環境變數中所列的目錄集合中。|
-|/?|在命令提示字元顯示說明。|
+|     參數     |                                                                                                     描述                                                                                                      |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:]<Path> |                                                                            指定的磁碟機和目錄中的命令路徑設定。                                                                             |
+|         ;         | 區隔中的命令路徑的目錄。 如果未指定其他參數，使用 **;** 清除現有的命令路徑，從 PATH 環境變數，並指示只在目前的目錄中搜尋的 Cmd.exe。 |
+|      %PATH%       |                                                         將命令路徑附加至現有的 PATH 環境變數中所列的目錄集合中。                                                         |
+|        /?         |                                                                                         在命令提示字元顯示說明。                                                                                         |
 
 ## <a name="remarks"></a>備註
 

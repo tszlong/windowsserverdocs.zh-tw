@@ -7,12 +7,12 @@ ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: huu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c102fa0503e6aac279235e1243b55e0e3cf81e1d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0fb257f693cc27c0bc6dd18fc89e8dc6328ee638
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812409"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447346"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受防護網狀架構的診斷工具進行疑難排解
 
@@ -154,11 +154,11 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
 
 若要執行手動的診斷步驟如下所示：
 
-1. 每個主機系統管理員執行的要求`Get-HgsTrace`指定已知`-Path`和您想要針對產生的追蹤執行的診斷的清單。  例如: 
+1. 每個主機系統管理員執行的要求`Get-HgsTrace`指定已知`-Path`和您想要針對產生的追蹤執行的診斷的清單。  例如:
 
- ```PowerShell
- Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
- ```
+   ```PowerShell
+   Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
+   ```
 2. 要求每個主機系統管理員封裝所產生的追蹤資料夾，並將它傳送給您。  此程序可以驅動透過電子郵件，透過檔案共用或任何其他作業的原則和程序建立您的組織的方法為基礎的機制。
 
 3. 合併至單一資料夾中，使用任何其他內容或資料夾的所有接收的追蹤。
@@ -179,11 +179,11 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
          |- [..]
       ```
 
-4. 執行診斷，提供組合的追蹤資料夾的路徑`-Path`參數並指定`-RunDiagnostics`切換以及您要求您的系統管理員，以收集追蹤這些診斷。  診斷會假設它無法存取路徑內找到的主機，並因此會嘗試使用預先收集的追蹤。  如果任何追蹤遺失或損毀，診斷會失敗，受影響的測試，並正常執行。  例如: 
+4. 執行診斷，提供組合的追蹤資料夾的路徑`-Path`參數並指定`-RunDiagnostics`切換以及您要求您的系統管理員，以收集追蹤這些診斷。  診斷會假設它無法存取路徑內找到的主機，並因此會嘗試使用預先收集的追蹤。  如果任何追蹤遺失或損毀，診斷會失敗，受影響的測試，並正常執行。  例如:
 
- ```PowerShell
- Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
- ```
+   ```PowerShell
+   Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
+   ```
 
 ### <a name="mixing-saved-traces-with-additional-targets"></a>混合使用其他目標儲存追蹤
 

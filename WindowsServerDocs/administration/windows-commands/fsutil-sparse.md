@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 76a263c82ebc42de4cc6d136f9a814c3a678666b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1bc4e45ed2a2b06c72318e0999988ed8f016c40
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878389"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438976"
 ---
 # <a name="fsutil-sparse"></a>fsutil 疏鬆
 >適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows 10，Windows Server 2012 R2、 Windows 8.1、 Windows Server 2012 中，Windows 8、 Windows Server 2008 R2、 Windows 7
@@ -34,15 +34,15 @@ fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|-------------|---------------|
-|queryflag|疏鬆的查詢。|
-|queryrange|掃描檔案，並搜尋範圍可能包含非零的資料。|
-|setflag|將指定為疏鬆檔案的標記。|
-|setrange|指定的範圍的檔案中填入零。|
-|<FileName>|指定包含檔案名稱和副檔名，例如 C:\documents\filename.txt 檔案的完整路徑。|
-|<BeginningOffset>|指定要標記為疏鬆檔案中的位移。|
-|<Length>|指定長度的區域檔案中標示為疏鬆 （以位元組為單位）。|
+|     參數     |                                                    描述                                                    |
+|-------------------|-------------------------------------------------------------------------------------------------------------------|
+|     queryflag     |                                                  疏鬆的查詢。                                                  |
+|    queryrange     |                        掃描檔案，並搜尋範圍可能包含非零的資料。                        |
+|      setflag      |                                        將指定為疏鬆檔案的標記。                                        |
+|     setrange      |                                   指定的範圍的檔案中填入零。                                   |
+|    <FileName>     | 指定包含檔案名稱和副檔名，例如 C:\documents\filename.txt 檔案的完整路徑。 |
+| <BeginningOffset> |                              指定要標記為疏鬆檔案中的位移。                              |
+|     <Length>      |                 指定長度的區域檔案中標示為疏鬆 （以位元組為單位）。                 |
 
 ## <a name="remarks"></a>備註
 

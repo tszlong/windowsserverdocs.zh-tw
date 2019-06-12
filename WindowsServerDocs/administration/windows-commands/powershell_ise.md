@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03c765b276a2e61247661e132dd49434b444530c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5619396e29b446dbc6804ece7444f355dae4c0a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817279"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436307"
 ---
 # <a name="powershellise"></a>PowerShell_ise
 
@@ -33,27 +33,27 @@ Windows PowerShell 整合式指令碼環境 (ISE) 是可讓您讀取、 寫入�
 ## <a name="using-powershelliseexe"></a>使用 PowerShell_ISE.exe
 
 您可以使用**PowerShell_ISE.exe**開始和結束 Windows PowerShell 工作階段，如下所示：
--   若要啟動 Windows PowerShell ISE 工作階段，在命令提示字元視窗中，在 Windows PowerShell 中，或在 [開始] 功能表中，輸入：  
-    ```
-    PowerShell_Ise
-    ```  
--   若要在 Windows PowerShell ISE 中開啟指令碼 (.ps1)、 指令碼模組 (.psm1)、 模組資訊清單 (.psd1)、 XML 檔案或任何其他支援的檔案，請使用下列命令格式：  
-    ```
-    PowerShell_Ise <FilePath>
-    ```  
-    在 Windows PowerShell 3.0 中，您可以使用選擇性**檔案**參數，如下所示：  
-    ```
-    PowerShell_Ise -File <FilePath>
-    ```  
--   若要啟動的 Windows PowerShell ISE 工作階段，而不需要您的 Windows PowerShell 設定檔，請使用**NoProfile**參數。 ( **NoProfile**參數在 Windows PowerShell 3.0 引進。)  
-    ```
-    PowerShell_Ise -NoProfile
-    ```  
--   若要查看**PowerShell_ISE.exe**協助檔案中的命令提示字元視窗，請使用下列命令格式：  
-    ```
-    PowerShell_Ise -help, -?, /?
-    ```  
-如需完整的清單**PowerShell_ISE.exe**命令列參數，請參閱[about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)。
+- 若要啟動 Windows PowerShell ISE 工作階段，在命令提示字元視窗中，在 Windows PowerShell 中，或在 [開始] 功能表中，輸入：  
+  ```
+  PowerShell_Ise
+  ```  
+- 若要在 Windows PowerShell ISE 中開啟指令碼 (.ps1)、 指令碼模組 (.psm1)、 模組資訊清單 (.psd1)、 XML 檔案或任何其他支援的檔案，請使用下列命令格式：  
+  ```
+  PowerShell_Ise <FilePath>
+  ```  
+  在 Windows PowerShell 3.0 中，您可以使用選擇性**檔案**參數，如下所示：  
+  ```
+  PowerShell_Ise -File <FilePath>
+  ```  
+- 若要啟動的 Windows PowerShell ISE 工作階段，而不需要您的 Windows PowerShell 設定檔，請使用**NoProfile**參數。 ( **NoProfile**參數在 Windows PowerShell 3.0 引進。)  
+  ```
+  PowerShell_Ise -NoProfile
+  ```  
+- 若要查看**PowerShell_ISE.exe**協助檔案中的命令提示字元視窗，請使用下列命令格式：  
+  ```
+  PowerShell_Ise -help, -?, /?
+  ```  
+  如需完整的清單**PowerShell_ISE.exe**命令列參數，請參閱[about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)。
 
 ## <a name="start-windows-powershell-ise-in-other-ways"></a>其他方法啟動 Windows PowerShell ISE
 

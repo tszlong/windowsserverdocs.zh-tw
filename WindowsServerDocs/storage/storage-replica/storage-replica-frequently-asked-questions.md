@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: e832dce3eed7d0e5103254fb48683726b82af2e6
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: d03407292a797b1cd511937ba40fc0fa373f5dc0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475941"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447577"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
@@ -83,7 +83,7 @@ Update-SmbMultichannelConnection
 否，儲存體複本支援伺服器、 叢集或延展式叢集節點的只有一對一的複寫。 這可能會在未來版本中變更。 當然，您可以設定特定磁碟區組的各種伺服器間任一方向的複寫。 例如，伺服器 1 可以將其 D 磁碟區複寫到伺服器 2，並從伺服器 3 複寫其 E 磁碟區。
 
 ## <a name="FAQ5"></a> 我是否可以擴大或縮小複寫所複寫的儲存體複本的磁碟區？  
-您可以增加 (延伸) 磁碟區，而不是進行壓縮。 根據預設，儲存體複本防止系統管理員延伸複寫磁碟區。在調整大小之前，在來源群組上使用 `Set-SRGroup -AllowVolumeResize $TRUE` 選項。 例如: 
+您可以增加 (延伸) 磁碟區，而不是進行壓縮。 根據預設，儲存體複本防止系統管理員延伸複寫磁碟區。在調整大小之前，在來源群組上使用 `Set-SRGroup -AllowVolumeResize $TRUE` 選項。 例如:
 
 1. 使用對來源電腦： `Set-SRGroup -Name YourRG -AllowVolumeResize $TRUE`
 2. 使用任何您想要的技術增加磁碟區
@@ -141,7 +141,7 @@ Update-SmbMultichannelConnection
 
 ## <a name="FAQ13"></a> 我是否可以委派使用者管理複寫？  
 
-您可以使用`Grant-SRDelegation`cmdlet。 這可讓您在伺服器對伺服器、叢集對叢集及延展式複寫案例中設定特定使用者，就像擁有建立、修改或移除複寫的權限，而不需是本機系統管理員群組的成員。 例如:   
+您可以使用`Grant-SRDelegation`cmdlet。 這可讓您在伺服器對伺服器、叢集對叢集及延展式複寫案例中設定特定使用者，就像擁有建立、修改或移除複寫的權限，而不需是本機系統管理員群組的成員。 例如:  
 
     Grant-SRDelegation -UserName contso\tonywang  
 
@@ -227,7 +227,7 @@ Update-SmbMultichannelConnection
 不過，若要取得 Windows Server 2019 的提升的複寫效能，此合作關係中的所有成員必須都執行 Windows Server 2019 時，必須刪除現有的合作關係和相關聯的複寫群組，然後重新建立它們，以植入的資料 （無論是當建立合作關係中 Windows Admin Center 或新增 SRPartnership cmdlet）。
 
 ## <a name="FAQ17"></a> 如何報告與儲存體複本 」 或 「 本指南的問題？  
-如需「儲存複本」的技術協助，您可以張貼於 [Microsoft TechNet 論壇](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。  https://windowsserver.uservoice.com 站台是慣用的設計變更要求，因為它可讓您的客戶提供支援和意見反應，對您的想法。
+如需「儲存複本」的技術協助，您可以張貼於 [Microsoft TechNet 論壇](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。 <https://windowsserver.uservoice.com> 站台是慣用的設計變更要求，因為它可讓您的客戶提供支援和意見反應，對您的想法。
 
 
 

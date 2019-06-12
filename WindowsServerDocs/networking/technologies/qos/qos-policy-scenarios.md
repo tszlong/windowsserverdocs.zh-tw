@@ -8,12 +8,12 @@ ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2a24ce3213b1aa1c66a438d278f7499b6d53bf6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2617c897ed2ea173d29fc7c4a87e52557154d463
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834349"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446988"
 ---
 # <a name="qos-policy-scenarios"></a>QoS 原則案例
 
@@ -189,7 +189,7 @@ QoS 原則只會套用到 LOB 伺服器藉由將 GPO 連結到 OU，其中包含
   
 - 程式庫 (深度 = 1)
   
- **video.internal.training.hr.mycompany.com**具有最高的優先權，並**selfguide.training.mycompany.com**有下一個最高的優先順序。 **定型**並**程式庫**共用相同的最低優先順序。  
+  **video.internal.training.hr.mycompany.com**具有最高的優先權，並**selfguide.training.mycompany.com**有下一個最高的優先順序。 **定型**並**程式庫**共用相同的最低優先順序。  
   
 ####  <a name="bkmk_QoS_UrlPort"></a> 3.URL 的連接埠
 

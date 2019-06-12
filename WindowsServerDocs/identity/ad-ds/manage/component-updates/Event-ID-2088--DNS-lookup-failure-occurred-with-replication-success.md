@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: cc090fa749a601e53b4347cce43245f22badc8ae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e0c5e838290a8ebf33f0f7891dc10f8b00e5bcba
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840709"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442655"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件識別碼 2088年:DNS 查閱失敗，發生複寫成功
 
@@ -58,7 +58,7 @@ ms.locfileid: "59840709"
 
 2) 確認來源網域控制站正在執行 Active Directory，而且是可存取網路上，輸入"net 檢視\\&lt;來源 DC 名稱&gt;"或"ping&lt;來源 DC 名稱&gt;"。 
 
-3) 確認來源網域控制站會使用有效的 DNS 伺服器，DNS 服務和來源網域控制站的主機記錄和 CNAME 記錄正確註冊，請使用 DCDIAG 的 DNS 增強型版本。上可用的 EXE https://www.microsoft.com/dns 
+3) 確認來源網域控制站會使用有效的 DNS 伺服器，DNS 服務和來源網域控制站的主機記錄和 CNAME 記錄正確註冊，請使用 DCDIAG 的 DNS 增強型版本。上可用的 EXE <https://www.microsoft.com/dns> 
 
 dcdiag /test:dns 
 
@@ -66,7 +66,7 @@ dcdiag /test:dns
 
 dcdiag /test:dns 
 
-5) 以便進一步分析 DNS 錯誤失敗，請參閱 KB 824449: https://support.microsoft.com/?kbid=824449 
+5) 以便進一步分析 DNS 錯誤失敗，請參閱 KB 824449: <https://support.microsoft.com/?kbid=824449> 
 
 其他資料錯誤值：11004 要求的名稱有效，但找不到要求類型的任何資料</code> </introduction>
   <section>
@@ -78,7 +78,7 @@ dcdiag /test:dns
   <section>
     <title>解決方式</title>
     <content>
-      <para>繼續進行 DNS 測試中所述"<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">事件識別碼 2087年:DNS 查閱失敗造成複寫失敗</link>。 」</para>
+      <para>繼續進行 DNS 測試中所述&quot;<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">事件識別碼 2087年:DNS 查閱失敗造成複寫失敗</link>。&quot;</para>
     </content>
   </section>
   <relatedTopics />

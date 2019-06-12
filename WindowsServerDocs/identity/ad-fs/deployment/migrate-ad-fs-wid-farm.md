@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: dbef7d07041a1fd32656c95947d5202b566c068a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c85a02ae6a71cf31fd172ec012a14cd81c126e16
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868319"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445657"
 ---
 # <a name="migrate-an-ad-fs-20-wid-farm"></a>移轉 AD FS 2.0 WID 伺服器陣列  
 本文件提供詳細的資訊移轉 AD FS 2.0 Windows 內部資料庫 (WID) 到 Windows Server 2012 的伺服器陣列。
@@ -30,7 +30,7 @@ ms.locfileid: "59868319"
 > [!IMPORTANT]
 >  作業系統升級的結果，在此伺服器上的 AD FS 設定會遺失且 AD FS 2.0 伺服器角色會被移除。 相反地，安裝 Windows Server 2012 的 AD FS 伺服器角色，但尚未進行設定。 您必須建立原始 AD FS 設定，並還原剩餘的 AD FS 設定，來完成同盟伺服器移轉。  
   
-4.  在此伺服器上建立原始 AD FS 設定。  
+4. 在此伺服器上建立原始 AD FS 設定。  
   
 您可以使用來建立原始 AD FS 設定**AD FS 同盟伺服器設定精靈**至同盟伺服器新增到 WID 伺服器陣列。 如需詳細資訊，請參閱[將同盟伺服器新增至同盟伺服器陣列](add-a-federation-server-to-a-federation-server-farm.md)。  
   
@@ -39,13 +39,13 @@ ms.locfileid: "59868319"
 >  
 > 當您到達**指定 Federation Service 名稱**頁面上，請務必選取您在 「 準備移轉 WID 伺服器陣列 」 所記錄的相同 SSL 憑證中[準備移轉 AD FS 2.0 同盟伺服器](prepare-to-migrate-a-wid-farm.md).  
   
-5.  更新這個伺服器上您的 AD FS 網頁。 如果您準備移轉時備份您自訂 AD FS 網頁，您需要使用您的備份資料來覆寫預設會在所建立的 AD FS 網頁 **%systemdrive%\inetpub\adfs\ls**目錄視為在 Windows Server 2012 的 AD FS 設定的結果。  
+5. 更新這個伺服器上您的 AD FS 網頁。 如果您準備移轉時備份您自訂 AD FS 網頁，您需要使用您的備份資料來覆寫預設會在所建立的 AD FS 網頁 **%systemdrive%\inetpub\adfs\ls**目錄視為在 Windows Server 2012 的 AD FS 設定的結果。  
   
-6.  新增您剛才升級到 Windows Server 2012 的負載平衡器的伺服器。  
+6. 新增您剛才升級到 Windows Server 2012 的負載平衡器的伺服器。  
   
-7.  針對 WID 伺服器陣列中的其他次要伺服器重複步驟 1 到 6。  
+7. 針對 WID 伺服器陣列中的其他次要伺服器重複步驟 1 到 6。  
   
-8.  將 WID 伺服器陣列中其中一個已升級的次要伺服器升級成主要伺服器。 若要這樣做，請開啟 Windows PowerShell，然後執行下列命令： `PSH:> Set-AdfsSyncProperties –Role PrimaryComputer`。  
+8. 將 WID 伺服器陣列中其中一個已升級的次要伺服器升級成主要伺服器。 若要這樣做，請開啟 Windows PowerShell，然後執行下列命令： `PSH:> Set-AdfsSyncProperties –Role PrimaryComputer`。  
   
 9. 從負載平衡器移除 WID 伺服器陣列中的原始主要伺服器。  
   

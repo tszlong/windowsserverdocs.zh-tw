@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6cf81018fa590d38e55778d60b0cb0e849ab83de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a379ead9c56af096e121048a8c0f596f6879bb0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835699"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438546"
 ---
 # <a name="ftp-mls1"></a>ftp: mls_1
 
@@ -30,23 +30,25 @@ ms.locfileid: "59835699"
 mls <remoteFile>[ ] <LocalFile>  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<remoteFile>|指定您要查看清單的檔案。|  
-|<LocalFile>|指定用來儲存清單中的本機檔案。|  
+
+|  參數   |                       描述                       |
+|--------------|---------------------------------------------------------|
+| <remoteFile> | 指定您要查看清單的檔案。 |
+| <LocalFile>  |  指定用來儲存清單中的本機檔案。  |
+
 ## <a name="remarks"></a>備註  
--   指定*remoteFiles*  
-    輸入連字號 (**-**) 若要在遠端電腦上使用目前的工作目錄。  
--   指定*本機檔案*  
-    輸入連字號 (**-**) 若要在螢幕上顯示的清單。  
-## <a name="BKMK_Examples"></a>範例  
-顯示檔案和子目錄的簡短的清單**dir1**並**dir2**。  
-```  
-mls dir1 dir2 -  
-```  
-儲存檔案和子目錄的簡短的清單**dir1**並**dir2**本機檔案中**dirlist.txt**  
-```  
-mls dir1 dir2 dirlist.txt   
-```  
-## <a name="additional-references"></a>其他參考資料  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+- 指定*remoteFiles*  
+  輸入連字號 ( **-** ) 若要在遠端電腦上使用目前的工作目錄。  
+- 指定*本機檔案*  
+  輸入連字號 ( **-** ) 若要在螢幕上顯示的清單。  
+  ## <a name="BKMK_Examples"></a>範例  
+  顯示檔案和子目錄的簡短的清單**dir1**並**dir2**。  
+  ```  
+  mls dir1 dir2 -  
+  ```  
+  儲存檔案和子目錄的簡短的清單**dir1**並**dir2**本機檔案中**dirlist.txt**  
+  ```  
+  mls dir1 dir2 dirlist.txt   
+  ```  
+  ## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  

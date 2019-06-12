@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a87c4bac000a63af806705e9371a79d7370a34c1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 186664a75978f589a9a26047c72b9db74dd2dc4d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838239"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441124"
 ---
 # <a name="telnet-open"></a>telnet： 開啟
 
@@ -30,10 +30,12 @@ ms.locfileid: "59838239"
 o[pen] <hostname> [<Port>]  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<hostname>|指定的電腦名稱或 IP 位址。|  
-|[<Port>]|指定 telnet 伺服器正在接聽的 TCP 連接埠。 預設為 TCP 連接埠 23。|  
+
+| 參數  |                                        描述                                         |
+|------------|--------------------------------------------------------------------------------------------|
+| <hostname> |                         指定的電腦名稱或 IP 位址。                         |
+|  [<Port>]  | 指定 telnet 伺服器正在接聽的 TCP 連接埠。 預設為 TCP 連接埠 23。 |
+
 ## <a name="BKMK_Examples"></a>範例  
 連線到 telnet 伺服器在 telnet.microsoft.com。  
 ```  

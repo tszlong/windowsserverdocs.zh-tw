@@ -1,23 +1,23 @@
 ---
 title: 疑難排解磁碟管理
 description: 本文說明如何對磁碟管理問題進行疑難排解
-ms.date: 12/22/2017
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c234828706d999fe049626a2fd98db70e612766f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 4d9448cc642ef522fa129dcfe97e2286f16bad1b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192736"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812539"
 ---
 # <a name="troubleshooting-disk-management"></a>疑難排解磁碟管理
 
-> **適用於：** Windows 10，Windows 8.1、 Windows 7、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows 7、 Windows Server （半年通道）、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 本主題列出一些可能在使用 [磁碟管理] 時發生的常見問題。
 
@@ -26,7 +26,7 @@ ms.locfileid: "66192736"
 
 ## <a name="a-disks-status-is-not-initialized-or-the-disk-is-missing"></a>磁碟的狀態為 未初始化或磁碟已遺失
 
-![顯示 不明的磁碟必須初始化的磁碟管理。](media\uninitialized-disk.PNG)
+![顯示 不明的磁碟必須初始化的磁碟管理。](media/uninitialized-disk.PNG)
 
 **原因：** 如果您有的磁碟，不會出現在檔案總管，並會列在 磁碟管理，即*未初始化*，可能是因為磁碟沒有有效的磁碟簽章。 基本上這表示磁碟已永遠不會初始化並格式化，或磁碟機格式化已損毀以某種方式。 
 
@@ -39,24 +39,25 @@ ms.locfileid: "66192736"
 1. 看看在 磁碟管理磁碟。 如果出現*Offline*如此處所示，再以滑鼠右鍵按一下它，然後選取**線上**。
 
     ![顯示為離線的磁碟](media/offline-disk.png)
-1. 如果磁碟會出現在 磁碟管理，為*線上*，且具有列示為主要磁碟分割*狀況良好*所示，在這裡，這是個好預兆。
+2. 如果磁碟會出現在 磁碟管理，為*線上*，且具有列示為主要磁碟分割*狀況良好*所示，在這裡，這是個好預兆。
 
     ![顯示為線上且狀況良好的磁碟區的磁碟](media/healthy-volume.png)
     - 如果資料分割檔案系統，但沒有磁碟機代號 （例如，e:），請參閱[變更磁碟機代號](change-a-drive-letter.md)手動新增的磁碟機代號。
     - 如果它沒有檔案系統 （NTFS、 ReFS、 fat、fat32 或 exFAT），而且您知道是空的磁碟，以滑鼠右鍵按一下 資料分割，然後選取**格式**。 格式化磁碟會清除所有資料，因此千萬不要這麼做如果您想要改為將檔案從磁碟-復原，請直接跳到下一個步驟。
-1. 如果您有外部磁碟，請拔除磁碟，在中，然後再選取插入它**動作** > **重新掃描磁碟**。 
-2. 將電腦關機、 關閉外部硬碟機 （如果它是具有電源線的外部磁碟）、，然後開啟您的電腦與磁碟重新開啟。
+3. 如果您有外部磁碟，請拔除磁碟，在中，然後再選取插入它**動作** > **重新掃描磁碟**。 
+4. 將電腦關機、 關閉外部硬碟機 （如果它是具有電源線的外部磁碟）、，然後開啟您的電腦與磁碟重新開啟。
     若要關閉您的電腦，在 Windows 10 中，選取 [開始] 按鈕，選取 [電源] 按鈕，然後選取**關閉**。
-1. 插入不同的 USB 連接埠，直接在您的電腦 （不在中樞） 的磁碟。
+5. 插入不同的 USB 連接埠，直接在您的電腦 （不在中樞） 的磁碟。
     有時候 USB 磁碟不要從某些連接埠，取得足夠的電力，或有特定的連接埠的其他問題。 這是很常見的 USB 集線器，但有時會有差異的電腦上的連接埠，如果您已經擁有，所以請嘗試一些不同的連接埠。
-1. 請嘗試不同的纜線。
+6. 請嘗試不同的纜線。
     聽起來雖蠢，但纜線失敗很多，所以請嘗試使用不同的纜線插入磁碟。 如果您在桌上型個人電腦中有內部磁碟，您可能需要可切換纜線之前，請先關閉您的電腦，請參閱您的 PC 手冊，以取得詳細資料。
-1. 您可以檢查 裝置管理員的問題。
+7. 您可以檢查 裝置管理員的問題。
     按下並保存 （或以滑鼠右鍵按一下） 開始 按鈕，然後選取 裝置管理員從內容功能表。 尋找含驚嘆號旁它或其他問題的任何裝置、 按兩下裝置，然後讀取其狀態。
 
     以下是一份[在 [裝置管理員] 中的錯誤碼](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)，但其中一個方法有時運作方式是有問題的裝置，以滑鼠右鍵按一下，選取**解除安裝裝置**，，然後**動作**  > **硬體變更掃描**。
-    ![顯示無法辨識的 USB 裝置的裝置管理員](media\device-manager.PNG)
-1. 插入不同的電腦中的磁碟。
+
+    ![顯示無法辨識的 USB 裝置的裝置管理員](media/device-manager.PNG)
+8. 插入不同的電腦中的磁碟。
     
     如果磁碟不在另一台電腦上運作，它會是個好預兆，沒有發生錯誤了磁碟，並不是您的電腦。 並不輕鬆，我們知道。 一些其他的步驟，您可以在嘗試[外接式 USB 磁碟機錯誤 「 您必須先初始化，磁碟邏輯磁碟管理員可以存取 「](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware)，但可能會開始搜尋，並尋求協助的[Microsoft 社群](https://answers.microsoft.com/en-us/windows)網站，或連絡您的磁碟製造廠商。
 
@@ -64,9 +65,9 @@ ms.locfileid: "66192736"
 
 > [!IMPORTANT]
 > 磁碟很經常失敗，所以請務必定期備份您想知道的任何檔案。 如果您有一個磁碟，有時不會出現，或讓錯誤，請考慮這再次檢查您的備份方法的提醒。 如果您是小小的後置-我們已全部都有相同的它就會是 [確定]。 最佳的備份解決方案是一個您使用，因此我們鼓勵您找到的運作方式的其中一個適合您，並貫徹到底。
-
+> 
 > [!TIP]
-如需如何使用備份檔案到外接式磁碟機，例如 USB 磁碟機的內建於 Windows 的應用程式的資訊，請參閱[備份和還原檔案](https://support.microsoft.com/help/17143/windows-10-back-up-your-files)。 您也可以在同步處理檔案從您的電腦複製到雲端的 Microsoft OneDrive 中儲存檔案。 如果您的硬碟失敗時，您仍然可以取得您在從 OneDrive.com OneDrive 中儲存任何檔案。 如需詳細資訊，請參閱 <<c0> [ 在您的電腦上的 OneDrive](https://support.microsoft.com/help/17184/windows-10-onedrive)。
+> 如需如何使用備份檔案到外接式磁碟機，例如 USB 磁碟機的內建於 Windows 的應用程式的資訊，請參閱[備份和還原檔案](https://support.microsoft.com/help/17143/windows-10-back-up-your-files)。 您也可以在同步處理檔案從您的電腦複製到雲端的 Microsoft OneDrive 中儲存檔案。 如果您的硬碟失敗時，您仍然可以取得您在從 OneDrive.com OneDrive 中儲存任何檔案。 如需詳細資訊，請參閱 <<c0> [ 在您的電腦上的 OneDrive](https://support.microsoft.com/help/17184/windows-10-onedrive)。
 
 ## <a name="a-basic-or-dynamic-disks-status-is-unreadable"></a>基本或動態磁碟的狀態為 無法讀取
 
@@ -177,10 +178,8 @@ ms.locfileid: "66192736"
 2. 若要在不支援 VDS 的遠端電腦上管理磁碟，您在本機電腦 (執行 [磁碟管理] 的電腦) 和遠端電腦上都必須設定 Windows Defender 防火牆。
 3. 在本機電腦上，設定 Windows Defender 防火牆以啟用 [遠端磁碟區管理例外]。
 
-
 > [!NOTE]
 > [遠端磁碟區管理例外] 包括 Vds.exe、Vdsldr.exe 和 TCP 連接埠 135 的例外。
 
-
- > [!NOTE]
- > 不支援工作群組中的遠端連線。 本機電腦和遠端電腦都必須是網域的成員。
+> [!NOTE]
+> 不支援工作群組中的遠端連線。 本機電腦和遠端電腦都必須是網域的成員。

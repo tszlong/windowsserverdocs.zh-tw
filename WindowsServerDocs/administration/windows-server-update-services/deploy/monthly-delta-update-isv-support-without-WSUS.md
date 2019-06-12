@@ -11,14 +11,14 @@ author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: c89d5eb754685fb8000ac2025af391057e77654c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 272d3865bbe1a9853f5349c5e878155351525ef0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848609"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439947"
 ---
-#<a name="monthly-delta-update-isv-support-without-wsus"></a>每月的差異更新 ISV 支援，而不需要 WSUS
+# <a name="monthly-delta-update-isv-support-without-wsus"></a>每月的差異更新 ISV 支援，而不需要 WSUS
 
 >適用於：Windows Server （半年通道），Windows Server 2016 中，Windows 10
 
@@ -30,7 +30,7 @@ Windows 10 更新的下載項目可能很大，因為每個套件包含所有先
 
 ![下載大小比較](../../media/express-update-delivery-isv-support/delta-1.png)
 
-##<a name="what-is-monthly-delta-update"></a>什麼是每月的差異更新？
+## <a name="what-is-monthly-delta-update"></a>什麼是每月的差異更新？
 
 有兩種變化的每月的安全性更新：差異並加裝累計。
 
@@ -49,8 +49,8 @@ Windows 10 更新的下載項目可能很大，因為每個套件包含所有先
 
 差異和重試累計有相同的 KB 數，具有相同的分類，並在同一時間發行。 在目錄中，可能是更新標題或 msu 的名稱，則可以分辨更新：
 
-- 2017-02 *\***差異更新**\** 的 x64 型系統 (KB1234567) 的 Windows 10 版本 1607年
-- 2017-02 *\***累計更新**\** 的 x86 型系統 (KB1234567) 的 Windows 10 版本 1607年                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 2017-02 *\***差異更新**\**  的 x64 型系統 (KB1234567) 的 Windows 10 版本 1607年
+- 2017-02 *\***累計更新**\**  的 x86 型系統 (KB1234567) 的 Windows 10 版本 1607年                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 ### <a name="when-to-use-monthly-delta-update"></a>使用差異的每月更新的時機
 

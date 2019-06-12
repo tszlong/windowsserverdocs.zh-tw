@@ -11,12 +11,12 @@ ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 11/19/2018
-ms.openlocfilehash: b58193ec570cf0d94b6c95018b8c00c813331986
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 662541658fe6e7b99e66fe31344450e0a1cbd201
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222646"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447835"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>在 HYPER-V 上支援的 Ubuntu 虛擬機器
 
@@ -91,7 +91,6 @@ ms.locfileid: "66222646"
    ```bash
    # apt-get update
    # apt-get install linux-azure
-
    ```
 
    12.04 沒有個別的虛擬核心。 若要安裝一般 HWE 核心 12.04 上，執行下列命令為根 （sudo）：
@@ -99,7 +98,6 @@ ms.locfileid: "66222646"
    ```bash
    # apt-get update
    # apt-get install linux-generic-lts-trusty
-
    ```
 
    在 Ubuntu 12.04 下列 HYPER-V 精靈是在個別安裝的套件：
@@ -112,7 +110,6 @@ ms.locfileid: "66222646"
 
    ```bash
    # apt-get install hv-kvp-daemon-init linux-tools-lts-trusty linux-cloud-tools-generic-lts-trusty
-
    ```
 
    每當更新核心時，虛擬機器必須將它重新開機。
@@ -124,7 +121,6 @@ ms.locfileid: "66222646"
    ```bash
    # apt-get update
    # apt-get install linux-azure
-
    ```
 
    每當更新核心時，虛擬機器必須將它重新開機。
@@ -143,42 +139,37 @@ ms.locfileid: "66222646"
 
 11. 在 Windows Server 2012 R2，第 2 代虛擬機器會有預設和某些 Linux 虛擬機器將無法開機，除非已停用安全開機選項已啟用安全開機。 您可以停用安全開機**韌體**中的虛擬機器的設定 區段**HYPER-V 管理員**也可以使用 Powershell 加以停用：
 
-   ```Powershell
-   Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
-
-   ```
+    ```Powershell
+    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
+    ```
 
 12. 然後再嘗試複製現有的層代 2 VHD 虛擬機器的 VHD，以建立新的第 2 代虛擬機器，請遵循下列步驟：
 
-   1. 登入現有的第 2 代虛擬機器。
+    1. 登入現有的第 2 代虛擬機器。
 
-   2. 將目錄變更到開機的 EFI 目錄：
+    2. 將目錄變更到開機的 EFI 目錄：
 
-      ```bash
-      # cd /boot/efi/EFI
+       ```bash
+       # cd /boot/efi/EFI
+       ```
 
-      ```
+    3. 將中的 ubuntu 目錄複製到名為開機的新目錄：
 
-   3. 將中的 ubuntu 目錄複製到名為開機的新目錄：
+       ```bash
+       # sudo cp -r ubuntu/ boot
+       ```
 
-      ```bash
-      # sudo cp -r ubuntu/ boot
+    4. 將目錄變更為新建立的開機目錄：
 
-      ```
+       ```bash
+       # cd boot
+       ```
 
-   4. 將目錄變更為新建立的開機目錄：
+    5. 重新命名 shimx64.efi 檔案：
 
-      ```bash
-      # cd boot
-
-      ```
-
-   5. 重新命名 shimx64.efi 檔案：
-
-      ```bash
-      # sudo mv shimx64.efi bootx64.efi
-
-      ```
+       ```bash
+       # sudo mv shimx64.efi bootx64.efi
+       ```
 
 ## <a name="see-also"></a>另請參閱
 

@@ -5,12 +5,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c647e8a335aac924067d92dcb41ab4d17e0cceef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c27dd0602c5993fd84e6956c2f50f6e2bfec8691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884859"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435469"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Server Performance Advisor 套件開發指南
 
@@ -55,7 +55,7 @@ Advisor 套件包含下列元素：
 
 ### <a name="advisor-pack-workflow"></a>Advisor 組件工作流程
 
-![advisor 組件工作流程](../media/server-performance-advisor/spa-dev-guide-workflow.png)
+![Advisor 組件工作流程](../media/server-performance-advisor/spa-dev-guide-workflow.png)
 
 此流程圖中，綠色的圓形代表 advisor 組件。 所有其他的圓形代表 SPA 架構的過程中執行的階段。 SPA 會使用 advisor 套件來收集資料、 將資料匯入資料庫、 執行環境初始化和執行 SQL 指令碼。
 
@@ -201,7 +201,7 @@ SPA 架構會從指令碼進入點中尋找主要預存程序名稱，並執行�
 </advisorPack>
 ```
 
-**工期**屬性**&lt;dataCollectorSet /&gt;** 在上述範例中定義的資料收集 （的時間單位為秒） 的持續時間。 **持續時間**是必要的屬性。 此設定會控制由效能計數器和 ETW 集合持續時間。
+**工期**屬性 **&lt;dataCollectorSet /&gt;** 在上述範例中定義的資料收集 （的時間單位為秒） 的持續時間。 **持續時間**是必要的屬性。 此設定會控制由效能計數器和 ETW 集合持續時間。
 
 ### <a name="collect-registry-data"></a>收集登錄資料
 
@@ -269,13 +269,14 @@ HKEY_LOCAL_MACHINE...\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 
 結構描述 **#registryKeys**資料表是做為如下所示：
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 -------- | -------- | --------
 KeyName | Nvarchar(300 不是 NULL | 登錄機碼的完整路徑名稱
 KeytypeId | smallint 非 NULL | 內部類型識別碼
 值 | Nvarchar(4000) 不是 NULL | 所有的值
 
 **KeytypeID**資料行可以具有下列類型之一：
+
 識別碼 | 類型
 --- | ---
 1 | 字串
@@ -326,7 +327,7 @@ SequenceID | 命名空間 | ClassName | Relativepath | WmiqueryID
 
 **\#WmiObjects 資料表結構描述**
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 --- | --- | ---
 SequenceId | int NOT NULL | 相互關聯的資料列和其屬性
 命名空間 | Nvarchar(200 不是 NULL | WMI 命名空間
@@ -336,7 +337,7 @@ WmiqueryId | int NOT NULL | 相互關聯 #WmiQueries 的索引鍵
 
 **\#WmiObjectProperties 資料表結構描述**
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 --- | --- | ---
 SequenceId | int NOT NULL | 相互關聯的資料列和其屬性
 名稱 | Nvarchar(1000) 不是 NULL | 內容名稱
@@ -344,7 +345,7 @@ SequenceId | int NOT NULL | 相互關聯的資料列和其屬性
 
 **\#WmiQueries 資料表結構描述**
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 --- | --- | ---
 Id | int NOT NULL | > 唯一查詢識別碼
 查詢 | Nvarchar(4000) 不是 NULL | 在佈建中繼資料中的原始查詢字串
@@ -363,7 +364,7 @@ Id | int NOT NULL | > 唯一查詢識別碼
 
 在上述範例中，計數器\\PhysicalDisk (\*)\\avg.Disk sec/Transfer 將會查詢每秒。
 
-可能有兩個執行個體：**\_總**和**0 c:D:**，並輸出可能如下：
+可能有兩個執行個體： **\_總**和**0 c:D:** ，並輸出可能如下：
 
 timestamp | CategoryName | CounterName | _Total 執行個體值 | 執行個體值 0 的 c:D:
 ---- | ---- | ---- | ---- | ----
@@ -389,7 +390,7 @@ PhysicalDisk | 0 C:D: | Avg.Disk sec/Transfer | 0.000933297607934224
 
 **\#PerformanceCounters**資料表結構描述
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 ---- | ---- | ---- | ----
 timestamp | datetime2(3) NOT NULL | UNC 中收集的日期時間
 CategoryName | Nvarchar(200 不是 NULL | 類別名稱
@@ -411,7 +412,7 @@ CounterdisplayName | Nvarchar(200 不是 NULL | 當地語系化的計數器名�
 <path>%windir%\System32\inetsrv\config\applicationHost.config</path>
 ```
 
-可以呼叫的資料表中找到結果**\#檔案**，例如：
+可以呼叫的資料表中找到結果 **\#檔案**，例如：
 
 querypath | fullpath | Parentpath | FileName | 內容
 ----- | ----- | ----- | ----- | -----
@@ -419,7 +420,7 @@ querypath | fullpath | Parentpath | FileName | 內容
 
 **\#檔案資料表結構描述**
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 ---- | ---- | ----
 querypath | Nvarchar(300 不是 NULL | 原始的查詢陳述式
 fullpath | Nvarchar(300 不是 NULL | 絕對檔案路徑和檔案名稱
@@ -449,7 +450,7 @@ FileName | Nvarchar(300 不是 NULL | 檔案名稱
 
 ``` syntax
 <advisorPack>
-   
+
   <reportDefinition>
     <thresholds>
       <threshold  />
@@ -589,7 +590,7 @@ Advisor 組件中可能有許多資料表 （單一值群組和列出值的資�
 
 單一值群組和清單值表格包含不同類型的資料，例如字串、 int、 和浮點數。 因為這些值會儲存在 SQL Server 資料庫中，您可以定義每個資料屬性的 SQL 資料類型。 不過，定義 SQL 資料類型是相當複雜。 您必須指定長度或有效位數，可能容易發生變更。
 
-若要定義邏輯的資料類型，您可以使用的第一個子系 **&lt;reportDefinition /&gt;**，這是您可以在其中定義的 SQL 資料類型和您的邏輯型別對應。
+若要定義邏輯的資料類型，您可以使用的第一個子系 **&lt;reportDefinition /&gt;** ，這是您可以在其中定義的 SQL 資料類型和您的邏輯型別對應。
 
 下列範例會定義兩種資料類型。 其中一個是**字串**，另一個是**companyCode**。
 
@@ -620,7 +621,7 @@ Advisor 組件中可能有許多資料表 （單一值群組和列出值的資�
 
 * FLOAT
 
-* 整數
+* ssNoversion
 
 * money
 
@@ -668,7 +669,7 @@ Advisor 組件中可能有許多資料表 （單一值群組和列出值的資�
 
 雖然您可以定義多個單一值群組，但沒有兩個單一值的名稱可以是相同的即使它們位於不同的群組。 單一值的名稱供 SQL 指令碼報表中，適當地設定值。
 
-您可以定義每個單一值的資料類型。 允許的輸入**型別**中定義**&lt;資料類型 /&gt;**。 最終的報告看起來像這樣：
+您可以定義每個單一值的資料類型。 允許的輸入**型別**中定義 **&lt;資料類型 /&gt;** 。 最終的報告看起來像這樣：
 
 **Facts**
 
@@ -678,7 +679,7 @@ Advisor 組件中可能有許多資料表 （單一值群組和列出值的資�
 OS 版本 | &lt;_值，將會設定由報表的指令碼_&gt;
 OS 位置 | &lt;_值，將會設定由報表的指令碼_&gt;
 
-**Caption**屬性**&lt;值 /&gt;** 第一個資料行所示。 值資料行中的值為在未來透過指令碼報告所\[dbo\]。\[SetSingleValue\]。 **描述**屬性**&lt;值 /&gt;** 顯示工具提示中。 通常，工具提示會顯示使用者的資料來源。 如需工具提示的詳細資訊，請參閱[工具提示](#bkmk-tooltips)。
+**Caption**屬性 **&lt;值 /&gt;** 第一個資料行所示。 值資料行中的值為在未來透過指令碼報告所\[dbo\]。\[SetSingleValue\]。 **描述**屬性 **&lt;值 /&gt;** 顯示工具提示中。 通常，工具提示會顯示使用者的資料來源。 如需工具提示的詳細資訊，請參閱[工具提示](#bkmk-tooltips)。
 
 ### <a href="" id="bkmk-ui-lvt"></a>列出值資料表
 
@@ -941,7 +942,7 @@ DECLARE @freediskSize FLOat
 exec dbo.GetThreshold N freediskSize , @freediskSize output
 
 if (@freediskSizeInGB < @freediskSize)
- 
+
 ```
 
 ### <a name="set-or-remove-the-single-value"></a>設定或移除單一值
@@ -1033,7 +1034,7 @@ INSERT INTO #NetworkAdapterInformation (
   MACaddress
 )
 VALUES (
-   
+
 )
 ```
 
@@ -1091,7 +1092,7 @@ SPA 主控台可以執行兩種模式中偵錯或發行。 發行模式是預設
 
     **請注意**您也可以按 F11 來逐步執行和偵錯的前一個陳述式。
 
-     
+
 
 執行\[dbo\]。\[DebugReportScript\]傳回多個結果集，包括：
 
@@ -1109,9 +1110,9 @@ SPA 主控台可以執行兩種模式中偵錯或發行。 發行模式是預設
 
 ### <a name="naming-convention-and-styles"></a>命名慣例和樣式
 
-Pascal 命名法大小寫 | 駝峰式命名法大小寫 | 大寫
---- | ---- | ---
-<ul><li>ProvisionMetadata.xml 中的名稱</li><li>預存程序</li><li>函式</li><li>檢視名稱</li><li>暫存資料表名稱</li></ul> | <ul><li>參數名稱</li><li>本機變數</li></ul> | 適用於所有 SQL 保留關鍵字
+|                                                                 Pascal 命名法大小寫                                                                 |                       駝峰式命名法大小寫                        |             大寫             |
+|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
+| <ul><li>ProvisionMetadata.xml 中的名稱</li><li>預存程序</li><li>函式</li><li>檢視名稱</li><li>暫存資料表名稱</li></ul> | <ul><li>參數名稱</li><li>本機變數</li></ul> | 適用於所有 SQL 保留關鍵字 |
 
 ### <a name="other-recommendations"></a>其他建議
 
@@ -1143,13 +1144,13 @@ SPA 可支援同時執行多個 advisor 組件。 當您想要查看 Internet In
 
 合併資料收集器集合工具是僅用來收集效能計數器和 ETW 資料來源。 下列合併式規則適用於：
 
-1.  SPA 需要做為新的持續時間的最大持續時間。
+1. SPA 需要做為新的持續時間的最大持續時間。
 
-2.  其中有合併衝突，請遵循下列規則：
+2. 其中有合併衝突，請遵循下列規則：
 
-    1.  需要最小間隔為新的間隔。
+   1. 需要最小間隔為新的間隔。
 
-    2.  需要效能計數器的超集。 比方說，使用**程序 (\*)\\%Processor time**並**程序 (\*)\\\*，\\程序 (\*)\\\*** 會傳回更多資料，因此**程序 (\*)\\%處理器時間**並**程序 (\*)\\ \*** 移除從合併的資料收集器集合工具。
+   2. 需要效能計數器的超集。 比方說，使用**程序 (\*)\\%Processor time**並**程序 (\*)\\\*，\\程序 (\*)\\\\** * 傳回更多資料，因此**程序 (\*)\\%處理器時間**並**程序 (\*)\\ \\** * 移除從合併的資料收集器集合工具。
 
 ### <a name="collect-dynamic-data"></a>收集動態資料
 
@@ -1169,7 +1170,7 @@ Get-WmiObject -Namespace Root\Cimv2 -query "select PNPDeviceID FROM Win32_Networ
 ROOT\*ISatAP\0001
 PCI\VEN_8086&DEV_4238&SUBSYS_11118086&REV_35\4&372A6B86&0&00E4
 ROOT\*IPHTTPS\0000
- 
+
 ```
 
 若要尋找**FriendlyName**值中，開啟登錄編輯器並瀏覽到登錄設定結合**HKEY\_本機\_機器\\SYSTEM\\CurrentControlSet\\Enum\\** 前一個範例中的每一行。 例如：**HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\ ROOT\\\*IPHTTPS\\0000**.
@@ -1188,7 +1189,7 @@ ROOT\*IPHTTPS\0000
 </managementpaths>
 ```
 
-在此範例中，您第一次新增 WMI 查詢下 managementpaths 並定義索引鍵名稱**NetworkAdapter**。 然後新增登錄機碼，並參考**NetworkAdapter**藉由使用語法 **$(NetworkAdapter.PNPDeviceID)**。
+在此範例中，您第一次新增 WMI 查詢下 managementpaths 並定義索引鍵名稱**NetworkAdapter**。 然後新增登錄機碼，並參考**NetworkAdapter**藉由使用語法 **$(NetworkAdapter.PNPDeviceID)** 。
 
 下表會定義如果 SPA 中的資料收集器支援動態資料，以及是否由其他資料收集器參考：
 
@@ -1216,7 +1217,7 @@ WMI 資料收集器，每個 WMI 物件都有許多的附加的屬性。 任何�
 <path name="wmi">Root\Cimv2:select PNPDeviceID FROM Win32_NetworkAdapter</path>
 ```
 
-若要定義相依的資料收集器，使用下列語法: $(*{name}*。*{屬性}*).
+若要定義相依的資料收集器，使用下列語法: $( *{name}* 。 *{屬性}* ).
 
 *{name}* 並 *{屬性}* 是預留位置。
 
@@ -1328,7 +1329,7 @@ minBuffer | 整數 | （選擇性） 的最小緩衝區
 
 **\#事件的資料表結構描述**
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 --- | --- | ---
 SequenceID | int NOT NULL | 相互關聯順序識別碼
 EventtypeId | int NOT NULL | 事件類型識別碼 (請參閱 [dbo]。 [Eventtypes])
@@ -1340,7 +1341,7 @@ Usertime | BigInt NOT NULL | 使用者時間
 
 **\#EventProperties 資料表結構描述**
 
-欄位名稱 | SQL 資料類型 | 描述
+資料行名稱 | SQL 資料類型 | 描述
 --- | --- | ---
 SequenceID | int NOT NULL | 相互關聯順序識別碼
 名稱 | Nvarchar(100) | 內容名稱
@@ -1431,4 +1432,4 @@ Windows Management Instrumentation (WMI) 是 Windows 作業系統中的作業以
 
 **通知**
 
-通知是規則會向使用者顯示的資訊。 它包含規則的狀態 (**[確定]**， **NA**，或**警告**)，則規則，並解決效能問題的可能建議的名稱。
+通知是規則會向使用者顯示的資訊。 它包含規則的狀態 ( **[確定]** ， **NA**，或**警告**)，則規則，並解決效能問題的可能建議的名稱。

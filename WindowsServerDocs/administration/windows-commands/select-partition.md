@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7d5675aa6c33ddbe1e5e873e1a7cf7a2e8f8017
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 79449bc74dd09246b380b3f892acc1b338650d20
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824959"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441507"
 ---
 # <a name="select-partition"></a>選取資料分割
 
@@ -36,9 +36,9 @@ select partition=<n>
   
 ## <a name="parameters"></a>參數  
   
-|參數|描述|  
-|-------|--------|  
-|partition\=<n>|要接收焦點的磁碟分割數目。 您可以檢視所有資料分割的數字上使用目前選取的磁碟**列出資料分割**DiskPart 命令。|  
+|   參數    |                                                                                    描述                                                                                    |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| partition\=<n> | 要接收焦點的磁碟分割數目。 您可以檢視所有資料分割的數字上使用目前選取的磁碟**列出資料分割**DiskPart 命令。 |
   
 ## <a name="remarks"></a>備註  
   

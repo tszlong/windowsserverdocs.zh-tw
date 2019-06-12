@@ -9,12 +9,12 @@ ms.manager: daveba
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 151f02572d7595776539af163831b4a7a060c1c7
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: fa240ba5fedd98f16639dd19fb8f22c10bfdd9ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613164"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442467"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>預先設置叢集電腦物件，Active Directory 網域服務中
 
@@ -48,14 +48,14 @@ ms.locfileid: "65613164"
 3. 在主控台樹狀目錄中，以滑鼠右鍵按一下您要建立 CNO，的 OU 指向**的新**，然後選取**電腦**。
 4. 在 **電腦名稱**方塊中，輸入名稱，將用於容錯移轉叢集，然後選取**確定**。
 
-  >[!NOTE]
-  >這是建立叢集的使用者將在建立叢集精靈中 [用於管理叢集的存取點]  頁面指定或做為 *–Name* Windows PowerShell Cmdlet 的 **New-Cluster** 參數值的叢集名稱。
+   >[!NOTE]
+   >這是建立叢集的使用者將在建立叢集精靈中 [用於管理叢集的存取點]  頁面指定或做為 *–Name* Windows PowerShell Cmdlet 的 **New-Cluster** 參數值的叢集名稱。
 
 5. 最佳做法，請以滑鼠右鍵按一下您剛才建立的電腦帳戶，請選取**屬性**，然後選取**物件**] 索引標籤。在 [**物件**索引標籤上，選取**保護物件以防止被意外刪除**核取方塊，然後按**確定**。
-6. 以滑鼠右鍵按一下您剛才的電腦帳戶建立，然後按**停用的帳戶**。 選取  **是** 以確認，然後選取**確定**。
+6. 以滑鼠右鍵按一下您剛才的電腦帳戶建立，然後按**停用的帳戶**。 選取  **是**以確認，然後選取**確定**。
 
-  >[!NOTE]
-  >您必須停用帳戶，這樣在叢集建立期間，叢集建立程序才能確認目前沒有現有的電腦或網域中的叢集使用該帳戶。
+   >[!NOTE]
+   >您必須停用帳戶，這樣在叢集建立期間，叢集建立程序才能確認目前沒有現有的電腦或網域中的叢集使用該帳戶。
 
 ![範例叢集 OU 中停用的 CNO](media/prestage-cluster-adds/disabled-cno-in-the-example-clusters-ou.png)
 
@@ -75,9 +75,9 @@ ms.locfileid: "65613164"
 4. 在 **選取使用者、 電腦或群組**對話方塊方塊中，指定的使用者帳戶或您想要授與權限，然後選取的群組**確定**。
 5. 選取您剛才新增的使用者帳戶或群組，然後選取 [完全控制]  旁邊的 [允許]  核取方塊。
   
-  ![將完全控制授與將要建立叢集的使用者或群組](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
+   ![將完全控制授與將要建立叢集的使用者或群組](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
-  **圖 2。完整控制權授與使用者或群組，以建立叢集**
+   **圖 2。完整控制權授與使用者或群組，以建立叢集**
 6. 選取 [確定]。 
 
 完成此步驟之後，獲得您授與權限的使用者就可以建立容錯移轉叢集。 不過，如果 CNO 位於 OU，必須等到您完成步驟 3，使用者才能建立需要用戶端存取點的叢集角色。
@@ -113,9 +113,9 @@ ms.locfileid: "65613164"
 8. 在 [權限項目]  對話方塊中，確定 [類型]  清單設定為 [允許]  ，且 [套用到]  清單設定為 [此物件及所有子系物件]  。
 9. 在 [權限]  底下，選取 [建立電腦物件]  核取方塊。
 
-  ![將建立電腦物件權限授與 CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
+   ![將建立電腦物件權限授與 CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
 
-  **圖 3。建立電腦物件權限授與 CNO**
+   **圖 3。建立電腦物件權限授與 CNO**
 10. 選取 **確定**直到您返回 Active Directory 使用者和電腦 嵌入式管理單元。
 
 容錯移轉叢集的系統管理員現在可以建立含有用戶端存取點的叢集角色，並將資源上線。

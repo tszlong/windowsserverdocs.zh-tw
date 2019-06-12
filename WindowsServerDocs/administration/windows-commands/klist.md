@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b3d0591f9feb12782d0c77b6c786cfe17656ab2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0b77aed5970c74181ba03da5e57e9b230313a15
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831159"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438108"
 ---
 # <a name="klist"></a>klist
 
@@ -120,52 +120,51 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
 ## <a name="BKMK_Examples"></a>範例
 
-1.  在診斷時處理事件識別碼 27 時票證授權服務 (TGS) 要求目標伺服器的帳戶沒有合適的索引鍵，用於產生 Kerberos 票證。 您可以使用 Klist 查詢來判斷任何票證不見了，如果目標伺服器或帳戶不正確，或不支援加密類型的 Kerberos 票證快取。  
-    ```
-    klist 
-    ```  
-    ```
-    klist –li 0x3e7
-    ```  
-2.  當您診斷錯誤和您想要知道每個票證授權票證快取電腦上登入工作階段的詳細資訊時，您可以使用 Klist 的 TGT 資訊顯示。  
-    ```
-    klist tgt
-    ```  
-3.  如果您是無法建立連線，而且診斷可能會花太長的時間，可以清除 Kerberos 票證快取、 登出，然後再重新登入。  
-    ```
-    klist purge
-    ```  
-    ```
-    klist purge –li 0x3e7
-    ```  
-4.  當您想要診斷使用者或服務的登入工作階段時，您可以使用下列命令來尋找使用 LogonID 其他 Klist 命令。  
-    ```
-    klist sessions
-    ```  
-5.  當您想要診斷 Kerberos 限制委派失敗時，您可以使用下列命令來尋找上次發生的錯誤。  
-    ```
-    klist kcd_cache
-    ```  
-6.  當您想要診斷使用者或服務可以取得票證至伺服器時，您可以使用此命令，以要求票證的特定 SPN。  
-    ```
-    klist get host/%computername%
-    ```  
-7.  當診斷網域控制站之間的複寫問題，您通常需要用戶端電腦為目標的特定網域控制站。 在這些情況下，您可以使用下列命令，以該特定網域控制站是用戶端電腦為目標。  
-    ```
-    klist add_bind CONTOSO KDC.CONTOSO.COM
-    
-    ```  
-    ```
-    klist add_bind CONTOSO.COM KDC.CONTOSO.COM
-    ```  
-8.  若要查詢哪些網域控制站最近連絡這台電腦，您可以使用下列命令。  
-    ```
-    klist query_bind
-    ```  
-9.  當您想要重新探索網域控制站的 Kerberos 時，您可以使用下列命令。 此命令也可用來建立新的網域控制站繫結與 klist add_bind 之前先清除快取。  
-    ```
-    klist purge_bind
-    ```
+1. 在診斷時處理事件識別碼 27 時票證授權服務 (TGS) 要求目標伺服器的帳戶沒有合適的索引鍵，用於產生 Kerberos 票證。 您可以使用 Klist 查詢來判斷任何票證不見了，如果目標伺服器或帳戶不正確，或不支援加密類型的 Kerberos 票證快取。  
+   ```
+   klist 
+   ```  
+   ```
+   klist –li 0x3e7
+   ```  
+2. 當您診斷錯誤和您想要知道每個票證授權票證快取電腦上登入工作階段的詳細資訊時，您可以使用 Klist 的 TGT 資訊顯示。  
+   ```
+   klist tgt
+   ```  
+3. 如果您是無法建立連線，而且診斷可能會花太長的時間，可以清除 Kerberos 票證快取、 登出，然後再重新登入。  
+   ```
+   klist purge
+   ```  
+   ```
+   klist purge –li 0x3e7
+   ```  
+4. 當您想要診斷使用者或服務的登入工作階段時，您可以使用下列命令來尋找使用 LogonID 其他 Klist 命令。  
+   ```
+   klist sessions
+   ```  
+5. 當您想要診斷 Kerberos 限制委派失敗時，您可以使用下列命令來尋找上次發生的錯誤。  
+   ```
+   klist kcd_cache
+   ```  
+6. 當您想要診斷使用者或服務可以取得票證至伺服器時，您可以使用此命令，以要求票證的特定 SPN。  
+   ```
+   klist get host/%computername%
+   ```  
+7. 當診斷網域控制站之間的複寫問題，您通常需要用戶端電腦為目標的特定網域控制站。 在這些情況下，您可以使用下列命令，以該特定網域控制站是用戶端電腦為目標。  
+   ```
+   klist add_bind CONTOSO KDC.CONTOSO.COM
+   ```  
+   ```
+   klist add_bind CONTOSO.COM KDC.CONTOSO.COM
+   ```  
+8. 若要查詢哪些網域控制站最近連絡這台電腦，您可以使用下列命令。  
+   ```
+   klist query_bind
+   ```  
+9. 當您想要重新探索網域控制站的 Kerberos 時，您可以使用下列命令。 此命令也可用來建立新的網域控制站繫結與 klist add_bind 之前先清除快取。  
+   ```
+   klist purge_bind
+   ```
 
 #### <a name="additional-references"></a>其他參考資料
 
