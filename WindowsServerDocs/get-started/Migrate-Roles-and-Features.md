@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7469171005164d9ff823dad7de230d877c874dc9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 486c11ebd46c6fd23b3bd16cd90463f8d607287e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840879"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443541"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>在 Windows Server 中移轉角色和功能
 
@@ -36,7 +36,7 @@ ms.locfileid: "59840879"
 
 >[!NOTE]
 >每當您移轉或升級到任何 Windows Server 版本時，都應該檢閱和了解該版本的[支援週期原則](https://support.microsoft.com/lifecycle)與時間範圍，並進行適當規劃。 您可以針對感興趣的特定 Windows Server 版本[搜尋週期資訊](https://support.microsoft.com/lifecycle)。
- 
+ 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
 ### <a name="migration-guides"></a>移轉指南
@@ -46,7 +46,7 @@ Windows Server 2016 的更新版移轉指南仍在開發製作中。 當這些�
 - [Web Server (IIS)](https://www.iis.net/downloads/microsoft/web-deploy)
 - [Windows Server Update Services](https://technet.microsoft.com/library/hh852339.aspx)
 - [MultiPoint 服務](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/multipoint-services/multipoint-services-migrate)
- 
+ 
 ## <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 ### <a name="migration-guides"></a>移轉指南
@@ -63,7 +63,7 @@ Windows Server 2016 的更新版移轉指南仍在開發製作中。 當這些�
 - [將 Windows Server Update Services 移轉到 Windows Server 2012 R2](https://technet.microsoft.com/library/hh852339.aspx)
 - [將叢集角色移轉到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn530779.aspx)
 - [將 DHCP 伺服器移轉到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn495425.aspx)
- 
+ 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
 ### <a name="migration-guides"></a>移轉指南
@@ -80,7 +80,7 @@ Windows Server 2016 的更新版移轉指南仍在開發製作中。 當這些�
 - [將 Windows Server Update Services 移轉到 Windows Server 2012](https://technet.microsoft.com/library/hh852339)
 - [Active Directory 網域控制站升級到 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)
 - [移轉叢集的服務和應用程式到 Windows Server 2012](https://technet.microsoft.com/library/dn486790.aspx)
- 
+ 
 
 如需其他移轉資源，請瀏覽[將角色和功能移轉到 Windows Server 2012](https://technet.microsoft.com/library/jj134039)。
 
@@ -104,5 +104,6 @@ Windows Server 2016 的更新版移轉指南仍在開發製作中。 當這些�
 - [遠端桌面服務移轉指南](https://technet.microsoft.com/library/ff849223)
 - [RRAS 移轉指南](https://technet.microsoft.com/library/ee822825)
 - [Windows Server 移轉常見工具和資訊](https://technet.microsoft.com/library/ff400258)
-- [Windows Server Update Services 3.0 SP2 移轉指南](https://technet.microsoft.com/library/ee822826)  
+- [Windows Server Update Services 3.0 SP2 移轉指南](https://technet.microsoft.com/library/ee822826)
+ 
 如需其他移轉資源，請瀏覽[將角色和功能移轉到 Windows Server 2008 R2](https://technet.microsoft.com/library/dd365353)。

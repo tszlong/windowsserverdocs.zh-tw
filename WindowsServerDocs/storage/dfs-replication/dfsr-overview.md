@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 17fa97e28d099806c9280e42dd900e8d6c708641
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd381c04b02889a7f2e7b8992ff6050d1b0f078a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850239"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453057"
 ---
 # <a name="dfs-replication-overview"></a>DFS 複寫概觀
 
@@ -25,7 +25,7 @@ DFS 複寫使用的壓縮演算法稱為遠端差異壓縮 (RDC)。 RDC 會偵�
 
 若要使用 DFS 複寫，您必須建立複寫群組，並將複寫的資料夾新增至群組。 複寫群組、 複寫的資料夾以及成員如下圖所示。
 
-![此複寫群組中包含兩個成員之間的連線，每個有一些複寫資料夾](media\dfsr-overview.gif)
+![此複寫群組中包含兩個成員之間的連線，每個有一些複寫資料夾](media/dfsr-overview.gif)
 
 此圖顯示複寫群組是一組伺服器，稱為成員的參與一或多個複寫資料夾的複寫。 複寫的資料夾是保持同步，每個成員上的資料夾。 在圖中，有兩個複寫的資料夾：Projects 及 Proposals。 每個複寫資料夾中的資料變更，所做的變更會複寫整個複寫群組的成員之間的連線。 所有成員之間的連線會形成複寫拓撲。
 建立單一的複寫群組中的多個複寫的資料夾可簡化部署複寫的資料夾，因為拓樸、 排程和頻寬節流套用於複寫群組會套用到每個複寫資料夾的程序。 若要部署其他複寫的資料夾，您可以使用 Dfsradmin.exe 或遵循指示在精靈中定義的本機路徑和新的複寫資料夾的權限。
@@ -65,15 +65,15 @@ DFS 複寫是檔案和存放服務角色的一部分。 DFS （DFS 管理、 Win
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>使用 [伺服器管理員] 安裝 DFS
 
-1. 開啟 [伺服器管理員]，按一下 [管理]，然後按一下 [新增角色及功能]。 [新增角色及功能精靈] 隨即顯示。
+1. 開啟 [伺服器管理員]，按一下 [管理]  ，然後按一下 [新增角色及功能]  。 [新增角色及功能精靈] 隨即顯示。
 
-2. 在 [伺服器選取項目] 頁面上，選取想要安裝 DFS 的伺服器或離線虛擬機器的虛擬硬碟 (VHD)。
+2. 在 [伺服器選取項目]  頁面上，選取想要安裝 DFS 的伺服器或離線虛擬機器的虛擬硬碟 (VHD)。
 
 3. 選取您要安裝的角色服務及功能。
 
     - 若要安裝 DFS 複寫服務，在**伺服器角色**頁面上，選取**DFS 複寫**。
 
-    - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具] 、[角色管理工具] 、[檔案服務工具] ，然後選取 [DFS 管理工具] 。
+    - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具]  、[角色管理工具]  、[檔案服務工具]  ，然後選取 [DFS 管理工具]  。
 
          **DFS 管理工具**會安裝 DFS 管理嵌入式管理單元，DFS 複寫及 DFS 命名空間模組的 Windows PowerShell 及命令列工具，但是它不會在伺服器上安裝任何 DFS 服務。
 

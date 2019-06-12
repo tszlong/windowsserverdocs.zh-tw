@@ -14,18 +14,18 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: cd00f92254f9e55f83442f5e68e344e0aa7579a2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3d148c99911be0cebfc29429d93241f24c2b9606
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855499"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453013"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>歡迎使用遠端桌面服務 
 
 遠端桌面服務 (RDS) 是建置虛擬化解決方案，針對每個終端客戶需求，包括提供個別的虛擬化應用程式，提供安全行動和遠端桌面的存取，以及提供使用者所選擇的平台若要從雲端執行其應用程式和桌面的能力。
 
-![遠端桌面服務概觀](.\media\rds-overview.png)
+![遠端桌面服務概觀](./media/rds-overview.png)
 
 RDS 提供部署彈性，成本效率和擴充性 — 透過不同部署選項，包括 Windows Server 2016 內部部署、 雲端部署的 Microsoft Azure 和協力廠商的強固陣列的所有已傳遞解決方案。
 

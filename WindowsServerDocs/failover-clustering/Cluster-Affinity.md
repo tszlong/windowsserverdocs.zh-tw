@@ -7,12 +7,12 @@ ms.topic: article
 author: johnmarlin-msft
 ms.date: 03/07/2019
 description: 這篇文章說明容錯移轉叢集親和性和 antiAffinity 層級
-ms.openlocfilehash: a38d53f6aed1ca634d41822f4486779f6d279ec0
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 67929e6d3399633ebfec0b908463131973aecaf7
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476056"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453034"
 ---
 # <a name="cluster-affinity"></a>叢集親和性
 
@@ -69,7 +69,7 @@ AntiAffinityClassName 參數是 「 軟式 」 區塊。  這表示，它就會�
 
 當這兩種設定時，群組將無法上線在一起。  如果它們位於相同的節點時，這是您會看到在容錯移轉叢集管理員。
 
-![叢集親和性](media\Cluster-Affinity\Cluster-Affinity-1.png)
+![叢集親和性](media/Cluster-Affinity/Cluster-Affinity-1.png)
 
 在 PowerShell 清單的群組中，您會看到這個：
 

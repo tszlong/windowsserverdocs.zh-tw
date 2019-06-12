@@ -11,12 +11,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: dbdbd0f436645f7e19c07e4f3278c5073636a547
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.openlocfilehash: 3b4feb6b8b3dad5c34de92f634eb30d0e952fe76
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831859"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435771"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>適用於 Microsoft 產品的 Linux 軟體存放庫
 
@@ -29,8 +29,8 @@ Microsoft 的 Linux 軟體存放庫是由多個子存放庫所組成：
 
  - mssql server-這些儲存機制包含封裝 Microsoft SQL Server on Linux-請參閱也：[Linux 上的 SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux)。
 
->[!Note]
-Linux 軟體存放庫中的封裝是位在封裝中的授權條款。 請閱讀授權條款，才能使用此封裝。 您的安裝和使用封裝即表示您接受這些條款。 如果您不同意授權條款，請勿使用封裝。
+> [!Note]
+> Linux 軟體存放庫中的封裝是位在封裝中的授權條款。 請閱讀授權條款，才能使用此封裝。 您的安裝和使用封裝即表示您接受這些條款。 如果您不同意授權條款，請勿使用封裝。
 
 
 ## <a name="configuring-the-repositories"></a>設定存放庫

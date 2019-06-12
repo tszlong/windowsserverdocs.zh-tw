@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9019893d92201079fb60b820a14dda3763bafd6b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1af9f30dd2c44111adecb477a6469333f4f7685
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886639"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436775"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
@@ -30,13 +30,15 @@ ms.locfileid: "59886639"
 set domain=<DomainName>
 ```
 ## <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|<DomainName>|指定的預設 DNS 網域名稱的新名稱。 預設網域名稱是主機名稱。|
-|{help &#124; ?}|顯示的簡短摘要**nslookup**子命令。|
+
+|    參數    |                                           描述                                           |
+|-----------------|-------------------------------------------------------------------------------------------------|
+|  <DomainName>   | 指定的預設 DNS 網域名稱的新名稱。 預設網域名稱是主機名稱。 |
+| {help &#124; ?} |                      顯示的簡短摘要**nslookup**子命令。                      |
+
 ## <a name="remarks"></a>備註
--   預設 DNS 網域名稱會附加到搜尋的要求，視狀態而定**defname**並**搜尋**選項。 DNS 網域搜尋清單包含的預設 DNS 網域的父代，如果它在其名稱中有至少兩個元件。 例如，如果 mfg.widgets.com 的預設 DNS 網域，[搜尋] 清單稱為 mfg.widgets.com 和 widgets.com。 使用**設定 srchlist**命令，以指定不同的清單並**全部設定**命令，以顯示清單。
-## <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[nslookup 設定 srchlist](nslookup-set-srchlist.md)
-[nslookup 將所有設定](nslookup-set-all.md)
+- 預設 DNS 網域名稱會附加到搜尋的要求，視狀態而定**defname**並**搜尋**選項。 DNS 網域搜尋清單包含的預設 DNS 網域的父代，如果它在其名稱中有至少兩個元件。 例如，如果 mfg.widgets.com 的預設 DNS 網域，[搜尋] 清單稱為 mfg.widgets.com 和 widgets.com。 使用**設定 srchlist**命令，以指定不同的清單並**全部設定**命令，以顯示清單。
+  ## <a name="additional-references"></a>其他參考資料
+  [命令列語法重點](command-line-syntax-key.md)
+  [nslookup 設定 srchlist](nslookup-set-srchlist.md)
+  [nslookup 將所有設定](nslookup-set-all.md)

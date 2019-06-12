@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 03/29/2018
 description: 本文說明適用於目前的 Microsoft HCI （儲存空間直接存取） 的災害復原案例
 ms.localizationpriority: medium
-ms.openlocfilehash: 32bbf02ca78d5c6a2147162768c984d0e0b27e36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c844c56c3a1717658bcdb970e78d45b5cdda861c
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879589"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453118"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>使用儲存空間直接存取的災害復原
 
@@ -41,7 +41,7 @@ ms.locfileid: "59879589"
 
 在此案例中，有兩個不同的獨立叢集。 如需設定 HCI 之間的儲存體複本，您可以遵循中的步驟[叢集對叢集儲存體複寫](../storage-replica/cluster-to-cluster-storage-replication.md)。
 
-![儲存體複寫圖表](media\storage-spaces-direct-disaster-recovery\Disaster-Recovery-Figure1.png)
+![儲存體複寫圖表](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure1.png)
 
 部署儲存體複本時，就會適用下列考量。 
 
@@ -56,7 +56,7 @@ ms.locfileid: "59879589"
 
 [HYPER-V 複本](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica)超交集基礎結構上提供虛擬機器層級的複寫進行災害復原。 HYPER-V 複本可以做的是取得虛擬機器，並將它複寫至次要網站或 Azure （複本）。 然後從次要網站中，HYPER-V 複本可以複寫的虛擬機器至第三個 （延伸複本）。
 
-![Hyper-v VM 複寫圖表](media\storage-spaces-direct-disaster-recovery\Disaster-Recovery-Figure2.png)
+![Hyper-v VM 複寫圖表](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
 與 HYPER-V 複本複寫是由負責 HYPER-V。 當您第一次啟用複寫的虛擬機器時，有三個希望如何將初始複本傳送至對應的複本叢集的選項。
 

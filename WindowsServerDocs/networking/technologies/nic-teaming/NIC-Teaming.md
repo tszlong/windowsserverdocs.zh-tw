@@ -14,12 +14,12 @@ ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
 ms.date: 09/10/2018
-ms.openlocfilehash: 367de10e8c77490ff27be81ddc05239f931ad1f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf58956ead8e8a47b8ec6d189bf23e5c576d5f15
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860469"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812190"
 ---
 # <a name="nic-teaming"></a>NIC 小組
 
@@ -27,8 +27,8 @@ ms.locfileid: "59860469"
 
 在本主題中，我們提供您的網路介面卡 (NIC) 小組概觀 Windows Server 2016 中。 NIC 小組可讓您將介於 1 到 32 到一或多個以軟體為基礎的虛擬網路介面卡的實體 Ethernet 網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。  
   
->[!IMPORTANT]
->您必須在相同的實體主機電腦中安裝 NIC 小組成員網路介面卡。 
+> [!IMPORTANT]
+> 您必須在相同的實體主機電腦中安裝 NIC 小組成員網路介面卡。 
 
 > [!TIP]  
 > NIC 小組，其中包含只有一個網路介面卡無法提供負載平衡與容錯移轉。 不過，使用一個網路介面卡，您可以使用 NIC 小組的網路流量的區隔時，您也正在使用虛擬區域網路 (Vlan)。  
@@ -63,9 +63,9 @@ NIC 小組可在所有版本的 Windows Server 2016。 您可以使用各種工�
 ## <a name="compatibility"></a>相容性  
 NIC 小組適用於所有網路技術的 Windows Server 2016 有下列例外狀況。  
   
--   **單一根目錄 I/O 虛擬化 (SR-IOV)**。 對於 SR-IOV，資料會直接傳遞到 NIC 而不會通過網路堆疊 （在主機作業系統，在虛擬化的情況下）。 因此，不可能的 NIC 小組，來檢查，或將資料重新導向至另一個小組中的路徑。  
+-   **單一根目錄 I/O 虛擬化 (SR-IOV)** 。 對於 SR-IOV，資料會直接傳遞到 NIC 而不會通過網路堆疊 （在主機作業系統，在虛擬化的情況下）。 因此，不可能的 NIC 小組，來檢查，或將資料重新導向至另一個小組中的路徑。  
   
--   **原生的主機服務品質 (QoS)**。 當您將原生或主機系統上的 QoS 原則和這些原則叫用最小頻寬限制，NIC 小組的整體輸送量小於它在沒有頻寬原則。  
+-   **原生的主機服務品質 (QoS)** 。 當您將原生或主機系統上的 QoS 原則和這些原則叫用最小頻寬限制，NIC 小組的整體輸送量小於它在沒有頻寬原則。  
   
 -   **TCP Chimney**。 不支援 TCP Chimney NIC 小組，因為 TCP Chimney 卸載整個網路堆疊直接至 nic。  
   

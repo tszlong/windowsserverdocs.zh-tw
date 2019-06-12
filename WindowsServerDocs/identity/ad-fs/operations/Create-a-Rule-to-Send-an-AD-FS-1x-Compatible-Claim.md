@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c87b76224d1ac5dbe3befc837fad8879d0b9a1ef
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bda071be6668710361205643125fc8ad44246012
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189405"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453020"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>建立規則，以傳送 AD FS 1.x 相容宣告
 
@@ -43,9 +43,6 @@ ms.locfileid: "66189405"
 > [!NOTE]  
 > 此規則中如預期般運作，請確定您要在其中建立此規則的宣告提供者信任的信賴憑證者信任，已設定為使用**AD FS 1.0 和 1.1 設定檔**。 
 
-
-
-
 ## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>若要建立規則以發出的 AD FS 1。*x*名稱識別碼宣告使用 「 傳遞或篩選傳入宣告 」 規則範本在信賴憑證者信任中 Windows Server 2016 
 
 1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
@@ -59,7 +56,7 @@ ms.locfileid: "66189405"
 4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -101,7 +98,7 @@ ms.locfileid: "66189405"
 4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -125,11 +122,10 @@ ms.locfileid: "66189405"
     -   **傳遞符合特定電子郵件尾碼值的宣告值**  
   
     -   **傳遞特定值開頭的宣告值**  
-![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)   
+![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)
 
 10. 按一下 **完成**，然後按一下**確定**儲存規則。  
 
-  
 
 ## <a name="to-create-a-rule-to-transform-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>若要建立規則來轉換傳入宣告在信賴憑證者信任中 Windows Server 2016 
 
@@ -139,13 +135,13 @@ ms.locfileid: "66189405"
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
 3.  右\-按一下 選取的信任，然後按一下**編輯宣告發佈原則**。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
   
 4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
-![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
+![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
   
@@ -168,7 +164,7 @@ ms.locfileid: "66189405"
     -   **使用不同的傳出宣告值取代傳入宣告值**  
   
     -   **將內送電子\-郵件後置詞宣告新的電子\-郵件尾碼**  
-![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
+![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
 11. 按一下 **完成**，然後按一下**確定**儲存規則。  
 
@@ -188,7 +184,7 @@ ms.locfileid: "66189405"
 4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
 
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -249,7 +245,7 @@ ms.locfileid: "66189405"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳遞或篩選傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)  
   
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
@@ -273,7 +269,7 @@ ms.locfileid: "66189405"
     -   **傳遞符合特定電子郵件尾碼值的宣告值**  
   
     -   **傳遞特定值開頭的宣告值**  
-![建立規則](media/\Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)   
+![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)
 
 10. 按一下 **完成**，然後按一下**確定**儲存規則。  
 
@@ -298,7 +294,7 @@ ms.locfileid: "66189405"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
   
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步** .  
+5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)   
   
 6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  

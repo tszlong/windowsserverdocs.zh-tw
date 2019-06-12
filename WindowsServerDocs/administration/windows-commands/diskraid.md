@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a565a1d5fa1bc3ff57d1578fb54cfa4553e3bb26
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ebd65fb56114bff9e6ae4b6a76376561c686dfa
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818869"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439561"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -95,7 +95,7 @@ add tpgroup tportal=n [noerr]
 > [!CAUTION]
 > 將刪除新增為一個網狀結構的 LUN 上的所有資料。
 
-**tpgroup 網站 = * * * n*
+**tpgroup tportal=** <em>n</em>
 
 指定的 iSCSI 目標入口網站號碼加入目前選取的 iSCSI 目標入口網站群組。
 
@@ -742,7 +742,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 **持續性**-自動重新啟動電腦時，使用相同的登入。
 
-**開機**-(這個選項適用於未來的開發，目前未使用 *。*)
+**開機**-(這個選項適用於未來的開發，目前未使用<em>。</em>)
 
 **chap**
 

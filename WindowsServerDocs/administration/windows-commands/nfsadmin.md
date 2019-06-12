@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 955f6d93379802444d542ea571f98b69b9191f5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4dc49e23d67ae68c598367de5a3fb0d7d6398a8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837109"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437161"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -62,7 +62,7 @@ ms.locfileid: "59837109"
 指定您想要管理的遠端電腦。 您可以指定使用 Windows 網際網路名稱服務的電腦\(WINS\)名稱或網域名稱系統\(DNS\)名稱，或網際網路通訊協定\(IP\)位址。  
   
 **\-u** *UserName*  
-指定所要使用的認證使用者的使用者名稱。 可能需要將網域名稱新增至表單中的使用者名稱*網域***\\***使用者名稱*  
+指定所要使用的認證使用者的使用者名稱。 可能需要將網域名稱新增至表單中的使用者名稱<em>網域</em> **\\** <em>使用者名稱</em>  
   
 **\-p** *密碼*  
 指定使用指定之使用者的密碼 **\-u**選項。 如果您指定 **\-u**選項，但是省略 **\-p**選項，系統會提示輸入使用者的密碼。  
@@ -85,10 +85,10 @@ ms.locfileid: "59837109"
 **config**  
 指定 Server for NFS 的一般設定。 您必須提供至少其中一個選項搭配**config**命令引數：  
   
-**mapsvr\=***server*  
+**mapsvr\=** <em>server</em>  
 設定組*server*為 Server for NFS 的使用者名稱對應伺服器。 雖然此選項將會繼續支援與舊版相容，您應該使用**sfuadmin**公用程式改為。  
   
-**auditlocation\=**{**eventlog** | **file** | **both** | **none**}  
+**auditlocation\=** {**eventlog** | **file** | **both** | **none**}  
 指定是否將稽核事件，並會記錄事件。 其中一個下列的引數是必要項目。  
   
 **eventlog**  
@@ -103,16 +103,16 @@ ms.locfileid: "59837109"
 **none**  
 指定將不會稽核事件。  
   
-**fname\=***file*  
+**fname\=** <em>file</em>  
 設定所指定的檔案*檔案*為稽核檔案。 預設值是 %sfudir\\記錄\\nfssvr.log  
   
-**fsize\=**\=*size*  
+**fsize\=** \=*size*  
 設定組*大小*最大的大小，以 mb 為單位的稽核檔案。 預設大小上限為 7 MB。  
   
-**稽核\=**\[**\+**|**\-**\]**掛接** \[**\+** | **\-** \]**讀取** \[ **\+**| **\-** \]**撰寫** \[ **\+** | **\-**  \]**建立** \[ **\+** | **\-** \]**刪除** \[ **\+** | **\-** \]**鎖定** \[ **\+** | **\-** \]**所有**  
-指定要記錄的事件。 若要開始記錄的事件，請輸入一個加號\( **\+** \)之前的事件名稱; 若要停止記錄事件中，輸入減號\( **\-**\)事件名稱前面。 如果省略符號，則會假設加號。 請勿使用**所有**與任何其他的事件名稱。  
+**稽核\=** \[ **\+** | **\-** \]**掛接** \[ **\+** | **\-** \]**讀取** \[ **\+** | **\-** \]**撰寫** \[ **\+** | **\-**  \]**建立** \[ **\+** | **\-** \]**刪除** \[ **\+** | **\-** \]**鎖定** \[ **\+** | **\-** \]**所有**  
+指定要記錄的事件。 若要開始記錄的事件，請輸入一個加號\( **\+** \)之前的事件名稱; 若要停止記錄事件中，輸入減號\( **\-** \)事件名稱前面。 如果省略符號，則會假設加號。 請勿使用**所有**與任何其他的事件名稱。  
   
-**lockperiod\=***seconds*  
+**lockperiod\=** <em>seconds</em>  
 指定 Server for NFS 的 NFS 伺服器的連線已遺失並再重新建立之後，或重新啟動 Server for NFS 服務之後回收鎖定等候的秒數。  
   
 Portmapprotocol\={TCP |UDP |TCP\+UDP  
@@ -130,16 +130,16 @@ nlmprotocol\={TCP | UDP | TCP\+UDP}
 nsmprotocol\={TCP | UDP | TCP\+UDP}  
 指定的傳輸通訊協定的網路狀態管理員\(NSM\)支援。 預設值是**TCP\+UDP**。  
   
-**enableV3\=**{**yes** | **no**}  
+**enableV3\=** {**yes** | **no**}  
 指定是否將支援 NFS 版本 3 通訊協定。 預設值是**是**。  
   
-**renewauth\=**{**yes** | **沒有**}  
+**renewauth\=** {**yes** | **沒有**}  
 指定用戶端連線是否會需要重新驗證所指定的期間之後**config renewauthinterval**。 預設值是**沒有**。  
   
-**renewauthinterval\=***seconds*  
+**renewauthinterval\=** <em>seconds</em>  
 指定用戶端會強制重新驗證，如果之前經過的秒數**config renewauth**設為**是**。 預設值為 600 秒。  
   
-**dircache\=***size*  
+**dircache\=** <em>size</em>  
 指定的大小，以 kb 為單位的目錄快取。 指定數字*大小*必須介於 4 到 128 之間的 4 的倍數。 預設目錄\-快取大小為 128 KB。  
   
 **translationfile**\=\[file\]  
@@ -148,7 +148,7 @@ nsmprotocol\={TCP | UDP | TCP\+UDP}
 **dotfileshidden**\={**yes** | **no**}  
 指定檔案是否建立名稱以句號開頭\(。\)會標示為隱藏 Windows 檔案系統中，並因此的 NFS 用戶端隱藏。 預設值是**沒有**。  
   
-**casesensitivelookups\=**{**yes** | **沒有**}  
+**casesensitivelookups\=** {**yes** | **沒有**}  
 指定是否會區分大小寫目錄查閱\(需要完全相符的字元大小寫\)。  
   
 您也需要停用 Windows 核心案例\-為了讓 Server for NFS 才能支援案例的不區分大小寫\-敏感的檔案名稱。 您可以停用 Windows 核心案例\-藉由清除下列登錄機碼設為 0 的不區分大小寫：  
@@ -160,7 +160,7 @@ DWOrd obcaseinsensitive
 > [!IMPORTANT]  
 > 本節僅適用於 Windows Server 2008 R2、 Windows Server 2008 和 Windows Server 2003。 本節不適用於 Windows Server 2012 R2 或 Windows Server 2012。  
   
-**ntfscase\=**{**lower** | **upper** | **preserve**}  
+**ntfscase\=** {**lower** | **upper** | **preserve**}  
 指定是否會以小寫字母、 大寫或儲存在目錄中的表單中傳回的 NTFS 檔案系統中的檔案名稱中的字元大小寫。 預設值是**保留**。 無法變更此設定，如果**casesensitivelookups**設為**是**。  
   
 **creategroup** *name*  
@@ -198,28 +198,28 @@ DWOrd obcaseinsensitive
 **config**  
 指定 NFS 用戶端的一般設定。 您必須提供至少其中一個選項搭配**config**命令引數：  
   
-**fileaccess\=***mode*  
+**fileaccess\=** <em>mode</em>  
 -   指定網路檔案系統上建立檔案的預設權限模式\(NFS\)伺服器。 *模式*引數包含三個位數，範圍介於 0 到 7\(內含\)表示的預設權限授與使用者、 群組和其他\(分別\)。 數字會轉譯為 UNIX\-樣式權限，如下所示：0\=無、 1\=x，2\=w、 3\=wx，4\=r、 5\=rx，6\=rw，而 7\=rwx。 例如， **fileaccess\=750**提供給擁有者的 rwx 權限、 rx 權限給群組和其他項目沒有存取權限。  
   
-**mapsvr\=***server*  
+**mapsvr\=** <em>server</em>  
 設定組*server*為 NFS 用戶端的使用者名稱對應伺服器。 雖然此選項將會繼續支援與舊版相容，您應該使用**sfuadmin**公用程式改為。  
   
-**mtype\=**{**hard** | **soft**}  
+**mtype\=** {**hard** | **soft**}  
 指定預設掛接類型。 至於硬掛接，NFS 用戶端會繼續重試失敗的 RPC，直到成功為止。 軟掛接，NFS 用戶端傳回失敗後重試呼叫呼叫的應用程式所指定的次數**重試**選項。  
   
-**retry\=***number*  
+**retry\=** <em>number</em>  
 指定嘗試進行軟掛接連線的次數。 此值必須介於 1 到 10 （含)。 預設值為 1。  
   
-**timeout\=***seconds*  
+**timeout\=** <em>seconds</em>  
 指定要等候連接的秒數\(遠端程序呼叫\)。 此值必須是 0.8、 0.9 或從 1 到 60 （含) 的整數。 預設值為 0.8。  
   
 **Protocol\={TCP | UDP | TCP\+UDP}**  
 指定的傳輸通訊協定的用戶端支援。 預設值是**TCP\+UDP**  
   
-**rsize\=***size*  
+**rsize\=** <em>size</em>  
 指定的大小，以 kb 為單位讀取的緩衝區。 此值可以是 0.5、 1、 2、 4、 8、 16 或 32。 預設值為 32。  
   
-**wsize\=***size*  
+**wsize\=** <em>size</em>  
 指定的大小，以 kb 為單位的寫入緩衝。 此值可以是 0.5、 1、 2、 4、 8、 16 或 32。 預設值為 32。  
   
 **perf\=default**  
@@ -235,7 +235,7 @@ DWOrd obcaseinsensitive
   
 -   **wsize**  
   
-**fileaccess\=***mode*  
+**fileaccess\=** <em>mode</em>  
 指定網路檔案系統上建立檔案的預設權限模式\(NFS\)伺服器。 *模式*引數包含三個位數，範圍介於 0 到 7\(內含\)表示的預設權限授與使用者、 群組和其他\(分別\)。 數字會轉譯為 UNIX\-樣式權限，如下所示：0\=無、 1\=x，2\=w、 3\=wx，4\=r、 5\=rx，6\=rw，而 7\=rwx。 例如， **fileaccess\=750**提供給擁有者的 rwx 權限、 rx 權限給群組和其他項目沒有存取權限。  
   
 如果您未指定的命令選項或引數**nfsadmin client**會顯示目前的用戶端 for NFS 組態設定。  

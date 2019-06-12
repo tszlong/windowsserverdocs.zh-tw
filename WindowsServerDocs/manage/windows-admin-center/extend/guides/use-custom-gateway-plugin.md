@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: c9b2e9201d58472286b42a9c89a36423f40d143d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 348ebf5b99de7f582a3edf57b0a190f87f1c4a5b
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834509"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452605"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>使用工具擴充功能中的自訂閘道外掛程式
 
@@ -23,7 +23,7 @@ ms.locfileid: "59834509"
 
 ## <a name="prepare-your-environment"></a>準備您的環境 ##
 
-如果您還沒有這麼做，請依照下列中的指示[開發工具 延伸模組](..\develop-tool.md)若要準備您的環境，並建立新的清空 [工具] 延伸模組。
+如果您還沒有這麼做，請依照下列中的指示[開發工具 延伸模組](../develop-tool.md)若要準備您的環境，並建立新的清空 [工具] 延伸模組。
 
 ## <a name="add-a-module-to-your-project"></a>將模組新增至您的專案 ##
 
@@ -62,6 +62,9 @@ export class PluginService {
 ```
 
 變更參考```Sample Uno```和```Sample%20Uno```您視需要的功能名稱。
+
+[!WARNING]
+> 它是建議的內建在```this.appContextService.node```用來呼叫您的自訂閘道外掛程式中定義的任何 API。 這可確保，如果您將會處理這些正確的閘道外掛程式內需要認證。
 
 ### <a name="modify-modulets"></a>修改 module.ts
 
@@ -142,4 +145,4 @@ Html 檔案中加入下列內容：
 
 ## <a name="build-and-side-load-your-extension"></a>組建和側邊載入您的延伸模組
 
-現在您已準備好[建置，並端負載](..\develop-tool.md#build-and-side-load-your-extension)您 Windows Admin Center 的延伸模組。
+現在您已準備好[建置，並端負載](../develop-tool.md#build-and-side-load-your-extension)您 Windows Admin Center 的延伸模組。

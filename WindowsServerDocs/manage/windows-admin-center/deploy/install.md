@@ -1,23 +1,25 @@
 ---
 title: 安裝 Windows Admin Center
-description: 安裝 Windows Admin Center
+description: 如何安裝 Windows Admin Center，在 Windows 電腦上或在伺服器上，讓多個使用者可以存取 Windows Admin Center 使用網頁瀏覽器。
 ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
-ms.date: 03/07/2019
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 94ac1281ca94a49ae54ce28d86dd4d95ff1d5574
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: a9eb7944cd35dfa68e3c36cdc6c016f483a9f1e1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866919"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811961"
 ---
 # <a name="install-windows-admin-center"></a>安裝 Windows Admin Center
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center，Windows Admin Center 預覽
+
+本主題描述如何安裝 Windows Admin Center，在 Windows 電腦上或在伺服器上，讓多個使用者可以存取 Windows Admin Center 使用網頁瀏覽器。
 
 > [!Tip]
 > 對 Windows Admin Center 不熟悉？
@@ -25,14 +27,14 @@ ms.locfileid: "59866919"
 
 ## <a name="determine-your-installation-type"></a>判斷您的安裝類型
 
-檢閱[安裝選項](..\plan\installation-options.md)hvsocket.h[支援的作業系統](..\plan\installation-options.md#supported-operating-systems-installation)。
+檢閱[安裝選項](../plan/installation-options.md)hvsocket.h[支援的作業系統](../plan/installation-options.md#supported-operating-systems-installation)。 若要在 Azure 中的 VM 上安裝 Windows Admin Center，請參閱[在 Azure 中部署 Windows Admin Center](../azure/deploy-wac-in-azure.md)。
 
 ## <a name="install-on-windows-10"></a>安裝在 Windows 10 上
 
 安裝在 Windows 10 時，Windows Admin Center 預設會使用連接埠 6516，但您可以選擇定不同的連接埠。 您也可以建立桌面捷徑，並且讓 Windows Admin Center 管理您的 TrustedHosts。
 
 > [!NOTE]
-> 處於工作群組環境，或在網域中使用本機系統管理員認證時，需要修改 TrustedHosts。 如果您選擇省略這項設定，就必須[手動設定 TrustedHosts](../use/troubleshooting.md#configure-trustedhosts)。
+> 處於工作群組環境，或在網域中使用本機系統管理員認證時，需要修改 TrustedHosts。 如果您選擇省略這項設定，就必須[手動設定 TrustedHosts](../support/troubleshooting.md#configure-trustedhosts)。
 
 當您從 **\[開始\]** 功能表啟動 Windows Admin Center 時，它會在預設瀏覽器中開啟。
 
@@ -43,7 +45,7 @@ ms.locfileid: "59866919"
 在 Windows Server 上，Windows Admin Center 會安裝為網路服務。 您必須指定服務接聽的連接埠，而且此服務需要 HTTPS 的憑證。 安裝程式可以建立自我簽署憑證以供測試，您也可以提供電腦上已安裝憑證的指紋。 如果您使用產生的憑證，此憑證將會與伺服器的 DNS 名稱相符。 如果您使用您自己的憑證，請確定憑證中所提供的名稱符合電腦名稱 （萬用字元憑證不支援）。您也可以選擇要讓管理您的 TrustedHosts 的 Windows Admin Center。
 
 > [!NOTE]
-> 處於工作群組環境，或在網域中使用本機系統管理員認證時，需要修改 TrustedHosts。 如果您選擇省略這項設定，您必須[手動設定 TrustedHosts](../use/troubleshooting.md#configure-trustedhosts)。
+> 處於工作群組環境，或在網域中使用本機系統管理員認證時，需要修改 TrustedHosts。 如果您選擇省略這項設定，您必須[手動設定 TrustedHosts](../support/troubleshooting.md#configure-trustedhosts)。
 
 安裝完成之後，從遠端電腦開啟瀏覽器並瀏覽至安裝程式的最後一個步驟所述的 URL。
 
@@ -73,5 +75,7 @@ msiexec /i <WindowsAdminCenterInstallerName>.msi /qn /L*v log.txt SME_PORT=<port
 > 不要使用點斜線相對路徑標記法 (例如，`.\<WindowsAdminCenterInstallerName>.msi`)，從 PowerShell 叫用 `msiexec`。 不支援將該標記法，安裝將會失敗。 移除 `.\` 前置詞，或指定 MSI 的完整路徑。
 
 ## <a name="updating-windows-admin-center"></a>更新的 Windows Admin Center
+
+使用 Microsoft Update，或以手動方式安裝，您可以更新 Windows Admin Center 非預覽的版本。 
 
 升級至新版的 Windows Admin Center 時，會保留您的設定。 我們不正式支援升級 Insider Preview 版本的 Windows Admin Center-我們認為是比較理想的全新安裝-，但我們不會封鎖它。

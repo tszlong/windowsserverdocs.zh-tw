@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
-ms.openlocfilehash: 601261780f64a779d0aa43ea8d14f58fdcb5f502
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 571af5a50618db285aecbf26573ba52a6aec1101
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874139"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453110"
 ---
 # <a name="remote-desktop-services---planning-poster"></a>遠端桌面服務 - 規劃海報
 
@@ -27,7 +27,7 @@ ms.locfileid: "59874139"
 
 遠端桌面服務團隊已建立可協助您規劃、建置和執行 RDS 環境的海報。
 
-![遠端桌面服務海報](.\media\rds-poster-download.png)
+![遠端桌面服務海報](./media/rds-poster-download.png)
 
 您可以以滑鼠右鍵按一下影像，然後將它儲存到本機系統，即可取得一份海報。
 

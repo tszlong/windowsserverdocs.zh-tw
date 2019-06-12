@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 453579589f3fd3cc2c9fa835b50bfb59e33bc3dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 86b56386ba9bed2486cdf8cdbb4486fcec6c6265
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872579"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435157"
 ---
 # <a name="auditpol-clear"></a>auditpol 清除
 
@@ -31,10 +31,12 @@ ms.locfileid: "59872579"
 auditpol /clear [/y]
 ```
 ## <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|/y|隱藏確認是否應該清除所有的稽核原則設定的提示。|
-|/?|在命令提示字元顯示說明。|
+
+| 參數 |                                   描述                                    |
+|-----------|----------------------------------------------------------------------------------|
+|    /y     | 隱藏確認是否應該清除所有的稽核原則設定的提示。 |
+|    /?     |                       在命令提示字元顯示說明。                       |
+
 ## <a name="remarks"></a>備註
 針對每個使用者原則] 及 [系統原則的清除作業，您必須撰寫或該物件上的完全控制權限設定中的安全性描述元。 您也可以執行清除作業擁有**管理稽核及安全性記錄**(SeSecurityPrivilege) 使用者權限。 不過，此權限可讓其他不需要執行清除作業的存取。
 ## <a name="BKMK_examples"></a>範例
@@ -48,5 +50,5 @@ auditpol /clear /y
 ```
 > [!NOTE]
 > 若要執行這項作業使用指令碼時，則上述範例中會很有用。
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法關鍵](command-line-syntax-key.md)
+> #### <a name="additional-references"></a>其他參考資料
+> [命令列語法關鍵](command-line-syntax-key.md)

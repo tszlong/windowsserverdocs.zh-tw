@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 01/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d9e6828584f4027aa32cec26572c2290098ab6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c68444be5662480293cee630970d5eb76b52268a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830099"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453192"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>規劃儲存空間直接存取中的磁碟區
 
-> 適用於：Windows Server 2016、windows Server 2019
+> 適用於：Windows Server 2019，Windows Server 2016
 
 此主題提供如何規劃儲存空間直接存取中的磁碟區，符合您工作負載的效能與容量需要，包括選擇它們的系統、復原類型和大小。
 
@@ -31,7 +31,7 @@ ms.locfileid: "59830099"
 
 ![what-are-volumes](media/plan-volumes/what-are-volumes.png)
 
-所有磁碟區可以由叢集中所有伺服器同時存取。 建立之後，它們顯示在所有伺服器上的 **C:\ClusterStorage\**。
+所有磁碟區可以由叢集中所有伺服器同時存取。 建立之後，它們會顯示在**C:\ClusterStorage\\** 所有伺服器上。
 
 ![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -87,9 +87,9 @@ ms.locfileid: "59830099"
 
 | **復原類型**| **容量效率**| **速度**| **工作負載**
 |--------------------|--------------------------------|--------------------------------|--------------------------
-| **鏡像**         | ![儲存體效率顯示 33%](media\plan-volumes\3-way-mirror-storage-efficiency.png)<br>三向鏡像：33% <br>Two-雙向鏡像：50%     |![效能顯示 100%](media\plan-volumes\three-way-mirror-perf.png)<br> 最高的效能  | 虛擬化工作負載<br> 資料庫<br>其他的高效能工作負載 |
-| **鏡像加速同位檢查** |![顯示大約 50%的儲存空間效率](media\plan-volumes\mirror-accelerated-parity-storage-efficiency.png)<br> 取決於鏡像和同位檢查的比例 | ![顯示大約 20%的效能](media\plan-volumes\mirror-accelerated-parity-perf.png)<br>遠低於鏡像，但最多兩倍速度雙同位<br> 最適合大型循序寫入和讀取 | 封存與備份<br> 虛擬桌面基礎結構     |
-| **Dual-parity**               | ![顯示大約 80%的儲存空間效率](media\plan-volumes\dual-parity-storage-efficiency.png)<br>4 部伺服器：50% <br>16 部伺服器： 最多 80% | ![顯示大約 10%的效能](media\plan-volumes\dual-parity-perf.png)<br>最高的 I/O 延遲和寫入的 CPU 使用量<br> 最適合大型循序寫入和讀取 | 封存與備份<br> 虛擬桌面基礎結構  |
+| **鏡像**         | ![儲存體效率顯示 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向鏡像：33% <br>Two-雙向鏡像：50%     |![效能顯示 100%](media/plan-volumes/three-way-mirror-perf.png)<br> 最高的效能  | 虛擬化工作負載<br> 資料庫<br>其他的高效能工作負載 |
+| **鏡像加速的同位** |![顯示大約 50%的儲存空間效率](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 取決於鏡像和同位檢查的比例 | ![顯示大約 20%的效能](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>遠低於鏡像，但最多兩倍速度雙同位<br> 最適合大型循序寫入和讀取 | 封存與備份<br> 虛擬桌面基礎結構     |
+| **Dual-parity**               | ![顯示大約 80%的儲存空間效率](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 部伺服器：50% <br>16 部伺服器： 最多 80% | ![顯示大約 10%的效能](media/plan-volumes/dual-parity-perf.png)<br>最高的 I/O 延遲和寫入的 CPU 使用量<br> 最適合大型循序寫入和讀取 | 封存與備份<br> 虛擬桌面基礎結構  |
 
 #### <a name="when-performance-matters-most"></a>當效能是最重要時
 
@@ -199,4 +199,4 @@ ms.locfileid: "59830099"
 
 - [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
 - [選擇磁碟機的儲存空間直接存取](choosing-drives.md)
-- [錯誤容錯] 和 [儲存體效率](storage-spaces-fault-tolerance.md)
+- [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

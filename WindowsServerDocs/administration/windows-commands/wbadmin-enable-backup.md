@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fd0bea5da83ca9351d5ea1028c94392bdb40422
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 08a9754b6bb11c50e21ba0d30543761be1866326
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845539"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440256"
 ---
 # <a name="wbadmin-enable-backup"></a>Wbadmin 啟用備份
 
@@ -76,7 +76,6 @@ wbadmin enable backup
 [-password:<Password>]
 [-quiet] 
 [-allowDeleteOldBackups]
-
 ```
 
 ## <a name="parameters"></a>參數
@@ -109,26 +108,26 @@ wbadmin enable backup
 下列範例會顯示如何**wbadmin 啟用備份**命令可用於不同的備份案例：
 
 案例 #1
--   排程備份的硬碟磁碟機 e:、 d:\mountpoint，並\\ \\？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
--   將檔案儲存到磁碟 DiskID
--   每日在上午 9:00 執行備份 和下午 6:00
-```
-wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-```
-案例 #2
--   排程備份的網路位置資料夾 d:\documents \\ \\backupshare\backup1
--   備份的系統管理員 Aaren Ekelund (aekel)，身為成員的網域來驗證存取權的網路共用的 NETWORK2 使用網路認證。 Aaren 的密碼 *$3 hM 9 ^ 5lp*。
--   執行備份，在每天上午 12:00 和下午 7:00
-```
-wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
-```
-案例 #3
--   排程備份的磁碟區 t 和資料夾 d:\documents 磁碟 h:，但排除資料夾 d:\documents\~tmp
--   執行完整備份，使用磁碟區陰影複製服務。
--   每日在上午 1:00 執行備份
-```
-wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
-```
+- 排程備份的硬碟磁碟機 e:、 d:\mountpoint，並\\ \\？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+- 將檔案儲存到磁碟 DiskID
+- 每日在上午 9:00 執行備份 和下午 6:00
+  ```
+  wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+  ```
+  案例 #2
+- 排程備份的網路位置資料夾 d:\documents \\ \\backupshare\backup1
+- 備份的系統管理員 Aaren Ekelund (aekel)，身為成員的網域來驗證存取權的網路共用的 NETWORK2 使用網路認證。 Aaren 的密碼 *$3 hM 9 ^ 5lp*。
+- 執行備份，在每天上午 12:00 和下午 7:00
+  ```
+  wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
+  ```
+  案例 #3
+- 排程備份的磁碟區 t 和資料夾 d:\documents 磁碟 h:，但排除資料夾 d:\documents\~tmp
+- 執行完整備份，使用磁碟區陰影複製服務。
+- 每日在上午 1:00 執行備份
+  ```
+  wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
+  ```
 
 #### <a name="additional-references"></a>其他參考資料
 

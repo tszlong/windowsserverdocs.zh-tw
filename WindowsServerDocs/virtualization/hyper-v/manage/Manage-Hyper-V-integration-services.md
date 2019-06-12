@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: b049efc61d5060791574f20fcdd8b369a26f0507
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2c14e471abb9af7a9182100969a8dd94a17205a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890249"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812200"
 ---
 >適用於：Windows 10、windows Server 2016 中，Windows Server 2019
 
@@ -25,8 +25,8 @@ HYPER-V 整合服務增強虛擬機器效能，並提供利用與 HYPER-V 主機
 
 如需每個整合服務的詳細資訊，請參閱[HYPER-V Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)。
 
->[!IMPORTANT]
->您想要使用每個的服務必須能夠在主機和客體中才能運作。 Windows 客體作業系統預設會開啟 「 HYPER-V 客體服務介面 」 以外的所有整合服務。 服務可以開啟或關閉個別。 下一節中將會告訴您作法。
+> [!IMPORTANT]
+> 您想要使用每個的服務必須能夠在主機和客體中才能運作。 Windows 客體作業系統預設會開啟 「 HYPER-V 客體服務介面 」 以外的所有整合服務。 服務可以開啟或關閉個別。 下一節中將會告訴您作法。
 
 ## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>開啟或關閉使用 HYPER-V 管理員的整合服務
 
@@ -47,6 +47,7 @@ HYPER-V 整合服務增強虛擬機器效能，並提供利用與 HYPER-V 主機
     ``` PowerShell
     Get-VMIntegrationService -VMName "DemoVM"
     ```
+
 1. 輸出應該看起來像這樣：
 
     ``` PowerShell
@@ -84,12 +85,13 @@ HYPER-V 整合服務增強虛擬機器效能，並提供利用與 HYPER-V 主機
 ```
 REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 ```
+
 舊版客體作業系統不會有所有可用的服務。 比方說，Windows Server 2008 R2 客體不能有 「 HYPER-V 客體服務介面 」。
 
 ## <a name="start-and-stop-an-integration-service-from-a-windows-guest"></a>啟動和停止 Windows 客體整合服務
 為了讓是功能完整的整合服務，其對應的服務必須執行內除了要在主機上啟用來賓。 在 Windows 客體，每個整合服務會列為標準的 Windows 服務。 您可以使用 [服務] 小程式，在 [控制台] 或 PowerShell 來停止和啟動這些服務。
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > 停止的整合服務，可能會嚴重影響主機的能力來管理您的虛擬機器。 正常運作，則必須啟用主機和客體上的每個您想要使用的整合服務。
 > 最佳做法，您應該只會控制整合服務，從 HYPER-V 使用上述指示。 在客體作業系統中相符的服務將會停止，或自動啟動，當您變更其狀態在 HYPER-V 中。
 > 如果您在客體作業系統中啟動服務，但它已停用 HYPER-V 中，服務會停止。 如果您停止在 HYPER-V 中啟用客體作業系統中的服務時，HYPER-V 會最後會重新啟動它。 如果您停用客體中的服務時，HYPER-V 將無法啟動它。
@@ -104,7 +106,6 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 1. 以滑鼠右鍵按一下您想要啟動或停止服務。 按一下所需的動作。
 
-
 ### <a name="use-windows-powershell-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>使用 Windows PowerShell 來啟動或停止在 Windows 客體整合服務
 
 1. 若要取得一份整合服務，請執行：
@@ -112,6 +113,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     ```
     Get-Service -Name vm*
     ```
+
 1.  輸出看起來應該如下所示：
 
     ```PowerShell
@@ -137,13 +139,13 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 Linux 整合服務通常是透過 Linux 核心提供。 為 Linux 整合服務驅動**hv_utils**。
 
-1.  若要找出是否**hv_utils**載入時，使用下列命令：
+1. 若要找出是否**hv_utils**載入時，使用下列命令：
 
-    ``` BASH
-    lsmod | grep hv_utils
-    ``` 
+   ``` BASH
+   lsmod | grep hv_utils
+   ``` 
   
-1. 輸出看起來應該如下所示：  
+2. 輸出看起來應該如下所示：  
   
     ``` BASH
     Module                  Size   Used by
@@ -151,13 +153,13 @@ Linux 整合服務通常是透過 Linux 核心提供。 為 Linux 整合服務�
     hv_vmbus               61440   8 hv_balloon,hyperv_keyboard,hv_netvsc,hid_hyperv,hv_utils,hyperv_fb,hv_storvsc
     ```
 
-1. 若要找出必要的精靈是否正在執行，使用此命令。
+3. 若要找出必要的精靈是否正在執行，使用此命令。
   
     ``` BASH
     ps -ef | grep hv
     ```
   
-1. 輸出看起來應該如下所示： 
+4. 輸出看起來應該如下所示： 
   
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
@@ -170,13 +172,13 @@ Linux 整合服務通常是透過 Linux 核心提供。 為 Linux 整合服務�
     scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv          
     ```
 
-1. 若要查看可使用哪些精靈，請執行：
+5. 若要查看可使用哪些精靈，請執行：
 
     ``` BASH
     compgen -c hv_
     ```
   
-1. 輸出看起來應該如下所示：
+6. 輸出看起來應該如下所示：
   
     ``` BASH
     hv_vss_daemon
@@ -187,10 +189,10 @@ Linux 整合服務通常是透過 Linux 核心提供。 為 Linux 整合服務�
     hv_fcopy_daemon     
     ```
   
- 下面是可能會列出的整合服務精靈。 如果遺漏任何，可能不支援您的系統上，或可能不會安裝。 找到詳細資訊，請參閱 <<c0> [ 支援的 Linux 和 FreeBSD 虛擬機器，在 Windows 上的 hyper-v](https://technet.microsoft.com/library/dn531030.aspx)。  
-  - **hv_vss_daemon**:若要建立即時 Linux 虛擬機器備份需要此精靈。
-  - **hv_kvp_daemon**:此精靈可用於設定及查詢內建與外來的機碼值組。
-  - **hv_fcopy_daemon**:此精靈可實作檔案，複製在主機與客體之間的服務。  
+   下面是可能會列出的整合服務精靈。 如果遺漏任何，可能不支援您的系統上，或可能不會安裝。 找到詳細資訊，請參閱 <<c0> [ 支援的 Linux 和 FreeBSD 虛擬機器，在 Windows 上的 hyper-v](https://technet.microsoft.com/library/dn531030.aspx)。  
+   - **hv_vss_daemon**:若要建立即時 Linux 虛擬機器備份需要此精靈。
+   - **hv_kvp_daemon**:此精靈可用於設定及查詢內建與外來的機碼值組。
+   - **hv_fcopy_daemon**:此精靈可實作檔案，複製在主機與客體之間的服務。  
 
 ### <a name="examples"></a>範例
 
@@ -306,7 +308,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 為 Linux 整合服務�
   
 2.  連線到虛擬機器。 以滑鼠右鍵按一下 虛擬機器，然後按一下  **Connect**。  
   
-3.  在 [虛擬機器連線] 的 [執行] 功能表中，按一下 [插入整合服務安裝磁片]。 這個動作會載入虛擬 DVD 光碟機中的安裝磁片。 視客體作業系統中，您可能需要手動啟動安裝。  
+3.  在 [虛擬機器連線] 的 [執行] 功能表中，按一下 [插入整合服務安裝磁片]  。 這個動作會載入虛擬 DVD 光碟機中的安裝磁片。 視客體作業系統中，您可能需要手動啟動安裝。  
   
 4.  安裝完成後，即可使用所有的整合服務。
 

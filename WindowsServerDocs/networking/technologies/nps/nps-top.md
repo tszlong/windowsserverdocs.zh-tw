@@ -9,12 +9,12 @@ ms.assetid: 9c7a67e0-0953-479c-8736-ccb356230bde
 ms.author: pashort
 author: shortpatti
 ms.date: 06/20/2018
-ms.openlocfilehash: 0439c0f45a604f6b3ef90369f5fe77a59568d9d7
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 515012a21ba6e90abe2c4db2150fd1feaad06677
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222580"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812364"
 ---
 # <a name="network-policy-server-nps"></a>網路原則伺服器 (NPS)
 
@@ -22,8 +22,8 @@ ms.locfileid: "66222580"
 
 如需在 Windows Server 2016 和 Windows Server 2019 的網路原則伺服器的概觀，您可以使用本主題。 當您在 Windows Server 2016 和 Server 2019 安裝網路原則與存取服務 (NPAS) 功能時，會安裝 NPS。
 
->[!NOTE]
->本主題中，除了下列 NPS 文件使用。
+> [!NOTE]
+> 本主題中，除了下列 NPS 文件使用。
 > - [網路原則伺服器的最佳作法](nps-best-practices.md)
 > - [開始使用網路原則伺服器](nps-getstart-top.md)
 > - [規劃網路原則伺服器](nps-plan-top.md)
@@ -44,8 +44,8 @@ NPS 可讓您集中設定和管理網路存取驗證、 授權和帳戶處理下
     - [設定連線要求原則](nps-crp-configure.md)
 - **RADIUS 帳戶處理**。 您可以設定 NPS 事件記錄到本機記錄檔或 Microsoft SQL Server 的本機或遠端執行個體。 如需詳細資訊，請參閱 < [NPS 記錄](#nps-logging)。
 
->[!IMPORTANT]
->網路存取保護\(NAP\)，健康情況登錄授權單位\(HRA\)，以及主機認證授權通訊協定\(HCAP\) Windows Server 2012 R2 中已被取代和 Windows Server 2016 中無法使用。 如果您有稍早於 Windows Server 2016 使用作業系統的 NAP 部署，您無法移轉至 Windows Server 2016 的 NAP 部署。
+> [!IMPORTANT]
+> 網路存取保護\(NAP\)，健康情況登錄授權單位\(HRA\)，以及主機認證授權通訊協定\(HCAP\) Windows Server 2012 R2 中已被取代和 Windows Server 2016 中無法使用。 如果您有稍早於 Windows Server 2016 使用作業系統的 NAP 部署，您無法移轉至 Windows Server 2016 的 NAP 部署。
 
 您可以使用這些功能的任何組合來設定 NPS。 例如，您可以設定一個 NPS 作為 RADIUS 伺服器進行 VPN 連線，也為 RADIUS proxy 來轉送一些連線要求進行驗證和授權，另一個網域中的遠端 RADIUS 伺服器群組的成員。
 
@@ -57,8 +57,8 @@ NPS 提供不同的功能，視您安裝的 Windows Server 版本而定。
 
 在 Windows Server 2016 Standard 或 Datacenter 中的 nps，您可以設定無限的數量的 RADIUS 用戶端和遠端 RADIUS 伺服器群組。 此外，您可以藉由指定一個 IP 位址範圍來設定 RADIUS 用戶端。
 
->[!NOTE]
->無法使用 Server Core 安裝選項安裝的系統上使用 WIndows 網路原則與存取服務的功能。
+> [!NOTE]
+> 無法使用 Server Core 安裝選項安裝的系統上使用 WIndows 網路原則與存取服務的功能。
 
 下列各節提供有關 NPS 為 RADIUS 伺服器和 proxy 的詳細的資訊。
 
@@ -70,15 +70,15 @@ NPS 提供不同的功能，視您安裝的 Windows Server 版本而定。
 
 NPS 是 Microsoft 實作的 RADIUS 標準指定網際網路工程任務推動小組所\(IETF\) Rfc 2865 與 2866年中。 為 RADIUS 伺服器，NPS 會執行集中化的連線驗證、 授權和帳戶處理的許多類型的網路存取權，包括無線、 驗證交換器、 撥號和虛擬私人網路\(VPN\)遠端存取，以及路由器對路由器連線。
 
->[!NOTE]
->如需部署 NPS 做為 RADIUS 伺服器的資訊，請參閱[部署的網路原則伺服器](nps-deploy.md)。
+> [!NOTE]
+> 如需部署 NPS 做為 RADIUS 伺服器的資訊，請參閱[部署的網路原則伺服器](nps-deploy.md)。
 
 NPS 可讓您使用異質組的無線、 交換器、 遠端存取或 VPN 設備。 您可以使用 NPS 與遠端存取服務，也就是 Windows Server 2016 中，您可以使用。
 
 NPS 使用 Active Directory 網域服務\(AD DS\)網域或本機安全性帳戶管理員 (SAM) 使用者帳戶資料庫來驗證使用者認證，連接嘗試。 AD DS 網域的成員執行 NPS 的伺服器時，NPS 目錄服務做為其使用者帳戶資料庫，而且是單一登入解決方案的一部分。 同一組認證用於網路存取控制\(驗證和授權存取網路\)並登入 AD DS 網域。
 
->[!NOTE]
->NPS 使用的撥入內容的使用者帳戶和網路原則來授權連線。
+> [!NOTE]
+> NPS 使用的撥入內容的使用者帳戶和網路原則來授權連線。
 
 網際網路服務提供者\(Isp\)和維護網路存取權的組織有增加的挑戰，可以從單一的管理點，無論何種類型的網路存取權管理所有類型的網路存取使用的設備。 RADIUS 標準在同質和異質環境中支援這項功能。 RADIUS 是用戶端-伺服器通訊協定，可讓送出驗證和帳戶處理要求至 RADIUS 伺服器的網路存取設備 （當作 RADIUS 用戶端）。
 
@@ -116,7 +116,6 @@ RADIUS 伺服器可以存取使用者帳戶資訊，而且可以檢查網路存�
 下圖顯示 NPS 做為 RADIUS 用戶端與 RADIUS 伺服器之間的 RADIUS proxy。
 
 ![NPS 做為 RADIUS Proxy](../../media/Nps-Proxy/Nps-Proxy.jpg)
-
 
 利用 NPS，組織也外包給服務提供者的遠端存取基礎結構同時保有使用者驗證、 授權和帳戶處理的控制。
 

@@ -6,14 +6,14 @@ ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
 author: Heidilohr
-ms.openlocfilehash: c1ef71dbc589cfdeac63b46d720c4bdd0a44dbaa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d1aaf8b61142155ea7b2a5391367cc677596ebe
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815399"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435607"
 ---
-#<a name="what-is-server-core-2008"></a>什麼是 Server Core 2008？
+# <a name="what-is-server-core-2008"></a>什麼是 Server Core 2008？
 >適用於：Windows Server 2008
 
 >[!NOTE]
@@ -24,6 +24,7 @@ Server Core 選項是新的最小安裝選項時，使用您要部署 Windows Se
 在我們繼續之前，片語 」 安裝選項 「 必須先加以說明。 一般來說，當您購買一份 Windows Server 2008，您可以購買使用特定版本或庫存單位 (Sku) 的授權。 表 1-1 會列出各版 Windows Server 2008 所提供。 此表也指出 （完整、 Server Core 或兩者） 的安裝選項可供每個版本。
 
 **表 1-1** Windows Server 2008 版本和安裝選項的支援
+
 | 版本       | 完整          | Server Core  |
 | ------------- | :-------------: | :------------: |
 | Windows Server 2008 Standard （x86 和 x64）       | X | X        |
@@ -44,14 +45,14 @@ Server Core 選項是新的最小安裝選項時，使用您要部署 Windows Se
 
 在 圖 1-1，您的大量授權 （或產品金鑰，零售媒體） 可讓您可以選擇兩個安裝選項： 第二個選項 (完整安裝的 Windows Server 2008 Enterprise) 和第五個選項 (Server Core 安裝的 WindowsServer 2008 Enterprise)，以選取在此範例中，後者。 
 
-##<a name="full-vs-server-core"></a>完全與Server Core 
+## <a name="full-vs-server-core"></a>完全與Server Core 
 Microsoft Windows 平台的早期年代，因為 Windows 伺服器已基本上是 全部內容包含所有類型的功能，其中有些您可能永遠不會實際使用您的網路環境中的伺服器。 比方說，當您在系統上安裝 Windows Server 2003，路由及遠端存取服務 (RRAS) 的二進位檔已安裝在伺服器上即使 （雖然您仍然必須設定並啟用 RRAS，才可以這樣做），會有這項服務不需要。 Windows Server 2008 會改善舊版安裝，您選擇在伺服器上安裝該特定角色時，才需要依伺服器角色的二進位檔。 不過，Windows Server 2008 的完整安裝選項仍會安裝許多服務和特定使用案例通常不需要其他元件。 
 
 這是 Microsoft 建立的第二個安裝選項的原因 — Server Core — 適用於 Windows Server 2008： 若要排除任何服務和其他不重要，對於特定的支援常用的伺服器角色的功能。 例如，網域名稱系統 (DNS) 伺服器其實不需要安裝它，因為您不想要瀏覽網頁從 DNS 伺服器，基於安全性的 Windows Internet Explorer。 和 DNS 伺服器甚至不需要圖形化使用者介面 (GUI)，因為您可以管理 DNS 的各個層面，所以請從命令列使用強大的 Dnscmd.exe 命令，或從遠端使用 DNS Microsoft Management Console (MMC) 嵌入式管理單元。
 
 若要避免這個問題，Microsoft 決定中刪除所有項目從已執行核心網路服務，例如 Active Directory 網域服務 (AD DS)、 DNS、 動態主機設定通訊協定 (DHCP)、 檔案和列印，並非絕對必要的 Windows Server 2008 和幾個其他伺服器角色。 結果會是新的 Server Core 安裝選項，可用來建立支援有限的數目的角色和功能的伺服器。 
 
-##<a name="the-server-core-gui"></a>在 Server Core GUI
+## <a name="the-server-core-gui"></a>在 Server Core GUI
 當您完成 Server Core 上安裝系統及登入第一次時，您會處於感到驚訝的位元。 圖 1-2 會顯示第一次登入之後的 Server Core 的使用者介面。
 
 ![Server Core 的使用者介面](../media/what-is-server-core-2008/Fig1-2.png)
@@ -69,6 +70,7 @@ Microsoft Windows 平台的早期年代，因為 Windows 伺服器已基本上�
 表 1-2 會列出主要的 GUI 應用程式，以及其可執行檔，可在的 Server Core 安裝中使用。
 
 **表 1-2** Server Core 安裝提供的 GUI 應用程式
+
 | GUI 應用程式 | 可執行檔的路徑 |
 | -------------   | -------------       | 
 | 命令提示字元 | %WINDIR%\System32\Cmd.exe |
@@ -93,10 +95,11 @@ Microsoft Windows 平台的早期年代，因為 Windows 伺服器已基本上�
 >[!NOTE]
 >因為 Windows PowerShell 需要.NET Framework，所以您無法安裝到 Server Core 上的 Windows PowerShell。 您可以不過，管理，只要您使用只有 PowerShell WMI 命令，從遠端使用 Windows PowerShell 的 Server Core 安裝。
 
-##<a name="supported-server-roles"></a>支援的伺服器角色 
+## <a name="supported-server-roles"></a>支援的伺服器角色 
 Server Core 安裝包含只在有限的相較於 Windows Server 2008 的完整安裝的伺服器角色。 表 1-3 比較適用於 Windows Server 2008 Enterprise edition 的完整和 Server Core 安裝的角色。 
 
 **表 1-3**完整和 Server Core 安裝的 Windows Server 2008 Enterprise Edition 的伺服器角色的比較
+
 | 伺服器角色  | 提供完整的安裝  | 用於 Server Core  |
 | ------------- | :-------------: | :------------: |
 | Active Directory 憑證服務 (AD CS)  | X |  |
@@ -124,7 +127,7 @@ Server Core 安裝包含只在有限的相較於 Windows Server 2008 的完整�
 * 您可以在 Server Core 上安裝的串流處理媒體服務角色之前，您需要下載並安裝適當 Microsoft Update 獨立封裝 （.msu 檔案） 適用於您的伺服器架構 （x86 或 x64） 從 Microsoft 下載中心取得。
 * 網頁伺服器 (IIS) 角色不支援 ASP.NET。 這是因為.NET Framework 不支援在 Server Core，這會限制您可以執行與伺服器核心網頁伺服器上。 
 
-##<a name="supported-optional-features"></a>支援的選用功能
+## <a name="supported-optional-features"></a>支援的選用功能
 Server Core 安裝也支援 Windows Server 2008 的完整安裝上的有限的子集提供的功能。 表 1-4 比較適用於 Windows Server 2008 Enterprise edition 的完整和 Server Core 安裝的功能。
 
 **表 1-4**的 Windows Server 2008 Enterprise edition 的完整和 Server Core 安裝的功能比較
@@ -171,7 +174,7 @@ Server Core 安裝也支援 Windows Server 2008 的完整安裝上的有限的�
 * 有些功能可能需要特殊硬體運作正常 （或完全），在 Server Core 上。 這些功能包括 BitLocker 磁碟機加密、 容錯移轉叢集、 多重路徑 IO、 網路負載平衡，以及卸除式儲存體。 
 * 容錯移轉叢集不是可在 Standard Edition 上取得。
 
-##<a name="server-core-architecture"></a>伺服器核心架構
+## <a name="server-core-architecture"></a>伺服器核心架構
 探究 Server Core，讓我們簡短探討 Windows Server 2008 的 Server Core 安裝的架構所使用的完整安裝進行比較。 首先，請記住，Server Core 不是不同版本的 Windows Server 2008，但只要安裝到系統的 Windows Server 2008 時，您可以選取的安裝選項。 這表示下列項目：
 * Server Core 安裝上的核心是相同版本與相同的硬體架構 （x86 或 x64） 的完整安裝上找到。 
 * 如果二進位檔已在的 Server Core 安裝上，相同的硬體架構 （x86 或 x64） 和版本的完整安裝具有相同版本的該特定二進位檔 （稍後討論的兩個例外狀況）。 
@@ -185,7 +188,7 @@ Server Core 安裝也支援 Windows Server 2008 的完整安裝上的有限的�
 
 **圖 1-3**的 Server Core 和完整安裝的架構
 
-##<a name="driver-support"></a>驅動程式支援
+## <a name="driver-support"></a>驅動程式支援
 很明顯地簡化架構圖顯示在 圖 1-3 中的 Server core;它不會顯示的一件事是裝置驅動程式支援在 Server Core 和完整安裝之間的差異。 Windows Server 2008 的完整安裝包含數千個不同類型的裝置，可讓您在各種不同的硬體組態上安裝產品的內建驅動程式。 （用戶端作業系統，例如 Windows Vista 包含更多的驅動程式，以支援裝置，例如數位相機及掃描器，通常不會與伺服器）。 
 
 如果新的裝置是連線到 （或安裝於） Windows Server 2008 的完整安裝，隨插即用 (PnP) 子系統會先檢查是否存在於裝置內建驅動程式。 如果找到相容的內建驅動程式，則 PnP 子系統會自動安裝的驅動程式和裝置，然後操作。 在 Windows Server 2008 完整安裝中，快顯球形文字說明通知可能會顯示，表示已安裝驅動程式，裝置可供使用。 
@@ -201,14 +204,14 @@ Server Core 安裝也支援 Windows Server 2008 的完整安裝上的有限的�
 
 因此該怎麼辦當您新增到 Server Core 安裝的列印服務角色，且您想要安裝的印表機？ 您將印表機驅動程式以手動方式加入伺服器 — Server Core 有沒有內建的列印驅動程式。
 
-##<a name="service-footprint"></a>服務使用量
+## <a name="service-footprint"></a>服務使用量
 因為 Server Core 是最小安裝，它會具有較小的系統服務使用量比對應的完整安裝，相同的硬體架構和版本。 例如，其中大約 50 會設定為自動啟動的 Windows Server 2008 的完整安裝上預設會安裝大約 75 部系統服務。 相較之下，Server Core 有大約只有 70 的服務會自動安裝的預設值，而且這些開始少於 40。 
 
 表 1-5 列出在 Server Core 安裝上，使用的啟動模式的預設安裝的服務，每個服務所使用的帳戶。
 
 **表 1-5**預設安裝在 Server Core 上的系統服務
 
-| 服務名稱  | 顯示名稱  | 啟動模式  | 帳戶  |
+| 服務名稱  | Display name  | 啟動模式  | 帳戶  |
 | ------------- | ------------- | ------------ | ------------ |
 | AeLookupSvc  | 應用程式體驗  | 自動 | LocalSystem |
 | AppMgmt  | 應用程式管理  | Manual | LocalSystem |

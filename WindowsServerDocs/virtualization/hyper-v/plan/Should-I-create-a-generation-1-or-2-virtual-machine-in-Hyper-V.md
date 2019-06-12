@@ -11,12 +11,12 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: e3c88ef5ee700bb3906746402bf6cc8916976800
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 95ececde8a1b8c591ea2baf367a93f63ee55a6e3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192775"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811991"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>應該在 HYPER-V 中建立 1 或 2 代虛擬機器嗎？
 
@@ -35,25 +35,25 @@ ms.locfileid: "66192775"
 
 您無法變更它建立之後，虛擬機器的世代。 因此，我們建議您檢閱的考量，以及選擇作業系統、 開機方法，以及您想要使用您選擇的產生之前的功能。  
 
-## <a name="BKMK_OS"></a>支援哪些客體作業系統？
+## <a name="which-guest-operating-systems-are-supported"></a>支援哪些客體作業系統？
 
 第 1 代虛擬機器支援大部分的客體作業系統。 第 2 代虛擬機器支援最 64 位元版本的 Windows 和 Linux 和 FreeBSD 作業系統的較新版本。 若要查看哪些虛擬機器的世代支援您想要安裝客體作業系統中使用下列各節。  
 
-- [Windows 客體作業系統支援](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Windows)  
+- [Windows 客體作業系統支援](#windows-guest-operating-system-support)  
 
-- [CentOS 和 Red Hat Enterprise Linux 客體作業系統支援](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_CentOS)  
+- [CentOS 和 Red Hat Enterprise Linux 客體作業系統支援](#centos-and-red-hat-enterprise-linux-guest-operating-system-support)  
 
-- [Debian 客體作業系統支援](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Debian)  
+- [Debian 客體作業系統支援](#debian-guest-operating-system-support)  
 
-- [FreeBSD 客體作業系統支援](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_FreeBSD)  
+- [FreeBSD 客體作業系統支援](#freebsd-guest-operating-system-support)  
 
-- [Oracle Linux 客體作業系統支援](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Oracle)  
+- [Oracle Linux 客體作業系統支援](#oracle-linux-guest-operating-system-support)  
 
-- [SUSE 客體作業系統支援](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_SUSE)  
+- [SUSE 客體作業系統支援](#suse-guest-operating-system-support)  
 
-- [Ubuntu 客體作業系統支援](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Ubuntu)  
+- [Ubuntu 客體作業系統支援](#ubuntu-guest-operating-system-support)  
 
-### <a name="BKMK_Windows"></a>Windows 客體作業系統支援
+### <a name="windows-guest-operating-system-support"></a>Windows 客體作業系統支援
 
 下表顯示哪些 64 位元版本的 Windows 可用於為客體作業系統第 1 代和第 2 代虛擬機器。  
 
@@ -79,7 +79,7 @@ ms.locfileid: "66192775"
 |Windows 8|&#10004;| &#10006;|  
 |Windows 7|&#10004;| &#10006;|  
 
-### <a name="BKMK_CentOS"></a>CentOS 和 Red Hat Enterprise Linux 客體作業系統支援
+### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>CentOS 和 Red Hat Enterprise Linux 客體作業系統支援
 
 下表顯示哪些版本的 Red Hat Enterprise Linux \(RHEL\) CentOS 可以使用，做為客體作業系統的第 1 代和第 2 代虛擬機器。
 
@@ -91,7 +91,7 @@ ms.locfileid: "66192775"
 
 如需詳細資訊，請參閱 < [CentOS 和 Red Hat Enterprise Linux 在 HYPER-V 上的虛擬機器](../Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)。  
 
-### <a name="BKMK_Debian"></a>Debian 客體作業系統支援  
+### <a name="debian-guest-operating-system-support"></a>Debian 客體作業系統支援  
 
 下表顯示的 Debian 版本有哪些可用做為客體作業系統的第 1 代和第 2 代虛擬機器。
 
@@ -102,7 +102,7 @@ ms.locfileid: "66192775"
 
 如需詳細資訊，請參閱 <<c0> [ 在 HYPER-V 上的 Debian 虛擬機器](../Supported-Debian-virtual-machines-on-Hyper-V.md)。  
 
-### <a name="BKMK_FreeBSD"></a>FreeBSD 客體作業系統支援
+### <a name="freebsd-guest-operating-system-support"></a>FreeBSD 客體作業系統支援
 
 下表顯示的 FreeBSD 版本有哪些可用做為客體作業系統的第 1 代和第 2 代虛擬機器。  
 
@@ -114,7 +114,7 @@ ms.locfileid: "66192775"
 
 如需詳細資訊，請參閱 <<c0> [ 在 HYPER-V 上的 FreeBSD 虛擬機器](../Supported-FreeBSD-virtual-machines-on-Hyper-V.md)。  
 
-### <a name="BKMK_Oracle"></a>Oracle Linux 客體作業系統支援  
+### <a name="oracle-linux-guest-operating-system-support"></a>Oracle Linux 客體作業系統支援  
 
 下表顯示哪些版本的 Red Hat 相容核心系列您可以針對第 1 代和第 2 代虛擬機器使用做為客體作業系統。  
 
@@ -133,7 +133,7 @@ ms.locfileid: "66192775"
 
 如需詳細資訊，請參閱 <<c0> [ 在 HYPER-V 上的 Oracle Linux 虛擬機器](../Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)。  
 
-### <a name="BKMK_SUSE"></a>SUSE 客體作業系統支援
+### <a name="suse-guest-operating-system-support"></a>SUSE 客體作業系統支援
 
 下表顯示的 SUSE 版本有哪些可用做為客體作業系統的第 1 代和第 2 代虛擬機器。
 
@@ -145,7 +145,7 @@ ms.locfileid: "66192775"
 
 如需詳細資訊，請參閱 < [SUSE 虛擬機器在 HYPER-V 上](../Supported-SUSE-virtual-machines-on-Hyper-V.md)。  
 
-### <a name="BKMK_Ubuntu"></a>Ubuntu 客體作業系統支援
+### <a name="ubuntu-guest-operating-system-support"></a>Ubuntu 客體作業系統支援
 
 下表顯示哪些版本的 Ubuntu 可用做為客體作業系統的第 1 代和第 2 代虛擬機器。
 
@@ -156,7 +156,7 @@ ms.locfileid: "66192775"
 
 如需詳細資訊，請參閱 < [Ubuntu 虛擬機器在 HYPER-V 上](../Supported-Ubuntu-virtual-machines-on-Hyper-V.md)。  
 
-## <a name="BKMK_Boot"></a>如何啟動虛擬機器？
+## <a name="how-can-i-boot-the-virtual-machine"></a>如何啟動虛擬機器？
 
 下表顯示哪些開機第 1 代和第 2 代虛擬機器支援的方法。  
 
@@ -168,7 +168,7 @@ ms.locfileid: "66192775"
 |從 IDE 控制器的虛擬硬碟開機 (。VHD) 或虛擬 DVD (。ISO)|&#10004;| &#10006;|  
 |從磁碟開機 (。VFD)|&#10004;| &#10006;|  
 
-## <a name="BKMK_Advantages"></a>使用第 2 代虛擬機器的優點有哪些？
+## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>使用第 2 代虛擬機器的優點有哪些？
 
 以下是一些您使用第 2 代虛擬機器時的優點：  
 - **安全開機**這是驗證開機載入器是否由 UEFI 資料庫中以協助防止未經授權的韌體、 作業系統或 UEFI 驅動程式在開機時執行的受信任授權單位簽署的功能。 第 2 代虛擬機器預設會啟用安全開機。 如果您需要執行客體作業系統不支援安全開機，您可以停用它之後建立的虛擬機器。  如需詳細資訊，請參閱[安全開機](https://technet.microsoft.com/library/dn486875.aspx)。  
@@ -177,9 +177,9 @@ ms.locfileid: "66192775"
 
 - **較大的開機磁碟區**第 2 代虛擬機器的最大的開機磁碟區為 64 TB。 這是所支援的最大磁碟大小。VHDX。 第 1 代虛擬機器，最大的開機磁碟區是針對 2 TB。VHDX 和 2040 GB。VHD。 如需詳細資訊，請參閱 < [HYPER-V Virtual Hard Disk Format Overview](https://technet.microsoft.com/library/hh831446.aspx)。  
 
- 您可能也會看到第 2 代虛擬機器的虛擬機器開機和安裝時間稍微的改善。
+  您可能也會看到第 2 代虛擬機器的虛擬機器開機和安裝時間稍微的改善。
 
-## <a name="BKMK_DeviceCompare"></a> 在 裝置支援的差異為何？
+## <a name="whats-the-difference-in-device-support"></a>在 裝置支援的差異為何？
 
 下表比較的第 1 代和第 2 代虛擬機器之間的可用的裝置。  
 
@@ -200,7 +200,7 @@ ms.locfileid: "66192775"
 |可程式化間隔計時器 (PIT)|不再需要|N/A|  
 |進階 I/O 裝置|不再需要|N/A|  
 
-## <a name="BKMK_More"></a> 深入了解第 2 代虛擬機器
+## <a name="more-about-generation-2-virtual-machines"></a>深入了解第 2 代虛擬機器
 
 以下是一些其他的秘訣，需使用第 2 代虛擬機器。
 
@@ -230,7 +230,7 @@ ms.locfileid: "66192775"
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6  
 ```  
 
-## <a name="BKMK_Debug"></a>新增的 COM 連接埠的核心偵錯
+## <a name="add-a-com-port-for-kernel-debugging"></a>新增的 COM 連接埠的核心偵錯
 
 在新增之前，COM 連接埠無法使用第 2 代虛擬機器。 您可以使用 Windows PowerShell 或 Windows Management Instrumentation (WMI) 來這樣做。 這些步驟會示範如何使用 Windows PowerShell。
 

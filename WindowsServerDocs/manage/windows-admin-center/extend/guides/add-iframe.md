@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7cf1dcec1bc8e187b6db789c5402ca8119ca8b6c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da3850b75a0e069f9153d3c66baef9f00b67d61c
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850759"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452594"
 ---
 # <a name="add-an-iframe-to-a-tool-extension"></a>新增 iFrame 至工具擴充功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "59850759"
 
 ## <a name="prepare-your-environment"></a>準備您的環境 ##
 
-如果您還沒有這麼做，請依照下列中的指示[開發工具 延伸模組](..\develop-tool.md)若要準備您的環境，並建立新的清空 [工具] 延伸模組。
+如果您還沒有這麼做，請依照下列中的指示[開發工具 延伸模組](../develop-tool.md)若要準備您的環境，並建立新的清空 [工具] 延伸模組。
 
 ## <a name="add-a-module-to-your-project"></a>將模組新增至您的專案 ##
 
@@ -47,7 +47,7 @@ Html 檔案中加入下列內容：
 </div>
 ```
 
-就這麼簡單，您已將 iFrame 加入您的延伸模組。  接下來，您可以[建置，並端負載](..\develop-tool.md#build-and-side-load-your-extension)您 Windows Admin Center，來查看結果的延伸模組。
+就這麼簡單，您已將 iFrame 加入您的延伸模組。  接下來，您可以[建置，並端負載](../develop-tool.md#build-and-side-load-your-extension)您 Windows Admin Center，來查看結果的延伸模組。
 
 > [!Note]
 > 內容安全性原則 (CSP) 設定可防止某些站台內 Windows Admin Center 的 iFrame 中轉譯。 您可以深入了解這[此處](https://content-security-policy.com/)。 

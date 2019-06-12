@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa8d556822bc6caf4277812be818a0cf456e75dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a1cca93a064cfb6e5c18f4a472ea837b922d07b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818879"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434189"
 ---
 # <a name="create-partition-extended"></a>建立擴充的磁碟分割
 
@@ -36,12 +36,12 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 ## <a name="parameters"></a>參數  
   
-|參數|描述|  
-|-------|--------|  
-|size\=<n>|指定資料分割的大小以 mb 為單位\(MB\)。 如果未指定大小，磁碟分割會繼續直到延伸磁碟分割沒有更多的可用空間。|  
-|offset\=<n>|指定的位移，以 kb 為單位\(KB\)，在建立資料分割。 如果沒有指定位移，資料分割將會啟動夠大，無法存放新的資料分割的磁碟上的可用空間的開頭。|  
-|align\=<n>|對齊最接近對齊界限的所有分割區範圍。 多半搭配硬體 RAID 邏輯單元編號\(LUN\)陣列來改善效能。 <n> 是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。|  
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|  
+|  參數  |                                                                                                                             描述                                                                                                                              |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  size\=<n>  |                                                  指定資料分割的大小以 mb 為單位\(MB\)。 如果未指定大小，磁碟分割會繼續直到延伸磁碟分割沒有更多的可用空間。                                                  |
+| offset\=<n> |                     指定的位移，以 kb 為單位\(KB\)，在建立資料分割。 如果沒有指定位移，資料分割將會啟動夠大，無法存放新的資料分割的磁碟上的可用空間的開頭。                      |
+| align\=<n>  | 對齊最接近對齊界限的所有分割區範圍。 多半搭配硬體 RAID 邏輯單元編號\(LUN\)陣列來改善效能。 <n> 是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。 |
+|    noerr    |                                 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                                 |
   
 ## <a name="remarks"></a>備註  
   

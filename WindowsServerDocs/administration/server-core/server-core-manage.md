@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 6836e5db36727294d215f7f98e0faeede55a612a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 761bfc681d7e39059884977cd99997ea9996268b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869299"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811362"
 ---
 # <a name="manage-a-server-core-server"></a>管理 Server Core 伺服器
  
@@ -61,15 +61,17 @@ ms.locfileid: "59869299"
 若要使用 MMC 嵌入式管理單元來管理 Server Core 伺服器所*不*網域成員： 
 
 1. 建立替代的認證，要用來連線的 Server Core 電腦的遠端電腦上的命令提示字元中輸入下列命令：
+1. 
    ```
    cmdkey /add:<ServerName> /user:<UserName> /pass:<password>
    ```
+
    如果您想要提示輸入密碼，請省略**傳遞/** 選項。
 
 2. 出現提示時，輸入您所指定的使用者名稱的密碼。
    如果 Server Core 伺服器上的防火牆不已設定為允許 MMC 嵌入式管理單元連線，請遵循下列步驟來設定 Windows 防火牆允許 MMC 嵌入式管理單元。 然後繼續進行步驟 3。
 3. 在不同的電腦上啟動 MMC 嵌入式管理單元，例如**電腦管理**。
-4. 在左窗格中，請在嵌入式管理單元，以滑鼠右鍵按一下，，然後按一下**連接到另一部電腦**。 (例如，在電腦管理範例中，您可以按一下滑鼠右鍵**電腦管理 （本機）**。)
+4. 在左窗格中，請在嵌入式管理單元，以滑鼠右鍵按一下，，然後按一下**連接到另一部電腦**。 (例如，在電腦管理範例中，您可以按一下滑鼠右鍵**電腦管理 （本機）** 。)
 5. 在 **另一部電腦**，輸入在 Server Core 伺服器的電腦名稱，然後按一下**確定**。 您現在可以使用 MMC 嵌入式管理單元來管理 Server Core 伺服器，如同管理執行 Windows Server 作業系統的其他任何電腦一樣。
 
 ### <a name="to-configure-windows-firewall-to-allow-mmc-snap-ins-to-connect"></a>設定 Windows 防火牆允許 MMC 嵌入式管理單元連線
@@ -120,14 +122,17 @@ cscript C:\Windows\System32\Scregedit.wsf /ar 0
 若要將硬體新增至 Server Core 伺服器，請遵循安裝新硬體的硬體廠商所提供的指示。 
 
 如果硬體不是隨插即用，您必須手動安裝驅動程式。 若要這樣做，請將驅動程式檔案複製到暫存位置的伺服器上，並接著執行下列命令：
+
 ```
 pnputil –i –a <driverinf>
 ```
+
 何處*driverinf*是驅動程式.inf 檔案的檔案名稱。
 
 顯示提示時，請重新啟動電腦。
 
 若要查看已安裝哪些驅動程式，請執行下列命令： 
+
 ```
 sc query type= driver
 ```
@@ -135,7 +140,8 @@ sc query type= driver
 > [!NOTE] 
 > 您必須在命令的等號後面加入空格，才能成功完成命令。
 
-若要停用裝置驅動程式，請執行下列命令： 
+若要停用裝置驅動程式，請執行下列命令：
+
 ```
 sc delete <service_name>
 ```

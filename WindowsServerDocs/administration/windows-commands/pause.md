@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 109d162e8d5c4bdd59871a21f16b6f568df4fbd6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e5805fcc14d6874d95ba90537d72b560229ba99b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861659"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436316"
 ---
 # <a name="pause"></a>pause
 
@@ -44,16 +44,16 @@ pause
 
 ## <a name="remarks"></a>備註
 
--   當您執行**暫停**命令時，會出現下列訊息：  
-    ```
-    Press any key to continue . . .
-    ```  
--   如果您按下 CTRL + C 來停止批次程式，就會出現下列訊息：  
-    ```
-    Terminate batch job (Y/N)?
-    ```  
-    如果您按 Y (是），以回應這個訊息，批次程式便會結束並將控制傳回至作業系統。
--   您可以插入**暫停**命令之前，您可能不想要處理的批次檔的區段。 當**暫停**暫止處理的批次程式，您可以按 CTRL + C，再按 停止批次程式 Y。
+- 當您執行**暫停**命令時，會出現下列訊息：  
+  ```
+  Press any key to continue . . .
+  ```  
+- 如果您按下 CTRL + C 來停止批次程式，就會出現下列訊息：  
+  ```
+  Terminate batch job (Y/N)?
+  ```  
+  如果您按 Y (是），以回應這個訊息，批次程式便會結束並將控制傳回至作業系統。
+- 您可以插入**暫停**命令之前，您可能不想要處理的批次檔的區段。 當**暫停**暫止處理的批次程式，您可以按 CTRL + C，再按 停止批次程式 Y。
 
 ## <a name="BKMK_examples"></a>範例
 

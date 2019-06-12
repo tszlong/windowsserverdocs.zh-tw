@@ -7,12 +7,12 @@ ms.topic: article
 author: johnmarlin-msft
 ms.date: 02/01/2019
 description: 這篇文章描述如何建立一個雙節點檔案伺服器叢集
-ms.openlocfilehash: fbfde60f60df64514a6a0f514cbabd005544af84
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f50470b379bd0ab05834eb3c5a35be0f5e9e93a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846409"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453005"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>部署兩個節點的叢集的檔案伺服器
 
@@ -28,11 +28,11 @@ ms.locfileid: "59846409"
 
 雖然任何磁碟區的儲存體中只有一部伺服器一次存取容錯移轉叢集通常會包括在實際連線到叢集中的所有伺服器的儲存體單位。 下圖顯示連接至儲存體單位的雙節點容錯移轉叢集。
 
-![兩個節點叢集](media\Cluster-File-Server\Cluster-FS-Overview.png)
+![兩個節點叢集](media/Cluster-File-Server/Cluster-FS-Overview.png)
 
 存放磁碟區或邏輯單元編號 (Lun) 公開給叢集中的節點必須不會公開至其他伺服器，包括其他叢集中的伺服器。 下圖說明這點。
 
-![在儲存體 Lun](media\Cluster-File-Server\Cluster-FS-LUNs.png)
+![在儲存體 Lun](media/Cluster-File-Server/Cluster-FS-LUNs.png)
 
 請注意，針對任何伺服器的最大的可用性，請務必遵循最佳做法來管理伺服器 — 比方說，小心管理伺服器、 測試軟體再套用之前，實體環境，並且仔細追蹤的軟體更新和所有叢集伺服器上的進行組態變更。
 
@@ -167,7 +167,7 @@ ms.locfileid: "59846409"
 
 1. 開啟**伺服器管理員**下方，並在**管理**下拉式清單中，選取**新增角色及功能**。
 
-   ![新增功能](media\Cluster-File-Server\Cluster-FS-Add-Feature.png)
+   ![新增功能](media/Cluster-File-Server/Cluster-FS-Add-Feature.png)
 
 2. 如果**在您開始之前** 視窗隨即開啟，選擇**下一步**。
 
@@ -177,11 +177,11 @@ ms.locfileid: "59846409"
 
 5. 伺服器角色，從清單中的角色，開啟**檔案服務**，選取**檔案伺服器**，並**下一步**。
 
-   ![新增角色](media\Cluster-File-Server\Cluster-FS-Add-FS-Role-1.png)
+   ![新增角色](media/Cluster-File-Server/Cluster-FS-Add-FS-Role-1.png)
 
 6. 對於功能，從清單中的功能，請選取**容錯移轉叢集**。  快顯對話方塊會顯示，列出一併安裝的系統管理工具。  保留所有所選選擇**將功能加入**並**下一步**。
 
-   ![新增功能](media\Cluster-File-Server\Cluster-FS-Add-WSFC-1.png)
+   ![新增功能](media/Cluster-File-Server/Cluster-FS-Add-WSFC-1.png)
 
 7. 在 確認 頁面中，選取 安裝。
 
@@ -191,7 +191,7 @@ ms.locfileid: "59846409"
 
 #### <a name="using-powershell"></a>使用 PowerShell
 
-1. 開啟系統管理的 PowerShell 工作階段，以滑鼠右鍵按一下 [開始] 按鈕，然後選取**Windows PowerShell (Admin)**。
+1. 開啟系統管理的 PowerShell 工作階段，以滑鼠右鍵按一下 [開始] 按鈕，然後選取**Windows PowerShell (Admin)** 。
 2. 若要安裝檔案伺服器角色，執行命令：
 
     ```PowerShell
@@ -233,7 +233,7 @@ ms.locfileid: "59846409"
 
 4. 在 [**選取伺服器或叢集**] 視窗中，增益集的兩部電腦將成為叢集的節點名稱。  例如，如果名稱是 NODE1 和 NODE2，輸入名稱並選取**新增**。  您也可以選擇**瀏覽**按鈕搜尋 Active Directory 的名稱。  一旦兩者都列在**選取伺服器**，選擇**下一步**。
 
-5. 在 [**測試選項**視窗中，選取**執行所有測試 （建議）**，並**下一步]**。
+5. 在 [**測試選項**視窗中，選取**執行所有測試 （建議）** ，並**下一步]** 。
 
 6. 在 [**確認**] 頁面上，它會提供您的清單中就會檢查的所有測試。  選擇**下一步**測試將會開始。
 
@@ -245,7 +245,7 @@ ms.locfileid: "59846409"
 
 #### <a name="using-powershell"></a>使用 PowerShell
 
-1. 開啟系統管理的 PowerShell 工作階段，以滑鼠右鍵按一下 [開始] 按鈕，然後選取**Windows PowerShell (Admin)**。
+1. 開啟系統管理的 PowerShell 工作階段，以滑鼠右鍵按一下 [開始] 按鈕，然後選取**Windows PowerShell (Admin)** 。
 
 2. 若要驗證機器 （例如，正在 NODE1 和 NODE2 機器名稱） 的容錯移轉叢集，執行命令：
 
@@ -283,7 +283,7 @@ ms.locfileid: "59846409"
 
 #### <a name="using-powershell"></a>使用 PowerShell
 
-1. 開啟系統管理的 PowerShell 工作階段，以滑鼠右鍵按一下 [開始] 按鈕，然後選取**Windows PowerShell (Admin)**。
+1. 開啟系統管理的 PowerShell 工作階段，以滑鼠右鍵按一下 [開始] 按鈕，然後選取**Windows PowerShell (Admin)** 。
 
 2. 執行下列命令來建立叢集，如果您使用靜態 IP 位址。  例如，電腦名稱為 NODE1 和 NODE2、 叢集的名稱會是叢集中，和 IP 位址會是 1.1.1.1。
 
@@ -315,7 +315,7 @@ ms.locfileid: "59846409"
 
 7. 針對檔案伺服器類型中，選取**一般用途檔案伺服器**並**下一步**。<br>向外延展檔案伺服器的相關資訊，請參閱[向外延展檔案伺服器概觀](sofs-overview.md)。
 
-   ![檔案伺服器類型](media\Cluster-File-Server\Cluster-FS-File-Server-Type.png)
+   ![檔案伺服器類型](media/Cluster-File-Server/Cluster-FS-File-Server-Type.png)
 
 8. 在 **用戶端存取點**視窗中，輸入您要使用的檔案伺服器的名稱。  請注意這不是叢集的名稱。  這是檔案共用連線。  例如，如果我想要連線到\\伺服器，則輸入的名稱會是伺服器。
 
@@ -326,7 +326,7 @@ ms.locfileid: "59846409"
 
 7. 在 **選取儲存體** 視窗中，選取其他磁碟機 （不是見證） 會保留您的共用和**下一步**。
 
-8. 在 [**確認**頁面上，確認您的設定，然後選取**下一步]**。
+8. 在 [**確認**頁面上，確認您的設定，然後選取**下一步]** 。
 
 9. 在 [**摘要**] 頁面上，它會提供您它已建立的組態。  您可以選取 [檢視報表]，請參閱檔案伺服器角色建立的報表。
 

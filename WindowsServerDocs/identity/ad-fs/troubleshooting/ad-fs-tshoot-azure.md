@@ -8,12 +8,12 @@ ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6f85c447ac0816c46e07145dbe9a491a29e17c0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 228ef34ab25276c1cf98f9b2b64e997390023c87
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846469"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444017"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS 疑難排解-Azure AD
 使用雲端的成長，很多公司都有已移至其各種應用程式和服務使用 Azure AD。  與 Azure AD 同盟，已成為許多組織的標準做法。  這份文件將涵蓋一些疑難排解問題所引發的這個同盟的層面。  有幾個一般的疑難排解文件中的主題還是屬於與 Azure 同盟，因此本文將著重於只是與 Azure AD 的詳細資訊以及 AD FS 之間的互動。
@@ -31,11 +31,11 @@ ms.locfileid: "59846469"
 
 ![](media/ad-fs-tshoot-azure/azure2.png)
 
-   2.  請務必按一下旁邊同盟網域，在 Azure 入口網站中驗證您的自訂網域。
-![](media/ad-fs-tshoot-azure/azure3.png)
+1. 請務必按一下旁邊同盟網域，在 Azure 入口網站中驗證您的自訂網域。
+   ![](media/ad-fs-tshoot-azure/azure3.png)
 
-   3. 最後，您想要檢查[DNS](ad-fs-tshoot-dns.md) ，並確定您的 AD FS 伺服器或 WAP 伺服器會從網際網路解析。  確認這個方法可以解決，且您就能夠瀏覽至它。
-   4. 您也可以使用 PowerShell cmdlt`Get-AzureADDomain`也取得這項資訊。
+2. 最後，您想要檢查[DNS](ad-fs-tshoot-dns.md) ，並確定您的 AD FS 伺服器或 WAP 伺服器會從網際網路解析。  確認這個方法可以解決，且您就能夠瀏覽至它。
+3. 您也可以使用 PowerShell cmdlt`Get-AzureADDomain`也取得這項資訊。
 
 ![](media/ad-fs-tshoot-azure/azure6.png)
 
@@ -48,14 +48,14 @@ ms.locfileid: "59846469"
 - 適用於 WS-同盟，使用的 WAUTH 查詢字串，強制慣用的驗證方法。
 
 - 針對 SAML2.0，使用下列方法：
-```
-<saml:AuthnContext>
-<saml:AuthnContextClassRef>
-urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
-</saml:AuthnContextClassRef>
-</saml:AuthnContext>
-```
-當強制執行的驗證方法會傳送不正確的值，或對 AD FS 或 STS 不支援該驗證方法，您會收到錯誤訊息之前會驗證您。
+  ```
+  <saml:AuthnContext>
+  <saml:AuthnContextClassRef>
+  urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
+  </saml:AuthnContextClassRef>
+  </saml:AuthnContext>
+  ```
+  當強制執行的驗證方法會傳送不正確的值，或對 AD FS 或 STS 不支援該驗證方法，您會收到錯誤訊息之前會驗證您。
 
 |想要的驗證方法|wauth URI|
 |-----|-----|
@@ -145,4 +145,4 @@ AD FS 使用的權杖簽署憑證來簽署權杖傳送至使用者或應用程�
 
 ## <a name="next-steps"></a>後續步驟
 
-- [疑難排解 AD FS](ad-fs-tshoot-overview.md)
+- [AD FS 疑難排解](ad-fs-tshoot-overview.md)

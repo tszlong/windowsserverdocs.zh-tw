@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffdbd6f67e4e4c32022134191deabd861bf248b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ef98a98088e345f267aa852318cee6e237604aa4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827669"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433997"
 ---
 # <a name="cscript"></a>cscript
 
@@ -30,24 +30,26 @@ ms.locfileid: "59827669"
 cscript <Scriptname.extension> [/B] [/D] [/E:<Engine>] [{/H:cscript|/H:wscript}] [/I] [/Job:<Identifier>] [{/Logo|/NoLogo}] [/S] [/T:<Seconds>] [/X] [/U] [/?] [<ScriptArguments>]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|Scriptname.extension|指定指令碼檔案的路徑和檔案名稱具有選擇性副檔名。|
-|/B|指定批次模式下，不會顯示警示、 指令碼錯誤或輸入的提示。|
-|/D|啟動偵錯工具。|
-|/ E:<Engine>|指定用來執行指令碼引擎。|
-|/H:cscript|註冊是預設指令碼主控件的 cscript.exe 來執行指令碼。|
-|/H:wscript|暫存器 wscript.exe 做為執行指令碼的預設指令碼主機。 這是預設值。|
-|/I|指定會顯示警示、 指令碼錯誤，以及輸入的提示中的互動模式。 這是預設值和相反**b**。|
-|/ 作業：<Identifier>|執行所識別的作業*識別碼*.wsf 指令碼檔案中。|
-|/ 標誌|指定指令碼執行之前，將 Windows Script Host 橫幅會顯示在主控台中。 這是預設值和相反 **/Nologo**。|
-|/Nologo|指定指令碼執行之前不會顯示 Windows Script Host 橫幅。|
-|/S|儲存目前的命令提示字元選項，為目前的使用者。|
-|/ /T:<Seconds>|指定指令碼可以執行 （以秒為單位） 的時間上限。 您可以指定 32,767 秒。 預設值是沒有時間限制。|
-|/U|指定輸入和輸出會從主控台重新導向的 Unicode。|
-|/X|在 偵錯工具中啟動指令碼。|
-|/?|顯示可用的命令參數，並提供說明使用它們。 這是與輸入相同**cscript.exe**沒有任何參數，沒有任何指令碼。|
-|ScriptArguments|指定的引數傳遞至指令碼。 每個指令碼引數必須加上斜線 (**/**)。|
+
+|      參數       |                                                                      描述                                                                       |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Scriptname.extension |                                 指定指令碼檔案的路徑和檔案名稱具有選擇性副檔名。                                 |
+|          /B          |                                指定批次模式下，不會顯示警示、 指令碼錯誤或輸入的提示。                                |
+|          /D          |                                                                  啟動偵錯工具。                                                                  |
+|     / E:<Engine>      |                                                  指定用來執行指令碼引擎。                                                  |
+|      /H:cscript      |                                         註冊是預設指令碼主控件的 cscript.exe 來執行指令碼。                                          |
+|      /H:wscript      |                               暫存器 wscript.exe 做為執行指令碼的預設指令碼主機。 這是預設值。                               |
+|          /I          |        指定會顯示警示、 指令碼錯誤，以及輸入的提示中的互動模式。 這是預設值和相反**b**。         |
+|  / 作業：<Identifier>   |                                             執行所識別的作業*識別碼*.wsf 指令碼檔案中。                                             |
+|        / 標誌         | 指定指令碼執行之前，將 Windows Script Host 橫幅會顯示在主控台中。 這是預設值和相反 **/Nologo**。 |
+|       /Nologo        |                                 指定指令碼執行之前不會顯示 Windows Script Host 橫幅。                                 |
+|          /S          |                                             儲存目前的命令提示字元選項，為目前的使用者。                                             |
+|     / /T:<Seconds>     |            指定指令碼可以執行 （以秒為單位） 的時間上限。 您可以指定 32,767 秒。 預設值是沒有時間限制。             |
+|          /U          |                                      指定輸入和輸出會從主控台重新導向的 Unicode。                                       |
+|          /X          |                                                           在 偵錯工具中啟動指令碼。                                                           |
+|          /?          |  顯示可用的命令參數，並提供說明使用它們。 這是與輸入相同**cscript.exe**沒有任何參數，沒有任何指令碼。  |
+|   ScriptArguments    |                        指定的引數傳遞至指令碼。 每個指令碼引數必須加上斜線 ( **/** )。                         |
+
 ### <a name="remarks"></a>備註
 -   執行此工作不需要具有系統管理認證。 因此，基於最佳安全做法，請考慮以不具系統管理認證的使用者身分執行此工作。
 -   若要開啟命令提示字元中，在**開始**畫面上，輸入**cmd**，然後按一下**命令提示字元**。

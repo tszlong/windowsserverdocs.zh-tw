@@ -11,12 +11,12 @@ ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/06/2016
-ms.openlocfilehash: df66f308ee7999f97fe7e57a8b52256f2561faa2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d4d9f2dd3727e196bb6893fd5041fa3f08c30796
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870229"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453185"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>從遠端管理 HYPER-V 主機與 HYPER-V 管理員
 
@@ -24,7 +24,7 @@ ms.locfileid: "59870229"
 
 這篇文章列出之支援的組合的 HYPER-V 主機和 HYPER-V 管理員版本，並說明如何連接至遠端和本機 HYPER-V 主機，因此您可以管理它們。 
 
-HYPER-V 管理員可讓您管理少量的 HYPER-V 主機、 遠端和本機。 當您安裝 HYPER-V 管理工具，您可以安裝完整透過 HYPER-V 安裝或僅限工具安裝。 僅限工具安裝表示您可以使用這些工具不符合 HYPER-V 主機的硬體需求的電腦上。 如需 HYPER-V 主機的硬體的詳細資訊，請參閱[系統需求](..\System-requirements-for-Hyper-V-on-Windows.md)。
+HYPER-V 管理員可讓您管理少量的 HYPER-V 主機、 遠端和本機。 當您安裝 HYPER-V 管理工具，您可以安裝完整透過 HYPER-V 安裝或僅限工具安裝。 僅限工具安裝表示您可以使用這些工具不符合 HYPER-V 主機的硬體需求的電腦上。 如需 HYPER-V 主機的硬體的詳細資訊，請參閱[系統需求](../System-requirements-for-Hyper-V-on-Windows.md)。
 
 如果未安裝 HYPER-V 管理員，請參閱[指示](#install-hyper-v-manager)如下。
 
@@ -59,8 +59,8 @@ HYPER-V 管理員中未列出任何裝載 HYPER-V，直到您將新增的電腦�
 
 如果您無法連線：
 
-* 很可能只有 HYPER-V 工具確認已安裝。 若要檢查已安裝的 HYPER-V 平台，請尋找虛擬機器管理服務。 \(開啟服務的傳統型應用程式： 按一下**開始**，按一下**開始搜尋**方塊中，輸入**services.msc**，然後按**Enter**。 如果未列出的虛擬機器管理服務，請依照下列中的指示安裝 HYPER-V 平台[安裝 Hyper-v 角色](..\get-started\Install-the-Hyper-V-role-on-Windows-Server.md)。\)
-* 請確認您的硬體符合需求。 請參閱[系統需求](..\System-requirements-for-Hyper-V-on-Windows.md)。
+* 很可能只有 HYPER-V 工具確認已安裝。 若要檢查已安裝的 HYPER-V 平台，請尋找虛擬機器管理服務。 / (開啟服務的傳統型應用程式： 按一下**開始**，按一下**開始搜尋**方塊中，輸入**services.msc**，然後按**Enter**。 如果未列出的虛擬機器管理服務，請依照下列中的指示安裝 HYPER-V 平台[安裝 Hyper-v 角色](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。
+* 請確認您的硬體符合需求。 請參閱[系統需求](../System-requirements-for-Hyper-V-on-Windows.md)。
 * 請檢查您的使用者帳戶屬於 Administrators 群組或 HYPER-V Administrators 群組。
 
 ## <a name="manage-hyper-v-hosts-remotely"></a>從遠端管理 HYPER-V 主機  
@@ -171,5 +171,5 @@ add-windowsfeature rsat-hyper-v-tools
 
 ## <a name="see-also"></a>另請參閱  
  
-[安裝 Hyper-V](..\get-started\Install-the-Hyper-V-role-on-Windows-Server.md) 
+[安裝 Hyper-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md) 
 

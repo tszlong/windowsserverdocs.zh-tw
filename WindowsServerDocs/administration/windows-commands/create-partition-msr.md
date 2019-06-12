@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79288fe90d037659f5e3934f1925dd8b7c21ad7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3fa9ba46418c3ed3b7999a734b4c0df40dce5027
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873429"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434171"
 ---
 # <a name="create-partition-msr"></a>建立 msr 磁碟分割
 
@@ -39,11 +39,11 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
   
 ## <a name="parameters"></a>參數  
   
-|參數|描述|  
-|-------|--------|  
-|size\=<n>|以 mb 為單位的磁碟分割的大小\(MB\)。 指定的數字為至少長度以位元組為單位的磁碟分割<n>。 如果未指定大小，磁碟分割會繼續，直到目前的區域中沒有更多的可用空間。|  
-|offset\=<n>|指定的位移，以 kb 為單位\(KB\)，在建立資料分割。 位移會以完全填滿磁區的大小會無條件進位。 如果沒有指定位移，資料分割會置於足夠容納它的第一個磁碟範圍內。|  
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|  
+|  參數  |                                                                                                                         描述                                                                                                                         |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  size\=<n>  |               以 mb 為單位的磁碟分割的大小\(MB\)。 指定的數字為至少長度以位元組為單位的磁碟分割<n>。 如果未指定大小，磁碟分割會繼續，直到目前的區域中沒有更多的可用空間。               |
+| offset\=<n> | 指定的位移，以 kb 為單位\(KB\)，在建立資料分割。 位移會以完全填滿磁區的大小會無條件進位。 如果沒有指定位移，資料分割會置於足夠容納它的第一個磁碟範圍內。 |
+|    noerr    |                            針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                             |
   
 ## <a name="remarks"></a>備註  
   

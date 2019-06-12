@@ -12,12 +12,12 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 72fe309e0e7ce6d7227cce8b7f2c5dbf018eb4a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1adf8ae2dd8763d0bc5a514609bb2470de6acde4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813089"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436076"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦監視問題疑難排解
 
@@ -36,13 +36,13 @@ ms.locfileid: "59813089"
   
  **原因** 這個錯誤可能是因為警示通知的設定中有下列問題：  
   
--   不正確的 SMTP 伺服器名稱或連接埠號碼。  
+- 不正確的 SMTP 伺服器名稱或連接埠號碼。  
   
--   不正確指定 SMTP 伺服器需要單一通訊端層 (SSL) 連線。  
+- 不正確指定 SMTP 伺服器需要單一通訊端層 (SSL) 連線。  
   
--   SMTP 伺服器需要驗證，但卻輸入不正確的認證。  
+- SMTP 伺服器需要驗證，但卻輸入不正確的認證。  
   
- **解決方式** 修正電子郵件通知設定中的任何錯誤。  
+  **解決方式** 修正電子郵件通知設定中的任何錯誤。  
   
 ##### <a name="to-identify-issues-in-your-email-notification-settings"></a>找出電子郵件通知設定的問題  
   
@@ -53,19 +53,19 @@ ms.locfileid: "59813089"
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  若要查看 [ProgramData] 資料夾，您必須顯示隱藏的項目。 如果您不要看到 [ProgramData] 資料夾中，在功能區 s**檢視**索引標籤中，於**顯示/隱藏**群組中，選取**隱藏的項目**文字方塊。  
+    >  若要查看 [ProgramData] 資料夾，您必須顯示隱藏的項目。 如果您沒有看到 [ProgramData] 資料夾中，在功能區上**檢視**索引標籤中，於**顯示/隱藏**群組中，選取**隱藏的項目**文字方塊。  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>更新警示的電子郵件通知設定  
   
 1.  在儀表板上，按一下右上角的任何警示圖示以開啟警示檢視器。  
   
-2.  在警示檢視器底部，按一下 [設定警示的電子郵件通知] 。  
+2.  在警示檢視器底部，按一下 [設定警示的電子郵件通知]  。  
   
-3.  在 [設定警示的電子郵件通知] 對話方塊中，按一下 [啟用]。  
+3.  在 [設定警示的電子郵件通知]  對話方塊中，按一下 [啟用]  。  
   
-4.  在 [SMTP 設定] 對話方塊中，更新 SMTP 設定，然後按一下 [確定]。  
+4.  在 [SMTP 設定]  對話方塊中，更新 SMTP 設定，然後按一下 [確定]  。  
   
-5.  若要測試更新的設定，請按一下 [套用及傳送電子郵件] 。  
+5.  若要測試更新的設定，請按一下 [套用及傳送電子郵件]  。  
   
 6.  確認測試電子郵件已成功後，按一下 [確定]  以儲存更新的設定。  
   
@@ -74,7 +74,7 @@ ms.locfileid: "59813089"
   
  **解決方式** 警示檢視器中並非所有警示都會產生電子郵件通知。 只有在其健康定義檔內設定為以電子郵件通知呈報的警示，才會以電子郵件傳送給指定的電子郵件收件者。  
   
- 當您按一下 [套用及傳送電子郵件] 時，通常您會收到沒有列出任何健康情況警示的範例電子郵件通知。 不過，如果此測試程序期間已確認有設定為傳送電子郵件通知的健康警示，測試電子郵件中就會包含該警示。  
+ 當您按一下 [套用及傳送電子郵件]  時，通常您會收到沒有列出任何健康情況警示的範例電子郵件通知。 不過，如果此測試程序期間已確認有設定為傳送電子郵件通知的健康警示，測試電子郵件中就會包含該警示。  
   
 ### <a name="active-alerts-are-displayed-for-an-uninstalled-application"></a>已解除安裝的應用程式顯示作用中警示  
  **問題** 即使應用程式及其健康定義檔已解除安裝，仍然會顯示應用程式的作用中警示。  
@@ -87,4 +87,4 @@ ms.locfileid: "59813089"
   
 2.  在瀏覽窗格中，按一下任何顯示的警示圖示 (嚴重、警告或資訊)。 這會啟動警示檢視器。  
   
-3.  在 [警示檢視器] 中，以滑鼠右鍵按一下您想要刪除的警示，然後按一下 [刪除此警示]。
+3.  在 [警示檢視器] 中，以滑鼠右鍵按一下您想要刪除的警示，然後按一下 [刪除此警示]  。

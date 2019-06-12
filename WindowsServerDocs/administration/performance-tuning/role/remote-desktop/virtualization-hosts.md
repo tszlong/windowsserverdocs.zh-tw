@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0aa359644f5e9bf85f4e013e6571276716ed0218
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: da528a742a7f49513c50b22a25970d65b9e1885f
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266618"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811379"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>效能微調遠端桌面虛擬化主機
 
@@ -23,11 +23,11 @@ Windows Server 2016 支援兩種類型的虛擬桌面、 個人虛擬桌面和�
 
 **本主題內容：**
 
--   [一般考量](#general)
+-   [一般考量](#general-considerations)
 
--   [效能最佳化](#perfopt)
+-   [效能最佳化](#performance-optimizations)
 
-## <a href="" id="general"></a>一般考量
+## <a name="general-considerations"></a>一般考量
 
 
 ### <a name="storage"></a>儲存體
@@ -46,7 +46,7 @@ Windows Server 2012 R2 中引入，重複資料刪除支援開啟檔案的最佳
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
-> [!Note]
+> [!NOTE]
 > 開啟檔案的資料重複資料刪除最佳化僅支援 VDI 案例與 HYPER-V 透過 SMB 3.0 使用遠端存放裝置。
 
 ### <a name="memory"></a>記憶體
@@ -175,8 +175,7 @@ Hypervisor 會排程在已啟用 RemoteFX 的伺服器和虛擬 GPU 的虛擬桌
 
 除了 RemoteFX 虛擬 GPU 效能計數器，您也可以使用處理序總管 中，它會顯示視訊記憶體使用量和 GPU 使用率測量 GPU 使用率。
 
-## <a href="" id="perfopt"></a>效能最佳化
-
+## <a name="performance-optimizations"></a>效能最佳化
 
 ### <a name="dynamic-memory"></a>動態記憶體
 
@@ -220,13 +219,11 @@ RD 虛擬主機支援虛擬桌面集區的分層式儲存體。 由集合內的�
 | 家用群組提供者                          | 取用者中心服務                                                                                                                                                                                  |
 | 網際網路連線共用                  | 取用者中心服務                                                                                                                                                                                  |
 | Media Center 擴充服務               | 取用者中心服務                                                                                                                                                                                  |
+> [!NOTE]
+> 這份清單不是用來完整的清單，因為任何變更都會影響預期的目標和案例。 如需詳細資訊，請參閱 <<c0> [ 經常性關閉按下動作立即取得，Windows 8 VDI 最佳化指令碼，延長的 PFE ！](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
 
- 
+ 
+> [!NOTE]
+> 預設會啟用 Windows 8 中的 superFetch。 它是 VDI 感知，而且不應該停用。 SuperFetch 可以進一步降低記憶體耗用量透過頁面的共用記憶體，也就是有幫助的 VDI。 執行 Windows 7 的集區虛擬桌面，SuperFetch 應該停用，但適用於執行 Windows 7 的個人虛擬桌面，則應保留在。
 
-**附註**  這份清單並非完整的清單，因為任何變更都會影響預期的目標和案例。 如需詳細資訊，請參閱 <<c0> [ 經常性關閉按下動作立即取得，Windows 8 VDI 最佳化指令碼，延長的 PFE ！](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
-
- 
-
-**附註**   SuperFetch Windows 8 中的預設會啟用。 它是 VDI 感知，而且不應該停用。 SuperFetch 可以進一步降低記憶體耗用量透過頁面的共用記憶體，也就是有幫助的 VDI。 執行 Windows 7 的集區虛擬桌面，SuperFetch 應該停用，但適用於執行 Windows 7 的個人虛擬桌面，則應保留在。
-
- 
+ 

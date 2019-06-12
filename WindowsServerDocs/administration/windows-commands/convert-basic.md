@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a5aef930689e809b9b697e5f428177610ff723b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: df1f999499154366304d59e0573ba921ab1af83d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862399"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434247"
 ---
 # <a name="convert-basic"></a>convert basic
 
@@ -44,7 +44,7 @@ convert basic [noerr]
 
 > [!IMPORTANT]
 > 磁碟必須是空的才能將它轉換成基本磁碟。 備份您的資料，然後再刪除轉換磁碟之前的 所有資料分割或磁碟區。
--   這項作業成功時，必須選取動態磁碟。 使用**選取磁碟**命令來選取動態磁碟，並將焦點移到它。
+> -   這項作業成功時，必須選取動態磁碟。 使用**選取磁碟**命令來選取動態磁碟，並將焦點移到它。
 
 ## <a name="BKMK_examples"></a>範例
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09b2ffabcea414dd4717a2ffa1f6e860a17f3653
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2ac602506960b92333750e7a37692c44c92aae22
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871699"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440272"
 ---
 # <a name="wbadmin-start-backup"></a>Wbadmin start backup
 
@@ -87,25 +87,25 @@ Wbadmin start backup
 下列範例會顯示如何**wbadmin start backup**命令可用於不同的備份案例：
 
 案例 #1
--   建立備份的磁碟區 e:、 d:\mountpoint，並\\ \\？ \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
--   將備份儲存到磁碟區 f:
-```
-wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-```
-案例 #2
--   執行一次性的備份*f:\folder1*並*h:\folder2*到磁碟區*d:*。
--   備份系統狀態
--   請複製備份，以便正常排程差異備份不會受到影響。
-```
-wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
-```
-案例 #3
--   執行一次性的備份*d:\folder1* ，應該備份非遞迴的方式。
--   備份至網路位置的資料夾 *\\ \\backupshare\backup1*
--   限制存取權的成員備份**系統管理員**或是**Backup Operators**群組。
-```
-wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
-```
+- 建立備份的磁碟區 e:、 d:\mountpoint，並\\ \\？ \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
+- 將備份儲存到磁碟區 f:
+  ```
+  wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+  ```
+  案例 #2
+- 執行一次性的備份*f:\folder1*並*h:\folder2*到磁碟區*d:* 。
+- 備份系統狀態
+- 請複製備份，以便正常排程差異備份不會受到影響。
+  ```
+  wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
+  ```
+  案例 #3
+- 執行一次性的備份*d:\folder1* ，應該備份非遞迴的方式。
+- 備份至網路位置的資料夾 *\\ \\backupshare\backup1*
+- 限制存取權的成員備份**系統管理員**或是**Backup Operators**群組。
+  ```
+  wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
+  ```
 
 #### <a name="additional-references"></a>其他參考資料
 

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ed5ecddbaef91f127846825e408a9a6ec65ff741
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 268a7d2833f73e9fab006501e9b3dc261d1b1d9e
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825469"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452571"
 ---
 # <a name="develop-a-solution-extension"></a>開發解決方案擴充功能
 
@@ -71,10 +71,10 @@ npm install
 
 既然您已使用 Windows Admin Center CLI 來建立擴充功能，您準備自訂內容。  如需範例，您可以執行的動作，請參閱這些指南：
 
-- 新增[空的模組](guides\add-module.md)
-- 新增[iFrame](guides\add-iframe.md)
-- 建立[自訂連接提供者](guides\create-connection-provider.md)
-- 修改[根導覽行為](guides\modify-root-navigation.md)
+- 新增[空的模組](guides/add-module.md)
+- 新增[iFrame](guides/add-iframe.md)
+- 建立[自訂連接提供者](guides/create-connection-provider.md)
+- 修改[根導覽行為](guides/modify-root-navigation.md)
  
 可以找到更多範例我們[GitHub SDK 網站](https://aka.ms/wacsdk):
 -  [開發人員工具](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)是全功能的延伸模組可以側載到 Windows Admin Center，並包含豐富的功能和工具範例，您可以瀏覽，並使用您自己的延伸模組中的集合。

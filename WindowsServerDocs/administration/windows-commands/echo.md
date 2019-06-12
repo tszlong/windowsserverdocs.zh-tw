@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eb5c9650b95703f1316e6f5f179b910d22574f68
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: bfe6c936ee5606e286aab076bea08db04b8b6500
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222959"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811171"
 ---
 # <a name="echo"></a>echo
 
@@ -49,15 +49,18 @@ echo [on | off]
 -   當**echo**已關閉，不會顯示命令提示字元中，這是在命令提示字元視窗。 若要顯示命令提示字元中，輸入**上回應。**
 -   如果在批次檔中使用**上回應**並**關閉回應**不會影響在命令提示字元設定。
 -   若要避免回應特定的命令批次檔中，插入 at 符號 (@) 前面的命令。 若要避免回應的批次檔中的所有命令，包括**echo off**命令在檔案開頭。
--   若要顯示的管道 ( **|** ) 或重新導向字元 (**<** 或是**>**) 當您使用**echo**，使用管道或重新導向字元正前方的插入號 (^) (例如**^|**， **^>**，或 **^<** ). 若要顯示插入號，請連續輸入兩個插入號 ( **^^** )。
+-   若要顯示的管道 ( **|** ) 或重新導向字元 ( **<** 或是 **>** ) 當您使用**echo**，使用管道或重新導向字元正前方的插入號 (^) (例如 **^|** ， **^>** ，或 **^<** ). 若要顯示插入號，請連續輸入兩個插入號 ( **^^** )。
 
 ## <a name="examples"></a>範例
 
 若要顯示目前**echo**設定中，輸入：
+
 ```
 echo
 ```
+
 若要回應在螢幕上的空白列，輸入：
+
 ```
 echo.
 ```
@@ -66,6 +69,7 @@ echo.
 > 請勿句點的前面加上空格。 否則，期間將會顯示而不是空白的行。
 
 若要避免回應命令在命令提示字元中，輸入：
+
 ```
 echo off 
 ```
@@ -74,14 +78,19 @@ echo off
 > 當**echo**已關閉，不會顯示命令提示字元中，這是在命令提示字元視窗。 若要再次顯示命令提示字元中，輸入**回應上**。
 
 若要避免的批次檔中的所有命令 (包括**關閉回應**命令) 無法顯示在畫面上，在第一行的批次檔案類型：
+
 ```
 @echo off
 ```
+
 您可以使用**echo**命令的一部分**如果**陳述式。 例如，若要搜尋目前目錄.rpt 副檔名，以及回應訊息的任何檔案，如果找到這類檔案，請輸入：
+
 ```
 if exist *.rpt echo The report has arrived.
 ```
+
 下列批次檔會搜尋目前目錄的檔案副檔名為.txt 的檔案名稱，並顯示訊息，指出搜尋的結果：
+
 ```
 @echo off
 if not exist *.txt (
@@ -92,11 +101,15 @@ echo This directory contains no text files.
    dir /b *.txt
    )
 ```
+
 如果不找到任何.txt 檔案的批次檔執行時，會顯示下列訊息：
+
 ```
 This directory contains no text files.
 ```
+
 如果.txt 檔案找不到批次檔執行時，會顯示下列輸出 （在此範例中，假設 File1.txt、 File2.txt 和 File3.txt 存在的檔案）：
+
 ```
 This directory contains the following text files:
 File1.txt

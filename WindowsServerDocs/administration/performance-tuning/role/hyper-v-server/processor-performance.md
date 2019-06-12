@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a49fdaba89a01c8daf6483f72dbc88daa91452b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f16ee9cff9c244a8c579e008bced1e90b1a20673
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843239"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435596"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper V 處理器效能
 
@@ -69,20 +69,20 @@ Microsoft SQL Server 是 NUMA 感知應用程式的範例。 如需詳細資訊�
 
 如需虛擬 NUMA 的詳細資訊，請參閱[HYPER-V 虛擬 NUMA 概觀](https://technet.microsoft.com/library/dn282282.aspx)。
 
-##<a name="see-also"></a>另請參閱
+## <a name="see-also"></a>另請參閱
 
--   [HYPER-V 術語](terminology.md)
+-   [Hyper-V 術語](terminology.md)
 
--   [HYPER-V 架構](architecture.md)
+-   [Hyper-V 架構](architecture.md)
 
--   [HYPER-V 伺服器組態](configuration.md)
+-   [Hyper-V 伺服器設定](configuration.md)
 
--   [HYPER-V 記憶體效能](memory-performance.md)
+-   [Hyper-V 記憶體效能](memory-performance.md)
 
--   [HYPER-V 存放裝置 I/O 效能](storage-io-performance.md)
+-   [Hyper-V 存放裝置 I/O 效能](storage-io-performance.md)
 
--   [HYPER-V 網路 I/O 效能](network-io-performance.md)
+-   [Hyper-V 網路 I/O 效能](network-io-performance.md)
 
--   [虛擬化環境中偵測瓶頸](detecting-virtualized-environment-bottlenecks.md)
+-   [偵測虛擬化環境中的瓶頸](detecting-virtualized-environment-bottlenecks.md)
 
 -   [Linux 虛擬機器](linux-virtual-machine-considerations.md)

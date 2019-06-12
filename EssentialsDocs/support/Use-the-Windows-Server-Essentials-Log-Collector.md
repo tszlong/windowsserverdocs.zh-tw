@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d003c6a45159548f7e34d86ca242f74868659d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ba5c0de9d8689c63c95ea3410a74fc9a7289aeab
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877989"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435997"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 記錄檔收集器
 
@@ -28,9 +28,9 @@ ms.locfileid: "59877989"
  記錄檔收集器會將程式記錄檔、事件檢閱者記錄檔及相關的環境資訊，複製到指定位置的單一 zip 檔案中。 您可直接從伺服器或網路上的任一部電腦執行記錄檔收集器，也可使用與電腦的遠端連線。  
   
 > [!NOTE]
->  -   記錄檔收集器不會分析網路問題，或對任何伺服器或網路上的電腦進行變更。 如需有關如何疑難排解網路問題的資訊，請參閱您的伺服器產品的說明文件。  
-> -   在本指南中，您的網路，而不是您的伺服器上的電腦稱為網路電腦。  
-> -   [下載 Windows Server Essentials 記錄檔收集器安裝套件](https://go.microsoft.com/fwlink/?LinkID=266341)。  
+> - 記錄檔收集器不會分析網路問題，或對任何伺服器或網路上的電腦進行變更。 如需有關如何疑難排解網路問題的資訊，請參閱您的伺服器產品的說明文件。  
+>   -   在本指南中，您的網路，而不是您的伺服器上的電腦稱為網路電腦。  
+>   -   [下載 Windows Server Essentials 記錄檔收集器安裝套件](https://go.microsoft.com/fwlink/?LinkID=266341)。  
   
  如果要安裝並執行記錄檔收集器，請執行下列主題中的步驟：  
   

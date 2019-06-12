@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c4a91dd3822cf4d8dd904f473f146a2f0ee54c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21ced4a9ef0dd7dac5f6c4fc6f171d99fa516c07
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840159"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440317"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -37,15 +37,15 @@ waitfor [/t <Timeout>] <SignalName>
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|/s\<電腦 >|指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。 此參數適用於所有檔案和命令中指定的資料夾。|
-|/u [\<網域 >\]<User>|執行指令碼，使用指定的使用者帳戶的認證。 根據預設， **waitfor**會使用目前使用者的認證。|
-|/p [\<Password>]|指定在指定的使用者帳戶的密碼 **/u**參數。|
-|/si|透過網路傳送指定的訊號。|
-|/t \<Timeout>|指定等待訊號的秒數。 根據預設， **waitfor**會無限期等待。|
-|\<SignalName>|指定的訊號， **waitfor**等候，或傳送。 *SignalName*不區分大小寫。|
-|/?|在命令提示字元顯示說明。|
+|       參數       |                                                                                         描述                                                                                          |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /s\<電腦 >     | 指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。 此參數適用於所有檔案和命令中指定的資料夾。 |
+| /u [\<網域 >\]<User> |                              執行指令碼，使用指定的使用者帳戶的認證。 根據預設， **waitfor**會使用目前使用者的認證。                               |
+|   /p [\<Password>]    |                                                    指定在指定的使用者帳戶的密碼 **/u**參數。                                                     |
+|          /si          |                                                                        透過網路傳送指定的訊號。                                                                        |
+|     /t \<Timeout>     |                                              指定等待訊號的秒數。 根據預設， **waitfor**會無限期等待。                                               |
+|     \<SignalName>     |                                                指定的訊號， **waitfor**等候，或傳送。 *SignalName*不區分大小寫。                                                 |
+|          /?           |                                                                             在命令提示字元顯示說明。                                                                             |
 
 ## <a name="remarks"></a>備註
 

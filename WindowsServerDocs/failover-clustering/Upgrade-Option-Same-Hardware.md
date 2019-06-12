@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 02/28/2019
 description: 本文說明升級 2 個節點容錯移轉叢集使用相同的硬體
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bfeb05c8cbc205745dc16bc7ef04052481668ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 77cde9e64fda385facd91d86483f4d7f749f30a1
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854829"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453047"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>升級的相同硬體上的容錯移轉叢集
 
@@ -29,7 +29,7 @@ ms.locfileid: "59854829"
 
 之前的容錯移轉叢集升級程序，請參閱[Windows 升級中心](https://www.microsoft.com/upgradecenter)。  當您 Windows Server 就地升級時，您會將從現有的作業系統版本較新的版本，但仍使用相同硬體上。 升級的就地至少一個和有時候這兩個版本開始，可以是 Windows Server。 例如，可以升級 Windows Server 2012 R2 和 Windows Server 2016 就地升級到 Windows Server 2019。  也請記住[叢集移轉精靈](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/)可用，但僅適用於最多傳回兩個版本。 下圖顯示適用於 Windows Server 的升級路徑。 指標的向下箭號代表移動到 Windows Server 2019 的較舊版本的支援升級路徑。
 
-![就地升級的圖表](media\In-Place-Upgrade\In-Place-Upgrade-1.png)
+![就地升級的圖表](media/In-Place-Upgrade/In-Place-Upgrade-1.png)
 
 下列步驟是要使用的相同硬體的 Windows Server 2019 從 Windows Server 2012 容錯移轉叢集伺服器的範例。  
 
@@ -41,11 +41,11 @@ ms.locfileid: "59854829"
 
 1. 在 [容錯移轉叢集管理員] 中，會耗盡所有資源 NODE1 到 NODE2 由以滑鼠右鍵按一下節點並選取**暫停**並**都清空角色**。  或者，您可以使用 PowerShell 命令[SUSPEND-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)。
 
-    ![清空節點](media\In-Place-Upgrade\In-Place-Upgrade-2.png)
+    ![清空節點](media/In-Place-Upgrade/In-Place-Upgrade-2.png)
 
 2. 收回叢集以滑鼠右鍵按一下節點，然後選取從 NODE1**其他動作**並**收回**。  或者，您可以使用 PowerShell 命令[移除節點](https://docs.microsoft.com/powershell/module/failoverclusters/remove-clusternode)。
 
-    ![清空節點](media\In-Place-Upgrade\In-Place-Upgrade-3.png)
+    ![清空節點](media/In-Place-Upgrade/In-Place-Upgrade-3.png)
 
 3. 為求安全起見，您可以從您使用的儲存體中斷連結 NODE1。  在某些情況下，存放裝置纜線中斷連線的電腦就夠了。  洽詢正確中斷連結步驟視存放裝置廠商。  根據您的儲存體，這可能不需要。
 
@@ -53,11 +53,11 @@ ms.locfileid: "59854829"
 
 5. 建立新的叢集，稱為 CLUSTER1 與 NODE1。  開啟 [容錯移轉叢集管理員] 並在**管理**窗格中，選擇**建立叢集**並遵循精靈中的指示。
 
-    ![清空節點](media\In-Place-Upgrade\In-Place-Upgrade-4.png)
+    ![清空節點](media/In-Place-Upgrade/In-Place-Upgrade-4.png)
 
 6. 叢集建立之後，必須從原始的叢集移轉到這個新的叢集角色。  在新叢集上，以滑鼠右鍵滑鼠按一下叢集名稱 (CLUSTER1)，然後選取**其他動作**並**複製叢集角色**。  遵循精靈來移轉角色。
 
-    ![清空節點](media\In-Place-Upgrade\In-Place-Upgrade-5.png)
+    ![清空節點](media/In-Place-Upgrade/In-Place-Upgrade-5.png)
 
 7.  已移轉的所有資源，一旦關閉 NODE2 （原始叢集），並中斷連線的儲存體，以便不會造成任何干擾。  將存放裝置連線到 NODE1。  所有連接之後，讓所有的資源上線，並確定運作應該如此。
 
@@ -73,9 +73,9 @@ ms.locfileid: "59854829"
    
    b. 在 **一般**索引標籤上，重新命名為叢集的叢集。
 
-   c.  在選擇 [確定] 或 [套用] 時，您會看到以下快顯對話方塊。
+   c. 在選擇 [確定] 或 [套用] 時，您會看到以下快顯對話方塊。
 
-    ![清空節點](media\In-Place-Upgrade\In-Place-Upgrade-6.png)
+    ![清空節點](media/In-Place-Upgrade/In-Place-Upgrade-6.png)
 
     d. 叢集服務會停止，且必須重新啟動以完成重新命名。
 

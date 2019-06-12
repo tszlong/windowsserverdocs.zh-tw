@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 7aa09636f8c23678f003bfa5ebf8be164e7fc683
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53b72459d497ac5d079336c2a00ba65634b2e3a6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879519"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436331"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -43,12 +43,12 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 需要初步的準備。 之前使用此命令時，您必須完成下列工作：
 
-1.  建立您想要安裝的驅動程式的目錄。 例如，建立的資料夾**C:\Drivers\Video**視訊卡驅動程式。
-2.  下載並解壓縮您的裝置驅動程式套件。 將包含您的作業系統版本的 INF 檔案的子資料夾和任何子資料夾的內容複製到您所建立的視訊資料夾中。 例如，視訊驅動程式將檔案複製到 C:\Drivers\Video。
-3.  例如，在步驟 1.建立的資料夾中加入系統環境路徑變數**C:\Drivers\Video**。
-4.  建立下列登錄機碼，然後針對**DriverPaths**設定在建立時，金鑰**數值資料**來**1**。
--   針對 Windows® 7 瀏覽登錄路徑: **HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion\**，然後再建立索引鍵: **UnattendSettings\PnPUnattend\DriverPaths\**
--   Windows vista 中，瀏覽至以下登錄路徑: **HK_LM\Software\Microsoft\Windows NT\CurrentVersion\**，然後再建立索引鍵 = **\UnattendSettings\PnPUnattend\DriverPaths**.
+1. 建立您想要安裝的驅動程式的目錄。 例如，建立的資料夾**C:\Drivers\Video**視訊卡驅動程式。
+2. 下載並解壓縮您的裝置驅動程式套件。 將包含您的作業系統版本的 INF 檔案的子資料夾和任何子資料夾的內容複製到您所建立的視訊資料夾中。 例如，視訊驅動程式將檔案複製到 C:\Drivers\Video。
+3. 例如，在步驟 1.建立的資料夾中加入系統環境路徑變數**C:\Drivers\Video**。
+4. 建立下列登錄機碼，然後針對**DriverPaths**設定在建立時，金鑰**數值資料**來**1**。
+5. 針對 Windows® 7 瀏覽登錄路徑：**HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion\\** ，然後再建立索引鍵：**UnattendSettings\PnPUnattend\DriverPaths\\**
+6. Windows vista 中，瀏覽至以下登錄路徑：**HK_LM\Software\Microsoft\Windows NT\CurrentVersion\\** ，然後再建立索引鍵 = **\UnattendSettings\PnPUnattend\DriverPaths**。
 
 ## <a name="examples"></a>範例
 

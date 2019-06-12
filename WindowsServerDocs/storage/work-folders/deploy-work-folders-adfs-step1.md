@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: a26b784c18049ee473a191abc7bfa0a5d253d15e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4f4119e893b215bd9f6d713bc5a17218b751c3d3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883029"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812689"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 1，設定 AD FS
 
@@ -32,7 +32,7 @@ ms.locfileid: "59883029"
 -   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 5 中設定用戶端](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   本節中涵蓋的指示僅適用於 Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx)。
+>   涵蓋在本節中的指示是針對 Windows Server 2019 或 Windows Server 2016 的環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx)。
 
 若要設定 AD FS 以搭配使用工作資料夾，請使用下列程序。  
   
@@ -109,13 +109,13 @@ Workplace Join 需要 enterpriseregistration SAN。
 ## <a name="install-the-ad-fs-role-service"></a>安裝 AD FS 角色服務  
 若要安裝，請依照下列步驟執行：  
   
-1.  登入您打算安裝 AD FS 的實體或虛擬機器，開啟 **\[伺服器管理員\]**，然後啟動 \[新增角色及功能精靈\]。  
+1.  登入您打算安裝 AD FS 的實體或虛擬機器，開啟 **\[伺服器管理員\]** ，然後啟動 \[新增角色及功能精靈\]。  
   
-2.  在 **\[伺服器角色\]** 頁面上，選取 **\[Active Directory 同盟服務\]**，然後按 **\[下一步\]**。  
+2.  在 **\[伺服器角色\]** 頁面上，選取 **\[Active Directory 同盟服務\]** ，然後按 **\[下一步\]** 。  
   
-3.  在 **\[Active Directory 同盟服務 (AD FS)** \] 頁面上，您會看到一則訊息表示 Web 應用程式 Proxy 角色無法安裝在與 AD FS 同一部電腦上。 按一下 [下一步] 。  
+3.  在 **\[Active Directory 同盟服務 (AD FS)** \] 頁面上，您會看到一則訊息表示 Web 應用程式 Proxy 角色無法安裝在與 AD FS 同一部電腦上。 按一下 [下一步]  。  
   
-4.  在確認頁面上，按一下 **\[安裝\]**。  
+4.  在確認頁面上，按一下 **\[安裝\]** 。  
   
 若要透過 Windows PowerShell 完成相同安裝的 AD FS，請使用下列命令︰  
   
@@ -132,29 +132,29 @@ Add-WindowsFeature ADFS-Federation –IncludeManagementTools
   
 1.  開啟伺服器管理員。  
   
-2.  在 \[伺服器管理員\] 視窗上方，按一下 **\[通知\]** 旗標，然後按一下 **\[設定此伺服器上的 Federation Service\]**。  
+2.  在 \[伺服器管理員\] 視窗上方，按一下 **\[通知\]** 旗標，然後按一下 **\[設定此伺服器上的 Federation Service\]** 。  
   
-3.  \[Active Directory 同盟服務設定精靈\] 隨即啟動。 在 **\[連線到 AD DS\]** 頁面上，輸入您想要用作 AD FS 帳戶的網域管理員帳戶，然後按 **\[下一步\]**。  
+3.  \[Active Directory 同盟服務設定精靈\] 隨即啟動。 在 **\[連線到 AD DS\]** 頁面上，輸入您想要用作 AD FS 帳戶的網域管理員帳戶，然後按 **\[下一步\]** 。  
   
 4.  在 **\[指定服務內容\]** 頁面上，輸入 SSL 憑證的主體名稱，以用於 AD FS 通訊。 在測驗範例中，這是 **blueadfs.contoso.com**。  
   
-5.  輸入同盟服務名稱。 在測驗範例中，這是 **blueadfs.contoso.com**。 按一下 [下一步] 。  
+5.  輸入同盟服務名稱。 在測驗範例中，這是 **blueadfs.contoso.com**。 按一下 [下一步]  。  
   
     > [!NOTE]  
     > 同盟服務名稱不得使用環境中現有伺服器的名稱。 如果您使用現有伺服器的名稱，AD FS 安裝就會失敗且必須重新開始。  
   
-6.  在 **\[指定服務帳戶\]** 頁面上，輸入您想要用於受管理服務帳戶的名稱。 對於測試範例，選取 **\[建立群組受管理的服務帳戶\]**，並在 **\[帳戶名稱\]** 中輸入 **ADFSService**。 按一下 [下一步] 。  
+6.  在 **\[指定服務帳戶\]** 頁面上，輸入您想要用於受管理服務帳戶的名稱。 對於測試範例，選取 **\[建立群組受管理的服務帳戶\]** ，並在 **\[帳戶名稱\]** 中輸入 **ADFSService**。 按一下 [下一步]  。  
   
-7.  在 **\[指定設定資料庫\]** 頁面上，選取 **\[在此伺服器上使用 Windows 內部資料庫來建立資料庫\]**，然後按 **\[下一步\]**。  
+7.  在 **\[指定設定資料庫\]** 頁面上，選取 **\[在此伺服器上使用 Windows 內部資料庫來建立資料庫\]** ，然後按 **\[下一步\]** 。  
   
-8.  **\[檢閱選項\]** 頁面會顯示您所選擇的選項的概觀。 按一下 [下一步] 。  
+8.  **\[檢閱選項\]** 頁面會顯示您所選擇的選項的概觀。 按一下 [下一步]  。  
   
-9. **\[先決條件檢查\]** 頁面會指出所有必要條件是否成功通過檢查。 如果沒有任何問題，請按一下 **\[設定\]**。  
+9. **\[先決條件檢查\]** 頁面會指出所有必要條件是否成功通過檢查。 如果沒有任何問題，請按一下 **\[設定\]** 。  
   
     > [!NOTE]  
     > 如果您用了 AD FS 伺服器或同盟服務的任何其他現有電腦的名稱，則會顯示錯誤訊息。 您必須從頭開始安裝，然後選擇現有電腦名稱以外的名稱。  
   
-10. 設定成功完成時，**\[結果\]** 頁面會確認 AD FS 已成功設定。  
+10. 設定成功完成時， **\[結果\]** 頁面會確認 AD FS 已成功設定。  
   
 ### <a name="configure-ad-fs-by-using-powershell"></a>使用 PowerShell 設定 AD FS  
 若要透過 Windows PowerShell 完成 AD FS 的相等設定，請使用下列命令。  

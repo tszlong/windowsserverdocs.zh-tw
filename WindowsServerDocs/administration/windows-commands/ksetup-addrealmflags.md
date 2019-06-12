@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbc878bd0ee25ad92c640710ab6b46bbc0eaf62a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f097fc8268976cf038523de0d5fa33c1dd3c6901
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827679"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438035"
 ---
 # <a name="ksetupaddrealmflags"></a>ksetup:addrealmflags
 
@@ -52,7 +52,7 @@ ksetup /addrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 |0x08|NcSupported|此領域支援名稱標準化，可讓 DNS 和領域命名標準。|
 |0x80|RC4|此領域支援 RC4 加密，以啟用跨領域信任，允許使用 TLS。|
 
-在登錄中儲存領域旗標**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\*** 領域-名稱*。 此項目依預設不存在於登錄中。 您可以使用[Ksetup:addrealmflags](ksetup-addrealmflags.md)來填入登錄的命令。
+在登錄中儲存領域旗標**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>領域名稱</em>。 此項目依預設不存在於登錄中。 您可以使用[Ksetup:addrealmflags](ksetup-addrealmflags.md)來填入登錄的命令。
 
 您可以看到哪些領域旗標可供使用且將藉由檢視 ksetup 或 ksetup /dumpstate 的輸出。
 
@@ -70,7 +70,7 @@ ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
 ksetup /addrealmflags CONTOSO SendAddress
 ```
-執行**ksetup**命令來確認領域旗標設定檢視輸出，並尋找**領域的旗標 =**。
+執行**ksetup**命令來確認領域旗標設定檢視輸出，並尋找**領域的旗標 =** 。
 
 #### <a name="additional-references"></a>其他參考資料
 

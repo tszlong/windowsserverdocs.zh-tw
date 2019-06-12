@@ -1,25 +1,25 @@
 ---
 title: 壓縮基本磁碟區
 description: 本文說明如何壓縮基本磁碟區
-ms.date: 10/12/2017
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e54632b78fd67a65b51147323565130881d8d81b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9073632a656f512bdb49ebe4eeefd4cd5f4eaadf
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885329"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812525"
 ---
 # <a name="shrink-a-basic-volume"></a>壓縮基本磁碟區
 
-> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
-您可以透過將主要磁碟分割及邏輯磁碟機壓縮至同一硬碟上相鄰的連續未配置空間，以減少它們的使用空間。 例如，如果您發現您需要額外的磁碟分割，卻沒有額外的磁碟時，您可以從磁碟區的結尾處壓縮現有的磁碟分割，以建立供新磁碟分割使用的新未配置空間。 壓縮作業可能會因為存在特定檔案類型而遭封鎖。 如需詳細資訊，請參閱[其他考量](#addcon)。 
+您可以透過將主要磁碟分割及邏輯磁碟機壓縮至同一硬碟上相鄰的連續未配置空間，以減少它們的使用空間。 例如，如果您發現您需要額外的磁碟分割，卻沒有額外的磁碟時，您可以從磁碟區的結尾處壓縮現有的磁碟分割，以建立供新磁碟分割使用的新未配置空間。 壓縮作業可能會因為存在特定檔案類型而遭封鎖。 如需詳細資訊，請參閱[其他考量](#additional-considerations) 
 
 當您壓縮磁碟分割時，將會自動重新配置磁碟上的任何一般檔案以建立新的未配置空間。 不需要重新格式化磁碟來壓縮磁碟分割。
 
@@ -28,27 +28,21 @@ ms.locfileid: "59885329"
 
 ## <a name="shrinking-a-basic-volume"></a>壓縮基本磁碟區
 
--   [使用 Windows 介面](#BKMK_WINUI)
--   [使用命令列](#BKMK_CMD)
-
 > [!NOTE]
 > 您必須至少是**備份操作員**或**系統管理員**群組的成員，才能完成這些步驟。
 
-<a id="BKMK_WINUI"></a>
 #### <a name="to-shrink-a-basic-volume-using-the-windows-interface"></a>若要使用 Windows 介面壓縮基本磁碟區
 
 1.  在 [磁碟管理員] 中，以滑鼠右鍵按一下您想要壓縮的基本磁碟區。
 
-2.  按一下**\[壓縮磁碟區\]**。
+2.  按一下 **\[壓縮磁碟區\]** 。
 
 3.  遵循畫面上的指示操作。
 
-<br />
 
 > [!NOTE]
 > 您只能壓縮沒有檔案系統或使用 NTFS 檔案系統的基本磁碟區。
 
-<a id="BKMK_CMD"></a>
 #### <a name="to-shrink-a-basic-volume-using-a-command-line"></a>若要使用命令列壓縮基本磁碟區
 
 1.  開啟命令提示字元，然後輸入 `diskpart`：
@@ -59,17 +53,13 @@ ms.locfileid: "59885329"
 
 4.  在 **DISKPART** 提示中輸入 `shrink [desired=<desiredsize>] [minimum=<minimumsize>]`。 可能的話，將選取的磁碟區壓縮到 *desiredsize* (以 MB 為單位)，如果 *desiredsize* 太大，則壓縮到 *minimumsize*。
 
-<br />
-
-| 值 | 描述|
-|---|---|
-| <p>**清單中的磁碟區**</p> | <p>顯示所有磁碟上的基本和動態磁碟區。</p>|
-| <p>**選取磁碟區**</p> | <p>選取指定的磁碟區 (其中 <em>volumenumber</em> 是磁碟區編號)，並讓它成為焦點。 如果沒有指定磁碟區，**select** 會命令列出焦點所在的目前磁碟區。 您可以用編號、磁碟機代號或掛接點路徑來指定磁碟區。 在基本磁碟上，選取磁碟區也會讓對應的磁碟分割成為焦點。</p> |
-| <p>**shrink**</p> | <p>壓縮具有焦點的磁碟區以建立未配置的空間。 不會有任何資料遺失。 如果磁碟分割包含無法移動的檔案 (例如分頁檔或陰影複製存放區域)，磁碟區將會壓縮到無法移動的檔案所在位置為止。 |
-| <p>**desired=** <em>desiredsize</em></p> | <p>要回收到目前磁碟分割的空間數量，以 MB 為單位。</p> |
-| <p>**minimum=** <em>minimumsize</em></p> | <p>至少要回收到目前磁碟分割的空間數量，以 MB 為單位。 如果未指定想要的大小或最小的大小，命令將會回收盡可能最大的空間數量。</p> 
-
-<a id="addcon"></a>
+| 值             | 描述 |
+| ---               | ----------- |
+| **清單中的磁碟區** | 顯示所有磁碟上的基本和動態磁碟區。 |
+| **選取磁碟區** | 選取指定的磁碟區 (其中 <em>volumenumber</em> 是磁碟區編號)，並讓它成為焦點。 如果沒有指定磁碟區，**select** 會命令列出焦點所在的目前磁碟區。 您可以用編號、磁碟機代號或掛接點路徑來指定磁碟區。 在基本磁碟上，選取磁碟區也會讓對應的磁碟分割成為焦點。 |
+| **shrink** | 壓縮具有焦點的磁碟區以建立未配置的空間。 不會有任何資料遺失。 如果磁碟分割包含無法移動的檔案 (例如分頁檔或陰影複製存放區域)，磁碟區將會壓縮到無法移動的檔案所在位置為止。 |
+| **desired=** <em>desiredsize</em> | 要回收到目前磁碟分割的空間數量，以 MB 為單位。 |
+| **minimum=** <em>minimumsize</em> | 至少要回收到目前磁碟分割的空間數量，以 MB 為單位。 如果未指定想要的大小或最小的大小，命令將會回收盡可能最大的空間數量。 |
 
 ## <a name="additional-considerations"></a>其他考量
 

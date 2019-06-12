@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 095cd2ad799857b789943b4f477aa9e6a8c3ae50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 506072251b77362f3dc35faa0c976f396f7f6034
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815179"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435478"
 ---
 # <a name="manage-software-inventory-logging"></a>管理軟體清查記錄
 
@@ -121,7 +121,7 @@ ms.locfileid: "59815179"
 ## <a name="configuring-software-inventory-logging"></a>設定軟體清查記錄  
 設定軟體清查記錄將隨著時間推移所產生的資料轉寄至彙總伺服器，須執行下列三個步驟：  
   
-1.  使用**Set-sillogging – TargetUri**指定彙總伺服器 （必須以"https://？ 開頭） 的 web 位址。  
+1.  使用**Set-sillogging – TargetUri**指定彙總伺服器 （必須以"https://"開頭） 的 web 位址。  
   
 2.  使用 **Set-SilLogging –CertificateThumbprint** 指定有效 SSL 憑證的憑證指紋雜湊，其會用於驗證要傳輸到彙總伺服器的資料 (彙總伺服器必須設定為接受此雜湊)。  
   
@@ -140,17 +140,17 @@ ms.locfileid: "59815179"
 ## <a name="BKMK_Step3"></a>顯示軟體清查記錄資料  
 除了先前章節所述的 PowerShell Cmdlet 之外，還有其他 6 個 Cmdlet 可以用來收集軟體清查記錄資料：  
   
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**:顯示特定伺服器和作業系統相關資料的時間點值，以及實體主機的 FQDN 或主機名稱 (如果有的話)。  
+-   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)** :顯示特定伺服器和作業系統相關資料的時間點值，以及實體主機的 FQDN 或主機名稱 (如果有的話)。  
   
--   **[Get-silcomputeridentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**:顯示 SIL 用於個別伺服器的識別碼。  
+-   **[Get-silcomputeridentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)** :顯示 SIL 用於個別伺服器的識別碼。  
   
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**:顯示所有軟體清查記錄資料的時間點集合。  
+-   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)** :顯示所有軟體清查記錄資料的時間點集合。  
   
--   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)**:顯示安裝於電腦上的所有軟體的時間點識別。  
+-   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)** :顯示安裝於電腦上的所有軟體的時間點識別。  
   
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**:顯示唯一用戶端裝置要求和兩天前伺服器的用戶端使用者要求的總數。  
+-   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)** :顯示唯一用戶端裝置要求和兩天前伺服器的用戶端使用者要求的總數。  
   
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**:顯示安裝於電腦上的所有 Windows 更新的時間點清單。  
+-   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)** :顯示安裝於電腦上的所有 Windows 更新的時間點清單。  
   
 軟體清查記錄 Cmdlet 的典型使用案例是系統管理員使用 [Get SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)查詢軟體清查記錄，以取得所有軟體清查記錄資料的時間點集合。  
   
@@ -206,13 +206,13 @@ SystemManufacturer        : Microsoft Corporation
   
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>刪除軟體清查記錄所記錄的資料  
   
-1.  在 PowerShell 中，使用 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** 命令停止軟體清查記錄。  
+1. 在 PowerShell 中，使用 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** 命令停止軟體清查記錄。  
   
-2.  開啟 [Windows 檔案總管]。  
+2. 開啟 [Windows 檔案總管]。  
   
-3.  Go to **\Windows\System32\Logfiles\SIL\**  
+3. Go to **\Windows\System32\Logfiles\SIL\\**  
   
-4.  刪除資料夾中的所有檔案。  
+4. 刪除資料夾中的所有檔案。  
   
 ## <a name="BKMK_Step5"></a>備份和還原軟體清查記錄所記錄的資料  
 如果透過網路轉送失敗，軟體清查記錄會暫時儲存每小時收集的資料。 記錄檔會儲存在 \Windows\System32\LogFiles\SIL\ 目錄中。 您可以搭配已排定的定期伺服器備份來進行此軟體清查記錄資料的備份。  
@@ -237,9 +237,9 @@ SIL 所記錄但儲存在本機的資料 (如果轉送至目標 URI 失敗)，�
   
 -   使用 [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay 來設定執行 SIL 記錄的時間時，您必須指定日期和時間。 設定行事曆日期，且在未到達日期之前不會發生記錄 (以本機系統時間為準)。  
   
--   使用時[Get-silsoftware](https://technet.microsoft.com/library/dn283397.aspx)，或[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)，"InstallDate 嗎？ 一律會顯示 12:00:00 AM，無意義的值。  
+-   使用時[Get-silsoftware](https://technet.microsoft.com/library/dn283397.aspx)，或[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)，"InstallDate"會永遠顯示 12:00:00 AM，無意義的值。  
   
--   使用時[Get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)，"SampleDate 嗎？ 一律會顯示 11:59: 00PM，無意義的值。  在這些 Cmdlet 查詢中，日期是相關資料。  
+-   使用時[Get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)，"SampleDate"會永遠顯示 11:59: 00PM，無意義的值。  在這些 Cmdlet 查詢中，日期是相關資料。  
   
 ## <a name="BKMK_Step10"></a>啟用及設定軟體清查記錄在掛接虛擬硬碟  
 離線虛擬機器也支援軟體清查記錄的設定及啟用。 此功能的實際用途是為了涵蓋進行整個資料中心廣泛部署的兩個「萬用影像」，以及設定從內部部署轉為雲端部署的使用者映像。  
@@ -256,11 +256,11 @@ SIL 所記錄但儲存在本機的資料 (如果轉送至目標 URI 失敗)，�
   
 若要在離線 VHD 上修改這些值 (未執行 VM OS)，則 VHD 必須先掛接，然後才可以使用下列命令來進行變更：  
   
--   [Reg 負載](https://technet.microsoft.com/library/cc742053.aspx)  
+-   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)  
   
 -   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)  
   
--   [新增登錄](https://technet.microsoft.com/library/cc742162.aspx)  
+-   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)  
   
 -   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)  
   

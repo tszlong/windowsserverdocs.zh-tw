@@ -1,33 +1,36 @@
 ---
 title: 安裝類型是最適合您
-description: 安裝類型是最適合您的 Windows Admin Center （專案檀香山）。 在叢集上安裝容錯移轉的高可用性和恢復功能。
+description: 本主題描述 Windows Admin Center，包括由多名系統管理員安裝在 Windows 10 電腦或使用的 Windows 伺服器上的不同安裝選項。
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: fae0305e454cdd10109219c6182ff612f539e9c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 06/07/2019
+ms.openlocfilehash: 9b26ce28d8b3f74c26adab87e68b9985f2be5361
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868009"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811822"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>什麼類型的安裝最適合您？
 
 >適用於：Windows Admin Center，Windows Admin Center 預覽
 
+本主題描述 Windows Admin Center，包括由多名系統管理員安裝在 Windows 10 電腦或使用的 Windows 伺服器上的不同安裝選項。 若要在 Azure 中的 VM 上安裝 Windows Admin Center，請參閱[在 Azure 中部署 Windows Admin Center](../azure/deploy-wac-in-azure.md)。
+
 ## <a name="supported-operating-systems-installation"></a>支援的作業系統：安裝
 
 您可以**安裝**下列 Windows 作業系統上的 Windows Admin Center:
 
-| **版本** | **安裝模式** |
-|-------------|-----------------------|
-|Windows 10 版本 1709 或更新版本 | 桌面模式 |
-|Windows Server 半年通道 | 閘道模式 |
-|Windows Server 2016 | 閘道模式 |
-|Windows Server 2019 | 閘道模式 |
+| **版本**  | **安裝模式** |
+| -------------| -----------------------|
+| Windows 10 版本 1709 或更新版本 | 桌面模式 |
+| Windows Server 半年通道 | 閘道模式 |
+| Windows Server 2016 | 閘道模式 |
+| Windows Server 2019 | 閘道模式 |
 
 **桌面模式：** 從 [開始] 功能表啟動，並從其安裝所在的同一部電腦連接至 Windows Admin Center 閘道 (也就是`https://localhost:6516`)
 
@@ -44,8 +47,8 @@ ms.locfileid: "59868009"
 
 您可以**管理**下列 Windows 作業系統，使用 Windows Admin Center:
 
-| 版本 | 管理*節點*透過*伺服器管理員* | 管理*叢集*透過*容錯移轉叢集管理員* | 管理*HCI*透過*HCI 叢集管理員*|
-|-------------------------|---------------|-----|------------------------|
+| Version | 管理*節點*透過*伺服器管理員* | 管理*叢集*透過*容錯移轉叢集管理員* | 管理*HCI*透過*HCI 叢集管理員* |
+| ------------------------- |--------------- | ----- | ------------------------ |
 | Windows 10 版本 1709 或更新版本 | 是 （透過電腦管理） | N/A | N/A |
 | Windows Server 半年通道 | 是 | 是 | N/A |
 | Windows Server 2019 | 是 | 是 | 是 |
@@ -58,15 +61,16 @@ ms.locfileid: "59868009"
 
 > [!NOTE]
 > Windows Admin Center 要求不包含在 Windows Server 2008 R2，2012年和 2012 R2 中的 PowerShell 功能。 如果您將會管理這些項目與 Windows Admin Center，您必須在這些伺服器上安裝 Windows Management Framework (WMF) 5.1 或更新版本。
-
->在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。 
-
->如果未安裝 WMF，您可以[下載 WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
+> 
+> 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。 
+> 
+> 如果未安裝 WMF，您可以[下載 WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
 
 ## <a name="deployment-options"></a>部署選項
 
 | ![i m g](../media/deployment-options/W10.png) | ![i m g](../media/deployment-options/gateway.png) | ![i m g](../media/deployment-options/node.png) | ![i m g](../media/deployment-options/HA.png) |
-|---|---|---|---|
+| --------------------------------------------- | ------------------------------------------------- |----------------------------------------------|-------------------------------------------- |
+|                                             |                                                 |                                              |                                            |
 
 | 本機用戶端 | 閘道伺服器 | 受管理伺服器 | 容錯移轉叢集 |
 | --- | --- | --- | --- |

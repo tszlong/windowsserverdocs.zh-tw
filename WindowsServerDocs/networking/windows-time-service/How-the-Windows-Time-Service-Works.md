@@ -9,12 +9,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 67c3471a726df354e0faa9e3aced491c4084e9e3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e4131c28a18a50f3312e5e0201a0ed9529d4555
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864339"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812393"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows 時間服務的運作方式
 
@@ -22,13 +22,13 @@ ms.locfileid: "59864339"
 
 **這一節**  
   
--   [Windows Time 服務架構](#w2k3tr_times_how_rrfo)  
+-   [Windows Time 服務架構](#windows-time-service-architecture)  
   
--   [Windows 時間服務時間通訊協定](#w2k3tr_times_how_ekoc)  
+-   [Windows 時間服務時間通訊協定](#windows-time-service-time-protocols)  
   
--   [Windows 時間服務程序和互動](#w2k3tr_times_how_izcr)  
+-   [Windows 時間服務程序和互動](#windows-time-service-processes-and-interactions)  
   
--   [Windows 時間服務所使用的網路連接埠](#w2k3tr_times_how_ydum)  
+-   [Windows 時間服務所使用的網路連接埠](#network-ports-used-by-windows-time-service)  
   
 > [!NOTE]  
 > 本主題說明僅 Windows 時間服務 (W32Time) 的運作方式。 如需有關如何設定 Windows 時間服務的資訊，請參閱 <<c0> [ 設定為高精確度的系統](configuring-systems-for-high-accuracy.md)。
@@ -57,7 +57,7 @@ AD DS 樹系有預定的時間同步處理階層。 Windows 時間服務同步�
   
 當 W32Time Manager 收到時間範例時，它會使用特殊的演算法中 NTP 判斷哪一個時間範例為最適合使用。 時間服務也會使用另一組演算法來決定哪一個設定的時間來源最精確的。 時的時間服務判定是哪一個時間範例，根據上述的準則，它就會調整的本機電腦時鐘速率，以允許它整合正確的時間。 如果本機電腦時鐘與選取的精確時間範例 （也稱為時間扭曲） 之間的時間差異太大，無法藉由調整的本機電腦時鐘速度更正，時間服務會設定本機電腦時鐘到正確的時間。 這項調整時鐘速度或直接的時鐘時間的變更稱為時鐘專業領域。  
   
-## <a name="w2k3tr_times_how_rrfo"></a>Windows Time 服務架構  
+## <a name="windows-time-service-architecture"></a>Windows Time 服務架構  
 Windows 時間服務是由下列元件所組成：  
   
 -   服務控制管理員  
@@ -88,7 +88,7 @@ Windows 時間服務是由下列元件所組成：
   
 如果電腦已指定為時間伺服器，它可以傳送至要求在此程序中的任何時間點的時間同步處理的任何電腦的時間。  
   
-## <a name="w2k3tr_times_how_ekoc"></a>Windows 時間服務時間通訊協定  
+## <a name="windows-time-service-time-protocols"></a>Windows 時間服務時間通訊協定  
 
 時間通訊協定決定程度兩部電腦的時鐘同步處理。 時間通訊協定負責判斷最佳的可用時間資訊，並結合以確保一致的時間會維護不同的系統上的時鐘。  
   
@@ -144,7 +144,7 @@ Windows 時間服務可以與執行 Windows NT 4.0，因為它們可以執行 Wi
   
 Windows NT 4.0 會使用簡單的機制，比 Windows 時間服務所使用的時間同步處理。 因此，若要確保準確的時間同步處理，透過您的網路，建議您將任何 Windows NT 4.0 網域控制站升級為 Windows 2000 或 Windows Server 2003。  
   
-## <a name="w2k3tr_times_how_izcr"></a>Windows 時間服務程序和互動  
+## <a name="windows-time-service-processes-and-interactions"></a>Windows 時間服務程序和互動  
 
 Windows 時間服務被設計來在網路上電腦的時鐘進行同步處理。 網路時間同步處理程序，也稱為 「 時間聚合，就會發生在網路為每個電腦的存取時間更精確的時間伺服器。 時間聚合牽涉到的授權伺服器提供 NTP 封包的形式的用戶端電腦的目前時間的程序。 封包中提供的資訊會指出是否需要調整，讓它更精確的伺服器與同步處理，會對電腦的目前時鐘時間。  
   
@@ -252,7 +252,7 @@ Windows 時間服務被設計來在網路上電腦的時鐘進行同步處理。
 ### <a name="disabling-the-windows-time-service"></a>停用 Windows Time 服務  
 Windows 時間服務 (W32Time) 可以完全停用。 如果您選擇實作會使用 NTP 的第三方時間同步處理產品，您必須停用 Windows 時間服務。 這是因為所有的 NTP 伺服器需要存取使用者資料包通訊協定 (UDP) 連接埠 123，而且只要 Windows 時間服務執行 Windows Server 2003 作業系統上，連接埠 123 會維持保留狀態的 Windows 時間。  
   
-## <a name="w2k3tr_times_how_ydum"></a>Windows 時間服務所使用的網路連接埠  
+## <a name="network-ports-used-by-windows-time-service"></a>Windows 時間服務所使用的網路連接埠  
 Windows 時間服務會識別可靠時間來源，取得時間資訊，並提供給其他電腦的時間資訊在網路上通訊。 它會執行這項通訊的 NTP 和 SNTP Rfc 所定義。  
   
 **Windows 時間服務的通訊埠指派**  

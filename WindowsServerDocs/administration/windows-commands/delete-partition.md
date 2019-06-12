@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf9f456ad6ab3010493154da843b2b519754e250
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b47338b74cf71a4754b7320d6b3842f342d324d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816329"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436145"
 ---
 # <a name="delete-partition"></a>刪除磁碟分割
 
@@ -43,8 +43,8 @@ delete partition [noerr] [override]
 
 > [!CAUTION]
 > 刪除動態磁碟上的磁碟分割，可以刪除所有的動態磁碟區的磁碟上，因此終結任何資料並將磁碟停留在損毀的狀態。 若要刪除動態磁碟區，請務必使用**刪除磁碟區**命令。 分割區可以刪除從動態磁碟，但他們不應建立。 比方說，就可以刪除在動態 GPT 磁碟上無法辨認的 GUID 磁碟分割表格 (GPT) 磁碟分割。 刪除磁碟分割不會造成可用空間結果變成可用。 此命令旨在讓您能夠在緊急情況下損毀的離線動態磁碟上的 reclame 空間所在**全新**中 DiskPart 命令無法使用。
--   您無法刪除系統磁碟分割、 開機磁碟分割或任何包含作用中分頁檔案或損毀傾印資訊的資料分割。
--   這項作業成功時，必須選取資料分割。 使用**選取資料分割**命令來選取資料分割，並將焦點移到它。
+> -   您無法刪除系統磁碟分割、 開機磁碟分割或任何包含作用中分頁檔案或損毀傾印資訊的資料分割。
+> -   這項作業成功時，必須選取資料分割。 使用**選取資料分割**命令來選取資料分割，並將焦點移到它。
 
 ## <a name="BKMK_examples"></a>範例
 

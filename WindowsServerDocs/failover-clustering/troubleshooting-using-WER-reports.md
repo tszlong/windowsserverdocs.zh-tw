@@ -9,16 +9,16 @@ ms.topic: article
 author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 55167d0f4c838af5f6f79432ede2dd45eac848a5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6e301b8c46041f107739bbcdb09c2eb0c8252ebb
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853859"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452900"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>疑難排解使用 Windows 錯誤報告的容錯移轉叢集 
 
-> 適用於：Windows Server 2016、windows Server
+> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server
 
 Windows 錯誤報告 (WER) 是彈性的事件為基礎的意見反應基礎結構設計來幫助進階的系統管理員或第 3 層支援收集 Windows 可以偵測到，硬體和軟體問題的相關資訊回報給 Microsoft，並提供使用者任何可用解決方案。 這[參考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的說明和語法。
 
@@ -317,15 +317,15 @@ PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQ
 
 Message Analyzer 可讓您擷取、 顯示及分析通訊協定訊息流量。 它也可讓您追蹤，以及評估系統事件和其他訊息從 Windows 元件。 您可以下載[從這裡的 Microsoft Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226)。 當您載入 Message Analyzer 的記錄檔時，您會看到下列提供者和訊息記錄檔通道。
 
-![載入 Message Analyzer 中的記錄檔](media\troubleshooting-using-WER-reports\loading-logs-into-message-analyzer.png)
+![載入 Message Analyzer 中的記錄檔](media/troubleshooting-using-WER-reports/loading-logs-into-message-analyzer.png)
 
 您也可以分組提供者取得下列檢視：
 
-![依提供者的記錄檔](media\troubleshooting-using-WER-reports\logs-grouped-by-providers.png)
+![依提供者的記錄檔](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-若要找出磁碟失敗的原因，巡覽至下的事件**FailoverClustering/診斷**並**FailoverClustering/DiagnosticVerbose**。 然後執行下列查詢：**EventLog.EventData["LogString"] 包含 「 叢集磁碟 10 」**。  這可讓您得到下列輸出：
+若要找出磁碟失敗的原因，巡覽至下的事件**FailoverClustering/診斷**並**FailoverClustering/DiagnosticVerbose**。 然後執行下列查詢：**EventLog.EventData["LogString"] 包含 「 叢集磁碟 10 」** 。  這可讓您得到下列輸出：
 
-![執行記錄查詢的輸出](media\troubleshooting-using-WER-reports\output-of-running-log-query.png)
+![執行記錄查詢的輸出](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>實體磁碟已逾時
@@ -423,7 +423,7 @@ DynamicSig[29].Value=10008
 
 若要找出的懸置狀況發生的原因，開啟 dum 檔案。 然後執行下列查詢：**EventLog.EventData["LogString"] 包含 「 叢集磁碟 10 」** 如此可讓您得到下列輸出：
 
-![執行記錄查詢 2 的輸出](media\troubleshooting-using-WER-reports\output-of-running-log-query-2.png)
+![執行記錄查詢 2 的輸出](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 
 我們可以 cross-examine 這與從執行緒**memory.hdmp**檔案：
 

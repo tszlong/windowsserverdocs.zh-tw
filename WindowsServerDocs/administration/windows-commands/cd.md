@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f907b6162e6767820e23222e287b933397397d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53340612d26eaa7c4ae6fd977a0eac573f91881d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861099"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434607"
 ---
 # <a name="cd"></a>cd
 
@@ -53,16 +53,16 @@ chdir [..]
 ## <a name="remarks"></a>備註
 
 如果已啟用命令延伸模組，下列條件適用於**cd**命令：
--   目前的目錄字串會轉換成相同大小寫磁碟上的名稱。 比方說，`cd C:\TEMP`在磁碟上的情形下，會設定目前的目錄至 C:\Temp。
--   空間被視為不做為分隔符號，因此*路徑*可以包含空格，而不需要封閉式引號。 例如:   
-    ```
-    cd username\programs\start menu
-    ```  
-    等同於：  
-    ```
-    cd "username\programs\start menu"
-    ```  
-    如果停用延伸模組時，才不過，必要的引號。
+- 目前的目錄字串會轉換成相同大小寫磁碟上的名稱。 比方說，`cd C:\TEMP`在磁碟上的情形下，會設定目前的目錄至 C:\Temp。
+- 空間被視為不做為分隔符號，因此*路徑*可以包含空格，而不需要封閉式引號。 例如:  
+  ```
+  cd username\programs\start menu
+  ```  
+  等同於：  
+  ```
+  cd "username\programs\start menu"
+  ```  
+  如果停用延伸模組時，才不過，必要的引號。
 
 若要停用命令延伸模組，請輸入：
 ```

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80eef106452a45ac4f071446ec8d427b757c443d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e12c8e621021d35ac618b4592515fe38c36be0e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817019"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434897"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
@@ -34,7 +34,7 @@ bitsadmin /RawReturn
 
 帶狀線的新行字元，格式化輸出。
 
-一般而言，您使用此命令搭配**建立**並**取得\*** 接收值的參數。 您必須指定此參數之前其他參數。
+一般而言，您使用此命令搭配**建立**並**取得\\** * 參數，以接收使用的值。 您必須指定此參數之前其他參數。
 
 ## <a name="BKMK_examples"></a>範例
 

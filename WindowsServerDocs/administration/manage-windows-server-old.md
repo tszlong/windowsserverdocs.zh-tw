@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4faadb811927626c26a5b01e2ce0598d40792b68
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ae87b12997aa3cb3ae3fe290c9243995b30d6b0
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846759"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452824"
 ---
 # <a name="manage-windows-server"></a>管理 Windows Server
 
@@ -118,5 +118,5 @@ Windows PowerShell 是命令列殼層和指令碼語言，專為快速自動化�
 Windows 命令列工具是用來在 Windows 中執行系統管理工作。 您可以利用命令參考來自行熟悉命令列工具、深入了解命令殼層，以及使用批次檔案或指令碼工具來自動化命令列工作。
 
 ## <a name="windows-server-insider-preview"></a>Windows Server Insider Preview
-### <a name="system-insightsmanagesystem-insightsoverviewmd"></a>[系統的深入解析](..\manage\system-insights\overview.md)
+### <a name="system-insightsmanagesystem-insightsoverviewmd"></a>[系統深入解析](../manage/system-insights/overview.md)
 系統深入解析是本身會將預測性分析導入 Windows Server 的新功能。 這些預測性功能會在本機分析 Windows Server 系統資料 (例如效能計數器或 ETW 事件)，主動協助 IT 系統管理員偵測並解決其部署中有問題的行為。 

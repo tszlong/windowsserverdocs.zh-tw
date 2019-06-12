@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 591ff7caa554a892bda0bc0e888bd89a87d8b0ef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d98ba295b2a76baf98e85a01a02677d57922877d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863549"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440259"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>Wbadmin start systemstatebackup
 
@@ -43,10 +43,10 @@ wbadmin start systemstatebackup
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|-backupTarget|指定您想要用來儲存備份的位置。 儲存體位置需要磁碟機代號或 GUID 型磁碟區的格式： \\ \\？ \Volume {*GUID*}。</br>執行 Windows Server 2008 的電腦上不支援系統狀態備份到共用的網路資料夾。 如果您的伺服器執行 Windows Server 2008 R2 或更新版本，您可以使用此命令 **-backuptarget:\\\\servername\sharedFolder\** 儲存系統狀態備份。|
-|-quiet|子命令會以不執行任何提示給使用者。|
+|   參數   |                                                                                                                                                                                                                      描述                                                                                                                                                                                                                      |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -backupTarget | 指定您想要用來儲存備份的位置。 儲存體位置需要磁碟機代號或 GUID 型磁碟區的格式： \\ \\？ \Volume {*GUID*}。</br>執行 Windows Server 2008 的電腦上不支援系統狀態備份到共用的網路資料夾。 如果您的伺服器執行 Windows Server 2008 R2 或更新版本，您可以使用命令 **-backuptarget:\\\\servername\sharedFolder\\** 儲存系統狀態備份。 |
+|    -quiet     |                                                                                                                                                                                                   子命令會以不執行任何提示給使用者。                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>備註
 

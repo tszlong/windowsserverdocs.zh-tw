@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 894ea8b134ae5b871a2978e3f72e683c12346fe5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8571c2220f804a27e4e1a6b744e8e15e38bd53a3
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850199"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453081"
 ---
 # <a name="supported-configurations-for-remote-desktop-services-in-windows-server-2016"></a>支援的 Windows Server 2016 中的遠端桌面服務的組態
 
@@ -90,7 +90,7 @@ Windows Server 2016 RDS 支援兩種主要的 SSO 體驗：
  - 在應用程式 （Windows、 iOS、 Android 及 Mac 上的遠端桌面應用程式）
  - 網頁 SSO
  
-使用遠端桌面應用程式，您可以儲存的認證可以是一部分的連接資訊 ([Mac](clients\remote-desktop-mac.md)) 或做為受管理帳戶的一部分 ([iOS](clients\remote-desktop-ios.md#manage-your-user-accounts)， [Android](clients\remote-desktop-android.md#manage-your-user-accounts)，Windows)安全地透過每個作業系統獨有的機制。
+使用遠端桌面應用程式，您可以儲存的認證可以是一部分的連接資訊 ([Mac](clients/remote-desktop-mac.md)) 或做為受管理帳戶的一部分 ([iOS](clients/remote-desktop-ios.md#manage-your-user-accounts)， [Android](clients/remote-desktop-android.md#manage-your-user-accounts)，Windows)安全地透過每個作業系統獨有的機制。
 
 若要透過 Windows 的收件匣遠端桌面連線用戶端連接到桌面與 Remoteapp 與 SSO 搭配運作，您必須連接到 RD 網頁透過 Internet Explorer。 下列組態選項所需的伺服器端上。 Web sso 不支援任何其他設定：
 

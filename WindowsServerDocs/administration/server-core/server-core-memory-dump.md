@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: bd22378ec7ce5a1ff4e39546246e6e85ca859c45
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 235df6f681de51a12f82b9fad019dd2db45fd486
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828839"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435557"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>設定 Server Core 安裝的記憶體傾印檔案
 
@@ -39,7 +39,7 @@ wmic computersystem set AutomaticManagedPagefile=False
 3. 按一下 **編輯 > 新增 > 字串值**。
 4. 新值命名**DedicatedDumpFile**，然後按 ENTER 鍵。
 5. 以滑鼠右鍵按一下**DedicatedDumpFile**，然後按一下**修改**。
-6. 在 **數值資料**型別**\<磁碟機\>:\\\<Dedicateddumpfile.sys\>**，然後按一下 **確定**.
+6. 在 **數值資料**型別 **\<磁碟機\>:\\\<Dedicateddumpfile.sys\>** ，然後按一下 **確定**.
 
    >[!NOTE] 
    > 取代\<磁碟機\>磁碟機具有足夠的磁碟空間讓分頁檔，並取代\<Dedicateddumpfile.dmp\>專用的檔案的完整路徑。
@@ -49,8 +49,8 @@ wmic computersystem set AutomaticManagedPagefile=False
 9. 以滑鼠右鍵按一下**DumpFileSize**，然後按一下**修改**。
 10. 在 **編輯 DWORD 值**下方**基底**，按一下 **十進位**。
 11. 在 **值的資料**，輸入適當的值，然後按一下**確定**。
-   >[!NOTE]
-   > 傾印檔案的大小是以 mb 為單位 (MB)。
+    >[!NOTE]
+    > 傾印檔案的大小是以 mb 為單位 (MB)。
 12. 結束登錄編輯器。
 
 判斷記憶體傾印的磁碟分割位置之後，設定分頁檔的目的地路徑。 若要檢視目前的分頁檔的目的地路徑，請執行下列命令：

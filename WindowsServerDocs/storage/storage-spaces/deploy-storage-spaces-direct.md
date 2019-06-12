@@ -7,15 +7,15 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 8/16/2018
+ms.date: 06/07/2019
 description: 將軟體定義儲存體與儲存空間直接存取 Windows Server 中部署為超交集基礎結構或聚合式 （也稱為分類式） 的基礎結構的逐步指示。
 ms.localizationpriority: medium
-ms.openlocfilehash: 55cfa0e066506d7174f9e5b1e61cc0aa290706d7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a4159c85be23025ef57084b47dcc77d4f749888f
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865409"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812361"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
@@ -24,7 +24,7 @@ ms.locfileid: "59865409"
 本主題提供逐步指示來部署[儲存空間直接存取](storage-spaces-direct-overview.md)。
 
 > [!Tip]
-> 要取得 Hyper-Converged 基礎結構嗎？ Microsoft 建議這些[Windows Server 軟體定義](https://microsoft.com/wssd)來自合作夥伴解決方案。 它們是設計、 組合和針對我們參考架構，以確保相容性和可靠性，讓您快速並執行驗證。
+> 要取得 Hyper-Converged 基礎結構嗎？ Microsoft 建議您購買的已驗證的硬體/軟體解決方案，從我們的合作夥伴，包括部署工具和程序。 這些解決方案是設計、 組合和針對我們參考架構，以確保相容性和可靠性，讓您快速並執行驗證。 如需 Windows Server 2019 解決方案，請瀏覽[Azure Stack HCI solutions 網站](https://azure.microsoft.com/overview/azure-stack/hci)。 如需 Windows Server 2016 解決方案，進一步了解[Windows Server 軟體定義](https://microsoft.com/wssd)。
 
 > [!Tip]
 > 您可以使用 HYPER-V 虛擬機器，包括 Microsoft Azure 中為[評估儲存空間直接存取，而不需要硬體](storage-spaces-direct-in-vm.md)。 您也可以檢閱便利[Windows Server 快速實驗室部署指令碼](https://aka.ms/wslab)，我們用來培訓等用途。
@@ -51,7 +51,7 @@ ms.locfileid: "59865409"
 
 第一個步驟是將位於叢集中的每部伺服器上安裝 Windows Server。 儲存空間直接存取需要 Windows Server 2016 Datacenter Edition。 您可以使用 Server Core 安裝選項或伺服器含桌面體驗。
 
-當您安裝 Windows Server 使用安裝精靈時，您可以選擇*Windows Server* （指的 Server Core） 和*Windows Server （伺服器含桌面體驗）*，這是對等項目*完整*Windows Server 2012 R2 中可用的安裝選項。 如果您未選擇，您會得到的 Server Core 安裝選項。 如需詳細資訊，請參閱 <<c0> [ 安裝 Windows Server 2016 選項](../../get-started/Windows-Server-2016.md)。
+當您安裝 Windows Server 使用安裝精靈時，您可以選擇*Windows Server* （指的 Server Core） 和*Windows Server （伺服器含桌面體驗）* ，這是對等項目*完整*Windows Server 2012 R2 中可用的安裝選項。 如果您未選擇，您會得到的 Server Core 安裝選項。 如需詳細資訊，請參閱 <<c0> [ 安裝 Windows Server 2016 選項](../../get-started/Windows-Server-2016.md)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步驟 1.2:連線到伺服器
 
@@ -62,7 +62,7 @@ ms.locfileid: "59865409"
 - 加入相同網域或完全受信任的網域
 - 適用於 Hyper-V 和容錯移轉叢集的遠端伺服器管理工具 (RSAT) 和 PowerShell 模組。 RSAT 工具和 PowerShell 模組是在 Windows Server 上，可以安裝而不需要安裝其他功能。 您也可以安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)管理的 Windows 10 電腦上。
 
-在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用「新增角色及功能」精靈完成。 在 [功能] 頁面上，選取 [遠端伺服器管理工具]，然後選取要安裝的工具。
+在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用「新增角色及功能」  精靈完成。 在 [功能]  頁面上，選取 [遠端伺服器管理工具]  ，然後選取要安裝的工具。
 
 進入 PS 工作階段，並使用伺服器名稱，或是您要連線之節點的 IP 位址。 您可在執行此命令之後，將會提示輸入密碼，輸入您在設定 Windows 時指定的系統管理員密碼。
 
@@ -229,7 +229,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 如需詳細資訊，請參閱下列主題：
 
-- [設定及管理仲裁](../../failover-clustering/manage-cluster-quorum.md)
+- [設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)
 - [部署容錯移轉叢集的雲端見證](../../failover-clustering/deploy-cloud-witness.md)
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>步驟 3.5:啟用儲存空間直接存取
@@ -297,15 +297,15 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 #### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>若要使用伺服器管理員中建立向外延展檔案伺服器角色
 
-1.  在 容錯移轉叢集管理員 中，選取叢集，請前往**角色**，然後按一下 **設定角色...**.<br>高可用性精靈 隨即出現。
-2.  在 **選取的角色**頁面上，按一下**檔案伺服器**。
-3.  在 **檔案伺服器類型**頁面上，按一下**應用程式資料的向外延展檔案伺服器**。
-4.  在 **用戶端存取點**頁面上，輸入在向外延展檔案伺服器的名稱。
-5.  確認角色已成功設定移至**角色**並確認**狀態**資料行會顯示**執行**旁您所建立的叢集的檔案伺服器角色圖 1 所示。
+1. 在 容錯移轉叢集管理員 中，選取叢集，請前往**角色**，然後按一下 **設定角色...** .<br>高可用性精靈 隨即出現。
+2. 在 **選取的角色**頁面上，按一下**檔案伺服器**。
+3. 在 **檔案伺服器類型**頁面上，按一下**應用程式資料的向外延展檔案伺服器**。
+4. 在 **用戶端存取點**頁面上，輸入在向外延展檔案伺服器的名稱。
+5. 確認角色已成功設定移至**角色**並確認**狀態**資料行會顯示**執行**旁您所建立的叢集的檔案伺服器角色圖 1 所示。
 
-    ![螢幕擷取畫面的容錯移轉叢集管理員將向外延展檔案伺服器顯示](media\Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016\SOFS_in_FCM.png "顯示向外延展檔案伺服器容錯移轉叢集管理員")
+   ![螢幕擷取畫面的容錯移轉叢集管理員將向外延展檔案伺服器顯示](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "顯示向外延展檔案伺服器容錯移轉叢集管理員")
 
-     **圖 1**顯示向外延展檔案伺服器與執行中狀態的容錯移轉叢集管理員
+    **圖 1**顯示向外延展檔案伺服器與執行中狀態的容錯移轉叢集管理員
 
 > [!NOTE]
 >  在建立叢集的角色之後, 可能會有一些網路會讓您無法在其中建立檔案共用，幾分鐘的時間，或可能較長的傳播延遲。  

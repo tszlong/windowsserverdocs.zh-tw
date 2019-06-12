@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91fceb429ca00b1b3d9d36d01f5e97cfd464ccb9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 179d540371870075906bbcbf8ff912e1b883915d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825159"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433931"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
@@ -34,11 +34,11 @@ DCGPOFix [/ignoreschema] [/target: {Domain | DC | Both}] [/?]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|/ignoreschema|會忽略 Active Directory® 結構描述 mc 版</br>當您執行此命令。 否則，命令只能用於命令送交的 Windows 版本相同的結構描述版本。|
-|/target {網域 | DC | 兩者}|指定要還原哪一個 GPO。 您可以還原預設網域原則 GPO、 預設網域控制站 GPO 中，或兩者。|
-|/?|在命令提示字元顯示 [說明]。|
+|    參數    |                                                                                                 描述                                                                                                 |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  /ignoreschema  | 會忽略 Active Directory® 結構描述 mc 版</br>當您執行此命令。 否則，命令只能用於命令送交的 Windows 版本相同的結構描述版本。 |
+| /target {網域 |                                                                                                     DC                                                                                                      |
+|       /?        |                                                                                    在命令提示字元顯示 [說明]。                                                                                     |
 
 ## <a name="remarks"></a>備註
 

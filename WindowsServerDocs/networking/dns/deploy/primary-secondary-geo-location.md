@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6869ee5f39f1719a3c71025207ef9ffe740492ff
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: cf66a306c7f023852cec93d6458e74a99c46c831
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266782"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812109"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>透過主要-次要部署使用地理位置流量管理的 DNS 原則
 
@@ -25,8 +25,8 @@ ms.locfileid: "66266782"
   
 次要伺服器會使用區域傳輸通訊協定授權傳輸 (AXFR) 及增量區域轉送 (IXFR) 要求並接收區域更新包含新的主要 DNS 伺服器上區域的變更。   
   
->[!NOTE]
->如需 AXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF)[要求的註解 5936](https://tools.ietf.org/rfc/rfc5936.txt)。 如需 IXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF)[要求的註解 1995年](https://tools.ietf.org/html/rfc1995)。  
+> [!NOTE]
+> 如需 AXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF)[要求的註解 5936](https://tools.ietf.org/rfc/rfc5936.txt)。 如需 IXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF)[要求的註解 1995年](https://tools.ietf.org/html/rfc1995)。  
   
 ## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>主要-次要地理位置型流量管理範例  
 以下是如何，您可以在主要-次要部署中使用 DNS 原則以達到根據用戶端，執行 DNS 查詢的實體位置的流量重新導向的範例。  
@@ -82,7 +82,7 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
 
 開始之前，請確定您已完成的步驟 > 主題中的所有[地理位置與主要伺服器，根據流量管理的使用 DNS 原則](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)，且您的主要 DNS 伺服器已設定區域，區域範圍，DNS 用戶端子網路和 DNS 原則。  
   
->[!NOTE]
+> [!NOTE]
 > 本主題中的指示，將 DNS 用戶端的子網路、 區域範圍和 DNS 原則從主要的 DNS 伺服器複製到次要的 DNS 伺服器是您初始的 DNS 設定和驗證。 在未來可能會想要變更 DNS 用戶端的子網路、 區域範圍，並在主要伺服器上的原則設定。 在此情況下，您可以建立自動化指令碼，以保持與主要伺服器同步處理的次要伺服器。  
   
 若要設定主要-次要地理位置基礎查詢回應的 DNS 原則，您必須執行下列步驟。  
@@ -95,9 +95,10 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
   
 下列各節提供詳細的設定指示。  
   
->[!IMPORTANT]
->下列各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。  
-><br>中的成員資格**DnsAdmins**，或同等權限，才能執行下列程序。  
+> [!IMPORTANT]
+> 下列各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。  
+> 
+> 中的成員資格**DnsAdmins**，或同等權限，才能執行下列程序。  
   
 ### <a name="create-the-secondary-zones"></a>建立次要區域
 
@@ -124,8 +125,8 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
   
 您可以使用下列 Windows PowerShell 命令進行區域轉送設定在主要區域。
   
->[!NOTE]
->在下列範例命令中，參數 **-通知**指定主要伺服器會將更新的相關通知傳送至次要複本的 select 清單。  
+> [!NOTE]
+> 在下列範例命令中，參數 **-通知**指定主要伺服器會將更新的相關通知傳送至次要複本的 select 清單。  
   
     
     Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer  
@@ -160,8 +161,8 @@ Contoso DNS 部署包含兩個次要伺服器：**SecondaryServer1**，使用 IP
     Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName SecondaryServer2 -ErrorAction Ignore  
   
 
->[!NOTE]
->在下列範例命令中， **-ErrorAction 忽略**參數都會包括在內，因為每個區域上有的預設區域範圍。 無法建立或刪除預設區域範圍。 管線會嘗試建立該範圍，它將會失敗。 或者，您也可以在兩個的次要區域上建立非預設區域範圍。  
+> [!NOTE]
+> 在下列範例命令中， **-ErrorAction 忽略**參數都會包括在內，因為每個區域上有的預設區域範圍。 無法建立或刪除預設區域範圍。 管線會嘗試建立該範圍，它將會失敗。 或者，您也可以在兩個的次要區域上建立非預設區域範圍。  
   
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。  
   

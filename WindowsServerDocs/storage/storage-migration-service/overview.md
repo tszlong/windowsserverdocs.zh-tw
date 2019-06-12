@@ -8,12 +8,12 @@ ms.date: 05/21/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: fd99058036a5b8041e4c65ca120c6a7e68b2df8d
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: ce4cbdc291d98a180ee6f5b597d322620fa1b19f
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976651"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453176"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體移轉服務概觀
 
@@ -32,7 +32,7 @@ ms.locfileid: "65976651"
 - 選擇性地接管 （也就透過縮減） 的來源伺服器的身分識別，讓使用者和應用程式不需要變更任何項目來存取現有的資料
 - 從 Windows Admin Center 使用者介面管理一或多個移轉
 
-![此圖表顯示儲存體移轉服務移轉檔案和設定從來源伺服器到目的地伺服器 」、 「 Azure Vm 或 「 Azure 檔案同步。](media\overview\storage-migration-service-diagram.png)
+![此圖表顯示儲存體移轉服務移轉檔案和設定從來源伺服器到目的地伺服器 」、 「 Azure Vm 或 「 Azure 檔案同步。](media/overview/storage-migration-service-diagram.png)
 
 **圖 1:儲存體移轉服務的來源和目的地**
 

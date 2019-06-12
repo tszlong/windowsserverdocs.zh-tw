@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/24/2019
 description: 檔案共用見證可讓您使用檔案共用，以在叢集仲裁投票。 本主題說明檔案共用見證和新功能，包括使用 USB 磁碟機連線到路由器，以作為檔案共用見證。
 ms.localizationpriority: medium
-ms.openlocfilehash: 1888142f96208800a0417c9caeea89e8a0472e88
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47371be946c08cac2f271138d701922fc340a89d
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831749"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453042"
 ---
 # <a name="deploy-a-file-share-witness"></a>部署檔案共用見證
 
@@ -61,26 +61,26 @@ ms.locfileid: "59831749"
 
 在[Microsoft Ignite 2018](https://azure.microsoft.com/ignite/)， [DataOn 儲存體](http://www.dataonstorage.com/)必須在其 [kiosk] 區域的儲存空間直接存取叢集。  此叢集已連線到[NetGear](https://www.netgear.com) Nighthawk X4S WiFi 路由器使用的 USB 連接埠為檔案共用見證如下所示。
 
-![NetGear 見證](media\File-Share-Witness\FSW1.png)
+![NetGear 見證](media/File-Share-Witness/FSW1.png)
 
 建立檔案共用見證，在這個特定的路由器上使用 USB 裝置的步驟如下所示。  請注意，在其他路由器和 NAS 裝置上的步驟會有所不同，而且應該使用廠商來完成提供指示。
 
 
 1. 登入路由器插入 USB 裝置。
 
-   ![NetGear 介面](media\File-Share-Witness\FSW2.png)
+   ![NetGear 介面](media/File-Share-Witness/FSW2.png)
 
 2. 從選項清單中，選取 ReadySHARE 也就是建立共用的位置。
 
-   ![NetGear ReadySHARE](media\File-Share-Witness\FSW3.png)
+   ![NetGear ReadySHARE](media/File-Share-Witness/FSW3.png)
 
 3. 針對檔案共用見證，基本的共用是所需要的全部。  選取 [編輯] 按鈕，就會出現一個對話方塊，其中建立共用在 USB 裝置。
 
-   ![NetGear 共用介面](media\File-Share-Witness\FSW4.png)
+   ![NetGear 共用介面](media/File-Share-Witness/FSW4.png)
 
 4. 一旦選取 [套用] 按鈕，共用會建立，並可以在清單中看到。
 
-   ![NetGear 共用](media\File-Share-Witness\FSW5.png)
+   ![NetGear 共用](media/File-Share-Witness/FSW5.png)
 
 5. 一旦建立共用之後，建立叢集的檔案共用見證是使用 PowerShell 完成。
 

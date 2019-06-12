@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3714cfe52aafd4a602346139552b6712dbbc98c1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 99970fba41a747a6bb4b1ca6cc4b7f603c547790
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878219"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434166"
 ---
 # <a name="create-partition-efi"></a>建立 efi 磁碟分割
 
@@ -36,11 +36,11 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
   
 ## <a name="parameters"></a>參數  
   
-|參數|描述|  
-|-------|--------|  
-|size\=<n>|以 mb 為單位的磁碟分割的大小\(MB\)。 如果未指定大小，磁碟分割會繼續，直到目前的區域中沒有更多的可用空間。|  
-|offset\=<n>|以 kb 為單位的位移\(KB\)，在建立資料分割。 如果沒有指定位移，資料分割會置於足夠容納它的第一個磁碟範圍內。|  
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|  
+|  參數  |                                                                                             描述                                                                                              |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  size\=<n>  |                         以 mb 為單位的磁碟分割的大小\(MB\)。 如果未指定大小，磁碟分割會繼續，直到目前的區域中沒有更多的可用空間。                         |
+| offset\=<n> |             以 kb 為單位的位移\(KB\)，在建立資料分割。 如果沒有指定位移，資料分割會置於足夠容納它的第一個磁碟範圍內。              |
+|    noerr    | 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。 |
   
 ## <a name="remarks"></a>備註  
   

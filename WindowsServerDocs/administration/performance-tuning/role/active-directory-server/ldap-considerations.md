@@ -7,16 +7,16 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 79f95c88c49d384f8a13b8808c63a0dc00de53cb
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 7ac9453159fe97dc15ecbb2ab858214664a2a197
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266625"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811532"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>您可以在 ADDS 效能微調的 LDAP 考量
 
->[!Important]
+> [!IMPORTANT]
 > 以下是金鑰的建議和考量，來最佳化 Active Directory 中的更深入的討論的工作負載的伺服器硬體的摘要[Active Directory 網域服務的容量計劃](https://go.microsoft.com/fwlink/?LinkId=324566)文章。 讀取器會檢閱我們極力[Active Directory 網域服務的容量計劃](https://go.microsoft.com/fwlink/?LinkId=324566)更高的技術知識和這些建議的影響。
 
 ## <a name="verify-ldap-queries"></a>確認 LDAP 查詢
@@ -45,14 +45,14 @@ ms.locfileid: "66266625"
 
 -   查詢花費很長的時間，而且缺乏涵蓋索引尚未完成在用戶端，因為可接受時間範圍內。
 
--   耗用量和 ATQ LDAP 執行緒已耗盡，導致大量高的持續時間的查詢。 監視下列效能計數器：
+- 耗用量和 ATQ LDAP 執行緒已耗盡，導致大量高的持續時間的查詢。 監視下列效能計數器：
 
-    -   **NTDS\\要求延遲**– 這是受限於多久要求所需程序。 Active Directory 逾時要求之後 120 秒 （預設值），不過，大部分應該執行速度更快並極長時間執行的查詢應該取得隱藏在整體的數字。 尋找此基準，而不是絕對臨界值的變更。
+    - **NTDS\\要求延遲**– 這是受限於多久要求所需程序。 Active Directory 逾時要求之後 120 秒 （預設值），不過，大部分應該執行速度更快並極長時間執行的查詢應該取得隱藏在整體的數字。 尋找此基準，而不是絕對臨界值的變更。
 
-        > [!Note]   這裡最高值也可以要求其他的網域和 CRL 檢查的"proxy"延遲的指標。
+        > [!NOTE]
+        > 這裡最高值也可以要求其他的網域和 CRL 檢查的"proxy"延遲的指標。
 
-
-    -   **NTDS\\估計佇列延遲**– 這在理想情況下應該接近 0，以獲得最佳效能，這表示要求花費沒有正在等待的時間。
+    - **NTDS\\估計佇列延遲**– 這在理想情況下應該接近 0，以獲得最佳效能，這表示要求花費沒有正在等待的時間。
 
 這些案例，可以使用一或多個下列方法來偵測：
 
@@ -98,8 +98,8 @@ ms.locfileid: "66266625"
 
 -   [索引的屬性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-
 ## <a name="see-also"></a>另請參閱
+
 - [效能微調 Active Directory 伺服器](index.md)
 - [硬體考量](hardware-considerations.md)
 - [適當地放置網域控制站與站台考量](site-definition-considerations.md)

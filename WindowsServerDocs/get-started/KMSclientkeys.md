@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: e2aac6db7bb9e118d672190c95f0d73294474f75
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976532"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810712"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
@@ -22,7 +22,7 @@ ms.locfileid: "65976532"
 
 根據預設，執行 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista 以及 Windows Server 2008 大量授權版本的電腦為不需要另外設定的 KMS 用戶端。
 
->[!NOTE]
+> [!NOTE]
 > 在依照資料表中，"LTSC 」 代表 「 長期服務通道，」 而 「 LTSB 」 是指 「 長期服務分支。 」 
 
 **若要使用此處所列 （這些 Gvlk） 的金鑰，您必須先具備部署中執行的 KMS 主機。** 如果您尚未設定 KMS 主機，請參閱 [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) 的步驟來安裝一部 KMS 主機。

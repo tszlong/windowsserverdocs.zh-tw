@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cced9a930b63baa79b4addb429c562c38d6da01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 298df36b856cba97ec19126f77456785e5eb6f50
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843879"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810926"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS 和類別目錄網站
 
@@ -64,7 +64,7 @@ WSUS 系統管理員可能會考慮它們已從 Microsoft Update 類別目錄網
 
     -   選取  **Windows 驗證**然後按一下**啟用**中**動作**右邊的窗格。
 
-2.  建立電腦需要此 hotfix，WSUS 目標群組，並將它們新增至群組。 如需電腦及群組的詳細資訊，請參閱[管理 WSUS 用戶端電腦和 WSUS 電腦群組](managing-wsus-client-computers-and-wsus-computer-groups.md)在此指南中，與區段[3.3。設定 WSUS 電腦群組](../deploy/2-configure-wsus.md#BKMK_ConfigcomputerGroups)的步驟 3:設定 WSUS，WSUS 部署指南中。
+2.  建立電腦需要此 hotfix，WSUS 目標群組，並將它們新增至群組。 如需電腦及群組的詳細資訊，請參閱[管理 WSUS 用戶端電腦和 WSUS 電腦群組](managing-wsus-client-computers-and-wsus-computer-groups.md)在此指南中，與區段[3.3。設定 WSUS 電腦群組](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups)的步驟 3:設定 WSUS，WSUS 部署指南中。
 
 3.  下載 hotfix 的檔案。
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e20b4960faac0ef40ad68271fa907394344e9c47
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b1e5726e3976527278b11f105007a32548da0bc4
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034422"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805147"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>將 RD 連線代理人伺服器加入部署並設定高可用性
 
@@ -27,7 +27,7 @@ ms.locfileid: "65034422"
 
 ## <a name="pre-requisites"></a>必要條件
 
-設定伺服器來做為第二個 RD 連線代理人-這可以是實體伺服器或 VM。
+設定伺服器來做為第二個的 RD 連線代理人-這可以是實體伺服器或 VM。
 
 設定連線代理人的資料庫。 您可以使用[Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database)或您的本機環境中的 SQL Server 執行個體。 我們討論使用 Azure SQL，但這些步驟仍適用於 SQL Server。 您要尋找資料庫的連接字串，並確定您有正確的 ODBC 驅動程式。
 
@@ -36,21 +36,23 @@ ms.locfileid: "65034422"
 1. 尋找您所建立的資料庫連接字串-您需要這兩個識別您需要和更新版本中，當您設定連接訊息代理程式本身 （步驟 3），因此將字串儲存至其中您可以參考它輕鬆的 ODBC 驅動程式的版本。 以下是如何針對 Azure SQL 來尋找連接字串：  
     1. 在 Azure 入口網站中，按一下**瀏覽 > 資源群組**，按一下 資源群組，以供部署。   
     2. 選取您剛建立 （例如 CB DB1） 的 SQL 資料庫。   
-    3. 按一下 **設定 > 屬性 > 顯示資料庫連接字串**。   
+    3. 按一下 **設定** > **屬性** > **顯示資料庫連接字串**。   
     4. 複製的連接字串**ODBC （包括 Node.js）** ，這應該看起來像這樣：   
       
-        Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;   
+        ```
+        Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+        ```
   
     5. 「 Your_password_here"取代為實際的密碼。 連接至資料庫時，您將使用此整個字串，包含密碼，請使用。 
 2. 在新的連接訊息代理程式上安裝的 ODBC 驅動程式： 
    1. 如果您要用於連線代理人的 VM，建立第一個 RD 連線代理人的公用 IP 位址。 （您只需要這樣做，如果 RDMS 虛擬機器還沒有公用 IP 位址允許透過 RDP 連線。）
-       1. 在 Azure 入口網站中，按一下**瀏覽 > 資源群組**，按一下 部署的資源群組，然後按一下 第一部 RD 連線代理人虛擬機器 (例如，Contoso-Cb1)。
+       1. 在 Azure 入口網站中，按一下**瀏覽** > **資源群組**按一下、 以部署的資源群組，然後按一下 第一部 RD 連線代理人虛擬機器 （例如，Contoso-Cb1)。
        2. 按一下 **設定 > 網路介面**，然後按一下 對應的網路介面。
        3. 按一下 **設定 > IP 位址**。
        4. 針對**公用 IP 位址**，選取**已啟用**，然後按一下**IP 位址**。
        5. 如果您有想要使用的現有公用 IP 位址，請從清單中選取。 否則，請按一下**新建**，輸入名稱，然後按一下  **確定** ，然後**儲存**。
    2. 連接到第一個 RD 連線代理人：
-       1. 在 Azure 入口網站中，按一下**瀏覽 > 資源群組**，按一下 部署的資源群組，然後按一下 第一部 RD 連線代理人虛擬機器 (例如，Contoso-Cb1)。
+       1. 在 Azure 入口網站中，按一下**瀏覽** > **資源群組**按一下、 以部署的資源群組，然後按一下 第一部 RD 連線代理人虛擬機器 （例如，Contoso-Cb1)。
        2. 按一下  **Connect > 開啟**若要開啟 遠端桌面用戶端。
        3. 在用戶端中，按一下**Connect**，然後按一下**使用另一個使用者帳戶**。 輸入網域系統管理員帳戶的使用者名稱和密碼。
        4. 按一下 **是**時看到有關憑證的警告。
@@ -80,7 +82,7 @@ ms.locfileid: "65034422"
       1. 在 **設定**，按一下**後端位址集區 > 新增**。   
       2. 輸入的名稱 (例如 CBBackendPool)，然後按一下 **新增虛擬機器**。  
       3. 選擇可用性設定組 (例如，「 CbAvSet 」)，然後按一下**確定**。   
-      3. 按一下 **選擇的虛擬機器**，選取 每部虛擬機器，然後按一下**選取 > 確定 > 確定** 。   
+      3. 按一下 **選擇的虛擬機器**，選取 每部虛擬機器，然後按一下**選取 > 確定 > 確定**。   
 4. 建立 RDP 負載平衡規則：   
       1. 在 **設定**，按一下**負載平衡規則**，然後按一下**新增**。   
       2. 輸入名稱 (例如 RDP) 中，選取**TCP** for**通訊協定**，輸入**3389**同時**連接埠**和**後端連接埠**，然後按一下 **[確定]** 。   

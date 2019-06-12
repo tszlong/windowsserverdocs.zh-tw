@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4979010c13d78c89c9a3e4965b567f7eef1f2ede
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5bfd68dcb745ebf7ef239883aa1c5322241b32df
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841099"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438429"
 ---
 # <a name="ftp-recv"></a>ftp: recv
 
@@ -30,24 +30,26 @@ ms.locfileid: "59841099"
 recv <remoteFile> [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>參數  
-|參數|描述|  
-|-------|--------|  
-|<remoteFile>|指定要複製的遠端檔案。|  
-|[<LocalFile>]|指定要在本機電腦上使用的名稱。|  
+
+|   參數   |                   描述                    |
+|---------------|--------------------------------------------------|
+| <remoteFile>  |        指定要複製的遠端檔案。        |
+| [<LocalFile>] | 指定要在本機電腦上使用的名稱。 |
+
 ## <a name="remarks"></a>備註  
--   **接收**命令等同於**取得**命令。  
--   如果*LocalFile*未指定，在指定的檔案*remoteFile*名稱。  
-## <a name="BKMK_Examples"></a>範例  
-複製**test.txt**到本機電腦使用目前的檔案傳輸類型。  
-```  
-recv test.txt  
-```  
-複製**test.txt**本機電腦**test1.txt**使用目前的檔案傳輸類型。  
-```  
-recv test.txt test1.txt  
-```  
-## <a name="additional-references"></a>其他參考資料  
--   [ftp: ascii](ftp-ascii.md)  
--   [ftp: binary](ftp-binary.md)  
--   [ftp: get](ftp-get.md)  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+- **接收**命令等同於**取得**命令。  
+- 如果*LocalFile*未指定，在指定的檔案*remoteFile*名稱。  
+  ## <a name="BKMK_Examples"></a>範例  
+  複製**test.txt**到本機電腦使用目前的檔案傳輸類型。  
+  ```  
+  recv test.txt  
+  ```  
+  複製**test.txt**本機電腦**test1.txt**使用目前的檔案傳輸類型。  
+  ```  
+  recv test.txt test1.txt  
+  ```  
+  ## <a name="additional-references"></a>其他參考資料  
+- [ftp: ascii](ftp-ascii.md)  
+- [ftp: binary](ftp-binary.md)  
+- [ftp: get](ftp-get.md)  
+- [命令列語法關鍵](command-line-syntax-key.md)  

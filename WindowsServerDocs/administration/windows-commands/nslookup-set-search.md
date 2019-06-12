@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf952a0337e23c0426265c6c0a4a8387a6ab45e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d95ebe30ce45430787bebbfe63766a571a436bbf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816989"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436597"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
@@ -34,11 +34,11 @@ set [no]search
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|**nosearch**|停止將 DNS 網域搜尋清單中的網域名稱系統 (DNS) 網域名稱附加至要求。|
-|**search**|將 DNS 網域搜尋清單中的網域名稱系統 (DNS) 網域名稱附加至要求，直到收到回應為止。 預設語法是**搜尋**。|
-|{說明 | ?}|顯示的簡短摘要**nslookup**子命令。|
+|  參數   |                                                                          描述                                                                          |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **nosearch** |                            停止將 DNS 網域搜尋清單中的網域名稱系統 (DNS) 網域名稱附加至要求。                            |
+|  **search**  | 將 DNS 網域搜尋清單中的網域名稱系統 (DNS) 網域名稱附加至要求，直到收到回應為止。 預設語法是**搜尋**。 |
+|    {說明     |                                                                              ?}                                                                               |
 
 #### <a name="additional-references"></a>其他參考資料
 

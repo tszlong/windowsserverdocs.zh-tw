@@ -13,12 +13,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f6393d57daaa04c15aa7c56dacc2c4d65dc2a3
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 37970f3bee2070cffc77bff855a8f28641196b24
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976736"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452865"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>從 Windows Server 版本 1709 開始移除或計劃取代的功能
 
@@ -29,7 +29,7 @@ ms.locfileid: "65976736"
 ## <a name="features-removed-from-windows-server-version-1709"></a>Windows Server 版本 1709 已移除的功能
 Windows Server 版本 1709 包含 Windows Server 2016 中提供的相同功能。 不過，這個版本提供不同於 Windows Server 2016 的安裝選項：
 
-- 做為半年度管道發行版本，Windows Server 版本 1709 僅提供 Server Core 安裝選項。 如需詳細資訊，請參閱 <<c0> [ 比較的服務通道](..\get-started-19\servicing-channels-19.md)。
+- 做為半年度管道發行版本，Windows Server 版本 1709 僅提供 Server Core 安裝選項。 如需詳細資訊，請參閱 <<c0> [ 比較的服務通道](../get-started-19/servicing-channels-19.md)。
 - 從這個版本開始，Nano Server 無法用來做為可安裝的主機作業系統。 Nano Server 改以容器作業系統形式來提供。 請參閱[Nano Server 在 Windows Server 版本 1709 中的變更](nano-in-semi-annual-channel.md)。
 - 從這個版本開始，伺服器訊息區塊 (SMB) 第 1 版不會再預設會安裝。 如需詳細資訊，請參閱 < [SMBv1 不會安裝在 Windows 10 Fall Creators Update 和 Windows Server，版本 1709年和更新版本的預設](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows)。
 

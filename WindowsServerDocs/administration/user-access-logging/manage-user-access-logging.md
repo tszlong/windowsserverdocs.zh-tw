@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d65a40e229fe4b0a1b27db496523dfe7a9419752
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 03bad9864f81cf75be13b4ca391fdcbc5f9dcb5c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886789"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435353"
 ---
 # <a name="manage-user-access-logging"></a>管理使用者存取記錄
 
@@ -58,11 +58,11 @@ UAL 會啟用和執行 Windows Server 2012 的電腦時預設會執行或更新�
   
 1.  使用具有本機系統管理員權限的帳戶登入伺服器。  
   
-2.  在 [伺服器管理員] 中，指向 [工具] ，然後按一下 [服務] 。  
+2.  在 [伺服器管理員] 中，指向 [工具]  ，然後按一下 [服務]  。  
   
-3.  向下捲動並選取 **User Access Logging Service**。按一下 [停止服務]。  
+3.  向下捲動並選取 **User Access Logging Service**。按一下 [停止服務]  。  
   
-4.  右\-按一下服務名稱，然後選取**屬性**。 在 [一般]  索引標籤上，將 [啟動類型]  變更為 [已停用] ，然後按一下 [確定] 。  
+4.  右\-按一下服務名稱，然後選取**屬性**。 在 [一般]  索引標籤上，將 [啟動類型]  變更為 [已停用]  ，然後按一下 [確定]  。  
   
 #### <a name="to-stop-and-disable-ual-from-the-command-line"></a>從命令列停止和停用 UAL  
   
@@ -95,11 +95,11 @@ Disable-ual
   
 1.  使用具有本機系統管理員權限的帳戶登入伺服器。  
   
-2.  在 [伺服器管理員] 中，指向 [工具] ，然後按一下 [服務] 。  
+2.  在 [伺服器管理員] 中，指向 [工具]  ，然後按一下 [服務]  。  
   
-3.  向下捲動並選取 **User Access Logging Service**。按一下 [啟動服務] 。  
+3.  向下捲動並選取 **User Access Logging Service**。按一下 [啟動服務]  。  
   
-4.  以滑鼠右鍵按一下服務名稱，然後選取 [內容] 。 在 [一般]  索引標籤上，將 [啟動類型]  變更為 [自動] ，然後按一下 [確定] 。  
+4.  以滑鼠右鍵按一下服務名稱，然後選取 [內容]  。 在 [一般]  索引標籤上，將 [啟動類型]  變更為 [自動]  ，然後按一下 [確定]  。  
   
 #### <a name="to-start-and-enable-ual-from-the-command-line"></a>從命令列啟動和啟用 UAL  
   
@@ -195,7 +195,7 @@ UAL 會在一年中的第一天建立新的 *GUID.mdb*。 舊的 *GUID.mdb* 會�
   
 2.  按 Windows 標誌 + R，然後輸入 **cmd** 以開啟命令提示字元視窗。  
   
-3.  新增登錄值：**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)**。  
+3.  新增登錄值：**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)** 。  
   
     > [!WARNING]  
     > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，應先備份電腦上的重要資料。  
@@ -211,13 +211,13 @@ UAL 並不是做為關鍵元件使用。 它的設計目的是為了在維護高
   
 #### <a name="to-delete-data-logged-by-ual"></a>刪除 UAL 記錄的資料  
   
-1.  停止 User Access Logging Service。  
+1. 停止 User Access Logging Service。  
   
-2.  開啟 [Windows 檔案總管]。  
+2. 開啟 [Windows 檔案總管]。  
   
-3.  移至 **\Windows\System32\Logfiles\SUM\**。  
+3. 移至 **\Windows\System32\Logfiles\SUM\\** 。  
   
-4.  刪除資料夾中的所有檔案。  
+4. 刪除資料夾中的所有檔案。  
   
 ## <a name="managing-ual-in-high-volume-environments"></a>在高容量環境下管理 UAL  
 本節說明系統管理員在具有大量用戶端的伺服器上使用 UAL 時會遇到的情況：  

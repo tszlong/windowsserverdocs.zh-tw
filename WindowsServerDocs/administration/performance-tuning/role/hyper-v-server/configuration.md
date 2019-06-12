@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e5e55ad492439fcb7150469d9a35b639f5ff9a2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830509"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435661"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V 設定
 
@@ -76,31 +76,31 @@ HYPER-V 會發佈效能計數器，可幫助描述虛擬化伺服器的行為和
 
 您應該一律使用 HYPER-V Hypervisor 邏輯處理器效能計數器測量實體系統的 CPU 使用量。 CPU 使用率計數器根目錄中的該工作管理員和效能監視報表和子磁碟分割不會反映了實際的實體 CPU 使用量。 您可以使用下列效能計數器來監視效能：
 
--   **HYPER-V Hypervisor 邏輯處理器 (\*)\\%執行時間總計**邏輯處理器的總非閒置時間
+- **HYPER-V Hypervisor 邏輯處理器 (\*)\\%執行時間總計**邏輯處理器的總非閒置時間
 
--   **HYPER-V Hypervisor 邏輯處理器 (\*)\\客體執行時間百分比**所花費的時間內的客體或主機內執行的循環
+- **HYPER-V Hypervisor 邏輯處理器 (\*)\\客體執行時間百分比**所花費的時間內的客體或主機內執行的循環
 
--   **HYPER-V Hypervisor 邏輯處理器 (\*)\\Hypervisor 執行時間百分比**hypervisor 中執行花費的時間
+- **HYPER-V Hypervisor 邏輯處理器 (\*)\\Hypervisor 執行時間百分比**hypervisor 中執行花費的時間
 
--   **HYPER-V Hypervisor 根虛擬處理器 (\*)\\ \*** 測量根磁碟分割的 CPU 使用量
+- **HYPER-V Hypervisor 根虛擬處理器 (\*)\\\\** * 測量根磁碟分割的 CPU 使用量
 
--   **HYPER-V Hypervisor 的虛擬處理器 (\*)\\ \*** 測量來賓磁碟分割的 CPU 使用量
+- **HYPER-V Hypervisor 的虛擬處理器 (\*)\\\\** * 測量來賓磁碟分割的 CPU 使用量
 
 
 ## <a name="see-also"></a>另請參閱
 
--   [HYPER-V 術語](terminology.md)
+-   [Hyper-V 術語](terminology.md)
 
--   [HYPER-V 架構](architecture.md)
+-   [Hyper-V 架構](architecture.md)
 
--   [HYPER-V 處理器效能](processor-performance.md)
+-   [Hyper-V 處理器效能](processor-performance.md)
 
--   [HYPER-V 記憶體效能](memory-performance.md)
+-   [Hyper-V 記憶體效能](memory-performance.md)
 
--   [HYPER-V 存放裝置 I/O 效能](storage-io-performance.md)
+-   [Hyper-V 存放裝置 I/O 效能](storage-io-performance.md)
 
--   [HYPER-V 網路 I/O 效能](network-io-performance.md)
+-   [Hyper-V 網路 I/O 效能](network-io-performance.md)
 
--   [虛擬化環境中偵測瓶頸](detecting-virtualized-environment-bottlenecks.md)
+-   [偵測虛擬化環境中的瓶頸](detecting-virtualized-environment-bottlenecks.md)
 
 -   [Linux 虛擬機器](linux-virtual-machine-considerations.md)

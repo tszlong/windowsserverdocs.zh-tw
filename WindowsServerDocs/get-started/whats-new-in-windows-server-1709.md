@@ -7,19 +7,23 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/03/2019
+ms.openlocfilehash: e17a636c5bf06d194abd1bfe9b6d20970773e993
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976732"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501397"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 的新功能
 
 >適用於：Windows Server (半年度管道)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要深入了解 Windows 的最新功能，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
-   
+
+> [!IMPORTANT]
+> Windows Server 版本 1709年已自於 2019 年 4 月 9 日起的支援。
+
 
 ## <a name="new-cadence-of-releases"></a>新的發行頻率
 
@@ -126,20 +130,20 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 - **接收視窗自動調整將**:TCP 自動調整將邏輯計算的 TCP 連線的 「 接收視窗 」 參數。  高速和/或長時間延遲連線需要這個演算法來達到良好的效能特性。  在此版本中，演算法已修改為使用步階函數來收斂到指定之連線的最大接收窗口值。
 - **TCP 統計 API**:引進新的 API 呼叫 SIO_TCP_INFO。  SIO_TCP_INFO 可讓開發人員使用通訊端選項來查詢有關個別 TCP 連線的豐富資訊。
 - **IPv6**:有多個改進 ipv6，在此版本中。
-    - **RFC 6106**支援：RFC 6106 允許透過路由器通告 (RAs) 的 DNS 設定。 您可以使用下列命令來啟用或停用 RFC 6106 支援：
+  - **RFC 6106**支援：RFC 6106 允許透過路由器通告 (RAs) 的 DNS 設定。 您可以使用下列命令來啟用或停用 RFC 6106 支援：
 
     ```
     netsh int ipv6 set interface <ifindex> rabaseddnsconfig=<enabled | disabled>
     ```
 
-    - **非固定格式標籤**:開頭為 Creators Update 輸出 TCP 和 UDP 封包透過 IPv6 有此欄位設為 5 個 tuple （Src IP，Dst IP、 Src 連接埠，Dst 連接埠） 的雜湊。  這會讓僅採用 IPv6 的資料中心更有效率地進行負載平衡或流程分類。 若要啟用 flowlabels：
+  - **非固定格式標籤**:開頭為 Creators Update 輸出 TCP 和 UDP 封包透過 IPv6 有此欄位設為 5 個 tuple （Src IP，Dst IP、 Src 連接埠，Dst 連接埠） 的雜湊。  這會讓僅採用 IPv6 的資料中心更有效率地進行負載平衡或流程分類。 若要啟用 flowlabels：
 
     ```
     netsh int ipv6 set flowlabel=[disabled|enabled] (enabled by default)
     netsh int ipv6 set global flowlabel=<enabled | disabled>
     ```
 
-    - **ISATAP 和 6to4**:針對未來的淘汰過程 Creators Update 會有預設停用這些技術。
+  - **ISATAP 和 6to4**:針對未來的淘汰過程 Creators Update 會有預設停用這些技術。
 - **死閘道偵測 (DGD)** :DGD 演算法自動連線期間轉換到另一個閘道無法連線至目前的閘道時。 在此版本中，已將演算法改善為定期重新探查網路環境。
 - [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) 是 Windows PowerShell 中執行各種網路診斷的內建 Cmdlet。  在此版本中，我們增強此 Cmdlet，以提供有關路由選取及來源位址選取的詳細資訊。
 

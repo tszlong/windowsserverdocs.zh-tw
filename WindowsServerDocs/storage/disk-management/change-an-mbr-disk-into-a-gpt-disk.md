@@ -1,23 +1,23 @@
 ---
 title: 將主開機記錄 (MBR) 磁碟變更成 GUID 磁碟分割表格 (GPT) 磁碟
 description: 說明如何將主開機記錄 (MBR) 變更成 GUID 磁碟分割表格 (GPT) 磁碟
-ms.date: 06/19/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f6aba72c329ba380f9617f484c4cf754fbcbb363
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 902a845bbe6a7e2a4d811aac0ea2990fb3557832
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192735"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812459"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>將 MBR 磁碟轉換成 GPT 磁碟
 
-> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 主開機記錄 (MBR) 磁碟使用標準 BIOS 磁碟分割表格。 GUID 磁碟分割表格 (GPT) 磁碟則使用整合可延伸韌體介面 (UEFI)。 GPT 磁碟的其中一個優點是，您在每個磁碟上可以有四個以上的磁碟分割。 容量大於兩個 TB 磁碟也需要 GPT。
 
@@ -59,7 +59,7 @@ ms.locfileid: "66192735"
 7.  在 **DISKPART** 提示中輸入 `convert gpt`。
 
 | 值  | 描述  |
-| ----- | ----|
+| ----- | ---- |
 | **清單中的磁碟** | 顯示磁碟的清單和這些磁碟的相關資訊，例如大小、可用空間數量、磁碟是基本還是動態磁碟，以及磁碟使用的是主開機記錄 (MBR) 還是 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。 標示有星號 (*) 的磁碟具有焦點。 |
 | **選取磁碟** *disknumber* | 選取指定的磁碟 (其中 *disknumber* 是磁碟編號)，並讓它成為焦點。 |
 | **clean** | 從焦點所在的磁碟移除所有的磁碟分割或磁碟區。  |
@@ -68,5 +68,3 @@ ms.locfileid: "66192735"
 ## <a name="see-also"></a>另請參閱
 
 -   [命令列語法標記法](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

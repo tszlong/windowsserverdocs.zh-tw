@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e838f68162b6faabf2ecbc7dea2ce840235890c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 433e30efeecec4e4ec51d67c40c14cacf986d12e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859109"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434221"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -44,8 +44,8 @@ convert gpt [noerr]
 
 > [!IMPORTANT]
 > 磁碟必須是空的才能將它轉換成 GPT 磁碟。 備份您的資料，然後再刪除轉換磁碟之前的 所有資料分割或磁碟區。
--   轉換為 GPT 的所需的最小磁碟大小是 128 mb。
--   這項作業成功時，必須選取一個基本 MBR 磁碟。 使用**選取磁碟**命令來選取基本磁碟，並將焦點移到它。
+> -   轉換為 GPT 的所需的最小磁碟大小是 128 mb。
+> -   這項作業成功時，必須選取一個基本 MBR 磁碟。 使用**選取磁碟**命令來選取基本磁碟，並將焦點移到它。
 
 ## <a name="BKMK_examples"></a>範例
 

@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c308b0497a5a39a25384b22441b733143df8727b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8a5c4905991203a051fea360ed91c9b372f6993
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852129"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439082"
 ---
 # <a name="fsutil-dirty"></a>fsutil 已變更
 >適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows 10，Windows Server 2012 R2、 Windows 8.1、 Windows Server 2012 中，Windows 8、 Windows Server 2008 R2、 Windows 7
@@ -31,11 +31,11 @@ fsutil dirty {query | set} <VolumePath>
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|-------------|---------------|
-|查詢|查詢指定的磁碟區已變更位元。|
-|設定|設定指定的磁碟區已變更位元。|
-|\<VolumePath>|指定磁碟機名稱後面加上冒號或 GUID 格式如下：**磁碟區 {***GUID***}**。|
+|   參數   |                                                 描述                                                  |
+|---------------|--------------------------------------------------------------------------------------------------------------|
+|     查詢     |                                  查詢指定的磁碟區已變更位元。                                   |
+|      設定      |                                    設定指定的磁碟區已變更位元。                                    |
+| \<VolumePath> | 指定磁碟機名稱後面加上冒號或 GUID 格式如下：**磁碟區 {** <em>GUID</em> **}** 。 |
 
 ## <a name="remarks"></a>備註
 

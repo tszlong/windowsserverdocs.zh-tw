@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78594c0445ae482e49d47b3b67bb867e53866017
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7de5e6dc6d205b7e6749d38ac822e31a78788c6e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867949"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435217"
 ---
 # <a name="auditpol-backup"></a>auditpol 備份
 
@@ -31,10 +31,12 @@ ms.locfileid: "59867949"
 auditpol /backup /file:<filename>
 ```
 ## <a name="parameters"></a>參數
-|參數|描述|
-|-------|--------|
-|/file|指定要稽核原則將備份檔案的名稱。|
-|/?|在命令提示字元顯示說明。|
+
+| 參數 |                                 描述                                 |
+|-----------|-----------------------------------------------------------------------------|
+|   /file   | 指定要稽核原則將備份檔案的名稱。 |
+|    /?     |                    在命令提示字元顯示說明。                     |
+
 ## <a name="remarks"></a>備註
 針對每位使用者的原則和系統原則的備份作業，您必須撰寫或該物件上的完全控制權限設定中的安全性描述元。 您也可以執行備份作業所擁有**管理稽核及安全性記錄**(SeSecurityPrivilege) 使用者權限。 不過，此權限可讓其他不是執行清單作業所需的存取。
 ## <a name="BKMK_examples"></a>範例
@@ -44,6 +46,6 @@ auditpol /backup /file:C:\auditpolicy.csv
 ```
 > [!NOTE]
 > 如果未不指定任何磁碟機，則會使用目前的目錄。
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[auditpol 還原](auditpol-restore.md)
+> #### <a name="additional-references"></a>其他參考資料
+> [命令列語法重點](command-line-syntax-key.md)
+> [auditpol 還原](auditpol-restore.md)

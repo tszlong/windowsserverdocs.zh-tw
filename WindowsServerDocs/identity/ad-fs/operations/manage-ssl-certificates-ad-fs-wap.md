@@ -9,12 +9,12 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9bae831da9d247c423c2874a5928b7f811ef65dc
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9acdbe2be56b990876fe365c1f535aaa411009c5
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188706"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501628"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>管理 Windows Server 2016 中 AD FS 及 WAP 的 SSL 憑證
 
@@ -109,7 +109,7 @@ WAP 上設定的預設憑證驗證繫結 」 或 「 替代用戶端 TLS 繫結�
 若要取代的 Web 應用程式 Proxy SSL 憑證上,**每個**Web Application Proxy 伺服器會使用下列 cmdlet 來安裝新的 SSL 憑證：
 
 ```powershell
-Set-WebApplicationProxySslCertificate '<thumbprint of new cert>'
+Set-WebApplicationProxySslCertificate -Thumbprint '<thumbprint of new cert>'
 ```
 
 如果在上述 cmdlet 失敗，因為舊的憑證已到期，重新設定 proxy，使用下列 cmdlet:

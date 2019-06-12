@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: faaf936e4c23579e908e12543c07d0764a2cdcc1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7a602472d30f19cb2d4a802423635e5788e78a43
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192619"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434549"
 ---
 # <a name="certutil"></a>certutil
 
@@ -145,14 +145,15 @@ Certutil.exe 是命令列程式所安裝憑證服務的一部分。 您可以使
 
 下表描述用來表示命令列語法標記法。
 
-|標記法|描述|
-|--------|-----------|
-|文字，而不需要方括號或大括號|您必須依照顯示輸入的項目|
-|\<角括弧內的文字 >|您必須提供值的預留位置|
-|[方括號內的文字]|選擇性的項目|
-|{大括號內的文字}|一組必要的項目;選擇其中一個|
-|分隔號 （|)|分隔符號是互斥的項目;選擇其中一個|
-|省略符號 （...）|可重複的項目|
+
+|            標記法             |                  描述                  |
+|---------------------------------|-----------------------------------------------|
+| 文字，而不需要方括號或大括號 |         您必須依照顯示輸入的項目          |
+|  \<角括弧內的文字 >  | 您必須提供值的預留位置 |
+|  [方括號內的文字]  |                選擇性的項目                 |
+|      {大括號內的文字}       |       一組必要的項目;選擇其中一個       |
+|         分隔號 （          |                       )                       |
+|          省略符號 （...）           |          可重複的項目           |
 
 返回[功能表](#menu)
 

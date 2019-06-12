@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 007256fffde11899d930c9197cade6d3bf9be42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 3ad9f55ba130014227326f4abe8540c78755f6c5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868779"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437371"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -52,7 +52,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 &lt;電腦&gt;指定執行您想要管理的使用者名稱對應服務的遠端電腦。 您可以指定電腦使用 Windows 網際網路名稱服務 (WINS) 名稱或網域名稱系統 (DNS) 名稱，或透過網際網路通訊協定 (IP) 位址。
 
--u&lt;使用者&gt;指定所要使用的認證之使用者的使用者名稱。 可能需要將網域名稱新增至表單中的使用者名稱*網域***\\***使用者名稱*。
+-u&lt;使用者&gt;指定所要使用的認證之使用者的使用者名稱。 可能需要將網域名稱新增至表單中的使用者名稱<em>網域</em> **\\** <em>使用者名</em>。
 
 -p&lt;密碼&gt;指定之使用者的密碼。 如果您指定 **-u**選項，但是省略 **-p**選項，系統會提示輸入使用者的密碼。
 特定的動作所**mapadmin**執行取決於您所指定的命令引數：
@@ -90,7 +90,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 |選項|定義|
 |-----|-------|
-|-wu &lt;user&gt;|Windows 使用者，將會刪除對應，指定為&lt; *WindowsDomain&gt;\\&lt;使用者名稱&gt;*。 您必須指定 **-wu**或 **-uu**選項，或兩者。 如果您指定這兩個選項，將會刪除特定的兩個選項所識別的對應。 如果您只有指定 **-wu**選項，所有對應將會刪除指定的使用者。|
+|-wu &lt;user&gt;|Windows 使用者，將會刪除對應，指定為&lt; *WindowsDomain&gt;\\&lt;使用者名稱&gt;* 。 您必須指定 **-wu**或 **-uu**選項，或兩者。 如果您指定這兩個選項，將會刪除特定的兩個選項所識別的對應。 如果您只有指定 **-wu**選項，所有對應將會刪除指定的使用者。|
 |-wg &lt;group&gt;|對應將被刪除，做為指定的 Windows 群組&lt;WindowsDomain&gt;\\&lt;groupname&gt;。 您必須指定 **-wg**或 **-ug**選項，或兩者。 如果您指定這兩個選項，將會刪除特定的兩個選項所識別的對應。 如果您只有指定 **-wg**選項，所有對應將會刪除指定的群組。|
 |-uu &lt;user&gt;|UNIX 使用者的對應將被刪除，指定為&lt;使用者名&gt;。 您必須指定 **-wu**或 **-uu**選項，或兩者。 如果您指定這兩個選項，將會刪除特定的兩個選項所識別的對應。 如果您只有指定 **-uu**選項，所有對應將會刪除指定的使用者。|
 |-ug&lt;群組&gt;|對應將被刪除，指定為 UNIX 群組&lt;groupname&gt;。 您必須指定 **-wg**或 **-ug**選項，或兩者。 如果您指定這兩個選項，將會刪除特定的兩個選項所識別的對應。 如果您只有指定 **-ug**選項，所有對應將會刪除指定的群組。|
@@ -114,7 +114,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 |選項|定義|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|指定要對應的 Windows 網域。|
-|-y &lt;NISdomain&gt;|指定要對應的 NIS 網域。&lt;b /&gt;&lt;b /&gt;**-n** &lt;nisServer&gt;指定與所指定的 NIS 網域的 NIS 伺服器 **-y**選項。|
+|-y &lt;NISdomain&gt;|指定要對應的 NIS 網域。&lt;b /&gt;&lt;b /&gt; **-n** &lt;nisServer&gt;指定與所指定的 NIS 網域的 NIS 伺服器 **-y**選項。|
 |-f &lt;path&gt;|指定目錄，包含要對應密碼及群組檔案的完整的的路徑。 檔案必須位於電腦管理，而且您無法使用**mapadmin**來管理遠端電腦來設定密碼及群組的檔案為基礎的對應。|
 
 **removedomainmap** -移除 Windows 網域和 NIS 網域之間的簡單對應。 下列選項和引數可供這個命令引數：

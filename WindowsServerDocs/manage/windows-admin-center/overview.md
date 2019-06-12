@@ -5,21 +5,21 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 04/12/2019
+ms.date: 06/07/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ee3c4ba5d6c3dc911ab318ade9a46b279317496f
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.openlocfilehash: 2314e336cbf9ad44b07f3f94d7a866b48b5e9bff
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260252"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811804"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center，Windows Admin Center 預覽
 
-**Windows Admin Center** (代號**專案檀香山**) 已進化版的 Windows Server 內建管理工具; 它是窗口可合併本機和遠端伺服器管理的各個層面。 因為是在本機部署、以瀏覽器為基礎的管理體驗，並不需要網際網路連線和 Azure。 Windows Admin Center 讓您完全控制您的部署的各個層面，包括未連線至網際網路的私人網路。
+**Windows Admin Center** (先前代號**專案檀香山**) 是一項革新的 Windows Server 內建管理工具; 它是窗口可合併本機和遠端伺服器管理的各個層面。 因為是在本機部署、以瀏覽器為基礎的管理體驗，並不需要網際網路連線和 Azure。 Windows Admin Center 讓您完全控制您的部署的各個層面，包括未連線至網際網路的私人網路。
 
 ## <a name="introduction"></a>簡介
 
@@ -75,6 +75,7 @@ ms.locfileid: "66260252"
             <ul>
             <li><a href="configure/settings.md">Windows Admin Center 設定</a>
             <li><a href="configure/user-access-control.md">使用者存取控制及權限</a>
+            <li><a href="configure/shared-connections.md">共用的連線</a>
             <li><a href="configure/using-extensions.md">延伸模組</a>
             </ul>
         </td>
@@ -92,7 +93,7 @@ ms.locfileid: "66260252"
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>連接到 Azure</h3>
+            <h3>連線到 Azure</h3>
             <ul>
             <li><a href="azure/index.md">Azure 的混合式服務</a></li>
             <li><a href="azure/azure-integration.md">連接到 Azure 的 Windows Admin Center</a></li>

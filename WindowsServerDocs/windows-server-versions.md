@@ -14,12 +14,12 @@ author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d14ccf734d5242301030bbb6e3c2489e1a0266a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9a4e4e0dde0c2c6178629f0dee744448edc72dd
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876349"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812596"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 新版與舊版 IT 系統管理員內容
 
@@ -29,7 +29,7 @@ Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基
 
 > [!IMPORTANT]
 > 您的電腦執行 Windows 嗎？ Windows 10、Windows 8 或 8.1？ Windows 7？ 您遇到問題嗎？ 請移至 [Microsoft 支援服務](https://support.microsoft.com) - 只需在搜尋列中輸入您的問題。 他們提供 Windows、Office、Skype 等等的相關資訊，應有盡有。 
-
+> 
 > 以下資訊*只*適用於 Windows **Server**。
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
@@ -54,18 +54,14 @@ Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基
 
 [MSDN 上的 Windows Server 2003 開發人員程式庫](https://msdn.microsoft.com/library/dn792549.aspx)
 
-
 ## <a name="product-evaluations"></a>產品評估
 
 [下載 Windows Server 2016 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
 
 [下載 Windows Server 2012 R2 試用版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
-
 ## <a name="related-links"></a>相關連結
 [Windows Server 2016 的產品資訊](https://www.microsoft.com/cloud-platform/windows-server) 
-
-<br>
 
 > [!TIP]
 > 您遇到問題了嗎？ 從 [Microsoft 支援服務](https://support.microsoft.com)開始 - 只需在搜尋列中輸入您的問題。 您可以取得有關 Windows、Office、Skype 等方面的協助，應有盡有。 

@@ -9,16 +9,16 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 如何使用 Microsoft Azure 來裝載在雲端中的 Windows Server 容錯移轉叢集的見證如何也稱為部署雲端見證。
-ms.openlocfilehash: f7e1c84e54f08044a772f06e591588c1add33026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 64fd39a37c63d24f8fc0eb4f45c8a7e9f6089013
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857979"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439778"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署容錯移轉叢集的雲端見證
 
-> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
+> 適用於：Windows Server 2019，Windows Server 2016
 
 雲端見證是一種容錯移轉叢集 」 仲裁見證，使用 Microsoft Azure 提供在叢集中的仲裁投票。 本主題提供 「 雲端見證 」 功能，其支援的案例和指示如何設定容錯移轉叢集的雲端見證的概觀。
 
@@ -134,14 +134,14 @@ ms.locfileid: "59857979"
     **圖 8。選取仲裁見證**  
 
 5. 在 **設定雲端見證**頁面上，輸入下列資訊：  
-    1. （也就是必要的參數）Azure 儲存體帳戶名稱。  
-    2. （也就是必要的參數）對應至儲存體帳戶存取金鑰。  
-        1. 在第一次建立時，使用主要存取金鑰 （請參閱 圖 5）  
-        2. 當輪替主要存取金鑰，使用次要存取金鑰 （請參閱 圖 5）  
-    3. （選擇性參數）如果您想要使用不同的 Azure 服務端點 （例如中國的 Microsoft Azure 服務），然後更新端點的伺服器名稱。  
+   1. （也就是必要的參數）Azure 儲存體帳戶名稱。  
+   2. （也就是必要的參數）對應至儲存體帳戶存取金鑰。  
+       1. 在第一次建立時，使用主要存取金鑰 （請參閱 圖 5）  
+       2. 當輪替主要存取金鑰，使用次要存取金鑰 （請參閱 圖 5）  
+   3. （選擇性參數）如果您想要使用不同的 Azure 服務端點 （例如中國的 Microsoft Azure 服務），然後更新端點的伺服器名稱。  
 
-    ![在 [叢集仲裁精靈] 的 [雲端見證組態] 窗格的快照集](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
-    **圖 9:設定您的雲端見證**
+      ![在 [叢集仲裁精靈] 的 [雲端見證組態] 窗格的快照集](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
+      **圖 9:設定您的雲端見證**
 
 6. 在成功的雲端見證組態，您可以檢視新建立的見證資源在容錯移轉叢集管理員嵌入式管理單元 （請參閱 圖 10）。
 

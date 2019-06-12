@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 337716792a4bb3cf730b723df3abe1029631426b
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 87ad8058f7353c938087b1211e0f17820f0bd2ae
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222507"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435655"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 檔案伺服器的效能微調
 
@@ -93,22 +93,22 @@ Windows Server 2012 中導入下列的 SMB 效能計數器，監視 SMB 2 和更
 
 下列 REG\_DWORD 登錄設定可能會影響效能的 SMB 檔案伺服器：
 
--   **Smb2CreditsMin**和**Smb2CreditsMax**
+- **Smb2CreditsMin**和**Smb2CreditsMax**
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMin
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMin
+  ```
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMax
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMax
+  ```
 
-    預設值分別為 512 與 8192。 這些參數可讓節流以動態方式在指定的界限內的用戶端作業並行處理的伺服器。 某些用戶端可能會達到增加的輸送量與較高並行存取限制，例如，透過高頻寬、 高延遲連結複製的檔案。
+  預設值分別為 512 與 8192。 這些參數可讓節流以動態方式在指定的界限內的用戶端作業並行處理的伺服器。 某些用戶端可能會達到增加的輸送量與較高並行存取限制，例如，透過高頻寬、 高延遲連結複製的檔案。
     
-    >[!TIP]
-    > 在 Windows 10 和 Windows Server 2016 之前, 授與用戶端的信用額度的數目各不相同動態 Smb2CreditsMin 和嘗試判斷最佳的信用額度來授與數目會根據網路延遲演算法為基礎的 Smb2CreditsMax 之間和信用額度的使用量。 在 Windows 10 和 Windows Server 2016 中，SMB 伺服器已變更為無條件地授與最多設定的最大數目的信用額度的要求時的信用額度。 隨著這項變更的詳細資訊，節流機制，可減少每個連接的信用額度 視窗的大小，在伺服器記憶體不足的壓力時，點數已移除。 因此記憶體不足的伺服器時所觸發的節流，核心的記憶體不足事件只收到信號 (< 幾 MB) 是毫無用處。 因為伺服器不會再縮小信用額度 windows Smb2CreditsMin 設定已不再需要和現在會被忽略。
-
-    > 您可以監視 SMB 用戶端共用\\來查看是否有任何問題的信用額度的信用額度停止/秒。
+  > [!TIP]
+  > 在 Windows 10 和 Windows Server 2016 之前, 授與用戶端的信用額度的數目各不相同動態 Smb2CreditsMin 和嘗試判斷最佳的信用額度來授與數目會根據網路延遲演算法為基礎的 Smb2CreditsMax 之間和信用額度的使用量。 在 Windows 10 和 Windows Server 2016 中，SMB 伺服器已變更為無條件地授與最多設定的最大數目的信用額度的要求時的信用額度。 隨著這項變更的詳細資訊，節流機制，可減少每個連接的信用額度 視窗的大小，在伺服器記憶體不足的壓力時，點數已移除。 因此記憶體不足的伺服器時所觸發的節流，核心的記憶體不足事件只收到信號 (< 幾 MB) 是毫無用處。 因為伺服器不會再縮小信用額度 windows Smb2CreditsMin 設定已不再需要和現在會被忽略。
+  > 
+  > 您可以監視 SMB 用戶端共用\\來查看是否有任何問題的信用額度的信用額度停止/秒。
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -121,27 +121,28 @@ Windows Server 2012 中導入下列的 SMB 效能計數器，監視 SMB 2 和更
     >[!TIP]
     > 如果快取管理員數量已變更的資料就可增加可能需要的值 (快取的效能計數器\\中途分頁) 會增加，以佔用很大 （超過 ~ 25%)記憶體或如果系統正在進行同步大量讀取 I/o。
 
--   **MaxThreadsPerQueue**
+- **MaxThreadsPerQueue**
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
+  ```
 
-    預設值為 20。 增加此值會產生檔案伺服器可以使用服務的並行要求的執行緒的數目。 當大量的使用中的連線需要可服務，而且硬體資源，例如儲存體頻寬，就已足夠時，增加此值可以改善伺服器延展性、 效能和回應時間。
+  預設值為 20。 增加此值會產生檔案伺服器可以使用服務的並行要求的執行緒的數目。 當大量的使用中的連線需要可服務，而且硬體資源，例如儲存體頻寬，就已足夠時，增加此值可以改善伺服器延展性、 效能和回應時間。
 
-    >[!TIP]
-    > 值可能需要增加的指示是如果 SMB2 工作佇列會變得非常大 (效能計數器 '伺服器工作佇列\\佇列長度\\SMB2 未封鎖\*' ~ 100 以上以一致的方式是)。
+  >[!TIP]
+  > 值可能需要增加的指示是如果 SMB2 工作佇列會變得非常大 (效能計數器 '伺服器工作佇列\\佇列長度\\SMB2 未封鎖\*' ~ 100 以上以一致的方式是)。
 
-    >[!Note]
-    >在 Windows 10 和 Windows Server 2016，MaxThreadsPerQueue 無法使用。 執行緒集區的執行緒數目會是"20 * 的 NUMA 節點中的處理器數目 」。  
+  >[!Note]
+  >在 Windows 10 和 Windows Server 2016，MaxThreadsPerQueue 無法使用。 執行緒集區的執行緒數目會是"20 * 的 NUMA 節點中的處理器數目 」。
+     
 
--   **AsynchronousCredits**
+- **AsynchronousCredits**
 
-    ``` 
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
-    ```
+  ``` 
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
+  ```
 
-    預設值為 512。 這個參數會限制在單一連接所允許的並行非同步 SMB 命令數目。 某些情況下 (例如當沒有前端伺服器與後端的 IIS 伺服器) （適用於檔案尤其變更通知要求） 需要大量的並行存取。 以支援這種情況下，可以增加此項目的值。
+  預設值為 512。 這個參數會限制在單一連接所允許的並行非同步 SMB 命令數目。 某些情況下 (例如當沒有前端伺服器與後端的 IIS 伺服器) （適用於檔案尤其變更通知要求） 需要大量的並行存取。 以支援這種情況下，可以增加此項目的值。
 
 ### <a name="smb-server-tuning-example"></a>SMB 伺服器微調範例
 
