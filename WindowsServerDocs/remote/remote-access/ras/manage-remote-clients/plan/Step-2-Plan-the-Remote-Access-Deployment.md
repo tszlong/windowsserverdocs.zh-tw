@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fb940effaae7989dec397e539b64160c87828d5a
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 7aec08a19759c98150cf7518643f634947c5133d
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266710"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805001"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>步驟 2 規劃 「 遠端存取 」 部署
 
@@ -56,7 +56,7 @@ ms.locfileid: "66266710"
   
     -   **連線能力檢查器**  
   
-        系統會建立一個用戶端用來驗證內部網路連線能力的預設 Web 探查。 預設名稱是 https://directaccess-WebProbeHost.<domain_name>。 應該以手動方式在 DNS 中登錄這個名稱。 您可以建立使用其他網址，透過 HTTP 或 PING 其他連線能力檢查器。 每個連線能力檢查器都必須有一個 DNS 項目。  
+        系統會建立一個用戶端用來驗證內部網路連線能力的預設 Web 探查。 預設名稱是`https://directaccess-WebProbeHost.<domain_name>`。 應該以手動方式在 DNS 中登錄這個名稱。 您可以建立使用其他網址，透過 HTTP 或 PING 其他連線能力檢查器。 每個連線能力檢查器都必須有一個 DNS 項目。  
   
     -   **協助支援人員電子郵件地址**  
   

@@ -12,12 +12,12 @@ ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cf0c062b92c687f5f7b33b419eafdca2dd3bbbfc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c3ba4746211690ad52f775b8bdc1ccf9b6c74b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828509"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433724"
 ---
 # <a name="add-health-alerts"></a>新增健康狀態警示
 
@@ -32,13 +32,13 @@ ms.locfileid: "59828509"
   
 #### <a name="to-install-the-xml-files-on-the-server"></a>若要在伺服器上安裝 XML 檔案  
   
-1.  在 **%ProgramFiles%\Windows Server\Bin\Feature Definitions** 資料夾中，建立名為 **MyHealthAddIn**的新資料夾。 您可以為此資料夾指定任何名稱。 建議讓此資料夾的名稱與功能名稱相同。  
+1. 在 **%ProgramFiles%\Windows Server\Bin\Feature Definitions** 資料夾中，建立名為 **MyHealthAddIn**的新資料夾。 您可以為此資料夾指定任何名稱。 建議讓此資料夾的名稱與功能名稱相同。  
   
-2.  將 Definition.xml 和 Definition.xml.config 檔案複製到新資料夾。  
+2. 將 Definition.xml 和 Definition.xml.config 檔案複製到新資料夾。  
   
-3.  如果建立了條件或動作的二進位檔案，您也必須將這些檔案複製到 **%ProgramFiles%\Windows Server\Bin**。  
+3. 如果建立了條件或動作的二進位檔案，您也必須將這些檔案複製到 **%ProgramFiles%\Windows Server\Bin**。  
   
- 用戶端電腦會每隔 6 小時執行排定的工作，將 XML 檔案提取至適當的位置。 您可以手動執行此工作，以強制執行用戶端電腦和伺服器之間的同步處理。  
+   用戶端電腦會每隔 6 小時執行排定的工作，將 XML 檔案提取至適當的位置。 您可以手動執行此工作，以強制執行用戶端電腦和伺服器之間的同步處理。  
   
 #### <a name="to-install-the-xml-files-on-the-client-computer"></a>若要在用戶端電腦上安裝 XML 檔案  
   

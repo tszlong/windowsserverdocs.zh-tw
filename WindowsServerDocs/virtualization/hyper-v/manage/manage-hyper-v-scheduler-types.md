@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 7af6d68b02367d349580eacb27405c6f37e97ff8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0c2f85fbbeca9e8ac5d40bbcb71f286fabfb65c
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871989"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501666"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 HYPER-V hypervisor 排程器類型
 
@@ -148,7 +148,7 @@ Windows Server 2016 HYPER-V 預設會使用傳統的 hypervisor 排程器模型�
 >[!NOTE]
 >下列更新，才能使用這份文件中所述的 hypervisor 排程器功能。 這些更新包括變更以支援新的 'hypervisorschedulertype' BCD 選項，這是所需的主應用程式組態。
 
-| 版本 | 發行  | 需要更新 | 知識庫文件 |
+| Version | 發行  | 需要更新 | 知識庫文件 |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
@@ -169,6 +169,7 @@ Hypervisor 排程器組態是透過 hypervisorschedulertype BCD 項目加以控�
 
 * 傳統
 * 核心
+* 根目錄
 
 系統必須重新開機的 hypervisor 排程器型別，才會生效的任何變更。
 

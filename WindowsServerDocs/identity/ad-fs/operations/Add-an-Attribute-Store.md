@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 103ee707c88f4e88b231a833f739cf75b6503e18
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8d3027c419e85d1aec4b3b0308926a86bb37620d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190105"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445096"
 ---
 # <a name="add-an-attribute-store"></a>新增屬性存放區
 
@@ -33,20 +33,20 @@ ms.locfileid: "66190105"
 
 ![新增屬性存放區](media/Add-an-Attribute-Store/addstore1.PNG)
   
-3.  在 **新增屬性存放區**對話方塊方塊中，設定您想要新增的屬性存放區的下列屬性：  
+3. 在 **新增屬性存放區**對話方塊方塊中，設定您想要新增的屬性存放區的下列屬性：  
   
-    -   在 **顯示名稱**，輸入您想要用來識別屬性存放區的名稱。  
+   -   在 **顯示名稱**，輸入您想要用來識別屬性存放區的名稱。  
   
-    -   在 **的屬性存放區型別**，選取支援的屬性存放區類型是**Active Directory**， **LDAP**，或**SQL**。  
+   -   在 **的屬性存放區型別**，選取支援的屬性存放區類型是**Active Directory**， **LDAP**，或**SQL**。  
   
-    -   在 **連接字串**，如果您已選取任一個輕量型目錄存取通訊協定\(LDAP\)存放區或結構化的查詢語言\(SQL\)存放區中，輸入字串您用來連接到 屬性存放區。 Active Directory 屬性存放區中，任何連接字串不是必要的;因此，會停用此欄位。  
+   -   在 **連接字串**，如果您已選取任一個輕量型目錄存取通訊協定\(LDAP\)存放區或結構化的查詢語言\(SQL\)存放區中，輸入字串您用來連接到 屬性存放區。 Active Directory 屬性存放區中，任何連接字串不是必要的;因此，會停用此欄位。  
   
-        > [!NOTE]  
-        > 根據預設，AD FS 會自動建立 Active Directory 屬性存放區。  
+       > [!NOTE]  
+       > AD FS 會自動建立預設的 Active Directory 屬性存放區。  
  
 ![新增屬性存放區](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4.  按一下 [確定]  。  
+4. 按一下 [確定]  。  
   
 ## <a name="additional-references"></a>其他參考資料  
 

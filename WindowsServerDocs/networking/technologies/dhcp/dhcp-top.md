@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 0ff29ef3-c458-4432-9065-e50a7de5b4b9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 08b07e902486ae633b30949270e15f8bf94afaaf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7828d75d58ff328e826cb685899a76347ce56953
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857489"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812212"
 ---
 # <a name="dynamic-host-configuration-protocol-dhcp"></a>動態主機設定通訊協定 (DHCP)
 
@@ -21,11 +21,11 @@ ms.locfileid: "59857489"
 
 您可以使用本主題的 Windows Server 2016 中 DHCP 的簡短概觀。
 
->[!NOTE]
->本主題中，除了下列 DHCP 文件使用。
+> [!NOTE]
+> 本主題中，除了下列 DHCP 文件使用。
 >
->- [在 DHCP 中最新消息](What-s-New-in-DHCP.md)
->- [使用 Windows PowerShell 將 DHCP 部署](dhcp-deploy-wps.md)
+> - [在 DHCP 中最新消息](What-s-New-in-DHCP.md)
+> - [使用 Windows PowerShell 將 DHCP 部署](dhcp-deploy-wps.md)
 
 動態主機設定通訊協定 (DHCP) 是一種用戶端/伺服器通訊協定，會自動提供網際網路通訊協定 (IP) 主機，其 IP 位址與其他的相關的組態資訊，例如子網路遮罩及預設閘道。 Rfc 2131 與 2132年定義 DHCP 做為網際網路工程任務推動小組 (IETF) 標準架構上開機通訊協定 (BOOTP)，與 DHCP 共用許多實作詳細資料的通訊協定。 DHCP 可讓主機以從 DHCP 伺服器取得必要的 TCP/IP 組態資訊。
 

@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 796ee001e20cff5587c5409f7571d223ff7900a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 299cf420b44e4a15985d00489edf84784316540d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857939"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810582"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Windows Server 2016 的升級和轉換選項
 
@@ -93,7 +93,7 @@ ms.locfileid: "59857939"
 
 - 從提升權限的命令提示字元，執行 **slmgr.vbs /dlv**；評估版的輸出中將包含 "EVAL"。
 
-- 從 [開始] 畫面中，開啟 [控制台]。 依序開啟 [系統及安全性] 、[系統] 。 檢視 [系統] 頁面之 [Windows 啟用] 區域中的 Windows 啟用狀態。 按一下 [Windows 啟用] 中的 [檢視詳細資料]，了解 Windows 啟用狀態的詳細資訊。
+- 從 [開始] 畫面中，開啟 [控制台]  。 依序開啟 [系統及安全性]  、[系統]  。 檢視 [系統]  頁面之 [Windows 啟用] 區域中的 Windows 啟用狀態。 按一下 [Windows 啟用] 中的 [檢視詳細資料]  ，了解 Windows 啟用狀態的詳細資訊。
 
 如果已經啟用 Windows，桌面會顯示評估期的剩餘時間。
 
@@ -109,7 +109,8 @@ ms.locfileid: "59857939"
 
 對於 Windows Server 2016 Standard 的評估版，您也可以使用這個相同的命令及適當的產品金鑰，以一個步驟轉換成 Windows Server 2016 Datacenter 的零售版。
 
-> 提示：如需 Dism.exe 的詳細資訊，請參閱 [DISM 命令列選項](https://go.microsoft.com/fwlink/?LinkId=192466)。
+> [!TIP] 
+> 如需 Dism.exe 的詳細資訊，請參閱[DISM 命令列選項](https://go.microsoft.com/fwlink/?LinkId=192466)。
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>將目前的零售版轉換為不同的目前零售版
 
@@ -125,7 +126,3 @@ ms.locfileid: "59857939"
 若要這樣做，請從提升權限的命令提示字元執行：**slmgr /ipk \<金鑰\>**
 
 其中 \<金鑰\> 是適當的大量授權、零售或 OEM 產品金鑰。
-
-
- 
-

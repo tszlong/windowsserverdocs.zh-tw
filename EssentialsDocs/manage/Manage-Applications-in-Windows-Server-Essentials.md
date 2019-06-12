@@ -12,12 +12,12 @@ ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e98d661ac71697bc0e38b6a25fe2f9d2b0b7254f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1a60a9e7fd958d447b4770431a69546f0ad6f229
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860169"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433357"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的應用程式
 
@@ -32,21 +32,21 @@ ms.locfileid: "59860169"
 ##  <a name="BKMK_1"></a> 在儀表板中的應用程式管理工作  
  [儀表板] 的 [應用程式]  管理頁面提供：  
   
--   一份已安裝的增益集清單，當中顯示：  
+- 一份已安裝的增益集清單，當中顯示：  
   
-    -   線上服務或增益集的名稱  
+  -   線上服務或增益集的名稱  
   
-    -   增益集的更新狀態  
+  -   增益集的更新狀態  
   
-    -   增益集的訂閱狀態  
+  -   增益集的訂閱狀態  
   
-    -   提供增益集之公司或發行者的名稱  
+  -   提供增益集之公司或發行者的名稱  
   
--   一個包含一組可管理所選增益集之工作的工作窗格  
+- 一個包含一組可管理所選增益集之工作的工作窗格  
   
--   一份可從 Microsoft Pinpoint 下載並安裝的增益集清單  
+- 一份可從 Microsoft Pinpoint 下載並安裝的增益集清單  
   
- 下表說明伺服器 [儀表板] 中可用的各種增益集管理工作。 部分工作是增益集特定的工作，只有當您選取清單中的某個增益集時才能看見。  
+  下表說明伺服器 [儀表板] 中可用的各種增益集管理工作。 部分工作是增益集特定的工作，只有當您選取清單中的某個增益集時才能看見。  
   
 |工作名稱|描述|  
 |---------------|-----------------|  
@@ -65,7 +65,7 @@ ms.locfileid: "59860169"
   
 #### <a name="to-install-an-add-in-from-microsoft-pinpoint"></a>安裝來自 Microsoft Pinpoint 的增益集  
   
-1.  在伺服器 [儀表板] 中，按一下 [應用程式] ，然後按一下 [Microsoft Pinpoint]  索引標籤。可用的增益集清單隨即出現。  
+1.  在伺服器 [儀表板] 中，按一下 [應用程式]  ，然後按一下 [Microsoft Pinpoint]  索引標籤。可用的增益集清單隨即出現。  
   
 2.  按一下您想要安裝的增益集。 增益集資訊頁面隨即出現。  
   
@@ -89,11 +89,11 @@ ms.locfileid: "59860169"
   
 1.  開啟伺服器 [儀表板]。  
   
-2.  按一下 [應用程式] 索引標籤。  
+2.  按一下 [應用程式]  索引標籤。  
   
-3.  在 [增益集]  索引標籤上，選取您想要移除的增益集，然後按一下 [移除增益集] 。  
+3.  在 [增益集]  索引標籤上，選取您想要移除的增益集，然後按一下 [移除增益集]  。  
   
-4.  在 [增益集移除] 視窗中，按一下 [移除]。  
+4.  在 [增益集移除]  視窗中，按一下 [移除]  。  
   
     > [!NOTE]
     >  您可能需要重新啟動 [儀表板]，才能將增益集完全移除。  

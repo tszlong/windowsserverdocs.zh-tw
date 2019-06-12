@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 04/05/2018
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f29c70628f2869e9f3aeffd0d08032bce5aeda
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b41ebd0bb822875a3114de4a849ea3ec5decee11
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034189"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810892"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>在容錯移轉叢集中使用叢集共用磁碟區
 
@@ -26,15 +26,15 @@ CSV 提供一般用途的叢集檔案系統，它是在 NTFS （或者在 Window
 - 叢集 Hyper-V 虛擬機器的叢集虛擬硬碟 (VHD) 檔案
 - 向外延展檔案共用來儲存向外延展檔案伺服器叢集角色的應用程式資料。 此角色之應用程式資料的範例包括 Hyper-V 虛擬機器檔案和 Microsoft SQL Server 資料。 (請注意，向外延展檔案伺服器不支援 ReFS)。如需有關向外延展檔案伺服器的詳細資訊，請參閱 <<c0> [ 應用程式資料的向外延展檔案伺服器](sofs-overview.md)。
 
->[!NOTE]
->CSV 不支援 SQL Server 2012 和舊版的 SQL Server 中的 Microsoft SQL Server 叢集工作負載。
+> [!NOTE]
+> SQL Server 2012 和舊版的 SQL Server 中，Csv 不支援的 Microsoft SQL Server 叢集工作負載。
 
 在 Windows Server 2012 中，CSV 功能已大幅增強。 例如，已移除 Active Directory 網域服務的相依性。 新增的支援包括對 **chkdsk**中功能的改進、與防毒和備份應用程式的互通性，以及與一般的存放裝置功能 (例如 BitLocker 加密磁碟區) 與儲存空間的整合。 如需 Windows Server 2012 中引進的 CSV 功能的概觀，請參閱 < [What's New in Windows Server 2012 中容錯移轉叢集\[重新導向\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
 Windows Server 2012 R2 引進了額外的功能，例如分散式 CSV 擁有權，透過伺服器服務，您可以將配置給 CSV 快取，更好的實體記憶體更大的彈性的可用性提高復原diagnosibility，以及增強的互通性，其中包含對 ReFS 及重複資料刪除支援。 如需詳細資訊，請參閱 < [What's New in 容錯移轉叢集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
->[!NOTE]
->如需針對虛擬桌面基礎結構 (VDI) 情況，在 CSV 上使用重複資料刪除的相關資訊，請參閱部落格文章 [將重複資刪除部署至 Windows Server 2012 R2 中的 VDI 存放裝置](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) 和 [將重複資料刪除延伸至 Windows Server 2012 R2 中新的工作負載](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx)。
+> [!NOTE]
+> 如需針對虛擬桌面基礎結構 (VDI) 情況，在 CSV 上使用重複資料刪除的相關資訊，請參閱部落格文章 [將重複資刪除部署至 Windows Server 2012 R2 中的 VDI 存放裝置](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) 和 [將重複資料刪除延伸至 Windows Server 2012 R2 中新的工作負載](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx)。
 
 ## <a name="review-requirements-and-considerations-for-using-csv-in-a-failover-cluster"></a>檢閱在容錯移轉叢集中使用 CSV 的需求與考量
 
@@ -81,7 +81,7 @@ Windows Server 2012 R2 引進了額外的功能，例如分散式 CSV 擁有權�
 
 在 Windows Server 2012 R2，您可以檢視個別節點上的 CSV 磁碟區的狀態。 例如，您可以看到 I/O 是直接或重新導向，或者 CSV 磁碟區是否無法使用。 如果 CSV 磁碟區處於 I/O 重新導向模式中，您也可以檢視其原因。 使用 Windows PowerShell Cmdlet **Get-ClusterSharedVolumeState** 檢視此資訊。
 
->[!NOTE]
+> [!NOTE]
 > * 在 Windows Server 2012 中，改善 CSV 的設計，因為 CSV 執行更多作業在直接 I/O 模式中的於發生在 Windows Server 2008 R2。
 > * 因為 CSV 與 SMB 3.0 功能 (例如 SMB 多重通道和 SMB 直接傳輸) 已經整合，所以重新導向的 I/O 流量可以跨多個叢集網路來串流。
 > * 您應該規劃叢集網路能夠在 I/O 重新導向期間允許對協調器節點的網路流量增加。
@@ -116,8 +116,8 @@ Windows Server 2012 R2 引進了額外的功能，例如分散式 CSV 擁有權�
 
 此區段會列出規劃考量和建議執行 Windows Server 2012 R2 或 Windows Server 2012 容錯移轉叢集中使用 CSV。
 
->[!IMPORTANT]
->請詢問您的存放裝置廠商，了解如何設定 CSV 之特定存放裝置的相關建議。 如果存放裝置廠商的建議與本主題中的資訊不同，請遵循存放裝置廠商提供的建議。
+> [!IMPORTANT]
+> 請詢問您的存放裝置廠商，了解如何設定 CSV 之特定存放裝置的相關建議。 如果存放裝置廠商的建議與本主題中的資訊不同，請遵循存放裝置廠商提供的建議。
 
 ### <a name="arrangement-of-luns-volumes-and-vhd-files"></a>LUN、磁碟區以及 VHD 檔案的安排方式
 
@@ -198,31 +198,14 @@ CSV 快取會將系統記憶體 (RAM) 配置為直接寫入式快取，以便在
 >[!NOTE]
 >我們建議您為所有叢集的 Hyper-V 與向外延展檔案伺服器部署啟用 CSV 快取。
 
-根據預設，Windows Server 2012 中，CSV 快取已停用。 在 Windows Server 2012 R2，預設會啟用 CSV 快取。 不過，您仍然必須配置要保留的區塊快取大小。
+根據預設，Windows Server 2012 中，CSV 快取已停用。 在 Windows Server 2012 R2 和更新版本，預設會啟用 CSV 快取。 不過，您仍然必須配置要保留的區塊快取大小。
 
 下表描述控制 CSV 快取的兩個組態設定。
 
-<table>
-<thead>
-<tr class="header">
-<th>Windows Server 2012 R2 中的屬性名稱</th>
-<th>Windows Server 2012 中的屬性名稱</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>BlockCacheSize</strong></td>
-<td><strong>SharedVolumeBlockCacheSizeInMB</strong></td>
-<td>這是叢集一般屬性，可讓您定義要為叢集中每個節點上 CSV 快取保留多少記憶體 (MB)。 例如，如果將值定義為 512，每個節點上就會保留 512 MB 的系統記憶體。 （在許多叢集中，512 MB 是建議的值）。預設設定為 0 （表示停用）。</td>
-</tr>
-<tr class="even">
-<td><strong>EnableBlockCache</strong></td>
-<td><strong>CsvEnableBlockCache</strong></td>
-<td>這是叢集實體磁碟資源的私用屬性。 它可讓您在新增到 CSV 的個別磁碟上啟用 CSV 快取。 在 Windows Server 2012，預設值為 0 （表示停用）。 若要在磁碟上啟用 CSV 快取，請將值設為 1。 根據預設，在 Windows Server 2012 R2，請啟用此設定。</td>
-</tr>
-</tbody>
-</table>
+| Windows Server 2012 R2 和更新版本 |  Windows Server 2012                 | 描述 |
+| -------------------------------- | ------------------------------------ | ----------- |
+| BlockCacheSize                   | SharedVolumeBlockCacheSizeInMB       | 這是叢集一般屬性，可讓您定義要為叢集中每個節點上 CSV 快取保留多少記憶體 (MB)。 例如，如果將值定義為 512，每個節點上就會保留 512 MB 的系統記憶體。 （在許多叢集中，512 MB 是建議的值）。預設設定為 0 （表示停用）。 |
+| EnableBlockCache                 | CsvEnableBlockCache                  | 這是叢集實體磁碟資源的私用屬性。 它可讓您在新增到 CSV 的個別磁碟上啟用 CSV 快取。 在 Windows Server 2012，預設值為 0 （表示停用）。 若要在磁碟上啟用 CSV 快取，請將值設為 1。 根據預設，在 Windows Server 2012 R2，請啟用此設定。 |
 
 您可以在 [叢集 CSV 磁碟區快取]  底下新增計數器，以在效能監視器中監視 CSV 快取。
 
@@ -231,7 +214,7 @@ CSV 快取會將系統記憶體 (RAM) 配置為直接寫入式快取，以便在
 1. 系統管理員身分啟動 Windows PowerShell。
 2. 若要定義在每個節點上保留 *512* MB 的快取，請輸入下列命令：
 
-    - 適用於 Windows Server 2012 R2:
+    - 適用於 Windows Server 2012 R2 及更新版本：
 
         ```PowerShell
         (Get-Cluster).BlockCacheSize = 512  
@@ -249,14 +232,14 @@ CSV 快取會將系統記憶體 (RAM) 配置為直接寫入式快取，以便在
     ```
 
 >[!NOTE]
-> * 在 Windows Server 2012 中，您可以配置只能至 CSV 快取將總實體 RAM 的 20%。 在 Windows Server 2012 R2，您可以配置最多 80%。 因為向外延展檔案伺服器通常沒有限制記憶體，所以您可以為 CSV 快取使用額外的記憶體來大幅度提升效能。
-> * 若要避免資源爭用，您應該重新啟動每個節點叢集中之後修改配置給 CSV 快取的記憶體。 Windows Server 2012 r2 中已不再需要重新啟動。
-> * 啟用或停用個別磁碟上的 CSV 快取之後，若要讓設定生效, 您必須讓實體磁碟資源離線，然後讓它恢復上線。 （根據預設，在 Windows Server 2012 R2 中，CSV 快取已啟用。） 
+> * 在 Windows Server 2012 中，您可以配置只能至 CSV 快取將總實體 RAM 的 20%。 在 Windows Server 2012 R2 和更新版本，您可以配置最多 80%。 因為向外延展檔案伺服器通常沒有限制記憶體，所以您可以為 CSV 快取使用額外的記憶體來大幅度提升效能。
+> * 若要避免資源爭用，您應該重新啟動每個節點叢集中之後修改配置給 CSV 快取的記憶體。 在 Windows Server 2012 R2 和更新版本，已不再需要重新啟動。
+> * 啟用或停用個別磁碟上的 CSV 快取之後，若要讓設定生效, 您必須讓實體磁碟資源離線，然後讓它恢復上線。 （根據預設，在 Windows Server 2012 R2 和更新版本中，CSV 快取已啟用。） 
 > * 如需 CSV 快取的相關詳細資訊 (包含效能計數器的相關資訊)，請參閱部落格文章 [如何啟用 CSV 快取](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/)
 
-## <a name="back-up-csv"></a>備份 CSV
+## <a name="backing-up-csvs"></a>Csv 備份
 
-有多種方法可以備份容錯移轉叢集中 CSV 上儲存的資訊。 您可以使用 Microsoft 備份應用程式或非 Microsoft 應用程式。 一般而言，除了以 NTFS 或 ReFS 格式化之叢集存放裝置的備份需求以外，CSV 不需要特殊的備份需求。 CSV 備份也不會中斷其他 CSV 存放裝置運作。
+有多個方法來備份容錯移轉叢集中儲存在 Csv 的資訊。 您可以使用 Microsoft 備份應用程式或非 Microsoft 應用程式。 一般而言，除了以 NTFS 或 ReFS 格式化之叢集存放裝置的備份需求以外，CSV 不需要特殊的備份需求。 CSV 備份也不會中斷其他 CSV 存放裝置運作。
 
 當您為 CSV 選取備份應用程式和備份排程時，應該考量下列因素：
 
@@ -266,11 +249,11 @@ CSV 快取會將系統記憶體 (RAM) 配置為直接寫入式快取，以便在
 - CSV 支援執行 Windows Server 2012 R2 Backup、 Windows Server Backup 2012 或 Windows Server 2008 R2 Backup 的備份要求者。 不過，Windows Server Backup 通常只提供基本備份解決方案，可能不適合具有較大叢集的組織。 Windows Server Backup 不支援在 CSV 上執行應用程式一致的虛擬機器備份。 它只支援當機時保持一致的磁碟區層級備份。 (如果您還原當機時保持一致的備份，虛擬機器的狀態就會和執行備份時當機的狀態相同。)CSV 磁碟區上虛擬機器的備份會成功，但會記錄錯誤事件，指示不支援此作業。
 - 備份容錯移轉叢集時，您可能需要系統管理認證。
 
->[!IMPORTANT]
+> [!IMPORTANT]
 >請務必小心檢閱備份應用程式會備份及還原哪些資料、它支援哪些 CSV 功能，以及每個叢集節點上應用程式的資源需求。
 
->[!WARNING]
->如果您需要將備份資料還原到 CSV 磁碟區，請注意備份應用程式的功能和限制，以便在叢集節點上保持並還原應用程式一致的資料。 以某些應用程式為例，如果還原 CSV 的節點與備份 CSV 磁碟區的節點不同，您可能會不小心覆寫執行還原之節點上與應用程式狀態有關的重要資料。
+> [!WARNING]
+> 如果您需要將備份資料還原到 CSV 磁碟區，請注意備份應用程式的功能和限制，以便在叢集節點上保持並還原應用程式一致的資料。 以某些應用程式為例，如果還原 CSV 的節點與備份 CSV 磁碟區的節點不同，您可能會不小心覆寫執行還原之節點上與應用程式狀態有關的重要資料。
 
 ## <a name="more-information"></a>詳細資訊
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e381316372e68d2a43203b8fc90a243af5f40b02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5fdfaaf1af2b74fe15530095700005a422b64986
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869209"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719632"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新同步處理設定
 
@@ -61,18 +61,6 @@ WSUS 伺服器下載更新為基礎的產品或產品系列 （例如，Windows 
 ### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>同步處理從 Microsoft Update 類別目錄更新
 如需有關同步處理從 Microsoft Update 類別目錄站台更新的詳細資訊，請參閱：[WSUS 和類別目錄站台](wsus-and-the-catalog-site.md)。
 
-### <a name="synchronizing-device-updates-by-inventory-inventory-based-synchronization"></a>同步處理清查 （清查型同步作業） 的裝置更新
-某些產品類別和分類 （例如驅動程式） 包含非常大量的更新，而且我們不建議在同步處理至 WSUS 伺服器的這些整個類別。 如此一來可能會導致效能問題和持續性維護的挑戰。 WSUS 庫存系統會收集從用戶端裝置的非識別資訊並使用該清查資訊從 Microsoft Update 擷取剛好足夠更新中繼資料。 這項機制是大致上相當於具有 WSUS 自動搜尋 Microsoft Update Catalog 匯入的裝置上所偵測到更新受管理的裝置。
-
-啟用此清查功能是支援的唯一方法，來取得特定的裝置韌體和模型為基礎的服務設定不會發行到 Microsoft Update 類別目錄。
-
-以這種方式同步處理的更新進行檢閱並核准就像任何其他更新，並會也受限於相同的自動核准規則，取代和到期日和任何其他行為與傳統的更新。
-
-WSUS 會執行用戶端要求特定的驅動程式和韌體更新，包括清查已匯入的更新時，伺服器端篩選。 因此，用戶端電腦或裝置會收到的中繼資料和 detectoid 驅動程式僅適用於實際連接到該裝置的裝置驅動程式更新。 此行為用戶端掃描時間降至最低，並減少用戶端與 WSUS 伺服器之間傳輸的資料。
-
-> [!NOTE]
-> 啟用清查型同步作業時，WSUS 會維護中，依每個裝置; 裝置清查只有摘要彙總 （刪除重複的檔案清單的識別碼） 會傳送至上游 WSUS 伺服器。 上游 WSUS 伺服器不會收到哪些裝置有哪些電腦，與相關聯，也不存在 WSUS 階層內的特定裝置的執行個體數目的相關資訊。 一般情況下，此摘要彙總不能用來識別或計算 WSUS 管理的網路上的裝置。
-
 ## <a name="configuring-proxy-server-settings"></a>設定 Proxy 伺服器設定
 您可以設定您要使用 proxy 伺服器與上游伺服器或 Microsoft Update 的同步處理期間的 WSUS 伺服器。 只有在您的 WSUS 伺服器會執行同步處理時，會套用此設定。 根據預設您的 WSUS 伺服器會嘗試直接連線到上游伺服器或 Microsoft Update。
 
@@ -89,7 +77,7 @@ WSUS 會執行用戶端要求特定的驅動程式和韌體更新，包括清查
 
     -   如果您想要為連線到 proxy 伺服器，選取的使用者啟用基本驗證**允許基本驗證 （密碼會以純文字傳送）** 核取方塊。
 
-3.  按一下 [確定] 。
+3.  按一下 [確定]  。
 
     > [!NOTE]
     > 因為 WSUS 會初始化所有網路流量，但沒有需要直接連線到 Microsoft update 的 WSUS 伺服器上設定 Windows 防火牆。
@@ -122,7 +110,7 @@ WSUS 會執行用戶端要求特定的驅動程式和韌體更新，包括清查
 
 4.  針對**每天**，選取您想要每一天同步處理的數目。 例如，如果您想同步處理 4 次一天開始，在上午 3:00，然後同步處理會發生在上午 3:00、 上午 9:00，下午 3:00 和下午 9:00 每一天。 （請注意隨機的時間位移會新增至排程的同步處理時間，以分開的伺服器連線至 Microsoft Update）。
 
-5.  按一下 [確定] 。
+5.  按一下 [確定]  。
 
 #### <a name="to-synchronize-your-wsus-server-immediately"></a>若要立即同步處理您的 WSUS 伺服器
 

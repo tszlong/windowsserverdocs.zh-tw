@@ -12,12 +12,12 @@ ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f8f99a2051e114b3c890f1cdac23aebf58689980
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5d7dac41ba6d6f73b0d3d65d3481fe45ff99a6bc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884649"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433617"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>建立包含標誌和 EULA 的 Oobe.xml 檔案
 
@@ -29,61 +29,61 @@ ms.locfileid: "59884649"
   
 #### <a name="to-add-your-company-eula-and-logo"></a>新增您公司的 EULA 和標誌  
   
-1.  在文字編輯器 (例如「記事本」) 中開啟 Oobe.xml 檔案。  
+1. 在文字編輯器 (例如「記事本」) 中開啟 Oobe.xml 檔案。  
   
-2.  在 < logopath\>< / logopath\>標籤中，輸入您標誌檔案的絕對路徑。 此檔案應包含 32 位元可攜式網路圖形 (.png) 檔案 (大小為 240x 100 像素)。  
+2. 在 < logopath\>< / logopath\>標籤中，輸入您標誌檔案的絕對路徑。 此檔案應包含 32 位元可攜式網路圖形 (.png) 檔案 (大小為 240x 100 像素)。  
   
-3.  在 < eulafilename&gt\>< / eulafilename&gt\>標籤中，輸入 EULA 檔案的絕對路徑。 EULA 檔案必須是 RTF 格式 (.rtf) 的檔案。  
+3. 在 < eulafilename&gt\>< / eulafilename&gt\>標籤中，輸入 EULA 檔案的絕對路徑。 EULA 檔案必須是 RTF 格式 (.rtf) 的檔案。  
   
-4.  在 < 名稱\>< / 名稱\>標籤中，輸入您的公司名稱。  
+4. 在 < 名稱\>< / 名稱\>標籤中，輸入您的公司名稱。  
   
-     下列範例顯示 Oobe.xml 檔案中的標記：  
+    下列範例顯示 Oobe.xml 檔案中的標記：  
   
-    ```  
+   ```  
   
-    <FirstExperience>  
-       <oobe>  
-          <oem>  
-             <name>Fabrikam</name>  
-             <logopath>c:\fabrikam\fabrikam.png</logopath>  
-             <eulafilename>c:\fabrikam\fabrikam_eula.rtf</eulafilename>  
-          </oem>  
-       </oobe>  
-    </FirstExperience>  
+   <FirstExperience>  
+      <oobe>  
+         <oem>  
+            <name>Fabrikam</name>  
+            <logopath>c:\fabrikam\fabrikam.png</logopath>  
+            <eulafilename>c:\fabrikam\fabrikam_eula.rtf</eulafilename>  
+         </oem>  
+      </oobe>  
+   </FirstExperience>  
   
-    ```  
+   ```  
   
-5.  儲存檔案。  
+5. 儲存檔案。  
   
-6.  將 Oobe.xml 檔案放在下列其中一個位置：  
+6. 將 Oobe.xml 檔案放在下列其中一個位置：  
   
-    |Oobe.xml 位置|用於決定位置的條件|  
-    |-----------------------|----------------------------------------|  
-    |%windir%\system32\oobe\info\|伺服器在單一國家/地區和單一語言系統出貨。|  
-    |%windir%\system32\oobe\info\default\\<language\>|伺服器會以單一國家/地區和多語言系統出貨。|  
-    |%windir%\system32\oobe\info\\< 國家/地區 > \ 和 %windir%\system32\oobe\info\\< 國家/地區 >\\< 語言\>\|伺服器會出貨至多個國家/地區 /區域和設定需要針對每個國家/地區，每個使用單一語言的自訂項目。 其中 < 國家/地區 > 是的國家或地區位置伺服器部署的是的地理位置識別碼 (GeoID) 的十進位版本和 < 語言\>是地區設定識別碼 (LCID) 的十進位版本。|  
+   |Oobe.xml 位置|用於決定位置的條件|  
+   |-----------------------|----------------------------------------|  
+   |%windir%\system32\oobe\info\|伺服器在單一國家/地區和單一語言系統出貨。|  
+   |%windir%\system32\oobe\info\default\\<language\>|伺服器會以單一國家/地區和多語言系統出貨。|  
+   |%windir%\system32\oobe\info\\< 國家/地區 > \ 和 %windir%\system32\oobe\info\\< 國家/地區 >\\< 語言\>\|伺服器會出貨至多個國家/地區 /區域和設定需要針對每個國家/地區，每個使用單一語言的自訂項目。 其中 < 國家/地區 > 是的國家或地區位置伺服器部署的是的地理位置識別碼 (GeoID) 的十進位版本和 < 語言\>是地區設定識別碼 (LCID) 的十進位版本。|  
   
- 如果您另有白色文字的公司標誌，則此標誌可以在設定流程中的藍色背景顯示得更好。  您可以透過選擇設定登錄機碼和值來指定此標誌。  
+   如果您另有白色文字的公司標誌，則此標誌可以在設定流程中的藍色背景顯示得更好。  您可以透過選擇設定登錄機碼和值來指定此標誌。  
   
 #### <a name="to-specify-a-company-logo-by-setting-the-oem-registry-key"></a>若要透過設定 OEM 登錄機碼來指定公司標誌  
   
-1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。  
+1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]** 。  
   
 2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit] 應用程式。  
   
 3.  在導覽窗格中，瀏覽至  **HKEY_LOCAL_MACHINE**，展開 **SOFTWARE**，展開 **Microsoft**，展開 **Windows Server**。 如果沒有 OEM 機碼，則按照下面方式建立：  
   
-    1.  以滑鼠右鍵按一下 **[Windows Server]**，按一下 **[新增]**，然後按一下 **[機碼]**。  
+    1.  以滑鼠右鍵按一下 **[Windows Server]** ，按一下 **[新增]** ，然後按一下 **[機碼]** 。  
   
     2.  機碼名稱請輸入 **OEM**。  
   
 4.  (選用) 如果您要為標誌建立項目，可以建立不同的機碼以區分不同語言版本的標誌。 例如，如果您同時有英文版和德文版的標誌，可以建立 en-us 機碼和 de-de 機碼。 因為所有的標誌檔都會儲存在同一個資料夾，所以您必須提供標誌影像檔的多個執行個體，每個語言的檔案具備唯一的名稱。 例如，您可以建立名為 LogoWithWhiteText_en.png 和 LogoWithWhiteText_de.png 的檔案。  
   
-5.  以滑鼠右鍵按一下 **OEM** ，或以滑鼠右鍵按一下適當的語言機碼，按一下 **[新增]**，然後按一下 **[字串值]**。  
+5.  以滑鼠右鍵按一下 **OEM** ，或以滑鼠右鍵按一下適當的語言機碼，按一下 **[新增]** ，然後按一下 **[字串值]** 。  
   
 6.  請輸入「LogoWithWhiteText」作為字串，再按 ENTER。  
   
-7.  在滑鼠右鍵上按一下新字串，然後按一下 **[修改]**。  
+7.  在滑鼠右鍵上按一下新字串，然後按一下 **[修改]** 。  
   
 8.  輸入含有標誌影像的路徑，然後按一下 [確定]。  
   

@@ -9,12 +9,12 @@ ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0b937debf2d9156c50f3c0ae51fdab8bd2a2bf2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c245c5a6b2165385096f32713a92916236cdddfb
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863479"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719702"
 ---
 # <a name="appendix-l-events-to-monitor"></a>附錄 l:要監視的事件
 
@@ -174,7 +174,7 @@ ms.locfileid: "59863479"
 |4707|611|低|已移除網域的信任。|  
 |4709|N/A|低|已啟動 IPsec 服務。|  
 |4710|N/A|低|已停用 IPsec 服務。|  
-|4711|N/A|低|可能包含下列其中一項動作：PAStore 引擎會套用到電腦的 Active Directory 儲存區的 IPsec 原則的本機快取的副本。PAStore 引擎會套用到電腦的 Active Directory 儲存區的 IPsec 原則。PAStore 引擎會套用到電腦的本機登錄儲存體的 IPsec 原則。PAStore 引擎無法套用在電腦上的 Active Directory 儲存區的 IPsec 原則的本機快取的副本。PAStore 引擎無法套用在電腦上的 Active Directory 儲存區的 IPsec 原則。PAStore 引擎無法在電腦上套用本機登錄儲存體的 IPsec 原則。PAStore 引擎無法套用某些規則使用的 IPsec 原則的電腦上。PAStore 引擎無法載入目錄儲存在電腦上的 IPsec 原則。PAStore 引擎載入目錄儲存在電腦上的 IPsec 原則。PAStore 引擎無法載入本機儲存體的電腦上的 IPsec 原則。PAStore 引擎載入本機儲存體的電腦上的 IPsec 原則。PAStore 引擎會輪詢使用中的 IPsec 原則的變更，並偵測到任何變更。|  
+|4711|N/A|低|可能包含下列其中一項動作：PAStore 引擎會套用到電腦的 Active Directory 儲存區的 IPsec 原則的本機快取的副本。 PAStore 引擎會套用到電腦的 Active Directory 儲存區的 IPsec 原則。 PAStore 引擎會套用到電腦的本機登錄儲存體的 IPsec 原則。 PAStore 引擎無法套用在電腦上的 Active Directory 儲存區的 IPsec 原則的本機快取的副本。 PAStore 引擎無法套用在電腦上的 Active Directory 儲存區的 IPsec 原則。 PAStore 引擎無法在電腦上套用本機登錄儲存體的 IPsec 原則。 PAStore 引擎無法套用某些規則使用的 IPsec 原則的電腦上。 PAStore 引擎無法載入目錄儲存在電腦上的 IPsec 原則。 PAStore 引擎載入目錄儲存在電腦上的 IPsec 原則。 PAStore 引擎無法載入本機儲存體的電腦上的 IPsec 原則。 PAStore 引擎載入本機儲存體的電腦上的 IPsec 原則。PAStore 引擎會輪詢使用中的 IPsec 原則的變更，並偵測到任何變更。 |  
 |4712|N/A|低|IPsec 服務時發生潛在嚴重失敗。|  
 |4717|621|低|系統的安全性存取權授與帳戶。|  
 |4718|622|低|系統的安全性存取權已從帳戶移除。|  

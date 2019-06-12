@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b86726fd6e9ee37dbfd43357d8040b43b8dfb200
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7fb7b5f7ae6e10d1007317949a42c48b4765f35c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853339"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446067"
 ---
-#<a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟 1 規劃基本 DirectAccess 基礎結構
+# <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟 1 規劃基本 DirectAccess 基礎結構
 在單一伺服器上的基本 DirectAccess 部署的第一個步驟是執行部署所需的基礎結構規劃。 本主題描述基礎結構規劃步驟：  
   
 |工作|描述|  
@@ -116,7 +116,7 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAc
   
 -   **DirectAccess 用戶端要求**。 DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端電腦的要求。 DirectAccess 用戶端會嘗試連線到 DirectAccess 網路位置伺服器，以判斷它們位於網際網路或公司網路上：如果連線成功，用戶端會被判斷為位於內部網路上，系統便不會使用 DirectAccess，而會使用在用戶端電腦的網路介面卡上設定的 DNS 伺服器來解析用戶端要求。 如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格\(NRPT\)來決定解析名稱要求時要使用哪些 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一\-標籤名稱，例如 http:\/\/內部。 如果單一\-標籤名稱的要求，會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS4 或內部網路 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
   
-    在 DirectAccess 管理主控台中將新尾碼新增到 NRPT 中時，只要按一下 [偵測] 按鈕，即可自動探索到該尾碼的預設 DNS 伺服器。 自動偵測的運作方式如下：  
+    在 DirectAccess 管理主控台中將新尾碼新增到 NRPT 中時，只要按一下 [偵測]  按鈕，即可自動探索到該尾碼的預設 DNS 伺服器。 自動偵測的運作方式如下：  
   
     1.  如果公司網路是 IPv4\-為基礎，或 IPv4 與 IPv6，預設位址是 DirectAccess 伺服器上內部介面卡的 DNS64 位址。  
   
@@ -249,7 +249,7 @@ DirectAccess 會使用 Active Directory 和 Active Directory 群組原則物件�
   
 2.  Re\-開啟**DirectAccess 管理**。  
   
-3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成之後，伺服器將會還原取消\-設定狀態。  
+3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]  。 完成之後，伺服器將會還原取消\-設定狀態。  
   
 ### <a name="BKMK_Links"></a>下一個步驟  
   

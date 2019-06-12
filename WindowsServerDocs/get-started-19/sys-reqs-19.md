@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 82a42cd219e41330fe4215124c21e799a41e412c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d97ec0efee86165f82bdf99a316d24d9c39ec958
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853139"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810723"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -27,6 +27,7 @@ ms.locfileid: "59853139"
 本主題概要說明執行 Windows Server 的最低系統需求&reg;2019年。
 
 ## <a name="review-system-requirements"></a>檢閱系統需求  
+
 以下是 Windows Server 2019 的估計的系統需求。 如果您的電腦低於「最低」需求，則無法正確安裝本產品。 視系統設定以及安裝的應用程式和功能而定，實際需求會有所不同。
 
 除非另行指定，否則這些最低系統需求適用於所有的安裝選項 ([Server Core]、[含桌面體驗的伺服器] 和 [Nano 伺服器]) 以及 Standard 和 Datacenter 版本。  
@@ -34,8 +35,8 @@ ms.locfileid: "59853139"
 > [!IMPORTANT]  
 > 因為有太多可能的部署方式，所以不太可能提出一般通用的「建議」系統需求。 請參閱每一個要部署的伺服器角色相關文件，取得更多有關特定伺服器角色所需資源的詳細資料。 為了達到最佳效果，可執行測試部署，判斷特定部署案例的適當系統需求。  
 
-
 ## <a name="processor"></a>處理器  
+
 處理器效能不僅取決於處理器的時脈頻率，也取決於處理器核心的數目及處理器快取的大小。 下列是本產品的處理器需求：  
 
 **最低需求**：  
@@ -69,13 +70,13 @@ ms.locfileid: "59853139"
 
 **最低需求**：32 GB  
 
-   > [!NOTE]  
-    > 請注意，32 GB 應視為成功安裝的*絕對最小值*。 此最小值應該可讓您在 Server Core 模式中，使用 Web Services (IIS) 伺服器角色安裝 Windows Server 2019。 使用「Server Core」模式的伺服器比使用「Server 含 GUI」模式的相同伺服器大約少 4 GB。 
-    >   
-    > 如果是下列任何情況，系統磁碟分割將需要額外的空間：  
-    >   
-    > -   如果您透過網路安裝系統。  
-    > -   具有 16 GB RAM 以上的電腦將需要更多的磁碟空間，以供分頁、休眠及傾印檔案使用。  
+> [!NOTE]
+> 請注意，32 GB 應視為成功安裝的*絕對最小值*。 此最小值應該可讓您在 Server Core 模式中，使用 Web Services (IIS) 伺服器角色安裝 Windows Server 2019。 使用「Server Core」模式的伺服器比使用「Server 含 GUI」模式的相同伺服器大約少 4 GB。 
+> 
+> 如果是下列任何情況，系統磁碟分割將需要額外的空間：  
+> 
+> -   如果您透過網路安裝系統。  
+> -   具有 16 GB RAM 以上的電腦將需要更多的磁碟空間，以供分頁、休眠及傾印檔案使用。  
 
 ## <a name="network-adapter-requirements"></a>網路介面卡需求  
 
@@ -88,8 +89,6 @@ ms.locfileid: "59853139"
 支援網路偵錯 (KDNet) 的網路介面卡會很有用，但不是最低需求。   
 
 網路介面卡支援開機前執行環境 (PXE) 會很有用，但不是最低需求。
-
-
 
 ## <a name="other-requirements"></a>其他需求  
 執行此版本的電腦也必須具備下列各項：  
@@ -107,10 +106,10 @@ ms.locfileid: "59853139"
 
 -   網際網路存取 (可能需要付費)  
 
->[!NOTE]  
+> [!NOTE]  
 > 信賴平台模組 (TPM) 晶片於安裝此版本時並非必要，但是使用特定功能 (例如 BitLocker 磁碟機加密) 時則為必要。 如果您的電腦使用 TPM，它必須符合下列需求︰  
 >  
->- 硬體架構的 TPM 必須實作 TPM 規格的 2.0 版。  
->- 實作 2.0 版的 TPM 必須有一個 EK 憑證，這個憑證是由硬體廠商預先佈建至 TPM，或是可由裝置在第一次開機期間擷取。  
->- 實作 2.0 版的 TPM 必須隨附 SHA-256 PCR 記憶體組，並實作 SHA-256 的 PCR 0 至 23。 可接受 TPM 隨附可同時用於 SHA-1 與 SHA-256 度量的單一可切換 PCR 記憶體組。  
->- 關閉 TPM 的 UEFI 選項並非必要。  
+> - 硬體架構的 TPM 必須實作 TPM 規格的 2.0 版。  
+> - 實作 2.0 版的 TPM 必須有一個 EK 憑證，這個憑證是由硬體廠商預先佈建至 TPM，或是可由裝置在第一次開機期間擷取。  
+> - 實作 2.0 版的 TPM 必須隨附 SHA-256 PCR 記憶體組，並實作 SHA-256 的 PCR 0 至 23。 可接受 TPM 隨附可同時用於 SHA-1 與 SHA-256 度量的單一可切換 PCR 記憶體組。  
+> - 關閉 TPM 的 UEFI 選項並非必要。  

@@ -11,12 +11,12 @@ ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 1863c1736d3c8573b3d11c6bef492c6645d28a77
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5950a75da4569979794a5848bd41ab349dc34676
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859759"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812661"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>世代與客體各自的 HYPER-V 功能相容性
 
@@ -49,7 +49,7 @@ ms.locfileid: "59859759"
 ## <a name="development-and-test"></a>開發和測試  
 功能  | 產生 | 客體作業系統  
 ------------- | ------------- | -----------  
-COM/序列通訊埠 | 1 和 2 <br>**注意：** 針對層代 2 中，使用 Windows PowerShell 來設定。 如需詳細資訊，請參閱 <<c0> [ 新增的 COM 連接埠的核心偵錯](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#BKMK_Debug)。 | 任何支援的客體  
+COM/序列通訊埠 | 1 和 2 <br>**注意：** 針對層代 2 中，使用 Windows PowerShell 來設定。 如需詳細資訊，請參閱 <<c0> [ 新增的 COM 連接埠的核心偵錯](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging)。 | 任何支援的客體  
   
 ## <a name="mobility"></a>行動力  
   

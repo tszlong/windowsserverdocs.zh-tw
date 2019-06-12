@@ -12,12 +12,12 @@ ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 535a547ded55cb4afc0942259eadf5222a815274
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93d07938435ab1ce7686b1960974696582a2924c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821019"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432658"
 ---
 # <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>執行 Windows Server Essentials migration1 移轉後工作
 
@@ -48,23 +48,23 @@ ms.locfileid: "59821019"
   
 #### <a name="to-delete-dns-entries-that-point-to-the-source-server"></a>若要刪除指向來源伺服器的 DNS 項目  
   
-1.  在目的地伺服器上，開啟 [DNS 管理員]。  
+1.  在目的地伺服器上，開啟 [DNS 管理員]  。  
   
-2.  在 [DNS 管理員] 中，以滑鼠右鍵按一下伺服器名稱，按一下 [內容] ，然後按一下 [轉寄站]  索引標籤。  
+2.  在 [DNS 管理員] 中，以滑鼠右鍵按一下伺服器名稱，按一下 [內容]  ，然後按一下 [轉寄站]  索引標籤。  
   
-3.  判斷轉寄站清單中是否有一個項目指向來源伺服器。 如果有，請按一下 [編輯]，然後在 [編輯轉寄站] 視窗中刪除該項目。  
+3.  判斷轉寄站清單中是否有一個項目指向來源伺服器。 如果有，請按一下 [編輯]  ，然後在 [編輯轉寄站]  視窗中刪除該項目。  
   
-4.  在 [DNS 管理員] 中，展開伺服器名稱，然後再展開 [正向對應區域]。  
+4.  在 [DNS 管理員]  中，展開伺服器名稱，然後再展開 [正向對應區域]  。  
   
-5.  針對每個正向對應區域，以滑鼠右鍵按一下區域，按一下 [內容]，然後按一下 [名稱伺服器] 索引標籤。  
+5.  針對每個正向對應區域，以滑鼠右鍵按一下區域，按一下 [內容]  ，然後按一下 [名稱伺服器]  索引標籤。  
   
-6.  在 [名稱伺服器] 方塊中按一下指向來源伺服器的項目，按一下 [移除]，然後按一下 [確定]。  
+6.  在 [名稱伺服器]  方塊中按一下指向來源伺服器的項目，按一下 [移除]  ，然後按一下 [確定]  。  
   
 7.  重複步驟 5 和 6，直到移除指向來源伺服器的所有項目為止。  
   
 8.  按一下 **[確定]** 關閉 **[內容]** 視窗。  
   
-9. 在 **[DNS 管理員]** 主控台中，展開 **[反向對應區域]**。  
+9. 在 **[DNS 管理員]** 主控台中，展開 **[反向對應區域]** 。  
   
 10. 重複步驟 6 到 9，移除所有指向來源伺服器的反向對應區域。  
   
@@ -80,21 +80,21 @@ ms.locfileid: "59821019"
   
 #### <a name="to-reconfigure-internet-explorer"></a>重新設定 Internet Explorer  
   
-1.  在 Internet Explorer 中，按一下 [工具] ，然後按一下 [網際網路選項] 。  
+1.  在 Internet Explorer 中，按一下 [工具]  ，然後按一下 [網際網路選項]  。  
   
-2.  依序按一下 [連線] 索引標籤、[區域網路設定]，然後執行下列其中一項：  
+2.  依序按一下 [連線]  索引標籤、[區域網路設定]  ，然後執行下列其中一項：  
   
-    -   如果您的網路上未使用 Proxy 伺服器，請清除 [區域網路 (LAN) 設定] 對話方塊中的核取方塊。  
+    -   如果您的網路上未使用 Proxy 伺服器，請清除 [區域網路 (LAN) 設定]  對話方塊中的核取方塊。  
   
     -   如果您想在網路上使用新的 Proxy 伺服器：  
   
-        1.  在 [區域網路 (LAN) 設定] 對話方塊中，清除 [自動設定] 區段中的核取方塊。  
+        1.  在 [區域網路 (LAN) 設定]  對話方塊中，清除 [自動設定]  區段中的核取方塊。  
   
-        2.  在 [Proxy 伺服器] 區段中，確認兩個核取方塊都已選取。  
+        2.  在 [Proxy 伺服器]  區段中，確認兩個核取方塊都已選取。  
   
-        3.  在 [位址] 方塊中，輸入 Proxy 伺服器的完整網域名稱 (FQDN)。  
+        3.  在 [位址]  方塊中，輸入 Proxy 伺服器的完整網域名稱 (FQDN)。  
   
-        4.  在 [連接埠] 方塊中，輸入 **80**。  
+        4.  在 [連接埠]  方塊中，輸入 **80**。  
   
 3.  按兩次 **[確定]** 。  
   
@@ -105,36 +105,36 @@ ms.locfileid: "59821019"
   
 #### <a name="to-give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a>提供內建的 Administrators 群組以批次工作登入的權限  
   
-1.  在目的地伺服器上，開啟 [群組原則管理] 系統管理工具。  
+1. 在目的地伺服器上，開啟 [群組原則管理]  系統管理工具。  
   
-2.  在 **群組原則管理**主控台樹狀目錄中，展開**樹系：** *< ServerName\>*，展開 網域，然後再展開 您的伺服器。  
+2. 在 **群組原則管理**主控台樹狀目錄中，展開**樹系：** *< ServerName\>* ，展開 網域，然後再展開 您的伺服器。  
   
-3.  展開 網域控制站，以滑鼠右鍵按一下 預設網域控制站原則，然後按一下 編輯。  
+3. 展開 網域控制站  ，以滑鼠右鍵按一下 預設網域控制站原則  ，然後按一下 編輯  。  
   
-4.  在 **群組原則管理編輯器**，按一下**Default Domain Controllers Policy ***< ServerName\>*** 原則**，然後展開**電腦設定**。  
+4. 在 **群組原則管理編輯器**，按一下**Default Domain Controllers Policy**<em>< ServerName\></em>**原則**，然後展開**電腦設定**。  
   
-5.  展開 [原則]、[Windows 設定]，然後展開 [安全性設定]。  
+5. 展開 [原則]  、[Windows 設定]  ，然後展開 [安全性設定]  。  
   
-6.  在 [安全性設定] 樹狀目錄，展開 [本機原則]，然後按一下 [使用者權限指派]。  
+6. 在 [安全性設定]  樹狀目錄，展開 [本機原則]  ，然後按一下 [使用者權限指派]  。  
   
-7.  在 [結果] 窗格中，以滑鼠右鍵按一下 [以批次工作登入]，然後按一下 [內容]。  
+7. 在 [結果] 窗格中，以滑鼠右鍵按一下 [以批次工作登入]  ，然後按一下 [內容]。  
   
-8.  在 [以批次工作內容登入] 頁面，按一下 [新增使用者或群組]。  
+8. 在 [以批次工作內容登入]  頁面，按一下 [新增使用者或群組]  。  
   
-9. 在 [新增使用者或群組] 對話方塊中，按一下 [瀏覽]。  
+9. 在 [新增使用者或群組]  對話方塊中，按一下 [瀏覽]  。  
   
-10. 在 [選取使用者、電腦或群組] 對話方塊中，輸入 **Administrators**。  
+10. 在 [選取使用者、電腦或群組]  對話方塊中，輸入 **Administrators**。  
   
-11. 按一下 [檢查名稱] 以確認顯示內建的 Administrators 群組，然後按三次 [確定] 以儲存設定。  
+11. 按一下 [檢查名稱]  以確認顯示內建的 Administrators 群組，然後按三次 [確定]  以儲存設定。  
   
 ## <a name="see-also"></a>另請參閱  
   
 
 -   [從 Windows SBS 2003 移轉](Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
   
--   [將伺服器資料移轉到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [移轉伺服器資料到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
 -   [從 Windows SBS 2003 移轉](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
   
--   [將伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

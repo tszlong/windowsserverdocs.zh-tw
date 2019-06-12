@@ -12,12 +12,12 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d2005b72adede72b718fa5b49b93435f5fbac1bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 445472822de09263b84821e552c931ca19f14b2b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882499"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432529"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>從 Windows Server Essentials 轉換到 Windows Server 2012 Standard
 
@@ -53,28 +53,28 @@ ms.locfileid: "59882499"
 ## <a name="transition-to--windows-server-2012-standard"></a>轉換到 Windows Server 2012 Standard  
  之後，您已決定轉換從 Windows Server Essentials 為 Windows Server 2012 Standard，完成這兩個步驟：  
   
-1.  Windows Server 2012 Standard 和適當數目的環境的使用者和/或裝置用戶端存取授權購買的授權。  
+1. Windows Server 2012 Standard 和適當數目的環境的使用者和/或裝置用戶端存取授權購買的授權。  
   
-     向零售商、 經銷商或透過的協助，您可以針對 Windows Server 2012 Standard 購買的授權[Microsoft 合作夥伴](https://pinpoint.microsoft.com/SelectCulture.aspx)。  
+    向零售商、 經銷商或透過的協助，您可以針對 Windows Server 2012 Standard 購買的授權[Microsoft 合作夥伴](https://pinpoint.microsoft.com/SelectCulture.aspx)。  
   
-    > [!NOTE]
-    >  如果您購買 Windows Server 2012 Standard 一開始，並執行降級權限，為 Windows Server Essentials 安裝其中一種將兩個虛擬執行個體，則您不需要購買任何其他項目。  
-    >   
-    >  如果大量授權通路購買 Windows Server 2012 Standard，您可以針對 Windows Server 2012 Standard 從大量授權服務中心 (VLSC) 下載的 ISO 映像和產品金鑰。  
-    >   
-    >  如果您從所有其他通路購買 Windows Server 2012 Standard 可以下載的 ISO 映像和評估產品金鑰適用於從 Windows Server Essentials [TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)。 執行下個步驟所述的轉換會將評估產品轉換成完整授權和支援的產品。  
+   > [!NOTE]
+   >  如果您購買 Windows Server 2012 Standard 一開始，並執行降級權限，為 Windows Server Essentials 安裝其中一種將兩個虛擬執行個體，則您不需要購買任何其他項目。  
+   >   
+   >  如果大量授權通路購買 Windows Server 2012 Standard，您可以針對 Windows Server 2012 Standard 從大量授權服務中心 (VLSC) 下載的 ISO 映像和產品金鑰。  
+   >   
+   >  如果您從所有其他通路購買 Windows Server 2012 Standard 可以下載的 ISO 映像和評估產品金鑰適用於從 Windows Server Essentials [TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)。 執行下個步驟所述的轉換會將評估產品轉換成完整授權和支援的產品。  
   
-2.  以系統管理員身分開啟 Windows PowerShell，然後執行下列命令。  
+2. 以系統管理員身分開啟 Windows PowerShell，然後執行下列命令。  
   
-     **dism /online /set-edition:ServerStandard /accepteula /productkey:** *產品金鑰*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *產品金鑰*  
   
-     何處*產品金鑰*是您的 Windows Server 2012 Standard 複本的產品金鑰。  
+    何處*產品金鑰*是您的 Windows Server 2012 Standard 複本的產品金鑰。  
   
-     伺服器會重新啟動以完成轉換程序。  
+    伺服器會重新啟動以完成轉換程序。  
   
- 轉換之後，Windows Server Essentials 功能會保留在伺服器上，並支援高達 75 名使用者和 75 個裝置。 如果您超出其中一個限制，您應該使用 Windows Server 2012 Standard 的原生工具管理使用者帳戶和裝置。  
+   轉換之後，Windows Server Essentials 功能會保留在伺服器上，並支援高達 75 名使用者和 75 個裝置。 如果您超出其中一個限制，您應該使用 Windows Server 2012 Standard 的原生工具管理使用者帳戶和裝置。  
   
- 此外，您轉換到 Windows Server 2012 Standard 之後，Windows Server Essentials 的媒體功能就不再可用。 其中包括遠端 Web 存取的媒體功能和儀表板的媒體設定。  
+   此外，您轉換到 Windows Server 2012 Standard 之後，Windows Server Essentials 的媒體功能就不再可用。 其中包括遠端 Web 存取的媒體功能和儀表板的媒體設定。  
   
 ## <a name="turn-off--windows-server-essentials-features"></a>關閉 Windows Server Essentials 的功能  
  如果您不再需要管理伺服器的 Windows Server Essentials 儀表板或其他的加值功能，您可以關閉這些功能，並從您的伺服器移除它們。  
@@ -97,22 +97,22 @@ ms.locfileid: "59882499"
   
 #### <a name="from-the-get-help-and-support-pane"></a>從 [取得說明與支援] 窗格  
   
-1.  在 [首頁] 頁面上，按一下 [取得說明與支援]。  
+1. 在 [首頁] 頁面上，按一下 [取得說明與支援]。  
   
-2.  按一下 **關閉 Windows Server Essentials 功能精靈**。  
+2. 按一下 **關閉 Windows Server Essentials 功能精靈**。  
   
- 它是所執行的某些工作可能**關閉 [Windows Server Essentials 功能精靈]** 將無法順利完成。 在某些情況下，可能會使儀表板無法執行。 若發生這種情況，您可以執行以下檔案，手動啟動精靈：  
+   它是所執行的某些工作可能**關閉 [Windows Server Essentials 功能精靈]** 將無法順利完成。 在某些情況下，可能會使儀表板無法執行。 若發生這種情況，您可以執行以下檔案，手動啟動精靈：  
   
- **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**  
+   **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**  
   
 ## <a name="see-also"></a>另請參閱  
   
 
 -   [轉換到 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
--   [將伺服器資料移轉到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [移轉伺服器資料到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
 -   [轉換到 Windows Server 2012 R2 Standard](../migrate/Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
--   [將伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

@@ -7,22 +7,22 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 04/12/2018
+ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d10ab3e25500720dd13e2ba057dc3c5bf05a6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2031afada302c0f73621a75f572c8547620db16
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849319"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501664"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>儲存空間直接存取的硬體需求
 
-> 適用於：Windows Server 2016 中，Windows Server Insider Preview
+> 適用於：Windows Server 2019，Windows Server 2016
 
 本主題描述儲存空間直接存取的最低硬體的需求。
 
-對於生產環境中，Microsoft 建議這些[Windows Server 軟體定義](https://microsoft.com/wssd)硬體/軟體提供從我們的合作夥伴，包括部署工具和程序。 它們是設計、 組合和針對我們參考架構，以確保相容性和可靠性，讓您快速並執行驗證。 深入了解[ https://microsoft.com/wssd ](https://microsoft.com/wssd)。
+用於生產環境，Microsoft 建議您購買的已驗證的硬體/軟體解決方案，從我們的合作夥伴，哪些包括部署工具和程序。 這些解決方案是設計、 組合和針對我們參考架構，以確保相容性和可靠性，讓您快速並執行驗證。 如需 Windows Server 2019 解決方案，請瀏覽[Azure Stack HCI solutions 網站](https://azure.microsoft.com/overview/azure-stack/hci)。 如需 Windows Server 2016 解決方案，進一步了解[Windows Server 軟體定義](https://microsoft.com/wssd)。
 
 ![商標圖樣的 Windows Server 軟體定義的合作夥伴](media/hardware-requirements/wssd-partners.png)
 
@@ -79,25 +79,27 @@ ms.locfileid: "59849319"
 - 512n、 512e 和 4k 原生磁碟機都有支援
 - 固態磁碟機必須提供[電源中斷的保護](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
 - 相同的數目和類型的磁碟機，在每一部伺服器-請參閱[磁碟機對稱性考量](drive-symmetry-considerations.md)
+- 快取裝置必須要有 32 GB 或更大
+- 快取裝置持續性記憶體裝置時，您必須使用 NVMe 或 SSD 容量裝置 （您無法使用 Hdd）
 - NVMe 驅動程式是 Microsoft 的內建或更新 NVMe 驅動程式。
 - 建議：容量磁碟機數目是整個快取磁碟機數目的倍數
 - 建議：快取磁碟機應該有很高的寫入耐力： 至少 3 個磁碟機寫入-每天 (DWPD) 或每日 – 寫入 (TBW) 至少 4 tb 看到[了解磁碟機的寫入是每日 (DWPD)，而撰寫的 tb (TBW) 和最小值建議用於儲存體空間直接存取](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
 以下是如何針對儲存空間直接存取連接的磁碟機：
 
-1. 直接連接的 SATA 磁碟機
-2. 直接連結 NVMe 磁碟機
-3. SAS 主機匯流排介面卡 (HBA) 的 SAS 磁碟機
-4. SAS 主機匯流排介面卡 (HBA) 與 SATA 磁碟機
-5. **不支援：** RAID 控制卡或 SAN （光纖通道、 iSCSI、 FCoE） 儲存體。 主機匯流排介面卡 (HBA) 卡必須實作簡單的傳遞模式。
+- 直接連接的 SATA 磁碟機
+- 直接連結 NVMe 磁碟機
+- SAS 主機匯流排介面卡 (HBA) 的 SAS 磁碟機
+- SAS 主機匯流排介面卡 (HBA) 與 SATA 磁碟機
+- **不支援：** RAID 控制卡或 SAN （光纖通道、 iSCSI、 FCoE） 儲存體。 主機匯流排介面卡 (HBA) 卡必須實作簡單的傳遞模式。
 
 ![支援的磁碟機的圖表互連](media/hardware-requirements/drive-interconnect-support-1.png)
 
 磁碟機可以在伺服器中，內部或外部的機箱中連線到只剩一個伺服器。 需要位置對應，並且識別 SCSI 機箱服務 (SES)。 每個外部的機箱都必須提供唯一的識別項 (唯一 ID)。
 
-1. 在伺服器內部的磁碟機
-2. 外接式機殼"」 (JBOD) 連線到一部伺服器中的磁碟機
-3. **不支援：** 共用的 SAS 機箱連接到多部伺服器或任何形式的多重路徑 IO (MPIO) 磁碟機所在位置，供多個路徑。
+- 在伺服器內部的磁碟機
+- 外接式機殼"」 (JBOD) 連線到一部伺服器中的磁碟機
+- **不支援：** 共用的 SAS 機箱連接到多部伺服器或任何形式的多重路徑 IO (MPIO) 磁碟機所在位置，供多個路徑。
 
 ![支援的磁碟機的圖表互連](media/hardware-requirements/drive-interconnect-support-2.png)
 
@@ -108,8 +110,10 @@ ms.locfileid: "59849319"
 
 | 顯示的磁碟機類型   | 所需數目下限 |
 |-----------------------|-------------------------|
+| 所有持續性記憶體 （相同的模型） | 4 持續性記憶體 |
 | 全 NVMe (同模型) | 4 NVMe                  |
 | 全 SSD (同模型)  | 4 SSD                   |
+| 持續性記憶體 + NVMe 或 SSD | 2 的持續性記憶體 + 4 NVMe 或 SSD |
 | NVMe + SSD            | 2 NVMe + 4 SSD          |
 | NVMe + HDD            | 2 NVMe + 4 HDD          |
 | SSD + HDD             | 2 SSD + 4 HDD           |
@@ -120,5 +124,7 @@ ms.locfileid: "59849319"
 
 ### <a name="maximum-capacity"></a>最大容量
 
-- 建議：每一部伺服器的最大值 100 tb 原始儲存體容量
-- 最大 1 pb (1,000 TB) 原始容量存放集區
+| 最大值                | Windows Server 2019  | Windows Server 2016  |
+| ---                     | ---------            | ---------            |
+| 每一部伺服器的原始容量 | 100 TB               | 100 TB               |
+| 集區容量           | 4 PB (4,000 TB)      | 1 PB                 |

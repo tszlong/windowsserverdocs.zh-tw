@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 9e9a36df39c7bd7a96cc8c5681e83bf263ee5f8e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c528535fd34f57957a37992843933d4cd9f8824
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833869"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447876"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>部署使用不連續的裝置指派的圖形裝置
 
@@ -42,19 +42,19 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 
 如果以特定方式設定的 VM 中的，有些硬體的效能更好。  如需為您的硬體需要下列設定的詳細資訊，請連絡硬體廠商。 其他詳細資料可於[規劃部署的裝置，使用不連續的裝置指派](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)和這[部落格文章。](https://blogs.technet.microsoft.com/virtualization/2015/11/23/discrete-device-assignment-gpus/)
 
-1.  啟用在 CPU 上的寫入結合
-```
-Set-VM -GuestControlledCacheTypes $true -VMName VMName
-```
-2.  設定 32 位元 MMIO 空間
-```
-Set-VM -LowMemoryMappedIoSpace 3Gb -VMName VMName
-```
-3.  設定大於 32 位元 MMIO 空間
-```
-Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
-```
-請注意，上述的 MMIO 空間值會設為試驗單一 GPU 的合理值。  如果啟動 VM 之後, 裝置會回報關於資源不足的錯誤，您可能需要修改這些值。  此外，如果您要指派多個 Gpu，您必須增加這些值。
+1. 啟用在 CPU 上的寫入結合
+   ```
+   Set-VM -GuestControlledCacheTypes $true -VMName VMName
+   ```
+2. 設定 32 位元 MMIO 空間
+   ```
+   Set-VM -LowMemoryMappedIoSpace 3Gb -VMName VMName
+   ```
+3. 設定大於 32 位元 MMIO 空間
+   ```
+   Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
+   ```
+   請注意，上述的 MMIO 空間值會設為試驗單一 GPU 的合理值。  如果啟動 VM 之後, 裝置會回報關於資源不足的錯誤，您可能需要修改這些值。  此外，如果您要指派多個 Gpu，您必須增加這些值。
 
 ## <a name="dismount-the-device-from-the-host-partition"></a>卸載主機分割區的裝置
 ### <a name="optional---install-the-partitioning-driver"></a>選用-安裝的資料分割的驅動程式
@@ -69,14 +69,14 @@ PCI 位置路徑，才能卸除，並從主機中掛接裝置。  範例位置�
 
 ### <a name="dismount-the-device"></a>卸除裝置
 取決於如果廠商所提供的風險降低驅動程式，您將需要使用"-強制執行 」 選項或不。
--   如果已安裝的風險降低驅動程式
-```
-Dismount-VMHostAssignableDevice -LocationPath $locationPath
-```
--   如果未安裝風險降低驅動程式
-```
-Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
-```
+- 如果已安裝的風險降低驅動程式
+  ```
+  Dismount-VMHostAssignableDevice -LocationPath $locationPath
+  ```
+- 如果未安裝風險降低驅動程式
+  ```
+  Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
+  ```
 
 ## <a name="assigning-the-device-to-the-guest-vm"></a>將裝置指派給客體 VM
 最後一個步驟是告訴 HYPER-V VM 應該有裝置的存取權。  除了上面找到的位置路徑，您必須知道 vm 的名稱。

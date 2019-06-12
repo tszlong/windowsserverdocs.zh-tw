@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 235030ea913f2fe1860efaa00bdb4641ac56750d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e62032533b15ec3d93896d242273612faafdca58
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188678"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444098"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -191,16 +191,16 @@ AD FS 的記憶體和磁碟需求是相當靜態的請參閱下表：
 ## <a name="BKMK_6"></a>瀏覽器需求  
 透過瀏覽器或瀏覽器控制項執行 AD FS 驗證時，您的瀏覽器必須符合下列需求：  
   
--   必須啟用 JavaScript  
+- 必須啟用 JavaScript  
   
--   單一登入，用戶端瀏覽器必須設定成允許 cookie  
+- 單一登入，用戶端瀏覽器必須設定成允許 cookie  
   
--   伺服器名稱指示\(SNI\)必須支援  
+- 伺服器名稱指示\(SNI\)必須支援  
   
--   使用者憑證和裝置憑證驗證的瀏覽器必須支援 SSL 用戶端憑證驗證  
+- 使用者憑證和裝置憑證驗證的瀏覽器必須支援 SSL 用戶端憑證驗證  
 
--   針對無縫式的登入使用 Windows 整合式驗證時，federation service 名稱 (例如 https:\/\/fs.contoso.com) 必須在近端內部網路或信任的網站區域設定。
-## <a name="BKMK_7"></a>網路需求  
+- 針對無縫式的登入使用 Windows 整合式驗證時，federation service 名稱 (例如 https:\/\/fs.contoso.com) 必須在近端內部網路或信任的網站區域設定。
+  ## <a name="BKMK_7"></a>網路需求  
  
 **防火牆需求**  
   
@@ -210,7 +210,7 @@ AD FS 的記憶體和磁碟需求是相當靜態的請參閱下表：
 
 如需其他有關混合式連接埠需求，請參閱[混合式身分識別連接埠和通訊協定](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports)。 
 
-如需詳細資訊，請參閱[保護 Active Directory Federation Services 的最佳做法](..\deployment\Best-Practices-Securing-AD-FS.md)
+如需詳細資訊，請參閱[保護 Active Directory Federation Services 的最佳做法](../deployment/Best-Practices-Securing-AD-FS.md)
   
 **DNS 需求**  
   

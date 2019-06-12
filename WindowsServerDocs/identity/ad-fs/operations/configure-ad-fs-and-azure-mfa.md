@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 33b782ded2ae1bdd8b00c08b81e4e0ee7f885899
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 62b366b8fa388319a758ab853d28d1c49cb1bf06
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188833"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719715"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>將 Azure MFA 設定 AD FS 驗證提供者
 
@@ -65,17 +65,14 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 使用 Azure MFA 與 AD FS 驗證時，所需下列必要條件：  
   
 - [與 Azure Active Directory 的 Azure 訂用帳戶](https://azure.microsoft.com/pricing/free-trial/)。  
-- [Azure Multi-factor Authentication](https://azure.microsoft.com/documentation/articles/multi-factor-authentication/)  
-- Web 應用程式 proxy 可透過連接埠 80 和 443 與下列通訊：
-
-    - https://adnotifications.windowsazure.com
-    - https://login.microsoftonline.com
+- [Azure Multi-factor Authentication](https://azure.microsoft.com/documentation/articles/multi-factor-authentication/) 
 
 
 > [!NOTE]
 > Azure AD 和 Azure AD Premium 和 Enterprise Mobility Suite (EMS) 中包含 Azure MFA。  如果您有任一種您不需要個別訂用帳戶。
+
 - Windows Server 2016 AD FS 在內部部署環境。  
-   - 伺服器必須能夠透過連接埠 80 和 443 與下列 Url 通訊。
+   - 伺服器必須能夠透過連接埠 443 與下列 Url 通訊。
       - https://adnotifications.windowsazure.com
       - https://login.microsoftonline.com
 - 您的內部部署環境是[與 Azure AD 同盟。](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs)  

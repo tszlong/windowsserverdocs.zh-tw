@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fdd31a8b7c2c6ef87d1d22d901b5c6ca69b5c70d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f3f84a5c18589d38606825ee064cfb729003a05d
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188723"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719691"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (Faq)
 
@@ -120,7 +120,7 @@ Apple 已發行一組稱為 App Transport Security (ATS) 可能會影響從 AD f
 您可以使用自訂的 id_token 以新增在本身的 id_token 中的相關資訊。 如需詳細資訊，請參閱文章[自訂要在 id_token 中發出的宣告](../development/Custom-Id-Tokens-in-AD-FS.md)。
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>如何將發出的 JWT 權杖內的 json blob？
-特殊的 ValueType (「 http://www.w3.org/2001/XMLSchema#json") 和逸出 character(\x22)，這已加入 AD FS 2016。 請發行規則以及存取權杖的最終輸出的範例如下。
+特殊的 ValueType (「<http://www.w3.org/2001/XMLSchema#json>") 和逸出 character(\x22)，這已加入 AD FS 2016。 請發行規則以及存取權杖的最終輸出的範例如下。
 
 範例發行規則：
 
@@ -171,13 +171,13 @@ AD FS SSL 憑證不是在 AD FS 管理嵌入式管理單元中找到的 AD FS �
 如需如何設定提示字元 = 登入，請參閱[Active Directory Federation Services 提示 = 登入參數支援](../operations/AD-FS-Prompt-Login.md)。
 
 ### <a name="how-can-i-change-the-ad-fs-service-account"></a>如何變更 AD FS 服務帳戶？
-若要變更 AD FS 服務帳戶，請依照下列指示使用 AD FS 工具箱[服務帳戶的 Powershell 模組](https://github.com/Microsoft/adfsToolbox/tree/master/serviceAccountModule)。 
+若要變更 AD FS 服務帳戶，請依照下列指示使用 AD FS 工具箱[服務帳戶的 Powershell 模組](https://github.com/Microsoft/adfsToolbox/tree/master/serviceAccountModule)。
 
 ### <a name="how-can-i-configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>如何設定與 AD FS 搭配使用 Windows 整合式驗證 (WIA) 的瀏覽器？
 
 如需如何設定瀏覽器的詳細資訊，請參閱[設定與 AD FS 搭配使用 Windows 整合式驗證 (WIA) 的瀏覽器](../operations/Configure-AD-FS-Browser-WIA.md)。
 
-### <a name="can-i-trun-off-browserssoenabled"></a>我可以關閉 BrowserSsoEnabled trun 嗎？
+### <a name="can-i-turn-off-browserssoenabled"></a>我可以關閉 BrowserSsoEnabled 嗎？
 如果您沒有使用 ADFS; 的商業憑證註冊的裝置上 ADFS 或 Windows Hello 為基礎的存取控制原則您可以關閉 BrowserSsoEnabled。 BrowserSsoEnabled 可讓您從用戶端，其中包含裝置資訊收集 PRT （主要重新整理權杖） 的 ADFS。 沒有該裝置的 ADFS 驗證將無法在 Windows 10 裝置上。
 
 ### <a name="how-long-are-ad-fs-tokens-valid"></a>時間長度是有效的 AD FS 權杖？
@@ -279,7 +279,7 @@ IdP 所簽發的權杖是否少於 1 小時的 validty，不會發出重新整�
 
     b. netsh http add sslcert hostnameport=localhost:443 certhash=CERTTHUMBPRINT appid={5d89a20c-beab-4389-9447-324788eb944a} certstorename=MY sslctlstorename=AdfsTrustedDevices
 
-    c.  netsh http 新增 sslcert hostnameport=fs.contoso.com:49443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
+    c. netsh http 新增 sslcert hostnameport=fs.contoso.com:49443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
 
 5. 重新啟動選取的伺服器上的 ADFS 服務
 6. 移除維護的 WAP 伺服器的子集
@@ -295,3 +295,8 @@ IdP 所簽發的權杖是否少於 1 小時的 validty，不會發出重新整�
 
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>ADFS 時，支援 Web 應用程式 Proxy (WAP) 伺服器位於 Azure Web 應用程式 Firewall(WAF) 嗎？
 ADFS 和 Web 應用程式伺服器支援不會在端點執行 SSL 終止的任何防火牆。 此外，ADFS/WAP 伺服器有內建的機制，以防止跨站台指令碼、 ADFS proxy 的常見 web 攻擊並滿足所定義的所有需求[MS ADFSPIP 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)。
+
+### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>我看到 「 事件 441:具有不正確的語彙基元繫結索引鍵的語彙基元找不到。 」 我該怎麼解決這個問題？
+在 AD FS 2016 中，語彙基元繫結會自動啟用，且會導致多個已知的問題與 proxy 和同盟案例的結果中此錯誤。 若要解決此問題，執行下列 Powershell 命令並移除語彙基元繫結支援。
+
+`Set-AdfsProperties -IgnoreTokenBinding $true`

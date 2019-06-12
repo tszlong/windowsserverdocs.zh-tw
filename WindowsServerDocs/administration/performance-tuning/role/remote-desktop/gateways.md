@@ -7,23 +7,23 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 70b27d45acbfb046d52271a50ca7deffb226b8d0
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: f3ac020b3137621f6b2535c973ab7759443e1535
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266723"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811432"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>效能微調遠端桌面閘道
 
-> [!Note]
+> [!NOTE]
 > 在 Windows 8 及更新版本和 Windows Server 2012 R2 +，遠端桌面閘道 （RD 閘道） 支援 TCP、 UDP 和舊版的 RPC 傳輸。 大部分的下列資料有關舊版 RPC 傳輸。 如果未使用舊版的 RPC 傳輸，不適用這一節。
 
 本主題說明的效能相關的參數，協助改善客戶部署的效能及仰賴客戶的網路使用量模式 tunings。
 
 基本上，RD 閘道會執行許多的封包轉送遠端桌面連線執行個體與客戶的網路中的 RD 工作階段主機伺服器執行個體之間的作業。
 
-> [!Note]
+> [!NOTE]
 > RPC 傳輸只適用於下列的參數。
 
 Internet Information Services (IIS) 和 RD 閘道匯出下列的登錄參數，以協助改善在 RD 閘道的系統效能。
@@ -68,7 +68,6 @@ Internet Information Services (IIS) 和 RD 閘道匯出下列的登錄參數，�
 
 ## <a name="monitoring-and-data-collection"></a>監視和資料收集
 
-
 下列效能計數器的清單會被視為一組基底計數器，當您監視在 RD 閘道上的資源使用量：
 
 -   \\終端機服務閘道\\\*
@@ -107,6 +106,6 @@ Internet Information Services (IIS) 和 RD 閘道匯出下列的登錄參數，�
 
 -   \\W3SVC\_W3WP\\\* RPC
 
-**附註**  如果適用的話，新增\\IPv6\\ \*並\\tcpv6-已\\\*物件。ReplaceThisText
+> [!NOTE]
+> 如果適用的話，新增\\IPv6\\ \*並\\tcpv6-已\\\*物件。ReplaceThisText
 
- 

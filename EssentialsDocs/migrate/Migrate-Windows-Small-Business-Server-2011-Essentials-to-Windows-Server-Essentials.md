@@ -12,12 +12,12 @@ ms.assetid: 32fc90d8-31c5-4c7e-9fe3-483cf3c35f78
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5d65429e31e43aa15d1631878ae7e1486e9fd60f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8f41efde192ea039a6ee9c7f9f3a4b49bedf4f48
+ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835149"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826999"
 ---
 # <a name="migrate-windows-small-business-server-2011-essentials-to-windows-server-essentials"></a>將 Windows Small Business Server 2011 Essentials 移轉到 Windows Server Essentials
 
@@ -27,11 +27,11 @@ ms.locfileid: "59835149"
   
 > [!NOTE]
 >  若要避免發生問題，在移轉期間，Windows Server Essentials 產品開發團隊強烈建議您閱讀這份文件，再開始移轉。  
-  
+> 
 > [!NOTE]
-
+> 
 >  若要將伺服器資料移轉至 Windows Server Essentials 的最新版本，請參閱[移轉至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
-
+> 
 >  若要將伺服器資料移轉至 Windows Server Essentials 的最新版本，請參閱[移轉至 Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
 
   
@@ -53,7 +53,7 @@ ms.locfileid: "59835149"
   
 3.  [將電腦加入新的 Windows Server Essentials 伺服器](Join-computers-to-the-new-Windows-Server-Essentials-server.md)。  本章節涵蓋用戶端電腦加入新的 Windows Server Essentials 伺服器，以及更新群組原則設定。  
   
-4.  [將 SBS 2011 Essentials 設定和資料移到目的地伺服器](Move-Windows-SBS-2011-Essentials-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。  
+4.  [將 SBS 2011 Essentials 設定和資料移到目的地伺服器](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。  
   
 5.  [啟用 Windows Server Essentials 目的地伺服器上的資料夾重新導向](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md)。  如果來源伺服器上已啟用資料夾重新導向，您可以在目的地伺服器啟用資料夾重新導向，然後刪除舊的資料夾重新導向群組原則設定。  
   
@@ -69,7 +69,7 @@ ms.locfileid: "59835149"
   
 3.  [將電腦加入新的 Windows Server Essentials 伺服器](../migrate/Join-computers-to-the-new-Windows-Server-Essentials-server.md)。  本章節涵蓋用戶端電腦加入新的 Windows Server Essentials 伺服器，以及更新群組原則設定。  
   
-4.  [將 SBS 2011 Essentials 設定和資料移到目的地伺服器](../migrate/Move-Windows-SBS-2011-Essentials-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。  
+4.  [將 SBS 2011 Essentials 設定和資料移到目的地伺服器](../migrate/Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。  
   
 5.  [啟用 Windows Server Essentials 目的地伺服器上的資料夾重新導向](../migrate/Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md)。  如果來源伺服器上已啟用資料夾重新導向，您可以在目的地伺服器啟用資料夾重新導向，然後刪除舊的資料夾重新導向群組原則設定。  
   
@@ -84,14 +84,14 @@ ms.locfileid: "59835149"
   
 ###  <a name="BKMK_OpenACommandPromptAsAdmin"></a> 以系統管理員身分開啟命令提示字元 視窗，在來源伺服器上  
   
-1.  按一下 [開始] 。  
+1.  按一下 [開始]  。  
   
 2.  在搜尋方塊中，輸入 **cmd**。  
   
-3.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。  
+3.  在結果清單中，以滑鼠右鍵按一下 cmd  ，然後按一下 [以系統管理員身分執行]  。  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>以系統管理員身分在目的地伺服器上開啟命令提示字元視窗  
   
-1.  在 [開始] 畫面的搜尋方塊中，輸入 **cmd**。  
+1.  在 [開始]  畫面的搜尋方塊中，輸入 **cmd**。  
   
-2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。
+2.  在結果清單中，以滑鼠右鍵按一下 cmd  ，然後按一下 [以系統管理員身分執行]  。

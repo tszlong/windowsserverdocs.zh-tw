@@ -12,12 +12,12 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 808a4b1e120fa559d603b34ad006b18de6b94378
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 74c40cc0f06d73a922a3d7fb819f7e71b47ac088
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847689"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432960"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode1"></a>以移轉模式 1 安裝 Windows Server Essentials
 
@@ -47,25 +47,25 @@ ms.locfileid: "59847689"
   
 #### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>若要在目的地伺服器上安裝 Windows Server Essentials  
   
-1.  開啟目的地伺服器上與 Windows Server Essentials DVD1 插入 DVD 光碟機。 如果您看到一則訊息，詢問您是否要從 CD 或 DVD 開機，請按任一鍵以執行這項操作。  
+1. 開啟目的地伺服器上與 Windows Server Essentials DVD1 插入 DVD 光碟機。 如果您看到一則訊息，詢問您是否要從 CD 或 DVD 開機，請按任一鍵以執行這項操作。  
   
-    > [!NOTE]
-    >  如果目的地伺服器支援從 USB 快閃磁碟機開機，您可以使用**Windows 7 USB/DVD 下載工具**從 Windows Server Essentials 的 ISO 檔案建立可開機的 USB 快閃磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)免費 Microsoft Store 網站。  
+   > [!NOTE]
+   >  如果目的地伺服器支援從 USB 快閃磁碟機開機，您可以使用**Windows 7 USB/DVD 下載工具**從 Windows Server Essentials 的 ISO 檔案建立可開機的 USB 快閃磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)免費 Microsoft Store 網站。  
   
-    > [!NOTE]
-    >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。  
+   > [!NOTE]
+   >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]  。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。  
   
-2.  按一下 [新的安裝] 。  
+2. 按一下 [新的安裝]  。  
   
-3.  如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]，並在繼續前先安裝必要的驅動程式。  
+3. 如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]  ，並在繼續前先安裝必要的驅動程式。  
   
-4.  選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]。  
+4. 選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]  。  
   
-5.  在 [選擇伺服器的安裝模式] 頁面上，按一下 [伺服器移轉]，然後提供必要的移轉資訊。  
+5. 在 [選擇伺服器的安裝模式]  頁面上，按一下 [伺服器移轉]  ，然後提供必要的移轉資訊。  
   
-6.  當 [已成功移轉您的伺服器]  訊息出現，請按一下 [關閉] 。  
+6. 當 [已成功移轉您的伺服器]  訊息出現，請按一下 [關閉]  。  
   
- 安裝完成後，會自動以您在移轉回應檔案中提供的系統管理員使用者帳戶與密碼登入。  
+   安裝完成後，會自動以您在移轉回應檔案中提供的系統管理員使用者帳戶與密碼登入。  
   
 > [!NOTE]
 >  若要解除鎖定桌面，安裝 Windows Server Essentials 時，使用內建的 administrator 帳戶並將密碼保持空白。  

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c3a39f9d51ed8243118522ae37bc7d205a7ea416
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1a7e59dd83ebc9a9eabd5bda1dc598d320f5028d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192136"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442498"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>匯出伺服器驗證憑證的私密金鑰部分
 
@@ -31,24 +31,24 @@ ms.locfileid: "66192136"
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>匯出伺服器驗證憑證的私密金鑰部分  
   
-1.  在 **開始**畫面上，輸入**Internet Information Services \(IIS\) Manager**，然後按 ENTER 鍵。  
+1. 在 **開始**畫面上，輸入**Internet Information Services \(IIS\) Manager**，然後按 ENTER 鍵。  
   
-2.  在主控台樹狀目錄中，按一下 [ComputerName]  。  
+2. 在主控台樹狀目錄中，按一下 [ComputerName]  。  
   
-3.  在中央窗格中，按兩下\-按一下 **伺服器憑證**。  
+3. 在中央窗格中，按兩下\-按一下 **伺服器憑證**。  
   
-4.  在中央窗格中，以滑鼠右鍵\-按一下您想要匯出，然後按一下 憑證**匯出**。  
+4. 在中央窗格中，以滑鼠右鍵\-按一下您想要匯出，然後按一下 憑證**匯出**。  
   
-5.  在 **匯出憑證** 對話方塊中，按一下  **...** 按鈕。  
+5. 在 **匯出憑證** 對話方塊中，按一下  **...** 按鈕。  
   
-6.  在 **檔案名稱**，類型 **c:\\* * * NameofCertificate*，然後按一下**開啟**。  
+6. 在 **檔案名稱**，型別**c:\\** <em>NameofCertificate</em>，然後按一下**開啟**。  
   
-7.  輸入該憑證的密碼並再次確認，然後按一下 [確定]  。  
+7. 輸入該憑證的密碼並再次確認，然後按一下 [確定]  。  
   
-8.  檢查系統是否已在您指定的位置建立您指定的檔案，以驗證是否成功匯出。  
+8. 檢查系統是否已在您指定的位置建立您指定的檔案，以驗證是否成功匯出。  
   
-    > [!IMPORTANT]  
-    > 為了可以將此憑證匯入到新伺服器上的本機憑證存放區，在將檔案傳輸到新伺服器期間，您必須將檔案傳輸到實體媒體上並保護其安全。 保護私密金鑰的安全格外重要。 如果此機碼遭到入侵，整個 AD FS 部署的安全性\(包括在組織內部和資源夥伴組織中的資源\)遭到入侵。  
+   > [!IMPORTANT]  
+   > 為了可以將此憑證匯入到新伺服器上的本機憑證存放區，在將檔案傳輸到新伺服器期間，您必須將檔案傳輸到實體媒體上並保護其安全。 保護私密金鑰的安全格外重要。 如果此機碼遭到入侵，整個 AD FS 部署的安全性\(包括在組織內部和資源夥伴組織中的資源\)遭到入侵。  
   
 9. 安裝 Federation Service 之前，請先將匯出的伺服器驗證憑證匯入到新伺服器上的憑證存放區。 如需如何匯入憑證的資訊，請參閱匯入伺服器憑證\( [http:\/\/go.microsoft.com\/fwlink\/嗎？LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\)。  
   

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: e2af1bfc295469d43e59593d69d4ba88f476e427
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 1a9db8b4cdfbb4cc7d7edc2a17a3e747943fb073
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034146"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442799"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>AD 樹系復原-Windows Server 2003 復原
 
@@ -93,14 +93,14 @@ Windows Server 2003 網域控制站上還原系統狀態資料，您需要也重
    - 按一下 **新增/移除 Windows 元件**。  
 
 2. 在 **元件**，選取**Networking Services**核取方塊，然後按一下**詳細資料**。  
-3. 在 **的網路服務的子元件**，選取**網域名稱系統 (DNS)** 核取方塊，按一下  **確定** ，然後按一下 **下一步** 。  
+3. 在 **的網路服務的子元件**，選取**網域名稱系統 (DNS)** 核取方塊，按一下  **確定**，然後按一下 **下一步**。  
 4. 如果系統提示您，在**檔案複製來源**，輸入散發檔案的完整路徑，然後按一下**確定**。  
 
    安裝之後，完成下列步驟來設定 DNS 伺服器。  
 
 5. 按一下 **開始**，指向**所有程式**，指向**系統管理工具**，然後按一下**DNS**。  
 6. 嚴重的故障前的 DNS 伺服器上建立相同的 DNS 網域名稱裝載 DNS 區域。 如需詳細資訊，請參閱 < 新增正向對應區域 ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574))。  
-7. 重要的問題之前就存在，請設定 DNS 資料。 例如:   
+7. 重要的問題之前就存在，請設定 DNS 資料。 例如:  
 
    - 設定儲存在 AD DS 的 DNS 區域。 如需詳細資訊，請參閱變更區域類型 ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579))。  
    - 設定 DNS 區域的網域控制站定位程式 （DC 定位程式） 資源記錄以允許安全動態更新授權。 如需詳細資訊，請參閱允許只安全動態更新 ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580))。  
@@ -112,10 +112,10 @@ Windows Server 2003 網域控制站上還原系統狀態資料，您需要也重
 
 10. 輸入下列命令，然後按 ENTER：  
 
-   **net start netlogon&lt**
+    **net start netlogon&lt**
 
-   > [!NOTE]
-   > Net Logon 將 DC 定位程式資源記錄登錄在 DNS 中針對此網域控制站。 如果您要在子網域的伺服器上安裝 DNS 伺服器服務，這個網域控制站將無法立即註冊其記錄。 這是因為它是目前的隔離，因為復原程序和其主要的 DNS 伺服器的一部分是樹系根 DNS 伺服器。 使用相同的 IP 位址，因為它必須以避免 DC 服務查閱失敗的嚴重損壞之前設定此電腦。
+    > [!NOTE]
+    > Net Logon 將 DC 定位程式資源記錄登錄在 DNS 中針對此網域控制站。 如果您要在子網域的伺服器上安裝 DNS 伺服器服務，這個網域控制站將無法立即註冊其記錄。 這是因為它是目前的隔離，因為復原程序和其主要的 DNS 伺服器的一部分是樹系根 DNS 伺服器。 使用相同的 IP 位址，因為它必須以避免 DC 服務查閱失敗的嚴重損壞之前設定此電腦。
 
 ## <a name="next-steps"></a>後續步驟
 

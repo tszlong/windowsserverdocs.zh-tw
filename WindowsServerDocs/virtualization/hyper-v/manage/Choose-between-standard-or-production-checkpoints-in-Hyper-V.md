@@ -11,12 +11,12 @@ ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 239cce3c9f1acb2d45935e0f60fb1875b004485b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3591e17c9485fc8f9e365f6322c4f48e783db8ce
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880949"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442234"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>在 HYPER-V 中的標準或生產檢查點之間選擇
 
@@ -29,7 +29,7 @@ ms.locfileid: "59880949"
   
 - 標準檢查點會擷取執行中虛擬機器的狀態、 資料和硬體組態，並僅供開發和測試案例中使用。 標準檢查點可以是您需要重新建立特定狀態或條件的執行中虛擬機器，以便您可以針對問題進行疑難排解時相當實用。  
  
- ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>將檢查點變更為生產環境或標準檢查點  
+  ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>將檢查點變更為生產環境或標準檢查點  
   
 1.  在  **HYPER-V 管理員**，以滑鼠右鍵按一下 虛擬機器，然後按一下**設定**。  
   

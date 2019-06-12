@@ -12,12 +12,12 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d371e24b17310c0687666185f56fe07a135ff91f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca36533af169c899865789f153960bf5f0dda684
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840079"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432557"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>從 Windows Server 2012 Essentials 轉換到 Windows Server 2012 R2 Standard
 
@@ -52,29 +52,29 @@ Windows Server 2016 是雲端就緒作業系統，支援您目前的工作負載
 ## <a name="transition-to--windows-server-2012-r2-standard"></a>轉換到 Windows Server 2012 R2 Standard  
  之後，您已決定從 Windows Server Essentials 為 Windows Server 2012 R2 Standard，完成這兩個步驟的轉換：  
   
-1.  Windows Server 2012 R2 Standard 和適當數目的使用者和/或裝置用戶端存取使用權，為您的環境購買的授權。  
+1. Windows Server 2012 R2 Standard 和適當數目的使用者和/或裝置用戶端存取使用權，為您的環境購買的授權。  
   
-     向零售商、 經銷商或透過的協助，您可以針對 Windows Server 2012 R2 Standard 購買的授權[Microsoft 合作夥伴](https://pinpoint.microsoft.com/SelectCulture.aspx)。  
+    向零售商、 經銷商或透過的協助，您可以針對 Windows Server 2012 R2 Standard 購買的授權[Microsoft 合作夥伴](https://pinpoint.microsoft.com/SelectCulture.aspx)。  
   
-    > [!NOTE]
-    >  如果您購買 Windows Server 2012 R2 Standard 一開始，並執行降級權限，為 Windows Server Essentials 安裝其中一種將兩個虛擬執行個體，則您不需要購買任何其他項目。  
-    >   
-    >  如果大量授權通路購買 Windows Server 2012 R2 Standard，您可以針對 Windows Server 2012 R2 Standard 從大量授權服務中心 (VLSC) 下載的 ISO 映像和產品金鑰。  
-    >   
-    >  如果您購買 Windows Server 2012 R2 Standard 從所有其他通路，您可以從 Windows Server essentials 下載的 ISO 映像和評估產品金鑰[TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)。 執行下個步驟所述的轉換會將評估產品轉換成完整授權和支援的產品。  
+   > [!NOTE]
+   >  如果您購買 Windows Server 2012 R2 Standard 一開始，並執行降級權限，為 Windows Server Essentials 安裝其中一種將兩個虛擬執行個體，則您不需要購買任何其他項目。  
+   >   
+   >  如果大量授權通路購買 Windows Server 2012 R2 Standard，您可以針對 Windows Server 2012 R2 Standard 從大量授權服務中心 (VLSC) 下載的 ISO 映像和產品金鑰。  
+   >   
+   >  如果您購買 Windows Server 2012 R2 Standard 從所有其他通路，您可以從 Windows Server essentials 下載的 ISO 映像和評估產品金鑰[TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)。 執行下個步驟所述的轉換會將評估產品轉換成完整授權和支援的產品。  
   
-2.  以系統管理員身分開啟 Windows PowerShell，然後執行下列命令：  
+2. 以系統管理員身分開啟 Windows PowerShell，然後執行下列命令：  
   
-     **dism /online /set-edition:ServerStandard /accepteula /productkey:***產品金鑰*(其中*產品金鑰*是您的 Windows Server 2012 R2 Standard 複本的產品金鑰)。  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *產品金鑰*(其中*產品金鑰*是您的 Windows Server 2012 R2 Standard 複本的產品金鑰)。  
   
-     伺服器會重新啟動以完成轉換程序。  
+    伺服器會重新啟動以完成轉換程序。  
   
- 轉換之後，Windows Server Essentials 功能會保留在伺服器上，並支援最多 100 位使用者和 200 台裝置。  
+   轉換之後，Windows Server Essentials 功能會保留在伺服器上，並支援最多 100 位使用者和 200 台裝置。  
   
 ## <a name="see-also"></a>另請參閱  
   
 
--   [將伺服器資料移轉到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [移轉伺服器資料到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
--   [將伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

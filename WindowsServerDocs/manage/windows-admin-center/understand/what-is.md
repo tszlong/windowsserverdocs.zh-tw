@@ -7,16 +7,17 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 76427cc6d86a3d61dcf2d66cdf47ded9ba9be848
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 06/07/2019
+ms.openlocfilehash: 99f1a9a32ef69ba8322b2dba902003f8a750a4d2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829039"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811651"
 ---
 # <a name="what-is-windows-admin-center"></a>什麼是 Windows Admin Center？
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center，Windows Admin Center 預覽
 
 Windows Admin Center 是在本機部署以瀏覽器為基礎的全新管理工具組，可讓您在沒有任何 Azure 或雲端相依性的情況下管理 Windows Server。 Windows Admin Center 可讓您完整控制伺服器基礎結構的各個層面，這在未連線至網際網路的私人網路上管理伺服器特別有用。
 

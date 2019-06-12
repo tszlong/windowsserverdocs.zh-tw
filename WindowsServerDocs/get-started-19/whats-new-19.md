@@ -7,13 +7,13 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.date: 05/21/2019
-ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/04/2019
+ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976548"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810772"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
@@ -21,9 +21,17 @@ ms.locfileid: "65976548"
 
 本主題說明 Windows Server 2019 中的一些新功能。 Windows Server 2019 建置在 Windows Server 2016 的強大基礎，且四個索引鍵的佈景主題方面帶來眾多革新：混合式雲端、 安全性、 應用程式平台和超交集基礎結構 (HCI)。
 
-若要了解 Windows Server 半年通道發行的新功能，請參閱[What's New in Windows Server](../get-started/whats-new-in-windows-server.md)。 
+若要了解 Windows Server 半年通道發行的新功能，請參閱[What's New in Windows Server](../get-started/whats-new-in-windows-server.md)。
 
 ## <a name="general"></a>一般
+
+### <a name="windows-admin-center"></a>Windows Admin Center
+
+Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，用於管理伺服器、叢集、超融合式基礎結構以及 Windows 10 電腦。 除了 Windows 本身以外，不需另付費用，而且可以立即使用於生產環境中。
+
+您可以安裝在 Windows Server 2019，以及 Windows 10 和舊版的 Windows 和 Windows Server 上的 Windows Admin Center，並使用它來管理伺服器和執行 Windows Server 2008 R2 的叢集和更新版本。
+
+如需詳細資訊，請參閱 < [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)。
 
 ### <a name="desktop-experience"></a>桌面體驗
 
@@ -60,8 +68,6 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 -   [受控資料夾存取權](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc)會阻止不受信任的處理程序存取受保護的資料夾，進而保護敏感性資料免受勒索軟體侵害。
 
 -   [惡意探索保護](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard)是一組弱點攻擊防護功能 (取代 EMET)，可以輕鬆設定來保護您的應用程式和系統。
-
-
 
 [Windows Defender 應用程式控制](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (也稱為程式碼完整性 (CI) 原則) 在 Windows Server 2016 推出。
 客戶反應這是個很好的概念，但部署困難。
@@ -111,7 +117,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 ### <a name="storage-spaces-direct"></a>儲存空間直接存取
 
-以下是儲存空間直接存取的新功能清單。 如需詳細資訊，請參閱[儲存空間直接存取的新功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。
+以下是儲存空間直接存取的新功能清單。 如需詳細資訊，請參閱[儲存空間直接存取的新功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。 另請參閱[Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)上取得的資訊會驗證儲存空間直接存取系統。
 
 - **重複資料刪除和壓縮 ReFS 磁碟區**
 - **持續性記憶體的原生支援**

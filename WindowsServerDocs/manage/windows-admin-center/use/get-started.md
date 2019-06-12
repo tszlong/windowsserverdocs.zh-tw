@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: ff1f949c764473a63eafa25346949d710699dbd1
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: bd35e439ee3c76af1306bbbd712d754dd79f555f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222724"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446095"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows Admin Center
 
@@ -52,17 +52,17 @@ ms.locfileid: "66222724"
 
  **將單一伺服器或叢集新增為受管理的節點**
 
- 1. 按一下  **+ 加入**下方**所有連線**。
+1. 按一下  **+ 加入**下方**所有連線**。
 
-    ![](../media/launch/addserver0.png)
+   ![](../media/launch/addserver0.png)
 
- 2. 選擇 新增伺服器、 容錯移轉叢集或 Hyper-Converged 叢集連線：
+2. 選擇 新增伺服器、 容錯移轉叢集或 Hyper-Converged 叢集連線：
     
-    ![](../media/launch/addserver1.png)
+   ![](../media/launch/addserver1.png)
 
- 3. 輸入名稱的伺服器或叢集管理，並按一下**送出**。 伺服器或叢集會加入您在 [概觀] 頁面上的連接清單。
+3. 輸入名稱的伺服器或叢集管理，並按一下**送出**。 伺服器或叢集會加入您在 [概觀] 頁面上的連接清單。
 
-    ![](../media/launch/addserver2.png)
+   ![](../media/launch/addserver2.png)
 
    **-- OR --**
 
@@ -96,7 +96,7 @@ Windows Admin Center 會支援數種機制，用來驗證與受管理的節點�
 
 **單一登入部署為 Windows 伺服器上的服務時**
 
-如果您已在 Windows Server 上安裝 Windows Admin Center，則需要進行單一登入其他組態。  [設定您的環境，以便進行委派](..\configure\user-access-control.md)
+如果您已在 Windows Server 上安裝 Windows Admin Center，則需要進行單一登入其他組態。  [設定您的環境，以便進行委派](../configure/user-access-control.md)
 
 **-- OR --**
 

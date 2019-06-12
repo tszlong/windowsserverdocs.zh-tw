@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: af41304e08f19ca155f6fd13c9258e9a8f20c163
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d03dcd307696aea55ab6a1569ab907635994772a
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817009"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804995"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>遠端桌面-允許存取您的電腦
 
->適用於：Windows 10，Windows 8.1，Windows Server 2012 R2 中，Windows Server 2016
+>適用於：Windows 10，Windows 8.1、 Windows Server 2019、 Windows Server 2016、windows Server 2012 R2
 
 您可以使用遠端桌面連線至並控制您的電腦，從遠端裝置上使用[Microsoft 遠端桌面用戶端](remote-desktop-clients.md)（適用於 Windows、 iOS、 macOS 和 Android）。 當您允許遠端連線至您的電腦時，您可以使用另一個裝置連線到您的電腦，並且具有所有您的應用程式、 檔案和網路資源的存取，如同您坐在辦公桌前。  
 
@@ -64,7 +64,7 @@ ms.locfileid: "59817009"
 您應該確認每個帳戶都可存取您的電腦已設定強式密碼。
 
 ## <a name="why-allow-connections-only-with-network-level-authentication"></a>為什麼允許連線的網路層級驗證？ 
- 
-如果您想要限制誰可以存取您的電腦，請選擇允許存取只含有網路層級驗證 (NLA)。 當您啟用此選項時，使用者必須向其本身網路才能連線至您的電腦。 允許連線只能從電腦執行遠端桌面使用 NLA 是更安全的驗證方法，可協助保護電腦免受惡意的使用者和軟體。 若要深入了解 NLA 和遠端桌面，請參閱[設定為 RDS 連線的 NLA](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx)。 
+
+如果您想要限制誰可以存取您的電腦，請選擇允許存取只含有網路層級驗證 (NLA)。 當您啟用此選項時，使用者必須向其本身網路才能連線至您的電腦。 允許連線只能從電腦執行遠端桌面使用 NLA 是更安全的驗證方法，可協助保護電腦免受惡意的使用者和軟體。 若要深入了解 NLA 和遠端桌面，請參閱[設定為 RDS 連線的 NLA](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx)。
 
 如果您要從遠端連線至電腦上該網路之外從家用網路上，未選取此選項。

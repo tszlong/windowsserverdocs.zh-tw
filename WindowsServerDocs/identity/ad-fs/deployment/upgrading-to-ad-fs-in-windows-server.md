@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c8e72f1075b984506f9f992cd45cf853b50bddeb
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 6f3cdc34ee03fab1a8fb1d42ebed2d2f76e2618d
+ms.sourcegitcommit: ccc802338b163abdad2e53b55f39addcfea04603
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191916"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687410"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 
 
+> [!NOTE]  
+> 只有在明確的時間範圍內完成計劃與開始升級。 不建議將 AD FS 在混合的模式的狀態，長的時間，因為在混合的模式狀態中離開的 AD FS 可能會造成問題，與伺服器陣列。
 
 ## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Windows Server 2012 R2 或 2016 AD FS 伺服器陣列升級至 Windows Server 2019
 下列文件將說明如何使用 WID 資料庫時，AD fs 的 Windows Server 2019 升級您的 AD FS 伺服器陣列。  
@@ -27,6 +29,7 @@ ms.locfileid: "66191916"
 在適用於 Windows Server 2016 AD FS 中，引進了伺服器陣列行為層級 (FBL)。 這是整個伺服陣列的設定會決定可以使用功能的 AD FS 伺服器陣列。
 
 下表列出 FBL 值由 Windows Server 版本：
+
 | Windows Server 版本  | FBL | AD FS 設定資料庫名稱 |
 | ------------- | ------------- | ------------- |
 | 2012 R2  | 1  | AdfsConfiguration |

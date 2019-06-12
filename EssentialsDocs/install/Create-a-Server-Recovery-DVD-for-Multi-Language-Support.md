@@ -12,12 +12,12 @@ ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 4author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ac547f97b48e4cd0ebf87e0935cadc2c539b4d0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2bbc7bf7af71c671153bf7ba3356ddc08dcc38b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854999"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433628"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>針對多語言支援建立伺服器復原 DVD
 
@@ -30,20 +30,20 @@ ms.locfileid: "59854999"
   
  安裝有兩個階段：Windows 預先安裝環境 (Windows PE) 和初始設定。 根據預設，將不會在初始設定中顯示語言選取頁面。  
   
--   對於 OEM 遠端管理的安裝或 OEM 預先安裝情況，您需要使用下列命令來新增登錄機碼，以便在初始設定中顯示語言選取頁面。  
+- 對於 OEM 遠端管理的安裝或 OEM 預先安裝情況，您需要使用下列命令來新增登錄機碼，以便在初始設定中顯示語言選取頁面。  
   
-    ```  
-    %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
-    ```  
+  ```  
+  %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
+  ```  
   
-    > [!IMPORTANT]
-    >  OEM 在實驗室中建立映像時，必須在 Windows PE 安裝階段期間選擇 **英文** 做為語言。  
+  > [!IMPORTANT]
+  >  OEM 在實驗室中建立映像時，必須在 Windows PE 安裝階段期間選擇 **英文** 做為語言。  
   
--   針對經銷商選項套件 (ROK) 案例，客戶會收到 DVD，可能也會收到一些硬體。 客戶應該可以在 Windows PE 安裝期間選取語言，在初始設定期間不再顯示語言選取頁面。  
+- 針對經銷商選項套件 (ROK) 案例，客戶會收到 DVD，可能也會收到一些硬體。 客戶應該可以在 Windows PE 安裝期間選取語言，在初始設定期間不再顯示語言選取頁面。  
   
- 您可以選擇提供包含多個語言的單一雙層 DVD。  
+  您可以選擇提供包含多個語言的單一雙層 DVD。  
   
- 本節說明如何為 Windows 安裝程式新增語言支援。 用來自訂 Windows PE 3.0 的主要工具為「部署映像服務與管理 (DISM)」，它是命令列工具。 此解決方案適用於下列情況：  
+  本節說明如何為 Windows 安裝程式新增語言支援。 用來自訂 Windows PE 3.0 的主要工具為「部署映像服務與管理 (DISM)」，它是命令列工具。 此解決方案適用於下列情況：  
   
 1.  建立多語言安裝  
   

@@ -11,12 +11,12 @@ ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: KBDAzure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 55114821b5ac2f1cc028c662217f4bee6980c923
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 97fb1b9003705ba8ad26c2b3e71eda34e88642ee
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845199"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812614"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>適用於 Windows Server 上的 HYPER-V 系統需求
 
@@ -44,7 +44,7 @@ HYPER-V 有特定的硬體需求，部分 HYPER-V 功能有其他需求。 使�
 
   - 必須提供並啟用硬體強制的資料執行防止 (DEP)。 針對 Intel 系統，這是 XD 位元 （執行停用位元）。 適用於 AMD 系統，這是 NX 位元 （無執行位元）。
 
-## <a name="bkmk_CheckReq"></a>如何檢查 HYPER-V 需求
+## <a name="how-to-check-for-hyper-v-requirements"></a>如何檢查 HYPER-V 需求
 
 開啟 Windows PowerShell 或命令提示字元並輸入：
 

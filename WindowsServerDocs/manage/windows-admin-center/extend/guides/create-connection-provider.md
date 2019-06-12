@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/18/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 883fba96fcb71cb1c6e8162c1564d66924c4e24d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b79e832ee45990d18baf4c211ab68b907134ceb7
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885649"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811841"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>建立方案延伸模組的連線提供者
 
@@ -83,19 +83,17 @@ ms.locfileid: "59885649"
 | description | 輸入的進入點的簡短描述。 |
 | connectionType | 表示將會載入提供者的連接類型。 此處輸入的值也將使用在解決方案進入點中，但會指定解決方案可以載入這些連線。 此處輸入的值會也用於工具項目點，表示此工具會與此型別相容。 在此輸入此值也會用於送出至 RPC 的連接物件上的 「 新增視窗 」，在應用程式層的實作步驟中呼叫。 |
 | connectionTypeName | 表示使用您的連線提供者的連接，請使用 [連線] 表格中。 這應該是類型的複數名稱。 |
-| connectionTypeUrlName | 用於建立 URL，以代表載入的方案之後 Windows Admin Center 已連線到執行個體。 連線之後，以及目標之前，會使用此項目。 在此範例中，「 connectionexample"會是，這個值會出現在 URL 中： http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
-| connectionTypeDefaultSolution | 表示應該載入連線提供者的預設元件。 這個值是組成: [a] 頂端的資訊清單; 定義的延伸模組套件的名稱[b] 驚嘆號 （！）;[c] 方案進入點名稱。    專案副檔名"msft.sme.mySample-"，並具有名稱"example"的方案項目點，這個值會是"msft.sme.solutionExample 延伸模組 ！ 範例 」。 |
-| connectionTypeDefaultTool | 表示預設應該在成功連接之後載入的工具。 這個屬性值組成兩個部分，類似於 connectionTypeDefaultSolution。 這個值是組成: [a] 頂端的資訊清單; 定義的延伸模組套件的名稱[b] 驚嘆號 （！）;[一開始載入工具 c] 工具進入點名稱。 專案副檔名"msft.sme.solutionExample-"，並具有名稱"example"的方案項目點，這個值會是"msft.sme.solutionExample 延伸模組 ！ 範例 」。 |
+| connectionTypeUrlName | 用於建立 URL，以代表載入的方案之後 Windows Admin Center 已連線到執行個體。 連線之後，以及目標之前，會使用此項目。 在此範例中，「 connectionexample"會是，這個值會出現在 URL 中： `http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
+| connectionTypeDefaultSolution | 表示應該載入連線提供者的預設元件。 這個值是組成： <br>[a] 頂端的資訊清單; 定義的延伸模組套件的名稱 <br>[b] 驚嘆號 （！）; <br>[c] 方案進入點名稱。    <br>專案副檔名"msft.sme.mySample-"，並具有名稱"example"的方案項目點，這個值會是"msft.sme.solutionExample 延伸模組 ！ 範例 」。 |
+| connectionTypeDefaultTool | 表示預設應該在成功連接之後載入的工具。 這個屬性值組成兩個部分，類似於 connectionTypeDefaultSolution。 這個值是組成： <br>[a] 頂端的資訊清單; 定義的延伸模組套件的名稱 <br>[b] 驚嘆號 （！）; <br>[一開始載入工具 c] 工具進入點名稱。 <br>專案副檔名"msft.sme.solutionExample-"，並具有名稱"example"的方案項目點，這個值會是"msft.sme.solutionExample 延伸模組 ！ 範例 」。 |
 | connectionStatusProvider | 請一節 「 定義連線狀態提供者 」，參閱 |
 
 ## <a name="define-connection-status-provider"></a>定義連線狀態提供者
 
 連接狀態提供者是用來在線上而且可用，驗證目標的機制，同時確保連線的使用者具有權限來存取目標。 目前有兩種類型的連線狀態提供者：PowerShell 和 RelativeGatewayUrl。
 
-*   PowerShell 連接狀態提供者
-    *   判斷目標是否為線上且可存取的 PowerShell 指令碼。 傳回的結果必須具有單一屬性 「 狀態 」 下, 面定義的物件。
-*   RelativeGatewayUrl 連接狀態提供者
-    *   判斷目標是否為線上且可存取的 rest 呼叫。 傳回的結果必須具有單一屬性 「 狀態 」 下, 面定義的物件。
+*   <strong>PowerShell 連接狀態提供者</strong>-判斷目標是否為線上且可存取的 PowerShell 指令碼。 傳回的結果必須具有單一屬性 「 狀態 」 下, 面定義的物件。
+*   <strong>RelativeGatewayUrl 連接狀態提供者</strong>-判斷目標是否為線上且可存取的 rest 呼叫。 傳回的結果必須具有單一屬性 「 狀態 」 下, 面定義的物件。
 
 ### <a name="define-status"></a>定義狀態
 
@@ -113,25 +111,22 @@ ms.locfileid: "59885649"
 
 狀態屬性：
 
-* ThisAddIn
-    * 標籤描述狀態傳回型別。 請注意，可以在執行階段對應標籤的值。 請參閱下方的項目，執行階段中的對應值。
+* <strong>標籤</strong>-標籤描述狀態的傳回型別。 請注意，可以在執行階段對應標籤的值。 請參閱下方的項目，執行階段中的對應值。
 
-* 類型
-    * 狀態傳回型別。 型別具有下列的列舉值。 任何值為 2 以上，平台會瀏覽至已連接的物件，並將在 UI 中顯示一個錯誤。
+* <strong>型別</strong>-狀態傳回型別。 型別具有下列的列舉值。 任何值為 2 以上，平台會瀏覽至已連接的物件，並將在 UI 中顯示一個錯誤。
 
-類型：
+   類型：
 
-| 值 | 描述 |
-| ----- | ----------- |
-| 0 | Online |
-| 1 | 警告 |
-| 2 | 未經授權 |
-| 3 | 錯誤 |
-| 4 | 嚴重 |
-| 5 | 不明 |
+  | 值 | 描述 |
+  | ----- | ----------- |
+  | 0 | Online |
+  | 1 | 警告 |
+  | 2 | 未經授權 |
+  | 3 | 錯誤 |
+  | 4 | 嚴重 |
+  | 5 | 不明 |
 
-* 詳細資料
-    * 描述此狀態的其他詳細資料會傳回型別。
+* <strong>詳細資料</strong>-詳細資料，請描述狀態的傳回型別。
 
 ### <a name="powershell-connection-status-provider-script"></a>PowerShell 連接狀態提供者的指令碼
 
@@ -139,7 +134,7 @@ ms.locfileid: "59885649"
 
 範例 PowerShell 指令碼：
 
-``` ts
+```PowerShell
 ## Get-My-Status ##
 
 function Get-Status()

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 34f6ec2b50e38042a7530e94915ed6d29d5f76a6
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 0a761f644fbae489124392f195465bf2acf8e66f
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266801"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805096"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>步驟 1 的計劃 DirectAccess 基礎結構
 
@@ -41,125 +40,128 @@ ms.locfileid: "66266801"
   
 ### <a name="plan-network-adapters-and-ip-addressing"></a>規劃網路介面卡和 IP 位址  
   
-1.  識別您想要使用的網路介面卡拓撲。 您可以使用下列其中一項設定遠端存取：  
+1. 識別您想要使用的網路介面卡拓撲。 您可以使用下列其中一項設定遠端存取：  
   
-    -   有兩個網路介面卡-防火牆或路由器裝置，搭配一個網路介面卡是在邊緣，連線到網際網路，以及其他的內部網路，或位於 NAT 後方的一個網路介面卡，連線到周邊網路，另一個用於內部網路。  
+    - 有兩個的網路介面卡：不論是在邊緣，連線到網際網路，以及其他的內部網路，或位於 NAT 後方的一個網路介面卡，則防火牆或路由器裝置，搭配一個網路介面卡將連線到周邊網路，另一個用於內部網路。  
   
-    -   NAT 裝置後面有一個網路介面卡-遠端存取伺服器已安裝在 NAT 裝置後面，且單一網路介面卡連線到內部網路。  
+    - NAT 裝置後面有一個網路介面卡：遠端存取伺服器安裝在 NAT 裝置後面，單一網路介面卡連線到內部網路。  
   
-2.  識別您的 IP 位址指定需求：  
+2. 識別您的 IP 位址指定需求：  
   
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 取而代之的是，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路 (6to4、Teredo 或 IP-HTTPS) 及透過僅支援 IPv4 的內部網路 (NAT64 或 ISATAP) 建立 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：  
   
-    -   [IPv6 轉換技術](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [IPv6 轉換技術](https://technet.microsoft.com/library/bb726951.aspx)  
   
-    -   [IP-HTTPS 通道通訊協定規格](https://msdn.microsoft.com/library/dd358571.aspx)  
+    - [IP-HTTPS 通道通訊協定規格](https://msdn.microsoft.com/library/dd358571.aspx)  
   
-3.  根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡在 NAT 裝置後面部署，設定您使用 「 內部網路配接器 」 資料行的 IP 位址。  
+3. 根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡在 NAT 裝置後面部署，設定您使用 「 內部網路配接器 」 資料行的 IP 位址。  
   
-    ||外部網路介面卡|內部網路介面卡|路由需求|  
+    |IP 位址類型|外部網路介面卡|內部網路介面卡|路由需求|  
     |-|--------------|--------------------|------------|  
-    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<br /><br />-一個靜態公用 IPv4 位址搭配適當的子網路遮罩。<br />-預設閘道的網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的 IPv4 位址。|設定下列各項：<br /><br />-IPv4 內部網路位址搭配適當的子網路遮罩。<br />-您的內部網路命名空間連線特有 DNS 尾碼。 內部介面也必須設定 DNS 伺服器。<br />-請勿在任何 intranet 上設定預設閘道。|若要設定遠端存取伺服器連線到內部 IPv4 網路的所有子網路，請執行下列動作：<br /><br />1.列出 Intranet 上所有位置的 IPv4 位址空間。<br />2.使用 **route add -p** 或 **netsh interface ipv4 add route** 命令可在遠端存取伺服器的 IPv4 路由表中將 IPv4 位址空間新增為靜態路由。|  
-    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br /><br />-使用您的 ISP 所提供的自動設定位址組態。<br />-使用**路由傳送列印**IPv6 路由表中是否存在指向 ISP 路由器的預設 IPv6 路由的命令。<br />-判斷 ISP 和內部網路路由器是否正在使用 RFC 4191 中所述，並使用較高的預設喜好設定比您本機內部網路路由器的預設路由器喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br /><br />因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請在周邊網路中的網域控制站新增封包篩選器，防止連線到遠端存取伺服器網際網路對向介面的 IPv6 位址。|設定下列各項：<br /><br />-如果您未使用預設的喜好設定等級，來設定與內部網路介面**netsh 介面 ipv6 set InterfaceIndex ignoredefaultroutes = 啟用**命令。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br /><br />1.列出內部網路上所有位置的 IPv6 位址空間。<br />2.使用 **netsh interface ipv6 add route** 命令可在遠端存取伺服器的 IPv6 路由表中將 IPv6 位址空間新增為靜態路由。|  
+    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<br/><br/>-一個靜態公用 IPv4 位址搭配適當的子網路遮罩。<br/>-預設閘道的網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的 IPv4 位址。|設定下列各項：<br/><br/>-IPv4 內部網路位址搭配適當的子網路遮罩。<br/>-您的內部網路命名空間連線特有 DNS 尾碼。 內部介面也必須設定 DNS 伺服器。<br/>-請勿在任何 intranet 上設定預設閘道。|若要設定遠端存取伺服器連線到內部 IPv4 網路的所有子網路，請執行下列動作：<br/><br/>1.列出 Intranet 上所有位置的 IPv4 位址空間。<br/>2.使用 **route add -p** 或 **netsh interface ipv4 add route** 命令可在遠端存取伺服器的 IPv4 路由表中將 IPv4 位址空間新增為靜態路由。|  
+    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br/><br/>-使用您的 ISP 所提供的自動設定位址組態。<br/>-使用**路由傳送列印**IPv6 路由表中是否存在指向 ISP 路由器的預設 IPv6 路由的命令。<br/>-判斷 ISP 和內部網路路由器是否正在使用 RFC 4191 中所述，並使用較高的預設喜好設定比您本機內部網路路由器的預設路由器喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請在周邊網路中的網域控制站新增封包篩選器，防止連線到遠端存取伺服器網際網路對向介面的 IPv6 位址。|設定下列各項：<br/><br/>-如果您未使用預設的喜好設定等級，來設定與內部網路介面**netsh 介面 ipv6 set InterfaceIndex ignoredefaultroutes = 啟用**命令。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br/><br/>1.列出內部網路上所有位置的 IPv6 位址空間。<br/>2.使用 **netsh interface ipv6 add route** 命令可在遠端存取伺服器的 IPv6 路由表中將 IPv6 位址空間新增為靜態路由。|  
     |IPv6 網際網路與 IPv4 內部網路|遠端存取伺服器使用 Microsoft 6to4 介面卡的介面將預設的 IPv6 路由流量轉接到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令，設定遠端存取伺服器在 IPv4 網際網路上 Microsoft 6to4 轉送的 IPv4 位址 (當公司網路中沒有部署原生 IPv6 時使用)：netsh interface ipv6 6to4 set relay name=192.88.99.1 state=enabled 命令。|||  
   
-    > [!NOTE]  
-    > 請注意下列事項：  
-    >   
-    > 1.  如果 DirectAccess 用戶端已被指派公用的 IPv4 位址，它會使用 6to4 轉換技術連線到內部網路。 如果 DirectAccess 用戶端無法使用 6to4 連線到 DirectAccess 伺服器，則會使用 IP-HTTPS。  
-    > 2.  原生 IPv6 用戶端電腦可以透過原生 IPv6 連線到遠端存取伺服器，不需要轉換技術。  
+    > [!NOTE]
+    > 1. 如果 DirectAccess 用戶端已被指派公用的 IPv4 位址，它會使用 6to4 轉換技術連線到內部網路。 如果 DirectAccess 用戶端無法使用 6to4 連線到 DirectAccess 伺服器，則會使用 IP-HTTPS。  
+    > 2. 原生 IPv6 用戶端電腦可以透過原生 IPv6 連線到遠端存取伺服器，不需要轉換技術。  
   
-### <a name="ConfigFirewalls"></a>規劃防火牆需求  
+### <a name="plan-firewall-requirements"></a>規劃防火牆需求
+
 如果遠端存取伺服器位於邊緣防火牆後面，當遠端存取伺服器位於 IPv4 網際網路時，遠端存取流量就會需要下列例外狀況：  
   
--   6to4 流量-IP 通訊協定 41 輸入和輸出。  
+- 6to4 流量-IP 通訊協定 41 輸入和輸出。  
   
--   IP-HTTPS-傳輸控制通訊協定 (TCP) 目的地連接埠 443 和 TCP 來源連接埠 443 輸出。  
+- IP-HTTPS-傳輸控制通訊協定 (TCP) 目的地連接埠 443 和 TCP 來源連接埠 443 輸出。  
   
--   如果您部署單一網路介面卡的遠端存取，並且在遠端存取伺服器上安裝網路位置伺服器，也應豁免 TCP 連接埠 62000。  
+- 如果您部署單一網路介面卡的遠端存取，並且在遠端存取伺服器上安裝網路位置伺服器，也應豁免 TCP 連接埠 62000。  
   
 當遠端存取伺服器位於 IPv6 網際網路時，遠端存取流量就會需要下列例外狀況：  
   
--   IP 通訊協定 50  
+- IP 通訊協定 50  
   
--   UDP 目的地連接埠 500 輸入，及 UDP 來源連接埠 500 輸出。  
+- UDP 目的地連接埠 500 輸入，及 UDP 來源連接埠 500 輸出。  
   
 當使用額外防火牆時，請針對遠端存取流量套用下列內部網路防火牆例外：  
   
--   ISATAP-通訊協定 41 輸入和輸出  
+- ISATAP-通訊協定 41 輸入和輸出  
   
--   適用於所有 IPv4/IPv6 流量的 TCP/UDP  
+- 適用於所有 IPv4/IPv6 流量的 TCP/UDP  
   
-### <a name="plan-certificate-requirements"></a>規劃憑證需求  
+### <a name="plan-certificate-requirements"></a>規劃憑證需求
+
 IPsec 的憑證需求包括 DirectAccess 用戶端電腦在建立用戶端與遠端存取伺服器之間的 IPsec 連線時所使用的電腦憑證，以及遠端存取伺服器用來建立與 DirectAccess 用戶端之 IPsec 連線的電腦憑證。 Windows Server 2012 中的 directaccess 您可能不一定要使用這些 IPsec 憑證。 「啟用 DirectAccess 精靈」會設定遠端存取伺服器做為 Kerberos Proxy 執行 IPsec 驗證，而不需要憑證。  
   
-1.  **IP-HTTPS 伺服器**-當您設定遠端存取時，遠端存取伺服器會自動設定做為 IP-HTTPS 網頁接聽程式。 IP-HTTPS 站台需要有網站憑證，而用戶端電腦必須要能夠連線到憑證撤銷清單 (CRL) 站台來查看該憑證是否在清單中。 「啟用 DirectAccess」精靈會嘗試使用 SSTP VPN 憑證。 如果沒有設定 SSTP，它會檢查電腦個人存放區中是否有 IP-HTTPS 的憑證。 如果沒有，則會自動建立自我簽署的憑證。  
+1. **IP-HTTPS 伺服器**:當您設定遠端存取時，遠端存取伺服器會自動設定做為 IP-HTTPS 網頁接聽程式。 IP-HTTPS 站台需要有網站憑證，而用戶端電腦必須要能夠連線到憑證撤銷清單 (CRL) 站台來查看該憑證是否在清單中。 「啟用 DirectAccess」精靈會嘗試使用 SSTP VPN 憑證。 如果沒有設定 SSTP，它會檢查電腦個人存放區中是否有 IP-HTTPS 的憑證。 如果沒有，則會自動建立自我簽署的憑證。  
   
-2.  **網路位置伺服器**-網路位置伺服器是用來偵測用戶端電腦是否位於公司網路中的網站。 網路位置伺服器需要網站憑證。 DirectAccess 用戶端必須要能夠連線到 CRL 站台來查看該憑證是否在清單中。 「啟用 DirectAccess 精靈」會檢查電腦個人存放區中是否有網路位置伺服器的憑證。 如果沒有，它就會自動建立自我簽署憑證。  
+2. **網路位置伺服器**:網路位置伺服器是一個用來偵測用戶端電腦是否位於公司網路中的網站。 網路位置伺服器需要網站憑證。 DirectAccess 用戶端必須要能夠連線到 CRL 站台來查看該憑證是否在清單中。 「啟用 DirectAccess 精靈」會檢查電腦個人存放區中是否有網路位置伺服器的憑證。 如果沒有，它就會自動建立自我簽署憑證。  
   
 下表摘要說明這當中每一個的憑證需求：  
   
 |IPsec 驗證|IP-HTTPS 伺服器|網路位置伺服器|  
 |------------|----------|--------------|  
-|內部 CA，才能發行電腦憑證給遠端存取伺服器和用戶端進行 IPsec 驗證，當您不使用 Kerberos proxy 進行驗證|公用 CA-建議使用公用 CA 來簽發 IP-HTTPS 憑證，這可確保 CRL 發佈點使用的外部。|內部 CA-您可以使用內部 CA 來簽發網路位置伺服器網站憑證。 請確定 CRL 發佈點在內部網路具有高可用性。|  
-||內部 CA-您可以使用內部 CA 來簽發 IP-HTTPS 憑證;不過，您必須確定 CRL 發佈點使用的外部。|自我簽署憑證-您可以使用自我簽署的憑證的網路位置伺服器網站;不過，您無法在多站台部署中，使用自我簽署的憑證。|  
-||自我簽署憑證為自我簽署的憑證用於 IP-HTTPS 伺服器;不過，您必須確定 CRL 發佈點使用的外部。 自我簽署憑證無法在多站台部署中使用。||  
+|內部 CA，才能發行電腦憑證給遠端存取伺服器和用戶端進行 IPsec 驗證，當您不使用 Kerberos proxy 進行驗證|公用 CA：我們建議使用公用 CA 來簽發 IP-HTTPS 憑證，這可確保 CRL 發佈點使用的外部。|內部 CA：您可以使用內部 CA 來簽發網路位置伺服器網站憑證。 請確定 CRL 發佈點在內部網路具有高可用性。|  
+||內部 CA：您可以使用內部 CA 來簽發 IP-HTTPS 憑證；不過，您必須確定外部可以使用 CRL 發佈點。|自我簽署憑證：您可以使用自我簽署的憑證的網路位置伺服器網站;不過，您無法在多站台部署中，使用自我簽署的憑證。|  
+||自我簽署憑證：您可以將自我簽署憑證用於 IP-HTTPS 伺服器；不過，您必須確定外部可以使用 CRL 發佈點。 自我簽署憑證無法在多站台部署中使用。||  
   
-#### <a name="plan-certificates-for-ip-https"></a>規劃 IP-HTTPS 的憑證  
+#### <a name="plan-certificates-for-ip-https"></a>規劃 IP-HTTPS 的憑證
+
 遠端存取伺服器要做為 IP-HTTPS 接聽程式，而且您必須手動在伺服器上安裝 HTTPS 網站憑證。 規劃時，請注意下列事項：  
   
--   建議使用公用 CA，以便隨時可用 CRL。  
+- 建議使用公用 CA，以便隨時可用 CRL。  
   
--   在 [主體] 欄位中指定遠端存取伺服器之網際網路介面卡的 IPv4 位址，或是 IP-HTTPS URL (ConnectTo 位址) 的 FQDN。 如果遠端存取伺服器位於 NAT 裝置後面，必須指定 NAT 裝置的公用名稱或位址。  
+- 在 [主體] 欄位中指定遠端存取伺服器之網際網路介面卡的 IPv4 位址，或是 IP-HTTPS URL (ConnectTo 位址) 的 FQDN。 如果遠端存取伺服器位於 NAT 裝置後面，必須指定 NAT 裝置的公用名稱或位址。  
   
--   憑證的一般名稱必須符合 IP-HTTPS 站台的名稱。  
+- 憑證的一般名稱必須符合 IP-HTTPS 站台的名稱。  
   
--   在「增強金鑰使用方法」欄位中使用伺服器驗證物件識別碼 (OID)。  
+- 在「增強金鑰使用方法」欄位中使用伺服器驗證物件識別碼 (OID)。  
   
--   在 [CRL 發佈點] 欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
+- 在 [CRL 發佈點] 欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
   
--   IP-HTTPS 憑證必須具有私密金鑰。  
+- IP-HTTPS 憑證必須具有私密金鑰。  
   
--   IP-HTTPS 憑證必須直接匯入到個人存放區。  
+- IP-HTTPS 憑證必須直接匯入到個人存放區。  
   
--   IP-HTTPS 憑證的名稱可以包含萬用字元。  
+- IP-HTTPS 憑證的名稱可以包含萬用字元。  
   
-#### <a name="plan-website-certificates-for-the-network-location-server"></a>規劃網路位置伺服器的網站憑證  
+#### <a name="plan-website-certificates-for-the-network-location-server"></a>規劃網路位置伺服器的網站憑證
+
 規劃網路位置伺服器網站時，請注意下列事項：  
   
--   在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或是網路位置 URL 的 FQDN。  
+- 在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或是網路位置 URL 的 FQDN。  
   
--   在 [增強金鑰使用方法] 欄位中使用伺服器驗證 OID。  
+- 在 [增強金鑰使用方法] 欄位中使用伺服器驗證 OID。  
   
--   在 [CRL 發佈點] 欄位中，指定連線到內部網路的 DirectAccess 用戶端可存取的 CRL 發佈點。 這個 CRL 發佈點應該要無法從內部網路之外存取。  
+- 在 [CRL 發佈點] 欄位中，指定連線到內部網路的 DirectAccess 用戶端可存取的 CRL 發佈點。 這個 CRL 發佈點應該要無法從內部網路之外存取。  
   
--   如果您稍後要設定多站台或叢集部署，憑證名稱不能與遠端存取伺服器的內部名稱相同。  
-  
+- 如果您稍後要設定多站台或叢集部署，憑證名稱不能與遠端存取伺服器的內部名稱相同。  
+
     > [!NOTE]  
     > 請確定 IP-HTTPS 和網路位置伺服器的憑證都有**主體名稱**。 如果憑證沒有**主體名稱**但有**別名**，則遠端存取精靈將不會接受。  
   
-#### <a name="plan-dns-requirements"></a>規劃 DNS 需求  
+#### <a name="plan-dns-requirements"></a>規劃 DNS 需求
+
 部署遠端存取時，下列項目必須有 DNS：  
   
--   **DirectAccess 用戶端要求**-DNS 會被用來解析來自不位於內部網路的 DirectAccess 用戶端電腦要求。 DirectAccess 用戶端會嘗試連線到 DirectAccess 網路位置伺服器，以判斷它們位於網際網路或公司網路上：如果連線成功，用戶端會被判斷為位於內部網路上，系統便不會使用 DirectAccess，而會使用在用戶端電腦的網路介面卡上設定的 DNS 伺服器來解析用戶端要求。 如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格 (NRPT) 來決定解析名稱要求時要使用的 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱這類 https://internal。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS4 或內部網路 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
+- **DirectAccess 用戶端要求**:DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端電腦的要求。 DirectAccess 用戶端會嘗試連線到 DirectAccess 網路位置伺服器，以判斷它們位於網際網路或公司網路上：如果連線成功，用戶端會被判斷為位於內部網路上，系統便不會使用 DirectAccess，而會使用在用戶端電腦的網路介面卡上設定的 DNS 伺服器來解析用戶端要求。 如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格 (NRPT) 來決定解析名稱要求時要使用的 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱這類<https://internal>。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS4 或內部網路 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
   
     請注意，在遠端存取管理主控台中的 NRPT 加入新的尾碼時，您可以按一下 [偵測]  按鈕自動探索尾碼的預設 DNS 伺服器。 自動偵測的運作方式如下：  
   
-    1.  如果公司網路屬於 IPv4 或 IPv4 與 IPv6，預設位址是遠端存取伺服器上內部介面卡的 DNS64 位址。  
+    1. 如果公司網路屬於 IPv4 或 IPv4 與 IPv6，預設位址是遠端存取伺服器上內部介面卡的 DNS64 位址。  
   
-    2.  如果公司網路是 IPv6 型，預設位址就是公司網路中 DNS 伺服器的 IPv6 位址。  
+    2. 如果公司網路是 IPv6 型，預設位址就是公司網路中 DNS 伺服器的 IPv6 位址。  
   
--   **基礎結構伺服器**  
+-  **基礎結構伺服器**  
   
-    1.  **網路位置伺服器**-DirectAccess 用戶端嘗試連線到網路位置伺服器，以判斷它們是否在內部網路上。 內部網路上的用戶端必須能夠解析網路位置伺服器的名稱，但是當它們位於網際網路上時，則必須防止它們解析該伺服器的名稱。 為了確保這種情況，預設會將網路位置伺服器的 FQDN 新增到 NRPT 中做為豁免規則。 此外，當您設定「遠端存取」時，系統會自動建立下列規則：  
+    1. **網路位置伺服器**:DirectAccess 用戶端會嘗試連線到網路位置伺服器，以判斷它們是否位於內部網路上。 內部網路上的用戶端必須能夠解析網路位置伺服器的名稱，但是當它們位於網際網路上時，則必須防止它們解析該伺服器的名稱。 為了確保這種情況，預設會將網路位置伺服器的 FQDN 新增到 NRPT 中做為豁免規則。 此外，當您設定「遠端存取」時，系統會自動建立下列規則：  
   
-        1.  遠端存取伺服器之根網域或網域名稱的 DNS 尾碼規則，以及對應到遠端存取伺服器上設定之內部網路 DNS 伺服器的 IPv6 位址。 例如，如果遠端存取伺服器是 corp.contoso.com 網域的成員，就會為 corp.contoso.com DNS 尾碼建立規則。  
+        1. 遠端存取伺服器之根網域或網域名稱的 DNS 尾碼規則，以及對應到遠端存取伺服器上設定之內部網路 DNS 伺服器的 IPv6 位址。 例如，如果遠端存取伺服器是 corp.contoso.com 網域的成員，就會為 corp.contoso.com DNS 尾碼建立規則。  
   
-        2.  網路位置伺服器之 FQDN 的豁免規則。 比方說，如果網路位置伺服器 URL 為 https://nls.corp.contoso.com，為 FQDN nls.corp.contoso.com 建立豁免規則。  
+        2. 網路位置伺服器之 FQDN 的豁免規則。 比方說，如果網路位置伺服器 URL 為<https://nls.corp.contoso.com>，為 FQDN nls.corp.contoso.com 建立豁免規則。  
   
-        **IP-HTTPS 伺服器**-遠端存取伺服器做為 IP-HTTPS 接聽程式，並使用其伺服器憑證向 IP-HTTPS 用戶端。 IP-HTTPS 名稱必須能夠被使用公用 DNS 伺服器的 DirectAccess 用戶端解析。  
+        **IP-HTTPS 伺服器**:遠端存取伺服器做為 IP-HTTPS 接聽程式，並使用其伺服器憑證向 IP-HTTPS 用戶端。 IP-HTTPS 名稱必須能夠被使用公用 DNS 伺服器的 DirectAccess 用戶端解析。  
   
-        **連線能力檢查器**-遠端存取會建立預設 web 探查，供 DirectAccess 用戶端電腦用來確認能夠連線到內部網路。 若要確保探查能夠如預期般運作，必須在 DNS 中手動登錄下列名稱：  
+        **連線能力檢查器**:遠端存取會建立預設 web 探查，供 DirectAccess 用戶端電腦用來確認能夠連線到內部網路。 若要確保探查能夠如預期般運作，必須在 DNS 中手動登錄下列名稱：  
   
         1.  directaccess webprobehost 應該解析為內部 IPv4 位址的遠端存取伺服器，或僅支援 IPv6 的環境中的 IPv6 位址。  
   
@@ -172,49 +174,51 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在建立用戶端與遠
   
 #### <a name="dns-server-requirements"></a>DNS 伺服器需求  
   
--   為 DirectAccess 用戶端，您必須使用執行 Windows Server 2003、 Windows Server 2008、 Windows Server 2008 R2、 Windows Server 2012 或任何支援 IPv6 的 DNS 伺服器的 DNS 伺服器。  
+- 為 DirectAccess 用戶端，您必須使用執行 Windows Server 2003、 Windows Server 2008、 Windows Server 2008 R2、 Windows Server 2012 或任何支援 IPv6 的 DNS 伺服器的 DNS 伺服器。  
   
-### <a name="plan-active-directory"></a>規劃 Active Directory  
+### <a name="plan-active-directory"></a>規劃 Active Directory
+
 遠端存取會使用 Active Directory 和 Active Directory 群組原則物件如下所示：  
   
--   **驗證**-Active Directory 來進行驗證。 內部網路通道使用 Kerberos 驗證使用者存取內部資源。  
+- **驗證**:使用 Active Directory 進行驗證。 內部網路通道使用 Kerberos 驗證使用者存取內部資源。  
   
--   **群組原則物件**-遠端存取組態設定收集到套用至遠端存取伺服器、 用戶端，以及內部應用程式伺服器的群組原則物件。  
+- **群組原則物件**:遠端存取組態設定收集到套用至遠端存取伺服器、 用戶端，以及內部應用程式伺服器的群組原則物件。  
   
--   **安全性群組**-遠端存取使用安全性群組來收集並識別 DirectAccess 用戶端電腦和遠端存取伺服器。 群組原則會套用到所需的安全性群組。  
+- **安全性群組**:遠端存取會使用安全性群組來收集並識別 DirectAccess 用戶端電腦和遠端存取伺服器。 群組原則會套用到所需的安全性群組。  
   
--   **延伸的 IPsec 原則**-遠端存取可以使用 IPsec 驗證及用戶端和遠端存取伺服器之間的加密。 您可以延伸 IPsec 驗證及加密到指定的內部應用程式伺服器。   
+- **延伸的 IPsec 原則**:IPsec 驗證及加密用戶端和遠端存取伺服器之間，可以使用遠端存取。 您可以延伸 IPsec 驗證及加密到指定的內部應用程式伺服器。   
   
-**Active Directory 需求**  
+#### <a name="active-directory-requirements"></a>Active Directory 需求  
   
 規劃 Active Directory 進行遠端存取部署時，必須具備下列條件：  
   
--   安裝在 Windows Server 2012、 Windows Server 2008 R2 Windows Server 2008 或 Windows Server 2003 作業系統上的至少一個網域控制站。  
+- 安裝在 Windows Server 2012、 Windows Server 2008 R2 Windows Server 2008 或 Windows Server 2003 作業系統上的至少一個網域控制站。  
   
     如果網域控制站位於周邊網路上 (因此可從遠端存取伺服器的網際網路對向網路介面卡來連線)，請防止遠端存取伺服器藉由在網域控制站上新增封包篩選器進行連線，以避免連線到網際網路介面卡的 IP 位址。  
   
--   遠端存取伺服器必須是網域成員。  
+- 遠端存取伺服器必須是網域成員。  
   
--   DirectAccess 用戶端必須是網域成員。 用戶端可以屬於：  
+- DirectAccess 用戶端必須是網域成員。 用戶端可以屬於：  
   
-    -   與遠端存取伺服器位於相同樹系中的任何網域。  
+    - 與遠端存取伺服器位於相同樹系中的任何網域。  
   
-    -   與遠端存取伺服器網域具有雙向信任關係的的任何網域。  
+    - 與遠端存取伺服器網域具有雙向信任關係的的任何網域。  
   
-    -   與遠端存取網域所屬的樹系具有雙向信任關係之樹系中的任何網域。  
+    - 與遠端存取網域所屬的樹系具有雙向信任關係之樹系中的任何網域。  
   
 > [!NOTE]  
-> -   遠端存取伺服器不能是網域控制站。  
-> -   用於遠端存取的 Active Directory 網域控制站不能從遠端存取伺服器的外部網際網路介面卡連線 (介面卡不能在 Windows 防火牆的網域設定檔中)。  
+> - 遠端存取伺服器不能是網域控制站。  
+> - 用於遠端存取的 Active Directory 網域控制站不能從遠端存取伺服器的外部網際網路介面卡連線 (介面卡不能在 Windows 防火牆的網域設定檔中)。  
   
-### <a name="plan-group-policy-objects"></a>規劃群組原則物件  
+### <a name="plan-group-policy-objects"></a>規劃群組原則物件
+
 設定遠端存取時所設定的 DirectAccess 設定，會收集到群組原則物件 (GPO)。 有三種不同的 GPO 會填入 DirectAccess 設定，並且發佈為下列項目：  
   
--   **DirectAccess 用戶端 GPO** -這個 GPO 包含用戶端設定，包括 IPv6 轉換技術設定、 NRPT 項目，以及 Windows 防火牆具有進階安全性連線安全性規則。 這個 GPO 會套用到為用戶端電腦指定的安全性群組。  
+- **DirectAccess 用戶端 GPO**:這個 GPO 包含用戶端設定，包括 IPv6 轉換技術設定、NRPT 項目，以及「具有進階安全性的 Windows 防火牆」連線安全性規則。 這個 GPO 會套用到為用戶端電腦指定的安全性群組。  
   
--   **DirectAccess 伺服器 GPO** -這個 GPO 包含 DirectAccess 組態設定會套用到設定為遠端存取伺服器部署中的任何伺服器。 它也包含「具有進階安全性的 Windows 防火牆」連線安全性規則。  
+- **DirectAccess 伺服器 GPO**:這個 GPO 包含 DirectAccess 組態設定會套用到設定為遠端存取伺服器部署中的任何伺服器。 它也包含「具有進階安全性的 Windows 防火牆」連線安全性規則。  
   
--   **應用程式伺服器 GPO** -這個 GPO 包含所選應用程式伺服器，您選擇性地擴充驗證和加密從 DirectAccess 用戶端設定。 如果不延伸驗證及加密，就不需使用此 GPO。  
+- **應用程式伺服器 GPO**:這個 GPO 包含所選應用程式伺服器的設定，這些伺服器是您選擇從 DirectAccess 用戶端延伸驗證和加密的伺服器。 如果不延伸驗證及加密，就不需使用此 GPO。  
   
 「啟用 DirectAccess 精靈」會自動建立 GPO，並且為每個 GPO 指定預設名稱。  
   
@@ -223,54 +227,57 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在建立用戶端與遠
   
 設定 GPO 的方式有兩種：  
   
-1.  **自動**-您可以指定它們會自動建立。 系統會為每個 GPO 指定一個預設名稱。  
+1. **自動**:您可以指定自動建立 GPO。 系統會為每個 GPO 指定一個預設名稱。  
   
-2.  **以手動方式**-您可以使用 Active Directory 系統管理員所預先定義的 Gpo。  
+2. **以手動方式**:您可以使用由 Active Directory 系統管理員預先定義的 GPO。  
   
 請注意，在設定 DirectAccess 使用特定的 GPO 之後，就無法再設定它使用不同的 GPO。  
   
-#### <a name="automatically-created-gpos"></a>自動建立的 GPO  
+#### <a name="automatically-created-gpos"></a>自動建立的 GPO
+
 使用自動建立的 GPO 時，請注意下列事項：  
   
 自動建立的 GPO 會根據位置和連結目標參數進行套用，如下所示：  
   
--   如果是 DirectAccess 伺服器 GPO，位置與連結參數兩者都會指向包含遠端存取伺服器的網域。  
+- 如果是 DirectAccess 伺服器 GPO，位置與連結參數兩者都會指向包含遠端存取伺服器的網域。  
   
--   建立用戶端 GPO 時，位置會設定為將在其中建立 GPO 的單一網域。 系統會在每個網域中查詢 GPO 名稱，如果存在的話，就會將 DirectAccess 設定填入它。 連結目標會設定為在其中建立 GPO 的網域根目錄。 系統會為每個包含用戶端電腦或應用程式伺服器的網域建立 GPO，而該 GPO 會連結到其個別網域的根目錄。  
+- 建立用戶端 GPO 時，位置會設定為將在其中建立 GPO 的單一網域。 系統會在每個網域中查詢 GPO 名稱，如果存在的話，就會將 DirectAccess 設定填入它。 連結目標會設定為在其中建立 GPO 的網域根目錄。 系統會為每個包含用戶端電腦或應用程式伺服器的網域建立 GPO，而該 GPO 會連結到其個別網域的根目錄。  
   
 使用自動建立的 GPO 時，若要套用 DirectAccess 設定，遠端存取伺服器系統管理員需要下列權限：  
   
--   每個網域的 GPO 建立權限。  
+- 每個網域的 GPO 建立權限。  
   
--   所有選取之用戶端網域根目錄的連結權限。  
+- 所有選取之用戶端網域根目錄的連結權限。  
   
--   伺服器 GPO 網域根目錄的連結權限。  
+- 伺服器 GPO 網域根目錄的連結權限。  
   
--   GPO 所需的「建立」、「編輯」、「刪除」及「修改」安全性權限。  
+- GPO 所需的「建立」、「編輯」、「刪除」及「修改」安全性權限。  
   
--   建議遠端存取系統管理員具有每個所需網域的 GPO 讀取權限。 這可讓「遠端存取」確認建立 GPO 時不會有名稱重複的 GPO 存在。  
+- 建議遠端存取系統管理員具有每個所需網域的 GPO 讀取權限。 這可讓「遠端存取」確認建立 GPO 時不會有名稱重複的 GPO 存在。  
   
 請注意，如果沒有正確的權限來連結 GPO，系統會發出警告。 「遠端存取」操作將會繼續，但是不會建立連結。 如果發出這項警告，則不會自動建立連結，即使之後修正權限亦同。 系統管理員將必須改為手動建立連結。  
   
-#### <a name="manually-created-gpos"></a>手動建立的 GPO  
+#### <a name="manually-created-gpos"></a>手動建立的 GPO
+
 使用手動建立的 GPO 時，請注意下列事項：  
   
--   GPO 應該在執行「遠端存取安裝精靈」之前就要存在。  
+- GPO 應該在執行「遠端存取安裝精靈」之前就要存在。  
   
--   使用手動建立的 GPO 時，若要套用 DirectAccess 設定，遠端存取系統管理員對手動建立的 GPO 必須具有完整的 GPO 權限 (編輯、刪除、修改安全性)。  
+- 使用手動建立的 GPO 時，若要套用 DirectAccess 設定，遠端存取系統管理員對手動建立的 GPO 必須具有完整的 GPO 權限 (編輯、刪除、修改安全性)。  
   
--   使用手動建立的 GPO 時，系統會搜尋整個網域來尋找 GPO 連結。 如果網域中未連結 GPO，則會在網域根目錄中自動建立連結。 如果沒有可建立連結的必要權限，系統就會發出警告。  
+- 使用手動建立的 GPO 時，系統會搜尋整個網域來尋找 GPO 連結。 如果網域中未連結 GPO，則會在網域根目錄中自動建立連結。 如果沒有可建立連結的必要權限，系統就會發出警告。  
   
 請注意，如果沒有正確的權限來連結 GPO，系統會發出警告。 「遠端存取」操作將會繼續，但是不會建立連結。 如果系統發出這個警告，則即使稍後新增權限，也不會自動建立連結。 系統管理員將必須改為手動建立連結。  
   
-#### <a name="recovering-from-a-deleted-gpo"></a>從已刪除的 GPO 復原  
+#### <a name="recovering-from-a-deleted-gpo"></a>從已刪除的 GPO 復原
+
 如果遠端存取伺服器、用戶端或應用程式伺服器 GPO 被意外刪除，而且沒有可用的備份，您必須移除組態設定並重新設定一次。 如果有備份可用，您便可以從備份還原 GPO。  
   
-[遠端存取管理]  會顯示下列錯誤訊息：**GPO<GPO name>找不到**。 若要移除組態設定，請執行下列步驟：  
+[遠端存取管理]  會顯示下列錯誤訊息：**找不到 GPO （GPO 名稱）** 。 若要移除組態設定，請執行下列步驟：  
   
-1.  執行 PowerShell Cmdlet **Uninstall-remoteaccess**。  
+1. 執行 PowerShell Cmdlet **Uninstall-remoteaccess**。  
   
-2.  重新開啟 [遠端存取管理]  。  
+2. 重新開啟**遠端存取管理**。  
   
-3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]  。 完成之後，伺服器將會還原到未設定的狀態。  
+3. 您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]  。 完成之後，伺服器將會還原到未設定的狀態。  
 

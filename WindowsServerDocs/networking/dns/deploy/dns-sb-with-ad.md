@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7a5761cafff0a4bf148958a7f14aeaf311075b2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66931d2196b741e469cb726929f7b58985b8d0cd
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839779"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812145"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>在 Active Directory 中使用適合拆分式 DNS 部署的 DNS 原則
 
@@ -25,7 +25,7 @@ ms.locfileid: "59839779"
 
 先前，這種情節需要 DNS 系統管理員會在兩個不同的 DNS 伺服器，每個提供服務給每個使用者，內部和外部維護。 如果只有少數的記錄，在該區域內已分割\-是或已委派的區域 （內部和外部） 的兩個執行個體相同的父系網域中，這也成為管理難題。
 
->[!NOTE]
+> [!NOTE]
 > - 分割 DNS 部署\-核心分裂時有單一區域的兩個版本，供內部使用者在組織內部的一個版本，針對外部使用者 – 是，一般而言，使用者在網際網路上的一個版本。
 > - 本主題[使用 Split-Brain DNS 部署的 DNS 原則](split-brain-DNS-deployment.md)說明如何使用 DNS 原則和區域範圍部署分割\-大腦單一的 Windows Server 2016 的 DNS 伺服器上的 DNS 系統。
 
@@ -124,8 +124,8 @@ DNS 原則會儲存在本機的 DNS 伺服器上。 您可以輕鬆地匯出 DNS
     
     Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39”
 
->[!NOTE]
->**– ZoneScope**記錄新增至預設區域範圍時，未包含參數。 此動作，等於是將記錄新增至正常的區域。
+> [!NOTE]
+> **– ZoneScope**記錄新增至預設區域範圍時，未包含參數。 此動作，等於是將記錄新增至正常的區域。
 
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
@@ -133,18 +133,18 @@ DNS 原則會儲存在本機的 DNS 伺服器上。 您可以輕鬆地匯出 DNS
 
 您已識別的外部網路和內部網路的伺服器介面，而且您已建立的區域範圍之後，您必須建立連線的內部和外部的區域範圍的 DNS 原則。
 
->[!NOTE]
->這個範例會使用伺服器介面\(-ServerInterface 參數，在下列範例命令\)為區分內部和外部的用戶端之間的篩選條件。 若要區分外部和內部的用戶端的另一種方法是使用用戶端子網路做為準則。 如果您可以識別內部的用戶端所屬的子網路，您可以設定來區分根據用戶端子網路的 DNS 原則。 如需如何設定使用用戶端的子網路條件的流量管理的詳細資訊，請參閱[地理位置與主要伺服器，根據流量管理的使用 DNS 原則](primary-geo-location.md)。
+> [!NOTE]
+> 這個範例會使用伺服器介面\(-ServerInterface 參數，在下列範例命令\)為區分內部和外部的用戶端之間的篩選條件。 若要區分外部和內部的用戶端的另一種方法是使用用戶端子網路做為準則。 如果您可以識別內部的用戶端所屬的子網路，您可以設定來區分根據用戶端子網路的 DNS 原則。 如需如何設定使用用戶端的子網路條件的流量管理的詳細資訊，請參閱[地理位置與主要伺服器，根據流量管理的使用 DNS 原則](primary-geo-location.md)。
 
 公用介面上收到 DNS 查詢時，設定原則之後，回應會傳回來自外部範圍的區域。 
 
->[!NOTE]
->沒有任何原則所需的對應預設內部區域範圍。 
+> [!NOTE]
+> 沒有任何原則所需的對應預設內部區域範圍。 
 
     Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,208.84.0.53" -ZoneScope "external,1" -ZoneName contoso.com
 
->[!NOTE]
->208.84.0.53 是公用網路介面上的 IP 位址。
+> [!NOTE]
+> 208.84.0.53 是公用網路介面上的 IP 位址。
 
 如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 

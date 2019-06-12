@@ -11,12 +11,12 @@ ms.prod: windows-server-threshold
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: ea56c718394d145a36145d32e5769661a62efd56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: cb9b5b9448f364760c3d2a7e43edd01a5a9f7f9d
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840999"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719672"
 ---
 # <a name="forest-and-domain-functional-levels"></a>樹系和網域功能等級
 
@@ -34,7 +34,7 @@ Windows 2003 的生命週期結束時，Windows 2003 網域控制站 (Dc) 將需
 
 沒有任何新的樹系或此版本中新增的網域功能等級。
 
-若要新增 Windows Server 2019 網域控制站的最低需求是 Windows Server 2008 r2 功能層級。
+若要新增 Windows Server 2019 網域控制站的最低需求是 Windows Server 2008 的功能等級。 也必須使用 DFS-R 作為引擎來複寫 SYSVOL 的網域。
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -139,25 +139,27 @@ Windows 2003 的生命週期結束時，Windows 2003 網域控制站 (Dc) 將需
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Windows Server 2008 網域功能層級功能
 
 * 所有預設的 AD DS 功能，所有的功能，從 Windows Server 2003 網域功能等級，並有下列功能：
-   * 分散式的檔案系統 (DFS) 複寫支援的 Windows Server 2003 系統磁碟區 (SYSVOL)
-      * DFS 複寫的支援會提供更健全與細緻的 SYSVOL 內容複寫。
-        [!NOTE]>
-        >從 Windows Server 2012 R2 開始，檔案複寫服務 (FRS) 已被取代。 會在至少執行的網域控制站建立新的網域必須設定 Windows Server 2012 R2，Windows Server 2008 網域功能等級為或更高。
+  * 分散式的檔案系統 (DFS) 複寫支援的 Windows Server 2003 系統磁碟區 (SYSVOL)
+    * DFS 複寫的支援會提供更健全與細緻的 SYSVOL 內容複寫。
 
-   * 網域型 DFS 命名空間執行在 Windows Server 2008 模式中，其中包含對存取式列舉和增強的延展性的支援。 在 Windows Server 2008 模式中的網域型命名空間也需要使用 Windows Server 2003 樹系功能等級的樹系。 如需詳細資訊，請參閱 <<c0> [ 選擇命名空間類型](https://go.microsoft.com/fwlink/?LinkId=180400)。
-   * Kerberos 通訊協定的進階的加密標準 （AES 128 與 256） 支援。 為了讓使用 AES 發出的 Tgt，網域功能等級必須是 Windows Server 2008 或更新版本，並需要變更網域密碼。 
-      * 如需詳細資訊，請參閱 < [Kerberos 增強功能](https://technet.microsoft.com/library/cc749438(ws.10).aspx)。
-        [!NOTE]>
-        >驗證錯誤，可能發生網域控制站上，網域功能等級提高到 Windows Server 2008 或更高版本之後如果網域控制站已經被複寫的網域功能等級變更，但未尚未重新整理 krbtgt 密碼。 在此情況下，重新啟動網域控制站上的 KDC 服務將會觸發新的 krbtgt 密碼的記憶體中重新整理，並解決相關的驗證錯誤。
+      > [!NOTE]
+      > 從 Windows Server 2012 R2 開始，檔案複寫服務 (FRS) 已被取代。 會在至少執行的網域控制站建立新的網域必須設定 Windows Server 2012 R2，Windows Server 2008 網域功能等級為或更高。
 
-   * [上次互動式登入](https://go.microsoft.com/fwlink/?LinkId=180387)資訊會顯示下列資訊：
-      * 在已加入網域的 Windows Server 2008 server 或 Windows Vista 工作站的失敗登入嘗試總次數
-      * 在 Windows Server 2008 server 或 Windows Vista 工作站的成功登入後的失敗登入嘗試總次數
-      * 嘗試在 Windows Server 2008 或 Windows Vista 工作站的最後一個失敗的登入的時間
-      * 嘗試在 Windows Server 2008 server 或 Windows Vista 工作站的最後一個成功的登入的時間
-   * 更細緻的密碼原則，讓您指定網域中的使用者和全域安全性群組的密碼與帳戶鎖定原則。 如需詳細資訊，請參閱 <<c0> [ 更細緻的密碼和帳戶鎖定原則設定的逐步指南](https://go.microsoft.com/fwlink/?LinkID=91477)。
-   * 個人虛擬桌面
-      * 若要使用 Active Directory 使用者和電腦中的 [使用者帳戶內容] 對話方塊中的 [個人虛擬桌面] 索引標籤所提供的新增的功能，您的 AD DS 結構描述必須延伸 Windows Server 2008 r2 (結構描述物件版本 = 47)。 如需詳細資訊，請參閱 <<c0> [ 部署個人虛擬桌面藉由使用 RemoteApp 與桌面連線的逐步指南 》](https://go.microsoft.com/fwlink/?LinkId=183552)。
+  * 網域型 DFS 命名空間執行在 Windows Server 2008 模式中，其中包含對存取式列舉和增強的延展性的支援。 在 Windows Server 2008 模式中的網域型命名空間也需要使用 Windows Server 2003 樹系功能等級的樹系。 如需詳細資訊，請參閱 <<c0> [ 選擇命名空間類型](https://go.microsoft.com/fwlink/?LinkId=180400)。
+  * Kerberos 通訊協定的進階的加密標準 （AES 128 與 256） 支援。 為了讓使用 AES 發出的 Tgt，網域功能等級必須是 Windows Server 2008 或更新版本，並需要變更網域密碼。 
+    * 如需詳細資訊，請參閱 < [Kerberos 增強功能](https://technet.microsoft.com/library/cc749438(ws.10).aspx)。
+
+      > [!NOTE]
+      >驗證錯誤，可能發生網域控制站上，網域功能等級提高到 Windows Server 2008 或更高版本之後如果網域控制站已經被複寫的網域功能等級變更，但未尚未重新整理 krbtgt 密碼。 在此情況下，重新啟動網域控制站上的 KDC 服務將會觸發新的 krbtgt 密碼的記憶體中重新整理，並解決相關的驗證錯誤。
+
+  * [上次互動式登入](https://go.microsoft.com/fwlink/?LinkId=180387)資訊會顯示下列資訊：
+     * 在已加入網域的 Windows Server 2008 server 或 Windows Vista 工作站的失敗登入嘗試總次數
+     * 在 Windows Server 2008 server 或 Windows Vista 工作站的成功登入後的失敗登入嘗試總次數
+     * 嘗試在 Windows Server 2008 或 Windows Vista 工作站的最後一個失敗的登入的時間
+     * 嘗試在 Windows Server 2008 server 或 Windows Vista 工作站的最後一個成功的登入的時間
+  * 更細緻的密碼原則，讓您指定網域中的使用者和全域安全性群組的密碼與帳戶鎖定原則。 如需詳細資訊，請參閱 <<c0> [ 更細緻的密碼和帳戶鎖定原則設定的逐步指南](https://go.microsoft.com/fwlink/?LinkID=91477)。
+  * 個人虛擬桌面
+     * 若要使用 Active Directory 使用者和電腦中的 [使用者帳戶內容] 對話方塊中的 [個人虛擬桌面] 索引標籤所提供的新增的功能，您的 AD DS 結構描述必須延伸 Windows Server 2008 r2 (結構描述物件版本 = 47)。 如需詳細資訊，請參閱 <<c0> [ 部署個人虛擬桌面藉由使用 RemoteApp 與桌面連線的逐步指南 》](https://go.microsoft.com/fwlink/?LinkId=183552)。
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 

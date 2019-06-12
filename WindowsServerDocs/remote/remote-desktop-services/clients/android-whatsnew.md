@@ -11,18 +11,27 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/06/2019
+ms.date: 06/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b79a1f914bdbc971299493ca00680e2504fbd3
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 7730790495babf4a70fb5a70ce93464faa86f1e3
+ms.sourcegitcommit: 1102e91571c88c7a1a2e021a6c53af1def7bb0a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476024"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66736533"
 ---
 # <a name="whats-new-for-the-remote-desktop-client-on-android"></a>什麼是遠端桌面用戶端，在 Android 上的新功能？
 
 我們會定期更新[適用於 Android 的遠端桌面用戶端](remote-desktop-android.md)、 新增功能和修正問題。 查看最新的更新。
+
+## <a name="updates-for-version-8171"></a>更新版本，8.1.71
+
+*發行的日期：06/05/2019*
+
+- Android 4.0.3 及 4.0.4 版本中已移除的支援。
+- 已修正的問題相同名稱的遠端資源未正確顯示。
+- 更新的應用程式圖示。
+- 小幅度 bug 修正和改進功能。
 
 ## <a name="updates-for-version-8170"></a>更新版本，8.1.70
 

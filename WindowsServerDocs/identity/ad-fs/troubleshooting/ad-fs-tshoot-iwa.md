@@ -8,12 +8,12 @@ ms.date: 02/21/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 91f252f5b0eca0f4c44e0b1a4564037298bf023c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9703a8652b0e0bbafe48858cbfbcc8aa9aa31ef8
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814059"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812044"
 ---
 # <a name="ad-fs-troubleshooting---integrated-windows-authentication"></a>AD FS 疑難排解-整合式 Windows 驗證
 整合式的 Windows 驗證可讓使用者登入其 Windows 認證，並體驗單一登入 (SSO)，使用 Kerberos 或 NTLM。
@@ -24,7 +24,7 @@ ms.locfileid: "59814059"
     - 通道繫結語彙基元
     - Internet Explorer 設定
 
-## <a name="spn-misonfiguration"></a>SPN misonfiguration
+## <a name="spn-misconfiguration"></a>SPN 設定不正確
 服務主要名稱 (SPN) 是服務執行個體的唯一識別碼。 Kerberos 驗證會使用 Spn 來服務登入帳戶相關聯的服務執行個體。 這可讓用戶端應用程式要求的服務會驗證帳戶，即使在用戶端並沒有帳戶名稱。
 
 相關範例學習 SPN 會搭配 AD FS 如下所示：
@@ -67,13 +67,14 @@ ms.locfileid: "59814059"
 
 有 2 個主要的東西，可以防止這 happeing。
    - 啟用整合式的 Windows 驗證不會檢查內容中的 IE。  這位於 網際網路選項-> 進階-> 安全性。
-![integrated](media/ad-fs-tshoot-iwa/iwa4.png)
+   
+   ![整合](media/ad-fs-tshoot-iwa/iwa4.png)
    
    - 未正確設定安全性區域
        - Fqdn 不在內部網路區域
        - AD FS URL 不是在內部網路區域。
 
-![整合](media/ad-fs-tshoot-iwa/iwa5.png)
+      ![整合](media/ad-fs-tshoot-iwa/iwa5.png)
 ## <a name="next-steps"></a>後續步驟
 
-- [疑難排解 AD FS](ad-fs-tshoot-overview.md)
+- [AD FS 疑難排解](ad-fs-tshoot-overview.md)

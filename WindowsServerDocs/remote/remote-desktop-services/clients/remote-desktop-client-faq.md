@@ -14,20 +14,20 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ec1b0a17c578f2d8ac55d1704af6b267b6bb8e5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865929"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804956"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>遠端桌面用戶端的相關的常見問題集
 
->適用於：Windows 10，Windows 8.1，Windows Server 2012 R2 中，Windows Server 2016
+>適用於：Windows 10，Windows 8.1、 Windows Server 2019、 Windows Server 2016、windows Server 2012 R2
 
 既然您已設定遠端桌面用戶端，在您的裝置 （Android、 Mac、 iOS 或 Windows） 上，您可能有問題。 以下是有關遠端桌面用戶端最常問的問題的解答。 
 
-- [設定](#Setting-up)
+- [設定](#setting-up)
 - [連線、 閘道和網路](#connection-gateway-and-networks)
 - [web 用戶端](#web-client)
 - [監視、 音訊及滑鼠](#monitors-audio-and-mouse)
@@ -81,18 +81,20 @@ Windows 8.1，請遵循以允許遠端連線中的指示[連接到使用遠端�
 - **沒有網路有問題。** 請確定您有網際網路連線。 
 - **遠端桌面連接埠可能會被防火牆封鎖。** 如果您使用 Windows 防火牆，請遵循下列步驟：
 
-   1. 開啟 [Windows 防火牆]。 
-   2. 按一下 **允許應用程式或功能通過 Windows 防火牆**。 
-   3. 按一下 **變更設定**。 您可能會要求系統管理員密碼，或確認您的選擇。
-   4. 底下**允許應用程式和功能**，選取**遠端桌面**，然後點選或按一下 **確定**。
+  1. 開啟 [Windows 防火牆]。 
+  2. 按一下 **允許應用程式或功能通過 Windows 防火牆**。 
+  3. 按一下 **變更設定**。 您可能會要求系統管理員密碼，或確認您的選擇。
+  4. 底下**允許應用程式和功能**，選取**遠端桌面**，然後點選或按一下 **確定**。
 
-   如果您使用不同的防火牆，請確定已開啟遠端桌面 (通常為 3389) 的連接埠。
+     如果您使用不同的防火牆，請確定已開啟遠端桌面 (通常為 3389) 的連接埠。
 - **遠端連接可能未設定遠端電腦。** 若要修正此問題，往回捲動至[如何設定電腦的遠端桌面？](#how-do-i-set-up-a-pc-for-remote-desktop)本主題中的問題。
 - **遠端電腦可能只允許網路層級驗證設定用來連接電腦。** 
 - **遠端電腦可能已關閉。** 您無法連接到已關閉、 睡眠、 電腦或休眠狀態，因此請確定設定睡眠與休眠遠端電腦設定為**永不**（休眠無法在所有電腦上。）。
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>為什麼無法找到或連線到我的電腦嗎？
+
 檢查下列項目：
+
 - 是電腦上和甦醒狀態？
 - 您未輸入正確的名稱或 IP 位址？
 
@@ -105,9 +107,11 @@ Windows 8.1，請遵循以允許遠端連線中的指示[連接到使用遠端�
    > 第 3 方軟體沒有不支援 Windows XP 家用版、 Windows Media Center Edition、 Windows Vista Home 和 Windows 7 Home 或入門。
 
 ### <a name="why-cant-i-sign-in-to-a-remote-pc"></a>為什麼無法我登入遠端電腦？
+
 如果您所見的遠端電腦的 [登入] 畫面，但您無法登入，您可能會有尚未加入至遠端桌面使用者群組，或在遠端電腦上的系統管理員權限的任何群組。 請詢問您若要這樣做為您的系統管理員。
 
 ### <a name="which-connection-methods-are-supported-for-company-networks"></a>支援公司網路的連線方法？
+
 如果您想要存取您的 office 桌面從公司網路外部時，您的公司必須提供您一種遠端存取。 RD 用戶端目前支援以下功能：
 
 - 終端機伺服器閘道或遠端桌面閘道
@@ -124,9 +128,11 @@ VPN 問題可以有數個原因。 第一個步驟是確認 VPN，適用於 PC �
 - **VPN 的設定不正確。** 設定錯誤的 VPN 伺服器可以是 VPN 連線，永遠不會處理或原因段時間後停止運作。 請確定測試使用 iOS 裝置的網頁瀏覽器，或在 PC 或 Mac，在相同網路上，如果發生這種情況。
 
 ### <a name="how-can-i-test-if-vpn-is-working-properly"></a>如何測試 VPN 是否正常運作？
+
 請確認您的裝置上，會啟用 VPN。 您可以前往您的內部網路上的網頁，或使用 web 服務，僅可透過 VPN，以測試您的 VPN 連線。
 
 ### <a name="how-do-i-configure-l2tp-or-pptp-vpn-connections"></a>如何設定 L2TP 或 PPTP VPN 連線？
+
 如果您使用 L2TP 或 PPTP 在您的 VPN，請務必設定**傳送所有流量**要**ON** VPN 組態中。
 
 ## <a name="web-client"></a>web 用戶端

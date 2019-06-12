@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 292dfe5755a10a91f2b8bcffaa6412ccda6c6f8a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3f8454572b662c9327aeb4783c5e9651ad2022b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867629"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441894"
 ---
 # <a name="regini"></a>regini
 
@@ -35,6 +35,7 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 ### <a name="parameters"></a>參數
 
 |參數 |描述 |
+
 |-m \< \\\\電腦名稱 >|指定要修改的登錄庫的遠端電腦名稱。 使用格式 **\\ \\ComputerName**。|
 |---------------------|-|
 |-h \<hivefile hiveroot >|指定要修改的本機登錄 hive。 您必須在格式中指定 hive 檔案的名稱和 hive 的根**hivefile hiveroot**。|

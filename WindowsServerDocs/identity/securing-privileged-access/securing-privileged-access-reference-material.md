@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 75474bd37f425388f01986ca32073107ee4fed99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcc06a3ccc4e95fa43a7f8f0ef7d110fd427f5a0
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830689"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501645"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 系統管理層模型
 
@@ -330,11 +330,11 @@ ms.locfileid: "59830689"
 確定會在這種情況下套用下列做法：
 
 - **遠端伺服器支援** - 從遠端存取伺服器時，第 0 層系統管理員必須遵循這些指導方針：
-   - **主要 (工具)** - 使用網路登入的遠端工具 (類型 3)。 如需詳細資訊，請參閱[系統管理工具和登入類型](http://aka.ms/admintoolsecurity)。
-   - **主要 (互動式)** - 搭配網域帳戶來使用系統管理工作站的 RDP RestrictedAdmin 或標準的 RDP 工作階段。
+  - **主要 (工具)** - 使用網路登入的遠端工具 (類型 3)。 如需詳細資訊，請參閱[系統管理工具和登入類型](http://aka.ms/admintoolsecurity)。
+  - **主要 (互動式)** - 搭配網域帳戶來使用系統管理工作站的 RDP RestrictedAdmin 或標準的 RDP 工作階段。
 
-   > [!NOTE]
-   > 如果您有第 0 層特殊權限管理解決方案，請加入「使用從特殊權限存取管理解決方案及時取得的權限」。
+    > [!NOTE]
+    > 如果您有第 0 層特殊權限管理解決方案，請加入「使用從特殊權限存取管理解決方案及時取得的權限」。
 
 - **實體伺服器支援** - 實際出現在伺服器主控台或虛擬機器主控台 (Hyper-V 或 VMWare 工具) 時，這些帳戶不會有任何特定的系統管理工具使用限制，只會有來自標準使用者工作的一般限制，例如電子郵件和瀏覽開放式網際網路。
 
@@ -402,9 +402,9 @@ ms.locfileid: "59830689"
 
 所有系統管理帳戶都無法使用密碼進行驗證。 唯一的授權例外狀況就是緊急存取帳戶，其受到適當的程序所保護。
 
-將所有系統管理帳戶連結到智慧卡，並啟用屬性「互動式登入需要智慧卡」。
+將所有系統管理帳戶連結到智慧卡，並啟用屬性「互動式登入需要智慧卡」  。
 
-您應該實作一個指令碼來自動並定期重設隨機密碼雜湊值，方法是停用並立即重新啟用屬性「互動式登入需要智慧卡」。
+您應該實作一個指令碼來自動並定期重設隨機密碼雜湊值，方法是停用並立即重新啟用屬性「互動式登入需要智慧卡」  。
 
 除了緊急存取帳戶之外，不允許人員所使用的帳戶有任何例外狀況。
 
@@ -436,10 +436,10 @@ ms.locfileid: "59830689"
 - 只有授權的網域系統管理員可以使用網域系統管理員權限來存取緊急存取帳戶。
 - 只能在網域控制站和其他第 0 層主機上使用緊急存取帳戶。
 - 此帳戶只能用於下列情況：
-   - 執行技術問題的疑難排解和修正，這類問題將導致正確的系統管理帳戶無法使用。
-   - 執行罕見的工作，例如：
-      - 結構描述系統管理
-      - 需要企業系統管理權限的全樹系工作
+  - 執行技術問題的疑難排解和修正，這類問題將導致正確的系統管理帳戶無法使用。
+  - 執行罕見的工作，例如：
+    - 結構描述系統管理
+    - 需要企業系統管理權限的全樹系工作
 
       > [!NOTE]
       > 拓撲管理功能，包括 Active Directory 站台和子網路的管理委派給會限制這些權限的使用。
@@ -555,7 +555,7 @@ ms.locfileid: "59830689"
 - Server Operators
 - 網域控制站
 - Read-only Domain Controllers
-- Group Policy Creators Owners
+- Group Policy Creator Owners
 - Cryptographic Operators
 - Distributed COM Users
 - 其他委派群組-可能由您的組織管理目錄操作可能也會有有效的第 0 層存取權的自訂群組。

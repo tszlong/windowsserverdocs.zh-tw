@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ffd7131f7f3772ab47b62c9755008fe3b1c4b274
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3a78334f64d9e51515757b01f2d788bf87f67a35
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192074"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501612"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>規劃裝置型條件式存取內部部署
 
@@ -30,7 +30,7 @@ AD FS 提供在內部部署元件的混合式案例中的條件式存取原則�
 ### <a name="types-of-registered-devices"></a>類型的已註冊的裝置  
 有三種類型的已註冊的裝置，全部都以 Azure AD 中的裝置物件，並可用於使用 AD FS 在內部部署以及條件式存取。  
 
-| |新增工作或學校帳戶  |加入 Azure AD  |Windows 10 Domian 聯結    
+| |新增工作或學校帳戶  |加入 Azure AD  |Windows 10 網域加入    
 | --- | --- |--- | --- |
 |描述    |  使用者新增他們的工作或學校帳戶以其 BYOD 裝置以互動方式。  **注意：** 新增工作或學校帳戶會取代 Windows 8/8.1 工作地點       | 使用者將他們的 Windows 10 工作裝置加入 Azure AD。|Windows 10 已加入網域的裝置自動向 Azure AD。|           
 |使用者如何登入裝置     |  沒有登入做為工作或學校帳戶的 Windows 中。  使用 Microsoft 帳戶登入。       |   登入 Windows，做為註冊的裝置 （公司或學校） 帳戶。      |     使用 AD 帳戶登入。|      

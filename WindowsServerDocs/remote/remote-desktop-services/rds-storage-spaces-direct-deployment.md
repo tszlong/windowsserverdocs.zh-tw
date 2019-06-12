@@ -13,16 +13,16 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 8af3a389ec726bbb5ebd62db57d9b3a9861ac63f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 792c9320f6976a4fc7f2ccd235f66daa0cb19b19
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890959"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805195"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>部署在 Azure 中的 UDP 儲存體的兩個節點儲存空間直接存取向外延展檔案伺服器
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016
 
 遠端桌面服務 (RDS) 需要已加入網域的檔案伺服器的使用者設定檔磁碟 (Upd)。 若要在 Azure 中部署高可用性已加入網域的向外延展檔案伺服器 (SOFS)，使用儲存空間直接存取 Windows Server 2016。 如果您不熟悉 Upd 或遠端桌面服務，請參閱[歡迎使用遠端桌面服務](welcome-to-rds.md)。
 
@@ -66,7 +66,7 @@ ms.locfileid: "59890959"
       - 使用自動產生的 VNet。
       - 請依照下列步驟來安裝 AD DS。
 5. 設定檔案伺服器叢集節點。 您可以藉由部署[Windows Server 2016 儲存空間直接存取 SOFS 叢集的 Azure 範本](https://azure.microsoft.com/resources/templates/301-storage-spaces-direct/)或依照下列步驟 6-11，以手動方式部署。
-5. 若要以手動方式設定檔案伺服器叢集節點：
+6. 若要以手動方式設定檔案伺服器叢集節點：
    1. 建立第一個節點： 
       1. 建立新的虛擬機器使用 Windows Server 2016 映像。 (按一下**新增 > 虛擬機器 > Windows Server 2016。** 選取**Resource Manager**，然後按一下**建立**。)
       2. 設定基本的組態如下所示：
@@ -80,59 +80,59 @@ ms.locfileid: "59890959"
    2. 建立第二個節點。 重複上述步驟，以下列變更：
       - -Fsn2 名稱： my
       - 高可用性-上面建立的可用性設定組，您的選取。  
-6. [將資料磁碟連結](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/)到叢集節點 Vm，以根據您的使用者需要 （如同上表中所見）。 之後資料磁碟建立並連結至 VM，設定**主機快取**要**無**。
-7. 設定所有 Vm 的 IP 位址**靜態**。 
+7. [將資料磁碟連結](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/)到叢集節點 Vm，以根據您的使用者需要 （如同上表中所見）。 之後資料磁碟建立並連結至 VM，設定**主機快取**要**無**。
+8. 設定所有 Vm 的 IP 位址**靜態**。 
    1. 在資源群組中，選取 VM，然後**網路介面**(底下**設定**)。 選取列出的網路介面，然後按一下**IP 組態**。 選取列出的 IP 組態，請選取**靜態**，然後按一下**儲存**。
    2. 請注意網域控制站 (my-dc 我們的範例) 私人 IP 位址 (10.x.x.x)。
-8. 設定 Nic 的叢集節點 Vm 上的主要 DNS 伺服器位址，為我 dc 伺服器。 選取 VM，然後按一下**網路介面 > DNS 伺服器 > 自訂 DNS**。 輸入您先前所述，私人 IP 位址，然後按一下**儲存**。
-9. 建立[Azure 儲存體帳戶，為您的雲端見證](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)。 （如果您使用連結的指示，停止您前往 「 設定雲端見證與容錯移轉叢集管理員 GUI"-我們將執行該步驟。）
-10. 設定儲存空間直接存取的檔案伺服器。 連線到 VM 的節點，然後執行下列 Windows PowerShell cmdlet。
-   1. 兩個檔案伺服器叢集節點 Vm 上安裝容錯移轉叢集功能和檔案伺服器功能：
+9. 設定 Nic 的叢集節點 Vm 上的主要 DNS 伺服器位址，為我 dc 伺服器。 選取 VM，然後按一下**網路介面 > DNS 伺服器 > 自訂 DNS**。 輸入您先前所述，私人 IP 位址，然後按一下**儲存**。
+10. 建立[Azure 儲存體帳戶，為您的雲端見證](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)。 （如果您使用連結的指示，停止您前往 「 設定雲端見證與容錯移轉叢集管理員 GUI"-我們將執行該步驟。）
+11. 設定儲存空間直接存取的檔案伺服器。 連線到 VM 的節點，然後執行下列 Windows PowerShell cmdlet。
+    1. 兩個檔案伺服器叢集節點 Vm 上安裝容錯移轉叢集功能和檔案伺服器功能：
 
-      ```powershell
-      $nodes = ("my-fsn1", "my-fsn2")
-      icm $nodes {Install-WindowsFeature Failover-Clustering -IncludeAllSubFeature -IncludeManagementTools} 
-      icm $nodes {Install-WindowsFeature FS-FileServer} 
-      ```
-   2. 驗證叢集節點 Vm，並建立 2 個節點在 SOFS 叢集：
+       ```powershell
+       $nodes = ("my-fsn1", "my-fsn2")
+       icm $nodes {Install-WindowsFeature Failover-Clustering -IncludeAllSubFeature -IncludeManagementTools} 
+       icm $nodes {Install-WindowsFeature FS-FileServer} 
+       ```
+    2. 驗證叢集節點 Vm，並建立 2 個節點在 SOFS 叢集：
 
-      ```powershell
-      Test-Cluster -node $nodes
-      New-Cluster -Name MY-CL1 -Node $nodes –NoStorage –StaticAddress [new address within your addr space]
-      ``` 
-   3. 設定雲端見證。 使用雲端見證儲存體帳戶名稱和存取金鑰。
+       ```powershell
+       Test-Cluster -node $nodes
+       New-Cluster -Name MY-CL1 -Node $nodes –NoStorage –StaticAddress [new address within your addr space]
+       ``` 
+    3. 設定雲端見證。 使用雲端見證儲存體帳戶名稱和存取金鑰。
 
-      ```powershell
-      Set-ClusterQuorum –CloudWitness –AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey> 
-      ```
-   4. 啟用儲存空間直接存取。
+       ```powershell
+       Set-ClusterQuorum –CloudWitness –AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey> 
+       ```
+    4. 啟用儲存空間直接存取。
 
-      ```powershell
-      Enable-ClusterS2D 
-      ```
+       ```powershell
+       Enable-ClusterS2D 
+       ```
       
-   5. 建立虛擬磁碟的磁碟區。
+    5. 建立虛擬磁碟的磁碟區。
 
-      ```powershell
-      New-Volume -StoragePoolFriendlyName S2D* -FriendlyName VDisk01 -FileSystem CSVFS_REFS -Size 120GB 
-      ```
-      若要檢視在 SOFS 叢集上的叢集共用磁碟區的相關資訊，請執行下列 cmdlet:
+       ```powershell
+       New-Volume -StoragePoolFriendlyName S2D* -FriendlyName VDisk01 -FileSystem CSVFS_REFS -Size 120GB 
+       ```
+       若要檢視在 SOFS 叢集上的叢集共用磁碟區的相關資訊，請執行下列 cmdlet:
 
-      ```powershell
-      Get-ClusterSharedVolume
-      ```
+       ```powershell
+       Get-ClusterSharedVolume
+       ```
    
-   6. 建立向外延展檔案伺服器 (SOFS):
+    6. 建立向外延展檔案伺服器 (SOFS):
 
-      ```powershell
-      Add-ClusterScaleOutFileServerRole -Name my-sofs1 -Cluster MY-CL1
-      ```
+       ```powershell
+       Add-ClusterScaleOutFileServerRole -Name my-sofs1 -Cluster MY-CL1
+       ```
 
-   7. 建立新的 SMB 檔案共用 SOFS 叢集上。
+    7. 建立新的 SMB 檔案共用 SOFS 叢集上。
 
-      ```powershell
-      New-Item -Path C:\ClusterStorage\Volume1\Data -ItemType Directory
-      New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\Volume1\Data
-      ```
+       ```powershell
+       New-Item -Path C:\ClusterStorage\Volume1\Data -ItemType Directory
+       New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\Volume1\Data
+       ```
 
-您現在可以在共用&#92;\my-sofs1\UpdStorage，您可以使用針對 UDP 儲存體時您[啟用 UPD](https://social.technet.microsoft.com/wiki/contents/articles/15304.installing-and-configuring-user-profile-disks-upd-in-windows-server-2012.aspx)為您的使用者。 
+您現在可以在共用`\\my-sofs1\UpdStorage`，您可以使用針對 UDP 儲存體時您[啟用 UPD](https://social.technet.microsoft.com/wiki/contents/articles/15304.installing-and-configuring-user-profile-disks-upd-in-windows-server-2012.aspx)為您的使用者。 

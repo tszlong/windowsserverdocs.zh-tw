@@ -12,12 +12,12 @@ ms.assetid: cdfa9504-9881-4265-b308-c7ee8721bfaa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1a67cda9e4b04e8d861232b48f45915fb2b460d1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0240abfff58baedd79ab038af93b107dbb898eb2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836409"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432946"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>將電腦加入新的 Windows Server Essentials 伺服器 1
 
@@ -31,7 +31,7 @@ ms.locfileid: "59836409"
   
  將用戶端電腦連線到伺服器的程序，已加入網域或未加入網域的電腦是相同的。  
   
--   瀏覽至**http://***目的地 servername***/connect**並安裝 Windows Server 連接器軟體，如同新電腦。  
+- 請瀏覽到 **http://** <em>destination-servername</em> **/connect** ，以如同新電腦的方式安裝 Windows Server 連接器軟體。  
   
 > [!NOTE]
 >  Windows Server 連接器軟體不支援執行 Windows XP 或 Windows Vista 的電腦。 如果您有執行 Windows XP 或 Windows Vista 的電腦已經加入網域，您可以略過此步驟。  
@@ -47,7 +47,7 @@ ms.locfileid: "59836409"
   
 2.  在命令提示字元中輸入 **GPRESULT /R**，然後按 Enter。  
   
-3.  檢閱所產生的輸出，從已套用群組原則區段︰，並確保它會列出目的地伺服器上，這類**DestinationSrv.Domain.local**。 例如:   
+3.  檢閱所產生的輸出，從已套用群組原則區段︰，並確保它會列出目的地伺服器上，這類**DestinationSrv.Domain.local**。 例如:  
   
     ```  
     USER SETTINGS  
@@ -65,8 +65,8 @@ ms.locfileid: "59836409"
   
 5.  如果目的地伺服器仍未出現，可能是群組原則設定中發生錯誤，或將群組原則設定套用至此特定用戶端電腦時發生錯誤。 如果目的地伺服器沒有出現，請執行下列步驟：  
   
-    1.  按一下 [開始] 、[執行] ，輸入 **rsop.msc** (原則的結果集)，然後按 ENTER。  
+    1.  按一下 [開始]  、[執行]  ，輸入 **rsop.msc** (原則的結果集)，然後按 ENTER。  
   
     2.  展開的樹狀目錄上它的 X，直到您取得節點。  
   
-    3.  以滑鼠右鍵按一下節點，並按一下 [檢視錯誤]，了解群組原則設定為何在列示的電腦上失敗。
+    3.  以滑鼠右鍵按一下節點，並按一下 [檢視錯誤]  ，了解群組原則設定為何在列示的電腦上失敗。

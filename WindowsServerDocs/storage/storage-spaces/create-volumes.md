@@ -7,22 +7,22 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 05/09/2019
-ms.openlocfilehash: d7c842a9b393f67c482dadeaa4090627887a67a3
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.date: 06/06/2019
+ms.openlocfilehash: 85eca06a5d8c103851596055099876cb53a902ad
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613220"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810553"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>建立儲存空間直接存取中的磁碟區
 
->適用於：Windows Server 2019，Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016
 
 本主題描述如何使用 Windows Admin Center、 PowerShell 或容錯移轉叢集管理員建立的儲存空間直接存取叢集上的磁碟區。
 
-   >[!TIP]
-   >  如果您尚未開始，請先查看[規劃儲存空間直接存取中的磁碟區](plan-volumes.md)。
+> [!TIP]
+> 如果您尚未開始，請先查看[規劃儲存空間直接存取中的磁碟區](plan-volumes.md)。
 
 ## <a name="create-a-three-way-mirror-volume"></a>建立三向鏡像磁碟區
 
@@ -105,14 +105,14 @@ ms.locfileid: "65613220"
 - **StoragePoolFriendlyName:** 名稱，您的儲存體集區，例如 *"S2D 上 ClusterName"*
 - **大小:** 磁碟區，例如大小 *"10 TB 」*
 
-   >[!NOTE]
-   >  Windows，包括 PowerShell，使用二進位 (以 2 為底數) 數字計算，而磁碟機通常使用十進位 (以 10 為底數) 數字標示。 這解釋 "1 TB" 磁碟機，定義為 1,000,000,000,000 位元組，為何在 Windows 中顯示為約 "909 GB"。 此為預期性行為。 在使用 **New-Volume** 建立磁碟區時，您應該以二進位 (以 2 為底數) 數字指定 **Size** 參數。 例如，指定 "909GB" 或 "0.909495TB" 會建立大約 1,000,000,000,000 位元組的磁碟區。
+   > [!NOTE]
+   > Windows，包括 PowerShell，使用二進位 (以 2 為底數) 數字計算，而磁碟機通常使用十進位 (以 10 為底數) 數字標示。 這解釋 "1 TB" 磁碟機，定義為 1,000,000,000,000 位元組，為何在 Windows 中顯示為約 "909 GB"。 此為預期性行為。 在使用 **New-Volume** 建立磁碟區時，您應該以二進位 (以 2 為底數) 數字指定 **Size** 參數。 例如，指定 "909GB" 或 "0.909495TB" 會建立大約 1,000,000,000,000 位元組的磁碟區。
 
 ### <a name="example-with-2-or-3-servers"></a>範例：具有 2 或 3 個伺服器
 
 為了簡化，如果您的部署只有兩部伺服器，儲存空間直接存取會自動使用雙向鏡像復原類型。 如果您的部署只有三部伺服器，它就會自動使用三向鏡像。
 
-```
+```PowerShell
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
@@ -124,7 +124,7 @@ New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 在下列範例， *"Volume2"* 使用三向鏡像，而 *"Volume3"* 使用雙同位（通常稱為「清除編碼」）。
 
-```
+```PowerShell
 New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Mirror
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
@@ -137,7 +137,7 @@ New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 您可以執行 **Get-StorageTier** cmdlet 看到這些選項。
 
-```
+```PowerShell
 Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedundancy
 ```
 
@@ -145,7 +145,7 @@ Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedund
 
 若要建立分層磁碟區，請使用 **New-Volume** cmdlet 的 **StorageTierFriendlyNames** 和 **StorageTierSizes** 參數參考這些分層範本。 例如，下列 cmdlet 建立一個依 30:70 比例混合三向鏡像和雙同位的磁碟區。
 
-```
+```PowerShell
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 

@@ -12,12 +12,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1b78432ca92028bc96b2cbfc9fa40196f61e8bf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dded002df4ed0bbd70c549a8841b769a77f2fd6a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833699"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433541"
 ---
 # <a name="hosted-windows-server-essentials"></a>主控的 Windows Server Essentials
 
@@ -45,89 +45,89 @@ ms.locfileid: "59833699"
   
  您應注意以下各項：  
   
-1.  您應將 SkipIC.txt 檔案新增至任何磁碟機的根目錄，以略過初始設定 (IC)。 在安裝伺服器之後以及初始設定之前，按 Shift+F10 啟動 cmd 視窗並在 C:/ 磁碟機下方建立一個 SkipIC.txt 檔案。 在完成自訂後，請記得刪除 SkipIC.txt 檔案。  
+1. 您應將 SkipIC.txt 檔案新增至任何磁碟機的根目錄，以略過初始設定 (IC)。 在安裝伺服器之後以及初始設定之前，按 Shift+F10 啟動 cmd 視窗並在 C:/ 磁碟機下方建立一個 SkipIC.txt 檔案。 在完成自訂後，請記得刪除 SkipIC.txt 檔案。  
   
-2.  如果您需要在小於 90 GB 的磁碟上部署 Windows Server Essentials，您應該加入 sysprep 之前的登錄機碼：  
+2. 如果您需要在小於 90 GB 的磁碟上部署 Windows Server Essentials，您應該加入 sysprep 之前的登錄機碼：  
   
-    ```  
-    %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v HWRequirementChecks /t REG_DWORD /d 0 /f  
-    ```  
+   ```  
+   %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v HWRequirementChecks /t REG_DWORD /d 0 /f  
+   ```  
   
- 在 Sysprep 之後，您可以使用已執行過 Sysprep 的磁碟映像，或將其重新封裝回 Install.wim 進行新部署。  
+   在 Sysprep 之後，您可以使用已執行過 Sysprep 的磁碟映像，或將其重新封裝回 Install.wim 進行新部署。  
   
- 如果您使用 Virtual Machine Manager，可使用執行中的執行個體來建立範本。 建立範本將會在執行個體上執行 Sysprep 並關閉伺服器。 在儲存至程式庫之後，您就可以依個別情況將執行個體叫出。  
+   如果您使用 Virtual Machine Manager，可使用執行中的執行個體來建立範本。 建立範本將會在執行個體上執行 Sysprep 並關閉伺服器。 在儲存至程式庫之後，您就可以依個別情況將執行個體叫出。  
   
 ##  <a name="BKMK_automatedeployment"></a> 如何自動化部署？  
  在您取得自訂映像之後，就可以使用您自己的映像來執行部署。 若要執行半自動安裝，您必須提供部署 unattend.xml 以進行 WinPE 設定。 若要執行完整的自動安裝，您也需要提供 cfg.ini 檔案以進行 Windows Server Essentials 的初始設定。  
   
-1.  僅執行自動 WinPE 設定。 這只會自動化 WinPE 設定，並讓安裝在初始設定之前停止，讓使用者可在 RDP 進入伺服器工作階段之後自行提供 Corp、網域和系統管理員資訊。 請這樣做：  
+1. 僅執行自動 WinPE 設定。 這只會自動化 WinPE 設定，並讓安裝在初始設定之前停止，讓使用者可在 RDP 進入伺服器工作階段之後自行提供 Corp、網域和系統管理員資訊。 請這樣做：  
   
-    1.  提供 Windows unattend.xml 檔案。 請遵循[Windows 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)產生檔案，並提供所有必要的資訊，包括伺服器名稱、 產品金鑰和系統管理員密碼。 在 unattend.xml 檔案的 [Microsoft Windows 安裝程式] 區段中，提供的資訊，如下所示。  
+   1.  提供 Windows unattend.xml 檔案。 請遵循[Windows 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)產生檔案，並提供所有必要的資訊，包括伺服器名稱、 產品金鑰和系統管理員密碼。 在 unattend.xml 檔案的 [Microsoft Windows 安裝程式] 區段中，提供的資訊，如下所示。  
   
-        ```  
-        <InstallFrom>  
-                 <MetaData>  
-                     <Key>IMAGE/WINDOWS/EDITIONID</Key>  
-                     <Value>ServerSolution</Value>  
-                 </MetaData>  
-                 <MetaData>  
-                     <Key>IMAGE/WINDOWS/INSTALLATIONTYPE</Key>  
-                     <Value>Server</Value>  
-                 </MetaData>  
-           </InstallFrom>  
-        ```  
+       ```  
+       <InstallFrom>  
+                <MetaData>  
+                    <Key>IMAGE/WINDOWS/EDITIONID</Key>  
+                    <Value>ServerSolution</Value>  
+                </MetaData>  
+                <MetaData>  
+                    <Key>IMAGE/WINDOWS/INSTALLATIONTYPE</Key>  
+                    <Value>Server</Value>  
+                </MetaData>  
+          </InstallFrom>  
+       ```  
   
-    2.  RDP 連接埠 3389 必須開啟的公用 ip，好讓客戶可以使用系統管理員和以 rdp 連接到伺服器 unattend.xml 檔案中指定的密碼來完成初始設定。  
+   2.  RDP 連接埠 3389 必須開啟的公用 ip，好讓客戶可以使用系統管理員和以 rdp 連接到伺服器 unattend.xml 檔案中指定的密碼來完成初始設定。  
   
-    > [!NOTE]
-    >  如果您不變更預設密碼，伺服器安裝將會停止，畫面也會要求您輸入密碼。**注意** 使用者必須使用預設系統管理員帳戶以登入伺服器並執行初始設定。  
+   > [!NOTE]
+   >  如果您不變更預設密碼，伺服器安裝將會停止，畫面也會要求您輸入密碼。**注意** 使用者必須使用預設系統管理員帳戶以登入伺服器並執行初始設定。  
   
- 如果您使用 Virtual Machine Manager，當您從範本建立新的執行個體時，可以在主控台指定系統管理員密碼。  
+   如果您使用 Virtual Machine Manager，當您從範本建立新的執行個體時，可以在主控台指定系統管理員密碼。  
   
-1.  執行包含自動初始設定在內的完整自動設定。 請這樣做：  
+2. 執行包含自動初始設定在內的完整自動設定。 請這樣做：  
   
-    1.  如果部署從 WinPE 設定開始，您可以如同前述提供 unattend.xml 檔案。  
+   1.  如果部署從 WinPE 設定開始，您可以如同前述提供 unattend.xml 檔案。  
   
-    2.  請參閱標題為 Windows Server Essentials ADK 區段[建立 Cfg.ini 檔案](https://technet.microsoft.com/library/jj200150)以產生 cfg.ini。  
+   2.  請參閱標題為 Windows Server Essentials ADK 區段[建立 Cfg.ini 檔案](https://technet.microsoft.com/library/jj200150)以產生 cfg.ini。  
   
-    3.  在 [InitialConfiguration] 中提供資訊。  
+   3.  在 [InitialConfiguration] 中提供資訊。  
   
-        ```  
-        WebDomainName=yourdomainname  
-        TrustedCertFileName=c:\cert\a.pfx  
-        TrustedCertPassword=Enteryourpassword  
-        EnableVPN=true  
-        EnableRWA=true  
-        ; Provide all information so that after setup is complete, your customer can use your domain name to visit the server directly with the admin/user information you provide in the [InitialConfiguration] section.  
+       ```  
+       WebDomainName=yourdomainname  
+       TrustedCertFileName=c:\cert\a.pfx  
+       TrustedCertPassword=Enteryourpassword  
+       EnableVPN=true  
+       EnableRWA=true  
+       ; Provide all information so that after setup is complete, your customer can use your domain name to visit the server directly with the admin/user information you provide in the [InitialConfiguration] section.  
   
-        VpnIPv4StartAddress=<IPV4Address>  
-        VpnIPv4EndAddress=<IPV4Address>  
-        VpnBaseIPv6Address=<IPV6Address>  
-        VpnIPv6PrefixLength=<number>  
-        ; Provide this information. IPv4StartAddress and IPv4Endaddress are required so that your VPN client can acquire valid IP through this range.  
+       VpnIPv4StartAddress=<IPV4Address>  
+       VpnIPv4EndAddress=<IPV4Address>  
+       VpnBaseIPv6Address=<IPV6Address>  
+       VpnIPv6PrefixLength=<number>  
+       ; Provide this information. IPv4StartAddress and IPv4Endaddress are required so that your VPN client can acquire valid IP through this range.  
   
-        IPv4DNSForwarder=<IPV4Address,IPV4Address,Â¦>  
-        IPv6DNSForwarder=<IPV6Address,IPV6Address,Â¦>  
-        ; Provide this information as needed according to your network environment settings.  
-        ```  
+       IPv4DNSForwarder=<IPV4Address,IPV4Address,Â¦>  
+       IPv6DNSForwarder=<IPV6Address,IPV6Address,Â¦>  
+       ; Provide this information as needed according to your network environment settings.  
+       ```  
   
-    4.  在 [PostOSInstall] 中提供資訊。  
+   4.  在 [PostOSInstall] 中提供資訊。  
   
-        ```  
-        IsHosted=true   
-        ; Must have, this will prevent Initial Configure webpage available for other computers under same subnet.  
+       ```  
+       IsHosted=true   
+       ; Must have, this will prevent Initial Configure webpage available for other computers under same subnet.  
   
-        StaticIPv4Address=<IPV4Address>  
-        StaticIPv4Gateway=<IPV4Address>  
-        StaticIPv6Address=<IPV6Address>  
-        StaticIPv6SubnetPrefixLength=<number>  
-        StaticIPv6Gateway=<IPV6Address>  
-        ; All these are optional if you have DHCP Server Service on the subnet, otherwise provide static IP here.  
-        ```  
+       StaticIPv4Address=<IPV4Address>  
+       StaticIPv4Gateway=<IPV4Address>  
+       StaticIPv6Address=<IPV6Address>  
+       StaticIPv6SubnetPrefixLength=<number>  
+       StaticIPv6Gateway=<IPV6Address>  
+       ; All these are optional if you have DHCP Server Service on the subnet, otherwise provide static IP here.  
+       ```  
   
-    5.  如果您提供 WebDomainName 參數，請確定 DNS 記錄也更新為指向伺服器 s 公用 IP。  
+   5.  如果您提供 WebDomainName 參數，請確定 DNS 記錄也更新為指向伺服器 s 公用 IP。  
   
-    6.  如果您未提供以上的 WebDomainName 資訊，請確定已開啟連接埠 3389，使客戶能使用 RDP 以連線伺服器並完成 VPN 設定。  
+   6.  如果您未提供以上的 WebDomainName 資訊，請確定已開啟連接埠 3389，使客戶能使用 RDP 以連線伺服器並完成 VPN 設定。  
   
 > [!NOTE]
 >  確定 VM 主機伺服器與 Windows Server Essentials VM 的時區設定相同。 否則您可能會遇到幾種不同的錯誤 (初始設定可能會在憑證相關工作中失敗；憑證在安裝後的數小時之內可能無法運作；裝置資訊無法正確更新等等)  
@@ -140,61 +140,61 @@ ms.locfileid: "59833699"
  在自動部署期間，VPN 啟用可透過 Windows PowerShell 指令碼完成，或者可在初始設定之後透過精靈設定。  
   
 
--   若要在自動部署期間啟用 VPN，請參閱本文件中的 [How do I automate the deployment?](Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 。  
+- 若要在自動部署期間啟用 VPN，請參閱本文件中的 [How do I automate the deployment?](Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 。  
 
--   若要在自動部署期間啟用 VPN，請參閱本文件中的 [How do I automate the deployment?](../install/Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 。  
+- 若要在自動部署期間啟用 VPN，請參閱本文件中的 [How do I automate the deployment?](../install/Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 。  
 
   
--   若要透過 Windows PowerShell 啟用 VPN，請透過系統管理員權限執行以下 Cmdlet，並提供所有必要資訊。  
+- 若要透過 Windows PowerShell 啟用 VPN，請透過系統管理員權限執行以下 Cmdlet，並提供所有必要資訊。  
   
-    ```  
-    ##  
-    ## To configure external domain and SSL certificate (if not yet done in unattended Initial Configuration).  
-    ##  
+  ```  
+  ##  
+  ## To configure external domain and SSL certificate (if not yet done in unattended Initial Configuration).  
+  ##  
   
-    $myExternalDomainName = 'remote.contoso.com';   ## corresponds to A or AAAA DNS record(s) that can be resolved on Internet and routed to the server  
-    $mySslCertificateFile = 'C:\ssl.pfx';   ## full path to SSL certificate file  
-    $mySslCertificatePassword = ConvertTo-SecureString '******';   ## password for private key of the SSL certificate  
-    $skipCertificateVerification = $true;   ## whether or not, skip verification for the SSL certificate  
+  $myExternalDomainName = 'remote.contoso.com';   ## corresponds to A or AAAA DNS record(s) that can be resolved on Internet and routed to the server  
+  $mySslCertificateFile = 'C:\ssl.pfx';   ## full path to SSL certificate file  
+  $mySslCertificatePassword = ConvertTo-SecureString '******';   ## password for private key of the SSL certificate  
+  $skipCertificateVerification = $true;   ## whether or not, skip verification for the SSL certificate  
   
-    Add-Type -AssemblyName 'Wssg.Web.DomainManagerObjectModel';  
-    [Microsoft.WindowsServerSolutions.RemoteAccess.Domains.DomainConfigurationHelper]::SetDomainNameAndCertificate($myExternalDomainName,$mySslCertificateFile,$mySslCertificatePassword,$skipCertificateVerification);  
-    ##  
-    ## To install VPN with static IPv4 pool (and allow all existing users to establish VPN).  
-    ##  
+  Add-Type -AssemblyName 'Wssg.Web.DomainManagerObjectModel';  
+  [Microsoft.WindowsServerSolutions.RemoteAccess.Domains.DomainConfigurationHelper]::SetDomainNameAndCertificate($myExternalDomainName,$mySslCertificateFile,$mySslCertificatePassword,$skipCertificateVerification);  
+  ##  
+  ## To install VPN with static IPv4 pool (and allow all existing users to establish VPN).  
+  ##  
   
-    Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyToExistingUsers;  
-    ```  
+  Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyToExistingUsers;  
+  ```  
   
- 如果您無法在客戶存取伺服器之前提供 VPN 連線，請確定您可透過網際網路連線伺服器連接埠 3389，讓使用者可使用 RDP 來連線伺服器並自行執行設定。  
+  如果您無法在客戶存取伺服器之前提供 VPN 連線，請確定您可透過網際網路連線伺服器連接埠 3389，讓使用者可使用 RDP 來連線伺服器並自行執行設定。  
   
- 以下是兩種一般的伺服器端網路拓撲，以及 VPN/遠端 Web 存取 (RWA) 的設定方法：  
+  以下是兩種一般的伺服器端網路拓撲，以及 VPN/遠端 Web 存取 (RWA) 的設定方法：  
   
--   拓撲 1 (慣用)  
+- 拓撲 1 (慣用)  
   
-    -   位於 NAT 裝置下方，個別虛擬網路中的伺服器。  
+  -   位於 NAT 裝置下方，個別虛擬網路中的伺服器。  
   
-    -   已在虛擬網路中啟用 DHCP，或者已使用靜態 IP 位址指派伺服器。  
+  -   已在虛擬網路中啟用 DHCP，或者已使用靜態 IP 位址指派伺服器。  
   
-    -   可從公用 IP 連接埠 443 連線伺服器連接埠 443。  
+  -   可從公用 IP 連接埠 443 連線伺服器連接埠 443。  
   
-    -   連接埠 443 允許 VPN 通道。  
+  -   連接埠 443 允許 VPN 通道。  
   
-    -   VPN IPv4 位址集區應位於伺服器位址的相同子網路。  
+  -   VPN IPv4 位址集區應位於伺服器位址的相同子網路。  
   
-    -   若有第二個伺服器，則必須指派相同子網路中的靜態 IP，但其應位於 VPN 位址集區之外。  
+  -   若有第二個伺服器，則必須指派相同子網路中的靜態 IP，但其應位於 VPN 位址集區之外。  
   
--   拓撲 2：  
+- 拓撲 2：  
   
-    -   伺服器具有私人 IP 位址。  
+  -   伺服器具有私人 IP 位址。  
   
-    -   在伺服器上的連接埠 443 連線到。 從公用 IP 位址 s 連接埠 443  
+  -   在伺服器上的連接埠 443 連線到。 從公用 IP 位址 s 連接埠 443  
   
-    -   連接埠 443 允許 VPN 通道。  
+  -   連接埠 443 允許 VPN 通道。  
   
-    -   VPN IPv4 位址集區位於不同的伺服器位址範圍。  
+  -   VPN IPv4 位址集區位於不同的伺服器位址範圍。  
   
- 使用拓撲 2 時，則不支援第二個伺服器案例。  
+  使用拓撲 2 時，則不支援第二個伺服器案例。  
   
 ## <a name="how-do-i-perform-common-tasks-via-windows-powershell"></a>如何透過 Windows PowerShell 執行一般工作？  
  **啟用遠端 Web 存取**  
@@ -308,11 +308,11 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
  **內部部署備份**可讓您在個別磁碟上定期執行區塊層級的增量備份。 為主機服務提供者，您可以將虛擬磁碟連接至 Windows Server Essentials 的 VM，並設定伺服器備份到此虛擬磁碟。 虛擬磁碟應位於與 Windows Server Essentials VM 不同的實體磁碟。  
   
--   如果您有另一項機制來備份 Windows Server Essentials 的 VM，而且您不想讓使用者看到 Windows Server Essentials 原生伺服器備份功能，您可以將它關閉，並移除 Windows Server Essentials 中的所有相關的使用者介面儀表板。 如需詳細資訊，請參閱自訂伺服器備份章節[ADK 文件](https://go.microsoft.com/fwlink/p/?LinkID=249124)。  
+- 如果您有另一項機制來備份 Windows Server Essentials 的 VM，而且您不想讓使用者看到 Windows Server Essentials 原生伺服器備份功能，您可以將它關閉，並移除 Windows Server Essentials 中的所有相關的使用者介面儀表板。 如需詳細資訊，請參閱自訂伺服器備份章節[ADK 文件](https://go.microsoft.com/fwlink/p/?LinkID=249124)。  
   
- **外部部署備份**可讓您定期將伺服器資料備份至雲端服務。 您可以下載並安裝 Microsoft Azure 備份整合模組的 Windows Server Essentials 來使用 Microsoft 所提供的 Azure 備份。  
+  **外部部署備份**可讓您定期將伺服器資料備份至雲端服務。 您可以下載並安裝 Microsoft Azure 備份整合模組的 Windows Server Essentials 來使用 Microsoft 所提供的 Azure 備份。  
   
- 如果您或您的使用者偏好其他的雲端服務，則可執行以下步驟：  
+  如果您或您的使用者偏好其他的雲端服務，則可執行以下步驟：  
   
 1.  更新使用者介面的 Windows Server Essentials 儀表板，使其提供您喜好的雲端服務，而非預設的 Azure 備份的連結。 如需詳細資訊，請參閱 [ADK 文件](https://go.microsoft.com/fwlink/p/?LinkID=249124)的＜自訂映像＞一節。  
   
@@ -328,17 +328,17 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
  以下是完整用戶端備份中的一些考量：  
   
--   效能：初始用戶端備份可能需要很多時間來上傳大量的資料。  
+- 效能：初始用戶端備份可能需要很多時間來上傳大量的資料。  
   
--   穩定性：有時候用戶端的網際網路連線可能會不穩定。 用戶端備份已設計為可繼續執行，且預設檢查點為 40 GB (每次在備份 40 GB 的資料後，用戶端備份資料庫都會建立一個檢查點)。 如果您認為網際網路連線不夠穩定，也可以將該值變更為較小的數字。  
+- 穩定性：有時候用戶端的網際網路連線可能會不穩定。 用戶端備份已設計為可繼續執行，且預設檢查點為 40 GB (每次在備份 40 GB 的資料後，用戶端備份資料庫都會建立一個檢查點)。 如果您認為網際網路連線不夠穩定，也可以將該值變更為較小的數字。  
   
-    -   若要啟用檢查點工作，可在伺服器上將登錄機碼 HKLM\Software\Microsoft\Windows Server\Backup\GetCheckPointJobs 設為 1。  
+  -   若要啟用檢查點工作，可在伺服器上將登錄機碼 HKLM\Software\Microsoft\Windows Server\Backup\GetCheckPointJobs 設為 1。  
   
-    -   若要變更檢查點閾值，可在用戶端上變更 HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold 的預設值 (40 GB)。  
+  -   若要變更檢查點閾值，可在用戶端上變更 HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold 的預設值 (40 GB)。  
   
--   用戶端裸機還原：由於 Windows 前置安裝環境不支援 VPN 連線，因此也無法支援用戶端裸機還原。  
+- 用戶端裸機還原：由於 Windows 前置安裝環境不支援 VPN 連線，因此也無法支援用戶端裸機還原。  
   
- **檔案歷程記錄**是 Windows 8.1 功能設定檔資料 （媒體櫃、 桌面、 連絡人、 我的最愛） 備份到網路共用。 在 Windows Server Essentials 中，我們允許集中管理已加入到 Windows Server Essentials 的所有 Windows 8.1 用戶端的檔案歷程記錄設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您可以關閉這項功能所遵循的步驟，在 建立 Cfg.ini 檔案一節[ADK 文件](https://technet.microsoft.com/library/jj200150)。  
+  **檔案歷程記錄**是 Windows 8.1 功能設定檔資料 （媒體櫃、 桌面、 連絡人、 我的最愛） 備份到網路共用。 在 Windows Server Essentials 中，我們允許集中管理已加入到 Windows Server Essentials 的所有 Windows 8.1 用戶端的檔案歷程記錄設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您可以關閉這項功能所遵循的步驟，在 建立 Cfg.ini 檔案一節[ADK 文件](https://technet.microsoft.com/library/jj200150)。  
   
 ### <a name="storage-management"></a>存放管理  
  [新的「儲存空間」功能](https://technet.microsoft.com/library/hh831739.aspx) 可讓您彙總不同硬碟的實體儲存容量、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 您也可以附加至 Windows Server Essentials 以擴充其存放裝置的 iSCSI 磁碟。  
@@ -348,61 +348,61 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
  **伺服器部署**  
   
--   部署實驗室環境中的 Windows Server Essentials 伺服器。  
+- 部署實驗室環境中的 Windows Server Essentials 伺服器。  
   
--   視需要自訂 Windows Server Essentials 映像。  
+- 視需要自訂 Windows Server Essentials 映像。  
   
--   Windows Server Essentials 使用自動化部署自動的檔案和 cfg.ini。  
+- Windows Server Essentials 使用自動化部署自動的檔案和 cfg.ini。  
   
--   將內部部署 Windows SBS 移轉到託管的 Windows Server Essentials。  
+- 將內部部署 Windows SBS 移轉到託管的 Windows Server Essentials。  
   
--   從 Windows Server Essentials 升級至 Windows Server 2012。  
+- 從 Windows Server Essentials 升級至 Windows Server 2012。  
   
- **伺服器組態**  
+  **伺服器組態**  
   
--   設定隨處存取 (VPN、遠端 Web 存取、DirectAccess)。  
+- 設定隨處存取 (VPN、遠端 Web 存取、DirectAccess)。  
   
--   設定儲存空間和伺服器資料夾。  
+- 設定儲存空間和伺服器資料夾。  
   
--   (如果適用) 設定伺服器備份、線上備份、用戶端備份、檔案記錄。  
+- (如果適用) 設定伺服器備份、線上備份、用戶端備份、檔案記錄。  
   
--   (如果適用) 設定和管理儲存空間。  
+- (如果適用) 設定和管理儲存空間。  
   
--   (如果適用) 設定電子郵件解決方案整合 (Office 365、Exchange 託管等等)。  
+- (如果適用) 設定電子郵件解決方案整合 (Office 365、Exchange 託管等等)。  
   
--   (如果適用) 設定媒體伺服器。  
+- (如果適用) 設定媒體伺服器。  
   
- **伺服器管理**  
+  **伺服器管理**  
   
--   管理使用者。  
+- 管理使用者。  
   
--   設定及接收警示的電子郵件通知。  
+- 設定及接收警示的電子郵件通知。  
   
--   在發生錯誤/警告時執行 BPA。  
+- 在發生錯誤/警告時執行 BPA。  
   
--   設定 System Center 監視組件。  
+- 設定 System Center 監視組件。  
   
--   設定損毀時的伺服器復原。  
+- 設定損毀時的伺服器復原。  
   
- **用戶端體驗**  
+  **用戶端體驗**  
   
--   透過網際網路的用戶端部署 (個人電腦或 Mac OS)。  
+- 透過網際網路的用戶端部署 (個人電腦或 Mac OS)。  
   
--   使用用戶端上的啟動列來存取共用資料夾。  
+- 使用用戶端上的啟動列來存取共用資料夾。  
   
--   從不同裝置 (個人電腦、手機和平板電腦) 透過遠端 Web 存取來存取伺服器資產。  
+- 從不同裝置 (個人電腦、手機和平板電腦) 透過遠端 Web 存取來存取伺服器資產。  
   
--   Windows Phone 的 My Server 應用程式。  
+- Windows Phone 的 My Server 應用程式。  
   
--   (如果適用) 檔案記錄、用戶端備份和還原 (無 BMR)、資料夾重新導向。  
+- (如果適用) 檔案記錄、用戶端備份和還原 (無 BMR)、資料夾重新導向。  
   
--   (如果適用) 電子郵件整合經驗。  
+- (如果適用) 電子郵件整合經驗。  
   
 ## <a name="where-can-i-get-more-support"></a>如何取得支援？  
  您可以從以下連結取得 SDK 和 ADK 文件：  
   
--   [SDK](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
+- [SDK](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
   
--   [ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124)  
+- [ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124)  
   
- 您可以透過連線向功能小組報告錯誤。 如果要產生記錄檔，請壓縮伺服器和加入伺服器的用戶端上的下列資料夾：C:\ProgramData\Microsoft\Windows Server\Logs。
+  您可以透過連線向功能小組報告錯誤。 如果要產生記錄檔，請壓縮伺服器和加入伺服器的用戶端上的下列資料夾：C:\ProgramData\Microsoft\Windows Server\Logs。

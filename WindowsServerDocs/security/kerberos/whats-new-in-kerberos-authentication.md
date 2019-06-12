@@ -8,12 +8,12 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 7b046490c606cdf9e1436f503bf46a9cd4280ea9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 90107bd49268f232fd6d532c304c2fdd050bcbf5
+ms.sourcegitcommit: c6acac3622e5d34714ca5c569805931681f98779
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831089"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66391499"
 ---
 # <a name="whats-new-in-kerberos-authentication"></a>What's New in Kerberos Authentication
 
@@ -50,6 +50,8 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Paramete
 若要設定 Spn 的 IP 位址的主機名稱的支援，建立 TryIPSPN 項目。 此項目依預設不存在於登錄中。 您已建立的項目之後，請將 DWORD 值變更為 1。 如果未設定，並不會嘗試 IP 位址的主機名稱。
 
 如果在 Active Directory 中登錄 SPN，驗證就會成功使用 Kerberos。 
+
+如需詳細資訊請參閱文件[IP 位址的設定 Kerberos](configuring-kerberos-over-ip.md)。
 
 ## <a name="kdc-support-for-key-trust-account-mapping"></a>金鑰信任帳戶對應的 KDC 支援
 

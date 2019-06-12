@@ -12,12 +12,12 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e5a8db44f80c333d589e0c1664174c394701f90d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa6ab8e2108e569b7cef6bfbf0d20af4fa31016d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835679"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432575"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>步驟 4：將設定和資料移至目的地伺服器以進行 Windows Server Essentials 移轉
 
@@ -42,45 +42,45 @@ ms.locfileid: "59835679"
   
 -   [用戶端電腦備份]  資料夾無法移轉到目的地伺服器。 伺服器移轉之前，請確定所有用戶端電腦都處於健康的狀態。 伺服器移轉之後，建議您設定和啟動用戶端電腦備份，確保已為所有重要的用戶端電腦備份資料。  
   
--   **File History Backups**資料夾不能直接移轉到目的地伺服器，因為 Windows Server Essentials 中的資料夾結構和備份中繼資料變更。 不過，還是可以移轉特定使用者在特定電腦上的 [檔案歷程記錄備份] 資料夾。 若要這麼做，您必須找出該使用者和電腦之 [檔案歷程記錄備份] 資料夾中的 [資料] 資料夾，然後複製該 [資料] 資料夾到目的伺服器上的 [檔案歷程記錄備份] 資料夾。  
+-   **File History Backups**資料夾不能直接移轉到目的地伺服器，因為 Windows Server Essentials 中的資料夾結構和備份中繼資料變更。 不過，還是可以移轉特定使用者在特定電腦上的 [檔案歷程記錄備份]  資料夾。 若要這麼做，您必須找出該使用者和電腦之 [檔案歷程記錄備份]  資料夾中的 [資料]  資料夾，然後複製該 [資料]  資料夾到目的伺服器上的 [檔案歷程記錄備份]  資料夾。  
   
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>從來源伺服器將資料複製到目的地伺服器  
   
-1.  以網域管理員身分登入目的地伺服器，然後開啟 [命令提示字元] 視窗或 Windows PowerShell 命令提示字元。  
+1. 以網域管理員身分登入目的地伺服器，然後開啟 [命令提示字元] 視窗或 Windows PowerShell 命令提示字元。  
   
-2.  如果您使用 [命令提示字元] 視窗，請輸入下列命令，然後按 ENTER 鍵：  
+2. 如果您使用 [命令提示字元] 視窗，請輸入下列命令，然後按 ENTER 鍵：  
   
-    `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
+   `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
   
-     其中：  
+    其中：  
   
-    -   \<SourceServerName\>是來源伺服器的名稱  
+   - \<SourceServerName\>是來源伺服器的名稱  
   
-    -   \<Sharedsourcefoldername&gt\>是來源伺服器上的共用資料夾的名稱  
+   - \<Sharedsourcefoldername&gt\>是來源伺服器上的共用資料夾的名稱  
   
-    -   \<Pathofthedestination&gt\>是您要移動之資料夾的絕對路徑  
+   - \<Pathofthedestination&gt\>是您要移動之資料夾的絕對路徑  
   
-    -   \<Shareddestinationfoldername&gt\>是要將資料複製到其中的目的地伺服器上的資料夾  
+   - \<Shareddestinationfoldername&gt\>是要將資料複製到其中的目的地伺服器上的資料夾  
   
      例如，  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`。  
   
-3.  如果您使用 Windows PowerShell，請輸入下列命令，然後按 ENTER 鍵。  
+3. 如果您使用 Windows PowerShell，請輸入下列命令，然後按 ENTER 鍵。  
   
-     `Add-Wssfolder  Path \ -Name  -KeepPermission`  
+    `Add-Wssfolder  Path \ -Name  -KeepPermission`  
   
-4.  針對您要從來源伺服器移轉的每個共用資料夾，重複此程序。  
+4. 針對您要從來源伺服器移轉的每個共用資料夾，重複此程序。  
   
 ##  <a name="BKMK_Network"></a> 設定網路  
   
 #### <a name="to-configure-the-network"></a>若要設定網路  
   
-1.  在目的地伺服器上，開啟儀表板。  
+1. 在目的地伺服器上，開啟儀表板。  
   
-2.  在 [儀表板] 的 [首頁]  頁面上，按一下 [設定] ，按一下 [設定隨處存取] ，然後選擇 [按一下以設定隨處存取]  選項。  
+2. 在 [儀表板] 的 [首頁]  頁面上，按一下 [設定]  ，按一下 [設定隨處存取]  ，然後選擇 [按一下以設定隨處存取]  選項。  
   
-3.  此時會出現「設定隨處存取精靈」。 完成精靈中的指示，來設定您的路由器及網域名稱。  
+3. 此時會出現「設定隨處存取精靈」。 完成精靈中的指示，來設定您的路由器及網域名稱。  
   
- 如果您的路由器不支援 UPnP 架構，或已停用 UPnP 架構，路由器名稱旁邊可能會出現一個黃色警告圖示。 請確定下列連接埠已開啟，且會導向到目的地伺服器的 IP 位址：  
+   如果您的路由器不支援 UPnP 架構，或已停用 UPnP 架構，路由器名稱旁邊可能會出現一個黃色警告圖示。 請確定下列連接埠已開啟，且會導向到目的地伺服器的 IP 位址：  
   
 -   連接埠 80：HTTP 網路流量  
   
@@ -96,15 +96,15 @@ ms.locfileid: "59835679"
   
 1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [使用者]。  
+2.  在瀏覽列中，按一下 [使用者]  。  
   
-3.  在使用者帳戶清單中，以滑鼠右鍵按一下使用者帳戶，然後按一下 [檢視帳戶內容]。  
+3.  在使用者帳戶清單中，以滑鼠右鍵按一下使用者帳戶，然後按一下 [檢視帳戶內容]  。  
   
-4.  按一下 [隨處存取]  索引標籤，然後按一下 [允許遠端 Web 存取，以及存取 Web 服務應用程式] 。  
+4.  按一下 [隨處存取]  索引標籤，然後按一下 [允許遠端 Web 存取，以及存取 Web 服務應用程式]  。  
   
-5.  依序按一下 [共用資料夾]、[電腦]、[首頁連結]，然後按一下 [套用]。  
+5.  依序按一下 [共用資料夾]  、[電腦]  、[首頁連結]  ，然後按一下 [套用]  。  
   
-6.  按一下 [電腦存取] 索引標籤，然後再按一下您想要允許存取的電腦名稱。  
+6.  按一下 [電腦存取]  索引標籤，然後再按一下您想要允許存取的電腦名稱。  
   
 7.  對每個使用者帳戶重複步驟 3、4、5 和 6。  
   

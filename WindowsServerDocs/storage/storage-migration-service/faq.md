@@ -4,16 +4,16 @@ description: 有關常見問題儲存體移轉服務，例如從一部伺服器�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 11/06/2018
+ms.date: 06/04/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: df03f722b7b36a163693f675a2eaade2fabeb82f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 258f25a7e1ec5c796c15450625397e96db25d693
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860909"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501515"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體移轉服務常見問題集 (faq)
 
@@ -63,7 +63,7 @@ ms.locfileid: "59860909"
     - 身分識別的遠端處理
     - 基礎結構
     - 名稱
-    - 路徑
+    - `Path`
     - 範圍
     - 領域名稱
     - 安全性描述元
@@ -86,17 +86,6 @@ ms.locfileid: "59860909"
 7. 移除您自己帳戶權限。
 8. 啟動 「 儲存體移轉服務 」 服務。
 
-## <a name="transfer-threads"></a> 我可以增加同時複製的檔案的數目嗎？
-
-儲存體移轉服務 Proxy 服務中指定的作業，請以同時複製 8 個檔案。 這項服務會在執行協調器在傳輸期間的目的地電腦是 Windows Server 2012 R2 或 Windows Server 2016 中，但也會執行所有的 Windows Server 2019 目的地節點上。 您可以藉由調整下列登錄 REG_DWORD 值中的名稱執行 SMS Proxy 每個節點上的小數位增加同時複製執行緒的數目：
-
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy
-    FileTransferThreadCount
-
- 有效的範圍是 1 到 128 個在 Windows Server 2019。 
-
- 變更之後您必須重新啟動儲存體移轉服務 Proxy 服務上所有電腦 partipating 在移轉。 我們計劃會引發這個儲存體移轉服務的未來版本中的數字。
-
 ## <a name="non-windows"></a> 我可以從 Windows Server 以外的來源移轉嗎？
 
 隨附於 Windows Server 2019 的儲存體移轉服務版本支援從 Windows Server 2003 和更新版本的作業系統移轉。 目前無法從 Linux、 Samba、 NetApp、 EMC 或其他的 SAN 和 NAS 存放裝置移轉。 我們計劃在未來版本的儲存體移轉服務，從 Linux Samba 支援允許此。
@@ -113,6 +102,40 @@ ms.locfileid: "59860909"
 
 隨附於 Windows Server 2019 的儲存體移轉服務版本不支援將多部伺服器合併到一部伺服器。 彙總的範例會移轉三個不同的來源伺服器-可能會有相同的共用名稱，且虛擬化這些路徑和以防止任何重疊或發生衝突，共用的單一新伺服器上的本機檔案路徑-然後回答這三個先前的伺服器名稱和 IP 位址。 我們可能會在儲存體移轉服務的未來版本中新增這項功能。  
 
+## <a name="optimize"></a> 清查和傳輸的效能最佳化
+
+儲存體移轉服務包含的多執行緒的讀取和複製引擎呼叫我們設計能快速的同時，以及加入完美的資料精確度缺乏許多檔案複製工具中的儲存體移轉服務 Proxy 服務。 雖然預設組態最適合許多客戶，有辦法改進 SMS 清查和傳輸期間的效能。
+
+- **您可以使用 Windows Server 2019 目的地作業系統。** Windows Server 2019 包含儲存體移轉服務 Proxy 服務。 當您安裝此功能，並將移轉至 Windows Server 2019 目的地時，所有傳輸都做為來源與目的地之間直接列看到。 此服務會執行的協調器在傳輸期間如果目的地電腦是 Windows Server 2012 R2 或 Windows Server 2016 中，這表示傳輸雙躍點，而且將會變得很慢。 如果有多個工作執行 Windows Server 2012 R2 或 Windows Server 2016 的目的地，orchestrator 將會成為瓶頸。 
+
+- **改變預設傳輸執行緒。** 儲存體移轉服務 Proxy 服務中指定的作業，請以同時複製 8 個檔案。 您可以藉由調整下列登錄 REG_DWORD 值中的名稱執行 SMS Proxy 每個節點上的小數位增加同時複製執行緒的數目：
+
+    HKEY_Local_Machine\Software\Microsoft\SMSProxy   FileTransferThreadCount
+
+   有效的範圍是 1 到 128 個在 Windows Server 2019。 在變更之後，您必須重新移轉所參與的所有電腦上的儲存體移轉服務 Proxy 服務。 請謹慎使用這項設定。設定較高，可能需要額外的核心、 儲存體效能和網路頻寬。 設定太高可能會導致相較於預設設定的效能降低。 較新版的 SMS 計劃啟發方式變更 CPU、 記憶體、 網路和儲存體為基礎的執行緒設定的能力。
+
+- **新增核心和記憶體。**  我們強烈建議在來源、 協調器時，與目的地電腦有兩個以上的處理器核心或兩個 Vcpu，，和多個大幅協助清查和傳輸的效能，尤其是結合 FileTransferThreadCount （請見上方）。 傳送比平常的 Office 格式更大的檔案時 (gb 或更高) 傳輸效能將受益於更多的記憶體，預設值 2 GB 最小值。
+
+- **建立多個作業。** 建立工作時使用多個伺服器的來源，每一部伺服器會連絡序列的方式，清查，傳輸中和完全移轉。 這表示每一部伺服器，必須完成其階段，然後才開始另一部伺服器。 若要以平行方式執行更多的伺服器，只要建立多個作業，隨著每項工作包含只有一個伺服器。 SMS 支援高達 100 同時執行的作業，這表示單一的協調器可以平行處理許多 Windows Server 2019 目的地電腦。 我們不建議執行多個平行作業，如果您的目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，而不需要執行在目的地上的 SMS proxy 服務，協調器必須執行所有傳輸本身，而且可能會變得瓶頸。 若要在單一作業內的平行執行的伺服器是我們計劃 SMS 較新版本中加入功能。
+
+- **使用 SMB 3 與 RDMA 網路。** 如果從 Windows Server 2012 或更新版本的來源電腦、 SMB 3.x 支援 SMB 直接模式和 RDMA 網路傳輸。 RDMA 的傳輸大部分的 CPU 成本會從移颸悁蠮 Cpu 上架 NIC 的處理器，以降低延遲和伺服器的 CPU 使用率。 此外，RDMA 網路等 ROCE 和 iWARP 通常具有較高頻寬也比一般 TCP/乙太網路，包括 25、 50 和 100 Gb 速度，每個介面。 通常使用 SMB 直接傳輸時，會將傳輸速度限制移到本身的儲存體網路。   
+
+- **使用 SMB 3 多重通道。** 如果從 Windows Server 2012 或更新版本的來源電腦傳送，SMB 3.x 支援多通路複製可大幅提升檔案的複製效能。 這項功能會自動運作，只要來源與目的地有：
+
+   - 多個網路介面卡
+   - 支援接收端調整 (RSS) 的一或多個網路介面卡
+   - 其中一個更多的網路介面卡使用 NIC 小組設定
+   - 一或多個支援 RDMA 的網路介面卡
+
+- **更新驅動程式。** 視需要在來源、 目的地和 orchestrator 上安裝最新的廠商儲存體和機箱韌體與驅動程式、 最新的廠商 HBA 驅動程式、 最新的廠商 BIOS/UEFI 韌體、 最新的廠商網路驅動程式和最新的主機板晶片組驅動程式伺服器。 視需要重新啟動節點。 如需設定共用儲存體和網路硬體，請參閱硬體廠商的文件。
+
+- **啟用高效能處理。** 確定伺服器的 BIOS/UEFI 設定能提供高效能，例如停用 C-State、設定 QPI 速度、啟用 NUMA，以及設定最高的記憶體頻率。 請確定 Windows Server 中的電源管理設定為 高效能。 視需要重新啟動。 別忘了在完成移轉後會傳回以適當的狀態。 
+
+- **調整硬體**檢閱[效能微調指導方針的 Windows Server 2016](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/)微調 orchestrator 和執行 Windows Server 2019 的目的地電腦和 Windows Server 2016。 [網路子系統效能調整](https://docs.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)區段包含特別有用的資訊。
+
+- **使用更快速的儲存體。** 雖然它可能難以升級來源電腦儲存體的速度，您應該確保目的地儲存體至少要一樣快速寫入 IO 效能，以確保傳輸中沒有任何不必要的瓶頸的來源是在讀取 IO 效能。 如果目的地是 VM，能確保至少為移轉目的，它會執行最快的儲存層的 hypervisor 主機，例如快閃層，或搭配使用鏡像的全快閃或混合式空間的儲存空間直接存取 HCI 叢集。 SMS 移轉完成時 VM 可以是即時移轉至速度較慢的 「 層 」 或 「 主控件。
+
+- **更新防毒軟體。** 務必確定您的來源和目的地執行防毒軟體，以確保最少的效能負擔的最新修補的版本。 進行測試，您可以*暫時*排除掃描您清查或移轉的來源和目的地伺服器上的資料夾。 如果傳輸效能已獲得改善，請連絡您的防毒軟體廠商，如需指示，或更新的版本的防毒軟體或預期的效能降低的說明。
 
 ## <a name="give-feedback"></a> 我要提供意見反應，提報 bug，或取得支援的選項有哪些？
 

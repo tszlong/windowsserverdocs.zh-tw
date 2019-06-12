@@ -6,14 +6,14 @@ ms.manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 05/09/2019
+ms.date: 06/07/2019
 description: 本主題說明 DFS 命名空間，這是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。
-ms.openlocfilehash: 33b5a36c9f13179286a95735621272f79983231c
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: b16d8145d766cbb9b12feaaa2e5e9443813a69f2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613191"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812576"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空間概觀
 
@@ -55,11 +55,11 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 
 下表說明選擇裝載命名空間的伺服器時所要考量的其他因素。
 
-|裝載獨立命名空間的伺服器|裝載網域型命名空間的伺服器|
-|---|---|
-|必須包含 NTFS 磁碟區才能裝載命名空間。|必須包含 NTFS 磁碟區才能裝載命名空間。|
-|可以是成員伺服器或網域控制站。|必須是設定命名空間所在網域中的成員伺服器或網域控制站 (這項需求適用於裝載指定之網域型命名空間的每一個命名空間伺服器)。|
-|可以由容錯移轉叢集裝載來提高命名空間可用性。|命名空間不可以是容錯移轉叢集中的叢集化資源。 不過，如果您將命名空間設定為只使用同樣於容錯移轉叢集中做為節點之伺服器的本機資源，則可以在該伺服器上找到命名空間。|
+| 裝載獨立命名空間的伺服器 | 裝載網域型命名空間的伺服器 |
+| ---                                   |        ---                                |
+| 必須包含 NTFS 磁碟區才能裝載命名空間。|必須包含 NTFS 磁碟區才能裝載命名空間。 |
+| 可以是成員伺服器或網域控制站。|必須是設定命名空間所在網域中的成員伺服器或網域控制站 (這項需求適用於裝載指定之網域型命名空間的每一個命名空間伺服器)。 |
+| 可以由容錯移轉叢集裝載來提高命名空間可用性。|命名空間不可以是容錯移轉叢集中的叢集化資源。 不過，如果您將命名空間設定為只使用同樣於容錯移轉叢集中做為節點之伺服器的本機資源，則可以在該伺服器上找到命名空間。 |
 
 ## <a name="installing-dfs-namespaces"></a>安裝 DFS 命名空間
 
@@ -89,10 +89,10 @@ DFS 命名空間與 DFS 複寫是檔案和存放服務角色中的一部分。 D
 Install-WindowsFeature <name>
 ```
 
-|角色服務或功能|名稱|
-|---|---|
-|DFS 命名空間|`FS-DFS-Namespace`|
-|DFS 管理工具|`RSAT-DFS-Mgmt-Con`|
+| 角色服務或功能 | 名稱 |
+| ----------------------- | ---- |
+| DFS 命名空間          | `FS-DFS-Namespace` |
+| DFS 管理工具    | `RSAT-DFS-Mgmt-Con` |
 
 例如，若要安裝 [遠端伺服器管理工具] 功能的 [分散式檔案系統工具] 部分，請輸入：
 
@@ -120,12 +120,12 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 如需其他相關資訊，請參閱下列資源。
 
-|內容類型|參考|
-|------------------|----------------|
-|**產品評估**|[DFS 命名空間和 DFS 複寫 Windows Server 中的最新消息](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx)|
-|**部署**|[DFS 命名空間延展性考量](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx)|
-|**操作**|[DFS 命名空間：常見問題集](https://technet.microsoft.com/library/ee404780.aspx)|
-|**社群資源**|[檔案服務與儲存 TechNet 論壇](https://social.technet.microsoft.com/forums/winserverfiles/threads/)|
-|**通訊協定**|[檔案服務 Windows Server 中的通訊協定](https://msdn.microsoft.com/en-us/library/cc239318.aspx)（已過時）|
-|**相關技術**| [容錯移轉叢集](../../failover-clustering/failover-clustering-overview.md)|
-|**支援**|[Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)|
+| 內容類型        | 參考 |
+| ------------------  | ----------------|
+| **產品評估** | [DFS 命名空間和 DFS 複寫 Windows Server 中的最新消息](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
+| **部署**    | [DFS 命名空間延展性考量](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **操作**    | [DFS 命名空間：常見問題集](https://technet.microsoft.com/library/ee404780.aspx) |
+| **社群資源** | [檔案服務與儲存 TechNet 論壇](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
+| **通訊協定**        | [檔案服務 Windows Server 中的通訊協定](https://msdn.microsoft.com/en-us/library/cc239318.aspx)（已過時） |
+| **相關技術** | [容錯移轉叢集](../../failover-clustering/failover-clustering-overview.md)|
+| **支援** | [Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)|

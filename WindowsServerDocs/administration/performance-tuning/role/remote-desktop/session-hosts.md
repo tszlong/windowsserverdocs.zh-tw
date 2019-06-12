@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e45d1abb545ad46e654c811a0347c589bd12adf0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e95671718616fc7c81977434e83a227c858fca17
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863239"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811415"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>效能微調遠端桌面工作階段主機
 
@@ -21,13 +21,13 @@ ms.locfileid: "59863239"
 
 **本主題內容：**
 
--   [選取適當的硬體效能](#hw)
+-   [選取適當的硬體效能](#selecting-the-proper-hardware-for-performance)
 
--   [調整應用程式以遠端桌面工作階段主機](#apps)
+-   [調整應用程式以遠端桌面工作階段主機](#tuning-applications-for-remote-desktop-session-host)
 
--   [調整參數的遠端桌面工作階段主機](#host)
+-   [調整參數的遠端桌面工作階段主機](#remote-desktop-session-host-tuning-parameters)
 
-## <a href="" id="hw"></a>選取適當的硬體效能
+## <a name="selecting-the-proper-hardware-for-performance"></a>選取適當的硬體以獲得效能
 
 
 如需 RD 工作階段主機伺服器部署中，硬體選擇受到設定的應用程式和使用者如何使用它們。 會影響使用者和使用者體驗的數字的關鍵因素是 CPU、 記憶體、 磁碟和圖形。 本節包含專屬於 RD 工作階段主機伺服器的其他指導方針，以及大部分與相關 RD 工作階段主機伺服器的多使用者環境。
@@ -72,7 +72,7 @@ RD 工作階段主機伺服器的網路使用量會包含兩個主要類別：
 
     磁碟區和網路流量設定檔是每個部署的特定項目。
 
-## <a href="" id="apps"></a>調整應用程式以遠端桌面工作階段主機
+## <a name="tuning-applications-for-remote-desktop-session-host"></a>調整應用程式以遠端桌面工作階段主機
 
 
 大部分的 RD 工作階段主機伺服器上的 CPU 使用量會隨應用程式。 傳統型應用程式通常會向其目標是減少花費的時間可以回應使用者要求的應用程式的回應性最佳化。 不過在伺服器環境中，它是同樣重要的以完成某個動作，以避免造成負面影響其他工作階段所需的 CPU 使用量的總數量降到最低。
@@ -111,7 +111,7 @@ RD 工作階段主機伺服器的網路使用量會包含兩個主要類別：
 
     如果可能的話，適用於其他類似的執行引擎類似的技巧。
 
-## <a href="" id="host"></a>調整參數的遠端桌面工作階段主機
+## <a name="remote-desktop-session-host-tuning-parameters"></a>調整參數的遠端桌面工作階段主機
 
 
 ### <a name="page-file"></a>分頁檔

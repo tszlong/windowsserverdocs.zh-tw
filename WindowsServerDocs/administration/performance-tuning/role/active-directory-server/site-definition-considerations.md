@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9861703e5ae88dcaec5e76d9fab426b928d0cb9a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266641"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811501"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>獲得正確位置的網域控制站和站台考量
 
@@ -64,11 +64,11 @@ ms.locfileid: "66266641"
 
     -   您可以使用 DnsAvoidRegisterRecords 來排除效能不佳執行或高延遲的網域控制站，例如衛星站台，從一般的定位器的廣告中。 如需詳細資訊，請參閱 <<c0> [ 如何來最佳化網域控制站或通用類別目錄存在於用戶端的站台外的位置](https://support.microsoft.com/kb/306602)。
 
-        > [!Note]   沒有實際限制為大約 50%到用戶端可以取用的網域控制站數目。 這些應該是最大站台最佳且最高的容量的網域控制站。
+        > [!NOTE]
+        > 沒有實際限制為大約 50%到用戶端可以取用的網域控制站數目。 這些應該是最大站台最佳且最高的容量的網域控制站。
 
-         
-
-    -   請考慮將網域控制站放在相同的實體位置中的受信任且信任網域。
+    
+    -  請考慮將網域控制站放在相同的實體位置中的受信任且信任網域。
 
 所有信任的情況下，認證會路由都傳送根據驗證要求中指定的網域。 這也適用於查詢的 LookupAccountName 和 LsaLookupNames （以及其他項目，這些都只是最常使用的） Api。 當這些 Api 的網域參數傳遞 NULL 值時，網域控制站會嘗試尋找每個受信任的網域中指定的帳戶名稱。
 

@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 2639b8bb913bcd604a7c79015545006a23e1d0f2
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: b1aaa329c8925d7fa4245555ed51b08f7366299d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222952"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811105"
 ---
 # <a name="icacls"></a>icacls
-
-
 
 顯示或修改指定檔案上的判別存取控制清單 (DACL)，及套用預存的 DACL 到指定目錄中的檔案。
 
@@ -132,18 +130,25 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
 ## <a name="examples"></a>範例
 
 若要儲存所有檔案的 Dacl C:\Windows 目錄及其子目錄 ACLFile 檔案中，請輸入：
+
 ```
 icacls c:\windows\* /save aclfile /t
 ```
+
 若要還原的每一個檔案內存在 C:\Windows 目錄及其子目錄中的 ACLFile Dacl，請輸入：
+
 ```
 icacls c:\windows\ /restore aclfile
 ```
+
 若要授與使用者 User1 刪除，並撰寫 DAC 至名為"Test1"檔案的權限，請輸入：
+
 ```
 icacls test1 /grant User1:(d,wdac)
 ```
+
 若要授與 SID S-1-1-0 刪除及撰寫 DAC 權限到檔案，名為"Test2 」，所定義的使用者輸入：
+
 ```
 icacls test2 /grant *S-1-1-0:(d,wdac)
 ```

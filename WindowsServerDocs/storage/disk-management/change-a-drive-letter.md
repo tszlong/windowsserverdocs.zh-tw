@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 93da32a204c42b3f4fb503349ff732c9c050db31
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b972ab05c192dca9a9a0a2bda4f083d2906acadb
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192635"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812477"
 ---
 # <a name="change-a-drive-letter"></a>變更磁碟機代號
 
-> **適用於：** Windows 10，Windows 8.1、 Windows 7、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows 7、 Windows Server （半年通道）、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 如果您不喜歡磁碟機代號指派給磁碟機，或如果您有尚無磁碟機代號的磁碟機，您可以使用磁碟管理來變更它。
 

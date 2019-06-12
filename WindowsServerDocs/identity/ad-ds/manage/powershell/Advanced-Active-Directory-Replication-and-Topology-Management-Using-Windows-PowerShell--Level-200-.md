@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 5454f91394dbdc659db85a675d1c8bfac18b2a86
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d56bc89189c3b17367549aeb076633a6ea0e1007
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853919"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442739"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>使用 Windows PowerShell 進行進階的 Active Directory 複寫和拓撲管理 (層級 200)
 
@@ -82,7 +82,7 @@ Windows Server 2012 對「適用於 Windows PowerShell 的 Active Directory 模�
 Get-command -module ActiveDirectory  
 ```  
   
-如需所有 Active Directory Windows PowerShell Cmdlet 引數的完整清單，請參閱說明。 例如:   
+如需所有 Active Directory Windows PowerShell Cmdlet 引數的完整清單，請參閱說明。 例如:  
   
 ```  
 Get-help New-ADReplicationSite  
@@ -228,7 +228,7 @@ Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,
   
 例如，新的分公司迅速擴編加上與其他分公司整併，根據實體位置、網路變更和新的容量需求，您可能會有上百個站台變更需要處理。 比起使用 Dssites.msc 和 Adsiedit.msc 進行變更，您可以進行自動化。 當您使用網路和設備團隊提供的試算表資料時，這樣會特別方便。  
   
-**Get Set-adreplication\*** 指令程式傳回複寫拓撲的詳細資訊，而且可用於管線處理到**集 Set-adreplication\*** 大量的 cmdlet。 **取得**cmdlet 不會變更資料，它們只會顯示資料或建立 Windows PowerShell 工作階段物件，能以管線來**組 Set-adreplication\***  cmdlet。 **New** 和 **Remove** Cmdlet 可用來建立或移除 Active Directory 拓撲物件。  
+**Get Set-adreplication\\** * cmdlet 傳回複寫拓撲的詳細資訊，而且可用於管線處理到**集 Set-adreplication\\** * 大量的 cmdlet。 **取得**cmdlet 不會變更資料，它們只會顯示資料或建立 Windows PowerShell 工作階段物件，能以管線來**組 Set-adreplication\\** * cmdlet。 **New** 和 **Remove** Cmdlet 可用來建立或移除 Active Directory 拓撲物件。  
   
 例如，您可以使用 CSV 檔案建立新的站台：  
   

@@ -4,16 +4,16 @@ description: 逐步解說中提供對 AD FS 進行驗證的指示，使用 ADAL 
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 06/12/2018
+ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 24a9caba7a2745973d7c69c3bd7bc42717e7a06c
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: f8a8d6b81f63a691954eecf02dba4e33215a462a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266688"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811744"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>建置使用 OAuth 和 ADAL 的單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
 
@@ -21,7 +21,8 @@ ms.locfileid: "66266688"
 
 在此案例中，當使用者登入時，JavaScript 前端會使用[Active Directory Authentication Library for JavaScript (ADAL。JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js)和隱含授權授與從 Azure AD 取得 ID 權杖 (id_token)。 在快取權杖，用戶端將它附加至要求做為持有人權杖呼叫 Web API 後端，並使用 OWIN 中介軟體保護時。
 
->警告：您可以在這裡建置的範例是僅供教育。 這些指示是最簡單、 最小實作能夠公開 （expose） 模型的必要項目。 範例可能不會包含錯誤處理的所有層面，以及其他與關聯的功能。
+>[!IMPORTANT]
+>您可以在這裡建置的範例是僅供教育。 這些指示是最簡單、 最小實作能夠公開 （expose） 模型的必要項目。 範例可能不會包含錯誤處理的所有層面，以及其他與關聯的功能。
 
 >[!NOTE]
 >這個逐步解說是適用於**只**2016年和更新版本的 AD FS 伺服器 
@@ -50,7 +51,7 @@ ms.locfileid: "66266688"
 
 如何設定網域控制站和 AD FS 已超出本文的範圍。 其他部署資訊，請參閱：
 
-- [AD DS 部署](../../ad-ds/deploy/AD-DS-Deployment.md) 
+- [AD DS 部署](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [AD FS 部署](../AD-FS-Deployment.md)
 
 
@@ -109,14 +110,14 @@ ms.locfileid: "66266688"
         $httpProvider
         );
 
-|組態|描述
-|--------|--------
-|執行個體|您 STS 的 URL，例如 https://fs.contoso.com/
-|租用戶|將其保留為 'adfs'
-|clientID|這是設定為單一頁面應用程式公開的用戶端時指定的用戶端識別碼
+|組態|描述|
+|--------|--------|
+|執行個體|您 STS 的 URL，例如 https://fs.contoso.com/|
+|租用戶|將其保留為 'adfs'|
+|clientID|這是設定為單一頁面應用程式公開的用戶端時指定的用戶端識別碼|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>設定為使用 AD FS 的 WebAPI
-開啟**Startup.Auth.cs**範例檔案，並在開頭新增下列： 
+開啟**Startup.Auth.cs**範例檔案，並在開頭新增下列：
 
     using System.IdentityModel.Tokens;
 
@@ -143,11 +144,11 @@ ms.locfileid: "66266688"
     }
     );
 
-|參數|描述
-|--------|--------
-|ValidAudience|這會設定 'audience' 的值，將會檢查對權杖中
-|ValidIssuer|這會設定的值 ' 將會針對簽入語彙基元的簽發者
-|MetadataEndpoint|這會指向您的 STS 的中繼資料資訊
+|參數|描述|
+|--------|--------|
+|ValidAudience|這會設定 'audience' 的值，將會檢查對權杖中|
+|ValidIssuer|這會設定的值 ' 將會針對簽入語彙基元的簽發者|
+|MetadataEndpoint|這會指向您的 STS 的中繼資料資訊|
 
 ## <a name="add-application-configuration-for-ad-fs"></a>新增適用於 AD FS 的應用程式設定
 變更為 appsettings，如下所示：

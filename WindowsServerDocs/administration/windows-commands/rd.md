@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9190a77369c0a4631db87ab5a5c112b13b37e6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94231e3ec032280beb91a14db7949a1296c2d811
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840039"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442035"
 ---
 # <a name="rd"></a>rd
 
@@ -37,12 +37,12 @@ rmdir [<Drive>:]<Path> [/s [/q]]
 
 ## <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|[\<Drive>:]<Path>|指定的位置和您想要刪除的目錄名稱。 *路徑*需要。|
-|/s|刪除樹狀目錄 （指定的目錄和所有子目錄，包括所有檔案）。|
-|/q|指定無訊息模式。 不會提示進行確認，當您刪除樹狀目錄時。 (請注意， **/q** works 才 **/s**指定。)|
-|/?|在命令提示字元顯示說明。|
+|     參數     |                                                                 描述                                                                  |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:]<Path> |                      指定的位置和您想要刪除的目錄名稱。 *路徑*需要。                       |
+|        /s         |                     刪除樹狀目錄 （指定的目錄和所有子目錄，包括所有檔案）。                      |
+|        /q         | 指定無訊息模式。 不會提示進行確認，當您刪除樹狀目錄時。 (請注意， **/q** works 才 **/s**指定。) |
+|        /?         |                                                     在命令提示字元顯示說明。                                                     |
 
 ## <a name="remarks"></a>備註
 

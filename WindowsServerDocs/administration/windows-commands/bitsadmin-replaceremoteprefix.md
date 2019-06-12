@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 848c57736c3530e296cffb970237149b4634de67
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 25c0f997ea0b9f97051baa291bdf87c84b6b1cbb
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266516"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811295"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
-
-
 
 中的所有檔案作業的遠端 URL 開頭*OldPrefix*變更為使用*NewPrefix*。
 
@@ -43,6 +41,7 @@ bitsadmin /ReplaceRemotePrefix <Job> <OldPrefix> <NewPrefix
 ## <a name="examples"></a>範例
 
 下列範例會變更名為作業中的所有檔案*myDownloadJob*其遠端的 URL 開頭 *http://stageserver* 來 *http://prodserver* 。
+
 ```
 C:\>bitsadmin /ReplaceRemotePrefix myDownloadJob http://stageserver http://prodserver
 ```

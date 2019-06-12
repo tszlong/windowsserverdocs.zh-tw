@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eabbf159a64ab5df7f45ece390d0c2fdb9956b80
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca9f5f00bc92d7929f782be45562e80bba455d74
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826329"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501446"
 ---
 # <a name="mklink"></a>mklink
 建立符號連結。
@@ -44,9 +44,14 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 
 ## <a name="BKMK_examples"></a>範例
 
-若要建立名為 MyDocs 根目錄 \Users\User1\Documents 目錄的符號連結，請輸入：
+下列範例示範如何建立和移除名為 MyFolder 和 MyFile.file 根目錄 \Users\User1\Documents 目錄的符號連結和 example.file，位於 目錄：
 ```
-mklink /d \MyDocs \Users\User1\Documents
+mklink /d \MyFolder \Users\User1\Documents
+mklink /h \MyFile.file \User1\Documents\example.file
+rd \MyFolder
+del \MyFile.file
 ```
 ## <a name="additional-references"></a>其他參考資料
 -   [New-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
+-   [del](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/del)
+-   [rmdir](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rd)

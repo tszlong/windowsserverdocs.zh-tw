@@ -5,23 +5,23 @@ ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 03/19/2019
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b19657f4ce1a1a2cfb94f7234f07805ba0abd42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 96d09b25ddb2f473fb4fe22c0cf716bfcf8becaa
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850569"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811923"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>設定使用者存取控制和權限
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center，Windows Admin Center 預覽
 
 如果您還沒有這麼做，您熟悉[Windows Admin Center 中的使用者存取控制選項](../plan/user-access-options.md)
 
->[!NOTE]
+> [!NOTE]
 > 在工作群組環境中或跨未受信任的網域，不支援 Windows Admin Center 中的群組型存取。
 
 ## <a name="gateway-access-role-definitions"></a>閘道存取的角色定義
@@ -41,7 +41,7 @@ ms.locfileid: "59850569"
 
 在 [**使用者**] 索引標籤可以控制可以存取 Windows Admin Center 為閘道的使用者。 根據預設，而且如果您未指定安全性群組，任何使用者存取閘道器 URL 存取。 一旦您會將一或多個安全性群組新增至使用者清單中，存取限於那些群組的成員。
 
-如果您未使用 Active Directory 網域環境中，存取會受到```Users```和```Administrators```Windows Admin Center 閘道機器上的本機群組。
+如果您未使用 Active Directory 網域環境中，存取會受到`Users`和`Administrators`Windows Admin Center 閘道機器上的本機群組。
 
 ### <a name="smartcard-authentication"></a>智慧卡驗證
 
@@ -143,6 +143,7 @@ Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
 
 單一電腦部署模型非常適合只有少數電腦來管理使用簡單的環境。
 設定機器與角色型存取控制的支援，會導致下列變更：
+
 -   使用函式所需的 Windows Admin Center PowerShell 模組將會安裝在您的系統磁碟機底下`C:\Program Files\WindowsPowerShell\Modules`。 所有模組會從都開始**Microsoft.Sme**
 -   將執行一次性的組態來設定 Just Enough Administration 端點上名為的機器的 Desired State Configuration **Microsoft.Sme.PowerShell**。 此端點會定義 3 個 Windows Admin Center 所使用的角色，並將您的暫存的本機系統管理員身分執行，當使用者連線到它。
 -   將會建立 3 個新的本機群組，來控制哪些使用者被指派哪些角色的存取權：
@@ -191,6 +192,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 ```
 
 當您展開 zip 封存時，您會看到下列資料夾結構：
+
 - InstallJeaFeatures.ps1
 - JustEnoughAdministration （目錄）
 - 模組 （目錄）
@@ -198,6 +200,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
     - WindowsAdminCenter.Jea (directory)
 
 若要設定的節點上的角色型存取控制支援，您需要執行下列動作：
+
 1.  將複製的 JustEnoughAdministration Microsoft.SME。\*，和在目標電腦上的 PowerShell 模組目錄的 WindowsAdminCenter.Jea 模組。 一般而言，這是位於`C:\Program Files\WindowsPowerShell\Modules`。
 2.  更新**InstallJeaFeature.ps1**檔案，以符合您所需的組態，RBAC 端點。
 3.  執行 InstallJeaFeature.ps1 編譯 DSC 資源。

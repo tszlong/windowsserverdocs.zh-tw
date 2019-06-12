@@ -5,19 +5,19 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/19/2018
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 598eeae64925d24ec6d97b59da9cae1e2d10585d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d018ea65ce61cab67fe2041b9ef885d32de51b17
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864969"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811922"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>準備您的 Windows Admin Center 環境
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center，Windows Admin Center 預覽
 
 有一些 Server 版本需要先做額外準備，才可開始使用 Windows Admin Center 進行管理：
 
@@ -54,7 +54,7 @@ Windows Admin Center 需要預設未包含在 Windows Server 2008 R2 中的 Powe
 
 若要在 Windows Admin Center 中使用遠端桌面，您必須在 Windows Server 2008 R2 伺服器上啟用遠端桌面。
 
-從 **\[伺服器管理員\]** 移至 **\[設定遠端桌面\]**。 啟用遠端桌面的 [允許來自執行任何版本之遠端桌面的電腦進行連線] 選項。
+從 **\[伺服器管理員\]** 移至 **\[設定遠端桌面\]** 。 啟用遠端桌面的 [允許來自執行任何版本之遠端桌面的電腦進行連線] 選項。
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>準備 Microsoft Hyper-V Server 2016
 
@@ -79,19 +79,19 @@ Windows Admin Center 需要預設未包含在 Windows Server 2008 R2 中的 Powe
 
 若要啟用基本檔案共用及遠端管理的檔案伺服器角色：
 
-1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]**。
-2. 在 **\[角色和功能\]** 中尋找 **\[檔案和存放服務\]**，並核取 **\[檔案和 iSCSI 服務\]** 和 **\[檔案伺服器\]**：
+1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
+2. 在 **\[角色和功能\]** 中尋找 **\[檔案和存放服務\]** ，並核取 **\[檔案和 iSCSI 服務\]** 和 **\[檔案伺服器\]** ：
 
-![](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![角色的螢幕擷取畫面和顯示的檔案和 iSCSI 服務角色選取的功能](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**步驟 3：** 啟用 PowerShell 的 Hyper-V 模組
 
 若要啟用 PowerShell 的 Hyper-V 模組功能：
 
-1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]**。
-2. 在 **\[角色和功能\]** 中尋找 **\[遠端伺服器管理工具\]**，並核取 **\[角色管理工具\]** 和 **\[PowerShell 的 Hyper-V 模組\]**：
+1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
+2. 在 **\[角色和功能\]** 中尋找 **\[遠端伺服器管理工具\]** ，並核取 **\[角色管理工具\]** 和 **\[PowerShell 的 Hyper-V 模組\]** ：
 
-![](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![角色的螢幕擷取畫面，顯示所選的 HYPER-V 角色的功能](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 Microsoft Hyper-V Server 2016 現已準備好可以使用 Windows Admin Center 進行管理。
 
@@ -106,7 +106,7 @@ Microsoft Hyper-V Server 2016 現已準備好可以使用 Windows Admin Center �
 3. 啟用檔案伺服器角色
 4. 啟用 PowerShell 的 Hyper-V 模組
 
-### <a name="step-1-install-windows-management-framework-51"></a>**步驟 1:** 安裝 Windows Management Framework 5.1
+### <a name="step-1-install-windows-management-framework-51"></a>步驟 1：安裝 Windows Management Framework 5.1
 
 Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 中的 PowerShell 功能。 若要使用 Windows Admin Center 管理 Microsoft Hyper-V Server 2012 R2，您必須安裝 WMF 5.1 或更新版本。
 
@@ -114,7 +114,7 @@ Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 �
 
 如果尚未安裝，您可以[下載 WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
 
-### <a name="step-2-enable-remote-management"></a>**步驟 2:** 啟用遠端管理 
+### <a name="step-2-enable-remote-management"></a>步驟 2：啟用遠端管理
 
 若要啟用 Hyper-V Server 遠端管理：
 
@@ -127,19 +127,19 @@ Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 �
 
 若要啟用基本檔案共用及遠端管理的檔案伺服器角色：
 
-1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]**。
-2. 在 **\[角色和功能\]** 中尋找 **\[檔案和存放服務\]**，並核取 **\[檔案和 iSCSI 服務\]** 和 **\[檔案伺服器\]**：
+1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
+2. 在 **\[角色和功能\]** 中尋找 **\[檔案和存放服務\]** ，並核取 **\[檔案和 iSCSI 服務\]** 和 **\[檔案伺服器\]** ：
 
-![](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![角色的螢幕擷取畫面和顯示的檔案和 iSCSI 服務角色選取的功能](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
-### <a name="step-4-enable-hyper-v-module-for-powershell"></a>步驟 4：啟用 PowerShell 的 Hyper-V 模組 ##
+### <a name="step-4-enable-hyper-v-module-for-powershell"></a>步驟 4：啟用 PowerShell 的 Hyper-V 模組
 
 若要啟用 PowerShell 的 Hyper-V 模組功能：
 
-1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]**。
-2. 在 **\[角色和功能\]** 中尋找 **\[遠端伺服器管理工具\]**，並核取 **\[角色管理工具\]** 和 **\[PowerShell 的 Hyper-V 模組\]**：
+1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
+2. 在 **\[角色和功能\]** 中尋找 **\[遠端伺服器管理工具\]** ，並核取 **\[角色管理工具\]** 和 **\[PowerShell 的 Hyper-V 模組\]** ：
 
-![](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![角色的螢幕擷取畫面，顯示選取的 HYPER-V 遠端伺服器管理工具的功能](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 Microsoft Hyper-V Server 2012 R2 現已準備好可以使用 Windows Admin Center 進行管理。
 

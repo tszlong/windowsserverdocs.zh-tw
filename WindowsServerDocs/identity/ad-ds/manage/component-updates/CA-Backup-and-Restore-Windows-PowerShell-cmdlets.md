@@ -9,20 +9,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: a4bbeeedfb40e789a799103f9a29a848a2b32324
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6055d9b694f72a6a874acdcb5135fde61bcf0d76
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877349"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442757"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>CA 備份與還原 Windows PowerShell cmdlet
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
->
-**作者**:Justin Turner 資深支援高階工程師，與 Windows 群組  
-  
-> [!NOTE]  
+> 適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+> 
+> **作者**:Justin Turner 資深支援高階工程師，與 Windows 群組  
+> 
+> [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
   
 ## <a name="overview"></a>總覽  

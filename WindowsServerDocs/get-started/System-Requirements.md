@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 29183c62830cbe9e26cce4e0ce4543b554f0ed65
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d089af3562467aa1c222b17d9a1ad69d9c1b5008
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837309"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810591"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -27,10 +27,8 @@ ms.locfileid: "59837309"
 
 本主題說明執行 Windows Server&reg; 2016 或 Windows Server 版本 1709 的最低系統需求。
 
-
-> [!Note]  
+> [!NOTE]  
 > 此版本建立使用全新安裝。  
->   
 
 > [!NOTE]  
 > 如果在安裝的時候，您選擇 [伺服器核心] 選項進行安裝，您應該要注意這不會安裝任何 GUI 元件，且您將無法使用伺服器管理員來安裝或取消安裝這些 GUI 元件。 如果您需要 GUI 功能，請務必在您安裝 Windows Server 2016 時選擇 [含桌面體驗的伺服器] 選項。 如需詳細資訊，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)  
@@ -79,13 +77,13 @@ ms.locfileid: "59837309"
 
 **最低需求**：32 GB  
 
-   > [!NOTE]  
-    > 請注意，32 GB 應視為成功安裝的*絕對最小值*。 此最小值應該可讓您以 Web 服務 (IIS) 伺服器角色在 Server Core 模式中安裝 Windows Server 2016。 使用「Server Core」模式的伺服器比使用「Server 含 GUI」模式的相同伺服器大約少 4 GB。 
-    >   
-    > 如果是下列任何情況，系統磁碟分割將需要額外的空間：  
-    >   
-    > -   如果您透過網路安裝系統。  
-    > -   具有 16 GB RAM 以上的電腦將需要更多的磁碟空間，以供分頁、休眠及傾印檔案使用。  
+> [!NOTE]
+> 請注意，32 GB 應視為成功安裝的*絕對最小值*。 此最小值應該可讓您以 Web 服務 (IIS) 伺服器角色在 Server Core 模式中安裝 Windows Server 2016。 使用「Server Core」模式的伺服器比使用「Server 含 GUI」模式的相同伺服器大約少 4 GB。 
+> 
+> 如果是下列任何情況，系統磁碟分割將需要額外的空間：  
+> 
+> -   如果您透過網路安裝系統。  
+> -   具有 16 GB RAM 以上的電腦將需要更多的磁碟空間，以供分頁、休眠及傾印檔案使用。  
 
 ## <a name="network-adapter-requirements"></a>網路介面卡需求  
 
@@ -97,8 +95,6 @@ ms.locfileid: "59837309"
 - 支援開機前執行環境 (PXE)。  
 
 支援網路偵錯 (KDNet) 的網路介面卡會很有用，但不是最低需求。   
-
-
 
 ## <a name="other-requirements"></a>其他需求  
 執行此版本的電腦也必須具備下列各項：  
@@ -117,13 +113,13 @@ ms.locfileid: "59837309"
 
 -   網際網路存取 (可能需要付費)  
 
->[!NOTE]  
+> [!NOTE]  
 > 信賴平台模組 (TPM) 晶片於安裝此版本時並非必要，但是使用特定功能 (例如 BitLocker 磁碟機加密) 時則為必要。 如果您的電腦使用 TPM，它必須符合下列需求︰  
 >  
->- 硬體架構的 TPM 必須實作 TPM 規格的 2.0 版。  
->- 實作 2.0 版的 TPM 必須有一個 EK 憑證，這個憑證是由硬體廠商預先佈建至 TPM，或是可由裝置在第一次開機期間擷取。  
->- 實作 2.0 版的 TPM 必須隨附 SHA-256 PCR 記憶體組，並實作 SHA-256 的 PCR 0 至 23。 可接受 TPM 隨附可同時用於 SHA-1 與 SHA-256 度量的單一可切換 PCR 記憶體組。  
->- 關閉 TPM 的 UEFI 選項並非必要。  
+> - 硬體架構的 TPM 必須實作 TPM 規格的 2.0 版。  
+> - 實作 2.0 版的 TPM 必須有一個 EK 憑證，這個憑證是由硬體廠商預先佈建至 TPM，或是可由裝置在第一次開機期間擷取。  
+> - 實作 2.0 版的 TPM 必須隨附 SHA-256 PCR 記憶體組，並實作 SHA-256 的 PCR 0 至 23。 可接受 TPM 隨附可同時用於 SHA-1 與 SHA-256 度量的單一可切換 PCR 記憶體組。  
+> - 關閉 TPM 的 UEFI 選項並非必要。  
 
 ## <a name="installation-of-nano-server"></a>安裝 Nano 伺服器  
 如需安裝 Windows Server 2016 作為 Nano 伺服器的詳細步驟，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)。
@@ -131,5 +127,5 @@ ms.locfileid: "59837309"
 ## <a name="additional-resources"></a>其他資源
 - [Windows 處理器需求](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Windows Server 2016 Standard 和 Datacenter 版本的比較](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
-- [Windows 10 系統需求 ](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
+- [Windows 10 系統需求](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
 - [下載 Windows Server 2016 授權資料工作表](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f9d6268777d0791dbc0cdca2d4318399378698b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 398d2fa47f2418aec910569c2eb85aec408ad482
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813489"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441597"
 ---
 # <a name="seceditexport"></a>secedit:export
 
@@ -30,7 +30,6 @@ ms.locfileid: "59813489"
 
 ```
 Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration file name> [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]
-
 ```
 
 ### <a name="parameters"></a>參數
@@ -48,7 +47,7 @@ Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration fil
 
 您可以使用此命令來備份您的安全性原則，除了將設定匯入另一部電腦的本機電腦上。
 
-如果記錄檔的路徑未提供，預設的記錄檔 (*systemroot*\Documents and 設定\*UserAccount*\My Documents\Security\Logs\*DatabaseName*。會使用記錄檔）。
+如果記錄檔的路徑未提供，預設的記錄檔 (*systemroot*\Documents and 設定\*UserAccount<em>\My Documents\Security\Logs\*DatabaseName</em>。會使用記錄檔）。
 
 在 Windows Server 2008、windows`Secedit /refreshpolicy`已取代為`gpupdate`。 如需如何重新整理的安全性設定資訊，請參閱[Gpupdate](gpupdate.md)。
 

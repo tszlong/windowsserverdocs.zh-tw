@@ -7,12 +7,12 @@ ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: ed3a3d4c5d0e55126f4dae8ecaf0ba1f32e46317
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dab27e71e42970507f321271edda90f6d161c691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820219"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447388"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主機守護者服務
 
@@ -221,7 +221,7 @@ Get-HgsKeyProtectionCertificate | Where-Object { $_.CertificateData.GetType().Na
 這些設定是很重要的一致性，但若要取得您的 HGS 叢集上線，在災害發生後就不再重要。
 
 若要擷取的 HGS 服務名稱，請執行`Get-HgsServer`並記下中證明與金鑰保護 Url 的一般名稱。
-比方說，如果證明 URL 為"http://hgs.contoso.com/Attestation"，"hgs 」 是 HGS 服務名稱。
+比方說，如果證明 URL 為"<http://hgs.contoso.com/Attestation>"，"hgs 」 是 HGS 服務名稱。
 
 由 HGS 的 Active Directory 網域應管理像是任何其他 Active Directory 網域。
 還原時 HGS 在災害發生後，您就不一定需要重新建立目前網域中存在的確切物件。
@@ -702,10 +702,10 @@ HGS 在節點上，執行下列步驟來註冊新的加密和簽章憑證組。
 10. 將更新的 KP 複製回到的主控網狀架構
 11. 適用於 KP 原始的 VM:
 
-    ```powershell
-    $updatedKP = Get-Content -Path .\updatedVM001.kp
-    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
-    ```
+   ```powershell
+   $updatedKP = Get-Content -Path .\updatedVM001.kp
+   Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
+   ```
 12. 最後，啟動 VM，並確認已順利執行。
 
 > [!NOTE]
@@ -718,10 +718,10 @@ HGS 在節點上，執行下列步驟來註冊新的加密和簽章憑證組。
 
 14. 執行下列命令來停用每個憑證：  
 
-    ```powershell
-    Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
-    Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
-    ```
+   ```powershell
+   Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
+   Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
+   ```
 
 15. Vm 皆開始仍然可以停用，將憑證從移除憑證 HGS 藉由執行下列命令：
 

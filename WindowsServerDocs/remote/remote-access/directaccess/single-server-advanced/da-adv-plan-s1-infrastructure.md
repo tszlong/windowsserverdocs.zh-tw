@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 01005b5d69a48b01a1735e690a4a97c46094da23
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: c3b7751ca6d0b62ee078d5da7084cbc007edc155
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266778"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805176"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步驟 1 規劃進階 DirectAccess 基礎結構
 
@@ -26,7 +26,7 @@ ms.locfileid: "66266778"
 
 為單一伺服器上的進階 DirectAccess 部署做規劃的第一步，就是規劃部署所需的基礎結構。 本主題描述基礎結構規劃步驟。 這些規劃工作不需要依特定的順序完成。  
   
-|工作|描述| 
+|工作|描述|
 |----|--------|  
 |[1.1 規劃網路拓撲與設定](#11-plan-network-topology-and-settings)|決定 DirectAccess 伺服器的放置位置 (在邊緣，或在「網路位址轉譯」(NAT) 裝置或防火牆後面)，並規劃 IP 位址指定、路由及強制通道。|  
 |[1.2 規劃防火牆需求](#12-plan-firewall-requirements)|為允許 DirectAccess 流量通過邊緣防火牆做規劃。|  
@@ -37,60 +37,63 @@ ms.locfileid: "66266778"
 |[1.7 規劃 Active Directory 網域服務](#17-plan-active-directory-domain-services)|為您的網域控制站、Active Directory 需求、用戶端驗證及多個網域做規劃。|  
 |[1.8 規劃群組原則物件](#18-plan-group-policy-objects)|決定您組織中所需的 GPO，以及如何建立或編輯 GPO。|  
   
-## <a name="11-plan-network-topology-and-settings"></a>1.1 規劃網路拓撲和設定  
+## <a name="11-plan-network-topology-and-settings"></a>1.1 規劃網路拓撲和設定
+
 本節說明如何為您的網路做規劃，包括：  
   
--   [1.1.1 規劃網路介面卡和 IP 位址](#111-plan-network-adapters-and-ip-addressing)  
+- [1.1.1 規劃網路介面卡和 IP 位址](#111-plan-network-adapters-and-ip-addressing)  
   
--   [1.1.2 規劃 IPv6 內部網路連線](#112-plan-ipv6-intranet-connectivity)  
+- [1.1.2 規劃 IPv6 內部網路連線](#112-plan-ipv6-intranet-connectivity)  
   
--   [1.1.3 為強制通道的計劃](#113-plan-for-force-tunneling)  
+- [1.1.3 為強制通道的計劃](#113-plan-for-force-tunneling)  
   
 ### <a name="111-plan-network-adapters-and-ip-addressing"></a>1.1.1 規劃網路介面卡和 IP 位址指定  
   
-1.  識別您想要使用的網路介面卡拓撲。 可以使用下列任一拓撲來設定 DirectAccess：  
+1. 識別您想要使用的網路介面卡拓撲。 可以使用下列任一拓撲來設定 DirectAccess：  
   
-    -   **兩張網路介面卡**。 DirectAccess 伺服器可以安裝在邊緣，其中一張網路介面卡連線到網際網路，另一張連線到內部網路；或是安裝在 NAT、防火牆或路由器裝置後面，其中一張網路介面卡連線到周邊網路，另一張連線到內部網路。  
+    - **兩張網路介面卡**。 DirectAccess 伺服器可以安裝在邊緣，其中一張網路介面卡連線到網際網路，另一張連線到內部網路；或是安裝在 NAT、防火牆或路由器裝置後面，其中一張網路介面卡連線到周邊網路，另一張連線到內部網路。  
   
-    -   **一張網路介面卡**。 DirectAccess 伺服器安裝在 NAT 裝置後面，並且單一網路介面卡連線到內部網路。  
+    - **一張網路介面卡**。 DirectAccess 伺服器安裝在 NAT 裝置後面，並且單一網路介面卡連線到內部網路。  
   
-2.  識別您的 IP 位址指定需求：  
+2. 識別您的 IP 位址指定需求：  
   
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 取而代之的是，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路 (藉由使用 6to4、Teredo 或 IP-HTTPS) 及透過僅支援 IPv4 的內部網路 (藉由使用 NAT64 或 ISATAP) 建立 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：  
   
-    -   [IPv6 轉換技術](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [IPv6 轉換技術](https://technet.microsoft.com/library/bb726951.aspx)  
   
-    -   [IP-HTTPS 通道通訊協定規格](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
+    - [IP-HTTPS 通道通訊協定規格](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
   
-3.  根據下表設定所需的介面卡和位址。 針對使用單一網路介面卡並設定在 NAT 裝置後面的部署，請只使用**內部網路介面卡**欄來設定您的 IP 位址。  
+3. 根據下表設定所需的介面卡和位址。 針對使用單一網路介面卡並設定在 NAT 裝置後面的部署，請只使用**內部網路介面卡**欄來設定您的 IP 位址。  
   
     ||外部網路介面卡|內部網路介面卡|路由需求|  
     |-|--------------|--------------|------------|  
-    |IPv4 網際網路和 IPv4 內部網路|請設定兩個靜態連續公用 IPv4 位址搭配適當的子網路遮罩 (只有 Teredo 才需要)。<br /><br />另外，也請設定網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。 **注意：** DirectAccess 伺服器需要兩個連續的公用 IPv4 位址，才能做為 Teredo 伺服器，而 Windows 型用戶端可以使用 DirectAccess 伺服器來偵測它們前方的 NAT 裝置的類型。|設定下列各項：<br /><br />-IPv4 內部網路位址搭配適當的子網路遮罩。<br />您的內部網路命名空間-連線特有 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意**：不要在任何 Intranet 接口上配置預設的閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br /><br />-列出您內部網路上的所有位置而言的 IPv4 位址空間。<br />-使用**路由加入-p**或**netsh interface ipv4 新增路由**命令來新增 IPv4 位址空間，做為 DirectAccess 伺服器之 IPv4 路由表中的靜態路由。|  
-    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br /><br />-使用您的 ISP 所提供的位址組態。<br />-使用**Route Print**命令，以確保預設 IPv6 路由存在，而且它指向 IPv6 路由表中的 ISP 路由器。<br />-判斷 ISP 和內部網路路由器是否正在使用 RFC 4191 中所述，並使用較高的預設喜好設定比您本機內部網路路由器的預設路由器喜好設定。<br />    如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br /><br />由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。|設定下列各項：<br /><br />-如果您不會使用預設的喜好設定等級，您可以使用下列命令來設定內部網路介面**netsh 介面 ipv6 set InterfaceIndex ignoredefaultroutes = 啟用**。<br />    這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以使用下列命令來取得您內部網路介面的介面索引：**netsh interface ipv6 show interface**。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br /><br />-列出您內部網路上的所有位置而言的 IPv6 位址空間。<br />-使用**netsh interface ipv6 新增路由**命令來新增 IPv6 位址空間，做為 DirectAccess 伺服器的 IPv6 路由表中的靜態路由。|  
-    |IPv4 網際網路和 IPv6 內部網路|DirectAccess 伺服器會透過 Microsoft 6to4 介面卡，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令來設定 DirectAccess 伺服器，為 Microsoft 6to4 介面卡的 IPv4 位址： **netsh interface ipv6 6to4 set relay =<ipaddress>狀態 = 已啟用**。|||  
+    |IPv4 網際網路和 IPv4 內部網路|請設定兩個靜態連續公用 IPv4 位址搭配適當的子網路遮罩 (只有 Teredo 才需要)。<br/><br/>另外，也請設定網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。 **注意：** DirectAccess 伺服器需要兩個連續的公用 IPv4 位址，才能做為 Teredo 伺服器，而 Windows 型用戶端可以使用 DirectAccess 伺服器來偵測它們前方的 NAT 裝置的類型。|設定下列各項：<br/><br/>-IPv4 內部網路位址搭配適當的子網路遮罩。<br/>您的內部網路命名空間-連線特有 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意**：不要在任何 Intranet 接口上配置預設的閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br/><br/>-列出您內部網路上的所有位置而言的 IPv4 位址空間。<br/>-使用**路由加入-p**或**netsh interface ipv4 新增路由**命令來新增 IPv4 位址空間，做為 DirectAccess 伺服器之 IPv4 路由表中的靜態路由。|  
+    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br/><br/>-使用您的 ISP 所提供的位址組態。<br/>-使用**Route Print**命令，以確保預設 IPv6 路由存在，而且它指向 IPv6 路由表中的 ISP 路由器。<br/>-判斷 ISP 和內部網路路由器是否正在使用 RFC 4191 中所述，並使用較高的預設喜好設定比您本機內部網路路由器的預設路由器喜好設定。<br/>    如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。|設定下列各項：<br/><br/>-如果您不會使用預設的喜好設定等級，您可以使用下列命令來設定內部網路介面**netsh 介面 ipv6 set InterfaceIndex ignoredefaultroutes = 啟用**。<br/>    這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以使用下列命令來取得您內部網路介面的介面索引：**netsh interface ipv6 show interface**。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出您內部網路上的所有位置而言的 IPv6 位址空間。<br/>-使用**netsh interface ipv6 新增路由**命令來新增 IPv6 位址空間，做為 DirectAccess 伺服器的 IPv6 路由表中的靜態路由。|  
+    |IPv4 網際網路和 IPv6 內部網路|DirectAccess 伺服器會透過 Microsoft 6to4 介面卡，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令為 Microsoft 6to4 介面卡的 IPv4 位址設定 DirectAccess 伺服器：`netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`。|||  
   
     > [!NOTE]  
-    > -   如果 DirectAccess 用戶端已被指派公用的 IPv4 位址，它會使用 6to4 轉換技術連線到內部網路。 如果它被指派私人 IPv4 位址，則會使用 Teredo。 如果 DirectAccess 用戶端無法使用 6to4 或 Teredo 連線到 DirectAccess 伺服器，則會使用 IP-HTTPS。  
-    > -   若要使用 Teredo，您必須在對外網路介面卡上設定兩個連續的 IP 位址。  
-    > -   如果 DirectAccess 伺服器只有一張網路介面卡，您就無法使用 Teredo。  
-    > -   原生 IPv6 用戶端電腦不需要任何轉換技術，即可透過原生 IPv6 連線到 DirectAccess 伺服器。  
+    > - 如果 DirectAccess 用戶端已被指派公用的 IPv4 位址，它會使用 6to4 轉換技術連線到內部網路。 如果它被指派私人 IPv4 位址，則會使用 Teredo。 如果 DirectAccess 用戶端無法使用 6to4 或 Teredo 連線到 DirectAccess 伺服器，則會使用 IP-HTTPS。  
+    > - 若要使用 Teredo，您必須在對外網路介面卡上設定兩個連續的 IP 位址。  
+    > - 如果 DirectAccess 伺服器只有一張網路介面卡，您就無法使用 Teredo。  
+    > - 原生 IPv6 用戶端電腦不需要任何轉換技術，即可透過原生 IPv6 連線到 DirectAccess 伺服器。  
   
-### <a name="112-plan-ipv6-intranet-connectivity"></a>1.1.2 規劃 IPv6 內部網路連線  
+### <a name="112-plan-ipv6-intranet-connectivity"></a>1.1.2 規劃 IPv6 內部網路連線
+
 若要管理遠端 DirectAccess 用戶端，就必須使用 IPv6。 IPv6 可讓 DirectAccess 管理伺服器連線到位於網際網路上的 DirectAccess 用戶端來進行遠端管理。  
   
 > [!NOTE]  
-> -   若要支援 DirectAccess 用戶端電腦對您組織網路上的 IPv4 資源起始的連線，並不需要在您的網路上使用 IPv6。 針對這個目的，會使用 NAT64/DNS64。  
-> -   如果您並不管理遠端 DirectAccess 用戶端，就不需要部署 IPv6。  
-> -   在 DirectAccess 部署中不支援內部網站自動通道定址通訊協定 (ISATAP)。  
-> -   使用 IPv6 時，您可以使用下列 Windows PowerShell 命令啟用 DNS64 的 IPv6 主機 (AAAA) 資源記錄查詢： **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**。  
+> - 若要支援 DirectAccess 用戶端電腦對您組織網路上的 IPv4 資源起始的連線，並不需要在您的網路上使用 IPv6。 針對這個目的，會使用 NAT64/DNS64。  
+> - 如果您並不管理遠端 DirectAccess 用戶端，就不需要部署 IPv6。  
+> - 在 DirectAccess 部署中不支援內部網站自動通道定址通訊協定 (ISATAP)。  
+> - 使用 IPv6 時，您可以使用下列 Windows PowerShell 命令啟用 DNS64 的 IPv6 主機 (AAAA) 資源記錄查詢： **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**。  
   
-### <a name="113-plan-for-force-tunneling"></a>1.1.3 為強制通道做規劃  
+### <a name="113-plan-for-force-tunneling"></a>1.1.3 為強制通道做規劃
+
 使用 IPv6 和「名稱解析原則表格」(NRPT) 時，DirectAccess 用戶端預設會分隔其內部網路和網際網路流量，如下所示：  
   
--   DNS 名稱會查詢內部網路完整網域名稱 (FQDN)，並透過在 DirectAccess 伺服器建立的通道，或直接與內部網路伺服器，交換所有內部網路流量。 來自 DirectAccess 用戶端的內部網路流量是 IPv6 流量。  
+- DNS 名稱會查詢內部網路完整網域名稱 (FQDN)，並透過在 DirectAccess 伺服器建立的通道，或直接與內部網路伺服器，交換所有內部網路流量。 來自 DirectAccess 用戶端的內部網路流量是 IPv6 流量。  
   
--   DNS 名稱會查詢與豁免規則對應或不符合內部網路命名空間的 FQDN，並透過連線到網際網路的實體介面，交換所有連到網際網路伺服器的流量。 來自 DirectAccess 用戶端的內部網路流量通常是 IPv4 流量。  
+- DNS 名稱會查詢與豁免規則對應或不符合內部網路命名空間的 FQDN，並透過連線到網際網路的實體介面，交換所有連到網際網路伺服器的流量。 來自 DirectAccess 用戶端的內部網路流量通常是 IPv4 流量。  
   
 相對地，根據預設，某些遠端存取虛擬私人網路 (VPN) 實作 (包括 VPN 用戶端) 會透過遠端存取 VPN 連線，傳送所有內部網路和網際網路流量。 VPN 伺服器會將網際網路繫結流量路由傳送到內部網路 IPv4 Web Proxy 伺服器，以存取 IPv4 網際網路資源。 使用分割通道來分隔遠端存取 VPN 用戶端的內部網路和網際網路流量是可行的。 這牽涉到在 VPN 用戶端上設定「網際網路通訊協定」(IP) 路由表，以便透過 VPN 連線傳送連到內部網路位置的流量，以及使用連線到網際網路的實體介面傳送連到所有其他位置的流量。  
   
@@ -101,28 +104,29 @@ ms.locfileid: "66266778"
   
 啟用強制通道的後果如下：  
   
--   DirectAccess 用戶端只會使用「透過安全超文字傳輸通訊協定的網際網路通訊協定」(IP-HTTPS)，來透過 IPv4 網際網路取得對 DirectAccess 伺服器的 IPv6 連線能力。  
+- DirectAccess 用戶端只會使用「透過安全超文字傳輸通訊協定的網際網路通訊協定」(IP-HTTPS)，來透過 IPv4 網際網路取得對 DirectAccess 伺服器的 IPv6 連線能力。  
   
--   DirectAccess 用戶端預設可以透過 IPv4 流量連線的唯一位置就是其本機子網路上的位置。 在 DirectAccess 用戶端上執行的應用程式和服務所傳送的所有其他流量都是 IPv6 流量，這些流量皆透過 DirectAccess 連線傳送。 因此，DirectAccess 用戶端上只支援 IPv4 的應用程式無法用來連線到網際網路資源 (除了本機子網路上的資源之外)。  
+- DirectAccess 用戶端預設可以透過 IPv4 流量連線的唯一位置就是其本機子網路上的位置。 在 DirectAccess 用戶端上執行的應用程式和服務所傳送的所有其他流量都是 IPv6 流量，這些流量皆透過 DirectAccess 連線傳送。 因此，DirectAccess 用戶端上只支援 IPv4 的應用程式無法用來連線到網際網路資源 (除了本機子網路上的資源之外)。  
   
 > [!IMPORTANT]  
 > 針對透過 DNS64 和 NAT64 的通道強制，必須實作 IPv6 網際網路連線。 其中一個可達成此目的的方法就是將 IP-HTTPS 首碼設定為可全域路由傳送，以便能夠透過 IPv6 連線到 ipv6.msftncsi.com，以及透過 DirectAccess 伺服器傳回網際網路伺服器對 IP-HTTPS 用戶端的回應。  
->   
+>
 > 由於這在大多數情況下並不可行，因此最好的選擇是在企業網路內建立虛擬 NCSI 伺服器，如下所示：  
->   
-> 1.  為 ipv6.msftncsi.com 新增一個 NRPT 項目，並依據 DNS64 將它解析為內部網站 (可以是 IPv4 網站)。  
-> 2.  為 dns.msftncsi.com 新增一個 NRPT 項目，並在公司 DNS 伺服器解析它，以傳回 IPv6 主機 (AAAA) 資源記錄 fd3e:4f5a:5b81::1。 (只使用 DNS64 來傳送這個 FQDN 的主機 (A) 資源記錄的查詢可能沒有作用，因為它是在僅支援 IPv4 的部署中設定的，因此您應該將它設定為直接在公司 DNS 解析)。  
+>
+> 1. 為 ipv6.msftncsi.com 新增一個 NRPT 項目，並依據 DNS64 將它解析為內部網站 (可以是 IPv4 網站)。  
+> 2. 為 dns.msftncsi.com 新增一個 NRPT 項目，並在公司 DNS 伺服器解析它，以傳回 IPv6 主機 (AAAA) 資源記錄 fd3e:4f5a:5b81::1。 (只使用 DNS64 來傳送這個 FQDN 的主機 (A) 資源記錄的查詢可能沒有作用，因為它是在僅支援 IPv4 的部署中設定的，因此您應該將它設定為直接在公司 DNS 解析)。  
   
-## <a name="12-plan-firewall-requirements"></a>1.2 規劃防火牆需求  
+## <a name="12-plan-firewall-requirements"></a>1.2 規劃防火牆需求
+
 如果 DirectAccess 伺服器是在邊緣防火牆後面，當 DirectAccess 伺服器位於 IPv4 網際網路上時，必須為「遠端存取」流量設定下列例外：  
   
--   Teredo 流量-使用者資料包通訊協定 (UDP) 目的地連接埠 3544 輸入，及 UDP 來源連接埠 3544 輸出。  
+- Teredo 流量-使用者資料包通訊協定 (UDP) 目的地連接埠 3544 輸入，及 UDP 來源連接埠 3544 輸出。  
   
--   6to4 流量-IP 通訊協定 41 輸入和輸出。  
+- 6to4 流量-IP 通訊協定 41 輸入和輸出。  
   
--   IP HTTPS 傳輸控制通訊協定 (TCP) 目的地連接埠 443 和 TCP 來源連接埠 443 輸出。  
+- IP HTTPS 傳輸控制通訊協定 (TCP) 目的地連接埠 443 和 TCP 來源連接埠 443 輸出。  
   
--   如果您是以單一網路介面卡部署「遠端存取」，並且將網路位置伺服器安裝在 DirectAccess 伺服器上，則也應該豁免 TCP 連接埠 62000。  
+- 如果您是以單一網路介面卡部署「遠端存取」，並且將網路位置伺服器安裝在 DirectAccess 伺服器上，則也應該豁免 TCP 連接埠 62000。  
   
     > [!NOTE]  
     > 這個豁免是在 DirectAccess 伺服器上，而所有其他豁免則是在邊緣防火牆上。  
@@ -131,24 +135,25 @@ ms.locfileid: "66266778"
   
 當 DirectAccess 伺服器位於 IPv6 網際網路上時，必須為「遠端存取」流量設定下列例外：  
   
--   IP 通訊協定識別碼 50  
+- IP 通訊協定識別碼 50  
   
--   UDP 目的地連接埠 500 輸入和 UDP 來源連接埠 500 輸出。  
+- UDP 目的地連接埠 500 輸入和 UDP 來源連接埠 500 輸出。  
   
--   ICMPv6 流量輸入和輸出 (僅使用 Teredo 時)  
+- ICMPv6 流量輸入和輸出 (僅使用 Teredo 時)  
   
 使用額外的防火牆時，請為「遠端存取」流量套用下列內部網路防火牆例外：  
   
--   ISATAP-通訊協定 41 輸入和輸出  
+- ISATAP-通訊協定 41 輸入和輸出  
   
--   所有 IPv4 和 IPv6 流量的 TCP/UDP  
+- 所有 IPv4 和 IPv6 流量的 TCP/UDP  
   
--   所有 IPv4 和 IPv6 流量的 ICMP (僅使用 Teredo 時)  
+- 所有 IPv4 和 IPv6 流量的 ICMP (僅使用 Teredo 時)  
   
-## <a name="13-plan-certificate-requirements"></a>1.3 規劃憑證需求  
+## <a name="13-plan-certificate-requirements"></a>1.3 規劃憑證需求
+
 部署單一 DirectAccess 伺服器時，有三種情況需要憑證：  
   
--   [1.3.1 規劃用於 IPsec 驗證的電腦憑證](#131-plan-computer-certificates-for-ipsec-authentication)  
+- [1.3.1 規劃用於 IPsec 驗證的電腦憑證](#131-plan-computer-certificates-for-ipsec-authentication)  
   
     IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAccess 伺服器之間建立 IPsec 連線時所使用的電腦憑證，以及 DirectAccess 伺服器用來與 DirectAccess 用戶端建立 IPsec 連線的電腦憑證。  
   
@@ -166,9 +171,9 @@ ms.locfileid: "66266778"
   
 |IPsec 驗證|IP-HTTPS 伺服器|網路位置伺服器|  
 |------------|----------|--------------|  
-|內部 CA，才能使用電腦憑證簽發給 DirectAccess 伺服器和用戶端進行 IPsec 驗證，當您不使用 Kerberos proxy 進行驗證|內部 CA：<br /><br />您可以使用內部 CA 來簽發 IP-HTTPS 憑證；不過，您必須確定外部可以使用 CRL 發佈點。|內部 CA：<br /><br />您可以使用內部 CA 來簽發網路位置伺服器網站憑證。 請確定 CRL 發佈點在內部網路具有高可用性。|  
-||自我簽署憑證：<br /><br />您可以將自我簽署憑證用於 IP-HTTPS 伺服器；不過，您必須確定外部可以使用 CRL 發佈點。<br /><br />自我簽署憑證無法在多站台部署中使用。|自我簽署憑證：<br /><br />您可以將自我簽署憑證用於網路位置伺服器網站。<br /><br />自我簽署憑證無法在多站台部署中使用。|  
-||**建議**<br /><br />公用 CA：<br /><br />建議使用公用 CA 來簽發 IP-HTTPS 憑證。 這可確保外部可以使用 CRL 發佈點。|  
+|內部 CA，才能使用電腦憑證簽發給 DirectAccess 伺服器和用戶端進行 IPsec 驗證，當您不使用 Kerberos proxy 進行驗證|內部 CA：<br/><br/>您可以使用內部 CA 來簽發 IP-HTTPS 憑證；不過，您必須確定外部可以使用 CRL 發佈點。|內部 CA：<br/><br/>您可以使用內部 CA 來簽發網路位置伺服器網站憑證。 請確定 CRL 發佈點在內部網路具有高可用性。|  
+||自我簽署憑證：<br/><br/>您可以將自我簽署憑證用於 IP-HTTPS 伺服器；不過，您必須確定外部可以使用 CRL 發佈點。<br/><br/>自我簽署憑證無法在多站台部署中使用。|自我簽署憑證：<br/><br/>您可以將自我簽署憑證用於網路位置伺服器網站。<br/><br/>自我簽署憑證無法在多站台部署中使用。|  
+||**建議**<br/><br/>公用 CA：<br/><br/>建議使用公用 CA 來簽發 IP-HTTPS 憑證。 這可確保外部可以使用 CRL 發佈點。|  
   
 ### <a name="131-plan-computer-certificates-for-ipsec-authentication"></a>1.3.1 規劃用於 IPsec 驗證的電腦憑證  
 如果您使用憑證式 IPsec 驗證，DirectAccess 伺服器和用戶端都必須取得電腦憑證。 安裝憑證的最簡單方式就是為電腦憑證設定群組原則型自動註冊。 這可確保所有網域成員都會從企業 CA 取得憑證。 如果您的組織中並未設定企業 CA，請參閱 [Active Directory 憑證服務](https://technet.microsoft.com/library/cc770357.aspx)。  
@@ -313,7 +318,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 -   如果連線不成功，用戶端就會被視為位於網際網路上，而 DirectAccess 用戶端將會使用名稱解析原則表格 (NRPT) 來判斷要使用哪一個 DNS 伺服器來解析名稱要求。  
   
-您可以指定用戶端使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱這類 https://internal。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS64 或內部網路上的 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
+您可以指定用戶端使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱這類<https://internal>。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS64 或內部網路上的 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
   
 > [!NOTE]  
 > 請注意，在「遠端存取管理主控台」中將新尾碼新增到 NRPT 中時，只要按一下 [偵測]  ，即可自動探索到該尾碼的預設 DNS 伺服器。  
@@ -332,7 +337,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
     -   DNS 尾碼規則 - 用於根網域或 DirectAccess 伺服器的網域名稱，以及與 DNS64 位址對應的 IPv6 位址。 在僅支援 IPv6 的公司網路中，是在 DirectAccess 伺服器上設定內部網路 DNS 伺服器。 例如，如果 DirectAccess 伺服器是 corp.contoso.com 網域的成員，就會為 corp.contoso.com DNS 尾碼建立規則。  
   
-    -   網路位置伺服器之 FQDN 的豁免規則。 比方說，如果網路位置伺服器 URL 為 https://nls.corp.contoso.com，為 FQDN nls.corp.contoso.com 建立豁免規則。  
+    -   網路位置伺服器之 FQDN 的豁免規則。 比方說，如果網路位置伺服器 URL 為<https://nls.corp.contoso.com>，為 FQDN nls.corp.contoso.com 建立豁免規則。  
   
 -   **IP-HTTPS 伺服器**  
   
@@ -371,7 +376,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 -   使用支援動態更新的 DNS 伺服器。 您可以使用不支援動態更新的 DNS 伺服器，但是您必須手動更新這些伺服器上的項目。  
   
--   必須可以使用 DNS 伺服器來解析可透過網際網路存取之 CRL 發佈點的 FQDN。 比方說，如果 URL https://crl.contoso.com/crld/corp-DC1-CA.crl處於**CRL 發佈點**欄位的 IP-HTTPS 憑證的 DirectAccess 伺服器，您必須確定，解析 FQDN crld.contoso.com 使用網際網路 DNS 伺服器。  
+-   必須可以使用 DNS 伺服器來解析可透過網際網路存取之 CRL 發佈點的 FQDN。 比方說，如果 URL<https://crl.contoso.com/crld/corp-DC1-CA.crl>處於**CRL 發佈點**欄位的 IP-HTTPS 憑證的 DirectAccess 伺服器，您必須確定，解析 FQDN crld.contoso.com 使用網際網路 DNS 伺服器。  
   
 ### <a name="142-plan-for-local-name-resolution"></a>1.4.2 為本機名稱解析做規劃  
 為本機名稱解析做規劃時，請考量下列問題：  
@@ -392,7 +397,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 **單一標籤名稱**  
   
-單一標籤名稱，例如 https://paycheck，有時會用於內部網路伺服器。 如果要求的是單一標籤名稱，並且已設定 DNS 尾碼搜尋清單，系統就會將清單中的 DNS 尾碼附加到單一標籤名稱。 比方說，當電腦上的使用者，會為 corp.contoso.com 的網域類型的成員 https://paycheck在網頁瀏覽器中，會建構為名稱的 FQDN 會是 paycheck.corp.contoso.com。 附加的尾碼預設會根據用戶端電腦的主要 DNS 尾碼。  
+單一標籤名稱，例如<https://paycheck>，有時會用於內部網路伺服器。 如果要求的是單一標籤名稱，並且已設定 DNS 尾碼搜尋清單，系統就會將清單中的 DNS 尾碼附加到單一標籤名稱。 比方說，當電腦上的使用者，會為 corp.contoso.com 的網域類型的成員<https://paycheck>在網頁瀏覽器中，會建構為名稱的 FQDN 會是 paycheck.corp.contoso.com。 附加的尾碼預設會根據用戶端電腦的主要 DNS 尾碼。  
   
 > [!NOTE]  
 > 在不相鄰的名稱空間案例中 (其中一或多部網域電腦有不符合電腦所屬 Active Directory 網域的 DNS 尾碼)，您應該確保搜尋清單已自訂為包含所有必要的尾碼。 「遠端存取精靈」預設會將 Active Directory DNS 名稱設定為用戶端上的主要 DNS 尾碼。 請務必新增用戶端用來進行名稱解析的 DNS 尾碼。  
@@ -645,7 +650,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 -   若要在 Windows PowerShell 中這麼做，請為 **Open-NetGPO** Cmdlet 指定 **DomainController** 參數 。 例如，若要使用名為 europe-dc.corp.contoso.com 的網域控制站，在名為 domain1\DA_Server_GPO _Europe 的 GPO 上啟用 Windows 防火牆中的私人和公用設定檔，請輸入：  
   
-    ```  
+    ```powershell
     $gpoSession = Open-NetGPO -PolicyStore "domain1\DA_Server_GPO _Europe" -DomainController "europe-dc.corp.contoso.com"  
     Set-NetFirewallProfile -GpoSession $gpoSession -Name @("Private","Public") -Enabled True  
     Save-NetGPO -GpoSession $gpoSession  
@@ -671,7 +676,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 從已刪除的 GPO 復原  
 如果不小心刪除了某個用戶端、DirectAccess 伺服器或應用程式伺服器 GPO，而且沒有備份可用，您就必須移除組態設定，然後重新設定。 如果有備份可用，您便可以從備份還原 GPO。  
   
-[遠端存取管理主控台] 會顯示下列錯誤訊息：**GPO<GPO name>找不到**。 若要移除組態設定，請執行下列步驟：  
+[遠端存取管理主控台] 會顯示下列錯誤訊息：**找不到 GPO （GPO 名稱）** 。 若要移除組態設定，請執行下列步驟：  
   
 1.  執行 Windows PowerShell Cmdlet **Uninstall-remoteaccess**。  
   
@@ -679,7 +684,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]  。 完成之後，伺服器將會還原到未設定的狀態。  
   
-## <a name="next-step"></a>後續步驟  
+## <a name="next-steps"></a>後續步驟  
   
 -   [步驟 2：規劃 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
   

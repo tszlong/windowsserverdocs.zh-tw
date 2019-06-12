@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5f2c3ec4b2c434ea945d86c4b1593e2e416a5123
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40c0f6df31061268b1e1ef8c15b0a02b0f50b0de
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819229"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447470"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>針對受防護主機的必要條件
 
@@ -45,15 +45,15 @@ ms.locfileid: "59819229"
 > 主機守護者 HYPER-V 支援功能可讓虛擬化保護可能與某些裝置不相容的程式碼完整性。 我們強烈建議您在實驗室中測試此組態，再啟用這項功能。 若未能這麼做，可能會造成非預期的失敗，最嚴重可能包括資料遺失或藍色畫面錯誤 (也稱為停止錯誤)。 如需詳細資訊，請參閱 <<c0> [ 相容的硬體與 Windows Server 虛擬化保護的程式碼完整性](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)。
 
 **下一個步驟：** 
->[!div class="nextstepaction"]
-[擷取 TPM 資訊](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
+> [!div class="nextstepaction"]
+> [擷取 TPM 資訊](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
 
 ## <a name="host-key-attestation"></a>主機金鑰證明
 
 使用主機金鑰證明的受防護的主機必須符合下列必要條件：
 
 - **硬體**:任何伺服器，可使用 Windows Server 2019 執行 HYPER-V 的開頭
-- **作業系統**:Windows Server 2019 Datacenter edition
+- **作業系統**:Windows Server 2019 Datacenter 版本
 - **角色和功能**:HYPER-V 角色和主機守護者 HYPER-V 支援功能 
 
 主機可聯結至網域或工作群組。 
@@ -61,8 +61,8 @@ ms.locfileid: "59819229"
 針對主機金鑰證明，必須執行 Windows Server 2019 和作業的 v2 證明 HGS。 如需詳細資訊，請參閱[HGS 必要條件](guarded-fabric-prepare-for-hgs.md#prerequisites)。 
 
 **下一個步驟：** 
->[!div class="nextstepaction"]
-[建立金鑰組](guarded-fabric-create-host-key.md)
+> [!div class="nextstepaction"]
+> [建立金鑰組](guarded-fabric-create-host-key.md)
 
 ## <a name="admin-trusted-attestation"></a>系統管理信任證明
 
@@ -84,5 +84,5 @@ HYPER-V 主機必須符合下列必要條件為 AD 模式：
 > 主機守護者 HYPER-V 支援功能可讓虛擬化保護可能與某些裝置不相容的程式碼完整性。 我們強烈建議您在實驗室中測試此組態，再啟用這項功能。 若未能這麼做，可能會造成非預期的失敗，最嚴重可能包括資料遺失或藍色畫面錯誤 (也稱為停止錯誤)。 如需詳細資訊，請參閱 <<c0> [ 相容的硬體與 Windows Server 2016 的虛擬化保護的程式碼完整性](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)。
 
 **下一個步驟：** 
->[!div class="nextstepaction"]
-[在安全性群組中放置受防護的主機](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
+> [!div class="nextstepaction"]
+> [在安全性群組中放置受防護的主機](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)

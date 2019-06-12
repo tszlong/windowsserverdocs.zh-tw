@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 625d71edd00ce404cee9525e06a2237d8be4cfcb
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: dee19cd5a30b7d913a7faeeaa38368cee8a91895
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976465"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442290"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服務的通道：LTSC 和 SAC
 
@@ -52,14 +52,15 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 下表摘要說明通道間的主要差異：
 
-|  | 長期維護通道 (Windows Server 2019) |半年通道 (Windows Server) |
-| ------------------- | ------------------------------------ | ------------------------------------------------- |
-|建議的案例 | 一般用途檔案伺服器、Microsoft 和非 Microsoft 工作負載、傳統應用程式、基礎結構角色、軟體定義資料中心以及超融合式基礎結構 | 容器化應用程式、容器主機，以及因加快創新而受益的應用程式案例 |
-| 最新發行 | 每隔 2-3 年一次 |每隔 6 個月一次 |
-| 支援 |5 年主要支援，加上 5 年延伸支援 | 18 個月 |
-| 版本 | 所有可用的 Windows Server 版本 | Standard 和 Datacenter Edition |
-| 誰可以使用 | 透過所有通道更新的所有客戶 | 僅限軟體保證與雲端客戶 |
-| 安裝選項 | Server Core 以及具備桌面體驗的伺服器 | 適用於容器主機和映像以及 Nano Server 容器映像的 Server Core |                |
+
+|                       |                                                              長期維護通道 (Windows Server 2019)                                                               |                                   半年通道 (Windows Server)                                   |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| 建議的案例 | 一般用途檔案伺服器、Microsoft 和非 Microsoft 工作負載、傳統應用程式、基礎結構角色、軟體定義資料中心以及超融合式基礎結構 | 容器化應用程式、容器主機，以及因加快創新而受益的應用程式案例 |
+|     最新發行      |                                                                               每隔 2-3 年一次                                                                                |                                              每隔 6 個月一次                                              |
+|        支援        |                                                       5 年主要支援，加上 5 年延伸支援                                                        |                                                18 個月                                                 |
+|       版本        |                                                                    所有可用的 Windows Server 版本                                                                     |                                     Standard 和 Datacenter Edition                                     |
+|      誰可以使用      |                                                                      透過所有通道更新的所有客戶                                                                      |                               僅限軟體保證與雲端客戶                                |
+| 安裝選項  |                                                                Server Core 以及具備桌面體驗的伺服器                                                                |                 適用於容器主機和映像以及 Nano Server 容器映像的 Server Core                 |
 
 ## <a name="device-compatibility"></a>裝置相容性
 

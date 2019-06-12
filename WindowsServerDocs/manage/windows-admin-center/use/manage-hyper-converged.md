@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
-ms.date: 02/11/2019
+ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 4d849120d2daaa40cb797cc5e7d4c23c74da5bb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fe00072932d9c7f283ebd887a5292ac9a9d0e37f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874259"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446037"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>管理超融合部署基礎結構與 Windows Admin Center
 
@@ -21,7 +21,7 @@ ms.locfileid: "59874259"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>什麼是 Hyper-Converged 基礎結構
 
-軟體定義的計算、 儲存體和網路來連線到一個叢集以提供高效能、 符合成本效益，並可輕鬆擴充的虛擬化，則會合併超交集基礎結構。 這項功能在具有 Windows Server 2016 引進[儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)並[HYPER-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)。
+軟體定義的計算、 儲存體和網路來連線到一個叢集以提供高效能、 符合成本效益，並可輕鬆擴充的虛擬化，則會合併超交集基礎結構。 這項功能在具有 Windows Server 2016 引進[儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)，[軟體定義網路](https://docs.microsoft.com/en-us/windows-server/networking/sdn/software-defined-networking)並[HYPER-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)。
 
 > [!Tip]
 > 要取得 Hyper-Converged 基礎結構嗎？ Microsoft 建議這些[Windows Server 軟體定義](https://microsoft.com/wssd)來自合作夥伴解決方案。 它們是設計、 組合和針對我們參考架構，以確保相容性和可靠性，讓您快速並執行驗證。
@@ -31,7 +31,7 @@ ms.locfileid: "59874259"
 
 ## <a name="what-is-windows-admin-center"></a>什麼是 Windows Admin Center
 
-[Windows Admin Center](../understand/windows-admin-center.md)適用於 Windows Server，傳統的 「 現成 」 工具和伺服器管理員一樣的後續版本會為下一代的管理工具。 它是免費的可以安裝及使用沒有網際網路連線。 您可以使用 Windows Admin Center 來管理和監視執行 Windows Server 2016 或 Windows Server 2019 Insider Preview 組建的 Hyper-Converged 基礎結構。
+[Windows Admin Center](../understand/windows-admin-center.md)適用於 Windows Server，傳統的 「 現成 」 工具和伺服器管理員一樣的後續版本會為下一代的管理工具。 它是免費的可以安裝及使用沒有網際網路連線。 您可以使用 Windows Admin Center 來管理和監視執行 Windows Server 2016 或 Windows Server 2019 Hyper-Converged 基礎結構。
 
 ![超交集叢集儀表板](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
@@ -42,13 +42,13 @@ Windows Admin Center Hyper-Converged 基礎結構的重點包括：
 - **統一的單一-窗格-的-玻璃計算、 儲存體和推出的網路。** 檢視您的虛擬機器、 主機伺服器、 磁碟區、 磁碟機，以及一個特殊用途、 一致、 互連的體驗中的多個。
 - **建立和管理儲存空間 」 與 「 HYPER-V 虛擬機器。** 若要建立、 開啟、 調整大小，並刪除磁碟區; 徹底簡化工作流程和建立、 啟動、 連線，並移動虛擬機器;另外還有更多功能。
 - **功能強大的全叢集監視。** 儀表板圖形記憶體和 CPU 使用量、 儲存體容量、 IOPS、 輸送量和延遲即時的方式，跨每一部伺服器在叢集中，清除警示時有問題。
-- **軟體定義網路 (SDN) 支援。（新功能 Windows Admin Center 預覽）** 管理及監控虛擬網路，子網路、 虛擬機器連線至虛擬網路和監視 SDN 基礎結構。
+- **軟體定義網路 (SDN) 支援。** 管理和監視虛擬網路、 子網路、 虛擬機器連線至虛擬網路，和監視 SDN 基礎結構。
 
 Hyper-Converged 基礎結構的 Windows Admin Center 是由 Microsoft 主動開發。 它會接收頻繁的更新，改善現有功能，並加入新功能。
 
 ## <a name="before-you-start"></a>開始之前
 
-若要以 Windows Admin Center Hyper-Converged 基礎結構中管理您的叢集，它必須執行 Windows Server 2016 或 Windows Server 2019，預覽組建，並為 HYPER-V 和儲存空間直接存取啟用。
+若要以 Windows Admin Center Hyper-Converged 基礎結構中管理您的叢集，它必須執行 Windows Server 2016 或 Windows Server 2019，並為 HYPER-V 和儲存空間直接存取啟用。 或者，它也可以讓軟體定義網路啟用和管理透過 Windows Admin Center。
 
 > [!Tip]
 > Windows Admin Center 也會提供一般用途的管理體驗 Windows Server 2012 和更新版本支援的任何工作負載，可以使用任何叢集。 如果這聽起來比較適合，像是 Windows Admin Center 中加入您的叢集時，選取[**容錯移轉叢集中**](manage-failover-clusters.md)而非**Hyper-Converged 叢集**。
@@ -67,14 +67,9 @@ Hyper-Converged 基礎結構的 Windows Admin Center 取決於 Windows Server 20
 > [!Tip]
 > 您只需要在叢集中的任何伺服器上一次，執行 cmdlet。 您可以在本機 Windows PowerShell 中執行，或使用認證安全性服務提供者 (CredSSP) 從遠端執行它。 根據您的設定，您可能無法執行此 cmdlet 從 Windows Admin Center 內。
 
-> [!Important]
-> 部署非英文地區設定中，有是防止儀表板載入 （僅限第一次） 的 Windows Admin Center 1804年版中的已知的問題。 因應措施是執行`Add-ClusterResource -Name 'SDDC Management' -Group 'Cluster Group' -ResourceType 'SDDC Management'`取代 *'叢集群組'* 使用的當地語系化名稱，例如 *'群組 du 叢集'* 以法文顯示。 將在下一次更新中解決這個問題。
->
-> **更新：** 這現在已經修正 Windows Admin Center 預覽版 1806年。
-
 ### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>Windows Admin Center 準備您的 Windows Server 2019 叢集
 
-如果您的叢集執行的 Windows Server 2019 Insider Preview 組建，上述步驟不是必要的。 只要將叢集新增至 Windows Admin Center，在下一節中所述，您都已就緒 ！ [下載最新的預覽組建的 Windows Server 2019](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)。
+如果您的叢集是執行 Windows Server 2019，上述步驟不是必要的。 只要將叢集新增至 Windows Admin Center，在下一節中所述，您都已就緒 ！
 
 ### <a name="configure-software-defined-networking-optional"></a>設定軟體定義網路 （選擇性） ###
 
@@ -84,9 +79,9 @@ Hyper-Converged 基礎結構的 Windows Admin Center 取決於 Windows Server 20
 2. 下載的所有資料夾和檔案在 SDN Express 從[ https://github.com/Microsoft/SDN/tree/master/SDNExpress ](https://github.com/Microsoft/SDN/tree/master/SDNExpress)。
 3. 準備使用部署主控台的不同 VM。 此 VM 應該能夠存取 SDN 的主機。 此外，VM 也應該已安裝 RSAT HYPER-V 工具。
 4. 複製您下載適用於 SDN Express 部署主控台 VM 的所有項目。 及分享此消息**SDNExpress**資料夾。 請確定每個主機可以存取**SDNExpress**共用資料夾中，所定義的組態檔的行 8 中：
-```
+   ```
     \\$env:Computername\SDNExpress
-```
+   ```
 5. 複製的 os VHD**映像**下方的資料夾**SDNExpress**部署主控台 VM 上的資料夾。
 6. 修改您的環境設定 SDN Express 組態。 修改您環境的資訊為基礎的 SDN Express 組態之後，請完成下列兩個步驟。
 7. 執行 PowerShell 部署 SDN 的系統管理員權限：
@@ -138,9 +133,9 @@ Hyper-Converged 基礎結構部署之後，您可以將使用 Windows Admin Cent
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
-### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019-insider-preview"></a>是否有任何差別管理 Windows Server 2016 和 Windows Server 2019 Insider Preview？
+### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>是否有任何差別管理 Windows Server 2016 和 Windows Server 2019？
 
-是的。 Hyper-Converged 基礎結構的 Windows Admin Center 接收頻繁的更新可改善 Windows Server 2016 和 Windows Server 2019 Insider Preview 的體驗。 不過，某些新功能僅適用於 Insider Preview – 比方說，重複資料刪除和壓縮的切換開關。
+是的。 Hyper-Converged 基礎結構的 Windows Admin Center 接收頻繁的更新可改善 Windows Server 2016 和 Windows Server 2019 的體驗。 不過，某些新功能僅適用於 Windows Server 2019 – 比方說，重複資料刪除和壓縮的切換開關。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>可以使用 Windows Admin Center 來管理儲存空間直接存取的其他使用案例 （不超融合式），例如交集的向外延展檔案伺服器 (SoFS) 或 Microsoft SQL Server 嗎？
 
@@ -152,7 +147,7 @@ Hyper-Converged 基礎結構的 Windows Admin Center 不提供管理或監視的
 
 - **容錯移轉叢集連線**是容錯移轉叢集管理員的傳統型應用程式的後續版本。 它用於任何支援的任何工作負載，包括 Microsoft SQL Server 的叢集提供熟悉的一般用途的管理體驗。 它適用於 Windows Server 2012 和更新版本。
 
-- **Hyper-Converged 叢集連線**全新的體驗量身打造的儲存空間直接存取和 HYPER-V。 它具有儀表板，並強調監控所用的圖表和警示。 適用於 Windows Server 2016 和 preview 組建的 Windows Server 2019。
+- **Hyper-Converged 叢集連線**全新的體驗量身打造的儲存空間直接存取和 HYPER-V。 它具有儀表板，並強調監控所用的圖表和警示。 使用 Windows Server 2016 和 Windows Server 2019。
 
 ### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>為什麼需要 Windows Server 2016 的最新累計更新？
 
@@ -230,7 +225,7 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 4. 您可以選擇哪一部主機一開始建立虛擬機器上，或使用的建議的主機。
 5. 選擇虛擬機器檔案的路徑。 從下拉式清單中選擇的磁碟區，或按一下**瀏覽**選擇資料夾，使用資料夾選擇器。 虛擬機器設定檔和虛擬硬碟檔案會儲存在同一個資料夾下`\Hyper-V\[virtual machine name]`所選磁碟區或路徑的路徑。
 6. 是否已啟用巢狀虛擬化，設定記憶體設定、 網路介面卡、 虛擬硬碟，然後選擇您要從.iso 映像檔，或從網路安裝作業系統，請選擇虛擬處理器的數目。
-7. 按一下 [建立]，建立虛擬機器。
+7. 按一下 [建立]  ，建立虛擬機器。
 8. 一旦虛擬機器已建立，並會出現在虛擬機器清單，您可以啟動虛擬機器。
 9. 虛擬機器啟動之後，您可以連線到透過 VMConnect 以安裝作業系統的虛擬機器的主控台。 從清單中選取虛擬機器，請按一下**更多** > **Connect**下載.rdp 檔案。 遠端桌面連線應用程式中開啟.rdp 檔案。 因為這連接到虛擬機器的主控台，您必須輸入 HYPER-V 主機的系統管理員認證。
 

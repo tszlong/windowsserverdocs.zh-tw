@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c42cffec0ddc1ae480ae67982147e9f186f0e50a
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 5cd345230ce5c0fc556bfd8b421d866bd827507b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222867"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812451"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>轉換成 MBR 磁碟的 GPT 磁碟
 
-> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows Server （半年通道）、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 主開機記錄 (MBR) 磁碟使用標準 BIOS 磁碟分割表格。 GUID 磁碟分割表格 (GPT) 磁碟則使用整合可延伸韌體介面 (UEFI)。 MBR 磁碟無法在個別磁碟上支援四個以上的磁碟分割。 不建議容量大於兩個 TB 的磁碟使用 MBR 磁碟分割方法。
 
@@ -56,16 +56,12 @@ ms.locfileid: "66222867"
 
 7.  在 **DISKPART** 提示中輸入 `convert mbr`。
 
-<br />
-
-| 值 | 描述 |
-| --- | --- |
-| <p>**清單中的磁碟**</p> | <p>顯示磁碟的清單和這些磁碟的相關資訊，例如大小、可用空間數量、磁碟是基本還是動態磁碟，以及磁碟使用的是主開機記錄 (MBR) 還是 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。 標示有星號 (*) 的磁碟具有焦點。</p> |
-| <p>**選取磁碟**</p> | <p>選取指定的磁碟 (其中 <em>disknumber</em> 是磁碟編號)，並讓它成為焦點。</p> | <p>**clean**</p> | <p>從焦點所在的磁碟移除所有的磁碟分割或磁碟區。</p> |
-| <p>**轉換 mbr**</p> | <p>將使用 GUID 磁碟分割表格 (GPT) 磁碟分割樣式的空白基本磁碟轉換為使用主開機記錄 (MBR) 磁碟分割樣式的基本磁碟。</p>
+|                值                  |      描述   |
+| ------------------------------------- | -----------------  |
+|  <strong>清單中的磁碟</strong>  | 顯示磁碟的清單和這些磁碟的相關資訊，例如大小、可用空間數量、磁碟是基本還是動態磁碟，以及磁碟使用的是主開機記錄 (MBR) 還是 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。 將以星號標示的磁碟 (\*) 具有焦點。 |
+| <strong>選取磁碟</strong> |                                                                                                          選取指定的磁碟 (其中 <em>disknumber</em> 是磁碟編號)，並讓它成為焦點。                                                                                                           |
+| <strong>轉換 mbr</strong> |                                                                               將使用 GUID 磁碟分割表格 (GPT) 磁碟分割樣式的空白基本磁碟轉換為使用主開機記錄 (MBR) 磁碟分割樣式的基本磁碟。                                                                                |
 
 ## <a name="see-also"></a>另請參閱
 
 -   [命令列語法標記法](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

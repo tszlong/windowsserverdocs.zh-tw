@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 80c7155224502379e2e9618ceb38709c5051a6b7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19a87df7c4f165d3b0e6c5add4bc40ff97cc87cb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857839"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446466"
 ---
 # <a name="capolicyinf-syntax"></a>CAPolicy.inf Syntax
 >   適用於：Windows Server （半年通道），Windows Server 2016
@@ -51,7 +51,7 @@ CAPolicy.inf 可讓您能夠指定並設定各種不同的 CA 的屬性和選項
 Signature="$Windows NT$"      #key=value
 ```
 
-###  <a name="version"></a>版本
+###  <a name="version"></a>Version
 
 識別為.inf 檔案的檔案。 唯一的必要區段和 CAPolicy.inf 檔案的開頭必須是版本。
 
@@ -206,53 +206,53 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 
 **必要條件：** 您必須是 Administrators 群組的成員。
 
-1.  在您打算安裝 AD CS，開啟 Windows PowerShell，在電腦上輸入**記事本 c:\CAPolicy.inf**按 ENTER 鍵。
+1. 在您打算安裝 AD CS，開啟 Windows PowerShell，在電腦上輸入**記事本 c:\CAPolicy.inf**按 ENTER 鍵。
 
-2.  當系統提示您建立新檔案時，按一下 [是] 。
+2. 當系統提示您建立新檔案時，按一下 [是]  。
 
-3.  輸入下列檔案內容：
+3. 輸入下列檔案內容：
    ```
    [Version]  
-    Signature="$Windows NT$"  
-    [PolicyStatementExtension]  
-    Policies=InternalPolicy  
-    [InternalPolicy]  
-    OID=1.2.3.4.1455.67.89.5  
-    Notice="Legal Policy Statement"  
-    URL=https://pki.corp.contoso.com/pki/cps.txt  
-    [Certsrv_Server]  
-    RenewalKeyLength=2048  
-    RenewalValidityPeriod=Years  
-    RenewalValidityPeriodUnits=5  
-    CRLPeriod=weeks  
-    CRLPeriodUnits=1  
-    LoadDefaultTemplates=0  
-    AlternateSignatureAlgorithm=1  
-    [CRLDistributionPoint]  
-    [AuthorityInformationAccess]
+   Signature="$Windows NT$"  
+   [PolicyStatementExtension]  
+   Policies=InternalPolicy  
+   [InternalPolicy]  
+   OID=1.2.3.4.1455.67.89.5  
+   Notice="Legal Policy Statement"  
+   URL=https://pki.corp.contoso.com/pki/cps.txt  
+   [Certsrv_Server]  
+   RenewalKeyLength=2048  
+   RenewalValidityPeriod=Years  
+   RenewalValidityPeriodUnits=5  
+   CRLPeriod=weeks  
+   CRLPeriodUnits=1  
+   LoadDefaultTemplates=0  
+   AlternateSignatureAlgorithm=1  
+   [CRLDistributionPoint]  
+   [AuthorityInformationAccess]
    ```
-1.  按一下 **檔案**，然後按一下**另存新檔**。
+4. 按一下 **檔案**，然後按一下**另存新檔**。
 
-2.  瀏覽至 %systemroot%資料夾。
+5. 瀏覽至 %systemroot%資料夾。
 
-3.  確認下列事項：
+6. 確認下列事項：
 
-    -   [檔案名稱] 設為 **CAPolicy.inf**
+   -   [檔案名稱]  設為 **CAPolicy.inf**
 
-    -   [存檔類型] 設定為 [所有檔案]
+   -   [存檔類型]  設定為 [所有檔案] 
 
-    -   [編碼] 為 **[ANSI]**
+   -   [編碼]  為 **[ANSI]**
 
-4.  按一下 [儲存] 。
+7. 按一下 [儲存]  。
 
-5.  當系統提示您覆寫檔案時，按一下 [是] 。
+8. 當系統提示您覆寫檔案時，按一下 [是]  。
 
-    ![將儲存為 CAPolicy.inf 檔案位置](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
+   ![將儲存為 CAPolicy.inf 檔案位置](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
 
-    >   [!CAUTION]  
-    >   務必以 inf 副檔名儲存 CAPolicy.inf。 如果您未在檔案名稱結尾明確輸入 **.inf** 並選取上述選項，檔案將儲存為文字檔案，而且將不會用於 CA 安裝。
+   > [!CAUTION]
+   >   務必以 inf 副檔名儲存 CAPolicy.inf。 如果您未在檔案名稱結尾明確輸入 **.inf** 並選取上述選項，檔案將儲存為文字檔案，而且將不會用於 CA 安裝。
 
-6.  關閉 [記事本]。
+9. 關閉 [記事本]。
 
->   [!IMPORTANT]  
+> [!IMPORTANT]
 >   在 CAPolicy.inf 中，您可以看到有一行，指定 URL https://pki.corp.contoso.com/pki/cps.txt。 CAPolicy.inf 的內部原則區段只是用來舉例說明如何指定憑證實施準則 (CPS) 的位置。 在本指南中，您不會指示來建立憑證實施 (準則 CPS)。

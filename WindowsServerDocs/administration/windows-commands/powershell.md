@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c8070268fdf58fbbb71c159a7360b488222ef740
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e2ccf6187e4480f94b30632b6f8f9f092052541
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852179"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811073"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -31,22 +31,31 @@ Windows PowerShell 是以工作為基礎的命令列殼層和指令碼語言，�
 您可以使用**PowerShell.exe**命令列工具來啟動 Windows PowerShell 工作階段在命令提示字元 視窗中。
 
 - 若要啟動 Windows PowerShell 工作階段在命令提示字元 視窗中，輸入`PowerShell`。 A **PS**前置詞會加入至命令提示字元，以指出您是在 Windows PowerShell 工作階段。
-- 若要啟動工作階段與特定的執行原則，使用**ExecutionPolicy**參數。  
+
+- 若要啟動工作階段與特定的執行原則，使用**ExecutionPolicy**參數。
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
-- 若要啟動 Windows PowerShell 工作階段，而不需要您的 Windows PowerShell 設定檔，請使用**NoProfile**參數。  
+    ```
+
+- 若要啟動 Windows PowerShell 工作階段，而不需要您的 Windows PowerShell 設定檔，請使用**NoProfile**參數。
+
     ```
     PowerShell.exe -NoProfile
-    ```  
-- 若要啟動工作階段，使用**ExecutionPolicy**參數。  
+    ```
+  
+- 若要啟動工作階段，使用**ExecutionPolicy**參數。
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
+    ```
+  
 - 若要查看 PowerShell.exe 說明檔，請使用下列命令格式。  
+    
     ```
     PowerShell.exe -help, -?, /?
-    ```  
+    ```
+
 - 若要結束 Windows PowerShell 工作階段在命令提示字元 視窗中，輸入`exit`。 會傳回一般的命令提示字元。
 
 如需完整的清單**PowerShell.exe**命令列參數，請參閱[about_PowerShell.Exe](https://go.microsoft.com/fwlink/?LinkID=113439)。

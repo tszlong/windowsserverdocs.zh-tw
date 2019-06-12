@@ -13,16 +13,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: acfdd99fa67e218f58fe650de5607f2a5ba97bf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833829"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805127"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>部署遠端桌面環境
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016
 
 您可以使用下列步驟來部署環境中的遠端桌面伺服器。 您可以在實體機器或虛擬機器，取決於所建立的內部部署、 雲端式或混合式環境上安裝伺服器角色。 
 
@@ -30,11 +30,11 @@ ms.locfileid: "59833829"
   
   
 1.  新增您要用於遠端桌面服務伺服器管理員的所有伺服器：  
-    1.  在 伺服器管理員中，按一下**管理 > 新增伺服器**。  
+    1.  在 [伺服器管理員] 中，按一下**管理** > **新增伺服器**。  
     2.  按一下 **立即尋找**。  
     3.  按一下 部署 （例如，Contoso Cb1、 Contoso-WebGw1 和 Contoso Sh1） 中的每一部伺服器，然後按一下**確定**。  
 2.  建立工作階段為基礎的部署，以部署遠端桌面服務元件：  
-    1.  在 [伺服器管理員] 中，按一下**管理 > 新增角色及功能**。  
+    1.  在 [伺服器管理員] 中，按一下**管理** > **新增角色及功能**。  
     2.  按一下 **遠端桌面服務安裝**，**標準部署**，並**工作階段型桌面部署**。  
     3.  選取適當的伺服器，RD 連線代理人伺服器、 RD Web 存取伺服器和 RD 工作階段主機伺服器 (例如 Contoso Cb1、 Contoso-WebGw1 和 Contoso-SH1 分別)。  
     4.  選取 **需要時自動重新啟動目的地伺服器**，然後按一下**部署**。  
@@ -79,7 +79,7 @@ ms.locfileid: "59833829"
     5.  接受預設選項，在 [憑證匯出精靈] 中的接受預設值，直到您到達**要匯出的檔案**頁面。  
     6.  瀏覽至您建立的憑證，例如 \Contoso-Cb1\Certificates 的共用資料夾。  
     7.  輸入檔案名稱，例如 ContosoCbClientCert，然後按一下**儲存**。  
-    8.  按 [下一步] ，然後按一下 [完成] 。  
+    8.  按 [下一步]  ，然後按一下 [完成]  。  
     9.  重複子步驟 1-8 RD 閘道和 Web 憑證，(例如 contoso.westus.cloudapp.azure.com)，讓匯出的憑證執行適當的檔案名稱，例如**ContosoWebGwClientCert**。  
     10. 在檔案總管 中，瀏覽至儲存憑證的資料夾，例如 \Contoso-Cb1\Certificates。  
     11. 選取的兩個匯出的用戶端憑證，然後按一下滑鼠右鍵，然後按一下**複製**。  
@@ -88,7 +88,7 @@ ms.locfileid: "59833829"
     1.  在 [伺服器管理員] 中，按一下**遠端桌面服務 > 概觀 > 工作 > 編輯部署內容**。  
     2.  依序展開**RD 閘道**並清除**本機位址略過 RD 閘道伺服器**選項。  
     3.  依序展開**RD 授權**，然後選取**每個使用者**  
-    4.  按一下 [確定] 。  
+    4.  按一下 [確定]  。  
 10. 建立工作階段集合。 這些步驟會建立基本的集合。 請參閱[建立適用於桌上型電腦和應用程式執行的遠端桌面服務集合](rds-create-collection.md)如需集合的詳細資訊。
  
     1.  在 [伺服器管理員] 中，按一下**遠端桌面服務 > 集合 > 工作 > 建立工作階段集合**。  

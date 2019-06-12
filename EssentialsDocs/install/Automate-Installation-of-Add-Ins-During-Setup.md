@@ -12,12 +12,12 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d4c547c2fec8e2b11e5c1d9bde46e55e91c9d6fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884619"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433639"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>安裝期間自動安裝增益集
 
@@ -69,13 +69,13 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  可針對下列任何情況使用自訂解除安裝步驟：  
   
--   取代內建確認對話方塊。  
+- 取代內建確認對話方塊。  
   
--   在解除安裝之前填入自訂對話方塊。  
+- 在解除安裝之前填入自訂對話方塊。  
   
--   在解除安裝之前執行特定的工作。  
+- 在解除安裝之前執行特定的工作。  
   
- 若要實作解除安裝步驟，請在 addin.xml 中新增下列內容 (直接位於 Package 下)：  
+  若要實作解除安裝步驟，請在 addin.xml 中新增下列內容 (直接位於 Package 下)：  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -103,19 +103,19 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  exefile 可在此階段中執行下列工作：  
   
--   快顯某些對話方塊，用來與使用者互動。  
+- 快顯某些對話方塊，用來與使用者互動。  
   
--   執行某些背景工作。  
+- 執行某些背景工作。  
   
- 此 exe 檔案的結束碼會決定解除安裝程序如何推進：  
+  此 exe 檔案的結束碼會決定解除安裝程序如何推進：  
   
--   0：解除安裝程序繼續執行，但不填入內建確認對話方塊，就如同使用者已確認那樣。 (可使用此方法來取代內建確認對話方塊)；  
+- 0：解除安裝程序繼續執行，但不填入內建確認對話方塊，就如同使用者已確認那樣。 (可使用此方法來取代內建確認對話方塊)；  
   
--   1：解除安裝程序取消，最終會向使用者顯示已取消的訊息。 一切保持不變；  
+- 1：解除安裝程序取消，最終會向使用者顯示已取消的訊息。 一切保持不變；  
   
--   其他：解除安裝程序繼續執行內建確認對話方塊，就像自訂解除安裝步驟不存在一樣。  
+- 其他：解除安裝程序繼續執行內建確認對話方塊，就像自訂解除安裝步驟不存在一樣。  
   
- 任何叫用 exefile 失敗的情況，都會導致與 exefile 傳回非 0 或 1 字碼相同的行為。  
+  任何叫用 exefile 失敗的情況，都會導致與 exefile 傳回非 0 或 1 字碼相同的行為。  
   
 ## <a name="see-also"></a>另請參閱  
  [建立和自訂映像](Creating-and-Customizing-the-Image.md)   

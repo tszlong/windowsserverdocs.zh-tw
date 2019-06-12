@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 11/05/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4122375a48cae17e5f3ebcd7e9f3ce1fad28a105
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: b36f707edc08a4a8b2bc55a87c9db168e19a5487
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222479"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810976"
 ---
 # <a name="create-a-failover-cluster"></a>建立容錯移轉叢集
 
@@ -25,13 +25,13 @@ ms.locfileid: "66222479"
 
 #### <a name="checklist-create-a-failover-cluster"></a>檢查清單：建立容錯移轉叢集
 
-|狀態|工作|參考資料|
-|:---:|---|---|
-|☐|確認先決條件|[確認先決條件](#verify-the-prerequisites)|
-|☐|在想要新增為叢集節點的每個伺服器上安裝容錯移轉叢集功能|[安裝容錯移轉叢集功能](#install-the-failover-clustering-feature)|
-|☐|執行 [叢集驗證精靈] 來驗證設定|[驗證設定](#validate-the-configuration)|
-|☐|執行 [建立叢集精靈] 來建立容錯移轉叢集|[建立容錯移轉叢集](#create-the-failover-cluster)|
-|☐|建立叢集角色來裝載叢集工作負載|[建立叢集的角色](#create-clustered-roles)|
+| 狀態 | 工作 | 參考資料 |
+| ---    | ---  | ---       |
+| ☐    | 確認先決條件 | [確認先決條件](#verify-the-prerequisites) |
+| ☐    | 在想要新增為叢集節點的每個伺服器上安裝容錯移轉叢集功能 | [安裝容錯移轉叢集功能](#install-the-failover-clustering-feature) |
+| ☐    | 執行 [叢集驗證精靈] 來驗證設定 | [驗證設定](#validate-the-configuration) |
+| ☐ | 執行 [建立叢集精靈] 來建立容錯移轉叢集 | [建立容錯移轉叢集](#create-the-failover-cluster) |
+| ☐ | 建立叢集角色來裝載叢集工作負載 | [建立叢集的角色](#create-clustered-roles) |
 
 ## <a name="verify-the-prerequisites"></a>確認先決條件
 
@@ -50,8 +50,8 @@ ms.locfileid: "66222479"
     - 建立叢集的使用者對 OU 或對構成叢集之伺服器所在的容器具有 **建立電腦物件** 權限。
     - 如果使用者沒有**建立電腦物件**權限，請要求網域系統管理員為叢集預先設置叢集電腦物件。 如需詳細資訊，請參閱[在 Active Directory 網域服務中預先設置叢集電腦物件](prestage-cluster-adds.md)。
 
->[!NOTE]
->如果您想要在 Windows Server 2012 R2 上建立、 已中斷連結 Active Directory 的叢集，則不適用這項需求。 如需詳細資訊，請參閱[部署已中斷連結 Active Directory 的叢集](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))。
+> [!NOTE]
+> 如果您想要在 Windows Server 2012 R2 上建立、 已中斷連結 Active Directory 的叢集，則不適用這項需求。 如需詳細資訊，請參閱[部署已中斷連結 Active Directory 的叢集](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))。
 
 ## <a name="install-the-failover-clustering-feature"></a>安裝容錯移轉叢集功能
 
@@ -66,29 +66,29 @@ ms.locfileid: "66222479"
 5. 在 [**選取目的地伺服器**頁面上，選取您想要用來安裝此功能，然後選取的伺服器**下一步]** 。
 6. 在 [**選取伺服器角色**頁面上，選取**下一步]** 。
 7. 在 [選取功能]  頁面上，選取 [容錯移轉叢集]  核取方塊。
-8. 若要安裝容錯移轉叢集管理工具，請選取**將功能加入**，然後選取**下一步** 。
+8. 若要安裝容錯移轉叢集管理工具，請選取**將功能加入**，然後選取**下一步**。
 9. 在 **確認安裝選項**頁面上，選取**安裝**。
 <br>容錯移轉叢集功能不需要重新啟動伺服器。
 
 10. 當安裝完成時，選取**關閉**。
 11. 在想要新增為容錯移轉叢集節點的每部伺服器上重複此程序。
 
->[!NOTE]
->安裝容錯移轉叢集功能之後，我們建議您從 Windows Update 套用最新的更新。 此外，Windows Server 2012 型容錯移轉叢集，請檢閱[的建議 hotfix 和更新的 Windows Server 2012 架構容錯移轉叢集](https://support.microsoft.com/help/2784261/recommended-hotfixes-and-updates-for-windows-server-2012-based-failove)Microsoft 支援服務文章，並安裝任何適用的更新。
+> [!NOTE]
+> 安裝容錯移轉叢集功能之後，我們建議您從 Windows Update 套用最新的更新。 此外，Windows Server 2012 型容錯移轉叢集，請檢閱[的建議 hotfix 和更新的 Windows Server 2012 架構容錯移轉叢集](https://support.microsoft.com/help/2784261/recommended-hotfixes-and-updates-for-windows-server-2012-based-failove)Microsoft 支援服務文章，並安裝任何適用的更新。
 
 ## <a name="validate-the-configuration"></a>驗證設定
 
 建立容錯移轉叢集之前，強烈建議您驗證設定，以確定硬體與硬體設定都與容錯移轉叢集相容。 只有當完整的設定通過所有驗證測試，而且所有硬體都通過叢集節點執行之 Windows Server 版本的認證，Microsoft 才會支援叢集解決方案。
 
->[!NOTE]
->您必須至少有兩個節點來執行所有測試。 如果您只有一個節點，許多重要的存放裝置測試就不會執行。
+> [!NOTE]
+> 您必須至少有兩個節點來執行所有測試。 如果您只有一個節點，許多重要的存放裝置測試就不會執行。
 
 ### <a name="run-cluster-validation-tests"></a>執行叢集驗證測試
 
 1. 在已從遠端伺服器管理工具安裝了容錯移轉叢集管理工具的電腦上，或是在安裝了容錯移轉叢集功能的伺服器上，啟動 [容錯移轉叢集管理員]。 若要在伺服器上這樣做，請啟動 [伺服器管理員]，然後在**工具**功能表上，選取**容錯移轉叢集管理員**。
 2. 在 **容錯移轉叢集管理員**窗格下方**管理**，選取**驗證設定**。
 3. 在 [**在您開始前**頁面上，選取**下一步]** 。
-4. 在 **選取伺服器或叢集**頁面上，於**輸入名稱**方塊、 輸入 NetBIOS 名稱或您計劃新增為容錯移轉叢集節點，在伺服器的完整的網域名稱，然後選取**新增**。 對您要新增的每部伺服器重複此步驟。 若要同時新增多部伺服器，請以逗號或分號分隔名稱。 例如，以 *server1.contoso.com,  server2.contoso.com* 的格式輸入名稱。 當您完成時，請選取**下一步** 。
+4. 在 **選取伺服器或叢集**頁面上，於**輸入名稱**方塊、 輸入 NetBIOS 名稱或您計劃新增為容錯移轉叢集節點，在伺服器的完整的網域名稱，然後選取**新增**。 對您要新增的每部伺服器重複此步驟。 若要同時新增多部伺服器，請以逗號或分號分隔名稱。 例如，輸入名稱，格式`server1.contoso.com, server2.contoso.com`。 當您完成時，請選取**下一步**。
 5. 在 [**測試選項**頁面上，選取**執行所有測試 （建議）** ，然後選取**下一步]** 。
 6. 在 [**確認**頁面上，選取**下一步]** 。
 
@@ -98,8 +98,8 @@ ms.locfileid: "66222479"
       - 如果結果指出成功完成測試，並設定適用於叢集，，和您想要立即建立叢集，請確定**立即使用經過驗證的節點來建立叢集**檢查方塊已選取，然後選取**完成**。 然後，繼續進行[建立容錯移轉叢集](#create-the-failover-cluster)程序的步驟 4。
       - 如果結果指出發生警告或失敗，請選取**檢視報表**檢視詳細資料，並判斷必須修正的問題。 請注意，特定驗證測試的警告會指示可支援此部分的容錯移轉叢集，但可能不符合建議的最佳做法。
         
-        >[!NOTE]
-        >如果您收到「驗證儲存空間持續保留」測試的警告，請參閱部落格文章 [Windows 容錯移轉叢集驗證警告指示您的磁碟不支援持續保留儲存空間](https://blogs.msdn.microsoft.com/clustering/2013/05/24/validate-storage-spaces-persistent-reservation-test-results-with-warning/) ，以了解詳細資訊。
+        > [!NOTE]
+        > 如果您收到「驗證儲存空間持續保留」測試的警告，請參閱部落格文章 [Windows 容錯移轉叢集驗證警告指示您的磁碟不支援持續保留儲存空間](https://blogs.msdn.microsoft.com/clustering/2013/05/24/validate-storage-spaces-persistent-reservation-test-results-with-warning/) ，以了解詳細資訊。
 
 如需硬體驗證測試的詳細資訊，請參閱 [Validate Hardware for a Failover Cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>)。
 
@@ -113,11 +113,11 @@ ms.locfileid: "66222479"
     
     就會開啟 [建立叢集精靈]。
 4. 在 [**在您開始前**頁面上，選取**下一步]** 。
-5. 如果**選取伺服器**頁面隨即出現，在**輸入名稱**方塊、 輸入 NetBIOS 名稱或您計劃新增為容錯移轉叢集節點，在伺服器的完整的網域名稱，然後選取**新增**。 對您要新增的每部伺服器重複此步驟。 若要同時新增多部伺服器，請以逗號或分號分隔名稱。 例如，以 *server1.contoso.com; server2.contoso.com*的格式輸入名稱。 當您完成時，請選取**下一步** 。
+5. 如果**選取伺服器**頁面隨即出現，在**輸入名稱**方塊、 輸入 NetBIOS 名稱或您計劃新增為容錯移轉叢集節點，在伺服器的完整的網域名稱，然後選取**新增**。 對您要新增的每部伺服器重複此步驟。 若要同時新增多部伺服器，請以逗號或分號分隔名稱。 例如，以 *server1.contoso.com; server2.contoso.com*的格式輸入名稱。 當您完成時，請選取**下一步**。
     
-    >[!NOTE]
-    >如果您選擇要執行驗證之後立即建立叢集[驗證程序的組態](#validate-the-configuration)，將不會看到**選取伺服器**頁面。 已驗證的節點會自動新增至 [建立叢集精靈]，讓您不需要重新輸入。
-6. 如果您之前略過驗證，就會顯示 [驗證警告]  頁面。 我們強烈建議您執行叢集驗證。 Microsoft 只支援通過所有驗證測試的叢集。 若要執行驗證測試，請選取 **是** ，然後選取**下一步** 。 完成 [驗證設定精靈] 中所述[驗證設定](#validate-the-configuration)。
+    > [!NOTE]
+    > 如果您選擇要執行驗證之後立即建立叢集[驗證程序的組態](#validate-the-configuration)，將不會看到**選取伺服器**頁面。 已驗證的節點會自動新增至 [建立叢集精靈]，讓您不需要重新輸入。
+6. 如果您之前略過驗證，就會顯示 [驗證警告]  頁面。 我們強烈建議您執行叢集驗證。 Microsoft 只支援通過所有驗證測試的叢集。 若要執行驗證測試，請選取**是**，然後選取**下一步**。 完成 [驗證設定精靈] 中所述[驗證設定](#validate-the-configuration)。
 7. 在 [管理叢集的存取點]  頁面上，執行下列動作：
     
     1. 在 [叢集名稱]  方塊中，輸入您要用來管理叢集的名稱。 執行這個動作之前，請檢閱下列資訊：
@@ -126,7 +126,7 @@ ms.locfileid: "66222479"
           - 若要為 CNO 指定不同的位置，您可以在 [叢集名稱]  方塊中輸入 OU 的辨別名稱。 例如: *CN=ClusterName, OU=Clusters, DC=Contoso, DC=com*。
           - 如果網域系統管理員已在不同於叢集節點所在的其他 OU 中預先設置 CNO，請指定網域系統管理員提供的辨別名稱。
     2. 如果伺服器沒有設定使用 DHCP 的網路介面卡，您必須為容錯移轉叢集設定一或多個靜態 IP 位址。 選取您想要用於叢集管理的每個網路旁邊的核取方塊。 選取 **地址**欄位旁邊所選的網路，然後輸入您想要指派給叢集的 IP 位址。 此 IP 位址 (或多個位址) 會與網域名稱系統 (DNS) 的叢集名稱相關聯。
-    3. 當您完成時，請選取**下一步** 。
+    3. 當您完成時，請選取**下一步**。
 8. 檢視 [確認]  頁面上的設定。 預設會選取 [新增適合的儲存裝置到叢集]  核取方塊。 如果您想要執行下列其中一項，請取消選取此核取方塊：
     
       - 您想要稍後再設定存放裝置。
@@ -151,24 +151,23 @@ ms.locfileid: "66222479"
 1. 使用伺服器管理員或 Windows PowerShell，在每個容錯移轉叢集節點上安裝叢集角色所需的角色或功能。 例如，如果您想要建立叢集檔案伺服器，請在所有叢集節點上安裝檔案伺服器角色。
     
     下表顯示您可以在 [高可用性精靈] 中設定的叢集角色，以及必須依先決條件安裝的相關聯伺服器角色或功能。
-    
 
-|叢集角色  |角色或功能先決條件  |
-|---------|---------|
-|命名空間伺服器     |   命名空間 （檔案伺服器角色的一部分）       |
-|DFS 命名空間伺服器     |  DHCP 伺服器角色       |
-|分散式交易協調器 (DTC)     | None        |
-|檔案伺服器     |  檔案伺服器角色       |
-|泛型應用程式     |  不適用       |
-|泛型指令碼     |   不適用      |
-|泛型服務     |   不適用      |
-|Hyper-V 複本代理人     |   Hyper-V 角色      |
-|iSCSI 目標伺服器     |    iSCSI 目標伺服器 (檔案伺服器角色的一部分)     |
-|iSNS 伺服器     |  iSNS 伺服器服務功能       |
-|訊息佇列     |  訊息佇列服務的功能       |
-|其他伺服器     |  None       |
-|虛擬機器     |  Hyper-V 角色       |
-|WINS 伺服器     |   WINS 伺服器功能      |
+   | 叢集角色  | 角色或功能先決條件  |
+   | ---------       | ---------                    |
+   | 命名空間伺服器     |   命名空間 （檔案伺服器角色的一部分）       |
+   | DFS 命名空間伺服器     |  DHCP 伺服器角色       |
+   | 分散式交易協調器 (DTC)     | None        |
+   | 檔案伺服器     |  檔案伺服器角色       |
+   | 泛型應用程式     |  不適用       |
+   | 泛型指令碼     |   不適用      |
+   | 泛型服務     |   不適用      |
+   | Hyper-V 複本代理人     |   Hyper-V 角色      |
+   | iSCSI 目標伺服器     |    iSCSI 目標伺服器 (檔案伺服器角色的一部分)     |
+   | iSNS 伺服器     |  iSNS 伺服器服務功能       |
+   | 訊息佇列     |  訊息佇列服務的功能       |
+   | 其他伺服器     |  None       |
+   | 虛擬機器     |  Hyper-V 角色       |
+   | WINS 伺服器     |   WINS 伺服器功能      |
 
 2. 在 [容錯移轉叢集管理員] 中，展開叢集名稱，以滑鼠右鍵按一下**角色**，然後選取**設定角色**。
 3. 遵循 [高可用性精靈] 中的步驟建立叢集角色。
@@ -178,8 +177,8 @@ ms.locfileid: "66222479"
 
 下列 Windows PowerShell cmdlet 會執行這個主題中前述程序相同的函式。 以單行輸入各個 Cmdlet，由於格式限制，此處可能出現自動換行而成為數行的現象。
 
->[!NOTE]
->您必須使用 Windows PowerShell 來建立 Windows Server 2012 R2 中的 已中斷連結 Active Directory 的叢集。 如需語法的相關資訊，請參閱 [Deploy an Active Directory-Detached Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))。
+> [!NOTE]
+> 您必須使用 Windows PowerShell 來建立 Windows Server 2012 R2 中的 已中斷連結 Active Directory 的叢集。 如需語法的相關資訊，請參閱 [Deploy an Active Directory-Detached Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))。
 
 以下範例會安裝容錯移轉叢集功能。
 
@@ -193,8 +192,8 @@ Install-WindowsFeature –Name Failover-Clustering –IncludeManagementTools
 Test-Cluster –Node Server1, Server2
 ```
 
->[!NOTE]
->**Test-cluster** cmdlet 將結果輸出至目前的工作目錄中的記錄檔。 例如: C:\Users\<使用者名稱 > \AppData\Local\Temp。
+> [!NOTE]
+> **Test-cluster** cmdlet 將結果輸出至目前的工作目錄中的記錄檔。 例如: C:\Users\<使用者名稱 > \AppData\Local\Temp。
 
 以下範例會建立一個名為 *MyCluster* 且包含 *Server1* 和 *Server2*節點的容錯移轉叢集，指派靜態 IP 位址 *192.168.1.12*，以及將所有合格的存放裝置新增到容錯移轉叢集。
 

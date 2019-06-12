@@ -12,12 +12,12 @@ ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9c240320d990652a4669499d99c1fc3eba9e06fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4dd32d57f6f36bdbf94c763fe0cbd1f37ff990b8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883589"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433108"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Windows Server Essentials 中的啟動列概觀
 
@@ -29,40 +29,40 @@ ms.locfileid: "59883589"
   
  下列的 Windows 作業系統支援使用 [Windows Server Essentials 啟動列]：  
   
--   **Windows 8**:所有版本。  
+- **Windows 8**:所有版本。  
   
--   **Windows 7**:所有版本。  
--   **Windows 10**:所有版本。 
+- **Windows 7**:所有版本。  
+- **Windows 10**:所有版本。 
   
- 下列的 Windows 作業系統不支援使用 [Windows Server Essentials 啟動列]：  
+  下列的 Windows 作業系統不支援使用 [Windows Server Essentials 啟動列]：  
   
--   **其他伺服器**：您無法在執行 Windows Server 作業系統的任何其他電腦上執行 [Windows Server Essentials 啟動列]。  
+- **其他伺服器**：您無法在執行 Windows Server 作業系統的任何其他電腦上執行 [Windows Server Essentials 啟動列]。  
   
- 本主題內容：  
+  本主題內容：  
   
--   [使用 [啟動列]](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
+- [使用 [啟動列]](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
   
--   [使用 Mac 電腦的啟動列](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
+- [使用 Mac 電腦的啟動列](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
   
 ##  <a name="BKMK_Launchpad"></a> 使用 [啟動列]  
  [Windows Server Essentials 啟動列] 上提供下列連結和資訊。  
   
 ### <a name="backup"></a>備份  
- 按一下 [備份]  以開啟電腦的 [備份內容]  。 在 [備份內容] 頁面上，您可以：  
+ 按一下 [備份]  以開啟電腦的 [備份內容]  。 在 [備份內容]  頁面上，您可以：  
   
--   開始或停止備份。  
+- 開始或停止備份。  
   
--   檢視最新備份的狀態和詳細資料。  
+- 檢視最新備份的狀態和詳細資料。  
   
--   指定當執行備份時如何管理電腦電源。  
+- 指定當執行備份時如何管理電腦電源。  
   
- 如需如何使用啟動控制板來備份您的電腦資訊，請參閱[管理的用戶端備份](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。  
+  如需如何使用啟動控制板來備份您的電腦資訊，請參閱[管理的用戶端備份](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。  
   
 ### <a name="remote-web-access"></a>遠端 Web 存取  
- 按一下 [遠端 Web 存取] 以將網頁瀏覽器開啟至「遠端 Web 存取」網站。 「遠端 Web 存取」網站可讓您從辦公室內或從具有已啟用網際網路之電腦的遠端位置，連線到其他電腦並存取部分網路資源。 如需遠端 Web 存取的詳細資訊，請參閱[Manage Remote Web Access](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
+ 按一下 [遠端 Web 存取]  以將網頁瀏覽器開啟至「遠端 Web 存取」網站。 「遠端 Web 存取」網站可讓您從辦公室內或從具有已啟用網際網路之電腦的遠端位置，連線到其他電腦並存取部分網路資源。 如需遠端 Web 存取的詳細資訊，請參閱[Manage Remote Web Access](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
   
 ### <a name="shared-folders"></a>共用資料夾  
- 按一下 [共用資料夾] 以將 [Windows 檔案總管] 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾資訊，請參閱主題[Manage Server Folders](Manage-Server-Folders-in-Windows-Server-Essentials.md)。  
+ 按一下 [共用資料夾]  以將 [Windows 檔案總管] 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾資訊，請參閱主題[Manage Server Folders](Manage-Server-Folders-in-Windows-Server-Essentials.md)。  
   
 ### <a name="dashboard"></a>儀表板  
  按一下 [儀表板]   以開啟 [登入]  頁面來存取 Windows Server Essentials 儀表板。 在您登入之後，就會開啟連到伺服器 [儀表板] 的「遠端桌面」連線。 如需儀表板的詳細資訊，請參閱[儀表板概觀](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)。  
@@ -85,13 +85,13 @@ ms.locfileid: "59883589"
 >  伺服器系統管理員無法使用 Mac 電腦上的 [啟動列] 或 [遠端 Web 存取] 來開啟伺服器 [儀表板] 並管理伺服器。  
   
 ### <a name="backup"></a>備份  
- 按一下 [備份] 以設定 Time Machine 來備份您的電腦，以及變更 Time Machine 設定。 如需有關 Time Machine 的詳細資訊，請參閱您電腦製造商的文件。  
+ 按一下 [備份]  以設定 Time Machine 來備份您的電腦，以及變更 Time Machine 設定。 如需有關 Time Machine 的詳細資訊，請參閱您電腦製造商的文件。  
   
 ### <a name="remote-web-access"></a>遠端 Web 存取  
  按一下 **遠端 Web 存取**開啟遠端 Web 存取網站網頁瀏覽器。 遠端 Web 存取可讓您從任何具有啟用網際網路的電腦的遠端位置存取的共用的檔案和資料夾在伺服器上。 您可以上傳檔案、在 Web 型的「媒體播放」播放音樂和視訊，以及檢視圖片和播放投影片。 如需詳細資訊，請參閱 < [Use Remote Web Access](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
   
 ### <a name="shared-folders"></a>共用資料夾  
- 按一下 [共用資料夾] 以將 Finder 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾資訊，請參閱[Use Shared Folders](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)。  
+ 按一下 [共用資料夾]  以將 Finder 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾資訊，請參閱[Use Shared Folders](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)。  
   
 ### <a name="computer-health-alerts"></a>電腦健康狀態警示  
  顯示在 [啟動列] 上的警示可提供有關電腦立即健康情況的快速狀態。 若要檢視有關健康狀態警示的資訊，請按一下警示指示來開啟警示檢視器。 健康狀態警示會根據嚴重性層級顯示在檢視器中。 最嚴重的警示會顯示在清單中的最前面。 較不嚴重的警示會顯示在清單中較後面的地方。  

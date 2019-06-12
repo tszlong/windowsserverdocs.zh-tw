@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: pashort
 author: kallie-b
-ms.openlocfilehash: ff102fc02208bc12b99b50c3b16e3dc51f397d76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd67fe27c048a15903d18dca43cf331a025933b3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884489"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446387"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 
@@ -37,8 +37,8 @@ Microsoft 的**軟體定義網路\(SDN\)** 並**容器網路功能**解決方案
 我們[容器網路功能的文件](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)篇[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)，其中包含**註解的內建功能**。 若要保留或回覆 Microsoft 文件上的註解只的登入到您想要參考之 Microsoft Docs 頁面底部的捲軸，然後進行並提交您的意見。
 
 > [Microsoft Docs](https://docs.microsoft.com/)是 Microsoft 的新統一文件網站。 雖然我們的小組的大部分[SDN 文件](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)會保留在 TechNet 上我們[容器網路功能的文件](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)現在是 Microsoft 文件上。
-
->*一般情況下，如果在 sparks 問題或離開您想要更多的 Microsoft 文件上遇到的主題，只留下註解，可協助 Microsoft 小組分享意見反映該頁面上。*
+> 
+> *一般情況下，如果在 sparks 問題或離開您想要更多的 Microsoft 文件上遇到的主題，只留下註解，可協助 Microsoft 小組分享意見反映該頁面上。*
 
 ## <a name="container-specific-forums"></a>特定容器論壇
 歡迎使用此頁面上的任何管道，以提供對容器與容器網路功能的相關意見。 不過，如果您想要尋求 Microsoft 的主要論壇容器社群具體來說，請參閱下列：

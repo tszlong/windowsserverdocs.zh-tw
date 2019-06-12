@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4a6b378bc4aef180ebedd260008febaa2f2a76ae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1f5c724d041a9f64c3b2697a8b5acd17a2a7bd9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856209"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445816"
 ---
 # <a name="claims-transformation-rules-language"></a>宣告轉換規則語言
 
@@ -225,75 +225,75 @@ Active Directory 無法在此情況下判斷意圖，並且會進入保全的模
   
 本章節將說明一些規則由剖析器所產生的錯誤不正確的語法和對應的語法所撰寫的範例。  
   
-1.  範例：  
+1. 範例：  
   
-    ```  
-    c1;[]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1;[]=>Issue(claim=c1);  
+   ```  
   
-    此範例中有不正確地使用的分號來取代冒號。   
-    **錯誤訊息：**  
-    *POLICY0002:無法剖析原則資料。*  
-    *行號：1，資料行數目：2，錯誤的語彙基元:;。Line: 'c1;[]=>Issue(claim=c1);'.*  
-    *剖析器錯誤：' POLICY0030:未預期的語法錯誤 ';'，必須是下列其中一項: ':'。 '*  
+   此範例中有不正確地使用的分號來取代冒號。   
+   **錯誤訊息：**  
+   *POLICY0002:無法剖析原則資料。*  
+   *行號：1，資料行數目：2，錯誤的語彙基元:;。Line: 'c1;[]=>Issue(claim=c1);'.*  
+   *剖析器錯誤：' POLICY0030:未預期的語法錯誤 ';'，必須是下列其中一項: ':'。 '*  
   
-2.  範例：  
+2. 範例：  
   
-    ```  
-    c1:[]=>Issue(claim=c2);  
-    ```  
+   ```  
+   c1:[]=>Issue(claim=c2);  
+   ```  
   
-    在此範例中，複製發佈陳述式的識別碼標記未定義。   
-    **錯誤訊息**:   
-    *POLICY0011:宣告規則中的任何條件符合 CopyIssuanceStatement 中指定的條件標記: 'c2'。*  
+   在此範例中，複製發佈陳述式的識別碼標記未定義。   
+   **錯誤訊息**:   
+   *POLICY0011:宣告規則中的任何條件符合 CopyIssuanceStatement 中指定的條件標記: 'c2'。*  
   
-3.  範例：  
+3. 範例：  
   
-    ```  
-    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
-    ```  
+   ```  
+   c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
+   ```  
   
-    "bool"不是在語言中，終端機並不是有效的 ValueType。 有效的終端機會列在下列的錯誤訊息。   
-    **錯誤訊息：**  
-    *POLICY0002:無法剖析原則資料。*  
-    行號：1，資料行數目：39，token 時發生錯誤:"bool"。 Line: 'c1:[type=="x1", value=="1",valuetype=="bool"]=>Issue(claim=c1);'.   
-    *剖析器錯誤：' POLICY0030:語法錯誤，未預期 'STRING'，必須是下列其中之一：'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
+   "bool"不是在語言中，終端機並不是有效的 ValueType。 有效的終端機會列在下列的錯誤訊息。   
+   **錯誤訊息：**  
+   *POLICY0002:無法剖析原則資料。*  
+   行號：1，資料行數目：39，token 時發生錯誤:"bool"。 Line: 'c1:[type=="x1", value=="1",valuetype=="bool"]=>Issue(claim=c1);'.   
+   *剖析器錯誤：' POLICY0030:語法錯誤，未預期 'STRING'，必須是下列其中之一：'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
   
-4.  範例：  
+4. 範例：  
   
-    ```  
-    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
+   ```  
   
-    數字**1**在此範例中不是有效的語彙基元，在語言中，並比對條件中不允許這類使用量。 它必須括在雙引號括住，以便使它的字串。   
-    **錯誤訊息：**  
-    *POLICY0002:無法剖析原則資料。*  
-    *行號：1，資料行數目：23，token 時發生錯誤：1.Line: 'c1:[type=="x1", value==1, valuetype=="bool"]=>Issue(claim=c1);'.**Parser error:' POLICY0029:非預期的輸入。*  
+   數字**1**在此範例中不是有效的語彙基元，在語言中，並比對條件中不允許這類使用量。 它必須括在雙引號括住，以便使它的字串。   
+   **錯誤訊息：**  
+   *POLICY0002:無法剖析原則資料。*  
+   *行號：1，資料行數目：23，token 時發生錯誤：1.Line: 'c1:[type=="x1", value==1, valuetype=="bool"]=>Issue(claim=c1);'.* <em>Parser error:' POLICY0029:非預期的輸入。</em>  
   
-5.  範例：  
+5. 範例：  
   
-    ```  
-    c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
+   ```  
+   c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
   
-         Issue(type = c1.type, value="0", valuetype == "boolean");  
-    ```  
+        Issue(type = c1.type, value="0", valuetype == "boolean");  
+   ```  
   
-    此範例會使用雙等號 （= =），而不是單一等號 （=）。   
-    **錯誤訊息：**  
-    *POLICY0002:無法剖析原則資料。*  
-    *行號：1，資料行數目：91，token 時發生錯誤: = =。Line: 'c1:[type=="x1", value=="1",*  
-    *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
-    *剖析器錯誤：' POLICY0030:語法錯誤、 意外 '= ='，必須是下列其中一項: '='*  
+   此範例會使用雙等號 （= =），而不是單一等號 （=）。   
+   **錯誤訊息：**  
+   *POLICY0002:無法剖析原則資料。*  
+   *行號：1，資料行數目：91，token 時發生錯誤: = =。Line: 'c1:[type=="x1", value=="1",*  
+   *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
+   *剖析器錯誤：' POLICY0030:語法錯誤、 意外 '= ='，必須是下列其中一項: '='*  
   
-6.  範例：  
+6. 範例：  
   
-    ```  
-    c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
+   ```  
+   c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
   
-          Issue(type=c1.type, value=c1.value, valuetype = "string");  
-    ```  
+         Issue(type=c1.type, value=c1.value, valuetype = "string");  
+   ```  
   
-    此範例中是語法和語意正確的。 不過，使用"boolean"的字串值繫結至，造成混淆，而且應該避免使用它。 如先前所述，宣告值應該盡可能避免使用語言終端機。  
+   此範例中是語法和語意正確的。 不過，使用"boolean"的字串值繫結至，造成混淆，而且應該避免使用它。 如先前所述，宣告值應該盡可能避免使用語言終端機。  
   
 ## <a name="BKMK_LT"></a>語言終端機  
 下表列出一組完整的終端機的字串和宣告轉換規則語言中使用的相關聯的語言終端機。 這些定義使用不區分大小寫的 utf-16 字串。  

@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 220b0b72734d1456e3cf877ebc2ff267a7dd56ad
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 167f74522172790d8f5b3fc1dea46d0b7059cd20
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190654"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501684"
 ---
 # <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>建置伺服器端應用程式使用 OAuth 機密用戶端與 AD FS 2016 或更新版本
 
@@ -60,7 +60,7 @@ AD FS 2016 和更新版本的用戶端能夠維護其本身的祕密，例如應
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_7.PNG)  
 
-8. 上**設定應用程式權限**畫面上，確定**openid**並**user_impersonation**已選取，然後按一下**下一步** 。  
+8. 上**設定應用程式權限**畫面上，確定**openid**並**user_impersonation**已選取，然後按一下**下一步**。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_8.PNG)  
 
@@ -83,7 +83,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
 #### <a name="to-upgrade-the-database-file"></a>若要升級的資料庫檔案  
 
-1.  在 Visual Studio 中開啟專案，會快顯視窗，告知您的應用程式需要 SQL Server 2102 Express 或您必須升級資料庫。  按一下 [確定]。  
+1.  在 Visual Studio 中開啟專案，會快顯視窗，告知您的應用程式需要 SQL Server 2012 Express 或您必須升級資料庫。  按一下 [確定]。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_12.PNG)  
 
@@ -226,25 +226,25 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
 #### <a name="testing-the-confidential-client-solution"></a>機密用戶端解決方案的測試  
 
-1.  在 Visual Studio 的頂端，確定已選取 Internet Explorer，然後按一下綠色箭號。  
+1. 在 Visual Studio 的頂端，確定已選取 Internet Explorer，然後按一下綠色箭號。  
 
-    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_36.png)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_36.png)  
 
-2.  一旦啟動，ASP.Net 網頁時，按一下**註冊**上右上方的頁面。  輸入使用者名稱和密碼，然後按一下**註冊** 按鈕。  這是 SQL database 中建立本機帳戶。  
+2. 一旦啟動，ASP.Net 網頁時，按一下**註冊**上右上方的頁面。  輸入使用者名稱和密碼，然後按一下**註冊** 按鈕。  這是 SQL database 中建立本機帳戶。  
 
-    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
 
-4.  請注意，ASP.NET 網站打招呼abby@contoso.com！。  按一下 **設定檔**。  
+3. 請注意，ASP.NET 網站打招呼abby@contoso.com！。  按一下 **設定檔**。  
 
-    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
 
-5.  這會顯示不含任何資訊的頁面，並指出，我們必須按一下這裡以登入。  按一下 **此處**。  
+4. 這會顯示不含任何資訊的頁面，並指出，我們必須按一下這裡以登入。  按一下 **此處**。  
 
-    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_33.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_33.PNG)  
 
-6.  您現在會提示登入 AD FS。  
+5. 您現在會提示登入 AD FS。  
 
-    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_35.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_35.PNG)  
 
 ## <a name="next-steps"></a>後續步驟
 [AD FS 開發](../../ad-fs/AD-FS-Development.md)  

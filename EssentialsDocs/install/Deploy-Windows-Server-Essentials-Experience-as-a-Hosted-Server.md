@@ -12,12 +12,12 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b44b395a39a53194b73a0d503c2310edcbe53a2c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94d4040b65a63fe64e5d49d55f82c4deead5a121
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876069"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433581"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>部署 Windows Server Essentials 體驗做為託管伺服器
 
@@ -116,35 +116,35 @@ ms.locfileid: "59876069"
   
  以下是兩種一般的伺服器端網路拓撲，以及 VPN 和遠端 Web 存取的設定方法：  
   
--   **拓撲 1** (這是慣用的拓撲，它會將所有伺服器及 VPN IP 範圍都放在相同的子網路)：  
+- **拓撲 1** (這是慣用的拓撲，它會將所有伺服器及 VPN IP 範圍都放在相同的子網路)：  
   
-    -   在網路位址轉譯 (NAT) 裝置下的個別虛擬網路中設定伺服器。  
+  -   在網路位址轉譯 (NAT) 裝置下的個別虛擬網路中設定伺服器。  
   
-    -   啟用虛擬網路中的 DHCP 服務，或對伺服器指派靜態 IP 位址。  
+  -   啟用虛擬網路中的 DHCP 服務，或對伺服器指派靜態 IP 位址。  
   
-    -   轉寄路由器上的公用 IP 連接埠 443 到伺服器的本機網路位址。  
+  -   轉寄路由器上的公用 IP 連接埠 443 到伺服器的本機網路位址。  
   
-    -   允許連接埠 443 的 VPN 通道。  
+  -   允許連接埠 443 的 VPN 通道。  
   
-    -   在與伺服器位址相同子網路的範圍中設定 VPN IPv4 位址集區。  
+  -   在與伺服器位址相同子網路的範圍中設定 VPN IPv4 位址集區。  
   
-    -   指派第二部伺服器相同子網路內的靜態 IP 位址，但位於 VPN 位址集區之外。  
+  -   指派第二部伺服器相同子網路內的靜態 IP 位址，但位於 VPN 位址集區之外。  
   
--   **拓撲 2**：  
+- **拓撲 2**：  
   
-    -   指派伺服器私人 IP 位址。  
+  -   指派伺服器私人 IP 位址。  
   
-    -   允許伺服器的連接埠 443 到達公用連接埠 443 IP 位址。  
+  -   允許伺服器的連接埠 443 到達公用連接埠 443 IP 位址。  
   
-    -   允許連接埠 443 的 VPN 通道。  
+  -   允許連接埠 443 的 VPN 通道。  
   
-    -   VPN IPv4 位址集區和伺服器位址指派不同的範圍。  
+  -   VPN IPv4 位址集區和伺服器位址指派不同的範圍。  
   
- 使用拓撲 2，不支援第二部伺服器案例，因為您無法將另一部伺服器加入相同網域。  
+  使用拓撲 2，不支援第二部伺服器案例，因為您無法將另一部伺服器加入相同網域。  
   
- 您可以使用 Windows PowerShell 指令碼在自動部署期間啟用 VPN，或者在初始設定之後使用精靈進行設定。  
+  您可以使用 Windows PowerShell 指令碼在自動部署期間啟用 VPN，或者在初始設定之後使用精靈進行設定。  
   
- 若要使用 Windows PowerShell 啟用 VPN，請在執行 Windows Server Essentials 的伺服器上，以系統管理權限執行下列命令，並提供所有必要的資訊。  
+  若要使用 Windows PowerShell 啟用 VPN，請在執行 Windows Server Essentials 的伺服器上，以系統管理權限執行下列命令，並提供所有必要的資訊。  
   
 ```  
 ##  
@@ -177,19 +177,19 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
   
  如果這個機碼設定為 0x1，某些內部部署功能將會變更行為。 這些功能的變更包括：  
   
--   **用戶端備份** 新加入的用戶端電腦預設會關閉用戶端備份。  
+- **用戶端備份** 新加入的用戶端電腦預設會關閉用戶端備份。  
   
--   **用戶端還原服務** 用戶端還原服務 will be disabled, and the UI will be hidden from the Dashboard.  
+- **用戶端還原服務** 用戶端還原服務 will be disabled, and the UI will be hidden from the Dashboard.  
   
--   **檔案歷程記錄** 伺服器不會自動管理新建立的使用者帳戶的檔案歷程記錄設定。  
+- **檔案歷程記錄** 伺服器不會自動管理新建立的使用者帳戶的檔案歷程記錄設定。  
   
--   **伺服器備份** 伺服器備份 service will be disabled, and the 伺服器備份 UI will be hidden from the Dashboard.  
+- **伺服器備份** 伺服器備份 service will be disabled, and the 伺服器備份 UI will be hidden from the Dashboard.  
   
--   **儲存空間** 儀表板不會顯示建立或管理儲存空間的 UI。  
+- **儲存空間** 儀表板不會顯示建立或管理儲存空間的 UI。  
   
--   **隨處存取** 當您執行「設定隨處存取精靈」時，預設將會略過路由器及 VPN 設定。  
+- **隨處存取** 當您執行「設定隨處存取精靈」時，預設將會略過路由器及 VPN 設定。  
   
- 如果您想要控制每個列出功能的行為，您可以針對每一項設定相對應的登錄機碼。 如需如何設定登錄機碼的相關資訊，請參閱 [在 Windows Server 2012 R2 中自訂和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)  
+  如果您想要控制每個列出功能的行為，您可以針對每一項設定相對應的登錄機碼。 如需如何設定登錄機碼的相關資訊，請參閱 [在 Windows Server 2012 R2 中自訂和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)  
   
 ##  <a name="BKMK_AutomateDeployment"></a> 自動部署 Windows Server Essentials 體驗  
  若要自動化部署，您需要先將作業系統部署，然後再安裝 Windows Server Essentials 體驗角色。  
@@ -217,9 +217,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 > [!NOTE]
 >  我們建議您將來源伺服器和目的地伺服器放在相同的子網路。 如果此方法不可行，則應確定下列各項：  
->   
->  -   來源伺服器與目的地伺服器可以互相存取 」 狀況 s 內部 DNS 名稱。  
-> -   所有必要的連接埠皆已開啟。  
+> 
+> - 來源伺服器與目的地伺服器可以互相存取 」 狀況 s 內部 DNS 名稱。  
+>   -   所有必要的連接埠皆已開啟。  
   
  移轉之後，您可以升級您的授權以移除鎖定與限制。 如需詳細資訊，請參閱 <<c0> [ 從 Windows Server Essentials 轉換到 Windows Server 2012 Standard](https://technet.microsoft.com/library/jj247582.aspx)。  
   

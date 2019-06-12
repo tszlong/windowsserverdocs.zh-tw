@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: de1af9712b54c977c591953c68eec506c80d3cdd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5666943138070cfa8cfe62f1ba932c2793daa003
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821999"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501596"
 ---
 # <a name="ad-fs-password-attack-protection"></a>AD FS 密碼攻擊保護
 
@@ -29,23 +29,22 @@ ms.locfileid: "59821999"
 ### <a name="password-spray-attack"></a>密碼噴灑攻擊
 在密碼噴灑攻擊中，這些不良執行者會跨許多不同的帳戶和服務，以便讓他們能夠找到任何受密碼保護的資產的存取嘗試的最常見的密碼。 通常這些跨許多不同的組織和身分識別提供者。 比方說，攻擊者會使用常用的工具組來列舉所有的數個組織中的使用者，然後再次嘗試 「 P@$$w0rd"和"Password1 」，針對所有這些帳戶。 若要讓您了解，攻擊可能會看起來像：
 
-|目標使用者|目標密碼|
-|-----|-----|-----|
-|User1@org1.com|Password1|
-|User2@org1.com|Password1|
-|User1@org2.com|Password1|
-|User2@org2.com|Password1|
-|…|…|
-|User1@org1.com|P@$$w0rd|
-|User2@org1.com|P@$$w0rd|
-|User1@org2.com|P@$$w0rd|
-|User2@org2.com|P@$$w0rd|
+
+|  目標使用者   | 目標密碼 |
+|----------------|-----------------|
+| User1@org1.com |    Password1    |
+| User2@org1.com |    Password1    |
+| User1@org2.com |    Password1    |
+| User2@org2.com |    Password1    |
+|       …        |        …        |
+| User1@org1.com |    P@$$w0rd     |
+| User2@org1.com |    P@$$w0rd     |
+| User1@org2.com |    P@$$w0rd     |
+| User2@org2.com |    P@$$w0rd     |
 
 此攻擊模式漏網之魚大部分偵測技術，因為從有利點個別使用者或公司的攻擊只看起來像隔離失敗的登入。
 
 攻擊者，它是數字遊戲： 他們知道有某些密碼有非常常見。  攻擊者會取得一些成功的攻擊時，每個數千個帳戶，而言就已足夠生效。 使用的帳戶，可從電子郵件中取得資料、 蒐集連絡資訊，然後傳送網路釣魚的連結，或者只展開密碼噴灑目標群組。 攻擊者不太在意這些初始的目標是人員 — 只要他們有它們可以利用一些成功。
-
-使用的帳戶，可從電子郵件中取得資料、 蒐集連絡資訊，然後傳送網路釣魚的連結，或者只展開密碼噴灑目標群組。 攻擊者不太在意這些初始的目標是人員 — 只要他們有它們可以利用一些成功。
 
 但是，藉由採取一些步驟來設定 AD FS 和正確的網路，您可以保護 AD FS 端點針對這些類型的攻擊。 本文章涵蓋需要正確設定，來協助保護這些攻擊的 3 個區域。
 
@@ -55,7 +54,7 @@ ms.locfileid: "59821999"
 此類型的攻擊也可能導致 DOS 模式。 這可能是無法處理要求，因為伺服器沒有足夠數目的大型 # ADFS 所在的服務層級，或可能是在使用者層級使用者鎖定其帳戶的位置。  
 
 ## <a name="securing-ad-fs-against-password-attacks"></a>保護對密碼破解攻擊的 AD FS 
- 
+
 但是，藉由採取一些步驟來設定 AD FS 和正確的網路，您可以保護 AD FS 端點針對這些類型的攻擊。 本文章涵蓋需要正確設定，來協助保護這些攻擊的 3 個區域。 
 
 
@@ -70,12 +69,12 @@ ms.locfileid: "59821999"
 
 2. 監視及封鎖可疑的 IP 位址 
     - 如果您有 Azure AD Premium，則在 ADFS 與使用實作 Connect Health[有風險的 IP 報告](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview)它所提供的通知。
-        
+
         a. 授權的所有使用者並不需要 25 的授權/ADFS/WAP 伺服器可能會讓客戶輕鬆。
-    
+
         b. 您現在可以調查 IP 的產生失敗的登入的大數目
-    
-        c.  這需要您在您的 ADFS 伺服器上啟用稽核。
+
+        c. 這需要您在您的 ADFS 伺服器上啟用稽核。
 
 3.  封鎖可疑的 IP。  這可能會封鎖 DOS 攻擊。
 
@@ -97,20 +96,20 @@ ms.locfileid: "59821999"
 
     b. 您必須使用 Outlook 2013 （含最新 CU 的修補程式） 或 Outlook 2016。
 
-6.  啟用 MFA 的所有外部網路存取。 這讓您加入的任何外部網路存取保護中。
+6. 啟用 MFA 的所有外部網路存取。 這讓您加入的任何外部網路存取保護中。
 
-    a.  如果您有 Azure AD premium，使用[Azure AD 條件式存取原則](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)來控制這點。  這是優於實作 AD FS 的規則。  這是因為現代化的用戶端應用程式會更頻繁地強制執行。  發生這種情況，在 Azure AD 中，要求新存取權杖時 （通常每小時） 使用重新整理權杖。  
+   a.  如果您有 Azure AD premium，使用[Azure AD 條件式存取原則](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)來控制這點。  這是優於實作 AD FS 的規則。  這是因為現代化的用戶端應用程式會更頻繁地強制執行。  發生這種情況，在 Azure AD 中，要求新存取權杖時 （通常每小時） 使用重新整理權杖。  
 
-    b.  如果您沒有 Azure AD premium 或已在 AD FS 可讓網際網路上的其他應用程式為基礎的存取，實作的 MFA （可以是 Azure MFA 也在 AD FS 2016） 執行一項[全域的 MFA 原則](../../ad-fs/operations/configure-authentication-policies.md#to-configure-multi-factor-authentication-globally)所有外部網路存取。
- 
+   b.  如果您沒有 Azure AD premium 或已在 AD FS 可讓網際網路上的其他應用程式為基礎的存取，實作的 MFA （可以是 Azure MFA 也在 AD FS 2016） 執行一項[全域的 MFA 原則](../../ad-fs/operations/configure-authentication-policies.md#to-configure-multi-factor-authentication-globally)所有外部網路存取。
+
 ## <a name="level-3-move-to-password-less-for-extranet-access"></a>等級 3:移至密碼較少的外部網路存取
 
 7. 移至 Window 10，並用[Hello For Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)。
 
 8. 針對其他裝置，如果在 AD FS 2016，您可以使用[Azure MFA OTP](../../ad-fs/operations/configure-ad-fs-and-azure-mfa.md)的第一個因素和密碼做為第 2 個因素。 
 
-9.  針對行動裝置，如果您只允許受管理的 MDM 裝置，您可以使用[憑證](../../ad-fs/operations/configure-user-certificate-authentication.md)登入的使用者。 
- 
+9. 針對行動裝置，如果您只允許受管理的 MDM 裝置，您可以使用[憑證](../../ad-fs/operations/configure-user-certificate-authentication.md)登入的使用者。 
+
 ## <a name="urgent-handling"></a>緊急的處理
 
 如果 AD FS 環境在作用中的攻擊之下，應該盡早實作的下列步驟：

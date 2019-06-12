@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 648b179f5b2feb8a7585c815aee47804e3bf1532
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e35d3a3e85ed046fb658bbf5a97ab5fc5eec6d3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882269"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442008"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -36,6 +36,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
 ## <a name="parameters"></a>參數
+
 |參數|描述|
 |-------|--------|
 |/sha1 \<hash>|指定憑證指紋，這是包含在憑證存放區簽章憑證的安全雜湊演算法 1 (SHA1) 雜湊。|
@@ -55,20 +56,20 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   如果無法讀取或寫入的任何.rdp 檔案，此工具會繼續下一個檔案中，如果指定了多個檔案。
 
 ## <a name="BKMK_examples"></a>範例
--   若要簽署的.rdp 檔，名為 File1.rdp，瀏覽至您儲存.rdp 檔案的資料夾，並接著輸入下列內容：
-    ```
-    rdpsign /sha1 hash file1.rdp
-    ```
-    > [!NOTE]
-    > *雜湊*值代表 SHA1 憑證指紋，不包含任何空格。
--   若要測試是否數位簽署的.rdp 檔案成功而不會實際簽署檔案，請輸入下列命令：
-    ```
-    rdpsign /sha1 hash /l file1.rdp
-    ```
--   登入多個.rdp 檔案，請使用空格分隔的檔案名稱。 例如，若要註冊多個名為 File1.rdp、 File2.rdp 和 File3.rdp 的.rdp 檔案，輸入下列命令：
-    ```
-    rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
-    ```
-## <a name="see-also"></a>另請參閱
-[命令列語法重點](command-line-syntax-key.md)
-[遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)
+- 若要簽署的.rdp 檔，名為 File1.rdp，瀏覽至您儲存.rdp 檔案的資料夾，並接著輸入下列內容：
+  ```
+  rdpsign /sha1 hash file1.rdp
+  ```
+  > [!NOTE]
+  > *雜湊*值代表 SHA1 憑證指紋，不包含任何空格。
+- 若要測試是否數位簽署的.rdp 檔案成功而不會實際簽署檔案，請輸入下列命令：
+  ```
+  rdpsign /sha1 hash /l file1.rdp
+  ```
+- 登入多個.rdp 檔案，請使用空格分隔的檔案名稱。 例如，若要註冊多個名為 File1.rdp、 File2.rdp 和 File3.rdp 的.rdp 檔案，輸入下列命令：
+  ```
+  rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
+  ```
+  ## <a name="see-also"></a>另請參閱
+  [命令列語法重點](command-line-syntax-key.md)
+  [遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: df1afc77afffd9b737965215a5c9d96f278c8129
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 4a2fb188bd0a46ebd54ae068e8e4eeb63788aaa0
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191675"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501583"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>安全規劃和部署 AD FS 的最佳做法
 
@@ -23,7 +23,12 @@ ms.locfileid: "66191675"
   
 ## <a name="core-security-best-practices-for-ad-fs"></a>AD FS 的核心安全性最佳做法  
 下列的核心最佳做法通用於所有的 AD FS 安裝您想要用來改善或擴充設計或部署的安全性：  
-  
+
+-   **保護 AD FS 做為 「 第 0 層 」 系統** 
+
+    AD FS 基本上是驗證系統。  因此，它應該被視為 「 第 0 層 」 系統，例如 網路上其他身分識別系統。  [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)有 Active Directory 系統管理層模型的詳細資訊。 
+
+
 -   **若要將 AD FS 特定的安全性最佳作法套用到同盟伺服器和同盟伺服器 proxy 電腦使用安全性設定精靈**  
   
     安全性設定精靈 (SCW) 是所有的 Windows Server 2008、 Windows Server 2008 R2 和 Windows Server 2012 電腦上預先安裝的工具。 您可以根據所安裝的伺服器角色，使用它來套用可協助減少伺服器攻擊面的安全性最佳做法。  

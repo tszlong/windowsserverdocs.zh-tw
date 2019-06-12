@@ -13,12 +13,12 @@ ms.assetid: f67d195e-36f6-495a-8361-6d5faa889441
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f93d7b28177f96725f2e62c40f9c81cbf186ee6d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 50995f0d03b400d6e44d16389afc69e5f25465ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819379"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432977"
 ---
 # <a name="enable-folder-redirection-on-the-windows-server-essentials-destination-server1"></a>啟用 Windows Server Essentials 目的地伺服器 1 的資料夾重新導向
 
@@ -32,24 +32,24 @@ ms.locfileid: "59819379"
   
 1.  在目的地伺服器上，開啟 Windows Server Essentials 儀表板。  
   
-2.  在瀏覽列中，按一下 [裝置]。  
+2.  在瀏覽列中，按一下 [裝置]  。  
   
-3.  在 [裝置工作] 窗格中，按一下 [實作群組原則]。  
+3.  在 [裝置工作]  窗格中，按一下 [實作群組原則]  。  
   
-4.  在 [啟用資料夾重新導向群組原則] 頁面上，選取要重新導向的資料夾，然後按一下 [下一步]。  
+4.  在 [啟用資料夾重新導向群組原則]  頁面上，選取要重新導向的資料夾，然後按一下 [下一步]  。  
   
-5.  在 [啟用安全性原則設定]  頁面上，按一下 [完成] 。  
+5.  在 [啟用安全性原則設定]  頁面上，按一下 [完成]  。  
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>刪除舊的「資料夾重新導向群組原則」設定  
   
-1.  在目的地伺服器上，開啟 [群組原則管理] 系統管理工具。  
+1. 在目的地伺服器上，開啟 [群組原則管理]  系統管理工具。  
   
-2.  在 **群組原則管理**，展開 **樹系: * * * YourNetworkDomainName*，展開**網域**，展開*YourNetworkDomainName*然後展開**群組原則物件**。  
+2. 在 **群組原則管理**，展開**樹系：** <em>YourNetworkDomainName</em>，展開**網域**，依序展開*YourNetworkDomainName*，然後展開**群組原則物件**。  
   
-3.  以滑鼠右鍵按一下 [W7PVP 資料夾重新導向] ，然後按一下 [刪除] 。  
+3. 以滑鼠右鍵按一下 [W7PVP 資料夾重新導向]  ，然後按一下 [刪除]  。  
   
-4.  閱讀警告，然後按一下 [是] 。  
+4. 閱讀警告，然後按一下 [是]  。  
   
-5.  關閉 [群組原則管理]。  
+5. 關閉 [群組原則管理]  。  
   
- 若要將變更套用至資料夾重新導向，網路使用者必須登出電腦，再重新登入。 這可確保將所有重新導向資料夾都傳輸到目的地伺服器。
+   若要將變更套用至資料夾重新導向，網路使用者必須登出電腦，再重新登入。 這可確保將所有重新導向資料夾都傳輸到目的地伺服器。

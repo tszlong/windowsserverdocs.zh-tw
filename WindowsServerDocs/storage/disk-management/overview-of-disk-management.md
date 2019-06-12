@@ -1,23 +1,23 @@
 ---
 title: 磁碟管理概觀
 description: 系統公用程式中，可讓您執行進階儲存體的工作，例如初始化新的磁碟機、 擴充磁碟區、 壓縮的資料分割，以及變更磁碟機代號的 Windows 磁碟管理。
-ms.date: 4/2/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2a467c64a3e0ff38b5165b9e001fc2deb2d92148
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819279"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812544"
 ---
 # <a name="overview-of-disk-management"></a>磁碟管理概觀
 
-> **適用於：** Windows 10，Windows 8.1、 Windows 7、 Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
+> **適用於：** Windows 10，Windows 8.1、 Windows 7、 Windows Server （半年通道）、 Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012
 
 系統中的公用程式可讓您執行的進階儲存體工作的 Windows 磁碟管理。 以下是一些磁碟管理 是適合的項目：
 
@@ -53,7 +53,7 @@ ms.locfileid: "59819279"
 
 - [管理磁碟](manage-disks.md)
 - [管理基本磁碟區](manage-basic-volumes.md)
-- [疑難排解磁碟管理](troubleshooting-disk-management.md)
+- [針對磁碟管理問題進行疑難排解](troubleshooting-disk-management.md)
 - [在 Windows 10 中的復原選項](https://support.microsoft.com/help/12415/windows-10-recovery-options)
 - [尋找遺失的檔案到 Windows 10 更新之後](https://support.microsoft.com/help/12386/windows-10-find-lost-files-after-update)
 - [備份和還原您的檔案](https://support.microsoft.com/help/17143/windows-10-back-up-your-files)

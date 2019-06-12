@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6024b118504a233e9e7483711df4e0a05b632d5a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29d52e57a18bf956d135179b503255efd256b35e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869439"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446848"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步驟 3 計畫多站台部署
 
@@ -151,39 +151,39 @@ ms.locfileid: "59869439"
 ### <a name="routing"></a>路由  
 在站台部署對稱式路由是強制執行使用 Teredo 與 IP-HTTPS。 當公司網路中部署 IPv6 時請注意下列各項：  
   
-1.  每個進入點的 Teredo 和 IP-HTTPS 首碼必須可路由傳送到其相關聯的遠端存取伺服器在公司網路上。  
+1. 每個進入點的 Teredo 和 IP-HTTPS 首碼必須可路由傳送到其相關聯的遠端存取伺服器在公司網路上。  
   
-2.  路由必須設定公司網路路由基礎結構中。  
+2. 路由必須設定公司網路路由基礎結構中。  
   
-3.  每個進入點應該有一到三個路由在內部網路中：  
+3. 每個進入點應該有一到三個路由在內部網路中：  
   
-    1.  IP-HTTPS 首碼此前置詞是系統管理員選擇在 [新增進入點] 精靈。  
+   1. IP-HTTPS 首碼此前置詞是系統管理員選擇在 [新增進入點] 精靈。  
   
-    2.  VPN IPv6 前置詞 （選擇性）。 此前置詞可以選擇啟用 VPN，做為進入點之後  
+   2. VPN IPv6 前置詞 （選擇性）。 此前置詞可以選擇啟用 VPN，做為進入點之後  
   
-    3.  Teredo 首碼 （選擇性）。 此前置詞是兩個連續公用 IPv4 位址的外部介面卡上設定遠端存取伺服器時，才適用。 前置詞根據位址組的第一個公用 IPv4 位址。 如果外部位址的範例：  
+   3. Teredo 首碼 （選擇性）。 此前置詞是兩個連續公用 IPv4 位址的外部介面卡上設定遠端存取伺服器時，才適用。 前置詞根據位址組的第一個公用 IPv4 位址。 如果外部位址的範例：  
   
-        1.  www.xxx.yyy.zzz  
+      1. www.xxx.yyy.zzz  
   
-        2.  www.xxx.yyy.zzz+1  
+      2. www.xxx.yyy.zzz+1  
   
-        若要設定 Teredo 首碼則 2001:0:WWXX:YYZZ:: / 64，其中 WWXX:YYZZ 是 IPv4 位址 www.xxx.yyy.zzz 的十六進位表示法。  
+      若要設定 Teredo 首碼則 2001:0:WWXX:YYZZ:: / 64，其中 WWXX:YYZZ 是 IPv4 位址 www.xxx.yyy.zzz 的十六進位表示法。  
   
-        請注意，您可以使用下列指令碼來計算 Teredo 首碼：  
+      請注意，您可以使用下列指令碼來計算 Teredo 首碼：  
   
-        ```  
-        $TeredoIPv4 = (Get-NetTeredoConfiguration).ServerName # Use for a Remote Access server that is already configured  
-        $TeredoIPv4 = "20.0.0.1" # Use for an IPv4 address  
+      ```  
+      $TeredoIPv4 = (Get-NetTeredoConfiguration).ServerName # Use for a Remote Access server that is already configured  
+      $TeredoIPv4 = "20.0.0.1" # Use for an IPv4 address  
   
-            [Byte[]] $TeredoServerAddressBytes = `  
-            [System.Net.IPAddress]::Parse("2001::").GetAddressBytes()[0..3] + `  
-            [System.Net.IPAddress]::Parse($TeredoIPv4).GetAddressBytes() + `  
-            [System.Net.IPAddress]::Parse("::").GetAddressBytes()[0..7]  
+          [Byte[]] $TeredoServerAddressBytes = `  
+          [System.Net.IPAddress]::Parse("2001::").GetAddressBytes()[0..3] + `  
+          [System.Net.IPAddress]::Parse($TeredoIPv4).GetAddressBytes() + `  
+          [System.Net.IPAddress]::Parse("::").GetAddressBytes()[0..7]  
   
-        Write-Host "The server's Teredo prefix is $([System.Net.IPAddress]$TeredoServerAddressBytes)/64"  
-        ```  
+      Write-Host "The server's Teredo prefix is $([System.Net.IPAddress]$TeredoServerAddressBytes)/64"  
+      ```  
   
-    4.  所有上述的路由必須路由傳送到遠端存取伺服器的內部介面卡上的 IPv6 位址 （或內部的虛擬 IP (VIP) 位址的負載平衡的進入點）。  
+   4. 所有上述的路由必須路由傳送到遠端存取伺服器的內部介面卡上的 IPv6 位址 （或內部的虛擬 IP (VIP) 位址的負載平衡的進入點）。  
   
 > [!NOTE]  
 > 透過 DirectAccess，Teredo 路由 IPv6 遠端存取伺服器的系統管理與公司網路中的部署時從遠端執行，而且的所有其他進入點的 IP-HTTPS 首碼必須新增至每個遠端存取伺服器，以便將可轉送到內部網路。  

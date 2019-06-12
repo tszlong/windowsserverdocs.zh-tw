@@ -7,21 +7,22 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.date: 04/12/2019
-ms.openlocfilehash: 7bf23c5af5620241574864babd07fd852115a450
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.date: 06/07/2019
+ms.openlocfilehash: e7cf6fc6a4fae2eee76409bd6af4ef2ff6ed35a3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260267"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811775"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center，Windows Admin Center 預覽
 
 如果您發生本頁面未述及的問題，請[讓我們知道](http://aka.ms/WACfeedback)。
 
 ## <a name="lenovo-xclarity-integrator"></a>Lenovo XClarity 整合器
+
 使用 Windows Admin Center 版本 1904.1 Lenovo XClarity 整合器擴充功能和 Windows Admin Center 版本 1904年先前揭露的不相容的問題已經解決。 我們強烈建議您更新至最新的 Windows Admin Center 支援版本。
 
 - Lenovo XClarity 整合器延伸模組 1.1 版是與 Windows Admin Center 1904.1 完全相容。 我們強烈建議您更新至最新版的 Windows Admin Center 和 Lenovo 擴充功能。
@@ -50,8 +51,8 @@ ms.locfileid: "66260267"
 
 - 如果您有安裝做為閘道的 Windows Admin Center 連線清單可能已損毀，請執行下列步驟：
 
->[!WARNING]
->這會刪除所有的 Windows Admin Center 使用者，在閘道上的設定與連接清單。
+   > [!WARNING]
+   >這會刪除所有的 Windows Admin Center 使用者，在閘道上的設定與連接清單。
 
   1. 解除安裝 Windows Admin Center
   2. 刪除 **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** 下的 **Server Management Experience** 資料夾。
@@ -82,7 +83,7 @@ ms.locfileid: "66260267"
 
 - 當使用 Azure Active Directory 做為身分識別提供者，而 Windows Admin Center 是使用自我簽署憑證或未受信任憑證所設定時，您無法在 Microsoft Edge 中完成 AAD 驗證。  [15968377]
 
-- 如果您已部署為服務的 Windows Admin Center，您使用 Microsoft Edge 瀏覽器作為您閘道連線至 Azure 之後繁衍新的瀏覽器視窗可能會失敗。 嘗試解決此問題，藉由新增 https://login.microsoftonline.com， https://login.live.com，並為您閘道的 URL 信任的網站，並允許您的用戶端端瀏覽器的快顯封鎖程式設定的網站。 如需詳細指引修正這[疑難排解指南](troubleshooting.md#azlogin)。 [17990376]
+- 如果您已部署為服務的 Windows Admin Center，您使用 Microsoft Edge 瀏覽器作為您閘道連線至 Azure 之後繁衍新的瀏覽器視窗可能會失敗。 嘗試解決此問題，藉由新增 https://login.microsoftonline.com， https://login.live.com，並為您閘道的 URL 信任的網站，並允許您的用戶端端瀏覽器的快顯封鎖程式設定的網站。 如需詳細指引修正這[疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 - 如果您有桌面模式中安裝的 Windows Admin Center，在 Microsoft Edge 瀏覽器索引標籤不會顯示 favicon。 [17665801]
 
@@ -100,8 +101,6 @@ Windows Admin Center 未使用 Mozilla Firefox 來測試，但大部分功能應
 
 - Windows 10 安裝：Mozilla Firefox 會有本身的憑證存放區，因此您必須匯入```Windows Admin Center Client```到使用 Windows 10 上的 Windows Admin Center Firefox 的憑證。
 
-<a id="websockets"></a>
-
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>當使用 proxy 服務的 WebSocket 相容性
 
 Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 WebSocket 通訊協定，而這通常在使用 Proxy 服務時不受支援。 Azure AD 應用程式 Proxy 相容性中的 Websocket 支援尚處於[預覽](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/)階段，正在尋求有關相容性的意見反應。
@@ -114,8 +113,6 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。
 
 如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
-
-<a id="rbacknownissues"></a>
 
 ## <a name="role-based-access-control-rbac"></a>角色型存取控制 (RBAC)
 
@@ -141,7 +138,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="events"></a>事件
 
-- 事件會受 [使用 Proxy 服務時的 WebSocket 相容性](#websockets)影響。
+- 事件會受 [使用 Proxy 服務時的 WebSocket 相容性](#websocket-compatibility-when-using-a-proxy-service)影響。
 
 - 匯出大型記錄檔時，您可能會收到參考「封包大小」的錯誤。 [16630279]
 
@@ -153,7 +150,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="powershell"></a>PowerShell
 
-- PowerShell 會受[使用 Proxy 服務時的 WebSocket 相容性](#websockets)影響
+- PowerShell 會受[使用 Proxy 服務時的 WebSocket 相容性](#websocket-compatibility-when-using-a-proxy-service)影響
 
 - 處於桌面 PowerShell 主控台時以單一按右鍵方式貼上，會沒有作用。 反而會出現瀏覽器的快顯功能表，您可在其中選取 [貼上]。 您也可以使用 Ctrl-V。
 
@@ -173,7 +170,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 某些設定可以封鎖 Windows Admin Center 的遠端桌面用戶端與群組原則。 如果您遇到這種情況，啟用```Allow users to connect remotely by using Remote Desktop Services```下 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
-- 遠端桌面都會受到[websocket 相容性。](#websockets)
+- 遠端桌面都會受到[websocket 相容性。](#websocket-compatibility-when-using-a-proxy-service)
 
 - 遠端桌面工具目前不支援任何在本機桌面與遠端工作階段之間的文字、影像或檔案複製/貼上。
 

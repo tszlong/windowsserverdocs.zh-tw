@@ -12,12 +12,12 @@ ms.assetid: d3925f80-552d-431f-b2a6-2af202e50ca4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 613ff4c80a80ed4f3207cb0c1ead6db12c723e85
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 98b1a7adc23fca15c06ae9588d52bc9bcd532252
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815379"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432600"
 ---
 # <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>步驟 5：啟用移轉的目的地伺服器的 Windows Server Essentials 上的資料夾重新導向
 
@@ -31,27 +31,27 @@ ms.locfileid: "59815379"
   
 1.  在目的地伺服器上，開啟 Windows Server Essentials 儀表板。  
   
-2.  在瀏覽列中，按一下 [裝置]。  
+2.  在瀏覽列中，按一下 [裝置]  。  
   
-3.  在 [裝置工作] 窗格中，按一下 [實作群組原則]。  
+3.  在 [裝置工作]  窗格中，按一下 [實作群組原則]  。  
   
-4.  在 [啟用資料夾重新導向群組原則] 頁面上，選取要重新導向的資料夾，然後按一下 [下一步]。  
+4.  在 [啟用資料夾重新導向群組原則]  頁面上，選取要重新導向的資料夾，然後按一下 [下一步]  。  
   
-5.  在 [啟用安全性原則設定]  頁面上，按一下 [完成] 。  
+5.  在 [啟用安全性原則設定]  頁面上，按一下 [完成]  。  
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>刪除舊的「資料夾重新導向群組原則」設定  
   
-1.  在目的地伺服器上，開啟 [群組原則管理] 系統管理工具。  
+1. 在目的地伺服器上，開啟 [群組原則管理]  系統管理工具。  
   
-2.  在 **群組原則管理**，展開 **樹系:*** YourNetworkDomainName*，展開**網域**，展開*YourNetworkDomainName*然後展開 **群組原則物件** 。  
+2. 在 **群組原則管理**，展開**樹系：** <em>YourNetworkDomainName</em>，展開**網域**，依序展開*YourNetworkDomainName*，然後展開**群組原則物件**。  
   
-3.  以滑鼠右鍵按一下您想要刪除的原則，然後按一下 [刪除] 。  
+3. 以滑鼠右鍵按一下您想要刪除的原則，然後按一下 [刪除]  。  
   
-4.  閱讀警告，然後按一下 [是] 。  
+4. 閱讀警告，然後按一下 [是]  。  
   
-5.  關閉 [群組原則管理]。  
+5. 關閉 [群組原則管理]  。  
   
- 若要套用資料夾重新導向的變更，網路使用者必須登出電腦，然後再重新登入。 這可確保將所有重新導向資料夾都傳輸到目的地伺服器。  
+   若要套用資料夾重新導向的變更，網路使用者必須登出電腦，然後再重新登入。 這可確保將所有重新導向資料夾都傳輸到目的地伺服器。  
   
 ## <a name="next-steps"></a>後續步驟  
  您已經啟用目的地伺服器上的資料夾重新導向。 現在請移至[步驟 6:降級和移除來源伺服器從新的 Windows Server Essentials 網路](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)。  

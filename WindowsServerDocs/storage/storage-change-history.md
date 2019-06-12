@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 03/25/2019
+ms.date: 06/04/2019
 description: 在內部部署儲存體文件中適用於 Windows Server IT 專業人員的全新和更新主題。
-ms.openlocfilehash: fa3da6e14c36fecfa48c3688a36518babb257920
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3245e6bc5320cc0ffae01817a8f7b9caeaa6c685
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192683"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501492"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中的儲存空間主題變更歷程記錄
 
@@ -22,7 +22,13 @@ ms.locfileid: "66192683"
 
 本主題列出新增和更新主題[儲存體](storage.md)適用於 Windows Server 文件。
 
-> 如果您想要尋求更新歷程記錄，適用於 Windows Server，請參閱[Windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
+> 如果您想要尋求更新歷程記錄，適用於 Windows Server，請參閱[Windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619)或是[Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
+
+## <a name="june-2019"></a>2019 年 6 月
+
+| 新增或已變更的主題                                        | 描述|
+| ---                                                         | ---           |
+| [儲存體移轉服務常見問題集](storage-migration-service/faq.md#consolidate-servers) | 加入的效能最佳化的資訊。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
 
@@ -36,7 +42,7 @@ ms.locfileid: "66192683"
 
 |新增或已變更的主題                                        |描述|
 |---                                                         |---           |
-|[使用 Azure 監視器的監視](storage-spaces/configure-azure-monitor.md)| 新的|
+|[使用 Azure 監視器進行監視](storage-spaces/configure-azure-monitor.md)| 新的|
 |[將儲存空間直接存取叢集升級到 Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新的        |
 |[DFS 複寫](dfs-replication/dfsr-overview.md)        | 從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))文件庫|
 
@@ -105,7 +111,7 @@ ms.locfileid: "66192683"
 |[在獨立伺服器上部署儲存空間](storage-spaces/deploy-standalone-storage-spaces.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[NTFS 概觀](file-server/ntfs-overview.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[使用 Robocopy 將預置檔案中，DFS 複寫](dfs-replication/preseed-dfsr-with-robocopy.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
-|[Vssadmin-先前的版本命令列工具](..\administration\windows-commands\vssadmin.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
+|[Vssadmin-先前的版本命令列工具](../administration/windows-commands/vssadmin.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)| 已新增新的登錄設定，Windows Server 2016 版本 1803年中的詳細資訊。|
 |[伺服器對伺服器儲存體複寫](storage-replica/server-to-server-storage-replication.md)|已新增有關使用 Windows Admin Center 的詳細資訊。|
 |[儲存體複本的已知問題](storage-replica/storage-replica-known-issues.md)|已加入新的資訊。|
@@ -195,13 +201,13 @@ ms.locfileid: "66192683"
 
 ## <a name="may-2017"></a>2017 年 5 月
 
-|新增或已變更的主題|描述|
-|---|---|
-|[重複資料刪除概觀](data-deduplication/overview.md)和 <br>[安裝重複資料刪除](data-deduplication/install-enable.md)|已更新系統需求，將較新的軟體更新包含在其中。 |
-|[部署工作資料夾](work-folders/deploy-work-folders.md)|已加入關於 Azure AD 應用程式 Proxy 支援及更新所需步驟的資訊。|
-|[部署儲存空間直接存取](storage-spaces/deploy-storage-spaces-direct.md)|已新增使用必要功能的步驟 1.3，並已修正 Enable-NetAdapterQos 中的過時參數。||[儲存體複本概觀](storage-replica/storage-replica-overview.md) (及其他儲存體複本主題)|已新增將快速專屬儲存空間用於儲存體複本記錄檔的建議。|
-|[常見問題集的儲存體複本](storage-replica/storage-replica-frequently-asked-questions.md)|已加入有關如何在不同複寫拓撲之間選擇的資訊。|
-|[儲存空間直接存取硬體需求](storage-spaces/storage-spaces-direct-hardware-requirements.md)|已變更快取裝置的磁碟機耐力需求。|
+|                                                           新增或已變更的主題                                                           |                                          描述                                           |
+|------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| [重複資料刪除概觀](data-deduplication/overview.md)和 <br>[安裝重複資料刪除](data-deduplication/install-enable.md) |              已更新系統需求，將較新的軟體更新包含在其中。               |
+|                                      [部署工作資料夾](work-folders/deploy-work-folders.md)                                       |         已加入關於 Azure AD 應用程式 Proxy 支援及更新所需步驟的資訊。          |
+|                            [部署儲存空間直接存取](storage-spaces/deploy-storage-spaces-direct.md)                             | 已新增使用必要功能的步驟 1.3，並已修正 Enable-NetAdapterQos 中的過時參數。 |
+|               [常見問題集的儲存體複本](storage-replica/storage-replica-frequently-asked-questions.md)                |             已加入有關如何在不同複寫拓撲之間選擇的資訊。              |
+|               [儲存空間直接存取硬體需求](storage-spaces/storage-spaces-direct-hardware-requirements.md)               |                    已變更快取裝置的磁碟機耐力需求。                     |
 
 ## <a name="april-2017"></a>2017 年 4 月
 

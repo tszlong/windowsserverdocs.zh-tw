@@ -15,19 +15,19 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: ac59c554c69a6138a106a648c3fab3ed4fe05b7b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 781239f45b9b260b7d374c2a6972cdb8faad2879
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836419"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749596"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>步驟 7.1. 設定 EAP-TLS 以忽略憑證撤銷清單 (CRL) 檢查
 
 >適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows 10
 
-&#171;  [**前一個：** 步驟 7.（選擇性）使用 Azure AD 的 VPN 連線能力的條件式存取](ad-ca-vpn-connectivity-windows10.md)<br>
-&#187;[ **下一步:** 步驟 7.2.使用 Azure AD 中建立 VPN 驗證的根的憑證](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**前一個：** 步驟 7.（選擇性）使用 Azure AD 的 VPN 連線能力的條件式存取](ad-ca-vpn-connectivity-windows10.md)
+- [**下一步:** 步驟 7.2.使用 Azure AD 建立 VPN 驗證的根憑證](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 >[!IMPORTANT]
 >若要實作這項登錄變更的失敗會導致失敗，將雲端憑證使用 PEAP 的 IKEv2 連線，但使用來自內部 CA 簽發的用戶端驗證憑證的 IKEv2 連線會繼續運作。
@@ -47,11 +47,11 @@ EAP-TLS 用戶端無法連線，除非在 NPS 伺服器完成 （包括根憑證
 
 2. 瀏覽至**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**。
 
-3. 按一下 **編輯 > 新增**，然後選取**DWORD （32 位元） 值**然後輸入**IgnoreNoRevocationCheck**。
+3. 選取 **編輯 > 新增**，然後選取**DWORD （32 位元） 值**，然後輸入**IgnoreNoRevocationCheck**。
 
 4. 按兩下**IgnoreNoRevocationCheck**並將值資料設定為**1**。
 
-5. 按一下 **確定**並重新啟動伺服器。 重新啟動的 RRAS 和 NPS 服務不敷使用。
+5. 選取 **確定**並重新啟動伺服器。 重新啟動的 RRAS 和 NPS 服務不敷使用。
 
 如需詳細資訊，請參閱 <<c0> [ 如何啟用或停用用戶端上的憑證撤銷檢查 (CRL)](https://technet.microsoft.com/library/bb680540.aspx)。
 
@@ -62,8 +62,6 @@ EAP-TLS 用戶端無法連線，除非在 NPS 伺服器完成 （包括根憑證
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-step"></a>後續步驟
+## <a name="next-steps"></a>後續步驟
 
-[7.2 的步驟。使用 Azure AD 中建立根憑證以進行 VPN 驗證](vpn-create-root-cert-for-vpn-auth-azure-ad.md):在此步驟中，您可以設定 VPN 驗證的條件式存取的根憑證與 Azure AD 中，會自動建立租用戶中的 VPN 伺服器的雲端應用程式。 
-
----
+[ 7.2.使用 Azure AD 中建立根憑證以進行 VPN 驗證](vpn-create-root-cert-for-vpn-auth-azure-ad.md):在此步驟中，您可以設定 VPN 驗證的條件式存取的根憑證與 Azure AD 中，會自動建立租用戶中的 VPN 伺服器的雲端應用程式。

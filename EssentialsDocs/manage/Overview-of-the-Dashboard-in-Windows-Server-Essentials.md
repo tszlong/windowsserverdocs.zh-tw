@@ -12,12 +12,12 @@ ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2cc603f5e0303ada245956a524151393c538b27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2322fa3f4617e8a8450aaf7fd5ead702574bf759
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881569"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433129"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Windows Server Essentials 中的儀表板概觀
 
@@ -25,39 +25,39 @@ ms.locfileid: "59881569"
  
  Windows Server Essentials 和已啟用「Windows Server Essentials 體驗」角色的 Windows Server 2012 R2 Standard 都包含一個系統管理儀表板，可簡化您為管理 Windows Server Essentials 網路和伺服器而執行的工作。 藉由使用 [Windows Server Essentials 儀表板]，您可以：  
   
--   完成您的伺服器設定  
+- 完成您的伺服器設定  
   
--   存取和執行一般系統管理工作  
+- 存取和執行一般系統管理工作  
   
--   檢視伺服器警示並對其採取動作  
+- 檢視伺服器警示並對其採取動作  
   
--   設定和變更伺服器設定  
+- 設定和變更伺服器設定  
   
--   存取或搜尋網路上的說明主題  
+- 存取或搜尋網路上的說明主題  
   
--   存取網路上的社群資源  
+- 存取網路上的社群資源  
   
--   管理使用者帳戶  
+- 管理使用者帳戶  
   
--   管理裝置和備份  
+- 管理裝置和備份  
   
--   管理伺服器資料夾和硬碟的存取權與設定  
+- 管理伺服器資料夾和硬碟的存取權與設定  
   
--   檢視和管理增益集應用程式  
+- 檢視和管理增益集應用程式  
   
--   與 Microsoft 線上服務整合  
+- 與 Microsoft 線上服務整合  
   
- 本主題包含：  
+  本主題包含：  
   
--   [儀表板的基本功能](#BKMK_Design)  
+- [儀表板的基本功能](#BKMK_Design)  
   
--   [儀表板首頁上的功能](#BKMK_Home)  
+- [儀表板首頁上的功能](#BKMK_Home)  
   
--   [儀表板的系統管理區段](#BKMK_Features)  
+- [儀表板的系統管理區段](#BKMK_Features)  
   
--   [存取 Windows Server Essentials 儀表板](#BKMK_AccessDb)  
+- [存取 Windows Server Essentials 儀表板](#BKMK_AccessDb)  
   
--   [使用安全模式](#BKMK_UseSafeMode)  
+- [使用安全模式](#BKMK_UseSafeMode)  
   
 ##  <a name="BKMK_Design"></a> 儀表板的基本功能  
  [Windows Server Essentials 儀表板] 可協助您快速存取您伺服器的重要資訊和管理功能。 儀表板包含數個區段。 下表描述的區段。  
@@ -66,7 +66,7 @@ ms.locfileid: "59881569"
   
 |項目|儀表板功能|描述|  
 |----------|-----------------------|-----------------|  
-|1|瀏覽列|按一下瀏覽列上的區段以存取與該區段關聯的資訊和工作。 每次您開啟 [儀表板] 時，預設會顯示 [首頁]。|  
+|1|瀏覽列|按一下瀏覽列上的區段以存取與該區段關聯的資訊和工作。 每次您開啟 [儀表板] 時，預設會顯示 [首頁]  。|  
 |2|子區段索引標籤|子區段索引標籤可讓您存取第二層的 Windows Server Essentials 系統管理工作。|  
 |3|清單窗格|清單檢視會顯示您可以管理的物件，並包含每個物件的基本資訊。|  
 |4|詳細資料窗格|詳細資料窗格會顯示您在清單檢視中所選物件的其他相關資訊。|  
@@ -76,7 +76,7 @@ ms.locfileid: "59881569"
 |8|狀態列|狀態列會顯示在清單檢視中出現的物件數目。 增益集應用程式可能也會顯示其他狀態。|  
   
 ##  <a name="BKMK_Home"></a> 儀表板首頁上的功能  
- 當您開啟 [儀表板] 時，預設為顯示 [首頁] 並顯示 [設定] 類別。 [Windows Server Essentials 儀表板] 的 [首頁] 可讓您快速存取可協助您自訂伺服器及設定重要功能的工作和資訊。 [首頁] 是由四個功能區域所組成，會針對您所選取的選項顯示資訊和設定工作。 下表描述的功能。  
+ 當您開啟 [儀表板] 時，預設為顯示 [首頁]  並顯示 [設定]  類別。 [Windows Server Essentials 儀表板] 的 [首頁]  可讓您快速存取可協助您自訂伺服器及設定重要功能的工作和資訊。 [首頁] 是由四個功能區域所組成，會針對您所選取的選項顯示資訊和設定工作。 下表描述的功能。  
   
 |項目|功能|描述|  
 |----------|-------------|-----------------|  
@@ -86,14 +86,14 @@ ms.locfileid: "59881569"
 |4|動作窗格|這個窗格提供功能或工作的簡短描述，並提供可開啟設定精靈和資訊頁面的連結。 按一下連結以採取進一步的動作。|  
   
 ##  <a name="BKMK_Features"></a> 儀表板的系統管理區段  
- [Windows Server Essentials 儀表板] 會將網路資訊和系統管理工作組織成功能區域。 每個功能區域的管理網頁皆提供與該區域關聯之物件 (例如 [使用者] 或 [裝置]) 的相關資訊。 管理頁面也包含您可用來檢視或變更設定的工作，或可用來執行程式 (可將需要多個步驟的工作自動化) 的工作。  
+ [Windows Server Essentials 儀表板] 會將網路資訊和系統管理工作組織成功能區域。 每個功能區域的管理網頁皆提供與該區域關聯之物件 (例如 [使用者]  或 [裝置]  ) 的相關資訊。 管理頁面也包含您可用來檢視或變更設定的工作，或可用來執行程式 (可將需要多個步驟的工作自動化) 的工作。  
   
  下表說明安裝後預設可用的 [儀表板] 系統管理區段。 這個表格也列出每個區段內可用的工作。  
   
-|區段|描述|  
+|Section|描述|  
 |-------------|-----------------|  
-|首頁|[首頁] 預設會在您每次開啟 [儀表板] 時顯示。 它包含下列類別的工作和資訊：<br /><br /> **安裝程式**œ 完成設定您的伺服器，第一次此類別中的工作。 這些工作的相關資訊，請參閱[安裝和設定 Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md)。<br /><br /> **電子郵件**œ 這個分類可與伺服器整合電子郵件服務中選擇的選項。<br /><br /> **注意：** 只有在 Windows Server Essentials 中使用此類別。<br /><br /> **服務**œ 請選擇這個類別與伺服器整合 Microsoft 線上服務中的工作。<br /><br /> **注意：** 此類別只是適用於 Windows Server Essentials 和 Windows Server 2012 R2 Standard 與已啟用 「 Windows Server Essentials 體驗角色中。<br /><br /> **增益集**œ 来按一下這個類別安裝有用的增益集為您的企業。<br /><br /> **快速狀態**œ 顯示概略的伺服器狀態。 按一下狀態以檢視該功能的資訊和設定選項。 如果您完成 [設定] 類別中的所有工作，這個類別就會出現在 [類別] 窗格的頂端。<br /><br /> **協助**œ 使用搜尋方塊搜尋網路上的說明。 按一下連結以瀏覽所選支援選項的網站。|  
-|使用者|若要讓使用者存取 Windows Server Essentials 所提供的資源，您需要使用 [Windows Server Essentials 儀表板] 來建立使用者帳戶。 建立使用者帳戶之後，您可以使用 [儀表板] 之 [使用者] 頁面上可用的工作來管理帳戶。 您可以在這個頁面上執行的工作包括：<br /><br /> -檢視使用者帳戶的清單。<br /><br /> -檢視及管理使用者帳戶內容。<br /><br /> -啟用或停用使用者帳戶。<br /><br /> -新增或移除使用者帳戶。<br /><br /> -如果您的伺服器已與 Office 365 整合，區域網路帳戶指派給 Microsoft online services 帳戶。<br /><br /> -變更使用者帳戶密碼和管理密碼原則。<br /><br /> 如需管理使用者帳戶資訊，請參閱[Manage User Accounts](Manage-User-Accounts-in-Windows-Server-Essentials.md)。|  
+|首頁|[首頁]  預設會在您每次開啟 [儀表板] 時顯示。 它包含下列類別的工作和資訊：<br /><br /> **安裝程式**œ 完成設定您的伺服器，第一次此類別中的工作。 這些工作的相關資訊，請參閱[安裝和設定 Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md)。<br /><br /> **電子郵件**œ 這個分類可與伺服器整合電子郵件服務中選擇的選項。<br /><br /> **注意：** 只有在 Windows Server Essentials 中使用此類別。<br /><br /> **服務**œ 請選擇這個類別與伺服器整合 Microsoft 線上服務中的工作。<br /><br /> **注意：** 此類別只是適用於 Windows Server Essentials 和 Windows Server 2012 R2 Standard 與已啟用 「 Windows Server Essentials 體驗角色中。<br /><br /> **增益集**œ 来按一下這個類別安裝有用的增益集為您的企業。<br /><br /> **快速狀態**œ 顯示概略的伺服器狀態。 按一下狀態以檢視該功能的資訊和設定選項。 如果您完成 [設定] 類別中的所有工作，這個類別就會出現在 [類別] 窗格的頂端。<br /><br /> **協助**œ 使用搜尋方塊搜尋網路上的說明。 按一下連結以瀏覽所選支援選項的網站。|  
+|使用者|若要讓使用者存取 Windows Server Essentials 所提供的資源，您需要使用 [Windows Server Essentials 儀表板] 來建立使用者帳戶。 建立使用者帳戶之後，您可以使用 [儀表板] 之 [使用者]  頁面上可用的工作來管理帳戶。 您可以在這個頁面上執行的工作包括：<br /><br /> -檢視使用者帳戶的清單。<br /><br /> -檢視及管理使用者帳戶內容。<br /><br /> -啟用或停用使用者帳戶。<br /><br /> -新增或移除使用者帳戶。<br /><br /> -如果您的伺服器已與 Office 365 整合，區域網路帳戶指派給 Microsoft online services 帳戶。<br /><br /> -變更使用者帳戶密碼和管理密碼原則。<br /><br /> 如需管理使用者帳戶資訊，請參閱[Manage User Accounts](Manage-User-Accounts-in-Windows-Server-Essentials.md)。|  
 |使用者群組|**注意：** 已啟用的 Windows Server Essentials 體驗角色，這項功能是僅適用於 Windows Server Essentials 和 Windows Server 2012 R2 Standard。<br /><br /> 您可以在這個頁面上執行的工作包括：<br /><br /> -檢視使用者群組的清單。<br /><br /> -檢視及管理使用者群組。<br /><br /> -新增或移除使用者群組。|  
 |通訊群組|**注意：** 已啟用的 Windows Server Essentials 體驗角色，這項功能是僅適用於 Windows Server Essentials 和 Windows Server 2012 R2 Standard。 只有當 Windows Server Essentials 已與 Office 365 整合時，才會顯示這個索引標籤。<br /><br /> 您可以在這個頁面上執行的工作包括：<br /><br /> -檢視通訊群組清單。<br /><br /> -新增或移除通訊群組。|  
 |裝置|在您將電腦連線到 Windows Server Essentials 網路之後，您可以從 [儀表板] 的 [裝置]  頁面管理電腦。 您可以在這個頁面上執行的工作包括：<br /><br /> -檢視已加入到您網路的電腦清單。<br /><br /> -運用 Office 365 行動裝置管理功能來管理行動裝置。<br /><br /> **注意：** 已啟用的 Windows Server Essentials 體驗角色，才可用在 Windows Server Essentials 和 Windows Server 2012 R2 Standard 中這項功能。<br /><br /> -檢視電腦內容和每一部電腦的健康情況警示。<br /><br /> -設定和管理電腦備份。<br /><br /> -還原檔案和資料夾的電腦。<br /><br /> -建立遠端桌面連線到電腦<br /><br /> -自訂電腦備份和檔案歷程記錄設定<br /><br /> 如需管理電腦和備份的資訊，請參閱[管理裝置](Manage-Devices-in-Windows-Server-Essentials.md)。|  
@@ -110,15 +110,15 @@ ms.locfileid: "59881569"
  為了維護網路安全，只有具備系統管理權限的使用者可以存取 [Windows Server Essentials 儀表板]。 此外，您也無法使用內建的系統管理員帳戶從 [啟動列] 登入 [Windows Server Essentials 儀表板]。  
   
 ###  <a name="BKMK_Server"></a> 從伺服器存取儀表板  
- 當您安裝 Windows Server Essentials 時，安裝程序會在 [開始]  畫面和桌面上都建立一個 [儀表板] 捷徑。 如果這些位置中沒有捷徑，您可以使用 [搜尋] 窗格來尋找並執行 [儀表板] 程式。  
+ 當您安裝 Windows Server Essentials 時，安裝程序會在 [開始]  畫面和桌面上都建立一個 [儀表板] 捷徑。 如果這些位置中沒有捷徑，您可以使用 [搜尋]  窗格來尋找並執行 [儀表板] 程式。  
   
 ##### <a name="to-access-the-dashboard-from-the-server"></a>從伺服器存取儀表板  
   
 -   以系統管理員身分登入伺服器，然後執行下列其中一個動作：  
   
-    -   在 [開始]  畫面上，按一下 [儀表板] 。  
+    -   在 [開始]  畫面上，按一下 [儀表板]  。  
   
-    -   在桌面上，按兩下 [儀表板] 。  
+    -   在桌面上，按兩下 [儀表板]  。  
   
     -   在 **搜尋**窗格中，輸入**儀表板**，然後按一下**儀表板**搜尋結果中。  
   
@@ -130,9 +130,9 @@ ms.locfileid: "59881569"
   
 ##### <a name="to-access-the-dashboard-by-using-the-launchpad"></a>使用啟動列來存取儀表板  
   
-1.  從連線到網路的電腦，開啟 [啟動列] 。  
+1.  從連線到網路的電腦，開啟 [啟動列]  。  
   
-2.  在 [啟動列] 功能表上，按一下 [儀表板]。  
+2.  在 [啟動列] 功能表上，按一下 [儀表板]  。  
   
 3.  在 [儀表板] 的 [登入]  頁面上，輸入您的網路系統管理員認證，然後按 ENTER 鍵。  
   
@@ -154,7 +154,7 @@ ms.locfileid: "59881569"
      連到 [儀表板] 的遠端連線隨即開啟。  
   
     > [!NOTE]
-    >  如果您的伺服器沒有出現在 [首頁] 的 [電腦]  區段中，請按一下 [連線至更多電腦] ，在清單中尋找您的伺服器，然後按一下該伺服器來進行連線。  
+    >  如果您的伺服器沒有出現在 [首頁] 的 [電腦]  區段中，請按一下 [連線至更多電腦]  ，在清單中尋找您的伺服器，然後按一下該伺服器來進行連線。  
     >   
     >  若要讓使用者從遠端 Web 存取存取儀表板的權限，請開啟使用者帳戶的 屬性 頁面，然後按**Server 儀表板**選項**隨處存取** 索引標籤。  
   
@@ -165,7 +165,7 @@ ms.locfileid: "59881569"
   
 #### <a name="to-view-a-list-of-installed-add-ins"></a>檢視已安裝的增益集清單  
   
--   從 [儀表板] 按一下 [說明] ，然後按一下 [安全模式設定] 。  
+-   從 [儀表板] 按一下 [說明]  ，然後按一下 [安全模式設定]  。  
   
 #### <a name="to-open-the-dashboard-in-safe-mode"></a>以安全模式開啟儀表板  
   
@@ -173,9 +173,9 @@ ms.locfileid: "59881569"
   
 #### <a name="to-open-the-dashboard-in-safe-mode-from-another-computer-on-the-network"></a>從網路上的另一部電腦以安全模式開啟儀表板  
   
-1.  從連線到網路的電腦，開啟 [Windows Server Essentials 啟動列]，然後按一下 [儀表板] 。  
+1.  從連線到網路的電腦，開啟 [Windows Server Essentials 啟動列]，然後按一下 [儀表板]  。  
   
-2.  在 [儀表板] 登入頁面上，輸入具有伺服器登入權限之帳戶的使用者名稱和密碼，選取 [允許我選取要載入的增益集] 核取方塊，然後按一下箭號來進行登入。  
+2.  在 [儀表板] 登入頁面上，輸入具有伺服器登入權限之帳戶的使用者名稱和密碼，選取 [允許我選取要載入的增益集]  核取方塊，然後按一下箭號來進行登入。  
   
 ## <a name="see-also"></a>另請參閱  
   

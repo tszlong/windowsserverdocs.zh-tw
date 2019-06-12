@@ -12,12 +12,12 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 552a76ba9c2ff385f1ff09d4869eaeb6613027a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8f52cbe76204bb00cb15c3093f69daf3d8abb6e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823469"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433531"
 ---
 # <a name="customize-shared-folders"></a>自訂共用資料夾
 
@@ -25,35 +25,35 @@ ms.locfileid: "59823469"
 
 伺服器資料夾依預設會建立在磁碟 0 最大的資料磁碟分割上。 合作夥伴可使用下列步驟來自訂位置，以及指定其他伺服器資料夾：  
   
-1.  使用自訂磁碟分割設定建立原廠映像，然後在使用 sysprep 前建立新的 Storage 登錄機碼。 在初始設定 (IC) 期間，存放裝置 IC 工作會檢查是否有此登錄機碼。 如果存在，則會在 C:\ServerFolders 目錄中建立預設的伺服器資料夾。  
+1. 使用自訂磁碟分割設定建立原廠映像，然後在使用 sysprep 前建立新的 Storage 登錄機碼。 在初始設定 (IC) 期間，存放裝置 IC 工作會檢查是否有此登錄機碼。 如果存在，則會在 C:\ServerFolders 目錄中建立預設的伺服器資料夾。  
   
-    #### <a name="to-create-a-new-storage-registry-key"></a>建立新的 Storage 登錄機碼  
+   #### <a name="to-create-a-new-storage-registry-key"></a>建立新的 Storage 登錄機碼  
   
-    1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。  
+   1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]** 。  
   
-    2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]  應用程式。  
+   2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]  應用程式。  
   
-    3.  在瀏覽窗格中，依序展開 **[HKEY_LOCAL_MACHINE]**、**[SOFTWARE]** 與 **[Microsoft]**。  
+   3.  在瀏覽窗格中，依序展開 **[HKEY_LOCAL_MACHINE]** 、 **[SOFTWARE]** 與 **[Microsoft]** 。  
   
-    4.  以滑鼠右鍵按一下 **[Windows Server]**，按一下 **[新增]**，然後按一下 **[機碼]**。  
+   4.  以滑鼠右鍵按一下 **[Windows Server]** ，按一下 **[新增]** ，然後按一下 **[機碼]** 。  
   
-    5.  將機碼命名為 **Storage**。  
+   5.  將機碼命名為 **Storage**。  
   
-    6.  在瀏覽窗格中，以滑鼠右鍵按一下新的 Storage 登錄機碼，按一下 **[新增]**，然後按 **[DWORD (32-位元) 值]**。  
+   6.  在瀏覽窗格中，以滑鼠右鍵按一下新的 Storage 登錄機碼，按一下 **[新增]** ，然後按 **[DWORD (32-位元) 值]** 。  
   
-    7.  將字串命名為 **CreateFoldersOnSystem**。  
+   7.  將字串命名為 **CreateFoldersOnSystem**。  
   
-    8.  在 **[CreateFoldersOnSystem]** 上按一下滑鼠右鍵，然後按一下 **[修改]**。 **[編輯字串]** 對話方塊隨即出現。  
+   8.  在 **[CreateFoldersOnSystem]** 上按一下滑鼠右鍵，然後按一下 **[修改]** 。 **[編輯字串]** 對話方塊隨即出現。  
   
-    9. 將此新機碼的值設定為 **1**，然後按一下 **[確定]**。  
+   9. 將此新機碼的值設定為 **1**，然後按一下 **[確定]** 。  
   
-2.  使用 PostIC.cmd 指令碼將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 1:建立自訂資料夾，並在預設資料夾移至新的位置從 PostIC.cmd 使用 Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1)。  
+2. 使用 PostIC.cmd 指令碼將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 1:建立自訂資料夾，並在預設資料夾移至新的位置從 PostIC.cmd 使用 Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1)。  
   
-3.  使用 Windows Server 解決方案 SDK 將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 2:建立自訂資料夾，並使用 Windows Server 解決方案 SDK 中移動現有資料夾](Customize-Shared-Folders.md#BKMK_Example2)。  
+3. 使用 Windows Server 解決方案 SDK 將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 2:建立自訂資料夾，並使用 Windows Server 解決方案 SDK 中移動現有資料夾](Customize-Shared-Folders.md#BKMK_Example2)。  
   
- 或者，合作夥伴也可以將資料夾保留在磁碟機 C 上。如此可讓使用者或轉銷商判斷資料磁碟機上的資料夾配置。  
+   或者，合作夥伴也可以將資料夾保留在磁碟機 C 上。如此可讓使用者或轉銷商判斷資料磁碟機上的資料夾配置。  
   
-###  <a name="BKMK_Example1"></a> 範例 1:使用 Windows PowerShell 從 PostIC.cmd 建立自訂資料夾，並將預設資料夾移到新位置  
+###  <a name="BKMK_Example1"></a> 範例 1：使用 Windows PowerShell 從 PostIC.cmd 建立自訂資料夾，並將預設資料夾移到新位置  
   
 1.  依照[建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節中的詳細說明，建立用來執行初始設定後續工作的 PostIC.cmd 檔案。  
   
@@ -99,7 +99,7 @@ ms.locfileid: "59823469"
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a> 範例 2:使用 Windows Server 解決方案 SDK 建立自訂資料夾，並移動現有資料夾  
+###  <a name="BKMK_Example2"></a> 範例 2：使用 Windows Server 解決方案 SDK 建立自訂資料夾，並移動現有資料夾  
  您所建立的程式碼可編譯為可執行檔，然後從 PostIC.cmd 檔案加以呼叫，或直接從已安裝的增益集呼叫。  
   
 ```  

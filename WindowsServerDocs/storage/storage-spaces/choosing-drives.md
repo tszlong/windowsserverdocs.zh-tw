@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 227906685d77c31587c66d1c292f20ca94775058
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d16a9ddea96760b41c6cd2e4239b9bb51c8b3b38
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881049"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501644"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
->適用於：Windows Server 2016
+>適用於：Windows 2019 年，Windows Server 2016
 
 本主題指引您如何選擇[儲存空間直接存取](storage-spaces-direct-overview.md)的磁碟機，以符合您的效能及容量需求。
 
@@ -116,7 +116,7 @@ ms.locfileid: "59881049"
 
 建議您將每個伺服器的儲存容量限為約莫 100 TB。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。
 
-每存放集區的大小上限目前為 1 PB 或 1,000 TB。
+每個儲存體集區的目前大小上限是 4 個千兆位元組 (PB) (4,000 TB) 的 Windows Server 2019 或針對 Windows Server 2016 的 1 pb。
 
 ## <a name="see-also"></a>另請參閱
 
@@ -124,4 +124,4 @@ ms.locfileid: "59881049"
 - [了解的快取中儲存空間直接存取](understand-the-cache.md)
 - [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)
 - [規劃中儲存空間直接存取磁碟區](plan-volumes.md)
-- [錯誤容錯] 和 [儲存體效率](storage-spaces-fault-tolerance.md)
+- [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 005721873ad3a0df942bc9e23eba13728965ccba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 989216f90e78689b464240cff957bab1d9c1229b
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864549"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749564"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中設定 VPN 裝置通道
 
@@ -92,22 +92,23 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 根據每個特定部署案例的需求，是另一個 VPN 功能，可設定裝置通道[受信任網路偵測](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)。
 
 ```
- <!-- inside/outside detection --> 
-  <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection> 
+ <!-- inside/outside detection -->
+  <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection>
 ```
 
 ## <a name="deployment-and-testing"></a>部署和測試
 
-您可以設定裝置通道使用 Windows PowerShell 指令碼，並使用 Windows Management Instrumentation \(WMI\)橋接器。 中的內容，就必須設定一律開啟 」 VPN 裝置通道**本機系統**帳戶。 若要這麼做，它會使用所需[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)、 其中的[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools)納入[Sysinternals](https://docs.microsoft.com/sysinternals/)公用程式的套件。
+您可以使用 Windows PowerShell 指令碼，並使用 Windows Management Instrumentation (WMI) 的橋接器來設定裝置通道。 中的內容，就必須設定一律開啟 」 VPN 裝置通道**本機系統**帳戶。 若要這麼做，它會使用所需[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)、 其中的[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools)納入[Sysinternals](https://docs.microsoft.com/sysinternals/)公用程式的套件。
 
-如需有關如何部署的指導方針每個裝置`(.\Device)`與每位使用者`(.\User)`設定檔，請參閱[使用 PowerShell 指令碼和 WMI 橋接器提供者](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。 
+如需有關如何部署的指導方針每個裝置`(.\Device)`與每位使用者`(.\User)`設定檔，請參閱[使用 PowerShell 指令碼和 WMI 橋接器提供者](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
 
 執行下列 Windows PowerShell 命令來確認您已成功部署的裝置設定檔：
 
-    `Get-VpnConnection -AllUserConnection`
+  ```powershell
+  Get-VpnConnection -AllUserConnection
+  ```
 
 輸出會顯示一份裝置\-各種裝置部署的 VPN 設定檔。
-
 
 ### <a name="example-windows-powershell-script"></a>Windows PowerShell 指令碼範例
 
@@ -170,15 +171,15 @@ Write-Host "$Message"
 
 ### <a name="vpn-client-configuration-resources"></a>VPN 用戶端設定資源
 
-這些是 VPN 用戶端設定的資源。
+以下是 VPN 用戶端設定的資源。
 
 - [如何建立 VPN 設定檔在 System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
 - [設定 Windows 10 用戶端一律開啟 VPN 連線](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [VPN 設定檔選項](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 
-### <a name="remote-access-server-ras-gateway-resources"></a>遠端存取伺服器\(RAS\)閘道資源
+### <a name="remote-access-server-gateway-resources"></a>遠端存取伺服器閘道資源
 
-以下是 RAS 閘道資源。
+以下是遠端存取伺服器 (RAS) 閘道資源。
 
 - [設定 RRAS 電腦驗證憑證](https://technet.microsoft.com/library/dd458982.aspx)
 - [IKEv2 VPN 連線疑難排解](https://technet.microsoft.com/library/dd941612.aspx)
@@ -187,4 +188,3 @@ Write-Host "$Message"
 >[!IMPORTANT]
 >搭配使用時裝置通道 Microsoft RAS 閘道，您必須設定 RRAS 伺服器支援 IKEv2 機器憑證驗證，進而**IKEv2 允許機器憑證驗證**如所述的驗證方法[此處](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)。 一旦啟用此設定時，強烈建議**組 VpnAuthProtocol** PowerShell cmdlet，連同**RootCertificateNameToAccept**選擇性參數，用來確保RRAS IKEv2 連線只能用於 VPN 用戶端憑證鏈結至明確定義內部/私用根憑證授權單位。 或者，**受信任的根憑證授權單位**RRAS 伺服器上的存放區應該加以修改以確保它不包含公用憑證授權單位，如所述[這裡](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)。 其他 VPN 閘道的考量，可能也需要類似的方法。
 
----

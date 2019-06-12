@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f034c2eeafe9d52569e8181bbbb2e582b1059d51
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7e6e1c97ccc903ca3aff558354941e6a84d3fb79
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188865"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444741"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>逐步解說指南：使用條件式存取控制管理風險
 
@@ -57,7 +57,7 @@ ms.locfileid: "66188865"
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>驗證預設的 AD FS 存取控制機制
 
-1.  在用戶端電腦，開啟瀏覽器視窗，並巡覽至範例應用程式： **https://webserv1.contoso.com/claimapp**。
+1.  在用戶端電腦，開啟瀏覽器視窗，並巡覽至範例應用程式： **https://webserv1.contoso.com/claimapp** 。
 
     這個動作會將要求自動重新導向到同盟伺服器，且會提示您以使用者名稱和密碼登入。
 
@@ -97,14 +97,18 @@ ms.locfileid: "66188865"
 1.  在您的同盟伺服器上，開啟 Windows PowerShell 命令視窗，並執行下列命令：
 
 
-    `$rp = Get-AdfsRelyingPartyTrust -Name claimapp`
+~~~
+`$rp = Get-AdfsRelyingPartyTrust -Name claimapp`
+~~~
 
 
-2.  在相同的 Windows PowerShell 命令視窗中，執行下列命令：
+2. 在相同的 Windows PowerShell 命令視窗中，執行下列命令：
 
 
-    `$GroupAuthzRule = '@RuleTemplate = "Authorization" @RuleName = "Foo" c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "^(?i)<group_SID>$"] =>issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");'
-    Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $GroupAuthzRule`
+~~~
+`$GroupAuthzRule = '@RuleTemplate = "Authorization" @RuleName = "Foo" c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "^(?i)<group_SID>$"] =>issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");'
+Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $GroupAuthzRule`
+~~~
 
 > [!NOTE]
 > 請務必將 <group_SID> 取代為 AD **Finance** 群組的 SID 值。

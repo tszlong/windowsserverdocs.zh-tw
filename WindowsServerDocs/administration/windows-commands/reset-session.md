@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6510f8b21186b856eb489c1add0674b8984b0e56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5a0991c76ba890bb94b0dcf258df6207ed228e72
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857089"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441791"
 ---
 # <a name="reset-session"></a>reset session
 
@@ -36,6 +36,7 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```  
 
 ## <a name="parameters"></a>參數  
+
 |參數|描述|  
 |-------|--------|  
 |\<SessionName>|指定您想要重設工作階段的名稱。 若要判斷工作階段的名稱，請使用**查詢工作階段**命令。|  
@@ -51,14 +52,14 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   **/Server**只有當您使用時，才是必要參數**重設工作階段**從遠端伺服器。  
 
 ## <a name="BKMK_examples"></a>範例  
--   若要重設指定 rdp tcp #6 的工作階段，請輸入：  
-    ```  
-    reset session rdp-tcp#6  
-    ```  
--   若要重設的工作階段，會使用工作階段 ID 3，請輸入：  
-    ```  
-    reset session 3  
-    ```  
+- 若要重設指定 rdp tcp #6 的工作階段，請輸入：  
+  ```  
+  reset session rdp-tcp#6  
+  ```  
+- 若要重設的工作階段，會使用工作階段 ID 3，請輸入：  
+  ```  
+  reset session 3  
+  ```  
 
 #### <a name="additional-references"></a>其他參考資料  
 [命令列語法關鍵](command-line-syntax-key.md)  

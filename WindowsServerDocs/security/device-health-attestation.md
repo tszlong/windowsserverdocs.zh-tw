@@ -11,12 +11,12 @@ ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.date: 10/12/2016
-ms.openlocfilehash: d304ee3456f8db1e5b202c1d9221d1374a5251be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7c2d7113847cc44f18c5234502b58becde1dcb9f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831009"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446517"
 ---
 # <a name="device-health-attestation"></a>裝置健康情況證明
 
@@ -58,15 +58,15 @@ DHA 服務與 MDM 解決方案整合，並提供下列功能︰
 以下範例說明您可以如何使用 DHA 來協助提升您組織資產的安全性保護基準。
 
 1. 您可以建立會檢查下列開機組態/屬性的原則：
-  - 安全開機
-  - BitLocker
-  - ELAM
+   - 安全開機
+   - BitLocker
+   - ELAM
 2. MDM 解決方案會強制執行此原則並根據 DHA 報告資料觸發矯正動作。  例如，它可以驗證下列項目：
-  - 已啟用「安全開機」、裝置已載入經驗證且可信任的程式碼，且 Windows 開機載入器未遭竄改。
-  - 「信任式開機」已成功驗證 Windows 核心的數位簽章及裝置啟動時載入的元件。
-  - 「測量開機」已建立受 TPM 保護的稽核線索，並可從遠端驗證。
-  - 已啟用 BitLocker，且它會在裝置關閉時保護資料。
-  - ELAM 會在早期開機階段啟用並且會監視執行階段。
+   - 已啟用「安全開機」、裝置已載入經驗證且可信任的程式碼，且 Windows 開機載入器未遭竄改。
+   - 「信任式開機」已成功驗證 Windows 核心的數位簽章及裝置啟動時載入的元件。
+   - 「測量開機」已建立受 TPM 保護的稽核線索，並可從遠端驗證。
+   - 已啟用 BitLocker，且它會在裝置關閉時保護資料。
+   - ELAM 會在早期開機階段啟用並且會監視執行階段。
   
 #### <a name="dha-cloud-service"></a>DHA 雲端服務
 
@@ -93,7 +93,7 @@ DHA 內部部署服務提供所有 DHA 雲端服務提供的功能。  它也可
 
 #### <a name="ekcert-validation-mode"></a>EKCert 驗證模式
 
-EKCert 驗證模式已經針對未連線到網際網路的組織最佳化。 連線到以 EKCert 驗證模式執行之 DHA 服務的裝置「不會」直接存取網際網路。
+EKCert 驗證模式已經針對未連線到網際網路的組織最佳化。 連線到以 EKCert 驗證模式執行之 DHA 服務的裝置「不會」  直接存取網際網路。
 
 當 DHA 以 EKCert 驗證模式執行時，它是依賴企業管理的信任鏈結，必須偶爾更新 (每年大約 5-10 次)。 
 
@@ -124,27 +124,27 @@ AIKCert 驗證模式已經針對可存取網際網路的作業環境最佳化。
 
 ### <a name="install-windows-server-2016"></a>安裝 Windows Server 2016
 
-使用您想要的安裝方式 (例如「Windows 部署服務」) 安裝 Windows Server 2016，或從開機媒體、USB 磁碟機或本機檔案系統執行安裝程式。 如果這是您第一次設定 DHA 內部部署服務，您應該使用「桌面體驗」安裝選項來安裝 Windows Server 2016。
+使用您想要的安裝方式 (例如「Windows 部署服務」) 安裝 Windows Server 2016，或從開機媒體、USB 磁碟機或本機檔案系統執行安裝程式。 如果這是您第一次設定 DHA 內部部署服務，您應該使用「桌面體驗」  安裝選項來安裝 Windows Server 2016。
 
 ### <a name="add-the-device-health-attestation-server-role"></a>新增裝置健康情況證明伺服器角色
 
 您可以使用「伺服器管理員」來安裝「裝置健康情況證明」伺服器角色和其相依性。 
 
-安裝 Windows Server 2016 之後，裝置會重新啟動並開啟「伺服器管理員」。 如果「伺服器管理員」沒有自動啟動，請按一下 [開始]，然後按一下 [伺服器管理員]。
+安裝 Windows Server 2016 之後，裝置會重新啟動並開啟「伺服器管理員」。 如果「伺服器管理員」沒有自動啟動，請按一下 [開始]  ，然後按一下 [伺服器管理員]  。
 
-1.  按一下 [新增角色及功能]。
-2.  在 [在您開始前]  頁面上，按一下 [下一步] 。
-3.  在 [選取安裝類型] 頁面上，按一下 [角色型或功能型安裝]，然後按 [下一步]。
-4.  在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，選取伺服器然後按一下 [下一步]。
-5.  在 [選取伺服器角色] 頁面上，選取 [裝置健康情況證明] 核取方塊。
-6.  按一下 [新增功能] 來安裝其他必要的角色服務和功能。
-7.  按一下 [下一步] 。
-8.  在 [選取功能] 頁面上，按 [下一步]。
-9.  在 [網頁伺服器 (IIS) 角色]  頁面上，按一下 [下一步] 。
-10. 在 [選取角色服務] 頁面上，按 [下一步]。
-11. 在 [裝置健全狀況證明服務] 頁面上，按一下 [下一步]。
-12. 在 [確認安裝選項]  頁面上，按一下 [安裝] 。
-13. 安裝完成時，按一下 [關閉]。
+1.  按一下 [新增角色及功能]  。
+2.  在 [在您開始前]  頁面上，按一下 [下一步]  。
+3.  在 [選取安裝類型]  頁面上，按一下 [角色型或功能型安裝]  ，然後按 [下一步]  。
+4.  在 [選取目的地伺服器]  頁面上，按一下 [從伺服器集區選取伺服器]  ，選取伺服器然後按一下 [下一步]  。
+5.  在 [選取伺服器角色]  頁面上，選取 [裝置健康情況證明]  核取方塊。
+6.  按一下 [新增功能]  來安裝其他必要的角色服務和功能。
+7.  按一下 [下一步]  。
+8.  在 [選取功能]  頁面上，按 [下一步]  。
+9.  在 [網頁伺服器 (IIS) 角色]  頁面上，按一下 [下一步]  。
+10. 在 [選取角色服務]  頁面上，按 [下一步]  。
+11. 在 [裝置健全狀況證明服務]  頁面上，按一下 [下一步]  。
+12. 在 [確認安裝選項]  頁面上，按一下 [安裝]  。
+13. 安裝完成時，按一下 [關閉]  。
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>安裝簽署和加密憑證
 
@@ -177,7 +177,7 @@ mkdir .\TrustedTpm
 expand -F:* .\TrustedTpm.cab .\TrustedTpm
 ```
 
-#### <a name="remove-the-trust-chains-for-tpm-vendors-that-are-not-trusted-by-your-organization-optional"></a>移除您的組織「不信任」的 TPM 廠商的信任鏈結 (選擇性)
+#### <a name="remove-the-trust-chains-for-tpm-vendors-that-are-not-trusted-by-your-organization-optional"></a>移除您的組織「不信任」  的 TPM 廠商的信任鏈結 (選擇性)
 
 刪除您的組織不信任的任何 TPM 廠商信任鏈結的資料夾。
 

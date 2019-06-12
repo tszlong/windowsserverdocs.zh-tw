@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 41767b9e53c0106931e78f86f8675e413cca0d0a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 84e1ce7864f04550ee25253bcf038afdd7b919fe
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816879"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811673"
 ---
 # <a name="managing-virtual-machines-with-windows-admin-center"></a>管理虛擬機器與 Windows Admin Center
 
 >適用於：Windows Admin Center，Windows Admin Center 預覽
 
-虛擬機器工具包含在[伺服器](manage-servers.md)，[容錯移轉叢集](manage-failover-clusters.md)或是[Hyper-Converged 叢集](manage-hyper-converged.md)如果伺服器或叢集上啟用 HYPER-V 角色的連線。 您可以使用虛擬機器的工具來管理 HYPER-V 主機執行 Windows Server 2012 或更新版本中，請安裝桌面體驗，或是做為 Server Core。 也支援 Hyper-V Server 2012 和 2016年。
+虛擬機器工具包含在[伺服器](manage-servers.md)，[容錯移轉叢集](manage-failover-clusters.md)或是[Hyper-Converged 叢集](manage-hyper-converged.md)如果伺服器或叢集上啟用 HYPER-V 角色的連線。 您可以使用虛擬機器的工具來管理 HYPER-V 主機執行 Windows Server 2012 或更新版本中，請安裝桌面體驗，或是做為 Server Core。 Hyper-V Server 2012、 2016年和 2019年也支援。
 
 ## <a name="key-features"></a>重要功能
 
@@ -37,6 +37,8 @@ ms.locfileid: "59816879"
 - [變更虛擬機器設定](#change-virtual-machine-settings)
 - [即時移轉至另一個叢集節點的 虛擬機器](#live-migrate-a-virtual-machine-to-another-cluster-node)
 - [進階的管理和針對單一虛擬機器進行疑難排解](#advanced-management-and-troubleshooting-for-a-single-virtual-machine)
+- [管理虛擬機器透過 HYPER-V 主機 (VMConnect)](#manage-a-virtual-machine-through-the-hyper-v-host-vmconnect)
+- [變更為 HYPER-V 主機設定](#change-hyper-v-host-settings)
 - [檢視 HYPER-V 事件記錄檔](#view-hyper-v-event-logs)
 - [利用 Azure Site Recovery 保護虛擬機器](#protect-virtual-machines-with-azure-site-recovery)
 
@@ -65,6 +67,7 @@ ms.locfileid: "59816879"
     - [變更虛擬機器設定](#change-virtual-machine-settings)。
     - 連接到虛擬機器主控台，透過 HYPER-V 主機使用 VMConnect。
     - [將虛擬機器使用 Azure Site Recovery 複寫](#protect-virtual-machines-with-azure-site-recovery)。
+    - 您可以執行多個 Vm，例如啟動、 關機、 暫停、 儲存的作業刪除時，重設，您可以選取多個 Vm，並執行一次作業。
 
 注意：如果您連線到叢集，虛擬機器工具只會顯示叢集的虛擬機器。 我們計劃也會顯示非叢集虛擬機器在未來。
 
@@ -77,8 +80,12 @@ ms.locfileid: "59816879"
 3. 輸入虛擬機器名稱，然後選擇層代 1 和 2 的虛擬機器之間。
 4. 如果您要在叢集上建立虛擬機器，您可以選擇哪一部主機上，一開始建立虛擬機器。 如果您正在 Windows Server 2016 或更新版本中，此工具時，會為您提供的主控件的建議。
 5. 選擇虛擬機器檔案的路徑。 從下拉式清單中選擇的磁碟區，或按一下**瀏覽**選擇資料夾，使用資料夾選擇器。 虛擬機器設定檔和虛擬硬碟檔案會儲存在同一個資料夾下`\Hyper-V\\[virtual machine name]`所選磁碟區或路徑的路徑。
+
+   >[!Tip]
+   > 在資料夾選擇器中，您可以瀏覽到網路上任何可用的 SMB 共用輸入中的路徑**資料夾名稱**欄位做為```\\server\share```。 使用網路共用，將會需要用到 VM 儲存體[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)。
+
 6. 是否已啟用巢狀虛擬化，設定記憶體設定、 網路介面卡、 虛擬硬碟，然後選擇您要從.iso 映像檔，或從網路安裝作業系統，請選擇虛擬處理器的數目。
-7. 按一下 [建立]，建立虛擬機器。
+7. 按一下 [建立]  ，建立虛擬機器。
 8. 一旦虛擬機器已建立，並會出現在虛擬機器清單，您可以啟動虛擬機器。
 9. 虛擬機器啟動之後，您可以連線到透過 VMConnect 以安裝作業系統的虛擬機器的主控台。 從清單中選取虛擬機器，請按一下**更多** > **Connect**下載.rdp 檔案。 遠端桌面連線應用程式中開啟.rdp 檔案。 因為這連接到虛擬機器的主控台，您必須輸入 HYPER-V 主機的系統管理員認證。
 
@@ -88,7 +95,7 @@ ms.locfileid: "59816879"
 
 1. 按一下 **虛擬機器**從左側瀏覽窗格的工具。
 2. 在 虛擬機器 工具頂端，選擇**清查** 索引標籤。從清單中選擇虛擬機器，然後按一下**更多** > **設定**。
-3. 切換**一般**，**記憶體**，**處理器**，**磁碟**，**網路**， **開機順序**並**檢查點**索引標籤上，設定必要的設定，然後按一下 **儲存**儲存目前的索引標籤設定。 可用的設定取決於虛擬機器的世代。 此外，某些設定不能變更執行中虛擬機器，您必須先停止虛擬機器。
+3. 切換**一般**，**安全性**，**記憶體**，**處理器**，**磁碟**， **網路**，**開機順序**並**檢查點**索引標籤上，設定必要的設定，然後按一下 **儲存**儲存目前的索引標籤設定。 可用的設定取決於虛擬機器的世代。 此外，某些設定不能變更執行中虛擬機器，您必須先停止虛擬機器。
 
 ## <a name="live-migrate-a-virtual-machine-to-another-cluster-node"></a>即時移轉至另一個叢集節點的 虛擬機器
 
@@ -117,6 +124,26 @@ ms.locfileid: "59816879"
     - 連線到透過 HYPER-V 主機使用 VMConnect 的虛擬機器主控台。
     - [使用 Azure Site Recovery 的虛擬機器複寫](#protect-virtual-machines-with-azure-site-recovery)。
 
+## <a name="manage-a-virtual-machine-through-the-hyper-v-host-vmconnect"></a>管理虛擬機器透過 HYPER-V 主機 (VMConnect)
+
+![透過網頁瀏覽器連線的 VM](../media/manage-virtual-machines/vm-connect.png)
+
+1. 按一下 **虛擬機器**從左側瀏覽窗格的工具。
+2. 在 虛擬機器 工具頂端，選擇**清查** 索引標籤。從清單中選擇虛擬機器，然後按一下**更多** > **Connect**或是**下載 RDP 檔案**。 **連接**可讓您透過遠端桌面 web 主控台中，以 Windows Admin Center 整合到客體虛擬機器進行互動。 **下載 RDP 檔案**會下載.rdp 檔案，您可以使用遠端桌面連線應用程式 (mstsc.exe) 來開啟。 這兩個選項會使用 VMConnect 連線到透過 HYPER-V 主機到客體虛擬機器，並會要求您輸入在 HYPER-V 主機伺服器系統管理員認證。
+
+## <a name="change-hyper-v-host-settings"></a>變更為 HYPER-V 主機設定
+
+![HYPER-V 主機設定 畫面](../media/manage-virtual-machines/host-settings.png)
+
+1. 在伺服器、 超交集叢集或容錯移轉叢集連接之後，按一下**設定**左側導覽窗格底部的功能表。
+2. 在 HYPER-V 主機伺服器或叢集上，您會看到**HYPER-V 主機設定**群組以及下列各節：
+    - 一般：變更虛擬硬碟和虛擬機器的檔案路徑和 hypervisor 排程類型 （如果支援）
+    - 增強的工作階段模式
+    - NUMA 跨越
+    - 即時移轉
+    - 存放裝置移轉
+3. 如果您進行任何設定變更超交集叢集或容錯移轉叢集的連接中的 HYPER-V 主機時，變更將會套用到所有叢集節點中。
+
 ## <a name="view-hyper-v-event-logs"></a>檢視 HYPER-V 事件記錄檔
 
 您可以檢視 HYPER-V 事件記錄檔，直接從虛擬機器的工具。
@@ -127,21 +154,20 @@ ms.locfileid: "59816879"
 
 ## <a name="protect-virtual-machines-with-azure-site-recovery"></a>利用 Azure Site Recovery 保護虛擬機器
 
-若要設定 Azure Site Recovery 及將您的內部部署虛擬機器複寫至 Azure，您可以使用 Windows Admin Center。 [深入了解](azure-services.md)
+若要設定 Azure Site Recovery 及將您的內部部署虛擬機器複寫至 Azure，您可以使用 Windows Admin Center。 [深入了解](../azure/azure-site-recovery.md)
 
 ## <a name="more-coming"></a>更多即將推出
 
 Windows Admin Center 中的虛擬機器管理目前正在開發，並將在不久的將來加入新功能。 您可以檢視 狀態 和 票選功能在 UserVoice 中：
 
-|功能要求|
-|-------|
-|[匯入/匯出虛擬機器](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31481971--virtual-machines-import-export-vms)|
-|[排序資料夾中的虛擬機器](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494712--virtual-machines-ability-to-sort-vm-into-folder)|
-|[支援其他虛擬機器設定](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31915264--virtual-machines-expose-all-configurable-setting)|
-|[HYPER-V 複本支援](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/32040253--virtual-machines-setup-and-manage-hyper-v-replic)|
-|[委派的虛擬機器的擁有權](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31663837--virtual-machines-owner-delegation)|
-|[再製虛擬機器](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31783288--virtual-machines-add-a-button-to-clone-a-vm)|
-|[從現有的虛擬機器建立範本](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494649--virtual-machines-create-a-template-from-an-exist)|
-|[檢視虛擬機器在 HYPER-V 主機](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31734559--virtual-machines-find-vms-on-host-screen)|
-|[在新的虛擬機器 窗格中設定 VLAN](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31710979--virtual-machines-new-new-vm-pane-need-vlan-opt)|
-|[**查看所有或提出新功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bvirtual%20machines%5D)|
+- [匯入/匯出虛擬機器](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31481971--virtual-machines-import-export-vms)
+- [排序資料夾中的虛擬機器](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494712--virtual-machines-ability-to-sort-vm-into-folder)
+- [支援其他虛擬機器設定](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31915264--virtual-machines-expose-all-configurable-setting)
+- [HYPER-V 複本支援](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/32040253--virtual-machines-setup-and-manage-hyper-v-replic)
+- [委派的虛擬機器的擁有權](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31663837--virtual-machines-owner-delegation)
+- [再製虛擬機器](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31783288--virtual-machines-add-a-button-to-clone-a-vm)
+- [從現有的虛擬機器建立範本](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494649--virtual-machines-create-a-template-from-an-exist)
+- [檢視虛擬機器在 HYPER-V 主機](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31734559--virtual-machines-find-vms-on-host-screen)
+- [在新的虛擬機器 窗格中設定 VLAN](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31710979--virtual-machines-new-new-vm-pane-need-vlan-opt)
+
+[查看所有或提出新功能](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bvirtual%20machines%5D)。

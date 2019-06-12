@@ -12,12 +12,12 @@ ms.assetid: 99e258bc-0695-48c9-b694-a7f3cbe2a2d0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f5042204cd189e3101f5e0126fd98e786a49032d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e15cb8591fc701094dde884d0a55e08d2cf422bb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844119"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433606"
 ---
 # <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>建立 PostIC.cmd 檔案以便執行初始設定後續的工作
 
@@ -25,13 +25,13 @@ ms.locfileid: "59844119"
 
 您可以撰寫自己的程式碼，然後從名為 PostIC.cmd 的指令碼檔案呼叫該程式碼，藉此來新增後置初始設定的自訂項目。 使用 PostIC.cmd 檔案時，必須遵守下列規定：  
   
--   您的自訂程式碼必須以無訊息模式執行 (即不能顯示使用者介面)。  
+- 您的自訂程式碼必須以無訊息模式執行 (即不能顯示使用者介面)。  
   
--   您的自訂程式碼不能起始伺服器的重新啟動。 初始設定會將重新啟動伺服器作為最後一個工作。  
+- 您的自訂程式碼不能起始伺服器的重新啟動。 初始設定會將重新啟動伺服器作為最後一個工作。  
   
--   您的自訂程式碼必須在三分鐘以內執行完成。  
+- 您的自訂程式碼必須在三分鐘以內執行完成。  
   
- 定義您的 PostIC.cmd 檔案，使其在程式碼執行成功時傳回 0。 如果傳回其他值，作業系統就會尋找名為 [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure)的檔案，這個檔案包含當 PostIC.cmd 檔案中的程式碼執行失敗時，應該執行的程式碼。 PostIC.cmd 檔案和 SetupFailure.cmd 檔案都必須位於 C:\Windows\Setup\Scripts 中。  
+  定義您的 PostIC.cmd 檔案，使其在程式碼執行成功時傳回 0。 如果傳回其他值，作業系統就會尋找名為 [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure)的檔案，這個檔案包含當 PostIC.cmd 檔案中的程式碼執行失敗時，應該執行的程式碼。 PostIC.cmd 檔案和 SetupFailure.cmd 檔案都必須位於 C:\Windows\Setup\Scripts 中。  
   
 #### <a name="to-define-post-initial-configuration-customizations"></a>若要定義初始設定的後續自訂項目  
   

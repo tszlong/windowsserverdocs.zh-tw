@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: bf10f7f7444967247e51065bc6138fc0afd5ed1a
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976785"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804970"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -216,7 +216,7 @@ ms.locfileid: "65976785"
     >
     > 在清單中的 SSL 憑證繫結，請確定正確的憑證，繫結至連接埠 3392。
 
-3. 開啟 Windows 登錄 (regedit) 並以 nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```並找出索引鍵**WebSocketURI**。 值必須設定為**https://+:3392/rdp/**。
+3. 開啟 Windows 登錄 (regedit) 並以 nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```並找出索引鍵**WebSocketURI**。 值必須設定為<strong>https://+:3392/rdp/</strong>。
 
 ### <a name="setting-up-the-rd-session-host"></a>設定 RD 工作階段主機
 如果 RD 工作階段主機伺服器不是從 RD 代理人伺服器，請遵循下列步驟：
@@ -238,7 +238,7 @@ ms.locfileid: "65976785"
     >
     > 在清單中的 SSL 憑證繫結，請確定正確的憑證，繫結至連接埠 3392。
 
-3. 開啟 Windows 登錄 (regedit) 並以 nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```並找出索引鍵**WebSocketURI**。 值必須設定為**https://+:3392/rdp/**。
+3. 開啟 Windows 登錄 (regedit) 並以 nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```並找出索引鍵**WebSocketURI**。 值必須設定為<https://+:3392/rdp/>。
 
 ### <a name="general-observations"></a>一般的觀察值
 

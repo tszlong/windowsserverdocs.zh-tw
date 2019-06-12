@@ -14,24 +14,24 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2e5be2ed19fe7cd64f6c6bd64ca9afafd93bff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf67a1c9675191936a6150bb950c59e6f99b54ad
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812309"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810700"
 ---
 # <a name="install-server-with-desktop-experience"></a>安裝含有桌面體驗的伺服器
 > 適用於：Windows Server 2016
   
 
-當您使用安裝精靈安裝 Windows Server 2016 時，您可以在 **Windows Server 2016**和 **Windows Server (含有桌面體驗的伺服器)** 之間進行選擇。 Windows Server 2016 的 [含有桌面體驗的伺服器] 選項，相當於已安裝桌面體驗功能之 Windows Server 2012 R2 中的 [完整] 安裝選項。 如果您不在安裝精靈中做出選擇，系統將會安裝 **Windows Server 2016**，這是 [Server Core] 安裝選項。
+當您使用安裝精靈安裝 Windows Server 2016 時，您可以在 **Windows Server 2016**和 **Windows Server (含有桌面體驗的伺服器)** 之間進行選擇。 Windows Server 2016 的 [含有桌面體驗的伺服器] 選項，相當於已安裝桌面體驗功能之 Windows Server 2012 R2 中的 [完整] 安裝選項。 如果您不在安裝精靈中做出選擇，系統將會安裝 **Windows Server 2016**，這是 [Server Core]  安裝選項。
 
 此 [含有桌面體驗的伺服器] 選項會安裝標準使用者介面和所有工具，包括需要在 Windows Server 2012 R2 中另外安裝的用戶體驗功能。 伺服器角色及功能可由伺服器管理員或其他方法安裝。 與 Server Core 選項相較下，它需要更多的磁碟空間，而且具有較高的維護需求。因此，除非您特別需要 [含有桌面體驗的伺服器] 選項所包含的額外使用者介面元素與圖形化管理工具，否則我們建議您選擇 Server Core 安裝。 如果您認為不需要額外元素即可進行，請參閱[安裝 Server Core](Getting-Started-with-Server-Core.md)。 如需更輕量型的選項，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)。
 
->[!NOTE]
+> [!NOTE]
 >
->與 Windows Server 某些更早的版本不同，您無法在安裝完成後在 Server Core 與桌面體驗伺服器之間進行轉換。 如果您安裝桌面體驗伺服器，並稍後決定使用 Server Core，您應該執行全新安裝。
+> 與 Windows Server 某些更早的版本不同，您無法在安裝完成後在 Server Core 與桌面體驗伺服器之間進行轉換。 如果您安裝桌面體驗伺服器，並稍後決定使用 Server Core，您應該執行全新安裝。
 
 **使用者介面：** 標準圖形化使用者介面 (伺服器圖形化介面)。 伺服器圖形化介面包含新的 Windows 10 殼層。 此選項預設安裝的特定 Windows 功能為User-Interfaces-Infra、Server-GUI-Shell、Server-GUI-Mgmt-Infra、InkAndHandwritingServices、ServerMediaFoundation 及桌面體驗。 雖然這些功能會顯示於此版本的「伺服器管理員」中，系統並不支援將它們解除安裝，也不會在未來版本中提供此功能。
 
@@ -44,7 +44,7 @@ ms.locfileid: "59812309"
 ## <a name="installation-scenarios"></a>安裝案例
 
 ### <a name="evaluation"></a>評估
-您可以從 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)取得 Windows Server 的 180 天授權評估版。 選擇 [Windows Server 2016] | [64 位元 ISO] 選項 進行下載，您也可以瀏覽 [Windows Server 2016] | [虛擬實驗室]。
+您可以從 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)取得 Windows Server 的 180 天授權評估版。 選擇 [Windows Server 2016] | [64 位元 ISO] 選項  進行下載，您也可以瀏覽 [Windows Server 2016] | [虛擬實驗室]  。
 
 > [!IMPORTANT]  
 > 對於 14393.0.161119-1705.RS1_REFRESH 之前的 Windows Server 2016 版本，您只能執行從已使用 \[桌面體驗\] 選項 (非 \[Server Core\] 選項) 安裝之 Windows Server 2016 的評估版轉換為零售版的這項轉換。 從 14393.0.161119-1705.RS1_REFRESH 版本開始與未來的版本，您可以將評估版本轉換零售，無論使用何種安裝選項。
@@ -52,7 +52,7 @@ ms.locfileid: "59812309"
 
 ### <a name="clean-installation"></a>全新安裝
 
-若要從媒體安裝 [含有桌面體驗的伺服器] 安裝選項，請將媒體插入磁碟機、重新啟動電腦，然後執行 Setup.exe。 在開啟的精靈中，選取 [Windows Server (含有桌面體驗的伺服器)] (Standard 或 Datacenter)，然後完成精靈。
+若要從媒體安裝 [含有桌面體驗的伺服器] 安裝選項，請將媒體插入磁碟機、重新啟動電腦，然後執行 Setup.exe。 在開啟的精靈中，選取 [Windows Server (含有桌面體驗的伺服器)]  (Standard 或 Datacenter)，然後完成精靈。
 
 ### <a name="upgrade"></a>升級
 **升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體

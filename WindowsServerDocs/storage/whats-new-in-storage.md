@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 5469d663f64fdb453e03863f409b675473d3f6aa
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.openlocfilehash: f72156b050aa943cfafaf1fa2539911d6d1e089e
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308565"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501484"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>在 Windows Server 中的儲存體中最新消息
 
@@ -21,7 +21,7 @@ ms.locfileid: "66308565"
 
 本主題說明在 Windows Server 2019，Windows Server 2016 中的儲存體中新增和變更功能和 Windows Server 半年通道釋出。
 
-## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1903"></a>在 Windows Server 2019 和 Windows Server 版 1903年的儲存體中最新消息
+## <a name="whats-new-in-storage-in-windows-server-version-1903"></a>在 Windows Server，版本 1903年的儲存體中最新消息
 
 這一版的 Windows Server 加入了下列變更和技術。
 

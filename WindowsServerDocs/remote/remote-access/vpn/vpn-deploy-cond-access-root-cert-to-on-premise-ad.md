@@ -15,12 +15,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 210540846f5d62dfc74a2e629a6b7675ccf9894d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4aaad98cd04c9b07bdea848294e10d9bcb602064
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837369"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749543"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>步驟 7.4. 將條件式存取的根憑證部署至內部部署 AD
 
@@ -28,10 +28,10 @@ ms.locfileid: "59837369"
 
 在此步驟中，您將部署條件式存取的根憑證做為 VPN 驗證的受信任的根憑證到您內部部署 AD。
 
-&#171;  [**前一個：** 步驟 7.3.設定條件式存取原則](vpn-config-conditional-access-policy.md)<br>
-&#187;[ **下一步:** 步驟 7.5.建立 OMA DM 基礎 VPNv2 設定檔到 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md)
+- [**前一個：** 步驟 7.3.設定條件式存取原則](vpn-config-conditional-access-policy.md)
+- [**下一步:** 步驟 7.5.建立 OMA-DM 型 VPNv2 設定檔至 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
-1. 在  **VPN 連線能力**頁面上，按一下**下載憑證**。 
+1. 在  **VPN 連線能力**頁面上，選取**下載憑證**。 
    
     ![下載憑證進行條件式存取](../../media/Always-On-Vpn/06.png)
 
@@ -56,16 +56,17 @@ ms.locfileid: "59837369"
     >[!NOTE]
     >依預設**憑證授權單位管理工具**是已安裝的憑證授權單位伺服器。 可將它們安裝在其他成員伺服器上的一部分**角色管理工具**在 [伺服器管理員] 中。
 
-    b.  在 VPN 伺服器，在 [開始] 功能表中，輸入**pkiview.msc**開啟 [企業 PKI] 對話方塊。
+    b.  在 VPN 伺服器上，在 [開始] 功能表中，輸入**pkiview.msc**開啟 [企業 PKI] 對話方塊。
 
-    c.   從 [開始] 功能表中，輸入**pkiview.msc**開啟 [企業 PKI] 對話方塊。
+    c.  從 [開始] 功能表中，輸入**pkiview.msc**開啟 [企業 PKI] 對話方塊。
 
     d.  以滑鼠右鍵按一下**企業 PKI** ，然後選取**管理 AD 容器**。
 
-    d.  請確認每個 Microsoft VPN 根 CA 層代 1 憑證下：<ul><li>NTAuthCertificates</li><li>AIA 容器</li><li>憑證授權單位容器</li></ul>
+    d.  請確認每個 Microsoft VPN 根 CA 層代 1 憑證下：
+      - NTAuthCertificates
+      - AIA 容器
+      - 憑證授權單位容器
 
-    
-## <a name="next-step"></a>後續步驟
-[步驟 7.5。建立 OMA DM 基礎 VPNv2 設定檔到 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md):在此步驟中，您可以建立 OMA DM 基礎 VPNv2 使用 Intune 來部署 VPN 裝置組態原則的設定檔。 如果您想要 SCCM 或 PowerShell 指令碼來建立 VPNv2 設定檔，請參閱[VPNv2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)如需詳細資訊。
+## <a name="next-steps"></a>後續步驟
 
----
+[步驟 7.5.建立 OMA DM 基礎 VPNv2 設定檔到 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md):在此步驟中，您可以建立 OMA DM 基礎 VPNv2 使用 Intune 來部署 VPN 裝置組態原則的設定檔。 如果您想要 SCCM 或 PowerShell 指令碼來建立 VPNv2 設定檔，請參閱[VPNv2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)如需詳細資訊。

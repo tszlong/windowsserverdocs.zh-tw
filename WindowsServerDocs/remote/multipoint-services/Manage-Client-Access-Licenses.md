@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 744c2d7ff2965474b90686f88c21f7e6d87deced
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f5f78d3d2387d3b95177a6a8a40fb9b16d8ed8e2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813659"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446127"
 ---
 # <a name="manage-client-access-licenses"></a>管理用戶端存取使用權
-每個站台連接到 MultiPoint 服務系統，包括執行站台，當做使用 MultiPoint 服務的電腦必須具有有效的每個使用者的遠端桌面*用戶端存取使用權 (CAL)*。
+每個站台連接到 MultiPoint 服務系統，包括執行站台，當做使用 MultiPoint 服務的電腦必須具有有效的每個使用者的遠端桌面*用戶端存取使用權 (CAL)* 。
 
 如果您使用站台虛擬桌面，而不實體的站台，您必須安裝適用於每個站台的虛擬桌面 CAL。  
   
@@ -39,15 +39,15 @@ ms.locfileid: "59813659"
 2. 在左窗格中，瀏覽至**本機電腦原則-> 電腦設定-> 系統管理範本-> Windows 元件-> 遠端桌面服務-> 遠端桌面工作階段主機-> 授權**。
 
 3. 在右窗格中，以滑鼠右鍵按一下**使用指定的遠端桌面授權伺服器**，然後選取**編輯**:
-  - 在 [群組原則編輯器] 對話方塊中，選取**已啟用**
-  - 輸入中的本機電腦名稱**授權伺服器使用**欄位。
-  - 選取 **[確定]**
+   - 在 [群組原則編輯器] 對話方塊中，選取**已啟用**
+   - 輸入中的本機電腦名稱**授權伺服器使用**欄位。
+   - 選取 **[確定]**
   
 4. 在右窗格中，以滑鼠右鍵按一下**設定的遠端桌面授權模式**，然後選取**編輯**
- - 在 [群組原則編輯器] 對話方塊中，選取**已啟用**
- - 設定**授權模式**到每個裝置 / 每位使用者
- - 選取 **[確定]** 
+   - 在 [群組原則編輯器] 對話方塊中，選取**已啟用**
+   - 設定**授權模式**到每個裝置 / 每位使用者
+   - 選取 **[確定]** 
 
-  
+  
 ## <a name="see-also"></a>另請參閱  
-[管理使用 MultiPoint 管理員的系統工作](Manage-System-Tasks-Using-MultiPoint-Manager.md)
+[使用 MultiPoint 管理員管理系統工作](Manage-System-Tasks-Using-MultiPoint-Manager.md)

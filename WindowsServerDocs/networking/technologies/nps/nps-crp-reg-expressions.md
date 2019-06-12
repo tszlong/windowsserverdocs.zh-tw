@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a985df9fea31e5ee180caef4e69899ae8468ff71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f51bfb1c767c0eee3aed64df9879dd0a97f2f7b1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865259"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446159"
 ---
 # <a name="use-regular-expressions-in-nps"></a>在 NPS 中使用規則運算式
 
@@ -25,37 +25,38 @@ ms.locfileid: "59865259"
 
 使用模式比對語法建立規則運算式時，您可以使用下表做為參照來源。
 
-|字元|描述|範例|
-|---------|-----------|-------|
-|`\`  |將下一個字元標示為 比對的字元。 |`/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`  |
-|`^`  |比對輸入或行的開頭。 | &nbsp; |
-|`$`  |比對輸入或行結尾。 | &nbsp; |
-|`*`  |比對前置字元零或多次。 |`/zo*/ matches either "z" or "zoo."` |
-|`+`  |比對前置字元一或多次。 |`/zo+/ matches "zoo" but not "z."` |
-|`?`  |比對前置字元零或一次。 |`/a?ve?/ matches the "ve" in "never."` |
-|`.`  |比對新行字元以外的任何單一字元。  | &nbsp; |
-|`(pattern)`  |符合 「 模式 」，並記住此比對。<br />比對常值字元`(`並`)`（括號），使用`\(`或`\)`。   | &nbsp;  |
-|`x|y `  |比對 x 或 y。  |`/z|food?/ matches "zoo" or "food."` |
-|`{n} `  |比對確切為 n 個多次\(n 是非\-負整數\)。  |`/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`  |
-|`{n,}`  |比對至少 n 次\(n 是非\-負整數\)。  |`/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.`  |
-|`{n,m}`  |比對至少 n 個、 至多 m 多次\(m 和 n 都是非\-負整數\)。  |`/o{1,3}/ matches the first three instances of the letter o in "fooooood."`  |
-|`[xyz]`  |符合任何一個括住的字元\(字元集\)。  |`/[abc]/ matches the "a" in "plain."`  |
-|`[^xyz]`  |比對不包含任何字元\(否定的字元集\)。  |`/[^abc]/ matches the "p" in "plain."`  |
-|`\b`  |比對字邊界\(例如，空格\)。  |`/ea*r\b/ matches the "er" in "never early."`  |
-|`\B`  |比對非文字界限。  |`/ea*r\B/ matches the "ear" in "never early."`  |
-|`\d`  |比對的數字字元\(等於 0 到 9 的數字\)。  | &nbsp; |
-|`\D`  |比對非數字字元\(相當於`[^0-9]` \)。  | &nbsp; |
-|`\f`  |比對換頁字元。  | &nbsp; |
-|`\n`  |比對換行字元。  | &nbsp; |
-|`\r`  |比對歸位字元。  | &nbsp; |
-|`\s`  |比對任何空白字元包含空格、 定位及換頁字元\(相當於`[ \f\n\r\t\v]` \)。  | &nbsp; |
-|`\S`  |比對任何非泛空白字元\(相當於`[^ \f\n\r\t\v]` \)。  | &nbsp; |
-|`\t`  |比對定位字元。  | &nbsp; |
-|`\v`  |比對垂直定位字元。  | &nbsp; |
-|`\w`  |比對任何文字字元，包括底線\(相當於`[A-Za-z0-9_]` \)。  | &nbsp; |
-|`\W`  |比對任何非\-文字字元，不包括底線\(相當於`[^A-Za-z0-9_]` \)。  | &nbsp; |
-|`\num`  |參照記憶的比對\( `?num`num 所在正整數\)。  只有在使用此選項**取代**設定屬性操作時，文字方塊。| `\1` 會取代第一個記憶的比對中儲存的內容。  |
-|`/n/ `  |允許的 ASCII 碼插入規則運算式\( `?n`，其中 n 是八進位、 十六進位或是十進位逸出值\)。  | &nbsp; |
+
+|  字元  |                                                                                 描述                                                                                  |                                                                 範例                                                                 |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+|     `\`     |                                                              將下一個字元標示為 比對的字元。                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|     `^`     |                                                                 比對輸入或行的開頭。                                                                  |                                                                 &nbsp;                                                                  |
+|     `$`     |                                                                    比對輸入或行結尾。                                                                     |                                                                 &nbsp;                                                                  |
+|     `*`     |                                                             比對前置字元零或多次。                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |
+|     `+`     |                                                              比對前置字元一或多次。                                                              |                                                   `/zo+/ matches "zoo" but not "z."`                                                    |
+|     `?`     |                                                              比對前置字元零或一次。                                                              |                                                 `/a?ve?/ matches the "ve" in "never."`                                                  |
+|     `.`     |                                                           比對新行字元以外的任何單一字元。                                                           |                                                                 &nbsp;                                                                  |
+| `(pattern)` |                         符合 「 模式 」，並記住此比對。<br />比對常值字元`(`並`)`（括號），使用`\(`或`\)`。                         |                                                                 &nbsp;                                                                  |
+|     \`x     |                                                                                     y \`                                                                                     |                                                         比對 x 或 y。                                                          |
+|   `{n} `    |                                                          比對確切為 n 個多次\(n 是非\-負整數\)。                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
+|   `{n,}`    |                                                          比對至少 n 次\(n 是非\-負整數\)。                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
+|   `{n,m}`   |                                                比對至少 n 個、 至多 m 多次\(m 和 n 都是非\-負整數\)。                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
+|   `[xyz]`   |                                                       符合任何一個括住的字元\(字元集\)。                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
+|  `[^xyz]`   |                                                  比對不包含任何字元\(否定的字元集\)。                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
+|    `\b`     |                                                              比對字邊界\(例如，空格\)。                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
+|    `\B`     |                                                                         比對非文字界限。                                                                          |                                             `/ea*r\B/ matches the "ear" in "never early."`                                              |
+|    `\d`     |                                                       比對的數字字元\(等於 0 到 9 的數字\)。                                                        |                                                                 &nbsp;                                                                  |
+|    `\D`     |                                                           比對非數字字元\(相當於`[^0-9]` \)。                                                           |                                                                 &nbsp;                                                                  |
+|    `\f`     |                                                                        比對換頁字元。                                                                        |                                                                 &nbsp;                                                                  |
+|    `\n`     |                                                                        比對換行字元。                                                                        |                                                                 &nbsp;                                                                  |
+|    `\r`     |                                                                     比對歸位字元。                                                                     |                                                                 &nbsp;                                                                  |
+|    `\s`     |                                   比對任何空白字元包含空格、 定位及換頁字元\(相當於`[ \f\n\r\t\v]` \)。                                   |                                                                 &nbsp;                                                                  |
+|    `\S`     |                                                  比對任何非泛空白字元\(相當於`[^ \f\n\r\t\v]` \)。                                                   |                                                                 &nbsp;                                                                  |
+|    `\t`     |                                                                           比對定位字元。                                                                           |                                                                 &nbsp;                                                                  |
+|    `\v`     |                                                                      比對垂直定位字元。                                                                       |                                                                 &nbsp;                                                                  |
+|    `\w`     |                                              比對任何文字字元，包括底線\(相當於`[A-Za-z0-9_]` \)。                                              |                                                                 &nbsp;                                                                  |
+|    `\W`     |                                           比對任何非\-文字字元，不包括底線\(相當於`[^A-Za-z0-9_]` \)。                                           |                                                                 &nbsp;                                                                  |
+|   `\num`    | 參照記憶的比對\( `?num`num 所在正整數\)。  只有在使用此選項**取代**設定屬性操作時，文字方塊。 |                                       `\1` 會取代第一個記憶的比對中儲存的內容。                                       |
+|   `/n/ `    |                      允許的 ASCII 碼插入規則運算式\( `?n`，其中 n 是八進位、 十六進位或是十進位逸出值\)。                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>網路原則屬性的範例
 
@@ -81,7 +82,7 @@ ms.locfileid: "59865259"
 
 - 將以下項目︰
 
-**若要取代*user@example.microsoft.com*使用*example.microsoft.com\user***
+**若要取代<em>user@example.microsoft.com</em>使用*example.microsoft.com\user***
 
 - 尋找：`(.*)@(.*)`
 
@@ -97,7 +98,7 @@ ms.locfileid: "59865259"
 
 
 
-**若要取代*使用者*與 *user@specific_domain***
+<strong>若要取代*使用者*與 *user@specific_domain</strong>*
 
 - 尋找：`$`
 
