@@ -84,6 +84,7 @@
 ### [加入網域的裝置公開金鑰驗證](kerberos/domain-joined-device-public-key-authentication.md)
 ### [Kerberos 限制委派](kerberos/kerberos-constrained-delegation-overview.md)
 ### [防止 Kerberos 變更使用 RC4 祕密金鑰的密碼](kerberos/preventing-kerberos-change-password-that-uses-rc4-secret-keys.md)
+### [設定 Kerberos 的 IP 位址](kerberos/configuring-kerberos-over-ip.md)
 ## [NTLM](kerberos/ntlm-overview.md)
 ## [密碼](kerberos/passwords-overview.md)
 ## [TLS - SSL (安全通道 SSP)](tls/tls-ssl-schannel-ssp-overview.md)

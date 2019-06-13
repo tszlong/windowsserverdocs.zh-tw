@@ -7,19 +7,18 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: ed9e9c6e2280aa69408455a111eddb3af7f88750
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: dc8a845a6d352fa03517e2a092c44b6d1c1def4b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266701"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811463"
 ---
 # <a name="performance-tuning-for-file-servers"></a>檔案伺服器的效能微調
 
 您應該選取適當的硬體，以滿足預期的檔案伺服器負載，並考量平均負載、尖峰負載、容量、成長計畫和回應時間。 硬體瓶頸限會制軟體微調的效果。
 
 ## <a name="general-tuning-parameters-for-clients"></a>用戶端的一般微調參數
-
 
 下列 REG\_DWORD 登錄設定可能會影響與 SMB 檔案伺服器互動的用戶端電腦效能：
 
@@ -94,9 +93,9 @@ ms.locfileid: "66266701"
 
     預設值是 10 秒。 這是目錄快取逾時。
 
-    > [!Note]   此參數可控制沒有目錄租用時的目錄中繼資料快取。
-
-     
+    > [!NOTE]
+    > 此參數控制快取目錄不存在的目錄租用的中繼資料。
+     
 
 -   **DirectoryCacheEntrySizeMax**
 
@@ -222,7 +221,7 @@ ms.locfileid: "66266701"
 | FileNotFoundCacheEntriesMax | 32768 | 128     |
 | MaxCmds                     | 32768 | 15      |
 
- 
+ 
 
 從 Windows 8 開始，您可以使用 **Set-SmbClientConfiguration** 和 **Set-SmbServerConfiguration** Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 使用 Windows PowerShell 也可以設定僅限登錄的設定。
 

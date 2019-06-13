@@ -1,17 +1,17 @@
 ---
 layout: HubPage
 hide_bc: true
-author: coreyp
+author: jasongerend
 ms.author: apexprodleads
 ms.topic: hub-page
 title: Windows Server 文件
 description: Windows Server 文件可協助 IT 專業人員評估、規劃、部署、保護及管理 Windows Server
-ms.openlocfilehash: 29ea8c17f41edbbaab275a61b6f96c0b348f9760
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65e514d25e3e94841f7f1db0be2590b57a6b6455
+ms.sourcegitcommit: 9dc457ac1d64962e67aaf1d3924bc9361df8488d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891439"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66462165"
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -20,34 +20,33 @@ ms.locfileid: "59891439"
 <p> </p>
 
 <ul class="pivots">
-<li>
-<a href="#main"></a>
-
-   <ul id="main">
     <li>
-    <a href="#mainPanel"></a>
-        <ul id="mainPanel" class="cardsF">
+    <a href="#main"></a>
+        <ul id="main">
             <li>
-                <a href="get-started-19/whats-new-19.md">
-                    <div class="cardSize">
-                        <div class="cardPadding">
-                            <div class="card">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="media/i-whats-new.svg" alt="" />
+                <a href="#mainPanel"></a>
+                <ul id="mainPanel" class="cardsF">
+                    <li>
+                        <a href="get-started-19/whats-new-19.md">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage">
+                                                <img src="media/i-whats-new.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h2>新增功能</h2>
+                                            <p>了解&#39;的新功能 Windows Server</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="cardText">
-                                    <h2>有何新功能？</h2>
-                                    <p>尋找 Windows Server 中的新功能</p>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="get-started-19/get-started-19.md">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="get-started-19/get-started-19.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -64,8 +63,8 @@ ms.locfileid: "59891439"
                                 </div>
                             </div>
                             </a>
-            </li>
-            <li>
+                    </li>
+                    <li>
                             <a href="http://aka.ms/upgradecenter">
                             <div class="cardSize">
                                 <div class="cardPadding">
@@ -83,12 +82,12 @@ ms.locfileid: "59891439"
                                 </div>
                             </div>
                             </a>
-            </li>
-            <li class="fullSpan">
-            <HR WIDTH="60%">
-            </li>
-            <li>
-                            <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview">
+                    </li>
+                    <li class="fullSpan">
+                        <HR WIDTH="60%">
+                    </li>
+                    <li>
+                         <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -107,7 +106,7 @@ ms.locfileid: "59891439"
                             </a>
             </li>
             <li>
-                            <a href="https://docs.microsoft.com/windows-server/hyperconverged">
+                            <a href="hyperconverged/index.yml">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -126,19 +125,19 @@ ms.locfileid: "59891439"
                             </a>
             </li>
             <li>
-                            <a href="https://docs.microsoft.com/windows-insider/at-work">
+                            <a href="azure-hybrid-services/index.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage">
-                                                <img src="media/i-insider.svg" alt="" />
+                                                <img src="media/i-microsoft-azure.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>適用於伺服器的 Windows 測試人員計畫</h2>
-                                            <p>測試 Windows Server 2019 的預覽版組建</p>
-            <li>
+                                            <h2>連接到 Azure 的混合式服務</h2>
+                                            <p>Azure 的混合式服務，以結合最佳的內部部署和雲端連接您的伺服器或叢集。</p>
+            </li>
                     <li class="fullSpan">
                     <HR COLOR="purple" SIZE="6" WIDTH="60%">
                     </li>
@@ -180,12 +179,25 @@ ms.locfileid: "59891439"
                             </div>
                             </a>
             </li>
+            <li>
+                            <a href="https://docs.microsoft.com/windows-insider/at-work">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage">
+                                                <img src="media/i-insider.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h2>適用於伺服器的 Windows 測試人員計畫</h2>
+                                            <p>測試 Windows Server 2019 的預覽版組建</p>
+            </li>
         </ul>
     </li>
     </ul>
     </li>
 </ul>
-
 <h1>Windows Server 2019 和 Windows Server 2016 的指導方針</h1>
     <h3>Windows Server 文件可協助 IT 專業人員評估、規劃、部署、保護及管理 Windows Server</h3>
     <ul class="pivots">
@@ -212,8 +224,7 @@ ms.locfileid: "59891439"
         <td style="vertical-align: top;">
             <h4><u>評分最高</u></h4>
             <ol>
-            <li>1. <a href="https://docs.microsoft.com/windows-server/identity/software-restriction-policies/software-restriction-policies">軟體限制原則</a></li>              
-       <hr width="80%">
+            <li>1. <a href="https://docs.microsoft.com/windows-server/identity/software-restriction-policies/software-restriction-policies">軟體限制原則</a></li><br/>       <hr width="80%">
             <li>2. <a href="https://docs.microsoft.com/windows-server/identity/solution-guides/deploy-a-central-access-policy--demonstration-steps-">部署集中存取原則 (示範步驟)</a></li>
        <hr width="80%">
             <li>3. <a href="https://docs.microsoft.com/windows-server/identity/solution-guides/scenario--file-access-auditing">案例：檔案存取稽核</a></li>
@@ -256,13 +267,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/what-s-new-in-networking">叢集感知更新的需求和最佳做法</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/failover-clustering/vm-load-balancing-overview">虛擬機器負載平衡概觀</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports">使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解</a></li>
             </ol>
         </td>
@@ -270,14 +277,10 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/failover-clustering/manage-cluster-quorum">設定和管理仲裁</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/failover-clustering/failover-cluster-csvs">在容錯移轉叢集中使用叢集共用磁碟區</a></li>
-                 
        <hr width="80%">
-
-            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">容錯移轉叢集中的新功能</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">什麼&#39;的新容錯移轉叢集功能</a></li>
             </ol>
         </td>
     </tr>
@@ -299,7 +302,7 @@ ms.locfileid: "59891439"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>管理</h2>
+                                            <h2>Management</h2>
                                             <p>管理 Windows Server 系統與環境、收集硬體與軟體庫存的相關資訊、調整伺服器以提高效能並利用自動管理來獲得更高的效率。</p>
 <table>
      <tr>
@@ -307,13 +310,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure">設定 RADIUS 用戶端</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-np-configure">設定網路原則</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking">軟體定義網路 (SDN)</a></li>
             </ol>
         </td>
@@ -321,13 +320,9 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy">robocopy</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center">Windows Admin Center 與您見面！</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus">Windows Server Update Services (WSUS)</a></li>
             </ol>
         </td>
@@ -358,13 +353,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure">設定 RADIUS 用戶端</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-np-configure">設定網路原則</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking">軟體定義網路 (SDN)</a></li>
             </ol>
         </td>
@@ -372,13 +363,9 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings">Windows 時間服務工具和設定</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-contexts">Netsh 命令語法、內容與格式</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top">網路原則伺服器 (NPS)</a></li>
             </ol>
         </td>
@@ -402,7 +389,7 @@ ms.locfileid: "59891439"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>遠端</h2>
+                                            <h2>遙控器</h2>
                                             <p>使用包括遠端桌面服務、遠端存取與遠端伺服器管理工具的技術從遠端存取及控制電腦與裝置，延伸企業服務可用性，讓使用者可以隨時隨地存取。</p>
 <table>
      <tr>
@@ -410,13 +397,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections">步驟 6.設定 Windows 10 用戶端 Always On VPN 連線</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-in-azure">使用 ARM 和 Azure Marketplace 完美地部署 RDS</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure">步驟 2.設定伺服器基礎結構</a></li>
             </ol>
         </td>
@@ -424,13 +407,9 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients">遠端桌面用戶端</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access">遠端桌面 - 允許對您電腦的存取</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac">遠端桌面用戶端</a></li>
             </ol>
         </td>
@@ -461,13 +440,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/windows-authentication-overview">Windows 驗證概觀</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts">開始使用群組受管理的服務帳戶</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview">Kerberos 限制委派概觀</a></li>
             </ol>
         </td>
@@ -475,15 +450,10 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings">傳輸層安全性 (TLS) 登錄設定</a></li>
-                   
        <hr width="80%">
-
-            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">Guidance on disabling system services on Windows Server 2016 with Desktop Experience
-</a></li>
-                 
+            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">停用 含有桌面體驗的 Windows Server 2016 上的系統服務的指引 </a></li>
        <hr width="80%">
-
-            <li>3. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication">Credentials Processes in Windows Authentication</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication">Windows 驗證中的認證程序</a></li>
             </ol>
         </td>
     </tr>
@@ -505,7 +475,7 @@ ms.locfileid: "59891439"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>存放裝置</h2>
+                                            <h2>儲存體</h2>
                                             <p>利用 PB 級規模且彈性、高效能與具成本效益之存放裝置選項的優點，包括具有軟體定義存放裝置、儲存體移轉服務與其他技術的超融合式基礎結構。</p>
 <table>
      <tr>
@@ -513,13 +483,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview">儲存體複本概觀</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/storage/storage-spaces/understand-quorum">了解叢集和集區仲裁</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/storage/data-deduplication/understand">了解重複資料刪除</a></li>
             </ol>
         </td>
@@ -527,13 +493,9 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/initialize-new-disks">初始化新磁碟</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk">將 MBR 磁碟轉換為 GPT 磁碟</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/extend-a-basic-volume">延伸基本磁碟區</a></li>
             </ol>
         </td>
@@ -564,13 +526,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports">使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack">針對 Windows Server 軟體定義網路堆疊進行疑難排解</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus">檢閱事件記錄和錯誤碼，以針對 Windows Defender 防毒軟體的問題進行疑難排解</a></li>
             </ol>
         </td>
@@ -578,13 +536,9 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management">針對磁碟管理問題進行疑難排解</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/wsus-messages-and-troubleshooting-tips">WSUS 訊息和疑難排解祕訣</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/troubleshooting">針對 Windows Admin Center 問題進行疑難排解</a></li>
             </ol>
         </td>
@@ -615,13 +569,9 @@ ms.locfileid: "59891439"
             <h4><u>評分最高</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v">在 Hyper-V 中建立虛擬機器</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-debian-virtual-machines-on-hyper-v">Hyper-V 上支援的 Debian 虛擬機器</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms">受防護網狀架構與受防護的 VM 概觀</a></li>
             </ol>
         </td>
@@ -629,13 +579,9 @@ ms.locfileid: "59891439"
             <h4><u>檢視次數最多</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/remotely-manage-hyper-v-hosts">使用 Hyper-V 管理員管理遠端 Hyper-V 主機</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines">為 Hyper-V 虛擬機器建立虛擬交換器</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect">Hyper-V 虛擬機器連線</a></li>
             </ol>
         </td>
@@ -652,9 +598,7 @@ ms.locfileid: "59891439"
             </ul>
         </li>
     </ul>
-                  
        <hr />
-
   <h1>Windows Server 舊版</h1>
     <h3>適用於協助 IT 專業人員管理舊版 Windows Server 的技術內容<h3>
     <p> </p>
@@ -663,7 +607,6 @@ ms.locfileid: "59891439"
             <a href="#main"></a>
             <ul id="main">
                 <li>
-                    
                     <ul id="mainPanel" class="cardsF">
                         <li>
                             <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)">
@@ -676,7 +619,7 @@ ms.locfileid: "59891439"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Windows Server 2012 and<br> Windows Server 2012 R2</h3>
+                                            <h3>Windows Server 2012 和<br> Windows Server 2012 R2</h3>
                                             <p></p>
                                         </div>
                                     </div>

@@ -6,12 +6,12 @@ author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
 ms.topic: article
-ms.openlocfilehash: ce058a2885315c84d2c1c6701ad2801790d3c590
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: HT
+ms.openlocfilehash: f5d621a0ba06f5b1beb97ccdbffb8376b5503168
+ms.sourcegitcommit: 927adf32faa6052234ad08f21125906362e593dc
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66814071"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67033348"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>升級至 Windows Server 2016 的 AD RMS
 
@@ -257,7 +257,7 @@ AD FS 部署 AD rms，做為應用程式提供單一登入 (SSO) 存取。 它�
 
 13. 一旦登入的上一步，開啟**伺服器管理員**選取**工具**，然後**Active Directory Rights Management**。 [管理] 視窗應該會出現，並指出叢集有額外的伺服器，在叢集中。
 
-14. 14. 如果 AD RMS 行動裝置延伸模組已安裝在原始的 AD RMS 叢集，您必須安裝 MDE 更新後的叢集節點中。 遵循 MDE 文件中的指示，將 MDE 新增至您的 AD RMS 叢集。 到目前為止，您可以重新規劃所有預先存在的節點，或將它們升級到 Windows Server 2016 並重新將其加入上面所述的相同程序的 AD RMS 叢集。 
+14. 如果 AD RMS 行動裝置延伸模組已安裝在原始的 AD RMS 叢集，您必須安裝 MDE 更新後的叢集節點中。 遵循 MDE 文件中的指示，將 MDE 新增至您的 AD RMS 叢集。 到目前為止，您可以重新規劃所有預先存在的節點，或將它們升級到 Windows Server 2016 並重新將其加入上面所述的相同程序的 AD RMS 叢集。 
 
 ### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>設定 Windows Server 2016 Web 應用程式 Proxy (WAP)
 
