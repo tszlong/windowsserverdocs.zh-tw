@@ -9,12 +9,12 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0df290248f049b3f8a823e902cefa860fa074091
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bcb6c415aae33b9742d7a7080ec169ca947098b9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189848"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445005"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已註冊的裝置設定內部部署條件式存取
 
@@ -92,11 +92,11 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
   
-2.  在您的 AD FS 主要伺服器，請確定您具有企業系統管理員 」 (EA) 的權限的 AD DS 使用者身分登入，並開啟提升權限的 powershell 命令提示字元。  接著，執行下列 PowerShell 命令：  
+2. 在您的 AD FS 主要伺服器，請確定您具有企業系統管理員 」 (EA) 的權限的 AD DS 使用者身分登入，並開啟提升權限的 powershell 命令提示字元。  接著，執行下列 PowerShell 命令：  
     
-    `Import-module activedirectory`  
-    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
-3.  在快顯視窗上按 [是]。
+   `Import-module activedirectory`  
+   `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
+3. 在快顯視窗上按 [是]。
 
 >注意:如果 AD FS 服務已設定要使用 GMSA 帳戶，請依格式「domain\accountname$」輸入帳戶名稱
 
@@ -111,7 +111,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)  
 
-4.  完成此作業後，您就會看到成功完成訊息。
+4. 完成此作業後，您就會看到成功完成訊息。
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png) 
 
@@ -131,9 +131,9 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png) 
 
-3.  執行下列 PowerShell 命令 
+3. 執行下列 PowerShell 命令 
 
-    `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
+   `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
 
 其中 [AD 連接器帳戶名稱] 是您新增內部部署 AD DS 目錄時，在 Azure AD Connect 中設定的帳戶名稱。
   
@@ -180,7 +180,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 - 位於 CN=&lt;guid&gt;,CN=Device Registration
 
 - Configuration,CN=Services,CN=Configuration,DC=&lt;domain&gt; 且類型為 serviceConnectionpoint 的物件  
- - 新物件上指定之 AD 連接器帳戶名稱的讀寫存取權限</br></br> 
+  - 新物件上指定之 AD 連接器帳戶名稱的讀寫存取權限</br></br> 
 
 
 - 物件的型別 msDS-DeviceRegistrationServiceContainer 在 CN = Device Registration Services，CN = Device Registration Configuration，CN = Services，CN = Configuration，DC = & ltdomain >  
@@ -189,7 +189,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 - 上述容器中類型為 msDS-DeviceRegistrationService 的物件  
 
 ### <a name="see-it-work"></a>查看其運作方式  
-若要評估的新宣告和原則，請先註冊裝置。  例如，您可以使用系統設定 應用程式的 Windows 10 電腦]-> [關於，Azure AD Join 或進行自動裝置註冊額外的步驟，您可以設定 Windows 10 網域聯結[此處](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)。  如需加入 Windows 10 行動裝置，請參閱文件[此處](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)。  
+若要評估的新宣告和原則，請先註冊裝置。  例如，您可以使用系統設定] 應用程式的 Windows 10 電腦]-> [關於，Azure AD Join 或進行自動裝置註冊額外的步驟，您可以設定 Windows 10 網域聯結[此處](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)。  如需加入 Windows 10 行動裝置，請參閱文件[此處](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)。  
 
 對於最簡單的評估，登入 AD FS 使用宣告的清單會顯示測試應用程式。 您會看到新的宣告包括 isManaged、 isCompliant 和 trusttype。  如果您啟用 Microsoft Passport for work 時，您也會看到 prt 宣告。  
  

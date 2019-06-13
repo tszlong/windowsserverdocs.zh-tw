@@ -8,12 +8,12 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 3c0792347aaa70fe80d346cc51cbc44b73c42f39
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 330f65721fca1908ac54ddfd194f96ffe540f1b5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476015"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442358"
 ---
 # <a name="whats-new-in-failover-clustering"></a>容錯移轉叢集的新功能
 
@@ -50,10 +50,10 @@ ms.locfileid: "65476015"
     叢集感知更新 (CAU) 現在已整合並能察覺儲存空間直接存取，驗證和確保每個節點上的資料完成重新同步處理。 叢集感知更新會檢查只有在必要時以智慧方式重新啟動的更新。 這可讓協調維護計劃叢集中的所有伺服器重新啟動。
 
 - **檔案共用見證的增強功能**我們啟用下列案例中的檔案共用見證的使用： 
-    - 不存在或極差網際網路存取因為遠端位置，避免使用的雲端見證。 
-    - 缺少的共用磁碟機的磁碟見證。 這可能是儲存空間直接存取的超融合組態，SQL Server Alwayson 可用性群組 (AG)，或 * Exchange 資料庫可用性群組 (DAG)，都不會使用共用的磁碟。 
-    - 缺乏因位在 DMZ 正在叢集的網域控制站連線。 
-    - 工作群組或跨網域叢集，有是任何 Active Directory 叢集名稱物件 (CNO)。 深入了解下列在伺服器和管理部落格文章中的這些增強功能：容錯移轉叢集檔案共用見證，DFS。
+  - 不存在或極差網際網路存取因為遠端位置，避免使用的雲端見證。 
+  - 缺少的共用磁碟機的磁碟見證。 這可能是儲存空間直接存取的超融合組態，SQL Server Alwayson 可用性群組 (AG)，或 * Exchange 資料庫可用性群組 (DAG)，都不會使用共用的磁碟。 
+  - 缺乏因位在 DMZ 正在叢集的網域控制站連線。 
+  - 工作群組或跨網域叢集，有是任何 Active Directory 叢集名稱物件 (CNO)。 深入了解下列在伺服器和管理部落格文章中的這些增強功能：容錯移轉叢集檔案共用見證，DFS。
     
     我們現在也會明確封鎖使用 DFS 命名空間共用，做為位置。 新增檔案共用見證至 DFS 共用可能會造成穩定性問題為您的叢集，並永遠不會支援此設定。 我們已新增邏輯，可偵測如果共用使用 DFS 命名空間，而且如果偵測到 DFS 命名空間時，容錯移轉叢集管理員封鎖見證的建立，並顯示有關不支援的錯誤訊息。
 - **叢集強化**
@@ -158,7 +158,7 @@ HYPER-V 或向外延展檔案伺服器容錯移轉叢集可以立即輕鬆升級
 
 -   **健康情況不良節點的隔離區：** 狀況不良的節點遭到隔離，並不會再允許加入叢集。 這可防止造成負面影響的其他節點和整體叢集 flapping 的節點。 
 
-設定的詳細資訊的虛擬機器計算復原工作流程和節點隔離控制您的節點放置在 [隔離] 或 隔離的方式，請參閱[Windows Server 2016 中的虛擬機器計算復原功能](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)。 
+設定的詳細資訊的虛擬機器計算復原工作流程和節點隔離控制您的節點放置在 [隔離] 或 [隔離的方式，請參閱[Windows Server 2016 中的虛擬機器計算復原功能](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)。 
 
 **儲存復原**在 Windows Server 2016 中，虛擬機器是暫時性儲存體失敗更有彈性。 改進的虛擬機器復原功能可協助保存租用戶虛擬機器的工作階段狀態發生儲存體中斷的情況。 做法是聰明且快速的虛擬機器儲存體基礎結構問題的回應。 
 

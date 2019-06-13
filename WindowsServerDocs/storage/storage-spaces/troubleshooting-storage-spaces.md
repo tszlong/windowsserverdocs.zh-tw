@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48099ad15465b885ccaf562bcf94b4bafdeff388
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: 44bcf48f3e4a3b4b49ff027d3aa3e5704865e7b5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64772633"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447879"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>疑難排解的儲存空間直接存取
 
@@ -35,7 +35,7 @@ ms.locfileid: "64772633"
 
 ## <a name="virtual-disk-resources-are-in-no-redundancy-state"></a>虛擬磁碟資源位於沒有備援狀態
 儲存空間直接存取系統的節點意外重新啟動的當機或電源失敗。 一或多個虛擬磁碟可能會無法上線，然後，您會看到描述 「 沒有足夠資訊冗餘。 」
-    
+
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|大小| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
 |Disk4| Mirror| [確定]|  良好| True|  10 TB|  節點 01.conto...|
@@ -52,7 +52,7 @@ ms.locfileid: "64772633"
 ``` 
 
 **No 冗餘的操作狀態**可能發生磁碟失敗時，或如果系統無法存取虛擬磁碟上的資料。 如果在重新開機，就會發生在節點上的節點上的維護期間，會發生此問題。
-    
+
 若要修正此問題，請遵循下列步驟：
 
 1. 從 CSV 移除受影響的虛擬磁碟。 這會將它們放在叢集中的"Available storage"群組，並且顯示為 ResourceType 的 「 實體磁碟 」。
@@ -91,8 +91,8 @@ ms.locfileid: "64772633"
    ```
 
 **DiskRecoveryAction**是覆寫參數，可讓您附加空間中的磁碟區讀寫模式，而不需任何檢查。 屬性可讓您對執行診斷為何，磁碟區不會再上線。 為維護模式非常類似，但您可以在 「 失敗 」 狀態中的資源上叫用。 它也可讓您存取資料，它可以是很有幫助，例如 「 沒有備援 」，您可以取得存取任何資料可以並將它複製。 在 2 月 22，2018 年更新 KB 4077525 已 DiskRecoveryAction 屬性。
-    
-    
+
+
 ## <a name="detached-status-in-a-cluster"></a>在叢集中的已卸離的狀態 
 
 當您執行**Get-virtualdisk** cmdlet，為一或多個儲存空間直接存取虛擬磁碟中斷連結 OperationalStatus。 HealthStatus 不過，藉由回報**Get-physicaldisk**指令程式會指出所有實體磁碟已處於狀況良好的狀態。
@@ -122,7 +122,7 @@ Data on the disk is out-of-sync and a data integrity scan is required.
 
 To start the scan, run the following command:   
 Get-ScheduledTask -TaskName "Data Integrity Scan for Crash Recovery" | Start-ScheduledTask                
-             
+
 Once you have resolved the condition listed above, you can online the disk by using the following commands in PowerShell:   
 
 Get-VirtualDisk | ?{ $_.ObjectId -Match "{GUID}" } | Get-Disk | Set-Disk -IsReadOnly $false 
@@ -152,7 +152,7 @@ Volume Name:
 ``` 
 
 **中斷連結的操作狀態**如果廢棄區域追蹤 （DRT） 記錄檔已滿，可能會發生。 儲存空間會使用廢棄區域追蹤 (DRT) 為鏡像空間，以確定當發生電源中斷，任何進行中的更新中繼資料會記錄以確定的儲存空間可以重做或復原作業，使符合有彈性的儲存空間當電源恢復一致的狀態和系統恢復運作。 DRT 記錄檔已滿時，如果虛擬磁碟無法上線之前 DRT 中繼資料會同步處理和排清。 此程序需要執行完整掃描，這可能需要數小時才能完成。
-    
+
 若要修正此問題，請遵循下列步驟：
 1. 從 CSV 移除受影響的虛擬磁碟。
 
@@ -172,9 +172,9 @@ Volume Name:
    ```
    此工作應該卸離的磁碟區在線上的所有節點上起始。 應該會自動啟動修復。 等候完成修復。 它可能會進入暫停狀態，並重新啟動。 若要監視進度： 
    - 執行**Get-storagejob**監視修復狀態，以及查看何時完成。
-   -  執行**Get-virtualdisk**並確認空間傳回 HealthStatus 的狀況良好。
-    - 「 資料完整性掃描的當機復原 」 的工作，不會顯示為儲存體工作，而且沒有任何進度指示器。 如果工作會顯示為執行中，它正在執行。 完成之後，它會顯示已完成。
-    
+   - 執行**Get-virtualdisk**並確認空間傳回 HealthStatus 的狀況良好。
+     - 「 資料完整性掃描的當機復原 」 的工作，不會顯示為儲存體工作，而且沒有任何進度指示器。 如果工作會顯示為執行中，它正在執行。 完成之後，它會顯示已完成。
+
        此外，您可以使用下列 cmdlet 來檢視執行的排程工作的狀態： 
        ```powershell
        Get-ScheduledTask | ? State -eq running
@@ -189,12 +189,12 @@ Volume Name:
    ```powershell
    Add-ClusterSharedVolume -name "VdiskName"
    ```  
-**DiskRunChkdsk 值 7**來附加空間磁碟區，並在唯讀模式中有資料分割。 如此可自行探索的空間和自我修復的觸發修復。 修復將會執行一次自動掛接。 它也可讓您存取資料，很有幫助您可以複製任何資料的存取。 某些錯誤狀況，例如完整的 DRT 記錄檔中，您要執行資料完整性掃描的當機復原排定的工作。
-    
+   **DiskRunChkdsk 值 7**來附加空間磁碟區，並在唯讀模式中有資料分割。 如此可自行探索的空間和自我修復的觸發修復。 修復將會執行一次自動掛接。 它也可讓您存取資料，很有幫助您可以複製任何資料的存取。 某些錯誤狀況，例如完整的 DRT 記錄檔中，您要執行資料完整性掃描的當機復原排定的工作。
+
 **當機復原工作的資料完整性掃描**用來同步處理和清除完整廢棄區域追蹤 （DRT） 記錄檔。 這項工作可能需要數小時才能完成。 「 資料完整性掃描的當機復原 」 的工作，不會顯示為儲存體工作，而且沒有任何進度指示器。 如果工作會顯示為執行中，它正在執行。 完成之後，它會顯示為已完成。 如果您取消工作，或重新啟動節點，此工作執行時，工作必須從頭重新開始。
 
 如需詳細資訊，請參閱 <<c0> [ 疑難排解儲存空間直接存取的健康情況和操作狀態](storage-spaces-states.md)。
-    
+
 ## <a name="event-5120-with-statusiotimeout-c00000b5"></a>STATUS_IO_TIMEOUT c00000b5 5120 事件 
 
 > [!Important]
@@ -223,7 +223,7 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
 引進在 2018 年 5 月 8，Windows Server 2016 中，已將 SMB 彈性處理儲存空間直接存取叢集內 SMB 網路工作階段的累積更新的變更。 這麼做是為了改善暫時性網路失敗的恢復功能並改善 RoCE 如何處理網路壅塞。 這些改進也不小心增加 SMB 連線嘗試重新連線時的逾時和逾時的等候，重新啟動節點時。 這些問題可能會影響在壓力下的系統。 在規劃的停機時間，最多 60 秒的 IO 暫停也觀察到系統等候逾時的連線時。若要修正此問題，請安裝[2018 年 10 月 18 日，Windows Server 2016 的累積更新](https://support.microsoft.com/help/4462928)或更新版本。
 
 *請注意*此更新將對齊 SMB 連線逾時，若要修正此問題的 CSV 逾時。 它未實作的變更，若要停用即時的傾印產生因應措施一節所述。
-    
+
 ### <a name="shutdown-process-flow"></a>關機程序流程：
 
 1. 執行 Get-virtualdisk cmdlet，並確定的 healthstatus 內容值為 狀況良好。
@@ -293,15 +293,15 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 (Get-Cluster).DumpPolicy = ((Get-Cluster).DumpPolicy -band 0xFFFFFFFFFFFFFFFE)
 ```
 此 cmdlet 後會立即生效，而不需要重新啟動電腦的所有叢集節點上。
-    
+
 ## <a name="slow-io-performance"></a>IO 效能變慢
 
 如果您看到的 IO 效能變慢，請檢查快取是否已啟用儲存空間直接存取組態中。 
 
 有兩種方式可檢查： 
-     
- 
-1. 使用叢集記錄檔。 在 選擇的文字編輯器中開啟叢集記錄檔，並搜尋"[=== SBL 磁碟 ===]。 這會在節點所產生的記錄檔的磁碟清單。 
+
+
+1. 使用叢集記錄檔。 在 [選擇的文字編輯器中開啟叢集記錄檔，並搜尋"[=== SBL 磁碟 ===]。 」 這會在節點所產生的記錄檔的磁碟清單。 
 
      快取已啟用磁碟範例：請注意這裡的狀態是 CacheDiskStateInitializedAndBound，而且沒有出現 GUID 的以下。 
 
@@ -338,7 +338,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
    |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| [確定]| 良好| 自動選取| 1.82 TB|
    |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| [確定]|良好| 自動選取| 1.82 TB|
    |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| [確定]| 良好| 自動選取 |1.82 TB|
-    
+
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>如何終結現有的叢集，因此您可以再次使用相同的磁碟
 
 在儲存空間直接存取叢集中，一次您停用儲存空間直接存取並使用清理程序中所述[清理磁碟機](deploy-storage-spaces-direct.md#step-31-clean-drives)、 叢集的儲存集區仍處於離線狀態，以及從移除健全狀況服務叢集。
@@ -370,7 +370,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 ||Msft Virtu... ||良好| 離線| 100 GB| RAW|
 ||Msft Virtu... ||良好| 離線| 100 GB| RAW|
 
-    
+
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>錯誤訊息 「 不支援的媒體類型 」 有關當您建立使用 Enable-ClusterS2D 的儲存空間直接存取叢集  
 
 當您執行時，您可能會看到如下所示的錯誤**Enable-ClusterS2D** cmdlet:
@@ -378,32 +378,33 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 ![案例 6 錯誤訊息](media/troubleshooting/scenario-error-message.png)
 
 若要修正此問題，請確定 HBA 配接器設定 HBA 模式。 沒有 HBA 應該設定為 RAID 模式。  
-    
+
 ## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>在 '等候直到 SBL 磁碟會顯示' 或 27%，Enable-clusterstoragespacesdirect 停止回應
 
 您會看到驗證報告中的下列資訊：
 
     Disk <identifier> connected to node <nodename> returned a SCSI Port Association and the corresponding enclosure device could not be found. The hardware is not compatible with Storage Spaces Direct (S2D), contact the hardware vendor to verify support for SCSI Enclosure Services (SES). 
-    
-  
+
+
 問題在於 HPE SAS 擴展器卡片位於磁碟與 HBA 卡之間。 SAS 擴展器會建立第一個磁碟機連線到展開器，然後展開工具本身之間的重複識別碼。  已解決此問題在[HPE 智慧陣列控制器 SAS 擴展器韌體：4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3).
-    
+
 ## <a name="intel-ssd-dc-p4600-series-has-a-non-unique-nguid"></a>Intel SSD DC P4600 序列具有非唯一 NGUID
 您可能會發現問題的 Intel SSD DC P4600 系列裝置似乎會回報類似 16 位元組 NGUID 例如 0100000001000000E4D25C000014E214 或 0100000001000000E4D25C0000EEE214 在下列範例中的多個命名空間。
 
-|uniqueid| deviceid |MediaType| BusType| serialnumber| size|canpool| friendlyname| OperationalStatus|
-|-|-|-|-|-|-|-|-|-
-|5000CCA251D12E30| 0| HDD| SAS| 7PKR197G|                  10000831348736 |False|HGST| HUH721010AL4200| [確定]|
-|eui.0100000001000000E4D25C000014E214 |4|SSD| NVMe|   0100_0000_0100_0000_E4D2_5C00_0014_E214.|1600321314816|True| INTEL| SSDPE2KE016T7|  [確定]|
-|eui.0100000001000000E4D25C000014E214 |5|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_0014_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  [確定]|
-|eui.0100000001000000E4D25C0000EEE214| 6|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_00EE_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  [確定]|
-|eui.0100000001000000E4D25C0000EEE214| 7|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_00EE_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  [確定]|
+
+|               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      size      | canpool | friendlyname | OperationalStatus |
+|--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
+|           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
+| eui.0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
 
 若要修正此問題，請為最新版本更新 Intel 磁碟機上的軔體。  韌體版本從 2018 年 QDV101B1 稱為以解決此問題。
 
 [2018 年發行，Intel SSD 資料中心工具之](https://downloadmirror.intel.com/27778/eng/Intel_SSD_Data_Center_Tool_3_0_12_Release_Notes_330715-026.pdf)包含韌體更新、 QDV101B1，Intel SSD DC P4600 數列。
 
-    
+
 ## <a name="physical-disk-healthy-and-operational-status-is-removing-from-pool"></a>實體磁碟 「 狀況良好 」 和操作狀態是 「 移除從集區 」 
 
 在 Windows Server 2016 儲存空間直接存取叢集中，您可能會看到一或多個實體磁碟的 healthstatus 內容為 「 良好 」，而 OperationalStatus 為 "（正在移除從集區，確定）。 」 
@@ -416,7 +417,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 以下是一些範例，示範如何執行指令碼：
 
 - 使用**SerialNumber**參數來指定您要設為狀況良好的磁碟。 您可以取得從序號**WMI MSFT_PhysicalDisk**或是**Get-physicaldisk**。 （我們只會使用 0 以下序號。）
-   
+
    ```powershell
    Clear-PhysicalDiskHealthData -Intent -Policy -SerialNumber 000000000000000 -Verbose -Force
     ```
@@ -446,7 +447,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 如果您執行 Azure Vm，您可以忽略此事件：
 
     Event ID 32: The driver detected that the device \Device\Harddisk5\DR5 has its write cache enabled. Data corruption may occur. 
-    
+
 ## <a name="slow-performance-or-lost-communication-io-error-detached-or-no-redundancy-errors-for-deployments-that-use-intel-p3x00-nvme-devices"></a>效能變慢或 「 遺失通訊，「 「 IO 錯誤 」、 「 中斷 」 或 「 否備援 」 錯誤，使用 Intel P3x00 NVMe 裝置的部署
 
 我們已識別會影響使用 Intel P3x00 NVM Express (NVMe) 裝置系列 」 維護版本為 8。"之前的韌體版本為基礎的硬體部分儲存空間直接存取使用者的重要問題 

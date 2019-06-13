@@ -7,16 +7,16 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: 60dacf63f1a355b961f84169060dbd7122a6fd32
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f56c036768de7c1afcf3327135a7ff7d7a690a8b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842729"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440139"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>叢集作業系統輪流升級
 
-> 適用於：Windows Server （半年通道），Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016
 
 叢集 OS 輪流升級可讓系統管理員可以將一個叢集節點的作業系統升級而不需停止 HYPER-V 或向外延展檔案伺服器工作負載。 此功能可以避免針對服務等級協定 (SLA) 的停機時間扣分。
 
@@ -226,12 +226,12 @@ Windows Server 2016 節點新增至叢集時，將 Windows Server 2012 R2 叢集
         ![螢幕擷取畫面顯示 Get VMHostSupportedVersion cmdlet 的輸出](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
         **圖 21:檢視主機所支援的 HYPER-V VM 設定版本**  
 
-   3.  每個 HYPER-V 主機叢集中節點上，HYPER-V VM 組態版本只能升級排定簡短的維護期間與使用者、 備份、 關閉虛擬機器，並執行[ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet （請參閱圖 22）。 這會更新虛擬機器版本，並啟用新的 HYPER-V 功能，不必將未來的 HYPER-V 整合元件 (IC) 更新。 這個指令程式可以執行從裝載 VM 的 HYPER-V 節點或`-ComputerName`參數可用來從遠端更新 VM 版本。 在此範例中，這裡我們升級設定版本的 VM1 從 5.0 到 7.0 利用許多與此 VM 設定版本，例如生產檢查點 （應用程式一致備份） 和二進位的 VM 相關聯的新 HYPER-V 功能組態檔。  
+   3. 每個 HYPER-V 主機叢集中節點上，HYPER-V VM 組態版本只能升級排定簡短的維護期間與使用者、 備份、 關閉虛擬機器，並執行[ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet （請參閱圖 22）。 這會更新虛擬機器版本，並啟用新的 HYPER-V 功能，不必將未來的 HYPER-V 整合元件 (IC) 更新。 這個指令程式可以執行從裝載 VM 的 HYPER-V 節點或`-ComputerName`參數可用來從遠端更新 VM 版本。 在此範例中，這裡我們升級設定版本的 VM1 從 5.0 到 7.0 利用許多與此 VM 設定版本，例如生產檢查點 （應用程式一致備份） 和二進位的 VM 相關聯的新 HYPER-V 功能組態檔。  
 
-        ![顯示作用中的更新 VMVersion 指令程式的螢幕擷取畫面](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
-        **圖 22:使用更新 VMVersion PowerShell cmdlet 的 VM 版本升級**  
+       ![顯示作用中的更新 VMVersion 指令程式的螢幕擷取畫面](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
+       **圖 22:使用更新 VMVersion PowerShell cmdlet 的 VM 版本升級**  
 
-4.  存放集區可以使用升級[Update-storagepool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) PowerShell cmdlet-這是一項線上作業。  
+6. 存放集區可以使用升級[Update-storagepool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) PowerShell cmdlet-這是一項線上作業。  
 
 雖然我們的目標私用雲端案例，特別是 HYPER-V 與向外延展檔案伺服器叢集，可以升級而不需要停機，叢集作業系統輪流升級程序可用於任何叢集角色。  
 
@@ -278,6 +278,6 @@ Windows Server 2016 節點新增至叢集時，將 Windows Server 2012 R2 叢集
     是，您可以自動在 System Center 2016 中使用 VMM 的叢集作業系統輪流升級程序。  
 
 ## <a name="see-also"></a>另請參閱  
--   [版本資訊：Windows Server 2016 的重要問題](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
--   [什麼是 Windows Server 2016 新功能](../get-started/What-s-New-in-windows-server-2016.md)  
+-   [版本資訊：Windows Server 2016 中的重要問題](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
+-   [Windows Server 2016 中的新功能](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [容錯移轉叢集的 Windows Server 最新消息](whats-new-in-failover-clustering.md)  

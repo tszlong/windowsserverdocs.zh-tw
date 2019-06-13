@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f3719277c80eae2bf2a4d923146920d17546601d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 97e1fa441c5fe4fb7d23743387392732663326de
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188726"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501591"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 的單一登入設定
 
@@ -56,7 +56,7 @@ AD FS 支援數種類型的單一登入體驗：
 
 
 ## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016-單一登入和驗證的裝置
-要求者會從已註冊的裝置增加最大的 90 天內，但需要 authenticvation 14 天內 （裝置使用方式 視窗） 進行驗證時，AD FS 2016 變更 PSSO。
+要求者會從已註冊的裝置增加最大的 90 天內，但需要 14 天內 （裝置使用方式 視窗） 驗證進行驗證時，AD FS 2016 變更 PSSO。
 提供認證之後第一次，依預設具有已註冊裝置的使用者取得單一登入最大的一段 90 天，提供他們用來存取 AD FS 資源至少一次每隔 14 天的裝置。  如果他們提供認證之後的 15 天，將會提示使用者輸入認證一次。  
 
 預設會啟用永續性 SSO。 如果已停用，將會寫入任何 PSSO cookie。 |  
@@ -103,23 +103,23 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ## <a name="psso-revocation"></a>PSSO 撤銷  
  若要保護的安全性，AD FS 將會拒絕任何符合下列條件時，先前發行的永續性 SSO cookie。 這將需要提供其認證，才能再次使用 AD FS 驗證使用者。 
   
--   使用者變更密碼  
+- 使用者變更密碼  
   
--   在 AD FS 中停用持續性的 SSO 設定  
+- 在 AD FS 中停用持續性的 SSO 設定  
   
--   系統管理員在遺失或遭竊的情況下停用裝置  
+- 系統管理員在遺失或遭竊的情況下停用裝置  
   
--   AD FS 收到永續性的 SSO cookie 發行給已註冊的使用者，但使用者或裝置未再註冊  
+- AD FS 收到永續性的 SSO cookie 發行給已註冊的使用者，但使用者或裝置未再註冊  
   
--   AD FS 收到永續性 SSO cookie 的已註冊的使用者，但使用者重新加以註冊  
+- AD FS 收到永續性 SSO cookie 的已註冊的使用者，但使用者重新加以註冊  
   
--   AD FS 收到永續性的 「 讓我保持登 」，但 「 讓我保持登 」 發出的 SSO cookie 設定為停用 AD FS 中  
+- AD FS 收到永續性的 「 讓我保持登 」，但 「 讓我保持登 」 發出的 SSO cookie 設定為停用 AD FS 中  
   
--   AD FS 收到永續性的 SSO cookie 發行給已註冊的使用者，但裝置憑證在驗證期間會遺失或已變更  
+- AD FS 收到永續性的 SSO cookie 發行給已註冊的使用者，但裝置憑證在驗證期間會遺失或已變更  
   
--   AD FS 系統管理員已經設定為永續性 SSO 的截止時間。 當此設定時，AD FS 會拒絕任何此時間之前發出的永續性 SSO cookie  
+- AD FS 系統管理員已經設定為永續性 SSO 的截止時間。 當此設定時，AD FS 會拒絕任何此時間之前發出的永續性 SSO cookie  
   
- 若要設定截止時間，請執行下列 PowerShell cmdlet:  
+  若要設定截止時間，請執行下列 PowerShell cmdlet:  
   
 
 ``` powershell
@@ -163,7 +163,7 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
     <th>是</th>
   </tr>
  <tr align="center">
-    <td>SSO=>set Refresh Token=></td>
+    <td>SSO=&gt;set Refresh Token=&gt;</td>
     <td>8 小時</td>
     <td>N/A</td>
     <td>N/A</td>
@@ -174,7 +174,7 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
   </tr>
 
  <tr align="center">
-    <td>PSSO=>set Refresh Token=></td>
+    <td>PSSO=&gt;set Refresh Token=&gt;</td>
     <td>N/A</td>
     <td>24 小時</td>
     <td>7 天</td>
@@ -201,7 +201,7 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
 **未註冊的裝置，但 KMSI 嗎？** 取得 PSSO / 永續性 SSO <p>
 如果：
  - [x] 管理員已啟用 KMSI 功能 [AND]
- - [x] 使用者按一下表單登入頁面上 KMSI 核取方塊
+ - [x] 使用者按一下表單登入頁面上 [KMSI 核取方塊
  
 **最好知道：** <br>
 同盟使用者不需要**LastPasswordChangeTimestamp**同步處理的屬性會發出工作階段 cookie 並重新整理權杖具有**12 小時的最大壽命 」 值**。<br>
