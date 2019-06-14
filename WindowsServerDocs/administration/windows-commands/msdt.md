@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09f3f738d5a7ba7f7c40cb4eb2ce043856b378cc
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: ba411cf73026afe9990e5c32824e3dc277507891
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63718263"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437237"
 ---
 # <a name="msdt"></a>msdt
 
@@ -36,10 +36,12 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 下表包含支援 msdt.exe 選項與參數。
 
-|參數|描述|
-|---------|-----------|
-|/id\<封裝名稱 >|指定要執行哪一個診斷套件。 取得一份可用的套件，請參閱疑難排解組件中的識別碼 可疑難排解套件嗎？ 本主題稍後的章節。|
-|/path \<directory | .diagpkg 檔案 | .diagcfg 檔案 >|指定診斷封裝的完整路徑。 如果您指定的目錄，目錄必須包含診斷的封裝。 您無法使用 /path 參數搭配 */id*， */dci*，或 */cab*參數。|
-|/dci \<passkey>|Prepopulates msdt 中的 [密碼] 欄位。 支援提供者所提供的密碼金鑰時，才使用這個參數。|
-|/dt \<directory>|指定的目錄中顯示的疑難排解的記錄。 診斷的結果會儲存在使用者的 **%LOCALAPPDATA%\Diagnostics**或是 **%LOCALAPPDATA%\ElevatedDiagnostics**目錄。|
-|/af\<回應檔案 >|指定包含一或多個診斷互動回應的 XML 格式的回應檔案。|
+
+|      參數      |                                                                                            描述                                                                                             |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /id\<封裝名稱 > |        指定要執行哪一個診斷套件。 取得一份可用的套件，請參閱疑難排解組件中的識別碼 可疑難排解套件嗎？ 本主題稍後的章節。         |
+|  /path \<directory  |                                                                                           .diagpkg 檔案                                                                                            |
+|   /dci \<passkey>   |                                        Prepopulates msdt 中的 [密碼] 欄位。 支援提供者所提供的密碼金鑰時，才使用這個參數。                                         |
+|  /dt \<directory>   | 指定的目錄中顯示的疑難排解的記錄。 診斷的結果會儲存在使用者的 **%LOCALAPPDATA%\Diagnostics**或是 **%LOCALAPPDATA%\ElevatedDiagnostics**目錄。 |
+| /af\<回應檔案 >  |                                               指定包含一或多個診斷互動回應的 XML 格式的回應檔案。                                               |
+

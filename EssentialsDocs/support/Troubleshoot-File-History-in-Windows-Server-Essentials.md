@@ -12,12 +12,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 12a9ba285757a37a8fc32a73e52ac3003db80a6d
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: f080bed5714ae4426cc6d0ca8edb5fab2d3c65b2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63721018"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432468"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Windows Server Essentials 中的檔案歷程記錄問題疑難排解
 
@@ -29,11 +29,11 @@ ms.locfileid: "63721018"
 ### <a name="file-history-data-is-not-automatically-deleted"></a>檔案歷程記錄資料不會自動刪除  
  檔案歷程記錄資料在下列情況可能不會自動刪除：  
   
--   刪除使用者帳戶時，您會選擇不刪除使用者帳戶的檔案歷程記錄資料，並選擇手動刪除資料。  
+- 刪除使用者帳戶時，您會選擇不刪除使用者帳戶的檔案歷程記錄資料，並選擇手動刪除資料。  
   
--   當您嘗試刪除檔案歷程記錄資料時，其他處理序正在使用檔案歷程記錄資料。  
+- 當您嘗試刪除檔案歷程記錄資料時，其他處理序正在使用檔案歷程記錄資料。  
   
- 若要解決這個問題，您必須使用下列程序手動刪除檔案歷程記錄：  
+  若要解決這個問題，您必須使用下列程序手動刪除檔案歷程記錄：  
   
 ####  <a name="BKMK_manuallyDelete"></a> 若要以手動方式刪除使用者或電腦的檔案歷程記錄備份  
   
@@ -78,7 +78,7 @@ ms.locfileid: "63721018"
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳戶，但保留使用者的檔案歷程記錄  
  在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要執行這項作業，請參閱 [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
 
-5.  您現在可以新增使用者。 如需指示，請參閱 < 新增使用者帳戶？在 [管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
+5. 您現在可以新增使用者。 如需指示，請參閱 < 新增使用者帳戶？在 [管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳戶，但保留使用者的檔案歷程記錄  
  在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要執行這項作業，請參閱 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  

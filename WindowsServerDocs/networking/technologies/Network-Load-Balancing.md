@@ -9,12 +9,12 @@ ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d0cf1e1d6b1681a0f18908b08cd17572159e0462
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0ea129fe2230332c0099d735f064768bce9fc50c
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881749"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812274"
 ---
 # <a name="network-load-balancing"></a>網路負載平衡
 
@@ -22,12 +22,12 @@ ms.locfileid: "59881749"
 
 在本主題中，我們提供您的網路負載平衡概觀\(NLB\) Windows Server 2016 中的功能。 您可以使用 NLB 來管理與單一虛擬叢集的兩個或多個伺服器。 NLB 可增強的可用性和延展性的網際網路伺服器應用程式，例如，用於 web、 FTP、 防火牆、 proxy、 虛擬私人網路\(VPN\)，和其他關鍵\-重要的伺服器。  
 
->[!NOTE]
->Windows Server 2016 包含新的 Azure 所啟發的軟體負載平衡器\(SLB\)的軟體定義網路元件\(SDN\)基礎結構。 使用 SLB，而不是 NLB 如果您使用 SDN，使用非 Windows 工作負載，需要輸出網路位址轉譯\(NAT\)，或者需要第 3 層\(L3\)或非 TCP 型負載平衡。 您可以繼續使用 Windows Server 2016 中的 NLB，針對非 SDN 部署。 如需有關 SLB 的詳細資訊，請參閱[軟體負載平衡 (SLB) 適用於 SDN](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
+> [!NOTE]
+> Windows Server 2016 包含新的 Azure 所啟發的軟體負載平衡器\(SLB\)的軟體定義網路元件\(SDN\)基礎結構。 使用 SLB，而不是 NLB 如果您使用 SDN，使用非 Windows 工作負載，需要輸出網路位址轉譯\(NAT\)，或者需要第 3 層\(L3\)或非 TCP 型負載平衡。 您可以繼續使用 Windows Server 2016 中的 NLB，針對非 SDN 部署。 如需有關 SLB 的詳細資訊，請參閱[軟體負載平衡 (SLB) 適用於 SDN](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
 
 網路負載平衡\(NLB\)功能會將流量分散到數部伺服器所使用的 TCP\/IP 網路通訊協定。 藉由結合兩個或多個應用程式執行成單一虛擬叢集的電腦，NLB 可以提供可靠性和效能的 web 伺服器和其他關鍵\-重要的伺服器。  
   
-NLB 叢集中的伺服器稱為「主機」 ，而且每部主機都會執行不同複本的伺服器應用程式。 NLB 將連入的用戶端要求分配給叢集中的各個主機。 您可以設定每部主機要處理的負載。 您也可以將主機動態新增至叢集，以處理增加的負載。 此外，NLB 可以將所有流量導向指定的單一主機，該主機稱為「預設主機」 。  
+NLB 叢集中的伺服器稱為「主機」  ，而且每部主機都會執行不同複本的伺服器應用程式。 NLB 將連入的用戶端要求分配給叢集中的各個主機。 您可以設定每部主機要處理的負載。 您也可以將主機動態新增至叢集，以處理增加的負載。 此外，NLB 可以將所有流量導向指定的單一主機，該主機稱為「預設主機」  。  
   
 NLB 允許利用同一組 IP 位址將叢集中的所有電腦定址，而且它會針對每部主機維護一組唯一的固定 IP 位址。 負載\-平衡的應用程式，當主機失效或離線，負載會自動重新分配電腦仍在運作。 準備好時，離線電腦可以通透方式重新加入叢集，並重新取得它的工作量共用，這能讓叢集中的其他電腦處理較少的流量。  
   
@@ -145,7 +145,7 @@ NLB 會安裝為標準的 Windows Server 網路驅動程式元件。 其作業�
 如需詳細資訊，請參閱 [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps)。
 
 ### <a name="network-load-balancing-manager"></a>網路負載平衡管理員
-若要在伺服器管理員開啟網路負載平衡管理員，請按一下 [工具]，然後按一下 [網路負載平衡管理員]。
+若要在伺服器管理員開啟網路負載平衡管理員，請按一下 [工具]  ，然後按一下 [網路負載平衡管理員]  。
   
 ## <a name="additional-resources"></a>其他資源  
 下表提供的 NLB 功能的其他資訊的連結。  

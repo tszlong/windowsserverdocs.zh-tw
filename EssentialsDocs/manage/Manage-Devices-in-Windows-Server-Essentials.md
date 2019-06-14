@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d740b71a2c3b9ed8ddb0ecfae6da2cf7d4f689a5
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: a66f98b0896e706f520aa057b91cce2fe662d22d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720407"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433325"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的裝置
 
@@ -64,13 +64,13 @@ ms.locfileid: "63720407"
   
 #### <a name="to-view-the-status-of-network-computers"></a>檢視網路電腦的狀態  
   
-1.  開啟 [Windows Server Essentials 儀表板]。  
+1. 開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列上，按一下 [裝置]  。  
+2. 在瀏覽列上，按一下 [裝置]  。  
   
-3.  在清單窗格中檢視網路中所有電腦的狀態。  
+3. 在清單窗格中檢視網路中所有電腦的狀態。  
   
- 下表說明 [Windows Server Essentials 儀表板] 上可用的各種電腦和備份工作。 部分工作是電腦特定的工作，只有當您選取清單中的某部電腦時才能看見。  
+   下表說明 [Windows Server Essentials 儀表板] 上可用的各種電腦和備份工作。 部分工作是電腦特定的工作，只有當您選取清單中的某部電腦時才能看見。  
   
 ### <a name="computer-tasks-in-the-dashboard"></a>儀表板中的電腦工作  
   

@@ -12,12 +12,12 @@ manager: ''
 ms.author: kaushika; rklemen; josh.bender; v-tea
 ms.date: 02/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bbdd17f5e6e2b161e0dda0e172ea862a9107841
-ms.sourcegitcommit: 564158d760f902ced7f18e6d63a9daafa2a92bd4
+ms.openlocfilehash: 43e40f8442600dfc66dafd6b8b210274908b4595
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64988330"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446726"
 ---
 # <a name="troubleshooting-remote-desktop-connections"></a>針對遠端桌面連線進行疑難排解
 如需幾個最常見的遠端桌面服務 (RDS) 問題的簡短說明，請參閱[遠端桌面用戶端的相關的常見問題集](https://review.docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-client-faq)。 本文會說明數個更進階的方法，若要疑難排解連線問題。 許多這些程序適用於是否針對簡單的組態，例如一部實體電腦，連線到另一部實體電腦或更複雜的組態進行疑難排解。 某些程序因應只在更複雜的多使用者案例中發生的問題。 如需有關遠端桌面的元件以及它們如何一起運作的詳細資訊，請參閱 <<c0> [ 遠端桌面服務架構](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/desktop-hosting-logical-architecture)。
@@ -68,7 +68,7 @@ ms.locfileid: "64988330"
 2. 在 [登錄編輯器] 中，選取**檔案**，然後選取**連線網路登錄**。
 3. 中**選取的電腦**對話方塊方塊中，輸入遠端電腦的名稱，選取**檢查名稱**，然後選取**確定**。
 4. 瀏覽至**HKEY\_本機\_機器\\SYSTEM\\CurrentControlSet\\控制\\終端機伺服器**。  
-   ![登錄編輯程式，顯示 fDenyTSConnections 項目](..\media\troubleshoot-remote-desktop-connections\RegEntry_fDenyTSConnections.png)
+   ![登錄編輯程式，顯示 fDenyTSConnections 項目](../media/troubleshoot-remote-desktop-connections/RegEntry_fDenyTSConnections.png)
    - 如果值**fDenyTSConnections**金鑰**0**，就會啟用 RDP
    - 如果值**fDenyTSConnections**金鑰**1**，就會停用 RDP
 5. 若要啟用 RDP，請將變更的值**fDenyTSConnections**從**1**來**0**。
@@ -85,9 +85,9 @@ gpresult /H c:\gpresult.html
 
 - 如果此原則設定為**已啟用**，群組原則不會封鎖 RDP 連線。
 - 如果此原則設定為**已停用**，檢查**優勢 GPO**。 這是封鎖 RDP 連線的 GPO。
-![Gpresult.html，在其中的範例區段網域層級 GPO * * 區塊 RDP * * 停用 RDP。](..\media\troubleshoot-remote-desktop-connections\GPResult_RDSH_Connections_GP.png)
+  ![Gpresult.html，在其中的範例區段網域層級 GPO * * 區塊 RDP * * 停用 RDP。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_GP.png)
    
-  ![Gpresult.html，在其中的範例區段 * * 本機群組原則 停用 RDP。](..\media\troubleshoot-remote-desktop-connections\GPResult_RDSH_Connections_LGP.png)
+  ![Gpresult.html，在其中的範例區段 * * 本機群組原則 停用 RDP。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_LGP.png)
 
 #### <a name="check-whether-a-gpo-is-blocking-rdp-on-a-remote-computer"></a>檢查 GPO 是否會封鎖 RDP 的遠端電腦上
 
@@ -117,7 +117,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 您可以使用 [服務] MMC 嵌入式管理單元，在本機或遠端管理的服務。 您也可以使用 PowerShell，在本機或遠端 （如果遠端電腦設定為接受遠端的 PowerShell 命令）。
 
-![在 [服務] MMC 嵌入式管理單元的遠端桌面服務。 請勿修改預設的服務設定。](..\media\troubleshoot-remote-desktop-connections\RDSServiceStatus.png)
+![在 [服務] MMC 嵌入式管理單元的遠端桌面服務。 請勿修改預設的服務設定。](../media/troubleshoot-remote-desktop-connections/RDSServiceStatus.png)
 
 其中一台電腦，如果一或兩個服務未執行，啟動它們。
 
@@ -135,7 +135,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 1. 開啟 PowerShell 視窗。 若要連線到遠端電腦，請輸入**Enter-pssession-ComputerName\<電腦名稱\>** 。
 2. 請輸入**qwinsta**。 
-    ![Qwinsta 命令會列出電腦的連接埠上接聽的處理程序。](..\media\troubleshoot-remote-desktop-connections\WPS_qwinsta.png)
+    ![Qwinsta 命令會列出電腦的連接埠上接聽的處理程序。](../media/troubleshoot-remote-desktop-connections/WPS_qwinsta.png)
 3. 如果清單包含**rdp tcp**狀態**接聽**，RDP 接聽程式是否運作。 請繼續進行[檢查 RDP 接聽程式連接埠](#check-the-rdp-listener-port)。 否則，請繼續在步驟 4。
 4. 從工作電腦匯出 RDP 接聽程式組態。
     1. 登入為受影響的電腦，具有相同的作業系統版本的電腦，並存取該電腦的登錄 （例如，藉由使用登錄編輯程式）。
@@ -171,7 +171,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 1. 如果您仍然無法連線，開啟 憑證 MMC 嵌入式管理單元。 當系統會提示您選取要管理，請選取憑證存放區**電腦帳戶**，然後選取 受影響的電腦。
 2. 在 **憑證**下方的資料夾**遠端桌面**，刪除 RDP 的自我簽署的憑證。 
-    ![MMC 憑證嵌入式管理單元的遠端桌面憑證。](..\media\troubleshoot-remote-desktop-connections\MMCCert_Delete.png)
+    ![MMC 憑證嵌入式管理單元的遠端桌面憑證。](../media/troubleshoot-remote-desktop-connections/MMCCert_Delete.png)
 3. 在受影響的電腦上重新啟動遠端桌面服務的服務。
 4. 重新整理 [憑證] 嵌入式管理單元。
 5. 如果尚未重建，RDP 的自我簽署的憑證[檢查 MachineKeys 資料夾的權限](#check-the-permissions-of-the-machinekeys-folder)。
@@ -197,7 +197,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
       - 若要連線到遠端電腦，請選取**檔案**，然後選取**連線網路登錄**。
       - 中**選取的電腦**對話方塊方塊中，輸入遠端電腦的名稱，選取**檢查名稱**，然後選取**確定**。
 2. 開啟登錄，並瀏覽至**HKEY\_本機\_機器\\SYSTEM\\CurrentControlSet\\控制\\終端機伺服器\\WinStations\\\<接聽程式\>** 。 
-    ![RDP 通訊協定的通訊埠編號子機碼。](..\media\troubleshoot-remote-desktop-connections\RegEntry_PortNumber.png)
+    ![RDP 通訊協定的通訊埠編號子機碼。](../media/troubleshoot-remote-desktop-connections/RegEntry_PortNumber.png)
 3. 如果**PortNumber**以外的值**3389**，將它變更為**3389**。 
    > [!IMPORTANT]  
     > 您可以操作使用另一個連接埠的遠端桌面服務。 不過，我們不建議您這麼做。 疑難排解這類組態已超出本文的範圍。
@@ -214,19 +214,19 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
     cmd /c 'netstat -ano | find "3389"'  
     ```
   
-    ![Netstat 命令會產生一份連接埠和接聽的服務。](..\media\troubleshoot-remote-desktop-connections\WPS_netstat.png)
-1. 尋找具有 **Listening** 狀態之 TCP 連接埠 3389 (或指派的 RDP 連接埠) 的項目。 
+    ![Netstat 命令會產生一份連接埠和接聽的服務。](../media/troubleshoot-remote-desktop-connections/WPS_netstat.png)
+3. 尋找具有 **Listening** 狀態之 TCP 連接埠 3389 (或指派的 RDP 連接埠) 的項目。 
     > [!NOTE]  
    > 使用該連接埠之處理程序或服務的 PID (處理程序識別碼) 會顯示在 [PID] 欄位底下。
-1. 若要判斷哪一個應用程式使用連接埠 3389 （或指派的 RDP 連接埠），請輸入下列命令：  
+4. 若要判斷哪一個應用程式使用連接埠 3389 （或指派的 RDP 連接埠），請輸入下列命令：  
    
      ```powershell  
     cmd /c 'tasklist /svc | find "<pid listening on 3389>"'  
     ```  
   
-    ![Tasklist 命令報告特定處理序的詳細的資訊。](..\media\troubleshoot-remote-desktop-connections\WPS_tasklist.png)
-1. 尋找與連接埠相關聯之 PID 號碼的項目 (從**netstat**輸出)。 服務或與該 PID 相關聯的處理程序會出現在右邊。
-1. 如果應用程式或服務，而非 Remote Desktop Services (TermServ.exe) 使用的連接埠，您可以使用下列方法之一來解決衝突：
+    ![Tasklist 命令報告特定處理序的詳細的資訊。](../media/troubleshoot-remote-desktop-connections/WPS_tasklist.png)
+5. 尋找與連接埠相關聯之 PID 號碼的項目 (從**netstat**輸出)。 服務或與該 PID 相關聯的處理程序會出現在右邊。
+6. 如果應用程式或服務，而非 Remote Desktop Services (TermServ.exe) 使用的連接埠，您可以使用下列方法之一來解決衝突：
       - 設定其他應用程式或服務使用不同的連接埠 （建議選項）。
       - 解除安裝其他應用程式或服務。
       - 設定 rdp 連接至使用不同的連接埠，然後重新啟動遠端桌面服務 （不建議）。
@@ -295,7 +295,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 3. 選取  **RD 授權**，然後選取適當的授權模式，為您的部署 (**每一裝置**或是**每個使用者**)。
 4. 輸入 RD 授權伺服器的完整的網域名稱 (FQDN)，然後選取**新增**。
 5. 如果您有多部 RD 授權伺服器，請針對每部伺服器重複步驟 4。 
-    ![RD 授權伺服器組態選項在 [伺服器管理員] 中。](..\media\troubleshoot-remote-desktop-connections\RDLicensing_Configure.png)
+    ![RD 授權伺服器組態選項在 [伺服器管理員] 中。](../media/troubleshoot-remote-desktop-connections/RDLicensing_Configure.png)
 
 ### <a name="refresh-the-x509-certificate-registry-keys"></a>重新整理之 X509 憑證登錄機碼
 
@@ -440,12 +440,12 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 若要更新完成之前，請暫時解決此問題，請檢查 KB 4093492 為允許連接類型。 如果沒有任何可行的替代方案，您可以考慮下列方法之一：
 
-  - 受影響的用戶端電腦，設定**加密 Oracle 補救**原則回到**Vulnerable**。
-  - 修改中的下列原則**電腦組態\\系統管理範本\\Windows 元件\\Remote Desktop Services\\遠端桌面工作階段主機\\安全性**群組原則資料夾：  
-      - **遠端 (RDP) 連線需要使用特定的安全性層級**： 設為**Enabled** ，然後選取**RDP**。
-      - **使用網路層級驗證針對遠端連線以要求使用者驗證**： 設為**已停用**。
-      > [!IMPORTANT]  
-      > 這些修改會降低部署的安全性。 它們應該只是暫時性的如果您使用它們。
+- 受影響的用戶端電腦，設定**加密 Oracle 補救**原則回到**Vulnerable**。
+- 修改中的下列原則**電腦組態\\系統管理範本\\Windows 元件\\Remote Desktop Services\\遠端桌面工作階段主機\\安全性**群組原則資料夾：  
+  - **遠端 (RDP) 連線需要使用特定的安全性層級**： 設為**Enabled** ，然後選取**RDP**。
+  - **使用網路層級驗證針對遠端連線以要求使用者驗證**： 設為**已停用**。
+    > [!IMPORTANT]  
+    > 這些修改會降低部署的安全性。 它們應該只是暫時性的如果您使用它們。
 
 如需使用群組原則的詳細資訊，請參閱[修改封鎖的 GPO](#modifying-a-blocking-gpo)。
 
@@ -493,7 +493,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 若要解決此問題，請重新啟動 RDSH 伺服器。
 
-若要解決此問題，請套用 KB 4093114 [2018 年 4 月 10 日 — KB4093114 （每月彙總）] (c:file:///\\使用者\\v jesits\\AppData\\本機\\Microsoft\\Windows\\INetCache\\Content.Outlook\\FUB8OO45\\年 4 月 %%202018 2010年 — KB4093114 %20\(每月 %20rollup\))，到 RDSH 伺服器。
+若要解決此問題，請套用 KB 4093114 [2018 年 4 月 10 日 — KB4093114 (每月 Rollup)](file:///C:/Users/v-jesits/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/FUB8OO45/April%2010,%202018—KB4093114%20(Monthly%20Rollup)) 至RDSH 伺服器。
 
 ### <a name="rd-listener-issue"></a>RD 接聽程式問題
 

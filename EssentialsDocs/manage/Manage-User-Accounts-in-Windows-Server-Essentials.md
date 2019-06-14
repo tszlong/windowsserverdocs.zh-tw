@@ -12,12 +12,12 @@ ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 008e614ca7ae202d575d2c3e5976ed3d5544b6ea
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 1cce047c45279f7116e0e8a256633df06344e13c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720706"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433146"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理使用者帳戶
 
@@ -63,8 +63,8 @@ ms.locfileid: "63720706"
 -   指派使用者群組 (僅 Windows Server Essentials)。  
   
 > [!NOTE]
->  -   Microsoft Azure Active Directory (Azure AD) 中不支援非 ASCII 字元。 如果您的伺服器與 Azure AD 整合，請勿使用在您的密碼，任何非 ASCII 字元。  
-> -   只有在您所安裝的增益集能夠提供電子郵件服務時，才可使用電子郵件選項。  
+> - Microsoft Azure Active Directory (Azure AD) 中不支援非 ASCII 字元。 如果您的伺服器與 Azure AD 整合，請勿使用在您的密碼，任何非 ASCII 字元。  
+>   -   只有在您所安裝的增益集能夠提供電子郵件服務時，才可使用電子郵件選項。  
   
 ##### <a name="to-add-a-user-account"></a>新增使用者帳戶  
   
@@ -200,38 +200,38 @@ ms.locfileid: "63720706"
  Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 根據預設，**使用者**儀表板 頁面包含兩個索引標籤**使用者**並**使用者群組**。  
   
 > [!NOTE]
->  -   如果您整合您的伺服器執行 Windows Server Essentials 與 Office 365 時，新的索引標籤便會呼叫**發佈群組**中還會新增**使用者**儀表板。  
-> -   在 Windows Server Essentials**使用者**儀表板 頁面只包含單一索引標籤-**使用者**。  
+> - 如果您整合您的伺服器執行 Windows Server Essentials 與 Office 365 時，新的索引標籤便會呼叫**發佈群組**中還會新增**使用者**儀表板。  
+>   -   在 Windows Server Essentials**使用者**儀表板 頁面只包含單一索引標籤-**使用者**。  
   
  [使用者]  索引標籤包含下列各項：  
   
--   一份使用者帳戶清單，當中顯示：  
+- 一份使用者帳戶清單，當中顯示：  
   
-    -   使用者的名稱。  
+  -   使用者的名稱。  
   
-    -   使用者帳戶的登入名稱。  
+  -   使用者帳戶的登入名稱。  
   
-    -   使用者帳戶是否具有「隨處存取」權限。 使用者帳戶的「隨處存取」權限是 [允許]  或 [不允許]  。  
+  -   使用者帳戶是否具有「隨處存取」權限。 使用者帳戶的「隨處存取」權限是 [允許]  或 [不允許]  。  
   
-    -   這個使用者帳戶的「檔案歷程記錄」是否受執行 Windows Server Essentials 的伺服器管理。 使用者帳戶的「檔案歷程記錄」狀態是 [受管理]  或 [不受管理]  。  
+  -   這個使用者帳戶的「檔案歷程記錄」是否受執行 Windows Server Essentials 的伺服器管理。 使用者帳戶的「檔案歷程記錄」狀態是 [受管理]  或 [不受管理]  。  
   
-    -   指派給使用者帳戶的存取權層級。 您可以為使用者帳戶指派 [標準使用者]  存取權或 [系統管理員]  存取權。  
+  -   指派給使用者帳戶的存取權層級。 您可以為使用者帳戶指派 [標準使用者]  存取權或 [系統管理員]  存取權。  
   
-    -   使用者帳戶狀態。 使用者帳戶可以是 [使用中]  、[非使用中]  或 [不完整]  。  
+  -   使用者帳戶狀態。 使用者帳戶可以是 [使用中]  、[非使用中]  或 [不完整]  。  
   
-    -   在 Windows Server Essentials 中，如果伺服器與 Office 365 或 Windows Intune 整合會顯示 Microsoft 線上帳戶。  
+  -   在 Windows Server Essentials 中，如果伺服器與 Office 365 或 Windows Intune 整合會顯示 Microsoft 線上帳戶。  
   
-    -   在 Windows Server Essentials 中，如果伺服器與 Microsoft Office 365 整合，就會顯示使用者帳戶的 Office 365 帳戶 （又稱作 Microsoft 線上帳戶的 Windows Server Essentials 中） 的狀態。  
+  -   在 Windows Server Essentials 中，如果伺服器與 Microsoft Office 365 整合，就會顯示使用者帳戶的 Office 365 帳戶 （又稱作 Microsoft 線上帳戶的 Windows Server Essentials 中） 的狀態。  
   
--   一個詳細資料窗格，含有所選使用者帳戶的其他相關資訊。  
+- 一個詳細資料窗格，含有所選使用者帳戶的其他相關資訊。  
   
--   一個包含下列資訊的工作窗格：  
+- 一個包含下列資訊的工作窗格：  
   
-    -   一組使用者帳戶系統管理工作，例如檢視和移除使用者帳戶，以及變更密碼。  
+  -   一組使用者帳戶系統管理工作，例如檢視和移除使用者帳戶，以及變更密碼。  
   
-    -   可讓您全域設定或變更網路中所有使用者帳戶之設定的工作。  
+  -   可讓您全域設定或變更網路中所有使用者帳戶之設定的工作。  
   
- 下表說明可從 [使用者]  索引標籤使用的各種使用者帳戶工作。部分工作是使用者帳戶特定的工作，只有當您選取清單中的某個使用者帳戶時才能看見。  
+  下表說明可從 [使用者]  索引標籤使用的各種使用者帳戶工作。部分工作是使用者帳戶特定的工作，只有當您選取清單中的某個使用者帳戶時才能看見。  
   
 > [!NOTE]
 >  如果您使用 Windows Server Essentials 整合 Office 365，則會有其他工作變成可用。 如需詳細資訊，請參閱 <<c0> [ 管理之使用者的線上帳戶](Manage-Online-Accounts-for-Users.md)。  
@@ -286,55 +286,55 @@ ms.locfileid: "63720706"
   
 ##### <a name="to-reset-the-password-for-a-user-account"></a>重設使用者帳戶的密碼  
   
-1.  開啟 [Windows Server Essentials 儀表板]。  
+1. 開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列上，按一下 [使用者]  。  
+2. 在瀏覽列上，按一下 [使用者]  。  
   
-3.  在使用者帳戶清單中，選取您想要重設的使用者帳戶。  
+3. 在使用者帳戶清單中，選取您想要重設的使用者帳戶。  
   
-4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **變更使用者帳戶密碼**。 [變更使用者帳戶密碼精靈] 隨即出現。  
+4. 在  **< 使用者帳戶\>工作**窗格中，按一下 **變更使用者帳戶密碼**。 [變更使用者帳戶密碼精靈] 隨即出現。  
   
-5.  輸入使用者帳戶的新密碼，然後再次輸入密碼來進行確認。  
+5. 輸入使用者帳戶的新密碼，然後再次輸入密碼來進行確認。  
   
-6.  按一下 [變更密碼]  。  
+6. 按一下 [變更密碼]  。  
   
-7.  將新密碼提供給使用者。  
+7. 將新密碼提供給使用者。  
   
-    > [!IMPORTANT]
-    >  -   如果您帳戶的密碼原則已設定為 [密碼永久有效]  ，您就無法變更密碼。  
-    > -   在 Azure AD 中不支援非 ASCII 字元。 因此，如果您的伺服器已與 Azure AD 整合，請勿不在密碼中使用任何非 ASCII 字元。  
-    > -   如果 Microsoft 線上帳戶 （就在 Windows Server Essentials 為 Office 365 帳戶） 指派給使用者，密碼會同步處理線上帳戶密碼。 使用者將使用新密碼來登入伺服器或登入 Office 365。 如需詳細資訊，請參閱 <<c0> [ 管理之使用者的線上帳戶](Manage-Online-Accounts-for-Users.md)。  
+   > [!IMPORTANT]
+   > - 如果您帳戶的密碼原則已設定為 [密碼永久有效]  ，您就無法變更密碼。  
+   >   -   在 Azure AD 中不支援非 ASCII 字元。 因此，如果您的伺服器已與 Azure AD 整合，請勿不在密碼中使用任何非 ASCII 字元。  
+   >   -   如果 Microsoft 線上帳戶 （就在 Windows Server Essentials 為 Office 365 帳戶） 指派給使用者，密碼會同步處理線上帳戶密碼。 使用者將使用新密碼來登入伺服器或登入 Office 365。 如需詳細資訊，請參閱 <<c0> [ 管理之使用者的線上帳戶](Manage-Online-Accounts-for-Users.md)。  
   
 ###  <a name="BKMK_Access3"></a> 您應該了解密碼原則  
  密碼原則是一組定義使用者如何建立和使用密碼的規則。 這個原則可協助防止對使用者資料和儲存在伺服器上的其他資訊進行未經授權的存取。 密碼原則會套用到所有存取網路的使用者帳戶。  
   
  Windows Server Essentials 密碼原則是由三個主要元素組成，如下所示：  
   
--   **密碼長度**。  密碼越長越安全。 空白密碼不安全。  
+- **密碼長度**。  密碼越長越安全。 空白密碼不安全。  
   
--   **密碼複雜性**。  複雜密碼包含大寫與小寫字母 (a 到 z、A 到 Z)、基本數字 (0-9) 及非字母符號 (例如 !、@、#、_、-) 的混合組合。 複雜密碼是較不容易受到未經授權的存取利用。 包含使用者名稱、生日日期或其他個人資訊的密碼無法提供適當的安全性。  
+- **密碼複雜性**。  複雜密碼包含大寫與小寫字母 (a 到 z、A 到 Z)、基本數字 (0-9) 及非字母符號 (例如 !、@、#、_、-) 的混合組合。 複雜密碼是較不容易受到未經授權的存取利用。 包含使用者名稱、生日日期或其他個人資訊的密碼無法提供適當的安全性。  
   
--   **密碼使用期限**。  Windows Server Essentials 要求使用者至少每 180 天變更一次他們的密碼。 您也可以選擇讓密碼永久有效。  
+- **密碼使用期限**。  Windows Server Essentials 要求使用者至少每 180 天變更一次他們的密碼。 您也可以選擇讓密碼永久有效。  
   
- 為了讓您更容易在您的電腦網路上實作密碼原則，Windows Server Essentials 提供一個簡單工具，可讓您將密碼原則設定或變更成下列四個預先定義之原則設定檔中的任何一個：  
+  為了讓您更容易在您的電腦網路上實作密碼原則，Windows Server Essentials 提供一個簡單工具，可讓您將密碼原則設定或變更成下列四個預先定義之原則設定檔中的任何一個：  
   
--   **弱式**。  使用者可以指定任何不是空白的密碼。  
+- **弱式**。  使用者可以指定任何不是空白的密碼。  
   
--   **中等**。  這些密碼必須至少包含 5 個字元。 不需要使用複雜密碼。  
+- **中等**。  這些密碼必須至少包含 5 個字元。 不需要使用複雜密碼。  
   
--   **中等強度**。  這些密碼必須至少包含 5 個字元，而且必須包含字母、數字及符號。  
+- **中等強度**。  這些密碼必須至少包含 5 個字元，而且必須包含字母、數字及符號。  
   
--   **強式**。  這些密碼必須至少包含 7 個字元，而且必須包含字母、數字及符號。 這些密碼更安全，但可能會讓使用者更難記住。  
+- **強式**。  這些密碼必須至少包含 7 個字元，而且必須包含字母、數字及符號。 這些密碼更安全，但可能會讓使用者更難記住。  
   
-    > [!NOTE]
-    >  密碼不能包含使用者名稱或電子郵件地址。  
-    >   
-    >  如果您已與 Office 365 整合，此整合會強制使用 [強式]  密碼原則，並且會更新該原則以包含下列要求條件：  
-    >   
-    >  -   密碼必須包含 8 16 個字元。  
-    > -   密碼不能包含空格或 Office 365 電子郵件名稱。  
+  > [!NOTE]
+  >  密碼不能包含使用者名稱或電子郵件地址。  
+  > 
+  >  如果您已與 Office 365 整合，此整合會強制使用 [強式]  密碼原則，並且會更新該原則以包含下列要求條件：  
+  > 
+  > - 密碼必須包含 8 16 個字元。  
+  >   -   密碼不能包含空格或 Office 365 電子郵件名稱。  
   
- 根據預設，伺服器安裝會將預設密碼原則設定為**強式**選項。  
+  根據預設，伺服器安裝會將預設密碼原則設定為**強式**選項。  
   
 ###  <a name="BKMK_Access4"></a> 變更密碼原則  
  您可以使用下列程序將密碼原則設定或變更成四個預先定義之原則設定檔中的任何一個。  
@@ -373,21 +373,21 @@ ms.locfileid: "63720706"
   
 ##### <a name="to-remove-a-user-account-but-retain-access-to-the-user-s-files"></a>若要移除的使用者帳戶，但保留使用者的檔案的存取權  
   
-1.  開啟 [Windows Server Essentials 儀表板]。  
+1. 開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列上，按一下 [使用者]  。  
+2. 在瀏覽列上，按一下 [使用者]  。  
   
-3.  在使用者帳戶清單中，選取您想要移除的使用者帳戶。  
+3. 在使用者帳戶清單中，選取您想要移除的使用者帳戶。  
   
-4.  在  **< 使用者帳戶\>工作**窗格中，按一下 **移除使用者帳戶**。 [刪除使用者帳戶精靈] 隨即出現。  
+4. 在  **< 使用者帳戶\>工作**窗格中，按一下 **移除使用者帳戶**。 [刪除使用者帳戶精靈] 隨即出現。  
   
-5.  在 [您要保留檔案嗎?]  頁面上，確定 [刪除此使用者帳戶的檔案 (包括檔案歷程記錄備份與重新導向的資料夾)]  核取方塊已取消選取，然後按 [下一步]  。  
+5. 在 [您要保留檔案嗎?]  頁面上，確定 [刪除此使用者帳戶的檔案 (包括檔案歷程記錄備份與重新導向的資料夾)]  核取方塊已取消選取，然後按 [下一步]  。  
   
-     確認頁面隨即出現，警告您正在刪除帳戶但會保留檔案。  
+    確認頁面隨即出現，警告您正在刪除帳戶但會保留檔案。  
   
-6.  按一下 [刪除帳戶]  來移除使用者帳戶。  
+6. 按一下 [刪除帳戶]  來移除使用者帳戶。  
   
- 移除使用者帳戶之後，系統管理員可以將共用資料夾的存取權提供給另一個使用者帳戶。  
+   移除使用者帳戶之後，系統管理員可以將共用資料夾的存取權提供給另一個使用者帳戶。  
   
 ##### <a name="to-give-a-user-account-permission-to-access-a-shared-folder"></a>授與使用者帳戶存取共用資料夾的權限  
   
@@ -414,15 +414,15 @@ ms.locfileid: "63720706"
   
 ##### <a name="to-manually-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>手動將 DSRM 密碼同步至網路系統管理員帳戶  
   
-1.  在命令提示字元中，執行 `ntdsutil.exe` 以開啟 ntdsutil 工具。  
+1. 在命令提示字元中，執行 `ntdsutil.exe` 以開啟 ntdsutil 工具。  
   
-2.  若要重設 DSRM 密碼，請輸入 **set dsrm password**。  
+2. 若要重設 DSRM 密碼，請輸入 **set dsrm password**。  
   
-3.  若要同步的網域控制站上的 DSRM 密碼與目前的網路系統管理員的帳戶，請輸入：  
+3. 若要同步的網域控制站上的 DSRM 密碼與目前的網路系統管理員的帳戶，請輸入：  
   
-     **從網域帳戶的同步處理** *< current_network_administrator_account&gt >* ，然後按 Enter 鍵。  
+    **從網域帳戶的同步處理** *< current_network_administrator_account&gt >* ，然後按 Enter 鍵。  
   
- 由於您將會定期變更網路系統管理員帳戶的密碼，因此為了確保 DSRM 密碼永遠與目前的網路系統管理員密碼相同，建議您建立一個排程工作來每日自動將 DSRM 密碼同步至網路系統管理員密碼。  
+   由於您將會定期變更網路系統管理員帳戶的密碼，因此為了確保 DSRM 密碼永遠與目前的網路系統管理員密碼相同，建議您建立一個排程工作來每日自動將 DSRM 密碼同步至網路系統管理員密碼。  
   
 ##### <a name="to-automatically-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>自動將 DSRM 密碼同步至網路系統管理員帳戶  
   
@@ -460,15 +460,15 @@ ms.locfileid: "63720706"
   
  [設定隨處存取精靈] 可讓您啟用兩種遠端存取方法：  
   
--   虛擬私人網路 (VPN)  
+- 虛擬私人網路 (VPN)  
   
--   遠端 Web 存取  
+- 遠端 Web 存取  
   
- 執行精靈時，您也可以選擇允許所有目前和新加入的使用者帳戶使用「隨處存取」。  
+  執行精靈時，您也可以選擇允許所有目前和新加入的使用者帳戶使用「隨處存取」。  
   
- 若要設定「隨處存取」，請開啟 [儀表板] 的 [首頁]  ，按一下 [設定]  ，然後按一下 [設定隨處存取]  。  
+  若要設定「隨處存取」，請開啟 [儀表板] 的 [首頁]  ，按一下 [設定]  ，然後按一下 [設定隨處存取]  。  
   
- 如需隨處存取的詳細資訊，請參閱[Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。  
+  如需隨處存取的詳細資訊，請參閱[Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。  
   
 ###  <a name="BKMK_Access9"></a> 讓使用者能夠存取伺服器上的資源  
   本節適用於執行 Windows Server Essentials 或 Windows Server Essentials 的伺服器或執行已安裝的 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 的伺服器。  

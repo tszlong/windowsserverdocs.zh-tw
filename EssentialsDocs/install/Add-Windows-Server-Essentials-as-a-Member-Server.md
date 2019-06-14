@@ -12,12 +12,12 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 413c1d5d3bec7f002b73e9861aa119d495c5cfb2
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 502e54cf719895dd11030cf163159f6cdda47164
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63717118"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433736"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>新增 Windows Server Essentials 做為成員伺服器
 
@@ -49,23 +49,23 @@ ms.locfileid: "63717118"
   
 #### <a name="to-join-windows-server-essentials-to-a-workgroup-or-domain"></a>將 Windows Server Essentials 加入工作群組或網域  
   
-1.  在第二部伺服器上完成 Windows Server Essentials 安裝之後，關閉「設定 Windows Server Essentials 精靈」。  
+1. 在第二部伺服器上完成 Windows Server Essentials 安裝之後，關閉「設定 Windows Server Essentials 精靈」。  
   
-2.  在 [搜尋]  方塊中，輸入 **System Settings**，然後在搜尋結果中，按一下 [檢視進階系統設定]  。  
+2. 在 [搜尋]  方塊中，輸入 **System Settings**，然後在搜尋結果中，按一下 [檢視進階系統設定]  。  
   
-3.  在 [系統內容]  中，按一下 [電腦名稱]  索引標籤。  
+3. 在 [系統內容]  中，按一下 [電腦名稱]  索引標籤。  
   
-4.  在 [電腦名稱]  的 [網域]  區段中，按一下 [變更]  。  
+4. 在 [電腦名稱]  的 [網域]  區段中，按一下 [變更]  。  
   
-5.  在 **電腦名稱/網域變更**，請在**成員**區段中，選擇是否要執行 Windows Server Essentials 的伺服器加入**工作群組**或是**網域**。  
+5. 在 **電腦名稱/網域變更**，請在**成員**區段中，選擇是否要執行 Windows Server Essentials 的伺服器加入**工作群組**或是**網域**。  
   
-    -   若要將伺服器加入工作群組，請輸入 **workgroup**，然後按一下 [確定]  。  
+   -   若要將伺服器加入工作群組，請輸入 **workgroup**，然後按一下 [確定]  。  
   
-    -   若要將這部伺服器加入現有的 Active Directory 網域，請輸入網域名稱，然後按一下 [確定]  。  
+   -   若要將這部伺服器加入現有的 Active Directory 網域，請輸入網域名稱，然後按一下 [確定]  。  
   
-6.  重新啟動伺服器以套用變更。  
+6. 重新啟動伺服器以套用變更。  
   
- 將伺服器加入您的主要伺服器的網域之後，您可以繼續執行設定 Windows Server Essentials 精靈] 從 [伺服器管理員來設定 Windows Server Essentials。  
+   將伺服器加入您的主要伺服器的網域之後，您可以繼續執行設定 Windows Server Essentials 精靈] 從 [伺服器管理員來設定 Windows Server Essentials。  
   
 #### <a name="to-configure-windows-server-essentials-experience-on-a-member-server"></a>在成員伺服器上設定 Windows Server Essentials 體驗  
   
