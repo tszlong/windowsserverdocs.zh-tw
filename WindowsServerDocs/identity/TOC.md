@@ -462,8 +462,8 @@
 #### [AD FS 密碼攻擊防護](ad-fs/technical-reference/ad-fs-password-protection.md)
 ### [AD FS 2016 常見問題集](ad-fs/overview/AD-FS-FAQ.md)
 
-## Active Directory Rights Management 服務
-### [升級至 Windows Server 2016 的 AD RMS](ad-rms/adrms-deploy.md)
+## Active Directory Rights Management Service
+### [將 AD RMS 升級至 Windows Server 2016](ad-rms/adrms-deploy.md)
 
 
 ## [保護特殊權限存取](securing-privileged-access/securing-privileged-access.md)

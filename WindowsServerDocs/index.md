@@ -38,7 +38,7 @@ ms.locfileid: "66462165"
                                         </div>
                                         <div class="cardText">
                                             <h2>新增功能</h2>
-                                            <p>了解&#39;的新功能 Windows Server</p>
+                                            <p>尋找 Windows Server 中的新功能</p>
                                         </div>
                                     </div>
                                 </div>
@@ -135,8 +135,8 @@ ms.locfileid: "66462165"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>連接到 Azure 的混合式服務</h2>
-                                            <p>Azure 的混合式服務，以結合最佳的內部部署和雲端連接您的伺服器或叢集。</p>
+                                            <h2>連線到 Azure 混合式服務</h2>
+                                            <p>將您的伺服器或叢集連線到 Azure 混合式服務，以結合內部部署和雲端的優勢。</p>
             </li>
                     <li class="fullSpan">
                     <HR COLOR="purple" SIZE="6" WIDTH="60%">
@@ -280,7 +280,7 @@ ms.locfileid: "66462165"
        <hr width="80%">
             <li>2. <a href="https://docs.microsoft.com/windows-server/failover-clustering/failover-cluster-csvs">在容錯移轉叢集中使用叢集共用磁碟區</a></li>
        <hr width="80%">
-            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">什麼&#39;的新容錯移轉叢集功能</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">容錯移轉叢集的新功能</a></li>
             </ol>
         </td>
     </tr>
@@ -451,7 +451,7 @@ ms.locfileid: "66462165"
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings">傳輸層安全性 (TLS) 登錄設定</a></li>
        <hr width="80%">
-            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">停用 含有桌面體驗的 Windows Server 2016 上的系統服務的指引 </a></li>
+            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">在包含桌面體驗的 Windows Server 2016 上停用系統服務的指引</a></li>
        <hr width="80%">
             <li>3. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication">Windows 驗證中的認證程序</a></li>
             </ol>

@@ -34,14 +34,14 @@
 
 
 ## 連線到 Azure
-### [Azure 的混合式服務](azure/index.md)
-#### [Azure Backup](azure/azure-backup.md)
+### [Azure 混合式服務](azure/index.md)
+#### [Azure 備份](azure/azure-backup.md)
 #### [Azure Site Recovery](azure/azure-site-recovery.md)
 #### [Azure 檔案同步](azure/azure-file-sync.md)
-#### [Azure Monitor](azure/azure-monitor.md)
+#### [Azure 監視器](azure/azure-monitor.md)
 #### [Azure 更新管理](azure/azure-update-management.md)
-### [連接到 Azure 的 Windows Admin Center](azure/azure-integration.md)
-### [部署在 Azure 中的 Windows Admin Center](azure/deploy-wac-in-azure.md)
+### [將 Windows Admin Center 連線到 Azure ](azure/azure-integration.md)
+### [在 Azure 中部署 Windows Admin Center](azure/deploy-wac-in-azure.md)
 ### [使用 Windows Admin Center 管理 Azure VM](azure/manage-azure-vms.md)
 
 ## 支援
