@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 856eb7c2c2dfe0e0e3300fcf826e75b56258dc1b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 879a87d4383d07e37227ecf6fffa5d002a77bbc0
+ms.sourcegitcommit: 214e827934e7b3e8987e9e0ab2cf00047d332c89
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447655"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67153322"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>若要移轉的伺服器使用儲存體移轉服務
 
@@ -35,7 +35,7 @@ ms.locfileid: "66447655"
     - Windows Management Instrumentation (WMI-In)
 
    > [!NOTE]
-   > 如果您使用協力廠商防火牆，以開啟輸入連接埠範圍為 TCP/445 (SMB)、 TCP 135 （RPC/DCOM 端點對應程式，） 和 TCP 1025-65535 （RPC/DCOM 暫時連接埠）。
+   > 如果您使用協力廠商防火牆，以開啟輸入連接埠範圍為 TCP/445 (SMB)、 TCP 135 （RPC/DCOM 端點對應程式，） 和 TCP 1025-65535 （RPC/DCOM 暫時連接埠）。 存放裝置移轉的服務連接埠為 TCP/28940 (Orchestrator) 和 TCP/28941 (Proxy)。
 
 1. 如果您使用 orchestrator 伺服器來管理移轉，而且您想要下載事件或傳送的資料的記錄檔，請檢查該伺服器上，會啟用檔案及印表機共用 (Smb-in) 防火牆規則。
 
