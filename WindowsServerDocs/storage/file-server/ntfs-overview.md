@@ -6,18 +6,18 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
-ms.date: 09/06/2018
+ms.date: 06/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f85e321381adcf607c3504005a0a3448ab0f098a
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 2e45fd1eb13044fdf0ba0f66a6e909a3f2d39bc3
+ms.sourcegitcommit: 6fec3ca19ddaecbc936320d98cca0736dd8505d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63738443"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67196162"
 ---
 # <a name="ntfs-overview"></a>NTFS 概觀
 
->適用於：Windows 10，Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+>適用於：Windows 10、windows Server 2019，Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
 
 NTFS-最新版本的 Windows 和 Windows Server 的主要檔案系統，提供一組完整的功能，包括安全性描述元、 加密、 磁碟配額，以及豐富的中繼資料，並可以持續提供使用與叢集共用磁碟區 (CSV)您可以從 容錯移轉叢集的多個節點同時存取的可用磁碟區。
 
@@ -93,8 +93,11 @@ NTFS 支援長檔名和擴充長度路徑，使用下列的最大值：
 
 ## <a name="additional-information"></a>其他資訊
 
-|內容類型|參考|
-|---|---|
-|評估|- [在 NTFS 中最新消息](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11))(Windows Server 2012 R2)<br>- [在 NTFS 中最新消息](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff383236(v=ws.10))(Windows 7 中的 Windows Server 2008 R2）<br>- [NTFS 健康情況和 Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))<br>- [自我修復 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)) （Windows Server 2008 中導入）<br>- [交易式 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) （Windows Server 2008 中導入）|
-|社群資源|- [Windows 儲存體團隊部落格](https://blogs.msdn.microsoft.com/san/)|
-|相關技術|- [Windows Server 中的儲存體](../storage.md)<br>- [使用叢集共用磁碟區，在容錯移轉叢集中](../../failover-clustering/failover-cluster-csvs.md)<br>-[叢集共用磁碟區](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)#cluster-shared-volumes>)並[儲存體設計](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)#storage-design>)區段[設計雲端基礎結構](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)) <br>- [儲存空間](../storage-spaces/overview.md)<br>- [彈性檔案系統 (ReFS) 概觀](../refs/refs-overview.md)
+- [對 ReFS 及 NTFS 叢集大小建議](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
+- [彈性檔案系統 (ReFS) 概觀](../refs/refs-overview.md)
+- [在 NTFS 中最新消息](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11))(Windows Server 2012 R2)
+- [在 NTFS 中最新消息](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff383236(v=ws.10))(Windows 7 中的 Windows Server 2008 R2）
+- [NTFS 健康情況和 Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))
+- [自我修復 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)) （Windows Server 2008 中導入）
+- [交易式 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) （Windows Server 2008 中導入）
+- [Windows Server 中的儲存體](../storage.md)

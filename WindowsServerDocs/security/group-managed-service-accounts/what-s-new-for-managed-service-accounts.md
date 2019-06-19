@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: cac55d04a40c84ce160eb3883d6095a7db0ef3be
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59872179"
@@ -55,7 +55,7 @@ Windows Server 2012 中，Windows PowerShell cmdlet 預設為管理群組受控�
 
 -   [群組受管理的服務帳戶概觀](group-managed-service-accounts-overview.md)
 
--   [Active Directory 網域服務概觀](active-directory-domain-services-overview.md)
+-   [Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)
 
 -   [受管理的服務帳戶：了解、 實作、 最佳做法和疑難排解](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 

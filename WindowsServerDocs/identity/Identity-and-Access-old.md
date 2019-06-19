@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ms.technology: identity-adds
 ms.openlocfilehash: 233aa7812695d759962d44622f7ddd4376bc9831
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59866059"
@@ -39,7 +39,7 @@ Active Directory Domain Services (AD DS) 的 Privileged Access Management (PAM) 
 ## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>[適用於企業的 Windows 10:若要使用裝置工作的方式](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)
 Windows 10 可讓您運用 Azure Active Directory。 Windows 10 裝置可以連線至 Azure AD，使用者可以使用 Azure AD 帳戶登入 Windows，或新增他們的 Azure ID 以存取商務應用程式和資源。
 
-## <a name="active-directory-domain-servicesidentityad-dsactive-directory-domain-servicesmd"></a>[Active Directory 網域服務](../identity/ad-ds/Active-Directory-Domain-Services.md)
+## <a name="active-directory-domain-servicesidentityad-dsactive-directory-domain-servicesmd"></a>[Active Directory Domain Services](../identity/ad-ds/Active-Directory-Domain-Services.md)
 Windows Server 2016 中 AD DS 所有可用功能的詳細記載。
 
 ## <a name="active-directory-federation-servicesactive-directory-federation-servicesmd"></a>[Active Directory Federation Services](Active-Directory-Federation-Services.md)

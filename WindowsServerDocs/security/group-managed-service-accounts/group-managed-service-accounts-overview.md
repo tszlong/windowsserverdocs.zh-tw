@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 24e3e3c15544de2f3bed4a7ef177b659e8095385
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59836969"
@@ -68,6 +68,6 @@ Gmsa 不適用於 Windows Server 2012 之前的 Windows 作業系統。
 |**評估**|[開始使用群組受管理的服務帳戶](getting-started-with-group-managed-service-accounts.md)|
 |**工具及設定**|[受管理的 Active Directory 網域服務中的服務帳戶](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
 |**社群資源**|[受管理的服務帳戶：了解、 實作、 最佳做法和疑難排解](http://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
-|**相關技術**|[Active Directory 網域服務概觀](active-directory-domain-services-overview.md)|
+|**相關技術**|[Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)|
 
 
