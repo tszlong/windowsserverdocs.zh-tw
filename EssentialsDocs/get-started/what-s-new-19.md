@@ -11,12 +11,12 @@ ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
-ms.openlocfilehash: d6204bc0b6e00980a56356d999f567e2f583027a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2692869ac4ff1302a4f36533ba8788148db7b73f
+ms.sourcegitcommit: a3c9a7718502de723e8c156288017de465daaf6b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433769"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263021"
 ---
 # <a name="whats-new-in-windows-server-2019-essentials"></a>Windows Server 2019 Essentials 中的新功能
 
@@ -36,12 +36,6 @@ Windows Server Essentials 體驗角色都已從所有伺服器 Sku，包括 Wind
 多年來 Windows Server 2016 Essentials 已發行，因為我們有已致力於大型和小型企業的下一個解決方案：Microsoft 365. 我們強烈建議 Microsoft 365 的小型企業客戶的 Windows Server Essentials 的所有版本來取代。 Microsoft 365 是最新的解決方案，檔案共用和共同作業，並包括 Office 365，Windows 10 和 Enterprise Mobility + Security。 
 
 發展您的業務進一步[Microsoft 365 商務版](https://www.microsoft.com/microsoft-365/business)，其中包含更多的 Office 功能，例如電子郵件和行事曆，檔案儲存體在雲端、 資料保護和更多功能。 Microsoft 365 商務版將協助您提升產能層級的小型企業。
-
-## <a name="aad-connect-can-now-be-installed-on-windows-server-2019-essentials"></a>AAD Connect 現在可以安裝在 Windows Server 2019 Essentials
-
-<a name="windows-server-2019-essentials-includes-new-support-for-azure-active-directory-via-aad-connecthttpsdocsmicrosoftcomazureactive-directoryconnectactive-directory-aadconnect-prerequisites"></a>Windows Server 2019 Essentials 包含新的支援，透過 Azure Active directory [AAD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-prerequisites)。 
-=======
-發展您的業務更進一步[Microsoft 365 商務版](https://www.microsoft.com/en-us/microsoft-365/business)，其中包含更多的 Office 功能，例如電子郵件和行事曆，檔案儲存體在雲端、 資料保護和更多功能。 Microsoft 365 商務版將協助您提升產能層級的小型企業。
 
 ## <a name="aad-connect-can-now-be-installed-on-windows-server-2019-essentials"></a>AAD Connect 現在可以安裝在 Windows Server 2019 Essentials
 
