@@ -8,16 +8,16 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f28458ed9e781df6eca2478b02fb667d9240ca48
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a638ec25be4fc99b4eccd1d9fa541e640ef9e15c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445298"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280658"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>適用於 Windows Server 中的 AD FS 建立自訂的驗證方法
 
-本逐步解說提供適用於 Windows Server 2012 R2 中的 AD FS 實作自訂驗證方法的指示。 如需詳細資訊，請參閱 <<c0> [ 額外的驗證方法](https://msdn.microsoft.com/en-us/library/dn758113\(v=msdn.10\))。
+本逐步解說提供適用於 Windows Server 2012 R2 中的 AD FS 實作自訂驗證方法的指示。 如需詳細資訊，請參閱 <<c0> [ 額外的驗證方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))。
 
 
 > [!WARNING]
@@ -74,7 +74,7 @@ ms.locfileid: "66445298"
 
     您應該現在是設定來解決所有提供者所需的類型。 
 
-7.  將新類別新增至您的專案 (以滑鼠右鍵按一下您的專案，**新增。...類別...** ) 並為它提供的名稱，例如**MyAdapter**，如下所示：
+7.  將新類別新增至您的專案 (以滑鼠右鍵按一下您的專案，**新增...類別...** ) 並為它提供的名稱，例如**MyAdapter**，如下所示：
 
     ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "建立提供者")
 
@@ -224,7 +224,7 @@ ms.locfileid: "66445298"
          }
          }
 
-         /// Returns an array indicating the type of claim that that the adapter uses to identify the user being authenticated.
+         /// Returns an array indicating the type of claim that the adapter uses to identify the user being authenticated.
          /// Note that although the property is an array, only the first element is currently used.
          /// MUST BE ONE OF THE FOLLOWING
          /// "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
@@ -377,7 +377,7 @@ AD FS 可以叫用外部提供者之前，它必須在系統中註冊。  配接
 
 2.  安裝 AD FS 角色服務，並設定至少一個節點伺服器陣列。
 
-    設定實驗室環境中的同盟伺服器的詳細步驟，請參閱[Windows Server 2012 R2 AD FS 部署指南](https://msdn.microsoft.com/en-us/library/dn486820\(v=msdn.10\))。
+    設定實驗室環境中的同盟伺服器的詳細步驟，請參閱[Windows Server 2012 R2 AD FS 部署指南](https://msdn.microsoft.com/library/dn486820\(v=msdn.10\))。
 
 3.  Gacutil.exe 將工具複製到伺服器。
 
@@ -641,6 +641,6 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 #### <a name="other-resources"></a>其他資源
 
-[其他驗證方法](https://msdn.microsoft.com/en-us/library/dn758113\(v=msdn.10\))  
-[透過機密應用程式的其他多因素驗證管理風險](https://msdn.microsoft.com/en-us/library/dn280949\(v=msdn.10\))
+[其他驗證方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))  
+[透過機密應用程式的其他多因素驗證管理風險](https://msdn.microsoft.com/library/dn280949\(v=msdn.10\))
 
