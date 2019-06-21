@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c8a97cd145a695bc8755f9111291e5c8bba2e572
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e72d47dc3c32db7465f7c47b16dcdc777636fd9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881899"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282217"
 ---
 # <a name="create-an-access-policy"></a>建立存取原則
 
@@ -51,7 +50,7 @@ ms.locfileid: "59881899"
   
     ![選取位置](../../media/Create-an-Access-Policy/ipam_CreateAP_04.jpg)  
   
-6.  在 **選取使用者或群組**對話方塊中，於**輸入物件名稱來選取**，輸入您要建立存取原則的使用者帳戶名稱。 按一下 [確定] 。  
+6.  在 **選取使用者或群組**對話方塊中，於**輸入物件名稱來選取**，輸入您要建立存取原則的使用者帳戶名稱。 按一下 [確定]  。  
   
 7.  在 **新增存取原則**，請在**使用者設定**，**使用者別名**現在包含套用原則的使用者帳戶。 在 **存取設定**，按一下**新增**。  
   

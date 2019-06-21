@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e62032533b15ec3d93896d242273612faafdca58
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1e72556f9a630e188b59722e09650f9e48fb6852
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444098"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280474"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -110,7 +110,7 @@ AD FS 的記憶體和磁碟需求是相當靜態的請參閱下表：
   
 -   外部網路存取，您必須部署 Web 應用程式 Proxy 角色服務\-遠端存取伺服器角色的一部分。 
 
--   協力廠商 proxy 必須支援[MS ADFSPIP 通訊協定](https://msdn.microsoft.com/en-us/library/dn392811.aspx)AD FS proxy 受到支援。  如需清單的第 3 方供應商請參閱[常見問題集](AD-FS-FAQ.md#what-third-party-proxies-are-available-for-ad-fs-that-support-ms-adfspip)。
+-   協力廠商 proxy 必須支援[MS ADFSPIP 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)AD FS proxy 受到支援。  如需清單的第 3 方供應商請參閱[常見問題集](AD-FS-FAQ.md#what-third-party-proxies-are-available-for-ad-fs-that-support-ms-adfspip)。
 
 -   AD FS 2016 需要 Windows Server 2016 上的 Web 應用程式 Proxy 伺服器。  舊版 proxy 無法設定 AD FS 2016 伺服器陣列 2016年伺服器陣列行為層級執行。
   

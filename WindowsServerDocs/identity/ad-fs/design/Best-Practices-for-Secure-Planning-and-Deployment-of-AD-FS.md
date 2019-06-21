@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4a2fb188bd0a46ebd54ae068e8e4eeb63788aaa0
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 95f9fd468df39525a2fe7d18647f399214486bbb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501583"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280602"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>安全規劃和部署 AD FS 的最佳做法
 
@@ -26,7 +26,7 @@ ms.locfileid: "66501583"
 
 -   **保護 AD FS 做為 「 第 0 層 」 系統** 
 
-    AD FS 基本上是驗證系統。  因此，它應該被視為 「 第 0 層 」 系統，例如 網路上其他身分識別系統。  [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)有 Active Directory 系統管理層模型的詳細資訊。 
+    AD FS 基本上是驗證系統。  因此，它應該被視為 「 第 0 層 」 系統，例如 網路上其他身分識別系統。  [Microsoft Docs](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)有 Active Directory 系統管理層模型的詳細資訊。 
 
 
 -   **若要將 AD FS 特定的安全性最佳作法套用到同盟伺服器和同盟伺服器 proxy 電腦使用安全性設定精靈**  
@@ -117,11 +117,11 @@ ms.locfileid: "66501583"
 當這些資料庫技術來管理 AD FS 設計和部署中的資料時，下列安全性最佳作法特有 Microsoft SQL Server® 或 Windows 內部資料庫 (WID) 的使用。  
   
 > [!NOTE]  
-> 這些建議的用意是要延伸 (而非取代) SQL Server 產品安全性指導方針。 如需規劃安全 SQL Server 安裝的詳細資訊，請參閱[安全 SQL 安裝的安全性考量](https://go.microsoft.com/fwlink/?LinkID=139831)(https://go.microsoft.com/fwlink/?LinkID=139831)。  
+> 這些建議的用意是要延伸 (而非取代) SQL Server 產品安全性指導方針。 如需規劃安全 SQL Server 安裝的詳細資訊，請參閱[安全 SQL 安裝的安全性考量](https://go.microsoft.com/fwlink/?LinkID=139831)(https://go.microsoft.com/fwlink/?LinkID=139831) 。  
   
 -   **一律將 SQL Server 部署在實體上安全的網路環境使用防火牆。**  
   
-    絕對不應將 SQL Server 安裝直接向網際網路公開。 只有在您的資料中心內的電腦應該能夠連線到您支援 AD FS 的 SQL server 安裝。 如需詳細資訊，請參閱 <<c0> [ 安全性最佳做法檢查清單](https://go.microsoft.com/fwlink/?LinkID=189229)(https://go.microsoft.com/fwlink/?LinkID=189229)。  
+    絕對不應將 SQL Server 安裝直接向網際網路公開。 只有在您的資料中心內的電腦應該能夠連線到您支援 AD FS 的 SQL server 安裝。 如需詳細資訊，請參閱 <<c0> [ 安全性最佳做法檢查清單](https://go.microsoft.com/fwlink/?LinkID=189229)(https://go.microsoft.com/fwlink/?LinkID=189229) 。  
   
 -   **執行 SQL Server，而不是使用內建的預設系統服務帳戶的服務帳戶。**  
   
@@ -129,11 +129,11 @@ ms.locfileid: "66501583"
   
 -   **最小化 SQL Server 的介面區。**  
   
-    只啟用必要的 SQL Server 端點。 根據預設，SQL Server 會提供單一內建 TCP 端點，且無法移除。 適用於 AD FS，您應該啟用這個 TCP 端點，Kerberos 驗證。 若要檢閱目前的 TCP 端點以查看是否已將其他使用者定義的 TCP 連接埠新增到 SQL 安裝，您可以在 Transact-SQL (T-SQL) 工作階段中使用 "SELECT * FROM sys.tcp_endpoints" 查詢陳述式。 如需有關 SQL Server 端點設定的詳細資訊，請參閱[How To:設定 Database Engine 接聽多個 TCP 通訊埠](https://go.microsoft.com/fwlink/?LinkID=189231)(https://go.microsoft.com/fwlink/?LinkID=189231)。  
+    只啟用必要的 SQL Server 端點。 根據預設，SQL Server 會提供單一內建 TCP 端點，且無法移除。 適用於 AD FS，您應該啟用這個 TCP 端點，Kerberos 驗證。 若要檢閱目前的 TCP 端點以查看是否已將其他使用者定義的 TCP 連接埠新增到 SQL 安裝，您可以在 Transact-SQL (T-SQL) 工作階段中使用 "SELECT * FROM sys.tcp_endpoints" 查詢陳述式。 如需有關 SQL Server 端點設定的詳細資訊，請參閱[How To:設定 Database Engine 接聽多個 TCP 通訊埠](https://go.microsoft.com/fwlink/?LinkID=189231)(https://go.microsoft.com/fwlink/?LinkID=189231) 。  
   
 -   **請避免使用以 SQL 為基礎的驗證。**  
   
-    為避免必須透過網路以純文字形式傳輸密碼或在組態設定中儲存密碼，請只將 Windows 驗證與 SQL Server 安裝搭配使用。 SQL Server 驗證是舊有的驗證模式。 不建議您在使用 SQL Server 驗證時儲存結構化查詢語言 (SQL) 登入認證 (SQL 使用者名稱和密碼)。 如需詳細資訊，請參閱 <<c0> [ 驗證模式](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232)。  
+    為避免必須透過網路以純文字形式傳輸密碼或在組態設定中儲存密碼，請只將 Windows 驗證與 SQL Server 安裝搭配使用。 SQL Server 驗證是舊有的驗證模式。 不建議您在使用 SQL Server 驗證時儲存結構化查詢語言 (SQL) 登入認證 (SQL 使用者名稱和密碼)。 如需詳細資訊，請參閱 <<c0> [ 驗證模式](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232) 。  
   
 -   **請仔細評估 SQL 安裝中的其他通道安全性的需求。**  
   

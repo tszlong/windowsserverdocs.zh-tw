@@ -9,12 +9,12 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/23/2018
-ms.openlocfilehash: 8fc1c97d7c2a8694e56cc36b5501a82081b3db23
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d61dcdbb61449bd2af57b8e2c99ced6235c4deca
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812339"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281257"
 ---
 # <a name="ras-gateway"></a>RAS 閘道
 
@@ -109,9 +109,9 @@ RAS 閘道包含下列功能。
   
 -   **點對站 VPN**。 此 RAS 閘道的功能可讓組織員工或系統管理員從遠端位置連線到您的組織網路。 單一租用戶部署 RAS 閘道，遠端員工可以使用 VPN 連線連接到您的組織網路。 此連線可讓使用者使用內部網路資源，例如內部網路網站和檔案伺服器。 多租用戶的部署中，租用戶網路系統管理員可以使用點對站 VPN 連線存取 CSP 資料中心內的虛擬網路資源。  
   
--   **動態路由使用邊界閘道通訊協定 (BGP)**。 BGP 可以降低在路由器上手動路由設定的需求，因為它是動態路由通訊協定，並且會自動學習使用站台對站台 VPN 連線來連接的網站之間的路由。 如果您的組織有多個站台使用例如 RAS 閘道啟用 BGP 的路由器連線，BGP 可讓自動計算，並使用彼此發生網路中斷或失敗時的有效路由的路由器。 如需詳細資訊，請參閱 < [RFC 4271](https://tools.ietf.org/html/rfc4271)。  
+-   **動態路由使用邊界閘道通訊協定 (BGP)** 。 BGP 可以降低在路由器上手動路由設定的需求，因為它是動態路由通訊協定，並且會自動學習使用站台對站台 VPN 連線來連接的網站之間的路由。 如果您的組織有多個站台使用例如 RAS 閘道啟用 BGP 的路由器連線，BGP 可讓自動計算，並使用彼此發生網路中斷或失敗時的有效路由的路由器。 如需詳細資訊，請參閱 < [RFC 4271](https://tools.ietf.org/html/rfc4271)。  
   
--   **網路位址轉譯 (NAT)**。 網路位址轉譯 (NAT) 可讓您與單一的公用 IP 位址共用公用網際網路，透過單一介面的連線。 私人網路上的電腦使用私用、 非可路由的位址。 NAT 會將私人位址對應到公用位址。 此 RAS 閘道的功能可讓組織使用單一租用戶部署中的員工存取從閘道後方的網際網路資源。 Csp，這項功能可讓租用戶來存取網際網路的 Vm 執行的應用程式。 比方說，租用戶已設定為 Web 伺服器的 VM 可以連絡外部的財務資源可處理信用卡交易。  
+-   **網路位址轉譯 (NAT)** 。 網路位址轉譯 (NAT) 可讓您與單一的公用 IP 位址共用公用網際網路，透過單一介面的連線。 私人網路上的電腦使用私用、 非可路由的位址。 NAT 會將私人位址對應到公用位址。 此 RAS 閘道的功能可讓組織使用單一租用戶部署中的員工存取從閘道後方的網際網路資源。 Csp，這項功能可讓租用戶來存取網際網路的 Vm 執行的應用程式。 比方說，租用戶已設定為 Web 伺服器的 VM 可以連絡外部的財務資源可處理信用卡交易。  
 
   
 ## <a name="bkmk_deploy"></a>RAS 閘道部署案例  
@@ -124,11 +124,11 @@ RAS 閘道包含下列功能。
 ## <a name="bkmk_manage"></a>RAS 閘道管理工具  
 以下是 RAS 閘道的管理工具。  
   
--   在 Windows Server 2016 中，若要部署 RAS 閘道路由器，您必須使用 Windows PowerShell 命令。 如需詳細資訊，請參閱 <<c0> [ 的遠端存取 Cmdlet](https://technet.microsoft.com/library/hh918399.aspx)適用於 Windows Server 2016 與 Windows 10。  
+-   在 Windows Server 2016 中，若要部署 RAS 閘道路由器，您必須使用 Windows PowerShell 命令。 如需詳細資訊，請參閱 <<c0> [ 的遠端存取 Cmdlet](https://docs.microsoft.com/powershell/module/remoteaccess)適用於 Windows Server 2016 與 Windows 10。  
   
--   在 System Center 2012 R2 Virtual Machine Manager (VMM)，RAS 閘道是名為 Windows Server 閘道。 一組有限的邊界閘道通訊協定 (BGP) 設定選項都是在 VMM 軟體介面，包括**本機 BGP IP 位址**並**自發系統編號 (ASN)**， **BGP 對等 IP 位址清單**，並**ASN 值**。 不過，您可以使用遠端存取 Windows PowerShell BGP 命令來設定 Windows Server 閘道的其他所有功能。 如需詳細資訊，請參閱 < [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm)並[遠端存取 Cmdlet](https://technet.microsoft.com/library/hh918399.aspx)適用於 Windows Server 2016 與 Windows 10。  
+-   在 System Center 2012 R2 Virtual Machine Manager (VMM)，RAS 閘道是名為 Windows Server 閘道。 一組有限的邊界閘道通訊協定 (BGP) 設定選項都是在 VMM 軟體介面，包括**本機 BGP IP 位址**並**自發系統編號 (ASN)** ， **BGP 對等 IP 位址清單**，並**ASN 值**。 不過，您可以使用遠端存取 Windows PowerShell BGP 命令來設定 Windows Server 閘道的其他所有功能。 如需詳細資訊，請參閱 < [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm)並[遠端存取 Cmdlet](https://technet.microsoft.com/library/hh918399.aspx)適用於 Windows Server 2016 與 Windows 10。  
   
 ## <a name="related-topics"></a>相關主題
 - [RAS 閘道高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  
 - [Windows Server 中的 GRE 通道](gre-tunneling-windows-server.md)
-- [RAS 閘道 GRE 通道輸送量和效能](RAS-Gateway-GRE-Perf.md)
+- [RAS 閘道 GRE 通道輸送量及效能](RAS-Gateway-GRE-Perf.md)

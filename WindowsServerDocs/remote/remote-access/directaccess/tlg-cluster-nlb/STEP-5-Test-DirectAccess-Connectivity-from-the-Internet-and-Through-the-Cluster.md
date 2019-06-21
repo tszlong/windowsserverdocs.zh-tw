@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3077aa54163ed9548ae3f45f8c673c731b8ef73b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 23aed915edb827fd0cd61e6778167108647269ea
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446654"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283348"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>步驟 5 的測試 DirectAccess 連線從網際網路，並透過叢集
 
@@ -79,7 +78,7 @@ CLIENT1 已準備好進行測試的 DirectAccess。
   
 4. 在 **開始**畫面上，輸入<strong>\\\app2\files</strong>。 您應該會看到 APP2 電腦上的共用的資料夾。 開啟 APP2 上的檔案共用的能力會指出第二個通道，需要進行 Kerberos 驗證的使用者，正常運作。  
   
-5. 開啟 Internet Explorer 中，然後再開啟網站 https://app1/和 https://app2/。 開啟兩個網站的能力可讓您確認第一個和第二個通道已啟動而且可以正常運作。 關閉 Internet Explorer。  
+5. 開啟 Internet Explorer 中，然後再開啟網站 https://app1/ 和 https://app2/ 。 開啟兩個網站的能力可讓您確認第一個和第二個通道已啟動而且可以正常運作。 關閉 Internet Explorer。  
   
 6. 啟動 EDGE2 電腦。  
   

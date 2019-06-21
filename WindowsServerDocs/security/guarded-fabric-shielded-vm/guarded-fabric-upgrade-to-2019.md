@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 11/21/2018
-ms.openlocfilehash: 274bdf027947ffb6fe807d4acd0a3b2174c20e28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39974806c02e55b37d3d16748c4ca0e3f361ee45
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867449"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284113"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>將受防護網狀架構升級至 Windows Server 2019
 
@@ -52,7 +52,7 @@ ms.locfileid: "59867449"
 
 升級您的 HGS 叢集會要求您一次從叢集暫時移除一個節點時升級。 這會減少您的叢集的容量，以回應您的 HYPER-V 主機的要求，並可能會導致回應時間緩慢或服務中斷您的租用戶。 請確定您擁有足夠容量來處理您的證明和金鑰發行要求，然後再升級 HGS 伺服器。
 
-若要升級您的 HGS 叢集，請在您的叢集，在次的一個節點的每個節點上執行下列步驟：
+若要升級您的 HGS 叢集，請在您的叢集，一次一個節點的每個節點上執行下列步驟：
 
 1.  從叢集移除 HGS 伺服器，藉由執行`Clear-HgsServer`提升權限的 PowerShell 提示字元中。 此 cmdlet 會移除複寫的 HGS 存放區、 HGS 網站和節點的容錯移轉叢集。
 2.  如果您的 HGS 伺服器是網域控制站 （預設設定），您必須執行`adprep /forestprep`和`adprep /domainprep`正在升級為網域準備 OS 升級的第一個節點上。 請參閱[Active Directory 網域服務升級文件](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers#supported-in-place-upgrade-paths)如需詳細資訊。
@@ -69,9 +69,9 @@ Set-HgsServerVersion  v2
 
 升級至 Windows Server 2019 您 HYPER-V 主機之前，請確定您的 HGS 叢集已升級至 Windows Server 2019 和您已移出 HYPER-V 伺服器的所有 Vm。
 
-1.  如果您使用 Windows Defender 應用程式控制碼完整性原則在您的伺服器 （一律的情況下使用 TPM 證明時），請確定原則處於稽核模式，或停用然後再嘗試升級伺服器。 [了解如何停用 WDAC 原則](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
+1.  如果您使用 Windows Defender 應用程式控制碼完整性原則在您的伺服器 （一律的情況下使用 TPM 證明時），請確定原則處於稽核模式，或停用然後再嘗試升級伺服器。 [了解如何停用 WDAC 原則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
 2.  請依照下列中的指導方針[Windows Server 升級中心](http://aka.ms/upgradecenter)升級您的 Windows Server 2019 主機。 如果您的 HYPER-V 主機容錯移轉叢集的一部分，請考慮使用[叢集作業系統輪流升級](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)。
-3.  [測試並重新啟用](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies)您的 Windows Defender 應用程式控制原則，如果您有一個在升級之前啟用。
+3.  [測試並重新啟用](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies)您的 Windows Defender 應用程式控制原則，如果您有一個在升級之前啟用。
 4.  執行`Get-HgsClientConfiguration`來檢查是否**IsHostGuarded = True**，這表示主機已成功傳遞與您的 HGS 伺服器證明。
 5.  如果您使用 TPM 證明，您可能需要[重新擷取 TPM 基準或程式碼完整性原則](guarded-fabric-add-host-information-for-tpm-trusted-attestation.md)通過證明，要在升級之後。
 6.  開始執行受防護的 Vm 主機上一次 ！

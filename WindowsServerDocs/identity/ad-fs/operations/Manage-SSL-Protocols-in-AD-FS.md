@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e834c50965c3af569dbe3756d677ec4cb2372542
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c1153cd81185dcfe83d291161a85481e5a7d0700
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883919"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280542"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>管理適用於 AD FS 的 SSL/TLS 通訊協定和加密套件
 下列的文件提供有關如何停用和啟用特定的 TLS/SSL 通訊協定和加密套件所使用的 AD FS
@@ -256,7 +256,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 若要啟用加密套件，其將字串值新增至的函式多字串值的索引鍵。  例如，如果我們想要啟用 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521 然後我們會將其新增至字串。
 
-如需完整的支援的加密套件請參閱[TLS/ssl (安全通道 SSP) 的加密套件](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx)。  本文件提供的套件會啟用預設以及受到支援，但預設不啟用的資料表。  若要設定優先順序的加密套件請參閱[排列優先順序的安全通道加密套件](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx)。
+如需完整的支援的加密套件請參閱[TLS/ssl (安全通道 SSP) 的加密套件](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)。  本文件提供的套件會啟用預設以及受到支援，但預設不啟用的資料表。  若要設定優先順序的加密套件請參閱[排列優先順序的安全通道加密套件](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)。
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>.NET 應用程式啟用強式驗證
 .NET Framework 3.5/4.0/4.5.x 應用程式可以藉由啟用登錄機碼 SchUseStrongCrypto，以切換至 TLS 1.2 的預設通訊協定。  此登錄機碼將會強制使用 TLS 1.2 的.NET 應用程式。
@@ -280,7 +280,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 ## <a name="additional-information"></a>其他資訊
 
-- [TLS/ssl (安全通道 SSP) 的加密套件](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx)
-- [在 Windows 8.1 中 TLS 加密套件](https://msdn.microsoft.com/en-us/library/windows/desktop/mt767781.aspx)
-- [排列優先順序的安全通道加密套件](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx)
+- [TLS/ssl (安全通道 SSP) 的加密套件](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)
+- [在 Windows 8.1 中 TLS 加密套件](https://msdn.microsoft.com/library/windows/desktop/mt767781.aspx)
+- [排列優先順序的安全通道加密套件](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)
 - [在加密和其他具謎樣般 tongues 談到](https://blogs.technet.microsoft.com/askds/2015/12/08/speaking-in-ciphers-and-other-enigmatic-tonguesupdate/)

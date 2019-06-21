@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d67f15d65feb28fb05fc056fd3c34c04cee80d09
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0a4af25723c6d1e796cd3255875c15faf21fb8be
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447763"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284388"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -380,7 +380,7 @@ VSS 被設計來建立整個磁碟區的陰影複製。 暫存檔案，例如分
 > <UL>
 > <LI>它無法刪除使用 [舊版] 功能建立在 Windows Server 的陰影複製的檔案。<BR><BR>
 > <LI>從共用資料夾的陰影複製，而無法刪除檔案。<BR><BR>
-> <LI>它可以刪除檔案，從利用所建立的陰影複製<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a>公用程式，但是它不能刪除的檔案使用所建立的陰影複製<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a>公用程式。<BR><BR>
+> <LI>它可以刪除檔案，從利用所建立的陰影複製<a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a>公用程式，但是它不能刪除的檔案使用所建立的陰影複製<a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a>公用程式。<BR><BR>
 > <LI>從陰影複製以最佳方式為基礎，會刪除檔案。 這表示它們不一定要刪除。<BR><BR></LI></UL>
 
 

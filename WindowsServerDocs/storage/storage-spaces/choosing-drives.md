@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d16a9ddea96760b41c6cd2e4239b9bb51c8b3b38
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 8bdce646c631b56309f86292f0895fe80b0adf31
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501644"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284504"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
@@ -116,7 +116,7 @@ ms.locfileid: "66501644"
 
 建議您將每個伺服器的儲存容量限為約莫 100 TB。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。
 
-每個儲存體集區的目前大小上限是 4 個千兆位元組 (PB) (4,000 TB) 的 Windows Server 2019 或針對 Windows Server 2016 的 1 pb。
+每個儲存體集區的目前大小上限是 4 個千兆位元組 (PB) (4,000 TB) 的 Windows Server 2019 或適用於 Windows Server 2016 的 1 pb。
 
 ## <a name="see-also"></a>另請參閱
 

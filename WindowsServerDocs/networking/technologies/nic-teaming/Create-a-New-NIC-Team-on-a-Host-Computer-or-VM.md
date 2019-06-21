@@ -6,20 +6,19 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-nict
+ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d4dc7e0795d1f1d0b2a8bc18a6df12c683ef037d
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 5380cb2007bab1a296e0facc12885d47c6afc708
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812342"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282091"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>在主機電腦或 VM 上建立新的 NIC 小組
 
@@ -47,7 +46,7 @@ ms.locfileid: "66812342"
 ## <a name="step-1-configure-the-physical-and-virtual-network"></a>步驟 1. 設定實體和虛擬網路  
 在此程序中，您可以建立兩個外部的 HYPER-V 虛擬交換器、 將 VM 連接到交換器，然後設定交換器的 VM 連線。  
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 您必須擁有成員資格**系統管理員**，或同等權限。  
 
@@ -142,7 +141,7 @@ _**恭喜您 ！** _  您已設定的實體和虛擬網路。  現在您可以�
 
 如需這些設定的詳細資訊，請參閱 < [NIC 小組設定](nic-teaming-settings.md)。
 
-### <a name="prerequisites"></a>先決條件
+### <a name="prerequisites"></a>必要條件
 
 您必須擁有成員資格**系統管理員**，或同等權限。  
 

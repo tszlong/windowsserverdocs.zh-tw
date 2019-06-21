@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ee02d5db02bb6475dd8ec8ae4cba45e82b4c316c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e7e09a6715df22882c8a88aedf95a5158dd2a0d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839399"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280909"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>疑難排解設定進入點網域控制站
 
@@ -235,7 +234,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     **解決方法**  
   
-    使用遠端存取管理主控台的 [儀表板] 中的 [設定狀態] 可以看到所有未更新的伺服器。 這不會造成任何功能上的問題；但是您可以在任何未更新的伺服器上執行 `gpupdate /force`，立即更新設定狀態。  
+    使用遠端存取管理主控台的 [儀表板]  中的 [設定狀態]  可以看到所有未更新的伺服器。 這不會造成任何功能上的問題；但是您可以在任何未更新的伺服器上執行 `gpupdate /force`，立即更新設定狀態。  
   
 ## <a name="problem-resolving-fqdn"></a>解析 FQDN 時發生問題  
 **收到的錯誤**。 無法存取進入點 < 進入 > 伺服器 < 伺服器名稱 >。  

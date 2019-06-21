@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034670"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284160"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>受防護的 Vm，可供租用戶-若要定義受防護的 VM 建立虛擬機器防護資料
 
@@ -199,7 +199,7 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
 作為替代防護資料檔案精靈 中，您可以執行[新增 ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)建立防護資料檔案。
 
 所有的虛擬機器防護資料檔案必須使用正確的擁有者和守護者的憑證來授權對受防護網狀架構執行受防護的 Vm 設定。
-您可以檢查您是否安裝在本機執行任何 guardians [Get HgsGuardian](https://docs.microsoft.com/en-us/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)。 擁有者 guardians 有私密金鑰，而您的資料中心的守護者通常不這麼做。
+您可以檢查您是否安裝在本機執行任何 guardians [Get HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)。 擁有者 guardians 有私密金鑰，而您的資料中心的守護者通常不這麼做。
 
 如果您需要建立擁有者守護者，請執行下列命令：
 
@@ -238,7 +238,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 您可以藉由提供逗號分隔的清單，磁碟區的 ID 限定詞信任一個以上的範本磁碟`-VolumeIDQualifier`參數。
 最後，如果您需要將其他檔案隨附了 VM，也就是使用回應檔案需要`-OtherFile`參數，並提供以逗號分隔清單的檔案路徑。
 
-請參閱 cmdlet 文件[新增 ShieldingDataFile](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)並[新增 VolumeIDQualifier](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)若要深入了解設定防護資料檔案的其他方法。
+請參閱 cmdlet 文件[新增 ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)並[新增 VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)若要深入了解設定防護資料檔案的其他方法。
 
 ## <a name="see-also"></a>另請參閱
 

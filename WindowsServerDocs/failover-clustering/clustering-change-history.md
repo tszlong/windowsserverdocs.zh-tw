@@ -9,16 +9,16 @@ manager: daveba
 ms.author: jgerend
 ms.date: 03/08/2019
 description: 新增和更新的主題，適用於 Windows Server 2016 容錯移轉叢集的文件中
-ms.openlocfilehash: 4044475995175ea527a1ecc487bc0e1cc6f75003
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6dd5c98b14134d42901fad79a375298ad0e7e23
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861219"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280175"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>容錯移轉叢集主題的變更歷程記錄
 
->適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
+>適用於：Windows Server 2019，Windows Server 2016
 
 本主題列出新增和更新主題[容錯移轉叢集](failover-clustering-overview.md)適用於 Windows Server 文件。
 
@@ -28,13 +28,13 @@ ms.locfileid: "59861219"
 
 |新增或已變更的主題                                    |描述 |
 |--------------------------------------------------------|------------|
-|[叢集親和性](cluster-affinity.md)| 新的     |
+|[叢集同質](cluster-affinity.md)| 新的     |
 
 ## <a name="february-2019"></a>2019 年 2 月
 
 |新增或已變更的主題                                    |描述 |
 |--------------------------------------------------------|------------|
-| [升級的相同硬體上的容錯移轉叢集](upgrade-option-same-hardware.md)| 新的 |
+| [在相同的硬體上升級容錯移轉叢集](upgrade-option-same-hardware.md)| 新的 |
 |[部署雙節點檔案伺服器](deploy-two-node-clustered-file-server.md)| 新的 |
 
 ## <a name="january-2019"></a>2019 年 1 月
@@ -48,7 +48,7 @@ ms.locfileid: "59861219"
 
 |新增或已變更的主題|描述|
 |---|---|
-|[在 Active Directory 中設定叢集的帳戶](configure-ad-accounts.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
+|[在 Active Directory 中設定叢集帳戶](configure-ad-accounts.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
 
 ## <a name="october-2018"></a>2018 年 10 月
 
@@ -60,24 +60,24 @@ ms.locfileid: "59861219"
 
 |新增或已變更的主題|描述|
 |---|---|
-|[叢集設定](../storage/storage-spaces/cluster-sets.md)| 新主題|
+|[叢集集合](../storage/storage-spaces/cluster-sets.md)| 新主題|
 
 ## <a name="may-2018"></a>2018 年 5 月
 
 |新增或已變更的主題|描述|
 |---|---|
-|[設定及管理仲裁](manage-cluster-quorum.md) | 從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。 |
+|[設定和管理仲裁](manage-cluster-quorum.md) | 從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。 |
 
 ## <a name="april-2018"></a>2018 年 4 月
 
 |新增或已變更的主題|描述|
 |---|---|
-|[疑難排解使用 Windows 錯誤報告的容錯移轉叢集](troubleshooting-using-WER-reports.md)| 新主題。 |
-|[應用程式資料的向外延展檔案伺服器](sofs-overview.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
+|[使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解](troubleshooting-using-WER-reports.md)| 新主題。 |
+|[針對應用程式資料向外延展檔案伺服器](sofs-overview.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[硬體需求](clustering-requirements.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
-|[使用叢集共用磁碟區 (Csv)](failover-cluster-csvs.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
+|[使用叢集共用磁碟區 (CSV)](failover-cluster-csvs.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[建立容錯移轉叢集](create-failover-cluster.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
-|[預先設置在 AD DS 中的叢集](prestage-cluster-adds.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
+|[在 AD DS 中預先設置叢集](prestage-cluster-adds.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 |[部署容錯移轉叢集的雲端見證](deploy-cloud-witness.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫。|
 
 ## <a name="june-2017"></a>2017 年 6 月
@@ -91,7 +91,7 @@ ms.locfileid: "59861219"
 |新增或已變更的主題|描述|
 |---|---|
 |[叢集感知更新概觀](cluster-aware-updating.md)|新主題。|
-|[叢集感知更新需求和最佳做法](cluster-aware-updating-requirements.md)|新主題。|
+|[叢集感知更新的需求和最佳做法](cluster-aware-updating-requirements.md)|新主題。|
 |[叢集感知更新的進階選項](cluster-aware-updating-options.md)|新主題。|
 |[叢集感知更新的常見問題集](cluster-aware-updating-faq.md)|新主題。|
 |[叢集感知更新外掛程式](cluster-aware-updating-plug-ins.md)|新主題。|

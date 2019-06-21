@@ -7,12 +7,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: a0062230dd3d9e9c52aa317f87e06b0e84507dc4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad8e2a8eade1ea9d3faaba8f387b1f489854e589
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861059"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280629"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>部署具高可用性的 Windows Admin Center
 
@@ -22,7 +22,7 @@ ms.locfileid: "59861059"
 
 [深入了解其他 Windows Admin Center 部署選項。](../plan/installation-options.md)
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 - 在 Windows Server 2016 或 2019年 2 個或多個節點的容錯移轉叢集。 [深入了解部署容錯移轉叢集](../../../failover-clustering/failover-clustering-overview.md)。
 - 叢集共用磁碟區 (CSV) 的 Windows Admin Center，來儲存可在叢集中的所有節點存取的永續性資料。 10 GB 足以符合您的 CSV。
@@ -74,7 +74,7 @@ $certPassword = Read-Host -AsSecureString
 
 ### <a name="update-the-certificate-used-by-windows-admin-center"></a>更新 Windows Admin Center 所使用的憑證
 
-您可以更新提供新的憑證.pfx 檔案的 Windows Admin Center HA 部署在任何時間使用的憑證和與密碼。
+您可以更新提供新的憑證.pfx 檔案和密碼的 Windows Admin Center HA 部署在任何時間使用的憑證。
 
 ```powershell
 $certPassword = Read-Host -AsSecureString

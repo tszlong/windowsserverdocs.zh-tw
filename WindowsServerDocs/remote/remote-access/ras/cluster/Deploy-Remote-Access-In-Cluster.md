@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ab2b0731a5673e14fb130d539324701a336f30ac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 853788f20c452391c802f0681fa23978b4892c6a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863629"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281223"
 ---
 # <a name="deploy-remote-access-in-a-cluster"></a>在叢集中部署遠端存取
 
@@ -29,7 +28,7 @@ Windows Server 2016 和 Windows Server 2012 結合 DirectAccess 和遠端存取�
 ## <a name="BKMK_OVER"></a>案例描述  
 叢集部署會將多個遠端存取伺服器收集到單一單位，然後當作遠端用戶端電腦透過 DirectAccess 或 VPN 連線到內部公司網路使用的外部虛擬 IP連絡人的單一點\(VIP\)遠端存取叢集的位址。  叢集的流量進行負載平衡使用 Windows NLB 或外部負載平衡器\(例如 F5 巨量\-IP\)。  
 
-## <a name="prerequisites"></a>先決條件  
+## <a name="prerequisites"></a>必要條件  
 開始部署這個案例之前，請先檢閱這份重要需求清單：  
 
 -   預設透過 Windows NLB 的負載平衡。  
@@ -104,7 +103,7 @@ Windows Server 2016 和 Windows Server 2012 結合 DirectAccess 和遠端存取�
 ## <a name="KnownIssues"></a>已知的問題  
 以下是設定叢集案例的已知問題：  
 
--   Ipv4 設定 DirectAccess 之後\-只部署單一網路介面卡，並且在預設 DNS64 \(IPv6 位址包含": 3333::"\)會自動設定該網路介面卡，嘗試啟用負載\-平衡透過遠端存取管理主控台會導致提示使用者提供 IPv6 DIP。 如果提供 IPv6 DIP，設定會在按一下 [認可] 之後失敗，並發生錯誤：參數不正確。  
+-   Ipv4 設定 DirectAccess 之後\-只部署單一網路介面卡，並且在預設 DNS64 \(IPv6 位址包含": 3333::"\)會自動設定該網路介面卡，嘗試啟用負載\-平衡透過遠端存取管理主控台會導致提示使用者提供 IPv6 DIP。 如果提供 IPv6 DIP，設定會在按一下 [認可]  之後失敗，並發生錯誤：參數不正確。  
 
     解決此問題：  
 
@@ -114,7 +113,7 @@ Windows Server 2016 和 Windows Server 2012 結合 DirectAccess 和遠端存取�
 
     3.  嘗試啟用負載平衡，直到它失敗所在的步驟。 在 [啟用負載平衡] 對話方塊中，展開 [詳細資料] 區域中，向右\-在 [詳細資料] 區域中，按一下，然後按一下**複製指令碼**。  
 
-    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如:   
+    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如:  
 
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19 /255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21 /255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  
@@ -122,7 +121,7 @@ Windows Server 2016 和 Windows Server 2012 結合 DirectAccess 和遠端存取�
 
     5.  關閉任何開啟的 [遠端存取] 對話方塊，並關閉遠端存取管理主控台。  
 
-    6.  編輯貼上的文字，並移除 IPv6 位址。 例如:   
+    6.  編輯貼上的文字，並移除 IPv6 位址。 例如:  
 
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19 /255.255.255.0') -InternetVirtualIPAddress @('10.244.4.21 /255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

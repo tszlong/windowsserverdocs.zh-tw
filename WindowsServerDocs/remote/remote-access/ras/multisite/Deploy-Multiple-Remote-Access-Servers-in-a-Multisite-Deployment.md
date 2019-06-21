@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3091c770fb9b207d82deaa571970bfeb44d17ee3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 607e3f5b2aa7e4c81e507a3d551d3d56e1f0b347
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875879"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282588"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>以多站台部署方式部署多個遠端存取伺服器
 
@@ -39,7 +38,7 @@ ms.locfileid: "59875879"
   
 支援執行 Windows 7 的用戶端必須在每個項目點上手動啟用，並不支援的這些用戶端的進入點選取範圍。  
   
-## <a name="prerequisites"></a>先決條件  
+## <a name="prerequisites"></a>必要條件  
 開始部署這個案例之前，請先檢閱這份重要需求清單：  
   
 -   [部署單一 DirectAccess 伺服器使用進階設定](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)站台部署之前，必須部署。  

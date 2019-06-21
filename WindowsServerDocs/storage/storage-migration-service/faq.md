@@ -8,12 +8,12 @@ ms.date: 06/04/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 258f25a7e1ec5c796c15450625397e96db25d693
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 8f0f16f14ccf9099af8ff8bb8b27209c75c87cfc
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501515"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284463"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體移轉服務常見問題集 (faq)
 
@@ -131,7 +131,7 @@ ms.locfileid: "66501515"
 
 - **啟用高效能處理。** 確定伺服器的 BIOS/UEFI 設定能提供高效能，例如停用 C-State、設定 QPI 速度、啟用 NUMA，以及設定最高的記憶體頻率。 請確定 Windows Server 中的電源管理設定為 高效能。 視需要重新啟動。 別忘了在完成移轉後會傳回以適當的狀態。 
 
-- **調整硬體**檢閱[效能微調指導方針的 Windows Server 2016](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/)微調 orchestrator 和執行 Windows Server 2019 的目的地電腦和 Windows Server 2016。 [網路子系統效能調整](https://docs.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)區段包含特別有用的資訊。
+- **調整硬體**檢閱[效能微調指導方針的 Windows Server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/)微調 orchestrator 和執行 Windows Server 2019 的目的地電腦和 Windows Server 2016。 [網路子系統效能調整](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)區段包含特別有用的資訊。
 
 - **使用更快速的儲存體。** 雖然它可能難以升級來源電腦儲存體的速度，您應該確保目的地儲存體至少要一樣快速寫入 IO 效能，以確保傳輸中沒有任何不必要的瓶頸的來源是在讀取 IO 效能。 如果目的地是 VM，能確保至少為移轉目的，它會執行最快的儲存層的 hypervisor 主機，例如快閃層，或搭配使用鏡像的全快閃或混合式空間的儲存空間直接存取 HCI 叢集。 SMS 移轉完成時 VM 可以是即時移轉至速度較慢的 「 層 」 或 「 主控件。
 

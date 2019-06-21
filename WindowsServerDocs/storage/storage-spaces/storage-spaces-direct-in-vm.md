@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: 如何在虛擬機器客體叢集中-例如，在 Microsoft Azure 中部署儲存空間直接存取。
 ms.localizationpriority: medium
-ms.openlocfilehash: b99e750b78654df48ad3b412269511d047e3057c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d05afb5ee564b866dcd15ec6aa473cee608dbd8f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447817"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284409"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>在客體虛擬機器叢集中使用儲存空間直接存取
 
@@ -49,7 +49,7 @@ ms.locfileid: "66447817"
 
     -   Hyper-V – 將跨節點的 Vm 在 Vm 上設定 AntiAffinityClassNames
 
-    -   VMware-設定 VM 反親和性規則，藉由建立 DRS 的規則類型 ' 不同的虛擬機器 」 來分隔在 ESX 主機的 Vm。 可供使用儲存空間直接存取使用的磁碟應使用 Paravirtual SCSI (PVSCSI) 配接器。 如需 Windows Server PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398。
+    -   VMware-設定 VM 反親和性規則，藉由建立 DRS 的規則類型 ' 不同的虛擬機器 」 來分隔在 ESX 主機的 Vm。 可供使用儲存空間直接存取使用的磁碟應使用 Paravirtual SCSI (PVSCSI) 配接器。 如需 Windows Server PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398 。
 
 -   利用低延遲 / 高效能儲存體-Azure 進階儲存體受控磁碟所需
 
@@ -79,6 +79,6 @@ ms.locfileid: "66447817"
 
 ## <a name="see-also"></a>另請參閱
 
-[其他的 Azure Iaas VM 範本部署儲存空間直接存取、 影片和逐步指南](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/)。
+[其他的 Azure Iaas VM 範本部署儲存空間直接存取、 影片和逐步指南](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
-[額外的儲存空間直接存取概觀](https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+[額外的儲存空間直接存取概觀](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

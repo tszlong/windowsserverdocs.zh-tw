@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61040e19-5960-4eb0-b612-d710627988f7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ec725eea286c359461b0f4a7b8763b97464e7067
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f49d9ab0e28e84cbb46015d50778653b35f5ea85
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867089"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281940"
 ---
 # <a name="troubleshooting-directaccess"></a>對 DirectAccess 進行疑難排解
 
@@ -35,7 +34,7 @@ ms.locfileid: "59867089"
 |遇到多站台的設定 （例如，啟用多站台，其中新增進入點，或設定做為進入點網域控制站） 的相關問題|請依照下列中的步驟[疑難排解多站台部署](https://technet.microsoft.com/library/jj554657(v=ws.11).aspx)。|  
 |組態狀態磚的儀表板上顯示警告或錯誤|請依照下列中的步驟[監視遠端存取伺服器的設定散佈狀態](https://technet.microsoft.com/library/jj574221(v=ws.11).aspx)。|  
 |若要設定負載平衡 （例如，當您啟用負載平衡，或有問題時您新增或移除叢集中的伺服器時，組態會失敗） 的相關遇到問題|如果您已啟用負載平衡，或新增節點，並設定重新整理，當您按下**套用**，但叢集未正確構成在伺服器上，執行下列命令： **cmd.exe /c"reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters /f /v DebugFlag /t REG_DWORD /d""0xffffffff"""** 來收集使用者介面會記錄新的伺服器上。|  
-|作業狀態會顯示錯誤或警告後若要更正這種情況的下列步驟|如果作業狀態會顯示不正確的資訊 （例如之後錯誤甚至您修正它們）：<br /><br />-   Enable the registry key **cmd.exe /c "reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters /f /v EnableTracing /t REG_DWORD /d ""5"" "**.<br />-重新整理作業狀態和從中收集記錄檔 **%windir%/tracing**。|  
+|作業狀態會顯示錯誤或警告後若要更正這種情況的下列步驟|如果作業狀態會顯示不正確的資訊 （例如之後錯誤甚至您修正它們）：<br /><br />-   Enable the registry key **cmd.exe /c "reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters /f /v EnableTracing /t REG_DWORD /d ""5"" "** .<br />-重新整理作業狀態和從中收集記錄檔 **%windir%/tracing**。|  
 |Windows 8 和更新版本的 DirectAccess 用戶端電腦會回報 「 沒有網際網路 」 與 DirectAccess 連線的狀態和網路連線狀態指示器 (NCSI) 報告的連線能力有限。|這可能是強制通道中的 DirectAccess 設定已啟用，並基於此原因，要使用只有 IPHTTPS。 若要解決此問題，您可以建立及設定 proxy 伺服器。 NCSI 然後會使用 proxy 伺服器來執行網際網路連線能力檢查。 建議您新增靜態 proxy 名稱解析原則表格 (NRPT) 來使用下列程序。<br /><br />您在此程序中執行命令之前，請確定以適合您的部署的值取代所有的網域名稱、 電腦名稱和其他 Windows PowerShell 命令變數。<br /><br />**設定的 NRPT 規則的靜態 proxy**<br />1.顯示 「。 」NRPT 規則： `Get-DnsClientNrptRule -GpoName "corp.example.com\DirectAccess Client Settings" -Server <DomainControllerNetBIOSName>`<br />2.記下名稱 (GUID) 的 「。 」NRPT 規則。 (GUID) 名稱的開頭應**DA-{。}**<br />3.設定的 proxy"。"NRPT 規則**proxy.corp.example.com:8080**:  `Set-DnsClientNrptRule -Name "DA-{..}" -Server <DomainControllerNetBIOSName> -GPOName "corp.example.com\DirectAccess Client Settings" -DAProxyServerName "proxy.corp.example.com:8080" -DAProxyType "UseProxyName"`<br />4.顯示 「。 」透過再次執行的 NRPT 規則`Get-DnsClientNrptRule`，並確認**ProxyFQDN:port**現在已正確設定。<br />5.執行重新整理群組原則`gpupdate /force`DirectAccess 用戶端上用戶端會在內部連線，然後顯示使用 NRPT `Get-DnsClientNrptPolicy` ，並確認 」。 「 規則顯示**ProxyFQDN:port**。|  
   
 

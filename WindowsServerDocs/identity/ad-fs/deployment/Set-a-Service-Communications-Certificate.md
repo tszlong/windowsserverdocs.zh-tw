@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 140e8e4204148dd8862385054554d7b8336856ec
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7253502390db004747d3732cf3d288a51afdaaf1
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192007"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280693"
 ---
 # <a name="set-a-service-communications-certificate"></a>設定服務通訊憑證
 
@@ -22,7 +22,7 @@ ms.locfileid: "66192007"
 在 Active Directory Federation Services 中的同盟伺服器\(AD FS\)使用的服務通訊憑證來保護網頁服務流量的安全通訊端層\(SSL\)與 Web 之間的通訊用戶端或同盟伺服器 proxy。
 
 > [!NOTE]  
-> 服務通訊憑證不是將 SSL 憑證相同。 若要變更 AD FS SSL 憑證，您必須使用 Powershell。 請遵循本章[文章](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap)。
+> 服務通訊憑證不是將 SSL 憑證相同。 若要變更 AD FS SSL 憑證，您必須使用 Powershell。 請遵循本章[文章](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap)。
 
 
 您可以使用下列程序來變更服務通訊憑證，使用 AD FS 管理嵌入式管理單元\-中。  

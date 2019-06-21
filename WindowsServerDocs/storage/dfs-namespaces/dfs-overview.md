@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: 本主題說明 DFS 命名空間，這是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。
-ms.openlocfilehash: b16d8145d766cbb9b12feaaa2e5e9443813a69f2
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 2d91cb7197d2deecd96ebb29a951ef96ceefd9aa
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812576"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284289"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空間概觀
 
@@ -126,6 +126,6 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 | **部署**    | [DFS 命名空間延展性考量](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
 | **操作**    | [DFS 命名空間：常見問題集](https://technet.microsoft.com/library/ee404780.aspx) |
 | **社群資源** | [檔案服務與儲存 TechNet 論壇](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **通訊協定**        | [檔案服務 Windows Server 中的通訊協定](https://msdn.microsoft.com/en-us/library/cc239318.aspx)（已過時） |
+| **通訊協定**        | [檔案服務 Windows Server 中的通訊協定](https://msdn.microsoft.com/library/cc239318.aspx)（已過時） |
 | **相關技術** | [容錯移轉叢集](../../failover-clustering/failover-clustering-overview.md)|
 | **支援** | [Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)|

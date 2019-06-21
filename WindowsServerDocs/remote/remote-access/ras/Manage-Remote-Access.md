@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b992f302378c103b242537c97e5d4b41e382b9cd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b2c251f99be455ec11e3ea3ef25ca14c8399de2
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876229"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282973"
 ---
 # <a name="manage-remote-access"></a>管理遠端存取
 
@@ -31,8 +30,8 @@ Windows Server 2016 和 Windows Server 2012 結合成單一的遠端存取角色
 > [!NOTE]  
 > 除了本主題之外，還有下列遠端存取管理的主題可以使用。  
 >   
-> -   [使用 「 遠端存取監視和計量](monitoring-and-accounting/Use-Remote-Access-Monitoring-and-Accounting.md)  
-> -   [從遠端管理 DirectAccess 用戶端](manage-remote-clients/Manage-DirectAccess-Clients-Remotely.md)  
+> -   [使用遠端存取監視和計量](monitoring-and-accounting/Use-Remote-Access-Monitoring-and-Accounting.md)  
+> -   [遠端管理 DirectAccess 用戶端](manage-remote-clients/Manage-DirectAccess-Clients-Remotely.md)  
   
 ## <a name="BKMK_OVER"></a>案例描述  
 每當 DirectAccess 用戶端電腦連線到網際網路時，不論使用者是否登入電腦，都會連線到內部網路。 它們可以當做內部網路資源管理，並隨時保持與群組原則變更、作業系統更新、反惡意程式碼更新與其他組織變更同步更新。  

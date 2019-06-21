@@ -6,20 +6,19 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-nict
+ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: 57957e88ff4c398be23355534d5cc0ad7f920bb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd222cdbcd8b4eee19da6b79e12bd11f6bdd8629
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877929"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283731"
 ---
 # <a name="nic-teaming-settings"></a>NIC 小組設定
 本主題中，我們會提供您的 NIC 小組 」 屬性，例如小組的概觀，以及負載平衡模式。 我們也提供您關於待命配接器設定和主要小組介面屬性的詳細資料。 如果您有至少兩個網路介面卡在 NIC 小組時，您不需要指定容錯移轉的待命介面卡。
@@ -29,7 +28,7 @@ ms.locfileid: "59877929"
 ![NIC 組合屬性](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_06_properties.jpg)  
 
 ## <a name="teaming-modes"></a>小組模式 
-小組模式的選項都會**交換器獨立**並**交換器相依**。 交換器相依模式包含**靜態小組**並**連結彙總控制通訊協定 (LACP)**。 
+小組模式的選項都會**交換器獨立**並**交換器相依**。 交換器相依模式包含**靜態小組**並**連結彙總控制通訊協定 (LACP)** 。 
 
 >[!TIP]
 >為了達到最佳的 NIC 小組效能，我們建議您使用動態通訊群組的負載平衡模式。  

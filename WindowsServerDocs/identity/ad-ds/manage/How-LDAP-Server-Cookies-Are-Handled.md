@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e9c293d04f1fd1b8091b768e49db554a23e7ce95
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 873953155d22bafef5b042887b22e953ff580b5c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846559"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280574"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何處理 LDAP 伺服器 Cookie
 
@@ -128,7 +128,7 @@ The client should consider a more efficient search filter.  The limit for Maximu
   
 如果在 250MB 以上的集區中仍然出現事件 2899，則您可能有許多用戶端以很頻繁的方式進行查詢，並傳回極大量物件。 您可以使用收集的資料[Active Directory 資料收集器集合工具](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)可以幫助您找到的重複分頁的查詢出讓 LDAP 伺服器忙碌。 這些查詢會使用符合使用頁面大小的 「 傳回的項目 」 的數字顯示。  
   
-可能的話，您應該檢閱應用程式的設計，並實作具有較低的頻率、 資料量和/或較少查詢此資料的用戶端執行個體不同的方法。如果您有原始程式碼存取權，本指南的應用程式[建立有效率的 AD-Enabled 應用程式](https://msdn.microsoft.com/en-us/library/ms808539.aspx)可以協助您了解存取 AD 的應用程式的最佳方式。  
+可能的話，您應該檢閱應用程式的設計，並實作具有較低的頻率、 資料量和/或較少查詢此資料的用戶端執行個體不同的方法。如果您有原始程式碼存取權，本指南的應用程式[建立有效率的 AD-Enabled 應用程式](https://msdn.microsoft.com/library/ms808539.aspx)可以協助您了解存取 AD 的應用程式的最佳方式。  
   
 如果無法變更查詢行為，其中一個方法也會增加複製的例項的所需的命名內容，還是重新分配用戶端，並最終可降低各 LDAP 伺服器上的負載。  
   

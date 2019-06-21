@@ -9,16 +9,16 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 06/04/2019
 description: 在內部部署儲存體文件中適用於 Windows Server IT 專業人員的全新和更新主題。
-ms.openlocfilehash: 3245e6bc5320cc0ffae01817a8f7b9caeaa6c685
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 442d640809d3ae9cf4a11feb646fbbd566e6e3fa
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501492"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284452"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中的儲存空間主題變更歷程記錄
 
-> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
 本主題列出新增和更新主題[儲存體](storage.md)適用於 Windows Server 文件。
 
@@ -73,10 +73,10 @@ ms.locfileid: "66501492"
 |---                                                         |---           |
 |[巢狀復原](storage-spaces/nested-resiliency.md)    | 新主題    |
 |[儲存體移轉服務的已知問題](storage-migration-service/known-issues.md)   | 新主題    |
-|[DFS 複寫：常見問題集 (FAQ)](dfs-replication/dfsr-faq.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/)文件庫|
-|[將 SYSVOL 複寫移轉至 DFS 複寫](dfs-replication/migrate-sysvol-to-dfsr.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
-|[SMB：檔案和印表機共用連接埠應該開啟](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
-|[磁碟區陰影複製服務](file-server/volume-shadow-copy-service.md)|從移轉[舊版](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
+|[DFS 複寫：常見問題集 (FAQ)](dfs-replication/dfsr-faq.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)文件庫|
+|[將 SYSVOL 複寫移轉至 DFS 複寫](dfs-replication/migrate-sysvol-to-dfsr.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
+|[SMB：檔案和印表機共用連接埠應該開啟](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
+|[磁碟區陰影複製服務](file-server/volume-shadow-copy-service.md)|從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)文件庫|
 
 ## <a name="october-2018"></a>2018 年 10 月
 

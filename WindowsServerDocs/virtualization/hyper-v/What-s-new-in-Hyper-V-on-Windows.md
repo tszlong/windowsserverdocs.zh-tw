@@ -11,12 +11,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: 8b7d9233b105f710d620b5142205fb2eadd0248a
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6ec5db82ecae2fb74731f3c52b9113325837a2fb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67141374"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280011"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>在 Windows Server 上的 HYPER-V 中最新消息
 
@@ -212,7 +212,7 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
   
 ### <a name="virtual-machine-configuration-version-updated"></a>虛擬機器設定版本\(更新\)
 
-版本代表虛擬機器的組態，以儲存狀態，以及快照集檔案的 HYPER-V 版本的相容性。 第 5 版的虛擬機器與 Windows Server 2012 R2 相容，並可在 Windows Server 2012 R2 和 Windows Server 2016 上執行。 虛擬機器與 Windows Server 2016 中引進的版本和 Windows Server 2019 不會在 HYPER-V 中執行 Windows Server 2012 R2 上。   
+版本代表虛擬機器的組態，以儲存狀態，以及快照集檔案的 HYPER-V 版本的相容性。 第 5 版的虛擬機器與 Windows Server 2012 R2 相容，並可在 Windows Server 2012 R2 和 Windows Server 2016 上執行。 Windows Server 2012 R2 上，與在 Windows Server 2016 和 Windows Server 2019 中引進的版本的虛擬機器將不會執行在 HYPER-V 中。   
   
 如果您移動或匯入執行 Windows Server 2016 上的 HYPER-V 的伺服器或 Windows Server 2019 的虛擬機器，從 Windows Server 2012 R2 時，不自動更新虛擬機器的設定。 這表示您可以將虛擬機器移回執行 Windows Server 2012 R2 的伺服器。 但是，這也表示您無法使用新的虛擬機器功能，直到您手動更新虛擬機器組態的版本。  
   

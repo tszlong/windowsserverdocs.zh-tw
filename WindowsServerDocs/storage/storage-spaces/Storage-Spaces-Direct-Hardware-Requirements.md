@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 06/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b93b55d8685180de8eafff5e8a3d5ca33e5fb5
-ms.sourcegitcommit: 3fe551f99c58ac232a9df72aaca55187118eac3b
+ms.openlocfilehash: 7fa4560e0c050c8decbcb4e9456a884976e447e2
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67132928"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284413"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>儲存空間直接存取的硬體需求
 
@@ -22,7 +22,7 @@ ms.locfileid: "67132928"
 
 本主題描述儲存空間直接存取的最低硬體的需求。
 
-用於生產環境，Microsoft 建議您購買的已驗證的硬體/軟體解決方案，從我們的合作夥伴，哪些包括部署工具和程序。 這些解決方案是設計、 組合和針對我們參考架構，以確保相容性和可靠性，讓您快速並執行驗證。 如需 Windows Server 2019 解決方案，請瀏覽[Azure Stack HCI solutions 網站](https://azure.microsoft.com/overview/azure-stack/hci)。 如需 Windows Server 2016 解決方案，進一步了解[Windows Server 軟體定義](https://microsoft.com/wssd)。
+生產環境中，Microsoft 建議您購買的已驗證的硬體/軟體解決方案，從我們的合作夥伴，包括部署工具和程序。 這些解決方案是設計、 組合和針對我們參考架構，以確保相容性和可靠性，讓您快速並執行驗證。 如需 Windows Server 2019 解決方案，請瀏覽[Azure Stack HCI solutions 網站](https://azure.microsoft.com/overview/azure-stack/hci)。 如需 Windows Server 2016 解決方案，進一步了解[Windows Server 軟體定義](https://microsoft.com/wssd)。
 
    > [!TIP]
    > 要評估儲存空間直接存取，但沒有硬體嗎？ 使用 HYPER-V 或 Azure 虛擬機器中所述[使用儲存空間直接存取客體虛擬機器叢集中](storage-spaces-direct-in-vm.md)。

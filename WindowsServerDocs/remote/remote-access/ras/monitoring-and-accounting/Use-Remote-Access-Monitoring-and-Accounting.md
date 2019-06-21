@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 454bc8dc5a9cbf8dc4e759196a13e7920de2eaf7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c794d4b8169c81c63162f119467f5f03d10ce756
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823519"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282648"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>使用遠端存取監視和計量
 
@@ -31,12 +30,12 @@ ms.locfileid: "59823519"
 > [!NOTE]  
 > 除了本主題，還有下列關於監視遠端存取的主題可使用。  
 >   
-> -   [監視遠端存取伺服器上現有的負載](Monitor-the-existing-load-on-the-Remote-Access-server.md)  
-> -   [監視遠端存取伺服器的設定散佈狀態](Monitor-the-configuration-distribution-status-of-the-Remote-Access-server.md)  
+> -   [監視「遠端存取」伺服器上現有的負載](Monitor-the-existing-load-on-the-Remote-Access-server.md)  
+> -   [監視「遠端存取」伺服器的設定發佈狀態](Monitor-the-configuration-distribution-status-of-the-Remote-Access-server.md)  
 > -   [監視 「 遠端存取 」 伺服器及其元件的操作狀態](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)  
-> -   [找出並解決遠端存取伺服器作業問題](Identify-and-resolve-Remote-Access-server-operations-problems.md)  
-> -   [監視連線的遠端用戶端活動和狀態](Monitor-connected-remote-clients-for-activity-and-status.md)  
-> -   [針對遠端用戶端使用歷程記錄資料產生使用量報告](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  
+> -   [識別並解決「遠端存取」伺服器操作問題](Identify-and-resolve-Remote-Access-server-operations-problems.md)  
+> -   [監視連線的遠端用戶端以查看其活動和狀態](Monitor-connected-remote-clients-for-activity-and-status.md)  
+> -   [使用歷程記錄資料來產生遠端用戶端的使用狀況報告](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  
 
 ## <a name="in-this-guide"></a>本指南內容  
 本文件包含透過 DirectAccess 管理主控台和對應的 Windows PowerShell Cmdlet (隨「遠端存取伺服器」角色提供) 來利用「遠端存取」之監視功能的指示。  

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2d3c5f4f02cc1a8386bf12fe634620ba98f2f23a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ecbe5dcc452aa39a9afca7e1c8d5fe70d8d4528d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883219"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283972"
 ---
 # <a name="delete-dns-resource-records"></a>刪除 DNS 資源記錄
 
@@ -44,7 +43,7 @@ ms.locfileid: "59883219"
   
     ![刪除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_02.jpg)  
   
-6.  **刪除 DNS 資源記錄**對話方塊隨即開啟。 確認已選取正確的 DNS 伺服器。 如果沒有，請按一下**DNS 伺服器**，然後選取您要刪除的資源記錄的伺服器。 按一下 [確定] 。 IPAM 會刪除的資源記錄的 DNS 伺服器。  
+6.  **刪除 DNS 資源記錄**對話方塊隨即開啟。 確認已選取正確的 DNS 伺服器。 如果沒有，請按一下**DNS 伺服器**，然後選取您要刪除的資源記錄的伺服器。 按一下 [確定]  。 IPAM 會刪除的資源記錄的 DNS 伺服器。  
   
     ![確認已選取正確的 DNS 伺服器和刪除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_03.jpg)  
   

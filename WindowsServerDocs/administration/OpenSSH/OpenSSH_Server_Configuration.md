@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Windows 的 OpenSSH 伺服器組態
-ms.openlocfilehash: 8e6476e4005bd5bbc2d40c8a59d39510ca1beb70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7eff3d3e1af67c9daf7a68c67c3609c0ee89fc93
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827279"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280030"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>適用於 Windows 10 1809年和 Server 2019 # OpenSSH 伺服器組態
 
@@ -28,7 +28,7 @@ OpenSSH 維護詳細文件以設定選項線上[OpenSSH.com](https://www.openssh
 命令殼層 | 若要使用的命令
 ------------- | -------------- 
 命令 | path
-PowerShell | $env:\path
+PowerShell | $env： 路徑
 
 設定預設的 ssh 命令介面，即可在 Windows 登錄中的完整路徑加入殼層可執行檔 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH DefaultShell 字串值中。 
 
@@ -53,7 +53,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Wi
 當設定 使用者/群組為基礎的網域使用者或群組的規則時，請使用下列格式： ``` user?domain* ```。
 Windows 提供的格式的多個指定網域主體，但許多與標準 Linux 模式衝突。 基於這個理由，* 加入涵蓋 Fqdn。 此外，這個方法會使用"？"，而不是 @，以避免 je v konfliktuusername@host格式。 
 
-工作群組使用者/群組和網際網路連線的帳戶一律會解析為本機帳戶名稱 （沒有網域部分，類似於標準的 Unix 名稱） 中。 網域使用者和群組會嚴格地解析為[NameSamCompatible](https://docs.microsoft.com/en-us/windows/desktop/api/secext/ne-secext-extended_name_format)格式-domain_short_name\user_name。 所有的使用者/群組基礎的規則必須遵守這種格式的組態。
+工作群組使用者/群組和網際網路連線的帳戶一律會解析為本機帳戶名稱 （沒有網域部分，類似於標準的 Unix 名稱） 中。 網域使用者和群組會嚴格地解析為[NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format)格式-domain_short_name\user_name。 所有的使用者/群組基礎的規則必須遵守這種格式的組態。
 
 網域使用者和群組的範例 
 

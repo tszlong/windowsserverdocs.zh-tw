@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e7f907c3bf463e3a90d413e5b167a70051057f06
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 108e517923c75f685d817cdf9fad9b14132e3bb0
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876769"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281439"
 ---
 # <a name="step-5-configure-dc1"></a>步驟 5 設定 DC1
 
@@ -40,13 +39,13 @@ DC1 會做為網域控制站、 DNS 伺服器和 corp.contoso.com 網域的 DHCP
   
 2.  在 [網路連線] 視窗中，以滑鼠右鍵按一下**有線乙太網路連線**，然後按一下**屬性**。  
   
-3.  按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]，然後按一下 [內容]。  
+3.  按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]  ，然後按一下 [內容]  。  
   
 4.  在**預設閘道**，型別**10.0.0.254**，然後在**備用 DNS 伺服器**，型別**10.2.0.1**，然後按一下  **確定**.  
   
-5.  選取 **[網際網路通訊協定第 6 版 (TCP/IPv6)]**，然後按一下 **[屬性]**。  
+5.  選取 **[網際網路通訊協定第 6 版 (TCP/IPv6)]** ，然後按一下 **[屬性]** 。  
   
-6.  在**預設閘道**，型別**2001:db8:1::fe**，然後在**備用 DNS 伺服器**，型別**2001:db8:2::1**，然後按一下 **[確定]**。  
+6.  在**預設閘道**，型別**2001:db8:1::fe**，然後在**備用 DNS 伺服器**，型別**2001:db8:2::1**，然後按一下 **[確定]** 。  
   
 7.  在 [**有線乙太網路連線內容**] 對話方塊中，按一下**關閉**。  
   
@@ -65,21 +64,21 @@ DC1 會做為網域控制站、 DNS 伺服器和 corp.contoso.com 網域的 DHCP
   
 3.  在 **新增物件-群組**對話方塊的 **群組名稱**，輸入**Win7_Clients_Site1**。  
   
-4.  在 [群組領域] 之下按一下 [全域]，在 [群組類型] 之下按一下 [安全性]，然後按一下 [確定]。  
+4.  在 [群組領域]  之下按一下 [全域]  ，在 [群組類型]  之下按一下 [安全性]  ，然後按一下 [確定]  。  
   
 5.  按兩下**Win7_Clients_Site1**安全性群組，然後在**Win7_Clients_Site1 屬性** 對話方塊中，按一下 **成員** 索引標籤。  
   
-6.  在 [成員]  索引標籤上，按一下 [新增] 。  
+6.  在 [成員]  索引標籤上，按一下 [新增]  。  
   
 7.  在 [**選取使用者、 連絡人、 電腦或服務帳戶**] 對話方塊中，按一下**物件類型**。 在上**物件類型**對話方塊中，選取**電腦**，然後按一下 **確定**。  
   
-8.  在**輸入要選取的物件名稱**，型別**client2**，然後按一下 **[確定]**，然後在**Win7_Clients_Site1 屬性**對話方塊中，按一下**確定**。  
+8.  在**輸入要選取的物件名稱**，型別**client2**，然後按一下 **[確定]** ，然後在**Win7_Clients_Site1 屬性**對話方塊中，按一下**確定**。  
   
 9. 在  **Active Directory 使用者和電腦**主控台中的，在左窗格中，以滑鼠右鍵按一下**使用者**，指向**新增**，然後按一下**群組**.  
   
 10. 在 **新增物件-群組**對話方塊的 **群組名稱**，輸入**Win7_Clients_Site2**。  
   
-11. 在 [群組領域] 之下按一下 [全域]，在 [群組類型] 之下按一下 [安全性]，然後按一下 [確定]。  
+11. 在 [群組領域]  之下按一下 [全域]  ，在 [群組類型]  之下按一下 [安全性]  ，然後按一下 [確定]  。  
   
 12. 關閉 [Active Directory 使用者和電腦]  主控台。  
   

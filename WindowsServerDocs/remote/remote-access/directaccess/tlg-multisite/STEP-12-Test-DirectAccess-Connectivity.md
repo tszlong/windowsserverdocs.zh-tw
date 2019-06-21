@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4e45f0c3c988c86a2428c3beb8bafc29b7b16bc0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9c87f1823140fd6c92cf7df1f9d807545b50504e
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446931"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281540"
 ---
 # <a name="step-12-test-directaccess-connectivity"></a>步驟 12 測試 DirectAccess 連線
 
@@ -91,7 +90,7 @@ ms.locfileid: "66446931"
   
 7. 確定您已連線透過 EDGE1。 型別**netsh 介面 httpstunnel 顯示介面**按 ENTER 鍵。  
   
-   輸出應包含 URL: https://edge1.contoso.com:443/IPHTTPS。  
+   輸出應包含 URL: https://edge1.contoso.com:443/IPHTTPS 。  
   
    > [!TIP]  
    > 在 CLIENT1 上，您也可以執行下列 Windows PowerShell 命令：**取得 NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連線與目前作用中的設定檔。  
@@ -164,7 +163,7 @@ ms.locfileid: "66446931"
   
 5. 確定您已連線到 2 EDGE1。 型別**netsh 介面 httpstunnel 顯示介面**按 ENTER 鍵。  
   
-   輸出應包含 URL: https://2-edge1.contoso.com:443/IPHTTPS。  
+   輸出應包含 URL: https://2-edge1.contoso.com:443/IPHTTPS 。  
   
    > [!TIP]  
    > 在 CLIENT1 上，您也可以執行下列命令：**取得 NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連線與目前作用中的設定檔。  

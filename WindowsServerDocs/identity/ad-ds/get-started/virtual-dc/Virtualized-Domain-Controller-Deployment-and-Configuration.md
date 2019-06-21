@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4af0f96b0af3a547ab7d509d031a9e23cce8b654
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 059bb3c1b15afdc579ba048b8bbb02ed185f3d42
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443210"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280950"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虛擬網域控制站的部署與設定
 
@@ -153,7 +153,7 @@ ms.locfileid: "66443210"
     >   
     > 因為這個 RPC 方法是新的，所以，您的網路分析軟體需要更新的剖析器，以包含適用於現有 UUID E3514235-4B06-11D1-AB04-00C04FC2DCD2 中的新 Opnum 28 欄位。 否則，就無法剖析這個流量。  
     >   
-    > 如需詳細資訊，請參閱 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](https://msdn.microsoft.com/en-us/library/hh554213(v=prot.13).aspx)。  
+    > 如需詳細資訊，請參閱 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](https://msdn.microsoft.com/library/hh554213(v=prot.13).aspx)。  
   
 ***這也表示，使用非完全路由的網路時，複製虛擬網域控制站需要具備存取 PDCE 權限的網路區段***。 您可以在複製之後將複製的網域控制站移至不同的網路 (就像是實體網域控制站一樣)，只要您謹慎更新 AD DS 邏輯站台資訊即可。  
   

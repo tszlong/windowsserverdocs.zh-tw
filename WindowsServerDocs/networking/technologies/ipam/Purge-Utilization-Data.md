@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45cada9e-69b9-43df-b6f5-6d3942435809
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7b471417d4c44c22f115443f1f2dcca6f351e6f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab2bd3ad1ef8965400e09fa74c6eb89ffc5ebcef
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827939"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283837"
 ---
 # <a name="purge-utilization-data"></a>清除使用資料
 
@@ -34,4 +33,4 @@ ms.locfileid: "59827939"
 3. 按一下 **任務**，然後按一下**清除使用量資料**。 **清除使用率資料**對話方塊隨即開啟。
 4. 在 **清除所有的使用量或之前的資料**，按一下**選取日期**。
 5. 選擇您想要刪除所有的資料庫記錄上和在該日期之前的日期。
-6. 按一下 [確定] 。 IPAM 會刪除您所指定的所有記錄。
+6. 按一下 [確定]  。 IPAM 會刪除您所指定的所有記錄。

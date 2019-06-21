@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2cfe4e40-ec6d-4541-baa9-d772409fe27c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 18a593a82a9b9fd0d8f2e59d1bb9da971856ad17
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 22d00865d1fb30faa2cf9cd79479772f768bfbbe
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841519"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283783"
 ---
 # <a name="view-dns-zones"></a>檢視 DNS 區域
 

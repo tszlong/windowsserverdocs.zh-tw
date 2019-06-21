@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 6f3907426fd1124c5ed0a411a155490a2a537239
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: 572f923c33739b854808372a826e9c9bbc6aaca3
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719676"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280857"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>將網域控制站升級到 Windows Server 2016
 
@@ -27,7 +27,7 @@ ms.locfileid: "66719676"
 1. 確認目標伺服器符合系統需求。 
 2. 請確認應用程式相容性。 
 3. 移至 Windows Server 2016 中檢閱建議 
-4. 確認安全性設定。 如需詳細資訊，請參閱 <<c0> [ 到 Windows Server 2016 中的 AD DS 相關的過時功能與行為變更](https://docs.microsoft.com/en-us/windows-server/get-started/deprecated-features)。 
+4. 確認安全性設定。 如需詳細資訊，請參閱 <<c0> [ 到 Windows Server 2016 中的 AD DS 相關的過時功能與行為變更](https://docs.microsoft.com/windows-server/get-started/deprecated-features)。 
 5. 檢查要執行安裝的電腦與目標伺服器的連線。 
 6. 檢查必要操作主機角色的可用性： 
    - 若要安裝執行 Windows Server 2016 的現有網域和樹系中的第一個 DC，您用來執行安裝的電腦需要連線能力**架構主機**才能執行 adprep /forestprep，基礎結構主機若要執行 adprep /domainprep。 

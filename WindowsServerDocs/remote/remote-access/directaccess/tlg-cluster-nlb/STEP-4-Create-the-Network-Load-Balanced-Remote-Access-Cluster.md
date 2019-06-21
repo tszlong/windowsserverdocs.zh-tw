@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509eaa08-c49d-448d-a71e-c1c45519ccd5
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 11f4fe7b68f69b00ec0f8fb9764e0fb4460a2851
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b8e6defc6cc8579f18df2f9636383c65c9a18eb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845949"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281615"
 ---
 # <a name="step-4-create-the-network-load-balanced-remote-access-cluster"></a>步驟 4 建立的網路負載平衡的遠端存取叢集
 
@@ -61,9 +60,9 @@ ms.locfileid: "59845949"
   
 2.  按一下 [**下一步]** 四次，以前往 [選取伺服器功能] 畫面。  
   
-3.  在上**選取的功能**對話方塊中，選取**網路負載平衡**，按一下**新增功能**，按一下 [**下一步]**，然後按一下**安裝**。  
+3.  在上**選取的功能**對話方塊中，選取**網路負載平衡**，按一下**新增功能**，按一下 [**下一步]** ，然後按一下**安裝**。  
   
-4.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+4.  在 [安裝進度]  對話方塊中，確認安裝成功，然後按一下 [關閉]  。  
   
 5.  重複此程序上 EDGE2。  
   
@@ -78,7 +77,7 @@ ms.locfileid: "59845949"
   
 3.  啟用負載平衡精靈中，按一下**下一步**。  
   
-4.  在 [**負載平衡方法**頁面上，按一下**使用 Windows 網路負載平衡 (NLB)**，然後按一下**下一步]**。  
+4.  在 [**負載平衡方法**頁面上，按一下**使用 Windows 網路負載平衡 (NLB)** ，然後按一下**下一步]** 。  
   
 5.  在上**外部專用的 IP 位址**頁面上，於**IPv4 位址**方塊中，輸入**131.107.0.10**中**子網路遮罩**方塊中，確認子網路首碼**255.255.255.0**，然後按一下**下一步**。  
   

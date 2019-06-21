@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2d1661d43cd45614dfabc66fd9a737c55ab388ed
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 34a65434a0035c60c888170e779496653ad0ab6d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446918"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283204"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>從 NAT 裝置後方的步驟 13 測試 DirectAccess 連線
 
@@ -32,7 +31,7 @@ ms.locfileid: "66446918"
   
 2. 測試 IP-HTTPS 連線。 當 DirectAccess 用戶端設定為使用 IP-HTTPS，則會執行第二組測試。 為了示範 IP-HTTPS 連線，會在用戶端電腦上停用 Teredo。 第一次在 CLIENT1 上執行測試，然後在 CLIENT2 上執行測試。  
   
-## <a name="prerequisites"></a>先決條件  
+## <a name="prerequisites"></a>必要條件  
 如果它們尚未執行，並確定它們連線到網際網路子網路，請啟動 EDGE1 和 2 EDGE1。  
   
 然後再執行這些測試，將 CLIENT1 和 CLIENT2 從網際網路交換器拔除，並將它們連接到家用網路交換器。 如果系統詢問您想要定義目前的網路中，選取的網路類型**家用網路**。  

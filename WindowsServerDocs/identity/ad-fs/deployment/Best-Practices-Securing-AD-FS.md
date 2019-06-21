@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 958bf8455d03ddc04395fafe83e70a49c7659c96
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: a7f4f29b37793b45a614bd592feddb339dd05c3d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192439"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280608"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory Federation Services 的最佳做法
 
@@ -85,7 +85,7 @@ AD FS 和 WAP 安裝時，federation service 和 proxy 上，會啟用一組預�
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 
-例如: 
+例如:
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     
@@ -109,7 +109,7 @@ Federation service proxy （WAP 的一部分） 提供防止大量的要求中�
 3.  從其預設值，以變更壅塞控制設定 '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'。
 4.  儲存並關閉檔案。
 5.  執行 'net stop adfssrv' 然後 'net start adfssrv' 來重新啟動 AD FS 服務。
-供您參考，可以找到這項功能的指引[此處](https://msdn.microsoft.com/en-us/library/azure/dn528859.aspx )。
+供您參考，可以找到這項功能的指引[此處](https://msdn.microsoft.com/library/azure/dn528859.aspx )。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>標準的 HTTP 要求會檢查在 proxy
 Proxy 也會執行標準的下列檢查，針對所有流量：

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 836a2a08-3d22-48d2-873e-80d7e57ebbd6
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b1762fe6e5a98529956208c4c807dfeb39c439cd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 338e214ac10796d3f9864aef74190f2d27f173b7
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875739"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281351"
 ---
 # <a name="step-3-configure-dc1"></a>步驟 3 設定 DC1
 
@@ -32,7 +31,7 @@ DC1 會做為網域控制站、 DNS 伺服器和 corp.contoso.com 網域的 DHCP
   
 2.  在上**帳號** 索引標籤上，確認**使用者登入名稱**設為 User1。 如果沒有，然後輸入**User1**中**使用者登入名稱**欄位。  
   
-3.  按一下 [確定] 。 關閉 [Active Directory 使用者和電腦]  主控台。  
+3.  按一下 [確定]  。 關閉 [Active Directory 使用者和電腦]  主控台。  
   
 
 

@@ -9,12 +9,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a4ad8c0199f0f62d7cd69a43897cb4608ddb365
-ms.sourcegitcommit: ccc802338b163abdad2e53b55f39addcfea04603
+ms.openlocfilehash: eb31a76dbd7ccdff3ea3ee0d6bb26f9ee16ae93f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687366"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280709"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路的智慧鎖定
 
@@ -237,7 +237,7 @@ AD FS 提供三個 cmdlet 來管理帳戶的活動資料。 這些 cmdlet 會自
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>事件記錄與 AD FS 外部網路鎖定的使用者活動資訊
 
 ### <a name="connect-health"></a>Connect Health
-若要監視的使用者帳戶活動的建議的方式是透過 Connect Health。 連線健全狀況，會產生 「 具風險 Ip 的可下載報告，並不正確密碼嘗試。 具風險的 IP 報告中的每個項目會顯示 AD FS 登入活動失敗超過指定臨界值的彙總的資訊。 使用可自訂的電子郵件設定發生此狀況時，可以設定電子郵件通知系統管理員發出警示。 如需詳細資訊和安裝指示，請瀏覽[Connect Health 文件](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-health-adfs)。
+若要監視的使用者帳戶活動的建議的方式是透過 Connect Health。 連線健全狀況，會產生 「 具風險 Ip 的可下載報告，並不正確密碼嘗試。 具風險的 IP 報告中的每個項目會顯示 AD FS 登入活動失敗超過指定臨界值的彙總的資訊。 使用可自訂的電子郵件設定發生此狀況時，可以設定電子郵件通知系統管理員發出警示。 如需詳細資訊和安裝指示，請瀏覽[Connect Health 文件](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)。
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS 外部網路的智慧鎖定事件。
 針對外部網路的智慧鎖定事件可供寫入，必須在 '記錄檔僅' 強制執行' 的模式下啟用 ESL 和 ADFS 安全性稽核已啟用。

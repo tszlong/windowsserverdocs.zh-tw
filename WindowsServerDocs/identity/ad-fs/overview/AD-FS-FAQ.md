@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f3f84a5c18589d38606825ee064cfb729003a05d
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: fc92e8b30d6b4c0c765333d3e22311e551d3365d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719691"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280487"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (Faq)
 
@@ -138,9 +138,9 @@ Apple 已發行一組稱為 App Transport Security (ATS) 可能會影響從 AD f
 AD FS 伺服器 2019年中的支援證明金鑰的程式碼 Exchange (PKCE) OAuth 授權碼授與流程
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>AD FS 支援哪些允許的範圍？
-- aza-如果使用[Broker 的用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)和 scope 參數會包含"aza"的範圍，如果伺服器發出新的主要重新整理權杖，並將它設定 refresh_token 的欄位中的回應，以及設定如果其中一個會強制執行的新主要重新整理權杖的存留期 refresh_token_expires_in 欄位。
+- aza-如果使用[Broker 的用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)和 scope 參數會包含"aza"的範圍，如果伺服器發出新的主要重新整理權杖，並將它設定 refresh_token 的欄位中的回應，以及設定如果其中一個會強制執行的新主要重新整理權杖的存留期 refresh_token_expires_in 欄位。
 - openid-可讓應用程式要求使用 OpenID Connect 授權通訊協定。
-- logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，可用來以互動方式登入已驗證的使用者。 在 AD FS 伺服器會省略來自回應的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈結或 CMC 完整 PKI 的回應。 提供的更多詳細資料[此處](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)。 
+- logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，可用來以互動方式登入已驗證的使用者。 在 AD FS 伺服器會省略來自回應的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈結或 CMC 完整 PKI 的回應。 提供的更多詳細資料[此處](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)。 
 - user_impersonation-user_impersonation 範圍，才能成功從 AD FS 要求代表的存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[建置多層式應用程式使用代理者 (OBO) 使用 OAuth 與 AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)。
 - vpn_cert-vpn_cert 範圍可讓要求 VPN 憑證，可用來建立 VPN 連線使用 EAP-TLS 驗證的應用程式。 這不再支援。
 - 電子郵件-可讓應用程式要求登入使用者的電子郵件宣告。 這不再支援。 

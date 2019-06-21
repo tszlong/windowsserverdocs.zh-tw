@@ -8,12 +8,12 @@ manager: dongill
 author: nirb-ms
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: f280fbe682ebf706ce6ea5b53ea8af5e6f39d75d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 320723f7a0a25784180b232ce05d42c2ced933c8
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857809"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284180"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-hosters"></a>受防護網狀架構與受防護的 VM 規劃的主機服務提供者指南
 
@@ -64,7 +64,7 @@ ms.locfileid: "59857809"
 | 調整大小 | 每個中型大小 (8 核心/4 GB) HGS 伺服器節點可以處理 1000 的 HYPER-V 主機。 |
 | Management | 指定將管理 HGS 的特定人員。 它們應該不同於網狀架構系統管理員。 如需比較，HGS 叢集可以視為相同的方式為憑證授權單位 (CA) 系統管理隔離中，實際的部署和整體的層級的安全性敏感度方面。 |
 | 主機守護者服務的 Active Directory | 根據預設，HGS 會安裝它自己內部的 Active Directory 進行管理。 這是獨立的自我管理的樹系，而且是建議的設定，以協助找出從您的網狀架構的 HGS。<br><br>如果您已經具備高度權限的 Active Directory 樹系用於隔離，您可以使用該樹系，而不是 HGS 預設樹系。 請務必 HGS 未加入 HYPER-V 主機或您的網狀架構管理工具所在的樹系中的網域。 如此一來可能會允許全面掌控 HGS 網狀架構系統管理員。 |
-| 嚴重損壞修復 | 有三個選項：<br><ol><li>安裝個別的 HGS 叢集中每個資料中心，並授權受防護的 Vm，在主要和備份的資料中心中執行。 這可避免您不必透過 WAN 延展叢集，並可讓您隔離虛擬機器，使它們只能在其指定的網站中執行。</li><li>安裝兩個 （含） 以上的資料中心之間延展式叢集上的 HGS。 如果 WAN 中斷，但限制的容錯移轉叢集，這會提供恢復功能。 您無法將隔離至一個網站; 的工作負載獲授權在一個站台執行的 VM 可以在其他任何執行。</li><li>向另一部 HGS 註冊您的 HYPER-V 主機進行容錯移轉。</li></ol>您也應該藉由將匯出其組態，以便您一律可以在本機復原備份每個 HGS。 如需詳細資訊，請參閱 <<c0> [ 匯出 HgsServerState](https://technet.microsoft.com/library/mt652164.aspx)並[匯入 HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)。 |
+| 嚴重損壞修復 | 有三個選項：<br><ol><li>安裝個別的 HGS 叢集中每個資料中心，並授權受防護的 Vm，在主要和備份的資料中心中執行。 這可避免您不必透過 WAN 延展叢集，並可讓您隔離虛擬機器，使它們只能在其指定的網站中執行。</li><li>安裝兩個 （含） 以上的資料中心之間延展式叢集上的 HGS。 如果 WAN 中斷，但限制的容錯移轉叢集，這會提供恢復功能。 您無法將隔離至一個網站; 的工作負載獲授權在一個站台執行的 VM 可以在其他任何執行。</li><li>向另一部 HGS 註冊您的 HYPER-V 主機進行容錯移轉。</li></ol>您也應該藉由將匯出其組態，以便您一律可以在本機復原備份每個 HGS。 如需詳細資訊，請參閱 <<c0> [ 匯出 HgsServerState](https://docs.microsoft.com/powershell/module/hgsserver/export-hgsserverstate)並[匯入 HgsServerState](https://docs.microsoft.com/powershell/module/hgsserver/import-hgsserverstate)。 |
 | 主機守護者服務金鑰 | 主機守護者服務會使用兩個非對稱金鑰組，加密金鑰和簽署金鑰，分別表示使用 SSL 憑證。 有兩個選項來產生這些金鑰：<br><ol><li>內部憑證授權單位 – 您可以產生這些金鑰，使用您的內部 PKI 基礎結構。 這是適用於資料中心環境。</li><li>公開受信任的憑證授權單位 – 使用一組從公開的受信任的憑證授權單位取得的金鑰。 這是主機服務提供者應該使用的選項。</li></ol>請注意，雖然您可以使用自我簽署的憑證，不建議用於概念證明實驗室以外的部署案例。<br><br>除了擁有 HGS 金鑰，主機服務提供者可以使用 「 攜帶您自己的金鑰 」，租用戶可以提供他們自己的金鑰，讓部分 （或所有） 的租用戶可以有自己特定的 HGS 金鑰。 這個選項適合主機服務提供者中可供上傳其索引鍵的租用戶的頻外程序。 |
 | 主機守護者服務的主要儲存體 | 可能最強的安全性，建議 HGS 金鑰會建立並儲存以獨佔方式在硬體安全性模組 (HSM)。 如果您未使用 Hsm，強烈建議將 BitLocker 套用 HGS 伺服器上。 |
 

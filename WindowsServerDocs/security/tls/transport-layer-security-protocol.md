@@ -13,12 +13,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 77e3ee9d89bff7ab6e95ea47ffa141e6e1004ba4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a3b241fe0d2a61361d551b7f515507ad55d71cd
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853019"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284233"
 ---
 # <a name="transport-layer-security-protocol"></a>傳輸層安全性通訊協定
 
@@ -41,7 +41,7 @@ TLS 和 SSL 通訊協定可以分成兩個層級。 第一層所組成的應用�
 **TLS 和 SSL 通訊協定層**
 
 
-安全通道 SSP 實作 TLS 和 SSL 通訊協定，而不需修改。 SSL 通訊協定是專屬的但 Internet Engineering Task Force 會產生公用 TLS 規格。 哪些 TLS 或 SSL 版本支援 Windows 版本中的資訊，請參閱[TLS/ssl (安全通道 SSP) 的通訊協定](https://msdn.microsoft.com/en-us/library/windows/desktop/mt808159(v=vs.85).aspx)。 下表列出每個 TLS 版本規格。 每個規格包含下列資訊：
+安全通道 SSP 實作 TLS 和 SSL 通訊協定，而不需修改。 SSL 通訊協定是專屬的但 Internet Engineering Task Force 會產生公用 TLS 規格。 哪些 TLS 或 SSL 版本支援 Windows 版本中的資訊，請參閱[TLS/ssl (安全通道 SSP) 的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159(v=vs.85).aspx)。 下表列出每個 TLS 版本規格。 每個規格包含下列資訊：
 
 -   TLS 記錄通訊協定
 

@@ -8,12 +8,12 @@ ms.date: 03/06/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-spaces
-ms.openlocfilehash: 9db92aa33cde9b2beed11149dae06bb3af2b5a03
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: 54be649cc1753fe07c94105a31a0b738fb030ee0
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455416"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284357"
 ---
 # <a name="upgrade-a-storage-spaces-direct-cluster-to-windows-server-2019"></a>將儲存空間直接存取叢集升級到 Windows Server 2019
 
@@ -84,7 +84,7 @@ ms.locfileid: "66455416"
        Enable-StorageMaintenanceMode
        ```
 
-   4. 執行下列 cmdlet 來檢查所**OperationalStatus**值是**處於維護模式**:
+   4. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
 
        ```PowerShell
        Get-PhysicalDisk
@@ -176,7 +176,7 @@ ms.locfileid: "66455416"
        Enable-StorageMaintenanceMode
        ```
 
-   4. 執行下列 cmdlet 來檢查所**OperationalStatus**值是**處於維護模式**:
+   4. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
 
        ```PowerShell
        Get-PhysicalDisk
@@ -271,7 +271,7 @@ ms.locfileid: "66455416"
        Enable-StorageMaintenanceMode
        ```
 
-   3. 執行下列 cmdlet 來檢查所**OperationalStatus**值是**處於維護模式**:
+   3. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
 
        ```PowerShell
        Get-PhysicalDisk
@@ -359,7 +359,7 @@ ms.locfileid: "66455416"
       Enable-StorageMaintenanceMode
       ```
 
-   4. 執行下列 cmdlet 來檢查所**OperationalStatus**值是**處於維護模式**:
+   4. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
 
       ```PowerShell
       Get-PhysicalDisk

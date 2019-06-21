@@ -1,12 +1,12 @@
 ---
 title: IP 位址設定 Kerberos
 description: 以 IP 為主的 spn 的 Kerberos 支援
-ms.openlocfilehash: 30741f7a0f1978fcaa6ac83c98a54c07e1ef25c5
-ms.sourcegitcommit: c6acac3622e5d34714ca5c569805931681f98779
+ms.openlocfilehash: aa2685fcff2fdf231e5e5884d25885585f0bd6c9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391519"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67279973"
 ---
 # <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Kerberos 用戶端在服務主體名稱 (Spn) 允許 IPv4 和 IPv6 位址的主機名稱
 
@@ -30,7 +30,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos
 
 IP 位址不會正常使用取代主機名稱上，因為通常是暫時性的 IP 位址。 這可能會導致衝突和驗證失敗為位址租用到期和更新。 因此註冊與 IP 位址為基礎的 SPN 是手動程序，應該只用於時就無法切換到 DNS 主機名稱。
 
-建議的方法是使用[Setspn.exe](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11))工具。 請注意，SPN 只能註冊在 Active Directory 中的單一帳戶一次因此建議您使用 IP 位址會有靜態的租用期，如果使用 DHCP。
+建議的方法是使用[Setspn.exe](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11))工具。 請注意，SPN 只能註冊在 Active Directory 中的單一帳戶一次因此建議您使用 IP 位址會有靜態的租用期，如果使用 DHCP。
 
 ```
 Setspn -s <service>/ip.address> <domain-user-account>  

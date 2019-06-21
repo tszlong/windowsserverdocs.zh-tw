@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64c10107-cb03-41f3-92c6-ac249966f574
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 771df80fc3130b5c4c03bf628a95d67b7df04b36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2655f4de83576ef62b113419a69badaacc868f9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888199"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281001"
 ---
 # <a name="step-2-plan-the-multisite-infrastructure"></a>步驟 2 計劃的多站台的基礎結構
 
@@ -116,7 +115,7 @@ Gpo 設定如下：
   
     -   **伺服器 GPO**-伺服器 GPO 的每個進入點 （在進入點所在的網域）。 在進入點的每個遠端存取伺服器上，將會套用此 GPO。  
   
-    -   **用戶端 GPO (Windows 7)**-A GPO 每個進入點與包含 Windows 7 用戶端電腦會連線到多站台部署中的進入點，每個網域。 例如 Domain1\DA_W7_Clients_GPO_Europe;Domain2\DA_W7_Clients_GPO_Europe;Domain1\DA_W7_Clients_GPO_US;Domain2\DA_W7_Clients_GPO_US。 如果沒有 Windows 7 用戶端電腦會連線到進入點，就不需要的 Gpo。  
+    -   **用戶端 GPO (Windows 7)** -A GPO 每個進入點與包含 Windows 7 用戶端電腦會連線到多站台部署中的進入點，每個網域。 例如 Domain1\DA_W7_Clients_GPO_Europe;Domain2\DA_W7_Clients_GPO_Europe;Domain1\DA_W7_Clients_GPO_US;Domain2\DA_W7_Clients_GPO_US。 如果沒有 Windows 7 用戶端電腦會連線到進入點，就不需要的 Gpo。  
   
 -   沒有建立其他 Gpo 適用於 Windows 8 用戶端電腦的需求。 針對每個包含用戶端電腦的網域 GPO 已經建立了部署單一遠端存取伺服器時。 在多站台部署中這些用戶端 Gpo 將做為 Gpo 適用於 Windows 8 用戶端。  
   

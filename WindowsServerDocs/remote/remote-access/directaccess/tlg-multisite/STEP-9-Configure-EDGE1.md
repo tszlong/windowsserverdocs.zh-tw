@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f5d216934f0d09cdef97ce4405161862b112d632
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0a47a436bbd11c795caa8b402054ae0d2c3282f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864869"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281369"
 ---
 # <a name="step-9-configure-edge1"></a>步驟 9 設定 EDGE1
 
@@ -36,11 +35,11 @@ ms.locfileid: "59864869"
   
 2.  在 [網路連線] 視窗中，以滑鼠右鍵按一下**Corpnet**，然後按一下**屬性**。  
   
-3.  按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]，然後按一下 [內容]。  
+3.  按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]  ，然後按一下 [內容]  。  
   
-4.  在 **備用 DNS 伺服器**，型別**10.2.0.1**。 然後按一下 [確定]。  
+4.  在 **備用 DNS 伺服器**，型別**10.2.0.1**。 然後按一下 [確定]  。  
   
-5.  選取 **[網際網路通訊協定第 6 版 (TCP/IPv6)]**，然後按一下 **[屬性]**。  
+5.  選取 **[網際網路通訊協定第 6 版 (TCP/IPv6)]** ，然後按一下 **[屬性]** 。  
   
 6.  在 **備用 DNS 伺服器**，型別**2001:db8:2::1** ，然後按一下 **確定**。  
   

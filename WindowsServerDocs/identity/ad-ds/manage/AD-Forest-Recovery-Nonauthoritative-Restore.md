@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: e4ce1d18-d346-492a-8bca-f85513aa3ac1
 ms.technology: identity-adds
-ms.openlocfilehash: eae4cab2bd709097fe0efd0745baeb0ec685abc7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65e33e6507d2affc4d07cc0780a7baf91a170a09
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829609"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280583"
 ---
 # <a name="performing-a-nonauthoritative-restore-of-active-directory-domain-services"></a>執行非系統授權還原的 Active Directory 網域服務 
 
@@ -24,7 +24,7 @@ ms.locfileid: "59829609"
   
 下列程序會使用 Wbadmin.exe 執行 Active Directory 或 Active Directory 網域服務 (AD DS) 的非系統授權還原。 如果您使用不同的備份解決方案，或如果您想要完成 SYSVOL 的授權還原，稍後在樹系修復程序，您可以使用這些替代的方法來執行系統授權還原的 SYSVOL:  
   
-- 如果您使用檔案複寫服務 (FRS) 來複寫 SYSVOL，請依照下列中的步驟[文章 290762](https://go.microsoft.com/fwlink/?LinkId=148443) Microsoft 知識庫中使用**BurFlags**登錄機碼以重新初始化 FRS 複本設定此項目，或如有必要，文章 315457 [315457](https://support.microsoft.com/kb/315457)重建 SYSVOL 樹狀目錄。 若要判斷是否 FRS 來複寫 SYSVOL，請參閱[DFSR 或 FRS 來複寫判斷是否網域控制站的 SYSVOL 資料夾](https://msdn.microsoft.com/en-us/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs)。  
+- 如果您使用檔案複寫服務 (FRS) 來複寫 SYSVOL，請依照下列中的步驟[文章 290762](https://go.microsoft.com/fwlink/?LinkId=148443) Microsoft 知識庫中使用**BurFlags**登錄機碼以重新初始化 FRS 複本設定此項目，或如有必要，文章 315457 [315457](https://support.microsoft.com/kb/315457)重建 SYSVOL 樹狀目錄。 若要判斷是否 FRS 來複寫 SYSVOL，請參閱[DFSR 或 FRS 來複寫判斷是否網域控制站的 SYSVOL 資料夾](https://msdn.microsoft.com/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs)。  
 - 如果您使用分散式檔案系統 (DFS) 複寫來複寫 SYSVOL，請參閱[執行權威的同步處理的 DFSR 複寫的 SYSVOL](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)。  
 
 ## <a name="performing-a-nonauthoritative-restore"></a>執行非系統授權還原
@@ -39,7 +39,7 @@ ms.locfileid: "59829609"
    wbadmin start systemstaterecovery <otheroptions> -authsysvol  
    ```  
 
-   例如:   
+   例如:  
 
    ```  
    wbadmin start systemstaterecovery -version:11/20/2012-13:00 -authsysvol  
@@ -50,4 +50,4 @@ ms.locfileid: "59829609"
 ## <a name="next-steps"></a>後續步驟
 
 - [AD 樹系復原指南](AD-Forest-Recovery-Guide.md)
-- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)
+- [AD 樹系復原 - 程序](AD-Forest-Recovery-Procedures.md)

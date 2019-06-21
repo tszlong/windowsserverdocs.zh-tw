@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5317ac52d77a9e70711f915a974a7879f24603bf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2f14fdb2fd3ab6f0a89c8d8c1a8853041dcba94
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836859"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281006"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>規劃多樹系部署
 
@@ -26,7 +25,7 @@ ms.locfileid: "59836859"
 
 本主題說明在多樹系部署中設定遠端存取時所需的規劃步驟。  
   
-## <a name="prerequisites"></a>先決條件  
+## <a name="prerequisites"></a>必要條件  
 開始部署這個案例之前，請先檢閱這份重要需求清單：  
   
 -   需具備雙向信任。  

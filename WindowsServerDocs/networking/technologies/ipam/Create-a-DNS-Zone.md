@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a030ff51-a815-4fc4-b26d-aae41c3e4ce5
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 31dbae80882e1375e548d5f6942c6473786f838f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83e3865308fd45e88b800753b20ab298f9a14c96
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870219"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282247"
 ---
 # <a name="create-a-dns-zone"></a>建立 DNS 區域
 
@@ -38,7 +37,7 @@ ms.locfileid: "59870219"
   
     ![建立 DNS 區域](../../media/Create-a-DNS-Zone/ipam_CreateDNSZone_01a.jpg)  
   
-4.  **建立 DNS 區域**對話方塊隨即開啟。 在 **一般屬性**，選取 「 區域 」 類別目錄的區域類型，然後輸入中的名稱**e name&amp;**。 也選取適合您的部署中的值**進階屬性**，然後按一下**確定**。  
+4.  **建立 DNS 區域**對話方塊隨即開啟。 在 **一般屬性**，選取 「 區域 」 類別目錄的區域類型，然後輸入中的名稱**e name&amp;** 。 也選取適合您的部署中的值**進階屬性**，然後按一下**確定**。  
   
     ![進階的屬性](../../media/Create-a-DNS-Zone/ipam_CreateDNSZone_02a.jpg)  
   

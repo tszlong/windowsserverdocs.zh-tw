@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f009fdd1-94e6-4ccb-8c6e-609a5394db53
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d19f204e139433d11cf674c4ec39a134cde7eefa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c7ff4953fd4369340f55f40f93cfc01d4240b26
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813169"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281462"
 ---
 # <a name="step-3-install-and-configure-client2"></a>步驟 3 的安裝和設定 CLIENT2
 
@@ -51,17 +50,17 @@ CLIENT2 是 Windows 7&reg;電腦，可用來示範回溯相容性的 Windows Ser
   
 ## <a name="to-join-client2-to-the-corp-domain"></a>CLIENT2 加入 CORP 網域  
   
-1.  按一下 [開始] ，在 [電腦] 上按一下滑鼠右鍵，然後按一下 [內容] 。  
+1.  按一下 [開始]  ，在 [電腦]  上按一下滑鼠右鍵，然後按一下 [內容]  。  
   
 2.  在上**系統**頁面上，於**電腦名稱、 網域及工作群組設定**區域中，按一下 **變更設定**。  
   
-3.  在 [系統內容] 的 [電腦名稱] 索引標籤上，按一下 [變更]。  
+3.  在 [系統內容]  的 [電腦名稱]  索引標籤上，按一下 [變更]  。  
   
 4.  上**電腦名稱/網域變更** 對話方塊中，按一下**網域**，型別**corp.contoso.com**，然後按一下**確定**。  
   
 5.  當系統提示您輸入使用者名稱和密碼時，輸入使用者名稱和 User1 網域帳戶的密碼，然後按一下**確定**。  
   
-6.  當您看見對話方塊並顯示 corp.contoso.com 網域的歡迎頁面時，按一下 [確定]。  
+6.  當您看見對話方塊並顯示 corp.contoso.com 網域的歡迎頁面時，按一下 [確定]  。  
   
 7.  當您看到對話方塊，提示您重新啟動電腦，請按一下**確定**。  
   

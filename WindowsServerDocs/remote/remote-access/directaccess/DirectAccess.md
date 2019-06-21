@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6b71d18e-1939-4fc0-bb42-29e0e5ffc8da
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 608d6b4dd3d5e894b28e767164b9370de9cb59ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11c5aa093ddd5aa4777e88c536195bb70bd846db
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869569"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281926"
 ---
 # <a name="directaccess"></a>DirectAccess
 
@@ -38,8 +37,8 @@ ms.locfileid: "59869569"
 > -   [DirectAccess 離線網域加入](DirectAccess-Offline-Domain-Join.md)  
 > -   [對 DirectAccess 進行疑難排解](Troubleshooting-DirectAccess.md)  
 > -   [部署單一 DirectAccess 伺服器使用開始使用的精靈](single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)  
-> -   [部署單一 DirectAccess 伺服器使用進階設定](single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)  
-> -   [將 DirectAccess 加入現有的遠端存取 (VPN) 部署至](add-to-existing-vpn/Add-DirectAccess-to-an-Existing-Remote-Access-VPN-Deployment.md)  
+> -   [使用進階設定部署單一 DirectAccess 伺服器](single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)  
+> -   [將 DirectAccess 新增至現有的遠端存取 (VPN) 部署](add-to-existing-vpn/Add-DirectAccess-to-an-Existing-Remote-Access-VPN-Deployment.md)  
   
 DirectAccess 可讓組織網路資源，而不需要傳統虛擬私人網路 (VPN) 連線的遠端使用者連線。 有了 DirectAccess 連線，遠端用戶端電腦一律會連線至您的組織，-啟動和停止連線，為需要使用 VPN 連線的遠端使用者不需要。 此外，您的 IT 系統管理員可以管理 DirectAccess 用戶端電腦，只要它們正在執行，且連線到網際網路。
 

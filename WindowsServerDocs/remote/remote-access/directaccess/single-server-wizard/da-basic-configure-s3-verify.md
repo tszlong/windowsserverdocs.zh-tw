@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45e9edd6-acca-4d59-851a-a0cc8bd8b4c6
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b2cf5dd1937883edd8b62cfef7d195bc584025b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9e78ed78671c5c61fb3736cccf4e095b5186e23
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829369"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281654"
 ---
 # <a name="step-3-verify-deployments"></a>步驟 3： 確認部署
 
@@ -32,7 +31,7 @@ ms.locfileid: "59829369"
   
 2.  按一下通知區域中的 [網路連線]  圖示來存取 DA 媒體管理員。  
   
-3.  按一下 [DirectAccess 連線]，您會看到狀態為 [本機連接]。  
+3.  按一下 [DirectAccess 連線]  ，您會看到狀態為 [本機連接]  。  
   
 4.  將用戶端電腦連線到外部網路，並嘗試存取內部資源。  
   

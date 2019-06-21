@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c7ac20da7e8508b824fdd000f6a9dde6e807cdf2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e09363eae005114b73bedac084f5ab0745c237ee
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835829"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280065"
 ---
 # <a name="additional-performance-tuning-resources"></a>其他效能微調資源
 
@@ -29,7 +29,7 @@ ms.locfileid: "59835829"
 
 ## <a name="power-management-tuning-resources"></a>電源管理調整資源
 
--   [電源原則組態和部署 Windows](https://msdn.microsoft.com/en-us/library/windows/hardware/mt422910.aspx)
+-   [電源原則組態和部署 Windows](https://msdn.microsoft.com/library/windows/hardware/mt422910.aspx)
 
 -   [使用 PowerCfg 評估系統能源效率](https://technet.microsoft.com/library/cc748940.aspx)
 
@@ -56,7 +56,7 @@ ms.locfileid: "59835829"
 -   [如何停用 TCP 自動調整將診斷工具](https://support.microsoft.com/kb/967475)
 
 ## <a name="active-directory-server-tuning-resources"></a>Active Directory 伺服器資源微調
--   [Active Directory 的效能](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567654(v=vs.85).aspx)
+-   [Active Directory 的效能](https://msdn.microsoft.com/library/windows/hardware/dn567654(v=vs.85).aspx)
 -   [如何在 Windows Server 2003 和 Windows 2000 Server 中設定 Active Directory 的診斷事件記錄](https://support.microsoft.com/kb/314980)
 
 ## <a name="virtualization-server-tuning-resources"></a>虛擬化伺服器資源微調
@@ -83,19 +83,19 @@ ms.locfileid: "59835829"
 
 ## <a name="server-workload-tuning-resources"></a>伺服器工作負載調整資源
 
--   [效能微調方針 NTttcp](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567663(v=vs.85).aspx)
+-   [效能微調方針 NTttcp](https://msdn.microsoft.com/library/windows/hardware/dn567663(v=vs.85).aspx)
 
 -   [Ttcp](http://en.wikipedia.org/wiki/Ttcp)
 
 -   [如何使用 NTttcp 測試網路效能](https://msdn.microsoft.com/windows/hardware/gg463264.aspx)
 
--   [使用檔案伺服器 Capactiy 工具](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567658(v=vs.85).aspx)
+-   [使用檔案伺服器 Capactiy 工具](https://msdn.microsoft.com/library/windows/hardware/dn567658(v=vs.85).aspx)
 
--   [使用 SPECsfs2008 檔案伺服器](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567653(v=vs.85).aspx)
+-   [使用 SPECsfs2008 檔案伺服器](https://msdn.microsoft.com/library/windows/hardware/dn567653(v=vs.85).aspx)
 
--   [銷售及散發工作負載的效能微調](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567646(v=vs.85).aspx)
+-   [銷售及散發工作負載的效能微調](https://msdn.microsoft.com/library/windows/hardware/dn567646(v=vs.85).aspx)
 
--   [線上交易處理 (OLTP) 的效能微調](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567642(v=vs.85).aspx)
+-   [線上交易處理 (OLTP) 的效能微調](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
 -   [如何：設定 SQL Server 使用軟體 NUMA](https://go.microsoft.com/fwlink/?LinkId=98292)
 
@@ -106,7 +106,7 @@ ms.locfileid: "59835829"
 
 ## <a name="server-tuning-tools"></a>伺服器微調工具
 
--   [Microsoft Server Performance Advisor](https://msdn.microsoft.com/en-us/library/windows/hardware/dn481522(v=vs.85).aspx)
+-   [Microsoft Server Performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522(v=vs.85).aspx)
 
 ## <a name="performance-tuning-guidelines-for-previous-versions-of-windows-server"></a>針對先前版本的 Windows Server 的效能微調指導方針
 

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 65af14e3adfacd96334e2326f8dd0b346e27034a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 655a7b02468db4246b85b495289806a3f9735a95
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850179"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281998"
 ---
 # <a name="border-gateway-protocol-bgp"></a>邊界閘道通訊協定 (BGP)
 
@@ -150,7 +149,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 **BGP 路由遠端存取角色服務**。 您現在可以安裝**路由**而不需要安裝遠端存取伺服器角色的角色服務**遠端存取服務 (RAS)** 當您想要為 BGP LAN 路由器使用 「 遠端存取角色服務。  這可減少 BGP 路由器的記憶體耗用量，並只會安裝 BGP 的動態路由所需的元件。 路由角色服務是很有用時只有 BGP 路由器 VM 是必要的而且您不需要使用 DirectAccess 或 VPN。 此外，使用 「 遠端存取與 BGP 的 LAN 路由器為您提供動態內部網路上的 BGP 路由優點。  
   
-**BGP 統計資料 (訊息計數器、路由計數器)**。 如需要，BGP 路由器可支援顯示訊息和路由的統計資料，方法是使用 **Get-BgpStatistics** Windows PowerShell 命令。  
+**BGP 統計資料 (訊息計數器、路由計數器)** 。 如需要，BGP 路由器可支援顯示訊息和路由的統計資料，方法是使用 **Get-BgpStatistics** Windows PowerShell 命令。  
   
 **相同成本多路徑路由 (ECMP) 支援**。 BGP 路由器可支援 ECMP，並且可以有多個相同成本的路由連接到 BGP 路由表和堆疊。 若啟用 ECMP，用於傳輸資料封包的路由的 BGP 路由器選取是隨機的。  
   
@@ -162,7 +161,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 **IPv4 和 IPv6 傳輸對等互連支援**。 BGP 路由器支援 IPv4 和 IPv6 對等互連。 不過，您必須將 BGP 識別碼設定為 BGP 路由器的 IPv4 位址。 針對所有 BGP 路由器部署拓撲，可以使用兩個對等互連類型 (IPV4/IPv6) 中的一個。  
   
-**IPv4 和 IPv6 單點傳播路由學習和通告功能 (多重通訊協定網路層連線資訊 [NLRI])**。 不論您使用何種傳輸，在建立工作階段時如果其他 BGP 路由器推出適當的功能，BGP 路由器即可以交換 IPv4 和 IPv6 路由。 若要設定 IPv6 路由，必須啟用參數 IPv6Routing，並且必須在路由器層級設定本機全域 IPv6 位址。  
+**IPv4 和 IPv6 單點傳播路由學習和通告功能 (多重通訊協定網路層連線資訊 [NLRI])** 。 不論您使用何種傳輸，在建立工作階段時如果其他 BGP 路由器推出適當的功能，BGP 路由器即可以交換 IPv4 和 IPv6 路由。 若要設定 IPv6 路由，必須啟用參數 IPv6Routing，並且必須在路由器層級設定本機全域 IPv6 位址。  
   
 **混合模式與被動模式對等互連**。 您可以在混合的模式-其中 BGP 路由器可做為啟動器和回應程式 」 或 「 被動模式，其中 BGP 路由器不會啟動對等互連，設定 BGP 對等互連工作階段，但不會回應傳入的要求。 混合模式是預設值，並建議用於 BGP 對等互連。 除非您想要將被動模式用於偵錯或診斷用途，否則也是如此。 針對所有 BGP 路由器部署拓撲，需要混合模式對等互連，才能在發生失敗事件時啟用自動重新啟動。  
   

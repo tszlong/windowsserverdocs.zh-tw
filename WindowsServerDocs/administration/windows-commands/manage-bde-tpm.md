@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d41c846034ad421d0da81bda57acbcd419c1ae1
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bc3cfa583866335d214282be08366854dec77d0f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437396"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280002"
 ---
 # <a name="manage-bde-tpm"></a>管理 bde: tpm
 
 > 適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
 > 
 > [!IMPORTANT]
-> 此命令不支援在執行 Windows 8、 Windows Server 2012 或更新版本的作業系統的電腦上使用。 針對這些電腦，您可以使用[TPM 管理適用於 Windows PowerShell 的 cmdlet](https://docs.microsoft.com/en-us/powershell/module/trustedplatformmodule/)。
+> 此命令不支援在執行 Windows 8、 Windows Server 2012 或更新版本的作業系統的電腦上使用。 針對這些電腦，您可以使用[TPM 管理適用於 Windows PowerShell 的 cmdlet](https://docs.microsoft.com/powershell/module/trustedplatformmodule/)。
 > 如果您使用此命令在執行 Windows 7 或 Windows Server 2008 的電腦上，您仍然可以設定電腦的受信任的平台模組 (TPM) 使用此命令。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 > ## <a name="syntax"></a>語法
 > ```

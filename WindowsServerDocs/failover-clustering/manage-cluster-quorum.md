@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b75d0039fec1b2ad9982d6ae9bf83fa8da2fdf
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: bf854418e9efb7dbb5bd07ba86f29d84ba54d68a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810992"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280381"
 ---
 # <a name="configure-and-manage-quorum"></a>設定和管理仲裁
 
@@ -67,7 +67,7 @@ Windows Server 中的仲裁模型很有彈性。 如果您需要修改您的叢�
 
 您可能想要從特定災害復原設定中的節點移除投票。 例如，在多站台叢集中，您可以從備份站台中的節點移除投票，讓那些節點不會影響仲裁運算。 建議只針對跨站台手動容錯移轉使用此設定。 如需詳細資訊，請參閱本主題稍後的[災害復原設定的仲裁考量](#quorum-considerations-for-disaster-recovery-configurations)。
 
-設定節點的投票可以藉由查閱**NodeWeight**共通的屬性，使用叢集節點[Get-clusternode](http://technet.microsoft.com/library/hh847268.aspx)Windows PowerShell cmdlet。 值 0 指示節點沒有設定仲裁投票。 值 1 指示已指派節點的仲裁投票，而且是由叢集來管理。 如需管理節點投票的相關詳細資訊，請參閱本主題之後會討論的 [動態仲裁管理](#dynamic-quorum-management) 。
+設定節點的投票可以藉由查閱**NodeWeight**共通的屬性，使用叢集節點[Get-clusternode](https://technet.microsoft.com/library/hh847268.aspx)Windows PowerShell cmdlet。 值 0 指示節點沒有設定仲裁投票。 值 1 指示已指派節點的仲裁投票，而且是由叢集來管理。 如需管理節點投票的相關詳細資訊，請參閱本主題之後會討論的 [動態仲裁管理](#dynamic-quorum-management) 。
 
 您可以使用 [驗證叢集仲裁]  驗證測試來驗證所有叢集節點的投票指派。
 

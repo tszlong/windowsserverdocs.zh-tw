@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d486735e-71fe-4443-9878-4b784cd588a7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2bb01cc21bde80b6f5a54b1b0c495e7248420f5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db8d2e6ffe8e3fae4723eb78cb9212a64fdb5711
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844519"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283557"
 ---
 # <a name="plan-an-advanced-directaccess-deployment"></a>規劃進階 DirectAccess 部署
 
@@ -26,11 +25,11 @@ ms.locfileid: "59844519"
 
 本主題列出部署執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012 的基本和進階功能的完整範圍的單一 DirectAccess 伺服器所需的規劃步驟。 規劃階段包含下列主題。  
   
--   [步驟 1：規劃進階的 DirectAccess 基礎結構](da-adv-plan-s1-infrastructure.md)  
+-   [步驟 1：規劃進階 DirectAccess 基礎結構](da-adv-plan-s1-infrastructure.md)  
   
     在這個階段中，您將規劃網路和伺服器拓撲、防火牆設定、憑證需求、「網域名稱系統」(DNS)、Active Directory、DirectAccess 管理伺服器，以及 DirectAccess 網路位置伺服器。  
   
--   [步驟 2：規劃進階的 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
+-   [步驟 2：規劃進階 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
   
     在這個階段中，您將為用戶端和伺服器 (包括 DirectAccess 基礎結構和應用程式伺服器) 部署做規劃。  
   

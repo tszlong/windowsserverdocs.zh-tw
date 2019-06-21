@@ -9,12 +9,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4dd78e0e88678d4570d408b3dcd472bddc88ba
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: e7cbe64609e30b042df70020896aebd85b7d22b9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749670"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280778"
 ---
 # <a name="always-on-vpn-enhancements"></a>Always On VPN 增強功能
 
@@ -27,7 +27,7 @@ ms.locfileid: "66749670"
 
 - **平台整合：** 一律開啟 」 VPN 已改進的 Windows 作業系統和協力廠商解決方案，以提供無數的進階的連線案例穩固的平台的整合。
 
-- **安全性：** 一律開啟 」 VPN 有新的進階安全性功能，可限制類型的流量，哪些應用程式可以使用 VPN 連線，以及您可以使用的驗證方法來起始連線。 連線時作用中大部分，它是情況的特別重要的安全連線。 如需詳細資訊，請參閱 < [VPN 驗證選項](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-authentication)。
+- **安全性：** 一律開啟 」 VPN 有新的進階安全性功能，可限制類型的流量，哪些應用程式可以使用 VPN 連線，以及您可以使用的驗證方法來起始連線。 連線時作用中大部分，它是情況的特別重要的安全連線。 如需詳細資訊，請參閱 < [VPN 驗證選項](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication)。
 
 - **VPN 連線能力：** 一律開啟 」 VPN，不論裝置通道會提供自動觸發程序功能。 之前一律開啟 」 VPN，觸發自動透過使用者或裝置驗證連線能力不是可能的。  
 

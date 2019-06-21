@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5e192c062e8ecd18128109321058ddc58b6b1e4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 093877657f19006bba2b80c10b92db1fb3b40fde
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839839"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280858"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>步驟 3 的 OTP 設定遠端存取伺服器
 
@@ -64,25 +63,25 @@ ms.locfileid: "59839839"
     > [!NOTE]  
     > OTP 已啟用的遠端存取伺服器上，如果您取消選取 停用 OTP 之後**使用 OTP**，將會解除安裝伺服器上的 ISAPI 及 CGI 延伸。  
   
-4.  如果需要 Windows 7 的支援，請選取**啟用 Windows 7 用戶端電腦透過 DirectAccess 進行連線**核取方塊。 注意：規劃一節所述，Windows 7 用戶端必須安裝支援 DirectAccess 與 OTP 的 DCA 2.0。  
+4.  如果需要 Windows 7 的支援，請選取**啟用 Windows 7 用戶端電腦透過 DirectAccess 進行連線**核取方塊。 注意:規劃一節所述，Windows 7 用戶端必須安裝支援 DirectAccess 與 OTP 的 DCA 2.0。  
   
-5.  按一下 [下一步] 。  
+5.  按一下 [下一步]  。  
   
 6.  在  **OTP 的 RADIUS 伺服器**區段中，按兩下空白**伺服器名稱**欄位。  
   
-7.  在 [**新增 RADIUS 伺服器**] 對話方塊中，輸入 RADIUS 伺服器的名稱**伺服器名稱**欄位。 按一下 **變更**旁**共用祕密**欄位，並輸入您在設定中的 RADIUS 伺服器時使用的相同密碼**新祕密**並**確認新的祕密**欄位。 按一下 [ **[確定]** 兩次，然後按一下**下一步]**。  
+7.  在 [**新增 RADIUS 伺服器**] 對話方塊中，輸入 RADIUS 伺服器的名稱**伺服器名稱**欄位。 按一下 **變更**旁**共用祕密**欄位，並輸入您在設定中的 RADIUS 伺服器時使用的相同密碼**新祕密**並**確認新的祕密**欄位。 按一下 [ **[確定]** 兩次，然後按一下**下一步]** 。  
   
     > [!NOTE]  
     > 如果 RADIUS 伺服器位於不同的遠端存取伺服器，網域則有**伺服器名稱**欄位必須指定 RADIUS 伺服器的 FQDN。  
   
-8.  在  **OTP CA 伺服器**區段中，選取可用於註冊 OTP 用戶端驗證憑證，然後按一下 CA 伺服器**新增**。 按一下 [下一步] 。  
+8.  在  **OTP CA 伺服器**區段中，選取可用於註冊 OTP 用戶端驗證憑證，然後按一下 CA 伺服器**新增**。 按一下 [下一步]  。  
   
 9. 在  **OTP 憑證範本**區段中，按一下**瀏覽**選取用於所發出的 OTP 驗證的憑證註冊的憑證範本。  
   
     > [!NOTE]  
     > 沒有 「 不包含撤銷資訊中發行的憑證 」 選項時，必須設定公司的 CA 所發行的 OTP 憑證的憑證範本。 如果憑證範本建立期間選取此選項，將無法登入正確 OTP 用戶端電腦。  
   
-    按一下 **瀏覽**選取用來註冊憑證遠端存取伺服器用來登入 OTP 憑證註冊要求的憑證範本。 按一下 [確定] 。 按一下 [下一步] 。  
+    按一下 **瀏覽**選取用來註冊憑證遠端存取伺服器用來登入 OTP 憑證註冊要求的憑證範本。 按一下 [確定]  。 按一下 [下一步]  。  
   
 10. 如果免除從 DirectAccess OTP 與特定使用者為必要項，然後在**OTP 豁免**區段中，選取**不需要使用雙因素驗證來驗證指定的安全性群組中的使用者**. 按一下 **安全性群組**並選取已建立的 OTP 豁免安全性群組。  
   

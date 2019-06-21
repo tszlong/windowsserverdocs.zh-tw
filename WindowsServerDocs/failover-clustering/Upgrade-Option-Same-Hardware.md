@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 02/28/2019
 description: 本文說明升級 2 個節點容錯移轉叢集使用相同的硬體
 ms.localizationpriority: medium
-ms.openlocfilehash: 77cde9e64fda385facd91d86483f4d7f749f30a1
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 6787d852cc5075e306373a163814135190f27fd6
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453047"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280248"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>升級的相同硬體上的容錯移轉叢集
 
@@ -25,7 +25,7 @@ ms.locfileid: "66453047"
 
 ## <a name="overview"></a>總覽
 
-升級作業系統，在現有的容錯移轉叢集時，才支援從 Windows Server 2016 轉為 Windows 2019。  如果容錯移轉叢集執行較早版本，例如例如 Windows Server 2012 R2 和舊版中，升級的叢集服務正在執行時將不允許聯結在一起的節點。  如果使用相同的硬體，可以採取步驟，以取得較新版本。  
+升級作業系統，在現有的容錯移轉叢集時，才支援從 Windows Server 2016 轉為 Windows 2019。  如果容錯移轉叢集執行較早的版本，例如 Windows Server 2012 R2 和舊版中，升級的叢集服務正在執行時不會允許聯結在一起的節點。  如果使用相同的硬體，可以採取步驟，以取得較新版本。  
 
 之前的容錯移轉叢集升級程序，請參閱[Windows 升級中心](https://www.microsoft.com/upgradecenter)。  當您 Windows Server 就地升級時，您會將從現有的作業系統版本較新的版本，但仍使用相同硬體上。 升級的就地至少一個和有時候這兩個版本開始，可以是 Windows Server。 例如，可以升級 Windows Server 2012 R2 和 Windows Server 2016 就地升級到 Windows Server 2019。  也請記住[叢集移轉精靈](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/)可用，但僅適用於最多傳回兩個版本。 下圖顯示適用於 Windows Server 的升級路徑。 指標的向下箭號代表移動到 Windows Server 2019 的較舊版本的支援升級路徑。
 

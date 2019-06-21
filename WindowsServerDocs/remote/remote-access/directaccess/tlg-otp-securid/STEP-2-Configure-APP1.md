@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 612d3f4e9be71f60811b4499d9bdb8ae3bd217e8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 093f8215691b21d7b7fefc3b1c51f3a41af9bea6
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847489"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283137"
 ---
 # <a name="step-2-configure-app1"></a>步驟 2 設定 APP1
 
@@ -45,9 +44,9 @@ ms.locfileid: "59847489"
   
 5.  在 **一般**索引標籤中，於**範本顯示名稱**，型別**DAOTPRA**。 設定**有效期**為 2 天，並將**續約期限**為 1 天。 如果**憑證範本**就會顯示警告，請按一下**確定**。  
   
-6.  按一下 [安全性]  索引標籤，然後按一下 [新增] 。  
+6.  按一下 [安全性]  索引標籤，然後按一下 [新增]  。  
   
-7.  在 [**選取使用者、 電腦、 服務帳戶或群組**] 對話方塊中，按一下**物件類型**。 在上**物件類型**對話方塊中，選取**電腦**，然後按一下 **確定**。 在 **輸入物件名稱來選取**方塊中，輸入**EDGE1**，按一下**確定**，然後在**允許**欄中，選取**讀取**，**註冊**，以及**自動註冊**核取方塊。 按一下  **Authenticated Users**，選取**讀取**底下的核取方塊**允許**資料行，並清除所有其他核取方塊。 按一下  **Domain Computers**，並取消核取**註冊**之下**允許**資料行。 按一下  **Domain Admins**並**Enterprise Admins** ，按一下 **完全控制**下**允許**兩個資料行。 按一下 **[套用]**。  
+7.  在 [**選取使用者、 電腦、 服務帳戶或群組**] 對話方塊中，按一下**物件類型**。 在上**物件類型**對話方塊中，選取**電腦**，然後按一下 **確定**。 在 **輸入物件名稱來選取**方塊中，輸入**EDGE1**，按一下**確定**，然後在**允許**欄中，選取**讀取**，**註冊**，以及**自動註冊**核取方塊。 按一下  **Authenticated Users**，選取**讀取**底下的核取方塊**允許**資料行，並清除所有其他核取方塊。 按一下  **Domain Computers**，並取消核取**註冊**之下**允許**資料行。 按一下  **Domain Admins**並**Enterprise Admins** ，按一下 **完全控制**下**允許**兩個資料行。 按一下 **[套用]** 。  
   
 8.  按一下 **主體名稱**索引標籤，然後再按一下**Active Directory 資訊來建立**。 在 **主體名稱格式：** 清單中，選取**DNS 名稱**，請確定**DNS 名稱** 方塊已核取，然後按一下 **套用**。  
   
@@ -68,7 +67,7 @@ ms.locfileid: "59847489"
     >   
     > **Windows Server 2008 R2 CA**。 如果您已部署執行 Windows Server 2008 R2 的憑證授權單位 (CA)，您必須設定憑證範本**續約期限**1 或 2 個小時，而**有效期**至長度超過**續約期限**，但不是能超過 4 小時。 如果您設定憑證範本**有效期**超過 4 小時透過 CA 執行 Windows Server 2008 R2 DirectAccess 安裝精靈 無法偵測的憑證範本和 DirectAccess安裝會失敗。  
   
-5.  按一下 **安全性**索引標籤上，選取**Authenticated Users**，請在**允許**資料行，然後選取**讀取**和**註冊**核取方塊。 按一下 [確定] 。 按一下**Domain Admins**並**Enterprise Admins**，然後按一下**完全控制**下**允許**兩個資料行。 按一下 **[套用]**。  
+5.  按一下 **安全性**索引標籤上，選取**Authenticated Users**，請在**允許**資料行，然後選取**讀取**和**註冊**核取方塊。 按一下 [確定]  。 按一下**Domain Admins**並**Enterprise Admins**，然後按一下**完全控制**下**允許**兩個資料行。 按一下 **[套用]** 。  
   
 6.  按一下 **主體名稱**索引標籤，然後再按一下**Active Directory 資訊來建立**。 在 **主體名稱格式：** 清單中，選取**完整辨別的名稱**，請確定**使用者主體名稱 (UPN)** 方塊已核取，然後按一下 **套用**.  
   

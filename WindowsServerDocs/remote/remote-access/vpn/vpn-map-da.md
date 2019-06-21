@@ -9,12 +9,12 @@ ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4a5f026267d2aba5ec5026bff5d30244097f13c5
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: e56691e05bd15f52a330d511cba6804b3ebec65f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749477"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282328"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Alwayson VPN 功能
 
@@ -39,7 +39,7 @@ ms.locfileid: "66749477"
 |                    您可以使用安全性群組來限制對特定的用戶端的遠端存取功能。                    |                                                                                                                                                                                                                                                                                                                                                                                 您可以設定一律開啟 」 VPN 時使用包含使用安全性群組來控制 VPN 存取的 RADIUS 支援細微的授權。                                                                                                                                                                                                                                                                                                                                                                                  |
 |                             在邊緣防火牆或 NAT 裝置後方的伺服器支援。                              |                                                                                                                                                                                                                                                                                                          一律開啟 」 VPN 可讓您使用 IKEv2 和 SSTP 等完整支援位於 NAT 裝置或邊緣防火牆後面的 VPN 閘道使用的通訊協定。<p><p>***注意：***<br>使用者通道支援 SSTP 和 IKEv2，而且裝置通道只提供任何支援 SSTP 遞補支援 IKEv2。                                                                                                                                                                                                                                                                                                          |
 |                 若要判斷內部網路連線，連線到公司網路時的能力。                 |                                                                                                                                                                                                                                                                                                               受信任的網路偵測能夠讓您偵測到公司網路連線，它會根據指派給網路介面和網路設定檔的連線特定 DNS 尾碼的評估。<p><p>定義使用：<br>**VPNv2/ProfileName/TrustedNetworkDetection**                                                                                                                                                                                                                                                                                                                |
-|                                  使用網路存取保護 (NAP) 的合規性。                                  | 一律開啟 」 VPN 用戶端可以整合 Azure 的條件式存取來強制執行 MFA、 裝置合規性或兩者的組合。 當符合條件式存取原則時，Azure AD 會發出用戶端可用來驗證 VPN 閘道 （根據預設，60 分鐘的時間） 短期 IPsec 驗證憑證。 裝置合規性會利用 System Center Configuration Manager/Intune 合規性原則，其中可以包括裝置健康情況證明狀態。 此時，Azure VPN 條件式存取會提供最接近的取代現有的 NAP 解決方案，雖然沒有任何形式的補救服務] 或 [隔離的網路功能。 如需詳細資訊，請參閱 < [VPN 和條件式存取](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-conditional-access)。<p>定義使用：<br>**VPNv2/ProfileName/DeviceCompliance** |
+|                                  使用網路存取保護 (NAP) 的合規性。                                  | 一律開啟 」 VPN 用戶端可以整合 Azure 的條件式存取來強制執行 MFA、 裝置合規性或兩者的組合。 當符合條件式存取原則時，Azure AD 會發出用戶端可用來驗證 VPN 閘道 （根據預設，60 分鐘的時間） 短期 IPsec 驗證憑證。 裝置合規性會利用 System Center Configuration Manager/Intune 合規性原則，其中可以包括裝置健康情況證明狀態。 此時，Azure VPN 條件式存取會提供最接近的取代現有的 NAP 解決方案，雖然沒有任何形式的補救服務] 或 [隔離的網路功能。 如需詳細資訊，請參閱 < [VPN 和條件式存取](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-conditional-access)。<p>定義使用：<br>**VPNv2/ProfileName/DeviceCompliance** |
 |                   若要定義的管理伺服器會在使用者登入之前，您可存取的能力。                    |                                                                                                                                                                        您可以使用裝置通道中的功能 （版本 1709 – 只有 IKEv2） VPN 設定檔結合流量篩選器來控制可透過存取公司網路上的有哪些管理系統中，以達到這項功能，在 一律開啟 」 VPN裝置通道。<p><p>***注意：***<br>如果您開啟裝置通道設定檔中的流量篩選器時，裝置通道會拒絕傳入的流量 （從公司網路，以便用戶端）。<p>定義使用：<br>**VPNv2/ProfileName/DeviceTunnel**<br>**VPNv2/ProfileName/TrafficFilterList**                                                                                                                                                                         |
 
 ## <a name="additional-functionalities"></a>其他功能

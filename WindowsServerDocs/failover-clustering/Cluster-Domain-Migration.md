@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/18/2019
 description: 本文說明將 Windows Server 2019 叢集從一個網域移到另一個
 ms.localizationpriority: medium
-ms.openlocfilehash: 1054de942e807f00586903683faeaf695ec2f033
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 5d5aaa333d2e20fa25e4738e343f326d63f75c6b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452936"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280216"
 ---
 # <a name="failover-cluster-domain-migration"></a>容錯移轉叢集網域移轉
 
@@ -61,7 +61,7 @@ Microsoft 不提供支援，系統管理員嘗試移動資源從某個網域，�
 動畫所示，此選項不是破壞性，但確實需要不同的硬體或從現有的叢集中的節點比已移除。
 
 1. 建立新的定義域新 clusterin，同時仍然有舊的叢集中。
-2. 使用[叢集移轉精靈](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))移轉到新叢集的所有資源。 提醒您，這不會複製資料，因此必須個別進行。
+2. 使用[叢集移轉精靈](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))移轉到新叢集的所有資源。 提醒您，這不會複製資料，因此必須個別進行。
 3. 解除委任或摧毀舊叢集。
 
 在這兩個選項中，新的叢集需要將所有[感知叢集應用程式](https://technet.microsoft.com/aa369082(v=vs.90))安裝，驅動程式的所有最新狀態，並可能測試，以確保所有將正常執行。  如果也需要移動資料，這會是耗時的程序。

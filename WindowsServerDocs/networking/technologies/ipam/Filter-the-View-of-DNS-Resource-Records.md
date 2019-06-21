@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fed5e1f923d3560b91f514d1e59d79b847557c8b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cc3f2b8ec6e7c5149ef6351639fbbf8f0def8be8
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847799"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283939"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>篩選 DNS 資源記錄的檢視
 
@@ -48,7 +47,7 @@ ms.locfileid: "59847799"
   
     ![選取準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_02.jpg)  
   
-8.  按一下 **\[新增\]**。  
+8.  按一下 **\[新增\]** 。  
   
     ![新增準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_03.jpg)  
   

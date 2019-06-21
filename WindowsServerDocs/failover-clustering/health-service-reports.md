@@ -8,15 +8,15 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: bc21b9fdec5700fec23dc6af7ca15873ded34bea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e018c0270a0bf410dada9c05d2c25e51fdfac1d8
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821959"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280158"
 ---
 # <a name="health-service-reports"></a>健全狀況服務報告
-> 適用於 Windows Server 2016
+> 適用於：Windows Server 2019，Windows Server 2016
 
 ## <a name="what-are-reports"></a>報告有哪些？  
 
@@ -110,7 +110,7 @@ public void DiscoverObjects(CimSession Session)
 
 這些是使用類似的 cmdlet，在 PowerShell 中取得的相同物件**Get-storagesubsystem**， **Get-storagenode**，並**Get-volume**。
 
-您可以存取所有相同屬性，記載於[存放管理 API 類別](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx)。
+您可以存取所有相同屬性，記載於[存放管理 API 類別](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)。
 
 ```
 ...
@@ -131,7 +131,7 @@ foreach (CimInstance Node in Nodes)
 
 ### <a name="iobserveronnext"></a>IObserver.OnNext()
 
-此範例程式碼會使用[觀察者設計模式](https://msdn.microsoft.com/en-us/library/ee850490(v=vs.110).aspx)實作觀察者其**OnNext()** 度量的每個新的範例時，會叫用方法。 其**OnCompleted()** 方法會呼叫如果/當串流結束時。 比方說，您可能會並用來重新初始化資料流中，因此它會繼續無限期。
+此範例程式碼會使用[觀察者設計模式](https://msdn.microsoft.com/library/ee850490(v=vs.110).aspx)實作觀察者其**OnNext()** 度量的每個新的範例時，會叫用方法。 其**OnCompleted()** 方法會呼叫如果/當串流結束時。 比方說，您可能會並用來重新初始化資料流中，因此它會繼續無限期。
 
 ```
 class MetricsObserver<T> : IObserver<T>

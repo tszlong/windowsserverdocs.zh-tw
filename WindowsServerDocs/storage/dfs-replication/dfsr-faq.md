@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 280104977e295ce0c9ccb05b806442ccaa73667b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 00bb3dfd79096e28f9752053152571ea9919edcf
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447237"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284270"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)
 
@@ -22,15 +22,15 @@ ms.locfileid: "66447237"
 
 此常見問題集會回答有關適用於 Windows Server （也稱為 DFS-R 或 DFSR） 的分散式檔案系統 (DFS) 複寫的問題。
 
-如需 DFS 命名空間的詳細資訊，請參閱[DFS 命名空間：常見問題集](https://technet.microsoft.com/en-us/library/ee404780)。
+如需 DFS 命名空間的詳細資訊，請參閱[DFS 命名空間：常見問題集](https://technet.microsoft.com/library/ee404780)。
 
 如需什麼是新的 DFS 複寫，請參閱下列主題：
 
-  - [DFS 命名空間和 DFS 複寫概觀](http://technet.microsoft.com/en-us/library/jj127250)（在 Windows Server 2012)  
+  - [DFS 命名空間和 DFS 複寫概觀](https://technet.microsoft.com/library/jj127250)（在 Windows Server 2012)  
       
-  - [What's New in 分散式檔案系統](https://technet.microsoft.com/en-us/library/ee307957)中的主題[從 Windows Server 2008 到 Windows Server 2008 R2 的功能變更](https://technet.microsoft.com/en-us/library/dd391932)  
+  - [What's New in 分散式檔案系統](https://technet.microsoft.com/library/ee307957)中的主題[從 Windows Server 2008 到 Windows Server 2008 R2 的功能變更](https://technet.microsoft.com/library/dd391932)  
       
-  - [分散式檔案系統](https://technet.microsoft.com/en-us/library/cc753479)中的主題[從 Windows Server 2003 SP1 到 Windows Server 2008 的功能變更](https://technet.microsoft.com/en-us/library/cc753208)  
+  - [分散式檔案系統](https://technet.microsoft.com/library/cc753479)中的主題[從 Windows Server 2003 SP1 到 Windows Server 2008 的功能變更](https://technet.microsoft.com/library/cc753208)  
       
 
 如需近期對本主題所做變更的清單，請參閱本主題的＜[變更歷程記錄](#change-history)＞一節。
@@ -47,15 +47,15 @@ ms.locfileid: "66447237"
 
 是，DFS 複寫可在執行 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2 或 Windows Server 2008 伺服器上的 SYSVOL 複寫取代 FRS。 執行 Windows Server 2003 R2 的伺服器不支援使用 DFS 複寫來複寫 SYSVOL 資料夾。
 
-如需有關使用 DFS 複寫來複寫 SYSVOL 的詳細資訊，請參閱[SYSVOL 複寫移轉指南：FRS 到 DFS 複寫](https://technet.microsoft.com/en-us/library/dd640019)。
+如需有關使用 DFS 複寫來複寫 SYSVOL 的詳細資訊，請參閱[SYSVOL 複寫移轉指南：FRS 到 DFS 複寫](https://technet.microsoft.com/library/dd640019)。
 
 ### <a name="can-i-upgrade-from-frs-to-dfs-replication-without-losing-configuration-settings"></a>可以升級從 FRS 到 DFS 複寫不會遺失組態設定？
 
 是的。 若要將複寫從 FRS 移轉至 DFS 複寫，請參閱下列文件：
 
-  - 若要移轉的 SYSVOL 資料夾以外之資料夾的複寫，請參閱[DFS 操作指南：從 FRS 移轉至 DFS 複寫](http://go.microsoft.com/fwlink/?linkid=192776)並[FRS2DFSR – DFSR 移轉公用程式 FRS](http://go.microsoft.com/fwlink/?linkid=195437) (http://go.microsoft.com/fwlink/?LinkID=195437)。  
+  - 若要移轉的 SYSVOL 資料夾以外之資料夾的複寫，請參閱[DFS 操作指南：從 FRS 移轉至 DFS 複寫](http://go.microsoft.com/fwlink/?linkid=192776)並[FRS2DFSR – DFSR 移轉公用程式 FRS](http://go.microsoft.com/fwlink/?linkid=195437) (http://go.microsoft.com/fwlink/?LinkID=195437) 。  
       
-  - 若要移轉至 DFS 複寫的 SYSVOL 資料夾的複寫，請參閱[SYSVOL 複寫移轉指南：FRS 到 DFS 複寫](https://technet.microsoft.com/en-us/library/dd640019)。  
+  - 若要移轉至 DFS 複寫的 SYSVOL 資料夾的複寫，請參閱[SYSVOL 複寫移轉指南：FRS 到 DFS 複寫](https://technet.microsoft.com/library/dd640019)。  
       
 
 ### <a name="can-i-use-dfs-replication-in-a-mixed-windowsunix-environment"></a>可以使用 DFS 複寫在混合的 Windows/UNIX 環境嗎？
@@ -74,7 +74,7 @@ ms.locfileid: "66447237"
 
 否，在執行 Windows Server 2003 的電腦上或稍早備份執行 Windows Server 2012 的電腦上的複寫資料夾的內容，請使用 Windows 備份 (Ntbackup.exe)，Windows Server 2008 R2 或 Windows Server 2008 不支援。
 
-若要備份會儲存在複寫資料夾的檔案，請使用 Windows Server Backup 或 Microsoft® System Center Data Protection Manager。 Windows Server 2008 R2 和 Windows Server 2008 中的備份和復原功能的相關資訊，請參閱[備份和復原](https://technet.microsoft.com/en-us/library/Cc754097)。 如需詳細資訊，請參閱 < [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=182261) (http://go.microsoft.com/fwlink/?LinkId=182261)。
+若要備份會儲存在複寫資料夾的檔案，請使用 Windows Server Backup 或 Microsoft® System Center Data Protection Manager。 Windows Server 2008 R2 和 Windows Server 2008 中的備份和復原功能的相關資訊，請參閱[備份和復原](https://technet.microsoft.com/library/Cc754097)。 如需詳細資訊，請參閱 < [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=182261) (http://go.microsoft.com/fwlink/?LinkId=182261) 。
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>檔案系統原則會影響 DFS 複寫？
 
@@ -101,7 +101,7 @@ ms.locfileid: "66447237"
 
 ### <a name="is-dfs-replication-cluster-aware"></a>是 DFS 複寫的叢集感知嗎？
 
-是，Windows Server 2012 R2、 Windows Server 2012 和 Windows Server 2008 R2 中 DFS 複寫包括複寫群組的成員身分新增容錯移轉叢集的能力。 如需詳細資訊，請參閱 <<c0> [ 新增到複寫群組的容錯移轉叢集](http://go.microsoft.com/fwlink/?linkid=155085)(http://go.microsoft.com/fwlink/?LinkId=155085)。 DFS 複寫服務的 Windows Server 2008 R2 之前的 Windows 版本上不設計成協調容錯移轉叢集，以及服務不會容錯移轉到另一個節點。
+是，Windows Server 2012 R2、 Windows Server 2012 和 Windows Server 2008 R2 中 DFS 複寫包括複寫群組的成員身分新增容錯移轉叢集的能力。 如需詳細資訊，請參閱 <<c0> [ 新增到複寫群組的容錯移轉叢集](http://go.microsoft.com/fwlink/?linkid=155085)(http://go.microsoft.com/fwlink/?LinkId=155085) 。 DFS 複寫服務的 Windows Server 2008 R2 之前的 Windows 版本上不設計成協調容錯移轉叢集，以及服務不會容錯移轉到另一個節點。
 
 
 > [!NOTE]
@@ -125,7 +125,7 @@ ms.locfileid: "66447237"
 
 ### <a name="what-antivirus-applications-are-compatible-with-dfs-replication"></a>與 DFS 複寫相容哪些防毒應用程式？
 
-防毒應用程式會造成過多的複寫，若其掃描活動同時修改了複寫的資料夾中的檔案。 如需詳細資訊，[測試防毒應用程式互通性與 DFS 複寫](http://go.microsoft.com/fwlink/?linkid=73990)(http://go.microsoft.com/fwlink/?LinkId=73990)。
+防毒應用程式會造成過多的複寫，若其掃描活動同時修改了複寫的資料夾中的檔案。 如需詳細資訊，[測試防毒應用程式互通性與 DFS 複寫](http://go.microsoft.com/fwlink/?linkid=73990)(http://go.microsoft.com/fwlink/?LinkId=73990) 。
 
 ### <a name="what-are-the-benefits-of-using-dfs-replication-instead-of-windows-sharepoint-services"></a>使用 DFS 複寫，而不 Windows SharePoint Services 的優點有哪些？
 
@@ -135,7 +135,7 @@ Windows® SharePoint® Services DFS 複寫 」 所沒有的檔案簽出功能的
 
 ### <a name="can-dfs-replication-replicate-between-branch-offices-without-a-vpn-connection"></a>DFS 複寫可以複寫不需要透過 VPN 連線的分公司之間嗎？
 
-是，假設是私人的廣域網路 (WAN) 連結 （而非透過網際網路） 連線的分公司。 不過，您也必須在外部防火牆開啟適當的連接埠。 DFS 複寫會使用 RPC 端點對應程式 （連接埠 135） 和大於 1024年的隨機指派暫時連接埠。 您可以使用**Dfsrdiag**命令列工具，可指定靜態連接埠，而不是暫時的連接埠。 如需如何指定 RPC 端點對應程式的詳細資訊，請參閱[文章 154596](http://go.microsoft.com/fwlink/?linkid=73991)在 Microsoft Knowledge Base (http://go.microsoft.com/fwlink/?LinkId=73991)。
+是，假設是私人的廣域網路 (WAN) 連結 （而非透過網際網路） 連線的分公司。 不過，您也必須在外部防火牆開啟適當的連接埠。 DFS 複寫會使用 RPC 端點對應程式 （連接埠 135） 和大於 1024年的隨機指派暫時連接埠。 您可以使用**Dfsrdiag**命令列工具，可指定靜態連接埠，而不是暫時的連接埠。 如需如何指定 RPC 端點對應程式的詳細資訊，請參閱[文章 154596](http://go.microsoft.com/fwlink/?linkid=73991)在 Microsoft Knowledge Base (http://go.microsoft.com/fwlink/?LinkId=73991) 。
 
 ### <a name="can-dfs-replication-replicate-files-encrypted-with-the-encrypting-file-system"></a>DFS 複寫可以複寫使用加密檔案系統加密的檔案嗎？
 
@@ -145,7 +145,7 @@ Windows® SharePoint® Services DFS 複寫 」 所沒有的檔案簽出功能的
 
 DFS 複寫都可以安全地複寫 Microsoft Outlook 個人資料夾檔案 (.pst) 和 Microsoft Access 檔案只有當儲存，以供封存之用，而且不會透過網路存取利用 （若要開啟.pst 或存取例如 Outlook 或存取用戶端檔案，先將檔案複製到本機存放裝置）。 此情況的原因如下所示：
 
-  - 透過網路連接開啟.pst 檔案可能會導致資料損毀.pst 檔案中。 如需有關為什麼.pst 檔案無法安全地存取從跨網路的詳細資訊，請參閱[文章 297019](http://go.microsoft.com/fwlink/?linkid=125363)在 Microsoft Knowledge Base (http://go.microsoft.com/fwlink/?LinkId=125363)。  
+  - 透過網路連接開啟.pst 檔案可能會導致資料損毀.pst 檔案中。 如需有關為什麼.pst 檔案無法安全地存取從跨網路的詳細資訊，請參閱[文章 297019](http://go.microsoft.com/fwlink/?linkid=125363)在 Microsoft Knowledge Base (http://go.microsoft.com/fwlink/?LinkId=125363) 。  
       
   - .pst 和 Access 檔案通常會在長的時間，例如 Outlook 或 Office Access 的用戶端正在存取的同時開啟的狀態。 這可防止 DFS 複寫在複寫這些檔案，直到它們關閉。  
       
@@ -168,7 +168,7 @@ DFS 複寫都可以安全地複寫 Microsoft Outlook 個人資料夾檔案 (.pst
 
 ### <a name="does-dfs-replication-support-replicating-an-entire-volume"></a>支援複寫整個磁碟區 DFS 複寫？
 
-是的。 不過，您必須先安裝 Windows Server 2003 Service Pack 2 或 hotfix。 如需詳細資訊，請參閱 <<c0> [ 文章 920335](http://go.microsoft.com/fwlink/?linkid=76776)在 Microsoft Knowledge Base (http://go.microsoft.com/fwlink/?LinkId=76776)。 此外，將整個磁碟區複寫可能會造成下列問題：
+是的。 不過，您必須先安裝 Windows Server 2003 Service Pack 2 或 hotfix。 如需詳細資訊，請參閱 <<c0> [ 文章 920335](http://go.microsoft.com/fwlink/?linkid=76776)在 Microsoft Knowledge Base (http://go.microsoft.com/fwlink/?LinkId=76776) 。 此外，將整個磁碟區複寫可能會造成下列問題：
 
   - 如果磁碟區會包含 Windows 分頁檔，複寫就會失敗，並在系統事件記錄檔中記錄 DFSR 事件 4312。  
       
@@ -197,7 +197,7 @@ DFS 複寫都可以安全地複寫 Microsoft Outlook 個人資料夾檔案 (.pst
 
 資料分割 DFS 複寫是本機系統帳戶執行，因此您不需要複寫的系統管理員身分登入的服務。 不過，您必須是網域系統管理員或受影響的檔案伺服器的本機系統管理員至 DFS 複寫組態進行變更。
 
-如需詳細資訊，請參閱 「 DFS 複寫安全性需求和委派 」 中[委派管理 DFS 複寫的能力](http://go.microsoft.com/fwlink/?linkid=182294)(http://go.microsoft.com/fwlink/?LinkId=182294)。
+如需詳細資訊，請參閱 「 DFS 複寫安全性需求和委派 」 中[委派管理 DFS 複寫的能力](http://go.microsoft.com/fwlink/?linkid=182294)(http://go.microsoft.com/fwlink/?LinkId=182294) 。
 
 ### <a name="how-can-i-upgrade-or-replace-a-dfs-replication-member"></a>如何升級或取代 DFS 複寫的成員？
 
@@ -205,7 +205,7 @@ DFS 複寫都可以安全地複寫 Microsoft Outlook 個人資料夾檔案 (.pst
 
 ### <a name="is-dfs-replication-suitable-for-replicating-roaming-profiles"></a>適合用 DFS 複寫來複寫漫遊設定檔嗎？
 
-是的。 複寫漫遊使用者設定檔時，會支援特定案例。 如需支援的案例，請參閱[Microsoft 的支援陳述式周圍複寫使用者設定檔資料](http://go.microsoft.com/fwlink/?linkid=201282)(http://go.microsoft.com/fwlink/?LinkId=201282)。
+是的。 複寫漫遊使用者設定檔時，會支援特定案例。 如需支援的案例，請參閱[Microsoft 的支援陳述式周圍複寫使用者設定檔資料](http://go.microsoft.com/fwlink/?linkid=201282)(http://go.microsoft.com/fwlink/?LinkId=201282) 。
 
 ### <a name="is-there-a-file-character-limit-or-limit-to-the-folder-depth"></a>有檔案字元的限制或資料夾深度限制嗎？
 
@@ -247,7 +247,7 @@ Windows 和 DFS 複寫可支援最多 32 千個字元的資料夾路徑。 DFS �
 <br>
 
 
-如需經過 Microsoft Windows Server 2003 R2 的延展性指導方針，請參閱[DFS 複寫延展性指導方針](http://go.microsoft.com/fwlink/?linkid=75043)(http://go.microsoft.com/fwlink/?LinkId=75043)。
+如需經過 Microsoft Windows Server 2003 R2 的延展性指導方針，請參閱[DFS 複寫延展性指導方針](http://go.microsoft.com/fwlink/?linkid=75043)(http://go.microsoft.com/fwlink/?LinkId=75043) 。
 
 ### <a name="when-should-i-not-use-dfs-replication"></a>何時應該不使用 DFS 複寫？
 
@@ -257,7 +257,7 @@ Windows 和 DFS 複寫可支援最多 32 千個字元的資料夾路徑。 DFS �
 
 ### <a name="why-is-a-schema-update-required-for-dfs-replication"></a>為什麼是 DFS 複寫所需的結構描述更新？
 
-DFS 複寫會使用 Active Directory 網域服務網域命名內容中新的物件，來儲存組態資訊。 當您更新 Active Directory 網域服務結構描述時，會建立這些物件。 如需詳細資訊，請參閱 <<c0> [ 檢閱 DFS 複寫的需求](http://go.microsoft.com/fwlink/?linkid=182264)(http://go.microsoft.com/fwlink/?LinkId=182264)。
+DFS 複寫會使用 Active Directory 網域服務網域命名內容中新的物件，來儲存組態資訊。 當您更新 Active Directory 網域服務結構描述時，會建立這些物件。 如需詳細資訊，請參閱 <<c0> [ 檢閱 DFS 複寫的需求](http://go.microsoft.com/fwlink/?linkid=182264)(http://go.microsoft.com/fwlink/?LinkId=182264) 。
 
 ## <a name="monitoring-and-management-tools"></a>監視和管理工具
 
@@ -265,7 +265,7 @@ DFS 複寫會使用 Active Directory 網域服務網域命名內容中新的物�
 
 是的。 有三種方式可將自動化的健康情況報告：
 
-  - 您可以使用 包含在 Windows Server 2012 R2 或 DfsrAdmin.exe 中排定的工作搭配 DFSR Windows PowerShell 模組來定期產生 健全狀況報表。 如需詳細資訊，請參閱 <<c0> [ 自動化 DFS 複寫健康情況報告](http://go.microsoft.com/fwlink/?linkid=74010)(http://go.microsoft.com/fwlink/?LinkId=74010)。  
+  - 您可以使用 包含在 Windows Server 2012 R2 或 DfsrAdmin.exe 中排定的工作搭配 DFSR Windows PowerShell 模組來定期產生 健全狀況報表。 如需詳細資訊，請參閱 <<c0> [ 自動化 DFS 複寫健康情況報告](http://go.microsoft.com/fwlink/?linkid=74010)(http://go.microsoft.com/fwlink/?LinkId=74010) 。  
       
   - 您可以使用 DFS 複寫管理組件，System Center Operations manager，建立以指定的條件為基礎的警示。  
       
@@ -274,17 +274,17 @@ DFS 複寫會使用 Active Directory 網域服務網域命名內容中新的物�
 
 ### <a name="can-i-use-microsoft-system-center-operations-manager-to-monitor-dfs-replication"></a>可以使用 Microsoft System Center Operations Manager 監視 DFS 複寫嗎？
 
-是的。 如需詳細資訊，請參閱 < [System Center Operations Manager 2007 的 DFS 複寫管理組件](http://go.microsoft.com/fwlink/?linkid=182265)在 Microsoft Download Center (http://go.microsoft.com/fwlink/?LinkId=182265)。
+是的。 如需詳細資訊，請參閱 < [System Center Operations Manager 2007 的 DFS 複寫管理組件](http://go.microsoft.com/fwlink/?linkid=182265)在 Microsoft Download Center (http://go.microsoft.com/fwlink/?LinkId=182265) 。
 
 ### <a name="does-dfs-replication-support-remote-management"></a>DFS 複寫是否支援遠端管理？
 
 是的。 DFS 複寫 」 支援使用 DFS 管理主控台遠端管理，**新增複寫群組**命令。 比方說，在伺服器 A 上，您可以連線到具有做為成員伺服器 A 和 B 的樹系中所定義的複寫群組。
 
-DFS 管理是隨附於 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008 和 Windows Server 2003 R2。 若要管理 DFS 複寫，從其他版本的 Windows，使用 遠端桌面或[遠端伺服器管理工具的 Windows 7](https://technet.microsoft.com/en-us/library/Ee449475)。
+DFS 管理是隨附於 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008 和 Windows Server 2003 R2。 若要管理 DFS 複寫，從其他版本的 Windows，使用 遠端桌面或[遠端伺服器管理工具的 Windows 7](https://technet.microsoft.com/library/Ee449475)。
 
 
 > [!IMPORTANT]
-> 若要檢視或管理包含唯讀複寫的資料夾或容錯移轉叢集成員的複寫群組，您必須使用隨附於 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、的DFS管理的版本<a href="http://go.microsoft.com/fwlink/p/?linkid=238560">適用於 Windows 8 的遠端伺服器管理工具</a>，或<a href="https://technet.microsoft.com/en-us/library/ee449475">Windows 7 的遠端伺服器管理工具</a>。 
+> 若要檢視或管理包含唯讀複寫的資料夾或容錯移轉叢集成員的複寫群組，您必須使用隨附於 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、的DFS管理的版本<a href="http://go.microsoft.com/fwlink/p/?linkid=238560">適用於 Windows 8 的遠端伺服器管理工具</a>，或<a href="https://technet.microsoft.com/library/ee449475">Windows 7 的遠端伺服器管理工具</a>。 
 <br>
 
 
@@ -304,7 +304,7 @@ DFS 管理是隨附於 Windows Server 2012 R2、 Windows Server 2012、 Windows 
       
   - DFS 管理具有內建的診斷報告複寫待處理項目、 複寫效率和指定的複寫群組中檔案和資料夾的數目。  
       
-  - Windows Server 2012 R2 中的 DFSR Windows PowerShell 模組包含 cmdlet 來啟動傳播測試和寫入傳播和健康情況報告。 如需詳細資訊，請參閱 < [Windows PowerShell 中分散式檔案系統複寫 Cmdlet](http://technet.microsoft.com/library/dn296601.aspx)。  
+  - Windows Server 2012 R2 中的 DFSR Windows PowerShell 模組包含 cmdlet 來啟動傳播測試和寫入傳播和健康情況報告。 如需詳細資訊，請參閱 < [Windows PowerShell 中分散式檔案系統複寫 Cmdlet](https://technet.microsoft.com/library/dn296601.aspx)。  
       
   - Dfsrdiag.exe 是可以在待處理項目計數或觸發程序傳播測試所產生的命令列工具。 同時顯示複寫的狀態。 傳播會顯示是否檔案會被複寫到所有節點。 待處理項目會顯示多少檔案仍需要複寫前兩部電腦都保持同步。待處理項目計數是複寫群組成員尚未處理的更新數目。 在電腦上執行 Windows Server 2012 R2、 Windows Server 2012 或 Windows Server 2008 R2，Dfsrdiag.exe 也可以顯示目前正在複寫 DFS 複寫的更新。  
       
@@ -339,7 +339,7 @@ DFS 複寫在您設定您想要在連接之後，使用的最大頻寬和服務�
 
 然而，頻寬節流設定不正確的 100%，而且 DFS 複寫可以使連結飽和期限很短的時間。 這是因為 DFS 複寫節流頻寬節流的 RPC 呼叫。 因為此程序依賴各種緩衝區中的網路堆疊，包括 RPC、 較低層級的複寫流量通常會以高載，這有時可能會使飽和的網路連結。
 
-在 Windows Server 2008 的 DFS 複寫包含數個效能增強功能，如所述[分散式檔案系統](https://technet.microsoft.com/en-us/library/Cc753479)中的主題[從 Windows Server 2003 SP1 到 Windows Server 的功能變更2008](https://technet.microsoft.com/en-us/library/cc753208)。
+在 Windows Server 2008 的 DFS 複寫包含數個效能增強功能，如所述[分散式檔案系統](https://technet.microsoft.com/library/Cc753479)中的主題[從 Windows Server 2003 SP1 到 Windows Server 的功能變更2008](https://technet.microsoft.com/library/cc753208)。
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>DFS 複寫的效能與使用 FRS 如何比較的？
 
@@ -474,9 +474,9 @@ DFS 複寫的複寫群組的所有其他成員上的檔案重新命名的下一�
 
 否，您無法設定 DFS 複寫會將哪些檔案屬性。
 
-如需屬性值和其描述的清單，請參閱 <<c0> [ 檔案屬性](http://go.microsoft.com/fwlink/?linkid=182268)MSDN 上 (http://go.microsoft.com/fwlink/?LinkId=182268)。
+如需屬性值和其描述的清單，請參閱 <<c0> [ 檔案屬性](http://go.microsoft.com/fwlink/?linkid=182268)MSDN 上 (http://go.microsoft.com/fwlink/?LinkId=182268) 。
 
-利用下列的屬性值設為`SetFileAttributes dwFileAttributes`函式，而且它們會複寫由 「 DFS 複寫。 這些屬性的值所做的變更會觸發複寫的屬性。 除非內容也會變更，不會複寫檔案的內容。 如需詳細資訊，請參閱 < [SetFileAttributes 函式](http://go.microsoft.com/fwlink/?linkid=182269)在 MSDN library (http://go.microsoft.com/fwlink/?LinkId=182269)。
+利用下列的屬性值設為`SetFileAttributes dwFileAttributes`函式，而且它們會複寫由 「 DFS 複寫。 這些屬性的值所做的變更會觸發複寫的屬性。 除非內容也會變更，不會複寫檔案的內容。 如需詳細資訊，請參閱 < [SetFileAttributes 函式](http://go.microsoft.com/fwlink/?linkid=182269)在 MSDN library (http://go.microsoft.com/fwlink/?LinkId=182269) 。
 
   - 檔案\_屬性\_隱藏  
       
@@ -529,13 +529,13 @@ DFS 複寫不會複寫檔案\_屬性\_暫存值。
 
 是的。 DFS 複寫 」 支援複製檔案到之前的初始複寫的複寫群組成員。 此 「 預備 」 可以大幅降低複寫在初始複寫期間的資料量。
 
-在初始複寫不需要複寫內容，當檔案的差異是只有實際的屬性或時間戳記。 實際的屬性是 Win32 函式可以設定的屬性`SetFileAttributes`。 如需詳細資訊，請參閱 < [SetFileAttributes 函式](http://go.microsoft.com/fwlink/?linkid=182269)在 MSDN library (http://go.microsoft.com/fwlink/?LinkId=182269)。 如果兩個檔案不同的其他屬性，例如壓縮，則檔案的內容複寫。
+在初始複寫不需要複寫內容，當檔案的差異是只有實際的屬性或時間戳記。 實際的屬性是 Win32 函式可以設定的屬性`SetFileAttributes`。 如需詳細資訊，請參閱 < [SetFileAttributes 函式](http://go.microsoft.com/fwlink/?linkid=182269)在 MSDN library (http://go.microsoft.com/fwlink/?LinkId=182269) 。 如果兩個檔案不同的其他屬性，例如壓縮，則檔案的內容複寫。
 
 若要預先設置的複寫群組成員，將檔案複製到目的地伺服器上適當的資料夾，建立複寫群組，，然後選擇主要成員。 請選擇具有最新的檔案，您想要複寫，因為主要成員的內容會被視為 「 授權 」。 這表示，在初始複寫，主要成員的檔案一定會覆寫其他版本的複寫群組的其他成員上的檔案。
 
 如需預先植入，並複製下 DFSR 資料庫的資訊，請參閱[DFS 複寫初始同步處理 Windows Server 2012 R2 中：進攻](http://blogs.technet.com/b/filecab/archive/2013/08/21/dfs-replication-initial-sync-in-windows-server-2012-r2-attack-of-the-clones.aspx)。
 
-如需有關在初始複寫的詳細資訊，請參閱[建立複寫群組](https://technet.microsoft.com/en-us/library/cc725893)。
+如需有關在初始複寫的詳細資訊，請參閱[建立複寫群組](https://technet.microsoft.com/library/cc725893)。
 
 ### <a name="does-dfs-replication-overcome-common-file-replication-service-issues"></a>DFS 複寫是否會解決常見的檔案複寫服務問題？
 
@@ -610,7 +610,7 @@ DFS 複寫不會合併檔案，就會發生衝突時。 不過，它會嘗試保
 
 ### <a name="how-do-i-force-replication-or-polling"></a>如何強制複寫或輪詢？
 
-您可以立即強制複寫使用 DFS 管理中所述[編輯複寫排程](https://technet.microsoft.com/en-us/library/Cc732278)。 您也可以使用 強制複寫`Sync-DfsReplicationGroup`所導入的 Windows Server 2012 R2，DFSR PowerShell 模組內含的 cmdlet 或**Dfsrdiag SyncNow**命令。 您可以使用，以強制輪詢`Update-DfsrConfigurationFromAD`cmdlet，或有**Dfsrdiag pollad /** 命令。
+您可以立即強制複寫使用 DFS 管理中所述[編輯複寫排程](https://technet.microsoft.com/library/Cc732278)。 您也可以使用 強制複寫`Sync-DfsReplicationGroup`所導入的 Windows Server 2012 R2，DFSR PowerShell 模組內含的 cmdlet 或**Dfsrdiag SyncNow**命令。 您可以使用，以強制輪詢`Update-DfsrConfigurationFromAD`cmdlet，或有**Dfsrdiag pollad /** 命令。
 
 ### <a name="is-it-possible-to-configure-a-quiet-time-between-replications-for-files-that-change-frequently"></a>是否可以設定複寫經常變更的檔案之間的無訊息的時間？
 
@@ -618,7 +618,7 @@ DFS 複寫不會合併檔案，就會發生衝突時。 不過，它會嘗試保
 
 ### <a name="is-it-possible-to-configure-one-way-replication-with-dfs-replication"></a>是否可以使用 DFS 複寫設定單向複寫？
 
-是的。 如果您使用 Windows Server 2012 或 Windows Server 2008 R2，您可以建立唯讀的複寫的資料夾複寫透過單向連線的內容。 如需詳細資訊，請參閱 <<c0> [ 的特定成員上進行複寫資料夾設為唯讀](http://go.microsoft.com/fwlink/?linkid=156740)(http://go.microsoft.com/fwlink/?LinkId=156740)。
+是的。 如果您使用 Windows Server 2012 或 Windows Server 2008 R2，您可以建立唯讀的複寫的資料夾複寫透過單向連線的內容。 如需詳細資訊，請參閱 <<c0> [ 的特定成員上進行複寫資料夾設為唯讀](http://go.microsoft.com/fwlink/?linkid=156740)(http://go.microsoft.com/fwlink/?LinkId=156740) 。
 
 我們不支援使用 Windows Server 2008 或 Windows Server 2003 R2 中 DFS 複寫建立單向複寫連線。 如此一來，可能會造成許多的問題包括健康情況檢查拓撲錯誤、 執行問題，以及 DFS 複寫資料庫的問題。
 
@@ -639,7 +639,7 @@ DFS 複寫不會合併檔案，就會發生衝突時。 不過，它會嘗試保
 
 如果在初始複寫失敗，或 DFS 複寫服務重新啟動在複寫期間，主要成員就會看見本機的 DFS 複寫資料庫中指定的主要成員，然後重試初始複寫。 如果清除 指定 Active Directory 網域服務中的主要位置後，主要成員的 DFS 複寫資料庫會遺失，但複寫群組的所有成員都完成初始複寫之前，所有的複寫群組的成員無法複寫資料夾，因為沒有伺服器指定為主要的成員。 如果發生這種情況，使用**Dfsradmin 成員資格/設定 /isprimary:true**命令手動還原主要成員指定主要成員伺服器上。
 
-如需初始複寫的詳細資訊，請參閱[建立複寫群組](https://technet.microsoft.com/en-us/library/cc725893)。
+如需初始複寫的詳細資訊，請參閱[建立複寫群組](https://technet.microsoft.com/library/cc725893)。
 
 
 > [!WARNING]

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 55528736-6c19-40bd-99e8-5668169ef3c7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a9cd811c680f15d53ecbd28d9201f28d9cb8af2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 59b5933a81c7021e58ea14e6ea4c4da374ce35cb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853059"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283665"
 ---
 # <a name="directaccess-offline-domain-join"></a>DirectAccess 離線網域加入
 
@@ -77,7 +76,7 @@ DirectAccess 離線網域加入是執行 Windows Server 2016、 Windows Server 2
 #### <a name="granting-user-rights-to-join-workstations-to-the-domain"></a>授與使用者權限，才能加入網域的工作站  
 若要修改的網域原則或建立新的原則會授與使用者權限，將工作站新增到網域的設定，您可以使用群組原則管理主控台 (GPMC)。  
   
-中的成員資格**Domain Admins**，或同等權限，授與使用者權限所需的最小值。  檢閱詳細使用適當帳戶和群組成員[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)(https://go.microsoft.com/fwlink/?LinkId=83477)。   
+中的成員資格**Domain Admins**，或同等權限，授與使用者權限所需的最小值。  檢閱詳細使用適當帳戶和群組成員[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)(https://go.microsoft.com/fwlink/?LinkId=83477) 。   
   
 ###### <a name="to-grant-rights-to-join-workstations-to-a-domain"></a>若要授與權限可以加入網域的工作站  
   
@@ -96,7 +95,7 @@ DirectAccess 離線網域加入是執行 Windows Server 2016、 Windows Server 2
 ## <a name="BKMK_ODKSxS"></a>離線網域加入程序  
 執行 Djoin.exe 來佈建電腦帳戶中繼資料以提高權限的命令提示字元。 當您執行佈建的命令時，會將電腦帳戶中繼資料建立的二進位檔案中，您指定為命令的一部分。  
   
-如需有關用來佈建的電腦帳戶，離線網域加入期間 NetProvisionComputerAccount 函式的詳細資訊，請參閱[NetProvisionComputerAccount 函式](https://go.microsoft.com/fwlink/?LinkId=162426)(https://go.microsoft.com/fwlink/?LinkId=162426)。 如需有關在目的地電腦本機執行 NetRequestOfflineDomainJoin 函式的詳細資訊，請參閱[NetRequestOfflineDomainJoin 函式](https://go.microsoft.com/fwlink/?LinkId=162427)(https://go.microsoft.com/fwlink/?LinkId=162427)。  
+如需有關用來佈建的電腦帳戶，離線網域加入期間 NetProvisionComputerAccount 函式的詳細資訊，請參閱[NetProvisionComputerAccount 函式](https://go.microsoft.com/fwlink/?LinkId=162426)(https://go.microsoft.com/fwlink/?LinkId=162426) 。 如需有關在目的地電腦本機執行 NetRequestOfflineDomainJoin 函式的詳細資訊，請參閱[NetRequestOfflineDomainJoin 函式](https://go.microsoft.com/fwlink/?LinkId=162427)(https://go.microsoft.com/fwlink/?LinkId=162427) 。  
   
 ## <a name="BKMK_ODJSteps"></a>執行 DirectAccess 離線網域加入的步驟  
 離線網域加入程序包含下列步驟：  
@@ -139,7 +138,7 @@ DirectAccess 離線網域加入是執行 Windows Server 2016、 Windows Server 2
   
 3.  在 [詳細資料] 窗格中，以滑鼠右鍵按一下**DirectAccessClients**，然後按一下**屬性**。  
   
-4.  在 [成員]  索引標籤上，按一下 [新增] 。  
+4.  在 [成員]  索引標籤上，按一下 [新增]  。  
   
 5.  按一下 **物件類型**，選取**電腦**，然後按一下**確定**。  
   

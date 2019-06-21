@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7fb7b5f7ae6e10d1007317949a42c48b4765f35c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d518be944ef57d1f26d1bdab8984155863c98630
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446067"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283413"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟 1 規劃基本 DirectAccess 基礎結構
 在單一伺服器上的基本 DirectAccess 部署的第一個步驟是執行部署所需的基礎結構規劃。 本主題描述基礎結構規劃步驟：  

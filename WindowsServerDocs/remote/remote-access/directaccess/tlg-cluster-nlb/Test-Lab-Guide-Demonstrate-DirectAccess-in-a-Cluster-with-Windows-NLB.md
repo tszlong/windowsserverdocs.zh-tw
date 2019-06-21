@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 910afa78553c828aff954f7677869569068198aa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2318fa58a343b24ec401390b3cbbd6f22fe86870
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869519"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281594"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>測試實驗室指南：示範在具備 Windows NLB 的叢集中的 DirectAccess
 
@@ -35,7 +34,7 @@ ms.locfileid: "59869519"
 ## <a name="KnownIssues"></a>已知的問題  
 以下是設定叢集案例的已知問題：  
   
--   在具有單一網路介面卡的純 IPv4 部署中設定 DirectAccess 之後，並且在預設 DNS64 (包含 ":3333::" 的 IPv6 位址) 自動於網路介面卡上設定之後，透過遠端存取管理主控台嘗試啟用負載平衡會導致提示使用者提供 IPv6 DIP。 如果提供 IPv6 DIP，設定會在按一下 [認可] 之後失敗，並發生錯誤：參數不正確。  
+-   在具有單一網路介面卡的純 IPv4 部署中設定 DirectAccess 之後，並且在預設 DNS64 (包含 ":3333::" 的 IPv6 位址) 自動於網路介面卡上設定之後，透過遠端存取管理主控台嘗試啟用負載平衡會導致提示使用者提供 IPv6 DIP。 如果提供 IPv6 DIP，設定會在按一下 [認可]  之後失敗，並發生錯誤：參數不正確。  
   
     解決此問題：  
   
@@ -43,9 +42,9 @@ ms.locfileid: "59869519"
   
     2.  使用下載的指令碼 Backup-RemoteAccess.ps1 備份遠端存取 GPO  
   
-    3.  嘗試啟用負載平衡，直到它失敗所在的步驟。 在 [啟用負載平衡] 對話方塊中，展開詳細資料區域、在詳細資料區域以滑鼠右鍵按一下，然後按一下 [複製指令碼] 。  
+    3.  嘗試啟用負載平衡，直到它失敗所在的步驟。 在 [啟用負載平衡] 對話方塊中，展開詳細資料區域、在詳細資料區域以滑鼠右鍵按一下，然後按一下 [複製指令碼]  。  
   
-    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如:   
+    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如:  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  
@@ -53,7 +52,7 @@ ms.locfileid: "59869519"
   
     5.  關閉任何開啟的 [遠端存取] 對話方塊，並關閉遠端存取管理主控台。  
   
-    6.  編輯貼上的文字，並移除 IPv6 位址。 例如:   
+    6.  編輯貼上的文字，並移除 IPv6 位址。 例如:  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0') -InternetVirtualIPAddress @('10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

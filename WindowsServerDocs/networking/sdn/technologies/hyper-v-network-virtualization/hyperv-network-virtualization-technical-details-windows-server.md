@@ -7,19 +7,18 @@ ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.service: virtual-network
 ms.suite: na
-ms.technology:
-- networking-sdn
+ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c5310b6c41a95c9949abf630cf26f9b04f59a661
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b33c96ff7150b0dc4f6f93d2fa24741c9762a799
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446251"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282289"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>HYPER-V 網路虛擬化技術詳細資料在 Windows Server 2016
 

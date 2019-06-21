@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 7331418c1926958da07c94bca9ff9f871134f3fa
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5f2a99bb69fd41c05013788187838f8fceb5f69a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439877"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280454"
 ---
 # <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 
@@ -66,7 +66,7 @@ WSUS 會做為 Windows update 的介面，並管理說明需要下載的快速�
 
 #### <a name="specify-the-isv-file-cache"></a>指定 ISV 檔案快取
 
-新用戶端群組原則和行動裝置管理 (MDM) 設定中詳述[**組態服務提供者參考**](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference)定義 ISV 檔案快取的位置。
+新用戶端群組原則和行動裝置管理 (MDM) 設定中詳述[**組態服務提供者參考**](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference)定義 ISV 檔案快取的位置。
 
 | **名稱**                                              | **描述**                                                                                                                                                      |
 |-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -93,7 +93,7 @@ ISV 檔案快取必須填入受管理用戶端上安裝的更新相關聯的檔�
 
 **若要填入 ISV 檔案快取：**
 
-1. 使用[WSUS Api](https://msdn.microsoft.com/en-us/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx)存取更新的檔案路徑和檔案名稱 MU 服務。
+1. 使用[WSUS Api](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx)存取更新的檔案路徑和檔案名稱 MU 服務。
 
     WSUS 伺服器上的每個更新的中繼資料可包含更新的檔案路徑和檔案名稱，在 Microsoft Update，如下所示 (Microsoft Update 中的主機名稱粗體，後面接著檔案路徑和檔案名稱): **<http://download.windowsupdate.com>** c/msdownload/更新 /software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
 
@@ -119,7 +119,7 @@ ISV 檔案快取必須填入受管理用戶端上安裝的更新相關聯的檔�
 
 5.  ISV 用戶端代理程式在下載更新後, 呼叫 WU 用戶端安裝已核准的更新
 
-請參閱[搜尋、 下載，並安裝更新](https://msdn.microsoft.com/en-us/library/windows/desktop/aa387102(v=vs.85).aspx)其他有關使用 WU 用戶端來掃描的詳細資訊，請下載並安裝更新。
+請參閱[搜尋、 下載，並安裝更新](https://msdn.microsoft.com/library/windows/desktop/aa387102(v=vs.85).aspx)其他有關使用 WU 用戶端來掃描的詳細資訊，請下載並安裝更新。
 
 ### <a name="download-workflow-options"></a>下載工作流程選項
 
