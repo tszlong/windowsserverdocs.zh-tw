@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ddcb162-dd92-406c-acab-d3de7239c644
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8c21b7fa62246170caeb07cb5865c1ff311e0f09
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c82d5e48f26d9defceb3b7583e06eeedbc71a082
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848749"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281667"
 ---
 # <a name="step-2-plan-the-basic-directaccess-deployment"></a>步驟 2 規劃基本 DirectAccess 部署
 
@@ -53,7 +52,7 @@ ms.locfileid: "59848749"
   
 -   **網路介面卡**-DirectAccess 精靈會自動偵測設定 DirectAccess 伺服器上的網路介面卡。 您可以確定會從選取正確的介面卡**檢閱**頁面。  
   
--   **IP-HTTPS 憑證**-因為未在此部署所需的 PKI 時，精靈會自動為 IP-HTTPS 和網路位置伺服器 （如果不有任何憑證），佈建自我簽署的憑證，並會自動啟用Kerberos proxy。 精靈也會啟用 NAT64 和 DNS64 僅支援 IPv4 的環境中的通訊協定轉譯。 精靈套用設定成功完成之後，按一下 [關閉]。  
+-   **IP-HTTPS 憑證**-因為未在此部署所需的 PKI 時，精靈會自動為 IP-HTTPS 和網路位置伺服器 （如果不有任何憑證），佈建自我簽署的憑證，並會自動啟用Kerberos proxy。 精靈也會啟用 NAT64 和 DNS64 僅支援 IPv4 的環境中的通訊協定轉譯。 精靈套用設定成功完成之後，按一下 [關閉]  。  
   
 -   **Windows 7 用戶端**-您無法啟用 Windows 7 用戶端，從 開始使用精靈的支援。 這可啟用從 進階安裝精靈。 如需詳細資訊，請參閱 <<c0> [ 部署單一 DirectAccess 伺服器使用進階設定](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。  
   
