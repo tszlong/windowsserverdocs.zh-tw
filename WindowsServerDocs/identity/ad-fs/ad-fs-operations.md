@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 72266dcedcda080ee98dd7bc90da8db1a27255b4
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: aa7fae25f68030702aecd378d797301d5cb83186
+ms.sourcegitcommit: 6b6c3601fb7493ab145ccff02db26d7123df9a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192529"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316348"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
@@ -53,13 +53,13 @@ ms.locfileid: "66192529"
 - [自訂 AD FS 2019 的 HTTP 安全性回應標頭](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
 - [AD FS 中的裝置驗證控制項](../ad-fs/operations/device-authentication-controls-in-AD-FS.md) 
-
 - [使用 SAML 2.0 改進互通性](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 - [從任何裝置加入工作地點網路提供 SSO 和無縫式次要因素驗證，跨公司應用程式](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [透過機密應用程式的其他多因素驗證管理風險](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [使用條件式存取控制管理風險](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [管理 AD FS 和 WAP 2016 中的 SSL 憑證](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
 - [設定 AD FS 實驗室環境](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
+- [SQL 正常調整與處理延遲](../ad-fs/operations/adfs-sql-latency.md) 
 - [逐步解說指南：透過機密應用程式的其他多因素驗證管理風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [逐步解說指南：使用條件式存取控制管理風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 - [逐步解說：將 Windows 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
