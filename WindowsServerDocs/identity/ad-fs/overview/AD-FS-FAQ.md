@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fc92e8b30d6b4c0c765333d3e22311e551d3365d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 1fe73df2ce209fc47c7414d33cb1e0a83d31dcd7
+ms.sourcegitcommit: 9bece8049b1766bd9bb0d5eb5921413a2de2ca61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280487"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67351291"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (Faq)
 
@@ -300,3 +300,6 @@ ADFS 和 Web 應用程式伺服器支援不會在端點執行 SSL 終止的任�
 在 AD FS 2016 中，語彙基元繫結會自動啟用，且會導致多個已知的問題與 proxy 和同盟案例的結果中此錯誤。 若要解決此問題，執行下列 Powershell 命令並移除語彙基元繫結支援。
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`
+
+### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>我已在 AD fs 的 Windows Server 2019，從 Windows Server 2016 中的 AD FS 升級我的伺服器陣列。 AD FS 伺服器陣列的伺服陣列行為層級已成功地提升至 2019年但 Web 應用程式 Proxy 組態仍會顯示為 Windows Server 2016？
+升級至 Windows Server 2019 之後, 的 Web 應用程式 Proxy 的設定版本會繼續顯示為 Windows Server 2016。 Web Application Proxy 的 Windows Server 2019，沒有新的版本特定的功能，如果伺服器陣列行為層級已成功產生 AD FS 上，Web 應用程式 Proxy 會繼續顯示為 Windows Server 2016 所設計。 

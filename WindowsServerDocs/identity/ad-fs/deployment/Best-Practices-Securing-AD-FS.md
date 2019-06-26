@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a7f4f29b37793b45a614bd592feddb339dd05c3d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 3cc4194b562dad17d0c2021f4aaf061114e2c94b
+ms.sourcegitcommit: 9bece8049b1766bd9bb0d5eb5921413a2de2ca61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67351303"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory Federation Services 的最佳做法
 
@@ -34,6 +34,9 @@ ms.locfileid: "67280608"
 >請注意，連接埠 49443 只是需要如果使用者憑證驗證會使用，這是 Azure AD 的選擇性和 Office 365。
 
 ![AD FS 標準拓樸](media/Best-Practices-Securing-AD-FS/adfssec2.png)
+
+>[!NOTE]
+> 連接埠 808 (Windows Server 2012 r2) 或連接埠 1501 （Windows Server 2016 +） 是將組態資料傳送至服務處理程序和 Powershell Net.TCP 連接埠 AD FS 會使用本機的 WCF 端點。 此連接埠可以看到執行 Get-adfsproperties |選取 NetTcpPort。 這是不需要在防火牆中開啟，但會顯示在掃描通訊埠的本機連接埠。 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect 和同盟伺服器 /WAP
 下表描述的連接埠和通訊協定所需的 Azure AD Connect 伺服器與同盟 /WAP 伺服器之間的通訊。  
