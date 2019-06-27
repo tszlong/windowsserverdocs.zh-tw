@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: fa3d7e75b32f0195346e58db54b7932c8d2fd3b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: beb2b3d1eefc5d70e39baa461708938ac9c17be5
+ms.sourcegitcommit: 3be280c8638214857dc355b201eb56a04499a5e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884999"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67396700"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center 擴充功能
 
@@ -43,17 +43,22 @@ Windows Admin Center 擴充功能是使用新式 Web 技術 (包括 HTML5、CSS�
 請參閱下列主題以深入了解 SDK 並開始使用：
 
 - [了解擴充功能的運作方式](understand-extensions.md)
-- [開發延伸模組](developing-extensions.md)
-- [輔助線](guides.md)
+- [開發擴充功能](developing-extensions.md)
+- [指南](guides.md)
 - [發行您的延伸模組](publish-extensions.md)
 
 ## <a name="partner-spotlight"></a>合作夥伴焦點
 
 了解我們合作夥伴已開始為 Windows Admin Center 生態系統帶來的驚喜價值，並立即試用這些擴充功能。 深入了解從 Windows Admin Center [安裝擴充功能的方式](../configure/using-extensions.md)。
 
+### <a name="biitops"></a>BiitOps
+BiitOps 變更延伸模組會提供變更追蹤 Windows Server 實體/虛擬機器上的硬體、 軟體和組態設定。 BiitOps 變更延伸模組會顯示精確的新功能、 變更和已刪除在單一-窗格-的-可用來協助追蹤問題的相關合規性、 可靠性和安全性。 [深入了解 BiitOps 變更延伸模組](case-studies/biitops.md)。
+
+![BiitOps 延伸模組](../media/extensibility-overview/biitops-1.png)
+
 ### <a name="dataon"></a>DataON
 
-DataON 的必須延伸模組會將監視、 管理和端對端深入了解 DataON 的超交集基礎結構和儲存體為基礎的系統在 Windows Server 上。 必須延伸模組會將唯一的值，如歷程記錄資料的報告、 磁碟對應、 系統警示和 SAN 類似呼叫主要服務，互補的 Windows Admin Center 伺服器和超交集基礎結構管理功能，透過無縫，一致的體驗。 [深入了解 DataON 的 MUST 擴充功能及其開發經驗](case-studies/dataon.md)。
+DataON 必須延伸模組會將監視、 管理和端對端了解 DataON 的超交集基礎結構和 Windows Server 為基礎的儲存體系統。 必須延伸模組會將唯一的值，如歷程記錄資料的報告、 磁碟對應、 系統警示和 SAN 類似呼叫主要服務，互補的 Windows Admin Center 伺服器和超交集基礎結構管理功能，透過無縫，一致的體驗。 [深入了解 DataON 的 MUST 擴充功能及其開發經驗](case-studies/dataon.md)。
 
 ![DataON MUST 擴充功能](../media/extensibility-overview/dataon-must-extension.png)
 
@@ -74,6 +79,12 @@ Lenovo XClarity 整合器擴充功能會順暢地整合到 Windows Admin Center 
 純的儲存體提供企業，提供以資料為中心的架構，以加速您的企業競爭優勢的全快閃資料儲存體解決方案。 Windows Admin Center 的單純的儲存體擴充功能提供純 FlashArray 產品的單一窗格檢視與可讓使用者進行監視工作、 檢視即時效能計量，以及管理儲存體磁碟區和起始端，透過單一 UI體驗。 [深入了解純粹的擴充功能和自己的開發經驗](case-studies/purestorage.md)。
 
 ![純的儲存體擴充功能](../media/extensibility-overview/purestorage-extension.png)
+
+### <a name="qct"></a>QCT
+
+QCT Management Suite 延伸模組可補充 Windows Admin Center，藉由提供實體伺服器監視和管理功能 QCT Azure Stack HCI 認證系統。 QCT Management Suite 延伸模組會顯示伺服器硬體的資訊，並提供直覺式的精靈 UI，可協助將實體磁碟有效率地硬體事件記錄檔工具和 S.M.A.R.T. 根據預測磁碟管理。 [深入了解 QCT Management Suite 延伸](case-studies/qct.md)。
+
+![QCT 延伸模組](../media/extensibility-overview/qct-extension.png)
 
 ### <a name="squared-up"></a>Squared Up
 

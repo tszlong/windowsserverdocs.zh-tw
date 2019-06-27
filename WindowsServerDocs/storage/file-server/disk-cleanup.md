@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: b479697366239144e5ca9d3486b84191eb51dc4d
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: fbec7cd2b8312f03998cfb27b739d0866d3a47c5
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67301601"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407661"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Windows Server 上使用磁碟清理
 
@@ -23,7 +23,7 @@ ms.locfileid: "67301601"
 
 若要啟動 磁碟清理工具，請執行 Cleanmgr.exe 命令，或選取**開始**，選取**Windows 系統管理工具**，然後選取**磁碟清理**。
 
-您也可以使用 執行磁碟清理[[cleanmgr] Windows 命令](../../administration/windows-commands/clean-mgr.md)然後使用命令列選項來指定磁碟清理會清除特定檔案。
+您也可以使用 執行磁碟清理[[cleanmgr] Windows 命令](../../administration/windows-commands/cleanmgr.md)然後使用命令列選項來指定磁碟清理會清除特定檔案。
 
 ## <a name="enable-disk-cleanup-on-an-earlier-version-of-windows-server-by-installing-the-desktop-experience"></a>在舊版的 Windows Server 上啟用清理磁碟，藉由安裝桌面體驗
 
@@ -78,4 +78,4 @@ ms.locfileid: "67301601"
 
 [釋出磁碟空間，在 Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
 
-[cleanmgr](../../administration/windows-commands/clean-mgr.md)
+[cleanmgr](../../administration/windows-commands/cleanmgr.md)

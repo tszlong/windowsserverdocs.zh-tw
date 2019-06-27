@@ -1,24 +1,20 @@
 ---
 title: Windows 命令
 description: Windows 命令
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: dongill
-ms.date: 05/22/2018
+ms.date: 06/26/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 861c8f35cf57fc7c8d03914dba2d971d50b66fc5
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: d0cf58ea8d37efccf80ce262b64e604218bd8d0b
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298169"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407652"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -53,8 +49,9 @@ ms.locfileid: "67298169"
  [W](#w) | 
 [X](#x) |Y |Z
 
-## <a name="prerequisites"></a>必要條件
-此 PDF 中包含的資訊適用於：
+## <a name="prerequisites"></a>先決條件
+
+包含在本主題資訊適用於：
 
 -   Windows Server 2019
 -   Windows Server (半年度管道)
@@ -67,6 +64,7 @@ ms.locfileid: "67298169"
 -   Windows 8.1
 
 ### <a name="command-shell-overview"></a>命令殼層概觀
+
 命令殼層的內建於 Windows 自動使用者帳戶管理或夜間備份，這類的例行工作批次 (.bat) 檔案的第一個殼層。 使用 Windows Script Host 中，您可以執行更複雜的指令碼命令殼層中。 如需詳細資訊，請參閱 < [cscript](cscript.md)或是[wscript](wscript.md)。 您可以使用指令碼，比您可以藉由使用使用者介面，更有效率地執行作業。 指令碼會接受在命令列可用的所有命令。
 
 Windows 具有兩個命令殼層：命令殼層並[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每個介面會提供您和作業系統或應用程式，提供一個環境，可自動化 IT 作業之間的直接通訊的軟體程式。
@@ -88,6 +86,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 > 若要設定**reg_DWOrd**值，請使用特定的函式的控制字元的十六進位值 (例如**0 9**  索引標籤和**0 08**會退格鍵)。 使用者指定的設定值優先於電腦設定，以及命令列選項的優先順序高於登錄設定。
 
 ## <a name="command-line-reference-a-z"></a>命令列參照 A-Z
+
 若要尋找特定的 Windows 命令，資訊在下列 [A-Z] 功能表中，按一下此命令會啟動，字母，然後按一下命令名稱。
 
 [A](#a) |
@@ -225,7 +224,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 - [chkntfs](chkntfs.md)
 - [choice](choice.md)
 - [cipher](cipher.md)
-- [cleanmgr](clean-mgr.md)
+- [cleanmgr](cleanmgr.md)
 - [clip](clip.md)
 - [cls](cls.md)
 - [Cmd](Cmd.md)

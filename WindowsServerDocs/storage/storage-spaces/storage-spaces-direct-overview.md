@@ -6,16 +6,16 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 06/07/2019
+ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 儲存空間直接存取，可讓您使用內部儲存體的叢集伺服器成軟體定義存放裝置解決方案的 Windows Server 的一項功能的概觀。
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ff63794de25565a9ade7eb4e8b66cf1e394c14a
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 98801af7f753e071e27f100f20ed149110c90f66
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812695"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407689"
 ---
 # <a name="storage-spaces-direct-overview"></a>儲存空間直接存取概觀
 
@@ -30,8 +30,8 @@ ms.locfileid: "66812695"
 |       |       |
 |   -   |   -   |
 | **了解**<br><ul><li>概觀 (您在此處)</li><li>[了解快取](understand-the-cache.md)</li><li>[容錯與儲存空間效率](storage-spaces-fault-tolerance.md)<li>[磁碟機對稱考量](drive-symmetry-considerations.md)</li><li>[了解和監視存放裝置重新同步](understand-storage-resync.md)</li><li>[了解叢集和集區仲裁](understand-quorum.md)</li><li>[叢集集合](cluster-sets.md)</li> | **規劃**<br><ul><li>[硬體需求](storage-spaces-direct-hardware-requirements.md)</li><li>[使用 CSV 記憶體內部讀取快取](csv-cache.md)</li><li>[選擇磁碟機](choosing-drives.md)</li><li>[規劃磁碟區](plan-volumes.md)</li><li>[使用客體 VM 叢集](storage-spaces-direct-in-vm.md)</li><li>[嚴重損壞修復](storage-spaces-direct-disaster-recovery.md)</li> |
-| **部署**<br><ul><li>[部署儲存空間直接存取](deploy-storage-spaces-direct.md)</li><li>[建立磁碟區](create-volumes.md)</li><li>[巢狀復原](nested-resiliency.md)</li><li>[設定仲裁](../../failover-clustering/manage-cluster-quorum.md)</li><li>[將儲存空間直接存取叢集升級到 Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li> | **管理**<br><ul><li>[使用 Windows Admin Center 管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[新增伺服器或磁碟機](add-nodes.md)</li><li>[使伺服器離線以進行維護](maintain-servers.md)</li><li>[移除伺服器](remove-servers.md)</li><li>[延伸磁碟區](resize-volumes.md)</li><li>[刪除磁碟區](delete-volumes.md)</li><li>[更新磁碟機韌體](../update-firmware.md)</li><li>[效能歷程記錄](performance-history.md)</li><li>[限定磁碟區配置](delimit-volume-allocation.md)</li><li>[超交集叢集上使用 Azure 監視器](configure-azure-monitor.md)</li> |
-| **疑難排解**<br><ul><li>[健全狀況和操作狀態的疑難排解](storage-spaces-states.md)</li><li>[收集診斷資料與儲存空間直接存取](data-collection.md)</li> | **近期部落格文章**<br><ul><li>[使用儲存空間直接存取的 13.7 百萬 IOPS： 超交集基礎結構的新業界記錄](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[超交集基礎結構，在 Windows Server 2019-倒數時鐘會立即啟動 ！](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[從 Windows Server 高峰會的五個大公告](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10,000 的儲存空間直接存取叢集和計算...](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
+| **部署**<br><ul><li>[部署儲存空間直接存取](deploy-storage-spaces-direct.md)</li><li>[建立磁碟區](create-volumes.md)</li><li>[巢狀復原](nested-resiliency.md)</li><li>[設定仲裁](../../failover-clustering/manage-cluster-quorum.md)</li><li>[將儲存空間直接存取叢集升級到 Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[了解和部署持續性記憶體](deploy-pmem.md)</li> | **管理**<br><ul><li>[使用 Windows Admin Center 管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[新增伺服器或磁碟機](add-nodes.md)</li><li>[使伺服器離線以進行維護](maintain-servers.md)</li><li>[移除伺服器](remove-servers.md)</li><li>[延伸磁碟區](resize-volumes.md)</li><li>[刪除磁碟區](delete-volumes.md)</li><li>[更新磁碟機韌體](../update-firmware.md)</li><li>[效能歷程記錄](performance-history.md)</li><li>[限定磁碟區配置](delimit-volume-allocation.md)</li><li>[超交集叢集上使用 Azure 監視器](configure-azure-monitor.md)</li> |
+| **疑難排解**<br><ul><li>[疑難排解案例](troubleshooting-storage-spaces.md)</li><li>[健全狀況和操作狀態的疑難排解](storage-spaces-states.md)</li><li>[收集診斷資料與儲存空間直接存取](data-collection.md)</li><li>[存放裝置類別記憶體健康情況管理](Storage-class-memory-health.md)</li> | **近期部落格文章**<br><ul><li>[使用儲存空間直接存取的 13.7 百萬 IOPS： 超交集基礎結構的新業界記錄](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[超交集基礎結構，在 Windows Server 2019-倒數時鐘會立即啟動 ！](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[從 Windows Server 高峰會的五個大公告](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10,000 的儲存空間直接存取叢集和計算...](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
 
 ## <a name="videos"></a>影片
 

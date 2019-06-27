@@ -7,17 +7,18 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: JasonGerend
-ms.date: 08/24/2016
+ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c39d704056c4ae6935f3be9c521c12ca1014820
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ebec8618c79c43816680387ae5e495f125b3c54
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870549"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407557"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
-> 適用於：Windows Server 2016 中，Windows 10 （1607年版）
+
+> 適用於：Windows Server 2019，Windows Server 2016、windows Server （半年通道），Windows 10
 
 本文向系統管理員和 IT 專業人員提供 Windows 中存放裝置類別記憶體 (NVDIMM-N) 裝置特定的錯誤處理與健全狀況管理相關資訊，強調說明存放裝置類別記憶體與傳統存放裝置之間的差異。
 
@@ -25,6 +26,8 @@ ms.locfileid: "59870549"
 - [使用非揮發性記憶體 (NVDIMM-N) 做為 Windows Server 2016 中的區塊儲存體](https://channel9.msdn.com/Events/Build/2016/P466)
 - [使用非揮發性記憶體 (NVDIMM-N) 做為 Windows Server 2016 中的位元組可定址存放裝置](https://channel9.msdn.com/Events/Build/2016/P470)
 - [加速 SQL Server 2016 與 Windows Server 2016 中的持續性記憶體的效能](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
+
+另請參閱[了解和部署儲存空間直接存取中的持續性記憶體](deploy-pmem.md)。
 
 從 Windows Server 2016 和 Windows 10 (版本 1607) 開始，Windows 中使用原生驅動程式支援 JEDEC 相容的 NVDIMM-N 存放裝置類別記憶體裝置。 雖然這些裝置的行為類似於其他磁碟 (HDD 與 SSD)，還是有一些差異。
 
@@ -48,50 +51,50 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 這麼做會產生此範例輸出︰
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
-|802c-01-1602-117cb5fc|良好|[確定]||
-|802c-01-1602-117cb64f|警告|預測性失敗|{超出閾值，NVDIMM\_N 錯誤}|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
+| 802c-01-1602-117cb5fc | 良好 | [確定] | |
+| 802c-01-1602-117cb64f | 警告 | 預測性失敗 | {超出閾值，NVDIMM\_N 錯誤} |
 
 > [!NOTE]
-> 若要尋找事件中指定之 NVDIMM-N 裝置的實體位置，請在 [事件檢視器] 中事件的 **\[詳細資料\]** 索引標籤上，移至 **\[EventData\]** > **\[位置\]**。 請注意，Windows Server 2016 會列出不正確的 NVDIMM-N 裝置位置，但這已在 Windows Server 版本 1709 中修正。
+> 若要尋找事件中指定之 NVDIMM-N 裝置的實體位置，請在 [事件檢視器] 中事件的 **\[詳細資料\]** 索引標籤上，移至 **\[EventData\]**  >  **\[位置\]** 。 請注意，Windows Server 2016 會列出不正確的 NVDIMM-N 裝置位置，但這已在 Windows Server 版本 1709 中修正。
 
 如需了解各種健全狀況的說明，請參閱下列各節。
 
 ## <a name="warning-health-status"></a>「警告」健全狀況狀態
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告] 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告]  的情況，如下列範例輸出中所示︰
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
-|802c-01-1602-117cb5fc|良好|[確定]||
-|802c-01-1602-117cb64f|警告|預測性失敗|{超出閾值，NVDIMM\_N 錯誤}|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
+| 802c-01-1602-117cb5fc | 良好 | [確定] | |
+| 802c-01-1602-117cb64f | 警告 | 預測性失敗 | {超出閾值，NVDIMM\_N 錯誤} |
 
 下表列出有關此情況的部分資訊。
 
-||描述|
-|---|---|
-|可能的情況|違反 NVDIMM-N 警告閾值|
-|根本原因|NVDIMM-N 裝置可追蹤各種臨界值，例如溫度、NVM 存留期，及/或能量來源存留期。 當超過這些閾值的其中一個時，作業系統會收到通知。|
-|一般行為|裝置維持完全正常運作。 這是警告，而不是錯誤。|
-|儲存空間行為|裝置維持完全正常運作。 這是警告，而不是錯誤。|
-|其他資訊|PhysicalDisk 物件的 OperationalStatus 欄位。 EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|工作|根據違反的警告閾值，為謹慎起見，可能需要考慮取代整個或部分的 NVDIMM-N。 例如，如果 NVM 存留期達到閾值時，取代 NVDIMM-N 很合理。|
+| | 描述 |
+| --- | --- |
+| 可能的情況 | 違反 NVDIMM-N 警告閾值 |
+| 根本原因 | NVDIMM-N 裝置可追蹤各種臨界值，例如溫度、NVM 存留期，及/或能量來源存留期。 當超過這些閾值的其中一個時，作業系統會收到通知。 |
+| 一般行為 | 裝置維持完全正常運作。 這是警告，而不是錯誤。 |
+| 儲存空間行為 | 裝置維持完全正常運作。 這是警告，而不是錯誤。 |
+| 其他資訊 | PhysicalDisk 物件的 OperationalStatus 欄位。 EventLog – Microsoft-Windows-ScmDisk0101/Operational |
+| 工作 | 根據違反的警告閾值，為謹慎起見，可能需要考慮取代整個或部分的 NVDIMM-N。 例如，如果 NVM 存留期達到閾值時，取代 NVDIMM-N 很合理。 |
 
 ## <a name="writes-to-an-nvdimm-n-fail"></a>寫入 NVDIMM-N 會失敗
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]，且 [操作狀態] 提及 [IO 錯誤] 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]  ，且 [操作狀態] 提及 [IO 錯誤]  的情況，如下列範例輸出中所示︰
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
-|802c-01-1602-117cb5fc|良好|[確定]||
-|802c-01-1602-117cb64f|Unhealthy|{過時的中繼資料、IO 錯誤、暫時性錯誤}|{遺失資料持續性、遺失資料、NV...}|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
+| 802c-01-1602-117cb5fc | 良好 | [確定] | |
+| 802c-01-1602-117cb64f | Unhealthy | {過時的中繼資料、IO 錯誤、暫時性錯誤} | {遺失資料持續性、遺失資料、NV...} |
 
 下表列出有關此情況的部分資訊。
 
-||描述|
-|---|---|
-|可能的情況|遺失持續性 / 備份電源|
+| | 描述 |
+| --- | --- |
+| 可能的情況 | 遺失持續性 / 備份電源 |
 |根本原因|NVDIMM-N 裝置仰賴備份電源以維持其持續性 – 通常是電池或超級電容器。 如果無法使用此備份電源來源或者裝置因為任何原因無法執行備份 (控制器/Flash 錯誤)，資料就會有風險，Windows 會防止對受影響的裝置進行任何進一步寫入作業。 仍可能會進行讀取以撤除資料。|
 |一般行為|NTFS 磁碟區將會卸載。<br>[PhysicalDisk 健全狀況狀態] 欄位會針對所有受影響的 NVDIMM-N 裝置顯示「狀況不良」。|
 |儲存空間行為|只要僅有一個 NVDIMM-N 受影響，儲存空間將會維持運作。 如果多個裝置受到影響，寫入儲存空間將會失敗。 <br>[PhysicalDisk 健全狀況狀態] 欄位會針對所有受影響的 NVDIMM-N 裝置顯示「狀況不良」。|
@@ -100,10 +103,10 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="nvdimm-n-is-shown-with-a-capacity-of-0-bytes-or-as-a-generic-physical-disk"></a>NVDIMM-N 會顯示容量為 '0' 位元組或是「一般實體磁碟」
 
-這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊] 的情況，如下列範例輸出中所示︰
+這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊]  的情況，如下列範例輸出中所示︰
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
 |802c-01-1602-117cb5fc|良好|[確定]||
 ||警告|遺失通訊||
 
@@ -120,10 +123,10 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="nvdimm-n-is-shown-as-a-raw-or-empty-disk-after-a-reboot"></a>在重新開機後，NVDIMM-N 會顯示為 RAW 或空的磁碟
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]，且 [操作狀態] 為 [無法識別的中繼資料] 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]  ，且 [操作狀態] 為 [無法識別的中繼資料]  的情況，如下列範例輸出中所示︰
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
 |802c-01-1602-117cb5fc|良好|[確定]|{不明}|
 |802c-01-1602-117cb64f|Unhealthy|{無法識別的中繼資料、過時的中繼資料}|{不明}|
 

@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 06/04/2019
+ms.date: 06/25/2019
 description: 在內部部署儲存體文件中適用於 Windows Server IT 專業人員的全新和更新主題。
-ms.openlocfilehash: 442d640809d3ae9cf4a11feb646fbbd566e6e3fa
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 52e1de646a3acb56b764ee1b781d852d8bf93225
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284452"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407619"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中的儲存空間主題變更歷程記錄
 
@@ -26,8 +26,9 @@ ms.locfileid: "67284452"
 
 ## <a name="june-2019"></a>2019 年 6 月
 
-| 新增或已變更的主題                                        | 描述|
+| 新增或已變更的主題                                        | 描述 |
 | ---                                                         | ---           |
+| [磁碟清理](file-server/disk-cleanup.md)                                              | 新增 (從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11)))
 | [儲存體移轉服務常見問題集](storage-migration-service/faq.md#consolidate-servers) | 加入的效能最佳化的資訊。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
@@ -42,9 +43,10 @@ ms.locfileid: "67284452"
 
 |新增或已變更的主題                                        |描述|
 |---                                                         |---           |
-|[使用 Azure 監視器進行監視](storage-spaces/configure-azure-monitor.md)| 新的|
-|[將儲存空間直接存取叢集升級到 Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新的        |
-|[DFS 複寫](dfs-replication/dfsr-overview.md)        | 從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))文件庫|
+| [使用 Azure 監視器進行監視](storage-spaces/configure-azure-monitor.md) | 新的 |
+| [了解和部署持續性記憶體](storage-spaces/deploy-pmem.md) | 新的 |
+| [將儲存空間直接存取叢集升級到 Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新的        |
+| [DFS 複寫](dfs-replication/dfsr-overview.md)        | 從移轉[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))文件庫|
 
 ## <a name="february-2019"></a>2019 年 2 月
 

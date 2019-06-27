@@ -7,13 +7,13 @@ ms.assetid: f0aa575b-b34e-4f6c-8416-ed3e398e0ad2
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: 3647c9708ad68dec0ac13c85fced2b12150ccf60
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.date: 06/21/2019
+ms.openlocfilehash: 99be11bfec02924f93d9f759676e1eea364daa18
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447197"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407632"
 ---
 >適用於：Windows Server 2019，Windows Server （半年通道），Windows Server 2016
 
@@ -27,7 +27,7 @@ TPM 模式中，網狀架構系統管理員擷取三種類型的主控件的詳�
 
 系統管理員會在 網狀架構之後擷取的資訊，將它新增至 HGS 設定，如下列程序中所述。
 
-1.  取得 XML 檔案，其中包含 EKpub 資訊並將它們複製到一個 HGS 伺服器。 將會有一個 XML 檔案中的每個主機。 然後，在一個 HGS 伺服器上已提升權限的 Windows PowerShell 主控台，執行下列命令。 每個 XML 檔案，重複執行命令。
+1. 取得 XML 檔案，其中包含 EKpub 資訊並將它們複製到一個 HGS 伺服器。 將會有一個 XML 檔案中的每個主機。 然後，在一個 HGS 伺服器上已提升權限的 Windows PowerShell 主控台，執行下列命令。 每個 XML 檔案，重複執行命令。
 
     ```powershell
     Add-HgsAttestationTpmHost -Path <Path><Filename>.xml -Name <HostName>
@@ -39,13 +39,17 @@ TPM 模式中，網狀架構系統管理員擷取三種類型的主控件的詳�
     > 您可以檢查是否 EKCert 遺漏 [記事本] 之類的編輯器中開啟 XML 檔案，並檢查錯誤訊息，指出沒有 EKCert 找不到。
     > 如果此情況下，而且您信任您的電腦中的 TPM 是真確，，您可以使用`-Force`覆寫這項安全檢查，並將主應用程式識別碼新增到 HGS 的旗標。
 
-2. 取得二進位格式 (*.p7b) 的主機網狀架構系統管理員建立的程式碼完整性原則。 請將它複製到一個 HGS 伺服器。 然後執行下列命令。
+2. 取得主機，以二進位格式的網狀架構系統管理員建立的程式碼完整性原則 (\*.p7b)。 請將它複製到一個 HGS 伺服器。 然後執行下列命令。
 
     針對`<PolicyName>`，指定描述的主機，它會套用到類型的 CI 原則的名稱。 最佳的作法是品牌/型號機器和在其上執行任何特殊的軟體設定為其命名。<br>針對`<Path>`，指定的路徑和檔案名稱的程式碼完整性原則。
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
     ```
+    
+    > [!NOTE]
+    > 如果您使用已簽署的程式碼完整性原則，向 HGS 註冊相同的原則中的不帶正負號的副本。
+    > 程式碼完整性原則的簽章用來控制更新原則，但不是以測量到主機的 TPM，因此無法證明要由 HGS。
 
 3. 取得從參考主機的網狀架構系統管理員擷取 TCGlog 檔案。 將檔案複製到一個 HGS 伺服器。 然後執行下列命令。 一般而言，您將它所代表的硬體類別命名原則時 （例如，"製造商型號版本 」）。
 
