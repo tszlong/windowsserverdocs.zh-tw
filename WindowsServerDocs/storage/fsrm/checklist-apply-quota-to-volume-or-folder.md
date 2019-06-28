@@ -24,15 +24,15 @@ ms.locfileid: "65475855"
 2. 評定磁碟區或資料夾的儲存空間需求。 您可以使用位於 **\[存放裝置報告管理\]** 節點的報告來提供資料 （例如，視需要執行檔案擁有者 報表來識別使用大量磁碟空間的使用者。）[產生隨選報告](generate-reports-on-demand.md)
 
 3. 檢閱可用的預先設定配額範本 (在**配額管理**，按一下**配額範本**節點。)[編輯配額範本內容](edit-quota-template-properties.md) 
-<br />- 或者 - <br /> 建立新的配額範本，以在組織中強制執行存放原則。 [建立配額範本](create-quota-template.md)
+<br />\- 或者 - <br /> 建立新的配額範本，以在組織中強制執行存放原則。 [建立配額範本](create-quota-template.md)
 
 4. 根據範本在磁碟區或資料夾上建立配額。  
- [建立配額](create-quota.md) <br /> - 或者 - <br /> 建立自動套用配額以自動針對磁碟區或資料夾的子資料夾產生配額。 [建立自動套用配額](create-auto-apply-quota.md)
+ [建立配額](create-quota.md) <br /> \- 或者 - <br /> 建立自動套用配額以自動針對磁碟區或資料夾的子資料夾產生配額。 [建立自動套用配額](create-auto-apply-quota.md)
 
 6. 排程包含 [配額使用量] 報告的報告工作，以定期監視配額使用量。 [排程一組報告](schedule-set-of-reports.md)
 
 > [!Note]
-> 如果您想要檢測磁碟區或資料夾的檔案，請參閱[檢查清單：Apply a File Screen to a Volume or 資料夾](checklist-apply-file-screen-to-volume-or-folder.md)。
+> 如果您想要檢測磁碟區或資料夾的檔案，請參閱[檢查清單：將檔案檢測套用至磁碟區或資料夾](checklist-apply-file-screen-to-volume-or-folder.md)
 
 
 

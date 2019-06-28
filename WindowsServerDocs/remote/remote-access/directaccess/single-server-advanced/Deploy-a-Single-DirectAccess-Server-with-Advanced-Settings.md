@@ -36,7 +36,7 @@ ms.locfileid: "67283605"
 在此案例中，執行 Windows Server 2016、 Windows Server 2012 R2 或 Windows Server 2012，在單一電腦被設定為使用進階設定 DirectAccess 伺服器。  
   
 > [!NOTE]  
-> 如果您要設定只具有簡單設定的基本部署，請參閱＜ [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)＞。 在簡單案例中，會使用精靈以預設設定來設定 DirectAccess，而不需要設定基礎結構設定，例如憑證授權單位 (CA) 或 Active Directory 安全性群組。  
+> 如果您想要設定一個只具有簡單設定的基本部署，請參閱[使用快速入門精靈部署單一 DirectAccess 伺服器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)。 在簡單案例中，會使用精靈以預設設定來設定 DirectAccess，而不需要設定基礎結構設定，例如憑證授權單位 (CA) 或 Active Directory 安全性群組。  
   
 ## <a name="in-this-scenario"></a>在這個案例中  
 若要使用進階設定來設定單一 DirectAccess 伺服器，您必須完成數個規劃和部署步驟。  
