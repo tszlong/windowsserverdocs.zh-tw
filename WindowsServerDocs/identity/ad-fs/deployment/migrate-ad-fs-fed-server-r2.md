@@ -43,7 +43,7 @@ ms.locfileid: "66444618"
 您必須將 Federation Service 所使用的 SSL 憑證以及其私密金鑰匯出至 .pfx 檔案。 如需詳細資訊，請參閱＜ [匯出伺服器驗證憑證的私密金鑰部分](export-the-private-key-portion-of-a-server-authentication-certificate.md)＞。  
   
 > [!NOTE]
->  如果您打算部署裝置註冊服務，做為執行 Windows Server 2012 R2 中的 AD FS 的一部分，您必須取得新的 SSL 憑證。如需詳細資訊，請參閱 [Enroll an SSL Certificate for AD FS](enroll-an-ssl-certificate-for-ad-fs.md) 和 [Configure a federation server with Device Registration Service](configure-a-federation-server-with-device-registration-service.md)。  
+>  如果您打算部署裝置註冊服務，做為執行 Windows Server 2012 R2 中的 AD FS 的一部分，您必須取得新的 SSL 憑證。如需詳細資訊，請參閱 < [註冊 AD FS 的 SSL 憑證](enroll-an-ssl-certificate-for-ad-fs.md)並[使用裝置註冊服務設定同盟伺服器](configure-a-federation-server-with-device-registration-service.md)。  
   
 若要檢視使用的權杖簽署、權杖解密和服務通訊憑證，請執行下列 Windows PowerShell 命令，建立檔案使用的所有憑證清單：  
   
@@ -267,7 +267,7 @@ import-federationconfiguration.ps1
   
        -   整合，Forms、 TlsClient、 Basic Transform 的清單，Windows Server 2012 R2 中 AD fs 具有全域驗證原則設定可同時支援 federation service 和 proxy 驗證類型。 這些設定可以在 AD FS [驗證原則]  下的管理嵌入式管理單元中加以設定。  
   
-   匯入原始設定資料之後，您可以視需要自訂 AD FS 登入頁面。 如需詳細資訊，請參閱 [Customizing the AD FS Sign-in Pages](../operations/AD-FS-Customization-in-Windows-Server-2016.md)。  
+   匯入原始設定資料之後，您可以視需要自訂 AD FS 登入頁面。 如需詳細資訊，請參閱[自訂 AD FS 登入頁面](../operations/AD-FS-Customization-in-Windows-Server-2016.md)。  
   
 ## <a name="next-steps"></a>後續步驟
  [將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
