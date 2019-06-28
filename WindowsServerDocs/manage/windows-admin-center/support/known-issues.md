@@ -83,7 +83,7 @@ ms.locfileid: "66811775"
 
 - 當使用 Azure Active Directory 做為身分識別提供者，而 Windows Admin Center 是使用自我簽署憑證或未受信任憑證所設定時，您無法在 Microsoft Edge 中完成 AAD 驗證。  [15968377]
 
-- 如果您已部署為服務的 Windows Admin Center，您使用 Microsoft Edge 瀏覽器作為您閘道連線至 Azure 之後繁衍新的瀏覽器視窗可能會失敗。 嘗試解決此問題，藉由新增 https://login.microsoftonline.com， https://login.live.com，並為您閘道的 URL 信任的網站，並允許您的用戶端端瀏覽器的快顯封鎖程式設定的網站。 如需詳細指引修正這[疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果您已部署為服務的 Windows Admin Center，您使用 Microsoft Edge 瀏覽器作為您閘道連線至 Azure 之後繁衍新的瀏覽器視窗可能會失敗。 嘗試解決此問題，藉由新增 [https://login.microsoftonline.com](https://login.microsoftonline.com )， [https://login.live.com](https://login.live.com )，並為您閘道的 URL 信任的網站，並允許您的用戶端端瀏覽器的快顯封鎖程式設定的網站。 如需詳細指引修正這[疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 - 如果您有桌面模式中安裝的 Windows Admin Center，在 Microsoft Edge 瀏覽器索引標籤不會顯示 favicon。 [17665801]
 

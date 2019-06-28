@@ -76,12 +76,12 @@ ms.locfileid: "66432468"
 5.  您現在可以新增使用者。 如需指示，請參閱 < 新增使用者帳戶？在 [管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳戶，但保留使用者的檔案歷程記錄  
- 在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要執行這項作業，請參閱 [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
+ 在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要這樣做，請參閱[以手動方式刪除使用者或電腦的檔案歷程記錄備份](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
 
 5. 您現在可以新增使用者。 如需指示，請參閱 < 新增使用者帳戶？在 [管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳戶，但保留使用者的檔案歷程記錄  
- 在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要執行這項作業，請參閱 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
+ 在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要這樣做，請參閱[以手動方式刪除使用者或電腦的檔案歷程記錄備份](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
 
   
 ## <a name="see-also"></a>另請參閱  

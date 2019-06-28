@@ -599,7 +599,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |-|-|
 |**原則設定狀態**|**行為**|
 |**未設定**|使用者可連線到 Windows Update 網站。|
-|**已啟用**|**重要事項：** 如果啟用，所有 Windows 更新的功能都都已移除。 這包括封鎖在 Windows Update 網站的存取權 https://windowsupdate.microsoft.com，從開始功能表 或 開始 畫面上，同時也會在 Windows Update hyperlink**工具**Internet Explorer 中的功能表。 Windows 自動更新也會停用;使用者都不會告知也不會從 Windows Update 接收重要更新。 這項設定也會防止裝置管理員自動從 Windows Update 網站安裝驅動程式更新。<br /><br />啟用時，您可以設定下列通知選項的其中一個：<br /><br />-   **0-不會顯示任何通知**<br />    這項設定將會移除 Windows Update 功能的所有存取，且會顯示任何通知。<br />-   **1-顯示重新啟動所需的通知**<br />    此設定會顯示有關重新啟動，才能完成安裝的通知。 **注意：** 在電腦上就會顯示執行 Windows 8 和 Windows RT，如果啟用此原則時，只有相關的重新啟動並無法偵測更新的通知。 不支援通知選項。 一律會顯示在登入畫面上的通知。|
+|**已啟用**|**重要事項：** 如果啟用，所有 Windows 更新的功能都都已移除。 這包括封鎖在 Windows Update 網站的存取權 https://windowsupdate.microsoft.com(https://windowsupdate.microsoft.com )，從開始功能表 或 開始 畫面上，同時也會在 Windows Update hyperlink**工具**Internet Explorer 中的功能表。 Windows 自動更新也會停用;使用者都不會告知也不會從 Windows Update 接收重要更新。 這項設定也會防止裝置管理員自動從 Windows Update 網站安裝驅動程式更新。<br /><br />啟用時，您可以設定下列通知選項的其中一個：<br /><br />-   **0-不會顯示任何通知**<br />    這項設定將會移除 Windows Update 功能的所有存取，且會顯示任何通知。<br />-   **1-顯示重新啟動所需的通知**<br />    此設定會顯示有關重新啟動，才能完成安裝的通知。 **注意：** 在電腦上就會顯示執行 Windows 8 和 Windows RT，如果啟用此原則時，只有相關的重新啟動並無法偵測更新的通知。 不支援通知選項。 一律會顯示在登入畫面上的通知。|
 |**已停用**|使用者可連線到 Windows Update 網站。|
 
 **選項：** 請參閱**已啟用**資料表中的這項設定。

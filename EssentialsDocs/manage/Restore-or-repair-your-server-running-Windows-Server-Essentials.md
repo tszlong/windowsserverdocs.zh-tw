@@ -122,7 +122,7 @@ ms.locfileid: "66433061"
     > [!NOTE]
     >  如果還原程序沒有自動啟動，請檢查您伺服器的 BIOS 設定，確定 DVD 光碟機出現在開機功能表的第一個。  
   
-     - 或者 -  
+     \- 或者 -  
   
      如果製造商預先載入了伺服器上的安裝媒體，請在啟動時按 F8 鍵從安裝媒體啟動。  
   
@@ -201,7 +201,7 @@ ms.locfileid: "66433061"
  系統還原之後，您可能需要使用「還原檔案或資料夾精靈」來還原在還原期間未保留的檔案與資料夾。 例如，如果您更換了系統磁碟，或者系統磁碟上的磁碟分割資訊無法讀取，您就無法從系統磁碟上的其他磁碟區還原資料。  
   
 > [!NOTE]
->  您無法使用「還原檔案或資料夾精靈」來還原完整的系統磁碟機。 如需如何還原完整系統的相關資訊，請參閱 [Restore or repair your server using installation media](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1) 或 [Restore or reset your server from a client computer using the recovery DVD](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2)。  
+>  您無法使用「還原檔案或資料夾精靈」來還原完整的系統磁碟機。 如需有關如何還原完整系統的資訊，請參閱[還原或修復您的伺服器使用安裝媒體](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1)或是[還原或重設您的伺服器，從用戶端電腦使用復原 DVD](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2)。  
   
 ##### <a name="to-restore-files-and-folders-from-a-server-backup"></a>從伺服器備份還原檔案和資料夾  
   
