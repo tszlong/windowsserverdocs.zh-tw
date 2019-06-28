@@ -6,13 +6,13 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 06/21/2019
-ms.openlocfilehash: 211d2f24b01d1e308f012df681f9e16a2190449f
-ms.sourcegitcommit: 260b1d78cb28b88b876579e1ac9a41a74e8752fd
+ms.date: 06/27/2019
+ms.openlocfilehash: 0d42befcfacfffd302cfcb27f9f3c2c973534398
+ms.sourcegitcommit: 2c2c37170c65434179bcf2989d557f97dcbe1b9f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398803"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419224"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>安裝受信任的 TPM 根憑證
 
@@ -35,7 +35,23 @@ Microsoft 發佈受信任的 TPM 根和中繼憑證的集合，讓您方便參�
 
 在重複下列步驟**每一部 HGS 伺服器**:
 
-1.  下載最新的封裝，從[ https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab ](https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab)。
+1.  下載最新的封裝，從[ https://go.microsoft.com/fwlink/?linkid=2097925 ](https://go.microsoft.com/fwlink/?linkid=2097925)。
+
+2.  驗證簽章的封包檔，以確保其正確性。 如果簽章無效。 請不要繼續進行。
+
+    ```powershell
+    Get-AuthenticodeSignature .\TrustedTpm.cab
+    ```
+    
+    以下是一些輸出範例︰
+    
+    ```
+    Directory: C:\Users\Administrator\Downloads
+        
+    SignerCertificate                         Status                                 Path
+    -----------------                         ------                                 ----
+    0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab
+    ```
 
 2.  展開封包檔。
 

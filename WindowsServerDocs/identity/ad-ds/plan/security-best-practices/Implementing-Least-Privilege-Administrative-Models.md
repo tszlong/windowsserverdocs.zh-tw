@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 609ea0bd796a4d3696e14c7499be047ebdd83183
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01113b957c6b0be4e18955b5ddc78be3f463abe4
+ms.sourcegitcommit: 236a8ae1da12cea1acfff3f306246db0f022354d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868849"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67412203"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>實作最低權限管理模型
 
@@ -37,7 +37,7 @@ ms.locfileid: "59868849"
 
 不幸的是，在許多環境中的最低抗拒的路徑已證明具有深度與廣度的權限的帳戶的過度使用。 廣泛的權限是權限和權限可讓帳戶跨大型的交叉區段的 [環境]-執行特定活動，例如，技術支援人員可能會授與權限，讓他們能夠重設許多使用者帳戶的密碼。  
 
-深入的權限會套用至窄區段的母體擴展的高權限，這類讓工程師系統管理員權限的伺服器上，以便他們可以執行修復。 廣泛的權限和深度的權限都不一定具有危險性，但如果只有其中一個帳戶遭到入侵，深度與廣度權限，會永久授與網域中的許多帳戶，它快速可用來重新設定環境攻擊者的用途，或甚至摧毀基礎結構的大型區段。  
+深入的權限是功能強大的權限適用於窄的母體擴展，例如讓工程師系統管理員權限的伺服器上，讓他們可以執行修復作業區段。 廣泛的權限和深度的權限都不一定具有危險性，但如果只有其中一個帳戶遭到入侵，深度與廣度權限，會永久授與網域中的許多帳戶，它快速可用來重新設定環境攻擊者的用途，或甚至摧毀基礎結構的大型區段。  
 
 Pass pass-the-hash 攻擊，這是一種認證竊取攻擊，是非常普遍，因為執行這些工具是免費取得，且簡單易用，而且許多環境會很容易遭受攻擊。 不過，傳遞-雜湊攻擊中，不是真正的問題。 問題的癥結所在有兩個：  
 
@@ -276,7 +276,7 @@ Privileged identity management (PIM)，有時稱為特殊權限的帳戶管理 (
 
 在 管理特殊權限的帳戶的挑戰之一是，根據預設，可以管理特殊權限和受保護的帳戶的帳戶和群組特殊權限和受保護帳戶。 如果您實作適當的 RBAC 和 PIM 解決方案為您的 Active Directory 安裝時，解決方案可能包括方法可讓您有效地 depopulate 最高權限群組的目錄中，填入僅限群組的成員資格暫時並在必要時。  
 
-如果您實作原生的 RBAC 和 PIM，不過，您就應該考慮建立時所需的 Active Directory 中的帳戶沒有權限，並使用唯一的函式填入和 depopulating 特殊權限的群組。 [附錄 i:建立受保護的帳戶和 Active Directory 中的群組的管理帳戶](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)提供可用來針對此用途建立帳戶的逐步指示。  
+如果您實作原生的 RBAC 和 PIM，不過，您就應該考慮建立時所需的 Active Directory 中的帳戶沒有權限，並使用唯一的函式填入和 depopulating 特殊權限的群組。 [附錄 I：建立受保護的帳戶和 Active Directory 中的群組的管理帳戶](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)提供可用來針對此用途建立帳戶的逐步指示。  
 
 ### <a name="implementing-robust-authentication-controls"></a>實作強固的驗證控制項
 
