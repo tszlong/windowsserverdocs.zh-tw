@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: b68e6b915d029e53d47c6cffe214ec6e11bba6ea
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 75465aad45fc1b5e360fa1153a6530a771731f66
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812392"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469440"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>適用於 Windows Server 2016 的精確時間
 
@@ -24,7 +24,6 @@ Windows 時間服務是使用用戶端和伺服器的時間同步處理提供者
 > [!NOTE]
 > Windows 時間服務的快速概觀，請查看本[高層級概觀影片](https://aka.ms/WS2016TimeVideo)。
 
-<!-- Not sure what to do with the following -->
 在本主題中，我們會討論...這些主題與啟用正確的時間： 
 
 - 增強功能

@@ -16,12 +16,12 @@ ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 588bc3f87c78feccac47d18d31d37be3b1a02d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f075f91e97f806555507bfc0e0c5f3d1589a71e6
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835099"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469645"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory Federation Services
 AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功能。 同盟與 Azure AD 或 O365 可讓使用者使用內部部署認證進行驗證，並存取雲端中的所有資源。 如此一來，就一定要有高可用性的 AD FS 基礎結構，以確保資源的存取權，同時對內部部署和雲端中。 Azure 中部署 AD FS 有助於達成執行最低限度的工作所需的高可用性。
@@ -63,7 +63,7 @@ AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功
 * 在 子網路面板中按一下 新增 按鈕
 * 提供建立子網路的子網路名稱和位址空間資訊
 
-![子網路](./media/how-to-connect-fed-azure-adfs/deploynetwork2.png)
+![Subnet](./media/how-to-connect-fed-azure-adfs/deploynetwork2.png)
 
 ![子網路 DMZ](./media/how-to-connect-fed-azure-adfs/deploynetwork3.png)
 
@@ -115,7 +115,7 @@ AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功
 
 建立下列可用性設定組
 
-| 可用性設定組 | [角色] | 容錯網域 | 更新網域 |
+| 可用性設定組 | Role | 容錯網域 | 更新網域 |
 |:---:|:---:|:---:|:--- |
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
@@ -123,7 +123,7 @@ AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功
 ### <a name="4-deploy-virtual-machines"></a>4.部署虛擬機器
 下一個步驟是部署虛擬機器會裝載您的基礎結構中不同角色。 每個可用性設定組中建議使用至少兩部機器。 建立基本部署的四個虛擬機器。
 
-| 電腦 | [角色] | 子網路 | 可用性設定組 | 儲存體帳戶 | IP 位址 |
+| Machine | Role | Subnet | 可用性設定組 | 儲存體帳戶 | IP 位址 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |Static |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |Static |
@@ -139,7 +139,7 @@ AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功
 ### <a name="5-configuring-the-domain-controller--ad-fs-servers"></a>5.設定網域控制站 / AD FS 伺服器
  若要驗證任何連入要求，AD FS 必須連絡網域控制站。 若要儲存從 Azure 進行驗證的內部部署 DC 的昂貴，建議部署在 Azure 中的網域控制站的複本。 為了達到高可用性，建議建立至少 2 個網域控制站的可用性設定組。
 
-| 網域控制站 | [角色] | 儲存體帳戶 |
+| 網域控制站 | Role | 儲存體帳戶 |
 |:---:|:---:|:---:|
 | contosodc1 |Replica |contososac1 |
 | contosodc2 |Replica |contososac2 |
@@ -193,7 +193,7 @@ AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功
 
 ![設定 ILB 探查](./media/how-to-connect-fed-azure-adfs/ilbdeployment4.png)
 
-我們會使用 /adfs/probe 端點健康情況檢查的明確建立的 AD FS 環境中完整的 HTTPS 路徑檢查不會發生的位置。  這是本質上優於基本的連接埠 443 檢查，不會精確地反映最新的 AD FS 部署的狀態。  詳細資訊，參閱 https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/。
+我們會使用 /adfs/probe 端點健康情況檢查的明確建立的 AD FS 環境中完整的 HTTPS 路徑檢查不會發生的位置。  這是本質上優於基本的連接埠 443 檢查，不會精確地反映最新的 AD FS 部署的狀態。  詳細資訊，參閱 https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/ 。
 
 **6.4.建立負載平衡規則**
 
@@ -277,11 +277,6 @@ AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功
 
 ![INT 存取規則 （輸入）](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
 
-<!--
-[comment]: <> (![INT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgintinbound.png))
-[comment]: <> (![INT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgintoutbound.png))
--->
-
 **9.2.保護 DMZ 子網路**
 
 | 規則 | 描述 | 流程 |
@@ -290,11 +285,6 @@ AD FS 提供簡化、 安全的身分識別同盟和網頁單一登入 (SSO) 功
 | DenyInternetOutbound |封鎖 HTTPS 以外流向網際網路的任何項目 |輸出 |
 
 ![EXT 存取規則 （輸入）](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
-
-<!--
-[comment]: <> (![EXT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzinbound.png))
-[comment]: <> (![EXT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzoutbound.png))
--->
 
 > [!NOTE]
 > 如果用戶端使用者憑證驗證 (clientTLS 驗證使用 X509 使用者憑證) 為必要項，則 AD FS 需要 TCP 連接埠 49443 能讓您輸入存取。

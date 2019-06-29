@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: f5f78d3d2387d3b95177a6a8a40fb9b16d8ed8e2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 42b943ed5e0066f1f810efaba9e65a529ac25f00
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446127"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469351"
 ---
 # <a name="manage-client-access-licenses"></a>管理用戶端存取使用權
 每個站台連接到 MultiPoint 服務系統，包括執行站台，當做使用 MultiPoint 服務的電腦必須具有有效的每個使用者的遠端桌面*用戶端存取使用權 (CAL)* 。
 
 如果您使用站台虛擬桌面，而不實體的站台，您必須安裝適用於每個站台的虛擬桌面 CAL。  
   
-1.  購買每個連接到 MultiPoint 服務電腦或伺服器的站台的用戶端的授權。 如需有關如何購買 Cal 的詳細資訊，請瀏覽遠端桌面授權的文件。 <!--@Liza: add link to RDS licensing here-->
+1.  購買每個連接到 MultiPoint 服務電腦或伺服器的站台的用戶端的授權。 如需有關如何購買 Cal 的詳細資訊，請瀏覽遠端桌面授權的文件。 
 
 2.  從**開始**畫面上，開啟**MultiPoint 管理員**。  
   

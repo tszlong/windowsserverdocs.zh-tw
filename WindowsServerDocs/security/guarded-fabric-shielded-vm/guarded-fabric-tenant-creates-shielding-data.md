@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d1d269ecdbfd4803c51da4817b62caf01d2091ae
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284160"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469619"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>受防護的 Vm，可供租用戶-若要定義受防護的 VM 建立虛擬機器防護資料
 
@@ -43,8 +43,6 @@ ms.locfileid: "67284160"
 由於租用戶都只是能夠連線到其受防護的 Vm，使用遠端桌面連線或其他遠端管理工具時，務必確保租用戶可以確認他們連接到正確的端點 （也就是沒有 「 攔截式 」攔截連線）。
 
 請確認您已連接到想要的伺服器的一種方法是安裝和設定來呈現您初始連線時的遠端桌面服務的憑證。 連接到伺服器的用戶端電腦會檢查是否信任的憑證和顯示一則警告則。 一般而言，若要確保連線的用戶端信任的憑證，RDP 憑證發行從租用戶的 PKI。 詳細資訊[遠端桌面服務使用憑證](https://technet.microsoft.com/library/dn781533.aspx)可以在 TechNet 上找到。
-
-<!-- The previous link comes from Windows 2012 R2 content, but as of Sept 2016, there isn't a more recent link that covers the same information. -->
 
 > [!NOTE]
 > 選取要包含在您的防護資料檔案中的 RDP 憑證，請務必使用萬用字元憑證。 可用來建立無限的數量的 Vm 設定了一個虛擬機器防護資料檔案。 因為每個 VM 會共用相同的憑證，萬用字元憑證的憑證可確保不論 VM 的主機名稱有效。
@@ -142,8 +140,6 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
         $relecloudmetadata = Get-SCGuardianConfiguration
 
         $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
-
-<!-- Note that the VMM PowerShell cmdlets aren't Windows PowerShell, so "VMM PowerShell" is the correct terminology for them. -->
 
 取得您想要授權受防護的 Vm 上執行，然後再繼續每個受防護網狀架構的守護者中繼資料檔案。
 

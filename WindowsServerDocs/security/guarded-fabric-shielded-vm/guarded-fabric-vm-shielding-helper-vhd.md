@@ -8,18 +8,16 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8e14cdeed435f23f28ca514e232fbcfa6220fc74
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81e6ed7950fe13c5bed4a3f8850d64e7185b8ddd
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887719"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469643"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>受防護的 Vm-準備 VM 防護協助程式 VHD
 
 >適用於：Windows Server 2019，Windows Server （半年通道），Windows Server 2016
-
-<!-- This comment creates a break between the Applies To above and the Important note below. -->
 
 > [!IMPORTANT]
 > 開始這些程序之前, 請確定您已安裝最新的 Windows Server 2016 累積更新，或使用最新的 Windows 10[遠端伺服器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=45520)。 否則，程序將無法運作。 
@@ -64,4 +62,4 @@ ms.locfileid: "59887719"
 ## <a name="see-also"></a>另請參閱
 
 - [裝載服務提供者設定步驟，針對受防護主機和受防護的 Vm](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [受防護網狀架構與受防護的 Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)
