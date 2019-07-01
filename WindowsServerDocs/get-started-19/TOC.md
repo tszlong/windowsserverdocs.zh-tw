@@ -13,3 +13,4 @@
 ## [從 Windows Server 2019 開始移除或計劃取代的功能](removed-features-19.md)
 ## [從 Windows Server 版本 1903 開始移除或計劃取代的功能](removed-features-1903.md)
 ## [Windows Server 版本資訊](../get-started/windows-server-release-info.md)
+## [Windows Server 授權條款](../windows-server-licensing/windows-server-licensing.md)

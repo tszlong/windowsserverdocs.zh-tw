@@ -40,6 +40,7 @@
 ### [部署網路檔案系統](nfs/deploy-nfs.md)
 ### [NTFS 概觀](file-server/ntfs-overview.md)
 ### [磁碟區陰影複製服務](file-server/volume-shadow-copy-service.md)
+### [使用磁碟清理](file-server/disk-cleanup.md)
 ## [檔案伺服器資源管理員](fsrm/fsrm-overview.md)
 ### [檢查清單：將配額套用至磁碟區或資料夾](fsrm/checklist-apply-quota-to-volume-or-folder.md)
 ### [檢查清單：將檔案檢測套用至磁碟區或資料夾](fsrm/checklist-apply-file-screen-to-volume-or-folder.md)
@@ -128,7 +129,9 @@
 #### [建立磁碟區](storage-spaces/create-volumes.md)
 #### [巢狀復原](storage-spaces/nested-resiliency.md)
 #### [設定仲裁](../failover-clustering/manage-cluster-quorum.md)
-#### [將儲存空間直接存取叢集升級到 Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)
+#### [升級儲存空間直接存取叢集](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)
+#### [了解和部署持續性記憶體](storage-spaces/deploy-pmem.md)
+
 ### 管理
 #### [使用 Windows Admin Center 管理](../manage/windows-admin-center/use/manage-hyper-converged.md)
 #### [新增伺服器或磁碟機](storage-spaces/add-nodes.md)
@@ -148,11 +151,14 @@
 ##### [指令碼範例](storage-spaces/performance-history-scripting.md)
 #### [限定磁碟區配置](storage-spaces/delimit-volume-allocation.md)
 #### [使用 Azure 監視器進行監視](storage-spaces/configure-azure-monitor.md)
+
 ### 疑難排解
 #### [疑難排解案例](storage-spaces/troubleshooting-storage-spaces.md)
 #### [健康情況與操作狀態](storage-spaces/storage-spaces-states.md)
 #### [收集資料](storage-spaces/data-collection.md)
 #### [常見問題集](storage-spaces/storage-spaces-direct-faq.md)
+#### [存放裝置類別記憶體健康情況管理](storage-spaces/Storage-class-memory-health.md)
+
 ## [工作資料夾](work-folders/work-folders-overview.md)
 ### [設計工作資料夾實作](work-folders/plan-work-folders.md)
 ### [部署工作資料夾](work-folders/deploy-work-folders.md)
@@ -163,6 +169,5 @@
 #### [步驟 4，設定 WAP](work-folders/deploy-work-folders-adfs-step4.md)
 #### [步驟 5，設定用戶端](work-folders/deploy-work-folders-adfs-step5.md)
 ## [存放裝置 QoS](storage-qos/storage-qos-overview.md)
-## [存放裝置類別記憶體健康情況管理](storage-spaces/Storage-class-memory-health.md)
 ## [儲存空間主題的變更歷程記錄](storage-change-history.md)
 

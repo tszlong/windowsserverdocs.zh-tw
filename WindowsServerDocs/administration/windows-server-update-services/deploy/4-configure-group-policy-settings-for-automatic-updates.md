@@ -64,7 +64,7 @@ ms.locfileid: "66439856"
 
 -   [延遲重新啟動已排程的安裝](#delay-restart-for-scheduled-installations)
 
--   [不會調整關閉關閉 Windows] 對話方塊中的預設選項來 [安裝更新並關機 」](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
+-   [不會調整關閉關閉 Windows 對話方塊中的預設選項來 安裝更新並關機](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
 -   [不會顯示 [安裝更新並關機] 選項在 Windows 下關閉對話方塊](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
@@ -539,7 +539,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 ### <a name="user-configuration--windows-update-policy-settings"></a>使用者設定 > Windows Update 原則設定
 本節提供下列的使用者為基礎的原則設定的詳細資訊：
 
--   [不會在關閉關閉 Windows] 對話方塊中顯示 [安裝更新並關機 」 選項](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
+-   [不會在關閉關閉 Windows 對話方塊中顯示 安裝更新並關機 選項](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
 -   [在對話方塊中關閉 Windows 關閉不調整以 「 安裝更新並關機 」 的預設選項](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
@@ -599,7 +599,7 @@ GPME，在電腦為基礎的組態的 Windows Update 原則位於路徑中：*Po
 |-|-|
 |**原則設定狀態**|**行為**|
 |**未設定**|使用者可連線到 Windows Update 網站。|
-|**已啟用**|**重要事項：** 如果啟用，所有 Windows 更新的功能都都已移除。 這包括封鎖在 Windows Update 網站的存取權 https://windowsupdate.microsoft.com(https://windowsupdate.microsoft.com )，從開始功能表 或 開始 畫面上，同時也會在 Windows Update hyperlink**工具**Internet Explorer 中的功能表。 Windows 自動更新也會停用;使用者都不會告知也不會從 Windows Update 接收重要更新。 這項設定也會防止裝置管理員自動從 Windows Update 網站安裝驅動程式更新。<br /><br />啟用時，您可以設定下列通知選項的其中一個：<br /><br />-   **0-不會顯示任何通知**<br />    這項設定將會移除 Windows Update 功能的所有存取，且會顯示任何通知。<br />-   **1-顯示重新啟動所需的通知**<br />    此設定會顯示有關重新啟動，才能完成安裝的通知。 **注意：** 在電腦上就會顯示執行 Windows 8 和 Windows RT，如果啟用此原則時，只有相關的重新啟動並無法偵測更新的通知。 不支援通知選項。 一律會顯示在登入畫面上的通知。|
+|**已啟用**|**重要事項：** 如果啟用，所有 Windows 更新的功能都都已移除。 這包括封鎖在 Windows Update 網站的存取權 [https://windowsupdate.microsoft.com](https://windowsupdate.microsoft.com )，從開始功能表 或 [開始] 畫面上，同時也會在 Windows Update hyperlink**工具**Internet Explorer 中的功能表。 Windows 自動更新也會停用;使用者都不會告知也不會從 Windows Update 接收重要更新。 這項設定也會防止裝置管理員自動從 Windows Update 網站安裝驅動程式更新。<br /><br />啟用時，您可以設定下列通知選項的其中一個：<br /><br />-   **0-不會顯示任何通知**<br />    這項設定將會移除 Windows Update 功能的所有存取，且會顯示任何通知。<br />-   **1-顯示重新啟動所需的通知**<br />    此設定會顯示有關重新啟動，才能完成安裝的通知。 **注意：** 在電腦上就會顯示執行 Windows 8 和 Windows RT，如果啟用此原則時，只有相關的重新啟動並無法偵測更新的通知。 不支援通知選項。 一律會顯示在登入畫面上的通知。|
 |**已停用**|使用者可連線到 Windows Update 網站。|
 
 **選項：** 請參閱**已啟用**資料表中的這項設定。
