@@ -5,21 +5,21 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 06/07/2019
+ms.date: 06/20/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 2314e336cbf9ad44b07f3f94d7a866b48b5e9bff
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.openlocfilehash: d00051f59eb39c6a7c668d00034f72879b0b097f
+ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811804"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298144"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
-> 適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-**Windows Admin Center** (先前代號**專案檀香山**) 是一項革新的 Windows Server 內建管理工具; 它是窗口可合併本機和遠端伺服器管理的各個層面。 因為是在本機部署、以瀏覽器為基礎的管理體驗，並不需要網際網路連線和 Azure。 Windows Admin Center 讓您完全控制您的部署的各個層面，包括未連線至網際網路的私人網路。
+**Windows Admin Center** (之前代號為 **Project Honolulu**) 是 Windows Server 隨附管理工具的演進。這是將本機與遠端伺服器所有管理層面結合在一起的單一窗口。 因為是在本機部署、以瀏覽器為基礎的管理體驗，並不需要網際網路連線和 Azure。 Windows Admin Center 讓您完全控制您的部署的各個層面，包括未連線至網際網路的私人網路。
 
 ## <a name="introduction"></a>簡介
 
@@ -37,7 +37,7 @@ ms.locfileid: "66811804"
 2. [安裝](deploy/install.md)
 3. [入門](use/get-started.md)
 
-## <a name="contents-at-a-glance"></a>一眼的內容
+## <a name="contents-at-a-glance"></a>內容簡介
 
 <table>
     <tr></tr>
@@ -48,14 +48,14 @@ ms.locfileid: "66811804"
             <li><a href="understand/what-is.md">什麼是 Windows Admin Center？</a>
             <li><a href="understand/faq.md">常見問題集</a>
             <li><a href="understand/case-studies.md">案例研究</a>
-            <li><a href="understand/related-management.md">相關的管理產品</a>
-            <li><a href="understand/videos.md">影片</a>
+            <li><a href="understand/related-management.md">相關管理產品</a>
+            <li><a href="understand/videos.md">視訊</a>
             </ul>
         </td>
         <td style="vertical-align: top;">
             <h3>規劃</h3>
             <ul>
-            <li><a href="plan/installation-options.md">安裝類型是最適合您？</a>
+            <li><a href="plan/installation-options.md">什麼類型的安裝最適合您？</a>
             <li><a href="plan/user-access-options.md">使用者存取選項</a>
             <br>
             </ul>
@@ -74,9 +74,9 @@ ms.locfileid: "66811804"
             <h3>設定</h3>
             <ul>
             <li><a href="configure/settings.md">Windows Admin Center 設定</a>
-            <li><a href="configure/user-access-control.md">使用者存取控制及權限</a>
+            <li><a href="configure/user-access-control.md">使用者存取控制與權限</a>
             <li><a href="configure/shared-connections.md">共用的連線</a>
-            <li><a href="configure/using-extensions.md">延伸模組</a>
+            <li><a href="configure/using-extensions.md">擴充</a>
             </ul>
         </td>
     </tr>
@@ -86,7 +86,7 @@ ms.locfileid: "66811804"
             <ul>
             <li><a href="use/get-started.md">啟動及新增連線</a>
             <li><a href="use/manage-servers.md">管理伺服器</a>
-            <li><a href="use/manage-hyper-converged.md">管理超交集基礎結構</a>
+            <li><a href="use/manage-hyper-converged.md">管理超融合式基礎結構</a>
             <li><a href="use/manage-failover-clusters.md">管理容錯移轉叢集</a>
             <li><a href="use/manage-virtual-machines.md">管理虛擬機器</a>
             <li><a href="use/logging.md">記錄</a>
@@ -95,9 +95,9 @@ ms.locfileid: "66811804"
         <td style="vertical-align: top;">
             <h3>連線到 Azure</h3>
             <ul>
-            <li><a href="azure/index.md">Azure 的混合式服務</a></li>
-            <li><a href="azure/azure-integration.md">連接到 Azure 的 Windows Admin Center</a></li>
-            <li><a href="azure/deploy-wac-in-azure.md">部署在 Azure 中的 Windows Admin Center</a></li>
+            <li><a href="azure/index.md">Azure 混合式服務</a></li>
+            <li><a href="azure/azure-integration.md">將 Windows Admin Center 連線到 Azure </a></li>
+            <li><a href="azure/deploy-wac-in-azure.md">在 Azure 中部署 Windows Admin Center</a></li>
             <li><a href="azure/manage-azure-vms.md">使用 Windows Admin Center 管理 Azure VM</a></li>
             </ul>
         </td>
@@ -112,27 +112,28 @@ ms.locfileid: "66811804"
             </ul>
         </td>
             <td style="vertical-align: top;">
-            <h3>擴充</h3>
+            <h3>Extend</h3>
             <ul>
-            <li><a href="extend/extensibility-overview.md">擴充功能的概觀</a>
+            <li><a href="extend/extensibility-overview.md">擴充功能概觀</a>
             <li><a href="extend/understand-extensions.md">了解擴充功能</a>
-            <li><a href="extend/developing-extensions.md">開發延伸模組</a>
-            <li><a href="extend/publish-extensions.md">輔助線</a>
-            <li><a href="extend/publish-extensions.md">發行擴充功能</a>
+            <li><a href="extend/developing-extensions.md">開發擴充功能</a>
+            <li><a href="extend/publish-extensions.md">指南</a>
+            <li><a href="extend/publish-extensions.md">發佈擴充功能</a>
             </ul>
         </td>
     </tr>
 
 </table>
 
-## <a name="release-history"></a>版本歷程記錄
+## <a name="release-history"></a>發行大事記
 
 了解我們最新發行的功能：
 
-- 版本 1904.1-維護用於改善穩定性的閘道外掛程式的更新。
-- 版本[1904年](https://aka.ms/wac1904)是最新 GA 版本引進 Azure 混合式服務的工具，並將先前的 GA 通道在預覽中的功能。
-- 版本[1903年](https://aka.ms/wac1903)會從 Azure 監視器，若要從 Active Directory 和新工具，來管理 Active Directory、 DHCP 和 DNS 中新增伺服器或電腦的連線能力的電子郵件通知。
-- 版本[1902年](https://aka.ms/wac1902)加入軟體定義網路 (SDN) 管理，包括新的 SDN 工具來管理 Acl、 閘道連線，以及邏輯網路上的共用的連線清單與改善。
+- 版本 [1906](https://aka.ms/wac1906) - 新增匯入/匯出 VM、切換 Azure 帳戶、從 Azure 新增連線、連線能力設定實驗、效能改進和效能分析工具。
+- 版本 1904.1 是最新的 GA 版本 - 用來改善閘道外掛程式穩定性的維護更新。
+- 版本 [1904](https://aka.ms/wac1904) 是引進 Azure 混合式服務工具的 GA 版本，其中已將先前預覽版中的功能帶入 GA 通道。
+- 版本 [1903](https://aka.ms/wac1903) 新增來自 Azure 監視器的電子郵件通知、從 Active Directory 新增伺服器或電腦連線的能力，以及用來管理 Active Directory、DHCP 和 DNS 的新工具。
+- 版本 [1902](https://aka.ms/wac1902) 已對軟體定義網路 (SDN) 管理新增共用連線清單並進行改善，包括新增用來管理 ACL、閘道連線和邏輯網路的 SDN 工具。
 - 版本 [1812](https://aka.ms/wac1812) 新增深色佈景主題 (預覽版)、電源組態設定、BMC 資訊和 PowerShell 支援，以管理[擴充功能](./configure/using-extensions.md#manage-extensions-with-powershell)和[連線](./use/get-started.md#use-powershell-to-import-or-export-your-connections-with-tags)。
 - 版本 [1809.5](https://aka.ms/wac1809.5) 是正式運作的累積更新，包含整個平台的各種品質與功能改進和錯誤修正，以及超融合式基礎結構管理解決方案中的幾個新功能。
 - 版本 [1809](https://cloudblogs.microsoft.com/windowsserver/2018/09/20/windows-admin-center-1809-and-sdk-now-generally-available/) 是正式運作的版本，將先前預覽版中的功能引入正式運作的通道。
@@ -147,7 +148,7 @@ ms.locfileid: "66811804"
 - 版本 [1711](https://cloudblogs.microsoft.com/windowsserver/2017/12/01/1711-update-to-project-honolulu-technical-preview-is-now-available/) 新增備受期待的工具 (遠端桌面和 PowerShell) 以及其他改進功能。
 - 版本 [1709](https://cloudblogs.microsoft.com/windowsserver/2017/09/22/project-honolulu-technical-preview-is-now-available-for-download/) 開始以我們第一個公開預覽版本的形式推出。
 
-## <a name="stay-updated"></a>掌握最新資訊
+## <a name="stay-updated"></a>持續更新
 
 ![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[在 Twitter 上關注我們](https://twitter.com/servermgmt)
 

@@ -9,12 +9,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: e25217feba45516cd0e9a3aa2bf1a2581d2087f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3256ff55ec8f293cd37acbea6122584a63847284
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838039"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469581"
 ---
 # <a name="windows-time-for-traceability"></a>Windows 時間可追蹤性
 >適用於：Windows Server 2016 版本 1709年或更新版本，與 Windows 10 1703年版或更新版本
@@ -41,7 +41,6 @@ ms.locfileid: "59838039"
 
 下列各節概述用於可追蹤性案例記錄的事件。
 
-<!-- use tabs like the group policies -->
 # <a name="257tab257"></a>[257](#tab/257)
 Windows Time 服務 (W32Time) 啟動，並記錄目前的時間、 目前的滴答計數、 執行階段組態，時間提供者和目前時脈速度的相關資訊時，會記錄此事件。
 
@@ -82,7 +81,7 @@ w32tm.exe /query /status /verbose
 |記錄資料 |<ul><li>目前的 UTC 時間</li><li>目前的滴答計數</li></ul> |
 |節流機制  |無。 每次服務會停止，就會引發此事件。 |
 
-**範例文字：**
+**範例文字：** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
 
 # <a name="259tab259"></a>[259](#tab/259)
@@ -99,7 +98,7 @@ w32tm.exe /query /status /verbose
 
 Ntp 用戶端會接收時間資料，來自下列的 NTP 伺服器：
 
-server1.fabrikam.com，0x8 (ntp.m|0x8|[::]:123-> [IPAddress]:123)server2.fabrikam.com,0x8 (ntp.m|0x8|[::]:123-> [IPAddress]: 123); 所選的參考的時間伺服器，而且 [Server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123-> [IPAddress]: 123) (RefID:0x08d6648e63)。 系統滴答計數 13187937
+server1.fabrikam.com，0x8 (ntp.m|0x8|[::]:123-> [IPAddress]:123)server2.fabrikam.com,0x8 (ntp.m|0x8|[::]:123-> [IPAddress]: 123); 所選的參考的時間伺服器，而且 Server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123-> [IPAddress]: 123) (RefID:0x08d6648e63)。 系統滴答計數 13187937
 
 **命令**這項資訊也可查詢使用下列命令
 
@@ -144,7 +143,7 @@ server1.fabrikam.com，0x8 (ntp.m|0x8|[::]:123-> [IPAddress]:123)server2.fabrika
 |||
 |---|---|
 |事件描述 |變更在 NTP 用戶端所使用的時間來源 |
-|詳細資料 |NTP 用戶端時，事件記錄與目前狀態的時間伺服器/對等的時間伺服器/對等會將狀態變更 (**-> 同步處理擱置**，**同步處理]-> [無法連線到**，或其他轉換) |
+|詳細資料 |NTP 用戶端時，事件記錄與目前狀態的時間伺服器/對等的時間伺服器/對等會將狀態變更 ( **-> 同步處理擱置**，**同步處理]-> [無法連線到**，或其他轉換) |
 |節流機制  |最大頻率 – 只要以防範暫時性的問題和錯誤的提供者實作的記錄檔每隔 5 分鐘。 |
 
 # <a name="265tab265"></a>[265](#tab/265)

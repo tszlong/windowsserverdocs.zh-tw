@@ -1,5 +1,5 @@
 ---
-title: Windows Server 版本 1803 的新功能
+title: Windows Server 版本 1803 中的新功能
 description: 關於運算、身分識別、管理、自動化、網路功能、安全性、存放裝置的新功能。
 ms.prod: windows-server-threshold
 ms.technology: server-general
@@ -9,17 +9,17 @@ ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
 ms.openlocfilehash: a489d3f8958304d685116186f5db9e1c854114bf
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65976545"
 ---
-# <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 的新功能
+# <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 中的新功能
 
->適用於：Windows Server (半年度管道)
+>適用於：Windows Server (半年通道)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要深入了解 Windows 的最新功能，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)。 本章節內容說明的新功能和 Windows Server，1803年版中已變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱[Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1803 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
 
 ## <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -39,7 +39,7 @@ Windows Server 版本 1709 已於 2017 年 9 月做為半年通道中的第一�
 
 半年通道和長期維護通道的相關特定案例，如下：
 
-|   | 長期維護通道 |  半年通道 |
+|   | 長期維護管道 |  半年通道 |
 | ------------- | ------------- | ------------ |
 | 建議的案例     | 一般用途檔案伺服器、第一方和第三方工作負載、傳統應用程式、基礎結構角色、軟體定義資料中心以及超融合式基礎結構  | 容器化應用程式、容器主機，以及因加快創新而受益的應用程式案例 |
 | 最新發行  | 每隔 2-3 年一次  | 每隔 6 個月一次 |
@@ -54,8 +54,8 @@ Windows Server 版本 1709 已於 2017 年 9 月做為半年通道中的第一�
     - Server Core 基本容器映像從 Windows Server 版本 1709 開始已縮減 30%。 
     - 應用程式相容性也已改善，可協助進行傳統應用程式容器化。
     - 歸功於各種修正和最佳化，容器開機效能及執行時間效能已改善。
-- 容器網路功能：新增 Localhost 和 http proxy 支援之後，，進而改善延展性和啟動時間的容器。
-- 工具：Curl.exe、 Tar.exe 和 SSH 支援已經過增強，來補充 PowerShell 建立和偵錯案例。
+- 容器的網路功能：已新增 Localhost 和 http Proxy 支援，並改善容器延展性和啟動時間。
+- 工具：已增強對 Curl.exe、Tar.exe 和 SSH 的支援來補足 PowerShell 運用於建置和偵錯案例的功能。
 
 ### <a name="server-core-container-image"></a>Server Core 容器映像
 
@@ -75,9 +75,9 @@ WSL 可讓伺服器系統管理員從 Windows Server 上的 Linux 使用現有�
 Kubernetes (通常稱為 K8s) 是在[雲端原生運算基金會 (Cloud Native Computing Foundation)](https://www.cncf.io) 管理下所開發適用於自動化部署、延展和管理容器化應用程式的開放原始碼系統。 
 
 在 Windows Server 版本 1709 中，使用者已經能充分利用 Windows 上的 Kubernetes 功能，包括：
-- 共用 pod 區間：基礎結構和背景工作的 pod 現在共用網路區間 （類似於 Linux 命名空間）。
-- 端點最佳化：多虧有區間共用、 容器服務需要追蹤至少一半的多個端點。
-- 資料路徑最佳化：虛擬篩選平台及主機網路服務的改良功能可讓核心基礎負載平衡。
+- 共用 Pod 區間：基礎架構和背景工作角色 Pod 現在共用網路區間 (類似於 Linux 命名空間)。
+- 端點最佳化：由於區間共用，容器服務現在需要追蹤的端點數量是以前的至少一半。
+- 資料路徑最佳化：改進虛擬篩選平台和主機網路服務，允許核心型負載平衡。
 
 隨著 Windows Server 版本 1803 的發行，未來的 Kubernetes 版本中將會提供更多功能： 
 - 由 Kubernetes 所協調適用於 Windows 容器的[儲存空間外掛程式](https://github.com/Microsoft/K8s-Storage-Plugins)。
@@ -108,7 +108,7 @@ Kubernetes (通常稱為 K8s) 是在[雲端原生運算基金會 (Cloud Native C
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [Windows Server 版本資訊](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[在 Windows 10 中，版本 1803年中的 IT 專業人員內容最新消息](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[Windows 10 (版本 1803) 新功能 IT 專業人員內容](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

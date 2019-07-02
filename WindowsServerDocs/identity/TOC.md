@@ -22,14 +22,14 @@
 #### [附錄 B：設定測試環境](solution-guides/appendix-B--Setting-Up-the-Test-Environment.md)
 
 
-## [Active Directory Domain Services](ad-ds/active-directory-Domain-Services.md)
+## [Active Directory 網域服務](ad-ds/active-directory-Domain-Services.md)
 
-### [Active Directory Domain Services 的新功能](whats-new-active-directory-domain-services.md)
+### [Active Directory 網域服務的新功能](whats-new-active-directory-domain-services.md)
 
 ### [AD DS 快速入門](ad-ds/AD-DS-Getting-started.md)
-#### [Active Directory Domain Services 概觀](ad-ds/get-started/virtual-dc/active-directory-domain-services-overview.md)
+#### [Active Directory 網域服務概觀](ad-ds/get-started/virtual-dc/active-directory-domain-services-overview.md)
 
-#### [Active Directory 管理中心](ad-ds/get-started/adac/active-directory-Administrative-Center.md)
+#### [ Active Directory 管理中心](ad-ds/get-started/adac/active-directory-Administrative-Center.md)
 ##### [AD 資源回收筒、更細緻的密碼原則和 PowerShell 歷程記錄](ad-ds/get-started/adac/Introduction-to-active-directory-Administrative-Center-Enhancements--Level-100-.md)
 ##### [使用 Active Directory 管理中心的進階 AD DS 管理](ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-active-directory-Administrative-Center--Level-200-.md)
 
@@ -73,7 +73,7 @@
 ####### [對應樹系設計模型的設計需求](ad-ds/plan/Mapping-Design-Requirements-to-forest-Design-models.md)
 ####### [使用組織網域樹系模型](ad-ds/plan/Using-the-Organizational-Domain-forest-model.md)
 ##### [建立網域設計](ad-ds/plan/Creating-a-Domain-Design.md)
-###### [檢閱網域模型](ad-ds/plan/Reviewing-the-Domain-models.md)
+###### [檢閱領域模型](ad-ds/plan/Reviewing-the-Domain-models.md)
 ###### [決定所需的網域數](ad-ds/plan/Determining-the-Number-of-Domains-Required.md)
 ###### [決定是否要升級現有網域或部署新網域](ad-ds/plan/Determining-Whether-to-Upgrade-Existing-Domains-or-Deploy-New-Domains.md)
 ###### [指派網域名稱](ad-ds/plan/assigning-Domain-Names.md)
@@ -184,7 +184,7 @@
 ##### [使用 Windows PowerShell 進行 Active Directory 複寫和拓撲管理簡介 (層級 100)](ad-ds/manage/powershell/Introduction-to-active-directory-Replication-and-Topology-Management-Using-Windows-powershell--Level-100-.md)
 ##### [使用 Windows PowerShell 進行進階的 Active Directory 複寫和拓撲管理 (層級 200)](ad-ds/manage/powershell/Advanced-active-directory-Replication-and-Topology-Management-Using-Windows-powershell--Level-200-.md)
 #### [管理 RID 發行](ad-ds/manage/Managing-RID-Issuance.md)
-#### [Active Directory Domain Services 元件更新](ad-ds/manage/component-updates/active-directory-Domain-Services-component-Updates.md)
+#### [Active Directory 網域服務元件更新](ad-ds/manage/component-updates/active-directory-Domain-Services-component-Updates.md)
 ##### [身分識別元件更新](ad-ds/manage/component-updates/Identity-component-updates.md)
 ###### [SPN 和 UPN 的唯一性](ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)
 ###### [Winlogon 自動重新啟動登入 (ARSO)](ad-ds/manage/component-updates/winlogon-automatic-restart-sign-on--arso-.md)
@@ -344,13 +344,13 @@
 ###### [手動建立宣告提供者信任](ad-fs/operations/create-a-Claims-Provider-Trust.md)
 ###### [建立規則傳送 AD FS 1.x 相容宣告](ad-fs/operations/create-a-Rule-to-Send-an-AD-FS-1x-compatible-Claim.md)
 #### [部署 Azure AD Connect Health](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
-#### [將 Active Directory 同盟服務角色服務移轉到 Windows Server 2012 R2](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
+#### [將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012 R2](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [準備移轉 AD FS 同盟伺服器](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
 #####[移轉 AD FS 同盟伺服器](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
 #####[移轉 AD FS 同盟伺服器 Proxy](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
 #####[確認將 AD FS 移轉到 Windows Server 2012 R2](ad-fs/deployment/verify-ad-fs-migration.md)
 
-#### [將 Active Directory 同盟服務角色服務移轉到 Windows Server 2012](ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
+#### [將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012](ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 ##### [準備移轉 AD FS 2.0 同盟伺服器](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-server.md)
 ######[準備移轉獨立 AD FS 2.0 或單一節點伺服器陣列伺服器](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
 ######[準備移轉 AD FS 2.0 WID 伺服器陣列](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
@@ -414,14 +414,15 @@
 
 #### [使用 SAML 2.0 改進互通性](ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 #### [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-company-Applications.md)
-#### [透過其他多因素驗證管理機密應用程式的風險](ad-fs/operations/Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+#### [透過其他多重要素驗證管理機密應用程式的風險](ad-fs/operations/Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 #### [使用條件式存取控制管理風險](ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 #### [管理 AD FS 和 WAP 2016 中的 SSL 憑證](ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP.md)
 #### [管理 AD FS 中的 SSL 通訊協定](ad-fs/operations/Manage-SSL-Protocols-in-AD-FS.md)
 #### [規劃裝置型條件式存取內部部署](ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 
 #### [設定 AD FS 實驗室環境](ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
-#### [逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+#### [SQL 微調與延遲處理](ad-fs/operations/adfs-sql-latency.md)
+#### [逐步解說指南：透過其他多重要素驗證管理機密應用程式的風險](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 #### [逐步解說指南：使用條件式存取控制管理風險](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 #### [逐步解說：將 Windows 裝置加入工作地點網路](ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 #### [逐步解說：將 iOS 裝置加入工作地點網路](ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)

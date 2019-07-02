@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 06/07/2019
-ms.openlocfilehash: 8e718eda7859c5e0b6949829c225b28e882525ad
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 4d108161dd4f6b57d4a86cbcaa5852aff53f0ac3
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811703"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469516"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑難排解
 
@@ -98,7 +98,6 @@ ms.locfileid: "66811703"
 
 ## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>我會收到訊息：「 無法安全地連線到此頁面。 這可能是因為站台使用過期或不安全的 TLS 安全性設定。
 
-<!--REF: https://docs.microsoft.com/iis/get-started/whats-new-in-iis-10/http2-on-iis#when-is-http2-not-supported -->
 只有 HTTP/2 連線到您的電腦。 Windows Admin Center 會使用整合式的 Windows 驗證，不支援 HTTP/2。 新增下列兩個登錄值之下```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters```上的索引鍵**執行瀏覽器的電腦**移除 HTTP/2 限制：
 
 ```
@@ -198,14 +197,14 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>在 Edge 中無法正常運作的 azure 功能
 
-邊[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)相關影響 Azure 登入 Windows Admin Center 中的安全性區域。 如果您無法使用 Azure 功能，當使用 Edge 時，再次嘗試新增 https://login.microsoftonline.com， https://login.live.com和信任的網站做為您閘道的 URL，並以允許站台的 Edge 瀏覽器用戶端端上的快顯封鎖程式設定。 
+邊[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)相關影響 Azure 登入 Windows Admin Center 中的安全性區域。 如果您無法使用 Azure 功能，當使用 Edge 時，再次嘗試新增 https://login.microsoftonline.com ， https://login.live.com 和信任的網站做為您閘道的 URL，並以允許站台的 Edge 瀏覽器用戶端端上的快顯封鎖程式設定。 
 
 請這樣做：
 1. 搜尋**網際網路選項**在 Windows 中開始功能表
 2. 移至**安全性** 索引標籤
-3. 底下**信任的網站**選項中，按一下 **站台**按鈕，然後在對話方塊中，開啟 新增 Url。 您必須新增您的閘道 URL，以及 https://login.microsoftonline.com和 https://login.live.com。
+3. 底下**信任的網站**選項中，按一下 **站台**按鈕，然後在對話方塊中，開啟 新增 Url。 您必須新增您的閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
 4. 移至**隱私權** 索引標籤
-5. 底下**快顯封鎖程式**區段中，按一下**設定**按鈕，然後在對話方塊中，開啟 新增 Url。 您必須新增您的閘道 URL，以及 https://login.microsoftonline.com和 https://login.live.com。
+5. 底下**快顯封鎖程式**區段中，按一下**設定**按鈕，然後在對話方塊中，開啟 新增 Url。 您必須新增您的閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>問題與 Azure 相關的功能？
 

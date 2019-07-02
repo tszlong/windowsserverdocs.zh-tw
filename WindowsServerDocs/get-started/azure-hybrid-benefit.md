@@ -9,11 +9,11 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884079"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63686390"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>適用於 Windows Server 的 Azure Hybrid Benefit
 
@@ -24,7 +24,7 @@ ms.locfileid: "59884079"
 適用於 Windows Server 的 Azure Hybrid Benefit 可讓您利用內部部署 Windows Server 授權搭配軟體保證，在 Azure 中節省高達 40% 的 Windows Server VM。  透過這項權益，客戶只需要支付基礎結構成本，因為軟體保證權益已涵蓋 Windows Server 的授權。  此權益適用於 Windows Server 2008R2、2012、2012R2 與 2016 版本的 Standard 和 Datacenter 版本。  這項權益在所有地區和 Sovereign 雲端都能使用。
 
 
-![圖片 1](media/ahb01.png)
+![影像 1](media/ahb01.png)
 
 若想符合此權益資格，您只需擁有使用中軟體保證或訂閱授權，例如 EAS、SCE 訂閱或 Windows Server 授權的 Open Value Subscription。  
 
@@ -39,20 +39,20 @@ ms.locfileid: "59884079"
 
 ### <a name="savings-examples"></a>節省範例 
 
-![圖片 2](media/ahb02.png)
+![影像 2](media/ahb02.png)
  
 下面提供一個參考表，有助於您更詳細了解權益規則。 綠色欄顯示相同類型 VM 的數量，藍色列顯示每個 VM 的核心密度。 黃色儲存格顯示 2 處理器授權的數目 (或 16 核心組數)，其中一個必須部署特定核心密度的特定 VM 數目。 
 
 Windows Server 搭配 SA 需求參考表：
 
-![圖片 3](media/ahb03.png)
+![影像 3](media/ahb03.png)
  
 適用於 Windows Server 的 Azure Hybrid Benefit 也提供根據您的需求來執行設定，以及結合不同類型 VM 的彈性。
 
 幾個授權定位的設定範例：
 
-![圖 4](media/ahb04.png)
-![影像 5](media/ahb05.png)
+![圖片 4](media/ahb04.png)
+![圖片 5](media/ahb05.png)
 
  
 如果您想深入了解適用於 Windows Server 的 Azure Hybrid Benefit，請移至 Azure Hybrid Benefit 網站。
@@ -64,7 +64,7 @@ Windows Server 搭配 SA 需求參考表：
 
 1. 設定 Microsoft Azure 入口網站來顯示適用於 Windows Server 的 Azure Hybrid Benefit 使用量。在 Microsoft Azure 入口網站的虛擬電腦區段清單檢視中，新增「Azure Hybrid Benefit」欄。 
 
-    ![圖片 6](media/ahb06.png)
+    ![影像 6](media/ahb06.png)
 
 2.  使用 PowerShell 列出適用於 Windows Server 的 Azure Hybrid Benefit 使用量
 

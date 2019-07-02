@@ -9,19 +9,19 @@ ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
 ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810772"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
 > 適用於：Windows Server 2019
 
-本主題說明 Windows Server 2019 中的一些新功能。 Windows Server 2019 建置在 Windows Server 2016 的強大基礎，且四個索引鍵的佈景主題方面帶來眾多革新：混合式雲端、 安全性、 應用程式平台和超交集基礎結構 (HCI)。
+本主題說明 Windows Server 2019 中的一些新功能。 Windows Server 2019 建置在 Windows Server 2016 的強大基礎上，並在四個關鍵主題上帶來多項改革：混合式雲端、安全性、應用程式平台和超融合式基礎結構 (HCI)。
 
-若要了解 Windows Server 半年通道發行的新功能，請參閱[What's New in Windows Server](../get-started/whats-new-in-windows-server.md)。
+若要了解 Windows Server 半年通道版本的新功能，請參閱 [Windows Server 的新功能](../get-started/whats-new-in-windows-server.md)。
 
 ## <a name="general"></a>一般
 
@@ -29,13 +29,13 @@ ms.locfileid: "66810772"
 
 Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，用於管理伺服器、叢集、超融合式基礎結構以及 Windows 10 電腦。 除了 Windows 本身以外，不需另付費用，而且可以立即使用於生產環境中。
 
-您可以安裝在 Windows Server 2019，以及 Windows 10 和舊版的 Windows 和 Windows Server 上的 Windows Admin Center，並使用它來管理伺服器和執行 Windows Server 2008 R2 的叢集和更新版本。
+您可以在 Windows Server 2019、Windows 10 和舊版 Windows 及 Windows Server 上安裝 Windows Admin Center，並用它來管理執行 Windows Server 2008 R2 和更新版本的伺服器及叢集。
 
-如需詳細資訊，請參閱 < [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)。
+如需詳細資訊，請參閱 [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)。
 
 ### <a name="desktop-experience"></a>桌面體驗
 
-因為 Windows Server 2019 是長期維護通道 (LTSC) 發行，所以包含<b>桌面體驗</b>。 (半年通道\(SAC\)版本不包含所設計的桌面體驗; 它們絕對是 Server Core 和 Nano Server 容器映像版本。)如同 Windows Server 2016 中，作業系統安裝期間您可以選擇 Server Core 安裝或 Server 之間使用桌面體驗。
+因為 Windows Server 2019 是長期維護通道 (LTSC) 發行，所以包含<b>桌面體驗</b>。 (半年通道 \(SAC\) 版本預設不包含桌面體驗；這些版本只是 Server Core 和 Nano Server 容器映像版本。)和 Windows Server 2016 一樣，在安裝作業系統期間，您可以選擇核心安裝或含桌面體驗的伺服器安裝。
 
 ### <a name="system-insights"></a>系統深入解析
 
@@ -83,13 +83,13 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 ### <a name="shielded-virtual-machines-improvements"></a>受防護虛擬機器改進功能
 
-- **分支辦公室的改善**
+- **分公司改進功能**
 
     您現在可以運用全新的[遞補 HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) 和[離線模式](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode)功能，在間歇連線到主機守護者服務的電腦上執行受防護的虛擬機器。 遞補 HGS 可讓您為 Hyper-V 設定第二組 URL，在無法連線到主要 HGS 伺服器時可嘗試使用。
 
     離線模式可在即使無法連線到 HGS 時仍繼續啟動受防護 VM，只要 VM 已成功啟動一次且主機的安全性設定未變更。
 
-- **疑難排解增強功能**
+- **疑難排解改進功能**
 
     我們也透過啟用 VMConnect 加強的工作階段模式和 PowerShell Direct 支援，簡化[疑難排解受防護的虛擬機器](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms)。 如果您遺失 VM 的網路連線，並且需要更新其設定來還原存取，這些工具會非常有用。 
 
@@ -117,18 +117,18 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 ### <a name="storage-spaces-direct"></a>儲存空間直接存取
 
-以下是儲存空間直接存取的新功能清單。 如需詳細資訊，請參閱[儲存空間直接存取的新功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。 另請參閱[Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)上取得的資訊會驗證儲存空間直接存取系統。
+以下是儲存空間直接存取的新功能清單。 如需詳細資訊，請參閱[儲存空間直接存取的新功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。 另請參閱 [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)，以了解如何取得已驗證的「儲存空間直接存取」系統。
 
-- **重複資料刪除和壓縮 ReFS 磁碟區**
-- **持續性記憶體的原生支援**
-- **在邊緣的雙節點超交集基礎結構的巢狀恢復功能**
-- **兩部伺服器叢集使用 USB 快閃磁碟機為見證**
+- **ReFS 磁碟區的重複資料刪除和壓縮**
+- **原生支援持續性記憶體**
+- **在邊緣的雙節點超融合式基礎結構的巢狀復原力**
+- **使用 USB 快閃磁碟做為見證的兩個伺服器叢集**
 - **Windows Admin Center 支援**
 - **效能歷程記錄**
-- **調整最多 4 PB，每個叢集**
-- **鏡像加速同位檢查的速度會 2 X**
+- **每個叢集可擴充到最多 4 PB**
+- **鏡像加速的同位加快 2 倍**
 - **磁碟機延遲極端值偵測**
-- **以手動方式分隔的磁碟區來提高容錯的配置**
+- **以手動方式分隔分隔磁碟區配置來增加容錯能力**
 
 ### <a name="storage-replica"></a>儲存體複本
 
@@ -144,14 +144,14 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 以下是容錯移轉叢集的新功能清單。 如需詳細資訊，請參閱[容錯移轉叢集的新功能](../failover-clustering/whats-new-in-failover-clustering.md)。
 
 - **叢集集合**
-- **Azure 可感知叢集**
-- **跨網域的叢集移轉**
+- **Azure 感知叢集**
+- **跨網域叢集移轉**
 - **USB 見證**
-- **叢集基礎結構改進**
-- **叢集感知更新的支援儲存空間直接存取**
-- **檔案共用見證的增強功能**
+- **叢集基礎結構改進功能**
+- **叢集感知更新支援儲存空間直接存取**
+- **檔案共用見證增強功能**
 - **叢集強化**
-- **容錯移轉叢集不會再使用 NTLM 驗證**
+- **容錯移轉叢集不再使用 NTLM 驗證**
 
 ## <a name="application-platform"></a>應用程式平台
 
@@ -159,7 +159,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 現在可以使用相同的 Docker 精靈，在相同容器主機上執行 Windows 和 Linux 容器。 這可讓您擁有異質性容器主機環境，同時提供彈性給應用程式開發人員。
 
-### <a name="built-in-support-for-kubernetes"></a>針對 Kubernetes 的內建支援
+### <a name="built-in-support-for-kubernetes"></a>Kubernetes 的內建支援
 
 Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通道發行版本，持續改進計算、網路功能和儲存空間。 即將推出的 Kubernetes 版本中會提供更多詳細資料。
 
@@ -169,19 +169,19 @@ Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通
 
 ### <a name="container-improvements"></a>容器改進功能
     
-- **改良的整合式身分識別**
+- **改進整合式身分識別**
 
     我們將容器中的整合式 Windows 驗證調整的更簡單也更可靠，以解決舊版 Windows Server 中的數個限制。
 
-- **更好的應用程式相容性**
+- **改善應用程式相容性**
 
-    容器化以 Windows 為基礎的應用程式時，就得更容易：針對現有的應用程式相容性*windowsservercore*映像是否已增加。 對於需相依於其他 API 的應用程式，目前有第三個基本映像：*windows*。
+    容器化以 Windows 為基礎的應用程式變得更容易：現有 windowsservercore  映像的應用程式相容性已提高。 對於需相依於其他 API 的應用程式，目前有第三個基本映像：*windows*。
 
-- **大小和較高的效能降低**
+- **縮小尺寸、提高效能**
 
     基本容器映像下載大小、磁碟大小和開機時間都已改進。 如此可加快容器工作流程
 
-- **使用 Windows Admin Center 的管理體驗\(預覽\)**
+- **使用 Windows Admin Center 管理體驗 \(預覽\)**
 
     我們已透過 Windows Admin Center 的新擴充功能，大幅簡化查看哪些容器正在您的電腦上執行以及管理個別容器。 請至 [Windows Admin Center 公用摘要](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions)尋找 "Containers" 擴充功能。
 

@@ -11,15 +11,15 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: 9d8a8cae62a9be3384c09009dbad52e06623adb0
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66222917"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>升級 Windows Server 2008 與 Windows Server 2008 R2
 
-Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年 1 月 14 結束。 有兩個現代化路徑：在內部部署升級或藉由在 Azure 中重新裝載的移轉。 **如果您重新裝載在 Azure 中，您可以移轉您現有伺服器的映像的免費。**
+Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年 1 月 14 結束。 有兩個現代化路徑：內部部署升級或藉由在 Azure 中重新裝載來進行移轉。 **如果您在 Azure 中重新裝載，您可以免費移轉您現有的 Server 映像。**
 
 ![說明從 Windows Server 2008 升級路徑的流程圖](media/WS08_upgrade_paths.png)
 
@@ -42,7 +42,7 @@ Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年
 - 透過將 SQL Server 移轉至 Azure 受管理執行個體或 VM，您可以得到超過三年的 Windows Server 2008 R2 或 2008 重大安全性更新 (免費隨附)。 
 - 運用現有的 SQL Server 與 Windows Server 授權來達到只有 Azure 才有的雲端節省。
 
-[![開始使用特製化映像移轉至 Azure](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)
+[![開始使用特製化映像來遷移至 Azure](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)
 
 若要開始移轉，請參閱[將 Windows Server 2008/2008 R2 專用映像上傳至 Azure](uploading-specialized-WS08-image-to-azure.md)。
 

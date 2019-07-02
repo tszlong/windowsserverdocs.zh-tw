@@ -11,11 +11,11 @@ ms.topic: landing-page
 ms.author: billmath
 ms.localizationpriority: high
 ms.openlocfilehash: 161840d86cae6b688e3e7a877c7c44b17aefd432
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824239"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63684219"
 ---
 # <a name="identity--access"></a>身分識別 | 存取
 
@@ -80,7 +80,7 @@ ms.locfileid: "59824239"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>適用於企業的 Windows 10:若要使用裝置工作的方式</h3><hr />
+                        <h3>Windows 10 企業版：用裝置來工作的方式</h3><hr />
                         <p>Windows 10 可讓您運用 Azure Active Directory。 Windows 10 裝置可以連線至 Azure AD，使用者可以使用 Azure AD 帳戶登入 Windows，或新增他們的 Azure ID 以存取商務應用程式和資源。</p>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ ms.locfileid: "59824239"
 ---
 
 ## <a name="solutions-and-scenario-guides"></a>解決方案和案例指南  
-* [保護從任何裝置上的任何位置存取公司資源](https://technet.microsoft.com/library/dn550982.aspx)  
-*  [從任何裝置加入工作地點網路提供 SSO 和無縫式次要因素驗證，跨公司應用程式](https://technet.microsoft.com/library/dn280945.aspx)  
-* [透過機密應用程式的其他多因素驗證管理風險](https://technet.microsoft.com/library/dn280949.aspx)  
+* [確保從任意地點使用任意裝置存取公司資源時的安全](https://technet.microsoft.com/library/dn550982.aspx)  
+*  [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](https://technet.microsoft.com/library/dn280945.aspx)  
+* [透過其他多重要素驗證管理機密應用程式的風險](https://technet.microsoft.com/library/dn280949.aspx)  
 * [使用條件式存取控制管理風險](https://technet.microsoft.com/library/dn280937.aspx)
