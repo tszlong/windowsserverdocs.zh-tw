@@ -5,16 +5,16 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 04/01/2019
+ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a831154a8b1e84f5ed879375980882e208c33d73
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 525ba403473a9de522d9ab30662adc868b17b88d
+ms.sourcegitcommit: c02756b7f5c92bf5018e17192f6fffb4754b0f06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190346"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67533502"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速還原工具
 
@@ -213,6 +213,13 @@ RngCryptoServiceProvider 用來產生 AES 和 Rfc2898DeriveBytes 類別所使用
 > 當執行的還原，PostRestore_Instructions 檔案可能會建立包含額外的驗證提供者的概觀，為屬性存放區和本機宣告提供者信任來手動安裝，再啟動 AD FS 服務。
 
 ## <a name="version-release-history"></a>版本發行歷程記錄
+
+### <a name="version-10820"></a>版本 1.0.82.0
+版本：2019 年 7 月
+
+**已修正的問題：**
+- Bug 修正，適用於 AD FS 服務帳戶名稱包含 LDAP 逸出字元
+
 
 ### <a name="version-10810"></a>版本：1.0.81.0
 版本：2019 年 4 月
