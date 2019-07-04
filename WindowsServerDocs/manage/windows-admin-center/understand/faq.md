@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d0e57a1ef3f1b84fbdf4ebf0b3d2d205dc7a1987
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 53f34992b875730be80ba479f387095aebbc8132
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298158"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469555"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常見問題集
 
@@ -148,10 +148,6 @@ Windows Admin Center 與 SCVMM 相輔相成；Windows Admin Center 主要用來�
 * 若要取得最新的版本，請[從這裡下載](https://aka.ms/WACDownload)。
 
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center 預覽版
-<!--
-> [!NOTE]
-> The current GA version (Windows Admin Center 1904) contains all previous preview functionality.
-> The Insider Preview will return in the coming months. -->
 
 * 如果您是 IT 系統管理員，想要依一般發行頻率取得最新的絕佳功能時，此版本正合您需要。 我們的目的是每個月左右提供後續的更新版本。 核心平台仍繼續為生產就緒產品，而授權會提供生產使用權。 但請注意，您將會看到清楚標示為 PREVIEW 且適合評估及測試的新工具和功能陸續推出。
 * 若要取得最新的 Insider Preview 版本，已註冊的測試人員可以直接從 [Windows Server Insider Preview 下載頁面](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)的 [其他下載] 下拉式清單中下載 Windows Admin Center 預覽版。 如果您還沒有註冊為測試人員，請參閱商務用 Windows 測試人員入口網站上的[開始使用 Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/)。
