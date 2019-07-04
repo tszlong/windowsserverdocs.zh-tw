@@ -10,18 +10,18 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2546322d6c6dbc4d64f18fc62366c698885108d8
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.openlocfilehash: b2be54748a36f97a11796ebfa16701baac1c612d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810631"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280648"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
-![圖示顯示報紙](media/whats-new.png)若要深入了解 Windows 的最新功能，請參閱[What's New in Windows Server](whats-new-in-windows-server.md)。 本節內容說明 Windows Server&reg; 2016 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。
+![顯示報紙的圖示](media/whats-new.png)若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server&reg; 2016 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。
 
 ## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "66810631"
 ### <a name="hyper-v"></a>Hyper-V  
 -   [Windows Server 2016 的 Hyper-V 新功能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 本主題說明在 Windows Server 2016、Windows 10 上執行的用戶端 Hyper-V，以及 Microsoft Hyper-V Server 2016 中 Hyper-V 角色的新功能和變更。  
 
--   [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome):Windows Server 2016 容器支援新增 Windows 10 上的效能改進、 簡化的網路管理，以及適用於 Windows 容器的支援。 在容器上一些其他資訊，請參閱[容器：Docker、 Windows 及趨勢](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
+-   [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)：Windows Server 2016 容器支援新增效能改進、簡化網路管理，以及對 Windows 10 上 Windows 容器的支援。 如需一些關於容器的額外資訊，請參閱[容器︰Docker、Windows 及趨勢](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
 
 ### <a name="nano-server"></a>Nano Server  
 [Nano 伺服器](getting-started-with-nano-server.md)中的新功能。 Nano 伺服器現在提供建置 Nano 伺服器映像的更新模組，包括實體主機和客體虛擬機器功能之間的進一步分隔，以及針對不同 Windows Server 版本的支援。   
@@ -63,13 +63,13 @@ Windows Server 2016 提供新的 Hyper-V 型受防護虛擬機器，保護遭入
 「身分識別」中的新功能可提升組織保護 Active Directory 環境的能力，並協助他們移轉至僅限雲端的部署和混合式部署，其中有些應用程式與服務會裝載於雲端，而其他則會裝載於內部部署上。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 憑證服務  
-Windows Server 2016 中的 active Directory 憑證服務 (AD CS) 增加支援 TPM 金鑰證明：您現在可以針對金鑰證明使用智慧卡 KSP，以及未加入網域的裝置現在可以使用 NDES 註冊來取得可針對 TPM 中的金鑰進行證明的憑證。  
+Windows Server 2016 中的 Active Directory 憑證服務 (AD CS) 增加對 TPM 金鑰證明的支援：您現在可以針對金鑰證明使用智慧卡 KSP，而未加入網域的裝置現在可以使用 NDES 註冊來取得可針對 TPM 中的金鑰進行證明的憑證。  
 
 ### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
 「Active Directory 網域服務」包含可協助組織確保 Active Directory 環境及為公司裝置與個人裝置提供更佳身分識別管理體驗的改進。 如需詳細資訊，請參閱 [What's new in Active Directory Domain Services (AD DS) in Windows Server 2016](../identity/whats-new-active-directory-domain-services.md) (Windows Server 2016 中 Active Directory 網域服務 (AD DS) 的新功能)。   
 
 ### <a name="active-directory-federation-services"></a>Active Directory 同盟服務  
-Active Directory 同盟服務的新功能。 Windows Server 2016 中的 Active Directory Federation Services (AD FS) 包含可讓您設定 AD FS 以驗證儲存在「輕量型目錄存取通訊協定」(LDAP) 目錄中之使用者的新功能。 如需詳細資訊，請參閱[適用於 Windows Server 2016 之 AD FS 的新功能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)。  
+Active Directory 同盟服務的新功能。 Windows Server 2016 中的 Active Directory Federation Services (AD FS) 包含可讓您設定 AD FS 以驗證儲存在「輕量型目錄存取通訊協定」(LDAP) 目錄中之使用者的新功能。 如需詳細資訊，請參閱[適用於 Windows Server 2016 之 AD FS 的新功能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)。  
 
 ### <a name="web-application-proxy"></a>Web 應用程式 Proxy  
 最新版的「Web 應用程式 Proxy」著重於可發行和預先驗證更多應用程式及改善使用者體驗的新功能。 請查看新功能的完整清單，其中包括豐富型用戶端應用程式 (例如 Exchange ActiveSync) 的預先驗證，以及讓 SharePoint 應用程式更容易發行的萬用字元網域。 如需詳細資訊，請參閱 [Windows Server 2016 的 Web 應用程式 Proxy](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。  
@@ -183,7 +183,7 @@ Windows Server 2016 的 IIS 10.0 Web 伺服器提供新功能，包括︰
 
 - 支援網路堆疊 HTTP/2 通訊協定，並整合 IIS 10.0，讓 IIS 10.0 網站針對支援的設定自動服務 HTTP/2 要求。 這允許許多 HTTP/1.1 增強功能，例如更有效率重複使用連線和降低延遲、改善網頁載入時間。 
 - 在 Nano Server 中執行並管理 IIS 10.0 的能力。 請參閱 [Nano Server 上的 IIS](iis-on-nano-server.md)。
-- 支援萬用字元主機標頭，讓系統管理員設定網域的 web 伺服器，然後在 服務要求的任何子網域的 web 伺服器。
+- 支援萬用字元主機標頭，讓系統管理員設定網域的網頁伺服器，並讓網頁伺服器服務子網域的要求。
 - 新 PowerShell 模組 (IISAdministration) 來管理 IIS。 
 
 如需詳細資訊，請參閱 [IIS](https://iis.net/learn)。
@@ -191,11 +191,11 @@ Windows Server 2016 的 IIS 10.0 Web 伺服器提供新功能，包括︰
 ### <a name="distributed-transaction-coordinator-msdtc"></a>分散式交易協調器 (MSDTC)
 在 Microsoft Windows 10 和 Windows Server 2016 中增加三項新功能：
 
-- 新的資源管理員重新加入介面可供資源管理員於資料庫因為發生錯誤而重新開機之後判斷不確定交易的結果。 如需詳細資訊，請參閱 [IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/en-us/library/mt203799(v=vs.85).aspx)。
+- 新的資源管理員重新加入介面可供資源管理員於資料庫因為發生錯誤而重新開機之後判斷不確定交易的結果。 如需詳細資訊，請參閱 [IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/library/mt203799(v=vs.85).aspx)。
 
-- DSN 名稱限制從 256 位元組增加到 3072 位元組。 如需詳細資訊，請參閱 [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/en-us/library/ms686861(v=vs.85).aspx)，[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/en-us/library/ms679248(v=vs.85).aspx) 或[IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/en-us/library/ms680310(v=vs.85).aspx)。
+- DSN 名稱限制從 256 位元組增加到 3072 位元組。 如需詳細資訊，請參閱 [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)，[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx) 或 [IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)。
 
-- 已改善追蹤可讓您設定登錄金鑰，將映像檔路徑包含在追蹤記錄檔名稱，以決定檢查哪個追蹤記錄檔。 如需設定 MSDTC 追蹤，請參閱[如何在 Windows 電腦上啟用 MS DTC 診斷追蹤](https://support.microsoft.com/en-us/kb/926099)。
+- 已改善追蹤可讓您設定登錄機碼，將映像檔路徑包含在追蹤記錄檔名稱，以決定檢查哪個追蹤記錄檔。 如需設定 MSDTC 追蹤，請參閱[如何在 Windows 電腦上啟用 MS DTC 診斷追蹤](https://support.microsoft.com/en-us/kb/926099)。
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: Windows Admin Center 常見問題集
-description: 取得有關 Windows Admin Center 的問題解答 (Project Honolulu)
+description: 取得有關 Windows Admin Center (Project Honolulu) 的問題解答
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 5c306dd181d4db400e6ab5bab919399fdebca9f3
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.openlocfilehash: d0e57a1ef3f1b84fbdf4ebf0b3d2d205dc7a1987
+ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811672"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298158"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常見問題集
 
-> 適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 以下是有關 Windows Admin Center 最常見問題的解答。
 
@@ -27,7 +27,7 @@ Windows Admin Center 是輕量的瀏覽器型 GUI 平台與工具組，供 IT �
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>我可以在生產環境中使用 Windows Admin Center 嗎？
 
-是的。 Windows Admin Center 已正式運作，並且已準備就緒可供廣泛使用和生產部署。 目前的平台功能和 core 工具符合 Microsoft 的標準的釋放準則和可用性、 可靠性、 效能、 協助工具、 安全性及採用我們品質列。
+是。 Windows Admin Center 已正式運作，並且已準備就緒可供廣泛使用和生產部署。 目前的平台功能及核心工具符合 Microsoft 的標準發行準則，以及我們對可用性、可靠性、效能、協助工具、安全性和採用率的品質規範。
 
 [!INCLUDE [support-policy](../includes/support-policy.md)]
 
@@ -37,11 +37,11 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。 您可�
 
 ## <a name="what-versions-of-windows-server-can-i-manage-with-windows-admin-center"></a>哪些版本的 Windows Server 可以使用 Windows Admin Center 來管理？
 
-若要啟用索引鍵的佈景主題，在 Windows Server 2019 版本的 Windows Server 2019 針對最佳化 Windows Admin Center： 混合式的雲端案例和超交集基礎結構管理特別。 雖然 Windows Admin Center 最適合與 Windows Server 2019，它支援管理各種不同的客戶已使用的版本：完全支援 Windows Server 2012 和更新版本。 另外還有管理 Windows Server 2008 R2 的功能有限。
+Windows Admin Center 經過最佳化，最適用於 Windows Server 2019，並且會在即將發行的 Windows Server 2019 版本中啟用重要主題：尤其是混合式雲端案例和超融合式基礎結構管理。 雖然 Windows Admin Center 最適合與 Windows Server 2019 搭配使用，但也支援管理各種客戶已經使用的版本：完全支援 Windows Server 2012 和更新版本。 另外還有用於管理 Windows Server 2008 R2 的有限功能。
 
 ## <a name="is-windows-admin-center-a-complete-replacement-for-all-traditional-in-box-and-rsat-tools"></a>Windows Admin Center 是否會完全取代所有傳統的隨附工具和 RSAT 工具？
 
-資料分割 Windows Admin Center 可以管理許多常見的案例，但不會完全取代所有傳統 Microsoft Management Console (MMC) 工具。 深入了解哪些工具是隨附於 Windows Admin Center，深入了解針對[管理伺服器](../use/manage-servers.md)文件中。 Windows Admin Center 在其伺服器管理員解決方案中有下列重要功能：
+不。 Windows Admin Center 可以管理許多常見的案例，但不會完全取代所有傳統 Microsoft Management Console (MMC) 工具。 如需詳細查看 Windows Admin Center 中隨附哪些工具，請閱讀我們文件中更多有關[管理伺服器](../use/manage-servers.md)的資訊。 Windows Admin Center 在其伺服器管理員解決方案中有下列重要功能：
 
 * 顯示資源和資源使用率
 * 憑證管理
@@ -54,7 +54,7 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。 您可�
 * 網路設定
 * 檢視/結束處理序，以及建立處理序傾印
 * 登錄編輯
-* 管理已排程工作
+* 管理排定的工作
 * 管理 Windows 服務
 * 啟用/停用角色和功能
 * 管理 Hyper-V VM 和虛擬交換器
@@ -74,44 +74,44 @@ Windows Admin Center 與 RSAT (遠端伺服器管理工具) 相輔相成，但�
 
 ## <a name="can-windows-admin-center-be-used-to-manage-the-free-microsoft-hyper-v-server"></a>是否可以使用 Windows Admin Center 來管理免費的 Microsoft Hyper-V Server？
 
-是的。 Windows Admin Center 可以用來管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
+是。 Windows Admin Center 可以用來管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>是否可以在 Windows 10 電腦上部署 Windows Admin Center？
 
-是的，可以將 Windows Admin Center 安裝在執行於桌面模式中的 Windows 10 (版本 1709 或更新版本)。  Windows Admin Center 也可以安裝在 Windows Server 2016 的伺服器上或在閘道模式中，更高，然後透過網頁瀏覽器從 Windows 10 電腦存取。 [深入了解安裝選項](../plan/installation-options.md)。
+是的，可以將 Windows Admin Center 安裝在執行於桌面模式中的 Windows 10 (版本 1709 或更新版本)。  也可以將 Windows Admin Center 安裝在以閘道模式執行 Windows Server 2016 或更新版本的伺服器上，然後透過 Windows 10 電腦中的網頁瀏覽器進行存取。 [深入了解安裝選項](../plan/installation-options.md)。
 
-## <a name="ive-heard-that-windows-admin-center-uses-powershell-under-the-hood-can-i-see-the-actual-scripts-that-it-uses"></a>我聽過 Windows Admin Center 會使用 PowerShell 在幕後，查看實際的指令碼，它會使用嗎？
+## <a name="ive-heard-that-windows-admin-center-uses-powershell-under-the-hood-can-i-see-the-actual-scripts-that-it-uses"></a>我聽過 Windows Admin Center 會在幕後使用 PowerShell，請問我能看到其使用的實際指令碼嗎？
 
-Yes ！ [Showscript 功能](../use/get-started.md#view-powershell-scripts-used-in-windows-admin-center)Windows Admin Center 預覽 1806年中新增了，現在已包含在 GA 通道。
+是的！ [Showscript 功能](../use/get-started.md#view-powershell-scripts-used-in-windows-admin-center)已新增至 Windows Admin Center 預覽版本 1806，而且現在已包含在 GA 通道中。
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>Windows Admin Center 是否有任何方案可以管理 Windows Server 2008 R2 或更早版本？
 
-Windows Admin Center 現在支援**有限**來管理 Windows Server 2008 R2 的功能。 Windows Admin Center 需依賴 Windows Server 2008 R2 中所沒有的 PowerShell 功能和平台技術，使完整支援變得可行。 Windows Server 2008/2008 R2 即將結束在 2020 年 1 月的支援，因此 Microsoft 建議客戶[移至 Azure 或升級為最新版本的 Windows Server](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008)。
+Windows Admin Center 現已支援**有限的**功能來管理 Windows Server 2008 R2。 Windows Admin Center 需依賴 Windows Server 2008 R2 中所沒有的 PowerShell 功能和平台技術，使完整支援變得可行。 Windows Server 2008/2008 R2 即將於 2020 年 1 月終止支援，因此 Microsoft 建議客戶[移轉至 Azure 或升級至最新版的 Windows Server](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008)。
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>是否有任何要讓 Windows Admin Center 管理 Linux 連線的計劃？
 
-我們正在調查客戶需求，因為目前沒有任何鎖定的計劃，來傳遞，但支援可能只包含主控台連線透過 SSH。
+我們因為客戶要求而正在調查，但目前還沒有鎖定計畫要提供，而支援可能只包含透過 SSH 的主控台連線。
 
 ## <a name="which-web-browsers-are-supported-by-windows-admin-center"></a>Windows Admin Center 支援哪些網頁瀏覽器？
 
-最新版本的 Microsoft Edge (Windows 10 版本 1709 或更新版本) 以及 Google Chrome 瀏覽器已在 Windows 10 上測試過並且受支援。 [檢視瀏覽器特定的已知問題](../support/known-issues.md#browser-specific-issues)。 其他現代網頁瀏覽器或其他平台目前不是我們的測試矩陣的一部分，而且也無法*正式*支援。
+最新版本的 Microsoft Edge (Windows 10 版本 1709 或更新版本) 以及 Google Chrome 瀏覽器已在 Windows 10 上測試過並且受支援。 [檢視瀏覽器特有的已知問題](../support/known-issues.md#browser-specific-issues)。 其他新式網頁瀏覽器或其他平台目前未納入我們的測試矩陣，因此沒有「正式」  支援。
 
 ## <a name="how-does-windows-admin-center-handle-security"></a>Windows Admin Center 如何處理安全性？
 
 從瀏覽器至 Windows Admin Center 閘道的流量使用 HTTPS。 從閘道至受管理伺服器的流量是透過 WinRM 的標準 PowerShell 和 WMI。 我們支援 LAPS (區域系統管理員密碼解決方案)、資源型限制委派、閘道存取控制 (使用 AD 或 Azure AD) 以及角色型存取控制，以進行目標伺服器管理。
 
-## <a name="does-windows-admin-center-use-credssp"></a>Windows Admin Center 是否使用 CredSSP？
+## <a name="does-windows-admin-center-use-credssp"></a>Windows Admin Center 會使用 CredSSP 嗎？
 
-是的在少數情況下 Windows Admin Center 需要 CredSSP。 這被必要的驗證將認證傳遞至您的目標特定伺服器以外的機器以進行管理。 例如，如果您要管理的虛擬機器上**伺服器 B**，但想要將這些虛擬機器的 vhdx 檔案儲存在檔案共用所裝載**伺服器 C**，Windows Admin Center 必須使用 CredSSP 來向**伺服器 C**來存取檔案共用。
+是的，在少數情況下，Windows Admin Center 會需要 CredSSP。 除了傳送認證至您鎖定的特定伺服器來進行管理外，您還必須傳送認證至機器以用於驗證。 例如，如果您要管理**伺服器 B** 上的虛擬機器，但想要將這些虛擬機器的 vhdx 檔案儲存在由**伺服器 C** 所託管的檔案共用上，Windows Admin Center 就必須使用 CredSSP 來向**伺服器 C** 存取檔案共用。
 
-Windows Admin Center 處理後自動從您的同意提示 CredSSP 的設定。 然後再設定 CredSSP，Windows Admin Center 會檢查以確定系統具有新的 CredSSP[更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。 啟用 CredSSP 時，將會在伺服器概觀中，並選擇以停用它-徽章
+Windows Admin Center 會在提示您進行同意後，自動處理 CredSSP 的設定。 設定 CredSSP 之前，Windows Admin Center 會檢查並確定系統具有最新的 CredSSP [更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。 啟用 CredSSP 時，[伺服器概觀] 中會有徽章，以及將其停用的選項 -
 
-![在伺服器概觀上的 CredSSP](../media/CredSSP-overview.png)
+![伺服器概觀上的 CredSSP](../media/CredSSP-overview.png)
 
-CredSSP，目前會在下列區域：
+CredSSP 目前會在下列區域中使用：
 
-- 使用分離式 SMB 存放區中的虛擬機器工具 （上述範例。）
-- 在更新工具中的容錯移轉 」 或 「 超交集叢集管理解決方案，以執行[叢集感知更新](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating) 
+- 在虛擬機器工具使用分離式 SMB 存放區 (上述範例)。
+- 在更容錯移轉或超融合式叢集管理解決方案中使用更新工具，以執行[叢集感知更新](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating) 
 
 ## <a name="are-there-any-cloud-dependencies"></a>是否有任何雲端相依性？
 
@@ -121,17 +121,17 @@ Windows Admin Center 不需要網際網路存取，也不需要 Microsoft Azure�
 
 可以將 Windows Admin Center 安裝在 Windows 10 秋季年度更新版 (1709) 或更新版本，或是 Windows Server 2016 或更新版本。 若要管理 Windows Server 2008 R2、2012 或 2012 R2，這些伺服器上必須有 Windows Management Framework 5.1 安裝。 沒有任何其他相依性。 不需要 IIS、不需要代理程式，也不需要 SQL Server。
 
-## <a name="what-about-extensibility-and-3rd-party-support"></a>擴充性和協力廠商支援呢？
+## <a name="what-about-extensibility-and-3rd-party-support"></a>擴充性和第三方支援呢？
 
-Windows Admin Center 會有可用的 SDK，讓任何人都可以撰寫自己的延伸模組。 做為一個平台，擴展生態系統和啟用協力廠商擴充性，自開始以來一直都是我們重要的優先考量。 [深入了解 Windows Admin Center SDK](../extend/extensibility-overview.md)。
+Windows Admin Center 有可用的 SDK，因此讓任何人都可以撰寫自己的擴充功能。 做為一個平台，擴展生態系統和啟用協力廠商擴充性，自開始以來一直都是我們重要的優先考量。 [深入了解 Windows Admin Center SDK](../extend/extensibility-overview.md)。
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>是否可以使用 Windows Admin Center 來管理超融合式基礎結構？
 
-是的。 Windows Admin Center 支援執行 Windows Server 2016 或 Windows Server 2019 的超交集叢集的管理。 超交集叢集 manager 解決方案，在 Windows Admin Center 先前處於預覽狀態，但現在**正式**，使用預覽中的某些新功能。 如需詳細資訊，請[閱讀更多有關管理超融合式基礎結構的資訊](../use/manage-hyper-converged.md)。
+是。 Windows Admin Center 支援管理執行 Windows Server 2016 或 Windows Server 2019 組建的超融合式叢集。 Windows Admin Center 中的超融合式叢集管理員解決方案先前是以預覽版提供，但現在已「正式推出」  (有些新功能仍在預覽狀態)。 如需詳細資訊，請[閱讀更多有關管理超融合式基礎結構的資訊](../use/manage-hyper-converged.md)。
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-資料分割 Windows Admin Center 可與 System Center 互補，但 System Center 並非必要的。 [深入了解 Windows Admin Center 和 System Center](related-management.md#system-center)。
+不。 Windows Admin Center 可與 System Center 互補，但 System Center 並非必要的。 [深入了解 Windows Admin Center 和 System Center](related-management.md#system-center)。
 
 ## <a name="can-windows-admin-center-replace-system-center-virtual-machine-manager-scvmm"></a>Windows Admin Center 可以取代 System Center Virtual Machine Manager (SCVMM) 嗎？
 
@@ -143,18 +143,18 @@ Windows Admin Center 與 SCVMM 相輔相成；Windows Admin Center 主要用來�
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-* 如果您是 IT 系統管理員，但無法經常進行更新，或是需要較長時間驗證用於生產的版本時，此版本正合您需要。 我們目前已正式推出 (GA) 版本是 Windows Admin Center 1904年。
+* 如果您是 IT 系統管理員，但無法經常進行更新，或是需要較長時間驗證用於生產的版本時，此版本正合您需要。 我們目前已正式推出 (GA) 的版本是 Windows Admin Center 1904。
 * [!INCLUDE [support-policy](../includes/support-policy.md)]
-* 若要取得最新版本中，[這裡下載](https://aka.ms/WACDownload)。
+* 若要取得最新的版本，請[從這裡下載](https://aka.ms/WACDownload)。
 
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center 預覽版
-
+<!--
 > [!NOTE]
-> 目前 GA 版本 (Windows Admin Center 1904) 包含所有先前的預覽功能。
-> Insider Preview 將於未來的幾個月。
+> The current GA version (Windows Admin Center 1904) contains all previous preview functionality.
+> The Insider Preview will return in the coming months. -->
 
-* 如果您是 IT 系統管理員，想要依一般發行頻率取得最新的絕佳功能時，此版本正合您需要。 我們的目的是要提供後續的更新版本的每個月左右。 核心平台仍繼續為生產就緒產品，而授權會提供生產使用權。 但請注意，您將會看到清楚標示為 PREVIEW 且適合評估及測試的新工具和功能陸續推出。
-* 若要取得最新的測試人員預覽版本，已註冊的測試人員可以下載 Windows Admin Center 預覽，直接從[Windows Server Insider Preview 下載頁面](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)，其他下載下拉式清單底下。 如果您還沒有註冊為測試人員，請參閱商務用 Windows 測試人員入口網站上的[開始使用 Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/)。
+* 如果您是 IT 系統管理員，想要依一般發行頻率取得最新的絕佳功能時，此版本正合您需要。 我們的目的是每個月左右提供後續的更新版本。 核心平台仍繼續為生產就緒產品，而授權會提供生產使用權。 但請注意，您將會看到清楚標示為 PREVIEW 且適合評估及測試的新工具和功能陸續推出。
+* 若要取得最新的 Insider Preview 版本，已註冊的測試人員可以直接從 [Windows Server Insider Preview 下載頁面](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)的 [其他下載] 下拉式清單中下載 Windows Admin Center 預覽版。 如果您還沒有註冊為測試人員，請參閱商務用 Windows 測試人員入口網站上的[開始使用 Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/)。
 
 ## <a name="why-was-windows-admin-center-chosen-as-the-final-name-for-project-honolulu"></a>為什麼選擇「Windows Admin Center」做為「Project Honolulu」的最終名稱？
 
@@ -164,9 +164,9 @@ Windows Admin Center 是「Project Honolulu」的正式產品名稱，加強了�
 
 我們的[啟動頁面](https://aka.ms/WindowsAdminCenter)是最適合的起點，其中有連結連到我們新近分類的文件內容、下載位置、意見反應提供方式、參考資訊等資源。
 
-## <a name="what-is-the-version-history-of-windows-admin-center"></a>什麼是版本歷程記錄的 Windows Admin Center？
+## <a name="what-is-the-version-history-of-windows-admin-center"></a>Windows Admin Center 的版本記錄為何？
 
-[檢視版本歷程記錄。](../overview.md#release-history)
+[在此檢視版本記錄。](../overview.md#release-history)
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>我的 Windows Admin Center 發生問題，我可以在哪裡取得協助？
 
