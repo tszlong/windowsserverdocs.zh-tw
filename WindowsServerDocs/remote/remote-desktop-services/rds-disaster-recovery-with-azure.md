@@ -1,6 +1,6 @@
 ---
-title: 設定為使用 Azure 的災害復原的 RDS 的災害復原
-description: 了解如何使用 RDS 部署進行災害復原的 Azure 災害復原
+title: 使用 Azure 災害復原設定 RDS 的災害復原
+description: 了解如何使用 Azure 災害復原設定 RDS 部署的災害復原
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,59 +12,59 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 561a515e23d12cc3397c40fd885550e735ed4d27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 24b5fdaa815b6d2e84606cd8e681634eb3d0f4e9
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878169"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63713083"
 ---
-# <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>設定為使用 Azure Site Recovery 的 RDS 的災害復原
+# <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>使用 Azure Site Recovery 設定 RDS 的災害復原
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-您可以使用 Azure Site Recovery 建立的災害復原解決方案，為您的遠端桌面服務部署。 
+您可以使用 Azure Site Recovery 為您的遠端桌面服務部署建立災害復原解決方案。 
 
-[Azure Site Recovery](/azure/site-recovery/site-recovery-overview)是以 Azure 為基礎的服務，可提供災害復原功能，由協調複寫、 容錯移轉和復原的虛擬機器。 Azure Site Recovery 支援多種複寫技術來持續複寫、 保護，並順暢地容錯移轉虛擬機器和應用程式至私密/公用或主機服務提供者的雲端。 
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) 是一項以 Azure 為基礎的服務，可協調虛擬機器的複寫、容錯移轉和復原，以提供災害復原功能。 Azure Site Recovery 支援以多種複寫技術持續複寫、保護虛擬機器和應用程式，並順暢地將其容錯移轉至私人/公用或主機服務提供者的雲端。 
 
-使用下列資訊來建立和驗證的災害復原解決方案。
+請使用下列資訊來建立和驗證災害復原解決方案。
 
 ## <a name="disaster-recovery-deployment-options"></a>災害復原部署選項
 
-您可以在執行 HYPER-V 或 VMWare 虛擬機器或實體伺服器上部署 RDS。 Azure Site Recovery 可以保護內部部署和虛擬部署至次要網站或 Azure。 下表顯示不同支援 RDS 部署中的站對站和站台至 Azure 的災害 recvoery 案例。
+您可以在實體伺服器或執行 Hyper-V 或 VMWare 的虛擬機器上部署 RDS。 Azure Site Recovery 可保護次要站台或 Azure 的內部部署和虛擬部署。 下表列出站台對站台和站台對 Azure 的災害復原案例中支援的不同 RDS 部署。
 
-| 部署類型                          | HYPER-V 站台對站 | HYPER-V 網站至 Azure | VMWare 站台-Azure | 實體是 「 站台-Azure |
+| 部署類型                          | Hyper-V 站台對站台 | Hyper-V 站台對 Azure | VMWare 站台對 Azure | 實體站台對 Azure |
 |------------------------------------------|----------------------|-----------------------|---------------------|----------------------|-----------------------|------------------------|
-| (Unmanaged) 的集區虛擬桌面       |是|否|否|否 |
-| 集區虛擬桌面 （受控沒有 UPD） | 是|否|否|否|
-| Remoteapp 和桌面工作階段 (沒有 UPD) | 是|是|是|是  |
+| 集區虛擬桌面 (未受管理)       |是|否|否|否 |
+| 集區虛擬桌面 (受管理、無 UPD) | 是|否|否|否|
+| RemoteApp 和桌面工作階段 (無 UPD) | 是|是|是|是  |
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-您可以設定 Azure Site Recovery 部署之前，請確定您符合下列需求：
+您必須確定已符合下列需求，才能為您的部署設定 Azure Site Recovery：
 
-- 建立[內部部署上的 RDS 部署](rds-deploy-infrastructure.md)。
-- 新增[Azure Site Recovery 服務保存庫](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault)您 Microsoft Azure 訂用帳戶。
-- 如果您要使用 Azure 作為復原網站，執行[Azure 虛擬機器整備評估工具](https://azure.microsoft.com/downloads/vm-readiness-assessment/)您要確保其與 Azure Vm 和 Azure Site Recovery 服務相容的 Vm 上。
+- 建立[內部部署 RDS 部署](rds-deploy-infrastructure.md)。
+- 將 [Azure Site Recovery 服務保存庫](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault)新增至您的 Microsoft Azure 訂用帳戶。
+- 如果您要使用 Azure 作為復原網站，請在您的 VM 上執行 [Azure 虛擬機器整備評估工具](https://azure.microsoft.com/downloads/vm-readiness-assessment/)，以確保這些 VM 與 Azure VM 和 Azure Site Recovery 服務相容。
  
 ## <a name="implementation-checklist"></a>實作檢查清單
 
-我們將討論的各種不同的步驟來啟用 Azure Site Recovery 服務，為您的 RDS 部署的詳細資料，但以下是高階的實作步驟。
+我們日後將詳細說明為 RDS 部署啟用 Azure Site Recovery 服務的各種步驟，但此處僅提供概略的實作步驟。
 
-| **步驟 1-設定 Vm 的災害復原**                                                                                                                                                                                               |
+| **步驟 1 - 設定災害復原的 VM**                                                                                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Hyper-V-下載 Microsoft Azure Site Recovery 提供者。 請將它安裝在您的 VMM 伺服器或 HYPER-V 主機。 請參閱[使用 Azure Site Recovery 複寫至 Azure 的必要條件](/azure/site-recovery/site-recovery-prereq)的資訊。                                                                                                                             |
-| VMWare-設定保護伺服器、 設定伺服器和主要目標伺服器                                                                                                                                                      |
-| **步驟 2-準備您的資源**                                                                                                                                                                                                           |
-| 新增[Azure 儲存體帳戶](/azure/storage/storage-create-storage-account)。                                                                                                                                                                                                              |
-| Hyper-V-下載 Microsoft Azure 復原服務代理程式，並將它安裝在 HYPER-V 主機伺服器上。                                                                                                                                     |
-| VMWare-請確定所有的 Vm 上安裝行動服務。                                                                                                                                                                           |
-| [為在 VMM 雲端、 HYPER-V 網站或在 VMWare 站台的 Vm 啟用保護](rds-enable-dr-with-asr.md)。                                                                                                                                                                    |
-| **步驟 3： 設計您的復原方案。**                                                                                                                                                                                                        |
-| 將您的資源-對應到 Azure Vnet 的內部部署網路對應。                                                                                                                                                                              |
+| Hyper-V - 下載 Microsoft Azure Site Recovery 提供者。 將其安裝在您的 VMM 伺服器或 Hyper-V 主機上。 如需相關資訊，請參閱[使用 Azure Site Recovery 複寫至 Azure 的必要條件](/azure/site-recovery/site-recovery-prereq)。                                                                                                                             |
+| VMWare - 設定保護伺服器、設定伺服器和主要目標伺服器                                                                                                                                                      |
+| **步驟 2 - 準備您的資源**                                                                                                                                                                                                           |
+| 新增 [Azure 儲存體帳戶](/azure/storage/storage-create-storage-account)。                                                                                                                                                                                                              |
+| Hyper-V - 下載 Microsoft Azure 復原服務代理程式，並將其安裝在 Hyper-V 主機伺服器上。                                                                                                                                     |
+| VMWare - 確定已在所有 VM 上安裝行動服務。                                                                                                                                                                           |
+| [為 VMM 雲端、Hyper-V 站台或 VMWare 站台中的 VM 啟用保護](rds-enable-dr-with-asr.md)。                                                                                                                                                                    |
+| **步驟 3 - 設計您的復原計劃。**                                                                                                                                                                                                        |
+| 將應您的資源 - 將內部部署網路對應至 Azure VNET。                                                                                                                                                                              |
 | [建立復原計劃](rds-disaster-recovery-plan.md)。 |
-| 建立測試容錯移轉，以測試復原計劃。 請確定所有 Vm 可以都存取必要的資源，像是 Active Directory。 請確定已重新導向的網路和 RDS 的工作 如需測試您的復原方案的詳細步驟，請參閱[執行測試容錯移轉](/azure/site-recovery/site-recovery-test-failover-to-azure)|
-| **步驟 4： 執行災害復原演練。**                                                                                                                                                                                                     |
-| 執行災害復原演練，使用計劃性與非計劃性容錯移轉。 請確定所有的 Vm 有存取必要的資源，例如 Active Directory。 請確定所有的 Vm 有存取必要的資源，例如 Active Directory。 如需容錯移轉，以及如何執行演練的詳細步驟，請參閱[Site Recovery 中的容錯移轉](/azure/site-recovery/site-recovery-failover)。|
+| 建立測試容錯移轉，以測試復原計劃。 請確定所有 VM 皆可存取必要的資源，例如 Active Directory。 確定 RDS 的網路重新導向已設定並運作中。 如需測試復原計劃的詳細步驟，請參閱[執行測試容錯移轉](/azure/site-recovery/site-recovery-test-failover-to-azure)|
+| **步驟 4 - 執行災害復原演練。**                                                                                                                                                                                                     |
+| 使用計劃性與非計劃性容錯移轉執行災害復原演練。 請確定所有 VM 皆有權存取必要的資源，例如 Active Directory。 請確定所有 VM 皆有權存取必要的資源，例如 Active Directory。 如需容錯移轉以及執行演練的詳細步驟，請參閱 [Site Recovery 中的容錯移轉](/azure/site-recovery/site-recovery-failover)。|
 
 

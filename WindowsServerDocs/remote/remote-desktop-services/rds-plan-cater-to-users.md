@@ -1,6 +1,6 @@
 ---
-title: 遠端桌面服務-迎合不同類型的使用者
-description: RDS 描述不同種類的使用者
+title: 遠端桌面服務 - 迎合不同類型的使用者
+description: 說明不同類型的 RDS 使用者。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: e602f41c19f38878925552a4bf173b7f3e36e796
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d16989cc3ecbf0170081bb8cb52a9103f979741
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848119"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743468"
 ---
-# <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>遠端桌面服務-迎合不同類型的使用者
+# <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>遠端桌面服務 - 迎合不同類型的使用者
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-調整您的部署，根據預期的需求，每個類型的使用者。
-比方說，使用者可能執行在輕量型應用程式上的資料輸入、 操作大型資料集使用 Office 等產能應用程式或使用超耐重工程或圖形的應用程式。
+根據各類使用者的預期需求調整您的部署。
+例如，使用者可能會在輕量型應用程式上執行資料輸入、使用 Office 等生產力應用程式來操作大型資料集，或使用高負載的工程或圖形應用程式。
 
-建議您載入測試壓力測試和實際使用量的模擬部署。 不同的載入大小，可避免意外狀況 ！ 確認回應符合使用者需求，而且整個系統就不怕。 建立負載測試模擬工具，例如 LoginVSI，檢查您的部署能否符合使用者需求。 
+建議您同時以壓力測試和實際使用量模擬對部署進行負載測試。 請改變負載大小以避免意外狀況！ 請確定回應性符合使用者需求，且整個系統具復原能力。 請使用模擬工具 (如 LoginVSI) 建立負載測試，以確認部署的能力符合使用者需求。 

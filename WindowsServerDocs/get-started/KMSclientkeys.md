@@ -10,56 +10,56 @@ ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
 ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810712"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
->適用於：Windows Server 2019，Windows Server 半年通道，Windows Server 2016 中，Windows 10
+>適用於：Windows Server 2019、Windows Server 半年通道、Windows Server 2016、Windows 10
 
 根據預設，執行 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista 以及 Windows Server 2008 大量授權版本的電腦為不需要另外設定的 KMS 用戶端。
 
 > [!NOTE]
-> 在依照資料表中，"LTSC 」 代表 「 長期服務通道，」 而 「 LTSB 」 是指 「 長期服務分支。 」 
+> 在下列表格中，"LTSC" 代表「長期維護通道」，而 "LTSB" 是指「長期維護分支」。 
 
-**若要使用此處所列 （這些 Gvlk） 的金鑰，您必須先具備部署中執行的 KMS 主機。** 如果您尚未設定 KMS 主機，請參閱 [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) 的步驟來安裝一部 KMS 主機。
+**若要使用此處所列的金鑰 (它們是 GVLK)，您的部署中必須已有執行中的 KMS 主機。** 如果您尚未設定 KMS 主機，請參閱 [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) 的步驟來安裝一部 KMS 主機。
 
-如果您將電腦從 KMS 主機、MAK 或 Windows 零售版轉換成 KMS 用戶端，請從下表安裝適用的安裝識別碼 (GVLK)。 若要安裝用戶端安裝識別碼，請開啟 在用戶端，型別系統管理命令提示字元**slmgr /ipk\<安裝識別碼\>** ，然後按**Enter**。
+如果您將電腦從 KMS 主機、MAK 或 Windows 零售版轉換成 KMS 用戶端，請從下表安裝適用的安裝識別碼 (GVLK)。 若要安裝用戶端安裝識別碼，請在用戶端開啟系統管理命令提示字元，輸入 **slmgr /ipk \<setup key\>** ，然後按 **Enter** 鍵。
 
 | 如果您想要...    | ...使用這些資源   |
 |--------------------|------------------------|
-| 在大量啟用情況之外啟用 Windows (也就您嘗試啟用零售版的 Windows)，**這些識別碼將無法運作**。 | 在零售版的 Windows 中使用下列連結： |
-| 修正嘗試啟用 Windows 8.1、 Windows Server 2012 R2 或更新版本的系統時，收到此錯誤：「錯誤：0xC004F050 軟體授權服務報告指出產品金鑰無效」… | 如果 KMS 主機執行 Windows 8.1、Windows Server 2012 R2、Windows 8 或 Windows Server 2012，請在 KMS 主機上[安裝此更新](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) 。 |
+| 在大量啟用情況之外啟用 Windows (也就您嘗試啟用零售版的 Windows)，**這些金鑰將無法運作**。 | 在零售版的 Windows 中使用下列連結： |
+| 修正您嘗試啟用 Windows 8.1、Windows Server 2012 R2 或更新版本的系統時收到的這個錯誤：「錯誤：0xC004F050 軟體授權服務報告指出產品金鑰無效」… | 如果 KMS 主機執行 Windows 8.1、Windows Server 2012 R2、Windows 8 或 Windows Server 2012，請在 KMS 主機上[安裝此更新](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) 。 |
 
 -   [取得 Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
 
 -   [取得新的 Windows 產品金鑰](https://support.microsoft.com/help/10749/windows-product-key)
 
--   [正版 Windows 說明與 How-to](https://support.microsoft.com/help/15087/windows-genuine)
+-   [正版 Windows 說明與使用方法](https://support.microsoft.com/help/15087/windows-genuine)
 
 
 >   如果您是執行 Windows Server 2008 R2 或 Windows 7，請留意以 KMS 主機作為 Windows 10 用戶端的支援更新。
 
 ## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半年通道版本
 
-### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server、 版本 1903 和 Windows Server 版 1809
+### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server 1903 版和 Windows Server 1809 版
 
 | 作業系統版本  | KMS 用戶端安裝識別碼          |
 |---------------------------|-------------------------------|
 | Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D |
 | Windows Server Standard   | N2KJX-J94YW-TQVFB-DG9YT-724CC |
 
-### <a name="windows-server-version-1803"></a>Windows Server 版本 1803
+### <a name="windows-server-version-1803"></a>Windows Server 1803 版
 
 | 作業系統版本       | KMS 用戶端安裝識別碼          |
 |--------------------------------|-------------------------------|
 | Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG  | 
 | Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR  |
 
-### <a name="windows-server-version-1709"></a>Windows Server 版本 1709
+### <a name="windows-server-version-1709"></a>Windows Server 1709 版
 
 | 作業系統版本       | KMS 用戶端安裝識別碼          |
 |--------------------------------|-------------------------------|
@@ -75,7 +75,7 @@ ms.locfileid: "66810712"
 | Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C  |
 | Windows Server 2019 Essentials|WVDHN-86M7X-466P6-VHXV7-YY726|
 
-### <a name="windows-server-2016"></a>Windows Server 2016
+### <a name="windows-server-2016"></a>Windows Server 2016
 
 | 作業系統版本       | KMS 用戶端安裝識別碼          |
 |--------------------------------|-------------------------------|
@@ -83,16 +83,16 @@ ms.locfileid: "66810712"
 | Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
 | Windows Server 2016 Essentials | JCKRF-N37P4-C2D82-9YXRT-4M63B |
 
-## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10 中，所有支援的半年通道版本
+## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10 所有受支援的半年通道版本
 
-請參閱[生命週期概要說明 Windows](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)的支援的版本和服務起訖日期結束的相關資訊。
+如需支援的版本和服務終止日期的相關資訊，請參閱 [Windows 生命週期資料表](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)。
 
 | 作業系統版本          | KMS 用戶端安裝識別碼          |
 |-----------------------------------|-------------------------------|
 |Windows 10 專業版|W269N-WFGWX-YVC9B-4J6C9-T83GX|
 |Windows 10 Pro N|MH37W-N47XK-V7XM9-C7227-GCQG9|
-|Windows 10 專業人員的工作站|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
-|Windows 10 Pro 工作站 N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
+|Windows 10 Pro Workstations|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
+|Windows 10 Pro Workstations N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
 |Windows 10 專業教育版|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
 |Windows 10 專業教育版 N|YVWGF-BXNMC-HTQYQ-CPQ99-66QFC|
 |Windows 10 教育版|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|
@@ -109,7 +109,7 @@ ms.locfileid: "66810712"
 |作業系統版本|KMS 用戶端安裝識別碼|
 |-|-|
 |Windows 10 企業版 LTSC 2019|M7XTQ-FN8P6-TTKYV-9D4CC-J462D|
-|Windows 10 Enterprise N LTSC 2019|92NFX-8DJQP-P6BBQ-THF9C-7CG2H|
+|Windows 10 企業版 N LTSC 2019|92NFX-8DJQP-P6BBQ-THF9C-7CG2H|
 
 ### <a name="windows-10-ltsb-2016"></a>Windows 10 LTSB 2016
 
@@ -125,7 +125,7 @@ ms.locfileid: "66810712"
 | Windows 10 Enterprise 2015 LTSB   | WNMTR-4C88C-JK8YV-HQ7T2-76DF9 |
 | Windows 10 Enterprise 2015 LTSB N | 2F77B-TNFGY-69QQF-B8YKP-D69TJ |
 
-## <a name="earlier-versions-of-windows-server"></a>舊版的 Windows Server
+## <a name="earlier-versions-of-windows-server"></a>舊版 Windows Server
 ### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 | 作業系統版本               | KMS 用戶端安裝識別碼          |
@@ -154,7 +154,7 @@ ms.locfileid: "66810712"
 |--------------------------------------------------|-------------------------------|
 | Windows Server 2008 R2 Web                       | 6TPJF-RBVHG-WBW2R-86QPH-6RTM4 |
 | Windows Server 2008 R2 HPC Edition               | TT8MH-CG224-D3D7Q-498W2-9QCTX |
-| Windows Server 2008 R2 Standard                  | YC6KT-GKW9T-YTKYR-T4X34-R7VHC |
+| Windows Server 2008 R2 Standard                  | YC6KT-GKW9T-YTKYR-T4X34-R7VHC |
 | Windows Server 2008 R2 Enterprise                | 489J6-VHDMP-X63PK-3K798-CPX3Y |
 | Windows Server 2008 R2 Datacenter                | 74YFP-3QFB3-KQT8W-PMXWJ-7M648 |
 | Windows Server 2008 R2 for Itanium-based Systems | GT63C-RJFQ3-4GMB6-BRFB9-CB83V |
@@ -180,7 +180,7 @@ ms.locfileid: "66810712"
 | 作業系統版本               | KMS 用戶端安裝識別碼          |
 |----------------------------------------|-------------------------------|
 | Windows 8.1 專業版               | GCRJD-8NW9H-F2CDX-CCM8D-9D6T9 |
-| Windows 8.1 Pro N             | HMCNV-VVBFX-7HMBH-CTY9B-B4FXY |
+| Windows 8.1 專業版 N             | HMCNV-VVBFX-7HMBH-CTY9B-B4FXY |
 | Windows 8.1 Enterprise                 | MHF9N-XY6XB-WVXMC-BTDCT-MKKG7 |
 | Windows 8.1 Enterprise N               | TT4HM-HN7YT-62K67-RGRQJ-JFFXW |
 
@@ -189,7 +189,7 @@ ms.locfileid: "66810712"
 | 作業系統版本                | KMS 用戶端安裝識別碼          |
 |-----------------------------------------|-------------------------------|
 | Windows 8 專業版                  | NG4HW-VH26C-733KW-K6F98-J8CK4 |
-| Windows 8 Pro N                | XCVCF-2NXM9-723PB-MHCB7-2RYQQ |
+| Windows 8 專業版 N                | XCVCF-2NXM9-723PB-MHCB7-2RYQQ |
 | Windows 8 企業版                    | 32JNW-9KQ84-P47T8-D8GGY-CWCK7 |
 | Windows 8 企業版 N                  | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
 
@@ -198,7 +198,7 @@ ms.locfileid: "66810712"
 
 | 作業系統版本                         | KMS 用戶端安裝識別碼          |
 |--------------------------------------------------|-------------------------------|
-| Windows 7 專業版                           | FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 |
+| Windows 7 專業版                           | FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 |
 | Windows 7 專業版 N                         | MRPKT-YTG23-K7D7T-X2JMM-QY7MG |
 | Windows 7 專業版 E                         | W82YF-2Q76Y-63HXB-FGJG9-GF7QX |
 | Windows 7 企業版                             | 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH |
@@ -208,6 +208,6 @@ ms.locfileid: "66810712"
 
 另請參閱
 
-• [大量啟用計劃](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
+• [大量啟用規劃](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
 
 

@@ -15,15 +15,15 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: d089af3562467aa1c222b17d9a1ad69d9c1b5008
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810591"
 ---
 # <a name="system-requirements"></a>系統需求
 
->適用於：Windows Server （半年通道），Windows Server 2016 
+>適用於：Windows Server (半年度管道)、Windows Server 2016 
 
 本主題說明執行 Windows Server&reg; 2016 或 Windows Server 版本 1709 的最低系統需求。
 
@@ -53,7 +53,7 @@ ms.locfileid: "66810591"
 - 支援 CMPXCHG16b、LAHF/SAHF 與 PrefetchW  
 - 支援第二層地址翻譯 (EPT 或 NPT)  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx)是的工具，您可以用來確認您 CPU 具有這些功能。
+[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) 是一項可供您用來您的 CPU 具有這其中哪些功能的工具。
 
 ## <a name="ram"></a>RAM  
 下列是本產品的預估 RAM 需求：  
@@ -117,8 +117,8 @@ ms.locfileid: "66810591"
 > 信賴平台模組 (TPM) 晶片於安裝此版本時並非必要，但是使用特定功能 (例如 BitLocker 磁碟機加密) 時則為必要。 如果您的電腦使用 TPM，它必須符合下列需求︰  
 >  
 > - 硬體架構的 TPM 必須實作 TPM 規格的 2.0 版。  
-> - 實作 2.0 版的 TPM 必須有一個 EK 憑證，這個憑證是由硬體廠商預先佈建至 TPM，或是可由裝置在第一次開機期間擷取。  
-> - 實作 2.0 版的 TPM 必須隨附 SHA-256 PCR 記憶體組，並實作 SHA-256 的 PCR 0 至 23。 可接受 TPM 隨附可同時用於 SHA-1 與 SHA-256 度量的單一可切換 PCR 記憶體組。  
+> - 實作版本 2.0 的 TPM 必須具備由硬體供應商預先佈建到 TPM 的 EK 憑證，或者可支援由裝置於第一次開機期間擷取。  
+> - 實作版本 2.0 的 TPM 必須隨附 SHA-256 PCR 記憶體組並針對 SHA-256 實作 PCR 0 到 23。 可接受 TPM 隨附可同時使用於 SHA-1 與 SHA-256 度量的單一可切換 PCR 記憶體組。  
 > - 關閉 TPM 的 UEFI 選項並非必要。  
 
 ## <a name="installation-of-nano-server"></a>安裝 Nano 伺服器  

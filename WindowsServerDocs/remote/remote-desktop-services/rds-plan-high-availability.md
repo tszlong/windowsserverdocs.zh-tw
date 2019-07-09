@@ -1,6 +1,6 @@
 ---
-title: 遠端桌面服務-高可用性
-description: 規劃高可用性的 RDS 部署所設定的相關資訊。
+title: 遠端桌面服務 - 高可用性
+description: 設定高可用性 RDS 部署的相關規劃資訊。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,27 +13,27 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: b5a2bd38c8831063d6fd2ba525b71a10403b8fc2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 79fd05458d0d838e34402bf28ef83b9327bfcceb
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839259"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743453"
 ---
-# <a name="remote-desktop-services---high-availability"></a>遠端桌面服務-高可用性
+# <a name="remote-desktop-services---high-availability"></a>遠端桌面服務 - 高可用性
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-失敗和節流會避免在大型系統中。 這很容易設定遠端桌面基礎結構角色，以支援高可用性，並讓使用者順暢地連接到每次。
+在大規模的系統中，失敗和節流是難以避免的。 您可以輕鬆設定遠端桌面基礎結構角色以支援高可用性，並且讓使用者每次都能順暢地連線。
 
-在 遠端桌面服務中，下列項目代表具有其各自的指南，以建立高可用性的遠端桌面基礎結構角色：
+在遠端桌面服務中，下列項目代表遠端桌面基礎結構角色，且分別可依循其各自的指南建立高可用性：
 - [遠端桌面連線代理人](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)
 - [遠端桌面閘道](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
 - 遠端桌面授權
 - [遠端桌面 Web 存取](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
 
-建立高可用性的方法是複製每個角色服務，在第二個的電腦上。 在 Azure 中，您可以收到運作時間保證，藉由將兩個虛擬機器 （裝載相同角色） 的集合放在可用性設定。
+建立高可用性的方法是將每個角色服務複製到第二個機器上。 在 Azure 中，您只要將兩個一組的虛擬機器 (託管相同角色) 放在可用性設定組中，就可以有可預期的運作時間。
 
-可用性設定組，以及您現在可以利用 Azure SQL Database 和其支援的 Azure SLA 的電源，以確保您一律有連接資訊，並可以將使用者重新導向至他們的桌上型電腦和應用程式。
+除了可用性設定組，現在您也可以搭配使用 Azure SQL Database 及其由 Azure 支援的 SLA，確保您一律會有連線資訊，並且可將使用者重新導向至其桌面和應用程式。
 
-如需建立您的 RDS 環境的最佳作法，請參閱[桌面主機架構](desktop-hosting-reference-architecture.md)。
+如需建立 RDS 環境的最佳做法，請參閱[桌面託管架構](desktop-hosting-reference-architecture.md)。

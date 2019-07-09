@@ -1,6 +1,6 @@
 ---
-title: RDS-執行和微調
-description: 若要協助您設計您的 RD 部署的規劃資訊。
+title: RDS - 執行並微調
+description: 規劃資訊可協助您設計 RD 部署。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,27 +14,27 @@ ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
 ms.openlocfilehash: 534fbef473c2627f65189c6f3dfcc9a89200f289
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815729"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743498"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>規劃和設計您的遠端桌面服務環境
 
-可高度擴充的遠端桌面部署需要使用特定模式和作法。
-提供最佳效能和向外延展的設計是索引鍵。 使用下列案例可協助您規畫、 架構設計人員，並持續改善您的部署。
+可高度擴充的遠端桌面部署需要使用特定模式和做法。
+關鍵在於，設計必須以最佳效能和向外延展性為宗旨。 使用下列案例可協助您構思、建構及持續改善您的部署。
 
-您可以使用下列資訊來規劃和設計您的部署：
+請使用下列資訊來規劃和設計您的部署：
 
 - [隨處建置](rds-plan-build-anywhere.md)
 - [迎合不同類型的使用者](rds-plan-cater-to-users.md)
-- [從任何位置存取](rds-plan-access-from-anywhere.md)
+- [隨處存取](rds-plan-access-from-anywhere.md)
 - [高可用性](rds-plan-high-availability.md)
 - [多重要素驗證](rds-plan-mfa.md)
 - [安全資料存放區](rds-plan-secure-data-storage.md)
-- [啟用高階的圖形轉譯](rds-graphics-virtualization.md)
+- [啟用高端圖形轉譯](rds-graphics-virtualization.md)
 - [從任何裝置連線](rds-plan-connect-from-any-device.md)
 - [選擇支付方式](rds-plan-choose-how-you-pay.md)
 
-務必也檢閱[桌面主機參考架構](desktop-hosting-reference-architecture.md)，其中提供的遠端桌面架構的概觀，並可協助您規劃包含 Azure 基礎結構的混合式 RDS 環境。
+同時請務必檢閱[桌面託管參考架構](desktop-hosting-reference-architecture.md)，其中提供遠端桌面架構的概觀，並且可協助您規劃包含 Azure 基礎結構的混合式 RDS 環境。

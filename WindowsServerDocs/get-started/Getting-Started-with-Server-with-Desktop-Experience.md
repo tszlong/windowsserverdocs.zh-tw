@@ -15,14 +15,14 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: cf67a1c9675191936a6150bb950c59e6f99b54ad
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810700"
 ---
 # <a name="install-server-with-desktop-experience"></a>安裝含有桌面體驗的伺服器
-> 適用於：Windows Server 2016
+> 適用於：Windows Server 2016
   
 
 當您使用安裝精靈安裝 Windows Server 2016 時，您可以在 **Windows Server 2016**和 **Windows Server (含有桌面體驗的伺服器)** 之間進行選擇。 Windows Server 2016 的 [含有桌面體驗的伺服器] 選項，相當於已安裝桌面體驗功能之 Windows Server 2012 R2 中的 [完整] 安裝選項。 如果您不在安裝精靈中做出選擇，系統將會安裝 **Windows Server 2016**，這是 [Server Core]  安裝選項。
@@ -35,11 +35,11 @@ ms.locfileid: "66810700"
 
 **使用者介面：** 標準圖形化使用者介面 (伺服器圖形化介面)。 伺服器圖形化介面包含新的 Windows 10 殼層。 此選項預設安裝的特定 Windows 功能為User-Interfaces-Infra、Server-GUI-Shell、Server-GUI-Mgmt-Infra、InkAndHandwritingServices、ServerMediaFoundation 及桌面體驗。 雖然這些功能會顯示於此版本的「伺服器管理員」中，系統並不支援將它們解除安裝，也不會在未來版本中提供此功能。
 
-**本機安裝、設定、解除安裝伺服器角色：** 利用伺服器管理員或利用 Windows PowerShell
+**在本機安裝、設定、解除安裝伺服器角色：** 使用「伺服器管理員」或使用 Windows PowerShell
 
 **遠端安裝、設定、解除安裝伺服器角色：** 利用伺服器管理員、遠端伺服器、RSAT 或 Windows PowerShell
 
-**Microsoft Management Console： 安裝**
+**Microsoft Management Console：已安裝**
 
 ## <a name="installation-scenarios"></a>安裝案例
 
@@ -47,7 +47,7 @@ ms.locfileid: "66810700"
 您可以從 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)取得 Windows Server 的 180 天授權評估版。 選擇 [Windows Server 2016] | [64 位元 ISO] 選項  進行下載，您也可以瀏覽 [Windows Server 2016] | [虛擬實驗室]  。
 
 > [!IMPORTANT]  
-> 對於 14393.0.161119-1705.RS1_REFRESH 之前的 Windows Server 2016 版本，您只能執行從已使用 \[桌面體驗\] 選項 (非 \[Server Core\] 選項) 安裝之 Windows Server 2016 的評估版轉換為零售版的這項轉換。 從 14393.0.161119-1705.RS1_REFRESH 版本開始與未來的版本，您可以將評估版本轉換零售，無論使用何種安裝選項。
+> 對於 14393.0.161119-1705.RS1_REFRESH 之前的 Windows Server 2016 版本，您只能執行從已使用 [桌面體驗] 選項 (非 [Server Core] 選項) 安裝之 Windows Server 2016 的評估版轉換為零售版的這項轉換。 從 14393.0.161119-1705.RS1_REFRESH 版本開始與未來的版本，您可以將評估版本轉換零售，無論使用何種安裝選項。
 
 
 ### <a name="clean-installation"></a>全新安裝
@@ -55,7 +55,7 @@ ms.locfileid: "66810700"
 若要從媒體安裝 [含有桌面體驗的伺服器] 安裝選項，請將媒體插入磁碟機、重新啟動電腦，然後執行 Setup.exe。 在開啟的精靈中，選取 [Windows Server (含有桌面體驗的伺服器)]  (Standard 或 Datacenter)，然後完成精靈。
 
 ### <a name="upgrade"></a>升級
-**升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體
+**升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體。
 
 如果您已經有適當 Windows Server 產品的完整安裝，您可以將它升級至適當 Windows Server 2016 版本的 [含有桌面體驗的伺服器] 安裝，如下所示。
 
@@ -75,7 +75,7 @@ ms.locfileid: "66810700"
 |如果您執行這個版本：|您可以升級到這些版本：|  
 |-------------------|----------|  
 |Windows Server 2012 Standard|Windows Server 2016 Standard 或 Datacenter|
-|Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
+|Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard 或 Datacenter|
 |Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Essentials|Windows Server 2016 Essentials|
@@ -95,7 +95,7 @@ ms.locfileid: "66810700"
 |-------------------|----------|--------------|--------------|----------|  
 |Active Directory 憑證服務| 是|    是|    是|    否|
 |Active Directory Domain Services|  是|    是|    是|    是|
-|Active Directory 同盟服務|  否| 否| 是|    否 (不需要新增節點至伺服器陣列)|
+|Active Directory Federation Services|  否| 否| 是|    否 (不需要新增節點至伺服器陣列)|
 |Active Directory 輕量型目錄服務|   是|    是|    是|    是|
 |Active Directory Rights Management Services|   是|    是|    是|    否|
 |容錯移轉叢集|使用包含節點 [暫停-清空]、[收回] 的 [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級) 程序，升級至 Windows Server 2016 並重新加入原始叢集時，則為是。 當伺服器遭升級用叢集移除後再新增至其他叢集時，則為是。|當伺服器不是叢集的一部分時，則為否。 當伺服器遭升級用叢集移除後再新增至其他叢集時，則為是。  |是|若是 Windows Server 2012 容錯移轉叢集，則為否。 若是含 Hyper-V VM 的 Windows Server 2012 R2 容錯移轉叢集，或執行向外延展檔案伺服器角色的 Windows Server 2012 R2 容錯移轉叢集，則為是。 請參閱 [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級)。|
@@ -103,9 +103,9 @@ ms.locfileid: "66810700"
 |列印和傳真服務|    否| 否| 是 (Printbrm.exe)| 否|
 |遠端桌面服務|   是，適用於所有子角色，但不支援混合模式的伺服器陣列|   是，適用於所有子角色，但不支援混合模式的伺服器陣列|   是|    否|
 |Web 伺服器 (IIS)|  是|    是|    是|    否|
-|Windows Server Essentials 體驗|  是|    不適用 - 新功能|  是|    否|
+|Windows Server Essentials 體驗|  是|    不適用 - 新功能|  是|    否|
 |Windows Server Update Services|    是|    是|    是|    否|
-|工作資料夾|  是|    是|    是|    是，使用 [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級) 時從 WS 2012 R2 叢集進行。|
+|工作資料夾|  是|    是|    是|    是，使用[叢集作業系統輪流升級](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)時從 WS 2012 R2 叢集進行。|
 
 > [!IMPORTANT]  
 > 一旦安裝程式完成，而且您已安裝所有必要的伺服器角色和功能之後，請立即使用 Windows Update 或其他更新方法來檢查並安裝 Windows Server 2016 的可用更新。

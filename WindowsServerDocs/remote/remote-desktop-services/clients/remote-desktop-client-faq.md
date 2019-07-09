@@ -1,6 +1,6 @@
 ---
 title: 遠端桌面用戶端常見問題集
-description: 遠端桌面用戶端的相關的常見問題集
+description: 關於遠端桌面用戶端的常見問題集
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,227 +15,227 @@ ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66804956"
 ---
-# <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>遠端桌面用戶端的相關的常見問題集
+# <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>關於遠端桌面用戶端的常見問題集
 
->適用於：Windows 10，Windows 8.1、 Windows Server 2019、 Windows Server 2016、windows Server 2012 R2
+>適用於：Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-既然您已設定遠端桌面用戶端，在您的裝置 （Android、 Mac、 iOS 或 Windows） 上，您可能有問題。 以下是有關遠端桌面用戶端最常問的問題的解答。 
+現在您已在裝置 (Android、Mac、iOS 或 Windows) 上設定遠端桌面用戶端，您可能會有疑問。 以下是有關遠端桌面用戶端最常見問題的解答。 
 
 - [設定](#setting-up)
-- [連線、 閘道和網路](#connection-gateway-and-networks)
-- [web 用戶端](#web-client)
-- [監視、 音訊及滑鼠](#monitors-audio-and-mouse)
+- [連線、閘道和網路](#connection-gateway-and-networks)
+- [Web 用戶端](#web-client)
+- [監視器、音訊和滑鼠](#monitors-audio-and-mouse)
 - [Mac 硬體](#mac-client---hardware-questions)
-- [特定的錯誤訊息](#specific-errors)
+- [特定錯誤訊息](#specific-errors)
 
-這些問題大多適用於所有的用戶端，但有少數的用戶端特定項目。
+這些問題大多都是所有用戶端都可能會有的問題，但少數問題則只會在特定用戶端上出現。
 
-如果您有其他想要我們回答的問題，讓它們保持為意見上這篇文章。
+如果您有其他問題需要我們回答，請在本文的意見反應中提出。
 
 ## <a name="setting-up"></a>設定
 
-### <a name="which-pcs-can-i-connect-to"></a>若要連接哪些電腦？
+### <a name="which-pcs-can-i-connect-to"></a>我可以連線至哪些電腦？
 
-請參閱[支援組態](remote-desktop-supported-config.md)您可以連線到哪些電腦的相關資訊的文章。
+請參閱[支援的設定](remote-desktop-supported-config.md)一文，以了解您可以連線至哪些電腦。
 
-### <a name="how-do-i-set-up-a-pc-for-remote-desktop"></a>我該如何針對遠端桌面設定的電腦？
+### <a name="how-do-i-set-up-a-pc-for-remote-desktop"></a>如何為電腦進行遠端桌面設定？
 
-我在我的裝置設定，但是我認為的電腦已準備好。 幫助嗎？
+我已設定好裝置，但我認為電腦尚未就緒。 需要協助嗎？
 
-首先，您有看到遠端桌面安裝精靈嗎？ 它會引導您準備好您的電腦進行遠端存取。 下載並執行的工具在您的電腦，以取得所有項目上設定。 
+首先，您是否看到了遠端桌面設定精靈？ 它會引導您為電腦做好遠端存取的準備。 請在您的電腦下載並執行該工具，將一切設定妥當。 
 
-否則，如果您想要以手動方式執行動作，繼續閱讀。
+否則，如果您想要手動執行，請繼續往下閱讀。
 
-適用於 Windows 10 中，執行下列作業：
+在 Windows 10 上，請執行下列作業：
 
-1. 在您想要連接到裝置上，開啟**設定**。
-2. 選取 **系統**，然後**遠端桌面**。
-3. 您可以使用滑桿來啟用遠端桌面。
-4. 一般情況下，最好是保持電腦，甦醒狀態與可探索，以利於進行連線。 按一下 **顯示設定**移至您的電腦，您可以在其中變更此設定的電源設定。
+1. 在您要連接的裝置上，開啟 [設定]  。
+2. 選取 [系統]  ，然後選取 [遠端桌面]  。
+3. 使用滑桿來啟用遠端桌面。
+4. 一般而言，最好將電腦保持在警醒且可探索的狀態，以利進行連線。 按一下 [顯示設定]  移至電腦的電源設定，以便變更此設定。
    > [!NOTE]
-   > 您無法連線至睡眠的電腦或休眠狀態，因此請確定設定睡眠與休眠遠端電腦設定為**永不**。 （休眠不提供在所有電腦上）。
+   > 您無法連線至處於睡眠或休眠狀態的電腦，因此請確定遠端電腦的睡眠和休眠設為 [永不]  。 (並非所有電腦都有休眠功能。)
 
 
-請記下此電腦的名稱**如何連線到此 PC**。 您將需要此項來設定用戶端。
+請在 [如何連線至此電腦]  下方記下此電腦的名稱。 您將需要用這項資訊來設定用戶端。
 
-您可以授與存取此 PC-這麼做，請按一下 特定使用者的權限**選取即可從遠端存取此電腦的使用者**。
-系統管理員群組的成員自動擁有存取權。
+您可以為特定使用者授與存取此電腦的權限 - 若要這麼做，請按一下 [選取可從遠端存取此電腦的使用者]  。
+系統管理員群組的成員會自動取得存取權。
 
-Windows 8.1，請遵循以允許遠端連線中的指示[連接到使用遠端桌面連線的其他桌面](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)。
+在 Windows 8.1 上，請依照[使用遠端桌面連線來連線至其他桌面](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)中的指示，允許遠端連線。
 
 
 
-## <a name="connection-gateway-and-networks"></a>連接、 閘道和網路
+## <a name="connection-gateway-and-networks"></a>連線、閘道和網路
 
-### <a name="why-cant-i-connect-using-remote-desktop"></a>為何我無法連線使用遠端桌面？
+### <a name="why-cant-i-connect-using-remote-desktop"></a>為何我無法使用遠端桌面連線？
 
-以下是一些可能的解決方案，嘗試連線到遠端電腦時，可能會遇到的常見問題。 如果這些解決方案沒有作用，您可以找到更多協助[Microsoft Community 網站](https://go.microsoft.com/fwlink/p/?LinkId=242079)。
+以下是您在嘗試連線至遠端電腦遇到常見問題時可採行的一些解決方案。 如果這些解決方案沒有作用，您可以在 [Microsoft 社群網站](https://go.microsoft.com/fwlink/p/?LinkId=242079)尋求進一步協助。
 
-- **找不到遠端電腦。** 請確定您有權限的電腦名稱，然後查看是否您已正確輸入該名稱。 如果您仍然無法連線，請嘗試使用遠端電腦的 IP 位址，而不電腦名稱。
-- **沒有網路有問題。** 請確定您有網際網路連線。 
+- **找不到遠端電腦。** 請確定您具有正確的電腦名稱，然後查看是否您已正確輸入該名稱。 如果仍然無法連線，請嘗試使用遠端電腦的 IP 位址，而不使用電腦名稱。
+- **網路有問題。** 請確定您有網際網路連線。 
 - **遠端桌面連接埠可能會被防火牆封鎖。** 如果您使用 Windows 防火牆，請遵循下列步驟：
 
   1. 開啟 [Windows 防火牆]。 
-  2. 按一下 **允許應用程式或功能通過 Windows 防火牆**。 
-  3. 按一下 **變更設定**。 您可能會要求系統管理員密碼，或確認您的選擇。
-  4. 底下**允許應用程式和功能**，選取**遠端桌面**，然後點選或按一下 **確定**。
+  2. 按一下 [允許應用程式或功能通過 Windows 防火牆]  。 
+  3. 按一下 [變更設定]  。 系統可能會要求您輸入系統管理員密碼，以確認您的選擇。
+  4. 在 [允許應用程式和功能]  下方選取 [遠端桌面]  ，然後點選或按一下 [確定]  。
 
-     如果您使用不同的防火牆，請確定已開啟遠端桌面 (通常為 3389) 的連接埠。
-- **遠端連接可能未設定遠端電腦。** 若要修正此問題，往回捲動至[如何設定電腦的遠端桌面？](#how-do-i-set-up-a-pc-for-remote-desktop)本主題中的問題。
-- **遠端電腦可能只允許網路層級驗證設定用來連接電腦。** 
-- **遠端電腦可能已關閉。** 您無法連接到已關閉、 睡眠、 電腦或休眠狀態，因此請確定設定睡眠與休眠遠端電腦設定為**永不**（休眠無法在所有電腦上。）。
+     如果您使用不同的防火牆，請確定遠端桌面的連接埠 (通常為 3389) 已開啟。
+- **遠端電腦上可能未設定遠端連線。** 若要修正此問題，請往回參考本主題中的[如何為電腦進行遠端桌面設定？](#how-do-i-set-up-a-pc-for-remote-desktop)問題。
+- **遠端電腦可能僅允許電腦連接已設定網路層級驗證的目標。** 
+- **遠端電腦可能關閉。** 您無法連線至處於關閉、睡眠或休眠狀態的電腦，因此請確定遠端電腦的睡眠和休眠設為 [永不]  (並非所有電腦都有休眠功能)。
 
-### <a name="why-cant-i-find-or-connect-to-my-pc"></a>為什麼無法找到或連線到我的電腦嗎？
+### <a name="why-cant-i-find-or-connect-to-my-pc"></a>為何找不到我的電腦或無法加以連線？
 
 檢查下列項目：
 
-- 是電腦上和甦醒狀態？
-- 您未輸入正確的名稱或 IP 位址？
+- 電腦是否開啟並處於警醒狀態？
+- 您是否輸入正確的名稱或 IP 位址？
 
    > [!IMPORTANT]
-   > 使用電腦名稱，需要您網路的正確透過 DNS 名稱解析。 在許多家用網路中，您必須連接，而不是主機名稱使用的 IP 位址。
-- 電腦位於不同的網路嗎？ 您是否有設定，讓外部連線到電腦？  請參閱[允許您從網路外部的電腦存取](remote-desktop-allow-outside-access.md)取得協助。
-- 您要連線到支援的 Windows 版本？ 
+   > 要使用電腦名稱，您的網路必須能透過 DNS 正確解析名稱。 在許多家用網路中，您必須使用 IP 位址來連線，而不是主機名稱。
+- 電腦是否位於不同的網路上？ 您是否將電腦設定成允許外部連線通過？  如需說明，請參閱[允許從網路外部存取您的電腦](remote-desktop-allow-outside-access.md)。
+- 您是否連線至支援的 Windows 版本？ 
 
    > [!NOTE]
-   > 第 3 方軟體沒有不支援 Windows XP 家用版、 Windows Media Center Edition、 Windows Vista Home 和 Windows 7 Home 或入門。
+   > 在沒有第三方軟體的情況下，不支援 Windows XP Home、Windows Media Center Edition、Windows Vista Home、Windows 7 家用版或簡易版。
 
-### <a name="why-cant-i-sign-in-to-a-remote-pc"></a>為什麼無法我登入遠端電腦？
+### <a name="why-cant-i-sign-in-to-a-remote-pc"></a>為何無法登入遠端電腦？
 
-如果您所見的遠端電腦的 [登入] 畫面，但您無法登入，您可能會有尚未加入至遠端桌面使用者群組，或在遠端電腦上的系統管理員權限的任何群組。 請詢問您若要這樣做為您的系統管理員。
+如果您可以看到遠端電腦的登入畫面，但無法登入，您可能尚未新增至遠端電腦上的遠端桌面使用者群組，或任何具有系統管理員權限的群組。 請要求系統管理員為您新增。
 
-### <a name="which-connection-methods-are-supported-for-company-networks"></a>支援公司網路的連線方法？
+### <a name="which-connection-methods-are-supported-for-company-networks"></a>公司網路支援哪些連線方法？
 
-如果您想要存取您的 office 桌面從公司網路外部時，您的公司必須提供您一種遠端存取。 RD 用戶端目前支援以下功能：
+如果您想要從公司網路外部存取辦公室桌面，您的公司必須提供遠端存取機制。 RD 用戶端目前支援下列功能：
 
 - 終端機伺服器閘道或遠端桌面閘道
 - 遠端桌面 Web 存取
-- VPN （透過內建 VPN 選項 iOS）
+- VPN (透過 iOS 內建 VPN 選項)
 
 ### <a name="vpn-doesnt-work"></a>VPN 無法運作
 
-VPN 問題可以有數個原因。 第一個步驟是確認 VPN，適用於 PC 或 Mac 電腦與相同的網路。 如果您不能測試在 PC 或 Mac，您可以嘗試存取公司內部網路網頁，以您的裝置瀏覽器。
+VPN 問題可能由數個原因所導致。 第一個步驟是確認 VPN 可在與電腦或 Mac 電腦相同的網路上運作。 如果您無法對電腦或 Mac 進行測試，您可以嘗試以裝置的瀏覽器存取公司的內部網路網頁。
 
-若要檢查其他項目：
-- **3g 網路封鎖或損毀 VPN。** 有數個 3g 提供者的世界中似乎區塊或損毀 3g 流量。 確認 VPN 連線可正常使用超過一分鐘。
-- **L2TP 或 PPTP Vpn。** 如果您使用 L2TP 或 PPTP，在您的 VPN，請傳送所有流量中都設為 ON 的 VPN 組態。
-- **VPN 的設定不正確。** 設定錯誤的 VPN 伺服器可以是 VPN 連線，永遠不會處理或原因段時間後停止運作。 請確定測試使用 iOS 裝置的網頁瀏覽器，或在 PC 或 Mac，在相同網路上，如果發生這種情況。
+須確認的其他事項：
+- **3G 網路封鎖或阻斷 VPN。** 市面上有數個 3G 提供者似乎會封鎖或阻斷 3G 流量。 請確認 VPN 連線可正常運作超過一分鐘。
+- **L2TP 或 PPTP VPN。** 如果您在 VPN 中使用 L2TP 或 PPTP，請在 VPN 設定中將 [傳送所有流量] 設為 [開啟]。
+- **VPN 設定錯誤。** 設定錯誤的 VPN 伺服器可能是 VPN 連線完全無法運作或在一段時間後停止運作的原因。 如果發生這種情況，請確實以 iOS 裝置的網頁瀏覽器或相同網路上的電腦或 Mac 進行測試。
 
 ### <a name="how-can-i-test-if-vpn-is-working-properly"></a>如何測試 VPN 是否正常運作？
 
-請確認您的裝置上，會啟用 VPN。 您可以前往您的內部網路上的網頁，或使用 web 服務，僅可透過 VPN，以測試您的 VPN 連線。
+確認您的裝置上已啟用 VPN。 您可以前往內部網路上的網頁，或使用只能透過 VPN 進行連線的 Web 服務，來測試您的 VPN 連線。
 
 ### <a name="how-do-i-configure-l2tp-or-pptp-vpn-connections"></a>如何設定 L2TP 或 PPTP VPN 連線？
 
-如果您使用 L2TP 或 PPTP 在您的 VPN，請務必設定**傳送所有流量**要**ON** VPN 組態中。
+如果您在 VPN 中使用 L2TP 或 PPTP，請確實在 VPN 設定中將 [傳送所有流量]  設為 [開啟]  。
 
-## <a name="web-client"></a>web 用戶端
+## <a name="web-client"></a>Web 用戶端
 
-### <a name="which-browsers-can-i-use"></a>可以使用哪些瀏覽器？
+### <a name="which-browsers-can-i-use"></a>我可以使用哪些瀏覽器？
 
-Web 用戶端支援 Microsoft Edge、 Internet Explorer 11，Mozilla Firefox (v55.0 和更新版本)、 Safari 和 Google Chrome。
+Web 用戶端支援 Microsoft Edge、Internet Explorer 11、Mozilla Firefox (v55.0 和更新版本)、Safari 和 Google Chrome。
 
-### <a name="what-pcs-can-i-use-to-access-the-web-client"></a>若要存取 web 用戶端可以使用哪些電腦？
+### <a name="what-pcs-can-i-use-to-access-the-web-client"></a>可以使用哪些電腦來存取 Web 用戶端？
 
-Web 用戶端支援 Windows、 macOS、 Linux 和 ChromeOS。 在此階段不支援行動裝置。
+Web 用戶端支援 Windows、macOS、Linux 和 ChromeOS。 目前不支援行動裝置。
 
-### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>可以使用 web 用戶端在遠端桌面部署中不需要閘道嗎？
+### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>是否可在沒有閘道的遠端桌面部署中使用 Web 用戶端？
 
-資料分割 用戶端需要遠端桌面閘道連線。 不知道什麼意思？ 您的系統管理員詢問它。
+不。 用戶端必須要有遠端桌面閘道才能連線。 不知道這是什麼意思嗎？ 請詢問您的系統管理員。
 
-### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>遠端桌面 web 用戶端是否會取代 [遠端桌面 Web 存取] 頁面？
+### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>遠端桌面 Web 用戶端是否會取代遠端桌面 Web 存取頁面？
 
-資料分割 遠端桌面 web 用戶端會裝載於不同的 URL 比 [遠端桌面 Web 存取] 頁面。 若要在瀏覽器中檢視的遠端資源，您可以使用 web 用戶端或 Web 存取的頁面。
+不。 遠端桌面 Web 用戶端與遠端桌面 Web 存取頁面裝載於不同的 URL。 您可以使用 Web 用戶端或 Web 存取頁面，在瀏覽器中檢視遠端資源。
 
-### <a name="can-i-embed-the-web-client-in-another-web-page"></a>可以在另一個網頁中內嵌 web 用戶端？
+### <a name="can-i-embed-the-web-client-in-another-web-page"></a>是否可將 Web 用戶端內嵌在另一個網頁中？
 
 目前不支援此功能。
 
-## <a name="monitors-audio-and-mouse"></a>監視、 音訊及滑鼠
+## <a name="monitors-audio-and-mouse"></a>監視器、音訊和滑鼠
 
-### <a name="how-do-i-use-all-of-my-monitors"></a>如何監視我的所有使用？
-若要使用兩個或多個畫面，執行下列作業：
+### <a name="how-do-i-use-all-of-my-monitors"></a>如何使用我所有的監視器？
+若要使用兩個或更多畫面，請執行下列作業：
 
-1. 以滑鼠右鍵按一下您想要啟用多個畫面，然後按一下 遠端桌面**編輯**。
-2. 啟用**使用所有監視器**並**全螢幕**。
+1. 以滑鼠右鍵按一下要啟用多個畫面的遠端桌面，然後按一下 [編輯]  。
+2. 啟用 [使用所有監視器]  和 [全螢幕]  。
 
-### <a name="is-bi-directional-sound-supported"></a>支援雙向聲音？
-遠端桌面用戶端不支援上游 （從用戶端到伺服器，如麥克風） 的聲音。
+### <a name="is-bi-directional-sound-supported"></a>是否支援雙向音效？
+遠端桌面用戶端不支援逆向音效 (例如，從用戶端到伺服器的麥克風音效)。
 
-### <a name="what-can-i-do-if-the-sound-wont-play"></a>如果將不會播放聲音，我可以做什麼？
-登出工作階段 （不只是中斷連接，一路登出），然後再次登入。
+### <a name="what-can-i-do-if-the-sound-wont-play"></a>無法播放音效時，該如何處理？
+登出工作階段 (不只是中斷連線，而應完全登出)，然後再次登入。
 
-## <a name="mac-client---hardware-questions"></a>Mac 用戶端-硬體問題
-### <a name="is-retina-resolution-supported"></a>Retina 解析度支援？
-是，遠端桌面用戶端支援 retina 解析度。
+## <a name="mac-client---hardware-questions"></a>Mac 用戶端 - 硬體問題
+### <a name="is-retina-resolution-supported"></a>是否支援視網膜解析度？
+是，遠端桌面用戶端支援視網膜解析度。
 
-### <a name="how-do-i-enable-secondary-right-click"></a>如何啟用次要以滑鼠右鍵按一下？
-為了讓使用 「 按一下滑鼠右鍵，在開啟的工作階段，您有三個選項：
+### <a name="how-do-i-enable-secondary-right-click"></a>如何啟用滑鼠右鍵二次點按？
+若要在開啟的工作階段內使用滑鼠右鍵點按功能，您有三個選項：
 
-- 標準 PC 兩個 USB 滑鼠
-- Apple Magic 滑鼠：若要啟用按一下滑鼠右鍵，按一下**系統偏好設定**在 dock 中，按一下**滑鼠**，然後再啟用**次要按一下**。
-- Apple Magic 軌跡板或 MacBook 軌跡板：若要啟用按一下滑鼠右鍵，按一下**系統偏好設定**在 dock 中，按一下**滑鼠**，然後再啟用**次要按一下**。
+- 標準電腦雙按鈕 USB 滑鼠
+- Apple Magic Mouse：若要啟用滑鼠右鍵點按功能，請按一下擴充座中的 [系統喜好設定]  ，再按一下 [滑鼠]  ，然後啟用 [二次點按]  。
+- Apple Magic Trackpad 或 MacBook Trackpad：若要啟用滑鼠右鍵點按功能，請按一下擴充座中的 [系統喜好設定]  ，再按一下 [滑鼠]  ，然後啟用 [二次點按]  。
 
-### <a name="is-airprint-supported"></a>AirPrint 支援？
-否，「 遠端桌面用戶端不支援 AirPrint。 （這是適用於 Mac 和 iOS 的用戶端）。
+### <a name="is-airprint-supported"></a>是否支援 AirPrint？
+否，遠端桌面用戶端不支援 AirPrint。 (Mac 和 iOS 用戶端都不支援)。
 
-### <a name="why-do-incorrect-characters-appear-in-the-session"></a>為什麼並不正確的字元會顯示在工作階段？
-如果您使用的國際鍵盤，您可能會發現問題出現在工作階段中的字元進行比對字元 Mac 鍵盤上鍵入。
+### <a name="why-do-incorrect-characters-appear-in-the-session"></a>為何工作階段中出現不正確的字元？
+如果您使用國際鍵盤，您可能會發現工作階段中出現的字元與您在 Mac 鍵盤上輸入的字元不符的問題。
 
-這可能會發生在下列情況：
+這可能會在下列案例中發生：
 
-- 使用 遠端工作階段無法辨識鍵盤。 當遠端桌面無法辨識鍵盤時，它會預設為遠端電腦上一次使用的語言。
-- 您要連接到遠端電腦上先前中斷連線工作階段和遠端電腦使用不同的鍵盤語言的語言比您目前嘗試使用。
+- 您使用遠端工作階段無法辨識的鍵盤。 當遠端桌面無法辨識鍵盤時，則會預設為遠端電腦上一次使用的語言。
+- 您連線至遠端電腦上先前中斷連線的工作階段，而遠端電腦所使用的鍵盤語言與您目前嘗試使用的語言不同。
 
-您可以手動將鍵盤語言設定的遠端工作階段來修正此問題。 請參閱下一節中的步驟。
+您可以手動設定遠端工作階段的鍵盤語言，以修正此問題。 請參閱下一節中的步驟。
 
-### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>語言設定如何影響鍵盤在遠端工作階段？
-有許多種 Mac 鍵盤配置。 其中有些是 Mac 特定版面配置或為其完全符合可能無法使用的是遠端處理到的 Windows 版本上的自訂配置。 遠端工作階段會比對遠端電腦上可用的鍵盤語言的最佳對應鍵盤。 
+### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>語言設定對遠端工作階段中的鍵盤有何影響？
+Mac 鍵盤有許多類型的配置。 其中有些是 Mac 的特定配置或自訂配置，在您從遠端連線的 Windows 版本上可能沒有完全相符的項目。 遠端工作階段會將您的鍵盤對應至遠端電腦上最相符的可用鍵盤語言。 
 
-如果您的 Mac 鍵盤配置設定為您的金鑰應該正確對應語言鍵盤 （例如，法文 – 電腦） 和鍵盤的 PC 版本應該行得通。
+如果您的 Mac 鍵盤配置設定為電腦版的語言鍵盤 (例如，法文 – 電腦)，則您所有的按鍵應該都會正確對應，且鍵盤應可正常運作。
 
-如果您的 Mac 鍵盤配置設定鍵盤 （例如，法文） 的 Mac 版的遠端工作階段會對應您 PC 版本的法文語言。 Mac 鍵盤快速鍵，您用來在 OSX 上使用的一些無法在遠端的 Windows 工作階段。
+如果您的 Mac 鍵盤配置設定為 Mac 版的鍵盤 (例如，法文)，則遠端工作階段會將您對應至電腦版的法文語言。 您在 OSX 上慣常使用的某些 Mac 鍵盤快速鍵，在遠端 Windows 工作階段中將無法運作。
 
-如果您的鍵盤配置設定為一種語言 （例如，加拿大法文） 的一種變化，而且遠端工作階段無法將您對應至該確切的變化，遠端工作階段會將您對應至最接近的語言 （例如，法文）。 Mac 鍵盤快速鍵，您用來在 OSX 上使用的一些無法在遠端的 Windows 工作階段。
+如果您的鍵盤配置設定為某個語言 (例如，加拿大法文) 的變化，且遠端工作階段無法將您對應至該確切的變化，則遠端工作階段會將您對應至最接近的語言 (例如，法文)。 您在 OSX 上慣常使用的某些 Mac 鍵盤快速鍵，在遠端 Windows 工作階段中將無法運作。
 
-如果您的鍵盤配置設定為遠端工作階段不能完全符合的版面配置時，遠端工作階段會預設為讓您上一次使用與該電腦的語言。 在此情況下，或在您要變更以符合您的 Mac 鍵盤，遠端工作階段的語言的情況下您可以手動設定鍵盤語言的語言會最符合您想要使用，如下所示的一個遠端工作階段中。
+如果您的鍵盤配置設定為遠端工作階段完全不相符的配置，則遠端工作階段會預設為讓您使用該電腦上一次使用的語言。 在此情況下，或是您需要變更遠端工作階段的語言以符合您的 Mac 鍵盤時，您可以手動將遠端工作階段中的鍵盤語言設定為與您想要使用的最相符的語言，如下所示。
 
-若要變更鍵盤配置內的遠端桌面工作階段中使用下列指示：
+若要變更遠端桌面工作階段中的鍵盤配置，請使用下列指示：
 
-**在 Windows 10 或 Windows 8:**
+**在 Windows 10 或 Windows 8 上：**
 
-1. 從在遠端工作階段中，開啟 地區及語言。 按一下 **開始 > 設定 > 時間與語言**。 開啟**地區和語言**。
-2. 新增您想要使用的語言。 然後關閉 [地區及語言] 視窗。
-3. 現在，遠端工作階段中，您會看到語言之間切換的功能。 （在右側的遠端工作階段中，時鐘附近。）按一下您想要切換到的語言 (例如**Eng**)。
+1. 在遠端工作階段中，開啟 [地區及語言]。 按一下 [開始 > 設定 > 時間與語言]  。 開啟 [地區及語言]  。
+2. 新增您要使用的語言。 然後，關閉 [地區及語言] 視窗。
+3. 現在，在遠端工作階段中，您會看到切換語言的功能。 (在遠端工作階段右側的時鐘附近。)按一下您要切換到的語言 (例如 **Eng**)。
 
-您可能需要關閉並重新啟動應用程式，您目前使用的鍵盤變更才會生效。
+您可能需要關閉並重新啟動您目前使用的應用程式，鍵盤變更才會生效。
 
 
-## <a name="specific-errors"></a>特定的錯誤
+## <a name="specific-errors"></a>特定錯誤
 
-### <a name="why-do-i-get-an-insufficient-privileges-error"></a>為什麼會收到 「 權限不足 」 錯誤？
-您不允許存取您想要連線到工作階段。 最可能的原因是您嘗試連線到系統管理工作階段。 只有系統管理員才能連線到主控台。 請確認主控台開關已關閉遠端桌面的進階設定中。 如果這不是問題的來源，請連絡您的系統管理員以取得進一步協助。
+### <a name="why-do-i-get-an-insufficient-privileges-error"></a>為何會出現「權限不足」錯誤？
+系統不允許您存取您要連線到的工作階段。 最可能的原因是您嘗試連線至系統管理工作階段。 只有系統管理員才能連線至主控台。 請在遠端桌面的進階設定中確認主控台開關已關閉。 如果這不是問題的成因，請連絡系統管理員以取得進一步協助。
 
-### <a name="why-does-the-client-say-that-there-is-no-cal"></a>用戶端為何顯示為沒有 CAL？
-當遠端桌面用戶端連線到遠端桌面伺服器時，伺服器就會發出遠端桌面服務用戶端存取使用權 (RDS CAL) 儲存用戶端。 只要用戶端連線一次，它會使用其 RDS CAL，而且伺服器不會發出另一個授權。 如果在裝置上的 RDS CAL 會遺失或損毀，伺服器會發出另一個授權。 當授權的裝置數目上限為止伺服器不會發出新的 RDS Cal。 請連絡網路系統管理員尋求協助。
+### <a name="why-does-the-client-say-that-there-is-no-cal"></a>為何用戶端指出沒有 CAL？
+當遠端桌面用戶端連線至遠端桌面伺服器時，伺服器會發出遠端桌面服務用戶端存取使用權 (RDS CAL)，供用戶端儲存。 每當用戶端再次連線時，它都會使用其 RDS CAL，伺服器將不會再發出另一個授權。 當裝置上的 RDS CAL 遺失或損毀時，伺服器會發出另一個授權。 在達到授權的裝置數目上限時，伺服器即不會再發出新的 RDS CAL。 請連絡網路系統管理員以取得協助。
 
-### <a name="why-did-i-get-an-access-denied-error"></a>為什麼我會得到 「 拒絕存取 」 錯誤？
-嘗試連接期間，「 拒絕存取 」 錯誤是由遠端桌面閘道和認證不正確結果的產生。 請確認您的使用者名稱和密碼。 如果連接之前，且最近發生的錯誤，您可能變更 Windows 使用者帳戶密碼，而且您尚未它尚未更新中的遠端桌面設定。
+### <a name="why-did-i-get-an-access-denied-error"></a>為何會出現「拒絕存取」錯誤？
+「拒絕存取」錯誤由遠端桌面閘道所產生，導因於連線嘗試期間的認證不正確。 請確認您的使用者名稱和密碼。 如果連線先前可運作，而最近才發生錯誤，則可能是您變更了 Windows 使用者帳戶密碼，但尚未在遠端桌面設定中加以更新。
 
-### <a name="what-does-rpc-error-23014-or-error-0x59e6-mean"></a>「 RPC 錯誤 23014 」 或 「 錯誤 0x59e6 」 平均值的功能？
-中的情況下**RPC 錯誤 23014**或是**之後等候幾分鐘後重試錯誤 0x59E6**，RD 閘道伺服器已達到使用中連接數目上限。 根據 Windows 版本在 RD 閘道上執行的連線數目上限與不同：Windows Server 2008 R2 Standard 實作限制為 250 的連線數目。 Windows Server 2008 R2 Foundation 實作限制為 50 的連線數目。 所有其他的 Windows 實作允許無限的數目的連線。
+### <a name="what-does-rpc-error-23014-or-error-0x59e6-mean"></a>「RPC 錯誤 23014」或「錯誤 0x59e6」有何意義？
+發生 **RPC 錯誤 23014** 或**錯誤 0x59E6，請等候幾分鐘後再重試**時，表示 RD 閘道伺服器已達到作用中連線數目上限。 根據在 RD 閘道上執行的 Windows 版本，連線數目上限有所不同：Windows Server 2008 R2 Standard 實作將連線數目限制為 250 個。 Windows Server 2008 R2 Foundation 實作將連線數目限制為 50 個。 所有其他 Windows 實作皆允許無限制的連線數目。
 
-### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>「 剖析 NTLM 挑戰失敗 」 錯誤代表什麼意思？
-此錯誤被因為在遠端電腦上設定不正確。 請確定 RDP 安全性層級設定，在遠端電腦上的設定為 「 用戶端相容 」。 （請連絡您的系統管理員如果您需要執行此動作的說明。）
+### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>「無法剖析 NTLM 挑戰」錯誤有何意義？
+此錯誤是遠端電腦的設定不正確所導致。 請確定遠端電腦上的 RDP 安全性層級設定設為「用戶端相容」。 (如需相關協助，請洽詢系統管理員。)
 
-### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>功能"TS_RAP 不允許您連接到指定的主控件 」 表示？
-當閘道伺服器上的資源授權原則會停止您的使用者名稱，無法連線到遠端電腦時，就會發生此錯誤。 這種情形會在下列情況：
+### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>「TS_RAP 不允許您連線至指定的主機」有何意義？
+當閘道伺服器上的資源授權原則禁止您的使用者名稱連線至遠端電腦時，就會發生此錯誤。 這可能會在下列實例中發生：
 
-- 遠端電腦名稱是與閘道的名稱相同。 然後，當您嘗試連接到遠端電腦，連線到閘道反而可能沒有存取權限。 如果您需要連線到閘道，不要使用外部的閘道名稱作為電腦名稱。 改為使用"localhost"或 IP 位址 (127.0.0.1) 或內部伺服器名稱。
-- 您的使用者帳戶不是遠端存取的使用者群組的成員。
+- 遠端電腦名稱與閘道的名稱相同。 隨後，當您嘗試連線至遠端電腦時，連線反而轉向至閘道，但您可能沒有其存取權限。 如果您需要連線至閘道，請不要將外部閘道名稱作為電腦名稱。 請改為使用 "localhost" 或 IP 位址 (127.0.0.1)，或是內部伺服器名稱。
+- 您的使用者帳戶不是遠端存取的使用者群組成員。

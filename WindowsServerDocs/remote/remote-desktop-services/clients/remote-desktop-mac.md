@@ -1,6 +1,6 @@
 ---
-title: 開始使用在 Mac 上的遠端桌面
-description: 了解如何設定遠端桌面用戶端的 Mac
+title: 在 Mac 上開始使用遠端桌面
+description: 了解如何設定適用於 Mac 的遠端桌面用戶端
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,163 +15,163 @@ ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a54ffd3d5596ba8c71deab668e4952da445ca12e
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66804937"
 ---
-# <a name="get-started-with-remote-desktop-on-mac"></a>開始使用在 Mac 上的遠端桌面
+# <a name="get-started-with-remote-desktop-on-mac"></a>在 Mac 上開始使用遠端桌面
 
->適用於：Windows 10，Windows 8.1，Windows Server 2012 R2 中，Windows Server 2016
+>適用於：Windows 10、Windows 8.1、Windows Server 2012 R2、Windows Server 2016
 
-您可以使用 Mac 的遠端桌面用戶端來從您的 Mac 電腦使用 Windows 應用程式、 資源及桌上型電腦。 使用下列資訊來開始建置，並查看[常見問題集](remote-desktop-client-faq.md)如有任何問題。
+您可以使用適用於 Mac 的遠端桌面用戶端，從您的 Mac 電腦使用 Windows 應用程式、資源及桌面。 若要開始使用，請使用下列資訊 - 如有任何問題，請參閱[常見問題集](remote-desktop-client-faq.md)。
 
 >[!NOTE]
-> - 想知道 macOS 用戶端的新版本嗎？ 請參閱[Mac 上的遠端桌面最新消息？](mac-whatsnew.md)
-> - 執行 macOS 10.10 及更新版本的電腦上，執行 Mac 用戶端。
-> - 這篇文章中的資訊主要適用於完整版的 Mac 用戶端-Mac AppStore 中可用的版本。 下載我們預覽應用程式中試用新功能： [beta 用戶端版本資訊](https://go.microsoft.com/fwlink/?LinkID=619698&clcid=0x409)。
+> - 想知道適用於 macOS 用戶端的新版本嗎？ 請參閱 [macOS 上的遠端桌面有什麼新功能？](mac-whatsnew.md)
+> - Mac 用戶端須在執行 macOS 10.10 及更新版本的電腦上執行。
+> - 本文中的資訊主要適用於完整版的 Mac 用戶端 - Mac AppStore 中提供的版本。 請下載我們此處的預覽應用程式以試用新功能：[Beta 用戶端版本資訊](https://go.microsoft.com/fwlink/?LinkID=619698&clcid=0x409)。
 
 ## <a name="get-the-remote-desktop-client"></a>取得遠端桌面用戶端
-請遵循下列步驟來開始使用您的 Mac 上的遠端桌面：
+依照下列步驟，在 Mac 上開始使用遠端桌面：
 
-1. 下載的 Microsoft 遠端桌面用戶端[Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12)。
-2. [您的電腦設定成接受遠端連接](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。 （如果您略過此步驟中，您無法連接到您的電腦）。
-3. 將遠端桌面連線或存取遠端資源。 您可以使用連線來直接連接至 Windows 電腦和遠端資源，若要使用的 RemoteApp 程式、 工作階段為基礎的桌面，或虛擬桌面發佈內部部署使用 RemoteApp 與桌面連線。 在公司環境中通常使用這項功能。
+1. 從 [Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12) 下載 Microsoft 遠端桌面用戶端。
+2. [將您的電腦設定成接受遠端連線](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。 (如果您略過此步驟，即無法連線至您的電腦。)
+3. 新增遠端桌面連線或遠端資源。 您可以使用連線直接連線至 Windows 電腦和遠端資源，以使用 RemoteApp 程式、工作階段型桌面，或使用 RemoteApp 和桌面連線在內部部署發佈的虛擬桌面。 在公司環境中通常可以使用這項功能。
 
-## <a name="what-about-the-mac-beta-client"></a>Mac beta 用戶端呢？
-我們在 HockeyApp 我們預覽通道上測試新功能。 想要簽出嗎？ 移至[適用於 Mac 的 Microsoft 遠端桌面](https://go.microsoft.com/fwlink/?LinkID=619698)然後按一下**下載**。 您不需要建立帳戶或登入以下載 beta 版的用戶端的 HockeyApp。
+## <a name="what-about-the-mac-beta-client"></a>Mac Beta 用戶端呢？
+我們正在 HockeyApp 的預覽通道上測試新功能。 想一探究竟嗎？ 請前往[適用於 Mac 的 Microsoft 遠端桌面](https://go.microsoft.com/fwlink/?LinkID=619698)，然後按一下 [下載]  。 您不需要建立帳戶或登入 HockeyApp，即可下載 Beta 用戶端。
 
-如果您已經在用戶端，您可以檢查更新，以確保您擁有的最新版本。 在 beta 用戶端中，按一下**Microsoft 遠端桌面 Beta**上方，，然後按一下**檢查是否有更新**。 
+如果您已有用戶端，您可以檢查更新，以確定您擁有最新版本。 在 Beta 用戶端中，按一下頂端的 [Microsoft 遠端桌面 Beta 版]  ，然後按一下 [檢查更新]  。 
 
 ## <a name="add-a-remote-desktop-connection"></a>新增遠端桌面連線
 若要建立遠端桌面連線：
 
-1. 在 「 連線中心 」 中，按一下 **+** ，然後按一下**桌面**。
+1. 在連線中心，按一下 **+** ，然後按一下 [桌面]  。
 2. 輸入下列資訊：
-   - **電腦名稱**-電腦的名稱。
-      - 這可以是 Windows 的電腦名稱 (在中找到**系統**設定)，使用網域名稱或 IP 位址。
-      - 您也可以將連接埠資訊加入這個名稱，結尾像是*MyDesktop:3389*。
-   - **使用者帳戶**-新增您用來存取遠端電腦的使用者帳戶。
-     - 電腦或本機帳戶，已加入 Active Directory (AD)，使用其中一種格式： *user_name*， *domain\user_name*，或<em>user_name@domain.com</em>。
-     - 針對 Azure Active Directory (AAD) 加入的電腦，使用其中一種格式：*AzureAD\user_name*或是<em>AzureAD\user_name@domain.com</em>。
+   - **電腦名稱** - 電腦的名稱。
+      - 這可以是 Windows 電腦名稱 (位於 [系統]  設定中)、網域名稱或 IP 位址。
+      - 您也可以將連接埠資訊新增至此名稱的結尾，例如 *MyDesktop:3389*。
+   - **使用者帳戶** - 新增您用來存取遠端電腦的使用者帳戶。
+     - 針對已加入 Active Directory (AD) 的電腦或本機帳戶，請使用下列其中一種格式：*user_name*、*domain\user_name* 或 <em>user_name@domain.com</em>。
+     - 針對已加入 Azure Active Directory (AAD) 的電腦，請使用下列其中一種格式：*AzureAD\user_name* 或 <em>AzureAD\user_name@domain.com</em>。
      - 您也可以選擇是否需要密碼。
-     - 在管理多個具有相同的使用者名稱的使用者帳戶時，設定來區分之帳戶的易記名稱。
-     - 管理應用程式的喜好設定中儲存的使用者帳戶。 
+     - 在管理多個具有相同使用者名稱的使用者帳戶時，請設定易記名稱來區分帳戶。
+     - 在應用程式的喜好設定中管理您已儲存的使用者帳戶。 
 
-3. 您也可以設定連接這些選擇性設定：
-   - 設定好記的名稱 
-   - 新增閘道
-   - 將聲音輸出設定
+3. 您也可以為連線設定下列選擇性設定：
+   - 設定易記名稱 
+   - RAS 閘道
+   - 設定音效輸出
    - 交換滑鼠按鈕
-   - 啟用管理員模式
-   - 本機資料夾重新導向到遠端工作階段
-   - 正向的本機印表機
-   - 正向的智慧卡
-4. 按一下 [儲存]  。
+   - 啟用系統管理員模式
+   - 將本機資料夾重新導向至遠端工作階段
+   - 轉送本機印表機
+   - 轉送智慧卡
+4. 按一下 **[儲存]** 。
 
-若要啟動的連線，只要連按兩下它。 這也適用於的遠端資源。
+若要啟動連線，只要按兩下連線即可。 此機制也適用於遠端資源。
 
 ### <a name="export-and-import-connections"></a>匯出和匯入連線
-您可以匯出的遠端桌面連線的定義，並使用不同的裝置上。 遠端桌面會儲存在不同。RDP 檔案。
+您可以匯出遠端桌面連線定義，並在不同的裝置上加以使用。 遠端桌面會儲存在個別的 .RDP 檔案中。
 
-1. 在 「 連線中心 」 中，以滑鼠右鍵按一下的遠端桌面。
-2. 按一下 **匯出**。
-3. 瀏覽至您要儲存的遠端桌面的位置。RDP 檔案。
+1. 在連線中心，以滑鼠右鍵按一下遠端桌面。
+2. 按一下 [匯出]  。
+3. 瀏覽至要儲存遠端桌面 .RDP 檔案的位置。
 4. 按一下 [確定]  。
 
-您可以使用下列步驟，匯入遠端桌面。RDP 檔案。
+使用下列步驟匯入遠端桌面 .RDP 檔案。
 
-1. 在功能表列中，按一下**檔案** > **匯入**。
-2. 瀏覽至。RDP 檔案。
+1. 在功能表列中，按一下 [檔案]   > [匯入]  。
+2. 瀏覽至 .RDP 檔案。
 3. 按一下 [開啟]  。
 
 ## <a name="add-a-remote-resource"></a>新增遠端資源
-遠端資源是 RemoteApp 程式、 工作階段為基礎的桌面及發佈使用 RemoteApp 與桌面連線的虛擬桌面。
+遠端資源包括 RemoteApp 程式、工作階段型桌面，以及使用 RemoteApp 與桌面連線發佈的虛擬桌面。
 
-- URL 會顯示連結，可讓您存取 RemoteApp 與桌面連線的 RD Web 存取伺服器。
-- 設定 RemoteApp 與桌面連線會列出。
+- URL 會顯示可讓您存取 RemoteApp 與桌面連線的 RD Web 存取伺服器的連結。
+- 系統會列出已設定的 RemoteApp 與桌面連線。
 
-若要新增的遠端資源：
+若要新增遠端資源：
 
-1. 在 「 連線中心 」 中，按一下 **+** ，然後按一下**新增遠端資源**。 
+1. 在連線中心按一下 **+** ，然後按一下 [新增遠端資源]  。 
 2. 輸入遠端資源的資訊：
-   - **摘要 URL** -RD Web 存取伺服器的 URL。 您也可以輸入您的公司電子郵件帳戶，在此欄位 – 這會告訴用戶端搜尋與您的電子郵件地址相關聯的 RD Web 存取伺服器。
-   - **使用者名稱**-要用於您要連接到 RD Web 存取伺服器的使用者名稱。
-   - **密碼**-針對您要連接到 RD Web 存取伺服器使用的密碼。
-3. 按一下 [儲存]  。
+   - **摘要 URL** - RD Web 存取伺服器的 URL。 您也可以在此欄位中輸入您的公司電子郵件帳戶，如此會告訴用戶端搜尋與您電子郵件地址相關聯的 RD Web 存取伺服器。
+   - **使用者名稱** - 您要連線的 RD Web 存取伺服器所要使用的使用者名稱。
+   - **密碼** - 您要連線的 RD Web 存取伺服器所要使用的密碼。
+3. 按一下 **[儲存]** 。
 
 
-遠端資源將會顯示在 「 連線中心。
+遠端資源將會顯示於連線中心。
 
 
-## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>連接至 RD 閘道存取內部資產
+## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>連線至 RD 閘道以存取內部資產
 
-遠端桌面閘道 （RD 閘道） 可讓您從任何地方連線到公司網路上的遠端電腦在網際網路上。 您可以建立和管理您的應用程式，或設定新的桌面連線時，喜好設定中的閘道。
+遠端桌面閘道 (RD 閘道) 可讓您從網際網路上的任何位置連線至公司網路上的遠端電腦。 您可以在應用程式的喜好設定中，或是在設定新的桌面連線時建立和管理閘道。
 
-若要設定新的閘道，在 喜好設定：
+若要在喜好設定中設定新的閘道：
 
-1. 在 「 連線中心 」 中，按一下**喜好設定 > 閘道**。 
-2. 按一下  **+** 按鈕底部的資料表輸入下列資訊：
-   - **伺服器名稱**– 您想要作為閘道使用的電腦名稱。 這可以是 Windows 電腦名稱、 網際網路網域名稱或 IP 位址。 您也可以新增連接埠資訊的伺服器名稱 (例如：**RDGateway:443**或是**10.0.0.1:443**)。
-   - **使用者名稱**-使用者名稱和密碼用於您所連接的遠端桌面閘道。 您也可以選取**使用的連接認證**所使用的遠端桌面連線使用的相同使用者名稱和密碼。
+1. 在連線中心，按一下 [喜好設定 > 閘道]  。 
+2. 按一下表格底部的 **+** 按鈕，並輸入下列資訊：
+   - **伺服器名稱** - 您想要用來作為閘道的電腦名稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊新增至伺服器名稱 (例如：**RDGateway:443** 或 **10.0.0.1:443**)。
+   - **使用者名稱** - 您要連線的遠端桌面閘道所要使用的使用者名稱和密碼。 您也可以選取 [使用連線認證]  ，以使用針對遠端桌面連線而使用的相同使用者名稱和密碼。
 
 
 ## <a name="manage-your-user-accounts"></a>管理您的使用者帳戶
 
-當您連線到桌面或遠端資源時，您可以儲存一次從選取的使用者帳戶。 您可以使用遠端桌面用戶端來管理您的使用者帳戶。
+當您連線至桌面或遠端資源時，您可以儲存使用者帳戶以便再次從中選取。 您可以使用遠端桌面用戶端來管理您的使用者帳戶。
 
 若要建立新的使用者帳戶：
 
-1. 在 「 連線中心 」 中，按一下**設定** > **帳戶**。
-2. 按一下 **新增使用者帳戶**。
+1. 在連線中心，按一下 [設定]   > [帳戶]  。
+2. 按一下 [新增使用者帳戶]  。
 3. 輸入下列資訊：
-   - **使用者名稱**-要儲存以供使用，透過遠端連線的使用者名稱。 您可以輸入使用者名稱，任何下列格式： user_name domain\user_name，或user_name@domain.com。
-   - **密碼**-您指定的使用者的密碼。 您想要將儲存到使用遠端連線的每個使用者帳戶必須具有與其相關聯的密碼。
-   - **易記名稱**-如果您使用相同的使用者帳戶與不同的密碼，設定易記的名稱，以便區別這些使用者帳戶。
-4. 點選**儲存**，然後點選**設定**。
+   - **使用者名稱** - 要儲存以用於遠端連線的使用者名稱。 您可以使用下列任何一種格式輸入使用者名稱：user_name、domain\user_name 或 user_name@domain.com。
+   - **密碼** - 您指定的使用者所使用的密碼。 您想要儲存以用於遠端連線的每個使用者帳戶都必須有相關聯的密碼。
+   - **易記名稱** - 如果您使用具有不同密碼的相同使用者帳戶，請設定易記名稱以區別這些使用者帳戶。
+4. 點選 [儲存]  ，然後點選 [設定]  。
 
-## <a name="customize-your-display-resolution"></a>自訂顯示解析度
-您可以在遠端桌面工作階段中指定的顯示解析度。
+## <a name="customize-your-display-resolution"></a>自訂顯示器解析度
+您可以指定遠端桌面工作階段的顯示器解析度。
 
-1. 在 「 連線中心 」 中，按一下**喜好設定**。
-2. 按一下 **解析度**。 
-3. 按一下  **+** 。
-4. 解析高度和寬度，輸入，然後按一下 **[確定]。**
+1. 在連線中心，按一下 [喜好設定]  。
+2. 按一下 [解析度]  。 
+3. 按一下 **+** 。
+4. 輸入解析度的高度和寬度，然後按一下 [確定]  。
 
-若要刪除的解析度，請加以選取，然後再按一下 **-** 。
+若要刪除解析度，請加以選取，然後按一下 **-** 。
 
-** 蒩厞柈個別空格**如果您執行 Mac OS X 10.9 和停用** 蒩厞柈個別空格**Mavericks 中 (**系統喜好設定 > 的任務控制**)，您需要設定這項設定遠端桌面用戶端使用相同的選項。
+**顯示器有個別空間** 如果您執行 Mac OS X 10.9，並且在 Mavericks 中 ([系統喜好設定 > 任務控制項]  ) 停用了 [顯示器有個別空間]  ，則必須在遠端桌面用戶端中使用相同選項設定這項設定。
 
 ### <a name="drive-redirection-for-remote-resources"></a>遠端資源的磁碟機重新導向
-磁碟機重新導向支援遠端資源，以便您可以儲存檔案的建立與遠端應用程式在本機上至您的 mac。 重新導向的資料夾一律是您在遠端工作階段中顯示為的網路磁碟機的主目錄。
+磁碟機重新導向支援遠端資源，因此您可以在本機將透過遠端應用程式建立的檔案儲存至您的 Mac。 重新導向的資料夾一律為您在遠端工作階段中顯示為主目錄的網路磁碟機。
 
 > [!NOTE]
 > 若要使用這項功能，系統管理員必須在伺服器上設定適當的設定。
 
 
-## <a name="use-a-keyboard-in-a-remote-session"></a>在 遠端工作階段中使用鍵盤
+## <a name="use-a-keyboard-in-a-remote-session"></a>在遠端工作階段中使用鍵盤
 
-Mac 鍵盤配置與不同的 Windows 的鍵盤配置。 
+Mac 的鍵盤配置與 Windows 的鍵盤配置不同。 
 
-- Mac 鍵盤上的 Command 機碼值等於 Windows 鍵。
-- 若要執行在 Mac 使用命令按鈕的動作，您必須使用 Windows 中的控制項按鈕 (例如：複製 = Ctrl + C)。
-- 功能鍵可以啟動工作階段中，按此外 FN 鍵 (例如：FN + F1）。
-- Mac 鍵盤上的 [空間] 列右邊的 Alt 鍵等於 Alt Gr/右 Alt 鍵，在 Windows 中。
+- Mac 鍵盤上的 Command 鍵等同於 Windows 鍵。
+- 若要執行在 Mac 上使用 Command 按鈕的動作，您必須使用 Windows 中的 Control 按鈕 (例如：複製 = Ctrl + C)。
+- 同時按住 FN 鍵可在工作階段中啟用功能鍵 (例如：FN + F1)。
+- 在 Mac 鍵盤上，空格鍵右側的 Alt 鍵等同於 Windows 中的 Alt Gr/右 Alt 鍵。
 
-根據預設，遠端工作階段會使用相同的鍵盤地區設定做為您要執行用戶端的 OS。 (如果您的 Mac 執行的 en-us-我們 OS，用於遠端工作階段。 如果未使用的 OS 鍵盤地區設定，請檢查鍵盤在遠端電腦上設定和變更設定以手動方式。 請參閱[遠端桌面用戶端常見問題集](remote-desktop-client-faq.md)的鍵盤和地區設定的詳細資訊。
+根據預設，遠端工作階段會使用與您執行用戶端所在的 OS 相同的鍵盤地區設定。 如果您的 Mac 執行 en-us OS，則遠端工作階段也會使用 en-us。 如果未使用 OS 鍵盤地區設定，請檢查遠端電腦上的鍵盤設定，並手動變更設定。 如需鍵盤和地區設定的詳細資訊，請參閱[遠端桌面用戶端常見問題集](remote-desktop-client-faq.md)。
 
 
-## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>支援遠端桌面閘道的隨插即用驗證和授權
+## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>支援遠端桌面閘道插入式驗證和授權
 
-Windows Server 2012 R2 引進了新的驗證方法、 遠端桌面閘道的隨插即用驗證和授權，可提供更大的彈性的自訂驗證常式的支援。 您現在可以使用 Mac 用戶端驗證模型。 
+Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌面閘道插入式驗證和授權，可為自訂驗證常式提供更大的彈性。 現在，您可以將此驗證模型用於 Mac 用戶端。 
 
 > [!IMPORTANT]
-> 不支援 Windows 8.1 之前的自訂驗證和授權模型，但上述文章討論它們。
+> 雖然本文的前半段有所討論，但 Windows 8.1 之前的自訂驗證和授權模型不受支援。
 
-若要深入了解這項功能，請參閱[ http://aka.ms/paa-sample ](http://aka.ms/paa-sample)。
+若要深入了解這項功能，請參閱 [http://aka.ms/paa-sample](http://aka.ms/paa-sample)。
 
 
 > [!TIP]
-> 提出問題或意見都歡迎畫面。 不過，請不會回傳要求，以取得疑難排解說明，在這篇文章結尾處使用的註解功能。 相反地，請移至[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)並啟動新的執行緒。 有功能建議嗎？ 告訴我們在[用戶端使用者之聲論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)。
+> 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。
 
