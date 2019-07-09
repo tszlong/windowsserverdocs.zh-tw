@@ -13,18 +13,18 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d9ebfe72744ed26239587ef297b06361233425
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874039"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63687685"
 ---
 # <a name="mpio-on-nano-server"></a>Nano Server 上的 MPIO
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
-> 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
+> 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
 
 本主題介紹如何在 Windows Server 2016 的 Nano Server 安裝中使用多重路徑 I/O (MPIO)。 如需 Windows Server 之多重路徑 I/O (MPIO) 的一般資訊，請參閱[多重路徑 I/O 概觀](https://technet.microsoft.com/library/cc725907.aspx)。  
 

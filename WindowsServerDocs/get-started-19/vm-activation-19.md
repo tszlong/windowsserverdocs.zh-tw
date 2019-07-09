@@ -1,7 +1,7 @@
 ---
 title: 自動虛擬機器啟用
 TOCTitle: Automatic VM Activation
-description: 如何啟用 Windows Server 2019、 Windows Server 2016 和 Windows Server 2012 R2 中的 Vm
+description: 如何在 Windows Server 2019、Windows Server 2016 和 Windows Server 2012 R2 中啟用 VM
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,15 +13,15 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "63688699"
 ---
 # <a name="automatic-virtual-machine-activation"></a>自動虛擬機器啟用
 
-> 適用於：Windows Server 2019，Windows Server 半年通道，Windows Server 2016、windows Server 2012 R2
+> 適用於：Windows Server 2019、Windows Server 半年通道、Windows Server 2016、Windows Server 2012 R2
 
 自動虛擬機器啟用 (AVMA) 的作用是購買證明機制，協助確保 Windows 產品的使用符合產品使用權及 Microsoft 軟體授權條款。
 
@@ -39,31 +39,31 @@ AVMA 在使用大量授權或 OEM 授權啟用的虛擬化伺服器上提供數�
 
   - 從虛擬化伺服器追蹤虛擬機器使用情況與授權，且不需要任何虛擬化系統的存取權
 
-有沒有產品金鑰，來管理和讀取伺服器上的沒有貼紙。 即使是在虛擬化伺服器陣列之間移轉，虛擬機器仍會是啟用狀態，而且會持續運作。
+沒有需管理的產品金鑰，伺服器上也沒有需要判讀的貼紙。 即使是在虛擬化伺服器陣列之間移轉，虛擬機器仍會是啟用狀態，而且會持續運作。
 
 服務提供商授權合約 (SPLA) 合作夥伴與其他主機提供者不需與租用戶共用產品金鑰，也不需存取租用戶的虛擬機器即可將它啟用。 使用 AVMA 時，虛擬機器啟用對租用戶來說是透明化的。 主機提供者可利用伺服器記錄來驗證授權相容，並追蹤用戶端使用歷程記錄。
 
 ## <a name="system-requirements"></a>系統需求
 
-AVMA 需要執行 Windows Server 2019 Datacenter、 Windows Server 2016 Datacenter 或 Windows Server 2012 R2 的 Microsoft 虛擬化伺服器。 
+AVMA 需要執行 Windows Server 2019 Datacenter、Windows Server 2016 Datacenter 或 Windows Server 2012 R2 的 Microsoft 虛擬化伺服器。 
 
-以下是不同版本的主機可啟用來賓：
+以下是不同版本主機可以啟用的客體：
 
-|伺服器主機版本|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
+|伺服器主機版本|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
 |Windows Server 2019|X|X|X|
-|Windows Server 2016| |X|X|
+|Windows Server 2016| |X|X|
 |Windows Server 2012 R2| ||X|
 
-請注意，這些會啟用所有的版本 （資料中心、 標準或基本功能）。
+請注意，這些會啟用所有版本 (Datacenter、Standard 或 Essentials)。
 
-這項工具不適用於其他虛擬化伺服器技術。
+這項工具無法搭配其他虛擬化伺服器技術使用。
 
 ## <a name="how-to-implement-avma"></a>如何實作 AVMA
 
-1.  在 Windows Server Datacenter 虛擬化伺服器上，安裝和設定 Microsoft HYPER-V 伺服器角色。 如需詳細資訊，請參閱 <<c0> [ 安裝 HYPER-V 伺服器](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md)。
+1.  在 Windows Server Datacenter 虛擬機器伺服器上，安裝並設定 Microsoft Hyper-V 伺服器角色。 如需詳細資訊，請參閱[安裝 Hyper-V Server](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md)。
 
-2.  [建立虛擬機器](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md)和在其上安裝支援的伺服器作業系統。
+2.  [建立虛擬機器](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md)，並在其上安裝支援的伺服器作業系統。
 
 3.  在虛擬機器中安裝 AVMA 金鑰。 在已提高權限的命令提示字元中執行下列命令：
     
@@ -88,14 +88,14 @@ AVMA 需要執行 Windows Server 2019 Datacenter、 Windows Server 2016 Datacent
 |Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 |Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
-下列 AVMA 金鑰可用於 Windows Server 版 1809年。
+下列 AVMA 金鑰可用於 Windows Server 1809 版。
 
 |版本|   AVMA 金鑰|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
 |Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 
-下列 AVMA 金鑰可用於 Windows Server 版本 1803年和 1709年。
+下列 AVMA 金鑰可用於 Windows Server 1803 和 1709 版。
 
 |版本|AVMA 金鑰|
 |-|-|
@@ -134,7 +134,7 @@ AVMA 需要執行 Windows Server 2019 Datacenter、 Windows Server 2016 Datacent
 
   - RDP 位址
 
-如需如何取得這項資訊的詳細資訊，請參閱[HYPER-V 指令碼：KVP guestintrinsicexchangeitems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)。
+如需有關如何取得這項資訊的詳細資訊，請參閱 [Hyper-V 指令碼：了解 KVP GuestIntrinsicExchangeItems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)。
 
 
 > [!NOTE]

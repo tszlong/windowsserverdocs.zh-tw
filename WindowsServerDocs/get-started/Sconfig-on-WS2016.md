@@ -1,5 +1,5 @@
 ---
-title: 使用 Sconfig.cmd 在 Windows Server 的 Server Core 安裝中設定
+title: 使用 Sconfig.cmd 設定 Windows Server 的 Server Core 安裝
 description: 說明如何使用 Sconfig.cmd
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -15,17 +15,17 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 617005fd2d4e63c3cfc11bed28404656b2a81d6e
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66749589"
 ---
-# <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>使用 Sconfig.cmd 在 Windows Server 的 Server Core 安裝中設定
+# <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>使用 Sconfig.cmd 設定 Windows Server 2016 或 Windows Server 1709 版的 Server Core 安裝
 
-> 適用於：Windows Server （半年通道） 和 Windows Server 2016
+> 適用於：Windows Server (半年通道) 和 Windows Server 2016
 
-在 Windows Server 2016 和 Windows Server 版本 1709 中，您可以使用伺服器設定工具 (Sconfig.cmd) 來設定和管理 Server Core 安裝的數個常用部分。 您必須是 Administrators 群組的成員，才能使用此工具。
+在 Windows Server 2016 和 Windows Server 1709 版中，您可以使用伺服器設定工具 (Sconfig.cmd) 來設定和管理 Server Core 安裝的數個常用部分。 您必須是 Administrators 群組的成員，才能使用此工具。
 
 您可以在 Server Core 安裝以及含有桌面體驗的伺服器安裝 (僅限 Windows Server 2016) 中使用 Sconfig.cmd。
 
@@ -39,19 +39,19 @@ ms.locfileid: "66749589"
 
 ## <a name="domainworkgroup-settings"></a>網域/工作群組設定
 
-目前的 [網域/工作群組] 設定會顯示在預設的伺服器設定工具畫面。 加入網域或工作群組，您可以存取**網域/工作群組**設定頁面從主功能表，然後遵循指示，提供所有必要資訊。
+目前的 [網域/工作群組] 設定會顯示在預設的伺服器設定工具畫面。 若要加入網域或工作群組，您可以從主功能表存取 [網域/工作群組]  設定頁面，然後遵循指示提供所有必要資訊。
 
-如果是網域使用者尚未加入至本機 Administrators 群組，您將無法進行系統變更，例如變更電腦名稱，使用網域使用者。 若要將網域使用者新增到本機 Administrators 群組，請允許電腦重新啟動。 接下來，在電腦本機系統管理員身分登入，並依照[本機系統管理員設定](#local-administrator-settings)本文稍後的章節。
+如果尚未將網域使用者新增到本機 Administrator 群組，您將無法使用網域使用者進行系統變更 (例如變更電腦名稱)。 若要將網域使用者新增到本機 Administrators 群組，請允許電腦重新啟動。 接著，以本機系統管理員的身分登入電腦，然後依照本文稍後[本機系統管理員設定](#local-administrator-settings)一節中的步驟進行。
 
 > [!NOTE]
-> 您必須重新啟動伺服器，將任何變更套用至網域或工作群組的成員資格。 不過，您可以在所有變更之後進行額外的變更，然後再重新啟動伺服器，避免需要重新啟動伺服器數次。 根據預設，重新啟動 Hyper-V 伺服器之前，會自動儲存執行中的虛擬機器。
+> 您必須重新啟動伺服器，才能將所有變更套用到網域或工作群組成員資格。 不過，您可以在所有變更之後進行額外的變更，然後再重新啟動伺服器，避免需要重新啟動伺服器數次。 根據預設，重新啟動 Hyper-V 伺服器之前，會自動儲存執行中的虛擬機器。
 
 ## <a name="computer-name-settings"></a>電腦名稱設定
 
-目前的電腦名稱會顯示在預設的伺服器設定工具畫面。 您可以變更電腦名稱，藉由存取**電腦名稱**設定頁面從主功能表，然後遵循指示進行。
+目前的電腦名稱會顯示在預設的伺服器設定工具畫面。 您可以從主功能表存取 [電腦名稱]  設定頁面並遵循指示進行，以變更電腦名稱。
 
 > [!NOTE]
-> 您必須重新啟動伺服器，將任何變更套用至網域或工作群組的成員資格。 不過，您可以在所有變更之後進行額外的變更，然後再重新啟動伺服器，避免需要重新啟動伺服器數次。 根據預設，重新啟動 Hyper-V 伺服器之前，會自動儲存執行中的虛擬機器。
+> 您必須重新啟動伺服器，才能將所有變更套用到網域或工作群組成員資格。 不過，您可以在所有變更之後進行額外的變更，然後再重新啟動伺服器，避免需要重新啟動伺服器數次。 根據預設，重新啟動 Hyper-V 伺服器之前，會自動儲存執行中的虛擬機器。
 
 ## <a name="local-administrator-settings"></a>本機系統管理員設定
 
@@ -86,7 +86,7 @@ ms.locfileid: "66749589"
 
 ## <a name="date-and-time-settings"></a>日期和時間設定
 
-您可以存取及變更日期及時間設定，藉由存取**日期和時間**主功能表選項。
+您可以存取 [日期和時間]  主功能表選項，以存取及變更日期和時間設定。
 
 ## <a name="telemetry-settings"></a>遙測設定
 
@@ -108,8 +108,8 @@ ms.locfileid: "66749589"
 
 ## <a name="to-log-off-restart-or-shut-down-the-server"></a>登出、重新啟動或關閉伺服器
 
-若要登出、重新啟動或關閉伺服器，請從主功能表存取對應的功能表項目。 這些選項也會提供從**Windows 安全性**可從任何應用程式，隨時按下 CTRL + ALT + DEL 功能表。  
+若要登出、重新啟動或關閉伺服器，請從主功能表存取對應的功能表項目。 這些選項也可從 [Windows 安全性]  功能表取得，隨時按下 CTRL+ALT+DEL，就可以從任何應用程式存取該功能表。  
 
 ## <a name="to-exit-to-the-command-line"></a>結束並返回命令列
   
-選取 [結束並返回命令列]  選項，然後按 ENTER 以結束並返回命令列。 若要返回伺服器設定工具，請輸入**Sconfig.cmd**，然後按 ENTER 鍵。
+選取 [結束並返回命令列]  選項，然後按 ENTER 以結束並返回命令列。 若要返回伺服器設定工具，請輸入 **Sconfig.cmd**，然後按 ENTER。

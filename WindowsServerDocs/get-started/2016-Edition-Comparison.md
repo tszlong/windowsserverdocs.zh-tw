@@ -15,15 +15,15 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882049"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688547"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 Standard 和 Datacenter 版本的比較
 
-> 適用於：Windows Server 2016
+> 適用於：Windows Server 2016
   
 ## <a name="locks-and-limits"></a>鎖定與限制
 |鎖定與限制|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
@@ -91,7 +91,7 @@ ms.locfileid: "59882049"
 |BitLocker 網路解除鎖定|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 |BranchCache|是|是|
 |Client for NFS|是|是|
-|容器|是 (Windows 容器無限制；Hyper-V 容器最多 2 個)|是（所有容器類型無限制）|
+|容器|是 (Windows 容器無限制；Hyper-V 容器最多 2 個)|是 (所有容器類型無限制)|
 |資料中心橋接|是|是|
 |Direct Play|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 |增強的存放區|是|是|
@@ -160,7 +160,7 @@ ms.locfileid: "59882049"
 |Nano Server 安裝選項|是|是|
 |伺服器管理員|是|是|
 |SMB 直接傳輸與 SMB (透過 RDMA)|是|是|
-|軟體定義的網路|否|是|
+|軟體定義網路|否|是|
 |存放管理服務|是|是|
 |儲存空間|是|是|
 |儲存空間直接存取|否|是|

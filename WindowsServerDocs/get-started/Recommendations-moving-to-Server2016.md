@@ -15,15 +15,15 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 08a92188446d018edd36a638abb30745721bd601
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831579"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63687473"
 ---
 # <a name="recommendations-for-moving-to-windows-server-2016"></a>移至 Windows Server 2016 的建議
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 
 |如果您執行：|Windows Server 2012 R2 或 Windows Server 2012|Windows Server 2008 R2 或 Windows Server 2008|  
@@ -53,7 +53,7 @@ ms.locfileid: "59831579"
 
 ## <a name="additional-resources"></a>其他資源
 
-- [移除或 Windows Server 2016 中已被取代的功能](deprecated-features.md)
+- [Windows Server 2016 已移除或取代的功能](deprecated-features.md)
 - 如需一般伺服器升級及移轉選項，請瀏覽 [Windows Server 2016 的升級及轉換選項](Supported-Upgrade-Paths.md)。
 - 如需產品生命週期及支援層級的詳細資訊，請參閱[支援週期原則常見問題集](https://support.microsoft.com/help/17140/support-lifecycle-policy-faq)。
 
