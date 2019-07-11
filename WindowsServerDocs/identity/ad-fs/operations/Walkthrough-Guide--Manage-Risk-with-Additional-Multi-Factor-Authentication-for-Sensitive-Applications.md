@@ -57,7 +57,7 @@ ms.locfileid: "66188893"
 ## <a name="BKMK_2"></a>步驟 2:驗證預設的 AD FS 驗證機制
 在這個步驟您要驗證預設的 AD FS 存取控制機制 (外部網路為 [表單驗證]  ，內部網路為 [Windows 驗證]  )，使用者會被重新導向到 AD FS 登入頁面、提供有效的認證，然後授與應用程式的存取權。 您可以使用**Robert Hatley** AD 帳戶而**claimapp**範例應用程式中設定[適用於 Windows Server 2012 R2 中的 AD FS 設定實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)。
 
-1.  在用戶端電腦，開啟瀏覽器視窗，並巡覽至範例應用程式： **https://webserv1.contoso.com/claimapp**。
+1.  在用戶端電腦，開啟瀏覽器視窗，並巡覽至範例應用程式： **https://webserv1.contoso.com/claimapp** 。
 
     這個動作會將要求自動重新導向到同盟伺服器，且會提示您以使用者名稱和密碼登入。
 
@@ -235,7 +235,7 @@ ms.locfileid: "66188893"
 ## <a name="BKMK_4"></a>步驟 4:驗證 MFA 機制
 在這個步驟中，您將驗證上個步驟中設定的 MFA 功能。 您可以使用下列程序，確認 **Robert Hatley** AD 使用者可以存取您的範例應用程式，這次需要進行 MFA，因為他屬於 **Finance** 群組。
 
-1.  在用戶端電腦，開啟瀏覽器視窗，並巡覽至範例應用程式： **https://webserv1.contoso.com/claimapp**。
+1.  在用戶端電腦，開啟瀏覽器視窗，並巡覽至範例應用程式： **https://webserv1.contoso.com/claimapp** 。
 
     這個動作會將要求自動重新導向到同盟伺服器，且會提示您以使用者名稱和密碼登入。
 

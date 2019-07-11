@@ -45,7 +45,7 @@ ms.locfileid: "66188247"
   
 使用這個範本時，您可以從單一規則新增多個屬性，這些屬性將以多個宣告的方式傳送。 比方說，您可以使用這個規則範本建立規則，此規則會從 **company** 和 **department** Active Directory 屬性中，查詢已驗證的使用者的屬性值，然後以兩個不同連出宣告的方式傳送這些值。  
   
-您也可以使用此規則來傳送使用者的所有群組成員資格。 如果您只想要傳送個別的群組成員資格，請使用「以宣告方式傳送群組成員資格」規則範本。 如需詳細資訊，請參閱 [When to Use a Send Group Membership as a Claim Rule](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md)。  
+您也可以使用此規則來傳送使用者的所有群組成員資格。 如果您只想要傳送個別的群組成員資格，請使用「以宣告方式傳送群組成員資格」規則範本。 如需詳細資訊，請參閱 [使用「以宣告方式傳送群組成員資格」規則的時機](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md)。  
   
 ## <a name="how-to-create-this-rule"></a>如何建立此規則  
 您可以使用宣告規則語言建立這項規則，或藉由使用傳送 LDAP 屬性做為宣告規則範本，在 AD FS 管理嵌入式管理單元\-中。 這個規則範本提供下列設定選項：  

@@ -69,7 +69,7 @@ Windows 8，Windows Server 2012 之前使用者需要在線上及離線模式，
 
 使用永遠離線模式時，電腦永遠不會轉換為線上模式時**設定低速連結模式**群組原則設定並**延遲**閾值參數設定為 1 毫秒。 根據預設，每隔 120 分鐘在背景執行一次同步處理，但是您可以使用 **Configure Background Sync** 群組原則設定來設定同步處理。
 
-如需詳細資訊，請參閱 [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md)。
+如需詳細資訊，請參閱[啟用永遠離線模式以提供更快速的檔案存取](enable-always-offline.md)。
 
 ## <a name="cost-aware-synchronization"></a>成本感知同步處理
 
@@ -112,7 +112,7 @@ Windows 8，Windows Server 2012 之前使用者需要在線上及離線模式，
     1. 如果這部電腦是其中一部使用者主要電腦，Windows 會套用漫遊使用者設定檔及資料夾重新導向設定。
     2. 如果這部電腦不是其中一部使用者主要電腦，Windows 會載入使用者快取的本機設定檔 (如果存在的話) 或建立新的本機設定檔。 Windows 也會依據先前套用的群組原則設定所指定的移除動作 (保存在本機資料夾重新導向設定中)，移除任何現有的重新導向資料夾。
 
-如需詳細資訊，請參閱 [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md)。
+如需詳細資訊，請參閱[部署資料夾重新導向及漫遊使用者設定檔的主要電腦](deploy-primary-computers.md)
 
 ## <a name="hardware-requirements"></a>硬體需求
 

@@ -22,7 +22,7 @@ ms.locfileid: "66191660"
   
 同盟伺服器 proxy 通常會公開至網際網路上不會納入您的企業公開金鑰基礎結構的電腦\(PKI\)。 因此，使用 伺服器驗證憑證所發出的公用\(第三個\-合作對象\)憑證授權單位\(CA\)，例如 VeriSign。  
   
-當您有同盟伺服器 proxy 伺服器陣列時，所有同盟伺服器 proxy 電腦必須都使用相同的伺服器驗證憑證。 如需詳細資訊，請參閱 [When to Create a Federation Server Proxy Farm](When-to-Create-a-Federation-Server-Proxy-Farm.md)。  
+當您有同盟伺服器 proxy 伺服器陣列時，所有同盟伺服器 proxy 電腦必須都使用相同的伺服器驗證憑證。 如需詳細資訊，請參閱 [建立同盟伺服器 Proxy 伺服器陣列的時機](When-to-Create-a-Federation-Server-Proxy-Farm.md)。  
   
 請務必確認 AD FS 管理嵌入式管理單元中指定的 Federation Service 名稱值，這是伺服器驗證憑證比對中的主體名稱\-中。 若要找出此值，請開啟嵌入式管理單元\-中，以滑鼠右鍵\-按一下**服務**，按一下 **編輯 Federation Service 內容**，然後尋找中的值**同盟服務名稱**文字方塊。  
   
