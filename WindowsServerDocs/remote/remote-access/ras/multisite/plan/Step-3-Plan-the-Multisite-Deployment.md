@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 16a2dcdc573fac2631b5a9890ee04f2efb08d90a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 973ef70614f056adac1463918cc425d82b21ac62
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282534"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792306"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步驟 3 計畫多站台部署
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 規劃之後的多站台的基礎結構，規劃任何額外的憑證需求，用戶端電腦的選取方式的進入點，並在您的部署中指派的 IPv6 位址。  
 
@@ -162,11 +162,11 @@ ms.locfileid: "67282534"
   
    3. Teredo 首碼 （選擇性）。 此前置詞是兩個連續公用 IPv4 位址的外部介面卡上設定遠端存取伺服器時，才適用。 前置詞根據位址組的第一個公用 IPv4 位址。 如果外部位址的範例：  
   
-      1. www.xxx.yyy.zzz  
+      1. www\.xxx.yyy.zzz  
   
-      2. www.xxx.yyy.zzz+1  
+      2. www\.xxx.yyy.zzz+1  
   
-      若要設定 Teredo 首碼則 2001:0:WWXX:YYZZ:: / 64，其中 WWXX:YYZZ 是 IPv4 位址 www.xxx.yyy.zzz 的十六進位表示法。  
+      若要設定 Teredo 首碼則 2001:0:WWXX:YYZZ:: / 64，其中 WWXX:YYZZ 是 IPv4 位址 www 的十六進位表示法\.xxx.yyy.zzz。  
   
       請注意，您可以使用下列指令碼來計算 Teredo 首碼：  
   

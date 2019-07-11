@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9cc40920d366c973ace06a0b6d438a1c2d84b03e
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 03792d7ae5fec3c209cf1abfaa7af3fdfdb75f08
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190506"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792267"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>放置同盟伺服器 Proxy 的位置
 
@@ -34,7 +34,7 @@ ms.locfileid: "66190506"
   
 伺服器發佈規則會決定伺服器發佈的運作方式 — 基本上，篩選通過 ISA Server 電腦的所有連入和連出要求。 伺服器發佈規則將連入用戶端要求對應至適當的 ISA Server 電腦背後的伺服器。 如需有關如何設定 ISA Server 以發佈伺服器的資訊，請參閱 <<c0> [ 建立安全網頁發佈規則](https://go.microsoft.com/fwlink/?LinkId=75182)。  
   
-在 AD FS 的同盟世界中，這些用戶端要求通常對特定 URL 提出，例如，同盟伺服器的識別項 URL 如 http://fs.fabrikam.com。 因為這些用戶端要求，會在來自網際網路的網際網路\-對向防火牆伺服器必須設定為發佈的同盟伺服器的識別項 URL 以供部署在周邊網路中每部同盟伺服器 proxy。  
+在 AD FS 的同盟世界中，這些用戶端要求通常對特定 URL 提出，例如，同盟伺服器的識別項 URL，例如 http:\//fs.fabrikam.com。 因為這些用戶端要求，會在來自網際網路的網際網路\-對向防火牆伺服器必須設定為發佈的同盟伺服器的識別項 URL 以供部署在周邊網路中每部同盟伺服器 proxy。  
   
 ### <a name="configuring-isa-server-to-allow-ssl"></a>設定 ISA Server 以允許 SSL  
 若要促進安全的 AD FS 通訊，您必須設定 ISA Server 以允許安全通訊端層\(SSL\)下列之間的通訊：  

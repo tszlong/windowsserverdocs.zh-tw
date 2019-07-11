@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9a3ee39736fb4ee2eb41162db27fed2299c204e5
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: f3b1837145dee5767741052c548a4b44da56659b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281191"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792335"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步驟 1 規劃遠端存取基礎結構
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 > [!NOTE]
 > Windows Server 2016 會將 DirectAccess 與路由及遠端存取服務 (RRAS) 合併成一個遠端存取角色。  
@@ -81,7 +81,7 @@ ISATAP，才能進行遠端管理 DirectAccessclients，DirectAccess 管理伺�
 |---------------|--------|  
 |現有的原生 IPv6 內部網路 （沒有 ISATAP 是必要的）|現有原生 IPv6 基礎結構，您指定遠端存取在部署期間，組織的前置詞與遠端存取伺服器不會設定本身為 ISATAP 路由器。 執行下列動作：<br/><br/>1.若要確保來自內部網路連線到 DirectAccess 用戶端，您必須修改您 IPv6 路由，因此預設路由流量轉送到遠端存取伺服器。 如果您的內部網路 IPv6 位址空間會使用單一的 48 位元 IPv6 位址前置詞以外的位址，您就必須在部署期間指定相關的組織 IPv6 前置詞。<br/>2.如果您目前已連線到 IPv6 網際網路，您必須設定您的預設路由流量，以便將它轉寄到遠端存取伺服器，然後設定適當的連接和路由的遠端存取伺服器上，使之預設路由傳送流量轉送到 IPv6 網際網路連線的裝置。|  
 |現有的 ISATAP 部署|如果您有現有的 ISATAP 基礎結構，在部署期間會提示您輸入組織的 48 位元首碼與遠端存取伺服器不會設定本身為 ISATAP 路由器。 若要確保來自內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由基礎結構，使預設路由流量轉送到遠端存取伺服器。 這項變更需要在現有的內部網路用戶端必須已經是預設將流量轉送的 ISATAP 路由器上執行。|  
-|沒有現有的 IPv6 連線能力|當遠端存取安裝精靈偵測到伺服器的原生或 ISATAP 基礎 IPv6 連線中斷時，它會自動衍生 6to4 型 48 位元前置詞的內部網路，並將遠端存取伺服器設定為 ISATAP 路由器提供 IPv6在您的內部網路的 ISATAP 主機的連線。 （伺服器有公用的位址時，才使用 6to4 為基礎的前置詞，否則前置詞自動產生的唯一本機位址範圍）。<br/><br/>若要使用 ISATAP，請執行下列：<br/><br/>1.登錄在其您想要啟用 ISATAP 為基礎的連線以便 ISATAP 名稱是由內部 DNS 伺服器為遠端存取伺服器的內部 IPv4 位址進行解析每個網域的 DNS 伺服器上的 ISATAP 名稱。<br/>2.根據預設，執行 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008 或 Windows Server 2003 的 DNS 伺服器會使用 「 全域查詢封鎖清單封鎖 ISATAP 名稱的解析。 若要啟用 ISATAP，您必須移除 ISATAP 名稱的區塊清單。 如需詳細資訊，請參閱 <<c0> [ 從 DNS 全域查詢封鎖清單移除的 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>以 Windows 為基礎 ISATAP 主機可以解析 ISATAP 名稱自動設定位址與遠端存取伺服器，如下所示：<br/><br/>1.在 ISATAP 通道介面上的 ISATAP IPv6 位址<br/>2.64 位元的路由，可提供連線到內部網路上的其他 ISATAP 主機<br/>3.預設的 IPv6 路由指向遠端存取伺服器。 預設路由可讓您確保內部網路的 ISATAP 主機可以連線到 DirectAccess 用戶端<br/><br/>當您以 Windows 為基礎的 ISATAP 主機取得 ISATAP IPv6 位址時，他們開始進行通訊的目的地也是 ISATAP 主機使用 ISATAP 封裝的流量。 由於 ISATAP 會使用單一的 64 位元子網路，整個內部網路，您的通訊會從分段 IPv4 模型的通訊，前往配置有 IPv6 的單一子網路的通訊模型。 這可能會影響某些 Active Directory 網域服務 (AD DS) 的行為和依賴您的 Active Directory 站台和服務組態的應用程式。 例如，如果您使用 Active Directory 站台及服務嵌入式管理單元來設定站台、 ipv4 子網路和站台間傳輸將要求轉寄到站台內的伺服器，此設定不是由 ISATAP 主機。<br/><br/><ol><li>若要設定 Active Directory 站台及服務的站台內的轉送，ISATAP 主機上，每個 IPv4 子網路物件，您必須設定對等的 IPv6 子網路物件，在其中的子網路的 IPv6 位址前置詞表示相同的範圍的 ISATAP 主機IPv4 子網路的位址。 例如，適用於 IPv4 子網路 192.168.99.0/24 和 64 位元 ISATAP 位址前置詞 2002:836b:1:8000:: / 64，對等的 IPv6 位址首碼的 IPv6 子網路物件是 2002:836b:1:8000:0:5efe:192.168.99.0/120。 適用於任意的 IPv4 首碼長度 （設為此範例中是 24 個），您可以判斷對應的 IPv6 首碼長度，從公式 96 + IPv4PrefixLength。</li><li>DirectAccess 用戶端的 IPv6 位址，新增下列內容：<br/><br/><ul><li>Teredo 為基礎的 DirectAccess 用戶端：範圍 2001:0:WWXX:YYZZ 的 IPv6 子網路:: / 64，在哪個 WWXX:YYZZ 是遠端存取伺服器的第一個網際網路對向的 IPv4 位址的冒號與十六進位版本。 .</li><li>為 IP HTTPS 型的 DirectAccess 用戶端：範圍 2002:WWXX:YYZZ:8100 的 IPv6 子網路:: 56，在哪個 WWXX:YYZZ 是遠端存取伺服器的第一個網際網路對向的 IPv4 位址 (w.x.y.z) 的冒號與十六進位版本。 .</li><li>6to4 DirectAccess 用戶端：一系列的 6to4 型 IPv6 首碼開頭 2002年： 代表的區域、 公用 IPv4 位址首碼由 Internet Assigned Numbers 授權單位 (IANA) 和區域的登錄。 6to4 型前置詞為公用的 IPv4 位址前置詞 w.x.y.z/n 是 2002:WWXX:YYZZ:: / [16 + n]，在哪個 WWXX:YYZZ 是冒號與十六進位版本 w.x.y.z。<br/><br/>        比方說，7.0.0.0/8 範圍取決於美國登錄為網際網路數字 (ARIN) 為 North America。 此公用 IPv6 位址範圍的對應 6to4 型前置詞是 2002:700:: / 24。 IPv4 公用位址空間的相關資訊，請參閱[IANA IPv4 位址空間登錄](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)。 .</li></ul></li></ol>|  
+|沒有現有的 IPv6 連線能力|當遠端存取安裝精靈偵測到伺服器的原生或 ISATAP 基礎 IPv6 連線中斷時，它會自動衍生 6to4 型 48 位元前置詞的內部網路，並將遠端存取伺服器設定為 ISATAP 路由器提供 IPv6在您的內部網路的 ISATAP 主機的連線。 （伺服器有公用的位址時，才使用 6to4 為基礎的前置詞，否則前置詞自動產生的唯一本機位址範圍）。<br/><br/>若要使用 ISATAP，請執行下列：<br/><br/>1.登錄在其您想要啟用 ISATAP 為基礎的連線以便 ISATAP 名稱是由內部 DNS 伺服器為遠端存取伺服器的內部 IPv4 位址進行解析每個網域的 DNS 伺服器上的 ISATAP 名稱。<br/>2.根據預設，執行 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008 或 Windows Server 2003 的 DNS 伺服器會使用 「 全域查詢封鎖清單封鎖 ISATAP 名稱的解析。 若要啟用 ISATAP，您必須移除 ISATAP 名稱的區塊清單。 如需詳細資訊，請參閱 <<c0> [ 從 DNS 全域查詢封鎖清單移除的 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>以 Windows 為基礎 ISATAP 主機可以解析 ISATAP 名稱自動設定位址與遠端存取伺服器，如下所示：<br/><br/>1.在 ISATAP 通道介面上的 ISATAP IPv6 位址<br/>2.64 位元的路由，可提供連線到內部網路上的其他 ISATAP 主機<br/>3.預設的 IPv6 路由指向遠端存取伺服器。 預設路由可讓您確保內部網路的 ISATAP 主機可以連線到 DirectAccess 用戶端<br/><br/>當您以 Windows 為基礎的 ISATAP 主機取得 ISATAP IPv6 位址時，他們開始進行通訊的目的地也是 ISATAP 主機使用 ISATAP 封裝的流量。 由於 ISATAP 會使用單一的 64 位元子網路，整個內部網路，您的通訊會從分段 IPv4 模型的通訊，前往配置有 IPv6 的單一子網路的通訊模型。 這可能會影響某些 Active Directory 網域服務 (AD DS) 的行為和依賴您的 Active Directory 站台和服務組態的應用程式。 例如，如果您使用 Active Directory 站台及服務嵌入式管理單元來設定站台、 ipv4 子網路和站台間傳輸將要求轉寄到站台內的伺服器，此設定不是由 ISATAP 主機。<br/><br/><ol><li>若要設定 Active Directory 站台及服務的站台內的轉送，ISATAP 主機上，每個 IPv4 子網路物件，您必須設定對等的 IPv6 子網路物件，在其中的子網路的 IPv6 位址前置詞表示相同的範圍的 ISATAP 主機IPv4 子網路的位址。 例如，適用於 IPv4 子網路 192.168.99.0/24 和 64 位元 ISATAP 位址前置詞 2002:836b:1:8000:: / 64，對等的 IPv6 位址首碼的 IPv6 子網路物件是 2002:836b:1:8000:0:5efe:192.168.99.0/120。 適用於任意的 IPv4 首碼長度 （設為此範例中是 24 個），您可以判斷對應的 IPv6 首碼長度，從公式 96 + IPv4PrefixLength。</li><li>DirectAccess 用戶端的 IPv6 位址，新增下列內容：<br/><br/><ul><li>Teredo 為基礎的 DirectAccess 用戶端：範圍 2001:0:WWXX:YYZZ 的 IPv6 子網路:: / 64，在哪個 WWXX:YYZZ 是遠端存取伺服器的第一個網際網路對向的 IPv4 位址的冒號與十六進位版本。 。</li><li>為 IP HTTPS 型的 DirectAccess 用戶端：範圍 2002:WWXX:YYZZ:8100 的 IPv6 子網路:: 56，在哪個 WWXX:YYZZ 是遠端存取伺服器的第一個網際網路對向的 IPv4 位址 (w.x.y.z) 的冒號與十六進位版本。 。</li><li>6to4 DirectAccess 用戶端：一系列的 6to4 型 IPv6 首碼開頭 2002年： 代表的區域、 公用 IPv4 位址首碼由 Internet Assigned Numbers 授權單位 (IANA) 和區域的登錄。 6to4 型前置詞為公用的 IPv4 位址前置詞 w.x.y.z/n 是 2002:WWXX:YYZZ:: / [16 + n]，在哪個 WWXX:YYZZ 是冒號與十六進位版本 w.x.y.z。<br/><br/>        比方說，7.0.0.0/8 範圍取決於美國登錄為網際網路數字 (ARIN) 為 North America。 此公用 IPv6 位址範圍的對應 6to4 型前置詞是 2002:700:: / 24。 IPv4 公用位址空間的相關資訊，請參閱[IANA IPv4 位址空間登錄](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)。 。</li></ul></li></ol>|  
   
 > [!IMPORTANT]  
 > 確定，您不需要公用 IP 位址在 DirectAccess 伺服器的內部介面上。 如果您有內部介面上的公用 IP 位址，透過 ISATAP 的連線可能會失敗。  
@@ -270,7 +270,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 針對拆分式 DNS 部署，您必須列出重複的網際網路和內部網路，並決定哪些資源的 Fqdn，DirectAccess 用戶端應該觸達內部網路或網際網路版本。 當您想要連線到網際網路版本的 DirectAccess 用戶端時，您必須加入對應的 FQDN 做為豁免規則 NRPT 中，為每個資源。  
   
-在拆分式 DNS 環境中，如果您想兩個版本的資源可供使用時，會設定您的內部網路資源不會用於網際網路的名稱重複的名稱。 然後指示使用者能夠存取內部網路上的資源時使用的替代名稱。 例如，設定 www.internal.contoso.com www.contoso.com 的內部名稱。  
+在拆分式 DNS 環境中，如果您想兩個版本的資源可供使用時，會設定您的內部網路資源不會用於網際網路的名稱重複的名稱。 然後指示使用者能夠存取內部網路上的資源時使用的替代名稱。 例如，設定 www\.www 的內部名稱不是 internal.contoso.com\.contoso.com。  
   
 在非拆分式 DNS 環境中，網際網路命名空間會與內部網路命名空間不同。 例如，Contoso 公司在網際網路上使用 contoso.com，在內部網路上使用 corp.contoso.com。 由於所有內部網路資源都使用 corp.contoso.com DNS 尾碼，因此 corp.contoso.com 的 NRPT 規則會將內部網路資源的所有 DNS 名稱查詢都路由傳送到內部網路 DNS 伺服器。 名稱尾碼為 contoso.com 的 DNS 查詢不相符的 NRPT 中 corp.contoso.com 內部網路命名空間的規則，並會在傳送到網際網路 DNS 伺服器。 使用非拆分式 DNS 部署時，由於內部網路和網際網路資源的 FQDN 不會重複，因此不需要為 NRPT 進行任何額外的設定。 DirectAccess 用戶端可以存取其組織的網際網路和內部網路資源。  
   

@@ -9,12 +9,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 071017d05b288a70592af9203fedc72f699d18e0
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 2336847825cfb3f232674a1e39d3bab7953a32c0
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191945"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792305"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>必要的更新，適用於 Active Directory Federation Services (AD FS) 和 Web 應用程式 Proxy (WAP)
 
@@ -29,6 +29,7 @@ ms.locfileid: "66191945"
 
 |KB # |描述|發行日期
 |----- | ----- |-----
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 這項安全性更新可解決的弱點可能會在 Active Directory 同盟服務 (AD FS) 可能會允許攻擊者略過外部網路鎖定原則。 |2019 年 7 月|
 |[4489889 （OS 組建 14393.2879）](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 解決在 Active Directory Federation Services (AD FS) 會造成信賴憑證者信任的 AD FS 管理主控台中出現重複的問題。 這是當您建立或檢視信賴憑證者信任使用 AD FS 管理主控台。 |2019 年 3 月|
 |[4487006 （OS 組建 14393.2828）](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | 解決的問題造成的信賴憑證者信任時使用 PowerShell 或 [Active Directory Federation Services (AD FS) 的管理] 主控台中選取失敗的更新。 如果您設定要使用線上中繼資料 URL 發佈一個以上的 PassiveRequestorEndpoint 信賴憑證者信任，就會發生此問題。 錯誤是，「 MSIS7615:中的信賴憑證者信任指定的受信任的端點必須是唯一的該信賴憑證者信任。 」  </br></br>解決由於 Azure 密碼保護原則會顯示特定的錯誤訊息外部的複雜密碼變更的問題。 |2019 年 2 月|
 |[4462928 （OS 組建 14393.2580）](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|解決 Active Directory Federation Services (ADFS) 外部網路智慧鎖定 (ESL) 與替代的登入識別碼之間的互通性問題 啟用替代登入識別碼時，會呼叫至 AD FS Powershell cmdlet，取得 AdfsAccountActivity 和重設-AdfsAccountLockout，傳回 「 找不到帳戶 」 錯誤。 組 AdfsAccountActivity 呼叫時，而不是編輯現有的 fgpp 加入新項目。|2018 年 10 月|
@@ -50,11 +51,12 @@ ms.locfileid: "66191945"
 
 |KB # |描述|發行日期
 |----- | ----- |-----
-|[4041685](https://support.microsoft.com/kb/4041685)|處理 AD FS 問題 MSISConext cookie 在要求標頭可以最終溢位的標頭大小限制而導致驗證失敗，HTTP 狀態碼 400 「 不正確的要求-標頭太長時間 」。</br></br>修正其中 ADFS 可以不再忽略"prompt = login 「 在驗證期間的問題。 [停用] 選項已新增至還原非密碼驗證使用的案例。|2017 年 10 月更新彙總套件預覽|
-|[4019217](https://support.microsoft.com/kb/4019217)|工作的資料夾使用 Server 2012 R2 AD FS 伺服器時，用戶端使用權杖訊息代理程式無法運作|2017 年預覽更新彙總套件|
-|[4015550](https://support.microsoft.com/kb/4015550)|已修正的問題與 AD FS 無法驗證外部使用者和 AD FS WAP 隨機失敗的要求轉送給|2017 年 4 月更新彙總套件|
-|[4015547](https://support.microsoft.com/kb/4015547)|已修正的問題與 AD FS 無法驗證外部使用者和 AD FS WAP 隨機失敗的要求轉送給|2017 年 4 月安全性更新|
-|[4012216](https://support.microsoft.com/kb/4009970)|MS17 019 這項安全性更新可解決的弱點可能會在 Active Directory Federation Services (ADFS)。 如果攻擊者特別設計將要求傳送至 AD FS 伺服器，讓攻擊者讀取目標系統的機密資訊的弱點可能會允許資訊洩漏。|2017 年 3 月更新彙總套件|
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 這項安全性更新可解決的弱點可能會在 Active Directory 同盟服務 (AD FS) 可能會允許攻擊者略過外部網路鎖定原則。 |2019 年 7 月
+|[4041685](https://support.microsoft.com/kb/4041685)|處理 AD FS 問題 MSISConext cookie 在要求標頭可以最終溢位的標頭大小限制而導致驗證失敗，HTTP 狀態碼 400 「 不正確的要求-標頭太長時間 」。</br></br>修正其中 ADFS 可以不再忽略"prompt = login 「 在驗證期間的問題。 [停用] 選項已新增至還原非密碼驗證使用的案例。|2017 年 10 月更新彙總套件預覽
+|[4019217](https://support.microsoft.com/kb/4019217)|工作的資料夾使用 Server 2012 R2 AD FS 伺服器時，用戶端使用權杖訊息代理程式無法運作|2017 年預覽更新彙總套件
+|[4015550](https://support.microsoft.com/kb/4015550)|已修正的問題與 AD FS 無法驗證外部使用者和 AD FS WAP 隨機失敗的要求轉送給|2017 年 4 月更新彙總套件
+|[4015547](https://support.microsoft.com/kb/4015547)|已修正的問題與 AD FS 無法驗證外部使用者和 AD FS WAP 隨機失敗的要求轉送給|2017 年 4 月安全性更新
+|[4012216](https://support.microsoft.com/kb/4009970)|MS17 019 這項安全性更新可解決的弱點可能會在 Active Directory Federation Services (ADFS)。 如果攻擊者特別設計將要求傳送至 AD FS 伺服器，讓攻擊者讀取目標系統的機密資訊的弱點可能會允許資訊洩漏。|2017 年 3 月更新彙總套件
 |[3179574](https://support.microsoft.com/kb/3179574)|AD FS 外部網路的密碼更新已修正的問題。 |2016 年 8 月更新彙總套件
 |[3172614](https://support.microsoft.com/kb/3172614)|導入的提示字元 = 登入[支援](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/ad-fs-faq#BKMK_7)，AlwaysRequireAuthentication 設定 AD FS 管理主控台與已修正問題。 |2016 年 7 月更新彙總套件
 |[3163306](https://support.microsoft.com/kb/3163306)|Active Directory Federation Services (AD FS) 3.0 無法連接到設定為使用安全通訊端層 (SSL) 連接埠 636 或 3269 連接字串中的輕量型目錄存取通訊協定 (LDAP) 屬性存放區。 |2016 年 6 月更新彙總套件

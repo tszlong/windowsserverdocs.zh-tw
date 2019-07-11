@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 069cdb493cd0ad442e8922ec67c2b9cc6b2ec5fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ed8a22881cd20633e6fcd61b146f3b0aad7a757b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858169"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792284"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory Domain Services 概觀
 
@@ -46,11 +46,11 @@ Active Directory 也包括：
  
 * [Active Directory 結構和儲存體技術](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
 * [網域控制站角色](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
-* Active Directory 架構 
-* [瞭解信任](https://technet.microsoft.com/library/cc771294(v=ws.10).aspx) 
+* [Active Directory 架構](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
+* [瞭解信任](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
 * [Active Directory 複寫技術](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
 * [Active Directory 搜尋與發行集的技術](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx) 
-* 群組原則與 DNS 交互操作 
+* [群組原則與 DNS 交互操作](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
 * [了解結構描述](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx) 
 
 如需 Active Directory 概念的詳細清單，請參閱[了解 Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx)。 

@@ -8,16 +8,16 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 96d09b25ddb2f473fb4fe22c0cf716bfcf8becaa
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: ef87a3bcc5bd0b924a938f055307a0a87cb60d0b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811923"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792322"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>設定使用者存取控制和權限
 
-> 適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 如果您還沒有這麼做，您熟悉[Windows Admin Center 中的使用者存取控制選項](../plan/user-access-options.md)
 
@@ -111,7 +111,7 @@ ms.locfileid: "66811923"
 
 當您在 Windows 10 上安裝 Windows Admin Center 時，它已準備好使用單一登入。 如果您打算使用 Windows Server 上的 Windows Admin Center，不過，您需要先設定單一登入，您可以使用某種形式的環境中的 Kerberos 委派。 委派會將閘道電腦設定為受信任可委派至目標節點。 
 
-若要設定[資源型限制委派](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)在環境中，執行下列 PowerShell cmdlet。 （要注意，這需要網域控制站執行 Windows Server 2012 或更新版本）。
+若要設定[資源型限制委派](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)在環境中，執行下列 PowerShell cmdlet。 （要注意，這需要網域控制站執行 Windows Server 2012 或更新版本）。
 
 ```powershell
      $gateway = "WindowsAdminCenterGW" # Machine where Windows Admin Center is installed
