@@ -1,6 +1,6 @@
 ---
 title: 建立遠端桌面服務集合
-description: 了解如何新增及 RDSH 和 RemoteApp 程式，您的 RDS 部署。
+description: 了解如何將 RDSH 和 RemoteApp 程式新增至您的 RDS 部署。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,54 +13,54 @@ ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 52806e28c4ef87453995728623efe2954a76dfd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87de04e3ca34217fbbc3ec451dc061ee228a1a60
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839239"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743821"
 ---
-# <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>建立桌面和應用程式執行的遠端桌面服務集合
+# <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>建立遠端桌面服務集合，以執行桌面和應用程式
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-您可以使用下列步驟來建立遠端桌面服務工作階段集合。 工作階段集合會保存您想要提供給使用者的桌面與應用程式。 建立集合之後，將將它發行，以便使用者可以存取它。
+您可以使用下列步驟來建立遠端桌面服務工作階段集合。 工作階段集合會保存您要提供給使用者的桌面與應用程式。 建立集合之後，請將它發佈，以便使用者存取。
 
-建立集合之前，您必須決定需要何種集合： 共用桌面工作階段或個人的桌面工作階段。 
+建立集合之前，您必須先決定需要何種集合：集區桌面工作階段或個人桌面工作階段。 
 
-- **使用集區的桌面工作階段的工作階段為基礎的虛擬化**:利用 Windows Server 的計算能力，提供符合成本效益的多重工作階段環境，來驅動您的使用者的日常工作負載
-- **若要建立虛擬桌面基礎結構 (VDI) 中使用的個人桌面工作階段**:利用 Windows 用戶端，以提供高效能和應用程式相容性，也都是您的使用者的 Windows 桌面體驗的熟悉度。
+- **針對工作階段型虛擬化，使用集區桌面工作階段**：利用 Windows Server 的運算能力，提供符合成本效益的多重工作階段環境，以提升使用者的日常工作負載
+- **使用個人桌面工作階段，建立虛擬桌面基礎結構 (VDI)** ：利用 Windows 用戶端，提供符合使用者期望之 Windows 桌面體驗的高效能、應用程式相容性及熟悉度 。
  
-集區的工作階段中，使用多個使用者存取的共用集區的資源，而是使用個人的桌面工作階段中，使用者都會被指派自己桌面的集區中。 集區的工作階段會提供較低的整體成本，而個人的工作階段可讓使用者自訂他們的桌面體驗。
+使用集區工作階段時，多位使用者可以存取資源的共用集區，而使用個人桌面工作階段時，使用者可獲得集區內的專屬桌面指派。 集區工作階段可提供較低的整體成本，而個人工作階段可讓使用者自訂他們的桌面體驗。
 
-如果您需要使用大量圖形的裝載共用應用程式，您可以結合個人的工作階段桌面圖形加速設定 RemoteFX vgpu。 或者，您可以將個人的工作階段桌面結合新的不連續的裝置指派 (DDA) 功能，也需要加速的圖形的裝載應用程式提供支援。 請參閱[哪一種圖形虛擬化技術適合您](rds-graphics-virtualization.md)如需詳細資訊。
-
-
-不論您選擇的集合型別，您將會填入與 RemoteApps-程式和資源，使用者可以從任何支援的裝置存取，並如同本機執行程式使用這些集合。
-
-## <a name="create-a-pooled-desktop-session-collection"></a>建立集區的桌面工作階段集合
-
-1.  在 [伺服器管理員] 中，按一下**遠端桌面服務 > 集合 > 工作 > 建立工作階段集合**。  
-2.  輸入集合的名稱，例如**ContosoAps**。  
-3.  選取您建立 （例如，Contoso Shr1） 的 RD 工作階段主機伺服器。  
-4.  接受預設值**使用者群組**。  
-5.  輸入您為使用者設定檔磁碟，這個集合建立的檔案共用位置 (例如**\Contoso-Cb1\UserDisksr**)。   
-6.  按一下 [建立] 。 建立集合時，按一下**關閉**。  
+如果您需要共用含大量圖形的主控應用程式，您可以結合個人工作階段桌面與針對圖形加速設定的 RemoteFX vGPU。 或者，您可以將個人工作階段桌面與新的離散裝置指派 (DDA) 功能結合，以同時支援需要使用加速圖形的主控應用程式。 如需詳細資訊，請參閱[哪一種圖形虛擬化技術適合您？](rds-graphics-virtualization.md)
 
 
-## <a name="create-a-personal-desktop-session-collection"></a>建立個人的桌面工作階段集合
+不論您選擇哪種集合類型，都要使用 RemoteApps 填入這些集合，其包含的程式和資源可讓使用者從任何支援的裝置進行存取，並如本機執行程式般加以使用。
 
-您可以使用新增 RDSessionCollection cmdlet 來建立個人的工作階段桌面集合。 下列三個參數提供適用於個人的工作階段桌面所需的組態資訊：
+## <a name="create-a-pooled-desktop-session-collection"></a>建立集區桌面工作階段集合
 
-- **-PersonalUnmanaged** -指定可讓您的工作階段集合的型別會將使用者指派給個人的工作階段主機伺服器。 如果您未指定此參數，做為傳統的 RD 工作階段主機集合，其中使用者已指派給下一個可用的工作階段主機在登入時建立集合。
-- **-GrantAdministrativePrivilege** -如果您使用 **-PersonalUnmanaged**，指定使用者指派給工作階段主機有系統管理權限。 如果您不使用這個參數，則使用者會授與只是標準使用者權限。
-- **-AutoAssignUser** -如果您使用 **-PersonalUnmanaged**，指定新的使用者透過 RD 連線代理人連線會自動指派至未指派的工作階段主機。 如果在集合中不有任何未指派的工作階段主機，則使用者會看到一則錯誤訊息。 如果您不使用這個參數，您必須[手動將使用者指派給工作階段主機](rds-manage-personal-collection.md#manually-assign-a-user-to-a-personal-session-host)他們登入。
+1.  在 [伺服器管理員] 中，按一下 [遠端桌面服務] > [集合] > [工作] > [建立工作階段集合]  。  
+2.  輸入集合的名稱，例如 **ContosoAps**。  
+3.  選取您建立的 RD 工作階段主機伺服器 (例如 Contoso-Shr1)。  
+4.  接受預設的**使用者群組**。  
+5.  輸入您為這個集合所建立使用者設定檔磁碟的檔案共用位置 (例如 **\Contoso-Cb1\UserDisksr**)。   
+6.  按一下 \[建立\]  。 建立集合之後，請按一下 [關閉]  。  
 
-您可以使用 PowerShell cmdlet 來管理您的個人桌面工作階段集合。 請參閱[管理您的個人桌面工作階段集合](rds-manage-personal-collection.md)如需詳細資訊。
 
-## <a name="publish-remoteapp-programs"></a>發行 RemoteApp 程式
-若要在集合中發佈應用程式和資源使用下列步驟：
+## <a name="create-a-personal-desktop-session-collection"></a>建立個人桌面工作階段集合
+
+您可以使用 New-RDSessionCollection Cmdlet 來建立個人工作階段桌面集合。 下列三個參數提供個人工作階段桌面所需的設定資訊：
+
+- **-PersonalUnmanaged** - 指定可讓您將使用者指派給個人工作階段主機伺服器的工作階段集合類型。 如果您未指定此參數，則系統會將集合建立為傳統的「RD 工作階段主機」集合；其會在使用者登入時將他們指派給下一個可用的工作階段主機。
+- **-GrantAdministrativePrivilege** - 指定要將系統管理權限授與指派給工作階段主機的使用者 (如果您使用 **-PersonalUnmanaged** 的話)。 如果您未使用此參數，則只會將標準使用者權限授與使用者。
+- **-AutoAssignUser** - 指定將透過 RD 連線代理人連線之新使用者自動指派給未指派的工作階段主機 (如果您使用 **-PersonalUnmanaged** 的話)。 如果在集合中有任何未指派的工作階段主機，則使用者會看到一則錯誤訊息。 如果您未使用此參數，則必須在使用者登入前[手動將使用者指派給工作階段主機](rds-manage-personal-collection.md#manually-assign-a-user-to-a-personal-session-host)。
+
+您可以使用 PowerShell Cmdlet 來管理您的個人桌面工作階段集合。 如需詳細資訊，請參閱[管理您的個人桌面工作階段集合](rds-manage-personal-collection.md)。
+
+## <a name="publish-remoteapp-programs"></a>發佈 RemoteApp 程式
+使用下列步驟，發佈集合中的應用程式和資源：
 
 1.  在 [伺服器管理員] 中，選取新的集合 (**ContosoApps**)。  
-2.  在 RemoteApp 程式，按一下**發佈的 RemoteApp 程式**。  
-3. 選取您想要發佈，然後按一下 [的程式]**發佈**。  
+2.  在 [RemoteApp 程式] 下方，按一下 [發佈 RemoteApp 程式]  。  
+3. 選取您要發佈的程式，然後按一下 [發佈]  。  

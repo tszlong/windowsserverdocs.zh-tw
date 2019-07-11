@@ -1,6 +1,6 @@
 ---
 title: Windows Server 2016 已移除或過時的功能
-description: Windows Server 2016 中，已從產品的目前版本中移除，或已計劃 （已過時） 的後續版本中移除的功能清單。 適用對象是在商業環境中更新作業系統的 IT 專業人員。
+description: 列出的 Windows Server 2016 特性與功能已從目前的產品版本中移除，或已計劃可能會從後續版本中移除 (已過時)。 適用對象是在商業環境中更新作業系統的 IT 專業人員。
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -11,19 +11,19 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 83855cf7e4fa86a932298dd15735dc5bf7277dfb
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65976599"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 已移除或過時的功能
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 以下清單列出的 Windows Server 2016 特性與功能已從目前的產品版本中移除，或已計劃可能會從後續版本中移除 (已過時)。 適用對象是在商業環境中更新作業系統的 IT 專業人員。 本清單在後續版本可能會有變更，且可能無法涵括每一項過時的功能。 如需特定功能或替代功能的詳細資訊，請參閱該功能的文件。
 
-如需功能已經移除或更新版本中已被取代的資訊，請參閱[功能移除，或計劃取代啟動 Windows Server 2019](../get-started-19/removed-features-19.md)。
+如需更新版本中已移除或已淘汰功能的資訊，請參閱[從 Windows Server 2019 開始移除或計劃取代的功能](../get-started-19/removed-features-19.md)。
 
 ## <a name="features-removed-from-windows-server-2016"></a>Windows Server 2016 已移除的功能
 
@@ -71,9 +71,9 @@ Journal.dll 已從 Windows Server 2016 中移除。 沒有任何取代項目。
 
 ### <a name="configuration-tools"></a>設定工具  
 
--   **Scregedit.exe**已被取代。 如果您的指令碼相依於 Scregedit.exe，請調整它們以使用 Reg.exe 或 Windows PowerShell 方法。  
+-   **Scregedit.exe** 已淘汰。 如果您的指令碼相依於 Scregedit.exe，請調整它們以使用 Reg.exe 或 Windows PowerShell 方法。  
 
--   **Sconfig.exe**已被取代。 請改用 Windows PowerShell。  
+-   **Sconfig.exe** 已淘汰。 請改用 Windows PowerShell。  
 
 ### <a name="netcfg-custom-apis"></a>NetCfg 自訂 API  
 使用 NetCfg 自訂 API 安裝 PrintProvider、NetClient 及 ISDN 的方式已經過時。  

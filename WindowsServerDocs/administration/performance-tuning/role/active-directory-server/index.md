@@ -4,15 +4,15 @@ description: Active Directory 伺服器的效能調整
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 04c9683c3d14291d5dc2682c6836657313865866
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b06875f0fa175c1fcf4f60cbba9de3dbd10d06b1
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891939"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792157"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory 伺服器的效能調整
 
@@ -26,10 +26,10 @@ Active Directory 的效能調整著重在兩個目標：
 - Active Directory 用戶端/應用程式調整 – 確保用戶端與應用程式以最佳化方式使用 Active Directory
 
 ## <a name="start-with-capacity-planning"></a>從容量規劃開始
-適當地在正確地區的正確的網域中部署數目足夠的網域控制站，而且容納備援能力對於確保以即時方式處理用戶端要求而言非常重要。 這是深入的主題，因此不在此指南的討論範圍內。 我們建議讀者透過閱讀並了解 [Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566) \(英文\) 中所述的建議與指導方針，以開始調整其 Active Directory 效能。
+適當地在正確地區的正確的網域中部署數目足夠的網域控制站，而且容納備援能力對於確保以即時方式處理用戶端要求而言非常重要。 這是深入的主題，因此不在此指南的討論範圍內。 我們建議讀者透過閱讀並了解 [Active Directory Domain Services 的容量規劃](capacity-planning-for-active-directory-domain-services.md) (英文) 中所述的建議與指導方針，以開始調整其 Active Directory 效能。
 
 >[!Important]
-> 適當地設定並調整 Active Directory 大小對於整體系統與工作負載效能而言有顯著的潛在影響。 我們強烈建議讀者透過閱讀 [Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566) \(英文\) 以開始。
+> 適當地設定並調整 Active Directory 大小對於整體系統與工作負載效能而言有顯著的潛在影響。 我們強烈建議讀者透過閱讀 [Active Directory Domain Services 的容量規劃](capacity-planning-for-active-directory-domain-services.md) (英文) 以開始。
 
 ## <a name="updates-and-evolving-recommendations"></a>更新及不斷地演變建議
 
@@ -41,11 +41,14 @@ Active Directory 與用戶端效能最佳化中的大量增強功能在最近數
 
 不過，我們了解這需要時間而且許多環境都是在無法 100% 採用最新平台的案例中執行。 某些改良功能已新增到舊版平台，而且我們將繼續新增更多功能。
 
-我們鼓勵您專注我們的小組部落格 ["Ask the Directory Services Team"](https://blogs.technet.microsoft.com/askds)，密切注意有關管理 ADDS 的最新新聞、指導方針與最佳做法。
+我們鼓勵您關注我們的小組部落格 [Ask the Directory Services Team](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS) (英文)，密切注意有關管理 ADDS 的最新新聞、指導方針與最佳做法。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
+
+- [AD DS 容量規劃](capacity-planning-for-active-directory-domain-services.md)
 - [硬體考量](hardware-considerations.md)
+- [記憶體使用量考量](memory-usage-considerations.md)
 - [LDAP 考量](ldap-considerations.md)
 - [適當地放置網域控制站與站台考量](site-definition-considerations.md)
-- [針對 ADDS 效能問題進行疑難排解](troubleshoot.md) 
-- [Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)
+- [針對 AD DS 效能問題進行疑難排解](troubleshoot.md)  
+  

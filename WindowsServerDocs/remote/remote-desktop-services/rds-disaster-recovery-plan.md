@@ -1,6 +1,6 @@
 ---
-title: 建立您的災害復原計劃
-description: 了解如何建立您的 RDS 部署災害復原計畫。
+title: 建立您的災害復原方案
+description: 了解如何建立您的 RDS 部署災害復原方案。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,55 +12,55 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8ad759a73e4a0ce1dc28f2b8e8d80f4365895430
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7bfe19258662a8e334ea0476689d8e860bfc8e5
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879499"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743903"
 ---
-# <a name="create-your-disaster-recovery-plan-for-rds"></a>建立 RDS 的災害復原計劃
+# <a name="create-your-disaster-recovery-plan-for-rds"></a>建立您的 RDS 災害復原方案
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-您可以在 Azure Site Recovery，將容錯移轉程序自動化的災害復原計劃。 將 RDS 元件的所有 Vm 都新增至復原方案。
+您可以在 Azure Site Recovery 中建立災害復原方案，將容錯移轉程序自動化。 將所有 RDS 元件 VM 新增至復原方案。
 
-若要建立您的復原方案，在 Azure 中使用下列步驟：
+請在 Azure 中使用下列步驟以建立您的復原方案：
 
-1. 在 Azure 入口網站中，開啟 Azure Site Recovery 保存庫，然後按一下**復原計劃**。
-2. 按一下 **建立**輸入計劃的名稱。
-3. 選取您**來源**並**目標**。 目標可能是次要 RDS 網站或 Azure。
-4. 選取的 Vm，裝載您的 RDS 元件，然後按一下**確定**。
+1. 在 Azure 入口網站中開啟 Azure Site Recovery 保存庫，然後按一下 [復原方案]  。
+2. 按一下 [建立]  並輸入方案的名稱。
+3. 選取您的 [來源]  與 [目標]  。 目標可以是次要 RDS 站台或 Azure。
+4. 選取裝載您 RDS 元件的 VM，然後按一下 [確定]  。
 
-下列各節提供有關建立不同類型的 RDS 部署中的復原計劃的其他資訊。
+下列各節提供為不同類型 RDS 部署建立復原方案的其他資訊。
 
-## <a name="sessions-based-rds-deployment"></a>工作階段為基礎的 RDS 部署
+## <a name="sessions-based-rds-deployment"></a>工作階段型的 RDS 部署
 
-針對 RDS 工作階段式部署中，將 Vm 分組讓在序列中出現：
+針對 RDS 工作階段型部署，請將 VM 分組以便其依序顯示：
 
-1. 容錯移轉群組 1-工作階段主機 VM
-2. 容錯移轉群組 2-連線代理人 VM
-3. 容錯移轉群組 3-Web 存取 VM
+1. 容錯移轉群組 1：工作階段主機 VM
+2. 容錯移轉群組 2：連線代理人 VM
+3. 容錯移轉群組 3：Web 存取 VM
 
-您的方案看起來像這樣： 
+您的方案看起來會像這樣： 
 
-![工作階段為基礎的 RDS 部署嚴重損壞復原計畫](media/rds-asr-session-drplan.png)
+![工作階段型 RDS 部署的災害復原方案](media/rds-asr-session-drplan.png)
 
-## <a name="pooled-desktops-rds-deployment"></a>集區的桌面 RDS 部署
+## <a name="pooled-desktops-rds-deployment"></a>集區桌面 RDS 部署
 
-針對集區桌面與 RDS 部署中，Vm 群組，以便在出現的順序，新增的手動步驟和指令碼。
+針對具有集區桌面的 RDS 部署，請將 VM 分組以便其依序顯示，並新增手動步驟和指令碼。
 
-1. 容錯移轉群組 1-RDS 連線代理人 VM
-2. 群組 1 的手動動作-更新 DNS
+1. 容錯移轉群組 1：RDS 連線代理人 VM
+2. 群組 1 手動動作：更新 DNS
 
-   在提高權限的模式中執行 PowerShell，連線代理人 VM 上。 執行下列命令，並等候數分鐘，以確保 DNS 更新為新值：
+   在連線代理人 VM上以更高階的權限模式執行 PowerShell。 執行下列命令並等候數分鐘，以確保 DNS 更新為新值：
 
    ```
    ipconfig /registerdns
    ```
-3. 群組 1 的指令碼-新增虛擬化主機
+3. 群組 1 指令碼：新增虛擬主機
 
-   修改下列指令碼執行在雲端中的每個虛擬化主機。 通常您新增到連線代理人虛擬化主機之後，您需要重新啟動主機。 請確保主機不需要重新開機擱置中之前的指令碼執行，否則它將會失敗。
+   修改以下指令碼以針對雲端中的每部虛擬主機執行。 通常，在您將虛擬主機新增至連線代理人之後，您需要重新啟動主機。 請先確認主機沒有擱置中的重新開機再執行指令碼，否則指令碼將會失敗。
 
    ```
    Broker - broker.contoso.com
@@ -69,10 +69,10 @@ ms.locfileid: "59879499"
    ipmo RemoteDesktop; 
    add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
    ```
-4. 容錯移轉群組 2-範本 VM
-5. 群組 2 的指令碼 1-開啟範本 VM 關閉
+4. 容錯移轉群組 2：範本 VM
+5. 群組 2 指令碼 1：關閉範本 VM
    
-   範本 VM 至次要站台復原時，將會啟動，但它已執行過 sysprep VM，並完全無法啟動。 也 RDS 要求 VM 必須從它建立集區的 VM 組態的關機。 因此，我們需要將它關閉。 如果您有單一 VMM 伺服器時，範本的 VM 名稱會是相同的主要和次要資料庫。 因此，使用 VM 識別碼所指定*內容*以下指令碼變數。 如果您有多個範本，請將它們全部關閉。
+   復原至次要站台時，範本 VM 將會啟動，但由於該 VM 是 Sysprep VM，因此無法完全啟動。 此外，RDS 需要關閉 VM，以從中建立集區 VM 設定。 因此，我們需要將其關閉。 如果您只有一部 VMM 伺服器，則範本 VM 名稱在主要和次要站台上都會相同。 因此，我們使用由以下指令碼中 *Context* 變數指定的 VM 識別碼。 如果您有多個範本，請將這些範本全部關閉。
 
    ```powershell
    ipmo virtualmachinemanager; 
@@ -81,9 +81,9 @@ ms.locfileid: "59879499"
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
    } 
    ```
-6. 群組 2 的指令碼 2-移除現有的 Vm 集區
+6. 群組 2 指令碼 2：移除現有的 VM 集區
 
-   您需要從連線代理人移除主要站台上的 Vm 集區，因此可以在次要網站上建立新的 Vm。 在此情況下，您需要指定確切的主控件，要在其中建立集區的 VM。 請注意，這會從集合刪除 Vm。
+   您需要從連線代理人中移除主要站台的集區 VM，以便於次要站台建立新的 VM。 在此情況下，您必須指定要建立集區 VM 的確切主機。 請注意，這只會從集合刪除 VM。
 
    ```powershell
    ipmo RemoteDesktop
@@ -92,40 +92,40 @@ ms.locfileid: "59879499"
       Remove-RDVirtualDesktopFromCollection -CollectionName Win8Desktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
    ```
-7. 群組 2 手動動作指派新的範本
+7. 群組 2 手動動作：指派新的範本
 
-   您需要將新的範本指派給集合連線代理人，因此您可以在復原站台上建立新的 Vm 集區。 請移至 RDS 連線代理人，並識別集合。 編輯內容，並為其範本中指定新的 VM 映像。
-8. 群組 2 的指令碼 3-重新建立所有集區的 Vm
+   您需要將新範本指派給集合的連線代理人，以便您在復原站台上建立新的 VM 集區。 請前往 RDS 連線代理人並識別集合。 編輯內容，並將新的 VM 映像指定為其範本。
+8. 群組 2 指令碼 3：重新建立所有集區 VM
 
-   重新建立連線代理人透過復原站台上的 Vm 集區。 在此情況下，您必須指定確切的主控件，要在其中建立集區的 VM。
+   透過連線代理人在復原站台上重新建立集區 VM。 在此情況下，您必須指定要建立集區 VM 的確切主機。
 
-   集區的 VM 名稱必須是唯一的使用前置詞和後置詞。 如果 VM 名稱已經存在，指令碼將會失敗。 此外，如果主要端 Vm 的編號是從 1 到 5，復原站台編號會繼續從 6。
+   集區 VM 名稱必須為是唯一且使用前置詞和後置詞。 如果 VM 名稱已經存在，指令碼將會失敗。 此外，如果主要端 VM 的編號是 1 到 5，則復原站台的編號會從 6 繼續。
 
    ```powershell
    ipmo RemoteDesktop; 
    Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1} 
    ```
-9. 容錯移轉群組 3-Web 存取和閘道伺服器 VM
+9. 容錯移轉群組 3：Web 存取和閘道伺服器 VM
 
-復原計劃看起來像這樣：
+復原方案看起來會像這樣：
 
-![使用 RDS 部署集區桌面的嚴重損壞復原計畫](media/rds-asr-pooled-drplan.png)
+![具有集區桌面之 RDS 部署的災害復原方案](media/rds-asr-pooled-drplan.png)
 
 ## <a name="personal-desktops-rds-deployment"></a>個人桌面 RDS 部署
 
-針對個人桌面與 RDS 部署中，Vm 群組，以便在出現的順序，新增的手動步驟和指令碼。
+針對具有個人桌面的 RDS 部署，請將 VM 分組以便其依序顯示，並新增手動步驟和指令碼。
 
-1. 容錯移轉群組 1-RDS 連線代理人 VM
-2. 群組 1 的手動動作-更新 DNS
+1. 容錯移轉群組 1：RDS 連線代理人 VM
+2. 群組 1 手動動作：更新 DNS
 
-   在提高權限的模式中執行 PowerShell，連線代理人 VM 上。 執行下列命令，並等候數分鐘，以確保 DNS 更新為新值：
+   在連線代理人 VM上以更高階的權限模式執行 PowerShell。 執行下列命令並等候數分鐘，以確保 DNS 更新為新值：
 
    ```
    ipconfig /registerdns
    ```
-3. 群組 1 的指令碼-新增虛擬化主機
+3. 群組 1 指令碼：新增虛擬主機
       
-   修改下列指令碼執行在雲端中的每個虛擬化主機。 通常您新增到連線代理人虛擬化主機之後，您需要重新啟動主機。 請確保主機不需要重新開機擱置中之前的指令碼執行，否則它將會失敗。
+   修改以下指令碼以針對雲端中的每部虛擬主機執行。 通常，在您將虛擬主機新增至連線代理人之後，您需要重新啟動主機。 請先確認主機沒有擱置中的重新開機再執行指令碼，否則指令碼將會失敗。
 
    ```powershell
    Broker - broker.contoso.com
@@ -134,10 +134,10 @@ ms.locfileid: "59879499"
    ipmo RemoteDesktop; 
    add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
    ```
-4. 容錯移轉群組 2-範本 VM
-5. 群組 2 的指令碼 1-開啟範本 VM 關閉
+4. 容錯移轉群組 2：範本 VM
+5. 群組 2 指令碼 1：關閉範本 VM
    
-   範本 VM 至次要站台復原時，將會啟動，但它已執行過 sysprep VM，並完全無法啟動。 也 RDS 要求 VM 必須從它建立集區的 VM 組態的關機。 因此，我們需要將它關閉。 如果您有單一 VMM 伺服器時，範本的 VM 名稱會是相同的主要和次要資料庫。 因此，使用 VM 識別碼所指定*內容*以下指令碼變數。 如果您有多個範本，請將它們全部關閉。
+   復原至次要站台時，範本 VM 將會啟動，但由於該 VM 是 Sysprep VM，因此無法完全啟動。 此外，RDS 需要關閉 VM，以從中建立集區 VM 設定。 因此，我們需要將其關閉。 如果您只有一部 VMM 伺服器，則範本 VM 名稱在主要和次要站台上都會相同。 因此，我們使用由以下指令碼中 *Context* 變數指定的 VM 識別碼。 如果您有多個範本，請將這些範本全部關閉。
 
    ```powershell
    ipmo virtualmachinemanager; 
@@ -146,10 +146,10 @@ ms.locfileid: "59879499"
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
    } 
    ```
-6. 容錯移轉群組 3-個人 Vm
-7. 群組 3 的指令碼 1-移除現有的個人 Vm 並將其新增
+6. 容錯移轉群組 3：個人 VM
+7. 群組 3 指令碼 1：移除現有並新增個人 VM
 
-   因此可以在次要網站上建立新的 Vm，則您可以移除連接訊息代理程式上的主要站台的個人 Vm。 您需要擷取 Vm 的指派，並將虛擬機器重新加入至連線代理人，與指派的雜湊。 只會從集合中移除個人的 Vm，並重新加入它們。 將匯出的個人桌面配置，並將它重新匯入至集合中。
+   從連線代理人中移除主要站台的個人 VM，以便於次要站台建立新的 VM。 您需要擷取 VM 的指派，並將虛擬機器重新新增至具有指派雜湊的連線代理人。 這只會從集合中移除並重新新增個人 VM。 個人桌面配置將會匯出，並重新匯入集合中。
 
    ```powershell
    ipmo RemoteDesktop
@@ -162,8 +162,8 @@ ms.locfileid: "59879499"
    
    Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
    ```
-8. 容錯移轉群組 3-Web 存取和閘道伺服器 VM
+8. 容錯移轉群組 3：Web 存取和閘道伺服器 VM
 
-您的方案看起來像這樣： 
+您的方案看起來會像這樣： 
 
-![個人桌面 RDS 部署嚴重損壞復原計畫](media/rds-asr-personal-desktops-drplan.png)
+![個人桌面 RDS 部署的災害復原方案](media/rds-asr-personal-desktops-drplan.png)

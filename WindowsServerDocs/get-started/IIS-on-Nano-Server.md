@@ -13,18 +13,18 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c8d05c028cbca364b6a46052d12cdcb12c01b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443611"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server 上的 IIS
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
-> 從 Windows Server 版本 1709 開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
+> 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
 
 您可以使用 -Package 參數搭配 Microsoft-NanoServer-IIS-Package，在 Nano Server 上安裝 Internet Information Services (IIS) 伺服器角色。 如需設定 Nano Server (包括安裝套件) 的資訊，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)。  
 
@@ -38,7 +38,7 @@ ms.locfileid: "66443611"
 |HTTP 錯誤|x|  
 |靜態內容|x|  
 |HTTP 重新導向||  
-|**健康情況和診斷**||  
+|**狀況及診斷**||  
 |HTTP 記錄|x|  
 |自訂記錄||  
 |要求監視器||  
@@ -65,7 +65,7 @@ ms.locfileid: "66443611"
 |**管理工具**||  
 |適用於 Windows PowerShell 的 IIS 系統管理模組|x|  
 
-在發佈的內容相關的一系列的其他組態上的 IIS （例如使用 ASP.NET、 PHP 和 Java），以及其他的文章[ http://iis.net/learn ](http://iis.net/learn)。  
+[http://iis.net/learn](http://iis.net/learn) 已發佈其他 IIS 設定 (例如使用 ASP.NET、PHP 和 Java) 的系列文章，以及其他相關內容。  
 
 ## <a name="installing-iis-on-nano-server"></a>在 Nano Server 上安裝 IIS  
 您可以離線 (Nano Server 已關閉時) 或線上 (Nano Server 正在執行時) 安裝此伺服器角色；離線安裝是建議選項。  
@@ -129,7 +129,7 @@ ms.locfileid: "66443611"
 
    **dism /online /get-packages**  
 
-   您應該會看到"Package Identity:Microsoft NanoServer-IIS 套件 ~ 31bf3856ad364e35 ~ amd64 ~ ~ 10.0.14393.1000"列出兩次，一次針對 Release Type:語言套件，一次針對 Release Type:功能套件。  
+   您應該會看到 "Package Identity :Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000" 列出兩次，一次針對 Release Type :Language Pack，另一次針對 Release Type :Feature Pack。  
 
 6. 使用 **net start w3svc** 或藉由重新啟動 Nano Server 來啟動 W3SVC 服務。  
 
@@ -145,7 +145,7 @@ ms.locfileid: "66443611"
 
 IIS 的每項功能會以一組設定元素的形式來提供。 例如，Windows 驗證功能包含下列元素：  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |-----------|--------------------------|  
 |`<globalModules>`|`<add name="WindowsAuthenticationModule" image="%windir%\System32\inetsrv\authsspi.dll`|  
 |`<modules>`|`<add name="WindowsAuthenticationModule" lockItem="true" \/>`|  
@@ -185,7 +185,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 例如，Window
 
 您接著可以執行 `Get-IISSite` 來確認網站的狀態 (傳回網站名稱、識別碼、狀態、實體路徑和繫結)。  
 
-**正在刪除網站**  
+**刪除網站**  
 
 執行 `Remove-IISSite -Name TestSite -Confirm:$false`。  
 
@@ -242,9 +242,9 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
     $sm.CommitChanges()  
     ```  
 
-    您也可以使用伺服器名稱指示 (SNI) 與特定的主機名稱，使用此語法： `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    您也可以使用伺服器名稱指示 (SNI) 與特定的主機名稱，並搭配下列語法：`$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
 
-## <a name="appendix-1-list-of-iis-sub-features"></a>附錄 1:IIS 子功能清單
+## <a name="appendix-1-list-of-iis-sub-features"></a>附錄 1：IIS 子功能清單
 
 - IIS-WebServer
 - IIS-CommonHttpFeatures
@@ -280,13 +280,13 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
 - IIS-HttpTracing
 - IIS-CustomLogging
 
-## <a name="appendix-2-elements-of-http-features"></a>附錄 2:HTTP 功能的項目  
+## <a name="appendix-2-elements-of-http-features"></a>附錄 2：HTTP 功能的項目  
 IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出此版 Nano Server 中所有功能的設定元素  
 
 ### <a name="common-http-features"></a>一般 HTTP 功能  
 **預設文件**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="DefaultDocumentModule" image="%windir%\System32\inetsrv\defdoc.dll" />`|  
 |`<modules>`|`<add name="DefaultDocumentModule" lockItem="true" />`|  
@@ -297,7 +297,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **瀏覽目錄**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="DirectoryListingModule" image="%windir%\System32\inetsrv\dirlist.dll" />`|  
 |`<modules>`|`<add name="DirectoryListingModule" lockItem="true" />`|  
@@ -307,7 +307,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **HTTP 錯誤**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="CustomErrorModule" image="%windir%\System32\inetsrv\custerr.dll" />`|  
 |`<modules>`|`<add name="CustomErrorModule" lockItem="true" />`|  
@@ -315,7 +315,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **靜態內容**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="StaticFileModule" image="%windir%\System32\inetsrv\static.dll" />`|  
 |`<modules>`|`<add name="StaticFileModule" lockItem="true" />`|  
@@ -325,7 +325,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **HTTP 重新導向**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="HttpRedirectionModule" image="%windir%\System32\inetsrv\redirect.dll" />`|  
 |`<modules>`|`<add name="HttpRedirectionModule" lockItem="true" />`|  
@@ -334,7 +334,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 ### <a name="health-and-diagnostics"></a>狀況及診斷  
 **HTTP 記錄**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="HttpLoggingModule" image="%windir%\System32\inetsrv\loghttp.dll" />`|  
 |`<modules>`|`<add name="HttpLoggingModule" lockItem="true" />`|  
@@ -342,20 +342,20 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **自訂記錄**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="CustomLoggingModule" image="%windir%\System32\inetsrv\logcust.dll" />`|  
 |`<modules>`|`<add name="CustomLoggingModule" lockItem="true" />`|  
 
 **要求監視器**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="RequestMonitorModule" image="%windir%\System32\inetsrv\iisreqs.dll" />`|  
 
 **追蹤**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="TracingModule" image="%windir%\System32\inetsrv\iisetw.dll" \/><br /><add name="FailedRequestsTracingModule" image="%windir%\System32\inetsrv\iisfreb.dll" />`|  
 |`<modules>`|`<add name="FailedRequestsTracingModule" lockItem="true" />`|  
@@ -364,7 +364,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 ### <a name="performance"></a>效能  
 **靜態內容壓縮**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="StaticCompressionModule" image="%windir%\System32\inetsrv\compstat.dll" />`|  
 |`<modules>`|`<add name="StaticCompressionModule" lockItem="true" />`|  
@@ -372,7 +372,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **動態內容壓縮**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |-----------|--------------------------|  
 |`<globalModules>`|`<add name="DynamicCompressionModule" image="%windir%\System32\inetsrv\compdyn.dll" />`|  
 |`<modules>`|`<add name="DynamicCompressionModule" lockItem="true" />`|  
@@ -382,7 +382,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 **要求篩選**  
 
 
-|       Section        |                                                                                                                                        設定元素                                                                                                                                        |
+|       區段        |                                                                                                                                        設定元素                                                                                                                                        |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  `<globalModules>`   |                                                                                                        `<add name="RequestFilteringModule" image="%windir%\System32\inetsrv\modrqflt.dll" />`                                                                                                        |
 |     `<modules>`      |                                                                                                                       `<add name="RequestFilteringModule" lockItem="true" />`                                                                                                                        |
@@ -390,7 +390,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **基本驗證**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="BasicAuthenticationModule" image="%windir%\System32\inetsrv\authbas.dll" />`|  
 |`<modules>`|`<add name="WindowsAuthenticationModule" lockItem="true" />`|  
@@ -398,7 +398,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **用戶端憑證對應驗證**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="CertificateMappingAuthentication" image="%windir%\System32\inetsrv\authcert.dll" />`|  
 |`<modules>`|`<add name="CertificateMappingAuthenticationModule" lockItem="true" />`|  
@@ -406,7 +406,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **摘要式驗證**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="DigestAuthenticationModule" image="%windir%\System32\inetsrv\authmd5.dll" />`|  
 |`<modules>`|`<add name="DigestAuthenticationModule" lockItem="true" />`|  
@@ -415,7 +415,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 **IIS 用戶端憑證對應驗證**  
 
 
-|                  Section                   |                                         設定元素                                         |
+|                  區段                   |                                         設定元素                                         |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------|
 |             `<globalModules>`              | `<add name="CertificateMappingAuthenticationModule" image="%windir%\System32\inetsrv\authcert.dll" />` |
 |                `<modules>`                 |               `<add name="CertificateMappingAuthenticationModule" lockItem="true" `/>\`                |
@@ -423,7 +423,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **IP 及網域限制**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|```<add name="IpRestrictionModule" image="%windir%\System32\inetsrv\iprestr.dll" /><br /><add name="DynamicIpRestrictionModule" image="%windir%\System32\inetsrv\diprestr.dll" />```|  
 |`<modules>`|`<add name="IpRestrictionModule" lockItem="true" \/><br /><add name="DynamicIpRestrictionModule" lockItem="true" \/>`|  
@@ -431,7 +431,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **URL 授權**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="UrlAuthorizationModule" image="%windir%\System32\inetsrv\urlauthz.dll" />`|  
 |`<modules>`|`<add name="UrlAuthorizationModule" lockItem="true" />`|  
@@ -439,7 +439,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **Windows 驗證**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="WindowsAuthenticationModule" image="%windir%\System32\inetsrv\authsspi.dll" />`|  
 |`<modules>`|`<add name="WindowsAuthenticationModule" lockItem="true" />`|  
@@ -448,22 +448,22 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 ### <a name="application-development"></a>應用程式開發  
 **應用程式初始化**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="ApplicationInitializationModule" image="%windir%\System32\inetsrv\warmup.dll" />`|  
 |`<modules>`|`<add name="ApplicationInitializationModule" lockItem="true" />`|  
 
 **CGI**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="CgiModule" image="%windir%\System32\inetsrv\cgi.dll" /><br /><add name="FastCgiModule" image="%windir%\System32\inetsrv\iisfcgi.dll" />`|  
 |`<modules>`|`<add name="CgiModule" lockItem="true" /><br /><add name="FastCgiModule" lockItem="true" />`|  
 |`<handlers>`|`<add name="CGI-exe" path="*.exe" verb="\*" modules="CgiModule" resourceType="File" requireAccess="Execute" allowPathInfo="true" />`|  
 
-**ISAPI 擴充程式**  
+**ISAPI 延伸模組**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="IsapiModule" image="%windir%\System32\inetsrv\isapi.dll" />`|  
 |`<modules>`|`<add name="IsapiModule" lockItem="true" />`|  
@@ -471,14 +471,14 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **ISAPI 篩選器**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="IsapiFilterModule" image="%windir%\System32\inetsrv\filter.dll" />`|  
 |`<modules>`|`<add name="IsapiFilterModule" lockItem="true" />`|  
 
 **伺服器端包含**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|  
 |`<globalModules>`|<`add name="ServerSideIncludeModule" image="%windir%\System32\inetsrv\iis_ssi.dll" />`|  
 |`<modules>`|`<add name="ServerSideIncludeModule" lockItem="true" />`|  
@@ -487,7 +487,7 @@ IIS 的每項功能會以一組設定元素的形式來提供。 本附錄列出
 
 **WebSocket 通訊協定**  
 
-|Section|設定元素|  
+|區段|設定元素|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="WebSocketModule" image="%windir%\System32\inetsrv\iiswsock.dll" />`|  
 |`<modules>`|`<add name="WebSocketModule" lockItem="true" />`|  

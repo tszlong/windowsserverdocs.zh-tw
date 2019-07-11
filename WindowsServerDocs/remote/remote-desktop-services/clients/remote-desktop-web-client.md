@@ -1,6 +1,6 @@
 ---
-title: 存取遠端桌面 Web 用戶端
-description: 描述如何登入遠端桌面 web 用戶端。
+title: 存取遠端桌面網頁用戶端
+description: 描述如何登入遠端桌面網頁用戶端。
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
@@ -9,56 +9,56 @@ ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
 ms.openlocfilehash: f4433ad592219d6ed15b28fd0514790b078525fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849369"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743840"
 ---
-# <a name="access-the-remote-desktop-web-client"></a>存取遠端桌面 Web 用戶端
+# <a name="access-the-remote-desktop-web-client"></a>存取遠端桌面網頁用戶端
 
-遠端桌面 web 用戶端可讓您使用相容的網頁瀏覽器存取貴組織的遠端資源 （應用程式和桌上型電腦） 發行至您的系統管理員。您將能夠與遠端應用程式和桌面就像您身處何地，而不需要切換至不同的桌上型個人電腦的本機電腦進行互動。 一旦您的系統管理員設定您的遠端資源，您只需要為您的網域、 使用者名稱、 URL 傳送，而且支援的網頁瀏覽器中，您的系統管理員的密碼，您可以大顯身手。
-
->[!NOTE]
->想知道 web 用戶端的新版本嗎？ 請參閱[有關遠端桌面 web 用戶端的新功能？](web-client-whatsnew.md)
-
-## <a name="what-youll-need-to-use-the-web-client"></a>您必須使用 web 用戶端
-
-* Web 用戶端中，您必須執行 Windows、 macOS、 ChromeOS 或 Linux 的電腦。 在此階段不支援行動裝置。
-* 新式的瀏覽器，例如 Microsoft Edge、 Internet Explorer 11、 Google Chrome、 Safari、 或 Mozilla Firefox (v55.0 和更新版本)。
-* URL 您的系統管理員傳送給您。
+遠端桌面網頁用戶端可讓您使用相容的網頁瀏覽器，存取系統管理員發佈給您的組織遠端資源 (應用程式和桌面)。不論身處何地，您都可以與遠端應用程式和桌面互動，就像與本機電腦互動一樣，而不需切換至不同的桌上型個人電腦。 一旦系統管理員設定好遠端資源，您只需要具備網域、使用者名稱、密碼、系統管理員傳送給您的 URL 及支援的網頁瀏覽器，就可以開始使用。
 
 >[!NOTE]
->在這個階段，Internet Explorer 的 web 用戶端版本並沒有音訊。
->如果瀏覽器會調整大小，或進入全螢幕多次 safari 可能會顯示灰色的螢幕。
+>想知道適用於網頁用戶端的新版本嗎？ 查看[遠端桌面網頁用戶端的新功能](web-client-whatsnew.md)
+
+## <a name="what-youll-need-to-use-the-web-client"></a>使用網頁用戶端時所需的項目
+
+* 若要使用網頁用戶端，您必須具備執行 Windows、macOS、ChromeOS 或 Linux 的電腦。 目前不支援行動裝置。
+* 新式瀏覽器，例如 Microsoft Edge、Internet Explorer 11、Google Chrome、Safari 或 Mozilla Firefox (v55.0 和更新版本)。
+* 系統管理員傳送給您的 URL。
+
+>[!NOTE]
+>目前 Internet Explorer 的網頁用戶端版本並沒有音訊。
+>如果您調整瀏覽器大小或進入全螢幕多次，Safari 可能會顯示灰色螢幕。
 
 ## <a name="start-using-the-remote-desktop-client"></a>開始使用遠端桌面用戶端
 
-若要登入用戶端，請移至您的系統管理員傳送給您的 URL。 在登入頁面中，輸入您的網域和使用者名稱格式```DOMAIN\username```，輸入您的密碼，然後選取**登入**。
+若要登入用戶端，請移至系統管理員傳送給您的 URL。 在登入頁面中，以 ```DOMAIN\username``` 格式輸入您的網域和使用者名稱，並輸入密碼，然後選取 [登入]  。
 
 >[!NOTE]
->登入 web 用戶端，即表示您同意您的電腦，符合貴組織的安全性原則。
+>登入網頁用戶端，即表示您同意電腦遵循組織的安全性原則。
 
-登入之後，用戶端會帶您前往**的所有資源**下一或多個可摺疊群組，例如 「 工作資源 」 群組發佈給您的索引標籤上，其中包含所有的項目。 您會看到幾個圖示代表應用程式、 桌面或包含多個應用程式或系統管理員已提供給工作群組的桌面資料夾。 您可以回到此索引標籤上隨時啟動額外的資源。
+登入之後，用戶端會帶您前往 [所有資源]  索引標籤，其中包含以一或多個可摺疊群組形式，例如「工作資源」群組來發佈給您的所有項目。 您會看到幾個圖示，其代表應用程式、桌面或資料夾，而資料夾中包含系統管理員提供給工作群組的多個應用程式或桌面。 您可以隨時回到此索引標籤以啟動其他資源。
 
-若要開始使用應用程式或桌面，請選取您想要使用中，輸入相同的使用者名稱和密碼來登入 web 用戶端出現提示時，您使用的項目，然後按**送出**。 您可能也會顯示同意對話方塊，來存取本機資源，例如剪貼簿和印表機。 您可以選擇不重新導向其中之一，或選取**允許**以使用預設設定。 等候建立連線，web 用戶端，然後再啟動 可以用正常方式使用資源。
+若要開始使用應用程式或桌面，請選取您要使用的項目，並在系統提示時，輸入您用來登入網頁用戶端的相同使用者名稱和密碼，然後選取 [提交]  。 系統可能也會顯示存取本機資源的同意對話方塊，例如剪貼簿和印表機。 您可以選擇不重新導向這些項目，或選取 [允許]  以使用預設設定。 等候網頁用戶端建立連線，然後即可按照一般方式開始使用資源。
 
-當您完成時，您可以選取結束您的工作階段**登出**螢幕或關閉瀏覽器視窗的頂端工具列中的按鈕。
+完成時，您可以選取螢幕頂端工具列中的 [登出]  按鈕或關閉瀏覽器視窗，以結束您的工作階段。
 
-## <a name="printing-from-the-remote-desktop-web-client"></a>從遠端桌面 web 用戶端列印
+## <a name="printing-from-the-remote-desktop-web-client"></a>從遠端桌面網頁用戶端進行列印
 
-請遵循下列步驟來從 web 用戶端列印：
+請遵循下列步驟，從網頁用戶端進行列印：
 
-1. 可以用正常方式為您想要從列印應用程式，請開始列印程序。
-2. 出現提示時選擇印表機，請選取**遠端桌面的虛擬印表機**。
-3. 選擇您的喜好設定之後, 選取**列印**。
-4. 您的瀏覽器將會產生列印工作的 PDF 檔案。
-5. 您可以選擇開啟 PDF，並列印其內容至您的本機印表機，或將它儲存到您的電腦，以供稍後使用。
+1. 針對您想要用來列印的應用程式，按照一般方式開始列印程序。
+2. 當系統提示您選擇印表機時，請選取 [Remote Desktop Virtual Printer] \(遠端桌面虛擬印表機\)  。
+3. 選擇您的喜好設定之後，選取 [列印]  。
+4. 瀏覽器即會產生列印工作的 PDF 檔案。
+5. 您可以選擇開啟 PDF 並使用本機印表機列印內容，或將它儲存到電腦以供稍後使用。
 
-## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>複製並貼上從遠端桌面 web 用戶端
+## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>從遠端桌面網頁用戶端複製和貼上
 
-Web 用戶端目前支援複製並貼上純文字。 無法複製或貼上與 web 用戶端檔案。 此外，您只能使用**Ctrl + C**並**Ctrl + V**複製並貼上文字。
+網頁用戶端目前僅支援複製和貼上文字。 您無法在網頁用戶端中複製或貼上檔案。 此外，您只能使用 **Ctrl+C** 和 **Ctrl+V** 複製和貼上文字。
 
-## <a name="get-help-with-the-web-client"></a>取得 web 用戶端的協助
+## <a name="get-help-with-the-web-client"></a>取得網頁用戶端的協助
 
-如果您遇到無法在這篇文章中的資訊來解決問題，可以傳送電子郵件給 web 用戶端的 About 頁面上的位址，以取得與 web 用戶端說明。
+如果遇到本文資訊無法解決的問題，您可以傳送電子郵件至網頁用戶端 [關於] 頁面上的位址，以取得網頁用戶端的協助。

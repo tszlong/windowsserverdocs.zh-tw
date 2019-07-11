@@ -1,5 +1,5 @@
 ---
-title: Standard 和 Datacenter 版本的 Windows Server 2019 的比較
+title: Windows Server 2019 Standard 和 Datacenter 版本的比較
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,14 +12,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7487a7e063775219182645a273d49c473f52e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6ec6934b5c2cfcc33a95a0336e22a20dbd60d82
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854129"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "64772393"
 ---
-# <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Standard 和 Datacenter 版本的 Windows Server 2019 的比較
+# <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Windows Server 2019 Standard 和 Datacenter 版本的比較
 
 > 適用於：Windows Server 2019
   
@@ -66,7 +66,6 @@ ms.locfileid: "59854129"
 |檔案和存放服務|存放服務|是|是|
 |主機守護者服務| |是|是|
 |Hyper-V| |是|是；包含受防護的虛擬機器|
-|MultiPoint 服務| |是|是|
 |網路控制卡| |否|是|
 |網路原則與存取服務| |是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 |列印和文件服務| |是|是|
@@ -78,7 +77,7 @@ ms.locfileid: "59854129"
 |Windows Server Essentials 體驗| |是|是|
 |Windows Server Update Services| |是|是|
 
-* WDS Transport Server 是在 Windows Server 2019 （也是在開頭為 1803年版 Windows Server 半年度通道的情況下） 的 Server Core 安裝的新功能
+*WDS 傳輸伺服器是 Windows Server 2019 中 Server Core 安裝的新功能 (也將出現在從 Windows Server 1803 版開始的半年通道)
 
 
 ## <a name="features"></a>功能
@@ -92,7 +91,7 @@ ms.locfileid: "59854129"
 |BitLocker 網路解除鎖定|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 |BranchCache|是|是|
 |Client for NFS|是|是|
-|容器|是 (Windows 容器無限制；Hyper-V 容器最多 2 個)|是（所有容器類型無限制）|
+|容器|是 (Windows 容器無限制；Hyper-V 容器最多 2 個)|是 (所有容器類型無限制)|
 |資料中心橋接|是|是|
 |Direct Play|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 |增強的存放區|是|是|
@@ -125,7 +124,7 @@ ms.locfileid: "59854129"
 |SMTP 伺服器|是|是|
 |SNMP 服務|是|是|
 |軟體負載平衡器|是|是|
-|儲存體複本|否|是|
+|儲存體複本|是|是|
 |Telnet 用戶端|是|是|
 |TFTP 用戶端|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 |適用於網狀架構管理的 VM 防護工具|是|是|
@@ -150,7 +149,7 @@ ms.locfileid: "59854129"
 |正式運作的功能|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |最佳做法分析程式|是|是|
-|限制的儲存體複本|是，（1 的合作關係和 1 資源群組與單一的 2 TB 的磁碟區）|是的無限制|
+|限制儲存體複本|是 (1 個合作關係及具有單一 2TB 磁碟區的 1 個資源群組)|是，無限制|
 |直接存取|是|是|
 |動態記憶體 (虛擬環境中)|是|是|
 |熱新增/取代 RAM|是|是|
@@ -162,7 +161,7 @@ ms.locfileid: "59854129"
 |Nano Server 安裝選項|是|是|
 |伺服器管理員|是|是|
 |SMB 直接傳輸與 SMB (透過 RDMA)|是|是|
-|軟體定義的網路|否|是|
+|軟體定義網路|否|是|
 |存放管理服務|是|是|
 |儲存空間|是|是|
 |儲存空間直接存取|否|是|

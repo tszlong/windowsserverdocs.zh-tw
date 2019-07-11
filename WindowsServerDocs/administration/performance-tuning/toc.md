@@ -7,8 +7,10 @@
 #### [建議的平衡電源計劃參數](hardware/power/recommended-balanced-plan-parameters.md)
 ## 伺服器角色調整
 ### [Active Directory Server](role/active-directory-server/index.md)
+#### [AD DS 容量規劃](role/active-directory-server/capacity-planning-for-active-directory-domain-services.md)
 #### [站台定義考量](role/active-directory-server/site-definition-considerations.md)
 #### [硬體考量](role/active-directory-server/hardware-considerations.md)
+#### [記憶體使用量考量](role/active-directory-server/memory-usage-considerations.md)
 #### [LDAP 考量](role/active-directory-server/ldap-considerations.md)
 #### [針對 ADDS 效能問題進行疑難排解](role/active-directory-server/troubleshoot.md)
 ### [檔案伺服器](role/file-server/index.md)

@@ -1,6 +1,6 @@
 ---
-title: 在 Azure 中的異地備援 RDS 資料中心
-description: 了解如何建立使用多個資料中心，以提供高可用性跨地理位置的 RDS 部署。
+title: Azure 中的異地備援 RDS 資料中心
+description: 了解如何建立 RDS 部署，以使用多個資料中心跨地理位置提供高可用性。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,85 +14,85 @@ ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
 ms.openlocfilehash: 2d12062f302c28a8124e0aa49af7f441e77ffe33
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66222797"
 ---
-# <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>建立異地備援、 多重資料中心針對災害復原的 RDS 部署
+# <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>建立異地備援的多資料中心 RDS 部署以進行災害復原
 
->適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-您可以運用在 Azure 中的多個資料中心，來啟用遠端桌面服務部署災害復原。 不同於標準的高可用性的 RDS 部署 (如所述[遠端桌面服務架構](desktop-hosting-logical-architecture.md))、 單一 Azure 區域 （例如西歐） 中使用的資料中心、 多重資料中心部署，使用資料中心在多個地理位置，增加您的部署-一個 Azure 資料中心的可用性可能會無法使用，但是太多個區域會當機，在相同的時間。 藉由部署異地備援的 RDS 架構，您可以啟用發生嚴重失敗的整個區域的容錯移轉。
+您可以利用 Azure 中的多個資料中心，來啟用遠端桌面服務部署的災害復原功能。 不同於標準高可用性 RDS 部署 (如[遠端桌面服務架構](desktop-hosting-logical-architecture.md)中所述) 使用單一 Azure 區域 (例如西歐) 中的資料中心，多資料中心部署使用多個地理位置的資料中心來提高部署的可用性 - 一個 Azure 資料中心可能無法使用，但不太可能多個區域同時停止運作。 藉由部署異地備援 RDS 架構，您就可以在整個區域發生嚴重失敗的情況下啟用容錯移轉功能。
 
-您可以使用下列指示以透過多個租用戶中利用 Microsoft Azure 基礎結構服務和提供異地備援的桌面主機服務和訂戶存取授權 (Sal) 的 RDS [Microsoft 服務提供者授權合約 (SPLA) 方案](https://www.microsoft.com/hosting/licensing/splabenefits.aspx)。 您也可以使用下列步驟來建立您自己的員工使用異地備援的主機服務[延伸權限，透過軟體保證的 RDS 使用者 Cal](https://download.microsoft.com/download/6/B/A/6BA3215A-C8B5-4AD1-AA8E-6C93606A4CFB/Windows_Server_2012_R2_Remote_Desktop_Services_Licensing_Datasheet.pdf)。
+您可以使用下列指示來有效率的調控 Microsoft Azure 基礎結構服務和 RDS，透過 [Microsoft 服務提供者授權合約 (SPLA) 方案](https://www.microsoft.com/hosting/licensing/splabenefits.aspx)將異地備援桌面主機服務和訂閱者存取使用權 (SAL) 提供給多個租用戶。 您也可以使用[透過軟體保證的 RDS 使用者 CAL 延伸權限](https://download.microsoft.com/download/6/B/A/6BA3215A-C8B5-4AD1-AA8E-6C93606A4CFB/Windows_Server_2012_R2_Remote_Desktop_Services_Licensing_Datasheet.pdf)，為自己的員工建立異地備援主機服務。
 
-## <a name="logical-architecture-for-high-availability---single-and-multiple-regions"></a>邏輯架構的高可用性-單一和多個區域
-下圖顯示在單一 Azure 區域中的高可用性部署的架構：
+## <a name="logical-architecture-for-high-availability---single-and-multiple-regions"></a>高可用性的邏輯架構 - 單一和多個區域
+下圖顯示單一 Azure 區域中的高可用性部署架構：
 
-![在單一 Azure 區域中的高可用性部署](media/rds-ha-single-region.png)
+![單一 Azure 區域中的高可用性部署](media/rds-ha-single-region.png)
 
-部署是由三個層級所組成：
+該部署可分為三層：
 
-- Azure 服務-Azure 管理介面，包括 Azure 入口網站和 Api，以及公用網路服務的詳細資訊，例如 DNS 和公用 IP 位址。
-- 桌面主機服務-虛擬機器、 網路、 儲存體、 Azure 服務和 Windows Server 角色服務
-- Azure 網狀架構-Windows Server 作業系統上執行 HYPER-V 角色，用來虛擬化實體伺服器、 儲存體單位、 網路交換器和路由器。 使用 Azure 網狀架構，可讓您建立 Vm、 網路、 儲存和應用程式獨立從基礎硬體。
+- Azure 服務 - Azure 管理介面 (包括 Azure 入口網站和 API)，以及公用網路服務 (例如 DNS 和公用 IP 位址)。
+- 桌面主機服務 - 虛擬機器、網路、儲存體、Azure 服務和 Windows Server 角色服務
+- Azure 網狀架構 - 執行 Hyper-V 角色的 Windows Server 作業系統，用來將實體伺服器、儲存體單位、網路交換器和路由器虛擬化。 使用 Azure 網狀架構可讓您建立獨立於基礎硬體的 VM、網路、儲存體和應用程式。
 
 
-相較之下，以下是使用多個 Azure 資料中心部署的架構：
+相較之下，以下是使用多個 Azure 資料中心的部署架構：
 
 ![使用多個 Azure 區域的 RDS 部署](media/rds-ha-multi-region.png)
 
-建立異地備援部署的第二個 Azure 區域中複寫整個 RDS 部署。 此架構會使用主動-被動模型中，一次只能有一個 RDS 部署正在執行。 VNet 對 VNet 連線可讓兩個環境之間的通訊方式。 RDS 部署會根據單一 Active Directory 樹系/網域，並跨兩個部署的 AD 伺服器複寫，表示使用者可以登入使用相同的認證可能是部署。 雙節點叢集儲存空間直接存取向外延展檔案伺服器 (SOFS) 上儲存使用者設定和資料儲存在使用者設定檔磁碟 (UPD)。 第二個相同的儲存空間直接存取叢集部署在第二個 （被動） 區域中，並使用儲存體複本複寫到被動的部署使用者設定檔使用中的。 Azure 流量管理員用來自動導向至任何部署的使用者是目前作用中-從使用者觀點來看，他們可存取部署使用單一的 URL 並不知道它們最終會使用的哪一個區域。
+整個 RDS 部署會複寫到次要 Azure 區域以建立異地備援部署。 此架構使用主動-被動模型，一次只會執行一個 RDS 部署。 VNet 對 VNet 連線可讓兩個環境彼此通訊。 RDS 部署是以單一 Active Directory 樹系/網域為基礎，而 AD 伺服器會跨兩個部署複寫，這表示使用者可以使用相同的認證登入任一部署。 儲存在使用者設定檔磁碟 (UPD) 的使用者設定和資料會儲存在雙節點叢集儲存空間直接存取向外延展檔案伺服器 (SOFS) 上。 第二個相同的儲存空間直接存取叢集會部署在第二個 (被動) 區域中，並使用儲存體複本將使用者設定檔從使用中部署複寫到被動部署。 您可以使用 Azure 流量管理員將終端使用者自動導向至目前使用中的任何部署 - 從終端使用者觀點來看，他們可以使用單一 URL 存取部署而不知道最終會使用哪一個區域。
 
 
-您*無法*建立非高可用的 RDS 部署中每個區域，但如果即使單一 VM 重新啟動在一個區域，會發生容錯移轉，因而增加的容錯移轉期間發生的可能性相關聯的效能影響。
+您「可以」  在每個區域中建立非高可用性 RDS 部署，但即使在一個區域中重新啟動單一 VM，也會發生容錯移轉，因此更有可能出現影響相關效能的容錯移轉。
 
 ## <a name="deployment-steps"></a>部署步驟
-在 Azure 中建立的異地備援的多重資料中心的 RDS 部署中建立下列資源：
+在 Azure 中建立下列資源，以建立異地備援的多資料中心 RDS 部署：
 
-1. 兩個資源群組中兩個不同 Azure 區域。 例如 RG A （代表 「 資源群組 」 的現用部署，也就是 RG） 和 RG B （被動部署）。
-2. RG a 中的高可用性的 Active Directory 部署您可以使用[新的 AD 網域，使用 2 個網域控制站範本](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/)建立部署。
-3. 在 RG A.使用高度可用的 RDS 部署[RDS 伺服器陣列部署使用現有的 active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)範本來建立基本的 RDS 部署中，，然後依照中的資訊[遠端桌面服務-高可用性](rds-plan-high-availability.md)設定高可用性的其他 RDS 元件。
-4. 請務必使用位址空間不會重疊在 RG A 中的部署的 RG B-中的 VNet
-5. A [VNet 對 VNet 連線](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)之間的兩個資源群組。
-6. 兩個 AD 虛擬機器的可用性設定組中 RG B-請確定 VM 名稱不同於在 RG A.部署兩個 Windows Server 2016 Vm，在單一可用性設定、 安裝 Active Directory 網域服務角色，以及再將其提升至網域內容中的 AD Vm您在步驟 1 中建立的網域中的滾輪。
-7. 第二個高度可用的 RDS 部署中 RG b。 
-   1. 使用[RDS 伺服器陣列部署使用現有的 active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)範本一次，但這次會進行下列變更。 (若要自訂範本，在資源庫中選取它，請按一下**部署至 Azure** ，然後**編輯範本**。)
-      1. 調整 DNS 伺服器私人 IP，以對應至 RG B 中的 VNet 位址的空間 
+1. 兩個不同 Azure 區域中的兩個資源群組。 例如，RG A (使用中部署，RG 表示「資源群組」) 和 RG B (被動部署)。
+2. RG A 中的高可用性 Active Directory 部署。您可以使用 [New AD Domain with 2 Domain Controllers](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/) (具有 2 個網域控制站的新 AD 網域) 範本來建立部署。
+3. RG A 中的高可用性 RDS 部署。使用 [RDS farm deployment using existing active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) (使用現有 Active Directory 的 RDS 伺服器陣列部署) 範本來建立基本的 RDS 部署，然後遵循[遠端桌面服務 - 高可用性](rds-plan-high-availability.md)中的資訊設定其他 RDS 元件以取得高可用性。
+4. RG B 中的 VNet - 請務必使用未與 RG A 中部署重疊的位址空間。
+5. 兩個資源群組之間的 [VNet 對 VNet 連線](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
+6. RG B 中可用性設定組內的兩部 AD 虛擬機器 - 確定 VM 名稱與 RG A 中的 AD VM 不同。在單一可用性設定組中部署兩部 Windows Server 2016 VM、安裝 Active Directory Domain Services 角色，然後將其升階到您在步驟 1 中所建立網域中的網域控制站。
+7. RG B 中的第二個高可用性 RDS 部署。 
+   1. 再次使用 [RDS farm deployment using existing active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) (使用現有 Active Directory 的 RDS 伺服器陣列部署) 範本，但這次進行下列變更 (若要自訂範本，請在資源庫中選取它，按一下 [部署至 Azure]  ，然後按一下 [編輯範本]  )。
+      1. 調整 DNS 伺服器私人 IP 的位址空間，以對應至 RG B 中的 VNet。 
       
-         搜尋 「 dnsServerPrivateIp"變數中。 編輯對應至您在 RG B 中的 VNet 中定義的位址空間的預設 IP (10.0.0.4)
+         在變數中搜尋 "dnsServerPrivateIp"。 編輯預設 IP (10.0.0.4)，以對應至您在 RG B 中 VNet 定義的位址空間。
    
-      2. 編輯電腦名稱，使它們不會衝突與 RG A 中部署
+      2. 編輯電腦名稱，使它們不會與 RG A 中的部署名稱衝突。
       
-         找出中的 Vm**資源**範本區段。 變更**computerName**欄位下**osProfile**。 比方說，「 閘道 」 可能會變得 「 閘道 **-b**";"[concat ('rdsh-'，copyIndex())] 」 可能會變得"[concat （'rdsh-b-'、 copyIndex())]"，和 「 代理者 」 可能會變得 「 訊息代理程式 **-b**"。
+         在範本的 [資源]  區段中尋找 VM。 變更 [osProfile]  下的 [computerName]  欄位。 例如，"gateway" 可變成 "gateway **-b**"；"[concat('rdsh-', copyIndex())]" 可變成 "[concat('rdsh-b-', copyIndex())]"；而 “broker” 可變成 “broker **-b**”。
       
-         （您也可以變更 Vm 的名稱以手動方式之後執行範本。）
-   2. 如同在上述步驟 3，使用中的資訊[遠端桌面服務-高可用性](rds-plan-high-availability.md)設定高可用性的其他 RDS 元件。
-8. 儲存空間直接存取向外延展檔案伺服器儲存體複本的跨兩個部署。 使用[PowerShell 指令碼](https://github.com/robotechredmond/301-s2d-sr-dr-md/tree/master/scripts)部署[範本](https://github.com/robotechredmond/301-s2d-sr-dr-md)跨資源群組。
+         (您也可以在執行範本之後手動變更 VM 的名稱。)
+   2. 如上述步驟 3 所述，您可以使用[遠端桌面服務 - 高可用性](rds-plan-high-availability.md)中的資訊設定其他 RDS 元件以取得高可用性。
+8. 跨兩個部署具有儲存體複本的儲存空間直接存取向外延展檔案伺服器。 使用 [PowerShell 指令碼](https://github.com/robotechredmond/301-s2d-sr-dr-md/tree/master/scripts)跨資源群組部署[範本](https://github.com/robotechredmond/301-s2d-sr-dr-md)。
 
    > [!NOTE]
-   > 您可以佈建儲存體，以手動方式 （而不是使用 PowerShell 指令碼和範本）： 
-   >1. 部署[兩個節點儲存空間直接存取 SOFS](rds-storage-spaces-direct-deployment.md) RG A 來儲存您的使用者設定檔磁碟 (Upd) 中。
-   >2. 部署第二個、 相同儲存空間直接存取 SOFS RG B 中-請務必在每個叢集中使用相同的儲存體數量。
-   >3. 設定好[非同步複寫的儲存體複本](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)兩者之間。
+   > 您可以手動佈建儲存體 (而不是使用 PowerShell 指令碼和範本)： 
+   >1. 部署 RG A 中的[雙節點儲存空間直接存取 SOFS](rds-storage-spaces-direct-deployment.md)，以儲存您的使用者設定檔磁碟 (UPD)。
+   >2. 部署 RG B 中第二個相同的儲存空間直接存取 SOFS - 請務必在每個叢集中使用相同的儲存空間量。
+   >3. 在兩者之間設定[使用非同步複寫的儲存體複本](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)。
 
-### <a name="enable-upds"></a>啟用 Upd
-儲存體複本會將資料從來源磁碟區 （與主要/主動部署相關聯） 複寫到目的地磁碟區 （和次要/被動部署相關聯）。 根據設計，目的地叢集看似**線上 （沒有存取權）** -儲存體複本 」 會卸載目的地磁碟區和其磁碟機代號或掛接點。 這表示，啟用的次要部署的 Upd，藉由提供檔案共用路徑將會失敗，因為它沒有裝載磁碟區。 
+### <a name="enable-upds"></a>啟用 UPD
+儲存體複本會將資料從來源磁碟區 (與主要/使用中部署相關聯) 複寫到目的地磁碟區 (與次要/被動部署相關聯)。 根據設計，目的地叢集會顯示為 [線上 (無存取權)]  - 儲存體複本會卸載目的地磁碟區及其磁碟機代號或掛接點。 這表示透過提供檔案共用路徑來啟用次要部署的 UDP 會失敗，因為未掛接磁碟區。 
 
-想要深入了解管理複寫嗎？ 請參閱[叢集對叢集儲存體複寫](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)。
+想要深入了解如何管理複寫嗎？ 請參閱[叢集對叢集儲存體複寫](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)。
 
-若要啟用這兩個部署的 Upd，請執行下列作業：
+若要在兩個部署上啟用 UPD，請執行下列動作：
 
-1. 執行[組 RDSessionCollectionConfiguration cmdlet](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration)啟用主要 （使用中） 部署-使用者設定檔磁碟的來源磁碟區 （您在步驟 7 中建立的部署步驟中） 提供檔案共用的路徑。
-2. 使目的地磁碟區變成來源磁碟區 （這會掛接磁碟區並使其可存取次要部署），請反轉儲存體複本方向。 您可以執行**Set-srpartnership** cmdlet 來執行這項操作。 例如: 
+1. 執行 [Set-RDSessionCollectionConfiguration Cmdlet](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) 為主要 (使用中) 部署啟用使用者設定檔磁碟 - 提供來源磁碟區上的檔案共用路徑 (已在部署步驟的步驟 7 中建立)。
+2. 反轉儲存體複本方向，讓目的地磁碟區成為來源磁碟區 (這會掛接磁碟區並使它可供次要部署存取)。 您可以執行 **Set-SRPartnership** Cmdlet 來執行這項操作。 例如：
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"
    ```
-3. 可讓使用者設定檔磁碟，在次要 （被動） 的部署。 您對主要的部署，在步驟 1 中，請使用相同的步驟。
-4. 反轉一次儲存體複本方向，因此原始的來源磁碟區是一次 SR 合作關係中的來源磁碟區，主要的部署可以存取檔案共用。 例如: 
+3. 在次要 (被動) 部署中啟用使用者設定檔磁碟。 使用您在步驟 1 中針對主要部署所執行的相同步驟。
+4. 再次反轉儲存體複本方向，讓原始來源磁碟區再次成為 SR 合作關係中的來源磁碟區，且主要部署可以存取檔案共用。 例如：
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-a-s2d-c" -SourceRGName "cluster-a-s2d-c" -DestinationComputerName "cluster-b-s2d-c" -DestinationRGName "cluster-b-s2d-c"
@@ -101,67 +101,67 @@ ms.locfileid: "66222797"
 
 ### <a name="azure-traffic-manager"></a>Azure 流量管理員 
 
-建立[Azure 流量管理員](/azure/traffic-manager/traffic-manager-overview)程式碼剖析，並請務必選取**優先順序**路由方法。 將兩個端點設定為 每個部署的公用 IP 位址。 底下**組態**，將通訊協定變更為 HTTPS （而非 HTTP) 和連接埠為 443 （而不是 80)。 請記下的**DNS 存留時間**，並適當地設定它，以符合您的容錯移轉需求。 
+建立 [Azure 流量管理員](/azure/traffic-manager/traffic-manager-overview)，並確定選取 [優先順序]  路由方法。 將兩個端點設定為每個部署的公用 IP 位址。 在 [設定]  下，將通訊協定變更為 HTTPS (而不是 HTTP)，並將連接埠變更為 443 (而不是 80)。 記下 [DNS 存留時間]  ，並根據您的容錯移轉需求適當地進行設定。 
 
-請注意，流量管理員會需要端點，以傳回 200 確定以回應 GET 要求，以標示為 「 良好 」。 RDS 的範本建立的 publicIP 物件會有作用，但不是新增路徑增補。 相反地，您可以讓使用者使用流量管理員 URL 「 / RDWeb"附加，例如： ```http://deployment.trafficmanager.net/RDWeb```
+請注意，流量管理員需要端點在 GET 要求的回應中傳回 200 確定，才能標示為「狀況良好」。 從 RDS 範本建立的 publicIP 物件將會運作，但不會新增路徑增補。 相反地，您可以提供附加 “/RDWeb” 的流量管理員 URL 給終端使用者，例如：```http://deployment.trafficmanager.net/RDWeb```
 
-藉由部署 Azure 流量管理員與優先順序路由方法，您可以防止終端使用者存取被動部署，而作用中的部署正常運作。 如果終端使用者存取被動部署，而且儲存體複本方向尚未已切換為容錯移轉，在使用者登入時會停止回應部署嘗試，並無法存取檔案共用，在被動的儲存空間直接存取叢集-最終部署將會放棄，並授與使用者的暫存設定檔。  
+藉由部署使用 [優先順序] 路由方法的 Azure 流量管理員，您就可以防止終端使用者在使用中部署運作時存取被動部署。 如果終端使用者存取被動部署，而且尚未針對容錯移轉切換儲存體複本方向，使用者登入會停止回應，因為部署會嘗試且無法存取被動儲存空間直接存取叢集上的檔案共用 - 最終部署將會放棄並提供暫存設定檔給使用者。  
 
-### <a name="deallocate-vms-to-save-resources"></a>若要儲存資源的虛擬機器解除配置 
-設定這兩個部署之後，您就可以選擇性地關閉，並解除配置的次要 RDS 基礎結構和 RDSH Vm 來節省成本，在這些 Vm 上。 儲存空間直接存取 SOFS 和 AD 伺服器 Vm 必須永遠維持啟用使用者帳戶和設定檔同步處理的次要/被動部署中執行。  
+### <a name="deallocate-vms-to-save-resources"></a>解除配置 VM 以節省資源 
+設定這兩個部署之後，您可以選擇性地關閉並解除配置次要 RDS 基礎結構和 RDSH VM 來節省這些 VM 上的成本。 儲存空間直接存取 SOFS 和 AD 伺服器 VM 必須一律在次要/被動部署中持續執行，以啟用使用者帳戶和設定檔同步處理。  
 
-在容錯移轉時，您必須啟動已解除配置的 Vm。 此部署組態的優點就是較低的成本，但代價是容錯移轉時間。 如果在使用中的部署中發生嚴重失敗，您必須以手動方式啟動被動部署，或您將需要自動化指令碼來偵測失敗並會自動啟動被動部署。 在任一情況下，可能需要幾分鐘的時間取得被動部署，執行且可供使用者登入，因而導致服務停機一段時間。 這種停機情形而定的時間量它會啟動 RDS 基礎結構和 RDSH Vm （通常是 2-4 分鐘，如果 Vm 已啟動，以平行方式而不是以序列方式），以及時間讓被動叢集上線 （它相依於叢集的大小通常是 2 的磁碟，每個節點的 2 個節點叢集的 2 到 4 分鐘)。 
+當容錯移轉發生時，您必須啟動已解除配置的 VM。 此部署設定的優點是成本較低，但代價是容錯移轉時間較長。 如果使用中部署發生嚴重失敗，您必須手動啟動被動部署，否則您將需要自動化指令碼來偵測失敗並自動啟動被動部署。 在任一情況下，可能需要幾分鐘的時間，被動部署才會執行並提供給使用者登入，因而導致服務停機一段時間。 此停機時間取決於啟動 RDS 基礎結構和 RDSH VM 所需的時間 (如果平行而非連續啟動 VM，通常為 2-4 分鐘)，以及讓被動叢集上線的時間 (視叢集大小而定，每個節點 2 個磁碟的雙節點叢集通常為 2-4 分鐘)。 
 
 ### <a name="active-directory"></a>Active Directory 
-在每個部署的 Active Directory 伺服器是在相同的樹系/網域內的複本。 Active Directory 有內建的同步處理通訊協定，將四個網域控制站同步。不過，可能有一些延遲，所以如果新的使用者新增至一部 AD 伺服器，可能需要一些時間才能跨兩個部署中的所有 AD 伺服器複寫。 因此，請務必嘗試加入網域之後，立即登入的使用者，即發出警告。 
+每個部署中的 Active Directory 伺服器都是相同樹系/網域內的複本。 Active Directory 具有內建同步處理通訊協定，以保持四個網域控制站同步。不過，可能會有一些延遲；如果新使用者加入一部 AD 伺服器，可能需要一些時間才能複寫到兩個部署中的所有 AD 伺服器。 因此，請務必警告使用者不要在加入網域之後立即嘗試登入。 
 
 ### <a name="rd-license-server"></a>RD 授權伺服器 
-提供[每個使用者 RD CAL](rds-client-access-license.md)為每個具名的使用者獲授權可存取異地備援的部署。 將每個使用者 Cal，平均分散給使用中的部署中的兩個 RD 授權伺服器。 然後，重複這些 Cal 給被動的部署中的兩個 RD 授權伺服器。 Cal 會主動和被動部署之間複製，因為在任何給定時間只能有一個部署可處於作用中與使用者連接;否則，您會違反授權合約。  
+為獲授權可存取異地備援部署的每位具名使用者，提供[每個使用者的 RD CAL](rds-client-access-license.md)。 將每個使用者的 CAL 平均散發到使用中部署的兩部 RD 授權伺服器。 然後，將這些 CAL 複製到被動部署的兩部 RD 授權伺服器。 由於 CAL 會在使用中部署與被動部署之間複製，因此在任何指定時間，只能有一個與使用者連線的使用中部署，否則會違反授權合約。  
 
 ### <a name="image-management"></a>映像管理 
-當您更新您的 RDSH 映像，來提供軟體更新或新的應用程式時，您將需要個別更新 RDSH 集合中每個部署維護這兩個部署間的共通的使用者經驗。 您可以使用[更新 RDSH 集合範本](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/)，但請注意，在被動部署 RDS 基礎結構和 RDSH Vm 必須執行來執行範本。 
+當您更新 RDSH 映像以來提供軟體更新或新的應用程式時，您需要個別更新每個部署中的 RDSH 集合以確保這兩個部署之間有共通的使用者體驗。 您可以使用 [Update RDSH collection](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/) (更新 RDSH 集合) 範本，但請注意，被動部署的 RDS 基礎結構和 RDSH VM 必須正在執行，才能執行範本。 
 
 ## <a name="failover"></a>容錯移轉
 
-在主動-被動部署的情況下容錯移轉會要求您開始次要部署的 Vm。 您可以手動方式或透過自動化指令碼。 在儲存空間直接存取 SOFS 的重大容錯移轉的情況下變更儲存體複本合作關係的方向，使目的地磁碟區會變成來源磁碟區。 例如: 
+在主動-被動部署情況下，容錯移轉需要您啟動次要部署的 VM。 您可以手動或透過自動化指令碼來執行這項操作。 在儲存空間直接存取 SOFS 的重大容錯移轉情況下，變更儲存體複本合作關係方向，讓目的地磁碟區成為來源磁碟區。 例如：
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"
    ```
 
-您可以深入[叢集對叢集儲存體複寫](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)。
+如需詳細資訊，請參閱[叢集對叢集儲存體複寫](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)。
 
-Azure 流量管理員會自動識別主要部署失敗，而且次要部署狀況良好 （在 RD 閘道 Vm 已啟動 RG B 中） 並將次要部署的使用者流量導向。 若要繼續其遠端資源，享有一致的體驗，使用者可以使用相同的流量管理員 URL。 請注意，用戶端 DNS 快取不會更新記錄在 Azure 流量管理員組態中設定的 TTL 期間。
+Azure 流量管理員會自動辨識主要部署失敗且次要部署狀況良好 (在 RG B 中已啟動 RD 閘道 VM)，並將使用者流量導向至次要部署。 使用者可以使用相同的流量管理員 URL 繼續在其遠端資源上工作，並享有一致的體驗。 請注意，用戶端 DNS 快取不會在 Azure 流量管理員設定中設定的 TTL 期間更新記錄。
 
 ### <a name="test-failover"></a>測試容錯移轉
-儲存體複本合作關係中只有一個磁碟區 （來源） 可以使用一次。 這表示當您切換 SR 合作關係的方向，主要的部署 (RG A) 中的磁碟區會變成目的地的複寫，並因此隱藏。 因此，連線到 RG 的任何使用者將不再有到他們的 Upd 中 RG A.SOFS 上儲存的存取 
+在儲存體複本合作關係中，一次只能有一個磁碟區 (來源) 使用中。 這表示當您切換 SR 合作關係方向時，主要部署 (RG A) 中的磁碟區會成為複寫的目的地而被隱藏。 因此，連線到 RG A 的任何使用者將無法再存取儲存在 RG A 中 SOFS 上的 UPD。 
 
 若要測試容錯移轉，同時允許使用者繼續登入：
-1. 在 RG B 中啟動的基礎結構 Vm 和 RDSH Vm
-2. 切換 SR 合作關係的方向 （叢集 b-s2d c 會變成來源磁碟區）。
-3. [停用端點](/azure/traffic-manager/traffic-manager-manage-endpoints#to-disable-an-endpoint)RG a Azure 流量管理員設定檔中以強制將流量導向至 或者 RG B.ATM、 使用 PowerShell 指令碼：
+1. 啟動 RG B 中的基礎結構 VM 和 RDSH VM。
+2. 切換 SR 合作關係方向 (cluster-b-s2d-c 變成來源磁碟區)。
+3. 在 Azure 流量管理員設定檔中[停用 RG A 的端點](/azure/traffic-manager/traffic-manager-manage-endpoints#to-disable-an-endpoint)，以強制 ATM 將流量導向至 RG B。或者，使用 PowerShell 指令碼：
 
    ```powershell
    Disable-AzureRmTrafficManagerEndpoint -Name publicIpA -Type AzureEndpoints -ProfileName MyTrafficManagerProfile -ResourceGroupName RGA -Force
    ```
 
-RG B 現在是作用中主要的部署。 若要切換回 RG A 作為主要的部署：
+RG B 現在是使用中的主要部署。 若要切換回 RG A 作為主要部署：
 
-1. 切換 SR 合作關係的方向 （叢集的 s2d c 會變成來源磁碟區）：
+1. 切換 SR 合作關係方向 (cluster-a-s2d-c 變成來源磁碟區)：
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-a-s2d-c" -SourceRGName "cluster-a-s2d-c" -DestinationComputerName "cluster-b-s2d-c" -DestinationRGName "cluster-b-s2d-c"
    ```
-2. 重新啟用 RG 的 Azure 流量管理員設定檔中的端點：
+2. 在 Azure 流量管理員設定檔中重新啟用 RG A 的端點：
 
    ```powershell
    Enable-AzureRmTrafficManagerEndpoint -Name publicIpA -Type AzureEndpoints -ProfileName MyTrafficManagerProfile -ResourceGroupName RGA 
    ```
 
-## <a name="considerations-for-on-premises-deployments"></a>在內部部署的考量
+## <a name="considerations-for-on-premises-deployments"></a>內部部署的考量
 
-雖然內部部署無法使用本文所提及的 Azure 快速入門範本，您可以手動實作基礎結構的所有角色。 在內部部署中成本不隨 Azure 耗用量，請考慮使用主動-主動模型更快速的容錯移轉。
+雖然內部部署無法使用本文所提及的 Azure 快速入門範本，但您可以手動實作所有基礎結構角色。 在成本不受 Azure 使用量影響的內部部署中，請考慮使用主動-主動模型以加速容錯移轉。
 
-您可以使用 Azure Traffic Manager 透過內部部署端點，但它需要 Azure 訂用帳戶。 或者，提供給終端使用者的 dns，讓他們只是將主要的部署使用者導向的 CNAME 記錄。 在容錯移轉的情況下修改重新導向到次要部署的 DNS CNAME 記錄。 如此一來，使用者會使用單一 URL，就像使用 Azure 流量管理員，可引導使用者適當的部署。 
+您可以對內部部署端點使用 Azure 流量管理員，但需要 Azure 訂用帳戶。 或者，對於提供給終端使用者的 DNS，給與直接將使用者導向至主要部署的 CNAME 記錄。 在容錯移轉情況下，修改 DNS CNAME 記錄以重新導向至次要部署。 如此一來，終端使用者就可以使用單一 URL (就像是使用 Azure 流量管理員)，將使用者導向至適當的部署。 
 
-如果您想要建立一個在內部部署-Azure-間模型時，請考慮使用[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)。
+如果您想要建立內部部署對 Azure 網站模型，請考慮使用 [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)。

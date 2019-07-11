@@ -1,6 +1,6 @@
 ---
-title: 遠端桌面用戶端的 URI 配置
-description: 了解的統一資源識別元配置的遠端桌面用戶端
+title: 遠端桌面用戶端 URI 配置
+description: 了解遠端桌面用戶端的統一資源識別項配置
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 86de6468e2fa45c976711aef43a1a274e04498d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2934fed43c8f4feec2f321d684cc3593933eb5d
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870499"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743859"
 ---
-# <a name="remote-desktop-client-universal-resource-identifier-uri-scheme-support"></a>遠端桌面用戶端通用資源識別元 (URI) 配置支援
+# <a name="remote-desktop-client-universal-resource-identifier-uri-scheme-support"></a>遠端桌面用戶端的統一資源識別項 (URI) 配置支援
 
->適用於：Windows Server，版本 1803、 Windows Server 2016 中，Windows Server 2012 R2
+>適用於：Windows Server 版本 1803、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 啟用「統一資源識別項」(URI) 配置可讓 IT 專業人員和開發人員整合各個平台的「遠端桌面」用戶端功能並增強使用者體驗，方法是允許： 
 
@@ -31,9 +31,9 @@ ms.locfileid: "59870499"
 - 使用者使用預先設定的 URL 來啟動遠端連線。
 
 >[!NOTE]
-> 使用 URI 來連線到 RD 用戶端不支援 Windows 作業系統-使用 MacOS、 iOS 和 Android 裝置的 URI。
+> Windows 作業系統不支援使用 URI 連線到 RD 用戶端 - 請搭配 MacOS、iOS 和 Android 裝置使用 URI。
 
-Microsoft 遠端桌面 」 使用 URI 配置 rdp: //query_string 來儲存啟動用戶端時所使用的預先設定的屬性設定。 查詢字串代表在 URL 中提供的單一或一組 RDP 屬性。 
+Microsoft 遠端桌面會使用 URI 配置 rdp://query_string 來儲存啟動用戶端時所使用的預先設定屬性設定。 查詢字串代表在 URL 中提供的單一或一組 RDP 屬性。 
 
 RDP 屬性以 & 符號分隔。 例如，連線到電腦時，該字串是：
 
@@ -45,33 +45,33 @@ rdp://full%20address=s:mypc:3389&audiomode=i:2&disable%20themes=i:1
 
 | **RDP 屬性**                                           | **Android** | **Mac** | **iOS** |
 |---------------------------------------------------------|---------|-----|-----|
-| allow desktop composition=i:<0 = i:&lt;0 或 1&gt;                    | x       | x   | x   |
-| 允許字型平滑處理 = i: < 0 或 1&gt;                         | x       | x   | x   |
-| 替代殼層 = s:&lt;字串&gt;                              | x       | x   | x   |
-| [audiomode = i:&lt;0、 1 或 2&gt;](https://technet.microsoft.com/library/ff393707.aspx)                                | x       | x   | x   |
-| [驗證層級 = i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393709.aspx)                         | x       | x   | x   |
-| 連接到主控台 = i:&lt;0 或 1&gt;                           | x       | x   | x   |
-| disable cursor = i:&lt;0 或 1&gt;                      | x       | x   | x   |
-| disable full window drag=i:<0 = i:&lt;0 或 1&gt;                     | x       | x   | x   |
-| disable menu anims=i:<0 = i:&lt;0 或 1&gt;                           | x       | x   | x   |
-| 停用主題 = i:&lt;0 或 1&gt;                               | x       | x   | x   |
-| disable wallpaper=i:<0 = i:&lt;0 或 1&gt;                            | x       | x   | x   |
+| allow desktop composition=i:&lt;0 或 1&gt;                    | x       | x   | x   |
+| allow font smoothing=i:<0 或 1&gt;                         | x       | x   | x   |
+| alternate shell=s:&lt;字串&gt;                              | x       | x   | x   |
+| [audiomode=i:&lt;0、1 或 2&gt;](https://technet.microsoft.com/library/ff393707.aspx)                                | x       | x   | x   |
+| [authentication level=i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393709.aspx)                         | x       | x   | x   |
+| connect to console=i:&lt;0 或 1&gt;                           | x       | x   | x   |
+| disable cursor settings=i:&lt;0 或 1&gt;                      | x       | x   | x   |
+| disable full window drag=i:&lt;0 或 1&gt;                     | x       | x   | x   |
+| disable menu anims=i:&lt;0 或 1&gt;                           | x       | x   | x   |
+| disable themes=i:&lt;0 或 1&gt;                               | x       | x   | x   |
+| disable wallpaper=i:&lt;0 或 1&gt;                            | x       | x   | x   |
 | [drivestoredirect=s:*](https://technet.microsoft.com/library/ff393728(v=ws.10).aspx) (這是唯一支援的值) | x       | x   |     |
-| [desktopheight = i:&lt;像素為單位的值&gt;](https://technet.microsoft.com/library/ff393702.aspx)                       |         | x   |     |
-| [desktopwidth = i:&lt;像素為單位的值&gt;](https://technet.microsoft.com/library/ff393697.aspx)                        |         | x   |     |
-| [網域 = s:&lt;字串&gt;](https://technet.microsoft.com/library/ff393673.aspx)                           | x | x | x |
-| [完整地址 = s:&lt;字串&gt;](https://technet.microsoft.com/library/ff393661.aspx)                     | x | x | x |
-| gatewayhostname = s:&lt;字串&gt;                  | x | x | x |
-| [gatewayusagemethod=i:1 = i:&lt;1 或 2&gt;](https://msdn.microsoft.com/aa381329.aspx)               | x | x | x |
-| [prompt for credentials on = i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393660(v=ws.10).aspx) |   | x |   |
-| [loadbalanceinfo = s:&lt;字串&gt;](https://technet.microsoft.com/library/ff393684.aspx)                  | x | x | x |
-| [redirectprinters=i:0 = i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393671(v=ws.10).aspx)                 |   | x |   |
-| remoteapplicationcmdline=s:&lt;string&gt;         | x | x | x |
-| remoteapplicationmode=i:<0 = i:&lt;0 或 1&gt;            | x | x | x |
-| remoteapplicationprogram=s:&lt;string&gt;         | x | x | x |
-| 殼層的工作目錄 = s:&lt;字串&gt;          | x | x | x |
-| 使用重新導向伺服器名稱 = i:&lt;0 或 1&gt;      | x | x | x |
-| [username = s:&lt;字串&gt;](https://technet.microsoft.com/library/ff393678.aspx)                         | x | x | x |
-| [screen mode id=i:<1 = i:&lt;1 或 2&gt;](https://technet.microsoft.com/library/ff393692.aspx)                   |   | x |   |
-| [session bpp=i:<8、15、16、24 = i:&lt;8、 15、 16、 24、 或 32&gt;](https://technet.microsoft.com/library/ff393680.aspx)        |   | x |   |
-| [use multimon=i:0 = i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393695(v=ws.10).aspx)          |   | x |   |
+| [desktopheight=i:&lt;以像素為單位的值&gt;](https://technet.microsoft.com/library/ff393702.aspx)                       |         | x   |     |
+| [desktopwidth=i:&lt;以像素為單位的值&gt;](https://technet.microsoft.com/library/ff393697.aspx)                        |         | x   |     |
+| [domain=s:&lt;字串&gt;](https://technet.microsoft.com/library/ff393673.aspx)                           | x | x | x |
+| [full address=s:&lt;字串&gt;](https://technet.microsoft.com/library/ff393661.aspx)                     | x | x | x |
+| gatewayhostname=s:&lt;字串&gt;                  | x | x | x |
+| [gatewayusagemethod=i:&lt;1 或 2&gt;](https://msdn.microsoft.com/aa381329.aspx)               | x | x | x |
+| [prompt for credentials on client=i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393660(v=ws.10).aspx) |   | x |   |
+| [loadbalanceinfo=s:&lt;字串&gt;](https://technet.microsoft.com/library/ff393684.aspx)                  | x | x | x |
+| [redirectprinters=i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393671(v=ws.10).aspx)                 |   | x |   |
+| remoteapplicationcmdline=s:&lt;字串&gt;         | x | x | x |
+| remoteapplicationmode=i:&lt;0 或 1&gt;            | x | x | x |
+| remoteapplicationprogram=s:&lt;字串&gt;         | x | x | x |
+| shell working directory=s:&lt;字串&gt;          | x | x | x |
+| Use redirection server name=i:&lt;0 或 1&gt;      | x | x | x |
+| [username=s:&lt;或&gt;](https://technet.microsoft.com/library/ff393678.aspx)                         | x | x | x |
+| [screen mode id=i:&lt;1 或 2&gt;](https://technet.microsoft.com/library/ff393692.aspx)                   |   | x |   |
+| [session bpp=i:&lt;8、15、16、24 或 32&gt;](https://technet.microsoft.com/library/ff393680.aspx)        |   | x |   |
+| [use multimon=i:&lt;0 或 1&gt;](https://technet.microsoft.com/library/ff393695(v=ws.10).aspx)          |   | x |   |

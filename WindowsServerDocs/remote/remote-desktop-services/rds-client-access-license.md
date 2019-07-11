@@ -1,6 +1,6 @@
 ---
-title: 使用用戶端存取使用權 (Cal) 授權您的 RDS 部署
-description: 在 遠端桌面服務中授權的用戶端的概觀。
+title: 使用用戶端存取使用權 (CAL) 授權您的 RDS 部署
+description: 在遠端桌面服務中授權的用戶端概觀。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,68 +13,67 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2018
 manager: dongill
-ms.openlocfilehash: 6648a52bb4d09725935a2197d6ce6fa6d8cc74a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0254c03396cba69a86eed021319ca2e2483ca625
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853439"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743861"
 ---
-# <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用用戶端存取使用權 (Cal) 授權您的 RDS 部署
+# <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用用戶端存取使用權 (CAL) 授權您的 RDS 部署
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-每個使用者和裝置連線到遠端桌面工作階段主機需要用戶端存取使用權 (CAL)。 您使用 RD 授權來安裝、 簽發以及追蹤 RDS Cal。  
+每個連線到遠端桌面工作階段主機的使用者和裝置都需要用戶端存取使用權 (CAL)。 您使用 RD 授權來安裝、發出及追蹤 RDS CAL。  
 
-當使用者或裝置連線到 RD 工作階段主機伺服器時，RD 工作階段主機伺服器會判斷是否需要 RDS CAL。 然後，RD 工作階段主機伺服器會向遠端桌面授權伺服器要求 RDS CAL。 適當的 RDS CAL 是否可向授權伺服器，RDS CAL 發行給用戶端，而且用戶端能夠連線到 RD 工作階段主機伺服器，以及從該處到桌上型電腦或他們想要使用的應用程式。
+當使用者或裝置連線到 RD 工作階段主機伺服器時，RD 工作階段主機伺服器會判斷是否需要 RDS CAL。 接著，RD 工作階段主機伺服器會向遠端桌面授權伺服器要求 RDS CAL。 如果授權伺服器可提供適當的 RDS CAL，就會發出 RDS CAL 給用戶端，用戶端即可連線到 RD 工作階段主機伺服器，並從該伺服器連線到其嘗試使用的桌面或應用程式。
 
-雖然沒有任何授權伺服器是必要的之後在寬限期結束後，用戶端必須具有有效的 RDS CAL，由授權伺服器，然後再發出, 授權寬限期他們可以登入 RD 工作階段主機伺服器。
+雖然系統會提供不需要任何授權伺服器的授權寬限期，不過當寬限期結束之後，用戶端就必須具有授權伺服器所發行的有效 RDS CAL，然後才能登入RD 工作階段主機伺服器。
 
-使用下列資訊以了解用戶端存取授權的運作方式在遠端桌面服務，以及部署和管理您的授權：
+使用下列資訊以了解用戶端存取使用權在遠端桌面服務的運作方式，並部署和管理您的授權：
 
-- [了解 Cal 模型](#understanding-the-cals-model)
-- [啟用授權伺服器](rds-activate-license-server.md)
-- [授權伺服器上安裝 RDS Cal](rds-install-cals.md)
-- [追蹤您的部署中使用的 Cal](rds-track-cals.md)
+- [使用用戶端存取使用權 (CAL) 授權您的 RDS 部署](#license-your-rds-deployment-with-client-access-licenses-cals)
+  - [了解 CAL 模型](#understanding-the-cals-model)
+  - [CAL 版本的注意事項](#note-about-cal-versions)
 
-## <a name="understanding-the-cals-model"></a>了解 Cal 模型
+## <a name="understanding-the-cals-model"></a>了解 CAL 模型
 
-有兩種類型的 Cal:
+CAL 有兩種類型：
 
-- RDS 每一裝置 Cal
-- RDS 每個使用者 Cal
+- RDS 每一裝置的 CAL
+- RDS 每位使用者的 CAL
 
-下表概述兩種 Cal 的類型之間的差異：
+下表概述兩種 CAL 類型之間的差異：
 
-| 每個裝置                                                     | 每位使用者                                                                         |
+| 每一裝置                                                     | 每位使用者                                                                         |
 |----------------------------------------------------------------|----------------------------------------------------------------------------------|
-| Cal 實際指派給每個裝置。                   | Cal 會指派給 Active Directory 中的使用者。                                 |
-| Cal 會追蹤由授權伺服器。                        | Cal 會追蹤由授權伺服器。                                          |
-| 可以追蹤 Cal，而不論 Active Directory 成員資格。 | Cal 無法追蹤在工作群組內。                                       |
-| 您可以撤銷 20%的 Cal。                              | 您無法撤銷任何 Cal。                                                      |
-| 暫存的 Cal 就能有效 52 – 89 天。                       | 無法使用暫存的 Cal。                                                |
-| 無法過度 Cal。                                  | （在遠端桌面授權合約的缺口），可以過度 Cal。 |
+| CAL 會以實體方式指派給每部裝置。                   | CAL 會指派給 Active Directory 中的使用者。                                 |
+| CAL 會由授權伺服器追蹤。                        | CAL 會由授權伺服器追蹤。                                          |
+| 不論是否具有 Active Directory 成員資格，都可追蹤 CAL。 | 無法在工作群組內追蹤 CAL。                                       |
+| 您可以撤銷最多 20% 的 CAL。                              | 您無法撤銷任何 CAL。                                                      |
+| 臨時的 CAL 有效期為 52-89 天。                       | 無法使用臨時的 CAL。                                                |
+| CAL 無法過度配置。                                  | CAL 可以過度配置 (違反遠端桌面授權合約)。 |
 
-當您使用每一裝置模型時，臨時的授權就會發出第一次裝置連線到 RD 工作階段主機。 第二次該裝置連線時，只要授權伺服器已啟用，而且有可用的 Cal，授權伺服器問題永久的 RDS 每一裝置 CAL。
+當您使用每一裝置模型時，臨時的授權會在裝置第一次連線到 RD 工作階段主機時發出。 該裝置第二次連線時，只要授權伺服器已啟用且有可用的 CAL，授權伺服器即會發出永久性 RDS 每一裝置的 CAL。
 
-當您使用的每個使用者模型時，授權會不會強制執行，而且從任何數目的裝置連線到 RD 工作階段主機的授權授與每個使用者。 授權伺服器會發出授權從可用的 CAL 集區或 Over-Used CAL 的集區。 您必須負責確保所有使用者擁有有效的授權，以及零 Over-Used Cal，您是在遠端桌面服務的授權條款的違規情形的否則為。
+使用每位使用者模型時不會施行授權，且每位使用者都會獲得授權，可從任何數量的裝置連線到 RD 工作階段主機。 授權伺服器會從可用 CAL 集區或超量使用的 CAL 集區發出授權。 您必須負責確保所有使用者都具備有效的授權，且不超量使用 CAL，否則即會違反遠端桌面服務授權條款。
 
-若要確保您符合遠端桌面服務的授權條款，追蹤的 RDS 每個使用者 Cal 數量在組織中使用，並確定有足夠每個使用者 Cal 的所有使用者的授權伺服器上安裝。
+若要確保遵循遠端桌面服務授權條款，請追蹤組織中所使用 RDS 每位使用者的 CAL，並確定在授權伺服器上為所有使用者安裝足夠的 RDS 每位使用者 CAL。
 
-您可以使用遠端桌面授權管理員，來追蹤及產生報告 RDS 每個使用者 Cal。
+您可以使用遠端桌面授權管理員來追蹤 RDS 每位使用者的 CAL 並產生報告。
 
 ## <a name="note-about-cal-versions"></a>CAL 版本的注意事項
 
-由使用者或裝置的 CAL 必須對應到使用者或裝置連接到的 Windows Server 的版本。 您無法存取較新的 Windows Server 版本中，使用較舊的 Cal，但您可以存取舊版的 Windows Server 使用較新的 Cal。
+由使用者或裝置使用的 CAL 必須對應於使用者或裝置所連線 Windows Server 版本。 您無法使用舊 CAL 來存取較新的 Windows Server 版本，但您可以新 CAL 來存取較舊的 Windows Server 版本。
 
-下表顯示相容 RD 工作階段主機及 RD 虛擬化主機的 Cal。
+下表顯示與 RD 工作階段主機及 RD 虛擬主機相容的 CAL。
 
-|                  |2008 R2 和較早的 CAL|2012 CAL|2016 CAL|2019 的 CAL|
+|                  |2008 R2 和較舊的 CAL|2012 CAL|2016 CAL|2019 CAL|
 |---------------------------------|--------|--------|--------|--------|
-| **2008、 2008 R2 授權伺服器**| 是    | 否     | 否     | 否     |
+| **2008、2008 R2 授權伺服器**| 是    | 否     | 否     | 否     |
 | **2012 授權伺服器**         | 是    | 是    | 否     | 否     |
 | **2012 R2 授權伺服器**      | 是    | 是    | 否     | 否     |
 | **2016 授權伺服器**         | 是    | 是    | 是    | 否     |
 | **2019 授權伺服器**         | 是    | 是    | 是    | 是    |
 
-任何 RDS 授權伺服器可以裝載來自所有舊版的遠端桌面服務 」 和 「 遠端桌面服務的目前版本的授權。 比方說，Windows Server 2016 RDS 授權伺服器可以裝載來自所有舊版的 RDS，授權，而 Windows Server 2012 R2 RDS 授權伺服器只能裝載至 Windows Server 2012 R2 的授權。
+任何 RDS 授權伺服器都可以裝載所有舊版遠端桌面服務的授權，以及最新版遠端桌面服務的授權。 例如，Windows Server 2016 RDS 授權伺服器可以裝載所有舊版 RDS 的授權，而 Windows Server 2012 R2 RDS 授權伺服器只能裝載最高到 Windows Server 2012 R2 的授權。

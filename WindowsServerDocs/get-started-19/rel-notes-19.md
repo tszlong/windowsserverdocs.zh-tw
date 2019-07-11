@@ -1,6 +1,6 @@
 ---
-title: 版本資訊-Windows Server 2019 的重要問題
-description: 摘要說明需要因應措施以避免損毀，還是懸置安裝失敗，以及資料遺失的重要問題
+title: 版本資訊 - Windows Server 2019 的重要問題
+description: 摘要說明需要因應措施以避免損毀、停止回應、安裝失敗和資料遺失的重要問題
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -11,28 +11,28 @@ manager: jasgroce
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.openlocfilehash: 515255c301d343aa1b83bcfb506f2e3baa6ca969
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810736"
 ---
-# <a name="release-notes---important-issues-in-windows-server-2019"></a>版本資訊-Windows Server 2019 的重要問題
+# <a name="release-notes---important-issues-in-windows-server-2019"></a>版本資訊 - Windows Server 2019 的重要問題
 
 >適用於：Windows Server 2019
 
-這些版本資訊摘要說明在 Windows Server 2019 作業系統，包括如何避免或解決問題，如果已知中最重要的問題。 設計變更、 新功能，並在此版本中修正的相關資訊，請參閱[What's New in Windows Server 2019](whats-new-19.md)和特定功能小組的通知。 除非另外指定，否則每個回報的問題適用於所有版本和安裝選項的 Windows Server 2019。  
+這些版本資訊摘要說明 Windows Server 2019 作業系統中最重要的問題，包括可避免或暫時解決問題 (如果已知) 的方式。 如需這個版本的設計變更、新功能及修正資訊，請參閱 [Windows Server 2019 新功能](whats-new-19.md)和特定功能小組的通知。 除非另有說明，否則這其中每個回報的問題都適用於 Windows Server 2019 所有版本和安裝選項。  
 
 本文件將持續更新。 發現有需要採取因應措施的重大問題時，就會將它們加入，而在有新的因應措施和修正程式時也會加入。  
 
 ## <a name="release-notes"></a>版本資訊
 
-下列已知的問題會在 Windows Server 2019。
+下列是 Windows Server 2019 的已知問題。
 
 | 標題         | 描述                            |
 | -----         | -----------                            |
-| 在伺服器安裝期間安裝選項 功能表已截斷德文文字 | 當從德文伺服器媒體執行安裝程式，在作業系統選取視窗標題，[選取您想要安裝作業系統] 桌面體驗安裝選項的描述就會有遺漏及不正確字元結尾處句子。 這是它應該會出現完整德文的文字。<br/>      <br/>`Durch diese Option wird die vollständige grafische Umgebung von Windows installiert, wodurch zusätzlicher Speicherplatz verbraucht wird. Sie kann hilfreich sein, wenn Sie den Windows-Desktop verwenden möchten oder über eine App verfügen, die die grafische Umgebung benötigt.` <br><br>這只會影響德文發表公用可用性的 Windows Server 2019、 Windows Server、 版本 1809 和 Microsoft HYPER-V Server 2019 的媒體。|
-| Windows Server 的 Windows Server 版 1809年安裝期間不正確的商標影像 | 適用於 Windows Server，版本 1809，安裝程式體驗期間背景上的映像一些初始畫面所示&quot;Windows Server 2019&quot;。  因為 Windows server，版本 1709年和 1803，這應該只說&quot;Windows Server&quot;。  沒有其他影響在產品中，其他地方，並不會影響 Windows Server 2019 產品。  在 Windows server 版 1809，只能存取大量授權服務中心的大量授權客戶可以使用安裝期間，問題在於限於這一個映像。<br/> |
+| 伺服器安裝期間的安裝選項功能表已截斷德文文字 | 從德文伺服器媒體執行安裝程式時，在標題為 [選取您要安裝的作業系統] 的作業系統選取視窗上，桌面體驗安裝選項描述的句子結尾處將會有遺漏和不正確字元。 以下是應該出現的完整德文文字。<br/>      <br/>`Durch diese Option wird die vollständige grafische Umgebung von Windows installiert, wodurch zusätzlicher Speicherplatz verbraucht wird. Sie kann hilfreich sein, wenn Sie den Windows-Desktop verwenden möchten oder über eine App verfügen, die die grafische Umgebung benötigt.` <br><br>這只會影響 Windows Server 2019、Windows Server 1809 版和 Microsoft Hyper-V Server 2019 公開運作時所發行的德文媒體。|
+| Windows Server 1809 版安裝期間的 Windows Server 商標影像不正確 | 在 Windows Server 1809 版的安裝體驗期間，某些初始畫面上的背景影像顯示 &quot;Windows Server 2019&quot;。  如同 Windows Server 1709 和 1803 版，這應該只顯示 &quot;Windows Server&quot;。  這不會對產品中的任何其他地方造成其他影響，也不會影響 Windows Server 2019 產品。  此問題僅限於 Windows Server 1809 版安裝期間的這個影像，並只適用於存取大量授權服務中心的大量授權客戶。<br/> |
 
 ### <a name="copyright"></a>著作權
 
