@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: 如何部署工作資料夾，包括安裝伺服器角色、建立同步共用和建立 DNS 記錄。
-ms.openlocfilehash: 1ed26c9949fa3f4b53b9f650ca5a3649d5261d65
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447857"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792345"
 ---
 # <a name="deploying-work-folders"></a>部署工作資料夾
 
@@ -51,7 +51,7 @@ ms.locfileid: "66447857"
 ## <a name="step-2-create-dns-records"></a>步驟 2：建立 DNS 記錄  
  若要允許使用者透過網際網路進行同步，您必須在公用 DNS 中建立主機 (A) 記錄，以便允許網際網路用戶端解析工作資料夾 URL。 這個 DNS 記錄應該解析至反向 Proxy 伺服器的外部介面。  
   
- 在您的內部網路上，於 DNS 命名的工作資料夾中建立 CNAME 記錄，其解析到工作資料夾伺服器的 FDQN。 工作資料夾的用戶端會使用自動搜索，用來探索工作資料夾伺服器的 URL 是 https://workfolders.domain.com。 如果您打算使用自動探索，工作資料夾 CNAME 記錄必須存在於 DNS 中。  
+ 在您的內部網路上，於 DNS 命名的工作資料夾中建立 CNAME 記錄，其解析到工作資料夾伺服器的 FDQN。 工作資料夾的用戶端會使用自動搜索，用來探索工作資料夾伺服器的 URL 是 https:\//workfolders.domain.com。 如果您打算使用自動探索，工作資料夾 CNAME 記錄必須存在於 DNS 中。  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>步驟 3：在檔案伺服器上安裝工作資料夾  
  您可以使用伺服器管理員或 Windows PowerShell，在本機或透過網路從遠端，於加入網域的伺服器上安裝工作資料夾。 如果您要在網路上設定多個同步伺服器，這個方法很有用。  
@@ -110,7 +110,7 @@ Add-WindowsFeature FS-SyncShareService
 
 4.  在 [建立群組]  視窗內的 [群組]  區段中，指定下列設定：
 
-    -   在 [群組名稱]  中，輸入安全性群組的名稱，例如：HR Sync Share Users 或 **Work Folders Administrators**。  
+    -   在 [群組名稱]  中，輸入安全性群組的名稱，例如：**HR Sync Share Users** 或 **Work Folders Administrators**。  
   
     -   在 [群組領域]  中，按一下 [安全性]  ，然後按一下 [全域]  。  
   
@@ -251,7 +251,7 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
 6.  在 [要新增的值]  方塊中，輸入想要此使用者與其同步的同步伺服器 URL，依序按一下 [新增]  、[確定]  ，然後再按一下 [確定]  。  
   
     > [!NOTE]
-    >  同步伺服器 URL 只是 `https://` 或 `http://` (取決於是否想要求安全連線)，後面是同步伺服器的完整網域名稱。 例如， **https://sync1.contoso.com** 。
+    >  同步伺服器 URL 只是 `https://` 或 `http://` (取決於是否想要求安全連線)，後面是同步伺服器的完整網域名稱。 例如， **https:\//sync1.contoso.com**。
 
 若要填入多個使用者的屬性，請使用 Active Directory PowerShell。 下面是為 *HR Sync Share Users* 群組的所有成員填入屬性的範例，在步驟 5 中已討論過。
   
