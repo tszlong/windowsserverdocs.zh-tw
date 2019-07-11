@@ -4,16 +4,16 @@ description: 已知的問題與疑難排解支援儲存體移轉服務，例如�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 05/14/2019
+ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: e1cfd2b0ea3bc4d7802cb4a6d2a8c1493d5511a1
-ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.openlocfilehash: 08156a09491d66016b5fcfe6056ed318d682b987
+ms.sourcegitcommit: 514d659c3bcbdd60d1e66d3964ede87b85d79ca9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65699690"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735165"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體移轉服務的已知問題
 
@@ -130,7 +130,7 @@ Windows Server 2019 的未來版本中，我們已修正此問題。
   使用者：        網路服務的電腦： srv1.contoso.com 描述：
 
   [錯誤] 02/26/2019-09:00:04.860 傳輸錯誤\\srv1.contoso.com\public\indy.png:（5） 存取遭拒。
-堆疊追蹤： 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.OpenFile （字串的檔名、 DesiredAccess desiredAccess、 ShareMode shareMode、 CreationDisposition creationDisposition、 FlagsAndAttributes flagsAndAttributes）在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile （FileInfo 檔案） 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile （字串路徑）在 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer() Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo()Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer() [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs::TryTransfer::55]
+堆疊追蹤： 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.OpenFile （字串的檔名、 DesiredAccess desiredAccess、 ShareMode shareMode、 CreationDisposition creationDisposition、 FlagsAndAttributes flagsAndAttributes）在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile （FileInfo 檔案） 在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile （字串路徑）在 [在 Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer() Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo()Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer() [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs::TryTransfer::55]
 
 
 這個問題被因為其中備份特殊權限不正在叫用的移轉儲存體服務中的程式碼缺失。 
@@ -173,12 +173,39 @@ DFSR 偵錯記錄檔：
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>錯誤 「 無法移轉儲存體上的任何端點 」 時正在傳輸，從 Windows Server 2008 R2
 
-嘗試將從 Windows Server 2008 R2 的來源電腦傳送資料時，沒有資料 trasnfers，您會收到錯誤訊息：  
+嘗試將從 Windows Server 2008 R2 的來源電腦傳送資料時，沒有資料傳輸，而且您會收到錯誤訊息：  
 
   無法傳送儲存體的任何端點。
 0x9044
 
 如果您的 Windows Server 2008 R2 電腦不已套用所有重大和重要更新，從 Windows Update，預期此錯誤。 無論儲存體移轉服務，仍一律建議修補 Windows Server 2008 R2 的電腦，基於安全考量，因為該作業系統並不包含較新版本的 Windows Server 的安全性改進功能。
+
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>錯誤 「 無法移轉儲存體上的任何端點 」 和 「 檢查來源裝置已上線-是否無法存取它。 」
+
+嘗試將資料從來源電腦傳送時，部分或所有共用不會傳送，並摘要的錯誤：
+
+   無法傳送儲存體的任何端點。
+0x9044
+
+檢查 SMB 傳輸詳細資料會顯示錯誤：
+
+   請檢查來源裝置已上線-是否無法存取它。
+
+檢查 StorageMigrationService/系統管理事件記錄檔會顯示：
+
+   無法移轉儲存體。
+
+   作業：Job1 識別碼：  
+   狀態：失敗的錯誤：36931 出現錯誤訊息： 
+
+   指引：請查看詳細的錯誤，並確定符合傳輸需求。 傳送工作無法傳送的任何來源和目的地電腦。 這可能是因為協調器電腦無法連線到任何來源或目的地的電腦，可能是因為防火牆規則，或缺少權限。
+
+檢查 StorageMigrationService Proxy/偵錯記錄檔會顯示：
+
+   [錯誤] 07/02/2019-13:35:57.231 傳輸驗證失敗。 錯誤碼：40961，來源端點不可以連線，或不存在，或來源的認證不正確，或已驗證的使用者沒有足夠的存取權限。
+在 Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate() 在 Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest （FileTransferRequest fileTransferRequest、 Guid operationId）   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
+
+如果您移轉的帳戶並沒有至少預期此錯誤的 SMB 共用的讀取存取權限。 若要解決這個錯誤，請新增安全性群組，其中包含來源電腦上的 SMB 共用來源移轉帳戶，並授與讀取、 變更或完全控制。 在移轉完成之後，您可以移除此群組。 Windows Server 的未來版本可能會改變此行為，所以不再需要來源共用的明確權限。
 
 ## <a name="see-also"></a>另請參閱
 
