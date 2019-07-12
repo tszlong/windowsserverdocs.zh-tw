@@ -34,7 +34,7 @@ ms.locfileid: "67792267"
   
 伺服器發佈規則會決定伺服器發佈的運作方式 — 基本上，篩選通過 ISA Server 電腦的所有連入和連出要求。 伺服器發佈規則將連入用戶端要求對應至適當的 ISA Server 電腦背後的伺服器。 如需有關如何設定 ISA Server 以發佈伺服器的資訊，請參閱 <<c0> [ 建立安全網頁發佈規則](https://go.microsoft.com/fwlink/?LinkId=75182)。  
   
-在 AD FS 的同盟世界中，這些用戶端要求通常對特定 URL 提出，例如，同盟伺服器的識別項 URL，例如 http:\//fs.fabrikam.com。 因為這些用戶端要求，會在來自網際網路的網際網路\-對向防火牆伺服器必須設定為發佈的同盟伺服器的識別項 URL 以供部署在周邊網路中每部同盟伺服器 proxy。  
+在 AD FS 的同盟世界中，這些用戶端要求通常對特定 URL 提出，例如，同盟伺服器的識別項 URL，例如 http:\//fs.fabrikam.com 。 因為這些用戶端要求，會在來自網際網路的網際網路\-對向防火牆伺服器必須設定為發佈的同盟伺服器的識別項 URL 以供部署在周邊網路中每部同盟伺服器 proxy。  
   
 ### <a name="configuring-isa-server-to-allow-ssl"></a>設定 ISA Server 以允許 SSL  
 若要促進安全的 AD FS 通訊，您必須設定 ISA Server 以允許安全通訊端層\(SSL\)下列之間的通訊：  

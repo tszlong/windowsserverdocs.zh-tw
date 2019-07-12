@@ -72,7 +72,7 @@ Windows Server 2012 R2 中的 active Directory Federation Services (AD FS) 會�
 
 -   MFA 的設定和方法
 
--   是否已啟用裝置驗證。 如需詳細資訊，請參閱 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+-   是否已啟用裝置驗證。 如需詳細資訊，請參閱 [從任何裝置加入工作地點，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 每個信賴憑證者信任驗證原則會特別套用以嘗試存取該特定信賴憑證者信任 (應用程式或服務)。 您可以在每個信賴憑證者信任驗證原則中設定下列設定：
 
