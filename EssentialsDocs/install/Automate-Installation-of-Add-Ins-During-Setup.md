@@ -24,7 +24,7 @@ ms.locfileid: "66433639"
 >適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
 
 ##  <a name="BKMK_AddIns"></a> 在安裝期間自動安裝的增益集  
- 要在安裝期間安裝增益集，可以使用本文件中 [Create the PostIC.cmd File for Running Post Initial Configuration Tasks](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) 一節中說明的 PostIC.cmd 方法進行。  
+ 要在安裝期間安裝增益集，可以使用本文件中 [建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) 一節中說明的 PostIC.cmd 方法進行。  
   
  將下列項目新增到您的 PostIC.cmd：  
   

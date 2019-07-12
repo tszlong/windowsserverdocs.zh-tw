@@ -1,6 +1,6 @@
 ---
 ms.assetid: ddfbbda3-30ca-4537-af12-667efc6f63ff
-title: Configure Additional Authentication Methods for AD FS
+title: 設定 AD FS 的其他驗證方法
 description: ''
 author: billmath
 ms.author: billmath
@@ -16,7 +16,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 05/24/2019
 ms.locfileid: "66189786"
 ---
-# <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure Additional Authentication Methods for AD FS
+# <a name="configure-additional-authentication-methods-for-ad-fs"></a>設定 AD FS 的其他驗證方法
 
 若要啟用多因素驗證 (MFA)，您必須選取至少一個其他驗證方法。 根據預設，在 Windows Server 2012 r2 中的 Active Directory Federation Services (AD FS) 您可以選取憑證驗證 （亦即，智慧卡為基礎的驗證） 作為其他驗證方法。
 
