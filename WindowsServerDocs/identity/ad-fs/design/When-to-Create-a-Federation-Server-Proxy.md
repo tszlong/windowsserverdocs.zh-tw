@@ -28,10 +28,10 @@ ms.locfileid: "66190642"
   
 同盟伺服器 proxy 在貴組織中所扮演的角色，取決於是否您放置同盟伺服器 proxy 帳戶夥伴組織中或資源夥伴組織中。 比方說，在帳戶夥伴的周邊網路中放置同盟伺服器 proxy，其角色是從瀏覽器用戶端收集使用者認證資訊。 資源夥伴的周邊網路中放置同盟伺服器 proxy，它會轉送安全性權杖要求資源同盟伺服器，並產生組織的安全性權杖中所提供的安全性權杖的回應其帳戶夥伴。  
   
-如需詳細資訊，請參閱 [Review the Role of the Federation Server Proxy in the Account Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md) 和 [Review the Role of the Federation Server Proxy in the Resource Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
+如需詳細資訊，請參閱 <<c0> [ 檢閱帳戶夥伴中的同盟伺服器 proxy 角色](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)和[檢閱資源夥伴中的同盟伺服器 proxy 角色](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
   
 ## <a name="how-to-create-a-federation-server-proxy"></a>如何建立同盟伺服器 Proxy  
-您可以建立同盟伺服器 proxy 使用 AD FS 同盟伺服器 Proxy 設定精靈或 Fsconfig.exe 命令\-列工具。 如需有關如何執行這項操作的指示，請參閱 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。  
+您可以建立同盟伺服器 proxy 使用 AD FS 同盟伺服器 Proxy 設定精靈或 Fsconfig.exe 命令\-列工具。 如需有關如何執行這項操作的指示，請參閱[同盟伺服器 Proxy 角色設定的電腦](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。  
   
 如需如何設定所有必要條件部署同盟伺服器 proxy 所需的一般資訊，請參閱[檢查清單：設定同盟伺服器 Proxy](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
   

@@ -29,9 +29,9 @@ ms.locfileid: "66190595"
 ## <a name="determine-the-organizational-role-for-the-federation-server"></a>決定同盟伺服器的組織角色  
 若要讓建立新的同盟伺服器的時機做出明智的決策，您必須先判斷伺服器所在位置的所在的組織。 在組織中的同盟伺服器所扮演的角色，取決於是否您伺服器的放置同盟帳戶夥伴組織中或資源夥伴組織中。  
   
-同盟伺服器放置在帳戶夥伴的公司網路，其角色時驗證使用者的認證瀏覽器、 Web 服務或身分識別選取器用戶端，並將安全性權杖傳送至用戶端。 如需詳細資訊，請參閱＜ [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)＞。  
+同盟伺服器放置在帳戶夥伴的公司網路，其角色時驗證使用者的認證瀏覽器、 Web 服務或身分識別選取器用戶端，並將安全性權杖傳送至用戶端。 如需詳細資訊，請參閱 <<c0> [ 檢閱帳戶夥伴中的同盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)。  
   
-在資源夥伴的公司網路中放置同盟伺服器，其角色是在驗證使用者，在資源夥伴組織的同盟伺服器所發出之安全性權杖為基礎，或其角色為從權杖的要求重新導向設定 Web 應用程式或 Web 服務與用戶端屬於帳戶夥伴組織。 如需詳細資訊，請參閱 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
+在資源夥伴的公司網路中放置同盟伺服器，其角色是在驗證使用者，在資源夥伴組織的同盟伺服器所發出之安全性權杖為基礎，或其角色為從權杖的要求重新導向設定 Web 應用程式或 Web 服務與用戶端屬於帳戶夥伴組織。 如需詳細資訊，請參閱 <<c0> [ 檢閱資源夥伴中的同盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>判斷要部署哪一種 AD FS 設計  
 每當您想要部署任何下列的 AD FS 設計時，您可以建立您組織中的同盟伺服器：  
@@ -66,13 +66,13 @@ ms.locfileid: "66190595"
   
 -   在同盟伺服器陣列中建立第一部同盟伺服器  
   
-    如需如何設定第一部同盟伺服器，或將同盟伺服器加入至伺服陣列的詳細資訊，請參閱＜ [Create the First Federation Server in a Federation Server Farm](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md)＞。  
+    如需如何設定第一部同盟伺服器或同盟伺服器加入伺服器陣列的詳細資訊，請參閱[同盟伺服器陣列中建立第一部同盟伺服器](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md)。  
   
 -   新增同盟伺服器到同盟伺服器陣列  
   
-    如需如何將同盟伺服器加入至伺服陣列的詳細資訊，請參閱＜ [Add a Federation Server to a Federation Server Farm](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)＞。  
+    如需如何將同盟伺服器新增至伺服器陣列的詳細資訊，請參閱[新增至同盟伺服器陣列的同盟伺服器](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)。  
   
-如需其中每一個選項之運作方式的更詳細資訊，請參閱＜ [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)＞。  
+如需詳細的每一種選項之運作方式的相關資訊，請參閱[The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
 如需如何設定的先決條件以部署同盟伺服器所需的詳細資訊，請參閱[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
   
