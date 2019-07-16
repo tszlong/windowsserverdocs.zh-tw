@@ -78,7 +78,7 @@ ms.locfileid: "66433305"
 |視訊串流處理品質|下拉式箭頭可讓您選擇從伺服器播放之視訊的視訊串流處理品質。|  
 |媒體櫃|顯示媒體櫃的名稱。 媒體櫃的預設名稱叫做 [數位媒體櫃]  ，這是在您開啟媒體串流處理時所建立。 若要變更媒體櫃名稱，請參閱[重新命名媒體櫃](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_8)。 您可以按一下 [自訂]  來自訂在媒體櫃中共用的資料夾。|  
   
- 如需詳細資訊，請參閱 [Allow or restrict access to a media library on the server](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6) 和 [Sharing copy-protected media](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5)。  
+ 如需詳細資訊，請參閱 [ 允許或限制存取伺服器上的媒體櫃](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)並[共用禁止複製的媒體](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5)。  
   
 ##  <a name="BKMK_3"></a> 媒體串流處理的運作方式  
  媒體串流處理 Windows Server Essentials 中的功能可讓網路電腦和一些網路數位媒體裝置播放儲存在伺服器的數位媒體檔案。  

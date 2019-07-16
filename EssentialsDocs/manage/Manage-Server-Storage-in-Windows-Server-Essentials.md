@@ -234,7 +234,7 @@ ms.locfileid: "66433234"
   
 3. 遵循指示以完成精靈。  
   
-   如需增加儲存集區容量的相關資訊，請參閱 [Use the new hard drive to increase storage pool capacity](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)。  
+   如需增加儲存集區容量的詳細資訊，請參閱 [ 使用新硬碟增加儲存集區容量](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)。  
   
 ## <a name="see-also"></a>另請參閱  
   
