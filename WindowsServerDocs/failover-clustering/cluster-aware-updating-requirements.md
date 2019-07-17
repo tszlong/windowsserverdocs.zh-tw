@@ -94,7 +94,7 @@ CAU 要求您必須安裝「容錯移轉叢集」功能與「容錯移轉叢集�
 > [!NOTE]  
 > 當「 **Remote Shutdown** 」Windows 防火牆規則群組與針對 Windows 防火牆設定的群組原則設定衝突時，您無法將它啟用。    
 
-**遠端關機**防火牆規則群組也會啟用指定 **– EnableFirewallRules**執行下列 CAU cmdlet 時的參數：Add-CauClusterRole、[Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/Invoke-CauRun?view=win10-ps) 和 [SetCauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Set-CauClusterRole?view=win10-ps)。  
+**遠端關機**防火牆規則群組也會啟用指定 **– EnableFirewallRules**執行下列 CAU cmdlet 時的參數：[Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps)、[Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/Invoke-CauRun?view=win10-ps) 和 [SetCauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Set-CauClusterRole?view=win10-ps)。  
 
 下列 PowerShell 範例會顯示啟用自動重新啟動叢集節點上的其他方法。  
 
