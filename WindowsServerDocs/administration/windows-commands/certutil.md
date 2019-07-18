@@ -1,6 +1,6 @@
 ---
 title: certutil
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,185 +13,185 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a602472d30f19cb2d4a802423635e5788e78a43
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3bc1e544c0e0684678bc168f286b52e5573f3ac2
+ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434549"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300689"
 ---
 # <a name="certutil"></a>certutil
 
-Certutil.exe 是命令列程式所安裝憑證服務的一部分。 您可以使用 Certutil.exe 來傾印和顯示憑證授權單位 (CA) 設定資訊，請設定憑證服務備份和還原 CA 元件，請確認憑證、 金鑰組和憑證鏈結。
+Certutil 是安裝為憑證服務一部分的命令列程式。 您可以使用 Certutil 來傾印和顯示憑證授權單位單位 (CA) 設定資訊、設定憑證服務、備份和還原 CA 元件, 以及驗證憑證、金鑰組和憑證鏈。
 
-未包含其他參數的憑證授權單位上執行 certutil 時，它會顯示目前的憑證授權單位設定。 當 cerutil 非憑證授權單位上執行時，此命令會預設為執行 certutil [-傾印](#-dump)動詞命令。
+當 certutil 在沒有其他參數的憑證授權單位單位上執行時, 它會顯示目前的憑證授權單位單位設定。 在非憑證授權單位單位上執行 cerutil 時, 此命令預設為執行 certutil [-](#-dump)傾印動詞。
 
 > [!WARNING]
-> 舊版的 certutil 可能不會提供所有這份文件中所述的選項。 您可以看到所有選項提供執行命令所示的特定版本的 certutil[語法標記法](#syntax-notations)一節。
+> 較早版本的 certutil 可能無法提供本檔中所述的所有選項。 您可以藉由執行[語法標記法](#syntax-notations)一節中所示的命令, 查看特定版本的 certutil 所提供的所有選項。
 
 ## <a name="menu"></a>功能表
 
-本文件中的主要區段是：
+本檔的主要章節包括:
 
-- [Verbs](#verbs)
+- [之外](#verbs)
 - [語法標記法](#syntax-notations)
 - [選項](#options)
-- [其他的 certutil 範例](#additional-certutil-examples)
+- [其他 certutil 範例](#additional-certutil-examples)
 
 ## <a name="verbs"></a>動詞
 
-下表說明可以使用 certutil 命令中使用的動詞命令。
+下表描述可搭配 certutil 命令使用的動詞。
 
 |動詞|描述|
 |-----|-----------|
-|[-dump](#-dump)|傾印組態資訊或檔案|
-|[-asn](#-asn)|剖析 ASN.1 檔案|
+|[-傾印](#-dump)|傾印設定資訊或檔案|
+|[-asn](#-asn)|剖析 ASN 1 檔案|
 |[-decodehex](#-decodehex)|解碼十六進位編碼的檔案|
-|[-decode](#-decode)|解碼 Base64 編碼的檔案|
-|[-encode](#-encode)|將檔案編碼為 Base64|
-|[-deny](#-deny)|拒絕擱置的憑證要求|
-|[-resubmit](#-resubmit)|重新提交擱置的憑證要求|
-|[-setattributes](#-setattributes)|設定擱置的憑證要求的屬性|
-|[-setextension](#-setextension)|設定擱置的憑證要求的擴充功能|
+|[-解碼](#-decode)|將 Base64 編碼的檔案解碼|
+|[-編碼](#-encode)|將檔案編碼為 Base64|
+|[-拒絕](#-deny)|拒絕擱置中的憑證要求|
+|[-重新提交](#-resubmit)|重新提交擱置中的憑證要求|
+|[-setattributes](#-setattributes)|設定擱置中憑證要求的屬性|
+|[-setextension](#-setextension)|設定擱置中憑證要求的延伸模組|
 |[-revoke](#-revoke)|撤銷憑證|
-|[-isvalid](#-isvalid)|顯示的處置目前的憑證。|
-|[-getconfig](#-getconfig)|取得預設的組態字串|
-|[-ping](#-ping)|嘗試連絡 Active Directory 憑證服務要求的介面|
-|-pingadmin|嘗試連絡 Active Directory 憑證服務系統管理員介面|
-|[-CAInfo](#-cainfo)|顯示的憑證授權單位的相關資訊|
-|[-ca.cert](#-cacert)|擷取憑證授權單位的憑證|
-|[-ca.chain](#-cachain)|擷取憑證授權單位的憑證鏈結|
+|[-isvalid](#-isvalid)|顯示目前憑證的處置|
+|[-getconfig](#-getconfig)|取得預設設定字串|
+|[-ping](#-ping)|嘗試聯絡 Active Directory 憑證服務要求介面|
+|-pingadmin|嘗試聯絡 Active Directory 憑證服務管理介面|
+|[-CAInfo](#-cainfo)|顯示憑證授權單位單位的相關資訊|
+|[-ca cert](#-cacert)|取得憑證授權單位單位的憑證|
+|[-ca. 鏈](#-cachain)|取得憑證授權單位單位的憑證鏈|
 |[-GetCRL](#-getcrl)|取得憑證撤銷清單 (CRL)|
-|[-CRL](#-crl)|發佈新的憑證撤銷清單 (Crl) [或 delta Crl]|
-|[-shutdown](#-shutdown)|關閉 Active Directory 憑證服務|
-|[-installCert](#-installcert)|安裝憑證授權單位憑證|
-|[-renewCert](#-renewcert)|更新憑證授權單位憑證|
-|[-schema](#-schema)|傾印憑證的結構描述|
-|[-view](#-view)|傾印憑證檢視|
-|[-db](#-db)|將未經處理的資料庫傾印|
+|[-CRL](#-crl)|發佈新的憑證撤銷清單 (Crl) [或僅限 delta Crl]|
+|[-關機](#-shutdown)|關閉 Active Directory 憑證服務|
+|[-installCert](#-installcert)|安裝憑證授權單位單位憑證|
+|[-renewCert](#-renewcert)|更新憑證授權單位單位憑證|
+|[-架構](#-schema)|傾印憑證的架構|
+|[-view](#-view)|傾印憑證視圖|
+|[-db](#-db)|傾印原始資料庫|
 |[-deleterow](#-deleterow)|從伺服器資料庫刪除資料列|
-|[-backup](#-backup)|備份 Active Directory 憑證服務|
+|[-備份](#-backup)|備份 Active Directory 憑證服務|
 |[-backupDB](#-backupdb)|備份 Active Directory 憑證服務資料庫|
-|[-backupKey](#-backupkey)|備份 Active Directory 憑證服務的憑證和私密金鑰|
+|[-backupKey](#-backupkey)|備份憑證服務憑證和私密金鑰 Active Directory|
 |[-restore](#-restore)|還原 Active Directory 憑證服務|
 |[-restoreDB](#-restoredb)|還原 Active Directory 憑證服務資料庫|
-|[-restoreKey](#-restorekey)|還原 Active Directory 憑證服務的憑證和私密金鑰|
+|[-restoreKey](#-restorekey)|還原 Active Directory 憑證服務憑證和私密金鑰|
 |[-importPFX](#-importpfx)|匯入憑證和私密金鑰|
-|[-dynamicfilelist](#-dynamicfilelist)|顯示動態的檔案清單|
+|[-dynamicfilelist](#-dynamicfilelist)|顯示動態檔案清單|
 |[-databaselocations](#-databaselocations)|顯示資料庫位置|
-|[-hashfile](#-hashfile)|產生並顯示透過檔案的密碼編譯雜湊|
-|[-store](#-store)|傾印的憑證存放區|
+|[-hashfile](#-hashfile)|產生並顯示檔案上的密碼編譯雜湊|
+|[-store](#-store)|傾印證書存儲|
 |[-addstore](#-addstore)|將憑證新增至存放區|
 |[-delstore](#-delstore)|從存放區刪除憑證|
-|[-verifystore](#-verifystore)|確認憑證存放區中|
-|[-repairstore](#-repairstore)|修復金鑰的關聯，或更新憑證內容] 或 [金鑰的安全性描述元|
-|[-viewstore](#-viewstore)|傾印的憑證存放區|
+|[-verifystore](#-verifystore)|驗證存放區中的憑證|
+|[-repairstore](#-repairstore)|修復金鑰關聯或更新憑證屬性或金鑰安全描述項|
+|[-viewstore](#-viewstore)|傾印證書存儲|
 |[-viewdelstore](#-viewdelstore)|從存放區刪除憑證|
 |[-dsPublish](#-dspublish)|將憑證或憑證撤銷清單 (CRL) 發佈至 Active Directory|
 |[-ADTemplate](#-adtemplate)|顯示 AD 範本|
-|[-Template](#-template)|顯示憑證範本|
-|[-TemplateCAs](#-templatecas)|顯示 憑證授權單位 (Ca) 憑證範本|
-|[-CATemplates](#-catemplates)|CA 的顯示範本|
+|[-範本](#-template)|顯示憑證範本|
+|[-TemplateCAs](#-templatecas)|顯示憑證範本的憑證授權單位單位 (Ca)|
+|[-之 catemplates.txt 檔](#-catemplates)|顯示 CA 的範本|
 |[-SetCASites](#-setcasites)|管理 Ca 的網站名稱|
-|[-enrollmentServerURL](#-enrollmentserverurl)|顯示、 新增或刪除與 CA 相關聯的註冊伺服器 Url|
+|[-enrollmentServerURL](#-enrollmentserverurl)|顯示、新增或刪除與 CA 相關聯的註冊伺服器 Url|
 |[-ADCA](#-adca)|顯示 AD Ca|
 |[-CA](#-ca)|顯示註冊原則 Ca|
-|[-Policy](#-policy)|顯示註冊原則|
-|[-PolicyCache](#-policycache)|顯示或刪除註冊原則快取項目|
-|[-CredStore](#-credstore)|顯示、 新增或刪除認證存放區項目|
-|[-InstallDefaultTemplates](#-installdefaulttemplates)|安裝預設憑證範本|
-|[-URLCache](#-urlcache)|顯示或刪除 URL 快取項目|
-|[-pulse](#-pulse)|Pulse 自動註冊事件|
-|[-MachineInfo](#-machineinfo)|顯示 Active Directory 電腦物件的相關資訊|
+|[-原則](#-policy)|顯示註冊原則|
+|[-PolicyCache](#-policycache)|顯示或刪除註冊原則快取專案|
+|[-CredStore](#-credstore)|顯示、新增或刪除認證存放區專案|
+|[-Installdefaulttemplates 動作](#-installdefaulttemplates)|安裝預設憑證範本|
+|[-URLCache](#-urlcache)|顯示或刪除 URL 快取專案|
+|[-脈衝](#-pulse)|脈衝自動註冊事件|
+|[-MachineInfo](#-machineinfo)|顯示 Active Directory 機物件的相關資訊|
 |[-DCInfo](#-dcinfo)|顯示網域控制站的相關資訊|
 |[-EntInfo](#-entinfo)|顯示企業 CA 的相關資訊|
 |[-TCAInfo](#-tcainfo)|顯示 CA 的相關資訊|
 |[-SCInfo](#-scinfo)|顯示智慧卡的相關資訊|
 |[-SCRoots](#-scroots)|管理智慧卡的根憑證|
-|[-verifykeys](#-verifykeys)|確認公用或私用金鑰組|
-|[-verify](#-verify)|確認憑證、 憑證撤銷清單 (CRL) 或憑證鏈結|
-|[-verifyCTL](#-verifyctl)|請確認 AuthRoot 或不允許的憑證的 CTL|
-|[-sign](#-sign)|重新簽署的憑證撤銷清單 (CRL) 或憑證|
+|[-verifykeys](#-verifykeys)|驗證公用或私用金鑰集|
+|[-驗證](#-verify)|驗證憑證、憑證撤銷清單 (CRL) 或憑證連結|
+|[-verifyCTL](#-verifyctl)|確認 AuthRoot 或不允許的憑證 CTL|
+|[-sign](#-sign)|重新簽署憑證撤銷清單 (CRL) 或憑證|
 |[-vroot](#-vroot)|建立或刪除 web 虛擬根目錄和檔案共用|
-|[-vocsproot](#-vocsproot)|建立或刪除 web 虛擬根目錄的 OCSP web proxy|
+|[-vocsproot](#-vocsproot)|建立或刪除 OCSP Web Proxy 的 web 虛擬根目錄|
 |[-addEnrollmentServer](#-addenrollmentserver)|新增註冊伺服器應用程式|
 |[-deleteEnrollmentServer](#-deleteenrollmentserver)|刪除註冊伺服器應用程式|
-|[-addPolicyServer](#-addpolicyserver)|新增原則伺服器的應用程式|
+|[-addPolicyServer](#-addpolicyserver)|新增原則伺服器應用程式|
 |[-deletePolicyServer](#-deletepolicyserver)|刪除原則伺服器應用程式|
-|[-oid](#-oid)|顯示的物件識別碼，或設定顯示名稱|
-|[-error](#-error)|顯示並出現錯誤代碼相關聯的訊息文字|
-|[-getreg](#-getreg)|顯示的登錄值|
+|[-oid](#-oid)|顯示物件識別碼或設定顯示名稱|
+|[-錯誤](#-error)|顯示與錯誤代碼相關聯的郵件內文|
+|[-getreg](#-getreg)|顯示登錄值|
 |[-setreg](#-setreg)|設定登錄值|
 |[-delreg](#-delreg)|刪除登錄值|
-|[-ImportKMS](#-importkms)|使用者金鑰和憑證匯入金鑰保存的伺服器資料庫|
-|[-ImportCert](#-importcert)|憑證檔案匯入資料庫|
-|[-GetKey](#-getkey)|擷取已封存的私密金鑰復原的 blob|
+|[-ImportKMS](#-importkms)|將使用者金鑰和憑證匯入至伺服器資料庫以進行金鑰保存|
+|[-ImportCert](#-importcert)|將憑證檔案匯入資料庫|
+|[-GetKey](#-getkey)|取得封存的私密金鑰復原 blob|
 |[-RecoverKey](#-recoverkey)|復原封存的私密金鑰|
 |[-MergePFX](#-mergepfx)|合併 PFX 檔案|
-|[-ConvertEPF](#-convertepf)|PFX 檔案轉換成 EPF 檔案|
+|[-ConvertEPF](#-convertepf)|將 PFX 檔案轉換為 EPF 檔案|
 |-?|顯示指令動詞的清單|
-|- *\<verb>* -?|顯示說明所指定的動詞。|
-|-? -v|顯示動詞命令的完整清單和|
+|-動詞 >-？ *\<*|顯示指定之動詞命令的說明。|
+|-? -v|顯示動詞和的完整清單|
 
 返回[功能表](#menu)
 
 ## <a name="syntax-notations"></a>語法標記法
 
-- 如需執行的基本命令列語法 `certutil -?`
-- 如需有關使用使用特定的動詞命令的 certutil 語法，請執行**certutil** *\<動詞 >* **-嗎？**
-- 若要傳送的 certutil 語法的所有文字檔案，請執行下列命令：  
+- 如需基本命令列語法, 請執行`certutil -?`
+- 如需搭配特定動詞使用 certutil 的語法, 請執行**certutil**  *\<動詞 >* **-？**
+- 若要將所有 certutil 語法傳送到文字檔, 請執行下列命令:  
   - `certutil -v -? > certutilhelp.txt`
   - `notepad certutilhelp.txt`
 
-下表描述用來表示命令列語法標記法。
+下表描述用來表示命令列語法的標記法。
 
 
-|            標記法             |                  描述                  |
+|            萬用字元             |                  描述                  |
 |---------------------------------|-----------------------------------------------|
-| 文字，而不需要方括號或大括號 |         您必須依照顯示輸入的項目          |
-|  \<角括弧內的文字 >  | 您必須提供值的預留位置 |
-|  [方括號內的文字]  |                選擇性的項目                 |
-|      {大括號內的文字}       |       一組必要的項目;選擇其中一個       |
-|         分隔號 （          |                       )                       |
-|          省略符號 （...）           |          可重複的項目           |
+| 不含括弧或大括弧的文字 |         您必須輸入的專案, 如下所示          |
+|  \<角括弧內的文字 >  | 您必須為其提供值的預留位置 |
+|  [括弧內的文字]  |                選擇性的項目                 |
+|      {大括弧內的文字}       |       必要專案集;選擇一個       |
+|         分隔號 (          |                       )                       |
+|          省略號 (...)           |          可以重複的專案           |
 
 返回[功能表](#menu)
 
-## <a name="-dump"></a>-dump
+## <a name="-dump"></a>-傾印
 
 CertUtil [Options] [-dump]
 
-CertUtil [Options] [-傾印] 檔案
+CertUtil [Options] [-dump] File
 
-傾印組態資訊或檔案
+傾印設定資訊或檔案
 
-[-f] [-silent] [-split] [-p Password] [-t Timeout]
+[-f][-無訊息][-split][-p 密碼][-t Timeout]
 
 返回[功能表](#menu)
 
 ## <a name="-asn"></a>-asn
 
-CertUtil [選項]-asn 檔案 [類型]
+CertUtil [Options]-asn 檔案 [類型]
 
-剖析 ASN.1 檔案
+剖析 ASN 1 檔案
 
-類型： 數值的 CRYPT\_字串\_\*解碼類型
+類型: 數值 CRYPT\_字串\_ \*解碼類型
 
 返回[功能表](#menu)
 
 ## <a name="-decodehex"></a>-decodehex
 
-CertUtil [選項]-decodehex InFile OutFile [類型]
+CertUtil [Options]-decodehex InFile OutFile [type]
 
-類型： 數值的 CRYPT\_字串\_\*編碼類型
+類型: 數值 CRYPT\_字串\_ \*編碼類型
 
 [-f]
 
 返回[功能表](#menu)
 
-## <a name="-decode"></a>-decode
+## <a name="-decode"></a>-解碼
 
-CertUtil [Options] -decode InFile OutFile
+CertUtil [Options]-解碼 InFile OutFile
 
 解碼 Base64 編碼的檔案
 
@@ -199,19 +199,19 @@ CertUtil [Options] -decode InFile OutFile
 
 返回[功能表](#menu)
 
-## <a name="-encode"></a>-encode
+## <a name="-encode"></a>-編碼
 
-CertUtil [Options] -encode InFile OutFile
+CertUtil [Options]-編碼 InFile OutFile
 
 將檔案編碼為 Base64
 
-[-f] [-UnicodeText]
+[-f][-UnicodeText]
 
 返回[功能表](#menu)
 
 ## <a name="-deny"></a>-拒絕
 
-CertUtil [選項]-deny RequestId
+CertUtil [Options]-拒絕 RequestId
 
 拒絕擱置要求
 
@@ -219,11 +219,11 @@ CertUtil [選項]-deny RequestId
 
 返回[功能表](#menu)
 
-## <a name="-resubmit"></a>-resubmit
+## <a name="-resubmit"></a>-重新提交
 
-CertUtil [選項]-重新提交 RequestId
+CertUtil [Options]-重新提交 RequestId
 
-重新提交暫止要求
+重新提交擱置中的要求
 
 [-config Machine\CAName]
 
@@ -231,18 +231,18 @@ CertUtil [選項]-重新提交 RequestId
 
 ## <a name="-setattributes"></a>-setattributes
 
-CertUtil [Options] -setattributes RequestId AttributeString
+CertUtil [Options]-setattributes RequestId AttributeString
 
-設定屬性的暫止要求
+設定待決要求的屬性
 
-RequestId-數值要求識別碼的暫止要求
+RequestId--待決要求的數值要求識別碼
 
-AttributeString-要求的屬性名稱 / 值組
+AttributeString--要求屬性名稱和值配對
 
-- 名稱和值都是分號分隔。
-- 多個名稱及值組是新行字元分隔。
-- 範例:"CertificateTemplate:User\nEMail:User@Domain.com」
-- 每個"\n"序列會轉換成新行字元分隔符號。
+- 名稱和值是以冒號分隔。
+- 多個名稱, 值組會以分行符號分隔。
+- 範例: "CertificateTemplate:User\nEMail:User@Domain.com"
+- 每個 "\n" 序列都會轉換成分行符號分隔符號。
 
 [-config Machine\CAName]
 
@@ -250,23 +250,23 @@ AttributeString-要求的屬性名稱 / 值組
 
 ## <a name="-setextension"></a>-setextension
 
-RequestId ExtensionName 加上旗標的 [選項] CertUtil-setextension {Long |日期 |字串 |@InFile}
+CertUtil [Options]-setextension RequestId ExtensionName 旗標 {Long |日期 |字串 |\@InFile}
 
-集延伸模組的暫止要求
+設定待決要求的延伸模組
 
-RequestId-數字要求識別碼的暫止要求
+RequestId--待決要求的數值要求識別碼
 
-延伸模組的 ExtensionName-ObjectId 字串
+ExtensionName--延伸模組的 ObjectId 字串
 
-旗標--建議使用 0。  重要的 1 會延伸模組、 2 會停用它、 3 兩者都執行。
+旗標--建議使用0。  1使延伸模組變成關鍵性, 2 會停用它, 3 則會執行這兩項工作。
 
-如果最後一個參數是數值，它會被視為長時間。
+如果最後一個參數是數值, 則會將其視為 Long。
 
-如果它可以剖析為日期，它會被視為一個日期。
+如果可以剖析為日期, 則會將它視為日期。
 
-如果它的開頭 ' @'，此語彙基元的其餘部分則包含二進位資料或 ascii 文字的十六進位傾印的檔名。
+如果開頭為 '\@', 則 token 的其餘部分會是包含二進位資料或 ascii 文字十六進位傾印的檔案名。
 
-任何其他項目會被視為字串。
+任何其他專案都會以字串的形式取得。
 
 [-config Machine\CAName]
 
@@ -274,23 +274,23 @@ RequestId-數字要求識別碼的暫止要求
 
 ## <a name="-revoke"></a>-revoke
 
-CertUtil [Options] -revoke SerialNumber [Reason]
+CertUtil [Options]-revoke SerialNumber [Reason]
 
 撤銷憑證
 
-序號：若要撤銷的憑證序號的逗號分隔清單
+SerialNumber要撤銷的憑證序號清單 (以逗號分隔)
 
-原因： 數值或符號的撤銷原因
+原因: 數位或符號撤銷原因
 
-- 0:CRL_REASON_UNSPECIFIED:未指定 （預設值）
+- 0CRL_REASON_UNSPECIFIED:未指定 (預設值)
 - 1：CRL_REASON_KEY_COMPROMISE:金鑰洩露
 - 2：CRL_REASON_CA_COMPROMISE:CA 洩露
-- 3：CRL_REASON_AFFILIATION_CHANGED:聯盟已變更
-- 4:CRL_REASON_SUPERSEDED:已取代
-- 5:CRL_REASON_CESSATION_OF_OPERATION:作業停止
-- 6:CRL_REASON_CERTIFICATE_HOLD:憑證保留
-- 8:CRL_REASON_REMOVE_FROM_CRL:CRL 中移除
-- -1：解除撤銷：解除撤銷
+- 3：CRL_REASON_AFFILIATION_CHANGED:關係已變更
+- 4:30CRL_REASON_SUPERSEDED:已取代
+- 5:40CRL_REASON_CESSATION_OF_OPERATION:作業哈
+- 7CRL_REASON_CERTIFICATE_HOLD:憑證保存
+- 8CRL_REASON_REMOVE_FROM_CRL:從 CRL 移除
+- -1：解除撤銷解除撤銷
 
 [-config Machine\CAName]
 
@@ -298,7 +298,7 @@ CertUtil [Options] -revoke SerialNumber [Reason]
 
 ## <a name="-isvalid"></a>-isvalid
 
-CertUtil [Options] -isvalid SerialNumber | CertHash
+CertUtil [Options]-isvalid SerialNumber |CertHash
 
 顯示目前的憑證配置
 
@@ -308,9 +308,9 @@ CertUtil [Options] -isvalid SerialNumber | CertHash
 
 ## <a name="-getconfig"></a>-getconfig
 
-CertUtil [Options] -getconfig
+CertUtil [選項]-getconfig
 
-取得預設的組態字串
+取得預設設定字串
 
 [-config Machine\CAName]
 
@@ -318,14 +318,14 @@ CertUtil [Options] -getconfig
 
 ## <a name="-ping"></a>-ping
 
-CertUtil [Options] -ping [MaxSecondsToWait | CAMachineList]
+CertUtil [Options]-ping [MaxSecondsToWait |CAMachineList]
 
-Ping Active Directory 憑證服務要求的介面
+Ping Active Directory 憑證服務要求介面
 
-CAMachineList-逗號分隔的 CA 電腦名稱清單
+CAMachineList--逗號分隔的 CA 電腦名稱稱清單
 
-1. 針對單一機器，請使用終止逗號
-2. 顯示每個 CA 電腦的站台成本
+1. 若為單一電腦, 請使用結尾的逗號
+2. 顯示每部 CA 電腦的網站成本
 
 [-config Machine\CAName]
 
@@ -333,132 +333,132 @@ CAMachineList-逗號分隔的 CA 電腦名稱清單
 
 ## <a name="-cainfo"></a>-CAInfo
 
-CertUtil [Options] -CAInfo [InfoName [Index | ErrorCode]]
+CertUtil [選項]-CAInfo [InfoName [索引 |ErrorCode]]
 
 顯示 CA 資訊
 
-資訊的名稱，表示 CA 屬性以顯示 （如下所示）。 使用 「\*"之所有屬性。
+InfoName--指出要顯示的 CA 屬性 (請參閱下文)。 針對所有\*屬性使用 ""。
 
-索引--選擇性屬性，以零為起始的索引
+索引--選擇性的以零為基底的屬性索引
 
-ErrorCode-數字錯誤碼
+ErrorCode--數值錯誤碼
 
-[-f] [-split] [-config Machine\CAName]
+[-f][-split][-config Machine\CAName]
 
-資訊名稱引數的語法：
+InfoName 引數語法:
 
-- 檔案：檔案版本
-- 產品：產品版本
+- 文字檔檔案版本
+- 基礎產品版本
 - exitcount:結束模組計數
-- 結束 [Index]:結束模組描述
-- 原則：原則模組描述
-- 名稱：CA 名稱
-- sanitizedname:處理過的 CA 名稱
-- dsname:處理過的 CA 簡短名稱 （DS）
-- sharedfolder:共用的資料夾
-- error1 ErrorCode:錯誤訊息文字
-- error2 ErrorCode:錯誤訊息文字和錯誤代碼
-- 類型：CA 類型
-- 資訊：CA 資訊
-- 父代：父系 CA
+- exit [Index]:結束模組描述
+- 策略原則模組描述
+- 檔案名CA 名稱
+- sanitizedname:已淨化的 CA 名稱
+- dsname已淨化的 CA 簡短名稱 (DS 名稱)
+- sharedfolder:共用資料夾
+- error1 錯誤碼:錯誤訊息正文
+- error2 相關說明錯誤碼:錯誤訊息正文和錯誤代碼
+- 型CA 類型
+- 資訊CA 資訊
+- 父父 CA
 - certcount:CA 憑證計數
 - xchgcount:CA 交換憑證計數
 - kracount:KRA 憑證計數
-- kraused:KRA 憑證使用的計數
-- propidmax:Maximum CA PropId
+- kraused:KRA 憑證已使用計數
+- propidmax:CA PropId 上限
 - certstate [Index]:CA 憑證
 - certversion [Index]:CA 憑證版本
-- certstatuscode [Index]:CA 憑證的驗證狀態
-- crlstate [Index]:CRL
+- certstatuscode [Index]:CA 憑證驗證狀態
+- crlstate [Index]:.CRL
 - krastate [Index]:KRA 憑證
-- crossstate + [Index]:正向交互憑證
-- crossstate-[Index]:向後交互憑證
-- 憑證 [Index]:CA 憑證
-- certchain [Index]:CA 憑證鏈結
-- certcrlchain [Index]:利用 Crl 的 CA 憑證鏈結
+- crossstate + [Index]:正向交叉憑證
+- crossstate-[Index]:反向交叉憑證
+- cert [Index]:CA 憑證
+- certchain [Index]:CA 憑證鏈
+- certcrlchain [Index]:具有 Crl 的 CA 憑證鏈
 - xchg [Index]:CA 交換憑證
-- xchgchain [Index]:CA 交換憑證鏈結
-- xchgcrlchain [Index]:利用 Crl 的 CA 交換憑證鏈結
+- xchgchain [Index]:CA exchange 憑證鏈
+- xchgcrlchain [Index]:CA exchange 憑證鏈與 Crl
 - kra [Index]:KRA 憑證
-- 跨 + [Index]:正向交互憑證
-- 跨-[Index]:向後交互憑證
-- CRL [Index]:基底 CRL
+- cross + [Index]:正向交叉憑證
+- 交叉-[索引]:反向交叉憑證
+- CRL [索引]:基底 CRL
 - deltacrl [Index]:Delta CRL
-- crlstatus [Index]:CRL 發佈狀態
+- crlstatus [Index]:CRL 發行狀態
 - deltacrlstatus [Index]:Delta CRL 發佈狀態
-- dns:DNS 名稱
-- 角色：角色分離
-- 廣告：Advanced Server
-- 範本：範本
-- csp [Index]:OCSP Url
-- aia [Index]:AIA Url
+- dnsDNS 名稱
+- 角色角色分離
+- 公佈Advanced Server
+- 範本範本
+- csp [索引]:OCSP Url
+- aia [索引]:AIA Url
 - cdp [Index]:CDP Url
-- localename:CA 的地區設定名稱
+- localenameCA 地區設定名稱
 - subjecttemplateoids:主旨範本 Oid
 
 返回[功能表](#menu)
 
-## <a name="-cacert"></a>-ca.cert
+## <a name="-cacert"></a>-ca cert
 
-CertUtil [Options] -ca.cert OutCACertFile [Index]
+CertUtil [選項]-ca. cert OutCACertFile [索引]
 
-擷取 CA 的憑證
+取得 CA 的憑證
 
-OutCACertFile： 輸出檔
+OutCACertFile: 輸出檔
 
-索引：CA 憑證更新索引 （預設為最新）
+指數CA 憑證更新索引 (預設為最新)
 
-[-f] [-split] [-config Machine\CAName]
+[-f][-split][-config Machine\CAName]
 
 返回[功能表](#menu)
 
-## <a name="-cachain"></a>-ca.chain
+## <a name="-cachain"></a>-ca. 鏈
 
-CertUtil [Options] -ca.chain OutCACertChainFile [Index]
+CertUtil [Options]-ca. 鏈 OutCACertChainFile [Index]
 
-擷取 CA 的憑證鏈結
+取出 CA 的憑證鏈
 
-OutCACertChainFile： 輸出檔
+OutCACertChainFile: 輸出檔
 
-索引：CA 憑證更新索引 （預設為最新）
+指數CA 憑證更新索引 (預設為最新)
 
-[-f] [-split] [-config Machine\CAName]
+[-f][-split][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-getcrl"></a>-GetCRL
 
-CertUtil [Options] -GetCRL OutFile [Index] [delta]
+CertUtil [Options]-GetCRL OutFile [Index] [delta]
 
 取得 CRL
 
-索引：CRL 索引鍵索引 （最新的索引鍵有預設為 CRL）
+指數CRL 索引或金鑰索引 (預設為最新金鑰的 CRL)
 
-差異： delta CRL （預設值為基底 CRL）
+差異: delta CRL (預設值為基底 CRL)
 
-[-f] [-split] [-config Machine\CAName]
+[-f][-split][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-crl"></a>-CRL
 
-CertUtil [Options] -CRL [dd:hh | republish] [delta]
+CertUtil [Options]-CRL [dd: hh | 重新發佈] [delta]
 
-發佈新 Crl [或只有 delta Crl]
+發行新的 Crl [或僅限 delta Crl]
 
-dd:hh-新的 CRL 有效期間，在工作日和時數
+dd: hh--新的 CRL 有效期間 (天和小時)
 
-重新發行-重新發行最新的 Crl
+重新發佈--重新發佈最新的 Crl
 
-差異-只有 delta Crl （預設為基本與 delta Crl）
+差異--僅限 delta Crl (預設值為基底和 delta Crl)
 
-[-split] [-config Machine\CAName]
+[-split][-config Machine\CAName]
 
 返回[功能表](#menu)
 
-## <a name="-shutdown"></a>-shutdown
+## <a name="-shutdown"></a>-關機
 
-CertUtil [Options] -shutdown
+CertUtil [選項]-關閉
 
 關閉 Active Directory 憑證服務
 
@@ -468,238 +468,238 @@ CertUtil [Options] -shutdown
 
 ## <a name="-installcert"></a>-installCert
 
-CertUtil [Options] -installCert [CACertFile]
+CertUtil [Options]-installCert [CACertFile]
 
-安裝憑證授權單位憑證
+安裝憑證授權單位單位憑證
 
-[-f] [-silent] [-config Machine\CAName]
+[-f][-無訊息][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-renewcert"></a>-renewCert
 
-CertUtil [Options] -renewCert [ReuseKeys] [Machine\ParentCAName]
+CertUtil [Options]-renewCert [ReuseKeys] [Machine\ParentCAName]
 
-更新憑證授權單位憑證
+更新憑證授權單位單位憑證
 
-使用-f 來略過未處理更新要求，並產生新的要求。
+使用-f 可忽略未處理的更新要求, 並產生新的要求。
 
-[-f] [-silent] [-config Machine\CAName]
+[-f][-無訊息][-config Machine\CAName]
 
 返回[功能表](#menu)
 
-## <a name="-schema"></a>-schema
+## <a name="-schema"></a>-架構
 
-CertUtil [選項]-結構描述 [Ext |Attrib |CRL]
+CertUtil [選項]-架構 [Ext |Attrib |.CRL
 
-傾印憑證結構描述
+傾印憑證架構
 
-預設為要求和憑證的資料表
+預設為要求和憑證資料表
 
-Ext:延伸模組資料表
+分機延伸模組資料表
 
-Attrib:屬性資料表
+Attrib屬性資料表
 
-CRL:CRL 資料表
+.CRLCRL 資料表
 
-[-split] [-config Machine\CAName]
+[-split][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-view"></a>-view
 
-CertUtil [選項]-檢視 [佇列 |記錄檔 |LogFail |撤銷 |Ext |Attrib |CRL] [csv]
+CertUtil [選項]-view [佇列 |記錄 |LogFail |已撤銷 |Ext |Attrib |CRL] [csv]
 
-傾印憑證檢視
+傾印憑證視圖
 
 佇列:要求佇列
 
-記錄檔：發行或撤銷的憑證，再加上失敗的要求
+記錄檔：已發行或撤銷的憑證, 加上失敗的要求
 
 LogFail:失敗的要求
 
-撤銷：已撤銷的憑證
+#A1撤銷的憑證
 
-Ext:延伸模組資料表
+分機延伸模組資料表
 
-Attrib:屬性資料表
+Attrib屬性資料表
 
-CRL:CRL 資料表
+.CRLCRL 資料表
 
-csv:輸出為以逗號分隔值
+csv以逗號分隔值輸出
 
-若要顯示 StatusCode 資料行的所有項目:-out StatusCode
+若要顯示所有專案的 StatusCode 資料行:-out StatusCode
 
-若要顯示所有資料行的最後一個項目:-限制 「 RequestId = = $"
+若要顯示最後一個專案的所有資料行:-restrict "RequestId = = $"
 
-若要顯示的三個要求 RequestId 和配置:-限制"RequestId > = 37，RequestId\<40"-"RequestId，配置 」 出
+若要顯示三個要求的 requestid 和配置:-限制 "RequestId > = 37\<, RequestId 40"-out "RequestId, 處置"
 
-若要可顯示所有基底 Crl 資料列 Id 和 CRL 編號:-限制 」 CRLMinBase = 0"-"CRLRowId CRLNumber"出 CRL
+顯示所有基底 Crl 的資料列識別碼和 CRL 號碼:-限制 "CRLMinBase = 0"-out "CRLRowId, CRLNumber" CRL
 
-To display Base CRL Number 3: -v -restrict "CRLMinBase=0,CRLNumber=3" -out "CRLRawCRL" CRL
+顯示基底 CRL 號碼 3:-v-限制 "CRLMinBase = 0, CRLNumber = 3"-out "CRLRawCRL" CRL
 
-若要顯示整個 CRL 資料表：CRL
+若要顯示整個 CRL 資料表:.CRL
 
-使用 「 日期 [+ |-dd:hh] 」 的日期限制
+針對日期限制使用 "Date [+ |-dd: hh]"
 
-使用 [now + dd:hh] 相對於目前日期
+針對相對於目前時間的日期使用 "now + dd: hh"
 
-[-無訊息][-分割][-config Machine\CAName][-限制 RestrictionList][-columnlist 就會出]
+[-無訊息][-split][-config Machine\CAName][-限制 RestrictionList][-out ColumnList]
 
 返回[功能表](#menu)
 
 ## <a name="-db"></a>-db
 
-CertUtil [Options] -db
+CertUtil [Options]-db
 
-傾印未經處理的資料庫
+傾印原始資料庫
 
-[-config Machine\CAName][-限制 RestrictionList][-columnlist 就會出]
+[-config Machine\CAName][-限制 RestrictionList][-out ColumnList]
 
 返回[功能表](#menu)
 
 ## <a name="-deleterow"></a>-deleterow
 
-CertUtil [選項]-deleterow RowId |日期 [要求 |憑證 |Ext |Attrib |CRL]
+CertUtil [選項]-deleterow RowId |日期 [要求 |Cert |Ext |Attrib |.CRL
 
-刪除伺服器資料庫的資料列
+刪除伺服器資料庫資料列
 
-要求：失敗和擱置的要求 （提交日期）
+邀請失敗和待決的要求 (提交日期)
 
-Cert:到期及撤銷的憑證 （到期日）
+Cert:過期和撤銷的憑證 (到期日)
 
-Ext:延伸模組資料表
+分機延伸模組資料表
 
-Attrib:屬性資料表
+Attrib屬性資料表
 
-CRL:CRL 資料表 （到期日）
+.CRLCRL 資料表 (到期日)
 
-若要刪除失敗和擱置 2001 年 1 月 22 日所提交的要求：1/22/2001 要求
+若要刪除2001年1月22日提交的失敗和擱置要求:1/22/2001 要求
 
-若要刪除所有過期的憑證由 2001 年 1 月 22 日：1/22/2001 憑證
+若要刪除2001年1月22日過期的所有憑證:1/22/2001 憑證
 
-若要刪除的 RequestId 37 的憑證資料行、 屬性和擴充功能：37
+刪除 RequestId 37 的憑證資料列、屬性和延伸模組:37
 
-若要刪除過期的 Crl 的 2001 年 1 月 22 日：2001 年 1 月 22 日 CRL
+若要刪除2001年1月22日到期的 Crl:1/22/2001 CRL
 
-[-f] [-config Machine\CAName]
+[-f][-config Machine\CAName]
 
 返回[功能表](#menu)
 
-## <a name="-backup"></a>-backup
+## <a name="-backup"></a>-備份
 
 CertUtil [選項]-備份 BackupDirectory [增量] [KeepLog]
 
 備份 Active Directory 憑證服務
 
-BackupDirectory： 目錄來儲存備份資料
+BackupDirectory: 用來儲存備份資料的目錄
 
-累加： 執行增量備份只 （預設值為完整備份）
+增量: 僅執行增量備份 (預設為完整備份)
 
-KeepLog： 保留的資料庫記錄檔 （預設值為截斷記錄檔）
+KeepLog: 保留資料庫記錄檔 (預設為截斷記錄檔)
 
-[-f] [-config Machine\CAName] [-p Password]
+[-f][-config Machine\CAName][-p 密碼]
 
 返回[功能表](#menu)
 
 ## <a name="-backupdb"></a>-backupDB
 
-CertUtil [Options] -backupDB BackupDirectory [Incremental] [KeepLog]
+CertUtil [Options]-backupDB BackupDirectory [增量] [KeepLog]
 
 備份 Active Directory 憑證服務資料庫
 
-BackupDirectory： 目錄來儲存備份的資料庫檔案
+BackupDirectory: 用來儲存備份資料庫檔案的目錄
 
-累加： 執行增量備份只 （預設值為完整備份）
+增量: 僅執行增量備份 (預設為完整備份)
 
-KeepLog： 保留的資料庫記錄檔 （預設值為截斷記錄檔）
+KeepLog: 保留資料庫記錄檔 (預設為截斷記錄檔)
 
-[-f] [-config Machine\CAName]
+[-f][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-backupkey"></a>-backupKey
 
-CertUtil [Options] -backupKey BackupDirectory
+CertUtil [Options]-backupKey BackupDirectory
 
 備份 Active Directory 憑證服務憑證和私密金鑰
 
-BackupDirectory： 目錄來儲存備份的 PFX 檔案
+BackupDirectory: 用來儲存備份 PFX 檔案的目錄
 
-[-f] [-config Machine\CAName] [-p Password] [-t Timeout]
+[-f][-config Machine\CAName][-p 密碼][-t Timeout]
 
 返回[功能表](#menu)
 
 ## <a name="-restore"></a>-restore
 
-CertUtil [Options] -restore BackupDirectory
+CertUtil [Options]-restore BackupDirectory
 
 還原 Active Directory 憑證服務
 
-包含要還原資料的備份目錄： 目錄
+BackupDirectory: 包含要還原之資料的目錄
 
-[-f] [-config Machine\CAName] [-p Password]
+[-f][-config Machine\CAName][-p 密碼]
 
 返回[功能表](#menu)
 
 ## <a name="-restoredb"></a>-restoreDB
 
-CertUtil [Options] -restoreDB BackupDirectory
+CertUtil [Options]-restoreDB BackupDirectory
 
 還原 Active Directory 憑證服務資料庫
 
-包含要還原的資料庫檔案的備份目錄： 目錄
+BackupDirectory: 包含要還原之資料庫檔案的目錄
 
-[-f] [-config Machine\CAName]
+[-f][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-restorekey"></a>-restoreKey
 
-CertUtil [Options] -restoreKey BackupDirectory | PFXFile
+CertUtil [Options]-restoreKey BackupDirectory |PFXFile
 
 還原 Active Directory 憑證服務憑證和私密金鑰
 
-包含要還原的 PFX 檔案的備份目錄： 目錄
+BackupDirectory: 包含要還原之 PFX 檔案的目錄
 
-PFXFile:若要還原的 PFX 檔案
+PFXFile:要還原的 PFX 檔案
 
-[-f] [-config Machine\CAName] [-p Password]
+[-f][-config Machine\CAName][-p 密碼]
 
 返回[功能表](#menu)
 
 ## <a name="-importpfx"></a>-importPFX
 
-CertUtil [Options] -importPFX [CertificateStoreName] PFXFile [Modifiers]
+CertUtil [Options]-importPFX [CertificateStoreName] PFXFile [修飾詞]
 
 匯入憑證和私密金鑰
 
-CertificateStoreName:憑證存放區名稱。  請參閱[-儲存](#-store)。
+CertificateStoreName憑證存放區名稱。  請參閱[-store](#-store)。
 
 PFXFile:要匯入的 PFX 檔案
 
-修飾詞：一或多個項目以逗號分隔清單：
+修改下列一或多個以逗號分隔的清單:
 
-1. AT_SIGNATURE:變更簽章 KeySpec
-2. AT_KEYEXCHANGE:變更金鑰交換 KeySpec
-3. NoExport:讓非可匯出私密金鑰
-4. NoCert:匯入憑證
-5. NoChain:無法匯入的憑證鏈結
-6. NoRoot:匯入的根憑證
-7. 保護：保護金鑰與密碼
-8. NoProtect:執行沒有密碼保護的金鑰
+1. AT_SIGNATURE:將 KeySpec 變更為 Signature
+2. AT_KEYEXCHANGE:將 KeySpec 變更為金鑰交換
+3. NoExport:使私密金鑰無法匯出
+4. NoCert:不要匯入憑證
+5. NoChain:不要匯入憑證鏈
+6. NoRoot:不要匯入根憑證
+7. 禁止使用密碼保護金鑰
+8. NoProtect:不要密碼保護金鑰
 
-預設值是個人電腦存放區。
+預設為個人電腦存放區。
 
-[-f] [-user] [-p Password] [-csp Provider]
+[-f][-使用者][-p 密碼][-csp 提供者]
 
 返回[功能表](#menu)
 
 ## <a name="-dynamicfilelist"></a>-dynamicfilelist
 
-CertUtil [Options] -dynamicfilelist
+CertUtil [選項]-dynamicfilelist
 
-顯示動態的檔案清單
+顯示動態檔案清單
 
 [-config Machine\CAName]
 
@@ -707,7 +707,7 @@ CertUtil [Options] -dynamicfilelist
 
 ## <a name="-databaselocations"></a>-databaselocations
 
-CertUtil [Options] -databaselocations
+CertUtil [選項]-databaselocations
 
 顯示資料庫位置
 
@@ -717,104 +717,104 @@ CertUtil [Options] -databaselocations
 
 ## <a name="-hashfile"></a>-hashfile
 
-CertUtil [Options] -hashfile InFile [HashAlgorithm]
+CertUtil [Options]-hashfile InFile [HashAlgorithm]
 
-產生並顯示透過檔案的密碼編譯雜湊
+產生並顯示檔案上的密碼編譯雜湊
 
 返回[功能表](#menu)
 
 ## <a name="-store"></a>-store
 
-CertUtil [Options] -store [CertificateStoreName [CertId [OutputFile]]]
+CertUtil [Options]-store [CertificateStoreName [CertId [OutputFile]]]
 
-傾印憑證存放區
+傾印證書存儲
 
-CertificateStoreName:憑證存放區名稱。 範例：
+CertificateStoreName憑證存放區名稱。 範例：
 
-- "My"，"CA"（預設值）、 「 根 」，
-- "ldap: / / CN = 憑證授權單位，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 一個？ objectClass = 憑證授權單位"（檢視的根憑證）
-- "ldap: / / CN = CAName，CN = 憑證授權單位，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 基底？ objectClass = 憑證授權單位 」 （修改根憑證）
-- "ldap: / / CN = CAName，CN = MachineName，CN = CDP，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ 基底？ objectClass = cRLDistributionPoint"(檢視 Crl)
-- "ldap: / / CN = NTAuthCertificates，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 基底？ objectClass = 憑證授權單位"（企業 CA 憑證）
-- ldap:（AD 電腦物件憑證）
-- -使用者 ldap:（AD 使用者物件憑證）
+- 「我的」、「CA」 (預設值)、「根」、
+- "ldap:///CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ one？ objectClass = Microsoft-windows-certificationauthority" (查看根憑證)
+- "ldap:///CN=CAName,CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ base？ objectClass = Microsoft-windows-certificationauthority" (修改根憑證)
+- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ t？ base？ objectClass = cRLDistributionPoint" (View Crl)
+- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ base？ objectClass = Microsoft-windows-certificationauthority" (企業 CA 憑證)
+- ldap(AD 電腦物件憑證)
+- -使用者 ldap:(AD 使用者物件憑證)
 
-CertId:憑證或 CRL 相符的語彙基元。  這可以是序號、 sha-1 憑證、 CRL、 CTL 或公開金鑰雜湊，數值 cert 索引 （0，1，依此類推），數字的 CRL 索引 (。 0、.1 等等)，數字的 CTL 索引 (...0...1，依此類推），公用金鑰、 簽章或延伸模組 ObjectId，憑證主體一般名稱，電子郵件地址的 UPN 或 DNS 名稱、 金鑰容器名稱或 CSP 名稱、 範本名稱或 ObjectId，EKU 或應用程式原則的 ObjectId 或 CRL 簽發者一般名稱。 其中許多可能會導致多個相符項目。
+CertId憑證或 CRL 符合 token。  這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、.。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
 
-要儲存比對憑證的 OutputFile： 檔案
+OutputFile: 用來儲存相符憑證的檔案
 
-使用-使用者存取的使用者存放區，而不是電腦存放區。
+使用-user 存取使用者存放區, 而不是電腦存放區。
 
-使用-enterprise 能夠存取電腦的企業存放區。
+使用-enterprise 來存取機器企業商店。
 
-使用-存取機器服務存放區的服務。
+使用-服務來存取機器服務存放區。
 
-您可以使用-grouppolicy 來存取電腦群組原則存放區。
+使用-grouppolicy 存取電腦群組策略存放區。
 
 範例：
 
 - -enterprise NTAuth
-- -企業根 37
-- -使用者我 26e0aaaf000000000004
-- CA .11
+- -企業根37
+- -user My 26e0aaaf000000000004
+- CA 11
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-silent] [-split] [-dc DCName]
+[-f][-enterprise][-使用者][-GroupPolicy][-無訊息][-split][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-addstore"></a>-addstore
 
-CertUtil [Options] -addstore CertificateStoreName InFile
+CertUtil [Options]-addstore CertificateStoreName InFile
 
-新增憑證存放區
+將憑證新增至存放區
 
-CertificateStoreName:憑證存放區名稱。  請參閱[-儲存](#-store)。
+CertificateStoreName憑證存放區名稱。  請參閱[-store](#-store)。
 
-InFile:要加入至儲存的憑證或 CRL 檔案。
+InFile要新增至存放區的憑證或 CRL 檔案。
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-f][-enterprise][-使用者][-GroupPolicy][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-delstore"></a>-delstore
 
-CertUtil [Options] -delstore CertificateStoreName CertId
+CertUtil [Options]-delstore CertificateStoreName CertId
 
 從存放區刪除憑證
 
-CertificateStoreName:憑證存放區名稱。  請參閱[-儲存](#-store)。
+CertificateStoreName憑證存放區名稱。  請參閱[-store](#-store)。
 
-CertId:憑證或 CRL 相符的語彙基元。  請參閱[-儲存](#-store)。
+CertId憑證或 CRL 符合 token。  請參閱[-store](#-store)。
 
-[-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-enterprise][-使用者][-GroupPolicy][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-verifystore"></a>-verifystore
 
-CertUtil [Options] -verifystore CertificateStoreName [CertId]
+CertUtil [Options]-verifystore CertificateStoreName [CertId]
 
-確認憑證存放區中
+驗證存放區中的憑證
 
-CertificateStoreName:憑證存放區名稱。  請參閱[-儲存](#-store)。
+CertificateStoreName憑證存放區名稱。  請參閱[-store](#-store)。
 
-CertId:憑證或 CRL 相符的語彙基元。  請參閱[-儲存](#-store)。
+CertId憑證或 CRL 符合 token。  請參閱[-store](#-store)。
 
-[-enterprise] [-user] [-GroupPolicy] [-silent] [-split] [-dc DCName] [-t Timeout]
+[-enterprise][-使用者][-GroupPolicy][-無訊息][-split][-dc DCName][-t Timeout]
 
 返回[功能表](#menu)
 
 ## <a name="-repairstore"></a>-repairstore
 
-CertUtil [Options] -repairstore CertificateStoreName CertIdList [PropertyInfFile | SDDLSecurityDescriptor]
+CertUtil [Options]-repairstore CertificateStoreName CertIdList [PropertyInfFile |SDDLSecurityDescriptor]
 
-修復金鑰的關聯或更新憑證內容] 或 [金鑰安全性描述元
+修復金鑰關聯或更新憑證屬性或金鑰安全描述項
 
-CertificateStoreName:憑證存放區名稱。  請參閱[-儲存](#-store)。
+CertificateStoreName憑證存放區名稱。  請參閱[-store](#-store)。
 
-憑證或 CRL 的相符項目 token CertIdList： 以逗號分隔清單。 請參閱[-儲存](#-store)CertId 描述。
+CertIdList: 以逗號分隔的憑證或 CRL 符合權杖清單。 請參閱[-store](#-store) CertId description。
 
-包含外部內容 PropertyInfFile-INF 檔案：
+PropertyInfFile--包含外部屬性的 INF 檔案:
 
 ```
 [Properties]
@@ -839,207 +839,207 @@ CertificateStoreName:憑證存放區名稱。  請參閱[-儲存](#-store)。
        _continue_ = "1.3.6.1.5.5.7.3.1,"
 ```
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-silent] [-split] [-csp Provider]
+[-f][-enterprise][-使用者][-GroupPolicy][-無訊息][-split][-csp 提供者]
 
 返回[功能表](#menu)
 
 ## <a name="-viewstore"></a>-viewstore
 
-CertUtil [Options] -viewstore [CertificateStoreName [CertId [OutputFile]]]
+CertUtil [Options]-viewstore [CertificateStoreName [CertId [OutputFile]]]
 
-傾印憑證存放區
+傾印證書存儲
 
-CertificateStoreName:憑證存放區名稱。 範例：
+CertificateStoreName憑證存放區名稱。 範例：
 
-- "My"，"CA"（預設值）、 「 根 」，
-- "ldap: / / CN = 憑證授權單位，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 一個？ objectClass = 憑證授權單位"（檢視的根憑證）
-- "ldap: / / CN = CAName，CN = 憑證授權單位，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 基底？ objectClass = 憑證授權單位 」 （修改根憑證）
-- "ldap: / / CN = CAName，CN = MachineName，CN = CDP，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ 基底？ objectClass = cRLDistributionPoint"(檢視 Crl)
-- "ldap: / / CN = NTAuthCertificates，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 基底？ objectClass = 憑證授權單位"（企業 CA 憑證）
-- ldap:（AD 電腦物件憑證）
-- -使用者 ldap:（AD 使用者物件憑證）
+- 「我的」、「CA」 (預設值)、「根」、
+- "ldap:///CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ one？ objectClass = Microsoft-windows-certificationauthority" (查看根憑證)
+- "ldap:///CN=CAName,CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ base？ objectClass = Microsoft-windows-certificationauthority" (修改根憑證)
+- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ t？ base？ objectClass = cRLDistributionPoint" (View Crl)
+- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ base？ objectClass = Microsoft-windows-certificationauthority" (企業 CA 憑證)
+- ldap(AD 電腦物件憑證)
+- -使用者 ldap:(AD 使用者物件憑證)
 
-CertId:憑證或 CRL 相符的語彙基元。 這可以是序號、 sha-1 憑證、 CRL、 CTL 或公開金鑰雜湊，數值 cert 索引 （0，1，依此類推），數字的 CRL 索引 (。 0、.1 等等)，數字的 CTL 索引 (...0...1，依此類推），公用金鑰、 簽章或延伸模組 ObjectId，憑證主體一般名稱，電子郵件地址的 UPN 或 DNS 名稱、 金鑰容器名稱或 CSP 名稱、 範本名稱或 ObjectId，EKU 或應用程式原則的 ObjectId 或 CRL 簽發者一般名稱。 其中許多可能會導致多個相符項目。
+CertId憑證或 CRL 符合 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、.。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
 
-要儲存比對憑證的 OutputFile： 檔案
+OutputFile: 用來儲存相符憑證的檔案
 
-使用-使用者存取的使用者存放區，而不是電腦存放區。
+使用-user 存取使用者存放區, 而不是電腦存放區。
 
-使用-enterprise 能夠存取電腦的企業存放區。
+使用-enterprise 來存取機器企業商店。
 
-使用-存取機器服務存放區的服務。
+使用-服務來存取機器服務存放區。
 
-您可以使用-grouppolicy 來存取電腦群組原則存放區。
+使用-grouppolicy 存取電腦群組策略存放區。
 
 範例：
 
 1. -enterprise NTAuth
-2. -企業根 37
-3. -使用者我 26e0aaaf000000000004
-4. CA .11
+2. -企業根37
+3. -user My 26e0aaaf000000000004
+4. CA 11
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-f][-enterprise][-使用者][-GroupPolicy][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-viewdelstore"></a>-viewdelstore
 
-CertUtil [Options] -viewdelstore [CertificateStoreName [CertId [OutputFile]]]
+CertUtil [Options]-viewdelstore [CertificateStoreName [CertId [OutputFile]]]
 
 從存放區刪除憑證
 
-CertificateStoreName:憑證存放區名稱。 範例：
+CertificateStoreName憑證存放區名稱。 範例：
 
-- "My"，"CA"（預設值）、 「 根 」，
-- "ldap: / / CN = 憑證授權單位，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 一個？ objectClass = 憑證授權單位"（檢視的根憑證）
-- "ldap: / / CN = CAName，CN = 憑證授權單位，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 基底？ objectClass = 憑證授權單位 」 （修改根憑證）
-- "ldap: / / CN = CAName，CN = MachineName，CN = CDP，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ 基底？ objectClass = cRLDistributionPoint"(檢視 Crl)
-- "ldap: / / CN = NTAuthCertificates，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ 基底？ objectClass = 憑證授權單位"（企業 CA 憑證）
-- ldap:（AD 電腦物件憑證）
-- -使用者 ldap:（AD 使用者物件憑證）
+- 「我的」、「CA」 (預設值)、「根」、
+- "ldap:///CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ one？ objectClass = Microsoft-windows-certificationauthority" (查看根憑證)
+- "ldap:///CN=CAName,CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ base？ objectClass = Microsoft-windows-certificationauthority" (修改根憑證)
+- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ t？ base？ objectClass = cRLDistributionPoint" (View Crl)
+- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ base？ objectClass = Microsoft-windows-certificationauthority" (企業 CA 憑證)
+- ldap(AD 電腦物件憑證)
+- -使用者 ldap:(AD 使用者物件憑證)
 
-CertId:憑證或 CRL 相符的語彙基元。 這可以是序號、 sha-1 憑證、 CRL、 CTL 或公開金鑰雜湊，數值 cert 索引 （0，1，依此類推），數字的 CRL 索引 (。 0、.1 等等)，數字的 CTL 索引 (...0...1，依此類推），公用金鑰、 簽章或延伸模組 ObjectId，憑證主體一般名稱，電子郵件地址的 UPN 或 DNS 名稱、 金鑰容器名稱或 CSP 名稱、 範本名稱或 ObjectId，EKU 或應用程式原則的 ObjectId 或 CRL 簽發者一般名稱。 其中許多可能會導致多個相符項目。
+CertId憑證或 CRL 符合 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、.。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
 
-要儲存比對憑證的 OutputFile： 檔案
+OutputFile: 用來儲存相符憑證的檔案
 
-使用-使用者存取的使用者存放區，而不是電腦存放區。
+使用-user 存取使用者存放區, 而不是電腦存放區。
 
-使用-enterprise 能夠存取電腦的企業存放區。
+使用-enterprise 來存取機器企業商店。
 
-使用-存取機器服務存放區的服務。
+使用-服務來存取機器服務存放區。
 
-您可以使用-grouppolicy 來存取電腦群組原則存放區。
+使用-grouppolicy 存取電腦群組策略存放區。
 
 範例：
 
 1. -enterprise NTAuth
-2. -企業根 37
-3. -使用者我 26e0aaaf000000000004
-4. CA .11
+2. -企業根37
+3. -user My 26e0aaaf000000000004
+4. CA 11
 
-[-f] [-enterprise] [-user] [-GroupPolicy] [-dc DCName]
+[-f][-enterprise][-使用者][-GroupPolicy][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-dspublish"></a>-dsPublish
 
-[選項] CertUtil-dsPublish CertFile [NTAuthCA |RootCA |SubCA |CrossCA |KRA |使用者 |機器]
+CertUtil [Options]-dsPublish CertFile [NTAuthCA |Rootca.cer |SubCA |CrossCA |KRA |使用者 |機器碼
 
-CertUtil [Options] -dsPublish CRLFile [DSCDPContainer [DSCDPCN]]
+CertUtil [Options]-dsPublish Crlfile.crl [DSCDPContainer [DSCDPCN]]
 
-將憑證或 CRL 發佈到 Active Directory
+將憑證或 CRL 發佈至 Active Directory
 
-要發行的憑證檔案： 憑證檔案
+CertFile: 要發行的憑證檔案
 
-NTAuthCA:將憑證發佈到 DS 企業存放區
+NTAuthCA:將憑證發佈至 DS Enterprise store
 
-RootCA:將憑證發佈到 DS 受信任的根存放區
+Rootca.cer將憑證發佈至 DS 受信任的根存放區
 
-SubCA:將 CA 憑證發佈到 DS CA 物件
+SubCA將 CA 憑證發佈至 DS CA 物件
 
-CrossCA:發行交叉憑證到 DS CA 物件
+CrossCA:將跨憑證發佈至 DS CA 物件
 
-KRA:將憑證發佈到 DS Key Recovery Agent 物件
+KRA將憑證發行至 DS 金鑰復原代理物件
 
-使用者：將憑證發佈到使用者 DS 物件
+使用者：將憑證發佈至使用者 DS 物件
 
-電腦：將憑證發佈到機器 DS 物件
+機器碼將憑證發佈至電腦 DS 物件
 
-CRLFile:若要發佈的 CRL 檔案
+Crlfile.crl要發佈的 CRL 檔案
 
-DSCDPContainer:DS CDP 容器 CN，通常是 CA 電腦名稱
+DSCDPContainer:DS CDP 容器 CN, 通常是 CA 電腦名稱稱
 
-DSCDPCN:DS CDP 物件 CN，通常取決於處理過的 CA 簡短名稱和索引鍵索引
+DSCDPCN:DS CDP 物件 CN, 通常以已清理的 CA 簡短名稱和金鑰索引為基礎
 
-您可以使用-f 建立 DS 物件。
+使用-f 來建立 DS 物件。
 
-[-f] [-user] [-dc DCName]
+[-f][-使用者][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-adtemplate"></a>-ADTemplate
 
-CertUtil [Options] -ADTemplate [Template]
+CertUtil [Options]-ADTemplate [Template]
 
 顯示 AD 範本
 
-[-f] [-user] [-ut] [-mt] [-dc DCName]
+[-f][-使用者][-未通過][-mt][-dc DCName]
 
-## <a name="-template"></a>-Template
+## <a name="-template"></a>-範本
 
-CertUtil [Options] -Template [Template]
+CertUtil [Options]-Template [Template]
 
 顯示註冊原則範本
 
-[-f] [-user] [-silent] [-PolicyServer URLOrId] [-Anonymous] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName UserName] [-p Password]
+[-f][-使用者][-無訊息][-PolicyServer URLOrId][-Anonymous][-Kerberos][-ClientCertificate ClientCertId][-UserName UserName][-p 密碼]
 
 返回[功能表](#menu)
 
 ## <a name="-templatecas"></a>-TemplateCAs
 
-CertUtil [Options] -TemplateCAs Template
+CertUtil [Options]-TemplateCAs 範本
 
-如需範本的顯示 Ca
+顯示範本的 CAs
 
-[-f] [-user] [-dc DCName]
+[-f][-使用者][-dc DCName]
 
 返回[功能表](#menu)
 
-## <a name="-catemplates"></a>-CATemplates
+## <a name="-catemplates"></a>-之 catemplates.txt 檔
 
-CertUtil [Options] -CATemplates [Template]
+CertUtil [Options]-之 catemplates.txt 檔 [Template]
 
-CA 的顯示範本
+顯示 CA 的範本
 
-[-f] [-user] [-ut] [-mt] [-config Machine\CAName] [-dc DCName]
+[-f][-使用者][-未通過][-mt][-config Machine\CAName][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-setcasites"></a>-SetCASites
 
-CertUtil [Options] -SetCASites [set] [SiteName]
+CertUtil [選項]-SetCASites [set] [SiteName]
 
-CertUtil [Options] -SetCASites verify [SiteName]
+CertUtil [選項]-SetCASites 驗證 [SiteName]
 
-CertUtil [Options] -SetCASites delete
+CertUtil [選項]-SetCASites 刪除
 
-設定、 驗證或刪除 CA 的網站名稱
+設定、驗證或刪除 CA 網站名稱
 
-- 針對單一 CA 使用-config 選項 （預設為所有 Ca）
-- *SiteName*目標設為單一的 CA 時，才允許
-- 使用-f 來覆寫指定的驗證錯誤*SiteName*
-- 若要刪除所有 CA 網站名稱中使用-f
+- 使用-config 選項以單一 CA 為目標 (預設為所有 Ca)
+- 只有在以單一 CA 為目標時, 才允許*SiteName*
+- 使用-f 覆寫指定*SiteName*的驗證錯誤
+- 使用-f 刪除所有 CA 網站名稱
 
-[-f] [-config Machine\CAName] [-dc DCName]
+[-f][-config Machine\CAName][-dc DCName]
 
 > [!NOTE]
-> 如需有關如何設定 Active Directory 網域服務 (AD DS) 站台感知 Ca 的詳細資訊，請參閱[AD CS 和 PKI 用戶端的 AD DS 網站感知](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx)。
+> 如需有關為 Active Directory Domain Services (AD DS) 網站感知設定 Ca 的詳細資訊, 請參閱[AD DS AD CS 和 PKI 用戶端的網站感知](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx)。
 
 返回[功能表](#menu)
 
 ## <a name="-enrollmentserverurl"></a>-enrollmentServerURL
 
-CertUtil [Options] -enrollmentServerURL [URL AuthenticationType [Priority] [Modifiers]]
+CertUtil [Options]-enrollmentServerURL [URL AuthenticationType [Priority] [修飾詞]]
 
-CertUtil [Options] -enrollmentServerURL URL delete
+CertUtil [選項]-enrollmentServerURL URL 刪除
 
-顯示、 新增或刪除與 CA 相關聯的註冊伺服器 Url
+顯示、新增或刪除與 CA 相關聯的註冊伺服器 Url
 
-AuthenticationType:新增 URL 時指定其中一個下列的用戶端驗證方法
+AuthenticationType新增 URL 時, 請指定下列其中一個用戶端驗證方法
 
-1. Kerberos:使用 Kerberos 的 SSL 憑證
-2. 使用者名稱：使用名為 SSL 認證的帳戶
-3. ClientCertificate:使用 X.509 憑證的 SSL 憑證
-4. Anonymous：使用匿名的 SSL 憑證
+1. V5使用 Kerberos SSL 認證
+2. UserName針對 SSL 認證使用命名帳戶
+3. ClientCertificate使用 x.509 憑證 SSL 認證
+4. Anonymous：使用匿名 SSL 認證
 
-刪除： 刪除指定的 URL 與 CA 相關聯
+delete: 刪除與 CA 相關聯的指定 URL
 
-如果未指定時新增 URL 優先順序： 預設值為 '1'
+優先順序: 如果在新增 URL 時未指定, 則預設為 ' 1 '
 
-修飾詞，以逗號分隔一或多個項目的清單：
+修飾詞--下列一或多個以逗號分隔的清單:
 
-1. AllowRenewalsOnly:只更新要求提交給此 CA，透過此 URL
-2. AllowKeyBasedRenewal:允許使用的憑證，在 AD 中有任何相關聯的帳戶。 這適用於只使用 ClientCertificate 和 AllowRenewalsOnly 模式
+1. AllowRenewalsOnly:只有續訂要求可以透過此 URL 提交給此 CA
+2. AllowKeyBasedRenewal:允許使用 AD 中沒有相關聯帳戶的憑證。 這僅適用于 ClientCertificate 和 AllowRenewalsOnly 模式
 
 [-config Machine\CAName][-dc DCName]
 
@@ -1047,71 +1047,71 @@ AuthenticationType:新增 URL 時指定其中一個下列的用戶端驗證方�
 
 ## <a name="-adca"></a>-ADCA
 
-CertUtil [Options] -ADCA [CAName]
+CertUtil [Options]-ADCA [CAName]
 
 顯示 AD Ca
 
-[-f] [-split] [-dc DCName]
+[-f][-split][-dc DCName]
 
 返回[功能表](#menu)
 
 ## <a name="-ca"></a>-CA
 
-CertUtil [Options] -CA [CAName | TemplateName]
+CertUtil [Options]-CA [CAName |TemplateName
 
 顯示註冊原則 Ca
 
-[-f] [-user] [-silent] [-split] [-PolicyServer URLOrId] [-Anonymous] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName UserName] [-p Password]
+[-f][-使用者][-無訊息][-split][-PolicyServer URLOrId][-Anonymous][-Kerberos][-ClientCertificate ClientCertId][-UserName UserName][-p 密碼]
 
 返回[功能表](#menu)
 
-## <a name="-policy"></a>-Policy
+## <a name="-policy"></a>-原則
 
 顯示註冊原則
 
-[-f] [-user] [-silent] [-split] [-PolicyServer URLOrId] [-Anonymous] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName UserName] [-p Password]
+[-f][-使用者][-無訊息][-split][-PolicyServer URLOrId][-Anonymous][-Kerberos][-ClientCertificate ClientCertId][-UserName UserName][-p 密碼]
 
 返回[功能表](#menu)
 
 ## <a name="-policycache"></a>-PolicyCache
 
-CertUtil [Options] -PolicyCache [delete]
+CertUtil [選項]-PolicyCache [刪除]
 
-顯示或刪除註冊原則快取項目
+顯示或刪除註冊原則快取專案
 
-刪除： 刪除原則伺服器快取項目
+刪除: 刪除原則伺服器快取專案
 
--f： 刪除所有的快取項目使用-f
+-f: 使用-f 刪除所有快取專案
 
-[-f] [-user] [-PolicyServer URLOrId]
+[-f][-使用者][-PolicyServer URLOrId]
 
 返回[功能表](#menu)
 
 ## <a name="-credstore"></a>-CredStore
 
-CertUtil [Options] -CredStore [URL]
+CertUtil [Options]-CredStore [URL]
 
-CertUtil [Options] -CredStore URL add
+CertUtil [選項]-CredStore URL 新增
 
-CertUtil [Options] -CredStore URL delete
+CertUtil [選項]-CredStore URL 刪除
 
-顯示、 新增或刪除認證存放區項目
+顯示、新增或刪除認證存放區專案
 
-URL： 目標 URL。  使用\*來比對所有項目。 使用 https://machine\* 來比對的 URL 前置詞。
+URL: 目標 URL。  使用\*來比對所有專案。 使用 https://machine\ * 來比對 URL 前置詞。
 
-新增： 加入認證存放區項目。 您也必須指定 SSL 認證。
+新增: 新增認證存放區專案。 您也必須指定 SSL 認證。
 
-刪除： 刪除認證存放區項目
+刪除: 刪除認證存放區專案
 
--f： 覆寫項目，或刪除多個項目，請使用-f。
+-f: 使用-f 來覆寫專案或刪除多個專案。
 
-[-f] [-user] [-silent] [-Anonymous] [-Kerberos] [-ClientCertificate ClientCertId] [-UserName UserName] [-p Password]
+[-f][-使用者][-無訊息][-Anonymous][-Kerberos][-ClientCertificate ClientCertId][-UserName UserName][-p 密碼]
 
 返回[功能表](#menu)
 
-## <a name="-installdefaulttemplates"></a>-InstallDefaultTemplates
+## <a name="-installdefaulttemplates"></a>-Installdefaulttemplates 動作
 
-CertUtil [Options] -InstallDefaultTemplates
+CertUtil [選項]-Installdefaulttemplates 動作
 
 安裝預設憑證範本
 
@@ -1121,29 +1121,29 @@ CertUtil [Options] -InstallDefaultTemplates
 
 ## <a name="-urlcache"></a>-URLCache
 
-CertUtil [Options] -URLCache [URL | CRL | \* [delete]]
+CertUtil [Options]-URLCache [URL |CRL |\* [刪除]]
 
-顯示或刪除 URL 快取項目
+顯示或刪除 URL 快取專案
 
-URL： 快取的 URL
+URL: 快取的 URL
 
-所有快取 CRL Url 只作用於 CRL:
+CRL: 僅在所有快取的 CRL Url 上操作
 
-\*： 對所有快取的 Url
+\*: 在所有快取的 Url 上操作
 
-刪除： 刪除相關的 Url，從目前使用者的本機快取
+刪除: 從目前使用者的本機快取中刪除相關的 Url
 
-您可以使用-f，強制擷取特定的 URL，並更新快取。
+請使用-f 來強制提取特定的 URL, 並更新快取。
 
-[-f] [-split]
+[-f][-split]
 
 返回[功能表](#menu)
 
-## <a name="-pulse"></a>-pulse
+## <a name="-pulse"></a>-脈衝
 
-CertUtil [Options] -pulse
+CertUtil [Options]-脈衝
 
-Pulse 自動註冊事件
+脈衝自動註冊事件
 
 [-使用者]
 
@@ -1151,7 +1151,7 @@ Pulse 自動註冊事件
 
 ## <a name="-machineinfo"></a>-MachineInfo
 
-CertUtil [Options] -MachineInfo DomainName\MachineName$
+CertUtil [Options]-MachineInfo DomainName\MachineName $
 
 顯示 Active Directory 電腦物件資訊
 
@@ -1159,176 +1159,176 @@ CertUtil [Options] -MachineInfo DomainName\MachineName$
 
 ## <a name="-dcinfo"></a>-DCInfo
 
-CertUtil [Options] -DCInfo [Domain] [Verify | DeleteBad | DeleteAll]
+CertUtil [選項]-DCInfo [網域] [驗證 |DeleteBad |DeleteAll
 
-顯示網域控制站的資訊
+顯示網域控制站資訊
 
-預設值是顯示 DC 未經驗證的憑證
+預設為顯示 DC 憑證而不進行驗證
 
-[-f] [-user] [-urlfetch] [-dc DCName] [-t Timeout]
+[-f][-使用者][-urlfetch verify][-dc DCName][-t Timeout]
 
 > [!TIP]
-> 指定 Active Directory 網域服務 (AD DS) 網域的能力 **[網域]** ，並指定網域控制站 (**dc**) 在 Windows Server 2012 中新增。 若要成功執行命令，您必須使用成員的帳戶**Domain Admins**或是**Enterprise Admins**。 此命令的行為修改如下所示：</br>> 1.  如果未指定網域，且未指定特定的網域控制站，這個選項就會傳回一份網域控制站來處理從預設網域控制站。</br>> 2.  如果未指定網域，但網域控制站，則會產生指定的網域控制站上的憑證報表。</br>> 3.  如果已指定網域，但未指定的網域控制站，網域控制站的清單會產生連同憑證清單中的每個網域控制站上的報告。</br>> 4.  如果指定了網域和網域控制站，網域控制站的清單會產生目標的網域控制站。 此外，也會產生報表的清單中的每個網域控制站的憑證。
+> 指定 Active Directory Domain Services (AD DS) 網域 **[domain]** 以及指定網域控制站 ( **-dc**) 的功能已在 Windows Server 2012 中新增。 若要成功執行命令, 您必須使用屬於**Domain admins**或**Enterprise admins**成員的帳戶。 此命令的行為修改如下所示:</br>> 1。  如果未指定網域, 而且未指定特定的網域控制站, 則此選項會傳回要從預設網域控制站處理的網域控制站清單。</br>> 2。  如果未指定網域, 但指定網域控制站, 則會產生指定之網域控制站上的憑證報告。</br>> 3。  如果指定網域, 但未指定網域控制站, 則會在清單中為每個網域控制站的憑證上產生一份網域控制站清單, 以及報告。</br>> 4。  如果指定了網域和網域控制站, 則會從目標網域控制站產生網域控制站清單。 也會產生清單中每個網域控制站的憑證報告。
 
-例如，假設名為 CPANDL DC1 是網域控制站名為 CPANDL 網域。 您可以執行下列命令來擷取網域控制站和其憑證的清單，從 CPANDL DC1: certutil-dc cpandl dc1-dcinfo cpandl
+例如, 假設有一個名為 CPANDL 的網域, 且名為 CPANDL 的網域控制站。 您可以執行下列命令來抓取 CPANDL 的網域控制站及其憑證的清單-DC1: certutil-dc CPANDL-dc1-dcinfo CPANDL
 
 返回[功能表](#menu)
 
 ## <a name="-entinfo"></a>-EntInfo
 
-CertUtil [Options] -EntInfo DomainName\MachineName$
+CertUtil [Options]-EntInfo DomainName\MachineName $
 
-[-f] [-user]
+[-f][-使用者]
 
 返回[功能表](#menu)
 
 ## <a name="-tcainfo"></a>-TCAInfo
 
-CertUtil [Options] -TCAInfo [DomainDN | -]
+CertUtil [Options]-TCAInfo [DomainDN |-]
 
 顯示 CA 資訊
 
-[-f] [-enterprise] [-user] [-urlfetch] [-dc DCName] [-t Timeout]
+[-f][-enterprise][-使用者][-urlfetch verify][-dc DCName][-t Timeout]
 
 返回[功能表](#menu)
 
 ## <a name="-scinfo"></a>-SCInfo
 
-CertUtil [Options] -SCInfo [ReaderName [CRYPT_DELETEKEYSET]]
+CertUtil [Options]-SCInfo [ReaderName [CRYPT_DELETEKEYSET]]
 
 顯示智慧卡資訊
 
-CRYPT_DELETEKEYSET:刪除智慧卡上的所有索引鍵
+CRYPT_DELETEKEYSET:刪除智慧卡上的所有金鑰
 
-[-silent] [-split] [-urlfetch] [-t Timeout]
+[-無訊息][-split][-urlfetch verify][-t Timeout]
 
 返回[功能表](#menu)
 
 ## <a name="-scroots"></a>-SCRoots
 
-CertUtil [Options] -SCRoots update [+][InputRootFile] [ReaderName]
+CertUtil [選項]-SCRoots update [+] [InputRootFile] [ReaderName]
 
-CertUtil [Options] -SCRoots save @OutputRootFile [ReaderName]
+CertUtil [選項]-SCRoots 儲存\@OutputRootFile [ReaderName]
 
-CertUtil [Options] -SCRoots view [InputRootFile | ReaderName]
+CertUtil [選項]-SCRoots view [InputRootFile |ReaderName]
 
-CertUtil [Options] -SCRoots delete [ReaderName]
+CertUtil [選項]-SCRoots delete [ReaderName]
 
 管理智慧卡的根憑證
 
-[-f] [-split] [-p Password]
+[-f][-split][-p 密碼]
 
 返回[功能表](#menu)
 
 ## <a name="-verifykeys"></a>-verifykeys
 
-CertUtil [Options] -verifykeys [KeyContainerName CACertFile]
+CertUtil [Options]-verifykeys [Cspparameters.keycontainername CACertFile]
 
-確認公用/私用金鑰組
+驗證公用/私密金鑰組
 
-要驗證的金鑰 KeyContainerName： 金鑰容器名稱。 電腦金鑰的預設值。  使用-對使用者的金鑰的使用者。
+Cspparameters.keycontainername: 要驗證之金鑰的金鑰容器名稱。 預設為電腦金鑰。  使用者金鑰使用-user。
 
-CACertFile： 簽章或加密憑證的檔案
+CACertFile: 簽署或加密憑證檔案
 
-如果未不指定任何引數，每個簽章的 CA 憑證會驗證對其私密金鑰。
+如果未指定任何引數, 則會根據其私密金鑰來驗證每個簽署 CA 憑證。
 
-只能針對本機 CA 或本機金鑰執行此作業。
+這項作業只能針對本機 CA 或本機密鑰來執行。
 
-[-f]。[-使用者][-無訊息][-config Machine\CAName]
+[-f][-使用者][-無訊息][-config Machine\CAName]
 
 返回[功能表](#menu)
 
-## <a name="-verify"></a>-verify
+## <a name="-verify"></a>-驗證
 
-CertUtil [Options] -verify CertFile [ApplicationPolicyList | - [IssuancePolicyList]]
+CertUtil [Options]-verify CertFile [ApplicationPolicyList |-[IssuancePolicyList]]
 
-CertUtil [Options] -verify CertFile [CACertFile [CrossedCACertFile]]
+CertUtil [Options]-verify CertFile [CACertFile [CrossedCACertFile]]
 
-CertUtil [Options] -verify CRLFile CACertFile [IssuedCertFile]
+CertUtil [Options]-驗證 Crlfile.crl CACertFile [IssuedCertFile]
 
-CertUtil [Options] -verify CRLFile CACertFile [DeltaCRLFile]
+CertUtil [Options]-驗證 Crlfile.crl CACertFile [DeltaCRLFile]
 
-確認憑證、 CRL 或鏈結
+驗證憑證、CRL 或鏈
 
-憑證檔案：若要確認憑證
+CertFile要驗證的憑證
 
-需要應用程式原則的 Objectid ApplicationPolicyList： 選擇性的逗號分隔清單
+ApplicationPolicyList: 選擇性的必要應用程式原則 Objectid 清單 (以逗號分隔)
 
-需要發行原則的 Objectid IssuancePolicyList： 選擇性的逗號分隔清單
+IssuancePolicyList: 必要發佈原則 Objectid 的選擇性逗號分隔清單
 
-CACertFile： 選擇性發行 CA 憑證來進行驗證
+CACertFile: 選擇性發行 CA 憑證以進行驗證
 
-CrossedCACertFile： 選擇性憑證交互檢定的憑證檔案
+CrossedCACertFile: CertFile 的選擇性憑證交叉認證
 
-CRLFile:若要確認 CRL
+Crlfile.crl要驗證的 CRL
 
-選擇性 IssuedCertFile： 涵蓋 CRLFile 核發的憑證
+IssuedCertFile: Crlfile.crl 所涵蓋的選擇性發行憑證
 
-DeltaCRLFile： 選擇性的 delta CRL
+DeltaCRLFile: 選擇性的 delta CRL
 
-如果指定 ApplicationPolicyList，鏈結建立僅限於適用於指定應用程式原則的鏈結。
+如果指定 ApplicationPolicyList, 則鏈建築物僅限於指定之應用程式原則的有效鏈。
 
-如果指定 IssuancePolicyList，鏈結建立限於鏈結適用於指定的發佈原則。
+如果指定 IssuancePolicyList, 則鏈建築物僅限於指定之發佈原則的有效鏈。
 
-如果指定 CACertFile，針對 CertFile 或 CRLFile 驗證 CACertFile 中的欄位。
+如果指定 CACertFile, CACertFile 中的欄位會針對 CertFile 或 Crlfile.crl 進行驗證。
 
-如果未指定 CACertFile，CertFile 用來建置和驗證完整鏈結中。
+如果未指定 CACertFile, 則會使用 CertFile 來建立及驗證完整鏈。
 
-如果同時指定 CACertFile 和 CrossedCACertFile，CACertFile 和 CrossedCACertFile 中的欄位會驗證對憑證檔案。
+如果同時指定 CACertFile 和 CrossedCACertFile, 則 CACertFile 和 CrossedCACertFile 中的欄位會針對 CertFile 進行驗證。
 
-如果指定 IssuedCertFile，則是會針對 CRLFile 驗證 IssuedCertFile 中的欄位。
+如果指定 IssuedCertFile, IssuedCertFile 中的欄位會針對 Crlfile.crl 進行驗證。
 
-如果指定 DeltaCRLFile，則是會針對 CRLFile 驗證 DeltaCRLFile 中的欄位。
+如果指定 DeltaCRLFile, DeltaCRLFile 中的欄位會針對 Crlfile.crl 進行驗證。
 
-[-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t Timeout]
+[-f][-enterprise][-使用者][-無訊息][-split][-urlfetch verify][-t Timeout]
 
 返回[功能表](#menu)
 
 ## <a name="-verifyctl"></a>-verifyCTL
 
-CertUtil [Options] -verifyCTL CTLObject [CertDir] [CertFile]
+CertUtil [Options]-verifyCTL CTLObject [CertDir] [CertFile]
 
-請確認 AuthRoot 或不允許的憑證的 CTL
+確認 AuthRoot 或不允許的憑證 CTL
 
-CTLObject:識別驗證 CTL:
+CTLObject:識別要驗證的 CTL:
 
-- AuthRootWU： 從 URL 快取中讀取 AuthRoot 封包和相符的憑證。 使用-f 改為從 Windows Update 下載。
-- DisallowedWU： 讀取不允許憑證封包，並不允許從 URL 快取的憑證存放區檔案。  使用-f 改為從 Windows Update 下載。
-- AuthRoot： 讀取的登錄快取 AuthRoot CTL。  快取 AuthRoot 和不允許憑證的 Ctl 時，請使用-f 與已經不是強制更新登錄信任的憑證檔案。
-- 不允許： 讀取的登錄快取不允許憑證的 CTL。 -f 會具有相同的行為如同 AuthRoot。
-- CTLFileName： 檔案或 http: CTL 或封包的路徑
+- AuthRootWU: 從 URL 快取讀取 AuthRoot CAB 和相符的憑證。 請改用-f, 改為從 Windows Update 下載。
+- DisallowedWU: 從 URL 快取讀取不允許的憑證 CAB 和不允許的憑證存放區檔案。  請改用-f, 改為從 Windows Update 下載。
+- AuthRoot: 讀取登錄快取的 AuthRoot CTL。  使用 with-f 和尚未受信任的 CertFile, 強制更新登錄快取的 AuthRoot 和不允許的憑證 Ctl。
+- 不允許: 讀取登錄快取不允許的憑證 CTL。 -f 的行為與 AuthRoot 相同。
+- CTLFileName: file 或 HTTP: CTL 或 CAB 的路徑
 
-包含憑證相符 CTL 項目的 CertDir： 資料夾。 Http： 資料夾路徑必須以路徑分隔符號結尾。 如果 AuthRoot 或不允許使用未指定資料夾時，會比對憑證搜尋多個位置： 本機憑證存放區、 crypt32.dll 資源及本機 URL 快取。 若要下載從 Windows Update，必要時使用-f。 否則預設為相同的資料夾或網站為 CTLObject。
+CertDir: 包含符合 CTL 專案之憑證的資料夾。 Http: 資料夾路徑的結尾必須是路徑分隔符號。 如果未使用 AuthRoot 指定資料夾或不允許, 則會搜尋多個位置以尋找相符的憑證: 本機憑證存放區、crypt32.dll、dll 資源和本機 URL 快取。 必要時, 請使用-f 從 Windows Update 下載。 否則會預設為與 CTLObject 相同的資料夾或網站。
 
-包含驗證憑證的憑證檔案： 檔案。 憑證會符合 CTL 的項目，且符合所顯示的結果。 隱藏大部分的預設輸出。
+CertFile: 包含要驗證之憑證的檔案。 憑證會針對 CTL 專案進行比對, 並顯示相符的結果。 隱藏大部分的預設輸出。
 
-[-f] [-user] [-split]
+[-f][-使用者][-split]
 
 返回[功能表](#menu)
 
-## <a name="-sign"></a>-標誌
+## <a name="-sign"></a>-sign
 
-CertUtil [Options] -sign InFileList|SerialNumber|CRL OutFileList [StartDate+dd:hh] [+SerialNumberList | -SerialNumberList | -ObjectIdList | @ExtensionFile]
+CertUtil [選項]-sign InFileList |SerialNumber |CRL OutFileList [開始日期 + dd: hh] [+ SerialNumberList |-SerialNumberList |-ObjectIdList |\@ExtensionFile]
 
-CertUtil [Options] -sign InFileList|SerialNumber|CRL OutFileList [#HashAlgorithm] [+AlternateSignatureAlgorithm | -AlternateSignatureAlgorithm]
+CertUtil [選項]-sign InFileList |SerialNumber |CRL OutFileList [#HashAlgorithm] [+ AlternateSignatureAlgorithm |-AlternateSignatureAlgorithm]
 
-重新簽署的 CRL 或憑證
+重新簽署 CRL 或憑證
 
-若要修改並重新簽署的憑證或 CRL 檔案 InFileList： 逗號分隔清單
+InFileList: 要修改並重新簽署的憑證或 CRL 檔案清單 (以逗號分隔)
 
-序號：若要建立的憑證序號。 不能存在有效期間和其他選項。
+SerialNumber要建立的憑證序號。 有效期間和其他選項不得存在。
 
-CRL:建立空的 CRL。 不能存在有效期間和其他選項。
+.CRL建立空的 CRL。 有效期間和其他選項不得存在。
 
-修改的憑證或 CRL 輸出檔案 OutFileList： 以逗號分隔清單。 檔案的數目必須符合 InFileList。
+OutFileList: 已修改的憑證或 CRL 輸出檔案清單 (以逗號分隔)。 檔案數目必須符合 InFileList。
 
-StartDate + dd:hh： 新的有效期間： 選擇性的日期加上;選擇性的天與小時的有效期間;如果同時指定這兩者，請使用加號 （+） 分隔符號。 使用 [目前 [+ dd:hh]] 以在目前的時間開始。 使用 「 從未 」 沒有到期日 （適用於僅 Crl)。
+開始日期 + dd: hh: 新的有效期間: 選擇性的日期加上;選擇性的天數和時數有效期間;如果同時指定這兩者, 請使用加號 (+) 分隔字元。 使用 [now [+ dd: hh]], 在目前的時間開始。 使用「永不」無到期日 (僅適用于 Crl)。
 
-SerialNumberList： 以逗號分隔的數列數字清單新增或移除
+SerialNumberList: 要新增或移除的逗號分隔序號清單
 
-若要移除 ObjectIdList： 以逗號分隔副檔名 ObjectId 清單
+ObjectIdList: 要移除的逗號分隔擴充功能 ObjectId 清單
 
-@ExtensionFile: 包含要更新或移除延伸模組的 INF 檔案：
+\@ExtensionFile:包含要更新或移除之延伸模組的 INF 檔案:
 
 ```
 [Extensions]
@@ -1337,19 +1337,19 @@ SerialNumberList： 以逗號分隔的數列數字清單新增或移除
      _continue_="03 02 01 86"
 ```
 
-HashAlgorithm:前面加上 # 符號的雜湊演算法名稱
+HashAlgorithm雜湊演算法的名稱, 前面加上 # 符號
 
-AlternateSignatureAlgorithm： 替代簽章演算法規範
+AlternateSignatureAlgorithm: 替代簽章演算法規範
 
-以負號會導致序號和延伸模組被移除。 加號會導致加入 CRL 的序號。 時從 CRL 中移除項目，此清單可能包含序號和 Objectid。 AlternateSignatureAlgorithm 前面的減號會造成使用舊的簽章格式。 加號才 AlternateSignatureAlgorithm 引發 alternature 簽章格式，才能使用。 如果未指定 AlternateSignatureAlgorithm 則會使用憑證或 CRL 的簽章格式。
+減號會導致移除序號和延伸模組。 加號會導致序號新增至 CRL。 從 CRL 移除專案時, 此清單可能包含序號和 Objectid。 AlternateSignatureAlgorithm 前的減號會導致使用舊版簽章格式。 AlternateSignatureAlgorithm 前的加號會導致使用 alternature 簽章格式。 如果未指定 AlternateSignatureAlgorithm, 則會使用憑證或 CRL 中的簽章格式。
 
-[-nullsign] [-f] [-silent] [-Cert CertId]
+[-nullsign][-f][-無訊息][-Cert CertId]
 
 返回[功能表](#menu)
 
 ## <a name="-vroot"></a>-vroot
 
-CertUtil [Options] -vroot [delete]
+CertUtil [選項]-vroot [刪除]
 
 建立/刪除 web 虛擬根目錄和檔案共用
 
@@ -1357,25 +1357,25 @@ CertUtil [Options] -vroot [delete]
 
 ## <a name="-vocsproot"></a>-vocsproot
 
-CertUtil [Options] -vocsproot [delete]
+CertUtil [選項]-vocsproot [刪除]
 
-建立/刪除 web 虛擬根目錄 OCSP web proxy
+建立/刪除 OCSP Web Proxy 的 web 虛擬根目錄
 
 返回[功能表](#menu)
 
 ## <a name="-addenrollmentserver"></a>-addEnrollmentServer
 
-CertUtil [Options] -addEnrollmentServer Kerberos | UserName | ClientCertificate [AllowRenewalsOnly] [AllowKeyBasedRenewal]
+CertUtil [Options]-addEnrollmentServer Kerberos |使用者名稱 |ClientCertificate [AllowRenewalsOnly] [AllowKeyBasedRenewal]
 
 新增註冊伺服器應用程式
 
-新增註冊的伺服器應用程式和應用程式集區中，使用如有需要，針對指定的 CA。 此命令不會安裝二進位檔或封裝。 其中一個用戶端連線到憑證註冊伺服器的下列驗證方法。
+如有必要, 請為指定的 CA 新增註冊伺服器應用程式和應用程式集區。 此命令不會安裝二進位檔或封裝。 下列其中一種驗證方法, 其中用戶端會連接到憑證註冊伺服器。
 
-- Kerberos:使用 Kerberos 的 SSL 憑證
-- 使用者名稱：使用名為 SSL 認證的帳戶
-- ClientCertificate:使用 X.509 憑證的 SSL 憑證
-- AllowRenewalsOnly:只更新要求提交給此 CA，透過此 URL
-- AllowKeyBasedRenewal-允許使用的憑證，在 AD 中有任何相關聯的帳戶。 這適用於只使用 ClientCertificate 和 AllowRenewalsOnly 模式。
+- V5使用 Kerberos SSL 認證
+- UserName針對 SSL 認證使用命名帳戶
+- ClientCertificate使用 x.509 憑證 SSL 認證
+- AllowRenewalsOnly:只有續訂要求可以透過此 URL 提交給此 CA
+- AllowKeyBasedRenewal--允許使用在 AD 中沒有相關聯帳戶的憑證。 這只適用于 ClientCertificate 和 AllowRenewalsOnly 模式。
 
 [-config Machine\CAName]
 
@@ -1383,15 +1383,15 @@ CertUtil [Options] -addEnrollmentServer Kerberos | UserName | ClientCertificate 
 
 ## <a name="-deleteenrollmentserver"></a>-deleteEnrollmentServer
 
-CertUtil [Options] -deleteEnrollmentServer Kerberos | UserName | ClientCertificate
+CertUtil [Options]-deleteEnrollmentServer Kerberos |使用者名稱 |ClientCertificate
 
 刪除註冊伺服器應用程式
 
-刪除註冊伺服器應用程式和應用程式集區中，使用如有需要，針對指定的 CA。 此命令不會移除二進位檔或封裝。 其中一個用戶端連線到憑證註冊伺服器的下列驗證方法。
+如有必要, 請為指定的 CA 刪除註冊伺服器應用程式和應用程式集區。 此命令不會移除二進位檔或封裝。 下列其中一種驗證方法, 其中用戶端會連接到憑證註冊伺服器。
 
-1. Kerberos:使用 Kerberos 的 SSL 憑證
-2. 使用者名稱：使用名為 SSL 認證的帳戶
-3. ClientCertificate:使用 X.509 憑證的 SSL 憑證
+1. V5使用 Kerberos SSL 認證
+2. UserName針對 SSL 認證使用命名帳戶
+3. ClientCertificate使用 x.509 憑證 SSL 認證
 
 [-config Machine\CAName]
 
@@ -1399,351 +1399,351 @@ CertUtil [Options] -deleteEnrollmentServer Kerberos | UserName | ClientCertifica
 
 ## <a name="-addpolicyserver"></a>-addPolicyServer
 
-CertUtil [Options] -addPolicyServer Kerberos | UserName | ClientCertificate [KeyBasedRenewal]
+CertUtil [Options]-addPolicyServer Kerberos |使用者名稱 |ClientCertificate [KeyBasedRenewal]
 
-新增原則伺服器的應用程式
+新增原則伺服器應用程式
 
-如有必要，請加入原則的伺服器應用程式和應用程式集區。 此命令不會安裝二進位檔或封裝。 其中一種用戶端連線到憑證原則伺服器的下列驗證方法：
+視需要新增原則伺服器應用程式和應用程式集區。 此命令不會安裝二進位檔或封裝。 用戶端連線到憑證原則伺服器時所使用的下列其中一種驗證方法:
 
-- Kerberos:使用 Kerberos 的 SSL 憑證
-- 使用者名稱：使用名為 SSL 認證的帳戶
-- ClientCertificate:使用 X.509 憑證的 SSL 憑證
-- KeyBasedRenewal:只有包含 KeyBasedRenewal 範本的原則才會傳回給用戶端。 這個旗標僅適用於使用者名稱和 ClientCertificate 驗證。
+- V5使用 Kerberos SSL 認證
+- UserName針對 SSL 認證使用命名帳戶
+- ClientCertificate使用 x.509 憑證 SSL 認證
+- KeyBasedRenewal:只有包含 KeyBasedRenewal 範本的原則才會傳回給用戶端。 此旗標僅適用于使用者名稱和 ClientCertificate 驗證。
 
 返回[功能表](#menu)
 
 ## <a name="-deletepolicyserver"></a>-deletePolicyServer
 
-CertUtil [Options] -deletePolicyServer Kerberos | UserName | ClientCertificate [KeyBasedRenewal]
+CertUtil [Options]-deletePolicyServer Kerberos |使用者名稱 |ClientCertificate [KeyBasedRenewal]
 
 刪除原則伺服器應用程式
 
-如有必要，請刪除原則的伺服器應用程式和應用程式集區。 此命令不會移除二進位檔或封裝。 其中一種用戶端連線到憑證原則伺服器的下列驗證方法：
+視需要刪除原則伺服器應用程式和應用程式集區。 此命令不會移除二進位檔或封裝。 用戶端連線到憑證原則伺服器時所使用的下列其中一種驗證方法:
 
-1. Kerberos:使用 Kerberos 的 SSL 憑證
-2. 使用者名稱：使用名為 SSL 認證的帳戶
-3. ClientCertificate:使用 X.509 憑證的 SSL 憑證
+1. V5使用 Kerberos SSL 認證
+2. UserName針對 SSL 認證使用命名帳戶
+3. ClientCertificate使用 x.509 憑證 SSL 認證
 4. KeyBasedRenewal:KeyBasedRenewal 原則伺服器
 
 返回[功能表](#menu)
 
 ## <a name="-oid"></a>-oid
 
-CertUtil [Options] -oid ObjectId [DisplayName | delete [LanguageId [Type]]]
+CertUtil [Options]-oid ObjectId [DisplayName | delete [LanguageId [Type]]]
 
-CertUtil [Options] -oid GroupId
+CertUtil [Options]-oid GroupId
 
-CertUtil [Options] -oid AlgId | AlgorithmName [GroupId]
+CertUtil [Options]-oid AlgId |AlgorithmName [GroupId]
 
 顯示 ObjectId 或設定顯示名稱
 
-- ObjectId-ObjectId 來顯示或新增顯示名稱
-- GroupId-十進位 GroupId 數字要列舉的 Objectid
-- AlgId-十六進位 AlgId 為查閱的 ObjectId 的
-- 若要查閱的 ObjectId 的 AlgorithmName-演算法名稱
-- 將存放於 DS DisplayName-顯示名稱
-- 刪除-刪除顯示名稱
-- LanguageId-語言識別碼 (目前的預設值：1033)
-- 類型--DS 物件建立的類型：範本 （預設值），2 代表發佈原則，應用程式原則 3 1
-- 您可以使用-f 建立 DS 物件。
+- ObjectId--要顯示或新增顯示名稱的 ObjectId
+- GroupId--要列舉的 Objectid 的十進位 GroupId 數位
+- AlgId--要查閱之 ObjectId 的十六進位 AlgId
+- AlgorithmName--要查閱之 ObjectId 的演算法名稱
+- DisplayName--要儲存在 DS 中的顯示名稱
+- 刪除--刪除顯示名稱
+- LanguageId--語言識別項 (預設為目前的:1033)
+- 輸入--要建立的 DS 物件類型:1代表範本 (預設值), 2 代表發佈原則, 3 代表應用程式原則
+- 使用-f 來建立 DS 物件。
 
 [-f]
 
 返回[功能表](#menu)
 
-## <a name="-error"></a>-error
+## <a name="-error"></a>-錯誤
 
-CertUtil [Options] -error ErrorCode
+CertUtil [Options]-錯誤 ErrorCode
 
-顯示錯誤訊息文字
+顯示錯誤碼郵件內文
 
 返回[功能表](#menu)
 
 ## <a name="-getreg"></a>-getreg
 
-CertUtil [Options] -getreg [{ca|restore|policy|exit|template|enroll|chain|PolicyServers}\[ProgId\]][RegistryValueName]
+CertUtil [選項]-getreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers}\[ProgId\]] [RegistryValueName]
 
 顯示登錄值
 
-ca:使用 CA 的登錄機碼
+ca使用 CA 的登錄機碼
 
-還原：使用 CA 還原登錄機碼
+還原使用 CA 的 restore 登錄機碼
 
-原則：使用原則模組的登錄機碼
+策略使用原則模組的登錄機碼
 
-結束：使用先結束模組的登錄機碼
+退出使用第一個結束模組的登錄機碼
 
-範本：使用範本的登錄機碼 （使用-使用者範本的使用者）
+template使用範本登錄機碼 (使用者範本使用-user)
 
-註冊：使用註冊登錄機碼 （使用-使用者內容的使用者）
+享受使用註冊登錄機碼 (使用者內容使用-user)
 
-鏈結：使用鏈結 configuration 登錄機碼
+系列使用連鎖設定登錄機碼
 
 PolicyServers:使用原則伺服器登錄機碼
 
-ProgId:使用原則或結束模組的 ProgId （登錄子機碼名稱）
+進程使用原則或結束模組的 ProgId (登錄子機碼名稱)
 
-RegistryValueName： 登錄值名稱 (使用"名稱\*"為前置詞比對)
+RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
-值： 新的數值、 字串或日期的登錄值或檔案名稱。 如果數字值的開頭"+"或"-"，指定新值的位元會設定或清除現有的登錄值中。
+值: 新的數值、字串或日期登錄值或檔案名。 如果數值的開頭為 "+" 或 "-", 則會在現有的登錄值中設定或清除在新值中指定的位。
 
-如果字串值的開頭"+"或"-"，與現有的值為 REG_MULTI_SZ 值、 加入或移除現有的登錄值的字串。 若要強制建立 REG_MULTI_SZ 的值，請新增"\n"結尾的字串值。
+如果字串值的開頭為 "+" 或 "-", 而現有的值為 REG_MULTI_SZ 值, 則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值, 請在字串值的結尾加上 "\n"。
 
-如果值的開頭"@"，值的其餘部分是包含二進位值的十六進位文字表示的檔案名稱。 如果它未參考有效的檔案，它會改為剖析，為 [Date] [+ |-] [dd:hh]-選用的日期，加或減選擇性的天數和時數。 如果同時指定這兩者，請使用加號 （+） 或減號 （-） 分隔。 相對於目前時間的日期，請使用 [now + dd:hh]。
+如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案, 則會改為將它剖析為 [Date] [+ |-] [dd: hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
 
-使用 「 chain\ChainCacheResyncFiletime @now」 有效地清除快取的 Crl。
+使用 "chain\ChainCacheResyncFiletime \@now" 可有效地清除快取的 crl。
 
-[-f] [-user] [-GroupPolicy] [-config Machine\CAName]
+[-f][-使用者][-GroupPolicy][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-setreg"></a>-setreg
 
-CertUtil [Options] -setreg [{ca|restore|policy|exit|template|enroll|chain|PolicyServers}\[ProgId\]]RegistryValueName Value
+CertUtil [選項]-setreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers}\[ProgId\]] RegistryValueName 值
 
 設定登錄值
 
-ca:使用 CA 的登錄機碼
+ca使用 CA 的登錄機碼
 
-還原：使用 CA 還原登錄機碼
+還原使用 CA 的 restore 登錄機碼
 
-原則：使用原則模組的登錄機碼
+策略使用原則模組的登錄機碼
 
-結束：使用先結束模組的登錄機碼
+退出使用第一個結束模組的登錄機碼
 
-範本：使用範本的登錄機碼 （使用-使用者範本的使用者）
+template使用範本登錄機碼 (使用者範本使用-user)
 
-註冊：使用註冊登錄機碼 （使用-使用者內容的使用者）
+享受使用註冊登錄機碼 (使用者內容使用-user)
 
-鏈結：使用鏈結 configuration 登錄機碼
+系列使用連鎖設定登錄機碼
 
 PolicyServers:使用原則伺服器登錄機碼
 
-ProgId:使用原則或結束模組的 ProgId （登錄子機碼名稱）
+進程使用原則或結束模組的 ProgId (登錄子機碼名稱)
 
-RegistryValueName： 登錄值名稱 (使用"名稱\*"為前置詞比對)
+RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
-值： 新的數值、 字串或日期的登錄值或檔案名稱。 如果數字值的開頭"+"或"-"，指定新值的位元會設定或清除現有的登錄值中。
+值: 新的數值、字串或日期登錄值或檔案名。 如果數值的開頭為 "+" 或 "-", 則會在現有的登錄值中設定或清除在新值中指定的位。
 
-如果字串值的開頭"+"或"-"，與現有的值為 REG_MULTI_SZ 值、 加入或移除現有的登錄值的字串。 若要強制建立 REG_MULTI_SZ 的值，請新增"\n"結尾的字串值。
+如果字串值的開頭為 "+" 或 "-", 而現有的值為 REG_MULTI_SZ 值, 則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值, 請在字串值的結尾加上 "\n"。
 
-如果值的開頭"@"，值的其餘部分是包含二進位值的十六進位文字表示的檔案名稱。 如果它未參考有效的檔案，它會改為剖析，為 [Date] [+ |-] [dd:hh]-選用的日期，加或減選擇性的天數和時數。 如果同時指定這兩者，請使用加號 （+） 或減號 （-） 分隔。 相對於目前時間的日期，請使用 [now + dd:hh]。
+如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案, 則會改為將它剖析為 [Date] [+ |-] [dd: hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
 
-使用 「 chain\ChainCacheResyncFiletime @now」 有效地清除快取的 Crl。
+使用 "chain\ChainCacheResyncFiletime \@now" 可有效地清除快取的 crl。
 
-[-f] [-user] [-GroupPolicy] [-config Machine\CAName]
+[-f][-使用者][-GroupPolicy][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-delreg"></a>-delreg
 
-CertUtil [Options] -delreg [{ca|restore|policy|exit|template|enroll|chain|PolicyServers}\[ProgId\]][RegistryValueName]
+CertUtil [選項]-delreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers}\[ProgId\]] [RegistryValueName]
 
 刪除登錄值
 
-ca:使用 CA 的登錄機碼
+ca使用 CA 的登錄機碼
 
-還原：使用 CA 還原登錄機碼
+還原使用 CA 的 restore 登錄機碼
 
-原則：使用原則模組的登錄機碼
+策略使用原則模組的登錄機碼
 
-結束：使用先結束模組的登錄機碼
+退出使用第一個結束模組的登錄機碼
 
-範本：使用範本的登錄機碼 （使用-使用者範本的使用者）
+template使用範本登錄機碼 (使用者範本使用-user)
 
-註冊：使用註冊登錄機碼 （使用-使用者內容的使用者）
+享受使用註冊登錄機碼 (使用者內容使用-user)
 
-鏈結：使用鏈結 configuration 登錄機碼
+系列使用連鎖設定登錄機碼
 
 PolicyServers:使用原則伺服器登錄機碼
 
-ProgId:使用原則或結束模組的 ProgId （登錄子機碼名稱）
+進程使用原則或結束模組的 ProgId (登錄子機碼名稱)
 
-RegistryValueName： 登錄值名稱 (使用"名稱\*"為前置詞比對)
+RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
-值： 新的數值、 字串或日期的登錄值或檔案名稱。 如果數字值的開頭"+"或"-"，指定新值的位元會設定或清除現有的登錄值中。
+值: 新的數值、字串或日期登錄值或檔案名。 如果數值的開頭為 "+" 或 "-", 則會在現有的登錄值中設定或清除在新值中指定的位。
 
-如果字串值的開頭"+"或"-"，與現有的值為 REG_MULTI_SZ 值、 加入或移除現有的登錄值的字串。 若要強制建立 REG_MULTI_SZ 的值，請新增"\n"結尾的字串值。
+如果字串值的開頭為 "+" 或 "-", 而現有的值為 REG_MULTI_SZ 值, 則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值, 請在字串值的結尾加上 "\n"。
 
-如果值的開頭"@"，值的其餘部分是包含二進位值的十六進位文字表示的檔案名稱。 如果它未參考有效的檔案，它會改為剖析，為 [Date] [+ |-] [dd:hh]-選用的日期，加或減選擇性的天數和時數。 如果同時指定這兩者，請使用加號 （+） 或減號 （-） 分隔。 相對於目前時間的日期，請使用 [now + dd:hh]。
+如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案, 則會改為將它剖析為 [Date] [+ |-] [dd: hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
 
-使用 「 chain\ChainCacheResyncFiletime @now」 有效地清除快取的 Crl。
+使用 "chain\ChainCacheResyncFiletime \@now" 可有效地清除快取的 crl。
 
-[-f] [-user] [-GroupPolicy] [-config Machine\CAName]
+[-f][-使用者][-GroupPolicy][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-importkms"></a>-ImportKMS
 
-CertUtil [Options] -ImportKMS UserKeyAndCertFile [CertId]
+CertUtil [Options]-ImportKMS UserKeyAndCertFile [CertId]
 
-使用者金鑰和憑證匯入金鑰保存的伺服器資料庫
+將使用者金鑰和憑證匯入伺服器資料庫以進行金鑰保存
 
-UserKeyAndCertFile-資料檔包含使用者的私密金鑰和要封存的憑證。  這可以是下列其中一項：
+UserKeyAndCertFile--包含要封存之使用者私密金鑰和憑證的資料檔案。  這可以是下列任何一項:
 
 - Exchange 金鑰管理伺服器 (KMS) 匯出檔案
 - PFX 檔案
 
-CertId:KMS 匯出檔案解密的憑證相符的語彙基元。  請參閱[-儲存](#-store)。
+CertIdKMS 匯出檔案解密憑證符合 token。  請參閱[-store](#-store)。
 
-您可以使用-f，匯入不是由 CA 簽發的憑證。
+使用-f 匯入不是由 CA 發行的憑證。
 
-[-f] [-silent] [-split] [-config Machine\CAName] [-p Password] [-symkeyalg SymmetricKeyAlgorithm[,KeyLength]]
+[-f][-無訊息][-split][-config Machine\CAName][-p 密碼][-symkeyalg SymmetricKeyAlgorithm [, KeyLength]]
 
 返回[功能表](#menu)
 
 ## <a name="-importcert"></a>-ImportCert
 
-CertUtil [Options] -ImportCert Certfile [ExistingRow]
+CertUtil [Options]-ImportCert Certfile [ExistingRow]
 
-憑證檔案匯入資料庫
+將憑證檔案匯入資料庫
 
-您可以使用 ExistingRow 匯入的憑證來取代相同索引鍵的暫止要求。
+使用 ExistingRow 來匯入憑證, 以取代相同金鑰的暫止要求。
 
-您可以使用-f，匯入不是由 CA 簽發的憑證。
+使用-f 匯入不是由 CA 發行的憑證。
 
-CA 可能也需要設定為支援外部憑證匯入： certutil-setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
+CA 也可能需要設定為支援外部憑證匯入: certutil-setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
 
-[-f] [-config Machine\CAName]
+[-f][-config Machine\CAName]
 
 返回[功能表](#menu)
 
 ## <a name="-getkey"></a>-GetKey
 
-CertUtil [Options] -GetKey SearchToken [RecoveryBlobOutFile]
+CertUtil [Options]-GetKey SearchToken [RecoveryBlobOutFile]
 
-CertUtil [選項]-GetKey SearchToken 指令碼 OutputScriptFile
+CertUtil [Options]-GetKey SearchToken 腳本 OutputScriptFile
 
-CertUtil [選項]-GetKey SearchToken 擷取 |復原 OutputFileBaseName
+CertUtil [Options]-GetKey SearchToken 取出 |復原 OutputFileBaseName
 
-擷取已封存的私密金鑰復原 blob、 產生復原指令碼，或復原備份的金鑰
+取出已封存的私密金鑰修復 blob、產生復原腳本, 或復原封存金鑰
 
-指令碼： 產生指令碼來擷取和還原的金鑰 （預設行為或如果找不到多個相符的復原候選項目，如果輸出檔案不是指定）。
+腳本: 產生用來抓取和復原金鑰的腳本 (如果找到多個相符的復原候選項目, 或者如果未指定輸出檔, 則為預設行為)。
 
-擷取： 擷取一或多個金鑰復原 Blob （如果找到完全相符復原候選項目，並指定輸出檔，預設行為）
+抓取: 取出一或多個金鑰修復 Blob (如果只找到一個符合的復原候選, 而且已指定輸出檔, 則為預設行為)
 
-復原： 擷取和還原 （需要 Key Recovery Agent 憑證和私密金鑰） 的一個步驟中的私用金鑰
+復原: 在一個步驟中取出及復原私密金鑰 (需要金鑰復原代理憑證和私密金鑰)
 
-SearchToken:用來選取要復原的憑證與金鑰。
+SearchToken用來選取要復原的金鑰和憑證。
 
-可以是下列其中一項：
+可以是下列任何一項:
 
 1. 憑證一般名稱
 2. 憑證序號
-3. 憑證的 sha-1 雜湊 （指紋）
-4. 憑證 KeyId sha-1 雜湊 （主體金鑰識別項）
-5. 要求者名稱 （網域 \ 使用者）
-6. UPN (user@domain)
+3. 憑證 SHA-1 雜湊 (指紋)
+4. 憑證 KeyId SHA-1 雜湊 (主體金鑰識別碼)
+5. 要求者名稱 (網域 \ 使用者)
+6. UPN (使用者\@網域)
 
-包含憑證鏈結和相關聯的私密金鑰，仍會加密到一個或多個 Key Recovery Agent 憑證 RecoveryBlobOutFile： 輸出檔。
+RecoveryBlobOutFile: 包含憑證鏈和相關聯私密金鑰的輸出檔, 仍然會加密為一或多個金鑰復原代理憑證。
 
-包含批次指令碼來擷取並復原私密金鑰 OutputScriptFile： 輸出檔。
+OutputScriptFile: 輸出檔案, 其中包含用來抓取和復原私密金鑰的批次腳本。
 
-OutputFileBaseName： 輸出檔主檔名。 擷取，任何延伸模組會截斷並針對每個金鑰修復 blob 附加憑證特定字串和.rec 延伸模組。  每個檔案包含憑證鏈結和相關聯的私密金鑰，仍會加密到一個或多個 Key Recovery Agent 憑證。 復原的任何延伸模組會截斷並.p12 副檔名附加。  包含修復的憑證鏈結和相關聯的私密金鑰，儲存為 PFX 檔案。
+OutputFileBaseName: 輸出檔案的基底名稱。 針對抓取, 會截斷任何延伸模組, 並針對每個金鑰修復 blob 附加一個憑證特定的字串和 rec 副檔名。  每個檔案都包含憑證鏈和相關聯的私密金鑰, 但仍加密為一或多個金鑰復原代理憑證。 針對復原, 會截斷任何延伸模組並附加 p12 副檔名。  包含已復原的憑證鏈和相關聯的私密金鑰, 儲存為 PFX 檔案。
 
-[-f] [-UnicodeText] [-silent] [-config Machine\CAName] [-p Password] [-ProtectTo SAMNameAndSIDList] [-csp Provider]
+[-f][-UnicodeText][-無訊息][-config Machine\CAName][-p 密碼][-ProtectTo SAMNameAndSIDList][-csp 提供者]
 
 返回[功能表](#menu)
 
 ## <a name="-recoverkey"></a>-RecoverKey
 
-CertUtil [Options] -RecoverKey RecoveryBlobInFile [PFXOutFile [RecipientIndex]]
+CertUtil [Options]-RecoverKey RecoveryBlobInFile [PFXOutFile [RecipientIndex]]
 
 復原封存的私密金鑰
 
-[-f] [-user] [-silent] [-split] [-p Password] [-ProtectTo SAMNameAndSIDList] [-csp Provider] [-t Timeout]
+[-f][-使用者][-無訊息][-split][-p 密碼][-ProtectTo SAMNameAndSIDList][-csp 提供者][-t Timeout]
 
 返回[功能表](#menu)
 
 ## <a name="-mergepfx"></a>-MergePFX
 
-CertUtil [Options] -MergePFX PFXInFileList PFXOutFile [ExtendedProperties]
+CertUtil [Options]-MergePFX PFXInFileList PFXOutFile [ExtendedProperties]
 
-PFXInFileList:以逗號分隔的 PFX 輸入的檔清單
+PFXInFileList:以逗號分隔的 PFX 輸入檔案清單
 
-PFXOutFile:輸出的 PFX 檔案
+PFXOutFile:PFX 輸出檔案
 
-ExtendedProperties:包含擴充的屬性
+ExtendedProperties包含擴充屬性
 
-在命令列上指定的密碼是以逗號分隔的密碼清單。  如果指定一個以上的密碼，則上次的密碼用於輸出檔案中。  如果只有提供一個密碼，或上次的密碼是 「\*」，將會提示使用者輸入輸出檔案的密碼。
+在命令列上指定的密碼是以逗號分隔的密碼清單。  如果指定了一個以上的密碼, 則會將最後一個密碼用於輸出檔案。  如果只提供一個密碼, 或最後一個密碼是 "\*", 則會提示使用者輸入輸出檔案密碼。
 
-[-f] [-user] [-split] [-p Password] [-ProtectTo SAMNameAndSIDList] [-csp Provider]
+[-f][-使用者][-split][-p 密碼][-ProtectTo SAMNameAndSIDList][-csp 提供者]
 
 返回[功能表](#menu)
 
 ## <a name="-convertepf"></a>-ConvertEPF
 
-CertUtil [Options] -ConvertEPF PFXInFileList EPFOutFile [cast | cast-] [V3CACertId][,Salt]
+CertUtil [Options]-ConvertEPF PFXInFileList EPFOutFile [cast | cast-] [V3CACertId] [, Salt]
 
-將 PFX 檔案轉換成 EPF 檔案
+將 PFX 檔案轉換為 EPF 檔案
 
-PFXInFileList:以逗號分隔的 PFX 輸入的檔清單
+PFXInFileList:以逗號分隔的 PFX 輸入檔案清單
 
-EPF:EPF 輸出檔案
+EPF:EPF 輸出檔
 
-轉換：使用 CAST 64 加密
+鑄造使用 CAST 64 加密
 
-轉型為：使用 CAST 64 加密 （匯出）
+cast-:使用 CAST 64 加密 (匯出)
 
-V3CACertId:V3 CA 的憑證相符的語彙基元。  請參閱[-儲存](#-store)CertId 描述。
+V3CACertId:V3 CA 憑證相符 token。  請參閱[-store](#-store) CertId description。
 
-Salt:EPF 輸出檔案 salt 字串
+SaltEPF 輸出檔 salt 字串
 
-在命令列上指定的密碼是以逗號分隔的密碼清單。 如果指定一個以上的密碼，則上次的密碼用於輸出檔案中。  如果只有提供一個密碼，或上次的密碼是 「\*」，將會提示使用者輸入輸出檔案的密碼。
+在命令列上指定的密碼是以逗號分隔的密碼清單。 如果指定了一個以上的密碼, 則會將最後一個密碼用於輸出檔案。  如果只提供一個密碼, 或最後一個密碼是 "\*", 則會提示使用者輸入輸出檔案密碼。
 
-[-f] [-silent] [-split] [-dc DCName] [-p Password] [-csp Provider]
+[-f][-無訊息][-split][-dc DCName][-p 密碼][-csp 提供者]
 
 返回[功能表](#menu)
 
 ## <a name="options"></a>選項。
 
-本章節會定義您可以使用此命令指定的選項。
+這個區段會定義您可以使用命令指定的選項。
 
 |選項。|描述|
 |-------|-----------|
-|-nullsign|資料的雜湊做為簽章|
+|-nullsign|使用資料雜湊做為簽章|
 |-f|強制覆寫|
-|-enterprise|使用本機企業登錄憑證存放區|
-|-使用者|HKEY_CURRENT_USER 所使用的金鑰或憑證存放區|
-|-GroupPolicy|使用群組原則的憑證存放區|
-|-ut|顯示使用者範本|
-|-mt|顯示機器的範本|
-|-Unicode|以 Unicode 撰寫重新導向的輸出|
-|-UnicodeText|以 Unicode 寫入輸出檔案|
-|-gmt|顯示時間為 GMT|
-|-seconds|以秒和毫秒為單位顯示時間|
-|-無訊息|使用無訊息的旗標來取得密碼編譯內容|
-|-split|分割內嵌的 ASN.1 項目，並儲存到檔案|
-|-v|詳細資訊的作業|
-|-privatekey|顯示密碼和私密金鑰的資料|
-|-釘選 釘選|智慧卡 PIN|
-|-urlfetch|擷取，並確認憑證 AIA 和 CDP Crl|
-|-config Machine\CAName|CA 和電腦名稱的字串|
-|-PolicyServer URLOrId|原則伺服器 URL 或 id。選取 U，使用-PolicyServer /。 針對所有的原則伺服器，請使用-PolicyServer \*|
-|-Anonymous|使用匿名的 SSL 憑證|
-|-Kerberos|使用 Kerberos 的 SSL 憑證|
-|-ClientCertificate ClientCertId|使用 X.509 憑證的 SSL 認證。 選取 U / 我使用 clientCertificate。|
-|-UserName 使用者名稱|您可以使用具名的帳戶取得 SSL 認證。 選取 U / 我使用-UserName。|
-|憑證 CertId|簽署憑證|
-|dc DCName|目標特定的網域控制站|
-|-限制 RestrictionList|以逗號分隔的限制清單。 每個限制是由資料行名稱、 關係運算子和常數整數、 字串或日期所組成。 可能前面加入一個資料行名稱，正或負號來指示排序順序。 範例：</br>「 RequestId = 47"</br>"+ RequesterName > =，RequesterName < b"</br>"-RequesterName > 網域]、 [配置 = 21 」|
-|-out columnlist 就會|以逗號分隔的資料行清單|
+|-enterprise|使用本機電腦的 Enterprise registry 憑證存放區|
+|-使用者|使用 HKEY_CURRENT_USER 機碼或憑證存放區|
+|-GroupPolicy|使用群組原則憑證存放區|
+|-未通過|顯示使用者範本|
+|-mt|顯示電腦範本|
+|-Unicode|以 Unicode 寫入重新導向的輸出|
+|-UnicodeText|以 Unicode 寫入輸出檔|
+|-gmt|以 GMT 顯示時間|
+|-秒|以秒和毫秒為單位顯示時間|
+|-無訊息|使用無訊息旗標來取得 crypt 內容|
+|-split|分割內嵌的 asn.1 元素, 並儲存至檔案|
+|-v|詳細資訊作業|
+|-privatekey|顯示密碼和私密金鑰資料|
+|-pin 釘選|智慧卡 PIN|
+|-urlfetch verify|取得並驗證 AIA 憑證和 CDP Crl|
+|-config Machine\CAName|CA 和電腦名稱稱字串|
+|-PolicyServer URLOrId|原則伺服器 URL 或識別碼。針對 [選取] U/I, 請使用-PolicyServer。 針對所有原則伺服器, 請使用-PolicyServer\*|
+|-匿名|使用匿名 SSL 認證|
+|-Kerberos|使用 Kerberos SSL 認證|
+|-ClientCertificate ClientCertId|使用 x.509 憑證 SSL 認證。 針對 [選取] U/I, 請使用-clientCertificate。|
+|-UserName 使用者名稱|使用命名帳戶作為 SSL 認證。 針對 [選取] U/I, 請使用-UserName。|
+|-Cert CertId|簽署憑證|
+|-dc DCName|以特定網域控制站為目標|
+|-限制 RestrictionList|以逗號分隔的限制清單。 每個限制都包含一個資料行名稱、一個關聯式運算子和一個常數整數、字串或日期。 一個資料行名稱前面可能會加上加號或減號, 以指出排序次序。 範例：</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>「-RequesterName > 網域, 配置 = 21」|
+|-out ColumnList|逗號分隔的資料行清單|
 |-p 密碼|密碼|
 |-ProtectTo SAMNameAndSIDList|以逗號分隔的 SAM 名稱/SID 清單|
 |-csp 提供者|提供者|
-|-t 逾時|以毫秒為單位的 URL 擷取逾時|
-|-symkeyalg SymmetricKeyAlgorithm[,KeyLength]|選擇性的金鑰長度的對稱金鑰演算法名稱範例：AES 128 或 3DES|
+|-t Timeout|URL 提取超時 (以毫秒為單位)|
+|-symkeyalg SymmetricKeyAlgorithm [, KeyLength]|具有選擇性金鑰長度的對稱金鑰演算法名稱, 範例:AES、128或3DES|
 
 返回[功能表](#menu)
 
-## <a name="additional-certutil-examples"></a>其他的 certutil 範例
+## <a name="additional-certutil-examples"></a>其他 certutil 範例
 
-如需如何使用此命令的一些範例，請參閱
+如需如何使用此命令的一些範例, 請參閱
 
 1. [從命令列管理 Active Directory 憑證服務 (AD CS) 的 Certutil 範例](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
 2. [管理憑證的 Certutil 工作](https://technet.microsoft.com/library/cc772898.aspx)
-3. [使用 CertUtil.exe 命令列工具的逐步解說的二進位要求匯出](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
+3. [使用 CertUtil 命令列工具的二進位要求匯出逐步解說](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
 4. [根 CA 憑證更新](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
-5. [certutil](https://msdn.microsoft.com/subscriptions/cc773087.aspx)
+5. [Certutil](https://msdn.microsoft.com/subscriptions/cc773087.aspx)
 
 返回[功能表](#menu)
