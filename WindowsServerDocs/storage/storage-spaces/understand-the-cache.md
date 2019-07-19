@@ -7,25 +7,25 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 07/18/2017
+ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 62fa33d08af25c424c786c10191fe6ae2b3d02bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0050a8931162e37408895ef664293be2349d1bde
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855509"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68315002"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>了解儲存空間直接存取中的快取
 
->適用於：Windows Server 2019，Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 [儲存空間直接存取](storage-spaces-direct-overview.md)包含內建的伺服器端快取，可將儲存效能發揮極致。 它是大型持久的即時*讀寫*快取。 啟用儲存空間直接存取時，就會自動設定快取。 大多數的情況下，不需要任何的手動管理。
 快取的運作方式取決於磁碟機呈現的類型。
 
 下列影片深入探討儲存空間直接存取的快取運作方式，以及其他設計考量。
 
-<strong>儲存空間直接存取的設計考量</strong><br>(20 分鐘)<br>
+<strong>儲存空間直接存取設計考慮</strong><br>(20 分鐘)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="drive-types-and-deployment-options"></a>磁碟機類型及部署選項
@@ -88,7 +88,7 @@ ms.locfileid: "59855509"
    >[!NOTE]
    > 快取磁碟機不提供可用的儲存容量。 儲存在快取中的所有資料也會儲存在其他位置，或一旦取消暫存即另存他處。 意即部署的原始儲存容量只是容量磁碟機的總和。
 
-當所有的磁碟機類型相同時，不會自動設定任何快取。 您可以選擇手動設定較高耐力磁碟機快取同類型的較低耐力磁碟機，詳情請參閱[手動設定](#manual)一節。
+當所有的磁碟機類型相同時，不會自動設定任何快取。 您可以選擇手動設定較高耐力磁碟機快取同類型的較低耐力磁碟機，詳情請參閱[手動設定](#manual-configuration)一節。
 
    >[!TIP]
    > 在全 NVMe 或全 SSD 部署中，特別是極小規模時，不「配置」任何磁碟機執行快取，可大幅提升儲存效能。
@@ -109,7 +109,7 @@ ms.locfileid: "59855509"
 
 ### <a name="readwrite-caching-for-hybrid-deployments"></a>混合式部署的讀/寫快取
 
-快取硬碟 (HDD) 時，會快取讀取*和*寫入，為兩者提供快閃式延遲 (通常提升約 10 倍速度)。 讀取快取儲存最近和經常讀取的資料供快速存取，並可將 HDD 的隨機流量減到最低。 （因為搜尋和旋轉延遲，延遲及遺失的時間產生的隨機存取 HDD 是重要）。寫入快取來承受高載，而且，如上所述，coalesce 寫入重寫和容量的磁碟機的累計流量降到最低。
+快取硬碟 (HDD) 時，會快取讀取*和*寫入，為兩者提供快閃式延遲 (通常提升約 10 倍速度)。 讀取快取儲存最近和經常讀取的資料供快速存取，並可將 HDD 的隨機流量減到最低。 (因為搜尋和旋轉延遲, 隨機存取 HDD 所產生的延遲和遺失時間很重要)。寫入會進行快取以吸收高載, 並如同之前一樣合併寫入和重新寫入, 並將累計流量降到最低容量磁片磁碟機。
 
 儲存空間直接存取實作的演算法，可以先取消隨機化再取消暫存寫入，模擬似乎循序的磁碟 IO 模式，即使實際的工作負載 IO (如虛擬機器) 為隨機。 這可最大化 IOPS 及 HDD 輸送量。
 
@@ -121,13 +121,13 @@ ms.locfileid: "59855509"
 
 本表摘要說明哪些磁碟機用於快取、哪些用於容量，以及各種部署可能出現的快取行為。
 
-| 部署       | 快取磁碟機                        | 容量磁碟機 | 快取行為 (預設)                  |
-|------------------|-------------------------------------|-----------------|-------------------------------------------|
-| 全 NVMe         | 無 (選擇性：手動設定) | NVMe            | 僅寫入 (如有設定)                |
-| 全 SSD          | 無 (選擇性：手動設定) | SSD             | 僅寫入 (如有設定)                |
-| NVMe + SSD       | NVMe                                | SSD             | 唯寫                                |
-| NVMe + HDD       | NVMe                                | HDD             | 讀取 + 寫入                              |
-| SSD + HDD        | SSD                                 | HDD             | 讀取 + 寫入                              |
+| 部署     | 快取磁碟機                        | 容量磁碟機 | 快取行為 (預設)  |
+| -------------- | ----------------------------------- | --------------- | ------------------------- |
+| 全 NVMe         | 無 (選擇性：手動設定) | NVMe            | 僅寫入 (如有設定)  |
+| 全 SSD          | 無 (選擇性：手動設定) | SSD             | 僅寫入 (如有設定)  |
+| NVMe + SSD       | NVMe                                | SSD             | 唯寫                  |
+| NVMe + HDD       | NVMe                                | HDD             | 讀取 + 寫入                |
+| SSD + HDD        | SSD                                 | HDD             | 讀取 + 寫入                |
 | NVMe + SSD + HDD | NVMe                                | SSD + HDD       | HDD 讀取 + 寫入、SSD 僅寫入  |
 
 ## <a name="server-side-architecture"></a>伺服器端架構
@@ -171,11 +171,13 @@ Windows 軟體定義的儲存堆疊中還有幾種無關聯的快取。 例如�
 
 使用儲存空間直接存取，不必修改儲存空間回寫式快取的預設行為。 例如，**New-Volume** Cmdlet 不該使用 **-WriteCacheSize** 參數。
 
-您可以選擇是否要使用 CSV 快取，由您作主。 儲存空間直接存取預設予以關閉，但與本主題中所有提及的新快取都不衝突。 在某些情況下，它可提供極佳的效能表現。 如需詳細資訊，請參閱[如何啟用 CSV 快取](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/) (英文)。
+您可以選擇是否要使用 CSV 快取，由您作主。 儲存空間直接存取預設予以關閉，但與本主題中所有提及的新快取都不衝突。 在某些情況下，它可提供極佳的效能表現。 如需詳細資訊，請參閱[如何啟用 CSV 快取](../../failover-clustering/failover-cluster-csvs.md#enable-the-csv-cache-for-read-intensive-workloads-optional) (英文)。
 
-## <a name="manual"></a> 手動設定
+## <a name="manual-configuration"></a>手動設定
 
-大部分的部署都不需要手動設定。 如果您真的需要，請繼續閱讀後文！
+大部分的部署都不需要手動設定。 如果您需要它, 請參閱下列各節。 
+
+如果您需要在安裝之後對快取裝置模型進行變更, 請編輯健全狀況服務的支援元件檔, 如[健全狀況服務總覽](../../failover-clustering/health-service-overview.md#supported-components-document)中所述。
 
 ### <a name="specify-cache-drive-model"></a>指定快取磁碟機模型
 
@@ -188,18 +190,28 @@ Windows 軟體定義的儲存堆疊中還有幾種無關聯的快取。 例如�
 
 ####  <a name="example"></a>範例
 
-```
-PS C:\> Get-PhysicalDisk | Group Model -NoElement
+首先, 取得實體磁片的清單:
 
+```PowerShell
+Get-PhysicalDisk | Group Model -NoElement
+```
+
+以下是一些輸出範例︰
+
+```
 Count Name
 ----- ----
     8 FABRIKAM NVME-1710
    16 CONTOSO NVME-1520
-
-PS C:\> Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 ```
 
-您可以在 PowerShell 中執行 **Get-PhysicalDisk** 驗證其 **Usage** 屬性是否顯示 **"Journal"**，檢查您屬意的磁碟機是否用於快取。
+然後輸入下列命令, 並指定快取裝置型號:
+
+```PowerShell
+Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
+```
+
+您可以在 PowerShell 中執行 **Get-PhysicalDisk** 驗證其 **Usage** 屬性是否顯示 **"Journal"** ，檢查您屬意的磁碟機是否用於快取。
 
 ### <a name="manual-deployment-possibilities"></a>手動部署可能性
 
@@ -211,26 +223,38 @@ PS C:\> Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 
 有可能覆寫快取的預設行為。 例如，即使在全快間部署中仍可將它設為快取讀取。 除非您確定預設不適合您的工作負載，否則不鼓勵修改行為。
 
-若要覆寫行為，請使用 **Set-ClusterS2D** Cmdlet 及其 **-CacheModeSSD** 和 **-CacheModeHDD** 參數。 **CacheModeSSD** 參數設定快取固態硬碟時的快取行為。 **CacheModeHDD** 參數設定快取硬碟時的快取行為。 啟用儲存空間直接存取後隨時可執行此作業。
+若要覆寫此行為, 請使用**ClusterStorageSpacesDirect** Cmdlet 和其 **-CacheModeSSD**和 **-CacheModeHDD**參數。 **CacheModeSSD** 參數設定快取固態硬碟時的快取行為。 **CacheModeHDD** 參數設定快取硬碟時的快取行為。 啟用儲存空間直接存取後隨時可執行此作業。
 
-您可使用 **Get-ClusterS2D** 驗證行為是否已設定。
+您可以使用**ClusterStorageSpacesDirect**來確認是否已設定此行為。
 
 #### <a name="example"></a>範例
 
-```
-PS C:\> Get-ClusterS2D
+首先, 取得儲存空間直接存取設定:
 
+```PowerShell
+Get-ClusterStorageSpacesDirect
+```
+
+以下是一些輸出範例︰
+
+```
 CacheModeHDD : ReadWrite
 CacheModeSSD : WriteOnly
-...
+```
 
-PS C:\> Set-ClusterS2D -CacheModeSSD ReadWrite
+然後, 執行下列動作:
 
-PS C:\> Get-ClusterS2D
+```PowerShell
+Set-ClusterStorageSpacesDirect -CacheModeSSD ReadWrite
 
+Get-ClusterS2D
+```
+
+以下是一些輸出範例︰
+
+```
 CacheModeHDD : ReadWrite
 CacheModeSSD : ReadWrite
-...
 ```
 
 ## <a name="sizing-the-cache"></a>調整快取大小
@@ -249,6 +273,6 @@ CacheModeSSD : ReadWrite
 
 ## <a name="see-also"></a>另請參閱
 
-- [選擇磁碟機和復原類型](choosing-drives.md)
-- [錯誤容錯] 和 [儲存體效率](storage-spaces-fault-tolerance.md)
+- [選擇磁片磁碟機和復原類型](choosing-drives.md)
+- [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)
 - [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)

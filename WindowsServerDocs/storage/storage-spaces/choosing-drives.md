@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bdce646c631b56309f86292f0895fe80b0adf31
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: eb19e7ecf89f02200d3393dc1a4a9e5cd85cf598
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284504"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68314988"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
->適用於：Windows 2019 年，Windows Server 2016
+>適用於：Windows 2019、Windows Server 2016
 
 本主題指引您如何選擇[儲存空間直接存取](storage-spaces-direct-overview.md)的磁碟機，以符合您的效能及容量需求。
 
@@ -67,11 +67,11 @@ ms.locfileid: "67284504"
 
 ![All-Flash-Deployment-Possibilities](media/choosing-drives-and-resiliency-types/All-Flash-Deployment-Possibilities.png)
 
-1. **NVMe。** 使用全 NVMe 可提供無與倫比的效能，包括最能夠預測的低延遲。 若您的磁碟機全為相同的模型，則沒有快取。 您也可混合較高耐力及較低耐力的 NVMe 模型，並將前者設定為替後者快取寫入 ([需要設定](understand-the-cache.md#manual))。
+1. **所有 NVMe。** 使用全 NVMe 可提供無與倫比的效能，包括最能夠預測的低延遲。 若您的磁碟機全為相同的模型，則沒有快取。 您也可混合較高耐力及較低耐力的 NVMe 模型，並將前者設定為替後者快取寫入 ([需要設定](understand-the-cache.md#manual-configuration))。
 
 2. **NVMe + SSD。** 搭配 SSD 使用 NVMe，NVMe 會自動快取 SSD 的寫入。 這可讓寫入只在需要時於快取中進行聯合並取消暫存，以減少耗用 SSD。 這可提供類似 NVMe 的特性，而讀取會直接由同樣快速的 SSD 提供。
 
-3. **所有的 SSD。** 如同全 NVMe，若您的磁碟機全為相同的模型，則沒有快取。 若您混合較高耐力及較低耐力的模型，可將前者設定為替後者快取寫入 ([需要設定](understand-the-cache.md#manual))。
+3. **所有 SSD。** 如同全 NVMe，若您的磁碟機全為相同的模型，則沒有快取。 若您混合較高耐力及較低耐力的模型，可將前者設定為替後者快取寫入 ([需要設定](understand-the-cache.md#manual-configuration))。
 
    >[!NOTE]
    > 使用全 NVMe 或全 SSD 而不使用快取有一項好處，即您可從所有裝置取得可使用的儲存容量。 容量無須用於快取，對規模較小者頗具吸引力。
@@ -88,7 +88,7 @@ ms.locfileid: "67284504"
 
     還有另外一項較奇特的選項：使用*全部三種*類型。
 
-3. **NVMe SSD + HDD。** 有了所有三種類型的磁碟機，NVMe 磁碟機會對 SSD 和 HDD 進行快取。 好處是您可在相同叢集中並排在 SSD 及 HDD 上建立磁碟區，全由 NVMe 進行加速。 前者完全形同「全快閃」部署，而後者完全形同「混合式」部署，如上所述。 在概念上形同擁有兩個集區，且具備極度的獨立容量管理及錯誤及修復循環等。
+3. **NVMe + SSD + HDD。** 有了所有三種類型的磁碟機，NVMe 磁碟機會對 SSD 和 HDD 進行快取。 好處是您可在相同叢集中並排在 SSD 及 HDD 上建立磁碟區，全由 NVMe 進行加速。 前者完全形同「全快閃」部署，而後者完全形同「混合式」部署，如上所述。 在概念上形同擁有兩個集區，且具備極度的獨立容量管理及錯誤及修復循環等。
 
    >[!IMPORTANT]
    > 我們建議使用 SSD 層，將最重視效能的工作負載放在全快閃裝置上。
@@ -102,7 +102,7 @@ ms.locfileid: "67284504"
 1. **SSD + HDD**。 SSD 會快取讀取與寫入，以吸收高載並提供類似 SSD 的寫入效能，並於稍後對 HDD 進行最佳化的取消暫存。
 
 >[!IMPORTANT]
->使用 Hdd 只不是支援組態。 不建議以低耐力 Ssd 快取的高耐力 Ssd。
+>不支援使用 Hdd 進行設定。 不建議將高耐用性 Ssd 快取提升至低耐用性 Ssd。
 
 ## <a name="sizing-considerations"></a>大小考量
 
@@ -110,18 +110,18 @@ ms.locfileid: "67284504"
 
 每個伺服器都必須具備至少兩個快取磁碟機 (備援所需的下限)。 建議您讓容量磁碟機數為快取磁碟機數的倍數。 例如，若有 4 部快取磁碟機，則 8 部容量磁碟機 (比例為 1:2) 展現的效能會比 7 或 9 部更一致。
 
-快取應該調整大小以配合您的應用程式和工作負載，也就是所有資料主動地讀取和撰寫在任何指定時間的工作集。 此外即無其他快取大小需求。 對於部署與 Hdd，公平的起點是 10%的容量 – 比方說，如果每部伺服器都有 4 x 4 TB HDD = 16 TB 的容量，然後 2 x 800GB SSD = 1.6 TB 的每一部伺服器的快取。 為全快閃部署，特別是非常[高耐力](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)Ssd，可能會相當接近 5%的容量 – 例如，啟動每一部伺服器具有 24 x 1.2 TB SSD = 28.8 TB 的容量，則 2x 750 GB NVMe = 1.5 TB 的每一部伺服器的快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
+快取應該調整大小, 以配合您的應用程式和工作負載的工作集, 也就是它們在任何指定時間主動讀取和寫入的所有資料。 此外即無其他快取大小需求。 針對具有 Hdd 的部署, 合理的起點是容量的 10% –例如, 如果每部伺服器都有 4 x 4 TB HDD = 16 TB 的容量, 則每一部伺服器 2 x 800 GB SSD = 1.6 TB 的快取。 針對所有的 flash 部署 (特別是極[高](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)的 ssd), 較接近容量的 5% (例如, 如果每部伺服器具有 24 x 1.2 TB SSD = 28.8 tb 的容量), 則 2 x 750 GB NVMe = 每一伺服器的 1.5 TB 快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
 
 ### <a name="general"></a>一般
 
 建議您將每個伺服器的儲存容量限為約莫 100 TB。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。
 
-每個儲存體集區的目前大小上限是 4 個千兆位元組 (PB) (4,000 TB) 的 Windows Server 2019 或適用於 Windows Server 2016 的 1 pb。
+每個存放集區目前的大小上限為 4 pb (PB) (4000 TB) (適用于 Windows Server 2019) 或 1 pb (適用于 Windows Server 2016)。
 
 ## <a name="see-also"></a>另請參閱
 
-- [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
-- [了解的快取中儲存空間直接存取](understand-the-cache.md)
+- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
+- [瞭解儲存空間直接存取中的快取](understand-the-cache.md)
 - [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)
-- [規劃中儲存空間直接存取磁碟區](plan-volumes.md)
+- [規劃儲存空間直接存取中的磁片區](plan-volumes.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)
