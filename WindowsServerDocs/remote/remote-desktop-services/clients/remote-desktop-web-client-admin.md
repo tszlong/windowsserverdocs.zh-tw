@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 02c7098c8e3f93ce315e7d9a881613a03924e78b
+ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804970"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300690"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -259,7 +259,7 @@ ms.locfileid: "66804970"
 身為系統管理員，您可以選擇使用下列 PowerShell Cmdlet，抑制部署的遙測資料收集：
 
    ```PowerShell
-    Set-RDWebClientDeploymentSetting -SuppressTelemetry $true
+    Set-RDWebClientDeploymentSetting -Name "SuppressTelemetry" $true
    ```
 
 根據預設，使用者可以選擇啟用或停用遙測。 布林值 **$false** 會比對出預設用戶端行為。 布林值 **$true** 會停用遙測，並限制使用者對遙測的啟用。
@@ -268,15 +268,15 @@ ms.locfileid: "66804970"
 根據預設，使用者可以選擇下列遠端資源啟動方式：(1) 在瀏覽器中啟動，或 (2) 下載 .rdp 檔案，並以安裝在電腦上的另一個用戶端進行處理。 身為系統管理員，您可以選擇使用下列 Powershell 命令，限制您的部署必須使用遠端資源啟動方法：
 
    ```PowerShell
-    Set-RDWebClientDeploymentSetting -LaunchResourceInBrowser ($true|$false)
+    Set-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser" ($true|$false)
    ```
  根據預設，使用者可以選取任一啟動方法。 布林值 **$true** 會強制使用者在瀏覽器中啟動資源。 布林值 **$false** 會強制使用者下載 .rdp 檔案並以本機安裝的 RDP 用戶端進行處理，以啟動資源。
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>將 RDWebClientDeploymentSetting 設定重設為預設值
-若要將所有部署層級的 Web 用戶端設定重設為預設設定，請執行下列 PowerShell Cmdlet：
-
+若要將部署層級的 Web 用戶端設定重設為預設組態，請執行下列 PowerShell Cmdlet 並使用 --Name 參數指定要重設的設定：
    ```PowerShell
-    Reset-RDWebClientDeploymentSetting 
+    Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
+    Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
 
 ## <a name="troubleshooting"></a>疑難排解
