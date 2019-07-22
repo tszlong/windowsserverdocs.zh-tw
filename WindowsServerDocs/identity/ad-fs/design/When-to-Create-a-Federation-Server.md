@@ -72,7 +72,7 @@ ms.locfileid: "66190595"
   
     如需如何將同盟伺服器新增至伺服器陣列的詳細資訊，請參閱[新增至同盟伺服器陣列的同盟伺服器](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)。  
   
-如需詳細的每一種選項之運作方式的相關資訊，請參閱[The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
+如需詳細的每一種選項之運作方式的相關資訊，請參閱[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
 如需如何設定的先決條件以部署同盟伺服器所需的詳細資訊，請參閱[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
   
