@@ -24,7 +24,7 @@ ms.locfileid: "66190986"
   
 -   設定 Internet Explorer 信任的帳戶同盟伺服器，每個用戶端電腦上。  
   
-    如需詳細資訊，請參閱 [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)。  
+    如需詳細資訊，請參閱 [設定用戶端電腦信任帳戶同盟伺服器](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)。  
   
 -   安裝適當的帳戶同盟伺服器、 資源同盟伺服器和網頁伺服器安全通訊端層\(SSL\)憑證\(或對等項目憑證鏈結至信任的根\)上每個用戶端電腦。  
   

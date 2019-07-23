@@ -26,7 +26,7 @@ ms.locfileid: "66443049"
 升級網域的建議方式是視需要升級執行較新版 Windows Server 的網域控制站，以及降級舊版網域控制站。 該方法是升級現有網域控制站之作業系統的慣用方法。 這份清單涵蓋您升級執行較新版本的 Windows Server 網域控制站前要遵循的一般步驟：  
   
 1. 確認目標伺服器符合 [系統需求](https://technet.microsoft.com/library/dn303418.aspx)。  
-2. 確認 [Application compatibility](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)。  
+2. 請確認[應用程式相容性](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)。  
 3. 確認安全性設定。 如需詳細資訊，請參閱 [與 Windows Server 2012 中 AD DS 相關的過時功能與行為變更](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures) 和 [Secure default settings in Windows Server 2008 和 Windows Server 2008 R2](https://technet.microsoft.com/library/upgrade-domain-controllers-to-windows-server-2008-r2(WS.10).aspx#BKMK_SecureDefault)。  
 4. 檢查要執行安裝的電腦與目標伺服器的連線。  
 5. 檢查必要操作主機角色的可用性：  
@@ -127,7 +127,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 |**案例**|**建議的設定**|  
 |**受管理的 WSUS**<br /><br />-安裝每週一次的更新<br />-重新啟動星期五晚上 11 點|設定機器自動安裝，防止在需要的時間之前重新開機<br /><br />**原則**：設定自動更新 (啟用)<br /><br />設定自動更新：4-自動下載和排程安裝<br /><br />**原則**：與登入的使用者 （停用） 不自動重新啟動<br /><br />**WSUS 期限**：設定為星期五晚上 11 點|  
 |**受管理的 WSUS**<br /><br />-安裝錯開於不同時間/不同天|為應該一起更新的不同電腦群組設定目標群組<br /><br />為先前的案例使用上述步驟<br /><br />為不同的目標群組設定不同期限|  
-|**非 WSUS 管理的-不支援期限**<br /><br />-安裝錯開於不同的時間|**原則**：設定自動更新 (啟用)<br /><br />設定自動更新：4-自動下載和排程安裝<br /><br />**登錄機碼：** 啟用 Microsoft 知識庫文章所述的登錄機碼[2835627](https://support.microsoft.com/kb/2835627)<br /><br />**原則：** 自動維護隨機延遲 (啟用)<br /><br />將 [定期維護隨機延遲]  設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<br /><br />更新會安裝在已設定的維護時間加上隨機延遲<br /><br />-重新啟動每一部機器會進行 3 天後<br /><br />或者，為每個電腦群組設定不同的維護時間|  
+|**非 WSUS 管理的-不支援期限**<br /><br />-安裝錯開於不同的時間|**原則**：設定自動更新 (啟用)<br /><br />設定自動更新：4-自動下載和排程安裝<br /><br />**登錄機碼：** 啟用 Microsoft 知識庫文章所述的登錄機碼[2835627](https://support.microsoft.com/kb/2835627)<br /><br />**原則：** 自動維護隨機延遲 (啟用)<br /><br />將 [定期維護隨機延遲] 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<br /><br />更新會安裝在已設定的維護時間加上隨機延遲<br /><br />-重新啟動每一部機器會進行 3 天後<br /><br />或者，為每個電腦群組設定不同的維護時間|  
 
 如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](http://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。  
 
@@ -158,9 +158,9 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 |||||  
 |-|-|-|-|  
 |加密類型或原則|Windows Server 2008 預設值|Windows Server 2012 和 Windows Server 2008 R2 預設值|註解|  
-|AllowNT4Crypto|已停用|已停用|協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 <<c0> [ 文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558)在 Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=164558)。|  
+|AllowNT4Crypto|已停用|已停用|協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 <<c0> [ 文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558)在 Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=164558) 。|  
 |DES|Enabled|已停用|[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717)在 Microsoft Knowledge Base （ https://go.microsoft.com/fwlink/?LinkId=177717)|  
-|CBT/整合式驗證的擴充保護|N/A|Enabled|請參閱[Microsoft 安全性忠告 (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559)並[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251)在 Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=178251)。<br /><br />檢閱並安裝的 hotfix[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394) Microsoft 知識庫中所需。|  
+|CBT/整合式驗證的擴充保護|N/A|Enabled|請參閱[Microsoft 安全性忠告 (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 並[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251)在 Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=178251) 。<br /><br />檢閱並安裝的 hotfix[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394) Microsoft 知識庫中所需。|  
 |LMv2|Enabled|已停用|[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251)在 Microsoft Knowledge Base （ https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
 ## <a name="BKMK_SysReqs"></a>作業系統需求

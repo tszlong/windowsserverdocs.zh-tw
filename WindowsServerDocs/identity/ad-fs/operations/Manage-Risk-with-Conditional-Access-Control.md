@@ -32,9 +32,9 @@ AD FS 中的存取控制透過發行授權宣告規則，用來發出許可或�
 
 |規則選項|規則邏輯|
 |---------------|--------------|
-|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」  且值等於「任何值」  ，則會發行值等於「允許」 |
-|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」  ，則會發行值等於「允許」  的宣告|
-|拒絕具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」  ，則會發行值等於「拒絕」 |
+|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」  且值等於「任何值」 ，則會發行值等於「允許」|
+|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」且值等於「指定的宣告值」，則會發行值等於「允許」的宣告|
+|拒絕具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」  且值等於「指定的宣告值」 ，則會發行值等於「拒絕」|
 
 如需有關這些規則選項和邏輯的詳細資訊，請參閱 [When to Use an Authorization Claim Rule](https://technet.microsoft.com/library/ee913560.aspx)。
 
@@ -50,7 +50,7 @@ Windows Server 2012 r2 中的 AD FS 中的條件式存取控制提供下列優�
 
 -   為進階條件式存取控制案例提供豐富的宣告語言和 Windows PowerShell 支援
 
--   自訂 (每個信賴憑證者應用程式) 「 拒絕存取 」 訊息。 如需詳細資訊，請參閱 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。 透過自訂這些訊息，您可以解釋拒絕使用者存取的原因，同時視需要提供自助補救，例如，提示使用者將裝置加入工作地點。 如需詳細資訊，請參閱 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+-   自訂 (每個信賴憑證者應用程式) 「 拒絕存取 」 訊息。 如需詳細資訊，請參閱 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。 透過自訂這些訊息，您可以解釋拒絕使用者存取的原因，同時視需要提供自助補救，例如，提示使用者將裝置加入工作地點。 如需詳細資訊，請參閱[從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 下表包含用於實作條件式存取控制的 Windows Server 2012 R2 中的 AD fs 所有宣告類型。
 

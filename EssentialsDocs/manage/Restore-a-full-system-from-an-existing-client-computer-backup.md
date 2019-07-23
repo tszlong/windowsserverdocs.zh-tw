@@ -107,7 +107,7 @@ ms.locfileid: "66433097"
   
 #### <a name="to-create-a-bootable-usb-flash-drive"></a>建立可開機的 USB 快閃磁碟機  
   
-1.  開啟 [儀表板]  。  
+1.  開啟 [儀表板] 。  
   
 2.  按一下 **[裝置]** 標籤。  
   
@@ -145,7 +145,7 @@ ms.locfileid: "66433097"
   
      如需如何尋找電腦驅動程式的相關資訊，請參閱[我可以在哪裡找到硬體的驅動程式？](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)  
   
--   適用於 Windows Server Essentials:如果找不到 Windows Server Essentials 還原 CD，您可以建立可開機的 USB 快閃磁碟機。 如需詳細資訊，請參閱 [Create a bootable USB flash drive to restore a client computer](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_CreateBootable)。  
+-   適用於 Windows Server Essentials:如果找不到 Windows Server Essentials 還原 CD，您可以建立可開機的 USB 快閃磁碟機。 如需詳細資訊，請參閱 [ 建立可開機 USB 快閃磁碟機以還原用戶端電腦](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_CreateBootable)。  
   
 #### <a name="to-use-the-full-system-restore-wizard"></a>若要使用完整系統還原精靈  
   
@@ -155,7 +155,7 @@ ms.locfileid: "66433097"
   
         重新開啟電腦，並在開機自我測試 (POST) 期間，按一下適當的功能鍵 (F 鍵) 以存取開機裝置功能表，然後選取 CD/DVD 光碟機。 Windows 開機管理程式隨即啟動。  
   
-   -   Windows Server Essentials:如果您是使用用戶端還原服務，請使用 [從網路開機]  選項重新啟動電腦。 否則，請使用 USB 金鑰啟動電腦。  
+   -   Windows Server Essentials:如果您是使用用戶端還原服務，請使用 [從網路開機] 選項重新啟動電腦。 否則，請使用 USB 金鑰啟動電腦。  
   
         再次開啟電腦，在開機自我測試 (POST) 期間，按下適當的功能鍵 (F 鍵) 來存取開機裝置功能表，然後選取 [從網路開機]  (或可選擇從 USB 金鑰開機)。 Windows 開機管理程式隨即啟動。  
   

@@ -31,7 +31,7 @@ ms.locfileid: "66445659"
 > [!IMPORTANT]
 >  作業系統升級會造成此伺服器上的 AD FS Proxy 設定遺失，且 AD FS 2.0 伺服器角色會被移除。 相反地，安裝 Windows Server 2012 的 AD FS 伺服器角色，但尚未進行設定。 您必須手動建立原始 AD FS Proxy 設定並還原剩餘的 AD FS Proxy 設定，來完成同盟伺服器 Proxy 移轉。  
   
-4. 請使用 **AD FS 同盟伺服器 Proxy 設定精靈**建立原始 AD FS Proxy 設定。 如需詳細資訊，請參閱 [Configure a Computer for the Federation Server Proxy Role](configure-a-computer-for-the-federation-server-proxy-role.md)。 當您執行精靈時，請使用您在「準備移轉 AD FS 2.0 同盟伺服器 Proxy」中收集的資訊，如下所示：  
+4. 請使用 **AD FS 同盟伺服器 Proxy 設定精靈**建立原始 AD FS Proxy 設定。 如需詳細資訊，請參閱 [為電腦設定同盟伺服器 Proxy 角色](configure-a-computer-for-the-federation-server-proxy-role.md)。 當您執行精靈時，請使用您在「準備移轉 AD FS 2.0 同盟伺服器 Proxy」中收集的資訊，如下所示：  
   
  
 |**同盟伺服器 Proxy 精靈輸入選項**|**使用下列值**|
