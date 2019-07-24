@@ -739,7 +739,7 @@ CertificateStoreName憑證存放區名稱。 範例：
 - ldap(AD 電腦物件憑證)
 - -使用者 ldap:(AD 使用者物件憑證)
 
-CertId憑證或 CRL 符合 token。  這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、.。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
+CertId憑證或 CRL 符合 token。  這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
 
 OutputFile: 用來儲存相符憑證的檔案
 
@@ -859,7 +859,7 @@ CertificateStoreName憑證存放區名稱。 範例：
 - ldap(AD 電腦物件憑證)
 - -使用者 ldap:(AD 使用者物件憑證)
 
-CertId憑證或 CRL 符合 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、.。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
+CertId憑證或 CRL 符合 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
 
 OutputFile: 用來儲存相符憑證的檔案
 
@@ -898,7 +898,7 @@ CertificateStoreName憑證存放區名稱。 範例：
 - ldap(AD 電腦物件憑證)
 - -使用者 ldap:(AD 使用者物件憑證)
 
-CertId憑證或 CRL 符合 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、.。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
+CertId憑證或 CRL 符合 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等)、數值 CRL 索引 (.0、.1 等等)、數值 CTL 索引 (.)。0、。1等等)、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId, 或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
 
 OutputFile: 用來儲存相符憑證的檔案
 
