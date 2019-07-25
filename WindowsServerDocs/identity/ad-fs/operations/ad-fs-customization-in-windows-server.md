@@ -9,29 +9,29 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b5aa22ad99529d99e2d7381a434916e8e749f185
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7f990c3412707e38a00110ac4d3cb3787fa18ee3
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188759"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476536"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 中的 AD FS 自訂
 
 
-回應意見反應與組織使用 AD FS，在中，我們已新增額外的工具，來自訂使用者的登入 AD FS 保護的個別應用程式的體驗。  
-現在除了指定每個應用程式 web 內容，例如描述文字和連結，您可以指定每個應用程式的整個網頁佈景主題。  這包括標誌、 圖例、 樣式表或整個 onload.js 檔案。  
+為了回應使用 AD FS 的組織所提供的意見反應, 我們已新增額外的工具, 以自訂受 AD FS 保護之個別應用程式的使用者登入體驗。  
+除了指定每個應用程式的 web 內容 (例如描述文字和連結) 之外, 您現在還可以為每個應用程式指定整個 web 主題。  這包括標誌、圖例、樣式表單或整個 onload 檔案。  
   
 ## <a name="global-settings"></a>全域設定    
-一般的全域設定中，您可以參考以[Customizing the AD FS sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx) ，隨附於 Windows Server 2012 R2 中 AD FS。  
+針對一般的全域設定, 您可以參考自訂 Windows Server 2012 R2 中 AD FS 隨附的[AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。  
   
 ## <a name="pre-requisites"></a>必要條件  
-必須要具備下列必要條件，才能嘗試這份文件中所述的程序。  
+在嘗試本檔中所述的程式之前, 必須先具備下列必要條件。  
   
--   在 Windows Server 2016 TP4 或更新版本的 AD FS  
+-   Windows Server 2016 TP4 或更新版本中的 AD FS  
   
-## <a name="configure-ad-fs-relying-parties"></a>設定 AD FS 信賴憑證者的合作對象  
-每一個 web 登入信賴憑證者合作對象項目和佈景主題可以設定使用下列 PowerShell 範例：  
+## <a name="configure-ad-fs-relying-parties"></a>設定 AD FS 信賴憑證者  
+您可以使用下列 PowerShell 範例來設定每個信賴憑證者登入 web 元素和主題:  
   
 ### <a name="customize-messages"></a>自訂訊息  
   
@@ -43,7 +43,7 @@ PS C:\>Set-AdfsRelyingPartyWebContent
     -SignInPageDescription "This text appears below the credential prompt"  
 ```  
   
-### <a name="customize-company-name-logo-and-image"></a>自訂公司名稱、 標誌和映像  
+### <a name="customize-company-name-logo-and-image"></a>自訂公司名稱、標誌和影像  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebTheme  
@@ -52,7 +52,7 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
     -Illustration @{path="C:\Images\appillustration.jpg"}  
 ```  
   
-### <a name="customize-entire-page"></a>自訂整個頁面  
+### <a name="customize-entire-page"></a>自訂整頁  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebTheme  
@@ -60,31 +60,31 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
     -OnLoadScriptPath @{path="c:\scripts\adfstheme\onload.js"}  
 ```  
   
-## <a name="custom-themes-and-advanced-custom-themes"></a>自訂佈景主題與進階自訂佈景主題  
+## <a name="custom-themes-and-advanced-custom-themes"></a>自訂主題和先進的自訂主題  
   
-如自訂佈景主題，請參閱[Customizing the AD FS sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)和[Advanced Customization of AD FS 登入頁面。](https://technet.microsoft.com/library/dn636121.aspx)  
+針對自訂主題, 請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)和自[定義 AD FS 登入頁面。](https://technet.microsoft.com/library/dn636121.aspx)  
   
-## <a name="assigning-custom-web-themes-per-rp"></a>指派每個 RP 的自訂網頁佈景主題  
+## <a name="assigning-custom-web-themes-per-rp"></a>為每個 RP 指派自訂 web 主題  
   
-若要指派每個 RP 自訂佈景主題，請使用下列程序：  
+若要為每個 RP 指派自訂主題, 請使用下列程式:  
   
-1. 以預設值，AD FS 中的全域佈景主題的複本建立新的佈景主題  
-<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code> 2.  匯出自訂的佈景主題 <code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
-3. 自訂佈景主題檔案 （影像、 css、 onload.js）-在您最愛的編輯器中，或取代檔案 4。 從檔案系統匯入自訂的檔案，對 AD FS （目標設為新的佈景主題） <code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
-5. 將新的自訂佈景主題套用至特定 RP （或 RP） <code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
+1. 在 AD FS 中, 建立新的主題做為預設全域主題的複本  
+<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code>2.匯出自訂的主題<code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
+3.自訂主題檔案 (影像、css、onload)-在您慣用的編輯器中, 或從4.檔案系統中取代檔案匯入自訂檔案, 以 AD FS (以新主題為目標)<code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
+5.將新的自訂主題套用到特定 RP (或 RP)<code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
   
 ## <a name="home-realm-discovery"></a>主領域探索  
-自訂如主領域探索[Customizing the AD FS sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。  
+針對 [主領域] 探索自訂, 請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。  
   
-## <a name="updated-password-page"></a>更新的密碼頁面  
-如需自訂更新密碼頁面的詳細資訊，請參閱[Customizing the AD FS sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。  
+## <a name="updated-password-page"></a>已更新密碼頁面  
+如需自訂 [更新密碼] 頁面的詳細資訊, 請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。  
   
 ## <a name="customizing-and-alternate-ids"></a>自訂和替代識別碼  
-使用者可以登入 Active Directory Federation Services (AD FS)-功能的應用程式使用任何形式的可接受的 Active Directory 網域服務 (AD DS) 的使用者識別碼。 其中包括使用者主體名稱 (Upn) (johndoe@contoso.com) 或網域限定 sam 帳戶名稱 （contoso\johndoe 或 contoso.com\johndoe）。  如需詳細資訊，請參閱上[設定替代登入識別碼。](Configuring-Alternate-Login-ID.md)  
+使用者可以使用 Active Directory Domain Services (AD DS) 所接受的任何形式的使用者識別碼, 登入 Active Directory 同盟服務 (AD FS) 啟用的應用程式。 其中包括使用者主體名稱 (upn) (johndoe@contoso.com) 或網域限定的 sam 帳戶名稱 (contoso\johndoe 或 contoso. com\johndoe)。  如需這種情況的詳細資訊, 請參閱設定[替代登入識別碼。](Configuring-Alternate-Login-ID.md)  
   
-此外您可以自訂 AD FS 登入頁面，讓使用者的一些秘訣替代登入識別碼。 您可以藉由新增自訂的登入頁面描述，如需詳細資訊，請參閱執行[自訂 AD FS 登入頁面。](https://technet.microsoft.com/library/dn280950.aspx)   
+您可能需要自訂 AD FS 登入頁面, 以提供使用者有關替代登入識別碼的一些提示。 若要這麼做, 您可以新增自訂的登入頁面描述以取得詳細資訊, 請參閱[自訂 AD FS 登入頁面。](https://technet.microsoft.com/library/dn280950.aspx)   
   
-您也可以執行此自訂使用者名稱欄位上方的 「 使用組織帳戶登入 」 字串。  如需此，請參閱[Advanced Customization of AD FS sign-in Pages](https://technet.microsoft.com/library/dn636121.aspx)。  
+您也可以在 [使用者名稱] 欄位中自訂 [以組織帳戶登入] 字串來執行這項操作。  如需相關資訊, 請參閱[AD FS 登入頁面的 Advanced 自訂](https://technet.microsoft.com/library/dn636121.aspx)。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

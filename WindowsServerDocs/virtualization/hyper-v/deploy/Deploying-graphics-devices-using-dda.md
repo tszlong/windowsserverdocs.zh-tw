@@ -1,6 +1,6 @@
 ---
-title: 部署使用不連續的裝置指派的圖形裝置
-description: 了解如何使用 DDA 部署 Windows Server 中的圖形裝置
+title: 使用離散裝置指派來部署圖形裝置
+description: 瞭解如何在 Windows Server 中使用 DDA 部署圖形裝置
 ms.prod: windows-server-threshold
 ms.service: na
 ms.technology: hyper-v
@@ -9,99 +9,100 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 6c528535fd34f57957a37992843933d4cd9f8824
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2f9d283f5f80d6bb0851b2abd93be0f4c10899c8
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447876"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476582"
 ---
-# <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>部署使用不連續的裝置指派的圖形裝置
+# <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>使用離散裝置指派來部署圖形裝置
 
->適用於：Microsoft HYPER-V Server 2016，Windows Server 2016 中，Windows Server 2019，Microsoft HYPER-V Server 2019  
+>適用於：Microsoft Hyper-v Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019  
 
-從 Windows Server 2016 開始，您可以使用不連續的裝置指派] 或 [DDA，來將整個 PCIe 裝置傳遞至 VM。  這可讓裝置，例如高效能存取[NVMe 儲存體](./Deploying-storage-devices-using-dda.md)或從同時能夠運用裝置的原生驅動程式在 VM 內的圖形卡。  請瀏覽[規劃部署的裝置，使用不連續的裝置指派](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)如需哪些裝置工作的詳細資訊，為何的潛在安全性風險，依此類推。
+從 Windows Server 2016 開始, 您可以使用離散裝置指派或 DDA, 將整個 PCIe 裝置傳遞至 VM。  這可讓您對裝置的高效能存取, 例如從 VM 內[NVMe 儲存體](./Deploying-storage-devices-using-dda.md)或圖形卡, 同時能夠利用裝置原生驅動程式。  請流覽[使用離散裝置指派來部署裝置的計畫](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md), 以取得更多裝置的工作、可能的安全性含意等等。
 
-有三個步驟，使用不連續的裝置指派的裝置：
--   將 VM 設定為不連續的裝置指派
--   卸載主機分割區的裝置
--   將裝置指派給客體 VM
+使用具有離散裝置指派的裝置有三個步驟:
+-   設定 VM 以進行離散裝置指派
+-   從主機磁碟分割卸載裝置
+-   將裝置指派給來賓 VM
 
-身為系統管理員，可以在主機上的 Windows PowerShell 主控台執行所有命令。
+所有命令都可以在 Windows PowerShell 主控台的主機上, 以系統管理員身分執行。
 
-## <a name="configure-the-vm-for-dda"></a>設定 VM 的 DDA
-不連續的裝置指派限制一些 vm，並不需要採取下列步驟。
+## <a name="configure-the-vm-for-dda"></a>為 DDA 設定 VM
+個別的裝置指派會對 Vm 施加一些限制, 而且必須採取下列步驟。
 
-1.  設定 「 自動停止動作 」 來關閉 VM 的執行
+1.  藉由執行, 將 VM 的「自動停止動作」設定為 Turnon
 
 ```
 Set-VM -Name VMName -AutomaticStopAction TurnOff
 ```
 
-### <a name="some-additional-vm-preparation-is-required-for-graphics-devices"></a>一些其他的 VM 準備工作是必要的圖形裝置
+### <a name="some-additional-vm-preparation-is-required-for-graphics-devices"></a>圖形裝置需要一些額外的 VM 準備
 
-如果以特定方式設定的 VM 中的，有些硬體的效能更好。  如需為您的硬體需要下列設定的詳細資訊，請連絡硬體廠商。 其他詳細資料可於[規劃部署的裝置，使用不連續的裝置指派](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)和這[部落格文章。](https://blogs.technet.microsoft.com/virtualization/2015/11/23/discrete-device-assignment-gpus/)
+如果 VM 是以某種方式設定, 某些硬體的執行效能會更好。  如需有關您的硬體是否需要下列設定的詳細資訊, 請聯繫硬體廠商。 如需其他詳細資料, 請參閱[規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)和此[blog 文章。](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266)
 
-1. 啟用在 CPU 上的寫入結合
+1. 在 CPU 上啟用寫入合併
    ```
    Set-VM -GuestControlledCacheTypes $true -VMName VMName
    ```
-2. 設定 32 位元 MMIO 空間
+2. 設定32位 MMIO 空間
    ```
    Set-VM -LowMemoryMappedIoSpace 3Gb -VMName VMName
    ```
-3. 設定大於 32 位元 MMIO 空間
+3. 設定大於32位的 MMIO 空間
    ```
    Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
    ```
-   請注意，上述的 MMIO 空間值會設為試驗單一 GPU 的合理值。  如果啟動 VM 之後, 裝置會回報關於資源不足的錯誤，您可能需要修改這些值。  此外，如果您要指派多個 Gpu，您必須增加這些值。
+   > [!TIP] 
+   > 上述的 MMIO 空間值是合理的值, 可設定為使用單一 GPU 進行實驗。  如果啟動 VM 之後, 裝置會報告與資源不足相關的錯誤, 您可能需要修改這些值。 請參閱[使用離散裝置指派部署裝置的計畫](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md), 以瞭解如何精確地計算 MMIO 需求。
 
-## <a name="dismount-the-device-from-the-host-partition"></a>卸載主機分割區的裝置
-### <a name="optional---install-the-partitioning-driver"></a>選用-安裝的資料分割的驅動程式
-不連續的裝置指派提供硬體廠商提供的安全性風險降低驅動程式使用其裝置的能力。  請注意，此驅動程式不會安裝在客體 VM 中的裝置驅動程式相同。  它具有最多提供此驅動程式的硬體廠商的酌情判斷，不過，如果它們並提供它，請安裝它之前至主機分割區從卸載該裝置。  請連絡硬體廠商，如需詳細資訊有風險降低驅動程式
-> 如果未不提供任何資料分割的驅動程式，則在卸載時您必須使用`-force`選項以略過安全性警告。 請閱讀更多有關執行此動作上的安全性含意[規劃部署的裝置，使用不連續的裝置指派](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
+## <a name="dismount-the-device-from-the-host-partition"></a>從主機磁碟分割卸載裝置
+### <a name="optional---install-the-partitioning-driver"></a>選擇性-安裝資料分割驅動程式
+個別的裝置指派可讓硬體 venders 提供安全性緩和驅動程式與其裝置的能力。  請注意, 此驅動程式與將安裝在來賓 VM 中的設備磁碟機不同。  硬體廠商會自行決定是否要提供此驅動程式, 不過, 如果它們確實提供, 請先安裝它, 然後再從主機磁碟分割卸載裝置。  如需其是否有緩和驅動程式的詳細資訊, 請與硬體廠商聯繫
+> 如果未提供任何資料分割驅動程式, 在卸載期間, `-force`您必須使用選項來略過安全性警告。 請在[規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)時, 閱讀更多關於此動作的安全性含意。
 
 ### <a name="locating-the-devices-location-path"></a>尋找裝置的位置路徑
-PCI 位置路徑，才能卸除，並從主機中掛接裝置。  範例位置路徑看起來如下： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。  上找到更多詳細資料的位置路徑可以在這裡找到：[規劃部署的裝置，使用不連續的裝置指派](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
+必須要有 PCI 位置路徑, 才能從主機卸載並掛接裝置。  範例位置路徑看起來如下所示: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。  如需位置路徑的詳細資訊, 請參閱:[規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
 
 ### <a name="disable-the-device"></a>停用裝置
-使用裝置管理員或 PowerShell，請確定裝置"disabled"。  
+使用 Device Manager 或 PowerShell, 確定裝置已「停用」。  
 
-### <a name="dismount-the-device"></a>卸除裝置
-取決於如果廠商所提供的風險降低驅動程式，您將需要使用"-強制執行 」 選項或不。
-- 如果已安裝的風險降低驅動程式
+### <a name="dismount-the-device"></a>卸載裝置
+根據廠商是否提供緩和驅動程式而定, 您將需要使用 "-force" 選項。
+- 如果已安裝緩和驅動程式
   ```
   Dismount-VMHostAssignableDevice -LocationPath $locationPath
   ```
-- 如果未安裝風險降低驅動程式
+- 如果未安裝緩和驅動程式
   ```
   Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
   ```
 
-## <a name="assigning-the-device-to-the-guest-vm"></a>將裝置指派給客體 VM
-最後一個步驟是告訴 HYPER-V VM 應該有裝置的存取權。  除了上面找到的位置路徑，您必須知道 vm 的名稱。
+## <a name="assigning-the-device-to-the-guest-vm"></a>將裝置指派給來賓 VM
+最後一個步驟是告訴 Hyper-v, VM 應具有裝置的存取權。  除了上面找到的位置路徑, 您還必須知道 vm 的名稱。
 
 ```
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>什麼是下一步
-裝置已成功在 VM 中裝載之後，您現在可以啟動該 VM，並像平常一樣如果您已在裸機系統上執行，與裝置互動。  這表示您現在可以在 VM 中安裝的硬體廠商的驅動程式，而且應用程式將能夠看到該硬體存在。  您可以驗證，請開啟 客體 VM 中的 裝置管理員，並看到硬體現在會出現。
+## <a name="whats-next"></a>下一步
+在 VM 中成功掛接裝置之後, 您現在可以啟動該 VM 並與裝置互動, 如同您在裸機系統上執行一般。  這表示您現在可以在 VM 中安裝硬體廠商的驅動程式, 應用程式將能夠看到硬體存在。  您可以在來賓 VM 中開啟 [裝置管理員], 並看到硬體現在顯示, 以驗證這一點。
 
-## <a name="removing-a-device-and-returning-it-to-the-host"></a>移除裝置，並將其傳回給主應用程式
-如果您想要傳回他裝置回到其原始狀態，您必須停止 VM，並發出下列：
+## <a name="removing-a-device-and-returning-it-to-the-host"></a>移除裝置並將它傳回主機
+如果您想要讓裝置回到其原始狀態, 您將需要停止 VM 併發出下列問題:
 ```
 #Remove the device from the VM
 Remove-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 #Mount the device back in the host
 Mount-VMHostAssignableDevice -LocationPath $locationPath
 ```
-您可以再重新啟用裝置管理員中的裝置和主機作業系統都能夠與裝置互動。
+接著, 您可以在 [裝置管理員] 中重新啟用裝置, 主機作業系統將能夠再次與裝置互動。
 
 ## <a name="examples"></a>範例
 
-### <a name="mounting-a-gpu-to-a-vm"></a>掛接到 VM 的 GPU
-在此範例中，我們可以使用 PowerShell 來設定名為"ddatest1"，取得依製造商 NVIDIA 提供第一個 GPU，並將它指派至 VM 的 VM。  
+### <a name="mounting-a-gpu-to-a-vm"></a>將 GPU 掛接至 VM
+在此範例中, 我們使用 PowerShell 來設定名為 "ddatest1" 的 VM, 以取得製造商 NVIDIA 提供的第一個 GPU, 並將其指派給 VM。  
 ```
 #Configure the VM for a Discrete Device Assignment
 $vm =   "ddatest1"
