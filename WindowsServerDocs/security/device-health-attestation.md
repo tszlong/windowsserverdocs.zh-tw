@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ee77fba1e82179f6998959b494628e97ac23390
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 888992366f8a722c4834f23e08a393c829b47a26
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284221"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544622"
 ---
 # <a name="device-health-attestation"></a>裝置健康情況證明
 
@@ -92,13 +92,13 @@ DHA 內部部署服務提供所有 DHA 雲端服務提供的功能。  它也可
 
 #### <a name="ekcert-validation-mode"></a>EKCert 驗證模式
 
-EKCert 驗證模式已經針對未連線到網際網路的組織最佳化。 連線到以 EKCert 驗證模式執行之 DHA 服務的裝置「不會」  直接存取網際網路。
+EKCert 驗證模式已經針對未連線到網際網路的組織最佳化。 連線到以 EKCert 驗證模式執行之 DHA 服務的裝置「不會」直接存取網際網路。
 
 當 DHA 以 EKCert 驗證模式執行時，它是依賴企業管理的信任鏈結，必須偶爾更新 (每年大約 5-10 次)。 
 
 Microsoft 會在 .cab 封存中可公開存取的封存中，針對核准的 TPM 製造商發行 (在它們可用時) 受信任的根憑證和中繼 CA 的可彙總套件。 您需要下載該摘要，驗證其完整性，並將其安裝在執行「裝置健康情況證明」的伺服器上。
 
-範例封存[ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab ](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab)。
+封存的範例為[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)。
 
 #### <a name="aikcert-validation-mode"></a>AIKCert 驗證模式
 
@@ -123,31 +123,31 @@ AIKCert 驗證模式已經針對可存取網際網路的作業環境最佳化。
 
 ### <a name="install-windows-server-2016"></a>安裝 Windows Server 2016
 
-使用您想要的安裝方式 (例如「Windows 部署服務」) 安裝 Windows Server 2016，或從開機媒體、USB 磁碟機或本機檔案系統執行安裝程式。 如果這是您第一次設定 DHA 內部部署服務，您應該使用「桌面體驗」  安裝選項來安裝 Windows Server 2016。
+使用您想要的安裝方式 (例如「Windows 部署服務」) 安裝 Windows Server 2016，或從開機媒體、USB 磁碟機或本機檔案系統執行安裝程式。 如果這是您第一次設定 DHA 內部部署服務，您應該使用「桌面體驗」安裝選項來安裝 Windows Server 2016。
 
 ### <a name="add-the-device-health-attestation-server-role"></a>新增裝置健康情況證明伺服器角色
 
 您可以使用「伺服器管理員」來安裝「裝置健康情況證明」伺服器角色和其相依性。 
 
-安裝 Windows Server 2016 之後，裝置會重新啟動並開啟「伺服器管理員」。 如果「伺服器管理員」沒有自動啟動，請按一下 [開始]  ，然後按一下 [伺服器管理員]  。
+安裝 Windows Server 2016 之後，裝置會重新啟動並開啟「伺服器管理員」。 如果「伺服器管理員」沒有自動啟動，請按一下 [開始]，然後按一下 [伺服器管理員]。
 
-1.  按一下 [新增角色及功能]  。
-2.  在 [在您開始前]  頁面上，按一下 [下一步]  。
-3.  在 [選取安裝類型]  頁面上，按一下 [角色型或功能型安裝]  ，然後按 [下一步]  。
-4.  在 [選取目的地伺服器]  頁面上，按一下 [從伺服器集區選取伺服器]  ，選取伺服器然後按一下 [下一步]  。
-5.  在 [選取伺服器角色]  頁面上，選取 [裝置健康情況證明]  核取方塊。
-6.  按一下 [新增功能]  來安裝其他必要的角色服務和功能。
-7.  按一下 [下一步]  。
-8.  在 [選取功能]  頁面上，按 [下一步]  。
-9.  在 [網頁伺服器 (IIS) 角色]  頁面上，按一下 [下一步]  。
-10. 在 [選取角色服務]  頁面上，按 [下一步]  。
-11. 在 [裝置健全狀況證明服務]  頁面上，按一下 [下一步]  。
-12. 在 [確認安裝選項]  頁面上，按一下 [安裝]  。
-13. 安裝完成時，按一下 [關閉]  。
+1.  按一下 [新增角色及功能]。
+2.  在 [在您開始前]  頁面上，按一下 [下一步] 。
+3.  在 [選取安裝類型] 頁面上，按一下 [角色型或功能型安裝]，然後按 [下一步]。
+4.  在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，選取伺服器然後按一下 [下一步]。
+5.  在 [選取伺服器角色] 頁面上，選取 [裝置健康情況證明] 核取方塊。
+6.  按一下 [新增功能] 來安裝其他必要的角色服務和功能。
+7.  按一下 [下一步] 。
+8.  在 [選取功能] 頁面上，按 [下一步]。
+9.  在 [網頁伺服器 (IIS) 角色]  頁面上，按一下 [下一步] 。
+10. 在 [選取角色服務] 頁面上，按 [下一步]。
+11. 在 [裝置健全狀況證明服務] 頁面上，按一下 [下一步]。
+12. 在 [確認安裝選項]  頁面上，按一下 [安裝] 。
+13. 安裝完成時，按一下 [關閉]。
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>安裝簽署和加密憑證
 
-使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需有關憑證指紋的詳細資訊，請參閱[How to:擷取憑證的指紋](https://msdn.microsoft.com/library/ms734695.aspx)。
+使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需有關指紋的詳細資訊, [請參閱如何:取得憑證](https://msdn.microsoft.com/library/ms734695.aspx)的指紋。
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -165,9 +165,9 @@ icacls $keypath /grant <username>`:R
 
 #### <a name="download-the-trusted-tpm-roots-certificate-package"></a>下載受信任的 TPM 根憑證封裝
 
-安裝憑證封裝之前，您可以下載最新的受信任的 TPM 根憑證，從清單[ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab ](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab)。
+安裝憑證套件之前, 您可以從[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下載最新的受信任 TPM 根目錄清單。
 
-> **重要事項：** 在安裝套件，請確認它以數位方式簽署由 Microsoft。
+> **重要事項：** 安裝套件之前, 請確認它已由 Microsoft 進行數位簽署。
 
 #### <a name="extract-the-trusted-certificate-package"></a>解壓縮受信任的憑證封裝
 執行下列命令來將受信任的憑證封裝解壓縮。
@@ -176,11 +176,11 @@ mkdir .\TrustedTpm
 expand -F:* .\TrustedTpm.cab .\TrustedTpm
 ```
 
-#### <a name="remove-the-trust-chains-for-tpm-vendors-that-are-not-trusted-by-your-organization-optional"></a>移除您的組織「不信任」  的 TPM 廠商的信任鏈結 (選擇性)
+#### <a name="remove-the-trust-chains-for-tpm-vendors-that-are-not-trusted-by-your-organization-optional"></a>移除您的組織「不信任」的 TPM 廠商的信任鏈結 (選擇性)
 
 刪除您的組織不信任的任何 TPM 廠商信任鏈結的資料夾。
 
-> **注意：** 如果使用 AIK 憑證模式，[Microsoft] 資料夾，才能驗證 Microsoft 發行的 AIK 憑證。
+> **注意：** 如果使用 AIK 憑證模式, 則需要 Microsoft 資料夾來驗證 Microsoft 發行的 AIK 憑證。
 
 #### <a name="install-the-trusted-certificate-package"></a>安裝受信任的憑證封裝
 執行 .cab 檔案中的設定指令碼來安裝受信任的憑證封裝。
@@ -238,7 +238,7 @@ Get-DHASActiveSigningCertificate
 Set-DHASActiveSigningCertificate -Thumbprint "<hex>" -Force
 ```
 
-> **注意：** 此憑證必須部署執行 DHA 服務的伺服器上**LocalMachine\My**憑證存放區。 設定作用中簽署憑證之後，現有的作用中簽署憑證會移動到非作用中簽署憑證清單。
+> **注意：** 此憑證必須部署在**LocalMachine\My**憑證存放區中執行 DHA 服務的伺服器上。 設定作用中簽署憑證之後，現有的作用中簽署憑證會移動到非作用中簽署憑證清單。
 
 ### <a name="list-the-inactive-signing-certificates"></a>列出非作用中簽署憑證
 ```
@@ -251,7 +251,7 @@ Remove-DHASInactiveSigningCertificates -Force
 Remove-DHASInactiveSigningCertificates  -Thumbprint "<hex>" -Force
 ```
 
-> **注意：** 只有*一個*（的任何類型） 的非作用中憑證可能會在任何時間存在服務中。 當憑證已不再需要時，應將它們從非作用中憑證清單中移除。
+> **注意：** 服務中一次只能有*一個*非使用中的憑證 (任何類型)。 當憑證已不再需要時，應將它們從非作用中憑證清單中移除。
 
 ### <a name="get-the-active-encryption-certificate"></a>取得作用中加密憑證
 
