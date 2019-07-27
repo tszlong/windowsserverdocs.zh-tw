@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4a305141b839772bb024140bd803073a67e266b2
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688547"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544574"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 Standard 和 Datacenter 版本的比較
 
@@ -123,7 +123,7 @@ ms.locfileid: "63688547"
 |SMB 頻寬限制|是|是|
 |SMTP 伺服器|是|是|
 |SNMP 服務|是|是|
-|軟體負載平衡器|是|是|
+|軟體負載平衡器|否|是|
 |儲存體複本|否|是|
 |Telnet 用戶端|是|是|
 |TFTP 用戶端|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
