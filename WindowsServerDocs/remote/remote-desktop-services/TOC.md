@@ -66,13 +66,21 @@
 
 ## [其他遠端桌面支援](rds-get-support.md)
 ## [遠端桌面用戶端](clients/remote-desktop-clients.md)
+### 遠端桌面的已知問題
+#### [針對一般遠端桌面連線進行疑難排解](troubleshoot/rdp-error-general-troubleshooting.md)
+#### [用戶端無法連線並收到「類別未登錄」錯誤](troubleshoot/rdp-error-class-not-registered.md)。
+#### [用戶端無法連線並看到「沒有可用的授權」錯誤](troubleshoot/rdp-error-no-licenses-available.md)
+#### [使用者無法驗證，或必須驗證兩次](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
+#### [在連線時收到「遠端桌面服務目前忙碌中」錯誤](troubleshoot/remote-desktop-service-currently-busy.md)
+#### [遠端桌面用戶端連線中斷，且無法重新連線至同一工作階段](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
+#### [遠端膝上型電腦從無線網路中斷連線](troubleshoot/remote-laptop-disconnects-wireless-network.md)
+#### [遠端桌面連線期間效能不佳或應用程式發生問題](troubleshoot/poor-performance-or-application-problems.md)
 ### 一般資訊
 #### [哪個用戶端最適合您？](clients/remote-desktop-app-compare.md)
 #### [遠端桌面 RDP 檔案設定](clients/rdp-files.md)
 #### [遠端桌面 URI 配置](clients/remote-desktop-uri.md)
 #### [遠端桌面用戶端常見問題集](clients/remote-desktop-client-faq.md)
 #### [受控應用程式和桌面的隱私權設定](clients/remote-privacy-settings.md)
-#### [針對遠端桌面連線進行疑難排解](clients/troubleshoot-remote-desktop-connections.md)
 ### 適用於 Windows 的遠端桌面用戶端
 #### [入門](clients/windows.md)
 #### [Windows 用戶端中的新功能](clients/windows-whatsnew.md)

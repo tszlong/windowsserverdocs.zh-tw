@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/20/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d00051f59eb39c6a7c668d00034f72879b0b097f
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 0612f4ff102d6b5d1fd24372ac20a98c3ec02edb
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298144"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476561"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,6 +129,7 @@ ms.locfileid: "67298144"
 
 了解我們最新發行的功能：
 
+- 版本 [1907](https://aka.ms/wac1907) - 新增了 Azure 成本預估連結，並改善了匯入/匯出和標記虛擬機器的功能。
 - 版本 [1906](https://aka.ms/wac1906) - 新增匯入/匯出 VM、切換 Azure 帳戶、從 Azure 新增連線、連線能力設定實驗、效能改進和效能分析工具。
 - 版本 1904.1 是最新的 GA 版本 - 用來改善閘道外掛程式穩定性的維護更新。
 - 版本 [1904](https://aka.ms/wac1904) 是引進 Azure 混合式服務工具的 GA 版本，其中已將先前預覽版中的功能帶入 GA 通道。
