@@ -7,6 +7,7 @@
 ## [系統需求](sys-reqs-19.md)
 ## [Windows Server 2019 啟用](activation-19.md)
 ## [Windows Server 2019 VM 啟用](vm-activation-19.md)
+## [啟用錯誤碼疑難排解](../get-started/activation-error-codes.md)
 ## [Windows Server 2019 和 Microsoft Server 應用程式相容性](app-compat-19.md)
 ## [Server Core 應用程式相容性功能隨選安裝 (FOD)](install-fod-19.md)
 ## [Standard | Datacenter Edition 比較](editions-comparison-19.md)

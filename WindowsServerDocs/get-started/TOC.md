@@ -22,6 +22,7 @@
 ## [Windows Server 2016 啟用指南](Server-2016-activation.md)
 ### [KMS 用戶端安裝金鑰](KMSclientkeys.md)
 ### [啟用錯誤碼的疑難排解](activation-error-codes.md)
+####[KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)
 ## [安裝 Nano 伺服器](Getting-started-with-Nano-Server.md)
 ### [Nano 伺服器在 Windows Server 下一個發行版本中的變更](nano-in-semi-annual-channel.md)
 ### [Nano 伺服器快速入門](Nano-Server-Quick-start.md)
