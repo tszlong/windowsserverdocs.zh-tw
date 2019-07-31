@@ -293,7 +293,7 @@ Windows Server 版本1709中的這項行為已變更, 可根據客戶的意見�
 
     Guidance: Possible causes include network failures, share creation failures for the remote replication group, or firewall settings. Make sure SMB traffic is allowed and there are no connectivity issues between the local computer and the remote computer. You should expect this event when suspending replication or removing a replication partnership.
 
-請注意`A process has requested access to an object, but has not been granted those access rights.` , 這是儲存體複本中的已知問題, 而且在2017年9月12日的品質更新中已修正-KB4038782 (OS 組建 14393.1715) `Status: "{Access Denied}"`https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
+請注意`A process has requested access to an object, but has not been granted those access rights.` , 這是儲存體複本中的已知問題, 而且在2017年9月12日的品質更新中已修正-KB4038782 (OS 組建 14393.1715) `Status: "{Access Denied}"` https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
 
 ## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>錯誤「無法使資源 'Cluster Disk x' 上線。」 出現在延展式叢集
 
