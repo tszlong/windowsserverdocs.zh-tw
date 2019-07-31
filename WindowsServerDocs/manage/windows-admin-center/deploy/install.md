@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.date: 07/17/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 994e2324042dd441abbb114da2b8806574ce0352
-ms.sourcegitcommit: e5553285d509f15c20ba98ad9e8bf69b09531560
+ms.openlocfilehash: e67102d1fa8b35d90e97df64cb8bd2991b205ad5
+ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68307481"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658883"
 ---
 # <a name="install-windows-admin-center"></a>安裝 Windows Admin Center
 
@@ -27,7 +27,7 @@ ms.locfileid: "68307481"
 
 ## <a name="determine-your-installation-type"></a>判斷您的安裝類型
 
-檢查包含[支援之作業系統](../plan/installation-options.md#supported-operating-systems-installation)的[安裝選項](../plan/installation-options.md)。 若要在 Azure 中的 VM 上安裝 Windows 管理中心, 請參閱[在 azure 中部署 windows 系統管理中心](../azure/deploy-wac-in-azure.md)。
+檢查包含[支援之作業系統](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options#installation-supported-operating-systems)的[安裝選項](../plan/installation-options.md)。 若要在 Azure 中的 VM 上安裝 Windows 管理中心, 請參閱[在 azure 中部署 windows 系統管理中心](../azure/deploy-wac-in-azure.md)。
 
 ## <a name="install-on-windows-10"></a>安裝在 Windows 10 上
 
