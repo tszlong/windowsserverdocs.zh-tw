@@ -1,6 +1,6 @@
 ---
 ms.assetid: ed3206b4-bbfc-4bc7-a43c-981b0544a50d
-title: Active Directory Federation Services (AD FS) 所需的更新
+title: Active Directory 同盟服務的必要更新 (AD FS)
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,103 +9,103 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2336847825cfb3f232674a1e39d3bab7953a32c0
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: e11865050e6dcf419ed52eaf8ec6b6aaf897bf60
+ms.sourcegitcommit: a4c15b8d255e4934ffb125d9a0deb661539412ee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792305"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701571"
 ---
-# <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>必要的更新，適用於 Active Directory Federation Services (AD FS) 和 Web 應用程式 Proxy (WAP)
+# <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory 同盟服務 (AD FS) 和 Web 應用程式 Proxy (WAP) 的必要更新
 
 
-自 2016 年 10 月起的 Windows Server 的所有元件的所有更新會都發行只透過 Windows Update (WU)。  沒有任何其他 hotfix 或個別的下載項目。
-這適用於 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 和 Windows Server 2008 R2 SP1。
+從2016年10月起, Windows Server 所有元件的所有更新都只會透過 Windows Update (WU) 發行。  沒有更多的修補程式或個別下載。
+這適用于 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 SP1。
 
-此頁面列出 AD FS 和 WAP，以及建議用於 AD FS 和 WAP 的 hotfix 更新歷程記錄清單特別感興趣的彙總套件。
+此頁面會列出 AD FS 和 WAP 的特定匯總套件, 以及建議的 AD FS 和 WAP 的修補程式更新歷程清單。
 
-## <a name="updates-for-ad-fs-and-wap-in-windows-server-2016"></a>適用於 AD FS 和 WAP 中 Windows Server 2016 更新
-適用於 Windows Server 2016 的更新會透過 Windows Update 的每個月傳遞，並會累計。 下面所列的更新套件建議用於所有的 AD FS 和 WAP 2016 伺服器，並包含所有先前所需的更新，以及最新的修正。
+## <a name="updates-for-ad-fs-and-wap-in-windows-server-2016"></a>Windows Server 2016 中 AD FS 和 WAP 的更新
+Windows Server 2016 的更新會每月透過 Windows Update 傳遞, 而且是累計的。 下列為所有 AD FS 和 WAP 2016 伺服器建議的更新套件, 並包含所有先前必要的更新, 以及最新的修正程式。
 
-|KB # |描述|發行日期
+|文庫# |描述|發行日期
 |----- | ----- |-----
-|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 這項安全性更新可解決的弱點可能會在 Active Directory 同盟服務 (AD FS) 可能會允許攻擊者略過外部網路鎖定原則。 |2019 年 7 月|
-|[4489889 （OS 組建 14393.2879）](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 解決在 Active Directory Federation Services (AD FS) 會造成信賴憑證者信任的 AD FS 管理主控台中出現重複的問題。 這是當您建立或檢視信賴憑證者信任使用 AD FS 管理主控台。 |2019 年 3 月|
-|[4487006 （OS 組建 14393.2828）](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | 解決的問題造成的信賴憑證者信任時使用 PowerShell 或 [Active Directory Federation Services (AD FS) 的管理] 主控台中選取失敗的更新。 如果您設定要使用線上中繼資料 URL 發佈一個以上的 PassiveRequestorEndpoint 信賴憑證者信任，就會發生此問題。 錯誤是，「 MSIS7615:中的信賴憑證者信任指定的受信任的端點必須是唯一的該信賴憑證者信任。 」  </br></br>解決由於 Azure 密碼保護原則會顯示特定的錯誤訊息外部的複雜密碼變更的問題。 |2019 年 2 月|
-|[4462928 （OS 組建 14393.2580）](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|解決 Active Directory Federation Services (ADFS) 外部網路智慧鎖定 (ESL) 與替代的登入識別碼之間的互通性問題 啟用替代登入識別碼時，會呼叫至 AD FS Powershell cmdlet，取得 AdfsAccountActivity 和重設-AdfsAccountLockout，傳回 「 找不到帳戶 」 錯誤。 組 AdfsAccountActivity 呼叫時，而不是編輯現有的 fgpp 加入新項目。|2018 年 10 月|
-|[4343884 （OS 組建 14393.2457）](https://support.microsoft.com/en-us/help/4343884/windows-10-update-kb4343884)|解決其中 Multi-factor Authentication 無法正常運作的行動裝置使用的自訂文化特性定義的 Active Directory Federation Services (AD FS) 問題。 </br></br>解決的問題，在 Windows hello 企業版的新使用者註冊會造成明顯的延遲 （15 秒）。 硬體安全性模組用來儲存 ADFS 登錄授權單位 (RA) 憑證時，就會發生此問題。|2018 年 8 月|
-|[4338822 （OS 組建 14393.2395）](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822)|解決顯示重複的信賴憑證者信任，在建立或檢視從主控台的 信賴憑證者信任時，才會進行 AD FS 管理主控台中的 AD FS 中的問題。</br></br>解決造成 Windows hello 企業版失敗的 ADFS 中的問題。 有兩個宣告提供者時，就會發生此問題。 Pin 碼註冊將會失敗，「 400 的內部伺服器錯誤：無法取得裝置識別碼。 」</br></br> 解決與非作用中連線指永不結束 WAP 問題。 這會導致系統資源流失 （例如記憶體流失），並不再有回應的 WAP 服務。 解決選取不同的登入選項可防止使用者的 AD FS 問題。 會發生這種情況是當使用者選擇使用憑證型驗證，登入，但尚未設定。 如果使用者選取憑證型驗證，然後再嘗試選取另一個登入選項，這也會發生。 如果發生這種情況，則使用者將重新導向，以憑證型驗證頁面之前就關閉瀏覽器。|2018 年 7 月|
-|[4103720 （OS 組建 14393.2273）](https://support.microsoft.com/help/4103720/windows-10-update-kb4103720)|解決與 SAML 信賴憑證者合作對象時啟用 PreventTokenReplays 失敗導致 IdP 起始的登入的 ADFS 的問題。 </br></br>解決從裝置或瀏覽器應用程式的 OAUTH 驗證時，就會發生的 ADFS 問題。 使用者密碼變更會產生失敗，並要求使用者結束應用程式或瀏覽器來登入。 </br></br>解決的問題，讓外部網路的智慧鎖定，以 UTC + 1 和更高版本 （歐洲和亞洲） 無法運作。 此外，它會導致一般的外部網路鎖定失敗，發生下列錯誤：Get-AdfsAccountActivity:大於 DateTime.MaxValue 或小於 DateTime.MinValue 時轉換為 UTC 的日期時間值不能序列化為 JSON。</br></br>解決 ADFS Windows Hello 以新的使用者不能佈建他們的 pin 碼的商務問題。 會發生這種情況是當沒有 MFA 提供者設定。|2018 年 5 月|
-|[4093120 （OS 組建 14393.2214）](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)| 解決的未處理的重新整理權杖的驗證問題。 它會產生下列錯誤：“Microsoft.IdentityServer.Web.Protocols.OAuth.Exceptions.OAuthInvalidRefreshTokenException:MSIS9312:收到無效的 OAuth 重新整理權杖。 重新整理權杖已收到早於 在權杖中允許的時間。 」 |2018 年 4 月|
-|[4077525 （OS 組建 14393.2097）](https://support.microsoft.com/help/4077525/windows-10-update-kb4077525)|解決 HTTP 500 錯誤的 ADFS 伺服器陣列中有至少兩部伺服器使用 Windows 內部資料庫 (WID) 發生的問題。 在此案例中，HTTP 的基本預先驗證 Web 應用程式 Proxy (WAP) 伺服器無法驗證一些使用者。 發生錯誤時，您也可能會看到警告 WAP 事件記錄檔中的事件識別碼 13039 Microsoft Windows Web 應用程式 Proxy。 描述讀取，「 Web 應用程式 Proxy 無法驗證使用者。 預先驗證是 「 ADFS 的豐富型用戶端 」。 指定的使用者未獲授權存取給定信賴憑證者的合作對象。 授權規則的目標信賴憑證者合作對象或 WAP 信賴憑證者合作對象被需要加以修改。 」</br></br>解決的問題所在 AD FS 可以不再忽略提示在驗證期間 = 登入。 已停用選項已新增至支援哪些密碼中不使用驗證的案例。 如需詳細資訊，請參閱 < AD FS 驗證 Windows Server 2016 rtm 期間忽略"prompt = login"的參數。</br></br>AD FS 中解決問題，其中授權的客戶 （以及信賴憑證者的合作對象） 使用者選取憑證驗證選項將無法連線。 使用提示字元時，就會發生失敗 = 登入，如果已啟用 Windows 整合式驗證 (WIA)，且要求可以執行 WIA。</br></br>解決的問題，AD FS 不正確地顯示首頁領域探索 (HRD) 頁面與信賴憑證者 (RP) 中的 OAuth 群組相關聯的身分識別提供者 (IDP) 時。 多個 Idp 是 OAuth 群組中的 RP 與相關聯，除非使用者將不會顯示 [HRD] 頁面。 相反地，使用者會直接移至相關聯的 IDP 進行驗證。|2018 年 2 月|
-|[4041688 （OS 組建 14393.1794）](https://support.microsoft.com/kb/4041688)|此修正解決間歇性 misdirects 錯誤的身分識別提供者的 AD 授權單位要求，因為不正確的快取行為的問題。 這可以影響驗證功能，例如多重要素驗證。 </br></br>新增的功能 AAD Connect Health for ADFS 伺服器健全狀況報表與在混合的 WS2012R2 和 WS2016 ADFS 伺服器陣列上正確精確度 （使用設定稽核的詳細資訊）。</br></br>有許多信賴憑證者信任時，powershell cmdlet，以提升伺服器陣列的行為，2012年升級期間 R2 ADFS 伺服器陣列至 ADFS 2016 的情況下修正的問題，失敗逾時。</br></br>解決的問題，AD FS 會導致驗證失敗時同盟要求至其他安全性權杖伺服器 (STS) 修改的 wct 參數值。|2017 年 10 月|
-|[4038801 （OS 組建 14393.1737）](https://support.microsoft.com/kb/4038801)|新增同盟的 LDPs 的 OIDC 登出的支援。 這可讓 「 Kiosk 案例 」 其中多個使用者可能會以序列方式登入單一裝置沒有搭配 LDP 的同盟。</br></br>已修正的問題，CEP/CES 型憑證不適用於 gMSA 帳戶 WinHello。</br></br>將 Windows 內部資料庫 (WID) 在 microsoft Windows Server 2016 ADFS 伺服器上無法同步處理某些設定，例如從 IdentityServerPolicy.Scopes 和 IdentityServerPolicy.Clients 資料表 ApplicationGroupId 資料行，修正問題） 因為外部索引鍵條件約束。 這類的同步處理失敗可導致不同的宣告，宣告提供者和應用程式主要到次要的 ADFS 伺服器之間的體驗。 此外，如果 WID 主要角色移至次要節點，應用程式群組將不再可管理在 ADFS 管理 ux。</br></br>此更新修正問題，多重要素驗證無法正常運作的行動裝置使用的自訂文化特性定義|2017 年 9 月|
-|[4034661 （OS 組建 14393.1613）](https://support.microsoft.com/kb/4034661)|呼叫端 IP 位址是 nog 411 ADFS 4.0 的安全性事件記錄檔中的事件所記錄的位置，修正問題 \ 即使在啟用 [成功稽核] 和 [失敗稽核] 之後的 microsoft Windows Server 2016 RS1 ADFS 伺服器。</br></br>ADFX 伺服器設定為使用 HTTP Proxy 時，此修正會解決的問題與 Azure 多重要素驗證 (MFA)。</br></br>「 解決其中呈現過期或撤銷的憑證，ADFS Proxy 伺服器不會傳回錯誤給使用者的問題。 」|2017 年 8 月|
-|[4034658 （OS 組建 14393.1593）](https://support.microsoft.com/kb/4034658)|修正 2016 AD FS 伺服器以支援 Windows Hello For Business 的內部部署部署 MFA 憑證註冊|2017 年 8 月|
-|[4025334 （OS 組建 14393.1532）](https://support.microsoft.com/kb/4025334)|解決的問題其中 PkeyAuth 權杖處理常式無法驗證如果 pkeyauth 要求包含不正確的資料。 驗證應該還是會繼續而不需執行裝置驗證|2017 年 7 月|
-|[4022723 （OS 組建 14393.1378）](https://support.microsoft.com/kb/4022723)|[Web 應用程式 Proxy]DisableHttpOnlyCookieProtection 組態屬性的值是未收取 WAP 2016 2012R2/2016年混合式部署中 </br></br>[Web 應用程式 Proxy]無法取得使用者存取權杖來自 EAS 預先驗證案例中的 AD FS。</br></br>AD FS 2016:登出 WSFED 會導致例外狀況|2017 年 6 月
-|[3213986](https://support.microsoft.com/kb/3213986)|適用於 x64 型系統 (KB3213986) 適用於 Windows Server 2016 的累積更新| 2017 年 1 月
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 此安全性更新解決了 Active Directory 同盟服務 (AD FS) 中的弱點, 這可能會讓攻擊者略過外部網路鎖定原則。 |2019年7月|
+|[4489889 (OS 組建 14393.2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 解決 Active Directory 同盟服務 (AD FS) 中導致重複的信賴憑證者信任出現在 AD FS 管理主控台的問題。 當您使用 AD FS 管理主控台建立或查看信賴憑證者信任時, 就會發生這種情況。</br></br> 解決在 AD FS 2016 上啟用外部網路智慧鎖定 (ESL) 時, 所發生的高 Active Directory 同盟服務 (ADFS) Web 應用程式 Proxy (WAP) 延遲問題 (超過10毫秒)。 此安全性更新會解決[CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794)中所述的弱點。 |2019年3月|
+|[4487006 (OS 組建 14393.2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | 解決在使用 PowerShell 或 Active Directory 同盟服務 (AD FS) 管理主控台時, 導致信賴憑證者信任的更新失敗的問題。 如果您將信賴憑證者信任設定為使用可發佈多個 PassiveRequestorEndpoint 的線上中繼資料 URL, 就會發生此問題。 錯誤為「MSIS7615:信賴憑證者信任中指定的信任端點, 對於該信賴憑證者信任而言必須是唯一的。」  </br></br>解決因 Azure 密碼保護原則而顯示特定錯誤訊息的問題, 以因應外部複雜度的密碼變更。 |2019 年 2 月|
+|[4462928 (OS 組建 14393.2580)](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|解決 Active Directory 同盟服務 (ADFS) 外部網路智慧鎖定 (ESL) 與替代登入識別碼之間的互通性問題。 啟用替代登入識別碼時, 會呼叫 AD FS Powershell Cmdlet AdfsAccountActivity 和 Reset-AdfsAccountLockout, 傳回「找不到帳戶」錯誤。 呼叫 AdfsAccountActivity 時, 會加入新的專案, 而不是編輯現有的專案。|2018 年 10 月|
+|[4343884 (OS 組建 14393.2457)](https://support.microsoft.com/en-us/help/4343884/windows-10-update-kb4343884)|解決在使用自訂文化特性定義的行動裝置上, 多重要素驗證無法正常運作的 Active Directory 同盟服務 (AD FS) 問題。 </br></br>解決 Windows Hello 企業版中導致新使用者註冊明顯延遲 (15 秒) 的問題。 當使用硬體安全性模組來儲存 ADFS 登錄授權單位 (RA) 憑證時, 就會發生此問題。|2018 年 8 月|
+|[4338822 (OS 組建 14393.2395)](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822)|解決 AD FS 中的問題, 在從主控台建立或查看信賴憑證者信任時, 在 AD FS 管理主控台中顯示重複的信賴憑證者信任。</br></br>解決 ADFS 中導致 Windows Hello 企業版失敗的問題。 當有兩個宣告提供者時, 就會發生此問題。 PIN 註冊將會失敗, 並出現「400內部伺服器錯誤:無法取得裝置識別碼」。</br></br> 解決與永不結束的非使用中連線相關的 WAP 問題。 這會導致系統資源流失 (例如, 記憶體流失) 以及不再回應的 WAP 服務。 解決防止使用者選取不同登入選項的 AD FS 問題。 當使用者選擇使用以憑證為基礎的驗證來登入, 但尚未設定時, 就會發生這種情況。 如果使用者選取 [憑證型驗證], 然後嘗試選取另一個登入選項, 也會發生這種情況。 如果發生這種情況, 系統會將使用者重新導向至以憑證為基礎的驗證頁面, 直到他們關閉瀏覽器為止。|2018 年 7 月|
+|[4103720 (OS 組建 14393.2273)](https://support.microsoft.com/help/4103720/windows-10-update-kb4103720)|解決 ADFS 的問題, 當啟用 PreventTokenReplays 時, 會導致 IdP 起始的登入 SAML 信賴憑證者失敗。 </br></br>解決當 OAUTH 從裝置或瀏覽器應用程式進行驗證時所發生的 ADFS 問題。 使用者密碼變更會產生失敗, 並要求使用者結束應用程式或瀏覽器以登入。 </br></br>解決在 UTC + 1 和更新版本 (歐洲和亞洲) 中啟用外部網路智慧鎖定無法使用的問題。 此外, 它會導致一般外部網路鎖定因下列錯誤而失敗:AdfsAccountActivity:轉換成 UTC 時, 大於 MinValue 或小於 datetime 的 DateTime 值無法序列化為 JSON。</br></br>解決 ADFS Windows Hello 企業版的問題, 其中新的使用者無法布建其 PIN。 未設定 MFA 提供者時, 就會發生這種情況。|2018 年 5 月|
+|[4093120 (OS 組建 14393.2214)](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)| 解決未處理的重新整理權杖驗證問題。 它會產生下列錯誤:< IdentityServer。 OAuthInvalidRefreshTokenException 中的下列各項:MSIS9312:收到不正確 OAuth 重新整理權杖。 在權杖中的允許時間之前收到重新整理權杖。」 |2018 年 4 月|
+|[4077525 (OS 組建 14393.2097)](https://support.microsoft.com/help/4077525/windows-10-update-kb4077525)|解決當 ADFS 伺服器陣列至少有兩部使用 Windows Internal Database (WID) 的伺服器時, 發生 HTTP 500 錯誤的問題。 在此案例中, Web 應用程式 Proxy (WAP) 伺服器上的 HTTP 基本預先驗證無法驗證某些使用者。 發生錯誤時, 您可能也會在 WAP 事件記錄檔中看到 Microsoft Windows Web 應用程式 Proxy 警告事件識別碼13039。 描述會讀取「Web 應用程式 Proxy 無法驗證使用者。 預先驗證是「適用于豐富型用戶端的 ADFS」。 指定的使用者未獲授權, 無法存取指定的信賴憑證者。 需要修改目標信賴憑證者或 WAP 信賴憑證者的授權規則。」</br></br>解決 AD FS 在驗證期間無法再忽略 prompt = login 的問題。 已新增停用的選項, 以支援未使用密碼驗證的案例。 如需詳細資訊, 請參閱 AD FS 在 Windows Server 2016 RTM 驗證期間忽略 "prompt = login" 參數。</br></br>解決 AD FS 在授權客戶 (和信賴憑證者) 選取 [憑證作為驗證選項] 時, 將無法連線的問題。 如果已啟用 Windows 整合式驗證 (WIA), 而且要求可以執行 WIA, 則在使用 prompt = login 時, 就會發生此失敗。</br></br>解決當識別提供者 (IDP) 與 OAuth 群組中的信賴憑證者 (RP) 相關聯時, AD FS 不正確地顯示 [主領域探索 (HRD)] 頁面的問題。 除非有多個 Idp 與 OAuth 群組中的 RP 相關聯, 否則使用者不會顯示在 [HRD] 頁面上。 相反地, 使用者會直接移至相關聯的 IDP 進行驗證。|2018 年 2 月|
+|[4041688 (OS 組建 14393.1794)](https://support.microsoft.com/kb/4041688)|此修正程式會解決因為快取行為不正確而導致 AD 授權單位要求錯誤的身分識別提供者的問題。 這可能會影響驗證功能, 例如多重要素驗證。 </br></br>已新增 AAD Connect Health 在混合 SQL2014SP1-WS2012R2 和 WS2016 ADFS 伺服器陣列上以正確的精確度 (使用詳細資訊審核) 來報告 ADFS 伺服器健全狀況的功能。</br></br>已修正將 2012 R2 ADFS 伺服器陣列升級至 ADFS 2016 的問題, 當有許多信賴憑證者信任時, 引發伺服器陣列行為層級的 powershell Cmdlet 會失敗, 且會有一個超時時間。</br></br>解決了 AD FS 會在將要求與其他安全性權杖伺服器 (STS) 同盟時修改 wct 參數值, 而導致驗證失敗的問題。|2017 年 10 月|
+|[4038801 (OS 組建 14393.1737)](https://support.microsoft.com/kb/4038801)|已針對使用同盟 LDPs 的 OIDC 登出新增支援。 這會允許「Kiosk 案例」, 其中多個使用者可能會以連續方式登入單一裝置, 其中會與 LDP 進行同盟。</br></br>已修正 CEP/CES 型憑證無法搭配 gMSA 帳戶使用的 WinHello 問題。</br></br>修正 Windows Server 2016 ADFS 伺服器上的 Windows 內部資料庫 (WID) 因外鍵而無法同步某些設定的問題, 例如來自 IdentityServerPolicy 的 ApplicationGroupId 資料行和 IdentityServerPolicy 資料表)constraint. 這類同步處理失敗可能會導致主要到次要 ADFS 伺服器之間有不同的宣告、宣告提供者和應用程式體驗。 此外, 如果將 WID 主要角色移到次要節點, 應用程式群組將不再可在 ADFS 管理 UX 中進行管理。</br></br>此更新修正了使用自訂文化特性定義的行動裝置無法正常運作的多重要素驗證問題|2017 年 9 月|
+|[4034661 (OS 組建 14393.1613)](https://support.microsoft.com/kb/4034661)|修正在 ADFS 4.0 \ Windows 2016 Server 的安全性事件記錄檔中, nog 由411事件記錄呼叫者 IP 位址的問題, 即使啟用「成功的審查」和「失敗的審核」之後也是如此。</br></br>當 ADFX 伺服器設定為使用 HTTP Proxy 時, 此修正可解決 Azure 多重要素驗證 (MFA) 的問題。</br></br>「解決了向 ADFS Proxy 伺服器出示過期或撤銷的憑證, 並不會對使用者傳回錯誤」的問題。|2017 年 8 月|
+|[4034658 (OS 組建 14393.1593)](https://support.microsoft.com/kb/4034658)|修正 2016 AD FS 伺服器, 以便在內部部署部署上支援適用于 Windows Hello 企業版的 MFA 憑證註冊|2017 年 8 月|
+|[4025334 (OS 組建 14393.1532)](https://support.microsoft.com/kb/4025334)|解決了當 PkeyAuth 要求包含不正確的資料時, PkeyAuth token 處理常式可能使驗證失敗的問題。 驗證仍應繼續進行, 而不需要執行裝置驗證|2017 年 7 月|
+|[4022723 (OS 組建 14393.1378)](https://support.microsoft.com/kb/4022723)|[Web 應用程式 Proxy]2012R2/2016 混合部署中的 WAP 2016 不會拾取 DisableHttpOnlyCookieProtection 設定屬性的值 </br></br>[Web 應用程式 Proxy]無法從 EAS 預先驗證案例中的 AD FS 取得使用者存取權杖。</br></br>AD FS 2016:WSFED 登出會導致例外狀況|2017 年 6 月
+|[3213986](https://support.microsoft.com/kb/3213986)|適用于 x64 型系統的 Windows Server 2016 累積更新 (KB3213986)| 2017 年 1 月
 
-## <a name="updates-for-ad-fs-and-wap-in-windows-server-2012-r2"></a>適用於 AD FS 和 WAP 中 Windows Server 2012 R2 更新
-以下是 hotfix 和更新彙總套件已在 Windows Server 2012 R2 中發行的 Active Directory Federation Services (AD FS) 的清單。
+## <a name="updates-for-ad-fs-and-wap-in-windows-server-2012-r2"></a>Windows Server 2012 R2 中 AD FS 和 WAP 的更新
+以下是 Windows Server 2012 R2 中 Active Directory 同盟服務 (AD FS) 已發行的「修補程式」和「更新彙總套件」清單。
 
-|KB # |描述|發行日期
+|文庫# |描述|發行日期
 |----- | ----- |-----
-|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 這項安全性更新可解決的弱點可能會在 Active Directory 同盟服務 (AD FS) 可能會允許攻擊者略過外部網路鎖定原則。 |2019 年 7 月
-|[4041685](https://support.microsoft.com/kb/4041685)|處理 AD FS 問題 MSISConext cookie 在要求標頭可以最終溢位的標頭大小限制而導致驗證失敗，HTTP 狀態碼 400 「 不正確的要求-標頭太長時間 」。</br></br>修正其中 ADFS 可以不再忽略"prompt = login 「 在驗證期間的問題。 [停用] 選項已新增至還原非密碼驗證使用的案例。|2017 年 10 月更新彙總套件預覽
-|[4019217](https://support.microsoft.com/kb/4019217)|工作的資料夾使用 Server 2012 R2 AD FS 伺服器時，用戶端使用權杖訊息代理程式無法運作|2017 年預覽更新彙總套件
-|[4015550](https://support.microsoft.com/kb/4015550)|已修正的問題與 AD FS 無法驗證外部使用者和 AD FS WAP 隨機失敗的要求轉送給|2017 年 4 月更新彙總套件
-|[4015547](https://support.microsoft.com/kb/4015547)|已修正的問題與 AD FS 無法驗證外部使用者和 AD FS WAP 隨機失敗的要求轉送給|2017 年 4 月安全性更新
-|[4012216](https://support.microsoft.com/kb/4009970)|MS17 019 這項安全性更新可解決的弱點可能會在 Active Directory Federation Services (ADFS)。 如果攻擊者特別設計將要求傳送至 AD FS 伺服器，讓攻擊者讀取目標系統的機密資訊的弱點可能會允許資訊洩漏。|2017 年 3 月更新彙總套件
-|[3179574](https://support.microsoft.com/kb/3179574)|AD FS 外部網路的密碼更新已修正的問題。 |2016 年 8 月更新彙總套件
-|[3172614](https://support.microsoft.com/kb/3172614)|導入的提示字元 = 登入[支援](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/ad-fs-faq#BKMK_7)，AlwaysRequireAuthentication 設定 AD FS 管理主控台與已修正問題。 |2016 年 7 月更新彙總套件
-|[3163306](https://support.microsoft.com/kb/3163306)|Active Directory Federation Services (AD FS) 3.0 無法連接到設定為使用安全通訊端層 (SSL) 連接埠 636 或 3269 連接字串中的輕量型目錄存取通訊協定 (LDAP) 屬性存放區。 |2016 年 6 月更新彙總套件
-|[3148533](https://support.microsoft.com/kb/3148533)|透過 Windows Server 2012 R2 中的 ADFS Proxy 的 MFA 遞補驗證失敗 |2016 年 5 月
-|[3134787](https://support.microsoft.com/kb/3134787)|AD FS 記錄檔不包含 Windows Server 2012 R2 中的帳戶鎖定情況下的用戶端 IP 位址 |2016 年 2 月
-|[3134222](https://support.microsoft.com/kb/3134222)|MS16 020-MENS:安全性更新，Active Directory 同盟服務阻斷服務的位址：2016 年 2 月 9日日|2016 年 2 月
-|[3105881](https://support.microsoft.com/kb/3105881)|Windows Server 2012 r2 AD FS 伺服器中啟用裝置驗證時，無法存取應用程式|2015 年 10 月
-|[3092003](https://support.microsoft.com/kb/3092003)|頁面載入重複，且驗證失敗，當使用者在 Windows Server 2012 R2 AD FS 使用 MFA|2015 年 8 月
-|[3080778](https://support.microsoft.com/kb/3080778)|當 MFA 配接器擲回例外狀況，Windows Server 2012 R2 中 AD FS 不會呼叫 OnError|2015 年 7 月
-|[3075610](https://support.microsoft.com/kb/3075610)|您新增或移除 Windows Server 2012 R2 中的宣告提供者之後，將會遺失次要的 AD FS 伺服器上的信任關係|2015 年 7 月
-|[3070080](https://support.microsoft.com/kb/3070080)|主領域探索不正常的非宣告感知信賴憑證者信任|2015 年 6 月
-|[3052122](https://support.microsoft.com/kb/3052122)|更新 Windows Server 2012 R2 中的 AD FS 權杖中新增的複合識別碼宣告的支援|5 月 2015
-|[3045711](https://support.microsoft.com/kb/3045711)|與 MS15-040:在 Active Directory Federation Services 中的弱點可能會允許資訊洩漏|2015 年 4 月
-|[3042127](https://support.microsoft.com/kb/3042127)|「 HTTP 400-不正確的要求 」 錯誤，當您開啟 Windows Server 2012 R2 中的 WAP 透過共用的信箱時|2015 年 3 月
-|[3042121](https://support.microsoft.com/kb/3042121)|AD FS 權杖重新執行保護的 Windows Server 2012 R2 中的 Web 應用程式 Proxy 驗證權杖|2015 年 3 月
-|[3035025](https://support.microsoft.com/kb/3035025)|Hotfix 更新密碼的功能，讓使用者不需要使用 Windows Server 2012 R2 中的已註冊的裝置|2015 年 1 月
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 此安全性更新解決了 Active Directory 同盟服務 (AD FS) 中的弱點, 這可能會讓攻擊者略過外部網路鎖定原則。 |2019年7月
+|[4041685](https://support.microsoft.com/kb/4041685)|解決了 AD FS 問題, 其中要求標頭中的 MSISConext cookie 最後可能會溢位標頭大小限制, 並導致無法以 HTTP 狀態碼400「錯誤的要求標頭太長」進行驗證。</br></br>修正了在驗證期間, ADFS 無法再忽略「提示 = 登入」的問題。 已將 [已停用] 選項新增至使用非密碼驗證的還原案例。|2017年10月更新彙總套件預覽
+|[4019217](https://support.microsoft.com/kb/4019217)|使用伺服器 2012 R2 AD FS 伺服器時, 使用權杖代理程式的工作資料夾用戶端無法正常執行|5月2017預覽更新彙總套件
+|[4015550](https://support.microsoft.com/kb/4015550)|修正了 AD FS 未驗證外部使用者, 以及 AD FS WAP 隨機無法轉寄要求的問題|2017年4月更新彙總套件
+|[4015547](https://support.microsoft.com/kb/4015547)|修正了 AD FS 未驗證外部使用者, 以及 AD FS WAP 隨機無法轉寄要求的問題|2017年4月安全性更新
+|[4012216](https://support.microsoft.com/kb/4009970)|MS17-019 此安全性更新可解決 Active Directory 同盟服務 (ADFS) 中的弱點。 如果攻擊者將特製的要求傳送至 AD FS 伺服器, 此弱點可能會導致資訊洩漏, 讓攻擊者能夠讀取目標系統的機密資訊。|2017年3月更新彙總套件
+|[3179574](https://support.microsoft.com/kb/3179574)|已修正 AD FS 外部網路密碼更新的問題。 |2016年8月更新彙總套件
+|[3172614](https://support.microsoft.com/kb/3172614)|引進了提示 = 登入[支援](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/ad-fs-faq#BKMK_7), 已修正 AD FS 管理主控台和 AlwaysRequireAuthentication 設定的問題。 |2016年7月更新彙總套件
+|[3163306](https://support.microsoft.com/kb/3163306)|Active Directory 同盟服務 (AD FS) 3.0 無法連線到已設定為使用連接字串中安全通訊端層 (SSL) 埠636或3269的輕量型目錄存取協定 (LDAP) 屬性存放區。 |2016年6月更新彙總套件
+|[3148533](https://support.microsoft.com/kb/3148533)|透過 Windows Server 2012 R2 中的 ADFS Proxy, MFA fallback 驗證失敗 |2016 年 5 月
+|[3134787](https://support.microsoft.com/kb/3134787)|在 Windows Server 2012 R2 中, AD FS 記錄不包含帳戶鎖定案例的用戶端 IP 位址 |2016 年 2 月
+|[3134222](https://support.microsoft.com/kb/3134222)|MS16-020:解決阻絕服務的 Active Directory 同盟服務安全性更新:2016年2月9日|2016 年 2 月
+|[3105881](https://support.microsoft.com/kb/3105881)|當 Windows Server 2012 R2 架構 AD FS 伺服器中啟用了裝置驗證時, 無法存取應用程式|2015 年 10 月
+|[3092003](https://support.microsoft.com/kb/3092003)|當使用者在 Windows Server 2012 R2 中使用 MFA 時, 重複載入頁面並驗證失敗 AD FS|2015 年 8 月
+|[3080778](https://support.microsoft.com/kb/3080778)|當 MFA adapter 在 Windows Server 2012 R2 中擲回例外狀況時, AD FS 不會呼叫 OnError|2015 年 7 月
+|[3075610](https://support.microsoft.com/kb/3075610)|在 Windows Server 2012 R2 中新增或移除宣告提供者之後, 次要 AD FS 伺服器上的信任關係會遺失|2015 年 7 月
+|[3070080](https://support.microsoft.com/kb/3070080)|在非宣告感知信賴憑證者信任中, 主領域探索無法正常運作|2015 年 6 月
+|[3052122](https://support.microsoft.com/kb/3052122)|更新在 Windows Server 2012 R2 的 AD FS token 中新增複合識別碼宣告的支援|5月2015
+|[3045711](https://support.microsoft.com/kb/3045711)|MS15-040:Active Directory 同盟服務中的弱點可能會允許資訊洩漏|2015年4月
+|[3042127](https://support.microsoft.com/kb/3042127)|當您透過 Windows Server 2012 R2 中的 WAP 開啟共用信箱時, 出現「HTTP 400-不正確的要求」錯誤|2015 年 3 月
+|[3042121](https://support.microsoft.com/kb/3042121)|Windows Server 2012 R2 中 Web 應用程式 Proxy 驗證權杖的 AD FS token 重新執行保護|2015 年 3 月
+|[3035025](https://support.microsoft.com/kb/3035025)|更新密碼功能的修復, 讓使用者不需要在 Windows Server 2012 R2 中使用已註冊的裝置|2015 年 1 月
 |[3033917](https://support.microsoft.com/kb/3033917)|AD FS 無法處理 Windows Server 2012 R2 中的 SAML 回應|2015 年 1 月
-|[3025080](https://support.microsoft.com/kb/3025080)|當您嘗試將透過 Web Application Proxy 將 Office 檔案儲存在 Windows Server 2012 R2 時，作業就會失敗|2015 年 1 月
-|[3025078](https://support.microsoft.com/kb/3025078)|您不會提示使用者名稱一次當您使用不正確的使用者名稱登入 Windows Server 2012 R2|2015 年 1 月
-|[3020813](https://support.microsoft.com/kb/3020813)|當您執行 Windows Server 2012 R2 AD FS 中的 web 應用程式時，會提示進行驗證|2015 年 1 月
-|[3020773](https://support.microsoft.com/kb/3020773)|Windows Server 2012 R2 中的裝置註冊服務的初始部署之後逾時錯誤|2015 年 1 月
-|[3018886](https://support.microsoft.com/kb/3018886)|系統會提示您輸入使用者名稱和密碼兩次當您從內部網路存取 Windows Server 2012 R2 AD FS 伺服器|2015 年 1 月
-|[3013769](https://support.microsoft.com/kb/3013769)|Windows Server 2012 R2 更新彙總|2014 年 12 月
-|[3000850](https://support.microsoft.com/kb/3000850)|Windows Server 2012 R2 更新彙總|2014 年 11 月
-|[2975719](https://support.microsoft.com/kb/2975719)|Windows Server 2012 R2 更新彙總|2014 年 8 月
-|[2967917](https://support.microsoft.com/kb/2967917)|Windows Server 2012 R2 更新彙總|2014 年 7 月
-|[2962409](https://support.microsoft.com/kb/2962409)|Windows Server 2012 R2 更新彙總|2014 年 6 月
-|[2955164](https://support.microsoft.com/kb/2955164)|Windows Server 2012 R2 更新彙總|2014 年
-|[2919355](https://support.microsoft.com/kb/2919355)|Windows Server 2012 R2 更新彙總|2014 年 4 月
+|[3025080](https://support.microsoft.com/kb/3025080)|當您嘗試透過 Windows Server 2012 R2 中的 Web 應用程式 Proxy 儲存 Office 檔案時, 操作會失敗|2015 年 1 月
+|[3025078](https://support.microsoft.com/kb/3025078)|當您使用不正確的使用者名稱登入 Windows Server 2012 R2 時, 系統不會再次提示您輸入 username|2015 年 1 月
+|[3020813](https://support.microsoft.com/kb/3020813)|當您在 Windows Server 2012 R2 中執行 web 應用程式時, 系統會提示您進行驗證 AD FS|2015 年 1 月
+|[3020773](https://support.microsoft.com/kb/3020773)|Windows Server 2012 R2 中的裝置註冊服務初始部署後的超時失敗|2015 年 1 月
+|[3018886](https://support.microsoft.com/kb/3018886)|當您從內部網路存取 Windows Server 2012 R2 AD FS 伺服器時, 系統會提示您輸入使用者名稱和密碼兩次|2015 年 1 月
+|[3013769](https://support.microsoft.com/kb/3013769)|Windows Server 2012 R2 更新彙總套件|2014 年 12 月
+|[3000850](https://support.microsoft.com/kb/3000850)|Windows Server 2012 R2 更新彙總套件|2014 年 11 月
+|[2975719](https://support.microsoft.com/kb/2975719)|Windows Server 2012 R2 更新彙總套件|2014 年 8 月
+|[2967917](https://support.microsoft.com/kb/2967917)|Windows Server 2012 R2 更新彙總套件|2014 年 7 月
+|[2962409](https://support.microsoft.com/kb/2962409)|Windows Server 2012 R2 更新彙總套件|2014 年 6 月
+|[2955164](https://support.microsoft.com/kb/2955164)|Windows Server 2012 R2 更新彙總套件|5月2014
+|[2919355](https://support.microsoft.com/kb/2919355)|Windows Server 2012 R2 更新彙總套件|2014 年 4 月
 
-## <a name="updates-for-ad-fs-in-windows-server-2012-ad-fs-21-and-ad-fs-20"></a>更新適用於 AD FS，在 Windows Server 2012 (AD FS 2.1) 和 AD FS 2.0
-以下是已發行適用於 AD FS 2.0 和 2.1 的 hotfix 和更新彙總清單。
+## <a name="updates-for-ad-fs-in-windows-server-2012-ad-fs-21-and-ad-fs-20"></a>Windows Server 2012 (AD FS 2.1) 和 AD FS 2.0 中的 AD FS 更新
+以下是已針對 AD FS 2.0 和2.1 發行的「修補程式」和「更新彙總套件」清單。
 
-|KB # |描述|發行日期|適用於：
+|文庫# |描述|發行日期|適用於：
 |----- | ----- |-----|-----
-|[3197878](https://support.microsoft.com/kb/3197878)|透過 proxy 驗證失敗 （這是一般的 hotfix 3094446 版本） 的 Windows Server 2012 中|2016 年 11 月品質彙總套件|AD FS 2.1
-|[3197869](https://support.microsoft.com/kb/3197869)|透過 proxy 驗證失敗 （這是一般的 hotfix 3094446 版本） 的 Windows Server 2008 R2 sp1|2016 年 11 月品質彙總套件|AD FS 2.0
-|[3094446](https://support.microsoft.com/kb/3094446)|透過 proxy 驗證失敗，在 Windows Server 2012 或 Windows Server 2008 R2 SP1|2015 年 9 月|AD FS 2.0 和 2.1
-|[3070078](https://support.microsoft.com/kb/3070078)|AD FS 2.1 在驗證對 Windows Server 2012 中的加密憑證時，會擲回例外狀況|2015 年 7 月|AD FS 2.1
-|[3062577](https://support.microsoft.com/kb/3062577)|與 MS15-062:Active Directory federation services 中的弱點可能會允許提高權限|2015 年 6 月|AD FS 2.0 / 2.1
-|[3003381](https://support.microsoft.com/kb/3003381)|MS14-077:Active Directory Federation Services 的弱點可能會允許資訊洩漏：2015 年 4 月 14日日|2014 年 11 月|AD FS 2.0 / 2.1
-|[2987843](https://support.microsoft.com/kb/2987843)|AD FS 同盟伺服器的記憶體使用量會持續增加，許多使用者登入 Windows Server 2012 中的 web 應用程式時|2014 年 7 月|AD FS 2.1
-|[2957619](https://support.microsoft.com/kb/2957619)|委派的語彙基元的 AD FS 來提出要求時，已停止的信賴憑證者信任的 AD fs|2014 年|AD FS 2.1
-|[2926658](https://support.microsoft.com/kb/2926658)|如果您沒有 SQL 權限，就會失敗 ADFS SQL 伺服器陣列部署|2014 年 10 月|AD FS 2.1
-|[2896713](https://support.microsoft.com/kb/2896713)或[2989956](https://support.microsoft.com/kb/2989956)|更新已提供修正幾個問題之後您的 AD FS 伺服器上安裝安全性更新 2843638|2013 年 11 月</br></br>2014 年 9 月|AD FS 2.0 / 2.1
-|[2877424](https://support.microsoft.com/kb/2877424)|更新可讓您使用一個憑證，進行多個信賴憑證者信任的 AD FS 中 2.1 的伺服器陣列|2013 年 10 月|AD FS 2.1
-|[2873168](https://support.microsoft.com/kb/2873168)|修正：當您使用第三方 CSP 和 HSM，然後再設定適用於 Windows Server 2008 R2 Service Pack 1 上的 AD FS 2.0 的 更新彙總套件 3 中的宣告提供者信任時，就會發生錯誤|2013 年 9 月|AD FS 2.0
-|[2861090](https://support.microsoft.com/kb/2861090)|加密憑證的主體名稱的逗號會造成 Windows Server 2008 R2 SP1 中的例外狀況|2013 年 8 月|AD FS 2.0
-|[2843639](https://support.microsoft.com/kb/2843639)|[Security]在 Active Directory Federation Services 中的弱點可能會允許資訊洩漏|2013 年 11 月|AD FS 2.1
-|[2843638](https://support.microsoft.com/kb/2843638)|MS13 066:Active Directory Federation Services 2.0 的安全性更新的描述：2013 年 8 月 13日日|2013 年 8 月|AD FS 2.0
-|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata.xml 檔案不包含 Windows Server 2012 中 1.1、WS-Trust 和 WS-同盟端點的 MEX 端點資訊|2013 年|AD FS 2.1
-|[2790338](https://support.microsoft.com/kb/2790338)|更新彙總套件 3 描述 Active Directory Federation Services (AD FS) 2.0|2013 年 3 月|AD FS 2.0
+|[3197878](https://support.microsoft.com/kb/3197878)|在 Windows Server 2012 中透過 proxy 驗證失敗 (這是「修補程式3094446」的一般版本)|2016年11月品質匯總套件|AD FS 2。1
+|[3197869](https://support.microsoft.com/kb/3197869)|在 Windows Server 2008 R2 SP1 中透過 proxy 驗證失敗 (這是「修補程式3094446」的一般版本)|2016年11月品質匯總套件|AD FS 2。0
+|[3094446](https://support.microsoft.com/kb/3094446)|在 Windows Server 2012 或 Windows Server 2008 R2 SP1 中透過 proxy 驗證失敗|2015年9月|AD FS 2.0 和2。1
+|[3070078](https://support.microsoft.com/kb/3070078)|當您對 Windows Server 2012 中的加密憑證進行驗證時, AD FS 2.1 會擲回例外狀況|2015 年 7 月|AD FS 2。1
+|[3062577](https://support.microsoft.com/kb/3062577)|MS15-062:Active Directory 同盟服務中的弱點可能會允許權限提高|2015 年 6 月|AD FS 2.0/2。1
+|[3003381](https://support.microsoft.com/kb/3003381)|MS14-077:Active Directory 同盟服務中的弱點可能會允許資訊洩漏:2015年4月14日|2014 年 11 月|AD FS 2.0/2。1
+|[2987843](https://support.microsoft.com/kb/2987843)|當許多使用者登入 Windows Server 2012 中的 web 應用程式時, AD FS 同盟伺服器的記憶體使用量會持續增加|2014 年 7 月|AD FS 2。1
+|[2957619](https://support.microsoft.com/kb/2957619)|對委派權杖的 AD FS 提出要求時, AD FS 中的信賴憑證者信任已停止|5月2014|AD FS 2。1
+|[2926658](https://support.microsoft.com/kb/2926658)|如果您沒有 SQL 許可權, ADFS SQL 伺服器陣列部署將會失敗|2014 年 10 月|AD FS 2。1
+|[2896713](https://support.microsoft.com/kb/2896713)或[2989956](https://support.microsoft.com/kb/2989956)|在 AD FS 伺服器上安裝安全性更新2843638之後, 有可用來修正數個問題的更新|2013年11月</br></br>2014年9月|AD FS 2.0/2。1
+|[2877424](https://support.microsoft.com/kb/2877424)|更新可讓您在 AD FS 2.1 伺服器陣列中, 將一個憑證用於多個信賴憑證者信任|2013 年 10 月|AD FS 2。1
+|[2873168](https://support.microsoft.com/kb/2873168)|補丁當您使用協力廠商 CSP 和 HSM, 然後在 Windows Server 2008 R2 Service Pack 1 上的 AD FS 2.0 的更新彙總套件3中設定宣告提供者信任時, 就會發生錯誤|2013年9月|AD FS 2。0
+|[2861090](https://support.microsoft.com/kb/2861090)|加密憑證的主體名稱中的逗號會導致 Windows Server 2008 R2 SP1 發生例外狀況|2013年8月|AD FS 2。0
+|[2843639](https://support.microsoft.com/kb/2843639)|安全級Active Directory 同盟服務中的弱點可能會允許資訊洩漏|2013年11月|AD FS 2。1
+|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066:Active Directory 同盟服務2.0 的安全性更新描述:2013年8月13日|2013年8月|AD FS 2。0
+|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata 在 Windows Server 2012 中未包含 WS-TRUST 和 WS-同盟端點的 MEX 端點資訊|5月2013|AD FS 2。1
+|[2790338](https://support.microsoft.com/kb/2790338)|Active Directory 同盟服務 (AD FS) 2.0 的更新彙總套件3描述|2013 年 3 月|AD FS 2。0
