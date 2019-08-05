@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/20/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ca845e527d2469921c6248552f003c51bbc790a6
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 59668e548f2e61cc7497e807dd93aae5c16798ca
+ms.sourcegitcommit: bd5f82f1e534dbb01b8e19e83a23759ebc92b81a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298149"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757458"
 ---
 # <a name="hello-windows-admin-center"></a>Windows Admin Center 與您見面！
 
@@ -25,7 +25,7 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 [哪個版本適合我用？](faq.md#what-is-windows-admin-center-preview-which-version-is-right-for-me)
 
-[Windows Admin Center **預覽版** 1906](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) - 包含最新的功能更新。
+[Windows Admin Center **預覽版** 1907](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) - 包含最新的功能更新。
 
 [Windows Admin Center (版本 1904.1)](https://aka.ms/WACDownload) - 經過廣泛驗證並且已正式運作。
 
