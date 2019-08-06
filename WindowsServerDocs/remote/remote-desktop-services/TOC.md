@@ -68,7 +68,7 @@
 ## [遠端桌面用戶端](clients/remote-desktop-clients.md)
 ### 遠端桌面的已知問題
 #### [針對一般遠端桌面連線進行疑難排解](troubleshoot/rdp-error-general-troubleshooting.md)
-#### [用戶端無法連線並收到「類別未登錄」錯誤](troubleshoot/rdp-error-class-not-registered.md)。
+#### [用戶端無法連線並收到「類別未登錄」錯誤](troubleshoot/rdp-error-class-not-registered.md)
 #### [用戶端無法連線並看到「沒有可用的授權」錯誤](troubleshoot/rdp-error-no-licenses-available.md)
 #### [使用者無法驗證，或必須驗證兩次](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
 #### [在連線時收到「遠端桌面服務目前忙碌中」錯誤](troubleshoot/remote-desktop-service-currently-busy.md)
