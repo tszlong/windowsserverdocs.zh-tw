@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c7098c8e3f93ce315e7d9a881613a03924e78b
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: d6761c43eefe04430603a1a16e9e8d256176a736
+ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300690"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729531"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -251,7 +251,7 @@ ms.locfileid: "68300690"
 * 每個憑證的**主體別名 (SAN)** 都必須設為電腦的**完整網域名稱 (FQDN)** 。 **一般名稱 (CN)** 必須符合每個憑證的 SAN。
 
 ## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>如何預先設定遠端桌面 Web 用戶端使用者的設定
-本節將說明如何使用 PowerShell 來設定您遠端桌面 Web 用戶端部署的設定。 這些 PowerShell Cmdlet 可控制使用者根據您的組織的安全性考量或預定工作流程來變更設定的能力。 下列設定全都位於 Web 用戶端的 [設定]  側邊面板中。 
+本節將說明如何使用 PowerShell 來設定您遠端桌面 Web 用戶端部署的設定。 這些 PowerShell Cmdlet 可控制使用者根據您的組織的安全性考量或預定工作流程來變更設定的能力。 下列設定全都位於 Web 用戶端的 [設定]  側邊面板中。
 
 ### <a name="suppress-telemetry"></a>抑制遙測
 根據預設，使用者可以選擇啟用或停用收集遙測資料以傳送至 Microsoft 的功能。 如需 Microsoft 收集遙測資料的相關資訊，請透過 [關於]  側邊面板中的連結參閱我們的隱私權聲明。
@@ -274,7 +274,8 @@ ms.locfileid: "68300690"
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>將 RDWebClientDeploymentSetting 設定重設為預設值
 若要將部署層級的 Web 用戶端設定重設為預設組態，請執行下列 PowerShell Cmdlet 並使用 --Name 參數指定要重設的設定：
-   ```PowerShell
+  
+  ```PowerShell
     Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
@@ -314,6 +315,6 @@ Import-RDWebClientBrokerCert <certificate file path>
 
 您也可以透過瀏覽器直接存取主控台。 主控台通常位於開發人員工具下方。 例如，若要存取 Microsoft Edge 中的記錄，只要按 **F12** 鍵，或選取省略符號並瀏覽至 [更多工具]   > [開發人員工具]  即可。
 
-## <a name="get-help-with-the-web-client"></a>取得 Web 用戶端的協助
+## <a name="get-help-with-the-web-client"></a>取得網頁用戶端的協助
 
-如果您遇到本文資訊無法解決的問題，您可以[傳送電子郵件給我們](mailto:rdwbclnt@microsoft.com)以回報問題。 您也可以在我們的[建議方塊](https://aka.ms/rdwebfbk)要求或票選新功能。
+如果您遇到本文資訊無法解決的問題，您可以在 [Tech Community](https://aka.ms/wvdtc)上回報問題。 您也可以在我們的[建議方塊](https://remotedesktop.uservoice.com/forums/911494-remote-desktop-web-client)要求或票選新功能。
