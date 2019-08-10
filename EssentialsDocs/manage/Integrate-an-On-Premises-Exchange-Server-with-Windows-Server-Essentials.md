@@ -12,12 +12,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef57ac325465d7b7a5cf65a2931df824c351c6a2
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 142ae8514a6a480f8181ce193c2f437e2f286e2d
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863443"
+ms.locfileid: "68914601"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>整合內部部署 Exchange Server 與 Windows Server Essentials
 
@@ -364,18 +364,18 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
    - 如果您執行初始狀態安裝，請執行下列命令：  
 
-      **: Arrconfig config-cert***憑證檔案的路徑* **-主機名稱***Exchange Server 的主機名稱*  
+      **: Arrconfig config-cert** _ **-主機名稱** _  
 
      > [!NOTE]
-     >  例如, **: Arrconfig config-cert***c:\temp\certificate.pfx* **-主機名稱***mail.contoso.com*  
+     >  例如, **: Arrconfig config-cert** _ **-主機名稱** _  
      > 
      >  用受憑證保護的網域名稱取代 *mail.contoso.com* 。  
 
    - 如果您是從 Windows Small Business Server 進行移轉，執行下列命令：  
 
-      **: Arrconfig config-cert***憑證檔案的路徑* **-主機名稱***Exchange Server 的主機名稱* **-targetserver***Exchange server 的伺服器名稱*  
+      **: Arrconfig config-cert** _ **-主機名稱** _ **-targetserver** _  
 
-      例如, **: Arrconfig config-cert***c:\temp\certificate.pfx* **-主機名稱***mail.contoso.com* * *-targetserver * * *ExchangeSvr*  
+      例如, **: Arrconfig config-cert** _ **-主機名稱** _ * *-targetserver * * _ExchangeSvr_  
 
       用您的網域名稱取代 *mail.contoso.com* 。 用執行 Exchange Server 的伺服器名稱取代 *ExchangeSvr*。  
 

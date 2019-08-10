@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f898c67755fb8e7874932ea06a7cdf461d1e4bd
-ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
+ms.openlocfilehash: fdda956a5da9ec50e44002cd8ab38373396d5713
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787207"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914646"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -479,7 +479,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 #### <a name="remarks"></a>備註
 
-在此排程類型中, 需要 **/sc 每月**參數、 **/mo** (修飾詞) 參數和 **/d** (day) 參數。 **/Mo** (修飾詞) 參數會指定工作執行的周。 **/D**參數會指定一周中的哪幾天。 (您只能針對此排程類型指定一周中的一天)。此排程也有選擇性的 **/m** (month) 參數, 可讓您針對特定月份或每月 (<em>) 排定工作。 **/M</em>* 參數的預設值是每個月 (* )。
+在此排程類型中, 需要 **/sc 每月**參數、 **/mo** (修飾詞) 參數和 **/d** (day) 參數。 **/Mo** (修飾詞) 參數會指定工作執行的周。 **/D**參數會指定一周中的哪幾天。 (您只能針對此排程類型指定一周中的一天)。此排程也有選擇性的 **/m** (month) 參數, 可讓您針對特定月份或每月 (\*) 排定工作。 **/M**參數的預設值是每個月 (\*)。
 
 #### <a name="examples"></a>範例
 

@@ -1,6 +1,6 @@
 ---
 title: arp
-description: 適用於 Windows 命令主題**arp** -顯示，並修改用來儲存 IP 位址和其已解析的實體位址的位址解析通訊協定 (arp) 快取中的項目。
+description: '**Arp**的 Windows 命令主題-顯示及修改位址解析通訊協定 (arp) 快取中用來儲存 IP 位址及其已解析之實體位址的專案。'
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f7393c993601a5e1990cde3e6bc6763811062f4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8354df3f52790840e0cb0c5c9834da2722d27d43
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435288"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914699"
 ---
 # <a name="arp"></a>arp
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示及修改位址解析通訊協定 (ARP) 快取中的項目。 ARP 快取包含用來儲存 IP 位址和其解決的乙太網路或權杖環實體位址的一個或多個資料表。 沒有個別的資料表，每個乙太網路或權杖環網路介面卡安裝在您的電腦上。 不含參數， **arp**顯示說明資訊。
+顯示和修改位址解析通訊協定 (ARP) 快取中的專案。 ARP 快取包含一或多個用來儲存 IP 位址及其已解析的乙太網路或權杖環形實體位址的資料表。 您的電腦上安裝的每個 Ethernet 或權杖環形網路介面卡都有個別的資料表。 使用時不含參數, **arp**會顯示說明資訊。
 ## <a name="syntax"></a>語法
 ```
 arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <Inetaddr> [<ifaceaddr>]] [/s <Inetaddr> <Etheraddr> [<ifaceaddr>]]
@@ -33,28 +33,28 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 
 |                參數                |                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                               |
 |-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /a [<Inetaddr>] [/n <ifaceaddr>]     | 顯示目前的 arp 快取表格，為所有介面。 /N 參數會區分大小寫。<br /><br />若要顯示特定的 IP 位址的 arp 快取項目，請使用**arp/a**具有*Inetaddr*參數，其中*Inetaddr*是 IP 位址。 如果*Inetaddr*未指定，會使用第一個適當的介面。<br /><br />若要顯示特定介面的 arp 快取表格，請使用 * */n** *ifaceaddr* 參數搭配 **/a**參數位置*ifaceaddr*是 IP 位址指派給介面。 |
-|    /g [<Inetaddr>] [/n <ifaceaddr>]     |                                                                                                                                                                                                                                                          與相同 **/a**。                                                                                                                                                                                                                                                           |
-|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           刪除項目特定的 IP 位址，其中*Inetaddr*是 IP 位址。<br /><br />若要刪除特定介面的資料表中的項目，請使用*ifaceaddr*參數所在*ifaceaddr*是指派給介面的 IP 位址。<br /><br />若要刪除所有項目，使用星號 (\*) 取代萬用字元*Inetaddr*。                                                                                           |
-| /s <Inetaddr> <Etheraddr> [<ifaceaddr>] |                                                                                                                     將靜態項目加入至 arp 快取解析的 IP 位址*Inetaddr*的實體位址*Etheraddr*。<br /><br />若要新增靜態 arp 快取項目至特定介面的資料表，請使用*ifaceaddr*參數所在*ifaceaddr*是指派給介面的 IP 位址。                                                                                                                     |
+|    /a [<Inetaddr>] [/n <ifaceaddr>]     | 顯示所有介面的目前 arp 快取資料表。 /N 參數會區分大小寫。<br /><br />若要顯示特定 IP 位址的 arp 快取專案, 請搭配*Inetaddr*參數使用**arp/A** , 其中*Inetaddr*是 IP 位址。 如果未指定*Inetaddr* , 則會使用第一個適用的介面。<br /><br />若要顯示特定介面的 arp 快取資料表, 請使用 **/n** _參數搭配 **/a**參數, 其中*ifaceaddr*是指派給介面的 IP 位址。 |
+|    /g [<Inetaddr>] [/n <ifaceaddr>]     |                                                                                                                                                                                                                                                          與 **/a**相同。                                                                                                                                                                                                                                                           |
+|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           刪除具有特定 IP 位址的專案, 其中*Inetaddr*是 ip 位址。<br /><br />若要刪除特定介面之資料表中的專案, 請使用*ifaceaddr*參數, 其中*ifaceaddr*是指派給介面的 IP 位址。<br /><br />若要刪除所有專案, 請使用星號\*() 萬用字元來取代*Inetaddr*。                                                                                           |
+| /s <Inetaddr> [<Etheraddr> ]<ifaceaddr> |                                                                                                                     將靜態專案新增至 arp 快取, 以將 IP 位址*Inetaddr*解析為實體位址*Etheraddr*。<br /><br />若要將靜態 arp 快取專案新增至特定介面的資料表, 請使用*ifaceaddr*參數, 其中*ifaceaddr*是指派給介面的 IP 位址。                                                                                                                     |
 |                   /?                    |                                                                                                                                                                                                                                                  在命令提示字元顯示說明。                                                                                                                                                                                                                                                   |
 
 ## <a name="remarks"></a>備註
-- IP 位址*Inetaddr*並*ifaceaddr*會以小數點十進位表示法。
-- 實體位址*Etheraddr*十六進位表示法中表示和連字號 (例如 00-AA-00-4F-2A-9C) 分隔的六個位元組所組成。
-- 使用新增的項目 **/s**參數是靜態的而且不執行時間超出 arp 快取。 如果停止並啟動 TCP/IP 通訊協定，則會移除的項目。 若要建立永久靜態 arp 快取項目，請將適當**arp**批次中的命令檔案，並在啟動時執行的批次檔使用排定的工作。
-  ## <a name="BKMK_Examples"></a>範例
-  若要顯示所有介面的 arp 快取表格，請輸入：
+- *Inetaddr*和*ifaceaddr*的 IP 位址會以點十進位標記法表示。
+- *Etheraddr*的實體位址包含以十六進位標記法表示的六個位元組, 並以連字號分隔 (例如, 00-AA-00-4F-2A-9C)。
+- 使用 **/s**參數新增的專案是靜態的, 而且不會超出 arp 快取的時間。 如果 TCP/IP 通訊協定已停止並啟動, 則會移除專案。 若要建立永久的靜態 arp 快取專案, 請將適當的**arp**命令放在批次檔中, 並在啟動時使用排定的工作來執行批次檔。
+  ## <a name="BKMK_Examples"></a>典型
+  若要顯示所有介面的 arp 快取資料表, 請輸入:
   ```
   arp /a
   ```
-  若要顯示的介面，指派的 IP 位址 10.0.0.99 arp 快取表格，請輸入：
+  若要顯示已指派 IP 位址為10.0.0.99 之介面的 arp 快取表格, 請輸入:
   ```
   arp /a /n 10.0.0.99
   ```
-  若要新增靜態 arp 快取項目解析的 IP 位址 10.0.0.80 00-AA-00-4F-2A-9C 的實體位址，請輸入：
+  若要新增可將 IP 位址10.0.0.80 解析為實體位址 00-AA-00-4F-2A-9C 的靜態 arp 快取專案, 請輸入:
   ```
   arp /s 10.0.0.80 00-AA-00-4F-2A-9C 
   ```
-  ## <a name="additional-references"></a>其他參考資料
+  ## <a name="additional-references"></a>其他參考
 - [命令列語法關鍵](command-line-syntax-key.md)
