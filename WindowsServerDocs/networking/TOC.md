@@ -83,6 +83,10 @@
 #### [使用 DNS 原則進行 DNS 查詢上的篩選套用](dns/deploy/apply-filters-on-dns-queries.md)
 #### [使用 DNS 原則進行應用程式負載平衡](dns/deploy/app-lb.md)
 #### [使用 DNS 原則進行具有地理位置感知的應用程式負載平衡](dns/deploy/app-lb-geo.md)
+### [對 DNS 問題進行疑難排解](dns/troubleshoot/troubleshoot-dns-data-collection.md)
+#### [對 DNS 用戶端進行疑難排解](dns/troubleshoot/troubleshoot-dns-client.md)
+##### [停用 DNS 用戶端上的 DNS 用戶端快取](dns/troubleshoot/disable-dns-client-side-caching.md)
+#### [對 DNS 伺服器進行疑難排解](dns/troubleshoot/troubleshoot-dns-server.md)
 
 ## [動態主機設定通訊協定 (DHCP)](technologies/dhcp/dhcp-top.md)
 ### [DHCP 的新功能](technologies/dhcp/What-s-New-in-DHCP.md)

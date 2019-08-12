@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b06875f0fa175c1fcf4f60cbba9de3dbd10d06b1
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: b8ab1eed003294e3396bcea21b31b7c084180b9c
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792157"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863451"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory 伺服器的效能調整
 
@@ -26,6 +26,7 @@ Active Directory 的效能調整著重在兩個目標：
 - Active Directory 用戶端/應用程式調整 – 確保用戶端與應用程式以最佳化方式使用 Active Directory
 
 ## <a name="start-with-capacity-planning"></a>從容量規劃開始
+
 適當地在正確地區的正確的網域中部署數目足夠的網域控制站，而且容納備援能力對於確保以即時方式處理用戶端要求而言非常重要。 這是深入的主題，因此不在此指南的討論範圍內。 我們建議讀者透過閱讀並了解 [Active Directory Domain Services 的容量規劃](capacity-planning-for-active-directory-domain-services.md) (英文) 中所述的建議與指導方針，以開始調整其 Active Directory 效能。
 
 >[!Important]
