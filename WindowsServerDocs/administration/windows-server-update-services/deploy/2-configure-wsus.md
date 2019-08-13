@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5c4ac470d1187aa6186f6f05cab3df185a642fd
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 660cb0412abdf1ecb1afcba53a4aeb79ac407e56
+ms.sourcegitcommit: a9625758fbfb066494fe62e0da5f9570ccb738a3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914563"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952463"
 ---
 # <a name="step-2-configure-wsus"></a>步驟 2：設定 WSUS
 
@@ -56,33 +56,33 @@ ms.locfileid: "68914563"
 ### <a name="211-connection-from-the-wsus-server-to-the-internet"></a>2.1.1. WSUS 伺服器與網際網路之間的連線
 如果 WSUS 與網際網路之間設有公司防火牆，可能需要設定防火牆以確保 WSUS 可以取得更新。 為了從 Microsoft Update 取得更新，WSUS 伺服器會為 HTTPS 通訊協定使用連接埠 443。 雖然大部分的公司防火牆都允許這種類型的流量, 但還是有一些公司因為公司的安全性原則而限制了從伺服器存取網際網路。 如果您的公司限制存取, 您必須取得授權, 以允許從 WSUS 到下列 Url 清單的網際網路存取:
 
-- http://windowsupdate.microsoft.com
+- HTTP\://windowsupdate.microsoft.com
 
-- http://*.windowsupdate.microsoft.com
+- \:windowsupdate.microsoft.com// \*
 
-- https://*.windowsupdate.microsoft.com
+- \:windowsupdate.microsoft.com// \*
 
-- http://*.update.microsoft.com
+- \:update.microsoft.com// \*
 
-- https://*.update.microsoft.com
+- \:update.microsoft.com// \*
 
-- http://*.windowsupdate.com
+- \:windowsupdate.com// \*
 
-- http://download.windowsupdate.com
+- HTTP\://download.windowsupdate.com
 
-- https://download.microsoft.com
+- HTTPs\://download.microsoft.com
 
-- http://*.download.windowsupdate.com
+- \:download.windowsupdate.com// \*
 
-- http://wustat.windows.com
+- HTTP\://wustat.windows.com
 
-- http://ntservicepack.microsoft.com
+- HTTP\://ntservicepack.microsoft.com
 
-- http://go.microsoft.com
+- HTTP\://go.microsoft.com
 
-- http://dl.delivery.mp.microsoft.com
+- HTTP\://dl.delivery.mp.microsoft.com
 
-- https://dl.delivery.mp.microsoft.com
+- HTTPs\://dl.delivery.mp.microsoft.com
 
 > [!IMPORTANT]
 > 針對 WSUS 因為防火牆設定而無法取得更新的案例, 請參閱 Microsoft 知識庫中的[文章 885819](https://support.microsoft.com/kb/885819) 。
@@ -389,11 +389,11 @@ WSUS 需要兩個連接埠供 SSL 使用：一個連接埠會使用 HTTPS 來傳
 
 2.  移至 [**開始**], 輸入**CMD**, 以滑鼠右鍵按一下 [**命令提示**字元], 然後按一下 [以**系統管理員身分執行**]。
 
-3.  流覽至 _% ProgramFiles%_  **\\ \Update Services\Tools**資料夾。
+3.  流覽至 _% ProgramFiles%_ **\\Update Services\\Tools\\** 資料夾。
 
 4.  在 [命令提示字元] 視窗中, 輸入下列命令:
 
-    **Wsusutil configuressl** _
+    **Wsusutil configuressl**_certificateName_
 
     其中：
 
