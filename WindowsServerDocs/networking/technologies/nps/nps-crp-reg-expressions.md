@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3182ce1d0e856b06b143719c488864e9a58fbc0a
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 34488a7f1a9d8ccd04de0aae35cbe98ec162c93f
+ms.sourcegitcommit: 107b801af9603be9268a8f459478e212319f7f06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476579"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995268"
 ---
 # <a name="use-regular-expressions-in-nps"></a>在 NPS 中使用規則運算式
 
@@ -82,7 +82,7 @@ ms.locfileid: "68476579"
 
 - 將以下項目︰
 
-**取代<em>user@example.microsoft.com</em>為*範例。 com\user***
+**取代<em>user@example.microsoft.com</em>為_範例。 com\user_**
 
 - 尋找`(.*)@(.*)`
 
@@ -90,7 +90,7 @@ ms.locfileid: "68476579"
 
 
 
-**以*specific_domain\user*取代*domain\user***
+**以_specific_domain\user_取代*domain\user***
 
 - 尋找`(.*)\\(.*)`
 
