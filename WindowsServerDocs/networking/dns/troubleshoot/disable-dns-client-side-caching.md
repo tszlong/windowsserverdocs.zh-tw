@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 0b20400029b462798587c2291431b5a7c3d61775
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 3aeb7cb06f82b6f2220e42866682ce918389bf1d
+ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917805"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69023902"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>停用 DNS 用戶端上的 DNS 用戶端快取
 
@@ -49,6 +49,53 @@ ipconfig /displaydns
 
 此命令會顯示 DNS 解析程式快取的內容, 包括從 Hosts 檔案預先載入的 DNS 資源記錄, 以及系統所解析的任何最近查詢的名稱。 經過一段時間之後, 解析程式會捨棄快取中的記錄。 時間週期是由與 DNS 資源記錄相關聯的生存**時間 (TTL)** 值所指定。 您也可以手動清除快取。 排清快取之後, 電腦必須重新查詢電腦先前已解決的任何 DNS 資源記錄的 DNS 伺服器。 若要刪除 DNS 解析程式快取中的專案`ipconfig /flushdns` , 請在命令提示字元中執行。
 
-## <a name="next-step"></a>後續步驟
+## <a name="using-the-registry-to-control-the-caching-time"></a>使用登錄來控制快取時間
 
-如需詳細資訊, 請參閱[如何在 Windows 中停用用戶端 DNS](https://support.microsoft.com/kb/318803)快取。
+> [!IMPORTANT]  
+> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
+
+快取正面或負回應的時間長度取決於下列登錄機碼中的專案值:
+
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
+
+正回應的 TTL 是下列值的較小者: 
+
+- 在查詢回應中所收到的解析程式所指定的秒數
+
+- **MaxCacheTtl**登錄設定的值。
+
+>[!Note]
+>- 正面回應的預設 TTL 是86400秒 (1 天)。
+>- 否定回應的 TTL 是在 MaxNegativeCacheTtl 登錄設定中指定的秒數。
+>- 負值回應的預設 TTL 為900秒 (15 分鐘)。
+如果您不想要快取否定回應, 請將 MaxNegativeCacheTtl 登錄設定設為0。
+
+若要在用戶端電腦上設定快取時間:
+
+1. 啟動登錄編輯程式 (Regedit.exe)。
+
+2. 在登錄中找出並按一下下列機碼:
+
+   **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
+
+3. 在 [編輯] 功能表上, 指向 [新增], 按一下 [DWORD 值], 然後新增下列登錄值:
+
+   - 值名稱:MaxCacheTtl
+
+     資料類型：REG_DWORD
+
+     若要解決此問題，請使用下列任一種方法。預設值為86400秒。 
+     
+     如果您將用戶端 DNS 快取中的最大 TTL 值降低為1秒, 這會讓用戶端 DNS 快取的外觀變得已停用。    
+
+   - 值名稱:MaxNegativeCacheTtl
+
+     資料類型：REG_DWORD
+
+     若要解決此問題，請使用下列任一種方法。預設值為900秒。 
+     
+     如果您不想要快取否定回應, 請將值設定為0。
+
+4. 輸入您要使用的值, 然後按一下 [確定]。
+
+5. 結束 [登錄編輯程式]。
