@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d899ec41b9a87089f03a576fa11dfa7d210fe194
-ms.sourcegitcommit: b68ff64ecd87959cd2acde4a47506a01035b542a
+ms.openlocfilehash: 59c04a858ceae44ee51c1de10fc40b27dc22ef90
+ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830893"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529890"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>儲存空間直接存取的硬體需求
 
@@ -131,5 +131,5 @@ ms.locfileid: "68830893"
 
 | 最                | Windows Server 2019  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
-| 每一伺服器的原始容量 | 100 TB               | 100 TB               |
+| 每一伺服器的原始容量 | 400 TB               | 100 TB               |
 | 集區容量           | 4 PB (4000 TB)      | 1 PB                 |
