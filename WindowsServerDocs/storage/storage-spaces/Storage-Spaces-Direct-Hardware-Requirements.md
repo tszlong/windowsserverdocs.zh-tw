@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c04a858ceae44ee51c1de10fc40b27dc22ef90
-ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
+ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529890"
+ms.locfileid: "69546378"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>儲存空間直接存取的硬體需求
 
@@ -86,7 +86,7 @@ ms.locfileid: "69529890"
 - 每一部伺服器中的磁片磁碟機數目和類型–請參閱[磁片磁碟機對稱考慮](drive-symmetry-considerations.md)
 - 快取裝置必須是 32 GB 或更大
 - 使用持續性記憶體裝置做為快取裝置時, 您必須使用 NVMe 或 SSD 容量裝置 (您無法使用 Hdd)
-- NVMe 驅動程式是 Microsoft 的現成或更新的 NVMe 驅動程式。
+- NVMe 驅動程式是由 Microsoft 所提供, 內含在 Windows 中。 (stornvme)
 - 建議：容量磁片磁碟機數目是快取磁片磁碟機數目的整數倍數
 - 建議：快取磁片磁碟機應具有高寫入耐用性: 每日至少3個磁片磁碟機寫入 (DWPD) 或每天至少 4 tb 的寫入 (TBW) –請參閱[瞭解每天的磁片磁碟機寫入 (DWPD)、tb 寫入的 (TBW), 以及建議的最低儲存空間直接存取](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 

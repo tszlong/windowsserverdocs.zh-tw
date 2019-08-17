@@ -1,6 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
-title: 設定 AD FS 外部鎖定保護
+title: 設定 AD FS 外部網路鎖定保護
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,94 +9,94 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: eb31a76dbd7ccdff3ea3ee0d6bb26f9ee16ae93f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 5f2e1cbc05d25536e39a1109154f22fe729ab110
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280709"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560483"
 ---
-# <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路的智慧鎖定
+# <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路智慧鎖定
 
 ## <a name="overview"></a>總覽
 
-外部網路的智慧鎖定 (ESL) 會防止您的使用者發生不被惡意活動的外部網路帳戶鎖定。  
+外部網路智慧鎖定 (ESL) 可保護使用者不會遇到惡意活動的外部網路帳戶鎖定。  
 
-ESL 可讓您區分登入嘗試從熟悉的位置，為使用者與登入嘗試從可能的攻擊者的 AD FS。 AD FS 可以鎖定攻擊者，同時可讓繼續使用他們的帳戶的有效使用者。 這可防止，並防止阻絕服務以及對使用者的密碼噴灑攻擊的特定類別。 ESL 適用於 Windows Server 2016 中的 AD FS，並內建於 Windows Server 2019 中的 AD FS。
+ESL 可讓 AD FS 區分使用者熟悉位置的登入嘗試, 以及從可能是攻擊者進行的登入嘗試。 AD FS 可以鎖定攻擊者, 同時讓有效的使用者繼續使用其帳戶。 這可防止並防止使用者的拒絕服務和特定類別的密碼噴灑攻擊。 ESL 適用于 Windows Server 2016 中的 AD FS, 並內建于 Windows Server 2019 中的 AD FS。
 
-ESL 僅適用於使用者名稱和密碼驗證要求都透過外部網路，透過 Web Application Proxy 或第 3 方 proxy。 第 3 的任何合作對象 proxy 必須支援 MS ADFSPIP 通訊協定，例如用來取代 Web 應用程式 Proxy [F5 BIG-IP Access Policy Manager](https://devcentral.f5.com/s/articles/ad-fs-proxy-replacement-on-f5-big-ip-30191)。 請參閱第 3 個合作對象 proxy 文件，以判斷 proxy 是否支援 MS ADFSPIP 通訊協定。   
+ESL 僅適用于透過外部網路使用 Web 應用程式 Proxy 或協力廠商 proxy 的使用者名稱和密碼驗證要求。 任何協力廠商 proxy 都必須支援用來取代 Web 應用程式 Proxy 的 ADFSPIP 通訊協定, 例如[F5 BIG IP 存取原則管理員](https://devcentral.f5.com/s/articles/ad-fs-proxy-replacement-on-f5-big-ip-30191)。 請參閱協力廠商 proxy 檔, 以判斷 proxy 是否支援 MS ADFSPIP 通訊協定。   
 
-## <a name="additional-features-in-ad-fs-2019"></a>在 AD FS 2019 的其他功能
-外部網路 ad FS 2019 的智慧鎖定會加入相較於 AD FS 2016 的優點如下：
-- 設定獨立的鎖定閾值熟悉且不熟悉的位置，讓已知的良好地點的使用者可以從可疑位置有更多的空間比要求時發生錯誤
-- 啟用稽核模式中的智慧鎖定，同時繼續強制執行先前的軟式鎖定行為。 這可讓您深入了解使用者熟悉的位置，並仍然會受到所提供的 AD FS 2012 r2 的外部網路鎖定功能。  
+## <a name="additional-features-in-ad-fs-2019"></a>AD FS 2019 中的其他功能
+相較于 AD FS 2016, AD FS 2019 中的外部網路智慧鎖定增加了下列優點:
+- 針對熟悉和不熟悉的位置設定獨立的鎖定閾值, 讓已知良好位置的使用者可以有更多的錯誤空間, 而不是來自可疑位置的要求
+- 啟用智慧鎖定的 audit 模式, 同時繼續強制執行先前的軟鎖定行為。 這可讓您瞭解使用者熟悉的位置, 並仍然受到 AD FS 2012R2 提供之外部網路鎖定功能的保護。  
 
-## <a name="how-it-works"></a>它的運作方式
-### <a name="configuration-information"></a>組態資訊
-啟用 ESL 時，會建立新資料庫資料表中的成品，AdfsArtifactStore.AccountActivity，並為 「 使用者活動 」 主要 AD FS 伺服器陣列中選取節點。 在 WID 組態中，此節點一律是主要節點。 在 SQL 組態中，使用者活動主要選取一個節點。  
+## <a name="how-it-works"></a>運作方式
+### <a name="configuration-information"></a>設定資訊
+啟用 ESL 時, 會建立成品資料庫 AdfsArtifactStore. AccountActivity 中的新資料表, 並在 AD FS 伺服器陣列中選取節點做為「使用者活動」主機。 在 WID 設定中, 此節點一律是主要節點。 在 SQL 設定中, 會選取一個節點做為使用者活動主機。  
 
-若要檢視選取作為使用者活動的主要節點。 Get-AdfsFarmInformation.FarmRoles
+以使用者活動主機的形式來查看選取的節點。 AdfsFarmInformation. FarmRoles
 
-所有的次要節點會連絡主要節點透過連接埠 80，若要了解最新的值不正確密碼計數的和新的熟悉的位置值，每個新的登入，並在處理登入之後，更新該節點。
+所有次要節點都會透過埠 80, 與每個全新登入的主要節點聯繫, 以瞭解錯誤密碼計數和新熟悉位置值的最新值, 並在處理登入之後更新該節點。
 
 ![組態](media/configure-ad-fs-extranet-smart-lockout-protection/esl1.png)
 
- 如果第二個節點無法連絡主機，它將錯誤事件寫入 AD FS 系統管理記錄檔。 驗證將會繼續進行處理，但是 AD FS 將只會寫入本機更新的狀態。 AD FS 會重試每隔 10 分鐘連絡主要和主要可用之後，將會切換回 master。
+ 如果次要節點無法連上主機, 它會將錯誤事件寫入 AD FS 的系統管理員記錄中。 系統會繼續處理驗證, 但是 AD FS 只會在本機寫入已更新的狀態。 AD FS 將會每隔10分鐘重試一次主機, 並在主要複本可供使用之後, 切換回主要主機。
 
 ### <a name="terminology"></a>詞彙
-- **FamiliarLocation**:驗證要求，進行 ESL 會檢查所有顯示的 Ip。 這些 Ip 會組成網路的 IP，轉送 IP 和選擇性 x 轉送的 IP。 如果要求成功，所有的 Ip 會新增至帳戶活動資料表為 「 熟悉 Ip 」。 如果要求有這些 「 熟悉的 Ip 」 中的所有 Ip，要求會視為 「 熟悉的 」 的位置。
-- **UnknownLocation**:如果傳入的要求有現有"FamiliarLocation 」 清單中沒有至少一個 IP，然後會將要求視為做為 「 不明 」 的位置。 這是為了處理 proxy 處理的案例，例如 Exchange Online 的舊版驗證 Exchange Online 的位址處理成功和失敗要求的位置。  
-- **badPwdCount**:值，表示已提交錯誤密碼的次數和驗證成功。 每位使用者，為分開的計數器會保留熟悉的位置和未知的位置。
-- **UnknownLockout**:布林值，每位使用者，如果使用者從未知位置存取，已遭鎖定。 這個值會根據計算的 badPwdCountUnfamiliar 和 ExtranetLockoutThreshold 值。
-- **ExtranetLockoutThreshold**:這個值會決定錯誤密碼嘗試次數上限。 當達到臨界值時，ADFS 將拒絕來自外部網路的要求，直到已超過觀測視窗。
-- **ExtranetObservationWindow**:這個值會決定從未知位置的使用者名稱和密碼的要求都被鎖定的持續時間。當期間過後時，ADFS 會開始從未知位置中再次執行使用者名稱和密碼驗證。
-- **ExtranetLockoutRequirePDC**:啟用時，外部網路鎖定要求的主要網域控制站 (PDC)。 停用時，外部網路鎖定，以防 PDC 無法使用，就會將恢復為另一個網域控制站。  
-- **ExtranetLockoutMode**:控制項記錄只與強制執行的外部網路的智慧鎖定的模式
-    - **ADFSSmartLockoutLogOnly**:已啟用外部網路的智慧鎖定，但 AD FS 只會寫入系統管理員和稽核事件，但將會拒絕驗證要求。 此模式被要啟用 'ADFSSmartLockoutEnforce' 之前填入 FamiliarLocation 最初啟用。
-    - **ADFSSmartLockoutEnforce**:當達到臨界值時，封鎖不熟悉的驗證要求的完整支援。
+- **FamiliarLocation**:在驗證要求期間, ESL 會檢查所有顯示的 Ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 如果要求成功, 則所有 Ip 都會新增至 [帳戶活動] 資料表中做為「熟悉的 Ip」。 如果要求的所有 Ip 都出現在「熟悉的 Ip」中, 則會將要求視為「熟悉的」位置。
+- **Unknownlocation.xsd**:如果傳入的要求至少有一個 IP 不存在於現有的 "FamiliarLocation" 清單中, 則會將要求視為「不明」位置。 這是為了處理代理案例, 例如 Exchange online 傳統驗證, 其中 Exchange Online 位址會處理成功和失敗的要求。  
+- **badPwdCount**:值, 表示提交錯誤密碼的次數, 且驗證不成功。 針對每個使用者, 會針對熟悉的位置和未知位置保留個別的計數器。
+- **UnknownLockout**:如果使用者遭到鎖定而無法從未知位置存取, 則為每個使用者的布林值。 這個值是根據 badPwdCountUnfamiliar 和 ExtranetLockoutThreshold 值來計算。
+- **ExtranetLockoutThreshold**:這個值會決定錯誤密碼嘗試次數的上限。 達到閾值時, ADFS 會拒絕外部網路的要求, 直到 [觀察] 視窗通過為止。
+- **ExtranetObservationWindow**:此值決定來自未知位置的使用者名稱和密碼要求被鎖定的持續時間。當視窗已通過時, ADFS 會開始從不明位置再次執行使用者名稱和密碼驗證。
+- **ExtranetLockoutRequirePDC**:啟用時, 外部網路鎖定需要主域控制站 (PDC)。 停用時, 外部網路鎖定會回到另一個網域控制站, 以防 PDC 無法使用。  
+- **ExtranetLockoutMode**:控制項僅記錄與外部網路智慧鎖定的強制執行模式
+    - **ADFSSmartLockoutLogOnly**:外部網路智慧鎖定已啟用, 但 AD FS 只會寫入 admin 和 audit 事件, 但不會拒絕驗證要求。 此模式的目的是一開始先啟用 FamiliarLocation, 才能在啟用 ' ADFSSmartLockoutEnforce ' 之前填入。
+    - **ADFSSmartLockoutEnforce**:當達到臨界值時, 完全支援封鎖不熟悉的驗證要求。
 
 支援 IPv4 和 IPv6 位址。
 
-### <a name="anatomy-of-a-transaction"></a>交易的結構
-- **預先驗證核取**:驗證要求，進行 ESL 會檢查所有顯示的 Ip。 這些 Ip 會組成網路的 IP，轉送 IP 和選擇性 x 轉送的 IP。 在稽核記錄檔中，這些 Ip 會列在<IpAddress>欄位順序 x-ms-轉送-用戶端-ip，x-轉送-，x-ms-proxy-用戶端-ip。
+### <a name="anatomy-of-a-transaction"></a>交易的剖析
+- **預先驗證檢查**:在驗證要求期間, ESL 會檢查所有顯示的 Ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 在 audit 記錄中, 這些 ip 會<IpAddress>依照 x 毫秒轉送-用戶端 ip、x 轉送-------------------------------------
 
-  根據這些 Ip，ADFS 會決定如果要求是來自熟悉或不熟悉的位置，然後檢查 是否個別 badPwdCount 小於設定的閾值限制或上次**失敗**在發生嘗試超過觀察視窗時間範圍。 如果其中一個條件為 true，ADFS 允許進一步處理這個交易和認證驗證。 如果兩個條件為 false，此帳戶已處於鎖定狀態觀測視窗傳遞。 觀測視窗之後，使用者可以嘗試一次驗證。 請注意，在 2019，ADFS 會檢查相對於根據適當的臨界值限制的 IP 位址是否符合熟悉的位置，或不。
-- **成功登入**:如果登入成功，請從要求的 Ip 會加入使用者熟悉的位置 IP 清單。  
-- **登入失敗**:如果登入失敗 badPwdCount 會增加。 如果攻擊者會傳送多個不正確密碼系統超過閾值允許使用者將會進入鎖定狀態。 (badPwdCount > ExtranetLockoutThreshold)  
+  根據這些 Ip, ADFS 會判斷要求是否來自熟悉或不熟悉的位置, 然後檢查個別的 badPwdCount 是否小於設定的臨界值限制, 或上次**失敗**的嘗試時間是否超過 [觀察] 視窗時間框架. 如果其中一個條件為 true, ADFS 會允許此交易進行進一步的處理和認證驗證。 如果這兩個條件都為 false, 則帳戶已處於鎖定狀態, 直到觀察視窗通過為止。 在觀察時間範圍通過之後, 使用者就可以嘗試驗證一次。 請注意, 在2019中, ADFS 會根據是否有符合熟悉位置的 IP 位址, 檢查適當的閾值限制。
+- **成功的登**入:如果登入成功, 則會將要求中的 Ip 新增至使用者的熟悉位置 IP 清單。  
+- **登入失敗**:如果登入失敗, 則會增加 badPwdCount。 如果攻擊者將更不正確的密碼傳送給系統, 則使用者會進入鎖定狀態, 而不是允許的閾值。 (badPwdCount > ExtranetLockoutThreshold)  
 
 ![組態](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
 
-帳戶鎖定時，"UnknownLockout 」 值會等於 true。這表示使用者的 badPwdCount 透過臨界值也就是有人嘗試超過所允許的系統更多的密碼。 在此狀態下，有 2 種方式可以是有效的使用者可以登入。
-- 使用者必須等候 ObservationWindow 時間，以經過或
-- 若要重設的鎖定狀態，重設回零與 ' 重設 ADFSAccountLockout' 的 badPwdCount。
+當帳戶被鎖定時, "UnknownLockout" 值會等於 true。這表示使用者的 badPwdCount 超過閾值, 也就是有人嘗試的密碼多於系統允許的數目。 在此狀態下, 有2種方式可讓有效的使用者登入。
+- 使用者必須等候 ObservationWindow 時間, 或
+- 若要重設鎖定狀態, 請將 badPwdCount 重設回零並加上 ' Reset-ADFSAccountLockout '。
 
-如果不發生任何重設，帳戶將可針對每一個觀測視窗 AD 的單一密碼嘗試。 此帳戶將會傳回為鎖定狀態之後，嘗試與觀測視窗會重新啟動。 BadPwdCount 值將只有自動重設密碼成功登入之後。
+如果沒有進行重設, 則會允許帳戶對每個觀察視窗的 AD 進行單一密碼嘗試。 該帳戶會在該嘗試之後回到鎖定的狀態, 而 [觀察] 視窗將會重新開機。 BadPwdCount 值只會在成功登入密碼之後自動重設。
 
-### <a name="log-only-mode-versus-enforce-mode"></a>僅限記錄檔的模式，與 '強制' 模式
-同時在 ' 記錄檔-僅限 」 的模式和 '強制' 模式時，會填入 AccountActivity 資料表。 如果會略過 ' 記錄檔-僅限 」 的模式和 ESL 直接變成 '強制執行' 的模式，沒有建議的等待期間，使用者熟悉 Ip 並不知道至 ADFS。 在此情況下，ESL 會表現 'ADBadPasswordCounter'，可能封鎖合法的使用者流量，如果使用者帳戶受到 active 暴力密碼破解攻擊。 如果 ' 記錄檔-僅限 」 模式則會略過使用者輸入一部鎖定狀態時，使用 「 UnknownLockout"out = TRUE，而且會嘗試使用良好的密碼，從 IP 不在 「 熟悉的 」 的 IP 清單中，登入，則無法登入。 3-7 天，以避免這種情況，建議僅限記錄檔的模式。 帳戶目前正遭受攻擊，至少 24 小時的 ' 記錄檔-僅限 」 的模式需要以防止合法使用者的鎖定。  
+### <a name="log-only-mode-versus-enforce-mode"></a>僅限記錄模式與「強制」模式
+AccountActivity 資料表會在「僅限記錄」模式和「強制」模式期間填入。 如果略過「僅限記錄」模式, 而 ESL 直接移到「強制」模式而不建議的等候期間, 則 ADFS 不會知道這些使用者的熟悉 Ip。 在此情況下, ESL 的行為就像是「ADBadPasswordCounter」, 如果使用者帳戶是在作用中的暴力密碼破解攻擊之下, 可能會封鎖合法的使用者流量。 如果略過 [僅限記錄] 模式, 而且使用者輸入的鎖定狀態具有 "UnknownLockout" = TRUE, 並嘗試使用不在「熟悉的」 IP 清單中的 IP 登入, 則他們將無法登入。 建議使用僅限記錄模式3-7 天, 以避免發生這種情況。 如果帳戶主動受到攻擊, 則至少需要24小時的「僅限記錄」模式, 才能防止合法使用者的鎖定。  
 
-## <a name="extranet-smart-lockout-configuration"></a>外部網路的智慧鎖定設定  
+## <a name="extranet-smart-lockout-configuration"></a>外部網路智慧鎖定設定  
 
-### <a name="prerequisites-for-ad-fs-2016"></a>適用於 AD FS 2016 的必要條件
+### <a name="prerequisites-for-ad-fs-2016"></a>AD FS 2016 的必要條件
 
-1. **伺服器陣列中的所有節點上安裝更新**
+1. **在伺服器陣列中的所有節點上安裝更新**
 
-   首先，請確定所有的 Windows Server 2016 AD FS 伺服器是最新的自 2018 年 6 月的 Windows 更新和 AD FS 2016 伺服器陣列 2016年伺服器陣列行為層級執行。
-1. **確認權限**
+   首先, 請確定所有 Windows Server 2016 AD FS 伺服器都是最新的, 從2018年6月的 Windows 更新開始, 而且 AD FS 2016 伺服器陣列是在「2016伺服器陣列」行為層級執行。
+1. **驗證許可權**
 
-   外部網路的智慧鎖定要求，每個 AD FS 伺服器上啟用 Windows 遠端管理。
-3. **更新成品資料庫權限**
+   外部網路智慧鎖定需要在每個 AD FS 伺服器上啟用 Windows 遠端系統管理。
+3. **更新成品資料庫許可權**
 
-   外部網路的智慧鎖定會需要 AD FS 服務帳戶必須要有 AD FS 成品資料庫中建立新的資料表的權限。 登入為 AD FS 系統管理員，為任何 AD FS 伺服器，然後在 PowerShell 命令提示字元 視窗中執行下列命令，以授與此權限：
+   外部網路智慧鎖定要求 AD FS 服務帳戶必須擁有在 AD FS 成品資料庫中建立新資料表的許可權。 以 AD FS 系統管理員身分登入任何 AD FS 伺服器, 然後在 PowerShell 命令提示字元視窗中執行下列命令, 以授與此許可權:
 
    ``` powershell
    PS C:\>$cred = Get-Credential
    PS C:\>Update-AdfsArtifactDatabasePermission -Credential $cred
    ```
    >[!NOTE]
-   >$Cred 預留位置是具有 AD FS 系統管理員權限的帳戶。 這應會提供建立資料表的寫入權限。
+   >$Cred 預留位置是具有 AD FS 系統管理員許可權的帳戶。 這應該會提供建立資料表的寫入權限。
 
-   上述命令的失敗可能因為缺乏足夠的權限，因為您的 AD FS 伺服器陣列使用 SQL Server，並在上面提供的認證沒有您的 SQL server 的系統管理員權限。 在此情況下，您可以設定資料庫權限以手動方式在 SQL Server 資料庫中執行下列命令，當您已連線到 AdfsArtifactStore 資料庫。
+   上述命令可能會因為許可權不足而失敗, 因為您的 AD FS 伺服器陣列正在使用 SQL Server, 而上述提供的認證沒有 SQL Server 的系統管理員許可權。 在此情況下, 當您連線到 AdfsArtifactStore 資料庫時, 可以執行下列命令, 在 SQL Server 資料庫中手動設定資料庫許可權。
     ```  
     # when prompted with “Are you sure you want to perform this action?”, enter Y.
 
@@ -141,150 +141,155 @@ ESL 僅適用於使用者名稱和密碼驗證要求都透過外部網路，透�
     }
     ```
 
-### <a name="ensure-ad-fs-security-audit-logging-is-enabled"></a>請確定已啟用 AD FS 安全性稽核記錄
-這項功能會使用安全性稽核記錄檔，因此稽核必須啟用 AD FS，以及所有的 AD FS 伺服器上的本機原則。
+### <a name="ensure-ad-fs-security-audit-logging-is-enabled"></a>確定已啟用 AD FS 安全性審核記錄
+這項功能會使用安全性 Audit 記錄, 因此必須在 AD FS 中啟用審核功能, 以及在所有 AD FS 伺服器上的本機原則。
 
-### <a name="configuration-instructions"></a>組態指示
-外部網路的智慧鎖定會使用 ADFS 屬性**ExtranetLockoutEnabled**。 這個屬性先前已使用 Server 2012 r2 中的控制項 「 軟性外部網路鎖定 」。 如果已啟用外部網路的軟式鎖定，若要檢視目前的屬性設定，請執行` Get-AdfsProperties`。
+### <a name="configuration-instructions"></a>設定指示
+外部網路智慧鎖定會使用 ADFS 屬性**ExtranetLockoutEnabled**。 這個屬性先前是用來控制伺服器2012R2 中的「外部網路虛鎖定」。 如果已啟用外部網路虛鎖定, 若要查看目前的屬性設定` Get-AdfsProperties` , 請執行。
 
-### <a name="configuration-recommendations"></a>組態建議
-當設定外部網路的智慧鎖定，請遵循最佳作法設定臨界值：  
+### <a name="configuration-recommendations"></a>設定建議
+設定外部網路智慧鎖定時, 請遵循設定閾值的最佳做法:  
 
 `ExtranetObservationWindow (new-timespan -Minutes 30)`
 
 `ExtranetLockoutThreshold: – 2x AD Threshold Value`
 
-AD 值：20，ExtranetLockoutThreshold:10
+AD 值:20, ExtranetLockoutThreshold:10
 
-Active Directory 鎖定獨立運作方式與外部網路智慧鎖定。 不過，如果已啟用 Active Directory 鎖定，在 AD FS ExtranetLockoutThreshold < 在 AD 中的帳戶鎖定閾值
+Active Directory 鎖定獨立于外部網路智慧鎖定。 不過, 如果已啟用 Active Directory 鎖定, 則 ExtranetLockoutThreshold 會在 AD 中 AD FS < 帳戶鎖定閾值
 
 `ExtranetLockoutRequirePDC - $false`
 
-啟用時，外部網路鎖定要求的主要網域控制站 (PDC)。 當停用並設定為 false 時，外部網路鎖定，以防 PDC 無法使用，就會將恢復為另一個網域控制站。
+啟用時, 外部網路鎖定需要主域控制站 (PDC)。 當停用並設定為 false 時, 如果 PDC 無法使用, 外部網路鎖定將會回復至另一個網域控制站。
 
-若要設定執行此屬性：
+若要設定此屬性, 請執行:
 
 ``` powershell
 Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30) -ExtranetLockoutRequirePDC $false
 ```
 ### <a name="enable-log-only-mode"></a>啟用僅記錄模式
 
-記錄模式，AD FS 會填入使用者熟悉的位置資訊和寫入安全性稽核事件，但不會封鎖任何要求。 此模式用來驗證的智慧鎖定正在執行，而且若要啟用 AD FS，以 「 了解 」 之前啟用的使用者熟悉的位置 「 強制執行 」 模式。 當 AD FS 學習，它會儲存每位使用者的登入活動 (是否記錄模式或強制模式)。
-設定記錄只能由執行下列 commandlet 的鎖定行為。  
+在 [僅限記錄檔] 模式中, AD FS 會填入使用者熟悉的位置資訊, 並寫入安全性 audit 事件, 但不會封鎖任何要求。 此模式是用來驗證智慧鎖定是否正在執行, 並可讓 AD FS 在啟用「強制」模式之前, 先「瞭解」使用者熟悉的位置。 隨著 AD FS 學習, 它會儲存每位使用者的登入活動 (不論是以僅記錄模式或強制模式)。
+藉由執行下列 commandlet, 將鎖定行為設定為 [僅記錄]。  
 
 `Set-AdfsProperties -ExtranetLockoutMode AdfsSmartlockoutLogOnly`
 
-記錄檔的唯一模式被要是暫時性的狀態，以便系統可以了解之前介紹的智慧鎖定行為與鎖定強制的登入行為。 僅限記錄模式建議的持續時間為 3 到 7 天。 如果帳戶目前正遭受攻擊，僅限記錄模式必須執行至少 24 小時。
+僅限記錄模式是暫時的狀態, 因此系統可以在使用智慧鎖定行為來執行鎖定之前, 先瞭解登入行為。 僅記錄模式的建議持續時間為3-7 天。 如果帳戶主動受到攻擊, 則僅限記錄模式必須執行至少24小時。
 
-在 AD FS 2016 中，如果已啟用 2012R2 '虛外部網路鎖定' 行為，然後才啟用外部網路的智慧鎖定，則僅限記錄模式會停用 '虛外部網路鎖定' 行為。 AD FS 中的智慧鎖定會被鎖定在僅限記錄模式中的使用者。 不過，內部部署 AD 可能會鎖定 AD 設定為基礎的使用者。 請檢閱 AD 鎖定原則，以了解如何在內部部署 AD 可以鎖定使用者。
+在 AD FS 2016 上, 如果在啟用外部網路智慧鎖定之前啟用2012R2 「外部網路軟鎖定」行為, 僅限記錄模式會停用「外部網路軟鎖定」行為。 AD FS 智慧鎖定不會以僅限記錄模式鎖定使用者。 不過, 內部部署 AD 可能會根據 AD 設定來鎖定使用者。 請參閱 AD 鎖定原則, 以瞭解內部部署 AD 可以如何鎖定使用者。
 
-在 AD FS 2019，另一個優點是能夠啟用智慧鎖定的僅限記錄模式，同時繼續強制執行先前的軟式鎖定行為使用下方的 Powershell。
+在 AD FS 2019 上, 還有一個額外的優點, 就是能夠啟用智慧型鎖定的僅記錄模式, 同時繼續使用下列 Powershell 強制執行先前的軟鎖定行為。
 
 `Set-AdfsProperties -ExtranetLockoutMode 3`
 
-新的模式，才會生效，重新啟動 AD FS 服務的所有節點上，伺服器陣列中
+若要讓新模式生效, 請在伺服器陣列中的所有節點上重新開機 AD FS 服務
 
 `Restart-service adfssrv`
 
-將模式設定之後，您可以讓使用 EnableExtranetLockout 參數的智慧鎖定
+設定模式之後, 您可以使用 EnableExtranetLockout 參數來啟用智慧鎖定
 
 `Set-AdfsProperties -EnableExtranetLockout $true`
 
-### <a name="enable-enforce-mode"></a>啟用強制模式
+### <a name="enable-enforce-mode"></a>啟用強制執行模式
 
-您已經熟悉的鎖定閾值和觀測視窗之後，ESL 可以移至 「 強制執行 」 使用下列的 PSH cmdlet 的模式：
+在您熟悉 [鎖定閾值] 和 [觀察] 視窗之後, 您可以使用下列 PSH Cmdlet, 將 ESL 移至 [強制] 模式:
 
 `Set-AdfsProperties -ExtranetLockoutMode AdfsSmartLockoutEnforce`
 
-新模式中才會生效，重新啟動所有節點上的 AD FS 服務伺服陣列中使用下列命令。
+若要讓新的模式生效, 請使用下列命令, 在伺服器陣列中的所有節點上重新開機 AD FS 服務。
 
 `Restart-service adfssrv`
 
 ## <a name="manage-user-account-activity"></a>管理使用者帳戶活動
-AD FS 提供三個 cmdlet 來管理帳戶的活動資料。 這些 cmdlet 會自動連接到擁有主要角色的伺服器陣列中的節點。
+AD FS 提供三個 Cmdlet 來管理帳戶活動資料。 這些 Cmdlet 會自動連接到伺服器陣列中具有主要角色的節點。
 >[!NOTE]
->Just Enough Administration (JEA) 可用來委派 AD FS commandlet 以重設帳戶鎖定。 比方說，讓支援服務中心人員可以使用 ESL commandlet 的委派權限。 如需委派使用這些 cmdlet 的權限資訊，請參閱[委派 AD FS Powershell Commandlet 存取給非系統管理員使用者](delegate-ad-fs-pshell-access.md)
+>只有足夠的系統管理 (JEA) 可以用來委派 AD FS 的 commandlet, 以重設帳戶鎖定。 例如, 技術支援人員可以委派許可權來使用 ESL commandlet。 如需委派使用這些 Cmdlet 之許可權的相關資訊, 請參閱[委派 AD FS Powershell Commandlet 存取非系統管理員使用者](delegate-ad-fs-pshell-access.md)
 
-可以覆寫這個行為，藉由傳遞-Server 參數。
+您可以藉由傳遞-Server 參數來覆寫此行為。
 
-- Get-ADFSAccountActivity -UserPrincipalName
+- ADFSAccountActivity-UserPrincipalName
 
-  讀取目前的帳戶活動的使用者帳戶。 此 cmdlet 一律會自動連線到伺服器陣列主要使用的帳戶活動 REST 端點。 因此，所有的資料一律應該一致。
+  讀取使用者帳戶的目前帳戶活動。 Cmdlet 一律會使用帳戶活動 REST 端點自動連接到伺服器陣列主機。 因此, 所有資料都應該一律一致。
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  屬性：
-    - BadPwdCountFamiliar:當驗證已成功從已知位置時，就會遞增。
-    - BadPwdCountUnknown:當從未知位置驗證不成功時，遞增
-    - LastFailedAuthFamiliar:如果驗證成功從熟悉的位置，LastFailedAuthUnknown 設為驗證失敗的時間
-    - LastFailedAuthUnknown:如果驗證成功從未知位置，LastFailedAuthUnknown 設為驗證失敗的時間
-    - FamiliarLockout:布林值，該值將會是"True"，如果 「 BadPwdCountFamiliar"> ExtranetLockoutThreshold
-    - UnknownLockout:布林值，該值將會是"True"，如果 「 BadPwdCountUnknown"> ExtranetLockoutThreshold  
-    - FamiliarIPs： 最大值為 20 個 Ip，也就是熟悉的使用者。 超出此配額時，將會移除最舊的 IP 清單中。
--    Set-ADFSAccountActivity
+  屬性
+    - BadPwdCountFamiliar:從已知位置成功驗證時, 會遞增。
+    - BadPwdCountUnknown:從未知位置驗證失敗時遞增
+    - LastFailedAuthFamiliar:如果從熟悉的位置驗證失敗, LastFailedAuthUnknown 會設定為不成功驗證的時間
+    - LastFailedAuthUnknown:如果驗證從未知的位置失敗, LastFailedAuthUnknown 會設定為不成功的驗證時間
+    - FamiliarLockout:布林值, 如果 "BadPwdCountFamiliar" > ExtranetLockoutThreshold 則為 "True"
+    - UnknownLockout:布林值, 如果 "BadPwdCountUnknown" > ExtranetLockoutThreshold 則為 "True"  
+    - FamiliarIPs: 最多20個熟悉使用者的 Ip。 超過此限制時, 將會移除清單中最舊的 IP。
+-    設定-ADFSAccountActivity
 
-     加入新熟悉的位置。 熟悉的 IP 清單中有最多 20 個項目，若超出此配額，清單中最舊的 IP 會被移除。
+     新增熟悉的位置。 熟悉的 IP 清單最多可包含20個專案, 如果超過此值, 將會移除清單中最舊的 IP。
 
 `Set-ADFSAccountActivity user@contoso.com -AdditionalFamiliarIps “1.2.3.4”`
 
-- Reset-ADFSAccountLockout
+- 重設-ADFSAccountLockout
 
-  針對每個熟悉的位置 (badPwdCountFamiliar) 的使用者帳戶鎖定計數器或熟悉的位置計數器 (badPwdCountUnfamiliar) 重設。 藉由重設計數器，會更新 「 FamiliarLockout"或"UnfamiliarLockout"值，因為重設計數器會少於臨界值。  
+  針對每個熟悉的位置 (badPwdCountFamiliar) 或不熟悉的位置計數器 (badPwdCountUnfamiliar) 重設使用者帳戶的鎖定計數器。 藉由重設計數器, "FamiliarLockout" 或 "UnfamiliarLockout" 值將會更新, 因為 reset 計數器會小於閾值。  
 
 `Reset-ADFSAccountLockout user@contoso.com -Location Familiar`
 `Reset-ADFSAccountLockout user@contoso.com -Location Unknown`
 
-## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>事件記錄與 AD FS 外部網路鎖定的使用者活動資訊
+## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>事件記錄 & AD FS 外部網路鎖定的使用者活動資訊
 
 ### <a name="connect-health"></a>Connect Health
-若要監視的使用者帳戶活動的建議的方式是透過 Connect Health。 連線健全狀況，會產生 「 具風險 Ip 的可下載報告，並不正確密碼嘗試。 具風險的 IP 報告中的每個項目會顯示 AD FS 登入活動失敗超過指定臨界值的彙總的資訊。 使用可自訂的電子郵件設定發生此狀況時，可以設定電子郵件通知系統管理員發出警示。 如需詳細資訊和安裝指示，請瀏覽[Connect Health 文件](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)。
+監視使用者帳戶活動的建議方式是透過 Connect Health。 Connect Health 會針對有風險的 Ip 和不正確的密碼嘗試, 產生可下載的報告。 有風險的 IP 報告中的每個專案, 都會顯示超過指定閾值之失敗 AD FS 登入活動的匯總資訊。 透過可自訂的電子郵件設定, 您可以將電子郵件通知設定為警示系統管理員。 如需其他資訊和設定指示, 請流覽[Connect Health 檔](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)。
 
-### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS 外部網路的智慧鎖定事件。
-針對外部網路的智慧鎖定事件可供寫入，必須在 '記錄檔僅' 強制執行' 的模式下啟用 ESL 和 ADFS 安全性稽核已啟用。
-AD FS 會將外部網路鎖定事件寫入安全性稽核記錄檔：
-- 當使用者鎖定時外 （如登入失敗嘗試，達到鎖定閾值）
-- 當 AD FS 收到已處於鎖定狀態之使用者的登入嘗試
+### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS 外部網路智慧鎖定事件。
+針對要寫入的外部網路智慧鎖定事件, 必須在 [僅限記錄] 或 [強制] 模式中啟用 ESL, 並啟用 ADFS 安全性審核。
+AD FS 會將外部網路鎖定事件寫入至安全性審核記錄:
+- 當使用者遭到鎖定時 (達到嘗試登入失敗的鎖定閾值)
+- 當 AD FS 收到已處於鎖定狀態之使用者的登入嘗試時
 
-在 記錄檔的唯一模式，您可以檢查鎖定事件的安全性稽核記錄檔。 針對找不到任何事件，您可以檢查使用 Get ADFSAccountActivity cmdlet 來判斷發生鎖定熟悉或不熟悉 IP 位址，以及詳細的檢查清單中的熟悉的 IP 位址，該使用者的使用者狀態。
+在 [僅記錄模式] 中, 您可以檢查安全性 audit 記錄中的鎖定事件。 針對找到的任何事件, 您可以使用 ADFSAccountActivity 指令程式來檢查使用者狀態, 以判斷鎖定是否來自熟悉或不熟悉的 IP 位址, 以及是否要再次檢查該使用者熟悉的 IP 位址清單。
 
 
 |事件識別碼|描述|
 |-----|-----|
-|1203|此事件會寫入每個錯誤密碼嘗試。 BadPwdCount 達到 ExtranetLockoutThreshold 中指定的值，因為帳戶將會被鎖定在 ADFS 上 ExtranetObservationWindow 中指定的持續時間。</br>活動識別碼： %1</br>XML: %2|
-|1201|此事件會寫入每次使用者遭到鎖定。 </br>活動識別碼： %1</br>XML: %2|
-|557 (ADFS 2019)| 嘗試在節點 %1 上的帳戶存放區 rest 服務通訊時發生錯誤。 如果這是 WID 伺服器陣列的主要節點可能已離線。 如果這是 SQL 陣列 ADFS 會自動選取新的節點，來裝載使用者存放區的主要角色。|
-|562 (ADFS 2019)|發生錯誤時 communcating 與帳戶儲存在伺服器 %1 的端點。</br>例外狀況訊息： %2|
-|563 (ADFS 2019)|計算外部網路鎖定狀態時，發生錯誤。 由於 %1 的值設定允許驗證此使用者和權杖發行將會繼續。 如果這是 WID 伺服器陣列的主要節點可能已離線。 如果這是 SQL 陣列 ADFS 會自動選取新的節點，來裝載使用者存放區的主要角色。</br>帳戶存放區伺服器名稱： %2</br>使用者識別碼： %3</br>例外狀況訊息： %4|
-|512|以下的使用者帳戶被鎖定。登入嘗試會被封鎖，因為系統組態。</br>活動識別碼： %1 </br>使用者： %2 </br>用戶端 IP: %3 </br>不正確密碼計數： %4  </br>上次錯誤密碼嘗試： %5|
-|515|下列使用者帳戶處於鎖定狀態，並只提供了正確的密碼。 此帳戶可能會被洩露。</br>其他資料 </br>活動識別碼： %1 </br>使用者： %2 </br>用戶端 IP: %3 |
-|516|下列使用者帳戶已經鎖定時由於不正確密碼嘗試次數過多。</br>活動識別碼： %1  </br>使用者： %2  </br>用戶端 IP: %3  </br>不正確密碼計數： %4  </br>上次錯誤密碼嘗試： %5|
+|1203|這個事件會針對每個不正確的密碼嘗試而撰寫。 一旦 badPwdCount 到達 ExtranetLockoutThreshold 中指定的值, 就會在 ADFS 中針對 ExtranetObservationWindow 中指定的持續時間鎖定帳戶。</br>活動識別碼:% 1</br>XML:% 2|
+|1201|每次鎖定使用者時, 就會寫入這個事件。 </br>活動識別碼:% 1</br>XML:% 2|
+|557 (ADFS 2019)| 嘗試與節點% 1 上的帳戶存放區 rest 服務通訊時發生錯誤。 如果這是 WID 伺服器陣列, 主要節點可能已離線。 如果這是 SQL 伺服器陣列 ADFS, 則會自動選取新的節點來裝載使用者存放區主機角色。|
+|562 (ADFS 2019)|使用伺服器% 1 上的帳戶存放區端點 communcating 時, 發生錯誤。</br>例外狀況訊息:% 2|
+|563 (ADFS 2019)|計算外部網路鎖定狀態時發生錯誤。 由於% 1 設定會允許此使用者進行驗證, 而權杖發行將會繼續。 如果這是 WID 伺服器陣列, 主要節點可能已離線。 如果這是 SQL 伺服器陣列 ADFS, 則會自動選取新的節點來裝載使用者存放區主機角色。</br>帳戶存放區伺服器名稱:% 2</br>使用者識別碼:% 3</br>例外狀況訊息:% 4|
+|512|下列使用者的帳戶已被鎖定。因為系統組態, 所以允許登入嘗試。</br>活動識別碼:% 1 </br>使用者:% 2 </br>用戶端 IP:% 3 </br>錯誤的密碼計數:% 4  </br>上次錯誤密碼嘗試:% 5|
+|515|下列使用者帳戶處於已鎖定狀態, 而且只提供正確的密碼。 此帳戶可能遭到入侵。</br>其他資料 </br>活動識別碼:% 1 </br>使用者:% 2 </br>用戶端 IP:% 3 |
+|516|下列使用者帳戶已被鎖定, 因為密碼嘗試錯誤過多。</br>活動識別碼:% 1  </br>使用者:% 2  </br>用戶端 IP:% 3  </br>錯誤的密碼計數:% 4  </br>上次錯誤密碼嘗試:% 5|
 
-## <a name="esl-frequently-asked-questions"></a>ESL 常見問題集
+## <a name="esl-frequently-asked-questions"></a>ESL 常見問題
 
-**將 ADFS 伺服器陣列使用外部網路中的智慧鎖定會強制模式看到惡意使用者鎖定？** 
+**在強制模式中使用外部網路智慧鎖定的 ADFS 伺服器陣列, 是否會看到惡意的使用者鎖定？** 
 
-答：如果 ADFS 智慧鎖定會設定為 '強制' 模式，則將永遠不會看到合法使用者的帳戶鎖定的暴力密碼破解或阻斷服務。 惡意的帳戶鎖定可以防止使用者登入的唯一方法是，如果不良執行者具有使用者密碼，或從已知的良好 （熟悉） IP 位址可以傳送的要求該使用者。 
+答：如果 ADFS 智慧型鎖定設定為「強制」模式, 您將永遠不會看到合法使用者的帳戶遭到暴力密碼破解或阻斷服務鎖定。 惡意帳戶鎖定的唯一方式, 就是如果錯誤的執行者具有使用者密碼, 或可以從該使用者的已知良好 (熟悉的) IP 位址傳送要求。 
 
-**已啟用 ESL 和不良執行者具有使用者密碼，會發生什麼事？** 
+**啟用 ESL 會發生什麼情況, 而不良執行者會有使用者密碼？** 
 
-答：暴力密碼破解攻擊案例的一般目的是猜測密碼，並已成功登入。  如果使用者是防範，或密碼猜測然後 ESL 功能不會封鎖存取因為登入將會符合 「 成功 」 的準則，正確的密碼，再加上新的 IP。 不良執行者 IP 則會出現與 「 熟悉的 」。 最佳的緩和措施，在此案例中是以清除 在 ADFS 中的使用者活動，並需要多重要素驗證的使用者。 我們強烈建議安裝 AAD 密碼保護，可確保猜到的密碼不會陷入系統。
+答：暴力密碼破解攻擊案例的目標, 是要猜到一個密碼並成功登入。  如果使用者誘騙或密碼被猜測, ESL 功能就不會封鎖存取, 因為登入會符合正確密碼的「成功」準則加上新的 IP。 錯誤的執行者 IP 會以「熟悉」的方式顯示。 在此案例中, 最好的緩和措施是清除使用者在 ADFS 中的活動, 並要求使用者進行多重要素驗證。 強烈建議您安裝 AAD 密碼保護, 以確保猜到密碼不會進入系統中。
 
-**如果我的使用者從未登入已成功從 IP 然後嘗試以錯誤的密碼幾次會，讓它們能夠登入一次最後輸入他們的密碼正確嗎？** 
+**如果我的使用者從未從 IP 成功登入, 然後嘗試使用錯誤的密碼幾次, 他們就能在最後正確輸入密碼之後, 就能夠登入了嗎？** 
 
-答：如果在使用者提交多個不正確的密碼 （也就是合法正確輸入），並在下列程式碼嘗試取得的密碼正確，則使用者會立即成功登入。  這會清除錯誤密碼計數，並新增至 FamiliarIPs 清單該 IP。  不過，如果它們從未知位置超過失敗登入的臨界值，會進入鎖定狀態，而且必須等候過去的觀測視窗並使用有效的密碼登入，或需要重設其帳戶的系統管理員介入。  
+答：如果使用者提交多個不正確的密碼 (也就是合法的錯誤輸入), 而且在下列嘗試時, 密碼會正確無誤, 使用者就會立即成功登入。  這會清除不正確的密碼計數, 並將該 IP 新增至 FamiliarIPs 清單。  不過, 如果它們超過未知位置的失敗登入閾值, 則會進入鎖定狀態, 而且需要等候觀察時間範圍, 並使用有效的密碼登入, 或要求系統管理員介入以重設其帳戶。  
+ 
+**ESL 也能在內部網路上運作嗎？**
 
-**ESL 運作內部太？**   
-答：如果用戶端連線，直接向 ADFS 伺服器，而且不是透過 Web Application Proxy 伺服器將不會套用 ESL 行為。 
+答：如果用戶端直接連線到 ADFS 伺服器, 而不是透過 Web 應用程式 Proxy 伺服器連線, 則 ESL 行為將不適用。  
 
-**我看到 [用戶端 IP] 欄位中的 Microsoft IP 位址。沒有 ESL 區塊 EXO 代理暴力密碼破解攻擊？**  
+**我在 [用戶端 IP] 欄位中看到 Microsoft IP 位址。ESL block 會 EXO proxy 的暴力密碼破解攻擊嗎？**  
 
-答：ESL 運作以防止 Exchange Online 或其他舊版驗證暴力密碼破解攻擊案例。 舊版驗證有 00000000-0000-0000-0000-000000000000"活動 ID"。 在這些攻擊中，不良執行者就利用 Exchange Online 的基本驗證 （也稱為傳統驗證），讓用戶端 IP 位址會顯示為其中一個 Microsoft。 雲端 proxy 驗證驗證代表 Outlook 用戶端中的 Exchange online 的伺服器。 在這些情況下，惡意的傳送者的 IP 位址會在 x-ms-轉送-用戶端-ip] 及 [Microsoft Exchange Online 的伺服器 IP 會在 x ms-用戶端 ip 值。
-外部網路的智慧鎖定會檢查網路 Ip 轉送的 Ip、 x-轉送-用戶端-IP，以及 x ms-用戶端 ip 值。 如果要求成功，所有的 Ip 會新增到熟悉的清單中。 如果收到的要求和任何顯示的 Ip 不在熟悉的清單則要求會標示為不熟悉。 熟悉的使用者能夠登入成功時從不熟悉的位置的要求將遭到封鎖。  
+答：ESL 將能妥善預防 Exchange Online 或其他舊版驗證暴力密碼破解攻擊案例。 舊版驗證的「活動識別碼」為00000000-0000-0000-0000-000000000000。 在這些攻擊中, 不良的執行者會利用 Exchange Online 基本驗證 (也稱為舊版驗證), 讓用戶端 IP 位址顯示為 Microsoft 帳戶。 雲端 proxy 中的 Exchange online 伺服器代表 Outlook 用戶端進行驗證驗證。 在這些情況下, 惡意提交者的 IP 位址將會在 x 毫秒轉送的用戶端 ip 中, 而 Microsoft Exchange Online server IP 則會在 [x-ms-用戶端-ip] 值中。
+外部網路智慧鎖定會檢查網路 Ip、轉送的 Ip、x 轉送的用戶端 IP 和 x 毫秒-用戶端 ip 值。 如果要求成功, 則所有 Ip 都會新增至熟悉的清單。 如果要求傳入, 而任何顯示的 Ip 不在熟悉的清單中, 則要求將會標示為不熟悉。 熟悉的使用者將能夠順利登入, 而來自不熟悉位置的要求將會遭到封鎖。  
+
+\* * 問:我可以在啟用 ESL 之前, 先估計 ADFSArtifactStore 的大小嗎？
+
+答：啟用 ESL 時, AD FS 會追蹤 ADFSArtifactStore 資料庫中使用者的帳戶活動和已知位置。 這個資料庫的大小會相對於所追蹤的使用者數目和已知位置而調整。 規劃啟用 ESL 時, 您可以估計 ADFSArtifactStore 資料庫的大小, 以每100000位使用者最多1GB 的速率成長。 如果 AD FS 伺服器陣列使用 Windows 內部資料庫 (WID), 則資料庫檔案的預設位置是 C:\Windows\WID\Data\。 若要避免填滿此磁片磁碟機, 請在啟用 ESL 之前, 先確定您有至少5GB 的可用儲存空間。 除了磁片儲存體之外, 請在啟用 ESL 之後, 針對500000或更少的使用者人口數增加1GB 的 RAM, 規劃總處理常式記憶體的成長。
 
 
 ## <a name="additional-references"></a>其他參考資料  
-[保護 Active Directory Federation Services 的最佳做法](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
+[保護 Active Directory 同盟服務的最佳做法](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
-[Set-AdfsProperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
+[設定-Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
 
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)

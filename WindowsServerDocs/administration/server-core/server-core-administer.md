@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: b144127de2ceea99e36549974101d190154aaeaf
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 78006dbbd2bdc569c15ac9967d8c5c542664312c
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476529"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546285"
 ---
 # <a name="administer-a-server-core-server"></a>管理 Server Core 伺服器
 
@@ -90,8 +90,8 @@ ms.locfileid: "68476529"
 > [!NOTE]
 > 您也可以透過電話、使用[金鑰管理服務 (KMS) 伺服器](../../get-started/server-2016-activation.md)或從遠端啟動伺服器。 若要從遠端啟用, 請從遠端電腦執行下列 Cmdlet: 
 > 
-> ```powershell
-> **cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato**
+> ```
+> cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato
 > ```
  
 ### <a name="configure-windows-firewall"></a>設定 Windows 防火牆
@@ -136,7 +136,7 @@ ms.locfileid: "68476529"
 |工作|命令| 
 |----|-------|
 |將您的伺服器設定為使用 proxy 伺服器|**netsh WinHTTP 設定 proxy \<servername\>:\<埠號碼\>** <br>**注意：** Server Core 安裝無法透過需要密碼的 proxy 來存取網際網路, 以允許連接。|
-|將您的伺服器設定為略過網際網路位址的 proxy|**netsh winttp 設定 proxy \<servername\>:\<埠號碼\>略過-list =\<"\>local"**| 
+|將您的伺服器設定為略過網際網路位址的 proxy|**netsh winHTTP 設定 proxy \<servername\>:\<埠號碼\>略過-list =\<"\>local"**| 
 |顯示或修改 IPSEC 設定|**netsh ipsec**| 
 |顯示或修改 NAP 設定|**netsh nap**| 
 |顯示或修改 IP 至實體位址轉譯|**arp**| 
@@ -147,7 +147,7 @@ ms.locfileid: "68476529"
 |顯示網路連線的躍點|**pathping**| 
 |網路連接的追蹤躍點|**tracert**| 
 |顯示多點傳送路由器的設定|**mrinfo**| 
-|啟用防火牆的遠端系統管理|**netsh advfirewall 防火牆設定規則群組 = "Windows 防火牆遠端系統管理" new enable = yes**| 
+|啟用防火牆的遠端系統管理|**netsh advfirewall 防火牆設定規則群組 = "Windows Defender 防火牆遠端系統管理" new enable = yes**| 
  
 
 ### <a name="updates-error-reporting-and-feedback"></a>更新、錯誤報表和意見反應
@@ -172,7 +172,7 @@ ms.locfileid: "68476529"
 |                        啟動工作管理員                        |                                                                                                                                                                                                           **taskmgr**                                                                                                                                                                                                            |
 |    建立和管理事件追蹤會話和效能記錄    | 若要建立計數器、追蹤、設定資料收集或 API: **logman 建立** <br>若要查詢資料收集器屬性: **logman query** <br>若要啟動或停止資料收集: **logman\|開始停止** <br>若要刪除收集器: **logman delete** <br> 更新收集器的屬性: **logman 更新** <br>若要從 xml 檔案匯入資料收集器集合檔, 或將它匯出至 xml 檔案:  **\|logman 匯入匯出** |
 
-### <a name="event-logs"></a>事件記錄檔
+### <a name="event-logs"></a>事件記錄
 
 |工作|命令| 
 |----|-------|

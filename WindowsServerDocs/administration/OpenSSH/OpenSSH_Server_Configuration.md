@@ -1,59 +1,59 @@
 ---
 ms.date: 09/27/2018
 ms.topic: conceptual
-keywords: OpenSSH、 SSH、 SSHD，安裝，安裝程式
+keywords: OpenSSH, SSH, SSHD, 安裝, 安裝程式
 contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
-title: Windows 的 OpenSSH 伺服器組態
-ms.openlocfilehash: 7eff3d3e1af67c9daf7a68c67c3609c0ee89fc93
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+title: 適用于 Windows 的 OpenSSH 伺服器設定
+ms.openlocfilehash: ed424c33c4cd2c19a9b5e985ab6083bcbcb9fbdc
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280030"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546258"
 ---
-# <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>適用於 Windows 10 1809年和 Server 2019 # OpenSSH 伺服器組態
+# <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>適用于 Windows 10 1809 和伺服器2019的 OpenSSH 伺服器設定
 
-本主題涵蓋 OpenSSH 伺服器 (sshd) 之 Windows 特定的組態。 
+本主題涵蓋適用于 OpenSSH 伺服器的 Windows 專屬設定 (sshd)。 
 
-OpenSSH 維護詳細文件以設定選項線上[OpenSSH.com](https://www.openssh.com/manual.html)，也就不重複本文件集中。 
+OpenSSH 會在[OpenSSH.com](https://www.openssh.com/manual.html)上維護線上設定選項的詳細檔, 這在此檔集中不會重複。 
 
-## <a name="configuring-the-default-shell-for-openssh-in-windows"></a>在 Windows 中的 OpenSSH 為設定的預設殼層
+## <a name="configuring-the-default-shell-for-openssh-in-windows"></a>在 Windows 中設定 OpenSSH 的預設 shell
 
-預設命令殼層會提供連接到使用 SSH 伺服器時，會看到使用者的體驗。 Windows 的初始預設值是 Windows 命令殼層 (cmd.exe)。 Windows 也會包含 PowerShell 和 Bash，以及協力廠商命令殼層也適用於 Windows，可能會設定為伺服器的預設殼層。
+預設的命令 shell 提供使用者使用 SSH 連接到伺服器時所看到的體驗。 初始預設視窗是 Windows 命令 shell (cmd.exe)。 Windows 也包含 PowerShell 和 Bash, 而協力廠商命令 shell 也適用于 Windows, 而且可以設定為伺服器的預設 shell。
 
-若要設定預設值命令殼層，請先確認 OpenSSH 安裝資料夾位於系統路徑。 對於 Windows，預設的安裝資料夾會是 SystemDrive:WindowsDirectory\System32\openssh。 下列命令會顯示目前的路徑設定，並加入預設 OpenSSH 的安裝資料夾。 
+若要設定預設的命令 shell, 請先確認 OpenSSH 安裝資料夾位於系統路徑上。 對於 Windows, 預設安裝資料夾是 SystemDrive: WindowsDirectory\System32\openssh。 下列命令會顯示目前的路徑設定, 並在其中新增預設的 OpenSSH 安裝資料夾。 
 
-命令殼層 | 若要使用的命令
+命令 shell | 要使用的命令
 ------------- | -------------- 
 命令 | path
-PowerShell | $env： 路徑
+PowerShell | $env:p 路徑 a)
 
-設定預設的 ssh 命令介面，即可在 Windows 登錄中的完整路徑加入殼層可執行檔 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH DefaultShell 字串值中。 
+在 Windows 登錄中設定預設的 ssh 命令介面, 方法是在字串值 DefaultShell 中, 將 shell 可執行檔的完整路徑新增至 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH。 
 
-例如，下列 Powershell 命令會設定為 PowerShell.exe 的預設殼層：
+例如, 下列 Powershell 命令會將預設 shell 設定為 PowerShell .exe:
 
 ```powershell
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
 ```
 
-## <a name="windows-configurations-in-sshdconfig"></a>在 sshd_config Windows 設定 
+## <a name="windows-configurations-in-sshd_config"></a>Sshd_config 中的 Windows 設定 
 
-在 Windows，sshd %programdata%\ssh\sshd_config 從讀取組態資料，根據預設，或可由啟動 sshd.exe-f 參數指定不同的組態檔。
-如果檔案不存在，sshd 服務啟動時產生其中一個預設組態。
+在 Windows 中, sshd 預設會從%programdata%\ssh\sshd_config 讀取設定資料, 或藉由使用-f 參數啟動 sshd 來指定不同的設定檔。
+如果檔案不存在, sshd 會在服務啟動時, 以預設設定產生一個檔案。
 
-下面所列的項目會提供 Windows 特定組態可能透過 sshd_config 中的項目。 有其他組態設定中可能未在此處，列出如所述的線上詳細[Win32 OpenSSH 文件](https://github.com/powershell/win32-openssh/wiki)。 
+下面所列的元素可透過 sshd_config 中的專案, 提供 Windows 特有的設定。 這裡有其他可能沒有列出的設定, 因為它們在線上的[Win32 OpenSSH 檔](https://github.com/powershell/win32-openssh/wiki)中有詳細的說明。 
 
 
-### <a name="allowgroups-allowusers-denygroups-denyusers"></a>AllowGroups，AllowUsers，DenyGroups DenyUsers 
+### <a name="allowgroups-allowusers-denygroups-denyusers"></a>AllowGroups, AllowUsers, DenyGroups, DenyUsers 
 
-控制哪些使用者及群組可以連線到伺服器是使用 AllowGroups、 AllowUsers、 DenyGroups 和 DenyUsers 指示詞。 允許/拒絕指示詞會依下列順序處理：DenyUsers、 AllowUsers、 DenyGroups，和最後 AllowGroups。 在較低的情況下，必須指定所有的帳戶名稱。 如需有關模式的萬用字元 ssh_config 中看到模式。
+使用 AllowGroups、AllowUsers、DenyGroups 和 DenyUsers 指示詞來控制哪些使用者和群組可以連接到伺服器。 允許/拒絕指示詞會依照下列連續處理:DenyUsers、AllowUsers、DenyGroups 和 finally AllowGroups。 所有的帳戶名稱都必須以小寫來指定。 如需萬用字元模式的詳細資訊, 請參閱 ssh_config 中的模式。
 
-當設定 使用者/群組為基礎的網域使用者或群組的規則時，請使用下列格式： ``` user?domain* ```。
-Windows 提供的格式的多個指定網域主體，但許多與標準 Linux 模式衝突。 基於這個理由，* 加入涵蓋 Fqdn。 此外，這個方法會使用"？"，而不是 @，以避免 je v konfliktuusername@host格式。 
+以網域使用者或群組設定使用者/群組型規則時, 請使用下列格式: ``` user?domain* ```。
+Windows 允許多個格式來指定網域主體, 但與標準 Linux 模式有許多衝突。 基於這個理由, 會新增 * 來涵蓋 Fqdn。 此外, 此方法會使用 "？", 而不是 @, 以避免與username@host格式發生衝突。 
 
-工作群組使用者/群組和網際網路連線的帳戶一律會解析為本機帳戶名稱 （沒有網域部分，類似於標準的 Unix 名稱） 中。 網域使用者和群組會嚴格地解析為[NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format)格式-domain_short_name\user_name。 所有的使用者/群組基礎的規則必須遵守這種格式的組態。
+工作群組使用者/群組和網際網路線上帳戶一律會解析為其本機帳戶名稱 (沒有網域部分, 類似于標準 Unix 名稱)。 網域使用者和群組嚴格解析為[NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format)格式-domain_short_name\user_name。 所有以使用者/群組為基礎的設定規則都必須遵守此格式。
 
 網域使用者和群組的範例 
 
@@ -72,36 +72,36 @@ AllowGroups sshusers
 
 ### <a name="authenticationmethods"></a>AuthenticationMethods 
 
-Windows OpenSSH 的唯一可用的驗證方法為 「 密碼 」 和 「 公開金鑰 」。
+對於 Windows OpenSSH, 唯一可用的驗證方法為 "password" 和 "publickey"。
 
 ### <a name="authorizedkeysfile"></a>AuthorizedKeysFile 
 
-預設值為".ssh/authorized_keys.ssh/authorized_keys2"。 如果路徑不是絕對的它會採取相對於使用者的主目錄 （或設定檔影像路徑）。 Ex. c:\users\user。
+預設值為 ". ssh/authorized_keys/authorized_keys2"。 如果路徑不是絕對路徑, 則會相對於使用者的主目錄 (或設定檔映射路徑) 來取得。 Ex. c:\users\user.
 
-### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory （v7.7.0.0 中所新增的支援）
+### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory (在 v 7.7.0.0 中新增支援)
 
-使用 sftp 工作階段才支援這個指示詞。 Cmd.exe 將遠端工作階段不會接受這。 若要設定的僅限 sftp chroot 伺服器，請將 ForceCommand 設內部 sftp。 您可能也設有 scp chroot，藉由實作自訂殼層，只允許 scp 和 sftp。
+只有 sftp 會話才支援這個指示詞。 Cmd.exe 的遠端會話不會接受這種情況。 若要設定僅限 sftp 的 chroot 伺服器, 請將 ForceCommand 設為 internal-sftp。 您也可以藉由執行只允許 scp 和 sftp 的自訂 shell, 以使用 chroot 設定 scp。
 
-### <a name="hostkey"></a>HostKey
+### <a name="hostkey"></a>Hostkey.cer
 
-預設值是 %programdata%/ssh/ssh_host_ecdsa_key、 %programdata%/ssh/ssh_host_ed25519_key 和 %programdata%/ssh/ssh_host_rsa_key。 如果預設值不存在，sshd 會自動產生這些服務啟動。
+預設值為% programdata%/ssh/ssh_host_ecdsa_key、% programdata%/ssh/ssh_host_ed25519_key 和% programdata%/ssh/ssh_host_rsa_key。 如果預設值不存在, sshd 會在服務啟動時自動產生它們。
 
 ### <a name="match"></a>比對
 
-請注意，模式這一節的規則。 使用者和群組的名稱必須是小寫。
+請注意, 本節中的模式規則。 使用者和組名的大小寫應該是小寫。
 
 ### <a name="permitrootlogin"></a>PermitRootLogin
 
-在 Windows 中不適用。 若要避免系統管理員登入，請先 DenyGroups 指示詞中使用系統管理員。
+不適用於 Windows。 若要防止系統管理員登入, 請使用具有 DenyGroups 指示詞的管理員。
 
 ### <a name="syslogfacility"></a>SyslogFacility
 
-如果您需要檔案型的記錄，請使用 LOCAL0。 %Programdata%\ssh\logs 情況下，所產生記錄檔。
-任何其他值，包括預設值驗證指示記錄到 ETW。 如需詳細資訊，請參閱 Windows 中的記錄功能。
+如果您需要以檔案為基礎的記錄, 請使用 LOCAL0。 記錄檔會在%programdata%\ssh\logs. 下產生
+任何其他值 (包括預設值 AUTH) 都會將記錄導向至 ETW。 如需詳細資訊, 請參閱 Windows 中的記錄功能。
 
 ### <a name="not-supported"></a>不支援 
 
-下列組態選項不適用於隨附於 Windows Server 2019 和 Windows 10 1809年 OpenSSH 版本：
+在 Windows Server 2019 和 Windows 10 1809 隨附的 OpenSSH 版本中, 無法使用下列設定選項:
 
 * AcceptEnv
 * AllowStreamLocalForwarding

@@ -1,5 +1,5 @@
 ---
-Title: 部署漫遊使用者設定檔
+title: 部署漫遊使用者設定檔
 TOCTitle: Deploying Roaming User Profiles
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: e6e2e32ff9aeb1b3bcfc8fed9027c7e92e13b118
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 1fcabf890c0c54e12c1650c31a072d17a33e292f
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66812491"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560548"
 ---
 # <a name="deploying-roaming-user-profiles"></a>部署漫遊使用者設定檔
 
@@ -33,7 +33,7 @@ ms.locfileid: "66812491"
 >
 > 因此, 在 OS 就地升級之後, [開始] 功能表會重設為預設的新 OS 版本。 如需因應[措施, 請參閱附錄 C:在升級](#appendix-c-working-around-reset-start-menu-layouts-after-upgrades)之後, 請解決重設開始功能表的版面配置。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 ### <a name="hardware-requirements"></a>硬體需求
 
@@ -67,7 +67,7 @@ ms.locfileid: "66812491"
 - 請通知您的使用者，在某個作業系統版本進行的變更，將不會漫遊到另一個作業系統版本。
 - 將您的環境移至使用不同設定檔版本的 windows 版本時 (例如從 Windows 10 到 windows 10 版本 1607), 請參閱[附錄 B:分析清單的版本](#appendix-b-profile-version-reference-information)參考資訊), 使用者會收到新的空白漫遊使用者設定檔。 您可以使用資料夾重新導向來重新導向一般資料夾, 以將取得新設定檔的影響降至最低。 不支援將漫遊使用者設定檔從一個設定檔版本遷移到另一個的方法。
 
-## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>步驟 1：使用不同的設定檔版本
+## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>步驟 1:使用不同的設定檔版本
 
 如果您要在執行 Windows 8.1、Windows 8、Windows Server 2012 R2 或 Windows Server 2012 的電腦上部署漫遊使用者設定檔, 建議您在部署之前, 先對 Windows 環境進行幾項變更。 這些變更可協助確保未來的作業系統升級順暢進行，並提昇同時執行多個版本的 Windows 與漫遊使用者設定檔的能力。
 
@@ -88,7 +88,7 @@ ms.locfileid: "66812491"
     > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
 3. 重新啟動電腦。
 
-## <a name="step-2-create-a-roaming-user-profiles-security-group"></a>步驟 2：建立漫遊使用者設定檔安全性群組
+## <a name="step-2-create-a-roaming-user-profiles-security-group"></a>步驟 2:建立漫遊使用者設定檔安全性群組
 
 如果您的環境尚未設定漫遊使用者設定檔，第一個步驟是建立安全性群組，其中包含您要套用漫遊使用者設定檔原則設定的所有使用者和/或電腦。
 
@@ -100,9 +100,9 @@ ms.locfileid: "66812491"
 1. 在已安裝 Active Directory 系統管理中心的電腦上開啟伺服器管理員。
 2. 在 [**工具**] 功能表上, 選取 [ **Active Directory 系統管理中心**]。 [Active Directory 系統管理中心] 隨即顯示。
 3. 在適當的網域或 OU 上按一下滑鼠右鍵, 選取 [**新增**], 然後選取 [**群組**]。
-4. 在 [建立群組]  視窗內的 [群組]  區段中，指定下列設定：
+4. 在 [建立群組] 視窗內的 [群組] 區段中，指定下列設定：
 
-    - 在 [群組名稱]  中，輸入安全性群組的名稱，例如：**漫遊使用者設定檔使用者和電腦**。
+    - 在 [群組名稱] 中，輸入安全性群組的名稱，例如：**漫遊使用者設定檔使用者和電腦**。
     - 在 [**群組領域**] 中, 選取 [**安全性**], 然後選取 [**全域**]。
 
 5. 在 [**成員**] 區段中, 選取 [**新增**]。 [選取使用者、連絡人、電腦、服務帳戶或群組] 對話方塊隨即顯示。
@@ -119,15 +119,15 @@ ms.locfileid: "66812491"
 以下說明如何在 Windows Server 上建立檔案共用:
 
 1. 在伺服器管理員流覽窗格中, 選取 [檔案**和存放服務**], 然後選取 [**共用**] 以顯示 [共用] 頁面。
-2. 在 [共用] 磚中  , 選取 [工作], 然後選取 [**新增共用**]。 「新增共用精靈」隨即顯示。
+2. 在 [共用] 磚中, 選取 [工作], 然後選取 [**新增共用**]。 「新增共用精靈」隨即顯示。
 3. 在 [**選取設定檔**] 頁面上, 選取 [ **SMB 共用-快速**]。 如果您已安裝檔案伺服器 Resource Manager 並使用資料夾管理屬性, 請改為選取 [ **SMB 共用-Advanced**]。
-4. 在 [共用位置]  頁面上，選取您要在上面建立共用的伺服器和磁碟區。
+4. 在 [共用位置] 頁面上，選取您要在上面建立共用的伺服器和磁碟區。
 5. 在 [共用名稱] 頁面的 [共用名稱]方塊中輸入共用的名稱 (例如， **使用者設定檔$** )。
 
     > [!TIP]
     > 建立共用時，在共用名稱後面放一個 ```$``` 可隱藏共用。 這會隱藏共用，不會隨便被瀏覽。
 
-6. 在 [其他設定]  頁面上，清除 [啟用持續可用性]  核取方塊 (如果存在)，選擇性地選取 [啟用存取型列舉]  和 [加密資料存取]  核取方塊。
+6. 在 [其他設定] 頁面上，清除 [啟用持續可用性] 核取方塊 (如果存在)，選擇性地選取 [啟用存取型列舉] 和 [加密資料存取] 核取方塊。
 7. 在 [**許可權**] 頁面上, 選取 [**自訂許可權**]。 [進階安全性設定] 對話方塊隨即出現。
 8. 選取 [**停用繼承**], 然後選取 [**將繼承的許可權轉換成此物件的明確許可權**]。
 9. 依照[主控漫遊使用者設定檔之檔案共用的必要許可權](#required-permissions-for-the-file-share-hosting-roaming-user-profiles)中所述, 設定許可權, 並在下列螢幕擷取畫面中顯示、移除未列出群組和帳戶的許可權, 以及將特殊許可權新增到漫遊使用者分析您在步驟1中建立的 [使用者和電腦] 群組。
@@ -179,18 +179,18 @@ ms.locfileid: "66812491"
 
 以下說明如何設定使用者帳戶的漫遊使用者設定檔:
 
-1. 在 Active Directory 系統管理中心，瀏覽到適當網域中的 [使用者]  容器 (或 OU)。
+1. 在 Active Directory 系統管理中心，瀏覽到適當網域中的 [使用者] 容器 (或 OU)。
 2. 選取您要指派漫遊使用者設定檔的所有使用者, 以滑鼠右鍵按一下使用者, 然後選取 [**屬性**]。
 3. 在 [**設定檔**] 區段中, 選取 [**設定檔路徑:** ] 核取方塊, 然後輸入您要儲存使用者的漫遊使用者設定檔的檔案共用路徑`%username%` , 後面加上 (它會自動取代為第一個的使用者名稱使用者登入的時間)。 例如:
     
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
     
     若要指定強制的漫遊使用者設定檔, 請指定您先前建立之 Ntuser.dat 的路徑, `fs1.corp.contoso.comUser Profiles$default`例如。 如需詳細資訊, 請參閱[建立強制使用者設定檔](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
-4. 選取 [確定]  。
+4. 選取 [確定]。
 
 > [!NOTE]
 > 根據預設，使用漫遊使用者設定檔時，允許部署所有 Windows® 執行階段型 (Windows 市集) 應用程式。 不過，當使用特殊設定檔時，預設不會部署應用程式。 特殊設定檔是使用者登出後捨棄變更的使用者設定檔：
-> <br><br>若要移除特殊設定檔的應用程式部署限制，請啟用 [允許特殊設定檔的部署作業]  (位於 [電腦設定\原則\系統管理範本\Windows 元件\應用程式套件部署])。 不過，在此案例中部署的應用程式會保留部分的資料儲存在電腦上，假如一部電腦有數百位使用者時，資料可能會不斷累積。 若要清除應用程式, 請找出或開發使用[CleanupPackageForUserAsync](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.cleanuppackageforuserasync.aspx) API 的工具, 針對在電腦上不再有設定檔的使用者清除應用程式套件。
+> <br><br>若要移除特殊設定檔的應用程式部署限制，請啟用 [允許特殊設定檔的部署作業] (位於 [電腦設定\原則\系統管理範本\Windows 元件\應用程式套件部署])。 不過，在此案例中部署的應用程式會保留部分的資料儲存在電腦上，假如一部電腦有數百位使用者時，資料可能會不斷累積。 若要清除應用程式, 請找出或開發使用[CleanupPackageForUserAsync](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.cleanuppackageforuserasync.aspx) API 的工具, 針對在電腦上不再有設定檔的使用者清除應用程式套件。
 > <br><br>如需 Windows 市集應用程式的額外背景資訊，請參閱[管理 Windows 市集的用戶端存取](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>)。
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>步驟 6：選擇性設定電腦的漫遊使用者設定檔
@@ -207,7 +207,7 @@ ms.locfileid: "66812491"
 1. 在已安裝群組原則管理的電腦上開啟伺服器管理員。
 2. 從 [**工具**] 功能表中, 選取 [**群組原則管理**]。 將會顯示群組原則管理。
 3. 在群組原則管理 中, 以滑鼠右鍵按一下您在步驟3中建立的 GPO (例如, **漫遊使用者設定檔** 設定), 然後選取 **編輯**。
-4. 在 [群組原則管理編輯器] 視窗中，依序瀏覽至 [電腦設定]  、[原則]  、[系統管理範本]  、[系統]  ，然後是 [使用者設定檔]  。
+4. 在 [群組原則管理編輯器] 視窗中，依序瀏覽至 [電腦設定]、[原則]、[系統管理範本]、[系統]，然後是 [使用者設定檔]。
 5. 在 [**設定所有登入這部電腦的使用者漫遊設定檔路徑] 上**按一下滑鼠右鍵, 然後選取 [**編輯**]。
     > [!TIP]
     > 使用者的主目錄資料夾 (如果有設定) 是由某些程式 (例如 Windows PowerShell) 使用的預設資料夾。 您可以使用 AD DS 中使用者帳戶內容的 [主目錄資料夾] 區段，為每一位使用者設定替代或網路位置。 若要為在虛擬桌面環境中執行 Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 之電腦的所有使用者設定主資料夾位置, 請啟用 [**設定使用者主資料夾**]。原則設定, 然後指定要對應的檔案共用和磁碟機號 (或指定本機資料夾)。 不要使用環境變數或省略符號。 在使用者登入期間，使用者別名會附加到指定的路徑結尾。
@@ -217,7 +217,7 @@ ms.locfileid: "66812491"
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
 
     若要指定強制漫遊使用者設定檔, 這是使用者無法進行永久變更的預先設定設定檔 (當使用者登出時, 會重設變更), 請指定您先前建立之 Ntuser.dat 檔的路徑, `\\fs1.corp.contoso.com\User Profiles$\default`例如。 如需詳細資訊，請參閱 [建立強制使用者設定檔](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
-8. 選取 [確定]  。
+8. 選取 [確定]。
 
 ## <a name="step-7-optionally-specify-a-start-layout-for-windows-10-pcs"></a>步驟 7：選擇性地指定 Windows 10 電腦的開始版面配置
 
@@ -283,7 +283,7 @@ ms.locfileid: "66812491"
     ```PowerShell
     GpUpdate /Force
     ```
-3. 若要確認使用者設定檔是否為漫遊, 請開啟 [**控制台**], 依序選取 [**系統及安全性**]、[**系統**]、[**高級系統設定**]、[使用者設定檔] 區段中的 [**設定**], 然後尋找  [**類型**] 資料行中的漫遊。
+3. 若要確認使用者設定檔是否為漫遊, 請開啟 [**控制台**], 依序選取 [**系統及安全性**]、[**系統**]、[**高級系統設定**]、[使用者設定檔] 區段中的 [**設定**], 然後尋找[**類型**] 資料行中的漫遊。
 
 ## <a name="appendix-a-checklist-for-deploying-roaming-user-profiles"></a>附錄 A：部署漫遊使用者設定檔的檢查清單
 

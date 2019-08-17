@@ -10,12 +10,12 @@ ms.topic: article
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: 534de49e50d7b415c9d64c32927418a4395f6f4f
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: b54d3e655d10d2dbb015d57f2b1be86a803d9911
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544750"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546641"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016"></a>規劃 Windows Server 2016 中的 Hyper-v 擴充性
 
@@ -44,7 +44,7 @@ ms.locfileid: "68544750"
 |虛擬處理器|240代表層代 2;<br>適用于層代1的 64;<br>320可供主機 OS (根磁碟分割) 使用|客體作業系統支援的虛擬處理器數目可能較低。 如需詳細資訊, 請參閱針對特定作業系統發佈的資訊。|
 |虛擬 SCSI 控制器|4|使用虛擬 SCSI 裝置需要整合服務, 適用于支援的客體作業系統。 如需支援哪些作業系統的詳細資訊, 請參閱[支援的 Linux 和 FreeBSD 虛擬機器](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)和[支援的 Windows 客體作業系統](../supported-windows-guest-operating-systems-for-hyper-v-on-windows.md)。|  
 |虛擬 SCSI 磁碟|256|每個 SCSI 控制器最多支援 64 部磁碟，表示每個虛擬機器最多可設定為 256 部虛擬 SCSI 磁碟 (4 個控制器 x 每一控制器 64 部磁碟)。|  
-|虛擬網路介面卡|Windows Server 2016 支援總共12個:<br> -8 個 hyper-v 專用網路介面卡<br>-4 傳統網路介面卡 <br> Windows Server 2019 支援總計 72: <br> -64 hyper-v 專用網路介面卡<br>-4 傳統網路介面卡  |Hyper-v 特有的網路介面卡提供較佳的效能, 而且需要整合服務中包含的驅動程式。 如需詳細資訊, 請參閱[在 Windows Server 中規劃 hyper-v 網路功能](plan-hyper-v-networking-in-windows-server.md)。|  
+|虛擬網路介面卡|Windows Server 2016 支援總共12個:<br> -8 個 hyper-v 專用網路介面卡<br>-4 傳統網路介面卡 <br> Windows Server 2019 支援總計 68: <br> -64 hyper-v 專用網路介面卡<br>-4 傳統網路介面卡  |Hyper-v 特有的網路介面卡提供較佳的效能, 而且需要整合服務中包含的驅動程式。 如需詳細資訊, 請參閱[在 Windows Server 中規劃 hyper-v 網路功能](plan-hyper-v-networking-in-windows-server.md)。|  
   
 ## <a name="maximums-for-hyper-v-hosts"></a>Hyper-v 主機的最大上限  
 這些最大限制適用于每個 Hyper-v 主機。  
