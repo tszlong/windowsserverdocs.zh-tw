@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: ff584533eef70144e3bb6ba595fd0f8db89697e9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 191d2247af5d5f63a203415af13f8d3370b3c6f6
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63744048"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546476"
 ---
 # <a name="tenant-on-premises-components"></a>租用戶內部部署元件
 
@@ -35,8 +35,8 @@ ms.locfileid: "63744048"
 [Microsoft 遠端桌面用戶端](https://technet.microsoft.com/library/dn473009.aspx)  
 [Microsoft Store 中的 Windows 遠端桌面應用程式](https://apps.microsoft.com/windows/app/remote-desktop/051f560e-5e9b-4dad-8b2e-fa5e0b05a480)  
 [Microsoft 遠端桌面 - Google Play 的 Android 應用程式](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)  
-[Mac App Store - Microsoft 遠端桌面](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12)  
-[App Store 中的 Microsoft 遠端桌面](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)  
+[Mac App Store - Microsoft 遠端桌面](https://itunes.apple.com/app/microsoft-remote-desktop/id715768417?mt=12)  
+[App Store 中的 Microsoft 遠端桌面](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)  
   
 ##  <a name="active-directory-domain-services"></a>Active Directory Domain Services  
 某些較大且較複雜的租用戶可以選擇在內部裝載 Active Directory 網域服務 (AD DS) 伺服器。 在此情況下，租用戶環境中的 AD DS 伺服器，通常會是租用戶內部部署 AD DS 伺服器的複本。 在租用戶環境中建立虛擬網路，並使用 Azure VPN 建立從租用戶內部部署網路到位於 Azure 資料中心租用戶虛擬網路的站對站連線，即可支援這一點。  

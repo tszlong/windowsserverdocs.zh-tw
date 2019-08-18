@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a54ffd3d5596ba8c71deab668e4952da445ca12e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 17df3ca3b88404a2775790d7a4a8206b7aa5befa
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804937"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546350"
 ---
 # <a name="get-started-with-remote-desktop-on-mac"></a>在 Mac 上開始使用遠端桌面
 
@@ -35,7 +35,7 @@ ms.locfileid: "66804937"
 ## <a name="get-the-remote-desktop-client"></a>取得遠端桌面用戶端
 依照下列步驟，在 Mac 上開始使用遠端桌面：
 
-1. 從 [Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12) 下載 Microsoft 遠端桌面用戶端。
+1. 從 [Mac App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) 下載 Microsoft 遠端桌面用戶端。
 2. [將您的電腦設定成接受遠端連線](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。 (如果您略過此步驟，即無法連線至您的電腦。)
 3. 新增遠端桌面連線或遠端資源。 您可以使用連線直接連線至 Windows 電腦和遠端資源，以使用 RemoteApp 程式、工作階段型桌面，或使用 RemoteApp 和桌面連線在內部部署發佈的虛擬桌面。 在公司環境中通常可以使用這項功能。
 
