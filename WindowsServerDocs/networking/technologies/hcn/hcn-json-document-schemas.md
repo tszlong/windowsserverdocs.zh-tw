@@ -1,21 +1,21 @@
 ---
-title: 主機計算網路 (HCN) JSON 文件結構描述
+title: 主機計算網路 (HCN) JSON 檔架構
 description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 5dadcffc34a4d3bc83b128b4fb5074c227151fa4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9466afed380d20160cad461c766de469e1f6a7cf
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836299"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584768"
 ---
 # <a name="hcn-json-document-schemas"></a>HCN JSON 文件結構描述
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-## <a name="hcn-schema"></a>HCN 結構描述
+## <a name="hcn-schema"></a>HCN 架構
 
 ```json
 // Network
@@ -79,7 +79,7 @@ ms.locfileid: "59836299"
 }
 ```
 
-## <a name="hcn-endpoint-schema"></a>HCN 端點結構描述
+## <a name="hcn-endpoint-schema"></a>HCN 端點架構
 
 ```json
 // Endpoint 
@@ -122,7 +122,7 @@ ms.locfileid: "59836299"
 }
 ```
 
-## <a name="hcn-policy-schema"></a>HCN 原則結構描述
+## <a name="hcn-policy-schema"></a>HCN 原則架構
 
 ```json
 // VlanPolicy
@@ -136,17 +136,18 @@ ms.locfileid: "59836299"
     "Type" : "PortMapping",
     "Protocol" : <enum>,
          // AsString; Values: 
-         // "TCP" (0),
-         // "UDP" (1),
-         // "ICMPv4" (2),
-         // "ICMPv6" (3),
-         // "IGMP" (4),
+         // "Unknown" (0),
+         // "ICMPv4" (1),
+         // "IGMP" (2),
+         // "TCP" (6),
+         // "UDP" (17),
+         // "ICMPv6" (58)
     "InternalPort" : <uint16>,
     "ExternalPort" : <uint16>,
 }
 ```
 
-## <a name="hcn-load-balancer-schema"></a>HCN 負載平衡器結構描述
+## <a name="hcn-load-balancer-schema"></a>HCN 負載平衡器架構
 
 ```json
 // Host Compute LoadBalancer
@@ -168,11 +169,12 @@ ms.locfileid: "59836299"
         "Type" : "PortMapping",
         "Protocol" : <enum>,
              // AsString; Values: 
-             // "TCP" (0),
-             // "UDP" (1),
-             // "ICMPv4" (2),
-             // "ICMPv6" (3),
-             // "IGMP" (4),
+             // "Unknown" (0),
+             // "ICMPv4" (1),
+             // "IGMP" (2),
+             // "TCP" (6),
+             // "UDP" (17),
+             // "ICMPv6" (58)
         "InternalPort" : <uint16>,
         "ExternalPort" : <uint16>,
     } ],
@@ -185,7 +187,7 @@ ms.locfileid: "59836299"
 }
 ```
 
-## <a name="hcn-namespace-schema"></a>HCN 命名空間結構描述
+## <a name="hcn-namespace-schema"></a>HCN 命名空間架構
 
 ```json
 // Namespace
@@ -214,7 +216,7 @@ ms.locfileid: "59836299"
 }
 ```
 
-## <a name="hcn-notification-schema"></a>HCN 通知結構描述
+## <a name="hcn-notification-schema"></a>HCN 通知架構
 
 ```json
 // Notification
@@ -224,7 +226,7 @@ ms.locfileid: "59836299"
 };
 ```
 
-## <a name="result-error-schema"></a>結果錯誤結構描述
+## <a name="result-error-schema"></a>結果錯誤架構
 
 ```json
 // ErrorSchema

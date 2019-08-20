@@ -1,19 +1,19 @@
 ---
-Title: 儲存體遷移服務總覽
+title: 儲存體遷移服務總覽
 description: 儲存空間移轉服務可讓您更輕鬆地將伺服器遷移至較新版本的 Windows Server。 其提供的圖形工具可清查伺服器上的資料，然後將資料和設定轉送至較新的伺服器 — 完全不需要應用程式或使用者變更任何項目。
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 05/21/2019
+ms.date: 08/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 8118b58268e88a173a6219631e109ed1c436fea0
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: dae64b81c48b9ae6bf84c3558066ebbdf9c06ace
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560561"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584832"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -58,7 +58,7 @@ ms.locfileid: "69560561"
 
 強烈建議協調器和目的地電腦至少要有兩個核心或兩個個 vcpu, 以及至少 2 GB 的記憶體。 使用更多的處理器和記憶體, 清查和傳輸作業的速度大幅提升。
 
-### <a name="security-requirements"></a>安全性需求
+### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>安全性需求、儲存體遷移服務 proxy 服務和防火牆埠
 
 - 一種遷移帳戶, 這是來源電腦和 orchestrator 電腦上的系統管理員。
 - 一種遷移帳戶, 其為目的地電腦和 orchestrator 電腦上的系統管理員。
@@ -70,7 +70,9 @@ ms.locfileid: "69560561"
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
-  > 在 Windows Server 2019 電腦上安裝儲存體遷移服務 Proxy 服務時, 會自動在該電腦上開啟必要的防火牆埠。
+  > 在 Windows Server 2019 電腦上安裝儲存體遷移服務 Proxy 服務時, 會自動在該電腦上開啟必要的防火牆埠。 若要這麼做, 請連線到 Windows 管理中心的目的地伺服器, 然後移至**伺服器管理員**(在 Windows 系統管理中心) >**角色和功能**, 選取 儲存體 **遷移服務 Proxy**, 然後選取 **安裝**。
+
+
 - 如果電腦屬於 Active Directory Domain Services 網域, 它們應該全都屬於相同的樹系。 如果您想要在進行剪下時將來源的功能變數名稱傳輸到目的地, 目的地伺服器也必須位於與來源伺服器相同的網域中。 技術上的轉換會跨網域運作, 但是目的地的完整功能變數名稱會與來源不同 。
 
 ### <a name="requirements-for-source-servers"></a>來源伺服器的需求
