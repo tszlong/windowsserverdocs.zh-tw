@@ -13,18 +13,18 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b11f4356496607d59e6c1b8dff2fb8edc0535cb
-ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
+ms.openlocfilehash: ecc3236d44146015564fa593aaf8a20d3bfa42ff
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729553"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546462"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
 下表包含支援的 RDP 檔案設定清單，您可以搭配 Windows 和 HTML 用戶端來使用這些設定。 平台欄中的 "x" 表示是支援的設定。 不過，此清單不是 Windows 和 HTML5 用戶端支援的設定完整清單。 我們將持續更新此表格，以包含 Windows 和 HTML5 用戶端，以及 macOS、iOS 和 Android 用戶端支援的更多 RDP 設定。
 
-若要深入瞭解使用 PowerShell 以自訂 RDP 內容的方法，請參閱[主機集區的自訂遠端桌面通訊協定屬性](https://docs.microsoft.com/azure/virtual-desktop/customize-rdp-properties)。
+請參閱[此文件](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)以了解如何使用 PowerShell 自訂主機集區的 RDP 屬性。
 
 | RDP 設定                        | 描述            | 值                 | 預設值          | Windows 虛擬桌面 | Windows | HTML5   |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|:-------:|:-------:|

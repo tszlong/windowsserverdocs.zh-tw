@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: d6761c43eefe04430603a1a16e9e8d256176a736
-ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
+ms.openlocfilehash: d167fb5dfdfbb2a302c2b0fca9286dc034b730e3
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729531"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546339"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -273,9 +273,10 @@ ms.locfileid: "68729531"
  根據預設，使用者可以選取任一啟動方法。 布林值 **$true** 會強制使用者在瀏覽器中啟動資源。 布林值 **$false** 會強制使用者下載 .rdp 檔案並以本機安裝的 RDP 用戶端進行處理，以啟動資源。
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>將 RDWebClientDeploymentSetting 設定重設為預設值
-若要將部署層級的 Web 用戶端設定重設為預設組態，請執行下列 PowerShell Cmdlet 並使用 --Name 參數指定要重設的設定：
-  
-  ```PowerShell
+
+若要將部署層級的 Web 用戶端設定重設為預設組態，請執行下列 PowerShell Cmdlet 並使用 -name 參數指定要重設的設定：
+
+   ```PowerShell
     Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
