@@ -8,23 +8,25 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d018ea65ce61cab67fe2041b9ef885d32de51b17
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 5924a6a2304bd8e883c43628e3c6c05b69cbd46c
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811922"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980330"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>準備您的 Windows Admin Center 環境
 
-> 適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 有一些 Server 版本需要先做額外準備，才可開始使用 Windows Admin Center 進行管理：
 
 - [Windows Server 2012 和 2012 R2](#prepare-windows-server-2012-and-2012-r2)
 - [Windows Server 2008 R2](#prepare-windows-server-2008-r2)
 - [Microsoft Hyper-V Server 2016](#prepare-microsoft-hyper-v-server-2016)
-- [Microsoft Hyper-V Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
+- [Microsoft Hyper-v Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
+
+在某些情況下, 可能需要先修改[目標伺服器上的通訊埠設定](#port-configuration-on-the-target-server), 才能使用 Windows 系統管理中心進行管理。
 
 ## <a name="prepare-windows-server-2012-and-2012-r2"></a>準備 Windows Server 2012 和 2012 R2
 
@@ -42,7 +44,7 @@ Windows Admin Center 需要預設未包含在 Windows Server 2012 和 2012 R2 �
 
 Windows Admin Center 需要預設未包含在 Windows Server 2008 R2 中的 PowerShell 功能。 若要使用 Windows Admin Center 管理 Windows Server 2008 R2，必須在這些伺服器上安裝 WMF 5.1 版或更新版本。 
 
-請確認[.NET Framework 4.5.2 或更新版本](https://docs.microsoft.com/dotnet/framework/install/on-windows-7)您的電腦上已安裝。
+確定電腦上已安裝[.NET Framework 4.5.2 或更新版本](https://docs.microsoft.com/dotnet/framework/install/on-windows-7)。
 
 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。
 
@@ -82,7 +84,7 @@ Windows Admin Center 需要預設未包含在 Windows Server 2008 R2 中的 Powe
 1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
 2. 在 **\[角色和功能\]** 中尋找 **\[檔案和存放服務\]** ，並核取 **\[檔案和 iSCSI 服務\]** 和 **\[檔案伺服器\]** ：
 
-![角色的螢幕擷取畫面和顯示的檔案和 iSCSI 服務角色選取的功能](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![顯示已選取檔案和 iSCSI 服務角色之角色和功能的螢幕擷取畫面](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**步驟 3：** 啟用 PowerShell 的 Hyper-V 模組
 
@@ -91,7 +93,7 @@ Windows Admin Center 需要預設未包含在 Windows Server 2008 R2 中的 Powe
 1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
 2. 在 **\[角色和功能\]** 中尋找 **\[遠端伺服器管理工具\]** ，並核取 **\[角色管理工具\]** 和 **\[PowerShell 的 Hyper-V 模組\]** ：
 
-![角色的螢幕擷取畫面，顯示所選的 HYPER-V 角色的功能](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![顯示已選取 Hyper-v 角色之角色和功能的螢幕擷取畫面](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 Microsoft Hyper-V Server 2016 現已準備好可以使用 Windows Admin Center 進行管理。
 
@@ -106,7 +108,7 @@ Microsoft Hyper-V Server 2016 現已準備好可以使用 Windows Admin Center �
 3. 啟用檔案伺服器角色
 4. 啟用 PowerShell 的 Hyper-V 模組
 
-### <a name="step-1-install-windows-management-framework-51"></a>步驟 1：安裝 Windows Management Framework 5.1
+### <a name="step-1-install-windows-management-framework-51"></a>步驟 1:安裝 Windows Management Framework 5。1
 
 Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 中的 PowerShell 功能。 若要使用 Windows Admin Center 管理 Microsoft Hyper-V Server 2012 R2，您必須安裝 WMF 5.1 或更新版本。
 
@@ -114,7 +116,7 @@ Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 �
 
 如果尚未安裝，您可以[下載 WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
 
-### <a name="step-2-enable-remote-management"></a>步驟 2：啟用遠端管理
+### <a name="step-2-enable-remote-management"></a>步驟 2:啟用遠端管理
 
 若要啟用 Hyper-V Server 遠端管理：
 
@@ -130,7 +132,7 @@ Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 �
 1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
 2. 在 **\[角色和功能\]** 中尋找 **\[檔案和存放服務\]** ，並核取 **\[檔案和 iSCSI 服務\]** 和 **\[檔案伺服器\]** ：
 
-![角色的螢幕擷取畫面和顯示的檔案和 iSCSI 服務角色選取的功能](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![顯示已選取檔案和 iSCSI 服務角色之角色和功能的螢幕擷取畫面](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-4-enable-hyper-v-module-for-powershell"></a>步驟 4：啟用 PowerShell 的 Hyper-V 模組
 
@@ -139,9 +141,13 @@ Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 �
 1. 按一下 **\[工具\]** 功能表中的 **\[角色和功能\]** 。
 2. 在 **\[角色和功能\]** 中尋找 **\[遠端伺服器管理工具\]** ，並核取 **\[角色管理工具\]** 和 **\[PowerShell 的 Hyper-V 模組\]** ：
 
-![角色的螢幕擷取畫面，顯示選取的 HYPER-V 遠端伺服器管理工具的功能](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![顯示已選取的 Hyper-v 遠端伺服器管理工具之角色和功能的螢幕擷取畫面](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 Microsoft Hyper-V Server 2012 R2 現已準備好可以使用 Windows Admin Center 進行管理。
+
+## <a name="port-configuration-on-the-target-server"></a>目標伺服器上的埠設定
+
+Windows 管理中心會針對某些檔案複製工作 (例如在遠端伺服器上匯入憑證時) 使用 SMB 檔案共用通訊協定。 若要讓這些檔案複製作業成功, 遠端伺服器上的防火牆必須允許埠445上的輸入連線。  您可以使用 Windows 系統管理中心的防火牆工具, 確認 [檔案伺服器遠端系統管理 (SMB 輸入)] 的傳入規則已設定為允許此埠上的存取。
 
 > [!Tip]
 > 準備好安裝 Windows Admin Center 了嗎？ [立即下載](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center#download-now)
