@@ -204,7 +204,7 @@
 
 ### [AD FS 概觀](ad-fs/AD-FS-Overview.md)
 #### [Active Directory 同盟服務的新功能](ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)
-#### [適合開發人員使用的 AD FS 案例](ad-fs/overview/AD-FS-Scenarios-for-Developers.md)
+
 #### [AD FS 2016 需求](ad-fs/overview/AD-FS-Requirements.md)
 
 ### [AD FS 設計](ad-fs/AD-FS-Design.md)
@@ -365,18 +365,25 @@
 
 
 
-### [AD FS 開發](ad-fs/AD-FS-Development.md)
+### AD FS 開發
+#### [AD FS 新式驗證概念](ad-fs/development/ad-fs-openid-connect-oauth-concepts.md)
+#### [AD FS 新式驗證流程和應用程式案例](ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
 #### [建置適用於 AD FS 的自訂驗證方法](ad-fs/development/ad-fs-build-custom-auth-method.md)
 #### [使用 AD FS 2019 風險評估模型建置外掛程式](ad-fs/development/ad-fs-risk-assessment-model.md)
-#### [AD FS 中的自訂識別碼權杖](ad-fs/development/Custom-Id-Tokens-in-AD-FS.md)
-#### [Windows Server 2016 中的 AD FS 代表驗證](ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server.md)
-#### [透過 AD FS 2016 啟用 OpenId Connect](ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)
-#### [透過 AD FS 2016 啟用 Oauth 機密用戶端](ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS.md)
 #### [使用 AD FS 的 OpenID Connect 單一登出](ad-fs/development/ad-fs-logout-openid-connect.md)
-#### [使用 AD FS 的單一頁面應用程式](ad-fs/development/Single-Page-Application-with-AD-FS.md)
-#### [使用 OAuth 公開用戶端搭配 AD FS 來建置原生用戶端應用程式](ad-fs/development/native-client-with-ad-fs.md)
+#### ADAL
 
+##### [AD FS 中的自訂識別碼權杖](ad-fs/development/Custom-Id-Tokens-in-AD-FS.md)
+##### [Windows Server 2016 中的 AD FS 代表驗證](ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server.md)
+##### [透過 AD FS 2016 啟用 OpenId Connect](ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)
+##### [透過 AD FS 2016 啟用 Oauth 機密用戶端](ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS.md)
+##### [使用 AD FS 的單一頁面應用程式](ad-fs/development/Single-Page-Application-with-AD-FS.md)
+##### [使用 OAuth 公開用戶端搭配 AD FS 來建置原生用戶端應用程式](ad-fs/development/native-client-with-ad-fs.md)
+#### MSAL
+##### [原生應用程式呼叫 Web API](ad-fs/development/msal/adfs-msal-native-app-web-api.md) 
+##### [Web API 呼叫 Web API (代表案例)](ad-fs/development/msal/adfs-msal-web-api-web-api.md) 
+##### [Web 應用程式 (伺服器應用程式) 呼叫 Web API](ad-fs/development/msal/adfs-msal-web-app-web-api.md) 
 
 ### [AD FS 操作](ad-fs/AD-FS-Operations.md)
 #### [AD FS 存取控制原則](ad-fs/operations/AD-FS-Client-Access-Policies.md)
@@ -414,7 +421,7 @@
 
 #### [使用 SAML 2.0 改進互通性](ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 #### [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-company-Applications.md)
-#### [透過其他多重要素驗證管理機密應用程式的風險](ad-fs/operations/Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+#### [透過其他多因素驗證管理機密應用程式的風險](ad-fs/operations/Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 #### [使用條件式存取控制管理風險](ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 #### [管理 AD FS 和 WAP 2016 中的 SSL 憑證](ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP.md)
 #### [管理 AD FS 中的 SSL 通訊協定](ad-fs/operations/Manage-SSL-Protocols-in-AD-FS.md)
@@ -422,7 +429,7 @@
 
 #### [設定 AD FS 實驗室環境](ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
 #### [SQL 微調與延遲處理](ad-fs/operations/adfs-sql-latency.md)
-#### [逐步解說指南：透過其他多重要素驗證管理機密應用程式的風險](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+#### [逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 #### [逐步解說指南：使用條件式存取控制管理風險](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 #### [逐步解說：將 Windows 裝置加入工作地點網路](ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 #### [逐步解說：將 iOS 裝置加入工作地點網路](ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
