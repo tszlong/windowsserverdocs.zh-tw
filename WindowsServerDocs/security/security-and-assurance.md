@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
-ms.openlocfilehash: bd9df9cc9836b15ec22c11b3413aa778192307f9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: b788aa85bcc2df7c96baaf591b224788e6e6f487
+ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63752181"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000746"
 ---
 # <a name="security--assurance"></a>安全性 | 保證
 
@@ -251,7 +251,7 @@ Windows Server 安全性提供內建於作業系統的保護層級，可對抗�
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">Microsoft Operations Management Suite (OMS)</a></h3>Microsoft Operations Management Suite (OMS) 安全性和稽核解決方案可處理內部部署和雲端環境中的安全性記錄檔及防火牆事件，以分析並偵測惡意行為。</p>
 <HR />
-                        <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">OMS 和 Windows Server</a></h3>這段 3 分鐘的影片示範 OMS 如何協助偵測 Windows Server 所封鎖的潛在惡意行為。 Suppo</p>
+                        <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">OMS 和 Windows Server</a></h3>這段 3 分鐘的影片示範 OMS 如何協助偵測 Windows Server 所封鎖的潛在惡意行為。</p>
 <HR />
                         <p><h3><a href="http://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft 進階威脅分析</a></h3>本部落格文章將討論 Microsoft 進階威脅分析。這是一個內部部署產品，可使用 Active Directory 網路流量和 SIEM 資料，來探索潛在威脅並發出警示。</p>
                     </div>

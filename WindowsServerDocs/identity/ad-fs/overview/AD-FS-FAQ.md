@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7bc98a8c9a57b2b7f63523f0411d648ca82137aa
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 46e8548e24f0d0991f69427741b0e04da6398334
+ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980336"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009100"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題 (FAQ)
 
@@ -76,9 +76,9 @@ AD FS 支援多個多樹系設定, 並依賴基礎 AD DS 信任網路來驗證�
 ## <a name="design"></a>設計
 
 ### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>AD FS 有哪些協力廠商的多重要素驗證提供者？
-AD FS 提供要整合的協力廠商 MFA 提供者的擴充性機制。 沒有設定認證方案。 在發行之前, 會假設廠商已執行必要的驗證。 
+AD FS 提供可延伸的機制, 供協力廠商 MFA 提供者進行整合。 沒有設定認證方案。 在發行之前, 會假設廠商已執行必要的驗證。 
 
-已通知 Microsoft 的廠商清單會在[AD FS 的 MFA 提供者](..\operations\Configure-Additional-Authentication-Methods-for-AD-FS.md)發佈。  有些提供者可能永遠不知道, 我們將會在瞭解它們時更新清單。
+已通知 Microsoft 的廠商清單會在[AD FS 的 MFA 提供者](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)發佈。  有些提供者可能永遠不知道, 我們將會在瞭解它們時更新清單。
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>AD FS 是否支援協力廠商 proxy？
 是, 協力廠商 proxy 可以放在 Web 應用程式 Proxy 前面, 但任何協力廠商 Proxy 都必須支援使用[MS ADFSPIP 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)來取代 Web 應用程式 proxy。
