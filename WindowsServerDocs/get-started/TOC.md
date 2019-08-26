@@ -16,6 +16,7 @@
 ## [Windows Server 2016 的升級和轉換選項](Supported-Upgrade-paths.md)
 ## [Windows Server 2016 角色升級和移轉](Server-Role-Upgradeability-Table.md)
 ## [Windows Server 2016 應用程式相容性表格](Server-Application-compatibility.md)
+## [Windows Server 中已移除或已計劃取代的功能](../get-started-19/removed-features.md)
 ## [Windows Server 2016 中已移除或取代的功能](Deprecated-Features.md)
 ## [Windows Server 2016 版本比較](2016-Edition-Comparison.md)
 ## [適用於 Windows Server 的 Azure Hybrid Benefit](azure-hybrid-benefit.md)

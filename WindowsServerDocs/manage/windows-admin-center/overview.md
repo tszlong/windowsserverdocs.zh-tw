@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 06/20/2019
+ms.date: 08/22/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 0612f4ff102d6b5d1fd24372ac20a98c3ec02edb
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7af852ba934de2dd29a76972d7a7ec73606e9b4c
+ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476561"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009114"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,6 +129,7 @@ ms.locfileid: "68476561"
 
 了解我們最新發行的功能：
 
+- 版本[ 1908](https://aka.ms/wac1908) - 包含視覺更新、Packetmon、FlowLog Audit、叢集的 Azure 監視器上架，以及透過 HTTPS 支援 WinRM (連接埠 5986)。
 - 版本 [1907](https://aka.ms/wac1907) - 新增了 Azure 成本預估連結，並改善了匯入/匯出和標記虛擬機器的功能。
 - 版本 [1906](https://aka.ms/wac1906) - 新增匯入/匯出 VM、切換 Azure 帳戶、從 Azure 新增連線、連線能力設定實驗、效能改進和效能分析工具。
 - 版本 1904.1 是最新的 GA 版本 - 用來改善閘道外掛程式穩定性的維護更新。

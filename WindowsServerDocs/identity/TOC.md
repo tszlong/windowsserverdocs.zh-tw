@@ -367,7 +367,7 @@
 
 ### AD FS 開發
 #### [AD FS 新式驗證概念](ad-fs/development/ad-fs-openid-connect-oauth-concepts.md)
-#### [AD FS 新式驗證流程和應用程式案例](ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+#### [AD FS OpenID Connect/OAuth 流程和應用程式案例](ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
 #### [建置適用於 AD FS 的自訂驗證方法](ad-fs/development/ad-fs-build-custom-auth-method.md)
 #### [使用 AD FS 2019 風險評估模型建置外掛程式](ad-fs/development/ad-fs-risk-assessment-model.md)
