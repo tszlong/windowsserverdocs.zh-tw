@@ -2,22 +2,22 @@
 title: Windows Server 的新功能
 description: 關於運算、身分識別、管理、自動化、網路功能、安全性、存放裝置的新功能。
 ms.prod: windows-server
-ms.date: 06/03/2019
+ms.date: 08/22/2019
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e19c7a51ef1f50f974dc380e00315f9980da560
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a6a093f873ee925a2763ba5243f868204bd077f3
+ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66501358"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000647"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server 的新功能
 
->適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
 您可以找到每個這些 Windows Server 版本的新功能。  
 
@@ -39,3 +39,4 @@ Windows Server 半年通道發行以更快的速度提供新的作業系統功�
 
 - [版本資訊：Windows Server 2019 中的重要問題](../get-started-19/rel-notes-19.md)
 - [版本資訊：Windows Server 2016 中的重要問題](Windows-Server-2016-GA-Release-Notes.md)
+- [Windows Server 中已移除或計劃取代的功能](../get-started-19/removed-features.md)
