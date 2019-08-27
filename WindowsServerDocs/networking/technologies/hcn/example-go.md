@@ -1,19 +1,19 @@
 ---
-title: 產生的 Go 程式碼的最上層 IPAM 子網路物件的範例
+title: 最上層 IPAM & 子網物件產生的 Go 程式碼範例
 description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 428566411920e55d444890898d0f02a1e6cc81ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c823a9994e96b3f22acd15ca639f773f4d6ab63
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870939"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031548"
 ---
 # <a name="example-of-go-generated-code"></a>Go 產生的程式碼範例 
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019
 
 ```Go
 /*

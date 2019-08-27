@@ -4,23 +4,23 @@ description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 48e4626f52ef7af19da6d3e0bb28799665498fe5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0eb620fe52de5ee98a247e17ed73304b2325c7c8
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884849"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031486"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>HCN 的 RPC 內容控點
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019
 
 
-## <a name="hcnnetwork"></a>HCN_Network
+## <a name="hcn_network"></a>HCN_Network
 
-HCN 網路是用來代表主機的實體計算網路及其相關聯的系統資源和原則。 比方說，HCN 網路將通常包含一組中繼資料 （例如識別碼、 名稱、 型別） 時，虛擬交換器、 主機虛擬網路介面卡 （這是網路的預設閘道）、 （如有必要的網路類型） 的 NAT 執行個體、 一組子網路和 MAC 集區而且任何全網路来套用原則 (例如 Acl)。
+HCN 網路是一個實體, 用來代表主機計算網路及其相關聯的系統資源和原則。 例如, HCN 網路通常包含一組中繼資料 (例如識別碼、名稱、類型)、虛擬交換器、主機虛擬網路介面卡 (作為網路的預設閘道)、NAT 實例 (如果網路類型需要)、一組子網和 MAC 集區, 以及要套用的任何全網路原則 (例如 Acl)。
 
-HCN 網路實體會使用 HCN_NETWORK RPC 內容控制代碼來表示。
+HCN 網路實體會使用 HCN_NETWORK RPC 內容控制碼來表示。
 
 ```
 
@@ -149,10 +149,10 @@ HcnCloseNetwork(
     ); 
 ```
 
-## <a name="hcnendpoint"></a>HCN_Endpoint
+## <a name="hcn_endpoint"></a>HCN_Endpoint
 
-HCN 端點是用來代表 HCN 網路及其相關聯的系統資源和原則上的 IP 端點的實體。 比方說，HCN 端點將通常包含一組中繼資料 （例如識別碼、 名稱、 父網路識別碼） 時，其網路識別身分 （例如 IP 位址、 MAC 位址），而任何端點特定原則會套用 (例如 Acl、 路由)。
-HCN 端點實體會使用 HCN_ENDPOINT RPC 內容控制代碼來表示。
+HCN 端點是一個實體, 用來代表 HCN 網路上的 IP 端點及其相關聯的系統資源和原則。 例如, HCN 端點通常會包含一組中繼資料 (例如識別碼、名稱、父網路識別碼)、其網路識別 (例如 IP 位址、MAC 位址), 以及要套用的任何端點特定原則 (例如 Acl、路由)。
+HCN 端點實體會使用 HCN_ENDPOINT RPC 內容控制碼來表示。
 
 ```
 
@@ -283,11 +283,11 @@ HcnCloseEndpoint(
  
 ```
 
-## <a name="hcnnamespace"></a>HCN_Namespace
+## <a name="hcn_namespace"></a>HCN_Namespace
 
-HCN 命名空間是用來代表主機計算網路命名空間的實體。 命名空間可讓您有隔離的網路環境，在單一主機上，其中每個命名空間會有它自己的網路介面和路由表，以從其他命名空間。
+HCN 命名空間是用來代表主機計算網路命名空間的實體。 命名空間可讓您在單一主機上擁有隔離的網路環境, 其中每個命名空間都有自己的網路介面和路由表 (與其他命名空間分隔)。
 
-HCN 命名空間的實體會使用 HCN_NAMESPACE RPC 內容控制代碼來表示。
+HCN 命名空間實體會使用 HCN_NAMESPACE RPC 內容控制碼來表示。
 
 ```
 /// Handle to an operation
@@ -419,10 +419,10 @@ HcnCloseNamespace(
 
 ```
 
-## <a name="hcnloadbalancer"></a>HCN_LoadBalancer
+## <a name="hcn_loadbalancer"></a>HCN_LoadBalancer
 
-HCN 負載平衡器是用來代表主機計算網路負載平衡器的實體。 負載平衡器可讓您能夠計算網路端點的負載平衡的主機。
-HCN 負載平衡器的實體會使用 HCN_LOADBALANCER RPC 內容控制代碼來表示。
+HCN LoadBalancer 是用來代表主機計算網路 LoadBalancer 的實體。 LoadBalancers 可讓您擁有負載平衡的主機計算網路端點。
+HCN LoadBalancer 實體會使用 HCN_LOADBALANCER RPC 內容控制碼來表示。
 
 ```
 /// Handle to an operation
@@ -558,9 +558,9 @@ HcnCloseLoadBalancer(
 
 ```
 
-## <a name="hcnnotificationcallback"></a>HCN_Notification_Callback
+## <a name="hcn_notification_callback"></a>HCN_Notification_Callback
 
-那里函式會提供整個服務的作業，例如通知 （例如接收通知的 建立新的網路） 的存取權。
+函式可讓您存取服務範圍的作業, 例如通知 (例如接收新網路建立的通知)。
 
 ```
 /// Registers a callback function to receive notifications of service-wide events such as network

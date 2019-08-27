@@ -4,23 +4,23 @@ description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 2a81b09c41c3b665d6a026da4b63a6119fbe202d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816299"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031527"
 ---
 # <a name="common-scenarios"></a>常見案例
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2019
 
 ## <a name="scenario-hcn"></a>案例：HCN 
 
 
 ### <a name="create-an-hcn"></a>建立 HCN
 
-此範例示範如何使用主機計算網路服務 API 來建立主機計算網路上的主控件可用來連接至虛擬機器或容器的虛擬 NIC。
+此範例示範如何使用主機計算網路服務 API, 在主機上建立主機計算網路, 以用來將虛擬 NIC 連線至虛擬機器或容器。
 
 ```C++
 using unique_hcn_network = wil::unique_any< 
@@ -119,7 +119,7 @@ void CreateHcnNetwork()
 
 ### <a name="delete-an-hcn"></a>刪除 HCN
 
-此範例示範如何使用主機計算網路服務 API 來開啟，並刪除主機計算網路 
+此範例說明如何使用主機計算網路服務 API 來開啟 & 刪除主機計算網路 
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -134,9 +134,9 @@ void CreateHcnNetwork()
 ```
 
 
-### <a name="enumerate-all-networks"></a>列舉所有的網路
+### <a name="enumerate-all-networks"></a>列舉所有網路
 
-此範例示範如何使用主機計算網路服務 API 來列舉所有的主機計算網路。
+此範例說明如何使用主機計算網路服務 API 來列舉所有主機計算網路。
 
 ```C++
      wil::unique_cotaskmem_string resultNetworks;
@@ -193,7 +193,7 @@ void CreateHcnNetwork()
 
 ### <a name="create-an-hcn-endpoint"></a>建立 HCN 端點
 
-此範例示範如何使用主機計算網路服務 API 來建立主機計算網路端點，並接著熱新增到虛擬機器或容器。
+此範例示範如何使用主機計算網路服務 API 來建立主機計算網路端點, 然後將其熱新增至虛擬機器或容器。
 
 ```C++
 using unique_hcn_endpoint = wil::unique_any< 
@@ -285,7 +285,7 @@ void CreateAndHotAddEndpoint()
 
 ### <a name="modify-and-endpoint"></a>修改和端點
 
-此範例示範如何使用主機計算網路服務 API 來修改主應用程式計算網路端點。
+此範例說明如何使用主機計算網路服務 API 來修改主機計算網路端點。
 
 ```C++
     unique_hcn_endpoint hcnendpoint;
@@ -325,7 +325,7 @@ void CreateAndHotAddEndpoint()
 
 ### <a name="enumerate-all-enpoints"></a>列舉所有 enpoints
 
-此範例示範如何使用主機計算網路服務 API 來列舉所有主機計算網路端點。
+此範例說明如何使用主機計算網路服務 API 來列舉所有主機計算網路端點。
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -385,7 +385,7 @@ void CreateAndHotAddEndpoint()
 
 ### <a name="create-an-hcn-namespace"></a>建立 HCN 命名空間
 
-此範例示範如何使用主機計算網路服務 API 來建立可用來連接端點和容器主機上的主機計算網路命名空間。
+此範例示範如何使用主機計算網路服務 API, 在主機上建立可用於連接端點和容器的主機計算網路命名空間。
 
 ```C++
 using unique_hcn_namespace = wil::unique_any< 
@@ -465,7 +465,7 @@ void CreateHcnNamespace()
 
 ### <a name="modify-an-hcn-namespace"></a>修改 HCN 命名空間
 
-此範例示範如何使用主機計算網路服務 API 來修改主控件計算網路命名空間。
+此範例說明如何使用主機計算網路服務 API 來修改主機計算網路命名空間。
 
 ```C++
     unique_hcn_namespace handle;
@@ -508,9 +508,9 @@ void CreateHcnNamespace()
 ```
 
 
-### <a name="enumerate-all-namespaces"></a>列舉所有的命名空間
+### <a name="enumerate-all-namespaces"></a>列舉所有命名空間
 
-此範例示範如何使用主機計算網路服務 API 來列舉所有主機計算網路命名空間。
+此範例說明如何使用主機計算網路服務 API 來列舉所有主機計算網路命名空間。
 
 ```C++
     wil::unique_cotaskmem_string resultNamespaces;
@@ -530,9 +530,9 @@ void CreateHcnNamespace()
 ```
 
 
-### <a name="query-namespace-properties"></a>查詢的命名空間屬性
+### <a name="query-namespace-properties"></a>查詢命名空間屬性
 
-此範例示範如何使用主機計算網路服務 API 來查詢主機計算網路命名空間屬性
+此範例說明如何使用主機計算網路服務 API 來查詢主機計算網路命名空間屬性
 
 ```C++
     unique_hcn_namespace handle;
@@ -568,7 +568,7 @@ void CreateHcnNamespace()
 
 ### <a name="create-an-hcn-load-balancer"></a>建立 HCN 負載平衡器
 
-此範例示範如何使用主機計算網路服務 API 來建立可用來跨負載平衡端點計算主機上的主機計算網路負載平衡器。
+這個範例會示範如何使用主機計算網路服務 API, 在主機上建立主機計算網路 Load Balancer, 以用來在計算之間平衡端點的負載。
 
 ```C++
 using unique_hcn_loadbalancer = wil::unique_any< 
@@ -643,7 +643,7 @@ void CreateHcnLoadBalancer()
 
 ### <a name="delete-an-hcn-load-balancer"></a>刪除 HCN 負載平衡器
 
-此範例示範如何使用主機計算網路服務 API 來刪除主機計算網路負載平衡器。
+此範例示範如何使用主機計算網路服務 API 來刪除主機計算網路平衡器。
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -660,7 +660,7 @@ void CreateHcnLoadBalancer()
 
 ### <a name="modify-an-hcn-load-balancer"></a>修改 HCN 負載平衡器
 
-此範例示範如何使用主機計算網路服務 API 來修改主控件計算網路命名空間。
+此範例說明如何使用主機計算網路服務 API 來修改主機計算網路命名空間。
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -703,9 +703,9 @@ void CreateHcnLoadBalancer()
 ```
 
 
-### <a name="enumerate-all-load-balancers"></a>列舉所有的負載平衡器
+### <a name="enumerate-all-load-balancers"></a>列舉所有負載平衡器
 
-此範例示範如何使用主機計算網路服務 API 來列舉所有主機計算網路負載平衡器。
+此範例示範如何使用主機計算網路服務 API 來列舉所有主機計算網路 Load Balancer。
 
 ```C++
     wil::unique_cotaskmem_string resultLoadBalancers;
@@ -728,7 +728,7 @@ void CreateHcnLoadBalancer()
 
 ### <a name="query-load-balancer-properties"></a>查詢負載平衡器屬性
 
-此範例示範如何使用主機計算網路服務 API 來查詢主機計算網路負載平衡器的屬性。
+此範例示範如何使用主機計算網路服務 API 來查詢主機計算網路平衡器屬性。
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -763,9 +763,9 @@ void CreateHcnLoadBalancer()
 
 ## <a name="scenario-hcn-notifications"></a>案例：HCN 通知
 
-### <a name="register-and-unregister-service-wide-notifications"></a>註冊和取消註冊整個服務的通知
+### <a name="register-and-unregister-service-wide-notifications"></a>註冊及取消註冊整個服務的通知
 
-此範例示範如何使用主機計算網路服務 API 來註冊和取消註冊整個服務的通知。 這可讓呼叫者會收到通知 （透過其在註冊期間所指定的回呼函式） 每次發生的整個服務的作業，例如新的網路建立事件。
+這個範例示範如何使用主機計算網路服務 API 來註冊和取消註冊整個服務的通知。 這可讓呼叫者在每次發生全服務作業 (例如新的網路建立事件) 時, 接收通知 (透過其在註冊期間所指定的回呼函式)。
 
 ```C++
 using unique_hcn_callback = wil::unique_any< 
@@ -834,6 +834,6 @@ void UnregisterForServiceNotifications()
 
 ## <a name="next-steps"></a>後續步驟
 
-- 深入了解[RPC 內容處理為 HCN](hcn-declaration-handles.md)。
+- 深入瞭解 HCN 的[RPC 內容控制碼](hcn-declaration-handles.md)。
 
-- 深入了解[HCN JSON 文件結構描述](hcn-json-document-schemas.md)。
+- 深入瞭解[HCN JSON 檔架構](hcn-json-document-schemas.md)。

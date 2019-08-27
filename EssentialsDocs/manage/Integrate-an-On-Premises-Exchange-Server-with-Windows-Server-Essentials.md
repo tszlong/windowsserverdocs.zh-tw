@@ -12,12 +12,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 142ae8514a6a480f8181ce193c2f437e2f286e2d
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 689f293acf1e87e135f6f8cf5c7eac2a7d8033b9
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914601"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031512"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>整合內部部署 Exchange Server 與 Windows Server Essentials
 
@@ -30,7 +30,7 @@ ms.locfileid: "68914601"
 > [!NOTE]
 >  Exchange Server 2010 不支援在執行 Windows Server 2012 的電腦上進行安裝。  
 
-## <a name="prerequisites"></a>先決條件  
+## <a name="prerequisites"></a>必要條件  
  在 Windows Server Essentials 網路上安裝 Exchange Server 之前，請確定您已完成本節所述的工作。  
 
 -   [設定執行 Windows Server Essentials 的伺服器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)  
@@ -364,18 +364,18 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
    - 如果您執行初始狀態安裝，請執行下列命令：  
 
-      **: Arrconfig config-cert** _ **-主機名稱** _  
+      **: Arrconfig config-cert**_憑證檔案的路徑_ **-主機名稱**_Exchange Server 的主機名稱_  
 
      > [!NOTE]
-     >  例如, **: Arrconfig config-cert** _ **-主機名稱** _  
+     >  例如, **: Arrconfig config-cert**_c:\temp\certificate.pfx_ **-主機名稱**_mail.contoso.com_  
      > 
      >  用受憑證保護的網域名稱取代 *mail.contoso.com* 。  
 
    - 如果您是從 Windows Small Business Server 進行移轉，執行下列命令：  
 
-      **: Arrconfig config-cert** _ **-主機名稱** _ **-targetserver** _  
+      **: Arrconfig config-cert**_憑證檔案的路徑_ **-主機名稱**_Exchange Server 的主機名稱_ **-targetserver**_Exchange server 的伺服器名稱_  
 
-      例如, **: Arrconfig config-cert** _ **-主機名稱** _ * *-targetserver * * _ExchangeSvr_  
+      例如, **: Arrconfig config-cert**_c:\temp\certificate.pfx_ **-主機名稱**_mail.contoso.com_ **-targetserver** _ExchangeSvr_  
 
       用您的網域名稱取代 *mail.contoso.com* 。 用執行 Exchange Server 的伺服器名稱取代 *ExchangeSvr*。  
 
