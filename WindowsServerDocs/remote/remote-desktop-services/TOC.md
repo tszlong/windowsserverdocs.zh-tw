@@ -64,9 +64,35 @@
 ### [使用 Windows Server 上的 PowerShell 自訂 RDS 標題「工作資源」](rds-work-resources.md)
 ### [使用效能計數器來診斷應用程式效能](rds-rdsh-performance-counters.md)
 
-## [其他遠端桌面支援](rds-get-support.md)
-## [遠端桌面用戶端](clients/remote-desktop-clients.md)
-### 遠端桌面的已知問題
+## 存取您的遠端桌面資源
+### [可用的遠端桌面用戶端](clients/remote-desktop-clients.md)
+### Windows Store 用戶端
+#### [ Windows Store 用戶端](clients/windows.md)
+#### [Windows Store 用戶端中的新功能](clients/windows-whatsnew.md)
+### Android 用戶端
+#### [開始使用 Android 用戶端](clients/remote-desktop-android.md)
+#### [Android 用戶端中的新功能](clients/android-whatsnew.md)
+### iOS 用戶端
+#### [開始使用 iOS 用戶端](clients/remote-desktop-ios.md)
+#### [iOS 用戶端中的新功能](clients/ios-whatsnew.md)
+### macOS 用戶端
+#### [開始使用 macOS 用戶端](clients/remote-desktop-mac.md)
+#### [ 用戶端中的新功能](clients/mac-whatsnew.md)
+### 網頁用戶端
+#### [開始使用 Web 用戶端](clients/remote-desktop-web-client.md)
+#### [Web 用戶端中的新功能](clients/web-client-whatsnew.md)
+### 設定您電腦的遠端桌面
+#### [支援的電腦](clients/remote-desktop-supported-config.md)
+#### [授權您電腦的遠端桌面存取](clients/remote-desktop-allow-access.md)
+#### [授與從網路外部存取電腦的權限](clients/remote-desktop-allow-outside-access.md)
+#### [變更電腦上的 RD 接聽連接埠](clients/change-listening-port.md)
+### 進階資訊
+#### [哪個用戶端最適合您？](clients/remote-desktop-app-compare.md)
+#### [遠端桌面 RDP 檔案設定](clients/rdp-files.md)
+#### [遠端桌面 URI 配置](clients/remote-desktop-uri.md)
+#### [遠端桌面用戶端常見問題集](clients/remote-desktop-client-faq.md)
+#### [受控應用程式和桌面的隱私權設定](clients/remote-privacy-settings.md)
+### 已知問題
 #### [針對一般遠端桌面連線進行疑難排解](troubleshoot/rdp-error-general-troubleshooting.md)
 #### [用戶端無法連線並收到「類別未登錄」錯誤](troubleshoot/rdp-error-class-not-registered.md)
 #### [用戶端無法連線並看到「沒有可用的授權」錯誤](troubleshoot/rdp-error-no-licenses-available.md)
@@ -75,29 +101,5 @@
 #### [遠端桌面用戶端連線中斷，且無法重新連線至同一工作階段](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [遠端膝上型電腦從無線網路中斷連線](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [遠端桌面連線期間效能不佳或應用程式發生問題](troubleshoot/poor-performance-or-application-problems.md)
-### 一般資訊
-#### [哪個用戶端最適合您？](clients/remote-desktop-app-compare.md)
-#### [遠端桌面 RDP 檔案設定](clients/rdp-files.md)
-#### [遠端桌面 URI 配置](clients/remote-desktop-uri.md)
-#### [遠端桌面用戶端常見問題集](clients/remote-desktop-client-faq.md)
-#### [受控應用程式和桌面的隱私權設定](clients/remote-privacy-settings.md)
-### 適用於 Windows 的遠端桌面用戶端
-#### [入門](clients/windows.md)
-#### [Windows 用戶端中的新功能](clients/windows-whatsnew.md)
-### 適用於 Android 的遠端桌面用戶端
-#### [入門](clients/remote-desktop-android.md)
-#### [Android 用戶端中的新功能](clients/android-whatsnew.md)
-### 適用於 iOS 的遠端桌面用戶端
-#### [入門](clients/remote-desktop-ios.md)
-#### [iOS 用戶端中的新功能](clients/ios-whatsnew.md)
-### 適用於 Mac 的遠端桌面用戶端
-#### [入門](clients/remote-desktop-mac.md)
-#### [MacOS 用戶端中的新功能](clients/mac-whatsnew.md)
-### 遠端桌面 Web 用戶端
-#### [存取遠端桌面 Web 用戶端](clients/remote-desktop-web-client.md)
-#### [Web 用戶端中的新功能](clients/web-client-whatsnew.md)
-### 設定您電腦的遠端桌面
-#### [支援的電腦](clients/remote-desktop-supported-config.md)
-#### [授權您電腦的遠端桌面存取](clients/remote-desktop-allow-access.md)
-#### [授與從網路外部存取電腦的權限](clients/remote-desktop-allow-outside-access.md)
-#### [變更電腦上的 RD 接聽連接埠](clients/change-listening-port.md)
+
+## [其他資源](rds-get-support.md)
