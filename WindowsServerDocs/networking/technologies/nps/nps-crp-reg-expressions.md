@@ -1,34 +1,34 @@
 ---
 title: 在 NPS 中使用規則運算式
-description: 本主題說明如何在 Windows Server 2016 的 NPS 中使用正則運算式來進行模式比對。 您可以使用此語法來指定網路原則屬性和 RADIUS 領域的條件。
+description: 本主題說明如何在 Windows Server 的 NPS 中使用正則運算式來進行模式比對。 您可以使用此語法來指定網路原則屬性和 RADIUS 領域的條件。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 34488a7f1a9d8ccd04de0aae35cbe98ec162c93f
-ms.sourcegitcommit: 107b801af9603be9268a8f459478e212319f7f06
+ms.author: jgerend
+author: jasongerend
+msdate: 08/16/2019
+ms.openlocfilehash: 76615fcccfe06333a76f872b52d2e88182fd60e5
+ms.sourcegitcommit: e58e1646ffd75d4a89576d967b2dbbbb84764303
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68995268"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "69584794"
 ---
 # <a name="use-regular-expressions-in-nps"></a>在 NPS 中使用規則運算式
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
-本主題說明如何在 Windows Server 2016 的 NPS 中使用正則運算式來進行模式比對。 您可以使用此語法來指定網路原則屬性和 RADIUS 領域的條件。
+本主題說明如何在 Windows Server 的 NPS 中使用正則運算式來進行模式比對。 您可以使用此語法來指定網路原則屬性和 RADIUS 領域的條件。
 
 ## <a name="pattern-matching-reference"></a>模式比對參考
 
-建立具有模式比對語法的正則運算式時, 您可以使用下表做為參考來源。
+建立具有模式比對語法的正則運算式時, 您可以使用下表做為參考來源。 請注意, 正則運算式模式通常是以正斜線 (/) 括住。
 
-
-|  字母  |                                                                                 描述                                                                                  |                                                                 範例                                                                 |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-|     `\`|                                                             將下一個字元標示為符合的字元。                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|  字母  |  描述  |   範例                                                                 |
+| ----------- | ------------- | ------------------------------------------------------------------------  |
+|     `\ `     | 表示後面的字元是特殊字元, 或應該逐字解讀。  | `/n/ matches the character "n" while the sequence /\n/ matches a line feed or newline character.`  |
 |     `^`     |                                                                 符合輸入或行的開頭。                                                                  |                                                                 &nbsp;                                                                  |
 |     `$`     |                                                                    符合輸入或行的結尾。                                                                     |                                                                 &nbsp;                                                                  |
 |     `*`     |                                                             比對前一個字元零次或多次。                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |
@@ -90,7 +90,7 @@ ms.locfileid: "68995268"
 
 
 
-**以_specific_domain\user_取代*domain\user***
+**以_specific_domain\user_取代_domain\user_**
 
 - 尋找`(.*)\\(.*)`
 
