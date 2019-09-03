@@ -13,12 +13,12 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc3236d44146015564fa593aaf8a20d3bfa42ff
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: b30aae3f745f7ed9d40a9f4884205d9ca01f0eef
+ms.sourcegitcommit: f62a17bf72a772ee46fe807a5a482923e67ae7e7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546462"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060305"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
@@ -40,10 +40,9 @@ ms.locfileid: "69546462"
 | desktop size id:i:value | 從一組預先定義的選項指定遠端工作階段桌面尺寸。 如果指定了 desktopheight 或 desktopwidth，則會覆寫此設定。| \- 0：640×480<br>- 1：800×600<br>- 2：1024×768<br>- 3：1280×1024<br>- 4：1600×1200 | 0 | x | x | x |
 | desktopheight:i:value | 決定當您使用遠端桌面連線進行連線時，遠端桌面上的解析度高度 (以像素為單位)。 此設定相當於 RDC [選項] 下 [顯示] 索引標籤上 [顯示器設定] 滑桿中的選項。 | 介於 200 到 2048 之間的數值 | 預設值會設定為本機電腦上的解析度 | x | x | x |
 | desktopwidth:i:value | 決定當您使用遠端桌面連線進行連線時，遠端桌面上的解析度寬度 (以像素為單位)。 此設定相當於 RDC [選項] 下 [顯示] 索引標籤上 [顯示器設定] 滑桿中的選項。 | 介於 200 到 4096 之間的數值 | 預設值會設定為本機電腦上的解析度 | x | x | x |
-| disableclipboardredirection:i:value | 決定當連線到遠端電腦時是否啟用 [剪貼簿] 重新導向。 | - 0：啟用 [剪貼簿] 重新導向<br>- 1：不啟用 [剪貼簿] 重新導向 | x | x | x |
 | disableconnectionsharing:i:value | 決定當啟動 RemoteApp 或桌面時，遠端桌面用戶端是否會重新連線到任何現有開啟連線或起始新的連線 | - 0：重新連線到任何現有的工作階段<br>- 1：起始新的連線 | 0 | x | x | x |
 | domain:s:value | 指定登入遠端電腦時，用於登入的使用者帳戶所在網域名稱。 | 有效的網域名稱，例如 "CONTOSO" | 沒有預設值 | x | x | x |
-| drivestoredirect:s:value | 決定用戶端電腦上要重新導向至遠端工作階段以供使用的本機磁碟機。 | 未指定值：不要重新導向任何磁碟機<br>*：重新導向所有磁碟機，包括稍後連接的磁碟機<br> DynamicDrives：重新導向稍後連接的任何磁碟機<br>一或多個磁碟機的磁碟機和標籤：重新導向指定的磁碟機| 未指定值：不要重新導向任何磁碟機 | x | x    | |
+| drivestoredirect:s:value | 決定用戶端電腦上要重新導向至遠端工作階段以供使用的本機磁碟機。 | - 未指定值：不要重新導向任何磁碟機<br>- * :重新導向所有磁碟機，包括稍後連接的磁碟機<br>- DynamicDrives：重新導向稍後連接的任何磁碟機<br>- 一或多個磁碟機的磁碟機和標籤 (例如 "drivestoredirect:s:C:;E:;")：重新導向指定的磁碟機| 未指定值：不要重新導向任何磁碟機 | x | x    | |
 | enablecredsspsupport:i:value | 決定 RDP 是否會使用認證安全性支援提供者 (CredSSP) 進行驗證 (如果有的話)。 | - 0：RDP 不會使用 CredSSP，即使作業系統支援 CredSSP 也一樣<br>- 1：如果作業系統支援 CredSSP，則 RDP 會使用 CredSSP | 1 | x | x | |
 | 編碼重新導向的影片擷取: i: 值 | 啟用或停用重新導向影片的編碼。 | - 0：停用重新導向影片的編碼<br>- 1：啟用重新導向影片的編碼 | 1 | x | x | x |
 | full address:s:value | 此設定指定您想要連線的遠端電腦名稱或 IP 位址 | 有效的電腦名稱、IPv4 位址或 IPv6 位址。 | | x | x | x |
@@ -53,7 +52,7 @@ ms.locfileid: "69546462"
 | gatewayusagemethod:i:value | 指定何時使用 RD 閘道伺服器 | - 0：不要使用 RD 閘道伺服器<br>- 1：一律使用 RD 閘道伺服器<br>- 2：如果無法建立與 RD 工作階段主機的直接連線，請使用 RD 閘道伺服器<br>- 3：使用預設的 RD 閘道伺服器設定<br>- 4：不要使用 RD 閘道，略過本機位址的伺服器<br>將此屬性值設定為 0 或 4 會有同等效果，但將此屬性設定為 4 會啟用略過本機位址的選項。 | | x | x | x |
 | networkautodetect:i:value | 決定是否使用自動網路頻寬偵測。 需要設定選項 bandwidthautodetect 並與連線類型 7 相互關聯。 | - 0：不要使用自動網路頻寬偵測<br> - 1：使用自動網路頻寬偵測 | 1 | x ||x|
 | promptcredentialonce:i:value | 決定是否儲存使用者的認證以同時用於 RD 閘道和遠端電腦。|- 0：遠端工作階段不會使用相同的認證<br>- 1：遠端工作階段會使用相同的認證|1|x|x||
-| redirectclipboard:i:value | 決定是否將本機電腦上的剪貼簿重新導向至遠端工作階段以供使用。 | - 0：無法在遠端工作階段中使用本機電腦上的剪貼簿<br>- 1：可以在遠端工作階段中使用本機電腦上的剪貼簿|1|x|x|x|
+| redirectclipboard:i:value | 決定是否啟用剪貼簿重新導向。 | - 0：無法在遠端工作階段中使用本機電腦上的剪貼簿<br>- 1：可以在遠端工作階段中使用本機電腦上的剪貼簿|1|x|x|x|
 | 重新導向影片擷取編碼品質:i:value | 控制編碼影片的品質。 | - 0：高度壓縮影片。 當有很多動作時，品質可能會受影響 <br>- 1：中度壓縮<br>- 2：高圖片品質的低度壓縮影片 | 0 | x | x | x |
 | redirectprinters:i:value | 決定當您使用遠端桌面連線來連線到遠端電腦時，用戶端電腦上設定的印表機是否要重新導向至遠端工作階段以供使用。 | - 0：無法在遠端工作階段中使用本機電腦上的印表機<br>- 1：可以在遠端工作階段中使用本機電腦上的印表機|1|x|x|x|
 | redirectsmartcards:i:value | 決定當您連線到遠端電腦時，用戶端電腦上的智慧卡裝置是否要重新導向至遠端工作階段以供使用。 |- 0：無法在遠端工作階段中使用本機電腦上的智慧卡裝置<br>- 1：可以在遠端工作階段中使用本機電腦上的智慧卡裝置|1|x|x||

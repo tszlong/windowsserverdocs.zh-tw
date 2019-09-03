@@ -1,5 +1,5 @@
 ---
-title: 遠端桌面 Web 用戶端的新功能
+title: Web 用戶端中的新功能
 description: 了解遠端桌面 Web 用戶端最新的變更
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -11,16 +11,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/20/2019
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be9b05da1e78cc54e12254f43d0f44f7ff65c5d
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4eaa9a187b4a8f7879cabf15724bfcfe3f625939
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804878"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150950"
 ---
-# <a name="whats-new-for-the-remote-desktop-web-client"></a>遠端桌面 Web 用戶端的新功能
+# <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
 我們會定期更新[遠端桌面 Web 用戶端](remote-desktop-web-client.md)，進而新增功能並修正問題。 查看以下最新的更新。
 
@@ -93,7 +93,7 @@ ms.locfileid: "66804878"
 ## <a name="updates-for-version-081"></a>0\.8.1 版的更新
 *發佈日期：05/17/2018*
 
-- 解決 CVE-2018-0886 中所述的 CredSSP 加密 Oracle 修復的更新。
+- 解決 CVE-2018-0886 中所述 CredSSP 加密 Oracle 修復的更新。
 - 已修正啟用列印時，部分語言連線失敗的問題。
 - 已改進閘道不是部署一部分時的錯誤訊息。
 - 已新增 [說明]  和 [意見反應]  選項。
