@@ -8,23 +8,23 @@ ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 7ee5c57839f32d71053e983fc14f76c481236779
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8283b87e9505b1d3f47ddc823016fbcc7c0c29e6
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884159"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867044"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>對磁碟機韌體更新進行疑難排解
 
->適用於：Windows 10、windows Server （半年通道）
+>適用於：Windows 10、Windows Server （半年通道）、
 
 Windows 10 版本 1703 和更新版本，以及 Windows Server (半年度管道) 包含可更新已使用韌體升級 AQ (其他辨識符號) 透過 PowerShell 取得認證之 HDD 和 SSD 韌體的功能。
 
 您可以在下列位置找到更多有關此功能的資訊：
 
-- [更新 Windows Server 2016 中的磁碟機韌體](update-firmware.md)
-- [更新而不需要停機的磁碟機韌體，儲存空間直接存取](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [更新 Windows Server 2016 中的磁片磁碟機固件](update-firmware.md)
+- [更新儲存空間直接存取的磁片磁碟機固件而不停機](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 韌體更新可能會因為各種原因而失敗。 本文章的目的是要協助您進行進階疑難排解。
 
@@ -41,7 +41,7 @@ Windows 10 版本 1703 和更新版本，以及 Windows Server (半年度管道)
 下列各節根據使用的是 Microsoft 還是協力廠商的驅動程式，概述疑難排解資訊。
 
 ## <a name="identifying-inappropriate-hardware"></a>識別不適當的硬體
-識別裝置是否支援正確命令集最快速方法就是，直接啟動 PowerShell，並將磁碟的象徵 PhysicalDisk 物件傳遞至 Get-StorageFirmwareInfo Cmdlet。 以下是範例：
+識別裝置是否支援正確命令集最快速方法就是，直接啟動 PowerShell，並將磁碟的象徵 PhysicalDisk 物件傳遞至 Get-StorageFirmwareInfo Cmdlet。 請看以下範例：
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -64,7 +64,7 @@ SupportsUpdate 欄位 (至少 SATA 和 NVMe 裝置的這個欄位) 將會指出�
 
 要驗證 SAS 裝置是否支援所需的命令集，有兩個方式可以選擇︰
 1.  透過 Update-StorageFirmware Cmdlet，以適當的韌體映像來試試看，或者
-2.  請參閱 Windows Server 目錄來識別哪些 SAS 裝置已成功獲得 FW 更新 AQ （ https://www.windowsservercatalog.com/)
+2.  請參閱 Windows Server 目錄，以識別哪些 SAS 裝置已成功取得 FW 更新 AQ （ https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>修復選項
 如果您測試中的特定裝置不支援適當命令集，請向廠商查詢以了解是否有更新的韌體提供所需的命令集，或是查閱 Windows Server 目錄以確認裝置是否有實作適當命令集的來源。
@@ -119,12 +119,12 @@ CdbBytes    3B0E0000000001000000
 NumberOfRetriesDone 0
 ```
 
-通道中的 ETW 事件 507 顯示 SCSI SRB 要求失敗，並提供其他資訊「SenseKey 為 '5' (要求無效)」和「AdditionalSense 資訊為 '36' (CDB 中有不正確的欄位)」。
+來自通道的 ETW 事件507顯示 SCSI SRB 要求失敗，並提供 SenseKey 為 ' 5 ' （不合法的要求）的其他資訊，而且 AdditionalSense 資訊是 ' 36 ' （CDB 中不合法的欄位）。
 
    > [!Note]
    > 此資訊是由前述 Miniport 提供，而該資訊的正確性取決於 Miniport 驅動程式的實作和複雜性。
 
-如果 Miniport 驅動程式沒有釐清錯誤碼之間的分別，不同的錯誤條件有可能會顯示相同的錯誤碼。  例如，嘗試透過 SAS HBA 將無效的韌體映像下載到 SATA 裝置 (預期此裝置會失敗) 可能會轉譯成相同的失敗碼。
+如果 Miniport 驅動程式沒有釐清錯誤碼之間的分別，不同的錯誤條件有可能會顯示相同的錯誤碼。 例如，嘗試透過 SAS HBA 將無效的韌體映像下載到 SATA 裝置 (預期此裝置會失敗) 可能會轉譯成相同的失敗碼。
 
 在通訊協定為混合式且發生轉譯 (亦即 SATA 後置 SAS) 的情況下，最好要測試直接與 SATA 控制連接的 SATA 裝置，以排除其有潛在問題。
 
@@ -134,7 +134,7 @@ NumberOfRetriesDone 0
 ## <a name="additional-troubleshooting-with-microsoft-drivers-satanvme"></a>Microsoft 驅動程式 (SATA/NVMe) 其他疑難排解
 使用 Windows 原生驅動程式 (例如 StorAHCI.sys 或 StorNVMe.sys) 來支援存放裝置時，可以在韌體更新作業期間取得有關可能失敗情況的其他資訊。
 
-除了「ClassPnP 操作」通道以外，StorAHCI 和 StorNVMe 會在下列 ETW 通道中記錄裝置的通訊協定特定傳回碼：
+除了 ClassPnP 操作通道之外，StorAHCI 和 StorNVMe 會在下列 ETW 通道中記錄裝置的通訊協定特定傳回碼：
 
 事件檢視器 - 應用程式及服務記錄檔 - Microsoft - Windows - StorDiag - **Microsoft-Windows-存放裝置-StorPort/診斷**
 
@@ -142,7 +142,7 @@ NumberOfRetriesDone 0
 
 若要收集這些進階記錄檔項目，請啟用記錄檔、重現韌體更新失敗，並儲存診斷記錄檔。
 
-下載映像無效，因此，以下是範例 SATA 裝置失敗上的韌體更新 (事件識別碼：258):
+以下是 SATA 裝置上的固件更新範例失敗，因為要下載的映射無效（事件識別碼：258）：
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 上述事件的參數值 2 至 6 包含詳細的裝置資訊。 我們在這裡看到了各種 ATA 暫存器值。 ATA ACS 規格可以用來解碼下面的下載微碼命令失敗值：
-- 傳回碼：0 (0000 0000) (n/A-沒有任何意義，因為沒有承載的傳輸)
-- 功能：15 (0000 1111) （bit 1 設為 '1'，並指出 [中止]）
-- SectorCount:0 (0000 0000) (N/A)
-- DriveHead:160 (1010 0000) （n/A – 只有已過時的位元會設定）
-- 命令：146 (1001 0010) （bit 1 設為 '1' 表示的有意義的資料可用性）
+- 傳回碼：0（0000 0000）（N/A-無意義，因為未傳輸任何承載）
+- 功能：15（0000 1111）（Bit 1 已設定為 ' 1 '，表示「中止」）
+- SectorCount:0（0000 0000）（N/A）
+- DriveHead:160（1010 0000）（N/A –只設定過時的位）
+- 命令146（1001 0010）（Bit 1 設定為 ' 1 '，表示有意義資料的可用性）
 
 這就是說，韌體更新作業已由裝置中止。
 

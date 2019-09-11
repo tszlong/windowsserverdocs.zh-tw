@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: ad08d8716819773484fc1d1fbe3cc79dd203c498
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 681e07b85af603d11295bf1ca2a08f0eb7181725
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590565"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865246"
 ---
 # <a name="known-issues-with-storage-replica"></a>儲存體複本的已知問題
 
@@ -81,7 +81,7 @@ SC config storqosflt start= disabled
 
 嘗試使用 `Test-SRTopology` 時，您會收到下列其中一個錯誤：  
 
-**錯誤範例 1:**
+**錯誤範例1：**
 
     WARNING: Invalid value entered for target computer name: sr-srv03. Test-SrTopology cmdlet does not accept IP address as  
     input for target computer name parameter. NetBIOS names and fully qualified domain names are acceptable inputs  
@@ -96,11 +96,11 @@ SC config storqosflt start= disabled
         + CategoryInfo          : InvalidArgument: (:) [Test-SRTopology], Exception  
         + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand  
 
-**錯誤範例 2:**
+**錯誤範例2：**
 
     WARNING: Invalid value entered for source computer name
 
-**錯誤範例 3:**
+**錯誤範例3：**
 
     The specified volume cannot be found G: cannot be found on computer SRCLUSTERNODE1
 
@@ -146,7 +146,7 @@ SC config storqosflt start= disabled
 
 即使您使用 `Set-SRGroup -Name rg01 -AllowVolumeResize $TRUE` 正確地在來源伺服器上啟用磁碟區調整大小，則會發生這個錯誤。 
 
-此問題已在 Windows 10 版本 1607 (年度更新版) 和 Windows Server 2016 的累積更新中獲得修正:2016年12月9日 (KB3201845)。 
+此問題已在 Windows 10 版本1607（年度更新版）和 Windows Server 2016 的累積更新中獲得修正：2016年12月9日（KB3201845）。 
 
 ## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-step"></a>由於遺失步驟，嘗試增加複寫的磁碟區失敗
 
@@ -208,11 +208,11 @@ SC config storqosflt start= disabled
 
 這起因於 Windows Server 2016 中內建的行為。 使用 `Set-SRPartnership` 移動非同步延伸叢集中的這些 PDR 磁碟。  
 
-Windows Server 版本1709中的這項行為已變更, 可根據客戶的意見反應, 使用非同步複寫來進行手動和自動容錯移轉。
+Windows Server 版本1709中的這項行為已變更，可根據客戶的意見反應，使用非同步複寫來進行手動和自動容錯移轉。
 
 ## <a name="attempting-to-add-disks-to-a-two-node-asymmetric-cluster-returns-no-disks-suitable-for-cluster-disks-found"></a>嘗試將磁碟新增至兩個節點的非對稱式叢集會傳回「找不到適用於叢集磁碟的磁碟」
 
-嘗試佈建僅具兩個節點的叢集時，在新增儲存體複本延展複寫前，您嘗試將第二個站台中的磁碟新增至可用的磁碟。 您會收到下列錯誤:
+嘗試佈建僅具兩個節點的叢集時，在新增儲存體複本延展複寫前，您嘗試將第二個站台中的磁碟新增至可用的磁碟。 您會收到下列錯誤：
 
     "No disks suitable for cluster disks found. For diagnostic information about disks available to the cluster, use the Validate a Configuration Wizard to run Storage tests." 
 
@@ -356,7 +356,7 @@ Windows Server 版本1709中的這項行為已變更, 可根據客戶的意見�
 如果 ClusterFunctionalLevel = 9，表示要在此節點實作儲存體複本需要 Windows 2016 ClusterFunctionalLevel 版本。
 如果 ClusterFunctionalLevel 不是 9，ClusterFunctionalLevel 將需要進行更新，才能在此節點實作儲存體複本。
 
-若要解決此問題, 請執行 PowerShell Cmdlet 來提高叢集功能等級:[更新-ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)
+若要解決此問題，請執行 PowerShell Cmdlet 來提高叢集功能等級：[更新-ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)
 
 ## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>每個複寫的磁碟區都有小型不明磁碟分割在 DISKMGMT 中列出
 
@@ -368,27 +368,27 @@ Windows Server 版本1709中的這項行為已變更, 可根據客戶的意見�
 
 若要檢視詳細資料，請使用 DISKPART 工具或 Get-Partition Cmdlet。 這些磁碟分割的 GPT 類型將會是 `558d43c5-a1ac-43c0-aac8-d1472b2923d1`。
 
-## <a name="a-storage-replica-node-hangs-when-creating-snapshots"></a>建立快照集時, 儲存體複本節點停止回應
+## <a name="a-storage-replica-node-hangs-when-creating-snapshots"></a>建立快照集時，儲存體複本節點停止回應
 
-建立 VSS 快照集 (透過備份、VSSADMIN 等等) 時, 儲存體複本節點會停止回應, 而您必須強制重新開機節點以進行復原。 沒有錯誤, 只是伺服器的硬停止回應。
+建立 VSS 快照集（透過備份、VSSADMIN 等等）時，儲存體複本節點會停止回應，而您必須強制重新開機節點以進行復原。 沒有錯誤，只是伺服器的硬停止回應。
 
-當您建立記錄檔磁片區的 VSS 快照集時, 就會發生此問題。 根本原因是 VSS 的舊版設計層面, 而不是儲存體複本。 當您建立儲存體複本記錄磁片區的快照集時, 所產生的行為是 VSS i/o 佇列機制會使伺服器鎖死。
+當您建立記錄檔磁片區的 VSS 快照集時，就會發生此問題。 根本原因是 VSS 的舊版設計層面，而不是儲存體複本。 當您建立儲存體複本記錄磁片區的快照集時，所產生的行為是 VSS i/o 佇列機制會使伺服器鎖死。
 
-若要避免此行為, 請勿將儲存體複本記錄磁片區快照集。 不需要快照儲存體複本記錄檔磁片區, 因為這些記錄檔無法還原。 此外, 記錄磁片區絕對不應包含任何其他工作負載, 因此通常不需要任何快照集。
+若要避免此行為，請勿將儲存體複本記錄磁片區快照集。 不需要快照儲存體複本記錄檔磁片區，因為這些記錄檔無法還原。 此外，記錄磁片區絕對不應包含任何其他工作負載，因此通常不需要任何快照集。
 
-## <a name="high-io-latency-increase-when-using-storage-spaces-direct-with-storage-replica"></a>搭配儲存體複本使用儲存空間直接存取時, 高 IO 延遲增加
+## <a name="high-io-latency-increase-when-using-storage-spaces-direct-with-storage-replica"></a>搭配儲存體複本使用儲存空間直接存取時，高 IO 延遲增加
 
-使用具有 NVME 或 SSD 快取的儲存空間直接存取時, 您會在設定儲存空間直接存取叢集之間的儲存體複本複寫時看到大於預期的延遲增加。 當您在效能 + 容量設定中使用 NVME 和 SSD, 而且沒有 HDD 層或容量層級時, 延遲變更的比例會高於您所看到的內容。
+使用具有 NVME 或 SSD 快取的儲存空間直接存取時，您會在設定儲存空間直接存取叢集之間的儲存體複本複寫時看到大於預期的延遲增加。 當您在效能 + 容量設定中使用 NVME 和 SSD，而且沒有 HDD 層或容量層級時，延遲變更的比例會高於您所看到的內容。
 
-此問題發生的原因是儲存體複本的記錄機制內的架構限制與較慢的媒體相比, 與 NVME 的極低延遲相較。 使用儲存空間直接存取快取時, 儲存體複本記錄的所有 i/o (以及應用程式的所有最近讀取/寫入 IO) 都會出現在快取中, 而且永遠不會在效能或容量層。 這表示所有儲存體複本活動都是在相同的速度媒體上執行-這是支援的設定, 但 https://aka.ms/srfaq 不建議使用 (如需記錄建議, 請參閱)。 
+此問題發生的原因是儲存體複本的記錄機制內的架構限制與較慢的媒體相比，與 NVME 的極低延遲相較。 使用儲存空間直接存取快取時，儲存體複本記錄的所有 i/o （以及應用程式的所有最近讀取/寫入 IO）都會出現在快取中，而且永遠不會在效能或容量層。 這表示所有儲存體複本活動都是在相同的速度媒體上執行-這是支援的設定，但 https://aka.ms/srfaq 不建議使用（如需記錄建議，請參閱）。 
 
-搭配 Hdd 使用儲存空間直接存取時, 您無法停用或避免快取。 因應措施是, 如果只使用 SSD 和 NVME, 您可以只設定效能和容量層。 如果使用該設定, 而且只將 SR 記錄放在效能層, 而只將其服務在容量層上的資料磁片區, 您就可以避免上述的高延遲問題。 這種做法可以混合使用更快速且更慢的 Ssd, 而且沒有 NVME。
+搭配 Hdd 使用儲存空間直接存取時，您無法停用或避免快取。 因應措施是，如果只使用 SSD 和 NVME，您可以只設定效能和容量層。 如果使用該設定，而且只將 SR 記錄放在效能層，而只將其服務在容量層上的資料磁片區，您就可以避免上述的高延遲問題。 這種做法可以混合使用更快速且更慢的 Ssd，而且沒有 NVME。
 
-這種因應措施並非理想, 而且有些客戶可能無法使用它。 儲存體複本小組正致力於優化和更新的記錄機制, 以供未來減少這些人為的瓶頸。 此 v1.1 記錄檔第一次變成可在 Windows Server 2019 中使用, 而其改善的效能則在[伺服器存放裝置的 Blog](https://blogs.technet.microsoft.com/filecab/2018/12/13/chelsio-rdma-and-storage-replica-perf-on-windows-server-2019-are-💯/)中有所說明。
+這種因應措施並非理想，而且有些客戶可能無法使用它。 儲存體複本小組正致力於優化和更新的記錄機制，以供未來減少這些人為的瓶頸。 此 v1.1 記錄檔第一次變成可在 Windows Server 2019 中使用，而其改善的效能則在[伺服器存放裝置的 Blog](https://blogs.technet.microsoft.com/filecab/2018/12/13/chelsio-rdma-and-storage-replica-perf-on-windows-server-2019-are-💯/)中有所說明。
 
 ## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>在兩個叢集之間執行 Test-srtopology 時發生「找不到檔案」錯誤
 
-在兩個叢集和其 CSV 路徑之間執行 Test-srtopology 時, 會失敗, 並出現錯誤: 
+在兩個叢集和其 CSV 路徑之間執行 Test-srtopology 時，會失敗，並出現錯誤： 
 
     PS C:\Windows\system32> Test-SRTopology -SourceComputerName NedClusterA -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName NedClusterB -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 1 -ResultPath C:\Temp
 
@@ -411,11 +411,11 @@ Windows Server 版本1709中的這項行為已變更, 可根據客戶的意見�
     + CategoryInfo          : ObjectNotFound: (:) [Test-SRTopology], FileNotFoundException
     + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand 
 
-這是由 Windows Server 2016 中已知的程式碼瑕疵所造成。 此問題先在 Windows Server、版本1709和相關聯的 RSAT 工具中修正。 若要進行舊版解析, 請洽詢 Microsoft 支援服務並要求將更新。 尚無解決的方法。
+這是由 Windows Server 2016 中已知的程式碼瑕疵所造成。 此問題先在 Windows Server、版本1709和相關聯的 RSAT 工具中修正。 若要進行舊版解析，請洽詢 Microsoft 支援服務並要求將更新。 尚無解決的方法。
 
 ## <a name="error-specified-volume-could-not-be-found-when-running-test-srtopology-between-two-clusters"></a>在兩個叢集之間執行 Test-srtopology 時發生「找不到指定的磁片區」錯誤
 
-在兩個叢集和其 CSV 路徑之間執行 Test-srtopology 時, 會失敗, 並出現錯誤:
+在兩個叢集和其 CSV 路徑之間執行 Test-srtopology 時，會失敗，並出現錯誤：
 
     PS C:\> Test-SRTopology -SourceComputerName RRN44-14-09 -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName RRN44-14-13 -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 30 -ResultPath c:\report
 
@@ -426,23 +426,23 @@ Windows Server 版本1709中的這項行為已變更, 可根據客戶的意見�
         + CategoryInfo          : ObjectNotFound: (:) [Test-SRTopology], Exception
         + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
 
-將來源節點 CSV 指定為來源磁片區時, 您必須選取擁有 CSV 的節點。 您可以將 CSV 移至指定的節點, 或變更您在中`-SourceComputerName`指定的節點名稱。 此錯誤在 Windows Server 2019 中收到改良的訊息。
+將來源節點 CSV 指定為來源磁片區時，您必須選取擁有 CSV 的節點。 您可以將 CSV 移至指定的節點，或變更您在中`-SourceComputerName`指定的節點名稱。 此錯誤在 Windows Server 2019 中收到改良的訊息。
 
-## <a name="unable-to-access-the-data-drive-in-storage-replica-after-unexpected-reboot-when-bitlocker-is-enabled"></a>啟用 BitLocker 時, 無法在非預期的重新開機後存取儲存體複本中的資料磁片磁碟機
+## <a name="unable-to-access-the-data-drive-in-storage-replica-after-unexpected-reboot-when-bitlocker-is-enabled"></a>啟用 BitLocker 時，無法在非預期的重新開機後存取儲存體複本中的資料磁片磁碟機
 
-如果同時在兩個磁片磁碟機 (記錄磁片磁碟機和資料磁片磁碟機) 和兩個存放裝置複本磁片磁碟機上啟用 BitLocker, 當主伺服器重新開機時, 即使在從 BitLocker 解除鎖定記錄磁片磁碟機之後, 還是無法存取主要磁碟磁碟機。
+如果同時在兩個磁片磁碟機（記錄磁片磁碟機和資料磁片磁碟機）和兩個存放裝置複本磁片磁碟機上啟用 BitLocker，當主伺服器重新開機時，即使在從 BitLocker 解除鎖定記錄磁片磁碟機之後，還是無法存取主要磁碟磁碟機。
 
-這是預期的行為。 若要復原資料或存取磁片磁碟機, 您必須先解除鎖定記錄磁片磁碟機, 然後開啟 Diskmgmt.msc 來找出資料磁片磁碟機。 再次將資料磁片磁碟機離線並上線。 找出磁片磁碟機上的 BitLocker 圖示並解除鎖定磁片磁碟機。
+這是預期的行為。 若要復原資料或存取磁片磁碟機，您必須先解除鎖定記錄磁片磁碟機，然後開啟 Diskmgmt.msc 來找出資料磁片磁碟機。 再次將資料磁片磁碟機離線並上線。 找出磁片磁碟機上的 BitLocker 圖示並解除鎖定磁片磁碟機。
 
-## <a name="issue-unlocking-the-data-drive-on-secondary-server-after-breaking-the-storage-replica-partnership"></a>中斷儲存體複本合作關係之後, 將次要伺服器上的資料磁片磁碟機解除鎖定
+## <a name="issue-unlocking-the-data-drive-on-secondary-server-after-breaking-the-storage-replica-partnership"></a>中斷儲存體複本合作關係之後，將次要伺服器上的資料磁片磁碟機解除鎖定
 
-停用 SR 合作關係並移除儲存體複本之後, 如果您無法使用其各自的密碼或金鑰來解除鎖定次要伺服器的資料磁片磁碟機, 就會發生這種情況。 
+停用 SR 合作關係並移除儲存體複本之後，如果您無法使用其各自的密碼或金鑰來解除鎖定次要伺服器的資料磁片磁碟機，就會發生這種情況。 
 
 您需要使用主伺服器資料磁片磁碟機的金鑰或密碼來解除鎖定次要伺服器的資料磁片磁碟機。
 
-## <a name="test-failover-doesnt-mount-when-using-asynchronous-replication"></a>使用非同步複寫時, 不會掛接測試容錯移轉
+## <a name="test-failover-doesnt-mount-when-using-asynchronous-replication"></a>使用非同步複寫時，不會掛接測試容錯移轉
 
-執行 SRDestination 以在測試容錯移轉功能中讓目的地磁片區上線時, 它會失敗, 並出現錯誤:
+執行 SRDestination 以在測試容錯移轉功能中讓目的地磁片區上線時，它會失敗，並出現錯誤：
 
     Mount-SRDestination: Unable to mount SR group <TEST>, detailed reason: The group or resource is not in the correct state to perform the supported operation.
     At line:1 char:1
@@ -451,9 +451,9 @@ Windows Server 版本1709中的這項行為已變更, 可根據客戶的意見�
         + CategoryInfo          : NotSpecified: (MSFT WvrAdminTasks : root/Microsoft/...(MSFT WvrAdminTasks : root/Microsoft/. T_WvrAdminTasks) (Mount-SRDestination], CimException
         + FullyQua1ifiedErrorId : Windows System Error 5823, Mount-SRDestination.  
 
-如果使用同步合作關係類型, 測試容錯移轉會正常運作。
+如果使用同步合作關係類型，測試容錯移轉會正常運作。
 
-這是由 Windows Server 版本1709中的已知程式碼瑕疵所造成。 若要解決此問題, 請安裝[2018 年10月18日更新](https://support.microsoft.com/help/4462932/windows-10-update-kb4462932)。 此問題不存在於 Windows Server 2019 和 Windows Server 1809 版和更新版本中。
+這是由 Windows Server 版本1709中的已知程式碼瑕疵所造成。 若要解決此問題，請安裝[2018 年10月18日更新](https://support.microsoft.com/help/4462932/windows-10-update-kb4462932)。 此問題不存在於 Windows Server 2019 和 Windows Server 1809 版和更新版本中。
 
 ## <a name="see-also"></a>另請參閱
 

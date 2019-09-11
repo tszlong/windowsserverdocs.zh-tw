@@ -8,18 +8,18 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7b1a0672ee374f3e2d1339c43576db0e5cabdc36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 08634e05d6b7450035324e8d925f2bb9df3b007e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834759"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869583"
 ---
 # <a name="prepare-your-development-environment"></a>準備您的開發環境
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-我們來開始使用 Windows Admin Center SDK 開發擴充功能！  在本文件中，我們將討論以取得您的環境設定和執行建置和測試 Windows Admin Center 的擴充功能的程序。
+讓我們使用 Windows 管理中心 SDK 開始開發擴充功能！  在本檔中，我們將討論讓您的環境啟動並執行的程式，以建立和測試 Windows 系統管理中心的延伸模組。
 
 > [!NOTE]
 > 對 Windows Admin Center SDK 不熟悉？  深入了解 [Windows Admin Center 擴充功能](extensibility-overview.md)
@@ -30,9 +30,9 @@ ms.locfileid: "59834759"
 
 若要開始使用 SDK 進行開發，請下載並安裝下列必要條件：
 
-* [Windows Admin Center](https://aka.ms/WACDownloadPage) （GA 或預覽版的版本）
+* [Windows 系統管理中心](https://aka.ms/WACDownloadPage)（GA 或預覽版本）
 * Visual Studio 或 [Visual Studio Code](http://code.visualstudio.com)
-* [Node 封裝管理員](https://npmjs.com/get-npm)(8.12.0 或更新版本)
+* [Node 封裝管理員](https://npmjs.com/get-npm)（8.12.0 或更新版本）
 * [Nuget](https://www.nuget.org/downloads) (用於發佈擴充功能)
 
 > [!NOTE]
@@ -42,9 +42,9 @@ ms.locfileid: "59834759"
 >
 > ```msiexec /i WindowsAdminCenter<version>.msi DEV_MODE=1```
 
-## <a name="install-global-dependencies"></a>安裝通用的相依性
+## <a name="install-global-dependencies"></a>安裝全域相依性
 
-接下來，安裝或更新您的專案，使用節點封裝管理員所需的相依性。 這些相依性將會進行全域安裝，可供所有專案使用。
+接下來，使用節點套件管理員來安裝或更新專案所需的相依性。 這些相依性將會進行全域安裝，可供所有專案使用。
 
 ```
 npm install -g npm
@@ -58,18 +58,18 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->您可以安裝較新版@angular/cli，不過請注意，如果您安裝的版本大於 1.6.5，您會收到警告 gulp 組建步驟期間的本機的 cli 版本不符合安裝的版本。
+>您可以安裝較新版本的@angular/cli，但請注意，如果您安裝的版本大於1.6.5，您會在 gulp 組建步驟期間收到警告，表示本機 cli 版本與已安裝的版本不符。
 
 ## <a name="next-steps"></a>後續步驟
 
-現在，您的環境已準備就緒，您就開始建立內容。
+既然您的環境已準備就緒，您就可以開始建立內容。
 
 - 建立[工具](develop-tool.md)擴充功能
 - 建立[解決方案](develop-solution.md)擴充功能
 - 建立[閘道外掛程式](develop-gateway-plugin.md)
 - 透過我們的[指南](guides.md)深入了解
 
-## <a name="sdk-design-toolkit"></a>SDK 的設計工具組
+## <a name="sdk-design-toolkit"></a>SDK 設計工具組
 
-請參閱我們的 Windows Admin Center [SDK 的設計工具組](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)！ 此工具組可協助您快速地模擬在 PowerPoint 中使用 Windows Admin Center 樣式、 控制項和頁面範本的延伸模組。 請參閱您的延伸模組可以如下所示的 Windows Admin Center 之前您開始撰寫程式碼 ！
+查看我們的 Windows Admin Center [SDK 設計工具](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)組！ 此工具組的設計目的是要協助您使用 Windows 管理中心樣式、控制項和頁面範本，快速地在 PowerPoint 中模擬延伸模組。 開始撰寫程式碼之前，請先查看您的擴充功能在 Windows 系統管理中心中的樣子。
 

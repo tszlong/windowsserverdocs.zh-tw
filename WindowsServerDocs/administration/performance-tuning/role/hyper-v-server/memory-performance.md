@@ -1,60 +1,60 @@
 ---
-title: HYPER-V 記憶體效能
-description: 在進行效能微調之 HYPER-V 的記憶體考量
+title: Hyper-v 記憶體效能
+description: 效能微調 Hyper-v 中的記憶體考慮
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 63a1b654b8ac52725cc5dd87c8b245f9dfaf40f0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ddb336e0d6e16342dd60f2f61e50afeda61837e9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848069"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866581"
 ---
-# <a name="hyper-v-memory-performance"></a>HYPER-V 記憶體效能
+# <a name="hyper-v-memory-performance"></a>Hyper-v 記憶體效能
 
 
-Hypervisor 虛擬化來賓的實體記憶體隔離彼此的虛擬機器並將每個客體作業系統，提供連續的以零為起始的記憶體空間，只是因為在非虛擬化系統。
+虛擬程式會將來賓實體記憶體虛擬化，以將虛擬機器彼此隔離，並為每個客體作業系統提供連續、以零為基礎的記憶體空間，就像在非虛擬化系統上一樣。
 
-## <a name="correct-memory-sizing-for-child-partitions"></a>子磁碟分割的正確的記憶體大小
+## <a name="correct-memory-sizing-for-child-partitions"></a>更正子磁碟分割的記憶體大小
 
-依照您平常在實體電腦上的伺服器應用程式，您應該調整大小的虛擬機器的記憶體。 您必須調整大小以合理地處理的預期的負載，一般和尖峰時間，因為記憶體不足可能會大幅增加回應時間和 CPU 或 I/O 使用量。
+您應該調整虛擬機器記憶體的大小，就像在實體電腦上執行伺服器應用程式一般。 您必須調整它的大小，以合理地處理一般和尖峰時間的預期負載，因為記憶體不足可能會大幅增加回應時間和 CPU 或 i/o 使用量。
 
-您可以啟用動態記憶體，以允許 Windows 動態調整虛擬機器記憶體的大小。 使用動態記憶體，如果虛擬機器中的應用程式時遇到問題進行大量的突然記憶體配置，您可以增加分頁檔大小，以確保暫存備份，在回應記憶體壓力的動態記憶體時虛擬機器。
+您可以啟用動態記憶體，讓 Windows 能夠動態調整虛擬機器記憶體的大小。 使用動態記憶體，如果虛擬機器中的應用程式發生大量突然記憶體配置問題，您可以增加虛擬機器的頁面檔案大小，以確保暫時支援，同時動態記憶體回應記憶體壓力。
 
-如需動態記憶體的詳細資訊，請參閱[HYPER-V 動態記憶體概觀]( https://go.microsoft.com/fwlink/?linkid=834434)並[HYPER-V 動態記憶體設定指南](https://go.microsoft.com/fwlink/?linkid=834435)。
+如需動態記憶體的詳細資訊，請參閱[hyper-v 動態記憶體總覽]( https://go.microsoft.com/fwlink/?linkid=834434)和[Hyper-v 動態記憶體設定指南](https://go.microsoft.com/fwlink/?linkid=834435)。
 
-當執行 Windows 的子磁碟分割中，您可以使用子磁碟分割內的下列效能計數器來識別是否子磁碟分割發生記憶體不足的壓力，且可能會更高的虛擬機器的記憶體大小與效能較佳。
+在子分割區中執行 Windows 時，您可以使用子資料分割內的下列效能計數器，來識別子分割區是否發生記憶體壓力，而且可能會因為較高的虛擬機器記憶體大小而執行得更佳。
 
 | 效能計數器                                                         | 建議的臨界值                                                                                                                                                           |
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 記憶體中-待命的快取保留位元組                                        | 200 MB 或以上 1 GB，以及 300 MB 或更多有 2 GB 或更多的可見的 RAM 的系統上的系統上，應該是待命快取保留位元組和免費和零分頁清單位元組的總和。 |
-| 記憶體-可用和零分頁清單位元組                                        | 200 MB 或以上 1 GB，以及 300 MB 或更多有 2 GB 或更多的可見的 RAM 的系統上的系統上，應該是待命快取保留位元組和免費和零分頁清單位元組的總和。 |
-| 記憶體-Pages Input/Sec                                                    | 在 1 小時內的平均為小於 10。                                                                                                                                       | 
+| 記憶體–待命快取保留字節                                        | [待命快取保留字節] 和 [可用] 和 [零分頁清單] 的總和，在具有 1 GB 的系統上應為 200 MB 或以上，而在具有 2 GB 或更多可用 RAM 的系統上，則為 300 MB 以上。 |
+| 記憶體-免費 & 零頁清單位元組                                        | [待命快取保留字節] 和 [可用] 和 [零分頁清單] 的總和，在具有 1 GB 的系統上應為 200 MB 或以上，而在具有 2 GB 或更多可用 RAM 的系統上，則為 300 MB 以上。 |
+| 記憶體–頁數輸入/秒                                                    | 1小時期間的平均值小於10。                                                                                                                                       | 
 
-## <a name="correct-memory-sizing-for-root-partition"></a>根磁碟分割的正確的記憶體大小
+## <a name="correct-memory-sizing-for-root-partition"></a>更正根磁碟分割的記憶體大小
 
-在根磁碟分割必須有足夠的記憶體來提供服務，例如 I/O 虛擬化、 虛擬機器快照和管理以支援子磁碟分割。
+根磁碟分割必須有足夠的記憶體來提供服務，例如 i/o 虛擬化、虛擬機器快照和管理，以支援子磁碟分割。
 
-Windows Server 2016 中的 HYPER-V 會監視執行階段健全狀況的根磁碟分割的管理作業系統決定多少記憶體可安全地將配置給子磁碟分割，同時仍然確保高的效能和可靠性的根磁碟分割。
+Windows Server 2016 中的 hyper-v 會監視根磁碟分割管理作業系統的執行時間健全狀況，以決定可以安全地配置給子磁碟分割的記憶體數量，同時仍能確保根磁碟分割的高效能和可靠性。
 
 ## <a name="see-also"></a>另請參閱
 
--   [HYPER-V 術語](terminology.md)
+-   [Hyper-V 術語](terminology.md)
 
--   [HYPER-V 架構](architecture.md)
+-   [Hyper-V 架構](architecture.md)
 
--   [HYPER-V 伺服器組態](configuration.md)
+-   [Hyper-V 伺服器設定](configuration.md)
 
--   [HYPER-V 處理器效能](processor-performance.md)
+-   [Hyper-V 處理器效能](processor-performance.md)
 
--   [HYPER-V 存放裝置 I/O 效能](storage-io-performance.md)
+-   [Hyper-V 存放裝置 I/O 效能](storage-io-performance.md)
 
--   [HYPER-V 網路 I/O 效能](network-io-performance.md)
+-   [Hyper-V 網路 I/O 效能](network-io-performance.md)
 
--   [虛擬化環境中偵測瓶頸](detecting-virtualized-environment-bottlenecks.md)
+-   [偵測虛擬化環境中的瓶頸](detecting-virtualized-environment-bottlenecks.md)
 
 -   [Linux 虛擬機器](linux-virtual-machine-considerations.md)

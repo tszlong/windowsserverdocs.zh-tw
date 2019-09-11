@@ -1,6 +1,6 @@
 ---
 title: 檢視 MultiPoint 儀表板中有關工作階段縮圖的選項
-description: 了解如何自訂檢視 MultiPoint 服務的選項
+description: 瞭解如何自訂 MultiPoint 服務的視圖選項
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: febd5c4a5d5fdcf5ad2a27eec13bb7439ea0ee4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a11f2f2bbafe4d21e1cd5d56d66a97e08cf35b11
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875489"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871474"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>檢視 MultiPoint 儀表板中有關工作階段縮圖的選項
-監視個別桌面上之使用者活動的最簡單方式，就是檢視 MultiPoint 服務系統上每個使用中桌面的縮圖影像。 根據預設，桌面的影像會顯示在 MultiPoint 儀表板上**首頁** 索引標籤。  
+監視個別桌面上之使用者活動的最簡單方式，就是檢視 MultiPoint 服務系統上每個使用中桌面的縮圖影像。 根據預設，桌面的影像會顯示在 [常用] 索引標籤**上的 [** MultiPoint 儀表板] 中。  
   
-使用 MultiPoint 儀表板，您可以執行下列作業：  
+使用 MultiPoint 儀表板，您可以執行下列動作：  
   
-- 在儀表板中放大使用者的桌面檢視，更仔細地檢視桌面。  
+- 在儀表板中加大其觀點，以更密切地觀看使用者的桌面。  
 - 變更儀表板中所顯示的縮圖影像大小。 檢視有三種大小可用︰[小]、[中] 或 [大]。 預設值為 [中]。  
 - 檢視 MultiPoint 服務系統上的所有桌面，或選擇篩選過的檢視，只顯示使用中的桌面。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "59875489"
   
 1.  按一下 [首頁] 索引標籤，然後按一下您要放大的桌面。  
   
-2.  在 [首頁] 索引標籤上，按一下 [Enlarge Selected (放大選取項目)]。 使用者的桌面隨即在儀表板中開啟。  
+2.  在 [首頁] 索引標籤上，按一下 [Enlarge Selected (放大選取項目)]。 使用者的桌面會在 [儀表板] 中開啟。  
   
 3.  結束放大的檢視之後，請按一下 [Return to Desktops View (返回桌面檢視)]。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "59875489"
   
 2.  在 [首頁] 索引標籤上，按一下 [Enlarge Selected (放大選取項目)]。 [Change Desktop Size (變更桌面大小)] 頁面隨即開啟。  
   
-3.  按一下您想要的大小 (**小型**，**中型**，或**大型**)，然後按一下**確定**。  
+3.  按一下您想要的大小（[**小**]、[**中**] 或 [**大**]），然後按一下 **[確定]** 。  
   
 ## <a name="to-show-all-desktops-in-multipoint-dashboard"></a>在 MultiPoint 儀表板中顯示所有桌面  
   
@@ -57,4 +57,4 @@ ms.locfileid: "59875489"
 > 以滑鼠右鍵按一下其中一或多個縮圖，取得可針對使用中或非使用中工作階段採取的其他動作，例如 [登出選取的使用者]。 如需詳細資訊，請參閱[登出使用者工作階段](Log-Off-User-Sessions.md)。
 
 ## <a name="see-also"></a>另請參閱  
-[管理使用者桌面使用 MultiPoint 儀表板](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)
+[使用 MultiPoint 儀表板管理使用者桌面](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)

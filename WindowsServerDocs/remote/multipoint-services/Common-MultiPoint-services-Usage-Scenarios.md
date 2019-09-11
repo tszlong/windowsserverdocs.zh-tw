@@ -1,6 +1,6 @@
 ---
-title: 常見 MultiPoint 服務的使用案例
-description: 深入了解 MultiPoint 服務的常見用法
+title: 一般 MultiPoint 服務使用案例
+description: 瞭解 MultiPoint 服務的常見用法
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,23 +13,23 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 5172927e087b49ec8a81ee84e58d58bdfa1d7e31
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b0f8ea649382675a162572fcdafcfacc480a5f6
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865169"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871760"
 ---
 # <a name="common-usage-scenarios"></a>常見使用案例
-MultiPoint 服務會提供個別的使用者桌面與 Windows 10 桌面體驗的最重要的項目。 它也提供簡單的管理工具，MultiPoint 管理員，系統管理員可用於探索及控制多個 MultiPoint 伺服器和用戶端。 此外，MultiPoint 服務包含適用於即時可見度的 MultiPoint 儀表板。 範例的您所能使用 MultiPoint 服務包括下列：  
+MultiPoint 服務以 Windows 10 桌上型電腦經驗最重要的元素，提供個別使用者桌上型電腦。 它也提供簡單的管理工具（MultiPoint 管理員），系統管理員可以使用它來探索和控制多個 MultiPoint 伺服器和用戶端。 此外，MultiPoint 服務包含 MultiPoint 儀表板以進行即時可見度。 您可以使用 MultiPoint 服務執行之動作的範例包括下列各項：  
   
-- 提供每位使用者的個人運算體驗和私用的資料夾，而不需要另一部電腦中的每個人。  
-- 管理的電腦實驗室、 教室、 訓練 center 或小型企業環境中的多個 MultiPoint 系統。  
-- 安裝程式一次，並存取從任何站台。  
-- 監視每個使用者的桌面的活動。  
-- 使用可自訂的訊息，以取得群組的注意事項區塊畫面。  
-- 將群組限制為只能存取一個或多個網站。  
-- 專案來示範特定工作的其他螢幕畫面。  
-- 進行私密通訊，尋求協助的標準使用者使用。  
-- 取得要示範某項工作的使用者工作階段的控制權。  
-- 執行所有上述所列的項目使用傳統的 PC、 膝上型電腦或任何其他行動裝置的使用者。 
+- 為每位使用者提供個人運算體驗和私人資料夾，而不需要個別的電腦供每個人使用。  
+- 管理電腦實驗室、教室、訓練中心或小型企業環境中的多個 MultiPoint 系統。  
+- 安裝一次程式，並從任何工作站存取。  
+- 監視每個使用者的桌面活動。  
+- 使用可自訂的訊息來封鎖畫面，以取得群組的注意。  
+- 限制群組只能存取一或多個網站。  
+- 將您的畫面投影到其他畫面，以示範特定的工作。  
+- 與要求協助的標準使用者進行私下通訊。  
+- 控制使用者的會話以示範工作。  
+- 針對使用傳統電腦、膝上型電腦或任何其他行動裝置的使用者，執行上述所有列出的專案。 

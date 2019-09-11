@@ -1,6 +1,6 @@
 ---
 title: 網路控制卡安全性
-description: 您可以使用本主題以了解如何設定網路控制站和其他軟體和裝置之間的所有通訊的安全性。
+description: 您可以使用本主題來瞭解如何為網路控制站與其他軟體和裝置之間的所有通訊設定安全性。
 manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -9,165 +9,165 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: fccd6ee1ba734d72629264bd5b3bb7d93ddcdb70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cea660eb28645fb814d718ac04d0c9acea7b2e34
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884759"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867143"
 ---
 # <a name="secure-the-network-controller"></a>保護網路控制卡
 
-本主題中，了解如何設定安全性之間的所有通訊[網路控制卡](../technologies/network-controller/network-controller.md)和其他軟體和裝置。 
+在本主題中，您將瞭解如何為[網路控制](../technologies/network-controller/network-controller.md)站與其他軟體和裝置之間的所有通訊設定安全性。 
 
-您可以保護的通訊路徑包含 Northbound 管理平面，網路控制站虛擬機器之間的叢集通訊的通訊\(Vm\)叢集中，Southbound 通訊的資料平面。
+您可以保護的通訊路徑包括管理平面上的 Northbound 通訊、叢集中的網路控制站虛擬機器\(vm\)之間的叢集通訊，以及資料上的 Southbound 通訊底板.
 
-1. **Northbound 通訊**。 管理平面使用 SDN 網路控制站進行通訊\-功能的管理軟體，例如 Windows PowerShell 和 System Center Virtual Machine Manager \(SCVMM\)。 這些管理工具為您提供定義網路原則，並建立的網路時，針對中，您可以比較實際的網路設定，以實際的組態設定成同位檢查的目標狀態的目標狀態的能力。
+1. **Northbound 通訊**。 網路控制站會在管理平面上，\-使用具有 SDN 功能的管理軟體（ \(例如\)Windows PowerShell 和 System Center Virtual Machine Manager SCVMM）進行通訊。 這些管理工具可讓您定義網路原則，並建立網路的目標狀態，讓您可以比較實際的網路設定，使實際的設定與目標狀態保持同位。
 
-2. **網路控制站叢集通訊**。 當您為網路控制卡的叢集節點設定三個或多個 Vm 時，這些節點會與彼此通訊。 此通訊可能會與同步處理和複寫的資料跨節點或特定網路控制卡服務之間的通訊。
+2. **網路控制**站叢集通訊。 當您將三個或多個 Vm 設定為網路控制卡叢集節點時，這些節點會彼此通訊。 這項通訊可能與跨節點同步處理和複寫資料，或網路控制站服務之間的特定通訊有關。
 
-3.  **Southbound 通訊**。 網路控制站會在 SDN 基礎結構與其他裝置，例如軟體負載平衡器、 閘道和主機電腦的資料平面上進行通訊。 若要設定及管理這些 southbound 的裝置，讓它們維護您的網路設定的目標狀態，您可以使用網路控制站。
+3.  **Southbound 通訊**。 網路控制站會使用 SDN 基礎結構和其他裝置（例如軟體負載平衡器、閘道和主機電腦），在資料平面上進行通訊。 您可以使用網路控制站來設定和管理這些 southbound 裝置，讓它們維持您為網路設定的目標狀態。
 
 
 ## <a name="northbound-communication"></a>Northbound 通訊
 
-網路控制器 Northbound 通訊支援驗證、 授權和加密。 下列各節提供有關如何設定這些安全性設定的資訊。
+網路控制站支援用於 Northbound 通訊的驗證、授權和加密。 下列各節提供如何設定這些安全性設定的相關資訊。
 
 ### <a name="authentication"></a>驗證
 
-當您設定網路控制器 Northbound 通訊的驗證時，您必須允許網路控制卡的叢集節點和管理用戶端，以確認正在與其通訊的裝置身分識別。
+當您設定網路控制站 Northbound 通訊的驗證時，您會允許網路控制站叢集節點和管理用戶端驗證與其通訊之裝置的身分識別。
 
-網路控制站支援下列三種管理用戶端與網路控制卡節點之間的驗證模式。
+網路控制卡支援管理用戶端與網路控制站節點之間的下列三種驗證模式。
 
 >[!Note]
->如果您將部署網路控制站與 「 System Center Virtual Machine Manager 」 中，只有**Kerberos**支援模式。
+>如果您要使用 System Center Virtual Machine Manager 部署網路控制卡，則只支援**Kerberos**模式。
 
-1. **Kerberos**。 加入 Active Directory 網域中的管理用戶端和網路控制站的所有叢集節點時，請使用 Kerberos 驗證。 Active Directory 網域必須擁有用於驗證的網域帳戶。
+1. **Kerberos**。 將管理用戶端和所有網路控制卡叢集節點聯結到 Active Directory 網域時，請使用 Kerberos 驗證。 Active Directory 網域必須擁有用於驗證的網域帳戶。
 
-2. **X509**。 使用 X509 憑證\-為基礎的管理用戶端未加入 Active Directory 網域的驗證。 您必須註冊到所有網路控制卡的叢集節點和管理用戶端的憑證。 此外，所有節點和管理用戶端必須都信任其他人的憑證。
+2. **X509**。 針對未加入 Active Directory\-網域的管理用戶端，請使用 X509 進行以憑證為基礎的驗證。 您必須將憑證註冊到所有的網路控制站叢集節點和管理用戶端。 此外，所有節點和管理用戶端都必須信任其他人的憑證。
 
-3. **None**： 用於無測試用途在測試環境中，因此，不建議在生產環境中使用。 當您選擇這個模式時，沒有任何節點管理用戶端之間執行的驗證。
+3. **None**： 在測試環境中使用「無」進行測試，因此不建議在生產環境中使用。 當您選擇此模式時，節點和管理用戶端之間不會執行任何驗證。
 
-您也可以使用 Windows PowerShell 命令來設定 「 Northbound 通訊的驗證模式**[安裝 NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontroller)** 使用_ClientAuthentication_參數。 
+您可以使用 Windows PowerShell 命令 **[Install-NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontroller)** 搭配_ClientAuthentication_參數來設定 Northbound 通訊的驗證模式。 
 
 
 ### <a name="authorization"></a>Authorization
 
-當您設定網路控制器 Northbound 通訊的授權時，允許網路控制卡的叢集節點和管理用戶端，以確認正在與其通訊的裝置是否受信任，且具有參與權限通訊。
+當您設定網路控制站 Northbound 通訊的授權時，您會允許網路控制站叢集節點和管理用戶端確認與其通訊的裝置是受信任的，而且有權參與交流.
 
-針對每個網路控制卡所支援的驗證模式中使用下列授權方法。
+針對網路控制卡支援的每個驗證模式使用下列授權方法。
 
-1.  **Kerberos**。 當您使用 Kerberos 驗證方法時，您可以定義的使用者和電腦授權 Active Directory 中建立安全性群組，然後再新增至群組的 授權的使用者和電腦與網路控制站通訊。 您可以設定要用於授權中的安全性群組，使用網路控制卡_ClientSecurityGroup_的參數**[安裝 NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontroller)** Windows PowerShell 命令。 安裝網路控制站之後, 您可以變更的安全性群組，使用**[組 NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/set-networkcontroller)** 命令與參數 _-ClientSecurityGroup_. 如果使用 SCVMM，您必須在部署期間做為參數提供的安全性群組。
+1.  **Kerberos**。 當您使用 Kerberos 驗證方法時，您會在 Active Directory 中建立安全性群組，然後將授權的使用者和電腦新增至群組，以定義授權與網路控制站通訊的使用者和電腦。 您可以使用 **[安裝 NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontroller)** Windows PowerShell 命令的_ClientSecurityGroup_參數，將網路控制站設定為使用安全性群組進行授權。 安裝網路控制站之後，您可以使用 **[NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/set-networkcontroller)** 命令搭配參數 _-ClientSecurityGroup_來變更安全性群組。 如果使用 SCVMM，您必須在部署期間提供安全性群組做為參數。
 
-2.  **X509**。 當您使用 X509 驗證方法，網路控制站只接受來自網路控制卡已知其憑證指紋的管理用戶端要求。 您可以使用來設定這些憑證指紋_ClientCertificateThumbprint_的參數**[安裝 NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontroller)**  Windows PowerShell 命令。 您也可以使用在任何時候新增其他用戶端憑證指紋**[組 NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/set-networkcontroller)** 命令。
+2.  **X509**。 當您使用 X509 驗證方法時，網路控制卡只會接受來自網路控制卡之憑證指紋的管理用戶端所提出的要求。 您可以使用 **[安裝 NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontroller)** Windows PowerShell 命令的_ClientCertificateThumbprint_參數來設定這些指紋。 您可以使用 **[NetworkController](https://technet.microsoft.com/itpro/powershell/windows/network-controller/set-networkcontroller)** 命令，隨時新增其他用戶端指紋。
 
-3.  **None**： 當您選擇這個模式時，沒有任何節點管理用戶端之間執行的驗證。 用於無測試用途在測試環境中，因此，不建議在生產環境中使用。 
+3.  **None**： 當您選擇此模式時，節點和管理用戶端之間不會執行任何驗證。 在測試環境中使用「無」進行測試，因此不建議在生產環境中使用。 
 
 
 ### <a name="encryption"></a>加密
 
-Northbound 通訊使用安全通訊端層\(SSL\)來建立管理用戶端與網路控制卡節點之間的加密的通道。 Northbound 通訊的 SSL 加密包括下列需求：
+Northbound 通訊會使用\(安全通訊端層\) SSL，在管理用戶端和網路控制站節點之間建立加密通道。 Northbound 通訊的 SSL 加密包括下列需求：
 
-- 網路控制站的所有節點必須要都有相同的憑證在 增強金鑰使用方法包含伺服器驗證和用戶端驗證用途\(EKU\)延伸模組。 
+- 所有網路控制站節點都必須具有相同的憑證，其中包含伺服器驗證和用戶端驗證用途， \(以\)增強金鑰使用 EKU 延伸模組。 
 
-- 管理用戶端與網路控制站進行通訊所用的 URI 必須是憑證主體名稱。 憑證主體名稱必須包含完整格式網域名稱 (FQDN) 或網路控制站的 REST 端點的 IP 位址。
+- 管理用戶端用來與網路控制站通訊的 URI 必須是憑證主體名稱。 憑證主體名稱必須包含網路控制站 REST 端點的完整功能變數名稱（FQDN）或 IP 位址。
 
-- 如果網路控制卡節點位於不同子網路，其憑證的主體名稱必須是所使用的值相同_RestName_中的參數**安裝 NetworkController** WindowsPowerShell 命令。 
+- 如果網路控制站節點位於不同的子網，其憑證的主體名稱必須與**NetworkController** Windows PowerShell 命令中用於_RestName_參數的值相同。 
 
-- 所有的管理用戶端必須信任的 SSL 憑證。
+- 所有的管理用戶端都必須信任 SSL 憑證。
 
 
-### <a name="ssl-certificate-enrollment-and-configuration"></a>SSL 憑證註冊和組態
+### <a name="ssl-certificate-enrollment-and-configuration"></a>SSL 憑證註冊和設定
 
-您必須手動註冊節點網路控制站上的 SSL 憑證。
+您必須在網路控制卡節點上手動註冊 SSL 憑證。
 
-註冊憑證之後，您可以設定要使用的憑證與網路控制卡 **-ServerCertificate**的參數**安裝 NetworkController** Windows PowerShell 命令. 如果您已安裝網路控制站，您可以使用更新的設定，隨時**組 NetworkController**命令。
+註冊憑證之後，您可以將網路控制站設定為使用憑證搭配**NetworkController** Windows PowerShell 命令的 **-ServerCertificate**參數。 如果您已安裝網路控制卡，可以隨時使用 NetworkController 命令來更新**設定**。
 
 >[!NOTE]
->如果您使用 SCVMM，您必須新增為程式庫資源的憑證。 如需詳細資訊，請參閱 <<c0> [ 設定 VMM 光纖中的 SDN 網路控制站](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)。
+>如果您使用 SCVMM，您必須將憑證新增為程式庫資源。 如需詳細資訊，請參閱在[VMM 網狀架構中設定 SDN 網路控制](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)站。
 
-## <a name="network-controller-cluster-communication"></a>網路控制站的叢集通訊
+## <a name="network-controller-cluster-communication"></a>網路控制站叢集通訊
 
-網路控制卡支援網路控制卡節點之間通訊的驗證、 授權和加密。 通訊是透過[Windows Communication Foundation](https://msdn.microsoft.com/library/ms731082.aspx) \(WCF\)和 TCP。
+網路控制站支援用於網路控制站節點間通訊的驗證、授權和加密。 通訊是透過 WCF\)和 TCP [Windows Communication Foundation](https://msdn.microsoft.com/library/ms731082.aspx) \(。
 
-您可以設定此模式搭配**ClusterAuthentication**的參數**安裝 NetworkControllerCluster** Windows PowerShell 命令。 
+您可以使用**安裝 NetworkControllerCluster** Windows PowerShell 命令的**ClusterAuthentication**參數來設定此模式。 
 
-如需詳細資訊，請參閱 <<c0> [ 安裝 NetworkControllerCluster](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontrollercluster)。
+如需詳細資訊，請參閱[Install-NetworkControllerCluster](https://technet.microsoft.com/itpro/powershell/windows/network-controller/install-networkcontrollercluster)。
 
 ### <a name="authentication"></a>驗證
 
-當您設定網路控制站叢集通訊的驗證時，您會讓網路控制站驗證的身分識別與其通訊的其他節點的叢集節點。
+當您設定網路控制站叢集通訊的驗證時，您會允許網路控制卡叢集節點驗證與其通訊的其他節點的身分識別。
 
-網路控制站支援下列三種網路控制卡節點之間的驗證模式。
+網路控制卡支援網路控制站節點之間的下列三種驗證模式。
 
 >[!NOTE]
->如果您部署網路控制站只會使用 SCVMM **Kerberos**支援模式。
+>如果您使用 SCVMM 部署網路控制卡，則只支援**Kerberos**模式。
 
-1. **Kerberos**。 網路控制站的所有叢集節點都加入 Active Directory 網域，用來進行驗證的網域帳戶時，您可以使用 Kerberos 驗證。
+1. **Kerberos**。 當所有網路控制站叢集節點都聯結至 Active Directory 網域，並使用用於驗證的網域帳戶時，您可以使用 Kerberos 驗證。
 
-2. **X509**。 X509 是憑證\-型驗證。 您可以使用的 X509 驗證網路控制卡的叢集節點時未加入 Active Directory 網域。 若要使用 X509，您必須註冊憑證至所有叢集節點網路控制站，以及所有節點都必須都信任憑證。 此外，每個節點註冊憑證的主體名稱必須是節點的 DNS 名稱相同。
+2. **X509**。 X509 是以\-憑證為基礎的驗證。 當網路控制站叢集節點未加入 Active Directory 網域時，您可以使用 X509 驗證。 若要使用 X509，您必須將憑證註冊到所有網路控制站叢集節點，而且所有節點都必須信任憑證。 此外，在每個節點上註冊之憑證的主體名稱必須與節點的 DNS 名稱相同。
 
-3. **None**： 當您選擇這個模式時，沒有任何網路控制卡節點之間執行的驗證。 這種模式僅供測試之用，並不建議在生產環境中使用。
+3. **None**： 當您選擇此模式時，網路控制卡節點之間不會執行任何驗證。 此模式僅供測試之用，不建議用於生產環境。
 
 ### <a name="authorization"></a>Authorization
 
-當您設定網路控制站叢集通訊的授權時，您就會允許將叢集節點網路控制站來確認正在與其通訊的節點是受信任，並有參與通訊的權限。
+當您設定網路控制站叢集通訊的授權時，您會允許網路控制卡叢集節點，確認與其通訊的節點是受信任的，而且具有參與通訊的許可權。
 
-針對每個網路控制卡所支援的驗證模式，請使用下列的授權方法。
+針對網路控制卡支援的每個驗證模式，會使用下列授權方法。
 
-1. **Kerberos**。 網路控制站節點通訊只接受來自要求其他網路控制站電腦帳戶。 您可以設定這些帳戶，當您使用部署網路控制卡**名稱**的參數[新增 NetworkControllerNodeObject](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollernodeobject) Windows PowerShell 命令。
+1. **Kerberos**。 網路控制站節點只接受來自其他網路控制站電腦帳戶的通訊要求。 當您使用[NetworkControllerNodeObject](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollernodeobject) Windows PowerShell 命令的**Name**參數部署網路控制站時，可以設定這些帳戶。
 
-2. **X509**。 網路控制站節點通訊只接受來自要求其他網路控制站電腦帳戶。 您可以設定這些帳戶，當您使用部署網路控制卡**名稱**的參數[新增 NetworkControllerNodeObject](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollernodeobject) Windows PowerShell 命令。
+2. **X509**。 網路控制站節點只接受來自其他網路控制站電腦帳戶的通訊要求。 當您使用[NetworkControllerNodeObject](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollernodeobject) Windows PowerShell 命令的**Name**參數部署網路控制站時，可以設定這些帳戶。
 
-3. **None**： 當您選擇這個模式時，會無法執行網路控制卡節點之間的授權。 這種模式僅供測試之用，並不建議在生產環境中使用。
+3. **None**： 當您選擇此模式時，網路控制卡節點之間不會執行任何授權。 此模式僅供測試之用，不建議用於生產環境。
 
 ### <a name="encryption"></a>加密
 
-使用 WCF 傳輸層級加密來加密網路控制卡節點之間的通訊。 這種形式的加密使用驗證和授權方法 Kerberos 或 X509 憑證。 如需詳細資訊，請參閱下列主題。
+網路控制站節點之間的通訊會使用 WCF 傳輸層級加密進行加密。 當驗證和授權方法是 Kerberos 或 X509 憑證時，會使用這種形式的加密。 如需詳細資訊，請參閱下列主題。
 
-- [如何：使用 Windows 認證的服務安全](https://msdn.microsoft.com/library/ms734673.aspx)
-- [如何：保護使用 X.509 憑證的服務安全](https://msdn.microsoft.com/library/ms788968.aspx)。
+- [如何：使用 Windows 認證保護服務](https://msdn.microsoft.com/library/ms734673.aspx)
+- [如何：使用 x.509 憑證](https://msdn.microsoft.com/library/ms788968.aspx)保護服務的安全。
 
 ## <a name="southbound-communication"></a>Southbound 通訊
 
-網路控制站會與不同類型的 Southbound 通訊的裝置互動。 這些互動使用不同的通訊協定。 基於這個原因，有不同的需求，進行驗證、 授權和加密，視裝置與網路控制站用來與裝置通訊的通訊協定的類型而定。
+網路控制站會與不同類型的裝置互動，以進行 Southbound 通訊。 這些互動會使用不同的通訊協定。 因此，根據網路控制站用來與裝置通訊的裝置和通訊協定類型，驗證、授權和加密會有不同的需求。
 
-下表提供與不同 southbound 裝置的網路控制卡互動的相關資訊。
+下表提供與不同 southbound 裝置進行網路控制站互動的相關資訊。
 
-| Southbound 裝置/服務 | 通訊協定              | 使用驗證    |
+| Southbound 裝置/服務 | Protocol              | 使用的驗證    |
 |---------------------------|-----------------------|------------------------|
-| 軟體負載平衡器    | WCF (MUX)、 TCP （主機） | 憑證           |
+| 軟體負載平衡器    | WCF （MUX）、TCP （主機） | 憑證           |
 | 防火牆                  | OVSDB                 | 憑證           |
-| 閘道                   | WinRM                 | Kerberos、 憑證 |
-| 虛擬網路        | OVSDB WCF            | 憑證           |
-| 使用者定義路由      | OVSDB                 | 憑證           |
+| 閘道                   | WinRM                 | Kerberos，憑證 |
+| 虛擬網路        | OVSDB、WCF            | 憑證           |
+| 使用者定義的路由      | OVSDB                 | 憑證           |
 
-針對每個這些通訊協定，通訊機制是下一節中所述。
+針對上述每個通訊協定，下一節將說明這兩種通訊機制。
 
 ### <a name="authentication"></a>驗證
 
-Southbound 的通訊，會使用下列通訊協定和驗證方法。
+針對 Southbound 通訊，會使用下列通訊協定和驗證方法。
 
-1. **WCF/TCP/OVSDB**。 這些通訊協定，驗證會使用 X509 憑證。 網路控制站和對等軟體負載平衡\(SLB\)解多工器\(MUX \) /主機機器呈現其彼此進行相互驗證的憑證。 每個憑證必須由遠端對等電腦的信任。
+1. **WCF/TCP/OVSDB**。 針對這些通訊協定，會使用 X509 憑證來執行驗證。 網路控制站和對等軟體負載平衡\( \(SLB\)多工\)器 MUX/host 機器會將其憑證分別提供給彼此進行相互驗證。 每個憑證都必須受到遠端對等的信任。
 
-    Southbound 驗證，您可以使用相同設定的 SSL 憑證來加密與 Northbound 的用戶端通訊。 您也必須在 SLB MUX 和主機裝置上設定憑證。 憑證主體名稱必須與裝置的 DNS 名稱相同。
+    針對 southbound authentication，您可以使用設定為加密與 Northbound 用戶端通訊的相同 SSL 憑證。 您也必須在 SLB MUX 和主機裝置上設定憑證。 憑證主體名稱必須與裝置的 DNS 名稱相同。
 
-2. **WinRM**。 這項通訊協定，使用 Kerberos 來執行驗證\(針對已加入網域的機器\)以及使用憑證\(非網域聯結機器\)。
+2. **WinRM**。 針對此通訊協定，會針對加入網域的\(電腦\)使用 Kerberos，並針對未加入\(網域的電腦\)使用憑證來執行驗證。
 
 ### <a name="authorization"></a>Authorization
 
-Southbound 的通訊，會使用下列通訊協定和授權方法。
+針對 Southbound 通訊，會使用下列通訊協定和授權方法。
 
-1. **WCF/TCP**。 這些通訊協定，授權根據對等實體的主體名稱。 網路控制站會儲存對等裝置 DNS 名稱，並使用它來進行授權。 這個 DNS 名稱必須符合憑證中裝置的主體名稱。 同樣地，網路控制站憑證必須符合儲存在對等裝置上的網路控制站 DNS 名稱。
+1. **WCF/TCP**。 針對這些通訊協定，授權是以對等實體的主體名稱為基礎。 網路控制站會儲存對等裝置 DNS 名稱，並使用它來進行授權。 此 DNS 名稱必須符合憑證中裝置的主體名稱。 同樣地，網路控制卡憑證必須符合儲存在對等裝置上的網路控制站 DNS 名稱。
 
-2. **WinRM**。 如果使用 Kerberos，WinRM 用戶端帳戶必須位於 Active Directory 中或在伺服器上本機 Administrators 群組中預先定義的群組。 如果正在使用的憑證，用戶端會出示的憑證伺服器，伺服器可讓您授權使用主體名稱/簽發者，以及伺服器是使用對應的使用者帳戶來執行驗證。
+2. **WinRM**。 如果使用 Kerberos，則 WinRM 用戶端帳戶必須存在於 Active Directory 或伺服器上本機系統管理員群組中的預先定義群組中。 如果使用憑證，用戶端會向伺服器出示憑證，而伺服器是使用主體名稱/簽發者來授權，而伺服器則會使用對應的使用者帳戶來執行驗證。
 
-3.  **OVSDB**。 沒有任何授權提供給此通訊協定。
+3.  **OVSDB**。 沒有提供此通訊協定的授權。
 
 ### <a name="encryption"></a>加密
 
-Southbound 通訊，如下列的加密方法會用於通訊協定。
+針對 Southbound 通訊，會將下列加密方法用於通訊協定。
 
-1. **WCF/TCP/OVSDB**。 這些通訊協定，加密會使用用戶端或伺服器上的已註冊的憑證。
+1. **WCF/TCP/OVSDB**。 針對這些通訊協定，會使用在用戶端或伺服器上註冊的憑證來執行加密。
 
-2. **WinRM**。 使用 Kerberos 安全性支援提供者的預設 WinRM 流量會加密\(SSP\)。 您可以設定額外的加密，WinRM 伺服器上的 SSL，表單中。
+2. **WinRM**。 WinRM 流量預設會使用 Kerberos 安全性支援提供者\(SSP\)進行加密。 您可以在 WinRM 伺服器上以 SSL 的形式設定其他加密。

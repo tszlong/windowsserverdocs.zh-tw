@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 05/31/2019
-ms.openlocfilehash: 460399a57bc229b44d37a9fdd1e4938bf9e7d6ac
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: b4b1f42db7d80fabe2e3361f3ab9ebf41ad8bc29
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455358"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865424"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>將 Windows Server 連線到 Azure 混合式服務
 

@@ -8,38 +8,38 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 06/07/2019
-ms.openlocfilehash: e7cf6fc6a4fae2eee76409bd6af4ef2ff6ed35a3
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: b222cd4b97beecd25c14b9f8f39627bf46cb7716
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811775"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869543"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
-> 適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 如果您發生本頁面未述及的問題，請[讓我們知道](http://aka.ms/WACfeedback)。
 
-## <a name="lenovo-xclarity-integrator"></a>Lenovo XClarity 整合器
+## <a name="lenovo-xclarity-integrator"></a>聯想 XClarity 整合器
 
-使用 Windows Admin Center 版本 1904.1 Lenovo XClarity 整合器擴充功能和 Windows Admin Center 版本 1904年先前揭露的不相容的問題已經解決。 我們強烈建議您更新至最新的 Windows Admin Center 支援版本。
+先前發現的「聯想 XClarity 整合器擴充功能」和「Windows 系統管理中心」1904版的不相容問題現在已透過 Windows 管理中心版本1904.1 解決。 我們強烈建議您更新至最新支援的 Windows 管理中心版本。
 
-- Lenovo XClarity 整合器延伸模組 1.1 版是與 Windows Admin Center 1904.1 完全相容。 我們強烈建議您更新至最新版的 Windows Admin Center 和 Lenovo 擴充功能。
-- 因為任何原因，如果您要繼續使用 Windows Admin Center 1809.5 次，您可以使用 XClarity Integrator 1.0.4 也可在 「 Windows Admin Center 擴充功能摘要，直到 Windows Admin Center 1809.5 不再支援根據我們[的支援原則](../support/index.md)。
+- 聯想 XClarity 整合器延伸模組版本1.1 與 Windows Admin Center 1904.1 完全相容。 我們強烈建議您更新至最新版本的 Windows 管理中心和聯想擴充功能。
+- 基於任何原因，如果您當時需要繼續使用 Windows 系統管理中心1809.5，您可以使用 XClarity 整合器1.0.4，這也會在 Windows 管理中心延伸模組摘要中提供，直到不再支援 Windows Admin Center 1809.5，依據我們的[支援原則](../support/index.md)。
 
 ## <a name="installer"></a>安裝程式
 
 - 使用您自己的憑證安裝 Windows Admin Center 時，要留意的是，如果您從認證管理員 MMC 工具複製憑證指紋，[它會在開頭包含無效的字元。](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra) 此情況的因應措施是，先鍵入憑證指紋的第一個字元，再複製/貼上其餘部分。
 
-- 不支援使用低於 1024年連接埠。 在服務模式中，您可以選擇性地設定連接埠重新導向至您指定的連接埠 80。
+- 不支援使用低於1024的埠。 在服務模式中，您可以選擇性地將埠80設定為重新導向至指定的埠。
 
-- 如果停止並停用 Windows Update service (wuauserv)，則安裝程式將會失敗。 [19100629]
+- 如果 Windows Update 服務（wuauserv）已停止且停用，安裝程式將會失敗。 [19100629]
 
 ### <a name="upgrade"></a>升級
 
-- 如果您使用 msiexec 以無訊息模式，請在服務模式下，從先前的版本，升級 Windows Admin Center 時, 可能遇到的問題刪除 Windows Admin Center 連接埠的輸入的防火牆規則的位置。
-  - 若要重新建立規則，請從提升權限的 PowerShell 主控台中，執行下列命令取代\<連接埠 > 搭配通訊埠設定的 Windows Admin Center （預設為 443。）
+- 從舊版升級服務模式的 Windows 管理中心時，如果您在無訊息模式中使用 msiexec，您可能會遇到 Windows Admin Center 埠的輸入防火牆規則已刪除的問題。
+  - 若要重新建立規則，請從提高許可權的 PowerShell 主控台執行下列命令\<，將埠 > 取代為為 Windows 系統管理中心設定的埠（預設為443）。
 
     ```powershell
     New-NetFirewallRule -DisplayName "SmeInboundOpenException" -Description "Windows Admin Center inbound port exception" -LocalPort <port> -RemoteAddress Any -Protocol TCP
@@ -47,18 +47,18 @@ ms.locfileid: "66811775"
 
 ## <a name="general"></a>一般
 
-- 如果您有安裝做為閘道上的 Windows Admin Center **Windows Server 2016**下方大量使用，服務可能會當機與包含事件記錄檔中的錯誤```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```。 這是因為 Windows Server 2019 已修正的 bug。 適用於 Windows Server 2016 修補程式已包含 2019 年 2 月累積更新時， [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)。
+- 如果您將 windows 系統管理中心安裝為**windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件記錄檔中發生錯誤時損毀。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
-- 如果您有安裝做為閘道的 Windows Admin Center 連線清單可能已損毀，請執行下列步驟：
+- 如果您已將 Windows 系統管理中心安裝為閘道，且您的連線清單似乎已損毀，請執行下列步驟：
 
    > [!WARNING]
-   >這會刪除所有的 Windows Admin Center 使用者，在閘道上的設定與連接清單。
+   >這會刪除閘道上所有 Windows 系統管理中心使用者的連線清單和設定。
 
   1. 解除安裝 Windows Admin Center
   2. 刪除 **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** 下的 **Server Management Experience** 資料夾。
   3. 重新安裝 Windows Admin Center
 
-- 如果您將保留此工具開啟，而且閒置很長一段時間，您可能會收到數個**錯誤：這項作業的 runspace 狀態無效**錯誤。 如果發生這種情況，請重新整理瀏覽器。 如果您遇到這[傳送意見反應](http://aka.ms/WACfeedback)。
+- 如果您讓工具保持開啟且閒置很長一段時間，您可能會收到數**個錯誤：此**作業錯誤的運行時狀態無效。 如果發生這種情況，請重新整理瀏覽器。 如果您遇到這種情況，請[將意見反應傳送給我們](http://aka.ms/WACfeedback)。
 
 - 重新整理有很長 URL 的頁面時，可能會發生 **500 錯誤**。 [12443710]
 
@@ -66,14 +66,14 @@ ms.locfileid: "66811775"
 
 - 在某些工具中，命令按鈕可能無法在按一下後立即反映狀態變更，而工具 UI 可能無法自動反映特定屬性的變更。 您可以按一下 **\[重新整理\]** 來擷取目標伺服器的最新狀態。 [11445790]
 
-- 如果您選取 連線使用多重選取的核取方塊，然後篩選您的連線清單，依標記篩選在連線清單-標記、 原始選取項目持續發生，因此您選取任何動作將套用到先前選取的所有電腦。 [18099259]
+- 連線清單上的標記篩選-如果您選取 [使用核取方塊的連線]，然後依標籤篩選您的連線清單，則會保留原始選取專案，因此您選取的任何動作都將套用至所有先前選取的電腦。 [18099259]
 
-- 可能有次要版本號碼，以執行 Windows Admin Center 模組，以及第 3 個合作對象軟體聲明中所列的作業系統之間的變異數。
+- 在 Windows 管理中心模組中執行的 OSS 版本號碼和協力廠商軟體注意事項中所列出的內容之間，可能會有些許差異。
 
-### <a name="extension-manager"></a>擴充管理員
+### <a name="extension-manager"></a>延伸模組管理員
 
-- 當您更新 Windows Admin Center 時，您必須重新安裝您的擴充功能。
-- 如果您將無法存取的擴充功能摘要，沒有任何警告。 [14412861]
+- 當您更新 Windows 管理中心時，必須重新安裝擴充功能。
+- 如果您新增無法存取的延伸模組摘要，就不會出現警告。 [14412861]
 
 ## <a name="browser-specific-issues"></a>瀏覽器特定問題
 
@@ -83,38 +83,38 @@ ms.locfileid: "66811775"
 
 - 當使用 Azure Active Directory 做為身分識別提供者，而 Windows Admin Center 是使用自我簽署憑證或未受信任憑證所設定時，您無法在 Microsoft Edge 中完成 AAD 驗證。  [15968377]
 
-- 如果您已部署為服務的 Windows Admin Center，您使用 Microsoft Edge 瀏覽器作為您閘道連線至 Azure 之後繁衍新的瀏覽器視窗可能會失敗。 嘗試解決此問題，藉由新增 [https://login.microsoftonline.com](https://login.microsoftonline.com )， [https://login.live.com](https://login.live.com )，並為您閘道的 URL 信任的網站，並允許您的用戶端端瀏覽器的快顯封鎖程式設定的網站。 如需詳細指引修正這[疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果您已將 Windows 系統管理中心部署為服務，而且您使用 Microsoft Edge 作為瀏覽器，則在建立新的瀏覽器視窗之後，將閘道連線至 Azure 可能會失敗。 嘗試解決此問題，藉由新增 [https://login.microsoftonline.com](https://login.microsoftonline.com )， [https://login.live.com](https://login.live.com )，並為您閘道的 URL 信任的網站，並允許您的用戶端端瀏覽器的快顯封鎖程式設定的網站。 如需修正此問題的詳細指引，請[參考疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
-- 如果您有桌面模式中安裝的 Windows Admin Center，在 Microsoft Edge 瀏覽器索引標籤不會顯示 favicon。 [17665801]
+- 如果您以桌面圖案安裝 Windows 系統管理中心，Microsoft Edge 中的 [瀏覽器] 索引標籤不會顯示 favicon。 [17665801]
 
 ### <a name="google-chrome"></a>Google Chrome
 
-- 之前的版本 （發行年 10 月，2018 年底） 70 有 Chrome [bug](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)有關 websockets 通訊協定與 NTLM 驗證。 這會影響下列工具：事件、 PowerShell、 遠端桌面。
+- 在70版之前（2018年10月發行），Chrome 有關于 websocket 通訊協定和 NTLM 驗證的[錯誤](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)。 這會影響下列工具：事件、PowerShell、遠端桌面。
 
 - Chrome 可能會快顯多個認證提示，特別是在**工作群組** (非網域) 環境中加入連線體驗時。
 
-- 如果您有部署為服務的 Windows Admin Center，閘道器 URL 的快顯畫面需要啟用，任何 Azure 的整合功能才能運作。 這些服務包括 Azure 網路介面卡、 Azure 更新管理和 Azure Site Recovery。
+- 如果您已將 Windows 系統管理中心部署為服務，則必須啟用閘道 URL 的快顯視窗，任何 Azure 整合功能才能運作。 這些服務包括 Azure 網路介面卡、Azure 更新管理和 Azure Site Recovery。
 
 ### <a name="mozilla-firefox"></a>Mozilla Firefox
 
 Windows Admin Center 未使用 Mozilla Firefox 來測試，但大部分功能應該都能運作。
 
-- Windows 10 安裝：Mozilla Firefox 會有本身的憑證存放區，因此您必須匯入```Windows Admin Center Client```到使用 Windows 10 上的 Windows Admin Center Firefox 的憑證。
+- Windows 10 安裝：Mozilla Firefox 有自己的憑證存放區，因此您必須將```Windows Admin Center Client```憑證匯入 Firefox，才能在 windows 10 上使用 windows 系統管理中心。
 
-## <a name="websocket-compatibility-when-using-a-proxy-service"></a>當使用 proxy 服務的 WebSocket 相容性
+## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用 proxy 服務時的 WebSocket 相容性
 
 Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 WebSocket 通訊協定，而這通常在使用 Proxy 服務時不受支援。 Azure AD 應用程式 Proxy 相容性中的 Websocket 支援尚處於[預覽](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/)階段，正在尋求有關相容性的意見反應。
 
-## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>Windows Server 2016 (2012 r2、windows server 2012、windows 2008 R2) 之前的版本支援
+## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>2016之前的 Windows Server 版本支援（2012 R2、2012、2008 R2）
 
 > [!NOTE]
-> Windows Admin Center 要求不包含在 Windows Server 2012 R2，2012年或 2008 R2 的 PowerShell 功能。 如果您將這些項目 Windows Admin Center 與管理 Windows Server，您必須在這些伺服器上安裝 WMF 5.1 或更新版本。
+> Windows 管理中心需要不包含在 Windows Server 2012 R2、2012或 2008 R2 中的 PowerShell 功能。 如果您要使用 Windows 系統管理中心來管理 Windows Server，您必須在這些伺服器上安裝 WMF 5.1 版或更新版本。
 
 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。
 
 如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
 
-## <a name="role-based-access-control-rbac"></a>角色型存取控制 (RBAC)
+## <a name="role-based-access-control-rbac"></a>以角色為基礎的存取控制（RBAC）
 
 - RBAC 部署無法在設定為使用 Windows Defender 應用程式控制 (WDAC，先前稱為程式碼完整性) 的電腦上成功進行。[16568455]
 
@@ -126,7 +126,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="server-settings"></a>伺服器設定
 
-- 如果您修改設定，然後再嘗試瀏覽其他位置，而不儲存，頁面會警告您有未儲存的變更，但繼續瀏覽其他位置。 您可能會得到處於已選取 [設定] 索引標籤與頁面的內容不符。 [19905798] [19905787]
+- 如果您修改設定，然後嘗試在不儲存的情況下流覽，頁面將會警告您有關未儲存的變更，但仍會繼續流覽。 最後，您可能會處於所選 [設定] 索引標籤與頁面內容不相符的狀態。 [19905798] [19905787]
 
 ### <a name="certificates"></a>憑證
 
@@ -134,7 +134,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="devices"></a>裝置
 
-- 當巡覽具有鍵盤的資料表中，選取項目可能會跳到頂端的 [資料表] 群組。 [16646059]
+- 當您使用鍵盤流覽資料表時，選取範圍可能會跳到資料表群組的頂端。 [16646059]
 
 ### <a name="events"></a>事件
 
@@ -142,11 +142,11 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 匯出大型記錄檔時，您可能會收到參考「封包大小」的錯誤。 [16630279]
 
-  - 若要解決此問題，請在閘道機器上提高權限命令提示字元使用下列命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - 若要解決此問題，請在閘道電腦上以提高許可權的命令提示字元中使用下列命令：```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>檔案
 
-- 尚未支援上傳或下載大型檔案。 (\~100 mb 的限制) [12524234]
+- 尚未支援上傳或下載大型檔案。 （\~100mb 限制） [12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -164,13 +164,13 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="remote-desktop"></a>遠端桌面
 
-- 遠端桌面工具可能無法連線時管理 Windows Server 2012。 [20258278]
+- 管理 Windows Server 2012 時，遠端桌面工具可能無法連接。 [20258278]
 
-- 當使用遠端桌面連接到未加入網域的機器，您必須輸入您的帳戶在```MACHINENAME\USERNAME```格式。
+- 使用遠端桌面連線到未加入網域的電腦時，您必須以格式輸入您的```MACHINENAME\USERNAME```帳戶。
 
-- 某些設定可以封鎖 Windows Admin Center 的遠端桌面用戶端與群組原則。 如果您遇到這種情況，啟用```Allow users to connect remotely by using Remote Desktop Services```下 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- 有些設定可以封鎖 Windows Admin Center 的遠端桌面用戶端與群組原則。 如果您遇到這種情況```Allow users to connect remotely by using Remote Desktop Services``` ，請在下啟用```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
-- 遠端桌面都會受到[websocket 相容性。](#websocket-compatibility-when-using-a-proxy-service)
+- 遠端桌面受到[websocket 相容性](#websocket-compatibility-when-using-a-proxy-service)的影響。
 
 - 遠端桌面工具目前不支援任何在本機桌面與遠端工作階段之間的文字、影像或檔案複製/貼上。
 
@@ -182,7 +182,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
   - Windows 鍵
   - PrtScn
 
-- 遠端應用程式 – 之後啟用遠端桌面設定的遠端應用程式工具工具可能不會出現在 [工具] 清單中管理伺服器含桌面體驗時。 [18906904]
+- 遠端應用程式–從遠端桌面設定啟用遠端應用程式工具之後，在管理具有桌面體驗的伺服器時，工具可能不會出現在工具清單中。 [18906904]
 
 ### <a name="roles-and-features"></a>角色和功能
 
@@ -194,42 +194,42 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="storage"></a>儲存體
 
-- 擷取配額資訊可能會失敗，沒有錯誤通知 （仍有錯誤在瀏覽器的主控台） [18962274]
+- 在沒有錯誤通知的情況下，提取配額資訊可能會失敗（瀏覽器的主控台仍會發生錯誤） [18962274]
 
-- 舊版：在舊版上的磁碟區不會出現 DVD/CD/軟碟機。
+- 下層：DVD/CD/軟碟磁碟機不會顯示為下層的磁片區。
 
-- 舊版：磁碟區和磁碟中的某些屬性沒有可用的舊版，因此無法辨識或在詳細資料窗格中的空白則會出現。
+- 下層：磁片區和磁片中的某些屬性在下層無法使用，因此在詳細資料面板中會顯示為 [未知] 或 [空白]。
 
-- 舊版：在建立新的磁碟區時，ReFS 只支援為 64k 配置單位大小 Windows 2012 和 2012 R2 電腦上。 如果 ReFS 是在下層目標使用較小的配置單位大小所建立，檔案系統格式化將會失敗。 新的磁碟區將無法使用。 解決方法是刪除磁碟區，並使用 64K 配置單位大小。
+- 下層：在建立新的磁片區時，ReFS 僅支援在 Windows 2012 和 2012 R2 電腦上使用64K 的配置單位大小。 如果 ReFS 是在下層目標使用較小的配置單位大小所建立，檔案系統格式化將會失敗。 新的磁碟區將無法使用。 解決方法是刪除磁碟區，並使用 64K 配置單位大小。
 
 ### <a name="updates"></a>更新
 
-- 安裝更新之後，安裝狀態可能會快取，而且需要重新整理瀏覽器。
+- 安裝更新之後，可能會快取安裝狀態，而且需要重新整理瀏覽器。
 
-- 您可能會遇到的錯誤：「 索引鍵集不存在 」 時嘗試設定 Azure 更新管理。 在此情況下，請嘗試下列的補救步驟，在受管理的節點-
-    1. 停止 「 密碼編譯服務 」 服務。
-    2. （如有必要），以顯示變更資料夾選項會隱藏檔案。
-    3. 移至"%allusersprofile%\microsoft\crypto\rsa\s-1-5-18"資料夾並刪除其所有內容。
-    4. 重新啟動 「 密碼編譯服務 」 服務。
-    5. 重複使用 Windows Admin Center 進行更新管理設定
+- 您可能會遇到下列錯誤：嘗試設定 Azure 更新管理時，「金鑰集不存在」。 在此情況下，請在受管理的節點上嘗試下列補救步驟-
+    1. 停止「密碼編譯服務」服務。
+    2. 變更資料夾選項以顯示隱藏的檔案（如有必要）。
+    3. 到達 "%allusersprofile%\Microsoft\Crypto\RSA\S-1-5-18" 資料夾，並刪除其所有內容。
+    4. 重新開機「密碼編譯服務」服務。
+    5. 使用 Windows 系統管理中心重複設定更新管理
 
 ### <a name="virtual-machines"></a>虛擬機器
 
-- 在管理 Windows Server 2012 的主機上的虛擬機器時，瀏覽器中的 VM 連線工具將無法連接到 VM。 下載.rdp 檔案以連線至 VM 應該還是有效。 [20258278]
+- 管理 Windows Server 2012 主機上的虛擬機器時，瀏覽器內的 VM connect 工具將無法連線到 VM。 下載 .rdp 檔案以連線至 VM 應該仍然可以使用。 [20258278]
 
-- Azure Site Recovery – ASR WAC，外部主機上的設定時您將無法保護從 VM 內 WAC [18972276]
+- Azure Site Recovery –如果 ASR 是在 WAC 外部的主機上設定，您將無法在 WAC 中保護 VM [18972276]
 
 - 目前不支援 Hyper-V 管理員提供的進階功能，例如虛擬 SAN 管理員、移動 VM、匯出 VM、VM 複寫。
 
 ### <a name="virtual-switches"></a>虛擬交換器
 
-- 交換器內嵌小組 (SET):將 Nic 加入至小組中，它們必須位於相同子網路。
+- 交換器內嵌小組（SET）：將 Nic 新增至小組時，它們必須位於相同的子網上。
 
 ## <a name="computer-management-solution"></a>電腦管理解決方案
 
 電腦管理解決方案包含伺服器管理員解決方案所提供工具的子集，因此適用同樣的已知問題，以及下列電腦管理解決方案特定問題：
 
-- 如果您使用 Microsoft 帳戶 ([MSA](https://account.microsoft.com/account/))，或如果您使用 Azure Active Directory (AAD) 來登入您的 Windows 10 電腦時，您必須指定 「 管理-為"的認證可以管理您的本機電腦 [16568455]
+- 如果您使用 Microsoft 帳戶（[MSA](https://account.microsoft.com/account/)），或使用 AZURE ACTIVE DIRECTORY （AAD）登入 Windows 10 電腦，您必須指定「管理身分」認證來管理本機電腦 [16568455]
 
 - 當您嘗試管理 localhost 時，系統會提示您提高閘道程序的權限。 如果您在 \[使用者帳戶控制\] 快顯中按一下 **\[否\]** ，Windows Admin Center 將無法再次加以顯示。 在此情況下，以滑鼠右鍵按一下系統匣中的 Windows Admin Center 圖示並選擇 [結束] 以結束閘道程序，然後從 [開始] 功能表重新啟動 Windows Admin Center。
 

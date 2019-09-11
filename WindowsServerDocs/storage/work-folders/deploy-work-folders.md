@@ -9,16 +9,16 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: 如何部署工作資料夾，包括安裝伺服器角色、建立同步共用和建立 DNS 記錄。
-ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: 45b25befcde328e38f694b64fa7536a2b5c7f232
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792345"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867033"
 ---
 # <a name="deploying-work-folders"></a>部署工作資料夾
 
->適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows 10，Windows 8.1，Windows 7
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1、Windows 7
 
 本主題討論部署工作資料夾所需的步驟。 我們假設您已經閱讀過[規劃工作資料夾部署](plan-work-folders.md)。  
   
@@ -51,24 +51,24 @@ ms.locfileid: "67792345"
 ## <a name="step-2-create-dns-records"></a>步驟 2：建立 DNS 記錄  
  若要允許使用者透過網際網路進行同步，您必須在公用 DNS 中建立主機 (A) 記錄，以便允許網際網路用戶端解析工作資料夾 URL。 這個 DNS 記錄應該解析至反向 Proxy 伺服器的外部介面。  
   
- 在您的內部網路上，於 DNS 命名的工作資料夾中建立 CNAME 記錄，其解析到工作資料夾伺服器的 FDQN。 工作資料夾的用戶端會使用自動搜索，用來探索工作資料夾伺服器的 URL 是 https:\//workfolders.domain.com。 如果您打算使用自動探索，工作資料夾 CNAME 記錄必須存在於 DNS 中。  
+ 在您的內部網路上，於 DNS 命名的工作資料夾中建立 CNAME 記錄，其解析到工作資料夾伺服器的 FDQN。 當工作資料夾用戶端使用自動探索時，用來探索工作資料夾伺服器的 URL 會是\/HTTPs：/workfolders.domain.com。 如果您打算使用自動探索，工作資料夾 CNAME 記錄必須存在於 DNS 中。  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>步驟 3：在檔案伺服器上安裝工作資料夾  
  您可以使用伺服器管理員或 Windows PowerShell，在本機或透過網路從遠端，於加入網域的伺服器上安裝工作資料夾。 如果您要在網路上設定多個同步伺服器，這個方法很有用。  
   
 若要在伺服器管理員中部署角色，請執行下列動作：  
   
-1.  啟動 [新增角色及功能精靈]  。  
+1.  啟動 [新增角色及功能精靈]。  
   
-2.  在 [選取安裝類型]  頁面上，選擇 [角色型或功能型部署]  。  
+2.  在 [選取安裝類型] 頁面上，選擇 [角色型或功能型部署]。  
   
-3.  在 [選取目的地伺服器]  頁面上，選取您想要在上面安裝工作資料夾的伺服器。  
+3.  在 [選取目的地伺服器] 頁面上，選取您想要在上面安裝工作資料夾的伺服器。  
   
-4.  在 [選取伺服器角色]  頁面上，依序展開 [檔案和存放服務]  、[檔案和 iSCSI 服務]  ，然後選取 [工作資料夾]  。  
+4.  在 [選取伺服器角色] 頁面上，依序展開 [檔案和存放服務]、[檔案和 iSCSI 服務]，然後選取 [工作資料夾]。  
   
-5.  系統詢問您是否要安裝 [可裝載 IIS 的 Web 核心]  時，按一下 [確定]  ，即可安裝工作資料夾所需的網際網路資訊服務 (IIS) 的最低版本。  
+5.  系統詢問您是否要安裝 [可裝載 IIS 的 Web 核心] 時，按一下 [確定]，即可安裝工作資料夾所需的網際網路資訊服務 (IIS) 的最低版本。  
   
-6.  按 [下一步]  ，直到完成精靈為止。
+6.  按 [下一步]，直到完成精靈為止。
 
 若要使用 Windows PowerShell 來部署角色，請使用下列 Cmdlet：
   
@@ -104,17 +104,17 @@ Add-WindowsFeature FS-SyncShareService
 
 1. 在已安裝「Active Directory 系統管理中心」的 Windows Server 2012 R2 或 Windows Server 2016 電腦上，開啟 \[伺服器管理員\]。
 
-2.  在 [工具]  功能表上，按一下 [Active Directory 系統管理中心]  。 [Active Directory 系統管理中心] 隨即顯示。
+2.  在 [工具] 功能表上，按一下 [Active Directory 系統管理中心]。 [Active Directory 系統管理中心] 隨即顯示。
 
-3.  在想要建立新群組的容器上按一下滑鼠右鍵 (例如，適當網域或 OU 的使用者容器)，按一下 [新增]  ，然後按一下 [群組]  。
+3.  在想要建立新群組的容器上按一下滑鼠右鍵 (例如，適當網域或 OU 的使用者容器)，按一下 [新增]，然後按一下 [群組]。
 
-4.  在 [建立群組]  視窗內的 [群組]  區段中，指定下列設定：
+4.  在 [建立群組] 視窗內的 [群組] 區段中，指定下列設定：
 
-    -   在 [群組名稱]  中，輸入安全性群組的名稱，例如：**HR Sync Share Users** 或 **Work Folders Administrators**。  
+    -   在 [群組名稱] 中，輸入安全性群組的名稱，例如：**HR Sync Share Users** 或 **Work Folders Administrators**。  
   
-    -   在 [群組領域]  中，按一下 [安全性]  ，然後按一下 [全域]  。  
+    -   在 [群組領域] 中，按一下 [安全性]，然後按一下 [全域]。  
   
-5.  在 [成員]  區段中，按一下 [新增]  。 [選取使用者、連絡人、電腦、服務帳戶或群組] 對話方塊隨即顯示。  
+5.  在 [成員] 區段中，按一下 [新增]。 [選取使用者、連絡人、電腦、服務帳戶或群組] 對話方塊隨即顯示。  
   
 6.  輸入您要授與存取特定同步共用權限的使用者或群組的名稱 (如果您要建立群組來控制同步共用存取)，或輸入工作資料夾系統管理員的名稱 (如果您要設定使用者帳戶以自動探索適當同步伺服器)，按一下 **\[確定\]** ，然後再按一下 **\[確定\]** 。
 
@@ -139,17 +139,17 @@ Set-ADGroup -Add:@{'Member'=$Members} -Identity:$GroupName -Server:$DC
   
 1.  在已安裝「Active Directory 使用者和電腦」的 Windows Server 2012 R2 或 Windows Server 2016 電腦上，開啟 \[伺服器管理員\]。  
   
-2.  在 [工具]  功能表上，按一下 [Active Directory 使用者和電腦]  。 [Active Directory 使用者和電腦] 隨即顯示。  
+2.  在 [工具] 功能表上，按一下 [Active Directory 使用者和電腦]。 [Active Directory 使用者和電腦] 隨即顯示。  
   
-3.  在其中包含工作資料夾所有使用者物件的 OU 上按一下滑鼠右鍵 (如果使用者儲存於多個 OU 或網域中，請在所有使用者通用的容器上按一下滑鼠右鍵)，然後按一下 [委派控制...]  。 [委派控制精靈] 隨即顯示。  
+3.  在其中包含工作資料夾所有使用者物件的 OU 上按一下滑鼠右鍵 (如果使用者儲存於多個 OU 或網域中，請在所有使用者通用的容器上按一下滑鼠右鍵)，然後按一下 [委派控制...]。 [委派控制精靈] 隨即顯示。  
   
 4.  在 **\[使用者或群組\]** 頁面上，按一下 **\[新增\]** 。 然後為工作資料夾系統管理員指定您建立的群組 (例如**工作資料夾系統管理員**)。  
   
-5.  在 [將委派的工作]  頁面上，按一下 [建立自訂工作來委派]  。  
+5.  在 [將委派的工作] 頁面上，按一下 [建立自訂工作來委派]。  
   
-6.  在 [Active Directory 物件類型]  頁面上，按一下 [只有在這個資料夾內的下列物件]  ，然後選取 [使用者物件]  核取方塊。  
+6.  在 [Active Directory 物件類型] 頁面上，按一下 [只有在這個資料夾內的下列物件]，然後選取 [使用者物件] 核取方塊。  
   
-7.  在 [權限]  頁面上，清除 [一般]  核取方塊，選取 [內容特定]  核取方塊，然後選取 [讀取 msDS-SyncServerUrl]  和 [寫入 msDS-SyncServerUrl]  核取方塊。
+7.  在 [權限] 頁面上，清除 [一般] 核取方塊，選取 [內容特定] 核取方塊，然後選取 [讀取 msDS-SyncServerUrl] 和 [寫入 msDS-SyncServerUrl] 核取方塊。
 
 若要使用 Windows PowerShell 委派編輯使用者物件上 msDS-SyncServerURL 屬性的能力，請使用下列使用 DsAcls 命令的範例指令碼。
   
@@ -168,29 +168,29 @@ DsAcls $ADGroupPath /I:S /G ""$GroupName":RPWP;msDS-SyncServerUrl;user"
   
 1. 如果您還沒有 NTFS 磁碟區可以提供容納同步共用及使用者檔案的可用空間，請建立新的磁碟區並使用 NTFS 檔案系統加以格式化。  
   
-2. 在 [伺服器管理員] 中，按一下 [檔案和存放服務]  ，然後按一下 [工作資料夾]  。  
+2. 在 [伺服器管理員] 中，按一下 [檔案和存放服務]，然後按一下 [工作資料夾]。  
   
-3. 在詳細資料窗格的最上方可看到任何現有同步共用的清單。 若要建立新的同步共用，請從 [工作]  功能表選擇 [新增同步共用...]  。 [新增同步共用精靈] 隨即顯示。  
+3. 在詳細資料窗格的最上方可看到任何現有同步共用的清單。 若要建立新的同步共用，請從 [工作] 功能表選擇 [新增同步共用...]。 [新增同步共用精靈] 隨即顯示。  
   
-4. 在 [選取伺服器與路徑]  頁面上，指定存放同步共用的位置。 如果您已經為此使用者資料建立檔案共用，可以選擇該共用。 或者，您可以建立新的資料夾。  
+4. 在 [選取伺服器與路徑] 頁面上，指定存放同步共用的位置。 如果您已經為此使用者資料建立檔案共用，可以選擇該共用。 或者，您可以建立新的資料夾。  
   
    > [!NOTE]
    >  根據預設，無法透過檔案共用直接存取同步共用 (除非您挑選現有的檔案共用) 如果您希望讓同步共用可以透過檔案共用存取，請使用伺服器管理員的 **\[共用\]** 磚或 [New-SmbShare](https://technet.microsoft.com/library/jj635722.aspx) Cmdlet 來建立檔案共用，最好是啟用存取型列舉。  
   
-5. 在 [指定使用者資料夾的結構]  頁面上，為同步共用內的使用者資料夾選擇命名慣例。 其中提供兩個選項：  
+5. 在 [指定使用者資料夾的結構] 頁面上，為同步共用內的使用者資料夾選擇命名慣例。 其中提供兩個選項：  
   
-   - **\[使用者別名\]** 會建立不包含網域名稱的使用者資料夾。 如果您是使用已經搭配使用資料夾重新導向或其他使用者資料解決方案的檔案共用，請選取此命名慣例。 您可以選擇性地選取 [只同步下列子資料夾]  核取方塊，只同步特定子資料夾 (如 [文件] 資料夾)。  
+   - **\[使用者別名\]** 會建立不包含網域名稱的使用者資料夾。 如果您是使用已經搭配使用資料夾重新導向或其他使用者資料解決方案的檔案共用，請選取此命名慣例。 您可以選擇性地選取 [只同步下列子資料夾] 核取方塊，只同步特定子資料夾 (如 [文件] 資料夾)。  
   
    - <strong>\[使用者 alias@domain\]</strong> 會建立包含網域名稱的使用者資料夾。 如果使用的不是已經用於資料夾重新導向或其他使用者資料解決方案的檔案共用，請選取此命名慣例，以避免在共用的多個使用者具有相同別名時產生資料夾命名衝突 (這可能會在使用者屬於不同網域的情況下發生)。  
   
-6. 在 [輸入同步共用名稱]  頁面上，指定同步共用的名稱和描述。 這不會在網路上通告，但是會顯示在伺服器管理員和 Windows Powershell 中，以協助辨別各個同步共用。  
+6. 在 [輸入同步共用名稱] 頁面上，指定同步共用的名稱和描述。 這不會在網路上通告，但是會顯示在伺服器管理員和 Windows Powershell 中，以協助辨別各個同步共用。  
   
-7. 在 [將同步存取權授與群組]  頁面上，指定之前建立且列示允許使用此同步共用之使用者的群組。  
+7. 在 [將同步存取權授與群組] 頁面上，指定之前建立且列示允許使用此同步共用之使用者的群組。  
   
    > [!IMPORTANT]
    >  若要提高效能和安全性，請將存取權授與群組而不是個別使用者，而且盡可能明確，避免使用通用群組 (如 Authenticated Users 和 Domain Users)。 將存取權授與包含大量使用者的群組，會讓工作資料夾耗費很長時間來查詢 AD DS。 如果您有大量使用者，請建立多個同步共用來協助分散負載。  
   
-8. 在 [指定裝置原則]  頁面上，指定是否在用戶端電腦和裝置上要求任何安全性限制。 有兩個個別的裝置原則可以選擇：  
+8. 在 [指定裝置原則] 頁面上，指定是否在用戶端電腦和裝置上要求任何安全性限制。 有兩個個別的裝置原則可以選擇：  
   
    -   **\[加密工作資料夾\]** 要求加密用戶端電腦和裝置上的工作資料夾  
   
@@ -210,18 +210,18 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
 上面的範例會建立一個新的同步共用，名稱為 *Share01*，路徑為 *K:\Share-1*，並將存取權授與給名為 *HR Sync Share Users* 的群組。  
   
 > [!TIP]
->  建立同步共用之後，可以使用檔案伺服器資源管理員功能來管理共用中的資料。 例如，您可以使用伺服器管理員中 [工作資料夾] 頁面中的 [配額]  磚，設定使用者資料夾上的配額。 您也可以使用[檔案檢測管理](https://technet.microsoft.com/library/cc732074.aspx)控制工作資料夾要同步的檔案類型，或是使用[動態存取控制](https://technet.microsoft.com/windows-server-docs/identity/solution-guides/dynamic-access-control--scenario-overview)中所述的案例，以進行較為複雜的檔案分類工作。  
+>  建立同步共用之後，可以使用檔案伺服器資源管理員功能來管理共用中的資料。 例如，您可以使用伺服器管理員中 [工作資料夾] 頁面中的 [配額] 磚，設定使用者資料夾上的配額。 您也可以使用[檔案檢測管理](https://technet.microsoft.com/library/cc732074.aspx)控制工作資料夾要同步的檔案類型，或是使用[動態存取控制](https://technet.microsoft.com/windows-server-docs/identity/solution-guides/dynamic-access-control--scenario-overview)中所述的案例，以進行較為複雜的檔案分類工作。  
   
-## <a name="step-8-optionally-specify-a-tech-support-email-address"></a>步驟 8：選擇性指定技術支援電子郵件地址   
+## <a name="step-8-optionally-specify-a-tech-support-email-address"></a>步驟 8：選擇性地指定技術支援電子郵件地址   
  將工作資料夾安裝在檔案伺服器之後，您或許會想要指定伺服器的系統管理連絡人電子郵件地址。 若要新增電子郵件地址，請使用下列程序：  
   
 #### <a name="specifying-an-administrative-contact-email"></a>指定系統管理連絡人電子郵件 
   
-1.  在 [伺服器管理員] 中，按一下 [檔案和存放服務]  ，然後按一下 [伺服器]  。  
+1.  在 [伺服器管理員] 中，按一下 [檔案和存放服務]，然後按一下 [伺服器]。  
   
-2.  在同步伺服器上按一下滑鼠右鍵，然後按一下 [工作資料夾設定]  。 [工作資料夾設定] 視窗隨即顯示。  
+2.  在同步伺服器上按一下滑鼠右鍵，然後按一下 [工作資料夾設定]。 [工作資料夾設定] 視窗隨即顯示。  
   
-3.  在瀏覽窗格中，按一下 [支援電子郵件]  ，然後輸入電子郵件地址或是寄送工作資料夾方面的協助時使用者應該使用的電子郵件地址。 完成後，按一下 **\[確定\]** 。  
+3.  在瀏覽窗格中，按一下 [支援電子郵件]，然後輸入電子郵件地址或是寄送工作資料夾方面的協助時使用者應該使用的電子郵件地址。 完成後，按一下 **\[確定\]** 。  
   
      工作資料夾使用者可以按一下 [工作資料夾控制台] 項目中的連結，將包含用戶端電腦診斷資訊的電子郵件，傳送到您在這裡指定的地址。  
   
@@ -229,7 +229,7 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
  如果您的環境中裝載了多個同步伺服器，則應該在 AD DS 中使用者帳戶上填入 **msDS-SyncServerURL** 屬性來設定伺服器自動探索。  
   
 >[!NOTE]
->要透過反向 Proxy 解決方案 (例如 Web 應用程式 Proxy 或 Azure AD 應用程式 Proxy) 存取工作資料夾的遠端使用者不可定義 Active Directory 中的 msDS-SyncServerURL 屬性。 如果定義了 msDS-SyncServerURL 屬性，工作資料夾用戶端就會嘗試存取無法透過反向 Proxy 方案存取的內部 URL。 使用 Web 應用程式 Proxy 或 Azure AD 應用程式 Proxy 時，您必須為每一部工作資料夾伺服器建立唯一 Proxy 應用程式。 如需詳細資訊，請參閱[搭配 AD FS 與 Web 應用程式 Proxy 的部署工作資料夾：概觀](deploy-work-folders-adfs-overview.md)或是[部署使用 Azure AD 應用程式 Proxy 的工作資料夾](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)。
+>要透過反向 Proxy 解決方案 (例如 Web 應用程式 Proxy 或 Azure AD 應用程式 Proxy) 存取工作資料夾的遠端使用者不可定義 Active Directory 中的 msDS-SyncServerURL 屬性。 如果已定義 Msds-syncserverurl 屬性，則工作資料夾用戶端會嘗試存取無法透過反向 proxy 解決方案存取的內部 URL。 使用 Web 應用程式 Proxy 或 Azure AD 應用程式 Proxy 時，您必須為每一部工作資料夾伺服器建立唯一 Proxy 應用程式。 如需詳細資訊， [請參閱使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：](deploy-work-folders-adfs-overview.md) [使用 Azure AD 應用程式 Proxy 來總覽或部署工作資料夾](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)。
 
 
  執行這個動作之前，您必須先安裝 Windows Server 2012 R2 網域控制站或使用 `Adprep /forestprep` 和 `Adprep /domainprep` 命令更新樹系和網域結構描述。 如需如何安全地執行這些命令的相關資訊，請參閱[執行 Adprep](https://technet.microsoft.com/library/dd464018.aspx)。  
@@ -240,18 +240,18 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
   
 1.  在已安裝 Active Directory 系統管理工具的電腦上開啟伺服器管理員。  
   
-2.  在 [工具]  功能表上，按一下 [Active Directory 系統管理中心]  。 [Active Directory 系統管理中心] 隨即顯示。  
+2.  在 [工具] 功能表上，按一下 [Active Directory 系統管理中心]。 [Active Directory 系統管理中心] 隨即顯示。  
   
-3.  瀏覽到適當網域中的 [使用者]  容器，在想要指派給同步共用的使用者上按一下滑鼠右鍵，然後按一下 [內容]  。  
+3.  瀏覽到適當網域中的 [使用者] 容器，在想要指派給同步共用的使用者上按一下滑鼠右鍵，然後按一下 [內容]。  
   
-4.  在瀏覽窗格中，按一下 [延伸]  。  
+4.  在瀏覽窗格中，按一下 [延伸]。  
   
-5.  按一下 [屬性編輯器]  索引標籤，選取 [msDS-SyncServerUrl]  ，然後按一下 [編輯]  。 [多重字串值編輯器] 對話方塊隨即顯示。  
+5.  按一下 [屬性編輯器] 索引標籤，選取 [msDS-SyncServerUrl]，然後按一下 [編輯]。 [多重字串值編輯器] 對話方塊隨即顯示。  
   
-6.  在 [要新增的值]  方塊中，輸入想要此使用者與其同步的同步伺服器 URL，依序按一下 [新增]  、[確定]  ，然後再按一下 [確定]  。  
+6.  在 [要新增的值] 方塊中，輸入想要此使用者與其同步的同步伺服器 URL，依序按一下 [新增]、[確定]，然後再按一下 [確定]。  
   
     > [!NOTE]
-    >  同步伺服器 URL 只是 `https://` 或 `http://` (取決於是否想要求安全連線)，後面是同步伺服器的完整網域名稱。 例如， **https:\//sync1.contoso.com**。
+    >  同步伺服器 URL 只是 `https://` 或 `http://` (取決於是否想要求安全連線)，後面是同步伺服器的完整網域名稱。 例如， **HTTPs：\//sync1.contoso.com**。
 
 若要填入多個使用者的屬性，請使用 Active Directory PowerShell。 下面是為 *HR Sync Share Users* 群組的所有成員填入屬性的範例，在步驟 5 中已討論過。
   
@@ -264,7 +264,7 @@ Set-ADUser –Add @{"msDS-SyncServerURL"=$SyncServerURL}
   
 ```  
   
-## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>步驟 10：選擇性地設定 Web 應用程式 Proxy，Azure AD 應用程式 Proxy 或其他反向 proxy  
+## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>步驟 10：選擇性地設定 Web 應用程式 Proxy、Azure AD 應用程式 Proxy 或其他反向 Proxy  
 
 若要允許遠端使用者存取其檔案，您必須透過反向 Proxy 發佈工作資料夾伺服器，讓工作資料夾可在網際網路上供外部存取。 您可以使用 Web 應用程式 Proxy、Azure Active Directory 應用程式 Proxy 或其他反向 Proxy 解決方案。  
   
@@ -289,12 +289,12 @@ Set-ADUser –Add @{"msDS-SyncServerURL"=$SyncServerURL}
 > [!NOTE]
 >  只有從在 Windows 8.1、Windows Server 2012 R2 或更新版本上執行 \[群組原則管理\] 的電腦上編輯群組原則時，才能使用這些原則設定。 舊版作業系統的群組原則管理版本不提供此設定。 這些原則設定適用於已安裝[適用於 Windows 7 的工作資料夾](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)應用程式的 Windows 7 電腦。  
   
-##  <a name="BKMK_LINKS"></a> 另請參閱  
+##  <a name="BKMK_LINKS"></a>另請參閱  
  如需其他相關資訊，請參閱下列資源。  
   
 |內容類型|參考|  
 |------------------|----------------|  
-|**了解**|-   [工作資料夾](work-folders-overview.md)|  
-|**規劃**|-   [設計工作資料夾實作](plan-work-folders.md)|
-|**部署**|-   [搭配 AD FS 與 Web 應用程式 Proxy (WAP) 部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />-   [工作資料夾測試實驗室部署](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（部落格文章）<br />-   [工作資料夾伺服器 Url 的新使用者屬性](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx)（部落格文章）|  
+|**理解**|-   [工作資料夾](work-folders-overview.md)|  
+|**規劃**|-   [設計工作資料夾的執行](plan-work-folders.md)|
+|**部署**|-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />-   [工作資料夾測試實驗室部署](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（blog 文章）<br />-   [工作資料夾伺服器 Url 的新使用者屬性](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx)（blog 文章）|  
 |**技術參考資料**|-   [互動式登入：電腦帳戶鎖定閾值](https://technet.microsoft.com/library/jj966264(v=ws.11).aspx)<br />-   [同步共用 Cmdlet](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)|

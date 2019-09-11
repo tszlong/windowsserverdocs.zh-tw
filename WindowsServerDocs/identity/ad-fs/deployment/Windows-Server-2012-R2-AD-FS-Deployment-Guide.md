@@ -9,17 +9,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 154e6e986bd0e78936a985ce7b80ee533ea5c82a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 44b8fef82e2f758e99ef0f8d9b28a55d36f0cfdf
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191835"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867996"
 ---
 # <a name="windows-server-ad-fs-deployment-guide"></a>Windows Server AD FS 部署指南
 
 
-您可以使用 Active Directory Federation Services \(AD FS\)與 Windows Server 2016 和 2012 R2 作業系統，建置同盟識別身分管理解決方案，以擴充分散式的識別驗證，以及授權服務，以 Web\-基礎跨組織及平台界限的應用程式。 透過部署 AD FS，您就可以將組織現有的識別身分管理功能延伸至網際網路。  
+您可以使用 Active Directory 同盟服務\(AD FS\)搭配 Windows Server 2016 和 2012 R2 作業系統來建立同盟身分識別管理解決方案，以擴充分散式識別、驗證和跨組織與平臺\-界限對 Web 應用程式的授權服務。 藉由部署 AD FS，您可以將組織現有的身分識別管理功能延伸至網際網路。  
   
 -   [部署同盟伺服器陣列](Deploying-a-Federation-Server-Farm.md)  
   

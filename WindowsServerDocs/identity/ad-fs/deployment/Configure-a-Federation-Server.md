@@ -9,106 +9,106 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d2f597994aa74f453903e09f7d3eefd83f26faba
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8f97237da1f53ee02f68b894ec0b8cd657edff6d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192267"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868093"
 ---
 # <a name="configure-a-federation-server"></a>設定同盟伺服器
 
-安裝 Active Directory Federation Services 之後\(AD FS\)角色服務在您的電腦，您已準備好將此電腦成為同盟伺服器設定。 您可以執行下列其中一個步驟：  
+在您的電腦上\(安裝\) Active Directory 同盟服務 AD FS 角色服務之後，您就可以將此電腦設定為同盟伺服器。 您可以執行下列其中一個步驟：  
   
--   [在 新的同盟伺服器陣列中設定第一部同盟伺服器](assetId:///e340cf8f-acf3-4cba-8135-a9353b85e714#BKMK_1)  
+-   [在新的同盟伺服器陣列中設定第一部同盟伺服器](assetId:///e340cf8f-acf3-4cba-8135-a9353b85e714#BKMK_1)  
   
 -   [將同盟伺服器新增至現有的同盟伺服器陣列](assetId:///e340cf8f-acf3-4cba-8135-a9353b85e714#BKMK_2)  
   
-## <a name="BKMK_1"></a>在 新的同盟伺服器陣列中設定第一部同盟伺服器  
+## <a name="BKMK_1"></a>在新的同盟伺服器陣列中設定第一部同盟伺服器  
   
-### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-by-using-the-active-directory-federation-service-configuration-wizard"></a>若要設定新的同盟伺服器陣列中的第一部同盟伺服器使用 Active Directory Federation Service 組態精靈  
+### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-by-using-the-active-directory-federation-service-configuration-wizard"></a>若要使用 Active Directory 同盟服務 Configuration Wizard 設定新同盟伺服器陣列中的第一部同盟伺服器  
   
 > [!NOTE]  
-> 請確定您具有網域系統管理員權限或擁有可用的網域系統管理員認證，才能執行此程序。  
+> 執行此程式之前，請確定您具有網域系統管理員許可權，或具有可用的網域系統管理員認證。  
   
-1.  在 [伺服器管理員] 的 [儀表板]  頁面上，按一下 [通知]  旗標，然後按一下 [設定伺服器上的 Federation Service]  。  
+1.  在 [伺服器管理員] 的 [儀表板] 頁面上，按一下 [通知] 旗標，然後按一下 [設定伺服器上的 Federation Service]。  
   
-    [Active Directory Federation Service 設定精靈]  隨即開啟。  
+    [Active Directory Federation Service 設定精靈] 隨即開啟。  
   
-2.  在 [歡迎]  頁面上，選取 [在同盟伺服器陣列中建立第一部同盟伺服器]  ，然後按一下 [下一步]  。  
+2.  在 [歡迎] 頁面上，選取 [在同盟伺服器陣列中建立第一部同盟伺服器]，然後按一下 [下一步]。  
   
-3.  在上**連線到 AD DS**頁面上，指定 Active directory 使用網域系統管理員權限的帳戶\(AD\)這部電腦已加入的網域，然後再按一下**下一步**.  
+3.  在 [連線**至 AD DS]** 頁面上，使用此電腦所加入之 Active Directory \(AD\)網域的 [網域系統管理員] 許可權指定帳戶，然後按 **[下一步]** 。  
   
-4.  在 [指定服務內容]  頁面上執行下列動作，然後按一下 [下一步]  ：  
+4.  在 [指定服務內容] 頁面上執行下列動作，然後按一下 [下一步]：  
   
-    -   匯入.pfx 檔案，其中包含安全通訊端層\(SSL\)憑證和您稍早取得的金鑰。 在 [步驟 2:註冊適用於 AD FS 的 SSL 憑證](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md)，您已取得此憑證，並將它複製到您想要設定為同盟伺服器的電腦上。 若要匯入.pfx 檔案，透過精靈，請按一下**匯入**，然後瀏覽至檔案的位置。 系統會提示您時，輸入.pfx 檔案的密碼。  
+    -   匯入 .pfx 檔案，其中包含您稍早取得\(的\)安全通訊端層 SSL 憑證和金鑰。 在[步驟 2:註冊 AD FS](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md)的 SSL 憑證，您已取得此憑證，並將它複製到您要設定為同盟伺服器的電腦上。 若要透過 wizard 匯入 .pfx 檔案，請按一下 [匯**入**]，然後流覽至檔案的位置。 當系統提示您時，輸入 .pfx 檔案的密碼。  
   
-    -   提供您的 federation service 的名稱。 例如， **fs.contoso.com**。 此名稱必須符合其中一個主旨或憑證中的主旨替代名稱。  
+    -   提供同盟服務的名稱。 例如， **fs.contoso.com**。 此名稱必須符合憑證中的其中一個主體或主體替代名稱。  
   
-    -   提供您的 federation service 顯示名稱。 例如， **Contoso Corporation**。 使用者會看到此名稱在 Active Directory Federation Services \(AD FS\)號\-頁面中。  
+    -   提供同盟服務的顯示名稱。 例如**Contoso Corporation**。 使用者會在 Active Directory 同盟服務\( \) AD FS 登\-入 頁面上看到此名稱。  
   
-5.  在 **指定服務帳戶**頁面上，指定服務帳戶。 您可以建立或使用現有群組受控服務帳戶\(gMSA\)或使用現有的網域使用者帳戶。 如果您選取要建立新的 gMSA 帳戶的選項，指定新帳戶的名稱。 如果您選取使用現有的 gMSA 或網域帳戶的選項，請按一下**選取**選取帳戶。  
+5.  在 [**指定服務帳戶**] 頁面上，指定服務帳戶。 您可以建立或使用現有的群組受管理的服務\(帳戶\) gMSA，或使用現有的網域使用者帳戶。 如果您選取建立新 gMSA 帳戶的選項，請指定新帳戶的名稱。 如果您選取 [使用現有的 gMSA 或網域帳戶] 選項，請按一下 [**選取**] 以選取帳戶。  
   
     > [!NOTE]  
-    > 使用 gMSA 帳戶的優點是其自動\-交涉的密碼更新功能。  
+    > 使用 gMSA 帳戶的優點是它是自動\-協商的密碼更新功能。  
   
     > [!WARNING]  
-    > 如果您想要使用 gMSA 帳戶，您必須至少一個網域控制站執行 Windows Server 2012 作業系統的環境中。  
+    > 如果您想要使用 gMSA 帳戶，您的環境中至少必須有一個網域控制站執行 Windows Server 2012 作業系統。  
     >   
-    > 如果 gMSA 選項已停用，而且您看到錯誤訊息，例如**群組受控服務帳戶不可以使用，因為未設定 KDS 根金鑰**，您也可以執行下列 Windows 網域中啟用 gMSA網域控制站，執行 Windows Server 2012 或更新版本上，您的 Active Directory 網域中的 PowerShell 命令： `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`。 然後返回精靈中，按一下**上一步**，然後按一下**下一步** 若要重新\-輸入**指定服務帳戶**頁面。 應該已啟用 gMSA 選項。 您可以選取它，並輸入您想要使用 gMSA 帳戶名稱。  
+    > 如果 gMSA 選項已停用，而且您看到錯誤訊息，例如**群組受管理的服務帳戶因為尚未設定 Kds 根金鑰根金鑰而無法使用**，您可以在網域上執行下列 Windows PowerShell 命令，以啟用網域中的 gMSA在您的 Active Directory 網域中執行 Windows Server 2012 或更新版本的控制器`Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`：。 然後返回嚮導，按 [**上一**步]，然後按 **[下一步]** 重新\-輸入 [**指定服務帳戶**] 頁面。 現在應啟用 gMSA 選項。 您可以選取它，並輸入您想要使用的 gMSA 帳戶名稱。  
   
-6.  在 [**指定設定資料庫**頁面上，指定 AD FS 設定資料庫，然後按一下**下一步]** 。 您可以建立一個資料庫在此電腦上使用 Windows Internal Database \(WID\)，或者您可以指定的位置和 Microsoft SQL server 執行個體名稱。  
+6.  在 [**指定設定資料庫**] 頁面上，指定 AD FS 設定資料庫，然後按 **[下一步]** 。 您可以使用 Windows 內部資料庫\(WID\)在這部電腦上建立資料庫，也可以指定 Microsoft SQL Server 的位置和實例名稱。  
   
     如需詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
     > [!IMPORTANT]  
     > 如果您想要建立 AD FS 伺服器陣列，並使用 SQL Server 來儲存設定資料，您可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012 和 SQL Server 2014。  
   
-7.  在 [檢閱選項]  頁面上，檢查您的設定選項，然後按一下 [下一步]  。  
+7.  在 [檢閱選項] 頁面上，檢查您的設定選項，然後按一下 [下一步]。  
   
-8.  在  **Pre\-必要檢查**頁面上，確認所有先決條件檢查都順利完成，然後按一下**設定**。  
+8.  在 [**必要條件\-檢查**] 頁面上，確認所有先決條件檢查都已順利完成，然後按一下 [**設定**]。  
   
-9. 在 **結果**頁面上，檢閱結果並檢查設定是否成功完成，然後按一下**完成 federation service 部署所需的後續步驟**。 如需詳細資訊，請參閱 <<c0> [ 後續步驟以完成 AD FS 安裝](https://go.microsoft.com/fwlink/p/?LinkId=286704)。 按一下 **[關閉]** 以結束精靈。  
+9. 在 [**結果**] 頁面上，檢查結果並檢查設定是否已順利完成，然後按一下 **[完成 federation service 部署所需的後續步驟]** 。 如需詳細資訊，請參閱[完成 AD FS 安裝的後續步驟](https://go.microsoft.com/fwlink/p/?LinkId=286704)。 按一下 **[關閉]** 以結束精靈。  
   
-### <a name="BKMK_3"></a>若要設定透過 Windows PowerShell 的新同盟伺服器陣列中的第一部同盟伺服器  
-您可以使用新的或現有的 gMSA 帳戶或現有的網域使用者帳戶，以建立新的同盟伺服器陣列。  
+### <a name="BKMK_3"></a>透過 Windows PowerShell 在新的同盟伺服器陣列中設定第一部同盟伺服器  
+您可以使用新的或現有的 gMSA 帳戶或現有的網域使用者帳戶，來建立新的同盟伺服器陣列。  
   
--   **如果您想要使用新的 gMSA 帳戶建立新的同盟伺服器，執行下列作業：**  
+-   **如果您想要使用新的 gMSA 帳戶建立新的同盟伺服器，請執行下列動作：**  
   
     > [!IMPORTANT]  
-    > 您必須建立新的同盟伺服器陣列中的第一部同盟伺服器的網域系統管理員權限。  
+    > 您必須具有網域系統管理員許可權，才能在新的同盟伺服器陣列中建立第一部同盟伺服器。  
   
-    1.  在您想要設定為同盟伺服器的電腦，請確定所需的 SSL 憑證已匯入至**本機電腦\\我的儲存體**目錄。 您可以驗證 SSL 憑證是否已匯入 Windows PowerShell 命令視窗中執行下列命令： `dir Cert:\LocalMachine\My`。 憑證依照在其憑證指紋**本機電腦\\我的儲存體**目錄。  
+    1.  在您要設定為同盟伺服器的電腦上，確定已將所需的 SSL 憑證匯入本機**電腦\\的 [我的存放區**] 目錄。 您可以在 Windows PowerShell 命令視窗中執行下列命令，以確認是否已匯入 SSL 憑證： `dir Cert:\LocalMachine\My`。 憑證會依其指紋列在**本機電腦\\的「我的存放區**」目錄中。  
   
-    2.  網域控制站，開啟 Windows PowerShell 命令視窗並執行下列命令來確認是否已在您的網域中建立 KDS 根金鑰： `Get-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`。 如果它尚未建立，因此輸出會顯示任何資訊，請執行下列命令來建立機碼： `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`。  
+    2.  在您的網域控制站上，開啟 Windows PowerShell 命令視窗並執行下列命令，以確認是否已在網域中建立 KDS 根金鑰根金鑰： `Get-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`。 如果尚未建立，因此輸出不會顯示任何資訊，請執行下列命令來建立金鑰： `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)`。  
   
-    3.  在您想要設定為同盟伺服器的電腦，開啟 Windows PowerShell 命令視窗中，並執行下列命令：  
+    3.  在您要設定為同盟伺服器的電腦上，開啟 Windows PowerShell 命令視窗，然後執行下列命令：  
   
         ```  
         Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -GroupServiceAccountIdentifier <domain>\<GMSA_Name>$  
         ```  
   
         > [!WARNING]  
-        > `$`號結尾的前一個命令是必要的。  
+        > 需要前一個命令結尾的正負號。`$`  
   
-        若要取得的值`<certificate_thumbprint>`，請執行`dir Cert:\LocalMachine\My`，然後選取 SSL 憑證的指紋。 值`<federation_service_name>`是您的同盟服務名稱，例如**fs.contoso.com**。  
-  
-        > [!NOTE]  
-        > 如果這不是第一次執行此命令，新增`OverwriteConfiguration`參數。  
+        若要取得的值`<certificate_thumbprint>`，請`dir Cert:\LocalMachine\My`執行，然後選取 SSL 憑證的指紋。 的值`<federation_service_name>`是同盟服務的名稱，例如**fs.contoso.com**。  
   
         > [!NOTE]  
-        > 前一個命令會建立 WID 伺服器陣列。 如果您想要建立 SQL Server 伺服器陣列時，您必須已安裝且可運作的 SQL Server 的執行個體。  
+        > 如果這不是您第一次執行此命令，請新增`OverwriteConfiguration`參數。  
+  
+        > [!NOTE]  
+        > 上述命令會建立 WID 伺服器陣列。 如果您想要建立 SQL Server 服務器陣列，您必須擁有已安裝且可運作 SQL Server 的實例。  
         >   
-        > 您可以使用下列命令來建立第一部同盟伺服器使用的 SQL Server 執行個體的新伺服陣列中：`Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name?\<SQL_instance_ name>;Integrated Security=True"`何處 **< SQL\_主機\_名稱 >** 是在 SQL server 名稱伺服器正在執行，並 **< SQL\_執行個體\_名稱 >** 是 SQL Server 執行個體的名稱。 如果您使用 SQL Server 的預設執行個體時，使用**SQLConnectionString**的值 」**資料來源\=< SQL\_主機\_名稱 >; Integrated Security\=，則為 True**".  
+        > 您可以使用下列命令在使用 SQL Server 實例的新伺服器陣列中建立第一部同盟伺服器 . 其中`Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name?\<SQL_instance_ name>;Integrated Security=True"` **< SQL\_主機\_名 >** 是執行 SQL Server 的伺服器名稱，而 **< SQL\_實例\_名稱 >** 是 SQL Server 實例的名稱。 如果您使用 SQL Server 的預設實例，請使用「 **\=資料來源 < SQL\_主機\_名 >; 整合式\=安全性 True**」的**SQLConnectionString**值。  
   
         > [!IMPORTANT]  
         > 如果您要建立一個 AD FS 陣列並使用 SQL Server 儲存您的設定資料，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。  
   
--   **如果您想要使用現有的網域使用者帳戶建立新的同盟伺服器，執行下列作業：**  
+-   **如果您想要使用現有的網域使用者帳戶建立新的同盟伺服器，請執行下列動作：**  
   
-    1.  在您想要設定為同盟伺服器的電腦，請確定所需的 SSL 憑證已匯入至**本機電腦\\我的儲存體**目錄。 您可以驗證 SSL 憑證是否已匯入 Windows PowerShell 命令視窗中執行下列命令： `dir Cert:\LocalMachine\My`。 憑證依照在其憑證指紋**本機電腦\\我的儲存體**目錄。  
+    1.  在您要設定為同盟伺服器的電腦上，確定已將所需的 SSL 憑證匯入本機**電腦\\的 [我的存放區**] 目錄。 您可以在 Windows PowerShell 命令視窗中執行下列命令，以確認是否已匯入 SSL 憑證： `dir Cert:\LocalMachine\My`。 憑證會依其指紋列在**本機電腦\\的「我的存放區**」目錄中。  
   
-    2.  在上您想要設定為同盟伺服器的電腦，開啟 Windows PowerShell 命令視窗，然後執行下列命令： `$fscred = Get-Credential`。 輸入您想要使用格式的網域中的同盟服務帳戶的網域使用者帳戶認證\\使用者名稱。  
+    2.  在您要設定為同盟伺服器的電腦上，開啟 Windows PowerShell 命令視窗，然後執行下列命令： `$fscred = Get-Credential`。 以網域\\使用者名稱的格式，輸入您想要用於 federation service 帳戶的網域使用者帳號憑證。  
   
     3.  在相同的 Windows PowerShell 命令視窗中，執行下列命令：  
   
@@ -116,15 +116,15 @@ ms.locfileid: "66192267"
         Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscred  
         ```  
   
-        若要取得的值 **< 憑證\_指紋 >** ，請執行`dir Cert:\LocalMachine\My`，然後選取 SSL 憑證的指紋。 值 **< 同盟\_服務\_名稱 >** 是同盟服務，例如 fs.contoso.com 的名稱。  
+        若要取得 **< 憑證\_指紋 >** 的值，請`dir Cert:\LocalMachine\My`執行，然後選取 SSL 憑證的指紋。 **< Federation\_service\_名稱 >** 的值是同盟服務的名稱，例如 fs.contoso.com。  
   
         > [!NOTE]  
-        > 如果這不是第一次執行此命令，新增`OverwriteConfiguration`參數。  
+        > 如果這不是您第一次執行此命令，請新增`OverwriteConfiguration`參數。  
   
         > [!NOTE]  
-        > 前一個命令會建立 WID 伺服器陣列。 如果您想要建立 SQL Server 伺服器陣列，您必須已安裝且可運作的 SQL Server 執行個體。  
+        > 上述命令會建立 WID 伺服器陣列。 如果您想要建立 SQL Server 服務器陣列，您必須已安裝並操作 SQL Server 的實例。  
         >   
-        > 您可以使用下列命令來建立第一部同盟伺服器使用的 SQL Server 執行個體的新伺服陣列中：`Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"`何處**SQL\_主機\_名稱**是 SQL Server 所在的伺服器名稱執行，並**SQL\_執行個體\_名稱**是 SQL Server 執行個體的名稱。 如果您使用 SQL Server 的預設執行個體時，使用**SQLConnectionString**的值 」**資料來源\=< SQL\_主機\_名稱 >; Integrated Security\=，則為 True**".  
+        > 您可以使用下列命令在使用 SQL Server 實例的新伺服器陣列中建立第一部同盟伺服器：其中`Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` **sql\_主機\_名**是執行 SQL Server 的伺服器名稱，而**sql實例\_名稱是 SQL Server 實例的名稱。 \_** 如果您使用 SQL Server 的預設實例，請使用「 **\=資料來源 < SQL\_主機\_名 >; 整合式\=安全性 True**」的**SQLConnectionString**值。  
   
         > [!IMPORTANT]  
         > 如果您想要建立 AD FS 伺服器陣列，並使用 SQL Server 來儲存設定資料，您可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012 和 SQL Server 2014。  
@@ -132,75 +132,75 @@ ms.locfileid: "66192267"
 ## <a name="BKMK_2"></a>將同盟伺服器新增至現有的同盟伺服器陣列  
   
 > [!IMPORTANT]  
-> 請確定您已完成[步驟 3:安裝 AD FS 角色服務](../../ad-fs/deployment/Install-the-AD-FS-Role-Service.md)，然後才能在您啟動任何程序這一節。  
+> 請確定您已完成[步驟3：請先安裝 AD FS 角色](../../ad-fs/deployment/Install-the-AD-FS-Role-Service.md)服務，再開始進行本節中的任何程式。  
   
 > [!IMPORTANT]  
-> 請確定您已取得有效的 SSL 伺服器驗證憑證才能完成此程序。  
+> 完成此程式之前，請確定您已取得有效的 SSL 伺服器驗證憑證。  
   
-### <a name="to-add-a-federation-server-to-an-existing-federation-server-farm-via-the-active-directory-federation-service-configuration-wizard"></a>若要將同盟伺服器新增至現有的同盟伺服器陣列透過 Active Directory Federation Service 組態精靈  
+### <a name="to-add-a-federation-server-to-an-existing-federation-server-farm-via-the-active-directory-federation-service-configuration-wizard"></a>透過 Active Directory 同盟服務 Configuration Wizard 將同盟伺服器新增至現有的同盟伺服器陣列  
   
-1.  在 [伺服器管理員] 的 [儀表板]  頁面上，按一下 [通知]  旗標，然後按一下 [設定伺服器上的 Federation Service]  。  
+1.  在 [伺服器管理員] 的 [儀表板] 頁面上，按一下 [通知] 旗標，然後按一下 [設定伺服器上的 Federation Service]。  
   
-    [Active Directory Federation Service 設定精靈]  隨即開啟。  
+    [Active Directory Federation Service 設定精靈] 隨即開啟。  
   
-2.  在上**歡迎**頁面上，選取**新增至同盟伺服器陣列的同盟伺服器**，然後按一下**下一步** 。  
+2.  在 [**歡迎使用**] 頁面上，選取 [**將同盟伺服器新增至同盟伺服器**陣列]，然後按 **[下一步]** 。  
   
-3.  在 [**連線到 AD DS**頁面上，指定帳戶使用網域系統管理員權限適用於 AD 這台電腦已加入的網域，然後按一下**下一步]** 。  
+3.  在 [連線**至 AD DS]** 頁面上，使用此電腦所加入之 AD 網域的 [網域系統管理員] 許可權指定帳戶，然後按 **[下一步]** 。  
   
-4.  在 **指定的伺服器陣列**頁面上，提供使用 WID 伺服器陣列中的主要同盟伺服器的名稱，或指定的資料庫主機名稱和現有的同盟伺服器陣列，並使用 SQL Server 資料庫執行個體名稱。  
+4.  在 [**指定伺服器**陣列] 頁面上，提供使用 WID 之伺服器陣列中主要同盟伺服器的名稱，或指定資料庫主機名稱，以及使用 SQL Server 之現有同盟伺服器陣列的資料庫實例名稱。  
   
     > [!WARNING]  
-    > 在 Windows Server® 2012 R2 中，沒有因應措施若要指定 SQL Server 的預設執行個體。 因應措施是不使用使用者介面。 相反地，使用中的步驟[若要設定透過 Windows PowerShell 的新同盟伺服器陣列中的第一部同盟伺服器](Configure-a-Federation-Server.md#BKMK_3)。  
+    > 在 Windows Server® 2012 R2 中，有一個因應措施，可指定 SQL Server 的預設實例。 因應措施是不要使用使用者介面。 相反地，請使用中的步驟，透過[Windows PowerShell 設定新同盟伺服器陣列中的第一部同盟伺服器](Configure-a-Federation-Server.md#BKMK_3)。  
   
     > [!IMPORTANT]  
     > 如果您要建立一個 AD FS 陣列並使用 SQL Server 儲存您的設定資料，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。  
   
-5.  在 **指定 SSL 憑證**頁面上，匯入.pfx 檔案，其中包含 SSL 憑證與您先前取得的金鑰。 此憑證是必要的服務驗證憑證。 在 [步驟 2:註冊適用於 AD FS 的 SSL 憑證](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md)，您已取得此憑證，並將它複製到您想要設定為同盟伺服器的電腦。 若要匯入.pfx 檔案，透過精靈，請按一下**匯入**瀏覽至檔案的位置。 系統會提示您時，輸入.pfx 檔案的密碼。  
+5.  在 [**指定 Ssl 憑證**] 頁面上，匯入 .pfx 檔案，其中包含您先前取得的 SSL 憑證和金鑰。 此憑證是必要的服務驗證憑證。 在[步驟 2:註冊 AD FS](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md)的 SSL 憑證，您已取得此憑證，並將它複製到您要設定為同盟伺服器的電腦。 若要透過 wizard 匯入 .pfx 檔案，請按一下 [匯**入**]，然後流覽至檔案的位置。 當系統提示您時，輸入 .pfx 檔案的密碼。  
   
-6.  在 **指定服務帳戶**頁面上，指定您建立伺服器陣列中的第一部同盟伺服器時所設定的相同服務帳戶。 您可以使用現有群組受控服務帳戶或現有的網域使用者帳戶。  
+6.  在 [**指定服務帳戶**] 頁面上，指定您在伺服器陣列中建立第一部同盟伺服器時所設定的相同服務帳戶。 您可以使用現有的群組受管理的服務帳戶或現有的網域使用者帳戶。  
   
     > [!IMPORTANT]  
-    > 您所指定的帳戶必須與此伺服器陣列中主要同盟伺服器使用的帳戶相同的帳戶。  
+    > 您指定的帳號必須與此伺服器陣列中主要同盟伺服器上所用帳戶的帳戶相同。  
   
-7.  在 [檢閱選項]  頁面上，檢查您的設定選項，然後按一下 [下一步]  。  
+7.  在 [檢閱選項] 頁面上，檢查您的設定選項，然後按一下 [下一步]。  
   
-8.  在  **Pre\-必要檢查**頁面上，確認所有先決條件檢查都順利完成，然後按一下**設定**。  
+8.  在 [**必要條件\-檢查**] 頁面上，確認所有先決條件檢查都已順利完成，然後按一下 [**設定**]。  
   
-9. 在 **結果**頁面上，檢閱結果並檢查設定是否成功完成，然後按一下**完成 federation service 部署所需的後續步驟**。 如需詳細資訊，請參閱 <<c0> [ 後續步驟以完成 AD FS 安裝](https://go.microsoft.com/fwlink/p/?LinkId=286704)。 按一下 **[關閉]** 以結束精靈。  
+9. 在 [**結果**] 頁面上，檢查結果並檢查設定是否已順利完成，然後按一下 **[完成 federation service 部署所需的後續步驟]** 。 如需詳細資訊，請參閱[完成 AD FS 安裝的後續步驟](https://go.microsoft.com/fwlink/p/?LinkId=286704)。 按一下 **[關閉]** 以結束精靈。  
   
-### <a name="to-add-a-federation-server-to-an-existing-federation-server-farm-via-windows-powershell"></a>若要將同盟伺服器新增至現有的同盟伺服器陣列透過 Windows PowerShell  
-您可以新增至現有的伺服陣列的同盟伺服器，使用現有的 gMSA 帳戶或現有的網域使用者帳戶。  
+### <a name="to-add-a-federation-server-to-an-existing-federation-server-farm-via-windows-powershell"></a>透過 Windows PowerShell 將同盟伺服器新增至現有的同盟伺服器陣列  
+您可以使用現有的 gMSA 帳戶或現有的網域使用者帳戶，將同盟伺服器新增至現有的伺服器陣列。  
   
--   如果您想要將同盟伺服器加入至伺服器陣列，使用現有的 gMSA 帳戶，執行下列作業：  
+-   如果您想要使用現有的 gMSA 帳戶，將同盟伺服器加入至伺服器陣列，請執行下列動作：  
   
-    1.  在您想要設定為同盟伺服器的電腦，請確定所需的 SSL 憑證已匯入至**本機電腦\\我的儲存體**目錄。 您可以驗證 SSL 憑證是否已匯入 Windows PowerShell 命令視窗中執行下列命令： `dir Cert:\LocalMachine\My`。 憑證依照在其憑證指紋**本機電腦\\我的儲存體**目錄。  
+    1.  在您要設定為同盟伺服器的電腦上，確定已將所需的 SSL 憑證匯入本機**電腦\\的 [我的存放區**] 目錄。 您可以在 Windows PowerShell 命令視窗中執行下列命令，以確認是否已匯入 SSL 憑證： `dir Cert:\LocalMachine\My`。 憑證會依其指紋列在**本機電腦\\的「我的存放區**」目錄中。  
   
-    2.  在您想要設定為同盟伺服器的電腦，開啟 Windows PowerShell 命令視窗中，並執行下列命令。  
+    2.  在您要設定為同盟伺服器的電腦上，開啟 Windows PowerShell 命令視窗，然後執行下列命令。  
   
         ```  
         Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -PrimaryComputerName <first_federation_server_hostname> -CertificateThumbprint <certificate_thumbprint>  
         ```  
   
-        `<domain>\<GMSA_name>` 您的 AD 網域和該網域中 gMSA 帳戶的名稱。 `<first_federation_server_hostname>` 為這個現有的伺服陣列中的主要同盟伺服器的主機名稱。  
+        `<domain>\<GMSA_name>`是您的 AD 網域和該網域中的 gMSA 帳戶名稱。 `<first_federation_server_hostname>`這是此現有伺服器陣列中主要同盟伺服器的主機名稱。  
   
-        您可以取得的值`<certificate_thumbprint>`藉由執行`dir Cert:\LocalMachine\My`上一個步驟。  
-  
-        > [!NOTE]  
-        > 如果這不是第一次執行此命令，新增`OverwriteConfiguration`參數。  
+        您可以藉`<certificate_thumbprint>` `dir Cert:\LocalMachine\My`由在上一個步驟中執行，取得的值。  
   
         > [!NOTE]  
-        > 前一個命令會建立 WID 伺服器陣列節點。 如果您想要建立伺服器陣列節點的執行 SQL Server 的電腦，您必須已安裝且可運作的 SQL Server 執行個體。  
+        > 如果這不是您第一次執行此命令，請新增`OverwriteConfiguration`參數。  
+  
+        > [!NOTE]  
+        > 上述命令會建立 WID 伺服器陣列節點。 如果您想要建立執行 SQL Server 之電腦的伺服器陣列節點，您必須已安裝且可運作 SQL Server 的實例。  
         >   
-        > 您可以使用下列命令，將同盟伺服器新增至現有的伺服器陣列所使用的 SQL Server 執行個體：`Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"`何處**SQL\_主機\_名稱**是 SQL Server 所在的伺服器名稱執行，並**SQL\_執行個體\_名稱**是 SQL Server 執行個體的名稱。 如果您使用 SQL Server 的預設執行個體時，使用**SQLConnectionString**的值 」**資料來源\=< SQL\_主機\_名稱 >; Integrated Security\=，則為 True**".  
+        > 您可以使用下列命令，將同盟伺服器加入至使用 SQL Server 實例的現有伺服器陣列中：其中`Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` **SQL\_主機\_名**是執行 SQL Server 的伺服器名稱，而**sql實例\_名稱是 SQL Server 實例的名稱。 \_** 如果您使用 SQL Server 的預設實例，請使用「 **\=資料來源 < SQL\_主機\_名 >; 整合式\=安全性 True**」的**SQLConnectionString**值。  
   
         > [!IMPORTANT]  
         > 如果您想要建立 AD FS 伺服器陣列，並使用 SQL Server 來儲存設定資料，您可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012 和 SQL Server 2014。  
   
--   如果您想要將同盟伺服器加入至伺服器陣列，使用現有的網域使用者帳戶，執行下列作業：  
+-   如果您想要使用現有的網域使用者帳戶將同盟伺服器加入至伺服器陣列，請執行下列動作：  
   
-    1.  在您想要設定為同盟伺服器的電腦，開啟 Windows PowerShellcommand 視窗，然後再執行下列命令： `$fscred = get-credential`。 輸入您想要使用格式的網域中的同盟服務帳戶的網域使用者帳戶認證\\使用者名稱。  
+    1.  在您要設定為同盟伺服器的電腦上，開啟 [Windows PowerShellcommand] 視窗，然後執行下列命令： `$fscred = get-credential`。 以網域\\使用者名稱的格式，輸入您想要用於 federation service 帳戶的網域使用者帳號憑證。  
   
-    2.  在您想要設定為同盟伺服器的電腦，請確定所需的 SSL 憑證已匯入至**本機電腦\\我的儲存體**目錄。 您可以驗證 SSL 憑證是否已匯入 Windows PowerShellcommand 視窗中執行下列命令： `dir Cert:\LocalMachine\My`。 憑證依照在其憑證指紋**本機電腦\\我的儲存體**目錄。  
+    2.  在您要設定為同盟伺服器的電腦上，確定已將所需的 SSL 憑證匯入本機**電腦\\的 [我的存放區**] 目錄。 您可以在 [Windows PowerShellcommand] 視窗中執行下列命令，以確認是否已匯入 SSL 憑證`dir Cert:\LocalMachine\My`：。 憑證會依其指紋列在**本機電腦\\的「我的存放區**」目錄中。  
   
     3.  在相同的 Windows PowerShell 命令視窗中，執行下列命令。  
   
@@ -209,10 +209,10 @@ ms.locfileid: "66192267"
         ```  
   
         > [!NOTE]  
-        > 如果這不是第一次執行此命令，新增`OverwriteConfiguration`參數。  
+        > 如果這不是您第一次執行此命令，請新增`OverwriteConfiguration`參數。  
   
         > [!NOTE]  
-        > 前一個命令會建立 WID 伺服器陣列節點。 如果您想要建立伺服器陣列節點的執行 SQL Server 的電腦，您必須已安裝且可運作的 SQL Server 執行個體。 您可以使用下列命令來新增至現有的伺服陣列的同盟伺服器所使用的 SQL Server 執行個體：`Add-AdfsFarmNode -ServiceAccountCredential $fscred -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"`何處**SQL\_主機\_名稱**所在的伺服器名稱的 SQL 執行個體伺服器正在執行，並**SQL\_執行個體\_名稱**是 SQL Server 執行個體的名稱。 如果您使用 SQL Server 的預設執行個體時，使用**SQLConnectionString**的值 」**資料來源\=< SQL\_主機\_名稱 >; Integrated Security\=，則為 True**".  
+        > 上述命令會建立 WID 伺服器陣列節點。 如果您想要建立執行 SQL Server 之電腦的伺服器陣列節點，您必須已安裝且可運作 SQL Server 的實例。 您可以使用下列命令，藉由使用 SQL Server 的實例，將同盟伺服器加入至現有的伺服器陣列`Add-AdfsFarmNode -ServiceAccountCredential $fscred -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` ：**其中\_SQL\_主機名稱**是執行 SQL Server 實例之伺服器的名稱，而 **[\_SQL實例\_名稱**] 是 SQL Server 實例的名稱。 如果您使用 SQL Server 的預設實例，請使用「 **\=資料來源 < SQL\_主機\_名 >; 整合式\=安全性 True**」的**SQLConnectionString**值。  
   
         > [!IMPORTANT]  
         > 如果您想要建立 AD FS 伺服器陣列，並使用 SQL Server 來儲存設定資料，您可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012 和 SQL Server 2014。  

@@ -1,6 +1,6 @@
 ---
 title: 疑難排解 Always On VPN
-description: 本主題提供驗證和 Windows Server 2016 中的一律開啟 」 VPN 部署進行疑難排解的指示。
+description: 本主題提供驗證和疑難排解 Windows Server 2016 中 Always On VPN 部署的指示。
 ms.prod: windows-server-threshold
 ms.technology: networking-ras
 ms.topic: article
@@ -9,175 +9,175 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d9e0efede39f5a8189dbb3d62033210c393c424d
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: 60873c8bbf71ad5afa58bd9e19b1a3fd650bc65f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749651"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871354"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>疑難排解 Always On VPN 
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows 10
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-如果您的一律開啟 」 VPN 設定為將用戶端連接到您的內部網路，原因可能是無效的 VPN 憑證、 不正確的 NPS 原則或使用用戶端部署指令碼或路由及遠端存取的問題。 疑難排解和測試您的 VPN 連線的第一個步驟了解一律開啟 」 VPN 基礎結構的核心元件。 
+如果您的 Always On VPN 安裝程式無法將用戶端連線到您的內部網路，則原因可能是不正確 VPN 憑證、不正確的 NPS 原則，或用戶端部署腳本或路由及遠端存取的問題。 針對 VPN 連線進行疑難排解和測試的第一個步驟，是瞭解 Always On VPN 基礎結構的核心元件。 
 
-您可以針對數種方式的連線問題進行疑難排解。 用戶端的問題和一般的疑難排解，用戶端電腦上的應用程式記錄是非常寶貴。 如需驗證特定問題，NPS 伺服器上的 NPS 記錄檔可協助您判斷問題的來源。
+您可以透過數種方式對連接問題進行疑難排解。 針對用戶端問題和一般疑難排解，用戶端電腦上的應用程式記錄非常寶貴。 對於驗證特定的問題，NPS 伺服器上的 NPS 記錄檔可協助您判斷問題來源。
 
 ## <a name="error-codes"></a>錯誤碼
 
-### <a name="error-code-800"></a>錯誤碼：800
+### <a name="error-code-800"></a>錯誤碼:800
 
-- **錯誤描述。** 不進行遠端的連線，因為嘗試的 VPN 通道失敗。 您可能無法連線到 VPN 伺服器。 如果此連線嘗試使用 L2TP/IPsec 通道，交涉可能未正確設定的 IPsec 所需的安全性參數。
+- **錯誤描述。** 因為嘗試的 VPN 通道失敗，所以未建立遠端連線。 可能無法連上 VPN 伺服器。 如果此連線嘗試使用 L2TP/IPsec 通道，則 IPsec 協商所需的安全性參數可能未正確設定。
 
-- **可能的原因。** VPN 通道型別時，就會發生此錯誤**自動**和所有 VPN 通道連線嘗試都失敗。
+- **可能的原因。** 當 VPN 通道類型為 [**自動**]，且所有 VPN 通道的連線嘗試失敗時，就會發生此錯誤。
 
 - **可能的解決方案：**
 
-    - 如果您知道哪些通道，以用於部署，設定為該特定通道類型的 VPN 類型，VPN 用戶端上。
+    - 如果您知道要用於部署的通道，請將 VPN 的類型設定為 VPN 用戶端上的特定通道類型。
 
-    - 藉由特定通道型別透過 VPN 連線，連線還是會失敗，，但它會導致更多的通道特有的錯誤 (例如，"GRE 封鎖 PPTP")。
+    - 藉由建立具有特定通道類型的 VPN 連線，您的連線仍會失敗，但會導致更多的通道特定錯誤（例如，「對 PPTP 封鎖了 GRE」）。
 
-    - 無法連線到 VPN 伺服器或通道連線失敗時，也會發生此錯誤。
+    - 當無法連線到 VPN 伺服器，或通道連線失敗時，也會發生此錯誤。
 
-- **請確定：**
+- **確保：**
 
-    - IKE 連接埠 （UDP 連接埠 500 和 4500），不會封鎖。
+    - IKE 埠（UDP 埠500和4500）不會遭到封鎖。
 
-    - 正確的憑證，ike 會在用戶端和伺服器上。
+    - 用戶端和伺服器上都有正確的 IKE 憑證。
 
-### <a name="error-code-809"></a>錯誤碼：809
+### <a name="error-code-809"></a>錯誤碼:809
 
-- **錯誤描述。**  無法建立您的電腦和 VPN 伺服器之間的網路連線，因為遠端伺服器沒有回應。 這可能是因為您的電腦和遠端伺服器之間的網路裝置 （例如防火牆、 NAT 路由器） 的其中一個未設定為允許 VPN 連線。 請連絡您的系統管理員或服務提供者，以判斷哪一種裝置可能會造成問題。
+- **錯誤描述。**  因為遠端伺服器沒有回應，所以無法建立電腦與 VPN 伺服器之間的網路連線。 這可能是因為您的電腦與遠端伺服器之間的其中一個網路裝置（例如防火牆、NAT、路由器）未設定為允許 VPN 連線。 請洽詢您的系統管理員或服務提供者，以判斷可能造成問題的裝置。
 
-- **可能的原因。** 此錯誤被因為封鎖的 UDP 500 或 VPN 伺服器或防火牆上的 4500 連接埠。
+- **可能的原因。** 此錯誤是由 VPN 伺服器或防火牆上已封鎖的 UDP 500 或4500埠所造成。
 
-- **可能的解決方案。** 確保透過用戶端與 RRAS 伺服器之間的所有防火牆允許 UDP 連接埠 500 和 4500。
+- **可能的解決方案。** 請確定已允許 UDP 埠500和4500通過用戶端和 RRAS 伺服器之間的所有防火牆。
 
-### <a name="error-code-812"></a>錯誤碼：812
+### <a name="error-code-812"></a>錯誤碼:812
 
-- **錯誤描述。** 無法連線到一律開啟 」 VPN。 因為您 RAS/VPN 伺服器上設定原則，因此已防止連線。 具體而言，驗證方法的伺服器用來驗證您的使用者名稱和密碼可能不符合您的連線設定檔中設定的驗證方法。 請連絡 RAS 伺服器的系統管理員，並通知他或她的這項錯誤。
+- **錯誤描述。** 無法連接到 Always On VPN。 因為您 RAS/VPN 伺服器上設定了原則，所以無法連線。 具體而言，伺服器用來驗證您的使用者名稱和密碼的驗證方法可能與連線設定檔中設定的驗證方法不相符。 請洽詢 RAS 伺服器的系統管理員，並通知他或她這項錯誤。
 
 - **可能的原因：**
 
-    - 此錯誤的一般原因是，NPS 具有指定的用戶端無法符合驗證條件。 比方說，NPS 可指定 PEAP 保護連線安全的憑證的使用，但用戶端正在嘗試使用 EAP-MSCHAPv2。
+    - 此錯誤的常見原因是 NPS 已指定用戶端無法符合的驗證條件。 例如，NPS 可能會指定使用憑證來保護 PEAP 連線，但用戶端正在嘗試使用 EAP-Eap-mschapv2。
 
-    - RRAS 為基礎的 VPN 伺服器驗證通訊協定設定不符合 VPN 用戶端電腦的事件記錄檔 20276 會記錄到事件檢視器。
+    - 當以 RRAS 為基礎的 VPN 伺服器驗證通訊協定設定與 VPN 用戶端電腦不相符時，事件記錄檔20276會記錄到事件檢視器中。
 
-- **可能的解決方案。** 請確認您的用戶端設定符合 NPS 伺服器指定的條件。
+- **可能的解決方案。** 請確定您的用戶端設定符合 NPS 伺服器上指定的條件。
 
-### <a name="error-code-13806"></a>錯誤碼：13806
+### <a name="error-code-13806"></a>錯誤碼:13806
 
-- **錯誤描述。** IKE 無法找不到有效的電腦憑證。 請連絡您的網路安全性系統管理員在適當的憑證存放區中安裝有效憑證的相關。
+- **錯誤描述。** IKE 找不到有效的電腦憑證。 請洽詢您的網路安全性系統管理員，以瞭解如何在適當的憑證存放區中安裝有效的憑證。
 
-- **可能的原因。** 當沒有電腦憑證時，通常就會發生此錯誤，或根機器憑證存在於 VPN 伺服器上。
+- **可能的原因。** 當 VPN 伺服器上沒有電腦憑證或根電腦憑證時，通常就會發生此錯誤。
 
-- **可能的解決方案。** 請確定此部署中所述的憑證會安裝在用戶端電腦和 VPN 伺服器。
+- **可能的解決方案。** 確定在用戶端電腦和 VPN 伺服器上都已安裝此部署中所述的憑證。
 
-### <a name="error-code-13801"></a>錯誤碼：13801
+### <a name="error-code-13801"></a>錯誤碼:13801
 
-- **錯誤描述。** IKE 驗證認證就是無法接受的。
+- **錯誤描述。** 不接受 IKE 驗證認證。
 
-- **可能的原因。** 此錯誤通常是發生在下列案例之一：
+- **可能的原因。** 此錯誤通常會在下列其中一種情況下發生：
 
-    - 電腦憑證用於 IKEv2 驗證 RAS 伺服器上沒有**伺服器驗證**下方**增強金鑰使用方法**。
+    - 在 RAS 伺服器上用於 IKEv2 驗證的電腦憑證沒有 [**增強金鑰使用**方法] 底下的 [**伺服器驗證**]。
 
     - RAS 伺服器上的電腦憑證已過期。
 
-    - 若要驗證的 RAS 伺服器憑證的根憑證不存在用戶端電腦上。
+    - 用來驗證 RAS 伺服器憑證的根憑證不存在於用戶端電腦上。
 
-    - 使用用戶端電腦上的 VPN 伺服器名稱不符合**subjectName**伺服器憑證。
+    - 用戶端電腦上使用的 VPN 伺服器名稱與伺服器憑證的**subjectName**不相符。
 
-- **可能的解決方案。** 請確認伺服器憑證包含**伺服器驗證**下方**增強金鑰使用方法**。 請確認伺服器憑證仍然有效。 確認使用的 CA 列底下**受信任的根憑證授權單位**RRAS 伺服器上。 確認 VPN 用戶端連線 VPN 伺服器的憑證上所述，使用 VPN 伺服器的 FQDN。
+- **可能的解決方案。** 確認伺服器憑證在 [**增強金鑰使用**方法] 下包含 [**伺服器驗證**]。 確認伺服器憑證仍然有效。 確認所使用的 CA 列于 RRAS 伺服器上的 [**受信任的根憑證授權**單位] 底下。 確認 VPN 用戶端會使用 vpn 伺服器憑證上所顯示的 VPN 伺服器的 FQDN 來進行連線。
 
-### <a name="error-code-0x80070040"></a>錯誤碼：0x80070040
+### <a name="error-code-0x80070040"></a>錯誤碼:0x80070040
 
-- **錯誤描述。** 伺服器憑證沒有**伺服器驗證**作為其憑證使用方式的項目之一。
+- **錯誤描述。** 伺服器憑證沒有**伺服器驗證**做為其中一個憑證使用方式專案。
 
-- **可能的原因。** 如果沒有伺服器驗證憑證已安裝 RAS 伺服器上，可能會發生此錯誤。
+- **可能的原因。** 如果 RAS 伺服器上沒有安裝伺服器驗證憑證，就會發生此錯誤。
 
-- **可能的解決方案。** 請確認電腦憑證 RAS 伺服器會使用針對**IKEv2**已**伺服器驗證**做為其中一個憑證使用方式的項目。
+- **可能的解決方案。** 請確定 RAS 伺服器用於**IKEv2**的電腦憑證具有**伺服器驗證**，做為其中一個憑證使用方式專案。
 
-### <a name="error-code-0x800b0109"></a>錯誤碼：0x800B0109
+### <a name="error-code-0x800b0109"></a>錯誤碼:0x800B0109
 
-一般而言，VPN 用戶端電腦已加入 Active Directory 為基礎的網域。 如果您使用網域認證來登入 VPN 伺服器時，憑證會自動安裝在受信任的根憑證授權單位存放區。 不過，如果電腦未加入網域，或使用替代的憑證鏈結，您可能會遇到此問題。
+一般而言，VPN 用戶端機器會聯結至以 Active Directory 為基礎的網域。 如果您使用網域認證來登入 VPN 伺服器，憑證會自動安裝在「信任的根憑證授權」存放區中。 不過，如果電腦未加入網域，或如果您使用替代的憑證鏈，您可能會遇到此問題。
 
-- **錯誤描述。** 憑證鏈結處理，但它終止於信任提供者不信任的根憑證。
+- **錯誤描述。** 憑證鏈已處理，但在信任提供者不信任的根憑證中終止。
 
-- **可能的原因。** 如果適當信任的根 CA 憑證未安裝在受信任的根憑證授權單位，可能會發生此錯誤儲存在用戶端電腦上。
+- **可能的原因。** 如果用戶端電腦上的 [信任的根憑證授權單位] 存放區中未安裝適當的受根信任 CA 憑證，則可能會發生此錯誤。
 
-- **可能的解決方案。** 請確定在受信任的根憑證授權單位存放區中的用戶端電腦上已安裝根憑證。
+- **可能的解決方案。** 確定 [信任的根憑證授權單位] 存放區中的用戶端電腦上已安裝根憑證。
 
 ## <a name="logs"></a>記錄檔
 
 ### <a name="application-logs"></a>應用程式記錄檔
 
-用戶端電腦上的應用程式記錄檔記錄大部分的較高層級的詳細資料的 VPN 連線的事件。
+用戶端電腦上的應用程式記錄檔會記錄 VPN 線上活動的大部分較高層級詳細資料。
 
-事件來源為 RasClient 外觀。 所有的錯誤訊息傳回訊息結尾處的錯誤程式碼。 一些較常見的錯誤代碼詳述如下，但完整清單位於[路由及遠端存取錯誤碼](https://msdn.microsoft.com/library/windows/desktop/bb530704.aspx)。
+尋找來自來源 RasClient 的事件。 所有錯誤訊息都會在訊息結尾傳回錯誤碼。 以下詳述一些較常見的錯誤碼，但完整清單可在[路由及遠端存取錯誤碼](https://msdn.microsoft.com/library/windows/desktop/bb530704.aspx)中取得。
 
 ## <a name="nps-logs"></a>NPS 記錄檔
 
-NPS 會建立並儲存 NPS 帳戶處理記錄檔。 根據預設，這些儲存在 %SYSTEMROOT%\\System32\\Logfiles\\在檔案中名為*XXXX*.txt，其中*XXXX*是檔案的建立的日期。
+NPS 會建立並儲存 NPS 帳戶處理記錄。 根據預設，這些檔案會以*xxxx*中名\\為的\\檔案儲存在% SYSTEMROOT% System32\\記錄檔中，其中*xxxx*是檔案的建立日期。
 
-根據預設，這些記錄是以逗號分隔值格式，但它們不包含標題列。 標題資料列是：
+根據預設，這些記錄是以逗點分隔值格式，但不包含標題資料列。 標題資料列為：
 
 ```
 ComputerName,ServiceName,Record-Date,Record-Time,Packet-Type,User-Name,Fully-Qualified-Distinguished-Name,Called-Station-ID,Calling-Station-ID,Callback-Number,Framed-IP-Address,NAS-Identifier,NAS-IP-Address,NAS-Port,Client-Vendor,Client-IP-Address,Client-Friendly-Name,Event-Timestamp,Port-Limit,NAS-Port-Type,Connect-Info,Framed-Protocol,Service-Type,Authentication-Type,Policy-Name,Reason-Code,Class,Session-Timeout,Idle-Timeout,Termination-Action,EAP-Friendly-Name,Acct-Status-Type,Acct-Delay-Time,Acct-Input-Octets,Acct-Output-Octets,Acct-Session-Id,Acct-Authentic,Acct-Session-Time,Acct-Input-Packets,Acct-Output-Packets,Acct-Terminate-Cause,Acct-Multi-Ssn-ID,Acct-Link-Count,Acct-Interim-Interval,Tunnel-Type,Tunnel-Medium-Type,Tunnel-Client-Endpt,Tunnel-Server-Endpt,Acct-Tunnel-Conn,Tunnel-Pvt-Group-ID,Tunnel-Assignment-ID,Tunnel-Preference,MS-Acct-Auth-Type,MS-Acct-EAP-Type,MS-RAS-Version,MS-RAS-Vendor,MS-CHAP-Error,MS-CHAP-Domain,MS-MPPE-Encryption-Types,MS-MPPE-Encryption-Policy,Proxy-Policy-Name,Provider-Type,Provider-Name,Remote-Server-Address,MS-RAS-Client-Name,MS-RAS-Client-Version
 ```
 
-如果您將此標題資料列貼為記錄檔的第一行，然後將檔案匯入 Microsoft Excel，正確地標示為資料行。
+如果您將此標題列貼入記錄檔的第一行，然後將該檔案匯入 Microsoft Excel 中，資料行會適當地加上標籤。
 
-NPS 記錄檔能幫助您診斷原則相關的問題。 如需 NPS 記錄檔的詳細資訊，請參閱[解譯 NPS 資料庫格式記錄檔](https://technet.microsoft.com/library/cc771748.aspx)。
+NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳細資訊，請參閱[解讀 Nps 資料庫格式記錄](https://technet.microsoft.com/library/cc771748.aspx)檔。
 
-## <a name="vpnprofileps1-script-issues"></a>VPN_Profile.ps1 指令碼的問題
+## <a name="vpn_profileps1-script-issues"></a>VPN_Profile. ps1 腳本問題
 
-最常見的問題時以手動方式執行 VPN_ Profile.ps1 指令碼包括：
+手動執行 VPN_ 設定檔時最常遇到的問題。 ps1 腳本包括：
 
-- 您使用遠端連線工具？  請確定不使用 RDP 或另一種遠端連線方法，因為它會使用使用者登入偵測的異動。
+- 您是否使用遠端連線工具？  請確定不使用 RDP 或其他遠端連線方法，因為它混亂使用者登入偵測。
 
-- 使用者是該本機電腦的系統管理員？  請確定執行 VPN_Profile.ps1 指令碼時的使用者具有系統管理員權限。
+- 使用者是該本機電腦的系統管理員嗎？  請確定在執行 VPN_Profile 腳本時，使用者具有系統管理員許可權。
 
-- 您是否有啟用的其他 PowerShell 安全性功能？ 請確定 PowerShell 執行原則不會封鎖指令碼。 您可以考慮關閉限制語言模式中，如果啟用，才能執行指令碼。 指令碼順利完成之後，您可以啟用限制語言模式。
+- 您是否已啟用額外的 PowerShell 安全性功能？ 請確定 PowerShell 執行原則不會封鎖腳本。 執行腳本之前，您可以考慮關閉限制語言模式（如果已啟用）。 您可以在腳本順利完成後啟動限制語言模式。
 
-## <a name="always-on-vpn-client-connection-issues"></a>一律開啟 」 VPN 用戶端連線問題
+## <a name="always-on-vpn-client-connection-issues"></a>Always On VPN 用戶端連線問題
 
-小型的設定不正確可能會導致用戶端連接失敗，並不容易找出原因。  一律開啟 」 VPN 用戶端會經歷幾個步驟之前建立的連接。 當用戶端連線問題進行疑難排解，經歷消去法使用下列程序：
+較小的錯誤設定可能會導致用戶端連線失敗，而且可能會很難找出原因。  在建立連線之前，Always On VPN 用戶端會經歷數個步驟。 針對用戶端連線問題進行疑難排解時，請使用下列程式來完成消除程式：
 
-1. 外部範本電腦已連線？ A **whatismyip**掃描應該會顯示不屬於您的公用 IP 位址。
+1. 範本機器是否已外部連線？ **Whatismyip**掃描應該會顯示不屬於您的公用 IP 位址。
 
-2. 您可以解決遠端存取 VPN 伺服器名稱為 IP 位址？ 在**控制台中** > **網路**並**網際網路** > **網路連線**，開啟 [內容]VPN 設定檔。 中的值**一般** 索引標籤應該是可公開解析的 dns。
+2. 您可以將遠端存取/VPN 伺服器名稱解析成 IP 位址嗎？ 在 [**控制台** > ] 的 [**網路**和**網際網路** > **網路**連線] 中，開啟您的 VPN 設定檔的屬性。 [**一般**] 索引標籤中的值應該可透過 DNS 公開解析。
 
-3. 您可以從外部網路存取 VPN 伺服器嗎？ 請考慮開啟給外部介面的網際網路控制訊息通訊協定 (ICMP)，並 ping 遠端用戶端的名稱。 Ping 成功之後，您可以移除 ICMP 允許規則。
+3. 您可以從外部網路存取 VPN 伺服器嗎？ 請考慮開啟外部介面的網際網路控制訊息通訊協定（ICMP），並從遠端用戶端 ping 名稱。 Ping 成功之後，您可以移除 ICMP 允許規則。
 
-4. 您已正確設定 VPN 伺服器上是否有內部和外部 Nic？ 它們位於不同子網路嗎？ 不是連接至正確的介面，在您的防火牆外部的 NIC 嗎？
+4. 您是否已正確設定 VPN 伺服器上的內部和外部 Nic？ 它們位於不同的子網嗎？ 外部 NIC 會連線到您防火牆上的正確介面嗎？
 
-5. 是 UDP 500 和 4500 連接埠的 VPN 伺服器的外部介面從用戶端開啟？ 請檢查用戶端防火牆、 伺服器防火牆，以及任何硬體防火牆。 IPSEC 使用 UDP 連接埠 500，因此請確定您沒有 IPEC 停用或封鎖的任何位置。
+5. 從用戶端開啟 UDP 500 和4500埠到 VPN 伺服器的外部介面嗎？ 檢查用戶端防火牆、伺服器防火牆和任何硬體防火牆。 IPSEC 使用 UDP 埠500，因此請確定您未在任何地方停用或封鎖 IPEC。
 
-6. 憑證驗證失敗？ 確認 NPS 伺服器可以 IKE 要求提供服務的伺服器驗證憑證。 請確定您有正確的 VPN 伺服器 IP 指定做為 NPS 用戶端。 請確定您的驗證與 PEAP 搭配，而且受保護的 EAP 內容應該只允許使用憑證進行驗證。 您可以檢查 NPS 事件日誌中的驗證失敗。 如需詳細資訊，請參閱[安裝和設定 NPS 伺服器](vpn-deploy-nps.md)
+6. 憑證驗證是否失敗？ 確認 NPS 伺服器具有可服務 IKE 要求的伺服器驗證憑證。 請確定您已將正確的 VPN 伺服器 IP 指定為 NPS 用戶端。 請確定您是使用 PEAP 進行驗證，且受保護的 EAP 屬性只允許使用憑證進行驗證。 您可以檢查 NPS 事件記錄檔中是否有驗證失敗。 如需詳細資訊，請參閱[安裝和設定 NPS 伺服器](vpn-deploy-nps.md)。
 
-7. 您連接，但沒有網際網路] / [本機網路存取權嗎？ 請檢查組態問題您 DHCP/VPN 伺服器 IP 集區。
+7. 您是否正在連線，但沒有網際網路/區域網路存取權？ 檢查您的 DHCP/VPN 伺服器 IP 集區是否有設定問題。
 
-8. 您會連接並具有正確內部 IP 但沒有本機資源的存取權嗎？  請確認用戶端知道如何存取這些資源。 您可以使用 VPN 伺服器，將要求路由傳送。
+8. 您是否連線並擁有有效的內部 IP，但沒有本機資源的存取權？  確認用戶端知道如何取得這些資源。 您可以使用 VPN 伺服器來路由傳送要求。
 
-## <a name="azure-ad-conditional-access-connection-issues"></a>Azure AD 條件式存取連線問題
+## <a name="azure-ad-conditional-access-connection-issues"></a>Azure AD 條件式存取連接問題
 
-### <a name="oops---you-cant-get-to-this-yet"></a>抱歉-您無法檢視這尚未
+### <a name="oops---you-cant-get-to-this-yet"></a>糟糕-您還無法進入此
 
-- **錯誤描述。** 條件式存取原則時不滿意，封鎖 VPN 連線，但連線使用者選取後**X**關閉訊息。  選取**確定**會導致另一個結尾為另一個 「 糟糕 」 訊息的驗證嘗試。 這些事件會記錄在用戶端的 AAD 操作事件記錄檔。
+- **錯誤描述。** 當條件式存取原則不符合時，會封鎖 VPN 連線，但會在使用者選取**X**以關閉訊息後進行連接。  選取 **[確定]** 會導致另一個驗證嘗試，這會在另一個「糟糕」訊息中結束。 這些事件會記錄在用戶端的 AAD 操作事件記錄檔中。
 
 - **可能的原因**
 
-  - 使用者會有未由 Azure AD 所發出的有效的用戶端驗證憑證在其個人憑證存放區。
+  - 使用者的個人憑證存儲中具有有效的用戶端驗證憑證，但 Azure AD 不發出。
 
-  - VPN 設定檔\<TLSExtensions\>一節已遺漏或不包含 **\<EKUName\>AAD 條件式存取\</EKUName\> \<EKUOID\>1.3.6.1.4.1.311.87 < / EKUOID\>\<EKUName > AAD 條件式存取 < / EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 < / EKUOID\>** 項目。 \<EKUName > 和\<EKUOID > 項目告知的 VPN 用戶端將憑證傳遞到 VPN 伺服器時，從使用者的憑證存放區擷取憑證。 如果沒有這麼做，VPN 用戶端會使用任何有效的用戶端驗證憑證位於使用者的憑證存放區，並驗證成功。 
+  - VPN 設定檔\<TLSExtensions\>區段遺失 **\<或不包含 EKUName\>AAD 條件式\<存取\>/EKUName\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\> \< \> \> EKUName > AAD 條件式存取 </EKUName\>EKUOID 1.3.6.1.4.1.311.87 </EKUOID\<** 專案。 EKUName > 和\<EKUOID > 專案會告訴 vpn 用戶端，在將憑證傳遞給 vpn 伺服器時，要從使用者的憑證存放區中取出哪一個憑證。 \< 如果沒有這麼做，VPN 用戶端會使用使用者憑證存放區中任何有效的用戶端驗證憑證，而且驗證會成功。 
 
-  - RADIUS 伺服器 (NPS) 尚未設定為只接受包含的用戶端憑證**AAD 條件式存取**OID。
+  - RADIUS 伺服器（NPS）尚未設定為只接受包含**AAD 條件式存取**OID 的用戶端憑證。
 
-- **可能的解決方案。** 若要逸出此迴圈中，執行下列作業：
+- **可能的解決方案。** 若要取消此迴圈，請執行下列動作：
 
-  1. 在 Windows PowerShell 中執行**Get-wmiobject** cmdlet 來傾印 VPN 設定檔設定。 
-  2. 確認 **\<TLSExtensions >** ，  **\<EKUName >** ，以及 **\<EKUOID >** 區段存在，並顯示正確名稱和 OID。
+  1. 在 Windows PowerShell 中，執行**WmiObject** Cmdlet 來傾印 VPN 設定檔設定。 
+  2. 確認 TLSExtensions >、 **\<**  **\<EKUName >** 和 **\<EKUOID >** 區段存在，並顯示正確的名稱和 OID。
       
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
@@ -277,21 +277,21 @@ NPS 記錄檔能幫助您診斷原則相關的問題。 如需 NPS 記錄檔的�
       Encryption test passed
      ```
      >[!NOTE]
-     >如果從簽發者憑證**CN = Microsoft VPN 根 CA 層代 1**出現在使用者的個人存放區，但使用者獲得存取選取**X**關閉糟糕訊息，收集 CAPI2 事件記錄檔，以確認用來驗證憑證已從 Microsoft VPN 根 CA 未發出的有效用戶端驗證憑證。
+     >如果使用者的個人存放區中有來自簽發者**CN = MICROSOFT VPN 根 CA gen 1**的憑證，但是使用者藉由選取**X**以關閉糟糕訊息來取得存取權，請收集 CAPI2 事件記錄檔，以確認用來驗證的憑證 was不是從 Microsoft VPN 根 CA 發行的有效用戶端驗證憑證。
 
-  4. 如果使用者的個人存放區中，有有效的用戶端驗證憑證，連線會失敗 （正常） 使用者選取後**X**如果 **\<TLSExtensions >** ， **\<EKUName >** ，並 **\<EKUOID >** 區段存在，而且包含正確的資訊。
+  4. 如果使用者的個人存放區中有有效的用戶端驗證憑證，在使用者選取**X**之後，如果 **\<TLSExtensions >** 、  **\<EKUName >** 和 **，連接就會失敗（如其所示）。EKUOID\<>** 區段存在，並包含正確的資訊。
    
-     出現錯誤訊息指出 「 憑證不找，可以搭配可延伸驗證通訊協定 」。
+     此時會出現一個錯誤訊息，指出「找不到可以搭配可延伸驗證通訊協定使用的憑證」。
 
-### <a name="unable-to-delete-the-certificate-from-the-vpn-connectivity-blade"></a>無法從 [VPN 連線] 刀鋒視窗中刪除憑證
+### <a name="unable-to-delete-the-certificate-from-the-vpn-connectivity-blade"></a>無法從 VPN 連線分頁刪除憑證
 
-- **錯誤描述。** 無法刪除 VPN 連線 刀鋒視窗上的憑證。
+- **錯誤描述。** 無法刪除 VPN 連線分頁上的憑證。
 
-- **可能的原因。** 憑證設定為**主要**。
+- **可能的原因。** 憑證設定為 [**主要**]。
 
 - **可能的解決方案。**
 
-    1. 在 [VPN 連線] 刀鋒視窗中選取的憑證。
-    2. 底下**主要**，選取**No**，然後選取**儲存**。
-    3. 在 [VPN 連線] 刀鋒視窗中再次選取憑證。
-    4. 選取 **刪除**。
+    1. 在 [VPN 連線] 分頁中，選取憑證。
+    2. 在 [**主要**] 底下，選取 [**否**]，然後選取 [**儲存**]。
+    3. 在 [VPN 連線] 分頁中，再次選取憑證。
+    4. 選取 [**刪除**]。

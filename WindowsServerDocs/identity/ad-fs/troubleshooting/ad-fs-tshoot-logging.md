@@ -8,12 +8,12 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: bfa305103e81f316dc5ad5df22cd238f6fb5ec31
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: da3214b715b415eed2cbce351cae93eff14a88c7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314339"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865530"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>AD FS 疑難排解-事件和記錄
 AD FS 提供兩個可用於疑難排解的主要記錄檔。  其中包括：
@@ -57,9 +57,9 @@ Set-AdfsProperties -AuditLevel
 
 |稽核層級|PowerShell 語法|描述|  
 |----- | ----- | ----- |
-|None|Set-adfsproperties-AuditLevel None|已停用審核, 而且不會記錄任何事件。|  
+|無|Set-adfsproperties-AuditLevel None|已停用審核, 而且不會記錄任何事件。|  
 |基本 (預設值)|Set-adfsproperties-AuditLevel Basic|單一要求不會記錄超過5個事件|  
-|Verbose|Set-adfsproperties-AuditLevel Verbose|將記錄所有事件。  這會針對每個要求記錄大量的資訊。|  
+|詳細資訊|Set-adfsproperties-AuditLevel Verbose|將記錄所有事件。  這會針對每個要求記錄大量的資訊。|  
   
 若要查看目前的審核層級, 您可以使用 PowerShell cmdlt:Set-adfsproperties。  
   
@@ -90,7 +90,7 @@ AD FS 服務帳戶的安全性審核有時可以協助追蹤密碼更新、要�
 
 ### <a name="to-enable-security-auditing"></a>啟用安全性審核
 1. 按一下 [開始], 依序指向 [**程式**] 和 [系統**管理工具**], 然後按一下 [**本機安全性原則**]。
-2. 瀏覽到 [安全性設定\本機原則\使用者權限管理]  資料夾，然後按兩下 [產生安全性稽核]  。
+2. 瀏覽到 [安全性設定\本機原則\使用者權限管理] 資料夾，然後按兩下 [產生安全性稽核]。
 3. 在 [**本機安全性設定**] 索引標籤上, 確認已列出 [AD FS 服務帳戶]。 如果不存在, 請按一下 [新增使用者或群組] 並將它新增至清單中, 然後按一下 [確定]。
 4. 以較高的許可權開啟命令提示字元, 並執行下列命令以啟用 [/subcategory]: [應用程式產生的]/failure: [啟用/success: 啟用]
 5. 關閉 [**本機安全性原則**], 然後開啟 [AD FS 管理] 嵌入式管理單元。
@@ -110,7 +110,7 @@ AD FS 服務帳戶的安全性審核有時可以協助追蹤密碼更新、要�
 ## <a name="windows-communication-foundation-and-windows-identity-foundation-messages"></a>Windows Communication Foundation 和 Windows Identity Foundation 訊息
 除了追蹤記錄之外, 有時候您可能需要查看 Windows Communication Foundation (WCF) 和 Windows Identity Foundation (WIF) 訊息, 才能針對問題進行疑難排解。 藉由修改 AD FS 伺服器上的**IdentityServer** , 即可完成這項作業。 
 
-此檔案位於 **<% system root% > \Windows\ADFS**中, 且格式為 XML。 檔案的相關部分如下所示: 
+此檔案位於 **<% system root% > \Windows\ADFS**中，且格式為 XML。 檔案的相關部分如下所示: 
 ```
 <!-- To enable WIF tracing, change the switchValue below to desired trace level - Verbose, Information, Warning, Error, Critical -->
 
@@ -134,7 +134,7 @@ AD FS 服務帳戶的安全性審核有時可以協助追蹤密碼更新、要�
 這個活動識別碼在要求的整個持續期間都維持不變, 而且會記錄為該要求的事件檢視器中記錄的每個事件的一部分。 這表示：
  - 使用此活動識別碼篩選或搜尋事件檢視器有助於追蹤對應至權杖要求的所有相關事件
  - 相同的活動識別碼會記錄在不同的電腦上, 讓您能夠針對多部電腦 (例如同盟伺服器 proxy (FSP)) 進行使用者要求的疑難排解
- - 如果 AD FS 要求會以任何方式失敗, 則活動識別碼也會出現在使用者的瀏覽器中, 因此可讓使用者將此識別碼傳達給服務台或 IT 支援人員。
+ - 如果 AD FS 要求會以任何方式失敗，則活動識別碼也會出現在使用者的瀏覽器中，因此可讓使用者將此識別碼傳達給服務台或 IT 支援人員。
 
 ![activityid](media/ad-fs-tshoot-logging/activityid2.png)
 

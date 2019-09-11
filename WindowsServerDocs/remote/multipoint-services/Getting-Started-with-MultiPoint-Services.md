@@ -1,6 +1,6 @@
 ---
-title: MultiPoint 服務使用者入門
-description: 介紹 MultiPoint 服務，並協助您開始使用它。
+title: 使用 MultiPoint 服務的消費者入門
+description: 介紹 MultiPoint 服務，並讓您開始使用它。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,101 +13,101 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 03dcbc97fac91dfec83b257a8e50bfe49ff3bc14
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2ed2084038236dc8914eefe6bdafc133817b7b41
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884899"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871676"
 ---
-# <a name="getting-started-with-multipoint-services"></a>MultiPoint 服務使用者入門
-MultiPoint 服務系統可讓許多使用者使用實際連線使用只有一部電腦的站台集線器的多個站台。 每個站台通常是由站台集線器、 滑鼠、 鍵盤和視訊監視器所組成。 在 MultiPoint 服務站每位使用者體驗的唯一 Windows 運算的工作階段，您可以使用 MultiPoint 管理員管理。  
+# <a name="getting-started-with-multipoint-services"></a>使用 MultiPoint 服務的消費者入門
+您的 MultiPoint 服務系統可讓許多使用者使用只有一部電腦的多個已實體連線的工作站。 每部工作站通常都是由一部工作站集線器、滑鼠、鍵盤和視頻監視器所組成。 MultiPoint 服務站上的每位使用者都會遇到唯一的 Windows 運算會話，您可以使用 MultiPoint 管理員進行管理。  
   
 MultiPoint 服務系統的元件包括下列各項：  
   
--   MultiPoint 服務系統軟體，電腦支援多個監視器、 鍵盤、 滑鼠裝置和其他裝置。  
+-   MultiPoint 服務系統軟體，可支援多個監視器、鍵盤、滑鼠裝置和電腦上的其他裝置。  
   
--   MultiPoint 管理員應用程式，它可讓您監視，並採取動作，MultiPoint 服務站台。  
+-   MultiPoint 管理員應用程式，可讓您在 MultiPoint 服務工作站上監視和採取動作。  
   
--   維護和管理工具。  
+-   維護與管理工具。  
   
--   MultiPoint 儀表板應用程式，可以讓您完成每日的工作，例如與其他使用者進行通訊。  
+-   MultiPoint 儀表板應用程式，可讓您完成每日工作，例如與其他使用者通訊。  
   
-此說明檔中會提供有關如何管理 MultiPoint 服務站台使用 MultiPoint 管理員和 MultiPoint 儀表板資訊。  
+此說明檔中提供如何使用 MultiPoint 管理員和 MultiPoint 儀表板管理 MultiPoint 服務工作站的相關資訊。  
   
-## <a name="overview-of-multipoint-manager"></a>MultiPoint 管理員的概觀  
-MultiPoint 管理員會提供您要管理 MultiPoint 服務站台時所要使用的四個索引標籤。 在每個說明主題中詳細說明每個索引標籤上，與您可以對它們執行的工作。  
+## <a name="overview-of-multipoint-manager"></a>MultiPoint 管理員總覽  
+當您管理 MultiPoint 服務站時，MultiPoint 管理員會提供四個索引標籤供您使用。 每個索引標籤和您可以在其上執行的工作，會在每個說明主題中更詳細地說明。  
   
 索引標籤如下所示：  
   
--   **常用索引標籤：** 切換模式，以執行系統管理工作、 新增或移除 MultiPoint 伺服器、 重新啟動或關閉電腦，啟用磁碟保護、 新增用戶端存取授權、 重新對應站台，並取得協助或支援。 如需詳細資訊，請參閱 <<c0> [ 系統工作使用 MultiPoint 管理員管理](Manage-System-Tasks-Using-MultiPoint-Manager.md)主題。  
+-   **[首頁] 索引標籤：** 切換模式來執行系統管理工作、新增或移除 MultiPoint 伺服器、重新開機或關閉電腦、啟用磁片保護、新增用戶端存取使用權、重新對應站，以及取得協助或支援。 如需詳細資訊，請參閱[使用 MultiPoint 管理員管理系統](Manage-System-Tasks-Using-MultiPoint-Manager.md)工作主題。  
   
--   **站台 索引標籤：** 檢視使用者的*桌面*狀態並*結束*或是*暫停*使用者工作階段。 如需詳細資訊，請參閱 <<c0> [ 管理使用者站台](Manage-User-Stations.md)主題。  
+-   **[工作站] 索引標籤：** 查看使用者的*桌面*狀態，並*結束*或*暫停*使用者會話。 如需詳細資訊，請參閱[管理使用者工作站](Manage-User-Stations.md)主題。  
   
--   **使用者 索引標籤：** 建立和管理*標準使用者帳戶*並*系統管理使用者帳戶*。 如需詳細資訊，請參閱[管理使用者帳戶](Manage-User-Accounts.md)主題。  
+-   **[使用者] 索引標籤：** 建立和管理*標準使用者帳戶*和系統*管理使用者帳戶*。 如需詳細資訊，請參閱[管理使用者帳戶](Manage-User-Accounts.md)主題。  
   
--   **虛擬桌面 索引標籤：** 啟用虛擬桌面的角色。 如需詳細資訊，請參閱 <<c0> [ 管理虛擬桌面](Manage-Virtual-Desktops.md)主題。  
+-   **[虛擬桌面] 索引標籤：** 啟用虛擬桌面角色。 如需詳細資訊，請參閱[管理虛擬桌面](Manage-Virtual-Desktops.md)主題。  
   
-## <a name="multipoint-server-management-and-maintenance"></a>MultiPoint Server 的管理和維護  
-您的 MultiPoint 服務系統的設定之後，您可以使用 MultiPoint 管理員管理 MultiPoint 服務。  
+## <a name="multipoint-server-management-and-maintenance"></a>MultiPoint Server 管理和維護  
+設定 MultiPoint 服務系統之後，您可以使用 MultiPoint 管理員來管理 MultiPoint 服務。  
   
 您可以使用 MultiPoint 管理員執行的動作類型包括下列各項：  
   
--   **新增使用者帳戶：** 使用 MultiPoint 管理員，來建立標準及系統管理使用者帳戶。  
+-   **新增使用者帳戶：** 使用 MultiPoint 管理員建立標準和系統管理使用者帳戶。  
   
--   **編輯伺服器設定：** 您可以設定您的 MultiPoint 服務系統，為以主控台模式啟動，則允許有多個工作階段，請將唯一的 IP 位址指派給每個站台，以及其他工作的帳戶。  
+-   **編輯服務器設定：** 您可以將 MultiPoint 服務系統設定為以主控台模式啟動、允許帳戶有多個會話、為每個工作站指派唯一的 IP 位址，以及其他工作。  
   
--   **切換到主控台模式：** 您可以變更 MultiPoint 服務系統以主控台模式，以便在 MultiPoint 服務系統上安裝新的軟體。 您可以指定所有的使用者可以執行軟體，或只有您可以使用軟體，視安裝和授權的軟體的選項而定。  
+-   **切換至主控台模式：** 您可以將 MultiPoint 服務系統變更為主控台模式，以便在 MultiPoint 服務系統上安裝新的軟體。 您可以指定所有使用者都可以執行軟體，或只有您可以使用軟體，視軟體的安裝和授權選項而定。  
   
--   **疑難排解：** 如果您遇到使用 MultiPoint 服務的問題，請檢查[疑難排解](Troubleshooting.md)區段來尋找主題可協助您修正此問題。  
+-   **疑難排解**如果您遇到 MultiPoint 服務的問題，請參閱[疑難排解](Troubleshooting.md)一節，以尋找可協助您修正問題的主題。  
   
-## <a name="overview-of-multipoint-dashboard"></a>MultiPoint 儀表板概觀  
-MultiPoint 儀表板功能，您可以選擇兩個索引標籤，來存取一般日常工作的功能區體驗。  
+## <a name="overview-of-multipoint-dashboard"></a>MultiPoint 儀表板總覽  
+MultiPoint 儀表板具有功能區體驗，可讓您在兩個索引標籤之間進行選擇，以存取一般日常工作。  
   
 索引標籤如下所示：  
   
--   **常用索引標籤：** 封鎖或解除封鎖站台、 設定限制選項的 web、 專案到其他桌上型電腦的桌面、 啟動或關閉應用程式、 透過立即訊息進行通訊、 協助其他使用者透過遠端桌面控制項、 調整桌面的縮圖檢視，以及啟用或停用立即訊息和應用程式的自動啟動。 如需詳細資訊，請參閱 <<c0> [ 管理使用者桌面使用 MultiPoint 儀表板](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)主題。  
+-   **[首頁] 索引標籤：** 封鎖或解除封鎖工作站、設定 web 限制選項、將桌上型電腦加入其他桌面、啟動或關閉應用程式、透過立即訊息進行通訊、協助其他使用者進行遠端桌面控制、調整桌面縮圖視圖，以及啟用或停用立即訊息和應用程式自動啟動。 如需詳細資訊，請參閱[使用 MultiPoint 儀表板管理使用者桌面](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)主題。  
   
--   **系統索引標籤：** 重新啟動、 關機或重新對應所有或選取的系統。 如需詳細資訊，請參閱 <<c0> [ 管理 MultiPoint 系統使用 MultiPoint 儀表板](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)主題。  
+-   **[系統] 索引標籤：** 重新開機、關閉或重新對應所有或選取的系統。 如需詳細資訊，請參閱[使用 MultiPoint 儀表板管理 MultiPoint 系統](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)主題。  
   
-## <a name="daily-use-of-your-multipoint-server-system"></a>MultiPoint Server 系統的每日使用量  
-當您開始使用 MultiPoint 服務的每日，沒有關於如何使用您可能想要分享您的 MultiPoint 服務系統上的使用者的 MultiPoint 服務的資訊。 這項資訊包括下列各項：  
+## <a name="daily-use-of-your-multipoint-server-system"></a>MultiPoint Server 系統的每日使用  
+當您每天開始使用 MultiPoint 服務時，有關于如何使用 MultiPoint 服務的資訊，您可能會想要與 MultiPoint 服務系統上的使用者共用。 這項資訊包括下列各項：  
   
-**共用內容和私用的保存內容：**  
+**共用內容並將內容保持在私用：**  
   
--   使用者可以將儲存的檔案或文件可以只檢視該使用者的私人資料夾。  
+-   使用者可以將檔案或檔儲存至只能由該使用者查看的私人資料夾。  
   
--   使用者也可以將文件儲存至 MultiPoint 服務系統上的所有使用者可以都存取公用資料夾中。  
+-   使用者也可以將檔儲存到可供 MultiPoint 服務系統上所有使用者存取的公用資料夾。  
   
--   請務必了解系統管理使用者有權存取所有的檔案和文件，在系統上，即使它們私用儲存在使用者的個人資料夾的 MultiPoint 服務使用者。  
+-   MultiPoint 服務使用者必須知道系統管理使用者有權存取系統上的所有檔案和檔，即使它們是以私用方式儲存在使用者的個人資料夾中，這點很重要。  
   
-如需如何儲存和管理私人和公用內容的詳細資訊，請參閱[管理使用者檔案](Manage-User-Files.md)主題。  
+如需如何儲存和管理私用和公用內容的詳細資訊，請參閱[管理使用者](Manage-User-Files.md)檔案主題。  
   
-**使用者的 MultiPoint 服務工作階段的相關資訊：**  
+**使用者的 MultiPoint 服務會話相關資訊：**  
   
--   每個使用者具有使用者名稱和密碼，以及唯一的桌面*工作階段*MultiPoint 服務系統上。  
+-   每位使用者在 MultiPoint 服務系統上都有一個使用者名稱和密碼，以及一個唯一的桌面*會話*。  
   
--   A*標準使用者*不是*系統管理使用者*MultiPoint 服務系統上。 標準使用者無法將安裝的軟體，某些類型，但可以儲存檔案並變更桌面設定，除了螢幕解析度。 當使用者再次登入時，即會看到自己對桌面所做的任何變更。  
+-   *標準使用者*不是 MultiPoint 服務系統上的系統*管理使用者*。 標準使用者無法安裝某些類型的軟體，但是可以儲存檔案並變更桌面設定，但螢幕解析度除外。 當使用者再次登入時，即會看到自己對桌面所做的任何變更。  
   
--   使用者可以從一個站台中斷連線，並再次登入其工作階段不同的站台上不會遺失他們的工作。 如需詳細資訊，請參閱[暫停使用者工作階段並保持使用中](Suspend-and-Leave-User-Session-Active.md)主題。  
+-   使用者可以在不同的工作站上中斷連線，然後重新登入他們的會話，而不會遺失工作。 如需詳細資訊，請參閱[暫停使用者工作階段並保持使用中](Suspend-and-Leave-User-Session-Active.md)主題。  
   
--   標準使用者工作階段 （或所有使用者工作階段） 可中斷連線，或在透過 MultiPoint 管理員管理使用者已登出。 如需詳細資訊，請參閱 <<c0> [ 管理使用者桌面](manage-user-desktops-using-multipoint-dashboard.md)主題。  
+-   系統管理使用者可以透過 MultiPoint 管理員來中斷連線或登出標準使用者的會話（或所有使用者會話）。 如需詳細資訊，請參閱[管理使用者桌面](manage-user-desktops-using-multipoint-dashboard.md)主題。  
   
--   如果使用者忘記的密碼，您可以重設密碼**使用者**索引標籤上，使用標準的 Windows 使用者帳戶的管理功能。 如需詳細資訊，請參閱 <<c0> [ 更新或刪除使用者帳戶](Update-or-Delete-a-User-Account.md)主題。  
+-   如果使用者忘記密碼，您可以從使用標準 Windows 使用者帳戶管理功能的 [**使用者**] 索引標籤重設密碼。 如需詳細資訊，請參閱[更新或刪除使用者帳戶](Update-or-Delete-a-User-Account.md)主題。  
   
 ## <a name="see-also"></a>另請參閱  
-[管理您的 MultiPoint Server 系統](managing-your-multipoint-services-system.md)  
-[軟體的授權合規性的重要資訊](Important-Information-about-Software-License-Compliance.md)  
-[管理使用 MultiPoint 管理員的系統工作](Manage-System-Tasks-Using-MultiPoint-Manager.md)  
+[管理 MultiPoint Server 系統](managing-your-multipoint-services-system.md)  
+[軟體授權合規性的重要資訊](Important-Information-about-Software-License-Compliance.md)  
+[使用 MultiPoint 管理員管理系統工作](Manage-System-Tasks-Using-MultiPoint-Manager.md)  
 [管理使用者檔案](Manage-User-Files.md)  
 [管理使用者桌面](manage-user-desktops-using-multipoint-dashboard.md)  
-[暫停使用者工作階段並保持使用中](Suspend-and-Leave-User-Session-Active.md)  
+[暫停使用者會話並保持作用中狀態](Suspend-and-Leave-User-Session-Active.md)  
 [檢視使用者連線狀態](View-User-Connection-Status.md)  
 [管理站台硬體](Manage-Station-Hardware.md)  
 [設定站台](Set-Up-a-Station.md)  
 [管理使用者帳戶](Manage-User-Accounts.md)  
 [更新或刪除使用者帳戶](Update-or-Delete-a-User-Account.md)  
-[管理使用者桌面使用 MultiPoint 儀表板](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  
-[管理 MultiPoint 系統使用 MultiPoint 儀表板](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)  
+[使用 MultiPoint 儀表板管理使用者桌面](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  
+[使用 MultiPoint 儀表板管理 MultiPoint 系統](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)  
 [疑難排解](Troubleshooting.md)    
   

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 5924a6a2304bd8e883c43628e3c6c05b69cbd46c
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 96aced2c062717aee0d2957b751bc2c25ac8e0da
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980330"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869103"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>準備您的 Windows Admin Center 環境
 
@@ -26,7 +26,7 @@ ms.locfileid: "69980330"
 - [Microsoft Hyper-V Server 2016](#prepare-microsoft-hyper-v-server-2016)
 - [Microsoft Hyper-v Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
 
-在某些情況下, 可能需要先修改[目標伺服器上的通訊埠設定](#port-configuration-on-the-target-server), 才能使用 Windows 系統管理中心進行管理。
+在某些情況下，可能需要先修改[目標伺服器上的通訊埠設定](#port-configuration-on-the-target-server)，才能使用 Windows 系統管理中心進行管理。
 
 ## <a name="prepare-windows-server-2012-and-2012-r2"></a>準備 Windows Server 2012 和 2012 R2
 
@@ -108,7 +108,7 @@ Microsoft Hyper-V Server 2016 現已準備好可以使用 Windows Admin Center �
 3. 啟用檔案伺服器角色
 4. 啟用 PowerShell 的 Hyper-V 模組
 
-### <a name="step-1-install-windows-management-framework-51"></a>步驟 1:安裝 Windows Management Framework 5。1
+### <a name="step-1-install-windows-management-framework-51"></a>步驟 1：安裝 Windows Management Framework 5。1
 
 Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 中的 PowerShell 功能。 若要使用 Windows Admin Center 管理 Microsoft Hyper-V Server 2012 R2，您必須安裝 WMF 5.1 或更新版本。
 
@@ -116,7 +116,7 @@ Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 �
 
 如果尚未安裝，您可以[下載 WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
 
-### <a name="step-2-enable-remote-management"></a>步驟 2:啟用遠端管理
+### <a name="step-2-enable-remote-management"></a>步驟 2：啟用遠端管理
 
 若要啟用 Hyper-V Server 遠端管理：
 
@@ -147,7 +147,7 @@ Microsoft Hyper-V Server 2012 R2 現已準備好可以使用 Windows Admin Cente
 
 ## <a name="port-configuration-on-the-target-server"></a>目標伺服器上的埠設定
 
-Windows 管理中心會針對某些檔案複製工作 (例如在遠端伺服器上匯入憑證時) 使用 SMB 檔案共用通訊協定。 若要讓這些檔案複製作業成功, 遠端伺服器上的防火牆必須允許埠445上的輸入連線。  您可以使用 Windows 系統管理中心的防火牆工具, 確認 [檔案伺服器遠端系統管理 (SMB 輸入)] 的傳入規則已設定為允許此埠上的存取。
+Windows 管理中心會針對某些檔案複製工作（例如在遠端伺服器上匯入憑證時）使用 SMB 檔案共用通訊協定。 若要讓這些檔案複製作業成功，遠端伺服器上的防火牆必須允許埠445上的輸入連線。  您可以使用 Windows 系統管理中心的防火牆工具，確認 [檔案伺服器遠端系統管理（SMB 輸入）] 的傳入規則已設定為允許此埠上的存取。
 
 > [!Tip]
 > 準備好安裝 Windows Admin Center 了嗎？ [立即下載](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center#download-now)

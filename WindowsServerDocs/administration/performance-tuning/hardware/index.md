@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: d12a6c66c5e76852900828af04f4c6ec63a9a4f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9c7f0e589980f7d985f165e318667ebe2e5d5c5
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891979"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866753"
 ---
 # <a name="server-hardware-performance-considerations"></a>伺服器硬體效能考量
 
@@ -46,7 +46,7 @@ ms.locfileid: "59891979"
 請增加 RAM 以符合您的記憶體需求。
 當您電腦的記憶體不足且立即需要更多記憶體時，Windows 會透過名為分頁的程序，使用硬碟空間來補充系統 RAM。 太多分頁會降低整體系統效能。
 您可以使用下列的分頁檔位置指導方針來最佳化分頁：
-- 將分頁檔獨立放在其自己的存放裝置中，或至少確定其不會與其他經常存取的檔案共用相同存放裝置。 例如，將分頁檔與作業系統檔案放在不同的實體磁碟機上。
+- 將分頁檔獨立放在自己的存放裝置中，或至少確定其不會與其他經常存取的檔案共用相同存放裝置。 例如，將分頁檔與作業系統檔案放在不同的實體磁碟機上。
 
 - 將分頁檔放在不可容錯的磁碟機上。 如果磁碟故障，可能會發生系統當機。 如果您將分頁檔放在可容錯的磁碟機上，請注意容錯系統寫入資料的速度通常比較慢，因為須將資料寫入多個位置。
 

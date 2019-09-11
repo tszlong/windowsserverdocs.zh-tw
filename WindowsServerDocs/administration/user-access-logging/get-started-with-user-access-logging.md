@@ -13,26 +13,26 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8656bf278519b48f8d26008fd98e46428106e511
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1706756b52777f5dd3bf1db59fb2ed087ca8648
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861499"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866262"
 ---
 # <a name="get-started-with-user-access-logging"></a>開始使用使用者存取記錄
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-使用者存取記錄 (UAL) 是由本機伺服器上角色和產品的用戶端使用資料彙總的 Windows Server 中的功能。 它可協助 Windows server 系統管理員量化來自用戶端電腦的角色與本機伺服器上的服務要求。  
+使用者存取記錄（UAL）是 Windows Server 中的一項功能，可依本機伺服器上的角色和產品匯總用戶端使用資料。 它可協助 Windows server 系統管理員針對本機伺服器上的角色和服務，量化用戶端電腦的要求。  
   
-UAL 會安裝並啟用預設值，而且在收集資料幾乎即時。 不需要系統管理員設定，雖然可以停用或啟用 UAL。 如需詳細資訊，請參閱 [Manage User Access Logging](Manage-User-Access-Logging.md)。 使用者存取記錄服務角色和產品的用戶端使用資料彙總至本機資料庫檔案。  IT 系統管理員稍後可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell Cmdlet 來擷取依伺服器角色 (或軟體產品)、依使用者、依裝置、依本機伺服器以及依日期的數量和執行個體。  
+預設會安裝並啟用 UAL，並以近乎即時的方式收集資料。 不需要系統管理員設定，雖然可以停用或啟用 UAL。 如需詳細資訊，請參閱 [Manage User Access Logging](Manage-User-Access-Logging.md)。 使用者存取記錄服務會將角色和產品的用戶端使用量資料匯總至本機資料庫檔案。  IT 系統管理員稍後可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell Cmdlet 來擷取依伺服器角色 (或軟體產品)、依使用者、依裝置、依本機伺服器以及依日期的數量和執行個體。  
   
 > [!NOTE]  
 > UAL 支援 [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000)。  
   
-## <a name="BKMK_APP"></a>實際的應用程式  
-UAL 會彙總唯一用戶端裝置和使用者要求事件會記錄到本機資料庫。 然後，這些記錄可供使用 (透過伺服器管理員的查詢)，依伺服器角色、使用者、裝置、本機伺服器以及日期來抓取數量和執行個體。  此外，UAL 也延伸讓非 Microsoft 軟體開發人員檢測由 Windows Server 彙整的 UAL 事件。  
+## <a name="BKMK_APP"></a>實際應用  
+UAL 會匯總登入本機資料庫的唯一用戶端裝置和使用者要求事件。 然後，這些記錄可供使用 (透過伺服器管理員的查詢)，依伺服器角色、使用者、裝置、本機伺服器以及日期來抓取數量和執行個體。  此外，UAL 也已擴充，可讓非 Microsoft 軟體發展人員檢測其 UAL 事件，以由 Windows Server 進行匯總。  
   
 UAL 可以執行下列工作：  
   
@@ -44,7 +44,7 @@ UAL 可以執行下列工作：
   
 -   從多個遠端伺服器抓取 UAL 資料。  
   
-此外，軟體開發人員可以檢測，然後可以彙總以及使用 WMI 與 Windows PowerShell 介面抓取的 UAL 事件。  
+此外，軟體發展人員可以檢測 UAL 事件，然後使用 WMI 和 Windows PowerShell 介面來加以匯總和抓取。  
   
 UAL 可以支援下列伺服器角色和服務：  
   
@@ -90,21 +90,21 @@ UAL 可以支援下列伺服器角色和服務：
 -   Windows Server Update Services (WSUS)  
   
 > [!IMPORTANT]  
-> 不建議在直接連線到網際網路的伺服器上 (例如可存取網際網路位址空間的網頁伺服器)，或當伺服器的主要功能是提供極高效能的情況下 (例如在 HPC 工作負載環境) 使用 UAL。 UAL 是主要適用於小型、 中型和企業內部網路案例高的磁碟區所預期的位置，但不是提供定期網際網路對向流量磁碟區的部署一樣高。  
+> 不建議在直接連線到網際網路的伺服器上 (例如可存取網際網路位址空間的網頁伺服器)，或當伺服器的主要功能是提供極高效能的情況下 (例如在 HPC 工作負載環境) 使用 UAL。 UAL 主要是用於需要高容量的小型、中型和企業內部網路案例，但不像是定期提供網際網路面向流量的部署一樣高。  
   
-## <a name="BKMK_NEW"></a>重要的功能  
+## <a name="BKMK_NEW"></a>重要功能  
 下表描述 UAL 的主要功能和其潛在價值。  
   
 |功能|值|  
 |-----------------|---------|  
-|以接近即時的方式收集並彙總用戶端要求事件資料。|可以儲存最多三年的資料。 **重要事項：** 系統管理員需要強制執行收集的資料和資料保留期間與組織的隱私權原則和當地法規的法務遵循。|  
+|以接近即時的方式收集並彙總用戶端要求事件資料。|可以儲存最多三年的資料。 **重要事項：** 系統管理員必須利用組織的隱私權原則和當地法規，強制執行所收集資料和資料保留週期的合規性。|  
 |使用 WMI 或 Windows PowerShell 介面來查詢 UAL，以擷取本機或遠端伺服器上的用戶端要求資料。|UAL 可以啟用進行中使用資料的單一檢視。 伺服器和企業系統管理員可以擷取這項資料，並且與商務管理員協調以最佳化其大量軟體授權的使用。|  
 |預設為啟用。|伺服器系統管理員不需要設定這項功能，就可以使用所有核心功能。|  
   
 ## <a name="data-logged-with-ual"></a>使用 UAL 記錄的資料  
 下列使用者相關資料會使用 UAL 加以記錄。  
   
-|資料|描述|  
+|Data|說明|  
 |--------|---------------|  
 |**使用者名稱**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|  
 |**ActivityCount**|特定使用者存取角色或服務的次數。|  
@@ -117,9 +117,9 @@ UAL 可以支援下列伺服器角色和服務：
   
 下列裝置相關資料會使用 UAL 加以記錄。  
   
-|資料|描述|  
+|Data|描述|  
 |--------|---------------|  
-|**IPAddress**|用來存取角色或服務之用戶端裝置的 IP 位址。|  
+|**Ip**|用來存取角色或服務之用戶端裝置的 IP 位址。|  
 |**ActivityCount**|特定裝置存取角色或服務的次數。|  
 |**FirstSeen**|IP 位址第一次用來存取角色或服務的日期和時間。|  
 |**LastSeen**|IP 位址最後一次用來存取角色或服務的日期和時間。|  
@@ -129,7 +129,7 @@ UAL 可以支援下列伺服器角色和服務：
 |**TenantIdentifier**|已安裝角色之租用戶用戶端及伴隨 UAL 資料之產品的唯一 GUID (如果有的話)。|  
   
 ## <a name="BKMK_SOFT"></a>軟體需求  
-UAL 可以用於執行 Windows Server 版本的 Windows Server 2012 之後的任何電腦。  
+在 Windows Server 2012 之後執行 Windows Server 版本的任何電腦上，都可以使用 UAL。  
   
 ## <a name="see-also"></a>另請參閱  
 MSDN 上的[使用者存取記錄](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) 。  

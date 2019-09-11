@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f6cfc15b7c089c9b6ad4d9a267b951373e63a63a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b1d9b049615322bffc39b5b372ce145579b57b2
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888589"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868765"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
 
 
-Tpmvscmgr 命令列工具可讓使用者以系統管理認證來建立和刪除 TPM 虛擬智慧卡的電腦上。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+Tpmvscmgr 命令列工具可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -35,57 +35,57 @@ Tpmvscmgr create [/name] [/AdminKey DEFAULT | PROMPT | RANDOM] [/PIN DEFAULT | P
 Tpmvscmgr destroy [/instance <instance ID>] [/?]
 ```
 
-### <a name="parameters-for-create-command"></a>建立命令的參數
+### <a name="parameters-for-create-command"></a>Create 命令的參數
 
-Create 命令會設定新使用者的系統上的虛擬智慧卡。 需要刪除時，它會傳回新建立的卡片，供日後參考的執行個體識別碼。 執行個體識別碼的格式**ROOT\SMARTCARDREADER\000n**何處**n**從 0 開始，並會加上 1 每次當您建立新的虛擬智慧卡。
+Create 命令會在使用者的系統上設定新的虛擬智慧卡。 如果需要刪除，它會傳回新建立之卡片的實例識別碼，以供日後參考。 實例識別碼的格式為**ROOT\SMARTCARDREADER\000n** ，其中**n**是從0開始，每次建立新的虛擬智慧卡時，都會增加1。
 
 |參數|描述|
 |---------|-----------|
-|/name|必要。 指出新的虛擬智慧卡的名稱。|
-|/AdminKey|表示可用來重設智慧卡 PIN，如果使用者忘記 pin 碼的所需的系統管理員金鑰。</br>**預設**指定 010203040506070801020304050607080102030405060708 的預設值。</br>**提示**會提示使用者輸入系統管理員索引鍵的值。</br>**隨機**導致卡片，不會傳回給使用者的系統管理員索引鍵的隨機設定。 這會建立卡片，可能會無法管理使用智慧卡管理工具。 當使用隨機產生，系統管理員索引鍵必須輸入為 48 個十六進位字元。|
-|/PIN|表示所需的使用者 PIN 值。</br>**預設**指定預設的 12345678 的 pin 碼。</br>**提示**會提示使用者輸入 PIN，以在命令列。 PIN 必須是至少八個字元，而且它可以包含數字、 字元和特殊字元。|
-|/PUK|指出所需的 PIN 解除鎖定索引鍵 (PUK) 值。 PUK 值必須是至少八個字元，而且它可以包含數字、 字元和特殊字元。 如果省略此參數，卡片會建立沒有 PUK。</br>**預設**指定預設的 12345678 PUK。</br>**提示**會提示使用者輸入 PUK 在命令列。|
-|/generate|虛擬智慧卡的函式需要的儲存體中，會產生檔案。 如果產生 / 省略參數時，它就相當於建立卡片，而不需要此檔案系統。 無檔案系統的卡片只受 Microsoft Configuration Manager 之類的智慧卡管理系統。|
-|/machine|可讓您指定遠端電腦，可以建立虛擬智慧卡的名稱。 這可用在網域環境中，而且它仰賴 DCOM。 命令中成功建立虛擬智慧卡不同的電腦上，執行此命令的使用者必須是遠端電腦上本機 administrators 群組中的成員。|
-|/?|此命令，會顯示說明。|
+|/name|必要。 表示新虛擬智慧卡的名稱。|
+|/AdminKey|指出當使用者忘記 PIN 時，可以用來重設卡片 PIN 的所需系統管理員金鑰。</br>**預設值**指定010203040506070801020304050607080102030405060708的預設值。</br>**提示**提示使用者輸入系統管理員金鑰的值。</br>**隨機**導致卡片的系統管理員金鑰隨機設定不會傳回給使用者。 這會建立可能無法使用智慧卡管理工具來管理的卡片。 以隨機產生時，系統管理員金鑰必須輸入為48的十六進位字元。|
+|/PIN|表示所需的使用者 PIN 值。</br>**預設值**指定預設的 PIN 碼12345678。</br>**提示**提示使用者在命令列中輸入 PIN。 PIN 必須至少有八個字元，而且可以包含數位、字元和特殊字元。|
+|/PUK|指出所需的 PIN 解除鎖定金鑰（PUK）值。 PUK 值至少必須為八個字元，而且可以包含數位、字元和特殊字元。 如果省略此參數，則會建立不含 PUK 的卡片。</br>**預設值**指定12345678的預設 PUK。</br>**提示**提示使用者在命令列中輸入 PUK。|
+|/generate|會在儲存體中產生虛擬智慧卡運作所需的檔案。 如果省略/generate 參數，它就相當於建立不含此檔案系統的卡片。 沒有檔案系統的卡片只能由智慧卡管理系統（例如 Microsoft Configuration Manager）進行管理。|
+|/machine|可讓您指定可在其上建立虛擬智慧卡的遠端電腦名稱稱。 這只能在網域環境中使用，而且它依賴 DCOM。 執行此命令的使用者必須是遠端電腦上本機系統管理員群組中的成員，才能讓命令成功建立另一部電腦上的虛擬智慧卡。|
+|/?|顯示此命令的說明。|
 
-### <a name="parameters-for-destroy-command"></a>Destroy 命令的參數
+### <a name="parameters-for-destroy-command"></a>終結命令的參數
 
-[終結] 命令會從使用者的電腦，安全地刪除虛擬智慧卡。
+[摧毀] 命令會從使用者的電腦安全性地刪除虛擬智慧卡。
 
 > [!WARNING]
-> 刪除虛擬智慧卡時，就無法復原。
+> 當虛擬智慧卡被刪除時，就無法復原。
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|/instance|指定要移除虛擬智慧卡的執行個體識別碼。 InstanceID 產生做為輸出的 Tpmvscmgr.exe 卡片建立時。 /Instance 參數是必要的欄位，如 [終結] 命令。|
-|/?|此命令，會顯示說明。|
+|/instance|指定要移除之虛擬智慧卡的實例識別碼。 InstanceID 是在建立卡片時，以 Tpmvscmgr 輸出的形式產生。 /Instance 參數是摧毀命令的必要欄位。|
+|/?|顯示此命令的說明。|
 
 ## <a name="remarks"></a>備註
 
-中的成員資格**系統管理員**群組 （或同等權限） 在目標電腦上的最小，才能執行此命令的所有參數。
+若要執行此命令的所有參數，至少需要目的電腦上**Administrators**群組的成員資格（或同等許可權）。
 
-若為英數字元的輸入，允許完整 127 的 ASCII 字元集。
+針對英數位元輸入，允許使用完整127字元的 ASCII 集。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-下列命令示範如何建立虛擬智慧卡，稍後可將從另一部電腦啟動的智慧卡管理工具。
+下列命令示範如何建立可在稍後由另一部電腦啟動之智慧卡管理工具管理的虛擬智慧卡。
 ```
 tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey DEFAULT /PIN PROMPT
 ```
-或者，而不是使用預設的系統管理員金鑰，您可以建立系統管理員金鑰在命令列。 下列命令示範如何建立非系統管理員金鑰。
+或者，您可以在命令列建立系統管理員金鑰，而不是使用預設的系統管理員金鑰。 下列命令顯示如何建立系統管理員金鑰。
 ```
 tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey PROMPT /PIN PROMPT
 ```
-下列命令會建立未受管理的虛擬智慧卡，可以用來註冊憑證。
+下列命令會建立可用於註冊憑證的非受控虛擬智慧卡。
 ```
 tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey RANDOM /PIN PROMPT /generate
 ```
-下列命令會建立虛擬智慧卡使用隨機的系統管理員金鑰。 建立 cardis 之後自動捨棄索引鍵。 這表示，如果使用者忘記 PIN，或想要變更 PIN，使用者必須刪除卡片，然後重新建立它。 若要刪除卡片，使用者可以執行下列命令。
+下列命令會建立具有隨機系統管理員金鑰的虛擬智慧卡。 金鑰會在 cardis 建立之後自動捨棄。 這表示，如果使用者忘記 PIN 或想要變更 PIN，使用者必須刪除卡片並重新建立。 若要刪除卡片，使用者可以執行下列命令。
 ```
 tpmvscmgr.exe destroy /instance <instance ID> 
 ```
-其中\<執行個體識別碼 > 值列印在螢幕上時建立卡片的使用者。 具體來說，建立第一個卡片的情況下，執行個體識別碼是 ROOT\SMARTCARDREADER\0000。
+其中\<，實例識別碼 > 是使用者建立卡片時，在螢幕上列印的值。 具體而言，針對第一個建立的卡片，實例識別碼為 ROOT\SMARTCARDREADER\0000。
 
 #### <a name="additional-references"></a>其他參考資料
 

@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 34d05a8058db366714c0ff4fed0b7d80b9150aa4
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 2b8c6148af21e94e4a56661402f36dcb2e636461
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69626301"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871844"
 ---
 ## <a name="windows-server-2016-improvements"></a>Windows Server 2016 改良功能
 
@@ -179,7 +179,7 @@ Windows Server 2016 之前的版本有多個問題保留正確的時間，這會
 若要以獨佔方式透過 NTP 進行同步處理，建議停用來賓中的 TimeSync 整合服務。
 
 > [!NOTE]
-> 注意：支援 Linux 來賓的精確時間需要最新的上游 Linux 核心才支援的功能，而且目前尚未在所有 Linux 散發版本上廣泛提供。 如需有關支援散發的詳細資訊，請參閱[Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)。
+> 注意:支援 Linux 來賓的精確時間需要最新的上游 Linux 核心才支援的功能，而且目前尚未在所有 Linux 散發版本上廣泛提供。 如需有關支援散發的詳細資訊，請參閱[Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)。
 
 #### <a name="GTIMESERV"></a>使用 GTIMESERV 指定本機可靠時間服務
 您可以使用 GTIMESERV、良好的時間伺服器、旗標，將一或多個網域控制站指定為正確的來源時鐘。  比方說，配備 GPS 硬體的特定網域控制站可以標示為 GTIMESERV。  這可確保您的網域根據 GPS 硬體參考時鐘。

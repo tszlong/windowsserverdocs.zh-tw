@@ -13,19 +13,19 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: cb91914608110d26ff2db8eff1cd28d26d04669b
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 97d9e671823dade9e488922561c4c6a925719830
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590345"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871656"
 ---
 # <a name="limit-web-access"></a>限制網頁存取
-除了監視個別桌上型電腦上的使用者活動之外, 身為系統管理使用者, 您可以藉由指示您想要封鎖使用者存取的網站和網站, 限制使用者對指定網站的存取權。  
+除了監視個別桌上型電腦上的使用者活動之外，身為系統管理使用者，您可以藉由指示您想要封鎖使用者存取的網站和網站，限制使用者對指定網站的存取權。  
   
 ## <a name="to-limit-web-access-on-a-station"></a>限制站台上的網頁存取  
   
-1. 在 MultiPoint 儀表板的 [ **Web 限制**] 索引標籤上, 按一下 [**設定**]。 [Configure Web Limiting]\(設定網頁限制) 頁面隨即開啟， 並列出使用者可存取的網站。  
+1. 在 MultiPoint 儀表板的 [ **Web 限制**] 索引標籤上，按一下 [**設定**]。 [Configure Web Limiting]\(設定網頁限制) 頁面隨即開啟， 並列出使用者可存取的網站。  
   
 2. 在您要限制網頁存取的使用者站台上，按一下其縮圖。  
   
@@ -34,22 +34,22 @@ ms.locfileid: "68590345"
 4. 若要新增允許的網站，請輸入網址，然後按一下 [新增]。  
   
    > [!NOTE]
-   > 例如, 輸入 "Contoso.com" 會允許或封鎖相對於 www\.contoso.com 的網站 (例如, www\.newpage.contoso.com)。 輸入 "Contoso" 會允許或限制所有 Contoso 相關網站 (包括 contoso.com、contoso.uk 等等)。  
+   > 例如，輸入 "Contoso.com" 會允許或封鎖相對於 www\.contoso.com 的網站（例如，www\.newpage.contoso.com）。 輸入 "Contoso" 會允許或限制所有 Contoso 相關網站（包括 contoso.com、contoso.uk 等等）。  
   
 5. 若要從允許的站台清單移除網址，請按一下您要移除其存取的網址，然後按一下 [移除]。  
   
 ## <a name="to-limit-web-access-on-all-stations"></a>限制所有站台上的網頁存取  
   
-1. 在 MultiPoint 儀表板的 [ **Web 限制**] 索引標籤上,\-按一下 [開始] 下拉式功能表, 然後按一下 [**限制所有桌上型電腦上的 Web 存取**]。  
+1. 在 MultiPoint 儀表板的 [ **Web 限制**] 索引標籤上，\-按一下 [開始] 下拉式功能表，然後按一下 [**限制所有桌上型電腦上的 Web 存取**]。  
   
    [Configure Web Limiting]\(設定網頁限制) 頁面隨即開啟， 並列出使用者可存取的網站。 執行下列其中一項：  
   
 2. 若要新增允許的網站，請按一下 [Allow only these sites]\(僅允許這些網站)，輸入允許的網址，然後按一下 [新增]。  
   
-   若要新增您不希望使用者前往的網站，請按一下 [Disallow only these sites]\(僅拒絕這些網站)，輸入您不希望使用者前往的網址，然後按一下 [新增]。  
+   若要新增您不想讓使用者造訪的網站，請按一下 [**僅禁止這些網站**]，輸入您不想要讓使用者造訪的網址，然後按一下 [**新增**]。  
   
    > [!NOTE]
-   > 例如, 輸入 "Contoso.com" 允許或封鎖相對於 www.contoso.com 的網站 (例如 www.newpage.contoso.com)。 輸入 "Contoso" 會允許或限制所有 Contoso 相關網站 (包括 contoso.com、contoso.uk 等等)。  
+   > 例如，輸入 "Contoso.com" 允許或封鎖相對於 www.contoso.com 的網站（例如 www.newpage.contoso.com）。 輸入 "Contoso" 會允許或限制所有 Contoso 相關網站（包括 contoso.com、contoso.uk 等等）。  
   
 3. 若要從允許或拒絕的站台清單移除網址，請選取該網址，然後按一下 [移除]。  
   

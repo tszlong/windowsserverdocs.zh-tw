@@ -8,41 +8,41 @@ ms.author: jol
 ms.date: 01/11/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 1adf538792763bf05a43d431d9751d275a6fcd04
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 12de939aa451ba75b4bafed85cd57bdd8280bc81
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858219"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864943"
 ---
-# <a name="dataon-must-extension"></a>DataON 必須延伸模組
+# <a name="dataon-must-extension"></a>DataON 必須擴充
 
-## <a name="integrated-monitoring-and-management-for-microsoft-hyper-converged-infrastructure"></a>整合式監視和管理 Microsoft 超交集基礎結構
+## <a name="integrated-monitoring-and-management-for-microsoft-hyper-converged-infrastructure"></a>Microsoft 超融合基礎結構的整合式監視和管理
 
-[DataON](http://www.dataonstorage.com/)是領先業界的提供者的超交集基礎結構和儲存體系統適用於 Microsoft Windows Server 環境。 它只著重於提供 Microsoft 應用程式、 虛擬化、 資料保護和混合式雲端服務，具有超過 650 的企業部署和透過 120PB 的儲存空間直接存取部署。
+[DataON](http://www.dataonstorage.com/)是專為 Microsoft Windows Server 環境優化的超融合式基礎結構和儲存系統的業界領先提供者。 其專門著重于傳遞 Microsoft 應用程式、虛擬化、資料保護和混合式雲端服務，其具有超過650的企業部署，以及120PB 的儲存空間直接存取部署。
 
-[DataON 的必須](http://www.dataonstorage.com/must)Windows Admin Center 的延伸模組是值，將兩個互補的產品整合可提供給客戶，將監視和管理以及端對端深入了解硬體與軟體一起的主要範例統一的體驗在整個叢集中。
+[DataON 的](http://www.dataonstorage.com/must)Windows 系統管理中心的延伸模組，是整合兩個互補產品可以提供給客戶的價值的主要範例，讓監視和管理以及對硬體和軟體的端對端深入瞭解統一體驗中的整個叢集。
 
-> <cite>「 我們採取我們獨立必須可見性、 監視和管理工具，並啟用其 Windows Admin Center 內運作。客戶將享有擴充必須提供的功能，並從單一主控台必須與 Windows Admin Center 的組合會提供 ultimate 的管理體驗適用於 Windows Server 基礎結構。 」</cite>
+> <cite>「我們已採用獨立的可見度、監視和管理工具，讓它能夠在 Windows 系統管理中心內工作。客戶將受益于必須提供的擴充功能，而來自單一主控台的「必須」和「Windows 系統管理中心」的組合將會提供 Windows Server 架構基礎結構的絕佳管理體驗。」</cite>
 >
-> -Howard Lo、 v 的銷售和行銷、 DataON 副總
+> --Howard Lo，銷售與行銷副總裁，DataON
 
-必須延伸模組會擴充功能的 Windows Admin Center 所提供的功能，例如：
-- **歷史資料回報**– 提供您系統的效能資料也包括 IOPS、 延遲、 輸送量，您的叢集、 存放集區、 磁碟區和節點上的即時和每月儀表板。
-- **磁碟對應**– 必須在每個節點，並提供清除磁碟對應您的整個節點中顯示的裝置類型和元件。 它會顯示磁碟、 磁碟類型、 位置和插槽中的每個磁碟機，以及磁碟健全狀況狀態的數目。
-- **系統警示**– 利用 Windows 健全狀況服務錯誤，找出硬體故障、 設定問題，以及資源飽和。 它也會提供特定的位置、 錯誤描述和修復動作的多層級評估。 您也可以利用協力廠商 SNMP 陷阱的監視需要磁碟或硬體更換時發出警示。
-- **SAN 類似呼叫首頁服務**– 提示系統警示時，系統管理員可以自動化傳送給主要連絡人的電子郵件警示。
+「必須」延伸模組會藉由提供如下的功能來擴充 Windows 管理中心的功能：
+- 歷程**資料包告**–提供系統效能資料的即時和每月儀表板，包括您的叢集、儲存集區、磁片區和節點的 IOPS、延遲、輸送量。
+- **磁片對應**–必須顯示每個節點中的裝置類型和元件，並提供整個節點的清楚磁片對應。 它會顯示磁片數目、磁片類型、每個磁片磁碟機的位置和插槽，以及磁片健全狀況狀態。
+- **系統警示**–利用 Windows 健全狀況服務錯誤來找出硬體故障、設定問題和資源飽和。 它也提供特定位置、錯誤描述和復原動作的多層級評估。 您也可以利用協力廠商 SNMP 監視陷阱，在需要磁片或硬體更換時向您發出警示。
+- **類似 SAN 的呼叫首頁服務**–系統警示的提示，系統管理員可以將自動化的電子郵件警示傳送給金鑰連絡人。
 
-![DataON 延伸模組](../../media/extend-case-study-dataon/dataon-1.png)
-*DataON 必須延伸模組的 Windows Admin Center 中的磁碟對應*
+![Windows 系統](../../media/extend-case-study-dataon/dataon-1.png)
+*管理中心的 DataON 中的 DataON 延伸磁片對應必須具備擴充*功能
 
-> <cite>「 很讓我可以使用相同的主控台中，並在這兩個工具，像是如何無縫整合是擴充功能，例如 DataON 必須可讓 Windows Admin Center。Windows Admin Center 和 DataON 必須一起實際上允許我們能夠更有效率，並將我們的小組儲存大量的時間。它可讓我們達到我們的系統管理員工作比我們先前快得多。 」</cite>
+> <cite>「Windows 系統管理中心允許 DataON 等延伸模組，因此我可以在相同的主控台內同時使用這兩種工具，而我也喜歡整合的順暢程度。Windows Admin Center 和 DataON 必須搭配運作，才能讓我們更有效率，並將小組節省大量時間。這讓我們能夠以比以往更快的速度來完成系統管理員工作。」</cite>
 >
-> -Matt Roper，促進技術支援服務，卻洛奇文郡 (GA) 的學校學區
+> --Matt Roper，技術支援服務、切羅者縣（GA）學區的推動者
 
-![DataON 延伸模組](../../media/extend-case-study-dataon/dataon-2.png)
-*DataON 必須延伸模組中的警示服務的 Windows Admin Center*
+![DataON 中](../../media/extend-case-study-dataon/dataon-2.png)
+的 DataON 擴充功能*必須擴充 Windows 系統管理中心*
 
-> <cite>「 必須已經過非常重要，真的大的賣點。傳送給 microsoft，它會示範 DataON 承諾要將支援 Microsoft 超交集基礎結構。必須包含其 S2D 設備是什麼完成與儲存空間直接存取 SAN 取代基本的可行解決方案。 」 </cite>
+> <cite>「必須非常寶貴，而且是一個很大的賣點。對我們來說，它示範了從 DataON 到支援 Microsoft 超融合基礎結構的承諾。包含的 S2D 設備必須是完成解決方案的工作，並以儲存空間直接存取做為可行的 SAN 更換。」</cite>
 >
-> -Benjamin Clements，總裁策略性線上 Systems，Inc.，
+> --Benjamin Clements，總裁，策略性的線上系統，Inc。

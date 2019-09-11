@@ -1,6 +1,6 @@
 ---
 title: 對軟體清查記錄進行疑難排解
-description: 描述如何解決常見的軟體清查記錄部署問題。
+description: 說明如何解決常見的軟體清查記錄部署問題。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: manage-software-inventory-logging
@@ -12,156 +12,156 @@ author: brentfor
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a1fe22a1f721c0ac94096fe22c559c9bb092293
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1878347234affddcb7a7acb39c532712051ea223
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435310"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866270"
 ---
 # <a name="troubleshoot-software-inventory-logging"></a>對軟體清查記錄進行疑難排解 
 
->適用於：Windows Server （半年通道），Windows Server 2019，Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012、 Windows Server 2008 R2
+>適用於：Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
-## <a name="understanding-sil"></a>了解 SIL
+## <a name="understanding-sil"></a>瞭解 SIL
 
-在開始進行疑難排解 SIL 之前，您應該充分了解其元件以及其運作方式。 下列影片提供概略說明 SIL 和 SIL 彙總工具，以及如何使用它們來轉送以及報告清查資料：
+開始針對 SIL 進行疑難排解之前，您應該先充分瞭解其元件及其運作方式。 下列影片提供 SIL 和 SIL 匯總工具的總覽，以及如何使用它們來轉送和報告清查資料：
 
-1. [軟體清查記錄 (SIL) (10:57) 簡介](https://channel9.msdn.com/Blogs/Regular-IT-Guy/An-Introduction-to-Software-Inventory-Logging-SIL)
+1. [軟體清查記錄（SIL）簡介（10:57）](https://channel9.msdn.com/Blogs/Regular-IT-Guy/An-Introduction-to-Software-Inventory-Logging-SIL)
 
-2. [軟體清查記錄：SIL 彙總工具 (14:34) 設定](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Setting-up-SIL-Aggregator)
+2. [軟體清查記錄：設定 SIL 匯總工具（14:34）](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Setting-up-SIL-Aggregator)
 
-3. [軟體清查記錄：啟用 SIL 轉送 (7:20)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Enabling-SIL-Forwarding)
+3. [軟體清查記錄：啟用 SIL 轉送（7:20）](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Enabling-SIL-Forwarding)
 
-## <a name="how-sil-data-flow-works"></a>SIL 資料流動的運作方式
+## <a name="how-sil-data-flow-works"></a>SIL 資料流程的運作方式
 
-SIL framework 具有兩個主要元件以及兩個通道的通訊。 透過兩者的資料流通道，並介於這兩個元件，的部署所需的成功 SIL （這假設的虛擬化，或雲端，純粹實體環境只需要一個通訊通道的環境-）。 您必須了解元件和資料流程的 SIL 將正確。 看看上述的概觀影片，您會看到說明這兩個通道上的元件和資料流程的架構圖。 橘色箭號表示透過 WinRM 的遠端查詢，綠色的虛線的箭頭表示 HTTPS 從 SIL SIL 彙總工具會每個 WS 結束節點：
+SIL 架構有兩個主要元件和兩個通訊通道。 若要成功進行 SIL 部署（這會假設虛擬化或雲端的環境，純粹的實體環境只需要其中一個通道），這兩個通道之間和兩個元件之間的資料流程都是必要的。 您必須瞭解 SIL 的元件和資料流程，才能正確部署。 觀看上述的總覽影片之後，您將會看到架構圖，說明這兩個通道的元件和資料流程。 橙色箭號表示透過 WinRM 進行遠端查詢，綠色虛線箭號表示從每個 WS 端點節點的 SIL 對 SIL 匯總工具進行 HTTPS post：
 
 ![](../media/software-inventory-logging/image1.png)
 
-如果您遇到 SIL 發生問題時，它很可能與的資料流程中的中斷透過的通道，以及元件之間。 以下是最常見的問題與資料流程下, 一節後面接著以解決每三個問題的疑難排解步驟：
+如果您遇到 SIL 的問題，可能是因為通道的資料流量中斷，以及元件之間的干擾。 以下是與資料流程相關的最常見問題，如下一節所述的疑難排解步驟解決這三個問題：
 
--   **問題 1 資料流程**–**報表時使用發行 SilReport cmdlet 中的沒有資料**（或通常會遺失資料）。
+-   **資料流程問題 1** –使用 SilReport Cmdlet （或通常遺失資料）**時，報表中沒有任何資料**。
 
--   **問題 2 資料流程**–**太未知的主機 下方的許多伺服器**報表中。
+-   **資料流程問題 2** –報表中的 [**不明主機] 下有太多伺服器**。
 
--   **問題 3 資料流程**–**太底下列為 未知的 OS 的實體主機的許多 Vm**在報表中，及/或使用時產生錯誤**Publish-sildata**執行 SIL 的 Windows 伺服器上。
+-   **資料流程問題 3** –在執行 SIL 的 Windows 伺服器上，**實體主機下的 vm 太多，列**于報告中，以及（或）使用**發佈 publish-sildata**時所產生的錯誤。
 
-## <a name="troubleshooting-data-flow-issues"></a>資料流問題進行疑難排解
+## <a name="troubleshooting-data-flow-issues"></a>針對資料流程問題進行疑難排解
 
-在開始之前，您必須知道何時 SIL 彙總工具開始使用**開始 SilAggregator** cmdlet。
+開始之前，您必須先瞭解多久前 SIL 匯總工具開始使用**set-silaggregator** Cmdlet。
 
 >[!IMPORTANT]
->會有任何資料在報表中的 SQL 資料 cube 處理在上午 3 點本機系統時間之前。 請勿繼續進行疑難排解步驟，直到處理 cube 資料。
+>在 SQL 資料 cube 于3AM 本機系統時間處理之前，報表中將不會有任何資料。 在 cube 處理資料之前，請勿繼續進行疑難排解步驟。
 
-如果您正在疑難排解在報表 （或從報表遺漏） 比上次還新的資料 cube 處理，或者 （適用於新安裝），曾經處理 cube 之前，請遵循下列步驟來處理即時的 SQL 資料 cube:
+如果您要針對報表中的資料進行疑難排解（或報表中遺漏），這比上次處理 cube 的時間還新，或在處理過 cube 之前（針對新的安裝），請遵循下列步驟來即時處理 SQL 資料 cube:
 
-1. SQL Server 的系統管理員身分登入並執行**SSMS**在命令提示字元。
+1. 以 SQL Server 的系統管理員身分登入，並在命令提示字元中執行**SSMS** 。
 2. 連線至資料庫引擎。
-3. 依序展開**SQL Server Agent** ，然後展開**作業**。
-4. 以滑鼠右鍵按一下**SILStagingRefresh** ，然後選取**下列步驟啟動作業**。
-5. 按一下 **啟動**並等待重新整理進度列完成。
-6. 開啟系統管理員身分執行的 PowerShell**發佈 silreport openreport 巨集**cmdlet。
+3. 展開**SQL Server Agent** ，然後展開 [**作業**]。
+4. 以滑鼠右鍵按一下 [ **SILStagingRefresh** ]，然後選取 [**在步驟啟動作業**]。
+5. 按一下 [**開始**]，並等候重新整理進度列完成。
+6. 以系統管理員身分開啟 PowerShell，然後執行**silreport-openreport** Cmdlet。
 
-如果不仍在報表中的任何資料，請繼續進行三個資料流問題的疑難排解。
+如果報表中仍然沒有任何資料，請繼續進行這三個數據流問題的疑難排解。
 
-### <a name="data-flow-issue-1"></a>資料流問題 1 
+### <a name="data-flow-issue-1"></a>資料流程問題1 
 
-#### <a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>使用發行 SilReport cmdlet 時，報表中的沒有資料 （或遺漏資料通常）
+#### <a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>使用 SilReport Cmdlet 時，報表中沒有任何資料（或一般資料遺失）
 
-如果資料遺失時，它可能是因為有尚未處理的 SQL 資料 cube。 如果它最近曾處理過，而且您認為遺漏的資料應該已抵達之前 cube 處理的彙總工具，請以反向順序遵循資料的路徑。 選擇唯一的主機及唯一的 VM 進行疑難排解。 反向的資料路徑會是**SILA 報表** &lt; **SILA 資料庫** &lt; **SILA 本機目錄** &lt; **遠端實體主機**或是**WS VM 執行 SIL 的代理程式/工作**。
+如果資料遺失，可能是因為 SQL 資料 cube 尚未處理。 如果最近已處理過，而且您認為遺漏的資料應該在 cube 處理之前抵達匯總工具，請依照反向順序來追蹤資料的路徑。 挑選唯一的主機和唯一的 VM 來進行疑難排解。 相反地，資料路徑會是**SILA Report** &lt; **SILA database** &lt; **SILA 本機目錄** &lt; **遠端實體主機**或執行**SIL 代理程式/工作的 WS VM**。
 
-#### <a name="check-to-see-if-data-is-in-the-database"></a>請檢查資料是否在資料庫中
+#### <a name="check-to-see-if-data-is-in-the-database"></a>查看資料是否在資料庫中
 
-有兩種方式可檢查有資料：**Powershell**或是**SSMS**。
+有兩種方式可以檢查資料：**Powershell**或**SSMS**。
 
 >[!Important]
->如果因為 SILA 插入資料庫中的資料，有至少一次處理 cube，此資料應該會反映在報表中。 如果在資料庫中沒有資料然後輪詢的實體主機失敗，或執行任何動作正在接收透過 HTTPS，或兩者。
+>如果在 SILA 將資料插入資料庫之後，cube 已處理至少一次，則此資料應該會反映在報表中。 如果資料庫中沒有任何資料，則輪詢實體主機會失敗，或不會透過 HTTPS 或兩者來接收任何內容。
 
  #### <a name="powershell"></a>PowerShell
 
-1. 開啟系統管理員身分執行的 PowerShell **get silvmhost** cmdlet，然後執行**get silaggregator**。
+1. 以系統管理員身分開啟 PowerShell 並執行**add-silvmhost** Cmdlet，然後執行**set-silaggregator**。
 
     >[!NOTE]
-    >輸出**get silaggregator**一律會模仿**Windows Server 詳細資料 索引標籤**的 Excel 報表。 非預期的結果不同。
+    >**Set-silaggregator**的輸出一律會模仿 Excel 報表的 [ **Windows Server 詳細資料]** 索引標籤。 不預期會有不同的結果。
 
-2. Run **get-silvmhost**
-   - 如果那里不列出任何主機，然後加入使用主機**新增 silvmhost** cmdlet。
-   - 如果為列出的主機**未知**，然後移至問題 2。 
-   d-如果列出的主機，但沒有沒有**datetime**下方**最近輪詢**資料行，然後移至**問題 2**如下。
+2. 執行**add-silvmhost**
+   - 如果沒有列出任何主機，請使用**add-silvmhost** Cmdlet 新增主機。
+   - 如果主機列為 [**不明**]，請移至 [問題 2]。 
+   d-如果主機已列出，但 [**最近的輪詢**] 資料行下沒有**datetime** ，則請移至下方的**問題 2** 。
 
-**其他相關的命令**
+**其他相關命令**
 
-**取得 SilAggregator-Computername&lt;將資料推送的已知伺服器 fqdn&gt;** :即使在處理 cube 之前，這會產生資料庫的電腦 (VM) 的相關資訊。 因此，此 cmdlet 可用來檢查資料庫中的資料推入 SIL 資料，透過 HTTPS，或不使用 cube 處理序，在上午 3 點 （或如果您還沒有重新整理 cube 中即時本節開頭所述） 的 Windows 伺服器。
+**Set-silaggregator-推送資料&lt; &gt;的已知伺服器的 Computername fqdn**：這會從資料庫產生關於電腦（VM）的資訊，即使在 cube 處理之前也一樣。 因此，您可以使用這個指令程式來檢查資料庫中的資料，以供 Windows Server 在3AM 的 cube 進程（如果您未依照本節開頭所述的即時重新整理 cube）中推送 SIL 資料。
 
-**取得 SilAggregator VmHostName&lt;輪詢的實體主機的 fqdn 值的地方最近輪詢 資料行底下使用 Get-silvmhost cmdlet 時&gt;** :即使在處理 cube 之前，這會產生資料庫實體主機的相關資訊。
+**Set-silaggregator- &lt;VmHostName 已輪詢的實體主機的 fqdn，其中在 [最近的輪詢] 資料行中有一個值在使用 add-silvmhost Cmdlet&gt;時**：這會從資料庫產生實體主機的相關資訊，甚至是在 cube 處理之前。
 
 #### <a name="ssms"></a>SSMS
 
-n**檢查是否有資料從輪詢的主機：**
+n**檢查要輪詢之主機的資料：**
  
-1. 開啟**SSMS** ，並連接到**Database Engine**。
-2. 依序展開**資料庫**，展開**SoftwareInventoryLogging**資料庫中，展開**資料表**，以滑鼠右鍵按一下**HostInfo**資料表，然後選取前 1000 個資料列。 
+1. 開啟**SSMS**並連接到**資料庫引擎**。
+2. 依序展開 [**資料庫**]、[ **SoftwareInventoryLogging** ] 資料庫、[**資料表]** ，以滑鼠右鍵按一下**HostInfo**資料表，然後選取 [前1000個數據列]。 
 
-    如果沒有資料的資料表中的一或多個主機，然後輪詢該/those 主機是否已順利完成至少一次。
+    如果資料表中有一或多個主機的資料，則輪詢該/這些主機至少已成功一次。
 
-   **檢查有從 Vm 或獨立伺服器，透過 HTTPS 推送資料的資料：** 
+   **檢查已透過 HTTPS 推送資料的 Vm 或獨立伺服器的資料：** 
 
-3. 開啟**SSMS** ，並連接到**Database Engine**。
-   a2. 依序展開**資料庫**，展開**SoftwareInventoryLogging**資料庫中，展開**資料表**，以滑鼠右鍵按一下**VMInfo**資料表，然後選取前 1000 個資料列。 
+3. 開啟**SSMS**並連接到**資料庫引擎**。
+   a2. 依序展開 [**資料庫**]、[ **SoftwareInventoryLogging** ] 資料庫和 [**資料表]** ，以滑鼠右鍵按一下 [ **VMInfo** ] 資料表，然後選取前1000個數據列。 
 
     >[!NOTE] 
-    >唯一的虛擬機器的每個資料列會代表其中一個處理**bmil**檔案成功透過 HTTPS 推送，並由 SIL 彙總工具處理。 Bmil 檔案 SIL 所使用的專屬檔案，將會建立每個我們依每個 SIL 執行個體，這是只有必要時請注意 SIL 和 SILA 適用於虛擬環境中。 否則只有 HTTPS 流量的必要/預期的結果）。
+    >唯一 VM 的每個資料列都代表一個已處理的**bmil**檔案已成功推送至 HTTPS，並由 SIL 匯總程式處理。 Bmil 檔案是 SIL 所使用的專屬檔案，每個 SIL 實例都會建立一個檔案，請注意，只有在虛擬環境中使用 SIL 和 SILA 時才需要此檔案。 否則，只需要/預期 HTTPS 流量。
 
-   之後處理 cube 時，資料庫中的所有資料應該會都反映在 SIL 報告。
+   在 cube 處理之後，資料庫中的所有資料都應該反映在 SIL 報表中。
 
-### <a name="data-flow-issue-2"></a>資料流問題 2
-#### <a name="too-many-servers-under-unknown-host"></a>未知的主機 下方的太多伺服器
+### <a name="data-flow-issue-2"></a>資料流程問題2
+#### <a name="too-many-servers-under-unknown-host"></a>不明主機下的伺服器太多
 
-這是可能發生在虛擬環境中，當 SIL 彙總工具未成功輪詢要用來裝載虛擬機器的實體主機。
+當 SIL 匯總工具無法順利輪詢裝載虛擬機器的實體主機時，這可能會發生在虛擬環境中。
 
-1. 開啟**PowerShell**系統管理員身分執行**get silvmhost** cmdlet。
+1. 以系統管理員身分開啟**PowerShell** ，並執行**add-silvmhost** Cmdlet。
 
-    -   如果為列出的主機**未知**，則**新增 silvmhost** cmdlet 未正確運作-通常是因為存取加入這些主機的認證錯誤 (因此，無法辨識)。 如果認證經過驗證，這可能表示自動偵測，但是**hosttype**並**hypervisortype**中**新增 silvmhost** cmdlet 無法辨識平台。 那里一些進階的疑難排解步驟適用於這些情況下，但這裡未涵蓋 （請檢查 EventViewer SIL 彙總工具通道）。
+    -   如果主機列為 [**不明**]， **add-silvmhost 指令程式**無法正常運作–通常是因為新增了錯誤的認證來存取這些主機（因而不明）。 但是，如果驗證認證，這可能表示**add-silvmhost** Cmdlet 中的**hosttype**和**hypervisortype**自動偵測無法辨識平臺。 在這些情況下，您可以使用先進的疑難排解步驟，但此處並未涵蓋（請檢查 EventViewer SIL 匯總程式通道）。
 
-    -   如果列出的主機，並**hosttype**並**hypervisortype**值不會列出**未知**，也就是 Windows 和 HyperV、 或 Ubuntu 和 Xen 等，但沒有沒有**datetime**下方**最近輪詢**資料行，則輪詢未成功尚未開始。
+    -   如果列出主機，而且**hosttype**和**hypervisortype**列出的值不是**未知**的，即 Windows 和 HyperV、Ubuntu 和 Xen 等等，但是 [**最近的輪詢**] 資料行下沒有 [**日期時間**]，但輪詢尚未成功發生。
 
-        -   您必須等候一小時之後新增輪詢的主機進行 (假設這個間隔設定為預設值-可以使用來檢查**get silaggregator** cmdlet)。
+        -   新增要進行輪詢的主機之後，您必須等候一小時（假設此間隔設定為預設值–可以使用**set-silaggregator** Cmdlet 來檢查）。
 
-        -   如果已新增主機，因為過去一小時的時間，請檢查輪詢工作正在執行：在 **工作排程器**，選取**Software Inventory Logging Aggregator**之下**Microsoft** &gt; **Windows**並檢查工作歷程記錄。
+        -   如果自從新增主機之後已經過一小時，請檢查輪詢工作是否正在執行：在**工作排程器**中，選取 [ **Microsoft** &gt; **Windows** ] 底下的 [**軟體清查記錄**匯總工具]，並檢查工作的歷程記錄。
 
-    -   如果主機列出，但是沒有值，如**RecentPoll**， **HostType**，或**HypervisorType**，這主要是忽略。 這才會發生在 HyperV 環境中。 此資料實際上是來自 Windows Server VM，用來識別它在 HTTPS 上執行的實體主機。 這可用於識別報告，但需要採礦資料庫使用的特定 VM **Get SilAggregatorData** cmdlet。
+    -   如果主機已列出，但沒有**RecentPoll**、 **HostType**或**HypervisorType**的值，這可能會被忽略。 這只會在 HyperV 環境中發生。 此資料實際上來自 Windows Server VM，可識別它透過 HTTPS 執行的實體主機。 這有助於識別已報告的特定 VM，但需要使用**SilAggregatorData 指令程式**來挖掘資料庫。
 
-之後會正確地輪詢的主機，您將能夠看到這些 SILA 資料庫中的實體主機的資料沒有**datetime**下方**最近輪詢**。 問題 1 節會提供步驟，來擷取這項資料。
+當主機正確輪詢之後，您就可以在 SILA 資料庫中看到這些實體主機的資料，其中包含**最近輪詢**的**日期時間**。 上述的「問題1」一節提供抓取此資料的步驟。
 
-### <a name="data-flow-issue-3"></a>資料流問題 3
-#### <a name="too-many-physical-hosts-with-vms-listed-as-unknown-os"></a>太多的實體主機，列為 未知的 OS 的 vm
+### <a name="data-flow-issue-3"></a>資料流程問題3
+#### <a name="too-many-physical-hosts-with-vms-listed-as-unknown-os"></a>虛擬機器的實體主機過多，列為不明 OS
 
-1. 挑選一個 Windows Server 終端節點 (VM) 您知道是其中一個這些主機，以系統管理員身分登入。
-2. 系統管理員身分開啟 PowerShell。
-3. 請確認**SilLogging**正在使用**Get-sillogging** cmdlet。
-   - 如果執行時，嘗試以手動方式使用，以將推送 SIL 資料**Publish-sildata**。
+1. 挑選一個您知道在其中一個主機上的 Windows Server 終端節點（VM），以系統管理員身分登入。
+2. 以系統管理員身分開啟 PowerShell。
+3. 使用**start-sillogging**指令程式確認**start-sillogging**正在執行。
+   - 如果正在執行，請嘗試使用**發行-publish-sildata**手動推送 SIL 資料。
 
-   - 如果沒有發生錯誤：
-     - 請確定**targeturi**已**https://** 項目中。
-     - 請確定已符合所有必要條件 
-     - 請確定已安裝所有必要的更新，適用於 Windows Server （請參閱 SIL 的必要條件）。 檢查 (WS 2012 R2 上僅） 的快速方式是尋找這些使用下列 cmdlet:**Get-SilWindowsUpdate \*3060, \*3000**
-     - 請確定用於向彙總工具的憑證安裝在要清查與在本機伺服器上正確的存放區**SilLogging**。
-     - 在 SIL 彙總工具中，務必要用來進行彙總工具驗證憑證的憑證指紋加入至清單中使用**Set-silaggregator** **-AddCertificateThumbprint**cmdlet。
+   - 如果發生錯誤：
+     - 確定**targeturi**已**HTTPs://** 在專案中。
+     - 確保符合所有先決條件 
+     - 請確定已安裝 Windows Server 的所有必要更新（請參閱 SIL 的必要條件）。 若要快速檢查（僅限 WS 2012 R2），請使用下列 Cmdlet 來尋找這些方法：**Get-silwindowsupdate \*3060、 \*3000**
+     - 確保用來驗證匯總工具的憑證安裝在本機伺服器上要以**start-sillogging**清查的正確存放區中。
+     - 在 SIL 匯總工具上，請務必使用**set-silaggregator** **– AddCertificateThumbprint** Cmdlet，將用來驗證匯總工具的憑證憑證指紋新增至清單。
      - 如果使用企業憑證，請檢查 SIL 啟用的伺服器已加入建立憑證時所針對的網域，或可由根授權單位來驗證。 如果嘗試將資料轉送/推入彙總工具在本機電腦不信任憑證，這個動作會失敗並產生錯誤。
 
-     如果上述所有已檢查並驗證，但問題持續發生：
+     如果上述所有動作都已核取並驗證，但是問題仍然存在：
 
-     - 請檢查用來安裝 SIL 彙總工具的憑證狀況良好，且符合 SIL 彙總工具伺服器本身的名稱。 此外，如果使用企業憑證來安裝 SIL 彙總工具，則彙總工具可能需要加入該憑證建立所在的網域之中 (如果其他電腦順利轉送至相同的 SIL 彙總工具，則可以略過這些步驟)。
+     - 檢查用來安裝 SIL 匯總工具的憑證是否狀況良好，以及是否符合 SIL 匯總伺服器本身的名稱。 此外，如果使用企業憑證來安裝 SIL 彙總工具，則彙總工具可能需要加入該憑證建立所在的網域之中 (如果其他電腦順利轉送至相同的 SIL 彙總工具，則可以略過這些步驟)。
 
-     -  最後，您可以檢查快取的 SIL 檔案嘗試轉送/推，在伺服器上的下列位置 **\Windows\System32\Logfiles\SIL**。 如果**SilLogging**已啟動，而且已經執行超過一小時，或**Publish-sildata**才剛執行不久，並沒有任何檔案在此目錄中，比已彙總工具的記錄成功。
+     -  最後，您可以在嘗試轉送/推送、 **\Windows\System32\Logfiles\SIL**的伺服器上，檢查下列位置是否有快取的 SIL 檔案。 如果**start-sillogging**已啟動且執行超過一小時，或最近已執行過**publish-sildata** ，而且這個目錄中沒有任何檔案，則記錄到匯總工具已成功。
 
-如果沒有任何錯誤，並在主控台上的任何輸出，然後資料推播/從發行 Windows Server 的 [結束] 節點以透過 HTTPS 的 SIL 彙總工具已成功。 若要依照系統管理員身分的 SIL 彙總工具的資料轉送，登入路徑，並檢查已到達資料檔案。 移至**Program Files (x86)** &gt; **Microsoft SIL 彙總工具** &gt; SILA 目錄。 您可以觀看即時抵達的資料檔案。
-
->[!NOTE] 
->一個以上的資料檔案可能已使用轉移**Publish-sildata** cmdlet。 SIL 上之結束節點會快取失敗的推播，最多 30 天。 在下一步 成功推送資料的所有檔案會都移至進行處理的彙總工具。 如此一來，新設定 SIL 彙總工具無法顯示資料在那之前它自己的安裝程式結束節點。
+如果沒有任何錯誤，而且主控台上沒有任何輸出，則會成功從 Windows Server 終端節點將資料推送/發行至 SIL 匯總工具。 若要追蹤資料的路徑，請以系統管理員身分登入 SIL 匯總工具，並檢查已抵達的資料檔案。 移至**Program Files （x86）** &gt; **Microsoft SIL** &gt;匯總工具 SILA 目錄。 您可以即時監看傳入的資料檔案。
 
 >[!NOTE] 
->目前沒有 SILA 遵循處理 SILA 目錄中只會在低流量情況下相關的資料檔案時的規則。 高流量一律會觸發即時處理。 預設行為是處理在 100 個檔案會在目錄中，或在 15 分鐘之後到達之後，請將 」 開始。 疑難排解端對端在小型環境中，時，通常必須等候 15 分鐘的時間。
+>有一個以上的資料檔案可能已經使用**publish-sildata** Cmdlet 傳輸。 結束節點上的 SIL 會快取失敗的推送最多30天。 在下一次成功推送時，所有資料檔案都會移至匯總工具進行處理。 如此一來，新設定的 SIL 匯總工具就可以在其本身的設定之前，顯示來自結束節點的資料。
 
-處理這些檔案之後，您會看到資料庫中的資料。
+>[!NOTE] 
+>在處理 SILA 目錄中的資料檔案時，只有在低流量情況下才相關的規則 SILA。 高流量一律會即時觸發處理。 預設行為是，在100檔案抵達目錄後或15分鐘後，就會開始處理。 在小型環境中進行端對端疑難排解時，通常需要等候15分鐘。
+
+處理這些檔案之後，您將會在資料庫中看到資料。

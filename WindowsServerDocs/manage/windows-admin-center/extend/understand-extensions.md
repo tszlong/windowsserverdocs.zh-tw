@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b00ee847088d038e59266154bcbbe9499bfe47fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e54101e90005a1845820ecf0bb99df527ac7051
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850109"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869769"
 ---
 # <a name="understanding-windows-admin-center-extensions"></a>了解 Windows Admin Center 擴充功能
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-要是您還不熟悉 Windows Admin Center 的運作方式，我們來初步了解概要架構。 Windows Admin Center 包含下列兩個主要元件：
+如果您還不熟悉 Windows 系統管理中心的運作方式，讓我們從高階架構開始著手。 Windows Admin Center 包含下列兩個主要元件：
 
 - 輕量型 **Web 服務**，依據網頁瀏覽器要求提供 Windows Admin Center UI 網頁。
 - **閘道元件**，接聽網頁的 REST API 要求，並轉送要對目標伺服器或叢集執行的 WMI 呼叫或 PowerShell 指令碼。
@@ -52,4 +52,4 @@ ms.locfileid: "59850109"
 
 ## <a name="next-steps"></a>後續步驟
 
-視您要在 Windows Admin Center 建置哪些功能而定，[建置工具擴充功能](develop-tool.md)對現有的伺服器或叢集解決方案來說可能就足夠了，而且是建置擴充功能最簡單的第一步。 不過，如果您的功能是用來管理裝置、服務或某種全新系統，而非伺服器或叢集時，您應該考慮[建置解決方案擴充功能](develop-solution.md)並提供一個或多個工具。 最後，如果您需要透過 WMI 或 PowerShell 以外的通訊協定與目標通訊，就必須[建置閘道外掛程式](develop-gateway-plugin.md)。 請[繼續閱讀](developing-extensions.md)，了解如何設定開發環境，並開始撰寫您的第一個擴充功能。
+視您要在 Windows Admin Center 建置哪些功能而定，[建置工具擴充功能](develop-tool.md)對現有的伺服器或叢集解決方案來說可能就足夠了，而且是建置擴充功能最簡單的第一步。 不過，如果您的功能是用來管理裝置、服務或某種全新系統，而非伺服器或叢集時，您應該考慮[建置解決方案擴充功能](develop-solution.md)並提供一個或多個工具。 最後，如果您需要透過 WMI 或 PowerShell 以外的通訊協定來與目標通訊，則必須[建立閘道外掛程式](develop-gateway-plugin.md)。 請[繼續閱讀](developing-extensions.md)，了解如何設定開發環境，並開始撰寫您的第一個擴充功能。

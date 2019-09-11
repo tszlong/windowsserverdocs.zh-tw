@@ -13,36 +13,36 @@ ms.assetid: 0f3e8875-1b5e-4789-b16c-d06d6e31f38e
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7a06fcc763283114dc12ad106aa7ec146502dbd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 23bde4a65e3bf41d8968d55bf9641ca6a44b7d96
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867579"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871486"
 ---
 # <a name="variables-affecting-multipoint-services-system-performance"></a>影響 MultiPoint 服務系統效能的變數
-有許多變數可能會影響 MultiPoint 服務系統的整體效能。 若要設計您的系統時，請考慮這些。  
+有許多變數可能會影響 MultiPoint 服務系統的整體效能。 在設計系統時，您可能會想要考慮這些事項。  
   
 ## <a name="usage"></a>使用量  
   
--   **應用程式**的型別和執行在同一時間，特別是圖形的應用程式數目\-繁重或記憶體密集應用程式將會影響您的系統的整體效能。 如需詳細資訊，請參閱 <<c0> [ 應用程式和網際網路內容](hardware-and-performance-recommendations.md#applications-and-internet-content)。  
+-   **應用程式**同時執行的應用程式類型和數目，特別是圖形\-繁重或記憶體密集型應用程式將會影響系統的整體效能。 如需詳細資訊，請參閱[應用程式和網際網路內容](hardware-and-performance-recommendations.md#applications-and-internet-content)。  
   
--   **使用網際網路**考慮多媒體內容或使用完整影片影片的網頁，是否要檢視您的使用者。 如果太多使用者同時檢視，這種類型的內容可以多載系統。  
+-   **網際網路使用**請考慮您的使用者是否要觀看多媒體內容或使用全動作影片的網頁。 如果同時查看太多使用者，這種類型的內容可能會使系統超載。  
   
     > [!NOTE]  
-    > 在 MultiPoint 服務中，以允許老師螢幕投影至其學生監視，[投影] 功能並不適用於專案完整影片的影片。 [投影] 功能被設計用於示範用途，例如顯示程序。  
+    > MultiPoint 服務中的投射功能，可讓教師將其螢幕投影到其學生監視器，而不是設計來投影全動作影片。 投影功能是針對示範用途所設計，例如顯示程式。  
   
--   **高速裝置**如果太多使用者同時使用高速的裝置，例如網路攝影機或 DVD 播放機，這會影響系統的整體效能。  
+-   **高速裝置**如果有太多使用者同時使用高速裝置（例如，網路攝影機或 DVD 播放機），這會影響系統的整體效能。  
   
 ## <a name="configuration"></a>組態  
   
--   **CPU、 GPU 和 RAM**請參閱 <<c2> [ 最佳化 MultiPoint 服務系統效能](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance)在本指南中的 CPU、 GPU 和 RAM 的建議。  
--   **網路頻寬**RDP over Lan 連接的站台、 網路頻寬和用戶端 （例如精簡型用戶端、 桌面電腦或膝上型電腦） 的功能很重要，特別是當使用者工作階段中正在執行的視訊。 如果您使用 USB over Ethernet 零用戶端時，網路頻寬也應該考量。 所有裝置的視訊資料會透過相同的乙太網路連線，傳送，因此您可能想要使用這些裝置時，請考慮設定個別的乙太網路。  
--   **RemoteFX** RDP 移轉網路連線的站台，您可以使用 RemoteFX，大幅改善的高畫質多媒體內容傳遞。  
--   **顯示器解析度**如果您有大量的全螢幕視訊的使用量，您可能要考慮減少的監視器解析度，以將效能最大化。  
--   **Usb 極簡型用戶端數目**的伺服器上的單一根集線器上的 usb 極簡型用戶端總數會直接影響視訊的效能。 如需詳細資訊，請參閱 < [USB 零用戶端連線站台的版面配置](MultiPoint-services-Site-Planning.md#layout-for-usb-zero-client-connected-stations)。 USB over Ethernet 零用戶端站台支援的數目可能會稍微小於 usb 極簡型用戶端數目。  
--   **USB 頻寬**設計您的系統時，請考慮 USB 頻寬。  這是針對 usb 極簡型用戶端，透過 USB 連線傳送視訊資料特別重要。 若要最佳化頻寬，最小化連線到伺服器的單一 USB 連接埠的裝置數目。 這適用於菊輪鍊結工作站與中繼的中樞。 如需詳細資訊，請參閱 <<c0> [ 站台集線器](MultiPoint-services-Site-Planning.md#station-hubs)並[中繼集線器](MultiPoint-services-Site-Planning.md#intermediate-hubs)。  
+-   **CPU、GPU 和 RAM**如需 CPU、GPU 和 RAM 的建議，請參閱本指南中的[優化 MultiPoint 服務系統效能](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance)。  
+-   **網路頻寬**針對 RDP over LAN 連線的工作站，網路頻寬和用戶端的功能（例如瘦用戶端、桌上型電腦或膝上型電腦）很重要，尤其是當影片在使用者的會話中執行時。 如果您使用 USB over Ethernet 的零用戶端，則也應該考慮網路頻寬。 所有裝置的影片資料會透過相同的乙太網路連線傳送，因此，您可以考慮在使用這些裝置時設定個別的 Gigabit 乙太網路。  
+-   **RemoteFX**針對 RDP over LAN 連線的工作站，您可以使用 RemoteFX 來大幅改善高定義多媒體內容的傳遞。  
+-   **顯示解析度**如果您有大量的全螢幕影片使用方式，您可能會想要考慮減少監視器解析度，以將效能最大化。  
+-   **USB 零用戶端數目**伺服器上單一根中樞的 USB 零用戶端總數會直接影響影片效能。 如需詳細資訊，請參閱[適用于 USB 零用戶端連線站的版面](MultiPoint-services-Site-Planning.md#layout-for-usb-zero-client-connected-stations)配置。 受支援的 USB 乙太網路的零用戶端數目可能會稍微小於 USB 零用戶端的數目。  
+-   **USB 頻寬**當您設計系統時，請考慮 USB 頻寬。  這對 USB 零用戶端而言特別重要，因為它會透過 USB 連線傳送影片資料。 若要將頻寬優化，請將連線到伺服器上單一 USB 埠的裝置數目降至最低。 這適用于菊輪鍊式站和中繼中樞。 如需詳細資訊，請參閱[工作站中樞](MultiPoint-services-Site-Planning.md#station-hubs)和[中繼中樞](MultiPoint-services-Site-Planning.md#intermediate-hubs)。  
   
--   **USB 類型**使用 USB 3.0 而不是 USB 2.0 會增加伺服器與中繼的中樞之間的可用頻寬，如果您要將三個以上的 usb 極簡型用戶端連接至中樞，或如果您使用的高頻寬的 USB 裝置。  
+-   **USB 類型**如果您要將三個以上的 USB 零用戶端連接到集線器，或使用高頻寬 USB 裝置，使用 USB 3.0 而不是 USB 2.0，會增加伺服器和中繼中樞之間的可用頻寬。  
   
--   **站台**站台的總數會影響效能。 如果您有大量的圖形、 處理或視訊的需求，您可能想要限制的站台整體的數目。 如需詳細資訊，請參閱 <<c0> [ 最佳化 MultiPoint 服務系統效能](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance)。
+-   **工作站**總工作站數會影響效能。 如果您有大量的圖形、處理或影片需求，您可能會想要限制整體的工作站數目。 如需詳細資訊，請參閱將[MultiPoint 服務系統效能優化](hardware-and-performance-recommendations.md#optimize-multipoint-services-system-performance)。

@@ -1,6 +1,6 @@
 ---
-title: 每月的差異更新 ISV 支援，而不需要 WSUS
-description: Windows Server Update Service (WSUS) 主題-如何獨立軟體廠商 (ISV) 可以暫時使用每月的差異更新而不是 WSUS Express 更新傳遞，以減少封裝大小
+title: 不含 WSUS 的每月差異更新 ISV 支援
+description: Windows Server Update Service （WSUS）主題-獨立軟體廠商（ISV）如何暫時使用每月差異更新，而不是 WSUS Express 更新傳遞以減少套件大小
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
@@ -11,76 +11,76 @@ author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 272d3865bbe1a9853f5349c5e878155351525ef0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9077cb87d1d0f6d59ad037c93f5608d3b698feaa
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439947"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868718"
 ---
-# <a name="monthly-delta-update-isv-support-without-wsus"></a>每月的差異更新 ISV 支援，而不需要 WSUS
+# <a name="monthly-delta-update-isv-support-without-wsus"></a>不含 WSUS 的每月差異更新 ISV 支援
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows 10
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
 
-Windows 10 更新的下載項目可能很大，因為每個套件包含所有先前發行的修正，以確保一致性和簡易性。  
+Windows 10 更新下載可能會很大，因為每個套件都包含所有先前發行的修正程式，以確保一致性和簡易性。  
 
-第 7 版，因為 Windows 已經能夠減少大小的 Windows Update 下載使用稱為[Express](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2)，而且雖然消費型裝置都支援它依預設，Windows 10 企業版裝置需要 Windows Server Update若要善用 Express services (WSUS)。 如果您有可用的 WSUS，請參閱[Express 更新傳遞 ISV 支援](express-update-delivery-ISV-support.md)。 我們建議使用它來啟用快速更新傳遞。 
+自版本7起，Windows 已能夠使用稱為[Express](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2)的功能減少 Windows Update 下載的大小，而雖然消費者裝置預設支援，但 windows 10 企業版裝置需要 WINDOWS SERVER UPDATE SERVICES （WSUS）才能執行Express 的優勢。 如果您有可用的 WSUS，請參閱[快速更新傳遞 ISV 支援](express-update-delivery-ISV-support.md)。 我們建議使用它來啟用快速更新傳遞。 
 
-如果您目前沒有 WSUS 安裝，但您需要以較小更新的套件大小在過渡期間，您可以使用每月的差異更新。 差異更新但不是太一樣 WSUS Express 更新傳遞，請以本質上，減少封裝大小。 我們建議您部署 WSUS Express update，儘可能最大封裝大小降低為。 以下是比較差異、 累計和 Express 下載大小適用於 Windows 10 版本 1607年的圖表：
+如果您目前未安裝 WSUS，但您在過渡期間需要較小的更新套件大小，您可以使用每月差異更新。 差異更新會大幅減少套件大小，但不像 WSUS Express 更新傳遞一樣多。 我們建議您盡可能部署 WSUS Express 更新，以最大的方式減少套件大小。 以下圖表比較 Windows 10 1607 版的差異、累計和快速下載大小：
 
 ![下載大小比較](../../media/express-update-delivery-isv-support/delta-1.png)
 
-## <a name="what-is-monthly-delta-update"></a>什麼是每月的差異更新？
+## <a name="what-is-monthly-delta-update"></a>什麼是每月差異更新？
 
-有兩種變化的每月的安全性更新：差異並加裝累計。
+每月安全性更新有兩種變體：差異與累計。
 
-每月的差異更新為新的並更新封裝大小為過渡性解決方案的 Isv 並沒有可幫助減少的 WSUS。
+每月差異更新是新的，而且沒有 WSUS 可協助減少更新套件大小的 Isv 的過渡解決方案。
 
 >[!IMPORTANT]
->**差異更新可供 Windows 10 及版本 1607 （年度更新版）、 版本 1703 (Creators Update)，版本 1709 (Fall Creators Update) 的服務。** 針對版本 1709年版之後，您必須實作支援的部署基礎結構[Express 更新傳遞](express-update-delivery-ISV-support.md)繼續利用累加式更新。
+>**差異更新適用于 Windows 10 版本1607（年度更新版）、版本1703（建立者更新）和版本1709（秋季建立者更新）。** 針對版本1709之後的版本，您必須執行支援[快速更新傳遞](express-update-delivery-ISV-support.md)的部署基礎結構，才能繼續利用累加式更新。
 
-藉由使用每月的差異更新，套件只會包含一個月的更新。 每月累計包含該更新版本中，所有更新，導致每個月的成長的大型檔案。 在每個月，也稱為 「 更新星期二 」。 第二個星期二發行 Delta 和每月更新 下表比較差異和累計更新：
+藉由使用每月差異更新，套件只會包含一個月的更新。 [每月累計] 包含該更新版本的所有更新，導致每個月增加一個大型檔案。 差異和每月更新會在每個月的第二個星期二發行，也稱為「更新星期二」。 下表比較差異和累計更新：
 
 |                    | 每月**差異**更新                                                                                                                                                                                                       | 每月**累計**更新                                                                                                                                                                                             |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **範圍**          | 使用單一更新**當月只有新的修正**                                                                                                                                                                           | 單一的更新與該月份和所有前幾個月的所有新的修正                                                                                                                                                   |
-| **應用程式**    | 只可以套用上個月的更新時套用 （累計或差異）                                                                                                                                           | 可以套用在任何時間                                                                                                                                                                                                |
-| **傳遞**       | **發行至 Windows Update Catalog 只**位置下載它以搭配其他工具或程序。 不提供來連線到 Windows Update 的電腦                                                         | 發行至 Windows Update （其中所有取用者的電腦將會安裝它）、 WSUS 和 Windows 的更新類別目錄                                                                                                                |
+| **範圍**          | **僅針對該月份提供新修正**的單一更新                                                                                                                                                                           | 包含該月份所有新修正和前幾個月的單一更新                                                                                                                                                   |
+| **應用程式**    | 只有在套用上個月的更新（累計或差異）時，才能套用                                                                                                                                           | 可以隨時套用                                                                                                                                                                                                |
+| **運送**       | **僅發佈至 Windows Update 目錄**，可供下載以用於其他工具或進程。 未提供給連線到 Windows Update 的電腦                                                         | 已發佈至 Windows Update （所有取用者電腦將會安裝）、WSUS 和 Windows Update 目錄                                                                                                                |
 
-差異和重試累計有相同的 KB 數，具有相同的分類，並在同一時間發行。 在目錄中，可能是更新標題或 msu 的名稱，則可以分辨更新：
+差異與累計具有相同的 KB 號碼，具有相同的分類，並同時發行。 更新可透過目錄中的更新標題，或 msu 的名稱來區別：
 
-- 2017-02 *\***差異更新**\**  的 x64 型系統 (KB1234567) 的 Windows 10 版本 1607年
-- 2017-02 *\***累計更新**\**  的 x86 型系統 (KB1234567) 的 Windows 10 版本 1607年                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 適用于 Windows 10 版本1607（x64 型系統）的 2017-02 * \***差異更新**\* *  （KB1234567）
+- 適用于 x86 系統（KB1234567）之 Windows 10 版本1607的 2017-02 * \***累積更新**\* *                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
-### <a name="when-to-use-monthly-delta-update"></a>使用差異的每月更新的時機
+### <a name="when-to-use-monthly-delta-update"></a>何時使用每月差異更新
 
-如果用戶端裝置更新的大小會產生問題，建議使用具有上個月的更新和累計更新進度落後的裝置上的裝置上的差異更新。 如此一來，所有的裝置只需要單一的更新，即可將其最新狀態。 因為您必須根據狀態的裝置是組織中的不同更新部署，這會需要整體的更新管理程序，在小型的調整：
+如果用戶端裝置的更新大小是問題，建議您在具有上個月更新的裝置上使用差異更新，並在落後的裝置上進行累計更新。 如此一來，所有裝置只需要一次更新，就能使其保持在最新狀態。 這需要在整體更新管理程式中進行小型調整，因為您必須根據裝置在組織中的最新狀態來部署不同的更新：
 
 ![下載大小比較](../../media/express-update-delivery-isv-support/delta-2.png)
 
-### <a name="prevent-deployment-of-delta-and-cumulative-updates-in-the-same-month"></a>避免在同一個月份的差異和累計更新的部署
+### <a name="prevent-deployment-of-delta-and-cumulative-updates-in-the-same-month"></a>防止在同一個月部署差異和累計更新
 
-因為差異更新和累計更新可用的同時，務必了解會發生什麼事如果您將部署在同一個月份的兩個更新。
+由於差異更新和累計更新可同時使用，因此請務必瞭解，如果您在同一個月部署這兩個更新，會發生什麼情況。
 
-如果您核准並部署相同版本的差異和累計更新時，您不只會產生額外的網路流量因為兩者都將會下載至電腦上，但您可能無法在重新啟動後重新開機至 Windows 電腦。
+如果您核准並部署相同版本的差異和累計更新，您將不會產生額外的網路流量，因為這兩者都會下載至電腦，但在重新開機之後，您可能無法將電腦重新開機至 Windows。
 
-如果不小心安裝差異和累計更新，而且不會再開機電腦，您可以復原下列步驟：
+如果差異和累計更新不小心安裝，而且您的電腦已不再開機，您可以使用下列步驟來復原：
 
-1. 開機到 WinRE 命令提示字元
-2. 列出處於擱置狀態的封裝：
+1. 開機進入 WinRE 命令提示字元
+2. 列出處於暫止狀態的套件：
 
     `x:\windows\system32\dism.exe /image:<drive letter for windows directory> /Get-Packages >> <path to text file>`
  
-    > **範例**: ` x:\windows\system32\dism.exe /image:c:\ /Get-Packages >> c:\temp\packages.txt`
+    > **範例**：` x:\windows\system32\dism.exe /image:c:\ /Get-Packages >> c:\temp\packages.txt`
  
-3. 開啟文字檔案，其中您經由管道輸送**取得套件**。 如果您看到任何安裝擱置中的修補程式，請執行**移除封裝**針對每個封裝名稱：
+3. 開啟您用來輸送**套件**的文字檔。 如果您看到任何安裝擱置修補程式，請執行每個套件名稱的**移除套件**：
  
    `dism.exe /image:<drive letter for windows directory> /remove-package /packagename:<package name>`
  
-    > **範例**: `x:\windows\system32\dism.exe /image:c:\ /remove-package /packagename:Package_for_KB4014329~31bf3856ad364e35~amd64~~10.0.1.0`
+    > **範例**：`x:\windows\system32\dism.exe /image:c:\ /remove-package /packagename:Package_for_KB4014329~31bf3856ad364e35~amd64~~10.0.1.0`
  
     >[!NOTE]
-    >請勿移除暫止的修補程式解除安裝。
+    >請勿移除卸載擱置中的修補程式。
 
 >[!IMPORTANT]
->**差異更新可供 Windows 10 及版本 1607 （年度更新版）、 版本 1703 (Creators Update)，版本 1709 (Fall Creators Update) 的服務。** 針對版本 1709年版之後，您必須實作支援的部署基礎結構[Express 更新傳遞](express-update-delivery-ISV-support.md)繼續利用累加式更新。
+>**差異更新適用于 Windows 10 版本1607（年度更新版）、版本1703（建立者更新）和版本1709（秋季建立者更新）。** 針對版本1709之後的版本，您必須執行支援[快速更新傳遞](express-update-delivery-ISV-support.md)的部署基礎結構，才能繼續利用累加式更新。

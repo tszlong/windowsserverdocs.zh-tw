@@ -9,12 +9,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 188e635543e13154622f52bf02cf877b05cc8fda
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: fc924f5e5bdd7dabecac4fdd6805ad261a0fc634
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300713"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866173"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速還原工具
 
@@ -76,7 +76,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **BackupDKM** -備份 Active Directory DKM 容器, 其中包含預設設定中的 AD FS 金鑰 (自動產生的權杖簽署和解密憑證)。 這會使用 AD 工具 ' ldifde ' 來匯出 AD 容器和其所有的子樹。
 
-- -**StorageType&lt;字串&gt;** -使用者想要使用的儲存體類型。 "FileSystem" 表示使用者想要將它儲存在本機資料夾或網路 "Azure" 中, 表示使用者想要在使用者執行備份時, 將它儲存在 Azure 儲存體容器中, 他們會選取備份位置, 也就是檔案系統或形成. 若要使用 Azure, 應將 Azure 儲存體認證傳遞至 Cmdlet。 儲存體認證包含帳戶名稱和金鑰。 此外, 也必須傳入容器名稱。 如果容器不存在, 則會在備份期間建立。 對於要使用的檔案系統, 必須指定儲存路徑。 在該目錄中, 將會為每個備份建立一個新的目錄。 所建立的每個目錄都會包含備份檔案。 
+- -**StorageType&lt;字串&gt;** -使用者想要使用的儲存體類型。 "FileSystem" 表示使用者想要將它儲存在本機資料夾或網路 "Azure" 中, 表示使用者想要在使用者執行備份時, 將它儲存在 Azure 儲存體容器中, 他們會選取備份位置, 也就是檔案系統或形成. 若要使用 Azure, 應將 Azure 儲存體認證傳遞至 Cmdlet。 儲存體認證包含帳戶名稱和金鑰。 此外, 也必須傳入容器名稱。 如果容器不存在，則會在備份期間建立。 對於要使用的檔案系統, 必須指定儲存路徑。 在該目錄中, 將會為每個備份建立一個新的目錄。 所建立的每個目錄都會包含備份檔案。 
 
 - **EncryptionPassword&lt;字串&gt;** -將用來加密所有備份檔案的密碼, 然後再儲存
 
@@ -88,7 +88,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **ServiceAccountCredential&lt; pscredential&gt;** -指定目前正在執行的 AD FS 服務所使用的服務帳戶。 只有當使用者想要備份 DKM, 而不是網域系統管理員或無法存取容器的內容時, 才需要此參數。 
 
-- **BackupComment&lt;string []&gt;** -有關將在還原期間顯示之備份的資訊字串, 類似于 hyper-v 檢查點命名的概念。 預設值為空字串
+- **BackupComment&lt;string []&gt;** -有關將在還原期間顯示之備份的資訊字串，類似于 hyper-v 檢查點命名的概念。 預設值為空字串
 
  
 ## <a name="backup-examples"></a>備份範例
@@ -213,7 +213,7 @@ RngCryptoServiceProvider 是用來產生 AES 和 Rfc2898DeriveBytes 類別所使
 - **%localappdata%\ADFSRapidRecreationTool**
 
 >[!NOTE]
-> 執行還原時, 可能會建立 PostRestore_Instructions 檔案, 其中包含其他驗證提供者的總覽、屬性存放區和本機宣告提供者信任, 以便在啟動 AD FS 服務之前手動安裝。
+> 執行還原時，可能會建立 PostRestore_Instructions 檔案，其中包含其他驗證提供者的總覽、屬性存放區和本機宣告提供者信任，以便在啟動 AD FS 服務之前手動安裝。
 
 ## <a name="version-release-history"></a>版本發行歷程記錄
 
@@ -263,7 +263,7 @@ RngCryptoServiceProvider 是用來產生 AES 和 Rfc2898DeriveBytes 類別所使
 
 **已修正的問題:**
 
-   - Bug 修正: 處理在其中有特殊字元的服務帳戶密碼 (即 ' & ')
+   - Bug 修正：處理在其中有特殊字元的服務帳戶密碼（即 ' & '）
    - Bug 修正: 還原失敗, 因為另一個進程正在使用 IdentityServer. .exe .config
 
 

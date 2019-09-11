@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6939373db678f1ca6be62711f1771b8f7019c312
-ms.sourcegitcommit: c9ab5fbde1782a3a2bac2dbd45f3f178f7ae3c4c
+ms.openlocfilehash: bf7e2ed20a59bb021627a8a58f869ea5d94bf2b7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68354644"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868193"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory 同盟服務的最佳做法
 
@@ -108,16 +108,16 @@ Federation service proxy (WAP 的一部分) 提供擁塞控制來保護 AD FS �
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>若要驗證設定, 您可以執行下列動作:
 1.  在您的 Web 應用程式 Proxy 電腦上, 啟動提高許可權的命令視窗。
-2.  流覽至 ADFS 目錄, 網址為%WINDIR%\adfs\config。
+2.  流覽至 ADFS 目錄，網址為%WINDIR%\adfs\config。
 3.  將擁塞控制設定從其預設值變更為 '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'。
 4.  儲存並關閉檔案。
-5.  執行 ' net stop adfssrv ', 然後按 [net start adfssrv], 以重新開機 AD FS 服務。
+5.  執行 ' net stop adfssrv '，然後按 [net start adfssrv]，以重新開機 AD FS 服務。
 如需這項功能的指引, 請參閱[這裡](https://msdn.microsoft.com/library/azure/dn528859.aspx )。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>Proxy 上的標準 HTTP 要求檢查
 Proxy 也會對所有流量執行下列標準檢查:
 
-- FS-P 本身會透過短期憑證來驗證 AD FS。  在可疑的 dmz 伺服器危害案例中, AD FS 可以「撤銷 proxy 信任」, 使其不再信任來自可能遭盜用之 proxy 的任何連入要求。 撤銷 proxy 信任會撤銷每個 proxy 本身的憑證, 使其無法成功驗證 AD FS 伺服器的任何用途
+- FS-P 本身會透過短期憑證來驗證 AD FS。  在可疑的 dmz 伺服器危害案例中, AD FS 可以「撤銷 proxy 信任」, 使其不再信任來自可能遭盜用之 proxy 的任何連入要求。 撤銷 proxy 信任會撤銷每個 proxy 本身的憑證，使其無法成功驗證 AD FS 伺服器的任何用途
 - FS-P 會終止所有連線, 並建立新的 HTTP 連線, 連至內部網路上的 AD FS 服務。 這會在外部裝置和 AD FS 服務之間提供工作階段層級的緩衝區。 外部裝置永遠不會直接連接到 AD FS 服務。
 - FS-P 會執行 HTTP 要求驗證, 專門篩選出 AD FS 服務不需要的 HTTP 標頭。
 

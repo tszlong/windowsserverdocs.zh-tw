@@ -1,6 +1,6 @@
 ---
 title: 在擴充功能中使用 PowerShell
-description: 在您的擴充 Windows Admin Center SDK （專案檀香山） 中使用 PowerShell
+description: 在擴充功能 Windows 管理中心 SDK 中使用 PowerShell （Project 檀香山）
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,34 +8,34 @@ ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7375732fd464519cd1533043d271065e488fd46a
-ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
+ms.openlocfilehash: c30f8a9b856db8250a16210931e6f8dd73c07aa7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65621363"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869614"
 ---
 # <a name="using-powershell-in-your-extension"></a>在擴充功能中使用 PowerShell #
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-我們要進入更深入 Windows Admin Center 擴充功能 SDK-讓我們來談談將 PowerShell 命令新增至您的延伸模組。
+讓我們更深入瞭解 Windows 管理中心延伸模組 SDK，讓我們來討論如何將 PowerShell 命令新增至您的擴充功能。
 
-## <a name="powershell-in-typescript"></a>在 TypeScript 中的 PowerShell ##
+## <a name="powershell-in-typescript"></a>TypeScript 中的 PowerShell ##
 
-Gulp 建置程序已產生步驟，以接受任何```{!ScriptName}.ps1```，位於```\src\resources\scripts```資料夾，並建置其```powershell-scripts```類別下```\src\generated```資料夾。
+Gulp 組建```{!ScriptName}.ps1```程式有一個 [ ```\src\resources\scripts```產生] 步驟，其會採用放置於資料夾中的任何， ```powershell-scripts```並將其建立```\src\generated```到資料夾下的類別中。
 
 >[!NOTE] 
-> 不要以手動方式更新```powershell-scripts.ts```和```strings.ts```檔案。 您進行任何變更都將在下一步 產生覆寫。
+> 不要手動更新```powershell-scripts.ts``` ```strings.ts```或檔案。 下一次產生時，將會覆寫您所做的任何變更。
 
-## <a name="running-a-powershell-script"></a>執行 PowerShell 指令碼 ##
-您想要在節點上執行任何指令碼可以放在```\src\resources\scripts\{!ScriptName}.ps1```。 
+## <a name="running-a-powershell-script"></a>執行 PowerShell 腳本 ##
+您想要在節點上執行的任何腳本都可以放在```\src\resources\scripts\{!ScriptName}.ps1```中。 
 >[!IMPORTANT] 
-> 中所做的任何變更```{!ScriptName}.ps1```檔案將不會反映在您的專案，直到```gulp generate```已執行。
+> 在檔案中```{!ScriptName}.ps1```進行的任何變更都不會反映在您的```gulp generate```專案中，直到執行為止。
 
-API 的運作方式是先建立 PowerShell 工作階段是目標，建立 PowerShell 指令碼的任何參數，必須在中，傳遞及再執行所建立的工作階段中的 指令碼在節點上。
+API 的運作方式是先在您目標的節點上建立 PowerShell 會話，並使用任何需要傳入的參數來建立 PowerShell 腳本，然後在已建立的會話上執行腳本。
 
-比方說，我們有這個指令碼```\src\resources\scripts\Get-NodeName.ps1```:
+例如，我們有下列腳本```\src\resources\scripts\Get-NodeName.ps1```：
 ``` ps1
 Param
  (
@@ -45,15 +45,15 @@ Param
  Write-Output $nodeName
 ```
 
-我們將建立我們的目標節點的 PowerShell 工作階段：
+我們會為目標節點建立 PowerShell 會話：
 ``` ts
 const session = this.appContextService.powerShell.createSession('{!TargetNode}'); 
 ```
-然後我們將建立 PowerShell 指令碼的輸入參數：
+然後，我們將使用輸入參數來建立 PowerShell 腳本：
 ```ts
 const script = PowerShell.createScript(PowerShellScripts.Get_NodeName, {stringFormat: 'The name of the node is {0}!'});
 ```
-最後，我們需要建立工作階段中執行該指令碼：
+最後，我們需要在我們所建立的會話中執行該腳本：
 ``` ts
   public ngOnInit(): void {
     this.session = this.appContextService.powerShell.createAutomaticSession('{!TargetNode}');
@@ -79,7 +79,7 @@ const script = PowerShell.createScript(PowerShellScripts.Get_NodeName, {stringFo
   }
 
 ```
-現在，我們必須訂閱 observable 我們剛剛建立的函式。 將此資訊是在您要呼叫的函式，以執行 PowerShell 指令碼：
+現在，我們必須訂閱剛建立的可觀察函式。 將此位置放在您需要呼叫函式來執行 PowerShell 腳本的位置：
 ```ts
 this.getNodeName().subscribe(
      response => {
@@ -87,17 +87,17 @@ this.getNodeName().subscribe(
      }
 );
 ```
-藉由提供 createSession 方法的節點名稱，新的 PowerShell 工作階段是建立、 使用以及然後 PowerShell 呼叫完成時立即終結。 
+藉由提供節點名稱給 createSession 方法，會建立並使用新的 PowerShell 會話，然後在 PowerShell 呼叫完成時立即予以終結。 
 
-### <a name="key-options"></a>金鑰選項 ###
-呼叫 PowerShell API 時，可以使用幾個選項。 每次建立工作階段時可以建立包含或不含索引鍵。 
+### <a name="key-options"></a>索引鍵選項 ###
+呼叫 PowerShell API 時，有幾個選項可供使用。 每次建立會話時，都可以使用或不搭配金鑰來建立。 
 
-**索引鍵：** 這會建立索引的工作階段可以查閱和重複使用，即使是跨元件 （亦即 Component1 可以具有索引鍵"SME-ROCKS，「 建立工作階段，和 Component2 可以使用該相同的工作階段）。如果提供的索引鍵，則會建立工作階段必須由處置呼叫 dispose （） 所做的是在上述範例中。 正在處置的超過 5 分鐘，應該不會保留工作階段。 
+**擊鍵**這會建立一個可以查閱和重複使用的金鑰會話，甚至是跨元件（這表示 Component1 可以建立具有金鑰 "ROCKS" 的會話，而 Component2 可以使用相同的會話）。如果提供了金鑰，則必須藉由呼叫 dispose （）來處置所建立的會話，如同上述範例中所做的一樣。 會話不應在未被處置超過5分鐘的情況下保留。 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```
 
-**無索引鍵：** 工作階段時，會自動建立索引鍵。 在本課程的 3 分鐘後自動處置。 使用無索引鍵，可讓您的延伸模組，回收使用的任何已建立工作階段時的 Runspace。 如果沒有 Runspace 可以使用比會建立一個新的。 這項功能很適合單次呼叫，但重複的使用可能會影響效能。 工作階段會建立大約 1 秒，因此持續回收工作階段可能會導致速度變慢。
+**無索引鍵**系統會自動為會話建立一個金鑰。 此會話會在3分鐘後自動處置。 使用無索引鍵可讓您的擴充功能回收在建立會話時已可使用的任何執行時間。 如果沒有可用的運行時，將會建立一個新的。 這項功能適用于單次呼叫，但重複使用可能會影響效能。 會話大約需要1秒鐘的時間來建立，因此持續回收會話可能會導致速度變慢。
 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNodeName}');
@@ -106,19 +106,19 @@ this.getNodeName().subscribe(
 ``` ts 
 const session = this.appContextService.powerShell.createAutomaticSession('{!TargetNodeName}');
 ```
-在大部分情況下，建立索引的工作階段中```ngOnInit()```方法，並在然後處置```ngOnDestroy()```。 當有多個元件，但不是在元件之間共用的基礎工作階段中的 PowerShell 指令碼時，請遵循這個模式。
-為了獲得最佳結果，請確定內部元件，而不是服務管理工作階段建立-這有助於確保該存留期和清除可正確管理。
+在大部分的```ngOnInit()```情況下，請在方法中建立金鑰會話，然後在中```ngOnDestroy()```處置它。 當元件中有多個 PowerShell 腳本，但基礎會話並未在元件之間共用時，請遵循此模式。
+為了獲得最佳結果，請確定會話建立是在元件（而非服務）內進行管理，這有助於確保存留期和清除可以正確管理。
 
-為了獲得最佳結果，請確定內部元件，而不是服務管理工作階段建立-這有助於確保該存留期和清除可正確管理。
+為了獲得最佳結果，請確定會話建立是在元件（而非服務）內進行管理，這有助於確保存留期和清除可以正確管理。
 
-### <a name="powershell-stream"></a>PowerShell Stream ###
-如果您有長時間執行的指令碼和資料會輸出以漸進的方式，PowerShell 資料流可讓您處理資料，而不必等候完成的指令碼。 一旦收到資料時，就會呼叫可觀察的 next （）。
+### <a name="powershell-stream"></a>PowerShell 資料流程 ###
+如果您有長時間執行的腳本，且資料會逐漸輸出，PowerShell 資料流程可讓您處理資料，而不需要等候腳本完成。 一旦收到資料，就會立即呼叫可觀察的 next （）。
 ```ts
 this.appContextService.powerShellStream.run(session, script);
 ```
 
-### <a name="long-running-scripts"></a>長時間執行的指令碼 ###
-如果您有長時間執行的指令碼，您想要在背景中執行時，就可以提交的工作項目。 閘道將追蹤的指令碼的狀態和狀態的更新可以傳送通知。 
+### <a name="long-running-scripts"></a>長時間執行的腳本 ###
+如果您有想要在背景中執行的長時間腳本，可以提交工作專案。 腳本的狀態將會由閘道追蹤，而狀態的更新則可傳送至通知。 
 ```ts
 const workItem: WorkItemSubmitRequest = {
     typeId: 'Long Running Script',
@@ -151,23 +151,23 @@ return this.appContextService.workItem.submit('{!TargetNode}', workItem);
 ```
 
 >[!NOTE] 
-> 若要顯示的進度，Write-progress 必須包含在您撰寫的指令碼。 例如: 
+> 若要顯示進度，寫入進度必須包含在您所撰寫的腳本中。 例如:
 > ``` ps1
->  Write-Progress -Activity ‘The script is almost done!’ -percentComplete 95
+>  Write-Progress -Activity ‘The script is almost done!' -percentComplete 95
 >```
 
-#### <a name="workitem-options"></a>工作項目選項 ####
+#### <a name="workitem-options"></a>工作專案選項 ####
 
 | function | 說明 |
 | ----- | ----------- |
-| submit() | 提交工作項目 
-| submitAndWait() | 提交工作項目，並等候完成其執行
-| wait() | 等待現有的工作完成的項目
-| query() | 依識別碼的現有工作項目查詢
-| find() | 尋找和現有 TargetNodeName、 模組名稱，或 typeId 的工作項目。
+| submit （） | 提交工作專案 
+| submitAndWait() | 提交工作專案，並等候其執行完成
+| wait （） | 等待現有的工作專案完成
+| 查詢（） | 依識別碼查詢現有的工作專案
+| 尋找（） | 依 TargetNodeName、ModuleName 或 typeId 尋找和現有的工作專案。
 
 ### <a name="powershell-batch-apis"></a>PowerShell Batch Api ###
-如果您需要在多個節點上執行相同的指令碼，則可以使用批次的 PowerShell 工作階段。 例如: 
+如果您需要在多個節點上執行相同的腳本，則可以使用 batch PowerShell 會話。 例如:
 ```ts
 const batchSession = this.appContextService.powerShell.createBatchSession(
     ['{!TargetNode1}', '{!TargetNode2}', sessionKey);
@@ -188,8 +188,8 @@ const batchSession = this.appContextService.powerShell.createBatchSession(
 
 
 #### <a name="powershellbatch-options"></a>PowerShellBatch 選項 ####
-| 選項 | 說明 |
+| 件 | 說明 |
 | ----- | ----------- |
 | runSingleCommand | 針對陣列中的所有節點執行單一命令 
-| 執行 | 配對的節點上執行對應的命令
-| 取消 | 取消命令陣列中的所有節點上
+| 進行 | 在配對的節點上執行對應的命令
+| 取消 | 在陣列中的所有節點上取消命令

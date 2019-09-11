@@ -9,127 +9,127 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 97e1fa441c5fe4fb7d23743387392732663326de
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 1a2e70251837c88c3220c3d7593108eba5afb1ca
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501591"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869434"
 ---
-# <a name="ad-fs-single-sign-on-settings"></a>AD FS 的單一登入設定
+# <a name="ad-fs-single-sign-on-settings"></a>AD FS 單一登入設定
 
-單一登入 (SSO) 可讓使用者進行一次驗證及存取多個資源，而不需要額外的認證的提示。  這篇文章描述 SSO，以及可讓您自訂此行為的組態設定的預設 AD FS 的行為。  
+單一登入（SSO）可讓使用者驗證一次並存取多個資源，而不會提示您輸入其他認證。  本文說明 SSO 的預設 AD FS 行為，以及可讓您自訂此行為的設定。  
 
-## <a name="supported-types-of-single-sign-on"></a>支援的單一登入的類型
+## <a name="supported-types-of-single-sign-on"></a>支援的單一登入類型
 
 AD FS 支援數種類型的單一登入體驗：  
   
--   **工作階段 SSO**  
+-   **會話 SSO**  
   
-     工作階段的 SSO cookie 會寫入已驗證之使用者的使用者特定的工作階段期間切換應用程式時，就不接下來的提示。 不過，如果特定的工作階段結束時，將會再次提示使用者輸入其認證。  
+     會話 SSO cookie 是針對已驗證的使用者所撰寫，這會在使用者于特定會話期間切換應用程式時，排除進一步的提示。 不過，如果特定的會話結束，系統會提示使用者重新輸入其認證。  
   
-     AD FS 會設定工作階段的 SSO cookie 預設當使用者的裝置未註冊。 如果瀏覽器工作階段已結束，且重新啟動，此工作階段 cookie 會刪除而且不是有效了。  
+     如果未註冊使用者的裝置，AD FS 預設會設定會話 SSO cookie。 如果瀏覽器會話已結束且重新開機，則會刪除此會話 cookie，而且不再有效。  
   
--   **永續性 SSO**  
+-   **持續 SSO**  
   
-     這樣會消除進一步的提示時使用者切換適用於應用程式，只要持續性的 SSO cookie 為有效的已驗證使用者寫入永續性 SSO cookie。 永續性 SSO 與工作階段 SSO 之間的差異是，可以在不同的工作階段之間維護永續性 SSO。  
+     持續性 SSO cookie 是針對已驗證的使用者所撰寫，在使用者切換應用程式時，只要持續的 SSO cookie 有效，就可以排除進一步的提示。 持續性 SSO 和會話 SSO 之間的差異在於持續性 SSO 可以跨不同的會話進行維護。  
   
-     如果註冊的裝置，AD FS 將設定持續性的 SSO cookie。 如果使用者選取 [保留我登入] 選項，AD FS 也會設定永續性的 SSO cookie。 如果持續性的 SSO cookie 無效了，它將會遭到拒絕，而且刪除。  
+     如果裝置已註冊，AD FS 將會設定持續性 SSO cookie。 如果使用者選取 [讓我保持登入] 選項，AD FS 也會設定持續性 SSO cookie。 如果持續性 SSO cookie 無效，則會遭到拒絕和刪除。  
   
--   **應用程式特定的 SSO**  
+-   **應用程式特定 SSO**  
   
-     在 OAuth 案例中，重新整理權杖用來維護 SSO 狀態之範圍內的特定應用程式的使用者。  
+     在 OAuth 案例中，重新整理權杖是用來在特定應用程式的範圍內維護使用者的 SSO 狀態。  
   
-     如果註冊裝置時，AD FS 會設定已註冊的裝置，也就是 7 天預設的 AD FS 2012 r2 和最大值與 AD FS 2016 的 90 天，如果使用者使用其裝置的永續性 SSO cookie 存留時間為基礎的重新整理權杖的到期時間存取一 14 天的時間內的 AD FS 資源。 
+     如果裝置已註冊，AD FS 會根據已註冊裝置的持續 SSO cookie 存留期，設定重新整理權杖的到期時間（預設為7天，AD FS 2012R2，最多90天，如果使用其裝置，則為 AD FS 2016）在14天的時間範圍記憶體取 AD FS 資源。 
 
-如果裝置未註冊但使用者選取 [保留我登入] 選項，重新整理權杖的到期時間將會等於 「 讓我保持登中 」 的永續性 SSO cookie 存留期這會是 1 天，預設最大值為 7 天。 否則，請重新整理權杖存留期等於工作階段 SSO cookie 存留期即預設為 8 小時  
+如果裝置未註冊，但使用者選取 [讓我保持登入] 選項，重新整理權杖的到期時間將會等於 [讓我保持登入] 的持續 SSO cookie 存留期，預設為1天，最多7天。 否則，重新整理權杖存留期等於會話 SSO cookie 存留期，預設為8小時  
   
- 如先前所述，使用者已註冊的裝置上將一律可以取得永續性 SSO 除非永續性 SSO 已停用。 取消註冊裝置，永續性 SSO 可藉由啟用 「 讓我保持登中 」 (KMSI) 」 功能。 
+ 如前所述，已註冊裝置上的使用者一律會取得持續性 SSO，除非已停用持續性 SSO。 針對未註冊的裝置，您可以藉由啟用「讓我保持登入」（KMSI）功能來達到持續性 SSO。 
  
- Windows Server 2012 r2，若要啟用 PSSO 「 保持登入我 」 案例中，您必須安裝這[hotfix](https://support.microsoft.com/en-us/kb/2958298/)也是屬於的[2014 年 8 月 Windows RT 8.1、 Windows 8.1 和 Windows Server 2012 更新彙總套件R2](https://support.microsoft.com/en-us/kb/2975719)。   
+ 針對 Windows Server 2012 R2，若要啟用「讓我保持登入」案例的 PSSO，您必須安裝此[修補程式](https://support.microsoft.com/en-us/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014年8月更新彙總套件](https://support.microsoft.com/en-us/kb/2975719)的一部分。   
 
 工作 | PowerShell | 描述
 ------------ | ------------- | -------------
-啟用/停用持續性的 SSO | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 預設會啟用永續性 SSO。 如果已停用，則會不寫入任何 PSSO cookie。
-啟用/停用 「 讓我保持登入 」 | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | 預設會停用 [保留我登入] 功能。 如果已啟用，使用者會看到 讓我登入保持 「 選擇 AD FS 登入頁面
+啟用/停用持續性 SSO | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 預設會啟用持續性 SSO。 如果已停用，則不會寫入任何 PSSO cookie。
+[啟用/停用] [讓我保持登入] | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | 預設會停用 [讓我保持登入] 功能。 如果已啟用，終端使用者會在 AD FS 登入頁面上看到 [讓我保持登入] 選項
 
 
 
-## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016-單一登入和驗證的裝置
-要求者會從已註冊的裝置增加最大的 90 天內，但需要 14 天內 （裝置使用方式 視窗） 驗證進行驗證時，AD FS 2016 變更 PSSO。
-提供認證之後第一次，依預設具有已註冊裝置的使用者取得單一登入最大的一段 90 天，提供他們用來存取 AD FS 資源至少一次每隔 14 天的裝置。  如果他們提供認證之後的 15 天，將會提示使用者輸入認證一次。  
+## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016-單一登入和已驗證的裝置
+當要求者從已註冊的裝置進行驗證時，AD FS 2016 變更 PSSO 90，但在14天的期間內需要驗證（[裝置使用量] 視窗）。
+第一次提供認證之後，根據預設，已註冊裝置的使用者會在90天的最長期間內取得單一登入，但前提是它們會使用裝置至少每14天存取 AD FS 資源一次。  如果它們在提供認證後等待15天，使用者會再次收到認證的提示。  
 
-預設會啟用永續性 SSO。 如果已停用，將會寫入任何 PSSO cookie。 |  
+預設會啟用持續性 SSO。 如果已停用，則不會寫入任何 PSSO cookie。 |  
 
 ``` powershell
 Set-AdfsProperties –EnablePersistentSso <Boolean\>
 ```     
   
-裝置使用方式 視窗 （預設值 14 天） 由 AD FS 屬性**DeviceUsageWindowInDays**。
+[裝置使用時間] 視窗（預設為14天）由 [AD FS] 屬性**DeviceUsageWindowInDays**控管。
 
 ``` powershell
 Set-AdfsProperties -DeviceUsageWindowInDays
 ```   
-最大單一登入期間 （預設值 90 天） 由 AD FS 屬性**PersistentSsoLifetimeMins**。
+單一登入期間上限（預設為90天）是由 AD FS 屬性**PersistentSsoLifetimeMins**所控管。
 
 ``` powershell
 Set-AdfsProperties -PersistentSsoLifetimeMins
 ```    
 
-## <a name="keep-me-signed-in-for-unauthenticated-devices"></a>保留未驗證裝置的 我登入 
-對於未註冊的裝置，單一登入期間有取決**讓我帶正負號中 (KMSI)** 功能設定。  KMSI 會預設為停用，而且可由 AD FS 屬性 KmsiEnabled 設為 True。
+## <a name="keep-me-signed-in-for-unauthenticated-devices"></a>讓我保持登入未驗證的裝置 
+針對未註冊的裝置，單一登入期間是由 [**讓我保持登入（KMSI）** ] 功能設定來決定。  KMSI 預設為停用，而且可以藉由將 AD FS 屬性 KmsiEnabled 設定為 True 來啟用。
 
 ``` powershell
 Set-AdfsProperties -EnableKmsi $true  
 ```    
 
-KMSI 停用，使用的預設單一登入期間會為 8 小時。  這可以使用 SsoLifetime; 屬性設定。  屬性是以分鐘為單位測量，因此它的預設值是 480。  
+停用 KMSI 之後，預設的單一登入期間為8小時。  這可以使用屬性 SsoLifetime 來設定。  屬性是以分鐘為單位來測量，因此其預設值為480。  
 
 ``` powershell
 Set-AdfsProperties –SsoLifetime <Int32\> 
 ```   
 
-啟用 KMSI，與預設單一登入期間為 24 小時。  這可以使用 KmsiLifetimeMins; 屬性設定。  屬性是以分鐘為單位測量，因此它的預設值為 1440年。
+啟用 KMSI 時，預設的單一登入期間為24小時。  這可以使用屬性 KmsiLifetimeMins 來設定。  屬性是以分鐘為單位來測量，因此其預設值為1440。
 
 ``` powershell
 Set-AdfsProperties –KmsiLifetimeMins <Int32\> 
 ```   
 
-## <a name="multi-factor-authentication-mfa-behavior"></a>多重要素驗證 (MFA) 行為  
-請務必請注意，同時提供相對較長的單一登入，AD FS 會提示您輸入其他的驗證 （多重要素驗證） 當先前的登入根據主要認證並不是使用 MFA，但目前登入需要 MFA。  這是不論 SSO 組態。 AD FS 中，當它收到的驗證要求時，首先會決定是否沒有 SSO 內容 （例如 cookie)，然後，如果需要 MFA (例如，如果要求來自外部) 它將會評估是否 SSO 內容包含 MFA。  如果沒有，則 MFA 系統會提示。  
+## <a name="multi-factor-authentication-mfa-behavior"></a>多重要素驗證（MFA）行為  
+請務必注意，雖然提供較長的單一登入週期，但當先前的登入是以主要認證為基礎，而不是 MFA 時，AD FS 會提示您進行額外的驗證（多重要素驗證），但目前的登入需要 MFA。  無論 SSO 設定為何，都是如此。 AD FS，當它收到驗證要求時，會先判斷是否有 SSO 內容（例如 cookie），如果需要 MFA （例如，如果要求是來自外部，則會評估 SSO 內容是否包含 MFA）。  如果不是，則會提示 MFA。  
 
 
   
 ## <a name="psso-revocation"></a>PSSO 撤銷  
- 若要保護的安全性，AD FS 將會拒絕任何符合下列條件時，先前發行的永續性 SSO cookie。 這將需要提供其認證，才能再次使用 AD FS 驗證使用者。 
+ 為了保護安全性，AD FS 會在符合下列條件時，拒絕先前發出的任何持續性 SSO cookie。 這會要求使用者提供其認證，以便再次向 AD FS 進行驗證。 
   
 - 使用者變更密碼  
   
-- 在 AD FS 中停用持續性的 SSO 設定  
+- 已停用持續性 SSO 設定 AD FS  
   
-- 系統管理員在遺失或遭竊的情況下停用裝置  
+- 系統管理員已在遺失或遭竊的情況下停用裝置  
   
-- AD FS 收到永續性的 SSO cookie 發行給已註冊的使用者，但使用者或裝置未再註冊  
+- AD FS 收到為已註冊的使用者發出的持續性 SSO cookie，但使用者或裝置未再註冊  
   
-- AD FS 收到永續性 SSO cookie 的已註冊的使用者，但使用者重新加以註冊  
+- AD FS 收到已註冊使用者的持續 SSO cookie，但使用者已重新註冊  
   
-- AD FS 收到永續性的 「 讓我保持登 」，但 「 讓我保持登 」 發出的 SSO cookie 設定為停用 AD FS 中  
+- AD FS 會收到持續性 SSO cookie，其會因為「讓我保持登入」而發出，但已停用 [讓我保持登入] 設定 AD FS  
   
-- AD FS 收到永續性的 SSO cookie 發行給已註冊的使用者，但裝置憑證在驗證期間會遺失或已變更  
+- AD FS 收到針對已註冊使用者發出的持續性 SSO cookie，但在驗證期間遺失或變更了裝置憑證  
   
-- AD FS 系統管理員已經設定為永續性 SSO 的截止時間。 當此設定時，AD FS 會拒絕任何此時間之前發出的永續性 SSO cookie  
+- AD FS 系統管理員已設定持續性 SSO 的截止時間。 當此設定時，AD FS 將會拒絕在這段時間之前發出的任何持續性 SSO cookie  
   
-  若要設定截止時間，請執行下列 PowerShell cmdlet:  
+  若要設定截止時間，請執行下列 PowerShell Cmdlet：  
   
 
 ``` powershell
 Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
-## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>啟用 Office 365 使用者，以存取 SharePoint Online 的 PSSO  
- 一旦 PSSO 已啟用，並設定 AD FS 中，AD FS 會在使用者驗證之後寫入永續性 cookie。 下次使用者傳入時，如果永續性 cookie 仍然有效，使用者不必提供認證，才能再次進行驗證。 您也可以避免額外的驗證提示適用於 Office 365 和 SharePoint Online 的使用者，藉由設定下列兩個宣告在 Microsoft Azure AD 與 SharePoint Online 觸發程序持續性的 AD FS 中的規則。  若要啟用 Office 365 使用者，以存取 SharePoint online 的 PSSO，必須先安裝這[hotfix](https://support.microsoft.com/en-us/kb/2958298/)也是屬於的[2014 年 8 月更新彙總套件，Windows RT 8.1、 Windows 8.1 和 Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).  
+## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>啟用 PSSO for Office 365 使用者以存取 SharePoint Online  
+ 一旦在 AD FS 中啟用並設定 PSSO 之後，AD FS 會在使用者經過驗證之後寫入持續性 cookie。 使用者下次進入時，如果持續性 cookie 仍然有效，使用者就不需要提供認證來重新驗證。 您也可以在 AD FS 中設定下列兩個宣告規則，以觸發 Microsoft Azure AD 和 SharePoint Online 的持續性，以避免 Office 365 和 SharePoint Online 使用者的額外驗證提示。  若要讓 PSSO for Office 365 使用者存取 SharePoint online，您必須安裝此[修補程式](https://support.microsoft.com/en-us/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014更新彙總套件](https://support.microsoft.com/en-us/kb/2975719)的一部分。  
   
- 若要通過 InsideCorporateNetwork 宣告發行轉換規則  
+ 要通過 InsideCorporateNetwork 宣告的發行轉換規則  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
@@ -147,9 +147,9 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
 <table>
   <tr>
     <th colspan="1">單一登入體驗</th>
-    <th colspan="3">ADFS 2012 R2 <br> 已註冊的裝置</th>
+    <th colspan="3">ADFS 2012 R2 <br> 裝置是否已註冊？</th>
         <th colspan="1"></th>
-    <th colspan="3">ADFS 2016 <br> 已註冊的裝置</th>
+    <th colspan="3">ADFS 2016 <br> 裝置是否已註冊？</th>
   </tr>
 
   <tr align="center">
@@ -163,46 +163,46 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
     <th>是</th>
   </tr>
  <tr align="center">
-    <td>SSO=&gt;set Refresh Token=&gt;</td>
-    <td>8 小時</td>
+    <td>SSO =&gt;設定重新整理權杖 =&gt;</td>
+    <td>8小時</td>
     <td>N/A</td>
     <td>N/A</td>
     <th></th>
-    <td>8 小時</td>
+    <td>8小時</td>
     <td>N/A</td>
     <td>N/A</td>
   </tr>
 
  <tr align="center">
-    <td>PSSO=&gt;set Refresh Token=&gt;</td>
+    <td>PSSO =&gt;設定重新整理權杖 =&gt;</td>
     <td>N/A</td>
-    <td>24 小時</td>
-    <td>7 天</td>
+    <td>24小時</td>
+    <td>7天</td>
     <th></th>
     <td>N/A</td>
-    <td>24 小時</td>
-    <td>最大值與 14 天 視窗的 90 天</td>
+    <td>24小時</td>
+    <td>最大90天（含14天）視窗</td>
   </tr>
 
  <tr align="center">
     <td>權杖存留期</td>
-    <td>1 小時</td>
-    <td>1 小時</td>
-    <td>1 小時</td>
+    <td>1小時</td>
+    <td>1小時</td>
+    <td>1小時</td>
     <th></th>
-    <td>1 小時</td>
-    <td>1 小時</td>
-    <td>1 小時</td>
+    <td>1小時</td>
+    <td>1小時</td>
+    <td>1小時</td>
   </tr>
 </table>
 
-**已註冊的裝置嗎？** 取得 PSSO / 永續性 SSO <br>
-**未註冊的裝置嗎？** 取得 SSO <br>
-**未註冊的裝置，但 KMSI 嗎？** 取得 PSSO / 永續性 SSO <p>
-如果：
- - [x] 管理員已啟用 KMSI 功能 [AND]
- - [x] 使用者按一下表單登入頁面上 [KMSI 核取方塊
+**已註冊的裝置？** 您會取得 PSSO/持續性的 SSO <br>
+**未註冊的裝置？** 您會取得 SSO <br>
+**未註冊的裝置，但 KMSI？** 您會取得 PSSO/持續性的 SSO <p>
+只有
+ - [x] 系統管理員已啟用 KMSI 功能 [和]
+ - [x] 使用者按一下表單登入頁面上的 [KMSI] 核取方塊
  
-**最好知道：** <br>
-同盟使用者不需要**LastPasswordChangeTimestamp**同步處理的屬性會發出工作階段 cookie 並重新整理權杖具有**12 小時的最大壽命 」 值**。<br>
-這是因為 Azure AD 無法判斷何時要撤銷舊的認證 （例如密碼已變更） 相關的權杖。 因此，Azure AD 必須更頻繁地檢查，請確定使用者和相關聯的權杖是仍在有效。
+**好知道：** <br>
+未同步處理**LastPasswordChangeTimestamp**屬性的同盟使用者會發行會話 cookie，並將**最大存留期值為12小時**的重新整理權杖。<br>
+這是因為 Azure AD 無法判斷何時撤銷與舊認證相關的權杖（例如已變更的密碼）。 因此，Azure AD 必須更頻繁地檢查，以確定使用者和相關聯的權杖仍在良好的地位。

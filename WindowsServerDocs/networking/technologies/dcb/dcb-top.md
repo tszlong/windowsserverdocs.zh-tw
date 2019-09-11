@@ -1,6 +1,6 @@
 ---
 title: 資料中心橋接 (DCB)
-description: 您可以使用本主題的資料中心橋接在 Windows Server 2016 中的簡介資訊。
+description: 您可以使用本主題，取得有關 Windows Server 2016 中資料中心橋接的簡介資訊。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,106 +8,106 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7cb488192a873743db27d9c1d09c5912bc810bb8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6446324e23b9f1c87cb28bd76feb6cb493db8253
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834179"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869758"
 ---
-# <a name="data-center-bridging-dcb"></a>資料中心橋接\(DCB\)
+# <a name="data-center-bridging-dcb"></a>資料中心橋\(接 DCB\)
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題的資料中心橋接的簡介資訊\(DCB\)。
+您可以使用本主題，取得有關資料中心橋接\(DCB\)的簡介資訊。
 
-DCB 是一套美國電機暨電子工程師\(IEEE\)啟用聚合式資料中心，其中的儲存體、 資料網路、 叢集間的網狀架構的標準\-處理序通訊\(IPC\)，以及管理流量的所有共用相同的乙太網路基礎結構。
+DCB 是一組電氣和電子網工程師\( \) ，可啟用資料中心內的聚合式網狀架構，其中儲存體、資料網路、叢集進程間\-通訊\( IPC\)和管理流量全都會共用相同的 Ethernet 網路基礎結構。
 
 >[!NOTE]
->除了本主題中，會提供下列 DCB 文件
+>除了本主題之外，還有下列 DCB 檔可供使用
 >
->- [在 Windows Server 2016 或 Windows 10 安裝 DCB](dcb-install.md)
->- [管理資料中心橋接 (DCB)](dcb-manage.md)
+>- [在 Windows Server 2016 或 Windows 10 中安裝 DCB](dcb-install.md)
+>- [管理資料中心橋接（DCB）](dcb-manage.md)
 
-DCB 提供硬體\-架構特定類型的網路流量的頻寬配置，並增強乙太網路傳輸可靠性與優先順序使用\-型流量控制。
+DCB 提供以\-硬體為主的頻寬配置給特定類型的網路流量，並使用以優先順序\-為基礎的流量控制來增強乙太網路傳輸可靠性。
 
-硬體\-根據的頻寬配置就很重要，如果流量會略過作業系統而且卸載到聚合式的網路介面卡，它可以支援 Internet Small Computer System Interface \(iSCSI\)，遠端直接記憶體存取\(RDMA\)透過乙太網路或透過乙太網路的光纖通道\(FCoE\)。
+如果\-流量略過作業系統並卸載至交集式網路介面卡（可能支援網際網路小型電腦系統介面\(iSCSI\)），則以硬體為基礎的頻寬配置是不可或缺的。透過乙太網路的\(遠端\)直接記憶體存取 RDMA，或透過乙太\(網路\)的光纖通道 FCoE。
 
-優先順序\-型的流量控制是不可或缺的較高層通訊協定，如光纖通道會假設不失真的基礎傳輸。
+如果\-上層通訊協定（如光纖通道）採用不失真的基礎傳輸，則以優先順序為基礎的流量控制是不可或缺的。
 
-## <a name="dcb-protocols-and-management-options"></a>DCB 的通訊協定和管理選項
+## <a name="dcb-protocols-and-management-options"></a>DCB 通訊協定和管理選項
 
-DCB 是由下列通訊協定的集合所組成。 
+DCB 包含下列一組通訊協定。 
 
-- 增強的傳輸服務\(ETS\) – IEEE 802.1Qaz 和為基礎的 802.1p 802.1Q 標準
-- 優先順序流量控制\(PFS\)，IEEE 802.1Qbb 
-- DCB 交換通訊協定\(DCBX\)，IEEE 802.1AB，做為標準 802.1Qaz 中擴充。
+- 增強型傳輸\(服務\) ETS – IEEE 802.1 qaz，以 802.1 p 和 802.1 q 標準為基礎
+- 優先順序流程式控制制\(PFS\)，IEEE 802.1 qbb 
+- DCB Exchange Protocol \(DCBX\)，IEEE 802.1 ab，已在 802.1 qaz standard 中擴充。
 
-DCBX 通訊協定可讓您設定的參數，可以再自動設定裝置，例如執行 Windows Server 2016 的電腦上的 DCB。
+DCBX 通訊協定可讓您在交換器上設定 DCB，然後再自動設定終端裝置，例如執行 Windows Server 2016 的電腦。
 
-如果您想要從交換器管理 DCB，您不需要安裝 DCB 做為功能在 Windows Server 2016 中，不過這種方法還包含一些限制。
+如果您想要從交換器管理 DCB，則不需要在 Windows Server 2016 中安裝 DCB 做為功能，不過這種方法包含一些限制。
 
-因為 DCBX 只會通知主機網路介面卡，ETS 類別大小和 PFC 啟用的不過，Windows Server 主機通常需要 DCB 已安裝，以便將流量對應至 ETS 類別。
+由於 DCBX 只能通知主機網路介面卡 ETS 類別大小和 PFC 啟用，因此 Windows Server 主機通常會要求安裝 DCB，讓流量對應到 ETS 類別。
 
-若要參與 DCBX 交換通常並非設計 Windows 應用程式。 因為這個緣故，來自網路交換器，但具有相同的設定，則必須個別設定主應用程式。
+Windows 應用程式通常不是用來參與 DCBX 交換。 因此，主機必須與網路交換器分開設定，但使用相同的設定。
 
-如果您選擇來管理 DCB 的切換，您仍然可以使用 Windows PowerShell 命令來檢視 Windows Server 2016 中設定。
+如果您選擇從交換器管理 DCB，您仍然可以使用 Windows PowerShell 命令來查看 Windows Server 2016 中的設定。
 
 ##  <a name="important-dcb-functionality"></a>重要的 DCB 功能
 
 下面的清單摘要說明 DCB 提供的功能。
 
-1. 提供 DCB 之間的互通性\-支援網路介面卡和 DCB\-交換器。
+1. 提供 DCB\-功能的網路介面卡與支援 DCB\-的交換器之間的互通性。
 
-2. 提供不會損耗的乙太網路傳輸的電腦上開啟以優先順序執行 Windows Server 2016 和及其週邊交換器之間\-型流量控制的網路介面卡。
+2. 在網路介面卡上開啟以優先順序\-為基礎的流量控制，在執行 Windows Server 2016 的電腦與它的鄰近交換器之間，提供不失真的 Ethernet 傳輸。
 
-3. 讓您能夠將頻寬配置給流量控制\(TC\)百分比，其中 TC 可能包含一或多個流量類別 802.1p 流量類別來區分\(優先順序\)指標。
+3. 可讓您依百分比將頻寬配置給流量\(控制\) TC，其中 tc 可能包含一或多個以 802.1 p 流量類別\(優先順序\)區別的流量類別'.
 
 4. 能讓伺服器系統管理員或網路系統管理員將應用程式指派給特定流量類別，或是根據這個應用程式使用的已知通訊協定、已知 TCP/UDP 連接埠或 NetworkDirect 連接埠來設定優先順序。
 
-5. 提供透過 Windows Server 2016 的 Windows Management Instrumentation 來管理 DCB \(WMI\)和 Windows PowerShell。 如需詳細資訊，請參閱[DCB 的 Windows PowerShell 命令](#bkmk_wps)稍後本主題中，除了下列主題。
-    - [系統提供 DCB 的元件](https://msdn.microsoft.com/windows/hardware/drivers/network/system-provided-dcb-components)
+5. 透過 windows Server 2016 Windows Management Instrumentation \(WMI\)和 windows PowerShell 提供 DCB 管理。 如需詳細資訊，請參閱本主題稍後的[適用于 DCB 的 Windows PowerShell 命令](#bkmk_wps)一節，以及下列主題。
+    - [系統提供的 DCB 元件](https://msdn.microsoft.com/windows/hardware/drivers/network/system-provided-dcb-components)
     - [資料中心橋接的 NDIS QoS 需求](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-qos-requirements-for-data-center-bridging)
 
-6. 提供透過 Windows Server 2016 的 群組原則來管理 DCB。
+6. 透過 Windows Server 2016 群組原則提供 DCB 管理。
 
-7. 支援 Windows Server 2016 服務品質的共存\(QoS\)解決方案。
+7. 支援 Windows Server 2016 服務\(品質 QoS\)解決方案的共存。
 
 >[!NOTE]
->之前使用透過聚合式乙太網路的任何 RDMA \(RoCE\)版本的 RDMA，您必須啟用 DCB。 雖然不需要網際網路寬區域 RDMA 通訊協定\(iWARP\)網路，測試已判斷出所有的乙太網路\-基礎 DCB 以達到更好的 RDMA 技術工作。 基於這個原因，您應該考慮使用 DCB iWARP RDMA 部署。 如需詳細資訊，請參閱 <<c0> [ 遠端直接記憶體存取 (RDMA) 和 Switch Embedded Teaming (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
+>使用 rdma 的聚合式 Ethernet \(RoCE\)版本的任何 rdma 之前，您必須先啟用 DCB。 雖然網際網路範圍 rdma 通訊協定\(iWARP\)網路不需要，但測試已判定所有以乙太\-網路為基礎的 rdma 技術，都能更適合 DCB。 因此，您應該考慮使用 DCB 來進行 iWARP RDMA 部署。 如需詳細資訊，請參閱[遠端直接記憶體存取（RDMA）和交換器內嵌小組（SET）](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
 
 ##  <a name="practical-applications-of-dcb"></a>DCB 的實際應用
 
-許多組織都有大型的光纖通道\(FC\)存放區域網路\(SAN\)儲存體服務的安裝。 FC SAN 的伺服器需要特殊的網路介面卡，而且網路中需要 FC 交換器。 這些組織通常也會使用乙太網路介面卡和交換器。
+許多組織都有適用于\(儲存體服務的大型\(光纖\)通道 FC\)存放區域網路 SAN 安裝。 FC SAN 的伺服器需要特殊的網路介面卡，而且網路中需要 FC 交換器。 這些組織通常也會使用乙太網路介面卡和交換器。
 
-在大部分情況下，FC 硬體的費用會比硬體乙太網路硬體，這會產生大量資本部署。 此外，個別乙太網路及 FC SAN 網路介面卡和交換器硬體的需求所需要的額外空間、 電源及冷卻性能，在資料中心，會導致其他的持續營運支出。
+在大部分情況下，部署 FC 硬體比 Ethernet 硬體高得多，因此會導致大量的資本支出。 此外，個別 Ethernet 和 FC SAN 網路介面卡和交換器硬體的需求需要資料中心內的額外空間、電力和冷卻能力，因而導致額外的營運支出。
 
-成本的觀點而言，很有幫助，對許多組織來說，若要合併它們的 FC 技術，其乙太網路\-基礎硬體解決方案，以提供儲存體和網路服務的資料。
+從成本的觀點來看，許多組織將其 FC 技術與以乙太\-網路為基礎的硬體解決方案合併，以提供儲存體和資料網路服務的優點。
 
-### <a name="using-dcb-for-an-ethernet-based-converged-fabric-for-storage-and-data-networking"></a>使用 DCB 的乙太網路\-聚合式結構的儲存體及資料網路服務
+### <a name="using-dcb-for-an-ethernet-based-converged-fabric-for-storage-and-data-networking"></a>針對儲存體和資料網路\-使用以 Ethernet 為基礎的聚合式網狀架構 DCB
 
-針對已經擁有大型 FC SAN 但想要將從額外的投資 FC 技術轉移的組織，DCB 可讓您建置基礎的乙太網路聚合式儲存體及資料網路服務的網狀架構。 DCB 聚合式網狀架構可以降低未來的擁有權總成本\(TCO\)和簡化管理。
+對於已經有大型 FC SAN，但想要從 FC 技術的額外投資中遷移的組織，DCB 可讓您針對儲存體和資料網路功能建立以乙太網路為基礎的聚合式網狀架構。 DCB 聚合式網狀架構可以降低未來總擁有權\(TCO\)的成本，並簡化管理工作。
 
-主機服務提供者已經採用，或使用者採用計劃，iSCSI 作為儲存體解決方案，DCB 可以提供硬體\-協助為以確保效能隔離 iSCSI 流量保留頻寬。 不同於其他專屬的解決方案，DCB 是以標準和\-根據-，因此相對較容易在異質網路環境中部署和管理。
+對於已經採用或打算採用 iscsi 作為其儲存體解決方案的主控者，DCB 可以為 iscsi 流量提供硬體\-輔助頻寬保留，以確保效能隔離。 與其他專屬解決方案不同的是，DCB\-是以標準為基礎，因此相當容易在不同的網路環境中部署和管理。
 
-Windows Server 2016\-DCB 的基礎的實作會減輕問題時可能發生的聚合式結構解決方案由多個原始設備製造商提供的許多\(Oem\)。
+以 Windows Server 2016\-為基礎的 DCB 執行，可減輕多個原始設備\)製造商\(提供的聚合式網狀架構解決方案時，所發生的許多問題。
 
-實作多個 Oem 所提供的專屬解決方案彼此之間無法互通，可能會難以管理，而且通常會有不同的軟體維護排程。 
+由多個 Oem 提供的專屬解決方案，可能無法彼此交互操作、可能很容易管理，而且通常會有不同的軟體維護排程。 
 
-相反地，Windows Server 2016 DCB 是以標準\-為基礎，且您可以部署並在異質網路中管理 DCB。
+相反地，Windows Server 2016 DCB 是以\-標準為基礎，您可以在異類網路中部署和管理 DCB。
 
-## <a name="bkmk_wps"></a>DCB 的 Windows PowerShell 命令
+## <a name="bkmk_wps"></a>適用于 DCB 的 Windows PowerShell 命令
 
-有 Windows Server 2016 和 Windows Server 2012 R2 的 DCB Windows PowerShell 命令。 您可以使用的所有命令的 Windows Server 2016 中的 Windows Server 2012 R2。
+Windows Server 2016 和 Windows Server 2012 R2 都有 DCB 的 Windows PowerShell 命令。 您可以在 Windows Server 2016 中，使用 Windows Server 2012 R2 的所有命令。
 
-### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>Windows Server 2016 Windows PowerShell 命令，DCB
+### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>適用于 DCB 的 windows Server 2016 Windows PowerShell 命令
 
-Windows Server 2016 的下列主題提供 Windows PowerShell cmdlet 說明和語法的所有資料中心橋接\(DCB\)服務品質\(QoS\)\-特定 cmdlet。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
+下列適用于 windows Server 2016 的主題提供 windows PowerShell Cmdlet 的說明和語法，適用于\(所有\)的資料中心\(橋\)接 DCB 服務 QoS\-特定 Cmdlet 的品質。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
 
-- [DcbQoS Module](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
+- [DcbQoS 模組](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
-### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>Windows Server 2012 R2 Windows PowerShell 命令，DCB
+### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>適用于 DCB 的 windows Server 2012 R2 Windows PowerShell 命令
 
-Windows Server 2012 R2 的下列主題提供 Windows PowerShell cmdlet 說明和語法的所有資料中心橋接\(DCB\)服務品質\(QoS\)\-特定 cmdlet。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
+下列適用于 windows Server 2012 R2 的主題提供 windows PowerShell Cmdlet 的說明和語法，適用于\(所有\)資料中心橋\(接\)DCB 服務 QoS\-特定 Cmdlet 的品質。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
 
-- [資料中心橋接 (DCB) 服務品質 (QoS) Cmdlet 在 Windows PowerShell](https://technet.microsoft.com/library/hh967440.aspx)
+- [Windows PowerShell 中的資料中心橋接（DCB）服務品質（QoS） Cmdlet](https://technet.microsoft.com/library/hh967440.aspx)

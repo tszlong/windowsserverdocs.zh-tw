@@ -8,36 +8,36 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 04/17/2019
-ms.openlocfilehash: 44a08443312d4e48b8fa518755e2a9b7aa50643c
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ab32f6bec44b69b70c9e8cca2dadb4dff752cf88
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476090"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870244"
 ---
 # <a name="whats-new-in-data-deduplication"></a>重複資料刪除的新功能
 
-> 適用於：Windows Server 2019，Windows Server 2016 中，Windows Server （半年通道）
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
-[重複資料刪除](overview.md)Windows Server 中已經最佳化，都相當好，有彈性且可管理私用雲端規模。 如需有關 Windows Server 內的軟體定義儲存堆疊的詳細資訊，請參閱[What's New in Windows Server 中的儲存體](../whats-new-in-storage.md)。
+Windows Server 中的[重復資料刪除](overview.md)已經過優化，可在私用雲端規模進行高效能、彈性且易於管理。 如需 Windows Server 中軟體定義儲存堆疊的詳細資訊，請參閱[Windows server 中存放裝置的新功能](../whats-new-in-storage.md)。
 
-重複資料刪除會在 Windows Server 2019 有下列增強功能：
-
-| 功能 | 新功能或更新功能 | 描述 |
-|---------------|----------------|-------------|
-| ReFS 支援  | 新的            | 重複資料刪除和壓縮 ReFS 檔案系統的相同磁碟區上儲存最多 10 倍的更多的資料。 (它有[只需要按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)開啟 Windows Admin Center 使用。)可變大小區塊存放區，以使用選用的壓縮最大化節省率，而多執行緒的後置處理架構，會保留效能影響最小。 支援的磁碟區最多 64 TB 及將重複資料刪除第一次的 4 TB 的每個檔案。|
-
-重複資料刪除功能已從 Windows Server 2016 中的下列增強功能：
+重復資料刪除在 Windows Server 2019 中具有下列增強功能：
 
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
-| [支援大型磁碟區](whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變換設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重複資料刪除支援最高 64 TB 的磁碟區大小。 |
+| ReFS 支援  | 新的            | 使用 ReFS 檔案系統的重復資料刪除和壓縮，在相同的磁片區上儲存多達10倍的資料。 （[只需按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)即可開啟 Windows 系統管理中心。）具有選擇性壓縮的可變大社區塊存放區會最大化節省率，而多執行緒的後置處理架構則會使效能影響降到最低。 支援高達 64 TB 的磁片區，並將刪除重複每個檔案的前 4 TB。|
+
+從 Windows Server 2016 開始，重復資料刪除具有下列增強功能：
+
+| 功能 | 新功能或更新功能 | 描述 |
+|---------------|----------------|-------------|
+| [支援大型磁片區](whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變換設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重複資料刪除支援最高 64 TB 的磁碟區大小。 |
 | [支援大型檔案](whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，完全支援最高 1 TB 大小的檔案。 |
-| [適用於 Nano Server 的支援](whats-new.md#nano-server-support) | 新的 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
+| [Nano 伺服器的支援](whats-new.md#nano-server-support) | 新的 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
 | [簡化的備份支援](whats-new.md#simple-backup-support) | 新的 | Windows Server 2012 R2 是透過一系列的手動設定步驟來支援虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx))。 Windows Server 2016 已加入新的預設使用類型 (Backup)，以便順暢地針對虛擬備份應用程式部署重複資料刪除。|
 | [支援叢集 OS 輪流升級](whats-new.md#cluster-upgrade-support) | 新的 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
 
-## <a name="large-volume-support"></a>支援大型磁碟區
+## <a name="large-volume-support"></a>支援大型磁片區
 
 **這個變更增加了什麼價值？**  
 若要在 Windows Server 2012 R2 中取得重複資料刪除的最佳效能，必須適當調整磁碟區大小，以確保最佳化工作能跟上資料量變化或「變換」的速度。 一般來說，根據工作負載的寫入模式，這表示只有在 10 TB 或更小的磁碟區上執行重複資料刪除功能，效能才會高。
@@ -60,7 +60,7 @@ ms.locfileid: "65476090"
 **有哪些不同？**  
 在 Windows Server 2016 中，重複資料刪除功能會利用新的資料流對應結構和其他「內部」增強功能，提升最佳化輸送量和存取效能。 此外，重複資料刪除處理管線現在可以在容錯移轉 (而不是重新啟動) 之後，繼續進行最佳化。 這些變更使得您即使對高達 1 TB 的檔案進行重複資料刪除，還是能有相當高的效能。
 
-## <a name="nano-server-support"></a>適用於 Nano Server 的支援
+## <a name="nano-server-support"></a>Nano 伺服器的支援
 **這個變更增加了什麼價值？**  
 Nano 伺服器是 Windows Server 2016 中新的無周邊部署選項，所需的系統資源使用量最小、大幅加快啟動速度，而且需要的更新與重新啟動次數比 Windows Server Core 部署選項更少。 Nano 伺服器上完全支援重複資料刪除功能。 如需 Nano 伺服器的詳細資訊，請參閱[開始使用 Nano 伺服器](../../get-started/getting-started-with-nano-server.md)。
 

@@ -8,16 +8,16 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: 本主題說明 DFS 命名空間，這是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。
-ms.openlocfilehash: 2d91cb7197d2deecd96ebb29a951ef96ceefd9aa
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 8507961749bee6d01541029e33c8095470792b8a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284289"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870216"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空間概觀
 
-> 適用於：Windows Server 2019，Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008、 Windows Server （半年通道）
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server （半年通道）
 
 DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。 因此可以為使用者提供共用資料夾的虛擬檢視，其中單一路徑即可通向位於多部伺服器上的檔案，如下圖所示：
 
@@ -26,11 +26,11 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 以下說明構成 DFS 命名空間的元素：
 
 - **命名空間伺服器** - 命名空間伺服器會裝載一個命名空間。 命名空間伺服器可以是成員伺服器或網域控制站。
-- **命名空間根目錄** - 命名空間根目錄是命名空間的起始點。 在上圖中，根目錄的名稱為公用的而且命名空間路徑\\ \\Contoso\\公用。 這種類型的命名空間是網域型命名空間，因為它會開始的網域名稱 (例如 Contoso)，其中繼資料會儲存在 Active Directory 網域服務 (AD DS)。 雖然上圖顯示的是單一命名空間伺服器，但網域型命名空間還是可以裝載於多部命名空間伺服器來提高命名空間的可用性。
+- **命名空間根目錄** - 命名空間根目錄是命名空間的起始點。 在上圖中，根的名稱是公用的，而命名空間路徑是\\ \\Contoso\\Public。 此類型的命名空間是網域型命名空間，因為它是以功能變數名稱（例如 Contoso）開頭，而其中繼資料會儲存在 Active Directory Domain Services （AD DS）中。 雖然上圖顯示的是單一命名空間伺服器，但網域型命名空間還是可以裝載於多部命名空間伺服器來提高命名空間的可用性。
 - **資料夾** - 沒有資料夾目標的資料夾會將結構和階層新增至命名空間，而有資料夾目標的資料夾則會提供實際內容給使用者。 當使用者瀏覽命名空間中有資料夾目標的資料夾時，用戶端電腦會收到明確地將用戶端電腦重新導向至其中一個資料夾目標的轉介。
-- **資料夾目標** - 資料夾目標是共用資料夾的 UNC 路徑或其他與命名空間中資料夾相關聯的命名空間。 資料夾目標是儲存資料及內容所在的位置。 在上圖中，名為 Tools 的資料夾有兩個資料夾目標，一個在倫敦，另一個在紐約，而名為 Training Guides 的資料夾有一個在紐約的單一資料夾目標。 若要瀏覽\\ \\Contoso\\公用\\軟體\\工具無障礙地重新導向至共用資料夾\\ \\LDN-SVR-01\\工具或\\ \\NYC-SVR-01\\工具，根據哪個站台的使用者在目前所在。
+- **資料夾目標** - 資料夾目標是共用資料夾的 UNC 路徑或其他與命名空間中資料夾相關聯的命名空間。 資料夾目標是儲存資料及內容所在的位置。 在上圖中，名為 Tools 的資料夾有兩個資料夾目標，一個在倫敦，另一個在紐約，而名為 Training Guides 的資料夾有一個在紐約的單一資料夾目標。 \\流覽\\ \\ \\Contoso 公用軟體工具的使用者會以透明方式重新導向至共用資料夾 LDN-SVR-01 工具或\\ \\ \\ \\NYC-SVR-01\\Tools，視使用者目前所在的網站而定。 \\ \\
 
-這個主題討論如何安裝 DFS、其中的新功能以及到哪裡尋找評估和部署的資訊。
+本主題討論如何安裝 DFS、新功能，以及尋找評估和部署資訊的位置。
 
 您可以使用 DFS Management、[Windows PowerShell 中的 DFS 命名空間 (DFSN) Cmdlet](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps)、**DfsUtil** 命令或是呼叫 WMI 的指令碼來管理命名空間。
 
@@ -42,11 +42,11 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 
 執行下列作業系統的伺服器除了單一獨立命名空間之外，還可以裝載多個網域型命名空間。 
 
-- Windows Server 2019
+- Windows Server Standard 2012 R2
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2 Datacenter edition 和 Enterprise Edition
+- Windows Server 2008 R2 Datacenter 和 Enterprise Edition
 - Windows Server (半年度管道)
 
 執行下列作業系統的伺服器可以裝載單一獨立命名空間：
@@ -65,31 +65,31 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 
 DFS 命名空間與 DFS 複寫是檔案和存放服務角色中的一部分。 DFS 管理工具 (DFS 管理、適用於 Windows PowerShell 的 DFS 命名空間模組以及命令列工具) 是獨立安裝的，屬於遠端伺服器管理工具的一部分。
 
-使用安裝 DFS 命名空間[Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)，伺服器管理員或 PowerShell，在後續章節中所述。
+使用[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)、伺服器管理員或 POWERSHELL 安裝 DFS 命名空間，如下一節所述。
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>使用 [伺服器管理員] 安裝 DFS
 
-1. 開啟 [伺服器管理員]，按一下 [管理]  ，然後按一下 [新增角色及功能]  。 [新增角色及功能精靈] 隨即顯示。
+1. 開啟 [伺服器管理員]，按一下 [管理]，然後按一下 [新增角色及功能]。 [新增角色及功能精靈] 隨即顯示。
 
-2. 在 [伺服器選取項目]  頁面上，選取想要安裝 DFS 的伺服器或離線虛擬機器的虛擬硬碟 (VHD)。
+2. 在 [伺服器選取項目] 頁面上，選取想要安裝 DFS 的伺服器或離線虛擬機器的虛擬硬碟 (VHD)。
 
 3. 選取您要安裝的角色服務及功能。
 
     - 若要安裝 DFS 命名空間服務，請選取 **\[伺服器角色\]** 頁面上的 **\[DFS 命名空間\]** 。
 
-    - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具]  、[角色管理工具]  、[檔案服務工具]  ，然後選取 [DFS 管理工具]  。
+    - 若要只安裝 DFS 管理工具，請在 [功能] 頁面上，依序展開 [遠端伺服器管理工具]、[角色管理工具]、[檔案服務工具]，然後選取 [DFS 管理工具]。
 
-         [DFS 管理工具]  會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 命名空間模組及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
+         [DFS 管理工具] 會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 命名空間模組及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
 
 ### <a name="to-install-dfs-by-using-windows-powershell"></a>使用 Windows PowerShell 安裝 DFS
 
-開啟提升權限的使用者權限，Windows PowerShell 工作階段，然後輸入下列命令，其中 < 名稱\>是角色服務或您想要安裝的功能 （請參閱下表中的相關角色服務或功能名稱的清單）：
+使用提高的使用者權限開啟 Windows PowerShell 會話，然後輸入下列命令，其中 < name\>是您想要安裝的角色服務或功能（請參閱下表，以取得相關角色服務或功能名稱的清單）：
 
 ```PowerShell
 Install-WindowsFeature <name>
 ```
 
-| 角色服務或功能 | 名稱 |
+| 角色服務或功能 | Name |
 | ----------------------- | ---- |
 | DFS 命名空間          | `FS-DFS-Namespace` |
 | DFS 管理工具    | `RSAT-DFS-Mgmt-Con` |
@@ -110,9 +110,9 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 已經測試過在 Microsoft Azure 的虛擬機器上使用 DFS 命名空間，但是有一些限制和您必須遵循的需求。
 
-- 您無法叢集化 Azure 虛擬機器中的獨立命名空間。
+- 您無法在 Azure 虛擬機器中叢集獨立命名空間。
 
-- 您可以裝載在 Azure 虛擬機器，包括與 Azure Active Directory 的環境中的網域型命名空間。
+- 您可以在 Azure 虛擬機器中裝載網域型命名空間，包括具有 Azure Active Directory 的環境。
 
 若要深入了解如何開始使用 Azure 虛擬機器，請參閱 [Azure 虛擬機器文件](https://docs.microsoft.com/azure/virtual-machines/)。
 
@@ -122,10 +122,10 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 | 內容類型        | 參考 |
 | ------------------  | ----------------|
-| **產品評估** | [DFS 命名空間和 DFS 複寫 Windows Server 中的最新消息](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **部署**    | [DFS 命名空間延展性考量](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **產品評估** | [Windows Server 中 DFS 命名空間和 DFS 複寫的新功能](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
+| **部署**    | [DFS 命名空間的擴充性考慮](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
 | **操作**    | [DFS 命名空間：常見問題集](https://technet.microsoft.com/library/ee404780.aspx) |
-| **社群資源** | [檔案服務與儲存 TechNet 論壇](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **通訊協定**        | [檔案服務 Windows Server 中的通訊協定](https://msdn.microsoft.com/library/cc239318.aspx)（已過時） |
+| **社群資源** | [檔案服務和儲存體 TechNet 論壇](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
+| **通訊協定**        | [Windows Server 中的檔案服務通訊協定](https://msdn.microsoft.com/library/cc239318.aspx)不再 |
 | **相關技術** | [容錯移轉叢集](../../failover-clustering/failover-clustering-overview.md)|
 | **支援** | [Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)|

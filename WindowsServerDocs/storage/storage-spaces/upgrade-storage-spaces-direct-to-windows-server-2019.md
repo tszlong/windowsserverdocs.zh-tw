@@ -1,6 +1,6 @@
 ---
-title: 將儲存空間直接存取叢集升級到 Windows Server 2019
-description: 如何將儲存空間直接存取叢集升級到 Windows Server 2019-可能是同時執行的 Vm，或它們要停止時。
+title: 將儲存空間直接存取叢集升級至 Windows Server 2019
+description: 如何將儲存空間直接存取叢集升級至 Windows Server 2019-不論 Vm 是在執行中或在停止的狀態下執行。
 author: robhindman
 ms.author: robhind
 manager: eldenc
@@ -8,75 +8,75 @@ ms.date: 03/06/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-spaces
-ms.openlocfilehash: 54be649cc1753fe07c94105a31a0b738fb030ee0
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9966ee0fd3c0a2d1df0180bf177dec03343efc14
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284357"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867184"
 ---
-# <a name="upgrade-a-storage-spaces-direct-cluster-to-windows-server-2019"></a>將儲存空間直接存取叢集升級到 Windows Server 2019
+# <a name="upgrade-a-storage-spaces-direct-cluster-to-windows-server-2019"></a>將儲存空間直接存取叢集升級至 Windows Server 2019
 
-本主題描述如何將儲存空間直接存取叢集升級到 Windows Server 2019。 若要從 Windows Server 2016 的儲存空間直接存取叢集升級為使用的 Windows Server 2019，有四種[叢集 OS 輪流升級程序](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)— 涉及保持執行，Vm 的兩個資料表及涉及的兩個停止所有的虛擬機器。 每一種方法具有不同的優點和缺點，因此，請選取其中最適合您組織的需求：
+本主題說明如何將儲存空間直接存取叢集升級至 Windows Server 2019。 有四種方法可將儲存空間直接存取叢集從 Windows Server 2016 升級至 Windows Server 2019，使用叢集[OS 輪流升級](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)程式，這兩個步驟會牽涉到執行中的 vm，另外兩個則牽涉到停止所有 vm。 每種方法都有不同的優點和缺點，因此請選取最符合您組織需求的方式：
 
-- **就地升級執行 Vm 時**叢集中的每部伺服器上，此選項時，會產生任何 VM 停機時間，但您必須等待完成每一部伺服器升級後的儲存體工作 （鏡像修復）。
+- 就地升級：在叢集中的每部伺服器上執行**vm 時**，此選項不會產生任何 VM 停機時間，但您必須等候儲存體作業（鏡像修復）在每部伺服器升級後完成。
 
-- **Vm 正在執行時的清除作業系統安裝**叢集中的每部伺服器上，此選項時，會產生任何 VM 停機時間，但您必須等待每一部伺服器和所有的儲存體工作 （鏡像修復） 完成後的每個伺服器已升級，您必須設定它的應用程式和角色一次。
+- 當 Vm 在叢集中的每部伺服器上執行**時，會進行全新的作業系統安裝**—此選項不會產生任何 VM 停機時間，但您必須等到每部伺服器升級之後，才能完成儲存體作業（鏡像修復），而且您必須設定每部伺服器及其所有應用程式和角色。
 
-- **就地升級會停止 Vm 時**叢集中的每部伺服器上 — 這個選項不會產生 VM 停機時間，但是您不需要等待儲存體作業 （鏡像修復） 進行，因此更快速。
+- 就地升級：在叢集中的每部伺服器上**停止 vm 時**，此選項會造成 VM 停機，但您不需要等候儲存體作業（鏡像修復），因此速度會更快。
 
-- **清除作業系統安裝的 Vm 都停止時**叢集中的每部伺服器上 — 這個選項不會產生 VM 停機時間，但是您不需要等待儲存體作業 （鏡像修復），因此它的速度進行。
+- 清理-在叢集中的每部伺服器上**停止 vm 時安裝**：此選項會導致 VM 停機，但您不需要等候儲存體作業（鏡像修復），因此速度會更快。
 
 ## <a name="prerequisites-and-limitations"></a>必要條件和限制
 
-然後繼續執行升級：
+繼續進行升級之前：
 
-- 請檢查您有可用的備份，以防在升級過程中有任何問題。
+- 如果升級程式期間發生任何問題，請檢查您是否有可用的備份。
 
-- 檢查您的硬體廠商有 BIOS、 韌體與驅動程式支援在 Windows Server 2019 的伺服器。
+- 檢查您的硬體廠商是否有適用于您伺服器的 BIOS、固件和驅動程式，可在 Windows Server 2019 上支援。
 
-有一些限制需要注意的升級程序：
+要注意的升級程式有一些限制：
 
-- 若要啟用儲存空間直接存取與 Windows Server 2019 組建 176693.292 之前，客戶可能需要連絡 Microsoft 支援服務啟用儲存空間直接存取和以軟體定義網路功能的登錄機碼。 如需詳細資訊，請參閱 Microsoft Knowledge Base[文章 4464776](https://support.microsoft.com/help/4464776/software-defined-data-center-and-software-defined-networking)。
+- 若要啟用2019版176693.292 之前的 Windows Server 組建儲存空間直接存取，客戶可能需要聯繫 Microsoft 支援服務，以取得可啟用儲存空間直接存取和軟體定義網路功能的登錄機碼。 如需詳細資訊，請參閱 Microsoft 知識庫[文章 4464776](https://support.microsoft.com/help/4464776/software-defined-data-center-and-software-defined-networking)。
 
-- 升級時具有 ReFS 磁碟區的叢集中，有一些限制：
+- 升級具有 ReFS 磁片區的叢集時，有幾個限制：
 
-- ReFS 磁碟區上完全支援升級，不過，升級後的磁碟區不會受益於 ReFS 中 Windows Server 2019 的增強功能。 這些權益，例如鏡像加速同位檢查的效能提升會需要新建立的 Windows Server 2019 ReFS 磁碟區。 換句話說，您必須建立新的磁碟區使用`New-Volume`cmdlet 或 伺服器管理員。 以下是一些新的磁碟區會得到的 ReFS 增強功能：
+- ReFS 磁片區上的升級受到完整支援，不過，升級的磁片區不能受益于 Windows Server 2019 中的 ReFS 增強功能。 這些優點（例如，鏡像加速同位的增加效能）需要新建立的 Windows Server 2019 ReFS 磁片區。 換句話說，您必須使用`New-Volume` Cmdlet 或伺服器管理員建立新的磁片區。 以下是一些新磁片區會取得的 ReFS 增強功能：
 
-    - **對應記錄-略過**: ReFS 的效能改善，僅適用於叢集 （儲存空間直接存取） 的系統，也不適用於獨立的存放集區。
+    - **對應記錄檔略過**： ReFS 中的效能改善僅適用于叢集（儲存空間直接存取）系統，不適用於獨立儲存集區。
 
-    - **壓縮**專屬於多具有恢復功能的磁碟區的效率提升在 Windows Server 2019。
+    - **壓縮**Windows Server 2019 中多個復原磁片區特有的效率改良功能。
 
-- 在升級之前的 Windows Server 2016 儲存空間直接存取叢集伺服器，建議您將伺服器放入存放裝置維護模式。 如需詳細資訊，請參閱 > 一節事件 5120[疑難排解儲存空間直接存取](troubleshooting-storage-spaces.md)。 雖然 Windows Server 2016 中已修正此問題，我們建議最佳做法在升級期間讓每個儲存空間直接存取伺服器進入存放裝置維護模式。
+- 升級 Windows Server 2016 儲存空間直接存取叢集伺服器之前，建議您將伺服器置於儲存體維護模式。 如需詳細資訊，請參閱[疑難排解儲存空間直接存取](troubleshooting-storage-spaces.md)的事件5120一節。 雖然 Windows Server 2016 已修正此問題，但建議您最好在升級期間將每部儲存空間直接存取伺服器放入儲存體維護模式。
 
-- 沒有使用參數集的軟體定義網路環境的已知的問題。 這個問題牽涉到 HYPER-V VM 即時移轉，從 Windows Server 2019 以 Windows Server 2016 （即時移轉到較早的作業系統）。 若要確保成功的即時移轉，建議您變更正在進行即時移轉的 Windows Server 2019 到 Windows Server 2016 的 Vm 上的 VM 網路設定。 針對 Windows Server 2019 在 2019年 01 D hotfix 彙總套件修正此問題，也就是建置 17763.292。 如需詳細資訊，請參閱 Microsoft Knowledge Base[文章 4476976](https://support.microsoft.com/help/4476976/windows-10-update-kb4476976)。
+- 使用 SET 參數的軟體定義網路環境有已知的問題。 此問題牽涉到從 Windows Server 2019 到 Windows Server 2016 的 Hyper-v VM 即時移轉（即時移轉至舊版作業系統）。 為確保成功的即時移轉，建議您在從 Windows Server 2019 即時移轉到 Windows Server 2016 的 Vm 上，變更 VM 網路設定。 此問題已針對 2019-01D 修補匯總套件中的 Windows Server 2019 （也稱為組建17763.292）修正。 如需詳細資訊，請參閱 Microsoft 知識庫[文章 4476976](https://support.microsoft.com/help/4476976/windows-10-update-kb4476976)。
 
-因為上述已知問題，有些客戶可能會考慮建立新的 Windows Server 2019 叢集，並將資料複製從舊叢集，而不是升級其使用其中一個如下所述的四個處理程序的 Windows Server 2016 叢集。
+由於上述已知問題，有些客戶可能會考慮建立新的 Windows Server 2019 叢集並從舊叢集複製資料，而不是使用下列四個程式的其中一個來升級其 Windows Server 2016 叢集。
 
-## <a name="performing-an-in-place-upgrade-while-vms-are-running"></a>Vm 正在執行時，執行就地升級
+## <a name="performing-an-in-place-upgrade-while-vms-are-running"></a>執行 Vm 時的就地升級
 
-此選項時，會產生任何 VM 停機時間，但您必須等候完成每一部伺服器升級後的儲存體作業 （鏡像修復）。 雖然個別的伺服器將會重新啟動循序升級程序期間，剩餘的伺服器叢集，以及所有 Vm，將會繼續執行。
+此選項不會產生任何 VM 停機時間，但您必須等候存放裝置作業（鏡像修復）在每部伺服器升級後完成。 雖然在升級程式期間會依序重新開機個別伺服器，但叢集中的其餘伺服器和所有 Vm 都將維持執行狀態。
 
-1. 檢查叢集中的所有伺服器都已都安裝最新的 Windows 更新。 如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。 最少，安裝 Microsoft Knowledge Base[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (2019 年 2 月 19 日)。 組建編號 (請參閱`ver`命令) 應該是 14393.2828 或更高版本。
+1. 檢查叢集中的所有伺服器是否已安裝最新的 Windows 更新。 如需詳細資訊，請參閱[windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。 至少要安裝 Microsoft 知識庫[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) （2019年2月19日）。 組建編號（請參閱`ver`命令）應該是14393.2828 或更高版本。
 
-2. 如果您使用軟體定義網路設定參數，開啟提升權限的 PowerShell 工作階段，並執行下列命令來停用叢集上的所有 Vm 上的 VM 即時移轉驗證檢查：
+2. 如果您使用已設定參數的軟體定義網路功能，請開啟已提升許可權的 PowerShell 會話，然後執行下列命令以停用叢集上所有 Vm 的 VM 即時移轉驗證檢查：
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" |
    Set-ClusterParameter -Create SkipMigrationDestinationCheck -Value 1
    ```
 
-3. 一次，一部叢集伺服器上執行下列步驟：
+3. 一次在一部叢集伺服器上執行下列步驟：
 
-   1. 使用 HYPER-V VM 即時移轉移動執行中 Vm 關閉您即將升級的伺服器。
+   1. 使用 Hyper-v VM 即時移轉，將執行中的 Vm 移出您即將升級的伺服器。
 
-   2. 暫停叢集伺服器，使用下列 PowerShell 命令，請注意，會隱藏某些內部的群組。 我們建議此步驟，請特別小心，如果您沒有已上市，將 Vm 移轉，因此您可以跳過上一個步驟如果想要執行此 cmdlet 會在伺服器關閉。
+   2. 使用下列 PowerShell 命令暫停叢集伺服器-請注意，部分內部群組是隱藏的。 我們建議您務必小心，如果您尚未在伺服器上即時移轉 Vm，此 Cmdlet 會為您執行此動作，因此您可以視需要略過上一個步驟。
 
         ```PowerShell
        Suspend-ClusterNode -Drain
        ```
 
-   3. 請將伺服器放在存放裝置維護模式中，執行下列 PowerShell 命令：
+   3. 藉由執行下列 PowerShell 命令，將伺服器置於儲存體維護模式：
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -84,17 +84,17 @@ ms.locfileid: "67284357"
        Enable-StorageMaintenanceMode
        ```
 
-   4. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
+   4. 執行下列 Cmdlet 來檢查**OperationalStatus**值是否處於**維護模式**：
 
        ```PowerShell
        Get-PhysicalDisk
        ```
 
-   5. 藉由執行在伺服器上執行升級安裝的 Windows Server 2019 **setup.exe**和使用 [保留個人檔案和應用程式] 選項。 安裝完成後，伺服器仍會保留在叢集和叢集服務會自動啟動。
+   5. 執行**setup.exe**並使用 [保留個人檔案和應用程式] 選項，在伺服器上執行 Windows Server 2019 的升級安裝。 安裝完成之後，伺服器會保留在叢集中，而且叢集服務會自動啟動。
 
-   6. 檢查新升級的伺服器有最新的 Windows Server 2019 更新。 如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。 組建編號 (請參閱`ver`命令) 應該是 17763.292 或更高版本。
+   6. 檢查新升級的伺服器是否有最新的 Windows Server 2019 更新。 如需詳細資訊，請參閱[windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。 組建編號（請參閱`ver`命令）應該是17763.292 或更高版本。
 
-   7. 移除存放裝置維護模式的伺服器使用下列 PowerShell 命令：
+   7. 使用下列 PowerShell 命令，從存放裝置維護模式移除伺服器：
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -102,73 +102,73 @@ ms.locfileid: "67284357"
        Disable-StorageMaintenanceMode
        ```
 
-   8. 使用下列 PowerShell 命令，繼續執行伺服器：
+   8. 使用下列 PowerShell 命令來繼續伺服器：
 
        ```PowerShell
        Resume-ClusterNode
        ```
 
-   9. 等候儲存體修復作業完成並恢復狀況良好狀態的所有磁碟。 這可能需要相當長的時間，根據 Vm 的數目在伺服器升級期間執行。 以下是要執行的命令：
+   9. 等待存放裝置修復作業完成，並讓所有磁片恢復正常狀態。 這可能需要相當長的時間，視伺服器升級期間執行的 Vm 數目而定。 以下是要執行的命令:
 
        ```PowerShell
        Get-StorageJob
        Get-VirtualDisk
        ```
 
-4. 升級在叢集中的下一步 的伺服器。
+4. 升級叢集中的下一個伺服器。
 
-5. 所有伺服器已都升級至 Windows Server 2019 之後，請使用下列 PowerShell cmdlet 來更新叢集功能等級。
+5. 所有伺服器都已升級至 Windows Server 2019 之後，請使用下列 PowerShell Cmdlet 來更新叢集功能等級。
 
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   > 我們建議您更新叢集功能等級，盡雖然技術上您若要這樣做，會在有最多四週時。
+   > 我們建議您儘快更新叢集功能等級，但在技術上，您最多可以有四周的時間來執行此動作。
 
-6. 更新叢集功能等級之後，使用下列 cmdlet 來更新存放集區。 此時，新的指令程式，例如`Get-ClusterPerf`會在叢集中的任何伺服器上完全正常運作。
+6. 更新叢集功能等級之後，請使用下列 Cmdlet 來更新存放集區。 此時，新的 Cmdlet （例如`Get-ClusterPerf` ）會在叢集中的任何伺服器上完全運作。
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. 選擇升級停止每個 VM 的 VM 設定層級使用`Update-VMVersion`cmdlet，然後再重新啟動 Vm。
+7. 藉由停止每個 vm、使用`Update-VMVersion` Cmdlet，然後再次啟動 vm，即可選擇性地升級 vm 設定層級。
 
-8. 如果您使用軟體定義網路設定參數，而且已停用的 VM 即時移轉檢查上述的指示來使用下列 cmdlet 來重新啟用 VM 即時驗證檢查：
+8. 如果您使用軟體定義的網路功能，並設定參數並停用 VM 即時移轉檢查，如上所述，請使用下列 Cmdlet 重新啟用 VM 即時驗證檢查：
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" |
    Set-ClusterParameter  SkipMigrationDestinationCheck -Value 0
    ```
 
-9. 確認升級後的叢集運作如預期般運作。 角色應該容錯移轉正確，如果在叢集上使用 VM 即時移轉，則 Vm 應該成功即時移轉。
+9. 確認升級的叢集如預期般運作。 角色應正確容錯移轉，且如果在叢集上使用 VM 即時移轉，Vm 應該會順利進行即時移轉。
 
-10. 執行叢集驗證來驗證叢集 (`Test-Cluster`) 並檢查叢集驗證報告。
+10. 執行叢集驗證（`Test-Cluster`）並檢查叢集驗證報告，以驗證叢集。
 
-## <a name="performing-a-clean-os-installation-while-vms-are-running"></a>Vm 正在執行時，請執行全新的作業系統安裝
+## <a name="performing-a-clean-os-installation-while-vms-are-running"></a>執行虛擬機器的全新 OS 安裝
 
-此選項時，會產生任何 VM 停機時間，但您必須等候完成每一部伺服器升級後的儲存體作業 （鏡像修復）。 雖然個別的伺服器將會重新啟動循序升級程序期間，剩餘的伺服器叢集，以及所有 Vm，將會繼續執行。
+此選項不會產生任何 VM 停機時間，但您必須等候存放裝置作業（鏡像修復）在每部伺服器升級後完成。 雖然在升級程式期間會依序重新開機個別伺服器，但叢集中的其餘伺服器和所有 Vm 都將維持執行狀態。
 
-1. 檢查在叢集中的所有伺服器都執行最新的更新。 如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。 最少，安裝 Microsoft Knowledge Base[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (2019 年 2 月 19 日)。 組建編號 (請參閱`ver`命令) 應該是 14393.2828 或更高版本。
+1. 檢查叢集中的所有伺服器都執行最新的更新。 如需詳細資訊，請參閱[windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。 至少要安裝 Microsoft 知識庫[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) （2019年2月19日）。 組建編號（請參閱`ver`命令）應該是14393.2828 或更高版本。
 
-2. 如果您使用軟體定義網路設定參數，開啟提升權限的 PowerShell 工作階段，並執行下列命令來停用叢集上的所有 Vm 上的 VM 即時移轉驗證檢查：
+2. 如果您使用已設定參數的軟體定義網路功能，請開啟已提升許可權的 PowerShell 會話，然後執行下列命令以停用叢集上所有 Vm 的 VM 即時移轉驗證檢查：
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" |
    Set-ClusterParameter -Create SkipMigrationDestinationCheck -Value 1
    ```
 
-3. 一次，一部叢集伺服器上執行下列步驟：
+3. 一次在一部叢集伺服器上執行下列步驟：
 
-   1. 使用 HYPER-V VM 即時移轉移動執行中 Vm 關閉您即將升級的伺服器。
+   1. 使用 Hyper-v VM 即時移轉，將執行中的 Vm 移出您即將升級的伺服器。
 
-   2. 暫停叢集伺服器，使用下列 PowerShell 命令，請注意，會隱藏某些內部的群組。 我們建議此步驟，請特別小心，如果您沒有已上市，將 Vm 移轉，因此您可以跳過上一個步驟如果想要執行此 cmdlet 會在伺服器關閉。
+   2. 使用下列 PowerShell 命令暫停叢集伺服器-請注意，部分內部群組是隱藏的。 我們建議您務必小心，如果您尚未在伺服器上即時移轉 Vm，此 Cmdlet 會為您執行此動作，因此您可以視需要略過上一個步驟。
 
         ```PowerShell
        Suspend-ClusterNode -Drain
        ```
 
-   3. 請將伺服器放在存放裝置維護模式中，執行下列 PowerShell 命令：
+   3. 藉由執行下列 PowerShell 命令，將伺服器置於儲存體維護模式：
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -176,33 +176,33 @@ ms.locfileid: "67284357"
        Enable-StorageMaintenanceMode
        ```
 
-   4. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
+   4. 執行下列 Cmdlet 來檢查**OperationalStatus**值是否處於**維護模式**：
 
        ```PowerShell
        Get-PhysicalDisk
        ```
 
-   3.  收回叢集的伺服器執行下列 PowerShell 命令：  
+   3.  執行下列 PowerShell 命令，從叢集收回伺服器：  
 
        ```PowerShell
        Remove-ClusterNode <ServerName>
        ```
 
-   4. 在伺服器上執行全新安裝的 Windows Server 2019： 格式的系統磁碟機中，執行**setup.exe** ，並使用 「 虛無 」 選項。 您必須設定伺服器身分識別、 角色、 功能，並在安裝完成後的應用程式和伺服器重新啟動。
+   4. 在伺服器上執行 Windows Server 2019 的全新安裝：將系統磁片磁碟機格式化，執行**setup.exe 並使用**[無] 選項。 在安裝程式完成且伺服器重新開機之後，您必須設定伺服器身分識別、角色、功能和應用程式。
 
-   5. 在伺服器上安裝 HYPER-V 角色和容錯移轉叢集功能 (您可以使用`Install-WindowsFeature`cmdlet)。
+   5. 在伺服器上安裝 hyper-v 角色和容錯移轉叢集功能（您可以使用`Install-WindowsFeature` Cmdlet）。
 
-   6. 安裝最新儲存體和網路硬體驅動程式與儲存空間直接存取搭配使用伺服器製造商所核准。
+   6. 為您的伺服器製造商核准的硬體安裝最新的存放裝置和網路驅動程式，以便與儲存空間直接存取搭配使用。
 
-   7. 檢查新升級的伺服器有最新的 Windows Server 2019 更新。 如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。 組建編號 (請參閱`ver`命令) 應該是 17763.292 或更高版本。
+   7. 檢查新升級的伺服器是否有最新的 Windows Server 2019 更新。 如需詳細資訊，請參閱[windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。 組建編號（請參閱`ver`命令）應該是17763.292 或更高版本。
 
-   8. 使用下列 PowerShell 命令，重新加入至叢集的伺服器：
+   8. 使用下列 PowerShell 命令，將伺服器重新加入叢集：
 
        ```PowerShell
        Add-ClusterNode
        ```
 
-   9. 移除存放裝置維護模式的伺服器使用下列 PowerShell 命令：
+   9. 使用下列 PowerShell 命令，從存放裝置維護模式移除伺服器：
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -210,60 +210,60 @@ ms.locfileid: "67284357"
        Disable-StorageMaintenanceMode
        ```
 
-   10. 等候儲存體修復作業完成並恢復狀況良好狀態的所有磁碟。 這可能需要相當長的時間，根據 Vm 的數目在伺服器升級期間執行。 以下是要執行的命令：
+   10. 等待存放裝置修復作業完成，並讓所有磁片恢復正常狀態。 這可能需要相當長的時間，視伺服器升級期間執行的 Vm 數目而定。 以下是要執行的命令:
 
         ```PowerShell
         Get-StorageJob
         Get-VirtualDisk
         ```
 
-4. 升級在叢集中的下一步 的伺服器。
+4. 升級叢集中的下一個伺服器。
 
-5. 所有伺服器已都升級至 Windows Server 2019 之後，請使用下列 PowerShell cmdlet 來更新叢集功能等級。
+5. 所有伺服器都已升級至 Windows Server 2019 之後，請使用下列 PowerShell Cmdlet 來更新叢集功能等級。
     
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   > 我們建議您更新叢集功能等級，盡雖然技術上您若要這樣做，會在有最多四週時。
+   > 我們建議您儘快更新叢集功能等級，但在技術上，您最多可以有四周的時間來執行此動作。
 
-6. 更新叢集功能等級之後，使用下列 cmdlet 來更新存放集區。 此時，新的指令程式，例如`Get-ClusterPerf`會在叢集中的任何伺服器上完全正常運作。
+6. 更新叢集功能等級之後，請使用下列 Cmdlet 來更新存放集區。 此時，新的 Cmdlet （例如`Get-ClusterPerf` ）會在叢集中的任何伺服器上完全運作。
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. 選擇性地將 VM 設定層級升級停止每個 VM，並使用`Update-VMVersion`cmdlet，然後再重新啟動 Vm。
+7. 藉由停止每個 vm 並使用`Update-VMVersion`指令程式，然後再次啟動 vm，即可選擇性地升級 vm 設定層級。
 
-8. 如果您使用軟體定義網路設定參數，而且已停用的 VM 即時移轉檢查上述的指示來使用下列 cmdlet 來重新啟用 VM 即時驗證檢查：
+8. 如果您使用軟體定義的網路功能，並設定參數並停用 VM 即時移轉檢查，如上所述，請使用下列 Cmdlet 重新啟用 VM 即時驗證檢查：
 
    ```PowerShell
    Get-ClusterResourceType -Cluster {clusterName} -Name "Virtual Machine" | 
    Set-ClusterParameter SkipMigrationDestinationCheck -Value 0
    ```
 
-9. 確認升級後的叢集運作如預期般運作。 角色應該容錯移轉正確，如果在叢集上使用 VM 即時移轉，則 Vm 應該成功即時移轉。
+9. 確認升級的叢集如預期般運作。 角色應正確容錯移轉，且如果在叢集上使用 VM 即時移轉，Vm 應該會順利進行即時移轉。
 
-10. 執行叢集驗證來驗證叢集 (`Test-Cluster`) 並檢查叢集驗證報告。
+10. 執行叢集驗證（`Test-Cluster`）並檢查叢集驗證報告，以驗證叢集。
 
-## <a name="performing-an-in-place-upgrade-while-vms-are-stopped"></a>雖然 Vm 已停止執行就地升級
+## <a name="performing-an-in-place-upgrade-while-vms-are-stopped"></a>在 Vm 停止時執行就地升級
 
-此選項會產生 VM 停機時間，但是可能需要較少的時間比您保留在升級期間執行，因為您不需要等待完成每一部伺服器升級後的儲存體工作 （鏡像修復） 的 Vm。 雖然個別的伺服器將會重新啟動循序升級程序期間，在叢集中剩餘的伺服器繼續執行。
+此選項會產生 VM 停機時間，但所需的時間可能比您在升級期間保留執行的 Vm 還短，因為您不需要等到每一部伺服器升級之後，才等待儲存作業（鏡像修復）完成。 雖然在升級過程中會依序重新開機個別伺服器，但叢集中的其餘伺服器仍會繼續執行。
 
-1. 檢查在叢集中的所有伺服器都執行最新的更新。 如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。 最少，安裝 Microsoft Knowledge Base[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (2019 年 2 月 19 日)。 組建編號 (請參閱`ver`命令) 應該是 14393.2828 或更高版本。
+1. 檢查叢集中的所有伺服器都執行最新的更新。 如需詳細資訊，請參閱[windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。 至少要安裝 Microsoft 知識庫[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) （2019年2月19日）。 組建編號（請參閱`ver`命令）應該是14393.2828 或更高版本。
 
-2. 停止叢集上執行的 Vm。
+2. 停止在叢集上執行的 Vm。
 
-3. 一次，一部叢集伺服器上執行下列步驟：
+3. 一次在一部叢集伺服器上執行下列步驟：
 
-   1. 暫停叢集伺服器，使用下列 PowerShell 命令，請注意，會隱藏某些內部的群組。 我們建議此步驟，請務必謹慎。
+   1. 使用下列 PowerShell 命令暫停叢集伺服器-請注意，部分內部群組是隱藏的。 我們建議您謹慎執行此步驟。
 
         ```PowerShell
        Suspend-ClusterNode -Drain
        ```
 
-   2. 請將伺服器放在存放裝置維護模式中，執行下列 PowerShell 命令：
+   2. 藉由執行下列 PowerShell 命令，將伺服器置於儲存體維護模式：
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -271,20 +271,20 @@ ms.locfileid: "67284357"
        Enable-StorageMaintenanceMode
        ```
 
-   3. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
+   3. 執行下列 Cmdlet 來檢查**OperationalStatus**值是否處於**維護模式**：
 
        ```PowerShell
        Get-PhysicalDisk
        ```
 
-   4. 藉由執行在伺服器上執行升級安裝的 Windows Server 2019 **setup.exe**和使用 [保留個人檔案和應用程式] 選項。  
-   安裝完成後，伺服器仍會保留在叢集和叢集服務會自動啟動。
+   4. 執行**setup.exe**並使用 [保留個人檔案和應用程式] 選項，在伺服器上執行 Windows Server 2019 的升級安裝。  
+   安裝完成之後，伺服器會保留在叢集中，而且叢集服務會自動啟動。
 
-   5.  檢查新升級的伺服器有最新的 Windows Server 2019 更新。  
-   如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。
-   組建編號 (請參閱`ver`命令) 應該是 17763.292 或更高版本。
+   5.  檢查新升級的伺服器是否有最新的 Windows Server 2019 更新。  
+   如需詳細資訊，請參閱[windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。
+   組建編號（請參閱`ver`命令）應該是17763.292 或更高版本。
 
-   6.  移除存放裝置維護模式的伺服器使用下列 PowerShell 命令：
+   6.  使用下列 PowerShell 命令，從存放裝置維護模式移除伺服器：
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -292,66 +292,66 @@ ms.locfileid: "67284357"
        Disable-StorageMaintenanceMode
        ```
 
-   7.  使用下列 PowerShell 命令，繼續執行伺服器：
+   7.  使用下列 PowerShell 命令來繼續伺服器：
 
        ```PowerShell
        Resume-ClusterNode
        ```
 
-   8.  等候儲存體修復作業完成並恢復狀況良好狀態的所有磁碟。  
-   這應該是相當快速，因為 Vm 未執行。 以下是要執行的命令：
+   8.  等待存放裝置修復作業完成，並讓所有磁片恢復正常狀態。  
+   這應該相對快速，因為 Vm 不在執行中。 以下是要執行的命令:
 
        ```PowerShell
        Get-StorageJob
        Get-VirtualDisk
        ```
 
-4. 升級在叢集中的下一步 的伺服器。
-5. 所有伺服器已都升級至 Windows Server 2019 之後，請使用下列 PowerShell cmdlet 來更新叢集功能等級。
+4. 升級叢集中的下一個伺服器。
+5. 所有伺服器都已升級至 Windows Server 2019 之後，請使用下列 PowerShell Cmdlet 來更新叢集功能等級。
     
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   >   我們建議您更新叢集功能等級，盡雖然技術上您若要這樣做，會在有最多四週時。
+   >   我們建議您儘快更新叢集功能等級，但在技術上，您最多可以有四周的時間來執行此動作。
 
-6. 更新叢集功能等級之後，使用下列 cmdlet 來更新存放集區。  
-   此時，新的指令程式，例如`Get-ClusterPerf`會在叢集中的任何伺服器上完全正常運作。
+6. 更新叢集功能等級之後，請使用下列 Cmdlet 來更新存放集區。  
+   此時，新的 Cmdlet （例如`Get-ClusterPerf` ）會在叢集中的任何伺服器上完全運作。
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. 在叢集上啟動 Vm，並檢查它們正常運作。
+7. 啟動叢集上的 Vm，並檢查它們是否正常運作。
 
-8. 選擇性地將 VM 設定層級升級停止每個 VM，並使用`Update-VMVersion`cmdlet，然後再重新啟動 Vm。
+8. 藉由停止每個 vm 並使用`Update-VMVersion`指令程式，然後再次啟動 vm，即可選擇性地升級 vm 設定層級。
 
-9. 確認升級後的叢集運作如預期般運作。  
-   角色應該容錯移轉正確，如果在叢集上使用 VM 即時移轉，則 Vm 應該成功即時移轉。
+9. 確認升級的叢集如預期般運作。  
+   角色應正確容錯移轉，且如果在叢集上使用 VM 即時移轉，Vm 應該會順利進行即時移轉。
 
-10. 執行叢集驗證來驗證叢集 (`Test-Cluster`) 並檢查叢集驗證報告。
+10. 執行叢集驗證（`Test-Cluster`）並檢查叢集驗證報告，以驗證叢集。
 
-## <a name="performing-a-clean-os-installation-while-vms-are-stopped"></a>雖然 Vm 已停止執行全新的作業系統安裝
+## <a name="performing-a-clean-os-installation-while-vms-are-stopped"></a>在 Vm 停止時執行全新的作業系統安裝
 
-此選項會產生 VM 停機時間，但是可能需要較少的時間比您保留在升級期間執行，因為您不需要等待完成每一部伺服器升級後的儲存體工作 （鏡像修復） 的 Vm。 雖然個別的伺服器將會重新啟動循序升級程序期間，在叢集中剩餘的伺服器繼續執行。
+此選項會產生 VM 停機時間，但所需的時間可能比您在升級期間保留執行的 Vm 還短，因為您不需要等到每一部伺服器升級之後，才等待儲存作業（鏡像修復）完成。 雖然在升級過程中會依序重新開機個別伺服器，但叢集中的其餘伺服器仍會繼續執行。
 
-1. 檢查在叢集中的所有伺服器都執行最新的更新。  
-   如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。
-   最少，安裝 Microsoft Knowledge Base[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) (2019 年 2 月 19 日)。 組建編號 (請參閱`ver`命令) 應該是 14393.2828 或更高版本。
+1. 檢查叢集中的所有伺服器都執行最新的更新。  
+   如需詳細資訊，請參閱[windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。
+   至少要安裝 Microsoft 知識庫[文章 4487006](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) （2019年2月19日）。 組建編號（請參閱`ver`命令）應該是14393.2828 或更高版本。
 
-2. 停止叢集上執行的 Vm。
+2. 停止在叢集上執行的 Vm。
 
-3. 一次，一部叢集伺服器上執行下列步驟：
+3. 一次在一部叢集伺服器上執行下列步驟：
 
-   2. 暫停叢集伺服器，使用下列 PowerShell 命令，請注意，會隱藏某些內部的群組。  
-      我們建議此步驟，請務必謹慎。
+   2. 使用下列 PowerShell 命令暫停叢集伺服器-請注意，部分內部群組是隱藏的。  
+      我們建議您謹慎執行此步驟。
 
        ```PowerShell
       Suspend-ClusterNode -Drain
       ```
 
-   3. 請將伺服器放在存放裝置維護模式中，執行下列 PowerShell 命令：
+   3. 藉由執行下列 PowerShell 命令，將伺服器置於儲存體維護模式：
 
       ```PowerShell
       Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -359,36 +359,36 @@ ms.locfileid: "67284357"
       Enable-StorageMaintenanceMode
       ```
 
-   4. 執行下列 cmdlet 來檢查**OperationalStatus**值是**處於維護模式**:
+   4. 執行下列 Cmdlet 來檢查**OperationalStatus**值是否處於**維護模式**：
 
       ```PowerShell
       Get-PhysicalDisk
       ```
 
-   5. 收回叢集的伺服器執行下列 PowerShell 命令：  
+   5. 執行下列 PowerShell 命令，從叢集收回伺服器：  
     
       ```PowerShell
       Remove-ClusterNode <ServerName>
       ```
 
-   6. 在伺服器上執行全新安裝的 Windows Server 2019： 格式的系統磁碟機中，執行**setup.exe** ，並使用 「 虛無 」 選項。  
-      您必須設定伺服器身分識別、 角色、 功能，並在安裝完成後的應用程式和伺服器重新啟動。
+   6. 在伺服器上執行 Windows Server 2019 的全新安裝：將系統磁片磁碟機格式化，執行**setup.exe 並使用**[無] 選項。  
+      在安裝程式完成且伺服器重新開機之後，您必須設定伺服器身分識別、角色、功能和應用程式。
 
-   7. 在伺服器上安裝 HYPER-V 角色和容錯移轉叢集功能 (您可以使用`Install-WindowsFeature`cmdlet)。
+   7. 在伺服器上安裝 hyper-v 角色和容錯移轉叢集功能（您可以使用`Install-WindowsFeature` Cmdlet）。
 
-   8. 安裝最新儲存體和網路硬體驅動程式與儲存空間直接存取搭配使用伺服器製造商所核准。
+   8. 為您的伺服器製造商核准的硬體安裝最新的存放裝置和網路驅動程式，以便與儲存空間直接存取搭配使用。
 
-   9. 檢查新升級的伺服器有最新的 Windows Server 2019 更新。  
-      如需詳細資訊，請參閱 < [Windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。
-      組建編號 (請參閱`ver`命令) 應該是 17763.292 或更高版本。
+   9. 檢查新升級的伺服器是否有最新的 Windows Server 2019 更新。  
+      如需詳細資訊，請參閱[windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619/windows-10-update-history)。
+      組建編號（請參閱`ver`命令）應該是17763.292 或更高版本。
 
-   10. 使用下列 PowerShell 命令，重新加入至叢集的伺服器：
+   10. 使用下列 PowerShell 命令，將伺服器重新加入叢集：
 
       ```PowerShell
       Add-ClusterNode
       ```
 
-   11. 移除存放裝置維護模式的伺服器使用下列 PowerShell 命令：
+   11. 使用下列 PowerShell 命令，從存放裝置維護模式移除伺服器：
 
        ```PowerShell
        Get-StorageFaultDomain -type StorageScaleUnit | 
@@ -396,37 +396,37 @@ ms.locfileid: "67284357"
        Disable-StorageMaintenanceMode
        ```
 
-   12. 等候儲存體修復作業完成並恢復狀況良好狀態的所有磁碟。  
-       這可能需要相當長的時間，根據 Vm 的數目在伺服器升級期間執行。 以下是要執行的命令：
+   12. 等待存放裝置修復作業完成，並讓所有磁片恢復正常狀態。  
+       這可能需要相當長的時間，視伺服器升級期間執行的 Vm 數目而定。 以下是要執行的命令:
 
        ```PowerShell
        Get-StorageJob
        Get-VirtualDisk
        ```
 
-4. 升級在叢集中的下一步 的伺服器。
+4. 升級叢集中的下一個伺服器。
 
-5. 所有伺服器已都升級至 Windows Server 2019 之後，請使用下列 PowerShell cmdlet 來更新叢集功能等級。
+5. 所有伺服器都已升級至 Windows Server 2019 之後，請使用下列 PowerShell Cmdlet 來更新叢集功能等級。
     
    ```PowerShell
    Update-ClusterFunctionalLevel
    ```
 
    > [!NOTE]
-   >   我們建議您更新叢集功能等級，盡雖然技術上您若要這樣做，會在有最多四週時。
+   >   我們建議您儘快更新叢集功能等級，但在技術上，您最多可以有四周的時間來執行此動作。
 
-6. 更新叢集功能等級之後，使用下列 cmdlet 來更新存放集區。  
-   此時，新的指令程式，例如`Get-ClusterPerf`會在叢集中的任何伺服器上完全正常運作。
+6. 更新叢集功能等級之後，請使用下列 Cmdlet 來更新存放集區。  
+   此時，新的 Cmdlet （例如`Get-ClusterPerf` ）會在叢集中的任何伺服器上完全運作。
 
    ```PowerShell
    Update-StoragePool
    ```
 
-7. 在叢集上啟動 Vm，並檢查它們正常運作。
+7. 啟動叢集上的 Vm，並檢查它們是否正常運作。
 
-8. 選擇性地將 VM 設定層級升級停止每個 VM，並使用`Update-VMVersion`cmdlet，然後再重新啟動 Vm。
+8. 藉由停止每個 vm 並使用`Update-VMVersion`指令程式，然後再次啟動 vm，即可選擇性地升級 vm 設定層級。
 
-9. 確認升級後的叢集運作如預期般運作。  
-   角色應該容錯移轉正確，如果在叢集上使用 VM 即時移轉，則 Vm 應該成功即時移轉。
+9. 確認升級的叢集如預期般運作。  
+   角色應正確容錯移轉，且如果在叢集上使用 VM 即時移轉，Vm 應該會順利進行即時移轉。
 
-10. 執行叢集驗證來驗證叢集 (`Test-Cluster`) 並檢查叢集驗證報告。
+10. 執行叢集驗證（`Test-Cluster`）並檢查叢集驗證報告，以驗證叢集。

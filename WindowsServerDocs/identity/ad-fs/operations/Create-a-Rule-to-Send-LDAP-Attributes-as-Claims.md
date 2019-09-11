@@ -1,6 +1,6 @@
 ---
 ms.assetid: 66664b80-2590-46c0-bfca-82402088e42c
-title: 建立規則，以宣告形式傳送 LDAP 屬性
+title: 建立規則來以宣告方式傳送 LDAP 屬性
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,80 +9,80 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 00ea4f9f868b9c82c2a0859be971db26394251a3
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: d391c77ba309c84e2f8f8d0676b71b7c198fc241
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189346"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865938"
 ---
-# <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>建立規則，以宣告形式傳送 LDAP 屬性
+# <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>建立規則來以宣告方式傳送 LDAP 屬性
 
 
-使用傳送 LDAP 屬性做為 Active Directory Federation Services 中的宣告規則範本\(AD FS\)，您可以建立會選取從輕量型目錄存取通訊協定的屬性規則\(LDAP\)屬性存放區，例如 Active Directory，以傳送宣告給信賴憑證者的合作對象。 比方說，您可以使用此規則範本來建立宣告規則，就會擷取屬性值已驗證的使用者，從 a Send LDAP Attributes **displayName**並**telephoneNumber** Active目錄屬性，並接著將這些值傳送為兩個不同的連出宣告。  
+在 Active Directory 同盟服務\(AD FS\)中使用 [以宣告方式傳送 LDAP 屬性] 規則範本，您可以建立規則，從輕量型目錄存取協定\(LDAP\)選取屬性屬性存放區，例如 Active Directory，以宣告的形式傳送至信賴憑證者。 例如，您可以使用此規則範本來建立傳送 LDAP 屬性作為宣告規則，以從**displayName**和**telephoneNumber** Active Directory 屬性中，將已驗證使用者的屬性值解壓縮，然後將這些將值當做兩個不同的傳出宣告。  
   
-您也可以使用此規則來傳送使用者的所有群組成員資格。 如果您只想要傳送個別的群組成員資格，請使用「以宣告方式傳送群組成員資格」規則範本。 您可以使用下列程序來建立與 AD FS 管理嵌入式管理單元的 宣告規則\-中。  
+您也可以使用此規則來傳送所有使用者的群組成員資格。 如果您只想要傳送個別的群組成員資格，請使用「以宣告方式傳送群組成員資格」規則範本。 您可以使用下列程式，利用 AD FS 管理嵌入式管理單元\-來建立宣告規則。  
   
 若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。  
 
-## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-relying-party-trust-in-windows-server-2016"></a>若要建立規則以針對信賴憑證者信任 Windows Server 2016 中的宣告形式傳送 LDAP 屬性 
+## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-relying-party-trust-in-windows-server-2016"></a>建立規則以傳送 LDAP 屬性，做為 Windows Server 2016 中信賴憑證者信任的宣告 
 
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
   
-2.  在主控台樹狀目錄之下**AD FS**，按一下**信賴憑證者信任**。 
+2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告發佈原則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
-4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
+4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**以宣告方式傳送 LDAP 屬性**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [從清單**傳送 LDAP 屬性做為宣告**]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)    
 
-6.  在上**設定規則**頁面**宣告規則名稱**輸入顯示名稱，此規則選取**屬性存放區**，然後選取 LDAP 屬性，並將它對應至傳出宣告類型。 
+6.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，選取 [**屬性存放區**]，然後選取 LDAP 屬性並將它對應至 [傳出宣告類型]。 
 ![建立規則](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)    
 
-7.  按一下 [**完成**] 按鈕。  
+7.  按一下 [**完成]** 按鈕。  
   
-8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。
+8.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[確定]** 以儲存規則。
   
-## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-claims-provider-trust-in-windows-server-2016"></a>若要建立規則以針對宣告提供者信任 Windows Server 2016 中的宣告形式傳送 LDAP 屬性 
+## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-claims-provider-trust-in-windows-server-2016"></a>建立規則以傳送 LDAP 屬性，做為 Windows Server 2016 中的宣告提供者信任的宣告 
   
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
   
-2.  在主控台樹狀目錄之下**AD FS**，按一下**宣告提供者信任**。 
+2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告規則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
-4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
+4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**以宣告方式傳送 LDAP 屬性**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [從清單**傳送 LDAP 屬性做為宣告**]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)       
 
-6.  在上**設定規則**頁面**宣告規則名稱**輸入顯示名稱，此規則選取**屬性存放區**，然後選取 LDAP 屬性，並將它對應至傳出宣告類型。 
+6.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，選取 [**屬性存放區**]，然後選取 LDAP 屬性並將它對應至 [傳出宣告類型]。 
 ![建立規則](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)      
 
-7.  按一下 [**完成**] 按鈕。  
+7.  按一下 [**完成]** 按鈕。  
   
-8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。  
+8.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[確定]** 以儲存規則。  
 
  
   
-## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-windows-server-2012-r2"></a>若要建立以 Windows Server 2012 r2 的宣告形式傳送 LDAP 屬性的規則  
+## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-windows-server-2012-r2"></a>建立規則以傳送 LDAP 屬性做為 Windows Server 2012 R2 的宣告  
   
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
   
-2.  在主控台樹狀目錄中，在**AD FSAD FS\\信任關係**，按一下**宣告提供者信任**或**信賴憑證者信任**，然後按一下在您要建立此規則的清單中的特定信任。  
+2.  在主控台樹的 [ **AD\\FSAD FS 信任關係**] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
   
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告規則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
   
-4.  在 [**編輯宣告規則**] 對話方塊中，選取其中一個下列索引標籤，根據信任您要編輯，以及哪一個規則可設定您要建立，此規則，然後按一下**加入規則**啟動規則該規則集相關聯的精靈：  
+4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，視您正在編輯的信任，以及您要在其中建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
   
     -   **接受轉換規則**  
   
@@ -93,16 +93,16 @@ ms.locfileid: "66189346"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) 
   
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**以宣告方式傳送 LDAP 屬性**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [從清單**傳送 LDAP 屬性做為宣告**]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG)  
   
-6.  在上**設定規則**頁面**宣告規則名稱**下輸入這項規則的顯示名稱**屬性存放區**選取**Active Directory**，然後在**對應的 LDAP 屬性與傳出宣告類型**選取想要**LDAP 屬性**對應**傳出宣告類型**從下拉式清單的型別\-清單。  
+6.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，在 [**屬性存放區**] 下選取 [ **Active Directory**]，然後在 [ **LDAP 屬性與傳出宣告類型的對應**] 底下選取所需從 下拉式\-清單中的**LDAP 屬性**和對應的傳出宣告類型類型。  
   
-    您必須選取新的 LDAP 屬性與傳出宣告類型組不同的資料列，每個您想要發出的宣告，此規則的一部分的 Active Directory 屬性。  
+    您必須針對要發出宣告的每個 Active Directory 屬性，在不同的資料列上選取新的 LDAP 屬性和傳出宣告類型組，做為此規則的一部分。  
 ![建立規則](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap4.PNG)    
-7.  按一下 [**完成**] 按鈕。  
+7.  按一下 [**完成]** 按鈕。  
   
-8.  在 [**編輯宣告規則**] 對話方塊中，按一下**確定**儲存規則。  
+8.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[確定]** 以儲存規則。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  

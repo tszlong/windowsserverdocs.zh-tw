@@ -1,6 +1,6 @@
 ---
-title: 儲存空間直接存取-常見問題集
-description: 了解如何儲存空間直接存取
+title: 儲存空間直接存取的常見問題
+description: 深入瞭解儲存空間直接存取
 keywords: 儲存空間
 ms.prod: windows-server-threshold
 ms.author: kaushik
@@ -9,82 +9,82 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b17aa7ddc783e95fbcc19fe3913192d245133c7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1aafac9a994e907e8b8ee3b556618d630cdf8418
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818909"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872073"
 ---
-# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>儲存空間直接存取-常見問題集 (FAQ)
+# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>儲存空間直接存取-常見問題（FAQ）
 
-本文列出一些常見和相關常見問題集[儲存空間直接存取](storage-spaces-direct-overview.md)。
+本文列出一些與[儲存空間直接存取](storage-spaces-direct-overview.md)相關的常見常見問題和常見問題。
 
-## <a name="when-you-use-storage-spaces-direct-with-3-nodes-can-you-get-both-performance-and-capacity-tiers"></a>當您使用儲存空間直接存取搭配 3 個節點時，您可以獲得效能和容量層？
+## <a name="when-you-use-storage-spaces-direct-with-3-nodes-can-you-get-both-performance-and-capacity-tiers"></a>當您使用具有3個節點的儲存空間直接存取時，您可以同時取得效能和容量層嗎？
 
-是，您可以取得效能和容量層中的 2 個節點或 3 個節點的儲存空間直接存取組態。 不過，您必須確定您有 2 個容量裝置。 這表示，您必須使用裝置的所有三種類型：NVME、 SSD 和 HDD。
+是，您可以在2個節點或3個節點的儲存空間直接存取設定中取得效能和容量層級。 不過，您必須確定您有2個容量裝置。 這表示您必須使用三種類型的裝置：NVME、SSD 和 HDD。
  
-## <a name="refs-file-system-provides-real-time-tiaring-with-storage-spaces-direct-does-refs-provides-the-same-functionality-with-shared-storage-spaces-in-2016"></a>Refs 檔案系統提供即時 tiaring 與儲存空間直接存取。 不 REFS 提供相同的功能與共用的儲存空間 2016 嗎？
+## <a name="refs-file-system-provides-real-time-tiaring-with-storage-spaces-direct-does-refs-provides-the-same-functionality-with-shared-storage-spaces-in-2016"></a>Refs 檔案系統提供儲存空間直接存取的即時 tiaring。 REFS 在2016中提供與共享儲存空間相同的功能嗎？
 
-否，您無法取得即時 2016年使用的共用存放裝置空間的階層處理。 這是僅適用於儲存空間直接存取。 
+不可以，您不會透過2016，取得共用儲存空間的即時分層。 這僅適用于儲存空間直接存取。 
  
-## <a name="can-i-use-an-ntfs-file-system-with-storage-spaces-direct"></a>可以使用 NTFS 檔案系統與儲存空間直接存取嗎？
+## <a name="can-i-use-an-ntfs-file-system-with-storage-spaces-direct"></a>我可以搭配使用 NTFS 檔案系統與儲存空間直接存取嗎？
   
-是，您可以使用 NTFS 檔案系統與儲存空間直接存取。 不過，建議 REFS。 NTFS 不提供即時的階層處理。 
+是的，您可以將 NTFS 檔案系統與儲存空間直接存取搭配使用。 不過，建議使用 REFS。 NTFS 不提供即時分層。 
  
-## <a name="i-have-configured-2-node-storage-spaces-direct-clusters-where-the-virtual-disk-is-configured-as-2-way-mirror-resiliency-if-i-add-a-new-fault-domain-will-the-resiliency-of-the-existing-virtual-disk-change"></a>我已設定 2 個節點儲存空間直接存取叢集，虛擬磁碟設定為 2 向鏡像復原的位置。 如果我新增一個新的容錯網域，請將現有的虛擬磁碟的復原變更嗎？
+## <a name="i-have-configured-2-node-storage-spaces-direct-clusters-where-the-virtual-disk-is-configured-as-2-way-mirror-resiliency-if-i-add-a-new-fault-domain-will-the-resiliency-of-the-existing-virtual-disk-change"></a>我設定了2個節點儲存空間直接存取叢集，其中虛擬磁片設定為雙向鏡像復原。 如果我新增新的容錯網域，現有虛擬磁片的復原會變更嗎？
 
-加入新的容錯網域之後，您建立新的虛擬磁碟會跳到 3 向鏡像。 不過，現有的虛擬磁碟會保留 2 向鏡像的磁碟。 您可以從現有的磁碟區，以取得新的復原功能的優點，以將資料複製到新的虛擬磁碟。
+新增新的容錯網域之後，您建立的新虛擬磁片會跳到3向鏡像。 不過，現有的虛擬磁片將會維持為雙向鏡像磁片。 您可以從現有的磁片區將資料複製到新的虛擬磁片，以獲得新復原的優點。
  
-## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>儲存空間直接存取是使用建立 autoconfig:0參數，並以手動方式建立的集區。 當我嘗試將查詢儲存空間直接存取的集區，以建立新的磁碟區時，我收到訊息指出，「 Enable-ClusterS2D 一次。 」我該怎麼辦？
+## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>儲存空間直接存取是使用自動設定：0所建立的參數和手動建立的集區。 當我嘗試查詢儲存空間直接存取集區以建立新的磁片區時，會收到一則訊息，指出「再次啟用-Enable-clusters2d」。我該怎麼做？
 
-根據預設，當您使用啟用 S2D cmdlet，設定儲存空間直接存取 cmdlet 的所有項目為您做。 它會建立集區和階層。 當使用 autoconfig:0，所有項目必須手動完成。 如果您建立的集區時，不一定會建立層。 如果您有未完全建立層，或未對應至連接的裝置的方式建立階層，您會收到 「 一次 Enable-ClusterS2D 」 錯誤訊息。 我們建議您不要在生產環境中使用您的自動設定參數。 
+根據預設，當您使用 enable-S2D Cmdlet 設定儲存空間直接存取時，此 Cmdlet 會為您執行所有工作。 它會建立集區和層級。 使用自動設定時：0時，必須以手動方式完成所有作業。 如果您只建立集區，就不一定會建立該層。 如果您未以對應于所連接裝置的方式建立所有層或尚未建立的階層，您將會收到「Enable-clusters2d 再次出現」錯誤訊息。 我們建議您不要在生產環境中使用自動設定參數。 
  
-## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>是否可以在儲存空間直接存取的集區新增轉動式磁碟 (HDD) 之後您已建立儲存空間直接存取使用 SSD 裝置？
+## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>在建立 SSD 裝置的儲存空間直接存取之後，是否可以將旋轉磁片（HDD）新增至儲存空間直接存取集區？
 
-資料分割 根據預設，如果您使用單一裝置類型來建立集區時，它不會設定快取磁碟和所有磁碟要都用於容量。 您可以新增 NVME 磁碟組態，和 NVME 磁碟會設定為快取。
+資料分割 根據預設，如果您使用單一裝置類型來建立集區，它不會設定快取磁片，而且所有磁片都會用於容量。 您可以在設定中新增 NVME 磁片，而 NVME 磁片則會針對快取進行設定。
  
-## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我已設定 2 機架容錯網域：機架 1 有 2 個容錯網域，機架 2 有 1 個容錯網域。 每一部伺服器有 4 個容量 100GB 的裝置。 可以使用所有的 1200 GB 的空間從集區嗎？
+## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我已設定2個機架的容錯網域：機架1有2個容錯網域，機架2有1個容錯網域。 每部伺服器都有4個容量 100 GB 的裝置。 我可以從集區使用所有 1200 GB 的空間嗎？
 
-否，您可以使用只有 800 GB。 在機架容錯網域中，您必須確定您有 2 向鏡像組態，因此，每個丟棄和其重複 land 不同機架中。
+不可以，您只能使用 800 GB。 在機架容錯網域中，您必須確定您有雙向鏡像設定，讓每個 chuck 和其重複進入不同的機架。
  
-## <a name="what-should-the-cache-size-be-when-i-am-configuring-storage-spaces-direct"></a>快取大小應該為何當我正在設定儲存空間直接存取？
+## <a name="what-should-the-cache-size-be-when-i-am-configuring-storage-spaces-direct"></a>當我設定儲存空間直接存取時，快取大小應該為何？
 
-快取應該調整大小以容納工作集 (正在主動的資料讀取或寫入一次) 的應用程式和工作負載。
+應該調整快取大小，以容納應用程式和工作負載的工作集（在任何指定時間主動讀取或寫入的資料）。
 
-## <a name="how-can-i-determine-the-size-of-cache-that-is-being-used-by-storage-spaces-direct"></a>如何判斷正在使用儲存空間直接存取的快取大小？
+## <a name="how-can-i-determine-the-size-of-cache-that-is-being-used-by-storage-spaces-direct"></a>如何判斷儲存空間直接存取所使用的快取大小？
 
-您可以使用內建的公用程式 PerfMon，檢查快取遺漏。 檢閱快取遺漏每秒讀取從叢集儲存體的混合式磁碟計數器。 請記住，是否遺漏太多的讀取快取，您的快取是過小，而且要展開它。 
+使用內建的公用程式 PerfMon 來檢查快取遺漏。 從 [叢集存放裝置混合式磁片] 計數器中，檢查 [快取遺漏讀取/秒]。 請記住，如果有太多讀取遺失快取，您的快取會變小，而且您可能會想要將它展開。 
  
-## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有顯示在一旁，快取、 容量，以及可讓我更佳的規劃的復原磁碟的確切大小的計算機？
+## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有計算機會顯示針對快取、容量和復原所設定的確切磁片大小，讓我能夠更好地進行規劃？
 
-您可以使用儲存空間計算器，以協助您進行規劃。 已在 http://aka.ms/s2dcalc。
+您可以使用「儲存空間」計算機協助您進行規劃。 可以在 http://aka.ms/s2dcalc 取得。
  
-## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>什麼是最佳的組態設定 6 部和 3 個機架時，您會建議？
+## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>設定6部伺服器和3個機架時，建議您最好的設定為何？
 
-使用每個機架上的 2 部伺服器，可取得 3 向鏡像虛擬磁碟復原功能。 請記住您要提供組態的方式，則會放在機架中的作業系統時，才機架組態就會正確運作。 
+在每個機架上使用2部伺服器，以取得三向鏡像的虛擬磁片恢復功能。 請記住，只有當您將設定以機架上的方式提供給 OS 時，才會正常運作。 
  
-## <a name="can-i-enable-maintenance-mode-for-a-specific-disk-on-a-specific-server-in-storage-spaces-direct-cluster"></a>啟用儲存空間直接存取叢集中的特定伺服器上的特定磁碟的維護模式？
+## <a name="can-i-enable-maintenance-mode-for-a-specific-disk-on-a-specific-server-in-storage-spaces-direct-cluster"></a>我可以在儲存空間直接存取叢集中的特定伺服器上，啟用特定磁片的維護模式嗎？
 
-是，您可以啟用特定磁碟和一個特定的容錯網域上的存放裝置維護模式。 當您暫停節點時，會自動叫用啟用 StorageMaintenanceMode 命令。 您可以針對特定的磁碟啟用它藉由執行下列命令：
+是，您可以在特定磁片和特定容錯網域上啟用存放裝置維護模式。 當您暫停節點時，會自動叫用 StorageMaintenanceMode 命令。 您可以執行下列命令，為特定的磁片啟用它：
 
 ```powershell
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 ```
 
-## <a name="is-storage-spaces-direct-supported-on-my-hardware"></a>儲存空間直接存取支援我的硬體？
+## <a name="is-storage-spaces-direct-supported-on-my-hardware"></a>我的硬體上是否支援儲存空間直接存取？
 
-我們建議您連絡硬體廠商，以確認支援。 硬體廠商測試其硬體和註解是否支援或不在此解決方案。 例如，在此撰寫時，伺服器，例如 R730 / R730xd / 有 8 個以上的磁碟機插槽的 R630 可支援 SES 且與儲存空間直接存取相容。 Dell 支援只使用儲存空間直接存取 HBA330。 R620 nepodporuje SES，並與儲存空間直接存取不相容。
+我們建議您洽詢硬體廠商以確認支援。 硬體廠商會在其硬體上測試解決方案，並針對是否支援它進行批註。 例如，在撰寫本文時，具有8個以上磁片磁碟機位置的伺服器（例如 R730/R730xd/R630）可以支援 SES 並與儲存空間直接存取相容。 Dell 僅支援具有儲存空間直接存取的 HBA330。 R620 不支援 SES，而且與儲存空間直接存取不相容。
 
-更多的硬體支援資訊，請移至下列網站：Windows Server Catalog
+如需更多硬體支援資訊，請移至下列網站：Windows Server Catalog
  
-## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>如何儲存空間直接存取對使用 SES？
+## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>儲存空間直接存取如何利用 SES？
 
-儲存空間直接存取會使用 SCSI 機箱服務 (SES) 對應以確定資料和中繼資料的 slab 橫跨容錯網域，以彈性的方式。 如果硬體不支援 SES，沒有對應的機箱，並不適合的資料位置。
+儲存空間直接存取使用 SCSI 主機殼服務（SES）對應，以確保 slab 的資料和中繼資料會以彈性的方式分散到容錯網域。 如果硬體不支援 SES，就不會有機箱的對應，而且資料放置也不具復原能力。
  
-## <a name="what-command-can-you-use-to-check-the-physical-extent-for-a-virtual-disk"></a>您可以使用哪些命令來檢查虛擬磁碟的實體範圍？
+## <a name="what-command-can-you-use-to-check-the-physical-extent-for-a-virtual-disk"></a>您可以使用哪一個命令來檢查虛擬磁片的實體範圍？
   
-這一個：
+這個：
 
 ```powershell
 get-virtualdisk -friendlyname “xyz” | get-physicalextent

@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 058433f98d986c0daa720dd19f283135763cfe30
-ms.sourcegitcommit: c307886e96622e9595700c94128103b84f5722ce
+ms.openlocfilehash: 1616a1fe2e28534cc30c8955b0309c233555fa14
+ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108760"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878149"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>設定使用者憑證驗證的 AD FS
 
@@ -54,7 +54,7 @@ ms.locfileid: "70108760"
 本檔的重點在於，當 AD FS 設定為使用者的憑證驗證時，遇到常見問題的問題。 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>檢查是否已在所有 AD FS/WAP 伺服器中正確設定憑證信任簽發者
-*常見的徵兆：HTTP 204 「沒有內容來自 https://certuath.adfs.contoso.com 」*
+*常見的徵兆：HTTP 204 「沒有來自 HTTPs\://certuath.adfs.contoso.com 的內容」*
 
 AD FS 使用基礎 windows 作業系統來證明擁有使用者憑證，並藉由執行憑證信任鏈驗證，確保它符合受信任的簽發者。 若要比對受信任的簽發者，您必須確定所有的根和中繼授權單位都已設定為 [本機電腦憑證授權單位單位] 存放區中的 [信任的發行者]。 若要自動驗證此情況，請使用[AD FS 診斷分析器工具](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze)。 此工具會查詢所有伺服器，並確保正確布建正確的憑證。 
 1)  依據上述連結中提供的指示，下載並執行工具
@@ -76,7 +76,7 @@ AD FS 預設會在通訊埠49443上，使用與 AD FS 相同的主機名稱（�
 2)  在每個 AD FS/WAP 伺服器上，確保 CRL 端點可透過所使用的通訊協定（通常是 HTTPS 或 HTTP）來連線
 3)  若要進行 advanced 驗證，請在每個 AD FS/WAP 伺服器上[啟用 CAPI2 事件記錄](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/)
 4) 檢查 CAPI2 操作記錄中的事件識別碼41（驗證撤銷）
-5) 檢查`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>’`
+5) 檢查`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
 ***提示***：您可以將單一 AD FS 或 WAP 伺服器設為目標，藉由設定 DNS 解析（Windows 上的主機檔案）指向特定伺服器，更容易進行疑難排解。 這可讓您啟用以伺服器為目標的追蹤。 
 

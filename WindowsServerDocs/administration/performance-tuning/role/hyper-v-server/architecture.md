@@ -1,47 +1,47 @@
 ---
 title: Hyper-V 架構
-description: Hyper-v 架構 condsiderations 進行效能微調
+description: 效能微調的 hyper-v 架構 condsiderations
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fcc87b04698a44e115c8f49150fe33443f8e6a88
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ed8522ec34e9e262f835530a248567ebbd0ddc9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890279"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866664"
 ---
 # <a name="hyper-v-architecture"></a>Hyper-V 架構
 
-HYPER-V 功能與 Type 1 hypervisor 為基礎的架構。 Hypervisor 虛擬化的處理器和記憶體，並提供根磁碟分割管理子磁碟分割 （虛擬機器），並公開 （expose） 服務，例如 I/O 裝置的虛擬機器的虛擬化堆疊的機制。
+Hyper-v 具有一種以類型為基礎的虛擬機器型架構。 虛擬程式會將處理器和記憶體虛擬化，並為根磁碟分割中的虛擬化堆疊提供可管理子磁碟分割（虛擬機器）的機制，並向虛擬機器公開服務，例如 i/o 裝置。
 
-在根磁碟分割擁有，且可直接存取實體的 I/O 裝置。 在根磁碟分割的虛擬化堆疊提供虛擬機器、 管理 Api，以及虛擬化的 I/O 裝置的記憶體管理員。 它也實作模擬的裝置，例如整合的裝置電子 (IDE) 磁碟控制卡和 PS/2 輸入的裝置 連接埠，而且它支援 Hyper-v 特定綜合裝置來提升效能並降低額外負荷。
+根磁碟分割擁有，且可直接存取實體 i/o 裝置。 根磁碟分割中的虛擬化堆疊提供虛擬機器、管理 Api 和虛擬化 i/o 裝置的記憶體管理員。 它也會執行模擬裝置，例如整合式裝置電子（IDE）磁片控制站和 PS/2 輸入裝置埠，並支援 Hyper-v 特定的綜合裝置，以提高效能並降低額外負荷。
 
-![hyper-v hypervisor 為基礎的架構](../../media/perftune-guide-hyperv-arch.png)
+![hyper-v 以虛擬機器為基礎的架構](../../media/perftune-guide-hyperv-arch.png)
 
-Hyper-V 特定 I/O 架構是由虛擬化服務提供者 (Vsp) 根分割區和虛擬化服務用戶端 (Vsc) 中的子磁碟分割所組成。 每個服務會公開為裝置，透過 VMBus，因此可做為 I/O 匯流排，並啟用使用機制，例如共用記憶體的虛擬機器之間的高效能通訊。 客體作業系統的隨插即用 manager 列舉包括 VMBus，這些裝置，並載入適當的裝置驅動程式 （虛擬服務用戶端）。 透過這種架構，也會公開 I/O 以外的服務。
+Hyper-v 特有的 i/o 架構是由子磁碟分割的根磁碟分割和虛擬化服務用戶端（Vsc）中的虛擬化服務提供者（Vsp）所組成。 每個服務都會透過 VMBus 公開為裝置，其可做為 i/o 匯流排，並可在使用共用記憶體等機制的虛擬機器之間進行高效能通訊。 客體作業系統的隨插即用 manager 會列舉這些裝置，包括 VMBus，並載入適當的設備磁碟機（虛擬服務用戶端）。 I/o 以外的服務也會透過此架構公開。
 
-從 Windows Server 2008，作業系統功能 enlightenment，以最佳化其行為，在虛擬機器中執行時開始。 優點包括減少記憶體虛擬化，改善多核心的延展性，並降低背景的客體作業系統的 CPU 使用量的成本。
+從 Windows Server 2008 開始，作業系統功能會 enlightenment，以在虛擬機器中執行時優化其行為。 優點包括降低記憶體虛擬化的成本、改善多核心的擴充性，以及降低客體作業系統的背景 CPU 使用量。
 
-下列各節會建議會產生在執行 HYPER-V 角色的伺服器上增加的效能的最佳作法。
+下列各節建議的最佳作法，在執行 Hyper-v 角色的伺服器上產生更高的效能。
 
 ## <a name="see-also"></a>另請參閱
 
--   [HYPER-V 術語](terminology.md)
+-   [Hyper-V 術語](terminology.md)
 
--   [HYPER-V 伺服器組態](configuration.md)
+-   [Hyper-V 伺服器設定](configuration.md)
 
--   [HYPER-V 處理器效能](processor-performance.md)
+-   [Hyper-V 處理器效能](processor-performance.md)
 
--   [HYPER-V 記憶體效能](memory-performance.md)
+-   [Hyper-V 記憶體效能](memory-performance.md)
 
--   [HYPER-V 存放裝置 I/O 效能](storage-io-performance.md)
+-   [Hyper-V 存放裝置 I/O 效能](storage-io-performance.md)
 
--   [HYPER-V 網路 I/O 效能](network-io-performance.md)
+-   [Hyper-V 網路 I/O 效能](network-io-performance.md)
 
--   [虛擬化環境中偵測瓶頸](detecting-virtualized-environment-bottlenecks.md)
+-   [偵測虛擬化環境中的瓶頸](detecting-virtualized-environment-bottlenecks.md)
 
 -   [Linux 虛擬機器](linux-virtual-machine-considerations.md)

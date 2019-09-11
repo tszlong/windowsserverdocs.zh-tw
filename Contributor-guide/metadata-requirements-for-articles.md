@@ -1,28 +1,28 @@
 ---
-title: 將必要的中繼資料標記新增至您的 Windows Server 相關文章
-description: 資訊清單您必須將中繼資料標記為加入您的 Windows Server 相關文章的頂端。 所需的標記會有所變更，根據您報告和小組的需求。
+title: 將必要的元資料標記新增至 Windows Server 相關文章
+description: 您必須在 Windows Server 相關文章頂端新增為元資料標記的資訊清單。 視您的報告和小組需求而定，所需的標記可能會有所變更。
 author: eross-msft
 ms.author: lizross
 ms.date: 05/06/2019
-ms.openlocfilehash: f7c514def1353d44386b1bc53c8cabffe1e31fda
-ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
+ms.openlocfilehash: f0af6b48cd3fd28ae0a15752cb21bfe9a4abf14f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65461637"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865086"
 ---
-# <a name="add-the-required-metadata-tags-to-your-windows-server-related-article"></a>將必要的中繼資料標記新增至您的 Windows Server 相關文章
+# <a name="add-the-required-metadata-tags-to-your-windows-server-related-article"></a>將必要的元資料標記新增至 Windows Server 相關文章
 
-在每篇文章的頂端，沒有特定的中繼資料必須包含的追蹤和 SEO 用途。 所需的標記會有所變更，根據報告需求。 不過，應該會通知您若要新增/移除的任何欄位。
+在每篇文章的頂端，有特定的中繼資料必須納入以供追蹤和 SEO 之用。 視報告需求而定，所需的標記可能會變更。 不過，如果您需要新增/移除任何欄位，應該會通知您。
 
-它看起來應該像這樣，包括三個連字號 （-） 在頂端和底部：
+它看起來應該像這樣，包括頂端和底部的三個連字號（---）：
 
 ```markdown
 
 ---
 title: The title of the article should go here. This is used in SEO and search results.
 
-description: A description for the article should go here. This is used in search results, to provide users with information about whether the article has the information they’re looking for.
+description: A description for the article should go here. This is used in search results, to provide users with information about whether the article has the information they're looking for.
 
 ms.prod: Use this specific text, windows-server-threshold
 
@@ -32,7 +32,7 @@ author: Your GitHub alias
 
 ms.author: Your Microsoft alias
 
-manager: Your manager’s Microsoft alias
+manager: Your manager's Microsoft alias
 
 ms.topic: Type of article, including article, landing-page, get-started-article, or reference
 

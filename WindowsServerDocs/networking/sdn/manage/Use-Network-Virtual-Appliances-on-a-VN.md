@@ -1,6 +1,6 @@
 ---
 title: 使用虛擬網路上的網路虛擬設備
-description: 本主題中，您已了解如何部署租用戶虛擬網路上的網路虛擬設備。 您可以新增網路虛擬設備來執行使用者定義路由和連接埠鏡像函式的網路。
+description: 在本主題中，您將瞭解如何在租使用者虛擬網路上部署網路虛擬裝置。 您可以將網路虛擬裝置新增至執行使用者定義路由和埠鏡像功能的網路。
 manager: dougkim
 ms.custom: na
 ms.reviewer: na
@@ -13,57 +13,57 @@ ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: e715a782651a5b9867f3b45251fd6ea6e4a9e4f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21f8698236e5358e0909ad0ac43a6a220013fee4
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847369"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869935"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>使用虛擬網路上的網路虛擬設備
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題中，您已了解如何部署租用戶虛擬網路上的網路虛擬設備。 您可以新增網路虛擬設備來執行使用者定義路由和連接埠鏡像函式的網路。
+在本主題中，您將瞭解如何在租使用者虛擬網路上部署網路虛擬裝置。 您可以將網路虛擬裝置新增至執行使用者定義路由和埠鏡像功能的網路。
 
-## <a name="types-of-network-virtual-appliances"></a>類型的網路虛擬設備
+## <a name="types-of-network-virtual-appliances"></a>網路虛擬裝置的類型
 
-您可以使用其中一個虛擬設備的兩種類型：
+您可以使用這兩種虛擬裝置類型的其中一種：
 
-1. **使用者定義路由**-虛擬網路上的分散式的路由器取代為虛擬設備的路由功能。  使用者定義路由中，虛擬應用裝置取得作為虛擬網路上的虛擬子網路之間的路由器。
+1. **使用者定義的路由**-以虛擬裝置的路由功能取代虛擬網路上的分散式路由器。  使用使用者定義的路由，虛擬裝置會當做虛擬網路上虛擬子網之間的路由器使用。
 
-2. **連接埠鏡像**-所有的網路流量進入或離開受監視的連接埠會複製並傳送至虛擬設備進行分析。 
+2. **埠鏡像**-所有進入或離開受監視埠的網路流量都會複製並傳送至虛擬裝置進行分析。 
 
 
-## <a name="deploying-a-network-virtual-appliance"></a>部署網路虛擬設備
+## <a name="deploying-a-network-virtual-appliance"></a>部署網路虛擬裝置
 
-若要部署網路虛擬設備，您必須先建立 包含設備，VM，然後將 VM 連接至適當的虛擬網路子網路。 如需詳細資訊，請參閱 <<c0> [ 建立租用戶 VM 及連線到租用戶虛擬網路或 VLAN](Create-a-Tenant-VM.md)。
+若要部署網路虛擬裝置，您必須先建立包含設備的 VM，然後將 VM 連線至適當的虛擬網路子網。 如需詳細資訊，請參閱[建立租使用者 VM 並聯機至租使用者虛擬網路或 VLAN](Create-a-Tenant-VM.md)。
 
-某些裝置需要多個虛擬網路介面卡。 通常，一張網路介面卡專用於設備管理而其他配接器會處理流量。  如果您的應用裝置需要多個網路介面卡，您必須建立網路控制卡中的每個網路介面。 您也必須指派每個額外的介面卡不同的虛擬子網路上的每個主機上的介面識別碼。
+某些設備需要多個虛擬網路介面卡。 通常會有一張網路介面卡專用於裝置管理，而其他介面卡則會處理流量。  如果您的設備需要多個網路介面卡，您必須在網路控制卡中建立每個網路介面。 您也必須為每個位於不同虛擬子網的其他介面卡，在每部主機上指派介面識別碼。
 
-一旦您部署網路虛擬設備，您可以使用的設備定義的路由、 移植的鏡像，或兩者。 
+部署網路虛擬裝置之後，您可以使用設備來定義路由、移植鏡像或兩者。 
 
 
 ## <a name="example-user-defined-routing"></a>範例：使用者定義的路由
 
-對於大部分的環境，您只需要虛擬網路的分散式路由器已定義的系統路由。 不過，您可能需要建立路由表，並在特定情況下，新增一或多個路由，例如：
+在大部分的環境中，您只需要已由虛擬網路的分散式路由器定義的系統路由。 不過，您可能需要建立路由表，並在特定案例中新增一或多個路由，例如：
 
-- 強制通道網際網路透過您的內部部署網路。
-- 使用您的環境中的虛擬應用裝置。
+- 透過您的內部部署網路強制通道傳送至網際網路。
+- 在您的環境中使用虛擬應用裝置。
 
-針對這些案例中，您必須建立路由表，並將使用者定義的路由新增至資料表。 您可以有多個路由表，以及您可以將相同的路由表，以一個或多個子網路產生關聯。 您只可以關聯到單一的路由表的每個子網路。 子網路中的所有 Vm 都使用的子網路相關聯的路由表。
+在這些情況下，您必須建立路由表，並將使用者定義的路由新增至資料表。 您可以有多個路由表，而且可以將相同的路由表與一或多個子網建立關聯。 您只能將每個子網與單一路由表產生關聯。 子網中的所有 Vm 都會使用與子網相關聯的路由表。
 
-子網路會依賴系統路由，直到路由表取得子網路產生關聯。 關聯存在之後，路由是根據最長首碼比對 (LPM) 使用者定義的路由和系統路由之間。 如果有多個符合相同 LPM 的路由，則使用者定義的路由之前就已選取 first-系統路由。
+子網會依賴系統路由，直到路由表與子網相關聯為止。 關聯存在之後，就會根據使用者定義的路由和系統路由中最長的前置詞比對（LPM）來完成路由。 如果有多個路由具有相同的 LPM 相符項，則會先選取使用者定義的路由（在系統路由之前）。
  
-**程序：**
+**步**
 
-1. 建立路由資料表屬性，其中包含所有使用者定義的路由。<p>根據以上定義的規則仍然適用的系統路由。
+1. 建立路由表屬性，其中包含所有使用者定義的路由。<p>系統路由仍會根據上面定義的規則套用。
 
    ```PowerShell
     $routetableproperties = new-object Microsoft.Windows.NetworkController.RouteTableProperties
    ```
 
-2. 新增路由到路由表內容。<p>針對 12.0.0.0/8 子網路的任何路由路由傳送至虛擬設備在 192.168.1.10。 設備必須附加至虛擬網路指派給網路介面的 IP 的虛擬網路介面卡。
+2. 將路由新增至路由表屬性。<p>任何目的地為 12.0.0.0/8 子網的路由，會在192.168.1.10 路由傳送至虛擬裝置。 設備必須將虛擬網路介面卡連接到虛擬網路，並將該 IP 指派給網路介面。
 
    ```PowerShell
     $route = new-object Microsoft.Windows.NetworkController.Route
@@ -75,15 +75,15 @@ ms.locfileid: "59847369"
     $routetableproperties.routes += $route
    ```
    >[!TIP]
-   >如果您想要新增更多的路由，請針對每個您想要定義的路由中重複此步驟。
+   >如果您想要新增更多路由，請針對您要定義的每個路由重複此步驟。
 
-3. 將路由表新增至網路控制卡中。
+3. 將路由表新增至網路控制卡。
 
    ```PowerShell
     $routetable = New-NetworkControllerRouteTable -ConnectionUri $uri -ResourceId "Route1" -Properties $routetableproperties
    ```
 
-4. 適用於虛擬子網路的路由表。<p>當您將路由表套用至的虛擬子網路時，Tenant1_Vnet1 網路中的第一個虛擬子網路會使用路由表。 視需要，您可以將路由表指派給最多的虛擬網路中的子網路中。
+4. 將路由表套用至虛擬子網。<p>當您將路由表套用至虛擬子網時，Tenant1_Vnet1 網路中的第一個虛擬子網會使用路由表。 您可以視需要將路由表指派給虛擬網路中的多個子網。
 
    ```PowerShell
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "Tenant1_VNet1"
@@ -91,38 +91,38 @@ ms.locfileid: "59847369"
     new-networkcontrollervirtualnetwork -connectionuri $uri -properties $vnet.properties -resourceId $vnet.resourceid
    ```
 
-當您將路由表套用至虛擬網路時，流量取得轉送至虛擬設備。 您必須在虛擬設備轉送流量，以適合您環境的方式來設定路由表。
+將路由表套用至虛擬網路之後，流量就會轉送到虛擬應用裝置。 您必須將虛擬裝置中的路由表設定為以適合您環境的方式轉送流量。
 
-## <a name="example-port-mirroring"></a>範例：連接埠鏡像
+## <a name="example-port-mirroring"></a>範例：埠鏡像
 
-在此範例中，您設定流量的 MyVM_Ethernet1 鏡像 Appliance_Ethernet1。  我們假設您已部署兩個 Vm，另一個做為設備，而另一個則為要使用鏡像監視的 VM。 
+在此範例中，您會設定 MyVM_Ethernet1 至鏡像 Appliance_Ethernet1 的流量。  我們假設您已部署兩個 Vm，一個做為應用裝置，另一個作為要以鏡像監視的 VM。 
 
-設備必須管理的第二個網路介面。 啟用鏡像做為目的地 Appliciance_Ethernet1 上之後，它不會再接收那里設定的 IP 介面的流量。
+設備必須有第二個網路介面來進行管理。 在 Appliciance_Ethernet1 上啟用鏡像做為目的地之後，它就不會再接收到目的地設定之 IP 介面的流量。
 
 
-**程序：**
+**步**
 
-1. 取得您的 Vm 位於虛擬網路。
+1. 取得 Vm 所在的虛擬網路。
 
    ```PowerShell
    $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "Tenant1_VNet1"
    ```
 
-2. 取得鏡像來源和目的地網路控制卡網路介面。
+2. 取得鏡像來源和目的地的網路控制站網路介面。
 
    ```PowerShell
    $dstNic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "Appliance_Ethernet1"
    $srcNic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
    ```
 
-3. 建立包含連接埠鏡像的規則和項目代表目的地介面 serviceinsertionproperties 物件。
+3. 建立 serviceinsertionproperties 物件以包含埠鏡像規則，以及代表目的地介面的元素。
 
    ```PowerShell
    $portmirror = [Microsoft.Windows.NetworkController.ServiceInsertionProperties]::new()
    $portMirror.Priority = 1
    ```
 
-4. 建立 serviceinsertionrules 物件包含為了讓流量傳送到設備必須符合的規則。<p>規則會定義下列比對所有流量，輸入和輸出，其代表傳統的鏡像。  如果您想要在鏡像中特定的連接埠或特定的來源/目的地，您可以調整這些規則。
+4. 建立 serviceinsertionrules 物件，以包含必須符合才能將流量傳送到設備的規則。<p>以下定義的規則會比對代表傳統鏡像的所有流量，包括輸入和輸出。  如果您想要鏡像特定的埠或特定的來源/目的地，您可以調整這些規則。
 
    ```PowerShell
    $portmirror.ServiceInsertionRules = [Microsoft.Windows.NetworkController.ServiceInsertionRule[]]::new(1)
@@ -141,7 +141,7 @@ ms.locfileid: "59847369"
    $portmirror.ServiceInsertionRules[0].Properties.DestinationSubnets = "*"
    ```
 
-5. 建立 serviceinsertionelements 物件來包含鏡像的應用裝置的網路介面。
+5. 建立 serviceinsertionelements 物件以包含鏡像設備的網路介面。
 
    ```PowerShell
    $portmirror.ServiceInsertionElements = [Microsoft.Windows.NetworkController.ServiceInsertionElement[]]::new(1)
@@ -155,13 +155,13 @@ ms.locfileid: "59847369"
    $portmirror.ServiceInsertionElements[0].Properties.Order = 1
    ```
 
-6. 將服務插入物件加入網路控制卡中。<p>當您發出此命令時，應用裝置的所有流量的都網路中前一個步驟就會停止指定的介面。
+6. 在網路控制卡中新增服務插入物件。<p>當您發出此命令時，在上一個步驟中指定的設備網路介面的所有流量都會停止。
 
    ```PowerShell
    $portMirror = New-NetworkControllerServiceInsertion -ConnectionUri $uri -Properties $portmirror -ResourceId "MirrorAll"
    ```
 
-7. 更新來源，以進行鏡像的網路介面。
+7. 更新要鏡像之來源的網路介面。
 
    ```PowerShell
    $srcNic.Properties.IpConfigurations[0].Properties.ServiceInsertion = $portMirror

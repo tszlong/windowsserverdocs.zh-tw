@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: Pavel; ATales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: bbbd8ad17bfb735b148b7f9a53628ab4445f07c4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 628a73f66e15940f184a076ad72fc24ad75b0e6c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891429"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866417"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>快取與記憶體管理員的效能調整
 
