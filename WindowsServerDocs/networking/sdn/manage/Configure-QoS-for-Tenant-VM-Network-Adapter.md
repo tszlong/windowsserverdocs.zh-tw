@@ -1,6 +1,6 @@
 ---
-title: 租用戶 VM 網路介面卡設定服務品質 (QoS)
-description: 當您的租用戶 VM 網路介面卡設定 QoS 時，您可以選擇資料中心橋接\(DCB\)或軟體定義網路\(SDN\) QoS。
+title: 設定租使用者 VM 網路介面卡的服務品質（QoS）
+description: 當您設定租使用者 VM 網路介面卡的 QoS 時，您可以選擇 [資料中心橋接] DCB 或 [ 軟體定義的網路] SDN QoS。
 manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,36 +13,36 @@ ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 0b9ce318c3d249b23d7560e0b6bb90a83e60d64d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 99ef286b91bec4bcb008bfd9f62003e75a5a5921
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880599"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870016"
 ---
-# <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>租用戶 VM 網路介面卡設定服務品質 (QoS)
+# <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>設定租使用者 VM 網路介面卡的服務品質（QoS）
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-當您的租用戶 VM 網路介面卡設定 QoS 時，您可以選擇資料中心橋接\(DCB\)或軟體定義網路\(SDN\) QoS。
+當您設定租使用者 VM 網路介面卡的 QoS 時，您可以選擇 [資料中心橋\(接\)] DCB 或 [ \(軟體\)定義的網路] SDN QoS。
 
-1.  **DCB**。 您可以使用 Windows PowerShell NetQoS cmdlet 設定 DCB。 如需範例，請參閱主題中的 「 啟用資料中心橋接 」 章節[遠端直接記憶體存取 (RDMA) 和 Switch Embedded Teaming (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
+1.  **DCB**。 您可以使用 Windows PowerShell NetQoS Cmdlet 來設定 DCB。 如需範例，請參閱[遠端直接記憶體存取（RDMA）和交換器內嵌小組（SET）](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)主題中的「啟用資料中心橋接」一節。
 
-2.  **SDN QoS**。 您可以使用網路控制站，可以設定來限制頻寬，以避免高流量 VM 封鎖其他使用者的虛擬介面上，以啟用 SDN QoS。  您也可以設定 SDN QoS，來保留一段特定的 VM，以確保 VM 處於可供存取，不論網路流量的頻寬。  
+2.  **SDN QoS**。 您可以使用網路控制卡來啟用 SDN QoS，這可設定為限制虛擬介面上的頻寬，以防止高流量的 VM 封鎖其他使用者。  您也可以設定 SDN QoS 來保留 VM 的特定頻寬量，以確保不論網路流量的數量為何，VM 皆可供存取。  
 
-適用於透過網路介面屬性的連接埠設定所有 SDN QoS 設定。 請參閱下表，如需詳細資訊。
+透過網路介面內容的埠設定，套用所有 SDN QoS 設定。 如需詳細資訊，請參閱下表。
 
-|元素名稱|描述|
+|元素名稱|說明|
 |------------|-----------| 
-|macSpoofing| 可讓 Vm 變更原始檔的媒體存取控制\(MAC\)與未指派給 VM 的 MAC 位址的傳出封包中的位址。<p>允許的值：<ul><li>已啟用-使用不同的 MAC 位址。</li><li>停用 – 使用只能指派給它的 MAC 位址。</li></ul>|
-|arpGuard| 可讓 ARP guard ArpFilter 通過連接埠中指定唯一的位址。<p>允許的值：<ul><li>已啟用-允許</li><li>已停用-不允許</li></ul>|
-|dhcpGuard| 允許或卸除任何 DHCP 訊息從宣告為 DHCP 伺服器的 VM。 <p>允許的值：<ul><li>已啟用-卸除 DHCP 訊息，因為虛擬化的 DHCP 伺服器會被視為未受信任的。</li><li>停用-可讓虛擬化的 DHCP 伺服器會被視為高可信度電腦接收訊息。</li></ul>|
-|stormLimit| 允許透過虛擬網路介面卡傳送封包 （廣播、 多點傳送及未知單點傳播） 每秒的 VM 數目。 超過限制的一秒的間隔期間的封包遭到捨棄。 值為零\(0\)表示沒有限制...|
-|portFlowLimit| 流程可以執行的連接埠的數目上限。 值為空白或零\(0\)表示沒有限制。 |
-|vmqWeight| 相對權數描述要使用虛擬機器佇列 (VMQ) 的虛擬網路介面卡親和性。 值的範圍是 0 到 100 之間。<p>允許的值：<ul><li>0 – 停用 VMQ，虛擬網路介面卡。</li><li>1-100 – 可讓虛擬網路介面卡的 VMQ。</li></ul>|
-|iovWeight| 相對權數指派的單一根目錄 I/O 虛擬化設定的虛擬網路介面卡親和性\(SR-IOV\)虛擬函式。 <p>允許的值：<ul><li>0 – 停用 SR-IOV 的虛擬網路介面卡。</li><li>1-100 – 啟用 SR-IOV 的虛擬網路介面卡。</li></ul>|
-|iovInterruptModeration|<p>允許的值：<ul><li>預設值 – 實體網路介面卡廠商的設定會決定值。</li><li>adaptive - </li><li>off </li><li>低</li><li>中型</li><li>高</li></ul><p>如果您選擇**預設**，實體網路介面卡廠商的設定會決定值。  如果您選擇，**調適性**，執行階段流量模式決定插斷仲裁速率。|
-|iovQueuePairsRequested| 配置給 SR-IOV 虛擬函式的硬體佇列對數目。 如果接收端調整\(RSS\)是必要的且如果實體網路介面卡繫結至虛擬交換器支援 RSS 在 SR-IOV 虛擬函式，則需要一個以上的佇列對。 <p>允許的值：1 到 4294967295。|
-|QosSettings| 設定下列的 Qos 設定，這些都是選擇性： <ul><li>**outboundReservedValue** -如果 outboundReservedMode 是 「 絕對 」，則這個值指出的頻寬，以 mbps 為單位，保證傳輸 （輸出） 的虛擬連接埠。 如果 outboundReservedMode 是 「 權重 」 值會表示保證頻寬的權重的部分。</li><li>**outboundMaximumMbps** -表示最大虛擬通訊埠 （輸出） 以 mbps 為單位，允許傳送端頻寬。</li><li>**InboundMaximumMbps** -表示最大值，允許接收端的頻寬，讓虛擬通訊埠 （輸入） 以 mbps 為單位。</li></ul> |
+|macSpoofing| 允許 vm 將傳出封包中的來源\(媒體\)存取控制 MAC 位址變更為未指派給 VM 的 MAC 位址。<p>允許的值：<ul><li>[已啟用] –使用不同的 MAC 位址。</li><li>已停用-僅使用指派給它的 MAC 位址。</li></ul>|
+|arpGuard| 只允許 ArpFilter 中指定的 ARP 防護位址通過埠。<p>允許的值：<ul><li>已啟用-允許</li><li>Disabled –不允許</li></ul>|
+|dhcpGuard| 允許或卸載宣告為 DHCP 伺服器之 VM 中的任何 DHCP 訊息。 <p>允許的值：<ul><li>[已啟用] –丟棄 DHCP 訊息，因為虛擬化的 DHCP 伺服器被視為不受信任。</li><li>Disabled –允許接收訊息，因為虛擬化的 DHCP 伺服器被視為值得信任。</li></ul>|
+|stormLimit| 每秒允許 VM 透過虛擬網路介面卡傳送的封包數（廣播、多播和不明單播）。 一秒內的封包會被捨棄超過限制。 值\(為 0\)時，表示沒有限制。|
+|portFlowLimit| 允許為埠執行的流程數目上限。 空白或零\(0\)的值表示沒有任何限制。 |
+|vmqWeight| 相對權數描述虛擬網路介面卡與使用虛擬機器佇列（VMQ）的親和性。 值的範圍是0到100。<p>允許的值：<ul><li>0–停用虛擬網路介面卡上的 VMQ。</li><li>1-100 –在虛擬網路介面卡上啟用 VMQ。</li></ul>|
+|iovWeight| 相對權數會將虛擬網路介面卡的親和性設定為指派的單一根目錄 i/o 虛擬化\(sr-iov\)虛擬函式。 <p>允許的值：<ul><li>0-停用虛擬網路介面卡上的 SR-IOV。</li><li>1-100 –在虛擬網路介面卡上啟用 SR-IOV。</li></ul>|
+|iovInterruptModeration|<p>允許的值：<ul><li>預設–實體網路介面卡廠商的設定會決定此值。</li><li>性 </li><li>off </li><li>量</li><li>中型</li><li>更</li></ul><p>如果您選擇 [**預設**]，實體網路介面卡廠商的設定會決定值。  如果您選擇 [彈性 **]，運行**時間流量模式就會 determins 中斷仲裁速率。|
+|iovQueuePairsRequested| 配置給 SR-IOV 虛擬函式的硬體佇列配對數目。 如果需要接收端調整\(RSS\) ，而且系結至虛擬交換器的實體網路介面卡支援 sr-iov 虛擬函式上的 rss，則需要一組以上的佇列。 <p>允許的值：1到4294967295。|
+|QosSettings| 設定下列 Qos 設定，全都是選擇性的： <ul><li>**outboundReservedValue** -如果 outboundReservedMode 為「絕對」，則值表示保證虛擬埠傳輸（輸出）的頻寬（以 Mbps 為單位）。 如果 outboundReservedMode 為「權數」，則此值會指出所保證之頻寬的加權部分。</li><li>**outboundMaximumMbps** -指出虛擬通訊埠（輸出）允許的最大傳送端頻寬（以 Mbps 為單位）。</li><li>**InboundMaximumMbps** -指出虛擬通訊埠（輸入）允許的最大接收端頻寬（以 Mbps 為單位）。</li></ul> |
 
 ---
