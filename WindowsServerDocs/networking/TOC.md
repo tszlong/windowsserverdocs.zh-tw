@@ -184,7 +184,7 @@
 #### [設定遠端 RADIUS 伺服器群組](technologies/nps/nps-crp-rrsg-configure.md)
 #### [管理搭配 NPS 使用的憑證](technologies/nps/nps-manage-certificates.md)
 ##### [設定 PEAP 與 EAP 需求的憑證範本](technologies/nps/nps-manage-cert-requirements.md)
-#### [管理 NPS](technologies/nps/nps-manage-servers.md)
+#### [管理多個 NPS](technologies/nps/nps-manage-servers.md)
 ##### [設定多重主目錄電腦上的 NPS](technologies/nps/nps-multihomed-configure.md)
 ##### [設定 NPS UDP 連接埠資訊](technologies/nps/nps-udp-ports-configure.md)
 ##### [停用 NAS 通知轉送](technologies/nps/nps-disable-nas-notifications.md)
