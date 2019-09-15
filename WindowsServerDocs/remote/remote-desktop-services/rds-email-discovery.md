@@ -8,12 +8,12 @@ ms.date: 3/27/2018
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: 5b3f162b8eee70fbc452b7400b737454c3fffb59
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ca9484cc8abffcc21b4ed11756fb009b55046a0c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712664"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870969"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>設定電子郵件探索以訂閱您的 RDS 摘要
 
@@ -38,4 +38,4 @@ ms.locfileid: "63712664"
 
    DNS 記錄欄位的名稱會隨著網域名稱註冊機構而不同，但此程序將產生名為 _msradc.\<domain_name\> (例如 _msradc.contoso.com)、具有完整 RD Web 摘要值的 TXT 記錄。
 
-這樣就行了！ 現在，在您的裝置上啟動遠端桌面應用程式，並自行訂閱！
+這樣就完成了！ 現在，在您的裝置上啟動遠端桌面應用程式，並自行訂閱！
