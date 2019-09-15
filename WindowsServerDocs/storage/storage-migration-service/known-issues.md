@@ -8,16 +8,20 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 2200c41bfc6f7e50d4f85f48591a12ad35720062
-ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
+ms.openlocfilehash: 16e62d9232d0ec1b01333d73bc5b4a1555ffbad0
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923355"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987398"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
 本主題包含使用[儲存體遷移服務](overview.md)來遷移伺服器時的已知問題的解答。
+
+儲存體遷移服務的發行分為兩個部分： Windows Server 中的服務，以及 Windows 系統管理中心內的使用者介面。 此服務適用于 Windows Server、長期維護通道，以及 Windows Server、半年通道、雖然 Windows 系統管理中心可供個別下載。 我們也會定期包含 Windows Server 累計更新中的變更（透過 Windows Update 發行）。 
+
+例如，Windows Server 1903 版包含儲存體遷移服務的新功能和修正，其也適用于 Windows Server 2019 和 Windows Server 1809 版，安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)。
 
 ## <a name="collecting-logs"></a>如何在使用 Microsoft 支援服務時收集記錄檔
 
@@ -109,7 +113,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 若要解決此問題，請在相同網路上的電腦上執行遷移。 然後將該電腦移至新的網路，並重新指派其 IP 資訊。 例如，如果遷移至 Azure IaaS，請先遷移至本機 VM，然後使用 Azure Migrate 將 VM 移至 Azure。  
 
-我們已在較新版本的 Windows 管理中心修正此問題。 我們現在可以讓您指定不會改變目的地伺服器網路設定的遷移。 已更新的擴充功能將在發行時列于此處。 
+我們已在較新版本的 Windows 管理中心修正此問題。 我們現在可讓您指定不會改變目的地伺服器網路設定的遷移。 已更新的擴充功能將在發行時列于此處。 
 
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>目的地 proxy 和認證系統管理許可權的驗證警告
 
@@ -120,7 +124,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
  > **目的地 proxy 已註冊。**
  > 警告：找不到目的地 proxy。
 
-如果您尚未在 Windows Server 2019 目的地電腦上安裝儲存體遷移服務 Proxy 服務，或 destinaton 電腦是 Windows Server 2016 或 Windows Server 2012 R2，則此行為是依設計而定。 我們建議您遷移至已安裝 proxy 的 Windows Server 2019 電腦，以大幅改善傳輸效能。  
+如果您尚未在 Windows Server 2019 目的地電腦上安裝儲存體遷移服務 Proxy 服務，或目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，則此行為是依設計而定。 我們建議您遷移至已安裝 proxy 的 Windows Server 2019 電腦，以大幅改善傳輸效能。  
 
 ## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>某些檔案不會進行清查或傳輸，錯誤5「拒絕存取」
 
@@ -129,7 +133,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
   記錄檔名稱：    StorageMigrationService-Proxy/Debug 來源：      StorageMigrationService-Proxy 日期：        2/26/2019 9:00:04 AM 事件識別碼：    10000工作類別：無層級：       錯誤關鍵字：      
   使用者：        網路服務電腦： srv1.contoso.com 描述：
 
-  02/26/2019-09：00： 04.860 [Erro] srv1 的\\傳輸錯誤。 com\public\indy.png：（5）拒絕存取。
+  02/26/2019-09：00： 04.860 [Error] srv1 的\\傳輸錯誤。 com\public\indy.png：（5）拒絕存取。
 堆疊追蹤：在 StorageMigration. FileDirUtils. OpenFile （String fileName，DesiredAccess desiredAccess，ShareMode shareMode，CreationDisposition creationDisposition，FlagsAndAttributes flagsAndAttributes），位於StorageMigration. FileDirUtils. GetTargetFile （String path），網址為： FileDirUtils （GetTargetFile 檔案），網址為. FileInfo. StorageMigration。FileTransfer. InitializeSourceFileInfo （），位於 Microsoft. StorageMigration. Proxy. FileTransfer. transfer. StorageMigration （），位於StorageMigration. FileTransfer. TryTransfer （） [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs：： TryTransfer：： 55]
 
 
@@ -139,7 +143,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用儲存體遷移服務預置資料時，DFSR 雜湊不相符
 
-當使用儲存體遷移服務將檔案傳輸到新的目的地，然後設定 DFS 複寫（DFSR）透過 presseded 複寫或 DFSR 資料庫複製來複寫該資料與現有的 DFSR 伺服器時，所有檔案都會 experiemce 雜湊不相符，而且會重新複寫。 在使用 SMS 傳送資料流程、安全性資料流程、大小和屬性之後，這些資料流程會完全相符。 使用 ICACLS 或 DFSR 資料庫複製 debug 記錄檔來檢查檔案：
+當使用儲存體遷移服務將檔案傳輸到新的目的地，然後設定 DFS 複寫（DFSR）透過 preseeded 複寫或 DFSR 資料庫複製來複寫該資料與現有的 DFSR 伺服器時，所有檔案都會 experiemce 雜湊不相符，而且會重新複寫。 在使用 SMS 傳送資料流程、安全性資料流程、大小和屬性之後，這些資料流程會完全相符。 使用 ICACLS 或 DFSR 資料庫複製 debug 記錄來檢查檔案會顯示：
 
 來源檔案：
 
@@ -171,7 +175,7 @@ DFSR Debug 記錄檔：
 
 如果您未在 orchestrator 伺服器上啟用「檔案及印表機共用（SMB）」防火牆規則，就會發生此錯誤。 Windows 系統管理中心檔案下載需要連線電腦上的埠 TCP/445 （SMB）。  
 
-## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>從 Windows Server 2008 R2 傳輸時，發生錯誤「無法在任何端點上轉移存放裝置」
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>從 Windows Server 2008 R2 傳輸時，發生錯誤「無法在任何端點上轉移存放裝置」
 
 嘗試從 Windows Server 2008 R2 來源電腦傳輸資料時，不會傳輸任何資料，而且您會收到錯誤訊息：  
 
@@ -202,10 +206,10 @@ DFSR Debug 記錄檔：
 
 檢查 StorageMigrationService-Proxy/Debug 記錄檔會顯示：
 
-   07/02/2019-13：35： 57.231 [Erro] 傳輸驗證失敗。 錯誤碼40961，來源端點無法連線或不存在，或來源認證無效，或驗證的使用者沒有足夠的許可權可以存取它。
+   07/02/2019-13：35： 57.231 [Error] 傳輸驗證失敗。 錯誤碼40961，來源端點無法連線或不存在，或來源認證無效，或驗證的使用者沒有足夠的許可權可以存取它。
 在 TransferOperation. StorageMigration （ProcessRequest fileTransferRequest，Guid operationId）上進行 StorageMigration （）的驗證（）（& g.）。   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
-如果您的遷移帳戶至少沒有 SMB 共用的讀取存取許可權，就會發生此錯誤。 若要解決此錯誤，請將包含來源遷移帳戶的安全性群組新增至來源電腦上的 SMB 共用，並授與讀取、變更或完全控制。 完成遷移之後，您可以移除此群組。 未來的 Windows Server 版本可能會將此行為變更為不再需要來源共用的明確許可權。
+如果您的遷移帳戶至少沒有 SMB 共用的讀取存取許可權，就會發生此錯誤。 若要解決此錯誤，請將包含來源遷移帳戶的安全性群組新增至來源電腦上的 SMB 共用，並授與讀取、變更或完全控制。 完成遷移之後，您可以移除此群組。
 
 ## <a name="error-0x80005000-when-running-inventory"></a>執行清查時發生錯誤0x80005000
 

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 96aced2c062717aee0d2957b751bc2c25ac8e0da
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19013c3f132b7486647ade2c9c4950b65c21b8e7
+ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869103"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975321"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>準備您的 Windows Admin Center 環境
 
@@ -36,7 +36,7 @@ Windows Admin Center 需要預設未包含在 Windows Server 2012 和 2012 R2 �
 
 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。
 
-如果未安裝，您可以[下載並安裝 WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
+如果未安裝，您可以[下載並安裝 WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure)。
 
 ## <a name="prepare-windows-server-2008-r2"></a>準備 Windows Server 2008 R2
 
@@ -48,7 +48,7 @@ Windows Admin Center 需要預設未包含在 Windows Server 2008 R2 中的 Powe
 
 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。
 
-如果未安裝，您可以[下載並安裝 WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
+如果未安裝，您可以[下載並安裝 WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure)。
 
 在 Powershell 主控台中執行 `Enable-PSRemoting –force`，以啟用 PowerShell 遠端連線。 
 
@@ -108,15 +108,15 @@ Microsoft Hyper-V Server 2016 現已準備好可以使用 Windows Admin Center �
 3. 啟用檔案伺服器角色
 4. 啟用 PowerShell 的 Hyper-V 模組
 
-### <a name="step-1-install-windows-management-framework-51"></a>步驟 1：安裝 Windows Management Framework 5。1
+### <a name="step-1-install-windows-management-framework-51"></a>步驟 1:安裝 Windows Management Framework 5。1
 
 Windows Admin Center 需要預設未包含在 Microsoft Hyper-V Server 2012 R2 中的 PowerShell 功能。 若要使用 Windows Admin Center 管理 Microsoft Hyper-V Server 2012 R2，您必須安裝 WMF 5.1 或更新版本。
 
 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。 
 
-如果尚未安裝，您可以[下載 WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
+如果尚未安裝，您可以[下載 WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure)。
 
-### <a name="step-2-enable-remote-management"></a>步驟 2：啟用遠端管理
+### <a name="step-2-enable-remote-management"></a>步驟 2:啟用遠端管理
 
 若要啟用 Hyper-V Server 遠端管理：
 

@@ -1,6 +1,6 @@
 ---
 title: nslookup set type
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4fb647b723586202e2bd88f1ab4c8943e305a73a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bc4da57f2e0b8e9727523ed72d55e6042adee5e9
+ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436491"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975286"
 ---
 # <a name="nslookup-set-type"></a>nslookup set type
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 變更查詢的資源記錄類型。
 ## <a name="syntax"></a>語法
@@ -30,33 +30,33 @@ ms.locfileid: "66436491"
 set type=<ResourceRecordtype>
 ```
 ## <a name="parameters"></a>參數
-<ResourceRecordtype> 指定的 DNS 資源記錄類型。 預設資源記錄類型為 a。下表列出有效的值，這個命令。
+<ResourceRecordtype>指定 DNS 資源記錄類型。 預設的資源記錄類型為。下表列出此命令的有效值。
 
 | 值 |                                                   描述                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
-|   A   |                                      指定的電腦名稱&#39;IP 位址                                      |
-|  任何  |                                     指定的電腦名稱&#39;IP 位址。                                      |
-| CNAME |                                    指定別名的正式名稱。                                     |
-|  GID  |                                  指定群組名稱的群組識別碼。                                  |
-| HINFO |                          指定的電腦名稱&#39;的 CPU 和作業系統的類型。                           |
-|  MB   |                                        指定的信箱的網域名稱。                                         |
-|  MG   |                                         指定郵件的群組成員。                                          |
-| MINFO |                                   指定信箱或郵件清單資訊。                                   |
-|  MR   |                                     指定電子郵件重新命名網域名稱。                                      |
-|  MX   |                                          指定郵件交換程式。                                          |
-|  NS   |                                 指定的具名區域的 DNS 名稱伺服器。                                 |
-|  PTR  | 指定的電腦名稱，如果查詢是 IP 位址;否則，請指定其他資訊的指標。 |
-|  SOA  |                                指定開始授權的 DNS 區域。                                 |
-|  TXT  |                                         指定的文字資訊。                                         |
-|  UID  |                                         指定的使用者識別碼。                                          |
-| UINFO |                                         指定的使用者資訊。                                         |
-|  WKS  |                                         描述已知的服務。                                         |
+|   A   |                                      指定電腦&#39;的 IP 位址                                      |
+|  任何  |                                     指定電腦&#39;的 IP 位址。                                      |
+| CNAME |                                    指定別名的標準名稱。                                     |
+|  GID  |                                  指定組名的群組識別碼。                                  |
+| HINFO |                          指定電腦&#39;的 CPU 和類型的作業系統。                           |
+|  MB   |                                        指定信箱的功能變數名稱。                                         |
+|  MG   |                                         指定郵件群組成員。                                          |
+| MINFO |                                   指定信箱或郵寄清單資訊。                                   |
+|  MR   |                                     指定郵件重新命名功能變數名稱。                                      |
+|  MX   |                                          指定郵件交換器。                                          |
+|  NS   |                                 指定命名區域的 DNS 名稱伺服器。                                 |
+|  指標  | 如果查詢是 IP 位址，則指定電腦名稱稱;否則，指定其他資訊的指標。 |
+|  SOA  |                                指定 DNS 區域的啟動許可權。                                 |
+|  TXT  |                                         指定文字資訊。                                         |
+|  UID  |                                         指定使用者識別碼。                                          |
+| UINFO |                                         指定使用者資訊。                                         |
+|  WKS  |                                         描述知名的服務。                                         |
 | {說明 |                                                       ?}                                                        |
 
-顯示的簡短摘要<strong>nslookup</strong>子命令
+顯示<strong>nslookup</strong>子命令的簡短摘要。
 ## <a name="remarks"></a>備註
-- <strong>設定類型</strong>命令會執行相同的功能<strong>設定 querytype</strong>命令。
-- 如需資源記錄類型的詳細資訊，請參閱 < 註解 (Rfc) 1035年的要求。
-  ## <a name="additional-references"></a>其他參考資料
-  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">命令列語法重點</a>
-  <a href="nslookup-set-querytype.md" data-raw-source="[nslookup set querytype](nslookup-set-querytype.md)">nslookup 設定 querytype</a>
+- <strong>Set type</strong>命令會執行與<strong>set querytype</strong>命令相同的功能。
+- 如需資源記錄類型的詳細資訊，請參閱徵求意見（Rfc）1035。
+  ## <a name="additional-references"></a>其他參考
+  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">命令列語法索引鍵</a>
+   <a href="nslookup-set-querytype.md" data-raw-source="[nslookup set querytype](nslookup-set-querytype.md)">nslookup set querytype</a>
