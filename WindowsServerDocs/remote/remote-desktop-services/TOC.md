@@ -66,6 +66,9 @@
 
 ## 存取您的遠端桌面資源
 ### [可用的遠端桌面用戶端](clients/remote-desktop-clients.md)
+### Windows 桌面用戶端
+#### [開始使用 Windows 桌面用戶端](clients/windowsdesktop.md)
+#### [Windows 桌面用戶端的新功能](clients/windowsdesktop-whatsnew.md)
 ### Windows Store 用戶端
 #### [ Windows Store 用戶端](clients/windows.md)
 #### [Windows Store 用戶端中的新功能](clients/windows-whatsnew.md)

@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 665363c17cf5cb8d8ad52872128f2f63c07ea683
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810772"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868547"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
-> 適用於：Windows Server 2019
+> 適用於：Windows Server Standard 2012 R2
 
 本主題說明 Windows Server 2019 中的一些新功能。 Windows Server 2019 建置在 Windows Server 2016 的強大基礎上，並在四個關鍵主題上帶來多項改革：混合式雲端、安全性、應用程式平台和超融合式基礎結構 (HCI)。
 
@@ -214,7 +214,7 @@ Windows Server 2019 中的[高效能 SDN 閘道](https://docs.microsoft.com/wind
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>適用於 SDN 的新部署 UI 以及 Windows Admin Center 擴充功能
 
-現在，使用 Windows Server 2019，透過新的部署 UI 和 Windows Admin Center 擴充功能可讓任何人控制 SDN 的能力，輕鬆進行部署與管理。 
+現在，使用 Windows Server 2019，透過新的部署 UI 和 Windows Admin Center 擴充功能輕鬆進行部署與管理，可讓任何人運用 SDN 的強大功能。 
 
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Hyper-V VM 的持續性記憶體支援
 

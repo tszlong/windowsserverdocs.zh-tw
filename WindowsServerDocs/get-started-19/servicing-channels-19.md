@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: cdb831eb772114b86e6260063dff6ad881f2f37b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 639623b4ebb21a4f6a0025a71721204cbfc4f496
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280337"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868603"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -25,7 +25,7 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 ## <a name="long-term-servicing-channel-ltsc"></a>長期維護通道 (LTSC)
 
-這是您已經熟悉的發行模型 (先前稱為「長期維護分支  」)，Windows Server 依此模型每隔 2-3 年發行一次新的主要版本。 使用者有權接受 5 年的主要支援和 5 年的延伸支援。 此通道適用於需要較長期維護選項及功能穩定性的系統。 Windows Server 2016 及舊版 Windows Server 的部署不會受到新的半年通道發行影響。 長期維護通道仍將繼續收到安全性及非安全性更新，但無法獲得新特色與新功能。
+這是您已經熟悉的發行模型 (先前稱為「長期維護*分支*」)，Windows Server 依此模型每隔 2-3 年發行一次新的主要版本。 使用者有權接受 5 年的主要支援和 5 年的延伸支援。 此通道適用於需要較長期維護選項及功能穩定性的系統。 Windows Server 2016 及舊版 Windows Server 的部署不會受到新的半年通道發行影響。 長期維護通道仍將繼續收到安全性及非安全性更新，但無法獲得新特色與新功能。
 
 > [!Note]  
 > **目前的長期維護通道 (LTSC) 產品是 Windows Server 2019**。 如果您想要繼續留在這個通道中，就必須安裝 (或繼續使用) Windows Server 2019，而這可使用 [Server Core] 安裝選項或 [含桌面體驗的伺服器] 安裝選項來安裝。
@@ -102,7 +102,7 @@ Windows Server 2019 之前發行的半年通道版本使用 Windows Server 2016 
 
 ## <a name="why-do-semi-annual-channel-releases-offer-only-the-server-core-installation-option"></a>為什麼半年通道版本只提供核心安裝選項？
 
-每一次規劃 Windows Server 發行版本時，我們採用的最重要步驟就是傾聽客戶意見反應：您使用 Windows Server 的情況如何？ 哪些功能會對您的 Windows Server 部署造成極大影響，甚至衝擊日常業務？ 您的意見反應讓我們知道盡快且盡可能有效率提供新創新是主要優先考量。 此時就那些以最快速度進行創新的客戶來看，我們得知他們主要使用 PowerShell 的命令列指令碼來管理資料中心，因此對含有桌面體驗的 Windows Server 安裝中提供的桌面 GUI 沒有強烈需求，特別是現在已有 [Windows Admin Center](../manage/windows-admin-center/overview.md) 可用來遠端管理伺服器。
+每一次規劃 Windows Server 發行版本時，我們採用的最重要步驟就是傾聽客戶意見反應：您使用 Windows Server 的情況如何？ 哪些功能會對您的 Windows Server 部署造成極大影響，甚至衝擊日常業務？ 您的意見反應讓我們知道盡快且盡可能有效率提供新創新是主要優先考量。 同時，對於那些以最快速度進行創新的客戶而言，我們得知他們主要使用 PowerShell 的命令列指令碼來管理資料中心，因此對含有桌面體驗的 Windows Server 安裝中所提供的桌面 GUI 沒有強烈需求，特別是現在已有 [Windows Admin Center](../manage/windows-admin-center/overview.md) 可用來遠端管理伺服器。
 
 我們只要將重點放在 Server Core 安裝選項，就可以將更多資源投向這些新創新，同時還能維持傳統 Windows Server 平台功能及應用程式相容性。 如果您有關於這一點或其他有關 Windows Server 及未來發行版本之問題的意見反應，可以透過[意見反應中樞](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)提出建議和意見。
 

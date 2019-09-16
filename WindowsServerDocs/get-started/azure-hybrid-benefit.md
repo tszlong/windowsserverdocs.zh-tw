@@ -8,12 +8,12 @@ ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
-ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63686390"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868518"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>適用於 Windows Server 的 Azure Hybrid Benefit
 
@@ -101,7 +101,7 @@ Microsoft 保留隨時稽核最終客戶以驗證其是否符合 Azure Hybrid Be
 
 ## <a name="deployment-guidance"></a>部署指導 
 
-我們已為所有擁有符合資格授權的客戶啟用預先建置庫映像可用性，無論其購買地點，此外也允許合作夥伴可以代表客戶執行部署。 
+我們已為所有擁有符合資格授權的客戶啟用預先建置庫映像可用性 (無論其購買地點)，此外也允許合作夥伴可以代表客戶執行部署。 
 
 請[至此處](https://azure.microsoft.com/pricing/hybrid-use-benefit/)尋找所有可用部署選項的指示，包括： 
 -   強調運用預先建置庫映像之新部署體驗的詳細影片

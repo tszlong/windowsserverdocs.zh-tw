@@ -8,18 +8,18 @@ ms.author: niwashbu
 ms.date: 08/22/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7af852ba934de2dd29a76972d7a7ec73606e9b4c
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: cdd7986486fd3cad07f5e4577aaf0ab404bfb5d3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009114"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869592"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
 > 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-**Windows Admin Center** (之前代號為 **Project Honolulu**) 是 Windows Server 隨附管理工具的演進。這是將本機與遠端伺服器所有管理層面結合在一起的單一窗口。 因為是在本機部署、以瀏覽器為基礎的管理體驗，並不需要網際網路連線和 Azure。 Windows Admin Center 讓您完全控制您的部署的各個層面，包括未連線至網際網路的私人網路。
+**Windows Admin Center** (之前代號為 **Project Honolulu**) 是 Windows Server 隨附管理工具的演進。這是將本機與遠端伺服器所有管理層面結合在一起的單一窗口。 因為是在本機部署、以瀏覽器為基礎的管理體驗，所以並不需要網際網路連線和 Azure。 Windows Admin Center 讓您完全控制部署的各個層面，包括未連線至網際網路的私人網路。
 
 ## <a name="introduction"></a>簡介
 
