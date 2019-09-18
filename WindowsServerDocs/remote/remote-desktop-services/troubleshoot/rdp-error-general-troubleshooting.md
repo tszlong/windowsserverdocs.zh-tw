@@ -13,12 +13,12 @@ manager: ''
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a1a2e325f3860f0b06353a59c5d37f6b5b2a1d11
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 39b11dac044c38f1ae80d4401fbb66af0317ab56
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529928"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870700"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>針對一般遠端桌面連線進行疑難排解
 

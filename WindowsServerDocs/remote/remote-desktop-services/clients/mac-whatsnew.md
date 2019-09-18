@@ -8,26 +8,26 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae58103b00941bb71d447641b1cdab7c02fa20b
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 9fbd3e9c5f7938fbf6a80e9f5dc950a2c0a9a257
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70151025"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987344"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS 用戶端中的新功能
 
-我們會定期更新[適用於 macOS 的遠端桌面用戶端](remote-desktop-mac.md)，進而新增功能並修正問題。 查看以下最新的更新。
+我們會定期更新[適用於 macOS 的遠端桌面用戶端](remote-desktop-mac.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 如果您遇到任何問題，一律可以透過 [協助] > [回報問題]  與我們連絡。
 
 ## <a name="updates-for-version-1030"></a>10.3.0 版的更新
-*發佈日期：8/27/19*
+*發行日期：8/27/19*
 
 自上次更新之後已經過數週的時間，但在此期間，我們非常努力地工作。 10.3.0 版導入了一些新功能，以及許多內部修正程式。
 
@@ -46,14 +46,14 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-10213"></a>10.2.13 版的更新
 
-*發佈日期：5/8/2019*
+*發行日期：5/8/2019*
 
 - 修正透過 RD 閘道連線時所發生的停止回應問題。
 - 在 [新增摘要] 對話方塊中新增隱私權注意事項。
 
 ## <a name="updates-for-version-10212"></a>10.2.12 版的更新
 
-*發佈日期：4/16/2019*
+*發行日期：4/16/2019*
 
 - 解決透過 RD 閘道連線時所發生的隨機中斷連線問題 (錯誤碼為 0x904)。
 - 修正造成應用程式喜好設定中解析度清單在安裝後呈現空白的 Bug。
@@ -62,20 +62,20 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-10210"></a>10.2.10 版的更新
 
-*發佈日期：3/30/2019*
+*發行日期：3/30/2019*
 
 - 在此版本中，我們解決了最新 macOS 10.14.4 更新所造成的不穩定問題。 我們也修正了當伺服器使用 NVIDIA 硬體所編碼 AVC 轉碼器資料解碼時所出現的錯誤繪製問題。
 
 ## <a name="updates-for-version-1029"></a>10.2.9 版的更新
 
-*發佈日期：3/6/2019*
+*發行日期：3/6/2019*
 
 - 在此版本中，我們修正了伺服器重新導向時可能發生的 RD 閘道連線問題。
 - 我們也解決了 10.2.8 更新所造成的 RD 閘道迴歸問題。
 
 ## <a name="updates-for-version-1028"></a>10.2.8 版的更新
 
-*發佈日期：3/1/2019*
+*發行日期：3/1/2019*
 
 - 解決使用 RD 閘道時所呈現的連線問題。
 - 修正連線時所顯示的不正確憑證警告。
@@ -85,13 +85,13 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1027"></a>10.2.7 版的更新
 
-*發佈日期：2/6/2019*
+*發行日期：2/6/2019*
 
 - 在此版本中，我們解決了使用 AVC444 模式時所出現的圖形錯誤繪製問題 (由伺服器編碼 Bug 所造成)。
 
 ## <a name="updates-for-version-1026"></a>10.2.6 版的更新
 
-*發佈日期：1/28/2019*
+*發行日期：1/28/2019*
 
 - 新增連線到目前 Windows 10 版本時可用的 AVC (420 和 444) 轉碼器支援。
 - 在 [調整成視窗大小] 模式中，現在會在調整大小之後立即重新整理視窗，以確保內容以正確的內插補點層級呈現。
@@ -105,7 +105,7 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1024"></a>10.2.4 版的更新
 
-*發佈日期：12/18/2018*
+*發行日期：12/18/2018*
 
 - 新增 macOS Mojave 10.14 的深色模式支援。
 - 從 Microsoft 遠端桌面 8 匯入的選項現在會出現在連線中心 (如果其為空白)。
@@ -117,7 +117,7 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1023"></a>10.2.3 版的更新
 
-*發佈日期：11/06/2018*
+*發行日期：11/06/2018*
 
 - 新增遠端應用程式案例的 [remoteapplicationcmdline] RDP 檔案設定支援。
 - 從 RDP 檔案啟動時，工作階段視窗標題現在會包含 RDP 檔案的名稱 (及伺服器名稱)。
@@ -133,7 +133,7 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1022"></a>10.2.2 版的更新
 
-*發佈日期：10/09/2018*
+*發行日期：10/09/2018*
 
 - 全新的連線中心支援拖放作業、手動排列桌面、可在清單檢視模式中調整大小的資料行、依據資料行進行排序，以及更簡單的群組管理。
 - 連線中心現在會在關閉應用程式時記住最後一個作用中樞紐 (桌面或摘要)。
@@ -162,14 +162,14 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1021"></a>10.2.1 版的更新
 
-*發佈日期：08/06/2018*
+*發行日期：08/06/2018*
 
 - 允許連線到加入 Azure Active Directory (AAD) 的電腦。 若要連線到加入 AAD 的電腦，您的使用者名稱必須採用下列其中一種格式：“AzureAD\user” 或 “AzureAD\user@domain”。
 - 解決影響在遠端工作階段中使用智慧卡的一些 Bug。
 
 ## <a name="updates-for-version-1020"></a>10.2.0 版的更新
 
-*發佈日期：07/24/2018*
+*發行日期：07/24/2018*
 
 - 合併更新以符合 GDPR。
 - 現在接受 MicrosoftAccount\username@domain 作為有效的使用者名稱。
@@ -198,7 +198,7 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1018"></a>10.1.8 版的更新
 
-*發佈日期：05/04/2018*
+*發行日期：05/04/2018*
 
 - 新增透過調整工作階段視窗大小來變更遠端解析度的支援！
 - 修正遠端資源摘要下載所需時間過長的案例。
@@ -206,7 +206,7 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1017"></a>10.1.7 版的更新
 
-*發佈日期：04/05/2018*
+*發行日期：04/05/2018*
 
 - 進行安全性修正，以納入 CredSSP 加密預示修復更新 (如 CVE-2018-0886 中所述)。
 - 改善 RemoteApp 圖示和滑鼠游標呈現，以解決回報的錯誤繪製問題。
@@ -220,7 +220,7 @@ ms.locfileid: "70151025"
 
 ## <a name="updates-for-version-1016"></a>10.1.6 版的更新
 
-*發佈日期：03/26/2018*
+*發行日期：03/26/2018*
 
 - 修正 RemoteApp 視窗自行重新排序的問題。
 - 解決造成某些 RemoteApp 視窗卡在其父視窗後方的 Bug。

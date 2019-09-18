@@ -13,18 +13,18 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 08/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a31d01d1c5775c837010eca964c72fad8b5c92
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 0f6b6ac42c096c6c80404c2d650905e73da8a97a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000695"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868653"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>從 Windows Server 2019 開始移除或計劃取代的功能
 
->適用於：Windows Server 2019
+>適用於：Windows Server Standard 2012 R2
 
-每個版本的 Windows Server 都會加入新特色與功能；我們有時也會移除特性與功能，這通常是因為我們新增了更好的選項。 以下是有關我們在 Windows Server 2019 中已移除的特色與功能詳細資訊。
+每個版本的 Windows Server 都會新增新特色與功能；我們有時也會移除特性與功能，這通常是因為我們新增了更好的選項。 以下是有關我們在 Windows Server 2019 中已移除的特色與功能詳細資訊。
 
 > [!TIP]
 > - 您可以加入 [Windows 測試人員計畫](https://insider.windows.com)來優先存取 Windows Server 組建，這是測試功能變更的絕佳方式。

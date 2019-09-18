@@ -13,12 +13,12 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b30aae3f745f7ed9d40a9f4884205d9ca01f0eef
-ms.sourcegitcommit: f62a17bf72a772ee46fe807a5a482923e67ae7e7
+ms.openlocfilehash: 546f992a21576795383497c0fac7fb98761d0da5
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060305"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871249"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 

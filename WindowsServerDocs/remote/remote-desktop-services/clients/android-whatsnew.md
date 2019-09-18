@@ -8,25 +8,25 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ee224cd5bf7ccdeb3b0d55d091a5d322583c101
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 7a2061878cdbc7a5ace923835a334736e976e248
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150997"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987335"
 ---
 # <a name="whats-new-in-the-android-client"></a>Android 用戶端中的新功能
 
-我們會定期更新[適用於 Android 的遠端桌面用戶端](remote-desktop-android.md)，進而新增功能並修正問題。 查看以下最新的更新。
+我們會定期更新[適用於 Android 的遠端桌面用戶端](remote-desktop-android.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 ## <a name="updates-for-version-8171"></a>8\.1.71 版的更新
 
-*發佈日期：06/05/2019*
+*發行日期：06/05/2019*
 
 - 已移除對 Android 4.0.3 及 4.0.4 版的支援。
 - 已修正相同名稱的遠端資源未正確顯示的問題。
@@ -35,7 +35,7 @@ ms.locfileid: "70150997"
 
 ## <a name="updates-for-version-8170"></a>8\.1.70 版的更新
 
-*發佈日期：05/06/2019*
+*發行日期：05/06/2019*
 
 - 已解決導致工作階段內容在具有波陷顯示的裝置上無法正確調整大小的問題。
 - 已修正 Enter 鍵在部分 Chromebook 裝置上無法運作的問題。
@@ -43,13 +43,13 @@ ms.locfileid: "70150997"
 
 ## <a name="updates-for-version-8169"></a>8\.1.69 版的更新
 
-*發佈日期：04/22/2019*
+*發行日期：04/22/2019*
 
 - 小錯誤修正和改進。
 
 ## <a name="updates-for-version-8168"></a>8\.1.68 版的更新
 
-*發佈日期：04/15/2019*
+*發行日期：04/15/2019*
 
 - 已修正遠端資源摘要 URL 無法載入的問題。
 - 已修正首次在執行 Android 9.0 的 Samsung DeX 上啟動時，應用程式以手機大小啟動的問題。
@@ -58,13 +58,13 @@ ms.locfileid: "70150997"
 
 ## <a name="updates-for-version-8167"></a>8\.1.67 版的更新
 
-*發佈日期：03/28/2019*
+*發行日期：03/28/2019*
 
 - 已修正在遠端工作階段輸入時重複按下按鍵的問題。
 
 ## <a name="updates-for-version-8166"></a>8\.1.66 版的更新
 
-*發佈日期：03/19/2019*
+*發行日期：03/19/2019*
 
 - 已新增對 [Windows 虛擬桌面](https://aka.ms/wvd)的初始支援。
 - 已修正在部分 Chromebook 裝置和 DeX 案例中，導致黑色區域顯示在畫面底部的問題。
@@ -75,13 +75,13 @@ ms.locfileid: "70150997"
 
 ## <a name="updates-for-version-8161"></a>8\.1.61 版的更新
 
-*發佈日期：07/05/2018*
+*發行日期：07/05/2018*
 
 - 已新增對 Samsung DeX 的初始支援 (Android 8.0+)。
 
 ## <a name="updates-for-version-8160"></a>8\.1.60 版的更新
 
-*發佈日期：04/30/2018*
+*發行日期：04/30/2018*
 
 - 解決 CVE-2018-0886 中所述 CredSSP 加密 Oracle 修復的更新。
 - 已修正從先前版本啟動連線時發生損毀的問題。

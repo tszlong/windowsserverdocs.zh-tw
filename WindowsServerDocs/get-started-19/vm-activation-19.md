@@ -12,12 +12,12 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4d1cdcfe8325a246e2752e1d1f2a3ad536598658
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688699"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868565"
 ---
 # <a name="automatic-virtual-machine-activation"></a>自動虛擬機器啟用
 
@@ -49,9 +49,9 @@ AVMA 需要執行 Windows Server 2019 Datacenter、Windows Server 2016 Datacente
 
 以下是不同版本主機可以啟用的客體：
 
-|伺服器主機版本|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
+|伺服器主機版本|Windows Server Standard 2012 R2|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
-|Windows Server 2019|X|X|X|
+|Windows Server Standard 2012 R2|X|X|X|
 |Windows Server 2016| |X|X|
 |Windows Server 2012 R2| ||X|
 

@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 88cab1965e299c7d25c177125cb504432bf987e8
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 746434884701ba1a8a6781b485b3f1540abe975e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810646"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868418"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 啟用
 
@@ -43,8 +43,8 @@ KMS 主機不需要是專用伺服器，而且 KMS 可以與其他服務並存�
 
 > [!NOTE]  
 > 根據 KMS 伺服器正在執行的作業系統，以及您要啟動的作業系統，您可能需要安裝一或多個更新：
-> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安裝必須更新，以支援執行 Windows 10 的用戶端啟用。 如需詳細資訊，請參閱  [能讓 Windows 7 和 Windows Server 2008 R2 KMS 主機啟動 Windows 10](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10) (機器翻譯)。  
-> - Windows Server 2012 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 的用戶端、或更新版本之用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows Server 2012 年 7 月 2016 年更新彙總套件](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012) (機器翻譯)。 
+> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安裝必須更新，以支援執行 Windows 10 的用戶端啟用。 如需詳細資訊，請參閱 [能讓 Windows 7 和 Windows Server 2008 R2 KMS 主機啟動 Windows 10 的更新](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10) (機器翻譯)。  
+> - Windows Server 2012 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 的用戶端、或更新版本之用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows Server 2012 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012) (機器翻譯)。 
 > - Windows 8.1 或 Windows Server 2012 R2 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 的用戶端、或更新版本之用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2)(機器翻譯)。  
 > - Windows Server 2008 R2 無法更新以支援執行 Windows Server 2016 的用戶端、或更新版本之作業系統啟用。 
 

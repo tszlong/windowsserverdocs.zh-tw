@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 964139ac5fdaee4d580d29ab0f7543c7d5f15d0b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810712"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868454"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
@@ -68,7 +68,7 @@ ms.locfileid: "66810712"
 
 ## <a name="windows-server-ltscltsb-versions"></a>Windows Server LTSC/LTSB 版本
 
-### <a name="windows-server-2019"></a>Windows Server 2019
+### <a name="windows-server-2019"></a>Windows Server Standard 2012 R2
 | 作業系統版本       | KMS 用戶端安裝識別碼          |
 |--------------------------------|-------------------------------|
 | Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG  | 
@@ -206,7 +206,7 @@ ms.locfileid: "66810712"
 | Windows 7 企業版 E                           | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
 
 
-另請參閱
+請參閱
 
 • [大量啟用規劃](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
 

@@ -68,6 +68,7 @@
 ### [可用的遠端桌面用戶端](clients/remote-desktop-clients.md)
 ### Windows 桌面用戶端
 #### [開始使用 Windows 桌面用戶端](clients/windowsdesktop.md)
+#### [適用於系統管理員的 Windows 桌面用戶端](clients/windowsdesktop-admin.md)
 #### [Windows 桌面用戶端的新功能](clients/windowsdesktop-whatsnew.md)
 ### Windows Store 用戶端
 #### [ Windows Store 用戶端](clients/windows.md)

@@ -8,27 +8,27 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eaa9a187b4a8f7879cabf15724bfcfe3f625939
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 14d5eab00271ea825bb84a2d8189a44c38fa5388
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150950"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987370"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
-我們會定期更新[遠端桌面 Web 用戶端](remote-desktop-web-client.md)，進而新增功能並修正問題。 查看以下最新的更新。
+我們會定期更新[遠端桌面 Web 用戶端](remote-desktop-web-client.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 > [!NOTE]
 > 我們已變更 Web 用戶端的版本控制系統。 從 1.0.18.0 版開始，所有 Web 用戶端發行版本將包含數字 (採用 "W.X.Y.Z" 的格式)。 遠端桌面 Web 用戶端的版本號碼結尾一律是 0 (例如，W.X.Y.0)。 每個 Windows 虛擬桌面 Web 用戶端版本都會變更最後一位數，直到發行下一版遠端桌面 Web 用戶端為止 (例如 1.0.18.1)。
 
 ## <a name="updates-for-version-10180"></a>1\.0.18.0 版的更新
-*發佈日期：5/14/2019*
+*發行日期：5/14/2019*
 
 - 已在 [設定] 索引標籤中新增 [資源啟動方法] 設定，讓使用者在瀏覽器中開啟資源，或下載要使用另一個用戶端處理的 .rdp 檔案。 此設定可以由您的系統管理員設定。關於這項功能的系統管理員設定的詳細資料，可以在 [Web 用戶端設定文件](remote-desktop-web-client-admin.md)中找到。
 - 已修正色彩呈現問題，可讓遠端工作階段中的色彩更鮮明。
@@ -41,7 +41,7 @@ ms.locfileid: "70150950"
 - 已修正資源工作列中的遠端資源圖示大小。
 
 ## <a name="updates-for-version-1011"></a>1\.0.11 版的更新
-*發佈日期：2/22/2019*
+*發行日期：2/22/2019*
 
 - 已在 Windows Server 2019 中啟用不含 RD 閘道的 RD 代理人連線。
 - 依字母順序排序摘要 (亦即，RemoteApps 第一個、Desktops 第二個)。
@@ -50,7 +50,7 @@ ms.locfileid: "70150950"
 - 多個錯誤修正。
 
 ## <a name="updates-for-version-107"></a>1\.0.7 版的更新
-*發佈日期：1/24/2019*
+*發行日期：1/24/2019*
 
 - 現在支援在內部網路離線使用。
 - 已改善在非 Microsoft Edge 瀏覽器上的呈現問題。
@@ -63,7 +63,7 @@ ms.locfileid: "70150950"
 - 多個錯誤修正。
 
 ## <a name="updates-for-version-101"></a>1\.0.1 版的更新
-*發佈日期：10/29/2018*
+*發行日期：10/29/2018*
 
 - 已在 [關於] 頁面上新增 [擷取支援資訊]  的選項來診斷問題。
 - 現在支援 inPrivate 模式。
@@ -75,14 +75,14 @@ ms.locfileid: "70150950"
 - 多個錯誤修正。
 
 ## <a name="updates-for-version-100"></a>1\.0.0 版的更新
-*發佈日期：07/16/2018*
+*發行日期：07/16/2018*
 
 - 現在已可廣泛使用遠端桌面 Web 用戶端。
 - 系統管理員可以全域關閉 Web 用戶端的遙測。
 - 多個錯誤修正。
 
 ## <a name="updates-for-version-090"></a>0\.9.0 版的更新
-*發佈日期：07/05/2018*
+*發行日期：07/05/2018*
 
 - Web 用戶端的全新登入體驗。
 - 啟動桌面或應用程式連線 (單一登入) 時，不再提示輸入認證。
@@ -91,7 +91,7 @@ ms.locfileid: "70150950"
 - 多個錯誤修正。
 
 ## <a name="updates-for-version-081"></a>0\.8.1 版的更新
-*發佈日期：05/17/2018*
+*發行日期：05/17/2018*
 
 - 解決 CVE-2018-0886 中所述 CredSSP 加密 Oracle 修復的更新。
 - 已修正啟用列印時，部分語言連線失敗的問題。
@@ -99,7 +99,7 @@ ms.locfileid: "70150950"
 - 已新增 [說明]  和 [意見反應]  選項。
 
 ## <a name="updates-for-version-080"></a>0\.8.0 版的更新
-*發佈日期：03/28/2018*
+*發行日期：03/28/2018*
 
 - Web 用戶端最初的公開預覽版本。
 - 使用 **CTRL+C** 和 **CTRL+V**，透過剪貼簿複製/貼上文字。

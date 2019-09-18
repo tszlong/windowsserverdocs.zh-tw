@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 1a9496a121fc45df0b788ea56d50db922fd24536
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: fe2f82c373b0014a3f385dcfad77ec11a0b1e6c0
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66749445"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870207"
 ---
 ## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>在包含桌面體驗的 Windows Server 2016 上停用系統服務的指引
 

@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f5a0808148068282c218343a923b357267e724e5
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 97f7c3e26a54b9170ebc65e0c48acd964d9e2429
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150945"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871164"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -99,7 +99,7 @@ ms.locfileid: "70150945"
    - **電腦名稱** - 電腦的名稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊附加到電腦名稱 (例如 **MyDesktop:3389** 或 **10.0.0.1:3389**)。
    - **使用者名稱** – 用來存取遠端電腦的使用者名稱。 您可以使用下列格式：*user_name*、*domain\user_name* 或 `user_name@domain.com`。 您也可以指定是否要提示輸入使用者名稱與密碼。
 3. 您也可以設定下列其他選項：
-   - **易記名稱 (選擇性)** – 您要連線電腦的易記名稱。 您可以使用任何字串，但如果您未指定易記名稱，則會顯示電腦名稱。
+   - **易記名稱 (選擇性)** – 您要連線電腦的易記名稱。 您可以使用任何字串，但如果您未指定易記名稱，就會顯示電腦名稱。
    - **閘道 (選擇性)** - 您要用來連線至公司內部網路上的虛擬桌面、RemoteApp 程式以及工作階段型桌面的遠端桌面閘道。 向您的系統管理員取得閘道的相關資訊。
    - **音效** – 選擇要在遠端工作階段期間用於音訊的裝置。 您可以選擇在本機裝置、遠端裝置上播放音效，或者完全不要播放音效。
    - **交換滑鼠按鈕** – 每當滑鼠手勢使用滑鼠左按鈕傳送命令時，它會改為使用滑鼠右按鈕傳送相同的命令。 如果遠端電腦是針對慣用左手的滑鼠模式而設定，則這是必要的。
@@ -128,7 +128,7 @@ ms.locfileid: "70150945"
 
 ## <a name="manage-your-user-accounts"></a>管理您的使用者帳戶
 
-當您連線至桌面或遠端資源時，您可以儲存使用者帳戶，以便再次從中選取。
+當您連線至桌面或遠端資源時，您可以儲存使用者帳戶以便再次從中選取。
 
 若要建立新的使用者帳戶：
 
@@ -155,7 +155,7 @@ ms.locfileid: "70150945"
 2. 點選 [新增遠端桌面閘道]  。
 3. 輸入下列資訊：
    - **伺服器名稱** - 您想要用來作為閘道的電腦名稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊新增至伺服器名稱 (例如：**RDGateway:443** or **10.0.0.1:443**)。
-   - **使用者名稱** - 您要連線的遠端桌面閘道所要使用的使用者名稱和密碼。 您也可以選取 [使用連線認證]  ，以使用針對遠端桌面連線而使用的相同使用者名稱和密碼。
+   - **使用者名稱** - 用於您要連線之遠端桌面閘道的使用者名稱與密碼。 您也可以選取 [使用連線認證]  ，以使用針對遠端桌面連線而使用的相同使用者名稱和密碼。
 
 ## <a name="navigate-the-remote-desktop-session"></a>瀏覽遠端桌面工作階段
 當您開始遠端桌面工作階段時，提供一些您可以用來瀏覽工作階段的工具。
@@ -195,7 +195,7 @@ ms.locfileid: "70150945"
 
 從 8.0.1 版開始，命令列會取代公用程式列。 您可以切換滑鼠模式，並返回命令列中的連線中心。
 
-## <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>在遠端工作階段中使用直接觸控手勢和滑鼠模式
+## <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>在遠端工作階段中使用直接輕觸手勢和滑鼠模式
 
 用戶端會使用標準的輕觸手勢。 您也可以使用輕觸手勢來複寫遠端桌面上的滑鼠動作。 下表中定義可用的滑鼠模式。
 
@@ -243,4 +243,4 @@ iOS 用戶端目前僅支援 Swiftpoint 滑鼠。 請參閱 [iOS 用戶端中的
 - 符號：Alt+英數字元鍵根據所設定的語言，將會產生不同的符號
 
 > [!TIP]
-> 隨時歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。
+> 歡迎隨時提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。

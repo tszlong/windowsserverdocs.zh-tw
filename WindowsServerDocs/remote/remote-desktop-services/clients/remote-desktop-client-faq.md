@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e0dbe709681cf679347ccad2677ff3cda6690f3d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804956"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871228"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>關於遠端桌面用戶端的常見問題集
 
@@ -234,7 +234,7 @@ Mac 鍵盤有許多類型的配置。 其中有些是 Mac 的特定配置或自�
 ### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>「無法剖析 NTLM 挑戰」錯誤有何意義？
 此錯誤是遠端電腦的設定不正確所導致。 請確定遠端電腦上的 RDP 安全性層級設定設為「用戶端相容」。 (如需相關協助，請洽詢系統管理員。)
 
-### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>「TS_RAP 不允許您連線至指定的主機」有何意義？
+### <a name="what-does-ts_rap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>「TS_RAP 不允許您連線至指定的主機」有何意義？
 當閘道伺服器上的資源授權原則禁止您的使用者名稱連線至遠端電腦時，就會發生此錯誤。 這可能會在下列實例中發生：
 
 - 遠端電腦名稱與閘道的名稱相同。 隨後，當您嘗試連線至遠端電腦時，連線反而轉向至閘道，但您可能沒有其存取權限。 如果您需要連線至閘道，請不要將外部閘道名稱作為電腦名稱。 請改為使用 "localhost" 或 IP 位址 (127.0.0.1)，或是內部伺服器名稱。

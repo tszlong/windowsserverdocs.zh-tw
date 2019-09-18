@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc669fee4fbd31edc8813f16761ecb9f90532df
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 536d3265e6a29c2d5321d3d8a8ea3ecfa7b2cdcb
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810913"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868685"
 ---
 # <a name="windows-server-2019-activation"></a>Windows Server 2019 啟用
 
 >適用於：Windows Server 2019、Windows Server 2016
 
-下面資訊概述最初規劃金鑰管理服務 (KMS) 啟用 (與 Windows Server 2019 相關) 時必須檢閱的考量。 如需與此處未列出舊版作業系統相關的 KMS 啟用資訊，請參閱 [Step 1:Review and Select Activation Methods](https://technet.microsoft.com/library/jj134256(WS.11).aspx) (步驟 1：檢閱和選取啟用方法)。
+下面資訊概述最初規劃金鑰管理服務 (KMS) 啟用 (與 Windows Server 2019 相關) 時必須檢閱的考量。 如需與此處未列出舊版作業系統相關的 KMS 啟用資訊，請參閱[步驟 1：檢閱和選取啟用方法](https://technet.microsoft.com/library/jj134256(WS.11).aspx)。
 
 KMS 會使用用戶端-伺服器模式來啟用用戶端。 KMS 用戶端會連線到 KMS 伺服器 (稱為 KMS 主機) 來啟用。 KMS 主機必須在您的區域網路上。
 
@@ -39,19 +39,19 @@ KMS 主機不需要是專用伺服器，而且 KMS 可以與其他服務並存�
 
 |產品金鑰群組|KMS 可以裝載於|由這個 KMS 主機啟用的 Windows 版本|  
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|  
-|Windows Server 2019 的大量授權|Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />Windows Server 2019<br /><br />|Windows Server 半年通道<br /><br />Windows Server 2019 (所有版本)<br /><br />Windows Server 2016 (所有版本)<br /><br />Windows 10 企業版 LTSC 2019 <br /><br />Windows 10 企業版 LTSC N 2019<br /><br />Windows 10 LTSB (2015 和 2016)<br /><br />Windows 10 專業版<br /><br />Windows 10 企業版<br /><br />Windows 10 工作站專業版<br /><br />Windows 10 教育版<br /><br />Windows Server 2012 R2 (所有版本)<br /><br />Windows 8.1 專業版<br /><br />Windows 8.1 Enterprise<br /><br />Windows Server 2012 (所有版本)<br /><br />Windows Server 2008 R2 (所有版本)<br /><br />Windows Server 2008 (所有版本)<br /><br />Windows 7 專業版<br /><br />Windows 7 企業版<br />| 
+|Windows Server 2019 的大量授權|Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />Windows Server Standard 2012 R2<br /><br />|Windows Server 半年通道<br /><br />Windows Server 2019 (所有版本)<br /><br />Windows Server 2016 (所有版本)<br /><br />Windows 10 企業版 LTSC 2019 <br /><br />Windows 10 企業版 LTSC N 2019<br /><br />Windows 10 LTSB (2015 和 2016)<br /><br />Windows 10 專業版<br /><br />Windows 10 企業版<br /><br />Windows 10 工作站專業版<br /><br />Windows 10 教育版<br /><br />Windows Server 2012 R2 (所有版本)<br /><br />Windows 8.1 專業版<br /><br />Windows 8.1 Enterprise<br /><br />Windows Server 2012 (所有版本)<br /><br />Windows Server 2008 R2 (所有版本)<br /><br />Windows Server 2008 (所有版本)<br /><br />Windows 7 專業版<br /><br />Windows 7 企業版<br />| 
 |Windows Server 2016 的大量授權|Windows Server 2012<br /><br />Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />|Windows Server 半年通道 <br><br>Windows Server 2016 (所有版本)<br /><br />Windows 10 LTSB (2015 和 2016)<br /><br />Windows 10 專業版<br /><br />Windows 10 企業版<br /><br />Windows 10 工作站專業版<br><br>Windows 10 教育版<br><br>Windows Server 2012 R2 (所有版本)<br /><br />Windows 8.1 專業版<br /><br />Windows 8.1 Enterprise<br /><br />Windows Server 2012 (所有版本)<br /><br />Windows Server 2008 R2 (所有版本)<br /><br />Windows Server 2008 (所有版本)<br /><br />Windows 7 專業版<br /><br />Windows 7 企業版<br /><br />| 
 |Windows 10 的大量授權|Windows 7<br /><br /> Windows 8.1<br /><br /> Windows 10|Windows 10 專業版<br /><br /> Windows 10 Professional N<br /><br /> Windows 10 企業版<br /><br /> Windows 10 Enterprise N<br /><br /> Windows 10 教育版<br /><br /> Windows 10 Education N<br /><br /> Windows 10 企業版 LTSB (2015)<br /><br /> Windows 10 企業版 LTSB N (2015)<br /><br /> Windows 10 工作站專業版<br><br>Windows 8.1 專業版<br /><br /> Windows 8.1 Enterprise<br /><br /> Windows 7 專業版<br /><br /> Windows 7 企業版<br /><br />|  
 |「適用於 Windows 10 的 Windows Server 2012 R2」的大量授權|Windows Server 2008 R2<br /><br /> Windows Server 2012 Standard<br /><br /> Windows Server 2012 Datacenter<br /><br /> Windows Server 2012 R2 Standard<br /><br />Windows Server 2012 R2 Datacenter|Windows 10 專業版<br /><br /> Windows 10 企業版<br /><br />Windows 10 企業版 LTSB (2015)<br><br>Windows 10 工作站專業版<br><br>Windows 10 教育版<br><br> Windows Server 2012 R2 (所有版本)<br /><br /> Windows 8.1 專業版<br /><br /> Windows 8.1 Enterprise<br /><br /> Windows Server 2012 (所有版本)<br /><br /> Windows Server 2008 R2 (所有版本)<br /><br /> Windows Server 2008 (所有版本)<br /><br />Windows 7 專業版<br /><br /> Windows 7 企業版|
 
 > [!NOTE]  
 > 根據 KMS 伺服器正在執行的作業系統，以及您要啟動的作業系統，您可能需要安裝一或多個更新：
-> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安裝必須更新，以支援執行 Windows 10 的用戶端啟用。 如需詳細資訊，請參閱 [Update that enables Windows 7 and Windows Server 2008 R2 KMS hosts to activate Windows 10](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10) (可讓 Windows 7 和 Windows Server 2008 R2 KMS 主機啟用 Windows 10 的更新)。  
-> - Windows Server 2012 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows Server 2012 的 2016 年 7 月更新彙總 套件](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012)。 
-> - Windows 8.1 或 Windows Server 2012 R2 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2)。  
+> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安裝必須更新，以支援執行 Windows 10 的用戶端啟用。 如需詳細資訊，請參閱 [能讓 Windows 7 和 Windows Server 2008 R2 KMS 主機啟動 Windows 10 的更新](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10) (機器翻譯)。  
+> - Windows Server 2012 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows Server 2012 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012) (機器翻譯)。 
+> - Windows 8.1 或 Windows Server 2012 R2 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2)(機器翻譯)。  
 > - Windows Server 2008 R2 無法更新以支援執行 Windows Server 2016、Windows Server 2019 的用戶端啟用，或是更新版本的作業系統啟用。 
 
-單一 KMS 主機可以支援無數台 KMS 用戶端。 如果您有 50 個以上的用戶端，建議您至少配備兩個 KMS 主機，以免其中一個 KMS 主機突然無法使用。 大部分的組織最多只需要兩個 KMS 主機就可以運作整個基礎結構。
+單一 KMS 主機可以支援無數台 KMS 用戶端。 如果您有 50 台以上的用戶端，建議您至少配備兩個 KMS 主機，以免其中一個 KMS 主機突然無法使用。 大部分的組織最多只需要兩個 KMS 主機就可以運作整個基礎結構。
 
 # <a name="addressing-kms-operational-requirements"></a>解決 KMS 運作需求
 KMS 可以啟用實體和虛擬電腦，但是若要符合 KMS 啟用的條件，網路必須擁有至少最低數量的電腦 (稱為啟用門檻)。 只有在達到這個門檻之後，KMS 用戶端才能啟用。 為了確保達到啟用門檻，KMS 主機會計算網路上要求啟用的電腦數量。
@@ -73,7 +73,7 @@ KMS 啟用需要 TCP/IP 連線。 KMS 主機和用戶端預設都是使用網域
 
 根據預設，執行 Windows 10、Windows Server 2019、Windows Server 2016、Windows 8.1、Windows Server 2012 R2、Windows Server 2012、Windows 7、Windows Server 2008 R2 大量授權版本電腦為不需要另外設定的 KMS 用戶端。
 
-如果您將電腦從 KMS 主機、MAK 或 Windows 零售版轉換成 KMS 用戶端，請安裝適用的 KMS 用戶端安裝識別碼。 如需詳細資訊，請參閱  [KMS 用戶端安裝識別碼](../get-started/KMSclientkeys.md)。 
+如果您將電腦從 KMS 主機、MAK 或 Windows 零售版轉換成 KMS 用戶端，請安裝適用的 KMS 用戶端安裝識別碼。 如需詳細資訊，請參閱 [KMS 用戶端安裝識別碼](../get-started/KMSclientkeys.md)。 
  
 
  
