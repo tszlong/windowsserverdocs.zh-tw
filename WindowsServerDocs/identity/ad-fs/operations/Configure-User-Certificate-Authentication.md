@@ -108,7 +108,7 @@ AD FS 需要用戶端裝置（或瀏覽器）和負載平衡器支援 SNI。 某
 
 ### <a name="additional-troubleshooting"></a>其他疑難排解
 這些很罕見發生
-1)  如果您的 CRL 清單很長，可能會在嘗試下載時遇到一段時間。 在這種情況下，您必須依據，更新 ' MaxFieldLength ' 和 ' MaxRequestByte 'https://support.microsoft.com/en-us/help/820129/http-sys-registry-settings-for-windows
+1)  如果您的 CRL 清單很長，可能會在嘗試下載時遇到一段時間。 在這種情況下，您必須依據，更新 ' MaxFieldLength ' 和 ' MaxRequestByte https://support.microsoft.com/en-us/help/820129/http-sys-registry-settings-for-windows
 
 
 

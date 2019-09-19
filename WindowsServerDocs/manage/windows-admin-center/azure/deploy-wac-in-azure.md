@@ -41,7 +41,7 @@ ms.locfileid: "70869136"
 
 * **認證**-[PSCredential] 指定 VM 的認證。
 
-* **MsiPath** -[String] 指定在現有 VM 上部署 windows 管理中心時，Windows 系統管理中心 MSI 的本機路徑。 http://aka.ms/WACDownload 如果省略，則預設為的版本。
+* **MsiPath** -[String] 指定在現有 VM 上部署 windows 管理中心時，Windows 系統管理中心 MSI 的本機路徑。 [http://aka.ms/WACDownload](http://aka.ms/WACDownload ) 如果省略，則預設為的版本。
 
 * **VaultName** -[String] 指定包含憑證的金鑰保存庫名稱。
 
