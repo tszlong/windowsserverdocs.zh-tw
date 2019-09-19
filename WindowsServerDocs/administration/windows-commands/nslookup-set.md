@@ -1,6 +1,6 @@
 ---
 title: nslookup set
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ac8736ca8223a1a444784c4cf605a973a9e4dd
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 928d222714bf01cac1585a25e8cac3ec6c8b0233
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436538"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105046"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-變更組態設定會影響如何查閱函式。
+變更會影響查閱功能的設定。
 ## <a name="syntax"></a>語法
 ```
 set <KeyWord>[=<Value>]
@@ -33,12 +33,12 @@ set <KeyWord>[=<Value>]
 
 |    參數    |                                                                                                                    描述                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <KeyWord>    | 識別出來的衍生自**設定**子命令。 例如，子命令**設定 d2**具有關鍵字的 [**沒有**]**d2**。 如需衍生自的子命令的清單**設定**子命令，請參閱其他參考資料。 |
-|     <Value>     |                                                                                      指定每一個子命令的 nslookup 組態設定值。                                                                                      |
-| {help &#124; ?} |                                                                                               顯示的簡短摘要**nslookup**子命令。                                                                                               |
+|    <KeyWord>    | 識別衍生自**set**子命令的子命令。 例如，子命令**集 d2**具有 [**no**]**d2**的關鍵字。 如需從**set**子命令衍生的子命令清單，請參閱其他參考。 |
+|     <Value>     |                                                                                      為每個子命令指定 nslookup 設定值。                                                                                      |
+| {help &#124; ？} |                                                                                               顯示**nslookup**子命令的簡短摘要。                                                                                               |
 
 ## <a name="remarks"></a>備註
-使用**全部設定**查看目前的設定。
-## <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[nslookup 將所有設定](nslookup-set-all.md)
+使用 [**全部設定**] 以查看目前設定的清單。
+## <a name="additional-references"></a>其他參考
+[命令列語法關鍵](command-line-syntax-key.md)
+ [nslookup 設定全部](nslookup-set-all.md)
