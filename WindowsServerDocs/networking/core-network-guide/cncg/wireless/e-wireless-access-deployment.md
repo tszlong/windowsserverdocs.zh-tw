@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bd951f221f1cf1c5715e26830b7da644d685634a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 64098a152d9ba485cfed80e0d0541f0e5ea72bf2
+ms.sourcegitcommit: 47a9514a68e42ac236065fd6b641204b769223d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868982"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127673"
 ---
 # <a name="wireless-access-deployment"></a>無線存取部署
 
@@ -119,9 +119,9 @@ ms.locfileid: "70868982"
 
 5. 在 [群組類型] 中，選取 [安全性]。
 
-6. 按一下 [確定 **Deploying Office Solutions**]。
+6. 按一下 [確定]。
 
-如果您需要無線使用者有多個安全性群組，請重複這些步驟來建立其他無線使用者群組。 稍後您可以在 NPS 中建立個別的網路原則，將不同的條件和 contstraints 套用至每個群組，並提供不同的存取權限和連線規則。
+如果您需要無線使用者有多個安全性群組，請重複這些步驟來建立其他無線使用者群組。 稍後您可以在 NPS 中建立個別的網路原則，將不同的條件和條件約束套用到每個群組，並提供不同的存取權限和連線規則。
 
 ### <a name="bkmk_addusers"></a>將使用者新增至無線使用者安全性群組
 
@@ -448,7 +448,7 @@ ms.locfileid: "70868982"
 
 8. 在 [**其他選項**] 中，如果您使用 EAP 和 PEAP 以外的任何驗證方法，且您的 NAS 支援使用 [訊息驗證者] 屬性，請選取 **[存取要求訊息\-必須包含下列訊息]驗證器屬性**。
 
-9. 按一下 [確定 **Deploying Office Solutions**]。 您的 NAS 會出現在 NPS 上設定的 RADIUS 用戶端清單中。
+9. 按一下 [確定]。 您的 NAS 會出現在 NPS 上設定的 RADIUS 用戶端清單中。
 
 ### <a name="bkmk_npspolicy"></a>使用 Wizard 建立 802.1 X 無線網路的 NPS 原則
 您可以使用此程式來建立連線要求原則和網路原則，以將 802.1 x\-支援的無線存取點部署為遠端身份驗證撥\-入使用者\(服務 RADIUS\)用戶端至執行網路原則伺服器\(NPS\)的 RADIUS 伺服器。  
@@ -502,7 +502,7 @@ ms.locfileid: "70868982"
 
     -   若要修改 EAP 類型的原則設定，請在 [ **Eap 類型**] 中按一下 [**編輯**]，在 [ **eap eap-mschapv2**內容] 中視需要修改設定，然後按一下 **[確定]** 。  
 
-8.  按一下 [確定 **Deploying Office Solutions**]。 [編輯受保護的 EAP 內容] 對話方塊隨即關閉，並返回 [**設定 802.1 x** ] wizard。 按一下 [下一步]。
+8.  按一下 [確定]。 [編輯受保護的 EAP 內容] 對話方塊隨即關閉，並返回 [**設定 802.1 x** ] wizard。 按一下 [下一步]。
 
 9. 在 [**指定使用者群組**] 中，按一下 [**新增**]，然後在 [Active Directory 使用者和電腦] 嵌入式管理單元\-中輸入您為無線用戶端設定的安全性群組名稱。 例如，如果您將「無線安全性群組」無線群組命名為，請輸入「**無線群組**」。 按一下 [下一步]。
 

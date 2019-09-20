@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 91a1d69e4f7a77633d460f594ad3091f359df9c3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 247381b35a038627b5d8c91ac4dda0cc4fab6195
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867851"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143782"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -329,18 +329,18 @@ AD FS 在使用者工作場所加入裝置的動作期間，使用裝置註冊�
 ||||  
 |-|-|-|  
 |**演算法**|**金鑰長度**|**通訊\/協定\/應用程式批註**|  
-|TripleDES –預設 192 \(支援 192-256\) \- [HTTP：\/ \/www.w3.org\/200104\/ xmlenc\#TripleDES\/ cbc\- ](http://www.w3.org/2001/04/xmlenc)|>\=192|支援解密安全性權杖的演算法。 不支援使用此演算法來加密安全性權杖。|  
-|AES128 \- HTTP：\/ www.w3.org2001\/04 xmlencAES128\#cbc\/ \/ \/ \-|128|支援解密安全性權杖的演算法。 不支援使用此演算法來加密安全性權杖。|  
-|AES192 \- HTTP：\/ www.w3.org2001\/04 xmlencAES192\#cbc\/ \/ \/ \-|192|支援解密安全性權杖的演算法。 不支援使用此演算法來加密安全性權杖。|  
-|AES256 \- [HTTP：\/ www.w3.org\/200104\/xmlencAES256\#cbc\/ \/ \- ](http://www.w3.org/2001/04/xmlenc)|256|**預設值**。 支援用來加密安全性權杖的演算法。|  
-|TripleDESKeyWrap \- HTTP：\/ www.w3.org2001\/04 xmlenckw\#tripledes\/ \/ \/ \-|.NET 4.0 支援的所有金鑰大小\+|支援加密加密安全性權杖之對稱金鑰的演算法。|  
-|AES128KeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlenckw\#aes128\/ \/ \- ](http://www.w3.org/2001/04/xmlenc)|128|支援加密安全性權杖之對稱金鑰的演算法。|  
-|AES192KeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlenckw\#aes192\/ \/ \- ](http://www.w3.org/2001/04/xmlenc)|192|支援加密安全性權杖之對稱金鑰的演算法。|  
-|AES256KeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlenckw\#aes256\/ \/ \- ](http://www.w3.org/2001/04/xmlenc)|256|支援加密安全性權杖之對稱金鑰的演算法。|  
-|RsaV15KeyWrap \- HTTP：\/ www.w3.org2001\/04 xmlenc rsa1\-5\/ \/ \/ \# \_|1024|支援加密安全性權杖之對稱金鑰的演算法。|  
-|RsaOaepKeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlencrsaoaep\-rsa-oaep-mgf1p 代表\/ \/ \# \- ](http://www.w3.org/2001/04/xmlenc)|1024|預設。 支援加密安全性權杖之對稱金鑰的演算法。|  
-|Sha1\-HTTP：\/ www.w3.org圖片\/DSig SHA1 10\_.html\/ \/ \/ \_|N\/A|由成品 SourceId 產生中的 AD FS 伺服器使用：在此案例中，STS 會根據\(SAML 2.0 標準\)中的建議使用 SHA1，為成品 sourceiD 建立簡短的160位值。<br /><br />ADFS web 代理程式\(舊版元件也會使用 WS2003 時間範圍\)來識別「上次更新」時間值的變更，讓它知道何時要從 STS 更新資訊。|  
-|SHA1withRSA\-<br /><br />HTTP：\/ \/www.w3.org圖片DSig\/RSA SHA1 10\_.html\/ \- \/ \_|N\/A|在 AD FS 伺服器驗證 SAML AuthenticationRequest 簽章、簽署成品解析要求或回應、建立權杖\-簽署憑證的情況下使用。<br /><br />在這些情況下，SHA256 是預設值，只有在合作夥伴\( \)信賴憑證者無法支援 SHA256 且必須使用 sha1 時，才會使用 sha1。|  
+|TripleDES –預設 192 \(支援 192-256\) \- [HTTP：\/ \/www.w3.org\/200104\/ xmlenc\#TripleDES\/ cbc\- ](http://www.w3.org/2001/04/xmlenc#tripledes-cbc)|>\=192|支援解密安全性權杖的演算法。 不支援使用此演算法來加密安全性權杖。|  
+|AES128 \- [HTTP：\/ www.w3.org\/200104\/xmlencAES128\#cbc\/ \/ \- ](http://www.w3.org/2001/04/xmlenc#aes128-cbc)|128|支援解密安全性權杖的演算法。 不支援使用此演算法來加密安全性權杖。|  
+|AES192 \- [HTTP：\/ www.w3.org\/200104\/xmlencAES192\#cbc\/ \/ \- ](http://www.w3.org/2001/04/xmlenc#aes192-cbc)|192|支援解密安全性權杖的演算法。 不支援使用此演算法來加密安全性權杖。|  
+|AES256 \- [HTTP：\/ www.w3.org\/200104\/xmlencAES256\#cbc\/ \/ \- ](http://www.w3.org/2001/04/xmlenc#aes256-cbc)|256|**預設值**。 支援用來加密安全性權杖的演算法。|  
+|TripleDESKeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlenckw\#tripledes\/ \/ \- ](http://www.w3.org/2001/04/xmlenc#kw-tripledes)|.NET 4.0 支援的所有金鑰大小\+|支援加密加密安全性權杖之對稱金鑰的演算法。|  
+|AES128KeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlenckw\#aes128\/ \/ \- ](http://www.w3.org/2001/04/xmlenc#kw-aes128)|128|支援加密安全性權杖之對稱金鑰的演算法。|  
+|AES192KeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlenckw\#aes192\/ \/ \- ](http://www.w3.org/2001/04/xmlenc#kw-aes192)|192|支援加密安全性權杖之對稱金鑰的演算法。|  
+|AES256KeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlenckw\#aes256\/ \/ \- ](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|支援加密安全性權杖之對稱金鑰的演算法。|  
+|RsaV15KeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlencrsa1\-5\/ \/ \# \_ ](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|支援加密安全性權杖之對稱金鑰的演算法。|  
+|RsaOaepKeyWrap \- [HTTP：\/ www.w3.org\/200104\/xmlencrsaoaep\-rsa-oaep-mgf1p 代表\/ \/ \# \- ](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|預設。 支援加密安全性權杖之對稱金鑰的演算法。|  
+|Sha1\- [HTTP：\/ www.w3.org\/圖片DSig\/SHA110\_.html\/ \/ \_ ](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|由成品 SourceId 產生中的 AD FS 伺服器使用：在此案例中，STS 會根據\(SAML 2.0 標準\)中的建議使用 SHA1，為成品 sourceiD 建立簡短的160位值。<br /><br />ADFS web 代理程式\(舊版元件也會使用 WS2003 時間範圍\)來識別「上次更新」時間值的變更，讓它知道何時要從 STS 更新資訊。|  
+|SHA1withRSA\-<br /><br />[HTTP：\/ \/www.w3.org圖片DSig\/RSA SHA1 10\_.html\/ \- \/ \_](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|在 AD FS 伺服器驗證 SAML AuthenticationRequest 簽章、簽署成品解析要求或回應、建立權杖\-簽署憑證的情況下使用。<br /><br />在這些情況下，SHA256 是預設值，只有在合作夥伴\( \)信賴憑證者無法支援 SHA256 且必須使用 sha1 時，才會使用 sha1。|  
   
 ## <a name="BKMK_13"></a>許可權需求  
 執行安裝的系統管理員和 AD FS 的初始設定，必須擁有本機網域\(中的網域系統管理員許可權，也就是同盟伺服器加入的網域。\)  

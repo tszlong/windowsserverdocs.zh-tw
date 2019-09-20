@@ -13,12 +13,12 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 97d9e671823dade9e488922561c4c6a925719830
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9f3524261e8e93439ff48a3e6666fa7680a76a29
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871656"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143740"
 ---
 # <a name="limit-web-access"></a>限制網頁存取
 除了監視個別桌上型電腦上的使用者活動之外，身為系統管理使用者，您可以藉由指示您想要封鎖使用者存取的網站和網站，限制使用者對指定網站的存取權。  
@@ -49,7 +49,7 @@ ms.locfileid: "70871656"
    若要新增您不想讓使用者造訪的網站，請按一下 [**僅禁止這些網站**]，輸入您不想要讓使用者造訪的網址，然後按一下 [**新增**]。  
   
    > [!NOTE]
-   > 例如，輸入 "Contoso.com" 允許或封鎖相對於 www.contoso.com 的網站（例如 www.newpage.contoso.com）。 輸入 "Contoso" 會允許或限制所有 Contoso 相關網站（包括 contoso.com、contoso.uk 等等）。  
+   > 例如，輸入 "Contoso.com" 會允許或封鎖相對於 www.contoso.com 的網站（例如，www\.newpage.contoso.com）。 輸入 "Contoso" 會允許或限制所有 Contoso 相關網站（包括 contoso.com、contoso.uk 等等）。  
   
 3. 若要從允許或拒絕的站台清單移除網址，請選取該網址，然後按一下 [移除]。  
   

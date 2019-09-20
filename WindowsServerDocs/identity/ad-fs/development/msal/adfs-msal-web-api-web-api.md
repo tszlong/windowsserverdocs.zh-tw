@@ -132,7 +132,7 @@ ms.locfileid: "70867752"
   
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi19.png)
 
-  27. 在 新增轉換宣告規則 上，從下拉式清單中選取 **使用自訂規則傳送宣告**，然後按**下一步** 
+  27. 在 [新增轉換宣告規則] 上，從下拉式清單中選取 [**使用自訂規則傳送宣告**]，然後按**下一步** 
   
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi20.png)
 
@@ -147,7 +147,7 @@ ms.locfileid: "70867752"
 
   31. 在 [WebApiToWebApi-Web API 2 屬性] 畫面上，選取 [發行轉換規則] 索引標籤，然後按一下 [新增規則 ...] 
 
-  32. 在 [新增轉換宣告規則] 上，選取 [使用來自 dopdown 的自訂規則傳送![宣告]，然後按一下 [下一步應用程式]](media/adfs-msal-web-api-web-api/webapi23.png)
+  32. 在 [新增轉換宣告規則] 上，選取使用來自 dopdown 的自訂規則傳送![宣告，然後按一下 下一步應用程式](media/adfs-msal-web-api-web-api/webapi23.png)
 
   33. 在 [宣告規則名稱：] 欄位中輸入 PassAllClaims， **x： [] = > 問題（宣告 = x）;** **自訂規則**中的宣告規則： 欄位，然後按一下 **[完成]** 。  
    
