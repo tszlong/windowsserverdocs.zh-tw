@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: c5a3012b989a16c8416a17460b87e197f7f6fc6a
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 4b90f8c5713fbcefc1740b932e9a6f210901a974
+ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987417"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206910"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>使用儲存體遷移服務來遷移伺服器
 
@@ -23,7 +23,7 @@ ms.locfileid: "70987417"
 
 開始之前，請先安裝儲存體遷移服務，並確定所需的防火牆埠已開啟。
 
-1. 檢查[存放裝置遷移服務需求](overview.md#requirements)，並在您的電腦或管理伺服器上安裝[Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)（如果您尚未這麼做的話）。
+1. 檢查[存放裝置遷移服務需求](overview.md#requirements)，並在您的電腦或管理伺服器上安裝[Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)（如果您尚未這麼做的話）。 如果要遷移已加入網域的來源電腦，您必須在與來源電腦聯結至相同網域或樹系的伺服器上，安裝並執行儲存體遷移服務。
 2. 在 Windows 系統管理中心，連接到執行 Windows Server 2019 的 orchestrator 伺服器。 <br>這是您將用來安裝儲存體遷移服務並用於管理遷移的伺服器。 如果您只是要遷移一部伺服器，您可以使用目的地伺服器，只要它正在執行 Windows Server 2019 即可。 我們建議您針對任何多伺服器遷移使用不同的協調流程伺服器。
 1. 移至**伺服器管理員**（在 Windows 系統管理中心） >**儲存體遷移服務**，然後選取 [**安裝**] 以安裝儲存體遷移服務及其必要元件（如 [圖 1] 所示）。
     ![[儲存體遷移服務] 頁面的螢幕擷取畫面，其中](media/migrate/install.png)顯示 [安裝] 按鈕**圖1：安裝儲存體遷移服務**
@@ -57,7 +57,7 @@ ms.locfileid: "70987417"
 在此步驟中，您會在指定要將資料放在目的地伺服器上的位置之後，將它傳輸。
 
 1. 在 [**傳送資料** > ] [**輸入認證**] 頁面上，輸入可在您要遷移至目的地伺服器的系統管理員認證，然後選取 **[下一步]** 。
-2. 在 [**新增目的地裝置和**對應] 頁面上，會列出第一部來源伺服器。 輸入您要遷移的伺服器或叢集檔案伺服器的名稱，然後選取 [**掃描裝置**]。
+2. 在 [**新增目的地裝置和**對應] 頁面上，會列出第一部來源伺服器。 輸入您要遷移的伺服器或叢集檔案伺服器的名稱，然後選取 [**掃描裝置**]。 如果是從已加入網域的來源電腦進行遷移，則目的地伺服器必須加入相同的網域。
 3. 將來源磁片區對應到目的地磁片區，清除您不想要傳輸的任何共用（包括位於 Windows system 資料夾中的任何系統管理共用）的 [**包含**] 核取方塊，然後選取 **[下一步]** 。
    ![螢幕擷取畫面：顯示來源伺服器及其磁片區和共用，以及它們在目的地](media/migrate/transfer.png) **圖3的傳輸位置。來源伺服器及其存放裝置將傳送至其中**
 4. 為其他來源伺服器新增目的地伺服器和對應，然後選取 **[下一步]** 。
