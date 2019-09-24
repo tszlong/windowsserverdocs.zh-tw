@@ -11,27 +11,34 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/13/2019
+ms.date: 09/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b51370a83fe6a49c29cc2557abd54e339c3b213
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 587ad44509451497b253689238c3aef233a37153
+ms.sourcegitcommit: e210fce039452a9855353520c7f8698acd76ffce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988246"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071287"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
-我們會定期更新 [Windows 桌面用戶端](windowsdesktop.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
+您可以在[開始使用 Windows 桌面用戶端](windowsdesktop.md)找到更多有關 Windows 桌面用戶端的詳細資訊。 您可以在下方找到最新的用戶端更新。
 
-## <a name="client-versions"></a>用戶端版本
+## <a name="latest-client-versions"></a>最新的用戶端版本
 
-您可將用戶端設定為針對發行或測試人員客戶使用不同的版本。 發行版本是預設組態。
+用戶端可以針對不同的[使用者群組](windowsdesktop-admin.md#configure-user-groups)進行設定。 下表列出每個使用者群組可用的目前版本：
 
-|客戶 |版本  |
-|---------|---------|
-|發行  |1.2.246  |
-|測試人員  |1.2.246  |
+|使用者群組 |版本  |
+|-----------|---------|
+|Public     |1.2.246  |
+|測試人員    |1.2.247  |
+
+## <a name="updates-for-version-12247"></a>1\.2.247 版的更新
+
+*發行日期：09/17/2019*
+
+- 已修正在連線期間驗證時所發生的損毀。
+- 已修正關閉用戶端時所發生的損毀。
 
 ## <a name="updates-for-version-12246"></a>1\.2.246 版的更新
 

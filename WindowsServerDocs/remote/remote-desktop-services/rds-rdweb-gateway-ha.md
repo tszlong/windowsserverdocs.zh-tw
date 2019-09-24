@@ -12,12 +12,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 4e185e51b09d2e2f8ac4527f9de339de27e02f24
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 869d47be73a39114ecc05080f8da16f460fb8198
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805144"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105045"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>將高可用性新增至 RD Web 和閘道 Web 前端
 
@@ -96,12 +96,13 @@ ms.locfileid: "66805144"
 1.  建立 Azure Load Balancer：  
     1.  在 Azure 入口網站中，按一下 [瀏覽 > 負載平衡器 > 新增]  。  
     2.  輸入名稱，例如 **WebGwLB**。  
-    3.  針對 [配置]  選取 [公用]  ，並選取 [公用 IP 位址]  ，然後選取一個**公用 IP 位址**。 您可以選取現有的公用 IP 位址，或建立新的位址。 
-    4.  選取適當的 [訂用帳戶]  、[資源群組]  和 [位置]  。
-    5.  按一下 \[建立\]  。  
+    3.  針對 [配置]  選取 [公用]  。
+    4.  在 [公用 IP 位址]  底下，選取 [選擇公用 IP 位址]  ，然後挑選現有的公用 IP 位址或建立新的。
+    5.  選取適當的 [訂用帳戶]  、[資源群組]  和 [位置]  。
+    6.  按一下 \[建立\]  。  
 2. 建立[探查](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/)以監視正在運作的伺服器：  
-    1.  在 Azure 入口網站中，依序按一下 [瀏覽 > 負載平衡器]  、您剛建立的負載平衡器 (例如 WebGwLB)，以及 [設定]  
-    2.  按一下 [探查 > 新增]  。  
+    1.  在 Azure 入口網站中，選取 [瀏覽]   >  [負載平衡器]  ，然後選擇您在上一個步驟中建立的負載平衡器。
+    2.  選取 [所有數定]   >  [探查]   >  [新增]  。  
     3.  為探查輸入名稱 (例如 **HTTPS**)。 選取 [TCP]  作為 [通訊協定]  ，並針對 [連接埠]  輸入 **443**，然後按一下 [確定]  。   
 3.  建立 HTTPS 和 UDP 負載平衡規則：  
     1.  在 [設定]  中，按一下 [負載平衡規則]  。  

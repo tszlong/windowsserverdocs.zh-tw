@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e90738a157f620124bfca3d5f1f4c12789d3bf2
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: 1c0c6ca10e7ebac16d81fe1393e471a7878fd0ca
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023920"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143763"
 ---
 # <a name="install-upgrade-or-migrate-to-windows-server"></a>安裝、升級或遷移到 Windows Server
 
@@ -33,9 +33,7 @@ ms.locfileid: "69023920"
 
 如果您想要在不使伺服器平階化的情況下保留相同硬體和所有已設定的伺服器角色，則需要執行**就地升級**，透過此方法，您會從舊版作業系統轉變到新版本，而您的設定、伺服器角色和資料則維持不變。 例如，如果您的伺服器執行 Windows Server 2012 R2，則可以將它升級到 Windows Server 2016 或 Windows Server 2019。 不過，並非所有的舊版作業系統都有路徑可以轉到每一個較新版本。 
 
-如需升級的逐步指引，請瀏覽 [Windows Server 升級中心](http://aka.ms/upgradecenter)：
-
-[![Windows Server 升級中心的螢幕擷取畫面](media/upgrade-center.png)](http://aka.ms/upgradecenter)
+如需升級的逐步指引，請參閱 [Windows Server 升級內容](../upgrade/upgrade-overview.md)。
 
 ## <a name="cluster-os-rolling-upgrade"></a>叢集作業系統輪流升級
 

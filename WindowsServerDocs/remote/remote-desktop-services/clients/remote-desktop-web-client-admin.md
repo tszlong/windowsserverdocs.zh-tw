@@ -4,16 +4,16 @@ description: 說明系統管理員如何設定遠端桌面 Web 用戶端。
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
-ms.date: 11/2/2018
+ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de392b049fbe910688a4b950e1ca870b6ba3f46
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 86667c744acfd340c2608609323b95c159e1279d
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871172"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143745"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -265,6 +265,10 @@ ms.locfileid: "70871172"
 根據預設，使用者可以選擇啟用或停用遙測。 布林值 **$false** 會比對出預設用戶端行為。 布林值 **$true** 會停用遙測，並限制使用者對遙測的啟用。
 
 ### <a name="remote-resource-launch-method"></a>遠端資源啟動方法
+
+>[!NOTE]
+>此設定目前僅適用於 RDS 網頁用戶端，而非 Windows 虛擬桌面網頁用戶端。
+
 根據預設，使用者可以選擇下列遠端資源啟動方式：(1) 在瀏覽器中啟動，或 (2) 下載 .rdp 檔案，並以安裝在電腦上的另一個用戶端進行處理。 身為系統管理員，您可以選擇使用下列 Powershell 命令，限制您的部署必須使用遠端資源啟動方法：
 
    ```PowerShell

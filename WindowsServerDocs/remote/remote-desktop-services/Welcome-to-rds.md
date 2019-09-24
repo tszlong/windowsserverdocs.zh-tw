@@ -14,12 +14,12 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ec3d9bfbdb435c5bcb93ea1ef2cd9cdf2dd9d2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1fcb3fb7e2989399d908a1b5bed7bd21240efeab
+ms.sourcegitcommit: 2ec5e779c00481b13f186e2c56d207007897cfd4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871283"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021647"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>歡迎使用遠端桌面服務 
 
@@ -31,8 +31,8 @@ RDS 可提供部署彈性、成本效益以及擴充性，且全部都可以透�
 
 根據您的環境和喜好設定，您可以為工作階段型虛擬化設定 RDS 解決方案，以作為虛擬桌面基礎結構 (VDI)，或作為兩者的組合：
 
-- **工作階段型虛擬化**：利用 Windows Server 的運算能力，提供符合成本效益的多重工作階段環境，以提升使用者的日常工作負載
-- **VDI**：利用 Windows 用戶端，提供符合使用者期望之 Windows 桌面體驗的高效能、應用程式相容性及熟悉度。
+- **工作階段型虛擬化**：利用 Windows Server 的運算能力，提供符合成本效益的多重工作階段環境，以提升使用者的日常工作負載。
+- **VDI**：利用 Windows 用戶端提供使用者對於 Windows 桌面體驗所期望的高效能、應用程式相容性，以及熟悉度。
 
 在這些虛擬化環境中，您可以更靈活地向使用者發佈內容：
 
