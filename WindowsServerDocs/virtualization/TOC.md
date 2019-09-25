@@ -34,6 +34,7 @@
 #### [升級虛擬機器版本](hyper-v/deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)
 #### [使用 DDA 部署圖形裝置](hyper-v/deploy/deploying-graphics-devices-using-dda.md)
 #### [使用 DDA 部署存放裝置](hyper-v/deploy/deploying-storage-devices-using-dda.md)
+
 ### [管理](hyper-v/manage/Manage-Hyper-V-on-Windows-Server.md)
 #### [設定 Hyper-V VM 的持續性記憶體裝置](hyper-v/manage/persistent-memory-cmdlets.md)
 #### [選擇標準或生產檢查點](hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)
@@ -46,11 +47,14 @@
 #### [關於 Hyper-V 排程器類型選項](hyper-v/manage/about-hyper-v-scheduler-type-selection.md)
 #### [管理整合服務](hyper-v/manage/Manage-Hyper-V-integration-services.md)
 #### [使用 PowerShell Direct 管理 Windows VM](hyper-v/manage/Manage-Windows-virtual-machines-with-powershell-direct.md)
-#### [設定 Hyper-V 複本](hyper-v/manage/Set-up-Hyper-V-Replica.md) 
-#### [使用即時移轉移動 VM](hyper-v/manage/Live-migration-overview.md) 
-##### [即時移轉概觀](hyper-v/manage/Live-migration-overview.md) 
+#### [設定 Hyper-V 複本](hyper-v/manage/Set-up-Hyper-V-Replica.md)
+#### [啟用 Intel 效能監視硬體](hyper-v/manage/Performance-Monitoring-Hardware.md)
+#### [使用即時移轉移動 VM](hyper-v/manage/Live-migration-overview.md)
+##### [即時移轉概觀](hyper-v/manage/Live-migration-overview.md)
 ##### [設定可進行即時移轉的主機](hyper-v/deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md) 
-##### [在不使用容錯移轉叢集的情況下使用即時移轉](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md) 
+##### [在不使用容錯移轉叢集的情況下使用即時移轉](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
+
+
 ### [Hyper-V 效能調整](../administration/performance-tuning/role/hyper-v-server/index.md)
 ## [Hyper-V 虛擬交換器](hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)
 ### [遠端直接記憶體存取 (RDMA) 和交換器內嵌小組 (SET)](hyper-v-virtual-switch/rdMA-and-Switch-Embedded-Teaming.md)
