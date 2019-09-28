@@ -1,25 +1,25 @@
 ---
-title: '[cleanmgr]'
-description: 了解如何使用命令列選項來設定 「 磁碟清理 」 工具 (Cleanmgr.exe) 可自動清除某些檔案。
-ms.prod: windows-server-threshold
+title: cleanmgr.exe 釋放
+description: 瞭解如何使用命令列選項來設定磁片清理工具（Cleanmgr.exe 釋放），以自動清除特定檔案。
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: fd722dda8476891860773126c84ed10f125715f0
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.openlocfilehash: 20bc60abc747e6bab0ef59f38d0a392f18d75abe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407885"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379382"
 ---
-# <a name="cleanmgr"></a>[cleanmgr]
+# <a name="cleanmgr"></a>cleanmgr.exe 釋放
 
-> 適用於：Windows Server 2019、 Windows Server 2016、 Windows Server 2012、windows Server 2008 r2，Windows Server （半年通道）
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2008 R2、Windows Server （半年通道）
 
-清除不必要的檔案，從您的電腦的硬碟。 您可以使用命令列選項來指定 [cleanmgr] 清除暫存檔案、 網際網路檔案、 下載的檔案和資源回收筒的檔案。 然後，您可以排程要使用工作排程器工具在特定時間執行的工作。
+從您的電腦硬碟清除不必要的檔案。 您可以使用命令列選項來指定 Cleanmgr.exe 釋放清除暫存檔案、網際網路檔案、下載的檔案和回收站檔案。 接著，您可以使用 [排定的工作] 工具，將工作排程在特定時間執行。
 
 如需如何使用此命令的範例，請參閱[範例](#examples)。
 
@@ -33,55 +33,55 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 |      參數      |    描述     |
 | ------------------- | ------------------ |
-|  /d \<driveletter>          | 指定您想要清除的磁碟清理的磁碟機。<br>**注意：** 使用 /sagerun:n，不使用 /d 選項。 |
-| /sageset:n | 顯示 [磁碟清理設定] 對話方塊中，並也會建立登錄機碼，儲存您所選取的設定。 `n`值，也就儲存在登錄中，可讓您指定執行磁碟清理工作。 `n`值可以是任何的整數值從 0 到 65535 之間。 當您使用 /sageset 選項時，請將所有可用的選項，指定已安裝 Windows 的磁碟機。  |
-|  /sagerun:n  |  如果您使用 \sageset 選項 n 的值指派給指定的工作會執行。 列舉電腦上的所有磁碟機，並針對每個磁碟機中執行選取的設定檔。           |
-| /TUNEUP:n    | 執行相同 /sageset 和 /sagerun `n` 。 |
-| /LOWDISK     | 執行以預設設定。 |
-| /VERYLOWDISK | 使用預設設定，執行任何使用者提示。 |
-| /?           | 顯示說明。 |
+|  /d \<driveletter >          | 指定您想要清理磁片的磁片磁碟機。<br>**注意：** /D 選項不會與/sagerun： n 搭配使用。 |
+| /sageset： n | 顯示 [磁片清理設定] 對話方塊，並建立登錄機碼來儲存您所選取的設定。 儲存在登錄中的 `n` 值可讓您指定要執行磁片清理的工作。 @No__t-0 值可以是從0到65535的任何整數值。 若要在使用/sageset 選項時提供所有選項，請指定安裝 Windows 的磁片磁碟機。  |
+|  /sagerun： n  |  如果您使用 \sageset 選項，則會執行指派給 n 值的指定工作。 系統會列舉電腦上的所有磁片磁碟機，並針對每個磁片磁碟機執行選取的設定檔。           |
+| /TUNEUP： n    | 針對相同的 `n` 執行/sageset 和/sagerun。 |
+| /LOWDISK     | 以預設設定執行。 |
+| /VERYLOWDISK | 以預設設定執行，不提示使用者。 |
+| /?           | 顯示 [說明]。 |
 
 ## <a name="options"></a>選項。
 
-您可以使用 /sageset 和 /sagerun 指定磁碟清理的檔案的選項包括：
+您可以使用/sageset 和/sagerun 針對 [磁片清理] 指定的檔案選項包括：
 
-- **安裝程式暫存檔**-這些是無法再執行安裝程式所建立的檔案。
+- **暫存安裝**檔-這些是由安裝程式所建立，且不再執行的檔案。
 
-- **下載 Program Files** -下載的程式檔案是 ActiveX 控制項和 Java 程式，會自動從網際網路下載時您可以檢視特定頁面。 這些檔案會暫時儲存在硬碟上的 [下載 Program Files] 資料夾中。 此選項會包含檢視檔案 按鈕，以便先清理磁碟 移除它們，您可以看到檔案。 按鈕會開啟 C:\Winnt\Downloaded Program Files 資料夾。
+- **下載的程式**檔案-下載的程式檔案是當您查看特定頁面時，自動從網際網路下載的 ActiveX 控制項和 JAVA 程式。 這些檔案會暫時儲存在硬碟上下載的 [Program Files] 資料夾中。 此選項包含 [查看檔案] 按鈕，讓您可以在磁片清理移除之前看到檔案。 此按鈕會開啟 [C:\Winnt\Downloaded Program Files] 資料夾。
 
-- **網際網路暫存檔**-Temporary Internet Files 資料夾包含儲存在您的硬碟，以快速檢視的網頁。 磁碟清理會移除這些網頁，但會保留您的 Web 網頁的個人化的設定。 這個選項也會包含檢視檔案 按鈕，這會開啟 C:\Documents and Settings\Username\Local Settings\Temporary Internet Files\Content.IE5 資料夾。 
+- **網際網路暫**存檔-[暫存網際網路檔案] 資料夾包含儲存在硬碟上供快速查看的網頁。 [磁片清理] 會移除這些頁面，但不會保持網頁的個人化設定。 此選項也包含 [查看檔案] 按鈕，它會開啟 [C:\documents and and Settings\Username\Local Settings\Temporary Internet Files\Content.IE5] 資料夾。 
 
-- **舊的 Chkdsk 檔案**-當 Chkdsk 會檢查磁碟是否有錯誤、 Chkdsk 可能會儲存為檔案的根資料夾中遺失的檔案片段在磁碟上。 這些檔案是不必要的。
+- **舊的 chkdsk**檔案-當 chkdsk 檢查磁片是否有錯誤時，chkdsk 可能會將遺失的檔案片段儲存為磁片上根資料夾中的檔案。 這些檔案是不必要的。
 
-- **資源回收筒**-「 資源回收筒包含您已從電腦刪除的檔案。 除非您清空資源回收筒，不會永久移除這些檔案。 這個選項會包含檢視檔案 按鈕，開啟資源回收筒。 **注意：** 資源回收筒 可能會出現在多個磁碟機，比方說，不只是在 %systemroot%。
+- **回收站**-[回收站] 包含您已從電腦中刪除的檔案。 直到您清空回收站之後，才會永久移除這些檔案。 此選項包含開啟 [回收站] 的 [View Files] 按鈕。 **注意：** 回收站可能會出現在多個磁片磁碟機中，例如，不只是% SystemRoot%。
 
-- **暫存檔**-程式有時會將暫存的資訊儲存在 Temp 資料夾。 在結束程式之前，程式通常會刪除這項資訊。 您可以放心刪除過去一週內尚未經過修改的暫存檔案。
+- **暫存檔案**-程式有時候會將暫存資訊儲存在暫存資料夾中。 程式結束之前，程式通常會刪除此資訊。 您可以安全地刪除過去一周內未曾修改過的暫存檔案。
 
-- **離線暫存檔**-離線檔案是暫存的最近使用的網路檔案的本機複本。 這些檔案會自動快取，以便您可以從網路中斷連線後使用它們。 檢視檔案 按鈕會開啟 離線檔案 資料夾。
+- **暫存離線檔案**-暫存離線檔案是最近使用過的網路檔案的本機複本。 系統會自動快取這些檔案，讓您可以在中斷與網路的連線之後使用這些檔案。 [View Files] 按鈕會開啟 [離線檔案] 資料夾。
 
-- **離線檔案**-離線檔案是您特別想要可以使用離線，以便您可以從網路中斷連線後將它們的網路檔案的本機複本。 檢視檔案 按鈕會開啟 離線檔案 資料夾。
+- **離線檔案**-離線檔案是您特別想要讓離線使用的網路檔案本機複本，讓您可以在中斷與網路的連線之後使用這些檔案。 [View Files] 按鈕會開啟 [離線檔案] 資料夾。
 
-- **將舊的檔案壓縮**-Windows 可以壓縮近期未使用的檔案。 壓縮檔案可以節省磁碟空間，但您仍然可以使用檔案。 會不刪除任何檔案。 因為不同的速率，會壓縮檔案，顯示您將取得的磁碟空間數量是估計值。 選項按鈕可讓您指定的磁碟清理會壓縮未使用的檔案之前要等待的天數。
+- **壓縮舊**檔案-Windows 可以壓縮您最近未使用過的檔案。 壓縮檔案可節省磁碟空間，但您仍然可以使用這些檔案。 不會刪除任何檔案。 因為檔案是以不同的速率進行壓縮，所以您將獲得大約的磁碟空間量。 [選項] 按鈕可讓您指定磁片清理壓縮未使用的檔案之前等待的天數。
 
-- **內容的索引子類別目錄檔案**-索引服務加速並改善檔案搜尋維護索引的磁碟上的檔案。 這些目錄檔案會保留先前的編製索引作業，並可以安全地刪除。 **注意：** 類別目錄檔案可能會出現在多個磁碟機，比方說，不只是在 %systemroot%。
+- **內容索引器的類別目錄**檔案-索引服務會藉由維護磁片上檔案的索引，來加速並改善檔案搜尋。 這些類別目錄檔案會保留在先前的索引編制作業中，而且可以安全地刪除。 **注意：** 類別目錄檔案可能會出現在多個磁片磁碟機中，例如，不只是% SystemRoot%。
 
-**請注意**如果您指定要清理包含 Windows 安裝的磁碟機，所有這些選項可在 [磁碟清理] 索引標籤上。如果您指定任何其他磁碟機，只有資源回收筒和內容的索引選項的類別目錄檔案可在 [磁碟清理] 索引標籤上。 
+**注意**如果您指定清除包含 Windows 安裝的磁片磁碟機，所有這些選項都可以在 [磁片清理] 索引標籤上取得。如果您指定任何其他磁片磁碟機，則 [磁片清理] 索引標籤上只會提供 [回收站] 和內容索引選項的類別目錄檔案。 
 
 ## <a name="examples"></a>範例
 
-若要執行磁碟清理 應用程式，以便您可以使用它的對話方塊來指定選項，用於更新版本中，將設定儲存至集合**1**，輸入下列命令：
+若要執行磁片清理應用程式，讓您可以使用其對話方塊來指定稍後使用的選項，請將設定儲存至集合**1**，並輸入下列內容：
 
 ```
 cleanmgr /sageset:1
 ```
 
-執行磁碟清理，並且包含 [cleanmgr] /sageset:1 命令中所指定的選項，請輸入：
+若要執行磁片清理並包含您使用 cleanmgr.exe 釋放/sageset：1命令所指定的選項，請輸入：
 
 ```
 cleanmgr /sagerun:1
 ```
 
-若要執行```cleanmgr /sageset:1```和```cleanmgr /sagerun:1```放在一起，輸入：
+若要同時執行 ```cleanmgr /sageset:1``` 並 ```cleanmgr /sagerun:1```，請輸入：
 
 ```
 cleanmgr /tuneup:1
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>其他參考資料
 
-[釋出磁碟空間，在 Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[釋放 Windows 10 中的磁片磁碟機空間](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)

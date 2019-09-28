@@ -1,49 +1,49 @@
 ---
 title: 加入網域的裝置公開金鑰驗證
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: michikos
 ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 80906e7cfe3740200938704a4b4eaf0759af303a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 616ebf1a8e01f84618d22d535609a0dc8414d718
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885029"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403495"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>加入網域的裝置公開金鑰驗證
 
->適用於：Windows Server 2016 中，Windows 10
+>適用於：Windows Server 2016、Windows 10
 
-Kerberos 已新增支援已加入網域的裝置登入 Windows Server 2012 和 Windows 8 中使用憑證開始。 這項變更可讓第 3 個合作對象廠商建立解決方案，來佈建，並初始化讓已加入網域的裝置使用的網域驗證的憑證。 
+Kerberos 新增了已加入網域的裝置支援，以使用從 Windows Server 2012 和 Windows 8 開始的憑證進行登入。 這種變更可讓協力廠商的廠商建立解決方案，以布建及初始化已加入網域之裝置的憑證，以用於網域驗證。 
 
-## <a name="automatic-public-key-provisioning"></a>自動公用金鑰佈建
+## <a name="automatic-public-key-provisioning"></a>自動公開金鑰布建
 
-從 Windows 10 1507年版和 Windows Server 2016 開始，已加入網域的裝置自動佈建 Windows Server 2016 網域控制站 (DC) 的繫結公開公鑰。 一旦佈建金鑰時，Windows 可以加入網域使用公用金鑰驗證。
+從 Windows 10 版本1507和 Windows Server 2016 開始，已加入網域的裝置會自動將系結的公開金鑰布建到 Windows Server 2016 網域控制站（DC）。 布建金鑰後，Windows 就可以對網域使用公開金鑰驗證。
 
 ### <a name="public-key-generation"></a>公用金鑰產生
-如果裝置正在執行 Credential Guard，公開金鑰會建立受到 Credential Guard。 
+如果裝置正在執行 Credential Guard，則會建立一個由 Credential Guard 保護的公開金鑰。 
 
-如果不使用 Credential Guard 和 TPM 是，公開金鑰會建立受 TPM 所保護。 
+如果 Credential Guard 無法使用，而且 TPM 為，則會建立受 TPM 保護的公開金鑰。 
 
-如果兩者都沒有作用，然後不會產生一個金鑰和裝置都只能驗證使用的密碼。
+如果兩者都無法使用，則不會產生金鑰，且裝置只能使用密碼進行驗證。
 
-### <a name="provisioning-computer-account-public-key"></a>佈建電腦帳戶的公用金鑰
-當 Windows 啟動時，它會檢查公開金鑰已佈建其電腦帳戶。 如果沒有，然後產生的繫結的公用金鑰，並將它設定為其帳戶中使用 Windows Server 2016 或更新版本的 DC 的 AD。 如果所有網域控制站是舊版，則沒有索引鍵是佈建。
+### <a name="provisioning-computer-account-public-key"></a>布建電腦帳戶公開金鑰
+當 Windows 啟動時，它會檢查是否已為其電腦帳戶布建公開金鑰。 如果不是，則會產生系結的公開金鑰，並使用 Windows Server 2016 或更高的 DC 為其在 AD 中的帳戶進行設定。 如果所有 Dc 都已關閉層級，則不會布建任何金鑰。
 
-### <a name="configuring-device-to-only-use-public-key"></a>設定為只使用公開金鑰的裝置
-如果群組原則設定**支援使用憑證進行裝置驗證**設為**強制**，則裝置必須尋找 DC，執行 Windows Server 2016 或更新版本來驗證。 此設定是在系統管理範本 > System > Kerberos。
+### <a name="configuring-device-to-only-use-public-key"></a>正在將裝置設定為只使用公開金鑰
+如果群組原則設定 [**使用憑證的裝置驗證支援**] 設定為 [**強制**]，則裝置必須尋找執行 Windows Server 2016 或更新版本的 DC 以進行驗證。 設定在系統管理範本 > 系統 > Kerberos 之下。
 
-### <a name="configuring-device-to-only-use-password"></a>設定為只使用密碼的裝置
-如果群組原則設定**使用憑證進行裝置驗證支援**已停用，則一律會使用密碼。 此設定是在系統管理範本 > System > Kerberos。
+### <a name="configuring-device-to-only-use-password"></a>正在將裝置設定為只使用密碼
+如果已停用 [**使用憑證的裝置驗證支援**] 群組原則設定，則一律會使用 [密碼]。 設定在系統管理範本 > 系統 > Kerberos 之下。
 
-## <a name="domain-joined-device-authentication-using-public-key"></a>使用公開金鑰已加入網域的裝置驗證
-當 Windows 有已加入網域的裝置憑證時，Kerberos 首先會驗證使用憑證和密碼的失敗重試。 這可讓裝置向下層網域控制站。
+## <a name="domain-joined-device-authentication-using-public-key"></a>使用公開金鑰的已加入網域裝置驗證
+當 Windows 具有已加入網域之裝置的憑證時，Kerberos 會先使用憑證和失敗的密碼重試進行驗證。 這可讓裝置向下層 Dc 進行驗證。
 
-由於自動佈建的公用金鑰有自我簽署的憑證，憑證驗證會失敗並不支援金鑰信任帳戶對應的網域控制站上。 根據預設，Windows 會重試使用裝置的網域密碼進行驗證。
+因為自動布建的公開金鑰具有自我簽署憑證，所以憑證驗證會在不支援金鑰信任帳戶對應的網域控制站上失敗。 根據預設，Windows 會使用裝置的網域密碼來重試驗證。
 
 

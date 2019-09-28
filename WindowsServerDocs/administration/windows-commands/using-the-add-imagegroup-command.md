@@ -1,8 +1,8 @@
 ---
-title: 使用新增 ImageGroup 命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用 ImageGroup 命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71050bfecdac4933bfe36f40ce09dae626735664
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e870bd5435e1aa2b155fee880d32c0d784ac398
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829899"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363684"
 ---
-# <a name="using-the-add-imagegroup-command"></a>使用新增 ImageGroup 命令
+# <a name="using-the-add-imagegroup-command"></a>使用 ImageGroup 命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將映像群組加入至 Windows 部署服務伺服器。
+將映射群組新增至 Windows 部署服務伺服器。
 ## <a name="syntax"></a>語法
 ```
 wdsutil [Options] /add-ImageGroumediaGroup:<Image group name> [/Server:<Server name>]
@@ -32,17 +32,17 @@ wdsutil [Options] /add-ImageGroumediaGroup:<Image group name> [/Server:<Server n
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-mediaGroup:<Image group name>|指定要加入的映像群組名稱。|
-|[/ 伺服器：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整的網域名稱 (FQDN)。 如果未指定伺服器名稱，則會使用本機伺服器。|
-## <a name="BKMK_examples"></a>範例
-若要新增映像群組，請輸入下列其中一項：
+mediaGroup： <Image group name>|指定要加入之映射群組的名稱。|
+|[/Server： <Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+## <a name="BKMK_examples"></a>典型
+若要新增映射群組，請輸入下列其中一項：
 ```
 wdsutil /add-ImageGroumediaGroup:ImageGroup2
 wdsutil /verbose /add-ImageGroumediaGroup:"My Image Group" /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[使用 get AllImageGroups 命令](using-the-get-allimagegroups-command.md)
-[使用 get ImageGroup 命令](using-the-get-imagegroup-command.md)
- [使用移除 ImageGroup 指令](using-the-remove-imagegroup-command.md)
-[子命令： 集 ImageGroup](subcommand-set-imagegroup.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+ 使用[AllImageGroups 命令](using-the-get-allimagegroups-command.md)
+ 使用[ImageGroup 命令](using-the-get-imagegroup-command.md)，
+[使用 ImageGroup 命令](using-the-remove-imagegroup-command.md)
+[子命令： set-ImageGroup](subcommand-set-imagegroup.md)

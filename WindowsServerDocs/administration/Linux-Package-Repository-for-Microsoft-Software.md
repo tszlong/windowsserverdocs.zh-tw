@@ -2,7 +2,7 @@
 title: 適用于 Microsoft 產品的 Linux 軟體存放庫
 description: 本檔說明如何使用和安裝適用于 Microsoft 產品的 Linux 軟體套件。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: szark
 ms.technology: compute
@@ -11,12 +11,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: bade9fff306272188ac8d2b91a3d9921c80fe036
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0627c38f15966948dd4bea91b66a96ee59ec89e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866886"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370449"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>適用于 Microsoft 產品的 Linux 軟體存放庫
 

@@ -1,37 +1,37 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: 將伺服器或磁碟機新增至儲存空間直接存取
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
-description: 如何將伺服器或磁碟機新增至儲存空間直接存取叢集
+description: 如何將伺服器或磁片磁碟機新增至儲存空間直接存取叢集
 ms.localizationpriority: medium
-ms.openlocfilehash: ae639b920788911dbc16952d7b61aab85b0a391b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833449"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393778"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>將伺服器或磁碟機新增至儲存空間直接存取
 
->適用於：Windows Server 2019，Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 本主題說明如何將伺服器或磁碟機新增至儲存空間直接存取。
 
-## <a name="adding-servers"></a> 新增伺服器
+## <a name="adding-servers"></a>新增伺服器
 
 新增伺服器 (通常稱為相應放大) 會增加儲存容量、改善儲存空間的效能，並解除鎖定更佳的儲存空間效率。 如果您的部署為超交集，新增伺服器也可為您的工作負載提供更多計算資源。
 
-![將伺服器新增到四個節點叢集的動畫](media/add-nodes/Scaling-Out.gif)
+![將伺服器新增至四節點叢集的動畫](media/add-nodes/Scaling-Out.gif)
 
 一般部署可以藉由新增伺服器，簡單地相應放大： 只需要兩個步驟：
 
-1. 執行[叢集驗證精靈](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)，方法是使用容錯移轉叢集嵌入式管理單元或使用 PowerShell 中的 **Test-Cluster** Cmdlet (以系統管理員身分執行)。 包含您想新增的新伺服器*\<NewNode>*。
+1. 執行[叢集驗證精靈](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)，方法是使用容錯移轉叢集嵌入式管理單元或使用 PowerShell 中的 **Test-Cluster** Cmdlet (以系統管理員身分執行)。 包含您想新增的新伺服器 *\<NewNode>* 。
 
    ```PowerShell
    Test-Cluster -Node <Node>, <Node>, <Node>, <NewNode> -Include "Storage Spaces Direct", Inventory, Network, "System Configuration"
@@ -53,7 +53,7 @@ Add-ClusterNode -Name NewNode
 
 ### <a name="from-2-to-3-servers-unlocking-three-way-mirroring"></a>從 2 個伺服器變為 3 個：解除鎖定三向鏡像
 
-![將第三個伺服器新增至兩個節點叢集](media/add-nodes/Scaling-2-to-3.png)
+![將第三部伺服器新增至雙節點叢集](media/add-nodes/Scaling-2-to-3.png)
 
 使用兩個伺服器，您只能建立雙向鏡像磁碟區 (相較於分散式 RAID-1)。 使用三個伺服器，您便能建立三向鏡像磁碟區並獲得更佳的容錯。 建議您盡可能使用三向鏡像。
 
@@ -91,7 +91,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 ### <a name="from-3-to-4-servers-unlocking-dual-parity"></a>從 3 個伺服器變為 4 個：解除鎖定雙同位
 
-![將第四個伺服器新增至三個節點叢集](media/add-nodes/Scaling-3-to-4.png)
+![將第四部伺服器新增至三個節點的叢集](media/add-nodes/Scaling-3-to-4.png)
 
 使用四個伺服器，您便可以使用通常也稱為清除編碼的雙同位 (相較於分散式 RAID-6)。 這會提供與三向鏡像相同的容錯功能，但具有更佳的儲存空間效率。 如需深入了解，請參閱[容錯與儲存空間效率](storage-spaces-fault-tolerance.md)。
 
@@ -117,7 +117,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 利用四個伺服器，您也可以開始使用鏡像加速的同位，其中的個別磁碟區為部分鏡像及部分同位。
 
-為此，您必須更新您的 **StorageTier** 範本，以同時擁有 *[效能]* 和 [容量]*[容量]* 層，因為如果您先在四個伺服器上執行 **Enable-ClusterS2D** 就會加以建立。 具體來說，這兩層都應該具有您容量裝置 (例如 SSD 或 HDD) 的 **MediaType** 且 **PhysicalDiskRedundancy = 2**。 *[效能]* 層應該是 **ResiliencySettingName = Mirror**，而 *[容量]* 層應該是 **ResiliencySettingName = Parity**。
+為此，您必須更新您的 **StorageTier** 範本，以同時擁有 *[效能]* 和 [容量] *[容量]* 層，因為如果您先在四個伺服器上執行 **Enable-ClusterS2D** 就會加以建立。 具體來說，這兩層都應該具有您容量裝置 (例如 SSD 或 HDD) 的 **MediaType** 且 **PhysicalDiskRedundancy = 2**。 *[效能]* 層應該是 **ResiliencySettingName = Mirror**，而 *[容量]* 層應該是 **ResiliencySettingName = Parity**。
 
 #### <a name="option-3"></a>選項 3
 
@@ -142,7 +142,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 當您擴充超過四個伺服器時，新的磁碟區就能受惠於前所未有的絕佳同位編碼效率。 例如，介於六到七個伺服器之間，效率會從 50.0% 提升到 66.7%，因為它變為可能可使用 Reed-Solomon 4+2 (而不是 2+2)。 您不需採取任何步驟，就能開始享受這種新的效率；最佳可行的編碼會在您每次建立磁碟區時自動決定。
 
-不過，任何預先存在的磁碟區將不會「轉換」為範圍更廣泛的新編碼。 其中一個合理的原因是，這樣做需要大量計算，而此計算確實會影響整個部署中的 *「每個單一位元」*。 如果您想要讓預先存在的資料以更佳的效率進行編碼，您可以將它移轉至新的磁碟區。
+不過，任何預先存在的磁碟區將不會「轉換」為範圍更廣泛的新編碼。 其中一個合理的原因是，這樣做需要大量計算，而此計算確實會影響整個部署中的 *「每個單一位元」* 。 如果您想要讓預先存在的資料以更佳的效率進行編碼，您可以將它移轉至新的磁碟區。
 
 如需詳細資料，請參閱[容錯與儲存空間效率](storage-spaces-fault-tolerance.md)。
 
@@ -166,14 +166,14 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 3. 將伺服器新增到叢集，如[新增伺服器](#adding-servers)中所述。 當新伺服器加入叢集時，它會自動與預留位置容錯網域產生關聯 (使用它的名稱)。
 
-## <a name="adding-drives"></a> 新增磁碟機
+## <a name="adding-drives"></a>新增磁片磁碟機
 
 新增磁碟機 (也稱為相應增加) 會增加儲存容量，並可改善效能。 如果您有可用的插槽，可將磁碟機新增至每個伺服器以擴充儲存容量，而不需新增伺服器。 您可以隨時個別新增快取磁碟機或容量磁碟機。
 
    >[!IMPORTANT]
    > 強烈建議您所有伺服器都應有相同的儲存體設定。
 
-![動畫顯示 新增磁碟機，以系統](media/add-nodes/Scale-Up.gif)
+![顯示將磁片磁碟機新增至系統的動畫](media/add-nodes/Scale-Up.gif)
 
 若要相應增加，請連接磁碟機並驗證 Windows 會加以探索。 其應顯示於 PowerShell 中 **Get-PhysicalDisk** Cmdlet 的輸出中，且其 **CanPool** 屬性設為 **True**。 若其顯示為 **CanPool = False**，您可透過檢查其 **CannotPoolReason** 屬性了解原因。
 
@@ -188,19 +188,19 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
    >[!NOTE]
    > 自動加入集區取決於您是否只有一個集區。 如果您已經規避標準設定來建立多個集區，您必須自行使用 **Add-PhysicalDisk**，將新的磁碟機新增至您慣用的集區。
 
-## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>新增磁碟機或伺服器之後，最佳化磁碟機使用量
+## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>在新增磁片磁碟機或伺服器之後優化磁片磁碟機使用量
 
-經過一段時間，因為磁碟機新增或移除，集區中的磁碟機之間的資料分佈可能會變得不平均。 在某些情況下，這可能會造成在變滿，而集區中的其他磁碟機具有更低的耗用量特定磁碟機中。
+經過一段時間後，隨著磁片磁碟機的新增或移除，集區中的磁片磁碟機之間的資料分佈可能會變得不平均。 在某些情況下，這可能會導致特定磁片磁碟機變滿，而集區中的其他磁片磁碟機則耗用較低的耗用量。
 
-為了協助保持甚至跨集區的磁碟機配置，儲存空間直接存取會自動最佳化磁碟機使用量之後您將磁碟機或伺服器加入至集區 （這是手動程序適用於使用共用 SAS 機箱的儲存空間系統）。 最佳化會啟動 15 分鐘之後您將新的磁碟機新增至集區。 集區最佳化會以執行低優先順序背景作業，因此可能需要小時或天，才能完成，特別是當您使用大型的硬碟機。
+為了協助在集區上保留磁片磁碟機配置，儲存空間直接存取在您將磁片磁碟機或伺服器新增至集區之後，自動將磁片磁碟機的使用優化（這是使用共用 SAS 主機殼之儲存空間系統的手動程式）。 優化會在您將新磁片磁碟機新增至集區後的15分鐘開始。 集區優化會以低優先順序的背景作業來執行，因此可能需要數小時或數天才能完成，特別是當您使用的是大型硬碟時。
 
-最佳化會使用兩個工作的另一個名*最佳化*而另一個名*重新平衡*-您可以監視其進度，使用下列命令：
+優化會使用兩個作業-一個稱為「*優化*」，另一個稱為「重新*平衡*」，您可以使用下列命令來監視其進度：
 
 ```powershell
 Get-StorageJob
 ```
 
-您可以手動將最佳化的儲存體集區[Optimize-storagepool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet。 以下為範例：
+您可以使用[StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) Cmdlet 來手動優化儲存集區。 以下為範例：
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

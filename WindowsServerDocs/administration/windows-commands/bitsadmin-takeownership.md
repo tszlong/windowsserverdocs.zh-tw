@@ -1,8 +1,8 @@
 ---
 title: bitsadmin takeownership
-description: 適用於 Windows 命令主題**bitsadmin takeownership** -可讓使用者以系統管理權限取得指定工作的擁有權。
+description: 適用于**bitsadmin takeownership**的 Windows 命令主題-讓具有系統管理許可權的使用者取得指定工作的擁有權。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aedca49e43588ab51f84477cf8690cf58486c3cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f0d0610b2ba6437f6fdd41bf1b875993cf11f2a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827839"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380365"
 ---
 # <a name="bitsadmin-takeownership"></a>bitsadmin takeownership
 
 
 
-可讓使用者以系統管理權限取得指定工作的擁有權。
+讓具有系統管理許可權的使用者取得指定工作的擁有權。
 
 ## <a name="syntax"></a>語法
 
@@ -38,9 +38,9 @@ bitsadmin /TakeOwnership <Job>
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會取得名為之作業的擁有權*myDownloadJob*。
+下列範例會取得名為*myDownloadJob*之作業的擁有權。
 ```
 C:\>bitsadmin /TakeOwnership myDownloadJob
 ```

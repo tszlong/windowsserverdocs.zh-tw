@@ -2,22 +2,22 @@
 title: 新增命名空間伺服器至網域型 DFS 命名空間
 description: 本文說明如何使用 DFS 管理，指定其他命名空間伺服器來裝載命名空間。
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 03b6920e75ba3c51f1d181cfd41887fef39b7412
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: fa28ec06448b67724ce8e3f29894fc70f6a6dae9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546321"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386252"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>新增命名空間伺服器至網域型 DFS 命名空間
 
-> 適用於：Windows Server 2019、Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 您可以藉由指定其他命名空間伺服器來裝載命名空間，提高網域型命名空間的可用性。
 

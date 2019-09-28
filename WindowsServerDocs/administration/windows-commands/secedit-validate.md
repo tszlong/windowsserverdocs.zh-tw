@@ -1,8 +1,8 @@
 ---
-title: Secedit： 驗證
-description: '適用於 Windows 命令主題 * * *- '
+title: secedit：驗證
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca64f6b2904ed11f6b45e316c8e4da0093c373e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ece0a0324b77eb4226b679bc29f7bd599f15a120
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877909"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371098"
 ---
-# <a name="seceditvalidate"></a>Secedit： 驗證
+# <a name="seceditvalidate"></a>secedit：驗證
 
 
 
-驗證安全性範本 （.inf 檔案） 中儲存的安全性設定。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+驗證儲存在安全性範本（.inf 檔案）中的安全性設定。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -37,21 +37,21 @@ Secedit /validate <configuration file name>
 
 |參數|描述|
 |---------|-----------|
-|組態檔名稱|必要。</br>指定要驗證的安全性範本的路徑和檔案名稱。|
+|設定檔案名稱|必要。</br>指定要驗證之安全性範本的路徑和檔案名。|
 
 ## <a name="remarks"></a>備註
 
-驗證安全性範本可協助您如果其中一個已毀損，或未經正常管道報廢設定。
+如果驗證安全性範本已損毀或設定不正確，則可協助您。
 
-無效的安全性範本將不會套用。
+將不會套用不正確安全性範本。
 
-將不會更新記錄檔。
+記錄檔將不會更新。
 
-在 Windows Server 2008、windows`Secedit /refreshpolicy`已取代為`gpupdate`。 如需如何重新整理的安全性設定資訊，請參閱[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中`Secedit /refreshpolicy` ，已取代為`gpupdate`。 如需有關如何重新整理安全性設定的詳細資訊，請參閱[Gpupdate](gpupdate.md)。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-安全性範本上執行回復之後，您想要確認回復 inf 檔案、 secRBKcontoso.inf，有效。
+在安全性範本上執行復原之後，您想要確認復原 inf 檔案 secRBKcontoso 是有效的。
 ```
 Secedit /validate secRBKcontoso.inf
 ```

@@ -1,8 +1,8 @@
 ---
 title: wmic
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c68866fbe0c8f5b16dae77e2121331f06cdc726
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9840bc20ddf6193241fe36055698e2bd3222496
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885839"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361883"
 ---
 # <a name="wmic"></a>wmic
 
 
 
-顯示 WMI 互動式命令 shell 內的資訊。
+在互動式命令 shell 內顯示 WMI 資訊。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -36,30 +36,30 @@ command </parameter>
 
 ## <a name="sub-commands"></a>子命令
 
-下列子命令隨時都可以使用：
+下列子命令隨時都可供使用：
 
 |子命令|描述|
 |-----------|-----------|
-|class|從 WMIC 直接存取 WMI 結構描述中的類別的預設別名模式的逸出。|
-|path|從 WMIC 直接存取 WMI 架構中的執行個體的預設別名模式的逸出。|
-|內容|顯示所有的通用參數的目前值。|
-|[結束\|結束]|結束 WMIC 命令殼層。|
+|class|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的類別。|
+|path|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的實例。|
+|內容|顯示所有全域參數的目前值。|
+|[quit \| exit]|結束 WMIC 命令 shell。|
 
 ## <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
-|</parameter>|\<開頭為精確的描述，動詞命令。 >|
-|</param2>|\<另一個的精簡描述開頭為動詞。 >|
+|</parameter>|@no__t 0Concise 描述，以動詞開頭。 >|
+|</param2>|@no__t 0Another 簡要描述，以動詞開頭。 >|
 
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要顯示所有的通用參數目前的值，請輸入：
+若要顯示所有全域參數的目前值，請輸入：
 ```
 wmic context
 ```
-輸出會顯示下列類似：
+輸出類似下列顯示：
 ```
 NAMESPACE    : root\cimv2
 ROLE         : root\cli
@@ -78,7 +78,7 @@ APPEND       : STDOUT
 USER         : N/A
 AGGREGATE    : ON
 ```
-若要變更語言識別碼使用英文 （地區設定識別碼 409），在命令列型別：
+若要將命令列使用的語言識別項變更為英文（地區設定識別碼409），請輸入：
 ```
 wmic /locale:ms_409
 ```

@@ -1,8 +1,8 @@
 ---
-title: 詳細資料的磁碟區
-description: '適用於 Windows 命令主題 * * *- '
+title: 詳細資料量
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7cae6dc9b82992b58c4f94801f90c0b7072492b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f8cd5889bfd2aea835cb64ef1a4076faee0f39b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856919"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378474"
 ---
-# <a name="detail-volume"></a>詳細資料的磁碟區
+# <a name="detail-volume"></a>詳細資料量
 
 
 
-會顯示目前的磁碟區所在的磁碟。
+顯示目前磁片區所在的磁片。
 
 ## <a name="syntax"></a>語法
 
@@ -34,12 +34,12 @@ detail volume
 
 ## <a name="remarks"></a>備註
 
--   這項作業成功，就必須選取磁碟區。 使用**選取磁碟區**命令來選取磁碟區，並將焦點移到它。
--   磁碟區詳細資料不適用於唯讀磁碟區，例如 DVD 或 CD-ROM 光碟機。
+-   必須選取磁片區，此操作才能成功。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。
+-   磁片區詳細資料不適用於唯讀磁片區，例如 DVD-ROM 或 CD-ROM 光碟機。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要查看目前的磁碟區所在的所有磁碟，請輸入：
+若要查看目前磁片區所在的所有磁片，請輸入：
 ```
 detail volume
 ```

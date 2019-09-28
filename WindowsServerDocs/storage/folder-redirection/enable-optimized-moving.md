@@ -1,19 +1,19 @@
 ---
 title: 啟用已重新導向之資料夾的優化移動
 description: 如何執行優化的重新導向資料夾移動到新的檔案共用。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: edf6596f7daaa2f496b8b4da36e98ee72b05dfcd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6c54fee98247b1ce0aa3ef3a2502cf18f314e763
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867255"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394373"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>啟用已重新導向之資料夾的優化移動
 
@@ -30,7 +30,7 @@ ms.locfileid: "70867255"
 - 必須設定資料夾重新導向。 如需詳細資訊，請參閱[使用離線檔案部署資料夾](deploy-folder-redirection.md)重新導向。
 - 用戶端電腦必須執行 Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或 Windows Server （半年通道）。
 
-## <a name="step-1-enable-optimized-move-in-group-policy"></a>步驟 1：啟用優化群組原則中的移動
+## <a name="step-1-enable-optimized-move-in-group-policy"></a>步驟 1:啟用優化群組原則中的移動
 
 若要優化資料夾重新導向資料的重新配置，請使用群組原則，以啟用在適當群組原則物件（GPO）的 [資料夾重新導向**伺服器路徑] 變更原則設定上，啟用優化的離線檔案內容移動**。 將此原則設定設為 [**停用**] 或 [**未設定**] 會導致用戶端將所有資料夾重新導向內容複寫到新位置，然後在伺服器路徑變更時，從舊位置刪除內容。
 
@@ -41,7 +41,7 @@ ms.locfileid: "70867255"
 3. 以滑鼠右鍵按一下 [在資料夾重新導向**伺服器路徑變更時，優化離線檔案快取中的內容移動**]，然後選取 [**編輯**]。
 4. 選取 [**已啟用**]，然後選取 **[確定]** 。
 
-## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>步驟 2：重新放置重新導向資料夾的檔案共用
+## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>步驟 2:重新放置重新導向資料夾的檔案共用
 
 移動包含使用者重新導向之資料夾的檔案共用時，它會匯入以採取預防措施，以確保資料夾已正確重新置放。
 

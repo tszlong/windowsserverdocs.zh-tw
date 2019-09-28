@@ -2,7 +2,7 @@
 title: sxstrace
 description: 瞭解如何診斷並存問題。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbc8dad642e15dede1ce89105a501fd90224610b
-ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
+ms.openlocfilehash: 66326943bf1b056951ae5824df5a4f60892492cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975311"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370706"
 ---
 # <a name="sxstrace"></a>sxstrace
 
@@ -34,7 +34,7 @@ sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outf
 ### <a name="parameters"></a>參數  
 |參數|描述|  
 |-------|--------|  
-|trace|啟用 sxs 的追蹤（並存）|  
+|追蹤|啟用 sxs 的追蹤（並存）|  
 |-logfile|指定原始檔案的原始記錄檔。|  
 |\<檔案名 >|將追蹤記錄儲存至*檔案名*。|  
 |-nostop|指定不提示停止追蹤。|  

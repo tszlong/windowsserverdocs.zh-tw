@@ -2,7 +2,7 @@
 title: certreq
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19b4750b627a86a724b2a0f58ed7f9bde5ea1613
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3098cb12379493a82c77412b2328f5312afb2c0c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867113"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379683"
 ---
 # <a name="certreq"></a>certreq
 
@@ -156,7 +156,7 @@ Subject = "CN=W2K8-BO-DC.contoso2.com"
 |ProviderName|提供者名稱是 CSP 的顯示名稱。|如果您不知道所使用之 CSP 的提供者名稱，請從命令列執行 certutil –請 csplist。 此命令會顯示本機系統上所有可用的 Csp 名稱|ProviderName = "Microsoft RSA SChannel 密碼編譯提供者"|
 |ProviderType|提供者類型是用來根據特定的演算法功能（例如「RSA Full」）來選取特定的提供者。|如果您不知道所使用之 CSP 的提供者類型，請從命令提示字元執行 certutil –請 csplist。 此命令會顯示本機系統上所有可用 Csp 的提供者類型。|ProviderType = 1|
 |RenewalCert|如果您需要更新存在於產生憑證要求之系統上的憑證，您必須將其憑證雜湊指定為此金鑰的值。|在建立憑證要求的電腦上可用之任何憑證的憑證雜湊。 如果您不知道憑證雜湊，請使用 [憑證] MMC 嵌入式管理單元，並查看應更新的憑證。 開啟憑證內容，並查看憑證的「指紋」屬性。 憑證更新需要 PKCS # 7 或 CMC 要求格式。|RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D|
-|RequesterName</br>注意:這會讓要求代表另一個使用者要求進行註冊。您也必須使用註冊代理程式憑證來簽署要求，否則 CA 將會拒絕要求。 使用-cert 選項來指定註冊代理程式憑證。|如果 RequestType 設定為 PKCS # 7 或 CMC，則可以為憑證要求指定要求者名稱。 如果 RequestType 設定為 PKCS # 10，則會略過此金鑰。 Requestername 只能設定為要求的一部分。 您無法在擱置中的要求中操作 Requestername。|採用|Requestername = "Contoso\BSmith"|
+|RequesterName</br>注意：這會讓要求代表另一個使用者要求進行註冊。您也必須使用註冊代理程式憑證來簽署要求，否則 CA 將會拒絕要求。 使用-cert 選項來指定註冊代理程式憑證。|如果 RequestType 設定為 PKCS # 7 或 CMC，則可以為憑證要求指定要求者名稱。 如果 RequestType 設定為 PKCS # 10，則會略過此金鑰。 Requestername 只能設定為要求的一部分。 您無法在擱置中的要求中操作 Requestername。|採用|Requestername = "Contoso\BSmith"|
 |RequestType|決定用來產生和傳送憑證要求的標準。|PKCS10--1</br>PKCS7--2</br>CMC--3</br>Cert--4</br>SCEP--fd00 （64768）</br>秘訣：此選項表示自我簽署或自我頒發證書。 它不會產生要求，而是會產生新的憑證，然後安裝憑證。[自我簽署] 是預設值。使用– cert 選項指定簽署憑證，以建立未自我簽署的自我發行憑證。|RequestType = CMC|
 |SecurityDescriptor</br>秘訣：這僅與電腦內容非智慧卡金鑰有關。|包含與安全物件相關聯的安全性資訊。 對於大部分的安全物件，您可以在建立物件的函式呼叫中指定物件的安全描述項。|以[安全描述項定義語言](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx)為基礎的字串。|SecurityDescriptor = "D:P （A;;GA;;;SY）（A;;）GA;;;BA）」|
 |AlternateSignatureAlgorithm|指定並抓取布林值，指出 PKCS # 10 要求或憑證簽章的簽章演算法物件識別元（OID）是否為離散或結合。|true、false|AlternateSignatureAlgorithm = false</br>秘訣：針對 RSA 簽章，false 表示 Pkcs1 v 1.5。 True 表示2.1 版簽章。|
@@ -166,8 +166,8 @@ Subject = "CN=W2K8-BO-DC.contoso2.com"
 |KeyProtection|指定一個值，指出私密金鑰在使用前如何受到保護。|XCN_NCRYPT_UI_NO_PROTCTION_FLAG--0</br>XCN_NCRYPT_UI_PROTECT_KEY_FLAG--1</br>XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG--2|KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG|
 |SuppressDefaults|指定布林值，指出要求中是否包含預設的擴充功能和屬性。 預設值是以其物件識別碼（Oid）來表示。|true、false|SuppressDefaults = true|
 |FriendlyName|新憑證的易記名稱。|文字|FriendlyName = "Server1"|
-|ValidityPeriodUnits</br>注意:只有在要求類型 = cert 時，才會使用此憑證。|指定要與 ValidityPeriod 搭配使用的單位數。|Numeric|ValidityPeriodUnits = 3|
-|ValidityPeriod</br>注意:只有在要求類型 = cert 時，才會使用此憑證。|VValidityPeriod 必須是美式英文複數的時間週期。|年、月、周、日、小時、分鐘、秒|ValidityPeriod = 年|
+|ValidityPeriodUnits</br>注意：只有在要求類型 = cert 時，才會使用此憑證。|指定要與 ValidityPeriod 搭配使用的單位數。|Numeric|ValidityPeriodUnits = 3|
+|ValidityPeriod</br>注意：只有在要求類型 = cert 時，才會使用此憑證。|VValidityPeriod 必須是美式英文複數的時間週期。|年、月、周、日、小時、分鐘、秒|ValidityPeriod = 年|
 
 返回[內容](#BKMK_Contents)
 
@@ -330,7 +330,7 @@ certreq -enroll –machine –policyserver * "WebServer"
 
 ## <a name="BKMK_Options"></a>選項
 
-|選項|描述|
+|選項。|描述|
 |-------|-----------|
 |-任何|強制執行 ICertRequest：： Submit 以判斷編碼類型。|
 |-attrib \<AttributeString >|指定名稱和值字串配對，並以冒號分隔。</br>以 \n 分隔名稱和值字串組（例如，Name1： Value1\nName2： Value2）。|
@@ -357,7 +357,7 @@ certreq -enroll –machine –policyserver * "WebServer"
 
 ## <a name="BKMK_Formats"></a>格式
 
-|格式|說明|
+|格式|描述|
 |-------|-----------|
 |RequestFileIn|Base64 編碼或二進位輸入檔名稱：PKCS #10 憑證要求、CMS 憑證要求、PKCS #7 憑證更新要求、要交叉認證的 x.509 憑證，或 KeyGen 的標記格式憑證要求。|
 |RequestFileOut|Base64 編碼的輸出檔名稱|

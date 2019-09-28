@@ -1,8 +1,8 @@
 ---
-title: ksetup:setrealmflags
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： setrealmflags
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 249eb82bb40890e071bd7d1eca3a0201064fa01e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b594ae0a1c3c9814d93496ac76e82a594ff4ee00
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437945"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374814"
 ---
-# <a name="ksetupsetrealmflags"></a>ksetup:setrealmflags
+# <a name="ksetupsetrealmflags"></a>ksetup： setrealmflags
 
 
 
@@ -36,30 +36,30 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 |參數|描述|
 |---------|-----------|
-|\<RealmName>|領域名稱會指定為大寫的 DNS 名稱，例如 CORP.CONTOSO.COM。|
-|領域旗標|代表下列旗標的其中一個：</br>-   SendAddress</br>-   TcpSupported</br>-   Delegate</br>-NcSupported</br>-   RC4|
+|\<RealmName >|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM。|
+|領域旗標|表示下列其中一個旗標：</br>- SendAddress</br>- TcpSupported</br>-Delegate</br>- NcSupported</br>-RC4|
 
 ## <a name="remarks"></a>備註
 
-領域旗標會指定不以 Windows Server 作業系統為基礎的 Kerberos 領域的其他功能。 執行 Windows Server 2003、 Windows Server 2008 或 Windows Server 2008 R2 的電腦可以使用 Kerberos 伺服器管理驗證，而不是使用執行 Windows Server 作業系統的網域，以及這些系統參與Kerberos 領域。 此項目會建立領域的功能。 下表說明每個。
+領域旗標會指定不是以 Windows 伺服器作業系統為基礎的 Kerberos 領域的其他功能。 執行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的電腦可以使用 Kerberos 伺服器來管理驗證，而不是使用執行 Windows Server 作業系統的網域，而這些系統會參與Kerberos 領域。 此專案會建立領域的功能。 下表描述每個。
 
 |值|領域旗標|描述|
 |-----|----------|-----------|
-|0xF|全部|設定所有領域旗標。|
-|0x00|None|任何領域旗標的設定，以及任何其他的功能已啟用。|
-|0x01|SendAddress|IP 位址會包含在 「 票證授權票證。|
-|0x02|TcpSupported|在這個領域中支援傳輸控制通訊協定 (TCP) 和使用者資料包通訊協定 (UDP)。|
-|0x04|委派|在這個領域中的每個人都是受信任可以委派。|
-|0x08|NcSupported|此領域支援名稱標準化，可讓 DNS 和領域命名標準。|
-|0x80|RC4|此領域支援 RC4 加密，以啟用跨領域信任，允許使用 TLS。|
+|0xF|全部|所有領域旗標都已設定。|
+|0x00|None|未設定領域旗標，且未啟用任何其他功能。|
+|0x01|SendAddress|IP 位址會包含在票證授權票證中。|
+|0x02|TcpSupported|此領域支援傳輸控制通訊協定（TCP）和使用者資料包協定（UDP）。|
+|0x04|委派|此領域中的每個人都受信任，可進行委派。|
+|0x08|NcSupported|此領域支援名稱標準化，其允許 DNS 和領域命名標準。|
+|0x80|RC4|此領域支援 RC4 加密來啟用跨領域信任，以允許使用 TLS。|
 
-在登錄中儲存領域旗標**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>RealmName</em>。 此項目依預設不存在於登錄中。 您可以使用[Ksetup:addrealmflags](ksetup-addrealmflags.md)來填入登錄的命令。
+領域旗標會儲存在登錄中的**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>RealmName</em>下。 此項目依預設不存在於登錄中。 您可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令來填入登錄。
 
-您可以看到哪些領域旗標可供使用且設定檢視的輸出**ksetup**。
+您可以查看**ksetup**的輸出，以查看可用和設定的領域旗標。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-列出 CONTOSO 的領域的可用和設定的領域旗標：
+列出領域 CONTOSO 的可用和設定領域旗標：
 ```
 ksetup
 ```
@@ -67,7 +67,7 @@ ksetup
 ```
 ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
-執行**ksetup**命令來確認領域旗標設定檢視輸出，並尋找**領域的旗標 =** 。
+執行**ksetup**命令，以確認是否已透過查看輸出並尋找**領域旗標 =** 來設定領域旗標。
 
 #### <a name="additional-references"></a>其他參考資料
 

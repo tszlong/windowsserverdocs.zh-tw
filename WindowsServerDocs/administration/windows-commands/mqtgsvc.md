@@ -1,8 +1,8 @@
 ---
 title: mqtgsvc
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c420c9d00ab71993fc35d0046fc905049e57b58f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c10a260470c6a97e521b04f5bef2844c1f3893a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817179"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373485"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
 
 
-監視內送訊息的佇列和觸發程序的規則會評估為 true 時，執行動作，可執行檔或 COM 元件的形式。 如需如何使用訊息佇列觸發程序服務的範例，請參閱[訊息佇列觸發程序](https://go.microsoft.com/fwlink/?LinkId=248725)MSDN 上。
+當觸發程式的規則評估為 true 時，會監視傳入訊息的佇列，並以可執行檔或 COM 元件的形式執行動作。 如需如何使用訊息佇列觸發程式服務的範例，請參閱 MSDN 上的[訊息佇列觸發](https://go.microsoft.com/fwlink/?LinkId=248725)程式。
 
 ## <a name="syntax"></a>語法
 

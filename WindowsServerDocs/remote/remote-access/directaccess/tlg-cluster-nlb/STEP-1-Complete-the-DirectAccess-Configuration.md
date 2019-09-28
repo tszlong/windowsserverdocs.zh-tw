@@ -1,9 +1,9 @@
 ---
-title: 步驟 1 完成 DirectAccess 設定
-description: 本主題是測試實驗室指南-示範在具備 Windows NLB 的 Windows Server 2016 的叢集中的 DirectAccess 的一部分
+title: 步驟1完成 DirectAccess 設定
+description: 本主題是測試實驗室指南的一部分-示範 windows Server 2016 的 Windows NLB 叢集中的 DirectAccess
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: e1e15544-b575-4f39-af0b-771bfae8b0b7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0d341fd8608a12639bcb0c855d10c91b830e6365
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cb009d5872d2045124601f1459e829a4d15f3058
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283392"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404889"
 ---
-# <a name="step-1-complete-the-directaccess-configuration"></a>步驟 1 完成 DirectAccess 設定
+# <a name="step-1-complete-the-directaccess-configuration"></a>步驟1完成 DirectAccess 設定
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-第一個步驟是完成中的所有步驟[測試實驗室指南：示範 DirectAccess 單一伺服器安裝在混合的 IPv4 和 IPv6](https://go.microsoft.com/fwlink/p/?LinkId=237004)。 如果您已經完成本測試實驗室中的步驟會引導和儲存的快照集或磁碟映像的測試實驗室，您可以還原的快照集或映像並開始進行下一個步驟。  
+第一個步驟是完成 @no__t 0Test 實驗室指南中的所有步驟：示範使用混合 IPv4 和 IPv6 @ no__t-0 的 DirectAccess 單一伺服器設定。 如果您已經完成此測試實驗室指南中的步驟，並已儲存測試實驗室的快照或磁片映射，您可以還原快照集或映射，並從下一個步驟開始。  
   
 
 

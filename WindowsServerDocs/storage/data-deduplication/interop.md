@@ -2,27 +2,27 @@
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: 重複資料刪除互通性
 ms.technology: storage-deduplication
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: b82e02b7896c3795ae7470ca03bb8d19a8d5e403
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455420"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403197"
 ---
 # <a name="data-deduplication-interoperability"></a>重複資料刪除互通性
 
-> 適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2019
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2019
 
 ## <a name="supported"></a>支援
 
 ### <a name="refs"></a>ReFS
-重複資料刪除時，支援 Windows Server 2019。 
+從 Windows Server 2019，支援重復資料刪除。 
 
 ### <a name="failover-clustering"></a>容錯移轉叢集
 
@@ -64,14 +64,14 @@ Windows Server Backup 可以依原樣備份最佳化的磁碟區 (亦即，不�
     wbadmin get versions
     ```
 
-    此輸出版本識別碼會是日期和時間的字串，例如：08/18/2016-06:22.
+    這個輸出版本識別碼會是日期和時間字串，例如：08/18/2016-06:22。
 
 4. 還原整個磁碟區。
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **--OR--**  
+    **--或--**  
 
     還原特定資料夾 (在此案例中為 E:\Docs 資料夾)：
     ```PowerShell

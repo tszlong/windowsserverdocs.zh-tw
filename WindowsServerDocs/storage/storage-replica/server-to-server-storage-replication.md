@@ -1,7 +1,7 @@
 ---
 title: 伺服器對伺服器儲存體複寫
 description: 如何在 Windows Server 中設定和使用儲存體複本進行伺服器對伺服器複寫，包括 Windows 管理中心和 PowerShell。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -9,12 +9,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: fccdb8547ff27083ce943892842c2e2d05e5ace8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a21000e857d702846703deb4f55380e1a998f6d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865285"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402955"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>使用儲存體複本進行伺服器對伺服器儲存體複寫
 
@@ -69,7 +69,7 @@ ms.locfileid: "70865285"
 
 **圖 1:伺服器對伺服器複寫**  
 
-## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>步驟 1：在您的電腦上安裝和設定 Windows Admin Center
+## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>步驟 1:在您的電腦上安裝和設定 Windows Admin Center
 
 如果您使用 Windows 系統管理中心來管理儲存體複本，請使用下列步驟來準備您的電腦以管理儲存體複本。
 1. 下載並安裝[Windows 管理中心](../../manage/windows-admin-center/overview.md)。
@@ -438,7 +438,7 @@ ms.locfileid: "70865285"
 1. [新增網路安全性群組](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)。 建立時，請選取與您所建立之 ExpressRoute 相關聯的訂用帳戶識別碼，並選取您剛才建立的資源群組。
 <br><br>將您需要的任何輸入和輸出安全性規則新增至網路安全性群組。 例如，您可能想要允許遠端桌面存取 VM。
 1. 使用下列設定[建立 AZURE VM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) （如 [圖 5] 所示）：
-    - **公用 IP 位址**:無
+    - **公用 IP 位址**:None
     - **虛擬網路**:從新增 ExpressRoute 的資源群組中，選取您所記下的虛擬網路。
     - **網路安全性群組（防火牆）** ：選取您先前建立的網路安全性群組。
     ![建立顯示 ExpressRoute 網路設定](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)

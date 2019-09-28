@@ -1,8 +1,8 @@
 ---
-title: 使用 get AllNamespaces 命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用 AllNamespaces 命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b77bb80238ee63cc0d71d88592d75850720e33b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0cd90fc650271c863459dd809e47ca6309132de5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440519"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363294"
 ---
-# <a name="using-the-get-allnamespaces-command"></a>使用 get AllNamespaces 命令
+# <a name="using-the-get-allnamespaces-command"></a>使用 AllNamespaces 命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示伺服器上的所有命名空間的相關資訊。
+顯示伺服器上所有命名空間的相關資訊。
 ## <a name="syntax"></a>語法
 Windows Server 2008：
 ```
@@ -38,18 +38,18 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 
 |         參數         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-|  [/ 伺服器：<Server name>]  | 指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整的網域名稱 (FQDN)。 如果未不指定任何伺服器名稱，則會使用本機伺服器。 |                        |
-| [/ ContentProvider:<name>] |                                                        指定內容提供者只會顯示命名空間。                                                         |                        |
-|      [/Show:Clients]      |                            僅支援 Windows Server 2008。 顯示用戶端電腦連線到命名空間的相關資訊。                             |                        |
-|    [/details:Clients]     |                           僅支援 Windows Server 2008 R2。 顯示用戶端電腦連線到命名空間的相關資訊。                           |                        |
-|  [/ExcludedeletePending]  |                                                              排除清單中的任何已停用的傳輸。                                                              |                        |
+|  [/Server： <Server name>]  | 指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。 |                        |
+| [/ContentProvider： <name>] |                                                        僅顯示指定之內容提供者的命名空間。                                                         |                        |
+|      [/Show：用戶端]      |                            僅支援 Windows Server 2008。 顯示連接到命名空間之用戶端電腦的相關資訊。                             |                        |
+|    [/details：用戶端]     |                           僅支援 Windows Server 2008 R2。 顯示連接到命名空間之用戶端電腦的相關資訊。                           |                        |
+|  [/ExcludedeletePending]  |                                                              排除清單中任何已停用的傳輸。                                                              |                        |
 
-## <a name="BKMK_examples"></a>範例
-若要檢視的所有命名空間，請輸入：
+## <a name="BKMK_examples"></a>典型
+若要查看所有命名空間，請輸入：
 ```
 wdsutil /Get-AllNamespaces
 ```
-若要檢視停用以外的所有命名空間，請輸入：
+若要查看已停用的所有命名空間，請輸入：
 - Windows Server 2008
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /Show:Clients /ExcludedeletePending
@@ -58,8 +58,8 @@ wdsutil /Get-AllNamespaces
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /details:Clients /ExcludedeletePending
   ```
-  #### <a name="additional-references"></a>其他參考資料
-  [命令列語法重點](command-line-syntax-key.md)
-  [使用的新命名空間命令](using-the-new-namespace-command.md)
-  [使用 移除命名空間命令](using-the-remove-namespace-command.md)
-   [子命令： 開始命名空間](subcommand-start-namespace.md)
+  #### <a name="additional-references"></a>其他參考
+  [命令列語法索引鍵](command-line-syntax-key.md)
+  [使用新的命名空間命令](using-the-new-namespace-command.md)
+  [使用 remove-Namespace 命令](using-the-remove-namespace-command.md)
+  [子命令： start-namespace](subcommand-start-namespace.md)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 title: Fsutil 資源
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: ea97f7f71d1b484c7ac63c7c429f291fba607bba
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 10f2847fd05658a481a10dfb5a1920a998559962
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867064"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376825"
 ---
 # <a name="fsutil-resource"></a>Fsutil 資源
 >適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows 2008、Windows Vista
@@ -48,9 +48,9 @@ fsutil resource [stop] <RmRootPathname>
 
 |        參數        |                                                                                                                                                                                                                                        描述                                                                                                                                                                                                                                         |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         建立          |                                                                                                                                                                                                                    建立次要交易式 Resource Manager。                                                                                                                                                                                                                     |
+|         create          |                                                                                                                                                                                                                    建立次要交易式 Resource Manager。                                                                                                                                                                                                                     |
 |    <RmRootPathname>     |                                                                                                                                                                                                        指定交易式 Resource Manager 根目錄的完整路徑。                                                                                                                                                                                                         |
-|          資訊           |                                                                                                                                                                                                            顯示指定的交易式 Resource Manager 資訊。                                                                                                                                                                                                            |
+|          info           |                                                                                                                                                                                                            顯示指定的交易式 Resource Manager 資訊。                                                                                                                                                                                                            |
 |      setautoreset       | 指定預設的交易式 Resource Manager 是否會在下一次掛接時清除交易式中繼資料。<br /><br />-將**setautoreset**參數設定為**true** ，以指定交易 Resource Manager 將會在下一次掛接時清除事務中繼資料（預設為）。<br />-將**setautoreset**參數設定為**false** ，以指定交易 Resource Manager 不會在下一次掛接時清除事務中繼資料（預設為）。 |
 | <DefaultRmRootPathname> |                                                                                                                                                                                                                       指定磁片磁碟機名稱，後面接著冒號。                                                                                                                                                                                                                        |
 |      setavailable       |                                                                                                                                                                                                 指定交易式 Resource Manager 會偏好一致性的可用性。                                                                                                                                                                                                 |

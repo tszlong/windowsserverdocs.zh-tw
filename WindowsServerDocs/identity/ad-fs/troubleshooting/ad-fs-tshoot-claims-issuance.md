@@ -1,36 +1,36 @@
 ---
 title: AD FS 疑難排解-宣告發行
-description: 本文件說明如何使用 AD FS 的權杖發佈問題進行疑難排解
+description: 本檔說明如何針對 AD FS 的權杖發行問題進行疑難排解
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fdf8851fe9b35f82191458ba3313fda2dc3ee4cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea0e6112f00f9cace6a0c580661a5319b5adaea5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839659"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366237"
 ---
 # <a name="ad-fs-troubleshooting---claims-issuance"></a>AD FS 疑難排解-宣告發行
-宣告是陳述式某主體對於本身或另一個主旨。  信賴憑證者的合作對象所發出的宣告，而且它們會指定一個或多個值，然後封裝在 AD FS 伺服器所發出的安全性權杖。  因為此程序中有數個移動組件，可以為這些重要的部分細分宣告發行。
+「宣告」（claim）是一個主體對自己或其他主旨的相關語句。  宣告是由信賴憑證者所發出，而且會指定一個或多個值，然後封裝在 AD FS 伺服器所發出的安全性權杖中。  由於此程式中有數個移動元件，因此宣告發行可以細分成這些主要部分。
 
 >[!NOTE]  
->您可以使用[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)上[ADFS 協助](https://adfshelp.microsoft.com)站台，以協助疑難排解問題的宣告。   
+>您可以在[ADFS](https://adfshelp.microsoft.com)說明網站上使用[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) ，協助針對宣告問題進行疑難排解。   
 
 ## <a name="token-request"></a>權杖要求
-當您移至 信賴憑證者的合作對象時它會將您重新導向至 AD FS 權杖的要求。  問題可能發生的要求。  最值得注意的是：
+當您移至信賴憑證者時，它會將您重新導向至具有權杖要求的 AD FS。  要求可能會發生問題。  最值得注意的是：
 
-### <a name="the-request-formatting-with-3rd-parties-particularly-saml"></a>與第 3 方 (特別是，SAML) 格式的要求
+### <a name="the-request-formatting-with-3rd-parties-particularly-saml"></a>協力廠商的要求格式（特別是 SAML）
 
-### <a name="pre-formated-urls-that-have-typos"></a>Pre 格式的 Url 有錯字
-時從 WS Federaion 信賴憑證者簽發的權杖，權杖的要求會隨附 URL 查詢字串參數。  如果信賴憑證者的合作對象不會在 URL 中指定正確的參數，它將會重新導向至 AD FS，則可能會發生問題導致與要求。
+### <a name="pre-formated-urls-that-have-typos"></a>預先格式化的 Url，具有錯誤輸入
+從 Federaion 信賴憑證者發出權杖時，權杖要求會跨越 URL 查詢字串參數。  如果信賴憑證者在重新導向至 AD FS 時未在該 URL 中指定正確的參數，則可能會導致要求發生問題。
 
 
-為了驗證權杖的格式，您可以使用 web 偵錯工具
+為了驗證權杖格式，可以使用 web 偵錯工具工具
 
 
 ## <a name="token-response"></a>權杖回應

@@ -1,9 +1,9 @@
 ---
 title: 規劃多樹系部署
-description: 本主題是部署在 Windows Server 2016 中的多樹系環境中的遠端存取快速入門的一部分。
+description: 本主題是在 Windows Server 2016 的多樹系環境中部署遠端存取指南的一部分。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a2f14fdb2fd3ab6f0a89c8d8c1a8853041dcba94
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281006"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404512"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>規劃多樹系部署
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明在多樹系部署中設定遠端存取時所需的規劃步驟。  
   
@@ -42,15 +42,15 @@ ms.locfileid: "67281006"
 您至少必須針對新樹系中的 DirectAccess 用戶端電腦，在新樹系中設定一個安全性群組。 這是因為單一安全性群組無法包含來自數個樹系的帳戶。  
   
 > [!NOTE]  
-> -   DirectAccess 需要至少一個 Windows 10&reg;或 Windows&reg; 8 的用戶端安全性群組，每個樹系。 不過，建議您有 Windows 10 或 Windows 8 包含 Windows 10 或 Windows 8 的用戶端的每個網域的用戶端安全性群組。  
-> -   啟用多站台時，DirectAccess 需要至少一個 Windows 7&reg;每個用戶端電腦可支援在 Windows 7 中的每個 DirectAccess 進入點的樹系的用戶端安全性群組。 不過，建議您擁有的不同 Windows 7 用戶端安全性群組包含 Windows 7 用戶端的每個網域的每個進入點。  
+> -   DirectAccess 針對每個樹系至少需要一個 Windows 10 @ no__t-0 或 Windows @ no__t-1 8 用戶端安全性群組。 不過，建議您針對每個包含 Windows 10 或 Windows 8 用戶端的網域，各擁有一個 Windows 10 或 Windows 8 用戶端安全性群組。  
+> -   啟用多網站時，DirectAccess 針對支援 Windows 7 用戶端電腦的每個 DirectAccess 進入點，每個樹系至少需要一個 Windows 7 @ no__t-0 用戶端安全性群組。 不過，對於每個包含 Windows 7 用戶端的網域，建議您針對每個進入點使用個別的 Windows 7 用戶端安全性群組。  
 >   
 > 針對要在其他網域中用戶端電腦上套用的 DirectAccess，必須在這些網域上建立用戶端 GPO。 新增安全性群組會觸發寫入新網域的新用戶端 GPO，如果您將新的安全性群組從新網域新增到 DirectAccess 用戶端安全性群組清單，則會在新網域上自動建立用戶端 GPO，而來自新網域的用戶端電腦將透過用戶端 GPO 取得 DirectAccess 設定。  
 >   
 > 請注意，如果您將新網域的用戶端新增到已經設定為 DirectAccess 用戶端安全性群組的現有安全性群組，則 DirectAccess 將不會在新網域上自動建立用戶端 GPO。 新網域的用戶端將不會接收到 DirectAccess 設定，而且將無法使用 DirectAcecss 來連線。  
   
 ## <a name="plan-certification-authorities"></a>規劃憑證授權單位  
-如果 DirectAccess 部署已設定為使用單次密碼 (OTP) 驗證，則每個樹系都會包含相同的簽署憑證範本，但會包含不同的 Oid 值。 這會導致無法將樹系設定為單一設定單位。 若要解決此問題，並在多樹系環境中設定 OTP，請參閱主題中的 [設定在多樹系部署中的 OTP] 區段[設定多樹系部署](Configure-a-Multi-Forest-Deployment.md)。  
+如果 DirectAccess 部署已設定為使用單次密碼 (OTP) 驗證，則每個樹系都會包含相同的簽署憑證範本，但會包含不同的 Oid 值。 這會導致無法將樹系設定為單一設定單位。 若要解決此問題並在多樹系環境中設定 OTP，請參閱[設定多樹系部署](Configure-a-Multi-Forest-Deployment.md)主題中的「在多樹系部署中設定 otp」一節。  
   
 使用 IPsec 電腦憑證驗證時，所有的用戶端與伺服器電腦都必須具備由相同根或中繼憑證授權單位所發行的電腦憑證，而不論它們所屬的樹系為何。  
   

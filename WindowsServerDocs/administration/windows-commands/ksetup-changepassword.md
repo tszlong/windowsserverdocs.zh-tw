@@ -1,8 +1,8 @@
 ---
-title: ksetup:changepassword
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： changepassword
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f629c6c7930777583df38f5af900ed380ec60f9c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51be9e71c2b290e6346d23144543e0eec29f9d07
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878529"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375176"
 ---
-# <a name="ksetupchangepassword"></a>ksetup:changepassword
+# <a name="ksetupchangepassword"></a>ksetup： changepassword
 
 
 
-若要變更登入使用者的密碼，會使用金鑰發佈中心 (KDC) 密碼 (kpasswd) 值。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+會使用金鑰發佈中心（KDC）密碼（kpasswd）值來變更已登入使用者的密碼。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,28 +36,28 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 |參數|描述|
 |---------|-----------|
-|\<OldPasswd>|指出登入使用者的現有密碼。|
-|\<NewPasswd>|會指出登入使用者的新密碼。|
+|\<OldPasswd >|指出登入使用者的現有密碼。|
+|\<NewPasswd >|指出登入使用者的新密碼。|
 
 ## <a name="remarks"></a>備註
 
-此命令會使用 KDC (kpasswd) 的密碼值，若要變更登入使用者的密碼。 Kpasswd，如果設定，會顯示在輸出中，執行**ksetup /dumpstate**命令。
+此命令會使用 KDC 密碼（kpasswd）值來變更已登入使用者的密碼。 如果設定，kpasswd 會藉由執行**ksetup/dumpstate**命令，在輸出中顯示。
 
-使用者的新密碼必須符合此電腦上的所有密碼需求。
+使用者的新密碼必須符合在此電腦上設定的所有密碼需求。
 
-如果目前的網域中找不到使用者帳戶，系統會要求您提供的使用者帳戶所在的網域名稱。
+如果在目前的網域中找不到使用者帳戶，系統會要求您提供使用者帳戶所在的功能變數名稱。
 
-如果您想要強制在下次登入時變更密碼，此命令會允許使用星號 （*），因此將會提示使用者輸入新密碼。
+如果您想要在下次登入時強制變更密碼，此命令允許使用星號（*），因此系統會提示使用者輸入新密碼。
 
-命令的輸出會通知您的成功或失敗狀態。
+命令的輸出會通知您「成功」或「失敗」狀態。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-變更目前登入在這個網域中的這台電腦之使用者的密碼：
+將目前登入此電腦的使用者密碼變更為此網域：
 ```
 ksetup /changepassword Pas$w0rd Pa$$w0rd
 ```
-變更目前登入 Contoso 網域中之使用者的密碼：
+變更目前在 Contoso 網域中登入之使用者的密碼：
 ```
 ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ```

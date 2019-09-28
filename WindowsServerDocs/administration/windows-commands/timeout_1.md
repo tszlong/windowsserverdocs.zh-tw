@@ -1,8 +1,8 @@
 ---
 title: timeout
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3997399b732c494050797c83a0a52938574986bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09f294eb78a8868b4e3962557a36199b69fae0c9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830169"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385769"
 ---
 # <a name="timeout"></a>timeout
 
 
 
-指定的秒數就會暫停命令處理器。
+在指定的秒數內暫停命令處理器。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,27 +38,27 @@ timeout /t <TimeoutInSeconds> [/nobreak]
 
 |參數|描述|
 |---------|-----------|
-|/t \<TimeoutInSeconds>|指定命令處理器就會繼續處理之前要等候的秒數 （介於-1 到 99999） 的十進位數字。 值-1 會導致無限期地等待按鍵動作的電腦。|
-|/nobreak|指定忽略使用者按鍵。|
+|/t \<TimeoutInSeconds >|指定命令處理器繼續處理之前，要等候的秒數（介於-1 到99999之間）。 值-1 會使電腦無限期地等待按鍵。|
+|/nobreak|指定忽略使用者金鑰筆劃。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   **逾時**命令通常會在批次檔。
--   立即執行，即使尚未過期的逾時期限時，使用者按鍵輸入將繼續命令處理器執行。
--   當搭配**睡眠**命令，**逾時**類似**暫停**命令。
+-   **Timeout**命令通常用於批次檔中。
+-   使用者按鍵會立即繼續命令處理器執行，即使超時時間尚未過期也一樣。
+-   與**睡眠**命令搭配使用時， **timeout**類似于**pause**命令。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要每十秒暫停命令處理器，請輸入：
+若要將命令處理器暫停10秒，請輸入：
 ```
 timeout /t 10
 ```
-若要暫停 100 秒命令處理器，並忽略任何按鍵輸入，輸入：
+若要暫停命令處理器100秒並忽略任何擊鍵，請輸入：
 ```
 timeout /t 100 /nobreak
 ```
-若要暫停命令處理，直到按下按鍵，請輸入：
+若要無限期地暫停命令處理器直到按下按鍵，請輸入：
 ```
 timeout /t -1
 ```

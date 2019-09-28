@@ -1,7 +1,7 @@
 ---
 title: 設定伺服器基礎結構
 description: 在此步驟中，您會安裝並設定支援 VPN 所需的伺服器端元件。 伺服器端元件包括設定 PKI，以散發使用者、VPN 伺服器和 NPS 伺服器所使用的憑證。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 260d5c6273d877386dc1cd8833b2f226533127c3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c7e2c4172621416048fa9e82bbd12f5b1717d490
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871302"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404299"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>步驟 2. 設定伺服器基礎結構
 
@@ -116,7 +116,7 @@ ms.locfileid: "70871302"
 
     - **目的：** 伺服器驗證，IP 安全性 IKE 中繼 
 
-    - **憑證範本：** [_Customer_]VPN 伺服器
+    - **憑證範本：** [_Customer_] VPN 伺服器
 
 #### <a name="example-vpngatewayinf-script"></a>範例：VPNGateway .inf 腳本
 

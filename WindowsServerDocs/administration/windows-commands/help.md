@@ -1,8 +1,8 @@
 ---
 title: help
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 793034c32897d8f4a7d7810016eecbad6a982064
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1d759c85c07d76811053ba0a4a938e07220c2648
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883379"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375590"
 ---
 # <a name="help"></a>help
 
 
 
-提供有關系統命令 （亦即，非網路命令） 的線上資訊。 如果未指定參數，使用**協助**列出並簡要描述每個系統命令。
+提供有關系統命令的線上資訊（也就是非網路命令）。 如果在沒有**參數的情況**下使用，說明會列出並簡短地描述每個系統命令。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -39,11 +39,11 @@ help [<Command>]
 
 |參數|描述|
 |---------|-----------|
-|\<命令 >|指定您要取得相關資訊的命令名稱。|
+|\<Command >|指定您想要其相關資訊的命令名稱。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要檢視有關的資訊**robocopy**命令中，輸入下列其中一項：
+若要查看**robocopy**命令的相關資訊，請輸入下列其中一項：
 ```
 help robocopy
 robocopy /? 

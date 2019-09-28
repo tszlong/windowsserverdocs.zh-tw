@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getmaxdownloadtime
-description: 適用於 Windows 命令主題**bitsadmin getmaxdownloadtime** -擷取下載逾時 （秒）。
+description: '**Bitsadmin getmaxdownloadtime**的 Windows 命令主題-以秒為單位，抓取下載超時時間。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d067d6a0821d9af4784c02c6a332e8eddd2352c0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 39a19f86e97c1a525b5beb0c5f3b23dff349cb19
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434941"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381583"
 ---
 # <a name="bitsadmin-getmaxdownloadtime"></a>bitsadmin getmaxdownloadtime
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-擷取下載逾時 （秒）。
+抓取下載超時（以秒為單位）。
 
 ## <a name="syntax"></a>語法
 
@@ -42,14 +42,14 @@ bitsadmin /GetMaxDownloadtime <Job>
 
 -   N\/A
 
-## <a name="BKMK_examples"></a>範例
-下列範例會取得名為作業的最大的下載時間*myDownloadJob*以秒為單位。
+## <a name="BKMK_examples"></a>典型
+下列範例會取得名為*myDownloadJob*之作業的下載時間上限（以秒為單位）。
 
 ```
 C:\>bitsadmin /GetMaxDownloadtime myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 [命令列語法關鍵](command-line-syntax-key.md)
 
 

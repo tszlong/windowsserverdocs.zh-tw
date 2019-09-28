@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setdescription
-description: 適用於 Windows 命令主題**bitsadmin setdescription** -設定指定工作的描述。
+description: '**Bitsadmin setdescription**的 Windows 命令主題-設定指定工作的描述。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e3323c20eebc8ba633ccfd478daa0753e506f46
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d140ee9d575828a1a4d536073e468c9b4e56799f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830749"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380935"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
 
 
-設定指定工作的描述。
+設定指定之作業的描述。
 
 ## <a name="syntax"></a>語法
 
@@ -37,11 +37,11 @@ bitsadmin /SetDescription <Job> <Description>
 |參數|描述|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
-|描述|文字用來描述工作。|
+|描述|用來描述作業的文字。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的描述*myDownloadJob*。
+下列範例會抓取名為*myDownloadJob*之作業的描述。
 ```
 C:\>bitsadmin /SetDescription myDownloadJob "Music Downloads"
 ```
