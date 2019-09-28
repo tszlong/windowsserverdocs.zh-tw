@@ -1,18 +1,18 @@
 ---
 title: 效能微調軟體定義網路
 description: 軟體定義網路 (SDN) 效能調整指導方針
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; AnPaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e173039c45faa100a434b69a9faa736ff7c9b53
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 8227c94e6785f4acf9135aac12406b6ac98a0910
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034130"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383516"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>效能微調軟體定義網路
 
