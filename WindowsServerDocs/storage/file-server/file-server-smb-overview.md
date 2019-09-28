@@ -1,43 +1,43 @@
 ---
-title: 檔案共用在 Windows Server 中使用 SMB 3 通訊協定概觀
-description: 使用 SMB 3 通訊協定的檔案共用和 Windows server 檔案服務的概觀。
-ms.prod: windows-server-threshold
+title: 在 Windows Server 中使用 SMB 3 通訊協定的檔案共用總覽
+description: 概述如何將 SMB 3 通訊協定用於檔案共用，並使用 Windows Server 提供的檔案。
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc4c8b341ee78db80f862ee412400f0a930fe810
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b40c179d242a0c48c6eb176db1225979f9e6a123
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845049"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402087"
 ---
-# <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>檔案共用在 Windows Server 中使用 SMB 3 通訊協定概觀
+# <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>在 Windows Server 中使用 SMB 3 通訊協定的檔案共用總覽
 
->適用於：Windows Server 2012 R2 中，Windows Server 2012 中，Windows Server 2016
+>適用於：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
-本主題說明 Windows Server® 2012年、 Windows Server 2012 R2 和 Windows Server 2016 中的 SMB 3.0 功能 — 實際使用的功能，最重要的新功能或更新這個版本相較於舊的版本及硬體的功能需求。
+本主題說明 Windows Server®2012、Windows Server 2012 R2 和 Windows Server 2016 中的 SMB 3.0 功能，這項功能的實際用法、與舊版相較之下，此版本中最重要的新功能或更新功能，以及硬體滿足.
 
 ## <a name="feature-description"></a>功能描述
 
-伺服器訊息區 (SMB) 通訊協定是網路檔案共用通訊協定，允許電腦上的應用程式讀取和寫入檔案，以及要求來自電腦網路中伺服器程式的服務。 SMB 通訊協定可以用於其 TCP/IP 通訊協定或其他網路通訊協定的最上方。 使用 SMB 通訊協定，應用程式 (或應用程式的使用者) 可以存取遠端伺服器上的檔案或其他資源。 這允許應用程式讀取、建立及更新遠端伺服器上的檔案。 它也可以與任何設定來接收 SMB 用戶端要求的伺服器程式進行通訊。 Windows Server 2012 引進了新的 3.0 版 SMB 通訊協定。
+伺服器訊息區 (SMB) 通訊協定是網路檔案共用通訊協定，允許電腦上的應用程式讀取和寫入檔案，以及要求來自電腦網路中伺服器程式的服務。 SMB 通訊協定可以用於其 TCP/IP 通訊協定或其他網路通訊協定的最上方。 使用 SMB 通訊協定，應用程式 (或應用程式的使用者) 可以存取遠端伺服器上的檔案或其他資源。 這允許應用程式讀取、建立及更新遠端伺服器上的檔案。 它也可以與任何設定來接收 SMB 用戶端要求的伺服器程式進行通訊。 Windows Server 2012 引進了新的3.0 版 SMB 通訊協定。
 
 ## <a name="practical-applications"></a>實際應用
 
 本節討論一些使用新 SMB 3.0 通訊協定的新實用方法。
 
-* **適用於虛擬化的檔案存放裝置 (透過 SMB 的 Hyper-V™)**。 Hyper-V 可以透過 SMB 3.0 通訊協定，在檔案共用中儲存虛擬機器檔案，例如設定、虛擬硬碟 (VHD) 檔案及快照。 這適用於獨立式檔案伺服器和叢集檔案伺服器，這些伺服器會將 Hyper-V 與叢集的共用檔案存放裝置搭配使用。
+* **適用於虛擬化的檔案存放裝置 (透過 SMB 的 Hyper-V™)** 。 Hyper-V 可以透過 SMB 3.0 通訊協定，在檔案共用中儲存虛擬機器檔案，例如設定、虛擬硬碟 (VHD) 檔案及快照。 這適用於獨立式檔案伺服器和叢集檔案伺服器，這些伺服器會將 Hyper-V 與叢集的共用檔案存放裝置搭配使用。
 * **透過 SMB 的 Microsoft SQL Server**。 SQL Server 可以在 SMB 檔案共用上儲存使用者資料庫檔案。 目前適用於獨立式 SQL Server 的 SQL Server 2008 R2 支援此項。 即將推出的 SQL Server 版本將新增對於叢集 SQL 伺服器和系統資料庫的支援。
 * **適用於使用者資料的傳統存放裝置**。 SMB 3.0 通訊協定會為資訊工作者 (或用戶端) 工作負載提供增強功能。 這些增強功能包括透過廣域網路 (WAN) 存取資料和保護資料免於遭受竊聽攻擊時，減少分公司使用者感受到應用程式延遲。
 
 ## <a name="new-and-changed-functionality"></a>新功能和變更的功能
 
-如需 Windows Server 2012 R2 中的新增和變更功能的資訊，請參閱[What's New in Windows Server 中的 SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)。
+如需 Windows Server 2012 R2 中新增和變更功能的相關資訊，請參閱[Windows server 中 SMB 的新](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)功能。
 
-Windows Server 2012 和 Windows Server 2016 中的 SMB 包含新的 SMB 3.0 通訊協定和所述的許多新改良下, 表中。
+Windows Server 2012 和 Windows Server 2016 中的 SMB 包含新的 SMB 3.0 通訊協定，以及下表所述的許多新的改良功能。
 
 <table>
 <colgroup>
@@ -105,32 +105,32 @@ Windows Server 2012 和 Windows Server 2016 中的 SMB 包含新的 SMB 3.0 通�
 
 SMB 透明容錯移轉具備下列需求：
 
-* 容錯移轉叢集，且已設定至少兩個節點執行 Windows Server 2012 或 Windows Server 2016。 這個叢集必須傳遞驗證精靈中所含的叢集驗證測試。
+* 執行 Windows Server 2012 或 Windows Server 2016 且至少已設定兩個節點的容錯移轉叢集。 這個叢集必須傳遞驗證精靈中所含的叢集驗證測試。
 * 檔案共用必須利用持續可用性 (CA) 屬性來建立，這是預設值。
 * 檔案共用必須建立於 CSV 磁碟區路徑上，以達到 SMB 向外延展。
-* 用戶端電腦必須執行 Windows® 8 或 Windows Server 2012，這兩者都包含支援持續可用性的更新的 SMB 用戶端。
+* 用戶端電腦必須執行 Windows®8或 Windows Server 2012，這兩者都包含支援持續可用性的更新 SMB 用戶端。
 
 >[!NOTE]
->下層用戶端可以連線到檔案共用，含有 CA 屬性，但這些用戶端，不支援透明的容錯移轉。
+>下層用戶端可以連接到具有 CA 屬性的檔案共用，但這些用戶端不會支援透明容錯移轉。
 
 SMB 多重通道具備下列需求：
 
-* 需要至少兩部執行 Windows Server 2012 的電腦。 不需要安裝任何其他的功能 - 預設會啟用這項技術。
+* 至少需要兩部執行 Windows Server 2012 的電腦。 不需要安裝任何其他的功能 - 預設會啟用這項技術。
 * 如需所建議網路設定的相關資訊，請參閱這個概觀主題最後的＜另請參閱＞一節。
 
 SMB 直接傳輸具備下列需求：
 
-* 需要至少兩部執行 Windows Server 2012 的電腦。 不需要安裝任何其他的功能 - 預設會啟用這項技術。
+* 至少需要兩部執行 Windows Server 2012 的電腦。 不需要安裝任何其他的功能 - 預設會啟用這項技術。
 * 需要含有 RDMA 功能的網路介面卡。 這些介面卡目前可用於三種不同類型：iWARP、Infiniband 或 RoCE (透過聚合式乙太網路的 RDMA)。
 
 ## <a name="more-information"></a>詳細資訊
 
-下列清單提供網路上有關 SMB 及相關的技術，在 Windows Server 2012 R2、 Windows Server 2012 和 Windows Server 2016 中的其他資源。
+下列清單提供網路上有關 SMB 的其他資源，以及 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 中的相關技術。
 
-* [Windows Server 中的儲存體](../storage.md)
-* [用於應用程式資料的向外延展檔案伺服器](../../failover-clustering/sofs-overview.md)
-* [直接改善的 SMB 檔案伺服器的效能](smb-direct.md)
-* [部署透過 SMB 的 HYPER-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+* [Windows Server 的儲存空間](../storage.md)
+* [適用于應用程式資料的向外延展檔案伺服器](../../failover-clustering/sofs-overview.md)
+* [使用 SMB 直接傳輸改善檔案伺服器的效能](smb-direct.md)
+* [部署透過 SMB 的 Hyper-v](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
 * [部署 SMB 多重通道](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
-* [伺服器應用程式的部署快速又有效率的檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB:疑難排解指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
+* [為伺服器應用程式部署快速又有效率的檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+* [SMB：疑難排解指南 @ no__t-0

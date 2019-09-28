@@ -1,19 +1,19 @@
 ---
 title: 管理 QoS 原則
 description: 本主題提供有關如何在 Windows Server 2016 中建立和管理服務品質（QoS）原則的指示。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3cff51b3cf76d3224832bf99ff966bf473d6ff6c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ac717555d1ab751600527e294d32f10d1f05bfa5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871855"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395875"
 ---
 # <a name="manage-qos-policy"></a>管理 QoS 原則
 
@@ -280,7 +280,7 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>無線多媒體和 DSCP 值
 
-[Wi-fi 聯盟](https://go.microsoft.com/fwlink/?LinkId=160769)已\(建立無線多媒體 WMM\)的認證，其定義了四個存取類別\(WMM_AC\) ，以排定在 wi-fi\-上傳輸的網路流量優先順序Wi-fi 無線網路。 存取類別包含\(順序最高到最低的優先順序\)：語音、影片、最佳方式和背景; 分別縮寫為 VO、VI、as 和 BK。 WMM 規格會定義哪些 DSCP 值會對應到四個存取類別中的每一個：
+[Wi-fi 聯盟](https://go.microsoft.com/fwlink/?LinkId=160769)已建立無線多媒體 @no__t 1WMM @ no__t-2 的認證，其定義四個存取類別 \(WMM_AC @ no__t-4，以設定在 wi-fi @ No__t-5Fi 無線網路上傳輸的網路流量優先順序。 存取類別包含\(順序最高到最低的優先順序\)：語音、影片、最佳方式和背景; 分別縮寫為 VO、VI、as 和 BK。 WMM 規格會定義哪些 DSCP 值會對應到四個存取類別中的每一個：
   
 |DSCP 值|WMM 存取類別|
 |----------|-------------------|
@@ -312,7 +312,7 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 
 或者，您也可以藉由指定非重迭的狀況，將多個 QoS 原則套用至相同的流量。 在應用程式的條件和網路 quintuple 之間，指定應用程式的原則會被視為更明確且會套用。 
 
-例如，policy_A 只會指定應用程式名稱（app.config），而 policy_B 會指定目的地 IP 位址 192.168.1.0/24。 當這些 QoS 原則衝突\(時，app-v 會將流量傳送到 192.168.4.0/24\)範圍內的 IP 位址，並套用 policy_A。
+例如，policy_A 只會指定應用程式名稱（app.config），而 policy_B 會指定目的地 IP 位址 192.168.1.0/24。 當這些 QoS 原則衝突 \(app 會將流量傳送至 192.168.4.0/24 @ no__t-1 範圍內的 IP 位址，並套用 policy_A。
 
  **在網路 quintuple 中的優先順序更高**
 

@@ -1,8 +1,8 @@
 ---
 title: 使用 MultiPoint 儀表板管理使用者桌面
-description: 提供 MultiPoint 儀表板的概觀
+description: 提供 MultiPoint 儀表板的總覽
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,17 +13,17 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 049910029f0ed2623ae34131d3755964d3499d0e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b250d820e7086054d18d62eebe8ce9d3686f8d5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837339"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405099"
 ---
 # <a name="manage-user-desktops-using-multipoint-dashboard"></a>使用 MultiPoint 儀表板管理使用者桌面
-在 MultiPoint 服務系統中，桌面是在每個使用者「站台」之監視器上顯示的軟體使用者介面。 MultiPoint 儀表板是一項工具，可協助您管理這些桌上型電腦。   
+在 MultiPoint 服務系統中，桌面是在每個使用者「站台」之監視器上顯示的軟體使用者介面。 MultiPoint 儀表板是一種工具，可協助您管理這些桌上型電腦。   
   
-MultiPoint 儀表板上**首頁**索引標籤上，您可以執行下列動作：  
+在 MultiPoint 儀表板的 [**首頁**] 索引標籤上，您可以執行下列動作：  
   
 - 檢視桌面  
 您可以檢視每個使用中桌面的縮圖影像。 如需檢視縮圖的資訊，請參閱[工作階段縮圖的檢視選項](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md)主題。  
@@ -40,7 +40,7 @@ MultiPoint 儀表板上**首頁**索引標籤上，您可以執行下列動作�
 - 使用 IM  
 您可以和選取的使用者聊天。 只有儀表板使用者和所選工作階段的使用者可以看到聊天訊息。 如需詳細資訊，請參閱[使用 IM](Use-IM.md)。  
 - 變更縮圖影像的大小  
-您可以變更 MultiPoint 儀表板中顯示的縮圖的大小。 如需變更縮圖大小的資訊，請參閱[工作階段縮圖的檢視選項](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md)。
+您可以變更 [MultiPoint 儀表板] 中顯示的縮圖大小。 如需變更縮圖大小的資訊，請參閱[工作階段縮圖的檢視選項](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md)。
 - 顯示所有站台  
 您可以檢視連接到系統的所有站台，包括非使用中的站台。 如需檢視所有站台的資訊，請參閱[顯示所有站台](Show-All-Stations.md)主題。  
 - 搜尋及排序縮圖  

@@ -1,19 +1,19 @@
 ---
 title: 部署資料夾重新導向和漫遊使用者設定檔的主要電腦
 description: 如何啟用主要電腦支援，並為具有資料夾重新導向和漫遊使用者設定檔的使用者指定主要電腦。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fe026b97f15b4094303c8162c5363cc6205dedd1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: be2b41cf32e2020422c32415e2d8f4273eb09859
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867274"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394435"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>部署資料夾重新導向和漫遊使用者設定檔的主要電腦
 
@@ -36,7 +36,7 @@ ms.locfileid: "70867274"
 > [!TIP]
 > 雖然主要電腦支援需要資料夾重新導向和/或漫遊使用者設定檔，但如果您是第一次部署這些技術，最好先設定主要電腦支援，再啟用設定資料夾重新導向的 Gpo。漫遊使用者設定檔。 這樣可以防止使用者資料在啟用主要電腦支援之前被複製到非主要電腦。 如需設定資訊，請參閱[部署資料夾](deploy-folder-redirection.md)重新導向和[部署漫遊使用者設定檔](deploy-roaming-user-profiles.md)。
 
-## <a name="step-1-designate-primary-computers-for-users"></a>步驟 1：指定使用者的主要電腦
+## <a name="step-1-designate-primary-computers-for-users"></a>步驟 1:指定使用者的主要電腦
 
 部署主要電腦支援的第一個步驟是指定每個使用者的主要電腦。 若要這麼做，請使用 Active Directory 管理中心來取得相關電腦的辨別名稱，然後設定**PrimaryComputer**屬性。
 
@@ -56,7 +56,7 @@ ms.locfileid: "70867274"
 9. 選取 [**屬性編輯器**] 索引標籤，選取 [ **PrimaryComputer** ]，然後選取 [**編輯**]。 [多重字串值編輯器] 對話方塊隨即顯示。
 10. 以滑鼠右鍵按一下文字方塊，選取 [**貼**上]，選取 [**新增**]，選取 **[確定]** ，然後再次選取 **[確定]** 。
 
-## <a name="step-2-optionally-enable-primary-computers-for-folder-redirection-in-group-policy"></a>步驟 2：（選擇性）在群組原則中啟用資料夾重新導向的主要電腦
+## <a name="step-2-optionally-enable-primary-computers-for-folder-redirection-in-group-policy"></a>步驟 2:（選擇性）在群組原則中啟用資料夾重新導向的主要電腦
 
 下一步是選擇性地設定群組原則，以啟用資料夾重新導向的主要電腦支援。 這麼做可讓使用者的資料夾在指定為使用者主要電腦的電腦上重新導向，而不是在任何其他電腦上。 您可以依每部電腦或每個使用者的方式，控制資料夾重新導向的主要電腦。
 

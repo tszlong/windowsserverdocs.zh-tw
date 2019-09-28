@@ -2,7 +2,7 @@
 title: 設定 MultiPoint 服務中的磁碟保護
 description: 瞭解如何設定 MultiPoint 服務的磁片保護
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 867848b65b02b6a7436fc5c86ba796a1b42aec42
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ae930162de32335ac32e3bda0ac381a26c5ea6dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871742"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389824"
 ---
 # <a name="configure-disk-protection"></a>設定磁片保護
 您可以使用 Multipoint 服務中的 [磁片保護] 來保護您的系統磁碟區免于非預期的更新、排程 Windows 更新在磁片保護作用中時保留、暫時停用磁片保護，以及卸載磁片保護。  
@@ -62,7 +62,7 @@ Windows 需要更新一些系統檔案，包括系統分頁檔、損毀傾印位
   
 6.  在 [**完成後**] 底下，選擇是否要讓系統回到先前的電源狀態，或在套用更新之後關閉。  
   
-7.  按一下 [確定 **Deploying Office Solutions**]。  
+7.  按一下 [確定]。  
   
 ## <a name="temporarily-disable-disk-protection"></a>暫時停用磁片保護  
 如果系統管理員需要安裝軟體、變更系統設定，或執行其他涉及系統更新的維護工作，他們可以暫時停用磁片保護。 進行變更之後，請重新啟用 [磁片保護]。 在系統重新開機期間，系統會在啟用磁片保護時保留其狀態。  

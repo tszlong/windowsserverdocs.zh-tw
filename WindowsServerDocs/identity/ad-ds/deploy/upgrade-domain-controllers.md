@@ -6,14 +6,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3e144a09c99d9b72d623956e868b3f573962ed94
-ms.sourcegitcommit: 67833e36b8b2c6194a1426a974c5ad9c859fa4c9
+ms.openlocfilehash: cbb947c17219d4fe2f6694f0e44e379fc8671e76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329635"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401940"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>將網域控制站升級到 Windows Server 2016
 
@@ -21,7 +21,7 @@ ms.locfileid: "68329635"
 
 本主題提供有關 Windows Server 2016 中 Active Directory Domain Services 的背景資訊, 並說明從 Windows Server 2012 或 Windows Server 2012 R2 升級網域控制站的程式。
 
-## <a name="pre-requisites"></a>必要條件
+## <a name="pre-requisites"></a>先決條件
 
 升級網域的建議方式是升級執行較新版本 Windows Server 的網域控制站, 並視需要將較舊的網域控制站降級。 該方法是升級現有網域控制站之作業系統的慣用方法。 這份清單涵蓋執行較新版本之 Windows Server 的網域控制站升級之前要遵循的一般步驟:
 

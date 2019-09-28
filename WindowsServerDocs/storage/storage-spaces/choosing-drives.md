@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1368bc83-9121-477a-af09-4ae73ac16789
 title: 選擇儲存空間直接存取的磁碟機
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: eb19e7ecf89f02200d3393dc1a4a9e5cd85cf598
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: b02d26e8a2f2cd699d8e1eda95cf72fe71396a21
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314988"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402896"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
@@ -110,7 +110,7 @@ ms.locfileid: "68314988"
 
 每個伺服器都必須具備至少兩個快取磁碟機 (備援所需的下限)。 建議您讓容量磁碟機數為快取磁碟機數的倍數。 例如，若有 4 部快取磁碟機，則 8 部容量磁碟機 (比例為 1:2) 展現的效能會比 7 或 9 部更一致。
 
-快取應該調整大小, 以配合您的應用程式和工作負載的工作集, 也就是它們在任何指定時間主動讀取和寫入的所有資料。 此外即無其他快取大小需求。 針對具有 Hdd 的部署, 合理的起點是容量的 10% –例如, 如果每部伺服器都有 4 x 4 TB HDD = 16 TB 的容量, 則每一部伺服器 2 x 800 GB SSD = 1.6 TB 的快取。 針對所有的 flash 部署 (特別是極[高](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)的 ssd), 較接近容量的 5% (例如, 如果每部伺服器具有 24 x 1.2 TB SSD = 28.8 tb 的容量), 則 2 x 750 GB NVMe = 每一伺服器的 1.5 TB 快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
+快取應該調整大小, 以配合您的應用程式和工作負載的工作集, 也就是它們在任何指定時間主動讀取和寫入的所有資料。 此外即無其他快取大小需求。 針對具有 Hdd 的部署，合理的起點是容量的 10% –例如，如果每部伺服器都有 4 x 4 TB HDD = 16 TB 的容量，則每一部伺服器 2 x 800 GB SSD = 1.6 TB 的快取。 針對所有的 flash 部署（特別是極[高](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)的 ssd），較接近容量的 5% （例如，如果每部伺服器具有 24 x 1.2 TB SSD = 28.8 tb 的容量），則 2 x 750 GB NVMe = 每一伺服器的 1.5 TB 快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
 
 ### <a name="general"></a>一般
 

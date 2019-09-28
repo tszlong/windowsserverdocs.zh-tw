@@ -1,37 +1,37 @@
 ---
-title: 控制您的工具在解決方案中的可見性
-description: 控制 Windows Admin Center SDK （專案檀香山） 方案中的工具的可見性
+title: 控制您的工具在解決方案中的可見度
+description: 控制您的工具在解決方案中的可見度 Windows 系統管理中心 SDK （Project 檀香山）
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 3cce07ba5b3d2cc89f1363bbb2af5acd048c0466
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 440ba3d11da671beedc2c2fb90caa3e176f83877
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445947"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385316"
 ---
-# <a name="control-your-tools-visibility-in-a-solution"></a>控制您的工具在解決方案中的可見性 #
+# <a name="control-your-tools-visibility-in-a-solution"></a>控制您的工具在解決方案中的可見度 #
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-可能有您想来排除 （或隱藏） 擴充功能或工具，從可用的工具清單。 例如，如果您的工具的目標只有 Windows Server 2016 （不是較舊版本），您可能不想連接到 Windows Server 2012 R2 伺服器若要查看您的工具在所有的使用者。 (假設使用者體驗中-他們按一下它，等到工具載入，才能收到訊息，其功能不適用於其連線。)您可以定義何時顯示 （或隱藏） 您的工具 manifest.json 檔案中的功能。
+有時候，您可能會想要從 [可用的工具] 清單中排除（或隱藏）您的擴充功能或工具。 例如，如果您的工具只以 Windows Server 2016 （而不是較舊的版本）為目標，則您可能不想要連接到 Windows Server 2012 R2 伺服器的使用者，完全查看您的工具。 （想像使用者經驗-他們按一下它，等待工具載入，只是為了取得其功能無法用於連線的訊息）。您可以定義在工具的資訊清單. json 檔案中顯示（或隱藏）功能的時機。
 
-## <a name="options-for-deciding-when-to-show-a-tool"></a>用於決定何時要顯示的工具 ##
+## <a name="options-for-deciding-when-to-show-a-tool"></a>決定何時要顯示工具的選項 ##
 
-有三個不同的選項，您可以使用它來判斷您的工具是否顯示以及是否適用於特定伺服器或叢集連線。
+有三種不同的選項可供您用來判斷是否應該顯示您的工具，並可供特定伺服器或叢集連接使用。
 
-* localhost
-* 清查 （的屬性陣列）
+* 發出
+* 清查（屬性陣列）
 * 指令碼
 
-### <a name="localhost"></a>LocalHost ###
+### <a name="localhost"></a>發出 ###
 
-LocalHost 條件物件屬性包含布林值，如果連接的節點為 localHost （相同電腦上所安裝的 Windows Admin Center） 推斷可評估與否。 將值傳遞給屬性，您指定何時 （條件） 若要顯示的工具。 例如若您只想要顯示如果使用者實際上連線到本機主機的工具，請將它設定如下：
+條件物件的 localHost 屬性包含布林值，如果連接的節點是 localHost （Windows 系統管理中心安裝所在的同一部電腦），則可以評估為推斷。 藉由將值傳遞給屬性，您可以指定何時（條件）顯示工具。 例如，如果您只想要在使用者實際上是連接到本機主機時顯示工具，請設定如下：
 
 ``` json
 "conditions": [
@@ -40,7 +40,7 @@ LocalHost 條件物件屬性包含布林值，如果連接的節點為 localHost
 }]
 ```
 
-或者，如果您只想您時要顯示的工具連接的節點*不是*localhost:
+或者，如果您只想要在連接的節點*不是*localhost 時顯示工具：
 
 ``` json
 "conditions": [
@@ -49,7 +49,7 @@ LocalHost 條件物件屬性包含布林值，如果連接的節點為 localHost
 }]
 ```
 
-以下是組態設定如下所示只顯示一個工具時連接的節點不是 localhost:
+以下是當連接節點不是 localhost 時，設定的外觀，只會顯示工具：
 
 ``` json
 "entryPoints": [
@@ -79,23 +79,23 @@ LocalHost 條件物件屬性包含布林值，如果連接的節點為 localHost
 }
 ```
 
-### <a name="inventory-properties"></a>清查內容 ###
+### <a name="inventory-properties"></a>清查屬性 ###
 
-SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當您的工具應該是可用與否。 在 [清查] 陣列中有九個不同的屬性：
+SDK 包含預先策劃的清查屬性集，可供您用來建立條件，以判斷您的工具何時可供使用。 ' 清查 ' 陣列中有九個不同的屬性：
 
-| 屬性名稱 | 必須是實值型別 |
+| 屬性名稱 | 預期的數值型別 |
 | ------------- | ------------------- |
-| computerManufacturer | 字串 |
-| operatingSystemSKU | 數字 |
-| operatingSystemVersion | version_string (例如："10.1.*") |
-| productType | 數字 |
-| clusterFqdn | 字串 |
+| computerManufacturer | string |
+| operatingSystemSKU | number |
+| operatingSystemVersion | version_string （例如："10.1. *"） |
+| productType | number |
+| clusterFqdn | string |
 | isHyperVRoleInstalled | boolean |
 | isHyperVPowershellInstalled | boolean |
 | isManagementToolsAvailable | boolean |
 | isWmfInstalled | boolean |
 
-清查陣列中的每個物件必須符合下列的 json 結構：
+清查陣列中的每個物件都必須符合下列 json 結構：
 
 ``` json
 "<property name>": {
@@ -105,41 +105,41 @@ SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當�
 }
 ```
 
-#### <a name="operator-values"></a>運算子的值 ####
+#### <a name="operator-values"></a>運算子值 ####
 
 | 運算子 | 描述 |
 | -------- | ----------- |
 | gt | 大於 |
-| ge | 大於或等於 |
+| 串聯 | 大於或等於 |
 | lt | 小於 |
 | le | 小於或等於 |
-| eq | 等於 |
+| 均衡 | 等於 |
 | ne | 不等於 |
-| 為 | 檢查某個值是否為 true |
-| 否 | 檢查某個值是否為 false |
-| 包含 | 將字串中存在的項目 |
-| notContains | 項目不存在於字串 |
+| 為 | 檢查值是否為 true |
+| 否 | 檢查值是否為 false |
+| 包含 | 專案存在於字串中 |
+| notContains | 專案不存在於字串中 |
 
 #### <a name="data-types"></a>資料類型 ####
 
-'Type' 屬性的可用選項：
+' Type ' 屬性的可用選項：
 
-| 類型 | 描述 |
+| Type | 描述 |
 | ---- | ----------- |
-| version | 版本號碼 (例如：10.1.*) |
-| 數字 | 數字的值 |
-| 字串 | 字串值 |
+| 版本 | 版本號碼（例如：10.1. *） |
+| number | 數值 |
+| string | 字串值 |
 | boolean | true 或 false |
 
-#### <a name="value-types"></a>實值型別 ####
+#### <a name="value-types"></a>實數值型別 ####
 
-'Value' 屬性會接受這些類型：
+' Value ' 屬性會接受下列類型：
 
-* 字串
-* 數字
+* string
+* number
 * boolean
 
-格式正確的清查條件集看起來像這樣：
+正確格式的清查條件集看起來像這樣：
 
 ``` json
 "entryPoints": [
@@ -182,7 +182,7 @@ SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當�
 
 ### <a name="script"></a>指令碼 ###
 
-最後，您可以執行自訂的 PowerShell 指令碼，來識別節點的狀態與可用性。 所有的指令碼必須傳回的物件具有下列結構：
+最後，您可以執行自訂的 PowerShell 腳本，以識別節點的可用性和狀態。 所有腳本都必須傳回具有下列結構的物件：
 
 ``` ps
 @{
@@ -193,15 +193,15 @@ SDK 包含一組預先策劃的清查屬性，可用來建置條件來確定當�
         @{Name='Prop2'; Value = 12345678; Type='number'; };
 }
 ```
-State 屬性是重要的值，會控制要顯示或隱藏您在 [工具] 清單中的延伸模組的決策。  允許的值包括：
+State 屬性是重要的值，將控制在 [工具] 清單中顯示或隱藏您的延伸模組的決策。  允許的值為:
 
 | 值 | 描述 |
 | ---- | ----------- |
-| 可用 | 擴充功能應該會顯示在 [工具] 清單中。 |
-| NotSupported | 擴充功能應該不會顯示在 [工具] 清單中。 |
-| NotConfigured | 這是可供此工具之前，會提示使用者進行其他設定的未來工作的預留位置值。  目前此值將會導致顯示的工具，功能相當於 '可用'。 |
+| 可用 | 延伸模組應該會顯示在 [工具] 清單中。 |
+| NotSupported | 延伸模組不應該顯示在 [工具] 清單中。 |
+| NotConfigured | 這是未來工作的預留位置值，會在工具可供使用之前，提示使用者進行其他設定。  目前，此值會導致工具顯示，而且功能相當於「可用」。 |
 
-例如，如果我們想載入只有當遠端伺服器已安裝的 BitLocker 工具時，指令碼看起來像這樣：
+例如，如果我們想要在遠端伺服器已安裝 BitLocker 的情況下載入工具，腳本看起來會像這樣：
 
 ``` ps
 $response = @{
@@ -225,7 +225,7 @@ if($isGood) {
 $response
 ```
 
-使用指令碼選項的進入點設定看起來像這樣：
+使用 [腳本] 選項的進入點設定看起來像這樣：
 
 ``` json
 "entryPoints": [
@@ -270,9 +270,9 @@ $response
 
 ## <a name="supporting-multiple-requirement-sets"></a>支援多個需求集 ##
 
-您可以使用多個一組需求來判斷何時要藉由定義多個 「 需求 」 區塊中顯示您的工具。
+您可以使用一組以上的需求，藉由定義多個「需求」區塊來判斷何時要顯示您的工具。
 
-例如，若要顯示您的工具，如果 < 狀況 A > 或者 < 狀況 B > 為 true 時，定義兩個需求區塊;如果任何一種，則為 true （也就是符合所有條件需求區塊內），此工具會顯示。
+例如，若要顯示您的工具（如果「案例 A」或「案例 B」為 true），請定義兩個需求區塊;如果其中一項為 true （也就是符合需求區塊內的所有條件），則會顯示工具。
 
 ``` json
 "entryPoints": [
@@ -307,11 +307,11 @@ $response
 
 ## <a name="supporting-condition-ranges"></a>支援的條件範圍 ##
 
-您也可以藉由定義多個具有相同的屬性，但具有不同運算子的 [條件] 區塊來定義一組條件。
+您也可以定義條件範圍，方法是使用相同的屬性來定義多個「條件」區塊，但使用不同的運算子。
 
-當相同的屬性定義具有不同的運算子時，此工具會顯示值之間的兩個條件，則為。
+當相同的屬性使用不同的運算子來定義時，只要此值介於兩個條件之間，就會顯示此工具。
 
-比方說，這項工具會顯示，只要作業系統是 6.3.0 和 10.0.0 之間的版本：
+例如，只要作業系統是6.3.0 與10.0.0 之間的版本，就會顯示此工具：
 
 ``` json
 "entryPoints": [

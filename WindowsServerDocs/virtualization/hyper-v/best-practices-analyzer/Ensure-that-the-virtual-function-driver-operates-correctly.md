@@ -1,7 +1,7 @@
 ---
-title: 請確定虛擬函式的驅動程式運作正常的虛擬機器設定為使用 SR-IOV 時
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 當虛擬機器設定為使用 SR-IOV 時，請確定虛擬函數驅動程式運作正常
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: d21e4b93-29bf-423a-a635-71c6d48dc49e
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 8d3d0a5008b55d4823cef9a8dd2a7bce4a6a2a33
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e2c666973aa1ac0d5eb2c4e0d5d29793dc0ce75
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852079"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393621"
 ---
-# <a name="ensure-that-the-virtual-function-driver-operates-correctly-when-a-virtual-machine-is-configured-to-use-sr-iov"></a>請確定虛擬函式的驅動程式運作正常的虛擬機器設定為使用 SR-IOV 時
+# <a name="ensure-that-the-virtual-function-driver-operates-correctly-when-a-virtual-machine-is-configured-to-use-sr-iov"></a>當虛擬機器設定為使用 SR-IOV 時，請確定虛擬函數驅動程式運作正常
 
 >適用於：Windows Server 2016
 
@@ -30,18 +30,18 @@ ms.locfileid: "59852079"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>問題  
-*客體作業系統中一或多個虛擬機器的虛擬函式的驅動程式未正確運作。*  
+*虛擬函式驅動程式未在一或多部虛擬機器的客體作業系統中正常運作。*  
   
 ## <a name="impact"></a>影響  
-*網路效能並非最佳化下列虛擬機器上：*  
+*下列虛擬機器的網路效能不佳：*  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>解析度  
-*在 客體作業系統中，執行下列作業：請確認已安裝適當的驅動程式和所有網路裝置已啟用，並檢查事件記錄檔，取得錯誤或警告。*  
+@no__t 0In 客體作業系統，請執行下列動作：確認已安裝適當的驅動程式，並已啟用所有網路裝置，並檢查事件記錄檔中的錯誤或警告。 *  
   
 
 

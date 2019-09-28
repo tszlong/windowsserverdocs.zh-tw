@@ -2,7 +2,7 @@
 title: 管理傳輸層安全性（TLS）
 description: Windows Server 安全性
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: f691775d5ab24de8b23df048c13ec3d7c572833f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a4ac1ea5b0648dbb80f103c146ad3df23fc04ab7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870292"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402345"
 ---
 # <a name="manage-transport-layer-security-tls"></a>管理傳輸層安全性（TLS）
 
@@ -124,7 +124,7 @@ Certutil.exe –deleteEccCurve curveName
 1.  在 Windows 10 和 Windows Server 2016 上，使用**certutil**將新註冊的命名曲線加入至 windows。
 2.  在同一部電腦上，開啟群組原則管理主控台（GPMC），建立新的群組原則物件，然後編輯它。
 3.  流覽至 [電腦設定] **|喜好設定 |Windows 設定 |** 登錄。  以滑鼠右鍵**按一下 [** 登錄]。 將滑鼠停留在 [**新增**]，然後選取 [**收集項目**]。 重新命名收集項以符合曲線的名稱。 您會針對*HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters*底下的每個登錄機碼，建立一個登錄收集項目。
-4.  為  *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters\[curveName 底下列出的每個登錄值新增新的登錄專案，以設定新建立的群組原則喜好設定登錄集合]* .
+4.  為*HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters @ no__t-2curveName]* 底下所列的每個登錄值新增新的登錄**專案**，以設定新建立的群組原則喜好設定登錄集合.
 5.  將包含群組原則登錄收集項的群組原則物件，部署到應接收新命名曲線的 Windows 10 和 Windows Server 2016 電腦。
 
     ![GPP 分佈曲線](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

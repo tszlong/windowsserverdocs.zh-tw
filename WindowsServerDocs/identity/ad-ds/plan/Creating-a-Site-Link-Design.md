@@ -7,42 +7,42 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4e0607cf66d41e1747b108a3ecc10562120d9174
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fdff477a1fb7cbe42402b2bb608eea55f2f9ec09
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861929"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402707"
 ---
 # <a name="creating-a-site-link-design"></a>建立站台連結設計
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立與站台連結連線站台的站台連結設計。 站台連結會反映的站台間的連線能力和用來傳送複寫流量的方法。 每個站台中的網域控制站可以複寫 Active Directory 的變更，您必須連接站台的站台連結。  
+建立站台連結設計，以透過站台連結來連接您的網站。 站台連結會反映站連線能力和用來傳輸複寫流量的方法。 您必須使用站台連結來連接網站，讓每個網站上的網域控制站可以複寫 Active Directory 變更。  
   
 ## <a name="connecting-sites-with-site-links"></a>使用站台連結連線站台
 
-若要使用站台連結連線站台，找出您想要連接的站台連結、 在個別站台間傳輸容器中，建立站台連結物件，然後命名為站台連結的成員網站。 建立站台連結之後，您可以繼續將站台連結屬性。  
+若要使用站台連結來連接網站，請識別您想要與站台連結連線的成員網站，在各自的網站間傳輸容器中建立站台連結物件，然後命名站台連結。 建立站台連結之後，您可以繼續設定站台連結屬性。  
   
-在建立站台連結，請確定每個站台，會包含在站台連結。 此外，確定所有站台會連線到彼此透過其他站台連結，讓所做的變更可以從任何站台中的網域控制站複寫到所有其他站台。 如果您無法執行這項操作，目錄服務記錄檔中的事件檢視器可讓您指出確認未連線的站台拓撲會產生錯誤訊息。  
+建立站台連結時，請確定每個網站都包含在站台連結中。 此外，請確定所有網站都透過其他站台連結彼此連線，以便將變更從任何網站中的網域控制站複寫到其他所有網站。 如果您無法這麼做，目錄服務記錄檔中會產生錯誤訊息，事件檢視器指出未連接網站拓撲。  
   
-每當您將網站新增到新建立的站台連結時，判斷要加入的站台是否為成員的其他站台連結，並變更如有需要的站台的站台連結成員資格。 例如，如果您讓站台預設值為第一個站台-連結的成員一開始建立網站時，務必從預設值為第一個-站台連結移除站台之後您將網站新增至新的站台連結。 如果您不要移除站台預設值為第一個站台-連結，知識一致性檢查程式 (KCC) 將這兩個站台連結，這會導致不正確地路由的成員資格為基礎的路由決策。  
+每當您將網站新增至新建立的站台連結時，請判斷所新增的網站是否為其他站台連結的成員，並視需要變更網站的站台連結成員資格。 例如，如果您在一開始建立網站時，將網站設為預設第一個網站連結的成員，請務必在您將網站新增至新的站台連結之後，從預設的第一個網站連結中移除該網站。 如果您未從預設的第一個站台連結中移除網站，知識一致性檢查程式（KCC）會根據兩個站台連結的成員資格來做出路由決策，這可能會導致路由不正確。  
   
-若要識別您想要與站台連結連線的成員網站，使用位置和連結在 「 地理位置和通訊連結 」 (DSSTOPO_1.doc) 工作表中所記錄的位置的清單。 如果多個站台具有相同的連線，且彼此的可用性，您可以將它們連接相同的站台連結。  
+若要識別您想要與站台連結連線的成員網站，請使用您在「地理位置和通訊連結」（DSSTOPO_1 .doc）工作表中記錄的位置和連結位置清單。 如果多個網站彼此具有相同的連線能力和可用性，您可以使用相同的站台連結來連接它們。  
   
-站台間傳輸容器會提供方法來對應至連結使用的傳輸的站台連結。 當您建立站台連結物件時，您在它的 IP 容器，其會將關聯的遠端程序呼叫 (RPC) 的站台連結，透過 IP 傳輸或 Simple Mail Transfer Protocol (SMTP) 容器，這會將站台連結至 smtp傳輸。  
+「網站間傳輸」容器提供將站台連結對應至連結所使用之傳輸的方式。 當您建立站台連結物件時，您會在 IP 容器中建立它，這會將站台連結與透過 IP 傳輸的遠端程序呼叫（RPC）相關聯，或使用簡易郵件傳送通訊協定（SMTP）容器，將站台連結與 SMTP 產生關聯運送.  
   
 > [!NOTE]  
-> 在 Active Directory 網域服務 (AD DS); 的未來版本中，不支援 SMTP 複寫因此，不建議在 [SMTP] 容器中建立站台連結物件。  
+> 未來的 Active Directory Domain Services 版本（AD DS）將不支援 SMTP 複寫;因此，不建議在 SMTP 容器中建立站台連結物件。  
   
-當您在個別站台間傳輸容器中建立站台連結物件時，則 AD DS 會使用透過 IP RPC 傳輸網域控制站之間的站台間和站台內複寫。 若要在傳輸時保護資料安全，RPC over IP 複寫會使用這兩個 Kerberos 驗證通訊協定和資料加密。  
+當您在各自的網站間傳輸容器中建立站台連結物件時，AD DS 會使用 RPC over IP，在網域控制站之間傳輸站對站和網站間複寫。 為了讓資料在傳輸期間保持安全，RPC over IP 複寫會同時使用 Kerberos 驗證通訊協定和資料加密。  
   
-無法使用直接的 IP 連線時，您可以設定要使用 SMTP 站台間複寫。 不過，SMTP 複寫功能有限，而且需要企業憑證授權單位 (CA)。 SMTP 設定、 架構以及應用程式目錄分割只能複寫及不支援的網域目錄分割複寫。  
+當直接 IP 連線無法使用時，您可以設定網站之間的複寫以使用 SMTP。 不過，SMTP 複寫功能會受到限制，而且需要企業憑證授權單位單位（CA）。 SMTP 只能複寫設定、架構和應用程式目錄分割，而不支援複寫網域目錄分割。  
   
-若要命名的站台連結，請使用一致的命名配置，例如 name_of_site1 name_of_site2。 記錄站台連結的站台及連接這些工作表中的站台的站台連結名稱的清單。 若要協助您在將記錄站台名稱及相關聯的站台連結名稱為工作表，請參閱[工作輔助工具的 Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558)，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，及開啟 「 站台及相關聯的站台連結 」 (DSSTOPO_5.doc)。  
+若要為站台連結命名，請使用一致的命名配置，例如 name_of_site1-name_of_site2。 記錄網站的清單、連結的網站，以及在工作表中連接這些網站的站台連結名稱。 如需協助您錄製網站名稱和相關網站連結名稱的工作表，請參閱[Windows Server 2003 部署套件的工作輔助](https://go.microsoft.com/fwlink/?LinkID=102558)工具、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，以及開啟「網站與關聯的站台連結」（DSSTOPO_5）。  
   
 ## <a name="in-this-guide"></a>本指南內容
 
-[設定站台連結內容](Setting-Site-Link-Properties.md)  
+[設定站台連結屬性](Setting-Site-Link-Properties.md)  

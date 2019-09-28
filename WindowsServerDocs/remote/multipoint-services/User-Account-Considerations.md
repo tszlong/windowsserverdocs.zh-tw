@@ -2,7 +2,7 @@
 title: 使用者帳戶考量
 description: 提供 MultiPoint 服務的使用者帳戶、使用者名稱和密碼考慮
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c4a0355b5e081e0673447fb86f1475d0b34c3792
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c81d14d46e96d39676e1fb6fa31892e0d5e1b683
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871505"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389264"
 ---
 # <a name="user-account-considerations"></a>使用者帳戶考量
 本主題說明當您建立和管理使用者帳戶時，系統管理使用者應考慮的問題。 您可在 MultiPoint 管理員的 [使用者] 索引標籤中管理使用者帳戶。 如需詳細資訊，請參閱[管理使用者帳戶](Manage-User-Accounts.md)主題。  

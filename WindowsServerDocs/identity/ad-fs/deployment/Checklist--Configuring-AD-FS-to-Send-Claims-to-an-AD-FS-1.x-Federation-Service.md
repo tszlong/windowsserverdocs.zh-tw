@@ -1,37 +1,37 @@
 ---
 ms.assetid: 4b81ac66-3f34-4a39-a8bf-5411131a69c2
-title: 檢查清單-設定使用 AD fs 的宣告的 AD FS 1.x
+title: 檢查清單-設定 AD FS 以使用來自 AD FS 1.x 的宣告
 description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bd4c436c806074f63bf51f497429532d7be32f75
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f91944333da9ce4c1d78bbbf7b3652f1118e1f08
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192410"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408494"
 ---
-# <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-federation-service"></a>檢查清單：設定 AD FS 來傳送至 AD FS 1.x Federation Service 的宣告
+# <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-federation-service"></a>檢查清單：設定 AD FS 以將宣告傳送至 AD FS 1.x 同盟服務
 
   
-## <a name="checklist-configuring-ad-fs-to-send-claims-to-an-adfs1x-federation-service"></a>檢查清單：設定 AD FS 以將宣告傳送至 AD FS 1.x Federation Service  
-此檢查清單包含設定 Active Directory 同盟服務所需的工作\(AD FS\)來傳送宣告可以理解的 AD fs 1 的 Windows Server 2012 中的 Federation Service。*x* Federation Service。  
+## <a name="checklist-configuring-ad-fs-to-send-claims-to-an-adfs1x-federation-service"></a>檢查清單：設定 AD FS 以將宣告傳送至 AD FS 1.x 同盟服務  
+此檢查清單包含在 Windows Server 2012 中設定您的 Active Directory 同盟服務 @no__t 0AD FS @ no__t-1 同盟服務所需的工作，以傳送 AD FS 1 可以理解的宣告。*x*同盟服務。  
   
 > [!NOTE]  
 > 請依序完成此檢查清單中的工作。 當某個參考連結帶您進入某個程序時，請在完成該程序中的步驟之後返回本主題，讓您可以繼續進行此檢查清單中其餘的工作。  
   
-![設定 AD FS 來傳送宣告](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**檢查清單：設定 AD FS 以將宣告傳送至 AD FS 1.x Federation Service**  
+@no__t 0configure AD FS 以傳送宣告 @ no__t-1Checklist：設定 AD FS 將宣告傳送至 AD FS 1.x 同盟服務 @ no__t-0  
   
 ||工作|參考資料|  
 |-|--------|-------------|  
-|![設定 AD FS 來傳送宣告](media/icon_checkboxo.gif)|規劃 Windows Server 2012 中的 AD FS 與 AD FS 的先前版本之間的互通性，並了解名稱識別碼宣告類型。|![設定 AD FS 來傳送宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃互通性與 AD FS 1.x](https://technet.microsoft.com/library/ff678040.aspx)|  
-|![設定 AD FS 來傳送宣告](media/icon_checkboxo.gif)|您可以達到與舊版 AD FS 的互通性之前，您必須先建立一個信賴憑證者信任 AD FS Federation Service AD fs 1 中。*x* Federation Service。 **注意：** 您無法建立信任關係，與 AD FS 1。*x* Federation Service 使用同盟中繼資料。<br /><br />當您設定信任使用右邊的連結中的程序時，您必須執行下列中新增信賴憑證者信任精靈 來設定此信任的 AD FS 1 與交互操作。*x* Federation Service:<br /><br />1.在 **選取資料來源**頁面上，選取**輸入資料的相關信賴憑證者合作對象信任手動**。<br />2.在 **選擇設定檔**頁面上，選取**AD FS 1.0 和 1.1 設定檔**。<br />3.在 **設定 URL**頁面的  **WS\-同盟被動式 URL**，型別**Federation Service 端點 URL** AD FS 1 中所定義。*x*協力廠商同盟服務。<br />4.在 **設定識別碼**頁面的 **信賴憑證者信任組件的識別項**，型別**Federation Service URI** AD FS 1 中所定義。*x*協力廠商同盟服務。|![設定 AD FS 來傳送宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[信賴憑證者合作對象信任手動建立](../../ad-fs/operations/Create-a-Relying-Party-Trust.md)|  
-|![設定 AD FS 來傳送宣告](media/icon_checkboxo.gif)|您稍早建立的信賴憑證者合作對象信任，您必須建立宣告規則，以接受連入宣告，從屬性存放區擷取和傳遞、 篩選，或將它們轉換成名稱識別碼宣告類型，可以了解並使用 ADFS 1。*x* Federation Service。 **注意：** 建立此規則之前，請確定您要在其中建立此規則的宣告規則集有第一次擷取輕量型目錄存取通訊協定從前的規則\(LDAP\)從屬性存放區的屬性宣告。 此宣告將用於做為輸入來建立規則，您將 AD FS 1。*x*\-相容宣告。 如需如何建立規則，以擷取 LDAP 屬性的詳細資訊，請參閱[建立規則，以宣告方式傳送 LDAP 屬性](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)。|![設定 AD FS 來傳送宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[建立規則來傳送 AD FS 1.x 相容的宣告](../../ad-fs/operations/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim.md)|  
-|![設定 AD FS 來傳送宣告](media/icon_checkboxo.gif)|請連絡系統管理員的 AD FS 1。*x* Federation Service 與 AD FS 1 的系統管理員。*x* Federation Service 設定新的帳戶夥伴信任。 此外，將該系統管理員提供 Federation Service URI\(中的同盟服務屬性\)，WS\-被動同盟端點 URL \(Federation Service 端點 URL\)，與匯出的語彙基元\-簽署憑證檔案\(僅限公開金鑰與\)。 該系統管理員必須設定信任這些項目。|N\/A|  
+|![設定 AD FS 以傳送宣告](media/icon_checkboxo.gif)|規劃 Windows Server 2012 中 AD FS 與舊版 AD FS 之間的互通性，並深入瞭解名稱識別碼宣告類型。|@no__t 0configure AD FS，以 AD FS 1.x](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[的互通性](https://technet.microsoft.com/library/ff678040.aspx)傳送宣告規劃|  
+|![設定 AD FS 以傳送宣告](media/icon_checkboxo.gif)|您必須先在 AD FS 同盟服務中建立 AD FS 1 的信賴憑證者信任，才能達到與舊版 AD FS 的互通性。*x*同盟服務。 **注意：** 您無法使用 AD FS 1 建立信任。使用同盟中繼資料的*x*同盟服務。<br /><br />當您使用右側連結中的程式來設定信任時，您必須在 [新增信賴憑證者信任] 嚮導中執行下列步驟，以設定此信任與 AD FS 1 互通。*x*同盟服務：<br /><br />1.在 [**選取資料來源**] 頁面上，選取 **[手動輸入信賴憑證者信任的相關資料**]。<br />2.在 [**選擇設定檔**] 頁面上，選取 [ **AD FS 1.0 和1.1 設定檔**]。<br />3.在 [**設定 URL** ] 頁面的 [ **WS @ No__t-2Federation 被動 URL**] 底下，輸入 AD FS 1 中所定義的**同盟服務端點 URL** 。合作夥伴的*x*同盟服務。<br />4.在 [**設定識別碼**] 頁面的 [**信賴零件信任識別碼**] 底下，輸入 AD FS 1 中所定義的**同盟服務 URI** 。合作夥伴的*x*同盟服務。|@no__t 0configure AD FS 以手動方式傳送宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[建立信賴](../../ad-fs/operations/Create-a-Relying-Party-Trust.md)憑證者信任|  
+|![設定 AD FS 以傳送宣告](media/icon_checkboxo.gif)|在您稍早建立的信賴憑證者信任上，您必須建立宣告規則，以接受從屬性存放區解壓縮的傳入宣告，然後通過、篩選或將它們轉換成可供 AD 辨識及取用的名稱識別碼宣告類型FS 1。*x*同盟服務。 **注意：** 建立此規則之前，請確定您建立此規則的宣告規則集具有先從屬性存放區解壓縮輕量型目錄存取協定 \(LDAP @ no__t-1 屬性宣告的規則。 此宣告將用來做為您所建立之規則的輸入，以傳送 AD FS 1。*x*\-compatible 宣告。 如需如何建立規則來解壓縮 LDAP 屬性的詳細資訊，請參閱[建立規則以將 Ldap 屬性當做宣告來傳送](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)。|@no__t 0configure AD FS 若要傳送宣告，請](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[建立規則以傳送 AD FS 1.X 相容](../../ad-fs/operations/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim.md)宣告|  
+|![設定 AD FS 以傳送宣告](media/icon_checkboxo.gif)|請洽詢 AD FS 1 的系統管理員。*x*同盟服務並具有 AD FS 1 的系統管理員。*x*同盟服務設定新的帳戶夥伴信任。 此外，請提供該系統管理員同盟服務 URI \(in 同盟服務屬性 @ no__t-1、WS @ no__t-2Federation 被動端點 URL \(the 同盟服務端點 URL @ no__t-4 和匯出的 token @ no__t-5signing 憑證檔案 @no__t-僅6with 公開金鑰 @ no__t-7。 該系統管理員將需要這些專案來設定信任。|N\/A|  
   
 

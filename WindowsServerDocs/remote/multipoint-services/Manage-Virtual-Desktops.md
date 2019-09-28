@@ -1,8 +1,8 @@
 ---
 title: 管理虛擬桌面
-description: 了解如何管理 MultiPoint 服務中的虛擬桌面 (VDI)
+description: 瞭解如何管理 MultiPoint 服務中的虛擬桌面（VDI）
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,17 +13,17 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 7afc6d2a65cd5cd3b116db5d65fd97e4cc770690
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45bb3e98779bc27913c7e675a9c9db7e575d9d72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861439"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389586"
 ---
 # <a name="manage-virtual-desktops"></a>管理虛擬桌面
-單一電腦 VDI 可讓您設定每個*本機*MultiPoint 服務站台，連線到 HYPER-V 虛擬機器 (VM) 中執行 Windows 10 Enterprise 客體作業系統上的同一部 MultiPoint 服務電腦站台。 如果無法在 Windows Server 版本中安裝這些虛擬桌面站台，您可以使用應用程式來加以自訂。  
+單一電腦 VDI 可讓您設定每個*本機*MultiPoint 服務站，以連線到與工作站位於相同 MultiPoint 服務電腦上的 hyper-v 虛擬機器（VM）中執行的 Windows 10 企業版客體作業系統。 如果無法在 Windows Server 版本中安裝這些虛擬桌面站台，您可以使用應用程式來加以自訂。  
   
-## <a name="enable-the-virtual-desktop-feature"></a>啟用虛擬桌面的功能  
+## <a name="enable-the-virtual-desktop-feature"></a>啟用虛擬桌面功能  
   
 1.  開啟 MultiPoint 管理員，然後按一下 [虛擬桌面] 索引標籤。  
   
@@ -69,7 +69,7 @@ ms.locfileid: "59861439"
 2. 選擇虛擬桌面範本，然後按一下 [Customize virtual desktop template (自訂虛擬桌面範本)]。  
 範本會在個別視窗中開啟，並反白顯示自訂虛擬範本最重要步驟的其他指示。 請詳讀這些指示。  
   
-## <a name="create-virtual-desktop-stations"></a>建立虛擬桌面站台  
+## <a name="create-virtual-desktop-stations"></a>建立虛擬桌面工作站  
   
 1.  在站台模式中開啟 MultiPoint 管理員，然後按一下 [虛擬桌面] 索引標籤。  
   
@@ -83,11 +83,11 @@ ms.locfileid: "59861439"
     虛擬桌面站台的建立程序需要幾分鐘時間。  
   
     > [!NOTE]  
-    > 如果任何本機站台目前正連接到工作階段\-基礎的虛擬桌面，您必須登出這些站台，使其連線到其中一個新建立的虛擬桌面站台。  
+    > 如果有任何本機工作站目前已連線至會話 @ no__t-0based 虛擬桌面，您必須登出這些工作站，才能讓它們連接到其中一個新建立的虛擬桌面工作站。  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>驗證新建立的自訂虛擬站台桌面  
   
-您可以登入一或多個虛擬桌面站台使用本機系統管理員帳戶或網域帳戶，來驗證您的自訂虛擬站台桌面，然後確認新的 VM\-正在根據虛擬桌面正確。  
+您可以使用本機系統管理員帳戶或網域帳戶登入一或多個虛擬桌面工作站來驗證您自訂的虛擬工作站桌上型電腦，然後確認新的 VM @ no__t-0based 虛擬桌面電腦是否正常運作。  
   
 ## <a name="disable-virtual-desktops"></a>停用虛擬桌面  
   

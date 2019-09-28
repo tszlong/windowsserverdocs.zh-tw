@@ -1,7 +1,7 @@
 ---
 title: 安裝並設定 NPS 伺服器
 description: NPS 伺服器處理 VPN 伺服器所傳送的連線要求時，會驗證使用者是否有連線的許可權、使用者的身分識別，並記錄您在 NPS 中設定 RADIUS 帳戶處理時所選擇的連線要求層面。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: 553f3327e6252d2b03744b2e0fc88f340701f3a9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5cb0d342afec9c28259efb7a2e15666358f3cb5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871328"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404252"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>步驟 4. 安裝和設定網路原則伺服器（NPS）
 
@@ -171,7 +171,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 4. 在 [指定撥號或 VPN 伺服器] 的 [RADIUS 用戶端] 中，選取您在上一個步驟中新增的 VPN 伺服器名稱。 例如，如果您的 VPN 伺服器 NetBIOS 名稱是 RAS1，請選取 [ **RAS1**]。
 
-5. 選取 [下一步]。
+5. 選取 **\[下一步\]** 。
 
 6. 在 [設定驗證方法] 中，完成下列步驟：
 
@@ -191,7 +191,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
     7. 選取 **[確定]** 以關閉 [編輯受保護的 EAP 屬性]。
 
-7. 選取 [下一步]。
+7. 選取 **\[下一步\]** 。
 
 8. 在 [指定使用者群組] 中，完成下列步驟：
 
@@ -199,7 +199,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
     2. 輸入**VPN 使用者**，然後選取 **[確定]** 。
 
-    3. 選取 [下一步]。
+    3. 選取 **\[下一步\]** 。
 
 9. 在 [指定 IP 篩選器 **] 中選取 [下一步]** 。
 

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 86111f8f7da7be1d33bd6ce07385805a9a3b3df8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b8217302cc0ec5bc6972004cb2f26ffae1371614
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865932"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407587"
 ---
 # <a name="create-a-rule-to-send-group-membership-as-a-claim"></a>建立規則以宣告方式傳送群組成員資格
 
@@ -100,7 +100,7 @@ ms.locfileid: "70865932"
 6.  在 **設定規則** 頁面的 宣告**規則名稱** 下，輸入此規則的顯示名稱，在 **使用者群組** 中按一下**流覽**並選取群組，在 **傳出宣告類型** 底下選取所需的宣告類型，然後在**傳出宣告類型** 輸入值。  
 ![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group2.PNG)  
 
-7.  按一下 [ **完成**]。  
+7.  按一下 **[完成]** 。  
   
 8.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[確定]** 以儲存規則。  
 

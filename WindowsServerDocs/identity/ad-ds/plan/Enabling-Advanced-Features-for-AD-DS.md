@@ -7,22 +7,22 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f03b6ca417f491d6638241c8ad4daadd25c76c77
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 733bb56351c134446c9406b825619f3c26d6ff76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885499"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402596"
 ---
 # <a name="enabling-advanced-features-for-ad-ds"></a>啟用 AD DS 的進階功能
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory 網域服務 (AD DS) 可讓您引入您的環境中的進階的功能，藉由提升網域或樹系功能等級。 若要使用 AD DS 的進階的功能，您必須識別您環境的網域控制站執行的作業系統。   
+Active Directory Domain Services （AD DS）可以提高網域或樹系功能等級，藉此在您的環境中引進先進的功能。 若要使用 advanced AD DS 功能，您必須識別在您環境中的網域控制站上執行的作業系統。   
   
-您必須也為您根據現有的基礎結構的組織決定最佳的功能等級，然後再引發適當的網域或樹系功能等級。 當網域或樹系中的所有網域控制站都執行適當版本的 Windows 時，您可以提高功能等級。 雖然提高功能等級，可讓您啟用新功能，它也會限制您可以在您的環境中執行網域控制站的 Windows 作業系統的版本。  
+您也必須根據現有的基礎結構，為您的組織決定最佳功能等級，然後適當地提高網域或樹系功能等級。 當網域或樹系中的所有網域控制站都執行適當版本的 Windows 時，您可以提高功能等級。 雖然提高功能等級可以讓您啟用新功能，但它也會限制您可以在環境中的網域控制站上執行的 Windows 作業系統版本。  
         
   
 

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 541ad987b81e7192c565c5be5ac93ef37db4d19b
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 29c52b21e5bb30fc54c2f561015c64ae93447836
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408563"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS 技術參考
 
@@ -30,7 +30,7 @@ ms.locfileid: "66192536"
 > 您可以在 Microsoft TechNet Wiki 上的 [AD FS 2.0 內容地圖](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)頁面找到其他 AD FS 2.0 設計內容。 此頁面由 AD FS 2.0 社群成員負責管理，而 AD FS 產品團隊也會定期監控。
 
 ## <a name="see-also"></a>另請參閱
-[Active Directory Federation Services 概觀](AD-FS-2016-Overview.md)
+[Active Directory 同盟服務總覽](AD-FS-2016-Overview.md)
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: 移除儲存空間直接存取中的伺服器
 ms.assetid: 9d8499a7-1307-473d-9f00-8a051164fad2
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,16 +10,16 @@ author: cosmosdarwin
 description: 如何在 Windows Server 移除儲存空間直接存取集區中的伺服器。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fcb67b3c5fbcff0ca2a48ee9a1d2e109af3e9a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890779"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402805"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>移除儲存空間直接存取中的伺服器
 
->適用於：Windows Server 2019，Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 本主題說明如何使用 PowerShell 移除[儲存空間直接存取](storage-spaces-direct-overview.md)中的伺服器。
 
@@ -58,7 +58,7 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 #### <a name="enough-capacity"></a>足夠的容量
 
-首先，您必須擁有足夠的儲存容量中剩餘的伺服器，以配合您的所有磁碟區。
+首先，其餘伺服器中必須有足夠的儲存容量，以容納所有的磁片區。
 
 例如，如果您有四部伺服器，每部伺服器都有 10 x 1 TB 磁碟機，您有 40 TB 實體儲存總容量。 移除一部伺服器和其所有磁碟機之後，您將剩下 30 TB 的容量。 如果您的磁碟區使用量總計超過 30 TB，它們無法裝入剩餘的伺服器，因此 cmdlet 將會傳回錯誤並不會移動任何資料。
 
@@ -81,4 +81,4 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 ## <a name="see-also"></a>另請參閱
 
-- [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
+- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

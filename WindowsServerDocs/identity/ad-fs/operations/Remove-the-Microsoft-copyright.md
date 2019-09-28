@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6e15f9d1490ad62f1458cd32da6e78a6febec58d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 0c24173dd03e03f9e8a19ef5981a6dc1259d62d7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407519"
 ---
 # <a name="remove-the-microsoft-copyright"></a>移除 Microsoft 著作權 
 
 
  
-根據預設，AD FS 頁面包含 Microsoft 著作權。 若要從您的自訂頁面移除此著作權，可以使用下列程序。 
+根據預設，AD FS 頁面會包含 Microsoft 著作權。 若要從您的自訂頁面移除此著作權，可以使用下列程序。 
 
 ![移除著作權](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png) 
   
@@ -38,9 +38,9 @@ ms.locfileid: "66189026"
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. 找出`Style.css`位於輸出資料夾中的檔案。 藉由使用上述的範例，路徑就是 `C:\CustomWebTheme\Css\Style.css.`
+3. 找出位於 [輸出] 資料夾中的 [`Style.css`] 檔案。 藉由使用上述範例，路徑會 `C:\CustomWebTheme\Css\Style.css.`
   
-4. 開啟`Style.css`編輯器，例如 [記事本] 檔案。  
+4. 使用編輯器（例如 [記事本]）開啟 [`Style.css`] 檔案。  
   
 5. 找出 `#copyright` 部分，並將它變更如下：  
 
@@ -48,7 +48,7 @@ ms.locfileid: "66189026"
    #copyright {color:#696969; display:none;}
    ```
 
-6. 建立自訂佈景主題為基礎的新`Style.css`檔案。  
+6. 建立以新的 `Style.css` 檔案為基礎的自訂主題。  
 
    ```powershell
    Set-AdfsWebTheme -TargetName custom -StyleSheet @{locale="";path="C:\customWebTheme\css\style.css"}
@@ -60,7 +60,7 @@ ms.locfileid: "66189026"
    Set-AdfsWebConfig -ActiveThemeName custom
    ```
 
-現在，您應該不會再看到著作權底部的 [登入] 頁面。
+現在，您應該不會再于登入頁面底部看到著作權。
 
 ![移除著作權](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1a.png) 
 

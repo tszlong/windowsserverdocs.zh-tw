@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 03328ff8c94d96fcf34dcef29ac1a1daefc9d14a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 870dbb4303d216f05bc372610f3121ff08fc8c25
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867484"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407842"
 ---
 # <a name="scenario-web-app-server-app-calling-web-api"></a>案例：呼叫 Web API 的 web 應用程式（伺服器應用程式） 
 >適用於：AD FS 2019 和更新版本 

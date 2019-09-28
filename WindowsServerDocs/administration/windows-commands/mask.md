@@ -1,8 +1,8 @@
 ---
 title: 遮罩
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 353e6080d1f6c548bc907b58655f31d0bce6de8b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f0dc83d7d9f7204f56e95c62b7cfad991f539ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858019"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373708"
 ---
 # <a name="mask"></a>遮罩
 
 
 
-移除已匯入所使用的硬體陰影複製**匯入**命令。
+移除使用匯**入**命令匯入的硬體陰影複製。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,15 +38,15 @@ mask <ShadowSetID>
 
 |參數|描述|
 |---------|-----------|
-|ShadowSetID|移除陰影複製屬於指定的陰影複製設定識別碼。|
+|ShadowSetID|移除屬於指定陰影複製組識別碼的陰影複製。|
 
 ## <a name="remarks"></a>備註
 
--   您可以使用現有的別名或環境變數的位置*ShadowSetID*。 使用**新增**不含參數，若要查看現有的別名。
+-   您可以使用現有的別名或環境變數來取代*ShadowSetID*。 請使用不含參數的**add**來查看現有的別名。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要移除已匯入的陰影複製 %import_1，請輸入：
+若要移除匯入的陰影複製% Import_1%，請輸入：
 ```
 mask %Import_1%
 ```

@@ -3,7 +3,7 @@ title: 部署 MultiPoint 服務的工作
 description: 列出部署 MultiPoint 服務時牽涉到的所有工作，以及指示的連結
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,19 +13,19 @@ ms.assetid: e08c5784-5b3e-4028-86c1-96deaee41f09
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9f0b69da06fb783ac7cccc2dc5bc7337dae59d66
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9d50cfc3ed48f77281af400e9e80fb8b4895bac5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871454"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394764"
 ---
 # <a name="task-lists-multipoint-services"></a>工作清單：MultiPoint 服務
 使用本主題中的工作清單可協助您部署 MultiPoint 服務系統，並追蹤已完成的工作。 並非所有工作都適用于每個環境。 例如，只有當您在 Active Directory 網域上部署 MultiPoint 伺服器時，才會執行某些工作。 有些則是選擇性的，例如建立分割螢幕工作站或部署工作站的虛擬桌面。 如需說明如何執行這些工作的程式，請參閱[部署 MultiPoint 服務](deploying-multipoint-services.md)。  
   
 ## <a name="task-list-deploy-the-server"></a>工作清單：部署伺服器  
 
-|工作|說明|  
+|工作|描述|  
 |--------|---------------|  
 |**1**|[規劃 MultiPoint 服務部署](planning-a-multipoint-services-deployment.md)|  
 |**2**|[收集安裝所需的硬體與裝置驅動程式](Collect-hardware-and-device-drivers-needed-for-the-installation.md)|  

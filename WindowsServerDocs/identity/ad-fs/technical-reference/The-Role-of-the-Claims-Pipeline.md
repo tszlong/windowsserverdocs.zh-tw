@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cd5ca15a9e098f60c6c82980e3148ebcf9ee9932
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6aafa37b06599f4114cf076e87415fece128fb05
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869339"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407336"
 ---
 # <a name="the-role-of-the-claims-pipeline"></a>宣告管線的角色
 Active Directory 同盟服務\( ADFS\)中的宣告管線表示宣告必須遵循同盟服務的路徑，然後才可以發出。 此同盟服務會管理整個端\-對\-端程式，以透過宣告管線的各個階段來流動宣告，其中也包含由宣告規則引擎處理宣告規則的流程。  

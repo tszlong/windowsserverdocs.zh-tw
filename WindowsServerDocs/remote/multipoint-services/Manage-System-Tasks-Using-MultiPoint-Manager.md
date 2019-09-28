@@ -1,8 +1,8 @@
 ---
 title: 使用 MultiPoint 管理員管理系統工作
-description: 在 MultiPoint 管理員管理工作的概觀
+description: MultiPoint 管理員中的管理工作總覽
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 52400b5ed74e4dcc9350e74ac8bc31182fdbbccc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 185f4c88286138af61f92f3f349efd8f584ed73c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845109"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405059"
 ---
 # <a name="manage-system-tasks-using-multipoint-manager"></a>使用 MultiPoint 管理員管理系統工作
-在 MultiPoint 管理員 中，您可以使用**首頁**索引標籤來執行 MultiPoint 服務工作，並檢查系統的狀態。 您可以在 [首頁] 上執行的工作包括：  
+在 [MultiPoint 管理員] 中，您可以使用 [**首頁**] 索引標籤來執行 MultiPoint 服務工作，並檢查系統的狀態。 您可以在 [首頁] 上執行的工作包括：  
   
 -   當您安裝 MultiPoint 服務時，請依[編輯伺服器設定](Edit-Server-Settings.md)主題中所述來編輯您選取的設定。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "59845109"
 ## <a name="see-also"></a>另請參閱  
 [編輯伺服器設定](Edit-Server-Settings.md)  
 [重新啟動或關閉](Restart-or-Shut-Down.md)  
-[切換模式](Switch-Between-Modes.md)  
+[在模式之間切換](Switch-Between-Modes.md)  
 [啟用或停用磁碟保護](Enable-or-Disable-Disk-Protection.md)  
 [重新對應所有站台](Remap-All-Stations.md)  
 [新增或移除電腦](Add-or-Remove-Computers.md)

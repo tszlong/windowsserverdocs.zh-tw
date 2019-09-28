@@ -1,8 +1,8 @@
 ---
 title: prnqctl
-description: 列印測試頁、 暫停或繼續印表機。
+description: 列印測試頁、暫停或繼續印表機。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1ba58970e76497f6e91c53c73a429eb65a275b2f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 189b344dc0c4f587ba7a6382c481304242e22c74
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442100"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372036"
 ---
 # <a name="prnqctl"></a>prnqctl
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-列印測試頁、 暫停或繼續印表機，以及清除印表機佇列。  
+列印測試頁、暫停或繼續印表機，以及清除印表機佇列。  
 
 ## <a name="syntax"></a>語法  
 ```  
@@ -35,36 +35,36 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]
 
 |參數|描述|  
 |-------|--------|  
-|-z|暫停具有指定的印表機的列印 **-p**參數。|  
-|-m|繼續使用指定的印表機上列印 **-p**參數。|  
-|-e|使用指定的印表機上列印測試頁 **-p**參數。|  
-|-x|使用指定的印表機上的所有列印工作會取消 **-p**參數。|  
-|-s\<伺服器名稱 >|指定裝載的印表機，您想要管理遠端電腦的名稱。 如果您沒有指定的電腦，則會使用本機電腦。|  
-|-p \<printerName>|指定您想要管理印表機的名稱。 必要。|  
-|-u \<UserName> -w \<Password>|指定具有連線至裝載的印表機，您想要管理之電腦的權限的帳戶。 目標電腦的本機 Administrators 群組的所有成員都有這些權限，但可以也對其他使用者授與權限。 如果您未指定帳戶，您必須登入具有可使用該指令的這些權限的帳戶。|  
+|-z|在使用 **-p**參數指定的印表機上暫停列印。|  
+|-m|在使用 **-p**參數指定的印表機上繼續列印。|  
+|-e|在以 **-p**參數指定的印表機上列印測試頁。|  
+|-x|取消以 **-p**參數指定的印表機上的所有列印工作。|  
+|-s \<ServerName >|指定裝載您要管理之印表機的遠端電腦名稱稱。 如果您未指定電腦，則會使用本機電腦。|  
+|-p \<printerName >|指定您想要管理的印表機名稱。 必要。|  
+|-u \<UserName >-w \<Password >|指定具有許可權可連接到裝載您要管理之印表機的電腦的帳戶。 目的電腦的本機系統管理員群組的所有成員都具有這些許可權，但也可以將許可權授與給其他使用者。 如果您未指定帳戶，您必須使用具有這些許可權的帳戶登入，命令才能正常執行。|  
 |/?|在命令提示字元顯示說明。|  
 
 ## <a name="remarks"></a>備註  
-- **Prnqctl**命令是 Visual Basic 指令碼位於 %WINdir%\System32\printing_Admin_Scripts\\ <language>目錄。 若要使用這個命令中，在命令提示字元中，輸入**cscript**後面 prnqctl 檔案或將目錄變更為適當的資料夾完整路徑。 例如:  
+- **Prnqctl**命令是位於%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnqctl 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如:  
   ```  
   cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl  
   ```  
-- 如果您提供的資訊包含空格，請使用引號括住的文字 (例如`"computer Name"`)。  
+- 如果您提供的資訊包含空格，請使用引號括住文字（例如，`"computer Name"`）。  
 
-## <a name="BKMK_examples"></a>範例  
-若要共用的 Laserprinter1 印表機上列印測試頁\\\Server1 電腦中，輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要在 \\ \ Server1 電腦共用的 Laserprinter1 印表機上列印測試頁，請輸入：  
 ```  
 cscript Prnqctl -e -s Server1 -p Laserprinter1  
 ```  
-若要暫停本機電腦上 Laserprinter1 印表機上的列印，請輸入：  
+若要在本機電腦的 Laserprinter1 印表機上暫停列印，請輸入：  
 ```  
 cscript Prnqctl -z -p Laserprinter1  
 ```  
-若要取消 Laserprinter1 印表機上的本機電腦上的所有列印工作，請輸入：  
+若要取消本機電腦上 Laserprinter1 印表機上的所有列印工作，請輸入：  
 ```  
 cscript Prnqctl -x -p Laserprinter1  
 ```  
 
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
-[列印命令參考資料](print-command-reference.md)  
+[列印命令參考](print-command-reference.md)  

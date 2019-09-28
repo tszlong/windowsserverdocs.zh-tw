@@ -1,48 +1,48 @@
 ---
 title: 網路控制卡的部署後步驟
-description: 本主題提供非 Kerberos 部署 Windows Server 2016 Datacenter 中的網路控制站的憑證組態指示。
+description: 本主題提供 Windows Server 2016 Datacenter 中網路控制站非 Kerberos 部署的憑證設定指示。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: eea0aca9-8d89-48fb-8068-fca40c90d34b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f7d6bbd50537e24f392eabde7d103c91a4f07c90
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f95d2884a808239c1d171eecbc983e26e799102
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871079"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355623"
 ---
 # <a name="post-deployment-steps-for-network-controller"></a>網路控制卡的部署後步驟
 
-當您安裝網路控制站時，您可以選擇 Kerberos 或非 Kerberos 的部署。
+當您安裝網路控制卡時，可以選擇 [Kerberos] 或 [非 Kerberos] 部署。
 
-針對非\-Kerberos 的部署，您必須設定憑證。
+針對非 @ no__t-0Kerberos 部署，您必須設定憑證。
 
-## <a name="configure-certificates-for-non-kerberos-deployments"></a>設定憑證以非 Kerberos 部署
+## <a name="configure-certificates-for-non-kerberos-deployments"></a>設定非 Kerberos 部署的憑證
 
-如果電腦或虛擬機器\(Vm\)網路控制站和管理用戶端不是網域\-聯結，您必須設定憑證\-藉由完成下列架構驗證步驟。
+如果電腦或虛擬機器 \(VMs @ no__t-1 用於網路控制卡，而管理用戶端不是網域 @ no__t 2joined，您就必須完成下列步驟來設定憑證 @ no__t-3based 驗證。
 
-- 電腦驗證網路控制站上建立憑證。 憑證主體名稱必須是相同的網路控制站的電腦或 VM 的 DNS 名稱。
+- 在網路控制卡上建立用於電腦驗證的憑證。 憑證主體名稱必須與網路控制站電腦或 VM 的 DNS 名稱相同。
 
-- 建立管理用戶端上的憑證。 此憑證必須受網路控制站。
+- 在管理用戶端上建立憑證。 此憑證必須受到網路控制卡的信任。
   
-- 註冊網路控制站的電腦或 VM 上的憑證。 憑證必須符合下列需求。
+- 在網路控制站電腦或 VM 上註冊憑證。 憑證必須符合下列需求。
   
-    -  在 增強金鑰使用方法，則必須設定伺服器驗證目的和用戶端驗證目的\(EKU\)或應用程式原則延伸模組。 伺服器驗證的物件識別元為 1.3.6.1.5.5.7.3.1。 用戶端驗證的物件識別元是 1.3.6.1.5.5.7.3.2。
+    -  [伺服器驗證] 目的和 [用戶端驗證] 目的都必須在 [增強金鑰使用方法 \(EKU @ no__t-1] 或 [應用程式原則延伸] 中設定。 伺服器驗證的物件識別碼是1.3.6.1.5.5.7.3.1。 用戶端驗證的物件識別碼是1.3.6.1.5.5.7.3.2。
   
-    - 憑證主體名稱應該解析為：
+    - 憑證主體名稱應解析為：
   
-        - 網路控制站的電腦或 VM，如果在單一電腦或 VM 上部署網路控制站的 IP 位址。
+        - 網路控制站電腦或 VM 的 IP 位址（如果網路控制站部署在單一電腦或 VM 上）。
 
-        - 如果網路控制卡部署於多部電腦、 多個 Vm，或兩者，REST IP 位址。
+        - 如果網路控制站部署在多部電腦、多個 Vm 或兩者上，則會有 REST IP 位址。
   
-    - 所有 REST 用戶端必須都信任此憑證。 憑證必須也被受信任軟體負載平衡 (SLB) 多工器 (MUX) 和 southbound 主機電腦受網路控制站。
+    - 此憑證必須受到所有 REST 用戶端的信任。 憑證也必須受到軟體負載平衡（SLB）多工器（MUX）和網路控制卡所管理之 southbound 主機電腦的信任。
   
-    - 憑證註冊的憑證授權單位 (CA)，也可以是自我簽署的憑證。 自我簽署的憑證不建議用於生產環境部署，但可接受用於測試實驗室環境。
+    - 憑證可以由憑證授權單位單位（CA）註冊，也可以是自我簽署憑證。 不建議在生產環境部署中使用自我簽署憑證，但可接受測試實驗室環境。
   
-    - 網路控制站的所有節點都必須都提供相同的憑證。 在一個節點上建立憑證之後, 您可以 （含私密金鑰） 匯出的憑證，並匯入其他節點。
+    - 您必須在所有網路控制站節點上布建相同的憑證。 在一個節點上建立憑證之後，您可以匯出憑證（使用私密金鑰），並將它匯入其他節點。
 
 如需詳細資訊，請參閱[網路控制卡](Network-Controller.md)。

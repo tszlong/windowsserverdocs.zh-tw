@@ -2,31 +2,31 @@
 title: 在命名空間上啟用存取型列舉
 description: 本文說明如何在命名空間上啟用存取型列舉。
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7e9a5b397127e9eb88352fb4d7bc28955023d4b7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 246df5b13a1dbea614886ab7fe445dd448ae1763
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447210"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402172"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>在命名空間上啟用存取型列舉
 
-> 適用於：Windows Server 2019，Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 存取型列舉可以隱藏使用者沒有存取權限的檔案和資料夾。 預設情況下不會為 DFS 命名空間啟用此功能。 您可以使用 DFS 管理來啟用 DFS 資料夾的存取型列舉。 若要控制資料夾目標中檔案和資料夾的存取型列舉，您必須使用 \[共用與存放管理\]，在每個共用資料夾上啟用存取型列舉。
 
-若要啟用存取型列舉型別在命名空間上的，所有命名空間伺服器必須執行 Windows Server 2008 或更新版本。 此外，網域型命名空間必須使用 Windows Server 2008 模式。 Windows Server 2008 模式需求的相關資訊，請參閱[選擇命名空間類型](choose-a-namespace-type.md)。
+若要在命名空間上啟用以存取為基礎的列舉，所有命名空間伺服器都必須執行 Windows Server 2008 或更新版本。 此外，網域型命名空間必須使用 Windows Server 2008 模式。 如需 Windows Server 2008 模式需求的相關資訊，請參閱[選擇命名空間類型](choose-a-namespace-type.md)。
 
 在某些環境中，啟用存取型列舉可能會造成伺服器上 CPU 使用率偏高並減緩使用者的回應時間。
 
 > [!NOTE]
-> 如果您升級網域功能等級為 Windows Server 2008 有現有的網域型命名空間，DFS 管理可讓您以啟用存取型列舉，這些命名空間上。 不過，您將無法編輯隱藏任何群組或使用者的資料夾，除非您將命名空間移轉至 Windows Server 2008 模式的權限。 如需詳細資訊，請參閱[將網域型命名空間移轉到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)。
+> 如果您將網域功能等級升級為 Windows Server 2008，但有現有的網域型命名空間，則 DFS 管理可讓您在這些命名空間上啟用以存取為基礎的列舉。 不過，除非您將命名空間遷移至 Windows Server 2008 模式，否則將無法編輯從任何群組或使用者隱藏資料夾的許可權。 如需詳細資訊，請參閱[將網域型命名空間移轉到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)。
 
 
 若要在 DFS 命名空間上使用存取型列舉，您必須執行下列步驟：
@@ -51,7 +51,7 @@ ms.locfileid: "66447210"
 
 1.  在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
 
-2.  輸入下列命令，其中 *< 命名空間\_根 >* 是根命名空間：
+2.  輸入下列命令，其中 *< namespace @ no__t-1root >* 是命名空間的根目錄：
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ ms.locfileid: "66447210"
 
 1. 在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
 
-2. 輸入下列命令，其中 *&lt;DFSPath&gt;* 是 DFS 資料夾 （連結），路徑 *< 網域\\帳戶 >* 是群組或使用者帳戶的名稱和 *（...）* 會取代其他的存取控制項目 (Ace):
+2. 輸入下列命令，其中 *&lt;DFSPath @ no__t-2*是 DFS 資料夾（連結）的路徑， *< DOMAIN @ no__t-4Account >* 是群組或使用者帳戶的名稱，而 *（...）* 會取代為其他存取控制專案（Ace）：
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   例如，若要取代現有的使用權限，可讓 Domain Admins 和 CONTOSO\\訓練員群組 Read (R) 存取\\contoso.office\public\training 資料夾中，輸入下列命令：
+   例如，若要以允許 Domain Admins 和 CONTOSO @ no__t-0Trainers 群組的許可權來取代現有許可權，請在 \\contoso. office\public\training 資料夾中輸入下列命令：
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -97,13 +97,13 @@ ms.locfileid: "66447210"
 
 | 命令 | 描述 |
 |---|---|
-|[Dfsutil 屬性 sd 拒絕](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒絕群組或使用者檢視資料夾的能力。|
-|[Dfsutil 屬性 sd 重設](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |移除資料夾的所有權限。|
-|[Dfsutil 屬性 sd 撤銷](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 從資料夾移除群組或使用者 ACE。 |
+|[Dfsutil 屬性 sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒絕群組或使用者檢視資料夾的能力。|
+|[Dfsutil 屬性 sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |移除資料夾的所有權限。|
+|[Dfsutil 屬性 sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 從資料夾移除群組或使用者 ACE。 |
 
 ## <a name="see-also"></a>另請參閱
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
 -   [安裝 DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
--   [使用存取型列舉中的繼承的權限](using-inherited-permissions-with-access-based-enumeration.md)
+-   [使用繼承的許可權搭配以存取為基礎的列舉](using-inherited-permissions-with-access-based-enumeration.md)

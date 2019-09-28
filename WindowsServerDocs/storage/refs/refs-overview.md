@@ -1,22 +1,22 @@
 ---
 title: 復原檔案系統 (ReFS) 概觀
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: gawatu
 ms.manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 133358e959e24abc506be13259d750753d3727f7
-ms.sourcegitcommit: 6fec3ca19ddaecbc936320d98cca0736dd8505d1
+ms.openlocfilehash: 91fdd5aa696c170cacc8903a65e996beb71c4b8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67196177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403012"
 ---
 # <a name="resilient-file-system-refs-overview"></a>復原檔案系統 (ReFS) 概觀
 
->適用於：Windows Server 2019，Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012 中，Windows Server （半年通道）
+>適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server （半年通道）
 
 復原檔案系統 (ReFS) 是 Microsoft 最新的檔案系統，設計用來將資料可用性最大化、在各種工作負載間有效率地調整為極大型的資料集，以及透過復原損毀來提供資料完整性。 其會設法因應一組擴充的儲存體案例，並建立基礎供未來創新所用。
 
@@ -35,7 +35,7 @@ ReFS 所引入的新功能可精準偵測損毀，並在維持上線狀態時修
 
 ReFS 除了提供復原改善外，還引入了供重視效能的虛擬工作負載所用的新功能。 即時階層最佳化、區塊複製及疏鬆 VDL 為 ReFS 功能演化的最佳範例，設計用來支援動態及多種工作負載：
 
-- **[鏡像加速同位檢查](./mirror-accelerated-parity.md)** -鏡像加速同位可提供高效能和也為您的資料容量有效率的儲存體。 
+- **[鏡像加速](./mirror-accelerated-parity.md)** 同位檢查-鏡像加速同位會為您的資料提供高效能和容量有效率的儲存空間。 
 
     - 為了提供效能高且容量有效率的儲存體，ReFS 將磁碟區分為兩個邏輯儲存群組，稱為階層。 這些階層可具備自己專屬的磁碟機及復原類型，讓各個階層針對效能或容量進行最佳化。 部分範例設定包括： 
     
@@ -47,10 +47,10 @@ ReFS 除了提供復原改善外，還引入了供重視效能的虛擬工作負
             
     - 這些階層設定後，ReFS 會加以使用為經常存取的資料提供快速的儲存體，並為非經常存取的資料提供容量有效率的儲存體。
         - 所有寫入都會在效能層發生，而維持在效能層中的大型資料區塊將有效率地即時移至容量層。
-        - 如果使用混合式部署 （混合 flash 和 HDD 磁碟機），[的快取中儲存空間直接存取](../storage-spaces/understand-the-cache.md)有助於加速讀取、 降低影響資料的分散特性的虛擬化工作負載。 否則，如果使用全快閃部署，讀取也發生在效能層級。
+        - 如果使用混合式部署（混合 flash 和 HDD 磁片磁碟機），[儲存空間直接存取中的](../storage-spaces/understand-the-cache.md)快取有助於加速讀取，進而降低虛擬化工作負載的資料分散特性的影響。 否則，如果使用全閃部署，則也會在效能層級中進行讀取。
 
 > [!NOTE]
-> 對於伺服器部署，鏡像加速的同位僅支援[儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)。 我們建議使用封存與備份工作負載只有鏡像加速同位檢查。 針對虛擬化及其他的高效能隨機的工作負載，我們建議使用三向鏡像，以提升效能。
+> 對於伺服器部署，鏡像加速的同位僅支援[儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)。 我們建議您只將鏡像加速同位檢查與封存和備份工作負載搭配使用。 針對虛擬化和其他高效能的隨機工作負載，我們建議使用三向鏡像，以獲得更好的效能。
 
 - **高速 VM 作業** - ReFS 引入新功能，特別將目標擺在改善虛擬工作負載的效能：
     - [區塊複製](./block-cloning.md) - 區塊複製會加快複製作業的速度，達成快速且低影響的 VM 檢查點合併作業。
@@ -64,43 +64,43 @@ ReFS 設計用來支援超大型資料集 (百萬個 TB) 而不會對效能有�
 
 ## <a name="supported-deployments"></a>支援的部署
 
-Microsoft 已開發出 NTFS 專門用於一般用途廣泛的設定和工作負載，不過客戶特別要求的可用性、 復原能力，和/或 ReFS 提供的小數位數，Microsoft 會支援 ReFS 下使用下列的組態和案例。 
+Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTFS，不過對於特別需要 ReFS 提供之可用性、復原和/或規模的客戶，Microsoft 支援 ReFS 以用於下列設定和案例。 
 
 > [!NOTE]
-> 所有支援的 ReFS 組態必須使用[Windows Server Catalog](https://www.WindowsServerCatalog.com)認證的硬體及滿足應用程式的需求。
+> 所有 ReFS 支援的設定都必須使用[Windows Server Catalog](https://www.WindowsServerCatalog.com)認證的硬體，並符合應用程式需求。
 
 ### <a name="storage-spaces-direct"></a>儲存空間直接存取
 
 建議針對虛擬工作負載或網路連接儲存裝置，將 ReFS 部署在儲存空間直接存取上： 
 - 鏡像加速的同位以及[儲存空間直接存取中的快取](../storage-spaces/understand-the-cache.md)會提供效能高且容量有效率的儲存體。 
 - 引入區塊複製與疏鬆 VDL 大幅提升了 .vhdx 檔案作業的速度，例如建立、合併及擴充。
-- 完整性資料流、 線上修復，以及替代資料複本啟用 ReFS 與儲存空間直接存取來共同偵測並修正儲存體控制器和儲存體中的中繼資料和資料的媒體損毀。 
+- 完整性-串流、線上修復和替代資料複本可讓 ReFS 和儲存空間直接存取共同偵測並修正中繼資料和資料中的儲存控制器和儲存媒體損毀。 
 - ReFS 提供可擴充和支援大型資料集的功能。 
 
 ### <a name="storage-spaces"></a>儲存空間
 
-- 完整性資料流、 線上修復，以及替代資料複本啟用 ReFS 並[儲存空間](../storage-spaces/overview.md)來共同來偵測並修正儲存體控制器和儲存體中的中繼資料和資料的媒體是否損毀。
+- 完整性-串流、線上修復和替代資料複本可讓 ReFS 和[儲存空間](../storage-spaces/overview.md)共同偵測並修正中繼資料和資料中的儲存控制器和儲存媒體損毀。
 - 儲存空間部署也可以使用 ReFS 中的提供的區塊複製和延展性。
-- 使用共用的 SAS 機箱中部署的儲存空間的 ReFS 適合用來裝載封存資料，並將儲存使用者文件。
+- 在具有共用 SAS 主機殼的儲存空間上部署 ReFS，適合用來裝載封存資料和儲存使用者檔。
 
 > [!NOTE]
-> 非卸除式的儲存體空間支援本機 BusTypes SATA、 SAS、 NVME、 透過直接連接，或透過 HBA （也稱為傳遞模式中的 RAID 控制器） 連結。
+> 儲存空間支援透過 BusTypes SATA、SAS、NVME 或透過 HBA （也就是在傳遞模式中為 RAID 控制器）連接的本機非可移動式直接連接。
 
 ### <a name="basic-disks"></a>基本磁碟
 
-部署基本磁碟上的 ReFS 最適合用於實作自己的軟體的復原和可用性解決方案的應用程式。 
+在基本磁碟上部署 ReFS 最適合用來執行自己的軟體復原和可用性解決方案的應用程式。 
 - 自行導入復原及可用性軟體解決方案的應用程式可以善加利用完整性資料流、區塊複製，以及擴充和支援大型資料集的功能。 
 
 > [!NOTE]
-> 基本磁碟包含本機非卸除式的直接連結透過 BusTypes SATA、 SAS、 NVME 或 RAID。 
+> 基本磁碟包含透過 BusTypes SATA、SAS、NVME 或 RAID 的本機非卸載式直接連接。 
 
 ### <a name="backup-target"></a>備份目標
 
-部署 ReFS，因為備份的目標是最適合應用程式和硬體可實作自己的復原和可用性的解決方案。
+將 ReFS 部署為備份目標，最適合用來執行自己的復原和可用性解決方案的應用程式和硬體。
 - 自行導入復原及可用性軟體解決方案的應用程式可以善加利用完整性資料流、區塊複製，以及擴充和支援大型資料集的功能。
 
 > [!NOTE]
-> 備份的目標包括上述支援的設定。 請如需光纖通道及 iSCSI San 的支援詳細資訊，連絡應用程式和存放裝置陣列廠商。 San，例如精簡佈建、 TRIM/UNMAP 或卸載資料傳輸 (ODX) 功能是必要的如果 NTFS 一定要使用。   
+> 備份目標包括上述支援的設定。 如需光纖通道和 iSCSI San 的支援詳細資料，請洽詢應用程式和存放裝置陣列廠商。 針對 San，如果需要精簡布建、修剪/取消對應或卸載資料傳輸（ODX）等功能，則必須使用 NTFS。   
 
 ## <a name="feature-comparison"></a>功能比較
 
@@ -110,7 +110,7 @@ Microsoft 已開發出 NTFS 專門用於一般用途廣泛的設定和工作負�
 |----------------|------------------------------------------------|-----------------------|
 | 檔案名稱長度上限 | 255 個 Unicode 字元  | 255 個 Unicode 字元               |
 | 路徑名稱長度上限 |32K Unicode 字元 | 32K Unicode 字元                |
-| 檔案大小上限 | 35 PB (pb)  | 256 TB               |
+| 檔案大小上限 | 35 PB （pb）  | 256 TB               |
 | 磁碟區大小上限 | 35 PB                           | 256 TB                |
 
 ### <a name="functionality"></a>功能
@@ -136,10 +136,10 @@ Microsoft 已開發出 NTFS 專門用於一般用途廣泛的設定和工作負�
 | 疏鬆檔案 | 是 | 是 |
 | 已命名的資料流 | 是 | 是 |
 | 精簡佈建 | 是<sup>3</sup> | 是 |
-| Trim/Unmap | 是<sup>3</sup> | 是 |
-1. 適用於 Windows Server 1709 版和更新版本。
-2. 可在 Windows Server 2012 R2 及更新版本。
-3. 只儲存空間
+| 修剪/取消對應 | 是<sup>3</sup> | 是 |
+1. 適用于 Windows Server，版本1709及更新版本。
+2. 適用于 Windows Server 2012 R2 和更新版本。
+3. 僅限儲存空間
 
 #### <a name="the-following-features-are-only-available-on-refs"></a>只有在 ReFS 中才可以使用下列功能：
 
@@ -158,9 +158,9 @@ Microsoft 已開發出 NTFS 專門用於一般用途廣泛的設定和工作負�
 | 交易 | 否 | 是 |
 | 永久連結 | 否 | 是 |
 | 物件識別碼 | 否 | 是 |
-| 卸載的資料傳輸 (ODX) | 否 | 是 |
+| 卸載的資料傳輸（ODX） | 否 | 是 |
 | 簡短名稱 | 否 | 是 |
-| 擴充的屬性 | 否 | 是 |
+| 擴充屬性 | 否 | 是 |
 | 磁碟配額 | 否 | 是 |
 | 可開機 | 否 | 是 |
 | 分頁檔案支援 | 否 | 是 |
@@ -168,7 +168,7 @@ Microsoft 已開發出 NTFS 專門用於一般用途廣泛的設定和工作負�
 
 ## <a name="see-also"></a>另請參閱
 
-- [對 ReFS 及 NTFS 叢集大小建議](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
-- [儲存空間直接存取概觀](../storage-spaces/storage-spaces-direct-overview.md)
+- [ReFS 和 NTFS 的叢集大小建議](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
+- [儲存空間直接存取總覽](../storage-spaces/storage-spaces-direct-overview.md)
 - [ReFS 區塊複製](block-cloning.md)
-- [ReFS 的完整性資料流](integrity-streams.md)
+- [ReFS 完整性資料流程](integrity-streams.md)

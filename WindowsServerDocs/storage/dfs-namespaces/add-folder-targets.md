@@ -1,23 +1,23 @@
 ---
 title: 新增資料夾目標
 description: 本文說明如何新增資料夾目標 (UNC 路徑)
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 8cc61189076669d5c24244294b2f0eee2b783517
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0685ea795d53b36fad92d54f817f67de57e3a82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830999"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403183"
 ---
 # <a name="add-folder-targets"></a>新增資料夾目標
 
-> 適用於：Windows Server 2019，Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 資料夾目標是共用資料夾或其他與命名空間中資料夾相關聯之命名空間的通用命名慣例 (UNC) 路徑。 新增多個資料夾目標可提高命名空間中資料夾的可用性。
 
@@ -27,7 +27,7 @@ ms.locfileid: "59830999"
 
 1.  按一下 [開始]，指向 [系統管理工具]，然後按一下 [DFS 管理]。
 
-2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，以滑鼠右鍵按一下資料夾，然後按一下 **\[新增伺服器目標\]**。
+2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，以滑鼠右鍵按一下資料夾，然後按一下 **\[新增伺服器目標\]** 。
 
 3.  輸入路徑資料夾的目標，或按一下 **\[瀏覽\]** 來尋找資料夾目標。
 
@@ -42,5 +42,5 @@ ms.locfileid: "59830999"
 ## <a name="see-also"></a>另請參閱
 
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
--   [委派管理 DFS 命名空間的權限](delegate-management-permissions-for-dfs-namespaces.md)
--   [複寫使用 DFS 複寫的資料夾目標](replicate-folder-targets-using-dfs-replication.md)
+-   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
+-   [使用 DFS 複寫複寫資料夾目標](replicate-folder-targets-using-dfs-replication.md)

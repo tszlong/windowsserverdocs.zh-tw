@@ -1,19 +1,19 @@
 ---
 title: 部署漫遊使用者設定檔
 TOCTitle: Deploying Roaming User Profiles
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 3442ad46590add695fb3fed607c6f728e2bc5ee1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b7a89ce8d72cf4f060e83b3653b3b2d93eed5cfd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867287"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402033"
 ---
 # <a name="deploying-roaming-user-profiles"></a>部署漫遊使用者設定檔
 
@@ -67,7 +67,7 @@ ms.locfileid: "70867287"
 - 通知使用者在某個作業系統版本上所做的變更不會漫遊到另一個作業系統版本。
 - 將您的環境移至使用不同設定檔版本的 windows 版本時（例如從 Windows 10 到 windows 10 版本1607），請參閱[附錄 B：分析清單的版本](#appendix-b-profile-version-reference-information)參考資訊），使用者會收到新的空白漫遊使用者設定檔。 您可以使用資料夾重新導向來重新導向一般資料夾，以將取得新設定檔的影響降至最低。 不支援將漫遊使用者設定檔從一個設定檔版本遷移到另一個的方法。
 
-## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>步驟 1：使用不同的設定檔版本
+## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>步驟 1:使用不同的設定檔版本
 
 如果您要在執行 Windows 8.1、Windows 8、Windows Server 2012 R2 或 Windows Server 2012 的電腦上部署漫遊使用者設定檔，建議您在部署之前，先對 Windows 環境進行幾項變更。 這些變更可協助確保未來的作業系統升級順暢進行，並提昇同時執行多個版本的 Windows 與漫遊使用者設定檔的能力。
 
@@ -88,7 +88,7 @@ ms.locfileid: "70867287"
     > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
 3. 重新啟動電腦。
 
-## <a name="step-2-create-a-roaming-user-profiles-security-group"></a>步驟 2：建立漫遊使用者設定檔安全性群組
+## <a name="step-2-create-a-roaming-user-profiles-security-group"></a>步驟 2:建立漫遊使用者設定檔安全性群組
 
 如果您的環境尚未設定漫遊使用者設定檔，第一個步驟是建立安全性群組，其中包含您要套用漫遊使用者設定檔原則設定的所有使用者和/或電腦。
 
@@ -339,7 +339,7 @@ ms.locfileid: "70867287"
 
 下表摘要說明本主題中一些最重要的變更。
 
-| Date | 說明 |`Reason`|
+| Date | 描述 |`Reason`|
 | --- | ---         | ---   |
 | 5月1日，2019 | 已新增 Windows Server 2019 的更新 |
 | 2018年4月10日 | 新增在 OS 就地升級之後，何時會失去開始進行使用者自訂的討論|標注的已知問題。 |

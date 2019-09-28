@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: dongill
 ms.technology: storage-spaces
@@ -9,25 +9,25 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ebec8618c79c43816680387ae5e495f125b3c54
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.openlocfilehash: 03d986832e14e0dd7b80324de3c9f14d0537dba5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407557"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402902"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
 
-> 適用於：Windows Server 2019，Windows Server 2016、windows Server （半年通道），Windows 10
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows 10
 
 本文向系統管理員和 IT 專業人員提供 Windows 中存放裝置類別記憶體 (NVDIMM-N) 裝置特定的錯誤處理與健全狀況管理相關資訊，強調說明存放裝置類別記憶體與傳統存放裝置之間的差異。
 
 如果您不熟悉 Windows 對存放裝置類別記憶體裝置的支援，這些短片可提供概觀：
-- [使用非揮發性記憶體 (NVDIMM-N) 做為 Windows Server 2016 中的區塊儲存體](https://channel9.msdn.com/Events/Build/2016/P466)
-- [使用非揮發性記憶體 (NVDIMM-N) 做為 Windows Server 2016 中的位元組可定址存放裝置](https://channel9.msdn.com/Events/Build/2016/P470)
-- [加速 SQL Server 2016 與 Windows Server 2016 中的持續性記憶體的效能](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
+- [在 Windows Server 2016 中使用非動態記憶體（NVDIMM-N）做為區塊存放裝置](https://channel9.msdn.com/Events/Build/2016/P466)
+- [在 Windows Server 2016 中使用非動態記憶體（NVDIMM-N）做為位元組可定址的儲存空間](https://channel9.msdn.com/Events/Build/2016/P470)
+- [以 Windows Server 2016 中的持續性記憶體加速 SQL Server 2016 效能](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
 
-另請參閱[了解和部署儲存空間直接存取中的持續性記憶體](deploy-pmem.md)。
+另請參閱[瞭解和部署儲存空間直接存取中的持續性記憶體](deploy-pmem.md)。
 
 從 Windows Server 2016 和 Windows 10 (版本 1607) 開始，Windows 中使用原生驅動程式支援 JEDEC 相容的 NVDIMM-N 存放裝置類別記憶體裝置。 雖然這些裝置的行為類似於其他磁碟 (HDD 與 SSD)，還是有一些差異。
 
@@ -63,7 +63,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="warning-health-status"></a>「警告」健全狀況狀態
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告]  的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
@@ -83,7 +83,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="writes-to-an-nvdimm-n-fail"></a>寫入 NVDIMM-N 會失敗
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]  ，且 [操作狀態] 提及 [IO 錯誤]  的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]，且 [操作狀態] 提及 [IO 錯誤] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
@@ -103,7 +103,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="nvdimm-n-is-shown-with-a-capacity-of-0-bytes-or-as-a-generic-physical-disk"></a>NVDIMM-N 會顯示容量為 '0' 位元組或是「一般實體磁碟」
 
-這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊]  的情況，如下列範例輸出中所示︰
+這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
@@ -123,7 +123,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="nvdimm-n-is-shown-as-a-raw-or-empty-disk-after-a-reboot"></a>在重新開機後，NVDIMM-N 會顯示為 RAW 或空的磁碟
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]  ，且 [操作狀態] 為 [無法識別的中繼資料]  的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]，且 [操作狀態] 為 [無法識別的中繼資料] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |

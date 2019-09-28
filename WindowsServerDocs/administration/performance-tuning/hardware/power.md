@@ -1,74 +1,74 @@
 ---
-title: 伺服器硬體能力的考量
-description: 伺服器硬體能力的考量
-ms.prod: windows-server-threshold
+title: 伺服器硬體電源考慮
+description: 伺服器硬體電源考慮
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fe91888188796c96d5da80e8f9bd3ed627b9d43
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: a9d4653824d497ea0c42337260aa788bab354ba3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564735"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355021"
 ---
-# <a name="server-hardware-power-considerations"></a>伺服器硬體能力的考量
+# <a name="server-hardware-power-considerations"></a>伺服器硬體電源考慮
 
-請務必辨識增加企業和資料中心環境中的能源效率的重要性。 高效能和低能源使用情形通常是衝突的目標，但仔細選取伺服器元件，您可以得到它們之間的正確平衡點。 下列各節會列出 power 特性和功能的伺服器硬體元件的指導方針。
+請務必辨識企業和資料中心環境中，能源效率增加的重要性。 高效能和低能源使用量通常是衝突的目標，但藉由謹慎選取伺服器元件，您可以在兩者之間達到正確的平衡。 下列各節列出伺服器硬體元件的電源特性和功能的指導方針。
 
 ## <a name="processor-recommendations"></a>處理器建議事項
 
-作業系統電壓、 快取大小，以及處理程序技術的頻率會影響處理器的能源耗用量。 處理器具有熱設計，點 (TDP) 提供的能源耗量，相對於其他模型的基本指示的評等。
+頻率、操作電壓、快取大小和處理技術會影響處理器的能源消耗。 處理器具有散熱設計點（TDP）分級，可提供相對於其他型號之能源耗用量的基本指示。
 
-一般情況下，選擇符合您的效能目標的最低 tdp，才能在處理器。 此外，較新的層代的處理器通常較多的能源效率，而且它們可能會公開更多的電源狀態，適用於 Windows 的電源管理演算法，可讓所有層級的效能更好的電源管理。 或者，可能會使用一些新的 「 合作 」 的電源管理技術，Microsoft 已開發出與硬體製造商協力合作。
+一般而言，選擇符合您的效能目標的最低 TDP 處理器。 此外，較新的處理器層級通常會比能源效率更高，而且它們可能會公開更多 Windows 電源管理演算法的電源狀態，以提供更佳的電源管理。 或者，他們也可以使用 Microsoft 與硬體製造商合作開發的一些新的「合作」電源管理技術。
 
-如需合作式電源管理技術的詳細資訊，請參閱 > 裡面的共同作業中的處理器效能控制項[進階組態與電源介面規格](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf)。
+如需有關合作電源管理技術的詳細資訊，請參閱[先進設定和電源介面規格](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf)中的「共同處理處理器效能控制」一節。
 
 
 ## <a name="memory-recommendations"></a>記憶體建議
-記憶體的總系統電源增加分數的帳戶。 許多因素會影響記憶體 DIMM，例如記憶體內部技術、 錯誤修正碼 (ECC)、 匯流排頻率、 容量、 密度和陣序規範數目的能源耗用量。 因此，最好是記憶體的比較預期的電源評等，再決定購買大量。
+記憶體帳戶會增加整體系統能力的分數。 許多因素會影響記憶體 DIMM 的能源耗用量，例如記憶體技術、錯誤修正程式碼（ECC）、匯流排頻率、容量、密度和等級數。 因此，最好在購買大量記憶體之前，先比較預期的電源評等。
 
-低電源的記憶體現已推出，但您必須考慮效能和成本的取捨。 如果您的伺服器將分頁，您應該也會納入分頁磁碟的能源成本。
+現在提供低功率記憶體，但您必須考慮效能和成本取捨。 如果您的伺服器將會分頁，您也應該考慮分頁磁片的能源成本。
 
 
-## <a name="disks-recommendations"></a>磁碟的建議
-較高的 RPM 表示增加的能源耗用量。 SSD 磁碟機是更強大的高效率比旋轉式磁碟機。 此外，2.5 英吋磁碟機通常需要較少的電量比 3.5 英吋磁碟機。
+## <a name="disks-recommendations"></a>磁片建議
+RPM 越高表示增加能源耗用量。 SSD 磁片磁碟機比旋轉磁片磁碟機的電源效率更高。 此外，2.5 英寸的磁片磁碟機通常需要的電源比3.5 寸的磁片磁碟機少。
 
 ## <a name="network-and-storage-adapter-recommendations"></a>網路和儲存裝置介面卡建議
-某些配接器會降低在閒置期間的能源耗用量。 這是很重要的考量，10 Gb 網路介面卡和高頻寬 (4-8 Gb) 儲存體的連結。 這類裝置會消耗大量的能源。
+某些介面卡會減少閒置期間的能源耗用量。 這是 10 Gb 網路介面卡和高頻寬（4-8 Gb）儲存體連結的重要考慮。 這類裝置可能會耗用大量的能源。
 
 
 ## <a name="power-supply-recommendations"></a>電源供應器建議
-改善電源供應器的效率是減少能源耗用量，而不會影響效能的好方法。 高效率的電源供應器可以儲存許多 kilowatt-hours 每年每一部伺服器。
+改善電源供應器的效率是降低能源耗用量的絕佳方式，而不會影響效能。 高效率電源供應器每年可以省下許多千瓦時的費用。
 
 
 ## <a name="fan-recommendations"></a>風扇建議
-風扇、 電源供應器，如是，您可以減少能源消耗，而不會影響系統效能的區域。 變數速度的愛用者可以降低系統的負載減少，消除否則不必要的能源耗用量 RPM。
+風扇（例如電源供應器）是您可以降低能源耗用量的區域，而不會影響系統效能。 可變速度的風扇可以在系統負載降低時減少 RPM，以排除其他不必要的能源耗用量。
 
 
-## <a name="usb-devices-recommendations"></a>建議的 USB 裝置
-Windows Server 2016 啟用選擇性暫停 USB 裝置的預設值。 不過，撰寫不夠周全的裝置驅動程式可能仍然會中斷系統能源效率由相當的邊界。 若要避免潛在的問題，請中斷連接 USB 裝置、 停用它們在 BIOS 中，或選擇不需要 USB 裝置的伺服器。
+## <a name="usb-devices-recommendations"></a>USB 裝置建議
+Windows Server 2016 預設會啟用 USB 裝置的選擇性暫止。 不過，撰寫不良的設備磁碟機仍然可以透過相當大邊界來中斷系統能源效率。 為避免潛在的問題，請中斷 USB 裝置的連線、在 BIOS 中停用它們，或選擇不需要 USB 裝置的伺服器。
 
 
-## <a name="remotely-managed-power-strip-recommendations"></a>從遠端管理電源區域建議
-電源不是伺服器硬體中不可或缺的一部分，但可以讓資料中心很大的差異。 度量顯示磁碟區的伺服器已插入，但有明顯的電源已關閉，可能仍然需要最多 30 瓦的電力。
+## <a name="remotely-managed-power-strip-recommendations"></a>遠端系統管理的 Power 帶狀建議
+Power 塊不是伺服器硬體不可或缺的一部分，但在資料中心內可能會有很大的差異。 [測量] 顯示已插入但已很明顯是電源的磁片區伺服器，可能仍需要最多30瓦的電源。
 
-若要避免浪費電力，您可以部署遠端受管理的電源線的每個伺服器，以程式設計方式將電源中斷特定的伺服器機架。
+為避免浪費電力，您可以為每部伺服器機架部署遠端系統管理的電源線，以程式設計方式中斷特定伺服器的電源。
 
 ## <a name="processor-terminology"></a>處理器術語
-在本主題中所使用的處理器術語，會反映在下圖中，您可以使用元件的階層。 所用的元件的最小資料粒度從最大詞彙如下所示：
+本主題中使用的處理器術語會反映下圖中可用元件的階層。 從最大到最小的元件資料細微性使用的詞彙如下：
 
 -   處理器通訊端
 -   NUMA 節點
--   核心
+-   Core
 -   邏輯處理器
 
 ![處理器術語](../media/perftune-guide-figure-1.png)
 
 ## <a name="see-also"></a>另請參閱
-- [伺服器硬體的效能考量](index.md)
+- [伺服器硬體效能考慮](index.md)
 - [電源與效能調整](power/power-performance-tuning.md)
 - [處理器電源管理](power/processor-power-management-tuning.md)
 - [建議的平衡方案參數](power/recommended-balanced-plan-parameters.md)

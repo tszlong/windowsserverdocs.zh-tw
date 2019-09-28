@@ -1,7 +1,7 @@
 ---
-title: 適用於 HYPER-V 的第 1 代虛擬機器安全性設定
-description: 描述第 1 代虛擬機器的 HYPER-V Manager 中可用的安全性設定
-ms.prod: windows-server-threshold
+title: Hyper-v 的第1代虛擬機器安全性設定
+description: 說明適用于第1代虛擬機器之 Hyper-v 管理員的安全性設定
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,41 +11,41 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 73cc2e45367d448aa736644e4a3bc02d3670fc6c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ceb3c2628546815f9b0af35946e173f4276130d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447917"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392784"
 ---
-# <a name="generation-1-virtual-machine-security-settings"></a>第 1 代虛擬機器的安全性設定
+# <a name="generation-1-virtual-machine-security-settings"></a>第1代虛擬機器安全性設定
 
->適用於：Windows Server 2016、 Microsoft HYPER-V Server 2016 中，Windows Server 2019，Microsoft HYPER-V Server 2019
+>適用於：Windows Server 2016，Microsoft Hyper-v Server 2016，Windows Server 2019，Microsoft Hyper-v Server 2019
 
-使用 HYPER-V 管理員中的第 1 代虛擬機器的安全性設定，來協助保護資料和虛擬機器的狀態。
+使用 [Hyper-v 管理員] 中的第1代虛擬機器安全性設定，協助保護虛擬機器的資料與狀態。
 
-## <a name="encryption-support-settings-in-hyper-v-manager"></a>在 HYPER-V 管理員中的加密支援設定
+## <a name="encryption-support-settings-in-hyper-v-manager"></a>Hyper-v 管理員中的加密支援設定
 
-您可以協助保護資料和虛擬機器的狀態，藉由選取下列的 [加密] 支援選項。
+您可以選取下列 [加密支援] 選項，以協助保護虛擬機器的資料和狀態。
 
-- **加密狀態與虛擬機器移轉流量**-寫入到磁碟和即時移轉流量時，會加密儲存的虛擬機器的狀態。
+- **加密狀態和虛擬機器遷移流量**-當虛擬機器的儲存狀態寫入磁片和即時移轉流量時，將其加密。
 
-若要啟用此選項，您必須新增虛擬機器的主要儲存體磁碟機。
+若要啟用此選項，您必須為虛擬機器新增金鑰存放磁片磁碟機。
 
-## <a name="key-storage-drive-in-hyper-v-manager"></a>在 HYPER-V 管理員中的金鑰儲存磁碟機
+## <a name="key-storage-drive-in-hyper-v-manager"></a>Hyper-v 管理員中的金鑰存放磁片磁碟機
 
-金鑰的儲存體磁碟機提供小的磁碟機的 BitLocker 金鑰會儲存虛擬機器。 這可讓虛擬機器，以加密其作業系統磁碟，而不需要虛擬化的信賴平台模組 (TPM) 晶片。 使用金鑰保護裝置會加密金鑰的儲存體磁碟機的內容。 金鑰保護裝置 authories HYPER-V 主機執行虛擬機器。 這兩個金鑰的儲存體磁碟機和金鑰保護裝置的內容會儲存為虛擬機器的執行階段狀態的一部分。
+金鑰存放磁片磁碟機提供小型磁片磁碟機給虛擬機器，以儲存 BitLocker 金鑰。 這可讓虛擬機器加密其作業系統磁片，而不需要虛擬化的信賴平臺模組（TPM）晶片。 金鑰存放磁片磁碟機的內容會使用金鑰保護裝置進行加密。 金鑰保護裝置會 authories Hyper-v 主機來執行虛擬機器。 金鑰存放磁片磁碟機和金鑰保護裝置的內容都會儲存為虛擬機器的執行時間狀態的一部分。
 
-若要解密的金鑰儲存體磁碟機的內容，並啟動虛擬機器，HYPER-V 主機必須是：
+若要將金鑰存放磁片磁碟機的內容解密並啟動虛擬機器，Hyper-v 主機必須是：
 
-- 此虛擬機器中，已獲授權的受防護網狀架構的一部分或
-- 其中一個虛擬機器的守護者具有私密金鑰。
+- 此虛擬機器之已授權的受防護網狀架構的一部分，或
+- 讓其中一個虛擬機器的監護人擁有私密金鑰。
 
-若要深入了解受防護網狀架構，請參閱簡介受防護的 Vm 一節[安全性和保證](../../../security/Security-and-Assurance.md)。
+若要深入瞭解受防護網狀架構，請參閱[安全性和保證](../../../security/Security-and-Assurance.md)中的受防護 vm 簡介一節。
 
-您可以將金鑰儲存體磁碟機加入其中一個虛擬機器的 IDE 控制器上的空插槽。 若要這樣做，請按一下**將金鑰儲存體磁碟機新增**將金鑰儲存體磁碟機新增至這部虛擬機器的第一個免費的 IDE 控制器位置。
+您可以在其中一個虛擬機器的 IDE 控制器上，將金鑰存放磁片磁碟機新增到空的插槽。 若要這麼做，請按一下 [**新增金鑰存放磁片磁碟機**]，將金鑰存放磁片磁碟機新增到此虛擬機器的第一個可用 IDE 控制器插槽。
 
 ## <a name="see-also"></a>另請參閱
 
-- [在 HYPER-V 管理員中的第 2 代虛擬機器安全性設定](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
+- [Hyper-v 管理員中的第2代虛擬機器安全性設定](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
 - [安全性和保證](../../../security/Security-and-Assurance.md)
