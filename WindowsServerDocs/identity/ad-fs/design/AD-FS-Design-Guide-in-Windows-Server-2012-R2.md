@@ -7,25 +7,25 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2d15f680f28c54da75100a03f7b85e880442d9be
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 614bc2b4571dd8a1b35c075ae1dec6934e77e148
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191744"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408167"
 ---
 # <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server 中的 AD FS 設計指南 
 
-Active Directory Federation Services \(AD FS\)提供簡化、 安全的身分識別同盟和網頁單一登\-上\(SSO\)終端使用者想要存取應用程式的功能在 AD FS\-保護企業、 同盟協力廠商組織，或在雲端中。  
+Active Directory 同盟服務 \(AD FS @ no__t-1 提供簡化、安全的身分識別同盟和 Web 單一登入 @ no__t-2on \(SSO @ no__t-4 功能，適用于想要在 AD FS @ no__t 記憶體取應用程式的使用者-5securedenterprise、同盟夥伴組織或雲端。  
   
-在 Windows Server® 2012 R2 AD FS 包含做為身分識別提供者的同盟服務角色服務\(驗證使用者以提供安全性權杖給信任 AD FS 的應用程式\)或做為同盟提供者\(會取用來自其他身分識別提供者的權杖，並提供安全性權杖給信任 AD FS 的應用程式\)。  
+在 Windows Server® 2012 R2 中，AD FS 包含同盟服務角色服務，做為身分識別提供者 \(authenticates 使用者提供安全性權杖給信任 AD FS @ no__t-1 的應用程式，或做為同盟提供者 \(consumes 權杖其他身分識別提供者，然後提供安全性權杖給信任 AD FS @ no__t-3 的應用程式。  
   
-提供外部網路存取權給受到 Windows Server 2012 R2 中 AD FS 保護的應用程式和服務的功能，現在由稱為 Web 應用程式 Proxy 的新遠端存取角色服務執行。 這是從舊版的 Windows Server 出發，其中此功能是由 AD FS 同盟伺服器 proxy 處理。 Web 應用程式 Proxy 是設計來提供存取適用於 AD FS 伺服器角色\-相關外部網路狀況和其他外部網路案例。 如需有關 Web 應用程式 Proxy 的詳細資訊，請參閱 < [Web 應用程式 Proxy 逐步解說指南](https://technet.microsoft.com/library/dn280944.aspx)。  
+提供外部網路存取權給受到 Windows Server 2012 R2 中 AD FS 保護的應用程式和服務的功能，現在由稱為 Web 應用程式 Proxy 的新遠端存取角色服務執行。 這是從舊版的 Windows Server 出發，其中此功能是由 AD FS 同盟伺服器 proxy 處理。 Web 應用程式 Proxy 是一種伺服器角色，設計用來提供 AD FS @ no__t-0related 外部網路案例和其他外部網路案例的存取權。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱[Web 應用程式 Proxy 逐步解說指南](https://technet.microsoft.com/library/dn280944.aspx)。  
   
 ## <a name="about-this-guide"></a>關於本指南  
-本指南提供建議來協助您規劃新部署的 AD FS 中，根據貴組織的需求。 本指南的使用對象為基礎結構專家或系統架構設計人員。 它反白顯示您的主要決策點，當您在規劃 AD FS 部署。 在閱讀本指南之前，您應該充分了解 AD FS 功能等級上運作的方式。 如需詳細資訊，請參閱 [Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)。  
+本指南提供的建議可協助您根據組織的需求，規劃新的 AD FS 部署。 本指南的使用對象為基礎結構專家或系統架構設計人員。 它會在您規劃 AD FS 部署時，反白顯示您的主要決策點。 閱讀本指南之前，您應該先充分瞭解 AD FS 在功能層級上的運作方式。 如需詳細資訊，請參閱 [Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)。  
   
 ## <a name="in-this-guide"></a>本指南內容  
   

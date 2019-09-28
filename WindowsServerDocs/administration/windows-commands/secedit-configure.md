@@ -2,7 +2,7 @@
 title: secedit：設定
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9844ed9ac1c53d0a3b9f8bb28ab085a20a48509d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f0e1b900d01ad7f0e84d3235f24a00fe108eaa36
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868821"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384267"
 ---
 # <a name="seceditconfigure"></a>secedit：設定
 
@@ -40,7 +40,7 @@ Secedit /configure /db <database file name> [/cfg <configuration file name>] [/o
 |cfg|選擇性。</br>指定將匯入至資料庫以進行分析之安全性範本的路徑和檔案名。</br>只有在搭配`/db \<database file name>`參數使用時，此/cfg 選項才有效。 如果未指定此項，則會針對已經儲存在資料庫中的任何設定來執行分析。|
 |overwrite|選擇性。</br>指定/cfg 參數中的安全性範本是否應覆寫儲存在資料庫中的任何範本或複合範本，而不是將結果附加至儲存的範本。</br>只有在同時使用`/cfg \<configuration file name>`參數時，此命令列選項才有效。 如果未指定此項，會將/cfg 參數中的範本附加至儲存的範本。|
 |區域|選擇性。</br>指定要套用至系統的安全性區域。 如果未指定此參數，則會將資料庫中定義的所有安全性設定套用至系統。 若要設定多個區域，請以空格分隔每個區域。 以下是支援的安全性區域：</br>-SecurityPolicy</br>    系統的本機原則和網域原則，包括帳戶原則、稽核原則、安全性選項等等。</br>- Group_Mgmt</br>    安全性範本中指定之任何群組的限制群組設定。</br>- User_Rights</br>    使用者登入許可權和許可權授與。</br>- RegKeys</br>    本機登錄機碼上的安全性。</br>-</br>    本機檔案儲存的安全性。</br>-服務</br>    所有已定義服務的安全性。|
-|日誌|選擇性。</br>指定進程之記錄檔的路徑和檔案名。|
+|log|選擇性。</br>指定進程之記錄檔的路徑和檔案名。|
 |無訊息|選擇性。</br>隱藏螢幕和記錄輸出。 您仍然可以使用 Microsoft Management Console （MMC）的 [安全性設定及分析] 嵌入式管理單元來查看分析結果。|
 
 ## <a name="remarks"></a>備註

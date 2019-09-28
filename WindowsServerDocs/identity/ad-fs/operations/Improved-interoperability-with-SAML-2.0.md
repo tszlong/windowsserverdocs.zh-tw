@@ -7,29 +7,29 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4148614ba35ce29f567edb08b94e115d3f9152e9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: d72636d77fe3240caab66dcab8657225d291bec6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189097"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407544"
 ---
 # <a name="improved-interoperability-with-saml-20"></a>使用 SAML 2.0 改進互通性
 
 
 
   
-Windows Server 2016 中的 AD FS 包含其他 SAML 通訊協定支援，包括支援匯入包含多個實體的中繼資料為基礎的信任。  這可讓您設定 AD FS 以參與 confederations InCommon 同盟等其他符合 eGov 2.0 標準的實作。   
+Windows Server 2016 中的 AD FS 包含額外的 SAML 通訊協定支援，包括以包含多個實體的中繼資料為基礎的匯入信任支援。  這可讓您設定 AD FS 以參與 confederations，例如 InCommon 同盟和符合 eGov 2.0 標準的其他執行。   
   
-新的功能為基礎的信賴憑證者的合作對象 」 或 「 宣告提供者信任群組。 每個群組是 EntitiesDescriptor (< md:EntitiesDescriptor >) 元素指定在 eGov 2.0 設定檔，其中包含一或多個 EntityDescriptor 項目。  群組有共同的授權規則，並可以修改所有其他屬性，如同個別的信任物件。  
+這項新功能是以信賴憑證者或宣告提供者信任的群組為基礎。 每個群組都是 eGov 2.0 設定檔中所指定的 EntitiesDescriptor （< md： EntitiesDescriptor >）元素，其中包含一或多個 EntityDescriptor 元素。  這些群組具有一般的授權規則，而且所有其他屬性都可以像個別的信任物件一樣進行修改。  
   
-一旦信任群組會匯入到 AD FS 中，AD FS 會自動更新信任為基礎的中繼資料文件的群組。  
+一旦信任群組匯入 AD FS，AD FS 就會根據元資料檔案自動將信任更新為群組。  
   
-啟用這些案例是只要使用新的 PowerShell cmdlet，新增和移除 AdfsClaimsProviderTrustsGroup 和 AdfsRelyingPartyTrustsGroup 物件。 這可以使用中繼資料 URL 或檔案，如下列範例所示。  
+啟用這些案例就像使用新增和移除 AdfsClaimsProviderTrustsGroup 和 AdfsRelyingPartyTrustsGroup 物件的新 PowerShell commandlet 一樣簡單。 這可以使用中繼資料 URL 或檔案來完成，如下列範例所示。  
   
-此外，AD FS 2016 都有支援範圍的參數區段 3.4.1.2 SAML Core 規格中所述。 這個項目可讓信賴憑證者合作對象來指定一個或多個身分識別提供者進行驗證要求。  
+此外，AD FS 2016 支援範圍參數，如 SAML 核心規格3.4.1.2 一節所述。 此元素可讓信賴憑證者針對驗證要求指定一個或多個身分識別提供者。  
   
 ## <a name="examples"></a>範例  
   
@@ -45,8 +45,8 @@ Add-AdfsClaimsProviderTrustsGroup -MetadataFile "C:\metadata.xml"
   
 ## <a name="references"></a>參考  
   
-可以找到 eGov 2.0 設定檔[這裡。](https://kantarainitiative.org/confluence/download/attachments/60817482/kantara-report-egov-saml2-profile-2.0.pdf?version=1&modificationDate=1345580916000&api=v2)  
+您可以在這裡找到 eGov 2.0 設定檔[。](https://kantarainitiative.org/confluence/download/attachments/60817482/kantara-report-egov-saml2-profile-2.0.pdf?version=1&modificationDate=1345580916000&api=v2)  
   
-您可以找到 SAML Core 規格[這裡。](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf)   
+您可以在這裡找到 SAML 核心規格[。](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf)   
 
 

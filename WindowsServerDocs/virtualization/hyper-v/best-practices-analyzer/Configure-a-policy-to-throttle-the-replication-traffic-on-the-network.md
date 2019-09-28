@@ -1,7 +1,7 @@
 ---
-title: 設定原則以啟用節流設定在網路上的複寫流量
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 設定原則以節流網絡上的複寫流量
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: 82cb1aef-cdc3-4d0a-88d4-ef497ab79606
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2c1f1865fa1d611c0b5baaf981140f9807b51458
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5b3afd594f56973007a2f0f4318de8a8c7a98209
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818689"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365109"
 ---
-# <a name="configure-a-policy-to-throttle-the-replication-traffic-on-the-network"></a>設定原則以啟用節流設定在網路上的複寫流量
+# <a name="configure-a-policy-to-throttle-the-replication-traffic-on-the-network"></a>設定原則以節流網絡上的複寫流量
 
 >適用於：Windows Server 2016
 
@@ -30,18 +30,18 @@ ms.locfileid: "59818689"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>問題  
-*有可能不受限制的網路頻寬多寡，複寫便可以取用。*  
+*允許複寫使用的網路頻寬量可能不會有限制。*  
   
 ## <a name="impact"></a>影響  
-*網路頻寬可能變成完全受到複寫流量，會影響其他重要的網路活動。這會影響下列連接埠：*  
+@no__t 0Network 的頻寬可能會因為複寫流量而受到全面的影響，因而影響其他重要的網路活動。這會影響下列埠： *  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>解析度  
-*如果您使用另一種方法來進行節流處理網路流量時，您可以忽略此。若要設定將會進行節流處理的複本伺服器的相關通訊埠的網路流量的原則，否則使用群組原則編輯器。*  
+@no__t 0If 您使用另一種方法來節流處理網路流量，您可以忽略此情況。否則，請使用群組原則編輯器來設定原則，以將網路流量節流到複本伺服器的相關埠。 *  
   
   
 

@@ -1,22 +1,22 @@
 ---
 ms.assetid: 7e804590-6d6c-4cca-ac14-02d4dff06cec
-title: 更新密碼的自訂
+title: 更新密碼自訂
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e67c04c98a53f4f1db36e6586fa77bcf181a8d5a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e007d4449cb62e7888c30f5b5929e393d7b571ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188972"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407453"
 ---
-# <a name="update-password-customization"></a>更新密碼的自訂 
+# <a name="update-password-customization"></a>更新密碼自訂 
 
 
 在某些情況下，使用者可能無法連線到公司網路以變更帳戶密碼。 特別是遠離公司辦公室的員工，這可能會造成問題。 在這些特定的情況下，只有連線到網際網路才能使用更新密碼頁面。  
@@ -28,7 +28,7 @@ ms.locfileid: "66188972"
 ![update](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)  
   
 ## <a name="customize-the-update-password-page-description"></a>自訂更新密碼頁面描述  
-若要自訂更新密碼頁面描述，請使用下列 Windows PowerShell cmdlet 和語法。  
+若要自訂更新密碼頁面描述，請使用下列 Windows PowerShell Cmdlet 和語法。  
   
 
     Set-AdfsGlobalWebContent -UpdatePasswordPageDescriptionText "This is the Contoso Update Password page."  

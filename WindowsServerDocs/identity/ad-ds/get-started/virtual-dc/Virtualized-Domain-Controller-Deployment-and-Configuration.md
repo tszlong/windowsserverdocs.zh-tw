@@ -7,22 +7,22 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 059bb3c1b15afdc579ba048b8bbb02ed185f3d42
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: be2c919e4379cf615fe25d68446855229ace87dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280950"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390703"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虛擬網域控制站的部署與設定
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題涵蓋：  
   
--   [安裝考量](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_InstallConsiderations)  
+-   [安裝考慮](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_InstallConsiderations)  
   
     本節包括平台需求和其他重要限制。  
   
@@ -30,11 +30,11 @@ ms.locfileid: "67280950"
   
     本節將詳細說明整個虛擬網域控制器的複製程序。  
   
--   [安全還原虛擬的網域控制站](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_VDCSafeRestore)  
+-   [虛擬網域控制站安全還原](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_VDCSafeRestore)  
   
     本節將詳細說明在安全還原虛擬網域控制站期間所做的驗證。  
   
-## <a name="BKMK_InstallConsiderations"></a>安裝考量  
+## <a name="BKMK_InstallConsiderations"></a>安裝考慮  
 沒有任何適用於虛擬網域控制站的特殊角色或功能安裝；所有的網域控制站都會自動包含複製與安全還原功能。 您無法移除或停用這些功能。  
   
 使用 Windows Server 2012 網域控制站需要 Windows Server 2012 AD DS 結構描述版本 56 或更高版本，以及相當於 Windows Server 2003 原生或更高版本的樹系功能等級。  
@@ -44,7 +44,7 @@ ms.locfileid: "67280950"
 > [!IMPORTANT]  
 > 當複製開始時，PDC 模擬器 FSMO 角色持有者必須位於線上。  
   
-### <a name="BKMK_PlatformReqs"></a>平台需求  
+### <a name="BKMK_PlatformReqs"></a>平臺需求  
 複製虛擬網域控制站需要：  
   
 -   裝載於 Windows Server 2012 DC 上的 PDC 模擬器 FSMO 角色  
@@ -62,9 +62,9 @@ ms.locfileid: "67280950"
 |||  
 |-|-|  
 |**虛擬化產品**|**支援虛擬網域控制站和 VMGID**|  
-|**具有 HYPER-V 功能的 Microsoft Windows Server 2012 伺服器**|是|  
-|**Microsoft Windows Server 2012 Hyper-V Server**|是|  
-|**Microsoft Windows 8 與 HYPER-V 用戶端功能**|是|  
+|**具有 Hyper-v 功能的 Microsoft Windows Server 2012 伺服器**|是|  
+|**Microsoft Windows Server 2012 Hyper-v 伺服器**|是|  
+|**Microsoft Windows 8 with Hyper-v Client 功能**|是|  
 |**Windows Server 2008 R2 和 Windows Server 2008**|否|  
 |**非 Microsoft 虛擬化解決方案**|請連絡廠商|  
   
@@ -75,7 +75,7 @@ ms.locfileid: "67280950"
 如需詳細資訊，請檢閱 [Microsoft software running in non-Microsoft hardware virtualization software](https://support.microsoft.com/kb/897615)(在非 Microsoft 硬體虛擬化軟體中執行的 Microsoft 軟體) 的支援政策。  
   
 ### <a name="critical-caveats"></a>重要注意事項  
-虛擬網域控制站「不」  支援下列項目的安全還原：  
+虛擬網域控制站「不」支援下列項目的安全還原：  
   
 -   手動複製 VHD 和 VHDX 檔案以覆寫現有的 VHD 檔案  
   
@@ -89,18 +89,18 @@ ms.locfileid: "67280950"
 > [!WARNING]  
 > 虛擬網域控制站的安全還原不能取代系統狀態備份和 AD DS 資源回收筒。  
 >   
-> 還原快照之後，在快照後源自於該網域控制站之先前未複寫的變更差異將永久遺失。 安全還原會實作自動非權威還原，「僅能」  防止意外發生網域控制站隔離。  
+> 還原快照之後，在快照後源自於該網域控制站之先前未複寫的變更差異將永久遺失。 安全還原會實作自動非權威還原，「僅能」防止意外發生網域控制站隔離。  
   
-如需 USN 泡泡與延遲物件的詳細資訊，請參閱[疑難排解 Active Directory 作業失敗，錯誤碼 8606:「 沒有足夠的屬性提供給建立物件"](https://support.microsoft.com/kb/2028495)。  
+如需 USN 氣泡和延遲物件的詳細資訊，請參閱失敗的 @no__t 0Troubleshooting Active Directory 作業，錯誤為8606：「指定的屬性不足以建立物件」 ](https://support.microsoft.com/kb/2028495)。  
   
 ## <a name="BKMK_VDCCloning"></a>虛擬網域控制站複製  
 不論使用的是圖形工具或 Windows PowerShell，複製虛擬網域控制站都有許多階段和步驟。 可概略分為下列三個階段：  
   
 **準備環境**  
   
--   步驟 1：驗證 Hypervisor 支援 VM 世代識別碼，因此可進行複製  
+-   步驟 1:驗證 Hypervisor 支援 VM 世代識別碼，因此可進行複製  
   
--   步驟 2：請確認在複製期間的網域控制站執行 Windows Server 2012，以及它在線上且可複製的網域控制站裝載 PDC 模擬器角色。  
+-   步驟 2:確認 PDC 模擬器角色是由執行 Windows Server 2012 的網域控制站主控，且在複製期間已上線，而且已由複製的網域控制站連線。  
   
 **準備來源網域控制站**  
   
@@ -126,21 +126,21 @@ ms.locfileid: "67280950"
   
 下圖說明虛擬網域控制站的複製程序，而網域已經存在其中。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_CloningProcessFlow.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_CloningProcessFlow.png)  
   
 ### <a name="step-1---validate-the-hypervisor"></a>步驟 1 - 驗證 Hypervisor  
 檢閱廠商文件，以確定來源網域控制站正在支援的 Hypervisor 上執行。 虛擬網域控制站與 Hypervisor 無關，不需要 Hyper-V。  
   
-如果 hypervisor 是 Microsoft HYPER-V，請確定它 Windows Server 2012 上執行。 您可以使用 [裝置管理] 來驗證這一點  
+如果虛擬程式是 Microsoft Hyper-v，請確定它正在 Windows Server 2012 上執行。 您可以使用 [裝置管理] 來驗證這一點  
   
-開啟 [Devmgmt.msc]  ，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]  。 虛擬網域控制站所需的特定系統裝置是 **Microsoft Hyper-V Generation Counter** (驅動程式：vmgencounter.sys)。  
+開啟 [Devmgmt.msc]，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]。 虛擬網域控制站所需的特定系統裝置是 **Microsoft Hyper-V Generation Counter** (驅動程式：vmgencounter.sys)。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVVMGenIDCounter.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVVMGenIDCounter.png)  
   
 ### <a name="step-2---verify-the-pdce-fsmo-role"></a>步驟 2 - 確認 PDCE FSMO 角色  
 在您嘗試複製 DC 之前，必須先驗證裝載網域主控站模擬器 FSMO 的網域控制站執行的是 Windows Server 2012。 需要 PDC 模擬器 (PDCE) 有下列數個原因：  
   
-1.  PDCE 會建立特殊的 [可複製的網域控制站]  群組，並在網域的根目錄上設定它的權限，以允許網域控制站複製其本身。  
+1.  PDCE 會建立特殊的 [可複製的網域控制站] 群組，並在網域的根目錄上設定它的權限，以允許網域控制站複製其本身。  
   
 2.  複製網域控制站會使用 DRSUAPI RPC 通訊協定直接連絡 PDCE，以便為複製 DC 建立電腦物件。  
   
@@ -162,9 +162,9 @@ ms.locfileid: "67280950"
   
 #### <a name="active-directory-users-and-computers-method"></a>Active Directory 使用者和電腦方法  
   
-1.  使用 Dsa.msc 嵌入式管理單元、在網域上按一下滑鼠右鍵，然後按一下 [操作主機]  。 記下 [PDC] 索引標籤上具名的網域控制站，然後關閉對話方塊。  
+1.  使用 Dsa.msc 嵌入式管理單元、在網域上按一下滑鼠右鍵，然後按一下 [操作主機]。 記下 [PDC] 索引標籤上具名的網域控制站，然後關閉對話方塊。  
   
-2.  在 DC 的電腦物件上按一下滑鼠右鍵、按一下 [屬性]  ，然後驗證 [作業系統] 資訊。  
+2.  在 DC 的電腦物件上按一下滑鼠右鍵、按一下 [屬性]，然後驗證 [作業系統] 資訊。  
   
 #### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
 您可以結合下列的 Active Directory Windows PowerShell 模組 Cmdlet，以傳回 PDC 模擬器的版本：  
@@ -184,19 +184,19 @@ get-adcomputer(Get-ADDomainController -Discover -Service "PrimaryDC").name -prop
   
 以下範例示範如何指定網域名稱，以及在 Windows PowerShell 管線之前篩選傳回的屬性：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PDCOSInfo.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PDCOSInfo.png)  
   
 ### <a name="step-3---authorize-a-source-dc"></a>步驟 3 - 授權來源 DC  
-來源網域控制站在網域 NC 標頭上必須具備控制存取權限 (CAR) [允許 DC 建立本身的複製品]  。 根據預設，已知群組 [可複製的網域控制站]  具備這個權限且未含任何成員。 PDCE 會在該 FSMO 角色移轉到 Windows Server 2012 網域控制站時建立這個群組。  
+來源網域控制站在網域 NC 標頭上必須具備控制存取權限 (CAR) [允許 DC 建立本身的複製品]。 根據預設，已知群組 [可複製的網域控制站] 具備這個權限且未含任何成員。 PDCE 會在該 FSMO 角色移轉到 Windows Server 2012 網域控制站時建立這個群組。  
   
 #### <a name="active-directory-administrative-center-method"></a>Active Directory 管理中心方法  
   
 1.  啟動 Dsac.exe 並瀏覽到來源 DC，然後開啟它的詳細資料頁面。  
   
-2.  在 [成員隸屬]  區段中，新增該網域的 [可複製的網域控制站]  群組。  
+2.  在 [成員隸屬] 區段中，新增該網域的 [可複製的網域控制站] 群組。  
   
 #### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
-您可以結合下列的 Active Directory Windows PowerShell 模組 cmdlet **get adcomputer**並**新增 adgroupmember**若要加入的網域控制站**可複製的網域控制站**群組：  
+您可以結合下列 Active Directory Windows PowerShell 模組 Cmdlet **get-adcomputer**和**新增-add-adgroupmember** ，將網域控制站新增至**Cloneable 網域控制站**群組：  
   
 ```  
 Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_.samaccountname}  
@@ -204,18 +204,18 @@ Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_
   
 例如，這會將伺服器 DC1 新增到群組，而不需指定群組成員的辨別名稱：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_AddDcToGroup.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_AddDcToGroup.png)  
   
 #### <a name="rebuilding-default-permissions"></a>重建預設權限  
 如果您從網域標頭移除這個權限，複製即會失敗。 您可以使用 Active Directory 管理中心或 Windows PowerShell 重新建立權限。  
   
 ##### <a name="active-directory-administrative-center-method"></a>Active Directory 管理中心方法  
   
-1.  開啟 [Active Directory 管理中心]  、在網域標頭上按一下滑鼠右鍵，依序按一下 [屬性]  、[擴充功能]  索引標籤、[安全性]  及 [進階]  。 按一下 [只有這個物件]  。  
+1.  開啟 [Active Directory 管理中心]、在網域標頭上按一下滑鼠右鍵，依序按一下 [屬性]、[擴充功能] 索引標籤、[安全性]及 [進階]。 按一下 [只有這個物件]。  
   
-2.  按一下 [新增]  ，在 [輸入要選取的物件名稱]  下方，輸入群組名稱 [可複製的網域控制站]  。  
+2.  按一下 [新增]，在 [輸入要選取的物件名稱] 下方，輸入群組名稱 [可複製的網域控制站]。  
   
-3.  在 [權限] 下方，按一下 [允許 DC 建立本身的複製品]  ，然後按一下 [確定]  。  
+3.  在 [權限] 下方，按一下 [允許 DC 建立本身的複製品]，然後按一下 [確定]。  
   
 > [!NOTE]  
 > 您也可以移除預設的權限，並新增個別的網域控制站。 這樣做很可能會導致持續發生維護問題，而新的系統管理員將不知道這項自訂。 變更預設設定不會提高安全性，因此不建議使用。  
@@ -240,7 +240,7 @@ cd c:
 或者，在 Windows PowerShell 主控台中執行範例 [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms) ，其中主控台會在受影響網域中的網域控制站上，以提升權限的系統管理員身分啟動。 它會自動設定權限。 這個範例位於本單元的附錄中。  
   
 ### <a name="step-4---remove-incompatible-applications-or-services-if-not-using-customdccloneallowlistxml"></a>步驟 4 - 移除不相容的應用程式或服務 (如果不使用 CustomDCCloneAllowList.xml)  
-Get-ADDCCloningExcludedApplicationList 先前傳回「且未新增到 CustomDCCloneAllowList.xml」  的任何程式或服務都必須在複製之前移除。 建議的方法是取消安裝應用程式或服務。  
+Get-ADDCCloningExcludedApplicationList 先前傳回「且未新增到 CustomDCCloneAllowList.xml」 的任何程式或服務都必須在複製之前移除。 建議的方法是取消安裝應用程式或服務。  
   
 > [!WARNING]  
 > 未取消安裝或新增到 CustomDCCloneAllowList.xml 的所有不相容的程式或服務都會妨礙複製進行。  
@@ -268,8 +268,8 @@ New-ADDCCloneConfigFile
   
 ||||  
 |-|-|-|  
-|**ActiveDirectory**<br /><br />**Cmdlet**|**引數**|**說明**|  
-|**New-ADDCCloneConfigFile**|*<no argument specified>*|在 DSA 工作目錄 (預設為 %systemroot%\ntds) 中建立空白的 DcCloneConfig.xml 檔案|  
+|**Directory**<br /><br />**Cmdlet**|**參量**|**簡短**|  
+|**新增-New-addccloneconfigfile**|*<no argument specified>*|在 DSA 工作目錄 (預設為 %systemroot%\ntds) 中建立空白的 DcCloneConfig.xml 檔案|  
 ||-CloneComputerName|指定複製 DC 電腦名稱。 字串資料類型。|  
 ||-Path|指定要建立 DcCloneConfig.xml 的資料夾。 若未指定，則會寫入 DSA 工作目錄 (預設為 %systemroot%\ntds)。 字串資料類型。|  
 ||-SiteName|指定要在複製電腦帳戶建立期間加入的 AD 邏輯站台名稱。 字串資料類型。|  
@@ -281,7 +281,7 @@ New-ADDCCloneConfigFile
 ||-AlternateWINSServer|指定次要 WINS 伺服器的靜態 IPv4 位址。 字串資料類型。|  
 ||-IPv6DNSResolver|在以逗號分隔的清單中，指定複製電腦的靜態 IPv6 DNS 項目。 沒有任何方法可以在複製虛擬網域控制站時設定 IPv6 靜態資訊。 陣列資料類型。|  
 ||-Offline|不會執行驗證測試，並覆寫任何現有的 dccloneconfig.xml。 沒有參數。|  
-||*-Static*|如果指定了靜態 IP 引數 IPv4SubnetMask、IPv4SubnetMask 或 IPv4DefaultGateway，即為必要引數。 沒有參數。|  
+||*-靜態*|如果指定了靜態 IP 引數 IPv4SubnetMask、IPv4SubnetMask 或 IPv4DefaultGateway，即為必要引數。 沒有參數。|  
   
 在線上模式中執行時執行的測試：  
   
@@ -293,7 +293,7 @@ New-ADDCCloneConfigFile
   
 -   來源網域控制站在指定的路徑中已經沒有包含 DcCloneConfig.xml  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSNewDCCloneConfig.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSNewDCCloneConfig.png)  
   
 ### <a name="step-6---take-the-source-domain-controller-offline"></a>步驟 6 - 使來源網域控制站離線  
 您無法複製執行中的來源 DC；必須讓它順利關機。 不要複製經由強制關閉電源而停止的網域控制站。  
@@ -301,9 +301,9 @@ New-ADDCCloneConfigFile
 #### <a name="graphical-method"></a>圖形方式  
 使用執行中 DC 內的關機按鈕，或者 [Hyper-V 管理員] 的關機按鈕。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_Shutdown.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_Shutdown.png)  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVShutdown.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVShutdown.png)  
   
 #### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
 您可以使用下列任一個 Cmdlet 來將虛擬機器關機：  
@@ -315,9 +315,9 @@ Stop-vm
   
 Stop-computer 是不論是否虛擬化，都支援將電腦關機的 Cmdlet，類似傳統的 Shutdown.exe 公用程式。 Stop-vm 是 Windows Server 2012 Hyper-V Windows PowerShell 模組中新的 Cmdlet，相當於 [Hyper-V 管理員] 中的電源選項。 實驗室環境中的網域控制站通常是在私人虛擬網路上進行，因此後者非常有用。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_StopComputer2.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_StopComputer2.png)  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_StopVM.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_StopVM.png)  
   
 ### <a name="step-7---copy-disks"></a>步驟 7 - 複製磁碟  
 複製階段中需要有系統管理選項：  
@@ -330,7 +330,7 @@ Stop-computer 是不論是否虛擬化，都支援將電腦關機的 Cmdlet，�
   
 必須複製虛擬機器的所有磁碟，不只是系統磁碟機。 如果來源網域控制站使用差異磁碟，而您規劃將複製的網域控制站移到另一台 HYPER-V 主機，則您必須將它匯出。  
   
-如果來源網域控制站只有「一個」  磁碟機，則建議手動複製磁碟。 建議針對含有「一個以上」  磁碟機或其他複雜的虛擬硬體自訂 (例如多個 NIC) 的 VM 使用匯出/匯入。  
+如果來源網域控制站只有「一個」磁碟機，則建議手動複製磁碟。 建議針對含有「一個以上」 磁碟機或其他複雜的虛擬硬體自訂 (例如多個 NIC) 的 VM 使用匯出/匯入。  
   
 如果手動複製檔案，請在複製前先刪除所有快照。 如果匯出 VM，請在匯出前先刪除快照，或者在匯入後從新的 VM 中刪除它們。  
   
@@ -342,11 +342,11 @@ Stop-computer 是不論是否虛擬化，都支援將電腦關機的 Cmdlet，�
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法  
 使用 [Hyper-V 管理員] 嵌入式管理單元，來判斷與來源網域控制站關聯的磁碟。 使用 [檢查] 選項，驗證網域控制站是否使用差異磁碟 (這需要您同時複製父磁碟)  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVInspect.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVInspect.png)  
   
 若要刪除快照，請選取 VM，然後刪除快照樹狀子目錄。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVDeleteSnapshot.gif)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVDeleteSnapshot.gif)  
   
 然後您可以使用 Windows 檔案總管、Xcopy.exe 或 Robocopy.exe，手動複製 VHD 或 VHDX 檔案。 不需要任何特殊步驟。 最好的做法是變更檔名，即使移到其他資料夾也一樣。  
   
@@ -365,7 +365,7 @@ Get-vmharddiskdrive
   
 例如，您可以利用下列範例，從名為 **DC2** 的 VM 傳回所有的 IDE 硬碟：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_ReturnIDE.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_ReturnIDE.png)  
   
 如果磁碟路徑指向 AVHD 或 AVHDX 檔案，它就是快照。 若要刪除與磁碟關聯的快照並與實際的 VHD 或 VHDX 合併，請使用下列 Cmdlet：  
   
@@ -376,7 +376,7 @@ Remove-VMSnapshot
   
 例如，若要從名為 DC2-SOURCECLONE 的 VM 刪除所有快照：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_DelSnapshots.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_DelSnapshots.png)  
   
 若要使用 Windows PowerShell 來複製檔案，請使用下列 Cmdlet：  
   
@@ -390,7 +390,7 @@ Copy-Item
 Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-item -path $_.path -destination c:\temp\copy.vhd}  
 ```  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSCopyDrive.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSCopyDrive.png)  
   
 > [!IMPORTANT]  
 > 您無法使用傳遞磁碟來複製，因為它們不使用虛擬磁碟檔案，而是使用實際的硬碟。  
@@ -401,16 +401,16 @@ Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-
 #### <a name="exporting-the-vm"></a>匯出 VM  
 複製磁碟的另一種方式是匯出整個 Hyper-V VM 做為複本。 自動匯出會建立針對 VM 命名的資料夾，並包含所有的磁碟和設定資訊。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVExport.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVExport.png)  
   
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法  
 使用 [HYPER-V 管理員] 匯出 VM：  
   
-1.  在來源網域控制站上按一下滑鼠右鍵，然後按一下 [匯出]  。  
+1.  在來源網域控制站上按一下滑鼠右鍵，然後按一下 [匯出]。  
   
 2.  選取現有的資料夾做為匯出容器。  
   
-3.  等待 [狀態] 欄停止顯示 [正在匯出]  。  
+3.  等待 [狀態] 欄停止顯示 [正在匯出]。  
   
 ##### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
 若要使用 HYPER-V Windows PowerShell 模組匯出 VM，請使用下列 Cmdlet：  
@@ -421,22 +421,22 @@ Export-vm
   
 例如，若要將名為 DC2-SOURCECLONE 的 VM 匯出到名為 C:\VM 的資料夾：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSExport.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSExport.png)  
   
 > [!NOTE]  
 > Windows Server 2012 Hyper-V 支援新的匯出和匯入功能 (這些功能已超出本訓練的範圍)。 如需詳細資訊，請檢閱 TechNet。  
   
 #### <a name="exporting-merged-disks-using-hyper-v"></a>使用 Hyper-V 匯出合併的磁碟  
-最後一個選擇是使用 Hyper-V 中的 [磁碟合併] 與 [轉換] 選項。 這些選項可讓您製作現有磁碟結構的複本 (即使在包含快照集 AVHD/AVHDX 檔案時也一樣)，使其成為單一的新磁碟。 像手動磁碟複製案例中，這主要是用於較簡單的虛擬機器只使用單一磁碟機，例如 c:\\。 它的唯一優點是不需要先刪除快照，這是它與手動複製的不同。 這個操作的速度必然會比只刪除快照並複製磁碟的程序還要慢。  
+最後一個選擇是使用 Hyper-V 中的 [磁碟合併] 與 [轉換] 選項。 這些選項可讓您製作現有磁碟結構的複本 (即使在包含快照集 AVHD/AVHDX 檔案時也一樣)，使其成為單一的新磁碟。 就像手動磁碟複製案例，這主要是針對只使用單一磁片磁碟機的較簡單虛擬機器，例如 C： \\。 它的唯一優點是不需要先刪除快照，這是它與手動複製的不同。 這個操作的速度必然會比只刪除快照並複製磁碟的程序還要慢。  
   
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法  
 使用 [HYPER-V 管理員] 建立合併的磁碟：  
   
-1.  按一下 **編輯磁碟**。  
+1.  按一下 [**編輯磁片**]。  
   
 2.  瀏覽最低階的子磁碟。 例如，如果您使用的是差異磁碟，子磁碟就是最低階的子項。 如果虛擬機器有一個 (或多個) 快照，則目前選取的快照就是最低階的子磁碟。  
   
-3.  選取 [合併]  選項，為整個父系-子系結構建立單一磁碟。  
+3.  選取 [合併] 選項，為整個父系-子系結構建立單一磁碟。  
   
 4.  選取新的虛擬硬碟，並提供路徑。 這會將現有的 VHD/VHDX 檔案調解成為新的單一可攜式單位，還原先前快照時便不會有風險。  
   
@@ -449,9 +449,9 @@ Convert-vm
   
 例如，若要將整個系列的 VM 磁碟快照 (這次不包括任何差異磁碟) 以及父磁碟匯出到名為 DC4-CLONED.VHDX 的新單一磁碟：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
   
-#### <a name="BKMK_Offline"></a>將 XML 新增到離線系統磁碟  
+#### <a name="BKMK_Offline"></a>將 XML 新增到離線系統磁片  
 如果您將 Dccloneconfig.xml 複製到執行中的來源 DC，現在就必須將更新的 dccloneconfig.xml 檔案複製到離線複製/匯出的系統磁碟中。 根據先前使用 Get-ADDCCloningExcludedApplicationList 偵測到的已安裝應用程式而定，您可能也需要將 CustomDCCloneAllowList.xml 檔案複製到磁碟。  
   
 下列位置可以包含 DcCloneConfig.xml 檔案：  
@@ -478,7 +478,7 @@ Convert-vm
   
 您可以使用 New-ADDCCloneConfigFile 搭配 **-offline** 引數來執行 (也稱為離線模式)，以建立 DcCloneConfig.xml 檔案，並將它放入正確的位置。 下列範例示範如何在離線模式中執行 New-ADDCCloneConfigFile。  
   
-若要建立具有靜態 IPv4 位址，稱為 「 REDMOND 」 網站中的離線模式中名為 CloneDC1 的複製網域控制站中，輸入：  
+若要在離線模式中建立名為 CloneDC1 的複製網域控制站，請在名為「REDMOND」的網站中，使用靜態 IPv4 位址輸入：  
   
 ```  
 New-ADDCCloneConfigFile -Offline -CloneComputerName CloneDC1 -SiteName REDMOND -IPv4Address "10.0.0.2" -IPv4DNSResolver "10.0.0.1" -IPv4SubnetMask "255.255.0.0" -IPv4DefaultGateway "10.0.0.1" -Static -Path F:\Windows\NTDS  
@@ -512,17 +512,17 @@ New-ADDCCloneConfigFile -Offline -IPv4DNSResolver "10.0.0.1" -IPv6DNSResolver "2
 ##### <a name="windows-explorer-method"></a>Windows 檔案總管方法  
 Windows Server 2012 現在提供掛接 VHD 和 VHDX 檔案的圖形化選項。 這需要在 Windows Server 2012 上安裝 [桌面體驗] 功能。  
   
-1.  按一下新複製且包含來源 DC 系統磁碟機或 DSA 工作目錄位置資料夾的 VHD/VHDX 檔案，然後按一下 [光碟映像工具]  功能表中的 [掛接]  。  
+1.  按一下新複製且包含來源 DC 系統磁碟機或 DSA 工作目錄位置資料夾的 VHD/VHDX 檔案，然後按一下 [光碟映像工具] 功能表中的 [掛接]。  
   
 2.  在目前掛接的磁碟機中，將 XML 檔案複製到有效的位置。 系統可能會提示您具備資料夾的權限。  
   
-3.  按一下掛接的磁碟機，然後按一下 [磁碟工具]  功能表中的 [退出]  。  
+3.  按一下掛接的磁碟機，然後按一下 [磁碟工具] 功能表中的 [退出]。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVClickMountedDrive.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVClickMountedDrive.png)  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVDetailsMountedDrive.gif)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVDetailsMountedDrive.gif)  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVEjectMountedDrive.gif)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVEjectMountedDrive.gif)  
   
 ##### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
 或者，您可以掛接離線磁碟，並使用 Windows PowerShell Cmdlet 複製 XML 檔案：  
@@ -548,7 +548,7 @@ dismount-vhd <disk path>
   
 例如:  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
 或者，您可以使用新 **Mount-DiskImage** Cmdlet 來掛接 VHD (或 ISO) 檔案。  
   
@@ -562,7 +562,7 @@ dismount-vhd <disk path>
 #### <a name="associating-a-new-vm-with-copied-disks"></a>將新的 VM 關聯到複製的磁碟  
 如果您手動複製系統磁碟，就必須使用複製的磁碟來建立新的虛擬機器。 Hypervisor 會在建立新的 VM 時自動設定 VM 世代識別碼；不需要在 VM 或 Hyper-V 主機上進行任何設定變更。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVConnectVHD.gif)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVConnectVHD.gif)  
   
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法  
   
@@ -585,7 +585,7 @@ New-VM
   
 例如，在此處建立 DC4-CLONEDFROMDC2 VM，使用 1GB 的 RAM，從 c:\vm\dc4-systemdrive-clonedfromdc2.vhd 檔案開機，並使用 10.0 虛擬網路：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSNewVM.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSNewVM.png)  
   
 #### <a name="import-vm"></a>匯入 VM  
 如果您先前已匯出 VM，現在需要再次以複本形式匯入。 這會使用匯出的 XML，利用所有先前的設定、磁碟機、網路及記憶體設定來重新建立電腦。  
@@ -593,30 +593,30 @@ New-VM
 如果您想要從相同的匯出 VM 建立其他複本，可視需要製作多份匯出 VM 的複本。 然後針對每個複本使用 [匯入]。  
   
 > [!IMPORTANT]  
-> 請務必使用 [複製]  選項，因為匯出保留所有來源資訊；如果在相同的 HYPER-V 主機伺服器上執行，使用 [移動]  或 [就地]  匯入伺服器會造成資訊衝突。  
+> 請務必使用 [複製] 選項，因為匯出保留所有來源資訊；如果在相同的 HYPER-V 主機伺服器上執行，使用 [移動] 或 [就地] 匯入伺服器會造成資訊衝突。  
   
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法  
 使用 [HYPER-V 管理員] 嵌入式管理單元進行匯入：  
   
-1.  按一下 [匯入虛擬機器]   
+1.  按一下 [匯入虛擬機器]  
   
-2.  在 [尋找資料夾]  頁面上，使用 [瀏覽] 按鈕選取匯出的 VM 定義檔案  
+2.  在 [尋找資料夾] 頁面上，使用 [瀏覽] 按鈕選取匯出的 VM 定義檔案  
   
-3.  在 [選取虛擬機器]  頁面上，按一下來源電腦。  
+3.  在 [選取虛擬機器] 頁面上，按一下來源電腦。  
   
-4.  在 [選擇匯入類型]  頁面上，按一下 [複製虛擬機器 (建立新的唯一識別碼)]  ，然後按一下 [完成]  。  
+4.  在 [選擇匯入類型] 頁面上，按一下 [複製虛擬機器 (建立新的唯一識別碼)]，然後按一下 [完成]。  
   
 5.  如果是在相同的 Hyper-V 主機上進行匯入，請將匯入的 VM 重新命名；它的名稱將與匯出的來源網域控制站相同。  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportLocateFolder.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportLocateFolder.png)  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportSelectVM.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportSelectVM.png)  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportChooseType.gif)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportChooseType.gif)  
   
 請記得使用 [Hyper-V 管理] 嵌入式管理單元來移除任何匯入的快照：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportDelSnap.gif)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVImportDelSnap.gif)  
   
 > [!WARNING]  
 > 請務必刪除任何匯入的快照；如果套用，它們就會使複製的網域控制站回到先前 (而且可能是即時的) DC 的狀態，導致複寫失敗、重複的 IP 資訊，以及其他干擾。  
@@ -631,7 +631,7 @@ Rename-VM
   
 例如，此處是使用其自動判斷的 XML 檔案來匯入匯出的 VM DC2-CLONED，然後立即重新命名為新的 VM 名稱 DC5-CLONEDFROMDC2：  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSImportVM.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSImportVM.png)  
   
 請記得使用下列 Cmdlet 來移除任何匯入的快照：  
   
@@ -642,13 +642,13 @@ Remove-VMSnapshot
   
 例如:  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
 > [!WARNING]
 > 確定在匯入電腦時，不會將靜態 MAC 位址指派給來源網域控制站。 如果複製的來源電腦具有靜態 MAC，這些複製的電腦將不會正確傳送或接收任何網路流量。 如果是這種情況，請設定新的唯一靜態或動態 MAC 位址。 您可以使用下列命令來查看 VM 是否使用靜態 MAC 位址：  
 > 
-> **Get-VM -VMName**   
->  ***test-vm* | Get-VMNetworkAdapter | fl \\** *  
+> **取得-VM-VMName**   
+>  ***測試-vm* |VMNetworkAdapter |fl \\** *  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>步驟 9 - 複製新的虛擬機器  
 (選擇性) 開始複製之前，請重新啟動離線複製來源網域控制站。 無論如何，請確定 PDC 模擬器已在線上。  
@@ -666,7 +666,7 @@ Start-VM
   
 例如:  
   
-![虛擬的 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
+![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
   
 當電腦在複製完成後重新啟動之後，它就是一個網域控制站，而您可以正常登入以確認正常運作。 如果發生任何錯誤，伺服器設定為開機進入 [目錄服務還原模式] 以供進行調查。  
   
@@ -714,7 +714,7 @@ Start-VM
 >   
 > [Using the BurFlags registry key to reinitialize File Replication Service replica sets](https://support.microsoft.com/kb/290762) (使用 BurFlags 登錄機碼將檔案複寫服務 (FRS) 複本集重新初始化)  
 >   
-> [如何針對 DFSR 複製的 SYSVOL （例如"D4/D2"frs) 強制執行權威和非權威同步處理](https://support.microsoft.com/kb/2218556)  
+> [如何針對 DFSR 複寫的 SYSVOL （例如 FRS 的 "D4/D2"）強制執行權威和非權威同步處理](https://support.microsoft.com/kb/2218556)  
   
 > [!WARNING]  
 > 請勿在同一台 Hypervisor 主機上的樹系或網域中執行所有網域控制站。 這會在 Hypervisor 每次離線時導致單一失敗點，因為損壞 AD DS、Exchange、SQL 及其他企業作業。 這和整個網域或樹系只使用一個網域控制站的情況一樣。 在多個平台上有多個網域控制站有助於提供備援和容錯功能。  

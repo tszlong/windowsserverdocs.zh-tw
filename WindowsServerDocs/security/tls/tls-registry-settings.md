@@ -2,7 +2,7 @@
 title: 傳輸層安全性（TLS）登錄設定
 description: Windows Server 安全性
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
-ms.openlocfilehash: 83146bd8a65b90994ed90a6dda29a4bc00a2533a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870304"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403411"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>傳輸層安全性（TLS）登錄設定
 
@@ -246,7 +246,7 @@ SSL 2.0 子機碼資料表
 | 子機碼 | 描述 |
 |--------|-------------|
 | 用戶端 | 控制 SSL 用戶端上的 SSL 2.0 使用。 |
-| 伺服器 | 控制 SSL 伺服器上的 SSL 2.0 使用。 |
+| Server | 控制 SSL 伺服器上的 SSL 2.0 使用。 |
 
 若要停用用戶端或伺服器的 SSL 2.0，請將 DWORD 值變更為0。 如果 SSPI 應用程式要求使用 SSL 2.0，則會遭到拒絕。 
 
@@ -270,10 +270,10 @@ SSL 2.0 子機碼資料表
 
 SSL 3.0 子機碼資料表
 
-| 子機碼 | 說明 |
+| 子機碼 | 描述 |
 |--------|-------------|
 | 用戶端 | 控制 SSL 用戶端上的 SSL 3.0 使用。 |
-| 伺服器 | 控制 SSL 伺服器上的 SSL 3.0 使用。 |
+| Server | 控制 SSL 伺服器上的 SSL 3.0 使用。 |
 
 若要停用用戶端或伺服器的 SSL 3.0，請將 DWORD 值變更為0。
 如果 SSPI 應用程式要求使用 SSL 3.0，則會遭到拒絕。 
@@ -296,10 +296,10 @@ SSL 3.0 子機碼資料表
 
 TLS 1.0 子機碼資料表
 
-| 子機碼 | 說明 |
+| 子機碼 | 描述 |
 |--------|-------------|
 | 用戶端 | 控制 TLS 用戶端上的 TLS 1.0 使用。 |
-| 伺服器 | 控制 TLS 伺服器上的 TLS 1.0 使用。 |
+| Server | 控制 TLS 伺服器上的 TLS 1.0 使用。 |
 
 若要停用用戶端或伺服器的 TLS 1.0，請將 DWORD 值變更為0。
 如果 SSPI 應用程式要求使用 TLS 1.0，則會遭到拒絕。 
@@ -325,7 +325,7 @@ TLS 1.1 子機碼資料表
 | 子機碼 | 描述 |
 |--------|-------------|
 | 用戶端 | 控制 TLS 用戶端上的 TLS 1.1 使用。 |
-| 伺服器 | 控制 TLS 伺服器上的 TLS 1.1 使用。 |
+| Server | 控制 TLS 伺服器上的 TLS 1.1 使用。 |
 
 若要停用用戶端或伺服器的 TLS 1.1，請將 DWORD 值變更為0。
 如果 SSPI 應用程式要求使用 TLS 1.1，則會遭到拒絕。 
@@ -348,10 +348,10 @@ TLS 1.1 子機碼資料表
 
 TLS 1.2 子機碼資料表
 
-| 子機碼 | 說明 |
+| 子機碼 | 描述 |
 |--------|-------------|
 | 用戶端 | 控制 TLS 用戶端上的 TLS 1.2 使用。 |
-| 伺服器 | 控制 TLS 伺服器上的 TLS 1.2 使用。 |
+| Server | 控制 TLS 伺服器上的 TLS 1.2 使用。 |
 
 若要停用用戶端或伺服器的 TLS 1.2，請將 DWORD 值變更為0。
 如果 SSPI 應用程式要求使用 TLS 1.2，則會遭到拒絕。 
@@ -377,7 +377,7 @@ DTLS 1.0 子機碼資料表
 | 子機碼 | 描述 |
 |--------|-------------|
 | 用戶端 | 控制在 DTLS 用戶端上使用 DTLS 1.0 的情況。 |
-| 伺服器 | 控制 DTLS 伺服器上的 DTLS 1.0 使用。 |
+| Server | 控制 DTLS 伺服器上的 DTLS 1.0 使用。 |
 
 若要停用用戶端或伺服器的 DTLS 1.0，請將 DWORD 值變更為0。
 如果 SSPI 應用程式要求使用 DTLS 1.0，則會遭到拒絕。 
@@ -400,10 +400,10 @@ DTLS 1.0 子機碼資料表
 
 DTLS 1.2 子機碼資料表
 
-| 子機碼 | 說明 |
+| 子機碼 | 描述 |
 |--------|-------------|
 | 用戶端 | 控制在 DTLS 用戶端上使用 DTLS 1.2 的情況。 |
-| 伺服器 | 控制 DTLS 伺服器上的 DTLS 1.2 使用。 |
+| Server | 控制 DTLS 伺服器上的 DTLS 1.2 使用。 |
 
 
 若要停用用戶端或伺服器的 DTLS 1.2，請將 DWORD 值變更為0。

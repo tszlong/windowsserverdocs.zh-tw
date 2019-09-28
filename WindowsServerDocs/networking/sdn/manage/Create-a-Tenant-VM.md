@@ -1,9 +1,9 @@
 ---
 title: 建立 VM 並連線至租用戶虛擬網路或 VLAN
-description: 在本主題中，我們告訴您如何建立租用戶 VM，並將它連接至任一虛擬網路建立的 HYPER-V 網路虛擬化或以虛擬區域網路 (VLAN)。
+description: 在本主題中，我們將示範如何建立租使用者 VM，並將它連線到您使用 Hyper-v 網路虛擬化或虛擬區域網路（VLAN）所建立的虛擬網路。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,38 +13,38 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: pashort
 author: shortpatti
 ms.date: 08/24/2018
-ms.openlocfilehash: e23e6c020c12dd4900caa368daae0cc6dbeceaf4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e0678fb204e0895bf4429e8bb877a3f1c0e7a97
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856809"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355862"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>建立 VM 並連線至租用戶虛擬網路或 VLAN
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題中，您可以建立租用戶 VM，並將它連接至任一虛擬網路建立的 HYPER-V 網路虛擬化或以虛擬區域網路 (VLAN)。 您可以使用 Windows PowerShell 網路控制卡 cmdlet 來連線至虛擬網路或連線到 VLAN NetworkControllerRESTWrappers。
+在本主題中，您會建立租使用者 VM，並將它連線至使用 Hyper-v 網路虛擬化或虛擬區域網路（VLAN）所建立的虛擬網路。 您可以使用 Windows PowerShell 網路控制卡 Cmdlet 來連線到虛擬網路或 NetworkControllerRESTWrappers，以連線到 VLAN。
 
-您可以使用本主題中所述的程序來部署虛擬應用裝置。 您可以使用一些額外的步驟設定設備來處理，或檢查非固定格式或從其他 Vm 虛擬網路上的資料封包。
+使用本主題中所述的處理常式來部署虛擬裝置。 有幾個額外的步驟，您就可以設定設備來處理或檢查虛擬網路上的其他 Vm 之間流動或流出的資料封包。
 
-本主題中的各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。 
-
-
-## <a name="prerequisites"></a>先決條件
-
-1. VM 網路介面卡使用靜態 MAC 位址建立 VM 的存留期。<p>如果在 VM 存留期期間，變更 MAC 位址，網路控制站無法設定網路介面卡所需的原則。 未設定網路原則防止處理網路流量的網路介面卡，並與網路的所有通訊會都失敗。  
-
-2. 如果 VM 需要網路存取，在啟動時，不會啟動 VM 之前之後在 VM 上的網路介面卡通訊埠設定的介面識別碼。 如果您之前設定的介面識別碼，啟動 VM，網路介面不存在時，VM 無法通訊在網路控制站，並套用所有原則的網路上。
-
-3. 如果您需要針對此網路介面的自訂 Acl，然後建立 ACL 現在使用主題中的指示[使用存取控制清單 (Acl) 來管理資料中心網路流量](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
-
-請確定您已經有建立虛擬網路才能使用此範例命令。 如需詳細資訊，請參閱 <<c0> [ 建立、 刪除或更新租用戶虛擬網路](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks)。
-
-## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>建立 VM，並使用 Windows PowerShell 網路控制卡 cmdlet 連接到虛擬網路
+本主題中的各節包含範例 Windows PowerShell 命令，其中包含許多參數的範例值。 執行這些命令之前，請務必將這些命令中的範例值取代為適用于您的部署的值。 
 
 
-1. 建立 VM 網路介面卡具有靜態 MAC 位址的 VM。 
+## <a name="prerequisites"></a>必要條件
+
+1. 在 VM 的存留期內，使用靜態 MAC 位址建立的 VM 網路介面卡。<p>如果在 VM 存留期間，MAC 位址變更，網路控制卡將無法設定網路介面卡所需的原則。 未設定網路的原則可防止網路介面卡處理網路流量，而且所有與網路的通訊都會失敗。  
+
+2. 如果 VM 在啟動時需要網路存取，請勿啟動 VM，直到在 VM 網路介面卡埠上設定介面識別碼為止。 如果您在設定介面識別碼之前啟動 VM，且網路介面不存在，VM 就無法在網路控制站的網路上通訊，並套用所有原則。
+
+3. 如果您需要此網路介面的自訂 Acl，請使用[使用存取控制清單（acl）管理資料中心網路流量流程](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)主題中的指示，立即建立 acl
+
+請確定您已建立虛擬網路，然後再使用此範例命令。 如需詳細資訊，請參閱[建立、刪除或更新租使用者虛擬網路](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks)。
+
+## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>使用 Windows PowerShell 網路控制卡 Cmdlet 建立 VM 並聯機至虛擬網路
+
+
+1. 使用具有靜態 MAC 位址的 VM 網路介面卡來建立 VM。 
 
    ```PowerShell    
    New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
@@ -54,16 +54,16 @@ ms.locfileid: "59856809"
    Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
    ```
 
-2. 取得包含您要連接的網路介面卡的子網路的虛擬網路。
+2. 取得虛擬網路，其中包含您要連接網路介面卡的子網。
 
    ```Powershell 
    $vnet = get-networkcontrollervirtualnetwork -connectionuri $uri -ResourceId “Contoso_WebTier”
    ```
 
-3. 網路控制卡中建立網路介面物件。
+3. 在網路控制卡中建立網路介面物件。
 
    >[!TIP]
-   >在此步驟中，您可以使用自訂的 ACL。
+   >在此步驟中，您會使用自訂 ACL。
 
    ```PowerShell
    $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
@@ -87,16 +87,16 @@ ms.locfileid: "59856809"
    New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
    ```
 
-4. 取得從網路控制站的網路介面執行個體識別碼。
+4. 從網路控制卡取得網路介面的 InstanceId。
 
    ```PowerShell 
     $nic = Get-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId "MyVM-Ethernet1"
    ```
 
-5. HYPER-V VM 上網路介面卡通訊埠設定的介面識別碼。
+5. 設定 Hyper-v VM 網路介面卡埠上的介面識別碼。
 
    >[!NOTE]
-   >您必須執行這些命令，在 HYPER-V 主機上已安裝的 VM。
+   >您必須在已安裝 VM 的 Hyper-v 主機上執行這些命令。
 
    ```PowerShell 
    #Do not change the hardcoded IDs in this section, because they are fixed values and must not change.
@@ -137,12 +137,12 @@ ms.locfileid: "59856809"
     Get-VM -Name “MyVM” | Start-VM 
    ```
 
-您已成功建立 VM、 VM 連線至租用戶虛擬網路，並啟動 VM，讓它可以處理租用戶工作負載。
+您已成功建立 VM、將 VM 連線到租使用者虛擬網路，並已啟動 VM，使其可以處理租使用者工作負載。
 
-## <a name="create-a-vm-and-connect-to-a-vlan-by-using-networkcontrollerrestwrappers"></a>建立 VM，並使用 NetworkControllerRESTWrappers 連接到 VLAN
+## <a name="create-a-vm-and-connect-to-a-vlan-by-using-networkcontrollerrestwrappers"></a>使用 NetworkControllerRESTWrappers 建立 VM 並聯機到 VLAN
 
 
-1. 建立 VM，並指派靜態 MAC 位址給 VM。
+1. 建立 VM，並將靜態 MAC 位址指派給 VM。
 
    ```PowerShell
    New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
@@ -152,13 +152,13 @@ ms.locfileid: "59856809"
    Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
    ```
 
-2. 設定 VM 網路介面卡的 VLAN ID。
+2. 設定 VM 網路介面卡上的 VLAN ID。
 
    ```PowerShell
    Set-VMNetworkAdapterIsolation –VMName “MyVM” -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
    ```
 
-3. 取得的邏輯網路子網路，並建立網路介面。 
+3. 取得邏輯網路子網並建立網路介面。 
 
    ```PowerShell
     $logicalnet = get-networkcontrollerLogicalNetwork -connectionuri $uri -ResourceId "00000000-2222-1111-9999-000000000002"
@@ -186,7 +186,7 @@ ms.locfileid: "59856809"
     $vnic.InstanceId
    ```
 
-4. 設定 HYPER-V 通訊埠的執行個體識別碼。
+4. 設定 Hyper-v 埠上的 InstanceId。
 
    ```PowerShell  
    #The hardcoded Ids in this section are fixed values and must not change.
@@ -226,7 +226,7 @@ ms.locfileid: "59856809"
    Get-VM -Name “MyVM” | Start-VM 
    ```
 
-您已成功建立 VM，VM 連接至 VLAN，並啟動 VM，讓它可以處理租用戶工作負載。
+您已成功建立 VM、將 VM 連線至 VLAN，並已啟動 VM，使其可以處理租使用者工作負載。
 
   
 

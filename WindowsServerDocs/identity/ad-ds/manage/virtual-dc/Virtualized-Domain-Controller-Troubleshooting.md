@@ -7,26 +7,26 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bd357e9e0a3947be760ad46d7190d5351bc48697
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 42f9807eb09ff633642a90181b3abfacc00ab76b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442615"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71409048"
 ---
 # <a name="virtualized-domain-controller-troubleshooting"></a>虛擬網域控制站的疑難排解
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 這個主題提供疑難排解虛擬網域控制站功能的詳細方法。  
 
 -   [疑難排解虛擬網域控制站複製](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_TshootVDCCloning)  
 
--   [疑難排解虛擬的網域控制站安全還原](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_TshootVDCSafeRestore)  
+-   [疑難排解虛擬網域控制站安全還原](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_TshootVDCSafeRestore)  
 
-## <a name="BKMK_Intro"></a>簡介  
+## <a name="BKMK_Intro"></a>問世  
 改善疑難排解技術的最重要方式是建置測試實驗室，並嚴格檢查正常運作的案例。 由於您已經具備如何升級網域控制站的穩固基礎，因此，當您遇到錯誤時，就能夠更明顯地看出並更容易了解錯誤。 這也有助於您建立分析與網路分析技術。 這適用於所有分散式系統技術，而不只是虛擬網域控制站的部署。  
 
 進階疑難排解網域控制站設定的重要元素如下：  
@@ -42,30 +42,30 @@ ms.locfileid: "66442615"
 ## <a name="BKMK_TshootVDCCloning"></a>疑難排解虛擬網域控制站複製  
 本節包含：  
 
--   [如需疑難排解的工具](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_Tools)  
+-   [疑難排解的工具](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_Tools)  
 
 -   [記錄選項](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_LoggingOptions)  
 
--   [一般方法疑難排解網域控制站複製](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_GeneralMethodology)  
+-   [疑難排解網域控制站複製的一般方法](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_GeneralMethodology)  
 
 -   [Server Core 和事件記錄檔](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_ServerCoreEvents)  
 
--   [疑難排解特定問題](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_SpecificProblems)  
+-   [針對特定問題進行疑難排解](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_SpecificProblems)  
 
 適合用來疑難排解虛擬網域控制站複製功能的策略會遵循下列通用格式：  
 
-![虛擬 dc 進行疑難排解](media/Virtualized-Domain-Controller-Troubleshooting/ADDS_VDC_TroublehsootingFlowchart.png)  
+![虛擬 dc 疑難排解](media/Virtualized-Domain-Controller-Troubleshooting/ADDS_VDC_TroublehsootingFlowchart.png)  
 
-### <a name="BKMK_Tools"></a>如需疑難排解的工具  
+### <a name="BKMK_Tools"></a>疑難排解的工具  
 
 #### <a name="BKMK_LoggingOptions"></a>記錄選項  
 內建的記錄檔是用來疑難排解網域控制站複製問題的最重要工具。 預設會啟用並設定這所有的記錄檔，以取得最多的詳細資料。  
 
 |||  
 |-|-|  
-|**Operation**|**Log**|  
-|**複製**|事件檢視器 \windows 記錄 \ 系統<br />-事件 viewer\Applications and services 記錄檔 \ 目錄服務<br />-   %systemroot%\debug\dcpromo.log|  
-|**升級**|-   %systemroot%\debug\dcpromo.log<br />-事件 viewer\Applications and services 記錄檔 \ 目錄服務<br />事件檢視器 \windows 記錄 \ 系統<br />-事件 viewer\Applications and services 記錄檔 \ 檔案複寫服務<br />-事件 viewer\Applications and services 記錄檔 \dfs 複寫|  
+|**運營**|**日誌**|  
+|**克隆**|-Event 檢視器 \windows 記錄 \ 系統<br />-事件 viewer\Applications 和服務 logs\Directory 服務<br />-%systemroot%\debug\dcpromo.log|  
+|**升級**|-%systemroot%\debug\dcpromo.log<br />-事件 viewer\Applications 和服務 logs\Directory 服務<br />-Event 檢視器 \windows 記錄 \ 系統<br />-事件 viewer\Applications 和服務 logs\File 複寫服務<br />-事件 viewer\Applications 和服務 logs\DFS 複寫|  
 
 #### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>適用於疑難排解網域控制站設定的工具和命令  
 若要疑難排解記錄檔未說明的問題，請使用下列工具做為起點：  
@@ -76,7 +76,7 @@ ms.locfileid: "66442615"
 
 -   網路監視器 3.4  
 
-### <a name="BKMK_GeneralMethodology"></a>一般方法疑難排解網域控制站複製  
+### <a name="BKMK_GeneralMethodology"></a>疑難排解網域控制站複製的一般方法  
 
 1.  VM 是否正開機進入 DS 修復模式 (DSRM)？ 這表示必須進行疑難排解。 若要在 DSRM 中登入，請使用 **.\Administrator** 帳戶並指定 DSRM 密碼。  
 
@@ -98,7 +98,7 @@ ms.locfileid: "66442615"
 
         5.  PDC 模擬器是否已上線且可透過 RPC 通訊協定加以使用？  
 
-        6.  網域控制站是 [可複製的網域控制站] 群組的成員嗎？ 已在該群組的網域根目錄上設定 [允許 DC 建立本身的複製品]  的權限嗎？  
+        6.  網域控制站是 [可複製的網域控制站] 群組的成員嗎？ 已在該群組的網域根目錄上設定 [允許 DC 建立本身的複製品] 的權限嗎？  
 
         7.  Dccloneconfig.xml 檔案是否包含了妨礙正確剖析進行的語法錯誤？  
 
@@ -132,7 +132,7 @@ ms.locfileid: "66442615"
 
 1.  執行 msconfig.exe  
 
-2.  在 [開機]  索引標籤的 [開機選項]  下方，取消選取 [安全開機]  (如果已啟用 [Active Directory 修復]  選項，則會選取此選項)。  
+2.  在 [開機] 索引標籤的 [開機選項] 下方，取消選取 [安全開機] (如果已啟用 [Active Directory 修復] 選項，則會選取此選項)。  
 
 3.  按一下 [確定]，在出現提示時重新啟動  
 
@@ -167,14 +167,14 @@ ms.locfileid: "66442615"
 
 -   在本機執行 PowerShell Cmdlet Get-WinEvent  
 
--   如果您已啟用 「 遠端事件記錄檔管理 」 群組 （或對等連接埠），以允許進行輸入的通訊的 Windows 進階防火牆規則，您可以管理使用 Eventvwr.exe、 wevtutil.exe 或 Get-winevent，遠端事件記錄檔。 這可以在 Server Core 安裝中，使用 NETSH.exe、群組原則或 Windows PowerShell 3.0 中的新 Set-NetFirewallRule Cmdlet 來完成。  
+-   如果您已啟用「遠端事件記錄檔管理」群組（或對等埠）的 Windows Advanced 防火牆規則以允許輸入通訊，您可以使用 Eventvwr.msc、wevtutil 或 New-winevent，從遠端管理事件記錄檔。 這可以在 Server Core 安裝中，使用 NETSH.exe、群組原則或 Windows PowerShell 3.0 中的新 Set-NetFirewallRule Cmdlet 來完成。  
 
 > [!WARNING]  
 > 請勿在電腦處於 DSRM 時，嘗試將圖形化介面新增回電腦。 Windows 服務堆疊 (CBS) 無法在安全模式或 DSRM 中正常運作。 嘗試在處於 DSRM 時新增功能或角色將無法完成，而且會讓電腦在重新開機之前都處於不穩定狀態。 由於 DSRM 中的虛擬網域控制站複製品無法正常開機，而且在大部分情況下應該都無法正常開機，因此無法安全新增圖形化介面。 此動作不受支援，而且可能使得伺服器無法使用。  
 
-### <a name="BKMK_SpecificProblems"></a>疑難排解特定問題  
+### <a name="BKMK_SpecificProblems"></a>針對特定問題進行疑難排解  
 
-#### <a name="events"></a>事件  
+#### <a name="events"></a>Events  
 所有的虛擬網域控制站複製事件都會寫入複製網域控制站 VM 的 [目錄服務] 事件記錄檔。 [應用程式]、[檔案複寫服務]，以及 [DFS 複寫] 事件記錄檔可能也會包含關於複製失敗的有用疑難排解資訊。 在 PDC 模擬器的 RPC 呼叫期間的失敗或許可以在 PDC 模擬器的事件記錄檔中取得。  
 
 以下是 [目錄服務] 事件記錄檔中 Windows Server 2012 複製特定的事件，其中含有錯誤的附註和建議解決方案。  
@@ -186,8 +186,8 @@ ms.locfileid: "66442615"
 |       **事件識別碼**       |                                                                                                                                                                                                          **2160**                                                                                                                                                                                                          |
 |        **Source**        |                                                                                                                                                                                      Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                       |
 |       **Severity**       |                                                                                                                                                                                                       資訊                                                                                                                                                                                                        |
-|       **Message**        | 本機 *<COMPUTERNAME>* 發現虛擬網域控制站複製設定檔。<br /><br />此虛擬網域控制站複製設定檔位於：%1<br /><br />虛擬網域控制站複製設定檔的存在，表示本機虛擬網域控制站是另一個虛擬網域控制站的複製品。 *<COMPUTERNAME>* 將開始自行複製。 |
-| **注意事項與解決方法** |                                                                                                                  這是成功的事件，只有在發生未預期的狀況時才會成為問題。 檢查 DSA 工作目錄 %systemroot%\ntds，以及任何本機或卸除式磁碟的根目錄，以取得 dcclconeconfig.xml 檔案。                                                                                                                  |
+|       **Message**        | 本機 *<COMPUTERNAME>* 找到虛擬網域控制站複製設定檔。<br /><br />此虛擬網域控制站複製設定檔位於：%1<br /><br />虛擬網域控制站複製設定檔的存在，表示本機虛擬網域控制站是另一個虛擬網域控制站的複製品。 *@No__t-1*將開始自行複製。 |
+| **記事和解決方式** |                                                                                                                  這是成功的事件，只有在發生未預期的狀況時才會成為問題。 檢查 DSA 工作目錄 %systemroot%\ntds，以及任何本機或卸除式磁碟的根目錄，以取得 dcclconeconfig.xml 檔案。                                                                                                                  |
 
 |                          |                                                                                                                                                                                          |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -195,15 +195,15 @@ ms.locfileid: "66442615"
 |        **Source**        |                                                                     Microsoft-Windows-ActiveDirectory_DomainService                                                                      |
 |       **Severity**       |                                                                                      資訊                                                                                       |
 |       **Message**        |                         本機 *<COMPUTERNAME>* 找不到虛擬網域控制站複製設定檔。 本機電腦不是複製的 DC。                          |
-| **注意事項與解決方法** | 這是成功的事件，只有在發生未預期的狀況時才會成為問題。 檢查 DSA 工作目錄 %systemroot%\ntds，以及任何本機或卸除式磁碟的根目錄，以取得 dcclconeconfig.xml 檔案。 |
+| **記事和解決方式** | 這是成功的事件，只有在發生未預期的狀況時才會成為問題。 檢查 DSA 工作目錄 %systemroot%\ntds，以及任何本機或卸除式磁碟的根目錄，以取得 dcclconeconfig.xml 檔案。 |
 
 |||  
 |-|-|  
 |**事件識別碼**|**2162**|  
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
-|**Severity**|錯誤|  
+|**Severity**|Error|  
 |**Message**|虛擬網域控制站複製失敗。<br /><br />請檢查 [系統] 事件記錄檔與 %systemroot%\debug\dcpromo.log 中記錄的事件，了解有關虛擬網域控制站複製嘗試錯誤的詳細資訊。<br /><br />錯誤碼：%1|  
-|**注意事項與解決方法**|依照訊息指示執行，這個錯誤是一個 catchall。|  
+|**記事和解決方式**|依照訊息指示執行，這個錯誤是一個 catchall。|  
 
 |||  
 |-|-|  
@@ -211,39 +211,39 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|已啟動 DsRoleSvc 服務以複製本機虛擬網域控制站。|  
-|**注意事項與解決方法**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。 檢查 DSA 工作目錄 %systemroot%\ntds，以及任何本機或卸除式磁碟的根目錄，以取得 dcclconeconfig.xml 檔案。|  
+|**記事和解決方式**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。 檢查 DSA 工作目錄 %systemroot%\ntds，以及任何本機或卸除式磁碟的根目錄，以取得 dcclconeconfig.xml 檔案。|  
 
 |                          |                                                                                                                                                                                                   |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                             **2164**                                                                                              |
 |        **Source**        |                                                                          Microsoft-Windows-ActiveDirectory_DomainService                                                                          |
-|       **Severity**       |                                                                                               錯誤                                                                                               |
-|       **Message**        |                                               *<COMPUTERNAME>* 無法啟動 DsRoleSvc 服務，以複製本機虛擬網域控制站。                                                |
-| **注意事項與解決方法** | 檢查「DS 角色伺服器」服務 (DsRoleSvc) 的服務設定，並確定已將它的啟動類型設為 [手動]。 請確定沒有任何協力廠商程式會防止這個服務啟動。 |
+|       **Severity**       |                                                                                               Error                                                                                               |
+|       **Message**        |                                               *<COMPUTERNAME>* 無法啟動 DsRoleSvc 服務以複製本機虛擬網域控制站。                                                |
+| **記事和解決方式** | 檢查「DS 角色伺服器」服務 (DsRoleSvc) 的服務設定，並確定已將它的啟動類型設為 [手動]。 請確定沒有任何協力廠商程式會防止這個服務啟動。 |
 
 |                          |                                                                                                                                                                                     |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                      **2165**                                                                                       |
 |        **Source**        |                                                                   Microsoft-Windows-ActiveDirectory_DomainService                                                                   |
-|       **Severity**       |                                                                                        錯誤                                                                                        |
-|       **Message**        | *<COMPUTERNAME>* 無法在複製本機虛擬網域控制站啟動執行緒。<br /><br />錯誤碼：%1<br /><br />錯誤訊息：%2<br /><br />執行緒名稱：%3 |
-| **注意事項與解決方法** |                                                                          請連絡 Microsoft 產品支援                                                                          |
+|       **Severity**       |                                                                                        Error                                                                                        |
+|       **Message**        | *<COMPUTERNAME>* 在複製本機虛擬網域控制站期間無法啟動執行緒。<br /><br />錯誤碼：%1<br /><br />錯誤訊息：%2<br /><br />執行緒名稱：%3 |
+| **記事和解決方式** |                                                                          請連絡 Microsoft 產品支援                                                                          |
 
 |                          |                                                                                                                                                             |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                          **2166**                                                                           |
 |        **Source**        |                                                       Microsoft-Windows-ActiveDirectory_DomainService                                                       |
-|       **Severity**       |                                                                            錯誤                                                                            |
-|       **Message**        | *<COMPUTERNAME>* 需要 RPCSS 服務，才能起始重新開機到 DSRM。 等待 RPCSS 初始化為執行狀態失敗。<br /><br />錯誤碼：%1 |
-| **注意事項與解決方法** |                                    檢查 [系統] 事件記錄檔和 [RPC 伺服器] 服務 (Rpcss) 的服務設定                                     |
+|       **Severity**       |                                                                            Error                                                                            |
+|       **Message**        | *<COMPUTERNAME>* 需要 RPCSS 服務，才能起始重新開機進入 DSRM。 等待 RPCSS 初始化為執行狀態失敗。<br /><br />錯誤碼：%1 |
+| **記事和解決方式** |                                    檢查 [系統] 事件記錄檔和 [RPC 伺服器] 服務 (Rpcss) 的服務設定                                     |
 
 |                          |                                                                                                                                                                            |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                  **2167**                                                                                  |
 |        **Source**        |                                                              Microsoft-Windows-ActiveDirectory_DomainService                                                               |
-|       **Severity**       |                                                                                   錯誤                                                                                    |
-|       **Message**        | *<COMPUTERNAME>* 無法初始化虛擬網域控制站認知。 請參閱先前的事件記錄檔項目了解詳細資訊。<br /><br />其他資料<br /><br />失敗碼：%1 |
-| **注意事項與解決方法** |                                                           依照訊息指示執行，這個錯誤是一個 catchall。                                                           |
+|       **Severity**       |                                                                                   Error                                                                                    |
+|       **Message**        | *<COMPUTERNAME>* 無法初始化虛擬網域控制站知識。 請參閱先前的事件記錄檔項目了解詳細資訊。<br /><br />其他資料<br /><br />失敗碼：%1 |
+| **記事和解決方式** |                                                           依照訊息指示執行，這個錯誤是一個 catchall。                                                           |
 
 |||  
 |-|-|  
@@ -251,7 +251,7 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|Microsoft-Windows-ActiveDirectory_DomainService<br /><br />DC 正在支援的 Hypervisor 上執行。 偵測到 VM 世代識別碼。<br /><br />目前的 VM 世代識別碼值：%1|  
-|**注意事項與解決方法**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
+|**記事和解決方式**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
 
 |||  
 |-|-|  
@@ -259,15 +259,15 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|未偵測到 VM 世代識別碼。 DC 可能架設於實體電腦或舊版的 Hyper-V 上，或架設於不支援 VM 世代識別碼的 Hypervisor 上。<br /><br />其他資料<br /><br />檢查 VM 世代識別碼時傳回的失敗碼：%1|  
-|**注意事項與解決方法**|如果不打算進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔，並檢閱 Hypervisor 產品支援文件。|  
+|**記事和解決方式**|如果不打算進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔，並檢閱 Hypervisor 產品支援文件。|  
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                                                                              **2170**                                                                                                                                                                                                                                                                                                                                                              |
 |        **Source**        |                                                                                                                                                                                                                                                                                                                                          Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                                                                           |
 |       **Severity**       |                                                                                                                                                                                                                                                                                                                                                              警告                                                                                                                                                                                                                                                                                                                                                               |
-|       **Message**        | 偵測到世代識別碼變更。<br /><br />在 DS 快取的世代識別碼 (舊值)：%1<br /><br />VM 中目前的世代識別碼 (新值)：%2<br /><br />在使用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後會發生世代識別碼變更。 *<COMPUTERNAME>* 會建立新的呼叫識別碼以復原網域控制站。 虛擬的網域控制站不應使用虛擬機器快照來還原。 要還原或復原 Active Directory 網域服務資料庫的內容，支援的方法是還原以 Active Directory 網域服務感知備份應用程式建立的系統狀態備份。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                                                                                      如果想要進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔。                                                                                                                                                                                                                                                                                                                       |
+|       **Message**        | 偵測到世代識別碼變更。<br /><br />在 DS 快取的世代識別碼 (舊值)：%1<br /><br />VM 中目前的世代識別碼 (新值)：%2<br /><br />在使用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後會發生世代識別碼變更。 *<COMPUTERNAME>* 將會建立新的調用識別碼，以復原網域控制站。 虛擬的網域控制站不應使用虛擬機器快照來還原。 要還原或復原 Active Directory 網域服務資料庫的內容，支援的方法是還原以 Active Directory 網域服務感知備份應用程式建立的系統狀態備份。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                                                                                      如果想要進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔。                                                                                                                                                                                                                                                                                                                       |
 
 |||  
 |-|-|  
@@ -275,7 +275,7 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|未偵測到世代識別碼變更。<br /><br />在 DS 快取的世代識別碼 (舊值)：%1<br /><br />VM 中目前的世代識別碼 (新值)：%2|  
-|**注意事項與解決方法**|如果不打算進行複製，這是成功的事件，而且應該會在每次虛擬 DC 重新開機時顯示。 否則，請檢查 [系統] 事件記錄檔。|  
+|**記事和解決方式**|如果不打算進行複製，這是成功的事件，而且應該會在每次虛擬 DC 重新開機時顯示。 否則，請檢查 [系統] 事件記錄檔。|  
 
 |||  
 |-|-|  
@@ -283,7 +283,7 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|讀取網域控制站電腦物件的 msDS-GenerationId 屬性。<br /><br />msDS-GenerationId 屬性值：%1|  
-|**注意事項與解決方法**|如果想要進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔。|  
+|**記事和解決方式**|如果想要進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔。|  
 
 |||  
 |-|-|  
@@ -291,7 +291,7 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|無法讀取網域控制站電腦物件的 msDS-GenerationId 屬性。 造成此問題的原因，可能是資料庫交易失敗或世代識別碼不存在本機資料庫。 msDS-GenerationId 在 dcpromo 後的第一次重新開機期間不存在，或 DC 不是虛擬網域控制站。<br /><br />其他資料<br /><br />失敗碼：%1|  
-|**注意事項與解決方法**|如果想要進行複製，而且是複製完成之後的第一次 VM 重新開機，則這是成功的事件。 在非虛擬的網域控制站上也可以忽略它。 否則，請檢查 [系統] 事件記錄檔。|  
+|**記事和解決方式**|如果想要進行複製，而且是複製完成之後的第一次 VM 重新開機，則這是成功的事件。 在非虛擬的網域控制站上也可以忽略它。 否則，請檢查 [系統] 事件記錄檔。|  
 
 |||  
 |-|-|  
@@ -299,15 +299,15 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|DC 不是虛擬網域控制站複製品，也不是還原的虛擬網域控制站快照。|  
-|**注意事項與解決方法**|如果不打算進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔。|  
+|**記事和解決方式**|如果不打算進行複製，這是成功的事件。 否則，請檢查 [系統] 事件記錄檔。|  
 
 |||  
 |-|-|  
 |**事件識別碼**|**2175**|  
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
-|**Severity**|錯誤|  
+|**Severity**|Error|  
 |**Message**|虛擬網域控制站複製設定檔存在於不支援的平台。|  
-|**注意事項與解決方法**|這會在找到 dccloneconfig.xml 但找不到 VM 世代識別碼時發生，例如，在實體電腦上或在不支援 VM 世代識別碼的 Hypervisor 上找到 dccloneconfig.xml 檔案時。|  
+|**記事和解決方式**|這會在找到 dccloneconfig.xml 但找不到 VM 世代識別碼時發生，例如，在實體電腦上或在不支援 VM 世代識別碼的 Hypervisor 上找到 dccloneconfig.xml 檔案時。|  
 
 |||  
 |-|-|  
@@ -315,15 +315,15 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|已重新命名虛擬網域控制站複製品設定檔。<br /><br />其他資料<br /><br />舊檔案名稱：%1<br /><br />新檔案名稱：%2|  
-|**注意事項與解決方法**|預期會在從來源 VM 備份開機時重新命名，因為 VM 世代識別碼尚未變更。 這樣可以防止來源網域控制站嘗試進行複製。|  
+|**記事和解決方式**|預期會在從來源 VM 備份開機時重新命名，因為 VM 世代識別碼尚未變更。 這樣可以防止來源網域控制站嘗試進行複製。|  
 
 |||  
 |-|-|  
 |**事件識別碼**|**2177**|  
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
-|**Severity**|錯誤|  
+|**Severity**|Error|  
 |**Message**|重新命名虛擬網域控制站複製設定檔失敗。<br /><br />其他資料<br /><br />檔案名稱：%1<br /><br />失敗碼：%2 %3|  
-|**注意事項與解決方法**|預期會在從來源 VM 備份開機時嘗試重新命名，因為 VM 世代識別碼尚未變更。 這樣可以防止來源網域控制站嘗試進行複製。 手動重新命名檔案，並調查是否安裝了可能防止檔案重新命名的協力廠商產品。|  
+|**記事和解決方式**|預期會在從來源 VM 備份開機時嘗試重新命名，因為 VM 世代識別碼尚未變更。 這樣可以防止來源網域控制站嘗試進行複製。 手動重新命名檔案，並調查是否安裝了可能防止檔案重新命名的協力廠商產品。|  
 
 |||  
 |-|-|  
@@ -331,7 +331,7 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|偵測到虛擬網域控制站複製品設定檔，但 VM 世代識別碼未變更。 本機 DC 是複製品來源 DC。 請重新命名複製設定檔。|  
-|**注意事項與解決方法**|預期會在從來源 VM 備份開機時發生，因為 VM 世代識別碼尚未變更。 這樣可以防止來源網域控制站嘗試進行複製。|  
+|**記事和解決方式**|預期會在從來源 VM 備份開機時發生，因為 VM 世代識別碼尚未變更。 這樣可以防止來源網域控制站嘗試進行複製。|  
 
 |||  
 |-|-|  
@@ -339,7 +339,7 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|網域控制站電腦物件的 msDS-GenerationId 屬性已設為下列參數：<br /><br />GenerationID 屬性：%1|  
-|**注意事項與解決方法**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
+|**記事和解決方式**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
 
 |||  
 |-|-|  
@@ -347,7 +347,7 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|警告|  
 |**Message**|無法設定網域控制站電腦物件的 msDS-GenerationId 屬性。<br /><br />其他資料<br /><br />失敗碼：%1|  
-|**注意事項與解決方法**|檢查 [系統] 事件記錄檔和 Dcpromo.log。 請查閱 MS TechNet、MS 知識庫及 MS 部落格中的特定錯誤，以判斷它的一般意義，然後根據這些結果來疑難排解。|  
+|**記事和解決方式**|檢查 [系統] 事件記錄檔和 Dcpromo.log。 請查閱 MS TechNet、MS 知識庫及 MS 部落格中的特定錯誤，以判斷它的一般意義，然後根據這些結果來疑難排解。|  
 
 |||  
 |-|-|  
@@ -355,39 +355,39 @@ ms.locfileid: "66442615"
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|內部事件：目錄服務被要求複製遠端 DSA：|  
-|**注意事項與解決方法**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
+|**記事和解決方式**|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
 
 |                          |                                                                                                                                                                                                                                                                   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                             **2183**                                                                                                                              |
 |        **Source**        |                                                                                                          Microsoft-Windows-ActiveDirectory_DomainService                                                                                                          |
 |       **Severity**       |                                                                                                                           資訊                                                                                                                           |
-|       **Message**        | 內部事件： *<COMPUTERNAME>* 完成複製遠端目錄系統代理程式的要求。<br /><br />原始 DC 名稱：%3<br /><br />要求複製 DC 名稱：%4<br /><br />要求複製 DC 站台：%5<br /><br />其他資料<br /><br />錯誤值：%1 %2 |
-| **注意事項與解決方法** |                                                                                                     這是成功的事件，只有在發生未預期的狀況時才會成為問題。                                                                                                      |
+|       **Message**        | 內部事件： *<COMPUTERNAME>* 已完成複製遠端目錄服務代理程式的要求。<br /><br />原始 DC 名稱：%3<br /><br />要求複製 DC 名稱：%4<br /><br />要求複製 DC 站台：%5<br /><br />其他資料<br /><br />錯誤值：%1 %2 |
+| **記事和解決方式** |                                                                                                     這是成功的事件，只有在發生未預期的狀況時才會成為問題。                                                                                                      |
 
 |                          |                                                                                                                                                                                                                                                                                                  |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                             **2184**                                                                                                                                             |
 |        **Source**        |                                                                                                                         Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                          |
-|       **Severity**       |                                                                                                                                              錯誤                                                                                                                                               |
-|       **Message**        | *<COMPUTERNAME>* 無法複製的 dc 建立網域控制站帳戶。<br /><br />原始 DC 名稱：%1<br /><br />允許的複製 DC 數目：%2<br /><br />可以藉由複製產生的網域控制站帳戶數目限制<em> <COMPUTERNAME></em>已超過。 |
-| **注意事項與解決方法** |              根據命名慣例，如果未將網域控制站降級，單一來源網域控制站名稱只能自動產生 9999 次。 請在 XML 中使用 <computername> 元素來產生新的唯一名稱，或者從不同的具名 DC 中進行複製。              |
+|       **Severity**       |                                                                                                                                              Error                                                                                                                                               |
+|       **Message**        | *<COMPUTERNAME>* 無法為複製的 DC 建立網域控制站帳戶。<br /><br />原始 DC 名稱：%1<br /><br />允許的複製 DC 數目：%2<br /><br />已超過可透過複製 <em> @ no__t-1 @ no__t-2was 來產生的網域控制站帳戶數目限制。 |
+| **記事和解決方式** |              根據命名慣例，如果未將網域控制站降級，單一來源網域控制站名稱只能自動產生 9999 次。 請在 XML 中使用 <computername> 元素來產生新的唯一名稱，或者從不同的具名 DC 中進行複製。              |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                **2191**                                                                                                                                                                                                                                                                |
 |        **Source**        |                                                                                                                                                                                                                                            Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                             |
 |       **Severity**       |                                                                                                                                                                                                                                                             資訊                                                                                                                                                                                                                                                              |
-|       **Message**        | *<COMPUTERNAME>* 設定下列登錄值以停用 DNS 更新。<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 完成複製以後，複製程序將再次啟用 DNS 更新。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                        這是成功的事件，只有在發生未預期的狀況時才會成為問題。                                                                                                                                                                                                                                        |
+|       **Message**        | *<COMPUTERNAME>* 將下列登錄值設定為停用 DNS 更新。<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 完成複製以後，複製程序將再次啟用 DNS 更新。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                        這是成功的事件，只有在發生未預期的狀況時才會成為問題。                                                                                                                                                                                                                                        |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                        **2192**                                                                                                                                                                                                                                                         |
 |        **Source**        |                                                                                                                                                                                                                                     Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                     |
-|       **Severity**       |                                                                                                                                                                                                                                                          錯誤                                                                                                                                                                                                                                                          |
-|       **Message**        | *<COMPUTERNAME>* 無法設定下列登錄值以停用 DNS 更新。<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />錯誤碼：%4<br /><br />錯誤訊息：%5<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                  檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。                                                                                                                                                                                                  |
+|       **Severity**       |                                                                                                                                                                                                                                                          Error                                                                                                                                                                                                                                                          |
+|       **Message**        | *<COMPUTERNAME>* 無法將下列登錄值設定為停用 DNS 更新。<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />錯誤碼：%4<br /><br />錯誤訊息：%5<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 |
+| **記事和解決方式** |                                                                                                                                                                                                  檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。                                                                                                                                                                                                  |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -395,76 +395,76 @@ ms.locfileid: "66442615"
 |        **Source**        |                                                                                                                                                                                                     Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                     |
 |       **Severity**       |                                                                                                                                                                                                                      資訊                                                                                                                                                                                                                      |
 |       **Message**        | *<COMPUTERNAME>* 設定下列登錄值以啟用 DNS 更新。<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                這是成功的事件，只有在發生未預期的狀況時才會成為問題。                                                                                                                                                                                                 |
+| **記事和解決方式** |                                                                                                                                                                                                這是成功的事件，只有在發生未預期的狀況時才會成為問題。                                                                                                                                                                                                 |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                        **2194**                                                                                                                                                                                                                                                        |
 |        **Source**        |                                                                                                                                                                                                                                    Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                     |
-|       **Severity**       |                                                                                                                                                                                                                                                         錯誤                                                                                                                                                                                                                                                          |
+|       **Severity**       |                                                                                                                                                                                                                                                         Error                                                                                                                                                                                                                                                          |
 |       **Message**        | *<COMPUTERNAME>* 無法設定下列登錄值以啟用 DNS 更新。<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />錯誤碼：%4<br /><br />錯誤訊息：%5<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                 檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。                                                                                                                                                                                                  |
+| **記事和解決方式** |                                                                                                                                                                                                 檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。                                                                                                                                                                                                  |
 
 |||  
 |-|-|  
 |**事件識別碼**|**2195**|  
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
-|**Severity**|錯誤|  
+|**Severity**|Error|  
 |**Message**|無法設定 DSRM 開機。<br /><br />錯誤碼：%1<br /><br />錯誤訊息：%2<br /><br />當虛擬網域控制站複製失敗或虛擬網域控制站複製設定檔出現在不支援的 Hypervisor 上時，本機電腦將重新開機到 DSRM 以進行疑難排解。 設定 DSRM 開機失敗。|  
-|**注意事項與解決方法**|檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。|  
+|**記事和解決方式**|檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。|  
 
 |||  
 |-|-|  
 |**事件識別碼**|**2196**|  
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
-|**Severity**|錯誤|  
+|**Severity**|Error|  
 |**Message**|無法啟用關機權限。<br /><br />錯誤碼：%1<br /><br />錯誤訊息：%2<br /><br />當虛擬網域控制站複製失敗或虛擬網域控制站複製設定檔出現在不支援的 Hypervisor 上時，本機電腦將重新開機到 DSRM 以進行疑難排解。 啟用關機權限失敗。|  
-|**注意事項與解決方法**|檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖權限使用方式的協力廠商應用程式。|  
+|**記事和解決方式**|檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖權限使用方式的協力廠商應用程式。|  
 
 |||  
 |-|-|  
 |**事件識別碼**|**2197**|  
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
-|**Severity**|錯誤|  
+|**Severity**|Error|  
 |**Message**|無法起始系統關機。<br /><br />錯誤碼：%1<br /><br />錯誤訊息：%2<br /><br />當虛擬網域控制站複製失敗或虛擬網域控制站複製設定檔出現在不支援的 Hypervisor 上時，本機電腦將重新開機到 DSRM 以進行疑難排解。 起始系統關機失敗。|  
-|**注意事項與解決方法**|檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖權限使用方式的協力廠商應用程式。|  
+|**記事和解決方式**|檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖權限使用方式的協力廠商應用程式。|  
 
 |                          |                                                                                                                                                                                   |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                     **2198**                                                                                      |
 |        **Source**        |                                                                  Microsoft-Windows-ActiveDirectory_DomainService                                                                  |
-|       **Severity**       |                                                                                       錯誤                                                                                       |
+|       **Severity**       |                                                                                       Error                                                                                       |
 |       **Message**        | *<COMPUTERNAME>* 無法建立或修改下列複製的 DC 物件。<br /><br />其他資料：<br /><br />物件：<br /><br />%1<br /><br />錯誤值：%2<br /><br />%3 |
-| **注意事項與解決方法** |               請查閱 MS TechNet、MS 知識庫及 MS 部落格中的特定錯誤，以判斷它的一般意義，然後根據這些結果來疑難排解。               |
+| **記事和解決方式** |               請查閱 MS TechNet、MS 知識庫及 MS 部落格中的特定錯誤，以判斷它的一般意義，然後根據這些結果來疑難排解。               |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                   **2199**                                                                                                                                                                                                                   |
 |        **Source**        |                                                                                                                                                                                               Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                |
-|       **Severity**       |                                                                                                                                                                                                                    錯誤                                                                                                                                                                                                                     |
-|       **Message**        |                                                                                                                     *<COMPUTERNAME>* 無法建立下列複製的 DC 物件，因為該物件已經存在。<br /><br />其他資料：<br /><br />來源 DC：<br /><br />%1<br /><br />物件：<br /><br />%2                                                                                                                     |
-| **注意事項與解決方法** | 驗證 dccloneconfig.xml 未指定現有的網域控制站，或者在未編輯名稱的情況下，於多個複製品上使用 dccloneconfig.xml 的複本。 如果仍發生未預期的衝突，請判斷是哪位系統管理員將它升級的；與他們連絡，以討論是否應將現有的網域控制站降級、清除現有的網域控制站中繼資料，或者複製品是否應該使用不同的名稱。 |
+|       **Severity**       |                                                                                                                                                                                                                    Error                                                                                                                                                                                                                     |
+|       **Message**        |                                                                                                                     *<COMPUTERNAME>* 無法建立下列複製的 DC 物件，因為該物件已存在。<br /><br />其他資料：<br /><br />來源 DC：<br /><br />%1<br /><br />物件：<br /><br />%2                                                                                                                     |
+| **記事和解決方式** | 驗證 dccloneconfig.xml 未指定現有的網域控制站，或者在未編輯名稱的情況下，於多個複製品上使用 dccloneconfig.xml 的複本。 如果仍發生未預期的衝突，請判斷是哪位系統管理員將它升級的；與他們連絡，以討論是否應將現有的網域控制站降級、清除現有的網域控制站中繼資料，或者複製品是否應該使用不同的名稱。 |
 
 |||  
 |-|-|  
 |**事件識別碼**|**2203**|  
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
-|**Severity**|錯誤|  
+|**Severity**|Error|  
 |**Message**|上一個虛擬網域控制站複製作業失敗。 這是上次複製作業後第一次重新開機，因此這應該是複製重試。 但是，虛擬網域控制站複製設定檔不存在，也未偵測到虛擬機器世代識別碼變更。 開機進入 DSRM。<br /><br />上一個虛擬網域控制站複製作業失敗：%1<br /><br />虛擬網域控制站複製設定檔存在：%2<br /><br />偵測到虛擬機器產生識別碼變更：%3|  
-|**注意事項與解決方法**|預期會在先前的複製失敗時發生，因為 dccloneconfig.xml 遺失或無效|  
+|**記事和解決方式**|預期會在先前的複製失敗時發生，因為 dccloneconfig.xml 遺失或無效|  
 
 |||  
 |-|-|  
 |事件識別碼|2210|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Severity|Error|  
 |Message|<COMPUTERNAME> 無法為複製網域控制站建立物件。<br /><br />其他資料：<br /><br />複製識別碼：%6<br /><br />複製網域控制站名稱：%1<br /><br />重試迴圈：%2<br /><br />例外狀況值：%3<br /><br />錯誤值：%4<br /><br />DSID：%5|  
 |注意事項與解決方法|檢閱 [系統] 與 [目錄服務] 事件記錄檔及 dcpromo.log，進一步取得複製為何失敗的詳細資料。|  
 
 |||  
 |-|-|  
 |事件識別碼|2211|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 已為複製網域控制站建立物件。<br /><br />其他資料：<br /><br />複製識別碼：%3<br /><br />複製網域控制站名稱：%1<br /><br />重試迴圈：%2|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -472,7 +472,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2212|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 已開始為複製網域控制站建立物件。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />複製名稱：%2<br /><br />複製站台：%3<br /><br />複製 RODC：%4|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -480,7 +480,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2213|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 已為唯讀網域控制站複製建立新的 KrbTgt 物件。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />新的 KrbTgt 物件 Guid：%2|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -488,7 +488,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2214|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 將為複製網域控制站建立電腦物件。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />原始網域控制站：%2<br /><br />複製網域控制站：%3|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -496,7 +496,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2215|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 將在下列站台新增複製網域控制站。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />站台：%2|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -504,7 +504,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2216|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 將為複製網域控制站建立伺服器容器。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />伺服器容器：%2|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -512,7 +512,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2217|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 將為複製網域控制站建立伺服器物件。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />伺服器物件：%2|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -520,7 +520,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2218|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 將為複製網域控制站建立 NTDS 設定物件。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />物件：%2|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -528,7 +528,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2219|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 將為複製唯讀網域控制站建立連線物件。<br /><br />其他資料：<br /><br />複製識別碼：%1|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -536,7 +536,7 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2220|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 將為複製唯讀網域控制站建立 SYSVOL 物件。<br /><br />其他資料：<br /><br />複製識別碼：%1|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -544,23 +544,23 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2221|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Severity|Error|  
 |Message|<COMPUTERNAME> 無法為複製的網域控制站產生隨機密碼。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />複製網域控制站名稱：%2<br /><br />錯誤：%3 %4|  
 |注意事項與解決方法|檢查 [系統] 事件記錄檔，進一步取得為何無法建立電腦帳戶密碼的詳細資料。|  
 
 |||  
 |-|-|  
 |事件識別碼|2222|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Severity|Error|  
 |Message|<COMPUTERNAME> 無法為複製的網域控制站設定密碼。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />複製網域控制站名稱：%2<br /><br />錯誤：%3 %4|  
 |注意事項與解決方法|檢查 [系統] 事件記錄檔，進一步取得為何無法設定電腦帳戶密碼的詳細資料。|  
 
 |||  
 |-|-|  
 |事件識別碼|2223|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|<COMPUTERNAME> 已順利為複製的網域控制站設定電腦帳戶密碼。<br /><br />其他資料：<br /><br />複製識別碼：%1<br /><br />複製網域控制站名稱：%2<br /><br />總嘗試次數：%3|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -568,15 +568,15 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2224|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製失敗。 下列 %1 受管理的服務帳戶存在於複製的電腦上：<br /><br />%2<br /><br />若要順利複製，必須移除所有受管理的服務帳戶。 您可以使用 Remove-ADComputerServiceAccount PowerShell Cmdlet 來完成此動作。|  
-|注意事項與解決方法|預期會在使用獨立的 MSA (非群組 MSA) 時發生。 請勿  依照事件建議來移除帳戶 - 它的內容不正確。 使用 Uninstall-adserviceaccount- [ https://technet.microsoft.com/library/hh852310 ](https://technet.microsoft.com/library/hh852310)。<br /><br />獨立的 MSA (在 Windows Server 2008 R2 中首次發行) 已在 Windows Server 2012 中使用群組 MSA (gMSA) 來取代。 GMSA 支援複製。|  
+|注意事項與解決方法|預期會在使用獨立的 MSA (非群組 MSA) 時發生。 請勿依照事件建議來移除帳戶 - 它的內容不正確。 使用 Uninstall-adserviceaccount [https://technet.microsoft.com/library/hh852310](https://technet.microsoft.com/library/hh852310)。<br /><br />獨立的 MSA (在 Windows Server 2008 R2 中首次發行) 已在 Windows Server 2012 中使用群組 MSA (gMSA) 來取代。 GMSA 支援複製。|  
 
 |||  
 |-|-|  
 |事件識別碼|2225|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
 |Severity|資訊|  
 |Message|已順利將下列安全性主體的已快取密碼從本機網域控制站移除：<br /><br />%1<br /><br />複製唯讀網域控制站之後，系統會將先前在複製來源唯讀網域控制站上快取的密碼從複製的網域控制站移除。|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -584,39 +584,39 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|2226|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Severity|Error|  
 |Message|無法將下列安全性主體的已快取密碼從本機網域控制站移除：<br /><br />%1<br /><br />錯誤：%2 (%3)<br /><br />複製唯讀網域控制站之後，必須在複製品上移除先前在複製來源唯讀網域控制站上快取的密碼，以降低攻擊者可從竊取或遭破解之複製品取得這些認證的風險。 若安全性主體是具有極高權限的帳戶而且應該受保護以免於上述情況，請使用 rootDSE 作業 rODCPurgeAccount 在本機網域控制站上手動清除其密碼。|  
 |注意事項與解決方法|檢查 [系統] 和 [目錄服務] 事件記錄檔，以取得進一步資訊。|  
 
 |||  
 |-|-|  
 |事件識別碼|2227|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Severity|Error|  
 |Message|嘗試將已快取密碼從本機網域控制站移除時發生例外狀況。<br /><br />其他資料：<br /><br />例外狀況值：%1<br /><br />錯誤值：%2<br /><br />DSID：%3<br /><br />複製唯讀網域控制站之後，必須在複製品上移除先前在複製來源唯讀網域控制站上快取的密碼，以降低攻擊者可從竊取或遭破解之複製品取得這些認證的風險。 若這其中任一個安全性主體是具有極高權限的帳戶而且應該受保護以免於上述情況，請使用 rootDSE 作業 rODCPurgeAccount 在本機網域控制站上手動清除其密碼。|  
 |注意事項與解決方法|檢查 [系統] 和 [目錄服務] 事件記錄檔，以取得進一步資訊。|  
 
 |||  
 |-|-|  
 |事件識別碼|2228|  
-|`Source`|Microsoft-Windows-ActiveDirectory_DomainService|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-ActiveDirectory_DomainService|  
+|Severity|Error|  
 |Message|此網域控制站之 Active Directory 資料庫中的虛擬機器世代識別碼與此虛擬機器目前的值不同。 但是，找不到虛擬網域控制站複製設定檔 (DCCloneConfig.xml)，因此無法嘗試網域控制站複製。 若您是要執行網域控制站複製作業，請確定已在任一個支援的位置提供 DCCloneConfig.xml。 此外，此網域控制站的 IP 位址與另一個網域控制站的 IP 位址衝突。 為確保服務不中斷，已將網站控制站設定為開機到 DSRM。<br /><br />其他資料：<br /><br />重複的 IP 位址：%1|  
 |注意事項與解決方法|這個保護機制會視需要停止重複的網域控制站 (例如，使用 DHCP 時便不會停止)。 新增有效的 DcCloneConfig.xml 檔案、移除 DSRM 旗標，以及重新嘗試複製|  
 
 |||  
 |-|-|  
 |事件識別碼|29218|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製失敗。 複製作業無法完成，且複製的網域控制站已重新開機至目錄服務還原模式 (DSRM)。<br /><br />請檢查先前記錄的事件與 %systemroot%\debug\dcpromo.log，以取得有關虛擬網域控制站複製嘗試之錯誤以及此複製映像是否可重複使用的詳細資訊。<br /><br />若有一或多個記錄項目指出無法重試複製程序，則必須安全地刪除此映像。 否則，您可以修正錯誤、清除 DSRM 開機旗標，然後重新開機到標準模式。在重新開機時，將重試複製作業。|  
 |注意事項與解決方法|檢閱 [系統] 與 [目錄服務] 事件記錄檔及 dcpromo.log，進一步取得複製為何失敗的詳細資料。|  
 
 |||  
 |-|-|  
 |事件識別碼|29219|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
 |Severity|資訊|  
 |Message|虛擬網域控制站複製成功。|  
 |注意事項與解決方法|這是成功的事件，只有在發生未預期的狀況時才會成為問題。|  
@@ -624,87 +624,87 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|29248|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製無法取得 Winlogon 通知。 傳回的錯誤碼是 %1 (%2)。<br /><br />如需有關此錯誤的詳細資訊，請檢閱 %systemroot%\debug\dcpromo.log，以了解對應至虛擬網域控制站複製嘗試的錯誤。|  
 |注意事項與解決方法|請連絡 Microsoft 產品支援|  
 
 |||  
 |-|-|  
 |事件識別碼|29249|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製無法剖析虛擬網域控制站設定檔。<br /><br />傳回的 HRESULT 代碼是 %1。<br /><br />設定檔是：%2<br /><br />請修正設定檔中的錯誤，然後嘗試重新執行複製作業。<br /><br />如需有關此錯誤的詳細資訊，請參閱 %systemroot%\debug\dcpromo.log。|  
 |注意事項與解決方法|使用 XML 編輯器檢查 dclconeconfig.xml 檔案以取得語法錯誤，並檢查 DCCloneConfigSchema.xsd 結構描述檔案。|  
 
 |||  
 |-|-|  
 |事件識別碼|29250|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製失敗。 已複製的虛擬網域控制站上目前有已啟用的軟體或服務，而它們未出現在虛擬網域控制站複製允許的應用程式清單中。<br /><br />下列是缺少的項目：<br /><br />%2<br /><br />%1 (如果有的話) 已使用為已定義的包含清單。<br /><br />若未安裝可複製的應用程式，將無法完成複製作業。<br /><br />請執行 Active Directory PowerShell Cmdlet Get-ADDCCloningExcludedApplicationList，以檢查已複製的電腦上已安裝但未包含在允許清單中的應用程式，然後將它們新增到允許清單 (若它們與虛擬網域控制站複製相容)。 若這些應用程式中有任一個應用程式與虛擬網域控制站複製不相容，請先將它們解除安裝，然後再嘗試重新執行複製作業。<br /><br />虛擬網域控制站複製程序會根據下列搜尋順序來搜尋允許的應用程式清單檔案 CustomDCCloneAllowList.xml，而且會使用找到的第一個檔案並忽略其他檔案：<br /><br />1.登錄值名稱：HKey_Local_Machine\System\CurrentControlSet\Services\NTDS\Parameters\AllowListFolder<br /><br />2.DSA 工作目錄資料夾所在目錄<br /><br />3. %windir%\NTDS<br /><br />4.卸除式讀/寫媒體 (依磁碟機根目錄的磁碟機代號顯示順序)|  
 |注意事項與解決方法|依照訊息指示執行|  
 
 |                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       事件識別碼       |                                                                                                                                                                                                                                                                                                         29251                                                                                                                                                                                                                                                                                                          |
-|        `Source`        |                                                                                                                                                                                                                                                                                   Microsoft-Windows-DirectoryServices-DSROLE-Server                                                                                                                                                                                                                                                                                    |
-|       Severity       |                                                                                                                                                                                                                                                                                                         錯誤                                                                                                                                                                                                                                                                                                          |
-|       Message        | 虛擬網域控制站複製無法重設複製電腦的 IP 位址。<br /><br />傳回的錯誤碼是 %1 (%2)。<br /><br />此錯誤可能是虛擬網域控制站設定檔之網路設定區段中的錯誤設定所造成。<br /><br />請參閱 %systemroot%\debug\dcpromo.log，以了解對應至虛擬網域控制站複製嘗試期間之 IP 位址重設錯誤的詳細資訊。<br /><br />重設複製的電腦上的電腦 IP 位址的詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=208030 |
+|        Source        |                                                                                                                                                                                                                                                                                   Microsoft-Windows-DirectoryServices-DSROLE-Server                                                                                                                                                                                                                                                                                    |
+|       Severity       |                                                                                                                                                                                                                                                                                                         Error                                                                                                                                                                                                                                                                                                          |
+|       Message        | 虛擬網域控制站複製無法重設複製電腦的 IP 位址。<br /><br />傳回的錯誤碼是 %1 (%2)。<br /><br />此錯誤可能是虛擬網域控制站設定檔之網路設定區段中的錯誤設定所造成。<br /><br />請參閱 %systemroot%\debug\dcpromo.log，以了解對應至虛擬網域控制站複製嘗試期間之 IP 位址重設錯誤的詳細資訊。<br /><br />如需在複製的機器上重設電腦 IP 位址的詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=208030 |
 | 注意事項與解決方法 |                                                                                                                                                                                                                                                  確定 dccloneconfig.xml 中設定的 IP 資訊是有效的，且不會複製原始來源電腦。                                                                                                                                                                                                                                                   |
 
 |                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       事件識別碼       |                                                                                                                                                                                                                                                                                   29253                                                                                                                                                                                                                                                                                   |
-|        `Source`        |                                                                                                                                                                                                                                                             Microsoft-Windows-DirectoryServices-DSROLE-Server                                                                                                                                                                                                                                                             |
-|       Severity       |                                                                                                                                                                                                                                                                                   錯誤                                                                                                                                                                                                                                                                                   |
+|        Source        |                                                                                                                                                                                                                                                             Microsoft-Windows-DirectoryServices-DSROLE-Server                                                                                                                                                                                                                                                             |
+|       Severity       |                                                                                                                                                                                                                                                                                   Error                                                                                                                                                                                                                                                                                   |
 |       Message        | 虛擬網域控制站複製失敗。 複製網域控制站無法在複製之機器的複製之電腦主網域中找到網域主控站 (PDC) 操作主機。<br /><br />傳回的錯誤碼是 %1 (%2)。<br /><br />請確定複製之機器主網域中的網域主控站已指派至運作中的網域控制站，而且已上線並正常運作。 確定複製的機器可以使用要求的連接埠與通訊協定透過 LDAP/RPC 連線到網域主控站。 |
-| 注意事項與解決方法 |                                                                                                                                      驗證已設定複製的網域控制站 IP 和 DNS 資訊。 使用 Dcdiag.exe /test: locatorcheck 來驗證 PDCE 是否已連線，請使用 Nltest.exe /server: *<PDCE>* /dclist: *<domain>* 有效的 rpc，請從時 PDCE 取得網路擷取複製失敗，並分析流量。                                                                                                                                       |
+| 注意事項與解決方法 |                                                                                                                                      驗證已設定複製的網域控制站 IP 和 DNS 資訊。 使用 Dcdiag.exe/test： locatorcheck 來驗證 PDCE 是否已上線，請使用 Nltest/server： *<PDCE>* /dclist： *<domain>* 到有效的 RPC，在複製失敗時從 PDCE 取得網路捕捉，並分析流量。                                                                                                                                       |
 
 |                      |                                                                                                                                                                                                                                                                                                                                                                    |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       事件識別碼       |                                                                                                                                                                               29254                                                                                                                                                                                |
-|        `Source`        |                                                                                                                                                         Microsoft-Windows-DirectoryServices-DSROLE-Server                                                                                                                                                          |
-|       Severity       |                                                                                                                                                                               錯誤                                                                                                                                                                                |
+|        Source        |                                                                                                                                                         Microsoft-Windows-DirectoryServices-DSROLE-Server                                                                                                                                                          |
+|       Severity       |                                                                                                                                                                               Error                                                                                                                                                                                |
 |       Message        | 虛擬網域控制站複製無法繫結至網域主控站 %1。<br /><br />傳回的錯誤碼是 %2 (%3)。<br /><br />請確定網域主控站 %1 已上線並正常運作。 確定複製的機器可以使用要求的連接埠與通訊協定透過 LDAP/RPC 連線到網域主控站。 |
-| 注意事項與解決方法 |                                   驗證已設定複製的網域控制站 IP 和 DNS 資訊。 使用 Dcdiag.exe /test: locatorcheck 來驗證 PDCE 是否已連線，請使用 Nltest.exe /server: *<PDCE>* /dclist: *<domain>* 有效的 rpc，請從時 PDCE 取得網路擷取複製失敗，並分析流量。                                   |
+| 注意事項與解決方法 |                                   驗證已設定複製的網域控制站 IP 和 DNS 資訊。 使用 Dcdiag.exe/test： locatorcheck 來驗證 PDCE 是否已上線，請使用 Nltest/server： *<PDCE>* /dclist： *<domain>* 到有效的 RPC，在複製失敗時從 PDCE 取得網路捕捉，並分析流量。                                   |
 
 |||  
 |-|-|  
 |事件識別碼|29255|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製失敗。<br /><br />因為要複製的映像要求而嘗試在網域主控站 %1 上建立物件的動作傳回錯誤 %2 (%3)。<br /><br />請確認複製的網域控制站有權限可以複製本身。 檢查網域主控站 %1 上 [目錄服務] 事件記錄檔中的相關事件。|  
 |注意事項與解決方法|請查閱 MS TechNet、MS 知識庫及 MS 部落格中的特定錯誤，以判斷它的一般意義，然後根據這些結果來疑難排解。|  
 
 |||  
 |-|-|  
 |事件識別碼|29256|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|嘗試設定 [開機到目錄服務還原模式] 旗標失敗，錯誤碼為 %1。<br /><br />如需有關錯誤的詳細資訊，請參閱 %systemroot%\debug\dcpromo.log。|  
 |注意事項與解決方法|檢查 [目錄服務] 記錄檔和 dcpromo.log，以取得詳細資訊。 檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖權限使用方式的協力廠商應用程式。|  
 
 |||  
 |-|-|  
 |事件識別碼|29257|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製已完成。 嘗試將虛擬機器重新開機失敗，錯誤碼為 %1。<br /><br />請將該機器重新開機，以完成複製作業。|  
 |注意事項與解決方法|檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖權限使用方式的協力廠商應用程式。|  
 
 |||  
 |-|-|  
 |事件識別碼|29264|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|嘗試清除 [開機到目錄服務還原模式] 旗標失敗，錯誤碼為 %1。<br /><br />如需有關錯誤的詳細資訊，請參閱 %systemroot%\debug\dcpromo.log。|  
 |注意事項與解決方法|檢查 [目錄服務] 記錄檔和 dcpromo.log，以取得詳細資訊。 檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖權限使用方式的協力廠商應用程式。|  
 
 |||  
 |-|-|  
 |事件識別碼|29265|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
 |Severity|資訊|  
 |Message|虛擬網域控制站複製成功。 虛擬網域控制站複製設定檔 %1 已重新命名為 %2。|  
 |注意事項與解決方法|N/A，這是成功的事件。|  
@@ -712,16 +712,16 @@ ms.locfileid: "66442615"
 |||  
 |-|-|  
 |事件識別碼|29266|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製成功。 嘗試重新命名虛擬網域控制站複製設定檔 %1 失敗，錯誤碼為 %2 (%3)。|  
 |注意事項與解決方法|手動重新命名 dccloneconfig.xml 檔案。|  
 
 |||  
 |-|-|  
 |事件識別碼|29267|  
-|`Source`|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
-|Severity|錯誤|  
+|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|  
+|Severity|Error|  
 |Message|虛擬網域控制站複製無法檢查虛擬網域控制站複製允許的應用程式清單。<br /><br />傳回的錯誤碼是 %1 (%2)。<br /><br />此錯誤可能是複製允許清單檔案 (目前要檢查的檔案是：%3)。 如需有關此錯誤的詳細資訊，請參閱 %systemroot%\debug\dcpromo.log。|  
 |注意事項與解決方法|依照事件指示執行|  
 
@@ -736,89 +736,89 @@ dcpromo.log 是第一個檢查複製失敗的地方。 根據列出的失敗而�
 |||  
 |-|-|  
 |**問題**|**複製失敗，DSRM**|  
-|**徵狀**|複製品開機進入目錄服務還原模式|  
+|**徵兆**|複製品開機進入目錄服務還原模式|  
 |**解決方式和注意事項**|驗證緊接在＜部署虛擬網域控制站＞一節和[適用於疑難排解虛擬網域控制站複製功能的一般方法](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_GeneralMethodology)之後的所有步驟<br /><br />說明請見 KB 2742844。|  
 
 |||  
 |-|-|  
-|**問題**|**額外的 IP 租用時使用 DHCP 進行複製**|  
-|**徵狀**|順利複製 DC 並使用 DHCP 之後，當複製品第一次開機時會取得 DHCP 租用。 接著，在將伺服器重新命名並重新啟動為 DC 時，它會取得第二個 DHCP 租用。 第一個 IP 位址並未釋出，而將成為「虛設」租用|  
+|**問題**|**使用 DHCP 來複製時的額外 IP 租用**|  
+|**徵兆**|順利複製 DC 並使用 DHCP 之後，當複製品第一次開機時會取得 DHCP 租用。 接著，在將伺服器重新命名並重新啟動為 DC 時，它會取得第二個 DHCP 租用。 第一個 IP 位址並未釋出，而將成為「虛設」租用|  
 |**解決方式和注意事項**|手動刪除 DHCP 中未使用的位址租用，或允許它以正常方式到期。 說明請見 KB 2742836。|  
 
 |||  
 |-|-|  
-|**問題**|**非常長的延遲之後複製失敗進入 DSRM**|  
-|**徵狀**|複製會在 [網域控制站複製已完成 X%] 時出現暫停狀態 8 到 15 分鐘。 在此之後，複製會失敗並開機進入 DSRM。|  
+|**問題**|**在非常長的延遲之後，複製會失敗至 DSRM**|  
+|**徵兆**|複製會在 [網域控制站複製已完成 X%] 時出現暫停狀態 8 到 15 分鐘。 在此之後，複製會失敗並開機進入 DSRM。|  
 |**解決方式和注意事項**|複製的電腦無法從 DHCP 或 SLAAC 取得動態 IP 位址、使用重複的 IP 位址，或者找不到 PDC。 由複製所執行的多個重試嘗試會導致延遲。 請解決網路問題以允許複製。<br /><br />說明請見 KB 2742844。|  
 
 |||  
 |-|-|  
-|**問題**|**複製並不會重建所有服務主體名稱**|  
-|**徵狀**|如果有一組含「三部分」  的服務主體名稱 (SPN) 同時包含一個含有連接埠的 NetBIOS 名稱，以及一個幾乎完全相同但不含連接埠的 NetBIOS 名稱，就不會以新的電腦名稱重新建立沒有連接埠的項目。 例如:<br /><br />customspn/DC1:200/app1 INVALID USE OF SYMBOLS 這會使用新的電腦名稱重新建立 <br /><br />customspn/DC1/app1 INVALID USE OF SYMBOLS 這不會使用新的電腦名稱重新建立 <br /><br />不論是否有連接埠，皆會重新建立完整名稱與不含三部分的 SPN。 例如，會在複製品上順利重新建立下列項目：<br /><br />customspn/DC1:202 INVALID USE OF SYMBOLS 這會重新建立 <br /><br />customspn/DC1 INVALID USE OF SYMBOLS 這會重新建立 <br /><br />customspn/DC1.corp.contoso.com:202 INVALID USE OF SYMBOLS 這是重新建立的名稱 <br /><br />customspn/DC1.corp.contoso.com INVALID USE OF SYMBOLS 這會重新建立 |  
+|**問題**|**複製不會重新建立所有服務主體名稱**|  
+|**徵兆**|如果有一組含「三部分」的服務主體名稱 (SPN) 同時包含一個含有連接埠的 NetBIOS 名稱，以及一個幾乎完全相同但不含連接埠的 NetBIOS 名稱，就不會以新的電腦名稱重新建立沒有連接埠的項目。 例如:<br /><br />customspn/DC1:200/app1 INVALID USE OF SYMBOLS 這會使用新的電腦名稱重新建立<br /><br />customspn/DC1/app1 INVALID USE OF SYMBOLS 這不會使用新的電腦名稱重新建立<br /><br />不論是否有連接埠，皆會重新建立完整名稱與不含三部分的 SPN。 例如，會在複製品上順利重新建立下列項目：<br /><br />customspn/DC1:202 INVALID USE OF SYMBOLS 這會重新建立<br /><br />customspn/DC1 INVALID USE OF SYMBOLS 這會重新建立<br /><br />customspn/DC1.corp.contoso.com:202 INVALID USE OF SYMBOLS 這是重新建立的名稱<br /><br />customspn/DC1.corp.contoso.com INVALID USE OF SYMBOLS 這會重新建立|  
 |**解決方式和注意事項**|這是 Windows 中網域控制站重新命名程序的限制，而不只是複製中的限制。 在任何案例中，重新命名邏輯都不會處理含三部分的 SPN。 大多數 (包括 Windows 服務) 都不會受到此項所影響，因為它們會視需要建立任何遺失的 SPN。 其他應用程式可能需要手動輸入 SPN 來解決問題。<br /><br />說明請見 KB 2742874。|  
 
 |||  
 |-|-|  
-|**問題**|**複製失敗、 開機進入 DSRM、 一般網路錯誤**|  
-|**徵狀**|複製品開機進入目錄服務修復模式。 發生一般網路錯誤。|  
-|解決方式和注意事項|確定新的複製品不含從來源網域控制站指派的重複靜態 MAC 位址；您可以針對來源和複製虛擬機器在 Hypervisor 主機上執行這個命令，查看 VM 是否使用靜態 MAC 位址：<br /><br />Get-VM -VMName *test-vm* &#124; Get-VMNetworkAdapter &#124; fl *<br /><br />將 MAC 位址變更為唯一的靜態位址，或者切換為使用動態 MAC 位址。<br /><br />說明請見 KB 2742844|  
+|**問題**|**複製失敗，啟動進入 DSRM，一般網路錯誤**|  
+|**徵兆**|複製品開機進入目錄服務修復模式。 發生一般網路錯誤。|  
+|解決方式和注意事項|確定新的複製品不含從來源網域控制站指派的重複靜態 MAC 位址；您可以針對來源和複製虛擬機器在 Hypervisor 主機上執行這個命令，查看 VM 是否使用靜態 MAC 位址：<br /><br />取得 vm-VMName*測試-vm* &#124; Get-VMNetworkAdapter &#124; fl *<br /><br />將 MAC 位址變更為唯一的靜態位址，或者切換為使用動態 MAC 位址。<br /><br />說明請見 KB 2742844|  
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                 |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        **問題**         |                                                                                                                                               **為重複的來源 DC 複製失敗、 開機進入 DSRM**                                                                                                                                                |
-|       **徵狀**       |                                     新的複製品會在未進行複製的情況下開機。 dccloneconfig.xml 不會重新命名，而且會在 DS 還原模式中啟動伺服器。 [目錄服務] 事件記錄檔顯示錯誤 2164<br /><br />*<COMPUTERNAME>* 無法啟動 DsRoleSvc 服務，以複製本機虛擬網域控制站。                                      |
+|        **問題**         |                                                                                                                                               **複製失敗，以來源 DC 複本的形式開機進入 DSRM**                                                                                                                                                |
+|       **徵兆**       |                                     新的複製品會在未進行複製的情況下開機。 dccloneconfig.xml 不會重新命名，而且會在 DS 還原模式中啟動伺服器。 [目錄服務] 事件記錄檔顯示錯誤 2164<br /><br />*<COMPUTERNAME>* 無法啟動 DsRoleSvc 服務以複製本機虛擬網域控制站。                                      |
 | **解決方式和注意事項** | 檢查「DS 角色伺服器」服務 (DsRoleSvc) 的服務設定，並確定已將它的啟動類型設為 [手動]。 請確定沒有任何協力廠商程式會防止這個服務啟動。<br /><br />如需如何回收此次要 DC 同時確保更新可輸出複寫的詳細資訊，請參閱 Microsoft 知識庫文章 2742970。 |
 
 |||  
 |-|-|  
-|**問題**|**複製失敗、 開機進入 DSRM、 錯誤 8610**|  
-|**徵狀**|複製品開機進入目錄服務還原模式。 Dcpromo .log 顯示 8610 錯誤 (此為 ERROR_DS_ROLE_NOT_VERIFIED 8610 或 0x21A2)|  
+|**問題**|**複製失敗，啟動進入 DSRM，錯誤8610**|  
+|**徵兆**|複製品開機進入目錄服務還原模式。 Dcpromo .log 顯示 8610 錯誤 (此為 ERROR_DS_ROLE_NOT_VERIFIED 8610 或 0x21A2)|  
 |**解決方式和注意事項**|如果 PDC 是可搜尋的但尚未執行足夠的複寫以允許本身擔任該角色時，將會發生此問題。 例如，如果已開始複製但另一位系統管理員將 PDCE FSMO 角色移至新的 DC。<br /><br />說明請見 KB 2742916。|  
 
 |||  
 |-|-|  
-|**問題**|**複製失敗、 開機進入 DSRM、 一般網路錯誤**|  
-|**徵狀**|複製品開機進入目錄服務還原模式。 發生一般網路錯誤。|  
-|**解決方式和注意事項**|確定新的複製品不含從來源網域控制站指派的重複靜態 MAC 位址；您可以針對來源和複製虛擬機器在 Hyper-V 主機上執行這個命令，查看 VM 是否使用靜態 MAC 位址：<br /><br />Get-VM -VMName *test-vm* &#124; Get-VMNetworkAdapter &#124; fl *<br /><br />將 MAC 位址變更為唯一的靜態位址，或者切換為使用動態 MAC 位址。<br /><br />說明請見 KB 2742844。|  
+|**問題**|**複製失敗，啟動進入 DSRM，一般網路錯誤**|  
+|**徵兆**|複製品開機進入目錄服務還原模式。 發生一般網路錯誤。|  
+|**解決方式和注意事項**|確定新的複製品不含從來源網域控制站指派的重複靜態 MAC 位址；您可以針對來源和複製虛擬機器在 Hyper-V 主機上執行這個命令，查看 VM 是否使用靜態 MAC 位址：<br /><br />取得 vm-VMName*測試-vm* &#124; Get-VMNetworkAdapter &#124; fl *<br /><br />將 MAC 位址變更為唯一的靜態位址，或者切換為使用動態 MAC 位址。<br /><br />說明請見 KB 2742844。|  
 
 |||  
 |-|-|  
-|**問題**|**複製失敗、 開機進入 DSRM**|  
-|**徵狀**|複製品開機進入目錄服務修復模式|  
-|**解決方式和注意事項**|確保 dccloneconfig.xml 包含結構描述定義 (請參閱 sampledccloneconfig.xml，第 2 行)：<br /><br />**<d3c:DCCloneConfig xmlns:d3c="uri:microsoft.com:schemas:DCCloneConfig">**<br /><br />說明請見 KB 2742844|  
+|**問題**|**複製失敗，啟動進入 DSRM**|  
+|**徵兆**|複製品開機進入目錄服務修復模式|  
+|**解決方式和注意事項**|確保 dccloneconfig.xml 包含結構描述定義 (請參閱 sampledccloneconfig.xml，第 2 行)：<br /><br />**< d3c： DCCloneConfig xmlns:d3c = "uri:microsoft .com：架構： DCCloneConfig" >**<br /><br />說明請見 KB 2742844|  
 
 |||  
 |-|-|  
-|問題|**沒有登入伺服器會進入 DSRM 記錄可用的錯誤**|  
-|**徵狀**|複製品開機進入目錄服務修復模式。 您嘗試登入並收到錯誤：<br /><br />**目前沒有任何登入伺服器可用於服務登入要求**|  
+|問題|**沒有登入伺服器可用錯誤記錄至 DSRM**|  
+|**徵兆**|複製品開機進入目錄服務修復模式。 您嘗試登入並收到錯誤：<br /><br />**目前沒有任何登入伺服器可用來服務登入要求**|  
 |**解決方式和注意事項**|確定您是以 DSRM 系統管理員帳戶登入，而不是以網域帳戶登入。 使用向左鍵並輸入下列使用者名稱：<br /><br />**.\administrator**<br /><br />說明請見 KB 2742908|  
 
 |||  
 |-|-|  
-|**問題**|**複製來源無法進入 DSRM，發生錯誤**|  
-|**徵狀**|複製期間發生失敗 8437「在 PDC 上建立複製 DC 物件失敗」(0x20f5)|  
+|**問題**|**複製來源無法進入 DSRM，錯誤**|  
+|**徵兆**|複製期間發生失敗 8437「在 PDC 上建立複製 DC 物件失敗」(0x20f5)|  
 |**解決方式和注意事項**|在 DCCloneConfig.xml 中設定與來源 DC 或現有 DC 重複的電腦名稱。 電腦名稱也需要具備 NetBIOS 電腦名稱格式 (15 個或以下的字元，非 FQDN)。<br /><br />設定唯一的有效名稱來修正 dccloneconfig.xml 檔案。<br /><br />說明請見 KB 2742959|  
 
 |||  
 |-|-|  
-|**問題**|**New-addccloneconfigfile 錯誤 「 索引超出範圍 」**|  
-|**徵狀**|執行 new-addccloneconfigfile Cmdlet 時，收到錯誤訊息：<br /><br />索引超過範圍。 必須為非負數且小於集合的大小。|  
+|**問題**|**新增-new-addccloneconfigfile 錯誤「索引超出範圍」**|  
+|**徵兆**|執行 new-addccloneconfigfile Cmdlet 時，收到錯誤訊息：<br /><br />索引超過範圍。 必須為非負數且小於集合的大小。|  
 |**解決方式和注意事項**|您必須以提升權限的系統管理員身分，在 Windows PowerShell 主控台中執行這個 Cmdlet。 這個錯誤是因為電腦上缺少本機系統管理員群組成員資格所導致。<br /><br />說明請見 KB 2742927|  
 
 |||  
 |-|-|  
-|**問題**|**複製失敗，重複的 DC**|  
-|**徵狀**|複製品會在未執行複製的情況下開機，複製現有的來源 DC|  
+|**問題**|**複製失敗，DC 重複**|  
+|**徵兆**|複製品會在未執行複製的情況下開機，複製現有的來源 DC|  
 |**解決方式和注意事項**|電腦已複製且啟動，但是未在任一個支援的位置中包含 DcCloneConfig.xml 檔案，而且沒有與來源網域控制站重複的 IP 位址。 DC 必須正確移除，才能避免資料遺失。<br /><br />說明請見 KB 2742970|  
 
 |||  
 |-|-|  
-|**問題**|**New-addccloneconfigfile 因伺服器不是作業的錯誤會在檢查時如果來源網域控制站是可複製的網域控制站群組的成員，如果無法使用 GC。**|  
-|**徵狀**|執行 New-ADDCCloneConfigFile 以建立 dccloneconfig.xml 檔案時，收到錯誤訊息：<br /><br />程式碼-伺服器不是操作|  
-|**解決方式和注意事項**|確認從您執行 New-ADDCCloneConfigFile 的伺服器到 GC 的連線，並確認已將 [可複製的網域控制站] 群組中來源網域控制站的成員資格複寫到該 GC。<br /><br />針對最近可能已將 GC 或 DC 離線的案例，執行下列命令以做為排清 DC 定位程式快取的方法：<br /><br />程式碼-nltest /dsgetdc: /GC /FORCE|  
+|**問題**|**如果沒有 GC，New-addccloneconfigfile 會在檢查來源網域控制站是否為 Cloneable 網域控制站群組的成員時，失敗並出現「伺服器無法操作」錯誤。**|  
+|**徵兆**|執行 New-ADDCCloneConfigFile 以建立 dccloneconfig.xml 檔案時，收到錯誤訊息：<br /><br />程式碼-伺服器無法運作|  
+|**解決方式和注意事項**|確認從您執行 New-ADDCCloneConfigFile 的伺服器到 GC 的連線，並確認已將 [可複製的網域控制站] 群組中來源網域控制站的成員資格複寫到該 GC。<br /><br />針對最近可能已將 GC 或 DC 離線的案例，執行下列命令以做為排清 DC 定位程式快取的方法：<br /><br />程式碼-nltest/dsgetdc：/GC/FORCE|  
 
 ### <a name="advanced-troubleshooting"></a>進階疑難排解  
-這個單元會使用「處理中」  的記錄檔做為範例，並說明發生的內容，以教導使用者進行進階疑難排解。 如果您了解什麼是成功的虛擬化網域控制站作業，便很容易察覺環境中的失敗。 這些記錄檔是以來源呈現，會以每個記錄檔中複製網域控制站相關的「預期」  事件的遞增順序來顯示 (即使它們是警告和錯誤)。  
+這個單元會使用「處理中」的記錄檔做為範例，並說明發生的內容，以教導使用者進行進階疑難排解。 如果您了解什麼是成功的虛擬化網域控制站作業，便很容易察覺環境中的失敗。 這些記錄檔是以來源呈現，會以每個記錄檔中複製網域控制站相關的「預期」事件的遞增順序來顯示 (即使它們是警告和錯誤)。  
 
 #### <a name="cloning-a-domain-controller"></a>複製網域控制站  
 在這個範例中，複製網域控制站會使用 DHCP 來取得 IP 位址、使用 FRS 或 DFSR 複寫 SYSVOL (請視需要參閱適當的記錄檔)、做為通用類別目錄，以及使用空白的 dccloneconfig.xml 檔案。  
@@ -832,7 +832,7 @@ dcpromo.log 是第一個檢查複製失敗的地方。 根據列出的失敗而�
 | **事件識別碼** |          **Source**           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  **Message**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |   **2160**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                                         本機 Active Directory 網域服務發現虛擬網域控制站複製設定檔。<br /><br />發現的虛擬網域控制站複製設定檔位於：<br /><br />*<path>* \DCCloneConfig.xml<br /><br />虛擬網域控制站複製設定檔的存在，表示本機虛擬網域控制站是另一個虛擬網域控制站的複製品。 Active Directory 網域服務將開始自行複製。                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |   **2191**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                             Active Directory 網域服務會設定下列登錄值以停用 DNS 更新。<br /><br />登錄機碼：<br /><br />SYSTEM\CurrentControlSet\Services\Netlogon\Parameters<br /><br />登錄值：<br /><br />UseDynamicDns<br /><br />登錄值資料：<br /><br />0<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 完成複製以後，複製程序將再次啟用 DNS 更新。                                                                                                                                                                                                                                                                                                                                                                                              |
-|   **2191**   | ActiveDirectory_DomainService | Active Directory 網域服務會設定下列登錄值以停用 DNS 更新。<br /><br />登錄機碼：<br /><br />SYSTEM\CurrentControlSet\Services\Dnscache\Parameters<br /><br />登錄值：<br /><br />RegistrationEnabled<br /><br />登錄值資料：<br /><br />0<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 完成複製以後，複製程序將再次啟用 DNS 更新。<br /><br />「 資訊 2012 年 2 月 7 日 3:12:49 PM Microsoft-Windows-ActiveDirectory_DomainService 2191 內部設定 」 Active Directory 網域服務設定下列登錄值以停用 DNS 更新。<br /><br />登錄機碼：<br /><br />SYSTEM\CurrentControlSet\Services\Tcpip\Parameters<br /><br />登錄值：<br /><br />DisableDynamicUpdate<br /><br />登錄值資料：<br /><br />1<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 完成複製以後，複製程序將再次啟用 DNS 更新。 |
+|   **2191**   | ActiveDirectory_DomainService | Active Directory 網域服務會設定下列登錄值以停用 DNS 更新。<br /><br />登錄機碼：<br /><br />SYSTEM\CurrentControlSet\Services\Dnscache\Parameters<br /><br />登錄值：<br /><br />RegistrationEnabled<br /><br />登錄值資料：<br /><br />0<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 完成複製以後，複製程序將再次啟用 DNS 更新。<br /><br />"Information 2/7/2012 3:12:49 PM ActiveDirectory_DomainService 2191 Internal Configuration" Active Directory Domain Services 設定下列登錄值以停用 DNS 更新。<br /><br />登錄機碼：<br /><br />SYSTEM\CurrentControlSet\Services\Tcpip\Parameters<br /><br />登錄值：<br /><br />DisableDynamicUpdate<br /><br />登錄值資料：<br /><br />1<br /><br />複製程序期間，本機電腦與複製來源電腦可能短時間內會有相同的電腦名稱。 此期間內會停用 DNS A 與 AAAA 記錄登錄，因此用戶端無法傳送要求至正在進行複製的本機電腦。 完成複製以後，複製程序將再次啟用 DNS 更新。 |
 |   **2172**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              讀取網域控制站電腦物件的 msDS-GenerationId 屬性。<br /><br />msDS GenerationId 屬性值：<br /><br />*<Number>*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |   **2170**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                           偵測到世代識別碼變更。<br /><br />在 DS 快取的世代識別碼 (舊值)：<br /><br />*<Number>*<br /><br />VM 中目前的世代識別碼 (新值)：<br /><br />*<Number>*<br /><br />在使用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後會發生世代識別碼變更。 Active Directory 網域服務將建立新的呼叫識別碼以復原網域控制站。 虛擬的網域控制站不應使用虛擬機器快照來還原。 要還原或復原 Active Directory 網域服務資料庫的內容，支援的方法是還原以 Active Directory 網域服務感知備份應用程式建立的系統狀態備份。                                                                                                                                                                                                                                                                                                                           |
 |   **1109**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                           這個目錄伺服器的 invocationID 屬性已變更。 在建立備份時最高的更新序號如下：<br /><br />InvocationID 屬性 (舊值)：<br /><br />*<GUID>*<br /><br />InvocationID 屬性 (新值)：<br /><br />*<GUID>*<br /><br />更新序號：<br /><br />*<Number>*<br /><br />當目錄伺服器從備份媒體還原、設定為裝載可寫入的應用程式目錄分割，或在套用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後恢復執行時，invocationID 即會變更。 虛擬的網域控制站不應使用虛擬機器快照來還原。 要還原或復原 Active Directory 網域服務資料庫的內容，支援的方法是還原以 Active Directory 網域服務感知備份應用程式建立的系統狀態備份。                                                                                                                                                                                                                            |
@@ -857,8 +857,8 @@ dcpromo.log 是第一個檢查複製失敗的地方。 根據列出的失敗而�
 |   **2173**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      無法讀取網域控制站電腦物件的 msDS-GenerationId 屬性。 造成此問題的原因，可能是資料庫交易失敗或世代識別碼不存在本機資料庫。 msDS-GenerationId 在 dcpromo 後的第一次重新開機期間不存在，或 DC 不是虛擬網域控制站。<br /><br />其他資料<br /><br />失敗碼：<br /><br />6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |   **1000**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Microsoft Active Directory 網域服務啟動完成，版本 6.2.8225.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |   **1394**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             已經清除所有妨礙更新至 Active Directory 網域服務資料庫的問題。 已經成功更新 Active Directory 網域服務資料庫。 Net Logon 服務已經重新啟動。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|   **1128**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      1128 知識一致性檢查程式「已建立一個從下列來源目錄服務到本機目錄服務的複寫連線。<br /><br />來源目錄服務：<br /><br />CN = NTDS Settings， *<Domain Controller DN>*<br /><br />本機目錄服務：<br /><br />CN = NTDS Settings， *<Domain Controller DN>*<br /><br />其他資料<br /><br />原因代碼：<br /><br />0x2<br /><br />建立點內部識別碼：<br /><br />f0a025d                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|   **1999**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                           來源目錄服務已最佳化由目的地目錄服務所提供的更新序號 (USN)。 來源及目的地目錄服務有公用的複寫協力電腦。 目的地目錄服務和公用的複寫協力電腦包含一樣的最新資料，而來源目錄服務是使用這台協力電腦的備份來安裝。<br /><br />目的地目錄服務識別碼：<br /><br />*<GUID> (<FQDN>)*<br /><br />公用目錄服務識別碼：<br /><br />*<GUID>*<br /><br />公用屬性 USN：<br /><br />*<Number>*<br /><br />因此，已使用下列設定值來設定目的地目錄服務的即時性向量。<br /><br />先前的物件 USN：<br /><br />0<br /><br />先前的屬性 USN：<br /><br />0<br /><br />資料庫 GUID：<br /><br />*<GUID>*<br /><br />物件 USN：<br /><br />*<Number>*<br /><br />屬性 USN：<br /><br />*<Number>*                                                                                                                                                                                                                                           |
+|   **1128**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      1128 知識一致性檢查程式「已建立一個從下列來源目錄服務到本機目錄服務的複寫連線。<br /><br />來源目錄服務：<br /><br />CN = NTDS 設定， *<Domain Controller DN>*<br /><br />本機目錄服務：<br /><br />CN = NTDS 設定， *<Domain Controller DN>*<br /><br />其他資料<br /><br />原因代碼：<br /><br />0x2<br /><br />建立點內部識別碼：<br /><br />f0a025d                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|   **1999**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                           來源目錄服務已最佳化由目的地目錄服務所提供的更新序號 (USN)。 來源及目的地目錄服務有公用的複寫協力電腦。 目的地目錄服務和公用的複寫協力電腦包含一樣的最新資料，而來源目錄服務是使用這台協力電腦的備份來安裝。<br /><br />目的地目錄服務識別碼：<br /><br />*<GUID> （<FQDN>）*<br /><br />公用目錄服務識別碼：<br /><br />*<GUID>*<br /><br />公用屬性 USN：<br /><br />*<Number>*<br /><br />因此，已使用下列設定值來設定目的地目錄服務的即時性向量。<br /><br />先前的物件 USN：<br /><br />0<br /><br />先前的屬性 USN：<br /><br />0<br /><br />資料庫 GUID：<br /><br />*<GUID>*<br /><br />物件 USN：<br /><br />*<Number>*<br /><br />屬性 USN：<br /><br />*<Number>*                                                                                                                                                                                                                                           |
 
 ##### <a name="system-event-log"></a>系統事件記錄檔  
 複製作業之後的指示位於 [系統] 事件記錄檔中。 當 Hypervisor 告知客體電腦它是從快照複製或還原時，網域控制站會立即使它的 RID 集區失效，以避免稍後複製安全性主體。 當複製繼續進行時，各種預期的作業與訊息即會出現，大多數會與服務啟動和停止有關，而這會導致一些預期的錯誤發生。 完成時，[系統] 事件記錄檔會記錄整體複製成功。  
@@ -1413,11 +1413,11 @@ DNS 服務會在複製發生時短暫預期的中斷，因為 DNS 服務在 AD D
 |  **13503**   |   NtFrs    |                                                                                                                                                                                                                                                                                                                                                                                                   檔案複寫服務已停止。                                                                                                                                                                                                                                                                                                                                                                                                   |
 |  **13565**   |   NtFrs    |                                                                         檔案複寫服務正在使用其他網域控制站的資料來初始化系統磁碟區。 除非這個處理程序完成，否則電腦 DC2 無法變成網域控制站。 系統磁碟區接著會被視為 SYSVOL 加以共用。<br /><br />如果要檢查 SYSVOL 共用，請在命令提示字元下輸入：<br /><br />net share<br /><br />當檔案複寫服務完成初始化程序，SYSVOL 共用將會出現。<br /><br />系統磁碟區初始化會花費一些時間。 花費的時間視系統磁碟區資料量、其他網域控制站可用性，以及網域控制站之間的複寫間隔而定。                                                                         |
 |  **13501**   |   NtFrs    |                                                                                                                                                                                                                                                                                                                                                                                                   檔案複寫服務正在啟動。                                                                                                                                                                                                                                                                                                                                                                                                   |
-|  **13553**   |   NtFrs    |                                                                                                                                                                          檔案複寫服務成功地將這台電腦加入下列複本集：<br /><br />"DOMAIN SYSTEM VOLUME (SYSVOL SHARE)"<br /><br />這個事件的相關資訊顯示在下方：<br /><br />電腦 DNS 名稱是  *<Domain Controller FQDN>*<br /><br />複本集成員名稱是 *<Domain Controller>*<br /><br />複本集根路徑是 *<path>*<br /><br />複本執行目錄路徑是 *<path>*<br /><br />複本工作目錄路徑是 *<path>*                                                                                                                                                                           |
-|  **13520**   |   NtFrs    |                檔案複寫服務移動的預先存在的檔案<path>要 *<path>* \NtFrs_PreExisting___See_EventLog。<br /><br />檔案複寫服務可能會刪除中的檔案 *<path>* 隨時 \NtFrs_PreExisting___See_EventLog。 檔案可以儲存從刪除複製這些 *<path>* \NtFrs_PreExisting___See_EventLog。 如果檔案已經存在其他的複寫協力電腦上，將檔案複製到 c:\windows\sysvol\domain 可能導致名稱衝突。<br /><br />在某些情況下，檔案複寫服務可能會複製檔案，以從 *<path>* \NtFrs_PreExisting___See_EventLog 成 *<path>* 而不是從其他複寫檔案複寫協力電腦。<br /><br />空間可以隨時復原刪除的檔案 *<path>* \NtFrs_PreExisting___See_EventLog。 」                 |
-|  **13508**   |   NtFrs    | 檔案複寫服務無法啟用複寫，從 *\\ \\ <Domain Controller FQDN>* 來 *<Domain Controller>* 針對 *<path>* 使用<br /><br />DNS 名稱 *\\ \\ <Domain Controller FQDN>* 。 FRS 將繼續重試。<br /><br />出現此警告可能是由下列原因導致。<br /><br />[1] FRS 無法正確解析 DNS 名稱 *\\ \\ <Domain Controller FQDN>* 從這台電腦。<br /><br />[並未執行 2] FRS *\\ \\ <Domain Controller FQDN>* 。<br /><br />[3] 這個複本在 Active Directory 網域服務上的拓撲資訊尚未複寫到所有網域控制站上。<br /><br />這個事件記錄檔訊息會在每次連線時出現一次。在問題解決之後，您會看到其他的事件記錄檔訊息，指出連線已經建立。 |
-|  **13509**   |   NtFrs    |                                                                                                                                                                                                                                                                                                                                            檔案複寫服務已啟用複寫，從 *\\ \\ <Domain Controller FQDN>* 來 *<Domain Controller>* 針對 *<Path>* 重複的重試後。                                                                                                                                                                                                                                                                                                                                             |
-|  **13516**   |   NtFrs    |                                                                                                                                                                                                                                               檔案複寫服務不會再妨礙電腦 *<Domain Controller>* 成為網域控制站。 系統磁碟區已經成功地初始化，而且已通知 Netlogon 服務，系統磁碟區已準備共用為 SYSVOL。<br /><br />請輸入 " net share" 來檢查 SYSVOL 共用。」                                                                                                                                                                                                                                               |
+|  **13553**   |   NtFrs    |                                                                                                                                                                          檔案複寫服務成功地將這台電腦加入下列複本集：<br /><br />"DOMAIN SYSTEM VOLUME (SYSVOL SHARE)"<br /><br />這個事件的相關資訊顯示在下方：<br /><br />電腦 DNS 名稱為 *<Domain Controller FQDN>*<br /><br />複本集成員名稱為 *<Domain Controller>*<br /><br />複本集根路徑 *<path>*<br /><br />複本臨時目錄路徑 *<path>*<br /><br />複本工作目錄路徑 *<path>*                                                                                                                                                                           |
+|  **13520**   |   NtFrs    |                檔案複寫服務已在 @no__t 0to 中移動預先存在的檔案 *<path>* \NtFrs_PreExisting___See_EventLog。<br /><br />檔案複寫服務可能會隨時刪除 *<path>* \NtFrs_PreExisting___See_EventLog 中的檔案。 將檔案複製到 *<path>* \NtFrs_PreExisting___See_EventLog.，即可從刪除中儲存檔案 如果檔案已經存在其他的複寫協力電腦上，將檔案複製到 c:\windows\sysvol\domain 可能導致名稱衝突。<br /><br />在某些情況下，檔案複寫服務可能會將檔案從 *<path>* \NtFrs_PreExisting___See_EventLog 複製到 *<path>* ，而不是從其他複寫夥伴複寫檔案。<br /><br />藉由刪除 *<path>* \NtFrs_PreExisting___See_EventLog. 中的檔案，可以隨時復原空間」                 |
+|  **13508**   |   NtFrs    | 檔案複寫服務無法啟用從 *\\ @ no__t-2 @ no__t-3*至 *<Domain Controller>* 的複寫， *<path>* 使用<br /><br />DNS 名稱 *\\ @ no__t-2 @ no__t-3*。 FRS 將繼續重試。<br /><br />出現此警告可能是由下列原因導致。<br /><br />[1] FRS 無法從這部電腦正確解析 DNS 名稱 *\\ @ no__t-2 @ no__t-3* 。<br /><br />[2] FRS 未在 *\\ @ no__t-2 @ no__t-3*上執行。<br /><br />[3] 這個複本在 Active Directory 網域服務上的拓撲資訊尚未複寫到所有網域控制站上。<br /><br />這個事件記錄檔訊息會在每次連線時出現一次。在問題解決之後，您會看到其他的事件記錄檔訊息，指出連線已經建立。 |
+|  **13509**   |   NtFrs    |                                                                                                                                                                                                                                                                                                                                            檔案複寫服務已從 *\\ @ no__t-2 @ no__t-3*啟用複寫，以在重複重試之後 *<Path>* 的 *<Domain Controller>* 。                                                                                                                                                                                                                                                                                                                                             |
+|  **13516**   |   NtFrs    |                                                                                                                                                                                                                                               檔案複寫服務已不再阻止電腦 *<Domain Controller>* 成為網域控制站。 系統磁碟區已經成功地初始化，而且已通知 Netlogon 服務，系統磁碟區已準備共用為 SYSVOL。<br /><br />請輸入 " net share" 來檢查 SYSVOL 共用。」                                                                                                                                                                                                                                               |
 
 ##### <a name="dfs-replication-event-log"></a>DFS 複寫事件記錄檔  
 DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理。 複製完成這個動作的方式是透過刪除 DFSR 資料庫檔案並讓 SYSVOL 的內容保留不變，以用來做為預先植入的資料。 預期會進行兩個同步處理的嘗試動作。  
@@ -1431,10 +1431,10 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 |   **6102**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            DFS 複寫服務已順利登錄 WMI 提供者                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |   **1206**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 DFS 複寫服務已順利連絡網域控制站 DC2.corp.contoso.com 以存取設定資訊。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |   **1210**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    DFS 複寫服務已順利設定連入複寫要求的 RPC 接聽程式。<br /><br />其他資訊：<br /><br />連接埠：0"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|   **4614**   |    DFSR    | DFS 複寫服務已初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL，而且正在等候執行初始複寫。 複寫的資料夾會維持在初始同步狀態，直到它和協力電腦完成複寫為止。 如果伺服器已經開始升級至網域控制站，網域控制站會在此問題解決之後才通告並開始運作。 若指定的協力電腦也處於初始同步狀態，或此伺服器或同步協力電腦發生共用違規，也會發生此情形。 若此事件是發生於將 SYSVOL 從檔案複寫服務 (FRS) 移轉至 DFS 複寫時，則只有在解決問題之後才會對外複寫變更。 這會導致此伺服器上的 SYSVOL 資料夾與其他網域控制站不同步。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫的資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />唯讀：0 |
-|   **4604**   |    DFSR    |                                                                                                                                                                                                                                                                      DFS 複寫服務已順利初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL 複寫資料夾。 此成員已完成與協力電腦 dc1.corp.contoso.com 的 SYSVOL 初始同步處理作業。  若要檢查 SYSVOL 共用是否存在，請開啟命令提示視窗，然後輸入 "net share"。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫的資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />同步協力電腦： *<domain controller FQDN>*                                                                                                                                                                                                                                                                       |
+|   **4614**   |    DFSR    | DFS 複寫服務已初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL，而且正在等候執行初始複寫。 複寫的資料夾會維持在初始同步狀態，直到它和協力電腦完成複寫為止。 如果伺服器已經開始升級至網域控制站，網域控制站會在此問題解決之後才通告並開始運作。 若指定的協力電腦也處於初始同步狀態，或此伺服器或同步協力電腦發生共用違規，也會發生此情形。 若此事件是發生於將 SYSVOL 從檔案複寫服務 (FRS) 移轉至 DFS 複寫時，則只有在解決問題之後才會對外複寫變更。 這會導致此伺服器上的 SYSVOL 資料夾與其他網域控制站不同步。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />唯讀：0 |
+|   **4604**   |    DFSR    |                                                                                                                                                                                                                                                                      DFS 複寫服務已順利初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL 複寫資料夾。 此成員已完成與協力電腦 dc1.corp.contoso.com 的 SYSVOL 初始同步處理作業。  若要檢查 SYSVOL 共用是否存在，請開啟命令提示視窗，然後輸入 "net share"。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />同步夥伴： *<domain controller FQDN>*                                                                                                                                                                                                                                                                       |
 
-## <a name="BKMK_TshootVDCSafeRestore"></a>疑難排解虛擬的網域控制站安全還原  
+## <a name="BKMK_TshootVDCSafeRestore"></a>疑難排解虛擬網域控制站安全還原  
 
 ### <a name="tools-for-troubleshooting"></a>適用於疑難排解的工具  
 
@@ -1443,9 +1443,9 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 
 |||  
 |-|-|  
-|**Operation**|**Log**|  
-|**建立快照集**|-事件 viewer\Applications and services logs\Microsoft\Windows\Hyper-V-背景工作角色|  
-|**快照集還原**|-事件 viewer\Applications and services 記錄檔 \ 目錄服務<br />事件檢視器 \windows 記錄 \ 系統<br />事件檢視器 \windows 記錄 \ 應用程式<br />-事件 viewer\Applications and services 記錄檔 \ 檔案複寫服務<br />-事件 viewer\Applications and services 記錄檔 \dfs 複寫<br />-事件 viewer\Applications and services 記錄檔 \dns<br />-事件 viewer\Applications and services logs\Microsoft\Windows\Hyper-V-背景工作角色|  
+|**運營**|**日誌**|  
+|**建立快照集**|-事件 viewer\Applications 和服務 logs\Microsoft\Windows\Hyper-V-Worker|  
+|**快照集還原**|-事件 viewer\Applications 和服務 logs\Directory 服務<br />-Event 檢視器 \windows 記錄 \ 系統<br />-Event 檢視器 \windows logs\Application<br />-事件 viewer\Applications 和服務 logs\File 複寫服務<br />-事件 viewer\Applications 和服務 logs\DFS 複寫<br />-事件 viewer\Applications 和服務 logs\DNS<br />-事件 viewer\Applications 和服務 logs\Microsoft\Windows\Hyper-V-Worker|  
 
 #### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>適用於疑難排解網域控制站設定的工具和命令  
 若要疑難排解記錄檔未說明的問題，請使用下列工具做為起點：  
@@ -1484,9 +1484,9 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 
     2.  檢查作業系統並驗證執行中的 Windows Server 2012？  
 
-### <a name="BKMK_TshootSpecificSafeRestore"></a>疑難排解特定問題  
+### <a name="BKMK_TshootSpecificSafeRestore"></a>針對特定問題進行疑難排解  
 
-#### <a name="events"></a>事件  
+#### <a name="events"></a>Events  
 所有的虛擬網域控制站安全快照還原事件都會寫入還原網域控制站 VM 的 [目錄服務] 事件記錄檔。 [應用程式]、[系統]、[檔案複寫服務]，以及 [DFS 複寫] 事件記錄檔可能也會包含關於失敗還原的有用疑難排解資訊。  
 
 以下是 [目錄服務] 事件記錄檔中的 Windows Server 2012 安全還原特定的事件。  
@@ -1497,8 +1497,8 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                                                                              **2170**                                                                                                                                                                                                                                                                                                                                                              |
 |        **Source**        |                                                                                                                                                                                                                                                                                                                                          Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                                                                           |
 |       **Severity**       |                                                                                                                                                                                                                                                                                                                                                              警告                                                                                                                                                                                                                                                                                                                                                               |
-|       **Message**        | 偵測到世代識別碼變更。<br /><br />在 DS 快取的世代識別碼 (舊值)：%1<br /><br />VM 中目前的世代識別碼 (新值)：%2<br /><br />在使用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後會發生世代識別碼變更。 *<COMPUTERNAME>* 會建立新的呼叫識別碼以復原網域控制站。 虛擬的網域控制站不應使用虛擬機器快照來還原。 要還原或復原 Active Directory 網域服務資料庫的內容，支援的方法是還原以 Active Directory 網域服務感知備份應用程式建立的系統狀態備份。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                                                            如果預期有快照，這是成功的事件。 如果沒有，請檢查 Hyper-V-Worker 事件記錄檔，或者連絡 Hypervisor 系統管理員。                                                                                                                                                                                                                                                                                             |
+|       **Message**        | 偵測到世代識別碼變更。<br /><br />在 DS 快取的世代識別碼 (舊值)：%1<br /><br />VM 中目前的世代識別碼 (新值)：%2<br /><br />在使用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後會發生世代識別碼變更。 *<COMPUTERNAME>* 將會建立新的調用識別碼，以復原網域控制站。 虛擬的網域控制站不應使用虛擬機器快照來還原。 要還原或復原 Active Directory 網域服務資料庫的內容，支援的方法是還原以 Active Directory 網域服務感知備份應用程式建立的系統狀態備份。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                                                            如果預期有快照，這是成功的事件。 如果沒有，請檢查 Hyper-V-Worker 事件記錄檔，或者連絡 Hypervisor 系統管理員。                                                                                                                                                                                                                                                                                             |
 
 |||  
 |-|-|  
@@ -1506,7 +1506,7 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|DC 不是虛擬網域控制站複製品，也不是還原的虛擬網域控制站快照。|  
-|**注意事項與解決方法**|預期在啟動不是從快照還原的實體網域控制站或虛擬網域控制站時所產生的事件|  
+|**記事和解決方式**|預期在啟動不是從快照還原的實體網域控制站或虛擬網域控制站時所產生的事件|  
 
 |||  
 |-|-|  
@@ -1514,145 +1514,145 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|  
 |**Severity**|資訊|  
 |**Message**|交易已中止，因為虛擬機器正在還原成先前的狀態。  在使用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後發生。|  
-|**注意事項與解決方法**|預期會在還原快照時發生。 交易追蹤 VM 世代識別碼變更|  
+|**記事和解決方式**|預期會在還原快照時發生。 交易追蹤 VM 世代識別碼變更|  
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                                                                                                **2185**                                                                                                                                                                                                                                                                                                                                                                                 |
 |        **Source**        |                                                                                                                                                                                                                                                                                                                                                             Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                                                                                             |
 |       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                              資訊                                                                                                                                                                                                                                                                                                                                                                              |
-|       **Message**        |                                                                                      *<COMPUTERNAME>* 已停止用於複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須先初始化本機 SYSVOL 複本上的非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 重新啟動 FRS 或 DFSR 服務時，將記錄事件 2187。                                                                                       |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                                                                                           預期會在還原快照時發生。 此網域控制站上的所有 SYSVOL 資料會都由協力電腦 DC 的複本來取代。                                                                                                                                                                                                                                                                                                                           |
+|       **Message**        |                                                                                      *<COMPUTERNAME>* 已停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 重新啟動 FRS 或 DFSR 服務時，將記錄事件 2187。                                                                                       |
+| **記事和解決方式** |                                                                                                                                                                                                                                                                                                                           預期會在還原快照時發生。 此網域控制站上的所有 SYSVOL 資料會都由協力電腦 DC 的複本來取代。                                                                                                                                                                                                                                                                                                                           |
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                                                                                                  2186                                                                                                                                                                                                                                                                                                                                                                                   |
 |        **Source**        |                                                                                                                                                                                                                                                                                                                                                             Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                                                                                             |
-|       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                                  錯誤                                                                                                                                                                                                                                                                                                                                                                                  |
-|       **Message**        | *<COMPUTERNAME>* 無法停止用於複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />錯誤碼：%2<br /><br />錯誤訊息：%3<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須先初始化本機 SYSVOL 複本上的非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 複寫服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 *<COMPUTERNAME>* 無法停止目前執行的服務，因此無法完成非權威還原。 請手動執行非權威還原。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                                                                                                                  檢查 [系統]、[FRS] 及 [DFSR] 事件記錄檔，以取得進一步資訊。                                                                                                                                                                                                                                                                                                                                                   |
+|       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                                  Error                                                                                                                                                                                                                                                                                                                                                                                  |
+|       **Message**        | *<COMPUTERNAME>* 無法停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />錯誤碼：%2<br /><br />錯誤訊息：%3<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 複寫服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 *<COMPUTERNAME>* 無法停止目前執行中的服務，也無法完成非權威還原。 請手動執行非權威還原。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                                                                                                                  檢查 [系統]、[FRS] 及 [DFSR] 事件記錄檔，以取得進一步資訊。                                                                                                                                                                                                                                                                                                                                                   |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                           **2187**                                                                                                                                                                                                                                                           |
 |        **Source**        |                                                                                                                                                                                                                                       Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                        |
 |       **Severity**       |                                                                                                                                                                                                                                                        資訊                                                                                                                                                                                                                                                         |
-|       **Message**        | *<COMPUTERNAME>* 已啟動用於複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須初始化本機 SYSVOL 複本上的非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                     預期會在還原快照時發生。 此網域控制站上的所有 SYSVOL 資料會都由協力電腦 DC 的複本來取代。                                                                                                                                                                                                      |
+|       **Message**        | *<COMPUTERNAME>* 已啟動用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 需要 *<COMPUTERNAME>* ，才能在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 |
+| **記事和解決方式** |                                                                                                                                                                                                     預期會在還原快照時發生。 此網域控制站上的所有 SYSVOL 資料會都由協力電腦 DC 的複本來取代。                                                                                                                                                                                                      |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                                                                                                                 **2188**                                                                                                                                                                                                                                                                                                                                                                                                  |
 |        **Source**        |                                                                                                                                                                                                                                                                                                                                                                              Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                                                                                                              |
-|       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                                                   錯誤                                                                                                                                                                                                                                                                                                                                                                                                   |
-|       **Message**        | *<COMPUTERNAME>* 無法啟動用於複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />錯誤碼：%2<br /><br />錯誤訊息：%3<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 初始化非權威還原在本機 SYSVOL 複本上的需求。 若要這樣做，請停止用來複寫 SYSVOL 的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 *<COMPUTERNAME>* 無法啟動用於複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，因此無法完成非權威還原。 請手動執行非權威還原，然後重新啟動服務。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                                                                                                                                   檢查 [系統]、[FRS] 及 [DFSR] 事件記錄檔，以取得進一步資訊。                                                                                                                                                                                                                                                                                                                                                                    |
+|       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                                                   Error                                                                                                                                                                                                                                                                                                                                                                                                   |
+|       **Message**        | *<COMPUTERNAME>* 無法啟動用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：%1<br /><br />錯誤碼：%2<br /><br />錯誤訊息：%3<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 *<COMPUTERNAME>* 無法啟動用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，因此無法完成非權威還原。 請手動執行非權威還原，然後重新啟動服務。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                                                                                                                                   檢查 [系統]、[FRS] 及 [DFSR] 事件記錄檔，以取得進一步資訊。                                                                                                                                                                                                                                                                                                                                                                    |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                         **2189**                                                                                                                                                                                                                                                                                                          |
 |        **Source**        |                                                                                                                                                                                                                                                                                      Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                      |
 |       **Severity**       |                                                                                                                                                                                                                                                                                                       資訊                                                                                                                                                                                                                                                                                                       |
-|       **Message**        | *<COMPUTERNAME>* 設定下列登錄值以非權威還原期間初始化 SYSVOL 複本：<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 初始化非權威還原在本機 SYSVOL 複本上的需求。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                    預期會在還原快照時發生。 此網域控制站上的所有 SYSVOL 資料會都由協力電腦 DC 的複本來取代。                                                                                                                                                                                                                                                    |
+|       **Message**        | *<COMPUTERNAME>* 設定下列登錄值，以在非權威還原期間初始化 SYSVOL 複本：<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                    預期會在還原快照時發生。 此網域控制站上的所有 SYSVOL 資料會都由協力電腦 DC 的複本來取代。                                                                                                                                                                                                                                                    |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                                                                                                                                              **2190**                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |        **Source**        |                                                                                                                                                                                                                                                                                                                                                                                                          Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                                                                                                                                           |
-|       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                                                                               錯誤                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|       **Message**        | *<COMPUTERNAME>* 無法設定下列登錄值以非權威還原期間初始化 SYSVOL 複本：<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />錯誤碼：%4<br /><br />錯誤訊息：%5<br /><br />Active Directory 偵測到主控網域控制站角色的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 初始化非權威還原在本機 SYSVOL 複本上的需求。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 *<COMPUTERNAME>* 無法設定上述登錄值，因此無法完成非權威還原。 請手動執行非權威還原。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                                                                                                                                       檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。                                                                                                                                                                                                                                                                                                                                                                       |
+|       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                                                                               Error                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|       **Message**        | *<COMPUTERNAME>* 無法在未授權的還原期間，設定下列登錄值以初始化 SYSVOL 複本：<br /><br />登錄機碼：%1<br /><br />登錄值：%2<br /><br />登錄值資料：%3<br /><br />錯誤碼：%4<br /><br />錯誤訊息：%5<br /><br />Active Directory 偵測到主控網域控制站角色的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 *<COMPUTERNAME>* 無法設定上述登錄值，因此無法完成非權威還原。 請手動執行非權威還原。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                                                                                                                                       檢查 [應用程式] 和 [系統] 事件記錄檔。 調查可能封鎖登錄更新的協力廠商應用程式。                                                                                                                                                                                                                                                                                                                                                                       |
 
 |                          |                                                                                                                                                                                                                                                                    |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                              **2200**                                                                                                                              |
 |        **Source**        |                                                                                                          Microsoft-Windows-ActiveDirectory_DomainService                                                                                                           |
 |       **Severity**       |                                                                                                                           資訊                                                                                                                            |
-|       **Message**        | Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 初始化複寫，使目前的網域控制站。 當複寫完成時，將記錄事件 2201。 |
-| **注意事項與解決方法** |                                                                                         預期會在還原快照時發生。 標記開始輸入 AD 複寫。                                                                                         |
+|       **Message**        | Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 會初始化複寫，使網域控制站成為最新的。 當複寫完成時，將記錄事件 2201。 |
+| **記事和解決方式** |                                                                                         預期會在還原快照時發生。 標記開始輸入 AD 複寫。                                                                                         |
 
 |                          |                                                                                                                                                                                                         |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                **2201**                                                                                                 |
 |        **Source**        |                                                                             Microsoft-Windows-ActiveDirectory_DomainService                                                                             |
 |       **Severity**       |                                                                                              資訊                                                                                              |
-|       **Message**        | Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 已完成複寫，使目前的網域控制站。 |
-| **注意事項與解決方法** |                                                              預期會在還原快照時發生。 標記結束輸入 AD 複寫。                                                               |
+|       **Message**        | Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 已完成複寫，使網域控制站成為最新的。 |
+| **記事和解決方式** |                                                              預期會在還原快照時發生。 標記結束輸入 AD 複寫。                                                               |
 
 |                          |                                                                                                                                                                                                                                                                             |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                  **2202**                                                                                                                                   |
 |        **Source**        |                                                                                                               Microsoft-Windows-ActiveDirectory_DomainService                                                                                                               |
-|       **Severity**       |                                                                                                                                    錯誤                                                                                                                                    |
-|       **Message**        | Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 若要將最新的網域控制站的複寫失敗。 將在下次定期複寫後更新網域控制站。 |
-| **注意事項與解決方法** |                                                                        檢查 [目錄服務] 和 [系統] 事件記錄檔。 使用 repadmin.exe 嘗試強制執行複寫，並記下任何失敗。                                                                         |
+|       **Severity**       |                                                                                                                                    Error                                                                                                                                    |
+|       **Message**        | Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME> 個*複寫失敗，使網域控制站維持在最新狀態。 將在下次定期複寫後更新網域控制站。 |
+| **記事和解決方式** |                                                                        檢查 [目錄服務] 和 [系統] 事件記錄檔。 使用 repadmin.exe 嘗試強制執行複寫，並記下任何失敗。                                                                         |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                                                                                                                                                                   **2204**                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |        **Source**        |                                                                                                                                                                                                                                                                                                                                                                                                Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                                                                                                                                                                |
 |       **Severity**       |                                                                                                                                                                                                                                                                                                                                                                                                                 資訊                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|       **Message**        | *<COMPUTERNAME>* 已偵測到虛擬機器世代識別碼的變更 該變更表示虛擬網域控制站已還原至先前狀態。 *<COMPUTERNAME>* 將執行下列作業以免可能發生資料不一致或已還原的網域控制站，以保護具有重複 Sid 的安全性主體的建立：<br /><br />建立新的呼叫識別碼<br /><br />使目前的 RID 集區無效<br /><br />下次執行輸入複寫時將驗證 FSMO 角色的擁有權。 在此期間，若網域控制站持有 FSMO 角色，該角色將無法使用。<br /><br />啟動 SYSVOL 複寫服務還原作業。<br /><br />啟動複寫將還原的網域控制站維持在最新的狀態。<br /><br />要求新的 RID 集區。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                                                                                                                    預期會在還原快照時發生。 這會說明將在安全還原過程中發生的所有各種重設作業。                                                                                                                                                                                                                                                                                                                                                    |
+|       **Message**        | *<COMPUTERNAME>* 偵測到虛擬機器世代識別碼已變更。 該變更表示虛擬網域控制站已還原至先前狀態。 *<COMPUTERNAME>* 將會執行下列作業，以保護已還原的網域控制站免于可能的資料分歧，並使用重複的 sid 來保護安全性主體的建立：<br /><br />建立新的呼叫識別碼<br /><br />使目前的 RID 集區無效<br /><br />下次執行輸入複寫時將驗證 FSMO 角色的擁有權。 在此期間，若網域控制站持有 FSMO 角色，該角色將無法使用。<br /><br />啟動 SYSVOL 複寫服務還原作業。<br /><br />啟動複寫將還原的網域控制站維持在最新的狀態。<br /><br />要求新的 RID 集區。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                                                                                                                    預期會在還原快照時發生。 這會說明將在安全還原過程中發生的所有各種重設作業。                                                                                                                                                                                                                                                                                                                                                    |
 
 |                          |                                                                                                                                                             |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                          **2205**                                                                           |
 |        **Source**        |                                                       Microsoft-Windows-ActiveDirectory_DomainService                                                       |
 |       **Severity**       |                                                                        資訊                                                                        |
-|       **Message**        |                        *<COMPUTERNAME>* 在虛擬網域控制站還原至先前狀態之後，讓目前的 RID 集區失效。                        |
-| **注意事項與解決方法** | 預期會在還原快照時發生。 必須摧毀本機 RID 集區，因為網域控制站已歷經一段時間且可能已經發行這些 RID。 |
+|       **Message**        |                        *<COMPUTERNAME>* 在虛擬網域控制站還原至先前狀態之後，目前的 RID 集區無效。                        |
+| **記事和解決方式** | 預期會在還原快照時發生。 必須摧毀本機 RID 集區，因為網域控制站已歷經一段時間且可能已經發行這些 RID。 |
 
 |                          |                                                                                                                                                                                                         |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                **2206**                                                                                                 |
 |        **Source**        |                                                                             Microsoft-Windows-ActiveDirectory_DomainService                                                                             |
 |       **Severity**       |                                                                                                  錯誤                                                                                                  |
-|       **Message**        | *<COMPUTERNAME>* 無法在虛擬網域控制站還原至先前狀態之後使目前的 RID 集區。<br /><br />其他資料：<br /><br />錯誤碼：%1<br /><br />錯誤值：%2 |
-| **注意事項與解決方法** |                     檢查 [目錄服務] 和 [系統] 事件記錄檔。 驗證 RID 主機已上線，而且可以使用 Dcdiag.exe /test:ridmanager，從這台伺服器連線。                      |
+|       **Message**        | *<COMPUTERNAME>* 在虛擬網域控制站還原為先前的狀態之後，無法使目前的 RID 集區無效。<br /><br />其他資料：<br /><br />錯誤碼：%1<br /><br />錯誤值：%2 |
+| **記事和解決方式** |                     檢查 [目錄服務] 和 [系統] 事件記錄檔。 驗證 RID 主機已上線，而且可以使用 Dcdiag.exe /test:ridmanager，從這台伺服器連線。                      |
 
 |                          |                                                                                                                                                                                         |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                        **2207**                                                                                         |
 |        **Source**        |                                                                     Microsoft-Windows-ActiveDirectory_DomainService                                                                     |
 |       **Severity**       |                                                                                          錯誤                                                                                          |
-|       **Message**        | *<COMPUTERNAME>* 無法在虛擬網域控制站還原至先前狀態之後還原。 已要求重新開機到 DSRM。 請檢查先前的事件以取得詳細資訊。 |
-| **注意事項與解決方法** |                                                                  檢查 [目錄服務] 和 [系統] 事件記錄檔。                                                                  |
+|       **Message**        | 在虛擬網域控制站還原為先前的狀態之後， *<COMPUTERNAME>* 無法還原。 已要求重新開機到 DSRM。 請檢查先前的事件以取得詳細資訊。 |
+| **記事和解決方式** |                                                                  檢查 [目錄服務] 和 [系統] 事件記錄檔。                                                                  |
 
 |                          |                                                                                                                                                                                                                                                                                                                                 |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                            **2208**                                                                                                                                                             |
 |        **Source**        |                                                                                                                                         Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                         |
 |       **Severity**       |                                                                                                                                                          資訊                                                                                                                                                          |
-|       **Message**        |                                                                                                            *<COMPUTERNAME>* 以初始化 SYSVOL 複本在非權威還原期間刪除的 DFSR 資料庫。                                                                                                             |
-| **注意事項與解決方法** | 預期會在還原快照時發生。 這保證 DFSR 可以從協力電腦 DC 以非權威方式同步處理 SYSVOL。 請注意，SYSVOL 所在的相同磁碟區上任何其他的 DFSR 複寫資料夾也會以非權威方式進行同步處理 (不建議使用網域控制站在 SYSVOL 所在的相同磁碟區上裝載自訂 DFSR 集)。 |
+|       **Message**        |                                                                                                            *<COMPUTERNAME>* 已在非權威還原期間刪除 DFSR 資料庫以初始化 SYSVOL 複本。                                                                                                             |
+| **記事和解決方式** | 預期會在還原快照時發生。 這保證 DFSR 可以從協力電腦 DC 以非權威方式同步處理 SYSVOL。 請注意，SYSVOL 所在的相同磁碟區上任何其他的 DFSR 複寫資料夾也會以非權威方式進行同步處理 (不建議使用網域控制站在 SYSVOL 所在的相同磁碟區上裝載自訂 DFSR 集)。 |
 
 |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **事件識別碼**       |                                                                                                                                                                                                                                                                         **2209**                                                                                                                                                                                                                                                                         |
 |        **Source**        |                                                                                                                                                                                                                                                     Microsoft-Windows-ActiveDirectory_DomainService                                                                                                                                                                                                                                                      |
-|       **Severity**       |                                                                                                                                                                                                                                                                          錯誤                                                                                                                                                                                                                                                                           |
-|       **Message**        | *<COMPUTERNAME>* 無法刪除 DFSR 資料庫。<br /><br />其他資料：<br /><br />錯誤碼：%1<br /><br />錯誤值：%2<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 初始化非權威還原在本機 SYSVOL 複本上的需求。 對於 DFSR，若要這樣做，您必須停止 DFSR 服務、刪除 DFSR 資料庫，然後重新啟動該服務。 在重新啟動時，DFSR 將重建資料庫並開始進行初始同步。 |
-| **注意事項與解決方法** |                                                                                                                                                                                                                                                               檢查 [DFSR] 事件記錄檔                                                                                                                                                                                                                                                                |
+|       **Severity**       |                                                                                                                                                                                                                                                                          Error                                                                                                                                                                                                                                                                           |
+|       **Message**        | *<COMPUTERNAME>* 無法刪除 DFSR 資料庫。<br /><br />其他資料：<br /><br />錯誤碼：%1<br /><br />錯誤值：%2<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 *<COMPUTERNAME>* 必須在本機 SYSVOL 複本上初始化非權威還原。 對於 DFSR，若要這樣做，您必須停止 DFSR 服務、刪除 DFSR 資料庫，然後重新啟動該服務。 在重新啟動時，DFSR 將重建資料庫並開始進行初始同步。 |
+| **記事和解決方式** |                                                                                                                                                                                                                                                               檢查 [DFSR] 事件記錄檔                                                                                                                                                                                                                                                                |
 
 #### <a name="error-messages"></a>錯誤訊息  
 沒有任何與失敗的虛擬網域控制站安全快照還原直接相關的互動式錯誤；所有的複製資訊都會記錄於 [目錄服務] 事件記錄檔中。 當然，任何重要的複寫或伺服器通告錯誤都會以徵兆的形式在其他位置顯示。  
 
 #### <a name="known-issues-and-support-scenarios"></a>已知的問題和支援案例  
-[疑難排解網域控制站安全還原的一般方法](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_TshootSpecificSafeRestore)通常足以疑難排解大部分的問題。  
+[疑難排解網域控制站安全還原的一般方法](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md#BKMK_TshootSpecificSafeRestore)，通常足以疑難排解大部分的問題。  
 
 |||  
 |-|-|  
 |**問題**|**無法在最近安全還原的網域控制站上建立新的安全性主體**|  
-|**徵狀**|還原快照之後，嘗試在該網域控制站上建立新的安全性主體 (使用者、電腦、群組) 失敗，並產生：<br /><br />錯誤 0x2010<br /><br />目錄服務無法配置相關的識別碼。|  
+|**徵兆**|還原快照之後，嘗試在該網域控制站上建立新的安全性主體 (使用者、電腦、群組) 失敗，並產生：<br /><br />錯誤 0x2010<br /><br />目錄服務無法配置相關的識別碼。|  
 |**解決方式和注意事項**|這個問題是因為還原的電腦所擁有的 RID 主機 FSMO 角色資訊已過時而導致。 如果在取得快照之後將角色移至這個或其他網域控制站，然後稍後進行還原，還原的網域控制站在初始複寫完成之前都不會具備 RID 主機的資訊。<br /><br />若要解決這個問題，可允許 AD 複寫完成還原網域控制站的輸入。 如果仍然無法運作，請驗證所有的網域控制站都具備哪個 DC 裝載 RID 主機的相同正確資訊。|  
 
 |||  
 |-|-|  
-|**問題**|**還原的網域控制站不共用 SYSVOL 通告**|  
-|**徵狀**|還原快照後，有一或多個 DC 不會進行通告、不會共用 sysvol，而且沒有最新狀態的 SYSVOL 內容|  
+|**問題**|**還原的網域控制站不會共用 SYSVOL，通告**|  
+|**徵兆**|還原快照後，有一或多個 DC 不會進行通告、不會共用 sysvol，而且沒有最新狀態的 SYSVOL 內容|  
 |**解決方式和注意事項**|DC 的上游協力電腦沒有運作中的 SYSVOL 複本，能夠使用 DFSR 或 FRS 正確進行複寫。 這個問題與安全還原無關，但很可能會顯示為安全還原問題，因為客戶並未意識到其他會影響非還原 DC 的複寫問題。|  
 
 ### <a name="advanced-troubleshooting"></a>進階疑難排解  
-這個單元會使用「處理中」  的記錄檔做為範例，並說明發生的內容，以教導使用者進行進階疑難排解。 如果您了解什麼是成功的虛擬化網域控制站作業，便很容易察覺環境中的失敗。 這些記錄檔是以來源呈現，會以每個記錄檔中複製網域控制站相關的「預期」  事件的遞增順序來顯示。  
+這個單元會使用「處理中」的記錄檔做為範例，並說明發生的內容，以教導使用者進行進階疑難排解。 如果您了解什麼是成功的虛擬化網域控制站作業，便很容易察覺環境中的失敗。 這些記錄檔是以來源呈現，會以每個記錄檔中複製網域控制站相關的「預期」事件的遞增順序來顯示。  
 
 #### <a name="restoring-a-domain-controller-that-replicates-sysvol-using-dfsr"></a>使用 DFSR 還原複寫 SYSVOL 的網域控制站  
 
@@ -1672,9 +1672,9 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 |   **2200**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                       Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 Active Directory 網域服務會初始化複寫，使網域控制站維持在最新狀態。 當複寫完成時，將記錄事件 2201。                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |   **2201**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                                                                                                                                                                                     Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 Active Directory 網域服務已完成複寫，使網域控制站維持在最新狀態。                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |   **2185**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                           Active Directory 網域服務已停止用於複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：<br /><br />DFSR<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 Active Directory 網域服務必須在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 重新啟動 FRS 或 DFSR 服務時，將記錄事件 2187。」                                                                                                                                                                                                                                           |
-|   **2208**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                Active Directory 網域服務已在非授權還原期間刪除 DFSR 資料庫以初始化 SYSVOL 複本。<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 Active Directory 網域服務必須在本機 SYSVOL 複本上初始化非權威還原。 對於 DFSR，若要這樣做，您必須停止 DFSR 服務、刪除 DFSR 資料庫，然後重新啟動該服務。 一旦重新啟動 DFSR 將重建資料庫並開始初始同步處理。"                                                                                                                                                                                                                                                                                 |
+|   **2208**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                                Active Directory 網域服務已在非授權還原期間刪除 DFSR 資料庫以初始化 SYSVOL 複本。<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 Active Directory 網域服務必須在本機 SYSVOL 複本上初始化非權威還原。 對於 DFSR，若要這樣做，您必須停止 DFSR 服務、刪除 DFSR 資料庫，然後重新啟動該服務。 在重新開機時，DFSR 會重建資料庫並啟動初始同步處理。"                                                                                                                                                                                                                                                                                 |
 |   **2187**   | ActiveDirectory_DomainService |                                                                                                                                                                                                                                                                          Active Directory 網域服務已啟動用於複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務。<br /><br />服務名稱：<br /><br />DFSR<br /><br />Active Directory 偵測到主控網域控制站的虛擬機器已還原至先前狀態。 Active Directory 網域服務必須在本機 SYSVOL 複本上初始化非權威還原。 若要這樣做，請停止用來複寫 SYSVOL 資料夾的 FRS 或 DFSR 服務，然後使用適當的登錄機碼與值啟動它以觸發還原。 "                                                                                                                                                                                                                                                                           |
-|   **1587**   | ActiveDirectory_DomainService | 這個目錄服務已被還原或被設定為裝載應用程式目錄分割。 因此，它的複寫識別已經變更。 協力電腦已使用舊的識別要求複寫變更。 起始的序號已被調整。<br /><br />對應於下列物件 GUID 的目的地目錄服務已要求起始於某個 USN 的變更，這個 USN 是在從備份媒體還原的本機目錄服務上的 USN 之前。<br /><br />物件 GUID：<br /><br />*<GUID> (<FQDN of partner domain controller>)*<br /><br />還原發生時的 USN：<br /><br />*<number>*<br /><br />因此，已使用下列設定值來設定目的地目錄服務的即時性向量。<br /><br />先前的資料庫 GUID：<br /><br />*<GUID>*<br /><br />先前的物件 USN：<br /><br />*<number>*<br /><br />先前的屬性 USN：<br /><br />*<number>*<br /><br />新的資料庫 GUID：<br /><br />*<GUID>*<br /><br />新的物件 USN：<br /><br />*<number>*<br /><br />新的屬性 USN：<br /><br />*<number>* |
+|   **1587**   | ActiveDirectory_DomainService | 這個目錄服務已被還原或被設定為裝載應用程式目錄分割。 因此，它的複寫識別已經變更。 協力電腦已使用舊的識別要求複寫變更。 起始的序號已被調整。<br /><br />對應於下列物件 GUID 的目的地目錄服務已要求起始於某個 USN 的變更，這個 USN 是在從備份媒體還原的本機目錄服務上的 USN 之前。<br /><br />物件 GUID：<br /><br />*<GUID> （<FQDN of partner domain controller>）*<br /><br />還原發生時的 USN：<br /><br />*<number>*<br /><br />因此，已使用下列設定值來設定目的地目錄服務的即時性向量。<br /><br />先前的資料庫 GUID：<br /><br />*<GUID>*<br /><br />先前的物件 USN：<br /><br />*<number>*<br /><br />先前的屬性 USN：<br /><br />*<number>*<br /><br />新的資料庫 GUID：<br /><br />*<GUID>*<br /><br />新的物件 USN：<br /><br />*<number>*<br /><br />新的屬性 USN：<br /><br />*<number>* |
 
 ##### <a name="system-event-log"></a>系統事件記錄檔  
 [系統] 事件記錄檔會記錄再度將離線的虛擬機器上線時發生的機器時間，並與主機時間同步處理。 RID 集區會失效，且會重新啟動 DFSR 或 FRS 服務。  
@@ -1683,7 +1683,7 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 |              |                         |                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |--------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **事件識別碼** |       **Source**        |                                                                                                                                                                                                       **Message**                                                                                                                                                                                                       |
-|    **1**     |     Kernel-General      |                                                                                                                                   系統時間已變更為*嗎？<now>* 從 *< 快照時間/日期 >* 。<br /><br />變更原因：應用程式或系統元件已變更時間。                                                                                                                                   |
+|    **1**     |     Kernel-General      |                                                                                                                                   系統時間已變更為 *？ <now>* 從 *< 快照集時間/日期 >* 。<br /><br />變更原因：應用程式或系統元件已變更時間。                                                                                                                                   |
 |  **16654**   | Directory-Services-SAM  | 帳戶識別碼 (RID) 集區成為無效。 在下列預期情況中可能會發生此問題：<br /><br />1.網域控制站是從備份還原的。<br /><br />2.在虛擬機器上執行的網域控制站是從快照還原的。<br /><br />3.系統管理員已手動將集區設定為無效。<br /><br />如需相關資訊，請參閱<https://go.microsoft.com/fwlink/?LinkId=226247>。 |
 |   **7036**   | 服務控制管理員 |                                                                                                                                                                                 DFS 複寫服務已進入停止狀態。                                                                                                                                                                                  |
 |   **7036**   | 服務控制管理員 |                                                                                                                                                                                 DFS 複寫服務已進入執行狀態。                                                                                                                                                                                  |
@@ -1695,10 +1695,10 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 |              |            |                                                                                                                                                                                                                                                                                                                                                                                                  |
 |--------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **事件識別碼** | **Source** |                                                                                                                                                                                           **Message**                                                                                                                                                                                            |
-|   **103**    |   ESENT    |        DFSRs (1360) \\ \\.\C:\System Volume Information\DFSR\database<em>_<GUID></em>\dfsr.db:資料庫引擎已停止執行個體 (0)。<br /><br />不正常關機：0<br /><br />內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.141、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.016、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。         |
-|   **102**    |   ESENT    |                                                                                                                    DFSRs (532) \\ \\.\C:\System Volume Information\DFSR\database<em>_<GUID></em>\dfsr.db:資料庫引擎 (6.02.8189.0000) 正在啟動新的執行個體 (0)。                                                                                                                    |
-|   **105**    |   ESENT    |                                      DFSRs (532) \\ \\.\C:\System Volume Information\DFSR\database<em>_<GUID></em>\dfsr.db:資料庫引擎啟動了新的執行個體 (0)。 (時間=0 秒)<br /><br />內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000。                                      |
-|              |            | DFSRs (532) \\ \\.\C:\System Volume Information\DFSR\database<em> _<GUID></em>\dfsr.db:資料庫引擎已建立新的資料庫 (1， \\ \\.\C:\System Volume Information\DFSR\database<em>_ <GUID></em>\dfsr.db)。 (時間=0 秒)<br /><br />內部計時順序：[1] 0.000、[2] 0.000、[3] 0.016、[4] 0.062、[5] 0.000、[6] 0.016、[7] 0.000、[8] 0.000、[9] 0.015、[10] 0.000、[11] 0.000。 |
+|   **103**    |   ESENT    |        DFSRs （1360） \\ @ no__t-1. \ C： \System 磁片區 Information\DFSR\database @ no__t-2_ @ no__t-3 @ no__t-4\dfsr.db：資料庫引擎已停止執行個體 (0)。<br /><br />不正常關機：0<br /><br />內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.141、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.016、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。         |
+|   **102**    |   ESENT    |                                                                                                                    DFSRs （532） \\ @ no__t-1. \ C： \System 磁片區 Information\DFSR\database @ no__t-2_ @ no__t-3 @ no__t-4\dfsr.db：資料庫引擎 (6.02.8189.0000) 正在啟動新的執行個體 (0)。                                                                                                                    |
+|   **105**    |   ESENT    |                                      DFSRs （532） \\ @ no__t-1. \ C： \System 磁片區 Information\DFSR\database @ no__t-2_ @ no__t-3 @ no__t-4\dfsr.db：資料庫引擎啟動了新的執行個體 (0)。 (時間=0 秒)<br /><br />內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000。                                      |
+|              |            | DFSRs （532） \\ @ no__t-1. \ C： \System Volume Information\DFSR\database @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5\dfsr.db：資料庫引擎已建立新的資料庫（1，\\ @ no__t-1. \ C： \System Volume Information\DFSR\database @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5\dfsr.db）。 (時間=0 秒)<br /><br />內部計時順序：[1] 0.000、[2] 0.000、[3] 0.016、[4] 0.062、[5] 0.000、[6] 0.016、[7] 0.000、[8] 0.000、[9] 0.015、[10] 0.000、[11] 0.000。 |
 
 ##### <a name="dfs-replication-event-log"></a>DFS 複寫事件記錄檔  
 DFSR 服務已停止，並已刪除包含 SYSVOL 的資料庫，強制執行輸入的非權威同步處理。  
@@ -1713,10 +1713,10 @@ DFSR 服務已停止，並已刪除包含 SYSVOL 的資料庫，強制執行輸�
 |   **1004**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            DFS 複寫服務已啟動。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |   **1314**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  DFS 複寫服務已順利設定偵錯記錄檔。<br /><br />其他資訊：<br /><br />偵錯記錄檔路徑：C:\Windows\debug                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |   **6102**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            DFS 複寫服務已順利登錄 WMI 提供者。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|   **1206**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              DFS 複寫服務已順利連絡的網域控制站 *<domain controller FQDN>* 以存取設定資訊。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|   **1206**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              DFS 複寫服務已成功聯繫網域控制站 *<domain controller FQDN>* 以存取設定資訊。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |   **1210**   |    DFSR    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    DFS 複寫服務已順利設定連入複寫要求的 RPC 接聽程式。<br /><br />其他資訊：<br /><br />連接埠：0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|   **4614**   |    DFSR    | DFS 複寫服務已初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL，而且正在等候執行初始複寫。 複寫的資料夾會維持在初始同步狀態，直到它和協力電腦完成複寫為止。 如果伺服器已經開始升級至網域控制站，網域控制站會在此問題解決之後才通告並開始運作。 若指定的協力電腦也處於初始同步狀態，或此伺服器或同步協力電腦發生共用違規，也會發生此情形。 若此事件是發生於將 SYSVOL 從檔案複寫服務 (FRS) 移轉至 DFS 複寫時，則只有在解決問題之後才會對外複寫變更。 這會導致此伺服器上的 SYSVOL 資料夾與其他網域控制站不同步。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫的資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />唯讀：0 |
-|   **4604**   |    DFSR    |                                                                                                                                                                                                                                                                   DFS 複寫服務已順利初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL 複寫資料夾。 此成員已完成與協力電腦 dc1.corp.contoso.com 的 SYSVOL 初始同步處理作業。  若要檢查 SYSVOL 共用是否存在，請開啟命令提示視窗，然後輸入 "net share"。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫的資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />同步協力電腦： *<partner domain controller FQDN>*                                                                                                                                                                                                                                                                    |
+|   **4614**   |    DFSR    | DFS 複寫服務已初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL，而且正在等候執行初始複寫。 複寫的資料夾會維持在初始同步狀態，直到它和協力電腦完成複寫為止。 如果伺服器已經開始升級至網域控制站，網域控制站會在此問題解決之後才通告並開始運作。 若指定的協力電腦也處於初始同步狀態，或此伺服器或同步協力電腦發生共用違規，也會發生此情形。 若此事件是發生於將 SYSVOL 從檔案複寫服務 (FRS) 移轉至 DFS 複寫時，則只有在解決問題之後才會對外複寫變更。 這會導致此伺服器上的 SYSVOL 資料夾與其他網域控制站不同步。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />唯讀：0 |
+|   **4604**   |    DFSR    |                                                                                                                                                                                                                                                                   DFS 複寫服務已順利初始化位於本機路徑 C:\Windows\SYSVOL\domain 的 SYSVOL 複寫資料夾。 此成員已完成與協力電腦 dc1.corp.contoso.com 的 SYSVOL 初始同步處理作業。  若要檢查 SYSVOL 共用是否存在，請開啟命令提示視窗，然後輸入 "net share"。<br /><br />其他資訊：<br /><br />複寫資料夾名稱：SYSVOL 共用<br /><br />複寫資料夾識別碼： *<GUID>*<br /><br />複寫群組名稱：網域系統磁碟區<br /><br />複寫群組識別碼： *<GUID>*<br /><br />成員識別碼： *<GUID>*<br /><br />同步夥伴： *<partner domain controller FQDN>*                                                                                                                                                                                                                                                                    |
 
 #### <a name="restoring-a-domain-controller-that-replicates-sysvol-using-frs"></a>使用 FRS 還原複寫 SYSVOL 的網域控制站  
 在此案例中，會使用 [檔案複寫] 事件記錄檔，而不是 [DFSR] 事件記錄檔。 [應用程式] 事件記錄檔也會寫入不同的 FRS 相關事件。 否則，[目錄服務] 和 [系統] 事件記錄檔訊息通常是相同的，而且會以先前所述的相同順序出現。  
@@ -1733,9 +1733,9 @@ FRS 服務已停止，並使用 D2 BURFLAGS 值重新啟動，以非權威方式
 |  **13501**   |   NTFRS    |                                                                                                                                                                                                                                                                                                                                                                             檔案複寫服務正在啟動                                                                                                                                                                                                                                                                                                                                                                             |
 |  **13512**   |   NTFRS    |                                                                                                                                                                                                                                                            檔案複寫服務已在電腦 DC4 上內含目錄 c:\windows\ntfrs\jet 的磁碟偵測出磁碟寫入快取已啟用。 如果磁碟電源中斷而且關鍵的更新遺失，檔案複寫服務可能無法恢復。                                                                                                                                                                                                                                                            |
 |  **13565**   |   NTFRS    |                                                  檔案複寫服務正在使用其他網域控制站的資料來初始化系統磁碟區。 除非這個處理程序完成，否則電腦 DC4 無法變成網域控制站。 系統磁碟區接著會被視為 SYSVOL 加以共用。<br /><br />如果要檢查 SYSVOL 共用，請在命令提示字元下輸入：<br /><br />net share<br /><br />當檔案複寫服務完成初始化程序，SYSVOL 共用將會出現。<br /><br />系統磁碟區初始化會花費一些時間。 花費的時間視系統磁碟區資料量、其他網域控制站可用性，以及網域控制站之間的複寫間隔而定。」                                                  |
-|  **13520**   |   NTFRS    | 檔案複寫服務移動的預先存在的檔案 *<path>* 要 *<path>* \NtFrs_PreExisting___See_EventLog。<br /><br />檔案複寫服務可能會刪除中的檔案 *<path>* 隨時 \NtFrs_PreExisting___See_EventLog。 檔案可以儲存從刪除複製這些 *<path>* \NtFrs_PreExisting___See_EventLog。 檔案複製到 *<path>* 如果檔案已經存在其他複寫協力電腦上可能導致名稱衝突。<br /><br />在某些情況下，檔案複寫服務可能會複製檔案，以從 *<path>* \NtFrs_PreExisting___See_EventLog 成 *<path>* 而不是從其他複寫檔案複寫協力電腦。<br /><br />空間可以隨時復原刪除的檔案 *<path>* \NtFrs_PreExisting___See_EventLog。 |
-|  **13553**   |   NTFRS    |                                                                                                                                            檔案複寫服務成功地將這台電腦加入下列複本集：<br /><br />"DOMAIN SYSTEM VOLUME (SYSVOL SHARE)"<br /><br />這個事件的相關資訊顯示在下方：<br /><br />電腦 DNS 名稱是" *<domain controller FQDN>* "<br /><br />複本集成員名稱是" *<domain controller name>* "<br /><br />複本集根路徑是" *<path>* "<br /><br />複本執行目錄路徑是" *<path>* "<br /><br />複本工作目錄路徑是" *<path>* "                                                                                                                                             |
-|  **13554**   |   NTFRS    |                                                                                                                                                                                                                     檔案複寫服務成功地將下列連線加入複本集中：<br /><br />"DOMAIN SYSTEM VOLUME (SYSVOL SHARE)"<br /><br />從輸入 」 *<partner domain controller FQDN>* "<br /><br />輸出到 「 *<partner domain controller FQDN>* "<br /><br />後續的事件記錄檔訊息中會有其他的資訊。                                                                                                                                                                                                                     |
+|  **13520**   |   NTFRS    | 檔案複寫服務已將預先存在的檔案 *<path>* 移至 *<path>* \NtFrs_PreExisting___See_EventLog。<br /><br />檔案複寫服務可能會隨時刪除 *<path>* \NtFrs_PreExisting___See_EventLog 中的檔案。 將檔案複製到 *<path>* \NtFrs_PreExisting___See_EventLog.，即可從刪除中儲存檔案 如果檔案已經存在於其他複寫協力電腦上，將檔案複製到 *<path>* 可能會導致名稱衝突。<br /><br />在某些情況下，檔案複寫服務可能會將檔案從 *<path>* \NtFrs_PreExisting___See_EventLog 複製到 *<path>* ，而不是從其他複寫夥伴複寫檔案。<br /><br />藉由刪除 *<path>* \NtFrs_PreExisting___See_EventLog. 中的檔案，可以隨時復原空間 |
+|  **13553**   |   NTFRS    |                                                                                                                                            檔案複寫服務成功地將這台電腦加入下列複本集：<br /><br />"DOMAIN SYSTEM VOLUME (SYSVOL SHARE)"<br /><br />這個事件的相關資訊顯示在下方：<br /><br />電腦 DNS 名稱是 " *<domain controller FQDN>* "<br /><br />複本集成員名稱是 " *<domain controller name>* "<br /><br />複本集根路徑是 " *<path>* "<br /><br />複本臨時目錄路徑為 " *<path>* "<br /><br />複本工作目錄路徑是 " *<path>* "                                                                                                                                             |
+|  **13554**   |   NTFRS    |                                                                                                                                                                                                                     檔案複寫服務成功地將下列連線加入複本集中：<br /><br />"DOMAIN SYSTEM VOLUME (SYSVOL SHARE)"<br /><br />來自 " *<partner domain controller FQDN>" 的*輸入<br /><br />輸出到 " *<partner domain controller FQDN>* "<br /><br />後續的事件記錄檔訊息中會有其他的資訊。                                                                                                                                                                                                                     |
 |  **13516**   |   NTFRS    |                                                                                                                                                                                                                                  檔案複寫服務不會再妨礙電腦 DC4 成為網域控制站。 系統磁碟區已經成功地初始化，而且已通知 Netlogon 服務，系統磁碟區已準備共用為 SYSVOL。<br /><br />請輸入 " net share" 來檢查 SYSVOL 共用。                                                                                                                                                                                                                                  |
 
 ##### <a name="application-event-log"></a>應用程式事件記錄檔  

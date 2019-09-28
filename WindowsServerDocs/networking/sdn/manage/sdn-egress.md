@@ -1,33 +1,33 @@
 ---
 title: 虛擬網路中的輸出計量
-description: 雲端網路的營收的重要層面是網路頻寬的輸出。 例如，輸出資料傳輸在 Microsoft Azure 中的商務模型。 輸出資料會負責根據給定的計費週期中移出 Azure 資料中心經由網際網路的資料總量。
+description: 雲端網路營收的基本層面是網路頻寬輸出。 例如，Microsoft Azure 商務模型中的輸出資料傳輸。 輸出資料的收費依據是在給定的計費週期內，透過網際網路從 Azure 資料中心移出的總數據量。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 10/02/2018
-ms.openlocfilehash: bdfb2b7321d5a4d119c9710e9ad93fc2e91ea536
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792295"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406003"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>虛擬網路中的輸出計量
 
->適用於：Windows Server 2019
+>適用於：Windows Server Standard 2012 R2
 
 
-雲端網路的營收的重要層面能夠透過網路頻寬使用量計費。 輸出資料會負責根據給定的計費週期中移出資料中心經由網際網路的資料總量。
+雲端網路營收的基本層面是能夠依網路頻寬使用量來計費。 輸出資料的收費依據是在給定的計費週期內，透過網際網路從資料中心移出資料的總金額。
 
-在 Windows Server 2019 的 SDN 網路流量的計量的輸出可讓您為輸出資料傳輸提供使用量計量。 會保留每個虛擬網路，但會維持在資料中心內的網路流量可以藉由個別追蹤讓它可以從計費計算中排除。 繫結不包含在其中一個未開立帳單的位址範圍的目的地 IP 位址的封包會追蹤因為計費的輸出資料傳輸。
+Windows Server 2019 中 SDN 網路流量的輸出計量可讓您提供輸出資料傳輸的使用量計量。 離開每個虛擬網路但仍留在資料中心內的網路流量，可以個別追蹤，使其可以從計費計算中排除。 針對未包含在其中一個未開立帳單位址範圍內的目的地 IP 位址所系結的封包，會以計費的輸出資料傳輸進行追蹤。
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>未開立帳單的虛擬網路位址範圍 （IP 範圍列入允許清單）
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虛擬網路未開立帳單位址範圍（IP 範圍的白名單）
 
-您可以找到下未開立帳單的位址範圍**UnbilledAddressRanges**的現有虛擬網路的屬性。 根據預設，沒有新增位址範圍。
+您可以在現有虛擬網路的 [ **UnbilledAddressRanges** ] 屬性下找到未開立帳單位址範圍。 根據預設，不會新增任何位址範圍。
 
    ```PowerShell
    import-module NetworkController
@@ -36,7 +36,7 @@ ms.locfileid: "67792295"
    (Get-NetworkControllerVirtualNetwork -ConnectionURI $URI -ResourceId "VNet1").properties
    ```
 
-您的輸出會看起來像這樣：
+您的輸出看起來會像這樣：
    ```
     AddressSpace           : Microsoft.Windows.NetworkController.AddressSpace
     DhcpOptions            :
@@ -51,11 +51,11 @@ ms.locfileid: "67792295"
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>範例：管理虛擬網路的未開立帳單的位址範圍
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>範例：管理虛擬網路的未開立帳單位址範圍
 
-您可以管理從藉由設定計量的計費的輸出中排除的 IP 子網路首碼的組合**UnbilledAddressRange**的虛擬網路的屬性。  BilledEgressBytes 屬性中，將不會包含任何符合的前置詞的其中一個目的地 IP 位址與虛擬網路上的網路介面傳送的流量。
+您可以藉由設定虛擬網路的**UnbilledAddressRange**屬性，管理要從計費輸出計量排除的 IP 子網首碼集合。  虛擬網路上網路介面所傳送的任何流量若目的地 IP 位址符合其中一個前置詞，將不會包含在 BilledEgressBytes 屬性中。
 
-1.  更新**UnbilledAddressRanges**內容包含不會收取存取的子網路。
+1.  更新**UnbilledAddressRanges**屬性，使其包含不會針對存取計費的子網。
 
     ```PowerShell
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1"
@@ -63,15 +63,15 @@ ms.locfileid: "67792295"
     ```
 
     >[!TIP]
-    >如果新增多個 IP 子網路，請使用每個 IP 子網路之間有一個逗號。  在逗號前後不包含任何空格。
+    >如果新增多個 IP 子網，請在每個 IP 子網之間使用逗號。  請不要在逗號前後包含任何空格。
 
-2.  更新虛擬網路資源，使用修改後**UnbilledAddressRanges**屬性。
+2.  使用修改過的**UnbilledAddressRanges**屬性來更新虛擬網路資源。
 
     ```PowerShell
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "VNet1" -Properties $unbilled.Properties -PassInnerException
     ```
 
-    您的輸出會看起來像這樣：
+    您的輸出看起來會像這樣：
       ```
          Confirm
          Performing the operation 'New-NetworkControllerVirtualNetwork' on entities of type
@@ -90,13 +90,13 @@ ms.locfileid: "67792295"
       ```
 
 
-3. 檢查以查看所設定的虛擬網路**UnbilledAddressRanges**。
+3. 檢查虛擬網路以查看已設定的**UnbilledAddressRanges**。
 
    ```PowerShell
    (Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1").properties
    ```
 
-   您的輸出會現在看起來像這樣：
+   您的輸出現在看起來會像這樣：
    ```
    AddressSpace           : Microsoft.Windows.NetworkController.AddressSpace
    DhcpOptions            :
@@ -110,23 +110,23 @@ ms.locfileid: "67792295"
    LogicalNetwork         : Microsoft.Windows.NetworkController.LogicalNetwork
    ```
 
-## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>核取 計費未開立帳單的輸出使用的虛擬網路
+## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>檢查虛擬網路的未開立帳單輸出使用量計費
 
-設定之後**UnbilledAddressRanges**屬性，您可以檢查虛擬網路內的每個子網路的計費及未開立帳單的輸出使用方式。 輸出流量會更新每四分鐘與計費及未開立帳單的範圍的位元組總數。
+設定**UnbilledAddressRanges**屬性之後，您可以檢查虛擬網路中每個子網的計費和未開立帳單輸出使用量。 輸出流量會每四分鐘更新一次，並加上計費和未開立帳單範圍的總位元組數。
 
-下列屬性可供每個虛擬子網路：
+下列屬性適用于每個虛擬子網：
 
--   **UnbilledEgressBytes**顯示未開立帳單由連接到這個虛擬子網路的網路介面傳送的位元組數目。 未開立帳單的位元組是位元組傳送至位址範圍屬於**UnbilledAddressRanges**父虛擬網路的屬性。
+-   **UnbilledEgressBytes**顯示連線到此虛擬子網的網路介面所傳送的未開立帳單位元組數目。 未開立帳單 bytes 是傳送到位址範圍的位元組，屬於父虛擬網路的**UnbilledAddressRanges**屬性。
 
--   **BilledEgressBytes**顯示的計費由連接到這個虛擬子網路的網路介面傳送的位元組數目。 計費的位元組是位元組傳送至位址範圍不屬於**UnbilledAddressRanges**父虛擬網路的屬性。
+-   **BilledEgressBytes**會顯示連線到此虛擬子網的網路介面所傳送的計費位元組數。 計費的位元組是傳送給不屬於父虛擬網路**UnbilledAddressRanges**屬性之位址範圍的位元組。
 
-使用下列查詢輸出的使用方式範例：
+使用下列範例來查詢輸出使用方式：
 
 ```PowerShell
 (Get-NetworkControllerVirtualNetwork -ConnectionURI $URI -ResourceId "VNet1").properties.subnets.properties | ft AddressPrefix,BilledEgressBytes,UnbilledEgressBytes
 ```
 
-您的輸出會看起來像這樣：
+您的輸出看起來會像這樣：
 ```
 AddressPrefix BilledEgressBytes UnbilledEgressBytes
 ------------- ----------------- -------------------

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d057c943b9c14b74b44472d446625b60f5ad9d22
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 061d7b64ae0be0ebc1408d74f18f8c59926714ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865957"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407619"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>建立規則依據傳入宣告允許或拒絕使用者 
 
@@ -109,7 +109,7 @@ ms.locfileid: "70865957"
   
     -   **拒絕具有此傳入宣告的使用者存取權**  
 ![建立規則](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny2.PNG)  
-7.  按一下 [ **完成**]。  
+7.  按一下 **[完成]** 。  
   
 8.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[確定]** 以儲存規則。  
 

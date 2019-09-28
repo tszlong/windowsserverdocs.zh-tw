@@ -1,8 +1,8 @@
 ---
 title: prncnfg
-description: 了解如何設定印表機使用 prncfg 命令。
+description: 瞭解如何使用 prncfg 命令來設定印表機。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6426b053a5c56918768f82cbd7631631abcf0a6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5cbbf82e832c50d168e0bef06b2b7c3022dd90e8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372145"
 ---
 # <a name="prncnfg"></a>prncnfg
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設定或顯示印表機的設定資訊。
 
@@ -37,56 +37,56 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |-g|顯示印表機的設定資訊。|
 |-t|設定印表機。|
 |-x|重新命名印表機。|
-|-S \<ServerName\>|指定裝載的印表機，您想要管理遠端電腦的名稱。 如果您沒有指定的電腦，則會使用本機電腦。|
-|-P \<printerName\>|指定您想要管理印表機的名稱。 必要。|
-|-z \<NewprinterName\>|指定新的印表機名稱。 需要 **-x**並 **-P**參數。|
-|-u \<UserName\> -w \<Password\>|指定具有連線至裝載的印表機，您想要管理之電腦的權限的帳戶。 目標電腦的本機 Administrators 群組的所有成員都有這些權限，但可以也對其他使用者授與權限。 如果您未指定帳戶，您必須登入具有可使用該指令的這些權限的帳戶。|
-|-r \<PortName\>|指定印表機連線的位置的連接埠。 如果這是平行或序列連接埠，然後使用該連接埠 （例如，LPT1 或 COM1） 的識別碼。 如果這是在 TCP/IP 通訊埠，請使用 新增連接埠時所指定的連接埠名稱。|
-|-l\<位置\>|指定之印表機位置，例如 「 複製空間 」。|
-|-h \<Sharename\>|指定印表機的共用名稱。|
-|-m\<註解\>|指定印表機的註解字串。|
-|-f \<SeparatorFileName\>|指定的檔案，其中包含出現在 [分隔符號] 頁面的文字。|
-|-y\<資料類型\>|指定印表機可以接受的資料類型。|
-|-st \<starttime\>|設定印表機為有限的可用性。 指定印表機可用的時間。 如果無法使用時，您可以傳送到印表機的文件，文件會保留 （多工緩衝處理），直到可用的印表機。 您必須指定時間為 24 小時制。 例如，若要指定下午 11:00，輸入**2300年**。|
-|-ut \<Endtime\>|設定印表機為有限的可用性。 指定印表機不再可用的時間。 如果無法使用時，您可以傳送到印表機的文件，文件會保留 （多工緩衝處理），直到可用的印表機。 您必須指定時間為 24 小時制。 例如，若要指定下午 11:00，輸入**2300年**。|
-|-o\<優先順序\>|指定的多工緩衝處理器用以路由傳送到列印佇列的列印工作的優先順序。 具有較高優先順序的列印佇列會接收任何具有較低優先順序的佇列之前的所有其作業。|
-|-i \<DefaultPriority\>|指定指派給每一個列印工作的預設優先權。|
-|{+&#124;-}shared|指定是否在網路上共用這個印表機。|
-|{+&#124;-}direct|指定是否在文件應直接傳送到印表機沒有正在多工緩衝處理。|
-|{+&#124;-}published|指定是否應該在 active directory 中發佈此印表機。 如果您發佈印表機時，其他使用者可以搜尋會根據其位置與功能 （例如列印並裝訂的色彩）。|
-|{+&#124;-}hidden|保留的函式。|
-|{+&#124;-}rawonly|指定是否只有未經處理的資料列印工作可以多工緩衝處理這個佇列中。|
-|{+ &#124; -}queued|指定印表機應該開始後的最後一頁文件的多工緩衝處理，直到列印。 文件列印完成前無法使用列印的程式。 不過，使用此參數可確保整份文件可用於印表機。|
-|{+ &#124; -}keepprintedjobs|指定在列印之後，多工緩衝處理器是否應該保留文件。 啟用此選項可讓重新提交至印表機的文件，從列印佇列列印的程式而不是使用者。|
-|{+ &#124; -}workoffline|指定使用者是否能夠將列印工作傳送到列印佇列中，如果電腦未連線到網路。|
-|{+ &#124; -}enabledevq|指定 不符合印表機設定 （例如 PostScript 檔案多工緩衝處理到非 PostScript 的印表機） 的列印工作是否應該保留在佇列中而不是正在列印。|
-|{+ &#124; -}docompletefirst|指定的多工緩衝處理器是否應該傳送優先順序較低的列印工作已完成多工緩衝處理之前傳送具有較高的優先順序，但尚未完成多工緩衝處理列印工作。 如果啟用此選項時，任何文件已完成多工緩衝處理，多工緩衝處理器會將較大的文件傳送較小的之前。 如果您想要最大化印表機的效益，但代價是作業優先順序，應啟用此選項。 如果此選項會停用，多工緩衝處理器一律會傳送較高優先順序的工作到其各自的佇列第一次。|
-|{+ &#124; -}enablebidi|指定印表機是否會將狀態資訊傳送至多工緩衝處理器。|
+|-S \<ServerName @ no__t-1|指定裝載您要管理之印表機的遠端電腦名稱稱。 如果您未指定電腦，則會使用本機電腦。|
+|-P \<printerName @ no__t-1|指定您想要管理的印表機名稱。 必要。|
+|-z \<NewprinterName @ no__t-1|指定新的印表機名稱。 需要 **-x**和 **-P**參數。|
+|-u \<UserName @ no__t-1-w \<Password @ no__t-3|指定具有許可權可連接到裝載您要管理之印表機的電腦的帳戶。 目的電腦的本機系統管理員群組的所有成員都具有這些許可權，但也可以將許可權授與給其他使用者。 如果您未指定帳戶，您必須使用具有這些許可權的帳戶登入，命令才能正常執行。|
+|-r \<PortName @ no__t-1|指定印表機連接的埠。 如果這是平行或序列埠，請使用埠的識別碼（例如，LPT1 或 COM1）。 如果這是 TCP/IP 通訊埠，請使用新增埠時所指定的埠名稱。|
+|-l \<Location @ no__t-1|指定印表機位置，例如「複製房間」。|
+|-h \<Sharename @ no__t-1|指定印表機的共用名稱。|
+|-m \<Comment @ no__t-1|指定印表機的批註字串。|
+|-f \<SeparatorFileName @ no__t-1|指定包含 [分隔符號] 頁面上所顯示文字的檔案。|
+|-y \<Datatype @ no__t-1|指定印表機可以接受的資料類型。|
+|-st \<starttime @ no__t-1|設定印表機的可用性有限。 指定印表機可供使用的時間。 如果您在印表機無法使用時將檔傳送至印表機，則會保留檔（多工緩衝處理），直到印表機變成可用為止。 您必須將時間指定為24小時制。 例如，若要指定下午11:00，請輸入**2300**。|
+|-未通過 \<Endtime @ no__t-1|設定印表機的可用性有限。 指定無法再使用印表機的當日時間。 如果您在印表機無法使用時將檔傳送至印表機，則會保留檔（多工緩衝處理），直到印表機變成可用為止。 您必須將時間指定為24小時制。 例如，若要指定下午11:00，請輸入**2300**。|
+|-o \<Priority @ no__t-1|指定多工緩衝處理器用來將列印工作路由到列印佇列的優先權。 優先順序較高的列印佇列會在優先順序較低的任何佇列之前，接收其所有作業。|
+|-i \<DefaultPriority @ no__t-1|指定指派給每個列印工作的預設優先權。|
+|{+&#124;-} 共用|指定此印表機是否會在網路上共用。|
+|{+&#124;-} direct|指定是否要將檔直接傳送至印表機，而不需要進行多工緩衝處理。|
+|{+&#124;-} 已發行|指定此印表機是否應在 active directory 中發佈。 如果您發行印表機，其他使用者可以根據其位置和功能（例如色彩列印和裝訂）來搜尋它。|
+|{+&#124;-} 隱藏|保留的函式。|
+|{+&#124;-} rawonly|指定是否只有原始資料列印工作可以在此佇列中進行多工緩衝處理。|
+|{+ &#124; -} 已排入佇列|指定在檔的最後一頁為多工緩衝處理之前，印表機不應該開始列印。 列印程式在檔完成列印之前無法使用。 不過，使用此參數可確保印表機可使用整份檔。|
+|{+ &#124; -} keepprintedjobs|指定多工緩衝處理器在列印之後是否應保留檔。 啟用此選項可讓使用者從列印佇列將檔重新提交至印表機，而不是從列印程式。|
+|{+ &#124; -} workoffline|指定使用者是否能夠在電腦未連線到網路時，將列印工作傳送到列印佇列。|
+|{+ &#124; -} enabledevq|指定不符合印表機安裝程式的列印工作（例如，是否要將非 PostScript 印表機的 PostScript 檔案）保留在佇列中，而不是列印。|
+|{+ &#124; -} docompletefirst|指定多工緩衝處理器是否應該以較低的優先順序傳送已完成緩衝處理的列印工作，然後再以較高的優先順序（尚未完成多工緩衝）傳送列印工作。 若此選項已啟用，而且沒有任何檔完成緩衝處理，則多工緩衝處理器會在較小的檔之前傳送較大的檔。 如果您想要以作業優先順序的成本將印表機效率最大化，請啟用此選項。 如果停用此選項，則多工緩衝處理器一律會先將優先順序更高的作業傳送到其各自的佇列。|
+|{+ &#124; -} enablebidi|指定印表機是否將狀態資訊傳送至多工緩衝處理器。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   **Prncnfg**命令是 Visual Basic 指令碼位於 %WINdir%\System32\printing_Admin_Scripts\\ <language>目錄。 若要使用這個命令中，在命令提示字元中，輸入**cscript**後面 prncnfg 檔案或將目錄變更為適當的資料夾完整路徑。 例如: 
+-   **Prncnfg**命令是位於%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prncnfg 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg
     ```
--   如果您提供的資訊包含空格，請使用引號括住的文字 (例如`"computer Name"`)。
+-   如果您提供的資訊包含空格，請使用引號括住文字（例如，`"computer Name"`）。
 
-## <a name="BKMK_examples"></a>範例
-若要顯示名為 colorprinter_2 名為 HRServer 遠端電腦所裝載的列印佇列的印表機的組態資訊，請輸入：
+## <a name="BKMK_examples"></a>典型
+若要顯示名為 colorprinter_2 之印表機的設定資訊，以及名為 HRServer 的遠端電腦所主控的列印佇列，請輸入：
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
 ```
 
-若要設定印表機，名為 colorprinter_2，以便在名為 HRServer 遠端電腦中的多工緩衝處理器已經列印之後，會列印工作，請輸入：
+若要設定名為 colorprinter_2 的印表機，讓名為 HRServer 的遠端電腦中的多工緩衝處理器在列印之後保留列印工作，請輸入：
 ```
 cscript prncnfg -t -S HRServer -P colorprinter_2 +keepprintedjobs 
 ```
 
-若要變更的遠端電腦上的印表機名稱名為 HRServer 從 colorprinter_2 到 colorprinter 3，類型：
+若要將名為 HRServer 的遠端電腦上的印表機名稱從 colorprinter_2 變更為 colorprinter 3，請輸入：
 ```
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3" 
 ```
 
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[列印命令參考資料](print-command-reference.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+[列印命令參考](print-command-reference.md)

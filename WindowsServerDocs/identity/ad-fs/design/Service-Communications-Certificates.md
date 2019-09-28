@@ -7,40 +7,40 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b781d6fe99864b13d6e7f8ab65f3a14d205c2aa6
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 624d2e26bc0277129e44eee3fdce7c7396b735a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190801"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407901"
 ---
 # <a name="service-communications-certificates"></a>服務通訊憑證
 
-同盟伺服器需要服務通訊憑證的使用案例中使用 WCF 訊息安全性。  
+同盟伺服器需要在使用 WCF 訊息安全性的案例中使用服務通訊憑證。  
   
 ## <a name="service-communication-certificate-requirements"></a>服務通訊憑證需求  
-服務通訊憑證必須符合下列需求，才能與 AD FS 搭配運作：  
+服務通訊憑證必須符合下列需求，才能與 AD FS 搭配使用：  
   
--   服務通訊憑證必須包含伺服器驗證增強金鑰使用方式\(EKU\)延伸模組。  
+-   服務通訊憑證必須包含伺服器驗證的增強金鑰使用方法 \(EKU @ no__t-1 延伸模組。  
   
--   憑證撤銷清單\(Crl\)必須能夠在鏈結中的所有憑證從服務通訊憑證的根 CA 憑證。 也必須受到任何同盟伺服器 proxy 和信任此同盟伺服器的 Web 伺服器的信任根 CA。  
+-   從服務通訊憑證到根 CA 憑證的鏈中的所有憑證，都必須能夠存取憑證撤銷清單 \(CRLs @ no__t-1。 根 CA 也必須受到信任此同盟伺服器的任何同盟伺服器 proxy 和 Web 服務器所信任。  
   
--   用於服務通訊憑證的主體名稱必須符合 Federation Service 屬性中的 Federation Service 名稱。  
+-   服務通訊憑證中所用的主體名稱必須符合同盟服務屬性中的同盟服務名稱。  
   
-## <a name="deployment-considerations-for-service-communication-certificates"></a>服務通訊憑證的部署考量  
-設定服務通訊憑證，讓所有的同盟伺服器會使用相同的憑證。 如果您要部署同盟網頁單一\-號\-上\(SSO\)設計中，我們建議您的公用 CA 所簽發的您的服務通訊憑證。 您可以要求並安裝這些憑證，透過 IIS 管理員 嵌入式管理單元\-中。  
+## <a name="deployment-considerations-for-service-communication-certificates"></a>服務通訊憑證的部署考慮  
+設定服務通訊憑證，讓所有同盟伺服器都使用相同的憑證。 如果您要部署同盟 Web Single @ no__t-0Sign @ no__t-1On \(SSO @ no__t-3 設計，我們建議您的服務通訊憑證是由公用 CA 所發行。 您可以透過 IIS 管理員 snap @ no__t-0in 來要求並安裝這些憑證。  
   
-您可以使用自我\-簽署，服務通訊憑證，順利在測試實驗室環境中的同盟伺服器上。 不過，針對生產環境中，我們建議您從公用 CA 取得服務通訊憑證。 以下是的原因為何您不應該使用自我\-簽署，服務通訊憑證，進行即時部署：  
+您可以在測試實驗室環境中的同盟伺服器上，順利使用自我 @ no__t-0signed、服務通訊憑證。 不過，在生產環境中，我們建議您從公用 CA 取得服務通訊憑證。 以下是您不應該使用自我 @ no__t-0signed、適用于即時部署的服務通訊憑證的原因：  
   
--   自我\-簽署，SSL 憑證必須新增至每個資源夥伴組織中的同盟伺服器上的受信任的根存放區。 雖然這單獨不會啟用攻擊者危害資源同盟伺服器，信任自我\-簽署的憑證會增加電腦的攻擊面，以及它可能會導致安全性弱點如果憑證簽署人不值得信任。  
+-   您必須在資源夥伴組織中的每部同盟伺服器上，將自我 @ no__t-0signed、SSL 憑證新增至受信任的根存放區。 雖然這本身並不會讓攻擊者危害資源同盟伺服器，但信任的自我 @ no__t 0signed 憑證會增加電腦的攻擊面，如果憑證簽署者不是，則可能會導致安全性弱點trustworthy.  
   
--   它會建立不正確的使用者體驗。 用戶端將收到安全性警示的提示，當使用者試著存取同盟的資源會顯示下列訊息："安全性憑證是由您尚未選擇要信任公司核發。 」 這是預期的行為，因為自我\-簽署的憑證不受信任。  
+-   這會造成不正確的使用者體驗。 當用戶端嘗試存取顯示下列訊息的同盟資源時，將會收到安全性警示提示：「安全性憑證是由您未選擇信任的公司所發行。」 這是預期的行為，因為 self @ no__t-0signed 憑證不受信任。  
   
     > [!NOTE]  
-    > 如果有必要，您可以解決這種情況使用群組原則，以手動方式將資料放入自我\-簽署的憑證來存取 AD FS 網站會嘗試每個用戶端電腦上的受信任的根存放區。  
+    > 如有需要，您可以使用群組原則，手動將0signed 的自我 @ no__t 的憑證向下一部嘗試存取 AD FS 網站的用戶端電腦上的受根信任存放區，以解決這種情況。  
   
--   CAs 提供額外的憑證\-架構功能，例如私密金鑰保存、 更新，以及撤銷，不提供自我\-簽署憑證。  
+-   CAs 提供了自我 @ no__t 1signed 憑證未提供的額外憑證 @ no__t 0based 功能，例如私密金鑰封存、更新及撤銷。  
   
 

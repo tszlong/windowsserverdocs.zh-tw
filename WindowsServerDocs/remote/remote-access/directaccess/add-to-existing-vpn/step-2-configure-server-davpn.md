@@ -1,9 +1,9 @@
 ---
-title: 步驟 2 設定 DirectAccess VPN 伺服器
-description: 本主題是本指南新增 DirectAccess 加入現有的遠端存取 (VPN) 部署適用於 Windows Server 2016 的一部分
+title: 步驟2：設定 DirectAccess-VPN 伺服器
+description: 本主題是將 DirectAccess 新增至 Windows Server 2016 的現有遠端存取（VPN）部署指南的一部分
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,20 +12,20 @@ ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 83dfd5663a07bf10f7c27acb25d2dec9af3e7c7b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 7ee691a02df385e29bdac9656d50bc2c6d3af087
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281833"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388744"
 ---
-#  <a name="step-2-configure-the-directaccess-vpn-server"></a>步驟 2 設定 DirectAccess VPN 伺服器
+#  <a name="step-2-configure-the-directaccess-vpn-server"></a>步驟2：設定 DirectAccess-VPN 伺服器
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明如何使用啟用 DirectAccess 精靈，設定基本的遠端存取部署所需的用戶端與伺服器設定。
 
-下表提供您可以使用本主題來完成步驟的概觀。
+下表提供您可以使用本主題完成之步驟的總覽。
 
 |工作       |描述|
 |-----------|-----------|
@@ -36,49 +36,49 @@ ms.locfileid: "67281833"
 
 ## <a name="to-start-the-enable-directacces-wizard"></a>啟動啟用 DirectAcces 精靈
 
-1. 在 [伺服器管理員] 中，按一下**工具**，然後按一下**遠端存取**。除非您已選取，啟用 DirectAccess 精靈自動啟動**不要再顯示此畫面**。 
+1. 在伺服器管理員中，按一下 [**工具**]，然後按一下 [**遠端存取**]。除非您已選取 [不要**再顯示此畫面**]，否則會自動啟動 [啟用 DirectAccess Wizard]。 
 
-2. 如果精靈沒有自動啟動，以滑鼠右鍵按一下 路由及遠端存取樹狀目錄中的伺服器節點，然後按一下**啟用 DirectAccess**。
+2. 如果 wizard 不會自動啟動，請以滑鼠右鍵按一下 [路由及遠端存取] 樹狀目錄中的伺服器節點，然後按一下 [**啟用 DirectAccess**]。
 
-3. 按一下 [下一步]  。
+3. 按一下 [下一步]。
 
 ## <a name="configure-directaccess-clients"></a>設定 DirectAccess 用戶端
 
 要佈建來使用 DirectAccess 的用戶端電腦，必須屬於選取的安全性群組。 設定 DirectAccess 之後，會佈建安全性群組中的用戶端電腦以接收 DirectAccess 群組原則。
 
-1. 在 [選取群組]  頁面中，按一下 [新增]  。
+1. 在 [選取群組] 頁面中，按一下 [新增]。
 
-2. 在 [選取群組]  對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。
+2. 在 [選取群組] 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。
 
-3. 選取 [僅針對攜帶型電腦啟用 DirectAccess]  核取方塊，只允許攜帶型電腦存取內部網路。
+3. 選取 [僅針對攜帶型電腦啟用 DirectAccess] 核取方塊，只允許攜帶型電腦存取內部網路。
 
-4. 選取 [使用強制通道]  核取方塊，透過遠端存取伺服器路由所有用戶端流量 (到內部網路和到網際網路)。
+4. 選取 [使用強制通道] 核取方塊，透過遠端存取伺服器路由所有用戶端流量 (到內部網路和到網際網路)。
 
-5. 按一下 [下一步]  。
+5. 按一下 [下一步]。
 
 ## <a name="configure-the-network-topology"></a>設定網路拓撲
 
 若要部署遠端存取，您必須設定遠端存取伺服器，包括正確的網路介面卡、用戶端電腦可以連線到遠端存取伺服器的公用 URL (ConnectTo 位址)，以及其主體符合 ConnectTo 位址的 IP-HTTPS 憑證。
 
-1. 在 [網路拓撲]  頁面上，按一下要用於您組織的部署拓撲。 在 [輸入用戶端用於連線至遠端存取伺服器的公用名稱或 IPv4 位址]  、輸入部署的公用名稱 (此名稱符合 IP-HTTPS 憑證的主體名稱，例如，edge1.contoso.com)，然後按 [下一步]  。
+1. 在 [網路拓撲] 頁面上，按一下要用於您組織的部署拓撲。 在 [輸入用戶端用於連線至遠端存取伺服器的公用名稱或 IPv4 位址]、輸入部署的公用名稱 (此名稱符合 IP-HTTPS 憑證的主體名稱，例如，edge1.contoso.com)，然後按 [下一步]。
 
 ## <a name="configure-the-dns-suffix-search-list"></a>設定 DNS 尾碼搜尋清單
 
-對於 DNS 用戶端，您可以設定 DNS 網域尾碼搜尋清單來擴充或修訂其 DNS 搜尋能力。 您可以在清單中加入其他尾碼，搜尋多個指定的 DNS 網域中簡短、不完整的電腦名稱。 然後，如果 DNS 查詢失敗，DNS 用戶端服務可以使用這份清單到原來名稱附加其他名稱尾碼行尾結束符號，並針對這些替代 Fqdn 重複 DNS 查詢轉送到 DNS 伺服器。
+對於 DNS 用戶端，您可以設定 DNS 網域尾碼搜尋清單來擴充或修訂其 DNS 搜尋能力。 您可以在清單中加入其他尾碼，搜尋多個指定的 DNS 網域中簡短、不完整的電腦名稱。 然後，如果 DNS 查詢失敗，DNS 用戶端服務可以使用此清單，將其他名稱尾碼附加至原始名稱，並對 DNS 伺服器重複執行這些替代 Fqdn 的 DNS 查詢。
 
-1. 選取 [以 DNS 用戶端尾碼搜尋清單設定 DirectAccess 用戶端]  指定其他尾碼用於用戶端名稱搜尋。
+1. 選取 [以 DNS 用戶端尾碼搜尋清單設定 DirectAccess 用戶端] 指定其他尾碼用於用戶端名稱搜尋。
 
-2. 輸入新的尾碼名稱，在**新的後置詞**，然後按一下**新增**。 此外，您可以在 變更搜尋順序，並移除後的置詞從**若要使用的網域尾碼**。
+2. 在 [**新尾碼**] 中輸入新的尾碼名稱，然後按一下 [**加入**]。 此外，您也可以變更搜尋順序，並從**要使用的網域尾碼**移除尾碼。
 
->[注意]在不相鄰的命名空間案例\(其中一或多個網域電腦具有不符合電腦所屬 Active Directory 網域的 DNS 尾碼\)，您應該確保搜尋清單已自訂為包含所有必要的尾碼。 遠端存取精靈預設會將 Active Directory DNS 名稱設定為用戶端上的主要 DNS 尾碼。 系統管理員必須確定新增用戶端使用的 DNS 尾碼進行名稱解析。
+>下在脫離的命名空間案例中 \(where 一或多個網域電腦的 DNS 尾碼不符合電腦所屬的 Active Directory 網域 @ no__t-1，您應該確保搜尋清單已自訂為包含所有必要的一直. 遠端存取精靈預設會將 Active Directory DNS 名稱設定為用戶端上的主要 DNS 尾碼。 系統管理員必須確定新增用戶端使用的 DNS 尾碼進行名稱解析。
 
-對於電腦及伺服器，下列的預設 DNS 搜尋行為是預先決定的用於完成和解析簡短、 不完整的名稱。當尾碼搜尋清單是空的或未指定時，在電腦的主要 DNS 尾碼會附加至簡短的非限定的名稱，以及 DNS 查詢用來解析 FQDN 結果。 
+針對電腦和伺服器，會預先決定下列預設 DNS 搜尋行為，並在完成和解析簡短、不完整的名稱時使用。當尾碼搜尋清單是空的或未指定時，會將電腦的主要 DNS 尾碼附加至簡短的不完整名稱，並使用 DNS 查詢來解析結果 FQDN。 
 
-如果此查詢失敗時，電腦附加的網路連線設定任何連線特定 DNS 尾碼，可以嘗試其他查詢以尋找替代的 Fqdn。如果不設定任何連線特定尾碼，或查詢的這些結果的特定連線的 Fqdn 無法通過，則用戶端可以接著開始將重試逐次減少主要尾碼 （也稱為轉移） 為基礎的查詢。
+如果此查詢失敗，電腦可以附加針對網路連線所設定的任何連線特定 DNS 尾碼，以嘗試其他查詢替代 Fqdn。如果未設定任何連線特定的尾碼，或這些結果連接特定的 Fqdn 的查詢失敗，則用戶端就可以開始根據系統化的主要尾碼（也稱為轉移）來重試查詢。
 
-比方說，如果主要尾碼是"example.microsoft.com"，轉移程序可以重試查詢簡短名稱藉由在"microsoft.com"與"com"網域中搜尋它。
+例如，如果主要尾碼為 "example.microsoft.com"，則轉移程式可以在 "microsoft.com" 和 "com" 定義域中搜尋，以重試簡短名稱的查詢。
 
-當尾碼搜尋清單不是空的至少有一個指定 DNS 尾碼，嘗試檢查和解析簡短的 DNS 名稱僅限於搜尋只在指定的尾碼清單即可達成的 Fqdn。 
+當尾碼搜尋清單不是空的，而且至少指定了一個 DNS 尾碼時，就只會搜尋指定尾碼清單中所提供的 Fqdn，以嘗試限定及解析簡短 DNS 名稱。 
 
 如果查詢附加以及嘗試清單中每個尾碼的結果所組成的所有 FQDN 都無法解析，查詢程序會失敗，並產生「 找不到名稱 」的結果。 
 
@@ -89,16 +89,16 @@ ms.locfileid: "67281833"
 
 ## <a name="gpo-configuration"></a>GPO 設定
 
-當您設定遠端存取時，DirectAccess 設定會收集到群組原則物件 (GPO)。 
+當您設定「遠端存取」時，DirectAccess 設定會收集到群組原則物件（GPO）中。 
 
-在  **GPO 設定**，列出 DirectAccess 伺服器 GPO 名稱與用戶端 GPO 名稱。 此外，您可以修改 GPO 選擇設定。
+在 [ **GPO 設定**] 中，會列出 DIRECTACCESS 伺服器 GPO 名稱和用戶端 GPO 名稱。 此外，您可以修改 GPO 選擇設定。
 
-兩個 Gpo 會自動填入 DirectAccess 設定，並以這種方式分配：
+系統會使用 DirectAccess 設定自動填入兩個 Gpo，並以這種方式散發：
 
 1. **DirectAccess 用戶端 GPO**。 這個 GPO 包含用戶端設定，包括 IPv6 轉換技術設定、NRPT 項目，以及「具有進階安全性的 Windows 防火牆」連線安全性規則。 這個 GPO 會套用到為用戶端電腦指定的安全性群組。
 
-2. **DirectAccess 伺服器 GPO**。 這個 GPO 包含 DirectAccess 組態設定會套用到設定為遠端存取伺服器部署中的任何伺服器。 它也包含「具有進階安全性的 Windows 防火牆」連線安全性規則。
+2. **DirectAccess 伺服器 GPO**。 此 GPO 包含 DirectAccess 設定，可套用至在部署中設定為遠端存取服務器的任何伺服器。 它也包含「具有進階安全性的 Windows 防火牆」連線安全性規則。
 
 ## <a name="summary"></a>總結
 
-遠端存取設定完成後**摘要**隨即出現。 您可以變更設定的設定，或按一下**完成**套用設定。
+完成「遠端存取」設定之後，就會顯示 [**摘要**]。 您可以變更已設定的設定，或按一下 **[完成]** 套用設定。

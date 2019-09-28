@@ -4,16 +4,16 @@ description: Capolicy.inf 包含各種設定，在安裝 Active Directory 憑證
 manager: alanth
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fb2e25dcd27ed3046eeeb444a9f167ccff6e1dd3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 810f6f8ba9e33f1f26f49f542ad6d23819deb463
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868955"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406284"
 ---
 # <a name="capolicyinf-syntax"></a>Capolicy.inf .inf 語法
 >   適用於：Windows Server (半年度管道)、Windows Server 2016
@@ -42,7 +42,7 @@ Capolicy.inf 可以指定及設定各種不同的 CA 屬性和選項。 下一�
 
 -   _Value_ –是參數，並出現在等號的右邊。
 
-在下列範例中， **[Version]** 是區段， **Signature**是 key，而 **"\$Windows\$NT"** 是值。
+在下列範例中， **[Version]** 是區段， **Signature**是 key，而 **"@no__t 3Windows NT @ no__t-4"** 是值。
 
 範例：
 

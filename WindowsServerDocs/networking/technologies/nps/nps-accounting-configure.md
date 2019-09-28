@@ -2,19 +2,19 @@
 title: 設定網路原則伺服器計量
 description: 本主題提供有關 Windows Server 2016 中網路原則伺服器的文字檔和 SQL Server 記錄的資訊。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: dfde2e21-f3d5-41e8-8492-cb3f0d028afb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/25/2018
-ms.openlocfilehash: f16e4093ed58f2a2fadc4b9faa1fa42c0c157ca3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0c154d4d4534f4c343107eecd158974b92903e39
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871899"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405569"
 ---
 # <a name="configure-network-policy-server-accounting"></a>設定網路原則伺服器計量
 
@@ -55,7 +55,7 @@ ms.locfileid: "70871899"
 
 - 若要傳送另一個進程所收集的記錄檔資料，您可以設定 NPS 以寫入具名管道。 若要使用具名管道，請將記錄檔資料夾\\設定為\\成 .\pipe 或 ComputerName\pipe。 具名管道伺服器程式會建立名為\\.\pipe\iaslog.log 的具名管道，以接受資料。 在 [本機檔案屬性] 對話方塊的 [建立新的記錄檔] 中，選取 [永不（不限檔案大小）] （當您使用具名管道時）。
 
-- 您可以使用系統內容變數（而不是使用者變數）來建立記錄檔目錄，例如% systemdrive%、% systemroot% 和% windir%。 例如，使用環境變數% windir% 的下列路徑，會在子資料夾 \System32\Logs （也就是%windir%\System32\Logs\)）中尋找系統目錄的記錄檔。
+- 您可以使用系統內容變數（而不是使用者變數）來建立記錄檔目錄，例如% systemdrive%、% systemroot% 和% windir%。 例如，下列使用環境變數% windir% 的路徑，會在子資料夾 \System32\Logs 中尋找系統目錄的記錄檔（也就是%windir%\System32\Logs @ no__t-0）。
 
 - 切換記錄檔格式並不會建立新的記錄檔。 如果您變更記錄檔格式，在變更時使用中的檔案將會包含兩種格式的混合（記錄開頭的記錄會有先前的格式，而且記錄檔結尾的記錄會有新的格式）。
 

@@ -1,37 +1,37 @@
 ---
 ms.assetid: e7f9e518-2d5d-4a0d-9147-34e1304f42ac
-title: 檢查清單-設定使用 AD fs 的宣告的 AD FS 1.x
+title: 檢查清單-設定 AD FS 以使用來自 AD FS 1.x 的宣告
 description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 41a71ff49d211d294768c0e4a55692ced3f2d844
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1c952abc0bca5eadbfc14f3eda54d05826d50294
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192455"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408487"
 ---
-# <a name="checklist-configuring-ad-fs--to-consume-claims-from-ad-fs-1x"></a>檢查清單：設定 AD FS 使用宣告從 AD FS 1.x
+# <a name="checklist-configuring-ad-fs--to-consume-claims-from-ad-fs-1x"></a>檢查清單：設定 AD FS 從 AD FS 1.x 使用宣告
 
   
-## <a name="checklist-configuring-ad-fs-to-consume-claims-from-adfs1x"></a>檢查清單：設定 AD FS 使用宣告從 AD FS 1.x  
-此檢查清單包含設定 Active Directory 同盟服務所需的工作\(AD FS\) Windows Server 2012 使用 AD FS 1 所傳送的宣告中的 Federation Service。*x* Federation Service。  
+## <a name="checklist-configuring-ad-fs-to-consume-claims-from-adfs1x"></a>檢查清單：設定 AD FS 從 AD FS 1.x 使用宣告  
+此檢查清單包含在 Windows Server 2012 中設定您的 Active Directory 同盟服務 @no__t 0AD FS @ no__t-1 同盟服務所需的工作，以取用 AD FS 1 所傳送的宣告。*x*同盟服務。  
   
 > [!NOTE]  
 > 請依序完成此檢查清單中的工作。 當某個參考連結帶您進入某個程序時，請在完成該程序中的步驟之後返回本主題，讓您可以繼續進行此檢查清單中其餘的工作。  
   
-![使用從 AD FS 的宣告](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**檢查清單：設定 AD FS 使用宣告從 AD FS 1.x**  
+來自 AD FS @ no__t-1Checklist 的 @no__t 0consume 宣告：設定 AD FS 從 AD FS 1.x @ no__t 使用宣告-0  
   
 ||工作|參考資料|  
 |-|--------|-------------|  
-|![使用從 AD FS 的宣告](media/icon_checkboxo.gif)|規劃 Windows Server 2012 中的 AD FS 與舊版的 AD FS 之間的互通性，並了解名稱識別碼宣告類型。|![使用從 AD FS 的宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃互通性與 AD FS 1.x](https://technet.microsoft.com/library/ff678040.aspx)|  
-|![使用從 AD FS 的宣告](media/icon_checkboxo.gif)|您可以與舊版 AD FS 的交互操作之前，您必須先建立 AD FS Federation Service 中的宣告提供者信任。 **注意：** 您無法建立信任關係，與 AD FS 1。*x* Federation Service 使用同盟中繼資料。<br /><br />當您設定信任使用右邊的連結中的程序時，您必須執行下列中新增宣告提供者信任精靈 來設定此信任的 AD FS 1 與交互操作。*x* Federation Service:<br /><br />1.在 **選取資料來源**頁面上，選取**輸入資料的相關信賴憑證者合作對象信任手動**。<br />2.在 **選擇設定檔**頁面上，選取**AD FS 1.0 和 1.1 設定檔**。<br />3.在 **設定 URL**頁面的  **WS\-同盟被動式 URL**，型別**Federation Service 端點 URL** AD FS 1 中所定義。*x*協力廠商同盟服務。<br />4.在 **設定識別碼**頁面的 **宣告提供者信任識別碼**，型別**Federation Service URI** AD FS 1 中所定義。*x*協力廠商同盟服務。|![使用從 AD FS 的宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[宣告提供者信任手動建立](../../ad-fs/operations/Create-a-Claims-Provider-Trust.md)|  
-|![使用從 AD FS 的宣告](media/icon_checkboxo.gif)|在您稍早建立的宣告提供者信任，您必須建立宣告規則，會從 AD FS 的連入宣告 1.x Federation Service 和通過，篩選，或將它們轉換成名稱識別碼宣告類型。<br /><br />當名稱識別碼宣告類型已傳遞、 經過篩選，或轉換，它可用來當做輸入到另一個規則或規則，以便了解並由 Windows Server 2012 中 AD FS Federation Service。|![使用從 AD FS 的宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[建立規則來傳送 AD FS 1.x 相容的宣告](../../ad-fs/operations/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim.md)|  
-|![使用從 AD FS 的宣告](media/icon_checkboxo.gif)|請連絡系統管理員的 AD FS 1。*x* Federation Service 與 AD FS 1 的系統管理員。*x* Federation Service 設定新的資源夥伴信任。 此外，將該系統管理員提供 Federation Service URI\(中的同盟服務屬性\)，Federation Service 端點 URL，以及匯出的語彙基元\-簽署憑證檔案\(與僅限公開金鑰\)。 系統管理員必須設定信任這些項目。|N\/A|  
+|![使用來自 AD FS 的宣告](media/icon_checkboxo.gif)|規劃 Windows Server 2012 中 AD FS 與舊版 AD FS 之間的互通性，並深入瞭解名稱識別碼宣告類型。|@no__t 0consume 從 AD FS](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃與 AD FS 1.x 的互通性](https://technet.microsoft.com/library/ff678040.aspx)的宣告|  
+|![使用來自 AD FS 的宣告](media/icon_checkboxo.gif)|在您可以與舊版 AD FS 互通之前，您必須先在 AD FS 同盟服務中建立宣告提供者信任。 **注意：** 您無法使用 AD FS 1 建立信任。使用同盟中繼資料的*x*同盟服務。<br /><br />當您使用右側連結中的程式來設定信任時，您必須在 [新增宣告提供者信任] 嚮導中執行下列動作，以設定此信任與 AD FS 1 交互操作。*x*同盟服務：<br /><br />1.在 [**選取資料來源**] 頁面上，選取 **[手動輸入信賴憑證者信任的相關資料**]。<br />2.在 [**選擇設定檔**] 頁面上，選取 [ **AD FS 1.0 和1.1 設定檔**]。<br />3.在 [**設定 URL** ] 頁面的 [ **WS @ No__t-2Federation 被動 URL**] 底下，輸入 AD FS 1 中所定義的**同盟服務端點 URL** 。合作夥伴的*x*同盟服務。<br />4.在 [**設定識別碼**] 頁面的 [**宣告提供者信任識別碼**] 底下，輸入 AD FS 1 中所定義的**同盟服務 URI** 。合作夥伴的*x*同盟服務。|@no__t 0consume 從 AD FS](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[手動建立宣告提供者信任](../../ad-fs/operations/Create-a-Claims-Provider-Trust.md)的宣告|  
+|![使用來自 AD FS 的宣告](media/icon_checkboxo.gif)|在您稍早建立的宣告提供者信任上，您必須建立一個宣告規則，以接受從 AD FS 1.x 同盟服務傳入的宣告，並將它們傳遞、篩選或轉換成名稱識別碼宣告類型。<br /><br />當名稱識別碼宣告類型已通過、篩選或轉換時，可以用來做為另一個規則或規則的輸入，以便在 Windows Server 2012 中的 AD FS 同盟服務加以瞭解和使用。|從 AD FS @no__t 0consume 宣告](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[建立規則以傳送 AD FS 1.X 相容](../../ad-fs/operations/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim.md)宣告|  
+|![使用來自 AD FS 的宣告](media/icon_checkboxo.gif)|請洽詢 AD FS 1 的系統管理員。*x*同盟服務並具有 AD FS 1 的系統管理員。*x*同盟服務設定新的資源夥伴信任。 此外，請提供該系統管理員同盟服務 URI \(in 同盟服務屬性 @ no__t-1、同盟服務端點 URL，以及匯出的 token @ no__t 2signing 憑證檔案 \(with 公開金鑰 only @ no__t-4。 系統管理員將需要這些專案來設定信任。|N\/A|  
   
 

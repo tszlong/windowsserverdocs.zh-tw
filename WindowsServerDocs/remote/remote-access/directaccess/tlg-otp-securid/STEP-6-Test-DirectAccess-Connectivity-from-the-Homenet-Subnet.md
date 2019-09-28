@@ -1,9 +1,9 @@
 ---
-title: 從家用網路的子網路的步驟 6 的測試 DirectAccess 連線
-description: 本主題是測試實驗室指南-使用 OTP 驗證和 RSA SecurID for Windows Server 2016 的示範 DirectAccess 的一部分
+title: 步驟6從 Homenet 子網測試 DirectAccess 連線能力
+description: 本主題屬於測試實驗室指南-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,56 +12,56 @@ ms.topic: article
 ms.assetid: b9b77cfd-8dd4-476b-a118-f3d6bf59e7b1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c19376b7301068639ba1315af5e9f5a9a4514b3b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9cce81998c6041aea223da29979a53d6069f599c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283059"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404748"
 ---
-# <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>從家用網路的子網路的步驟 6 的測試 DirectAccess 連線
+# <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>步驟6從 Homenet 子網測試 DirectAccess 連線能力
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-現在已完成 DirectAccess 單次密碼 (OTP) 部署，您可以開始測試從家用網路的子網路的連線。  
+DirectAccess 一次性密碼（OTP）部署現在已完成，您可以開始測試來自 Homenet 子網的連線能力。  
   
-### <a name="to-test-otp-functionality-from-the-homenet-subnet-on-client1"></a>若要測試從 CLIENT1 上的家用網路子網路的 OTP 功能  
+### <a name="to-test-otp-functionality-from-the-homenet-subnet-on-client1"></a>從 CLIENT1 上的 Homenet 子網測試 OTP 功能  
   
-1. 在 CLIENT1 上，確定您以登入**User1**。  
+1. 在 CLIENT1 上，請確定您是以**User1**身分登入。  
   
-2. 在上**開始**畫面上，輸入**powershell.exe**，以滑鼠右鍵按一下**powershell**，按一下 **進階**，然後按一下 **執行以系統管理員身分**。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+2. 在 [**開始**] 畫面上，輸入**powershell**，以滑鼠右鍵按一下 [ **powershell**]，然後按一下 [ **Advanced**]，再按一下 [以**系統管理員身分執行**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
   
-3. 在 Windows PowerShell 視窗中，輸入**gpupdate /force**，然後按 ENTER。  
+3. 在 Windows PowerShell 視窗中，輸入**gpupdate/force**，然後按 enter。  
   
-4. 拔除 CLIENT1 從公司網路子網路，並將它連線到家用網路的子網路。  
+4. 從公司網路子網中拔下 CLIENT1，並將它連線到 Homenet 子網。  
   
-5. 在 CLIENT1 上，開啟 Internet Explorer 中，並在 [網址] 列中，輸入 **https://app1.corp.contoso.com/** 按 ENTER 鍵。 按 F5。  
+5. 在 CLIENT1 上開啟 Internet Explorer，然後在網址列中輸入 **https://app1.corp.contoso.com/** ，然後按 enter 鍵。 按 F5。  
   
-   不應該開啟網站。  
+   網站不應開啟。  
   
-6. 在上**開始**畫面上，輸入**RSA**，然後按一下**RSA SecurID 權杖**。  
+6. 在 [**開始**] 畫面上，輸入**rsa**，然後按一下 [ **rsa SecurID Token**]。  
   
-7. 等候直到 RSA SecurID 權杖變成單次密碼，然後按**複製**。  
+7. 等待 RSA SecurID 權杖變更一次性密碼，然後按一下 [**複製**]。  
   
-8. 按一下通知區域中的 [網路連線]  圖示來存取 DA 媒體管理員。  
+8. 按一下通知區域中的 [網路連線] 圖示來存取 DA 媒體管理員。  
   
-9. 按一下  **Contoso 的 DirectAccess 連線**，然後按一下**繼續**。  
+9. 按一下 [ **Contoso DirectAccess 連接**]，然後按一下 [**繼續**]。  
   
-10. 按下控制項 + Alt + Delete，然後按一下**單次密碼 (OTP)** 圖格。  
+10. 按 Ctrl + Alt + Delete，然後按一下 [單次**密碼（OTP）** ] 磚。  
   
-11. 貼上先前複製的八個位數 tokencode，然後按一下**確定**。 等候要完成驗證。 DirectAccess 「 工作地方連線狀態就會變成**Connected**。  
+11. 貼上先前複製的八個數字權杖，然後按一下 **[確定]** 。 等待驗證完成。 DirectAccess 工作場所線上狀態現在將會**連接**。  
   
-12. 在 Internet Explorer 網址列中輸入 **https://app1.corp.contoso.com/** 按 ENTER 鍵。 按 F5。 您將會看到 APP1 上的預設 IIS 網站。  
+12. 在 Internet Explorer 的網址列中，輸入 **https://app1.corp.contoso.com/** ，然後按 enter 鍵。 按 F5。 您將會看到 APP1 上的預設 IIS 網站。  
   
-13. 在 Internet Explorer 網址列中，輸入 **https://app2.corp.contoso.com/** 按 ENTER 鍵。 按 F5。 您會看到預設 IIS 網站 APP2 上。  
+13. 在 Internet Explorer 網址列中，輸入 **https://app2.corp.contoso.com/** ，然後按 enter。 按 F5。 您會在 APP2 上看到預設的 IIS 網站。  
   
-14. 在 **開始**畫面上，輸入<strong>\\\app1\files</strong>，然後按 ENTER。  
+14. 在 [**開始**] 畫面上，輸入<strong>\\ \ app1\files</strong>，然後按 enter。  
   
-15. 在 [**檔案**共用的資料夾] 視窗中，按兩下**Example.txt**檔案。 您會看到 Example.txt 檔案的內容。  
+15. **在 [檔案共用資料夾**] 視窗中，按兩下**範例 .txt**檔案。 您會看到範例 .txt 檔案的內容。  
   
-16. 在 **開始**畫面上，輸入<strong>\\\app2\files</strong>，然後按 ENTER。  
+16. 在 [**開始**] 畫面上，輸入<strong>\\ \ app2\files</strong>，然後按 enter。  
   
-17. 在 [**檔案**共用的資料夾] 視窗中，按兩下**新文字.txt**檔案。 您會看到新的文字.txt 檔案的內容。  
+17. 在 [檔案共用資料夾] 視窗中，按兩下新的 [**檔**] [ **txt** ] 檔案。 您會看到新的文字檔 .txt 檔案的內容。  
   
 
 

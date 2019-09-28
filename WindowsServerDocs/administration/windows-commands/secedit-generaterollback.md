@@ -1,8 +1,8 @@
 ---
-title: Secedit:generaterollback
-description: '適用於 Windows 命令主題 * * *- '
+title: secedit： generaterollback
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa655d80c2698430827ad814c2b476e526529323
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3ce4bd83e6eda24c10f65bd9d450a204906ff7fd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384217"
 ---
-# <a name="seceditgeneraterollback"></a>Secedit:generaterollback
+# <a name="seceditgeneraterollback"></a>secedit： generaterollback
 
 
 
-可讓您產生指定的組態範本的復原範本。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+可讓您為指定的設定範本產生復原範本。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,25 +36,25 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 |參數|描述|
 |---------|-----------|
-|db|必要。</br>指定包含分析執行的預存的組態資料庫的路徑和檔案名稱。</br>如果檔案名稱指定的資料庫，尚未與其建立關聯的安全性範本 （如由組態檔），`/cfg \<configuration file name>`也必須指定命令列選項。|
-|cfg|必要。</br>指定將匯入資料庫中進行分析的安全性範本的路徑和檔案名稱。</br>此 /cfg 選項只適用於搭配使用時`/db \<database file name>`參數。 如果未指定此項目，是分析會執行任何已儲存在資料庫中的設定。|
-|rbk|必要。</br>指定要寫入復原資訊的安全性範本。 安全性範本會建立使用安全性範本嵌入式管理單元。 使用下列命令，可以建立復原檔案。|
-|記錄檔|選擇性。</br>指定處理程序的記錄檔路徑和檔案名稱。|
-|無訊息|選擇性。</br>隱藏畫面和記錄檔的輸出。 您仍然可以使用 安全性設定及分析嵌入式管理單元 Microsoft Management Console (MMC) 來檢視分析結果。|
+|db|必要。</br>指定資料庫的路徑和檔案名，其中包含將執行分析的儲存設定。</br>如果 [檔案名] 指定的資料庫沒有與其相關聯的安全性範本（如設定檔所表示），則`/cfg \<configuration file name>`也必須指定命令列選項。|
+|cfg|必要。</br>指定將匯入至資料庫以進行分析之安全性範本的路徑和檔案名。</br>只有在搭配`/db \<database file name>`參數使用時，此/cfg 選項才有效。 如果未指定此項，則會針對已經儲存在資料庫中的任何設定來執行分析。|
+|rbk|必要。</br>指定要在其中寫入復原資訊的安全性範本。 安全性範本是使用 [安全性範本] 嵌入式管理單元所建立。 您可以使用此命令來建立回復檔案。|
+|log|選擇性。</br>指定進程之記錄檔的路徑和檔案名。|
+|無訊息|選擇性。</br>隱藏螢幕和記錄輸出。 您仍然可以使用 Microsoft Management Console （MMC）的 [安全性設定及分析] 嵌入式管理單元來查看分析結果。|
 
 ## <a name="remarks"></a>備註
 
-如果記錄檔的路徑未提供，預設的記錄檔 (*systemroot*\Users \*UserAccount<em>\My Documents\Security\Logs\*DatabaseName</em>.log) 會使用。
+如果未提供記錄檔的路徑，則會使用預設記錄檔（*systemroot*\Users \*UserAccount<em>\My Documents\Security\Logs\*DatabaseName</em>.log）。
 
-從 Windows Server 2008、windows`Secedit /refreshpolicy`已取代為`gpupdate`。 如需如何重新整理的安全性設定資訊，請參閱[Gpupdate](gpupdate.md)。
+從 Windows Server 2008 開始， `Secedit /refreshpolicy`已`gpupdate`取代為。 如需有關如何重新整理安全性設定的詳細資訊，請參閱[Gpupdate](gpupdate.md)。
 
-成功執行此命令將狀態 」 工作已順利完成。 」 與記錄檔僅所述的安全性範本與安全性原則設定之間不相符。 它會列出這些在安全性不符。
+成功執行此命令將會出現「工作已順利完成」。 和只會記錄所指定安全性範本與安全性原則設定之間的不符。 它會在 scesrv.dll 中列出這些不符的情況。
 
-如果指定現有的復原範本，則此命令會覆寫它。 您可以使用下列命令來建立新的復原範本。 沒有額外的參數所需的其中一個條件。
+如果指定了現有的復原範本，此命令將會覆寫它。 您可以使用此命令來建立新的復原範本。 任一條件都不需要任何其他參數。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-建立使用 「 安全性設定及分析嵌入式管理單元，SecTmplContoso.inf，安全性範本之後建立復原組態檔來儲存原始設定。 寫出至 FY11 記錄檔的動作。
+使用 [安全性設定及分析] 嵌入式管理單元建立安全性範本之後，SecTmplContoso 建立復原設定檔以儲存原始設定。 將動作寫出至 FY11 記錄檔。
 ```
 Secedit /generaterollback /db C:\Security\FY11\SecDbContoso.sdb /cfg sectmplcontoso.inf /rbk sectmplcontosoRBK.inf /log C:\Security\FY11\SecAnalysisContosoFY11.log
 ```

@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a9a043390f5bfb412e549779ed4a9048d1c8a0b5
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e5f1fad340629304fdf960139be05b8dbc2690e0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407771"
 ---
 # <a name="add-home-link"></a>新增首頁連結 
 
-若要新增登顯示的首頁連結\-在頁面上，使用下列 Windows PowerShell cmdlet 和語法。 
+若要新增 [正負號 @ no__t-0in] 頁面上顯示的首頁連結，請使用下列 Windows PowerShell Cmdlet 和語法。 
 
 
-![新增首頁連結](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
+![新增主連結](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
   
 
 `Set-AdfsGlobalWebContent -HomeLink https://fs1.contoso.com/home/ -HomeLinkText Home ` 
  
   
 > [!IMPORTANT]  
-> 此 Cmdlet 的 `linkText` 並非必要參數，除非您使用其他值，而不是預設的 *Home*。 使用預設的優點是會根據所有用戶端地區設定來當地語系化。 號後面\-頁面中為自訂，自訂會有優先順序; 因此，您應該自訂您想要支援的所有語言。
+> 此 Cmdlet 的 `linkText` 並非必要參數，除非您使用其他值，而不是預設的 *Home*。 使用預設的優點是會根據所有用戶端地區設定來當地語系化。 自訂 [正負號 @ no__t-0in] 頁面之後，自訂的優先順序會較高;因此，您應該針對您想要支援的所有語言進行自訂。
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

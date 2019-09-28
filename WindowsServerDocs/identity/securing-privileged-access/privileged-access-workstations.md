@@ -1,7 +1,7 @@
 ---
-title: 為什麼特殊權限存取工作站可協助保護您的組織
-description: PAW 如何增加您組織的安全性狀態
-ms.prod: windows-server-threshold
+title: 為何特殊許可權存取工作站可以協助保護您的組織
+description: PAW 可以如何增加貴組織的安全性狀態
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 93589778-3907-4410-8ed5-e7b6db406513
 ms.date: 03/13/2019
@@ -9,38 +9,38 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 9ac591d65fb84f3c0a8bbd33ca71c93daf892ced
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 29e3785d1c004d669e0060854acb6af1d2953644
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280733"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357922"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 
 >適用於：Windows Server
 
-特殊權限存取工作站 (PAW) 會針對機密工作，提供一個可免受網際網路攻擊和威脅影響的專用作業系統。 將這些機密工作和帳戶與日常使用的工作站和裝置提供非常強大的防護免於網路釣魚攻擊、 應用程式和作業系統弱點、 各種模擬攻擊和認證竊取攻擊，例如按鍵輸入記錄[Pass Pass-the-hash](https://aka.ms/pth)，和傳遞票證。
+特殊權限存取工作站 (PAW) 會針對機密工作，提供一個可免受網際網路攻擊和威脅影響的專用作業系統。 將這些機密工作和帳戶與每日使用的工作站和裝置分開，可提供非常強大的保護，防範網路釣魚攻擊、應用程式和作業系統弱點、各種模擬攻擊，以及認證竊取攻擊（例如擊鍵）記錄、[傳遞雜湊](https://aka.ms/pth)和傳遞票證。
 
-## <a name="what-is-a-privileged-access-workstation"></a>什麼是特殊權限存取工作站？
+## <a name="what-is-a-privileged-access-workstation"></a>什麼是特殊許可權存取工作站？
 
 簡單地說，PAW 是一個經過強化且已鎖定的工作站，其設計是為了針對機密帳戶和工作提供高安全性保證。  對於身分識別系統、雲端服務和私人雲端網狀架構的系統管理，以及機密的商務功能，建議使用 PAW。
 
 > [!NOTE]
 > PAW 架構不需要帳戶與工作站的 1:1 對應，但這是一般設定。 PAW 會建立可由一個或多個帳戶所使用的受信任工作站環境。
 
-為了提供最大的安全性，Paw 應該一律執行最新且最安全作業系統可用：Microsoft 強眴呤 Windows 10 企業版，其中包含不適用於其他版本的幾個額外的安全性功能 (特別是， [Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx)並[Device Guard](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx))。
+為了提供最大的安全性，Paw 應該一律執行最新且安全的作業系統：Microsoft 強烈建議使用 Windows 10 企業版，其中包含其他版本未提供的多項額外安全性功能（尤其是[Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx)和[Device guard](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx)）。
 
 > [!NOTE]
 > 無法存取 Windows 10 企業版的組織可以使用 Windows 10 專業版，其中包含 PAW 的許多重要基本技術，包括信任式開機、BitLocker 和遠端桌面。  教育客戶可以使用 Windows 10 教育版。  Windows 10 家用版不應用於 PAW。
 >
 > 如需不同版本 Windows 10 的比較表，請參閱[本文](https://www.microsoft.com/en-us/WindowsForBusiness/Compare)。
 
-PAW 安全性控制項著重緩和影響和高機率的危害的風險。 這些包括緩和攻擊的環境和風險，可能會降低 PAW 控制項經過一段時間的成效：
+PAW 安全性控制項的重點在於降低受到危害的高影響力和高機率風險。 其中包括減輕對環境的攻擊，以及可能降低 PAW 控制項的效率的風險：
 
 * **網際網路攻擊** - 大部分的攻擊都直接或間接地源自於網際網路來源，並使用網際網路進行命令和控制項的滲透 (C2)。 將 PAW 與開放式網際網路隔開是確保 PAW 不會受到危害的關鍵要素。
-* **可用性風險** - 如果 PAW 太困難而無法用於日常工作，系統管理員就會想建立因應措施，讓他們的工作更輕鬆。 通常這些因應措施會使系統管理工作站和帳戶暴露在明顯的安全性風險之下，因此，要求並授權 PAW 使用者安全地緩和這些可用性問題相當重要。 這可藉由接聽他們的意見反應中，然後再安裝工具和執行他們的工作，並確保所有系統管理人員所需的指令碼會留意為什麼他們需要使用 PAW、 什麼是 PAW，以及如何正確且成功使用它。
-* **環境風險** - 由於環境中的其他許多電腦和帳戶直接或間接地暴露在網際網路風險之下，因此必須保護 PAW 免於在實際執行環境中遭受來自受危害資產的攻擊。 這需要管理工具和可保護及監視這些專業的工作站 Paw 的存取帳戶的使用降至最低。
+* **可用性風險** - 如果 PAW 太困難而無法用於日常工作，系統管理員就會想建立因應措施，讓他們的工作更輕鬆。 通常這些因應措施會使系統管理工作站和帳戶暴露在明顯的安全性風險之下，因此，要求並授權 PAW 使用者安全地緩和這些可用性問題相當重要。 這可以透過接聽其意見反應、安裝執行其工作所需的工具和腳本來完成，並確保所有系統管理人員都知道他們為何需要使用 PAW、什麼是 PAW，以及如何正確且成功地使用它。
+* **環境風險** - 由於環境中的其他許多電腦和帳戶直接或間接地暴露在網際網路風險之下，因此必須保護 PAW 免於在實際執行環境中遭受來自受危害資產的攻擊。 這需要將可存取 Paw 的管理工具和帳戶的使用降到最低，以保護和監視這些特定的工作站。
 * **供應鏈竄改** - 無法在軟硬體的供應鏈中移除竄改的所有可能風險時，採取幾個關鍵動作可緩和攻擊者現成可用的重要攻擊方式。 這包括驗證所有安裝媒體的完整性 ([乾淨來源準則](https://aka.ms/cleansource))，以及使用受信任且信譽良好的軟硬體供應商。
 * **實體攻擊** - 由於 PAW 可能在實體上可以移動，且可在實體上安全的設施外部使用，因此必須受到保護，以免遭到對電腦運用未授權實體存取的攻擊。
 
@@ -54,17 +54,17 @@ PAW 安全性控制項著重緩和影響和高機率的危害的風險。 這些
 
 ### <a name="paw-hardware-profiles"></a>PAW 硬體設定檔
 
-系統管理人員也是標準使用者，他們需要 PAW，以及標準使用者工作站來檢查電子郵件、 瀏覽網頁，以及存取公司的企業營運應用程式。  確保系統管理員可以同時保持生產力與安全性對成功部署任何 PAW 至關緊要。  如果使用者希望提升生產力 (即使是以不安全的方式進行)，則會放棄大幅限制生產力的安全解決方案。
+系統管理人員也是標準使用者，他們需要 PAW 和標準使用者工作站來檢查電子郵件、流覽 web，以及存取公司企業營運應用程式。  確保系統管理員可以同時保持生產力與安全性對成功部署任何 PAW 至關緊要。  如果使用者希望提升生產力 (即使是以不安全的方式進行)，則會放棄大幅限制生產力的安全解決方案。
 
 為了平衡安全性與生產力的需求，Microsoft 建議使用其中一個 PAW 硬體設定檔︰
 
-* **專用硬體**-不同專用的裝置與系統管理工作的使用者工作。
+* **專用硬體**獨立的專用裝置，用於使用者工作與管理工作。
 * **同時使用** - 可以利用作業系統或展示虛擬化同時執行使用者工作和系統管理工作的單一裝置。
 
 組織可能僅使用一個設定檔或同時使用兩個設定檔。 硬體設定檔之間沒有任何互通性考量，因此組織具備使硬體設定檔符合指定系統管理員特定需求和情況的彈性。
 
 > [!NOTE]
-> 請務必在這些情況下，系統管理人員所發出的標準使用者帳戶分開指定系統管理帳戶。 系統管理帳戶應僅用於 PAW 系統管理作業系統。
+> 在所有這些情況下，系統管理人員會發出與指定系統管理帳戶不同的標準使用者帳戶，這一點很重要。 系統管理帳戶應僅用於 PAW 系統管理作業系統。
 
 此表格從操作易用性以及生產力和安全性的觀點，摘要說明每個硬體設定檔相對的優缺點。  這兩種硬體方法都會針對認證竊取和重複使用，為系統管理帳戶提供強大的安全性。
 
@@ -90,7 +90,7 @@ PAW 安全性控制項著重緩和影響和高機率的危害的風險。 這些
 * **系統管理作業系統** - 實體主機在用於系統管理工作的 PAW 主機上執行 Windows 10
 * **使用者作業系統** - Windows 10 用戶端 Hyper-V 虛擬機器客體執行公司映像
 
-使用 Windows 10 HYPER-V，客體虛擬機器 （也執行 Windows 10） 可以有豐富的使用者經驗，包括聲音、 視訊和網際網路通訊應用程式，例如商務用 Skype。
+使用 Windows 10 Hyper-v，來賓虛擬機器（也就是執行 Windows 10）可以擁有豐富的使用者體驗，包括音效、影片和網際網路通訊應用程式（例如商務用 Skype）。
 
 在此設定中，不需要系統管理權限的日常工作會在具備一般 Windows 10 公司映像的使用者作業系統虛擬機器中完成，而且不會受制於套用至 PAW 主機的限制。 所有系統管理工作都會在系統管理作業系統上完成。
 
@@ -98,7 +98,7 @@ PAW 安全性控制項著重緩和影響和高機率的危害的風險。 這些
 
 如需有關這項功能的詳細資訊，請閱讀[用戶端 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) 文件。 請注意，客體虛擬機器中的作業系統必須先根據 [Microsoft 產品授權](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx)獲得授權，在[這裡](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)也有相關說明。
 
-#### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>同時使用-新增 RemoteApp、 RDP 或 VDI
+#### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>同時使用-新增 RemoteApp、RDP 或 VDI
 
 在這個同時使用的情況下，一部電腦同時用於系統管理工作和日常活動，例如電子郵件、文件編輯，以及開發工作。 在此設定中，系統會集中部署並管理使用者作業系統 (在雲端上或在您的資料中心)，但在中斷連線時無法使用。
 
@@ -118,11 +118,11 @@ PAW 安全性控制項著重緩和影響和高機率的危害的風險。 這些
 
 ## <a name="how-microsoft-is-using-administrative-workstations"></a>Microsoft 如何使用系統管理工作站
 
-Microsoft 在我們的系統內部以及我們的客戶使用 PAW 架構方法。 Microsoft 會使用數個功能，包括 Microsoft IT 基礎結構、 Microsoft 雲端網狀架構基礎結構開發和作業，以及其他高價值資產的管理在內部的系統管理工作站。
+Microsoft 在我們的系統內部以及我們的客戶使用 PAW 架構方法。 Microsoft 會在內部使用多個容量的系統管理工作站，包括 Microsoft IT 基礎結構的管理、Microsoft 雲端網狀架構基礎結構開發和作業，以及其他高價值資產。
 
 本指導方針是直接以特殊權限存取工作站 (PAW) 參考架構為基礎，我們網頁安全性的專業服務團隊會部署這個架構來保護客戶免受網路安全性攻擊。 系統管理工作站也是網域系統管理工作、增強型安全性系統管理環境 (ESAE) 系統管理樹系參考架構最強防護的一個關鍵要素。
 
-如需有關 ESAE 系統管理樹系的詳細資訊，請參閱 < *ESAE 系統管理樹系設計方法*一節[保護特殊權限的存取參考資料](../securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)。
+如需有關 ESAE 系統管理樹系的詳細資訊，請參閱[保護特殊許可權存取參考](../securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)資料中的*ESAE 系統管理樹系設計方法*一節。
 
 ## <a name="architecture-overview"></a>架構概觀
 
@@ -134,8 +134,8 @@ Microsoft 在我們的系統內部以及我們的客戶使用 PAW 架構方法�
 
 這種方法適合可存取高價值資產的帳戶︰
 
-* **系統管理權限**-Paw 提供更高的安全性，針對高影響 IT 系統管理角色和工作。 這個架構可以套用到許多系統類型的系統管理，包括 Active Directory 網域與樹系、Microsoft Azure Active Directory 租用戶、Office 365 租用戶、程序控制網路 (PCN)、監管控制及資料取得 (SCADA) 系統、自動提款機 (ATM)，以及銷售點 (PoS) 裝置。
-* **高機密性資訊工作者**-PAW 中使用的方法也可以提供保護高度機密的資訊工作者的工作，例如，涉及公告前合併和收購活動、 發行前版本的人員財務報表、 組織的社交媒體目前狀態、 行政溝通、 無專利的商業機密、 機密研究或其他專屬或機密資料。 本指導方針並不會深入討論這些資訊工作者案例的設定，也不會將此案例包含在技術指導中。
+* 系統**管理許可權**-paw 為高度影響 IT 管理角色和工作提供增強的安全性。 這個架構可以套用到許多系統類型的系統管理，包括 Active Directory 網域與樹系、Microsoft Azure Active Directory 租用戶、Office 365 租用戶、程序控制網路 (PCN)、監管控制及資料取得 (SCADA) 系統、自動提款機 (ATM)，以及銷售點 (PoS) 裝置。
+* **高敏感度資訊工作者**-在 PAW 中使用的方法也可以為高度機密的資訊工作者工作和人員提供保護，例如涉及預先公告合併和取得活動、預先發行財務的作業。報表、組織的社交媒體目前狀態、主管通訊、unpatented 商業機密、機密研究，或其他專屬或機密資料。 本指導方針並不會深入討論這些資訊工作者案例的設定，也不會將此案例包含在技術指導中。
 
     > [!NOTE]
     > Microsoft IT 使用 PAW (內部稱為「安全的系統管理工作站」或 SAW) 管理在 Microsoft 內部對於內部高價值系統的安全存取。 本指導方針在稍後的「Microsoft 如何使用系統管理工作站」一節中，對於 PAW 在 Microsoft 的使用方式提供其他詳細資訊。 如需有關這個高價值資產環境方法的詳細資訊，請參閱[使用安全的系統管理工作站保護高價值的資產](https://msdn.microsoft.com/library/mt186538.aspx)一文。
@@ -144,15 +144,15 @@ Microsoft 在我們的系統內部以及我們的客戶使用 PAW 架構方法�
 
 本文件針對實作數個 PAW 設定提供詳細的指導方針，並包含詳細的實作指示，協助您開始保護一般高影響力帳戶︰
 
-* [**階段 1-立即部署 Active Directory 系統管理員**](#phase-1-immediate-deployment-for-active-directory-administrators)這快速提供 PAW 可以保護內部部署網域和樹系系統管理角色
-* [**階段 2-將 PAW 延伸至所有系統管理員**](#phase-2-extend-paw-to-all-administrators)這可讓系統管理員保護雲端服務，例如 Office 365 和 Azure、 企業伺服器、 企業應用程式和工作站
-* [**階段 3-進階的 PAW 安全性**](#phase-3-extend-and-enhance-protection)這個討論其他防護與 PAW 安全性的考量
+* [**階段 1-立即部署 Active Directory 系統管理員**](#phase-1-immediate-deployment-for-active-directory-administrators)，這可快速 PAW，以保護內部部署網域和樹系系統管理角色
+* [**階段 2-將 PAW 延伸至所有系統管理員**](#phase-2-extend-paw-to-all-administrators)，這可為雲端服務的系統管理員（例如 Office 365 和 Azure、企業伺服器、企業應用程式和工作站）提供保護
+* [**第3階段-ADVANCED PAW security**](#phase-3-extend-and-enhance-protection)此討論其他保護和 PAW 安全性的考慮
 
-### <a name="why-dedicated-workstations"></a>為什麼專用的工作站嗎？
+### <a name="why-dedicated-workstations"></a>為何選擇專用工作站？
 
 目前的組織威脅環境充斥著複雜的網路釣魚和其他網際網路攻擊，這些攻擊會因為網際網路所暴露的帳戶及工作站，導致持續危害安全性的風險。
 
-此威脅環境需要組織設計保護高價值的資產，例如系統管理帳戶和機密的企業資產時，採用 「 假設入侵 」 安全性的情勢。 這些高價值的資產必須受到保護，以防遭受直接網際網路威脅，以及從環境中的其他工作站、伺服器和裝置發動的攻擊。
+當設計高價值資產（例如系統管理帳戶和敏感商務資產）的保護時，此威脅環境需要組織採用「假設缺口」安全性狀態。 這些高價值的資產必須受到保護，以防遭受直接網際網路威脅，以及從環境中的其他工作站、伺服器和裝置發動的攻擊。
 
 ![此圖顯示攻擊者取得使用機密認證所在使用者工作站的控制權時，受管理資產的風險](../media/privileged-access-workstations/PAWFig2.JPG)
 
@@ -171,37 +171,37 @@ PAW 方法是既定建議做法的延伸，也就是為系統管理人員使用�
 
 ### <a name="alternate-approaches"></a>替代方法
 
-本節包含替代方法安全性與 PAW 的對照，以及如何在 PAW 架構中正確整合這些方法的相關資訊。 這些方法都包含在隔離中，實作時的重大風險，但可以將值新增至 PAW 實作在某些情況下。
+本節包含替代方法安全性與 PAW 的對照，以及如何在 PAW 架構中正確整合這些方法的相關資訊。 所有這些方法在隔離的情況下都有顯著的風險，但在某些情況下可以將價值加入 PAW 的執行。
 
-#### <a name="credential-guard-and-windows-hello-for-business"></a>Credential Guard 和 Windows hello 企業版
+#### <a name="credential-guard-and-windows-hello-for-business"></a>Credential Guard 和 Windows Hello 企業版
 
-Windows 10 中推出的 [Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx) 使用硬體和虛擬化架構的安全性保護衍生的認證，藉此減輕常見的認證竊取攻擊，例如傳遞雜湊。 使用認證的私密金鑰[Windows hello 企業版](https://aka.ms/passport)可能也要受信任的平台模組 (TPM) 硬體。
+Windows 10 中推出的 [Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx) 使用硬體和虛擬化架構的安全性保護衍生的認證，藉此減輕常見的認證竊取攻擊，例如傳遞雜湊。 [Windows Hello 企業版](https://aka.ms/passport)所使用認證的私密金鑰也可以由信賴平臺模組（TPM）硬體來保護。
 
-這些是功能強大的防護功能，但工作站可以仍然容易受到特定攻擊即使認證受到 Credential Guard 或 Windows hello 企業版。 攻擊可能包括濫用權限與使用直接從遭盜用的裝置，重複使用先前遭竊的認證，才能啟用 Credential Guard 和不當內容的管理工具和工作站上的弱式應用程式設定的認證。
+這些是強大的緩和措施，但工作站仍然可以受到特定攻擊的攻擊，即使認證受到 Credential Guard 或 Windows Hello 企業版的保護也一樣。 攻擊可以直接從遭入侵的裝置包含濫用許可權和認證的使用，在啟用 Credential Guard 和管理工具的濫用以及工作站上的弱式應用程式設定之前，重複使用先前遭竊的認證。
 
 本節中的 PAW 指導方針包含在高機密性帳戶和工作上使用許多這些技術。
 
 #### <a name="administrative-vm"></a>系統管理 VM
 
-系統管理的虛擬機器 (系統管理員 VM) 是專用的作業系統，標準使用者桌面上託管的系統管理工作。 雖然這個方法在為系統管理工作提供專用的作業系統上類似於 PAW，但是有一個嚴重的缺點，亦即，系統管理 VM 基於安全性，相依於標準使用者桌面。
+系統管理虛擬機器（管理 VM）是在標準使用者桌面上裝載的系統管理工作專用的作業系統。 雖然這個方法在為系統管理工作提供專用的作業系統上類似於 PAW，但是有一個嚴重的缺點，亦即，系統管理 VM 基於安全性，相依於標準使用者桌面。
 
 下圖說明攻擊者能夠在使用者工作站上，使用系統管理 VM 依照控制鏈到達感興趣的目標物件，而難以針對反向設定建立路徑。
 
-PAW 架構不允許針對裝載在使用者工作站上，系統管理 VM，但使用者 VM 使用標準公司映像可裝載於一部電腦的人員提供的所有責任 PAW 的系統管理員。
+PAW 架構不允許在使用者工作站上裝載系統管理 VM，但是具有標準公司映射的使用者 VM 可以在系統管理員 PAW 上託管，以便為所有責任提供單一電腦的人員。
 
 ![PAW 架構圖](../media/privileged-access-workstations/PAWFig9.JPG)
 
-#### <a name="shielded-vm-based-paws"></a>受防護的 VM 為基礎的 Paw
+#### <a name="shielded-vm-based-paws"></a>受防護的 VM 型 Paw
 
-安全的變體的系統管理 VM 模型是使用[受防護的虛擬機器](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)裝載一或多個系統管理虛擬機器，以及使用者 VM。
-受防護的 Vm 被設計來執行安全的工作負載的環境中可能不受信任的使用者或程式碼可能會執行所在實體機器的標準使用者桌面上。
-受防護的 VM 具有虛擬 TPM 以讓它來加密待用資料，以及數個系統管理的控制項，例如基本的主控台存取權、 PowerShell Direct 和偵錯 VM 的能力會停用，以進一步找出 VM 從標準使用者桌面和其他 Vm。
-受防護的 VM 的金鑰會儲存在受信任的金鑰管理伺服器上，而這需要釋放的金鑰來啟動 VM 之前，先證明其身分識別與健康情況實體裝置。
-這可確保在預定的裝置上，只能啟動受防護的 Vm，這些裝置必須執行已知且受信任的軟體組態。
+系統管理 VM 模型的安全變體是使用[受防護的虛擬機器](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)，將一或多個系統管理 vm 與使用者 VM 一起裝載。
+受防護的 Vm 是設計用來在可能不受信任的使用者或程式碼可能在實體機器的標準使用者桌上型電腦上執行的環境中執行安全的工作負載。
+受防護的 VM 具有虛擬 TPM，可讓它加密其本身的待用資料，並停用數個系統管理控制項（例如基本主控台存取、PowerShell Direct）和偵測 VM 的能力，以進一步隔離 VM 與標準使用者桌面，以及其他 Vm。
+受防護 VM 的金鑰會儲存在信任的金鑰管理伺服器上，要求實體裝置在釋放金鑰以啟動 VM 之前，先證明其身分識別和健康狀態。
+這可確保受防護的 Vm 只能在預期的裝置上啟動，而且這些裝置正在執行已知且受信任的軟體設定。
 
-因為受防護的 Vm 與標準使用者桌面與彼此隔離，是在單一主機上，執行多個受防護的 PAW Vm，即使在這些系統管理員 Vm 管理不同的層時，才可接受的。
+因為受防護的 Vm 會彼此隔離，而且是標準使用者桌面，所以可接受在單一主機上執行多個受防護 PAW Vm，即使這些系統管理員 Vm 管理不同層也是如此。
 
-請參閱[部署 Paw 使用受防護網狀架構](#deploy-paws-using-a-guarded-fabric)如需詳細資訊，如下一節。
+如需詳細資訊，請參閱下面的[使用受防護的網狀架構部署 paw](#deploy-paws-using-a-guarded-fabric)一節。
 
 #### <a name="jump-server"></a>跳躍伺服器
 
@@ -233,7 +233,7 @@ PAW 架構不允許針對裝載在使用者工作站上，系統管理 VM，但�
 
 本圖顯示從 PAW 存取系統管理跳躍伺服器時，不會在系統管理資產中新增攻擊者路徑的方式。 在此情況下，具有 PAW 的跳躍伺服器可讓您彙總位置的數目，以監視系統管理活動並散佈系統管理應用程式和工具。 如此可增加一些設計上的複雜性，但是如果在 PAW 實作中使用大量的帳戶和工作站，則可以簡化安全性監視和軟體更新。 必須建置跳躍伺服器並設定為與 PAW 類似的安全性標準。
 
-#### <a name="privilege-management-solutions"></a>權限管理解決方案
+#### <a name="privilege-management-solutions"></a>版權管理解決方案
 
 權限管理解決方案是對隨需的不同權限或特殊權限帳戶提供暫時存取權的應用程式。 權限管理解決方案是完整策略的一個非常珍貴的元件，可保護特殊權限存取的安全，並為系統管理活動提供非常重要的能見度和權責。
 
@@ -249,9 +249,9 @@ Microsoft 建議使用 PAW 存取權限管理解決方案。 對於這些解決�
 
 > [!NOTE]
 > 這些系統應該在所管理的最高權限層加以分類，並在該安全性層級以上受到保護。 這些通常會設定為管理第 0 層解決方案及第 0 層資產，且應該在第 0 層加以分類。
-> 如需有關階層模型的詳細資訊，請參閱 < [ https://aka.ms/tiermodel ](https://aka.ms/tiermodel)如需有關第 0 層群組的詳細資訊，請參閱中的第 0 層對應項[保護特殊權限的存取參考資料](../securing-privileged-access/securing-privileged-access-reference-material.md)。
+> 如需有關層級模型的詳細資訊，請參閱[https://aka.ms/tiermodel](https://aka.ms/tiermodel)如需第0層群組的詳細資訊，請參閱[保護特殊許可權存取參考](../securing-privileged-access/securing-privileged-access-reference-material.md)資料中的第0層對等。
 
-如需有關部署 Microsoft Identity Manager (MIM) 特殊權限存取管理 (PAM) 的詳細資訊，請參閱 [https://aka.ms/mimpamdeploy](https://aka.ms/mimpamdeploy)
+如需部署 Microsoft Identity Manager （MIM）特殊許可權存取管理（PAM）的詳細資訊，請參閱[https://aka.ms/mimpamdeploy](https://aka.ms/mimpamdeploy)
 
 ## <a name="paw-scenarios"></a>PAW 案例
 
@@ -260,30 +260,30 @@ Microsoft 建議使用 PAW 存取權限管理解決方案。 對於這些解決�
 在所有案例中，可使用稍後階段中的其他強化功能，以及本指導方針中不同的硬體設定檔，以符合角色的可用性或安全性需求。
 
 > [!NOTE]
-> 本指導方針會明確區分需要存取網際網路 （例如 Azure 和 Office 365 系統管理入口網站） 和 「 開放式網際網路 」 上的特定服務的所有主機和服務。
+> 本指導方針明確區分需要存取網際網路上的特定服務（例如 Azure 和 Office 365 系統管理入口網站）和所有主機和服務的「開放網際網路」。
 
 如需有關階層指定的詳細資訊，請參閱[階層模型頁面](https://aka.ms/tiermodel)。
 
-|**案例**|**使用 PAW？**|**範圍和安全性考量**|
+|**案例**|**使用 PAW？**|**範圍和安全性考慮**|
 |---------|--------|---------------------|
-|Active Directory 管理員 - 第 0 層|是|使用階段 1 指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   可以新增系統管理樹系，以便為此案例提供最強的防護。 如需有關 ESAE 系統管理樹系的詳細資訊，請參閱 [ESAE 系統管理樹系設計方法](../securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)<br />-   PAW 可以用來管理多個網域或多個樹系。<br />-如果網域控制站裝載於基礎結構即服務 (IaaS) 或內部部署虛擬化解決方案時，您應該優先針對實作這些解決方案的系統管理員的 Paw。|
-|Azure IaaS 和 PaaS 服務的系統管理員 - 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該至少用於全域管理員和訂閱計費管理員。 您也應該將 PAW 用於重要或機密伺服器的委派系統管理員。<br />-Paw 應該用於管理作業系統和應用程式提供目錄同步作業和身分識別同盟，例如雲端服務[Azure AD Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect/)和 Active Directory Federation Services (ADFS)。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與已授權的雲端服務連線。 不應該從 PAW 允許開放式網際網路存取。<br />應該在工作站上設定 Windows Defender 惡意探索防護**附註：**   訂用帳戶會被視為第 0 層樹系如果網域控制站或其他第 0 層主機位於訂用帳戶。 如果在 Azure 中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
-|管理 Office 365 租用戶 <br />- 第 1 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該至少用於訂閱計費管理員、全域管理員、Exchange 系統管理員、SharePoint 系統管理員，以及使用者管理管理員角色。 您也應該認真考慮將 PAW 用於高度重要或敏感資訊的委派系統管理員。<br />應該在工作站上設定 Windows Defender 惡意探索防護。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與 Microsoft 服務連線。 不應該從 PAW 允許開放式網際網路存取。|
-|其他 IaaS 或 PaaS 雲端服務系統管理員<br />- 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該用於對雲端託管 VM 具有系統管理權限的任何角色，包括能夠安裝代理程式；匯出硬碟檔案；或存取儲存作業系統、機密資料或業務關鍵資料所在硬碟的儲存裝置。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與 Microsoft 服務連線。 不應該從 PAW 允許開放式網際網路存取。<br />應該在工作站上設定 Windows Defender 惡意探索防護。 **注意：** 如果網域控制站或其他第 0 層主機位於訂用帳戶，訂用帳戶會是第 0 層樹系。 如果在 Azure 中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
-|虛擬化系統管理員<br />- 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該用於對 VM 具有系統管理權限的任何角色，包括能夠安裝代理程式；匯出虛擬硬碟檔案；或存取儲存客體作業系統資訊、機密資料或業務關鍵資料所在硬碟的儲存裝置。 **注意：** 如果網域控制站或其他第 0 層主機位於訂用帳戶的虛擬化系統 （和其系統管理員），即視為第 0 層樹系。 如果在虛擬化系統中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
+|Active Directory 管理員 - 第 0 層|是|使用階段 1 指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   可以新增系統管理樹系，以便為此案例提供最強的防護。 如需有關 ESAE 系統管理樹系的詳細資訊，請參閱 [ESAE 系統管理樹系設計方法](../securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)<br />-   PAW 可以用來管理多個網域或多個樹系。<br />-如果網域控制站裝載于基礎結構即服務（IaaS）或內部部署虛擬化解決方案，您應該為這些解決方案的系統管理員設定執行 Paw 的優先順序。|
+|Azure IaaS 和 PaaS 服務的系統管理員 - 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該至少用於全域管理員和訂閱計費管理員。 您也應該將 PAW 用於重要或機密伺服器的委派系統管理員。<br />-Paw 應該用於管理作業系統和應用程式，以針對雲端服務（例如[Azure AD Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect/)和 ACTIVE DIRECTORY 同盟服務（ADFS））提供目錄同步作業和識別身分同盟。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與已授權的雲端服務連線。 不應該從 PAW 允許開放式網際網路存取。<br />-Windows Defender 惡意探索防護應設定于工作站上 **：**   如果網域控制站或其他第0層主機位於訂用帳戶中，則會將訂用帳戶視為樹系的第0層。 如果在 Azure 中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
+|管理 Office 365 租用戶 <br />- 第 1 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該至少用於訂閱計費管理員、全域管理員、Exchange 系統管理員、SharePoint 系統管理員，以及使用者管理管理員角色。 您也應該認真考慮將 PAW 用於高度重要或敏感資訊的委派系統管理員。<br />-Windows Defender 惡意探索防護應該在工作站上設定。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與 Microsoft 服務連線。 不應該從 PAW 允許開放式網際網路存取。|
+|其他 IaaS 或 PaaS 雲端服務系統管理員<br />- 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該用於對雲端託管 VM 具有系統管理權限的任何角色，包括能夠安裝代理程式；匯出硬碟檔案；或存取儲存作業系統、機密資料或業務關鍵資料所在硬碟的儲存裝置。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與 Microsoft 服務連線。 不應該從 PAW 允許開放式網際網路存取。<br />-Windows Defender 惡意探索防護應該在工作站上設定。 **注意：** 如果網域控制站或其他第0層主機位於訂用帳戶中，則訂用帳戶為樹系的第0層。 如果在 Azure 中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
+|虛擬化系統管理員<br />- 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該用於對 VM 具有系統管理權限的任何角色，包括能夠安裝代理程式；匯出虛擬硬碟檔案；或存取儲存客體作業系統資訊、機密資料或業務關鍵資料所在硬碟的儲存裝置。 **注意：** 如果網域控制站或其他第0層主機位於訂用帳戶中，則虛擬化系統（和其系統管理員）會被視為樹系的第0層。 如果在虛擬化系統中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
 |伺服器維護系統管理員<br />- 第 1 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該用於更新、修補執行 Windows Server、Linux 和其他作業系統的企業伺服器與應用程式，以及為其進行疑難排解的系統管理員。<br />-   可能需要新增 PAW 的專用管理工具，才能處理更大規模的這些系統管理員。|
-|使用者工作站系統管理員 <br />- 第 2 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於具有使用者裝置系統管理權限的角色 (例如技術服務人員和技術支援角色) 已經足夠。<br /><br />-   PAW 上可能需要安裝其他應用程式，才能啟用票證管理和其他支援功能。<br />應該在工作站上設定 Windows Defender 惡意探索防護。<br />    可能需要新增 PAW 的專用管理工具，才能處理更大規模的這些系統管理員。|
+|使用者工作站系統管理員 <br />- 第 2 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於具有使用者裝置系統管理權限的角色 (例如技術服務人員和技術支援角色) 已經足夠。<br /><br />-   PAW 上可能需要安裝其他應用程式，才能啟用票證管理和其他支援功能。<br />-Windows Defender 惡意探索防護應該在工作站上設定。<br />    可能需要新增 PAW 的專用管理工具，才能處理更大規模的這些系統管理員。|
 |SQL、SharePoint 或企業營運 (LOB) 系統管理員<br />- 第 1 層|是|使用階段 2 指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 上可能需要安裝其他管理工具，才能允許系統管理員管理應用程式，而不需要使用遠端桌面連線到伺服器。|
 |管理社交媒體顯示狀態的使用者|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用。<br /><br />-   使用 Azure Active Directory (AAD) 保護與管理社交媒體帳戶，以共用、保護並追蹤對於社交媒體帳戶的存取。<br />    如需有關這項功能的詳細資訊，請參閱[此部落格文章](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)。<br />-   輸出網路限制必須允許與這些服務的連線。 這可以透過允許開放式網際網路連線 (否定許多 PAW 保證的更高安全性風險)，或僅允許服務所需的 DNS 位址 (可能不容易取得) 完成。|
 |標準使用者|否|雖然標準使用者可以使用許多強化步驟，但是 PAW 是針對隔離帳戶與多數使用者為了工作職責所需的開放式網際網路存取所設計。|
 |客體 VDI/Kiosk|否|雖然客體的 Kiosk 系統可以使用許多強化步驟，但是 PAW 架構的設計是為了針對敏感度高的帳戶提供更高的安全性，而不是針對敏感度較低的帳戶提供更高的安全性。|
-|VIP 使用者 (主管、研究人員等等)|部分|使用階段 2 中提供的指導方針建置的 PAW 可以用做為起點，來為這些角色提供安全性。<br /><br />-   此案例類似於標準使用者桌面，但通常會有更小、更簡單，而且已知的應用程式設定檔。 此案例通常需要探索及保護機密資料、服務，以及 (不一定是安裝在桌上型電腦上的) 應用程式。<br />-   這些角色通常需要高度的安全性以及非常高度的可用性，這需要進行設計變更，才能符合使用者喜好設定。|
-|工業控制系統 (例如 SCADA、PCN 和 DCS)|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用，因為大部分的 ICS 主控台 (包括諸如 SCADA 和 PCN 這類的常見標準) 不需要瀏覽開放式網際網路，也不需要檢查電子郵件。<br /><br />-用來控制實體機器應用程式必須進行整合和相容性測試和受到適當的保護。|
+|VIP 使用者 (主管、研究人員等等)|部分|使用階段2中提供的指導方針所建立的 PAW，可做為為這些角色提供安全性的起點。<br /><br />-   此案例類似於標準使用者桌面，但通常會有更小、更簡單，而且已知的應用程式設定檔。 此案例通常需要探索及保護機密資料、服務，以及 (不一定是安裝在桌上型電腦上的) 應用程式。<br />-   這些角色通常需要高度的安全性以及非常高度的可用性，這需要進行設計變更，才能符合使用者喜好設定。|
+|工業控制系統 (例如 SCADA、PCN 和 DCS)|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用，因為大部分的 ICS 主控台 (包括諸如 SCADA 和 PCN 這類的常見標準) 不需要瀏覽開放式網際網路，也不需要檢查電子郵件。<br /><br />-用於控制實體機器的應用程式必須進行整合和測試，以適當地進行相容性和保護。|
 |內嵌的作業系統|否|雖然 PAW 的許多強化步驟可以用於內嵌的作業系統，但是在此案例中，為了強化，必須開發自訂解決方案。|
 
 > [!NOTE]
 > **組合案例**：有些人員可能會有跨越多個案例的管理責任。
-> 在這些情況下，要牢記在心的重要規則是一律必須遵循階層模型規則。 如需詳細資訊，請參閱階層模型頁面。
+> 在這些情況下，要牢記在心的重要規則是必須一律遵循階層模型規則。 如需詳細資訊，請參閱階層模型頁面。
 
 > [!NOTE]
 > **擴充 PAW 程式**：由於您的 PAW 程式擴充為包含更多系統管理員及角色，因此您必須繼續確保您堅持遵守安全性標準及可用性。 這可能會要求您更新您的 IT 支援結構或建立新的 IT 支援結構，以解決 PAW 專屬的挑戰，例如 PAW 入門訓練程序、事件管理、設定管理，以及收集意見反應以因應可用性挑戰。  其中一個範例可能是您的組織決定為系統管理員啟用在家工作案例，這需要從桌上型電腦 PAW 轉變為筆記型電腦 PAW，這種轉變可能需要額外的安全性考量。  另一個常見的範例是為新的系統管理員建立或更新訓練，這個訓練現在必須包含正確使用 PAW 的內容 (包括這為什麼很重要，以及什麼是 PAW 和什麼不是 PAW)。  如需有關擴充 PAW 程式時必須處理的詳細考量，請參閱指示的階段 2。
@@ -292,23 +292,23 @@ Microsoft 建議使用 PAW 存取權限管理解決方案。 對於這些解決�
 
 如需有關吸引人的 Microsoft 服務詳細資訊，以便設計為您的環境量身打造的 PAW，請連絡您的 Microsoft 代表或瀏覽[本頁](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)。
 
-## <a name="paw-phased-implementation"></a>PAW Phased 實作
+## <a name="paw-phased-implementation"></a>PAW 階段式執行
 
 PAW 必須為系統管理提供安全且受信任的來源，建置程序安全且受信任相當重要。  本節將提供詳細的指示，這些指示可讓您使用非常類似 Microsoft IT 和 Microsoft 雲端工程與服務管理組織所使用的一般原則和概念，建置您自己的 PAW。
 
 這些指示分為三個階段，其重點在於使最重要的緩和措施快速到位，然後為企業逐漸增加並擴展 PAW 的用途。
 
-* [階段 1-立即部署 Active Directory 系統管理員](#phase-1-immediate-deployment-for-active-directory-administrators)
+* [階段 1-Active Directory 系統管理員的立即部署](#phase-1-immediate-deployment-for-active-directory-administrators)
 * [階段 2-將 PAW 延伸至所有系統管理員](#phase-2-extend-paw-to-all-administrators)
-* [階段 3-進階的 PAW 安全性](#phase-3-extend-and-enhance-protection)
+* [第3階段-Advanced PAW security](#phase-3-extend-and-enhance-protection)
 
 請務必注意，即使這些階段是以相同的整體專案部分加以規劃和實作，但是務必要依序執行。
 
-### <a name="phase-1-immediate-deployment-for-active-directory-administrators"></a>階段 1：立即部署 Active Directory 系統管理員
+### <a name="phase-1-immediate-deployment-for-active-directory-administrators"></a>階段 1：Active Directory 系統管理員的立即部署
 
-目的：快速提供 PAW 可以保護內部部署網域和樹系系統管理角色。
+目的：提供可保護內部部署網域和樹系系統管理角色的快速 PAW。
 
-範圍：第 0 層系統管理員，包括 Enterprise Admins、 Domain Admins （適用於所有的網域），以及其他授權身份識別系統的系統管理員。
+範圍：第0層管理員，包括 Enterprise Admins、Domain Admins （適用于所有網域）和其他授權身分識別系統的管理員。
 
 階段 1 著重在管理內部部署 Active Directory 網域的系統管理員，這些系統管理員是經常成為攻擊目標的非常重要角色。 不論您的 Active Directory 網域控制站 (DC) 是在內部部署資料中心、Azure 基礎結構即服務 (IaaS) 還是其他 IaaS 提供者中託管，這些身分識別系統都會有效率地運作，以保護這些系統管理員。
 
@@ -317,11 +317,11 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 這些指令碼將會建立下列 OU 和安全性群組︰
 
 * 組織單位 (OU)
-   * 六個新的最上層 Ou:系統管理員;群組;第 1 層伺服器;工作站;使用者帳戶;與電腦隔離。  每個最上層 OU 都將包含數個子 Ou。
+   * 六個新的最上層 Ou：管理中心部門第1層伺服器;台使用者帳戶;和電腦隔離。  每個最上層 OU 都會包含數個子 Ou。
 * 群組
-   * 六個新安全性已啟用的全域群組：第 0 層複寫維護;第 1 層伺服器維護;服務台操作員;工作站維護;PAW 使用者;PAW 維護。
+   * 六個新啟用安全性的全域群組：第0層複寫維護;第1層伺服器維護;服務台操作員;工作站維護;PAW 使用者;PAW 維護。
 
-您也會建立數個群組原則物件：PAW 設定-電腦;PAW 設定-使用者資訊。需要 RestrictedAdmin-電腦;PAW 輸出限制;限制工作站登入;限制伺服器登入。
+您也會建立數個群組原則物件：PAW 設定-Computer;PAW 設定-使用者;RestrictedAdmin 必要-電腦;PAW 輸出限制;限制工作站登入;限制伺服器登入。
 
 階段 1 包含下列步驟：
 
@@ -361,7 +361,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 1. 從 [TechNet 資源庫](https://aka.ms/PAWmedia)下載 PAW 指令碼程式庫
 
    > [!NOTE]
-   > 下載所有檔案並將它們儲存到相同的目錄，並在執行下面指定的順序。  Create-PAWGroups 相依於 Create-PAWOUs 所建立的 OU 結構，而 Set-PAWOUDelegation 則相依於 Create-PAWGroups 所建立的群組。
+   > 下載所有檔案，並將它們儲存至相同的目錄，然後依照下列指定的循序執行這些檔案。  Create-PAWGroups 相依於 Create-PAWOUs 所建立的 OU 結構，而 Set-PAWOUDelegation 則相依於 Create-PAWGroups 所建立的群組。
    > 請勿修改任何指令碼或逗號分隔值 (CSV) 檔案。
 
 2. **執行 Create-PAWOUs.ps1 指令碼**。  此指令碼將會在 Active Directory 中建立新的組織單位 (OU) 結構，並視需要，在新的 OU 上禁止繼承 GPO。
@@ -372,7 +372,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
 4. **執行 Set-PAWOUDelegation.ps1 指令碼**。  此指令碼會將新 OU 的權限指派給適當的群組。
 
-#### <a name="move-tier-0-accounts-to-the-admintier-0accounts-ou"></a>將第 0 層帳戶移至 Admin\Tier 0\Accounts OU
+#### <a name="move-tier-0-accounts-to-the-admintier-0accounts-ou"></a>將第0層帳戶移至 Admin\tier \devices 0 \ 帳戶 OU
 
 將屬於 Domain Admin、Enterprise Admin 或第 0 層對等群組成員 (包括巢狀成員資格) 的每個帳戶移動至此 OU。 如果您的組織有您自己已新增至這些群組的群組，則應該將這些群組移至 Admin\Tier 0\Groups OU。
 
@@ -392,17 +392,17 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
    >
    > 在理想情況下，不會在多個階層為任何人員指派職責，以強制執行職責劃分原則，但是 Microsoft 認為許多組織都可能會限制不允許這種完全劃分的人員 (或其他組織需求)。 在這些情況下，相同的人員可能會獲指派兩個角色，但不應該將相同的帳戶用於這些職責。
 
-#### <a name="create-paw-configuration---computer-group-policy-object-gpo"></a>建立 「 PAW 設定-電腦 」 群組原則物件 (GPO)
+#### <a name="create-paw-configuration---computer-group-policy-object-gpo"></a>建立 "PAW Configuration-Computer" 群組原則物件（GPO）
 
-在本節中，您將建立新 「 PAW 設定-電腦 」 GPO，其提供特定的防護，為這些 Paw，並將它連結至第 0 層裝置 OU （Tier 0\adminn 底下的 「 裝置 」）。
+在本節中，您將建立新的「PAW 設定-電腦」 GPO，為這些 Paw 提供特定的保護，並將它連結至第0層裝置 OU （第0層 \ 系統管理員底下的「裝置」）。
 
    > [!NOTE]
    > **請不要將這些設定新增至預設網域原則**。  如此一來，可能會影響整個 Active Directory 環境的運作。  只有在此處所描述的新建立的 GPO 中進行這些設定，而且僅將這些設定套用至 PAW OU。
 
-1. **PAW 維護存取** - 此設定會將 PAW 上特定權限群組的成員資格設定為一組特定的使用者。 移至 [電腦設定\喜好設定\控制台設定\本機使用者和群組]  ，並遵循下列步驟進行︰
-   1. 按一下 [新增]  ，然後按一下 [本機群組] 
-   2. 選取 [更新]  動作，然後選取 [Administrators (內建)] (請不要使用 [瀏覽] 按鈕選取 Administrators 網域群組)。
-   3. 選取 [刪除所有成員使用者]  和 [刪除所有成員群組]  核取方塊
+1. **PAW 維護存取** - 此設定會將 PAW 上特定權限群組的成員資格設定為一組特定的使用者。 移至 [電腦設定\喜好設定\控制台設定\本機使用者和群組]，並遵循下列步驟進行︰
+   1. 按一下 [新增]，然後按一下 [本機群組]
+   2. 選取 [更新] 動作，然後選取 [Administrators (內建)] (請不要使用 [瀏覽] 按鈕選取 Administrators 網域群組)。
+   3. 選取 [刪除所有成員使用者] 和 [刪除所有成員群組] 核取方塊
    4. 新增 PAW 維護 (pawmaint) 和系統管理員 (同樣地，請不要使用 [瀏覽] 按鈕選取 Administrator)。
 
       > [!NOTE]
@@ -412,10 +412,10 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
 2. **限制本機群組成員資格** - 此設定將確保工作站上的本機系統管理員群組成員資格永遠是空白的
    1. 移至 [電腦設定\喜好設定\控制台設定\本機使用者和群組]，並遵循下列步驟進行︰
-      1. 按一下 [新增]  ，然後按一下 [本機群組] 
-      2. 選取 [更新]  動作，然後選取 [Backup Operators (內建)] (請不要使用 [瀏覽] 按鈕選取 Backup Operators 網域群組)。
-      3. 選取 [刪除所有成員使用者]  和 [刪除所有成員群組]  核取方塊。
-      4. 請不要將任何成員新增至群組。  只要按一下 [確定]  。  群組原則將會透過指派空的清單，自動移除所有成員，並確保每次重新整理群組原則時，成員資格清單都是空白的。
+      1. 按一下 [新增]，然後按一下 [本機群組]
+      2. 選取 [更新] 動作，然後選取 [Backup Operators (內建)] (請不要使用 [瀏覽] 按鈕選取 Backup Operators 網域群組)。
+      3. 選取 [刪除所有成員使用者] 和 [刪除所有成員群組] 核取方塊。
+      4. 請不要將任何成員新增至群組。  只要按一下 [確定]。  群組原則將會透過指派空的清單，自動移除所有成員，並確保每次重新整理群組原則時，成員資格清單都是空白的。
    2. 針對以下其他群組，完成上述步驟︰
       * Cryptographic Operators
       * Hyper-V 系統管理員
@@ -423,95 +423,95 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       * Power Users
       * Remote Desktop Users
       * 複寫器
-   3. **PAW 登入限制**-此設定會限制可以登入 PAW 的帳戶。 請遵循下列步驟進行此設定︰
+   3. **PAW 登入限制**-此設定將會限制可登入 PAW 的帳戶。 請遵循下列步驟進行此設定︰
       1. 移至 [電腦設定\原則\Windows 設定\安全性設定\本機原則\使用者權限指派\允許本機登入]。
-      2. 選取定義這些原則設定，並新增 「 PAW 使用者 」 和系統管理員 （同樣地，不要使用瀏覽按鈕以選取 系統管理員）。
+      2. 選取 [定義這些原則設定]，並新增「PAW 使用者」和系統管理員（同樣地，不要使用 [流覽] 按鈕來選取系統管理員）。
    4. **封鎖輸入網路流量** - 此設定將確保 PAW 不允許任何未經同意的輸入網路流量。 請遵循下列步驟進行此設定︰
       1. 移至 [電腦設定\原則\Windows 設定\安全性設定\具有進階安全性的 Windows 防火牆\具有進階安全性的 Windows 防火牆]，並遵循下列步驟進行︰
-         1. 以滑鼠右鍵按一下 [具有進階安全性的 Windows 防火牆]，然後選取 [匯入原則]  。
-         2. 按一下 [是]  ，接受這將會覆寫任何現有的防火牆原則。
-         3. 瀏覽至 PAWFirewall.wfw，然後選取 [開啟]  。
-         4. 按一下 [確定]  。
+         1. 以滑鼠右鍵按一下 [具有進階安全性的 Windows 防火牆]，然後選取 [匯入原則]。
+         2. 按一下 [是]，接受這將會覆寫任何現有的防火牆原則。
+         3. 瀏覽至 PAWFirewall.wfw，然後選取 [開啟]。
+         4. 按一下 [確定]。
 
             > [!NOTE]
             > 您可以新增位址或子網路，而且這些位址或子網路目前必須到達含有未經同意流量的 PAW (例如，安全性掃描或管理軟體)。
-            > WFW 檔案中的設定將會以「封鎖 - 預設」模式，啟用所有防火牆設定檔的防火牆、關閉規則合併，以及啟用已捨棄封包和成功封包的記錄。 這些設定會封鎖來路不明的流量，同時仍然允許雙向通訊，起始自 PAW 的連線，請建立本機防火牆規則，以覆寫 GPO 設定時，防止具有本機系統管理存取權的使用者和請確定進出 PAW 的流量會記錄。
+            > WFW 檔案中的設定將會以「封鎖 - 預設」模式，啟用所有防火牆設定檔的防火牆、關閉規則合併，以及啟用已捨棄封包和成功封包的記錄。 這些設定會封鎖未經要求的流量，同時仍允許從 PAW 起始的連線進行雙向通訊，並防止具有本機系統管理許可權的使用者建立會覆寫 GPO 設定的本機防火牆規則，以及請確定已記錄傳入和傳出 PAW 的流量。
             > **開啟此防火牆將會擴大 PAW 的受攻擊面，並增加安全性風險。新增任何位址之前，請參閱本指導方針中的「管理和操作 PAW」一節**。
 
    5. **設定適用於 WSUS 的 Windows Update** - 請遵循下列步驟變更設定，以設定適用於 PAW 的 Windows Update︰
-      1. 移至 電腦設定 \ 原則管理範本 \windows 元件 \windows 更新，並遵循下列步驟：
-         1. 啟用 [設定自動更新]  原則。
-         2. 選取 [4 - 自動下載和排程安裝]  選項。
-         3. 將 [排程安裝日期]  選項變更為 [0 - 每天]  ，並將 [排程安裝時間]  選項變更為您組織的喜好設定。
-         4. 啟用選項**指定內部網路 Microsoft 更新服務位置**原則，並在這兩個選項中指定 ESAE WSUS 伺服器的 URL。
-   6. 請連結 「 PAW 設定-電腦 」 GPO，如下所示：
+      1. 移至 [電腦設定管理範本 \windows] [更新]，並依照下列步驟執行：
+         1. 啟用 [設定自動更新] 原則。
+         2. 選取 [4 - 自動下載和排程安裝] 選項。
+         3. 將 [排程安裝日期] 選項變更為 [0 - 每天]，並將 [排程安裝時間] 選項變更為您組織的喜好設定。
+         4. 啟用 [**指定近端內部網路 Microsoft 更新服務的位置**原則] 選項，並在這兩個選項中指定 ESAE WSUS 伺服器的 URL。
+   6. 連結 "PAW Configuration-Computer" GPO，如下所示：
 
          |原則|連結位置|
          |-----|---------|
          |PAW 設定 - 電腦 |Admin\Tier 0\Devices|
 
-#### <a name="create-paw-configuration---user-group-policy-object-gpo"></a>建立 「 PAW 設定-使用者 」 群組原則物件 (GPO)
+#### <a name="create-paw-configuration---user-group-policy-object-gpo"></a>建立 "PAW Configuration-User" 群組原則物件（GPO）
 
-在本節中，您將建立新 「 PAW 設定-使用者 「 第 0 層帳戶 OU （Tier 0\adminn 底下為 「 帳戶 」） 來提供特定的防護，為這些 Paw 和連結的 GPO。
+在本節中，您將建立新的「PAW 設定-使用者」 GPO，以針對這些 Paw 提供特定的保護，並連結至第0層帳戶 OU （「第0層」管理員底下的「帳戶」）。
 
    > [!NOTE]
    > 請不要將這些設定新增至預設網域原則
 
 1. **封鎖網際網路瀏覽** - 若要防止不小心瀏覽網際網路，這將會設定迴路位址 (127.0.0.1) 的 Proxy 位址。
-   1. 請移至 使用者設定 \ 喜好設定 \windows 設定 \ 登錄。 以滑鼠右鍵按一下登錄中，選取**的新** > **登錄項目**並設定下列設定：
+   1. 前往 User Configuration\Preferences\Windows Settings\Registry。 以滑鼠右鍵按一下 [登錄]，選取 [**新增**] [ >  登錄**專案**]，並設定下列設定：
       1. 動作：替換
-      2. 登錄區：HKEY_CURRENT_USER
-      3. 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet Settings
+      2. HiveHKEY_CURRENT_USER
+      3. 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet 設定
       4. 值名稱：ProxyEnable
 
          > [!NOTE]
          > 請不要選取 [數值名稱] 左側的 [預設] 方塊。
 
-      5. 實值型別：REG_DWORD
+      5. 數值型別：REG_DWORD
       6. 若要解決此問題，請使用下列任一種方法。1
-         1. 按一下 [通用] 索引標籤，然後選取 [當不再套用這個項目時移除它]  。
-         2. 在 [通用] 索引標籤上，選取 [項目等級目標]  ，然後按一下 [目標]  。
-         3. 按一下 [新增項目]  ，然後選取 [安全性群組]  。
+         1. 按一下 [通用] 索引標籤，然後選取 [當不再套用這個項目時移除它]。
+         2. 在 [通用] 索引標籤上，選取 [項目等級目標]，然後按一下 [目標]。
+         3. 按一下 [新增項目]，然後選取 [安全性群組]。
          4. 選取 [...] 按鈕並瀏覽 PAW Users 群組。
-         5. 按一下 [新增項目]  ，然後選取 [安全性群組]  。
+         5. 按一下 [新增項目]，然後選取 [安全性群組]。
          6. 選取 [...] 按鈕並瀏覽 **Cloud Services Admins** 群組。
-         7. 按一下 [Cloud Services Admins]  項目，然後按一下 [項目選項]  。
-         8. 選取 [不是]  。
-         9. 按一下目標視窗上的 [確定]  。
-      7. 按一下 [確定]  ，完成 ProxyServer 群組原則設定
-   2. 請移至 使用者設定 \ 喜好設定 \windows 設定 \ 登錄。 以滑鼠右鍵按一下登錄中，選取**的新** > **登錄項目**並設定下列設定：
+         7. 按一下 [Cloud Services Admins] 項目，然後按一下 [項目選項]。
+         8. 選取 [不是]。
+         9. 按一下目標視窗上的 [確定]。
+      7. 按一下 [確定]，完成 ProxyServer 群組原則設定
+   2. 前往 User Configuration\Preferences\Windows Settings\Registry。 以滑鼠右鍵按一下 [登錄]，選取 [**新增**] [ >  登錄**專案**]，並設定下列設定：
 
       * 動作：替換
-      * 登錄區：HKEY_CURRENT_USER
-      * 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet Settings
+      * HiveHKEY_CURRENT_USER
+      * 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet 設定
          * 值名稱：ProxyServer
 
             > [!NOTE]
             > 請不要選取 [數值名稱] 左側的 [預設] 方塊。
 
-         * 實值型別：REG_SZ
-         * 若要解決此問題，請使用下列任一種方法。127.0.0.1:80
-            1. 按一下 [通用]  索引標籤，然後選取 [當不再套用這個項目時移除它]  。
-            2. 在 [通用]  索引標籤上，選取 [項目等級目標]  ，然後按一下 [目標]  。
-            3. 按一下 [新增項目]  ，然後選取安全性群組。
+         * 數值型別：REG_SZ
+         * 若要解決此問題，請使用下列任一種方法。127.0.0.1：80
+            1. 按一下 [通用] 索引標籤，然後選取 [當不再套用這個項目時移除它]。
+            2. 在 [通用] 索引標籤上，選取 [項目等級目標]，然後按一下 [目標]。
+            3. 按一下 [新增項目]，然後選取安全性群組。
             4. 選取 [...] 按鈕並新增 PAW Users 群組。
-            5. 按一下 [新增項目]  ，然後選取安全性群組。
+            5. 按一下 [新增項目]，然後選取安全性群組。
             6. 選取 [...] 按鈕並瀏覽 **Cloud Services Admins** 群組。
-            7. 按一下 [Cloud Services Admins]  項目，然後按一下 [項目選項]  。
-            8. 選取 [不是]  。
-            9. 按一下目標視窗上的 [確定]  。
+            7. 按一下 [Cloud Services Admins] 項目，然後按一下 [項目選項]。
+            8. 選取 [不是]。
+            9. 按一下目標視窗上的 [確定]。
 
-   3. 按一下 [確定]  ，完成 ProxyServer 群組原則設定。
-2. 移至 使用者設定 \ 原則管理範本 \windows 元件 \internet Explorer，並啟用下列選項。 這些設定將會防止系統管理員手動覆寫 Proxy 設定。
-   1. 啟用 [停用變更自動設定]  設定。
-   2. 啟用 [防止變更 Proxy 設定]  。
+   3. 按一下 [確定]，完成 ProxyServer 群組原則設定。
+2. 移至使用者設定管理 \Windows 元件範本瀏覽器，並啟用下列選項。 這些設定將會防止系統管理員手動覆寫 Proxy 設定。
+   1. 啟用 [停用變更自動設定] 設定。
+   2. 啟用 [防止變更 Proxy 設定]。
 
-#### <a name="restrict-administrators-from-logging-onto-lower-tier-hosts"></a>限制系統管理員登入較低層的主機
+#### <a name="restrict-administrators-from-logging-onto-lower-tier-hosts"></a>限制系統管理員登入較低層主機
 
 在本節中，我們將設定群組原則，以防特殊權限系統管理帳戶登入較低層的主機。
 
-1. 建立新的**限制工作站登入** GPO - 此設定將會限制第 0 層和第 1 層系統管理員帳戶登入標準工作站。  此 GPO 應該連結到 「 工作站 」 的最上層 OU，並具有下列設定：
-   * 在 [電腦設定 \ 原則 \windows 設定 \ 原則 \ 使用者權限指派登入以批次工作，選取**定義這些原則設定**並新增第 0 層和第 1 層群組︰   企業系統管理員的網域系統管理員結構描述管理員 DOMAIN\Administrators 帳戶運算子 Backup Operators 列印運算子 Server 運算子網域控制站唯讀網域控制站] 群組原則建立者擁有者密碼編譯運算子ators
+1. 建立新的**限制工作站登入** GPO - 此設定將會限制第 0 層和第 1 層系統管理員帳戶登入標準工作站。  此 GPO 應連結至「工作站」頂層 OU，並具有下列設定：
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕中，以批次工作登入，選取 [**定義這些原則設定**]，然後新增第0層和第1層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
 
          > [!NOTE]
          > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
@@ -526,7 +526,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > [!NOTE]
          > This Group was created earlier in Phase 1.
 
-   * 在 [電腦設定 \ 原則 \windows 設定 \ 原則 \ 使用者權限指派登入為服務，選取**定義這些原則設定**並新增第 0 層和第 1 層群組︰   企業系統管理員的網域系統管理員結構描述管理員 DOMAIN\Administrators 帳戶運算子 Backup Operators 列印運算子 Server 運算子網域控制站唯讀網域控制站] 群組原則建立者擁有者密碼編譯運算子ators
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕 [以服務方式登入] 中，選取 [**定義這些原則設定**]，並新增第0層和第1層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
 
          > [!NOTE]
          > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
@@ -541,8 +541,8 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > [!NOTE]
          > Note: This Group was created earlier in Phase 1
 
-2. 建立新**限制伺服器登入**GPO-此設定會限制第 0 層系統管理員帳戶登入第 1 層伺服器。  此 GPO 應該連結到 「 第 1 層伺服器 」 的最上層 OU，並具有下列設定：
-   * 在 [電腦設定 \ 原則 \windows 設定 \ 原則 \ 使用者權限指派登入以批次工作，選取**定義這些原則設定**然後新增第 0 層群組︰   企業系統管理員的網域系統管理員結構描述管理員 DOMAIN\Administrators 帳戶運算子 Backup Operators 列印運算子 Server 運算子網域控制站唯讀網域控制站] 群組原則建立者擁有者密碼編譯運算子ators
+2. 建立新的**限制伺服器登**入 GPO-此設定將會限制第0層系統管理員帳戶登入第1層伺服器。  此 GPO 應連結至「第1層伺服器」頂層 OU，並具有下列設定：
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕中，以批次工作登入，選取 [**定義這些原則設定**] 並新增第0層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
 
          > [!NOTE]
          > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
@@ -552,7 +552,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > [!NOTE]
          > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
 
-   * 在 [電腦設定 \ 原則 \windows 設定 \ 原則 \ 使用者權限指派登入為服務，選取**定義這些原則設定**然後新增第 0 層群組︰   企業系統管理員的網域系統管理員結構描述管理員 DOMAIN\Administrators 帳戶運算子 Backup Operators 列印運算子 Server 運算子網域控制站唯讀網域控制站] 群組原則建立者擁有者密碼編譯運算子ators
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕 [以服務方式登入] 中，選取 [**定義這些原則設定**] 並新增第0層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
 
          > [!NOTE]
          > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
@@ -562,7 +562,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > [!NOTE]
          > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
 
-   * 在本機上，選取 [電腦設定 \ 原則 \windows 設定 \ 原則 \ 使用者權限指派上的記錄檔中**定義這些原則設定**然後新增第 0 層群組︰   企業系統管理員的網域系統管理員結構描述系統管理員帳戶運算子 Backup Operators 列印運算子伺服器運算子網域控制站唯讀網域控制站] 群組原則建立者擁有者密碼編譯操作
+   * 在 [電腦設定 \ \windows] [設定 \ 本機設定 \] \ 使用者權限指派 \ 拒絕本機登入中，選取 [**定義這些原則設定**] 並新增第0層群組：   企業系統管理員網域系統管理員架構管理員帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯運算子
 
          > [!NOTE]
          > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
@@ -596,7 +596,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 4. 設定 Windows Defender 惡意探索防護
 
    > [!NOTE]
-   > 若要遵循的設定指導方針
+   > 遵循的設定指導方針
 
 5. 將 PAW 連線至網路。  請確定 PAW 可以連線到至少一個網域控制站 (DC)。
 6. 使用 PAW Maintenance 群組成員的帳戶，從新建立的 PAW 執行下列 PowerShell 命令，以便將其加入至適當 OU 的網域中︰
@@ -610,52 +610,52 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
 7. 請先套用所有重大及重要的 Windows Update，然後再安裝其他任何軟體 (包括系統管理工具、代理程式等)。
 8. 強制執行群組原則應用程式。
-   1. 開啟提升權限的命令提示字元並輸入下列命令： `Gpupdate /force /sync`
+   1. 開啟提升許可權的命令提示字元，並輸入下列命令： `Gpupdate /force /sync`
    2. 重新啟動電腦
 
-9. （選擇性）Active Directory 系統管理員安裝其他所需的工具。 安裝執行工作職責所需的其他任何工具或指令碼。 請務必先使用任何工具，在目標電腦上評估認證暴露的風險，然後再將其新增至 PAW。 存取[本頁](https://aka.ms/logontypes)可取得有關評估系統管理工具及連線方法是否存在認證暴露風險的詳細資訊。 請務必使用[適用於安裝媒體的乾淨來源](https://aka.ms/cleansource)中的指導方針，取得所有安裝媒體。
+9. 選擇性為 Active Directory 系統管理員安裝額外的必要工具。 安裝執行工作職責所需的其他任何工具或指令碼。 請務必先使用任何工具，在目標電腦上評估認證暴露的風險，然後再將其新增至 PAW。 存取[本頁](https://aka.ms/logontypes)可取得有關評估系統管理工具及連線方法是否存在認證暴露風險的詳細資訊。 請務必使用[適用於安裝媒體的乾淨來源](https://aka.ms/cleansource)中的指導方針，取得所有安裝媒體。
 
    > [!NOTE]
    > 即使跳躍伺服器並不是當做安全性界限，在這些工具的中央位置使用跳躍伺服器還是可以降低複雜性。
 
-10. （選擇性）下載並安裝必要的遠端存取軟體。 如果系統管理員將要從遠端使用 PAW 進行系統管理，請使用遠端存取解決方案廠商所提供的安全性指導方針安裝遠端存取軟體。 請務必使用適用於安裝媒體的乾淨來源中的指導方針，取得所有安裝媒體。
+10. 選擇性下載並安裝必要的遠端存取軟體。 如果系統管理員將要從遠端使用 PAW 進行系統管理，請使用遠端存取解決方案廠商所提供的安全性指導方針安裝遠端存取軟體。 請務必使用適用於安裝媒體的乾淨來源中的指導方針，取得所有安裝媒體。
 
     > [!NOTE]
-    > 請仔細考慮所有風險允許透過 PAW 進行遠端存取。  雖然行動 PAW 可實現許多重要的案例 (包括在家工作)，但是遠端存取軟體可能容易受到攻擊，而且可用來危害 PAW。
+    > 請仔細考慮允許透過 PAW 進行遠端存取所牽涉到的所有風險。  雖然行動 PAW 可實現許多重要的案例 (包括在家工作)，但是遠端存取軟體可能容易受到攻擊，而且可用來危害 PAW。
 
 11. 使用下列步驟，檢閱並確認所有設定都正確無誤，藉此驗證 PAW 系統的完整性︰
     1. 確認只有 PAW 專屬的群組原則才會套用至 PAW
-       1. 開啟提升權限的命令提示字元並輸入下列命令： `Gpresult /scope computer /r`
+       1. 開啟提升許可權的命令提示字元，並輸入下列命令： `Gpresult /scope computer /r`
        2. 檢閱所產生的清單，並確定只有出現的群組原則是您先前建立的群組原則。
     2. 使用下列步驟，確認 PAW 上沒有其他使用者帳戶是特殊權限群組的成員︰
-       1. 開啟 [編輯本機使用者和群組]  (lusrmgr.msc)，選取 [群組]  ，然後確認只有的本機 Administrators 群組的成員才是本機 Administrator 帳戶和 PAW Maintenance 全域安全性群組。
+       1. 開啟 [編輯本機使用者和群組] (lusrmgr.msc)，選取 [群組]，然後確認只有的本機 Administrators 群組的成員才是本機 Administrator 帳戶和 PAW Maintenance 全域安全性群組。
 
           > [!NOTE]
           > PAW Users 群組應該不是本機 Administrators 群組的成員。  只有成員才應該是本機 Administrator 帳戶和 PAW Maintenance 全域安全性群組 (且 PAW Users 應該也不是該全域群組的成員)。
 
-       2. 此外，請使用 [編輯本機使用者和群組]  確定下列群組沒有任何成員︰Backup Operators 加密編譯運算子 HYPER-V 系統管理員網路組態運算子 Power 使用者遠端桌面使用者複寫器
+       2. 此外，請使用 [編輯本機使用者和群組] 確定下列群組沒有任何成員︰備份操作員密碼編譯操作員 Hyper-v 系統管理員網路設定操作員 Power Users 遠端桌面使用者複寫者
 
-12. （選擇性）如果您的組織使用安全性資訊及事件管理 (SIEM) 解決方案，請確認 PAW[設定為轉送事件到系統，請使用 Windows 事件轉送 (WEF)](http://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx)或與登錄解決方案，讓 SIEM 主動地接收事件和資訊從 PAW。  此操作的詳細資料會因為您的 SIEM 解決方案而有所不同。
+12. 選擇性如果您的組織使用安全性資訊和事件管理（SIEM）解決方案，請確定 PAW 已[設定為使用 Windows 事件轉送（WEF）將事件轉寄至系統](http://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx)，或已向解決方案註冊，使 SIEM 為主動接收來自 PAW 的事件和資訊。  此操作的詳細資料會因為您的 SIEM 解決方案而有所不同。
 
     > [!NOTE]
     > 如果您的 SIEM在 PAW 上需要有以系統或本機系統管理帳戶身分執行的代理程式，請確定 SIEM 是使用與您的網域控制站和身分識別系統相同的信任層級加以管理。
 
-13. （選擇性）如果您選擇要部署 LAPS 來管理在 PAW 上的本機系統管理員帳戶的密碼，請確認已成功註冊密碼。
+13. 選擇性如果您選擇部署 LAPS 來管理 PAW 上本機系統管理員帳戶的密碼，請確認已成功註冊密碼。
 
     * 使用具有權限的帳戶讀取受 LAPS 管理的密碼，開啟 **Active Directory 使用者和電腦** (dsa.msc)。  確定已啟用 [進階功能]，然後以滑鼠右鍵按一下適當的電腦物件。  選取 [屬性編輯器] 索引標籤，並確認 msSVSadmPwd 的值以有效的密碼填入。
 
-### <a name="phase-2-extend-paw-to-all-administrators"></a>第 2 階段：將 PAW 延伸至所有系統管理員
+### <a name="phase-2-extend-paw-to-all-administrators"></a>第2階段:將 PAW 延伸至所有系統管理員
 
-範圍：以系統管理權限透過關鍵任務應用程式和相依性的所有使用者。  這應該至少包含應用程式伺服器、操作健全狀況與安全性監視解決方案、虛擬化解決方案、儲存系統，以及網路裝置的系統管理員。
+範圍：具有任務關鍵性應用程式和相依性之系統管理許可權的所有使用者。  這應該至少包含應用程式伺服器、操作健全狀況與安全性監視解決方案、虛擬化解決方案、儲存系統，以及網路裝置的系統管理員。
 
 > [!NOTE]
-> 此階段中的指示會假設階段 1 已經全部完成。  在您完成第 1 階段中的所有步驟之前，請不要開始階段 2。
+> 此階段中的指示會假設階段 1 已經全部完成。  除非您已完成第1階段中的所有步驟，否則請不要開始第2階段。
 
 一旦您確認已完成所有步驟，請執行下列步驟以完成階段 2︰
 
-#### <a name="recommended-enable-restrictedadmin-mode"></a>（建議選項）啟用**RestrictedAdmin**模式
+#### <a name="recommended-enable-restrictedadmin-mode"></a>使用啟用**RestrictedAdmin**模式
 
-啟用此功能在您現有的伺服器和工作站，然後強制執行這項功能使用。 這項功能會要求目標伺服器執行 Windows Server 2008 R2 或更新版本和目標工作站執行 Windows 7 或更新版本。
+在您現有的伺服器和工作站上啟用此功能，然後強制使用此功能。 此功能將需要目標伺服器執行 Windows Server 2008 R2 或更新版本，且目標工作站必須執行 Windows 7 或更新版本。
 
 1. 請遵循[本頁](https://aka.ms/rdpra)中提供的指示，在您的伺服器和工作站上啟用 **RestrictedAdmin** 模式。
 
@@ -663,19 +663,19 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
    > 為網際網路對向伺服器啟用此功能之前，您應該考慮敵手能夠向密碼雜湊先前遭竊的這些伺服器進行驗證的風險。
 
 2. 建立「需要 RestrictedAdmin - 電腦」群組原則物件 (GPO)。 本節將建立強制使用 /RestrictedAdmin 參數進行傳出遠端桌面連線的 GPO，以保護帳戶免於遭受目標系統上的認證竊取
-   * 移至 [電腦設定\原則\系統管理範本\系統\認證委派\限制委派認證給遠端伺服器]，並設為 [啟用]  。
+   * 移至 [電腦設定\原則\系統管理範本\系統\認證委派\限制委派認證給遠端伺服器]，並設為 [啟用]。
 3. 使用下列原則選項，將「需要 **RestrictedAdmin** - 電腦」連結至適當的第 1 層和/或第 2 層裝置︰
    * PAW 設定 - 電腦
       * -> 連結位置：Admin\Tier 0\Devices (現有的)
    * PAW 設定 - 使用者
-      * -> 連結位置：Admin\Tier 0\Accounts
+      * -> 連結位置：Admin\tier \devices 0 \ 帳戶
    * 需要 RestrictedAdmin - 電腦
-      * -> & gt;admin\tier1\devices 或-> 的 Admin\Tier2\Devices （兩者都是選擇性的）
+      * -> Admin\Tier1\Devices 或-> Admin\Tier2\Devices （兩者都是選擇性的）
 
    > [!NOTE]
    > 對於第 0 層系統而言，這是不需要的，因為這些系統已在環境中完整控制所有資產。
 
-#### <a name="move-tier-1-objects-to-the-appropriate-ous"></a>將第 1 層物件移至適當的 Ou
+#### <a name="move-tier-1-objects-to-the-appropriate-ous"></a>將第1層物件移至適當的 Ou
 
 1. 將第 1 層群組移至 Admin\Tier 1\Groups OU。 找出授與下列系統管理權限的所有群組，並將其移至此 OU。
    * 多部伺服器上的本機系統管理員
@@ -683,7 +683,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       * 企業應用程式的系統管理存取權
 2. 將第 1 層帳戶移至 Admin\Tier 1\Accounts OU。 將屬於那些第 1 層群組成員的每個帳戶 (包括巢狀成員資格) 移至此 OU。
 3. 將適當的成員新增至相關的群組
-   * **第 1 層系統管理員** - 此群組包含將受到限制而無法登入第 2 層主機的第 1 層系統管理員。 新增所有第 1 層系統管理群組伺服器或網際網路服務上具有系統管理權限。
+   * **第 1 層系統管理員** - 此群組包含將受到限制而無法登入第 2 層主機的第 1 層系統管理員。 新增所有第1層系統管理群組，其具有伺服器或網際網路服務的系統管理許可權。
 
       > [!NOTE]
       > 如果系統管理人員負責管理多個階層的資產，則您必須為每一層建立一個不同的系統管理帳戶。
@@ -693,7 +693,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
    > [!NOTE]
    > 若要設定和使用 Credential Guard，必須先啟用 Device Guard。  不過，您不需要設定其他任何 Device Guard 防護，就能使用 Credential Guard。
 
-5. （選擇性）啟用雲端服務的連線。 此步驟允許利用適當的安全性保證，管理雲端服務，例如 Azure 和 Office 365。 若要讓 Microsoft Intune 管理 PAW，也需要此步驟。
+5. 選擇性啟用雲端服務的連線能力。 此步驟允許利用適當的安全性保證，管理雲端服務，例如 Azure 和 Office 365。 若要讓 Microsoft Intune 管理 PAW，也需要此步驟。
 
    > [!NOTE]
    > 如果雲端服務的系統管理或 Intune 的管理不需要有雲端連線，請略過此步驟。
@@ -703,7 +703,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
    1. 設定 PAW 僅允許獲授權的網際網路目的地。  當您擴充 PAW 部署以啟用雲端管理時，必須允許存取授權的服務，同時篩選出來自開啟式網際網路的存取，因為開啟式網際網路更容易對您的系統管理員發動攻擊。
 
-      1. 建立**Cloud Services Admins**群組，並將所有帳戶都加入至它需要存取網際網路上的雲端服務。
+      1. 建立**雲端服務 Admins**群組，並將所有需要存取網際網路上雲端服務的帳戶新增至其中。
       2. 從 [TechNet 資源庫](https://aka.ms/pawmedia)下載 PAW *proxy.pac* 檔案，並在內部網站上發佈該檔案。
 
          > [!NOTE]
@@ -717,36 +717,36 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > 您也可以使用 Web Proxy 限制來自 PAW 的存取，以便進行深入防禦。 我們不建議在沒有 PAC 檔案的情況下自行使用此方式，因為這只會在連線至公司網路時，才限制對 PAW 的存取。
 
       3. 一旦您設定 *proxy.pac* 檔案之後，更新 PAW 設定 - 使用者 GPO。
-         1. 請移至 使用者設定 \ 喜好設定 \windows 設定 \ 登錄。 以滑鼠右鍵按一下登錄中，選取**的新** > **登錄項目**並設定下列設定：
+         1. 前往 User Configuration\Preferences\Windows Settings\Registry。 以滑鼠右鍵按一下 [登錄]，選取 [**新增**] [ >  登錄**專案**]，並設定下列設定：
             1. 動作：替換
-            2. 登錄區：HKEY_CURRENT_USER
-            3. 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet Settings
+            2. HiveHKEY_ CURRENT_USER
+            3. 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet 設定
             4. 值名稱：AutoConfigUrl
 
                > [!NOTE]
-               > 請不要選取 [數值名稱] 左側的 [預設]  方塊。
+               > 請不要選取 [數值名稱] 左側的 [預設] 方塊。
 
-            5. 實值型別：REG_SZ
-            6. 數值資料： 輸入完整的 URL，才能*proxy.pac*檔案，包括 http:// 和檔案名稱，例如 http://proxy.fabrikam.com/proxy.pac 。  URL 也可以是單一標籤 URL-例如， http://proxy/proxy.pac
+            5. 數值型別：REG_SZ
+            6. 數值資料：輸入*proxy pac*檔案的完整 URL，包括 HTTP://和檔案名，例如 http://proxy.fabrikam.com/proxy.pac 。  URL 也可以是單一標籤 URL-例如， http://proxy/proxy.pac
 
                > [!NOTE]
-               > PAC 檔案也可以裝載在檔案共用上，其語法為 file://server.fabrikan.com/share/proxy.pac，但這必須允許使用 file:// 通訊協定。 請參閱 「 注意：這個 File://-based Proxy 指令碼已被取代 」 一節[了解 Web Proxy 組態](http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx)部落格上設定所需的登錄值的其他詳細資料。
+               > PAC 檔案也可以裝載在檔案共用上，其語法為 file://server.fabrikan.com/share/proxy.pac，但這必須允許使用 file:// 通訊協定。 請參閱「注意：已淘汰的 File://-based Proxy 腳本」一節，[瞭解](http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx)如何設定所需的登錄值，以取得進一步的詳細資料。
 
-            7. 按一下 [通用]  索引標籤，然後選取 [當不再套用這個項目時移除它]  。
-            8. 在 [通用]  索引標籤上，選取 [項目等級目標]  ，然後按一下 [目標]  。
-            9. 按一下 [新增項目]  ，然後選取 [安全性群組]  。
+            7. 按一下 [通用] 索引標籤，然後選取 [當不再套用這個項目時移除它]。
+            8. 在 [通用] 索引標籤上，選取 [項目等級目標]，然後按一下 [目標]。
+            9. 按一下 [新增項目]，然後選取 [安全性群組]。
             10. 選取 [...] 按鈕並瀏覽 **Cloud Services Admins** 群組。
-            11. 按一下 [新增項目]  ，然後選取 [安全性群組]  。
+            11. 按一下 [新增項目]，然後選取 [安全性群組]。
             12. 選取 [...] 按鈕並瀏覽 **PAW Users** 群組。
-            13. 按一下 [PAW 使用者]  項目，然後按一下 [項目選項]  。
-            14. 選取 [不是]  。
-            15. 按一下目標視窗上的 [確定]  。
-            16. 按一下 [確定]  ，完成 **AutoConfigUrl** 群組原則設定。
+            13. 按一下 [PAW 使用者] 項目，然後按一下 [項目選項]。
+            14. 選取 [不是]。
+            15. 按一下目標視窗上的 [確定]。
+            16. 按一下 [確定]，完成 **AutoConfigUrl** 群組原則設定。
    2. 套用 Windows 10 安全性基準和雲端服務存取。使用下列步驟，將 Windows 和雲端服務存取 (如果需要) 的安全性基準連結至正確的 OU︰
       1. 將 Windows 10 安全性基準 ZIP 檔案的內容解壓縮。
       2. 建立這些 GPO、[匯入原則](https://technet.microsoft.com/library/cc753786.aspx)設定，並依照此表格[連結](https://technet.microsoft.com/library/cc732979.aspx)。 將每個原則連結到每個位置，並確定遵循表格中的順序 (表格中比較下方的項目應該比較晚套用，且優先順序比較高)︰
 
-         **原則：**
+         **策略**
 
          |||
          |-|-|
@@ -782,11 +782,11 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > [!NOTE]
          > 「SCM Windows 10 - 網域安全性」GPO 可能會連結到 PAW 之外的網域，但是將會影響整個網域。
 
-6. （選擇性）1 層系統管理員安裝其他所需的工具。 安裝執行工作職責所需的其他任何工具或指令碼。 請務必先使用任何工具，在目標電腦上評估認證暴露的風險，然後再將其新增至 PAW。 如需有關評估系統管理工具及連線方法是否存在認證暴露風險的詳細資訊，請瀏覽[本頁](https://aka.ms/logontypes)。 請務必使用適用於安裝媒體的乾淨來源中的指導方針，取得所有安裝媒體
+6. 選擇性安裝第1層系統管理員所需的其他工具。 安裝執行工作職責所需的其他任何工具或指令碼。 請務必先使用任何工具，在目標電腦上評估認證暴露的風險，然後再將其新增至 PAW。 如需有關評估系統管理工具及連線方法是否存在認證暴露風險的詳細資訊，請瀏覽[本頁](https://aka.ms/logontypes)。 請務必使用適用於安裝媒體的乾淨來源中的指導方針，取得所有安裝媒體
 7. 找出並安全地取得系統管理作業所需的軟體和應用程式。  這類似於階段 1 中執行的工作，但範圍更大，因為要保護的應用程式、服務和系統數目日益增加。
 
    > [!NOTE]
-   > 請確定您保護這些新的應用程式 （包括網頁瀏覽器） 」，藉由選擇 Windows Defender Exploit Guard 所提供的防護。
+   > 請務必將這些新的應用程式（包括網頁瀏覽器）選擇為 Windows Defender 惡意探索防護所提供的保護，藉此加以保護。
 
    其他軟體和應用程式的範例包括︰
 
@@ -798,7 +798,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > [!NOTE]
          > 許多應用程式現在都透過網頁瀏覽器專門管理，包括許多雲端服務。  雖然這可以減少在 PAW 上安裝所需的應用程式數目，但是這也引入了瀏覽器互通性問題的風險。  您可能需要將非 Microsoft 網頁瀏覽器部署到特定的 PAW 執行個體，才能啟用特定服務的系統管理。  如果您有部署其他網頁瀏覽器，請確認您有遵循所有乾淨來源準則，並根據廠商的安全性指導方針，保護瀏覽器的安全。
 
-8. （選擇性）下載並安裝任何必要的管理代理程式。
+8. 選擇性下載並安裝任何必要的管理代理程式。
 
    > [!NOTE]
    > 如果您選擇安裝其他管理代理程式 (監視、安全性、設定管理等)，您必須確保管理系統在與網域控制站和身分識別系統相同的層級都受到信任。 如需其他指導方針，請參閱「管理與更新 PAW」。
@@ -835,29 +835,29 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       > [!NOTE]
       > 這對於流動率高的角色特別重要，包括但不限於技術支援人員。
 
-    * 如何確保符合新的程序？  雖然 PAW 模型包含數個技術的控制項，以防止暴露特殊權限的認證，就無法完全避免所有可能的風險，單純利用技術控制項。  例如，雖然技術上的控制可以防止系統管理員使用特殊權限認證成功登入使用者桌面，但是嘗試登入這個簡單的動作可能會將認證洩漏給該使用者桌面上安裝的惡意程式碼。  因此，清楚表達 PAW 模型的優點以及不合規的風險相當重要。  這應該透過稽核和警示補強，如此便可以快速偵測到認證暴露並加以解決。
+    * 如何確保符合新的程序？  雖然 PAW 模型包含數個技術控制項來避免公開特殊許可權認證，但無法完全防止所有可能的公開使用技術控制項。  例如，雖然技術上的控制可以防止系統管理員使用特殊權限認證成功登入使用者桌面，但是嘗試登入這個簡單的動作可能會將認證洩漏給該使用者桌面上安裝的惡意程式碼。  因此，清楚表達 PAW 模型的優點以及不合規的風險相當重要。  這應該透過稽核和警示補強，如此便可以快速偵測到認證暴露並加以解決。
 
-### <a name="phase-3-extend-and-enhance-protection"></a>第 3 階段：擴充及增強防護
+### <a name="phase-3-extend-and-enhance-protection"></a>第3階段:擴充和增強保護
 
-範圍：這些保護增強第 1 階段鞏固基本保護進階功能，包括多重要素驗證和網路存取規則與內建的系統。
+範圍：這些保護增強了第1階段內建的系統，使用先進的功能鞏固基本保護，包括多重要素驗證和網路存取規則。
 
 > [!NOTE]
 > 完成階段 1 之後，隨時都可以執行這個階段。  此階段不相依於階段 2 的完成，因此可以在階段 2 前後執行，或與階段 2 同時執行。
 
 請遵循下列步驟設定此階段︰
 
-1. **啟用特殊權限帳戶的 multi-factor authentication**。  多重要素驗證會要求使用者在提供認證之外，也提供一個實體權杖，藉以加強帳戶安全性。  多重要素驗證可以完美地補強驗證原則，但是該驗證不相依於部署的驗證原則 (同樣地，驗證原則也不相依於多重要素驗證)。  Microsoft 建議使用以下其中一種形式的多重要素驗證︰
+1. **針對特殊許可權帳戶啟用多重要素驗證**。  多重要素驗證會要求使用者在提供認證之外，也提供一個實體權杖，藉以加強帳戶安全性。  多重要素驗證可以完美地補強驗證原則，但是該驗證不相依於部署的驗證原則 (同樣地，驗證原則也不相依於多重要素驗證)。  Microsoft 建議使用以下其中一種形式的多重要素驗證︰
 
-   * **智慧卡**:智慧卡是防竄改的可攜式實體裝置，可以提供 Windows 登入程序的第二次驗證。  您可以要求個人必須擁有智慧卡才能登入，藉此減少從遠端重複使用遭竊憑證的風險。  如需有關 Windows 中的智慧卡登入詳細資訊，請參閱[智慧卡概觀](https://technet.microsoft.com/library/hh831433.aspx)一文。
-   * **虛擬智慧卡**:虛擬智慧卡提供相同的安全性優點實體智慧卡，為的可以連結至特定硬體的附加好處。  如需有關部署和硬體需求的詳細資訊，請參閱兩篇文章[虛擬智慧卡概觀](https://technet.microsoft.com/library/dn593708.aspx)和[開始使用虛擬智慧卡：逐步解說指南](https://technet.microsoft.com/library/dn579260.aspx)。
-   * **Windows hello 企業版**:Windows hello 企業版可讓使用者向 Microsoft 帳戶、 Active Directory 帳戶、 Microsoft Azure Active Directory (Azure AD) 帳戶或支援 Fast ID Online (FIDO) 驗證的非 Microsoft 服務。 最初的兩步驟期間進行驗證之後 Windows Hello 進行公司註冊，Windows hello 企業版設定使用者的裝置上，因此使用者可以設定一個手勢，可能是 Windows Hello 或 PIN。 Windows Hello for Business 認證是對稱金鑰組，可信賴平台模組 (Tpm) 的隔離環境內產生。
-      如需有關 Windows Hello for Business 讀取[Windows hello 企業版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)文章。
-   * **Azure 多因素驗證**:Azure multi-factor authentication (MFA) 提供安全性的第二個驗證因素，以及增強的保護，透過監視和機器學習式分析。  Azure MFA 不僅可以保護 Azure 系統管理員的安全，還可以保護其他許多解決方案，包括 Web 應用程式、Azure Active Directory，以及內部部署解決方案 (例如遠端存取和遠端桌面)。  如需有關 Azure 多重要素驗證的詳細資訊，請參閱[多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication)一文。
+   * **智慧卡**：智慧卡是一種防篡改且可攜的實體裝置，可在 Windows 登入程式期間進行第二次驗證。  您可以要求個人必須擁有智慧卡才能登入，藉此減少從遠端重複使用遭竊憑證的風險。  如需有關 Windows 中的智慧卡登入詳細資訊，請參閱[智慧卡概觀](https://technet.microsoft.com/library/hh831433.aspx)一文。
+   * **虛擬智慧卡**：虛擬智慧卡提供與實體智慧卡相同的安全性優點，並增加了連結至特定硬體的優點。  如需有關部署和硬體需求的詳細資訊，請參閱 <<c0>虛擬智慧卡總覽和 @no__t 1Get 開始使用虛擬智慧卡：逐步解說指南 @ no__t-0。
+   * **Windows Hello 企業版**:Windows Hello 企業版可讓使用者向 Microsoft 帳戶、Active Directory 帳戶、Microsoft Azure Active Directory （Azure AD）帳戶，或支援快速識別碼線上（FIDO）驗證的非 Microsoft 服務進行驗證。 在 Windows Hello 企業版註冊期間進行最初的兩步驟驗證之後，系統會在使用者的裝置上設定 Windows Hello 企業版，且使用者會設定手勢，可以是 Windows Hello 或 PIN。 Windows Hello 企業版認證是一組非對稱金鑰組，可以在可信賴平臺模組（Tpm）的隔離環境中產生。
+      如需 Windows Hello 企業版的詳細資訊，請參閱[Windows Hello 企業版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)文章。
+   * **Azure 多重要素驗證**：Azure 多重要素驗證（MFA）提供第二個驗證因素的安全性，以及透過監視和以機器學習為基礎的分析來加強保護。  Azure MFA 不僅可以保護 Azure 系統管理員的安全，還可以保護其他許多解決方案，包括 Web 應用程式、Azure Active Directory，以及內部部署解決方案 (例如遠端存取和遠端桌面)。  如需有關 Azure 多重要素驗證的詳細資訊，請參閱[多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication)一文。
 
-2. **列入白名單受信任的應用程式使用 Windows Defender 應用程式控制及/或 AppLocker**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
+2. **使用 Windows Defender 應用程式控制和/或 AppLocker 將受信任的應用程式列入白名單**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
 
-   * **AppLocker**:AppLocker 可協助系統管理員控制哪些應用程式可以指定系統上執行。  AppLocker 可以透過群組原則集中加以控制，而且可以套用至特定的使用者或群組 (針對以 PAW 使用者為目標的應用)。  如需有關 AppLocker 的詳細資訊，請參閱 TechNet 文章 [AppLocker 概觀](https://technet.microsoft.com/library/hh831440.aspx)。
-   * **Windows Defender 應用程式控制**： 的新 Windows Defender 應用程式控制功能提供增強的硬體為基礎的應用程式控制項，與 AppLocker，不同的是不能覆寫受影響的裝置上。  如同 AppLocker，Windows Defender 應用程式控制可透過群組原則控制且以特定使用者為目標。  如需有關如何限制 Windows Defender 應用程式控制的應用程式使用的詳細資訊，請參閱[Windows Defender 應用程式控制項部署指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
+   * **AppLocker**：AppLocker 可協助系統管理員控制哪些應用程式可以在指定的系統上執行。  AppLocker 可以透過群組原則集中加以控制，而且可以套用至特定的使用者或群組 (針對以 PAW 使用者為目標的應用)。  如需有關 AppLocker 的詳細資訊，請參閱 TechNet 文章 [AppLocker 概觀](https://technet.microsoft.com/library/hh831440.aspx)。
+   * **Windows Defender 應用**程式控制：全新的 Windows Defender 應用程式控制功能可提供增強的硬體型應用程式控制，這與 AppLocker 不同，無法在受影響的裝置上覆寫。  如同 AppLocker，Windows Defender 應用程式控制可以透過群組原則來控制，並以特定使用者為目標。  如需有關使用 Windows Defender 應用程式控制來限制應用程式使用方式的詳細資訊，請參閱[Windows Defender 應用程式控制部署指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
 
 3. **使用 Protected Users、驗證原則和驗證定址接收器進一步保護特殊權限帳戶**。  Protected Users 的成員受制於其他安全性原則，這些原則可保護本機安全性代理程式 (LSA) 中所儲存的認證，並大幅降低認證竊取和重複使用的風險。  驗證原則和定址接收器可控制特殊權限使用者如何存取網域中的資源。  整體而言，這些防護可大幅增強這些特殊權限使用者的帳戶安全性。  如需有關這些功能的其他詳細資訊，請參閱[如何設定受保護的帳戶](https://technet.microsoft.com/library/dn518179.aspx)網路文章。
 
@@ -868,7 +868,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
 PAW 必須具備反惡意程式碼功能，而且必須快速套用軟體更新，以維持這些工作站的完整性。
 
-其他設定管理、操作監控及安全性管理也可以搭配 PAW 使用，但是必須審慎考慮是否要整合這些功能，因為每個管理功能也會透過該工具，引入 PAW 危害的風險。 是否有意義推出進階的管理功能取決於許多因素包括：
+其他設定管理、操作監控及安全性管理也可以搭配 PAW 使用，但是必須審慎考慮是否要整合這些功能，因為每個管理功能也會透過該工具，引入 PAW 危害的風險。 引進先進管理功能是否合理，取決於數個因素，包括：
 
 * 管理功能的安全性狀態和作法 (包括工具的軟體更新作法、系統管理角色及這些角色中的帳戶、裝載或管理工具所在的作業系統，以及該工具的其他任何硬體或軟體相依性)
 * 軟體部署和更新在 PAW 上的頻率和數量
@@ -885,7 +885,7 @@ PAW 必須具備反惡意程式碼功能，而且必須快速套用軟體更新�
 |PAW 中的預設值<br /><br />-   Windows Server Update Services<br />-   Windows Defender|-   不需要額外成本<br />-   執行基本的必要安全性功能<br />-   隨附在本指導方針中的指示|
 |使用 [Intune](https://technet.microsoft.com/library/jj676587.aspx) 管理|<ul><li>提供雲端式的可見度及控制<br /><br /><ul><li>軟體部署</li><li>o   管理軟體更新</li><li>Windows 防火牆原則管理</li><li>反惡意程式碼防護</li><li>遠端協助</li><li>軟體授權管理。</li></ul></li><li>不需要伺服器基礎結構</li><li>需要遵循階段 2 中的「啟用雲端服務的連線」步驟</li><li>如果 PAW 電腦未加入網域，這需要使用安全性基準下載所提供的工具，將 SCM 基準套用至本機映像。</li></ul>|
 |用於管理 PAW 的新 System Center 執行個體|-   提供設定、軟體部署和安全性更新的可見度及控制<br />-   需要不同的伺服器基礎結構，將其固定至 PAW 的層級，並為這些高特殊權限的人員提供專業人員的技能|
-|使用現有的管理工具管理 PAW|-建立以對 Paw 的危害，除非現有的管理基礎結構培養 Paw 的安全性層級的重大風險**附註：**   Microsoft 會通常不鼓勵這種方法，除非您的組織有特定原因来使用它。 在我們的經驗，沒有通常非常高的成本，來將所有這些工具 （和它們的安全性相依性） 到 Paw 的安全性層級。<br />-   其中大部分的工具都提供設定、軟體部署和安全性更新的可見度及控制|
+|使用現有的管理工具管理 PAW|-會造成危害 Paw 的嚴重風險，除非現有的管理基礎結構已啟動 Paw 的安全性層級**附注：**   除非您的組織有特定的使用方式，否則 Microsoft 通常不鼓勵這種方法。 在我們的經驗中，通常會有非常高的成本，將所有這些工具（及其安全性相依性）帶入 Paw 的安全性層級。<br />-   其中大部分的工具都提供設定、軟體部署和安全性更新的可見度及控制|
 |需要系統管理員存取權的安全性掃描或監視工具|包含可安裝代理程式的任何工具，或需要具有本機系統管理存取權的帳戶。<br /><br />-   需要將工具安全保證培養到 PAW 的層級。<br />-   可能需要降低 PAW 的安全性情勢，才能支援工具功能 (開放連接埠、安裝 Java 或其他中介軟體等)，進而產生安全性取捨決策，|
 |安全性資訊及事件管理 (SIEM)|<ul><li>如果 SIEM 是無代理程式<br /><br /><ul><li>不需要系統管理存取權，就可以使用 **Event Log Readers** 群組中的帳戶，存取 PAW 上的事件</li><li>需要開放網路連接埠，以允許來自 SIEM 伺服器的輸入流量</li></ul></li><li>如果 SIEM 需要一個代理程式，請參閱其他列**需要系統管理員存取權的安全性掃描或監視工具**。</li></ul>|
 |Windows 事件轉送|-   提供一種無代理程式方法，將安全性事件從 PAW 轉送至外部收集器或 SIEM<br />-   不需要系統管理存取權，就可以存取 PAW 上的事件<br />-   不需要開放網路連接埠，就可以允許來自 SIEM 伺服器的輸入流量|
@@ -894,136 +894,136 @@ PAW 必須具備反惡意程式碼功能，而且必須快速套用軟體更新�
 
 PAW 解決方案應該根據乾淨來源準則，使用[操作標準](https://aka.ms/securitystandards)中的標準進行操作。
 
-## <a name="deploy-paws-using-a-guarded-fabric"></a>部署 Paw 使用受防護網狀架構
+## <a name="deploy-paws-using-a-guarded-fabric"></a>使用受防護的網狀架構部署 Paw
 
-A[受防護網狀架構](https://aka.ms/shieldedvms)可用來在膝上型電腦上執行受防護的虛擬機器中的 PAW 的工作負載或跳躍伺服器。
-採用這個方法需要額外的基礎結構和操作的步驟，但可以讓您更輕鬆地在定期間隔重新部署 PAW 映像並可讓您將多個不同的階層式 （或分類） Paw 合併到執行的虛擬機器藉由並行的單一裝置上。
-如需受防護網狀架構的拓樸與安全性承諾的完整說明，請參閱[受防護網狀架構文件](https://aka.ms/shieldedvms)。
+您可以使用受防護的網狀[架構](https://aka.ms/shieldedvms)，在膝上型電腦或跳躍伺服器的受防護虛擬機器中執行 PAW 工作負載。
+採用這種方法需要額外的基礎結構和操作步驟，但可讓您更輕鬆地定期重新部署 PAW 映射，並讓您將多個不同的分層（或分類） Paw 合併到執行的虛擬機器在單一裝置上並存。
+如需受防護網狀架構拓撲和安全性承諾的完整說明，請參閱受防護的網狀[架構檔](https://aka.ms/shieldedvms)。
 
 ### <a name="changes-to-the-paw-gpos"></a>PAW Gpo 的變更
 
-使用受防護的 VM 為基礎的 Paw 時,[建議 GPO 設定](#create-paw-configuration---computer-group-policy-object-gpo)定義上方會需要修改，以支援使用虛擬機器。
+使用受防護的 VM 型 Paw 時，您必須修改上面定義的[建議 GPO 設定](#create-paw-configuration---computer-group-policy-object-gpo)，以支援虛擬機器的使用。
 
-1. 實體的 PAW 主機的建立新的 OU。 實體和虛擬的 Paw 有不同的安全性需求，並且應該據以分隔在 Active Directory 中。
-2. PAW 電腦 GPO 應該連結到這兩個實體和虛擬 PAW Ou。
-3. 建立新的 GPO，將 PAW 使用者新增至 HYPER-V 系統管理員群組實體的 paw。 如此才能讓系統管理員，以連線至 Vm 的系統管理員，並視需要將其開啟/關閉。 請務必為實體的 PAW 使用者記錄沒有系統管理員權限，存取網際網路或從網路共用或實體的 PAW 到外部存放裝置複製惡意虛擬機器資料的能力。
-4. 建立新的 GPO，系統管理員將 PAW 使用者新增至 Remote Desktop Users 群組的 Vm。 這可讓使用者使用 HYPER-V 增強的主控台工作階段，會提供較佳使用者體驗，並讓智慧卡傳遞至 VM。
+1. 為實體 PAW 主機建立新的 OU。 實體和虛擬 Paw 有不同的安全性需求，因此應該在 Active Directory 中加以分隔。
+2. PAW 電腦 GPO 應連結至實體和虛擬 PAW Ou。
+3. 為實體 PAW 建立新的 GPO，以將 PAW 使用者新增至 Hyper-v Admins 群組。 這是允許系統管理員連線到系統管理 Vm，並視需要開啟/關閉它們的必要專案。 使用者登入實體 PAW 並不具有系統管理員許可權、存取網際網路，或從網路共用或外部存放裝置將惡意虛擬機器資料複製到實體 PAW，是很重要的。
+4. 為系統管理員 Vm 建立新的 GPO，以將 PAW 使用者新增至遠端桌面使用者群組。 這可讓使用者使用 Hyper-v 增強的主控台會話，以提供更佳的使用者體驗，並讓智慧卡通過 VM。
 
 ### <a name="set-up-the-host-guardian-service"></a>設定主機守護者服務
 
-主機守護者服務負責證明身分識別和實體的 PAW 裝置的健全狀況。
-HGS 已知這些機器並執行的受信任[程式碼完整性原則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)可啟動受防護的 Vm。
-這可協助保護受防護的 Vm 執行受信任的工作負載，以管理您的階層式的資源，從使用者的桌面環境的威脅。
+主機守護者服務負責證明實體 PAW 裝置的身分識別與健康情況。
+只有已知 HGS 和執行信任的程式[代碼完整性原則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)的電腦，才能夠啟動受防護的 vm。
+這有助於保護受防護的 Vm，以執行受信任的工作負載來管理您的階層式資源，從使用者桌面環境的威脅。
 
-HGS 會負責判斷哪些裝置可以執行 PAW 的 Vm，因為它會被視為第 0 層資源。
-它應該與其他第 0 層資源一起部署和保護不受未經授權的實體和邏輯存取。
-HGS 會是叢集的角色，讓您輕鬆地相應放大以任何大小的部署。
-一般規則是規劃每 1,000 部裝置，您也有 3 個節點的最少 1 個 HGS 伺服器。
+由於 HGS 負責判斷哪些裝置可以執行 PAW Vm，因此會被視為第0層資源。
+它應該與其他第0層資源一起部署，並受到保護，避免未經授權的實體和邏輯存取。
+HGS 是叢集角色，可讓您輕鬆地相應放大任何大小的部署。
+一般規則是針對您擁有的每個1000裝置規劃1個 HGS 伺服器，至少有3個節點。
 
-1. 若要安裝您的第一部 HGS 伺服器，開頭[安裝的 HGS-防禦樹系](../../security/guarded-fabric-shielded-vm/guarded-fabric-install-hgs-in-a-bastion-forest.md)文章，並加入您的第 0 層網域中的 HGS。
+1. 若要安裝您的第一部 HGS 伺服器，請從[安裝 hgs-防禦樹](../../security/guarded-fabric-shielded-vm/guarded-fabric-install-hgs-in-a-bastion-forest.md)系一文開始，並將 HGS 加入您的第0層網域。
 
-2. 然後，[建立憑證以 HGS](../../security/guarded-fabric-shielded-vm/guarded-fabric-obtain-certs.md)使用企業憑證授權單位。
-擁有 HGS 加密和簽章憑證的任何人都可以解密受防護的 VM，因此如果您有權限來保護私密金鑰的硬體安全性模組時，建議您產生這些憑證使用 HSM。
-較高的安全性，選取 大於或等於 4096 位元金鑰大小。
+2. 然後，使用您的企業憑證授權單位單位[建立 HGS 的憑證](../../security/guarded-fabric-shielded-vm/guarded-fabric-obtain-certs.md)。
+擁有 HGS 加密和簽署憑證的任何人都可以解密受防護的 VM，因此如果您可以存取硬體安全模組來保護私密金鑰，建議您使用 HSM 來產生這些憑證。
+若要獲得更強的安全性，請選取大於或等於4096位的金鑰大小。
 
-3. 最後，請遵循的步驟[初始化您的 HGS 伺服器](../../security/guarded-fabric-shielded-vm/guarded-fabric-initialize-hgs-tpm-mode-bastion.md)中**TPM 模式**。
-初始化設定證明與金鑰保護 web 服務，供您的 Paw。
-應該是 HGS[設有 TLS 憑證](../../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-https.md)來保護這些通訊，並只連接埠 443 應該開啟受信任的網路 HGS。
+3. 最後，遵循下列步驟，以**TPM 模式**[初始化 HGS 伺服器](../../security/guarded-fabric-shielded-vm/guarded-fabric-initialize-hgs-tpm-mode-bastion.md)。
+初始化會設定您的 Paw 所使用的證明和金鑰保護 web 服務。
+HGS 應[設定為使用 TLS 憑證](../../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-https.md)來保護這些通訊，而且只應從不受信任的網路開啟埠443至 HGS。
 
-4. 請遵循步驟來[加入其他節點](../../security/guarded-fabric-shielded-vm/guarded-fabric-configure-additional-hgs-nodes.md)針對您的第二個，第三，和其他 HGS 節點。
+4. 遵循步驟，為您的第二、第三和其他 HGS 節點[新增其他節點](../../security/guarded-fabric-shielded-vm/guarded-fabric-configure-additional-hgs-nodes.md)。
 
-5. 如果您的 HGS 伺服器執行 Windows Server 2019 或更新版本中，您可以在其中啟用 Paw 上的受防護 Vm 的快取索引鍵，因此它們可以離線使用的選擇性功能。 索引鍵是密封格式，為了防止有人使用快取索引鍵，另一部電腦或在不安全的狀態在同一部電腦上的系統目前的安全性組態。 如果您的 PAW 使用者無法存取網際網路的移動，但仍然需要能夠登入其 PAW 的 Vm，這可能是很實用的解決方案。 若要使用這項功能，請在任何 HGS 伺服器上執行下列命令：
+5. 如果您的 HGS 伺服器執行的是 Windows Server 2019 或更新版本，您可以啟用選擇性功能來快取 Paw 上受防護 Vm 的金鑰，讓它們可以離線使用。 金鑰會密封為系統目前的安全性設定，以防止有人在另一部電腦上使用快取的金鑰，或在不安全的狀態中使用同一部電腦。 如果您的 PAW 使用者在沒有網際網路存取的情況下移動，但仍然需要能夠登入其 PAW Vm，這可能是很有用的解決方案。 若要使用這項功能，請在任何 HGS 伺服器上執行下列命令：
 
       ```powershell
       Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
       ```
 
-### <a name="set-up-the-physical-paw-device"></a>設定實體的 PAW 裝置
+### <a name="set-up-the-physical-paw-device"></a>設定實體 PAW 裝置
 
-實體的 PAW 裝置會被視為未受信任的受防護網狀架構方案中的預設。
-它可以證明是可信任的期間證明程序之後，它可以取得啟動受防護的系統管理員 VM 所需的金鑰。
-裝置必須能夠執行 HYPER-V 且有安全開機和 TPM 2.0 啟用以符合[受防護主機先決條件](../../security/guarded-fabric-shielded-vm/guarded-fabric-guarded-host-prerequisites.md)。
-支援所有的 PAW 功能的最低作業系統版本**Windows 10 1803年版**。
+在受防護網狀架構解決方案中，實體 PAW 裝置預設視為不受信任。
+它可以證明它在證明程式中是值得信任的，之後可以取得啟動受防護系統管理 VM 所需的金鑰。
+裝置必須能夠執行 Hyper-v，並啟用安全開機和 TPM 2.0，以符合[受防護主機的必要條件](../../security/guarded-fabric-shielded-vm/guarded-fabric-guarded-host-prerequisites.md)。
+支援所有 PAW 功能的最低作業系統版本是**Windows 10 版本 1803**。
 
-實體的 PAW 應該設定類似任何其他，任何 PAW 使用者必須是 HYPER-V 系統管理員能夠開啟 VM 的系統管理員，並連接到它的例外狀況。
-在清除空間環境中，您必須建立每個您要部署為受防護主機的管理 Vm 的唯一硬體/軟體組合的黃金組態。
-在每個標準的設定中，完成下列工作：
+實體 PAW 應該與任何其他設定一樣，唯一的例外是任何 PAW 使用者都必須是 Hyper-v 系統管理員，才能開啟管理 VM，並與其連線。
+在您的全新室環境中，您必須針對要部署為系統管理員 Vm 之受防護主機的每個唯一硬體/軟體組合，建立黃金設定。
+在每個黃金設定上，完成下列工作：
 
-1. 為 Windows、 驅動程式及韌體機器，以及任何第三方管理或監視代理程式上的安裝最新的更新。
-2. [擷取必要的基礎資訊](../../security/guarded-fabric-shielded-vm/guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)、 唯一 TPM 識別碼 （簽署金鑰），包括開機測量 （TCG 記錄） 和程式碼完整性原則的機器。
-3. 將這些成品複製到一個 HGS 伺服器，並在上一篇文章中註冊主機執行的 HGS 證明命令。 如果所有主機使用相同的程式碼完整性原則和/或使用相同的硬體組態，您只需要一次註冊程式碼完整性原則/TCG 記錄檔。
+1. 在電腦上安裝 Windows、驅動程式和固件的最新更新，以及任何協力廠商管理或監視代理程式。
+2. [捕捉必要的基準資訊](../../security/guarded-fabric-shielded-vm/guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)，包括電腦的唯一 TPM 識別碼（簽署金鑰）、開機測量（TCG 記錄檔）和程式碼完整性原則。
+3. 將這些成品複製到 HGS 伺服器，並執行前一篇文章中的 HGS 證明命令以註冊主機。 如果您的所有主機都使用相同的程式碼完整性原則和（或）使用相同的硬體設定，您只需要註冊程式碼完整性原則/TCG 記錄一次。
 
-### <a name="create-the-signed-template-disk"></a>建立已簽署的範本磁碟
+### <a name="create-the-signed-template-disk"></a>建立已簽署的範本磁片
 
-使用已簽署的範本磁碟，會建立受防護的 Vm。
-在部署期間，若要確認磁碟完整性和真實性釋放祕密，例如系統管理員密碼至 VM 之前，先驗證簽章。
+受防護的 Vm 會使用已簽署的範本磁片來建立。
+簽章會在部署階段進行驗證，以在將秘密（例如系統管理員密碼）發行至 VM 之前，先確認磁片完整性和真實性。
 
-若要建立已簽署的範本磁碟，請遵循第 1 階段部署的規則，第 2 代虛擬機器上。
-此電腦將成為 VM 系統管理員的黃金映像。
-您可以建立一個以上的範本磁碟有專用的不同內容中提供的工具來。
+若要建立已簽署的範本磁片，請遵循一般第2代虛擬機器上的第1階段部署步驟。
+這部電腦將成為系統管理員 VM 的黃金映射。
+您可以建立一個以上的範本磁片，讓特定的工具可在不同的內容中使用。
 
-當 VM 已設定為有需要，請執行`C:\Windows\System32\sysprep\sysprep.exe`，並選擇**一般化**磁碟。 **關閉**OS 一般化完成時。
+當 VM 設定為 [必要] 時，請執行 `C:\Windows\System32\sysprep\sysprep.exe`，然後選擇將磁片**一般化**。 當一般化完成時，**關閉**作業系統。
 
-最後，執行[範本磁碟精靈](../../security/guarded-fabric-shielded-vm/guarded-fabric-create-a-shielded-vm-template.md)上安裝 BitLocker 元件，並產生磁碟簽章 VM 的 VHDX 檔案。
+最後，從 VM 的 VHDX 檔案執行「[範本磁片嚮導](../../security/guarded-fabric-shielded-vm/guarded-fabric-create-a-shielded-vm-template.md)」，以安裝 BitLocker 元件並產生磁片簽章。
 
-#### <a name="create-the-shielding-data-file"></a>建立虛擬機器防護資料檔案
+#### <a name="create-the-shielding-data-file"></a>建立防護資料檔案
 
-一般化的範本磁碟會與包含機密資料，才能佈建受防護的 VM 防護資料檔案配對。
-防護資料檔案包含：
-   - 定義 VM 皆可執行的網狀架構的守衛清單。 每個 HGS 叢集是針對它所保護的 PAW 裝置守護者。
-   - 部署受信任的磁碟簽章的清單。 防護資料檔案只會釋放其祕密，以建立使用已獲授權的來源媒體的 Vm。
-   - 安全性原則，指出是否應該放額外保護措施來保護 VM 從主機和 VM 是否允許將移至另一部電腦。 PAW 管理 Vm 應該一律完全受防護。
-   - Unattend.xml 特製化檔案，可讓 Windows 自動完成安裝，而且包含祕密，例如本機系統管理員密碼。
+一般化的範本磁片會與防護資料檔案配對，其中包含布建受防護 VM 所需的秘密。
+防護資料檔案包括：
+   - 監護人清單，定義允許 VM 執行的網狀架構。 每個 HGS 叢集都是它所保護之 PAW 裝置的守護者。
+   - 受信任部署的磁片簽章清單。 防護資料檔案只會將其秘密發行至使用授權來源媒體建立的 Vm。
+   - 一種安全性原則，規定是否應將額外的保護放在適當的位置，以保護主機的 VM，以及是否允許 VM 移至另一部電腦。 PAW 系統管理 Vm 應一律受到全面防護。
+   - Unattend.xml 特製化檔案，可讓 Windows 自動完成安裝，並包含像是本機系統管理員密碼的秘密。
    - 其他檔案，例如 RDP 或 VPN 憑證。
 
-請參閱[防護資料檔案文章](../../security/guarded-fabric-shielded-vm/guarded-fabric-tenant-creates-shielding-data.md)如需有關如何建立防護資料檔案的步驟。
+請參閱[防護資料檔案一文](../../security/guarded-fabric-shielded-vm/guarded-fabric-tenant-creates-shielding-data.md)，以取得如何建立防護資料檔案的步驟。
 
-受防護的 Vm 的擁有者索引鍵極為重視和應該保存在 HSM 或離線存放在安全的位置。
-它們可以用在緊急 break glass 案例來開機受防護的 VM，如果沒有顯示 HGS。
+受防護 Vm 的擁有者金鑰非常敏感，應保留在 HSM 中，或在安全的位置中儲存為離線。
+它們可以在緊急中斷玻璃案例中使用，而不需要 HGS 就能啟動受防護的 VM。
 
-強烈建議，防護資料 PAW 系統管理 Vm 包含鎖定的 VM 開機，第一個實體主機的設定。
-這會防止其他人將從一個 PAW 的系統管理 VM 移至相同的環境中的另一個 PAW。
+強烈建議 PAW 管理 Vm 的防護資料，包括將 VM 鎖定到其開機所在的第一個實體主機的設定。
+這可防止某人將系統管理員 VM 從一個 PAW 移至相同環境中的另一個 PAW。
 若要使用這項功能，請使用 PowerShell 建立防護資料檔案，並包含**BindToHostTpm**參數：
 
 ```powershell
 New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 ```
 
-#### <a name="deploy-an-admin-vm"></a>部署 VM 的系統管理員
+#### <a name="deploy-an-admin-vm"></a>部署管理員 VM
 
-準備好的範本磁碟和虛擬機器防護資料檔案之後，您可以部署的系統管理員已向 HGS 註冊任何 PAW 上的 VM。
+準備好範本磁片和防護資料檔案之後，您就可以在任何已向 HGS 註冊的 PAW 上部署管理 VM。
 
-1. 複製範本磁碟 (.vhdx) 和虛擬機器防護資料檔案 (.pdk) 至受信任的 PAW 裝置。
-2. 請依照下列指示來[部署新的受防護的 VM，使用 PowerShell](../../security/guarded-fabric-shielded-vm/guarded-fabric-create-a-shielded-vm-using-powershell.md)
-3. 保護 VM 作業系統，並為其預期的角色，適當地設定的部署程序的第 1 階段中完成剩餘步驟。
+1. 將範本磁片（.vhdx）和防護資料檔案（pdk）複製到信任的 PAW 裝置。
+2. 遵循指示，[使用 PowerShell 部署新的受防護 VM](../../security/guarded-fabric-shielded-vm/guarded-fabric-create-a-shielded-vm-using-powershell.md)
+3. 請在部署程式的第1階段完成其餘步驟，以保護 VM 作業系統，並適當地為其預定角色進行設定。
 
 
 ## <a name="related-topics"></a>相關主題
 
-[吸引人的 Microsoft 網路安全性服務](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)
+[參與 Microsoft 網路安全性服務](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)
 
-[頂級體驗：如何減輕傳遞-雜湊和其他形式的認證竊取](https://channel9.msdn.com/Blogs/Taste-of-Premier/Taste-of-Premier-How-to-Mitigate-Pass-the-Hash-and-Other-Forms-of-Credential-Theft)
+頂級 @no__t 0Taste：如何降低傳遞雜湊和其他形式的認證竊取 @ no__t-0
 
-[Microsoft Advanced Threat Analytics](https://aka.ms/ata)
+[Microsoft 進階威脅分析](https://aka.ms/ata)
 
 [使用 Credential Guard 保護衍生的網域認證](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx)
 
-[Device Guard 概觀](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx)
+[Device Guard 總覽](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx)
 
 [使用安全的系統管理工作站保護高價值的資產](https://msdn.microsoft.com/library/mt186538.aspx)
 
-[Dave probert (Channel 9) 的 Windows 10 中隔離的使用者模式](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
+[Windows 10 中的隔離使用者模式（含 Dave Probert）（Channel 9）](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 
-[隔離使用者模式程序和功能的 Windows 10 logan Gabriel (Channel 9)](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
+[Windows 10 中使用 Logan Gabriel 的隔離使用者模式進程和功能（Channel 9）](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
 
-[多個程序和 Dave probert (Channel 9) 的 Windows 10 隔離的使用者模式中的功能](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
+[深入瞭解使用 Dave Probert 的 Windows 10 隔離使用者模式中的進程和功能（Channel 9）](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
 
-[使用 Windows 10 隔離使用者模式 (Channel 9) 的緩和認證竊取](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
+[使用 Windows 10 隔離使用者模式來緩和認證竊取（Channel 9）](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
 
-[啟用 Windows Kerberos 中的嚴格 KDC 驗證](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
+[在 Windows Kerberos 中啟用嚴格的 KDC 驗證](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
 
-[什麼是適用於 Windows Server 2012 的 Kerberos 驗證的新功能](https://technet.microsoft.com/library/hh831747.aspx)
+[Windows Server 2012 Kerberos 驗證的新功能](https://technet.microsoft.com/library/hh831747.aspx)
 
-[適用於 Windows Server 2008 R2 逐步指南中的 AD DS 的驗證機制保證](https://technet.microsoft.com/library/dd378897(v=ws.10).aspx)
+[Windows Server 2008 R2 逐步指南中 AD DS 的驗證機制保證](https://technet.microsoft.com/library/dd378897(v=ws.10).aspx)
 
-[信賴平台模組](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)
+[信賴平臺模組](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)

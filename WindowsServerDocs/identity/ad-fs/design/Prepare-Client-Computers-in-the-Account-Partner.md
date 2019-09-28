@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e3a746ec003cf312ffe0b9804f84a55c98aa8089
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 5725f4a7761d08a25ee8c67c0568977e3646397e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190986"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407945"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>在帳戶夥伴中準備用戶端電腦
 
-最簡單的方式，讓系統管理員帳戶中合作夥伴組織準備用戶端電腦存取 Active Directory Federation Services \(AD FS\)同盟應用程式是使用群組原則。 群組原則提供便利的方式，讓您將同盟所需的特定憑證和設定，推入到將用來存取同盟應用程式的所有用戶端電腦。  
+若要讓帳戶夥伴組織中的系統管理員準備用戶端電腦以存取 Active Directory 同盟服務 @no__t 0AD FS @ no__t-1 同盟應用程式，最簡單的方式就是使用群組原則。 群組原則提供便利的方式，讓您將同盟所需的特定憑證和設定，推入到將用來存取同盟應用程式的所有用戶端電腦。  
   
-使您的用戶端電腦可以順暢地存取同盟應用程式，而不需要憑證提示或受信任的網站相關的提示，建議您先準備每部用戶端電腦，再將 AD FS 部署大致上您的組織。 請考慮使用群組原則來自動進行：  
+如此一來，您的用戶端電腦就可以順暢地存取同盟應用程式，而不需要憑證提示或信任的網站相關提示，建議您先準備每部用戶端電腦，然後才在組織中廣泛部署 AD FS。 請考慮使用群組原則來自動進行：  
   
--   設定 Internet Explorer 信任的帳戶同盟伺服器，每個用戶端電腦上。  
+-   在每部用戶端電腦上設定 Internet Explorer，以信任帳戶同盟伺服器。  
   
     如需詳細資訊，請參閱 [設定用戶端電腦信任帳戶同盟伺服器](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)。  
   
--   安裝適當的帳戶同盟伺服器、 資源同盟伺服器和網頁伺服器安全通訊端層\(SSL\)憑證\(或對等項目憑證鏈結至信任的根\)上每個用戶端電腦。  
+-   安裝適當的帳戶同盟伺服器、資源同盟伺服器和 Web 服務器安全通訊端層 @no__t 0SSL @ no__t-1 憑證 \(or 對應至每部用戶端電腦上受根信任 @ no__t-3 的對等憑證。  
   
-    如需詳細資訊，請參閱 <<c0> [ 發佈的憑證，透過使用群組原則的用戶端電腦](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md)。  
+    如需詳細資訊，請參閱[使用群組原則將憑證散發到用戶端電腦](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md)。  
   
 
 ## <a name="see-also"></a>另請參閱

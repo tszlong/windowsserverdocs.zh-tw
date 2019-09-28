@@ -1,19 +1,19 @@
 ---
 title: 使用 Windows 系統管理中心管理伺服器
-description: 使用 Windows 系統管理中心管理伺服器 (Project 檀香山)
+description: 使用 Windows 系統管理中心管理伺服器（Project 檀香山）
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 72524fcc71f722daeb8238bc3cffc6d38a611098
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.prod: windows-server
+ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590579"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406780"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>使用 Windows 系統管理中心管理伺服器
 
@@ -25,17 +25,17 @@ ms.locfileid: "68590579"
 
 ## <a name="managing-windows-server-machines"></a>管理 Windows Server 電腦
 
-您可以將執行 Windows Server 2012 或更新版本的個別伺服器新增到 Windows 管理中心, 以一組完整的工具 (包括憑證、裝置、事件、進程、角色和功能、更新虛擬機器等等) 來管理伺服器。
+您可以將執行 Windows Server 2012 或更新版本的個別伺服器新增到 Windows 管理中心，以一組完整的工具（包括憑證、裝置、事件、進程、角色和功能、更新虛擬機器等等）來管理伺服器。
 
 ![伺服器連接總覽畫面](../media/manage-servers/server-overview.png)
 
 ## <a name="adding-a-server-to-windows-admin-center"></a>將伺服器新增至 Windows 管理中心
 
-若要將伺服器新增至 Windows 系統管理中心:
+若要將伺服器新增至 Windows 系統管理中心：
 
 1. 按一下 [所有連接] 底下的 [ **+ 新增**]。
 2. 加入宣告**伺服器連接**。
-3. 輸入伺服器的名稱, 如果出現提示, 則為要使用的認證。
+3. 輸入伺服器的名稱，如果出現提示，則為要使用的認證。
 4. 按一下 [**提交**] 完成。
 
 伺服器將會新增至 [總覽] 頁面上的連接清單。 按一下以連接到伺服器。
@@ -45,7 +45,7 @@ ms.locfileid: "68590579"
 
 ## <a name="tools"></a>工具
 
-下列工具適用于伺服器連接:
+下列工具適用于伺服器連接：
 
 | 工具 | 描述 |
 | ---- | ----------- |
@@ -81,11 +81,11 @@ ms.locfileid: "68590579"
 
 ## <a name="overview"></a>總覽
 
-「**總覽**」可讓您查看 CPU、記憶體和網路效能的目前狀態, 以及執行作業及修改目的電腦或伺服器上的設定。
+「**總覽**」可讓您查看 CPU、記憶體和網路效能的目前狀態，以及執行作業及修改目的電腦或伺服器上的設定。
 
 ### <a name="features"></a>功能
 
-伺服器管理員總覽支援下列功能:
+伺服器管理員總覽支援下列功能：
 
 - View server 詳細資料
 - 查看 CPU 活動
@@ -95,40 +95,40 @@ ms.locfileid: "68590579"
 - 關閉伺服器
 - 在伺服器上啟用磁片計量
 - 編輯服務器上的電腦識別碼
-- 以超連結流覽 BMC IP 位址 (需要與 IPMI 相容的 BMC)。
+- 以超連結流覽 BMC IP 位址（需要與 IPMI 相容的 BMC）。
 
 [**查看伺服器總覽的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BOverview%5D)。
 
-## <a name="active-directory-preview"></a>Active Directory (預覽)
+## <a name="active-directory-preview"></a>Active Directory （預覽）
 
 **Active Directory**是在[擴充](../configure/using-extensions.md)功能摘要上提供的早期預覽。
 
 ### <a name="features"></a>功能
 
-以下是可用的 Active Directory 管理:
+以下是可用的 Active Directory 管理：
 
 - 建立使用者
 - 建立群組
 - 搜尋使用者、電腦和群組
-- 在方格中選取時, 使用者、電腦和群組的詳細資料窗格
-- 全域方格動作使用者、電腦和群組 (停用/啟用、移除)
+- 在方格中選取時，使用者、電腦和群組的詳細資料窗格
+- 全域方格動作使用者、電腦和群組（停用/啟用、移除）
 - 重設使用者密碼
-- 使用者物件: 設定 & 群組成員資格的基本屬性
-- 電腦物件: 設定對單一電腦的委派
-- 群組物件: 管理成員資格 (一次新增/移除1個使用者)  
+- 使用者物件：設定 & 群組成員資格的基本屬性
+- 電腦物件：設定對單一電腦的委派
+- 群組物件：管理成員資格（一次新增/移除1個使用者）  
 
 [**查看 Active Directory 的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)。
 
 ## <a name="backup"></a>備份
 
-**備份**可讓您將伺服器直接備份到 Microsoft Azure, 來保護您的 Windows server 免于損毀、遭受攻擊或嚴重損壞。
+**備份**可讓您將伺服器直接備份到 Microsoft Azure，來保護您的 Windows server 免于損毀、遭受攻擊或嚴重損壞。
 [深入瞭解 Azure 備份。](https://aka.ms/windows-admin-center-backup)
 
 [在 Windows 系統管理中心提供備份的意見反應](https://aka.ms/backup-wac-feedback)
 
 ### <a name="features"></a>功能
 
-備份支援下列功能:
+備份支援下列功能：
 
 - 觀看 Azure 備份狀態的總覽
 - 設定備份專案和排程
@@ -143,7 +143,7 @@ ms.locfileid: "68590579"
 
 ### <a name="features"></a>功能
 
-憑證支援下列功能:
+憑證支援下列功能：
 
 - 流覽及搜尋現有的憑證
 - 查看憑證詳細資料
@@ -156,7 +156,7 @@ ms.locfileid: "68590579"
 
 ## <a name="containers"></a>容器
 
-**容器**可讓您查看 Windows Server 容器主機上的容器。 在執行 Windows Server Core 容器的情況下, 您可以查看事件記錄檔, 並存取容器的 CLI。
+**容器**可讓您查看 Windows Server 容器主機上的容器。 在執行 Windows Server Core 容器的情況下，您可以查看事件記錄檔，並存取容器的 CLI。
 
 [**查看容器的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D)。
 
@@ -166,7 +166,7 @@ ms.locfileid: "68590579"
 
 ### <a name="features"></a>功能
 
-裝置支援下列功能:
+裝置支援下列功能：
 
 - 流覽及搜尋裝置
 - 查看裝置詳細資料
@@ -182,8 +182,8 @@ ms.locfileid: "68590579"
 ### <a name="features"></a>功能
 
 - 建立/設定/查看 IPV4 和 IPV6 範圍
-- 建立位址排除專案, 並設定開始和結束 IP 位址
-- 建立位址保留並設定用戶端 MAC 位址 (IPV4)、DUID 和 IAID (IPV6)
+- 建立位址排除專案，並設定開始和結束 IP 位址
+- 建立位址保留並設定用戶端 MAC 位址（IPV4）、DUID 和 IAID （IPV6）
 
 [**查看 DHCP 的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDHCP%5D)。
 
@@ -194,11 +194,11 @@ ms.locfileid: "68590579"
 ### <a name="features"></a>功能
 
 - 查看 DNS 正向對應區域、反向對應區域和 DNS 記錄的詳細資料
-- 建立正向對應區域 (主要、次要或存根), 並設定正向對應區域屬性
-- 建立主機 (A 或 AAAA)、CNAME 或 MX 類型的 DNS 記錄
+- 建立正向對應區域（主要、次要或存根），並設定正向對應區域屬性
+- 建立主機（A 或 AAAA）、CNAME 或 MX 類型的 DNS 記錄
 - 設定 DNS 記錄屬性
-- 建立 IPV4 和 IPV6 反向對應區域 (主要、次要和存根)、設定反向對應區域屬性
-- 在反向對應區域底下, 建立 DNS 記錄的 PTR、CNAME 類型。
+- 建立 IPV4 和 IPV6 反向對應區域（主要、次要和存根）、設定反向對應區域屬性
+- 在反向對應區域底下，建立 DNS 記錄的 PTR、CNAME 類型。
 
 [**查看 DHCP 的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D)。
 
@@ -208,7 +208,7 @@ ms.locfileid: "68590579"
 
 ### <a name="features"></a>功能
 
-事件支援下列功能:
+事件支援下列功能：
 
 - 流覽和搜尋事件
 - View 事件詳細資料
@@ -219,11 +219,11 @@ ms.locfileid: "68590579"
 
 ## <a name="files"></a>檔案
 
-檔案可讓您管理電腦或伺服器上的檔案和資料夾。
+檔案**可讓您**管理電腦或伺服器上的檔案和資料夾。
 
 ### <a name="features"></a>功能
 
-檔案支援下列功能:
+檔案支援下列功能：
 
 - 流覽檔案和資料夾
 - 搜尋檔案或資料夾
@@ -245,7 +245,7 @@ ms.locfileid: "68590579"
 
 ### <a name="features"></a>功能
 
-防火牆支援下列功能:
+防火牆支援下列功能：
 
 - 觀看防火牆設定的總覽
 - 查看傳入的防火牆規則
@@ -271,7 +271,7 @@ ms.locfileid: "68590579"
 
 ### <a name="features"></a>功能
 
-本機使用者和群組支援下列功能:
+本機使用者和群組支援下列功能：
 
 - 查看及搜尋使用者和群組
 - 建立新的使用者或群組
@@ -288,12 +288,12 @@ ms.locfileid: "68590579"
 
 ### <a name="features"></a>功能
 
-網路支援下列功能:
+網路支援下列功能：
 
 - 流覽及搜尋現有的網路介面卡
 - 查看網路介面卡的詳細資料
 - 編輯網路介面卡的屬性
-- 建立[Azure 網路介面卡 (預覽功能)](https://blogs.technet.microsoft.com/networking/2018/09/05/azurenetworkadapter/)
+- 建立[Azure 網路介面卡（預覽功能）](https://blogs.technet.microsoft.com/networking/2018/09/05/azurenetworkadapter/)
 
 [**查看網路的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BNetwork%5D)
 
@@ -303,7 +303,7 @@ ms.locfileid: "68590579"
 
 ### <a name="features"></a>功能
 
-PowerShell 支援下列功能:
+PowerShell 支援下列功能：
 
 - 在伺服器上建立互動式 PowerShell 會話
 - 從伺服器上的 PowerShell 會話中斷連線
@@ -316,7 +316,7 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-程式支援下列功能:
+程式支援下列功能：
 
 - 流覽及搜尋執行中的進程
 - 查看進程詳細資料
@@ -329,11 +329,11 @@ PowerShell 支援下列功能:
 
 ## <a name="registry"></a>登錄
 
-登錄可讓您管理電腦或伺服器上的登錄機碼和值。
+登錄**可讓您**管理電腦或伺服器上的登錄機碼和值。
 
 ### <a name="features"></a>功能
 
-登錄中支援下列功能:
+登錄中支援下列功能：
 
 - 流覽登錄機碼和值
 - 新增或修改登錄值
@@ -347,7 +347,7 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-遠端桌面支援下列功能:
+遠端桌面支援下列功能：
 
 - 啟動互動式遠端桌面會話
 - 中斷與遠端桌面會話的連線
@@ -361,7 +361,7 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-角色和功能支援下列功能:
+角色和功能支援下列功能：
 
 - 流覽伺服器上的角色和功能清單
 - 查看角色或功能詳細資料
@@ -376,7 +376,7 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-已排程的工作中支援下列功能:
+已排程的工作中支援下列功能：
 
 - 流覽工作排程器程式庫
 - 編輯排程的工作
@@ -392,7 +392,7 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-服務支援下列功能:
+服務支援下列功能：
 
 - 流覽及搜尋伺服器上的服務
 - 查看服務的詳細資料
@@ -413,7 +413,7 @@ PowerShell 支援下列功能:
 - 查看和修改電源設定
 - 查看和修改遠端桌面設定
 - 查看和修改以角色為基礎的存取控制設定
-- 查看和修改 Hyper-v 主機設定 (如果適用)
+- 查看和修改 Hyper-v 主機設定（如果適用）
 
 ## <a name="storage"></a>儲存體
 
@@ -421,13 +421,13 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-存放裝置支援下列功能:
+存放裝置支援下列功能：
 
 - 流覽及搜尋伺服器上的現有磁片
 - 查看磁片詳細資料
 - 建立磁碟區
 - 初始化磁片
-- 建立、附加和卸離虛擬硬碟 (VHD)
+- 建立、附加和卸離虛擬硬碟（VHD）
 - 讓磁片離線
 - 格式化磁片區
 - 調整磁片區大小
@@ -440,7 +440,7 @@ PowerShell 支援下列功能:
 
 ## <a name="storage-migration-service"></a>存放裝置移轉服務
 
-**儲存體遷移服務**可讓您將伺服器和檔案共用遷移至 Azure 或 Windows Server 2019, 而不需要應用程式或使用者變更任何專案。
+**儲存體遷移服務**可讓您將伺服器和檔案共用遷移至 Azure 或 Windows Server 2019，而不需要應用程式或使用者變更任何專案。
 [取得儲存體遷移服務的總覽](https://go.microsoft.com/fwlink/?linkid=2016155)
 
 >[!NOTE]
@@ -453,7 +453,7 @@ PowerShell 支援下列功能:
 
 ## <a name="system-insights"></a>系統深入解析
 
-**System Insights**以原生方式引進 Windows Server 中的預測性分析, 協助您更深入瞭解伺服器的運作。
+**System Insights**以原生方式引進 Windows Server 中的預測性分析，協助您更深入瞭解伺服器的運作。
 [深入瞭解 System Insights](http://aka.ms/systeminsights)
 
 >[!NOTE]
@@ -465,7 +465,7 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-更新中支援下列功能:
+更新中支援下列功能：
 
 - 查看可用的 Windows 或 Microsoft Update
 - 查看更新歷程記錄清單
@@ -485,7 +485,7 @@ PowerShell 支援下列功能:
 
 ### <a name="features"></a>功能
 
-虛擬交換器支援下列功能:
+虛擬交換器支援下列功能：
 
 - 流覽及搜尋伺服器上的虛擬交換器
 - 建立新的虛擬交換器

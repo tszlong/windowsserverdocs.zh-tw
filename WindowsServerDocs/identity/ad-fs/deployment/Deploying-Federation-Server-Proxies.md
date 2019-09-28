@@ -6,29 +6,29 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 02311522ee229eeaf0b27ce8d39090a9529b99ae
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: c6af319283de72963691ae3e91c3db5992bdec72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192196"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408408"
 ---
 # <a name="deploying-federation-server-proxies"></a>部署同盟伺服器 Proxy
 
-若要部署在 Active Directory Federation Services 中的同盟伺服器 proxy \(AD FS\)，完成每一項工作中[檢查清單：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
+若要在 Active Directory 同盟服務中部署同盟伺服器 proxy \(AD FS @ no__t-1，請完成 [Checklist 中的每一項工作：設定同盟伺服器 Proxy @ no__t-0。  
   
 > [!NOTE]  
-> 當您使用這份檢查清單時，我們建議您先閱讀規劃指南中的同盟伺服器 proxy 的參考[Windows Server 2012 中 AD FS 設計指南](https://technet.microsoft.com/library/dd807036.aspx)開始設定伺服器的程序之前。 下列檢查清單提供進一步了解設計和部署程序的同盟伺服器 proxy。  
+> 當您使用此檢查清單時，建議您先閱讀[Windows server 2012 中 AD FS 設計指南中](https://technet.microsoft.com/library/dd807036.aspx)的同盟伺服器 proxy 規劃指引的參考，然後再開始設定伺服器的程式。 遵循檢查清單可進一步瞭解同盟伺服器 proxy 的設計和部署程式。  
   
-## <a name="about-federation-server-proxies"></a>有關同盟伺服器 proxy  
-同盟伺服器 proxy 是執行 Windows Server® 2012年和 AD FS 軟體以扮演 proxy 角色已手動設定的電腦。 您可以在組織中使用同盟伺服器 Proxy 來提供網際網路用戶端與公司網路防火牆後方同盟伺服器之間的媒介服務。  
+## <a name="about-federation-server-proxies"></a>關於同盟伺服器 proxy  
+同盟伺服器 proxy 是執行 Windows Server®2012的電腦，以及已手動設定以在 proxy 角色中採取行動的 AD FS 軟體。 您可以在組織中使用同盟伺服器 Proxy 來提供網際網路用戶端與公司網路防火牆後方同盟伺服器之間的媒介服務。  
   
 > [!NOTE]  
-> 雖然同盟伺服器和同盟伺服器 proxy 角色無法安裝在同一部電腦上，同盟伺服器可以執行同盟伺服器 proxy 函式。 如需詳細資訊，請參閱＜ [When to Create a Federation Server](https://technet.microsoft.com/library/dd807101.aspx)＞。  
+> 雖然同盟伺服器和同盟伺服器 proxy 角色無法安裝在同一部電腦上，但是同盟伺服器可以執行同盟伺服器 proxy 功能。 如需詳細資訊，請參閱＜ [When to Create a Federation Server](https://technet.microsoft.com/library/dd807101.aspx)＞。  
   
-Windows Server® 2012年的電腦上安裝 AD FS 軟體並設定它以 proxy 角色所做的動作可讓該電腦的同盟伺服器 proxy。  
+在 Windows Server®2012電腦上安裝 AD FS 軟體並將它設定為以 proxy 角色提供服務的動作，會使該電腦成為同盟伺服器 proxy。  
   
 

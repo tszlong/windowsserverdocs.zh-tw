@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d2bb97fb65e3fbf5c7809317a8565ff7051d0447
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 24beb287aa35757e1f8057920e8fd95828baf83b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869704"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385199"
 ---
 # <a name="publishing-extensions"></a>發行延伸模組
 
@@ -110,12 +110,12 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 
 | 屬性名稱 | 必要/建議 | 描述 |
 | ---- | ---- | ---- |
-| PackageType | 必要 | 使用 "WindowsAdminCenterExtension"，這是針對 Windows 管理中心延伸模組所定義的 NuGet 套件類型。 |
+| PackageType | 必要項 | 使用 "WindowsAdminCenterExtension"，這是針對 Windows 管理中心延伸模組所定義的 NuGet 套件類型。 |
 | id | 必要項 | 摘要內的唯一封裝識別碼。 這個值必須符合專案的資訊清單. json 檔案中的 "name" 值。  如需指引, 請參閱[選擇唯一的套件識別碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
 | title | 發行至 Windows 系統管理中心摘要所需 | 顯示在 Windows 管理中心擴充管理員中之套件的易記名稱。 |
-| 版本 | 必要 | 延伸模組版本。 建議使用[語義版本設定（SemVer 慣例）](http://semver.org/spec/v1.0.0.html) ，但不是必要的。 |
-| 製作 | 必要 | 如果代表您的公司發行，請使用您的公司名稱。 |
-| description | 必要 | 提供延伸模組功能的描述。 |
+| 版本 | 必要項 | 延伸模組版本。 建議使用[語義版本設定（SemVer 慣例）](http://semver.org/spec/v1.0.0.html) ，但不是必要的。 |
+| 製作 | 必要項 | 如果代表您的公司發行，請使用您的公司名稱。 |
+| description | 必要項 | 提供延伸模組功能的描述。 |
 | iconUrl | 發行至 Windows 系統管理中心摘要時建議使用 | 要在擴充管理員中顯示的圖示 URL。 |
 | projectUrl | 發行至 Windows 系統管理中心摘要所需 | 擴充功能網站的 URL。 如果您沒有個別的網站，請使用 NuGet 摘要上封裝網頁的 URL。 |
 | licenseUrl | 發行至 Windows 系統管理中心摘要所需 | 延伸模組之使用者授權合約的 URL。 |

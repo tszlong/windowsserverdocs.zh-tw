@@ -2,7 +2,7 @@
 title: MultiPoint 服務使用者帳戶
 description: 瞭解 MultiPoint 服務中的使用者帳戶，特別是用於不同案例的類型
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 67aa84244aa9ebfcd8375bd82f9d6ae431fc5eac
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ff81af2a0aa8da7f801ec14c27dc00c9bae6e8aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871422"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388963"
 ---
 # <a name="example-scenarios-multipoint-services-user-accounts"></a>示範案例：MultiPoint 服務使用者帳戶
 您需要執行什麼動作，才能在您為 MultiPoint 服務環境選擇的使用者帳戶案例中執行？ 下表說明在獨立 MultiPoint 電腦或工作組或 Active Directory 網域中的網路伺服器上，設定使用者帳戶和準備工作站以進行共用或個別使用者帳戶時，所要執行的每項工作。 選擇適用于您環境的案例。 然後遵循表格中的連結來完成每個必要的設定工作。  

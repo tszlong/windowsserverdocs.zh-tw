@@ -2,7 +2,7 @@
 title: 編輯伺服器設定
 description: 瞭解 MultiPoint 服務設定
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.assetid: afb64b94-9055-4703-b8ce-a8839b2718da
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 8a6a9d8e6a76a8fb3c0da59c8fb487d0311f04d7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5973bf6a23d0ce3f91620eaa3537f751ec19303c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871715"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389695"
 ---
 # <a name="edit-server-settings"></a>編輯伺服器設定
 安裝 MultiPoint 服務之後，您會為系統進行設定，包括選擇加入特定計畫。 本主題描述您可以為 MultiPoint 服務系統進行的設定，並說明如何編輯這些設定。  

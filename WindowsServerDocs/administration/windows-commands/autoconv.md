@@ -1,8 +1,8 @@
 ---
 title: autoconv
-description: 適用於 Windows 命令主題**autoconv** -將檔案配置表 (Fat) 與 Fat32 磁碟區的 ntfs 檔案系統。
+description: '**Autoconv**的 Windows 命令主題-將檔案分配表（Fat）和 Fat32 磁片區轉換為 NTFS 檔案系統。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d135da085558f12a51c8febfd72aa805e1d12f1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf36be6bcf3dd8f6c61c6ab0d8780ed77dd8903a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872489"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383453"
 ---
 # <a name="autoconv"></a>autoconv
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將檔案配置表 (Fat) 與 Fat32 磁碟區到 NTFS 檔案系統，讓現有的檔案和目錄保持不變在啟動後**autochk**執行。 轉換為 NTFS 檔案系統的磁碟區無法轉換回 Fat 或 Fat32。
+將檔案分配表（Fat）和 Fat32 磁片區轉換為 NTFS 檔案系統，在執行**autochk**之後，讓現有的檔案和目錄保持不變。 轉換成 NTFS 檔案系統的磁片區無法轉換回 Fat 或 Fat32。
 ## <a name="remarks"></a>備註
-您無法執行**autoconv**命令列上。 這將只會執行在啟動時，如果透過設定**convert.exe**。
-## <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
+您無法在命令列上執行**autoconv** 。 只有在透過**convert**設定時，才會在啟動時執行。
+## <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
 [autochk](autochk.md)
 [轉換](convert.md)
 [使用檔案系統](https://go.microsoft.com/fwlink/?LinkId=4509)

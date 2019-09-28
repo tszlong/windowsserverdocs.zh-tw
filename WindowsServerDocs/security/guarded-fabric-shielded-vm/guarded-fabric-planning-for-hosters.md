@@ -1,19 +1,19 @@
 ---
 title: 適用于主控者的受防護網狀架構與受防護的 VM 規劃指南
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 854defc8-99f8-4573-82c0-f484e0785859
 manager: dongill
 author: nirb-ms
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: baa360ecb81c0e8bd54e66771d41c11968b57714
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7e0ffb24f888760df58711a867b7ac0ba2650647
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870449"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386534"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-hosters"></a>適用于主控者的受防護網狀架構與受防護的 VM 規劃指南
 

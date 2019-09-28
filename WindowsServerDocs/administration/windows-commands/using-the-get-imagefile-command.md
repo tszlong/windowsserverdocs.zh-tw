@@ -1,8 +1,8 @@
 ---
-title: 使用 get ImageFile 命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用 get-ImageFile 命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bbe5ece95d1f9821a27b96e56bc34576a0f5f33
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c8136585e04caca02ab16c7b4ca11a825cf400d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827619"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392140"
 ---
-# <a name="using-the-get-imagefile-command"></a>使用 get ImageFile 命令
+# <a name="using-the-get-imagefile-command"></a>使用 get-ImageFile 命令
 
 
 
-擷取 Windows 映像 (.wim) 檔案中包含的映像的相關資訊。
+抓取 Windows 映像（.wim）檔案中所含映射的相關資訊。
 
 ## <a name="syntax"></a>語法
 
@@ -36,16 +36,16 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 |參數|描述|
 |---------|-----------|
-|/ ImageFile:\<WIM 檔案路徑 >|指定之.wim 檔案的完整路徑和檔案名稱。|
-|[/ 詳細]|傳回從每個映像的映像的所有中繼資料。 如果未使用此選項，預設行為是傳回僅映像名稱、 描述和檔案名稱。|
+|/ImageFile： \<WIM 檔案路徑 >|指定 .wim 檔案的完整路徑和檔案名。|
+|[/Detailed]|傳回每個影像中的所有影像中繼資料。 如果未使用此選項，則預設行為是只傳回映射名稱、描述和檔案名。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要檢視映像的相關資訊，請輸入：
+若要查看影像的相關資訊，請輸入：
 ```
 WDSUTIL /Get-ImageFile /ImageFile:"C:\temp\install.wim"
 ```
-若要檢視的詳細的資訊，請輸入：
+若要查看詳細資訊，請輸入：
 ```
 WDSUTIL /Verbose /Get-ImageFile /ImageFile:"\\Server\Share\My Folder \install.wim" /Detailed
 ```

@@ -2,19 +2,19 @@
 title: Kerberos 搭配服務主體名稱 (SPN)
 description: 網路控制卡支援多種驗證方法來與管理用戶端通訊。 您可以使用以 Kerberos 為基礎的驗證，以 X509 憑證為基礎的驗證。 您也可以選擇不使用測試部署的驗證。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 8c8c5367eeda576f87ac5de20b7885a1a29aeb4d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 78d5d2144e0def8e69a2a4ae5fdc2d7718936710
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869908"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355774"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos 搭配服務主體名稱 (SPN)
 

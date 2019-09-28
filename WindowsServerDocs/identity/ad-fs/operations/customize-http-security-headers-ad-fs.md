@@ -7,14 +7,14 @@ manager: daveba
 ms.reviewer: akgoel23
 ms.date: 02/19/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4fd1e62e67f66a217a1d4f3a26933723a4645a31
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e1042ad4dae0b023c9816dff798c25b05b60eccf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865571"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407448"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>使用 AD FS 2019 自訂 HTTP 安全性回應標頭 
  
@@ -194,7 +194,7 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
 ```
 
-如果明確列出指示詞，指定的值會覆寫為 default-src 提供的值。在下列範例中，img-src 會將值當做 ' * ' （允許從任何來源載入影像），而其他-src 指示詞會將值視為「自我」（限制為與網頁相同的來源）。  
+如果明確列出指示詞，指定的值會覆寫為 default-src 提供的值。 在下列範例中，img-src 會將值當做 ' * ' （允許從任何來源載入影像），而其他-src 指示詞會將值視為「自我」（限制為與網頁相同的來源）。  
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 

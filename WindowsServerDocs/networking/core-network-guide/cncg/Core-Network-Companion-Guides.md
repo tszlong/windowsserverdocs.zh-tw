@@ -1,25 +1,25 @@
 ---
 title: 核心網路附屬指南
-description: 本主題提供 Windows Server 2016 核心網路指南的附屬指南概觀
+description: 本主題概要說明《 Windows Server 2016 核心網路指南》的附屬指南
 manager: brianlic
 ms.technology: networking
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: d57af0bd-9301-4f62-9888-f528cd10451d
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b757e1914ee263a041f39e9767d3cb8af38403dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0895cfd62d462ef6d158dc39ef59a9ee10a7c98
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816799"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406310"
 ---
 # <a name="core-network-companion-guidance"></a>核心網路附屬指導方針
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-雖然 Windows Server 2016[核心網路指南](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)提供如何部署新的 Active Directory 中的指示&reg;樹系中使用新的根網域和支援網路基礎結構，附屬指南提供您若要將功能加入至您網路的能力。
+雖然《 Windows Server 2016[核心網路指南》](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)提供如何使用新的根域和支援的網路基礎結構來部署新的 Active Directory @ no__t 1 樹系的指示，但附屬指南可讓您能夠新增功能到您的網路。
 
 每個附屬指南都能讓您在部署核心網路之後完成特定的目標。 在某些情況下會提供多個附屬指南，當以正確的順序一起部署時，可以讓您用可衡量、符合成本效益及合理的方式，完成非常複雜的目標。
 
@@ -27,42 +27,42 @@ ms.locfileid: "59816799"
 
 ## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>核心網路附屬指南：部署 802.1 X 有線和無線部署的伺服器憑證 
 
-本附屬指南說明如何建置在核心網路部署執行網路原則伺服器的電腦的伺服器憑證\(NPS\)，遠端存取服務\(RAS\)，或兩者。
+本附屬指南說明如何藉由為執行網路原則伺服器 \(NPS @ no__t-1，遠端存取服務 \(RAS @ no__t-3 或兩者的電腦，部署伺服器憑證，來建立核心網路。
 
-當您部署具有可延伸驗證通訊協定的憑證型驗證方法時，會需要伺服器憑證\(EAP\)和 受保護的 EAP \(PEAP\)進行網路存取驗證。 部署與 Active Directory 憑證服務的伺服器憑證\(AD CS\) EAP 與 PEAP 憑證式驗證方法提供下列優點：
+當您使用可延伸的驗證通訊協定 \(EAP @ no__t-1 和 Protected EAP \(PEAP @ no__t-3 來部署以憑證為基礎的驗證方法時，需要伺服器憑證，以進行網路存取驗證。 使用 Active Directory 憑證服務部署伺服器憑證 \(AD CS @ no__t-1 適用于 EAP 與 PEAP 憑證型驗證方法，可提供下列優點：
 
-- 繫結至的私用金鑰的 NPS 或 RAS 伺服器的身分識別
-- 自動註冊憑證至網域成員 NPS 與 RAS 伺服器符合成本效益且安全的方法
+- 將 NPS 或 RAS 伺服器的身分識別系結至私密金鑰
+- 以符合成本效益且安全的方式，自動向網域成員 NPS 和 RAS 伺服器註冊憑證
 - 管理憑證與憑證授權單位的有效方法
 - 憑證式驗證所提供的安全性
 - 基於其他目的擴展憑證用途的能力
   
-如需有關如何部署伺服器憑證的指示，請參閱 <<c0> [ 部署 802.1x 有線和無線部署的伺服器憑證](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md)。  
+如需如何部署伺服器憑證的指示，請參閱[部署 802.1 x 有線和無線部署的伺服器憑證](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md)。  
 ## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>核心網路附屬指南：部署密碼型 802.1X 驗證無線存取
 
-本附屬指南說明如何建置在核心網路時所提供的指示，有關如何部署美國電機暨電子工程師\(IEEE\) 802.1x\-驗證 IEEE 802.11 無線存取使用受保護的可延伸驗證 Protocol\ – Microsoft Challenge Handshake 驗證通訊協定第 2 版\(PEAP\-MS\-MS-CHAP v2\)。
+本附屬指南說明如何以核心網路為基礎，方法是提供如何部署電氣和電子公司工程師協會的指示 \(IEEE @ no__t-1 802.1 X @ no__t-2authenticated IEEE 802.11 無線存取（使用受保護）可延伸的驗證通訊協定 \ – Microsoft 挑戰交握驗證通訊協定第2版 \(PEAP @ no__t-4 毫秒 @ no__t-5CHAP v2 @ no__t-6。
 
-驗證方法 PEAP\-MS\-MS-CHAP v2，需要該驗證執行網路原則伺服器的伺服器\(NPS\)證明 NPS 身分識別，以伺服器憑證會向無線用戶端用戶端，但不執行使用者驗證使用憑證-相反地，使用者提供其網域使用者名稱和密碼。
+驗證方法 PEAP @ no__t-0 毫秒 @ no__t-1CHAP v2 需要驗證執行網路原則伺服器的伺服器，\(NPS @ no__t-3 呈現具有伺服器憑證的無線用戶端，以向用戶端證明 NPS 身分識別，但使用者驗證不會使用憑證來執行，而是由使用者提供其網域使用者名稱和密碼。
 
-因為 PEAP\-MS\-MS-CHAP v2 要求使用者提供密碼認證，而不是憑證驗證程序期間，通常更容易且成本較低比 EAP 部署\-TLS 或 PEAP\-TLS。
+由於 PEAP @ no__t-0 毫秒 @ no__t-1CHAP v2 要求使用者在驗證程式期間提供密碼型認證，而不是憑證，因此部署的成本通常比 EAP @ no__t-2TLS 或 PEAP @ no__t-3TLS 更簡單且較便宜。
 
-部署 PEAP 與無線存取的情況下，您在使用本指南之前\-MS\-CHAP v2 驗證方法，您必須執行下列動作：
+使用本指南來部署使用 PEAP @ no__t-0 毫秒 @ no__t-1CHAP v2 驗證方法的無線存取之前，您必須執行下列動作：
 
-1. 請遵循在核心網路指南 》 中的指示部署核心網路基礎結構，或已有的技術指南中呈現該在網路上部署。
-2. 遵循 802.1x 有線和無線部署核心網路附屬指南部署伺服器憑證的指示，或已有的技術指南中呈現該在網路上部署。
+1. 遵循《核心網路指南》中的指示來部署您的核心網路基礎結構，或已在網路上部署該指南中所提供的技術。
+2. 依照核心網路附屬指南部署 802.1 X 有線和無線部署的伺服器憑證中的指示，或已在網路上部署該指南中所提供的技術。
 
-如需有關如何部署無線存取與 PEAP\-MS\-CHAP v2，請參閱[部署密碼型 802.1x 驗證無線存取](wireless/a-deploy-8021X-wireless-access.md)。
+如需有關如何使用 PEAP @ no__t-0 毫秒 @ no__t-1CHAP v2 部署無線存取的指示，請參閱[部署以密碼為基礎的 802.1 x 驗證無線存取](wireless/a-deploy-8021X-wireless-access.md)。
 
 ## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>核心網路附屬指南：部署 BranchCache 託管快取模式
 
-本附屬指南說明如何部署一或多個分公司中託管快取模式中的 BranchCache。
+本附屬指南說明如何在一或多個分公司的託管快取模式中部署 BranchCache。
 
-BranchCache 是廣域網路 (WAN) 頻寬最佳化技術，就會包含在某些版本的 Windows Server 2016 和 Windows 10 作業系統，以及在舊版的 Windows 和 Windows Server。
+BranchCache 是一種廣域網路（WAN）頻寬優化技術，包含在某些 Windows Server 2016 和 Windows 10 作業系統版本中，以及舊版 Windows 和 Windows Server 中。
 
-以託管快取模式部署 BranchCache 時，會在稱為託管快取伺服器的一或多部伺服器電腦上託管分公司的內容快取。 託管快取伺服器可以執行除了裝載快取，可讓您針對分公司中的多種目的使用伺服器工作負載。
+以託管快取模式部署 BranchCache 時，會在稱為託管快取伺服器的一或多部伺服器電腦上託管分公司的內容快取。 託管快取伺服器除了裝載快取之外，還可以執行工作負載，這可讓您將伺服器用於分公司中的多個用途。
 
-BranchCache 託管快取模式會增加快取效率，因為內容可用，即使原來要求和快取資料的用戶端處於離線狀態。 因為託管快取伺服器永遠可供使用，所以快取的內容越多，節省的 WAN 頻寬就越多，進而改善 BranchCache 的效率。
+BranchCache 託管快取模式會增加快取效率，因為即使原先要求和快取資料的用戶端已離線，也可以使用內容。 因為託管快取伺服器永遠可供使用，所以快取的內容越多，節省的 WAN 頻寬就越多，進而改善 BranchCache 的效率。
 
-當您部署託管快取模式時，多個子網路的分公司中的所有用戶端可以存取儲存在託管快取伺服器上，即使在用戶端位於不同的子網路上的單一快取。
+當您部署託管快取模式時，多重子網分公司中的所有用戶端都可以存取儲存在託管快取伺服器上的單一快取，即使用戶端位於不同的子網也一樣。
 
-如需有關如何部署 BranchCache 託管快取模式中的指示，請參閱 <<c0> [ 部署 BranchCache 託管快取模式](bc-hcm/1-Deploy-Bc-Hcm.md)。
+如需如何在託管快取模式中部署 BranchCache 的指示，請參閱[部署 Branchcache 託管](bc-hcm/1-Deploy-Bc-Hcm.md)快取模式。

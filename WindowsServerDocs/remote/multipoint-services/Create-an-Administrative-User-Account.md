@@ -1,8 +1,8 @@
 ---
 title: 建立系統管理使用者帳戶
-description: 建立具有 MultiPoint 服務中的系統管理權限的帳戶
+description: 在 MultiPoint 服務中建立具有系統管理許可權的帳戶
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: bf460107e57de5e19f8eaa311e497e9d984680e7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6737f7b96396a13aa18485095e0687425cf8b93e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879759"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389697"
 ---
 # <a name="create-an-administrative-user-account"></a>建立系統管理使用者帳戶
-為管理 MultiPoint 服務系統的這些個人建立「系統管理使用者帳戶」。 若要查看誰具有系統管理權限在 MultiPoint 管理員中，按一下**使用者** 索引標籤。系統管理使用者帳戶會在 帳戶類型 欄位中，顯示為「系統管理員」。 *系統管理使用者*有這類變更桌面和系統設定的所有 MultiPoint 管理員工作的存取權：  
+為管理 MultiPoint 服務系統的這些個人建立「系統管理使用者帳戶」。 若要查看誰具有系統管理存取權，請在 [MultiPoint 管理員] 中按一下 [**使用者**] 索引標籤。系統管理使用者帳戶會在 [帳戶類型] 欄位中，顯示為「系統管理員」。 系統*管理使用者*可以存取所有會變更桌面和系統設定的 MultiPoint 管理員工作，例如：  
   
 -   建立帳戶  
   
@@ -40,7 +40,7 @@ ms.locfileid: "59879759"
   
 #### <a name="to-create-an-administrative-user-account"></a>建立系統管理使用者帳戶  
   
-1.  在 MultiPoint 管理員 中，按一下**使用者** 索引標籤。  
+1.  在 [MultiPoint 管理員] 中，按一下 [**使用者**] 索引標籤。  
   
 2.  在 [使用者工作] 下，按一下 [新增使用者帳戶]。 [新增使用者帳戶精靈] 隨即開啟。  
   

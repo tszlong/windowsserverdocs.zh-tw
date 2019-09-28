@@ -7,22 +7,22 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 160ebf65348aaff0095f359766c65aebd6fdd3c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a01fde69ebdd5a14899bd888a3c282ded74caaa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889539"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408804"
 ---
 # <a name="identifying-your-ad-ds-design-and-deployment-requirements"></a>識別您的 AD DS 設計與部署需求
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-執行目前的高階評定，以及正確識別您的 Active Directory 網域服務 (AD DS) 部署工作是環境的不可或缺的 AD DS 部署策略的成功。  
+執行您目前環境的高階評估，並正確地識別您的 Active Directory Domain Services （AD DS）部署工作，對於您的 AD DS 部署策略是否成功而言，是不可或缺的。  
   
-您的 AD DS 部署策略取決於您現有的網路組態。 比方說，如果您的組織目前在執行 Windows Server 2003，您可以升級您的作業系統為 Windows Server 2008。 您的部署程序可能會牽涉到重建現有的網域，Active Directory 樹系內或 Active Directory 樹系之間。 您可能要部署 Windows Server 2008 AD DS 之後，或在組織的變更或公司的併購之後，重建現有的網域。  
+您的 AD DS 部署策略取決於您現有的網路設定。 例如，如果您的組織目前執行 Windows Server 2003，您可以將作業系統升級到 Windows Server 2008。 您的部署程式可能牽涉到在 Active Directory 樹系內或 Active Directory 樹系之間重建現有的網域。 部署 Windows Server 2008 AD DS 或組織變更或公司收購之後，您可能必須重新組織現有的網域。  
   
 -   [AD DS 設計需求](../../ad-ds/plan/AD-DS-Design-Requirements.md)  
   

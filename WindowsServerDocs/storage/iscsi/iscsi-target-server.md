@@ -1,35 +1,35 @@
 ---
 title: iSCSI Target Server Overview
 TOCTitle: iSCSI Target Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 14dd373b71c1be2f1a4ff157b9c631530532fc80
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 638343abf782983020a3301898920470ffcd5952
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837939"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403059"
 ---
-# <a name="iscsi-target-server-overview"></a>iSCSI 目標伺服器概觀
+# <a name="iscsi-target-server-overview"></a>iSCSI 目標伺服器總覽
 
-適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題提供 iSCSI 目標伺服器，可讓您透過 iSCSI 通訊協定提供儲存體的 Windows Server 中的角色服務的簡短概觀。 這是適用於您的 Windows 伺服器上提供儲存體的存取，無法透過原生的 Windows 檔案共用通訊協定，SMB 通訊的用戶端。
+本主題提供 iSCSI 目標伺服器的簡短總覽，這是 Windows Server 中的角色服務，可讓您透過 iSCSI 通訊協定來提供存放裝置。 這對於無法透過原生 Windows 檔案共用通訊協定（SMB）進行通訊的用戶端，提供對 Windows 伺服器上存放裝置的存取權很有用。
 
 iSCSI 目標伺服器適合下列各項：
 
-* **網路與無磁碟開機**   使用支援開機的網路介面卡或軟體載入器，您可以部署數百部無磁碟伺服器。 有了 iSCSI 目標伺服器可快速部署。 在 Microsoft 內部測試中，於 34 分鐘內部署了 256 部電腦。 透過使用差異虛擬硬碟，您可以將用於作業系統映像的儲存空間節省高達 90%。 這在大規模部署相同作業系統映像時非常有用，例如執行 Hyper-V 或高效能運算 (HPC) 叢集的虛擬機器。
+* **網路與無磁片開機**@no__t-使用支援開機的網路介面卡或軟體載入器1By，您可以部署數百部無磁片伺服器。 有了 iSCSI 目標伺服器可快速部署。 在 Microsoft 內部測試中，於 34 分鐘內部署了 256 部電腦。 透過使用差異虛擬硬碟，您可以將用於作業系統映像的儲存空間節省高達 90%。 這在大規模部署相同作業系統映像時非常有用，例如執行 Hyper-V 或高效能運算 (HPC) 叢集的虛擬機器。
 
-* **伺服器應用程式儲存體**   某些應用程式需要區塊存放區。 iSCSI 目標伺服器可為這些應用程式提供持續可用的區塊儲存區。 由於存放裝置可以從遠端存取，因此也能合併中央或分公司位置的區塊存放裝置。
+* **伺服器應用程式儲存**   Some 應用程式需要區塊存放區。 iSCSI 目標伺服器可為這些應用程式提供持續可用的區塊儲存區。 由於存放裝置可以從遠端存取，因此也能合併中央或分公司位置的區塊存放裝置。
 
-* **異質儲存區**   iSCSI 目標伺服器支援非 Microsoft iSCSI 啟動器，因此可輕鬆共用儲存體，在混合的軟體環境中的伺服器上。
+* **異類存放裝置**   ISCSI 目標伺服器支援非 Microsoft iSCSI 啟動器，可讓您輕鬆地在混合軟體環境中共用伺服器上的存放裝置。
 
-* **開發、 測試、 示範和實驗室環境**   啟用 iSCSI 目標伺服器時，執行 Windows Server 作業系統的電腦會成為網路存取的區塊存放裝置。 這對於在存放區域網路 (SAN) 進行部署前的應用程式測試而言非常有用。
+* **開發、測試、示範和實驗室環境**@no__t 1When 的 ISCSI 目標伺服器已啟用，執行 Windows Server 作業系統的電腦會成為可存取網路的區塊存放裝置。 這對於在存放區域網路 (SAN) 進行部署前的應用程式測試而言非常有用。
 
 ## <a name="block-storage-requirements"></a>區塊存放裝置需求
 
@@ -39,6 +39,6 @@ iSCSI 目標伺服器適合下列各項：
 
 ## <a name="see-also"></a>另請參閱
 
-[iSCSI 目標區塊存放裝置，How To](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848268(v%3dws.11))  
-[新功能 Windows Server 中 iSCSI 目標伺服器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn305893(v%3dws.11))
+[iSCSI 目標區塊存放裝置，作法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848268(v%3dws.11))  
+[Windows Server 中 iSCSI 目標伺服器的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn305893(v%3dws.11))
 

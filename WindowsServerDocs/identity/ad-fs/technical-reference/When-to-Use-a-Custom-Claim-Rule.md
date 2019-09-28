@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1a3f3e711d8e8443eb80109245eef42c668353d9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 61c129ab8472d7e85602fa0a0244c4a925050d93
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869285"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407309"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>使用自訂宣告規則的時機
 您可以使用宣告規則語言，在\(Active Directory 同盟服務\) AD FS 中撰寫自訂宣告規則，這是宣告發行引擎用來以程式設計方式產生、轉換、傳遞及篩選的架構退款. 藉由使用自訂規則，您可以透過比標準規則範本更複雜的邏輯來建立規則。 當您想要執行下列作業時，請考慮使用自訂規則：  

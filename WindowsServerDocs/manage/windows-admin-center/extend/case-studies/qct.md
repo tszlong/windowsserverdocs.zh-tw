@@ -7,41 +7,41 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 2e0ed4a122a3cb26ce4c6e05ee3b808dd6fe2d07
-ms.sourcegitcommit: 214e827934e7b3e8987e9e0ab2cf00047d332c89
+ms.prod: windows-server
+ms.openlocfilehash: 2922bcdd08fac7bf2179a0ebbad37c7151d660b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67153598"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357255"
 ---
-# <a name="qct-management-suite-extension"></a>QCT Management Suite 延伸模組
+# <a name="qct-management-suite-extension"></a>QCT 管理套件擴充功能
 
-## <a name="a-simple-path-to-server-infrastructure-management"></a>伺服器基礎結構管理簡單的路徑
+## <a name="a-simple-path-to-server-infrastructure-management"></a>伺服器基礎結構管理的簡單路徑
 
-Windows Admin Center QCT Management Suite 延伸模組提供單一窗格，半透明效果儀表板來監視系統組態和管理伺服器健康情況[QCT 認證系統的 Azure Stack HCI](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/) :[QuantaGrid D52BQ 2U](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U)， [QuantaGrid D52T 1ULH](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH)並[QuantaPlex T21P 4U](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U)。
+適用于 Windows 管理中心的 QCT 管理套件擴充功能提供單一窗格的玻璃儀表板，可用來監視系統組態和管理[QCT AZURE STACK HCI 認證系統](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/)的伺服器健全狀況：[QUANTAGRID D52BQ-2u](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U)、 [QUANTAGRID D52T-1ULH](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH)和[QuantaPlex T21P-4u](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U)。
 
-由客戶現有的監視和管理的難題，QCT 提供獨佔、 互補的功能和函式，其中包含系統事件記錄檔的概觀，驅動程式，以及以加強整體硬體元件健全狀況監視管理經驗。
+QCT 提供有關現有監控與管理的客戶難題，並提供獨家、互補的功能和功能，其中包括系統事件記錄、監視驅動程式和硬體元件健全狀況的總覽，以增強整體管理經驗。
 
 ![QCT 延伸模組](../../media/extend-case-study-qct/D52T_DarkMode_Disk-Detail-General.PNG)
 
-QCT Management Suite 延伸功能的 Windows Admin Center 與下列主要功能：
-- **一種單鍵專屬硬體管理**-直覺式使用者介面顯示的硬體資訊，包括模型名稱、 處理器、 記憶體和 BIOS。 IT 系統管理員可以重新啟動使用簡單的單鍵 UI BMC。
+QCT 管理套件使用下列主要功能來擴充 Windows 管理中心的功能：
+- 單鍵**專用硬體管理**-直覺的使用者介面會顯示硬體資訊，包括型號名稱、處理器、記憶體和 BIOS。 IT 系統管理員可以透過簡單的單鍵 UI 來重新開機 BMC。
 
 ![QCT 延伸模組](../../media/extend-case-study-qct/D52T_Overview.PNG)
 
-- **磁碟對應和有效率的服務支援的 LED 識別**-QCT Management Suite 精靈 UI 設計會顯示每個所選磁碟的磁碟設定檔的概觀和 LED 淺控制項進行有效率的取代選取的磁碟的位置。
+- **有效率的服務支援的磁片對應和 led 識別**-QCT 管理套件 wizard UI 設計會顯示每個所選磁片的位置，其中包含磁片設定檔的總覽，以及所選磁片的 LED 燈控制以提供有效率的更換。
 
 ![QCT 延伸模組](../../media/extend-case-study-qct/T21P_disk_mapping.png)
 
-- 簡單易用的硬體事件記錄檔和健全狀況狀態的監視工具。
+- 適用于硬體事件記錄檔和健全狀況狀態的容易使用監視工具。
 
 ![QCT 延伸模組](../../media/extend-case-study-qct/D52T_event_log.PNG)
 
-- **預測性的磁碟管理**-評估系統條件 S.M.A.R.T 資訊與狀況不良通知可讓組織完全損壞發生前採取動作。
+- **預測性磁片管理**-使用 S. M. T 資訊和狀況不良通知來評估系統條件，讓組織能夠在發生總失敗前採取動作。
 
 ![QCT 延伸模組](../../media/extend-case-study-qct/T21P_SMART.PNG)
 
-深入了解 QCT Management Suite 的 Windows Admin Center:
-- [QCT Management Suite 網頁](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/)
-- [QCT Management Suite 資料工作表](https://go.qct.io/wp-content/uploads/2019/04/WAC-data-sheet_v04222019.pdf)
+深入瞭解適用于 Windows 系統管理中心的 QCT 管理套件：
+- [QCT 管理套件網頁](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/)
+- [QCT 管理套件資料工作表](https://go.qct.io/wp-content/uploads/2019/04/WAC-data-sheet_v04222019.pdf)

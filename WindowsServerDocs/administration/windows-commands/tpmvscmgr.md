@@ -2,7 +2,7 @@
 title: tpmvscmgr
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b1d9b049615322bffc39b5b372ce145579b57b2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0051750f557786b0a564ec20a32089e089898cc0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868765"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385656"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
@@ -56,7 +56,7 @@ Create 命令會在使用者的系統上設定新的虛擬智慧卡。 如果需
 > [!WARNING]
 > 當虛擬智慧卡被刪除時，就無法復原。
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |/instance|指定要移除之虛擬智慧卡的實例識別碼。 InstanceID 是在建立卡片時，以 Tpmvscmgr 輸出的形式產生。 /Instance 參數是摧毀命令的必要欄位。|
 |/?|顯示此命令的說明。|

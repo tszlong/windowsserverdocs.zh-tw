@@ -7,14 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 586f2d7b73c6017f8b69103a09f6b38bb31f542d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 12c47f98af24331b25355178370cc4cd28c0aa10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865800"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358049"
 ---
 # <a name="configuring-alternate-login-id"></a>設定替代登入識別碼
 
@@ -137,7 +137,7 @@ Office 應用程式會依賴目錄系統管理員所推送的資訊來識別替�
 
 |要新增的 Regkey|Regkey 資料名稱、類型和值|Windows 7/8|Windows 10|描述|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要|必要項|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此 regkey 中提供 Contoso.com 的值。|
+|HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要項|必要項|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此 regkey 中提供 Contoso.com 的值。|
 HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus 的必要|Outlook 2016 ProPlus 的必要|此 regkey 的值可以是 1/0，向 Outlook 應用程式表示它是否應該參與改良的替代識別碼驗證邏輯。|
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要項|必要項|此 regkey 可以用來將 STS 設定為網際網路設定中的信任區域。 標準 ADFS 部署建議將 ADFS 命名空間新增至 Internet Explorer 的近端內部網路區域|
 

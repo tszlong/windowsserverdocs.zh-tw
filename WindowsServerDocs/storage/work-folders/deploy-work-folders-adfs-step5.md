@@ -1,6 +1,6 @@
 ---
 title: 搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾 - 步驟 5 設定用戶端
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
@@ -8,28 +8,28 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
-ms.openlocfilehash: 44e3ab06ac29d770ad47b43db5eba06f0eb08a60
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f0a50913cbcf7773f792df4ce119b83d796a7155
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447792"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402776"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 5： 設定用戶端
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟5，設定用戶端
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明使用 Active Directory 同盟服務 (AD FS) 和 Web 應用程式 Proxy 部署工作資料夾的第五個步驟。 您可以在這些主題中找到這個程序的其他步驟︰  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：概觀](deploy-work-folders-adfs-overview.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：總覽 @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 1： 設定 AD FS](deploy-work-folders-adfs-step1.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟1，設定 AD FS @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 2 中，AD FS 設定後工作](deploy-work-folders-adfs-step2.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟2，AD FS 設定後的工作 @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 3，工作資料夾設定](deploy-work-folders-adfs-step3.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟3，設定工作資料夾 @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 4： 設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟4，設定 Web 應用程式 Proxy @ no__t-0  
   
 使用以下程序設定已加入網域和未加入網域的 Windows 用戶端。 您可以使用這些用戶端測試檔案是否在用戶端的工作資料夾間正確同步。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "66447792"
   
 若要安裝憑證，請依照下列步驟執行：  
   
-1.  按一下 [開始]  ，然後按一下 [執行]  。  
+1.  按一下 [開始]，然後按一下 [執行]。  
   
 2.  輸入 **MMC**。  
   
@@ -50,11 +50,11 @@ ms.locfileid: "66447792"
   
 4.  在 **\[可用的嵌入式管理單元\]** 清單中，選取 **\[憑證\]** ，然後按一下 **\[新增\]** 。 \[憑證嵌入式管理單元精靈\] 就會啟動。  
   
-5.  選取 [電腦帳戶]  ，然後按 [下一步]  。  
+5.  選取 [電腦帳戶]，然後按 [下一步]。  
   
 6.  選取 **\[本機電腦 (執行這個主控台的電腦)\]** ，然後按一下 **\[完成\]** 。  
   
-7.  按一下 [確定]  。  
+7.  按一下 [確定]。  
   
 8.  展開資料夾 Console Root\Certificates\(Local Computer)\Personal\Certificates。  
   
@@ -79,13 +79,13 @@ ms.locfileid: "66447792"
   
 2. 按一下 **\[設定工作資料夾\]** 。  
   
-3. 上**輸入您的公司電子郵件地址**頁面上，輸入使用者的電子郵件地址 (例如user@contoso.com) 或工作資料夾 URL (在測試範例中，https:\//workfolders.contoso.com)，然後按一下 [ **下一步]** 。  
+3. 在 [**輸入您的公司電子郵件地址**] 頁面上，輸入使用者的電子郵件地址（例如，user@contoso.com）或工作資料夾 URL （在測試範例中為 HTTPs： \//workfolders），然後按 **[下一步]** 。  
   
 4. 如果使用者連接至企業網路，驗證是由 Windows 整合式驗證執行。 如果使用者未連接企業網路，驗證會由 ADFS (OAuth) 執行並且將提示使用者輸入認證。 輸入您的認證，然後按一下 **\[確定\]** 。  
   
-5. 在您驗證後，會顯示 **\[導入「工作資料夾」\]** 頁面，您可以選擇是否變更工作資料夾的目錄位置。 按一下 [下一步]  。  
+5. 在您驗證後，會顯示 **\[導入「工作資料夾」\]** 頁面，您可以選擇是否變更工作資料夾的目錄位置。 按一下 [下一步]。  
   
-6. **\[安全性原則\]** 頁面會列出您為工作資料夾設定的安全性原則。 按一下 [下一步]  。  
+6. **\[安全性原則\]** 頁面會列出您為工作資料夾設定的安全性原則。 按一下 [下一步]。  
   
 7. 顯示訊息，指出工作資料夾已開始與電腦同步。 按一下 **關閉**。  
   
@@ -125,6 +125,6 @@ ms.locfileid: "66447792"
 這包含透過 Windows Server UI 部署工作資料夾、AD FS 和 Web 應用程式 Proxy 的程序。  
   
 ## <a name="see-also"></a>另請參閱  
-[工作資料夾概觀](Work-Folders-Overview.md)  
+[工作資料夾總覽](Work-Folders-Overview.md)  
   
 

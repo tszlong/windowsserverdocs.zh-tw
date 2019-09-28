@@ -1,8 +1,8 @@
 ---
 title: 選取
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c3723dd414adca68c22011ef3f6be02eb6531d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7dc3bc8775f971968f096ba4344348e77c112cfa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889899"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384106"
 ---
 # <a name="select"></a>選取
 
 
 
-將焦點轉移到磁碟、 磁碟分割、 磁碟區或虛擬硬碟 (VHD)。
+將焦點移到磁片、磁碟分割、磁片區或虛擬硬碟（VHD）。
 
 ## <a name="syntax"></a>語法
 
@@ -39,15 +39,15 @@ select vdisk
 
 |參數|描述|
 |---------|-----------|
-|[選取磁碟](select-disk.md)|將焦點轉移到磁碟。|
-|[選取資料分割](select-partition.md)|將焦點轉移到的磁碟分割。|
-|[選取磁碟區](select-volume.md)|將焦點轉移到磁碟區。|
-|[選取 vdisk](select-vdisk.md)|將焦點轉移到 VHD。|
+|[選取磁片](select-disk.md)|將焦點移至磁片。|
+|[選取資料分割](select-partition.md)|將焦點移至資料分割。|
+|[選取磁片區](select-volume.md)|將焦點移至磁片區。|
+|[選取 vdisk](select-vdisk.md)|將焦點移至 VHD。|
 
 ## <a name="remarks"></a>備註
 
--   如果有對應的資料分割選取磁碟區，則將會自動選取資料分割。
--   如果已選取的分割區，與對應的磁碟區，將會自動選取磁碟區。
+-   如果選取了具有對應磁碟分割的磁片區，則會自動選取該磁碟分割。
+-   如果選取的資料分割具有對應的磁片區，則會自動選取該磁片區。
 
 #### <a name="additional-references"></a>其他參考資料
 

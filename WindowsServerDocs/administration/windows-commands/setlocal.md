@@ -1,8 +1,8 @@
 ---
 title: setlocal
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70e58e3c3a7c3de594c620f7530816b57727d4c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 997c996854f488bb1776f135e3288e3b094e683c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868859"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384095"
 ---
 # <a name="setlocal"></a>setlocal
 
 
 
-啟動批次檔中的當地語系化環境變數。 當地語系化會繼續直到相符**endlocal**遇到命令或批次檔的結尾為止。
+啟動批次檔中環境變數的當地語系化。 當地語系化會繼續進行，直到遇到相符的**endlocal**命令或到達批次檔的結尾為止。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,36 +38,36 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 |引數|描述|
 |--------|-----------|
-|enableextensions|可讓命令擴充功能，直到比對**endlocal**遇到命令時，無論之前設定為何**setlocal**執行命令。|
-|disableextensions|停用的命令擴充功能，直到比對**endlocal**遇到命令時，無論之前設定為何**setlocal**執行命令。|
-|enabledelayedexpansion|可讓延遲的環境變數擴充，直到比對**endlocal**遇到命令時，無論之前設定為何**setlocal**執行命令。|
-|disabledelayedexpansion|停用延遲的環境變數擴充，直到比對**endlocal**遇到命令時，無論之前設定為何**setlocal**執行命令。|
+|enableextensions|會啟用命令延伸模組，直到遇到相符的**endlocal**命令為止，不論在**setlocal**命令執行之前的設定為何。|
+|disableextensions|除非執行**setlocal**命令之前的設定，否則會停用命令延伸模組，直到遇到相符的**endlocal**命令為止。|
+|enabledelayedexpansion|啟用延遲的環境變數擴充，直到遇到符合的**endlocal**命令為止，不論在**setlocal**命令執行之前的設定為何。|
+|disabledelayedexpansion|會停用延遲的環境變數擴充，直到遇到符合的**endlocal**命令為止，不論在**setlocal**命令執行之前的設定為何。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
 -   使用**setlocal**
 
-    當您使用**setlocal**外部指令碼或批次檔，會有任何作用。
+    當您在腳本或批次檔外部使用**setlocal**時，不會有任何作用。
 -   變更環境變數
 
-    使用**setlocal**變更環境變數，當您執行的批次檔。 執行之後所做的環境變更**setlocal**本機批次檔。 Cmd.exe 程式還原先前的設定，當它遇到**endlocal**命令，或到達批次檔的結尾。
--   巢狀命令
+    當您執行批次檔時，請使用**setlocal**來變更環境變數。 執行**setlocal**之後所做的環境變更是批次檔的本機。 Cmd.exe 程式會在遇到**endlocal**命令或到達批次檔尾時，還原先前的設定。
+-   嵌套命令
 
-    您可以有一個以上**setlocal**或是**endlocal**命令批次程式 （也就是巢狀命令）。
--   測試批次檔中的命令擴充功能
+    Batch 程式中可以有一個以上的**setlocal**或**endlocal**命令（也就是，也就是嵌套的命令）。
+-   在批次檔中測試命令延伸模組
 
-    **Setlocal**命令會設定 ERRORLEVEL 變數。 如果您傳遞 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**}，ERRORLEVEL 變數設定為**0** （零）。 否則，它會設定為**1**。 您可以使用批次指令碼中的這項資訊來判斷延伸模組是否可用，如下列範例所示：  
+    **Setlocal**命令會設定 ERRORLEVEL 變數。 如果您傳遞 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**}，則 ERRORLEVEL 變數會設定為**0** （零）。 否則，它會設定為**1**。 您可以在批次腳本中使用這項資訊來判斷延伸模組是否可用，如下列範例所示：  
     ```
     setlocal enableextensions
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    因為**cmd**命令擴充功能會停用時，不會設定 ERRORLEVEL 變數**確認**當使用無效時，命令會初始化為非零值的 ERRORLEVEL 變數引數。 此外，如果您使用**setlocal**命令的引數搭配 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**} 並不會設定 ERRORLEVEL 變數**1**，命令延伸模組未提供。
+    由於在停用命令延伸模組時， **cmd**不會設定 ERRORLEVEL 變數，因此當您使用不正確引數時， **verify**命令會將 ERRORLEVEL 變數初始化為非零值。 此外，如果您將**setlocal**命令與引數 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**} 搭配使用，它就不會設定 ERRORLEVEL 變數為**1**，無法使用命令延伸模組。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-您可以當地語系化批次檔中的環境變數，如下列範例指令碼所示：
+您可以將批次檔中的環境變數當地語系化，如下列範例腳本所示：
 ```
 rem *******Begin Comment**************
 rem This program starts the superapp batch program on the network,

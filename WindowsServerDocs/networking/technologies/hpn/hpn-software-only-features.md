@@ -1,7 +1,7 @@
 ---
 title: 僅限軟體 (SO) 功能和技術
 description: 這些功能會實作為作業系統的一部分，而且與基礎 NIC 無關。 有時候，這些功能需要對 NIC 進行一些調整，以進行最佳操作。 這些範例包括 Hyper-v 功能，例如虛擬機器服務品質（vmQoS）、存取控制清單（Acl），以及非 Hyper-v 功能（如 NIC 小組）。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/20/2018
-ms.openlocfilehash: 27fbbcc5eedb1bc8ee37a85356542335c2eac77a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8c354d53db983d0437749de918b2d5f12ede0f5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871928"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405698"
 ---
 # <a name="software-only-so-features-and-technologies"></a>僅限軟體 (SO) 功能和技術
 僅限軟體的功能會實作為作業系統的一部分，而且與基礎 NIC 無關。 有時候，這些功能需要對 NIC 進行一些調整，以進行最佳操作。 這些範例包括 Hyper-v 功能，例如虛擬機器服務品質（vmQoS）、存取控制清單（Acl），以及非 Hyper-v 功能（如 NIC 小組）。

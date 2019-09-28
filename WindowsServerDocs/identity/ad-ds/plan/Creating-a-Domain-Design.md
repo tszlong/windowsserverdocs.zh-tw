@@ -7,28 +7,28 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5b592f791245312d43fd2edc7b6d1e85deccc75d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0e263014d49d488e0c1e52395025e21b84d7107f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868229"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402760"
 ---
 # <a name="creating-a-domain-design"></a>建立網域設計
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-樹系擁有者會負責建立網域樹系設計的。 建立網域設計牽涉到函式檢查複寫需求和現有的網路基礎結構，然後再建立 啟用 Active Directory 網域服務 (AD DS) 網域結構的容量，以最有效率的方式。 網域會用來分割目錄，以便可以發佈並有效率地管理整個企業目錄中的資訊。 針對您網域的設計目標是網路的將 Active Directory 複寫拓撲，同時確保複寫不會使用太多的可用網路頻寬，並不會干擾您的每日作業的效率最大化。  
+樹系擁有者負責建立樹系的網域設計。 建立網域設計牽涉到檢查複寫需求和網路基礎結構的現有容量，然後建立可讓 Active Directory Domain Services （AD DS）以最有效率的方式運作的網域結構。 系統會使用網域來分割目錄，以便在整個企業中有效率地散佈和管理目錄中的資訊。 您的網域設計目標是將 Active Directory 複寫拓撲的效率最大化，同時確保複寫不會使用太多可用的網路頻寬，而且不會干擾網路的每日作業。  
   
 ## <a name="in-this-section"></a>本節內容  
   
--   [檢閱網域模型](../../ad-ds/plan/Reviewing-the-Domain-Models.md)  
+-   [檢查領域模型](../../ad-ds/plan/Reviewing-the-Domain-Models.md)  
   
--   [判斷所需的網域數目](../../ad-ds/plan/Determining-the-Number-of-Domains-Required.md)  
+-   [決定所需的網域數](../../ad-ds/plan/Determining-the-Number-of-Domains-Required.md)  
   
--   [決定是否要升級現有的網域，或部署新的網域](../../ad-ds/plan/Determining-Whether-to-Upgrade-Existing-Domains-or-Deploy-New-Domains.md)  
+-   [決定是否要升級現有網域或部署新網域](../../ad-ds/plan/Determining-Whether-to-Upgrade-Existing-Domains-or-Deploy-New-Domains.md)  
   
 -   [指派網域名稱](../../ad-ds/plan/Assigning-Domain-Names.md)  
   

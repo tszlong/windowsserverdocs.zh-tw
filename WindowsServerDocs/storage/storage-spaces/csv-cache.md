@@ -1,6 +1,6 @@
 ---
-title: 儲存空間直接存取記憶體中讀取快取
-ms.prod: windows-server-threshold
+title: 儲存空間直接存取記憶體內部讀取快取
+ms.prod: windows-server
 ms.author: eldenc
 ms.manager: siroy
 ms.technology: storage-spaces
@@ -8,58 +8,58 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed5894a569d4c42a3a4b0e018de5171f2c84a62
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83fc923f505531f955fc0131d7dcc1ce98974daa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394093"
 ---
-# <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>儲存空間直接存取使用 CSV 在記憶體中讀取快取
-> 適用於：Windows Server 2016、windows Server 2019
+# <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>使用儲存空間直接存取搭配 CSV 記憶體內部讀取快取
+> 適用於：Windows Server 2016、Windows Server 2019
 
-本主題描述如何使用系統記憶體，以提高的效能[儲存空間直接存取](storage-spaces-direct-overview.md)。
+本主題描述如何使用系統記憶體來提升[儲存空間直接存取](storage-spaces-direct-overview.md)的效能。
 
-儲存空間直接存取適用於叢集共用磁碟區 (CSV) 在記憶體中讀取快取。 使用快取讀取的系統記憶體，可以改善像是 HYPER-V，它會使用無緩衝的 I/O 存取 VHD 或 VHDX 檔案的應用程式的效能。 （無緩衝的 IOs 是不會快取由 「 Windows 快取管理員 」 中的任何作業）。
+儲存空間直接存取與叢集共用磁碟區（CSV）記憶體內部讀取快取相容。 使用系統記憶體來快取讀取可以改善 Hyper-v 之類應用程式的效能，這會使用未緩衝的 i/o 來存取 VHD 或 VHDX 檔案。 （未緩衝的 Io 是 Windows 快取管理員不會快取的任何作業）。
 
-因為記憶體中快取是伺服器本機，所以它可以改善超融合儲存空間直接存取部署的資料位置： 最新的讀取快取在記憶體中的虛擬機器執行所在的相同主機上，頻率減少讀取經過網路。 這會導致較低的延遲和更佳的儲存體效能。
+因為記憶體內部快取是伺服器本機，所以可改善超融合儲存空間直接存取部署的資料位置：最近的讀取會在虛擬機器執行所在的相同主機上，于記憶體中快取，以減少讀取網路的頻率。 這會導致延遲較低且儲存體效能更佳。
 
 ## <a name="planning-considerations"></a>規劃考量
 
-在記憶體中讀取快取是最有效率的大量讀取工作負載，例如虛擬桌面基礎結構 (VDI)。 相反地，如果工作負載非常密集寫入，快取可能會造成更多的額外負荷比值，並應停用。
+記憶體內部讀取快取最適用于大量讀取的工作負載，例如虛擬桌面基礎結構（VDI）。 相反地，如果工作負載非常密集寫入，則快取可能會造成額外的負擔，而不是值，應該予以停用。
 
-您可以使用最多 80%的總實體記憶體，CSV 在記憶體中讀取快取。
+您最多可以為 CSV 記憶體內部讀取快取使用 80% 的總實體記憶體。
 
   > [!TIP]
-  > 超融合式部署中，其中計算和儲存在相同的伺服器上執行務必保留足夠的記憶體，虛擬機器。 交集的向外延展檔案伺服器 (SoFS) 部署，使用較少競爭記憶體，這不適用。
+  > 針對在相同伺服器上執行計算和儲存體的超交集部署，請小心為您的虛擬機器保留足夠的記憶體。 針對交集的向外延展檔案伺服器（SoFS）部署，對記憶體的爭用較少，這並不適用。
 
   > [!NOTE]
-  > 某些 microbenchmarking 之類的工具 DISKSPD 並[VM Fleet](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet)可能會產生較差的結果與 CSV 記憶體中讀取快取啟用時比不使用它。 根據預設 VM 團隊會建立一個 10 GiB VHDX，每個虛擬機器-大約 1 TiB 的 100 個 Vm – 總，然後執行*統一隨機*讀取並寫入它們。 不同於實際工作負載，讀取未遵循任何可預測或重複的模式，因此不是有效的記憶體中快取，並只會產生額外負荷。
+  > 某些 microbenchmarking 工具（例如 DISKSPD 和[VM 車隊](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet)）可能會產生較差的結果，並啟用 CSV 記憶體中的讀取快取，而不需要它。 根據預設，VM 車隊會針對每個虛擬機器建立 1 10 GiB VHDX – 100 Vm 約有 1 TiB 總計–然後執行*一致的隨機*讀取和寫入。 不同于實際的工作負載，讀取不會遵循任何可預測或重複的模式，因此記憶體內部快取不會生效，而且只會產生額外負荷。
 
-## <a name="configuring-the-in-memory-read-cache"></a>設定在記憶體中讀取快取
+## <a name="configuring-the-in-memory-read-cache"></a>設定記憶體內部讀取快取
 
-CSV 在記憶體中讀取快取已在 Windows Server 2016 和 Windows Server 2019 與相同的功能。 在 Windows Server 2016 中，它預設為關閉。 在 Windows Server 2019，它是位於預設配置的 1 gb。
+CSV 記憶體內部讀取快取可在 Windows Server 2016 和 Windows Server 2019 中使用相同的功能。 在 Windows Server 2016 中，預設為關閉。 在 Windows Server 2019 中，它預設為開啟，並配置 1 GB。
 
 | OS 版本          | 預設 CSV 快取大小 |
 |---------------------|------------------------|
-| Windows Server 2016 | 0 （停用）           |
-| Windows Server 2019 | 1 GiB                   |
+| Windows Server 2016 | 0（已停用）           |
+| Windows Server Standard 2012 R2 | 1 GiB                   |
 
-若要查看使用 PowerShell 來配置多少記憶體，請執行：
+若要查看使用 PowerShell 配置多少記憶體，請執行：
 
 ```PowerShell
 (Get-Cluster).BlockCacheSize
 ```
 
-傳回的值是在每一部伺服器的 mebibytes (MiB)。 比方說，`1024`代表 1 gib (GiB)。
+傳回的值是每一伺服器的數量（MiB）。 例如，`1024` 代表1個 gib （GiB）。
 
-若要變更配置多少記憶體，修改此值使用 PowerShell。 比方說，若要配置 2 GiB 每一部伺服器，請執行：
+若要變更配置的記憶體數量，請使用 PowerShell 來修改此值。 例如，若要為每部伺服器配置2個 GiB，請執行：
 
 ```PowerShell
 (Get-Cluster).BlockCacheSize = 2048
 ```
 
-變更會立即生效，暫停然後繼續您的 CSV 磁碟區，或伺服器之間移動它們。 比方說，若要將每個 CSV 移至另一個伺服器節點，然後再次使用此 PowerShell 片段：
+若要讓變更立即生效，請暫停再繼續您的 CSV 磁片區，或在伺服器之間移動它們。 例如，使用此 PowerShell 片段將每個 CSV 移至另一個伺服器節點，然後再返回一次：
 
 ```PowerShell
 Get-ClusterSharedVolume | ForEach {
@@ -71,4 +71,4 @@ Get-ClusterSharedVolume | ForEach {
 
 ## <a name="see-also"></a>另請參閱
 
-- [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
+- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

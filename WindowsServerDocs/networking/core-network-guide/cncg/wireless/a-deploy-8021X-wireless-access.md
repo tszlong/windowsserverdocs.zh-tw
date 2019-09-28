@@ -2,18 +2,18 @@
 title: 部署密碼型 802.1X 驗證無線存取
 description: 本主題是 Windows Server 2016 網路指南「部署以密碼為基礎的 802.1 X 驗證無線存取」的一部分
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ee20e002aa8dad29eefcda87a7b949ffb0bb6e9b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 90c2c6c4fbd0110724bc3950b11b3b2c09c5c604
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868944"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406263"
 ---
 # <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>部署以\-密碼為基礎的 802.1 x 驗證無線存取
 

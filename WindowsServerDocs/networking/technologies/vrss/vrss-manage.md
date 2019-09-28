@@ -1,7 +1,7 @@
 ---
 title: 管理 vRSS
-description: 本主題中，您可以使用的 Windows PowerShell 命令來管理 vRSS 在虛擬機器 (Vm) 和 HYPER-V 主機上。
-ms.prod: windows-server-threshold
+description: 在本主題中，您會使用 Windows PowerShell 命令來管理虛擬機器（Vm）和 Hyper-v 主機上的 vRSS。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 0fe5bfc3-591f-4a19-b98a-0668d4c9f93a
@@ -10,25 +10,25 @@ manager: dougkim
 ms.date: 09/05/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8af800608bee7037b48141a7a2edb0c872a7aac0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d528f7e658d61f613eedc635fb81d8f18fd59aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856189"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405162"
 ---
 # <a name="manage-vrss"></a>管理 vRSS
 
-本主題中，您必須使用 Windows PowerShell 命令來管理虛擬機器中的 vRSS \(Vm\)並在 Hyper-v 上\-HYPER-V 主機。
+在本主題中，您會使用 Windows PowerShell 命令來管理虛擬機器中的 vRSS \(VMs @ no__t-1 和在 Hyper-v 的 no__t 2V 主機上。
 
 >[!NOTE]
->如需有關本主題中所述的命令的詳細資訊，請參閱[Windows PowerShell 命令，RSS 和 vRSS](vrss-wps.md)。
+>如需本主題中所述之命令的詳細資訊，請參閱[適用于 RSS 和 vRSS 的 Windows PowerShell 命令](vrss-wps.md)。
 
-## <a name="vmq-on-hyper-v-hosts"></a>在 HYPER-V 主機上的 VMQ
+## <a name="vmq-on-hyper-v-hosts"></a>Hyper-v 主機上的 VMQ
 
-在 HYPER-V 主機上，您必須使用控制 VMQ 處理器的關鍵字。
+在 Hyper-v 主機上，您必須使用控制 VMQ 處理器的關鍵字。
 
-**檢視目前的設定：** 
+**查看目前的設定：** 
 
 ```PowerShell
 Get-NetAdapterVmq
@@ -41,11 +41,11 @@ Set-NetAdapterVmq
 ```
 
 
-## <a name="vrss-on-hyper-v-switch-ports"></a>vRSS hyper-v 交換器連接埠
+## <a name="vrss-on-hyper-v-switch-ports"></a>Hyper-v 交換器埠上的 vRSS
 
-在 HYPER-V 主機上，您也必須啟用 vRSS 上 Hyper-v\-V 虛擬交換器連接埠。
+在 Hyper-v 主機上，您也必須在 [Hyper-v] no__t-0V 虛擬交換器埠上啟用 [vRSS]。
 
-**檢視目前的設定：**
+**查看目前的設定：**
 
 ```PowerShell
 Get-VMNetworkAdapter <vm-name> | fl
@@ -53,17 +53,17 @@ Get-VMNetworkAdapter <vm-name> | fl
 Get-VMNetworkAdapter -ManagementOS | fl
 ```
     
-這兩個下列的設定應該 **，則為 True**。 
+下列兩個設定都應該為**True**。 
 
 - VrssEnabledRequested:True
 - VrssEnabled:True
     
 >[!IMPORTANT]
->某些資源的限制狀況下，Hyper-v\-V 虛擬交換器連接埠可能會無法啟用此功能。 這是暫時的狀況，並在後續的階段，功能可能會變成可用。
+>在某些資源限制條件下，超級 @ no__t-0V 虛擬交換器埠可能無法啟用此功能。 這是暫時性的狀況，而且該功能可能會在後續的時間提供使用。
 >
->如果**VrssEnabled**是 **，則為 True**，然後啟用此 Hyper-v 功能\-V 虛擬交換器連接埠，也就是此 VM 或 vNIC。
+>如果**VrssEnabled**為**True**，則此功能會針對此 hyper-v 2V 虛擬交換器埠（也就是此 VM 或 vNIC）啟用。
 
-**設定交換器連接埠 vRSS 設定：**
+**設定交換器埠 vRSS 設定：**
 
 ```PowerShell
 Set-VMNetworkAdapter <vm-name> -VrssEnabled $TRUE
@@ -71,11 +71,11 @@ Set-VMNetworkAdapter <vm-name> -VrssEnabled $TRUE
 Set-VMNetworkAdapter -ManagementOS -VrssEnabled $TRUE
 ```
 
-## <a name="vrss-in-vms-and-host-vnics"></a>在 Vm 和主機 Vnic vRSS
+## <a name="vrss-in-vms-and-host-vnics"></a>Vm 和主機 Vnic 中的 vRSS
 
-您可以使用相同的命令，用於原生 RSS vRSS 中設定 Vm 和主機 Vnic，這也是在主機 Vnic 上啟用 RSS 的方式。  
+您可以使用原生 RSS 所用的相同命令來設定 Vm 和主機 Vnic 中的 vRSS 設定，這也是在主機 Vnic 上啟用 RSS 的方式。  
 
-**檢視目前的設定：**
+**查看目前的設定：**
 
 ```PowerShell
 Get-NetAdapterRSS
@@ -88,30 +88,30 @@ Set-NetAdapterRss
 ```
 
 >[!NOTE]
-> 設定在 VM 內的設定檔不會影響工作排程。 超\-V 讓所有排程決策，並忽略在 VM 內的設定檔。
+> 在 VM 內設定設定檔並不會影響工作的排程。 超 no__t-0V 會進行所有排程決策，並忽略 VM 內的設定檔。
 
 ## <a name="disable-vrss"></a>停用 vRSS
 
-您可以停用 vRSS，若要停用的任何先前所述的設定。
+您可以停用 vRSS 來停用先前所述的任何設定。
 
-- 停用 VMQ 的實體 NIC 或 VM。
+- 停用實體 NIC 或 VM 的 VMQ。
 
   >[!CAUTION]
-  >在實體中停用 VMQ NIC 會嚴重影響開發您的 Hyper\-主機來處理連入封包。
+  >停用實體 NIC 上的 VMQ，會嚴重影響您的超級 @ no__t 0V 主機處理傳入封包的能力。
 
-- 停用 Hyper-v 上的 VM vRSS\-Hyper V 虛擬交換器連接埠\-主機。
+- 針對超 no__t-1V 主機上的 Hyper-v 0V 虛擬交換器埠上的 VM 停用 vRSS。
 
    ```PowerShell
    Set-VMNetworkAdapter <vm-name> -VrssEnabled $FALSE
    ```
 
-- 停用主機 vNIC 上 Hyper-v 的 vRSS\-Hyper V 虛擬交換器連接埠\-主機。
+- 針對 vNIC 在超 @ no__t-1V 主機上的 [Hyper-v] no__t-0V 虛擬交換器埠上的主機停用 vRSS。
 
    ```PowerShell
    Set-VMNetworkAdapter -ManagementOS -VrssEnabled $FALSE
    ```
 
-- 停用 VM 中的 RSS\(或主機 vNIC\) VM 內\(或主機上\)
+- 停用 VM 中的 RSS \(or 主機 vNIC @ no__t-1，位於主機 @ no__t-3 上的 VM 中 \(or
 
    ```PowerShell
    Disable-NetAdapterRSS *

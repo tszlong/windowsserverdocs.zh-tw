@@ -1,8 +1,8 @@
 ---
 title: 應用程式考量
-description: 在 MultiPoint 服務上的應用程式的相容性資訊
+description: MultiPoint 服務上應用程式的相容性資訊
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,34 +13,34 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 400f87c09f1b2e897d67f94e9b7ac12ae0a1e799
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21531273b1dd6d643df3f816a880a0efb3117c70
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839829"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405123"
 ---
 # <a name="application-considerations"></a>應用程式考量
   
 ## <a name="application-compatibility"></a>應用程式相容性
 
-任何您想要在 MultiPoint 服務系統上執行的應用程式必須符合下列需求：
+您想要在 MultiPoint 服務系統上執行的任何應用程式都必須滿足下列需求：
   
-- 它應該安裝並執行 Windows Server 2016 上 
-- 它必須是工作階段感知，因此每位使用者可以執行 MultiPoint 系統中的應用程式執行個體。
+- 它應該安裝並在 Windows Server 2016 上執行 
+- 它必須是會話感知，如此一來，每個使用者都可以在 MultiPoint 系統中執行應用程式的實例。
   
-如果應用程式並指定這項需求建議嘗試安裝應用程式，並使用遠端桌面工作階段中。 
+如果應用程式確實指定這項需求，建議您嘗試安裝應用程式，並在遠端桌面會話中使用它。 
 
 ## <a name="addressing-application-compatibility-problems"></a>解決應用程式相容性問題  
-MultiPoint 服務會提供選項來執行幾乎相同的主機電腦上的 Windows 10 企業版版本的完整執行個體相關聯站台。 重要應用程式將不會執行多個執行個體的多個使用者，或不會安裝在 64 位元作業系統上，這可以是一個方案。 這種方式部署桌面時，需要使用 MultiPoint 管理員 中的 虛擬桌面 索引標籤：  
+MultiPoint 服務可讓您將工作站與在同一部主機電腦上執行的完整 Windows 10 Enterprise edition 實例建立關聯。 對於不會針對多個使用者執行多個實例，或不會安裝在64位作業系統上的重要應用程式，這可能是解決方案。 以這種方式部署桌面需要使用 [MultiPoint 管理員] 中的 [虛擬桌面] 索引標籤來：  
   
 -   啟用虛擬桌面  
 -   建立桌面範本  
--   自訂與問題的應用程式範本  
--   站台相關聯的自訂範本  
+-   使用問題應用程式自訂範本  
+-   將工作站與自訂範本建立關聯  
 
-讓任何變更就會清除每次電腦啟動的時，每個站台會開始從相同的範本。  
+每部工作站會從相同的範本開始，因此每次電腦啟動時，都會清除任何變更。  
   
 >[!NOTE] 
->請務必確認您想要在 MultiPoint 上執行的授權需求的應用程式。 雖然您要安裝一份應用程式可能需要每位使用者授權。  
+>請務必確認您想要在 MultiPoint 上執行之應用程式的授權需求。 雖然您要安裝一個複製應用程式，但可能需要每個使用者的授權。  
   

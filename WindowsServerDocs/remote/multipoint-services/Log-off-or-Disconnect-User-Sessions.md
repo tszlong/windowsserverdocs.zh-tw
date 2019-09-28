@@ -2,7 +2,7 @@
 title: 登出使用者工作階段或中斷其連線
 description: 瞭解如何以手動方式登出使用者
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 0e516a617341ffebadbdeb571a39f50369446f11
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c636af35a78eab76d69c68b6f506b64dcb555f81
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871652"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395274"
 ---
 # <a name="log-off-or-disconnect-user-sessions"></a>登出使用者工作階段或中斷其連線
 MultiPoint 服務使用者可以像使用任何 Windows 會話一樣登入和登出其桌面會話。 使用者也可以中斷連線或暫停其會話，讓 MultiPoint 服務站不在使用中，但其會話會在 MultiPoint 服務系統的電腦記憶體中保持作用中狀態。  

@@ -1,113 +1,113 @@
 ---
-title: 建立 Linux 受防護 VM 的範本磁碟
+title: 建立 Linux 受防護的 VM 範本磁片
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: e791d18e027e5e3e1c5b9c52659641ff588a96a2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66d5f70f747a6209f2856afde58b6f486ea597f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858669"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386713"
 ---
-# <a name="create-a-linux-shielded-vm-template-disk"></a>建立 Linux 受防護 VM 的範本磁碟
+# <a name="create-a-linux-shielded-vm-template-disk"></a>建立 Linux 受防護的 VM 範本磁片
 
-> 適用於：Windows Server 2019，Windows Server （半年通道） 
+> 適用於：Windows Server 2019、Windows Server （半年通道）、 
 
-本主題說明如何準備 Linux 受防護的 Vm，可以用來具現化一或多個租用戶 Vm 的範本磁碟。
+本主題說明如何準備可用於將一或多個租使用者 Vm 具現化的 Linux 受防護 Vm 的範本磁片。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-若要準備和測試 Linux 受防護的 VM，您將需要下列資源：
+若要準備和測試 Linux 受防護的 VM，您將需要下列可用的資源：
 
-- 具有執行 Windows Server 1709 版或更新版本的虛擬化 capababilities 的伺服器
-- 第二部電腦 （Windows 10 或 Windows Server 2016） 能夠執行 HYPER-V 管理員來連接到執行中 VM 的主控台
-- ISO 映像的其中一個支援的 Linux 受防護 VM 的作業系統：
-    - 4.4 的核心使用的 Ubuntu 16.04 LTS
+- 具有執行 Windows Server 1709 版或更新版本之虛擬化 capababilities 的伺服器
+- 第二部電腦（Windows 10 或 Windows Server 2016），能夠執行 Hyper-v 管理員以連線至執行中 VM 的主控台
+- 其中一個支援的 Linux 受防護 VM 作業系統的 ISO 映像：
+    - 具有4.4 核心的 Ubuntu 16.04 LTS
     - Red Hat Enterprise Linux 7.3
     - SUSE Linux Enterprise Server 12 Service Pack 2
-- 網際網路存取才可下載 lsvmtools 套件和作業系統更新
+- 下載 lsvmtools 套件和 OS 更新的網際網路存取權
 
 > [!IMPORTANT]
-> 較新版本的先前的 Linux Os 可能包含已知的 TPM 驅動程式錯誤因此無法成功佈建為受防護的 Vm。
-> 不建議您更新您的範本，或以較新版本中受防護 Vm，有可用的修正程式為止。
-> 公用進行更新時，將更新的支援上述的作業系統清單。
+> 舊版 Linux Os 的較新版本可能包含已知的 TPM 驅動程式錯誤，這會使其無法成功布建為受防護的 Vm。
+> 不建議您將範本或受防護的 Vm 更新為較新的版本，直到有可用的修正為止。
+> 當更新公開時，將會更新上述支援的作業系統清單。
 
 ## <a name="prepare-a-linux-vm"></a>準備 Linux VM
 
-從安全的範本磁碟會建立受防護的 Vm。
-範本磁碟包含作業系統的 VM 和中繼資料，包括數位簽章 /boot 和 /root 分割區，以確保在部署前將不會修改核心 OS 元件。
+受防護的 Vm 是從安全的範本磁片建立而成。
+範本磁片包含 VM 和中繼資料的作業系統，包括/boot 和/root 磁碟分割的數位簽章，以確保核心作業系統元件不會在部署之前修改。
 
-若要建立的範本磁碟，您必須先建立一般的 （受防護） VM 會在未來受防護的 Vm 為基礎的映像準備。
-您所安裝的軟體和您對此 VM 的組態變更會套用到所有受防護的 Vm，建立從這個範本磁碟。
-這些步驟將引導您準備 templatization Linux VM 的裸機最低需求。
+若要建立範本磁片，您必須先建立一般（無遮罩） VM，做為未來受防護 Vm 的基礎映射。
+您所安裝的軟體和您對此 VM 進行的設定變更，將會套用到從這個範本磁片建立的所有受防護 Vm。
+這些步驟將逐步引導您完成 Linux VM 的最低需求，以準備好進行 templatization。
 
 > [!NOTE]
-> 分割磁碟時，會設定 Linux 磁碟加密。
-> 這表示，您必須建立新的 VM 已預先加密使用 dm-crypt 來建立 Linux 受防護 VM 的範本磁碟。
+> 磁碟分割時，會設定 Linux 磁片加密。
+> 這表示您必須使用 dm crypt 建立預先加密的新 VM，以建立 Linux 受防護的 VM 範本磁片。
 
 
-1.  在虛擬化伺服器上，確認您安裝 HYPER-V 和主機守護者 HYPER-V 支援功能，在提升權限的 PowerShell 主控台中執行下列命令：
+1.  在虛擬化伺服器上，請在提升許可權的 PowerShell 主控台中執行下列命令，以確定已安裝 Hyper-v 和主機守護者 Hyper-v 支援功能：
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ```
 
-2.  從信任的來源下載 ISO 映像，並將它儲存在您虛擬化伺服器上，或您的虛擬化伺服器必須能夠在檔案共用上。
+2.  從信任的來源下載 ISO 映像，並將它儲存在您的虛擬化伺服器上，或在您的虛擬化伺服器可存取的檔案共用上。
 
-3.  您管理在電腦上執行 Windows Server 1709 版，請執行下列命令以安裝受防護的 VM 遠端伺服器管理工具：
+3.  在執行 Windows Server 1709 版的管理電腦上，執行下列命令以安裝受防護的 VM 遠端伺服器管理工具：
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-4.  開啟**HYPER-V 管理員**管理電腦上並連接到您的虛擬化伺服器。
-    您可以依序按一下 [連接到伺服器...]在 [動作] 窗格中，或以滑鼠右鍵按一下 HYPER-V 管理員，然後選擇 [連線至伺服器...]提供您的 HYPER-V 伺服器的 DNS 名稱，並以如有必要，所需的認證連接到它。
+4.  在您的管理電腦上開啟 [ **Hyper-v 管理員**]，並聯機到您的虛擬化伺服器。
+    您可以按一下 [連接到伺服器 ...] 來執行此動作。在 [動作] 窗格中，或以滑鼠右鍵按一下 [Hyper-v 管理員]，然後選擇 [連線到伺服器 ...]請為您的 Hyper-v 伺服器提供 DNS 名稱，並在必要時，為其連接所需的認證。
 
-5.  使用 HYPER-V 管理員 中，[設定外部交換器](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)讓 Linux VM 能夠存取網際網路，以取得更新您虛擬化伺服器上。
+5.  使用 Hyper-v 管理員，在虛擬化伺服器上[設定外部交換器](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)，讓 Linux VM 可以存取網際網路以取得更新。
 
-6.  接下來，建立新的虛擬機器，若要安裝到 Linux OS。
-    在 [動作] 窗格中，按一下**的新** > **虛擬機器**即可啟動精靈。
-    提供您的 VM，例如"Pre-templatized Linux"的易記名稱，然後按**下一步**。
+6.  接下來，建立新的虛擬機器以安裝 Linux OS。
+    在 [動作] 窗格中，按一下 [**新增**]  >  [**虛擬機器**] 以顯示嚮導。
+    為您的 VM 提供易記名稱，例如「預先範本化的 Linux」，然後按 **[下一步]** 。
 
-7.  在精靈的第二個頁面上，選取**第 2 代**以確保使用 UEFI 式韌體的設定檔佈建 VM。
+7.  在嚮導的第二個頁面上，選取 [**第2代**] 以確保 VM 是以 UEFI 為基礎的固件設定檔來布建。
 
-8.  完成 [根據您的喜好設定] 精靈的其餘部分。
-    此 VM，請勿使用差異磁碟受防護的 VM 範本磁碟無法使用差異磁碟。
-    最後，連接您稍早下載至虛擬 DVD 光碟機此 vm，您可以安裝作業系統的 ISO 映像。
+8.  根據您的喜好設定完成嚮導的其餘部分。
+    請勿針對此 VM 使用差異磁片;受防護的 VM 範本磁片無法使用差異磁片。
+    最後，將您稍早下載的 ISO 映像連接到此 VM 的虛擬 DVD 光碟機，讓您可以安裝 OS。
 
-9.  在 [HYPER-V 管理員] 中，選取您新建立的 VM，然後按一下**連接...** 附加至 VM 虛擬主控台的 [動作] 窗格中。
-    在出現的視窗，按一下**啟動**開啟虛擬機器。
+9.  在 [Hyper-v 管理員] 中，選取您新建立的 VM，然後按一下 [動作] 窗格中的 **[連線 ...]** ，以連接至 VM 的虛擬主控台。
+    在出現的視窗中，按一下 [**啟動**] 以開啟虛擬機器。
 
-10. 繼續執行您所選的 Linux 散發套件的安裝程序。
-    雖然每個 Linux 散發套件會使用不同的安裝程式精靈，就必須符合下列需求的 Vm 即將成為 Linux 受防護的 VM 範本磁碟：
+10. 針對您選取的 Linux 散發套件進行設定程式。
+    雖然每個 Linux 散發套件都使用不同的安裝程式，但必須符合下列需求，才能成為受 Linux 防護的 VM 範本磁片的 Vm：
 
-    - 必須使用 GUID 分割表格 (GPT) 的配置分割磁碟
-    - 必須使用 dm crypt 加密根磁碟分割。 複雜密碼應設為**複雜密碼**（全部小寫）。 此複雜密碼將會隨機決定，而且資料分割重新加密時佈建受防護的 VM。
+    - 磁片必須使用 GUID 分割表格（GPT）配置進行分割
+    - 根磁碟分割必須以 dm crypt 加密。 複雜密碼應設定為複雜**密碼**（全部小寫）。 當布建受防護的 VM 時，此複雜密碼將會是隨機的，而且磁碟分割會重新加密。
     - 開機磁碟分割必須使用**ext2**檔案系統
 
-11. 當完全啟動您的 Linux 作業系統，而且您已登入時，建議您安裝 linux 虛擬核心和相關聯的 HYPER-V integration services 封裝。
-    此外，您要安裝 SSH 伺服器或其他遠端管理工具來存取後已防護的 VM。
+11. 一旦您的 Linux OS 完全開機且您已登入，建議您安裝 linux 虛擬核心和相關聯的 Hyper-v integration services 套件。
+    此外，當 VM 受到防護之後，您會想要安裝 SSH 伺服器或其他遠端系統管理工具來存取它。
 
-    在 Ubuntu 上，執行下列命令以安裝這些元件：
+    在 Ubuntu 上，執行下列命令來安裝這些元件：
 
     ```bash
     sudo apt-get install linux-virtual linux-tools-virtual linux-cloud-tools-virtual linux-image-extra-virtual openssh-server
     ```
 
-    在 RHEL，請改為執行下列命令：
+    在 RHEL 上，改為執行下列命令：
 
     ```bash
     sudo yum install hyperv-daemons openssh-server
     sudo service sshd start
     ```
 
-    與在 SLES，執行下列命令：
+    在 SLES 上，執行下列命令：
 
     ```bash
     sudo zypper install hyper-v
@@ -115,17 +115,17 @@ ms.locfileid: "59858669"
     sudo systemctl enable sshd
     ```
 
-12. 視需要設定您的 Linux 作業系統。
-    任何軟體安裝，您將加入，使用者帳戶和您所做的全系統組態變更會套用至所有未來的 Vm，建立從這個範本磁碟。
-    您應該避免將任何機密資料或不必要的封裝儲存至磁碟。
+12. 視需要設定您的 Linux OS。
+    您所安裝的任何軟體、您新增的使用者帳戶，以及您所做的全系統設定變更，將會套用到從這個範本磁片建立的所有未來 Vm。
+    您應該避免將任何秘密或不必要的套件儲存至磁片。
 
-13. 如果您打算使用 System Center Virtual Machine Manager 來部署您的 Vm，安裝 VMM 客體代理程式，以便讓 VMM 在 VM 佈建期間是專為您的作業系統。
-    特製化可讓每個 VM 設定安全地使用不同的使用者和 SSH 金鑰、 網路功能的組態，以及自訂的設定步驟。
-    了解如何[取得並安裝 VMM 客體代理程式](https://docs.microsoft.com/system-center/vmm/vm-linux#install-the-vmm-guest-agent)VMM 文件中。
+13. 如果您打算使用 System Center Virtual Machine Manager 來部署您的 Vm，請安裝 VMM 來賓代理程式，讓 VMM 在 VM 布建期間將您的作業系統特殊化。
+    特製化可讓每個 VM 安全地使用不同的使用者和 SSH 金鑰、網路設定和自訂設定步驟來進行。
+    瞭解如何在 VMM 檔中[取得並安裝 vmm 來賓代理程式](https://docs.microsoft.com/system-center/vmm/vm-linux#install-the-vmm-guest-agent)。
 
-14. 下一步 [Microsoft Linux 軟體存放庫加入您的套件管理員](../../administration/linux-package-repository-for-microsoft-software.md)。
+14. 接下來，[將 Microsoft Linux 軟體存放庫新增至您的套件管理員](../../administration/linux-package-repository-for-microsoft-software.md)。
 
-15. 使用您的套件管理員，則安裝 lsvmtools 套件包含 Linux 受防護 VM 的開機載入器填充碼，提供元件，以及磁碟準備工具。
+15. 使用您的套件管理員，安裝 lsvmtools 套件，其中包含 Linux 受防護的 VM 開機載入器填充碼、布建元件和磁片準備工具。
 
     ```bash
     # Ubuntu 16.04
@@ -138,7 +138,7 @@ ms.locfileid: "59858669"
     sudo yum install lsvmtools
     ```
 
-14. 當您完成時自訂 Linux OS，您的系統上找出 lsvmprep 安裝程式並執行它。
+14. 當您完成自訂 Linux OS 時，請在您的系統上找出 lsvmprep 安裝程式並加以執行。
     
     ```bash
     # The path below may change based on the version of lsvmprep installed
@@ -148,50 +148,50 @@ ms.locfileid: "59858669"
 
 15. 關閉您的 VM。
 
-16. 如果您安裝了 VM （包括 HYPER-V 與 Windows 10 Fall Creators Update 所建立的自動檢查點） 的任何檢查點，請務必刪除，然後再繼續。
-    檢查點會建立差異磁碟 (.avhdx) 不支援的範本磁碟精靈。
+16. 如果您已採取 VM 的任何檢查點（包括 Hyper-v 以 Windows 10 秋季建立者更新所建立的自動檢查點），請務必先將其刪除，然後再繼續進行。
+    檢查點建立「範本磁片」 Wizard 不支援的差異磁片（. .avhdx）。
     
-    若要刪除檢查點，請開啟**HYPER-V 管理員**，選取您的 VM，以滑鼠右鍵按一下最上層的檢查點，在檢查點 窗格中，然後按**刪除檢查點樹狀子目錄**。
+    若要刪除檢查點，請開啟 [ **Hyper-v 管理員**]，選取您的 VM，以滑鼠右鍵按一下檢查點窗格中最上方的檢查點，然後按一下 [**刪除檢查點子樹**]。
 
-    ![刪除您的範本 VM 在 HYPER-V manager 中的所有檢查點](../media/Guarded-Fabric-Shielded-VM/delete-checkpoints-lsvm-template.png)
+    ![在 Hyper-v 管理員中刪除範本 VM 的所有檢查點](../media/Guarded-Fabric-Shielded-VM/delete-checkpoints-lsvm-template.png)
 
-## <a name="protect-the-template-disk"></a>保護的範本磁碟
+## <a name="protect-the-template-disk"></a>保護範本磁片
 
-您在上一節中備妥 VM 幾乎就能做為 Linux 受防護的 VM 範本磁碟。
-最後一個步驟是執行透過此 「 範本磁碟精靈 」，並將雜湊和數位簽章的根和開機磁碟分割的目前狀態的磁碟。
-受防護的 VM 佈建以確保未經授權的變更已對範本建立和部署之間的兩個資料分割時，會驗證雜湊和數位簽章。
+您在上一節準備的 VM 幾乎已準備好用來做為 Linux 受防護的 VM 範本磁片。
+最後一個步驟是透過「範本磁片」 Wizard 來執行磁片，它會雜湊並以數位方式簽署根和開機磁碟分割的目前狀態。
+布建受防護的 VM 時，雜湊和數位簽章會經過驗證，以確保在建立和部署範本時，不會對兩個數據分割進行未經授權的變更。
 
-### <a name="obtain-a-certificate-to-sign-the-disk"></a>取得憑證來簽署磁碟
+### <a name="obtain-a-certificate-to-sign-the-disk"></a>取得憑證以簽署磁片
 
-若要數位簽署磁碟度量，您必須取得電腦上的憑證，您將在其中執行範本磁碟精靈。
+若要以數位方式簽署磁片測量，您必須在將執行「範本磁片」 Wizard 的電腦上取得憑證。
 憑證必須符合下列需求：
 
-憑證屬性 | 必要的值
+Certificate 屬性 | 必要值
 ---------------------|---------------
 金鑰演算法 | RSA
-最小金鑰大小 | 2048 位元
-簽章演算法 | SHA256 （建議選項）
+最小金鑰大小 | 2048位
+簽章演算法 | SHA256 （建議）
 金鑰使用方法 | 數位簽章
 
-當他們建立其虛擬機器防護資料檔案，並在已授權他們信任的磁碟時，此憑證的詳細資訊將會顯示給租用戶。
-因此，務必從相互信任您和您的租用戶之憑證授權單位取得此憑證。
-在您所在的主機服務提供者和租用戶的企業案例，您可以考慮發出此憑證，從您的企業憑證授權單位。
-謹慎保護此憑證，因為擁有此憑證的任何人都可以建立新的範本磁碟，受信任的真確的磁碟相同。
+當租使用者建立其防護資料檔案時，會向租使用者顯示此憑證的詳細資料，並授權其信任的磁片。
+因此，請務必從您和您的租使用者雙方信任的憑證授權單位單位取得此憑證。
+在您同時是主機服務提供者和租使用者的企業案例中，您可以考慮從企業憑證授權單位單位發出此憑證。
+請謹慎保護此憑證，因為擁有此憑證的任何人都可以建立與您的真實磁片信任的新範本磁片。
 
-在測試實驗室環境中，您可以使用下列 PowerShell 命令來建立自我簽署的憑證：
+在測試實驗室環境中，您可以使用下列 PowerShell 命令來建立自我簽署憑證：
 
 ```powershell
 New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing Certificate"
 ```
 
-### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>處理序範本磁碟精靈 的 cmdlet 與磁碟
+### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>使用範本 Disk Wizard Cmdlet 處理磁片
 
-將您的範本磁碟和憑證複製到執行 Windows Server 1709 版的電腦，然後執行下列命令來起始簽署程序。
-您提供給 VHDX`-Path`參數將會覆寫與更新後的範本磁碟，因此請務必執行命令之前製作的複本。
+將您的範本磁片和憑證複製到執行 Windows Server （版本1709）的電腦，然後執行下列命令來起始簽署程式。
+您提供給 `-Path` 參數的 VHDX 將會以更新的範本磁片覆寫，因此請務必在執行命令之前複製複本。
 
 > [!IMPORTANT]
-> 提供在 Windows Server 2016 或 Windows 10 上的遠端伺服器管理工具無法用來準備 Linux 受防護 VM 的範本磁碟。
-> 只用[保護 TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) cmdlet 可在 Windows Server，版本 1709年或提供於 Windows Server 2019 的遠端伺服器管理工具來準備 Linux 受防護的 VM 範本磁碟。
+> Windows Server 2016 或 Windows 10 上可用的遠端伺服器管理工具無法用來準備 Linux 受防護的 VM 範本磁片。
+> 請只使用 Windows Server 1709 版或 Windows Server 2019 上可用的遠端伺服器管理工具上提供的[TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) Cmdlet 來準備 Linux 受防護的 VM 範本磁片。
 
 ```powershell
 # Replace "THUMBPRINT" with the thumbprint of your template disk signing certificate in the line below
@@ -200,14 +200,14 @@ $certificate = Get-Item Cert:\LocalMachine\My\THUMBPRINT
 Protect-TemplateDisk -Path 'C:\temp\MyLinuxTemplate.vhdx' -TemplateName 'Ubuntu 16.04' -Version 1.0.0.0 -Certificate $certificate -ProtectedTemplateTargetDiskType PreprocessedLinux
 ```
 
-現在已備妥要佈建 Linux 受防護的 Vm 可用的範本磁碟。
+您的範本磁片現在已準備好用來布建 Linux 受防護的 Vm。
 如果您使用 System Center Virtual Machine Manager 來部署 VM，您現在可以將 VHDX 複製到 VMM 程式庫。
 
-您也可以從 VHDX 擷取磁碟區簽章目錄。
-這個檔案用來簽署憑證、 磁碟名稱和版本資訊提供 VM 擁有者想要使用您的範本。
-他們必須將此檔案匯入授權您擁有的簽章憑證，建立此範本作者防護資料檔案精靈 和未來的範本磁碟它們。
+您也可能想要從 VHDX 解壓縮磁片區簽章類別目錄。
+此檔案是用來提供有關簽署憑證、磁片名稱和版本的資訊給想要使用範本的 VM 擁有者。
+他們需要將此檔案匯入到 [防護資料檔案] 中，以授權您（擁有簽署憑證的範本作者）為其建立此和未來的範本磁片。
 
-若要擷取的磁碟區簽章目錄，請在 PowerShell 中執行下列命令：
+若要將磁片區簽章目錄解壓縮，請在 PowerShell 中執行下列命令：
 
 ```powershell
 Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -VolumeSignatureCatalogPath 'C:\temp\MyLinuxTemplate.vsc'

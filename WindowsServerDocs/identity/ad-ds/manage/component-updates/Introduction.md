@@ -7,94 +7,94 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8e2717af6183944b26a71e55b36f31cef51cf2e7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab21cca727342f6dc69ceecfb0c8991b30b0f227
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831869"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389876"
 ---
 # <a name="introduction"></a>簡介
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-只要電腦有，則已經存在於對運算基礎結構，不論是簡單或複雜的攻擊。 不過，在過去十年以來，隨著各種規模組織數量的增加，在世界上所有部分都遭受以大幅變更威脅大環境的方式攻擊及洩露。 網路戰爭和網路犯罪以達到記錄的速率增加。 "Hacktivism，「 說明攻擊的就由激進份子發動，促成已領取的違規數的動機打算公開組織的機密資訊，來建立服務拒絕，或甚至摧毀基礎結構。 攻擊公用和私人機構，其目標是要滲透組織的智慧財產權 (IP) 變得非常普遍。  
+只要電腦擁有，針對運算基礎結構的攻擊（不論是簡單或複雜）就已經存在了。 不過，在過去十年以來，隨著各種規模組織數量的增加，在世界上所有部分都遭受以大幅變更威脅大環境的方式攻擊及洩露。 網路戰爭和網路犯罪以達到記錄的速率增加。 「Hacktivism」，其中的攻擊是由行動家的位置所積極處理，已經被宣告為用於公開組織秘密資訊、建立拒絕服務，或甚至損毀基礎結構的一些缺口動機。 針對公用和私用機構的攻擊，其目標是 exfiltrating 組織的智慧財產（IP）。  
   
-沒有任何組織的資訊技術 (IT) 基礎結構是免受攻擊，但如果實作適當的原則、 流程和控制項來保護組織的運算基礎結構，從攻擊的重大問題的重要片段若要完成洩露的滲透可能可以預防。 小數位數來自組織外部的攻擊與數量有 eclipsed 內部威脅，近幾年來，因為這份文件通常討論外部攻擊者，而不是由授權的使用者環境的誤用。 然而，原則與本文件中提供的建議，被用來協助保護您的環境免受外部攻擊者和被誤導或惡意內部人士中。  
+不具資訊技術（IT）基礎結構的組織不會遭受攻擊，但如果適當的原則、程式和控制項是為了保護組織運算基礎結構的重要區段而實行，則會提升攻擊入侵以完成危害可能是預防。 因為源自組織外部的攻擊數目和規模已 eclipsed 內部威脅，所以這份檔通常會討論外部攻擊者，而不是由授權的使用者濫用環境。 不過，本檔中提供的原則和建議是為了協助保護您的環境免于遭受外部攻擊者和有誤導或惡意的內部人員。  
   
-本文件中提供的建議與資訊會從各種來源描繪，而衍生自設計用來保護 Active Directory 安裝免於遭受洩露的作法。 雖然不可能防止攻擊，就可以降低的 Active Directory 的攻擊面，並實作控制項，讓攻擊者更難以目錄的危害。 觀察在遭洩露的環境和最常見的建議，我們對客戶提升其 Active Directory 安裝的安全性，這份文件會顯示我們有的弱點的最常見的類型。  
+本檔中提供的資訊和建議是取自許多來源，並且衍生自設計來保護 Active Directory 安裝免于危害的做法。 雖然無法防止攻擊，但還是可以減少 Active Directory 攻擊面，並將危害目錄的控制措施變得更容易遭受攻擊。 本檔提供我們在遭入侵環境中觀察到的最常見弱點類型，以及我們對客戶提出的最常見建議，以改善其 Active Directory 安裝的安全性。  
   
-## <a name="account-and-group-naming-conventions"></a>帳戶和群組的命名慣例  
-下表提供本文件中使用群組和帳戶整個文件中參考的命名慣例的指南。 包含的資料表是每個帳戶/群組，其名稱，以及如何將這些帳戶/群組參考這份文件中的位置。  
+## <a name="account-and-group-naming-conventions"></a>帳戶和群組命名慣例  
+下表提供本檔中所述的命名慣例指南，用於檔中所參考的群組和帳戶。 資料表中包含每個帳戶/群組的位置、其名稱，以及這些帳戶/群組在這份檔中的參考方式。  
   
 
 
-|**帳戶/群組的位置**|**帳戶/群組的名稱**|**如何在這份文件中參考它**|
+|**帳戶/群組位置**|**帳戶/群組的名稱**|**本檔中的參考方式**|
 | --- | --- | --- |   
-|Active Directory-每個網域|Administrator|內建的 Administrator 帳戶|  
-|Active Directory-每個網域|Administrators|內建的系統管理員 (BA) 群組|  
-|Active Directory-每個網域|Domain Admins|網域系統管理員 (DA) 群組|  
-|Active Directory-樹系根網域|Enterprise Admins|Enterprise Admins (EA) 群組|  
-|在執行 Windows Server 並不是網域控制站的工作站電腦上本機電腦的安全性帳戶管理員 (SAM) 資料庫|Administrator|本機系統管理員帳戶|  
-|在執行 Windows Server 並不是網域控制站的工作站電腦上本機電腦的安全性帳戶管理員 (SAM) 資料庫|Administrators|本機 Administrators 群組|  
+|Active Directory-每個網域|Administrator|內建的系統管理員帳戶|  
+|Active Directory-每個網域|Administrators|內建的系統管理員（BA）群組|  
+|Active Directory-每個網域|Domain Admins|網域系統管理員（DA）群組|  
+|Active Directory 樹系根域|Enterprise Admins|Enterprise Admins （EA）群組|  
+|執行 Windows Server 之電腦上的本機電腦安全性性帳戶管理員（SAM）資料庫，以及不是網域控制站的工作站|Administrator|本機系統管理員帳戶|  
+|執行 Windows Server 之電腦上的本機電腦安全性性帳戶管理員（SAM）資料庫，以及不是網域控制站的工作站|Administrators|本機系統管理員群組|  
   
-## <a name="about-this-document"></a>關於此文件  
-Microsoft 資訊安全與風險管理 (ISRM) 組織，也就是組件的 Microsoft 資訊技術 (MSIT)，適用於內部的業務單位、 外部客戶和業內同行，以收集、 傳播，並定義原則，作法，以及控制項。 這項資訊可以使用由 Microsoft 和我們的客戶，以提高安全性並降低 IT 基礎結構的受攻擊面。 本文件中提供的建議是以許多資訊來源和所 MSIT 及 ISRM 作法為基礎。 下列各節提供此文件的原始來源的詳細資訊。  
+## <a name="about-this-document"></a>關於本檔  
+Microsoft 資訊安全和風險管理（ISRM）組織是 Microsoft 資訊技術（MSIT）的一部分，可與內部業務單位、外部客戶和產業對等合作，以收集、散佈及定義原則。實務和控制項。 Microsoft 和我們的客戶可以使用這項資訊來增加安全性，並減少 IT 基礎結構的受攻擊面。 本檔中提供的建議是根據 MSIT 和 ISRM 中所使用的一些資訊來源和實務。 下列各節將提供有關此檔之來源的詳細資訊。  
   
 ### <a name="microsoft-it-and-isrm"></a>Microsoft IT 和 ISRM  
-MSIT 和 ISRM 來保護 Microsoft AD DS 樹系和網域內已開發出一些做法和控制項。 在這些控制項可廣泛套用的它們已整合到這份文件。 安全-T （新興技術的解決方案加速器） 是的 ISRM 其規範是要識別新興技術，並定義加速其採用的安全性需求和控制項內的小組。  
+已在 MSIT 和 ISRM 中開發一些實務和控制項，以保護 Microsoft AD DS 樹系和網域。 這些控制項廣泛適用，已整合到這份檔中。 SAFE-T （適用于新興技術的解決方案加速器）是 ISRM 中的小組，其宗旨是用來識別新興技術，以及定義安全性需求和控制項以加速採用。  
   
-### <a name="active-directory-security-assessments"></a>Active Directory 安全性評定  
-在內部的 Microsoft 業務單位或外部客戶評估應用程式和基礎結構的安全性，並且提供策略性指引以提高與 Microsoft ISRM、 評估、 諮詢及工程 (ACE) 團隊的運作方式組織的安全性狀態。 一個 ACE 服務供應項目是 Active Directory 安全性評定 (ADSA)，即會評估人員、 程序和技術，並產生客戶專屬建議組織的 AD DS 環境的全面評估。 建議根據組織的獨特特性、 做法及風險愛好提供客戶。 除了我們的客戶的 Active Directory 安裝在 Microsoft 已經執行 ADSAs。 經過一段時間，可套用不同的大小和產業的客戶之間找到的建議數目。  
+### <a name="active-directory-security-assessments"></a>Active Directory 安全性評量  
+在 Microsoft ISRM 中，評量、諮詢及工程（ACE）小組會與內部 Microsoft 業務單位和外部客戶合作，以評估應用程式和基礎結構的安全性，並提供策略性和策略指引來增加組織的安全性狀態。 一個 ACE 服務供應專案是 Active Directory 的安全性評估（ADSA），它是組織 AD DS 環境的整體評量，可評估人員、程式和技術，並產生客戶特有的建議。 客戶會根據組織的獨特特性、實務和風險胃口提供建議。 除了我們的客戶以外，已在 Microsoft 的 Active Directory 安裝中執行 ADSAs。 經過一段時間之後，就可以在不同大小和產業的客戶之間，找到一些建議。  
   
 ### <a name="content-origin-and-organization"></a>內容來源與組織  
-本文件的內容多數衍生自 ADSA 和遭入侵的客戶和客戶不會發生顯著的折衷執行其他 ACE 團隊評估。 雖然個別客戶的資料不用來建立這份文件中，我們已經收集到的最常被入侵的弱點，我們已找出在我們的評定與建議我們對客戶以改善其 AD DS 的安全性安裝。 並非所有的弱點都適用於所有環境，所有建議也無法在每個組織中實作。  
+本檔的大部分內容都是衍生自 ADSA 和其他 ACE 小組針對遭入侵的客戶所執行的評量，以及未遭遇重大危害的客戶。 雖然不會使用個別的客戶資料來建立這份檔，但我們已收集我們在評量中發現的最常見弱點，以及我們對客戶提出的建議，以改善其 AD DS 的安全性70，000. 並非所有的弱點都適用於所有環境，所有建議也無法在每個組織中實作。  
   
-這份文件的組織方式如下：  
+本檔的組織方式如下：  
   
 ## <a name="executive-summary"></a>執行摘要  
-執行摘要，可以讀取作為獨立文件，或搭配完整的文件，提供本文件的高階摘要。 Executive 摘要包括最常見的攻擊方式，我們觀察到用來危害客戶環境中，摘要建議客戶想要部署新的 AD DS 來保護 Active Directory 安裝與基本的目標現在或未來的樹系。  
+執行摘要（可當做獨立檔讀取或與完整檔結合）提供此檔的高階摘要。 包含在「主管」摘要中，是我們發現用來危害客戶環境的最常見攻擊媒介、保護 Active Directory 安裝的摘要建議，以及規劃部署新 AD DS 之客戶的基本目標現在或未來的樹系。  
   
 ### <a name="introduction"></a>簡介  
-這是您現在閱讀的區段。  
+這是您目前正在閱讀的區段。  
   
 ### <a name="avenues-to-compromise"></a>危及系統安全的途徑  
-本節提供資訊部分最常利用我們發現有攻擊者使用來危害客戶的基礎結構中的弱點。 本節開頭的弱點，以及如何運用一開始滲入客戶的基礎結構、 洩露散佈額外的系統，及最終目標 AD DS 和網域控制站以取得完整的一般類別組織的樹系的控制項。  
+本節提供一些我們發現攻擊者用來危害客戶基礎結構的最常見弱點的相關資訊。 本節一開始會列出弱點的一般類別，以及如何利用它們來一開始滲透客戶的基礎結構、在其他系統中傳播危害，最後以 AD DS 和網域控制站為目標，以取得完整的控制組織的樹系。  
   
-本節並不會提供有關解決每一種弱點，特別是在區域中的弱點不會以直接鎖定 Active Directory 的詳細的建議。 不過，針對每個類型的弱點可能會中，我們提供了開發因應對策，並減少貴組織的受攻擊面，您可以使用的其他資訊的連結。  
+本節不會提供有關解決每種弱點類型的詳細建議，特別是在未使用弱點直接以 Active Directory 為目標的區域中。 不過，針對每種類型的弱點，我們提供了其他資訊的連結，可讓您用來開發對策和減少貴組織的受攻擊面。  
   
 ### <a name="reducing-the-active-directory-attack-surface"></a>減少 Active Directory 的攻擊面  
-本節一開始會提供中 Active Directory 提供的資訊可協助釐清保護和管理特殊權限的群組的後續建議的原因有權限的帳戶和群組的背景資訊和帳戶。 接著會討論方法可以減少需要使用高權限帳戶對日常的管理，不需要的例如 Enterprise Admins (EA)、 網域系統管理員 (DA) 和內建群組授與的權限層級Active Directory 中的系統管理員 (BA) 群組。 接下來，我們提供指引，來保護特殊權限的群組和帳戶以及實作安全的系統管理實務與系統。  
+本節一開始會提供有關中特殊許可權帳戶和群組的背景資訊 Active Directory 中，以提供資訊來協助闡明後續建議的原因，以保護和管理特殊許可權群組和帳目. 接著，我們會討論減少使用高許可權帳戶進行日常管理的方法，這不需要授與企業系統管理員（EA）、Domain Admins （DA）和內建等群組的許可權層級Active Directory 中的系統管理員（BA）群組。 接下來，我們會提供保護特殊許可權群組和帳戶，以及執行安全系統管理實務和系統的指導方針。  
   
-雖然本節提供這些組態設定的詳細的資訊，我們也已包含之每個建議，提供逐步設定指示，可使用 「 現狀 」，或可以修改的附錄組織的需求。 本章節會完成藉由提供安全地部署和管理網域控制站，應該會在基礎結構中最嚴格安全的系統之間的資訊。  
+雖然本節提供有關這些設定設定的詳細資訊，但我們也針對每個建議加入附錄，提供可「依原樣」使用的逐步設定指示，或可修改為組織的需求。 本節會提供資訊來安全地部署和管理網域控制站，這應該是基礎結構中最而更加嚴格的安全系統。  
   
 ### <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆  
-此區段是否您已實作強固的安全性資訊及您環境中的監視 (SIEM) 的事件，或使用其他機制來監視基礎結構的安全性，提供可用來識別事件在 Windows 上的資訊可能表示組織遭受攻擊的系統。 我們會討論傳統和進階稽核原則，包括 Windows 7 和 Windows Vista 作業系統中的稽核子類別目錄的有效設定。 本節包含的物件和系統来稽核的完整清單和相關聯的附錄列出，您應該監視如果目標是要偵測入侵嘗試的事件。  
+無論您是否已在環境中執行穩健的安全性資訊和事件監視（SIEM），或使用其他機制來監視基礎結構的安全性，本節提供的資訊可用於識別 Windows 上的事件可能表示組織遭到攻擊的系統。 我們會討論傳統和先進的稽核原則，包括在 Windows 7 和 Windows Vista 作業系統中有效設定 audit 子類別目錄。 本節包含要進行審核的物件和系統的完整清單，以及相關聯的附錄會列出您應該監視的事件（如果目標是要偵測入侵嘗試）。  
   
 ### <a name="planning-for-compromise"></a>規劃危害因應措施  
-本節一開始會從將焦點放在 原則和程序，可實作來識別使用者、 應用程式，以及不只是以 IT 基礎結構中，最重要的系統上的技術詳細資料的 「 逐步執行後 」 但業務。 找出哪些最重要的穩定性和組織的作業之後, 您可以專心隔離和保護這些資產，無論是智慧財產、 人員或系統。 在某些情況下，隔離和保護資產可能會執行在您現有的 AD DS 環境中，在其他情況下，您應該考慮實作小型的個別 「 儲存格 」 可讓您建立周圍重要資產的安全界限，並監視這些資產更嚴格比較不重要元件。 討論的概念稱為 「 creative 解構 」，是用舊版的應用程式和系統要消除，可以藉由建立新的解決方案的機制，而一節結尾有助於維護由更安全的環境的建議結合商務和 IT 的資訊，以創造什麼是正常的作業狀態的詳細的描述。 藉由得知哪些正常的組織，可以更輕鬆地識別攻擊和入侵，可能表示異常狀況。  
+本節一開始會從技術詳細資料中「回溯」，著重于可執行檔原則和程式，以找出不只是 IT 基礎結構，而是對企業而言最重要的使用者、應用程式和系統。 在識別出對您組織穩定性和營運最重要的事項之後，您可以專注于將這些資產分離並加以保護，不論它們是智慧財產、人員或系統。 在某些情況下，隔離和保護資產可能會在您現有的 AD DS 環境中執行，而在其他情況下，您應該考慮執行小型、個別的「資料格」，讓您能夠建立重要資產的安全界限，並監視這些資源資產比較不重要的元件更而更加嚴格。 一種稱為「創意性終結」的概念，這是一種機制，可讓您藉由建立新的解決方案來排除繼承應用程式和系統，並在一節結尾提供建議，協助維護更安全的環境。結合商務和 IT 資訊，以深入瞭解什麼是正常運作狀態。 藉由瞭解組織的正常情況，異常狀況可能表示攻擊和危害，可以更容易識別。  
   
 ### <a name="summary-of-best-practice-recommendations"></a>最佳做法建議的摘要  
-本節提供摘要說明在這份文件中所做的建議的資料表，並加以排序依相對優先權，除了提供每個建議的詳細資訊可以找到文件和其附錄中的連結。  
+本節所提供的資料表會摘要說明本檔中的建議，並依相對優先順序排序它們，除了提供有關每個建議的詳細資訊可在檔及其附錄中找到的連結。  
   
 ### <a name="appendices"></a>附錄  
-附錄包含在這份文件，來加強的文件內所包含的資訊。 附錄和每個的簡短描述的清單是否包含下表。  
+本檔包含附錄，以加強檔本文中包含的資訊。 下表包含附錄清單和各項的簡短描述。  
   
  
 |**附錄**|**描述**|
 | --- | --- | 
-|[附錄 b:Active Directory 中具有特殊權限的帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory.md)|提供可協助您識別的使用者和群組，您應該專注於保障安全，因為它們可以利用攻擊者危害，並甚至摧毀您的 Active Directory 安裝的背景資訊。|  
-|[附錄 c:Active Directory 中受保護的帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)|包含 Active Directory 中的受保護群組的相關資訊。 它也包含資訊的群組會被視為受保護的群組，而且會受到 AdminSDHolder 和 SDProp 有限的自訂 （移除）。|  
-|[附錄 d:保護 Active Directory 中的內建的 Administrator 帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)|包含指導方針來協助保護樹系中每個網域中的系統管理員帳戶。|  
-|[附錄 e:保護 Active Directory 中的 Enterprise Admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)|包含指導方針來協助保護樹系中的 Enterprise Admins 群組。|  
-|[附錄 f:保護 Active Directory 中的 Domain Admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)|包含指導方針來協助保護樹系中每個網域中的 Domain Admins 群組。|  
-|[附錄 g:保護 Active Directory 中的系統管理員群組](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)|包含指導方針來協助保護樹系中的每個網域中的內建的 Administrators 群組。|  
-|[附錄 h:保護本機系統管理員帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups.md)|包含指導方針來協助安全的本機系統管理員帳戶和已加入網域的伺服器和工作站上的系統管理員群組。|  
-|[附錄 i:建立管理帳戶的受保護的帳戶和 Active Directory 中的群組](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)|提供資訊以建立具有有限的權限，也能嚴格控制，但可以用來填入 Active Directory 中的特殊權限的群組，需要暫時提高權限時的帳戶。|  
-|[附錄 l:要監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)|列出，您應該監視您的環境中的事件。|  
-|[附錄 m︰文件連結與建議閱讀資料](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)|包含一份建議您先閱讀。 也包含連結至外部的文件的清單，以及其 Url，以便讀取器的這份文件的書面複本可存取此資訊。|  
+|[附錄 B：Active Directory 中具特殊權限的帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory.md)|提供背景資訊，可協助您識別應專注于保護的使用者和群組，因為攻擊者可以利用它們來入侵，甚至終結您的 Active Directory 安裝。|  
+|[附錄 C：Active Directory 中受保護的帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)|包含 Active Directory 中受保護群組的相關資訊。 其中也包含被視為受保護群組且受到 AdminSDHolder 和 SDProp 影響之群組的有限自訂（移除）資訊。|  
+|[附錄 D：保護 Active Directory 中的內建的 Administrator 帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)|包含指導方針，以協助保護樹系中每個網域的系統管理員帳戶。|  
+|[附錄 E：保護 Active Directory 中的 Enterprise Admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)|包含協助保護樹系中 Enterprise Admins 群組的指導方針。|  
+|[附錄 F：保護 Active Directory 中的 Domain Admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)|包含協助保護樹系中每個網域中 Domain Admins 群組的指導方針。|  
+|[附錄 G：保護 Active Directory 中的 Administrators 群組](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)|包含指導方針，可協助保護樹系中每個網域內的內建系統管理員群組。|  
+|[附錄 H：保護本機 Administrators 帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups.md)|包含指導方針，可協助保護已加入網域的伺服器和工作站上的本機系統管理員帳戶和系統管理員群組。|  
+|[附錄 I：為 Active Directory 中的受保護帳戶和群組建立管理帳戶](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)|提供資訊來建立具有有限許可權且可由而更加嚴格控制的帳戶，但當需要暫時提高許可權時，可以用來填入 Active Directory 中的特殊許可權群組。|  
+|[附錄 L：要監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)|列出您的環境中應該監視的事件。|  
+|[附錄 M：文件連結與建議閱讀資料](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)|包含建議的閱讀清單。 此外，也包含外部檔和其 Url 的連結清單，讓這份檔的讀取者可以存取這項資訊。|  
   
 
 

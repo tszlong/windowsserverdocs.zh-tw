@@ -1,7 +1,7 @@
 ---
 title: 保護特殊權限存取的參考資料
-description: Windows Server Active Directory 網域的作業安全性控制項
-ms.prod: windows-server-threshold
+description: Windows Server Active Directory 網域的操作安全性控制
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 22ee9a77-4872-4c54-82d9-98fc73a378c0
 ms.date: 02/14/2019
@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: bcc06a3ccc4e95fa43a7f8f0ef7d110fd427f5a0
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501645"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407226"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 系統管理層模型
 
@@ -89,7 +89,7 @@ ms.locfileid: "66501645"
 
 ![此圖顯示如果 A 控制 B 且 B 控制 C，則 A 如何也會間接控制 C](../media/securing-privileged-access-reference-material/PAW_RM_Fig6.JPG)
 
-危害 A 的攻擊者可以存取 A 所控制的一切 (包括 B) 以及 B 所控制的一切 (包括 C)。 這個相同的範例中使用的安全性相依性的語言，B 和 A 是 C 的安全依存性且在 C 所需的保證層級，為了讓 C 擁有該保證層級保護。
+危害 A 的攻擊者可以存取 A 所控制的一切 (包括 B) 以及 B 所控制的一切 (包括 C)。 使用此相同範例的安全性相依性語言時，B 和 A 都是 C 的安全性相依性，而且必須在 C 所需的保證層級受到保護，C 才能擁有該保證層級。
 
 針對 IT 基礎結構和身分識別系統，應該將這個準則套用到最常見的控制方法，包括已安裝系統的硬體、系統的安裝媒體、系統的架構和組態，以及每日作業。
 
@@ -111,7 +111,7 @@ ms.locfileid: "66501645"
 - 從網際網路取得軟體，並使用廠商提供的檔案雜湊來驗證。
 - 從網際網路取得軟體，並藉由下載和比較兩個獨立複本來驗證：
    - 下載到沒有安全性關聯的兩部主機 (不在同一個網域中且未受相同工具所管理)，最好是來自不同的網際網路連線。
-   - 比較使用像是 certutil 的公用程式的下載的檔案：  `certutil -hashfile <filename>`
+   - 使用類似 certutil： `certutil -hashfile <filename>` 的公用程式來比較下載的檔
 
 如果可能，所有應用程式軟體 (例如應用程式的安裝程式和工具) 都應該使用 Windows Authenticode 搭配 [Windows Sysinternal](https://www.microsoft.com/sysinternals)s 工具 *sigcheck.exe*，利用撤銷檢查來進行數位簽署和驗證。 如果廠商可能不會提供這種類型的數位簽章，則可能需要某些軟體。
 
@@ -189,12 +189,12 @@ ms.locfileid: "66501645"
 
 ![此圖顯示指定階層層級的標準](../media/securing-privileged-access-reference-material/PAW_RM_Fig12.JPG)
 
-必要項目 （以紅色八角形或橘色三角形在這份文件標記） 的所有例外狀況會被視為暫時性，和它們需要經由 CAB 核准。 指導方針包括：
+強制專案的所有例外狀況（在本檔中標記為紅色八邊形或橙色三角形）會被視為暫時性，而且需要由 CAB 核准。 指導方針包括：
 
 - 最初的要求會要求提供人員直屬主管所簽署的風險接受理由，而其會在六個月之後過期。
 - 更新則需要提供業務單位主管所簽署的接受風險理由，而它們會在六個月之後過期。
 
-（此文件中的黃色圓圈以標記） 的建議項目的所有例外狀況會被視為暫時性，並需要經由 CAB 核准。 指導方針包括：
+建議專案的所有例外狀況（在本檔中以黃色圓圈標示）會被視為暫時性，而且需要由 CAB 核准。 指導方針包括：
 
 - 最初的要求會要求提供人員直屬主管所簽署的風險接受理由，而其會在 12 個月之後過期。
 - 更新則需要提供業務單位主管所簽署的接受風險理由，而它們會在 12 個月之後過期。
@@ -379,7 +379,7 @@ ms.locfileid: "66501645"
 
 ###### <a name="no-browsing-the-public-internet-with-admin-accounts-or-from-admin-workstations"></a>無法使用系統管理員帳戶或從系統管理工作站瀏覽公用網際網路
 
-系統管理人員無法在使用系統管理員帳戶登入或登入至系統管理工作站時，瀏覽開放式網際網路。 唯一的授權例外狀況是使用網頁瀏覽器來管理雲端架構的服務。
+系統管理人員無法在使用系統管理員帳戶登入或登入至系統管理工作站時，瀏覽開放式網際網路。 唯一的授權例外狀況是使用網頁瀏覽器來管理雲端式服務。
 
 ###### <a name="no-accessing-email-with-admin-accounts-or-from-admin-workstations"></a>無法使用系統管理帳戶或從系統管理工作站存取電子郵件
 
@@ -402,9 +402,9 @@ ms.locfileid: "66501645"
 
 所有系統管理帳戶都無法使用密碼進行驗證。 唯一的授權例外狀況就是緊急存取帳戶，其受到適當的程序所保護。
 
-將所有系統管理帳戶連結到智慧卡，並啟用屬性「互動式登入需要智慧卡」  。
+將所有系統管理帳戶連結到智慧卡，並啟用屬性「互動式登入需要智慧卡」。
 
-您應該實作一個指令碼來自動並定期重設隨機密碼雜湊值，方法是停用並立即重新啟用屬性「互動式登入需要智慧卡」  。
+您應該實作一個指令碼來自動並定期重設隨機密碼雜湊值，方法是停用並立即重新啟用屬性「互動式登入需要智慧卡」。
 
 除了緊急存取帳戶之外，不允許人員所使用的帳戶有任何例外狀況。
 
@@ -439,10 +439,10 @@ ms.locfileid: "66501645"
   - 執行技術問題的疑難排解和修正，這類問題將導致正確的系統管理帳戶無法使用。
   - 執行罕見的工作，例如：
     - 結構描述系統管理
-    - 需要企業系統管理權限的全樹系工作
+    - 需要企業系統管理許可權的全樹系工作
 
       > [!NOTE]
-      > 拓撲管理功能，包括 Active Directory 站台和子網路的管理委派給會限制這些權限的使用。
+      > 會委派包含 Active Directory 網站和子網管理的拓撲管理，以限制這些許可權的使用。
 
 - 這其中一個帳戶的所有使用方式都應該有安全性群組負責人的書面授權
 - 每個緊急存取帳戶的追蹤表上的程序會要求在每次使用時變更密碼。 安全性小組成員應該確認這會正確發生。
@@ -481,7 +481,7 @@ ms.locfileid: "66501645"
    - 使用此群組來授與權限時必須注意的是，依預設它們將不會有可存取新群組原則物件的系統管理權限。 這可以遵循[此知識庫文章](https://support.microsoft.com/kb/321476) 中的程序來變更，以變更結構描述的預設權限。
    - 系統管理樹系中用來管理生產環境的帳戶，不應獲得系統管理樹系、其中的網域或其中的工作站的系統管理權限。
    - 應藉由離線程序嚴格控制對於系統管理樹系的系統管理權限，以減少攻擊者或惡意內部人士清除稽核記錄檔的機會。 這也有助於確保具有生產系統管理帳戶的人員無法放鬆對於其帳戶的限制以及提高組織的風險。
-   - 系統管理樹系應遵循網域，包括驗證通訊協定的強式設定的 Microsoft 安全性合規性基準 (SCB) 設定。
+   - 系統管理樹系應遵循網域的 Microsoft 安全性合規性基準（SCB）設定，包括驗證通訊協定的強式設定。
    - 應利用安全性更新，自動更新所有的系統管理樹系主機。 雖然這可能會產生中斷網域控制站維護作業的風險，但可大幅降低未修補弱點的安全性風險。
 
       > [!NOTE]
@@ -499,7 +499,7 @@ ms.locfileid: "66501645"
    - 應該使用安全性基準做為啟動組態。
 
       > [!NOTE]
-      > 客戶可以使用 Microsoft 安全性合規性工具組 (SCT)，在 系統管理的主機上設定基準。
+      > 客戶可以使用 Microsoft 安全性合規性工具組（SCT）在系統管理主機上設定基準。
 
    - 安全開機可抵禦嘗試將未簽署的程式碼載入開機程序的攻擊者或惡意程式碼。
 
@@ -523,7 +523,7 @@ ms.locfileid: "66501645"
    - 攻擊面分析可防止在安裝新軟體期間，將新的攻擊媒介引進 Windows。
 
       > [!NOTE]
-      > 使用這類工具[Attack Surface Analyzer (ASA)](https://www.microsoft.com/en-us/download/details.aspx?id=24487)有助於評估主機上的組態設定，並找出因軟體或組態變更而引進的攻擊媒介。
+      > 使用像是[攻擊 Surface Analyzer （ASA）](https://www.microsoft.com/en-us/download/details.aspx?id=24487)之類的工具，將有助於評估主機上的設定，並找出軟體或設定變更所引進的攻擊媒介。
 
 - 強化帳戶
    - 應該針對系統管理樹系中的所有帳戶設定多重要素驗證，但有一個帳戶除外。 至少應該有一個系統管理帳戶是密碼型帳戶，以確保在多重要素驗證程序中斷時還能進行存取。 此帳戶應該受到嚴格的實際控制程序所保護。
@@ -539,7 +539,7 @@ ms.locfileid: "66501645"
 
 ## <a name="tier-0-equivalency"></a>第 0 層對應項
 
-大部分的組織都會控制功能強大的第 0 層 Active Directory 群組的成員資格，例如 Administrators、Domain Admins 和 Enterprise Admins。  許多組織都忽略了其他群組的風險，其實際上相當於一般 Active Directory 環境中的權限。 這些群組以進行攻擊同樣明確使用各種不同攻擊方法的第 0 層權限提供相當簡單的升級路徑。
+大部分的組織都會控制功能強大的第 0 層 Active Directory 群組的成員資格，例如 Administrators、Domain Admins 和 Enterprise Admins。  許多組織都忽略了其他群組的風險，其實際上相當於一般 Active Directory 環境中的權限。 這些群組可讓攻擊者使用各種不同的攻擊方法，為相同的明確第0層許可權提供相當輕鬆的升級路徑。
 
 例如，伺服器操作員可以授與權限來存取網域控制站的備份媒體，並從該媒體的檔案中擷取所有認證，然後使用它們來提高權限。
 
@@ -558,7 +558,7 @@ ms.locfileid: "66501645"
 - Group Policy Creator Owners
 - Cryptographic Operators
 - Distributed COM Users
-- 其他委派群組-可能由您的組織管理目錄操作可能也會有有效的第 0 層存取權的自訂群組。
+- 其他委派的群組-您的組織可能會建立的自訂群組，可管理可能也具有有效第0層存取權的目錄作業。
 
 ## <a name="administrative-tools-and-logon-types"></a>系統管理工具和登入類型
 
@@ -568,7 +568,7 @@ ms.locfileid: "66501645"
 
 下表包含最常見系統管理工具和連線方法的指引：
 
-|連線方式|登入類型|目的地上可重複使用的認證|註解|
+|連接方法|登入類型|目的地上可重複使用的認證|註解|
 |-----------|-------|--------------------|------|
 |在主控台登入|Interactive (互動式)|v|包含硬體遠端存取 / 熄燈介面卡和網路 KVM。|
 |RUNAS|Interactive (互動式)|v||
@@ -577,10 +577,10 @@ ms.locfileid: "66501645"
 |遠端桌面 (失敗 - 登入類型已遭拒)|RemoteInteractive|-|根據預設，如果 RDP 登入失敗，則只會非常短暫地儲存認證。 若電腦已遭破解，可能就不是這樣了。|
 |Net use * \\\SERVER|Network|-||
 |Net use * \\\SERVER /u:user|Network|-||
-|MMC 嵌入式管理單元到遠端電腦|Network|-|範例：電腦管理]，[事件檢視器中，裝置管理員服務|
-|PowerShell WinRM|Network|-|範例：Enter-pssession 伺服器|
+|MMC 嵌入式管理單元到遠端電腦|Network|-|範例：電腦管理、事件檢視器、Device Manager、服務|
+|PowerShell WinRM|Network|-|範例：輸入-PSSession 伺服器|
 |PowerShell WinRM with CredSSP|NetworkClearText|v|New-PSSession 伺服器<br />-Authentication Credssp<br />-Credential cred|
-|PsExec，而不需明確的認證|Network|-|範例：PsExec \\\server cmd|
+|PsExec，而不需明確的認證|Network|-|範例：PsExec \\ \ 伺服器 cmd|
 |PsExec，以及明確的認證|網路 + 互動式|v|PsExec \\\server -u user -p pwd cmd<br />建立多個登入工作階段。|
 |遠端登錄|Network|-||
 |遠端桌面閘道|Network|-|向遠端桌面閘道進行驗證。|
@@ -590,7 +590,7 @@ ms.locfileid: "66501645"
 
 針對 Web 驗證，使用下表中的參考：
 
-|連線方式|登入類型|目的地上可重複使用的認證|註解|
+|連接方法|登入類型|目的地上可重複使用的認證|註解|
 |-----------|-------|--------------------|------|
 |IIS「基本驗證」|NetworkCleartext<br />(IIS 6.0+)<br /><br />Interactive (互動式)<br />(IIS 6.0 之前)|v||
 |IIS「整合式 Windows 驗證」|Network|-|NTLM 和 Kerberos 提供者。|
@@ -625,7 +625,7 @@ ms.locfileid: "66501645"
 欄位定義：
 
 - **登入類型**是所要求的登入類型。
-- **#** 是報告安全性事件記錄檔中的稽核事件的登入類型的數值識別碼。
+- **#** 是在安全性事件記錄檔的 audit 事件中報告之登入類型的數值識別碼。
 - **接受的驗證器**表示哪些類型的驗證器能夠起始此類型的登入。
 - LSA 工作階段中**可重複使用的認證**指出登入類型是否會產生 LSA 工作階段來保存認證，例如，純文字密碼、NT 雜湊或 Kerberos 票證，其可用來向其他網站資源進行驗證。
 - **範例**會列出使用該登入類型的常見案例。

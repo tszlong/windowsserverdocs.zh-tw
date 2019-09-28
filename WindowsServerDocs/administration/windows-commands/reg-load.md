@@ -1,8 +1,8 @@
 ---
-title: Reg 負載
-description: '適用於 Windows 命令主題 * * *- '
+title: reg 載入
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebc75ad78b7334f4d48a085f6870a443b31fa2a9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db661e311e3fe8c393750716de5dab375e7817f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852189"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384705"
 ---
-# <a name="reg-load"></a>Reg 負載
+# <a name="reg-load"></a>reg 載入
 
 
 
-寫入儲存在登錄中的子機碼和不同的子機碼項目。 適用於疑難排解，或編輯登錄項目所使用的暫存檔案。
+將已儲存的子機碼和專案寫入登錄中的不同子機碼。 適用于用來疑難排解或編輯登錄專案的暫存檔案。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,22 +38,22 @@ reg load KeyName FileName
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName>|指定要載入的子機碼的完整路徑。 指定遠端電腦，包含電腦名稱 (格式\\ \\ComputerName\)一部分*KeyName*。 省略\\ \\ComputerName\ 會導致作業到本機電腦的預設值。 *KeyName*必須包含有效的根機碼。 在本機電腦的有效的根機碼如下：HKLM、 HKCU、 HKCR、 HKU 和 HKCC。 如果指定的遠端電腦，則會是有效的根機碼：HKLM 和 HKU。|
-|\<FileName>|指定要載入之檔案的路徑與名稱。 必須事先建立此檔案，使用**reg 儲存**作業以及.hiv 延伸模組。|
-|/?|顯示的說明**reg 負載**在命令提示字元。|
+|\<KeyName >|指定要載入之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。|
+|\<檔案名 >|指定要載入之檔案的名稱和路徑。 這個檔案必須事先使用**reg save**作業和 hiv 副檔名來建立。|
+|/?|在命令提示字元中顯示**reg 載入**的說明。|
 
 ## <a name="remarks"></a>備註
 
-下表列出的傳回值**reg 負載**作業。
+下表列出**reg 載入**作業的傳回值。
 
 |值|描述|
 |-----|-----------|
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要載入的檔案索引鍵 HKLM\TempHive 命名 TempHive.hiv，請輸入：
+若要將名為 TempHive. hiv 的檔案載入至金鑰 HKLM\TempHive，請輸入：
 ```
 REG LOAD HKLM\TempHive TempHive.hiv
 ```

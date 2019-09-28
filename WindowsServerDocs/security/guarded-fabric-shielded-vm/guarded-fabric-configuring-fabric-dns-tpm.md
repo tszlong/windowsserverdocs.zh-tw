@@ -1,21 +1,21 @@
 ---
-title: 針對受防護主機 (TPM) 中設定網狀架構 DNS
+title: 為受防護主機設定網狀架構 DNS （TPM）
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 074b6d09-f16e-49bf-b88a-377139d35067
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1ed7d362e9df253c1e8325a54b14190d689e38ee
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb75bc182b0b40a57d7ebec0005b6557d08a8103
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443717"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386735"
 ---
->適用於：Windows Server 2019，Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 [!INCLUDE [Configure fabric DNS](../../../includes/guarded-fabric-configure-fabric-dns.md)] 
 
@@ -26,5 +26,5 @@ ms.locfileid: "66443717"
 
 ## <a name="see-also"></a>另請參閱
 
-- [要做為受防護的主機的 HYPER-V 主機的設定步驟](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
-- [部署工作，針對受防護網狀架構與受防護的 Vm](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)
+- [將成為受防護主機之 Hyper-v 主機的設定步驟](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
+- [受保護網狀架構和受防護 Vm 的部署工作](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

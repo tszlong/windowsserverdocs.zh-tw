@@ -1,8 +1,8 @@
 ---
 title: takeown
-description: 了解如何藉由成為檔案的擁有者取得檔案的存取權。
+description: 瞭解如何藉由成為檔案的擁有者來取得檔案的存取權。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b5a4874edf9fa4406d4643e686fed2b725699dd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 08804db36357c3d1d1efa7243b338bd85d5c48e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854359"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383757"
 ---
 # <a name="takeown"></a>takeown
 
@@ -36,25 +36,25 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |參數|描述|
 |---------|-----------|
-|/s\<電腦 >|指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設值為本機電腦。 此參數適用於所有的檔案和命令中指定的資料夾。|
-|/u [\<網域 >\]<User name>|使用指定的使用者帳戶的權限執行指令碼。 預設值是系統權限。|
-|/p [\<Password>]|指定在指定的使用者帳戶的密碼 **/u**參數。|
-|/f\<檔案名稱 >|指定的檔案名稱或目錄名稱模式。 您可以使用萬用字元 * 指定模式時。 您也可以使用語法*ShareName*\*FileName *。|
-|/a|擁有權提供給系統管理員群組，而不是目前的使用者。|
-|/r|執行指定的目錄和子目錄中的遞迴作業上的所有檔案。|
-|/d {Y \| N}|隱藏目前的使用者指定的目錄中，沒有 「 列出資料夾 」 權限，並改為使用指定的預設值時，會顯示確認提示。 有效值 **/d**選項如下所示：</br>-Y:取得目錄的擁有權。</br>-N:略過該目錄。</br>請注意，您必須使用此選項搭配 **/r**選項。|
+|/s \<Computer >|指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設值為本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。|
+|/u [\<Domain > \] @ no__t-2|以指定之使用者帳戶的許可權執行腳本。 預設值為 [系統許可權]。|
+|/p [\<Password >]|指定 **/u**參數中指定之使用者帳戶的密碼。|
+|/f \<File 名稱 >|指定檔案名或目錄名稱模式。 指定模式時，您可以使用萬用字元 *。 您也可以使用語法*共用*\*FileName *。|
+|/a|提供系統管理員群組的擁有權，而不是目前的使用者。|
+|/r|對指定目錄和子目錄中的所有檔案執行遞迴操作。|
+|/d {Y \| N}|抑制當目前使用者沒有指定目錄的「列出資料夾」許可權，而改為使用指定的預設值時，所顯示的確認提示。 **/D**選項的有效值如下所示：</br>Y取得目錄的擁有權。</br>位略過目錄。</br>請注意，您必須搭配使用此選項與 **/r**選項。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   此命令通常用於批次檔。
--   如果 **/a**參數未指定，檔案擁有權指定給目前登入電腦的使用者。
--   使用混合的模式 (**嗎？** 並 **&#42;**) 不會受到**takeown**命令。
--   刪除具有鎖定之後**takeown**，您可能必須使用 Windows 檔案總管或**cacls**命令來授與您自己的完整權限檔案和目錄之前，您也可以將它們刪除。 如需詳細資訊**cacls**，請參閱本主題結尾處的 「 其他參照 」。
+-   此命令通常用於批次檔中。
+-   如果未指定 **/a**參數，則會將檔案擁有權提供給目前登入電腦的使用者。
+-   使用的混合模式（ **？** 和 **&#42;** ）不受**takeown**命令支援。
+-   使用**takeown**刪除鎖定之後，您可能必須使用 Windows Explorer 或**cacls**命令，將檔案和目錄的完整許可權授與您自己，然後才能將它們刪除。 如需**cacls**的詳細資訊，請參閱本主題結尾處的「其他參考」。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要取得名為 Lostfile 檔案的擁有權，請輸入：
+若要取得名為 Lostfile 之檔案的擁有權，請輸入：
 ```
 takeown /f lostfile
 ```

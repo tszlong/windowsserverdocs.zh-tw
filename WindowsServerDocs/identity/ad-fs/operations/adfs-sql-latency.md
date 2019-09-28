@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 06/20/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 29c8e8ba52f62a335ab136756e759b6114ecfb20
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 785ecd4de86c06dd12eb57e41efaa1103f2afdc5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865604"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357810"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>微調 SQL 並解決 AD FS 的延遲問題
 在[AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)的更新中，我們引進了下列改良功能來減少跨資料庫的延遲。 即將推出的 AD FS 2019 更新將包含這些改良功能。

@@ -1,8 +1,8 @@
 ---
-title: Scwcmd 檢視
-description: '適用於 Windows 命令主題 * * *- '
+title: Scwcmd 視圖
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ef1dd72903108edd6c5fb450c536a9325fcf546
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a69db16696f42950af97b62ba6f28c4083954137
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371194"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 
-> 適用於：Windows Server 2012 R2, Windows Server 2012
+> 適用於：Windows Server 2012 R2、Windows Server 2012
 
-使用指定的.xsl 轉換，以呈現的.xml 檔案。 此命令可用於藉由使用不同的檢視中顯示的安全性設定精靈 (SCW) 的.xml 檔案。
+使用指定的 .xsl 轉換來呈現 .xml 檔案。 此命令有助於使用不同的視圖顯示安全性設定 Wizard （SCW） .xml 檔案。
 
 ## <a name="syntax"></a>語法
 
@@ -36,17 +36,17 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 |參數|描述|
 |---------|-----------|
-|/x:\<Xmlfile.xml>|指定要檢視的.xml 檔案。 必須指定這個參數。|
-|/s:\<Xslfile.xsl>|指定.xsl 来套用至轉換的.xml 檔案做為轉譯程序的一部分。 這個參數是選擇性的 SCW.xml 檔案。 當**檢視**命令用來呈現 SCW.xml 檔案，它會自動將會嘗試載入指定的.xml 檔案的正確預設轉換。 如果指定.xsl 轉換，則必須撰寫轉換假設為.xsl 轉換相同的目錄中的.xml 檔案。|
+|/x： \<Xmlfile >|指定要查看的 .xml 檔案。 必須指定這個參數。|
+|/s： \<Xslfile. xsl >|指定要套用至 .xml 檔案的 .xsl 轉換，做為轉譯進程的一部分。 針對 SCW .xml 檔案，這個參數是選擇性的。 當**view**命令用來轉譯 SCW .xml 檔案時，它會自動嘗試為指定的 .xml 檔案載入正確的預設轉換。 如果指定了 .xsl 轉換，則必須撰寫轉換，因為 .xml 檔案與 .xsl 轉換位於相同的目錄中。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-只有在執行 Windows Server 2008 R2、 Windows Server 2008 或 Windows Server 2003 的電腦上使用 Scwcmd.exe。
+Scwcmd 只能在執行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的電腦上使用。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-若要檢視 Policyfile.xml 使用 Policyview.xsl 轉換，請輸入：
+若要使用 Policyview 轉換來查看 Policyfile，請輸入：
 ```
 scwcmd view /x:C:\policies\Policyfile.xml /s:C:\viewers\Policyview.xsl
 ```

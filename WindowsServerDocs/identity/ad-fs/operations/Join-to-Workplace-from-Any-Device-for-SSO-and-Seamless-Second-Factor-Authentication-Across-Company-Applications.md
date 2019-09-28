@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 12/05/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e9d6161666be89673cff6ef1a975d3205fa4b5c9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 05a8b8bb5685c31ece29ed8eb38d37a424e478b8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189094"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357945"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
 
 
 
-消費性裝置數目與資訊存取需求的快速增加正在變更人們對其科技的看待方式。 今日對於資訊技術的持續使用與簡單的資訊存取方式，使得工作與居家生活的界線越來越模糊。 這些正在變動的界線會伴隨著一個信念技術選取和自訂以符合使用者的人物、 活動和排程該個人-應該延伸到工作地點。 為了配合讓個人消費性裝置連線到企業網路這種持續成長的需求，我們引進了下列價值主張：
+消費性裝置數目與資訊存取需求的快速增加正在變更人們對其科技的看待方式。 今日對於資訊技術的持續使用與簡單的資訊存取方式，使得工作與居家生活的界線越來越模糊。 這些轉移界限的考慮，是為了符合使用者的特質、活動和排程而選擇個人技術並加以自訂，應延伸到工作場所。 為了配合讓個人消費性裝置連線到企業網路這種持續成長的需求，我們引進了下列價值主張：
 
 -   系統管理員可以根據應用程式、使用者、裝置與位置，來控制誰可以存取公司資源。
 
@@ -34,7 +34,7 @@ ms.locfileid: "66189094"
 ### <a name="BKMK_DRS"></a>Azure Active Directory 裝置註冊服務
 可使用 Azure Active Directory 裝置註冊服務來執行 [加入工作地點網路]。 使用 [加入工作地點網路] 加入裝置時，服務會在 Azure Active Directory 中佈建裝置物件，然後在本機裝置上設定可用來代表裝置身分識別的金鑰。 接著可針對雲端和內部部署中裝載的應用程式，搭配使用此裝置身分識別與存取控制規則。
 
-如需詳細資訊，請參閱 < [Azure Active Directory 中的裝置管理簡介](https://docs.microsoft.com/azure/active-directory/device-management-introduction)。
+如需詳細資訊，請參閱[Azure Active Directory 中的裝置管理簡介](https://docs.microsoft.com/azure/active-directory/device-management-introduction)。
 
 ### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>透過「加入工作地點網路」提供無縫式次要因素驗證
 公司可以管理與資訊存取相關的風險並進行合規性控管，同時將對公司資源的存取權授消費性裝置。 裝置上的「加入工作地點網路」為系統管理員提供下列功能：

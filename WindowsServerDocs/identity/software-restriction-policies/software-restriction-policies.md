@@ -2,7 +2,7 @@
 title: 軟體限制原則
 description: Windows Server 安全性
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-software-restriction-policies
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: ab44013b947d33adc12c54b527415bf16c46a4c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b06d038e919e2f4904d60b88ad223493c4f818eb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875819"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357668"
 ---
 # <a name="software-restriction-policies"></a>軟體限制原則
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題適用於 IT 專業人員說明軟體限制原則 (SRP) 設定 Windows Server 2012 和 Windows 8 中，並提供從 Windows Server 2003 開始的 SRP 相關技術資訊的連結。
+本主題適用于 IT 專業人員，說明 Windows Server 2012 和 Windows 8 中的軟體限制原則（SRP），並提供從 Windows Server 2003 開始之 SRP 技術資訊的連結。
 
-程序及疑難排解秘訣，請參閱[管理軟體限制原則](administer-software-restriction-policies.md)並[疑難排解軟體限制原則](troubleshoot-software-restriction-policies.md)。
+如需程式和疑難排解秘訣，請參閱[管理軟體限制原則](administer-software-restriction-policies.md)和[疑難排解軟體限制原則](troubleshoot-software-restriction-policies.md)。
 
-## <a name="BKMK_OVER"></a>軟體限制原則說明
+## <a name="BKMK_OVER"></a>軟體限制原則描述
 軟體限制原則 (SRP) 是以群組原則為依據的功能，可以識別在網域的電腦上執行的軟體程式，並控制執行這些程式的能力。 軟體限制原則是 Microsoft 安全性與管理策略的一部分，可以協助企業提高電腦的可靠性、完整性及管理性。
 
 您也可以使用軟體限制原則，來建立高限制性的電腦設定，您可以只允許執行特別識別出的應用程式。 軟體限制原則已與 Microsoft Active Directory 和群組原則整合。 您也可以在獨立電腦上建立軟體限制原則。 軟體限制原則是信任原則，這些原則是由系統管理員設定的規範，可以限制未受到完全信任的指令碼和其他程式碼的執行。
@@ -37,7 +37,7 @@ ms.locfileid: "59875819"
 
 如需 SRP 的深入資訊，請參閱 [Software Restriction Policies Technical Overview](software-restriction-policies-technical-overview.md)。
 
-## <a name="BKMK_APP"></a>實際的應用程式
+## <a name="BKMK_APP"></a>實際應用
 系統管理員可以針對下列工作使用軟體限制原則：
 
 -   定義什麼是受信任的程式碼
@@ -58,7 +58,7 @@ ms.locfileid: "59875819"
 
 -   防止可執行檔在本機電腦、組織單位 (OU)、站台或網域上執行。 當您未使用軟體限制原則來處理惡意使用者的潛在問題時，這個狀況便適用此做法。
 
-## <a name="BKMK_NEW"></a>新功能和變更
+## <a name="BKMK_NEW"></a>新的和已變更的功能
 對於軟體限制原則的功能沒有任何變更。
 
 ## <a name="BKMK_DEP"></a>已移除或過時的功能
@@ -89,14 +89,14 @@ ms.locfileid: "59875819"
 
 |內容類型|參考|
 |--------|-------|
-|**產品評估**|[使用軟體限制原則的應用程式鎖定](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-|**規劃**|[軟體限制原則技術概觀](software-restriction-policies-technical-overview.md)(Windows Server 2012)<br /><br />[軟體限制原則技術參考](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
+|**產品評估**|[使用軟體限制原則鎖定應用程式](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
+|**規劃**|[軟體限制原則技術總覽](software-restriction-policies-technical-overview.md)（Windows Server 2012）<br /><br />[軟體限制原則技術參考](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
 |**部署**|沒有可用資源。|
-|**操作**|[管理軟體限制原則](administer-software-restriction-policies.md)(Windows Server 2012)<br /><br />[軟體限制原則產品說明](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
-|**疑難排解**|[疑難排解軟體限制原則](troubleshoot-software-restriction-policies.md)(Windows Server 2012)<br /><br />[軟體限制原則疑難排解](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows Server 2003)|
+|**操作**|[管理軟體限制原則](administer-software-restriction-policies.md)（Windows Server 2012）<br /><br />[軟體限制原則產品說明](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
+|**疑難排解**|[軟體限制原則疑難排解](troubleshoot-software-restriction-policies.md)（Windows Server 2012）<br /><br />[軟體限制原則疑難排解](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows Server 2003)|
 |**安全性**|[軟體限制原則的安全威脅與因應對策](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx) (Windows  Server 2008)<br /><br />[軟體限制原則的安全威脅與因應對策](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx) (Windows Server 2008 R2)|
 |**工具及設定**|[軟體限制原則工具及設定](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx) (Windows Server 2003)|
-|**社群資源**|[使用軟體限制原則的應用程式鎖定](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
+|**社群資源**|[使用軟體限制原則鎖定應用程式](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
 
 
 

@@ -1,9 +1,9 @@
 ---
-title: MultiPoint 服務移轉的規劃工作表
-description: 提供可協助您移轉至 Windows Server 2016 中的 MultiPoint 服務的規劃工作表
+title: 適用于 MultiPoint 服務遷移的規劃工作表
+description: 提供可協助您在 Windows Server 2016 中遷移至 MultiPoint 服務的規劃工作表
 ms.custom: na
 ms.date: 07/29/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,36 +13,36 @@ ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: a9d9b62bced9be90c658b79338c6f4ef07710fc3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d3d2ecca4062d28d210196d9191e08710eb731c2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880579"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394625"
 ---
-# <a name="planning-worksheet-for-multipoint-services-migration"></a>MultiPoint 服務移轉的規劃工作表
+# <a name="planning-worksheet-for-multipoint-services-migration"></a>適用于 MultiPoint 服務遷移的規劃工作表
 
 >適用於：Windows Server 2016
 
-使用下列清單和資料表來收集您需要在 MultiPoint 服務移轉期間的設定。
+使用下列清單和資料表，在 MultiPoint 服務遷移期間收集您所需的設定。
 
 ## <a name="source-server-settings"></a>來源伺服器設定
 
-您可以上找到的伺服器設定**首頁**MultiPoint 管理員中的索引標籤。 將每個設定旁邊核取記號放在來源伺服器上使用。
+您可以在 [MultiPoint 管理員] 的 [**首頁**] 索引標籤上找到伺服器設定。 在來源伺服器上使用的每個設定旁邊放置核取記號。
 
-- 允許一個帳戶有多個工作階段。
-- 允許從遠端管理這部電腦。
-- 能夠監視此電腦的桌面。
+- 允許一個帳戶有多個會話。
+- 允許從遠端系統管理這部電腦。
+- 允許監視這部電腦的桌面。
 - 一律以主控台模式啟動。
-- 在第一個使用者登入時不要顯示隱私權通知。
-- 每個站台指派唯一的 IP。
-- 在此電腦上，可讓 MultiPoint 儀表板與使用者工作階段之間的 IM。
-- 可讓系統管理員和 MultiPoint 儀表板使用者工作階段的協調流程。
-- 允許站台使用 GPU 硬體轉譯。
+- 請不要在第一次使用者登入時顯示隱私權通知。
+- 為每個工作站指派唯一的 IP。
+- 允許在 MultiPoint 儀表板與此電腦上的使用者會話之間進行 IM。
+- 允許系統管理員和 MultiPoint 儀表板使用者會話的協調流程。
+- 允許工作站使用 GPU 硬體呈現。
 
 ## <a name="managed-servers-and-computers"></a>受管理的伺服器和電腦
 
-記錄受管理的伺服器和電腦的名稱。 您可以找到此資訊在**首頁**MultiPoint 管理員中的索引標籤。
+記錄受管理伺服器和電腦的名稱。 您可以在 [MultiPoint 管理員] 的 [**首頁**] 索引標籤上找到這項資訊。
 
 | Computer | 電腦名稱 |
 |----------|---------------|
@@ -58,11 +58,11 @@ ms.locfileid: "59880579"
 | 10       |               |
 
 
-## <a name="stations"></a>站台
+## <a name="stations"></a>月臺
 
-記錄本機站台和其設定。 您可以找到此資訊在**站台**MultiPoint 管理員中的索引標籤。
+記錄本機工作站和其設定。 您可以在 MultiPoint 管理員的 [**工作站**] 索引標籤上找到這項資訊。
 
-| #  | 站台名稱 | 自動登入的使用者帳戶 | 顯示方向 |
+| #  | 站台名稱 | 自動登入使用者帳戶 | 顯示方向 |
 |----|--------------|-------------------------|---------------------|
 | 1  |              |                         |                     |
 | 2  |              |                         |                     |
@@ -77,7 +77,7 @@ ms.locfileid: "59880579"
 
 ## <a name="administrators-and-multipoint-dashboard-users"></a>系統管理員和 MultiPoint 儀表板使用者
 
-將複製的系統管理員和 MultiPoint 儀表板使用者的使用者名稱。 您可以找到此資訊在**使用者**MultiPoint 管理員中的索引標籤。
+複製 [系統管理員] 和 [MultiPoint 儀表板] 使用者的使用者名稱。 您可以在 MultiPoint 管理員的 [**使用者**] 索引標籤中找到這項資訊。
 
 Administrators：
 
@@ -96,13 +96,13 @@ Administrators：
 - 使用者名稱：
 - 使用者名稱：
 
-## <a name="vdi-template-and-virtual-desktops"></a>VDI 範本和虛擬桌面
+## <a name="vdi-template-and-virtual-desktops"></a>VDI 範本與虛擬桌面
 
-記錄您的 MultiPoint 服務部署中的 VDI 範本資訊，以及虛擬桌面的名稱。 您可以找到此資訊在**虛擬桌面**MultiPoint 管理員中的索引標籤。
+記錄您 MultiPoint 服務部署中的 VDI 範本資訊和虛擬桌面名稱。 您可以在 MultiPoint 管理員的 [**虛擬桌面**] 索引標籤中找到這項資訊。
 
-**VDI 範本位置**: 
+**VDI 範本位置**： 
 
-| # | 虛擬桌面的名稱      |
+| # | 虛擬桌面名稱      |
 |---|---------------------------|
 | 1 |                           |
 | 2 |                           |

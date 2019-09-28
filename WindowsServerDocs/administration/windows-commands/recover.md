@@ -1,8 +1,8 @@
 ---
 title: recover
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6b9b5544394bfc69a2dc9f7be26ed8355a3f690
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 415efe2d1e60ca70d68059b5702108440da735f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441966"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371759"
 ---
 # <a name="recover"></a>recover
 
 
 
-從損壞的磁碟復原可讀取的資訊。
+從損壞或損壞的磁片復原可讀取的資訊。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,19 +38,19 @@ recover [<Drive>:][<Path>]<FileName>
 
 |           參數           |                                          描述                                          |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
-| [\<Drive>:][<Path>]<FileName> | 指定您想要復原的檔案名稱與位置。 *檔名*需要。 |
+| [\<Drive >：][<Path>] <FileName> | 指定您要復原之檔案的位置和名稱。 需要*FileName* 。 |
 |              /?               |                             在命令提示字元顯示說明。                              |
 
 ## <a name="remarks"></a>備註
 
--   **復原**命令會讀取檔案時，由磁磁區，並從良好的磁區復原資料。 損壞的磁區中的資料都會遺失。
--   損壞的磁區 reportovanou **chkdsk**標示為 「 不良的 」 磁碟準備作業時。 他們會帶來任何危險，並**復原**並不會影響它們。
--   由於損壞的磁區中的所有資料遺失都時復原檔案時，您應該復原只能有一個檔案一次。
--   您不能使用萬用字元 ( **&#42;** 並 **？** ) 與**復原**命令。 您必須指定的檔案 （和檔案，如果它不是目前的目錄中的位置）。
+-   **Recover**命令會逐磁區讀取檔案，並從良好的磁區復原資料。 損毀的磁區中的資料會遺失。
+-   當您的磁片已準備好進行作業時， **chkdsk**回報的錯誤磁區會標示為「不正確」。 它們不會造成任何危險，而且**復原**也不會影響它們。
+-   因為當您復原檔案時，錯誤磁區中的所有資料都會遺失，所以您應該一次只復原一個檔案。
+-   您不能使用萬用字元（ **&#42;** 和 **？** ）搭配**recover**命令。 您必須指定檔案（如果檔案不在目前目錄中，則為檔案的位置）。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要復原 Story.txt 目錄中的檔案 \Fiction D 磁碟機上，輸入：
+若要在磁片磁碟機 D 的 \Fiction 目錄中復原檔案故事 .txt，請輸入：
 ```
 recover d:\fiction\story.txt 
 ```

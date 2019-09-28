@@ -7,41 +7,41 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9ecd0228b50a4e597c3fa1dbd3fdaf1f84ca1d3f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a699a30cce3b330c434fdb3784214de3a2daa403
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830399"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408950"
 ---
 # <a name="creating-an-organizational-unit-design"></a>建立組織單位設計
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-樹系擁有者負責建立組織單位 (OU) 設計為自己的網域。 建立 OU 設計的彙總，包括設計 OU 結構中，指派的 OU 的擁有者角色，並建立帳戶和資源的 Ou。  
+樹系擁有者負責建立其網域的組織單位（OU）設計。 建立 OU 設計牽涉到設計 OU 結構、指派 OU 擁有者角色，以及建立帳戶和資源 Ou。  
   
-一開始設計您的 OU 結構，來啟用委派的系統管理。 OU 設計完成後，您可以建立應用程式的群組原則的使用者和電腦，或需要限制物件的可見性的其他 OU 結構。 如需詳細資訊，請參閱 < 設計群組原則基礎結構 ([https://go.microsoft.com/fwlink/?LinkId=106655](https://go.microsoft.com/fwlink/?LinkId=106655))。  
+一開始，請設計您的 OU 結構來啟用管理委派。 當 OU 設計完成時，您可以建立額外的 OU 結構，將群組原則的應用程式提供給使用者和電腦，以及限制物件的可見度。 如需詳細資訊，請參閱設計群組原則基礎結構（[https://go.microsoft.com/fwlink/?LinkId=106655](https://go.microsoft.com/fwlink/?LinkId=106655)）。  
   
 ## <a name="ou-owner-role"></a>OU 擁有者角色  
-樹系擁有者指定 OU 擁有者的每個您設計網域的 OU。 OU 擁有者會控制 Active Directory 網域服務 (AD DS) 中的物件的子樹狀結構的資料管理員。 OU 擁有者可以控制管理委派的方式，以及如何將原則套用至物件在其 OU 內。 它們也可以建立新的子樹，並委派系統管理的 Ou 內的子樹。  
+樹系擁有者會為您為網域設計的每個 OU 指定 OU 擁有者。 OU 擁有者是在 Active Directory Domain Services （AD DS）中控制物件之子樹的資料管理員。 OU 擁有者可以控制管理委派的方式，以及如何將原則套用至其 OU 內的物件。 他們也可以建立新的子樹，並委派管理這些子樹中的 Ou。  
   
-由於 OU 擁有者不擁有或控制目錄服務的作業，您可以分開擁有權和管理目錄服務的擁有權和管理物件，從數量高的層級的服務管理員存取權限。  
+因為 OU 擁有者並未擁有或控制目錄服務的作業，所以您可以區分目錄服務的擁有權和管理，以取得物件的擁有權和管理，進而減少擁有高階的服務系統管理員數目存取權。  
   
-Ou 會提供系統管理自治與方法，以控制可見性，目錄中的物件。 Ou 是提供隔離從其他資料的系統管理員，但它們並從服務系統管理員不提供隔離。 雖然 OU 擁有者物件的子樹狀結構的控制，樹系擁有者會保留所有的子樹的完整控制權。 這可讓樹系擁有者來更正錯誤，例如存取控制清單 (ACL)，發生錯誤，並回收委派的子樹，當資料管理員已終止。  
+Ou 提供系統管理自主性，以及控制目錄中物件可見度的方法。 Ou 提供與其他資料管理員的隔離，但不提供與服務系統管理員的隔離。 雖然 OU 擁有者對物件的子樹有控制權，但樹系擁有者仍會保有所有子樹狀目錄的完整控制權。 這可讓樹系擁有者更正錯誤，例如存取控制清單（ACL）中的錯誤，以及在資料管理員終止時回收委派的子樹。  
   
-## <a name="account-ous-and-resource-ous"></a>帳戶 Ou 與資源 Ou  
-帳戶 Ou 包含使用者、 群組和電腦物件。 樹系擁有者必須建立一個 OU 結構，以便管理這些物件，然後將結構的控制項委派給 OU 擁有者。 如果您要部署新的 AD DS 網域，建立網域帳戶 OU，以便您可以委派的網域中帳戶的控制。  
+## <a name="account-ous-and-resource-ous"></a>帳戶 Ou 和資源 Ou  
+帳戶 Ou 包含 user、group 和 computer 物件。 樹系擁有者必須建立 OU 結構來管理這些物件，然後將結構的控制權委派給 OU 擁有者。 如果您要部署新的 AD DS 網域，請建立網域的帳戶 OU，讓您可以委派網域中的帳戶控制。  
   
-資源 Ou 包含資源，以及負責管理這些資源的帳戶。 樹系擁有者也是負責建立 OU 結構來管理這些資源，並且將該結構的控制項委派給 OU 擁有者。 視需要建立資源 Ou 根據組織中的管理 中的自我管理的資料和設備的每個群組的需求。  
+資源 Ou 包含資源，以及負責管理這些資源的帳戶。 樹系擁有者也會負責建立 OU 結構來管理這些資源，以及將該結構的控制權委派給 OU 擁有者。 根據組織內每個群組的需求，視需要建立資源 Ou，以管理資料和設備。  
   
-## <a name="documenting-the-ou-design-for-each-domain"></a>針對每個網域的 OU 設計文件  
-召集小組合作設計 OU 結構，您用來委派控制樹系內的資源。 樹系擁有者可能會涉及設計程序，而必須核准 OU 設計。 您也可能會牽涉到至少一個服務系統管理員，以確保設計有效。 其他設計團隊參賽者可能會包含資料工作的系統管理員將需 Ou 與 OU 擁有者會負責管理它們。  
+## <a name="documenting-the-ou-design-for-each-domain"></a>記錄每個網域的 OU 設計  
+組合小組來設計 OU 結構，讓您用來委派樹系中資源的控制權。 樹系擁有者可能牽涉到設計程式，而且必須核准 OU 設計。 您也可能需要至少一個服務系統管理員，以確保設計有效。 其他的設計小組參與者可能包括負責處理 Ou 的資料系統管理員，以及負責管理它們的 OU 擁有者。  
   
-請務必記錄 OU 設計。 列出您打算建立 Ou 的名稱。 此外，針對每個 OU 中，文件的 OU、 OU 擁有者、 父系 OU （如果適用），以及該 OU 的來源類型。  
+記錄您的 OU 設計是很重要的。 列出您打算建立的 Ou 名稱。 而且，針對每個 OU，記錄 OU 的類型、OU 擁有者、父 OU （如果適用的話），以及該 OU 的來源。  
   
-為協助您記錄 OU 設計的工作表，請從 工作輔助工具的 Windows Server 2003 Deployment Kit 下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))，然後開啟 」識別每個網域的 Ou 」 (DSSLOGI_9.doc)。  
+如需協助您記錄 OU 設計的工作表，請從適用于 Windows Server 2003 部署套件的作業輔助（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟「識別每個網域的 ou」（DSSLOGI_9）。  
   
 ## <a name="in-this-section"></a>本節內容  
   

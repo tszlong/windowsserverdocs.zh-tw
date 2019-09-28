@@ -7,22 +7,22 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 87849e1d7a5eb8fef24a551dfc681c65a202f027
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f4741fcc683a8a22318caa47d5cbd66352862a86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191545"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408139"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>在資源夥伴組織中部署 AD FS
 
-資源夥伴組織中 Active Directory Federation Services \(AD FS\)代表之 Web 伺服器可能會受到保護的資源的組織\-側邊的同盟伺服器。 在資源夥伴同盟伺服器會使用帳戶夥伴提供的網頁伺服器都位於資源夥伴的宣告所產生的安全性權杖。  
+Active Directory 同盟服務中的資源夥伴組織 \(AD FS @ no__t-1 代表其 Web 服務器可能受到 resource @ no__t-2side 同盟伺服器保護的組織。 資源夥伴的同盟伺服器會使用帳戶夥伴所產生的安全性權杖，向位於資源夥伴的 Web 服務器提供宣告。  
   
-在您要提供存取同盟服務或應用程式給許多不同使用者的情況下，某些使用者位於不同的組織 — 您可以設定資源同盟伺服器，以便您可以部署多個帳戶夥伴。  
+在您需要將同盟服務或應用程式的存取權提供給許多不同的使用者（在某些使用者位於不同的組織時），您可以設定資源同盟伺服器，讓您可以部署多個帳戶夥伴。  
   
-如需如何安裝和設定資源夥伴組織的詳細資訊，請參閱[檢查清單：Configuring the Resource Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)。  
+如需有關如何安裝和設定資源夥伴組織的詳細資訊，請參閱 @no__t 0Checklist：正在設定資源夥伴組織 @ no__t-0。  
   
 ## <a name="in-this-section"></a>本節內容  
   

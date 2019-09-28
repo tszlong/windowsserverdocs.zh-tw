@@ -6,43 +6,43 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 41902de1253654eb3eac6176d6e8b7c50dc39663
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 342214d03441b7394baa5f0219e448622b389225
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408531"
 ---
 # <a name="checklist-configuring-the-resource-partner-organization"></a>檢查清單：設定資源夥伴組織
 
-資源夥伴組織包含 Web 伺服器裝載 Web\-會由帳戶夥伴中的使用者存取的應用程式。 此組織中的系統管理員必須使用 AD FS 管理嵌入式管理單元\-中建立宣告提供者信任，表示其與帳戶夥伴組織的信任關聯性。 接著，帳戶夥伴系統管理員必須建立信賴憑證者信任的每個帳戶夥伴組織，他們想要信任。  
+資源夥伴組織包含裝載 Web @ no__t-0based 應用程式的網頁伺服器，使用者將會在帳戶夥伴中存取。 此組織中的系統管理員必須使用 [AD FS 管理] snap @ no__t-0in 來建立宣告提供者信任，以代表與帳戶夥伴組織的信任關係。 接著，帳戶夥伴系統管理員必須為他們想要信任的每個帳戶夥伴組織建立信賴憑證者信任。  
   
-這份檢查清單包含工作所需的部署 Active Directory Federation Services \(AD FS\)資源夥伴組織中。 它也包含設定的元件所需建立一個工作\-同盟合作關係的下半部。  
+此檢查清單包含在資源夥伴組織中部署 Active Directory 同盟服務 \(AD FS @ no__t-1 所需的工作。 其中也包括設定建立一個同盟合作關係之 @ no__t-0half 所需元件的工作。  
   
-如果您要部署[網頁 SSO 設計](https://technet.microsoft.com/library/dd807033.aspx)，您就不必在遵循這份檢查清單。 不過，您需要完成此檢查清單，若要成功部署中的工作[Federated Web SSO Design](https://technet.microsoft.com/library/dd807050.aspx)。  
+如果您要部署[網頁 SSO 設計](https://technet.microsoft.com/library/dd807033.aspx)，則不需要遵循這份檢查清單。 不過，您必須完成此檢查清單中的工作，才能成功部署同盟[網頁 SSO 設計](https://technet.microsoft.com/library/dd807050.aspx)。  
   
 > [!IMPORTANT]  
-> 請確定帳戶夥伴組織的系統管理員遵循中的指導方針[檢查清單：設定帳戶夥伴組織](Checklist--Configuring-the-Account-Partner-Organization.md)以確保會在成功地同盟合作關係的下半部建立第二個已完成所有必要的部署工作  
+> 請確定帳戶夥伴組織的系統管理員遵循 [Checklist 中的指導方針：設定帳戶夥伴組織 @ no__t-0 以確保所有必要的部署工作都將完成，以成功建立後半個同盟合作關係  
   
 > [!NOTE]  
 > 請依序完成此檢查清單中的工作。 當某個參考連結帶您進入某個程序時，請在完成該程序中的步驟之後返回本主題，讓您可以繼續進行此檢查清單中其餘的工作。  
   
-![設定資源夥伴組織](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**檢查清單：設定資源夥伴組織**  
+@no__t 0configure 資源夥伴組織 @ no__t-1Checklist：設定資源夥伴組織 @ no__t-0  
   
 ||工作|參考資料|  
 |-|--------|-------------|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|如果目前生產環境中有現有的 AD FS 1.0 或 1.1 部署，請參閱右邊，如需有關如何將您目前的同盟服務中的設定移轉至新的 AD FS 同盟服務資訊的連結。 如果您要在您的組織第一次部署 AD FS 使用 AD FS 中，您可以略過此步驟並繼續此檢查清單，如需如何設定新的資源夥伴組織中的下一個工作。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃移轉至 AD FS](https://technet.microsoft.com/library/ff678044.aspx)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|根據您的部署目標，請檢閱元件為使用者提供存取同盟應用程式所需的相關資訊。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[提供 Your Active Directory Users Access to Your Claims-aware Applications and Services](https://technet.microsoft.com/library/dd807071.aspx)<br /><br />![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Provide Your Active Directory Users Access 的應用程式和其他組織的服務](https://technet.microsoft.com/library/dd807123.aspx)<br /><br />![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[提供另一個組織存取您的宣告感知應用程式和服務的使用者](https://technet.microsoft.com/library/dd807099.aspx)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|判斷哪一個 AD FS 設計這個資源夥伴組織將會與相關聯。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[網頁 SSO 設計](https://technet.microsoft.com/library/dd807033.aspx)<br /><br />![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[同盟網頁 SSO 設計](https://technet.microsoft.com/library/dd807050.aspx)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|檢視不同的應用程式類型，並決定要部署哪些應用程式。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[判斷您同盟應用程式策略資源夥伴中](https://technet.microsoft.com/library/dd807077.aspx)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|在開始部署 AD FS 伺服器之前，請檢閱;1.\)選擇其中一個 Windows 內部資料庫的優缺點\(WID\)或 SQL Server 來儲存 AD FS 設定資料庫 2。\)AD FS 部署拓撲類型和其相關聯的伺服器位置和網路配置建議。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[判斷您的 AD FS 部署拓撲](https://technet.microsoft.com/library/gg982491.aspx)<br /><br />![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS 部署拓撲考量](https://technet.microsoft.com/library/gg982489.aspx)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|檢閱 AD FS 容量規劃指引，以判斷適當數目之同盟伺服器與同盟伺服器 proxy 伺服器，您應該使用您的生產環境中。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃 AD FS 伺服器容量](https://technet.microsoft.com/library/gg749899.aspx)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|若要有效規劃及實作帳戶夥伴部署的實體拓撲，判斷您的 AD FS 設計需要一或多個同盟伺服器或同盟伺服器 proxy。|![設定資源夥伴組織](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)<br /><br />![設定資源夥伴組織](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|決定您想要新增至 AD FS 的屬性存放區的類型。 然後，新增 屬性存放區使用 AD FS 管理嵌入式管理單元\-中。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[角色的屬性存放區](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)<br /><br />![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增屬性存放區](../../ad-fs/operations/Add-an-Attribute-Store.md)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|如果您將需要將宣告傳送至或 AD FS 1.0 或 1.1 同盟服務取用者會使用帳戶夥伴的宣告，請參閱連結的權限，如需如何設定 AD FS 與 AD FS 的舊版交互操作。 如果帳戶夥伴組織也使用 AD FS 來傳送，或使用您的組織宣告，您可以略過此步驟，並繼續進行此檢查清單中的下一個工作。|![設定資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃互通性與 AD FS 1.x](https://technet.microsoft.com/library/ff678040.aspx)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|部署資源夥伴組織中的第一部同盟伺服器之後，請使用 AD FS 管理嵌入式管理單元建立宣告提供者信任關係\-中。 輸入帳戶夥伴以手動方式的相關資料，或使用帳戶夥伴組織的系統管理員提供給您的同盟中繼資料 URL，您可以建立宣告提供者信任。 您可以使用同盟中繼資料自動擷取資源夥伴的資料。 **注意：** 如果帳戶夥伴發佈其同盟中繼資料，或可供您使用其檔案複本，我們建議您先自動擷取資料因為它可以節省時間。|![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[信賴憑證者合作對象信任手動建立](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually)<br /><br />![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[建立信賴憑證者合作對象信任使用同盟中繼資料](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|根據您組織的需求，建立一或多個宣告規則集於每個宣告提供者信任指定 AD FS 管理嵌入式管理單元中\-中讓連入宣告將會傳遞給，轉換，或適當地為對應資源夥伴中對應的宣告。|![設定資源夥伴組織](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[檢查清單：為宣告提供者信任建立宣告規則](Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)|  
-|![設定資源夥伴組織](media/icon_checkboxo.gif)|\(選擇性\)的描述可能有一個不存在，如果要建立的宣告會滿足您組織的需求。 AD FS 包含一組預設的宣告描述會公開在 AD FS 管理嵌入式管理單元中\-中。|![設定資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增宣告描述](../../ad-fs/operations/Add-a-Claim-Description.md)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|如果您目前的生產環境中有現有的 AD FS 1.0 或1.1 部署，請參閱右邊的連結，以取得如何將設定從目前的同盟服務遷移至新 AD FS 同盟服務的資訊。 如果您是第一次使用 AD FS 在組織中部署 AD FS，則可以略過此步驟，並繼續進行此檢查清單中的下一項工作，以取得如何設定新的資源夥伴組織的相關資訊。|@no__t 0configure 資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃遷移至 AD FS](https://technet.microsoft.com/library/ff678044.aspx)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|根據您的部署目標，檢查為使用者提供同盟應用程式存取所需元件的相關資訊。|@no__t 0configure 資源夥伴組織會為](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[您的 Active Directory 使用者提供您的宣告感知應用程式和服務的存取權](https://technet.microsoft.com/library/dd807071.aspx)<br /><br />@no__t 0configure 資源夥伴組織會為](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[您的 Active Directory 使用者提供其他組織的應用程式和服務存取權](https://technet.microsoft.com/library/dd807123.aspx)<br /><br />@no__t 0configure 資源夥伴組織為](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[另一個組織中的使用者提供您的宣告感知應用程式和服務的存取權](https://technet.microsoft.com/library/dd807099.aspx)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|判斷此資源夥伴組織將與哪個 AD FS 設計相關聯。|@no__t 0configure 資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[網頁 SSO 設計](https://technet.microsoft.com/library/dd807033.aspx)<br /><br />@no__t 0configure 資源夥伴組織同盟](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[網頁 SSO 設計](https://technet.microsoft.com/library/dd807050.aspx)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|請檢查不同的應用程式類型，並決定要部署的應用程式。|@no__t 0configure 資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[決定資源夥伴中的同盟應用程式策略](https://technet.microsoft.com/library/dd807077.aspx)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|開始部署 AD FS 伺服器之前，請先參閱;1. \) 選擇 Windows Internal Database \(WID @ no__t-2 或 SQL Server 儲存 AD FS 設定資料庫2的優點和缺點。 \)AD FS 部署拓撲類型及其相關聯的伺服器位置和網路設定建議。|@no__t 0configure 資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[決定您的 AD FS 部署拓撲](https://technet.microsoft.com/library/gg982491.aspx)<br /><br />@no__t 0configure 資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS 部署拓撲考慮](https://technet.microsoft.com/library/gg982489.aspx)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|請參閱 AD FS 容量規劃指導方針，以判斷您應該在生產環境中使用的適當同盟伺服器和同盟伺服器 proxy 伺服器數目。|](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS 伺服器容量](https://technet.microsoft.com/library/gg749899.aspx)@no__t 0configure 資源夥伴組織規劃|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|若要有效規劃及執行帳戶夥伴部署的實體拓撲，請判斷您的 AD FS 設計是否需要一或多部同盟伺服器或同盟伺服器 proxy。|@no__t 0configure 資源夥伴組織 @ no__t-1Checklist：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)<br /><br />@no__t 0configure 資源夥伴組織 @ no__t-1Checklist：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|決定您想要新增至 AD FS 的屬性存放區類型。 然後，使用 AD FS 管理 貼齊 @ no__t-0in 來新增屬性存放區。|@no__t 0configure 資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[屬性存放區的角色](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)<br /><br />@no__t 0configure 資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增屬性存放區](../../ad-fs/operations/Add-an-Attribute-Store.md)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|如果您需要傳送宣告給或取用使用 AD FS 1.0 或1.1 同盟服務之帳戶夥伴的宣告，請參閱右邊的連結，以取得如何設定 AD FS 與舊版 AD FS 交互操作的資訊。 如果帳戶夥伴組織也使用 AD FS 來傳送或使用您組織的宣告，您可以略過此步驟，並繼續進行此檢查清單中的下一項工作。|@no__t 0configure 資源夥伴組織](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[規劃與 AD FS 1.x 的互通性](https://technet.microsoft.com/library/ff678040.aspx)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|在資源夥伴組織中部署第一部同盟伺服器之後，請使用 AD FS Management snap @ no__t-0in 建立宣告提供者信任關係。 您可以手動輸入有關帳戶夥伴的資料，或使用帳戶夥伴組織的系統管理員提供給您的同盟中繼資料 URL，藉以建立宣告提供者信任。 您可以使用同盟中繼資料自動擷取資源夥伴的資料。 **注意：** 如果帳戶夥伴發佈其同盟中繼資料，或可以提供檔案複本供您使用，我們建議您自動抓取資料，因為它可以節省時間。|@no__t 0configure 資源夥伴組織會](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[手動建立信賴](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually)憑證者信任<br /><br />@no__t 0configure 資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[使用同盟中繼資料建立信賴](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata)憑證者信任|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|視組織的需求而定，針對 AD FS 管理 snap @ no__t-0in 中所指定的每個宣告提供者信任建立一或多個宣告規則集，以便將連入宣告傳遞、轉換或適當地對應至資源夥伴中的對應宣告。|@no__t 0configure 資源夥伴組織 @ no__t-1Checklist：為宣告提供者信任建立宣告規則](Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)|  
+|![設定資源夥伴組織](media/icon_checkboxo.gif)|\(Optional @ no__t-1 若尚未存在，則可能需要建立宣告描述，以滿足您組織的需求。 AD FS 包含 AD FS 管理 snap @ no__t-0in 中公開的一組預設宣告描述。|@no__t 0configure 資源夥伴組織](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[新增宣告描述](../../ad-fs/operations/Add-a-Claim-Description.md)|  

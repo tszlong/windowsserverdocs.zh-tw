@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c30f8a9b856db8250a16210931e6f8dd73c07aa7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 6e99fc43d4acb7a70dfd3a8ba19dae6492c41b2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869614"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357047"
 ---
 # <a name="using-powershell-in-your-extension"></a>在擴充功能中使用 PowerShell #
 
@@ -92,7 +92,7 @@ this.getNodeName().subscribe(
 ### <a name="key-options"></a>索引鍵選項 ###
 呼叫 PowerShell API 時，有幾個選項可供使用。 每次建立會話時，都可以使用或不搭配金鑰來建立。 
 
-**擊鍵**這會建立一個可以查閱和重複使用的金鑰會話，甚至是跨元件（這表示 Component1 可以建立具有金鑰 "ROCKS" 的會話，而 Component2 可以使用相同的會話）。如果提供了金鑰，則必須藉由呼叫 dispose （）來處置所建立的會話，如同上述範例中所做的一樣。 會話不應在未被處置超過5分鐘的情況下保留。 
+**索引鍵：** 這會建立一個可以查閱和重複使用的金鑰會話，甚至是跨元件（這表示 Component1 可以建立具有金鑰 "ROCKS" 的會話，而 Component2 可以使用相同的會話）。如果提供了金鑰，則必須藉由呼叫 dispose （）來處置所建立的會話，如同上述範例中所做的一樣。 會話不應在未被處置超過5分鐘的情況下保留。 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```

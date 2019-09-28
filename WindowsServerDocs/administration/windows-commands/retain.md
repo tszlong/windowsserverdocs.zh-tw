@@ -1,8 +1,8 @@
 ---
-title: 保留
-description: '適用於 Windows 命令主題 * * *- '
+title: 幻燈片
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b437e9f0c8d671e4378311d450aa0ac7639219f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b076e12c833645833f53a06476e62bbf44f2690
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852169"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384486"
 ---
-# <a name="retain"></a>保留
+# <a name="retain"></a>幻燈片
 
 
 
-準備現有動態簡單磁碟區來為開機或系統磁碟區。
+準備要當做開機或系統磁碟區使用的現有動態簡單磁片區。
 
 ## <a name="syntax"></a>語法
 
@@ -34,8 +34,8 @@ retain
 
 ## <a name="remarks"></a>備註
 
--   在主開機記錄 (MBR) 動態磁碟上，此命令會建立主開機記錄磁碟分割項目。
--   在 GUID 磁碟分割表格 (GPT) 動態磁碟上，此命令會建立 GUID 磁碟分割表格磁碟分割項目。
+-   在主開機記錄（MBR）動態磁碟上，此命令會在主開機記錄中建立磁碟分割專案。
+-   在 GUID 磁碟分割表格（GPT）動態磁碟上，此命令會在 GUID 磁碟分割表格中建立磁碟分割專案。
 
 #### <a name="additional-references"></a>其他參考資料
 

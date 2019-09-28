@@ -7,26 +7,26 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5bc304277b872bd9b99b79b84694dd0cb1eb73ba
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ead8868f38faa570a0e524630e23d99e276a7c79
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190879"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407925"
 ---
 # <a name="review-the-role-of-the-federation-server-in-the-account-partner"></a>檢閱帳戶夥伴中的同盟伺服器角色
 
-同盟伺服器在 Active Directory Federation Services \(AD FS\)做為安全性權杖簽發者。 同盟伺服器產生宣告式帳戶位於區域屬性的值存放區並將其封裝到安全性權杖，以便使用者可以順暢地存取 Web\-瀏覽器\-架構的應用程式\(使用單一登\-上\(SSO\) \)資源夥伴組織中所裝載。  
+Active Directory 同盟服務中的同盟伺服器 @no__t 0AD FS @ no__t-1 做為安全性權杖簽發者。 同盟伺服器會根據位於本機屬性存放區的帳戶值來產生宣告，並將其封裝到安全性權杖，讓使用者可以順暢地存取 Web @ no__t-0browser @ no__t-1based 應用程式 \(using 單一登入 @ no__t-3on在資源夥伴組織中裝載的 @no__t 4SSO @ no__t-5 @ no__t-6。  
   
 > [!NOTE]  
-> 當使用者使用網頁瀏覽器存取同盟應用程式時，同盟伺服器會自動將 cookie 發行給使用者，以維護其登入狀態為該 Web\-瀏覽器\-基礎的應用程式。 這些 Cookie 包含使用者的宣告。 Cookie 會啟用 SSO 功能，讓使用者不必每次輸入認證瀏覽不同的網頁\-瀏覽器\-資源夥伴中的應用程式。  
+> 當使用者使用網頁瀏覽器存取同盟應用程式時，同盟伺服器會自動將 cookie 發行給使用者，以維護其 Web @ no__t-0browser @ no__t 1based 應用程式的登入狀態。 這些 Cookie 包含使用者的宣告。 Cookie 會啟用 SSO 功能，讓使用者不需要在每次造訪資源夥伴中不同的 Web @ no__t-0browser @ no__t-1based 應用程式時輸入認證。  
   
-在網頁 SSO 設計中，具有周邊網路的組織想要網際網路使用者能夠存取應用程式必須安裝在周邊網路中的同盟伺服器 proxy。 在 同盟網頁 SSO 設計中，必須有至少一個帳戶夥伴組織公司網路中安裝的同盟伺服器和資源夥伴組織公司網路中安裝至少一部同盟伺服器。  
+在網頁 SSO 設計中，具有周邊網路且想要網際網路使用者能夠存取應用程式的組織，必須在周邊網路中安裝同盟伺服器 proxy。 在同盟網頁 SSO 設計中，必須在帳戶夥伴組織的公司網路中至少安裝一部同盟伺服器，並在資源夥伴組織的公司網路中至少安裝一部同盟伺服器。  
   
 > [!NOTE]  
-> 您可以設定帳戶夥伴組織中的同盟伺服器電腦之前，您必須先將電腦加入至其中的同盟伺服器將用來驗證來自該樹系的使用者的 Active Directory 樹系中任何網域。 如需詳細資訊，請參閱[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
+> 在帳戶夥伴組織中設定同盟伺服器電腦之前，您必須先將電腦加入 Active Directory 樹系中的任何網域，以使用同盟伺服器來驗證來自該樹系的使用者。 如需詳細資訊，請參閱 [Checklist：設定同盟伺服器 @ no__t-0。  
   
 ## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

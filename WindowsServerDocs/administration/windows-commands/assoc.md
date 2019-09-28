@@ -1,8 +1,8 @@
 ---
 title: assoc
-description: 適用於 Windows 命令主題**assoc** -顯示或修改檔案名稱副檔名關聯。
+description: '**Assoc**的 Windows 命令主題-顯示或修改副檔名關聯。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d893167081b66c81366b59613c52182a4ddba370
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e4a6fd700cbe66897a24f01f66387e76e07b568b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816639"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382675"
 ---
 # <a name="assoc"></a>assoc
 
 
 
-顯示或修改檔案名稱副檔名關聯。 如果未指定參數，使用**assoc**會顯示一份所有目前的檔案名稱副檔名關聯。
+顯示或修改副檔名關聯。 如果使用時不含參數， **assoc**會顯示所有目前副檔名關聯的清單。
 
 > [!NOTE]
-> 此命令僅適用於在 cmd。EXE，而且無法從 PowerShell 使用。
+> 只有在 CMD 中才支援此命令。EXE 和無法從 PowerShell 使用。
 >
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -42,23 +42,23 @@ assoc [<.ext>[=[<FileType>]]]
 
 |參數|描述|
 |---------|-----------|
-|<.ext>|指定的檔案名稱副檔名。|
-|\<FileType>|指定要與指定的副檔名產生關聯的檔案類型。|
+|< ext >|指定副檔名。|
+|\<FileType >|指定要與指定的副檔名相關聯的檔案類型。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   若要移除副檔名的檔案類型關聯，新增以泛空白字元等號之後按空格鍵。
--   若要檢視目前已開啟的命令字串所定義的檔案類型，請使用**ftype**命令。
--   輸出重新導向**assoc**到文字檔中，請使用**>** 重新導向運算子。
+-   若要移除副檔名的檔案類型關聯，請按空格鍵，在等號後面加上空白字元。
+-   若要查看已定義 open 命令字串的目前檔案類型，請使用**ftype**命令。
+-   若要將**assoc**的輸出重新導向至文字檔，請使用 **>** 重新導向運算子。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要檢視目前的檔案類型關聯的檔案名稱副檔名為.txt，請輸入：
+若要查看檔案名副檔名 .txt 的目前檔案類型關聯，請輸入：
 ```
 assoc .txt
 ```
-若要移除檔案名稱副檔名為.bak 的檔案類型關聯，請輸入：
+若要移除副檔名 .bak 的檔案類型關聯，請輸入：
 ```
 assoc .bak= 
 ```
@@ -66,11 +66,11 @@ assoc .bak=
 > [!NOTE]
 > 請務必在等號後面加上空格。
 
-若要檢視的輸出**assoc**一次輸入一個畫面：
+若要一次查看**assoc**一個畫面的輸出，請輸入：
 ```
 assoc | more
 ```
-若要傳送的輸出**assoc**檔案 assoc.txt 中，輸入：
+若要將**assoc**的輸出傳送至檔案 assoc，請輸入：
 ```
 assoc>assoc.txt
 ```

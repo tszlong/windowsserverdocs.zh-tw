@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7d78258d8f1db9889b6d2db8c497780940ed35a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890649"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357575"
 ---
 # <a name="deploy-claims-across-forests"></a>跨樹系部署宣告
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 Windows Server 2012 中，宣告類型會是與它相關聯的物件相關的判斷提示。 宣告類型會依據 Active Directory 中的每個樹系而定義。 在許多情況下，安全性主體都可能需要周遊信任邊界，以存取信任樹系中的資源。 Windows Server 2012 中的跨樹系宣告轉換可讓您轉換周遊樹系，以便宣告會辨識和接受信任和受信任的樹系中的輸出和輸入宣告。 以下是宣告轉換的部分實際案例：  
+在 Windows Server 2012 中，宣告類型是與相關聯之物件的判斷提示。 宣告類型會依據 Active Directory 中的每個樹系而定義。 在許多情況下，安全性主體都可能需要周遊信任邊界，以存取信任樹系中的資源。 Windows Server 2012 中的跨樹系宣告轉換，可讓您轉換可遍歷樹系的輸出和輸入宣告，以便在信任和受信任的樹系中辨識和接受宣告。 以下是宣告轉換的部分實際案例：  
   
 -   信任樹系可藉由篩選含有特定值的傳入宣告，使用宣告轉換來防止權限提高。  
   
@@ -45,11 +45,11 @@ ms.locfileid: "59890649"
 ## <a name="in-this-scenario"></a>在這個案例中  
 以下是可供此案例使用的指導方針：  
   
--   [跨樹系部署宣告&#40;示範步驟&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
+-   [跨樹系部署&#40;宣告示範步驟&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
   
 -   [宣告轉換規則語言](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>在此案例包含角色與功能  
+## <a name="BKMK_NEW"></a>此案例中包含的角色和功能  
 下表列出這個案例中的角色與功能，並說明它們如何支援這個案例。  
   
 |角色/功能|如何支援本案例|  

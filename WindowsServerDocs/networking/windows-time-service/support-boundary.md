@@ -1,99 +1,99 @@
 ---
 ms.assetid: ''
 title: 高精確度時間的支援界限
-description: 本文說明在需要高度精確且穩定的系統時間的環境中的 Windows 時間 (W32Time) 服務的支援界限。
+description: 本文說明 Windows Time （W32Time）服務在需要高度精確且穩定系統時間的環境中的支援界限。
 author: shortpatti
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 991bf4502546771dae9f092c6d5732f96b1278ab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 212b9c79bc2e43e966180b928c865a9053332c3f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866269"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405262"
 ---
 # <a name="support-boundary-for-high-accuracy-time"></a>高精確度時間的支援界限
 
->適用於：Windows Server 2016 和 Windows 10 版本 1607年或更新版本
+>適用於：Windows Server 2016 和 Windows 10 1607 版或更新版本
 
-本文說明 Windows 時間服務 (W32Time) 的支援界限需要高度精確且穩定的系統時間的環境中。
+本文說明 Windows 時間服務（W32Time）在需要高度精確且穩定系統時間的環境中的支援界限。
 
-## <a name="high-accuracy-support-for-windows-81-and-2012-r2-or-prior"></a>適用於 Windows 8.1 和 2012 R2 （或之前） 的高精確度支援
+## <a name="high-accuracy-support-for-windows-81-and-2012-r2-or-prior"></a>Windows 8.1 和 2012 R2 （或之前）的高準確度支援
 
-舊版的 Windows （Windows 10 1607年或 Windows Server 2016 1607年） 之前，無法保證高度精確的時間。 在這些系統上 Windows 時間服務：
+舊版的 Windows （在 Windows 10 1607 或 Windows Server 2016 1607 之前）無法保證非常精確的時間。 這些系統上的 Windows 時間服務：
 
--   提供所需的時間精確度，以滿足 Kerberos 版本 5 驗證需求
+-   提供滿足 Kerberos 第5版驗證需求所需的時間精確度
 
--   Windows 用戶端與伺服器加入常見的 Active Directory 樹系提供鬆散準確的時間
+-   為已加入 common Active Directory 樹系的 Windows 用戶端和伺服器提供了鬆散精確的時間
 
-更緊密的精確度需求所設計規格，在這些作業系統上的 Windows 時間服務之外，並不支援。
+較緊密的精確度需求不在這些作業系統上的 Windows Time 服務設計規格之外，而且也不受支援。
 
 ## <a name="windows-10-and-windows-server-2016"></a>Windows 10 和 Windows Server 2016
 
-在 Windows 10 和 Windows Server 2016 中的時間精確度已經過大幅改良，同時維持完整回溯 NTP 與較舊的 Windows 版本的相容性。 在右邊的運作狀況下，執行 Windows 10 或 Windows Server 2016 和較新版本的系統可以提供 1 的第二個，50 毫秒 （毫秒），或 1 毫秒精確度。
+Windows 10 和 Windows Server 2016 中的時間準確度已大幅改善，同時維持與舊版 Windows 的完整回溯 NTP 相容性。 在正確的作業條件下，執行 Windows 10 或 Windows Server 2016 和更新版本的系統可以提供1秒、50毫秒（毫秒）或1毫秒準確度。
 
 >[!IMPORTANT]
 >**高度精確的時間來源**<br>
->在拓撲中產生的時間精確度，多半取決於使用的精確且穩定的根 (stratum 1) 時間來源。 有 Windows 型和非 Windows 型高精確，Windows 相容，NTP 時間來源硬體銷售的第 3 方供應商。 請洽詢您的供應商，其產品的精確度。
+>在您的拓撲中產生的時間精確度，高度取決於使用精確的穩定根（層次1）時間來源。 協力廠商提供的 Windows 型和非 Windows 型高度精確、Windows 相容、NTP 時間來源硬體。 請洽詢您的廠商以瞭解其產品的準確度。
 
 >[!IMPORTANT]
 >**時間精確度**<br>
->時間精確度需要端對端分佈的精確時間高精確度的授權時間來源的裝置。 導入網路上的不對稱的任何項目會造成負面影響精確度，例如實體網路裝置或在目標系統上的高 CPU 負載。
+>時間精確度需要從高度精確的授權時間來源到結束裝置的端對端散發正確時間。 引進網路不對稱的任何專案都會對精確度造成負面影響，例如，實體網路裝置或目標系統上的高 CPU 負載。
 
-## <a name="high-accuracy-requirements"></a>高精確度的需求
+## <a name="high-accuracy-requirements"></a>高準確度需求
 
-這份文件的其餘部分將概述必須滿足才能支援個別的高精確度的目標環境需求。
+本檔的其餘部分將概述必須滿足才能支援各自高準確度目標的環境需求。
 
-### <a name="target-accuracy-1-second-1s"></a>目標精確度：1 秒 (1)
+### <a name="target-accuracy-1-second-1s"></a>目標精確度：1秒（1s）
 
-若要達到 lt;1s&gt 特定目標的精確度機器相較於高度精確的時間來源：
+相較于高度精確的時間來源，為特定的目的電腦達到 1% 的精確度：
 
--   目標系統必須執行 Windows 10，Windows Server 2016。
+-   目標系統必須執行 Windows 10、Windows Server 2016。
 
--   目標系統必須同步處理時間 NTP 時間伺服器階層，重點在高度精確的是，Windows 相容 NTP 時間來源。
+-   目標系統必須從時間伺服器的 NTP 階層同步處理時間，累積在高度精確的 Windows 相容 NTP 時間來源。
 
--   在上述的 NTP 階層中所有 Windows 作業系統必須都設定中所述[設定為高精確度的系統](configuring-systems-for-high-accuracy.md)文件。
+-   上述 NTP 階層中的所有 Windows 作業系統都必須依照設定[高精確度的系統](configuring-systems-for-high-accuracy.md)檔中所述進行設定。
 
--   來源與目標之間的累計單向的網路延遲不能超過 100 毫秒。 累積的網路延遲會加上個別測量之間的成對 NTP 用戶端-伺服器節點與目標開始與結束，在來源階層中的單向延遲。 如需詳細資訊，請檢閱高精確度的時間同步處理文件。
+-   目標和來源之間的累計單向網路延遲不得超過100毫秒。 累計網路延遲的測量方式，是在階層中的 NTP 用戶端-伺服器節點配對之間新增個別的單向延遲，從目標開始，並在來源結束。 如需詳細資訊，請參閱高準確度時間同步檔。
 
-### <a name="target-accuracy-50-milliseconds"></a>目標精確度：50 毫秒
+### <a name="target-accuracy-50-milliseconds"></a>目標精確度：50毫秒
 
-一節所述的所有需求**目標精確度：1 秒鐘**套用，但會在這一節中所述的控制項更加嚴格。
+一節中所述的所有需求，@no__t 0Target 精確度：1秒 @ no__t-0 適用，不同之處在于本節所述的更嚴格的控制項。
 
-若要達到 50 毫秒精確度，針對特定目標系統的其他需求如下：
+達到特定目標系統50毫秒精確度的其他需求如下：
 
--   目標電腦必須與其時間來源間的優於 5 毫秒的網路延遲。
+-   目的電腦的時間來源之間必須比5毫秒網路延遲來得好。
 
--   目標系統必須是最理想 stratum 高度精確的時間來源的 5
-
-    >[!Note]
-    >從命令列以查看 stratum 執行 「 w32tm /query /status"。
-
--   目標系統必須在 6 個或更少的網路躍點高度精確的時間來源的資料
-
--   為期一天平均 CPU 使用率在所有 stratums 不得超過 90%
-
--   適用於虛擬化系統，主應用程式的一天平均 CPU 使用率不能超過 90%
-
-### <a name="target-accuracy-1-millisecond"></a>目標精確度：1 毫秒
-
-各節中所述的所有需求**目標精確度：1 秒鐘**和**目標精確度：50 毫秒**套用，但會在這一節中所述的控制項更加嚴格。
-
-若要達成特定目標系統的 1 毫秒精確度的其他需求如下：
-
--   目標電腦必須與其時間來源間有優於 0.1 毫秒的網路延遲
-
--   目標系統必須是最理想 stratum 高度精確的時間來源的 5
+-   目標系統必須從高度精確的時間來源開始，不能高於第5級
 
     >[!Note]
-    >從命令列以查看 stratum 執行 'w32tm /query /status'
+    >從命令列執行 "w32tm/query/status" 以查看層次。
 
--   目標系統必須在 4 個或更少的網路躍點高度精確的時間來源的資料
+-   目標系統的網路躍點必須介於高度精確的時間來源內
 
--   每個 stratum 為期一天平均 CPU 使用率不能超過 80%
+-   所有 stratums 上的一天平均 CPU 使用率不得超過 90%
 
--   虛擬化系統，主應用程式的一天平均 CPU 使用率必須不超過 80%
+-   針對虛擬化系統，主機的一天平均 CPU 使用率不得超過 90%
+
+### <a name="target-accuracy-1-millisecond"></a>目標精確度：1毫秒
+
+0Target 精確度一 @no__t 節中所述的所有需求：1秒 @ no__t-0 和 @no__t 1Target 精確度：50毫秒 @ no__t-0 適用，不同之處在于本節所述的更嚴格的控制項。
+
+針對特定目標系統達到1毫秒精確度的額外需求如下：
+
+-   目的電腦的時間來源必須優於0.1 毫秒的網路延遲
+
+-   目標系統必須從高度精確的時間來源開始，不能高於第5級
+
+    >[!Note]
+    >從命令列執行 ' w32tm/query/status ' 以查看層次
+
+-   目標系統的網路躍點必須介於高度精確的時間來源內
+
+-   每個層次的一天平均 CPU 使用率不得超過 80%
+
+-   針對虛擬化系統，主機的一天平均 CPU 使用率不得超過 80%

@@ -1,37 +1,37 @@
 ---
 title: 設定 DNS 轉送和網域信任
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 3f9083d749ba9251ba47ecb64b7cb3d7c6290f1d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5d8ffe82065caeee27c5d13f5243f13addc6c325
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443776"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386745"
 ---
-# <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>HGS 網域和單向信任與網狀架構之網域中設定 DNS 轉送
+# <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>設定 HGS 網域中的 DNS 轉送和網狀架構網域的單向信任
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 >[!IMPORTANT]
->AD 模式開頭為 Windows Server 2019 已被取代。 TPM 證明不可能的環境下，設定[裝載金鑰證明](guarded-fabric-initialize-hgs-key-mode.md)。 主機金鑰證明提供類似的保證，能 AD 模式，並已設定的工作變得更容易。 
+>從 Windows Server 2019 開始，AD 模式已淘汰。 針對不可能進行 TPM 證明的環境，請設定[主機金鑰證明](guarded-fabric-initialize-hgs-key-mode.md)。 主機金鑰證明提供與 AD 模式類似的保證，而且設定起來較簡單。 
 
-使用下列步驟來設定 DNS 轉送，並建立與網狀架構之網域的單向信任。 這些步驟允許 HGS 找出網狀架構的網域控制站，並驗證群組成員資格的 HYPER-V 主機。
+使用下列步驟來設定 DNS 轉送，並建立與網狀架構網域的單向信任。 這些步驟可讓 HGS 找出網狀架構網域控制站，並驗證 Hyper-v 主機的群組成員資格。
 
-1.  執行下列命令，在提升權限的 PowerShell 工作階段設定 DNS 轉送。 Fabrikam.com 取代 fabric 網域的名稱，並輸入 fabric 網域中的 DNS 伺服器的 IP 位址。 如需更高的可用性，指向多部 DNS 伺服器。
+1.  在提高許可權的 PowerShell 會話中執行下列命令，以設定 DNS 轉送。 以網狀架構網域的名稱取代 fabrikam.com，然後輸入網狀架構網域中 DNS 伺服器的 IP 位址。 如需更高的可用性，請指向一部以上的 DNS 伺服器。
 
     ```powershell
     Add-DnsServerConditionalForwarderZone -Name "fabrikam.com" -ReplicationScope "Forest" -MasterServers <DNSserverAddress1>, <DNSserverAddress2>
     ```
 
-2.  若要建立單向樹系信任，請在提升權限的命令提示字元執行下列命令：
+2.  若要建立單向樹系信任，請在提升許可權的命令提示字元中執行下列命令：
 
-    取代`bastion.local`HGS 網域的名稱和`fabrikam.com`fabric 網域的名稱。 網狀架構網域的系統管理員提供的密碼。
+    以 HGS 網域的名稱取代 `bastion.local`，並使用網狀架構網域的名稱 `fabrikam.com`。 提供網狀架構網域的系統管理員密碼。
 
         netdom trust bastion.local /domain:fabrikam.com /userD:fabrikam.com\Administrator /passwordD:<password> /add
 

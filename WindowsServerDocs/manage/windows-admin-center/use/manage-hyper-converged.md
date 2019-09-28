@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 5df035b448b80aa147067004c6a2f14aa03a9684
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: d692251e1ba0fef43e4eeee6f259f26f4347f3c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869094"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356881"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>使用 Windows 管理中心管理超融合式基礎結構
 
@@ -157,7 +157,7 @@ ms.locfileid: "70869094"
 
 Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 
-您可以透過 windows Server 或 Windows 10 的有效授權，使用 Windows 管理中心（可供個別下載），而不需額外付費，其授權于 Windows 增補授權合約之下。
+您可以在 Windows Server 或 Windows 10 的有效授權下免費使用 Windows Admin Center (可供個別下載)，這已依據 Windows 增補 EULA 取得授權。
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 

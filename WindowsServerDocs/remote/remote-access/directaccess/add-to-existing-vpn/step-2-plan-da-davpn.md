@@ -1,9 +1,9 @@
 ---
-title: 步驟 2 規劃 DirectAccess 部署
-description: 本主題是本指南新增 DirectAccess 加入現有的遠端存取 (VPN) 部署適用於 Windows Server 2016 的一部分
+title: 步驟2規劃 DirectAccess 部署
+description: 本主題是將 DirectAccess 新增至 Windows Server 2016 的現有遠端存取（VPN）部署指南的一部分
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 72b5b2af-6925-41e0-a3f9-b8809ed711d1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6fd33926f4c3d86d5947bffdd5b212db0ae91f47
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cd42d00d8bddc786ea8a13faf10703361bf8da7b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283594"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404969"
 ---
-# <a name="step-2-plan-the-directaccess-deployment"></a>步驟 2 規劃 DirectAccess 部署
+# <a name="step-2-plan-the-directaccess-deployment"></a>步驟2規劃 DirectAccess 部署
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 規劃遠端存取基礎結構之後，啟用 DirectAccess 的下一步是規劃「啟用 DirectAccesss 精靈」的設定。  
   
@@ -30,7 +30,7 @@ ms.locfileid: "67283594"
 |規劃用戶端部署|規劃如何讓用戶端電腦使用 DirectAccess 連線。 決定哪些受管理的電腦會設定為 DirectAccess 用戶端。|  
 |規劃遠端存取伺服器部署|規劃如何部署遠端存取伺服器。|  
   
-## <a name="bkmk_2_1_client"></a>用戶端部署規劃  
+## <a name="bkmk_2_1_client"></a>規劃用戶端部署  
 規劃用戶端部署時要進行兩個決策：  
   
 -   DirectAccess 將僅供攜帶型電腦使用，或是可供任何電腦使用？  
@@ -41,29 +41,29 @@ ms.locfileid: "67283594"
   
     DirectAccess 設定包含在 DirectAccess 用戶端 GPO 中。 GPO 會套用到您在「啟用 DirectAccess 精靈」指定之安全性群組中的電腦。 您可以指定在任何支援的網域中所包含的安全性群組。 設定遠端存取之前，必須先建立安全性群組。 您可以在完成遠端存取部署之後，將電腦新增到安全性群組，但請注意，如果您新增位於不同網域中的用戶端電腦到安全性群組，用戶端 GPO 將不會套用到這些用戶端。 例如，如果您在網域 A 中建立 SG1 做為 DirectAccess 用戶端，之後新增網域 B 的用戶端到此群組，用戶端 GPO 將不會套用到網域 B 中的用戶端。若要避免這個問題，請為每個包含用戶端電腦的網域建立新的用戶端安全性群組。 或者，如果您不想要建立新的安全性群組，請執行 Add-DAClient Cmdlet，加上新網域的新 GPO 名稱。  
   
-## <a name="bkmk_2_2_server"></a>遠端存取伺服器部署規劃  
+## <a name="bkmk_2_2_server"></a>規劃遠端存取服務器部署  
 規劃部署遠端存取伺服器時要進行許多決策：  
   
--   **網路拓撲**-有可用的兩個拓撲部署遠端存取伺服器時：  
+-   **網路拓撲**-部署遠端存取服務器時，有兩種可用的拓撲：  
   
-    -   **兩張介面卡**-可以使用一個網路介面卡直接連線到網際網路，設定兩個網路介面卡，遠端存取和其他連線到內部網路。 或者，伺服器安裝在邊緣裝置 (例如防火牆或路由器) 後面。 在此設定中，一張網路介面卡連線到周邊網路，另一張連線到內部網路。  
+    -   **兩張適配**卡-有兩張網路介面卡，遠端存取可以設定一張網路介面卡直接連線到網際網路，另一個則連線到內部網路。 或者，伺服器安裝在邊緣裝置 (例如防火牆或路由器) 後面。 在此設定中，一張網路介面卡連線到周邊網路，另一張連線到內部網路。  
   
-    -   **單一網路介面卡**-在此組態中遠端存取伺服器安裝在邊緣裝置，例如防火牆或路由器後面。 網路介面卡會連線到內部網路。  
+    -   **單一網路介面卡**-在此設定中，遠端存取服務器會安裝在邊緣裝置（例如防火牆或路由器）後方。 網路介面卡會連線到內部網路。  
   
--   **網路介面卡**-「 啟用 DirectAccess 精靈會自動偵測遠端存取伺服器，根據 VPN 所使用的介面上設定的網路介面卡。 您必須確定已選取正確的介面卡。  
+-   **網路介面卡**-[啟用 DirectAccess] 嚮導會根據 VPN 所使用的介面，自動偵測在遠端存取服務器上設定的網路介面卡。 您必須確定已選取正確的介面卡。  
   
--   **ConnectTo 位址**-用戶端電腦使用 ConnectTo 位址才能連線到遠端存取伺服器。 您選擇的位址必須符合您部署 IP-HTTPS 連線的 IP-HTTPS 憑證主體名稱，而且必須能在公用 DNS 中使用。 請參閱規劃 IP-HTTPS 的網站憑證。  
+-   **ConnectTo 位址**-用戶端電腦會使用 ConnectTo 位址來連線到遠端存取服務器。 您選擇的位址必須符合您部署 IP-HTTPS 連線的 IP-HTTPS 憑證主體名稱，而且必須能在公用 DNS 中使用。 請參閱規劃 IP-HTTPS 的網站憑證。  
   
--   **IP-HTTPS 憑證**-設定如果 SSTP VPN，「 啟用 DirectAccess 精靈會挑選 SSTP 使用 ip-https 的憑證。 如果未設定 SSTP VPN，精靈會嘗試查看是否已設定 IP-HTTPS 的憑證。 如果沒有，它會自動為 IP-HTTPS 佈建自我簽署的憑證。精靈會自動啟用 Kerberos 驗證。 精靈也會啟用 NAT64 和 DNS64，以便轉換 IPv4 環境使用的通訊協定。  
+-   **Ip-HTTPs 憑證**-如果已設定 SSTP VPN，則 [啟用 DirectAccess] 嚮導會針對 IP-HTTPS 挑選 SSTP 使用的憑證。 如果未設定 SSTP VPN，精靈會嘗試查看是否已設定 IP-HTTPS 的憑證。 如果沒有，它會自動為 IP-HTTPS 佈建自我簽署的憑證。精靈會自動啟用 Kerberos 驗證。 精靈也會啟用 NAT64 和 DNS64，以便轉換 IPv4 環境使用的通訊協定。  
   
--   **IPv6 首碼**-如果精靈偵測到的網路介面卡已部署 IPv6，它會自動建立內部網路的 IPv6 首碼、 IPv6 首碼指派給 DirectAccess 用戶端電腦和要指派給 VPN 的 IPv6 首碼用戶端電腦。 如果自動產生的首碼不適用您的原生 IPv6 或 ISATAP 基礎結構，您必須手動變更它們。 請參閱 1.1 規劃網路和伺服器拓撲和設定。  
+-   **IPv6 首碼**-如果此嚮導偵測到網路介面卡已部署 ipv6，它會自動為內部網路建立 ipv6 首碼、指派給 DirectAccess 用戶端電腦的 ipv6 首碼，以及要指派給 VPN 用戶端的 ipv6 首碼電腦. 如果自動產生的首碼不適用您的原生 IPv6 或 ISATAP 基礎結構，您必須手動變更它們。 請參閱1.1 規劃網路和伺服器拓撲和設定。  
   
--   **Windows 7 用戶端**-根據預設，Windows 7 用戶端電腦無法連線到 Windows Server 2012 遠端存取部署。 如果您有 Windows 7 用戶端電腦在您的組織需要遠端存取內部資源，您可以允許它們連線。 您想要允許存取內部資源的任何用戶端電腦都必須是您在「啟用 DirectAccess 精靈」中指定之安全性群組的成員。  
+-   **Windows 7 客戶**端-根據預設，windows 7 用戶端電腦無法連線到 windows Server 2012 遠端存取部署。 如果您的組織中有需要遠端存取內部資源的 Windows 7 用戶端電腦，您可以允許它們連線。 您想要允許存取內部資源的任何用戶端電腦都必須是您在「啟用 DirectAccess 精靈」中指定之安全性群組的成員。  
   
     > [!NOTE]
-    > 讓 Windows 7 用戶端使用 DirectAccess 連線的電腦會要求您使用電腦憑證驗證。
+    > 允許 Windows 7 用戶端電腦使用 DirectAccess 進行連線，需要您使用電腦憑證驗證。
   
--   **驗證**-啟用 DirectAccess 精靈使用 Active Directory 來驗證使用者認證。 若要部署雙因素驗證，請參閱[部署 OTP 驗證的遠端存取](../../ras/otp/Deploy-RA-OTP.md)。  
+-   **驗證**-[啟用 DirectAccess wizard] 會使用 Active Directory 來驗證使用者認證。 若要部署雙因素驗證，請參閱[部署 OTP 驗證的遠端存取](../../ras/otp/Deploy-RA-OTP.md)。  
   
 
   

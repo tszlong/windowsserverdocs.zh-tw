@@ -7,77 +7,77 @@ ms.author: pashort
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 0b424e118980792d4b4db8ba365ad60cc5edc75c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31c7c53a5dd28813076fcaa745093050808b5755
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815939"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405231"
 ---
 # <a name="windows-time-service"></a>Windows Time 服務
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2，Windows Server 2012 中，Windows 10 或更新版本
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更新版本
 
 
-**本指南中**  
+**本指南**  
   
-* 哪裡可以找到 Windows 時間服務的組態資訊  
+* 哪裡可以找到 Windows 時間服務設定資訊  
 * 什麼是 Windows 時間服務？  
 * 時間通訊協定的重要性  
 * Windows 時間服務的運作方式   
 * Windows 時間服務工具和設定  
   
 > [!NOTE]  
-> 在 Windows Server 2003 和 Microsoft Windows 2000 Server 中，目錄服務稱為 Active Directory 目錄服務。 在 Windows Server 2008 R2 和 Windows Server 2008 中，目錄服務稱為 Active Directory 網域服務 (AD DS)。 本主題的其餘部分指的是 AD DS 中，但資訊也適用於 Windows Server 2016 中的 Active Directory 網域服務。  
+> 在 Windows Server 2003 和 Microsoft Windows 2000 Server 中，目錄服務的名稱 Active Directory 目錄服務。 在 Windows Server 2008 R2 和 Windows Server 2008 中，目錄服務的名稱是 Active Directory Domain Services （AD DS）。 本主題的其餘部分指的是 AD DS，但這項資訊也適用于 Windows Server 2016 中的 Active Directory Domain Services。  
   
-Windows 時間服務，也稱為 W32Time，同步處理的日期和時間，在 AD DS 網域中執行的所有電腦。 時間同步處理是重要的許多 Windows 服務和特定業務應用程式正常運作。 Windows 時間服務會使用網路時間通訊協定 (NTP)，以便準確的時鐘值或時間戳記，可以指派給網路驗證和資源的存取要求網路上的電腦時鐘進行同步處理。 服務整合 NTP 和時間提供者，讓企業系統管理員的可靠且可擴充的時間服務。
+Windows 時間服務（也稱為 W32Time）會同步處理在 AD DS 網域中執行之所有電腦的日期和時間。 時間同步處理對於許多 Windows 服務和企業營運應用程式的適當操作而言非常重要。 Windows 時間服務會使用網路時間通訊協定（NTP）來同步處理網路上的電腦時鐘，讓您可以將正確的時鐘值或時間戳記指派給網路驗證和資源存取要求。 此服務整合了 NTP 和時間提供者，使其成為企業系統管理員的可靠且可擴充的時間服務。
   
 > [!IMPORTANT]  
-> 在 Windows Server 2016 之前, W32Time 服務並非設計時間緊迫的應用程式的需求。  不過，Windows Server 2016 的更新現在可讓您實作的解決方案 1 毫秒精確度您網域中的。  請參閱[Windows 2016 正確時間](accurate-time.md)並[來設定 Windows 時間服務的高精確度的環境支援界限](support-boundary.md)如需詳細資訊。  
+> 在 Windows Server 2016 之前，W32Time 服務的設計不是為了符合時間緊迫的應用程式需求。  不過，Windows Server 2016 的更新現在可讓您在網域中執行1毫秒精確度的解決方案。  如需詳細資訊，請參閱[windows 2016 精確時間](accurate-time.md)和[支援界限，為高準確度環境設定 windows 時間服務](support-boundary.md)。  
   
-## <a name="BKMK_Config"></a>哪裡可以找到 Windows 時間服務的組態資訊  
-本指南並未**不**討論設定 Windows 時間服務。 有許多不同的主題在 Microsoft TechNet 上及 Microsoft 知識庫中進行說明設定 Windows 時間服務的程序。 如果您需要設定資訊時，下列主題應該協助您找出適當的資訊。  
+## <a name="BKMK_Config"></a>哪裡可以找到 Windows 時間服務設定資訊  
+本**指南不會討論如何**設定 Windows Time 服務。 在 Microsoft TechNet 和 Microsoft 知識庫中，有幾個不同的主題會說明設定 Windows 時間服務的程式。 如果您需要設定資訊，下列主題應可協助您找出適當的資訊。  
   
--   若要設定樹系根網域主控站 (PDC) 模擬器的 Windows 時間服務，請參閱：  
+-   若要設定樹系根主域控制站（PDC）模擬器的 Windows 時間服務，請參閱：  
   
-    -   [在樹系根網域中的 PDC 模擬器上設定 Windows 時間服務](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29) 
+    -   [在樹系根域的 PDC 模擬器上設定 Windows 時間服務](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29) 
   
     -   [設定樹系的時間來源](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc794823%28v%3dws.10%29) 
   
-    -   Microsoft 知識庫文件 816042，[如何在 Windows Server 中設定授權時間伺服器](https://go.microsoft.com/fwlink/?LinkID=60402)，其中說明執行 Windows Server 2008 R2，Windows Server 2008，Windows Server 之電腦的組態設定2003 和 Windows Server 2003 R2。  
+    -   Microsoft 知識庫文章816042，[如何在 Windows server 中設定授權時間伺服器](https://go.microsoft.com/fwlink/?LinkID=60402)，其中描述執行 Windows Server 2008 R2、windows server 2008、windows server 2003 和 windows 之電腦的設定伺服器 2003 R2。  
   
--   若要在任何網域成員用戶端或伺服器或未設定為樹系根 PDC 模擬器的偶數的網域控制站上設定 Windows 時間服務，請參閱[設定用戶端電腦自動網域時間同步處理](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29).  
+-   若要在任何網域成員用戶端或伺服器，或甚至未設定為樹系根 PDC 模擬器的網域控制站上設定 Windows 時間服務，請參閱[設定用戶端電腦以進行自動網域時間同步](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)處理。  
   
     > [!WARNING]  
-    > 有些應用程式可能需要他們的電腦來擁有高精確度的時間服務。 如果是這樣，您可以選擇設定手動時間來源，但請注意，Windows 時間服務的設計無法做為高度精確的時間來源。 確保您知道的支援限制的高精確度的 time 環境如所述的 Microsoft 知識庫文章 939322，[支援界限，以設定 Windows 時間服務的高精確度環境](support-boundary.md).  
+    > 有些應用程式可能需要其電腦具有高準確度的時間服務。 如果是這種情況，您可以選擇設定手動時間來源，但請注意，Windows Time 服務的設計並不是以高精確度的時間來源的方式運作。 請確定您知道 Microsoft 知識庫文章939322中所述的高精確度時間環境支援限制，如為[高準確度環境設定 Windows 時間服務的支援界限](support-boundary.md)中所述。  
   
--   若要設定 Windows 時間服務以 Windows 為基礎的用戶端或伺服器的任何電腦上設定工作群組成員，而不是網域成員看到[設定所選的用戶端電腦手動時間來源](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816656%28v%3dws.10%29)。  
+-   若要在設定為工作組成員而非網域成員的任何 Windows 型用戶端或伺服器電腦上設定 Windows 時間服務，請參閱為[選取的用戶端電腦設定手動時間來源](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816656%28v%3dws.10%29)。  
   
--   若要設定 Windows 時間服務主機電腦上執行虛擬環境，請參閱 Microsoft 知識庫文件 816042，[如何在 Windows Server 中設定授權時間伺服器](https://go.microsoft.com/fwlink/?LinkID=60402)。 如果您正在使用的非 Microsoft 虛擬化產品，請務必參閱該產品的供應商的文件。  
+-   若要在執行虛擬環境的主機電腦上設定 Windows 時間服務，請參閱 Microsoft 知識庫檔816042，[如何在 Windows server 中設定授權時間伺服器](https://go.microsoft.com/fwlink/?LinkID=60402)。 如果您使用非 Microsoft 虛擬化產品，請務必參閱該產品廠商的檔。  
   
--   若要設定 Windows 時間服務正在執行的虛擬機器中的網域控制站上，建議您部分停用主機系統與客體作業系統做為網域控制站之間的時間同步處理。 這可讓客體網域控制站的網域階層中，同步處理時間，但防止發生時間扭曲如果從已儲存狀態還原。 如需詳細資訊，請參閱 Microsoft 知識庫文章 976924，[接收 Windows 時間服務事件識別碼 24、 29 和 38 之間執行 HYPER-V 的 Windows Server 2008 主機伺服器的虛擬的網域控制站上](https://go.microsoft.com/fwlink/?LinkID=192236)並[虛擬化的網域控制站的部署考量](https://go.microsoft.com/fwlink/?LinkID=192235)。  
+-   若要在虛擬機器中執行的網域控制站上設定 Windows 時間服務，建議您在主機系統和作為網域控制站的客體作業系統之間，部分停用時間同步處理。 這可讓您的來賓網域控制站同步處理網域階層的時間，但如果從儲存狀態還原，則會保護它免于時間偏差。 如需詳細資訊，請參閱 Microsoft 知識庫檔976924，[您可以在使用 hyper-v 和部署的 Windows Server 2008 主機伺服器上執行的虛擬網域控制站上，收到 Windows 時間服務事件識別碼24、29和 38](https://go.microsoft.com/fwlink/?LinkID=192236) 。 [虛擬網域控制站的考慮](https://go.microsoft.com/fwlink/?LinkID=192235)。  
   
--   若要設定 Windows 時間服務做為樹系根 PDC 模擬器中的虛擬電腦同時執行的網域控制站上，遵循相同的實體電腦中所述[上設定 Windows 時間服務樹系根網域中的 PDC 模擬器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29)。  
+-   若要在網域控制站上設定 Windows 時間服務，做為也在虛擬電腦上執行的樹系根 PDC 模擬器，請依照在[PDC 上設定 Windows 時間服務中所述的相同實體電腦指示進行操作。樹系根域中的模擬器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29)。  
   
--   若要設定 Windows 時間服務與虛擬電腦執行的成員伺服器上，使用網域的時間階層中所述 ([設定為自動網域時間同步處理用戶端電腦](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)。  
+-   若要在執行為虛擬電腦的成員伺服器上設定 Windows 時間服務，請使用網域時間階層，如（[設定用戶端電腦以進行自動網域時間同步](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)處理中所述。  
   
 ## <a name="BKMK_WTS"></a>什麼是 Windows 時間服務？  
-Windows 時間服務 (W32Time) 提供網路而不需要大量的設定電腦的時鐘同步處理。  
+Windows 時間服務（W32Time）提供電腦的網路時鐘同步處理，而不需要進行大量設定。  
   
-Windows 時間服務是不可或缺的 Kerberos 版本 5 驗證成功的作業，因此，AD DS 為基礎的驗證。 任何 Kerberos 感知的應用程式，包括大部分的安全性服務，都依賴參與驗證要求的電腦之間的時間同步處理。 AD DS 網域控制站必須也具有同步的時鐘以協助確保精確的資料複寫。  
+Windows 時間服務對於 Kerberos 第5版驗證的成功作業而言是不可或缺的，因此，若要 AD DS 為基礎的驗證。 任何 Kerberos 感知應用程式（包括大部分的安全性服務）都會依賴參與驗證要求的電腦之間的時間同步處理。 AD DS 的網域控制站也必須有同步處理的時鐘，以協助確保資料複寫正確。  
   
-Windows 時間服務是一個稱為 W32Time.dll 的動態連結程式庫中實作。 中預設會安裝 W32Time.dll **%Systemroot%\System32**期間作業系統安裝程式和安裝的資料夾。  
+Windows 時間服務是在名為 W32Time 的動態連結程式庫中執行。 在作業系統安裝和安裝期間，預設會在 **%Systemroot%\System32**資料夾中安裝 W32Time。  
   
-W32Time.dll 原本是所開發以支援一種規格的 Windows 2000 Server 的 Kerberos V5 驗證通訊協定需要在同步處理網路上的時鐘。 從 Windows Server 2003 開始，W32Time.dll 提供對 Windows 2000 Server 作業系統中增加網路時鐘同步處理的精確度，此外，時間透過支援各種不同的硬體裝置和網路時間通訊協定提供者。 雖然原本設計提供的 Kerberos 驗證的時鐘同步處理時，許多新的應用程式就會使用時間戳記以確保交易一致性，來記錄的時間的重要事件，和其他重要的企業，時間緊迫資訊。 這些應用程式受益於所提供的 Windows 時間服務的電腦之間的時間同步處理。  
+W32Time 原本是針對 Windows 2000 伺服器所開發，以支援 Kerberos V5 驗證通訊協定的規格，這項要求必須在網路上進行同步處理。 從 Windows Server 2003 開始，W32Time 提供了增加 Windows 2000 伺服器作業系統的網路時鐘同步處理的精確度，此外還支援各種硬體裝置和網路時間通訊協定，方法是透過時間都會. 雖然原先是設計來提供 Kerberos 驗證的時鐘同步處理，但許多目前的應用程式都使用時間戳來確保交易一致性，以記錄重要事件的時間，以及其他業務關鍵、時間緊迫的情況。更多資訊. 這些應用程式可受益于 Windows 時間服務所提供電腦之間的時間同步處理。  
   
 ## <a name="BKMK_TimeProtocols"></a>時間通訊協定的重要性  
-交換時間資訊，並接著使用該資訊來同步處理其時鐘的兩部電腦之間的通訊時間通訊協定。 與 Windows 時間服務的時間通訊協定，用戶端會要求來自伺服器的時間資訊，並同步處理其時鐘根據收到的資訊。  
+時間通訊協定會在兩部電腦之間進行通訊，以交換時間資訊，然後使用該資訊來同步處理其時鐘。 使用 Windows 時間服務時間通訊協定，用戶端會向伺服器要求時間資訊，並根據收到的資訊同步處理其時鐘。  
   
-Windows 時間服務會使用 NTP 來協助在網路上同步處理時間。 NTP 是網際網路時間通訊協定，其中包含所需的同步處理時鐘的專業領域演算法。 NTP 是更精確的時間通訊協定比簡單網路時間通訊協定 (SNTP)，可在部分版本的 Windows;不過，W32Time 會繼續支援 SNTP 啟用回溯相容性的執行 SNTP 為基礎的時間服務，例如 Windows 2000 的電腦。  
+Windows 時間服務會使用 NTP 來協助跨網路同步處理時間。 NTP 是一種網際網路時間通訊協定，其中包含同步處理時鐘所需的專業演算法。 NTP 是比在某些 Windows 版本中使用的簡易網路時間通訊協定（SNTP）更精確的時間通訊協定;不過，W32Time 會繼續支援 SNTP，使其能夠與執行 SNTP 型時間服務（如 Windows 2000）的電腦回溯相容。  
   
 ## <a name="see-also"></a>另請參閱  
 [Windows 時間服務的運作方式](How-the-Windows-Time-Service-Works.md)  
 [Windows 時間服務工具和設定](Windows-Time-Service-Tools-and-Settings.md)  
-[Microsoft 知識庫文章 902229](https://go.microsoft.com/fwlink/?LinkId=186066)
+[Microsoft 知識庫文章902229](https://go.microsoft.com/fwlink/?LinkId=186066)

@@ -2,22 +2,22 @@
 title: 設定目標優先順序以覆寫轉介順序
 description: 本文說明如何設定目標優先順序以覆寫轉介順序
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0a6496802d2be16e84ef62c41fea6f0ae9f6438
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826359"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386116"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>設定目標優先順序以覆寫轉介順序
 
-> 適用於：Windows Server 2019，Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 轉介是排序的目標清單，當使用者存取命名空間根目錄或命名空間中包含目標的資料夾時，用戶端電腦會從網域控制站或命名空間伺服器收到轉介。 轉介中的每一個目標皆根據命名空間根目錄或資料夾的排序方法來排序。 
 
@@ -31,9 +31,9 @@ ms.locfileid: "59826359"
 
 2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，按一下要設定根目標優先順序的網域型命名空間。
 
-3.  在 **\[詳細資料\]** 窗格的 **\[命名空間伺服器\]** 索引標籤上，以滑鼠右鍵按一下要變更優先順序的根目標，然後按一下 **\[內容\]**。
+3.  在 **\[詳細資料\]** 窗格的 **\[命名空間伺服器\]** 索引標籤上，以滑鼠右鍵按一下要變更優先順序的根目標，然後按一下 **\[內容\]** 。
 
-4.  在 **\[進階\]** 索引標籤上，按一下 **\[覆寫轉介順序\]**，然後按一下所需的優先順序。
+4.  在 **\[進階\]** 索引標籤上，按一下 **\[覆寫轉介順序\]** ，然後按一下所需的優先順序。
 
     -   **\[所有目標中的第一個目標\]** 指定如果目標為可用時，永遠將使用者轉介到此目標。
     -   **\[所有目標中的最後一個目標\]** 指定只有在其他所有目標都無法使用時，才可將使用者轉介到此目標。
@@ -48,9 +48,9 @@ ms.locfileid: "59826359"
 
 2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，按一下要設定優先順序之目標的資料夾。
 
-3.  在 **\[詳細資料\]** 窗格的 **\[資料夾目標\]** 索引標籤上，以滑鼠右鍵按一下要變更優先順序的資料夾目標，然後按一下 **\[內容\]**。
+3.  在 **\[詳細資料\]** 窗格的 **\[資料夾目標\]** 索引標籤上，以滑鼠右鍵按一下要變更優先順序的資料夾目標，然後按一下 **\[內容\]** 。
 
-4.  在 **\[進階\]** 索引標籤上，按一下 **\[覆寫轉介順序\]**，然後按一下所需的優先順序。
+4.  在 **\[進階\]** 索引標籤上，按一下 **\[覆寫轉介順序\]** ，然後按一下所需的優先順序。
 
 > [!NOTE]
 > 若要使用 Windows PowerShell 來設定目標優先順序，請使用 [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) 和 [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) Cmdlet 與 **ReferralPriorityClass** 和 **ReferralPriorityRank** 參數。 這些 Cmdlet 於 Windows Server 2012 中引進。
@@ -58,4 +58,4 @@ ms.locfileid: "59826359"
 ## <a name="see-also"></a>另請參閱
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
--   [委派管理 DFS 命名空間的權限](delegate-management-permissions-for-dfs-namespaces.md)
+-   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

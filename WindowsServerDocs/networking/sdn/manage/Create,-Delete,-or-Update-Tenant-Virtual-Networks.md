@@ -1,9 +1,9 @@
 ---
-title: 建立、 刪除或更新租用戶虛擬網路
-description: 本主題中，您將了解如何建立、 刪除和更新 HYPER-V 網路虛擬化的虛擬網路，在您部署軟體定義網路 (SDN) 之後。 HYPER-V 網路虛擬化可協助您隔離租用戶網路，讓每個租用戶網路是個別的實體。 除非您設定公用存取的工作負載，每個實體會有不跨連線可能會發生。
+title: 建立、刪除或更新租使用者虛擬網路
+description: 在本主題中，您將瞭解如何在部署軟體定義的網路功能（SDN）後，建立、刪除和更新 Hyper-v 網路虛擬化虛擬網路。 Hyper-v 網路虛擬化可協助您隔離租使用者網路，讓每個租使用者網路都是個別的實體。 除非您設定公用存取工作負載，否則每個實體都沒有跨連接的可能性。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,41 +13,41 @@ ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
 ms.author: pashort
 author: shortpatti
 ms.date: 08/24/2018
-ms.openlocfilehash: a125ec220b4769a57a6be30f1425283afb7f0fe6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 779c7bc4f6c4ff1e66fca68ced8b0eeb4d54abc5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838349"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406064"
 ---
 # <a name="create-delete-or-update-tenant-virtual-networks"></a>建立、刪除或更新租用戶虛擬網路
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題中，您將了解如何建立、 刪除和更新 HYPER-V 網路虛擬化的虛擬網路，在您部署軟體定義網路 (SDN) 之後。 HYPER-V 網路虛擬化可協助您隔離租用戶網路，讓每個租用戶網路是個別的實體。 除非您設定公用存取的工作負載，每個實體會有不跨連線可能會發生。   
+在本主題中，您將瞭解如何在部署軟體定義的網路功能（SDN）後，建立、刪除和更新 Hyper-v 網路虛擬化虛擬網路。 Hyper-v 網路虛擬化可協助您隔離租使用者網路，讓每個租使用者網路都是個別的實體。 除非您設定公用存取工作負載，否則每個實體都沒有跨連接的可能性。   
   
 ## <a name="create-a-new-virtual-network"></a>建立新的虛擬網路  
-為租用戶中建立虛擬網路將將它放在 HYPER-V 主機上的唯一路由網域。 每個虛擬網路，下方沒有至少一個虛擬子網路。 虛擬子網路取得 IP 前置詞所定義，並參考先前定義的 ACL。  
+為租使用者建立虛擬網路時，會將它放置在 Hyper-v 主機上唯一的路由網域中。 在每個虛擬網路底下，至少有一個虛擬子網。 虛擬子網是由 IP 首碼所定義，並參考先前定義的 ACL。  
 
-若要建立新的虛擬網路的步驟如下：
+建立新虛擬網路的步驟如下：
 
-1. 找出您要建立的虛擬子網路的 IP 位址首碼。   
-2. 識別租用戶流量建立通道的提供者邏輯網路。   
-3. 在步驟 1 中建立至少一個虛擬子網路，您識別每個 IP 前置詞。 
-4. （選擇性）將先前建立的 Acl 新增至虛擬子網路，或新增租用戶的閘道連線。 
+1. 識別您想要從中建立虛擬子網的 IP 位址首碼。   
+2. 識別用來傳送租使用者流量的邏輯提供者網路。   
+3. 針對您在步驟1中識別的每個 IP 首碼，至少建立一個虛擬子網。 
+4. 選擇性將先前建立的 Acl 新增至虛擬子網，或為租使用者新增閘道連線能力。 
 
-下表包含兩個虛構的租用戶範例中的子網路識別碼和前置詞。 Fabrikam 的租用戶會有兩個虛擬子網路，而 Contoso 租用戶有三個虛擬子網路。  
+下表包含兩個虛構租使用者的範例子網識別碼和首碼。 租使用者 Fabrikam 有兩個虛擬子網，而 Contoso 租使用者有三個虛擬子網。  
  
   
-租用戶名稱  |虛擬子網路識別碼  |虛擬子網路首碼    
+租使用者名稱  |虛擬子網識別碼  |虛擬子網首碼    
 ---------|---------|---------  
-Fabrikam    |5001         |24.30.1.0/24           
-Fabrikam     |5002         | 24.30.2.0/20          
+送交    |5001         |24.30.1.0/24           
+送交     |5002         | 24.30.2.0/20          
 Contoso    |6001         |  24.30.1.0/24         
 Contoso    | 6002        |  24.30.2.0/24         
 Contoso     | 6003        | 24.30.3.0/24          
   
-下列範例指令碼會使用從匯出的 Windows PowerShell 命令**NetworkController**模組來建立 Contoso 的虛擬網路和一個子網路：   
+下列範例腳本會使用從**NetworkController**模組匯出的 Windows PowerShell 命令，來建立 Contoso 的虛擬網路和一個子網：   
   
 ```Powershell  
 import-module networkcontroller  
@@ -86,9 +86,9 @@ New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $
 ```  
   
 ## <a name="modify-an-existing-virtual-network"></a>修改現有的虛擬網路  
-您可以使用 Windows PowerShell 來更新現有的虛擬子網路。   
+您可以使用 Windows PowerShell 來更新現有的虛擬子網或網路。   
   
-當您執行下列的範例指令碼時，更新的資源會簡單地說到網路控制站，並提供相同的資源識別碼。 如果您的租用戶 Contoso 想要將新的虛擬子網路 (24.30.2.0/24) 新增至他們的虛擬網路，您或 Contoso 系統管理員可以使用下列指令碼。  
+當您執行下列範例腳本時，已更新的資源會直接放在具有相同資源識別碼的網路控制卡。 如果您的租使用者想要將新的虛擬子網（24.30.2.0/24）新增至其虛擬網路，您或 Contoso 系統管理員可以使用下列腳本。  
   
 ```PowerShell  
 $acllist = Get-NetworkControllerAccessControlList -ConnectionUri $uri -ResourceId "AllowAll"  
@@ -111,9 +111,9 @@ New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $
   
 ## <a name="delete-a-virtual-network"></a>刪除虛擬網路  
   
-您可以使用 Windows PowerShell 刪除虛擬網路。  
+您可以使用 Windows PowerShell 來刪除虛擬網路。  
   
-下列 Windows PowerShell 範例會刪除租用戶虛擬網路的資源識別碼 URI 發出 HTTP delete  
+下列 Windows PowerShell 範例會藉由發出 HTTP delete 到資源識別碼的 URI，來刪除租使用者虛擬網路。  
 
 ```PowerShell  
 Remove-NetworkControllerVirtualNetwork -ResourceId "Contoso_Vnet1" -ConnectionUri $uri  

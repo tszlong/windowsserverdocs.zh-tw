@@ -2,19 +2,19 @@
 title: 網路控制卡安全性
 description: 您可以使用本主題來瞭解如何為網路控制站與其他軟體和裝置之間的所有通訊設定安全性。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: cea660eb28645fb814d718ac04d0c9acea7b2e34
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bd44b4d696fef3c167c7bcd4ffbc7ca79009cebc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867143"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405974"
 ---
 # <a name="secure-the-network-controller"></a>保護網路控制卡
 

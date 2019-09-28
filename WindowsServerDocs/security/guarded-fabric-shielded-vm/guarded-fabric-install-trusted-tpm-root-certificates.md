@@ -1,43 +1,43 @@
 ---
 title: 安裝受信任的 TPM 根憑證
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 06/27/2019
-ms.openlocfilehash: 0d42befcfacfffd302cfcb27f9f3c2c973534398
-ms.sourcegitcommit: 2c2c37170c65434179bcf2989d557f97dcbe1b9f
+ms.openlocfilehash: 15614ce1065170bc557fad10a168b3dda6a5b05a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419224"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386555"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>安裝受信任的 TPM 根憑證
 
->適用於：Windows Server 2019，Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
-當您設定 HGS 使用 TPM 證明時，您也需要設定 HGS 信任您的伺服器內的 Tpm 的廠商。
-此額外的驗證程序可確保能夠與您的 HGS 證明只真實、 可信任的 Tpm。
-如果您嘗試註冊不受信任的 TPM 搭配`Add-HgsAttestationTpmHost`，您會收到錯誤，指出不受信任的 TPM 廠商。
+當您設定 HGS 使用 TPM 證明時，您也必須設定 HGS 以信任伺服器中 Tpm 的廠商。
+這個額外的驗證程式可確保只有可靠且值得信賴的 Tpm 能夠使用您的 HGS 進行證明。
+如果您嘗試使用 `Add-HgsAttestationTpmHost` 來註冊不受信任的 TPM，您會收到錯誤，指出 TPM 廠商不受信任。
 
-若要信任您的 Tpm，根和中繼簽署的憑證，用來簽署在您的伺服器 Tpm 簽署金鑰需要 HGS 上安裝。
-如果您使用一個以上的 TPM 模型中您的資料中心時，您可能需要安裝不同的憑證，針對每個模型。
-HGS 會查看 「 TrustedTPM_RootCA"及"TrustedTPM_IntermediateCA 」 憑證存放區廠商憑證。
+若要信任您的 Tpm，您必須在 HGS 上安裝用來簽署伺服器 Tpm 中簽署金鑰的根和中繼簽署憑證。
+如果您在資料中心內使用一個以上的 TPM 模型，可能需要為每個模型安裝不同的憑證。
+HGS 會查看廠商憑證的 "TrustedTPM_RootCA" 和 "TrustedTPM_IntermediateCA" 憑證存放區。
 
 > [!NOTE]
-> TPM 廠商憑證不同於預設安裝在 Windows 中，並且表示特定根和 TPM 廠商使用的中繼憑證。
+> TPM 廠商憑證不同于 Windows 中預設安裝的憑證，並代表 TPM 廠商所使用的特定根和中繼憑證。
 
-Microsoft 發佈受信任的 TPM 根和中繼憑證的集合，讓您方便參考。
+Microsoft 會發佈受信任的 TPM 根和中繼憑證的集合，以方便您使用。
 您可以使用下列步驟來安裝這些憑證。
-如果 TPM 憑證不會納入下列封裝，請連絡您的 TPM 廠商或 OEM 伺服器取得根和中繼憑證，為您特定的 TPM 模型。
+如果您的 TPM 憑證未包含在下列套件中，請洽詢您的 TPM 廠商或伺服器 OEM，以取得特定 TPM 模型的根和中繼憑證。
 
-在重複下列步驟**每一部 HGS 伺服器**:
+在**每一部 HGS 伺服器**上重複執行下列步驟：
 
-1.  下載最新的封裝，從[ https://go.microsoft.com/fwlink/?linkid=2097925 ](https://go.microsoft.com/fwlink/?linkid=2097925)。
+1.  從[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下載最新的套件。
 
-2.  驗證簽章的封包檔，以確保其正確性。 如果簽章無效。 請不要繼續進行。
+2.  確認 cab 檔案的簽章，以確保其真實性。 如果簽章無效，請勿繼續進行。
 
     ```powershell
     Get-AuthenticodeSignature .\TrustedTpm.cab
@@ -53,24 +53,24 @@ Microsoft 發佈受信任的 TPM 根和中繼憑證的集合，讓您方便參�
     0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab
     ```
 
-2.  展開封包檔。
+2.  展開 cab 檔案。
 
     ```
     mkdir .\TrustedTPM
     expand.exe -F:* <Path-To-TrustedTpm.cab> .\TrustedTPM
     ```
 
-3.  根據預設，設定指令碼會為每個 TPM 廠商安裝憑證。 如果您只想要針對特定 TPM 廠商匯入憑證，請為您的組織不信任的 TPM 廠商刪除的資料夾。
+3.  根據預設，設定腳本會安裝每個 TPM 廠商的憑證。 如果您只想要匯入特定 TPM 廠商的憑證，請刪除組織不信任的 TPM 廠商資料夾。
 
-4.  展開資料夾中執行安裝指令碼，以安裝受信任的憑證封裝。
+4.  在擴充的資料夾中執行安裝腳本，以安裝受信任的憑證封裝。
 
     ```
     cd .\TrustedTPM
     .\setup.cmd
     ```
 
-若要加入新的憑證或故意略過在更早版本的安裝期間，只要重複上述步驟，在您的 HGS 叢集中的每個節點上。
-現有的憑證仍受信任，但在展開的封包檔中找到的新憑證將會新增至受信任的 TPM 儲存。
+若要新增新的憑證，或在稍早的安裝期間刻意略過，請直接在 HGS 叢集中的每個節點上重複上述步驟。
+現有的憑證會保持受信任，但是在展開的 cab 檔案中找到的新憑證將會新增至受信任的 TPM 存放區。
 
 ## <a name="next-step"></a>後續步驟
 

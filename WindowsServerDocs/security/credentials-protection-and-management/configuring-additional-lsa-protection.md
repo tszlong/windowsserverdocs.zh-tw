@@ -2,7 +2,7 @@
 title: 設定額外的 LSA 保護
 description: Windows Server 安全性
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-credential-protection
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 90efc49b0d7ff6edd8367cece42bf7f2950de952
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: eaebac19119525b659c09b5506c497afdbd9a263
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870565"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386986"
 ---
 # <a name="configuring-additional-lsa-protection"></a>設定額外的 LSA 保護
 
@@ -114,7 +114,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 10. 在 [數值資料] 方塊中輸入 **00000008**。
 
-11. 按一下 [確定 **Deploying Office Solutions**]。
+11. 按一下 [確定]。
 
 > [!NOTE]
 > GPO 變更必須複寫到網域中的所有網域控制站，GPO 才會生效。

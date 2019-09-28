@@ -1,105 +1,105 @@
 ---
-title: 匯入另一部伺服器匯出 NPS 設定
-description: 您可以使用本主題以了解如何匯出 Windows Server 2016 中的網路原則伺服器設定。
+title: 匯出 NPS 設定以在另一部伺服器上匯入
+description: 您可以使用本主題來瞭解如何在 Windows Server 2016 中匯出網路原則伺服器設定。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b95e39af63e284d0147335faabfb740c0dd175bc
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: cbebd0388ccd5dd2540a20f5d325d7f97c7e2bb3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812299"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405440"
 ---
-# <a name="export-an-nps-configuration-for-import-on-another-server"></a>匯入另一部伺服器匯出 NPS 設定
+# <a name="export-an-nps-configuration-for-import-on-another-server"></a>匯出 NPS 設定以在另一部伺服器上匯入
 
 適用於：Windows Server 2016
 
-您可以匯出整個 NPS 設定，包括 RADIUS 用戶端和伺服器、 網路原則、 連線要求原則、 登錄，以及記錄組態，從一個匯入另一部 NPS 上的 NPS。 
+您可以從一個 NPS 匯入整個 NPS 設定（包括 RADIUS 用戶端和伺服器、網路原則、連線要求原則、登錄和記錄設定），以便在另一個 NPS 上匯入。 
 
-您可以使用其中一個下列工具來匯出 NPS 設定：
+使用下列其中一個工具來匯出 NPS 設定：
 
-- 在 Windows Server 2016、 Windows Server 2012 R2 和 Windows Server 2012 中，您可以使用 Netsh，或您可以使用 Windows PowerShell。
+- 在 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中，您可以使用 Netsh，也可以使用 Windows PowerShell。
 - 在 Windows Server 2008 R2 和 Windows Server 2008 中，使用 Netsh。
 
 > [!IMPORTANT]
-> 如果來源 NPS 資料庫的版本號碼高於目的地 NPS 資料庫的版本號碼，請不要使用此程序。 您可以檢視的顯示方式的 NPS 資料庫的版本號碼**netsh nps 顯示組態**命令。
+> 如果來源 NPS 資料庫的版本號碼高於目的地 NPS 資料庫的版本號碼，請勿使用此程式。 您可以從**netsh NPS show config**命令的顯示，來查看 NPS 資料庫的版本號碼。
 
-因為 NPS 設定不會加密在匯出的 XML 檔案中，透過網路傳送可能會造成安全性風險，因此在將 XML 檔案從來源伺服器移到目的地伺服器時採取預防措施。 比方說，將檔案加密的密碼保護的封存檔案，再移動檔案。 此外，將檔案儲存在安全的位置，以防止惡意使用者存取它。
+由於 NPS 設定不會在匯出的 XML 檔案中加密，因此透過網路傳送會造成安全性風險，因此，請在將 XML 檔案從來源伺服器移至目的地伺服器時採取預防措施。 例如，將檔案新增至已加密且受密碼保護的封存檔案，然後再移動檔案。 此外，將檔案儲存在安全的位置，以防止惡意使用者存取該檔案。
 
 > [!NOTE]
-> 如果來源 NPS 上設定 SQL Server 記錄，並不會將 SQL Server 記錄設定匯出至 XML 檔案。 匯入另一部 NPS 上的檔案之後，您必須手動設定 SQL Server 記錄。
+> 如果在來源 NPS 上設定 SQL Server 記錄，SQL Server 記錄設定不會匯出至 XML 檔案。 在您將檔案匯入另一個 NPS 之後，您必須手動設定 SQL Server 記錄。
 
-## <a name="export-and-import-the-nps-configuration-by-using-windows-powershell"></a>匯出和匯入使用 Windows PowerShell 的 NPS 設定
+## <a name="export-and-import-the-nps-configuration-by-using-windows-powershell"></a>使用 Windows PowerShell 匯出和匯入 NPS 設定
 
-如需 Windows Server 2012 和更新版本的作業系統版本，您可以匯出 NPS 設定使用 Windows PowerShell。
+針對 Windows Server 2012 和更新版本的作業系統版本，您可以使用 Windows PowerShell 匯出 NPS 設定。
 
-匯出 NPS 設定的命令語法如下所示。 
+用於匯出 NPS 設定的命令語法如下所示。 
 
     Export-NpsConfiguration -Path <filename>
 
-下表列出的參數**匯出 NpsConfiguration**在 Windows PowerShell cmdlet。 以粗體顯示的參數都是必要項目。
+下表列出 Windows PowerShell 中**import-npsconfiguration** Cmdlet 的參數。 需要粗體的參數。
 
 |參數|描述|
 |---------|-----------|
-|`Path`|指定您要匯出 NPS 設定 XML 檔案的位置與名稱。|
+|`Path`|指定您要匯出 NPS 設定之 XML 檔案的名稱和位置。|
 
 **系統管理認證**
 
-若要完成此程序，您必須是 Administrators 群組的成員。
+若要完成此程式，您必須是 Administrators 群組的成員。
 
 ### <a name="export-example"></a>匯出範例 
 
-在下列範例中，會匯出至 XML 檔案位於本機的磁碟機上的 NPS 設定。 若要執行此命令，以系統管理員身分執行 Windows PowerShell，在來源 NPS 上，輸入下列命令，，然後按 Enter。
+在下列範例中，NPS 設定會匯出至位於本機磁片磁碟機上的 XML 檔案。 若要執行此命令，請以系統管理員身分在來源 NPS 上執行 Windows PowerShell，輸入下列命令，然後按 Enter。
 
 `Export-NpsConfiguration –Path c:\config.xml` 
 
-如需詳細資訊，請參閱 <<c0> [ 匯出 NpsConfiguration](https://technet.microsoft.com/library/jj872749.aspx)。
+如需詳細資訊，請參閱[Export-import-npsconfiguration](https://technet.microsoft.com/library/jj872749.aspx)。
 
-您已匯出 NPS 設定之後，將 XML 檔案複製到目的地伺服器。
+匯出 NPS 設定之後，請將 XML 檔案複製到目的地伺服器。
 
-匯入目的地伺服器上的 NPS 設定的命令語法如下所示。
+在目的地伺服器上匯入 NPS 設定的命令語法如下所示。
 
     Import-NpsConfiguration [-Path] <String> [ <CommonParameters>]
 
 ### <a name="import-example"></a>匯入範例
 
-下列命令會從名為 C:\Npsconfig.xml 到 NPS 的檔案，匯入設定。 若要執行此命令，以系統管理員身分執行 Windows PowerShell，目的地 NPS 上，輸入下列命令，，然後按 Enter。
+下列命令會從名為 C:\Npsconfig.xml 的檔案將設定匯入到 NPS。 若要執行此命令，請以系統管理員身分在目的地 NPS 上執行 Windows PowerShell，輸入下列命令，然後按 Enter。
 
     PS C:\> Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 
-如需詳細資訊，請參閱 <<c0> [ 匯入 NpsConfiguration](https://technet.microsoft.com/library/jj872750.aspx)。
+如需詳細資訊，請參閱[import-npsconfiguration](https://technet.microsoft.com/library/jj872750.aspx)。
 
-## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>匯出和匯入使用 Netsh 的 NPS 設定
+## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>使用 Netsh 匯出和匯入 NPS 設定
 
-您可以使用網路殼層\(Netsh\)若要使用匯出 NPS 設定**netsh nps 匯出**命令。
+您可以使用網路命令介面 \(Netsh @ no__t-1，使用**netsh NPS export**命令匯出 NPS 設定。
 
-當**netsh nps 匯入**執行命令時，NPS 會自動重新整理更新的組態設定。 您不需要停止執行在目的地電腦上的 NPS **netsh nps 匯入**命令，不過如果 NPS 主控台或 NPS MMC 嵌入式管理單元開啟組態匯入期間，伺服器組態的變更不可見之前您重新整理檢視。 
+執行**netsh nps import**命令時，nps 會自動以更新的設定進行重新整理。 您不需要在目的地電腦上停止 NPS 來執行**netsh NPS import**命令，不過，如果 nps 主控台或 nps mmc 嵌入式管理單元在設定匯入期間已開啟，則在您重新整理此視圖之前，不會顯示伺服器設定的變更。 
 
 > [!NOTE]
-> 當您使用**netsh nps 匯出**命令時，您必須提供的命令參數**exportPSK**值**是**。 此參數與值時明確陳述您瞭解您要匯出 NPS 設定，，和匯出的 XML 檔案包含未加密共用的密碼的 RADIUS 用戶端和遠端 RADIUS 伺服器群組的成員。
+> 當您使用**netsh nps export**命令時，您必須提供**ExportPSK**值為**YES**的命令參數。 此參數和值明確指出您要匯出 NPS 設定，而匯出的 XML 檔案包含 RADIUS 用戶端和遠端 RADIUS 伺服器群組成員的未加密共用密碼。
 
 **系統管理認證**
 
-若要完成此程序，您必須是 Administrators 群組的成員。
+若要完成此程式，您必須是 Administrators 群組的成員。
 
-### <a name="to-copy-an-nps-configuration-to-another-nps-using-netsh-commands"></a>若要將 NPS 設定複製到另一部 NPS 使用 Netsh 命令
+### <a name="to-copy-an-nps-configuration-to-another-nps-using-netsh-commands"></a>使用 Netsh 命令將 NPS 設定複製到另一個 NPS
 
-1. 在來源 NPS 中，開啟**命令提示字元**，型別**netsh**，然後按 Enter 鍵。
+1. 在來源 NPS 上，開啟 [**命令提示**字元]，輸入**netsh**，然後按 enter。
 
-2. 在**netsh**提示中輸入**nps**，然後按 Enter 鍵。 
+2. 在**netsh**提示字元中，輸入**nps**，然後按 enter。 
 
-3. 在**netsh nps**提示中輸入**匯出的檔案名稱 =** 」*path\file.xml*" **exportPSK = YES**，其中*路徑*是您要將 NPS 設定檔案中，儲存的資料夾位置以及*檔案*是您想要儲存的 XML 檔案的名稱。 按 Enter 鍵。 
+3. 在**netsh nps**提示字元中，輸入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是您要儲存 NPS 設定檔的資料夾位置，而*file*是 xml 檔案的名稱，該檔案名為您想要儲存。 按 Enter 鍵。 
 
-這會儲存組態設定\(包括登錄設定\)XML 檔案中。 路徑可以是相對或絕對的或它可以是通用命名慣例\(UNC\)路徑。 您按下 Enter 之後，會出現訊息，指出是否已成功匯出至檔案。
+這會將0including 登錄設定 @ no__t-1 的 @no__t 設定儲存在 XML 檔案中。 路徑可以是相對或絕對路徑，也可以是通用命名慣例 \(UNC @ no__t-1 路徑。 按下 Enter 之後，會出現一則訊息，指出匯出至檔案是否成功。
 
 4. 將您建立的檔案複製到目的地 NPS。
 
-5. 在目的地 NPS 的命令提示字元，輸入**netsh nps 匯入的檔案名稱 =** "*path\file.xml*"，然後按 Enter 鍵。 出現訊息，指出是否已成功從 XML 檔案匯入。
+5. 在目的地 NPS 的命令提示字元中，輸入**netsh NPS import filename =** "*path\file.xml*"，然後按 enter。 此時會出現一則訊息，指出是否已成功從 XML 檔案匯入。
 
-如需 netsh 的詳細資訊，請參閱[網路殼層 (Netsh)](../netsh/netsh.md)。
+如需 netsh 的詳細資訊，請參閱[Network Shell （netsh）](../netsh/netsh.md)。
 

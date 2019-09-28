@@ -7,37 +7,37 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8c3db2873e1c7a0fa217ba37b9439cc38dfafc36
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 48436f8e98af965f2bc2b38d296c4a15924e4db1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190996"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407958"
 ---
 # <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>為 Active Directory 使用者提供宣告感知應用程式與服務的存取權
 
-當您是系統管理員可以在帳戶夥伴組織中的 Active Directory Federation Services \(AD FS\)部署，而且您有部署目標是提供單一\-號\-上\(SSO\)員工在公司網路裝載的資源的存取權：  
+當您是 Active Directory 同盟服務 @no__t 0AD FS @ no__t-1 部署中帳戶夥伴組織的系統管理員，而且您的部署目標是要提供單一 @ no__t-2sign @ no__t-3on \(SSO @ no__t-5 的員工存取權裝載資源的公司網路：  
   
--   登入公司網路中 Active Directory 樹系的員工可以使用 SSO 存取組織內周邊網路中的多個應用程式或服務。 這些應用程式和服務都受到 AD FS。  
+-   登入公司網路中 Active Directory 樹系的員工可以使用 SSO 存取組織內周邊網路中的多個應用程式或服務。 這些應用程式和服務會受到 AD FS 保護。  
   
-    例如，Fabrikam 可能想要具有同盟存取 Web 權限的公司網路員工\-Fabrikam 周邊網路中裝載的應用程式。  
+    例如，Fabrikam 可能會想要讓公司網路員工具有同盟存取權，以供 Fabrikam 的周邊網路中裝載的 Web @ no__t 0based 應用程式使用。  
   
--   遠端登入 Active Directory 網域的員工可以從 AD fs 的同盟存取貴組織中的同盟伺服器取得 AD FS 權杖\-保護 Web\-基礎應用程式或服務也位於您的組織。  
+-   登入 Active Directory 網域的遠端員工可以從您組織中的同盟伺服器取得 AD FS 權杖，以取得 AD FS @ no__t-0secured Web @ no__t-1based 應用程式或服務（也位於您的結構.  
   
 -   Active Directory 屬性存放區中的資訊可以填入員工的 AD FS 權杖。  
   
 此部署目標需要下列元件：  
   
--   **Active Directory 網域服務\(AD DS\):** AD DS 包含用來產生 AD FS 權杖的員工的使用者帳戶。 會將群組成員資格和屬性等資訊視為群組宣告和自訂宣告而填入 AD FS 權杖中。  
+-   **Active Directory Domain Services \(AD DS @ no__t-2：** AD DS 包含用來產生 AD FS 權杖的員工的使用者帳戶。 會將群組成員資格和屬性等資訊視為群組宣告和自訂宣告而填入 AD FS 權杖中。  
   
     > [!NOTE]  
-    > 您也可以使用輕量型目錄存取通訊協定\(LDAP\)或結構化查詢語言\(SQL\)包含適用於 AD FS 身分識別權杖的產生。  
+    > 您也可以使用輕量目錄存取通訊協定 \(LDAP @ no__t-1 或結構化查詢語言 (SQL) \(SQL @ no__t-3，以包含 AD FS 權杖產生的身分識別。  
   
--   **公司 DNS：** 這項實作的網域名稱系統\(DNS\)包含簡單的主機\(A\)資源記錄，讓內部網路用戶端可以找到帳戶同盟伺服器。 這項 DNS 實作也可以裝載公司網路所需的其他 DNS 記錄。 如需詳細資訊，請參閱 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   **公司 DNS：** 此網域名稱系統 \(DNS @ no__t-1 的執行包含簡單的主機 \(A @ no__t-3 資源記錄，讓內部網路用戶端可以找到帳戶同盟伺服器。 這項 DNS 實作也可以裝載公司網路所需的其他 DNS 記錄。 如需詳細資訊，請參閱 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
--   **帳戶夥伴同盟伺服器：** 此同盟伺服器加入帳戶夥伴樹系的網域。 它會驗證員工使用者帳戶，並產生 AD FS 權杖。 員工的用戶端電腦執行 Windows 整合式驗證，對這個同盟伺服器，來產生 AD FS 權杖。 如需詳細資訊，請參閱＜ [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)＞。  
+-   **帳戶夥伴同盟伺服器：** 此同盟伺服器已加入帳戶夥伴樹系中的網域。 它會驗證員工使用者帳戶，並產生 AD FS 權杖。 員工的用戶端電腦會對此同盟伺服器執行 Windows 整合式驗證，以產生 AD FS token。 如需詳細資訊，請參閱 <<c0> [ 檢閱帳戶夥伴中的同盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)。  
   
     帳戶夥伴同盟伺服器可以驗證下列使用者：  
   
@@ -45,13 +45,13 @@ ms.locfileid: "66190996"
   
     -   在這個樹系中具有使用者帳戶的員工  
   
-    -   在這個樹系信任樹系中的使用者帳戶的員工\(透過兩個\-Windows 信任的方式\)  
+    -   在此樹系信任的樹系中，具有使用者帳戶的員工 \(through 兩個 @ no__t-1way Windows trust @ no__t-2  
   
--   **員工：** 員工會存取 Web\-型服務\(透過應用程式\)或 Web\-架構的應用程式\(透過支援的網頁瀏覽器\)他或她會登入公司網路。 在公司網路員工的用戶端電腦會直接與驗證的同盟伺服器通訊。  
+-   **員工：** 員工存取 Web @ no__t-0based 服務 \(through 應用程式 @ no__t-2 或 Web @ no__t-3based 應用程式 \(through 支援的網頁瀏覽器 @ no__t-5，同時登入公司網路。 公司網路上員工的用戶端電腦會直接與同盟伺服器通訊，以進行驗證。  
   
-檢閱連結主題中的資訊之後，您可以開始部署此目標中的步驟[檢查清單：實作同盟的網頁 SSO 設計](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)。  
+在查閱連結主題中的資訊之後，您可以遵循 [Checklist 中的步驟，開始部署此目標：執行同盟網頁 SSO 設計 @ no__t-0。  
   
-下圖顯示每個此 AD FS 部署目標所需的元件。  
+下圖顯示此 AD FS 部署目標的每個必要元件。  
   
 ![存取您的宣告](media/31394ea8-fecb-4372-ac3f-cc3cf566ffc9.gif)  
   

@@ -1,6 +1,6 @@
 ---
 title: 搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾 - 步驟 1 設定 AD FS
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: 4f4119e893b215bd9f6d713bc5a17218b751c3d3
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 0920d091d6e8b5f3db9bf945a966fdd577918179
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812689"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365793"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 1，設定 AD FS
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟1，設定 AD FS
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明使用 Active Directory 同盟服務 (AD FS) 和 Web 應用程式 Proxy 部署工作資料夾的第一個步驟。 您可以在這些主題中找到這個程序的其他步驟︰  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：概觀](deploy-work-folders-adfs-overview.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：總覽 @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 2 中，AD FS 設定後工作](deploy-work-folders-adfs-step2.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟2，AD FS 設定後的工作 @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 3，工作資料夾設定](deploy-work-folders-adfs-step3.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟3，設定工作資料夾 @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 4： 設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟4，設定 Web 應用程式 Proxy @ no__t-0  
   
--   [部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 5 中設定用戶端](deploy-work-folders-adfs-step5.md)  
+-   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟5：設定用戶端 @ no__t-0  
   
 > [!NOTE]
->   涵蓋在本節中的指示是針對 Windows Server 2019 或 Windows Server 2016 的環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx)。
+>   本節涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx)。
 
 若要設定 AD FS 以搭配使用工作資料夾，請使用下列程序。  
   
@@ -104,7 +104,7 @@ AD FS 憑證必須是具有下列值的 SAN 憑證︰
 Workplace Join 需要 enterpriseregistration SAN。  
   
 ### <a name="set-the-server-ip-address"></a>設定伺服器 IP 位址  
-將伺服器 IP 位址變更為靜態 IP 位址。 測試範例中，使用 IP 類別 A，也就是 192.168.0.160 / 子網路遮罩：255.255.0.0/預設閘道：192.168.0.1/慣用的 DNS:192.168.0.150 (您的網域控制站的 IP 位址\)。  
+將伺服器 IP 位址變更為靜態 IP 位址。 針對測試範例，使用 IP 類別 A，這是 192.168.0.160/子網路遮罩：255.255.0.0/預設閘道：192.168.0.1/慣用 DNS：192.168.0.150 （您的網域控制站 @ no__t-0 的 IP 位址。  
   
 ## <a name="install-the-ad-fs-role-service"></a>安裝 AD FS 角色服務  
 若要安裝，請依照下列步驟執行：  
@@ -113,7 +113,7 @@ Workplace Join 需要 enterpriseregistration SAN。
   
 2.  在 **\[伺服器角色\]** 頁面上，選取 **\[Active Directory 同盟服務\]** ，然後按 **\[下一步\]** 。  
   
-3.  在 **\[Active Directory 同盟服務 (AD FS)** \] 頁面上，您會看到一則訊息表示 Web 應用程式 Proxy 角色無法安裝在與 AD FS 同一部電腦上。 按一下 [下一步]  。  
+3.  在 **\[Active Directory 同盟服務 (AD FS)** \] 頁面上，您會看到一則訊息表示 Web 應用程式 Proxy 角色無法安裝在與 AD FS 同一部電腦上。 按一下 [下一步]。  
   
 4.  在確認頁面上，按一下 **\[安裝\]** 。  
   
@@ -138,16 +138,16 @@ Add-WindowsFeature ADFS-Federation –IncludeManagementTools
   
 4.  在 **\[指定服務內容\]** 頁面上，輸入 SSL 憑證的主體名稱，以用於 AD FS 通訊。 在測驗範例中，這是 **blueadfs.contoso.com**。  
   
-5.  輸入同盟服務名稱。 在測驗範例中，這是 **blueadfs.contoso.com**。 按一下 [下一步]  。  
+5.  輸入同盟服務名稱。 在測驗範例中，這是 **blueadfs.contoso.com**。 按一下 [下一步]。  
   
     > [!NOTE]  
     > 同盟服務名稱不得使用環境中現有伺服器的名稱。 如果您使用現有伺服器的名稱，AD FS 安裝就會失敗且必須重新開始。  
   
-6.  在 **\[指定服務帳戶\]** 頁面上，輸入您想要用於受管理服務帳戶的名稱。 對於測試範例，選取 **\[建立群組受管理的服務帳戶\]** ，並在 **\[帳戶名稱\]** 中輸入 **ADFSService**。 按一下 [下一步]  。  
+6.  在 **\[指定服務帳戶\]** 頁面上，輸入您想要用於受管理服務帳戶的名稱。 對於測試範例，選取 **\[建立群組受管理的服務帳戶\]** ，並在 **\[帳戶名稱\]** 中輸入 **ADFSService**。 按一下 [下一步]。  
   
 7.  在 **\[指定設定資料庫\]** 頁面上，選取 **\[在此伺服器上使用 Windows 內部資料庫來建立資料庫\]** ，然後按 **\[下一步\]** 。  
   
-8.  **\[檢閱選項\]** 頁面會顯示您所選擇的選項的概觀。 按一下 [下一步]  。  
+8.  **\[檢閱選項\]** 頁面會顯示您所選擇的選項的概觀。 按一下 [下一步]。  
   
 9. **\[先決條件檢查\]** 頁面會指出所有必要條件是否成功通過檢查。 如果沒有任何問題，請按一下 **\[設定\]** 。  
   
@@ -182,9 +182,9 @@ $thumbprint = $cert.Thumbprint
 Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayName "Contoso Corporation" –FederationServiceName blueadfs.contoso.com -GroupServiceAccountIdentifier contoso\ADFSService$ -OverwriteConfiguration -ErrorAction Stop  
 ```  
   
-後續步驟：[部署搭配 AD FS 與 Web 應用程式 Proxy 的工作資料夾：步驟 2 中，AD FS 設定後工作](deploy-work-folders-adfs-step2.md)  
+後續步驟：@no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟2，AD FS 設定後的工作 @ no__t-0  
   
 ## <a name="see-also"></a>另請參閱  
-[工作資料夾概觀](Work-Folders-Overview.md)  
+[工作資料夾總覽](Work-Folders-Overview.md)  
   
 

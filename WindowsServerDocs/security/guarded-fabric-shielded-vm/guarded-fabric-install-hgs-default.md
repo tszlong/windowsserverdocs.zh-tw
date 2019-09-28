@@ -1,26 +1,26 @@
 ---
-title: 安裝新樹系中的 HGS
+title: 在新樹系中安裝 HGS
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 84f88d96f1e16767dec3b21b34aa226e544afaac
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6dfbe24fb4d9011b48f366d7e5df92fdb80685d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447401"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386586"
 ---
-# <a name="install-hgs-in-a-new-forest"></a>安裝新樹系中的 HGS 
+# <a name="install-hgs-in-a-new-forest"></a>在新樹系中安裝 HGS 
 
->適用於：Windows Server 2019，Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 ## <a name="add-the-hgs-server-role"></a>新增 HGS 伺服器角色
 
-在新增 HGS 伺服器角色，並安裝 HGS 已提升權限的 PowerShell 工作階段中執行下列命令。
+在提高許可權的 PowerShell 會話中執行下列命令，以新增 HGS 伺服器角色並安裝 HGS。
 
 [!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)] 
 
@@ -30,9 +30,9 @@ ms.locfileid: "66447401"
 
 ## <a name="next-steps"></a>後續步驟
 
-- 若要設定 TPM 型證明的下一個步驟，請參閱[初始化新的專用樹系 （預設值） 中使用 TPM 模式 HGS 叢集](guarded-fabric-initialize-hgs-tpm-mode-default.md)。
-- 設定主機金鑰證明的下一個步驟，請參閱 <<c0> [ 初始化新的專用樹系 （預設值） 中使用索引鍵模式 HGS 叢集](guarded-fabric-initialize-hgs-key-mode-default.md)。
-- 下一個步驟來設定 以系統管理員為基礎的證明，（在 Windows Server 2019 中已被取代），請參閱[初始化新的專用樹系 （預設值） 中使用 AD 模式 HGS 叢集](guarded-fabric-initialize-hgs-ad-mode-default.md)。
+- 如需設定 TPM 型證明的後續步驟，請參閱[使用新的專用樹系中的 tpm 模式初始化 HGS 叢集（預設值）](guarded-fabric-initialize-hgs-tpm-mode-default.md)。
+- 如需設定主機金鑰證明的下一個步驟，請參閱[使用新的專用樹系中的金鑰模式初始化 HGS 叢集（預設值）](guarded-fabric-initialize-hgs-key-mode-default.md)。
+- 如需設定系統管理員架構證明（在 Windows Server 2019 中被取代）的後續步驟，請參閱[在新的專用樹系中使用 AD 模式初始化 HGS 叢集（預設值）](guarded-fabric-initialize-hgs-ad-mode-default.md)。
 
 ## <a name="next-step"></a>後續步驟
 

@@ -1,18 +1,18 @@
 ---
 title: 在 SQL Server 中設定 Always Encrypted 的主機守護者服務
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 11/03/2018
-ms.openlocfilehash: 74146e854f4183970d2b92bb26babbd1b31f0bc2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5d1396f609a425adcd87a41d3469f3aa55774851
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870349"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402255"
 ---
 # <a name="setting-up-the-host-guardian-service-for-always-encrypted-with-secure-enclaves-in-sql-server"></a>在 SQL Server 中使用安全記憶體保護區設定 Always Encrypted 的主機守護者服務 
 

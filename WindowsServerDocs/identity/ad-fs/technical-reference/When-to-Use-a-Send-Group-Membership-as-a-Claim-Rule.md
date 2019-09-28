@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 546507254f796e6a2fbe71e3ba30a7597ea51295
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 82dd9cec2c75a796eb0def508082508a5d0dbf5f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869267"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385428"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>使用「以宣告方式傳送群組成員資格」規則的時機
 當您想要只針對屬於\(指定\)之 Active Directory 安全性群組成員的使用者發出新的傳出宣告值時，可以在 Active Directory 同盟服務 AD FS 中使用此規則。 使用這項規則時，您只需針對您指定且符合規則邏輯的群組發出單一宣告，如下表所述。  

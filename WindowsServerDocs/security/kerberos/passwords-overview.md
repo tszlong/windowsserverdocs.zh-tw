@@ -2,7 +2,7 @@
 title: 密碼概觀
 description: Windows Server 安全性
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-kerberos
@@ -13,48 +13,48 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 6c1b8d56b5c0da738e7dae5c0072be81040f90d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 27d456dd274b917233f0484f055b679dc8c73214
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403504"
 ---
 # <a name="passwords-overview"></a>密碼概觀
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題適用於 IT 專業人員說明 Windows 作業系統和文件和討論有關使用密碼認證管理策略中的連結中所使用的密碼。
+本主題適用于 IT 專業人員，說明 Windows 作業系統中使用的密碼，以及在認證管理原則中使用密碼的相關檔和討論的連結。
 
 ## <a name="BKMK_OVER"></a>功能描述
-作業系統和應用程式目前架構的轉變密碼，而且即使您使用智慧卡或生物特徵辨識系統，所有帳戶仍都有密碼，並仍可以使用在某些情況下。 部分帳戶，值得注意的是用來執行服務的帳戶智慧卡和生物特徵辨識的語彙基元，甚至無法使用，並因此必須使用密碼來進行驗證。 Windows 會保護使用加密編譯雜湊的密碼。
+現今的作業系統和應用程式都是以密碼為架構，即使您使用智慧卡或生物特徵辨識系統，所有帳戶仍有密碼，而且在某些情況下仍可使用。 有些帳戶，特別是用來執行服務的帳戶，甚至無法使用智慧卡和生物識別權杖，因此必須使用密碼來進行驗證。 Windows 會使用密碼編譯雜湊來保護密碼。
 
-如需有關 Windows 密碼的詳細資訊，請參閱[密碼技術概觀](https://technet.microsoft.com/library/hh994558(WS.10).aspx)。
+如需 Windows 密碼的詳細資訊，請參閱[密碼技術總覽](https://technet.microsoft.com/library/hh994558(WS.10).aspx)。
 
-## <a name="BKMK_APP"></a>實際的應用程式
-在 Windows 和許多其他作業系統，來驗證使用者的身分識別的最常見方法是使用複雜密碼。 保護您的網路環境需要強式密碼可供所有使用者。 這有助於防止惡意使用者猜測弱式密碼，無論是透過手動方法，或藉由使用工具，來取得遭盜用的使用者帳戶的認證的威脅。 這特別適用於系統管理帳戶。 當您定期變更複雜密碼時，它會降低危害該帳戶的密碼攻擊的可能性。
+## <a name="BKMK_APP"></a>實際應用
+在 Windows 和許多其他作業系統中，驗證使用者身分識別最常見的方法是使用密碼複雜密碼或密碼。 保護您的網路環境需要所有使用者都必須使用強式密碼。 這有助於避免惡意使用者猜測弱式密碼的威脅，不論是透過手動方法或使用工具，取得遭到盜用的使用者帳戶的認證。 尤其是系統管理帳戶的情況。 當您定期變更複雜密碼時，它會降低密碼攻擊危害該帳戶的可能性。
 
-## <a name="BKMK_NEW"></a>新功能和變更
-在 Windows Server 2012 和 Windows 8，圖片密碼是新功能。 圖片密碼是使用者的所選映像，搭配一系列的筆勢的組合。 圖片密碼功能已停用網域\-加入的電腦。 圖片密碼的詳細資訊的連結所述[另請參閱](#BKMK_LINKS)如下。
+## <a name="BKMK_NEW"></a>新的和已變更的功能
+在 Windows Server 2012 和 Windows 8 中，圖片密碼是新的。 圖片密碼是使用者選取影像與一系列手勢結合的組合。 已停用網域 @ no__t-0joined 電腦上的圖片密碼功能。 如需圖片密碼的詳細資訊連結，[請參閱](#BKMK_LINKS)下文。
 
-已在 Windows Server 2012 和 Windows 8 中的密碼功能不會變更。 已不新增任何新的群組原則設定。 不過，改進和增強功能已在認證\(和密碼\)管理，例如使用圖片密碼、 認證保險箱和具有 Microsoft 帳戶登入 Windows 8，先前稱為 Windows Live ID.
+Windows Server 2012 和 Windows 8 中的密碼功能沒有任何變更。 尚未新增任何新的群組原則設定。 不過，認證 @no__t 0and 密碼 @ no__t-1 管理（例如使用圖片密碼、認證保險箱，以及使用 Microsoft 帳戶（之前稱為 Windows Live ID）登入 Windows 8 的改良功能和增強功能。
 
-## <a name="BKMK_DEP"></a>已被取代的功能
-沒有密碼的功能已被取代，Windows Server 2012 和 Windows 8 中。
+## <a name="BKMK_DEP"></a>已淘汰的功能
+Windows Server 2012 和 Windows 8 中沒有任何密碼功能已被取代。
 
 ## <a name="BKMK_SOFT"></a>軟體需求
-在企業環境中，通常會與 Active Directory 網域服務管理密碼。 也可以使用本機安全性設定]、 [帳戶原則，密碼原則中設定本機電腦上管理密碼。
+在企業環境中，通常會使用 Active Directory Domain Services 來管理密碼。 您也可以使用 [本機安全性設定]、[帳戶原則]、[密碼原則] 中的設定，在本機電腦上管理密碼。
 
 ## <a name="BKMK_LINKS"></a>另請參閱
-下表列出密碼功能的其他資源的技術和認證管理。
+下表列出密碼功能、技術和認證管理的其他資源。
 
 |內容類型|參考|
 |--------|-------|
-|**案例文件**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
+|**案例檔**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**操作**|[Active Directory 使用者和電腦](https://technet.microsoft.com/library/cc754217.aspx)|
-|**疑難排解**|[了解您的密碼到期時\-Active Directory PowerShell 部落格](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
-|**安全性**| Windows Server 2008 R2 和 Windows 7[威脅與對策指南：帳戶原則](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx)<br /><br />指引[變更，並建立強式密碼](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
-|**工具及設定**|[Windows 和 Microsoft 下載中心上的 Windows Server 的群組原則設定參考](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**社群資源**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[在 Windows 8 與 Windows Live ID 登入](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[登入的圖片密碼](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[最佳化圖片密碼安全性](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
+|**疑難排解**|[瞭解您的密碼何時過期 \- Active Directory PowerShell Blog](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
+|**安全性**| Windows Server 2008 R2 和 Windows 7 @no__t 0Threats 和對策指南：帳戶原則 @ no__t-0<br /><br />[變更和建立強式密碼的](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)指引|
+|**工具及設定**|[Microsoft 下載中心上的 Windows 和 Windows Server 群組原則設定參考](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
+|**社群資源**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[使用 Windows Live ID 登入 Windows 8](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[使用圖片密碼登入](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[優化圖片密碼安全性](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 
 

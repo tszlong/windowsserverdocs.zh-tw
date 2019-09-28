@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c1f3a7f7004b573fece71cdaf2f43661c13ad496
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 9c04db3196d1e806e50af9164b3c8bcdfb19b079
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869627"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406886"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>建立解決方案延伸模組的連接提供者
 
@@ -23,7 +23,7 @@ ms.locfileid: "70869627"
 
 根據預設，Windows 管理中心會隨附下列連接提供者：
 
-* 伺服器
+* Server
 * Windows 用戶端
 * 容錯移轉叢集
 * HCI 叢集

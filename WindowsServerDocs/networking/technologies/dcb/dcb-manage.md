@@ -1,19 +1,19 @@
 ---
 title: 管理資料中心橋接（DCB）
 description: 本主題提供有關如何在 Windows Server 2016 中使用 Windows PowerShell 命令來管理資料中心橋接的指示。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fd6e8e5dd0bb4103011269473c3e1091739c775e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d635f96516040fcb30504f752c8194b0323c63f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869804"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405774"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理資料中心橋接（DCB）
 
@@ -109,7 +109,7 @@ DCB 設定包括下列步驟。
     SMB  ETS   30   4Global
       
 
-根據預設，所有 802.1 p 值都會對應至預設流量類別，其具有 100% 的實體連結頻寬。 **Get-netqostrafficclass**命令會建立新的流量類別，以對應標記為 802.1 p 優先順序值4的任何封包。 會 ETS 傳輸選取\(演算法，並具有 30% 的頻寬。\)
+根據預設，所有 802.1 p 值都會對應至預設流量類別，其具有 100% 的實體連結頻寬。 **Get-netqostrafficclass**命令會建立新的流量類別，以對應標記為 802.1 p 優先順序值4的任何封包。 傳輸選取演算法 \(TSA @ no__t-1 是 ETS，而且有 30% 的頻寬。
 
 您最多可以建立7個新的流量類別。 包括預設的流量類別，系統中最多可以有8個流量類別。 不過，具備 DCB 功能的網路介面卡可能不支援硬體中的許多流量類別。 如果您建立的流量類別比可容納在網路介面卡上的更多，而且您在該網路介面卡上啟用 DCB，則迷你埠驅動程式會向作業系統報告錯誤。 錯誤會記錄在事件記錄檔中。
 

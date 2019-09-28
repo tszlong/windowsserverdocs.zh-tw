@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d7ed8f7976116ab245fa730a5a050e7ec46cebea
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869486"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385599"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID Connect/OAuth 流程和應用程式案例
 適用于 AD FS 2016 和更新版本
@@ -63,13 +63,13 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |參數|必要/選用|描述| 
 |-----|-----|-----|
 |client_id|必要|AD FS 指派給應用程式的應用程式（用戶端）識別碼。| 
-|response_type|必要|必須包含 `id_token`  OpenID connect 登入。 它也可能包含 response_type `token`。 在這裡使用權杖，可讓您的應用程式立即從授權端點接收存取權杖，而不需要向權杖端點提出第二個要求。| 
+|response_type|必要|必須包含 `id_token`  OpenID connect 登入。 它也可能包含 response_type @ no__t-0。 在這裡使用權杖，可讓您的應用程式立即從授權端點接收存取權杖，而不需要向權杖端點提出第二個要求。| 
 |redirect_uri|必要|應用程式的 redirect_uri，其中驗證回應可以由您的應用程式傳送及接收。 它必須完全符合您在 AD FS 中設定的其中一個 redirect_uris。| 
 |nonce|必要|包含在要求中的值（由應用程式產生），將會以宣告的形式包含在產生的 id_token 中。 然後, 應用程式可以驗證此值, 以減輕權杖重新執行攻擊。 此值通常是隨機的唯一字串，可以用來識別要求的來源。 只有在要求 id_token 時才需要。|
 |scope|選用|以空格分隔的範圍清單。 針對 OpenID Connect，它必須包含範圍 `openid`。|
 |resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。| 
 |response_mode|選用| 指定應該用來將產生的權杖傳回給應用程式的方法。 預設值為 `fragment`。| 
-|狀態|選用|包含在要求中的值，也會在權杖回應中傳回。 它可以是您想要的任何內容的字串。 隨機產生的唯一值通常用於防止跨網站偽造要求攻擊。 此狀態也可用來在驗證要求發生之前，將使用者狀態的相關資訊編碼，例如他們所在的頁面或觀點。| 
+|state|選用|包含在要求中的值，也會在權杖回應中傳回。 它可以是您想要的任何內容的字串。 隨機產生的唯一值通常用於防止跨網站偽造要求攻擊。 此狀態也可用來在驗證要求發生之前，將使用者狀態的相關資訊編碼，例如他們所在的頁面或觀點。| 
 |prompt|選用|表示所需的使用者互動類型。 目前唯一有效的值是 login 和 none。</br>- `prompt=login` 會強制使用者在該要求上輸入其認證，否定單一登入。 </br>- `prompt=none` 相反-它會確保使用者不會看到任何互動式提示。 如果要求無法透過單一登入以無訊息方式完成，AD FS 將會傳回 interaction_required 錯誤。| 
 |login_hint|選用|如果您事先知道他們的使用者名稱，可以使用來預先填入使用者登入頁面的使用者名稱/電子郵件地址欄位。 通常應用程式會在重新驗證期間使用此參數，已經從使用 `upn`   `id_token`宣告的先前登入解壓縮使用者名稱。| 
 |domain_hint|選用|如果包含，它會略過使用者在登入頁面上經歷的網域型探索程式，進而提高使用者體驗的效率。| 
@@ -93,14 +93,14 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZEstZnl0aEV...
 ```
 
 
-|參數|說明| 
+|參數|描述| 
 |-----|-----|
-|access_token|如果 response_type 包含 `token`，則包含在內。|
-|token_type|如果 response_type 包含 `token`，則包含在內。 一律會是持有人。| 
-|expires_in| 如果 response_type 包含 `token`，則包含在內。 指出權杖有效的秒數，以供快取之用。| 
+|access_token|如果 response_type 包含 @ no__t-0，則包含在內。|
+|token_type|如果 response_type 包含 @ no__t-0，則包含在內。 一律會是持有人。| 
+|expires_in| 如果 response_type 包含 @ no__t-0，則包含在內。 指出權杖有效的秒數，以供快取之用。| 
 |scope| 表示 access_token 將會有效的範圍。|  
-|id_token|如果 response_type 包含 `id_token`，則包含在內。 帶正負號的 JSON Web 權杖（JWT）。 應用程式可以將此權杖的區段解碼，以要求已登入使用者的相關資訊。 應用程式可以快取並顯示值，但不應依賴它們來取得任何授權或安全性界限。| 
-|狀態|如果要求中包含狀態參數, 則回應中應該會出現相同的值。 應用程式應確認要求和回應中的狀態值完全相同。|
+|id_token|如果 response_type 包含 @ no__t-0，則包含在內。 帶正負號的 JSON Web 權杖（JWT）。 應用程式可以將此權杖的區段解碼，以要求已登入使用者的相關資訊。 應用程式可以快取並顯示值，但不應依賴它們來取得任何授權或安全性界限。| 
+|state|如果要求中包含狀態參數, 則回應中應該會出現相同的值。 應用程式應確認要求和回應中的狀態值完全相同。|
 
 ### <a name="refresh-tokens"></a>重新整理權杖 
 隱含授與不提供重新整理權杖。  `id_tokens` 和 `access_tokens`會在短時間後過期，因此您的應用程式必須準備好定期重新整理這些權杖。 若要重新整理任一類型的權杖，您可以使用 `prompt=none`  參數來執行相同的隱藏 iframe 要求，以控制身分識別平臺的行為。 如果您想要接收`new id_token`，請務必使用。 `response_type=id_token` 
@@ -139,12 +139,12 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |redirect_uri|必要|應用`redirect_uri`程式的，您的應用程式可以在其中傳送及接收驗證回應。 其必須完全符合您在用戶端的 AD FS 中註冊的其中一個 redirect_uris。|  
 |resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。| 
 |scope|選用|以空格分隔的範圍清單。|
-|response_mode|選用|指定應該用來將產生的權杖傳回給應用程式的方法。 可以是下列其中一項： </br>-query </br>-片段 </br>- form_post</br>`query` 提供程式碼做為重新導向 URI 的查詢字串參數。 如果您要要求程式碼，您可以使用 query、片段或 form_post。 `form_post`執行POST，其中包含您重新導向 URI 的程式碼。|
-|狀態|選用|包含在要求中的值，也會在權杖回應中傳回。 它可以是您想要的任何內容的字串。 隨機產生的唯一值通常用於防止跨網站偽造要求攻擊。 此值也可以在驗證要求發生之前，在應用程式中將使用者狀態的相關資訊編碼，例如他們所在的頁面或觀點。|
+|response_mode|選用|指定應該用來將產生的權杖傳回給應用程式的方法。 可以是下列其中一項： </br>-query </br>-片段 </br>- form_post</br>`query` 提供程式碼做為重新導向 URI 的查詢字串參數。 如果您要求程式碼，您可以使用 query、片段或 form_post。  `form_post` @ no__t-1executes 一個 POST，其中包含您重新導向 URI 的程式碼。|
+|state|選用|包含在要求中的值，也會在權杖回應中傳回。 它可以是您想要的任何內容的字串。 隨機產生的唯一值通常用於防止跨網站偽造要求攻擊。 此值也可以在驗證要求發生之前，在應用程式中將使用者狀態的相關資訊編碼，例如他們所在的頁面或觀點。|
 |prompt|選用|表示所需的使用者互動類型。 目前唯一有效的值是 login 和 none。</br>- `prompt=login` 會強制使用者在該要求上輸入其認證，否定單一登入。 </br>- `prompt=none` 相反-它會確保使用者不會看到任何互動式提示。 如果要求無法透過單一登入以無訊息方式完成，AD FS 將會傳回 interaction_required 錯誤。|
 |login_hint|選用|如果您事先知道他們的使用者名稱，可以使用來預先填入使用者登入頁面的使用者名稱/電子郵件地址欄位。 通常應用程式會在重新驗證期間使用此參數，已經從使用 `upn` `id_token`宣告的先前登入解壓縮使用者名稱。|
 |domain_hint|選用|如果包含，它會略過使用者在登入頁面上經歷的網域型探索程式，進而提高使用者體驗的效率。|
-|code_challenge_method|選用|用來將 code_challenge 參數的 code_verifier 編碼的方法。 可為下列其中一個值： </br>-純文字 </br>-S256 </br>如果已排除，則如果 `code_challenge`  包含，則會假設 code_challenge 為純文字。 AD FS 同時支援純文字和 S256。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
+|code_challenge_method|選用|用來將 code_challenge 參數的 code_verifier 編碼的方法。 可為下列其中一個值： </br>-純文字 </br>-S256 </br>如果已排除，則如果包含 @ no__t-0 @ no__t-sp1 是，則會假設 code_challenge 為純文字。 AD FS 同時支援純文字和 S256。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
 |code_challenge|選用| 用來透過來自 native client 之 Code Exchange （PKCE）的證明金鑰來保護授權碼授與。  `code_challenge_method`如果 包含，則為必要。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)|
 
 此時，系統會要求使用者輸入其認證並完成驗證。 一旦使用者通過驗證，AD FS 就會使用 `redirect_uri`  參數 `response_mode`中指定的方法，將回應傳回至指定的應用程式。  
@@ -160,10 +160,10 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 ```
 
 
-|參數|說明|
+|參數|描述|
 |-----|-----|
 |code|應用`authorization_code`程式所要求的。 應用程式可以使用授權碼來要求目標資源的存取權杖。 Authorization_codes 的存留期很短，通常會在大約10分鐘後到期。|
-|狀態|如果要求中包含參數,回應中就會出現相同的值。`state` 應用程式應確認要求和回應中的狀態值完全相同。|
+|state|如果要求中包含參數,回應中就會出現相同的值。`state` 應用程式應確認要求和回應中的狀態值完全相同。|
 
 ### <a name="request-an-access-token"></a>要求存取權杖 
  
@@ -183,14 +183,14 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &client_secret=JqQX2PNo9bpM0uEihUPzyrh    // NOTE: Only required for confidential clients (web apps)  
 ```
 
-|參數|必要條件/選擇性|說明|
+|參數|必要條件/選擇性|描述|
 |-----|-----|-----| 
 |client_id|必要|AD FS 指派給應用程式的應用程式（用戶端）識別碼。| 
 |grant_type|必要|必須是 `authorization_code`  授權碼流程的。| 
 |code|必要|您`authorization_code`在流程的第一個階段中取得的。| 
 |redirect_uri|必要|用來`redirect_uri`取得的`authorization_code`相同值。| 
 |client_secret|web 應用程式的必要|您在 AD FS 應用程式註冊期間所建立的應用程式密碼。 您不應該在原生應用程式中使用應用程式密碼，因為 client_secrets 無法可靠地儲存在裝置上。 這是 web 應用程式和 web Api 的必要功能，能夠將 client_secret 安全地儲存在伺服器端。 用戶端密碼必須在傳送之前先進行 URL 編碼。 這些應用程式也可以簽署 JWT 並將其新增為 client_assertion 參數，以使用以金鑰為基礎的驗證。| 
-|code_verifier|選用|用來`code_verifier`取得 authorization_code 的相同。 如果在授權碼授與要求中使用 PKCE，則為必要項。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。</br>注意–適用于 AD FS 2019 和更新版本| 
+|code_verifier|選用|用來取得 authorization_code 的相同 `code_verifier`。 如果在授權碼授與要求中使用 PKCE，則為必要項。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。</br>注意–適用于 AD FS 2019 和更新版本| 
 
 ### <a name="successful-response"></a>成功的回應 
  
@@ -227,7 +227,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
 
 ### <a name="refresh-the-access-token"></a>重新整理存取權杖 
  
-Access_tokens 的存留期很短，而且您必須在過期後重新整理，才能繼續存取資源。 若要這麼做，您可以向 `/token`  端點提交另一個 POST 要求，這次提供 refresh_token 而不是程式碼。 重新整理權杖對您的用戶端已收到存取權杖的擁有權限都是有效的。 
+Access_tokens 的存留期很短，而且您必須在過期後重新整理，才能繼續存取資源。 若要這麼做，您可以向 @ no__t-0 @ no__t-1endpoint 提交另一個 POST 要求，這次提供 refresh_token，而不是程式碼。 重新整理權杖對您的用戶端已收到存取權杖的擁有權限都是有效的。 
  
 重新整理權杖沒有指定的存留期。 一般而言，重新整理權杖的存留期相對較長。 不過，在某些情況下，重新整理權杖會過期、遭到撤銷，或缺少所需動作的足夠許可權。 您的應用程式必須預期並正確處理權杖發行端點所傳回的錯誤。  
  
@@ -291,7 +291,7 @@ OAuth 2.0 代理者流程（OBO）提供應用程式叫用服務/Web API 的使�
 ![代理者流程](media/adfs-scenarios-for-developers/obo.png)
 
   1. 用戶端應用程式使用權杖 A 向 API A 提出要求。  
-  注意:在 AD FS 中設定 OBO 流程時，請`user_impersonation`確定已選取範圍，且`user_impersonation`要求中的用戶端要求範圍。 
+  注意：在 AD FS 中設定 OBO 流程時，請`user_impersonation`確定已選取範圍，且`user_impersonation`要求中的用戶端要求範圍。 
   2. API A 會向 AD FS 權杖發行端點進行驗證，並要求權杖以存取 API B。注意：在 AD FS 中設定此流程時，請確定 API A 也已註冊為伺服器應用程式，而 clientID 的值與 API A 中的資源識別碼相同。如需詳細資訊，請參閱這裡的範例新增連結。  
   3. AD FS 權杖發行端點會使用權杖 A 來驗證 API A 的認證，併發出 API B （token B）的存取權杖。 
   4. 權杖 B 在對 API B 的要求的授權標頭中設定。 
@@ -380,7 +380,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 成功回應是 JSON OAuth 2.0 回應，具有下列參數。 
 
 
-|參數|說明|
+|參數|描述|
 |-----|-----| 
 |token_type|指出 token 類型的值。 唯一 AD FS 支援的類型為持有人。 | 
 |scope|在權杖中授與的存取範圍。| 
@@ -575,7 +575,7 @@ scope=openid
 ```
 
 
-|參數|條件|說明|
+|參數|條件|描述|
 |-----|-----|-----| 
 |client_id|必要|AD FS 指派給應用程式的應用程式（用戶端）識別碼。| 
 |scope|選用|以空格分隔的範圍清單。|
@@ -617,7 +617,7 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8
 成功的權杖回應看起來會像這樣:  
 
 
-|參數|說明|
+|參數|描述|
 |-----|-----| 
 |token_type|一律為「持有人」。| 
 |scope|如果傳回存取權杖, 這會列出存取權杖有效的範圍。| 

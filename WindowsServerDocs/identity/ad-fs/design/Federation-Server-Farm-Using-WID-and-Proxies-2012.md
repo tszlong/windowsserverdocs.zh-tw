@@ -7,46 +7,46 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 19e73e43a863ec60fbc9da09b24173220bb331ed
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 60072037aea4ecd81376e1334f3a89b7bb2ff851
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191363"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408084"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>使用 WID 和 Proxy 的同盟伺服器陣列
 
-Active Directory Federation Services 使用此部署拓撲\(AD FS\)等同於同盟伺服器陣列含有 Windows Internal Database \(WID\)拓撲，但它將同盟伺服器 proxy若要支援外部使用者的周邊網路。 同盟伺服器 proxy 重新導向至同盟伺服器陣列均來自公司網路外部的用戶端驗證要求。  
+此 Active Directory 同盟服務的部署拓撲 \(AD FS @ no__t-1 等同于具有 Windows 內部資料庫 \(WID @ no__t-3 拓撲的同盟伺服器陣列，但它會將同盟伺服器 proxy 加入至周邊網路支援外部使用者。 同盟伺服器 proxy 會將來自公司網路外部的用戶端驗證要求重新導向至同盟伺服器陣列。  
   
 ## <a name="deployment-considerations"></a>部署考量  
-本章節會描述相關的適用對象、 權益和限制，這種部署拓撲相關聯的各種考量。  
+本節說明與此部署拓撲相關聯的目標物件、優點和限制的各種考慮。  
   
 ### <a name="who-should-use-this-topology"></a>誰應該使用此拓撲？  
   
--   需要其內部使用者以及外部使用者所提供的 100 或更少設定的信任關係的組織\(誰登入實際上位於公司網路外部的電腦\)單一登\-上\(SSO\)同盟應用程式或服務的存取權  
+-   若組織具有100或更少的已設定信任關係，且必須提供內部使用者和外部使用者 @no__t 0who，則會使用單一正負號 @ no__t-2on，登入實際位於公司網路外部的電腦上： @ no__t-1\(SSO @ no__t-4 對同盟應用程式或服務的存取權  
   
--   必須提供其內部使用者以及外部使用者的 SSO 存取至 Microsoft Office 365 的組織  
+-   需要提供內部使用者和外部使用者 Microsoft Office 365 的 SSO 存取權的組織  
   
--   較小的組織有外部使用者，而且需要備援、 可調整的服務  
+-   具有外部使用者並需要重複、可擴充服務的小型組織  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>使用此拓撲的優點有哪些？  
   
--   相同有益於如列[伺服陣列使用 WID 的同盟伺服器](Federation-Server-Farm-Using-WID-2012.md)拓樸，再加上外部使用者提供額外的存取權的優點  
+-   [使用 WID 拓撲針對同盟伺服器](Federation-Server-Farm-Using-WID-2012.md)陣列所列出的相同優點，以及為外部使用者提供額外存取權的好處  
   
-### <a name="what-are-the-limitations-of-using-this-topology"></a>使用此拓撲的限制有哪些？  
+### <a name="what-are-the-limitations-of-using-this-topology"></a>使用此拓撲的限制為何？  
   
--   列出針對相同的限制[伺服陣列使用 WID 的同盟伺服器](Federation-Server-Farm-Using-WID-2012.md)拓樸  
+-   [使用 WID 拓撲針對同盟伺服器](Federation-Server-Farm-Using-WID-2012.md)陣列所列出的相同限制  
   
-## <a name="server-placement-and-network-layout-recommendations"></a>伺服器的位置和網路配置的建議  
-若要部署此拓撲中的，除了新增兩個同盟伺服器 proxy，您必須確定您的周邊網路，可以同時提供存取權的網域名稱系統\(DNS\)伺服器和第二個網路負載平衡\(NLB\)主應用程式。 第二部 NLB 主機都必須設有會使用網際網路 NLB 叢集\-可存取的叢集 IP 位址，而且必須使用相同的叢集 DNS 名稱設定為先前您在公司網路上設定 NLB 叢集\(fs.fabrikam.com\)。 也必須設定同盟伺服器 proxy 與網際網路\-可存取的 IP 位址。  
+## <a name="server-placement-and-network-layout-recommendations"></a>伺服器放置和網路設定建議  
+若要部署此拓撲，除了新增兩個同盟伺服器 proxy 以外，您還必須確定您的周邊網路也可以提供網域名稱系統 @no__t 0DNS @ no__t-1 伺服器的存取權，以及第二個網路負載平衡 \(NLB @ no__t-3 主機。 第二部 NLB 主機必須透過使用 Internet @ no__t-0accessible 叢集 IP 位址的 NLB 叢集來設定，而且它必須使用與您在公司網路上設定的先前 NLB 叢集相同的叢集 DNS 名稱設定 \(fs. fabrikam .com @ no__t-2。 同盟伺服器 proxy 也應該使用 Internet @ no__t-0accessible IP 位址進行設定。  
   
-下圖顯示使用先前所述的 WID 拓撲和 Fabrikam，Inc.，這家虛構公司如何提供周邊 DNS 伺服器，以存取現有的同盟伺服器陣列新增第二個 NLB 主機具有相同的叢集 DNS 名稱\(fs.fabrikam.com\)，並將兩個同盟伺服器 proxy \(fsp1 和 fsp2\)至周邊網路。  
+下圖顯示具有先前所述之 WID 拓撲的現有同盟伺服器陣列，以及虛構 Fabrikam，Inc.，公司如何提供周邊 DNS 伺服器的存取、新增第二個具有相同叢集 DNS 名稱 \(fs 的 NLB 主機，以及將兩個同盟伺服器 proxy \(fsp1 和 fsp2 新增 @ no__t-3 新增至周邊網路。  
   
-![使用 WID 伺服器陣列](media/FarmWIDProxies.gif)  
+![使用 WID 的伺服器陣列](media/FarmWIDProxies.gif)  
   
-如需如何設定您的網路環境使用與同盟伺服器或同盟伺服器 proxy 的詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)或[名稱同盟伺服器 Proxy 的解析度需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
+如需有關如何設定網路環境以與同盟伺服器或同盟伺服器 proxy 搭配使用的詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)或[同盟的名稱解析需求。伺服器](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)proxy。  
   
 ## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

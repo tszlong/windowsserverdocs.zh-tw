@@ -1,8 +1,8 @@
 ---
-title: 集合識別碼
-description: '適用於 Windows 命令主題 * * *- '
+title: 設定識別碼
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da870c4a9676a08070e22f5391164af0bffd4df0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5b48cc701716412c4a79cedddb4458c57ba25ad5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384070"
 ---
-# <a name="set-id"></a>集合識別碼
+# <a name="set-id"></a>設定識別碼
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Diskpart 設定識別碼命令會變更具有焦點的磁碟分割的磁碟分割類型欄位。  
+Diskpart Set ID 命令會變更具有焦點之分割區的資料分割類型欄位。  
   
 > [!IMPORTANT]  
-> 此命令適用於由原始設備製造商\(Oem\)只。 變更使用此參數的資料分割類型欄位可能會導致您的電腦失敗或無法開機。 除非您是 OEM 或是有 gpt 磁碟經驗，否則您不應該使用此參數變更 gpt 磁碟上的磁碟分割類型欄位。 相反地，一律使用[建立資料分割 efi](create-partition-efi.md)命令來建立 EFI 系統磁碟分割，[建立 msr 磁碟分割](create-partition-msr.md)命令來建立 Microsoft Reserved 磁碟分割，而[建立主要磁碟分割](create-partition-primary.md)命令而不需要在 gpt 磁碟上建立主要磁碟分割的 ID 參數。  
+> 此命令僅供原始設備製造商使用，\(OEMs @ no__t-1。 使用此參數變更磁碟分割類型欄位可能會導致您的電腦失敗或無法開機。 除非您是 OEM 或有使用 gpt 磁片的經驗，否則您不應該使用此參數來變更 gpt 磁片上的磁碟分割類型欄位。 相反地，請一律使用[create partition efi](create-partition-efi.md)命令來建立 efi 系統磁碟分割、建立[磁碟分割 msr](create-partition-msr.md)命令以建立 Microsoft 保留的磁碟分割，以及建立不含 ID 參數的[partition primary](create-partition-primary.md)命令在 gpt 磁片上建立主要磁碟分割。  
   
   
   
@@ -41,31 +41,31 @@ set id={ <byte> | <GUID> } [override] [noerr]
   
 | 參數 |                                                                                                                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  <byte>   |                                                                                                                                                                                                       主開機記錄\(MBR\)磁碟、 分割區的十六進位格式指定 [類型] 欄位中，新值。 除了指定 LDM 磁碟分割的型別 0x42，這個參數可以指定任何磁碟分割類型位元組。 請注意，在指定十六進位的磁碟分割類型時，省略前置的 0x。                                                                                                                                                                                                       |
-|  <GUID>   | 針對 GUID 磁碟分割表格\(gpt\)磁碟中，指定分割區的 [類型] 欄位的新 GUID 值。 包含可辨識的 Guid:<br /><br />-   EFI system partition: c12a7328\-f81f\-11d2\-ba4b\-00a0c93ec93b<br />-基本資料磁碟分割： ebd0a0a2\-b9e5\-4433\-87 c 0\-68b6b72699c7<br /><br />可以指定任何磁碟分割類型 GUID，這個參數，但下列除外：<br /><br />-   Microsoft Reserved partition: e3c9e316\-0b5c\-4db8\-817d\-f92df00215ae<br />-LDM 中繼資料的磁碟分割上動態磁碟： 5808c8aa\-7e8f\-42e0\-85 d 2\-e1e90434cfb3<br />在動態磁碟上的 LDM 資料磁碟分割： af9b60a0\-1431年\-4f62\-bc68\-3311714a69ad<br />-叢集中繼資料的磁碟分割： db97dba9\-0840年\-4bae\-97f0\-ffb9a327c7e1 |
-| 覆寫  |                                                                強制在變更磁碟分割類型之前卸載磁碟區上的檔案系統。 當您執行**集識別碼**命令時，DiskPart 會嘗試鎖定並解下磁碟區上的檔案系統。 如果**覆寫**未指定，以及鎖定的檔案系統呼叫失敗\(比方說，因為沒有開啟的控制代碼\)，則作業會失敗。 當**覆寫**指定時，DiskPart 會強制解下，即使鎖定的檔案系統呼叫失敗，且磁碟區任何開啟控制代碼會失效。<br /><br />此命令只適用於 Windows 7 和 Windows Server 2008 R2。                                                                 |
-|   noerr   |                                                                                                                                                                                                                                                                    用於僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                                                                                                                                                                                                                                                                    |
+|  <byte>   |                                                                                                                                                                                                       對於主開機記錄 \(MBR @ no__t-1 磁片，為數據分割指定類型欄位的新值（十六進位格式）。 除了指定 LDM 分割區的類型0x42 以外，您可以使用這個參數來指定任何資料分割類型 byte。 請注意，指定十六進位資料分割類型時，會省略前置的0x。                                                                                                                                                                                                       |
+|  <GUID>   | 對於 GUID 磁碟分割資料表 \(gpt @ no__t-1 磁片，為數據分割的 [類型] 欄位指定新的 GUID 值。 可識別的 Guid 包括：<br /><br />-EFI 系統磁碟分割： c12a7328 @ no__t-0f81f @ no__t-111d2 @ no__t-2ba4b @ no__t-300a0c93ec93b<br />-基本資料分割： ebd0a0a2 @ no__t-0b9e5 @ no__t-14433 @ no__t-287c0 @ no__t-368b6b72699c7<br /><br />任何資料分割類型 GUID 都可以使用此參數來指定，但下列除外：<br /><br />-Microsoft Reserved partition： e3c9e316 @ no__t-00b5c @ no__t-14db8 @ no__t-2817d @ no__t-3f92df00215ae<br />-動態磁碟上的 LDM 中繼資料分割： 5808c8aa @ no__t-07e8f @ no__t-142e0 @ no__t-285d2 @ no__t-3e1e90434cfb3<br />-動態磁碟上的 LDM 資料磁碟分割： af9b60a0 @ no__t-01431 @ no__t-14f62 @ no__t-2bc68 @ no__t-33311714a69ad<br />-Cluster metadata partition： db97dba9 @ no__t-00840 @ no__t-14bae @ no__t-297f0 @ no__t-3ffb9a327c7e1 |
+| 覆寫  |                                                                在變更磁碟分割類型之前，強制卸載磁片區上的檔案系統。 當您執行**Set id**命令時，DiskPart 會嘗試鎖定並卸載磁片區上的檔案系統。 如果未指定**override** ，而且鎖定檔案系統的呼叫失敗 @no__t 1for 範例中，因為有一個開啟控制碼 @ no__t-2，所以作業將會失敗。 當指定**override**時，DiskPart 會強制卸載，即使鎖定檔案系統的呼叫失敗，而且磁片區的任何開啟控制碼也會變成無效。<br /><br />此命令僅適用于 Windows 7 和 Windows Server 2008 R2。                                                                 |
+|   noerr   |                                                                                                                                                                                                                                                                    僅用於腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                                                                                                                                                                                                                                                    |
   
 ## <a name="remarks"></a>備註  
   
--   非先前所述的限制，DiskPart 不會檢查您所指定值的有效性\(但若要確定它在十六進位格式或 GUID 是一個位元組\)。  
+-   除了先前所述的限制以外，DiskPart 不會檢查您指定的值是否有效 @no__t 0except，以確保它是十六進位格式或 GUID @ no__t-1 的位元組。  
   
--   此命令無法運作或 Microsoft Reserved 磁碟分割上的動態磁碟。  
+-   此命令不適用於動態磁碟或 Microsoft 保留的分割區。  
   
-## <a name="BKMK_examples"></a>範例  
-若要設 0x07 中的 [類型] 欄位，而且強制卸載檔案系統，請輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要將 [類型] 欄位設定為0x07，並強制卸載檔案系統，請輸入：  
   
 ```  
 set id=0x07 override  
 ```  
   
-若要設定為基本的資料分割區的 [類型] 欄位，請輸入：  
+若要將類型欄位設定為基本資料分割，請輸入：  
   
 ```  
 set id=ebd0a0a2-b9e5-4433-87c0-68b6b72699c7  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

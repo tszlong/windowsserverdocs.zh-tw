@@ -1,55 +1,55 @@
 ---
 title: 建立受防護主機的安全性群組，並向 HGS 註冊群組
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: a12c8494-388c-4523-8d70-df9400bbc2c0
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: fb84720b94746a3c5757037ceb5c9bc8c965ff7f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1a36cfa10cb16033f5ca92b7e408132e38f5989c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447159"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386854"
 ---
 # <a name="create-a-security-group-for-guarded-hosts-and-register-the-group-with-hgs"></a>建立受防護主機的安全性群組，並向 HGS 註冊群組
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 >[!IMPORTANT]
->AD 模式開頭為 Windows Server 2019 已被取代。 TPM 證明不可能的環境下，設定[裝載金鑰證明](guarded-fabric-initialize-hgs-key-mode.md)。 主機金鑰證明提供類似的保證，能 AD 模式，並已設定的工作變得更容易。 
+>從 Windows Server 2019 開始，AD 模式已淘汰。 針對不可能進行 TPM 證明的環境，請設定[主機金鑰證明](guarded-fabric-initialize-hgs-key-mode.md)。 主機金鑰證明提供與 AD 模式類似的保證，而且設定起來較簡單。 
 
 
-本主題說明準備 HYPER-V 主機，才能使用系統管理信任證明 （AD 模式） 的受防護的主機的中繼步驟。 執行這些步驟，來完成中的步驟[設定會變成受防護的主機的主機網狀架構 DNS](guarded-fabric-configuring-fabric-dns-ad.md)。
+本主題說明使用系統管理員信任的證明（AD 模式）準備 Hyper-v 主機成為受防護主機的中繼步驟。 執行這些步驟之前，請先完成[針對將成為受防護主機的主機設定網狀架構 DNS](guarded-fabric-configuring-fabric-dns-ad.md)中的步驟。
 
 
-## <a name="create-a-security-group-and-add-hosts"></a>建立安全性群組，並將主機新增
+## <a name="create-a-security-group-and-add-hosts"></a>建立安全性群組並新增主機
 
-1. 建立新**GLOBAL**安全性 fabric 網域中群組和新增 HYPER-V 主機執行受防護的 Vm。 重新啟動主機，以更新其群組成員資格。
+1. 在網狀架構網域中建立新的**全域**安全性群組，並新增將執行受防護 Vm 的 hyper-v 主機。 重新開機主機以更新其群組成員資格。
 
-2. 您可以使用 Get ADGroup 來取得安全性群組的安全性識別碼 (SID)，並提供給 HGS 系統管理員。 
+2. 使用 New-adgroup 取得安全性群組的安全識別碼（SID），並將其提供給 HGS 系統管理員。 
 
     ```powershell
     Get-ADGroup "Guarded Hosts"
     ```
 
-    ![取得 AdGroup 命令輸出](../media/Guarded-Fabric-Shielded-VM/guarded-host-get-adgroup.png)
+    ![具有輸出的 New-adgroup 命令](../media/Guarded-Fabric-Shielded-VM/guarded-host-get-adgroup.png)
 
-## <a name="register-the-sid-of-the-security-group-with-hgs"></a>向 HGS 註冊安全性群組 SID  
+## <a name="register-the-sid-of-the-security-group-with-hgs"></a>向 HGS 註冊安全性群組的 SID  
 
-1. HGS 伺服器上，執行下列命令，以向 HGS 註冊的安全性群組。 
-   如果所需的其他群組，請重新執行命令。 
-   提供群組的易記名稱。 
-   它不需要符合 Active Directory 安全性群組名稱。 
+1. 在 HGS 伺服器上，執行下列命令以向 HGS 註冊安全性群組。 
+   視需要重新執行命令以進行其他群組。 
+   為群組提供易記的名稱。 
+   不需要符合 Active Directory 安全性群組名稱。 
 
    ```powershell
    Add-HgsAttestationHostGroup -Name "<GuardedHostGroup>" -Identifier "<SID>"
    ```
 
-2. 若要確認已加入該群組，請執行[Get HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx)。 
+2. 若要確認已新增群組，請執行[HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx)。 
 
 ## <a name="next-step"></a>後續步驟
 
@@ -59,4 +59,4 @@ ms.locfileid: "66447159"
 
 ## <a name="see-also"></a>另請參閱
 
-- [部署主機守護者服務的受防護主機和受防護的 Vm](guarded-fabric-deploying-hgs-overview.md)
+- [為受防護主機和受防護的 Vm 部署主機守護者服務](guarded-fabric-deploying-hgs-overview.md)

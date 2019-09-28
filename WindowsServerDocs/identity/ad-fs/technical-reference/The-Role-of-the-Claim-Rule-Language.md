@@ -6,15 +6,15 @@ ms.author: billmath
 manager: femila
 ms.date: 07/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c2d411be7ef807198df30074ea706d7c5398617
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ff4c43bb8dc5582716638f0a3f6e4f6a8022aece
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869355"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407377"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>宣告規則語言的角色
 Active Directory 同盟服務（AD FS）宣告規則語言做為傳入和傳出宣告行為的系統管理建立區塊，而宣告引擎則是做為宣告規則語言中邏輯的處理引擎，定義自訂規則。 如需有關宣告引擎如何處理所有規則的詳細資訊，請參閱[宣告引擎的角色](The-Role-of-the-Claims-Engine.md)。  
@@ -144,7 +144,7 @@ AD FS 也會提供一組預先定義的宣告發布和宣告接受規則範本�
 
 -   Claim.ValueType  
 
--   宣告：\[ \_屬性名稱\] （如果在宣告的屬性集合中找不到屬性 _name，此屬性會傳回空字串。 )  
+-   宣告。 Properties @ no__t-0property @ no__t-1name @ no__t-2 （如果在宣告的 Properties 集合中找不到屬性 _name，此屬性會傳回空字串。 )  
 
 您可以在運算式中使用要呼叫的 RegexReplace 函式。 這個函式接受輸入運算式，並將其與指定的模式比對。 如果模式符合，則會以取代值來取代符合的輸出。  
 

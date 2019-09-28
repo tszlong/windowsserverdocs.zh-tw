@@ -1,8 +1,8 @@
 ---
 title: reg 比較
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83bb010af4bfbf38ce41001d6a6001d5a3996090
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bfccc1f64b0113967a52e3ac0516d800cfea3532
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441926"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384723"
 ---
 # <a name="reg-compare"></a>reg 比較
 
 
 
-比較指定的登錄子機碼或項目。
+比較指定的登錄子機碼或專案。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,49 +38,49 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 |    參數    |                                                                                                                                                                                                                                                                                          描述                                                                                                                                                                                                                                                                                           |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   \<KeyName1>   |                                                               指定要比較的第一個子機碼的完整路徑。 若要指定遠端電腦，包含電腦名稱 (格式\\ \\ComputerName\)一部分*KeyName*。 省略\\ \\ComputerName\ 會導致作業到本機電腦的預設值。 *KeyName*必須包含有效的根機碼。 在本機電腦的有效的根機碼如下：HKLM、 HKCU、 HKCR、 HKU 和 HKCC。 如果指定的遠端電腦，則會是有效的根機碼：HKLM 和 HKU。                                                                |
-|   \<KeyName2>   | 指定要比較的第二個子機碼的完整路徑。 若要指定遠端電腦，包含電腦名稱 (格式\\ \\ComputerName\)一部分*KeyName*。 省略\\ \\ComputerName\ 會導致作業到本機電腦的預設值。 指定只有中的電腦名稱*KeyName2*會導致使用的路徑中指定的子機碼的作業*KeyName1*。 *KeyName*必須包含有效的根機碼。 在本機電腦的有效的根機碼如下：HKLM、 HKCU、 HKCR、 HKU 和 HKCC。 如果指定的遠端電腦，則會是有效的根機碼：HKLM 和 HKU。 |
-| /v \<ValueName> |                                                                                                                                                                                                                                                                     指定要比較子機碼下的值名稱。                                                                                                                                                                                                                                                                      |
-|       /ve       |                                                                                                                                                                                                                                                         指定應該比較值的名稱是 null 的唯一項目。                                                                                                                                                                                                                                                         |
+|   \<KeyName1 >   |                                                               指定要比較之第一個子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。                                                                |
+|   \<KeyName2 >   | 指定要比較之第二個子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 只在*KeyName2*中指定電腦名稱稱，會使作業使用*KeyName1*中指定之子機碼的路徑。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。 |
+| /v \<ValueName > |                                                                                                                                                                                                                                                                     指定要在子機碼底下比較的值名稱。                                                                                                                                                                                                                                                                      |
+|       /ve       |                                                                                                                                                                                                                                                         指定只應比較值名稱為 null 的專案。                                                                                                                                                                                                                                                         |
 |      [{/oa      |                                                                                                                                                                                                                                                                                              /od                                                                                                                                                                                                                                                                                               |
-|       /oa       |                                                                                                                                                                                                                                             指定要顯示所有的差異和相符項目。 根據預設，會列出的差異。                                                                                                                                                                                                                                             |
-|       /od       |                                                                                                                                                                                                                                                          指定要顯示只有差異。 這是是預設行為。                                                                                                                                                                                                                                                          |
-|       /os       |                                                                                                                                                                                                                                                    指定唯一的符合項目會顯示。 根據預設，會列出的差異。                                                                                                                                                                                                                                                     |
-|       /on       |                                                                                                                                                                                                                                                       指定不顯示任何內容。 根據預設，會列出的差異。                                                                                                                                                                                                                                                        |
-|       /s        |                                                                                                                                                                                                                                                                         比較所有子機碼和項目以遞迴方式。                                                                                                                                                                                                                                                                          |
-|       /?        |                                                                                                                                                                                                                                                                    顯示的說明**reg 比較**在命令提示字元。                                                                                                                                                                                                                                                                    |
+|       /oa       |                                                                                                                                                                                                                                             指定顯示所有差異和相符專案。 根據預設，只會列出差異。                                                                                                                                                                                                                                             |
+|       /od       |                                                                                                                                                                                                                                                          指定只顯示差異。 這是是預設行為。                                                                                                                                                                                                                                                          |
+|       /os       |                                                                                                                                                                                                                                                    指定只顯示相符專案。 根據預設，只會列出差異。                                                                                                                                                                                                                                                     |
+|       /on       |                                                                                                                                                                                                                                                       指定不顯示任何內容。 根據預設，只會列出差異。                                                                                                                                                                                                                                                        |
+|       /s        |                                                                                                                                                                                                                                                                         以遞迴方式比較所有子機碼和專案。                                                                                                                                                                                                                                                                          |
+|       /?        |                                                                                                                                                                                                                                                                    在命令提示字元中顯示**reg 比較**的說明。                                                                                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>備註
 
-下表列出的傳回值**reg 比較**。
+下表列出**reg compare**的傳回值。
 
 |值|描述|
 |-----|-----------|
-|0|比較成功，而且結果完全相同。|
+|0|比較成功，且結果完全相同。|
 |1|比較失敗。|
-|2|比較成功，而且找不到的差異。|
+|2|比較成功，而且發現差異。|
 
 下表列出結果中顯示的符號。
 
 |符號|描述|
 |------|-----------|
-|=|*KeyName1*的資料等於*KeyName2*資料。|
-|<|*KeyName1*資料是小於*KeyName2*資料。|
+|=|*KeyName1*資料等於*KeyName2*資料。|
+|<|*KeyName1*資料小於*KeyName2*的資料。|
 |>|*KeyName1*資料大於*KeyName2*資料。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-要比較的機碼下的所有值**MyApp**機碼下的所有值**SaveMyApp**，型別：
+若要比較 key **MyApp**底下的所有值與機碼**SaveMyApp**下的所有值，請輸入：
 
 REG COMPARE HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp
 
-要比較值的版本機碼下**MyCo**和機碼下的版本值**MyCo1**，型別：
+若要比較 [金鑰] **MyCo**下的 [版本] 值和 [金鑰] **MyCo1**下的 [版本] 值，請輸入：
 
-REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1 /v Version
+REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1/v 版本
 
-若要比較所有的子機碼和下 HKLM\Software\MyCo 名 ZODIAC 為所有子機碼和值 HKLM\Software\MyCo 在本機電腦上的電腦上的值，請輸入：
+若要比較電腦上 HKLM\Software\MyCo 的所有子機碼和值，以及本機電腦上 HKLM\Software\MyCo 下的所有子機碼和值，請輸入：
 
-REG COMPARE \\\\ZODIAC\HKLM\Software\MyCo \\\\. /s
+REG COMPARE \\ @ no__t-1ZODIAC\HKLM\Software\MyCo \\ @ no__t-3。 /s
 
 #### <a name="additional-references"></a>其他參考資料
 

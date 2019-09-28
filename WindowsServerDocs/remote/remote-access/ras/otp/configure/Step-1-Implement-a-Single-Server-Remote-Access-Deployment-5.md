@@ -1,9 +1,9 @@
 ---
-title: 步驟 1 實作單一伺服器遠端存取部署
-description: 本主題是 Windows Server 2016 中的 OTP 驗證部署遠端存取快速入門的一部分。
+title: 步驟1執行單一伺服器遠端存取部署
+description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署遠端存取指南的一部分。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,25 +12,25 @@ ms.topic: article
 ms.assetid: c0f4d665-d44e-4348-a89f-5f9191bd96fd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b4fa155bd4b38b1274e36878f44d63155da5b972
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 7d67af8419ce9533243f9d2eac230825bacb28b2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280896"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404410"
 ---
-# <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步驟 1 實作單一伺服器遠端存取部署
+# <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步驟1執行單一伺服器遠端存取部署
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-若要使用 OTP 部署遠端存取的第一個組態步驟是實作進階的單一伺服器部署，並打算新增 RADIUS 伺服器。  
+使用 OTP 部署「遠端存取」的第一個設定步驟是執行「先進的單一伺服器」部署，然後規劃新增 RADIUS 伺服器。  
   
-## <a name="implement-a-single-server-deployment"></a>實作單一伺服器部署  
-您可以利用 OTP 設定遠端存取之前，您必須先設定進階的單一伺服器部署 「 遠端存取，如中所述[部署單一 DirectAccess 伺服器使用進階設定](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)。  
+## <a name="implement-a-single-server-deployment"></a>執行單一伺服器部署  
+在您可以使用 OTP 設定遠端存取之前，必須先設定 advanced 單一伺服器遠端存取部署，如[使用 Advanced Settings 部署單一 DirectAccess 伺服器](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)中所述。  
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 2：設定 RADIUS 伺服器](Step-2-Configure-the-RADIUS-Server.md)  
+-   [步驟 2：設定 RADIUS 伺服器 @ no__t-0  
   
 
 

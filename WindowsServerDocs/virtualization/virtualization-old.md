@@ -1,7 +1,7 @@
 ---
 title: 虛擬化
 description: 提供虛擬化技術概觀，例如容器、Hyper-V 和 Hyper-V -V 虛擬交換器，以及 Windows Server 2016 和較新版作業系統的其他內容連結。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dougkim
 ms.technology: compute
 ms.topic: article
@@ -9,23 +9,23 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: e6dbb5be6d836462c9a24078dbec3700b09b08fc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bbbd8ea812a25b0d538dcb87a380184412235b99
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446055"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364043"
 ---
 # <a name="virtualization"></a>虛擬化
 
->適用於：Windows Server （半年通道），Windows Server 2016 
+>適用於：Windows Server (半年度管道)、Windows Server 2016 
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> Windows Server 2016 中的虛擬化是建立軟體定義基礎結構所需的其中一種基礎技術。 搭配網路功能與儲存空間，虛擬化功能可以賦予為您客戶提供強大工作負載所需的彈性。
 
-Windows Server 虛擬化技術包括 HYPER-V、 HYPER-V 虛擬交換器，以及受防護網狀架構與受防護的虛擬機器的更新\(Vm\)，可改善安全性、 延展性及可靠性。 容錯移轉叢集、網路功能和儲存空間的更新讓您更容易在搭配 Hyper-V 時部署和管理這些技術。 
+Windows Server 虛擬化技術包括 Hyper-v、Hyper-v 虛擬交換器和受防護網狀架構的更新虛擬機器 @no__t 0VMs @ no__t-1，可提升安全性、擴充性和可靠性。 容錯移轉叢集、網路功能和儲存空間的更新讓您更容易在搭配 Hyper-V 時部署和管理這些技術。 
 
 
 <ul class="cardsI panelContent">
@@ -41,7 +41,7 @@ Windows Server 虛擬化技術包括 HYPER-V、 HYPER-V 虛擬交換器，以及
                     </div>
                     <div class="cardText">
                         <h3>受防護網狀架構與受防護的 VM</h3>
-                        <p>身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS)-一般而言，三個節點叢集-加上一個或多個受防護主機和一組受防護的 Vm。</p>
+                        <p>身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS) (通常是有三個節點的叢集)，加上一個或多個受防護主機，以及一組受防護 VM。</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ Windows Server 虛擬化技術包括 HYPER-V、 HYPER-V 虛擬交換器，以及
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>適用於企業的 Windows 10:若要使用裝置工作的方式</h3>
+                        <h3>Windows 10 企業版：用裝置來工作的方式</h3>
                         <p>Hyper-V 技術透過硬體虛擬化提供運算資源。 Hyper-V 會建立電腦的軟體版本 (稱為虛擬機器)，讓您用來執行作業系統和應用程式。 您可以同時執行多個虛擬機器，也能視需要建立和刪除它們。 </p>
                     </div>
                 </div>

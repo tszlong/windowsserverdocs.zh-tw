@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: edd708985b8caac30b8788b12237430c1711f22f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2ae91b16448c5acd61712332310544c1fd66789f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865452"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385486"
 ---
 # <a name="how-uris-are-used-in-ad-fs"></a>AD FS 中的 URI 使用方式
 「統一資源識別項\(URI\) 」是用來做為唯一識別碼的字元字串。  在 AD FS 中，URI 可用來識別合作夥伴網路位址和設定物件。  用來識別合作夥伴網路位址時，URI 一律是 URL。  用來識別設定物件時，URI 可能是 URN 或 URL。  如需更多關於 URI 的一般資訊，請參閱 [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) 和 [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453)。  

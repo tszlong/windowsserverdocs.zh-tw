@@ -1,7 +1,7 @@
 ---
 title: 在 Windows 10 中設定 VPN 裝置通道
-description: 了解如何在 Windows 10 中建立的 VPN 裝置通道。
-ms.prod: windows-server-threshold
+description: 瞭解如何在 Windows 10 中建立 VPN 裝置通道。
+ms.prod: windows-server
 ms.date: 11/05/2018
 ms.technology: networking-ras
 ms.topic: article
@@ -9,32 +9,32 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 989216f90e78689b464240cff957bab1d9c1229b
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749564"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388033"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中設定 VPN 裝置通道
 
->適用於：Windows 10 1709年版
+>適用於：Windows 10 版本1709
 
-一律開啟 」 VPN 可讓您能夠建立專用的 VPN 設定檔針對裝置或電腦。 一律開啟 」 VPN 連線中包含兩種類型的通道： 
+Always On VPN 可讓您為裝置或電腦建立專用的 VPN 設定檔。 Always On VPN 連接包含兩種類型的通道: 
 
-- _裝置通道_連接到指定的 VPN 伺服器，然後再使用者登入裝置。 登入前連線案例和裝置管理，請使用 裝置通道。
+- _裝置_通道會在使用者登入裝置之前連線到指定的 VPN 伺服器。 登入前的連線案例和裝置管理用途是使用裝置通道。
 
-- _使用者通道_使用者登入裝置之後，才會連線。 使用者通道可讓使用者透過 VPN 伺服器存取組織資源。
+- 只有在使用者登入裝置之後，_使用者_通道才會連接。 使用者通道可讓使用者透過 VPN 伺服器存取組織資源。
 
-不同於_使用者通道_，這只會連接使用者登入裝置或電腦之後,_裝置通道_可讓使用者登入之前建立的連接 VPN。 兩者_裝置通道_並_使用者通道_獨立運作，使用自己的 VPN 設定檔，可以連線在此同時，也可以使用不同的驗證方法和其他 VPN 組態設定視需要。 使用者通道支援 SSTP 和 IKEv2，而且裝置通道只提供任何支援 SSTP 遞補支援 IKEv2。
+不同_于使用者通道_，只有在使用者登入裝置或電腦之後才會連線，_裝置_通道可讓 VPN 在使用者登入之前，先建立連線能力。 _裝置_通道和_使用者_通道都是獨立運作的 VPN 設定檔，可以同時連線，並且可以適當地使用不同的驗證方法和其他 VPN 設定。 使用者通道支援 SSTP 和 IKEv2，而裝置通道僅支援 IKEv2，而不支援 SSTP 回溯。
 
-使用者通道支援加入網域，非網域聯結 （工作群組） 或以供企業和 BYOD 案例的 Azure AD – 已加入裝置。 它是用於所有 Windows 版本，和的平台功能都適用於 UWP VPN 外掛程式支援透過第三方。
+已加入網域、未加入網域（工作組）的使用者通道，或已加入 Azure AD 的裝置，都支援企業和 BYOD 案例。 它適用于所有 Windows 版本，而平臺功能則可透過 UWP VPN 外掛程式支援提供給協力廠商使用。
 
-只能在執行 Windows 10 企業版或教育版本 1709年或更新版本的已加入網域的裝置上設定裝置通道。 沒有支援的裝置通道的協力廠商控制項。
+裝置通道只能在執行 Windows 10 企業版或教育版1709或更新版本的已加入網域裝置上設定。 不支援裝置通道的協力廠商控制。
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>裝置通道需求和功能
-您必須啟用 VPN 連線的電腦憑證驗證，並定義根憑證授權單位來驗證連入的 VPN 連線。 
+您必須為 VPN 連線啟用電腦憑證驗證，並定義用來驗證傳入 VPN 連線的根憑證授權單位。 
 
 ```PowerShell
 $VPNRootCertAuthority = “Common Name of trusted root certification authority”
@@ -44,11 +44,11 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ![裝置通道功能和需求](../../media/device-tunnel-feature-and-requirements.png)
 
-## <a name="vpn-device-tunnel-configuration"></a>設定 VPN 裝置通道
+## <a name="vpn-device-tunnel-configuration"></a>VPN 裝置通道設定
 
-透過裝置通道，則需要下列的 XML 提供正確的指引，其中只有用戶端起始提取案例的範例設定檔。  流量篩選器可用來管理流量只以限制裝置通道。  這項設定適用於 Windows 更新，一般群組原則 (GP) 和 System Center Configuration Manager (SCCM) 更新案例，以及 VPN 連線能力，而不需要快取的認證，第一次登入或密碼重設案例。 
+下面的範例設定檔 XML 提供良好的指引，適用于只需要透過裝置通道進行用戶端起始提取的案例。  流量篩選器會用來將裝置通道限制為僅限管理流量。  此設定適用于 Windows Update、一般群組原則（GP）和 System Center Configuration Manager （SCCM）更新案例，以及用於第一次登入但沒有快取認證或密碼重設案例的 VPN 連線能力。 
 
-伺服器起始的推播的情況下，Windows 遠端管理 (WinRM)、 Remote GPUpdate，等遠端 SCCM 更新案例 – 您必須在裝置通道，允許輸入的流量，因此不能用於流量篩選器。  裝置通道設定檔在您開啟流量篩選器，如果裝置通道就會拒絕傳入的流量。  這項限制會在未來版本中移除。
+針對伺服器起始的推送案例（例如 Windows 遠端管理（WinRM）、遠端 GPUpdate 和遠端 SCCM 更新案例），您必須允許裝置通道上的輸入流量，因此無法使用流量篩選器。  如果在裝置通道設定檔中，您開啟流量篩選器，則裝置通道會拒絕輸入流量。  未來的版本將會移除這項限制。
 
 
 ### <a name="sample-vpn-profilexml"></a>範例 VPN profileXML
@@ -89,30 +89,30 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 </VPNProfile>
 ```
 
-根據每個特定部署案例的需求，是另一個 VPN 功能，可設定裝置通道[受信任網路偵測](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)。
+視每個特定部署案例的需求而定，另一個可使用裝置通道設定的 VPN 功能就是[受信任的網路偵測](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)。
 
 ```
  <!-- inside/outside detection -->
   <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection>
 ```
 
-## <a name="deployment-and-testing"></a>部署和測試
+## <a name="deployment-and-testing"></a>部署與測試
 
-您可以使用 Windows PowerShell 指令碼，並使用 Windows Management Instrumentation (WMI) 的橋接器來設定裝置通道。 中的內容，就必須設定一律開啟 」 VPN 裝置通道**本機系統**帳戶。 若要這麼做，它會使用所需[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)、 其中的[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools)納入[Sysinternals](https://docs.microsoft.com/sysinternals/)公用程式的套件。
+您可以使用 Windows PowerShell 腳本並使用 Windows Management Instrumentation （WMI）橋接器來設定裝置通道。 Always On VPN 裝置通道必須在**本機系統**帳戶的內容中設定。 若要完成這項操作，必須使用[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)，這是[Sysinternals](https://docs.microsoft.com/sysinternals/)的公用程式套件中所包含的其中一個[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) 。
 
-如需有關如何部署的指導方針每個裝置`(.\Device)`與每位使用者`(.\User)`設定檔，請參閱[使用 PowerShell 指令碼和 WMI 橋接器提供者](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
+如需如何部署每個裝置的指導方針 `(.\Device)` 與每個使用者 @no__t 1 個設定檔，請參閱搭配[使用 PowerShell 腳本與 WMI 橋接器提供者](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
 
-執行下列 Windows PowerShell 命令來確認您已成功部署的裝置設定檔：
+執行下列 Windows PowerShell 命令，以確認您已成功部署裝置設定檔：
 
   ```powershell
   Get-VpnConnection -AllUserConnection
   ```
 
-輸出會顯示一份裝置\-各種裝置部署的 VPN 設定檔。
+輸出會顯示裝置上部署的裝置 @ no__t-0wide VPN 配置檔案清單。
 
-### <a name="example-windows-powershell-script"></a>Windows PowerShell 指令碼範例
+### <a name="example-windows-powershell-script"></a>範例 Windows PowerShell 腳本
 
-您可以使用下列 Windows PowerShell 指令碼，可協助建立您自己的設定檔建立的指令碼。
+您可以使用下列 Windows PowerShell 腳本，協助建立自己的腳本來建立設定檔。
 
 ```PowerShell
 Param(
@@ -167,24 +167,24 @@ Write-Host "$Message"
 
 ## <a name="additional-resources"></a>其他資源
 
-以下是可協助您的 VPN 部署的其他資源。
+以下是可協助您進行 VPN 部署的其他資源。
 
 ### <a name="vpn-client-configuration-resources"></a>VPN 用戶端設定資源
 
-以下是 VPN 用戶端設定的資源。
+以下是 VPN 用戶端設定資源。
 
-- [如何建立 VPN 設定檔在 System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
-- [設定 Windows 10 用戶端一律開啟 VPN 連線](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
+- [如何在 System Center Configuration Manager 中建立 VPN 設定檔](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [設定 Windows 10 用戶端 Always On VPN 連線](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [VPN 設定檔選項](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 
-### <a name="remote-access-server-gateway-resources"></a>遠端存取伺服器閘道資源
+### <a name="remote-access-server-gateway-resources"></a>遠端存取服務器閘道資源
 
-以下是遠端存取伺服器 (RAS) 閘道資源。
+以下是遠端存取服務器（RAS）閘道資源。
 
-- [設定 RRAS 電腦驗證憑證](https://technet.microsoft.com/library/dd458982.aspx)
-- [IKEv2 VPN 連線疑難排解](https://technet.microsoft.com/library/dd941612.aspx)
-- [設定 IKEv2 型遠端存取](https://technet.microsoft.com/library/ff687731.aspx)
+- [使用電腦驗證憑證設定 RRAS](https://technet.microsoft.com/library/dd458982.aspx)
+- [針對 IKEv2 VPN 連線進行疑難排解](https://technet.microsoft.com/library/dd941612.aspx)
+- [設定以 IKEv2 為基礎的遠端存取](https://technet.microsoft.com/library/ff687731.aspx)
 
 >[!IMPORTANT]
->搭配使用時裝置通道 Microsoft RAS 閘道，您必須設定 RRAS 伺服器支援 IKEv2 機器憑證驗證，進而**IKEv2 允許機器憑證驗證**如所述的驗證方法[此處](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)。 一旦啟用此設定時，強烈建議**組 VpnAuthProtocol** PowerShell cmdlet，連同**RootCertificateNameToAccept**選擇性參數，用來確保RRAS IKEv2 連線只能用於 VPN 用戶端憑證鏈結至明確定義內部/私用根憑證授權單位。 或者，**受信任的根憑證授權單位**RRAS 伺服器上的存放區應該加以修改以確保它不包含公用憑證授權單位，如所述[這裡](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)。 其他 VPN 閘道的考量，可能也需要類似的方法。
+>搭配使用裝置通道與 Microsoft RAS 閘道時，您必須將 RRAS 伺服器設定為支援 IKEv2 電腦憑證驗證，方法是啟用 [允許 IKEv2 驗證方法的**電腦憑證驗證**]，如所述[這裡](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)。 一旦啟用此設定，強烈建議使用**VpnAuthProtocol** PowerShell Cmdlet 搭配**RootCertificateNameToAccept**選擇性參數，以確保只允許下列的 RRAS IKEv2 連接：連結至明確定義的內部/私用根憑證授權單位的 VPN 用戶端憑證。 或者，應該修改 RRAS 伺服器上的「**受信任的根憑證授權**單位」存放區，以確保它不包含如[這裡](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)所討論的公開憑證授權單位單位。 類似的方法也可能需要考慮其他 VPN 閘道。
 
