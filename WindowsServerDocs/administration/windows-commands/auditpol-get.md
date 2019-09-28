@@ -1,8 +1,8 @@
 ---
 title: auditpol get
-description: 適用於 Windows 命令主題**auditpol 取得**-擷取系統原則、 稽核選項，以及稽核安全性描述元物件的每個使用者原則。
+description: Auditpol 的 Windows 命令主題**get** -抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03ba59b19af42ab2d3fdd1dd52d976d381779640
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 296fc5afb540411d76b563faca42fc045b8df3b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435141"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382494"
 ---
 # <a name="auditpol-get"></a>auditpol get
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-擷取系統原則、 稽核選項，以及稽核安全性描述元物件的每個使用者原則。
+抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。
 
 ## <a name="syntax"></a>語法
 ```
@@ -40,56 +40,56 @@ auditpol /get
 
 |  參數   |                                                                                                                                         描述                                                                                                                                          |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /user     | 顯示查詢的每個使用者稽核原則的安全性主體。 必須指定 /category 或 /subcategory 參數。 使用者可能會指定為安全識別項 (SID) 或名稱。 如果使用者未不指定任何帳戶，然後會查詢系統稽核原則。 |
-|  /category   |                                                          全域唯一識別碼 (GUID) 或名稱所指定的一或多個稽核類別。 星號 (\*) 可用來指出應該要查詢所有的稽核類別目錄。                                                          |
-| /subcategory |                                                                                                                  一或多個稽核子類別的 GUID 或名稱所指定。                                                                                                                  |
-|     /sd      |                                                                                                        擷取用來委派存取稽核原則的安全性描述元。                                                                                                        |
-|   /option    |                                                                              擷取現有的原則 CrashOnAuditFail、 FullprivilegeAuditing、 AuditBaseObjects，還是 AuditBasedirectories 選項。                                                                               |
-|      /r      |                                                                                                              在 報表格式，以逗號分隔值 (CSV)，會顯示輸出。                                                                                                              |
+|    /user     | 顯示查詢每個使用者稽核原則的安全性主體。 必須指定/category 或/subcategory 參數。 使用者可指定為安全識別碼（SID）或名稱。 如果未指定任何使用者帳戶，則會查詢系統稽核原則。 |
+|  /category   |                                                          全域唯一識別碼（GUID）或名稱所指定的一或多個 audit 分類。 星號（\*）可用來表示應該查詢所有的 audit 類別目錄。                                                          |
+| /subcategory |                                                                                                                  GUID 或名稱所指定的一或多個 audit 子類別。                                                                                                                  |
+|     /sd      |                                                                                                        抓取用來將存取權委派給稽核原則的安全描述項。                                                                                                        |
+|   /option    |                                                                              抓取 CrashOnAuditFail、FullprivilegeAuditing、AuditBaseObjects 或 AuditBasedirectories 選項的現有原則。                                                                               |
+|      /r      |                                                                                                              以報表格式顯示以逗號分隔值（CSV）的輸出。                                                                                                              |
 |      /?      |                                                                                                                             在命令提示字元顯示說明。                                                                                                                             |
 
 ## <a name="remarks"></a>備註
-所有類別和子類別可以被都指定的 GUID 或用引號括住的名稱。 指定使用者的 SID 或名稱。
-每位使用者的原則和系統原則的所有 get 作業，您必須擁有都讀取權限的安全性描述元中設定該物件。 您也可以執行 get 作業擁有**管理稽核及安全性記錄**(SeSecurityPrivilege) 使用者權限。 不過，此權限可讓其他不需要執行取得作業的存取。
-## <a name="BKMK_examples"></a>範例
-### <a name="examples-for-the-per-user-audit-policy"></a>每個使用者稽核原則的範例
-擷取 Guest 帳戶的每個使用者稽核原則，並針對系統，顯示輸出的詳細追蹤，以及物件存取類別目錄中，輸入：
+所有類別和子類別皆可由以引號括住的 GUID 或名稱指定。 使用者可以透過 SID 或名稱來指定。
+針對每個使用者原則和系統原則的所有 get 作業，您必須擁有安全描述項中該物件集的 [讀取] 許可權。 您也可以透過擁有「**管理審核及安全性記錄檔**」（SeSecurityPrivilege）使用者權限來執行「取得」作業。 不過，此許可權允許執行「取得」作業所需的其他存取權。
+## <a name="BKMK_examples"></a>典型
+### <a name="examples-for-the-per-user-audit-policy"></a>每位使用者稽核原則的範例
+若要抓取來賓帳戶的每個使用者稽核原則，並顯示 [系統]、[詳細追蹤] 和 [物件存取] 類別的輸出，請輸入：
 ```
 auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:"System","detailed Tracking","Object Access"
 ```
 > [!NOTE]
-> 此命令可用於兩種案例。 當監視可疑活動的特定使用者帳戶，您可以使用 /get 命令來擷取特定類別中的結果，使用包含原則以啟用其他稽核。 或者，如果帳戶上的稽核設定會記錄許多但非必要的事件，您可以使用 /get 命令來篩選掉無關的事件，該帳戶與排除原則。 如需所有類別目錄中，使用 auditpol /list /category 命令。
-> 若要擷取每個使用者稽核原則中的類別和特定的子類別，它會報告該來賓帳戶的 [系統] 類別下的子類別目錄的內含和專有的設定，請輸入：
+> 在兩種情況下，此命令很有用。 監視特定使用者帳戶的可疑活動時，您可以使用/get 命令，透過包含原則來啟用額外的審核，以取得特定類別的結果。 或者，如果帳戶上的 audit 設定正在記錄許多但多餘的事件，您可以使用/get 命令，針對該帳戶使用排除原則來篩選掉無關的事件。 如需所有類別目錄的清單，請使用 auditpol/list/category 命令。
+> 若要抓取分類和特定子類別的每個使用者稽核原則，以報告來賓帳戶的系統類別下該子類別的內含和排除設定，請輸入：
 > ```
 > auditpol /get /user:guest /category:"System" /subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
 > ```
-> 若要顯示在 報表格式的輸出，並包含電腦名稱、 原則目標、 子類別目錄、 子類別目錄 GUID，包含設定及排除設定，請輸入：
+> 若要以報告格式顯示輸出，並包含電腦名稱稱、原則目標、子類別、子類別 GUID、包含設定和排除設定，請輸入：
 > ```
 > auditpol /get /user:guest /category:detailed Tracking" /r
 > ```
 > ### <a name="examples-for-the-system-audit-policy"></a>系統稽核原則的範例
-> 若要擷取的原則的系統分類和子類別，它會報告系統稽核原則類別目錄和子類別目錄原則設定，請輸入：
+> 若要取出系統類別目錄和子類別目錄的原則，以報告系統稽核原則的分類和子類別原則設定，請輸入：
 > ```
 > auditpol /get /category:"System" /subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
 > ```
-> 若要擷取詳細的追蹤分類和子類別目錄報表格式的原則，並包含電腦名稱、 原則目標、 子類別目錄、 子類別目錄 GUID，包含設定及排除設定類型：
+> 若要以報告格式抓取詳細追蹤分類和子類別的原則，並包含電腦名稱稱、原則目標、子類別目錄、子類別 GUID、包含設定和排除設定，請輸入：
 > ```
 > auditpol /get /category:"detailed Tracking" /r
 > ```
-> 若要擷取與類別的兩個類別目錄原則指定為 Guid，它會報告所有的稽核原則設定的所有子類別目錄在兩個類別，型別：
+> 若要使用指定為 Guid 的兩個分類來抓取原則，這會報告兩個類別下所有子類別目錄的所有稽核原則設定，請輸入：
 > ```
 > auditpol /get /category:{69979849-797a-11d9-bed3-505054503030},{69997984a-797a-11d9-bed3-505054503030} subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
 > ```
-> ### <a name="examples-for-auditing-options"></a>適用於稽核選項範例
-> 若要擷取狀態，啟用或停用，AuditBaseObjects 選項中，輸入：
+> ### <a name="examples-for-auditing-options"></a>用於審核選項的範例
+> 若要取得 AuditBaseObjects 選項的已啟用或已停用狀態，請輸入：
 > ```
 > auditpol /get /option:AuditBaseObjects
 > ```
 > [!NOTE]
-> 可用的選項為 AuditBaseObjects、 AuditBaseOperations 和 FullprivilegeAuditing。
-> 若要擷取已啟用的狀態，請停用或 2 的 CrashOnAuditFail 選項中，輸入：
+> 可用的選項為 AuditBaseObjects、AuditBaseOperations 和 FullprivilegeAuditing。
+> 若要取出已啟用、已停用或2個 CrashOnAuditFail 選項的狀態，請輸入：
 > ```
 > auditpol /get /option:CrashOnAuditFail /r
 > ```
-> #### <a name="additional-references"></a>其他參考資料
+> #### <a name="additional-references"></a>其他參考
 > [命令列語法關鍵](command-line-syntax-key.md)

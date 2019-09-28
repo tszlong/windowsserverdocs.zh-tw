@@ -1,95 +1,95 @@
 ---
 title: DirectAccess 不支援的設定
-description: 本主題提供一份不支援 Windows Server 2016 中的 DirectAccess 設定。
+description: 本主題提供 Windows Server 2016 中不支援的 DirectAccess 設定清單。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-da
 ms.topic: article
 ms.assetid: 23d05e61-95c3-4e70-aa83-b9a8cae92304
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 49fa86883e6a590ac8f7dcf0c724f87af419f88e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e652083d4accf90b542a16d51e314299303954f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828849"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388837"
 ---
 # <a name="directaccess-unsupported-configurations"></a>DirectAccess 不支援的設定
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-開始您的部署，來避免不得不開始重新部署之前，請檢閱下列不支援的 DirectAccess 設定的清單。  
+開始部署之前，請先參閱下列不支援的 DirectAccess 設定清單，以避免再次啟動部署。  
 
-## <a name="bkmk_frs"></a>檔案複寫服務 (FRS) 發佈的群組原則物件 （SYSVOL 複寫）  
-請勿在網域控制站執行的群組原則物件 （SYSVOL 複寫） 的通訊群組的檔案複寫服務 (FRS) 所在的環境中部署 DirectAccess。 當您使用 FRS，將不支援 DirectAccess 部署  
+## <a name="bkmk_frs"></a>群組原則物件的檔案複寫服務（FRS）散發（SYSVOL 複寫）  
+請勿在網域控制站執行檔案複寫服務（FRS）來散發群組原則物件（SYSVOL 複寫）的環境中部署 DirectAccess。 當您使用 FRS 時，不支援部署 DirectAccess。  
   
-如果您有執行 Windows Server 2003 或 Windows Server 2003 R2 的網域控制站，您會使用 FRS。 此外，您可能會使用 FRS 如果您先前使用 Windows 2000 Server 或 Windows Server 2003 網域控制站，而且您永遠不會移轉 SYSVOL 複寫從 FRS 分散式檔案系統複寫 (DFS-R)。  
+如果您有執行 Windows Server 2003 或 Windows Server 2003 R2 的網域控制站，則會使用 FRS。 此外，如果您先前使用的是 Windows 2000 Server 或 Windows Server 2003 網域控制站，而您從未將 SYSVOL 複寫從 FRS 遷移至分散式檔案系統複寫（DFS-R），則您可能會使用 FRS。  
   
-如果您使用 FRS SYSVOL 複寫部署 DirectAccess，風險不小心刪除 DirectAccess 群組原則物件，包含的 DirectAccess 伺服器和用戶端設定資訊。 如果刪除這些物件，DirectAccess 部署將會發生中斷，並使用 DirectAccess 的用戶端電腦無法連線到網路。  
+如果您使用 FRS SYSVOL 複寫部署 DirectAccess，您會有風險地刪除 DirectAccess 群組原則物件，其中包含 DirectAccess 伺服器和用戶端設定資訊。 如果刪除這些物件，您的 DirectAccess 部署將會遭遇中斷，而使用 DirectAccess 的用戶端電腦將無法連線到您的網路。  
   
-如果您打算部署 DirectAccess，您必須使用晚於 Windows Server 2003 R2，執行作業系統的網域控制站，而且您必須使用 DFS-R。  
+如果您打算部署 DirectAccess，您必須使用執行作業系統的網域控制站，而不是 Windows Server 2003 R2，而且您必須使用 DFS-R。  
   
-如需有關從 FRS 移轉至 DFS R，請參閱[SYSVOL 複寫移轉指南：FRS 到 DFS 複寫](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx)。  
+如需從 FRS 遷移至 DFS-R 的相關資訊，請參閱 @no__t 0SYSVOL 複寫遷移指南：要 DFS 複寫](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx)的 FRS。  
   
-## <a name="bkmk_nap"></a>DirectAccess 用戶端的的網路存取保護  
-網路存取保護 (NAP) 用來判斷他們授與存取公司網路之前，遠端用戶端電腦是否符合 IT 原則。 NAP Windows Server 2012 R2 中已被取代，並不包含在 Windows Server 2016。 基於這個理由，不建議啟動新部署 DirectAccess 與 NAP 搭配使用。 建議您使用不同的 DirectAccess 用戶端的安全性方法的結束點的控制項。  
+## <a name="bkmk_nap"></a>DirectAccess 用戶端的網路存取保護  
+網路存取保護（NAP）是用來判斷遠端用戶端電腦是否符合 IT 原則，然後才被授與公司網路的存取權。 Windows Server 2012 R2 中的 NAP 已淘汰，不包含在 Windows Server 2016 中。 基於這個理由，不建議使用 NAP 來啟動新的 DirectAccess 部署。 建議針對 DirectAccess 用戶端的安全性使用不同的端點控制方法。  
   
-## <a name="bkmk_multi"></a>Windows 7 用戶端的的多站台支援  
-當在多站台部署中，Windows 10 設定 DirectAccess&reg;，Windows&reg; 8.1 和 Windows&reg; 8 的用戶端已連接到最接近的站台的功能。  Windows 7&reg;用戶端電腦沒有相同的功能。 Windows 7 用戶端的站台選取範圍設定為特定站台在原則設定時，這些用戶端一律都會連線至該指定的站台，無論其位置為何。  
+## <a name="bkmk_multi"></a>Windows 7 用戶端的多網站支援  
+在多網站部署中設定 DirectAccess 時，Windows 10 @ no__t-0、Windows @ no__t-1 8.1 和 Windows @ no__t-2 8 用戶端具有連接到最接近網站的功能。  Windows 7 @ no__t-0 用戶端電腦沒有相同的功能。 Windows 7 用戶端的網站選擇會在原則設定時設為特定網站，而且這些用戶端一律會連線到該指定的網站，而不論其位置為何。  
   
 ## <a name="bkmk_user"></a>以使用者為基礎的存取控制  
-DirectAccess 原則是，使用者基礎的電腦。 不支援指定 DirectAccess 使用者原則，來控制對公司的網路存取。  
+DirectAccess 原則是以電腦為基礎，而不是以使用者為基礎。 不支援指定 DirectAccess 使用者原則來控制對公司網路的存取。  
   
 ## <a name="bkmk_policy"></a>自訂 DirectAccess 原則  
-使用 DirectAccess 安裝精靈 」、 「 遠端存取管理主控台中或 「 遠端存取 Windows PowerShell cmdlet，可以設定 DirectAccess。 不支援使用 DirectAccess 安裝精靈 以外的任何方式來設定 DirectAccess，例如直接修改 DirectAccess 群組原則物件，或以手動方式修改伺服器或用戶端上的預設原則設定。 這些修改可能會導致無法使用的組態。  
+您可以使用 DirectAccess 安裝程式、[遠端存取管理] 主控台或 [遠端存取] Windows PowerShell Cmdlet 來設定 DirectAccess。 不支援使用 DirectAccess 設定向導以外的任何方式來設定 DirectAccess，例如直接修改 DirectAccess 群組原則物件，或手動修改伺服器或用戶端上的預設原則設定。 這些修改可能會導致無法使用的設定。  
   
-## <a name="bkmk_kerb"></a>KerbProxy 驗證  
-當您設定 DirectAccess 伺服器使用開始使用精靈時，DirectAccess 伺服器會自動設定使用 KerbProxy 驗證電腦和使用者驗證。 基於這個原因，您應該只使用開始使用精靈部署單一站台在只有 Windows 10&reg;，部署 Windows 8.1 或 Windows 8 用戶端。  
+## <a name="bkmk_kerb"></a>KerbProxy authentication  
+當您使用消費者入門 Wizard 設定 DirectAccess 伺服器時，DirectAccess 伺服器會自動設定為使用 KerbProxy authentication 進行電腦和使用者驗證。 因此，您應該只將消費者入門 Wizard 用於單一網站部署，其中只會部署 Windows 10 @ no__t-0、Windows 8.1 或 Windows 8 用戶端。  
   
-此外，下列功能不應使用 KerbProxy 驗證：  
+此外，下列功能不應該與 KerbProxy authentication 搭配使用：  
   
--   負載平衡使用外部負載平衡器或 Windows 載入   
-    平衡器  
+-   使用外部負載平衡器或 Windows 負載進行負載平衡   
+    器  
   
--   智慧卡或單次密碼 (OTP) 所需位置的雙因素驗證  
+-   需要智慧卡或一次性密碼（OTP）的雙因素驗證  
   
-如果您啟用 KerbProxy 驗證不支援下列的部署計劃：  
+如果您啟用 KerbProxy authentication，則不支援下列部署方案：  
   
--   多站台。  
+-   網站.  
   
--   DirectAccess 支援 Windows 7 用戶端。  
+-   Windows 7 用戶端的 DirectAccess 支援。  
   
--   強制通道。 若要確保當您使用強制通道時，未啟用 KerbProxy 驗證，請執行精靈時設定下列項目：  
+-   強制通道。 為確保當您使用強制通道時，不會啟用 KerbProxy authentication，請在執行嚮導時設定下列專案：  
   
     -   啟用強制通道  
   
-    -   啟用 DirectAccess Windows 7 用戶端  
+    -   為 Windows 7 用戶端啟用 DirectAccess  
   
 > [!NOTE]  
-> 針對先前的部署，您應該使用 [進階組態精靈]，這會透過憑證為基礎的電腦和使用者驗證的雙通道設定。 如需詳細資訊，請參閱 <<c0> [ 部署單一 DirectAccess 伺服器使用進階設定](../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。  
+> 針對先前的部署，您應該使用 [Advanced Configuration Wizard]，它會使用兩個通道的設定搭配以憑證為基礎的電腦和使用者驗證。 如需詳細資訊，請參閱[使用 Advanced Settings 部署單一 DirectAccess 伺服器](../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。  
   
 ## <a name="bkmk_isa"></a>使用 ISATAP  
-ISATAP 是一種轉換技術，可提供在僅 IPv4 的公司網路中的 IPv6 連線。 它僅限於使用單一 DirectAccess 伺服器部署中，小型和中型大小的組織，並且允許遠端管理 DirectAccess 用戶端。 如果 ISATAP deployedin 多站台、 負載平衡，或多重網域環境，您必須將它移除，或將它移至原生的 IPv6 部署中，您在設定 DirectAccess 之前。  
+ISATAP 是一種轉換技術，可在僅 IPv4 的公司網路中提供 IPv6 連線能力。 它僅限於具有單一 DirectAccess 伺服器部署的中小型組織，並可讓您從遠端系統管理 DirectAccess 用戶端。 如果 ISATAP deployedin 為多網站、負載平衡或多重網域環境，您必須先將它移除，或將它移至原生 IPv6 部署，然後再設定 DirectAccess。  
   
-## <a name="bkmk_iphttps"></a>IPHTTPS 和一次性密碼 (OTP) 的端點組態  
-當您使用 IP-HTTPS 時，IP-HTTPS 連線必須終止在 DirectAccess 伺服器上，不在其他裝置，例如負載平衡器上。 同樣地，必須終止單次密碼 (OTP) 驗證時就會建立出頻外安全通訊端層 (SSL) 連線，DirectAccess 伺服器上。 這些連線的端點之間的所有裝置必須都設定為傳遞的模式。  
+## <a name="bkmk_iphttps"></a>IPHTTPS 和一次性密碼（OTP）端點設定  
+當您使用 IPHTTPS 時，IPHTTPS 連線必須在 DirectAccess 伺服器上終止，而不是在任何其他裝置（例如負載平衡器）上結束。 同樣地，在單次密碼（OTP）驗證期間建立的頻外安全通訊端層（SSL）連線，必須在 DirectAccess 伺服器上終止。 這些連線的端點之間的所有裝置都必須以傳遞模式設定。  
   
-## <a name="bkmk_ft"></a>使用 OTP 驗證的強制通道  
-請勿部署 OTP 和強制通道，雙因素驗證的 DirectAccess 伺服器或 OTP 驗證將會失敗。 需要 DirectAccess 伺服器和 DirectAccess 用戶端之間的頻外安全通訊端層 (SSL) 連線。 此連線需要傳送 DirectAccess 通道外部流量的豁免。 在強制通道設定中，所有流量必須都通過 DirectAccess 通道，並建立通道後，系統即允許沒有豁免。 基於這個原因，它不支援在強制通道設定中有 OTP 驗證。  
+## <a name="bkmk_ft"></a>使用 OTP 驗證強制通道  
+請勿使用 OTP 和強制通道的雙因素驗證來部署 DirectAccess 伺服器，否則 OTP 驗證將會失敗。 DirectAccess 伺服器和 DirectAccess 用戶端之間需要頻外安全通訊端層（SSL）連線。 此連線需要豁免，才能在 DirectAccess 通道外傳送流量。 在強制通道設定中，所有流量都必須流經 DirectAccess 通道，而且在建立通道之後，不允許豁免。 因此，不支援在強制通道設定中使用 OTP 驗證。  
   
-## <a name="bkmk_rodc"></a>部署 DirectAccess 的唯讀網域控制站  
-DirectAccess 伺服器必須能夠存取讀寫網域控制站，並無法正常使用唯讀網域控制站 (RODC)。  
+## <a name="bkmk_rodc"></a>使用唯讀網域控制站部署 DirectAccess  
+DirectAccess 伺服器必須具有讀寫網域控制站的存取權，而且無法使用唯讀網域控制站（RODC）正確運作。  
   
-讀寫網域控制站是必要的有許多原因，包括下列：  
+有許多原因需要讀寫網域控制站，包括下列各項：  
   
--   在 DirectAccess 伺服器上，為讀寫網域控制站，才能開啟 遠端存取 Microsoft Management Console (MMC)。  
+-   在 DirectAccess 伺服器上，需要讀寫網域控制站才能開啟 [遠端存取] Microsoft Management Console （MMC）。  
   
--   DirectAccess 伺服器必須讀取和寫入至 DirectAccess 用戶端與 DirectAccess 伺服器群組原則物件 (Gpo)。  
+-   DirectAccess 伺服器必須同時讀取和寫入 DirectAccess 用戶端和 DirectAccess 伺服器群組原則物件（Gpo）。  
   
--   DirectAccess 伺服器會讀取並寫入用戶端 GPO，特別是從主要網域控制站模擬器 (PDCe)。  
+-   DirectAccess 伺服器會特別從主域控制站模擬器（PDCe）讀取及寫入用戶端 GPO。  
   
-因為這些需求，而不會部署 DirectAccess 與 RODC。  
+基於這些需求，請勿使用 RODC 部署 DirectAccess。  
   
 
 
