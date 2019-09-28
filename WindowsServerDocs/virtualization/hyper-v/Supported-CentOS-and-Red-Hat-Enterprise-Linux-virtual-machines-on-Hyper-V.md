@@ -1,7 +1,7 @@
 ---
 title: Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器
 description: 列出支援的 CentOS 和 Red Hat Enterprise 散發套件的 Linux 整合服務版本
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: compute-hyper-v
 ms.tgt_pltfrm: na
@@ -10,12 +10,12 @@ ms.assetid: 4bf8783d-dee5-4b3e-8cce-2b11b117c189
 author: danihalfin
 ms.author: jopoulso
 ms.date: 06/13/2019
-ms.openlocfilehash: 80273bc0e99a3e70c8c783deae4a3ee42b5a11f0
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 19e22df7ed5e49cdf4047204f1b13b9c4f3450ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544730"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365547"
 ---
 # <a name="supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器
 
@@ -23,9 +23,9 @@ ms.locfileid: "68544730"
 
 下列功能發佈對應指出內建和可下載版本的 Linux Integration Services 中存在的功能。 每個散發套件的已知問題和因應措施會列在表格之後。
 
-Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (從 Red Hat Enterprise Linux 6.4 開始提供) 足以讓 Red Hat Enterprise Linux 來賓使用 Hyper-v 主機上的高效能綜合裝置來執行。這些內建驅動程式已通過 Red Hat 的認證, 可供此用途使用。 可在此 Red Hat 網頁上查看認證的設定:[Red Hat 認證目錄](https://access.redhat.com/ecosystem/search/#/ecosystem/Red%20Hat%20Enterprise%20Linux?sort=sortTitle%20asc&vendors=Microsoft&category=Server)。 您不需要從 Microsoft 下載中心下載並安裝 Linux Integration Services 套件, 這麼做可能會限制您的 Red Hat 支援, 如 Red Hat 知識庫文章1067中所述:[Red Hat 知識庫 1067](https://access.redhat.com/articles/1067)。
+Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式（從 Red Hat Enterprise Linux 6.4 開始提供）足以讓 Red Hat Enterprise Linux 來賓使用 Hyper-v 主機上的高效能綜合裝置來執行。這些內建驅動程式已通過 Red Hat 的認證，可供此用途使用。 可在此 Red Hat 網頁上查看認證的設定：[Red Hat 認證目錄](https://access.redhat.com/ecosystem/search/#/ecosystem/Red%20Hat%20Enterprise%20Linux?sort=sortTitle%20asc&vendors=Microsoft&category=Server)。 您不需要從 Microsoft 下載中心下載並安裝 Linux Integration Services 套件，這麼做可能會限制您的 Red Hat 支援，如 Red Hat 知識庫文章1067中所述：[Red Hat 知識庫 1067](https://access.redhat.com/articles/1067)。
 
-當您升級核心時, 內建的 .LIS 支援與可下載的 .LIS 支援之間可能發生衝突, 請停用自動更新、卸載可供下載的套件、更新核心、重新開機, 然後安裝最新的 .LIS 版本。然後重新開機。
+當您升級核心時，內建的 .LIS 支援與可下載的 .LIS 支援之間可能發生衝突，請停用自動更新、卸載可供下載的套件、更新核心、重新開機，然後安裝最新的 .LIS 版本。然後重新開機。
 
 > [!NOTE]
 > 官方 Red Hat Enterprise Linux 認證資訊可透過[Red Hat 客戶入口網站](https://access.redhat.com/ecosystem/search/#/category/Server?sort=sortTitle%20asc&query=windows%20server&ecosystem=Red%20Hat%20Enterprise%20Linux)取得。
@@ -40,23 +40,23 @@ Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (�
 
 * [RHEL/CentOS 5.x 系列](#rhelcentos-5x-series)
 
-* [紀錄](#notes)
+* [注意事項](#notes)
 
 ## <a name="table-legend"></a>資料表圖例
 
-* **內建**的 .lis 版本包含在此 Linux 散發套件中。 內建的 .LIS 的核心模組版本號碼 (如**lsmod**所示) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
+* **內建**的 .lis 版本包含在此 Linux 散發套件中。 內建的 .LIS 的核心模組版本號碼（如**lsmod**所示）與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
 
 * &#10004;-可用的功能
 
-* (*空白*)-無法使用功能
+* （*空白*）-無法使用功能
 
 ## <a name="rhelcentos-8x-series"></a>RHEL/CentOS 8.x 系列
 
 
 
-|                                                                 **功能**                                                                  |     **Windows Server 版本**     |                             **8。0**                                 |
+|                                                                 **功能**                                                                  |     **Windows Server 版本**     |                             **8.0**                                 |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|---------------------------------------------------------------------|
-|                                                               **可用性**                                                               |                                    |                                                                     |
+|                                                               **Availability**                                                               |                                    |                                                                     |
 |                          **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                          | 2019、2016、2012 R2、2012、2008 R2 |                              &#10004;                               |
 |                                                      Windows Server 2016 精確時間                                                       |             2019、2016             |                              &#10004;                               |
 |                    **[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                    |                                    |                                                                     |
@@ -99,9 +99,9 @@ Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (�
 此系列只有64位核心。
 
 
-|                                                                 **功能**                                                                  |     **Windows Server 版本**     |                             **7.5-7。6**                             |                             **7.3-7。4**                             |                             **7.0-7。2**                             |     **7.5-7。6**     |       **7。4**       |       **7。3**       |       **7。2**       |       **7。1**       |        **7。0**         |
+|                                                                 **功能**                                                                  |     **Windows Server 版本**     |                             **7.5-7。6**                             |                             **7.3-7。4**                             |                             **7.0-7。2**                             |     **7.5-7。6**     |       **7.4**       |       **7.3**       |       **7.2**       |       **7.1**       |        **7.0**         |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|---------------------|---------------------|---------------------|---------------------|---------------------|------------------------|
-|                                                               **可用性**                                                               |                                    | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) |      內建       |      內建       |      內建       |      內建       |      內建       |        內建        |
+|                                                               **Availability**                                                               |                                    | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) |      內建       |      內建       |      內建       |      內建       |      內建       |        內建        |
 |                          **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                          | 2019、2016、2012 R2、2012、2008 R2 |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |      &#10004;       |      &#10004;       |      &#10004;       |      &#10004;       |      &#10004;       |        &#10004;        |
 |                                                      Windows Server 2016 精確時間                                                       |             2019、2016             |                              &#10004;                               |                              &#10004;                               |                                                                     |                     |                     |                     |                     |                     |                        |
 |                    **[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                    |                                    |                                                                     |                                                                     |                                                                     |                     |                     |                     |                     |                     |                        |
@@ -115,7 +115,7 @@ Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (�
 |                       **[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                       |                                    |                                                                     |                                                                     |                                                                     |                     |                     |                     |                     |                     |                        |
 |                                                                 VHDX 調整大小                                                                  |        2019、2016、2012 R2         |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |      &#10004;       |      &#10004;       |      &#10004;       |      &#10004;       |                     |                        |
 |                                                            虛擬光纖通道                                                             |        2019、2016、2012 R2         |                           &#10004;附注3                           |                           &#10004;附注3                           |                           &#10004;附注3                           |   &#10004;附注3   |   &#10004;附注3   |   &#10004;附注3   |   &#10004;附注3   |   &#10004;附注3   |    &#10004;附注3     |
-|                                                         即時虛擬機器備份                                                          |        2019、2016、2012 R2         |                           &#10004;附注5                           |                           &#10004;附注5                           |                           &#10004;附注5                           |  &#10004;注 4, 5  | &#10004;注 4, 5  | &#10004;注 4, 5  | &#10004;注 4, 5  | &#10004;注 4, 5  |   &#10004;注 4, 5   |
+|                                                         即時虛擬機器備份                                                          |        2019、2016、2012 R2         |                           &#10004;附注5                           |                           &#10004;附注5                           |                           &#10004;附注5                           |  &#10004;注4，5  | &#10004;注4，5  | &#10004;注4，5  | &#10004;注4，5  | &#10004;注4，5  |   &#10004;注4，5   |
 |                                                                 修剪支援                                                                 |        2019、2016、2012 R2         |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |      &#10004;       |      &#10004;       |      &#10004;       |      &#10004;       |                     |                        |
 |                                                                   SCSI WWN                                                                   |        2019、2016、2012 R2         |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |      &#10004;       |                     |                     |                     |                     |                        |
 |                        **[快閃記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                        |                                    |                                                                     |                                                                     |                                                                     |                     |                     |                     |                     |                     |                        |
@@ -142,9 +142,9 @@ Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (�
 此系列的32位核心已啟用 PAE。 RHEL/CentOS 6.0-6.3 沒有內建的 .LIS 支援。
 
 
-|                                                                 **功能**                                                                  |     **Windows Server 版本**     |                            **6.7-6.10**                             |                            **6.4-6。6**                              |                             **6.0-6。3**                             |   **6.10、6.9、6。8**   |       **6.6、6。7**        |          **6。5**          |          **6。4**           |
+|                                                                 **功能**                                                                  |     **Windows Server 版本**     |                            **6.7-6.10**                             |                            **6.4-6。6**                              |                             **6.0-6。3**                             |   **6.10、6.9、6。8**   |       **6.6、6。7**        |          **6.5**          |          **6.4**           |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|------------------------|---------------------------|---------------------------|----------------------------|
-|                                                               **可用性**                                                               |                                    | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) |        內建        |         內建          |         內建          |          內建          |
+|                                                               **Availability**                                                               |                                    | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) |        內建        |         內建          |         內建          |          內建          |
 |                          **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                          | 2019、2016、2012 R2、2012、2008 R2 |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |        &#10004;        |         &#10004;          |         &#10004;          |          &#10004;          |
 |                                                      Windows Server 2016 精確時間                                                       |             2019、2016             |                                                                     |                                                                     |                                                                     |                        |                           |                           |                            |
 |                    **[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                    |                                    |                                                                     |                                                                     |                                                                     |                        |                           |                           |                            |
@@ -158,7 +158,7 @@ Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (�
 |                       **[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                       |                                    |                                                                     |                                                                     |                                                                     |                        |                           |                           |                            |
 |                                                                 VHDX 調整大小                                                                  |        2019、2016、2012 R2         |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |        &#10004;        |         &#10004;          |         &#10004;          |                            |
 |                                                            虛擬光纖通道                                                             |        2019、2016、2012 R2         |                           &#10004;附注3                           |                           &#10004;附注3                           |                           &#10004;附注3                           |    &#10004;附注3     |      &#10004;附注3      |      &#10004;附注3      |                            |
-|                                                         即時虛擬機器備份                                                          |        2019、2016、2012 R2         |                           &#10004;附注5                           |                           &#10004;附注5                           |                           &#10004;附注5                           |   &#10004;注 4, 5   |    &#10004;注 4, 5     |   &#10004;注4、5、6   |   &#10004;注4、5、6    |
+|                                                         即時虛擬機器備份                                                          |        2019、2016、2012 R2         |                           &#10004;附注5                           |                           &#10004;附注5                           |                           &#10004;附注5                           |   &#10004;注4，5   |    &#10004;注4，5     |   &#10004;注4、5、6   |   &#10004;注4、5、6    |
 |                                                                 修剪支援                                                                 |        2019、2016、2012 R2         |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |        &#10004;        |                           |                           |                            |
 |                                                                   SCSI WWN                                                                   |        2019、2016、2012 R2         |                              &#10004;                               |                              &#10004;                               |                              &#10004;                               |                        |                           |                           |                            |
 |                        **[快閃記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                        |                                    |                                                                     |                                                                     |                                                                     |                        |                           |                           |                            |
@@ -183,12 +183,12 @@ Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (�
 
 ## <a name="rhelcentos-5x-series"></a>RHEL/CentOS 5.x 系列
 
-此系列提供支援的32位 PAE 核心。 在5.9 之前, RHEL/CentOS 沒有內建的 .LIS 支援。
+此系列提供支援的32位 PAE 核心。 在5.9 之前，RHEL/CentOS 沒有內建的 .LIS 支援。
 
 
 |                                                                 **功能**                                                                  |     **Windows Server 版本**     |                              5.2-5.11                              |                            **5.2-5.11**                             |    **5.9-5.11**     |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------|-----------------------|
-|                                                               **可用性**                                                               |                                    | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。1](https://www.microsoft.com/download/details.aspx?id=51612) |       內建        |
+|                                                               **Availability**                                                               |                                    | [.LIS 4。3](https://www.microsoft.com/download/details.aspx?id=55106) | [.LIS 4。1](https://www.microsoft.com/download/details.aspx?id=51612) |       內建        |
 |                          **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                          | 2019、2016、2012 R2、2012、2008 R2 |                              &#10004;                               |                              &#10004;                               |       &#10004;        |
 |                                                      Windows Server 2016 精確時間                                                       |             2019、2016             |                                                                     |                                                                     |                       |
 |                    **[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                    |                                    |                                                                     |                                                                     |                       |
@@ -226,53 +226,53 @@ Hyper-v 的內建 Red Hat Enterprise Linux Integration Services 驅動程式 (�
 
 ## <a name="notes"></a>注意
 
-1. 針對此 RHEL/CentOS 版本, VLAN 標記可運作, 但 VLAN 中繼不會。
+1. 針對此 RHEL/CentOS 版本，VLAN 標記可運作，但 VLAN 中繼不會。
 
-2. 如果已針對虛擬機器上的指定綜合網路介面卡設定網路系統管理員, 則靜態 IP 插入可能無法正常執行。 若要順利運作靜態 IP 插入, 請確認網路系統管理員已完全關閉, 或已透過其 ifcfg-eth0 ethX 檔關閉特定網路介面卡。
+2. 如果已針對虛擬機器上的指定綜合網路介面卡設定網路系統管理員，則靜態 IP 插入可能無法正常執行。 若要順利運作靜態 IP 插入，請確認網路系統管理員已完全關閉，或已透過其 ifcfg-eth0 ethX 檔關閉特定網路介面卡。
 
-3. 在使用虛擬光纖通道裝置的 Windows Server 2012 R2 上, 請確定已填入邏輯單元編號 0 (LUN 0)。 如果尚未填入 LUN 0, Linux 虛擬機器可能無法以原生方式掛接光纖通道裝置。
+3. 在使用虛擬光纖通道裝置的 Windows Server 2012 R2 上，請確定已填入邏輯單元編號0（LUN 0）。 如果尚未填入 LUN 0，Linux 虛擬機器可能無法以原生方式掛接光纖通道裝置。
 
-4. 針對內建的 .LIS 版本, 必須安裝「hyperv-守護程式」套件才能進行這項功能。
+4. 針對內建的 .LIS 版本，必須安裝「hyperv-守護程式」套件才能進行這項功能。
 
-5. 如果在即時虛擬機器備份作業期間有開啟的檔案控制代碼, 則在某些角落的情況下, 備份的 Vhd 可能必須在還原時執行檔案系統一致性檢查 (fsck)。 如果虛擬機器有連結的 iSCSI 裝置或直接連接的存放裝置 (也稱為傳遞磁片), 即時備份作業可能會以無訊息模式失敗。
+5. 如果在即時虛擬機器備份作業期間有開啟的檔案控制代碼，則在某些角落的情況下，備份的 Vhd 可能必須在還原時執行檔案系統一致性檢查（fsck）。 如果虛擬機器有連結的 iSCSI 裝置或直接連接的存放裝置（也稱為傳遞磁片），即時備份作業可能會以無訊息模式失敗。
 
-6. 雖然偏好 Linux Integration Services 下載, 但也可以透過[Hyper-v Backup Essentials For Linux](https://github.com/LIS/backupessentials/tree/1.0)取得 RHEL/CentOS 5.9-5.11/6.4/6.5 的即時備份支援。
+6. 雖然偏好 Linux Integration Services 下載，但也可以透過[Hyper-v Backup Essentials For Linux](https://github.com/LIS/backupessentials/tree/1.0)取得 RHEL/CentOS 5.9-5.11/6.4/6.5 的即時備份支援。
 
 7. 動態記憶體支援僅適用于64位的虛擬機器。
 
-8. 在此散發套件中, 預設不會啟用熱新增支援。 若要啟用熱新增支援, 您必須在/etc/udev/rules.d/下新增 udev 規則, 如下所示:
+8. 在此散發套件中，預設不會啟用熱新增支援。 若要啟用熱新增支援，您必須在/etc/udev/rules.d/下新增 udev 規則，如下所示：
 
    1. 建立檔案 **/etc/udev/rules.d/100-balloon.rules**。 您可以使用任何其他想要的檔案名作為檔案。
 
-   2. 將下列內容新增至檔案:`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. 將下列內容新增至檔案： `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. 重新開機系統以啟用熱新增支援。
 
-   雖然 Linux Integration Services 下載會在安裝時建立此規則, 但卸載了 .LIS 時也會移除規則, 因此, 如果在卸載之後需要動態記憶體, 則必須重新建立此規則。
+   雖然 Linux Integration Services 下載會在安裝時建立此規則，但卸載了 .LIS 時也會移除規則，因此，如果在卸載之後需要動態記憶體，則必須重新建立此規則。
 
-9. 如果客體作業系統的記憶體不足, 動態記憶體作業可能會失敗。 以下是一些最佳作法:
+9. 如果客體作業系統的記憶體不足，動態記憶體作業可能會失敗。 以下是一些最佳作法：
 
    * [啟動記憶體] 和 [最小記憶體] 應該等於或大於散發廠商建議的記憶體數量。
 
-   * 通常會耗用系統上整個可用記憶體的應用程式, 只能耗用最多 80% 的可用 RAM。
+   * 通常會耗用系統上整個可用記憶體的應用程式，只能耗用最多 80% 的可用 RAM。
 
-10. 如果您使用 Windows Server 2016 或 Windows Server 2012 R2 作業系統上的動態記憶體, 請指定 [**啟動記憶體**]、[**最小記憶體**] 和 [**最大記憶體**] 參數 (以 128 mb 的倍數表示)。 如果無法這樣做, 可能會導致熱新增失敗, 而且您可能不會在客體作業系統中看到任何記憶體增加。
+10. 如果您使用 Windows Server 2016 或 Windows Server 2012 R2 作業系統上的動態記憶體，請指定 [**啟動記憶體**]、[**最小記憶體**] 和 [**最大記憶體**] 參數（以 128 mb 的倍數表示）。 如果無法這樣做，可能會導致熱新增失敗，而且您可能不會在客體作業系統中看到任何記憶體增加。
 
-11. 某些發行版本 (包括使用 .LIS 4.0 和4.1 的散發套件) 只提供佔用支援, 不提供熱新增支援。 在這種情況下, 您可以將 [啟動記憶體] 參數設定為等於 [最大記憶體] 參數的值, 以使用「動態記憶體」功能。 這會導致在開機時將所有必要的記憶體熱新增至虛擬機器, 然後在稍後視主機的記憶體需求而定, Hyper-v 可以使用佔用從來賓自由配置或解除配置記憶體。 請設定 [**啟動記憶體**] 和 [**最小記憶體**], 或高於發佈的建議值。
+11. 某些發行版本（包括使用 .LIS 4.0 和4.1 的散發套件）只提供佔用支援，不提供熱新增支援。 在這種情況下，您可以將 [啟動記憶體] 參數設定為等於 [最大記憶體] 參數的值，以使用「動態記憶體」功能。 這會導致在開機時將所有必要的記憶體熱新增至虛擬機器，然後在稍後視主機的記憶體需求而定，Hyper-v 可以使用佔用從來賓自由配置或解除配置記憶體。 請設定 [**啟動記憶體**] 和 [**最小記憶體**]，或高於發佈的建議值。
 
-12. 若要啟用索引鍵/值組 (KVP) 基礎結構, 請從您的 RHEL ISO 安裝 hypervkvpd 或 hyperv-守護程式 rpm 套件。 或者, 您也可以直接從 RHEL 存放庫安裝套件。
+12. 若要啟用索引鍵/值組（KVP）基礎結構，請從您的 RHEL ISO 安裝 hypervkvpd 或 hyperv-守護程式 rpm 套件。 或者，您也可以直接從 RHEL 存放庫安裝套件。
 
-13. 如果沒有 Linux 軟體更新, 索引鍵/值組 (KVP) 基礎結構可能無法正常運作。 請洽詢您的散發廠商, 以取得此功能發生問題時的軟體更新。
+13. 如果沒有 Linux 軟體更新，索引鍵/值組（KVP）基礎結構可能無法正常運作。 請洽詢您的散發廠商，以取得此功能發生問題時的軟體更新。
 
-14. 在 Windows Server 2012 R2 第2代虛擬機器上, 預設會啟用安全開機, 而且除非停用安全開機選項, 否則部分 Linux 虛擬機器將無法開機。 您可以在**Hyper-v 管理員**的虛擬機器設定的 [**固件**] 區段中停用安全開機, 也可以使用 Powershell 將它停用:
+14. 在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，而且除非停用安全開機選項，否則部分 Linux 虛擬機器將無法開機。 您可以在**Hyper-v 管理員**的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 將它停用：
 
     ```Powershell
     Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
     ```
 
-    Linux Integration Services 下載可以套用至現有的第2代 Vm, 但不會傳授第2代功能。
+    Linux Integration Services 下載可以套用至現有的第2代 Vm，但不會傳授第2代功能。
 
-15. 在 Red Hat Enterprise Linux 或 CentOS 5.2、5.3 和5.4 中, 檔案系統凍結功能無法使用, 因此也無法使用即時虛擬機器備份。
+15. 在 Red Hat Enterprise Linux 或 CentOS 5.2、5.3 和5.4 中，檔案系統凍結功能無法使用，因此也無法使用即時虛擬機器備份。
 
 另請參閱
 

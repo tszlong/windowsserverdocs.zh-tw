@@ -1,7 +1,7 @@
 ---
-title: 避免將儲存為系統磁碟機上的 智慧型分頁處理檔案
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 避免在系統磁片上儲存智慧型分頁檔案
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: 9b57c9b8-76c5-43c7-bfa6-2c95b3cb6510
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6abc84b406de7e7c33628ccee4e3af706efe5c70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3ddb662d14545693e26eb680527d93eb65d5d13
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886169"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365236"
 ---
-# <a name="avoid-storing-smart-paging-files-on-a-system-disk"></a>避免將儲存為系統磁碟機上的 智慧型分頁處理檔案
+# <a name="avoid-storing-smart-paging-files-on-a-system-disk"></a>避免在系統磁片上儲存智慧型分頁檔案
 
 >適用於：Windows Server 2016
 
@@ -28,20 +28,20 @@ ms.locfileid: "59886169"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**Severity**|警告|  
-|**分類**|操作|  
+|**分類**|作業|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的文字。  
   
 ## <a name="issue"></a>問題  
-*如果虛擬機器重新開機時，和智慧型分頁處理檔案的指定的位置是執行 HYPER-V 之伺服器的系統磁碟，一或多個虛擬機器的記憶體組態可能需要使用智慧型分頁處理。*  
+*一或多部虛擬機器的記憶體設定可能需要在虛擬機器重新開機時使用智慧型分頁，而智慧分頁檔案的指定位置是執行 Hyper-v 之伺服器的系統磁片。*  
   
 ## <a name="impact"></a>影響  
-*系統磁碟使用智慧型分頁處理可能會導致執行 HYPER-V 時遇到問題的伺服器。這會影響下列虛擬機器：*  
+@no__t 0Use 智慧分頁的系統磁片，可能會導致執行 Hyper-v 的伺服器發生問題。這會影響下列虛擬機器： *  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>解析度  
-*重新設定虛擬機器，來儲存智慧型分頁處理檔案，為非系統磁碟機上。*  
+*重新設定虛擬機器，將智慧分頁檔案儲存在非系統磁片上。*  
   
 
 

@@ -1,8 +1,8 @@
 ---
 title: Sc delete
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68af5f118b2cc9d7941abddccd2a1bc7fde4c6d0
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: ad64d0f7c772b8d29a191b5f3e690d74c8765717
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222930"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371285"
 ---
 # <a name="sc-delete"></a>Sc delete
 
 
 
-從登錄刪除一個服務子機碼。 如果服務正在執行，或另一個處理序已開啟的控制代碼給服務，服務會標示為刪除。
+從登錄中刪除服務子機碼。 如果服務正在執行，或有其他進程具有服務的開啟控制碼，服務就會標示為要刪除。
 
 如需如何使用此命令的範例，請參閱[範例](#examples)。
 
@@ -38,17 +38,17 @@ sc [<ServerName>] delete [<ServiceName>]
 
 |參數|描述|
 |---------|-----------|
-|\<ServerName>|指定由服務所在的遠端伺服器的名稱。 名稱必須使用通用命名慣例 (UNC) 格式 (例如\\ \\myserver)。 若要在本機執行 SC.exe，省略這個參數。|
-|\<ServiceName>|指定所傳回的服務名稱**getkeyname**作業。|
+|\<ServerName >|指定服務所在的遠端伺服器名稱。 名稱必須使用通用命名慣例（UNC）格式（例如，\\ @ no__t-1myserver）。 若要在本機執行 SC.EXE，請省略此參數。|
+|\<ServiceName >|指定**getkeyname**作業所傳回的服務名稱。|
 |?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-使用**新增或移除程式**上**控制台**刪除 DHCP、 DNS 或任何其他內建的作業系統服務。 請注意，**新增或移除程式**才不會移除服務，登錄子機碼，但它也會解除安裝服務，並刪除任何捷徑。
+使用 [**控制台**] 上的 [**新增或移除程式**] 來刪除 DHCP、DNS 或任何其他內建的作業系統服務。 請注意，[**新增或移除程式**] 不只會移除服務的登錄子機碼，也會卸載服務並刪除其任何快捷方式。
 
 ## <a name="examples"></a>範例
 
-若要刪除的服務子機碼**NewServ**從本機電腦上登錄中，輸入：
+若要從本機電腦上的登錄中刪除服務子機碼**NewServ** ，請輸入：
 ```
 sc delete newserv
 ```

@@ -2,7 +2,7 @@
 title: 使用者帳戶控制概觀
 description: Windows Server 安全性
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tpm
@@ -13,25 +13,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 90ce72cb3d1850563d16a12d09a6872d107c0690
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bdc9f4dc4b8e19d62288f12a4f2b4e8c86b93b68
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887669"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403315"
 ---
 # <a name="user-account-control-overview"></a>使用者帳戶控制概觀
-使用者帳戶控制\(UAC\)是 Microsoft 的整體安全性展望的基礎元件。  UAC 有助於減少惡意程式的影響。
+使用者帳戶控制 \(UAC @ no__t-1 是 Microsoft 整體安全性願景的基礎元件。  UAC 有助於減少惡意程式的影響。
 
 ## <a name="BKMK_OVER"></a>功能描述
-UAC 可讓所有使用者使用標準使用者帳戶來登入他們的電腦。 使用標準使用者權杖啟動的程序可以使用授與標準使用者的存取權限來執行工作。 例如，「Windows 檔案總管」會自動繼承標準使用者層級權限。 此外，任何使用 Windows 檔案總管執行的程式\(例如，透過雙精度浮點數\-按一下 應用程式捷徑\)也使用一組標準的使用者權限來執行。 許多應用程式，包括隨附於作業系統本身，專為在這種方式中正常運作。
+UAC 可讓所有使用者使用標準使用者帳戶來登入他們的電腦。 使用標準使用者權杖啟動的程序可以使用授與標準使用者的存取權限來執行工作。 例如，「Windows 檔案總管」會自動繼承標準使用者層級權限。 此外，使用 Windows 檔案管理工具執行的任何程式 @no__t 0for 範例，透過雙重 @ no__t-1clicking 應用程式快捷方式 @ no__t-2 也會以一組標準的使用者權限執行。 許多應用程式（包括作業系統本身所含的）都是設計成以這種方式適當地運作。
 
-其他應用程式，尤其是特別設計並未考慮到，安全性設定通常會需要額外的權限，才能順利執行。 這些類型的程式稱為舊版應用程式。 此外，動作，例如安裝新軟體和變更程式，例如 Windows 防火牆的組態需要比標準使用者帳戶提供更多的權限。
+其他應用程式（特別是未特別設計的安全性設定），通常需要額外的許可權才能順利執行。 這些類型的程式稱為繼承應用程式。 此外，像是安裝新的軟體，以及對 Windows 防火牆之類的程式進行設定變更等動作，需要的許可權比標準使用者帳戶可用的還多。
 
-當使用多個標準使用者權限來執行應用程式需求時，UAC 可以還原其他使用者群組的權杖。 這可讓使用者能夠明確控制要對使用者的電腦或裝置進行系統層級變更的程式。
+當應用程式需要以超過標準使用者權限執行時，UAC 可以將其他使用者群組還原至權杖。 這可讓使用者明確控制對其電腦或裝置進行系統層級變更的程式。
 
-## <a name="BKMK_APP"></a>實際的應用程式
-在 UAC 中的系統管理員核准模式中，可協助防止惡意程式系統管理員的不知情的情況下以無訊息方式安裝。 它也有助於防止不小心系統\-寬的變更。 最後，它可以用來強制執行較高層級的規範，規定每個系統管理程序都必須由系統管理員主動同意或提供認證才能執行。
+## <a name="BKMK_APP"></a>實際應用
+UAC 中的管理核准模式有助於防止惡意程式在沒有系統管理員知識的情況下，以無訊息方式安裝。 它也有助於防止意外的系統 @ no__t-0wide 變更。 最後，它可以用來強制執行較高層級的規範，規定每個系統管理程序都必須由系統管理員主動同意或提供認證才能執行。
 
 
 

@@ -2,7 +2,7 @@
 title: wbadmin 啟用備份
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c46a77f905960150c10048bc872aa1ea35e3f335
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d30136f7eb3ea48b8d9b0a740eb5a77e981ae3f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868784"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362376"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin 啟用備份
 
@@ -80,7 +80,7 @@ wbadmin enable backup
 
 ## <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-addtarget|針對 Windows Server 2008，指定備份的儲存位置。 需要您指定備份的目的地做為磁片識別碼（請參閱備註）。 磁片在使用前會先格式化，並會永久清除其上的任何現有資料。</br>針對 Windows Server 2008 R2 和更新版本，指定備份的儲存位置。 需要您將位置指定為遠端共用資料夾的磁片、磁片區或通用命名慣例（UNC）\\路徑（\\ \<servername >\<共用名稱 >\)。 根據預設，備份會儲存\\在： \\ <servername> \<共用名稱 > \WindowsImageBackup\<ComputerBackedUp >\. 如果您指定磁片，則會在使用之前先格式化磁片，而且會永久清除其上的任何現有資料。 如果您指定共用資料夾，就無法加入更多位置。 您一次只能指定一個共用資料夾做為儲存位置。</br>重要事項：如果您將備份儲存到遠端共用資料夾，當您再次使用相同的資料夾來備份相同的電腦時，將會覆寫該備份。 此外，如果備份作業失敗，最後可能不會有備份，因為將會覆寫較舊的備份，但較新的備份將無法使用。 您可以在遠端共用資料夾中建立子資料夾來組織您的備份，以避免發生這種情況。 如果您這樣做，子資料夾將需要上層資料夾空間的兩倍。</br>只能在單一命令中指定一個位置。 您可以再次執行命令來新增多個磁片區和磁片備份儲存位置。|
 |-removetarget|指定您想要從現有的備份排程中移除的儲存位置。 需要您將位置指定為磁片識別碼（請參閱備註）。|

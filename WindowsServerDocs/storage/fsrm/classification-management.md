@@ -1,23 +1,23 @@
 ---
 title: 分類管理
-description: 本文說明如何將分類的分類屬性為基礎的檔案
+description: 本文說明如何根據分類屬性來分類檔案
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d7ea1f6f5d99ef1b55e919af3b8ebe391486ed50
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: f87614d5884d25c4e462cdccd8de72a7980368ec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475903"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402010"
 ---
 # <a name="classification-management"></a>分類管理
 
-> 適用於：Windows Server 2019，Windows Server 2016、 Windows Server （半年通道）、 Windows Server 2012 R2、 Windows Server 2012 中，Windows Server 2008 R2
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 分類屬性用於將檔案分類，可用來針對已排程的檔案管理工作選取檔案。
 

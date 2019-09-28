@@ -1,61 +1,61 @@
 ---
-title: 疑難排解 「 主機守護者服務
+title: 針對主機守護者服務進行疑難排解
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 05888ce57b5b922fc330d9deab430d329fede69b
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: be817a2c06b13af254b80090b9a7488209d4df0a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222537"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403530"
 ---
-# <a name="troubleshooting-the-host-guardian-service"></a>疑難排解 「 主機守護者服務
+# <a name="troubleshooting-the-host-guardian-service"></a>針對主機守護者服務進行疑難排解
 
-> 適用於：Windows Server （半年通道），Windows Server 2016
+> 適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題說明部署，或在受防護網狀架構中的主機守護者服務 (HGS) 伺服器的作業時所遇到的常見問題的解決方法。
-如果您不確定您的問題，第一次嘗試執行的性質[受防護網狀架構診斷](guarded-fabric-troubleshoot-diagnostics.md)上您的 HGS 伺服器和 HYPER-V 主機，以縮小可能會導致。
+本主題說明在受防護網狀架構中部署或操作主機守護者服務（HGS）伺服器時所遇到之常見問題的解決方法。
+如果您不確定問題的本質，請先嘗試在您的 HGS 伺服器和 Hyper-v 主機上執行受防護的網狀[架構診斷](guarded-fabric-troubleshoot-diagnostics.md)，以縮小可能的原因。
 
 ## <a name="certificates"></a>憑證
 
-HGS 需要數個憑證才能運作，包括系統管理員已設定的加密和簽署憑證，以及證明憑證管理本身的 HGS。
-如果這些憑證的設定不正確，HGS 將無法在想要證明客戶資料或解除鎖定受防護 Vm 的金鑰保護裝置的 HYPER-V 主機的要求提供服務。
-下列各節涵蓋常見與 HGS 上設定的憑證相關的問題。
+HGS 需要數個憑證才能操作，包括系統管理員設定的加密和簽署憑證，以及由 HGS 本身管理的證明憑證。
+如果這些憑證設定不正確，HGS 將無法提供來自 Hyper-v 主機的要求，以證明或解除鎖定受防護 Vm 的金鑰保護裝置。
+下列各節涵蓋與 HGS 上設定的憑證相關的常見問題。
 
-### <a name="certificate-permissions"></a>憑證權限
+### <a name="certificate-permissions"></a>憑證許可權
 
-HGS 必須能夠存取這兩個公用和私用金鑰的加密和簽署憑證新增至 HGS 的憑證指紋。
-具體而言，群組受管理執行的 HGS 服務的服務帳戶 (gMSA) 需要存取金鑰。
-HGS 伺服器上尋找 HGS 使用 gMSA，請在提升權限的 PowerShell 提示字元中執行下列命令：
+HGS 必須能夠存取憑證指紋新增至 HGS 的加密和簽署憑證的公開和私密金鑰。
+具體而言，執行 HGS 服務的群組受管理的服務帳戶（gMSA）需要金鑰的存取權。
+若要尋找 HGS 使用的 gMSA，請在您的 HGS 伺服器上提高許可權的 PowerShell 提示字元中執行下列命令：
 
 ```powershell
 (Get-IISAppPool -Name KeyProtection).ProcessModel.UserName
 ```
 
-您授與 gMSA 帳戶使用的存取權的私用金鑰的方式取決於儲存金鑰的位置： 在本機憑證檔，在硬體安全性模組 (HSM)，或使用自訂的協力廠商金鑰儲存提供者的電腦上。
+授與 gMSA 帳戶存取權以使用私密金鑰的方式，取決於金鑰的儲存位置：在電腦上作為本機憑證檔案、硬體安全模組（HSM），或使用自訂的協力廠商金鑰儲存提供者。
 
-#### <a name="grant-access-to-software-backed-private-keys"></a>以軟體為基礎的私用金鑰授與存取權
+#### <a name="grant-access-to-software-backed-private-keys"></a>授與軟體支援的私密金鑰存取權
 
-如果您使用自我簽署的憑證或是由憑證授權單位所核發的憑證**不**儲存在硬體安全性模組或自訂金鑰儲存提供者，您可以變更私用金鑰的權限執行下列步驟：
+如果您使用的是自我簽署憑證或憑證授權單位單位所發行的憑證**未**儲存在硬體安全性模組或自訂金鑰儲存提供者中，您可以執行下列步驟來變更私密金鑰許可權：
 
-1. 開啟本機憑證管理員 (certlm.msc)
-2. 依序展開**個人 > 憑證**並尋找您想要更新的簽章或加密憑證。
-3. 以滑鼠右鍵按一下憑證，然後選取**所有的工作 > 管理私用金鑰**。
-4. 按一下 **新增**授與新的使用者存取憑證的私密金鑰。
-5. 在物件選擇器中，輸入 HGS 稍早找到的 gMSA 帳戶名稱，然後按一下 **確定**。
-6. 請確定具有 gMSA**讀取**憑證的存取權。
-7. 按一下 **確定**以關閉 權限 視窗。
+1. 開啟本機憑證管理員（certlm.msc）
+2. 展開 [**個人 > 憑證**]，並尋找您要更新的簽署或加密憑證。
+3. 以滑鼠右鍵按一下憑證，然後選取 所有工作 **> 管理私密金鑰**。
+4. 按一下 **[新增]** ，將憑證的私密金鑰存取權授與新的使用者。
+5. 在 [物件選擇器] 中，輸入先前找到的 HGS 的 gMSA 帳戶名稱，然後按一下 **[確定]** 。
+6. 請確定 gMSA 具有憑證的**讀取**許可權。
+7. 按一下 **[確定**] 以關閉 [許可權] 視窗。
 
-如果您在 Server Core 上執行 HGS，或從遠端管理伺服器，您將無法管理使用本機憑證管理員的私密金鑰。
-相反地，您必須下載[受防護網狀架構工具 PowerShell 模組](https://www.powershellgallery.com/packages/GuardedFabricTools)這樣能讓您管理在 PowerShell 中的權限。
+如果您是在 Server Core 上執行 HGS，或從遠端管理伺服器，您將無法使用本機憑證管理員來管理私密金鑰。
+相反地，您必須下載可讓您在 PowerShell 中管理許可權的受防護網狀[架構工具 PowerShell 模組](https://www.powershellgallery.com/packages/GuardedFabricTools)。
 
-1. 開啟提升權限的 PowerShell 主控台在的 Server Core 電腦上或使用 PowerShell 遠端執行功能對 HGS 的本機系統管理員權限的帳戶。
-2. 執行下列命令來安裝的受防護網狀架構工具 PowerShell 模組，並授與 gMSA 帳戶的私密金鑰。
+1. 在 Server Core 機器上開啟已提升許可權的 PowerShell 主控台，或使用具有 HGS 本機系統管理員許可權的帳戶來使用 PowerShell 遠端處理。
+2. 執行下列命令來安裝受防護的網狀架構工具 PowerShell 模組，並將私密金鑰的存取權授與 gMSA 帳戶。
 
 ```powershell
 $certificateThumbprint = '<ENTER CERTIFICATE THUMBPRINT HERE>'
@@ -76,106 +76,106 @@ $gMSA = (Get-IISAppPool -Name KeyProtection).ProcessModel.UserName
 $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 ```
 
-#### <a name="grant-access-to-hsm-or-custom-provider-backed-private-keys"></a>授與 HSM 或自訂提供者支援的私用金鑰的存取權
+#### <a name="grant-access-to-hsm-or-custom-provider-backed-private-keys"></a>授與 HSM 或自訂提供者支援之私密金鑰的存取權
 
-如果您的憑證的私密金鑰受到硬體安全性模組 (HSM) 或自訂金鑰儲存提供者 (KSP)，權限模型取決於您的特定軟體廠商。
-為了獲得最佳結果，請參閱廠商的文件或支援站台的特定裝置/軟體如何私用金鑰處理權限的詳細資訊。
+如果您的憑證私密金鑰是由硬體安全性模組（HSM）或自訂金鑰儲存提供者（KSP）所支援，則許可權模型將取決於您的特定軟體廠商。
+如需最佳結果，請參閱廠商的檔或支援網站，以取得如何針對特定裝置/軟體處理私密金鑰許可權的相關資訊。
 
-有些硬體安全性模組不支援授與特定使用者帳戶的存取權的私用金鑰;相反地，它們會在一組特定的索引鍵中允許電腦帳戶對所有金鑰的存取。
-對於這類裝置，通常足以讓您的金鑰的電腦存取權，因此 HGS 能夠運用該連線。
+某些硬體安全模組不支援將私密金鑰的存取權授與特定的使用者帳戶;相反地，它們允許電腦帳戶存取特定金鑰集中的所有金鑰。
+對於這類裝置，通常會有足夠的許可權可讓電腦存取您的金鑰，而 HGS 則可以利用該連線。
 
 **Hsm 的秘訣**
 
-以下是建議的組態選項，以協助您順利使用 hsm 型金鑰與 HGS Microsoft 和其合作夥伴的經驗。
-祕訣可供您方便參考，並不保證能夠正確當時的讀取，或它們所背書的 HSM 製造商。
-如有關您特定的裝置，如果您有進一步的問題的精確資訊，請連絡您的 HSM 製造商。
+以下是建議的設定選項，可協助您根據 Microsoft 及其合作夥伴的經驗，成功地將 HSM 支援的金鑰與 HGS 搭配使用。
+這些秘訣是為了方便您而提供，並不保證在閱讀時正確，也不會被 HSM 製造商背書。
+如果您有進一步的問題，請洽詢您的 HSM 製造商，以取得與特定裝置相關的精確資訊。
 
 HSM 品牌/系列      | 建議
 ----------------------|-------------
-Gemalto SafeNet       | 請確定金鑰使用方式屬性，在憑證要求檔案設定為 0xa0，允許用於簽署和加密憑證。 此外，您必須授與 gMSA 帳戶*讀取*使用本機憑證管理員工具的私密金鑰存取權 （請參閱上述步驟）。
-nCipher nShield        | 請確定每一個 HGS 節點可存取包含簽署和加密金鑰的安全園地。 您不需要設定 gMSA 特定權限。
-Utimaco CryptoServers | 確定金鑰使用方式屬性，在憑證要求檔案設定為 0x13 等，讓要用於加密、 解密和簽署的憑證。
+Gemalto SafeNet       | 請確定憑證要求檔案中的 [金鑰使用方法] 屬性已設為 [0xa0]，以允許憑證用於簽署和加密。 此外，您必須使用本機憑證管理員工具（請參閱上述步驟）將私密金鑰的*讀取*權授與 gMSA 帳戶。
+nCipher nShield        | 請確定每個 HGS 節點都可以存取包含簽署和加密金鑰的安全性世界。 您不需要設定 gMSA 特定的許可權。
+Utimaco CryptoServers | 請確定憑證要求檔案中的 [金鑰使用方法] 屬性已設定為 [0x13]，以允許憑證用於加密、解密和簽署。
 
 ### <a name="certificate-requests"></a>憑證要求
 
-如果您使用的憑證授權單位發出憑證的公開金鑰基礎結構 (PKI) 環境中，您必須確認您的憑證要求中包含這些機碼的 HGS 的使用方式的最低需求。
+如果您要使用憑證授權單位單位來發行公開金鑰基礎結構（PKI）環境中的憑證，您必須確定您的憑證要求包含 HGS 使用這些金鑰的最低需求。
 
 **簽署憑證**
 
-CSR 屬性 | 必要的值
+CSR 屬性 | 必要值
 -------------|---------------
 演算法    | RSA
-金鑰大小     | 至少 2048 位元
+金鑰大小     | 至少2048位
 金鑰使用方法    | Signature/Sign/DigitalSignature
 
 **加密憑證**
 
-CSR 屬性 | 必要的值
+CSR 屬性 | 必要值
 -------------|---------------
 演算法    | RSA
-金鑰大小     | 至少 2048 位元
-金鑰使用方法    | Encryption/Encrypt/DataEncipherment
+金鑰大小     | 至少2048位
+金鑰使用方法    | 加密/加密/DataEncipherment
 
 **Active Directory 憑證服務範本**
 
-如果您使用 Active Directory 憑證服務 (ADCS) 憑證範本來建立建議您的憑證會使用範本，使用下列設定：
+如果您使用 Active Directory 憑證服務（ADCS）憑證範本來建立憑證，建議您使用具有下列設定的範本：
 
-ADCS Template 屬性 | 必要的值
+ADCS 範本屬性 | 必要值
 -----------------------|---------------
-提供者類別目錄      | 金鑰儲存提供者
+提供者分類      | 金鑰儲存提供者
 演算法名稱         | RSA
 最小金鑰大小       | 2048
 用途                | 簽章和加密
-金鑰使用方式延伸模組    | 數位簽章，金鑰加密資料編密 （「 允許加密使用者資料 」）
+金鑰使用方式延伸    | 數位簽章、金鑰編密、資料加密（「允許加密使用者資料」）
 
 
 ### <a name="time-drift"></a>時間漂移
 
-如果您的伺服器時間已從其他 HGS 節點或您受防護網狀架構中的 HYPER-V 主機的大幅漂移，您可能會遇到與證明簽署者憑證的有效性問題。
-建立和更新的幕後 HGS 證明簽章者憑證和用來簽署發給證明服務的受防護主機的健康情況憑證。
+如果您的伺服器時間與其他 HGS 節點或您的受防護網狀架構中的 Hyper-v 主機明顯漂移，您可能會遇到證明簽署者憑證有效性的問題。
+證明簽署者憑證會在 HGS 的幕後建立和更新，並用於簽署證明服務發行給受防護主機的健康情況憑證。
 
-若要重新整理證明簽章者憑證，請在提升權限的 PowerShell 提示字元中執行下列命令。
+若要重新整理證明簽署者憑證，請在提升許可權的 PowerShell 提示字元中執行下列命令。
 
 ```powershell
 Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName 
 AttestationSignerCertRenewalTask
 ```
 
-或者，您可以手動執行排定的工作 installationdirectory**工作排程器**(taskschd.msc)，瀏覽至**工作排程器程式庫 > Microsoft > Windows > HGSServer**和執行名為 「 任務**AttestationSignerCertRenewalTask**。
+或者，您也可以手動執行排程工作，方法是開啟**工作排程器**（taskschd.msc），流覽至**工作排程器程式庫 > Microsoft > Windows > HGSServer** ，然後執行名為**AttestationSignerCertRenewalTask**。
 
 ## <a name="switching-attestation-modes"></a>切換證明模式
 
-如果從 TPM 模式切換至 Active Directory 模式，或反之亦然使用 HGS[組 HgsServer](https://technet.microsoft.com/library/mt652180.aspx) cmdlet，它可能需要 10 分鐘，每個節點 HGS 叢集中，以啟動 強制執行新的證明模式中。
-這是正常的行為。
-建議您不要移除任何原則，允許從先前的證明模式的主機，直到您已確認所有主機都證明成功使用新的證明模式。
+如果您使用[HgsServer 指令程式](https://technet.microsoft.com/library/mt652180.aspx)將 HGS 從 TPM 模式切換到 Active Directory 模式，或反之亦然，可能需要10分鐘的時間，您的 HGS 叢集中的每個節點才會開始強制執行新的證明模式。
+這是正常行為。
+建議您不要從先前的證明模式移除任何允許主機的原則，除非您已確認所有主機都已使用新的證明模式證明成功。
 
-**從 TPM 切換到廣告模式時的已知的問題**
+**從 TPM 切換至 AD 模式時的已知問題**
 
-如果您初始化到 Active Directory 模式中 TPM 模式和更新版本的交換器的 HGS 叢集，則會防止您的 HGS 叢集中其他節點切換到新的證明模式的已知的問題。
-若要確保所有的 HGS 伺服器強制執行正確的證明模式，請執行`Set-HgsServer -TrustActiveDirectory`**每個節點上**的 HGS 叢集。
-如果您從 TPM 模式切換至 AD 模式則不適用此問題*和*叢集原本設定在 AD 模式。
+如果您以 TPM 模式初始化 HGS 叢集，並在稍後切換到 Active Directory 模式，則會有一個已知的問題，讓 HGS 叢集中的其他節點無法切換到新的證明模式。
+為確保所有 HGS 伺服器都強制執行正確的證明模式，請在 HGS 叢集的**每個節點上**執行 `Set-HgsServer -TrustActiveDirectory`。
+如果您是從 TPM 模式切換到 AD 模式 *，而*叢集原本是以 ad 模式設定，則不適用此問題。
 
-您可以執行，以確認您的 HGS 伺服器的證明模式[Get HgsServer](https://technet.microsoft.com/library/mt652162.aspx)。
+您可以藉由執行[HgsServer](https://technet.microsoft.com/library/mt652162.aspx)來確認 HGS 伺服器的證明模式。
 
 ## <a name="memory-dump-encryption-policies"></a>記憶體傾印加密原則
 
-如果您嘗試要設定的記憶體傾印加密原則並不會看到預設 HGS 傾印原則 (Hgs\_NoDumps、 Hgs\_DumpEncryption 和 Hgs\_DumpEncryptionKey) 或傾印原則 cmdlet （Add-HgsAttestationDumpPolicy)，很可能您沒有安裝最新累積更新。
-若要解決此問題，[更新您的 HGS 伺服器](guarded-fabric-manage-hgs.md#patching-hgs)最新累計 Windows update 並[啟用新的證明原則](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation)。
-請確定您更新相同的累計更新，然後再啟動新的證明原則，您的 HYPER-V 主機，因為一旦啟動 HGS 原則後，不需要安裝新傾印加密功能的主機可能會失敗證明。
+如果您嘗試設定記憶體傾印加密原則，但看不到預設的 HGS 傾印原則（Hgs @ no__t-0NoDumps、Hgs @ no__t-1DumpEncryption 和 Hgs @ no__t-2DumpEncryptionKey）或傾印原則 Cmdlet （Add-HgsAttestationDumpPolicy），它是您可能未安裝最新的累計更新。
+若要修正此問題，請將[您的 HGS 伺服器更新](guarded-fabric-manage-hgs.md#patching-hgs)為最新的累積 Windows 更新，並[啟動新的證明原則](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation)。
+啟動新的證明原則之前，請確定您已將 Hyper-v 主機更新為相同的累積更新，因為未安裝新傾印加密功能的主機在啟用 HGS 原則之後，可能會失敗證明。
 
 ## <a name="endorsement-key-certificate-error-messages"></a>簽署金鑰憑證錯誤訊息
 
-註冊使用的主機時[新增 HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) cmdlet，從提供的平台識別項檔擷取 TPM 的兩個識別碼： 簽署金鑰憑證 (EKcert) 和公開簽署金鑰 (EKpub)。
-EKcert 識別製造商的 TPM，提供 TPM 是真確且製造透過一般的供應鏈的保證。
-EKpub 可以唯一識別該特定 TPM，而且是其中一個 HGS 用來授與主應用程式存取權以執行受防護的 Vm 的量值。
+使用[HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) Cmdlet 來註冊主機時，會從提供的平臺識別碼檔案中解壓縮兩個 TPM 識別碼：簽署金鑰憑證（EKcert）和公開簽署金鑰（EKpub）。
+EKcert 會識別 TPM 的製造商，藉由正常供應鏈來確保 TPM 的真實性和製造。
+EKpub 會唯一識別該特定 TPM，而是 HGS 用來授與主機存取權以執行受防護 Vm 的其中一個量值。
 
-註冊 TPM 主機，如果其中一個的兩個條件成立時，您會收到錯誤：
-1. 平台識別項檔**則否**包含簽署金鑰憑證
-2. 平台識別項檔包含簽署金鑰的憑證，但該憑證是否**不受信任**您系統上
+當下列兩個條件之一成立時，您會在註冊 TPM 主機時收到錯誤：
+1. 平臺識別碼檔案不**包含簽署**金鑰憑證
+2. 平臺識別碼檔案包含簽署金鑰憑證，但該憑證在您的系統上**不受信任**
 
-特定的 TPM 製造商不包含 EKcerts 其 Tpm 中。
-如果您懷疑這是您的 TPM 的情況，請確認鴗您鎏 OEM 應該不具有 EKcert 並使用您的 Tpm`-Force`旗標，以手動方式與 HGS 註冊主機。
-如果您的 TPM 應有 EKcert 但平台識別項檔中找不到其中一個，請確定您使用的系統管理員 （提升權限） 的 PowerShell 主控台，但執行[Get PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)主機上。
+某些 TPM 製造商不會在其 Tpm 中包含 EKcerts。
+如果您懷疑 TPM 發生這種情況，請向您的 OEM 確認您的 Tpm 不應該有 EKcert，並使用 `-Force` 旗標，手動向 HGS 註冊主機。
+如果您的 TPM 應該有 EKcert，但在平臺識別碼檔案中找不到，則請確定您在主機上執行[PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)時，使用的是系統管理員（提高許可權） PowerShell 主控台。
 
-如果您收到您 EKcert 不受信任的錯誤時，請確定您有[安裝受信任的 TPM 根憑證封裝](guarded-fabric-install-trusted-tpm-root-certificates.md)上每一部 HGS 伺服器，您的 TPM 廠商的根憑證位於本機電腦的**TrustedTPM\_RootCA**儲存。 所有適用的中繼憑證也必須安裝在**TrustedTPM\_IntermediateCA**儲存在本機電腦上。
-安裝根和中繼憑證之後，您應該能夠執行`Add-HgsAttestationTpmHost`成功。
+如果您收到 EKcert 不受信任的錯誤，請確定您已在每部 HGS 伺服器上[安裝受信任的 tpm 根憑證封裝](guarded-fabric-install-trusted-tpm-root-certificates.md)，而且 TPM 廠商的根憑證存在於本機電腦的**TrustedTPM @ no__ 中。t 2RootCA**存放區。 任何適用的中繼憑證也必須安裝在本機電腦上的**TrustedTPM @ no__t-1IntermediateCA**存放區中。
+安裝根和中繼憑證之後，您應該能夠成功地執行 `Add-HgsAttestationTpmHost`。

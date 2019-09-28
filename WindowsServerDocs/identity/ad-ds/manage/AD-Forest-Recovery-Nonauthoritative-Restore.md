@@ -6,34 +6,34 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: e4ce1d18-d346-492a-8bca-f85513aa3ac1
 ms.technology: identity-adds
-ms.openlocfilehash: 65e33e6507d2affc4d07cc0780a7baf91a170a09
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d7792cd739931d758125c8946606beb043ce19dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369086"
 ---
-# <a name="performing-a-nonauthoritative-restore-of-active-directory-domain-services"></a>執行非系統授權還原的 Active Directory 網域服務 
+# <a name="performing-a-nonauthoritative-restore-of-active-directory-domain-services"></a>執行 Active Directory Domain Services 的非系統授權還原 
 
->適用於：Windows Server 2016 中，Windows Server 2012 和 2012 R2 中，Windows Server 2008 和 2008 R2
+>適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
 
-若要執行非系統授權還原，請完成下列程序。  
+若要執行非系統授權還原，請完成下列程式。  
   
-下列程序會使用 Wbadmin.exe 執行 Active Directory 或 Active Directory 網域服務 (AD DS) 的非系統授權還原。 如果您使用不同的備份解決方案，或如果您想要完成 SYSVOL 的授權還原，稍後在樹系修復程序，您可以使用這些替代的方法來執行系統授權還原的 SYSVOL:  
+下列程式會使用 Wbadmin 執行 Active Directory 或 Active Directory Domain Services （AD DS）的非系統授權還原。 如果您使用不同的備份解決方案，或者您想要在稍後的樹系復原程式中完成 SYSVOL 的授權還原，您可以使用下列替代方法來執行 SYSVOL 的授權還原：  
   
-- 如果您使用檔案複寫服務 (FRS) 來複寫 SYSVOL，請依照下列中的步驟[文章 290762](https://go.microsoft.com/fwlink/?LinkId=148443) Microsoft 知識庫中使用**BurFlags**登錄機碼以重新初始化 FRS 複本設定此項目，或如有必要，文章 315457 [315457](https://support.microsoft.com/kb/315457)重建 SYSVOL 樹狀目錄。 若要判斷是否 FRS 來複寫 SYSVOL，請參閱[DFSR 或 FRS 來複寫判斷是否網域控制站的 SYSVOL 資料夾](https://msdn.microsoft.com/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs)。  
-- 如果您使用分散式檔案系統 (DFS) 複寫來複寫 SYSVOL，請參閱[執行權威的同步處理的 DFSR 複寫的 SYSVOL](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)。  
+- 如果您使用檔案複寫服務（FRS）來複寫 SYSVOL，請遵循 Microsoft 知識庫[文章 290762](https://go.microsoft.com/fwlink/?LinkId=148443)中的步驟，使用**BurFlags**登錄機碼來重新初始化 FRS 複本集，或如有必要，請參閱文章 315457 [315457](https://support.microsoft.com/kb/315457)以重建 SYSVOL 樹狀目錄。 若要判斷 FRS 是否已複寫 SYSVOL，請參閱[判斷是否由 DFSR 或 frs 複寫網域控制站的 Sysvol 資料夾](https://msdn.microsoft.com/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs)。  
+- 如果您使用分散式檔案系統（DFS）複寫來複寫 SYSVOL，請參閱[執行 DFSR 複寫 sysvol 的權威同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)處理。  
 
 ## <a name="performing-a-nonauthoritative-restore"></a>執行非系統授權還原
 
-使用下列程序來執行 AD DS 的非系統授權還原和 SYSVOL 的授權還原，同時使用 wbadmin.exe 在執行 Windows Server 2012、 Windows Server 2008 R2 或 Windows Server 2008 網域控制站。 備份必須明確包含系統狀態資料;使用於完整伺服器復原完整伺服器備份將無法運作。 如需建立系統狀態備份的詳細資訊，請參閱 <<c0> [ 備份系統狀態資料](AD-Forest-Recovery-Backing-up-System-State.md)。  
+使用下列程式，在執行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的 DC 上使用 wbadmin，同時執行 AD DS 的非系統授權還原和 SYSVOL 的授權還原。 備份必須明確包含系統狀態資料;用於完整伺服器復原的完整伺服器備份將無法使用。 如需有關建立系統狀態備份的詳細資訊，請參閱[備份系統狀態資料](AD-Forest-Recovery-Backing-up-System-State.md)。  
   
-### <a name="to-perform-a-nonauthoritative-restore-of-ad-ds-and-authoritative-restore-of-sysvol-using-wbadminexe"></a>若要執行非系統授權還原 AD ds 和權威還原使用 wbadmin.exe 的 SYSVOL  
+### <a name="to-perform-a-nonauthoritative-restore-of-ad-ds-and-authoritative-restore-of-sysvol-using-wbadminexe"></a>使用 wbadmin 執行 AD DS 和系統授權還原的非系統授權還原  
   
-- 包含 **-authsysvol**切換在修復命令中，在下列範例所示：  
+- 在您的 recovery 命令中包含 **-authsysvol**參數，如下列範例所示：  
 
    ```  
    wbadmin start systemstaterecovery <otheroptions> -authsysvol  

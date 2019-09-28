@@ -1,7 +1,7 @@
 ---
 title: 疑難排解 Always On VPN
 description: 本主題提供驗證和疑難排解 Windows Server 2016 中 Always On VPN 部署的指示。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 60873c8bbf71ad5afa58bd9e19b1a3fd650bc65f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 649fbc16e3dfef2ed1061d0ba6a5c22a8712b186
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871354"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404381"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>疑難排解 Always On VPN 
 
@@ -118,7 +118,7 @@ ms.locfileid: "70871354"
 
 ## <a name="nps-logs"></a>NPS 記錄檔
 
-NPS 會建立並儲存 NPS 帳戶處理記錄。 根據預設，這些檔案會以*xxxx*中名\\為的\\檔案儲存在% SYSTEMROOT% System32\\記錄檔中，其中*xxxx*是檔案的建立日期。
+NPS 會建立並儲存 NPS 帳戶處理記錄。 根據預設，這些檔案會儲存在% SYSTEMROOT% \\System32 @ no__t-1Logfiles @ no__t-2 中名為的*檔案中，* 其中*xxxx*是檔案的建立日期。
 
 根據預設，這些記錄是以逗點分隔值格式，但不包含標題資料列。 標題資料列為：
 
