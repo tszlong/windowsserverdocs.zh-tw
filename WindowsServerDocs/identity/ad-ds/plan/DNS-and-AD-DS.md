@@ -7,31 +7,31 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f6d75a78119d76a0f8380967292b1d0abc720597
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 82c96ac3f146510c5590aabea75a60ca0f5f90cc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813139"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402683"
 ---
 # <a name="dns-and-ad-ds"></a>DNS 與 AD DS
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory 網域服務 (AD DS) 使用網域名稱系統 (DNS) 名稱解析服務可讓用戶端找到網域控制站和網域控制站裝載目錄服務來彼此通訊。  
+Active Directory Domain Services （AD DS）使用網域名稱系統（DNS）名稱解析服務，讓用戶端可以找到網域控制站，以及裝載目錄服務以彼此通訊的網域控制站。  
   
-AD DS 可讓您輕鬆整合到現有的 DNS 命名空間的 Active Directory 命名空間。 功能，例如 Active Directory 整合 DNS 區域讓您更輕鬆地部署不需要設定次要區域的 DNS，然後設定 區域轉送。  
+AD DS 可以輕鬆地將 Active Directory 命名空間整合到現有的 DNS 命名空間。 Active Directory 整合式 DNS 區域之類的功能，可讓您更輕鬆地部署 DNS，方法是排除設定次要區域的需求，然後設定區域轉送。  
   
-DNS 如何支援 AD DS 的相關資訊，請參閱節[Active Directory 技術參照的 DNS 支援](https://go.microsoft.com/fwlink/?LinkID=48147)。  
+如需 DNS 如何支援 AD DS 的詳細資訊，請參閱[Active Directory 技術參考的 DNS 支援](https://go.microsoft.com/fwlink/?LinkID=48147)一節。  
   
 > [!NOTE]  
-> 如果您實作脫離的命名空間中的 AD DS 網域名稱不同於用戶端使用的主要 DNS 尾碼時，AD DS 整合 dns 是更複雜。 如需詳細資訊，請參閱 <<c0> [ 脫離的命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)。  
+> 如果您執行脫離的命名空間，其中 AD DS 的功能變數名稱與用戶端使用的主要 DNS 尾碼不同，AD DS 與 DNS 的整合會更複雜。 如需詳細資訊，請參閱脫離的[命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)。  
   
 ## <a name="in-this-section"></a>本節內容  
   
-- [網域控制站的位置](../../ad-ds/plan/Domain-Controller-Location.md)  
+- [網域控制站位置](../../ad-ds/plan/Domain-Controller-Location.md)  
 - [Active Directory 整合 DNS 區域](../../ad-ds/plan/Active-Directory-Integrated-DNS-Zones.md)  
 - [電腦命名](../../ad-ds/plan/Computer-Naming.md)  
-- [脫離的命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)  
+- [斷續命名空間](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)  

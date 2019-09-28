@@ -1,8 +1,8 @@
 ---
 title: rundll32
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b1f288d21a1dcac25ecc00f685ea179d8a6542f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29a87f9f07c25a0c671e47550e0a054d8308f747
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835029"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384424"
 ---
 # <a name="rundll32"></a>rundll32
 
 
 
-載入並執行 32 位元動態連結程式庫 (Dll)。 有 Rundll32 沒有可設定的設定。 [說明] 資訊供您執行的特定 DLL **rundll32**命令。
+載入並執行32位動態連結程式庫（Dll）。 沒有可設定的 Rundll32.exe 設定。 系統會提供您使用**rundll32.exe**命令執行之特定 DLL 的說明資訊。
 
-您必須執行**rundll32**命令從提升權限的命令提示字元。 若要開啟提升權限的命令提示字元，請按一下**開始**，以滑鼠右鍵按一下**命令提示字元**，然後按一下**系統管理員身分執行**。
+您必須從提高許可權的命令提示字元執行**rundll32.exe**命令。 若要開啟提升許可權的命令提示字元，請按一下 **開始**，以滑鼠右鍵按一下 **命令提示**字元，然後按一下 以**系統管理員**身分
 
 ## <a name="syntax"></a>語法
 
@@ -38,11 +38,11 @@ Rundll32 <DLLname>
 
 |參數|描述|
 |---------|-----------|
-|[rundll32 printui.dll,PrintUIEntry](rundll32-printui.md)|會顯示印表機使用者介面|
+|[Rundll32.exe printui.dll .dll、PrintUIEntry](rundll32-printui.md)|顯示印表機使用者介面|
 
 ## <a name="remarks"></a>備註
 
-Rundll32 只能從 DLL 呼叫 Rundll32 明確撰寫呼叫函式。 如需有關 Rundll32 需求，請參閱[文章 164787](https://go.microsoft.com/fwlink/?LinkID=165773)在 Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkID=165773)。
+Rundll32.exe 只能從已明確寫入要由 Rundll32.exe 所呼叫的 DLL 中呼叫函式。 如需 Rundll32.exe 需求的詳細資訊，請參閱 Microsoft 知識庫中的[文章 164787](https://go.microsoft.com/fwlink/?LinkID=165773) （ https://go.microsoft.com/fwlink/?LinkID=165773) 。
 
 #### <a name="additional-references"></a>其他參考資料
 

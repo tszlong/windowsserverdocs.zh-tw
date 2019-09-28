@@ -1,8 +1,8 @@
 ---
-title: bitsadmin 快取和 deleteurl
-description: 適用於 Windows 命令主題**bitsadmin 快取和 deleteurl** -刪除所有的快取項目，為指定的 URL。
+title: bitsadmin cache 和 deleteurl
+description: Bitsadmin 快取**和 deleteurl**的 Windows 命令主題-刪除指定 URL 的所有快取專案。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a831c49e1461761cb7466b46e7a5ad8e037f4ec9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 869d3bc0f011cc82aaea9b7468667964051e1c00
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816649"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382064"
 ---
-# <a name="bitsadmin-cache-and-deleteurl"></a>bitsadmin 快取和 deleteurl
+# <a name="bitsadmin-cache-and-deleteurl"></a>bitsadmin cache 和 deleteurl
 
 
 
-刪除所有的快取項目，為指定的 URL。
+刪除指定 URL 的所有快取專案。
 
 ## <a name="syntax"></a>語法
 
@@ -36,11 +36,11 @@ bitsadmin /DeleteURL url
 
 |參數|描述|
 |---------|-----------|
-|url|統一資源定位器，識別遠端檔案。|
+|url|識別遠端檔案的統一資源定位器。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會刪除所有快取項目 https://www.microsoft.com/en/us/default.aspx
+下列範例會刪除 https://www.microsoft.com/en/us/default.aspx 的所有快取專案
 ```
 C:\>bitsadmin /DeleteURL https://www.microsoft.com/en/us/default.aspx 
 ```

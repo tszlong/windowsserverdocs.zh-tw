@@ -1,9 +1,9 @@
 ---
 title: 簡介 MultiPoint 服務
-description: 提供 MultiPoint 服務時，一種方法讓多位使用者共用系統的概觀
+description: 提供 MultiPoint 服務的總覽，這是一種讓多個使用者共用系統的方式。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,36 +13,36 @@ ms.assetid: 1cbef744-4661-4ba9-9e2b-0bbd8854fd5c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 86d240092282e7cc29eebe638e5a97312e22baff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a0497f9dfd39648a94d9fb832f4404491955c06a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844209"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395352"
 ---
 # <a name="introducing-multipoint-services"></a>簡介 MultiPoint 服務
-Windows Server 2016 中的 multiPoint 服務角色可讓多位使用者，每個都有各自擁有獨立且熟悉的 Windows 體驗，同時共用一部電腦。有數種方式，使用者可以存取其工作階段。 一種方法是由伺服器使用的遠端處理所[遠端桌面應用程式](../remote-desktop-services/clients/remote-desktop-clients.md)與任何裝置。 另一種方式是透過實體附加至 MultiPoint server 的站台的站台：  
+Windows Server 2016 中的 MultiPoint 服務角色可讓多個使用者，各自擁有各自獨立且熟悉的 Windows 體驗，同時共用一部電腦。有數種方式可供使用者存取其會話。 其中一種方式是使用[遠端桌面應用程式](../remote-desktop-services/clients/remote-desktop-clients.md)搭配任何裝置來遠端執行伺服器。 另一種方式是透過電臺連接到 MultiPoint 伺服器的實體電臺：  
   
--   直接與電腦上的視訊連接埠  
+-   直接前往電腦上的視訊連接埠  
   
--   透過特殊的 usb 極簡型用戶端 （也稱為多功能的 USB 集線器），以及透過類似的 USB-over-乙太網路裝置。  
+-   透過特製化 USB 零用戶端（也稱為多功能 USB 集線器），以及透過類似的 USB 乙太網路裝置。  
   
--   透過區域網路 (LAN)  
+-   透過區域網路（LAN）  
   
-每一種方法更詳細地說明[MultiPoint 服務站台](MultiPoint-services-Stations.md)本文件稍後的。  
+本檔稍後的[MultiPoint 服務站](MultiPoint-services-Stations.md)中會更詳細地說明每一種方法。  
   
-本文件探討到當您打算部署 MultiPoint 服務，請考慮下列因素：  
+本檔說明當您打算部署 MultiPoint 服務時所要考慮的下列因素：  
   
--   桌面與 MultiPoint 服務系統中使用何種類型：您將需要工作階段、 虛擬機器或 Windows 電腦嗎？  
+-   要搭配 MultiPoint 服務系統使用的桌面類型：您需要會話、虛擬機器或 Windows 電腦嗎？  
   
--   [選取的 MultiPoint 服務系統的硬體](Selecting-Hardware-for-Your-MultiPoint-services-System.md):您應該進行哪些硬體決策？  
+-   [選取適用于 MultiPoint 服務系統的硬體](Selecting-Hardware-for-Your-MultiPoint-services-System.md)：您應該進行哪些硬體決策？  
   
--   [硬體需求以及效能建議](Hardware-Requirements-and-Performance-Recommendations.md):什麼硬體是為了 MultiPoint 服務？  
+-   [硬體需求和效能建議](Hardware-Requirements-and-Performance-Recommendations.md)：MultiPoint 服務需要什麼硬體？  
   
--   [MultiPoint 服務網站規劃](MultiPoint-services-Site-Planning.md):將執行 MultiPoint 服務和其站台的電腦位於何處，以及如何將它們設定嗎？  
+-   [MultiPoint 服務網站規劃](MultiPoint-services-Site-Planning.md)：執行 MultiPoint 服務及其工作站的電腦會在何處找到，以及如何設定它們？  
   
--   [網路考量和使用者帳戶](Network-Considerations-and-User-Accounts.md):MultiPoint 服務系統的部署所在的網路功能環境可能會影響如何管理使用者帳戶。 什麼是您的網路環境？ 如何管理使用者帳戶？  
+-   [網路考慮和使用者帳戶](Network-Considerations-and-User-Accounts.md)：部署 MultiPoint 服務系統的網路環境可能會影響使用者帳戶的管理方式。 您的網路環境是什麼？ 如何管理使用者帳戶？  
   
--   [儲存檔案使用 MultiPoint 服務](Storing-Files-with-MultiPoint-services.md):將使用者儲存檔案，以及如何將存取它們？  
+-   [使用 MultiPoint 服務儲存](Storing-Files-with-MultiPoint-services.md)盤案：使用者檔案的儲存位置，以及這些檔案的存取方式為何？  
   
 -   [預先部署檢查清單](Predeployment-Checklist.md)  

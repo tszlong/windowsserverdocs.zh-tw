@@ -1,8 +1,8 @@
 ---
-title: 建立磁碟區等量磁碟區
-description: '適用於 Windows 命令主題 * * *- '
+title: 建立磁片區 stripe
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55ed731df4613e215fb4d0954a5b8424035b1166
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 46c1367b5667294a7a9df742861a011090e7a337
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434004"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379140"
 ---
-# <a name="create-volume-stripe"></a>建立磁碟區等量磁碟區
+# <a name="create-volume-stripe"></a>建立磁片區 stripe
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立使用兩個或多個指定的動態磁碟等量磁碟區。  
+使用兩個或多個指定的動態磁碟建立等量磁片區。  
   
 > [!IMPORTANT]  
-> 適用於 Windows Vista，此 DiskPart 命令才會提供 Windows Vista Ultimate、 Windows Vista Enterprise 和 Windows Vista Business 版本。  
+> 對於 Windows Vista，此 DiskPart 命令僅適用于 Windows Vista 旗艦版、Windows Vista Enterprise 和 Windows Vista Business edition。  
   
   
   
@@ -41,23 +41,23 @@ create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 |         參數         |                                                                                                                            描述                                                                                                                            |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         size\=<n>         |             以 mb 為單位的磁碟空間數量\(MB\)的磁碟區佔據每個磁碟上。 如果未指定大小，新的磁碟區會佔用最小的磁碟和每個後續磁碟上等量的空間上剩餘的可用空間。             |
-| disk\=<n>,<n>\[,<n>,...\] |                                  動態磁碟建立等量磁碟區。 您需要至少兩個動態磁碟建立等量磁碟區。 相等的空間量**大小\=<n>** 配置每個磁碟上。                                   |
-|        align\=<n>         | 對齊最接近對齊界限的所有磁碟區範圍。 多半搭配硬體 RAID 邏輯單元編號\(LUN\)陣列來改善效能。 *n*是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。 |
-|           noerr           |                               針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                                |
+|         size @ no__t-0 @ no__t-1         |             磁片區將在每個磁片上佔用的磁碟空間量（以 mb 為單位） \(MB @ no__t-1。 如果未指定大小，則新磁片區會佔用最小磁片上的剩餘可用空間，以及每個後續磁片上的相同空間量。             |
+| disk @ no__t-0 @ no__t-1，<n> @ no__t-3，<n>,... \] |                                  建立等量磁片區的動態磁碟。 您至少需要兩個動態磁碟來建立等量磁片區。 在每個磁片上配置**大小等於 @ no__t-1 @ no__t-2**的空間量。                                   |
+|        align @ no__t-0 @ no__t-1         | 將所有磁片區範圍對齊最接近的對齊界限。 通常用於硬體 RAID 邏輯單元編號 \(LUN @ no__t-1 陣列以改善效能。 *n*是從磁片開頭到最接近對齊界限的 \(kb @ no__t-2 kb 數。 |
+|           noerr           |                               僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                |
   
 ## <a name="remarks"></a>備註  
   
--   建立磁碟區之後，焦點會自動移到新的磁碟區。  
+-   建立磁片區之後，焦點會自動移至新的磁片區。  
   
-## <a name="BKMK_examples"></a>範例  
-若要建立等量磁碟區的 1000 mb 的大小，在 磁碟 1 和 2 中，輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要建立大小為 1000 mb 的等量磁片區，請在磁片1和2上輸入：  
   
 ```  
 create volume stripe size=1000 disk=1,2  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

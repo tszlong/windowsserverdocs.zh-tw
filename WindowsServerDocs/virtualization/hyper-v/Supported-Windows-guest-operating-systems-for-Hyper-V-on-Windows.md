@@ -1,7 +1,7 @@
 ---
 title: Windows Server 上的 Hyper-v 支援的 Windows 客體作業系統
 description: 列出支援在虛擬機器中做為來賓使用的 Windows 作業系統。 也會提供舊版 Hyper-v 的類似文章連結。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,46 +11,46 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: b24c67de90f8773eec69f10381bd9ce1e121853e
-ms.sourcegitcommit: b68ff64ecd87959cd2acde4a47506a01035b542a
+ms.openlocfilehash: f491f283861098bbe98e253cb2ff1d5cee2ac57f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830889"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365463"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 支援的 Windows 客體作業系統
 
 >適用於：Windows Server 2016、Windows Server 2019
 
-Hyper-v 支援在虛擬機器中執行數個版本的 Windows Server、Windows 和 Linux 散發套件, 做為客體作業系統。 本文涵蓋支援的 Windows Server 和 Windows 客體作業系統。 針對 Linux 和 FreeBSD 散發套件, 請參閱[支援的 linux 和 FreeBSD 虛擬機器 (適用于 Windows 上的 hyper-v](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md))。  
+Hyper-v 支援在虛擬機器中執行數個版本的 Windows Server、Windows 和 Linux 散發套件，做為客體作業系統。 本文涵蓋支援的 Windows Server 和 Windows 客體作業系統。 針對 Linux 和 FreeBSD 散發套件，請參閱[支援的 linux 和 FreeBSD 虛擬機器（適用于 Windows 上的 hyper-v](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)）。  
     
-某些作業系統具有內建的整合服務。 當您在虛擬機器中設定作業系統之後, 其他人需要安裝或升級整合服務作為個別的步驟。 如需詳細資訊, 請參閱下列各節, 並[Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)。  
+某些作業系統具有內建的整合服務。 當您在虛擬機器中設定作業系統之後，其他人需要安裝或升級整合服務作為個別的步驟。 如需詳細資訊，請參閱下列各節，並[Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)。  
   
 ## <a name="supported-windows-server-guest-operating-systems"></a>支援的 Windows Server 客體作業系統  
 
-以下是在 Windows Server 2016 和 Windows Server 2019 中, 支援作為 Hyper-v 之客體作業系統的 Windows Server 版本。 
+以下是在 Windows Server 2016 和 Windows Server 2019 中，支援作為 Hyper-v 之客體作業系統的 Windows Server 版本。 
   
 |客體作業系統 (伺服器)|虛擬處理器數量的上限|整合服務|注意|  
 |-------------------------------------|----------------------------------------|------------------------|---------|  
 |Windows Server 版本 1903 |240代表層代 2;<br>適用于層代1的64|內建||
 |Windows Server, 版本1809 |240代表層代 2;<br>適用于層代1的64|內建|| 
-|Windows Server 2019 |240代表層代 2;<br>適用于層代1的64|內建||
+|Windows Server Standard 2012 R2 |240代表層代 2;<br>適用于層代1的64|內建||
 |Windows Server 版本 1803 |240代表層代 2;<br>適用于層代1的64|內建|| 
 |Windows Server 2016 |240代表層代 2;<br>適用于層代1的64|內建|| 
 |Windows Server 2012 R2 |64|內建||  
 |Windows Server 2012 |64|內建||  
-|Windows Server 2008 R2 含 Service Pack 1 (SP 1)|64|設定客體作業系統之後, 請安裝所有重大的 Windows 更新。|Datercenter、Enterprise、Standard 以及 Web 版本。|
-|Windows Server 2008 Service Pack 2 (SP2)|8|設定客體作業系統之後, 請安裝所有重大的 Windows 更新。|Datacenter、Enterprise、Standard 以及 Web 版本 (32 位元與 64 位元)。|  
+|Windows Server 2008 R2 含 Service Pack 1 (SP 1)|64|設定客體作業系統之後，請安裝所有重大的 Windows 更新。|Datercenter、Enterprise、Standard 以及 Web 版本。|
+|Windows Server 2008 Service Pack 2 (SP2)|8|設定客體作業系統之後，請安裝所有重大的 Windows 更新。|Datacenter、Enterprise、Standard 以及 Web 版本 (32 位元與 64 位元)。|  
   
 ## <a name="supported-windows-client-guest-operating-systems"></a>支援的 Windows 用戶端客體作業系統  
 
-以下是 Windows Server 2016 和 Windows Server 2019 中, 支援作為 Hyper-v 之客體作業系統的 Windows 用戶端版本。
+以下是 Windows Server 2016 和 Windows Server 2019 中，支援作為 Hyper-v 之客體作業系統的 Windows 用戶端版本。
   
 |客體作業系統 (用戶端)|虛擬處理器數量的上限|整合服務|注意|  
 |-------------------------------------|----------------------------------------|------------------------|---------|  
 |Windows 10|32|內建||  
 |Windows 8.1|32|內建||  
-|Windows 7 含 Service Pack 1 (SP 1)|4|設定客體作業系統之後, 請升級 integration services。|旗艦版、企業版和專業版版本 (32 位元與 64 位元)。|  
+|Windows 7 含 Service Pack 1 (SP 1)|4|設定客體作業系統之後，請升級 integration services。|旗艦版、企業版和專業版版本 (32 位元與 64 位元)。|  
   
 ## <a name="guest-operating-system-support-on-other-versions-of-windows"></a>其他 Windows 版本上的客體作業系統支援  
 
@@ -59,7 +59,7 @@ Hyper-v 支援在虛擬機器中執行數個版本的 Windows Server、Windows �
 |主機作業系統|主題|  
 |-------------------------|---------|  
 |Windows 10|[Windows 10 中的用戶端 Hyper-v 支援的客體作業系統](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|  
-|Windows Server 2012 R2 與 Windows 8.1|-   [Windows Server 2012 R2 中的 Hyper-v 支援的 Windows 客體作業系統和 Windows 8。1](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上的 Linux 和 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|  
+|Windows Server 2012 R2 與 Windows 8.1|-   [在 Windows Server 2012 R2 和 Windows 8.1 中支援 hyper-v 的 Windows 客體作業系統](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Linux 和 hyper-v 上的 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|  
 |Windows Server 2012 與 Windows 8|[Windows Server 2012 和 Windows 8 中的 Hyper-v 支援的 Windows 客體作業系統](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|  
 |Windows Server 2008 和 Windows Server 2008 R2|[關於虛擬機器和客體作業系統](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|  
   

@@ -2,7 +2,7 @@
 title: klist
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a8f574b65ec8c123379e1b02ee1571cc9f21fa1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4b35069faa835b59f2655262f640ddb18068702f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867062"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375315"
 ---
 # <a name="klist"></a>klist
 
@@ -34,7 +34,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-lh|表示使用者的本機唯一識別碼（LUID）的最高部分，以十六進位表示。 如果-lh 或– li 皆不存在，此命令會預設為目前登入之使用者的 LUID。|
 |-li|表示使用者的本機唯一識別碼（LUID）的低部分，以十六進位表示。 如果-lh 或– li 皆不存在，此命令會預設為目前登入之使用者的 LUID。|

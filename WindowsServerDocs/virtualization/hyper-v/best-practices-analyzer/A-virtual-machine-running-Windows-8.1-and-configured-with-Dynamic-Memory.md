@@ -1,7 +1,7 @@
 ---
-title: 執行 Windows 8.1，並使用動態記憶體設定的虛擬機器應該用於記憶體設定的建議的值
-description: 提供指示來解決此 Best Practices Analyzer 規則所回報的問題。
-ms.prod: windows-server-threshold
+title: 執行 Windows 8.1 並使用動態記憶體設定的虛擬機器應該使用建議的記憶體設定值
+description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: b9a14f85-326f-4916-9278-2c8d39a32848
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: bb283b094791904e54f13efdc0b6848ecacc1a3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cd01c69183dde74b96ecbf1f0818a30fb7c48fca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859879"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365366"
 ---
-# <a name="a-virtual-machine-running-windows-81-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows 8.1，並使用動態記憶體設定的虛擬機器應該用於記憶體設定的建議的值
+# <a name="a-virtual-machine-running-windows-81-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows 8.1 並使用動態記憶體設定的虛擬機器應該使用建議的記憶體設定值
 
 >適用於：Windows Server 2016
 
@@ -30,41 +30,41 @@ ms.locfileid: "59859879"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>**問題**  
-*一或多個虛擬機器會設定為使用動態記憶體少於建議用於 Windows 8.1 的記憶體數量。*  
+*一或多部虛擬機器已設定為使用動態記憶體，且小於建議用於 Windows 8.1 的記憶體數量。*  
   
-## <a name="impact"></a>**影響**  
-客體作業系統，在下列虛擬機器可能無法執行，或可能 unreliably 執行：   
+## <a name="impact"></a>**產生**  
+下列虛擬機器上的客體作業系統可能無法執行，或可能執行 unreliably：   
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
       
   
 ## <a name="resolution"></a>**解決方法**  
-*您可以使用 HYPER-V 管理員來增加至少 256 MB，為至少 512 MB 的啟動記憶體和最大記憶體為此虛擬機器至少 1 GB 的記憶體下限。*  
+*使用 Hyper-v 管理員將最小記憶體增加到至少 256 MB、啟動記憶體至少為 512 MB，並將記憶體上限設為至少 1 GB （針對此虛擬機器）。*  
   
-#### <a name="increase-memory-using-hyper-v-manager"></a>使用 HYPER-V 管理員的增加記憶體  
+#### <a name="increase-memory-using-hyper-v-manager"></a>使用 Hyper-v 管理員增加記憶體  
   
-1.  開啟 \[Hyper-V 管理員\]。 (從 [伺服器管理員] 中，按一下**工具** > **HYPER-V 管理員**。)  
+1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員，按一下 [**工具**] [ > ] [**hyper-v 管理員**]）。  
   
-2.  從清單中的虛擬機器，請以滑鼠右鍵按一下，然後按一下其中一個**設定**。  
+2.  從虛擬機器清單中，以滑鼠右鍵按一下您想要的，然後按一下 [**設定**]。  
   
-3.  在 [導覽] 窗格中，按一下**記憶體**。  
+3.  在流覽窗格中，按一下 [**記憶體**]。  
   
-4.  變更**RAM**為至少 512 MB。  
+4.  請將**RAM**變更為至少 512 MB。  
   
-5.  底下**動態記憶體**，變更**最小 RAM**設為至少 256 MB， **RAM 上限**設為 1 GB。  
+5.  在 [**動態記憶體**] 底下，將 [**最小 ram** ] 變更為至少 256 MB，並將 [**最大 RAM** ] 設為 1 GB  
   
-6.  按一下 [確定] 。  
+6.  按一下 [確定]。  
   
-### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 的增加記憶體  
+### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加記憶體  
   
-1.  開啟 Windows PowerShell。 (從桌面上，按一下 [開始]，並開始輸入**Windows PowerShell**。)  
+1.  開啟 Windows PowerShell。 （從桌面上，按一下 [開始]，然後開始鍵入**Windows PowerShell**。）  
   
-2.  以滑鼠右鍵按一下**Windows PowerShell**然後按一下**系統管理員身分執行**。  
+2.  以滑鼠右鍵按一下 [ **Windows PowerShell** ]，然後按一下 [**以系統管理員身分執行**]。  
   
-3.  執行類似下列的命令，使用的記憶體與您的虛擬機器的名稱取代 MyVM 值與最少的值，如下所示。  
+3.  執行類似下列的命令，以您的虛擬機器名稱取代 MyVM，並以至少如下所示的值取代記憶體值。  
   
 ```  
 Get-VM MyVM | Set-VMMemory -DynamicMemoryEnabled $True -MaximumBytes 1GB -MinimumBytes 256MB -StartupBytes 512MB  

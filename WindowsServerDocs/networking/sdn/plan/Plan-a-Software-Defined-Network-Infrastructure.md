@@ -3,7 +3,7 @@ title: 規劃軟體定義網路的基礎結構
 description: 本主題提供如何規劃軟體定義網路（SDN）基礎結構部署的相關資訊。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: virtual-network
 ms.suite: na
@@ -14,12 +14,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: pashort
 author: shortpatti
 ms.date: 08/10/2018
-ms.openlocfilehash: e2c125867b461cee9f694849db5c8f61be91211d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ed2dc8861366b929de346d5bd5b3d40998cc8dd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869939"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355784"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>規劃軟體定義網路的基礎結構
 

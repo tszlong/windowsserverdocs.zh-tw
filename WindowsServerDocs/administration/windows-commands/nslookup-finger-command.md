@@ -1,8 +1,8 @@
 ---
 title: nslookup finger 命令
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13eb4e45b3fdc17fd48fa9793abaaf05925b56a2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4067c16a7d338c5853a6179af17cf4e3e996e6a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436973"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373127"
 ---
 # <a name="nslookup-finger-command"></a>nslookup finger 命令
 
 
 
-與目前的電腦上的手指伺服器連線。
+連接目前電腦上的 finger 伺服器。
 
 ## <a name="syntax"></a>語法
 
@@ -36,8 +36,8 @@ finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
 
 |  參數  |                                                                               描述                                                                               |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<UserName> |                                                               指定要查閱之使用者的名稱。                                                                |
-| \<FileName> | 指定要儲存輸出的檔案名稱。 您可以使用大於 (>) 和雙引號大於 (>>) 將輸出重新導向以一般方式的字元。 |
+| \<UserName > |                                                               指定要查閱之使用者的名稱。                                                                |
+| \<檔案名 > | 指定用來儲存輸出的檔案名。 您可以使用大於（>）和 double 大於（> >）字元，以平常的方式重新導向輸出。 |
 |    {說明    |                                                                                   ?}                                                                                    |
 
 #### <a name="additional-references"></a>其他參考資料

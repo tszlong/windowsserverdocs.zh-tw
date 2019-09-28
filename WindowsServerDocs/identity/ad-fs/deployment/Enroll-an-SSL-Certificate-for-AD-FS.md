@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e80927f2670614d2949f4e67cc158319f05c5fa0
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: efa7c7aee848a5bbb68d3ce7140e135d37c2161d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408365"
 ---
 # <a name="enroll-an-ssl-certificate-for-ad-fs"></a>註冊 AD FS 的 SSL 憑證
 
-Active Directory Federation Services \(AD FS\)需要安全通訊端層憑證\(SSL\)同盟伺服器陣列中每部同盟伺服器上的伺服器驗證。 伺服陣列中每部同盟伺服器上，可以使用相同的憑證。 您必須準備好憑證和私密金鑰。 例如，如果 .pfx 檔案內有憑證和私密金鑰，您可以直接將該檔案匯入 Active Directory Federation Services 設定精靈。 此 SSL 憑證必須包含下列內容：  
+Active Directory 同盟服務 \(AD FS @ no__t-1 需要憑證，才能在同盟伺服器陣列中的每部同盟伺服器上使用安全通訊端層 \(SSL @ no__t-3 伺服器驗證。 伺服器陣列中的每部同盟伺服器都可以使用相同的憑證。 您必須準備好憑證和私密金鑰。 例如，如果 .pfx 檔案內有憑證和私密金鑰，您可以直接將該檔案匯入 Active Directory Federation Services 設定精靈。 此 SSL 憑證必須包含下列內容：  
   
-1.  主體名稱和主體別名必須包含同盟服務名稱，例如 fs.contoso.com。  
+1.  [主體名稱] 和 [主體替代名稱] 必須包含您的同盟服務名稱，例如 fs.contoso.com。  
   
-2.  主體別名必須包含值**enterpriseregistration** ，且後面跟著 「 使用者主體名稱\(UPN\)組織的尾碼，比方說， **enterpriseregistration.corp.contoso.com**。  
+2.  主體別名必須包含值**enterpriseregistration** ，後面接著您組織的使用者主體名稱 \(UPN @ no__t-2 尾碼，例如**enterpriseregistration.corp.contoso.com**。  
   
     > [!WARNING]  
-    > 指定主體替代名稱，如果您打算啟用 Device Registration Service \(DRS\) Workplace join。  
+    > 如果您計畫啟用裝置註冊服務，請指定主體別名 \(DRS @ no__t-1 以進行 Workplace Join。  
   
 > [!IMPORTANT]  
-> 如果您的組織使用多個 UPN 尾碼，而且您打算啟用 DRS，SSL 憑證必須包含每個尾碼的主體替代名稱的項目。  
+> 如果您的組織使用多個 UPN 尾碼，而且您打算啟用 DRS，則 SSL 憑證必須包含每個尾碼的主體別名專案。  
   
 ## <a name="see-also"></a>另請參閱
 [AD FS 部署](../../ad-fs/AD-FS-Deployment.md)  

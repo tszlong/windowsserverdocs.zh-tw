@@ -1,19 +1,19 @@
 ---
 title: 使用離線檔案部署資料夾重新導向
 description: 如何使用 Windows Server 將資料夾重新導向離線檔案部署至 Windows 用戶端電腦。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b3e3d0b5030f8c0140e54c8b0bf55317437427
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 21172d9d3e6d91af691986bfd84b0e32049f3b88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867310"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401969"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>使用離線檔案部署資料夾重新導向
 
@@ -48,7 +48,7 @@ ms.locfileid: "70867310"
 > [!NOTE]
 > 資料夾重新導向中的某些較新功能會有額外的用戶端電腦和 Active Directory 架構需求。 如需詳細資訊，請參閱[部署主要電腦](deploy-primary-computers.md)、[停用資料夾上的離線檔案](disable-offline-files-on-folders.md)、[啟用永遠離線模式](enable-always-offline.md)，以及[啟用優化資料夾移動](enable-optimized-moving.md)。
 
-## <a name="step-1-create-a-folder-redirection-security-group"></a>步驟 1：建立資料夾重新導向安全性群組
+## <a name="step-1-create-a-folder-redirection-security-group"></a>步驟 1:建立資料夾重新導向安全性群組
 
 如果您的環境尚未設定資料夾重新導向，第一個步驟是建立一個安全性群組，其中包含您要套用資料夾重新導向原則設定的所有使用者。
 
@@ -63,7 +63,7 @@ ms.locfileid: "70867310"
 5. 在 [**成員**] 區段中，選取 [**新增**]。 [選取使用者、連絡人、電腦、服務帳戶或群組] 對話方塊隨即顯示。
 6. 輸入您要部署資料夾重新導向的使用者或群組的名稱，選取 **[確定]** ，然後再次選取 **[確定]** 。
 
-## <a name="step-2-create-a-file-share-for-redirected-folders"></a>步驟 2：為重新導向的資料夾建立檔案共用
+## <a name="step-2-create-a-file-share-for-redirected-folders"></a>步驟 2:為重新導向的資料夾建立檔案共用
 
 如果您還沒有已重新導向資料夾的檔案共用，請使用下列程式在執行 Windows Server 2012 的伺服器上建立檔案共用。
 

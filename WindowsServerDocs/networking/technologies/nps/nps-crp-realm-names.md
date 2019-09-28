@@ -1,78 +1,78 @@
 ---
 title: 領域名稱
-description: 本主題提供使用中處理 Windows Server 2016 中的網路原則伺服器連線要求的領域名稱的概觀。
+description: 本主題提供在 Windows Server 2016 中的網路原則伺服器連線要求處理中使用領域名稱的總覽。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 65a272873a60d74efcf417a16fdc84670f5878da
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7f9c611b793df36c2e588b2fa099df4e5382194c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446999"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405464"
 ---
 # <a name="realm-names"></a>領域名稱
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 
-您可以使用本主題針對使用網路原則伺服器的連線要求處理中的領域名稱的概觀。
+您可以使用本主題，以瞭解在網路原則伺服器連線要求處理中使用領域名稱的總覽。
 
-User-name RADIUS 屬性是字元字串，其中通常包含 使用者帳戶位置和使用者帳戶名稱。 使用者帳戶位置又稱為領域或領域名稱，並與網域，包括 DNS 網域、 Active Directory® 網域，以及 Windows NT 4.0 網域概念同義。 比方說，如果使用者帳戶位於名稱為 example.com 的網域使用者帳戶資料庫，然後 example.com 是領域名稱。
+使用者名稱 RADIUS 屬性是一個字元字串，通常包含使用者帳戶位置和使用者帳戶名稱。 使用者帳戶位置也稱為「領域」或「領域名稱」，與網域的概念同義，包括 DNS 網域、Active Directory®網域和 Windows NT 4.0 網域。 例如，如果使用者帳戶位於名為 example.com 之網域的使用者帳戶資料庫中，則 example.com 是領域名稱。
 
-另舉一例，如果 User-name RADIUS 屬性包含使用者名稱user1@example.com、 user1 是使用者帳戶名稱，而 example.com 是領域名稱。 領域名稱可以顯示在 使用者名稱，做為前置詞，或做為尾碼：
+在另一個範例中，如果使用者名稱 RADIUS 屬性包含 user1@example.com 的使用者名稱，user1 就是使用者帳戶名稱，而 example.com 是領域名稱。 領域名稱可以在使用者名稱中以前置詞或尾碼形式呈現：
 
-- **Example\user1**。 在此範例中，領域名稱**範例**前置詞; 同時它也是作用中的目錄名稱&reg;網域服務\(AD DS\)網域。
+- **Example\user1**。 在此範例中，領域名稱**範例**是前置詞;此外，它也是 Active Directory @ no__t-1 網域服務 \(AD DS @ no__t-3 網域的名稱。
 
-- <strong>user1@example.com</strong>. 在此範例中，領域名稱**example.com**是尾碼，以及 DNS 網域名稱或 AD DS 網域的名稱。
+- <strong>user1@example.com</strong>。 在此範例中，領域名稱**example.com**是尾碼;而且它可以是 DNS 功能變數名稱或 AD DS 網域的名稱。
 
-您可以使用設計和部署 RADIUS 基礎結構時，連線要求原則中設定的領域名稱，以確保連接要求會路由傳送來自 RADIUS 用戶端，也稱為網路存取伺服器，可以的 RADIUS 伺服器驗證和授權連線要求。
+您可以使用連線要求原則中設定的領域名稱，同時設計和部署 RADIUS 基礎結構，以確保從 RADIUS 用戶端（也稱為網路存取伺服器）將連線要求路由傳送至能夠驗證和授權連接要求。
 
-當 NPS 被設定為 RADIUS 伺服器使用預設連線要求原則時，NPS 會處理連線要求中的 NPS 是成員的網域和信任的網域。
+當 NPS 設定為具有預設連線要求原則的 RADIUS 伺服器時，NPS 會處理 NPS 所屬網域的連線要求，以及信任的網域。
 
-若要設定 NPS 做為 RADIUS proxy，並將連線要求轉寄到不受信任的網域，您必須建立新的連線要求原則。 在新的連線要求原則，您必須設定使用者名稱屬性會包含在您想要轉寄的連線要求的 User-name 屬性的領域名稱。 您也必須設定連線要求原則使用的遠端 RADIUS 伺服器群組。 連線要求原則可讓 NPS 在計算哪些連線要求轉送到遠端 RADIUS 伺服器群組，根據 User-name 屬性的領域部分。
+若要將 NPS 設定為 RADIUS proxy，並將連線要求轉送到不受信任的網域，您必須建立新的連線要求原則。 在 [新增連線要求原則] 中，您必須將 [使用者名稱] 屬性設定為 [領域名稱]，該名稱會包含在您想要轉送之連線要求的 [使用者名稱] 屬性中。 您也必須使用遠端 RADIUS 伺服器群組來設定連線要求原則。 連線要求原則可讓 NPS 根據使用者名稱屬性的領域部分，計算要轉送到遠端 RADIUS 伺服器群組的連接要求。
 
 ## <a name="acquiring-the-realm-name"></a>取得領域名稱
 
-或在使用者電腦上的連接管理員 (CM) 設定檔被設定成自動提供領域名稱的使用者類型密碼型認證 」 在連接期間嘗試時，會提供使用者名稱的領域名稱部分。
+當使用者在連線嘗試期間輸入密碼型認證，或使用者電腦上的連線管理員（CM）設定檔設定為自動提供領域名稱時，會提供使用者名稱的領域名稱部分。
 
-您可以指定網路中的使用者在網路連線嘗試期間輸入其認證時，會提供領域名稱。
+您可以指定網路使用者在網路連線嘗試期間輸入其認證時，提供其領域名稱。
 
-例如，您可以要求使用者輸入其使用者名稱，包括使用者帳戶名稱和領域名稱，在**使用者名稱**中**Connect**時進行撥號或虛擬私人網路 (VPN) 對話方塊連接。
+例如，您可以要求使用者在進行撥號或虛擬私人網路（VPN）連線時，于 [**連線] 對話方塊**的 [**使用者名稱**] 中輸入使用者名稱，包括使用者帳戶名稱和領域名稱。
 
-此外，如果您使用連接管理員管理組件 (CMAK) 建立自訂撥號封裝，您可以協助使用者將領域名稱自動加入至使用者的電腦所安裝的 CM 設定檔中的使用者帳戶名稱。 比方說，您可以在 CM 設定檔中指定領域名稱和使用者名稱語法，讓使用者只需要輸入認證時指定的使用者帳戶名稱。 在此情況下，使用者不需要知道或記得使用者帳戶所在的網域。
+此外，如果您使用連線管理員系統管理元件（CMAK）來建立自訂撥號封裝，您可以將領域名稱自動新增到安裝在使用者電腦上 CM 設定檔中的使用者帳戶名稱，以協助使用者。 例如，您可以在 CM 設定檔中指定領域名稱和使用者名稱語法，讓使用者只需要在輸入認證時指定使用者帳戶名稱。 在此情況下，使用者不需要知道或記住其使用者帳戶所在的網域。
 
-在驗證過程中，使用者輸入密碼型認證之後, 的使用者名稱會從存取用戶端網路存取伺服器。 網路存取伺服器會建構連線要求，並納入傳送到 RADIUS proxy 或伺服器的 Access-request 訊息的 User-name RADIUS 屬性中的領域名稱。
+在驗證過程中，使用者輸入其密碼型認證之後，使用者名稱會從存取用戶端傳遞至網路存取伺服器。 網路存取伺服器會在傳送至 RADIUS proxy 或伺服器的存取要求訊息中，建立連線要求並包含使用者名稱 RADIUS 屬性內的領域名稱。
 
-如果 NPS 為 RADIUS 伺服器，會將 Access-request 訊息評估的一組已設定的連線要求原則。 連線要求原則的條件可包含使用者名稱屬性的內容的規格。
+如果 RADIUS 伺服器是 NPS，則會針對一組設定的連線要求原則來評估存取要求訊息。 連接要求原則的條件可以包含使用者名稱屬性的內容規格。
 
-您可以設定一組特定領域名稱的內送訊息的 User-name 屬性中的連線要求原則。 這可讓您建立路由規則，當 NPS 做為 RADIUS proxy 時，轉寄具有特定領域名稱到一組特定的 RADIUS 伺服器的 RADIUS 訊息。
+您可以在傳入訊息的 [使用者名稱] 屬性內，設定領域名稱特有的一組連線要求原則。 這可讓您建立路由規則，以便在 NPS 作為 RADIUS proxy 使用時，將具有特定領域名稱的 RADIUS 訊息轉送至一組特定的 RADIUS 伺服器。
 
 ## <a name="attribute-manipulation-rules"></a>屬性操作規則
 
-RADIUS 訊息處理在本機 （當 NPS 作為 RADIUS 伺服器） 或轉送到另一部 RADIUS 伺服器 （當 NPS 作為 RADIUS proxy） 之前，可以修改訊息中的使用者名稱屬性的屬性操作規則。 您可以設定 User-name 屬性的屬性操作規則選取**使用者名**上**條件**的連線要求原則內容 索引標籤。 NPS 屬性操作規則使用規則運算式語法。
+在本機處理 RADIUS 訊息（當 NPS 做為 RADIUS 伺服器使用時），或轉送至另一個 RADIUS 伺服器（當 NPS 做為 RADIUS proxy 使用時），訊息中的使用者名稱屬性可以由屬性操作規則進行修改。 您可以在連線要求原則內容的 [**條件**] 索引標籤上選取 [**使用者名稱**]，以設定使用者名稱屬性的屬性操作規則。 NPS 屬性操作規則使用正則運算式語法。
 
-您可以設定 User-name 屬性來變更下列屬性操作規則：
+您可以設定使用者名稱屬性的屬性操作規則，以變更下列各項：
 
-- 領域名稱移除的使用者名稱\(也稱為領域移除\)。 例如，使用者名稱user1@example.com變更為 user1。
+- 從使用者名稱中移除領域名稱 \(also，稱為領域去除 @ no__t-1。 例如，user1@example.com 的使用者名稱會變更為 user1。
 
-- 變更領域名稱而不是它的語法。 例如，使用者名稱user1@example.com變更為user1@wcoast.example.com。
+- 變更領域名稱，而不是其語法。 例如，user1@example.com 的使用者名稱會變更為 user1@wcoast.example.com。
 
-- 變更領域名稱的語法。 例如，將使用者名稱 example\user1 變更為user1@example.com。
+- 變更領域名稱的語法。 例如，使用者名稱 example\user1 會變更為 user1@example.com。
 
-根據您設定的屬性操作規則修改 User-name 屬性之後，第一個符合連線要求原則的其他設定會用來判斷是否：
+根據您設定的屬性操作規則修改使用者名稱屬性之後，會使用第一個相符連接要求原則的其他設定來判斷是否：
 
-- 在本機 （當 NPS 作為 RADIUS 伺服器），NPS 會處理 Access-request 訊息。
+- NPS 會在本機處理存取要求訊息（當 NPS 做為 RADIUS 伺服器使用時）。
 
-- （當 NPS 作為 RADIUS proxy），NPS 會轉寄訊息到另一部 RADIUS 伺服器。
+- NPS 會將訊息轉送至另一個 RADIUS 伺服器（當 NPS 做為 RADIUS proxy 使用時）。
 
-## <a name="configuring-the-nps-supplied-domain-name"></a>設定 NPS 提供的網域名稱
+## <a name="configuring-the-nps-supplied-domain-name"></a>設定 NPS 提供的功能變數名稱
 
-當使用者名稱不包含網域名稱時，NPS 會提供。 根據預設，NPS 提供的網域名稱會是 NPS 為成員的網域。 您可以指定 NPS 提供的網域名稱，透過下列登錄設定：
+當使用者名稱不包含功能變數名稱時，NPS 會提供一個名稱。 根據預設，NPS 提供的功能變數名稱是 NPS 所屬的網域。 您可以透過下列登錄設定，指定 NPS 提供的功能變數名稱：
 
     
     HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\RasMan\PPP\ControlProtocols\BuiltIn\DefaultDomain
@@ -81,4 +81,4 @@ RADIUS 訊息處理在本機 （當 NPS 作為 RADIUS 伺服器） 或轉送到�
 >[!CAUTION]
 >不當編輯登錄可能會對系統造成嚴重損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
-有些非 Microsoft 網路存取伺服器刪除或修改使用者所指定的網域名稱。 因此，網路存取要求是針對預設網域，因此可能不到使用者的帳戶的網域驗證。 若要解決此問題，請設定您的 RADIUS 伺服器，以將使用者名稱變更為正確格式及正確網域名稱。
+某些非 Microsoft 網路存取伺服器會刪除或修改使用者所指定的功能變數名稱。 因此，網路存取要求會針對預設網域進行驗證，這可能不是使用者帳戶的網域。 若要解決此問題，請設定 RADIUS 伺服器，將使用者名稱變更為正確的功能變數名稱格式。

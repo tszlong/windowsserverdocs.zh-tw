@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dee63ce0fb687b2b722ce64614c54388fc544433
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 04576a88825205398f1b555d9f5063ac26e2a76e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838999"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408862"
 ---
 # <a name="determining-the-schedule"></a>決定排程
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-您可以設定站台連結的排程來控制站台連結的可用性。 當兩個站台間複寫會周遊多個站台連結時，在所有相關的連結上的複寫排程的交集會判斷兩個站台之間的連線排程。  
+您可以藉由設定站台連結的排程來控制站台連結的可用性。 當兩個網站之間的複寫流經多個站台連結時，所有相關連結上的複寫排程交集會決定這兩個網站之間的連接排程。  
   
-若要規劃設定站台連結排程，請建立包含彼此直接複寫的網域控制站的站台連結之間的兩個重疊的排程。 除非您想要封鎖在尖峰時段的複寫流量，請使用這些連結上的預設 （100 個可用百分比） 的排程。 封鎖的複寫，優先順序為其他流量，但您也會增加複寫延遲。  
+若要規劃設定站台連結排程，請在包含直接彼此複寫之網域控制站的站台連結之間，建立兩個重迭的排程。 除非您想要在尖峰時段封鎖複寫流量，否則請使用這些連結上的預設（可用 100%）排程。 藉由封鎖複寫，您可以優先考慮其他流量，但也會增加複寫延遲。  
   
-網域控制站儲存時間以 Coordinated Universal Time (UTC)。 在 站台連結物件排程的時間設定符合網站以及電腦所在的排程已設定為本地時間。 當網域控制站連絡不同站台和時區的電腦時，網域控制站上的排程會顯示根據電腦的站台的當地時間的時間設定。  
+網域控制站會以國際標準時間（UTC）儲存時間。 站台連結物件排程中的時間設定符合設定排程的網站和電腦的本機時間。 當網域控制站連線到位於不同網站和時區的電腦時，網域控制站上的排程會根據電腦網站的當地時間顯示時間設定。  
   
 
 

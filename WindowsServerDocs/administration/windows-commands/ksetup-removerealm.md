@@ -1,8 +1,8 @@
 ---
-title: ksetup:removerealm
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： removerealm
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 579b0772e4642389b90aa370dad80a3eebea9d34
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 11858d8a24d4f125c83b3e4092ac48f336a9ef0b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564723"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374952"
 ---
-# <a name="ksetupremoverealm"></a>ksetup:removerealm
+# <a name="ksetupremoverealm"></a>ksetup： removerealm
 
 
 
-從登錄中刪除指定的領域的所有資訊。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+從登錄中刪除指定領域的所有資訊。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,25 +36,25 @@ ksetup /removerealm <RealmName>
 
 |參數|描述|
 |---------|-----------|
-|\<RealmName>|領域名稱會指定為大寫的 DNS 名稱，例如 CORP.CONTOSO.COM，並列為預設領域時**ksetup**執行。|
+|\<RealmName >|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，在執行**ksetup**時，它會列為預設領域。|
 
 ## <a name="remarks"></a>備註
 
-領域名稱會儲存在登錄中的兩個地方：**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**並 **\CurrentControlSet\Control\Lsa\Kerberos**。
+領域名稱會儲存在登錄中的兩個位置：**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**和 **\CurrentControlSet\Control\Lsa\Kerberos**。
 
-您無法從網域控制站移除預設領域名稱，因為這將會重設其 DNS 資訊，並將它移除可能會導致網域控制站無法使用。
+您無法從網域控制站移除預設的領域名稱，因為這將會重設其 DNS 資訊，而將它移除可能會使網域控制站無法使用。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-不小心設定領域名稱拼錯".COM"的本機電腦上為 CORP.CONTOSO。CON
+將本機電腦上的 ".COM" 拼錯，以誤設定領域名稱為 CORP。CONTOSO.CON
 ```
 ksetup /setrealm CORP.CONTOSO.CON
 ```
-從本機電腦中移除該錯誤的領域名稱：
+從本機電腦移除該錯誤的領域名稱：
 ```
 ksetup /removerealm CORP.CONTOSO.CON
 ```
-確認所執行的移除**ksetup**並檢閱輸出。
+執行**ksetup**並檢查輸出，以確認移除。
 
 #### <a name="additional-references"></a>其他參考資料
 

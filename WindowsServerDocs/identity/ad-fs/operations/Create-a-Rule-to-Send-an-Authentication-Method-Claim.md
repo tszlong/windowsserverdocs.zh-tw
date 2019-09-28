@@ -7,169 +7,169 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1109965d3a0045f9ebfa080380b9d7303209fce8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4efcae02b96904c9f869a5ed9e14eba161892b74
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444990"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358165"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>建立規則傳送驗證方法相容宣告
 
 
-您可以使用**傳送做為宣告的群組成員資格**規則範本或有**轉換傳入宣告**傳送的驗證方法宣告規則範本。 信賴憑證者的合作對象可以使用的驗證方法宣告，來判斷使用者用來驗證，並取得登入機制宣告從 Active Directory Federation Services \(AD FS\)。 您也可以使用 Active Directory Federation Services 的驗證機制保證功能\(AD FS\)在 Windows Server 2012 R2 做為輸入，在其中產生的情況下的驗證方法宣告中的信賴憑證者的合作對象想要判斷智慧卡登入為基礎的存取層級。 比方說，開發人員可以將不同存取層級指派給信賴憑證者的合作對象應用程式的同盟使用者。 存取的層級取決於是否在使用者登入時使用其使用者名稱和密碼認證，而不是其智慧卡。  
+您可以使用 [**以宣告方式傳送群組成員資格**] 規則範本或 [**轉換傳入**宣告] 規則範本來傳送驗證方法宣告。 信賴憑證者可以使用驗證方法宣告來判斷使用者用來驗證和取得來自 Active Directory 同盟服務 \(AD FS @ no__t-1 之宣告的登入機制。 您也可以使用 Windows Server 2012 R2 中 Active Directory 同盟服務 \(AD FS @ no__t-1 的驗證機制保證功能做為輸入，以產生驗證方法宣告，以供信賴憑證者想要判斷的情況以智慧卡登入為基礎的存取層級。 例如，開發人員可以為信賴憑證者應用程式的同盟使用者指派不同層級的存取權。 存取層級取決於使用者是否以其使用者名稱和密碼認證登入，而不是使用其智慧卡。  
 
-根據您組織的需求，請使用下列程序的其中一個：  
+視組織的需求而定，請使用下列其中一個程式：  
 
--   建立此規則使用 **傳送做為宣告的群組成員資格**規則範本\-當您想要的群組，您最後指定此範本，以判斷何種驗證方法時，您可以使用此規則範本要發出宣告。  
+-   使用 [**以宣告方式傳送群組成員資格**] 規則範本建立此規則 \- 當您想要在此範本中指定的群組最後判斷要發出的驗證方法時，可以使用此規則範本。  
 
--   建立此規則使用 **傳輸傳入宣告**規則範本\-想要將現有的驗證方法變更為新的驗證方法，可以使用產品時，您可以使用此規則範本無法辨識標準的 AD FS 驗證方法宣告。  
+-   使用**轉換傳入**的宣告規則範本來建立此規則 \- 當您想要將現有的驗證方法變更為與無法辨識的產品搭配使用的新驗證方法時，您可以使用此規則範本標準 AD FS 驗證方法宣告。  
 
 
 
-## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>若要利用傳送群組成員資格為信賴憑證者信任 Windows Server 2016 中的宣告規則範本建立 
+## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>若要使用 Windows Server 2016 中的信賴憑證者信任上的 [以宣告方式傳送群組成員資格] 規則範本來建立 
 
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
 
-2.  在主控台樹狀目錄之下**AD FS**，按一下**信賴憑證者信任**。 
+2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告發佈原則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
-4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
+4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在上**選取規則範本**頁面的 **宣告規則範本**，選取**宣告形式傳送群組成員資格**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，從清單中選取 [**以宣告方式傳送群組成員資格**]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)      
 
-6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
+6.  在 [**設定規則**] 頁面上，輸入宣告規則名稱。  
 
-7.  按一下 **瀏覽**，選取的群組的成員應該接收此驗證方法宣告，然後按一下**確定**。  
+7.  按一下 **[流覽]** ，選取成員應接收此驗證方法宣告的群組，然後按一下 **[確定]** 。  
 
-8.  在 **連出的宣告型別**，選取**驗證方法**清單中。  
+8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 在**傳出宣告值**，輸入預設的統一資源識別項的其中一個\(URI\)值在下列資料表中，根據您慣用的驗證方法中，按一下 **完成**，然後按一下**確定**儲存規則。  
+9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的 [統一資源識別項] \(URI @ no__t-2 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |                            實際的驗證方法                             |                                對應的 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        使用者名稱和密碼驗證                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 驗證                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 傳輸層安全性\(TLS\)會使用 X.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509\-基礎的驗證，不會使用 TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 傳輸層安全性 \(TLS @ no__t-1 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  X.509 @ no__t-不使用 TLS 的0based 驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
-## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>若要利用傳送群組成員資格為宣告提供者信任 Windows Server 2016 中的宣告規則範本建立 
+## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>若要使用 Windows Server 2016 中的宣告提供者信任上的 [以宣告方式傳送群組成員資格] 規則範本來建立 
 
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
 
-2.  在主控台樹狀目錄之下**AD FS**，按一下**宣告提供者信任**。 
+2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告規則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
-4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
+4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在上**選取規則範本**頁面的 **宣告規則範本**，選取**宣告形式傳送群組成員資格**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，從清單中選取 [**以宣告方式傳送群組成員資格**]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)     
 
-6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
+6.  在 [**設定規則**] 頁面上，輸入宣告規則名稱。  
 
-7.  按一下 **瀏覽**，選取的群組的成員應該接收此驗證方法宣告，然後按一下**確定**。  
+7.  按一下 **[流覽]** ，選取成員應接收此驗證方法宣告的群組，然後按一下 **[確定]** 。  
 
-8.  在 **連出的宣告型別**，選取**驗證方法**清單中。  
+8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 在**傳出宣告值**，輸入預設的統一資源識別項的其中一個\(URI\)值在下列資料表中，根據您慣用的驗證方法中，按一下 **完成**，然後按一下**確定**儲存規則。  
+9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的 [統一資源識別項] \(URI @ no__t-2 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |                            實際的驗證方法                             |                                對應的 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        使用者名稱和密碼驗證                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 驗證                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 傳輸層安全性\(TLS\)會使用 X.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509\-基礎的驗證，不會使用 TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 傳輸層安全性 \(TLS @ no__t-1 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  X.509 @ no__t-不使用 TLS 的0based 驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
 
-## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>若要建立此規則使用 轉換傳入宣告規則範本，在信賴憑證者信任 Windows Server 2016 中 
+## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>若要使用 Windows Server 2016 中的信賴憑證者信任上的 [轉換傳入宣告規則] 範本來建立此規則 
 
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
 
-2.  在主控台樹狀目錄之下**AD FS**，按一下**信賴憑證者信任**。 
+2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告發佈原則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
-4.  在 **編輯宣告發佈原則**對話方塊的 **發佈轉換規則**按一下 **新增規則**啟動規則精靈。 
+4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，從清單中選取 [**轉換傳入**宣告]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
 
-6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
+6.  在 [**設定規則**] 頁面上，輸入宣告規則名稱。  
 
-7.  在 **傳入宣告類型**，選取**驗證方法**清單中。  
+7.  在 [**傳入宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-8.  在 **連出的宣告型別**，選取**驗證方法**清單中。  
+8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 選取 **傳入宣告值取代為不同的傳出宣告值**，然後執行下列操作：  
+9. 選取 [**以不同的傳出宣告值取代傳入宣告值**]，然後執行下列動作：  
 
-    1.  在 **連入宣告值**，輸入下列 URI 值之一，根據實際的驗證方法原本使用的 URI，按一下**完成**，然後按一下  **確定**以儲存規則。  
+    1.  在 [**傳入宣告值**] 中，輸入下列其中一個 URI 值（以原先使用的實際驗證方法 uri 為基礎），按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
-    2.  在 **傳出宣告值**，輸入其中一個預設 URI 值取決於您新的慣用的驗證方法選擇下表中，按一下**完成**，然後按一下  **確定**儲存規則。  
+    2.  在 [**傳出宣告值**] 中，輸入下表中的其中一個預設 URI 值，這取決於您的新慣用驗證方法選擇，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |              實際的驗證方法              |                                對應的 URI                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         使用者名稱和密碼驗證          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 驗證                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 會使用 X.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509\-基礎的驗證，不會使用 TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|   X.509 @ no__t-不使用 TLS 的0based 驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
 > [!NOTE]  
-> 除了資料表中的值可使用其他 URI 值。 會顯示 ion URI 值上表反映接受預設的信賴憑證者的合作對象的 Uri。  
+> 除了資料表中的值之外，還可以使用其他的 URI 值。 上表中顯示的 URI 值會反映信賴憑證者預設接受的 Uri。  
 
-## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>若要建立此規則使用 轉換傳入宣告在宣告提供者信任 Windows Server 2016 中的規則範本 
+## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>若要使用 Windows Server 2016 中的宣告提供者信任上的「轉換傳入宣告」規則範本來建立此規則 
 
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
 
-2.  在主控台樹狀目錄之下**AD FS**，按一下**宣告提供者信任**。 
+2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告規則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
-4.  在 **編輯宣告規則**對話方塊的 **接受轉換規則**按一下 **新增規則**啟動規則精靈。
+4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，從清單中選取 [**轉換傳入**宣告]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
 
-6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
+6.  在 [**設定規則**] 頁面上，輸入宣告規則名稱。  
 
-7.  在 **傳入宣告類型**，選取**驗證方法**清單中。  
+7.  在 [**傳入宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-8.  在 **連出的宣告型別**，選取**驗證方法**清單中。  
+8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 選取 **傳入宣告值取代為不同的傳出宣告值**，然後執行下列操作：  
+9. 選取 [**以不同的傳出宣告值取代傳入宣告值**]，然後執行下列動作：  
 
-    1.  在 **連入宣告值**，輸入下列 URI 值之一，根據實際的驗證方法原本使用的 URI，按一下**完成**，然後按一下  **確定**以儲存規則。  
+    1.  在 [**傳入宣告值**] 中，輸入下列其中一個 URI 值（以原先使用的實際驗證方法 uri 為基礎），按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
-    2.  在 **傳出宣告值**，輸入其中一個預設 URI 值取決於您新的慣用的驗證方法選擇下表中，按一下**完成**，然後按一下  **確定**儲存規則。  
+    2.  在 [**傳出宣告值**] 中，輸入下表中的其中一個預設 URI 值，這取決於您的新慣用驗證方法選擇，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |              實際的驗證方法              |                                對應的 URI                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         使用者名稱和密碼驗證          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 驗證                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 會使用 X.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509\-基礎的驗證，不會使用 TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|   X.509 @ no__t-不使用 TLS 的0based 驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -195,16 +195,16 @@ ms.locfileid: "66444990"
 
 
 
-## <a name="to-create-this-rule-by-using-the-send-group-membership-as-claims-rule-template-in-windows-server-2012-r2"></a>若要建立此規則使用 傳送群組成員資格為 Windows Server 2012 R2 中的宣告規則範本  
+## <a name="to-create-this-rule-by-using-the-send-group-membership-as-claims-rule-template-in-windows-server-2012-r2"></a>若要使用 Windows Server 2012 R2 中的「以宣告方式傳送群組成員資格」規則範本來建立此規則  
 
-1.  在 [伺服器管理員] 中，按一下**工具**，然後選取**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
 
-2.  在主控台樹狀目錄中下, **AD FS\\信任關係**，按一下**宣告提供者信任**或是**信賴憑證者信任**，然後按一下 特定您要建立此規則的清單中的信任。  
+2.  在主控台樹的 [ **AD FS\\信任關聯**性] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
 
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告規則**。
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
 
-4.  在 [**編輯宣告規則**] 對話方塊中，選取其中一個下列索引標籤，根據信任您要編輯，以及哪一個規則可設定您要建立，此規則，然後按一下**加入規則**啟動規則該規則集相關聯的精靈：  
+4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，視您正在編輯的信任，以及您要在其中建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
 
     -   **接受轉換規則**  
 
@@ -215,41 +215,41 @@ ms.locfileid: "66444990"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
-5.  在上**選取規則範本**頁面的 **宣告規則範本**，選取**以宣告形式傳送群組成員資格**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，從清單中選取 [**以宣告方式傳送群組成員資格**]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
 
-6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
+6.  在 [**設定規則**] 頁面上，輸入宣告規則名稱。  
 
-7.  按一下 **瀏覽**，選取的群組的成員應該接收此驗證方法宣告，然後按一下**確定**。  
+7.  按一下 **[流覽]** ，選取成員應接收此驗證方法宣告的群組，然後按一下 **[確定]** 。  
 
-8.  在 **連出的宣告型別**，選取**驗證方法**清單中。  
+8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 在**傳出宣告值**，輸入預設的統一資源識別項的其中一個\(URI\)值在下列資料表中，根據您慣用的驗證方法中，按一下 **完成**，然後按一下**確定**儲存規則。  
+9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的 [統一資源識別項] \(URI @ no__t-2 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |                            實際的驗證方法                             |                                對應的 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        使用者名稱和密碼驗證                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 驗證                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 傳輸層安全性\(TLS\)會使用 X.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509\-基礎的驗證，不會使用 TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 傳輸層安全性 \(TLS @ no__t-1 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  X.509 @ no__t-不使用 TLS 的0based 驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
 
 > [!NOTE]  
-> 除了資料表中的值可使用其他 URI 值。 上表所示的 URI 值會反映接受預設的信賴憑證者的合作對象的 Uri。  
+> 除了資料表中的值之外，還可以使用其他的 URI 值。 上表所示的 URI 值會反映信賴憑證者預設接受的 Uri。  
 
-## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-in-windows-server-2012-r2"></a>若要建立此規則使用轉換傳入宣告規則範本在 Windows Server 2012 R2  
+## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-in-windows-server-2012-r2"></a>若要使用 Windows Server 2012 R2 中的「轉換傳入宣告」規則範本來建立此規則  
 
 
 
-1.  在 [伺服器管理員] 中，按一下**工具**，然後按一下**AD FS 管理**。  
+1.  在伺服器管理員中，按一下 [**工具**]，然後按一下 [ **AD FS 管理**]。  
 
-2.  在主控台樹狀目錄中下, **AD FS\\信任關係**，按一下**宣告提供者信任**或是**信賴憑證者信任**，然後按一下 特定您要建立此規則的清單中的信任。  
+2.  在主控台樹的 [ **AD FS\\信任關聯**性] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
 
-3.  右\-按一下 選取的信任，然後按一下**編輯宣告規則**。  
+3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
 
-4.  在 **編輯宣告規則**對話方塊中，選取其中一個下列索引標籤中，這取決於您要編輯，並在哪一個規則中設定您的信任要建立這項規則，然後按一下**新增規則**啟動規則該規則集相關聯的精靈：  
+4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您要建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
 
     -   **接受轉換規則**  
 
@@ -260,32 +260,32 @@ ms.locfileid: "66444990"
     -   **委派授權規則**  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
-5.  在 **選取規則範本**頁面的 **宣告規則範本**，選取**傳輸傳入宣告**從清單中，然後按一下 **下一步**.  
+5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，從清單中選取 [**轉換傳入**宣告]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)    
 
-6.  在 **設定規則**頁面上，輸入宣告規則的名稱。  
+6.  在 [**設定規則**] 頁面上，輸入宣告規則名稱。  
 
-7.  在 **傳入宣告類型**，選取**驗證方法**清單中。  
+7.  在 [**傳入宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-8.  在 **連出的宣告型別**，選取**驗證方法**清單中。  
+8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 選取 **傳入宣告值取代為不同的傳出宣告值**，然後執行下列操作：  
+9. 選取 [**以不同的傳出宣告值取代傳入宣告值**]，然後執行下列動作：  
 
-    1.  在 **連入宣告值**，輸入下列 URI 值之一，根據實際的驗證方法原本使用的 URI，按一下**完成**，然後按一下  **確定**以儲存規則。  
+    1.  在 [**傳入宣告值**] 中，輸入下列其中一個 URI 值（以原先使用的實際驗證方法 uri 為基礎），按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
-    2.  在 **傳出宣告值**，輸入其中一個預設 URI 值取決於您新的慣用的驗證方法選擇下表中，按一下**完成**，然後按一下  **確定**儲存規則。  
+    2.  在 [**傳出宣告值**] 中，輸入下表中的其中一個預設 URI 值，這取決於您的新慣用驗證方法選擇，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |              實際的驗證方法              |                                對應的 URI                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         使用者名稱和密碼驗證          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 驗證                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 會使用 X.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509\-基礎的驗證，不會使用 TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|   X.509 @ no__t-不使用 TLS 的0based 驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth3.PNG)
 
 > [!NOTE]  
-> 除了資料表中的值可使用其他 URI 值。 會顯示 ion URI 值上表反映接受預設的信賴憑證者的合作對象的 Uri。  
+> 除了資料表中的值之外，還可以使用其他的 URI 值。 上表中顯示的 URI 值會反映信賴憑證者預設接受的 Uri。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  

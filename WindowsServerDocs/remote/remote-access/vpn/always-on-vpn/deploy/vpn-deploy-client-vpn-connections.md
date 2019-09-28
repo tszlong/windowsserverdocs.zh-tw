@@ -1,7 +1,7 @@
 ---
 title: 設定 Windows 10 用戶端 Always On VPN 連線
 description: 在此步驟中, 您將瞭解 ProfileXML 選項和架構, 並將 Windows 10 用戶端電腦設定為使用 VPN 連線與該基礎結構進行通訊。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 05/29/2018
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.reviewer: deverette
-ms.openlocfilehash: c3ac8295d048c599a1cb6d1ed141cd63a7a73f47
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9621f9bdca0416965861112ba23c1c8dd731f67b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871343"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404287"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>步驟 6. 設定 Windows 10 用戶端 Always On VPN 連線
 
@@ -793,7 +793,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
     a.  在 [ **Advanced** ] 索引標籤上的 [**將此程式指派給電腦時**],**針對登入的每個使用者按一下 [一次**]。
 
-    b.  按一下 [確定 **Deploying Office Solutions**]。
+    b.  按一下 [確定]。
 
 4.  以滑鼠右鍵按一下 [ **VPN 設定檔腳本**], 然後按一下 [**部署**] 啟動 [部署軟體嚮導]。
 
@@ -863,7 +863,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 >[!NOTE]
 >Intune 現在會使用 Azure AD 群組。 如果 Azure AD Connect 將 VPN 使用者群組從內部部署同步至 Azure AD, 而且使用者已指派給 VPN 使用者群組, 則您已準備好繼續進行。
 
-建立 VPN 裝置設定原則, 為新增至群組的所有使用者設定 Windows 10 用戶端電腦。 因為 Intune 範本提供 VPN 參數，所以只會複製\<VPN_ProfileXML 檔案\<的 EapHostConfig >/EapHostConfig > 部分。
+建立 VPN 裝置設定原則, 為新增至群組的所有使用者設定 Windows 10 用戶端電腦。 因為 Intune 範本提供 VPN 參數，所以只會複製 VPN_ProfileXML 檔案的 @no__t 0EapHostConfig > \</EapHostConfig > 部分。
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>建立 Always On VPN 設定原則
 

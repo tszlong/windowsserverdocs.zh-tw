@@ -7,31 +7,31 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1d975fa32f19facfdee7a31e58293006fc5859ff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e542997295f8c0db9b660036c995daf0100b74d1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834479"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71368885"
 ---
 # <a name="identity-component-updates"></a>身分識別元件更新
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
-## <a name="lesson-1-identity-component-updates"></a>第 1 課：身分識別元件更新  
-本課程將說明 Windows Server 2012 R2 中的身分識別元件更新。  
+## <a name="lesson-1-identity-component-updates"></a>第1課:身分識別元件更新  
+本課程說明 Windows Server 2012 R2 中的身分識別元件更新。  
   
-### <a name="what-you-will-learn"></a>您將學到  
-完成本課程中之後，您將能夠：  
+### <a name="what-you-will-learn"></a>學習內容  
+完成本課程之後，您將能夠：  
   
--   說明的下列變更：  
+-   描述下列變更：  
   
     -   [SPN 和 UPN 的唯一性](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
   
-    -   [Winlogon 自動重新啟動登入&#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Winlogon 自動重新開機登入&#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
   
     -   [TPM 金鑰證明](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
   
@@ -41,7 +41,7 @@ ms.locfileid: "59834479"
   
     -   [認證保護和管理](https://technet.microsoft.com/library/dn408190.aspx)  
   
-**作者**:Justin Turner 資深支援高階工程師，與 Windows 群組  
+**作者**：Justin Turner，Microsoft 團隊的資深支援擴大工程師  
   
 > [!NOTE]  
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  

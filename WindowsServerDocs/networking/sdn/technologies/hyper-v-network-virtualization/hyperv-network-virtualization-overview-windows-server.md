@@ -1,9 +1,9 @@
 ---
-title: Windows Server 2016 中的 HYPER-V 網路虛擬化概觀
-description: 本主題提供 Windows Server 2016 中的 HYPER-V 網路虛擬化概觀
+title: Windows Server 2016 中的 hyper-v 網路虛擬化總覽
+description: 本主題提供 Windows Server 2016 中的 Hyper-v 網路虛擬化總覽
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,62 +12,62 @@ ms.topic: article
 ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 40ebd62d66c5a1d1a985a35a9adf179f07a75b3c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 0eda30b0980f2080f1603eb906fd308440316248
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284066"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405942"
 ---
-# <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Windows Server 2016 中的 HYPER-V 網路虛擬化概觀
+# <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 網路虛擬化總覽
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-在 Windows Server 2016 和 Virtual Machine Manager 中，Microsoft 會提供端對端網路虛擬化解決方案。  有五個主要元件組成 Microsoft 的網路虛擬化解決方案：  
+在 Windows Server 2016 和 Virtual Machine Manager 中，Microsoft 提供端對端網路虛擬化解決方案。  有五個主要元件組成 Microsoft 的網路虛擬化解決方案：  
 
--   **Windows Azure Pack for Windows Server**提供租用戶對應入口網站來建立虛擬網路和系統管理入口網站來管理虛擬網路。  
+-   **適用于 Windows Server 的 Windows Azure 套件**提供租使用者面向的入口網站來建立虛擬網路，以及可管理虛擬網路的系統管理入口網站。  
 
--   **Virtual Machine Manager** (VMM) 提供集中式的管理網路網狀架構。  
+-   **Virtual Machine Manager** （VMM）提供網路網狀架構的集中式管理。  
 
--   **Microsoft 網路控制卡**提供集中式、 可程式化的自動化點來管理、 設定、 監視和疑難排解您的資料中心內的虛擬和實體網路基礎結構。  
+-   **Microsoft 網路控制**站提供集中式、可程式化的自動化點，以管理、設定、監視和疑難排解資料中心內的虛擬和實體網路基礎結構。  
 
 -   **Hyper-V 網路虛擬化**提供虛擬化網路流量所需的基礎結構。  
 
--   **HYPER-V 網路虛擬化閘道**提供虛擬和實體網路之間的連線。  
+-   **Hyper-v 網路虛擬化閘道**提供虛擬和實體網路之間的連線。  
 
-本主題介紹概念並說明 Windows Server 2016 中 HYPER-V 網路虛擬化 （整個網路虛擬化解決方案的一部分） 的主要優點。 另外說明網路虛擬化為何有益於找尋企業工作負載合併以及「基礎架構即服務」(IaaS) 公用雲端提供者的私人雲端。  
+本主題介紹概念並說明 Hyper-v 網路虛擬化（整個網路虛擬化解決方案的一個部分）在 Windows Server 2016 中的主要優點和功能。 另外說明網路虛擬化為何有益於找尋企業工作負載合併以及「基礎架構即服務」(IaaS) 公用雲端提供者的私人雲端。  
 
-如需 Windows Server 2016 中的網路虛擬化更多技術的詳細資訊，請參閱[Windows Server 2016 中的 HYPER-V 網路虛擬化技術細節](../../../sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-technical-details-windows-server.md)。  
+如需 Windows Server 2016 中網路虛擬化的詳細技術資訊，請參閱[Windows server 2016 中的 Hyper-v 網路虛擬化技術詳細資料](../../../sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-technical-details-windows-server.md)。  
 
-**嗎**  
+**您的意思**  
 
--   [HYPER-V 網路虛擬化概觀](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b)(Windows Server 2012 R2)  
+-   [Hyper-v 網路虛擬化總覽](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b)（Windows Server 2012 R2）  
 
--   [HYPER-V 概觀](assetId:///5aad349f-ef06-464a-b36f-366fbb040143)  
+-   [Hyper-v 總覽](assetId:///5aad349f-ef06-464a-b36f-366fbb040143)  
 
 -   [Hyper-V 虛擬交換器概觀](assetId:///e6ec46af-6ef4-49b3-b1f1-5268dc03f05b)  
 
 ## <a name="BKMK_OVER"></a>功能描述  
-HYPER-V 網路虛擬化提供類似於伺服器虛擬化 (hypervisor) 如何提供作業系統的 「 虛擬機器 」 的虛擬機器 （稱為 VM 網路） 「 虛擬網路 」。 網路虛擬化可分隔虛擬網路與實體網路基礎架構，並移除虛擬機器佈建 VLAN 與階層式 IP 位址指派的限制。 這種彈性讓客戶更容易移到 IaaS 雲端，也讓主機服務提供者與資料中心系統管理員有效管理其基礎架構，同時維持多重租用戶的必要隔離和安全性需求，以及支援重疊虛擬機器 IP 位址。  
+Hyper-v 網路虛擬化會將「虛擬網路」（稱為 VM 網路）提供給虛擬機器，類似于伺服器虛擬化（虛擬機器）如何為作業系統提供「虛擬機器」。 網路虛擬化可分隔虛擬網路與實體網路基礎架構，並移除虛擬機器佈建 VLAN 與階層式 IP 位址指派的限制。 這種彈性讓客戶更容易移到 IaaS 雲端，也讓主機服務提供者與資料中心系統管理員有效管理其基礎架構，同時維持多重租用戶的必要隔離和安全性需求，以及支援重疊虛擬機器 IP 位址。  
 
-客戶想要順暢地將資料中心延伸到雲端。 不過目前想要順暢實作這類混合雲端架構，還是有技術上的挑戰。 最大的障礙客戶面臨的其中一個是重複使用他們現有的網路拓撲 （子網路、 IP 位址、 網路服務和等等。） 在雲端中與他們的內部部署資源和其雲端資源之間進行橋接。  Hyper-V 網路虛擬化提供的 VM 網路概念與基礎實體網路無關。 利用由一或多個虛擬子網路組成的 VM 網路概念，就可以將附加到虛擬網路之虛擬機器實體網路的實際位置與虛擬網路拓撲分開。 所以，客戶就能夠輕鬆地將虛擬子網路移到雲端，同時在雲端保留現有 IP 位址及拓撲，讓現有服務不需要知道子網路的實體位置，也能持續運作。 也就是說，Hyper-V 網路虛擬化有助於順暢進行混合雲端。  
+客戶想要順暢地將資料中心延伸到雲端。 不過目前想要順暢實作這類混合雲端架構，還是有技術上的挑戰。 客戶面臨的最大障礙之一，就是在雲端重複使用其現有的網路拓撲（子網、IP 位址、網路服務等），並在其內部部署資源與其雲端資源之間橋接。  Hyper-V 網路虛擬化提供的 VM 網路概念與基礎實體網路無關。 利用由一或多個虛擬子網路組成的 VM 網路概念，就可以將附加到虛擬網路之虛擬機器實體網路的實際位置與虛擬網路拓撲分開。 所以，客戶就能夠輕鬆地將虛擬子網路移到雲端，同時在雲端保留現有 IP 位址及拓撲，讓現有服務不需要知道子網路的實體位置，也能持續運作。 也就是說，Hyper-V 網路虛擬化有助於順暢進行混合雲端。  
 
-除了混合雲端之外，許多組織也會合併資料中心並建立私人雲端，在內部利用雲端架構的效率和延展性優點。 HYPER-V 網路虛擬化允許更佳的彈性和效率的私用雲端藉由將分離業務單位的網路拓撲 （藉由讓它成為虛擬的） 與實際的實體網路拓撲。 這樣一來，業務單位就能夠輕鬆共用內部私人雲端，同時還能彼此隔離，並繼續保留現有的網路拓撲。 資料中心營運團隊能夠靈活部署，並動態將工作負載移到資料中心的任一處，不需中斷伺服器，進而提供較佳的營運效率以及整體上更有效率的資料中心。  
+除了混合雲端之外，許多組織也會合併資料中心並建立私人雲端，在內部利用雲端架構的效率和延展性優點。 Hyper-v 網路虛擬化藉由將業務單位的網路拓撲（藉由使其虛擬化）與實際實體網路拓撲分離，讓私人雲端更具彈性和效率。 這樣一來，業務單位就能夠輕鬆共用內部私人雲端，同時還能彼此隔離，並繼續保留現有的網路拓撲。 資料中心營運團隊能夠靈活部署，並動態將工作負載移到資料中心的任一處，不需中斷伺服器，進而提供較佳的營運效率以及整體上更有效率的資料中心。  
 
-工作負載擁有者，主要的優點是，所以他們現在可以移至雲端的工作負載 「 拓撲 」 不需要變更其 IP 位址，或重新撰寫應用程式。 例如，一般的三層 LOB 應用程式是由前端層、商務邏輯層和資料庫層所組成。 Hyper-V 網路虛擬化可透過原則，讓客戶將這三層全部或部分移到雲端，同時維持服務的路由拓撲 IP 位址 (也就是虛擬機器 IP 位址)，而不需要變更應用程式。  
+針對工作負載擁有者，主要的優點是他們現在可以將其工作負載「拓撲」移至雲端，而不需要變更其 IP 位址或重新撰寫其應用程式。 例如，一般的三層 LOB 應用程式是由前端層、商務邏輯層和資料庫層所組成。 Hyper-V 網路虛擬化可透過原則，讓客戶將這三層全部或部分移到雲端，同時維持服務的路由拓撲 IP 位址 (也就是虛擬機器 IP 位址)，而不需要變更應用程式。  
 
 對基礎架構擁有者來說，虛擬機器放置的額外彈性可將工作負載移到資料中心的任何位置，不需要變更虛擬機器或重新設定網路。 例如，Hyper-V 網路虛擬化可進行跨子網路即時移轉，這樣虛擬機器就能夠即時移轉到資料中心的任一處，不會中斷服務。 之前提到的即時移轉僅限相同子網路，也就是限制虛擬機器所在的位置。 跨子網路即時移轉可讓系統管理員根據動態資源需求和電源效率來合併工作負載，也可以進行基礎架構維護，不會中斷客戶工作負載執行時間。  
 
-## <a name="BKMK_APP"></a>實際的應用程式  
-成功將資料中心虛擬化之後，IT 組織與 (提供並存或實體伺服器出租的) 託管提供者就可以開始提供更靈活的虛擬化基礎架構，更容易為客戶提供指定的伺服器執行個體。 這個新的服務類別稱為「基礎架構即服務」(IaaS)。 Windows Server 2016 提供所有必要的平台功能，讓企業客戶能夠建置私人雲端，並轉換到 IT 即服務的營運模式。 Windows Server 2016 2016年也可讓主機服務提供者建置公用雲端，並為客戶提供 IaaS 解決方案。 與 Virtual Machine Manager 和 Windows Azure Pack，來管理 HYPER-V 網路虛擬化原則結合時，Microsoft 會提供功能強大的雲端解決方案。  
+## <a name="BKMK_APP"></a>實際應用  
+成功將資料中心虛擬化之後，IT 組織與 (提供並存或實體伺服器出租的) 託管提供者就可以開始提供更靈活的虛擬化基礎架構，更容易為客戶提供指定的伺服器執行個體。 這個新的服務類別稱為「基礎架構即服務」(IaaS)。 Windows Server 2016 提供所有必要的平臺功能，讓企業客戶能夠建立私人雲端，並轉換到 IT 即服務的營運模式。 Windows Server 2016 2016 也可讓主控者建立公用雲端，並為其客戶提供 IaaS 解決方案。 Microsoft 結合 Virtual Machine Manager 和 Windows Azure 套件以管理 Hyper-v 網路虛擬化原則時，提供功能強大的雲端解決方案。  
 
-Windows Server 2016 HYPER-V 網路虛擬化提供以原則為基礎且透過軟體控制的網路虛擬化，可降低管理負擔時所面臨的企業擴展專用的 IaaS 雲端，並提供雲端主機服務提供者更好彈性和延展性，以管理虛擬機器，以達成更高的資源使用率。  
+Windows Server 2016 Hyper-v 網路虛擬化提供以原則為基礎的軟體控制網路虛擬化，可降低企業擴展專用 IaaS 雲端時所面臨的管理負荷，並讓雲端主控者更好管理虛擬機器的彈性和擴充性，以達到更高的資源使用率。  
 
-如果 IaaS 案例具有來自不同組織部門 (專用雲端) 或不同客戶 (託管雲端) 的虛擬機器，就需要安全隔離。 現今的解決方案是虛擬區域網路 (Vlan)，可以在此案例中有嚴重的缺點。  
+如果 IaaS 案例具有來自不同組織部門 (專用雲端) 或不同客戶 (託管雲端) 的虛擬機器，就需要安全隔離。 現今的解決方案是虛擬區域網路（Vlan），在此案例中可能會有明顯的缺點。  
 
-**VLANs**  
+**Vlan**  
 
-目前，Vlan 是大多數組織用來支援重複使用位址空間和隔離租用戶的機制。 VLAN 會在乙太網路框架標頭中使用明確標記 (VLAN 識別碼)，並依賴乙太網路交換器強制執行隔離，以及將流量限制在相同 VLAN 識別碼的網路節點中。 VLAN 的主要缺點如下：  
+目前，Vlan 是大多陣列織用來支援重複使用位址空間和隔離租使用者的機制。 VLAN 會在乙太網路框架標頭中使用明確標記 (VLAN 識別碼)，並依賴乙太網路交換器強制執行隔離，以及將流量限制在相同 VLAN 識別碼的網路節點中。 VLAN 的主要缺點如下：  
 
 -   增加了因為頻繁重新設定生產交換器 (由於虛擬機器或隔離界限在動態資料中心內移動) 而不小心中斷的風險。  
 
@@ -77,7 +77,7 @@ Windows Server 2016 HYPER-V 網路虛擬化提供以原則為基礎且透過軟�
 
 **IP 位址指派**  
 
-除了 Vlan 帶來的缺點，虛擬機器 IP 位址指派會造成問題，包括：  
+除了 Vlan 所呈現的缺點之外，虛擬機器 IP 位址指派也會提出問題，包括：  
 
 -   資料中心網路基礎架構的實體位置決定了虛擬機器 IP 位址。 所以，服務工作負載通常必須變更 IP 位址，才能移到雲端。  
 
@@ -91,26 +91,26 @@ Windows Server 2016 HYPER-V 網路虛擬化提供以原則為基礎且透過軟�
 
 Hyper-V 網路虛擬化可分隔客戶虛擬機器的虛擬網路與實際網路基礎架構。 所以，客戶虛擬機器能夠維持原始 IP 位址，資料中心系統管理員也能在資料中心的任何位置佈建客戶虛擬機器，不需要重新設定實體 IP 位址或 VLAN 識別碼。 下一節摘要說明主要功能。  
 
-## <a name="BKMK_NEW"></a>重要的功能  
-以下是重要的功能及優點的 Windows Server 2016 中的 HYPER-V 網路虛擬化功能的清單：  
+## <a name="BKMK_NEW"></a>重要功能  
+以下是 Windows Server 2016 中 Hyper-v 網路虛擬化的主要功能、優點和功能清單：  
 
--   **靈活放置工作負載-網路隔離和 IP 位址重複使用不需要 Vlan**  
+-   **啟用彈性的工作負載放置-網路隔離和 IP 位址重複使用，而不需要 Vlan**  
 
-    HYPER-V 網路虛擬化可分隔客戶虛擬網路從主機服務提供者，提供在資料中心內的工作負載放置自由的實體網路基礎結構。 放置虛擬機器工作負載時，不再受限於實體網路的 IP 位址指派或 VLAN 隔離需求，因為它會根據軟體所定義的多組織用戶共享虛擬原則，在 Hyper-V 主機內部強制執行。  
+    Hyper-v 網路虛擬化會將客戶的虛擬網路與主控者的實體網路基礎結構分離，讓資料中心內的工作負載放置自由。 放置虛擬機器工作負載時，不再受限於實體網路的 IP 位址指派或 VLAN 隔離需求，因為它會根據軟體所定義的多組織用戶共享虛擬原則，在 Hyper-V 主機內部強制執行。  
 
     現在可以將 IP 位址重疊但來自不同客戶的虛擬機器部署在相同主機伺服器上，不需要繁複的 VLAN 設定，也不會違反 IP 位址階層。 這樣可以簡化將客戶工作負載轉移到共用 IaaS 託管提供者的過程，讓客戶不需要進行修改 (包括維持虛擬機器 IP 位址不變)，就能夠移動這些工作負載。 對託管提供者來說，支援想要將現有網路位址空間延伸到共用 IaaS 資料中心的眾多客戶，是一項複雜的作業，因為其中涉及針對每個客戶設定和維護隔離的 VLAN，以確保潛在的重疊位址空間能夠共存。 利用 Hyper-V 網路虛擬化比較容易支援重疊位址，託管提供者必須重新設定的網路也比較少。  
 
     此外，維護及更新實體基礎架構時，不會停用客戶工作負載。 利用 Hyper-V 網路虛擬化，就可以移轉特定主機、機架、子網路、VLAN 或整個叢集上的虛擬機器，不需要變更實體 IP 位址或大規模的重新設定。  
 
--   **可讓您更輕鬆將工作負載移到共用的 IaaS 雲端**  
+-   **更輕鬆地將工作負載移到共用的 IaaS 雲端**  
 
     利用 Hyper-V 網路虛擬化，就不需要變更 IP 位址及虛擬機器設定。 這樣可讓 IT 組織更輕鬆地將工作負載從資料中心移到共用的 IaaS 託管提供者，將重新設定工作負載或基礎架構工具及原則的必要性降到最低。 如果兩個資料中心之間有連線，IT 系統管理員還可以繼續使用工具，不需要予以重新設定。  
 
--   **跨子網路即時移轉**  
+-   **啟用跨子網的即時移轉**  
 
-    虛擬機器工作負載的即時移轉過去已限制為相同的 IP 子網路或 VLAN 因為跨子網路所需的虛擬機器的客體作業系統，若要變更其 IP 位址。 這樣變更位址會中斷現有通訊，並中斷虛擬機器上執行的服務。 使用 HYPER-V 網路虛擬化工作負載可以即時從某個子網路中不同的子網路中執行 Windows Server 2016，而不需要變更工作負載 IP 位址的伺服器執行 Windows Server 2016 的伺服器移轉。 Hyper-V 網路虛擬化可確保與所移轉的虛擬機器有進行中通訊的主機，都能更新並同步化因即時移轉而變更的虛擬機器位置。  
+    虛擬機器工作負載的即時移轉已限制為相同的 IP 子網或 VLAN，因為跨子網需要虛擬機器的客體作業系統來變更其 IP 位址。 這樣變更位址會中斷現有通訊，並中斷虛擬機器上執行的服務。 使用 Hyper-v 網路虛擬化時，工作負載可以從執行 Windows Server 2016 的伺服器即時移轉到不同子網中執行 Windows Server 2016 的伺服器，而不需要變更工作負載的 IP 位址。 Hyper-V 網路虛擬化可確保與所移轉的虛擬機器有進行中通訊的主機，都能更新並同步化因即時移轉而變更的虛擬機器位置。  
 
--   **可讓您更容易管理低耦合的伺服器和網路管理**  
+-   **讓您更輕鬆地管理分離的伺服器和網路管理**  
 
     伺服器工作負載放置已經簡化，因為工作負載的移轉和放置與基礎實體網路設定無關。 伺服器系統管理員可以著重於管理服務及伺服器，而網路系統管理員可以著重於整體網路基礎架構及流量管理。 這樣可讓資料中心伺服器系統管理員部署和移轉虛擬機器，不需要變更虛擬機器的 IP 位址。 因為 Hyper-V 網路虛擬化放置虛擬機器時，不會考慮網路拓撲，網路系統管理員也不需要進行可能會變更隔離界限的放置動作，所以會降低額外負荷。  
 
@@ -120,28 +120,28 @@ Hyper-V 網路虛擬化可分隔客戶虛擬機器的虛擬網路與實際網路
 
 -   **與現有的基礎結構和新興技術相容**  
 
-    HYPER-V 網路虛擬化可以部署在現今的資料中心，但與新興資料中心的 「 一般網路 」 技術相容。  
+    Hyper-v 網路虛擬化可以部署在現今的資料中心，但它與新興的資料中心「一般網路」技術相容。  
 
-    比方說，Windows Server 2016 中的 HNV 支援 VXLAN 封裝格式和開啟 vSwitch 資料庫管理通訊協定 (OVSDB) 做為 SouthBound 介面 (SBI)...  
+    例如，Windows Server 2016 中的 HNV 支援 VXLAN 封裝格式和 Open vSwitch 資料庫管理通訊協定（OVSDB）做為 SouthBound 介面（為）。  
 
--   **提供的互通性與生態系統整備**  
+-   **提供互通性和生態系統就緒**  
 
     Hyper-V 網路虛擬化可支援適合與現有資源通訊的多種設定，例如跨內部部署連線、存放區域網路 (SAN)、非虛擬化資源存取等。 Microsoft 致力與生態系統夥伴合作，來支援並增強 Hyper-V 網路虛擬化在效能、延展性及管理能力等方面的體驗。  
 
--   **以原則為基礎的組態**  
+-   **以原則為基礎的設定**  
 
-    Windows Server 2016 中的網路虛擬化原則已透過 Microsoft 網路控制站。 網路控制站有 RESTful northbound API，以及設定原則的 Windows PowerShell 介面。 如需有關 Microsoft 網路控制站的詳細資訊，請參閱[網路控制卡](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)。  
+    Windows Server 2016 中的網路虛擬化原則是透過 Microsoft 網路控制站來設定。 網路控制卡具有 RESTful northbound API，以及用來設定原則的 Windows PowerShell 介面。 如需有關 Microsoft 網路控制卡的詳細資訊，請參閱[網路控制](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)卡。  
 
 ## <a name="BKMK_SOFT"></a>軟體需求  
-使用 Microsoft 網路控制卡的 HYPER-V 網路虛擬化需要 Windows Server 2016 和 HYPER-V 角色。  
+使用 Microsoft 網路控制站的 hyper-v 網路虛擬化需要 Windows Server 2016 和 Hyper-v 角色。  
 
 ## <a name="BKMK_LINKS"></a>另請參閱  
-若要深入了解 Windows Server 2016 中的 HYPER-V 網路虛擬化，請參閱下列連結：  
+若要深入瞭解 Windows Server 2016 中的 Hyper-v 網路虛擬化，請參閱下列連結：  
 
 
 |       內容類型       |                                                                                                                                參考                                                                                                                                |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **社群資源**  |     -   [私用雲端架構部落格](https://blogs.technet.com/b/privatecloud/archive/2012/03/19/cloud-datacenter-network-architecture-in-the-windows-server-8-era.aspx)<br />-詢問問題： [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
-|         **RFC**          |                                                                                                     -   VXLAN - [RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                                                      |
-| **相關的技術** | -   [網路控制站](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)<br />-   [HYPER-V 網路虛擬化概觀](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b)(Windows Server 2012 R2) |
+| **社區資源**  |     -   [私用雲端架構的 Blog](https://blogs.technet.com/b/privatecloud/archive/2012/03/19/cloud-datacenter-network-architecture-in-the-windows-server-8-era.aspx)<br />-詢問問題： [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
+|         **最新發佈**          |                                                                                                     -VXLAN- [RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                                                      |
+| **相關技術** | -   [網路控制](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)卡<br />-   [Hyper-v 網路虛擬化總覽](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b)（Windows Server 2012 R2） |
 

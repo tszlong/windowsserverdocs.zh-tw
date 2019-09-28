@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 05/23/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fc71ca2b8d130ab00014f850ccae25e9138d501b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2ef16ddeb241d55b61b484805ff91cb247985d8d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867567"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358879"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>在 Windows Server 中建立 AD FS 的自訂驗證方法
 
@@ -62,7 +62,7 @@ ms.locfileid: "70867567"
 
     ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "建立提供者")
 
-3.  從已安裝 AD FS的 Windows Server 2012 R2 伺服器上的% windir%\\ADFS 複製 IdentityServer，並將它貼入開發電腦上的專案資料夾中。
+3.  在已安裝 AD FS 的 Windows Server 2012 R2 伺服器上，從% windir% \\ADFS 複製**IdentityServer** ，並將它貼入開發電腦上的專案資料夾中。
 
 4.  在**方案總管**中，以滑鼠右鍵按一下 [**參考**] 並**新增參考 ...**
 
@@ -325,9 +325,7 @@ ms.locfileid: "70867567"
         <input id="context" type="hidden" name="Context" value="%Context%"/>
         <!-- End inputs are required by the presentation framework. -->
         <p id="pageIntroductionText">此內容是由 MFA 範例介面卡提供。 以下顯示挑戰輸入。</p>
-        <label for="challengeQuestionInput" class="block">問題文字</label>
-        <input id="challengeQuestionInput" name="ChallengeQuestionAnswer" type="text" value="" class="text" placeholder="Answer placeholder" />
-        <div id="submissionArea" class="submitMargin">
+        <label for="challengeQuestionInput" class="block">Question text @ no__t-1 @ no__t-2 @ no__t-3<div id="submissionArea" class="submitMargin">
         <input id="submitButton" type="submit" name="Submit" value="Submit" onclick="return AuthPage.submitAnswer()"/>
         </div>
         </form>
@@ -381,7 +379,7 @@ ms.locfileid: "70867567"
 
 3.  將 Gacutil 工具複製到伺服器。
 
-    Gacutil 可在 **% homedrive\\% Program Files （x86）\\ \\Microsoft sdk windows\\v4.0 8.0 a Windows 8 電腦上\\的\\bin NETFX 4.0\\工具**中找到。  您需要**gacutil**檔案本身以及**1033**、 **en-us**和其他當地語系化資源資料夾，位於**NETFX 4.0 工具**位置底下。
+    Gacutil 位於 **% homedrive% \\Program Files （x86） \\Microsoft sdk @ no__t-3Windows @ no__t-4v 8.0 a @ no__t-5bin @ no__t-6NETFX 4.0 Tools @ no__t-7** （在 Windows 8 電腦上）。  您需要**gacutil**檔案本身以及**1033**、 **en-us**和其他當地語系化資源資料夾，位於**NETFX 4.0 工具**位置底下。
 
 4.  將您的提供者檔案（一個或多個強式名稱簽署的 .dll 檔案）複製到與**gacutil**相同的資料夾位置（此位置只是為了方便起見）
 
@@ -434,7 +432,7 @@ ms.locfileid: "70867567"
 
 4.  在頁面底部的 [**選取其他驗證方法**] 底下，選取提供者 AdminName 的方塊。 按一下 **[套用]** 。
 
-5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [**位置**] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定 **Deploying Office Solutions**]。 （若要設定每個信賴憑證者的觸發程式，請參閱下方的「使用 Windows PowerShell 建立驗證原則」）。
+5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [**位置**] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]。 （若要設定每個信賴憑證者的觸發程式，請參閱下方的「使用 Windows PowerShell 建立驗證原則」）。
 
 6.  使用下列命令來檢查結果：
 
@@ -609,7 +607,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 4.  在 [**選取其他驗證方法**] 底下，勾選提供者 AdminName 的方塊。 按一下 **[套用]** 。
 
-5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [位置] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定 **Deploying Office Solutions**]。
+5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [位置] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]。
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>使用您的介面卡向 MFA 進行驗證
 
@@ -621,7 +619,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
         1.  或者，只需按一下 [多重要素原則] UI 中的 [**主要**] 索引標籤。
 
-2.  確定 [**表單驗**證] 是同時檢查**外部**網路和**內部**網路驗證方法的唯一選項。  按一下 [確定 **Deploying Office Solutions**]。
+2.  確定 [**表單驗**證] 是同時檢查**外部**網路和**內部**網路驗證方法的唯一選項。  按一下 [確定]。
 
 3.  開啟 IDP 起始的登入 html 頁面（HTTPs://\<fsname\>/adfs/ls/iDPInitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
 

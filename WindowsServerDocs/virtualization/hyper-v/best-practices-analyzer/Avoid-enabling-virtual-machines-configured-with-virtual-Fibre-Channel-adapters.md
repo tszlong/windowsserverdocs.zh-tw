@@ -1,7 +1,7 @@
 ---
-title: 避免在使用時有較少的路徑來光纖通道邏輯單元 (Lun)，來源與目的地上允許即時移轉的虛擬光纖通道介面卡設定的虛擬機器
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 避免啟用使用虛擬光纖通道介面卡設定的虛擬機器，以允許在目的地上光纖通道邏輯單元（Lun）的路徑少於來源時進行即時移轉
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -9,14 +9,14 @@ ms.author: kathydav
 ms.topic: article
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6ff69d5cb09133a806c2a2df3446713264a4e892
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c55a8c76391ae1b01f43492dc5c72e3760371b80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365283"
 ---
-# <a name="avoid-enabling-virtual-machines-configured-with-virtual-fibre-channel-adapters-to-allow-live-migrations-when-there-are-fewer-paths-to-fibre-channel-logical-units-luns-on-the-destination-than-on-the-source"></a>避免在使用時有較少的路徑來光纖通道邏輯單元 (Lun)，來源與目的地上允許即時移轉的虛擬光纖通道介面卡設定的虛擬機器
+# <a name="avoid-enabling-virtual-machines-configured-with-virtual-fibre-channel-adapters-to-allow-live-migrations-when-there-are-fewer-paths-to-fibre-channel-logical-units-luns-on-the-destination-than-on-the-source"></a>避免啟用使用虛擬光纖通道介面卡設定的虛擬機器，以允許在目的地上光纖通道邏輯單元（Lun）的路徑少於來源時進行即時移轉
 
 >適用於：Windows Server 2016
 
@@ -29,15 +29,15 @@ ms.locfileid: "59849549"
 |**Severity**|警告|  
 |**分類**|組態|
 
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
   
 ## <a name="issue"></a>**問題**  
-*一或多個虛擬機器有 AllowReducedFcRedunancy 屬性中的虛擬化 WMI 提供者設定。*  
+*一或多部虛擬機器在虛擬化 WMI 提供者中設定了 AllowReducedFcRedunancy 屬性。*  
   
-## <a name="impact"></a>**影響**  
-*下列虛擬機器的即時移轉可能會導致資料遺失，或到儲存體中斷 I/O:*  
+## <a name="impact"></a>**產生**  
+*下列虛擬機器的即時移轉可能會導致資料遺失或中斷 i/o 給儲存體：*  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>**解決方法**  
-*請考慮清除受影響的虛擬機器上的 AllowReducedFcRedundancy WMI 屬性。清除這個屬性時，您可以執行即時移轉到目的地上的光纖通道的路徑數目是相同或多個來源的路徑數目時，才設定虛擬光纖通道介面卡的虛擬機器上。這些檢查有助於避免資料遺失或 I/O 中斷儲存體。* 
+@no__t 0Consider 清除受影響虛擬機器上的 AllowReducedFcRedundancy WMI 屬性。清除此屬性時，只有當目的地上光纖通道的路徑數目等於或大於來源上的路徑數目時，您才可以在使用虛擬光纖通道介面卡設定的虛擬機器上執行即時移轉。這些檢查有助於防止遺失資料或中斷對儲存體的 i/o。 * 

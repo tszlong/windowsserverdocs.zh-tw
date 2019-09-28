@@ -1,7 +1,7 @@
 ---
-title: 執行設定的 SR-IOV 的虛擬機器的數目不應超過可用的虛擬機器的虛擬函式的數目
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 針對 SR-IOV 設定的執行中虛擬機器數目不應超過虛擬機器可用的虛擬函式數目
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: 8bd4af5e-9e7d-4710-8950-39435a8bb373
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: e63df9283927437f9cfc62c052d83b07fe599b34
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0887035c84ebc4b7d93163533387f2f8ab20fb87
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829749"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364608"
 ---
-# <a name="the-number-of-running-virtual-machines-configured-for-sr-iov-should-not-exceed-the-number-of-virtual-functions-available-to-the-virtual-machines"></a>執行設定的 SR-IOV 的虛擬機器的數目不應超過可用的虛擬機器的虛擬函式的數目
+# <a name="the-number-of-running-virtual-machines-configured-for-sr-iov-should-not-exceed-the-number-of-virtual-functions-available-to-the-virtual-machines"></a>針對 SR-IOV 設定的執行中虛擬機器數目不應超過虛擬機器可用的虛擬函式數目
 
 >適用於：Windows Server 2016
 
@@ -30,18 +30,18 @@ ms.locfileid: "59829749"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>問題  
-*沒有足夠的虛擬函式適用於執行 設定單一根目錄 I/O 虛擬化 (SR-IOV) 的虛擬機器數目。*  
+*針對單一根目錄 i/o 虛擬化（SR-IOV）設定的執行中虛擬機器數目沒有足夠的可用虛擬函式。*  
   
 ## <a name="impact"></a>影響  
-*網路效能可能會無法在下列虛擬機器上達到最佳：*  
+*下列虛擬機器的網路效能可能不佳：*  
    
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>解析度  
-*請考慮停用不需要的 SR-IOV 虛擬函式的一個或多個虛擬機器上的 SR-IOV。*  
+*請考慮在不需要 SR-IOV 虛擬函式的一或多部虛擬機器上停用 SR-IOV。*  
   
 
 

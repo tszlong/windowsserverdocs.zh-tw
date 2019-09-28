@@ -1,8 +1,8 @@
 ---
 title: cmdkey
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c06a04fa6473bc30c3b354f049a55775d2308a0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: dc2b12cb53eef930d05c1e291de5574a8ba94306
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434309"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379314"
 ---
 # <a name="cmdkey"></a>cmdkey
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立、列出和刪除儲存的使用者名稱和密碼或認證。
 
@@ -34,28 +34,28 @@ cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> 
 
 |             參數             |                                                                                    描述                                                                                     |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         / 新增：<TargetName>          | 將清單中的使用者名稱和密碼。<br /><br />需要的參數<TargetName>識別此項目相關聯的電腦或網域名稱。 |
-|       / 一般：<TargetName>        |   將清單中的泛用的認證。<br /><br />需要的參數<TargetName>識別此項目相關聯的電腦或網域名稱。    |
-|             /smartcard             |                                                                    從智慧卡中擷取的認證。                                                                     |
-|          /user:<UserName>          |                                 指定要與這個項目儲存的使用者或帳戶名稱。 如果*UserName*是未提供，它會要求。                                  |
-|          /pass:<Password>          |                                       指定要與這個項目儲存的密碼。 如果*密碼*是未提供，它會要求。                                        |
-| /delete{:<TargetName> &#124; /ras} |  從清單中刪除的使用者名稱和密碼。 如果*TargetName*指定，將會刪除項目。 如果指定 /ras，就會刪除儲存的遠端存取項目。   |
-|         /list:<TargetName>         |                  顯示預存的使用者名稱和認證的清單。 如果*TargetName*不能指定，所有預存使用者名稱和認證將會列出。                   |
+|         /add： <TargetName>          | 將使用者名稱和密碼加入清單中。<br /><br />需要 <TargetName> 的參數，它會識別與此專案相關聯的電腦或功能變數名稱。 |
+|       /一般： <TargetName>        |   將一般認證加入清單中。<br /><br />需要 <TargetName> 的參數，它會識別與此專案相關聯的電腦或功能變數名稱。    |
+|             /smartcard             |                                                                    從智慧卡抓取認證。                                                                     |
+|          /user： <UserName>          |                                 指定要與此專案一起儲存的使用者或帳戶名稱。 如果未提供使用者*名稱*，則會要求使用者。                                  |
+|          /pass： <Password>          |                                       指定要與此專案一起儲存的密碼。 如果未提供*密碼*，則會要求它。                                        |
+| /delete{： <TargetName> &#124; /ras} |  刪除清單中的使用者名稱和密碼。 如果指定了*TargetName* ，將會刪除該專案。 如果指定/ras，將會刪除儲存的遠端存取專案。   |
+|         /list： <TargetName>         |                  顯示已儲存的使用者名稱和認證清單。 如果未指定*TargetName* ，則會列出所有儲存的使用者名稱和認證。                   |
 |                 /?                 |                                                                        在命令提示字元顯示說明。                                                                        |
 
 ## <a name="remarks"></a>備註
-- 如果使用 /smartcard 命令列選項時，在系統上找到一個以上的智慧卡**cmdkey**會顯示所有可用的智慧卡的相關資訊，然後提示使用者指定要使用哪一個。
-- 一旦儲存之後，不會顯示密碼。
-  ## <a name="BKMK_examples"></a>範例
-  若要顯示的所有使用者名稱和儲存的認證清單，請輸入：
+- 當使用/smartcard 命令列選項時，如果在系統上找到一個以上的智慧卡， **cmdkey**將會顯示所有可用智慧卡的相關資訊，然後提示使用者指定要使用哪一個。
+- 儲存之後，將不會顯示密碼。
+  ## <a name="BKMK_examples"></a>典型
+  若要顯示所有已儲存的使用者名稱和認證清單，請輸入：
   ```
   cmdkey /list
   ```
-  若要加入使用密碼 Kleo 存取電腦 Server01 的使用者名稱和密碼，使用者 Mikedan，請輸入：
+  若要新增使用者 Mikedan 的使用者名稱和密碼，以使用密碼 Kleo 來存取電腦 Server01，請輸入：
   ```
   cmdkey /add:server01 /user:mikedan /pass:Kleo
   ```
-  若要新增的使用者名稱和 使用者存取電腦 Server01 Mikedan 密碼和密碼的提示字元，每當 Server01 存取時，請輸入：
+  若要新增使用者 Mikedan 的使用者名稱和密碼以存取電腦 Server01，並在每次存取 Server01 時提示輸入密碼，請輸入：
   ```
   cmdkey /add:server01 /user:mikedan
   ```
@@ -63,9 +63,9 @@ cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> 
   ```
   cmdkey /delete /ras
   ```
-  若要刪除 Server01 為所儲存的認證，請輸入：
+  若要刪除為 Server01 儲存的認證，請輸入：
   ```
   cmdkey /delete:Server01
   ```
-  ## <a name="additional-references"></a>其他參考資料
+  ## <a name="additional-references"></a>其他參考
   [命令列語法關鍵](command-line-syntax-key.md)

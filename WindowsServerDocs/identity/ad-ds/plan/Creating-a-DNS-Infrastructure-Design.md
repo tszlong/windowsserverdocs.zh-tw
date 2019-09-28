@@ -7,36 +7,36 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 080c36f8410be4d6b1933c74730e2b55ce8d0a0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b4b7cea18a6bb6b435b3c3fb6b4e94cfdddb2c04
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856129"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408979"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>建立 DNS 基礎結構設計
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立您的 Active Directory 樹系和網域設計之後，您必須設計的網域名稱系統 (DNS) 基礎結構，以支援您的 Active Directory 邏輯結構。 DNS 可讓使用者使用都很容易就能連線到電腦和 IP 網路上的其他資源，請記得的易記名稱。 在 Windows Server 2008 的 active Directory 網域服務 (AD DS) 需要 DNS。  
+建立 Active Directory 樹系和網域設計之後，您必須設計一個網域名稱系統（DNS）基礎結構，以支援您的 Active Directory 邏輯結構。 DNS 可讓使用者使用易記名稱，以輕鬆地連接到 IP 網路上的電腦和其他資源。 Windows Server 2008 中的 Active Directory Domain Services （AD DS）需要 DNS。  
   
-設計 DNS 以支援 AD DS 的程序會根據您組織是否已有現有的 DNS 伺服器服務而有所不同，或您要部署新的 DNS 伺服器服務：  
+設計 DNS 以支援 AD DS 的程式會根據您的組織是否已有現有的 DNS 伺服器服務，或您正在部署新的 DNS 伺服器服務而有所不同：  
   
-- 如果您已經有現有的 DNS 基礎結構，您必須整合到該環境中的 Active Directory 命名空間。 如需詳細資訊，請參閱 <<c0> [ 將現有 DNS 基礎結構的整合 AD DS](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)。  
-- 如果在位置中沒有 DNS 基礎結構，您必須設計和部署新的 DNS 基礎結構，以支援 AD DS。 如需詳細資訊，請參閱 <<c0> [ 部署網域名稱系統 (DNS)](https://go.microsoft.com/fwlink/?LinkId=93656)。  
+- 如果您已經有現有的 DNS 基礎結構，則必須將 Active Directory 命名空間整合到該環境中。 如需詳細資訊，請參閱[將 AD DS 整合至現有的 DNS 基礎結構](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)。  
+- 如果您沒有 DNS 基礎結構，則必須設計和部署新的 DNS 基礎結構，以支援 AD DS。 如需詳細資訊，請參閱[部署網域名稱系統（DNS）](https://go.microsoft.com/fwlink/?LinkId=93656)。  
   
-如果您的組織有現有的 DNS 基礎結構，您必須確定您了解您的 DNS 基礎結構與 Active Directory 命名空間的互動方式。 為協助您記載您現有的 DNS 基礎結構設計的工作表，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 從[工作輔助工具的 Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558)和開啟 「 DNS 清查 」 (DSSLOGI_8.doc)。  
+如果您的組織有現有的 DNS 基礎結構，您必須確定您瞭解您的 DNS 基礎結構將如何與 Active Directory 命名空間互動。 如需協助您記載現有 DNS 基礎結構設計的工作表，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://go.microsoft.com/fwlink/?LinkID=102558)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟「DNS 清查」（DSSLOGI_8）。  
   
 > [!NOTE]  
-> 除了 IP 第 4 版 (IPv4) 位址，Windows Server 也支援 IP 版本 6 (IPv6) 位址。 可協助您列出的 IPv6 位址時記錄目前的 DNS 結構的遞迴名稱解析方法為工作表，請參閱[附錄 a:DNS 清查](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)。
+> 除了 IP 第4版（IPv4）位址，Windows Server 也支援 IP 版本6（IPv6）位址。 如需協助您在記錄目前 DNS 結構的遞迴名稱解析方法時列出 IPv6 位址的工作表，請參閱 [Appendix A：DNS 清查 @ no__t-0。
   
-在設計您的 DNS 基礎結構，以支援 AD DS 之前，很有幫助，若要了解 DNS 階層，DNS 名稱解析程序，以及如何 DNS 支援 AD DS。 如需有關 DNS 階層和名稱解析程序的詳細資訊，請參閱 DNS 技術參考資料 ([https://go.microsoft.com/fwlink/?LinkID=48145](https://go.microsoft.com/fwlink/?LinkID=48145))。 DNS 如何支援 AD DS 的詳細資訊，請參閱 DNS 支援，如需 Active Directory 技術參考 ([https://go.microsoft.com/fwlink/?LinkID=48147](https://go.microsoft.com/fwlink/?LinkID=48147))。  
+在設計您的 DNS 基礎結構以支援 AD DS 之前，請先閱讀 DNS 階層、DNS 名稱解析程式，以及 DNS 如何支援 AD DS 的相關資訊。 如需 DNS 階層和名稱解析程式的詳細資訊，請參閱 DNS 技術參考（[https://go.microsoft.com/fwlink/?LinkID=48145](https://go.microsoft.com/fwlink/?LinkID=48145)）。 如需 DNS 如何支援 AD DS 的詳細資訊，請參閱 Active Directory 技術參考的 DNS 支援（[https://go.microsoft.com/fwlink/?LinkID=48147](https://go.microsoft.com/fwlink/?LinkID=48147)）。  
   
 ## <a name="in-this-section"></a>本節內容  
 
 - [檢閱 DNS 概念](../../ad-ds/plan/Reviewing-DNS-Concepts.md)  
-- [DNS 和 AD DS](../../ad-ds/plan/DNS-and-AD-DS.md)  
-- [AD DS 擁有者角色指派的 DNS](../../ad-ds/deploy/Assigning-the-DNS-for-AD-DS-Owner-Role.md)  
-- [將 AD DS 整合到現有的 DNS 基礎結構](../../ad-ds/plan/../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)  
+- [DNS 與 AD DS](../../ad-ds/plan/DNS-and-AD-DS.md)  
+- [指派 AD DS 擁有者角色的 DNS](../../ad-ds/deploy/Assigning-the-DNS-for-AD-DS-Owner-Role.md)  
+- [將 AD DS 整合至現有 DNS 基礎結構](../../ad-ds/plan/../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)  

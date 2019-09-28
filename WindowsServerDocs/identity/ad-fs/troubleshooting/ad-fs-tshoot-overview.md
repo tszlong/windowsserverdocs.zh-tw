@@ -1,44 +1,44 @@
 ---
 title: 疑難排解 AD FS
-description: 本文件說明如何疑難排解各個層面的 AD FS
+description: 本檔說明如何針對 AD FS 的各個層面進行疑難排解
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6410d510085d1772ca6d8ced47226e00239a1a02
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 416d9a68326927fcdf5884ef794a74e24a25bb8b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366099"
 ---
 # <a name="troubleshooting-ad-fs"></a>疑難排解 AD FS
-AD FS 有很多的移動部分，接觸到許多不同的因素，有許多不同的相依性。  當然，這可以常理的各種問題。  這份文件被設計來協助您開始疑難排解這些問題。  本文件將為您介紹您應該專注於如何啟用功能的詳細資訊，及各種工具，可用來追蹤問題的一般區域。  
+AD FS 有很多移動部分，觸及許多不同的東西，而且有許多不同的相依性。  自然地，這可能會增加各種問題。  本檔的設計目的是要協助您開始針對這些問題進行疑難排解。  本檔將為您介紹應專注于的一般區域、如何啟用其他資訊的功能，以及可用於追蹤問題的各種工具。  
 
 >[!NOTE]
->如需詳細資訊，請參閱[ADFS 協助](http://adfshelp.microsoft.com)可在其中一個有效的工具來簡化了使用者和系統管理員以解決驗證問題，更快的步調。 
+>如需其他資訊，請參閱[ADFS](http://adfshelp.microsoft.com)說明，這會在單一位置提供有效的工具，讓使用者和系統管理員更快速地解決驗證問題。 
 
 
-## <a name="what-to-check-first"></a>要檢查第一個項目
-您了解深入的疑難排解之前，有幾件事，您應該先檢查。  其中包括：
-- **DNS 設定**-您可以解析 federation service 名稱嗎？  這應該解析為其中一個負載平衡器 IP 位址或其中一個伺服器陣列中的 AD FS 伺服器的 IP 位址。  如需詳細資訊，請參閱[AD FS 疑難排解-DNS](ad-fs-tshoot-dns.md)。
-- **AD FS 端點**-您可以瀏覽至 AD FS 端點嗎？  藉由瀏覽至此，您可以判斷您的 AD FS web 伺服器回應要求。  如果您可以取得這個檔案，您便知道 AD FS 會服務要求透過 443 沒有問題。  如需詳細資訊，請參閱[AD FS 疑難排解-端點](ad-fs-tshoot-endpoints.md)。
-- **Idp 起始登入**-登入和驗證透過 Idp-Initiated 登入 頁面？  您必須確定已啟用此頁面，因為它預設會停用。  使用`Set-AdfsProperties -EnableIdPInitiatedSignOn $true`若要啟用的頁面。  如果您可以登入，並驗證您知道 AD FS 會使用此區域中。  如需詳細資訊，請參閱[AD FS 疑難排解-登入](ad-fs-tshoot-initiatedsignon.md)。
-  ##  <a name="common-troubleshooting-areas"></a>疑難排解的常見區域
+## <a name="what-to-check-first"></a>首先要檢查的內容
+深入瞭解疑難排解之前，您應該先檢查幾件事。  其中包括：
+- **DNS**設定-您可以解析 federation service 的名稱嗎？  這應該會解析為伺服器陣列中其中一個 AD FS 伺服器的負載平衡器 IP 位址或 IP 位址。  如需詳細資訊，請參閱[AD FS 疑難排解-DNS](ad-fs-tshoot-dns.md)。
+- **AD FS 端點**-您可以流覽至 AD FS 端點嗎？  藉由流覽至此方法，您可以判斷您的 AD FS web 伺服器是否正在回應要求。  如果您可以前往這個檔案，那麼您就知道 AD FS 是透過443來服務要求的問題。  如需詳細資訊，請參閱[AD FS 疑難排解-端點](ad-fs-tshoot-endpoints.md)。
+- **Idp 起始**的登入-您可以透過 [Idp 起始的登入] 頁面來登入和驗證嗎？  您必須確定此頁面已啟用，因為它預設為停用。  使用 `Set-AdfsProperties -EnableIdPInitiatedSignOn $true` 來啟用頁面。  如果您可以登入並進行驗證，則您知道 AD FS 在此區域中運作。  如需詳細資訊，請參閱[AD FS 疑難排解-登錄](ad-fs-tshoot-initiatedsignon.md)。
+  ##  <a name="common-troubleshooting-areas"></a>常見的疑難排解區域
 
-|名稱|描述|
+|Name|描述|
 |-----|-----|
-|[事件記錄與稽核](ad-fs-tshoot-logging.md)|您可以使用 Windows 事件記錄檔來檢視高層級和低層級資訊透過系統管理和追蹤記錄檔。  它也可以用來檢視安全性稽核。|
-|[SQL 連線能力](ad-fs-tshoot-sql.md)|在測試 AD FS 伺服器和後端 SQL database 之間的連線資訊|
-|[宣告發行](ad-fs-tshoot-claims-issuance.md)|判斷是否 AD FS 發出宣告正確的資訊。|
-|[迴圈偵測](ad-fs-tshoot-loop.md)|判斷及防止使用者在 Idp 和 RP 之間來回退資訊。|
-|[憑證](ad-fs-tshoot-certs.md)|可能發生的一般憑證問題|
-|[Fiddler](ad-fs-tshoot-fiddler.md)|有關如何安裝和使用 Fiddler|
-|[使用 Fiddler 的 WS-同盟](ad-fs-tshoot-fiddler-ws-fed.md)|詳細的 WS-同盟互動的 Fiddler 追蹤|
-|[宣告規則](ad-fs-tshoot-claims-rules.md)|疑難排解 宣告規則和其語法的詳細資訊|
-|[整合式的 Windows 驗證](ad-fs-tshoot-iwa.md)|有關疑難排解整合式的驗證。|
-|[Azure AD](ad-fs-tshoot-azure.md)|有關疑難排解 AD FS 與 Azure AD 之間的互動。|
-|[AD FS 診斷分析器](ad-fs-diagnostics-analyzer.md)|AD FS 協助診斷分析器，可協助執行基本的 AD FS 檢查使用的診斷的 PowerShell 模組。 
+|[事件記錄和審核](ad-fs-tshoot-logging.md)|使用 Windows 事件記錄檔，透過系統管理員和追蹤記錄來查看高階和低層級的資訊。  它也可以用來查看安全性的審核。|
+|[SQL 連線能力](ad-fs-tshoot-sql.md)|測試 AD FS 伺服器與後端 SQL 資料庫之間連接的資訊|
+|[宣告發行](ad-fs-tshoot-claims-issuance.md)|判斷 AD FS 是否正確發出宣告的資訊。|
+|[迴圈偵測](ad-fs-tshoot-loop.md)|有關判斷和防止使用者在 Idp 和 RP 之間來回回復的資訊。|
+|[憑證](ad-fs-tshoot-certs.md)|Typcial 可能發生的憑證問題|
+|[Fiddler](ad-fs-tshoot-fiddler.md)|有關如何安裝和使用 Fiddler 的資訊|
+|[WS-同盟與 Fiddler](ad-fs-tshoot-fiddler-ws-fed.md)|WS-同盟互動的詳細 Fiddler 追蹤|
+|[宣告規則](ad-fs-tshoot-claims-rules.md)|針對宣告規則和其語法進行疑難排解的相關資訊|
+|[整合式 Windows 驗證](ad-fs-tshoot-iwa.md)|針對整合式驗證進行疑難排解的資訊。|
+|[Azure AD](ad-fs-tshoot-azure.md)|與 Azure AD AD FS 互動疑難排解的資訊。|
+|[AD FS 診斷分析器](ad-fs-diagnostics-analyzer.md)|AD FS Help Diagnostics Analyzer 可協助您使用診斷 PowerShell 模組執行基本的 AD FS 檢查。 

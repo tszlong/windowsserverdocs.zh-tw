@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 247381b35a038627b5d8c91ac4dda0cc4fab6195
-ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
+ms.openlocfilehash: 720c20437f7e6da875b809b2816f0d4df5d210d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143782"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359195"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -185,7 +185,7 @@ AD FS 會建立\-必須儲存在用戶端電腦上的會話型和持續性 cooki
 ## <a name="BKMK_extranet"></a>外部網路需求  
 若要提供 AD FS 服務的外部網路存取，您必須將 Web 應用程式 Proxy 角色服務部署為對 AD FS 服務的安全方式 proxy 驗證要求的外部網站角色。 這會提供 AD FS 服務端點的隔離，以及隔離所有安全性金鑰\(，例如來自網際網路的要求的權杖簽署憑證。\) 此外，諸如「軟外部網路」帳戶鎖定之類的功能都需要使用 Web 應用程式 Proxy。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱[Web 應用程式 proxy](https://technet.microsoft.com/library/dn584107.aspx)。  
   
-如果您想要使用第三\-方 proxy 進行外部網路存取，此\-協力廠商 proxy 必須支援[HTTP\/：\/download.microsoft.com\/下載\/中定義的通訊協定9\/5E\/ 95EF66AF\-90264BB0\-A41DA4F81802D92C%5bMS\-ADFSPIP% 5d..pdf。\/ \- \/ \- ](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf)  
+如果您想要使用第三個 @ no__t-0party proxy 進行外部網路存取，則第三個 @ no__t-1party proxy 必須支援[HTTP： \/\/download.microsoft.com @ no__t-5download @ no__t-69 @ no__t-75 @ no__t-8E @ no__t-995EF66AF @ no__t-109026 @ no__t-114BB0 @ no__t-12A41D @ no__t-13A4F81802D92C @ no__t-14%5bMS\-5ADFSPIP%5d.pdf](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf)中定義的通訊協定。  
   
 ## <a name="BKMK_7"></a>網路需求  
 適當地設定下列網路服務對於在組織中成功部署 AD FS 非常重要：  

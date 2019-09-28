@@ -1,8 +1,8 @@
 ---
 title: bitsadmin rawreturn
-description: 適用於 Windows 命令主題**bitsadmin rawreturn** -適用於剖析會傳回資料。
+description: '**Bitsadmin rawreturn**的 Windows 命令主題-傳回適用于剖析的資料。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e12c8e621021d35ac618b4592515fe38c36be0e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 86d769de460538acda696194348980de5752d6d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434897"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380883"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
-傳回適合用來剖析資料。
+傳回適用于剖析的資料。
 
 ## <a name="syntax"></a>語法
 
@@ -32,13 +32,13 @@ bitsadmin /RawReturn
 
 ## <a name="remarks"></a>備註
 
-帶狀線的新行字元，格式化輸出。
+從輸出中去除分行符號和格式。
 
-一般而言，您使用此命令搭配**建立**並**取得\\** * 參數，以接收使用的值。 您必須指定此參數之前其他參數。
+一般來說，您會將此命令與**Create**和**Get @ no__t-2*** 參數搭配使用，以只接收值。 您必須在其他參數之前指定此參數。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為工作狀態的未經處理資料*myDownloadJob*。
+下列範例會抓取名為*myDownloadJob*之作業狀態的原始資料。
 ```
 C:\>bitsadmin /RawReturn /GetState myDownloadJob
 ```

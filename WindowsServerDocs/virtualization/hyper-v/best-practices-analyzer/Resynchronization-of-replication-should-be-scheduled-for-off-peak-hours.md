@@ -1,7 +1,7 @@
 ---
-title: 離峰時間應該排定的重新同步處理的複寫
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 應該將複寫的重新同步處理排程為離峰時段
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: 093a7bb7-8e0a-486b-b42b-04edd8809710
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2d6c18b7e37c5d17f56f41c7ff03ed8796457de0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 379f8c8cd6744fe5db176efb55a84f231ce45857
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840019"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393505"
 ---
-# <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>離峰時間應該排定的重新同步處理的複寫
+# <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>應該將複寫的重新同步處理排程為離峰時段
 
 >適用於：Windows Server 2016
 
@@ -28,20 +28,20 @@ ms.locfileid: "59840019"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**Severity**|警告|  
-|**分類**|操作|  
+|**分類**|作業|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>問題  
-*重新同步處理的主要虛擬機器的複寫不會排定離峰時間。*  
+*主要虛擬機器的複寫重新同步處理未排定在離峰時間執行。*  
   
 ## <a name="impact"></a>影響  
-*較長的虛擬機器處於需要重新同步處理的狀態、 更長的複寫記錄檔成長並更未複寫的變更發生在主要虛擬機器上。這會影響下列虛擬機器：*  
+@no__t 0The 較長的虛擬機器處於需要重新同步處理的狀態時，複寫記錄檔的成長越長，主要虛擬機器上發生的未複製變更也會越多。這會影響下列虛擬機器： *  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>解析度  
-*您可以使用 HYPER-V 管理員來修改虛擬機器的複寫設定，執行重新同步處理會自動在離峰時間。*  
+*使用 [Hyper-v 管理員] 修改虛擬機器的複寫設定，以在離峰時段自動執行重新同步處理。*  
   
 
 

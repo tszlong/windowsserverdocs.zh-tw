@@ -1,6 +1,6 @@
 ---
 title: 儲存體複本的常見問題集
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 89676ba821b99d44865bc6f45c34c05edb771d9d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d369e7f2d3d725fe8b3871fea199da1cac044456
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865262"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393798"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
@@ -183,7 +183,7 @@ Update-SmbMultichannelConnection
 
  445（SMB 複寫傳輸通訊協定，叢集 RPC 管理通訊協定）5445（iWARP SMB-只有在使用 iWARP RDMA 網路時才需要）5985（WMI/CIM/PowerShell 的 WSManHTTP 管理通訊協定）
 
-注意:Test-srtopology Cmdlet 需要 ICMPv4/ICMPv6，但無法進行複寫或管理。
+注意：Test-srtopology Cmdlet 需要 ICMPv4/ICMPv6，但無法進行複寫或管理。
 
 ## <a name="FAQ15.5"></a>記錄檔磁片區的最佳作法為何？
 記錄檔的最佳大小在每個環境和工作負載上都有很大的差異，並取決於您的工作負載執行多少寫入 IO。 

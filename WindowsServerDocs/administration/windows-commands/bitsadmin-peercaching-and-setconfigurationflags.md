@@ -1,8 +1,8 @@
 ---
-title: bitsadmin 對等快取和 setconfigurationflags
-description: 適用於 Windows 命令主題**bitsadmin 對等快取和 setconfigurationflags** -設定判斷電腦是否可以提供內容給對等，以及可從對等下載內容的組態旗標。
+title: bitsadmin 對等和 setconfigurationflags
+description: Bitsadmin 對等互連**和 setconfigurationflags**的 Windows 命令主題-設定判斷電腦是否可以將內容提供給對等，並且可以從對等下載內容的設定旗標。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22408d4aab7f5ea374511bc16751d911a84644f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a65d54bcaa2bce26eb2b7c98250837ab09c7a423
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813329"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381110"
 ---
-# <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin 對等快取和 setconfigurationflags
+# <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin 對等和 setconfigurationflags
 
 
 
-設定判斷電腦是否可以提供內容給對等，以及可從對等下載內容的組態旗標。
+設定判斷電腦是否可以將內容提供給對等，並且可以從對等下載內容的設定旗標。
 
 ## <a name="syntax"></a>語法
 
@@ -37,11 +37,11 @@ bitsadmin /PeerCaching /SetConfigurationFlags <Job> <Value>
 |參數|描述|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
-|值|其值為不帶正負號的整數，下列中的二進位表示法的位元的解譯：</br>-允許從對等電腦下載作業的資料：設定最小顯著性的位元</br>-允許作業的資料提供給對等：設定從右邊的第 2 位元。|
+|值|值為不帶正負號的整數，其在二進位標記法中具有下列對位的解讀：</br>-允許從對等下載作業的資料：設定最不重要的位</br>-允許將作業的資料提供給對等：從右邊設定第二個位。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會指定作業的資料，從名為作業的對等下載*myJob*。
+下列範例會針對名為*myJob*的作業，指定要從對等下載的作業資料。
 ```
 C:\> Bitsadmin /PeerCaching /SetConfigurationFlags myJob 1
 ```

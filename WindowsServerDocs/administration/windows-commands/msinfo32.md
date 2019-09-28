@@ -1,8 +1,8 @@
 ---
 title: msinfo32
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ad4cf5480492042cdd1e372abae652aff71b90
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9ec08171816476cf04bbfb70637ff8253192e21b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437197"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373376"
 ---
 # <a name="msinfo32"></a>msinfo32
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-開啟 系統資訊工具，以顯示本機電腦上的硬體、 系統元件和軟體環境的全方位檢視。 
+開啟 [系統資訊] 工具，以顯示本機電腦上硬體、系統元件和軟體環境的完整觀點。 
 ## <a name="syntax"></a>語法
 ```
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
@@ -33,37 +33,37 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 
 |    參數    |                                                                                                                                 描述                                                                                                                                  |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <path>      | 指定要被開啟格式檔案*C:\Folder1\File1.XXX*，其中*C*是磁碟機代號*Folder1*是資料夾， *File1*是檔案名稱，並*XXX*是檔案名稱副檔名。<br /><br />這個檔案可以是 **.nfo**， **.xml**， **.txt**，或 **.cab**檔案。 |
-| <computerName>  |                                                                             指定目標或本機電腦的名稱。 這可以是 UNC 名稱、 IP 位址或完整電腦名稱。                                                                              |
-|  <CategoryID>   |                                                                                     指定類別目錄項目的識別碼。 您可以使用，以取得類別目錄識別碼 **/showcategories**。                                                                                      |
-|      /pch       |                                                                                                       在 系統資訊工具，會顯示系統歷程記錄檢視。                                                                                                       |
-|      /nfo       |                                     儲存匯出的檔案 **.nfo**檔案。 中指定的檔名，如果*路徑*結尾不是 **.nfo**延伸模組 **.nfo**延伸模組會自動附加至檔案名稱。                                      |
-|     /report     |                                               將檔案中的儲存*路徑*為文字檔案。 檔案名稱會儲存在出現的相同*路徑*。 .Txt 副檔名不會附加至檔案，除非它在路徑中指定。                                                |
-|    /computer    |                                                                啟動指定的遠端電腦的系統資訊工具。 您必須具有適當的權限以存取遠端電腦。                                                                |
-| /showcategories |                         使用所有可用的類別識別碼顯示，啟動 系統資訊工具，而不是顯示的易記或當地語系化的名稱。 比方說，軟體環境 類別目錄會顯示為**SWEnv**類別目錄。                         |
-|    /category    |                                                                     開始所選取的指定類別中的系統資訊。 使用 **/showcategories**以顯示可用的類別識別碼的清單。                                                                     |
-|   /categories   |                          開始只指定的類別或顯示的類別目錄的系統資訊。 它也會限制對選取的類別或類別的輸出。 使用 **/showcategories**以顯示可用的類別識別碼的清單。                          |
+|     <path>      | 指定要以*C:\Folder1\File1.XXX*格式開啟的檔案，其中*C*是磁碟機號， *Folder1*是資料夾， *File1*是檔案名， *XXX*則是副檔名。<br /><br />這個檔案可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**檔案。 |
+| <computerName>  |                                                                             指定目標或本機電腦的名稱。 這可以是 UNC 名稱、IP 位址或完整的電腦名稱稱。                                                                              |
+|  <CategoryID>   |                                                                                     指定類別目錄專案的識別碼。 您可以使用 **/showcategories**來取得類別目錄識別碼。                                                                                      |
+|      /pch       |                                                                                                       顯示 [系統資訊] 工具中的 [系統歷程記錄]。                                                                                                       |
+|      /nfo       |                                     將匯出的檔案儲存為 **.nfo**檔案。 如果*path*中指定的檔案名結尾不是 **.nfo**副檔名，則 **.nfo**副檔名會自動附加至檔案名。                                      |
+|     /report     |                                               將檔案以文字檔的形式儲存在*路徑*中。 檔案名的儲存方式會與*path*中的名稱完全相同。 .Txt 副檔名不會附加至檔案，除非在 path 中指定。                                                |
+|    /computer    |                                                                啟動指定遠端電腦的系統資訊工具。 您必須具有適當的許可權，才能存取遠端電腦。                                                                |
+| /showcategories |                         啟動系統資訊工具，並顯示所有可用的類別 Id，而不是顯示易記或當地語系化的名稱。 例如，[軟體環境] 分類會顯示為 [ **SWEnv** ] 類別。                         |
+|    /category    |                                                                     啟動已選取指定分類的系統資訊。 使用 **/showcategories**顯示可用類別目錄識別碼的清單。                                                                     |
+|   /categories   |                          僅顯示指定的分類或分類的系統資訊。 它也會將輸出限制為選取的類別目錄或類別目錄。 使用 **/showcategories**顯示可用類別目錄識別碼的清單。                          |
 |       /?        |                                                                                                                     在命令提示字元顯示說明。                                                                                                                     |
 
 ## <a name="remarks"></a>備註
-某些系統資訊類別目錄包含大量的資料。 您可以使用**start /wait**命令，以將這些類別報告的效能最佳化。 如需詳細資訊，請參閱 <<c0> [ 系統資訊](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)。
-## <a name="BKMK_Examples"></a>範例
-若要列出可用的類別識別碼，請輸入：
+某些系統資訊分類包含大量資料。 您可以使用 [**開始/wait** ] 命令，將這些類別的報告效能優化。 如需詳細資訊，請參閱[系統資訊](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)。
+## <a name="BKMK_Examples"></a>典型
+若要列出可用的分類識別碼，請輸入：
 ```
 msinfo32 /showcategories
 ```
-若要啟動的所有可用資訊的系統資訊工具顯示，除了載入的模組，型別：
+若要啟動 [系統資訊] 工具，並顯示所有可用的資訊（載入的模組除外），請輸入：
 ```
 msinfo32 /categories +all -loadedmodules
 ```
-若要只顯示系統摘要資訊，並建立.nfo 檔案稱為 syssum.nfo，其中包含在 [系統摘要] 類別中的資訊，請輸入：
+若只要顯示系統摘要資訊，並建立名為 syssum 的 .nfo 檔案，其中包含 [系統摘要] 分類中的資訊，請輸入：
 ```
 msinfo32 /nfo syssum.nfo /categories +systemsummary
 ```
-若要顯示資源的衝突資訊，並建立稱為，其中包含資源的衝突資訊 conflicts.nfo.nfo 檔案，請輸入：
+若要顯示資源衝突資訊，並建立稱為衝突的 .nfo 檔案，其中包含資源衝突的相關資訊，請輸入：
 ```
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   [命令列語法關鍵](command-line-syntax-key.md)
 

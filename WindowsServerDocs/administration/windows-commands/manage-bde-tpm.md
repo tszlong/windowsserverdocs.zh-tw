@@ -1,8 +1,8 @@
 ---
-title: 管理 bde tpm
-description: '適用於 Windows 命令主題 * * *- '
+title: manage-bde tpm
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc3cfa583866335d214282be08366854dec77d0f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 577f5f2ecb85ac8c0c28fef2ca343635796454d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280002"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373835"
 ---
-# <a name="manage-bde-tpm"></a>管理 bde: tpm
+# <a name="manage-bde-tpm"></a>manage-bde： tpm
 
-> 適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 > 
 > [!IMPORTANT]
-> 此命令不支援在執行 Windows 8、 Windows Server 2012 或更新版本的作業系統的電腦上使用。 針對這些電腦，您可以使用[TPM 管理適用於 Windows PowerShell 的 cmdlet](https://docs.microsoft.com/powershell/module/trustedplatformmodule/)。
-> 如果您使用此命令在執行 Windows 7 或 Windows Server 2008 的電腦上，您仍然可以設定電腦的受信任的平台模組 (TPM) 使用此命令。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+> 在執行 Windows 8、Windows Server 2012 或更新版本作業系統的電腦上，不支援使用此命令。 針對這些電腦，您可以使用[適用于 Windows PowerShell 的 TPM 管理 Cmdlet](https://docs.microsoft.com/powershell/module/trustedplatformmodule/)。
+> 如果您在執行 Windows 7 或 Windows Server 2008 的電腦上使用此命令，您仍然可以使用此命令來設定電腦的信賴平臺模組（TPM）。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 > ## <a name="syntax"></a>語法
 > ```
 > manage-bde -tpm [-turnon] [-takeownership <OwnerPassword>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
@@ -35,23 +35,23 @@ ms.locfileid: "67280002"
 > 
 > |    參數    |                                                                              描述                                                                               |
 > |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> |     -開啟     |              啟用和啟動 TPM，允許設定 TPM 擁有者密碼。 您也可以使用 **-t**為此命令縮寫版。              |
-> | -takeownership  |                      需要 TPM 的擁有權，藉由設定擁有者密碼。 您也可以使用 **-o**為此命令縮寫版。                       |
-> | <OwnerPassword> |                                                      表示您指定 tpm 的擁有者密碼。                                                       |
-> |  -computername  | 指定該管理 bde.exe 會用來修改不同的電腦上的 BitLocker 保護。 您也可以使用 **-cn**為此命令縮寫版。 |
-> |     <Name>      |    表示要修改 BitLocker 保護之電腦的名稱。 可接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。     |
-> |    -? 或 /？     |                                                               顯示簡短說明，在命令提示字元。                                                               |
-> |   -help 或-h   |                                                             顯示完成的命令提示字元說明。                                                              |
+> |     -homeautomation.turnon     |              啟用並啟動 TPM，以允許設定 TPM 擁有者密碼。 您也可以使用 **-t**做為此命令的縮寫版本。              |
+> | -takeownership  |                      藉由設定擁有者密碼來取得 TPM 的擁有權。 您也可以使用 **-o**做為此命令的縮寫版本。                       |
+> | <OwnerPassword> |                                                      代表您為 TPM 指定的擁有者密碼。                                                       |
+> |  -computername  | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+> |     <Name>      |    代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。     |
+> |    -? 或/？     |                                                               在命令提示字元中顯示簡短說明。                                                               |
+> |   -help 或-h   |                                                             在命令提示字元中顯示完整的說明。                                                              |
 > 
-> ## <a name="BKMK_Examples"></a>範例
-> 下列範例說明如何利用**tpm**命令來開啟 TPM。
+> ## <a name="BKMK_Examples"></a>典型
+> 下列範例說明如何使用 **-tpm**命令來開啟 tpm。
 > ```
 > manage-bde  tpm -turnon
 > ```
-> 下列範例說明如何利用**tpm**命令來取得 TPM 的擁有權，並設定為擁有者密碼0wnerP@ss。
+> 下列範例說明如何使用**tpm**命令來取得 tpm 的擁有權，並將擁有者密碼設定為 0wnerP@ss。
 > ```
 > manage-bde  tpm  takeownership 0wnerP@ss
 > ```
-> ## <a name="additional-references"></a>其他參考資料
+> ## <a name="additional-references"></a>其他參考
 > -   [命令列語法關鍵](command-line-syntax-key.md)
 > -   [manage-bde](manage-bde.md)

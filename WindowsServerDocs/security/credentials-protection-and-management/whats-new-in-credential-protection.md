@@ -1,8 +1,8 @@
 ---
-title: 認證保護中最新消息
+title: 認證保護的新功能
 description: Windows Server 安全性
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-credential-protection
@@ -13,77 +13,77 @@ author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 475b6a0b24b811008ee213c1604d98d9aa9eb092
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2351be82ad1d8b9af17715ce363836f57c71ea66
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447031"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386918"
 ---
-# <a name="whats-new-in-credential-protection"></a>認證保護中最新消息
+# <a name="whats-new-in-credential-protection"></a>認證保護的新功能
 
-## <a name="credential-guard-for-signed-in-user"></a>Credential Guard，登入的使用者
+## <a name="credential-guard-for-signed-in-user"></a>已登入使用者的 Credential Guard
 
-從 Windows 10 版本 1507、 Kerberos 和 NTLM 使用虛擬化型安全性來保護 Kerberos 與 NTLM 登入的使用者登入工作階段的機密資訊。 
+從 Windows 10 版本1507、Kerberos 和 NTLM 開始，會使用虛擬化安全性來保護已登入之使用者登錄會話的 Kerberos & NTLM 密碼。 
 
-從 Windows 10 版本 1511，認證管理員可以使用虛擬化型安全性來保護網域認證類型的已儲存的認證。 登入的認證和已儲存的網域認證將不會傳遞至使用遠端桌面的遠端主機。 不與 UEFI 鎖定，您可以啟用 Credential Guard。
+從 Windows 10 版本1511開始，認證管理員會使用虛擬化安全性來保護網域認證類型的已儲存認證。 登入認證和已儲存的網域認證將不會使用遠端桌面傳遞至遠端主機。 您可以在沒有 UEFI 鎖定的情況下啟用 Credential Guard。
 
-從 Windows 10 版本 1607 版，請隔離使用者模式是隨附於 HYPER-V 讓它不再分開安裝 Credential Guard 部署。
+從 Windows 10 版本1607開始，獨立的使用者模式會包含在 Hyper-v 中，因此不會再針對 Credential Guard 部署另行安裝。
 
-[深入了解 Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)。
+[深入瞭解 Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)。
 
 
-## <a name="remote-credential-guard-for-signed-in-user"></a>遠端登入使用者的 Credential Guard
+## <a name="remote-credential-guard-for-signed-in-user"></a>已登入使用者的遠端認證防護
 
-使用遠端桌面來保護用戶端裝置上的 Kerberos 和 NTLM 密碼時，開頭為 Windows 10 1607年版中，遠端 Credential Guard 保護登入的使用者認證。 評估網路資源，以使用者身分遠端主機的驗證要求會要求用戶端裝置使用祕密。
+從 Windows 10 版本1607開始，遠端認證防護會在用戶端裝置上保護 Kerberos 和 NTLM 密碼，以在使用遠端桌面時保護已登入的使用者認證。 若要讓遠端主機以使用者的身分評估網路資源，驗證要求需要用戶端裝置才能使用密碼。
 
-使用遠端桌面時，開頭為 Windows 10 版本 1703年遠端 Credential Guard 保護提供的使用者認證。
+從 Windows 10 版本1703開始，遠端認證防護會在使用遠端桌面時，保護提供的使用者認證。
 
-[深入了解遠端 credential guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)。
+[深入瞭解遠端認證防護](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)。
 
 ## <a name="domain-protections"></a>網域保護
 
 網域保護需要 Active Directory 網域。
 
-### <a name="domain-joined-device-support-for-authentication-using-public-key"></a>使用公開金鑰進行驗證的已加入網域的裝置支援
+### <a name="domain-joined-device-support-for-authentication-using-public-key"></a>已加入網域的裝置支援使用公開金鑰進行驗證
 
-從 Windows 10 1507年版與 Windows Server 2016 中，如果已加入網域的裝置可註冊其繫結的公開金鑰與 Windows Server 2016 網域控制站 (DC)，然後裝置可以向使用 Kerberos PKINIT 的公用金鑰Windows Server 2016 DC 驗證。
+從 Windows 10 版本1507和 Windows Server 2016 開始，如果已加入網域的裝置能夠向 Windows Server 2016 網域控制站（DC）註冊其系結公開金鑰，則裝置可以使用 Kerberos PKINIT 以公開金鑰進行驗證Windows Server 2016 DC 的驗證。
 
-從 Windows Server 2016 開始，Kdc 會支援使用 Kerberos 信任驗證。  
+從 Windows Server 2016 開始，Kdc 支援使用 Kerberos 金鑰信任進行驗證。  
 
-[深入了解公用金鑰的支援，針對已加入網域的裝置和 Kerberos 信任](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
+[深入瞭解 & Kerberos 金鑰信任的已加入網域裝置的公開金鑰支援](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
 
-### <a name="pkinit-freshness-extension-support"></a>PKINIT 有效期限延伸模組支援
+### <a name="pkinit-freshness-extension-support"></a>PKINIT Freshness extension 支援
 
-從 Windows 10，1507年版和 Windows Server 2016 開始，Kerberos 用戶端會嘗試 PKInit 有效期限延伸模組的公用金鑰型登入。 
+從 Windows 10 版本1507和 Windows Server 2016 開始，Kerberos 用戶端會針對公開金鑰型的登入嘗試 PKInit 有效期限延伸模組。 
 
-從 Windows Server 2016 開始，Kdc 可以支援 PKInit 有效期限延伸模組。  根據預設，Kdc 將不會提供 PKInit 有效期限延伸模組。 
+從 Windows Server 2016 開始，Kdc 可以支援 PKInit freshness extension。  根據預設，Kdc 不會提供 PKInit freshness extension。 
 
-[深入了解 PKINIT 有效期限延伸模組支援](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
+[深入瞭解 PKINIT 時效性 extension 支援](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
 
-### <a name="rolling-public-key-only-users-ntlm-secrets"></a>輪流公用金鑰唯一使用者的 NTLM 密碼
+### <a name="rolling-public-key-only-users-ntlm-secrets"></a>僅滾動公開金鑰使用者的 NTLM 秘密
 
-從 Windows Server 2016 網域功能等級 (DFL)，網域控制站可以支援輪流公用金鑰唯一使用者的 NTLM 祕密。 這項功能是在較低的 DFLs 中找不到。
+從 Windows Server 2016 網域功能等級（DFL）開始，Dc 可以支援僅限公開金鑰的使用者 NTLM 秘密。 這項功能在較低的 DFLs 中 unavailble。
 
 > [!WARNING] 
-> 將網域控制站加入網域，以循環 DC 已更新至少 2016 年 11 月 8 日服務執行之前啟用的 NTLM 祕密的 DC 的損毀的風險。 
+> 將網域控制站新增到已啟用輪替 NTLM 秘密的網域中，在 DC 更新至少為2016年11月8日之前，服務會執行 DC 損毀的風險。 
 
-設定：對於新的網域，預設會啟用這項功能。 對於現有的網域，它必須在 Active Directory Administrative center 中將其設定： 
+設定：針對新的網域，此功能預設為啟用。 針對現有的網域，必須在 Active Directory 管理中心設定： 
 
-1. 從 Active Directory 管理中心，以滑鼠右鍵按一下左窗格上的網域，然後選取**屬性**。
+1. 從 Active Directory 的管理中心，以滑鼠右鍵按一下左窗格中的網域，然後選取 [**屬性**]。
 
     ![網域屬性](../media/Credentials-Protection-And-Management/domain-properties.png)
 
-2. 選取 **啟用輪流即將過期的 NTLM 祕密在註冊時，才能使用 Microsoft Passport 或智慧卡進行互動式登入的使用者**。
+2. 選取 [在**登入期間，針對需要使用 Microsoft Passport 或智慧卡進行互動式登入的使用者，啟用正在進行過期 NTLM 秘密的回復**]。
 
-    ![Autoroll 過期 NTLM 祕密](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)
+    ![Autoroll 過期的 NTLM 秘密](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)
 
-3. 按一下 [確定]  。 
+3. 按一下 [確定]。 
 
-### <a name="allowing-network-ntlm-when-user-is-restricted-to-specific-domain-joined-devices"></a>當使用者限制為特定的已加入網域的裝置時，允許網路 NTLM
+### <a name="allowing-network-ntlm-when-user-is-restricted-to-specific-domain-joined-devices"></a>當使用者限制為已加入網域的特定裝置時，允許網路 NTLM
 
-從 Windows Server 2016 網域功能等級 (DFL)，網域控制站可支援允許網路 NTLM，當使用者以限制為特定網域的裝置。 這項功能是在較低的 DFLs 中無法使用。
+從 Windows Server 2016 網域功能等級（DFL）開始，當使用者限制為已加入網域的特定裝置時，Dc 可支援允許網路 NTLM。 這項功能無法在較低的 DFLs 中使用。
 
-設定：在 驗證原則中，按一下 **選取的裝置，允許 NTLM 網路驗證時使用者僅限於**。 
+設定：在 [驗證原則] 上，按一下 **[當使用者受限於選取的裝置時，允許 NTLM 網路驗證**]。 
 
-[深入了解驗證原則](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos)。
+[深入瞭解驗證原則](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos)。

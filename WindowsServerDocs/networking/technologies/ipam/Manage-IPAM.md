@@ -1,9 +1,9 @@
 ---
 title: 管理 IPAM
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 本主題是 Windows Server 2016 中 IP 位址管理（IPAM）管理指南的一部分。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,20 +12,20 @@ ms.topic: article
 ms.assetid: c68905ef-d54f-4fc8-80ac-1006125db64f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 12d86504df02e7a94709feb9319659ec662d71f5
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 165ffe41fd79fc9f71f96ef65317375e4120cc5c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283921"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405618"
 ---
 # <a name="manage-ipam"></a>管理 IPAM
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本指南提供管理 Windows Server 2016 中的 IP 位址管理 (IPAM) 功能的疑難排解資訊。  
+本指南提供 Windows Server 2016 中 IP 位址管理（IPAM）功能的管理和疑難排解資訊。  
   
-在 Windows Server 2016 中，IPAM 會為這兩個已加入網域的 Active Directory 整合和支援檔案的 DNS 伺服器支援 DNS 資源記錄、 條件式轉寄站和 DNS 區域管理。 此外，IPAM 在舊版的技術支援角色型存取控制，而且所有功能。  
+在 Windows Server 2016 中，IPAM 針對加入網域的 Active Directory 整合式和以檔案為基礎的 DNS 伺服器，支援 DNS 資源記錄、條件式轉寄站和 DNS 區域管理。 此外，IPAM 支援以角色為基礎的存取控制和舊版技術的所有功能。  
   
 此指南包含下列各節：  
   
@@ -33,11 +33,11 @@ ms.locfileid: "67283921"
   
 -   [DNS 區域管理](../../technologies/ipam/DNS-Zone-Management.md)  
   
--   [在多個 Active Directory 樹系中管理資源](../../technologies/ipam/Manage-Resources-in-Multiple-Active-Directory-Forests.md)  
+-   [管理多個 Active Directory 樹系中的資源](../../technologies/ipam/Manage-Resources-in-Multiple-Active-Directory-Forests.md)  
   
--  [清除使用資料](../../technologies/ipam/Purge-Utilization-Data.md)  
+-  [清除使用量資料](../../technologies/ipam/Purge-Utilization-Data.md)  
   
--   [角色型存取控制](../../technologies/ipam/Role-based-Access-Control.md)  
+-   [以角色為基礎的存取控制](../../technologies/ipam/Role-based-Access-Control.md)  
   
 ## <a name="see-also"></a>另請參閱  
 [IP 位址管理&#40;IPAM&#41;](IP-Address-Management--IPAM-.md)  

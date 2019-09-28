@@ -1,8 +1,8 @@
 ---
 title: bitsadmin replaceremoteprefix
-description: 適用於 Windows 命令主題**bitsadmin replaceremoteprefix** -其遠端的 URL 開頭為作業中所有的檔案*OldPrefix*變更為使用*NewPrefix*。
+description: 適用于**bitsadmin replaceremoteprefix**的 Windows 命令主題-遠端 URL 開頭為*OldPrefix*的作業中的所有檔案都會變更為使用*NewPrefix*。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25c0f997ea0b9f97051baa291bdf87c84b6b1cbb
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: ee896a337b571487797967d3ce0bf1f1b17e7507
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811295"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380805"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
-中的所有檔案作業的遠端 URL 開頭*OldPrefix*變更為使用*NewPrefix*。
+作業中其遠端 URL 開頭為*OldPrefix*的所有檔案都會變更為使用*NewPrefix*。
 
 ## <a name="syntax"></a>語法
 
@@ -40,7 +40,7 @@ bitsadmin /ReplaceRemotePrefix <Job> <OldPrefix> <NewPrefix
 
 ## <a name="examples"></a>範例
 
-下列範例會變更名為作業中的所有檔案*myDownloadJob*其遠端的 URL 開頭 *http://stageserver* 來 *http://prodserver* 。
+下列範例會變更名為*myDownloadJob*之作業中的所有檔案，其遠端 URL 的開頭為 *http://stageserver* 到 *http://prodserver* 。
 
 ```
 C:\>bitsadmin /ReplaceRemotePrefix myDownloadJob http://stageserver http://prodserver

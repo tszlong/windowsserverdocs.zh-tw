@@ -7,19 +7,19 @@ ms.author: billmath
 manager: femila
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fe5c138466ea288b5dfb8c7c284603150ab9d874
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b22c969e0113081e1ca8a662ae81a2ee24829835
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190035"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358300"
 ---
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>變更 AD FS 登入頁面上的公司標誌
 
 #### <a name="change-company-logo"></a>變更公司標誌  
-若要變更登會顯示公司標誌\-在頁面上，使用下列 PowerShell Windows PowerShell cmdlet 和語法。  
+若要變更 [正負號 @ no__t-0in] 頁面上顯示的公司標誌，請使用下列 PowerShell Windows PowerShell Cmdlet 和語法。  
 
 ![變更標誌](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   
@@ -31,7 +31,7 @@ ms.locfileid: "66190035"
 
   
 > [!NOTE]  
-> `TargetName` 是必要參數。 名為會隨著 AD FS 釋出的預設佈景主題*預設*。  
+> `TargetName` 是必要參數。 以 AD FS 發行的預設主題名稱為*default*。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

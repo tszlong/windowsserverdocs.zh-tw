@@ -1,8 +1,8 @@
 ---
 title: pnpunattend
-description: 了解如何稽核的裝置驅動程式的電腦上，以及執行無訊息的驅動程式安裝。
+description: 瞭解如何在電腦上審核設備磁碟機，以及如何執行無提示驅動程式安裝。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 53b72459d497ac5d079336c2a00ba65634b2e3a6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 77a6ab1ea45322e3c53e8b095c412cf8838be60d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436331"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372266"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
-稽核時，裝置驅動程式的電腦和執行自動安裝的驅動程式安裝，或搜尋驅動程式而不需要安裝並，選擇性地將結果回報給命令列。 若要指定特定硬體裝置的特定驅動程式的安裝中使用此命令。 請參閱＜備註＞。
+會針對設備磁碟機審核電腦，並執行自動驅動程式安裝，或在不安裝和的情況下搜尋驅動程式，並選擇性地將結果報告到命令列。 使用此命令來指定特定硬體裝置的特定驅動程式安裝。 請參閱＜備註＞。
 
 ## <a name="syntax"></a>語法
 
@@ -34,25 +34,25 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 |參數|描述|
 |---------|-----------|
-|auditSystem|指定線上驅動程式安裝。</br>必要，除非**pnpunattend**與執行 **/help**或 **/？** 參數。|
-|/s|選擇性。 指定要搜尋而不需要安裝的驅動程式。|
-|/L|選擇性。 指定要在命令提示字元中顯示此命令的記錄資訊。|
-|/?|選擇性。 此命令在命令提示字元中顯示說明。|
+|auditSystem|指定線上驅動程式安裝。</br>必要項，但使用 **/help**或 **/？** 來執行**pnpunattend**時除外 參數.|
+|/s|選擇性。 指定不安裝就搜尋驅動程式。|
+|/L|選擇性。 指定在命令提示字元中顯示此命令的記錄資訊。|
+|/?|選擇性。 在命令提示字元中顯示此命令的說明。|
 
 ## <a name="remarks"></a>備註
 
-需要初步的準備。 之前使用此命令時，您必須完成下列工作：
+需要初步準備。 使用此命令之前，您必須完成下列工作：
 
-1. 建立您想要安裝的驅動程式的目錄。 例如，建立的資料夾**C:\Drivers\Video**視訊卡驅動程式。
-2. 下載並解壓縮您的裝置驅動程式套件。 將包含您的作業系統版本的 INF 檔案的子資料夾和任何子資料夾的內容複製到您所建立的視訊資料夾中。 例如，視訊驅動程式將檔案複製到 C:\Drivers\Video。
-3. 例如，在步驟 1.建立的資料夾中加入系統環境路徑變數**C:\Drivers\Video**。
-4. 建立下列登錄機碼，然後針對**DriverPaths**設定在建立時，金鑰**數值資料**來**1**。
-5. 針對 Windows® 7 瀏覽登錄路徑：**HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion\\** ，然後再建立索引鍵：**UnattendSettings\PnPUnattend\DriverPaths\\**
-6. Windows vista 中，瀏覽至以下登錄路徑：**HK_LM\Software\Microsoft\Windows NT\CurrentVersion\\** ，然後再建立索引鍵 = **\UnattendSettings\PnPUnattend\DriverPaths**。
+1. 為您要安裝的驅動程式建立目錄。 例如，在**C:\Drivers\Video**上建立用於視訊卡驅動程式的資料夾。
+2. 下載並解壓縮您裝置的驅動程式套件。 將包含您作業系統版本之 INF 檔案的子資料夾內容，以及您所建立之 [video] 資料夾的任何子資料夾複製到其中。 例如，將影片驅動程式檔案複製到 C:\Drivers\Video。
+3. 將系統內容路徑變數新增至您在步驟1中建立的資料夾。例如， **C:\Drivers\Video**。
+4. 建立下列登錄機碼，然後針對您建立的**DriverPaths**金鑰，將**值資料**設定為**1**。
+5. 若為 Windows®7，請流覽登錄路徑：**HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**，然後建立金鑰：**UnattendSettings\PnPUnattend\DriverPaths @ no__t-1**
+6. 針對 Windows Vista，流覽至登錄路徑：**HK_LM\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**，然後建立 keys = **\UnattendSettings\PnPUnattend\DriverPaths**。
 
 ## <a name="examples"></a>範例
 
-下列範例命令示範如何使用**PNPUnattend.exe**稽核可用的驅動程式更新的電腦，並接著報表 命令提示字元所發現的錯誤。
+下列範例命令顯示如何使用**PNPUnattend**來審查電腦是否有可能的驅動程式更新，然後將結果報告到命令提示字元。
 
 ```
 pnpunattend auditsystem /s /l 

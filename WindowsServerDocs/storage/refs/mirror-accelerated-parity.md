@@ -1,6 +1,6 @@
 ---
 title: 鏡像加速的同位
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: gawatu
 ms.manager: masriniv
 ms.technology: storage-file-systems
@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ec1f04b20b0b743085bacd95ad95a52c15207f40
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0325a37e38845ea9482a6ed260e2bb3b493cc79a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871996"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394004"
 ---
 # <a name="mirror-accelerated-parity"></a>鏡像加速的同位
 
@@ -114,7 +114,7 @@ ReFS 在鏡像到達指定的容量閾值時開始循環資料。
 -   降低此值可讓 ReFS 主動移出資料並改善擷取連入 IO。 這適用於大量擷取的工作負載，例如封存儲存空間。 不過，降低值可能會降低一般用途工作負載的效能。 非必要的將資料循環出鏡像層會降低效能。 
 
 ReFS 引進了可微調參數來調整這個閾值，可使用登錄機碼來設定此參數。 必須在**儲存空間直接存取部署的每個節點**上設定此登錄機碼，並需要重新開機，讓變更生效。 
--   **擊鍵**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
+-   **索引鍵：** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
 -   **ValueName （DWORD）：** DataDestageSsdFillRatioThreshold
 -   **ValueType**百分比
 

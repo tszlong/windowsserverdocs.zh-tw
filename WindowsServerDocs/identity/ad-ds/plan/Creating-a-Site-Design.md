@@ -7,47 +7,47 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f6d896213708f8c3ec5de44a1f85fb4ebd86b8c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5b017582dad68938377fde4055d9a37b0c0af29b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819069"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402732"
 ---
 # <a name="creating-a-site-design"></a>建立站台設計
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立站台設計包含決定哪些位置將變成站台，建立站台物件、 建立子網路的物件，以及子網路關聯至站台。  
+建立網站設計牽涉到決定哪些位置會變成網站、建立網站物件、建立子網物件，以及將子網與網站產生關聯。  
   
-## <a name="deciding-which-locations-will-become-sites"></a>決定哪些位置將變成站台
+## <a name="deciding-which-locations-will-become-sites"></a>決定哪些位置會變成網站
 
-決定哪些位置建立站台的如下所示：  
+決定要建立網站的位置，如下所示：  
   
-- 建立您打算將網域控制站的所有位置而言的站台。 請參閱 「 設置網域控制站 」 (DSSTOPO_4.doc) 工作表來識別包含網域控制站的位置中所記載的資訊。  
-- 建立包含執行應用程式需要建立站台伺服器的那些位置的站台。 某些應用程式，例如分散式檔案系統命名空間 (DFSN)，以找出最接近的伺服器到用戶端使用站台物件。  
+- 針對您打算放置網域控制站的所有位置建立網站。 請參閱「網域控制站位置」（DSSTOPO_4）工作表中記載的資訊，以識別包含網域控制站的位置。  
+- 建立包含執行需要建立網站之應用程式的伺服器之位置的網站。 某些應用程式（例如分散式檔案系統命名空間（DFSN））會使用網站物件，找出最接近用戶端的伺服器。  
 
    > [!NOTE]  
-   > 如果您的組織有多個網路具有快速、 可靠的連線非常接近，您可以將這些網路的子網路的所有併入單一 Active Directory 站台。 比方說，如果反覆存取傳回網路中不同的兩部伺服器之間的延遲的子網路是 10 毫秒或更少，您可以在相同的 Active Directory 站台包含這兩個子網路。 如果兩個位置之間的網路延遲大於 10 毫秒，則您不應包含子網路的單一 Active Directory 站台中。 即使延遲為 10 毫秒或更少，您可以選擇要部署不同的站台，如果您想要分割的 Active Directory 為基礎的應用程式的站台之間的流量。  
+   > 如果您的組織有多個網路以快速、可靠的連線進行近近的連線，您可以在單一 Active Directory 網站中包含這些網路的所有子網。 例如，如果在不同子網中的兩部伺服器之間來回傳回的網路延遲為10毫秒或更少，您可以將這兩個子網包含在相同的 Active Directory 網站中。 如果兩個位置之間的網路延遲大於10毫秒，則不應在單一 Active Directory 網站中包含子網。 即使延遲時間小於或等於10毫秒，如果您想要將 Active Directory 應用程式的網站之間的流量分割，則可以選擇部署個別的網站。  
 
-- 如果網站不需要的位置，新增站台位置具有的最大的廣域網路 (wan) 速度和可用的頻寬位置的子網路。  
+- 如果某個位置不需要網站，請將位置的子網新增至位置具有最大廣域網路（WAN）速度和可用頻寬的網站。  
   
-會變成站台的網路位址和子網路遮罩，每個位置內的文件位置。 為協助您記錄網站的工作表，請參閱[工作輔助工具的 Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558)，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，，然後開啟 「 建立關聯的子網路站台 」 (DSSTOPO_6.doc)。  
+將成為網站的檔位置，以及每個位置中的網路位址和子網路遮罩。 如需協助您記錄網站的工作表，請參閱[Windows Server 2003 部署套件的工作輔助](https://go.microsoft.com/fwlink/?LinkID=102558)工具、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，以及開啟「將子網與網站建立關聯」（DSSTOPO_6）。  
   
-## <a name="creating-a-site-object-design"></a>建立站台物件設計
+## <a name="creating-a-site-object-design"></a>建立網站物件設計
 
-您已決定建立站台每個位置，計劃建立 Active Directory 網域服務 (AD DS) 中的站台物件。 將變成 「 建立關聯的子網路與網站 」 工作表中的站台的文件位置。  
+針對您已決定建立網站的每個位置，規劃在 Active Directory Domain Services （AD DS）中建立網站物件。 將在「將子網與網站建立關聯」工作表中成為網站的檔位置。  
   
-如需如何建立站台物件的詳細資訊，請參閱文章[建立站台](https://go.microsoft.com/fwlink/?LinkId=107067)。  
+如需如何建立網站物件的詳細資訊，請參閱[建立網站一](https://go.microsoft.com/fwlink/?LinkId=107067)文。  
   
-## <a name="creating-a-subnet-object-design"></a>建立子網路物件設計
+## <a name="creating-a-subnet-object-design"></a>建立子網物件設計
 
-每個 IP 子網路和子網路遮罩與每個位置相關聯，計劃來代表站台內的所有 IP 位址的 AD DS 中建立子網路物件。  
+針對每個與每個位置相關聯的 IP 子網和子網路遮罩，規劃在 AD DS 中建立子網物件，以代表網站內的所有 IP 位址。  
   
-建立 Active Directory 子網路物件時，網路 IP 子網路和子網路遮罩的相關資訊會自動轉譯成網路首碼長度標記法格式<IP address> / <prefix length>。 例如，網路 IP version 4 (IPv4) 位址 172.16.4.0 子網路遮罩為 255.255.252.0 會顯示為 172.16.4.0/22。 除了 IPv4 位址，Windows Server 2008 也支援 IP 版本 6 (IPv6) 子網路前置詞，例如 3FFE:FFFF:0:C000:: / 64。 如需有關每個位置中的 IP 子網路的詳細資訊，請參閱中的 「 位置和子網路 」 (DSSTOPO_2.doc) 工作表[收集網路資訊](../../ad-ds/plan/Collecting-Network-Information.md)和[附錄 a:位置和子網路首碼](Appendix-A--Locations-and-Subnet-Prefixes.md)。  
+建立 Active Directory 子網物件時，系統會自動將有關網路 IP 子網和子網路遮罩的資訊轉譯為網路前置長度標記法格式，<IP address> @ no__t-1 @ no__t-2。 例如，具有子網路遮罩255.255.252.0 的網路 IP 第4版（IPv4）位址172.16.4.0 會顯示為 172.16.4.0/22。 除了 IPv4 位址之外，Windows Server 2008 也支援 IP 版本6（IPv6）子網首碼，例如3FFE： FFFF：0： C000：：/64。 如需有關每個位置中的 IP 子網的詳細資訊，請參閱[收集網路資訊](../../ad-ds/plan/Collecting-Network-Information.md)和 @no__t 1Appendix A 中的「位置和子網」（DSSTOPO_2 .doc）工作表：位置和子網首碼 @ no__t-0。  
   
-關聯與站台物件參考 」 建立關聯的子網路與站台 」 (DSSTOPO_6.doc) 工作表來判斷哪一個子網路的 「 決定其位置會變成網站 」 一節中每一個子網路物件是要與哪個站台相關聯。 Active Directory 子網路物件相關聯 」 建立關聯的子網路與站台 」 (DSSTOPO_6.doc) 工作表中的每個位置的文件。  
+將每個子網物件與網站物件產生關聯，方法是參考「決定哪些位置會變成網站」一節中的「建立子網與網站之間的關聯」（DSSTOPO_6）工作表，以判斷哪個子網要與哪個網站相關聯。 記錄「將子網與網站關聯」（DSSTOPO_6）工作表中，與每個位置相關聯的 Active Directory 子網物件。  
   
-如需如何建立子網路物件的詳細資訊，請參閱文章[建立子網路](https://go.microsoft.com/fwlink/?LinkId=107068)。
+如需如何建立子網物件的詳細資訊，請參閱[建立子網一](https://go.microsoft.com/fwlink/?LinkId=107068)文。

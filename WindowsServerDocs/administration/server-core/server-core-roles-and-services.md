@@ -1,33 +1,33 @@
 ---
 title: Windows Server Core 中包含的角色、角色服務和功能
 description: Windows Server 的 Server Core 安裝選項包含哪些角色和功能？
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 2f6aed56083bd606ae2ec06b72152ef4a0461420
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7b5d5d5ad38b1b03e409c26485860f43799f1322
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476502"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383326"
 ---
 # <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Windows Server Core 中包含的角色、角色服務和功能
 
-> 適用於：Windows Server 2019、Windows Server 2016 和 Windows Server (半年通道)
+> 適用於：Windows Server 2019、Windows Server 2016 和 Windows Server （半年通道）
 
-我們通常會討論[*不*在 Server Core 中的內容](server-core-removed-roles.md)-現在我們將嘗試不同的方法, 並告訴您所*包含*的內容, 以及是否*預設會安裝*某些專案。 下列角色、角色服務和功能位於 Windows Server 的 Server Core 安裝選項*中*。 使用這項資訊有助於找出伺服器核心選項是否適用于您的環境。 因為這是大型清單, 請考慮搜尋您感興趣的特定角色或功能-如果該搜尋不會傳回您要尋找的內容, 則不會包含在 Server Core 中。
+我們通常會討論[*不*在 Server Core 中的內容](server-core-removed-roles.md)-現在我們將嘗試不同的方法，並告訴您所*包含*的內容，以及是否*預設會安裝*某些專案。 下列角色、角色服務和功能位於 Windows Server 的 Server Core 安裝選項*中*。 使用這項資訊有助於找出伺服器核心選項是否適用于您的環境。 因為這是大型清單，請考慮搜尋您感興趣的特定角色或功能-如果該搜尋不會傳回您要尋找的內容，則不會包含在 Server Core 中。
 
-例如, 如果您搜尋「遠端桌面工作階段主機」, 您就不會在此頁面上找到它。 這是因為 RD 工作階段主機不包含在 Server Core 映射中。
+例如，如果您搜尋「遠端桌面工作階段主機」，您就不會在此頁面上找到它。 這是因為 RD 工作階段主機不包含在 Server Core 映射中。
 
-請記住, 您[一律可以查看](server-core-removed-roles.md)*未*包含的內容。 這只是查看專案的不同方式。
+請記住，您[一律可以查看](server-core-removed-roles.md)*未*包含的內容。 這只是查看專案的不同方式。
 
 ## <a name="roles-included-in-server-core"></a>Server Core 中包含的角色
 [Server Core] 安裝選項包含下列伺服器角色。
 
-| Role                                            | 名稱                           | 預設會安裝嗎？ |
+| Role                                            | Name                           | 預設會安裝嗎？ |
 |-------------------------------------------------|--------------------------------|-----------------------|
 | Active Directory 憑證服務           | AD-憑證                 | N                     |
 | Active Directory Domain Services                | AD-網域服務             | N                     |
@@ -51,7 +51,7 @@ ms.locfileid: "68476502"
 ## <a name="role-services-included-in-server-core"></a>Server Core 中包含的角色服務
 [Server Core] 安裝選項包含下列角色服務。
 
-| Role                                  | 角色服務                                                   | 名稱                    | 預設會安裝嗎？ |
+| Role                                  | 角色服務                                                   | Name                    | 預設會安裝嗎？ |
 |---------------------------------------|----------------------------------------------------------------|-------------------------|-----------------------|
 | Active Directory 憑證服務 | 憑證授權單位                                        | ADCS-Cert 授權單位     | N                     |
 |                                       | 憑證註冊原則 Web 服務                      | ADCS-註冊-Web-Pol     | N                     |
@@ -70,13 +70,13 @@ ms.locfileid: "68476502"
 |                                       | 檔案伺服器資源管理員                                   | FS-資源管理員     | N                     |
 |                                       | 檔案伺服器 VSS 代理程式服務                                  | FS-VSS-代理程式            | N                     |
 |                                       | iSCSI 目標伺服器                                            | iSCSITarget-伺服器      | N                     |
-|                                       | iSCSI 目標儲存提供者 (VDS 和 VSS 硬體提供者) | iSCSITarget-VSS-VDS     | N                     |
+|                                       | iSCSI 目標儲存提供者（VDS 和 VSS 硬體提供者） | iSCSITarget-VSS-VDS     | N                     |
 |                                       | Server for NFS                                                 | FS-NFS-服務          | N                     |
 |                                       | 工作資料夾                                                   | FS-SyncShareService     | N                     |
 |                                       | 存放服務                                               | 儲存體-服務        | Y                     |
 | 列印和文件服務           | 列印伺服器                                                   | 列印-伺服器            | N                     |
 |                                       | LPD 服務                                                    | 列印-LPD-服務       | N                     |
-| 遠端存取                         | DirectAccess 和 VPN (RAS)                                     | DirectAccess-VPN        | N                     |
+| 遠端存取                         | DirectAccess 和 VPN （RAS）                                     | DirectAccess-VPN        | N                     |
 |                                       | 路由                                                        | 路由                 | N                     |
 |                                       | Web 應用程式 Proxy                                          | Web 應用程式-Proxy   | N                     |
 | 遠端桌面服務               | 遠端桌面連線代理人                               | RDS-連接-代理程式   | N                     |
@@ -139,10 +139,10 @@ ms.locfileid: "68476502"
 ## <a name="features-included-in-server-core"></a>Server Core 中包含的功能
 [Server Core] 安裝選項包含下列功能。
 
-| 功能                                                | 名稱                               | 預設會安裝嗎？ |
+| 功能                                                | Name                               | 預設會安裝嗎？ |
 |--------------------------------------------------------|------------------------------------|-----------------------|
 | .NET Framework 3.5 功能                            | NET Framework-功能             | N                     |
-| .NET Framework 3.5 (包括 .NET 2.0 和 3.0)       | .NET Framework-核心                 | 拆卸             |
+| .NET Framework 3.5 （包括 .NET 2.0 和3.0）       | .NET Framework-核心                 | 拆卸             |
 | HTTP 啟動                                        | NET-HTTP-啟用                | N                     |
 | 非HTTP 啟動                                    | NET-非 HTTP-作用                 | N                     |
 | .NET Framework 4.6 功能                            | NET Framework-45-功能          | Y                     |
@@ -150,7 +150,7 @@ ms.locfileid: "68476502"
 | ASP.NET 4.6                                            | NET Framework-45-ASPNET            | N                     |
 | WCF 服務                                           | NET-WCF-Services45                 | Y                     |
 | HTTP 啟動                                        | NET-WCF-HTTP-Activation45          | N                     |
-| 訊息佇列 (MSMQ) 啟用                      | NET-WCF-Activation45          | N                     |
+| 訊息佇列（MSMQ）啟用                      | NET-WCF-Activation45          | N                     |
 | 具名管道啟用                                  | NET-WCF-管線-Activation45          | N                     |
 | TCP 啟用                                         | NET-WCF-TCP-Activation45           | N                     |
 | TCP 埠共用                                       | NET-WCF-TCP-PortSharing45          | Y                     |
@@ -194,7 +194,7 @@ ms.locfileid: "68476502"
 | 適用于 Windows PowerShell 的容錯移轉叢集模組         | RSAT-Clustering-PowerShell         | N                     |
 | 容錯移轉叢集自動化伺服器                     | RSAT-叢集-AutomationServer   | N                     |
 | 容錯移轉叢集命令介面                     | RSAT-叢集-CmdInterface       | N                     |
-| IP 位址管理 (IPAM) 用戶端                    | IPAM-用戶端功能                | N                     |
+| IP 位址管理（IPAM）用戶端                    | IPAM-用戶端功能                | N                     |
 | 受防護的 VM 工具                                      | RSAT-受防護-VM-工具             | N                     |
 | 適用于 Windows PowerShell 的儲存體複本模組          | RSAT-儲存體-複本               | N                     |
 | 角色管理工具                              | RSAT-角色-工具                    | N                     |
@@ -234,7 +234,7 @@ ms.locfileid: "68476502"
 | .NET 環境3。5                                   | WAS-NET-環境                | N                     |
 | 組態API                                     | WAS-Config-Api                    | N                     |
 | Windows Server Backup                                  | Windows-伺服器-備份              | N                     |
-| Windows Server 移轉工具                         | 移轉                          | N                     |
+| Windows Server 移轉工具                         | 遷移                          | N                     |
 | Windows 標準式存放裝置管理             | WindowsStorageManagementService    | N                     |
 | WinRM IIS 延伸模組                                    | WinRM-IIS-Ext                      | N                     |
 | WINS 伺服器                                            | WINS                               | N                     |

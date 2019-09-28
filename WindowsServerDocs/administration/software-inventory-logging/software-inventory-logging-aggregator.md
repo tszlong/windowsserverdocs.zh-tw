@@ -2,7 +2,7 @@
 title: 軟體清查記錄彙總工具
 description: 說明如何安裝和管理軟體清查記錄匯總工具
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0edecb86c7d5afa7d267c75ec858ded9af36e4c0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 81dbfb89d2e72af57c070db8473fd3b0e521906c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866316"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382945"
 ---
 # <a name="software-inventory-logging-aggregator"></a>軟體清查記錄彙總工具
 
@@ -127,7 +127,7 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
 9. 以 **machinename\group name** 格式新增 **Remote Management Users** 群組
 
-10. 按一下 [確定 **Deploying Office Solutions**]。
+10. 按一下 [確定]。
 
 11. 回到 [**root\cimv2** 的安全性] 視窗中，選取 [Remote Management Users]。
 

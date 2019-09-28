@@ -7,46 +7,46 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d21491f5ce9c15ecc514e4be24a91de28b0fd0ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a23ba4ac8bbdb076381c8419e3a0821bee364acf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890969"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71409035"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS 部署需求
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-現有環境的結構會判斷您的策略來部署 Windows Server 2008 Active Directory 網域服務 (AD DS)。 如果您要建立 AD DS 環境，而且您沒有現有的網域結構，完成您的 AD DS 設計，才能開始建立您的 AD DS 環境。 然後，您可以部署新樹系根網域，並部署您的網域結構的其餘部分，根據您的設計。  
+現有環境的結構決定了部署 Windows Server 2008 Active Directory Domain Services （AD DS）的策略。 如果您要建立 AD DS 環境，而且沒有現有的網域結構，請在開始建立 AD DS 環境之前，先完成您的 AD DS 設計。 然後，您可以部署新的樹系根域，並根據您的設計部署網域結構的其餘部分。  
   
-此外，在 AD DS 部署，您可能會決定要升級並重新建構您的環境。 比方說，如果您的組織有現有的 Windows 2000 網域結構，您可以執行某些網域的就地升級，並重新建構其他人。 此外，您可能會決定重新建構樹系之間的網域，或重新建構樹系中的網域，在您部署 AD DS 之後藉此降低環境的複雜度。  
+此外，做為 AD DS 部署的一部分，您可能會決定升級並重新組織您的環境。 例如，如果您的組織具有現有的 Windows 2000 網域結構，您可能會執行某些網域的就地升級，並重新組織其他網域。 此外，您可能會決定在部署 AD DS 之後，在樹系之間重建網域，或重建樹系中的網域，以降低環境的複雜度。  
   
-## <a name="deploying-a-windows-server-2008-forest-root-domain"></a>部署 Windows Server 2008 樹系根網域  
-樹系根網域提供您的 AD DS 樹系基礎結構的基礎。 若要部署 AD DS，您必須先部署樹系根網域。 若要這樣做，您必須檢閱您的 AD DS 設計;設定樹系根網域的 DNS 服務建立樹系根網域，其中包含部署樹系根網域控制站、 設定樹系根網域的站台拓撲和設定操作主機角色 （也稱為彈性單一主機操作或 FSMO）;和提高樹系和網域功能等級。 下圖顯示部署樹系根網域的整體程序。  
+## <a name="deploying-a-windows-server-2008-forest-root-domain"></a>部署 Windows Server 2008 樹系根域  
+樹系根域提供 AD DS 樹系基礎結構的基礎。 若要部署 AD DS，您必須先部署樹系根域。 若要這麼做，您必須檢查 AD DS 設計;設定樹系根域的 DNS 服務;建立樹系根域，其中包含部署樹系根網域控制站、設定樹系根域的網站拓朴，以及設定操作主機角色（也稱為彈性單一主機操作或 FSMO）;並提高樹系和網域功能等級。 下圖顯示部署樹系根域的整體程式。  
   
 ![AD DS 需求](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)  
   
-如需詳細資訊，請參閱 <<c0> [ 部署 Windows Server 2008 樹系根網域](https://technet.microsoft.com/library/cc731174.aspx)。  
+如需詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](https://technet.microsoft.com/library/cc731174.aspx)。  
   
 ## <a name="deploying-windows-server-2008-regional-domains"></a>部署 Windows Server 2008 地區網域  
-在完成樹系根網域部署後，您準備好要部署任何新的 Windows Server 2008 地區網域設計所指定。 若要這樣做，您必須部署每個地區網域的網域控制站。 下圖顯示部署地區網域的程序。  
+完成樹系根域的部署之後，您就可以開始部署您的設計所指定的任何新的 Windows Server 2008 地區網域。 若要這樣做，您必須為每個地區網域部署網域控制站。 下圖顯示部署地區網域的程式。  
   
 ![AD DS 需求](media/AD-DS-Deployment-Requirements/89a878c8-9a94-4180-ad43-ca75316a6318.gif)  
   
-如需詳細資訊，請參閱 <<c0> [ 部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。  
+如需詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。  
   
-## <a name="upgrading-active-directory-domains-to-windows-server-2008"></a>升級到 Windows Server 2008 的 Active Directory 網域  
-升級至 Windows Server 2008 網域的 Windows 2000 或 Windows Server 2003 的網域是利用額外的 Windows Server 2008 功能的有效率且直接的方式。 您可以升級網域，以維護您目前的網路與網域組態時改善安全性、 延展性及網路基礎結構的管理能力。 從 Windows 2000 或 Windows Server 2003 升級至 Windows Server 2008 需要基本網路設定。 升級對使用者作業也沒有太大的影響。 如需詳細資訊，請參閱 < [Windows Server 2008 和 Windows Server 2008 R2 AD DS 網域升級 Active Directory 網域](https://technet.microsoft.com/library/cc731188.aspx)。  
+## <a name="upgrading-active-directory-domains-to-windows-server-2008"></a>將 Active Directory 網域升級至 Windows Server 2008  
+將您的 Windows 2000 或 Windows Server 2003 網域升級至 Windows Server 2008 網域，是利用額外的 Windows Server 2008 特性和功能的有效率且簡單的方式。 您可以升級網域以維護目前的網路和網域設定，同時改善網路基礎結構的安全性、擴充性和管理性。 從 Windows 2000 或 Windows Server 2003 升級至 Windows Server 2008 需要最少的網路設定。 升級也對使用者作業沒有太大的影響。 如需詳細資訊，請參閱[將 Active Directory 網域升級至 Windows server 2008 和 Windows server 2008 R2 AD DS 網域](https://technet.microsoft.com/library/cc731188.aspx)。  
   
-## <a name="restructuring-ad-ds-domains"></a>重新建構 AD DS 網域  
-當您重建 Windows Server 2008 樹系 （樹系間進行重建） 之間的網域時，您可以減少您的環境中的網域數目，並因此減少系統管理的複雜性和額外負荷。 當您移轉的這一部分的樹系之間的物件結構的程序時，同時存在兩個來源網域和目標網域環境。 這項功能可讓您回復至來源環境在移轉期間，如有必要。  
+## <a name="restructuring-ad-ds-domains"></a>重建 AD DS 網域  
+當您在 Windows Server 2008 樹系（樹系重建）之間重建網域時，您可以減少環境中的網域數目，進而降低系統管理的複雜性和額外負荷。 當您在此重組程式中遷移樹系之間的物件時，來源網域和目標網域環境同時存在。 如有需要，您可以在遷移期間回復至來源環境。  
   
-當您重建 Windows Server 2008 中的網域的 Windows Server 2008 樹系 （樹系內進行重建） 時，您可以合併您的網域結構，並因此減少系統管理的複雜性和額外負荷。 當您重新建構樹系中的網域時，已移轉的帳戶將不再存在於來源網域。  
+當您在 Windows Server 2008 樹系（林內重建）中重建 Windows Server 2008 網域時，可以合併您的網域結構，因而降低系統管理的複雜性和額外負荷。 當您在樹系中重建網域時，已遷移的帳戶已不存在於來源網域中。  
   
-如需如何使用 Active Directory 遷移工具 (ADMT) 版本 3.1 (ADMT v3.1) 重建網域的詳細資訊，請參閱[ADMT v3.1 移轉指南](https://go.microsoft.com/fwlink/?LinkId=93678)。  
+如需如何使用 Active Directory 遷移工具（ADMT）版本3.1 （ADMT 3.1）來重建網域的詳細資訊，請參閱[ADMT 3.1 版遷移指南](https://go.microsoft.com/fwlink/?LinkId=93678)。  
   
 
 

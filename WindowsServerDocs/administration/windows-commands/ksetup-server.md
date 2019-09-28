@@ -1,8 +1,8 @@
 ---
-title: ksetup:server
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup：伺服器
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f370d4dede278e1facdda829503ea3793502b9e6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd05fd294640c63e633b7b866307197ae6770476
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814569"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374964"
 ---
-# <a name="ksetupserver"></a>ksetup:server
+# <a name="ksetupserver"></a>ksetup：伺服器
 
 
 
-可讓您指定的名稱，讓變更藉由執行 Windows 作業系統的電腦**ksetup**會更新目標電腦。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+可讓您指定執行 Windows 作業系統之電腦的名稱，如此一來，使用**ksetup**所做的變更就會更新目的電腦。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,17 +36,17 @@ ksetup /server <ServerName>
 
 |參數|描述|
 |---------|-----------|
-|\<ServerName>|在其設定生效，例如 IPops897.corp.contoso.com 完整電腦名稱。</br>如果未完成完整指定網域的電腦名稱，則命令會失敗。|
+|\<ServerName >|設定將會生效的完整電腦名稱稱，例如 IPops897.corp.contoso.com。</br>如果指定了不完整的完整網域電腦名稱稱，此命令將會失敗。|
 
 ## <a name="remarks"></a>備註
 
-沒有任何方法中移除目標的伺服器名稱;您可以只變更回本機電腦名稱，這是預設值。
+沒有任何方法可以移除目標伺服器名稱;您只能將它變更回本機電腦名稱稱，這是預設值。
 
-目標伺服器名稱儲存在登錄中**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\LSA\Kerberos**。 它不會報告利用**ksetup**。
+目標伺服器名稱會儲存在**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\LSA\Kerberos**的登錄中。 不會使用**ksetup**來報告。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-讓您**ksetup**有效連線在 Contoso 網域 IPops897 電腦上的設定：
+在連接到 Contoso 網域的 IPops897 電腦上，讓您的**ksetup**設定生效：
 ```
 ksetup /server IPops897.corp.contoso.com
 ```

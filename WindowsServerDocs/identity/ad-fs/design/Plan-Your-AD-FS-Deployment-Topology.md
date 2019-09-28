@@ -7,67 +7,67 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 00c43a56d9b57a2ae2c8b9aeca56807fe1d1841f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9cd036e9dd0b249197fb475504c9cad532ead0ea
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191183"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408034"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>規劃您的 AD FS 部署拓撲
 
-規劃部署的 Active Directory Federation Services 的第一個步驟\(AD FS\)是要判斷正確的部署拓撲以符合您組織的需求。  
+規劃 Active Directory 同盟服務的部署 \(AD FS @ no__t-1 的第一個步驟，是要判斷符合您組織需求的適當部署拓撲。  
   
-閱讀本主題之前，請檢閱 AD FS 資料如何儲存和複寫到同盟伺服器陣列中的其他同盟伺服器，並確定您了解的目的，以及可用來儲存 AD FS 中的基礎資料的複寫方法 configuration 資料庫。  
+閱讀本主題之前，請先複習如何將 AD FS 資料儲存及複寫到同盟伺服器陣列中的其他同盟伺服器，並確定您瞭解的用途，以及可用於儲存于 AD FS con 之基礎資料的複寫方法f) 資料庫。  
   
-有兩種可用來儲存 AD FS 組態資料的資料庫類型：Windows 內部資料庫\(WID\)和 Microsoft SQL Server。 如需詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。 檢閱的各種優點與限制，為 AD FS 組態資料庫，以及他們支援，然後進行選擇的各種應用程式案例使用 WID 或 SQL Server 相關聯。  
+您可以使用兩種資料庫類型來儲存 AD FS 設定資料：Windows 內部資料庫 \(WID @ no__t-1 和 Microsoft SQL Server。 如需詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。 請參閱使用 WID 或 SQL Server 做為 AD FS 設定資料庫相關聯的各種優點和限制，以及它們支援的各種應用程式案例，然後進行選取。  
   
 > [!IMPORTANT]  
-> 若要實作基本備援、 負載平衡，以及調整 Federation Service 的選項\(如有必要\)，我們建議您部署的每個同盟伺服器陣列所有生產環境中的至少兩部同盟伺服器不論您將使用的資料庫型別。  
+> 若要執行基本的冗余、負載平衡，以及調整同盟服務的選項 \(if 需要 @ no__t-1，建議您為所有生產環境部署至少兩個同盟伺服器陣列的同盟伺服器，而不論您將使用的資料庫類型。  
   
 ## <a name="determining-which-type-of-adfs-configuration-database-to-use"></a>決定要使用的 AD FS 設定資料庫類型  
-AD FS 會使用資料庫來儲存設定和 — 在某些情況下，交易資料與 Federation Service。 您可以使用 AD FS 軟體，選取任一個內建\-在 Windows 內部資料庫\(WID\)或 Microsoft SQL Server 2008 或更新版本來儲存 Federation Service 中的資料。  
+AD FS 使用資料庫來儲存設定，而在某些情況下，則是與同盟服務相關的交易資料。 您可以使用 AD FS 軟體來選取建立的 @ no__t-0in Windows 內部資料庫 \(WID @ no__t-2 或 Microsoft SQL Server 2008 或更新版本，以將資料儲存在同盟服務中。  
   
-對於大多數用途而言，這兩個資料庫類型相對來說是一樣的。 不過，有開始深入了解您可以使用 AD FS 使用的各種部署拓撲之前要注意的一些差異。 下表說明 WID 資料庫與 SQL Server 資料庫之間支援之功能的差異。  
+對於大多數用途而言，這兩個資料庫類型相對來說是一樣的。 不過，在您開始閱讀更多可與 AD FS 搭配使用的部署拓撲之前，請注意一些差異。 下表說明 WID 資料庫與 SQL Server 資料庫之間支援之功能的差異。  
   
 ||功能|受到 WID 支援？|受到 SQL Server 支援？
 | --- | --- | --- |--- |
-|AD FS 功能|同盟伺服器陣列部署|是的。 WID 伺服器陣列已限制為 30 的同盟伺服器，如果您有 100 或更少信賴憑證者信任。</br></br>WID 伺服器陣列不支援權杖重新執行偵測或成品解析 （安全性判斷提示標記語言 (SAML) 通訊協定的一部分）。 |是的。 沒有限制您可以在單一伺服陣列中部署的同盟伺服器數目  
+|AD FS 功能|同盟伺服器陣列部署|是的。 如果您有100或較少的信賴憑證者信任，WID 伺服器陣列的限制為30部同盟伺服器。</br></br>WID 伺服器陣列不支援權杖重新執行偵測或成品解析（安全性聲明標記語言（SAML）通訊協定的一部分）。 |是的。 沒有限制您可以在單一伺服陣列中部署的同盟伺服器數目  
 |AD FS 功能|SAML 成品解析 </br></br>**注意：** 這個功能並非 Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 案例的必要功能。|否|是  
-|AD FS 功能|SAML\/WS\-同盟權杖重新執行偵測|否|是  
-|資料庫功能|基本資料庫備援使用提取複寫，其中一個或多個伺服器裝載讀取\-的資料庫要求變更裝載讀取的來源伺服器上所做的只有一個複本\/寫入資料庫的複本|是|否 
-|資料庫功能|使用高的資料庫備援\-可用性的解決方案，例如容錯移轉叢集或鏡像\(在資料庫層只\)**附註：** 所有的 AD FS 部署拓撲支援 AD FS 服務層的叢集。|否|是  
+|AD FS 功能|SAML @ no__t-0WS @ no__t-1Federation token replay 偵測|否|是  
+|資料庫功能|使用提取複寫的基本資料庫冗余，其中有一或多部伺服器裝載資料庫的讀取 @ no__t-0only 複本，而這是在裝載資料庫之讀取 @ no__t 1write 複本的來源伺服器上所做的變更|是|否 
+|資料庫功能|使用高 @ no__t 的資料庫冗余-0availability 解決方案，例如容錯移轉叢集或鏡像 @no__t-僅1at 資料庫層 @ no__t-2**注意：** 所有 AD FS 部署拓撲都支援 AD FS 服務層級的叢集。|否|是  
 
   
 ## <a name="sql-server-considerations"></a>SQL Server 考量  
 如果您選取 SQL Server 做為 AD FS 部署的設定資料庫，您應該考量下列部署事實。  
   
--   **SAML 功能及其對於資料庫大小與成長的影響**。 在啟用 SAML 成品解析或 SAML 權杖重新執行偵測功能時，AD FS 會在 SQL Server 設定資料庫中儲存所簽發之每個 AD FS 權杖的資訊。 因為這個活動而導致的 SQL Server 資料庫成長並不明顯，而且會根據設定之權杖的重新執行保留期間而定。 每個成品記錄的大小為大約 30 kb \(KB\)。  
+-   **SAML 功能及其對於資料庫大小與成長的影響**。 在啟用 SAML 成品解析或 SAML 權杖重新執行偵測功能時，AD FS 會在 SQL Server 設定資料庫中儲存所簽發之每個 AD FS 權杖的資訊。 因為這個活動而導致的 SQL Server 資料庫成長並不明顯，而且會根據設定之權杖的重新執行保留期間而定。 每個成品記錄的大小約為 30 kb \(KB @ no__t-1。  
   
--   **部署所需的伺服器數目**。 您必須新增至少一個額外的伺服器\(來部署您的 AD FS 基礎結構所需的伺服器總數\)，做為 SQL Server 執行個體的專用主機。 如果您規劃使用容錯移轉叢集或鏡像來為 SQL Server 設定資料庫提供容錯和延展性，則至少需要兩部 SQL Srver。  
+-   **部署所需的伺服器數目**。 您必須新增至少一部額外的伺服器 \(to 部署 AD FS 基礎結構 @ no__t-1 所需的伺服器總數，以作為 SQL Server 實例的專用主機。 如果您規劃使用容錯移轉叢集或鏡像來為 SQL Server 設定資料庫提供容錯和延展性，則至少需要兩部 SQL Srver。  
   
 ## <a name="how-the-configuration-database-type-you-select-may-impact-hardware-resources"></a>您選取設定資料庫類型的方式可能會影響硬體資源  
 與使用 SQL Server 資料庫在伺服陣列中部署的同盟伺服器相較之下，對使用 WID 在伺服陣列中部署之同盟伺服器上的硬體資源影響並不明顯。 但是，請務必考量當您針對伺服陣列使用 WID 時，該伺服陣列中的每部同盟伺服器都必須儲存、管理及維護其 AD FS 設定資料庫之本機複本的複寫變更，同時還要繼續提供 Federation Service 所需的一般操作。  
   
 相較之下，使用 SQL Server 資料庫在伺服陣列中部署的同盟伺服器並不需要包含 AD FS 設定資料庫的本機執行個體。 因此，它們對硬體資源的要求會比較低。  
   
-## <a name="BKMK_1"></a>同盟伺服器的位置  
-基於安全性最佳做法，將 AD FS 同盟伺服器的防火牆前面，並連接至您公司的網路，以避免曝露在網際網路。 這很重要，因為同盟伺服器擁有完整權限可授與安全性權杖。 因此，它們應該像網域控制站一樣受到保護。 如果同盟伺服器遭到入侵，惡意使用者能夠為所有 Web 應用程式，並且受到 AD FS 的同盟伺服器發出完整存取權杖。  
+## <a name="BKMK_1"></a>放置同盟伺服器的位置  
+基於安全性最佳作法，請將 AD FS 同盟伺服器放在防火牆前面，並將它們連線到您的公司網路，以避免暴露在網際網路上。 這很重要，因為同盟伺服器具有授與安全性權杖的完整授權。 因此，它們應該像網域控制站一樣受到保護。 如果同盟伺服器遭到入侵，惡意使用者就能夠對所有 Web 應用程式和受 AD FS 保護的同盟伺服器發出完整存取權杖。  
   
 > [!NOTE]  
-> 基於安全性最佳做法，避免您直接存取的同盟伺服器在網際網路上。 為您的同盟伺服器直接存取網際網路，您要設定測試實驗室環境，或您的組織沒有周邊網路時，才應考慮。  
+> 基於安全性最佳作法，請避免在網際網路上直接存取您的同盟伺服器。 請考慮在您設定測試實驗室環境時，或當您的組織沒有周邊網路時，讓您的同盟伺服器直接存取網際網路。  
   
-對於一般公司網路，內部\-對向防火牆公司網路與周邊網路和網際網路之間建立\-對向防火牆之間通常會建立周邊網路，網際網路。 在此情況下，同盟伺服器位於內部公司網路，並不是由網際網路用戶端直接存取。  
+對於一般的公司網路，公司網路與周邊網路之間會建立內部網路 @ no__t-0facing 防火牆，而周邊網路與網際網路之間通常會建立網際網路 @ no__t-1facing 防火牆。 在此情況下，同盟伺服器位於公司網路內，且不能由網際網路用戶端直接存取。  
   
 > [!NOTE]  
-> 連線到公司網路的用戶端電腦可以直接與透過 Windows 整合式驗證的同盟伺服器通訊。  
+> 連線到公司網路的用戶端電腦可以透過 Windows 整合式驗證直接與同盟伺服器通訊。  
   
-同盟伺服器 proxy 與 AD FS 設定防火牆伺服器供使用之前應該置於周邊網路。  
+您必須先將同盟伺服器 proxy 放在周邊網路中，才能設定防火牆伺服器以與 AD FS 搭配使用。  
   
 ## <a name="supported-deployment-topologies"></a>支援的部署拓撲  
-下列主題說明您可以使用 AD FS 使用的各種部署拓撲。 其中也會說明與每個部署拓撲相關聯的優點與限制，讓您能夠針對特定的商業需求選取最適當的拓撲。  
+下列主題說明您可以搭配 AD FS 使用的各種部署拓撲。 其中也會說明與每個部署拓撲相關聯的優點與限制，讓您能夠針對特定的商業需求選取最適當的拓撲。  
   
 -   [使用 WID 的同盟伺服器陣列](Federation-Server-Farm-Using-WID.md)  
   

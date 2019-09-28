@@ -1,8 +1,8 @@
 ---
 title: 結束還原
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b506e153b213db05de9d5888ef81a555e318b3ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 642a0856719314ce619337f279925f7ffba86043
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867119"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377584"
 ---
 # <a name="end-restore"></a>結束還原
 
 
 
-結束還原工作階段和問題**PostRestore**所涉及的寫入器的事件。
+結束還原會話，並向相關的寫入器發出**PostRestore**事件。
 
 ## <a name="syntax"></a>語法
 

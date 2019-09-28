@@ -1,9 +1,9 @@
 ---
-title: 零個用戶端連線的站台的 USB 設定 MultiPoint 服務中
-description: 了解如何在 MultiPoint 服務中建立的 USB 零的用戶端站台
+title: 在 MultiPoint 服務中設定 USB 零用戶端連線的工作站
+description: 瞭解如何在 MultiPoint 服務中建立 USB 零用戶端工作站
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,42 +13,42 @@ ms.assetid: d2908865-6be3-474d-88f1-995f40bb61d0
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 1a64373f4ed5e0d1ac96a0257ac5697ff94ffcbe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80a73065024e5c40f1ebf8efd64022ee6d48fbe8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878929"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395067"
 ---
-# <a name="set-up-a-usb-zero-client-connected-station-in-multipoint-services"></a>零個用戶端連線的站台的 USB 設定 MultiPoint 服務中
-當您使用 usb 極簡型用戶端建立 MultiPoint 服務站台時，每個站台的監視會連接到 usb 極簡型用戶端上的視訊連接埠，如下圖所示。 如需有關這個主題以及其他站台類型的詳細資訊，請參閱[MultiPoint 站台](MultiPoint-services-Stations.md)。
+# <a name="set-up-a-usb-zero-client-connected-station-in-multipoint-services"></a>在 MultiPoint 服務中設定 USB 零用戶端連線的工作站
+當您使用 USB 零用戶端來建立 MultiPoint 服務工作站時，每個工作站的監視會連接到 USB 零用戶端上的視訊連接埠，如下圖所示。 如需此和其他工作站類型的詳細資訊，請參閱[MultiPoint 電臺](MultiPoint-services-Stations.md)。
   
-**MultiPoint 服務系統，直接視訊連線站台與兩個 usb 極簡型用戶端連線站台**  
+**MultiPoint 服務系統，其中有一個直接連接視頻的工作站和兩個 USB 零用戶端連線的工作站**  
   
 ![USB 極簡型用戶端連線的工作站](./media/WMS11_diagram7.gif)  
   
 > [!IMPORTANT]  
-> 設定 USB 零個用戶端連線的站台之前，請務必安裝您的視訊卡與 usb 極簡型用戶端的最新驅動程式。 過時的驅動程式可防止無法順利完成的 MultiPoint 服務組態。 如需相關指示，請參閱 <<c0> [ 更新及安裝裝置驅動程式，如有需要](Update-and-install-device-drivers-if-needed.md)。  
+> 設定 USB 零用戶端連線的工作站之前，請務必安裝視訊卡和 USB 零用戶端的最新驅動程式。 過時的驅動程式可能會導致 MultiPoint 服務設定無法順利完成。 如需指示，請參閱視[需要更新及安裝設備磁碟機](Update-and-install-device-drivers-if-needed.md)。  
   
 > [!IMPORTANT]  
-> 如果您使用 USB over Ethernet 零用戶端，請從您的廠商，而不是此程序，以使用乙太網路連線來設定網路裝置中遵循的指示。  
+> 如果您使用 USB over 乙太網路的零用戶端，請遵循廠商提供的指示（而不是此程式），使用 Ethernet 連線來設定網路上的裝置。  
   
-### <a name="to-set-up-a-usb-zero-client-connected-station"></a>若要設定 USB 零個用戶端連線的站台  
+### <a name="to-set-up-a-usb-zero-client-connected-station"></a>設定 USB 零用戶端連線的工作站  
   
-1.  將視訊監視器纜線連接 USB 上的 DVI 或 VGA 視訊顯示連接埠零個用戶端，如下圖所示。  
+1.  將視頻監視器纜線連接到 USB 零用戶端上的 DVI 或 VGA 視頻顯示埠，如下圖所示。  
   
     ![視訊連線到 USB 集線器架構系統的影像](./media/WMSVideoConnection.gif)  
   
-2.  在電腦上開啟的 USB 連接埠來連接 usb 極簡型用戶端。  
+2.  將 USB 零用戶端連接到電腦上開啟的 USB 埠。  
   
     ![MultiPoint 服務 USB 集線器連線的影像](./media/WMSUSBHubConnection.gif)  
   
-3.  Usb 極簡型用戶端連接鍵盤和滑鼠。  
+3.  將鍵盤和滑鼠連接到 USB 零用戶端。  
   
     ![USB 集線器輸入裝置連線的影像](./media/WMSUSBDeviceConnection.gif)  
   
-4.  如果您使用外部供電 usb 極簡型用戶端，將 usb 極簡型用戶端的電源線接上電源插座。  
+4.  如果您使用外部供電的 USB 零用戶端，請將 USB 零用戶端的電源線連接到電源插座。  
   
 5.  將視訊監視器的電源線連接到電源插座。  
   
-6.  如果系統提示您裝置與站台建立關聯，請在監視器 來完成安裝程序遵循的指示。 （一般來說，USB 零個用戶端連線的站台是站台相關聯自動新增至伺服器。）
+6.  如果系統提示您將裝置與工作站建立關聯，請遵循監視器上的指示來完成安裝。 （一般而言，當您將 USB 零用戶端連線的工作站新增到伺服器時，它們會自動與工作站相關聯）。

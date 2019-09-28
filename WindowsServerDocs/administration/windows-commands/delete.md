@@ -1,8 +1,8 @@
 ---
-title: '[刪除]'
-description: '適用於 Windows 命令主題 * * *- '
+title: delete
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cfa1c125d9ad1859550ae746839600283d07f44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c2dd1edc8404ef89ae087e49b9e1d4b302d1c8ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813069"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378604"
 ---
-# <a name="delete"></a>[刪除]
+# <a name="delete"></a>delete
 
 
 
-刪除資料分割或磁碟區。 它也會從磁碟清單刪除動態磁碟。
+刪除分割區或磁片區。 它也會刪除磁片清單中的動態磁碟。
 
 ## <a name="syntax"></a>語法
 
@@ -38,9 +38,9 @@ delete volume
 
 |參數|描述|
 |---------|-----------|
-|[刪除磁碟](delete-disk.md)|從磁碟清單刪除遺失的動態磁碟。|
-|[刪除磁碟分割](delete-partition.md)|刪除磁碟分割。|
-|[刪除磁碟區](delete-volume.md)|刪除磁碟區。|
+|[刪除磁片](delete-disk.md)|從磁片清單刪除遺失的動態磁碟。|
+|[刪除分割區](delete-partition.md)|刪除資料分割。|
+|[刪除磁片區](delete-volume.md)|刪除磁片區。|
 
 #### <a name="additional-references"></a>其他參考資料
 

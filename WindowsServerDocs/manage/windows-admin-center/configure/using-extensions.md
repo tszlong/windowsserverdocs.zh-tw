@@ -1,90 +1,90 @@
 ---
 title: 安裝和管理擴充功能
-description: 安裝和管理 Windows Admin Center （專案檀香山） 中的延伸模組
+description: 在 Windows 系統管理中心安裝和管理擴充功能（Project 檀香山）
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 9038fd480ed105aed3949b0c48dffc7eab94f970
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: d49e25591c705afa217b2332ee48eb42c5c2f7ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445891"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357237"
 ---
 # <a name="install-and-manage-extensions"></a>安裝和管理擴充功能
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-Windows Admin Center 是建置為可延伸的平台，每個連接類型和工具時，您可以安裝、 解除安裝和更新個別擴充功能。 您可以搜尋由 Microsoft 與其他開發人員，發行新的擴充功能和安裝個別更新而不需要更新整個 Windows Admin Center 安裝。 您也可以設定個別的 NuGet 摘要或檔案共用，並將在內部使用，您組織中的擴充功能散發。
+Windows 管理中心是以可擴充的平臺建立，其中每個連線類型和工具都是您可以個別安裝、卸載和更新的擴充功能。 您可以搜尋 Microsoft 和其他開發人員所發行的新延伸模組，並個別安裝和更新，而不需要更新整個 Windows 系統管理中心安裝。 您也可以設定個別的 NuGet 摘要或檔案共用，並將延伸模組散發給組織內部使用。
 
 ## <a name="installing-an-extension"></a>安裝擴充功能
 
-Windows Admin Center 會顯示可用的擴充功能，從指定的 NuGet 摘要。 根據預設，Windows Admin Center 會指向 Microsoft 官方 NuGet 摘要裝載由 Microsoft 與其他開發人員發行的擴充功能。
+Windows 管理中心會顯示指定之 NuGet 摘要提供的延伸模組。 根據預設，Windows 管理中心會指向 Microsoft 官方 NuGet 摘要，其裝載由 Microsoft 和其他開發人員所發行的延伸模組。
 
-1. 按一下 **設定**在右上角的按鈕 > 在左窗格中，按一下**延伸模組**。 
-2. **可用的擴充功能** 索引標籤會列出摘要之延伸模組可供安裝。
-3. 按一下 擴充功能來檢視擴充功能描述、 版本、 發行者和中的其他資訊**詳細資料**窗格。
-4. 按一下 **安裝**安裝延伸模組。 如果閘道必須執行在提升權限模式下，才能進行這項變更，將會看到 UAC 提高權限提示。 安裝完成後，會自動重新整理您的瀏覽器和 Windows Admin Center 將會重新載入新安裝的擴充功能。 如果您嘗試擴充功能安裝是先前安裝的擴充功能的更新，您可以按一下**更新為最新**安裝更新 按鈕。 您也可以移至**已安裝擴充功能**tab 鍵移至檢視已安裝擴充功能，並查看是否有更新中提供**狀態**資料行。
+1. 在左窗格中，按一下右上方 > 的 [**設定**] 按鈕，然後按一下 [**擴充**功能]。 
+2. [**可用的延伸**模組] 索引標籤會列出可供安裝的摘要上的延伸模組。
+3. 按一下延伸模組，即可在**詳細資料**窗格中查看延伸模組描述、版本、發行者和其他資訊。
+4. 按一下 [**安裝**] 以安裝擴充功能。 如果閘道必須在提高許可權的模式下執行才能進行這項變更，您會看到 UAC 提高權限提示。 安裝完成之後，您的瀏覽器將會自動重新整理，而且 Windows 管理中心將會重載並安裝新的延伸模組。 如果您嘗試安裝的延伸模組是先前安裝之延伸模組的更新，您可以按一下 [**更新為最新**的] 按鈕來安裝更新。 您也可以移至 [**已安裝的擴充**功能] 索引標籤來查看已安裝的擴充功能，並查看 [**狀態**] 欄是否有可用的更新。
 
-## <a name="installing-extensions-from-a-different-feed"></a>安裝延伸模組，從不同的摘要
+## <a name="installing-extensions-from-a-different-feed"></a>從不同的摘要安裝延伸模組
 
-Windows Admin Center 支援多個摘要，而且您可以檢視和管理封裝從一個以上的摘要，一次。 任何 NuGet 摘要的支援 NuGet V2 Api 或檔案共用可以安裝擴充功能新增至 Windows Admin Center。
+Windows 系統管理中心支援多個摘要，而且您可以一次從多個摘要中查看和管理套件。 任何支援 NuGet V2 Api 或檔案共用的 NuGet 摘要，都可以新增至 Windows 系統管理中心，以便從安裝延伸模組。
 
-1. 按一下 **設定**在右上角的按鈕 > 在左窗格中，按一下**延伸模組**。
-2. 在右窗格中，按一下**摘要** 索引標籤。
-3. 按一下 **新增**按鈕以新增另一個的摘要。 NuGet 摘要，請輸入摘要 URL NuGet V2。 NuGet 摘要提供者或系統管理員應該能夠提供的 URL 資訊。 檔案共用，請輸入檔案的完整路徑 (.nupkg) 的延伸模組套件檔案會儲存共用的。
-4. 按一下 **\[新增\]** 。 如果閘道必須執行在提升權限模式下，才能進行這項變更，將會看到 UAC 提高權限提示。
+1. 在左窗格中，按一下右上方 > 的 [**設定**] 按鈕，然後按一下 [**擴充**功能]。
+2. 在右窗格中，按一下 [**摘要] 索引**標籤。
+3. 按一下 [**新增**] 按鈕以新增另一個摘要。 針對 NuGet 摘要，輸入 NuGet V2 摘要 URL。 NuGet 摘要提供者或系統管理員應該能夠提供 URL 資訊。 針對檔案共用，輸入儲存延伸模組套件檔案（. nupkg）之檔案共用的完整路徑。
+4. 按一下 [新增]。 如果閘道必須在提高許可權的模式下執行才能進行這項變更，您會看到 UAC 提高權限提示。
 
-**可用的擴充功能**清單會顯示從所有已註冊的延伸模組。 您可以檢查每個延伸模組是使用哪一個摘要**套件摘要**資料行。
+[**可用的延伸**模組] 清單會顯示所有已註冊摘要的延伸模組。 您可以使用 [**封裝**摘要] 資料行來檢查每個延伸模組的摘要。
 
-## <a name="uninstalling-an-extension"></a>解除安裝擴充功能
+## <a name="uninstalling-an-extension"></a>卸載擴充功能
 
-您可以解除安裝任何擴充功能，您先前已安裝，或甚至是解除安裝已預先安裝的 Windows Admin Center 安裝一部分的任何工具。
+您可以卸載任何先前已安裝的擴充功能，或甚至卸載已預先安裝為 Windows 管理中心安裝一部分的任何工具。
 
-1. 按一下 **設定**在右上角的按鈕 > 在左窗格中，按一下**延伸模組**。 
-2. 按一下 **已安裝擴充功能**索引標籤來檢視所有已安裝的延伸模組。
-3. 選擇以解除安裝，然後按一下 擴充功能**解除安裝**。
+1. 在左窗格中，按一下右上方 > 的 [**設定**] 按鈕，然後按一下 [**擴充**功能]。 
+2. 按一下 [**已安裝的延伸**模組] 索引標籤，以查看所有已安裝的擴充
+3. 選擇要卸載的擴充功能，然後按一下 [**卸載**]。
 
-在解除安裝後之後，會自動重新整理您的瀏覽器，然後將重新載入移除擴充功能的 Windows Admin Center。 如果您解除安裝已預先安裝的 Windows Admin Center 一部分的工具，此工具將可供在重新安裝**可用的擴充功能** 索引標籤。
+卸載完成之後，您的瀏覽器將會自動重新整理，而且 Windows 管理中心將會重載並移除延伸模組。 如果您卸載的工具已預先安裝為 Windows 系統管理中心的一部分，則可在 [**可用的擴充**功能] 索引標籤中重新安裝此工具。
 
-## <a name="installing-extensions-on-a-computer-without-internet-connectivity"></a>沒有網際網路連線的電腦上安裝擴充功能
+## <a name="installing-extensions-on-a-computer-without-internet-connectivity"></a>在沒有網際網路連線的電腦上安裝擴充功能
 
-如果在未連線到網際網路或位於 proxy 後方的電腦上安裝 Windows Admin Center，則它可能無法存取，並從摘要的 Windows Admin Center 安裝的擴充功能。 您可以下載延伸模組套件，以手動方式或透過 PowerShell 指令碼，並設定要擷取封裝從檔案共用或本機磁碟機的 Windows Admin Center。
+如果 Windows 管理中心安裝在未連線到網際網路或位於 proxy 後方的電腦上，則可能無法從 Windows 系統管理中心摘要存取並安裝擴充功能。 您可以手動或使用 PowerShell 腳本下載延伸模組套件，並將 Windows 管理中心設定為從檔案共用或本機磁片磁碟機取出封裝。
 
 ### <a name="manually-downloading-extension-packages"></a>手動下載延伸模組套件
 
-1. 在具有網際網路連線的另一部電腦，開啟網頁瀏覽器並瀏覽至下列 URL: [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
+1. 在另一部具有網際網路連線能力的電腦上，開啟網頁瀏覽器並流覽至下列 URL： [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
 
-   * 您可能需要建立帳戶，msft sme.myget.org 和登入若要檢視延伸模組套件。
+   * 您可能需要在 msft-sme.myget.org 上建立帳戶，並登入以查看延伸模組套件。
 
-2. 按一下您想要檢視套件詳細資料頁面安裝封裝的名稱。
-3. 按一下 **下載**連結套件詳細資料頁面的右側窗格中，並下載.nupkg 檔案延伸模組。
-4. 針對您想要下載的所有封裝重複步驟 2 和 3。
-5. 可以從 Windows Admin Center，安裝的電腦存取檔案共用或本機電腦的磁碟，請將複製的封裝檔案。
-6. [請依照下列指示來安裝延伸模組，從不同的摘要](#installing-extensions-from-a-different-feed)。
+2. 按一下您要安裝之套件的名稱，以查看套件詳細資料頁面。
+3. 在 [套件詳細資料] 頁面的右窗格中，按一下 [**下載**] 連結，並下載延伸模組的 nupkg 檔案。
+4. 針對您想要下載的所有套件，重複步驟2和3。
+5. 將套件檔案複製到檔案共用，以從 Windows 系統管理中心安裝的電腦或電腦的本機磁片上存取。
+6. [請遵循指示，從不同的摘要安裝延伸](#installing-extensions-from-a-different-feed)模組。
 
-### <a name="downloading-packages-with-a-powershell-script"></a>下載 PowerShell 指令碼的封裝
+### <a name="downloading-packages-with-a-powershell-script"></a>使用 PowerShell 腳本下載封裝
 
-下載 NuGet 套件的 NuGet 摘要從網際網路上有許多指令碼可用。 我們將使用[Jon Galloway 所提供的指令碼](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell)，Microsoft 的資深專案經理。
+網際網路上有許多可用來從 NuGet 摘要下載 NuGet 套件的腳本。 我們將使用 Microsoft 的資深專案經理[Jon Galloway 所提供的腳本](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell)。
 
-1. 中所述[部落格文章](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell)、 將指令碼安裝為 NuGet 套件，或複製並貼入 PowerShell ISE 中的指令碼。
-2. 編輯第一行的指令碼，您的 NuGet 摘要的 v2 URL。 如果您要下載 Windows Admin Center 官方的套件摘要，請使用下列 URL。
+1. 如[blog 文章](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell)中所述，將腳本安裝為 NuGet 套件，或將腳本複製並貼到 PowerShell ISE。
+2. 將腳本的第一行編輯為 NuGet 摘要的 v2 URL。 如果您要從 Windows 管理中心官方摘要下載封裝，請使用下列 URL。
 
 ```powershell
 $feedUrlBase = "https://aka.ms/sme-extension-feed"
 ```
 
-3. 執行指令碼，它會從摘要下載所有的 NuGet 套件，到下列本機資料夾： %USERPROFILE%\Documents\NuGetLocal
-4. [請依照下列指示來安裝延伸模組，從不同的摘要](#installing-extensions-from-a-different-feed)。
+3. 執行腳本，它會將摘要中的所有 NuGet 套件下載到下列本機資料夾：%USERPROFILE%\Documents\NuGetLocal
+4. [請遵循指示，從不同的摘要安裝延伸](#installing-extensions-from-a-different-feed)模組。
 
-## <a name="manage-extensions-with-powershell"></a>管理使用 PowerShell 的擴充功能
+## <a name="manage-extensions-with-powershell"></a>使用 PowerShell 管理延伸模組
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-Windows Admin Center Preview 包含 PowerShell 模組來管理您的閘道擴充功能。
+Windows 系統管理中心預覽包含 PowerShell 模組來管理您的閘道擴充功能。
 
 ```powershell
 # Add the module to the current session
@@ -119,4 +119,4 @@ Uninstall-Extension "https://wac.contoso.com" "msft.sme.containers"
 Update-Extension "https://wac.contoso.com" "msft.sme.containers"
 ```
 
-### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[了解如何建置 Windows Admin Center SDK 延伸模組](../extend/extensibility-overview.md)。
+### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[深入瞭解如何使用 Windows Admin CENTER SDK 建立擴充](../extend/extensibility-overview.md)功能。

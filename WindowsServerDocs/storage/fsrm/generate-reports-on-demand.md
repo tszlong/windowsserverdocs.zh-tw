@@ -2,22 +2,22 @@
 title: 產生隨選報告
 description: 此文說明如何產生隨選報告來分析伺服器上的磁碟使用量
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b51ab0ad2a9c670aa63c4c86f7ff2c052139cb95
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9b3cde8a01c40a04df1bc433687029a2e0e7c394
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445971"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403010"
 ---
 # <a name="generate-reports-on-demand"></a>產生隨選報告
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 進行日常作業時，您可以使用 **\[立即產生報告\]** 選項來產生一份或多份隨選報告。 您可以使用這些報告來分析伺服器目前磁碟使用量的各個不同層面。 產生報告之前會收集目前的資料。
 

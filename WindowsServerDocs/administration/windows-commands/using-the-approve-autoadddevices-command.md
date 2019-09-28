@@ -1,8 +1,8 @@
 ---
-title: 使用核准 AutoaddDevices 命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用 AutoaddDevices 命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ce9824c45a00ccb9f1f9e357c7e3d36b2857f69
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5617837706a778bac2456647f40efd563d861722
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886819"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363659"
 ---
-# <a name="using-the-approve-autoadddevices-command"></a>使用核准 AutoaddDevices 命令
+# <a name="using-the-approve-autoadddevices-command"></a>使用 AutoaddDevices 命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-核准為暫止的系統管理核准的電腦。 啟用自動新增原則時，系統管理員核准後未知的電腦 （其尚未預先設置） 可以安裝映像。 您可以使用此原則啟用**PXE 回應** 索引標籤的 伺服器屬性 頁面。
+核准等待系統管理核准的電腦。 啟用自動新增原則時，必須先進行系統管理核准，才會有未知的電腦（未預先設置的電腦）可以安裝映射。 您可以使用 [伺服器] 屬性頁的 [ **PXE 回應**] 索引標籤來啟用此原則。
 ## <a name="syntax"></a>語法
 ```
 wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>] 
@@ -33,33 +33,33 @@ wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<R
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|[/ 伺服器：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整的網域名稱 (FQDN)。 如果未指定伺服器名稱，則會使用本機伺服器。|
-|/RequestId:{Request ID &#124; ALL}|指定擱置電腦的要求 ID。 指定**所有**核准擱置中的所有電腦。|
-|[/ MachineName:<Device name>]|指定要新增之電腦的名稱。 核准所有電腦時，您無法使用此選項。|
-|[/ OU:<DN of OU>]|指定組織單位 (OU)，應該在其中建立電腦帳戶物件的辨別的名稱。 例如: **OU = MyOU，CN = 測試，DC = Domain，DC = com**。 預設位置是在預設電腦容器。|
-|[/ 使用者： < 網域 \ 使用者&#124; User@Domain>]|若要將指定的使用者指派的必要權限的電腦帳戶物件上設定權限。|
-|[/ JoinRights: {JoinOnly&#124;完整}]|指定要指派給指定使用者的權限的類型。<br /><br />-   **JoinOnly**需要系統管理員使用者可以將電腦加入網域之前，重設電腦帳戶。<br />-   **完整**可完整存取權提供給使用者，其中包含將電腦加入網域的權限。|
-|[/JoinDomain:{Yes &#124; No}]|指定在電腦應加入網域成為這個電腦帳戶在作業系統安裝期間。 預設值是**是**。|
-|[/ReferralServer:<Server name>]|指定要連線來使用簡單式檔案傳輸通訊協定 (tftp) 下載網路開機程式和開機映像的伺服器名稱。|
-|[/BootProgram:<Relative path>]|指定應該會收到這台電腦的網路開機程式從 remoteInstall 資料夾的相對路徑。 例如： **boot\x86\pxeboot.com**。|
-|[/WdsClientUnattend:<Relative path>]|指定自動安裝檔案，用來自動化 Windows 部署服務用戶端從 remoteInstall 資料夾的相對路徑。|
-|[/BootImagepath:<Relative path>]|指定應該會收到這台電腦的開機映像從 remoteInstall 資料夾的相對路徑。|
-## <a name="BKMK_examples"></a>範例
-若要核准 requestid 為 12 個電腦，請輸入：
+|[/Server： <Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|/RequestId： {Request ID &#124; ALL}|指定指派給擱置電腦的要求識別碼。 指定 [**全部**] 以核准所有擱置中的電腦。|
+|[/MachineName： <Device name>]|指定要新增之電腦的名稱。 核准所有電腦時，您無法使用此選項。|
+|[/OU： <DN of OU>]|指定應該在其中建立電腦帳戶物件的組織單位（OU）的辨別名稱。 例如: **OU = MyOU，CN = Test，dc = Domain，DC = com**。 預設位置是預設電腦的容器。|
+|[/User： < Domain\User &#124; User@Domain >]|設定電腦帳戶物件的許可權，將所需的許可權指派給指定的使用者。|
+|[/JoinRights： {JoinOnly &#124; Full}]|指定要指派給指定使用者的許可權類型。<br /><br />-   **JoinOnly**需要系統管理員先重設電腦帳戶，使用者才能將電腦加入網域。<br />-   **Full**提供使用者的完整存取權，包括將電腦加入網域的許可權。|
+|[/JoinDomain： {Yes &#124; No}]|指定是否應該在作業系統安裝期間，將電腦加入網域做為此電腦帳戶。 預設值為 **[是]** 。|
+|[/ReferralServer： <Server name>]|指定要連接的伺服器名稱，以使用簡單的檔案傳輸通訊協定（tftp）下載網路開機程式和開機映射。|
+|[/BootProgram： <Relative path>]|指定從 remoteInstall 資料夾到這部電腦應接收之網路開機程式的相對路徑。 例如： **boot\x86\pxeboot.com**。|
+|[/WdsClientUnattend： <Relative path>]|指定從 remoteInstall 資料夾到自動執行 Windows 部署服務用戶端的自動安裝檔案的相對路徑。|
+|[/BootImagepath： <Relative path>]|指定從 remoteInstall 資料夾到這部電腦應接收之開機映射的相對路徑。|
+## <a name="BKMK_examples"></a>典型
+若要核准 RequestId 為12的電腦，請輸入：
 ```
 wdsutil /Approve-AutoaddDevices /RequestId:12
 ```
-若要核准 requestid 為 20 個電腦，並部署映像，使用指定的設定，請輸入：
+若要核准 RequestID 為20的電腦，並使用指定的設定來部署映射，請輸入：
 ```
 wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:"OU=Test,CN=company,DC=Domain,DC=Com" /User:Domain\User1 
 /JoinRights:Full /ReferralServer:MyWDSServer /BootProgram:boot\x86\pxeboot.n12 /WdsClientUnattend:WDSClientUnattend\Unattend.xml /BootImagepath:boot\x86\images\boot.wim
 ```
-若要核准所有擱置電腦，請輸入：
+若要核准所有擱置中的電腦，請輸入：
 ```
 wdsutil /verbose /Approve-AutoaddDevices /RequestId:ALL
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[使用 delete AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)
-[使用 get AutoaddDevices 命令](using-the-get-autoadddevices-command.md)
- [使用拒絕 AutoaddDevices 命令](using-the-reject-autoadddevices-command.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+ 使用[AutoaddDevices 命令](using-the-get-autoadddevices-command.md)的[AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)，
+ 使用[AutoaddDevices 命令](using-the-reject-autoadddevices-command.md)，
+

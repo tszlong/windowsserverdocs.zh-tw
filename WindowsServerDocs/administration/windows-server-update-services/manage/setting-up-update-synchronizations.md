@@ -1,8 +1,8 @@
 ---
 title: 更新同步處理設定
-description: Windows Server Update Service (WSUS) 主題-如何安裝和設定更新同步處理作業
+description: Windows Server Update Service （WSUS）主題-如何設定和設定更新同步處理
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -13,110 +13,110 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fdfaaf1af2b74fe15530095700005a422b64986
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: 4559016388f9b0d765c8e4d76f76fa7ef0a7f0f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719632"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361604"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新同步處理設定
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-同步處理期間，WSUS 伺服器，請從更新來源下載的更新 （更新中繼資料和檔案）。 它也會下載新的產品分類和類別，如果有的話。 當您同步處理 WSUS 伺服器第一次時，它會下載所有更新您指定當您設定同步處理選項。 第一次同步處理之後，您的 WSUS 伺服器只更新從下載的更新來源，以及現有的更新和過期的中繼資料中的修訂更新。
+在同步處理期間，WSUS 伺服器會從更新來源下載更新（更新中繼資料和檔案）。 它也會下載新的產品分類和類別（如果有的話）。 當您的 WSUS 伺服器第一次進行同步處理時，它會下載您在設定同步處理選項時所指定的所有更新。 在第一次同步處理之後，您的 WSUS 伺服器只會下載更新來源的更新，以及現有更新的中繼資料中的修訂，以及更新的到期日。
 
-WSUS 伺服器下載更新的第一次可能需要很長的時間。 如果您要設定多部 WSUS 伺服器，您可以加速此程序到某個程度藉由下載一部 WSUS 伺服器上的所有更新，然後將更新複製到其他的 WSUS 伺服器的內容目錄。
+當 WSUS 伺服器第一次下載更新時，可能需要很長的時間。 如果您要設定多部 WSUS 伺服器，可以藉由下載一部 WSUS 伺服器上的所有更新，然後將更新複製到其他 WSUS 伺服器的內容目錄，來加速特定程度的程式。
 
-您可以複製從一部 WSUS 伺服器的內容目錄的內容到另一個。 當您執行的 WSUS post 安裝程序時，將指定的內容目錄的位置。 您可以使用 wsusutil.exe 工具從一部 WSUS 伺服器的更新中繼資料匯出至檔案。 然後您可以將該檔案匯其他 WSUS 伺服器。
+您可以將內容從一個 WSUS 伺服器的內容目錄複製到另一個。 當您執行 WSUS 安裝後程式時，會指定內容目錄的位置。 您可以使用 wsusutil 工具，將更新中繼資料從一個 WSUS 伺服器匯出到檔案。 接著，您可以將該檔案匯入到其他 WSUS 伺服器。
 
 ## <a name="setting-up-update-synchronizations"></a>更新同步處理設定
-**選項**頁面是在 WSUS 管理主控台中自訂如何您的 WSUS 伺服器同步處理更新的中央存取點。 您可以指定自動同步處理的更新，您的伺服器取得更新、 連線設定和同步處理排程。 您也可以使用 「 組態精靈 」，從**選項**頁面，即可設定，或隨時重新設定您的 WSUS 伺服器。
+[**選項**] 頁面是 Wsus 管理主控台中的集中存取點，可用於自訂 wsus 伺服器同步處理更新的方式。 您可以指定要自動同步處理的更新、伺服器取得更新的位置、連線設定，以及同步處理排程。 您也可以使用 [**選項**] 頁面中的 [設定向導]，隨時設定或重新設定 WSUS 伺服器。
 
-### <a name="synchronizing-update-by-product-and-classification"></a>同步處理更新的產品和分類
-WSUS 伺服器下載更新為基礎的產品或產品系列 （例如，Windows 或 Windows Server 2008 Datacenter edition） 和您指定的分類 （例如，重大更新或安全性更新）。 在第一次同步處理，WSUS 伺服器下載所有在您指定的類別中可用的更新。 在後續的同步處理，您 WSUS 伺服器下載最新的更新 （或更新您的 WSUS 伺服器上既有的變更） 的類別，指定。
+### <a name="synchronizing-update-by-product-and-classification"></a>依產品和分類同步處理更新
+WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 Windows Server 2008 Datacenter edition）和分類（例如，重大更新或安全性更新）來下載更新。 在第一次同步處理時，WSUS 伺服器會下載您指定的類別中所有可用的更新。 在後續的同步處理中，您的 WSUS 伺服器只會針對您所指定的類別，下載最新的更新（或 WSUS 伺服器上已有更新的變更）。
 
-您可以指定更新的產品和分類**選項**下方的頁面上**產品和分類**。 在階層中，依產品系列，列出產品。 如果您選取 [Windows] 時，自動會選取落於該產品階層每一個產品。 藉由選取 [父] 核取方塊，您選取所有項目，以及所有未來的版本。 選取子核取方塊，將不會選取父核取方塊。 預設設定為產品所有的 Windows 產品，而且分類的預設值是重大和安全性更新。
+您可以在 [**產品和分類**] 底下的 [**選項**] 頁面上指定更新產品和分類。 產品會列在階層中，並依產品系列分組。 如果您選取 [Windows]，則會自動選取落在該產品階層底下的每個產品。 選取 [父系] 核取方塊，即可選取其底下的所有專案，以及所有未來的版本。 選取子核取方塊並不會選取父核取方塊。 [產品] 的預設設定是 [所有 Windows 產品]，而 [分類] 的預設設定為 [重大] 和 [安全性更新]。
 
-如果在複寫模式中執行的 WSUS 伺服器，您將無法執行這項工作。 如需複寫模式的詳細資訊，請參閱[執行的 WSUS 複本模式](running-wsus-replica-mode.md)，和[步驟 1:準備部署 WSUS](../plan/plan-your-wsus-deployment.md)。
+如果 WSUS 伺服器是在「複本」模式下執行，您將無法執行這項工作。 如需有關複本模式的詳細資訊，請參閱執行[WSUS 複本模式](running-wsus-replica-mode.md)和 [Step 1：準備 WSUS 部署 @ no__t-0。
 
-##### <a name="to-specify-update-products-and-classifications-for-synchronization"></a>若要指定更新產品和分類同步處理
+##### <a name="to-specify-update-products-and-classifications-for-synchronization"></a>若要指定同步處理的更新產品和分類
 
-1.  在 WSUS 管理主控台中，按一下**選項**節點。
+1.  在 WSUS 管理主控台中，按一下 [**選項**] 節點。
 
-2.  按一下 [**產品和分類**，然後按一下**產品**] 索引標籤。
+2.  按一下 [**產品和分類**]，然後按一下 [**產品**] 索引標籤。
 
-3.  選取的產品或產品系列，您想要使用 WSUS，更新，然後按一下核取方塊**確定**。
+3.  選取您想要使用 WSUS 更新之產品或產品系列的核取方塊，然後按一下 **[確定]** 。
 
-4.  在 **分類**索引標籤上，選取您想要同步處理，然後按一下您的 WSUS 伺服器的更新分類的核取方塊**確定**。
+4.  在 [**分類**] 索引標籤上，選取您想要讓 WSUS 伺服器同步處理之更新分類的核取方塊，然後按一下 **[確定]** 。
 
 > [!NOTE]
-> 您可以移除產品或分類相同的方式。 您的 WSUS 伺服器會停止同步處理新的更新，您已經清除的產品。 不過，您在清除之前同步處理這些產品的更新會保留在您的 WSUS 伺服器，而且將會列出為可用。
+> 您可以用相同的方式移除產品或分類。 您的 WSUS 伺服器會停止同步處理您已清除之產品的新更新。 不過，在您清除這些產品之前已同步處理的更新將會保留在您的 WSUS 伺服器上，並且會列為 [可用]。
 > 
-> 若要移除這些產品，拒絕更新，如中所述[更新作業](updates-operations.md)，然後使用[伺服器清理精靈](the-server-cleanup-wizard.md)將它們移除。
+> 若要移除這些產品，請拒絕更新（如[更新作業](updates-operations.md)中所述），然後使用[[伺服器清理嚮導]](the-server-cleanup-wizard.md)將其移除。
 
-### <a name="synchronizing-updates-by-language"></a>同步處理語言的更新
-您的 WSUS 伺服器下載更新，根據您指定的語言。 您可以同步處理中的所有可供使用、 語言的更新，或者您可以指定語言的子集。 如果您有 WSUS 伺服器階層，而且您需要以不同的語言下載更新，請確定您已指定所有必要的語言與上游伺服器上。 下游伺服器上，您可以指定您的上游伺服器所指定的語言的子集。
+### <a name="synchronizing-updates-by-language"></a>依語言同步處理更新
+您的 WSUS 伺服器會根據您指定的語言來下載更新。 您可以在所有可用的語言中同步處理更新，也可以指定語言的子集。 如果您有 WSUS 伺服器階層，而且需要下載不同語言的更新，請確定您已在上游伺服器上指定所有必要的語言。 在下游伺服器上，您可以指定在上游伺服器上指定的語言子集。
 
-### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>同步處理從 Microsoft Update 類別目錄更新
-如需有關同步處理從 Microsoft Update 類別目錄站台更新的詳細資訊，請參閱：[WSUS 和類別目錄站台](wsus-and-the-catalog-site.md)。
+### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>從 Microsoft Update 類別目錄同步處理更新
+如需有關從 Microsoft Update 目錄網站同步處理更新的詳細資訊，請參閱：[WSUS 和類別目錄網站](wsus-and-the-catalog-site.md)。
 
-## <a name="configuring-proxy-server-settings"></a>設定 Proxy 伺服器設定
-您可以設定您要使用 proxy 伺服器與上游伺服器或 Microsoft Update 的同步處理期間的 WSUS 伺服器。 只有在您的 WSUS 伺服器會執行同步處理時，會套用此設定。 根據預設您的 WSUS 伺服器會嘗試直接連線到上游伺服器或 Microsoft Update。
+## <a name="configuring-proxy-server-settings"></a>進行 Proxy 伺服器設定
+您可以在與上游伺服器或 Microsoft Update 同步處理期間，將 WSUS 伺服器設定為使用 proxy 伺服器。 只有當您的 WSUS 伺服器執行同步處理時，才會套用此設定。 根據預設，您的 WSUS 伺服器會嘗試直接連接到上游伺服器或 Microsoft Update。
 
-#### <a name="to-specify-a-proxy-server-for-synchronization"></a>若要指定 proxy 伺服器進行同步處理
+#### <a name="to-specify-a-proxy-server-for-synchronization"></a>若要指定同步處理的 proxy 伺服器
 
-1.  在 WSUS 管理主控台中，按一下**選項**，然後按一下**更新來源和 Proxy 伺服器**。
+1.  在 WSUS 管理主控台中，按一下 [**選項**]，然後按一下 [**更新來源和 Proxy 伺服器**]。
 
-2.  在  **Proxy 伺服器**索引標籤上，選取**同步處理時使用 proxy 伺服器**核取方塊，然後輸入伺服器名稱和連接埠號碼的 proxy 伺服器。
-
-    > [!NOTE]
-    > 將 WSUS 設定使用 proxy 伺服器設定為相同連接埠號碼使用。
-
-    -   如果您想要連接到特定的使用者認證的 proxy 伺服器，請選取**使用使用者認證來連線到 proxy 伺服器**核取方塊，，然後輸入對應的方塊中的 使用者名稱、 網域和使用者的密碼.
-
-    -   如果您想要為連線到 proxy 伺服器，選取的使用者啟用基本驗證**允許基本驗證 （密碼會以純文字傳送）** 核取方塊。
-
-3.  按一下 [確定]  。
+2.  在 [ **Proxy 伺服器**] 索引標籤上，選取 [**同步處理時使用 Proxy 伺服器**] 核取方塊，然後輸入 Proxy 伺服器的伺服器名稱和埠號碼。
 
     > [!NOTE]
-    > 因為 WSUS 會初始化所有網路流量，但沒有需要直接連線到 Microsoft update 的 WSUS 伺服器上設定 Windows 防火牆。
+    > 使用 proxy 伺服器設定使用的相同埠號碼來設定 WSUS。
 
-## <a name="configuring-the-update-source"></a>設定更新來源
-更新來源是從中您的 WSUS 伺服器取得其更新的位置，並更新中繼資料。 您可以指定更新來源應 Microsoft Update 或另一部 WSUS 伺服器 （做為更新來源是上游伺服器，而且您的伺服器是下游伺服器的 WSUS 伺服器）。
+    -   如果您想要使用特定使用者認證連接到 proxy 伺服器，請選取 [**使用使用者認證連線到 proxy 伺服器]** 核取方塊，然後在對應的方塊中輸入使用者的使用者名稱、網域和密碼。
 
-自訂您的 WSUS 伺服器與更新來源的同步處理的選項包括：
+    -   如果您想要為連接到 proxy 伺服器的使用者啟用基本驗證，請選取 [**允許基本驗證（密碼會以純文字傳送）** ] 核取方塊。
 
--   您可以指定自訂連接埠進行同步處理。 如需設定通訊埠的詳細資訊，請參閱[步驟 3:將 WSUS 設定](../deploy/2-configure-wsus.md)WSUS 部署指南中。
+3.  按一下 [確定]。
 
--   您可以使用安全通訊端層 (SSL)，以安全的同步處理的 WSUS 伺服器之間的更新資訊。 如需使用 SSL 的詳細資訊，請參閱下一節 「 3.5。 安全使用 WSUS 的安全通訊端層通訊協定 」 的[步驟 3:將 WSUS 設定](../deploy/2-configure-wsus.md)WSUS 部署指南中。
+    > [!NOTE]
+    > 因為 WSUS 會起始其所有網路流量，所以不需要在直接連線到 Microsoft update 的 WSUS 伺服器上設定 Windows 防火牆。
+
+## <a name="configuring-the-update-source"></a>正在設定更新來源
+更新來源是您的 WSUS 伺服器取得更新和更新中繼資料的位置。 您可以指定更新來源應該是 Microsoft Update 或另一個 WSUS 伺服器（作為更新來源的 WSUS 伺服器是上游伺服器，而您的伺服器是下游伺服器）。
+
+自訂 WSUS 伺服器與更新來源進行同步處理的選項包括下列各項：
+
+-   您可以指定自訂埠進行同步處理。 如需設定埠的詳細資訊，請參閱 [Step 3：請在 WSUS 部署指南中設定 WSUS @ no__t-0。
+
+-   您可以使用安全通訊端層（SSL）來保護 WSUS 伺服器之間更新資訊的同步處理。 如需使用 SSL 的詳細資訊，請參閱「3.5」一節。 使用 @no__t 0Step 3 的安全通訊端層通訊協定來保護 WSUS：請在 WSUS 部署指南中設定 WSUS @ no__t-0。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手動或自動同步處理
-您可以手動同步處理您的 WSUS 伺服器，或指定為其自動同步處理的時機。
+您可以手動同步處理您的 WSUS 伺服器，或指定自動同步處理的時間。
 
-#### <a name="to-manually-synchronize-the-wsus-server"></a>若要手動同步處理 WSUS 伺服器
+#### <a name="to-manually-synchronize-the-wsus-server"></a>手動同步處理 WSUS 伺服器
 
-1.  在 WSUS 管理主控台中，按一下**選項**，然後按一下**同步處理排程**。
+1.  在 WSUS 管理主控台中，按一下 [**選項**]，然後按一下 **[同步處理排程**]。
 
-2.  按一下 **手動同步處理**，然後按一下**確定**。
+2.  按一下 [**手動同步處理**]，然後按一下 **[確定]** 。
 
-#### <a name="to-set-up-an-automatic-synchronization-schedule"></a>若要設定自動同步處理排程
+#### <a name="to-set-up-an-automatic-synchronization-schedule"></a>設定自動同步處理排程
 
-1.  在 WSUS 管理主控台中，按一下**選項**，然後按一下**同步處理排程**。
+1.  在 WSUS 管理主控台中，按一下 [**選項**]，然後按一下 **[同步處理排程**]。
 
-2.  按一下 **自動同步處理**。
+2.  按一下 [**自動同步處理**]。
 
-3.  針對**首次同步處理**，選取您想要啟動每一天同步處理的時間。
+3.  在 [**第一次同步**處理] 中，選取您每天要開始同步處理的時間。
 
-4.  針對**每天**，選取您想要每一天同步處理的數目。 例如，如果您想同步處理 4 次一天開始，在上午 3:00，然後同步處理會發生在上午 3:00、 上午 9:00，下午 3:00 和下午 9:00 每一天。 （請注意隨機的時間位移會新增至排程的同步處理時間，以分開的伺服器連線至 Microsoft Update）。
+4.  針對 **[每天同步處理]** ，選取您想要每天進行的同步處理次數。 例如，如果您一天從上午3:00 開始進行四次同步處理，則同步處理將會發生在上午3:00、9:00 A.M.、下午3:00 和下午9:00。 每天。 （請注意，隨機時間位移將會加入到排定的同步處理時間，以便將伺服器連接空間以 Microsoft Update。）
 
-5.  按一下 [確定]  。
+5.  按一下 [確定]。
 
-#### <a name="to-synchronize-your-wsus-server-immediately"></a>若要立即同步處理您的 WSUS 伺服器
+#### <a name="to-synchronize-your-wsus-server-immediately"></a>立即同步處理您的 WSUS 伺服器
 
-1.  在 WSUS 管理主控台中，選取最上層的伺服器節點。
+1.  在 WSUS 管理主控台中，選取最上層伺服器節點。
 
-2.  在 **概觀**窗格下方**同步處理狀態**，按一下**立即同步處理**。
+2.  在 [**總覽**] 窗格的 [**同步處理狀態**] 底下，按一下 [**立即同步處理**]。
 
 > [!NOTE]
-> 下游伺服器會起始同步處理。
+> 同步處理是由下游伺服器起始。

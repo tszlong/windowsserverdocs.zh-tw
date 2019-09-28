@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bd9c47c0f786fa8c7814519b26d33daaf01080a3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0a1543f2c935c2ef76ea014567b18bfc778c7401
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869394"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407381"
 ---
 # <a name="the-role-of-attribute-stores"></a>屬性存放區的角色
 Active Directory 同盟服務使用「屬性存放區」一詞來參照組織用來儲存其使用者帳戶及其相關屬性值的目錄或資料庫。 在身分識別提供者組織中設定之後，AD FS 從存放區中抓取這些屬性值，並根據該資訊建立宣告，讓信賴憑證者組織中裝載的 Web 應用程式或服務可以適當地進行當同盟使用者\(的帳戶儲存在身分識別提供者組織\)中的使用者嘗試存取應用程式或服務時，就會進行授權決策。  

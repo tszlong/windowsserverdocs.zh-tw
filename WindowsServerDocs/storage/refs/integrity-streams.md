@@ -6,18 +6,18 @@ ms.author: jgerend
 manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 11f0a696fb843f5cd8b4a7ff3318c28d6c1adeb8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0e41d7ae577bf7e9227ff0c02689d916f1008a3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871339"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403041"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 完整性資料流
->適用於：Windows Server 2019、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012，Windows Server （半年通道），Windows 10
+>適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server （半年通道）、Windows 10
 
 完整性資料流是 ReFS 的選用功能，可使用總和檢查碼驗證和維護資料的完整性。 雖然 ReFS 一律會在中繼資料上使用總和檢查碼，但 ReFS 預設不會在檔案資料上產生或驗證總和檢查碼。 完整性資料流這項功能可讓使用者針對檔案資料使用總和檢查碼。 啟用完整性資料流時，ReFS 可以明確判斷資料為有效或損毀。 此外，ReFS 與儲存空間可共同自動修正損毀的中繼資料及資料。
 
@@ -27,7 +27,7 @@ ms.locfileid: "59871339"
 
 一旦啟用完整性資料流，ReFS 將為該檔案中繼資料夾中的特定檔案建立和維護總和檢查碼。 此總和檢查碼允許 ReFS 在存取之前先驗證該資料的完整性。 在傳回任何啟用完整性資料流的資料之前，ReFS 會先計算它的總和檢查碼：
 
-![計算總和檢查碼檔案資料](media/compute-checksum.gif)
+![檔案資料的計算總和檢查碼](media/compute-checksum.gif)
 
 然後，此總和檢查碼將會與檔案中繼資料的總和檢查碼進行比對。 如果總和檢查碼相符，則會將資料標記為有效並傳回至使用者。 如果總和檢查碼不相符，則資料已損毀。 該磁碟區的復原功能將決定 ReFS 如何回應損毀：
 
@@ -38,7 +38,7 @@ ms.locfileid: "59871339"
 
 ReFS 將會在系統事件記錄檔中記錄所有損毀，而該記錄檔會反映是否已修正損毀。 
 
-![更正寫入還原資料的完整性](media/corrective-write.gif)
+![更正寫入還原資料完整性](media/corrective-write.gif)
 
 ## <a name="performance"></a>效能 
 
@@ -95,6 +95,6 @@ PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 
 ## <a name="see-also"></a>另請參閱
 
--   [ReFS 概觀](refs-overview.md)
+-   [ReFS 總覽](refs-overview.md)
 -   [ReFS 區塊複製](block-cloning.md)
--   [儲存空間直接存取概觀](../storage-spaces/storage-spaces-direct-overview.md)
+-   [儲存空間直接存取總覽](../storage-spaces/storage-spaces-direct-overview.md)

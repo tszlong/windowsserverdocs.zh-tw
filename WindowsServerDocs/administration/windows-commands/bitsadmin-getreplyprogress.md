@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getreplyprogress
-description: 適用於 Windows 命令主題**bitsadmin getreplyprogress** -擷取的大小和伺服器回應的進度。
+description: '**Bitsadmin getreplyprogress**的 Windows 命令主題-抓取伺服器回復的大小和進度。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aafecfb5873392ef86e6f7cceb139091b15e3b99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c791fe98271b497e5ecf48338ab3bbb0cc50de98
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852929"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381236"
 ---
 # <a name="bitsadmin-getreplyprogress"></a>bitsadmin getreplyprogress
 
-擷取的大小和伺服器回應的進度。
+抓取伺服器回復的大小和進度。
 
-**1.2 及更早版本的位元**: 未支援。
+**BITS 1.2 和更早版本**： 未支援。
 
 ## <a name="syntax"></a>語法
 
@@ -40,11 +40,11 @@ bitsadmin /GetReplyProgress <Job>
 
 ## <a name="remarks"></a>備註
 
-僅適用於上傳-回覆作業。
+僅適用于上傳-回復作業。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的回覆進度*myDownloadJob*。
+下列範例會抓取名為*myDownloadJob*之作業的回復進度。
 ```
 C:\>bitsadmin /GetReplyProgress myDownloadJob
 ```

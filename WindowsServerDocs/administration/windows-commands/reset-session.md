@@ -1,8 +1,8 @@
 ---
 title: reset session
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5a0991c76ba890bb94b0dcf258df6207ed228e72
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 67a4e910ba87209c9700f2242f7859a6cc9e725f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441791"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384534"
 ---
 # <a name="reset-session"></a>reset session
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-可讓您重設 （刪除） 的遠端桌面工作階段主機 (rd 工作階段主機) 伺服器上的工作階段。  
+可讓您重設（刪除）遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話。  
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。  
 
 > [!NOTE]  
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要了解最新版本的新功能，請參閱[Windows Server 2012 中的遠端桌面服務在何種新的 s](https://technet.microsoft.com/library/hh831527)在 Windows Server TechNet 文件庫中。  
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。  
 
 ## <a name="syntax"></a>語法  
 ```  
@@ -39,28 +39,28 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 
 |參數|描述|  
 |-------|--------|  
-|\<SessionName>|指定您想要重設工作階段的名稱。 若要判斷工作階段的名稱，請使用**查詢工作階段**命令。|  
-|\<SessionID>|指定要重設工作階段的識別碼。|  
-|/server:\<伺服器名稱 >|指定包含您想要重設工作階段的終端機伺服器。 否則，會使用目前的 rd 工作階段主機伺服器。|  
-|/v|顯示已執行之動作的相關資訊。|  
+|\<SessionName >|指定您想要重設的會話名稱。 若要判斷會話的名稱，請使用**查詢會話**命令。|  
+|\<SessionID >|指定要重設之會話的識別碼。|  
+|/server： \<ServerName >|指定包含您要重設之會話的終端機伺服器。 否則，會使用目前的 rd 工作階段主機伺服器。|  
+|/v|顯示正在執行之動作的相關資訊。|  
 |/?|在命令提示字元顯示說明。|  
 
 ## <a name="remarks"></a>備註  
--   您一律可以重設自己的工作階段，但您必須重設其他使用者的工作階段的完整控制存取權限。  
--   請注意，重設使用者工作階段，如果沒有警告使用者可能會導致資料遺失的工作階段。  
--   您應該重設工作階段只當功能有問題或似乎已停止回應。  
--   **/Server**只有當您使用時，才是必要參數**重設工作階段**從遠端伺服器。  
+-   您一律可以重設自己的會話，但您必須擁有 [完全控制] 存取權限，才能重設其他使用者的會話。  
+-   請注意，在不發出警告的情況下重設使用者的會話可能會導致會話遺失資料。  
+-   只有當會話發生故障或似乎已停止回應時，您才應該重設會話。  
+-   只有當您從遠端伺服器使用 [**重設會話**] 時，才需要 **/server**參數。  
 
-## <a name="BKMK_examples"></a>範例  
-- 若要重設指定 rdp tcp #6 的工作階段，請輸入：  
+## <a name="BKMK_examples"></a>典型  
+- 若要重設指定的 rdp-tcp # 6 會話，請輸入：  
   ```  
   reset session rdp-tcp#6  
   ```  
-- 若要重設的工作階段，會使用工作階段 ID 3，請輸入：  
+- 若要重設使用會話識別碼3的會話，請輸入：  
   ```  
   reset session 3  
   ```  
 
 #### <a name="additional-references"></a>其他參考資料  
 [命令列語法關鍵](command-line-syntax-key.md)  
-[遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)  
+[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)  

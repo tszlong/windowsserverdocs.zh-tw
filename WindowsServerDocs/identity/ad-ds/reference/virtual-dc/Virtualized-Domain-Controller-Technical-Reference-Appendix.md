@@ -7,44 +7,44 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9e3a5cc2c71455bb040f1311bdbfed1ac7e213fb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e1018d5bbff5922df5a696e5c4fad12dc9f6ec3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832229"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408571"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>虛擬網域控制站技術參考附錄
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題涵蓋：  
   
 -   [術語](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_Terms)  
   
--   [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
+-   [Fixvdcpermissions.ps1. ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
   
-## <a name="BKMK_Terms"></a>術語  
+## <a name="BKMK_Terms"></a>庫  
   
--   **快照集**-某個特定時間點上的虛擬機器的狀態。 它是相依鏈結的上一個快照，在硬體上，以及虛擬化平台。  
+-   **快照**-虛擬機器在特定時間點的狀態。 它相依于先前拍攝的快照集、硬體上和虛擬化平臺上的鏈。  
   
--   **複製**-完成和不同的虛擬機器的複本。 它會相依於虛擬硬體 (hypervisor)。  
+-   **複製**-完整且獨立的虛擬機器複本。 它相依于虛擬硬體（管理程式）。  
   
--   **完整複製**-完整複製是不共用與父代的虛擬機器的任何資源，複製作業之後的虛擬機器的獨立複本。 進行中作業的完整複本是完全不同，從父代的虛擬機器。  
+-   **完整複製**-完整複製是一種獨立的虛擬機器複本，在複製操作之後，與父虛擬機器共用沒有資源。 完整複製的持續操作與父虛擬機器完全分開。  
   
--   **差異磁碟**-進行中的方式共用與父代的虛擬機器的虛擬磁碟的虛擬機器的複本。 這通常可以節省磁碟空間，並可讓多部虛擬機器使用相同的軟體安裝。  
+-   **差異磁片**-一種虛擬機器複本，它會以持續的方式與父系虛擬機器共用虛擬磁片。 這通常會節省磁碟空間，並允許多部虛擬機器使用相同的軟體安裝。  
   
--   **VM 複製**-檔案系統複製的所有相關檔案和資料夾的虛擬機器。  
+-   **VM 複製**-虛擬機器所有相關檔案和資料夾的檔案系統複本。  
   
--   **VHD 檔案複製**-虛擬機器之 VHD 的複本  
+-   **Vhd 檔案複製**-虛擬機器的 vhd 複本  
   
--   **VM 世代識別碼**-由 hypervisor 所提供給虛擬機器的 128 位元整數。 此 ID 是儲存在記憶體中，並每次套用快照集時，重設。 設計使用 hypervisor 無從驗證機制，呈現在虛擬機器中的 VM 世代識別碼。 HYPER-V 實作公開 ACPI 表格的虛擬機器中的識別碼。  
+-   **VM 世代識別碼**-由管理者提供給虛擬機器的128位整數。 此識別碼會儲存在記憶體中，並在每次套用快照集時重設。 此設計會使用不受虛擬程式管理的機制，在虛擬機器中呈現 VM 世代識別碼。 Hyper-v 執行會公開虛擬機器的 ACPI 資料表中的識別碼。  
   
--   **匯入/匯出**-HYPER-V 功能，可讓使用者儲存整部虛擬機器 （VM 檔案，VHD 和機器組態）。 它接著可讓使用者重新開啟相同的電腦相同的 VM （還原），使機器使用的一組檔案為相同的 VM （移動） 或 （複製） 的新 VM 的不同電腦上  
+-   匯**入/匯出**-hyper-v 功能，可讓使用者儲存整個虛擬機器（VM 檔案、VHD 和電腦設定）。 然後，它可讓使用者使用該檔案集，將機器重新放在與相同 VM （還原）相同的電腦上、在不同的電腦上作為相同的 vm （移動），或新的 VM （複製）  
   
-## <a name="BKMK_FixPDCPerms"></a>FixVDCPermissions.ps1  
+## <a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1. ps1  
   
 ```  
 # Unsigned script, requires use of set-executionpolicy remotesigned -force  

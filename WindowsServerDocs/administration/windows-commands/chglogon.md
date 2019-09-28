@@ -1,8 +1,8 @@
 ---
 title: chglogon
-description: '適用於 Windows 命令主題 '
+description: '的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,23 +13,22 @@ ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aca42e39a520e6e801bb8e7fa8cb2605f3028566
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 52cc465bb220c0a30678f75dcf0a37061fd80d56
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434440"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379515"
 ---
 # <a name="chglogon"></a>chglogon
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-啟用或停用從 rd 工作階段主機伺服器上的用戶端工作階段的登入，或顯示目前的登入狀態。
+在 rd 工作階段主機伺服器上啟用或停用來自用戶端會話的登入，或顯示目前的登入狀態。
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要了解最新版本的新功能，請參閱[Windows Server 2012 中的遠端桌面服務在何種新的 s](https://technet.microsoft.com/library/hh831527)在 Windows Server TechNet 文件庫中。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
 > ## <a name="remarks"></a>備註
-> 此命令等同於**變更登入**命令。
-> #### <a name="additional-references"></a>其他參考資料
-> [變更登入](change-logon.md)
-> [命令列語法重點](command-line-syntax-key.md)
-> [遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)
+> 此命令與 [**變更登**入] 命令相同。
+> #### <a name="additional-references"></a>其他參考
+> [變更登](change-logon.md)入 
+> [命令列語法索引鍵](command-line-syntax-key.md)@no__t-[3 &#40;遠端桌面服務終端&#41;機服務命令參考](remote-desktop-services-terminal-services-command-reference.md)

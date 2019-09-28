@@ -1,7 +1,7 @@
 ---
 title: 混合式 NIC 設定（datacenter）中的交集式網路介面卡
 description: 在本主題中，我們將提供指示，說明如何使用交換器內嵌小組（SET），在組合的 NIC 設定中部署聚合式 NIC。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/17/2018
-ms.openlocfilehash: 8229b72d69968d3690ece87d5116b215bdf78a08
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e4c305a7c8c4c4618b0df1e1b2a646356d8f821f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869866"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356116"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>混合式 NIC 設定（datacenter）中的交集式網路介面卡
 
@@ -405,7 +405,7 @@ ms.locfileid: "70869866"
    _**更**_
 
 
-   | Priority | Enabled | PolicySet | IfIndex | IfAlias |
+   | Priority | Enabled | PolicySet | ifIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  偽  |  全域   | &nbsp;  | &nbsp;  |
    |    1     |  偽  |  全域   | &nbsp;  | &nbsp;  |
@@ -442,7 +442,7 @@ ms.locfileid: "70869866"
    |      參數      |   硬體   |   目前    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     無     |     無     |
+   |     DcbxSupport     |     None     |     None     |
    | NumTCs （Max/ETS/PFC） |    8/8/8     |    8/8/8     |
 
    ---
@@ -486,7 +486,7 @@ ms.locfileid: "70869866"
    |      參數      |   硬體   |   目前    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     None     |     無     |
+   |     DcbxSupport     |     None     |     None     |
    | NumTCs （Max/ETS/PFC） |    8/8/8     |    8/8/8     |
 
    ---
@@ -524,7 +524,7 @@ ms.locfileid: "70869866"
    _**更**_  
 
 
-   | Name | 演算法 | 頻寬（%） | Priority | PolicySet | IfIndex | IfAlias |
+   | Name | 演算法 | 頻寬（%） | Priority | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      50      |    3     |  全域   | &nbsp;  | &nbsp;  |
 
@@ -539,7 +539,7 @@ ms.locfileid: "70869866"
    _**更**_  
 
 
-   |   Name    | 演算法 | 頻寬（%） | Priority | PolicySet | IfIndex | IfAlias |
+   |   Name    | 演算法 | 頻寬（%） | Priority | PolicySet | ifIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | 預設 |    ETS    |      50      | 0-2、4-7  |  全域   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      50      |    3     |  全域   | &nbsp;  | &nbsp;  |
@@ -558,7 +558,7 @@ ms.locfileid: "70869866"
    _**更**_
 
 
-   | Name | 演算法 | 頻寬（%） | Priority | PolicySet | IfIndex | IfAlias |
+   | Name | 演算法 | 頻寬（%） | Priority | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP1  |    ETS    |      10      |    1     |  全域   | &nbsp;  | &nbsp;  |
 
@@ -571,7 +571,7 @@ ms.locfileid: "70869866"
    _**更**_
 
 
-   | Name | 演算法 | 頻寬（%） | Priority | PolicySet | IfIndex | IfAlias |
+   | Name | 演算法 | 頻寬（%） | Priority | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP2  |    ETS    |      10      |    2     |  全域   | &nbsp;  | &nbsp;  |
 
@@ -586,7 +586,7 @@ ms.locfileid: "70869866"
     _**更**_
 
 
-    |   Name    | 演算法 | 頻寬（%） | Priority | PolicySet | IfIndex | IfAlias |
+    |   Name    | 演算法 | 頻寬（%） | Priority | PolicySet | ifIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
     | 預設 |    ETS    |      30      |  0、4-7   |  全域   | &nbsp;  | &nbsp;  |
     |    SMB    |    ETS    |      50      |    3     |  全域   | &nbsp;  | &nbsp;  |

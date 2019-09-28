@@ -1,31 +1,31 @@
 ---
-title: 改善的 SMB 直接傳輸的檔案伺服器的效能
-description: 說明 Windows Server 2012 R2、 Windows Server 2012 和 Windows Server 2016 中的 SMB 直接傳輸功能。
-ms.prod: windows-server-threshold
+title: 使用 SMB 直接傳輸改善檔案伺服器的效能
+description: 說明 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 中的 SMB 直接傳輸功能。
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed8fd5b4114fc9fd9c7dc278a98cea8cc67a8749
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41126aa0d054607449d57928c1777679e5087e73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826439"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394464"
 ---
 # <a name="smb-direct"></a>SMB 直接傳輸
 
->適用於：Windows Server 2012 R2 中，Windows Server 2012 中，Windows Server 2016
+>適用於：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
-Windows Server 2012 R2、 Windows Server 2012 和 Windows Server 2016 包含一項叫做 SMB 直接傳輸，可支援使用具備遠端直接記憶體存取 (RDMA) 功能的網路介面卡的功能。 具備 RDMA 功能的網路介面卡可以在使用非常少量 CPU 資源的情況下，以非常低的延遲全速運作。 對於像是 Hyper-V 或 Microsoft SQL Server 的工作負載，這讓遠端檔案伺服器能夠類似本機存放裝置。 SMB 直接傳輸包括：
+Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 包含一個稱為 SMB Direct 的功能，可支援使用具有遠端直接記憶體存取（RDMA）功能的網路介面卡。 具備 RDMA 功能的網路介面卡可以在使用非常少量 CPU 資源的情況下，以非常低的延遲全速運作。 對於像是 Hyper-V 或 Microsoft SQL Server 的工作負載，這讓遠端檔案伺服器能夠類似本機存放裝置。 SMB 直接傳輸包括：
 
 - 增加輸送量：利用高速網路的全部輸送量，其中網路介面卡會以線路速度協調大量資料的傳輸。
 - 低延遲：對網路要求提供非常快速的回應，因此讓遠端檔案存放裝置感覺好像是直接連接的區塊存放裝置一樣。
 - 低 CPU 使用率：透過網路傳輸資料時，使用較少的 CPU 週期，這會將較多的運算能力留給伺服器應用程式使用。
 
-SMB 直接傳輸是由自動設定 Windows Server 2012 R2 和 Windows Server 2012。
+SMB 直接傳輸是由 Windows Server 2012 R2 和 Windows Server 2012 自動設定。
 
 ## <a name="smb-multichannel-and-smb-direct"></a>SMB 多重通道和 SMB 直接傳輸
 
@@ -41,7 +41,7 @@ SMB 多重通道的功能是負責偵測網路介面卡的 RDMA 功能，以啟�
 
 SMB 直接傳輸具有下列需求：
 
-- 至少需要兩部執行 Windows Server 2012 R2 或 Windows Server 2012
+- 至少兩部執行 Windows Server 2012 R2 或 Windows Server 2012 的電腦
 - 一或多個具備 RDMA 功能的網路介面卡。
 
 ### <a name="considerations-when-using-smb-direct"></a>使用 SMB 直接傳輸時的注意事項
@@ -49,14 +49,14 @@ SMB 直接傳輸具有下列需求：
 - 您可以在容錯移轉叢集中使用 SMB 直接傳輸；不過，您必須確定用戶端存取使用的叢集網路適用 SMB 直接傳輸。 容錯移轉叢集支援使用多個網路搭配具備 RSS (接收端調整) 和 RDMA 功能的網路介面卡進行用戶端存取。
 - 您可以在 Hyper-V 管理作業系統上使用 SMB 直接傳輸來支援使用透過 SMB 的 Hyper-V，以及為使用 Hyper-V 儲存堆疊的虛擬機器提供存放裝置。 不過，系統並不會對 Hyper-V 用戶端直接顯示具備 RDMA 功能的網路介面卡 。 如果您將具備 RDMA 功能的網路介面卡連線到虛擬交換器，則來自交換器的虛擬網路介面卡將不具備 RDMA 功能。
 - 如果您停用 SMB 多重通道，則 SMB 直接傳輸也會一併停用。 由於 SMB 多重通道會偵測網路介面卡功能並判斷網路介面卡是否具備 RDMA 功能，因此，如果將 SMB 多重通道停用，用戶端便無法使用 SMB 直接傳輸。
-- SMB 直接傳輸不支援 Windows rt SMB 直接傳輸需要支援 rdma 的網路介面卡，這是僅適用於 Windows Server 2012 R2 和 Windows Server 2012。
-- 舊版的 Windows Server 不支援 SMB 直接傳輸。 它只能在 Windows Server 2012 R2 和 Windows Server 2012 上支援。
+- Windows RT 不支援 SMB 直接傳輸。 SMB 直接傳輸需要支援具備 RDMA 功能的網路介面卡，此介面卡僅適用于 Windows Server 2012 R2 和 Windows Server 2012。
+- 舊版的 Windows Server 不支援 SMB 直接傳輸。 只有在 Windows Server 2012 R2 和 Windows Server 2012 上才支援。
 
 ## <a name="enabling-and-disabling-smb-direct"></a>啟用和停用 SMB 直接傳輸
 
-SMB 直接傳輸是預設啟用 Windows Server 2012 R2 或 Windows Server 2012 安裝時。 如果 SMB 用戶端有識別出適當設定的話，會自動偵測及使用多個網路連線。
+安裝 Windows Server 2012 R2 或 Windows Server 2012 時，預設會啟用 SMB 直接傳輸。 如果 SMB 用戶端有識別出適當設定的話，會自動偵測及使用多個網路連線。
 
-### <a name="disable-smb-direct"></a>停用 SMB Direct
+### <a name="disable-smb-direct"></a>停用 SMB 直接傳輸
 
 一般而言，您不需要停用 SMB 直接傳輸，不過，您可以執行下列其中一個 Windows PowerShell 指令碼予以停用。
 
@@ -72,9 +72,9 @@ Disable-NetAdapterRdma <name>
 Set-NetOffloadGlobalSetting -NetworkDirect Disabled
 ```
 
-當您停用用戶端或伺服器的 RDMA 時，系統便無法使用它。 *Network Direct*是 Windows Server 2012 R2 和 Windows Server 2012 基本網路支援對 RDMA 介面的內部名稱。
+當您停用用戶端或伺服器的 RDMA 時，系統便無法使用它。 *Network Direct*是適用于 RDMA 介面的 windows Server 2012 R2 和 windows server 2012 基本網路支援的內部名稱。
 
-### <a name="re-enable-smb-direct"></a>重新啟用 SMB 直接存取
+### <a name="re-enable-smb-direct"></a>重新啟用 SMB 直接傳輸
 
 停用 RDMA 之後，您可以執行下列其中一個 Windows PowerShell 指令碼來重新予以啟用。
 
@@ -98,7 +98,7 @@ Set-NetOffloadGlobalSetting -NetworkDirect Enabled
 
 ### <a name="compare-a-file-copy-with-and-without-using-smb-direct"></a>比較使用和不使用 SMB 直接傳輸時的檔案複製
 
-以下是如何測量增加的 SMB 直接傳輸輸送量：
+以下說明如何測量 SMB 直接傳輸的增加輸送量：
 
 1. 設定 SMB 直接傳輸
 2. 測量使用 SMB 直接傳輸時執行大型檔案複製所花的時間。
@@ -123,6 +123,6 @@ Set-NetOffloadGlobalSetting -NetworkDirect Enabled
 
 ## <a name="more-information"></a>詳細資訊
 
-- [伺服器訊息區概觀](file-server-smb-overview.md)
-- [增加伺服器、 儲存體及網路可用性：案例概觀](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [部署透過 SMB 的 HYPER-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [伺服器訊息區總覽](file-server-smb-overview.md)
+- @no__t 0Increasing 伺服器、存放裝置及網路可用性：案例概觀](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [部署透過 SMB 的 Hyper-v](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

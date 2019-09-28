@@ -1,8 +1,8 @@
 ---
-title: 取消公開
-description: '適用於 Windows 命令主題 * * *- '
+title: diskshadow.exe 取消公開
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe9cb5dfd8ae6c71fdc72ddc1e8421229f98f5d0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e10126739ef82b060e271e9b804a77658b5ec82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837469"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392261"
 ---
-# <a name="unexpose"></a>取消公開
+# <a name="unexpose"></a>diskshadow.exe 取消公開
 
 
 
-Unexposes 的陰影複製，使用已公開**公開**命令。 陰影識別碼、 磁碟機代號、 共用或掛接點可以指定公開的陰影複製。
+unexposes 使用**公開**命令公開的陰影複製。 公開的陰影複製可以透過其陰影識別碼、磁碟機號、共用或掛接點來指定。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,18 +38,18 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 |參數|描述|
 |---------|-----------|
-|\<ShadowID >|Unexposes 指定陰影 ID 所指定的陰影複製|
-|\<磁碟機： >|Unexposes 與指定的磁碟機代號 （例如，為磁碟機 P） 相關聯的陰影複製。|
-|\<Share>|Unexposes 與指定的共用相關聯的陰影複製 (例如\\ \\ *MachineName*\)。|
-|\<MountPoint>|Unexposes 與指定的掛接點相關聯的陰影複製 (例如 C:\shadowcopy\)。|
+|\<ShadowID >|Unexposes 給定陰影識別碼所指定的陰影複製。|
+|\<Drive： >|Unexposes 與指定磁碟機號相關聯的陰影複製（例如，磁片磁碟機 P）。|
+|\<Share >|Unexposes 與指定共用相關聯的陰影複製（例如，\\ @ no__t-1*MachineName*\)。|
+|\<MountPoint >|Unexposes 與指定掛接點相關聯的陰影複製（例如，C:\shadowcopy @ no__t-0。|
 
 ## <a name="remarks"></a>備註
 
--   您可以使用現有的別名或環境變數的位置*ShadowID*。 使用**新增**不含參數，若要查看現有的別名。
+-   您可以使用現有的別名或環境變數來取代*ShadowID*。 請使用不含參數的**add**來查看現有的別名。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要取消公開的磁碟機 P 與相關聯的陰影複製，請輸入：
+若要 diskshadow.exe 取消公開與 Drive P 相關聯的陰影複製，請輸入：
 ```
 unexpose P:
 ```

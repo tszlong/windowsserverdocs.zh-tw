@@ -1,8 +1,8 @@
 ---
-title: ksetup:setrealm
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： setrealm
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa6b2a21904ec4dae1e60def5bd36647291b1af6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1bbe5c000b7e84066c19511639fe3d92d7e4b558
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877399"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374896"
 ---
-# <a name="ksetupsetrealm"></a>ksetup:setrealm
+# <a name="ksetupsetrealm"></a>ksetup： setrealm
 
 
 
@@ -36,17 +36,17 @@ ksetup /setrealm <DNSDomainName>
 
 |參數|描述|
 |---------|-----------|
-|\<DNSDomainName>|DNS 網域名稱可以是完整的網域名稱或簡單的網域名稱的格式。|
+|\<DNSDomainName >|DNS 功能變數名稱的格式可以是完整功能變數名稱或簡單功能變數名稱。|
 
 ## <a name="remarks"></a>備註
 
-DNS 網域名稱的參數應以大寫字母輸入。 否則，請**ksetup**命令會要求驗證，以繼續。
+DNS 功能變數名稱參數應以大寫字母輸入。 否則， **ksetup**命令會要求驗證繼續進行。
 
-不支援在網域控制站上設定 Kerberos 領域。 嘗試執行此作業會導致警告及命令失敗。
+不支援在網域控制站上設定 Kerberos 領域。 嘗試這麼做會導致警告和命令失敗。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-設定這部電腦在特定的網域名稱限制的非網域控制站的存取，只是為了 CONTOSO Kerberos 領域的領域：
+將此電腦的領域設定為特定的功能變數名稱，以限制只有 CONTOSO Kerberos 領域的非網域控制站存取：
 ```
 ksetup /setrealm CONTOSO
 ```

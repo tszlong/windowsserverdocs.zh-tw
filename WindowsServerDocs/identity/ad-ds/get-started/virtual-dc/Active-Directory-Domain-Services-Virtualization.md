@@ -7,28 +7,28 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b43b88699d9392156be5f9846e98c5c74490c8fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35b6d7277a1498f5b3bda5a3e45eb5337b1b81ca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881959"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390495"
 ---
 # <a name="active-directory-domain-services-virtualization"></a>Active Directory Domain Services 虛擬化
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 這個主題列出使用虛擬網域控制站時的可用資源。  
   
--   [Introduction to Active Directory 網域服務&#40;AD DS&#41;虛擬化&#40;技術等級 100&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
+-   [Active Directory Domain Services &#40;AD DS&#41;虛擬化&#40;層級100簡介&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
   
--   [虛擬化網域控制站技術參考&#40;技術等級 300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
+-   [虛擬網域控制站技術參考&#40;層級300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
   
--   [複製測試指導方針的應用程式廠商的虛擬的網域控制站](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
+-   [適用於應用程式廠商的虛擬網域控制站複製測試指導方針](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
   
--   [使用 HYPER-V 複本虛擬的網域控制站的支援](../../../ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)  
+-   [支援針對虛擬網域控制站使用 Hyper-V 複本](../../../ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)  
   
 
 

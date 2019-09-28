@@ -1,8 +1,8 @@
 ---
-title: bitsadmin 對等快取和說明
-description: 適用於 Windows 命令主題**bitsadmin 對等快取，並協助**-顯示的命令列使用方式**對等快取**參數。
+title: bitsadmin 對等與協助
+description: '**Bitsadmin 對等和**說明的 Windows 命令主題-顯示對**等切換參數**的命令列使用方式。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e1bb255da0b457ec41f62c93d87bed7575c049e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d01d6cc50552320d99e668a6fc7292a2275b9db
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881939"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381073"
 ---
-# <a name="bitsadmin-peercaching-and-help"></a>bitsadmin 對等快取和說明
+# <a name="bitsadmin-peercaching-and-help"></a>bitsadmin 對等與協助
 
 
 
-顯示的命令列使用方式**對等快取**參數。
+顯示對**等切換參數的命令**行使用方式。
 
 ## <a name="syntax"></a>語法
 
@@ -32,9 +32,9 @@ ms.locfileid: "59881939"
 Bitsadmin /PeerCaching /Help 
 ```
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列命令顯示的命令列說明**對等快取**參數。
+下列命令會**顯示對等切換參數**的命令列說明。
 ```
 Bitsadmin /PeerCaching /Help
 ```

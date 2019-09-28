@@ -2,19 +2,19 @@
 title: 儲存空間直接存取疑難排解
 description: 瞭解如何針對您的儲存空間直接存取部署進行疑難排解。
 keywords: 儲存空間
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: ''
 ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 30fdda5ada01510027100efce1e95f310f69c6a1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ace19b711445106956ae223f17afb6b4181d352d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865103"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365944"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>疑難排解儲存空間直接存取
 

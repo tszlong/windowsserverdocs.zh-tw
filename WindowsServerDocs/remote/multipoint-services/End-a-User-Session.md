@@ -2,7 +2,7 @@
 title: 結束使用者工作階段
 description: 瞭解何時及如何在 MultiPoint 服務中手動結束使用者的會話
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.assetid: 51b1076b-cce5-45a7-8cf2-ecc6aa390d14
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 2b290dbe14129a2d5fe297c5c95479e764dc55de
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 73a04399c244adf1f9d8b6ec2c41dc0593e5ddd9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871704"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395433"
 ---
 # <a name="end-a-user-session"></a>結束使用者工作階段
 當您必須從 MultiPoint 服務系統登出使用者，使桌面回到預設設定時，應該結束使用者的會話。 使用者會收到連接即將結束的警告。 當您想要進行下列動作時，應該結束使用者的連線：  

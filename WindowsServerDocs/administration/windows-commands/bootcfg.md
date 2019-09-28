@@ -1,8 +1,8 @@
 ---
 title: bootcfg
-description: 適用於 Windows 命令主題**bootcfg** -設定、 查詢，或變更 Boot.ini 檔案設定。
+description: 適用于**bootcfg**的 Windows 命令主題-設定、查詢或變更 boot.ini 檔案設定。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79a1c0e22a3b162ba9492c80d114b2d5b943c744
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d66296327a2221093e5434f69e15e7c55df1f6b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867019"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379849"
 ---
 # <a name="bootcfg"></a>bootcfg
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設定、查詢或變更 Boot.ini 檔案設定。  
 ## <a name="syntax"></a>語法  
@@ -32,14 +32,14 @@ bootcfg <parameter> [arguments...]
 ## <a name="parameters"></a>參數  
 |參數|描述|  
 |-------|--------|  
-|[bootcfg addsw](bootcfg-addsw.md)|新增作業系統載入選項，可針對指定的作業系統項目。|  
-|[bootcfg copy](bootcfg-copy.md)|會建立一份現有的開機項目，您可以新增命令列選項。|  
-|[bootcfg dbg1394](bootcfg-dbg1394.md)|設定 1394年連接埠的偵錯指定的作業系統項目。|  
-|[bootcfg debug](bootcfg-debug.md)|加入或變更偵錯設定為指定的作業系統項目。|  
-|[bootcfg default](bootcfg-default.md)|指定將指定為預設的作業系統項目。|  
-|[bootcfg delete](bootcfg-delete.md)|刪除中的作業系統項目 **[operating systems]** Boot.ini 檔案區段。|  
-|[bootcfg ems](bootcfg-ems.md)|可讓使用者加入或變更遠端電腦的 Emergency Management Services 主控台重新導向的設定。|  
-|[bootcfg 查詢](bootcfg-query.md)|查詢，並顯示 [開機載入器] 並 **[operating systems]** 區段 Boot.ini 中的項目。|  
-|[bootcfg raw](bootcfg-raw.md)|新增作業系統載入選項，可指定為字串中的作業系統項目 **[operating systems]** Boot.ini 檔案區段。|  
-|[bootcfg rmsw](bootcfg-rmsw.md)|移除作業系統載入選項，針對指定的作業系統項目。|  
-|[bootcfg timeout](bootcfg-timeout.md)|變更作業系統逾時值。|  
+|[bootcfg addsw](bootcfg-addsw.md)|為指定的作業系統專案新增作業系統載入選項。|  
+|[bootcfg copy](bootcfg-copy.md)|建立現有開機專案的複本，您可以在其中新增命令列選項。|  
+|[bootcfg dbg1394](bootcfg-dbg1394.md)|為指定的作業系統專案設定1394埠的偵錯工具。|  
+|[bootcfg debug](bootcfg-debug.md)|加入或變更指定之作業系統專案的偵錯工具設定。|  
+|[bootcfg default](bootcfg-default.md)|指定要指定為預設值的作業系統專案。|  
+|[bootcfg delete](bootcfg-delete.md)|在 Boot.ini 檔案的 **[作業系統]** 區段中刪除作業系統專案。|  
+|[bootcfg ems](bootcfg-ems.md)|可讓使用者新增或變更緊急管理服務主控台重新導向至遠端電腦的設定。|  
+|[bootcfg query](bootcfg-query.md)|查詢並顯示來自 Boot.ini 的 [開機載入器] 和 **[作業系統]** 區段專案。|  
+|[bootcfg raw](bootcfg-raw.md)|將指定為字串的作業系統載入選項新增至 Boot.ini 檔案的 **[作業系統]** 區段中的作業系統專案。|  
+|[bootcfg rmsw](bootcfg-rmsw.md)|移除指定之作業系統專案的作業系統載入選項。|  
+|[bootcfg timeout](bootcfg-timeout.md)|變更作業系統超時值。|  

@@ -1,8 +1,8 @@
 ---
 title: 載入中繼資料
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b52b5040fc8c834b04cad83ca4b0cfab103fdc43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 025f75743d61889c4b987e9a2a575d1c599f04c1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871329"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374617"
 ---
 # <a name="load-metadata"></a>載入中繼資料
 
 
 
-載入中繼資料.cab 檔匯入傳送陰影複製之前，或載入在還原時的寫入器中繼資料。 如果未指定參數，使用**載入中繼資料**在命令提示字元中顯示說明。
+在匯入可轉移的陰影複製之前載入中繼資料 .cab 檔案，或在還原時載入寫入器中繼資料。 如果使用時不含參數，則**載入中繼資料**會在命令提示字元中顯示說明。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,17 +38,17 @@ load metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |參數|描述|
 |---------|-----------|
-|[\<Drive>:][<Path>]|指定之中繼資料檔案的位置。|
-|MetaData.cab|指定要載入之中繼資料.cab 檔案。|
+|[\<Drive >：][<Path>]|指定中繼資料檔案的位置。|
+|中繼資料 .cab|指定要載入的中繼資料 .cab 檔案。|
 
 ## <a name="remarks"></a>備註
 
--   您可以使用**匯入**命令以匯入傳送陰影複製會根據所指定的中繼資料**載入中繼資料**。
--   此命令需要再**開始還原**命令以載入所選的寫入器和還原元件。
+-   您可以使用 [匯**入**] 命令，根據**載入中繼資料**所指定的中繼資料，匯入可轉移的陰影複製。
+-   在 [**開始還原**] 命令載入所選取的寫入器和要進行還原的元件之前，需要此命令。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要載入的預設位置從呼叫 metafile.cab 中繼資料檔案，請輸入：
+若要從預設位置載入名為中繼檔的中繼資料檔案，請輸入：
 ```
 load metadata metafile.cab
 ```

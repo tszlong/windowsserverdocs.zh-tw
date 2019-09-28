@@ -1,8 +1,8 @@
 ---
 title: 設定內容
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f24e795f2d7c92d462cf822e70e4830b53827e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16f71d831f374f495abf2239cb8e694eee69efdf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845849"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370985"
 ---
-# <a name="set-contex"></a>設定內容
+# <a name="set-contex"></a>設定操作
 
 
 
-設定建立陰影複製的內容。 如果未指定參數，使用**設定內容**在命令提示字元中顯示說明。
+設定陰影複製建立的內容。 如果使用時不含參數， **set coNtext**會在命令提示字元中顯示 help。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,18 +38,18 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 
 |參數|描述|
 |---------|-----------|
-|clientaccessible|指定陰影複製是供用戶端版本的 Windows。|
-|持續性|指定陰影複製保存跨程式結束時、 重設或重新啟動。|
-|Volatile|刪除陰影複製結束，或重設。|
-|nowriters|指定會排除所有的寫入器。|
+|clientaccessible|指定陰影複製可供用戶端版本的 Windows 使用。|
+|持續|指定陰影複製在程式結束、重設或重新開機時持續存在。|
+|易變|在結束或重設時刪除陰影複製。|
+|nowriters|指定排除所有寫入器。|
 
 ## <a name="remarks"></a>備註
 
--   *Clientaccessible*內容是依預設持續性。
+-   根據預設， *clientaccessible*內容是持續性的。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要防止當您結束 DiskShadow 正在刪除陰影複製，請輸入：
+若要防止在您結束 DiskShadow 時刪除陰影複製，請輸入：
 ```
 set context persistent
 ```

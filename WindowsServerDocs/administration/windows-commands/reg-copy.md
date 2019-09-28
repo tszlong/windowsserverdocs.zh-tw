@@ -1,8 +1,8 @@
 ---
-title: reg 複製
-description: '適用於 Windows 命令主題 * * *- '
+title: reg copy
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11cbfce39433ea18632bec16c524da191def2a07
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a82b17b631d4242fa6affdec0ff67b5b09380550
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867559"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371784"
 ---
-# <a name="reg-copy"></a>reg 複製
+# <a name="reg-copy"></a>reg copy
 
 
 
-將登錄項目複製到本機或遠端電腦上指定的位置中。
+將登錄專案複製到本機或遠端電腦上的指定位置。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,29 +38,29 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName1>|指定要複製的子機碼的完整路徑。 若要指定遠端電腦，包含電腦名稱 (格式\\ \\ComputerName\)一部分*KeyName*。 省略\\ \\ComputerName\ 會導致作業到本機電腦的預設值。 *KeyName*必須包含有效的根機碼。 在本機電腦的有效的根機碼如下：HKLM、 HKCU、 HKCR、 HKU 和 HKCC。 如果指定的遠端電腦，則會是有效的根機碼：HKLM 和 HKU。|
-|\<KeyName2>|指定子機碼的目的地的完整路徑。 若要指定遠端電腦，包含電腦名稱 (格式\\ \\ComputerName\)一部分*KeyName*。 省略\\ \\ComputerName\ 會導致作業到本機電腦的預設值。 *KeyName*必須包含有效的根機碼。 在本機電腦的有效的根機碼如下：HKLM、 HKCU、 HKCR、 HKU 和 HKCC。 如果指定的遠端電腦，則會是有效的根機碼：HKLM 和 HKU。|
-|/s|複製所有的子機碼和指定的子機碼下的項目。|
+|\<KeyName1 >|指定要複製之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。|
+|\<KeyName2 >|指定子機碼目的地的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。|
+|/s|複製指定子機碼下的所有子機碼和專案。|
 |/f|複製子機碼，而不提示確認。|
-|/?|顯示的說明**reg**複製在命令提示字元。|
+|/?|在命令提示字元中顯示**reg** copy 的說明。|
 
 ## <a name="remarks"></a>備註
 
--   Reg 不會複製子機碼時要求確認。
--   下表列出的傳回值**reg 複製**作業。
+-   Reg 不會在複製子機碼時要求確認。
+-   下表列出**reg copy**作業的傳回值。
 
 |值|描述|
 |-----|-----------|
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要將所有的子機碼和機碼 MyApp 下的值複製到 SaveMyApp 的索引鍵中，輸入：
+若要將金鑰 MyApp 底下的所有子機碼和值複製到金鑰 SaveMyApp，請輸入：
 ```
 REG COPY HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp /s
 ```
-若要複製在電腦上稱為 ZODIAC 至目前的電腦上的索引鍵 MyCo1 MyCo 機碼下的所有值，請輸入：
+若要將名稱為天干地支之電腦機碼 MyCo 下的所有值複製到目前電腦上的金鑰 MyCo1，請輸入：
 ```
 REG COPY \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
 ```

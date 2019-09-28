@@ -1,8 +1,8 @@
 ---
 title: bootcfg raw
-description: 適用於 Windows 命令主題**未經處理的 bootcfg** -新增作業系統載入選項，可指定為字串中的作業系統項目 **[operating systems]** Boot.ini 檔案區段。
+description: 適用于**bootcfg raw**的 Windows 命令主題-將指定為字串的作業系統載入選項新增至 boot.ini 檔案的 **[作業系統]** 區段中的作業系統專案。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5334ff8a1c5d15343b4a48814b52012c641016a4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb5c052f85f54656c54a9e534f867d287407d2d4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434692"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379904"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-新增作業系統載入選項，可指定為字串中的作業系統項目 **[operating systems]** Boot.ini 檔案區段。
+將指定為字串的作業系統載入選項新增至 Boot.ini 檔案的 **[作業系統]** 區段中的作業系統專案。
 
 ## <a name="syntax"></a>語法
 ```
@@ -34,24 +34,24 @@ bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsSt
 
 |         詞彙          |                                                                                                            定義                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     /s <computer>     |                                                        指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。                                                         |
-| /u <Domain> \\<User>  |               使用指定的使用者帳戶權限執行命令<User>或是<Domain> \\ <User>。 預設值是目前登入的使用者發出命令的電腦上的權限。                |
-|     /p <Password>     |                                                                       指定在指定的使用者帳戶的密碼 **/u**參數。                                                                       |
-| <OSLoadOptionsString> | 指定作業系統載入選項，將新增至作業系統項目。 這些載入選項將會取代任何現有的作業系統項目相關聯的載入選項。 沒有驗證<OSLoadOptions>完成。 |
-| /id <OSEntryLineNum>  |                       Boot.ini 檔案中，以更新 [operating systems] 區段中指定的作業系統項目行號。 [Operating systems] 區段標頭之後的第一行會是 1。                       |
-|          /a           |                                                       指定要新增的作業系統選項，應該附加至任何現有的作業系統選項。                                                        |
+|     /s <computer>     |                                                        指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。                                                         |
+| /u <Domain> \\ @ no__t-2  |               以 <User> 或 <Domain> @ no__t-2 @ no__t-3 指定之使用者的帳戶許可權來執行命令。 預設為發出命令之電腦上目前登入使用者的許可權。                |
+|     /p <Password>     |                                                                       指定 **/u**參數中指定之使用者帳戶的密碼。                                                                       |
+| <OSLoadOptionsString> | 指定要新增至作業系統專案的作業系統載入選項。 這些載入選項會取代任何與作業系統專案相關聯的現有載入選項。 沒有 @no__t 的驗證-0 已完成。 |
+| /id <OSEntryLineNum>  |                       在要更新的 Boot.ini 檔案的 [作業系統] 區段中，指定作業系統專案行號。 [作業系統] 區段標頭後面的第一行是1。                       |
+|          /a           |                                                       指定要新增的作業系統選項應附加至任何現有的作業系統選項。                                                        |
 |          /?           |                                                                                               在命令提示字元顯示說明。                                                                                                |
 
 ##### <a name="remarks"></a>備註
-- **bootcfg 原始**用來將文字加入結尾的作業系統項目，並覆寫任何現有的作業系統項目選項。 此文字應該包含有效的 OS 載入選項，例如 **/debug**， **/fastdetect**， **/nodebug**， **/baudrate**， **/crashdebug**，並 **/sos**。 例如，下列命令會將" **/偵錯 /fastdetect**」 的第一個的作業系統項目結束時，以取代任何先前的作業系統項目選項：
+- **bootcfg raw**是用來將文字新增至作業系統專案的結尾，並覆寫任何現有的作業系統專案選項。 此文字應包含有效的 OS 載入選項，例如 **/debug**、 **/fastdetect**、 **/nodebug**、 **/baudrate**、 **/crashdebug**和 **/sos**。 例如，下列命令會將 " **/debug/fastdetect**" 新增至第一個作業系統專案的結尾，並取代任何先前的作業系統專案選項：
   ```
   bootcfg /raw "/debug /fastdetect" /id 1
   ```
-  ## <a name="BKMK_examples"></a>範例
-  下列範例示範如何使用**bootcfg / 原始**命令：
+  ## <a name="BKMK_examples"></a>典型
+  下列範例會示範如何使用**bootcfg/raw**命令：
   ```
   bootcfg /raw "/debug /sos" /id 2
   bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 "/crashdebug " /id 2
   ```
-  #### <a name="additional-references"></a>其他參考資料
+  #### <a name="additional-references"></a>其他參考
   [命令列語法關鍵](command-line-syntax-key.md)

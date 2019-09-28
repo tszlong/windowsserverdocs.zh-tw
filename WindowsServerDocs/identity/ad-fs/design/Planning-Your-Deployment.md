@@ -7,27 +7,27 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0206197b24f13d80019cbc864057e99e195ebc4b
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 607dc34c8f44d8d96a8dc0c9d1ed004edc799167
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191145"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407999"
 ---
 # <a name="planning-your-deployment"></a>規劃您的部署
 
-當您在規劃跨\-組織\(同盟\-基礎\)共同作業使用 Active Directory Federation Services \(AD FS\)，先判斷您的組織將裝載在網際網路上的其他組織存取 Web 資源或如果您要為員工提供 Web 資源的存取權，您組織中。 這個決定會影響您如何部署 AD FS 中，而且它是在您的 AD FS 基礎結構的規劃。  
+當您規劃 cross @ no__t-0organizational \(federation @ no__t-2based @ no__t-3 共同作業使用 Active Directory 同盟服務 \(AD FS @ no__t-5 時，請先判斷您的組織是否會裝載要由其他使用者存取的 Web 資源網際網路上的組織，或如果您將可存取組織中員工的 Web 資源。 這項決定會影響您部署 AD FS 的方式，而且它是規劃 AD FS 基礎結構的基礎。  
   
 > [!NOTE]  
 > 請確定所有合作對象清楚瞭解組織在同盟協議中所扮演的角色。  
   
-針對[Federated Web SSO Design](Federated-Web-SSO-Design.md)，例如 AD FS 使用的詞彙*帳戶夥伴*\(也稱為*身分識別提供者*中 AD FS 管理嵌入式管理單元\-中\)並*資源夥伴*\(也稱為*信賴憑證者的合作對象*AD FS 管理嵌入式管理單元中\-中\)至協助區分裝載帳戶的組織\(帳戶夥伴\)裝載網站的組織\-基礎資源\(資源夥伴\)。  
+在同盟[網頁 SSO 設計](Federated-Web-SSO-Design.md)中，AD FS 會在 AD FS 管理 snap @ no__t-4 英吋 @ no__t-5 和*資源夥伴*\(also *中，使用帳戶夥伴 @no__t 2also，稱為「識別提供者」。* AD FS Management snap @ no__t-9in @ no__t-10 中的信賴憑證者，可協助區分從裝載 Web @ no__t-no__t 資源 @no__t 13based 資源的組織，將裝載帳戶的組織 @no__t 11 帳戶夥伴 @ 14the-12partner @ no__t-15。  
   
 在 [Web SSO Design](Web-SSO-Design.md)中，組織會同時作為帳戶夥伴和資源夥伴角色，因為它提供其使用者其應用程式的存取權。  
   
-下列主題將說明 AD FS 的一些合作夥伴組織的概念。 當中也包含 AD FS 部署指南中包含安裝和設定帳戶夥伴組織和資源夥伴組織，根據您的 AD FS 部署目標的相關資訊的主題連結。  
+下列主題說明 AD FS 合作夥伴組織的一些概念。 其中也包含 AD FS 部署指南中的主題連結，其中包含根據您的 AD FS 部署目標，設定及設定帳戶夥伴組織和資源夥伴組織的相關資訊。  
   
 ## <a name="in-this-section"></a>本節內容  
   

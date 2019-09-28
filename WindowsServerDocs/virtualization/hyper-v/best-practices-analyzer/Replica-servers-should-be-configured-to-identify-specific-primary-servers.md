@@ -1,7 +1,7 @@
 ---
-title: 複本伺服器應該設定為識別特定授權傳送複寫流量的主要伺服器
-description: 提供指示來解決此 Best Practices Analyzer 規則所回報的問題。
-ms.prod: windows-server-threshold
+title: 應設定複本伺服器，以識別已獲授權傳送複寫流量的特定主伺服器
+description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 47b215d4c84e68d93ae1189ddd370358e2781eff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 567b20d00d2f245ae7e9577d9d200dca116a9b4d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822239"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364743"
 ---
-# <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>複本伺服器應該設定為識別特定授權傳送複寫流量的主要伺服器
+# <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>應設定複本伺服器，以識別已獲授權傳送複寫流量的特定主伺服器
 
 >適用於：Windows Server 2016
 
@@ -30,61 +30,61 @@ ms.locfileid: "59822239"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>問題  
-*所設定，則這個複本伺服器接受複寫流量的所有主要伺服器，並將它們儲存在單一位置。*  
+*依照設定，此複本伺服器會接受來自所有主伺服器的複寫流量，並將它們儲存在單一位置。*  
   
 ### <a name="impact"></a>影響  
-*所有的複寫，從所有主要伺服器會儲存在單一位置，可能會造成隱私權或安全性問題。*  
+*所有主伺服器的複寫都儲存在一個位置，這可能會導致隱私權或安全性問題。*  
   
 ## <a name="resolution"></a>解析度  
-*您可以使用 HYPER-V 管理員來建立特定的主要伺服器的新授權項目，並指定為每個個別的存放位置。您可以使用萬用字元來分組為每個授權項目集的主要伺服器。*  
+@no__t 0Use Hyper-v 管理員，為特定的主伺服器建立新的授權專案，並為每個伺服器指定個別的儲存位置。您可以使用萬用字元，將主伺服器群組為每個授權專案的集合。 *  
   
-#### <a name="create-authorization-entries-using-hyper-v-manager"></a>建立使用 HYPER-V 管理員的授權項目  
+#### <a name="create-authorization-entries-using-hyper-v-manager"></a>使用 Hyper-v 管理員建立授權專案  
   
-1.  開啟 \[Hyper-V 管理員\]。 (從 [伺服器管理員] 中，按一下**工具** > **HYPER-V 管理員**。)  
+1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員，按一下 [**工具**] [ > ] [**hyper-v 管理員**]）。  
   
-2.  從清單中的主機，請以滑鼠右鍵按一下，然後按一下其中一個**HYPER-V 設定**。  
+2.  在主機清單中，以滑鼠右鍵按一下您想要的主控制項，然後按一下 [ **Hyper-v 設定**]。  
   
-3.  在 [導覽] 窗格中，按一下**複寫組態**。  
+3.  在流覽窗格中 **，按一下 [** 複寫設定]。  
   
-4.  底下**授權與存放裝置**，按一下**允許來自指定伺服器的複寫**。  
+4.  在 [**授權與存放裝置**] 底下，按一下 **[允許從指定的伺服器進行**複寫]。  
   
-5.  底下的 伺服器清單中，按一下 **新增**。  
+5.  在伺服器清單下方，按一下 [**新增**]。  
   
-6.  底下**新增的授權項目**:  
+6.  在 [**新增授權專案**] 底下：  
   
-    -   輸入第一部伺服器的完整限定的名稱。  
+    -   輸入第一部伺服器的完整名稱。  
   
-    -   指定專用的位置來儲存只有該伺服器的檔案。  
+    -   指定專用的位置來儲存該伺服器的檔案。  
   
-7.  按一下 [確定] 。  
+7.  按一下 [確定]。  
   
-8.  針對每一部主要伺服器重複。  
+8.  針對每部主伺服器重複執行。  
   
-9. 按一下 **確定**一次以完成並關閉視窗。  
+9. 再按一次 **[確定**] 以完成並關閉視窗。  
   
-### <a name="create-authorization-entries-using-windows-powershell"></a>建立使用 Windows PowerShell 的授權項目  
+### <a name="create-authorization-entries-using-windows-powershell"></a>使用 Windows PowerShell 建立授權專案  
   
-1.  開啟 Windows PowerShell。 (從桌面上，按一下 [開始]，並開始輸入**Windows PowerShell**。)  
+1.  開啟 Windows PowerShell。 （從桌面上，按一下 [開始]，然後開始鍵入**Windows PowerShell**。）  
   
-2.  以滑鼠右鍵按一下**Windows PowerShell**然後按一下**系統管理員身分執行**。  
+2.  以滑鼠右鍵按一下 [ **Windows PowerShell** ]，然後按一下 [**以系統管理員身分執行**]。  
   
-3.  執行類似下列的命令，並將：  
+3.  執行類似下列的命令，並取代：  
   
-    -   主要伺服器名稱 server01.domain01.contoso.com 與您伺服器的完整的網域名稱。  
+    -   Server01.domain01.contoso.com 的主伺服器名稱，具有伺服器的完整功能變數名稱。  
   
-    -   以您位置 D:\ReplicaVMStorage 位置。  
+    -   D:\ReplicaVMStorage 與您的位置的位置。  
   
-    -   如果您已建立一個，信任群組名為您的群組名稱，預設值。 如果沒有，則使用預設值。  
+    -   名為 DEFAULT 的信任群組與您的群組名稱（如果您已建立）。 如果不是，請使用預設值。  
   
 ```  
 New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMStorage DEFAULT  
 ```  
   
 ## <a name="see-also"></a>另請參閱  
-[New-VMReplicationAuthorizationEntry](https://technet.microsoft.com/library/hh848606.aspx)  
+[新增-New-vmreplicationauthorizationentry](https://technet.microsoft.com/library/hh848606.aspx)  
   
 
 

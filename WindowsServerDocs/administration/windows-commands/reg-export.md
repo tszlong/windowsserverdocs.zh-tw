@@ -1,8 +1,8 @@
 ---
 title: reg 匯出
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7aeddb4b069b1baf5b8f7aaea2730a2b25bdad7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7fb3a779ffe5a4e7d513ca9a3afed8ee90901688
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889649"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384746"
 ---
 # <a name="reg-export"></a>reg 匯出
 
 
 
-將指定的子機碼、 項目，以及本機電腦的值到傳輸的檔案複製到其他伺服器。
+將本機電腦的指定子機碼、專案和值複製到檔案中，以傳輸到其他伺服器。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,23 +38,23 @@ Reg export KeyName FileName [/y]
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName>|指定的子機碼的完整路徑。 匯出作業只適用於本機電腦。 KeyName 必須包含有效的根機碼。 有效的根機碼如下：HKLM、 HKCU、 HKCR、 HKU 和 HKCC。|
-|\<FileName>|指定要在作業期間建立之檔案的路徑與名稱。 檔案必須具有.reg 延伸模組。|
-|/y|覆寫任何現有的檔案同名*FileName*不提示確認。|
-|/?|顯示的說明**reg 匯出**在命令提示字元。|
+|\<KeyName >|指定子機碼的完整路徑。 匯出操作只適用于本機電腦。 KeyName 必須包含有效的根金鑰。 有效的根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。|
+|\<檔案名 >|指定要在作業期間建立之檔案的名稱和路徑。 檔案的副檔名必須是 .reg。|
+|/y|以名稱*FileName*覆寫任何現有的檔案，而不提示確認。|
+|/?|在命令提示字元中顯示**reg export**的說明。|
 
 ## <a name="remarks"></a>備註
 
-下表列出的傳回值**reg 匯出**作業。
+下表列出**reg 匯出**作業的傳回值。
 
 |值|描述|
 |-----|-----------|
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要將所有子機碼的內容和值的索引鍵的 MyApp 匯出至檔案 AppBkUp.reg 中，輸入：
+若要將金鑰 MyApp 的所有子機碼和值匯出至 AppBkUp 檔案，請輸入：
 ```
 reg export HKLM\Software\MyCo\MyApp AppBkUp.reg
 ```

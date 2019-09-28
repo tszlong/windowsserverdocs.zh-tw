@@ -3,7 +3,7 @@ title: 限制網頁存取
 description: 瞭解如何在 MultiPoint 服務中限制使用者存取網際網路
 ms.custom: na
 ms.date: 07/08/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 9f3524261e8e93439ff48a3e6666fa7680a76a29
-ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
+ms.openlocfilehash: 8e12eebd55aa066979bbcbe4d2f3e613b5876a01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143740"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395328"
 ---
 # <a name="limit-web-access"></a>限制網頁存取
 除了監視個別桌上型電腦上的使用者活動之外，身為系統管理使用者，您可以藉由指示您想要封鎖使用者存取的網站和網站，限制使用者對指定網站的存取權。  

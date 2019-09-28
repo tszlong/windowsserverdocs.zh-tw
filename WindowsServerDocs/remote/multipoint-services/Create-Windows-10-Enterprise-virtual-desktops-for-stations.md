@@ -3,7 +3,7 @@ title: 建立站台的 Windows 10 企業版虛擬桌面
 description: 瞭解如何建立適用于工作站的 Windows Server 2016 桌上型電腦
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: e68412808e037b788d5b25c1c2c7b14253e40ea6
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: cd08caef8228a4d20c6d5f4a40fe5bd90aacbe40
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871726"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395543"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>建立站台的 Windows 10 企業版虛擬桌面
 MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需要每個使用者自己的用戶端作業系統實例的情況。 範例包括無法安裝在 Windows Server 上的應用程式，以及不會在同一部主機電腦上執行多個實例的應用程式。  

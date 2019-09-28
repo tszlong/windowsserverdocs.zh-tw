@@ -1,8 +1,8 @@
 ---
 title: bdehdcfg 大小
-description: 當正在建立新的系統磁碟機，Windows 命令主題-指定系統磁碟分割的大小。
+description: Windows 命令主題-當建立新的系統磁片磁碟機時，指定系統磁碟分割的大小。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d024bb4092f93782300d6afb9053cee1da32629a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ec42cdb5716c63c7210ea6cfde8ce8884833b45
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817519"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382204"
 ---
-# <a name="bdehdcfg-size"></a>bdehdcfg： 大小
+# <a name="bdehdcfg-size"></a>bdehdcfg：大小
 
 
 
-當正在建立新的系統磁碟機，請指定系統磁碟分割的大小。 如需如何使用此命令的範例，請參閱 <<c0> [ 範例](#BKMK_Examples)。
+指定建立新的系統磁片磁碟機時，系統磁碟分割的大小。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,18 +36,18 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink} -size <SizeinMB>
 
 |參數|描述|
 |---------|-----------|
-|\<SizeinMB>|指出百萬位元組 (MB)，要用於新的資料分割數目。|
+|\<SizeinMB >|指出要用於新資料分割的 mb 數。|
 
 ## <a name="remarks"></a>備註
 
-如果您未指定大小，此工具會使用 300 MB 的預設值。 系統磁碟機的最小大小為 100 MB。 如果您將會在系統磁碟分割上儲存系統復原或其他系統工具，您應該據以增加的大小。
+如果您未指定大小，此工具會使用預設值 300 MB。 系統磁片磁碟機的大小下限為 100 MB。 如果您要將系統修復或其他系統工具儲存在系統磁碟分割上，則應該相應增加大小。
 
 > [!NOTE]
-> **大小**不得搭配命令**目標**\<磁碟機代號 >**合併**命令。
+> [**大小**] 命令無法與 [**目標**\<DriveLetter > **merge** ] 命令結合。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-下列範例說明如何利用**大小**配置 500 MB 的預設系統磁碟機的命令。
+下列範例說明如何使用**size**命令，將 500 MB 配置給預設系統磁片磁碟機。
 ```
 bdehdcfg -target default -size 500
 ```

@@ -1,25 +1,25 @@
 ---
-title: 安裝資料中心橋接 (DCB) 在 Windows Server 或用戶端
-description: 本主題為您提供有關如何安裝在 Windows Server 或 Windows 用戶端的資料中心橋接的指示。
-ms.prod: windows-server-threshold
+title: 在 Windows Server 或用戶端中安裝資料中心橋接（DCB）
+description: 本主題提供有關如何在 Windows Server 或 Windows 用戶端中安裝資料中心橋接的指示。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: b89213d8-143a-45f3-a609-bc6a7027204c
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7c20ef027279780181ff176afa39a19f2976c4c1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5ecb6ef072dd2328a0a45d57d181dca9c2928a30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845439"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405784"
 ---
-# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>安裝資料中心橋接\(DCB\)在 Windows Server 2016 或 Windows 10
+# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安裝資料中心橋接 \(DCB @ no__t-1
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題以了解如何在 Windows Server 2016 或 Windows 10 安裝 DCB。
+您可以使用本主題來瞭解如何在 Windows Server 2016 或 Windows 10 中安裝 DCB。
 
 ## <a name="prerequisites-for-using-dcb"></a>使用 DCB 的必要條件
 
@@ -27,63 +27,63 @@ ms.locfileid: "59845439"
 
 ### <a name="install-a-compatible-operating-system"></a>安裝相容的作業系統
 
-在下列作業系統中，您可以使用本指南 DCB 命令。
+您可以在下列作業系統中使用本指南中的 DCB 命令。
 
 - Windows Server (半年度管道)
 - Windows Server 2016
-- Windows 10\(所有版本\)
+- Windows 10 \( 所有版本 @ no__t-1
 
-在下列作業系統包含舊版 DCB 不使用 Windows Server 2016 和 Windows 10 的 DCB 文件中的命令相容。
+下列作業系統包含舊版 DCB，這些版本與 Windows Server 2016 和 Windows 10 的 DCB 檔中所使用的命令不相容。
 
 - Windows Server 2012 R2
 - Windows Server 2012
 
 ###  <a name="hardware-requirements"></a>硬體需求
 
-下列是 DCB 硬體需求的清單。
+以下是 DCB 的硬體需求清單。
 
-- DCB\-支援的乙太網路介面卡\(s\)必須安裝在提供 Windows Server 2016 DCB 的電腦。
-- DCB\-支援的硬體交換器必須部署在網路上。
+- DCB @ no__t-0capable Ethernet 網路介面卡 @ no__t-1s @ no__t-2 必須安裝在提供 Windows Server 2016 DCB 的電腦上。
+- DCB @ no__t-0capable 硬體交換器必須部署在您的網路上。
 
 
-## <a name="install-dcb-in-windows-server-2016"></a>Windows Server 2016 中安裝 DCB
+## <a name="install-dcb-in-windows-server-2016"></a>在 Windows Server 2016 中安裝 DCB
 
-您可以使用下列各節，以執行 Windows Server 2016 的電腦上安裝 DCB。
+您可以使用下列各節，在執行 Windows Server 2016 的電腦上安裝 DCB。
 
 **系統管理認證**
 
-若要執行這些程序，您必須隸屬**系統管理員**。
+若要執行這些程式，您必須是系統**管理員**的成員。
 
-### <a name="install-dcb-using-windows-powershell"></a>安裝使用 Windows PowerShell 的 DCB
+### <a name="install-dcb-using-windows-powershell"></a>使用 Windows PowerShell 安裝 DCB
 
-若要使用 Windows PowerShell 安裝 DCB，您可以使用下列程序。
+您可以使用下列程式，使用 Windows PowerShell 安裝 DCB。
 
-1. 在執行 Windows Server 2016 的電腦，按一下 **啟動**，然後以滑鼠右鍵按一下 Windows PowerShell 圖示。 此時會出現一個功能表。 在功能表中，按一下**更多**，然後按一下**系統管理員身分執行**。 如果出現提示，請輸入電腦具有系統管理員權限帳戶的認證。 Windows PowerShell 會開啟以系統管理員權限。
+1. 在執行 Windows Server 2016 的電腦上，按一下 [**開始**]，然後以滑鼠右鍵按一下 Windows PowerShell 圖示。 功能表隨即出現。 在功能表中，按一下 [**更多**]，然後按一下 [**以系統管理員身分執行**]。 如果出現提示，請輸入在電腦上具有系統管理員許可權之帳戶的認證。 Windows PowerShell 會以系統管理員許可權開啟。
 2. 輸入下列命令，然後按 ENTER。
 
 ````
     Install-WindowsFeature -Name Data-Center-Bridging -IncludeManagementTools
 ````
 
-### <a name="install-dcb-using-server-manager"></a>安裝使用伺服器管理員的 DCB
+### <a name="install-dcb-using-server-manager"></a>使用伺服器管理員安裝 DCB
 
-若要使用伺服器管理員安裝 DCB，您可以使用下列程序。
+您可以使用下列程式，使用伺服器管理員來安裝 DCB。
 
 >[!NOTE]
->當您在此程序中，執行的第一個步驟之後**在您開始前**如果您先前已選取未顯示的 新增角色及功能精靈 的頁面**略過此頁面，依預設**時新增已執行的角色及功能精靈。 如果**在您開始前**頁面不會顯示，步驟 1 中跳至步驟 3。
+>執行此程式中的第一個步驟之後，如果您先前在執行 [新增角色及功能] Wizard 時選取 [**略過此頁面**]，則不會顯示 [新增角色及功能] wizard 的 [**開始之前**] 頁面。 如果沒有顯示 [在**您開始前**] 頁面，請略過步驟1到步驟3。
 
-1. 在 DC1 上，在 [伺服器管理員] 中，按一下**管理**，然後按一下**新增角色及功能**。 [新增角色及功能精靈] 隨即開啟。
+1. 在 DC1 的伺服器管理員中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能精靈] 隨即開啟。
 2. 在 [在您開始前] 中，按 [下一步]。
 3. 在 [選取安裝類型] 中，確定已選取 [角色型或功能型安裝]，然後按 [下一步]。
-4. 在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 [下一步] 。
+4. 在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 [下一步]。
 5. 在 [選取伺服器角色] 中按 [下一步]。
-6. 在 **選取的功能**，請在**功能**，按一下 **資料中心橋接**。 對話方塊隨即開啟，要求是否您想要新增所需的 DCB 功能。 按一下 **將功能加入**。
-7. 在 [**選取的功能**，按一下**下一步]**。 
-8. 7.在**確認安裝選項**，按一下**安裝**。 **Průběh instalace**頁面會顯示安裝程序期間的狀態。 訊息會出現之後, 該安裝成功，請按一下**關閉**。
+6. 在 [**選取功能**] 的 [**功能**] 中，按一下 [**資料中心橋接**]。 隨即會開啟對話方塊，詢問您是否要加入 DCB 必要的功能。 按一下 [**新增功能**]。
+7. 在 [**選取功能**] 中，按 **[下一步]** 。 
+8. 7.In**確認安裝選項**，按一下 **安裝**。 [**安裝進度**] 頁面會在安裝過程中顯示狀態。 出現指示安裝成功的訊息之後，請按一下 [**關閉**]。
 
-### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>核心偵錯工具可讓 QoS 設定\(選擇性\)
+### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>將內核偵錯工具設定為允許 QoS \(Optional @ no__t-1
 
- 根據預設，核心偵錯工具會封鎖 NetQos。 不論您用來安裝 DCB，如果您有安裝在電腦的核心偵錯的方法，您必須設定偵錯工具，以便啟用並執行下列命令來設定 QoS。
+ 根據預設，核心偵錯工具會封鎖 NetQos。 不論您用來安裝 DCB 的方法為何，如果您已在電腦上安裝內核偵錯工具，您必須將偵錯工具設定為允許透過執行下列命令來啟用和設定 QoS。
 
 ````
 Set-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" AllowFlowControlUnderDebugger -type DWORD -Value 1 -Force
@@ -91,19 +91,19 @@ Set-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" Allow
 
 ## <a name="install-dcb-in-windows-10"></a>在 Windows 10 中安裝 DCB
 
-您可以在 Windows 10 電腦上執行下列程序。
+您可以在 Windows 10 電腦上執行下列程式。
 
-若要執行此程序，您必須隸屬**系統管理員**。
+若要執行此程式，您必須是系統**管理員**的成員。
 
 ### <a name="install-dcb"></a>安裝 DCB
 
-1. 按一下 **開始**，然後向下捲動並按一下  **Windows 系統**。
-2. 按一下 [控制台] 。 **控制台中**對話方塊隨即開啟。
-3. 在**控制台中**，按一下**藉由檢視**，然後按一下**大圖示**或**小圖示**。
-4. 按一下 **程式和功能**。 [程式和功能] 對話方塊隨即開啟。
-5. 在 **程式和功能**，在左窗格中，按一下**開啟 Windows 功能開啟或關閉**。 **Windows 功能**對話方塊隨即開啟。
-6. 在  **Windows 功能**，按一下**資料中心橋接**，然後按一下 **確定**。
+1. 按一下 [**開始**]，然後向下流覽至 [ **Windows 系統**]。
+2. 按一下 [控制台]。 [**控制台**] 對話方塊隨即開啟。
+3. 在 [**控制台**] 中，按一下 [ **View by**]，然後按一下**大圖示**或**小圖示**。
+4. 按一下 [**程式和功能**]。 [程式和功能] 對話方塊隨即開啟。
+5. 在 [**程式和功能**] 中，按一下左窗格中的 [**開啟或關閉 Windows 功能**]。 [ **Windows 功能**] 對話方塊隨即開啟。
+6. 在 [ **Windows 功能**] 中，按一下 [**資料中心橋接**]，然後按一下 **[確定]** 。
 
-![開啟或關閉對話方塊，開啟 Windows 功能](../../media/Dcb-Scripting/Dcb-Scripting.jpg)
+![開啟或關閉 Windows 功能對話方塊](../../media/Dcb-Scripting/Dcb-Scripting.jpg)
 
 

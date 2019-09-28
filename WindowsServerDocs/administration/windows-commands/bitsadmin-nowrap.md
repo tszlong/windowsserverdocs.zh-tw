@@ -1,8 +1,8 @@
 ---
 title: bitsadmin nowrap
-description: 適用於 Windows 命令主題**bitsadmin nowrap** -截斷任何一行輸出擴充超過最右邊的 [命令] 視窗邊緣的文字。
+description: 適用于**bitsadmin nowrap**的 Windows 命令主題-截斷任何延伸到命令視窗最右邊邊緣之外的輸出文字行。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4130f606a6b1874e1ea31952160de44d6e09c6b6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3806ec51161eeae498e3c9b367b2aacf0bd32c99
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822919"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381046"
 ---
 # <a name="bitsadmin-nowrap"></a>bitsadmin nowrap
 
-會截斷任何一行輸出擴充超過最右邊的 [命令] 視窗邊緣的文字。
+截斷任何延伸到命令視窗最右邊邊緣外的輸出文字行。
 
 ## <a name="syntax"></a>語法
 
@@ -32,11 +32,11 @@ bitsadmin /NoWrap
 
 ## <a name="remarks"></a>備註
 
-根據預設，所有參數，除了**監視器**參數，輸出包裝。 指定**NoWrap**切換其他參數。
+根據預設，除了**監視器**參數之外，所有參數都會包裝輸出。 在其他參數前指定**NoWrap**參數。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的狀態*myDownloadJob*和不換行輸出
+下列範例會抓取名為*myDownloadJob*之作業的狀態，而且不會包裝輸出
 ```
 C:\>bitsadmin /NoWrap /GetState myDownloadJob
 ```

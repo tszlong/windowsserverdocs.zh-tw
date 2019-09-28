@@ -1,7 +1,7 @@
 ---
 title: 網路工作負載的效能工具
-description: 本主題是 Windows Server 2016 的網路子系統效能調整指南的一部分。
-ms.prod: windows-server-threshold
+description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: c7789781-87e8-464e-981b-af887d01badd
@@ -9,41 +9,41 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 07/16/2018
-ms.openlocfilehash: e71c5f34041145907c30b279dc91a94c03c2abed
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09e775bfe956d67adbd70cf4ce3f9461e1c37cf5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824929"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405515"
 ---
 # <a name="performance-tools-for-network-workloads"></a>網路工作負載的效能工具
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題以了解效能工具。
+您可以使用本主題來瞭解效能工具。
 
-本主題包含有關用戶端伺服器流量工具、 TCP/IP 視窗大小，以及 Microsoft Server Performance Advisor 的章節。
+本主題包含有關用戶端到伺服器流量工具、TCP/IP 視窗大小和 Microsoft Server Performance Advisor 的各節。
 
-##  <a name="bkmk_tuning"></a> 用戶端至伺服器的資料傳輸工具
+##  <a name="bkmk_tuning"></a>用戶端對伺服器流量工具
 
-用戶端到伺服器的流量\(ctsTraffic\)工具可讓您能夠建立並驗證網路流量。
+[用戶端到伺服器流量 \(ctsTraffic @ no__t-1] 工具可讓您建立及驗證網路流量。
 
-如需詳細資訊，以及下載工具，請參閱[ctsTraffic （用戶端對伺服器流量）](https://github.com/Microsoft/ctsTraffic)。
+如需詳細資訊及下載此工具，請參閱[ctsTraffic （用戶端對伺服器流量）](https://github.com/Microsoft/ctsTraffic)。
   
-##  <a name="bkmk_size"></a> TCP/IP 視窗大小
+##  <a name="bkmk_size"></a>TCP/IP 視窗大小
 
-1 GB 介面卡，如上表所示的設定應該提供良好的輸送量因為 NTttcp 透過特定的邏輯處理器選項將預設的 TCP 視窗大小設定為 64k \(SO_RCVBUF\)連接。 這是低延遲網路上提供良好的效能。  
+針對 1 GB 介面卡，上表所顯示的設定應該提供良好的輸送量，因為 NTttcp 會透過特定的邏輯處理器選項，將預設的 TCP 視窗大小設定為 64 K，\(SO_RCVBUF @ no__t-1 用於連接。 這會在低延遲的網路上提供良好的效能。  
 
-相反地，對於高延遲網路或 10 GB 介面卡，NTttcp 預設 TCP 視窗大小的值會產生比最佳效能少。 在這兩種情況下，您必須調整 TCP 視窗大小，以允許較大的頻寬延遲乘積。  
+相反地，針對高延遲網路或 10 GB 介面卡，NTttcp 的預設 TCP 視窗大小值會產生低於最佳效能。 在這兩種情況下，您都必須調整 TCP 視窗大小，以允許較大的頻寬延遲產品。  
 
-您以靜態方式可以設定為大數值的 TCP 視窗大小，使用 **-rb**選項。 此選項會停用 TCP 視窗自動微調，我們建議使用者完全了解 TCP/IP 行為的結果變更時，才使用它。 根據預設，TCP 視窗大小會設定為足夠的值，並調整只有在高載量下或透過高延遲連結。  
+您可以使用 **-rb**選項，以靜態方式將 TCP 視窗大小設定為較大的值。 此選項會停用 TCP 視窗自動調整，而且只有在使用者完全瞭解 TCP/IP 行為中的結果變更時，才建議使用。 根據預設，TCP 視窗大小會設定為足夠的值，且只會在大量負載或高延遲的連結上調整。  
 
-##  <a name="bkmk_advisor"></a> Microsoft Server Performance Advisor
+##  <a name="bkmk_advisor"></a>Microsoft Server Performance Advisor
 
-Microsoft Server Performance Advisor \(SPA\)可協助 IT 系統管理員收集計量，以識別、 比較及診斷潛在的效能問題，在 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 WindowsServer 2008 R2 或 Windows Server 2008 部署。 
+Microsoft Server Performance Advisor \(SPA @ no__t-1 可協助 IT 系統管理員收集計量，以識別、比較及診斷 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或中的潛在效能問題。Windows Server 2008 部署。 
 
-SPA 會產生完整的診斷報表和圖表，並提供建議來協助您快速分析問題，以及開發的修正動作。  
+SPA 會產生完整的診斷報告和圖表，並提供建議，協助您快速分析問題並開發更正動作。  
   
- 如需詳細資訊，以及下載 advisor，請參閱[Microsoft Server Performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) Windows 硬體開發人員中心。
+ 如需詳細資訊及下載 advisor，請參閱 Windows 硬體開發人員中心的[Microsoft Server Performance advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) 。
 
-本指南中的所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。
+如需本指南中所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。

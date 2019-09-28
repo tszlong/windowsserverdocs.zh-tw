@@ -1,7 +1,7 @@
 ---
-title: 請避免使用 VHD 格式的差異在生產環境中執行伺服器工作負載的虛擬機器上的虛擬硬碟
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 避免在生產環境中執行伺服器工作負載的虛擬機器上使用 VHD 格式差異虛擬硬碟
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: 272de33d-2708-4679-8564-ee28848a2839
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: da908d00a6b5c48a61dad89e8c7b08cf80b4314c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b6bee685a72f8f9af2e16ffe7ac5cc1e1f22a4f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819179"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366429"
 ---
-# <a name="avoid-using-vhd-format-differencing-virtual-hard-disks-on-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>請避免使用 VHD 格式的差異在生產環境中執行伺服器工作負載的虛擬機器上的虛擬硬碟
+# <a name="avoid-using-vhd-format-differencing-virtual-hard-disks-on-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>避免在生產環境中執行伺服器工作負載的虛擬機器上使用 VHD 格式差異虛擬硬碟
 
 >適用於：Windows Server 2016
 
@@ -30,18 +30,18 @@ ms.locfileid: "59819179"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>**問題**  
-*一或多個虛擬機器使用 VHD 格式差異虛擬硬碟。*  
+*一或多部虛擬機器使用 VHD 格式的差異虛擬硬碟。*  
   
-## <a name="impact"></a>**影響**  
-*VHD 格式差異虛擬硬碟可能會發生電源中斷時，遇到一致性問題。如果實體磁碟的.vhd 檔案中，當發生電源中斷正在修改執行磁區的不完整或不正確更新，可能會發生一致性問題。這會影響下列虛擬機器：*  
+## <a name="impact"></a>**產生**  
+@no__t 0VHD-格式化差異虛擬硬碟可能會在發生電源中斷時遇到一致性問題。如果實體磁片對 .vhd 檔案中的磁區執行了不完整或不正確的更新，但發生電源中斷時，就會發生一致性問題。這會影響下列虛擬機器： *  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>**解決方法**  
-*關閉虛擬機器和轉換的 VHD 格式的差異為 VHDX 格式虛擬硬碟鏈結或合併到固定虛擬硬碟鏈結。（採取 VHDX 格式有協助防止因電源故障所損毀的磁碟的可靠性機制）。不過，不會轉換虛擬硬碟可能連接到舊版的 Windows 在某個時間點。Windows 版本早於 Windows Server 2012 不支援 VHDX 格式。*  
+@no__t-向下0Shut 虛擬機器，並將 VHD 格式差異虛擬硬碟的鏈轉換成 VHDX 格式，或將該鏈合併至固定的虛擬硬碟。（VHDX 格式具有可靠性機制，可協助防止磁片因電源故障而損毀）。不過，如果虛擬硬碟可能會在某個時間點附加到舊版的 Windows，請勿將它轉換。Windows Server 2012 之前的 windows 版本不支援 VHDX 格式。 *  
   
 
 

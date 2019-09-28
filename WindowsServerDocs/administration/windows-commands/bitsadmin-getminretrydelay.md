@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getminretrydelay
-description: 適用於 Windows 命令主題**bitsadmin getminretrydelay** -擷取時間 （秒），在發生暫時性錯誤，然後再嘗試將檔案傳輸後，等待服務的長度。
+description: '**Bitsadmin getminretrydelay**的 Windows 命令主題-抓取在嘗試傳輸檔案之前，服務在遇到暫時性錯誤之後所等待的時間長度（以秒為單位）。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a6df9faab8340994ad9219a863ad8e50186ccd1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a2bde6340034e48b97b4c86f48a3b2ef72560a5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832199"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381546"
 ---
 # <a name="bitsadmin-getminretrydelay"></a>bitsadmin getminretrydelay
 
 
 
-擷取以秒為單位，在發生暫時性錯誤，然後再嘗試將檔案傳輸之後，服務會等待的時間長度。
+抓取在嘗試傳輸檔案之前，服務在遇到暫時性錯誤之後所等待的時間長度（以秒為單位）。
 
 ## <a name="syntax"></a>語法
 
@@ -38,9 +38,9 @@ bitsadmin /GetMinRetryDelay <Job>
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的最小的重試延遲*myDownloadJob*。
+下列範例會抓取名為*myDownloadJob*之作業的最小重試延遲。
 ```
 C:\>bitsadmin /GetMinRetryDelay myDownloadJob
 ```

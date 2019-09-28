@@ -1,9 +1,9 @@
 ---
 title: 疑難排解設定進入點網域控制站
-description: 本主題是本指南的一部分部署多部遠端存取伺服器在 Windows Server 2016 中的多站台部署中。
+description: 本主題是在 Windows Server 2016 的多網站部署中部署多部遠端存取服務器指南的一部分。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,30 +12,30 @@ ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5e7e09a6715df22882c8a88aedf95a5158dd2a0d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 10a0f7952fc27d0185d4383da21f0614885ddac3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280909"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367055"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>疑難排解設定進入點網域控制站
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題包含與 `Set-DAEntryPointDC` 命令問題有關的疑難排解資訊。 若要確認您所收到的錯誤與設定進入點網域控制站有關，請檢查 Windows 事件記錄檔中的事件識別碼 10065。  
   
 ## <a name="SaveGPOSettings"></a>正在儲存伺服器 GPO 設定  
-**收到的錯誤**。 將遠端存取設定儲存到 GPO < gpo 名稱 > 時發生錯誤。  
+**收到錯誤**。 將遠端存取設定儲存至 GPO < GPO_name > 時發生錯誤。  
   
 若要疑難排解這個錯誤，請參閱儲存伺服器 GPO 設定。  
   
 ## <a name="remote-access-is-not-configured"></a>未設定遠端存取  
-**收到的錯誤**。 在 < 伺服器名稱 > 上未設定遠端存取。 請指定屬於多站台部署之伺服器的名稱。  
+**收到錯誤**。 未在 < server_name > 上設定遠端存取。 請指定屬於多站台部署之伺服器的名稱。  
   
 或  
   
-< 伺服器名稱 > 的伺服器上未設定遠端存取。 請指定已啟用 DirectAccess 的電腦。  
+伺服器上未設定遠端存取 < server_name >。 請指定已啟用 DirectAccess 的電腦。  
   
 **原因**  
   
@@ -48,7 +48,7 @@ ms.locfileid: "67280909"
 執行命令，並確定將 *ComputerName* 參數指定成已設定為屬於多站台部署之伺服器的名稱。  
   
 ## <a name="multisite-is-not-enabled"></a>未啟用多站台  
-**收到的錯誤**。 您必須啟用多站台的部署，才能執行這項作業。 請使用 `Enable-DAMultiSite` Cmdlet 進行啟用。  
+**收到錯誤**。 您必須先啟用多網站部署，才能執行此作業。 請使用 `Enable-DAMultiSite` Cmdlet 進行啟用。  
   
 **原因**  
   
@@ -63,7 +63,7 @@ ms.locfileid: "67280909"
 ## <a name="entry-point-and-domain-controller-not-provided-in-cmdlet"></a>Cmdlet 中未提供進入點和網域控制站  
 `Set-DaEntryPointDC` Cmdlet 可讓您變更與不同進入點相關的網域控制站，例如，如果已無法再使用某個特定的網域控制站。 您可以更新特定的進入點以使用不同的網域控制站，也可以更新使用特定網域控制站的所有進入點以使用新的網域控制站。 在第一種情況下，您應該使用 *EntryPointName* 參數指定應該更新的進入點。 在第二種情況下，您應該使用 *ExistingDC* 參數指定應該取代的網域控制站。 您只能指定其中一個參數。  
   
-**收到的錯誤**。 沒有指定任何必要的參數。 請提供進入點或現有網域控制站的名稱。  
+**收到錯誤**。 未指定任何必要的參數。 請提供進入點或現有網域控制站的名稱。  
   
 或  
   
@@ -78,7 +78,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 執行命令，並確認指定 *EntryPointName* 參數或 *ExistingDC* 參數。  
   
 ## <a name="could-not-locate-domain-controller"></a>找不到網域控制站  
-**收到的錯誤**。 無法自動找到新的網域控制站。 請稍後重試，或確認網域控制站設定是否正確。  
+**收到錯誤**。 無法自動找到新的網域控制站。 請稍後重試，或確認網域控制站設定是否正確。  
   
 **原因**  
   
@@ -90,9 +90,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 ## <a name="could-not-connect-to-domain-controller"></a>無法連線到網域控制站  
   
--   **問題 1**  
+-   **問題1**  
   
-    **收到的錯誤**。 無法連線網域控制站 < g >。 檢查網路連線能力和伺服器可用性。  
+    **收到錯誤**。 無法連線到網域控制站 < domain_controller >。 檢查網路連線能力和伺服器可用性。  
   
     **原因**  
   
@@ -102,9 +102,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     確認網域控制站的名稱拼寫正確。 如果您是使用簡短名稱指定名稱，請使用 FQDN，然後再試一次。  
   
--   **問題 2**  
+-   **問題2**  
   
-    **收到的錯誤**。 無法連絡網域控制站 < g >。  
+    **收到錯誤**。 無法連絡網域控制站 < domain_controller >。  
   
     **原因**  
   
@@ -114,21 +114,21 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     確認網域控制站的名稱拼寫正確，確認網域控制站確實存在、正在執行、可寫入，而且網域控制站和網域之間存在信任的關係。  
   
--   **問題 3**  
+-   **問題3**  
   
-    **收到的錯誤**。 網域控制站 < g > 無法到達 %2。  
+    **收到錯誤**。 % 2！ s！無法達到網域控制站 < domain_controller >。  
   
     **原因**  
   
-    為了保持多站台部署中的設定一致，確認每一個 GPO 都是由單一網域控制站所管理非常重要。 管理 進入點之伺服器 GPO 的網域控制站無法使用時，無法讀取或修改遠端存取組態設定。  
+    為了保持多站台部署中的設定一致，確認每一個 GPO 都是由單一網域控制站所管理非常重要。 當管理進入點之伺服器 GPO 的網域控制站無法使用時，便無法讀取或修改遠端存取設定。  
   
     **解決方法**  
   
-    請依照 「 若要變更管理伺服器 Gpo 的網域控制站 」 所述的程序[2.4。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
+    遵循 [2.4 中所述的「變更管理伺服器 Gpo 的網域控制站」程式。設定 Gpo @ no__t-0。  
   
--   **問題 4**  
+-   **問題4**  
   
-    **收到的錯誤**。 無法連線網域 < 網域名稱 > 的主要網域控制站。  
+    **收到錯誤**。 無法連線到網域 < domain_name > 中的主域控制站。  
   
     **原因**  
   
@@ -136,10 +136,10 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     **解決方法**  
   
-    請遵循 「 轉移 PDC 模擬器角色 」 中所描述的程序[2.4。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
+    遵循 [2.4 中所述的「傳送 PDC 模擬器角色」程式。設定 Gpo @ no__t-0。  
   
 ## <a name="read-only-domain-controller"></a>唯讀網域控制站  
-**收到的錯誤**。 < g > 網域控制站是唯讀的。 請指定不是唯讀的網域控制站。  
+**收到錯誤**。 < Domain_controller > 的網域控制站是唯讀的。 請指定不是唯讀的網域控制站。  
   
 **原因**  
   
@@ -151,9 +151,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 ## <a name="cannot-retrieve-gpo"></a>無法擷取 GPO  
   
--   **問題 1**  
+-   **問題1**  
   
-    **收到的錯誤**。 無法從網域控制站 < 替代 > 擷取網域控制站 < 之前 > 上的 GPO gpo < 名稱 >，因為它們不在相同的網域。  
+    **收到錯誤**。 無法從網域控制站 < replacement_domain_controller > 取得網域控制站上的 GPO < GPO_name > < previous_domain_controller >，因為它們不在相同的網域中。  
   
     **原因**  
   
@@ -163,9 +163,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     如果您嘗試更新特定的進入點，請確認新的網域控制站與進入點伺服器位於相同的網域。 如果您嘗試更新特定的網域控制站，請確認新的網域控制站與您要取代的網域控制站位於相同的網域。  
   
--   **問題 2**  
+-   **問題2**  
   
-    **收到的錯誤**。 無法從網域控制站 < 替代 > 擷取網域控制站 < 之前 > 上的 GPO gpo < 名稱 >。 請等候網域複寫完成，然後再試一次。  
+    **收到錯誤**。 無法從網域控制站 < replacement_domain_controller > 取得網域控制站上的 GPO < GPO_name > < previous_domain_controller >。 請等候網域複寫完成，然後再試一次。  
   
     **原因**  
   
@@ -175,9 +175,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     新的網域控制站上沒有伺服器 GPO。 請確認 GPO 已經成功複寫到新的網域控制站，然後再試一次。  
   
--   **問題 3**  
+-   **問題3**  
   
-    **收到的錯誤**。 您沒有存取 GPO gpo < 名稱 > 的權限。  
+    **收到錯誤**。 您沒有許可權可存取 GPO < GPO_name >。  
   
     **原因**  
   
@@ -188,7 +188,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
     網域控制站上有 GPO，但無法讀取。 請確認您具有必要的權限，然後再試一次。  
   
 ## <a name="entry-point-not-part-of-multisite-deployment"></a>進入點不屬於多站台部署  
-**收到的錯誤**。 進入點 < 進入 > 不屬於多站台部署。 請指定其他值。  
+**收到錯誤**。 < Entry_point_name > 的進入點不是多網站部署的一部分。 請指定其他值。  
   
 **原因**  
   
@@ -200,9 +200,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 ## <a name="remote-access-server-settings"></a>遠端存取伺服器設定  
   
--   **問題 1**  
+-   **問題1**  
   
-    **收到的錯誤**。 無法存取進入點 < 進入 > 伺服器 < 伺服器名稱 >。  
+    **收到錯誤**。 無法存取進入點中的伺服器 < server_name > < entry_point_name >。  
   
     **原因**  
   
@@ -212,9 +212,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     確認所有相關的遠端存取伺服器都在執行中，而且您具有這些伺服器的本機系統管理員權限，然後再試一次。  
   
--   **問題 2**  
+-   **問題2**  
   
-    **收到的錯誤**。 無法儲存設定以登錄伺服器 < 伺服器名稱 > 上在進入點 < 進入 >。  
+    **收到錯誤**。 您無法將設定儲存到伺服器上的登錄，< server_name > 進入點 < entry_point_name >。  
   
     **原因**  
   
@@ -224,9 +224,9 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     確認所有相關的遠端存取伺服器都在執行中，而且您具有這些伺服器的本機系統管理員權限，然後再試一次。  
   
--   **問題 3**  
+-   **問題3**  
   
-    **收到的錯誤**。 < 伺服器名稱 > 上不可套用 GPO 更新。 直到下次重新整理原則之前，變更都不會生效。  
+    **收到錯誤**。 GPO 更新無法套用在 < server_name > 上。 直到下次重新整理原則之前，變更都不會生效。  
   
     **原因**  
   
@@ -234,10 +234,10 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     **解決方法**  
   
-    使用遠端存取管理主控台的 [儀表板]  中的 [設定狀態]  可以看到所有未更新的伺服器。 這不會造成任何功能上的問題；但是您可以在任何未更新的伺服器上執行 `gpupdate /force`，立即更新設定狀態。  
+    使用遠端存取管理主控台的 [儀表板] 中的 [設定狀態] 可以看到所有未更新的伺服器。 這不會造成任何功能上的問題；但是您可以在任何未更新的伺服器上執行 `gpupdate /force`，立即更新設定狀態。  
   
 ## <a name="problem-resolving-fqdn"></a>解析 FQDN 時發生問題  
-**收到的錯誤**。 無法存取進入點 < 進入 > 伺服器 < 伺服器名稱 >。  
+**收到錯誤**。 無法存取進入點中的伺服器 < server_name > < entry_point_name >。  
   
 **原因**  
   
@@ -248,7 +248,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 錯誤訊息中指定的進入點與網域控制站相關。 請確認進入點可以使用網域控制站。 如果從網域移除指定的 SID 所屬的電腦，請忽略這個訊息，然後從多站台部署移除伺服器。  
   
 ## <a name="no-entry-points-to-update"></a>沒有可更新的進入點  
-**收到的警告**。 不修改網域控制站設定。 如果您認為有必要變更，請確定正確設定了 Cmdlet 參數，而且 GPO 也複寫到必要的網域控制站。  
+**收到警告**。 未修改網域控制站設定。 如果您認為有必要變更，請確定正確設定了 Cmdlet 參數，而且 GPO 也複寫到必要的網域控制站。  
   
 **原因**  
   

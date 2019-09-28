@@ -1,64 +1,64 @@
 ---
-title: Active Directory 樹系復原計劃的必要條件
+title: 規劃 Active Directory 樹系復原的必要條件
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
 ms.technology: identity-adds
-ms.openlocfilehash: c8945dd5ccccb27826dd96413b56a070a7452789
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 12c34afc497131bfe6abdc78c636e6d3b784877e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842169"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390375"
 ---
 # <a name="active-directory-forest-recovery-prerequisites"></a>Active Directory 樹系復原必要條件
 
->適用於：Windows Server 2016 中，Windows Server 2012 和 2012 R2 中，Windows Server 2008 和 2008 R2
+>適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
 
-下列文件會討論您應知悉如何設計樹系復原計劃，或嘗試復原前的必要條件。
+下列檔討論在建立樹系復原計畫或嘗試復原之前，您應該先熟悉的必要條件。
 
-## <a name="assumptions-for-using-this-guide"></a>使用本指南假設
+## <a name="assumptions-for-using-this-guide"></a>使用本指南的假設
 
-1. 您已使用 Microsoft 支援專業人員和：
-   - 判斷失敗原因的全樹系。 本指南不會建議失敗的原因或建議任何程序，以避免發生失敗。
-   - 評估任何可能的補救方法。  
-   - 結束時，在未諮詢 Microsoft 支援服務，該還原整個樹系到其狀態失敗發生之前是從失敗中復原的最佳方式。 在許多情況下，樹系復原應該最後一個選項。
+1. 您已經與 Microsoft 支援服務專業人員合作，並且：
+   - 判斷整個樹系失敗的原因。 本指南不建議發生失敗的原因，或建議採取任何程式來避免失敗。
+   - 評估任何可能的補救方式。  
+   - 結束，在與 Microsoft 支援服務的諮詢中，將整個樹系還原到失敗發生之前的狀態，是從失敗中復原的最佳方式。 在許多情況下，樹系復原應該是最後一個選項。
 
-2. 您已遵循 Microsoft 最佳作法建議，使用整合 Active Directory 的網域名稱系統 (DNS)。 具體來說，應該針對每個 Active Directory 網域的 Active Directory 整合 DNS 區域。 
-   - 如果這不是這樣，則您仍然可以使用本指南的基本原則執行樹系復原。 不過，您必須採取特定的量值，根據您自己環境的 DNS 復原。 如需使用 Active Directory 整合 DNS 的詳細資訊，請參閱[建立 DNS 基礎結構設計](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
+2. 您已遵循使用 Active Directory 整合式網域名稱系統（DNS）的 Microsoft 最佳作法建議。 具體而言，每個 Active Directory 網域都應該有一個 Active Directory 整合的 DNS 區域。 
+   - 如果不是這種情況，您仍然可以使用本指南的基本原則來執行樹系復原。 不過，您必須根據自己的環境，針對 DNS 復原採取特定的量值。 如需使用 Active Directory 整合式 DNS 的詳細資訊，請參閱[建立 Dns 基礎結構設計](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
 
-3. 雖然本指南旨在做為樹系復原的一般指南未涵蓋所有可能的案例。 比方說，從 Windows Server 2008 開始，沒有 Server Core 版本，也就是完整版的 Windows Server，但不含完整 GUI。 雖然它當然有可能復原只是執行 Server Core 的 Dc 所組成的樹系，本指南中的任何詳細的指示。 不過，根據此處所討論的指引您將能夠自行設計所需的命令列動作。  
+3. 雖然本指南的目的是做為樹系復原的一般指南，但並非所有可能的案例都涵蓋在內。 比方說，從 Windows Server 2008 開始，有一個 Server Core 版本，這是 Windows Server 的完整版本，但沒有完整的 GUI。 雖然您可以復原的樹系只包含執行 Server Core 的 Dc，但本指南沒有詳細的指示。 不過，根據此處所討論的指導方針，您將能夠自行設計必要的命令列動作。  
 
 > ![!NOTE]
-> 雖然本指南的目標復原樹系和維護或還原完整的 DNS 功能，但是復原可能會導致從失敗前的組態變更的 DNS 組態。 樹系復原之後，您可以還原成原始的 DNS 設定。 本指南中的建議不會說明如何設定執行的公司命名空間的其他部分的名稱解析的 DNS 伺服器有未儲存在 AD DS 的 DNS 區域。  
+> 雖然本指南的目標是要復原樹系，並維護或還原完整的 DNS 功能，但在失敗之前，修復可能會導致 DNS 設定從設定中變更。 在樹系復原之後，您可以還原成原始的 DNS 設定。 本指南中的建議不會說明如何設定 DNS 伺服器，以對公司命名空間的其他部分執行名稱解析，其中有不會儲存在 AD DS 中的 DNS 區域。  
 
 ## <a name="concepts-for-using-this-guide"></a>使用本指南的概念
 
-規劃 Active Directory 樹系復原之前，您應該熟悉下列：  
+開始規劃 Active Directory 樹系的復原之前，您應該先熟悉下列各項：  
   
-- Active Directory 的基本概念  
-- 操作主機角色 （也稱為彈性單一主機操作或 FSMO） 的重要性。 這些角色包括下列各項：  
+- 基本 Active Directory 概念  
+- 操作主機角色（也稱為彈性單一主機操作或 FSMO）的重要性。 這些角色包括下列各項：  
    - 架構主機
    - 網域命名主機
-   - 相對識別碼 (RID) 主機
-   - 主要網域控制站 (PDC) 模擬器主機
+   - 相對識別碼（RID）主機
+   - 主域控制站（PDC）模擬器主機
    - 基礎結構主機
 
-此外，您應該先備份和還原 AD DS 與 SYSVOL 上定期執行實驗室環境中。 如需詳細資訊，請參閱 <<c0> [ 備份系統狀態資料](AD-Forest-Recovery-Procedures.md)並[執行的 Active Directory 網域服務的非系統授權還原](AD-Forest-Recovery-Procedures.md)。
+此外，您應該定期在實驗室環境中備份和還原 AD DS 和 SYSVOL。 如需詳細資訊，請參閱[備份系統狀態資料](AD-Forest-Recovery-Procedures.md)和[執行 Active Directory Domain Services 的非系統授權還原](AD-Forest-Recovery-Procedures.md)。
 
 ## <a name="next-steps"></a>後續步驟
 
-- [AD 樹系復原-必要條件](AD-Forest-Recovery-Prerequisties.md)  
-- [AD 樹系復原-設計自訂的樹系復原計劃](AD-Forest-Recovery-Devising-a-Plan.md)  
-- [AD 樹系復原-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
-- [AD 樹系復原-判斷如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [AD 樹系復原-執行初始的復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)  
-- [AD 樹系復原-常見問題集](AD-Forest-Recovery-FAQ.md)  
-- [AD 樹系復原-復原 Multidomain 樹系內的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [AD 樹系復原與 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)  
+- [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)  
+- [AD 樹系復原-設計自訂樹系復原計畫](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [AD 樹系復原-識別問題](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD 樹系復原-決定如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD 樹系復原-執行初始復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [AD 樹系復原 - 程序](AD-Forest-Recovery-Procedures.md)  
+- [AD 樹系復原-常見問題](AD-Forest-Recovery-FAQ.md)  
+- [AD 樹系復原-修復多網域樹系中的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [AD 樹系復原-具有 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)  

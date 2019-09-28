@@ -1,9 +1,9 @@
 ---
 title: 啟用 DirectAccess
-description: 本主題是本指南新增 DirectAccess 加入現有的遠端存取 (VPN) 部署適用於 Windows Server 2016 的一部分
+description: 本主題是將 DirectAccess 新增至 Windows Server 2016 的現有遠端存取（VPN）部署指南的一部分
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,26 +12,26 @@ ms.topic: article
 ms.assetid: bf9aaf36-fc3c-4007-bba9-c0b752774601
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1d6cc9db9bdc0eb2a753e3cffb8c698727357009
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d249fbfbd0f08b9b75f6a198347f29f9a721bb3b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281850"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404986"
 ---
 # <a name="enable-directaccess"></a>啟用 DirectAccess
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
- Windows Server 2016 和 Windows Server 2012 結合成單一的遠端存取角色 DirectAccess 和遠端存取服務 (RAS) VPN。 這個概觀提供部署單一的 Windows Server 2016 或 Windows Server 2012 遠端存取伺服器使用基本設定所需的設定步驟的簡介。
+ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服務（RAS） VPN 結合成一個遠端存取角色。 本總覽提供使用基本設定部署單一 Windows Server 2016 或 Windows Server 2012 遠端存取服務器所需的設定步驟簡介。
   
--   [步驟 1：設定 DirectAccess 基礎結構](step-1-configure-da-inf-davpn.md)。 這個步驟包括設定網路和伺服器設定、DNS 設定及 Active Directory 設定。  
+-   [步驟 1：設定 DirectAccess 基礎結構 @ no__t-0。 這個步驟包括設定網路和伺服器設定、DNS 設定及 Active Directory 設定。  
   
--   [步驟 2：設定 DirectAccess VPN 伺服器](step-2-configure-server-davpn.md)。 這個步驟包括設定 DirectAccess 用戶端電腦，伺服器設定。  
+-   [步驟 2：設定 DirectAccess-VPN 伺服器 @ no__t-0。 此步驟包括設定 DirectAccess 用戶端電腦、伺服器設定。  
   
--   [步驟 3：確認部署](step-3-verify-davpn.md)。 這個步驟包括驗證部署的步驟。  
+-   [步驟 3：確認部署 @ no__t-0。 這個步驟包括驗證部署的步驟。  
   
-開始之前部署，請確認中所述的規劃步驟[規劃啟用 DirectAccess](Plan-to-Enable-DirectAccess.md)。  
+開始部署之前，請先確認規劃中所述的規劃步驟，[以啟用 DirectAccess](Plan-to-Enable-DirectAccess.md)。  
   
 
 

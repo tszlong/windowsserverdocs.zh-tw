@@ -1,8 +1,8 @@
 ---
 title: nslookup set vc
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b70cd343ce0ff2c6b4dfd61750882939153b795
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d46e60d6c755a75928c801494c385578c3b5bc5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436759"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372743"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
 
 
-指定要使用或不使用虛擬電路時傳送要求到伺服器。
+指定在將要求傳送至伺服器時，使用或不使用虛擬電路。
 
 ## <a name="syntax"></a>語法
 
@@ -36,8 +36,8 @@ set [no]vc
 
 | 參數 |                                              描述                                               |
 |-----------|--------------------------------------------------------------------------------------------------------|
-| **novc**  | 指定不要使用虛擬電路將要求傳送到伺服器時。 預設值是**novc**。 |
-|  **vc**   |             指定要將要求傳送到伺服器時，一律使用虛擬電路。             |
+| **novc**  | 指定將要求傳送至伺服器時，不要使用虛擬電路。 預設值為**novc**。 |
+|  **vc**   |             指定在傳送要求給伺服器時，一律使用虛擬電路。             |
 |   {說明   |                                                   ?}                                                   |
 
 #### <a name="additional-references"></a>其他參考資料

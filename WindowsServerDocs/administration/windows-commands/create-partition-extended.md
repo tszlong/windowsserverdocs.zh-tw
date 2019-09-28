@@ -1,8 +1,8 @@
 ---
-title: 建立擴充的磁碟分割
-description: '適用於 Windows 命令主題 * * *- '
+title: 建立分割區擴充
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a1cca93a064cfb6e5c18f4a472ea837b922d07b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 21620da46be0e1375f320172e7ccfe2edc338114
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434189"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378908"
 ---
-# <a name="create-partition-extended"></a>建立擴充的磁碟分割
+# <a name="create-partition-extended"></a>建立分割區擴充
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立延伸磁碟分割具有焦點的磁碟上。 您可以使用此命令只會在主開機記錄\(MBR\)磁碟。  
+在磁片上建立具有焦點的延伸磁碟分割。 您只能在主要開機記錄 \(MBR @ no__t-1 磁片上使用此命令。  
   
   
   
@@ -38,31 +38,31 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 |  參數  |                                                                                                                             描述                                                                                                                              |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size\=<n>  |                                                  指定資料分割的大小以 mb 為單位\(MB\)。 如果未指定大小，磁碟分割會繼續直到延伸磁碟分割沒有更多的可用空間。                                                  |
-| offset\=<n> |                     指定的位移，以 kb 為單位\(KB\)，在建立資料分割。 如果沒有指定位移，資料分割將會啟動夠大，無法存放新的資料分割的磁碟上的可用空間的開頭。                      |
-| align\=<n>  | 對齊最接近對齊界限的所有分割區範圍。 多半搭配硬體 RAID 邏輯單元編號\(LUN\)陣列來改善效能。 <n> 是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。 |
-|    noerr    |                                 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                                 |
+|  size @ no__t-0 @ no__t-1  |                                                  指定磁碟分割的大小（以 mb 為單位） \(MB @ no__t-1。 如果沒有指定大小，磁碟分割會繼續進行，直到延伸磁碟分割中沒有其他可用空間為止。                                                  |
+| offset @ no__t-0 @ no__t-1 |                     指定分割區的位移（以 kb 為單位） \(KB @ no__t-1。 如果沒有指定位移，分割區會從磁片上可用空間的開頭開始，夠大而足以容納新的資料分割。                      |
+| align @ no__t-0 @ no__t-1  | 將所有資料分割範圍對齊最接近的對齊界限。 通常用於硬體 RAID 邏輯單元編號 \(LUN @ no__t-1 陣列以改善效能。 <n> 是從磁片開頭到最接近對齊界限的 kb 數 \(KB @ no__t-2。 |
+|    noerr    |                                 僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                 |
   
 ## <a name="remarks"></a>備註  
   
--   在建立資料分割之後，焦點會自動移到新的磁碟分割。  
+-   建立分割區之後，焦點會自動移至新的分割區。  
   
--   每個磁碟，您可以建立只有一個延伸磁碟分割。  
+-   每個磁片只能建立一個延伸磁碟分割。  
   
--   如果您嘗試建立另一個延伸磁碟分割內的延伸磁碟分割，此命令將會失敗。  
+-   如果您嘗試在另一個延伸磁碟分割內建立延伸磁碟分割，則此命令會失敗。  
   
--   您可以建立邏輯磁碟機之前，您必須建立延伸磁碟分割。  
+-   您必須先建立延伸磁碟分割，才能建立邏輯磁碟機。  
   
--   這項作業成功時，必須選取一個基本 MBR 磁碟。 使用**選取磁碟**命令來選取磁碟，並將焦點移到它。  
+-   必須選取基本的 MBR 磁碟，此操作才能成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。  
   
-## <a name="BKMK_examples"></a>範例  
-若要建立延伸磁碟分割的 1000 mb 的大小，請輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要建立大小為 1000 mb 的延伸磁碟分割，請輸入：  
   
 ```  
 create partition extended size=1000  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

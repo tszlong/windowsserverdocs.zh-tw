@@ -1,8 +1,8 @@
 ---
 title: ftp trace_1
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9db8ae49f996a6f316f0c18b51149ada38a759c7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51f1f41a854a73bba8b56aebbc0cc8e2e98d89e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817449"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375935"
 ---
-# <a name="ftp-trace1"></a>ftp: trace_1
+# <a name="ftp-trace_1"></a>ftp： trace_1
 
 
 
@@ -38,11 +38,11 @@ trace
 
 ## <a name="remarks"></a>備註
 
-**追蹤**執行時，會顯示內部的 FTP 函式呼叫的一系列**ftp**命令。
+**追蹤**會顯示執行**ftp**命令時的內部 FTP 函數呼叫系列。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-切換開啟和關閉的追蹤。
+切換開啟和關閉追蹤。
 ```
 trace
 ```

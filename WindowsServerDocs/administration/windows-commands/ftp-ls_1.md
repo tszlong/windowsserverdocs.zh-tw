@@ -1,8 +1,8 @@
 ---
 title: ftp ls_1
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6abf8466f90ac29846f2e1ee7d305e7e4280231e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d183f6a014273b78befd14c8d3208508948ffc54
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438628"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376247"
 ---
-# <a name="ftp-ls1"></a>ftp: ls_1
+# <a name="ftp-ls_1"></a>ftp： ls_1
 
-> 適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 > 
 > 
-> 適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示檔案和子目錄，從遠端電腦的簡短的清單。   
+從遠端電腦顯示檔案和子目錄的縮寫清單。   
 ## <a name="syntax"></a>語法  
 ```  
 ls [<remotedirectory>] [<LocalFile>]  
@@ -36,17 +36,17 @@ ls [<remotedirectory>] [<LocalFile>]
 
 |      參數      |                                                                       描述                                                                        |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [<remotedirectory>] | 指定您要查看清單的目錄。 如果未不指定任何目錄，則會使用目前的工作目錄，在遠端電腦上。 |
-|    [<LocalFile>]    |               指定用來儲存清單中的本機檔案。 如果未指定本機檔案，結果會顯示在螢幕上。               |
+| [<remotedirectory>] | 指定您要查看其清單的目錄。 如果未指定任何目錄，則會使用遠端電腦上的目前工作目錄。 |
+|    [<LocalFile>]    |               指定用來儲存清單的本機檔案。 如果未指定本機檔案，結果會顯示在畫面上。               |
 
-## <a name="BKMK_Examples"></a>範例  
-顯示檔案和子目錄，從遠端電腦的簡短的清單。  
+## <a name="BKMK_Examples"></a>典型  
+從遠端電腦顯示檔案和子目錄的縮寫清單。  
 ```  
 ls  
 ```  
-取得縮寫的目錄清單**dir1**遠端電腦上並儲存在本機的檔案稱為**dirlist.txt**  
+取得遠端電腦上**dir1**的縮寫目錄清單，並將它儲存在名為 dirlist 的本機檔案中 **。**  
 ```  
 ls dir1 dirlist.txt   
 ```  
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 -   [命令列語法關鍵](command-line-syntax-key.md)  

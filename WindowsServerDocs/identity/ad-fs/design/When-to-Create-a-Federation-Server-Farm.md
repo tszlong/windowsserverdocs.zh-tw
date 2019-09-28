@@ -7,50 +7,50 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 91a0122198639bf75e9e43e9da9edf68dd0453d9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: fcfc7d640d3688bf0e23557af9bd56082418ef37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190685"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358937"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>建立同盟伺服器陣列的時機
 
-請考慮在 Active Directory Federation Services 中建立同盟伺服器陣列\(AD FS\)當您有較大的 AD FS 部署，且您想要提供容錯、 負載\-平衡或延展性，讓您組織 Federation Service。 在相同的網路中建立兩個或多個同盟伺服器、 設定每個使用相同的 Federation Service，以及加入每一部伺服器的公開金鑰的語彙基元 act\-簽章憑證至 AD FS 管理嵌入式管理單元\-中建立同盟伺服器陣列。  
+當您有較大的 AD FS 部署，而且想要為貴組織的同盟提供容錯、載入 @ no__t 2balancing 或擴充性時，請考慮在 Active Directory 同盟服務 \(AD FS @ no__t-1 中建立同盟伺服器陣列。維護. 在相同網路中建立兩部或多部同盟伺服器的動作，將每一部伺服器設定為使用相同的同盟服務，並將每個伺服器的權杖 @ no__t-0signing 憑證的公開金鑰新增至 AD FS 管理 snap @ no__t-1in 建立同盟伺服器陣列。  
   
-您可以建立同盟伺服器陣列，或使用 AD FS 同盟伺服器設定精靈，安裝至現有的伺服陣列的其他同盟伺服器。 如需詳細資訊，請參閱＜ [When to Create a Federation Server](When-to-Create-a-Federation-Server.md)＞。  
+您可以使用 [AD FS 同盟伺服器設定] Wizard 來建立同盟伺服器陣列，或將其他的同盟伺服器安裝到現有的伺服器陣列。 如需詳細資訊，請參閱＜ [When to Create a Federation Server](When-to-Create-a-Federation-Server.md)＞。  
   
 > [!NOTE]  
-> 當您選擇的選項來建立**新的同盟伺服器陣列**使用 AD FS 同盟伺服器設定精靈，精靈會嘗試建立容器物件\(適用於共用憑證\)在 Active Directory。 因此，第一次登入您要在其中設定同盟伺服器角色的電腦時，請務必使用在 Active Directory 中具有足夠權限的帳戶，以便建立這個容器物件。  
+> 當您選擇使用 [AD FS 同盟伺服器設定] [建立**新的同盟伺服器**陣列] 選項時，此 wizard 會嘗試在 Active Directory 中建立容器物件 \(for 共用憑證 @ no__t-2。 因此，第一次登入您要在其中設定同盟伺服器角色的電腦時，請務必使用在 Active Directory 中具有足夠權限的帳戶，以便建立這個容器物件。  
   
-同盟伺服器可以分組為伺服器陣列之前，他們必須先叢集，如此送達單一完整的要求格式的網域名稱\(FQDN\)會路由傳送至伺服器陣列中的各種同盟伺服器。 您可以建立伺服器叢集部署的網路負載平衡\(NLB\)在公司網路內。 本指南假設 NLB 已適當地設定為叢集每個同盟伺服器陣列中。  
+同盟伺服器必須先進行叢集化，才能將它群組成伺服器陣列，以便將到達單一完整功能變數名稱 \(FQDN @ no__t-1 的要求路由傳送至伺服器陣列中的各種同盟伺服器。 您可以藉由在公司網路內部署網路負載平衡 \(NLB @ no__t-1 來建立伺服器叢集。 本指南假設 NLB 已適當設定，以叢集伺服器陣列中的每部同盟伺服器。  
   
-如需有關如何設定叢集 FQDN 使用 Microsoft NLB 技術，請參閱[指定叢集參數](https://go.microsoft.com/fwlink/?LinkID=74651)。  
+如需有關如何使用 Microsoft NLB 技術來設定叢集 FQDN 的詳細資訊，請參閱[指定叢集參數](https://go.microsoft.com/fwlink/?LinkID=74651)。  
   
 ## <a name="best-practices-for-deploying-a-federation-server-farm"></a>部署同盟伺服器陣列的最佳作法  
-我們建議您部署在生產環境中的同盟伺服器的下列最佳作法：  
+我們建議您在生產環境中部署同盟伺服器的下列最佳作法：  
   
--   如果您要部署多部同盟伺服器在相同的時間，或您知道，您將新增更多的伺服器到伺服陣列一段時間，請考慮建立伺服器陣列中的現有的同盟伺服器的伺服器映像，並再安裝從該映像，當您需要為 create 其他同盟伺服器快速。  
+-   如果您要同時部署多部同盟伺服器，或您知道您將會在一段時間後新增更多伺服器至伺服器陣列，請考慮在伺服器陣列中建立現有同盟伺服器的伺服器映射，然後在需要 cr 時從該映射進行安裝。快速建立 e) 額外的同盟伺服器。  
   
     > [!NOTE]  
-    > 如果您決定使用伺服器映像方法來部署其他同盟伺服器，您就不必完成[檢查清單：Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)每當您想要將新的伺服器新增至伺服器陣列。  
+    > 如果您決定使用伺服器映射方法來部署其他同盟伺服器，您就不需要完成 @no__t 0Checklist 中的工作：每次您想要將新的伺服器加入至伺服器陣列時，都要設定同盟伺服器 @ no__t-0。  
   
--   使用 NLB 或其他形式的叢集配置許多同盟伺服器電腦的單一 IP 位址。  
+-   使用 NLB 或其他形式的叢集，為許多同盟伺服器電腦配置單一 IP 位址。  
   
--   保留每個同盟伺服器陣列中，並根據您的網域名稱系統的靜態 IP 位址\(DNS\)組態，排除每個 IP 位址在動態主機設定通訊協定中的插入\(DHCP\). Microsoft NLB 技術要求參與 NLB 叢集的每部伺服器都要有指派的靜態 IP 位址。  
+-   保留伺服器陣列中每部同盟伺服器的靜態 IP 位址，並根據您的網域名稱系統 \(DNS @ no__t-1 設定，在動態主機設定通訊協定 \(DHCP @ no__t-3 中插入每個 IP 位址的排除。 Microsoft NLB 技術要求參與 NLB 叢集的每部伺服器都要有指派的靜態 IP 位址。  
   
--   如果 AD FS 設定資料庫會儲存在 SQL 資料庫，避免同時編輯多個同盟伺服器的 SQL 資料庫。  
+-   如果 AD FS 設定資料庫會儲存在 SQL 資料庫中，請避免同時從多部同盟伺服器編輯 SQL 資料庫。  
   
 ## <a name="configuring-federation-servers-for-a-farm"></a>設定伺服器陣列的同盟伺服器  
-下表描述，讓每一部同盟伺服器可以參與陣列環境必須完成的工作。  
+下表說明必須完成的工作，讓每部同盟伺服器都可以參與陣列環境。  
   
 |工作|描述|  
 |--------|---------------|  
-|如果您使用 SQL Server 來儲存 AD FS 設定資料庫|同盟伺服器陣列是由共用相同的 AD FS 設定資料庫和語彙基元的兩個或多個同盟伺服器所組成\-簽署憑證。 設定資料庫可以存放在 Windows 內部資料庫或 SQL Server 資料庫中。 如果您打算在 SQL database 中儲存的設定資料庫，請確定組態資料庫已可供存取，使它可以存取所有參與伺服器陣列的新同盟伺服器。 **注意：** 伺服器陣列的情況下，很重要的組態資料庫位於未加入為該伺服器陣列中的同盟伺服器的電腦上。 Microsoft NLB 不允許參與伺服器陣列中的任何電腦互相通訊。 **注意：** 請確認 Internet Information Services 中的 AD FS 應用程式集區的身分識別\(IIS\) \)上每個同盟參與伺服器陣列中的伺服器具有組態資料庫的 「 讀取 」 權限。|  
-|取得及共用憑證|您可以取得單一伺服器驗證憑證從公開憑證授權單位\(CA\)— 例如 VeriSign。 如此一來所有同盟伺服器都共用的相同私密金鑰部分的憑證，然後可以設定憑證。 如需如何共用相同的憑證的詳細資訊，請參閱[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。 **注意：** AD FS 管理嵌入式管理單元\-在參考同盟伺服器，做為服務通訊憑證的伺服器驗證憑證。<br /><br />如需詳細資訊，請參閱＜ [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)＞。|  
-|指向相同的 SQL Server 執行個體|如果 AD FS 設定資料庫會儲存在 SQL database 中，新的同盟伺服器必須指向相同的 SQL Server 執行個體，以便新的伺服器可以參與伺服器陣列可由伺服陣列中的其他同盟伺服器。|  
+|如果您使用 SQL Server 來儲存 AD FS 設定資料庫|同盟伺服器陣列是由兩個或多個共用相同 AD FS 設定資料庫和權杖 @ no__t-0signing 憑證的同盟伺服器所組成。 設定資料庫可以存放在 Windows 內部資料庫或 SQL Server 資料庫中。 如果您打算將設定資料庫存放在 SQL 資料庫中，請確定設定資料庫可供存取，以供所有參與伺服器陣列的新同盟伺服器存取。 **注意：** 對於伺服器陣列案例而言，設定資料庫必須位於不會同時參與該伺服器陣列中同盟伺服器的電腦上，這點很重要。 Microsoft NLB 不允許參與伺服器陣列中的任何電腦互相通訊。 **注意：** 請確定參與伺服器陣列的每一部同盟伺服器上，Internet Information Services \(IIS @ no__t-1 @ no__t-2 中的 AD FS AppPool 的識別具有設定資料庫的讀取權限。|  
+|取得及共用憑證|您可以從公開憑證授權單位單位取得單一伺服器驗證憑證 \(CA @ no__t-1，例如 VeriSign。 接著，您可以設定憑證，讓所有同盟伺服器共用憑證的相同私密金鑰部分。 如需有關如何共用相同憑證的詳細資訊，請參閱 @no__t 0Checklist：設定同盟伺服器 @ no__t-0。 **注意：** AD FS Management snap @ no__t-0in 指的是同盟伺服器的伺服器驗證憑證，做為服務通訊憑證。<br /><br />如需詳細資訊，請參閱＜ [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)＞。|  
+|指向相同的 SQL Server 執行個體|如果 AD FS 設定資料庫會儲存在 SQL 資料庫中，新的同盟伺服器必須指向伺服器陣列中其他同盟伺服器所使用的相同 SQL Server 實例，如此新的伺服器才可以參與伺服器陣列。|  
   
 ## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

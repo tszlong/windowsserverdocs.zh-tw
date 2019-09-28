@@ -1,9 +1,9 @@
 ---
 title: 更新或刪除使用者帳戶
-description: 了解如何更新或刪除在 MultiPoint 服務使用者
+description: 瞭解如何在 MultiPoint 服務中更新或刪除使用者
 ms.custom: na
 ms.date: 07/11/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,17 +13,17 @@ ms.assetid: f7f55a35-c932-482c-97d4-ef3c1f390cbf
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 4b8631af3278daaf1ee005616e7922ee7febeacf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: ac022cd06b4e014bcccc9e2193c1295efff43017
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857309"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389185"
 ---
 # <a name="update-or-delete-a-user-account"></a>更新或刪除使用者帳戶
-如果您身為 MultiPoint 服務系統上的系統管理使用者登入，您可以修改任何使用者帳戶，包括變更帳戶的存取層級、 變更全名和密碼，或刪除帳戶。  
+如果您以 MultiPoint 服務系統上的系統管理使用者身分登入，您可以修改任何使用者帳戶，包括變更帳戶的存取層級、變更完整名稱和密碼，或刪除帳戶。  
   
-1.  在站台模式中開啟 MultiPoint 管理員，然後按一下**使用者** 索引標籤。  
+1.  開啟 [站模式] 中的 [MultiPoint 管理員]，然後按一下 [**使用者**] 索引標籤。  
   
 2.  在 [使用者] 欄位中，按一下您想要修改的帳戶。  
   

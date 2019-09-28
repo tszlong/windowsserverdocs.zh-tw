@@ -2,7 +2,7 @@
 title: 重新啟動或關閉
 description: 瞭解如何在 MultiPoint 服務中重新開機或完全關閉系統
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: d2ef7185dc660e50dfde1816ed843b9c2586e930
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 76155fa5f8baf877999bdc3eb0753d7805087a72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871573"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389417"
 ---
 # <a name="restart-or-shut-down"></a>重新啟動或關閉
 如果在安裝硬體、軟體和軟體更新之後出現指示，您可能必須重新啟動在 MultiPoint 服務系統中的主機電腦和所有「站台」。 如果站台加入了新的硬體裝置，您可能也會想要將硬體裝置與站台建立關聯。 如需如何「與站台建立關聯」的詳細資訊，請參閱 [Switch Between Modes ](Switch-Between-Modes.md) (在不同模式間切換)主題。  

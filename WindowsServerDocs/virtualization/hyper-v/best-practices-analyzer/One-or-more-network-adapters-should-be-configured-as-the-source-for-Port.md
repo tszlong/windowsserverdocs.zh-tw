@@ -1,7 +1,7 @@
 ---
-title: 一或多個網路介面卡應該設定為來源連接埠鏡像
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 一或多個網路介面卡應設定為埠鏡像的來源
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: 147fd00f-1440-44d1-94e3-3a8af63aa7ed
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0843c1f302b96d334e8d6649ac5503bbe2b12d02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a079033608b8af8c63a0d02ae166eb7280fec41d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831789"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393571"
 ---
-# <a name="one-or-more-network-adapters-should-be-configured-as-the-source-for-port-mirroring"></a>一或多個網路介面卡應該設定為來源連接埠鏡像
+# <a name="one-or-more-network-adapters-should-be-configured-as-the-source-for-port-mirroring"></a>一或多個網路介面卡應設定為埠鏡像的來源
 
 >適用於：Windows Server 2016
 
@@ -30,18 +30,18 @@ ms.locfileid: "59831789"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>**問題**  
-*一或多個虛擬機器已設定為目的地的連接埠鏡像的網路介面卡，但虛擬交換器上沒有對應來源。*  
+*一部或多部虛擬機器的網路介面卡設定為埠鏡像的目的地，但虛擬交換器上沒有對應的來源。*  
   
-## <a name="impact"></a>**影響**  
-*下列虛擬交換器和虛擬機器，連接埠鏡像會無法正確運作：*  
+## <a name="impact"></a>**產生**  
+*下列虛擬交換器和虛擬機器的埠鏡像將無法正確運作：*  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>**解決方法**  
-*使用 Windows PowerShell] 或 [HYPER-V 管理員來完成，或更正連接埠鏡像組態。*  
+*使用 Windows PowerShell 或 Hyper-v 管理員來完成或更正埠鏡像設定。*  
   
 
 

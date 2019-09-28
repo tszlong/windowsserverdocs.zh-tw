@@ -1,8 +1,8 @@
 ---
 title: Md
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1396038410ecc5db5a124a1768038c4f8c8bea8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 965a5c506535a2c52d6cc7b3557c6104182c12a5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820839"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373695"
 ---
 # <a name="md"></a>Md
 
@@ -27,7 +27,7 @@ ms.locfileid: "59820839"
 建立目錄或子目錄。
 
 > [!NOTE]
-> 此命令等同於**mkdir**命令。
+> 此命令與**mkdir**命令相同。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -42,25 +42,25 @@ mkdir [<Drive>:]<Path>
 
 |參數|描述|
 |---------|-----------|
-|\<磁碟機 >:|指定您要建立新目錄的磁碟機。|
-|\<Path>|必要。 指定的名稱和新的目錄位置。 任何單一路徑的最大長度取決於檔案系統。|
+|@no__t 0Drive >：|指定您要在其上建立新目錄的磁片磁碟機。|
+|\<Path >|必要。 指定新目錄的名稱和位置。 任何單一路徑的最大長度都是由檔案系統所決定。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-命令延伸模組，依預設會啟用，可讓您使用單一**md**命令來建立指定之路徑中的中繼目錄。
+預設會啟用的命令延伸模組，可讓您使用單一**md**命令在指定的路徑中建立中繼目錄。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要建立名為 Directory1，目前的目錄內的目錄，請輸入：
+若要在目前目錄中建立名為 Directory1 的目錄，請輸入：
 ```
 md Directory1
 ```
-若要建立命令延伸模組啟用目錄樹狀結構 Taxes\Property\Current 根目錄的目錄中，輸入：
+若要建立根目錄內的目錄樹狀結構 Taxes\Property\Current，並啟用命令延伸模組，請輸入：
 ```
 md \Taxes\Property\Current
 ```
-若要建立的目錄樹狀結構 Taxes\Property\Current，如同先前的範例，但停用的命令擴充功能與在根目錄中，輸入下列命令序列：
+如先前範例所示，若要在根目錄中建立目錄樹狀結構 Taxes\Property\Current，但已停用命令延伸模組，請輸入下列順序的命令：
 ```
 md \Taxes
 cd \Taxes 

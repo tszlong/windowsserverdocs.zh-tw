@@ -1,7 +1,7 @@
 ---
 title: Hyper-v 上支援的 Debian 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 35603d47439b0bc8702dbaba09dea9d449964026
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 71b1985da522ef9ee2d7745bd19d2548e0241a2f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544733"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366774"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Debian 虛擬機器
 
@@ -26,15 +26,15 @@ ms.locfileid: "68544733"
 
 ## <a name="table-legend"></a>資料表圖例
 
-* **內建**的 .lis 版本包含在此 Linux 散發套件中。 Microsoft 提供的 .LIS 版下載套件不適用於此發佈, 因此不會進行安裝。 內建的 .LIS 的核心模組版本號碼 (如**lsmod**所示) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
+* **內建**的 .lis 版本包含在此 Linux 散發套件中。 Microsoft 提供的 .LIS 版下載套件不適用於此發佈，因此不會進行安裝。 內建的 .LIS 的核心模組版本號碼（如**lsmod**所示）與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
 
 * &#10004;-可用的功能
 
-* (*空白*)-無法使用功能
+* （*空白*）-無法使用功能
 
-| **功能**                                                                                                                                  | **Windows Server 作業系統版本** | **10 (buster)** | **9.0-9.6 (延展)** | **8.0-8.11 (jessie)** | **7.0-7.11 (wheezy)** |
+| **功能**                                                                                                                                  | **Windows Server 作業系統版本** | **10（buster）** | **9.0-9.6 （延展）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
-| **可用性**                                                                                                                             |                                             | 內建              | 內建              | 內建              | 內建 (注 6)     |
+| **Availability**                                                                                                                             |                                             | 內建              | 內建              | 內建              | 內建（注6）     |
 | **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | Windows Server 2016 精確時間                                                                                                            | 2019、2016                                  | &#10004;附注8       | &#10004;附注8       |                       |                       |
 | **[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
@@ -48,7 +48,7 @@ ms.locfileid: "68544733"
 | **[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
 | VHDX 調整大小                                                                                                                                  | 2019、2016、2012 R2                         | &#10004;附注1       | &#10004;附注1       | &#10004;附注1       | &#10004;附注1       |
 | 虛擬光纖通道                                                                                                                        | 2019、2016、2012 R2                         |                       |                       |                       |                       |
-| 即時虛擬機器備份                                                                                                                  | 2019、2016、2012 R2                         | &#10004;注 4, 5     | &#10004;注 4, 5     | &#10004;注 4, 5     | &#10004;注4       |
+| 即時虛擬機器備份                                                                                                                  | 2019、2016、2012 R2                         | &#10004;注4，5     | &#10004;注4，5     | &#10004;注4，5     | &#10004;注4       |
 | 修剪支援                                                                                                                                 | 2019、2016、2012 R2                         | &#10004;附注8       | &#10004;附注8       |                       |                       |
 | SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                         | &#10004;附注8       | &#10004;附注8       |                       |                       |
 | **[快閃記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
@@ -75,17 +75,17 @@ ms.locfileid: "68544733"
 
 1. 不支援在大於2TB 的 Vhd 上建立檔案系統。
 
-2. 在 Windows Server 2008 R2 SCSI 磁片上, 于/dev/sd * 中建立8個不同的專案。
+2. 在 Windows Server 2008 R2 SCSI 磁片上，于/dev/sd * 中建立8個不同的專案。
 
 3. Windows Server 2012 R2 具有8個核心或更多的 VM 將會有路由傳送至單一 vCPU 的所有中斷。
 
-4. 從 Debian 8.3 開始, 手動安裝的 Debian 套件 "hyperv-守護程式" 包含機碼值組、fcopy 和 VSS 守護程式。 在 Debian 7.x 和 8.0-8.2 上, hyperv-守護程式套件必須來自[Debian 反向移植](https://wiki.debian.org/Backports)。
+4. 從 Debian 8.3 開始，手動安裝的 Debian 套件 "hyperv-守護程式" 包含機碼值組、fcopy 和 VSS 守護程式。 在 Debian 7.x 和 8.0-8.2 上，hyperv-守護程式套件必須來自[Debian 反向移植](https://wiki.debian.org/Backports)。
 
-5. 即時虛擬機器備份不會與 ext2 檔案系統搭配使用。 Debian 安裝程式所建立的預設版面配置包含 ext2 檔案系統, 您必須自訂配置, 以不建立此檔案系統類型。
+5. 即時虛擬機器備份不會與 ext2 檔案系統搭配使用。 Debian 安裝程式所建立的預設版面配置包含 ext2 檔案系統，您必須自訂配置，以不建立此檔案系統類型。
 
-6. 雖然 Debian 7.x 不支援, 而且使用較舊的核心, 但[Debian 反向移植](https://wiki.debian.org/Backports)for Debian 7.x 所包含的核心已改善 hyper-v 功能。
+6. 雖然 Debian 7.x 不支援，而且使用較舊的核心，但[Debian 反向移植](https://wiki.debian.org/Backports)for Debian 7.x 所包含的核心已改善 hyper-v 功能。
 
-7. 在 Windows Server 2012 R2 第2代虛擬機器上, 預設會啟用安全開機, 而且除非停用安全開機選項, 否則部分 Linux 虛擬機器將無法開機。 您可以在**Hyper-v 管理員**的虛擬機器設定的 [**固件**] 區段中停用安全開機, 也可以使用 Powershell 將它停用:
+7. 在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，而且除非停用安全開機選項，否則部分 Linux 虛擬機器將無法開機。 您可以在**Hyper-v 管理員**的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 將它停用：
 
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off

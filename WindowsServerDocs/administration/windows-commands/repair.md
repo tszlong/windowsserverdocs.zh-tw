@@ -1,8 +1,8 @@
 ---
-title: 修復
-description: '適用於 Windows 命令主題 * * *- '
+title: 糾正
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e4b9cde10e11558aaa95edda94921144dac1f86
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 88293422519488405d94e32596c81dbe4a697dee
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441799"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371535"
 ---
-# <a name="repair"></a>修復
+# <a name="repair"></a>糾正
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-修復 RAID\-具有焦點，以指定的動態磁碟取代失敗的磁碟區的 5 個磁碟區。  
+以指定的動態磁碟取代失敗的磁片區域，以修復具有焦點的 RAID @ no__t-05 磁片區。  
   
   
   
@@ -38,24 +38,24 @@ repair disk=<n> [align=<n>] [noerr]
   
 | 參數  |                                                                                             描述                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| disk\=<n>  |                                                                 指定將會取代故障的磁碟區的動態磁碟。                                                                 |
-| align\=<n> |          對齊最接近對齊界限的所有磁碟區或分割區範圍。 *n*是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。           |
-|   noerr    | 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。 |
+| disk @ no__t-0 @ no__t-1  |                                                                 指定將取代失敗磁片區域的動態磁碟。                                                                 |
+| align @ no__t-0 @ no__t-1 |          將所有磁片區或資料分割範圍對齊最接近的對齊界限。 *n*是從磁片開頭到最接近對齊界限的 \(kb @ no__t-2 kb 數。           |
+|   noerr    | 僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
   
 ## <a name="remarks"></a>備註  
   
--   指定的動態磁碟的可用空間大於或等於在 RAID 中失敗的磁碟區的大小總計必須\-5 磁碟區。  
+-   指定的動態磁碟必須要有大於或等於 RAID @ no__t-05 磁片區中失敗磁片區域大小總計的可用空間。  
   
--   在 RAID 磁碟區\-5 陣列必須選取此作業才會成功。 使用**選取磁碟區**命令來選取磁碟區，並將焦點移到它。  
+-   必須選取 RAID @ no__t-05 陣列中的磁片區，此操作才會成功。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。  
   
-## <a name="BKMK_examples"></a>範例  
-若要更換具有焦點的磁碟區，它取代成動態磁碟 4，請輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要將具有焦點的磁片區取代為動態磁碟4，請輸入：  
   
 ```  
 repair disk=4  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

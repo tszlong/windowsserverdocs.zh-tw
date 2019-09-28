@@ -1,6 +1,6 @@
 ---
 title: 健全狀況服務設定
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,21 +8,21 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: 569cf7ba30fd3f993394efd3735a56d116c067e0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1b10d7c5432b10262e8df85d427f17f402d4f64a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858329"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361036"
 ---
 # <a name="health-service-settings"></a>健全狀況服務設定
-> 適用於 Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
-健全狀況服務是中改善的日常監視的 Windows Server 2016 和操作經驗執行儲存空間直接存取叢集的新功能。
+健全狀況服務是 Windows Server 2016 中的新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
 
-許多管理健全狀況服務之行為的參數都會公開為設定。 您可以修改這些微調此加強值的錯誤或動作，請開啟 開啟/關閉，某些行為及更多。
+許多管理健全狀況服務行為的參數都會公開為設定。 您可以修改這些資訊來微調錯誤或動作的增強功能、開啟/關閉特定行為，以及執行其他操作。
 
-您可以使用下列 PowerShell cmdlet 來設定或修改設定。
+使用下列 PowerShell Cmdlet 來設定或修改設定。
 
 ### <a name="usage"></a>使用量
 
@@ -38,9 +38,9 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 
 ### <a name="common-settings"></a>通用設定
 
-一些經常修改的設定，如下所示以及其預設值。
+以下列出一些經常修改的設定，以及其預設值。
 
-#### <a name="volume-capacity-threshold"></a>磁碟區容量閾值
+#### <a name="volume-capacity-threshold"></a>磁片區容量閾值
 
 ```
 "System.Storage.Volume.CapacityThreshold.Enabled"  = True
@@ -48,13 +48,13 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.Volume.CapacityThreshold.Critical" = 90
 ```
 
-#### <a name="pool-reserve-capacity-threshold"></a>集區保留容量的臨界值
+#### <a name="pool-reserve-capacity-threshold"></a>集區保留容量閾值
 
 ```
 "System.Storage.StoragePool.CheckPoolReserveCapacity.Enabled" = True
 ```
 
-#### <a name="physical-disk-lifecycle"></a>實體磁碟生命週期
+#### <a name="physical-disk-lifecycle"></a>實體磁片生命週期
 
 ```
 "System.Storage.PhysicalDisk.AutoPool.Enabled"                             = True
@@ -65,11 +65,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.PhysicalDisk.Unresponsive.Reset.CountAllowed"              = 3
 ```
 
-#### <a name="supported-components-document"></a>支援的元件的文件
+#### <a name="supported-components-document"></a>支援的元件檔
 
 請參閱上一節。
 
-#### <a name="firmware-rollout"></a>韌體推出
+#### <a name="firmware-rollout"></a>固件推出
 
 ```
 "System.Storage.PhysicalDisk.AutoFirmwareUpdate.SingleDrive.Enabled"       = True
@@ -80,7 +80,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.FailureTolerance"  = 3
 ```
 
-#### <a name="platform--quiescence"></a>平台 / 靜止
+#### <a name="platform--quiescence"></a>Platform/靜止
 
 ```
 "Platform.Quiescence.MinDelaySeconds" = 120 (i.e. 2 minutes)

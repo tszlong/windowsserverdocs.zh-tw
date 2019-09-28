@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1210918067bbb71ea26dff4db11561bbeb09dbd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 08382a8eccaafac257165587fe7b6c18a8ecfbbc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869251"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407270"
 ---
 # <a name="when-to-use-a-send-ldap-attributes-as-claims-rule"></a>使用「以宣告方式傳送 LDAP 屬性」規則的時機
 當您想要發出的連\(出\)宣告包含存在於的實際輕量型目錄存取協定\(LDAP\)屬性值時，您可以在 Active Directory 同盟服務 AD FS 中使用此規則屬性存放區，然後將宣告類型與每個 LDAP 屬性產生關聯。 如需屬性存放區的詳細資訊，請參閱[屬性存放區的角色](The-Role-of-Attribute-Stores.md)。  

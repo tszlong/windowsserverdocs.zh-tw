@@ -2,7 +2,7 @@
 title: 封鎖或解除封鎖站台
 ms.custom: na
 description: 瞭解如何停止使用者或群組，使其無法存取 MultiPoint 服務系統。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 5972d7e596f4a35d323832cad68349bcc0fe99ed
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 06e47d8eb203007a20d24aa9d187bb1374d0a4d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871769"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395533"
 ---
 # <a name="block-or-unblock-a-station"></a>封鎖或解除封鎖站台
 如果您需要吸引使用者注意，您可以封鎖一或多位使用者，使其無法使用 MultiPoint 服務系統。 封鎖使用者時，其會話會在 MultiPoint 服務系統的電腦記憶體中保持作用中狀態，直到工作站解除封鎖為止。 您可以自訂要對封鎖的使用者顯示的訊息。  

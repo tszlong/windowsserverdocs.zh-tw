@@ -7,14 +7,14 @@ ms.author: billmath
 manager: mtilman
 ms.date: 05/20/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8ddefae96806b50b0ab98f67b9313b85c577bb70
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9ef595cc98a95caca0f2043b011868e0573a5b19
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865824"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407703"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路智慧鎖定
 
@@ -248,7 +248,7 @@ AD FS 會將外部網路鎖定事件寫入至安全性審核記錄：
 在 [僅記錄模式] 中，您可以檢查安全性 audit 記錄中的鎖定事件。 針對找到的任何事件，您可以使用 ADFSAccountActivity 指令程式來檢查使用者狀態，以判斷鎖定是否來自熟悉或不熟悉的 IP 位址，以及是否要再次檢查該使用者熟悉的 IP 位址清單。
 
 
-|事件識別碼|說明|
+|事件識別碼|描述|
 |-----|-----|
 |1203|這個事件會針對每個不正確的密碼嘗試而撰寫。 一旦 badPwdCount 到達 ExtranetLockoutThreshold 中指定的值，就會在 ADFS 中針對 ExtranetObservationWindow 中指定的持續時間鎖定帳戶。</br>活動識別碼：% 1</br>XML：% 2|
 |1201|每次鎖定使用者時，就會寫入這個事件。 </br>活動識別碼：% 1</br>XML：% 2|

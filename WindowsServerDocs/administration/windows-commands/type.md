@@ -1,8 +1,8 @@
 ---
 title: 型別
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,23 +12,23 @@ ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 4ceb7365d34a2aeca21d1a699730a589f98fd549
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 37f66d54983c002d5d09db5cb255d01635a534de
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887399"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392327"
 ---
 # <a name="type"></a>型別
 
 
-在 Windows 命令殼層中，**型別**是內建命令，以顯示文字檔的內容。 使用**型別**命令來檢視文字檔案，而不需要修改它。
+在 Windows 命令 shell 中，**輸入**是一個內建的命令，它會顯示文字檔的內容。 使用 [**類型**] 命令來查看文字檔，而不進行修改。
 
 
-在 PowerShell 中，**型別**是內建的別名，以**[Get-content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** cmdlet 也會顯示的內容檔案，但有不同的語法。
+在 PowerShell 中，**輸入**為 **[Get Content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** Cmdlet 的內建別名，這也會顯示檔案的內容，但使用不同的語法。
 
 
-如需如何使用此命令在 Windows 命令殼層 (Cmd.exe) 中的範例，請參閱[範例](#BKMK_examples)。
+如需如何在 Windows 命令 shell （Cmd.exe）中使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -40,21 +40,21 @@ type [<Drive>:][<Path>]<FileName>
 
 |參數|描述|
 |---------|-----------|
-|[\<Drive>:][\<Path>]\<FileName>|指定的檔案或您想要檢視的檔案名稱與位置。 以空格分隔多個檔案名稱。|
+|[\<Drive >：][\<Path >] \<FileName >|指定您想要查看之檔案的位置和名稱。 以空格分隔多個檔案名。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   如果*FileName*包含空格，將它括在引號內 (例如，「 檔案名稱包含 Spaces.txt")。
--   如果您顯示二進位檔或程式所建立的檔案，您可能會在畫面上，包括換頁字元的字元和逸出序列符號看到奇怪的字元。 這些字元代表二進位檔中所使用的控制碼。 一般情況下，請避免使用**型別**命令，以顯示二進位檔。
+-   如果*FileName*包含空格，請將它括在引號中（例如，「檔案名包含空格 .txt」）。
+-   如果您顯示二進位檔案或程式所建立的檔案，您可能會在畫面上看到奇怪的字元，包括換頁字元字元和 escape 序列符號。 這些字元代表二進位檔案中所使用的控制項程式碼。 一般來說，請避免使用**type**命令來顯示二進位檔案。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要顯示名為 Holiday.mar 檔案的內容，請輸入：
+若要顯示名為節日的檔案內容，請輸入：
 ```
 type holiday.mar 
 ```
-若要顯示的冗長的檔案，名為 Holiday.mar 一個畫面，一次內容，請輸入：
+以顯示名為假日的冗長檔案內容。一次只需 mar 一個畫面，請輸入：
 ```
 type holiday.mar | more 
 ```

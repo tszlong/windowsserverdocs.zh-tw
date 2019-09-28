@@ -1,8 +1,8 @@
 ---
-title: bitsadmin 同儕和說明
-description: 適用於 Windows 命令主題**bitsadmin 讓對等互連，並協助**-顯示的命令列使用方式**同儕**參數。
+title: bitsadmin 對等和協助
+description: '**Bitsadmin 對等和**說明的 Windows 命令主題-顯示對**等**參數的命令列使用方式。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90231e6bbc467b0798548e098491aae2de9616ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a61c16c9fb390409697b11586ac05384b56f07e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856309"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380938"
 ---
-# <a name="bitsadmin-peers-and-help"></a>bitsadmin 同儕和說明
+# <a name="bitsadmin-peers-and-help"></a>bitsadmin 對等和協助
 
 
 
-顯示的命令列使用方式**對等體**參數。
+顯示對**等**參數的命令列使用方式。
 
 ## <a name="syntax"></a>語法
 
@@ -32,9 +32,9 @@ ms.locfileid: "59856309"
 Bitsadmin /Peers /Help 
 ```
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列命令顯示的命令列說明**對等體**參數。
+下列命令會顯示對**等**參數的命令列說明。
 ```
 Bitsadmin /Peers /Help
 ```

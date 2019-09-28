@@ -1,8 +1,8 @@
 ---
 title: bitsadmin list
-description: 適用於 Windows 命令主題**bitsadmin 清單**-列出目前使用者所擁有的傳送工作。
+description: '**Bitsadmin 清單**的 Windows 命令主題-列出目前使用者擁有的傳送作業。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0b88001b9c4ae01b57006ffeef66dec0348ca77
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd4787f51dc2a7843ff6cf5c4f786658e530ad8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873859"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381104"
 ---
 # <a name="bitsadmin-list"></a>bitsadmin list
 
 
 
-列出目前使用者所擁有的傳送工作。
+列出目前使用者擁有的傳送作業。
 
 ## <a name="syntax"></a>語法
 
@@ -36,16 +36,16 @@ bitsadmin /List [/allusers][/verbose]
 
 |參數|描述|
 |---------|-----------|
-|/Allusers|選擇性： 列出所有使用者的工作|
-|/Verbose|選擇性： 提供針對每個工作的詳細的資訊。|
+|/Allusers|選擇性：列出所有使用者的作業|
+|/Verbose|選擇性-提供每項作業的詳細資訊。|
 
 ## <a name="remarks"></a>備註
 
-您必須擁有系統管理員權限，才能使用 /allusers 參數
+您必須具有系統管理員許可權，才能使用/allusers 參數
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取目前使用者所擁有的作業的相關資訊。
+下列範例會抓取目前使用者所擁有之作業的相關資訊。
 ```
 C:\>bitsadmin /List 
 ```

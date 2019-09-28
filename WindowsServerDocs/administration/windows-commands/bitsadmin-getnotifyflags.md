@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnotifyflags
-description: 適用於 Windows 命令主題**bitsadmin getnotifyflags** -擷取指定作業的通知旗標。
+description: '**Bitsadmin getnotifyflags**的 Windows 命令主題-抓取指定之作業的通知旗標。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 690e94805c5e61d96603e4ade102fb3a4bda409e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 56ee3a30050b6cc934b35bab24e9508911ea250e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889279"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381485"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 
 
 
-擷取指定作業的通知旗標。
+抓取指定之作業的通知旗標。
 
 ## <a name="syntax"></a>語法
 
@@ -40,13 +40,13 @@ bitsadmin /GetNotifyFlags <Job>
 
 ## <a name="remarks"></a>備註
 
-工作可以包含一或多個下列的通知旗標。
+作業可以包含下列一個或多個通知旗標。
 
-|---|---| | 0x001 |產生事件時已傳送作業中的所有檔案。 || 定義 0x002 |產生的事件發生錯誤時。 || 0x004 |停用通知。 || 0x008 |產生時修改作業時，或項目傳輸進度事件。 |
+|-----|-----| | 0x001 |當作業中的所有檔案都已轉移時，產生事件。 || 0x002 |發生錯誤時產生事件。 || 0x004 |停用通知。 || 0x008 |在修改作業或進行傳輸進度時，產生事件。 |
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的通知旗標*myDownloadJob*。
+下列範例會抓取名為*myDownloadJob*之作業的通知旗標。
 ```
 C:\>bitsadmin /GetNotifyFlags myDownloadJob
 ```

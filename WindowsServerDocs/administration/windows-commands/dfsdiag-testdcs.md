@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestDCs
-description: '適用於 Windows 命令主題 * * *- '
+title: dfsdiag TestDCs
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,24 +13,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62956ae65d2311939ac0db6a4b86950f21dba407
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a193e68b6f015b1535a98e20b52deb2a4a14034c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378444"
 ---
-# <a name="dfsdiag-testdcs"></a>Dfsdiag TestDCs
+# <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-檢查網域控制站的設定所指定的網域中的每個網域控制站上執行下列測試：  
+藉由在指定網域中的每個網域控制站上執行下列測試，檢查網域控制站的設定：  
   
--   確認 「 分散式檔案系統\(DFS\)命名空間服務正在執行，且它的啟動類型設定為自動。  
+-   確認分散式檔案系統 \(DFS @ no__t-1 Namespace 服務正在執行，且其啟動類型設定為 [自動]。  
   
--   檢查針對站台支援\-估計成本 NETLOGON 與 SYSvol 的轉介。  
+-   檢查是否支援 NETLOGON 和 SYSvol 的 site @ no__t-0costed 的參考。  
   
--   驗證主機名稱和 IP 位址的站台關聯的一致性。  
+-   依主機名稱和 IP 位址驗證網站關聯的一致性。  
   
   
   
@@ -44,19 +44,19 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 |參數|描述|  
 |-------|--------|  
-|\/網域：<Domain name>|您想要檢查的網域。|  
+|\/Domain： <Domain name>|您想要檢查的網域。|  
   
 ## <a name="remarks"></a>備註  
-\/網域是選擇性參數。 預設值是本機主機已加入本機網域。  
+@no__t 0Domain 是選擇性參數。 預設值是本機主機加入的本機網域。  
   
-## <a name="BKMK_Examples"></a>範例  
-若要確認 Contoso.com 網域中的網域控制站的組態，請輸入：  
+## <a name="BKMK_Examples"></a>典型  
+若要確認 Contoso.com 網域中的網域控制站設定，請輸入：  
   
 ```  
 dfsdiag /TestDCs /Domain:Contoso.com  
 ```  
   
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
   
 -   [命令列語法關鍵](command-line-syntax-key.md)  
   

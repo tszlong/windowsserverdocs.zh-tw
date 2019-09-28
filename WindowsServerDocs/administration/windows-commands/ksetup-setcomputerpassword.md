@@ -1,8 +1,8 @@
 ---
-title: ksetup:setcomputerpassword
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： setcomputerpassword
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0679bb9ee429e05c7679411c5493bd21b530ef8e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1d3742476385eb770c9cb5c798c1f6ab27c74f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831539"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374938"
 ---
-# <a name="ksetupsetcomputerpassword"></a>ksetup:setcomputerpassword
+# <a name="ksetupsetcomputerpassword"></a>ksetup： setcomputerpassword
 
 
 
@@ -36,19 +36,19 @@ ksetup /setcomputerpassword <Password>
 
 |參數|描述|
 |---------|-----------|
-|\<密碼 >|若要在本機電腦上設定的電腦帳戶，會使用所提供的密碼。</br>只可以藉由使用具有系統管理權限的帳戶設定密碼。 密碼可以從 1 到 156 英數或特殊字元。|
+|\<Password >|會使用提供的密碼來設定本機電腦上的電腦帳戶。</br>只能使用具有系統管理許可權的帳戶來設定密碼。 密碼可以是1到156個英數位元或特殊字元。|
 
 ## <a name="remarks"></a>備註
 
-此命令會影響電腦帳戶。
+此命令只會影響電腦帳戶。
 
-您必須重新啟動電腦，密碼變更，才會生效。
+您必須重新開機電腦，密碼變更才會生效。
 
-電腦帳戶密碼不會顯示在登錄中或做為從輸出**ksetup**命令。
+電腦帳戶密碼不會顯示在登錄中，或做為**ksetup**命令的輸出。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-將變更本機電腦上的電腦帳戶密碼從 IPops897 為 IPop$ 897 ！。
+將本機電腦上的電腦帳戶密碼從 IPops897 變更為 IPop $ 897！。
 ```
 ksetup /setcomputerpassword IPop$897!
 ```

@@ -1,8 +1,8 @@
 ---
 title: pnputil
-description: 了解如何管理驅動程式存放區使用 pnputil.exe 公用程式。
+description: 瞭解如何使用 pnputil 公用程式來管理驅動程式存放區。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5bde78d97be8def9f8594572869c34ef213db480
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f20c60bfd9ae33497dd356c7797b9fb1d2b51d18
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862539"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372286"
 ---
 # <a name="pnputil"></a>pnputil
 
-Pnputil.exe 是命令列公用程式可供您管理驅動程式存放區。 您可以使用 Pnputil 來新增驅動程式套件、 移除驅動程式套件，並列出存放區中的驅動程式封裝。
+Pnputil 是一種命令列公用程式，可讓您用來管理驅動程式存放區。 您可以使用 Pnputil 來新增驅動程式套件、移除驅動程式套件，以及列出存放區中的驅動程式套件。
 
 ## <a name="syntax"></a>語法
 
@@ -34,22 +34,22 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 
 |參數|描述|
 |---------|-----------|
-|-a|指定要新增的已識別的 INF 檔案。|
-|-d|指定要刪除的已識別的 INF 檔案。|
-|-e|指定要列舉所有第三方 INF 檔案。|
-|-f|指定要強制刪除所識別的 INF 檔案。 不能搭配 **– i**參數。|
-|-i|指定要安裝的已識別的 INF 檔案。 不能搭配 **-f**參數。|
+|-a|指定要新增已識別的 INF 檔案。|
+|-d.ddd...e|指定刪除已識別的 INF 檔案。|
+|-e|指定列舉所有協力廠商 INF 檔案。|
+|-f|指定強制刪除已識別的 INF 檔案。 不能與 **– i**參數一起使用。|
+|-i|指定安裝已識別的 INF 檔案。 不能與 **-f**參數一起使用。|
 |/?|在命令提示字元顯示說明。|
 
 
 ## <a name="examples"></a>範例
 
--   pnputil.exe-a:\usbcam\USBCAM。INF 加入 INF 檔案 USBCAM 所指定。INF
--   pnputil.exe-c:\drivers\*.inf c:\drivers\ 中加入所有的 INF 檔案
--   pnputil.exe-i-a:\usbcam\USBCAM。加入 INF，安裝指定的驅動程式。
--   pnputil.exe – e 列舉所有的協力廠商驅動程式。
--   pnputil.exe-d oem0.inf 刪除指定的。
--   pnputil.exe-f-d oem0.inf 強制刪除指定的 INF 檔案。
+-   pnputil .exe-a a:\usbcam\USBCAM。INF 會新增 USBCAM 所指定的 INF 檔案。份
+-   pnputil .exe-c：\ drivers\*.inf 會在 c:\drivers\ 中新增所有 INF 檔案
+-   pnputil .exe-i-a a:\usbcam\USBCAM。INF 會新增並安裝指定的驅動程式。
+-   pnputil-e 列舉所有協力廠商驅動程式。
+-   pnputil： d oem0.inf 會刪除指定的。
+-   pnputil-f-d oem0.inf 會強制刪除指定的 INF 檔案。
 
 ## <a name="additional-references"></a>其他參考資料
 

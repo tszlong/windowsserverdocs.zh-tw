@@ -1,7 +1,7 @@
 ---
 ms.assetid: d2429185-9720-4a04-ad94-e89a9350cdba
 title: 部署工作資料夾
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: 如何部署工作資料夾，包括安裝伺服器角色、建立同步共用和建立 DNS 記錄。
-ms.openlocfilehash: 45b25befcde328e38f694b64fa7536a2b5c7f232
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7fe39ded6d262d9310bce30239345a9f42e43c04
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867033"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365865"
 ---
 # <a name="deploying-work-folders"></a>部署工作資料夾
 
@@ -26,14 +26,14 @@ ms.locfileid: "70867033"
   
 > [!TIP]
 >  最簡單的工作資料夾部署是單一檔案伺服器 (通常稱為同步伺服器)，但不支援透過網際網路同步，這對於測試實驗室是實用的部署，或者可以做為加入網域之用戶端電腦的同步解決方案。 若要建立簡單部署，至少需要遵循下列幾個步驟： 
->  -   步驟 1：取得 SSL 憑證  
->  -   步驟 2：建立 DNS 記錄 
+>  -   步驟 1:取得 SSL 憑證  
+>  -   步驟 2:建立 DNS 記錄 
 >  -   步驟 3：在檔案伺服器上安裝工作資料夾  
 >  -   步驟 4：在同步伺服器上繫結 SSL 憑證
 >  -   步驟 5：建立工作資料夾的安全性群組  
 >  -   步驟 7：建立使用者資料的同步共用  
   
-## <a name="step-1-obtain-ssl-certificates"></a>步驟 1：取得 SSL 憑證  
+## <a name="step-1-obtain-ssl-certificates"></a>步驟 1:取得 SSL 憑證  
  工作資料夾會使用 HTTPS 安全地在工作資料夾用戶端與工作資料夾伺服器之間同步處理檔案。 工作資料夾使用的 SSL 憑證需求如下：  
   
 - 憑證必須由受信任的憑證授權單位發出。 對於大部分的工作資料夾實作，建議使用公用信任的 CA，因為憑證會由未加入網域、以網際網路為基礎的裝置使用。  
@@ -48,7 +48,7 @@ ms.locfileid: "70867033"
 
   工作資料夾憑證管理[部落格](https://blogs.technet.microsoft.com/filecab/2013/08/09/work-folders-certificate-management/)提供有關使用憑證和工作資料夾的資訊。
   
-## <a name="step-2-create-dns-records"></a>步驟 2：建立 DNS 記錄  
+## <a name="step-2-create-dns-records"></a>步驟 2:建立 DNS 記錄  
  若要允許使用者透過網際網路進行同步，您必須在公用 DNS 中建立主機 (A) 記錄，以便允許網際網路用戶端解析工作資料夾 URL。 這個 DNS 記錄應該解析至反向 Proxy 伺服器的外部介面。  
   
  在您的內部網路上，於 DNS 命名的工作資料夾中建立 CNAME 記錄，其解析到工作資料夾伺服器的 FDQN。 當工作資料夾用戶端使用自動探索時，用來探索工作資料夾伺服器的 URL 會是\/HTTPs：/workfolders.domain.com。 如果您打算使用自動探索，工作資料夾 CNAME 記錄必須存在於 DNS 中。  

@@ -1,9 +1,9 @@
 ---
 title: RAS 閘道部署架構
-description: 您可以使用本主題以了解雲端服務提供者 (CSP) 在 Windows Server 2016，包括 RAS 閘道集區、 路由反映程式，並為個別租用戶中部署多個閘道的 RAS 閘道部署。
+description: 您可以使用本主題來瞭解 Windows Server 2016 中 RAS 閘道的雲端服務提供者（CSP）部署，包括 RAS 閘道集區、路由反映程式，以及為個別租使用者部署多個閘道。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,154 +12,154 @@ ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a3895e25a2af0437deb9eebe4ad89b110cfc9f2b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b3bd47052e482b562e84d5c44b928c0744b223c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870269"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405916"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS 閘道部署架構
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題來深入了解雲端服務提供者 (CSP) 部署 RAS 閘道，包括 RAS 閘道集區、 路由反映程式，並為個別租用戶中部署多個閘道。  
+您可以使用本主題來瞭解 RAS 閘道的雲端服務提供者（CSP）部署，包括 RAS 閘道集區、路由反映程式，以及為個別租使用者部署多個閘道。  
   
-下列各節提供 RAS 閘道的新功能的簡短概觀，讓您可以了解如何使用這些功能的閘道部署設計中。  
+下列各節提供一些 RAS 閘道新功能的簡要概述，讓您可以瞭解如何在閘道部署的設計中使用這些功能。  
   
-此外，會提供部署範例，包括新增新的租用戶、 路由同步處理和資料平面路由、 閘道和路由反映程式容錯移轉時，與更多的程序的相關資訊。  
+此外，也會提供範例部署，包括有關新增租使用者、路由同步處理和資料平面路由、閘道和路由反映程式容錯移轉等程式的資訊。  
   
 本主題涵蓋下列各節。  
   
--   [若要設計您的部署使用 RAS 閘道的新功能](#bkmk_new)  
+-   [使用 RAS 閘道的新功能來設計您的部署](#bkmk_new)  
   
--   [部署範例](#bkmk_example)  
+-   [範例部署](#bkmk_example)  
   
--   [加入新的租用戶和客戶位址 (CA) 空間 EBGP 對等互連](#bkmk_tenant)  
+-   [新增租使用者和客戶位址（CA）空間 EBGP 對等互連](#bkmk_tenant)  
   
--   [路由的同步處理和資料平面路由](#bkmk_route)  
+-   [路由同步處理和資料平面路由](#bkmk_route)  
   
--   [RAS 閘道和路由反映程式容錯移轉網路控制站的回應方式](#bkmk_failover)  
+-   [網路控制站如何回應 RAS 閘道和路由反映器容錯移轉](#bkmk_failover)  
   
--   [使用 RAS 閘道的新功能的優點](#bkmk_advantages)  
+-   [使用新的 RAS 閘道功能的優點](#bkmk_advantages)  
   
-## <a name="bkmk_new"></a>若要設計您的部署使用 RAS 閘道的新功能  
-RAS 閘道包含多項新功能的變更，並改善您部署您的閘道基礎結構在您的資料中心的方式。  
+## <a name="bkmk_new"></a>使用 RAS 閘道的新功能來設計您的部署  
+RAS 閘道包含多項新功能，可變更並改善您在資料中心內部署閘道基礎結構的方式。  
   
-### <a name="bgp-route-reflector"></a>BGP 路由反映程式  
-邊界閘道通訊協定 (BGP) 路由反映程式功能現在是包含 RAS 閘道，提供 BGP 路由器之間的路由同步處理通常需要的完整網狀拓撲的替代方案。 完整網狀的同步處理，所有的 BGP 路由器必須連接與路由拓樸中的所有其他路由器。 當您使用路由反映程式時，不過，路由反映程式是唯一連接之路由器的所有其他路由器，呼叫 BGP 路由反映程式用戶端，藉此簡化路由同步處理並降低網路流量。 路由反映程式學習所有路由、 計算最佳的路由，並轉散發 BGP 用戶端的最佳路由。  
+### <a name="bgp-route-reflector"></a>BGP 路由反映  
+邊界閘道協定（BGP）路由反映程式功能現在隨附于 RAS 閘道，並提供 BGP 完整網狀拓朴的替代方案，通常是在路由器之間路由同步處理的必要項。 透過完整網狀同步處理，所有 BGP 路由器都必須與路由拓撲中的所有其他路由器連接。 不過，當您使用路由反射器時，路由反映是唯一與所有其他路由器（稱為 BGP 路由反映程式用戶端）連接的路由器，因此可簡化路由同步處理並減少網路流量。 路由反映會學習所有路由、計算最佳路由，並將最佳路由轉散發至其 BGP 用戶端。  
   
-如需詳細資訊，請參閱 < [What's New in RAS 閘道](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)。  
+如需詳細資訊，請參閱[RAS 閘道的新功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)。  
   
 ### <a name="bkmk_pools"></a>閘道集區  
-在 Windows Server 2016 中，您可以建立不同類型的多個閘道集區。 閘道集區包含 RAS 閘道的許多執行個體，並將實體和虛擬網路之間的網路流量路由傳送。  
+在 Windows Server 2016 中，您可以建立許多不同類型的閘道集區。 閘道集區包含許多 RAS 閘道實例，並在實體和虛擬網路之間路由傳送網路流量。  
   
-如需詳細資訊，請參閱 < [What's New in RAS 閘道](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)並[RAS 閘道高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)。  
+如需詳細資訊，請參閱[Ras 閘道的新功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)和[Ras 閘道高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)。  
   
-### <a name="bkmk_gps"></a>閘道集區擴充性  
-您可以輕鬆地會藉由新增或移除閘道 Vm 集區中調整閘道集區增加或相應減少。 移除或加入閘道不會破壞的集區所提供的服務。 您也可以新增和移除的閘道的整個集區。  
+### <a name="bkmk_gps"></a>閘道集區的擴充性  
+您可以藉由在集區中新增或移除閘道 Vm，輕鬆地相應增加或減少閘道集區。 移除或新增閘道並不會中斷集區所提供的服務。 您也可以新增和移除整個閘道集區。  
   
-如需詳細資訊，請參閱 < [What's New in RAS 閘道](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)並[RAS 閘道高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)。  
+如需詳細資訊，請參閱[Ras 閘道的新功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)和[Ras 閘道高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)。  
   
-### <a name="bkmk_m"></a>M + N 閘道集區備援  
-每個閘道集區是 M + N 備援。 這表示，是 'active 閘道的 Vm 數目會由待命的閘道 Vm 的' n ' 數目。 M + N 備援會將您提供更靈活地決定您需要部署 RAS 閘道時的可靠性層級。  
+### <a name="bkmk_m"></a>M + N 閘道集區冗余  
+每個閘道集區都是 M + N 多餘的。 這表示會由 ' N ' 個待命閘道 Vm 數目來備份作用中閘道 Vm 的數目。 M + N 冗余可讓您更有彈性地決定部署 RAS 閘道時所需的可靠性層級。  
   
-如需詳細資訊，請參閱 < [What's New in RAS 閘道](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)並[RAS 閘道高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)。  
+如需詳細資訊，請參閱[Ras 閘道的新功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)和[Ras 閘道高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)。  
   
-## <a name="bkmk_example"></a>部署範例  
-下圖提供範例與 eBGP 對等互連透過兩個租用戶、 Contoso 和 Woodgrove，與 Fabrikam CSP 資料中心之間設定站對站 VPN 連線。  
+## <a name="bkmk_example"></a>範例部署  
+下圖提供一個範例，其中包含在兩個租使用者（Contoso 和 Woodgrove）和 Fabrikam CSP 資料中心之間設定的站對站 VPN 連線的 eBGP 對等互連。  
   
-![eBGP 對等互連透過站對站 VPN](../../../media/RAS-Gateway-Deployment-Architecture/ras_gateway_architecture.png)  
+![透過站對站 VPN 的 eBGP 對等互連](../../../media/RAS-Gateway-Deployment-Architecture/ras_gateway_architecture.png)  
   
-在此範例中，Contoso 會需要額外的閘道頻寬導致終止 Contoso 洛杉磯站台上而不是 GW2 GW3 閘道基礎結構的設計決策。 因為這個緣故，不同的站台的 Contoso VPN 連線會終止在 CSP 資料中心，在兩個不同的閘道。  
+在此範例中，Contoso 需要額外的閘道頻寬，因而導致閘道基礎結構設計決策終止 GW3 上的 Contoso 洛杉磯網站，而不是 GW2。 因此，來自不同網站的 Contoso VPN 連線會在兩個不同閘道上的 CSP 資料中心終止。  
   
-這兩個 GW2 和 GW3，這些閘道是第一次的 RAS 閘道，CSP 會加入他們的基礎結構中的 Contoso 和 Woodgrove 的租用戶時，由網路控制站設定。 因為這個緣故，這些兩個閘道會設定為路由反映程式適用於這些對應的客戶 （或租用戶）。 GW2 Contoso 路由反映程式，而 GW3 Woodgrove 路由反映程式-除了與 Contoso Los Angeles 總部站台 VPN 連線的 CSP RAS 閘道終止點。  
+這兩個閘道（GW2 和 GW3）都是網路控制卡在 CSP 將 Contoso 和 Woodgrove 租使用者新增至其基礎結構時所設定的第一個 RAS 閘道。 因此，這兩個閘道會設定為這些對應客戶（或租使用者）的路由反映程式。 GW2 是 Contoso 路由反射器，而 GW3 是 Woodgrove Route 反映程式-除了是與 Contoso 洛杉磯總部網站的 VPN 連線 CSP 的 RAS 閘道終止點。  
   
 > [!NOTE]  
-> 一個 RAS 閘道可以路由傳送虛擬和實體網路流量對於多達一百不同租用戶，根據每個租用戶的頻寬需求。  
+> 一個 RAS 閘道可以根據每個租使用者的頻寬需求，將虛擬和實體網路流量路由傳送到最多100個不同的租使用者。  
   
-為路由反映程式，GW2 傳送 Contoso CA 空間路由到網路控制站，並 GW3 將 Woodgrove CA 空間路由傳送至網路控制站。  
+作為路由反映程式，GW2 會將 Contoso CA Space 路由傳送至網路控制站，而 GW3 會將 Woodgrove CA Space 路由傳送至網路控制站。  
   
-網路控制站會將 HYPER-V 網路虛擬化原則推送到 Contoso 和 Woodgrove 的虛擬網路，以及 RAS 閘道和負載平衡原則，以設定為軟體負載平衡 Multiplexers (Mux) RAS 原則集區。  
+網路控制站會將 Hyper-v 網路虛擬化原則推送至 Contoso 和 Woodgrove 虛擬網路，以及 ras 原則至 RAS 閘道，並將原則負載平衡至設定為軟體負載平衡的 Multiplexers (（Mux）資源.  
   
-## <a name="bkmk_tenant"></a>加入新的租用戶和客戶位址 (CA) 空間 eBGP 對等互連  
-當您登入新的客戶，並將客戶新增為新的租用戶，資料中心內時，您可以使用下列程序，有許多都自動執行網路控制站和 RAS 閘道 eBGP 路由器。  
+## <a name="bkmk_tenant"></a>新增租使用者和客戶位址（CA）空間 eBGP 對等互連  
+當您簽署新客戶，並將客戶新增為資料中心內的新租使用者時，您可以使用下列程式，其中大部分是由網路控制站和 RAS 閘道 eBGP 路由器自動執行。  
   
-1.  新的虛擬網路和工作負載，根據您的租用戶需求佈建。  
+1.  根據您的租使用者需求，布建新的虛擬網路和工作負載。  
   
-2.  如有需要，請在您的資料中心中設定遠端租用戶企業網站與他們的虛擬網路之間的遠端連線。 當您部署租用戶的站對站 VPN 連線時，網路控制站會自動從可用的閘道集區中選取可用的 RAS 閘道 VM，並設定連接。  
+2.  如有需要，請設定遠端租使用者企業網站與其位於您資料中心之虛擬網路之間的遠端連線。 當您為租使用者部署站對站 VPN 連線時，網路控制卡會自動從可用的閘道集區中選取可用的 RAS 閘道 VM，並設定連線。  
   
-3.  在新的租用戶設定 RAS 閘道 VM，網路控制站，也會設定為 BGP 路由器的 RAS 閘道，並將它指定為路由反映程式中，租用戶。 這是即使在情況下，則為 true，RAS 閘道可做為閘道，或做為閘道和路由反映程式，其他租用戶。  
+3.  為新的租使用者設定 RAS 閘道 VM 時，網路控制卡也會將 RAS 閘道設定為 BGP 路由器，並將其指定為租使用者的路由反映程式。 即使 RAS 閘道做為閘道，或做為閘道和路由反映程式，也適用于其他租使用者。  
   
-4.  根據是否 CA 空間路由設定為使用靜態設定的網路或動態的 BGP 路由，網路控制站會設定對應的靜態路由、 BGP 鄰近項目，或同時在 RAS 閘道 VM 和路由反映程式。  
+4.  根據 CA 空間路由是否設定為使用靜態設定的網路或動態 BGP 路由，網路控制站會在 RAS 閘道 VM 和路由反射器上設定對應的靜態路由、BGP 鄰近專案或兩者。  
   
     > [!NOTE]  
-    > -   網路控制站設定 RAS 閘道和路由反映程式的租用戶之後，每當在相同的租用戶需要新的站對站 VPN 連線，網路控制站會檢查此 RAS 閘道 VM 上的可用容量。 如果原始的閘道可以服務所需的容量，新的網路連線也會在相同的 RAS 閘道 VM 上設定。 RAS 閘道 VM 無法處理額外的容量，如果網路控制卡選取具有新的可用性 RAS 閘道 VM，並在其上設定新的連接。 這個新 RAS 閘道的 VM 相關聯的租用戶會成為原始的租用戶 RAS 閘道路由反映程式的路由反映程式用戶端。  
-    > -   租用戶的站對站 VPN 位址，而每個使用單一公用 IP 位址，稱為虛擬 IP 位址 (VIP)，這由 SLBs 轉譯成的資料中心內部 IP 位址，因為 RAS 閘道集區位於軟體負載平衡器 (SLBs) 後方，請呼叫動態 IP 位址 (DIP)，將流量路由傳送企業租用戶的 RAS 閘道。 SLB 這個公開和私密金鑰 IP 位址對應可確保企業網站和 CSP RAS 閘道和路由反映程式之間會正確地建立站對站 VPN 通道。  
+    > -   當網路控制站設定了租使用者的 RAS 閘道和路由反映程式後，每當相同的租使用者需要新的網站間 VPN 連線時，網路控制卡會檢查此 RAS 閘道 VM 上的可用容量。 如果原始閘道可以服務所需的容量，則也會在相同的 RAS 閘道 VM 上設定新的網路連線。 如果 RAS 閘道 VM 無法處理額外的容量，網路控制卡會選取新的可用 RAS 閘道 VM，並在其上設定新的連接。 與租使用者相關聯的新 RAS 閘道 VM 會成為原始租使用者 RAS 閘道路由反射器的路由反映器用戶端。  
+    > -   因為 RAS 閘道集區位於軟體負載平衡器（SLBs）後方，所以租使用者的站對站 VPN 位址會分別使用單一公用 IP 位址（稱為虛擬 IP 位址（VIP）），其會由 SLBs 轉譯為資料中心內部 IP 位址，稱為動態 IP 位址（DIP），適用于路由傳送企業租使用者流量的 RAS 閘道。 此由 SLB 進行的公用到私人 IP 位址對應可確保在企業網站與 CSP RAS 閘道和路由反映程式之間，已正確建立站對站 VPN 通道。  
     >   
-    >     如需有關 SLB Vip，，Dip 的詳細資訊，請參閱[軟體負載平衡&#40;SLB&#41;適用於 SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。  
+    >     如需 SLB、Vip 和 Dip 的詳細資訊，請參閱[SDN 的&#40;軟體&#41;負載平衡 SLB](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。  
   
-5.  在企業網站與 RAS 閘道，會建立新的租用戶的 CSP 資料中心之間站對站 VPN 通道之後, 與通道相關聯的靜態路由會自動佈建在企業和 CSP 的通道.  
+5.  為新的租使用者建立企業網站與 CSP 資料中心 RAS 閘道之間的站對站 VPN 通道之後，與通道相關聯的靜態路由會自動布建在通道的企業和 CSP 端.  
   
-6.  使用 CA 空間 BGP 路由、 企業網站與 CSP RAS 閘道路由反映程式之間的對等互連 eBGP 也建立。  
+6.  使用 CA 空間 BGP 路由，也會建立企業網站與 CSP RAS 閘道路由反射器之間的 eBGP 對等互連。  
   
-## <a name="bkmk_route"></a>路由的同步處理和資料平面路由  
-企業網站與 CSP RAS 閘道路由反映程式之間 eBGP 對等互連建立之後，路由反映程式的所有企業路由來學習使用 BGP 的動態路由。 路由反映程式會同步處理這些所有路由反映程式的用戶端之間的路由，使所有設定使用相同的路由集合。  
+## <a name="bkmk_route"></a>路由同步處理和資料平面路由  
+在企業網站與 CSP RAS 閘道路由反映程式之間建立 eBGP 對等互連之後，路由反映會使用動態 BGP 路由來學習所有企業路由。 路由反映程式會同步處理所有路由反射器用戶端之間的這些路由，讓它們全都以相同的路由集合進行設定。  
   
-路由反射程式也會更新這些彙總的路由，使用路由的同步處理，網路控制站。 網路控制站然後轉譯為 HYPER-V 網路虛擬化原則中的路由，並設定網狀架構網路來確保端對端資料路徑路由已佈建。 此程序讓租用戶虛擬網路可存取租用戶企業網站。  
+路由反映程式也會使用路由同步處理，將這些合併路由更新到網路控制卡。 接著，網路控制站會將路由轉譯為 Hyper-v 網路虛擬化原則，並設定網狀架構網路以確保已布建端對端資料路徑路由。 此程式可讓租使用者虛擬網路從租使用者企業網站進行存取。  
   
-資料平面路由，連線到 RAS 閘道 Vm 的封包會直接路由傳送至租用戶的虛擬網路，因為必要的路由都供您使用的所有參與的 RAS 閘道 Vm。  
+針對資料平面路由，到達 RAS 閘道 Vm 的封包會直接路由傳送至租使用者的虛擬網路，因為所有參與的 RAS 閘道 Vm 現在都可使用所需的路由。  
   
-同樣地，使用 HYPER-V 網路虛擬化原則，租用戶虛擬網路路由傳送封包直接到 RAS 閘道 Vm （而不需要了解路由反映程式），然後到企業網站透過站對站 VPN 通道.  
+同樣地，使用 Hyper-v 網路虛擬化原則時，租使用者虛擬網路會將封包直接路由傳送至 RAS 閘道 Vm （而不需要知道路由反映），然後透過站對站 VPN 通道進行企業網站.  
   
-以外的地方。 從租用戶虛擬網路的遠端租用戶企業網站的回傳流量會略過 SLBs，稱為 Direct Server Return (DSR) 的程序。  
+另外。 將來自租使用者虛擬網路的流量傳回遠端租使用者企業網站會略過 SLBs，這是一種稱為「直接伺服器回傳」（DSR）的處理常式。  
   
-## <a name="bkmk_failover"></a>RAS 閘道和路由反映程式容錯移轉網路控制站的回應方式  
-以下是兩個可能的容錯移轉案例-一個用於 RAS 閘道路由反映程式的用戶端-，另一個用於 RAS 閘道路由反映程式包括網路控制站處理方式容錯移轉的 Vm 組態中的相關資訊。  
+## <a name="bkmk_failover"></a>網路控制站如何回應 RAS 閘道和路由反映器容錯移轉  
+以下是兩種可能的容錯移轉案例：一個用於 RAS 閘道路由反映程式用戶端，另一個用於 RAS 閘道路由反映程式-包括網路控制站如何在任一設定中處理 Vm 容錯移轉的相關資訊。  
   
-### <a name="vm-failure-of-a-ras-gateway-bgp-route-reflector-client"></a>RAS 閘道 BGP 路由反映程式用戶端的 VM 失敗  
-RAS 閘道路由反映程式用戶端失敗時，網路控制站會採取下列動作。  
+### <a name="vm-failure-of-a-ras-gateway-bgp-route-reflector-client"></a>RAS 閘道 BGP 路由反映用戶端的 VM 失敗  
+當 RAS 閘道路由反映用戶端失敗時，網路控制卡會採取下列動作。  
   
 > [!NOTE]  
-> RAS 閘道不是路由反射程式的租用戶 BGP 基礎結構，時，路由反映程式中的用戶端的租用戶 BGP 基礎結構。  
+> 當 RAS 閘道不是租使用者 BGP 基礎結構的路由反映程式時，它是租使用者 BGP 基礎結構中的路由反映程式用戶端。  
   
--   網路控制卡選取可用的待命 RAS 閘道 VM，並佈建失敗的 RAS 閘道 VM 設定新的 RAS 閘道 VM。  
+-   網路控制卡會選取可用的待命 RAS 閘道 VM，並使用失敗的 RAS 閘道 VM 設定來布建新的 RAS 閘道 VM。  
   
--   網路控制站更新相對應的 SLB 組態，以確保從租用戶站台至失敗的 RAS 閘道的站對站 VPN 通道，正確地建立新的 RAS 閘道。  
+-   網路控制卡會更新對應的 SLB 設定，以確保從租使用者網站到失敗的 RAS 閘道的站對站 VPN 通道，已與新的 RAS 閘道正確建立。  
   
--   網路控制站會在新的閘道上設定 BGP 路由反映程式用戶端。  
+-   網路控制卡會在新的閘道上設定 BGP 路由反映用戶端。  
   
--   網路控制站會將新的 RAS 閘道 BGP 路由反映程式用戶端設定為 作用中。 RAS 閘道會立即開始使用租用戶的路由反映程式共用的路由資訊，以及啟用對應的企業網站 eBGP 對等互連的對等互連。  
+-   網路控制站會將新的 RAS 閘道 BGP 路由反射器用戶端設定為作用中。 RAS 閘道會立即開始與租使用者的路由反映程式進行對等互連，以共用路由資訊並啟用對應企業網站的 eBGP 對等互連。  
   
-### <a name="vm-failure-for-a-ras-gateway-bgp-route-reflector"></a>RAS 閘道的 BGP 路由反映程式的 VM 失敗  
-RAS 閘道 BGP 路由反映程式失敗時，網路控制站會採取下列動作。  
+### <a name="vm-failure-for-a-ras-gateway-bgp-route-reflector"></a>RAS 閘道 BGP 路由反射器的 VM 失敗  
+當 RAS 閘道 BGP 路由反射器失敗時，網路控制卡會採取下列動作。  
   
--   網路控制卡選取可用的待命 RAS 閘道 VM，並佈建失敗的 RAS 閘道 VM 設定新的 RAS 閘道 VM。  
+-   網路控制卡會選取可用的待命 RAS 閘道 VM，並使用失敗的 RAS 閘道 VM 設定來布建新的 RAS 閘道 VM。  
   
--   網路控制站，路由反映程式在 VM 上設定新 RAS 閘道，並指派新的 VM 相同的 IP 位址所使用的故障的 VM，藉此提供路由完整性，儘管 VM 失敗。  
+-   網路控制站會在新的 RAS 閘道 VM 上設定路由反映程式，並為新的 VM 指派失敗的 VM 所使用的相同 IP 位址，藉此提供路由完整性（儘管 VM 失敗）。  
   
--   網路控制站更新相對應的 SLB 組態，以確保從租用戶站台至失敗的 RAS 閘道的站對站 VPN 通道，正確地建立新的 RAS 閘道。  
+-   網路控制卡會更新對應的 SLB 設定，以確保從租使用者網站到失敗的 RAS 閘道的站對站 VPN 通道，已與新的 RAS 閘道正確建立。  
   
--   網路控制站設定為使用中的新 RAS 閘道 BGP 路由反映程式的 VM。  
+-   網路控制站會將新的 RAS 閘道 BGP 路由反映器 VM 設定為作用中。  
   
--   路由反射程式立即變成作用中。 已建立站對站 VPN 通道，企業，且路由反映程式會使用 eBGP 對等互連，並交換與企業網站路由器的路由。  
+-   路由反映器會立即變成作用中狀態。 會建立企業的站對站 VPN 通道，而路由反映器會使用 eBGP 對等互連並與企業網站路由器交換路由。  
   
--   BGP 路由的選取範圍之後, 的 RAS 閘道 BGP 路由反映程式更新租用戶中的資料中心的路由反映程式用戶端，並與網路控制站，讓租用戶流量的端對端資料路徑同步處理的路由。  
+-   選取 BGP 路由之後，RAS 閘道 BGP 路由反映程式會更新資料中心內的租使用者路由反映用戶端，並同步處理網路控制站的路由，讓端對端資料路徑可供租使用者流量使用。  
   
-## <a name="bkmk_advantages"></a>使用 RAS 閘道的新功能的優點  
-以下是幾個設計您的 RAS 閘道部署時使用這些新的 RAS 閘道功能的優點。  
+## <a name="bkmk_advantages"></a>使用新的 RAS 閘道功能的優點  
+以下是在設計您的 RAS 閘道部署時，使用這些新的 RAS 閘道功能的幾個優點。  
   
-**RAS 閘道延展性**  
+**RAS 閘道擴充性**  
   
-您可以加入盡可能 RAS 閘道 Vm，因為您需要 RAS 閘道集區，因此您可以輕鬆地調整您的 RAS 閘道部署，以最佳化效能和容量。 當您將 Vm 新增至集區時，您可以設定這些 RAS 閘道，使用站對站 VPN 連線的任何類型 (IKEv2，L3，GRE)，避免出現容量瓶頸不需要停機。  
+由於您可以視需要在 RAS 閘道集區中新增任意數目的 RAS 閘道 Vm，因此您可以輕鬆地調整您的 RAS 閘道部署，以優化效能和容量。 將 Vm 新增至集區時，您可以使用任何種類（IKEv2、L3、GRE）的站對站 VPN 連線來設定這些 RAS 閘道，而不需要停機的情況下，消除容量瓶頸。  
   
-**簡化的企業站台閘道管理**  
+**簡化的企業網站閘道管理**  
   
-當您的租用戶具有多個企業網站時，租用戶可以設定具有一個遠端站對站 VPN IP 位址的所有站台和單一遠端芳鄰的 IP 位址-針對該租用戶的 CSP 資料中心 RAS 閘道的 BGP 路由反映程式 VIP。 這可簡化您的租用戶的閘道管理。  
+當您的租使用者有多個企業網站時，租使用者可以使用一個遠端站對站 VPN IP 位址和單一遠端鄰居 IP 位址來設定所有網站-您的 CSP 資料中心 RAS 閘道 BGP 路由會反映該租使用者的 VIP。 這可簡化您租使用者的閘道管理。  
   
-**閘道失敗的快速修復**  
+**快速修復閘道失敗**  
   
-若要確保快速的容錯移轉的回應，您可以設定 edge 路由和短時間間隔，例如小於或等於 10 秒控制路由器之間的 BGP Keepalive 參數時間。 這個簡短存留時間間隔，RAS 閘道 BGP 邊緣路由器時，快速偵測到失敗與網路控制器遵循上一節中提供的步驟。 此優點可能會降低針對不同的失敗偵測通訊協定，例如雙向轉送偵測 (BFD) 通訊協定的需求。  
+若要確保快速的容錯移轉回應，您可以將邊緣路由與控制路由器之間的 BGP Keepalive 參數時間設定為短時間間隔，例如小於或等於10秒。 在這個短暫的保持運作間隔中，如果 RAS 閘道 BGP 邊緣路由器失敗，則會快速偵測到失敗，而網路控制卡會遵循先前各節中所提供的步驟。 這種優點可能會減少個別失敗偵測通訊協定的需求，例如雙向轉送偵測（BFD）通訊協定。  
   
  
   

@@ -1,8 +1,8 @@
 ---
 title: 匯入
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 379d5923a9355db2965b56c27cedd207b1b63006
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca0a15e73e4aa913ece34e083a8070be3b4b190d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885989"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375414"
 ---
 # <a name="import"></a>匯入
 
 
 
-將外部磁碟群組匯入本機電腦的磁碟群組。
+將外部磁片群組匯入本機電腦的磁片群組。
 
 ## <a name="syntax"></a>語法
 
@@ -36,16 +36,16 @@ import [noerr]
 
 |參數|描述|
 |---------|-----------|
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|
+|noerr|僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|
 
 ## <a name="remarks"></a>備註
 
--   匯入命令會匯入具有焦點的磁碟位於相同群組中每個磁碟。
--   這項作業成功時，必須選取外部磁碟群組中的動態磁碟。 使用**選取磁碟**命令來選取磁碟，並將焦點移到它。
+-   Import 命令會匯入與具有焦點的磁片位於相同群組中的每個磁片。
+-   必須選取外部磁片群組中的動態磁碟，此操作才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要匯入到本機電腦的磁碟群組焦點的磁碟相同的磁碟群組中每個磁碟，請輸入：
+若要匯入相同磁片群組中的每個磁片，並將焦點放入本機電腦的磁片群組，請輸入：
 ```
 import
 ```

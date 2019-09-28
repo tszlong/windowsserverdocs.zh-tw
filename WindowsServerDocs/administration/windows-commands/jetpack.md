@@ -1,8 +1,8 @@
 ---
 title: jetpack
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3bffc29519df139921bdb1de53e67acd558b306
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b011658c6a745d62707cf88404379b17b0e05eef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858009"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375319"
 ---
 # <a name="jetpack"></a>jetpack
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-壓縮 Windows 網際網路名稱服務 (WINS) 或動態主機設定通訊協定 (DHCP) 的資料庫。 Microsoft 建議您壓縮 WINS 資料庫，每當它接近 30MB。 
+壓縮 Windows 網際網路名稱服務（WINS）或動態主機設定通訊協定（DHCP）資料庫。 Microsoft 建議您在 WINS 資料庫接近 30 MB 時，將其壓縮。 
 
 ## <a name="syntax"></a>語法
 ```
@@ -35,10 +35,10 @@ jetpack.EXE <database name> <temp database name>
 |參數|描述|
 |-------|--------|
 |<database name>|指定原始資料庫檔案。|
-|<temp database name>|指定的暫存資料庫檔案。|
+|<temp database name>|指定暫存資料庫檔案。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 若要壓縮 WINS 資料庫：
 ```
 cd %SYSTEMROOT%\SYSTEM32\WINS
@@ -53,14 +53,14 @@ NET STOP DHCPSERver
 jetpack DHCP.MDB TMP.MDB
 NET start DHCPSERver
 ```
-在上述範例**Tmp.mdb**是暫存資料庫，可由 jetpack.exe。 **Wins.mdb**是 WINS 資料庫。 **Dhcp.mdb**是 DHCP 資料庫。
-jetpack.exe 會壓縮 WINS 或 DHCP 資料庫，執行下列動作：
-1.  複製資料庫到稱為的暫存資料庫檔案的資訊**Tmp.mdb**。
-2.  刪除原始資料庫檔案**Wins.mdb**或是**Dhcp.mdb**。
-3.  將暫存資料庫檔案的重新命名為原始的檔案名稱。
+在上述範例中， **Tmp**是 jetpack 所使用的暫存資料庫。 **Wins**是 wins 資料庫。 **Dhcp**是 dhcp 資料庫。
+jetpack 會藉由執行下列動作來壓縮 WINS 或 DHCP 資料庫：
+1.  將資料庫資訊複製到名為**Tmp**的暫存資料庫檔案。
+2.  刪除原始資料庫檔案，**勝出**或**Dhcp**.mdb。
+3.  將暫存資料庫檔案重新命名為原始的檔案名。
 
 > [!NOTE]
-> 在壓縮過程中，jetpack.exe，請建立具有所指定名稱的暫存檔*暫存資料庫名稱*參數。 Compact 的程序完成時，會移除暫存檔案。 請確定您沒有已存在於 WINS 或 DHCP 的檔案與所指定的名稱相同的資料夾*暫存資料庫名稱*參數。
+> 在 compact 程式期間，jetpack 會使用*temp 資料庫名稱*參數所指定的名稱來建立暫存檔案。 當 compact 程式完成時，就會移除暫存檔案。 請確定您的 WINS 或 DHCP 資料夾中沒有已存在的檔案，其名稱與*temp 資料庫名稱*參數中指定的相同。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,110 +1,110 @@
 ---
 title: 使用 Azure 雲端應用程式伺服器以時間為基礎的 DNS 回應
-description: 本主題是 DNS 原則案例指南的 Windows Server 2016 的一部分
+description: 本主題是 Windows Server 2016 DNS 原則案例指南的一部分
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 68f30973ef58b64006181990425e6ca84c39c059
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 4307ce1512980277af819e0710e0447d8dbac8c4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812033"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406194"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>使用 Azure 雲端應用程式伺服器以時間為基礎的 DNS 回應
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題以了解如何將應用程式流量分散到不同地理位置分散的應用程式執行個體中，使用 DNS 原則為基礎的當日時間。 
+您可以使用本主題來瞭解如何使用以當天時間為基礎的 DNS 原則，將應用程式流量分散到應用程式的不同地理位置。 
 
-這個案例是在您想要將流量導向至替代的應用程式伺服器，例如 Web 伺服器裝載於 Microsoft Azure 上位於另一個時區中的一個時區中的情況下很有用。 這可讓您將應用程式執行個體之間的平衡流量負載尖峰期間時間的週期，您的主要伺服器的流量多載。 
+當您想要將一個時區的流量導向至替代的應用程式伺服器（例如，Microsoft Azure 上所裝載的 Web 服務器）時，此案例很有用。 這可讓您在主伺服器以流量超載時的尖峰時段，對應用程式實例之間的流量進行負載平衡。 
 
 > [!NOTE]
-> 若要了解如何使用 DNS 原則進行智慧型 DNS 回應，而不需使用 Azure，請參閱[使用 DNS 原則智慧型 DNS 回應時間的以天為基礎](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md)。 
+> 若要瞭解如何使用 DNS 原則來取得智慧型 DNS 回應，而不使用 Azure，請參閱[根據一天的時間使用 Dns 原則來進行智慧型 Dns 回應](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md)。 
 
-## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Azure 雲端應用程式伺服器的同一天的時間為基礎的智慧型 DNS 回應的範例
+## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>以 Azure 雲端應用程式伺服器當天的時間為基礎的智慧型 DNS 回應範例
 
-以下是如何使用 DNS 原則以一天的時間為基礎的應用程式流量平衡的範例。
+以下範例示範如何使用 DNS 原則，根據一天的時間來平衡應用程式流量。
 
-這個範例會使用一個虛構的公司 Contoso 禮物卡服務，可透過其網站在全球各地提供線上贈與解決方案，contosogiftservices.com。 
+這個範例使用一個虛構的公司 Contoso 禮物服務，透過其網站 contosogiftservices.com 提供全球各地的線上贈與解決方案。 
 
-只有在西雅圖 （具有公用 IP 192.68.30.2) 的單一內部部署資料中心裝載 contosogiftservices.com 網站。 
+Contosogiftservices.com 網站僅裝載于西雅圖的單一內部部署資料中心（具有公用 IP 192.68.30.2）。 
 
 DNS 伺服器也位於內部部署資料中心。 
 
-與商務最近激增，contosogiftservices.com 較高數目的訪客每一天，而且某些客戶已回報服務可用性問題。 
+在最新的企業營運中，contosogiftservices.com 每天會有更多的訪客，而且有些客戶回報了服務可用性問題。 
 
-Contoso 禮物卡服務執行站台分析，並探索下午 6 點與下午 9 點的當地時間之間的每個晚上沒有激增到西雅圖 Web 伺服器流量。 網頁伺服器無法調整以處理增加的流量，在這些尖峰時間內，導致阻絕服務給客戶。 
+Contoso 禮物服務會執行網站分析，併發現在當地時間下午6點到下午9：00，西雅圖 Web 服務器的流量激增。 網頁伺服器無法調整以在這些尖峰時間處理增加的流量，因而導致客戶拒絕服務。 
 
-為了確保 contosogiftservices.com 客戶網站上取得回應靈敏的經驗，Contoso 禮物卡服務會決定在這些時間內就將租用虛擬機器\(VM\)在 Microsoft Azure 來裝載一份其 Web 伺服器上.  
+為了確保 contosogiftservices.com 客戶從網站獲得回應式體驗，Contoso 禮物服務會決定在這段期間內，它會在 Microsoft Azure 上出租虛擬機器 \(VM @ no__t-1，以裝載其 Web 服務器的複本。  
 
-Contoso 禮物卡服務 VM (192.68.31.44) 從 Azure 取得的公用 IP 位址，並開發自動化功能，每日在 Azure 上之間 5-下午 10 點，以便在一個小時的緊急應變期間部署 Web 伺服器。
+Contoso 禮品服務會從 Azure 取得 VM 的公用 IP 位址（192.68.31.44），並開發自動化以在每天下午5-10 的 Azure 上部署 Web 服務器，允許一小時的應變週期。
 
 > [!NOTE]
-> 如需有關 Azure Vm 的詳細資訊，請參閱[虛擬機器文件](https://azure.microsoft.com/documentation/services/virtual-machines/) 
+> 如需 Azure Vm 的詳細資訊，請參閱[虛擬機器檔](https://azure.microsoft.com/documentation/services/virtual-machines/) 
 
-DNS 伺服器會設定具有區域範圍和 DNS 原則中，如此之間 5-9 PM 每一天、 30%的查詢會傳送至 Azure 中執行的 Web 伺服器執行個體。
+DNS 伺服器是以區域範圍和 DNS 原則進行設定，因此每天下午5-9，會將 30% 的查詢傳送至 Azure 中執行的 Web 服務器實例。
 
-下圖說明此案例。
+下圖描述此案例。
 
-![一天的回應時間的 DNS 原則](../../media/DNS-Policy-Tod2/dns_policy_tod2.jpg)  
+![當日時間回應的 DNS 原則](../../media/DNS-Policy-Tod2/dns_policy_tod2.jpg)  
 
-## <a name="how-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server-works"></a>如何智慧型 DNS 回應為基礎的當日時間和 Azure 應用程式伺服器的運作方式
+## <a name="how-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server-works"></a>以 Azure App Server 的一天時間為基礎，智慧型 DNS 回應的運作方式
  
-這篇文章會示範如何設定 DNS 伺服器回應 DNS 查詢具有兩個不同的應用程式伺服器 IP 位址-一部 web 伺服器是在西雅圖，另一個是 Azure 資料中心。
+本文示範如何使用兩個不同的應用程式伺服器 IP 位址來設定 DNS 伺服器來回答 DNS 查詢-一部 web 伺服器位於西雅圖，另一個則位於 Azure 資料中心。
 
-完成新的 DNS 原則為基礎的尖峰時間的下午 6 點至下午 9 點在西雅圖的設定之後, DNS 伺服器會傳送包含西雅圖 Web 伺服器的 IP 位址的用戶端的 DNS 回應的 seventy %和 30%的用戶端的 DNS 回應nts 包含 Azure Web 伺服器的 IP 位址、 藉此用戶端將流量導向至新的 Azure Web 伺服器，並避免西雅圖 Web 伺服器超過負載。 
+根據西雅圖的尖峰時數下午6點至9點設定新的 DNS 原則之後，DNS 伺服器會將每個 DNS 回應的70傳送到包含西雅圖 Web 服務器 IP 位址的用戶端，並將每一美分的 dns 回應的30個設定為用戶端nts 包含 Azure Web 服務器的 IP 位址，藉此將用戶端流量導向至新的 Azure Web 服務器，並防止西雅圖網頁伺服器超載。 
 
-一天，其他所有時間進行一般的查詢處理的位置，並從預設區域範圍，其中包含 web 伺服器，在內部部署資料中心內的記錄傳送回應。 
+在每天的其他所有時間，會進行一般查詢處理，而回應會從預設區域範圍傳送，其中包含內部部署資料中心內 web 伺服器的記錄。 
 
-Azure 記錄的 10 分鐘的 TTL 可確保 VM 從 Azure 移除之前，已從 LDNS 快取過期記錄。 這種調整的優點是您可以保留您 DNS 在內部資料，並讓向外擴充至 Azure 依需求。
+Azure 記錄上10分鐘的 TTL 可確保從 LDNS 快取中的記錄過期後，才會從 Azure 移除 VM。 這類調整的其中一個優點是您可以將 DNS 資料保留在內部部署環境，並視需要繼續向外擴充至 Azure。
 
-## <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server"></a>如何設定 DNS 原則進行智慧型 DNS 回應為基礎的當日時間和 Azure 的應用程式伺服器
+## <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server"></a>如何根據 Azure App 伺服器的當日時間，設定智慧型 DNS 回應的 DNS 原則
 
-若要設定的一天的應用程式負載平衡以時間為基礎的查詢回應的 DNS 原則，您必須執行下列步驟。
+若要針對每日時間以應用程式負載平衡為基礎的查詢回應設定 DNS 原則，您必須執行下列步驟。
 
 - [建立區域範圍](#create-the-zone-scopes)
 - [將記錄新增至區域範圍](#add-records-to-the-zone-scopes)
 - [建立 DNS 原則](#create-the-dns-policies)
 
 > [!NOTE]
-> 您必須有權管理您想要設定區域的 DNS 伺服器上執行這些步驟。 DnsAdmins，或是對等成員資格，才能執行下列程序。 
+> 您必須在您想要設定之區域的授權 DNS 伺服器上執行這些步驟。 若要執行下列程式，必須要有 DnsAdmins 的成員資格或同等許可權。 
 
 下列各節提供詳細的設定指示。
 
 > [!IMPORTANT]
-> 下列各節包含 Windows PowerShell 命令範例包含許多參數的範例值。 請確定這些命令列中的範例值取代是適用於您的部署，然後再執行這些命令的值。 
+> 下列各節包含範例 Windows PowerShell 命令，其中包含許多參數的範例值。 執行這些命令之前，請務必將這些命令中的範例值取代為適用于您的部署的值。 
 
 
 ### <a name="create-the-zone-scopes"></a>建立區域範圍
 
-區域範圍內是區域的唯一的執行個體。 DNS 區域可以有多個區域範圍，與包含它自己的 DNS 記錄集的每個區域範圍。 同一筆記錄中可以存在多個領域，具有不同 IP 位址或相同的 IP 位址。 
+區域範圍是區域的唯一實例。 DNS 區域可以有多個區域範圍，其中每個區域範圍都包含自己的一組 DNS 記錄。 相同的記錄可以出現在多個範圍中，具有不同的 IP 位址或相同的 IP 位址。 
 
 > [!NOTE]
-> 根據預設，在區域範圍存在於 DNS 區域。 此區域範圍作為區域，具有相同的名稱，此範圍上運作的舊版 DNS 作業。 
+> 根據預設，區域範圍會存在於 DNS 區域中。 此區域範圍與區域具有相同的名稱，且舊版 DNS 作業會在此範圍內運作。 
 
-您可以使用下列範例命令建立裝載 Azure 記錄的區域範圍。
+您可以使用下列範例命令來建立區域範圍，以裝載 Azure 記錄。
 
 ```
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope"
 ```
 
-如需詳細資訊，請參閱[新增 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a>將記錄新增至區域範圍
-下一個步驟是新增到區域範圍表示 Web 伺服器主機的記錄。 
+下一個步驟是將代表 Web 服務器主機的記錄新增到區域範圍中。 
 
-在 AzureZoneScope，記錄 www.contosogiftservices.com 新增 IP 位址 192.68.31.44，其位於 Azure 公用雲端。 
+在 AzureZoneScope 中，會使用位於 Azure 公用雲端中的 IP 位址192.68.31.44 新增記錄 www.contosogiftservices.com。 
 
-同樣地，在預設區域領域\(contosogiftservices.com\)，記錄\(www.contosogiftservices.com\)加入在西雅圖內部執行的 Web 伺服器的 IP 位址 192.68.30.2資料中心。
+同樣地，在預設區域範圍中 \(contosogiftservices @ no__t-1，\(www 的記錄會加上在西雅圖內部部署資料中心執行之 Web 服務器的 IP 位址 no__t。
 
-在下列第二個 cmdlet 中，您可能未包含要 – ZoneScope 參數。 因為這個緣故，在預設 ZoneScope 新增記錄。 
+在下面的第二個 Cmdlet 中，不包含– ZoneScope 參數。 因此，會在預設 ZoneScope 中新增記錄。 
 
-此外，適用於 Azure Vm 記錄的 TTL 會保留在 600s （10 分鐘），以便 LDNS 不會快取它較長的時間-這會干擾負載平衡。 此外，Azure Vm 有 1 個額外小時作為應變計劃以確保即使快取的記錄用戶端就能解決。
+此外，Azure Vm 記錄的 TTL 會保留在600s （10分鐘），因此 LDNS 不會將它快取一段較長的時間，這會干擾負載平衡。 此外，Azure Vm 提供1個額外的時間作為應變，以確保即使是具有快取記錄的用戶端都可以解析。
 
 ```
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.31.44" -ZoneScope "AzureZoneScope" –TimeToLive 600
@@ -112,25 +112,25 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.30.2"
 ```
 
-如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。  
+如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。  
 
 ### <a name="create-the-dns-policies"></a>建立 DNS 原則 
-建立區域範圍之後，您可以建立將傳入的查詢分散到這些範圍，以便發生下列情況的 DNS 原則。
+建立區域範圍之後，您可以建立 DNS 原則，將傳入的查詢分散到這些範圍，以便發生下列情況。
 
-1. 從每日下午 9 點到下午 6 點，30%的用戶端的 Web 伺服器的 IP 位址在 DNS 回應中，在 Azure 資料中心時收到 70%的用戶端接收西雅圖的內部部署 Web 伺服器的 IP 位址。
-2. 在所有其他情況下，所有用戶端收到西雅圖的內部部署 Web 伺服器的 IP 位址。
+1. 每日下午6點至9點，30% 的用戶端會在 DNS 回應中接收 Azure 資料中心內 Web 服務器的 IP 位址，而 70% 的用戶端則會收到西雅圖內部部署 Web 服務器的 IP 位址。
+2. 所有其他情況下，所有用戶端都會收到西雅圖內部部署 Web 服務器的 IP 位址。
 
-在一天的時間必須以 DNS 伺服器的當地時間表示。
+一天中的時間必須以 DNS 伺服器的當地時程表示。
 
-若要建立的 DNS 原則，您可以使用下列範例命令。
+您可以使用下列範例命令來建立 DNS 原則。
 
 ```
 Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” -ZoneName "contosogiftservices.com" –ProcessingOrder 1
 ```
 
-如需詳細資訊，請參閱 <<c0> [ 新增 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。  
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。  
   
-現在已設定 DNS 伺服器，以必要的 DNS 原則，將流量重新導向至 Azure Web 伺服器為基礎的當日時間。 
+現在，DNS 伺服器已設定必要的 DNS 原則，以根據一天的時間將流量重新導向至 Azure Web 服務器。 
 
 請注意運算式：
 
@@ -138,6 +138,6 @@ Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -Zone
  -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” 
 `
 
-這個運算式會結合 ZoneScope 和權數，它會指示傳送西雅圖 Web 伺服器的 IP 位址 seventy %的時間，同時傳送時間的 30%的 Azure Web 伺服器的 IP 位址的 DNS 伺服器設定 DNS 伺服器。
+此運算式會使用 ZoneScope 和權陣列合來設定 DNS 伺服器，以指示 DNS 伺服器在一段時間內傳送西雅圖 Web 服務器70的 IP 位址，並在一段時間內傳送 Azure Web 服務器的 IP 位址三十美元。
 
-您可以建立數以千計的 DNS 原則根據您的流量管理需求，而且所有新的原則都會套用動態-不需要重新啟動 DNS 伺服器-在傳入的查詢。
+您可以根據您的流量管理需求來建立數以千計的 DNS 原則，而所有的新原則都會以動態方式套用，而不需要重新開機 DNS 伺服器上的傳入查詢。
