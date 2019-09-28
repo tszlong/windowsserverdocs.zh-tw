@@ -1,25 +1,25 @@
 ---
 title: Vssadmin 刪除陰影
-description: Vssadmin 刪除陰影命令的描述。
-ms.prod: windows-server-threshold
+description: Vssadmin delete shadows 命令的描述。
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 83074017e4ae412cf0aec654f6ab5901ad8039e2
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 9779da98ecb43245fe206390d9b70471f15d706e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63706622"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362610"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin 刪除陰影
 
->適用於：Windows 10，Windows 8.1，Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+>適用於：Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-刪除指定磁碟區陰影複製。
+刪除指定的磁片區陰影複製。
 
 ## <a name="syntax"></a>語法
 
@@ -31,19 +31,19 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 |參數|描述|
 |---|---|
-|/for=\<ForVolumeSpec>|指定要刪除的磁碟區陰影複製。|
-|/oldest|刪除最舊陰影複製。|
-|/all|刪除所有指定的磁碟區陰影複製。|
-|/shadow=\<ShadowID>|刪除 ShadowID 所指定的陰影複製。 若要取得的陰影複製識別碼，請使用**list shadows**命令。 當您輸入的陰影複製識別碼時，使用下列格式，其中每個*X*代表十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
-|/quiet|指定此命令不會顯示在執行時的訊息。|
+|/for = \<ForVolumeSpec >|指定將刪除哪一個磁片區的陰影複製。|
+|/oldest|只刪除最舊的陰影複製。|
+|/all|刪除指定磁片區的所有陰影複製。|
+|/shadow = \<ShadowID >|刪除 ShadowID 所指定的陰影複製。 若要取得陰影複製識別碼，請使用**vssadmin list shadows**命令。 當您輸入陰影複製識別碼時，請使用下列格式，其中每個*X*代表一個十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXX）|
+|/quiet|指定命令在執行時不會顯示訊息。|
 
 ## <a name="remarks"></a>備註
 
-您只能刪除陰影複製用戶端可存取的類型。
+您只能使用用戶端可存取的類型來刪除陰影複製。
 
 ## <a name="examples"></a>範例
 
-若要刪除舊的陰影複製磁碟區 C，輸入下列命令：
+若要刪除磁片區 C 最舊的陰影複製，請輸入下列命令：
 
 ```PowerShell
 vssadmin delete shadows /for=c: /oldest
@@ -51,6 +51,6 @@ vssadmin delete shadows /for=c: /oldest
 
 ## <a name="additional-references"></a>其他參考資料
 
-* [命令列語法關鍵](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
+* [命令列語法索引鍵](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [Vssadmin](vssadmin.md)
-* [List shadows](vssadmin-list-shadows.md)
+* [Vssadmin 清單陰影](vssadmin-list-shadows.md)
