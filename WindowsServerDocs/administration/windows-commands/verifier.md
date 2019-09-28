@@ -1,8 +1,8 @@
 ---
 title: verifier
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ab0833d4fdb11c4962d4916ec2e32097e08ca04
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cc2482fa25d0236991889c3951cb522e27bf520d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865869"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362694"
 ---
 # <a name="verifier"></a>verifier
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-驅動程式檢查器管理員。  
+驅動程式驗證器管理員。  
 
 ## <a name="syntax"></a>語法  
 ```  
@@ -44,12 +44,12 @@ verifier /log <LogFileName> [/interval <seconds>]
 ### <a name="parameters"></a>參數  
 |參數|描述|  
 |-------|--------|  
-|\<flags>|必須是數字的位元的十進位或十六進位，組合：<br /><br />-   **值： 描述**<br />-   **位元 0:** 特殊的集區檢查<br />-   **位元 1:** 強制 irql 檢查<br />-   **位元 2:** 低資源模擬<br />-   **位元 3:** 追蹤的集區<br />-   **位元 4:** I/O 驗證<br />-   **位元 5:** 死結偵測<br />-   **位元 6:** 未使用<br />-   **位元 7:** DMA 驗證<br />-   **位元 8:** 安全性檢查<br />-   **位元 9:** 強制暫止 I/O 要求<br />-   **位元 10:** IRP 記錄<br />-   **位元 11:** 其他檢查<br /><br />例如， **/27 加上旗標**相當具有  **/0x1B 加上旗標**|  
-|/volatile|用來動態變更的驗證器設定，而不重新啟動系統。 重新啟動系統時，將會遺失任何新的設定。|  
-|\<機率 >|介於 1 與指定的錯誤資料隱碼攻擊的機率的 10,000 之間的數字。 例如，指定 100 所表示的錯誤資料隱碼攻擊機率約為 1%（100/10,000 個）。<br /><br />如果未指定此參數，則會使用預設機率的 6%。|  
-|\<tags>|指定將插入的集區標記具有以空白字元分隔的瑕疵。 如果沒有指定這個參數是任何集區配置可以插入與錯誤。|  
-|\<applications>|指定將插入的應用程式的映像檔案名稱具有空格字元所隔開的瑕疵。 如果未指定此參數低資源模擬可能需要在任何應用程式的位置。|  
-|\<minutes>|指定的長度超過此時限後重新開機，以分鐘為單位，插入式攻擊會發生的任何錯誤期間的正數。 如果未指定此參數，然後將使用 8 分鐘的預設長度。|  
+|\<flags >|必須是十進位或十六進位（位的組合）中的數位：<br /><br />-   **值：描述**<br />-   **位0：** 特殊集區檢查<br />-   **位1：** 強制 irql 檢查<br />-   **位2：** 低資源模擬<br />-   **位3：** 集區追蹤<br />-   **位4：** I/o 驗證<br />-   **位5：** 鎖死偵測<br />-   **位6：** 未使用<br />-   **位7：** DMA 驗證<br />-   **位8：** 安全性檢查<br />-   **位9：強制執行**暫止的 i/o 要求<br />-   **位10：** IRP 記錄<br />-   **位11：** 其他檢查<br /><br />例如， **/flags 27**等同于 **/flags 0x1b**|  
+|/volatile|用來動態變更驗證器設定，而不需要重新開機系統。 系統重新開機時，將會遺失任何新的設定。|  
+|\<probability >|指定錯誤插入機率的1到10000之間的數位。 例如，指定100表示錯誤插入機率為 1% （100/10000）。<br /><br />如果未指定此參數，則會使用預設的 6% 機率。|  
+|\<tags >|指定將會插入錯誤的集區標籤，並以空白字元分隔。 如果未指定此參數，則可以插入具有錯誤的任何集區配置。|  
+|\<applications >|指定將以空白字元分隔的應用程式的影像檔案名稱，並以空白字元隔開。 如果未指定此參數，則會在任何應用程式中進行低資源模擬。|  
+|\<minutes >|正數，指定重新開機後的期間長度（以分鐘為單位），在這段期間內不會發生任何錯誤插入。 如果未指定此參數，則會使用預設長度8分鐘。|  
 |/?|在命令提示字元顯示說明。|  
 
 ## <a name="additional-references"></a>其他參考資料  

@@ -1,31 +1,31 @@
 ---
 title: 新增模組至工具擴充功能
-description: 開發工具擴充功能的 Windows Admin Center SDK （專案檀香山）-將模組新增至 [工具] 延伸模組
+description: 開發工具擴充功能 Windows 系統管理中心 SDK （Project 檀香山）-將模組新增至工具擴充功能
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d8d901097eb280679a388ff66161e3514befcd13
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.prod: windows-server
+ms.openlocfilehash: 9d30980ca404187ff1481242c1c0ef0a3d571416
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452649"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357104"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>新增模組至工具擴充功能
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-在本文中，我們會將空的模組，加入我們建立了使用 Windows Admin Center CLI 工具擴充功能。
+在本文中，我們會將空的模組新增至我們使用 Windows Admin Center CLI 建立的工具擴充功能。
 
 ## <a name="prepare-your-environment"></a>準備您的環境
 
-如果您還沒有這麼做，請依照下列指示中開發[工具](../develop-tool.md)(或[解決方案](../develop-solution.md)) 來準備您的環境及建立新的空白工具延伸模組的延伸模組。
+如果您還沒有這麼做，請遵循開發[工具](../develop-tool.md)（或[解決方案](../develop-solution.md)）延伸模組中的指示來準備您的環境，並建立新的空白工具擴充功能。
 
-## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>使用 Angular CLI 建立的模組 （和元件）
+## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>使用角度 CLI 建立模組（和元件）
 
 如果對 Angular 不熟悉，強烈建議您閱讀 Angular.Io 網站上的文件以了解 Angular 和 NgModule。 如需 NgModule 的詳細資訊，請移至這裡： https://angular.io/guide/ngmodule
 
@@ -33,7 +33,7 @@ ms.locfileid: "66452649"
 * 在 Angular CLI 中產生新元件的詳細資訊： https://github.com/angular/angular-cli/wiki/generate-component
 
 
-開啟命令提示字元，將目錄變更為 \src\app 在您的專案，然後執行下列命令，將```{!ModuleName}```以您的模組名稱 （移除空格）：
+開啟命令提示字元，在專案中將目錄變更為 \src\app，然後執行下列命令，將 ```{!ModuleName}``` 取代為您的模組名稱（移除空格）：
 
 ```
 cd \src\app
@@ -155,9 +155,9 @@ public ngOnInit() {
     // TODO
 }
 ```
-### <a name="update-app-routingmodulets"></a>更新應用程式 routing.module.ts
+### <a name="update-app-routingmodulets"></a>更新應用程式-路由。 ts
 
-開啟檔案```app-routing.module.ts```，修改預設路徑，以便它會載入您剛才建立的新模組。  找到的項目```path: ''```，並更新```loadChildren```載入您的模組，而不是預設的模組：
+開啟 [檔案 ```app-routing.module.ts```]，然後修改預設路徑，使其載入您剛建立的新模組。  找出 ```path: ''``` 的專案，並更新 ```loadChildren``` 以載入您的模組，而不是預設模組：
 
 | 值 | 說明 | 範例 |
 | ----- | ----------- | ------- |
@@ -170,7 +170,7 @@ public ngOnInit() {
         loadChildren: 'app/{!module-name}/{!module-name}.module#{!ModuleName}Module'
     },
 ```
-以下是更新的預設路徑的範例：
+以下是更新預設路徑的範例：
 ``` ts
     {
         path: '', 
@@ -179,6 +179,6 @@ public ngOnInit() {
 ```
 
 
-## <a name="build-and-side-load-your-extension"></a>組建和側邊載入您的延伸模組
+## <a name="build-and-side-load-your-extension"></a>組建和側邊載入您的擴充功能
 
-現在您已將模組加入您的延伸模組。  接下來，您可以[建置，並端負載](../develop-tool.md#build-and-side-load-your-extension)您 Windows Admin Center，來查看結果的延伸模組。
+您現在已將模組新增至您的擴充功能。  接下來，您可以在 Windows 系統管理中心內[建立和側邊載入](../develop-tool.md#build-and-side-load-your-extension)擴充功能，以查看結果。

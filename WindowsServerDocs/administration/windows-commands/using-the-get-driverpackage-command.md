@@ -1,8 +1,8 @@
 ---
-title: 使用 get DriverPackage 命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用 DriverPackage 命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0f123d281625140b3c4ba46316cb9b773bf5fee
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f3d31d9a02454b0f7fca06b28a4df27174f7b02e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440512"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363186"
 ---
-# <a name="using-the-get-driverpackage-command"></a>使用 get DriverPackage 命令
+# <a name="using-the-get-driverpackage-command"></a>使用 DriverPackage 命令
 
 
 
-顯示伺服器上的驅動程式套件的相關資訊。
+顯示伺服器上驅動程式套件的相關資訊。
 
 ## <a name="syntax"></a>語法
 
@@ -36,14 +36,14 @@ WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name
 
 |        參數         |                                                                           描述                                                                            |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/ 伺服器：\<伺服器名稱 >] |              指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果沒有指定伺服器名稱時，會使用本機伺服器。               |
-| [/DriverPackage:\<Name>] |                                                        指定驅動程式套件，以顯示名稱。                                                         |
-|    [/PackageId:\<ID>]    | 指定 Windows 部署服務的識別碼的驅動程式套件來顯示。 如果驅動程式套件不能唯一識別名稱，您必須指定識別碼。 |
-|     [] / [顯示: {驅動程式     |                                                                              檔案                                                                               |
+| [/Server： \<Server 名稱 >] |              指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。               |
+| [/DriverPackage： \<Name >] |                                                        指定要顯示的驅動程式套件的名稱。                                                         |
+|    [/PackageId： \<ID >]    | 指定要顯示之驅動程式套件的 Windows 部署服務識別碼。 如果驅動程式套件無法以名稱唯一識別，您就必須指定識別碼。 |
+|     [/Show： {驅動程式     |                                                                              檔案                                                                               |
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要檢視驅動程式套件的相關資訊，請輸入下列其中一項：
+若要查看驅動程式套件的相關資訊，請輸入下列其中一項：
 ```
 WDSUTIL /Get-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318}
 ```

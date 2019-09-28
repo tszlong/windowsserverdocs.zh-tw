@@ -1,8 +1,8 @@
 ---
 title: 使用 get 命令
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,38 +13,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b74a66ece9b79a6b8868fe6b1b25faf39eb108c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35fe9ebf036e82fce0f6b2ff67ddb654d8dad586
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857579"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363279"
 ---
 # <a name="using-the-get-command"></a>使用 get 命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-擷取內容] 或 [關於指定物件的屬性。
-## <a name="subcommands"></a>子命令
-|子命令|描述|
+抓取有關指定物件的屬性或屬性。
+## <a name="subcommands"></a>子
+|來|描述|
 |-------|--------|
-|[使用 get AllDevices 命令](using-the-get-alldevices-command.md)|顯示所有預先設置電腦的相關資訊。|
-|[使用 get AllImageGroups 命令](using-the-get-allimagegroups-command.md)|顯示所有的映像群組的相關資訊。|
-|[使用 get AllImages 命令](using-the-get-allimages-command.md)|顯示所有映像的相關資訊。|
-|[使用 get AllMulticastTransmissions 命令](using-the-get-allmulticasttransmissions-command.md)|會顯示所有的多點傳送傳輸的屬性。|
-|[使用 get AllNamespaces 命令](using-the-get-allnamespaces-command.md)|顯示的所有命名空間的屬性。|
-|[使用 get AllServers 命令](using-the-get-allservers-command.md)|顯示所有的 Windows 部署服務伺服器的相關資訊。|
-|[使用 get AutoaddDevices 命令](using-the-get-autoadddevices-command.md)|顯示等待指定的伺服器上的系統管理核准的電腦。|
-|[使用 get 裝置命令](using-the-get-device-command.md)|會顯示擱置中的電腦的屬性。|
-|[使用 get 映像命令](using-the-get-image-command.md)|會顯示現有的映像的屬性。|
-|[使用 get ImageFile 命令](using-the-get-imagefile-command.md)|顯示指定的.wim 檔案中的映像的相關資訊。|
-|[使用 get ImageGroup 命令](using-the-get-imagegroup-command.md)|顯示指定的映像群組的相關資訊。|
-|[使用 /get-multicasttransmission 命令](using-the-get-multicasttransmission-command.md)|顯示在指定的多點傳送傳輸的屬性。|
-|[使用 get 命名空間命令](using-the-get-namespace-command.md)|顯示指定的命名空間的屬性。|
-|[使用 get 伺服器命令](using-the-get-server-command.md)|顯示指定的 Windows 部署服務伺服器的相關資訊。|
-|[使用 get TransportServer 命令](using-the-get-transportserver-command.md)|顯示指定的傳輸伺服器的相關資訊。|
-|[使用 get DriverPackage 命令](using-the-get-driverpackage-command.md)|顯示伺服器上的驅動程式套件的相關資訊。|
-|[使用 get AllDriverGroups 命令](using-the-get-alldrivergroups-command.md)|顯示伺服器上的所有驅動程式群組的相關資訊。|
-|[使用 get DriverGroup 命令](using-the-get-drivergroup-command.md)|顯示伺服器上的驅動程式群組的相關資訊。|
-|[使用 get AllDriverPackages 命令](using-the-get-alldriverpackages-command.md)|顯示符合指定的搜尋條件的伺服器上的所有驅動程式套件的相關資訊。|
-|[使用 get DriverPackageFile 命令](using-the-get-driverpackagefile-command.md)|顯示驅動程式套件，包括驅動程式和其所包含的檔案的相關資訊。|
+|[使用 AllDevices 命令](using-the-get-alldevices-command.md)|顯示所有預先設置電腦的相關資訊。|
+|[使用 AllImageGroups 命令](using-the-get-allimagegroups-command.md)|顯示所有映射群組的相關資訊。|
+|[使用 AllImages 命令](using-the-get-allimages-command.md)|顯示所有影像的相關資訊。|
+|[使用 AllMulticastTransmissions 命令](using-the-get-allmulticasttransmissions-command.md)|顯示所有多播傳輸的屬性。|
+|[使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md)|顯示所有命名空間的屬性。|
+|[使用 AllServers 命令](using-the-get-allservers-command.md)|顯示所有 Windows 部署服務伺服器的相關資訊。|
+|[使用 AutoaddDevices 命令](using-the-get-autoadddevices-command.md)|顯示在指定的伺服器上等待系統管理核准的電腦。|
+|[使用取得裝置命令](using-the-get-device-command.md)|顯示擱置中電腦的屬性。|
+|[使用取得映射命令](using-the-get-image-command.md)|顯示現有影像的屬性。|
+|[使用 get-ImageFile 命令](using-the-get-imagefile-command.md)|顯示指定 .wim 檔案中映射的相關資訊。|
+|[使用 ImageGroup 命令](using-the-get-imagegroup-command.md)|顯示指定之映射群組的相關資訊。|
+|[使用 MulticastTransmission 命令](using-the-get-multicasttransmission-command.md)|顯示指定之多播傳輸的屬性。|
+|[使用 get-Namespace 命令](using-the-get-namespace-command.md)|顯示指定之命名空間的屬性。|
+|[使用 get-Server 命令](using-the-get-server-command.md)|顯示指定 Windows 部署服務伺服器的相關資訊。|
+|[使用 TransportServer 命令](using-the-get-transportserver-command.md)|顯示指定之傳輸伺服器的相關資訊。|
+|[使用 DriverPackage 命令](using-the-get-driverpackage-command.md)|顯示伺服器上驅動程式套件的相關資訊。|
+|[使用 AllDriverGroups 命令](using-the-get-alldrivergroups-command.md)|顯示伺服器上所有驅動程式群組的相關資訊。|
+|[使用 DriverGroup 命令](using-the-get-drivergroup-command.md)|顯示伺服器上驅動程式群組的相關資訊。|
+|[使用 AllDriverPackages 命令](using-the-get-alldriverpackages-command.md)|顯示伺服器上符合指定搜尋條件的所有驅動程式套件的相關資訊。|
+|[使用 DriverPackageFile 命令](using-the-get-driverpackagefile-command.md)|顯示驅動程式套件的相關資訊，包括其內含的驅動程式和檔案。|

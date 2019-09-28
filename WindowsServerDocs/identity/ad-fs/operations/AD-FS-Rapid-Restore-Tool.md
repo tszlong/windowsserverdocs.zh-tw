@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/02/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fc924f5e5bdd7dabecac4fdd6805ad261a0fc634
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 77655ab414f83f2c74873b12719f9718c6fb59e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866173"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358519"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速還原工具
 
@@ -88,7 +88,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **ServiceAccountCredential&lt; pscredential&gt;** -指定目前正在執行的 AD FS 服務所使用的服務帳戶。 只有當使用者想要備份 DKM, 而不是網域系統管理員或無法存取容器的內容時, 才需要此參數。 
 
-- **BackupComment&lt;string []&gt;** -有關將在還原期間顯示之備份的資訊字串，類似于 hyper-v 檢查點命名的概念。 預設值為空字串
+- **BackupComment &lt;string [] &gt;** -在還原期間將顯示之備份的相關資訊字串，類似于 hyper-v 檢查點命名的概念。 預設值為空字串
 
  
 ## <a name="backup-examples"></a>備份範例

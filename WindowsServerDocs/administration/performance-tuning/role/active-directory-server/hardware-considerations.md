@@ -1,18 +1,18 @@
 ---
 title: AD 效能微調中的硬體考慮
 description: AD 效能微調中的硬體考慮
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d1e6c2744cfe0d16b034e6511144bef92a46b2e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8e9b121036d33bc36cabb92ca682407bc2382fca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355096"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>中的硬體考慮新增效能微調 
 
@@ -61,7 +61,7 @@ Active Directory 會在記憶體允許的情況中快取大部分的資料庫。
 
 -   新增硬體、將負載優化、將用戶端導向其他地方，或從環境中移除負載以降低 CPU 負載。
 
--   使用 [處理器資訊（\_Total）\\% processor 使用率&lt; 60%] 效能計數器。
+-   使用處理器資訊（\_Total） \\% Processor 使用率 &lt; 60% 效能計數器。
 
 ## <a name="avoid-overloading-the-network-adapter"></a>避免多載網路介面卡
 

@@ -1,8 +1,8 @@
 ---
 title: 使用 [新增裝置] 命令
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85e9ef4445b4dabbe85c2397d62b06756e17879d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 475db63af52df0f26a09e2a8312c4910277e4c0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878539"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363854"
 ---
 # <a name="using-the-add-device-command"></a>使用 [新增裝置] 命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-預先設置在 active directory 網域服務中的電腦。 預先設置的電腦也稱為已知的電腦。 這可讓您設定屬性來控制用戶端的安裝。 例如，您可以設定網路開機程式和用戶端應接收的自動安裝檔案，以及用戶端應該下載的網路開機程式的伺服器。
+在 active directory 網域服務中將預先設置電腦。 預先設置的電腦也稱為已知的電腦。 這可讓您設定屬性來控制用戶端的安裝。 例如，您可以設定網路開機程式和用戶端應接收的自動安裝檔案，以及用戶端應該從中下載網路開機程式的伺服器。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 ## <a name="syntax"></a>語法
 ```
@@ -34,30 +34,30 @@ wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralSer
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|/ 裝置：<computer name>|指定要新增之電腦的名稱。|
-|/ID:<UUID &#124; MAC address>|指定 GUID/UUID 或電腦的 MAC 位址。 兩種格式的二進位字串或 GUID 字串，其中之一必須是 GUID/UUID。 例如: <br /><br />二進位字串： **/ID:ACEFA3E81F20694E953EB2DAA1E8B1B6**<br /><br />GUID 字串： **/ID:E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br /><br />MAC 位址必須是下列格式：**00B056882FDC** （沒有連字號） 或**00-B0-56-88-2F-DC** （含連接號）|
-|[/ReferralServer:<Server name>]|指定要連線來使用簡單式檔案傳輸通訊協定 (tftp) 下載的網路開機程式和開機映像的伺服器名稱。|
-|[/BootProgram:<Relative path>]|指定應該會收到這台電腦的網路開機程式從 remoteInstall 資料夾的相對路徑。 比方說: 「 boot\x86\pxeboot.com"|
-|[/WdsClientUnattend:<Relative path>]|指定自動的安裝檔案，用來自動化 Windows 部署服務用戶端的安裝畫面從 remoteInstall 資料夾的相對路徑。|
-|[/ 使用者： < 網域 \ 使用者&#124; User@Domain>]|若要將電腦加入網域的必要權限授與指定的使用者的電腦帳戶物件上設定權限。|
-|[/ JoinRights: {JoinOnly&#124;完整}]|指定要指派給使用者的權限的類型。<br /><br />-   **JoinOnly**需要系統管理員使用者可以將電腦加入網域之前，重設電腦帳戶。<br />-   **完整**可完整存取權提供給使用者，其中包含將電腦加入網域的權限。|
-|[/JoinDomain:{Yes &#124; No}]|指定在電腦應加入網域成為這個電腦帳戶在作業系統安裝期間。 預設值是**是**。|
-|[/BootImagepath:<Relative path>]|指定應該使用這台電腦的開機映像從 remoteInstall 資料夾的相對路徑。|
-|[/ OU:<DN of OU>]|建立電腦帳戶物件的所在的組織單位辨別的名稱。 例如: **OU = MyOU，CN = 測試，DC = Domain，DC = com**。 預設位置是預設電腦容器。|
-|[/ 網域：<Domain>]|建立電腦帳戶物件的所在網域。 預設位置是本機網域。|
-## <a name="BKMK_examples"></a>範例
-若要使用的 MAC 位址，以加入電腦，請輸入：
+|/Device： <computer name>|指定要新增之電腦的名稱。|
+|/ID： < UUID &#124; MAC 位址 >|指定電腦的 GUID/UUID 或 MAC 位址。 GUID/UUID 必須是兩種格式的其中一種：二進位字串或 GUID 字串。 例如:<br /><br />二進位字串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<br /><br />GUID 字串： **/id： E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br /><br />MAC 位址的格式必須如下：**00B056882FDC** （無連字號）或**00-B0-56-88-2f-DC** （含破折號）|
+|[/ReferralServer： <Server name>]|指定要連接的伺服器名稱，以使用簡單的檔案傳輸通訊協定（tftp）下載網路開機程式和開機映射。|
+|[/BootProgram： <Relative path>]|指定從 remoteInstall 資料夾到這部電腦應接收之網路開機程式的相對路徑。 例如： "boot\x86\pxeboot.com"|
+|[/WdsClientUnattend： <Relative path>]|指定從 remoteInstall 資料夾到自動安裝檔案的相對路徑，該檔案會將 Windows 部署服務用戶端的安裝畫面自動化。|
+|[/User： < Domain\User &#124; User@Domain >]|設定電腦帳戶物件的許可權，授與指定的使用者將電腦加入網域所需的許可權。|
+|[/JoinRights： {JoinOnly &#124; Full}]|指定要指派給使用者的許可權類型。<br /><br />-   **JoinOnly**需要系統管理員先重設電腦帳戶，使用者才能將電腦加入網域。<br />-   **Full**提供使用者的完整存取權，包括將電腦加入網域的許可權。|
+|[/JoinDomain： {Yes &#124; No}]|指定是否應該在作業系統安裝期間，將電腦加入網域做為此電腦帳戶。 預設值為 **[是]** 。|
+|[/BootImagepath： <Relative path>]|指定從 remoteInstall 資料夾到這部電腦應使用之開機映射的相對路徑。|
+|[/OU： <DN of OU>]|應在其中建立電腦帳戶物件之組織單位的辨別名稱。 例如: **OU = MyOU，CN = Test，dc = Domain，DC = com**。 預設位置為預設電腦的容器。|
+|[/Domain： <Domain>]|應在其中建立電腦帳戶物件的網域。 預設位置是本機網域。|
+## <a name="BKMK_examples"></a>典型
+若要使用 MAC 位址新增電腦，請輸入：
 ```
 wdsutil /add-Device /Device:computer1 /ID:00-B0-56-88-2F-DC
 ```
-若要使用為 GUID 字串，以加入電腦，請輸入：
+若要使用 GUID 字串新增電腦，請輸入：
 ```
 wdsutil /add-Device /Device:computer1 /ID:{E8A3EFAC-201F-4E69-953F-B2DAA1E8B1B6} /ReferralServer:WDSServer1 /BootProgram:boot\x86\pxeboot.com 
 /WDSClientUnattend:WDSClientUnattend\unattend.xml /User:Domain\MyUser/JoinRights:Full /BootImagepath:boot\x86\images\boot.wim /OU:"OU=MyOU,CN=Test,DC=Domain,DC=com"
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[使用 get AllDevices 命令](using-the-get-alldevices-command.md)
-[使用 get 裝置命令](using-the-get-device-command.md)
-[子命令：設定裝置](subcommand-set-device.md)
-[新增 WdsClient](https://technet.microsoft.com/library/dn283430.aspx)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+[使用 AllDevices 命令](using-the-get-alldevices-command.md)
+[使用取得裝置命令](using-the-get-device-command.md)
+[子命令：設定-裝置](subcommand-set-device.md)
+[New-WdsClient](https://technet.microsoft.com/library/dn283430.aspx)

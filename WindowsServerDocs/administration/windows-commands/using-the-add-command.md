@@ -1,8 +1,8 @@
 ---
-title: 使用新增 命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用 add 命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,28 +13,28 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14b9249116a4a1415ecbf5747cff9311b4cca521
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fb60d0790fb4f8ab08e02664e26bc7ca6697b5c5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817299"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363874"
 ---
-# <a name="using-the-add-command"></a>使用新增 命令
+# <a name="using-the-add-command"></a>使用 add 命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-## <a name="subcommands"></a>子命令
-|子命令|描述|
+## <a name="subcommands"></a>子
+|來|描述|
 |-------|--------|
-|[使用 [新增裝置] 命令](using-the-add-device-command.md)|預先設置在 active directory 中的電腦。|
-|[使用新增映像命令](using-the-add-image-command.md)|新增開機或安裝映像。|
-|[使用新增 ImageGroup 命令](using-the-add-imagegroup-command.md)|將映像群組。|
-|[使用新增 DriverGroupPackage 命令](using-the-add-drivergrouppackage-command.md)|將驅動程式群組中的驅動程式套件。|
-|[使用新增 DriverGroupPackages 命令](using-the-add-drivergrouppackages-command.md)|將驅動程式群組中的驅動程式套件。|
-|[使用新增 DriverPackage 命令](using-the-add-driverpackage-command.md)|將驅動程式套件新增到伺服器。|
-|[使用新增 ImageDriverPackage 命令](using-the-add-imagedriverpackage-command.md)|加入至現有的開機映像，在伺服器上的驅動程式存放區中的驅動程式套件。 映像版本必須是 Windows 7 或 Windows Server 2008 R2 或更新版本。|
-|[使用新增 ImageDriverPackages 命令](using-the-add-imagedriverpackages-command.md)|從 驅動程式存放區將在伺服器上的開機映像驅動程式套件。 映像版本必須是 Windows 7 或 Windows Server 2008 R2 或更新版本。|
-|[使用新增 AllDriverPackages 子命令](using-the-add-alldriverpackages-subcommand.md)|將驅動程式套件從資料夾新增至伺服器。|
-|[使用新增 DriverGroup 命令](using-the-add-drivergroup-command.md)|將驅動程式群組新增到伺服器。|
-|[使用新增 DriverGroupFilter 命令](using-the-add-drivergroupfilter-command.md)|新增篩選器驅動程式群組的伺服器上。|
+|[使用 [新增裝置] 命令](using-the-add-device-command.md)|在 active directory 中將預先設置電腦。|
+|[使用新增映射命令](using-the-add-image-command.md)|新增開機或安裝映射。|
+|[使用 ImageGroup 命令](using-the-add-imagegroup-command.md)|加入映射群組。|
+|[使用 DriverGroupPackage 命令](using-the-add-drivergrouppackage-command.md)|將驅動程式套件新增至驅動程式群組。|
+|[使用 DriverGroupPackages 命令](using-the-add-drivergrouppackages-command.md)|將驅動程式套件新增至驅動程式群組。|
+|[使用 DriverPackage 命令](using-the-add-driverpackage-command.md)|將驅動程式套件新增至伺服器。|
+|[使用 ImageDriverPackage 命令](using-the-add-imagedriverpackage-command.md)|將驅動程式存放區中的驅動程式套件新增至伺服器上的現有開機映射。 映射版本必須是 Windows 7 或 Windows Server 2008 R2 或更新版本。|
+|[使用 ImageDriverPackages 命令](using-the-add-imagedriverpackages-command.md)|從驅動程式存放區將驅動程式套件新增至伺服器上的開機映射。 映射版本必須是 Windows 7 或 Windows Server 2008 R2 或更新版本。|
+|[使用 AllDriverPackages 子命令](using-the-add-alldriverpackages-subcommand.md)|將資料夾中的驅動程式套件新增至伺服器。|
+|[使用 DriverGroup 命令](using-the-add-drivergroup-command.md)|將驅動程式群組新增至伺服器。|
+|[使用 DriverGroupFilter 命令](using-the-add-drivergroupfilter-command.md)|將篩選新增至伺服器上的驅動程式群組。|
