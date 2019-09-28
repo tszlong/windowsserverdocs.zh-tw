@@ -2,7 +2,7 @@
 title: 追蹤您的遠端桌面服務用戶端存取使用權 (RDS CAL)
 description: 了解如何在您的 RDS 部署中追蹤 CAL。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 05/11/2017
 manager: dongill
-ms.openlocfilehash: a3b106a23660e1608231623bfd048669d97f9719
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 278aa7a2d35aeacfaee8deddcd64e668a320853f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712007"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387116"
 ---
 # <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>追蹤您的遠端桌面服務用戶端存取使用權 (RDS CAL)
 

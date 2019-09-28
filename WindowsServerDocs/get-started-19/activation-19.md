@@ -2,7 +2,7 @@
 title: Windows Server 2019 啟用
 description: 如何啟用 Windows Server 2019
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 536d3265e6a29c2d5321d3d8a8ea3ecfa7b2cdcb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5f3f9a05d02b291b4443b346a1cb2301e8a5190d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868685"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360885"
 ---
 # <a name="windows-server-2019-activation"></a>Windows Server 2019 啟用
 
 >適用於：Windows Server 2019、Windows Server 2016
 
-下面資訊概述最初規劃金鑰管理服務 (KMS) 啟用 (與 Windows Server 2019 相關) 時必須檢閱的考量。 如需與此處未列出舊版作業系統相關的 KMS 啟用資訊，請參閱[步驟 1：檢閱和選取啟用方法](https://technet.microsoft.com/library/jj134256(WS.11).aspx)。
+下面資訊概述最初規劃金鑰管理服務 (KMS) 啟用 (與 Windows Server 2019 相關) 時必須檢閱的考量。 如需與此處未列出舊版作業系統相關的 KMS 啟用資訊，請參閱 [Step 1:檢閱和選取啟用方法](https://technet.microsoft.com/library/jj134256(WS.11).aspx)。
 
 KMS 會使用用戶端-伺服器模式來啟用用戶端。 KMS 用戶端會連線到 KMS 伺服器 (稱為 KMS 主機) 來啟用。 KMS 主機必須在您的區域網路上。
 
@@ -46,9 +46,9 @@ KMS 主機不需要是專用伺服器，而且 KMS 可以與其他服務並存�
 
 > [!NOTE]  
 > 根據 KMS 伺服器正在執行的作業系統，以及您要啟動的作業系統，您可能需要安裝一或多個更新：
-> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安裝必須更新，以支援執行 Windows 10 的用戶端啟用。 如需詳細資訊，請參閱 [能讓 Windows 7 和 Windows Server 2008 R2 KMS 主機啟動 Windows 10 的更新](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10) (機器翻譯)。  
-> - Windows Server 2012 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows Server 2012 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012) (機器翻譯)。 
-> - Windows 8.1 或 Windows Server 2012 R2 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2)(機器翻譯)。  
+> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安裝必須更新，以支援執行 Windows 10 的用戶端啟用。 如需詳細資訊，請參閱 [Update that enables Windows 7 and Windows Server 2008 R2 KMS hosts to activate Windows 10](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10) (可讓 Windows 7 和 Windows Server 2008 R2 KMS 主機啟用 Windows 10 的更新)。  
+> - Windows Server 2012 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows Server 2012 的 2016 年 7 月更新彙總 套件](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012)。 
+> - Windows 8.1 或 Windows Server 2012 R2 上的 KMS 安裝必須更新，才能支援執行 Windows 10 和 Windows Server 2016 或 Windows Server 2019 的用戶端啟用，或是更新版本的用戶端或伺服器作業系統啟用。 如需詳細資訊，請參閱  [Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新彙總套件](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2)。  
 > - Windows Server 2008 R2 無法更新以支援執行 Windows Server 2016、Windows Server 2019 的用戶端啟用，或是更新版本的作業系統啟用。 
 
 單一 KMS 主機可以支援無數台 KMS 用戶端。 如果您有 50 台以上的用戶端，建議您至少配備兩個 KMS 主機，以免其中一個 KMS 主機突然無法使用。 大部分的組織最多只需要兩個 KMS 主機就可以運作整個基礎結構。

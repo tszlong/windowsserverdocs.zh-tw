@@ -2,7 +2,7 @@
 title: RDS - RemoteFX vGPU 安裝和設定
 description: 設定 RemoteFX vGPU 圖形虛擬化的規劃資訊。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0263fa6b-2185-4cc3-99ef-3588e2f4ada5
 author: lizap
 manager: scottman
-ms.openlocfilehash: 3e189d9ac059136b40d8ee5d93a4eea5b788cdd1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a216b84383e6edb3e0537189af5938eb5d62ce42
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870846"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387269"
 ---
 # <a name="set-up-and-configure-remotefx-vgpu-for-remote-desktop-services"></a>安裝和設定遠端桌面服務的 RemoteFX vGPU
 

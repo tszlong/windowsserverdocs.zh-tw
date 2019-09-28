@@ -2,18 +2,18 @@
 title: 將新磁碟初始化
 description: 如何使用 [磁碟管理] 將新磁碟初始化，以準備開始使用。 也包含問題的疑難排解連結。
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7a275c372e1486b26821f797a7663eecbc3e8784
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: b38fd0b88cea3fcc386959c08af1169302ddaa1c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812424"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385903"
 ---
 # <a name="initialize-new-disks"></a>將新磁碟初始化
 

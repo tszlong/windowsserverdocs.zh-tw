@@ -1,7 +1,7 @@
 ---
 title: 針對 Nano Server 進行疑難排解
 description: 修復主控台、緊急管理服務、核心偵錯
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,12 +12,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e832d35f1ae3bbdba256b3531a22f93b69cadbb3
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 48b63e74ab406d2e66996097d33d71f2eeaeaf20
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443388"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391549"
 ---
 # <a name="troubleshooting-nano-server"></a>針對 Nano Server 進行疑難排解
 

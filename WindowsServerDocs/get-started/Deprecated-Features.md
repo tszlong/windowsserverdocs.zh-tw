@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2016 已移除或過時的功能
 description: 列出的 Windows Server 2016 特性與功能已從目前的產品版本中移除，或已計劃可能會從後續版本中移除 (已過時)。 適用對象是在商業環境中更新作業系統的 IT 專業人員。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a35da3fda1736139290a2503a5c06317cf322ccc
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: b3f531325c338224d7ac69e46a9d16c9d236ee87
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000614"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360363"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 已移除或過時的功能
 
