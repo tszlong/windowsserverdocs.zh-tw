@@ -2,7 +2,7 @@
 title: 建議的 VDI 桌面設定
 description: 將當作 VDI 映像之 Windows 10 1607 (10.0.1393) 桌面的額外負荷降至的最低建議設定和組態
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: ef13369fa325d136f9e3847db9872a80b650ca37
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9e2c4012184614826ffd762394d89c25acabf374
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870629"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403865"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>建議的 VDI 桌面設定
 
@@ -40,7 +40,7 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 ## <a name="creating-the-windows-10-image"></a>建立 Windows 10 映像
 第一個步驟是在實體電腦或虛擬機器上安裝 Windows 10 1607 (版本 10.0.1393) 的參照映像。 安裝至虛擬機器很簡單，而可讓您儲存虛擬硬碟 (VHD) 檔案的版本，以防您想要回復到舊版。
 
-在安裝期間，您可以選擇 [快速設定]  或 [自訂]  。 在 [自訂]  選項期間提供的設定也可以使用群組原則調整，因此安裝基本 OS 的方法並不是那麼重要。
+在安裝期間，您可以選擇 快速設定  或 {自訂  。 在 [自訂]  選項期間提供的設定也可以使用群組原則調整，因此安裝基本 OS 的方法並不是那麼重要。
 
 
 如果您選擇 [自訂]  ，您可以在安裝期間調整這些設定：
@@ -321,8 +321,8 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 ||允許 BITS 對等快取|已停用|
 |BranchCache||
 ||開啟 BranchCache|已停用|
-|熱點驗證||
-||啟用熱點驗證|已停用|
+|作用區驗證||
+||啟用作用區驗證|已停用|
 |Microsoft 對等網路服務||
 ||關閉 Microsoft 對等網路服務|Enabled|
 |離線檔案||
@@ -394,7 +394,7 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 ||不允許呼叫 Flip3D|       Enabled|
 ||不允許視窗動畫|       Enabled|
 ||使用純色做為開始背景|     Enabled|
-|Edge UI|||
+|邊緣 UI|||
 ||允許邊緣撥動|     已停用|
 ||停用說明秘訣|        Enabled|
 |檔案總管|||
@@ -408,7 +408,7 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 |Internet Explorer|||
 ||當使用者在網址列輸入時，允許 Microsoft 服務提供加強式建議|        已停用|
 ||停用定期檢查以進行 Internet Explorer 軟體更新|        Enabled|
-||停用顯示啟動顯示畫面的功能|        Enabled|
+||停用顯示開頭顯示畫面|        Enabled|
 ||自動安裝新版 Internet Explorer|      已停用|
 ||防止參與客戶經驗改進計畫|     Enabled|
 ||防止執行 [首次執行] 精靈。直接到首頁|   已啟用，然後使用 [選項]  下拉式功能表選取 [直接到首頁] |

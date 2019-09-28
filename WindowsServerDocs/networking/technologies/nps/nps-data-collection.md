@@ -6,17 +6,17 @@ manager: mtillman
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: it-pro
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 ms.date: 05/01/2018
-ms.openlocfilehash: cd145402ed70aa52da7188dee9dd64ce17fea155
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d393ad4af81ee1c24fa5f28b8a3b05217e7b34dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871884"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396296"
 ---
 # <a name="network-policy-server-user-data-collection"></a>網路原則伺服器使用者資料收集
 
@@ -41,7 +41,7 @@ ms.locfileid: "70871884"
 
 如果已啟用並設定計量資料，則可以根據設定，從 SQL Server 或記錄檔中取得使用者的 NPS 驗證嘗試記錄。 
 
-如果已針對 SQL Server 設定計量資料，請查詢所有位置 = `'<username>'`的記錄。
+如果已針對 SQL Server 設定計量資料，請查詢使用者名 = `'<username>'` 的所有記錄。
 
 如果已針對記錄檔設定計量資料，請搜尋記錄`<username>`檔中的以尋找所有記錄專案。
 

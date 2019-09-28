@@ -1,19 +1,19 @@
 ---
 title: 使用 Robocopy 來預置 DFS 複寫的檔案
 description: 如何使用 Robocopy 預置檔案以進行 DFS 複寫。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0cad3c685c8609784c7096fe31d55294712c2e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ea5cd954dde6d4fa8fcaa7874f75cb9588115ab1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871984"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402122"
 ---
 # <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>使用 Robocopy 來預置 DFS 複寫的檔案
 
@@ -47,7 +47,7 @@ Robocopy （健全的檔案複製）命令列公用程式隨附于 Windows Serve
 
 - 在來源伺服器上，選擇性地安裝進程監視器或進程瀏覽器，您可以使用此工具來檢查鎖定檔案的應用程式。 如需下載資訊，請參閱[進程監視](https://docs.microsoft.com/sysinternals/downloads/procmon)和[進程瀏覽器](https://docs.microsoft.com/sysinternals/downloads/process-explorer)。
 
-## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>步驟 1：下載並安裝最新版本的 Robocopy
+## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>步驟 1:下載並安裝最新版本的 Robocopy
 
 使用 Robocopy 預置檔案之前，您應該下載並安裝最新版本的**Robocopy .exe**。 這可確保 DFS 複寫不會因為 Robocopy 運送版本內的問題而略過檔案。
 
@@ -69,7 +69,7 @@ Robocopy （健全的檔案複製）命令列公用程式隨附于 Windows Serve
 
 4. 在伺服器上安裝此修補程式。
 
-## <a name="step-2-stabilize-files-that-will-be-replicated"></a>步驟 2：將複寫的穩定檔案
+## <a name="step-2-stabilize-files-that-will-be-replicated"></a>步驟 2:將複寫的穩定檔案
 
 在伺服器上安裝最新版本的 Robocopy 之後，您應該使用下表所述的方法，防止鎖定的檔案封鎖複製。 大部分的應用程式都不會獨佔鎖定檔案。 不過，在正常作業期間，檔案伺服器上可能會鎖定少量的檔案。
 

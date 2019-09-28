@@ -2,7 +2,7 @@
 title: 搭配使用個人工作階段桌面與遠端桌面服務
 description: 了解如何透過 RDS 共用指派的個人化桌面。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/16/2016
 manager: dongill
-ms.openlocfilehash: 723e68bad79e7723aaa0690c312e20ccf47c47b0
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 7429cd9cb87db310a716136c171de47cfe0892f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743510"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387357"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>搭配使用個人工作階段桌面與遠端桌面服務
 
@@ -31,9 +31,9 @@ ms.locfileid: "63743510"
 
 您可以使用 New-RDSessionCollection Cmdlet 來建立個人工作階段桌面集合。 下列三個參數提供個人工作階段桌面所需的設定資訊：
 
-- **-PersonalUnmanaged** - 指定可讓您將使用者指派給個人工作階段主機伺服器的工作階段集合類型。 如果您未指定此參數，則系統會將集合建立為傳統「RD 工作階段主機」集合，而在使用者登入時將其指派給下一個可用的工作階段主機。
+- **-PersonalUnmanaged** - 指定可讓您將使用者指派給個人工作階段主機伺服器的工作階段集合類型。 如果您未指定此參數，則系統會將集合建立為傳統的「RD 工作階段主機」集合；其會在使用者登入時將他們指派給下一個可用的工作階段主機。
 - **-GrantAdministrativePrivilege** - 指定要將系統管理權限授與指派給工作階段主機的使用者 (如果您使用 **-PersonalUnmanaged** 的話)。 如果您未使用此參數，則只會將標準使用者權限授與使用者。
-- **-AutoAssignUser** - 指定自動將透過 RD 連線代理人連線之新使用者指派給未指派的工作階段主機 (如果您使用 **-PersonalUnmanaged** 的話)。 如果在集合中有任何未指派的工作階段主機，則使用者會看到一則錯誤訊息。 如果您未使用這個參數，則必須在使用者登入前[手動將使用者指派給工作階段主機](#manually-assign-a-user-to-a-personal-session-host)。
+- **-AutoAssignUser** - 指定將透過 RD 連線代理人連線之新使用者自動指派給未指派的工作階段主機 (如果您使用 **-PersonalUnmanaged** 的話)。 如果在集合中有任何未指派的工作階段主機，則使用者會看到一則錯誤訊息。 如果您未使用這個參數，則必須在使用者登入前[手動將使用者指派給工作階段主機](#manually-assign-a-user-to-a-personal-session-host)。
 
 ## <a name="manually-assign-a-user-to-a-personal-session-host"></a>以手動方式將使用者指派給個人工作階段主機
 使用 **Set-RDPersonalSessionDesktopAssignment** Cmdlet，以手動方式將使用者指派給集合中的個人工作階段主機伺服器。 此 Cmdlet 支援下列參數：

@@ -1,8 +1,8 @@
 ---
 title: convert basic
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: df1f999499154366304d59e0573ba921ab1af83d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c4b81126f4a623d841bb5868f786678d7b093581
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434247"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379127"
 ---
 # <a name="convert-basic"></a>convert basic
 
 
 
-將空的動態磁碟轉換成基本磁碟。
+將空的動態磁碟轉換為基本磁碟。
 
-如需如何使用此命令的相關資訊的指示，請參閱[變更為基本磁碟的動態磁碟上一步](https://go.microsoft.com/fwlink/?LinkId=207048)(https://go.microsoft.com/fwlink/?LinkId=207048)。
+如需有關如何使用此命令的指示，請參閱[將動態磁碟變更回基本磁碟](https://go.microsoft.com/fwlink/?LinkId=207048)（ https://go.microsoft.com/fwlink/?LinkId=207048) 。
 
 ## <a name="syntax"></a>語法
 
@@ -38,17 +38,17 @@ convert basic [noerr]
 
 |參數|描述|
 |---------|-----------|
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|
+|noerr|僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|
 
 ## <a name="remarks"></a>備註
 
 > [!IMPORTANT]
-> 磁碟必須是空的才能將它轉換成基本磁碟。 備份您的資料，然後再刪除轉換磁碟之前的 所有資料分割或磁碟區。
-> -   這項作業成功時，必須選取動態磁碟。 使用**選取磁碟**命令來選取動態磁碟，並將焦點移到它。
+> 磁片必須是空的，才能將它轉換成基本磁碟。 在轉換磁片之前，請先備份您的資料，然後刪除所有磁碟分割或磁片區。
+> -   必須選取動態磁碟，此操作才會成功。 使用 [**選取磁片**] 命令來選取動態磁碟，並將焦點移至其上。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要將所選的動態磁碟轉換成 basic 中，輸入：
+若要將選取的動態磁碟轉換為基本，請輸入：
 ```
 convert basic
 ```

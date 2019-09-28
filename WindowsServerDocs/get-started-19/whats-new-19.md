@@ -1,19 +1,19 @@
 ---
 title: Windows Server 2019 的新功能
 description: Windows Server 2019 新功能的完整概觀，包括桌面體驗、存放裝置移轉服務、系統深入解析、Azure 網路介面卡、儲存空間直接存取增強功能，以及其他變更。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 665363c17cf5cb8d8ad52872128f2f63c07ea683
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 13eed225dfc144d5e7e59be13dbed14d4de8bb01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868547"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360785"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 

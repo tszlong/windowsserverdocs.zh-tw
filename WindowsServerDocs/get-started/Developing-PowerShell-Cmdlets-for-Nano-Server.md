@@ -1,7 +1,7 @@
 ---
 title: 開發 Nano Server 的 PowerShell Cmdlet
 description: '移植 CIM、.NET Cmdlet、C++ '
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,12 +12,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3376d03a2e9f02b20aba608de0228efd7dfddea
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 80d6cdd3056d9c7e0a0815ce5856f961d79fcc34
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443625"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391778"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>開發 Nano Server 的 PowerShell Cmdlet
 

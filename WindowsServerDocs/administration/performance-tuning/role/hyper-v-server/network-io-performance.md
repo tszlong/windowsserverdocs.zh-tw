@@ -1,39 +1,39 @@
 ---
-title: HYPER-V 網路 I/O 效能
-description: 網路 i/o 效能考量，在 HYPER-V 效能微調
-ms.prod: windows-server-threshold
+title: Hyper-v 網路 i/o 效能
+description: Hyper-v 效能調整中的網路 i/o 效能考慮
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f576963a93c8c0b9d6c05f406cc3331c407ceb9
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: e8f4261c11a63786c2d170105fb0fa65dc6966a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811514"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385116"
 ---
-# <a name="hyper-v-network-io-performance"></a>HYPER-V 網路 I/O 效能
+# <a name="hyper-v-network-io-performance"></a>Hyper-v 網路 i/o 效能
 
-Server 2016 包含一些增強功能和最佳化網路效能，在 HYPER-V 的新功能。  在這篇文章的未來版本中，將會包含文件說明如何最佳化網路效能。
+伺服器2016包含數項改良功能和新功能，可將 Hyper-v 下的網路效能優化。  本文章的未來版本將包含如何將網路效能優化的檔。
 
 ## <a name="live-migration"></a>即時移轉
 
-即時移轉可讓您以透明的方式從某個節點容錯移轉叢集的執行中虛擬機器移至另一個節點，而不會中斷的網路連線或感受到的停機的相同叢集中。
+即時移轉可讓您以透明的方式，將執行中的虛擬機器從容錯移轉叢集的一個節點移至相同叢集中的另一個節點，而不會中斷網路連線或察覺到停機時間。
 
 > [!NOTE]
-> 容錯移轉叢集需要共用存放裝置叢集節點。
+> 容錯移轉叢集需要叢集節點的共用存放裝置。
 
-移動執行中虛擬機器的程序可以分成兩個主要階段。 第一個階段會複製到新的主機目前的主機中的虛擬機器的記憶體。 第二個階段從目前的主機至新主機轉移虛擬機器的狀態。 這兩個階段的持續時間大幅取決於資料可以傳出至新主機目前的主應用程式的速度。
+移動執行中虛擬機器的程式可分為兩個主要階段。 第一個階段會將虛擬機器的記憶體從目前的主機複製到新的主機。 第二個階段會將虛擬機器狀態從目前的主機傳輸至新主機。 這兩個階段的持續時間，都是由從目前的主機傳送資料到新主機的速度而大幅決定。
 
-提供專用的網路進行即時移轉流量降至最低的時間，才可完成即時移轉，並且確保一致的移轉時間。
+為即時移轉流量提供私人網路絡有助於將完成即時移轉所需的時間降到最低，並確保一致的遷移時間。
 
 ![hyper-v 即時移轉設定範例](../../media/perftune-guide-live-migration.png)
 
-此外，增加傳送和接收緩衝區上每個網路介面卡在移轉中所包含可以改善移轉效能。
+此外，增加與遷移相關的每個網路介面卡上的傳送和接收緩衝區數目，可以改善遷移效能。
 
-Windows Server 2012 R2 已導入選項壓縮的記憶體，然後再透過網路傳輸來加速即時移轉，或使用遠端直接記憶體存取 (RDMA)，如果您的硬體支援。
+Windows Server 2012 R2 引進了一個選項，可在透過網路傳送或使用遠端直接記憶體存取（RDMA）（如果您的硬體支援）時，藉由壓縮記憶體來加速即時移轉。
 
 ## <a name="see-also"></a>另請參閱
 

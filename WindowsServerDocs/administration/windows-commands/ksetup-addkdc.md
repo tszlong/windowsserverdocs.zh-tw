@@ -1,8 +1,8 @@
 ---
-title: ksetup:addkdc
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： addkdc
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0466bee0b357e896bd971152a56da57612472672
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 66efe4e56007aff39b83c92dfea2afaadcfc0210
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564731"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375207"
 ---
-# <a name="ksetupaddkdc"></a>ksetup:addkdc
+# <a name="ksetupaddkdc"></a>ksetup： addkdc
 
 
 
-將指定的 Kerberos 領域的金鑰發佈中心 (KDC) 位址。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+為指定的 Kerberos 領域新增金鑰發佈中心（KDC）位址。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,24 +36,24 @@ ksetup /addkdc <RealmName> [<KDCName>]
 
 |參數|描述|
 |---------|-----------|
-|\<RealmName>|領域名稱會指定為大寫的 DNS 名稱，例如 CORP.CONTOSO.COM，並列為預設領域時**ksetup**執行。 它是您嘗試要加入其他 KDC 這個領域。|
-|\<KDCName>|KDC 名稱會指定為不區分大小寫的完整的網域名稱，例如 mitkdc.microsoft.com。 如果省略 KDC 名稱，DNS 會找出 Kdc。|
+|\<RealmName >|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，在執行**ksetup**時，它會列為預設領域。 這是您嘗試新增其他 KDC 的領域。|
+|\<KDCName >|KDC 名稱會指定為不區分大小寫的完整功能變數名稱，例如 mitkdc.microsoft.com。 如果省略 KDC 名稱，DNS 將會找出 Kdc。|
 
 ## <a name="remarks"></a>備註
 
-這些對應會儲存在登錄中**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\LSA\Kerberos\Domains**。 若要部署到多部電腦的 Kerberos 領域組態資料，使用而不使用安全性設定的範本 嵌入式管理單元和原則散佈**ksetup**明確地在個別電腦上。
+這些對應會儲存在登錄中的**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\LSA\Kerberos\Domains**下。 若要將 Kerberos 領域設定資料部署到多部電腦，請使用 [安全性設定範本] 嵌入式管理單元和原則發佈，而不是在個別電腦上明確使用**ksetup** 。
 
-將會使用新的領域設定之前，必須重新啟動電腦。
+電腦必須重新開機，才會使用新的領域設定。
 
-若要確認電腦的預設領域名稱，或確定此命令運作如預期般，執行**ksetup**在命令提示字元並新增 kdc 驗證輸出。
+若要驗證電腦的預設領域名稱，或確認此命令是否如預期運作，請在命令提示字元中執行**ksetup** ，並確認已新增 KDC 的輸出。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-設定非 Windows KDC 伺服器和工作站應該使用的領域：
+設定非 Windows KDC 伺服器和工作站應使用的領域：
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-在上述命令將本機電腦帳戶密碼設定為如同在同一部電腦的命令列執行 Ksetup 工具 」p@sswrd1%"。 然後重新啟動電腦。
+在與前一個命令相同的電腦命令列中執行 Ksetup 工具，將本機電腦帳戶密碼設定為 "p@sswrd1%"。 然後重新開機電腦。
 ```
 Ksetup /setcomputerpassword p@sswrd1%
 ```

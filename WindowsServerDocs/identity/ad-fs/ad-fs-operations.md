@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 594e1605f44dad69ab7eee8b22e6a620ade02ad0
-ms.sourcegitcommit: c307886e96622e9595700c94128103b84f5722ce
+ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108736"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408557"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
@@ -33,9 +33,9 @@ ms.locfileid: "70108736"
 
 
 ## <a name="authentication-configuration"></a>驗證設定
-### <a name="strong-authentication-mfa--password-less"></a>增強式驗證 (MFA) & 不限密碼
-- [在 AD FS 中將外部驗證提供者設定為主要 (2019 或更新版本)](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
-- [設定 AD FS (2016 或更新版本) 和 Azure MFA](../ad-fs/operations/Configure-AD-FS-2016-and-Azure-MFA.md)
+### <a name="strong-authentication-mfa--password-less"></a>增強式驗證（MFA） & 不限密碼
+- [在 AD FS 中將外部驗證提供者設定為主要（2019或更新版本）](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
+- [設定 AD FS （2016或更新版本）和 Azure MFA](../ad-fs/operations/Configure-AD-FS-2016-and-Azure-MFA.md)
 - [設定 AD FS 的其他驗證方法](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ### <a name="lockout-protection"></a>鎖定保護
@@ -68,7 +68,7 @@ ms.locfileid: "70108736"
 - [建立宣告提供者信任](../ad-fs/operations/Create-a-Claims-Provider-Trust.md) 
 - [建立一個非宣告感知信賴憑證者信任](../ad-fs/operations/Create-a-Non-Claims-Aware-Relying-Party-Trust.md)
 - [建立信賴憑證者信任](../ad-fs/operations/Create-a-Relying-Party-Trust.md)
-- [設定 AD FS 以使用匯總的同盟提供者 (例如 InCommon)](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
+- [設定 AD FS 以使用匯總的同盟提供者（例如 InCommon）](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 
 ## <a name="sign-in-experience-configuration"></a>登入體驗設定
 - [設定 AD FS 2016 單一登入設定](../ad-fs/operations/AD-FS-2016-Single-Sign-On-Settings.md)

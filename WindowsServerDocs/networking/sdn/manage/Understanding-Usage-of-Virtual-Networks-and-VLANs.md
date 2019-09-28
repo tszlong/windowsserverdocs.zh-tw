@@ -1,9 +1,9 @@
 ---
-title: 了解虛擬網路和 Vlan 的使用方式
-description: 本主題中，您會了解 HYPER-V 網路虛擬化的虛擬網路和它們之間的差異與虛擬區域網路 (Vlan)。 使用 HYPER-V 網路虛擬化，您可以建立重疊虛擬網路，也稱為 虛擬網路。
+title: 瞭解虛擬網路和 Vlan 的使用方式
+description: 在本主題中，您將瞭解 Hyper-v 網路虛擬化虛擬網路，以及它們與虛擬區域網路（Vlan）的差異。 使用 Hyper-v 網路虛擬化時，您會建立重迭虛擬網路，也稱為虛擬網路。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,32 +13,32 @@ ms.assetid: 84ac2458-3fcf-4c4f-acfe-6105443dd83f
 ms.author: pashort
 author: shortpatti
 ms.date: 08/26/2018
-ms.openlocfilehash: d126e97a91e4c61ecff00cc2b5a527618b2d4d0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 854adf0e7bb2a8715e3d447c04e2f09c3470a781
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875529"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355829"
 ---
-# <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>了解虛擬網路和 Vlan 的使用方式
+# <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>瞭解虛擬網路和 Vlan 的使用方式
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題中，您會了解 HYPER-V 網路虛擬化的虛擬網路和它們之間的差異與虛擬區域網路 (Vlan)。 使用 HYPER-V 網路虛擬化，您可以建立重疊虛擬網路，也稱為 虛擬網路。
+在本主題中，您將瞭解 Hyper-v 網路虛擬化虛擬網路，以及它們與虛擬區域網路（Vlan）的差異。 使用 Hyper-v 網路虛擬化時，您會建立重迭虛擬網路，也稱為虛擬網路。
 
 
 
   
-軟體定義網路 (SDN) Windows Server 2016 中根據程式設計覆疊內的虛擬網路的 HYPER-V 虛擬交換器的原則。 您可以建立重疊虛擬網路，也稱為 HYPER-V 網路虛擬化的虛擬網路。 
+Windows Server 2016 中的軟體定義網路（SDN）是以在 Hyper-v 虛擬交換器中覆迭虛擬網路的程式設計原則為基礎。 您可以使用 Hyper-v 網路虛擬化來建立重迭虛擬網路，也稱為虛擬網路。 
   
-當您部署 HYPER-V 網路虛擬化時，覆疊網路被建立的封裝原始租用戶虛擬機器的第 2 層乙太網路框架重疊或通道標頭 （例如 VXLAN 或 NVGRE） 和第 3 層 IP 與第 2 層乙太網路標頭為 （或實體） 網路。 重疊虛擬網路會識別由 24 位元虛擬網路識別碼 (VNI) 維護租用戶流量隔離，並允許重疊的 IP 位址。 VNI 組成虛擬子網路識別碼 (VSID)、 邏輯交換器的識別碼，以及通道識別碼。  
+當您部署 Hyper-v 網路虛擬化時，會將原始租使用者虛擬機器的第2層 Ethernet 框架與重迭或通道標頭（例如 VXLAN 或 NVGRE）和第3層 IP 和第2層乙太網路封裝，以建立重迭網路。underlay （或實體）網路中的標頭。 重迭虛擬網路是由24位虛擬網路識別碼（VNI）所識別，以維護租使用者流量隔離，並允許重迭的 IP 位址。 VNI 是由虛擬子網識別碼（VSID）、邏輯交換器識別碼和通道識別碼所組成。  
   
-此外，每個租用戶會指派路由網域 （類似於虛擬路由和轉送-VRF），以便在多個虛擬子網路首碼 （每個由 VNI） 可以直接路由傳送彼此。 跨租用戶 （或跨路由網域） 而不會通過閘道不支援路由。   
+此外，每個租使用者都會被指派一個路由網域（類似于虛擬路由和轉送-VRF），如此一來，多個虛擬子網首碼（每個都是由 VNI 代表）就可以直接彼此路由傳送。 不支援跨租使用者（或跨路由網域）路由，而不需要通過閘道。   
   
-每個租用戶封裝的流量經過通道的實體網路被以稱為提供者邏輯網路的邏輯網路。 此提供者邏輯網路是由一個或多個子網路所組成，每一個由 IP 前置詞，並選擇性地 802.1q VLAN 標記。  
+每個租使用者的封裝流量在其上的實體網路是由稱為提供者邏輯網路的邏輯網路表示。 此提供者邏輯網路是由一或多個子網組成，每個子網分別以 IP 首碼和 VLAN 802.1 q 標記（選擇性）表示。  
   
-您可以建立其他的邏輯網路和子網路來執行管理流量，儲存體流量，基礎結構進行即時移轉流量等。  
+您可以針對基礎結構目的建立額外的邏輯網路和子網，以攜帶管理流量、儲存體流量、即時移轉流量等等。  
   
-Microsoft SDN 不支援使用 Vlan 隔離的租用戶網路。 租用戶隔離是僅透過 HYPER-V 網路虛擬化重疊虛擬網路和封裝來完成。 
+Microsoft SDN 不支援使用 Vlan 隔離租使用者網路。 租使用者隔離只會使用 Hyper-v 網路虛擬化重迭虛擬網路和封裝來完成。 
 
 

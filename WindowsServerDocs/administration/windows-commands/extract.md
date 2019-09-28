@@ -1,8 +1,8 @@
 ---
 title: extract
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9113c34b61b98fb738bc0aff03193ab73b1abbd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 967f08e271019cc33970419179c9ddbf902b1882
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882309"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377256"
 ---
 # <a name="extract"></a>extract
 
@@ -36,16 +36,16 @@ EXTRACT [/Y] /C source destination
 
 |參數|描述|
 |---------|-----------|
-|封包|檔案包含兩個或多個檔案。|
-|filename|從封包擷取檔案名稱。 可能使用萬用字元和多個檔案名稱 （以空格分隔）。|
-|來源|壓縮的檔案 （其中只包含一個檔案是封包）。|
-|newname|已解壓縮的檔案提供給新的檔案名稱。 如果未提供，則會使用原始名稱。|
-|/A|處理所有的封包。 以下所述的第一個封包從封包的鏈結。|
-|/C|將原始程式檔複製到目的地 （若要從 DMF 磁碟複製）。|
-|/D|顯示封包的目錄 （用於以避免擷取的檔案名稱）。|
-|/E|擷取 (而不是使用 *。* 若要解壓縮所有檔案）。|
-|/L dir|將解壓縮的檔案 （預設為目前的目錄） 的位置。|
-|/Y|不提示覆寫現有檔案之前。|
+|檔案櫃|檔案包含兩個或多個檔案。|
+|filename|要從封包檔解壓縮的檔案名。 您可以使用萬用字元和多個檔案名（以空格分隔）。|
+|來源|壓縮檔案（只有一個檔案的封包）。|
+|newname|要提供解壓縮檔案的新檔案名。 如果未提供，則會使用原始名稱。|
+|/A|處理所有的封包。 遵循第一個封包中所述的機櫃鏈。|
+|/C|將來源檔案複製到目的地（以從 DMF 磁碟複製）。|
+|/D|顯示封包目錄（搭配 filename 使用以避免解壓縮）。|
+|/E|解壓縮（使用，而不是 *。* 以解壓縮所有檔案）。|
+|/L dir|要放置解壓縮檔案的位置（預設為目前的目錄）。|
+|/Y|覆寫現有檔案之前不提示。|
 
 #### <a name="additional-references"></a>其他參考資料
 

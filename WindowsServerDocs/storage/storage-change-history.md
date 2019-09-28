@@ -1,7 +1,7 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: 儲存空間主題的變更歷程記錄
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 08/19/2019
 description: 適用于 IT 專業人員之 Windows Server 的內部部署儲存體檔中的新增和更新的主題。
-ms.openlocfilehash: d5ab2d8ae4ca90e259f8bc996494439190bc5279
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: ce937dfb5c6c0b46c8085cbb202590567ea829d3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584826"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393925"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中的儲存空間主題變更歷程記錄
 
@@ -22,7 +22,7 @@ ms.locfileid: "69584826"
 
 本主題列出 Windows Server[儲存體](storage.md)檔中的新增和更新的主題。
 
-> 如果您要尋找 Windows Server 的更新歷程記錄, 請參閱[windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619)或[Windows server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
+> 如果您要尋找 Windows Server 的更新歷程記錄，請參閱[windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619)或[Windows server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
 ## <a name="august-2019"></a>2019年8月
 
@@ -34,7 +34,7 @@ ms.locfileid: "69584826"
 
 | 新增或已變更的主題                                        | 描述 |
 | ---                                                         | ---           |
-| [磁碟清理](file-server/disk-cleanup.md)                                              | 新增 (從先前的[版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))遷移)
+| [磁碟清理](file-server/disk-cleanup.md)                                              | 新增（從先前的[版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))遷移）
 | [儲存體遷移服務常見問題](storage-migration-service/faq.md#can-i-consolidate-multiple-servers-into-one-server) | 已新增效能優化資訊。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
@@ -99,7 +99,7 @@ ms.locfileid: "69584826"
 |---|---|
 |[儲存體遷移服務總覽](storage-migration-service/overview.md)| 新主題 |
 |[使用儲存體遷移服務來遷移伺服器](storage-migration-service/migrate-data.md)| 新主題 |
-|[儲存體遷移服務常見問題 (FAQ)](storage-migration-service/faq.md)| 新主題 |
+|[儲存體遷移服務常見問題（FAQ）](storage-migration-service/faq.md)| 新主題 |
 | [iSCSI 目標伺服器](iscsi/iscsi-target-server.md) | 從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
 | [iSCSI 目標伺服器延展性限制](iscsi/iscsi-target-server-limits.md) |從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
 
@@ -107,7 +107,7 @@ ms.locfileid: "69584826"
 
 |新增或已變更的主題|描述|
 |---|---|
-|[伺服器對伺服器儲存體複寫](storage-replica/server-to-server-storage-replication.md)|已新增使用 Azure Vm (包括 ExpressRoute) 的資訊。|
+|[伺服器對伺服器儲存體複寫](storage-replica/server-to-server-storage-replication.md)|已新增使用 Azure Vm （包括 ExpressRoute）的資訊。|
 |[叢集集合](storage-spaces/cluster-sets.md)| 新主題|
 
 ## <a name="may-2018"></a>2018 年 5 月
@@ -164,10 +164,10 @@ ms.locfileid: "69584826"
 |新增或已變更的主題|描述|
 |---|---|
 |[變更磁碟機代號](disk-management/change-a-drive-letter.md)|新主題。|
-|[針對磁碟管理問題進行疑難排解](disk-management/troubleshooting-disk-management.md)|重寫了[磁片的狀態為 [未初始化] 或 [磁片完全遺失](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)] 區段, 以根據客戶要求新增廣泛的疑難排解步驟。|
+|[針對磁碟管理問題進行疑難排解](disk-management/troubleshooting-disk-management.md)|重寫了[磁片的狀態為 [未初始化] 或 [磁片完全遺失](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)] 區段，以根據客戶要求新增廣泛的疑難排解步驟。|
 |[初始化新磁碟](disk-management/initialize-new-disks.md)|重寫了嘗試讓您更輕鬆地瞭解並解決客戶的問題。|
-|[規劃儲存空間直接存取中的磁片區](storage-spaces/plan-volumes.md)|已新增資料表, 摘要說明四個節點和較大叢集上可用的復原類型。|
-|[ReFS 總覽](refs/refs-overview.md)|已將鏡像加速同位的建議工作負載明確, 並已更正 ReFS 和 NTFS 的支援檔案和磁片區大小。|
+|[規劃儲存空間直接存取中的磁片區](storage-spaces/plan-volumes.md)|已新增資料表，摘要說明四個節點和較大叢集上可用的復原類型。|
+|[ReFS 總覽](refs/refs-overview.md)|已將鏡像加速同位的建議工作負載明確，並已更正 ReFS 和 NTFS 的支援檔案和磁片區大小。|
 |[鏡像加速的同位](refs/mirror-accelerated-parity.md)|明確將寫入繁重的檔案放在不同的目錄中的建議。|
 |[儲存體複本的已知問題](storage-replica/storage-replica-known-issues.md)|已加入新的資訊。|
 

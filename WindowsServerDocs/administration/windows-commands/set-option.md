@@ -1,8 +1,8 @@
 ---
 title: Set 選項
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c4756627d19d296d02fa11ac67ef80080ddf318
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9b9174f219654e99eb9441abe3342c31b5089ef5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441362"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384054"
 ---
 # <a name="set-option"></a>Set 選項
 
 
 
-設定好建立陰影複製的選項。 如果未指定參數，使用**設定選項**在命令提示字元中顯示說明。
+設定陰影複製的建立選項。 如果使用時不含參數， **set option**會在命令提示字元中顯示說明。
 
 ## <a name="syntax"></a>語法
 
@@ -36,11 +36,11 @@ set option {[differential | plex] [transportable] [[rollbackrecover] [txfrecover
 
 |     參數     |                                                                                                  描述                                                                                                  |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   [差異   |                                                                                                     plex]                                                                                                     |
-|  [transportable]  |                       指定陰影複製是不尚未匯入。 中繼資料.cab 檔案稍後可用來匯入陰影複製到相同或不同的電腦。                       |
-| [rollbackrecover] |                     表示要使用的寫入器*n>* 期間**PostSnapshot**事件。 這非常有用，如果陰影複製將用於復原 （例如，使用資料採礦）。                      |
-|   [txfrecover]    |                                                               請在建立期間的交易上一致的陰影複製要求 VSS。                                                                |
-|  [noautorecover]  | 停駐點寫入器和檔案系統執行陰影複製到交易一致狀態的任何復原變更。 **Noautorecover**不能搭配**txfrecover**或是**rollbackrecover**。 |
+|   [差異   |                                                                                                     複雜                                                                                                     |
+|  以往容易  |                       指定陰影複製尚未匯入。 中繼資料 .cab 檔案稍後可以用來將陰影複製匯入相同或不同的電腦。                       |
+| [rollbackrecover] |                     通知寫入器在**PostSnapshot**事件期間使用「*自動*回復」。 如果陰影複製將用於復原（例如，使用資料採礦），這會很有用。                      |
+|   [txfrecover]    |                                                               要求 VSS 在建立期間讓陰影複製保持一致。                                                                |
+|  [noautorecover]  | 停止寫入器和檔案系統，將陰影複製的任何復原變更執行到交易一致的狀態。 **Noautorecover**不能與**txfrecover**或**rollbackrecover**搭配使用。 |
 
 #### <a name="additional-references"></a>其他參考資料
 

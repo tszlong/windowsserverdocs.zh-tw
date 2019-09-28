@@ -2,22 +2,22 @@
 title: 排程一組報告
 description: 本文說明如何建立一組定期報告
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 681939409b9b8b952179992a2a86415e737ee675
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b718ceed7a378649c51e1ca64bffaaddf051c292
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447705"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394055"
 ---
 # <a name="schedule-a-set-of-reports"></a>排程一組報告
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 若要按照定期排程產生一組報告，請排程*報告工作*。 報告工作會指定要產生的報告與使用的參數、報告要針對的磁碟區與資料夾、產生報告的頻率以及儲存檔案的格式。
 
@@ -47,7 +47,7 @@ ms.locfileid: "66447705"
    -   按一下報告標籤，然後按一下 **\[編輯參數\]** 。
    -   在 **\[報告參數\]** 對話方塊中，視需要編輯參數，然後按一下 **\[確定\]** 。
 
-   -   若要查看所有已選取報告的參數清單，請按一下 **\[檢視選取的報告\]** 。 然後按一下 [關閉]  。
+   -   若要查看所有已選取報告的參數清單，請按一下 **\[檢視選取的報告\]** 。 然後按一下 [關閉]。
 
 5. 若要指定儲存報告的格式：
 

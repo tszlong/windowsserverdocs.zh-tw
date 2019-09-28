@@ -1,7 +1,7 @@
 ---
 title: 將 Windows Server 2008/2008 R2 專用映像上傳至 Azure
 description: Windows Server 2008 與 2008 R2 即將終止服務。 了解如何拿起及移動至 Azure 架設在雲端中的 Windows Server。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: mikeblodge
@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 9bd2b17296872d4b94de5a7468178fbb2ba39709
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19e4abf1573b8d3ee99b8e8828c1674f24d27695
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868402"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391498"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>將 Windows Server 2008/2008 R2 專用映像上傳至 Azure 
 

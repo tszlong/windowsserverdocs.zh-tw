@@ -3,7 +3,7 @@ title: 選取適用於 MultiPoint 服務系統的硬體
 description: MultiPoint 服務的硬體考慮
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 697ab9a1f97eab399dafac4e0c5fa5b641ed841c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9cfd6572c82bf5c3754165420e61054ec12b9617
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388998"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>選取適用於 MultiPoint 服務系統的硬體
 當您建立 MultiPoint 服務系統時，您應該選取符合 Windows Server 2016 系統需求的電腦。 如果您決定要選取哪些元件，請考慮下列事項：  

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getbytestransferred
-description: 適用於 Windows 命令主題**bitsadmin getbytestransferred** -擷取指定作業所傳輸的位元組數目。
+description: 適用于**bitsadmin getbytestransferred**的 Windows 命令主題-抓取針對指定之作業所傳輸的位元組數目。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cce2c051af169385c43fdff4efdeff46d8422926
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f690fa55a4ac5ae31223794c5e7eabc0c982c2ce
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814609"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381729"
 ---
 # <a name="bitsadmin-getbytestransferred"></a>bitsadmin getbytestransferred
 
 
 
-擷取指定作業所傳送的位元組數目。
+抓取指定作業所傳輸的位元組數目。
 
 ## <a name="syntax"></a>語法
 
@@ -38,9 +38,9 @@ bitsadmin /GetBytesTransferred <Job>
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業所傳送的位元組數目*myDownloadJob*。
+下列範例會針對名為*myDownloadJob*的作業，抓取所傳輸的位元組數目。
 ```
 C:\>bitsadmin /GetBytesTransferred myDownloadJob
 ```

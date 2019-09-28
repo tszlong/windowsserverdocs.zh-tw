@@ -1,8 +1,8 @@
 ---
 title: ftp literal_1
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 693916507488a9a480315a8e9299baa93a223b8a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 393dea27e8567a72a5bd25c927282ade93e317c9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438665"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376268"
 ---
-# <a name="ftp-literal1"></a>ftp: literal_1
+# <a name="ftp-literal_1"></a>ftp： literal_1
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2，Windows Server 2012 會傳送到遠端 ftp 伺服器的逐字引數。 會傳回單一的 ftp 回覆程式碼。   
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 會將逐字引數傳送到遠端 ftp 伺服器。 會傳回單一 ftp 回復碼。   
 
 ## <a name="syntax"></a>語法  
 ```  
@@ -32,15 +32,15 @@ literal <Argument> [ ]
 
 | 參數  |                    描述                    |
 |------------|---------------------------------------------------|
-| <Argument> | 指定的引數傳送至 ftp 伺服器。 |
+| <Argument> | 指定要傳送到 ftp 伺服器的引數。 |
 
 ## <a name="remarks"></a>備註  
-**常值**命令等同於**報價**命令。  
-## <a name="BKMK_Examples"></a>範例  
-傳送**結束**命令至遠端 ftp 伺服器。  
+**常**值命令與**引號**命令相同。  
+## <a name="BKMK_Examples"></a>典型  
+將**quit**命令傳送到遠端 ftp 伺服器。  
 ```  
 literal quit  
 ```  
-## <a name="additional-references"></a>其他參考資料  
--   [ftp: quote](ftp-quote.md)  
+## <a name="additional-references"></a>其他參考  
+-   [ftp：引號](ftp-quote.md)  
 -   [命令列語法關鍵](command-line-syntax-key.md)  

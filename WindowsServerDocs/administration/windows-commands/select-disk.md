@@ -1,8 +1,8 @@
 ---
 title: select disk
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2da74afda7c15145327b4d64f5c0e97e4f9b10cc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6d9078242264b01ee4bc24dc590df24b1e53e548
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441441"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371083"
 ---
 # <a name="select-disk"></a>select disk
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-選取指定的磁碟，並將焦點轉移到它。  
+選取指定的磁片，並將焦點移至其上。  
   
   
   
@@ -35,43 +35,43 @@ select disk={ <n> | <disk path> | system | next }
 ```  
   
 > [!NOTE]  
-> **<disk path>** ， **system**，和**下一步**參數僅適用於 Windows 7 和 Windows Server 2008 R2。  
+> 只有 Windows 7 和 Windows Server 2008 R2 才提供 **@no__t 1**、**系統**和**下一個**參數。  
   
 ## <a name="parameters"></a>參數  
   
 |  參數  |                                                                                                                                                                                                            描述                                                                                                                                                                                                            |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <n>     | 指定要接收焦點的磁碟數目。 您也可以使用電腦上檢視的所有磁碟的數字**清單中的磁碟**DiskPart 命令。 **注意：** 當有多個磁碟設定系統，請勿使用**選取磁碟\=0**指定系統磁碟。 當您重新啟動，而且不同的電腦具有相同的磁碟組態可以有不同的磁碟數字，則電腦可能會重新指派磁碟編號。 |
-| <disk path> |                                                                                                                 指定要接收焦點，比方說，磁碟的位置**PCIROOT\(0\)\#PCI\(0F02\)\#atA\(C00T00L00\)** . 若要檢視磁碟的位置路徑，然後再輸入**詳細資料磁碟**。                                                                                                                  |
-|   system    |                                 BIOS 的電腦上，指定該磁碟 0 收到焦點。 EFI 的電腦上，包含 EFI 系統磁碟分割的磁碟\(ESP\)用目前開機接收焦點。 EFI 的電腦上，如果沒有任何的 ESP，如果有一個以上的 ESP，或從 Windows 預先安裝環境開機電腦，將會失敗命令\(Windows PE\)。                                  |
-|    下一步     |                                                                                                                                     一旦選取一個磁碟之後，此命令會逐一磁碟清單中的所有磁碟。 當您執行此命令時，在清單中的下一個磁碟將會接收焦點。                                                                                                                                      |
+|     <n>     | 指定要接收焦點的磁片數目。 您可以使用 DiskPart 中的 [**列出磁片**] 命令，來查看電腦上所有磁片的編號。 **注意：** 設定具有多個磁片的系統時，請不要使用**select disk @ no__t-10**來指定系統磁片。 當您重新開機時，電腦可能會重新指派磁片號碼，而具有相同磁片設定的不同電腦可以有不同的磁片編號。 |
+| <disk path> |                                                                                                                 指定要接收焦點之磁片的位置，例如**PCIROOT @ no__t-10 @ no__t-2 @ no__t-3PCI @ no__t-40F02 @ no__t-5 @ no__t-6atA @ no__t-7C00T00L00 @ no__t-8**。 若要查看磁片的位置路徑，請選取它，然後輸入**詳細資料磁片**。                                                                                                                  |
+|   system    |                                 在 BIOS 電腦上，指定磁片0會收到焦點。 在 EFI 電腦上，包含 EFI 系統磁碟分割的磁片 \(ESP @ no__t-1 （用於目前的開機）會接收焦點。 在 EFI 電腦上，如果沒有 ESP、如果有多個 ESP，或電腦從 Windows 預先安裝環境啟動 \(Windows PE @ no__t-1，此命令將會失敗。                                  |
+|    下一步     |                                                                                                                                     選取磁片後，此命令會逐一查看磁片清單中的所有磁片。 當您執行此命令時，清單中的下一個磁片將會收到焦點。                                                                                                                                      |
   
-## <a name="BKMK_examples"></a>範例  
-若要將焦點移至磁碟 1，請輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要將焦點移到磁片1，請輸入：  
   
 ```  
 select disk=1  
 ```  
   
-若要使用其位置路徑，以選取磁碟，請輸入：  
+若要使用其位置路徑來選取磁片，請輸入：  
   
 ```  
 select disk=PCIROOT(0)#PCI(0100)#atA(C00T00L01)  
 ```  
   
-若要將焦點移到系統磁碟，請輸入：  
+若要將焦點移到系統磁片，請輸入：  
   
 ```  
 select disk=system  
 ```  
   
-若要將焦點移到下一個磁碟的電腦上，輸入：  
+若要將焦點移至電腦上的下一個磁片，請輸入：  
   
 ```  
 select disk=next  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

@@ -1,7 +1,7 @@
 ---
 title: 管理 Windows Server 上的 Hyper-v
 description: 提供管理 Hyper-v 文章的連結
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dongill
 ms.technology: compute-hyper-v
 ms.topic: article
@@ -9,12 +9,12 @@ ms.assetid: 5c06b632-dd19-46ca-9f51-130c321963d8
 author: jasongerend
 ms.author: jgerend
 ms.date: 01/08/2018
-ms.openlocfilehash: e8a9d4a894990c793c3725f93a51f04c93be41e3
-ms.sourcegitcommit: d12d9e6afd71d23e8a24682ad80d2cf3bc486588
+ms.openlocfilehash: 1d63eacfd827503c52cb16f94983182c001e88c5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364094"
 ---
 # <a name="manage-hyper-v-on-windows-server"></a>管理 Windows Server 上的 Hyper-v
 
@@ -34,5 +34,5 @@ ms.locfileid: "71226017"
 - [管理整合服務](Manage-Hyper-V-integration-services.md)
 - [使用 PowerShell Direct 管理 Windows VM](Manage-Windows-virtual-machines-with-powershell-direct.md)
 - [設定 Hyper-V 複本](Set-up-Hyper-V-Replica.md) 
-- [啟用 Intel 效能監控硬體](Performance-Monitoring-Hardware.md)
+- [啟用 Intel 效能監視硬體](Performance-Monitoring-Hardware.md)
 - [使用即時移轉移動 VM](Live-migration-overview.md)

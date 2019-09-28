@@ -2,19 +2,19 @@
 title: 管理軟體定義網路的憑證
 description: 當您在 Windows Server 2016 Datacenter 中部署軟體定義網路功能（SDN）時，您可以使用本主題來瞭解如何管理網路控制站 Northbound 和 Southbound 通訊的憑證。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: 8e2feba8232ae87d59478d3522c4e6f02baf27b8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b1cff080630c68ee8c4b7f0904f8fd0978330edc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870097"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405982"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>管理軟體定義網路的憑證
 
@@ -154,7 +154,7 @@ Windows Server 2016 Datacenter 中的 SDN 同時支援\-自我簽署和證書\(�
 4. 選擇 [**個人資訊交換-PKCS #12] （。PFX）** ，並接受預設值以**包含憑證路徑中的所有憑證**（如果可能的話）。
 5. 為您要匯出的憑證指派使用者/群組和密碼，然後按 **[下一步]** 。
 6. 在 [要匯出的檔案] 頁面上，流覽要放置匯出檔案的位置，並為其命名。
-7. 同樣地，匯出中的憑證。CER 格式。 注意:要匯出到的。CER 格式，取消核取 [是，匯出私密金鑰] 選項。
+7. 同樣地，匯出中的憑證。CER 格式。 注意：要匯出到的。CER 格式，取消核取 [是，匯出私密金鑰] 選項。
 8. 複製。PFX 至 ServerCertificate.cr 資料夾。
 9. 複製。CER 檔案至 NCCertificate.cr 資料夾。
 

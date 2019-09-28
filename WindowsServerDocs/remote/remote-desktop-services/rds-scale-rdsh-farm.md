@@ -2,7 +2,7 @@
 title: 新增 RD 工作階段主機伺服器陣列來向外延展 RDS 部署
 description: 將另一部 RD 工作階段主機新增至 RDS 環境。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: da0dbd4332cd05d580c2b1f4dc5eb0734b36b13e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446518"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403889"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>新增 RD 工作階段主機伺服器陣列來向外延展遠端桌面服務部署
 

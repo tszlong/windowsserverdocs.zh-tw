@@ -1,9 +1,9 @@
 ---
 title: MultiPoint 服務虛擬化支援
-description: 描述如何使用 HYPER-V 的 MultiPoint 服務
+description: 說明如何搭配使用 MultiPoint 服務與 Hyper-v
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,30 +13,30 @@ ms.assetid: 3f0864b8-a087-4890-94ef-05efbd3c4241
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 06d518dcea154ac2bab49a7d0e83a90f96be6e44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b94b4a4015e58402a62cf74f9abbb3eb2333f26
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872519"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395192"
 ---
 # <a name="multipoint-services-virtualization-support"></a>MultiPoint 服務虛擬化支援
-MultiPoint 服務會支援 HYPER-V 角色，有兩種：  
+MultiPoint 服務支援 Hyper-v 角色的方式有兩種：  
   
--   MultiPoint 服務可以部署為執行 HYPER-V 的伺服器上的客體作業系統。  
+-   MultiPoint 服務可以部署為執行 Hyper-v 之伺服器上的客體作業系統。  
   
--   MultiPoint 服務可用來當做虛擬化伺服器。   
+-   MultiPoint 服務可用來做為虛擬化伺服器。   
   
-在虛擬機器上執行 MultiPoint 服務提供 HYPER-V 工具來管理作業系統使用。 這些工具包括檢查點和復原功能，並可讓您匯出和匯入虛擬機器。 對於較大的安裝，您都可以在單一實體伺服器上執行多個 MultiPoint 服務的虛擬電腦來彙總伺服器。 可能的案例包括：  
+在虛擬機器上執行 MultiPoint 服務，可讓您使用 Hyper-v 工具來管理作業系統。 這些工具組括檢查點和復原功能，並可讓您匯出和匯入虛擬機器。 對於較大的安裝，您可以在單一實體伺服器上執行多個 MultiPoint 服務虛擬電腦，以合併伺服器。 可能的案例包括：  
   
--   教室或實驗室有超過 20 個基座。 而不是部署多部執行 MultiPoint 服務的實體電腦，您可以部署單一的實體電腦上的多部虛擬機器。  
+-   單一教室或實驗室擁有20個以上的基座。 您可以在單一實體電腦上部署多個虛擬機器，而不是部署執行 MultiPoint 服務的多部實體電腦。  
   
     > [!NOTE]  
-    > 無論是實體或虛擬的透過單一的 MultiPoint 管理員主控台，您可以管理多部 MultiPoint 伺服器。  
+    > 您可以透過單一 MultiPoint 管理員主控台來管理多部 MultiPoint 伺服器，無論是實體或虛擬。  
   
--   MultiPoint server 的虛擬機器上執行相同的實體電腦上的另一個伺服器基礎結構。 在此情況下網域、 安全性和網路的資料集中管理此伺服器基礎結構。 MultiPoint server 提供遠端桌面服務，並集中管理桌上型電腦。  
+-   MultiPoint 伺服器正在虛擬機器上執行，並在同一部實體電腦上具有另一個伺服器基礎結構。 在此情況下，此伺服器基礎結構會將網路的網域、安全性和資料集中在一起。 MultiPoint 伺服器提供遠端桌面服務並集中化桌面。  
   
 > [!NOTE]  
-> 時的虛擬機器上執行 MultiPoint 服務，可支援 USB over 乙太網路，而 RDP 用戶端站台。 不支援直接的影片和 usb 極簡型用戶端連線的站台。  
+> 在虛擬機器上執行 MultiPoint 服務時，支援 USB over 乙太網路和 RDP 用戶端工作站。 不支援直接影片和 USB 零用戶端連線的工作站。  
   
-如需有關 HYPER-V 角色的詳細資訊，請參閱 < [HYPER-V](../../virtualization/hyper-v/hyper-v-on-windows-server.md)。  
+如需 Hyper-v 角色的詳細資訊，請參閱[hyper-v](../../virtualization/hyper-v/hyper-v-on-windows-server.md)。  

@@ -2,7 +2,7 @@
 title: 新增 RD 連線代理人伺服器以設定 RDS 中的高可用性
 description: 了解如何將 RD 連線代理人新增至 RDS 部署以達到高可用性。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: b1e5726e3976527278b11f105007a32548da0bc4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 511f852568aa4cc7498e3a0b8deacea83db22c08
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805147"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404060"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>將 RD 連線代理人伺服器加入部署並設定高可用性
 
@@ -48,7 +48,7 @@ ms.locfileid: "66805147"
    1. 如果您使用 VM 作為連線代理人，請建立第一個 RD 連線代理人的公用 IP 位址。 (只有在 RDMS 虛擬機器還沒有公用 IP 位址以允許 RDP 連線時，才需要這麼做。)
        1. 在 Azure 入口網站中，按一下 [瀏覽]   > [資源群組]  、按一下用於部署的資源群組，然後按一下第一個 RD 連線代理人虛擬機器 (例如 Contoso-Cb1)。
        2. 按一下 [設定 > 網路介面]  ，然後按一下對應的網路介面。
-       3. 按一下 [設定 > IP 位址]  。
+       3. 按一下 [設定] > [IP 位址]  。
        4. 針對 [公用 IP 位址]  選取 [已啟用]  ，然後按一下 [IP 位址]  。
        5. 如果您目前有想要使用的公用 IP 位址，請從清單中加以選取。 否則，請按一下 [新建]  、輸入名稱，然後依序按一下 [確定]  和 [儲存]  。
    2. 連線至第一個 RD 連線代理人：

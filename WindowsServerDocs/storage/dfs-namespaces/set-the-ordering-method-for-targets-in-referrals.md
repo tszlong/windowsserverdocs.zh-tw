@@ -2,22 +2,22 @@
 title: 設定轉介中目標的排序方法
 description: 本文說明如何設定轉介中目標的排序方法。
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 52568944a98bed7960b37335b2e3cbbde61479ca
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bb42a98666941c5dfa50a8dfbf45635ad25dc767
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447198"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386140"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>設定轉介中目標的排序方法
 
-> 適用於：Windows Server 2019，Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 轉介是排序的目標清單，當使用者存取命名空間根目錄或包含目標的資料夾時，用戶端電腦會從網域控制站或命名空間伺服器收到轉介。 當用戶端接收轉介之後，用戶端會嘗試存取清單中的第一個目標。 如果目標無法使用，用戶端會嘗試存取下一個目標。
 用戶端站台上的目標一定會在轉介中優先列出。 用戶端站台外的目標則根據排序方法列出。
@@ -28,9 +28,9 @@ ms.locfileid: "66447198"
 
 使用下列程序來設定命名空間根目錄的排序方法：
 
-1.  按一下 [開始]  ，指向 [系統管理工具]  ，然後按一下 [DFS 管理]  。
+1.  按一下 [開始]，指向 [系統管理工具]，然後按一下 [DFS 管理]。
 
-2.  在主控台樹狀目錄的 [命名空間]  節點下，以滑鼠右鍵按一下命名空間，然後按一下 [內容]  。
+2.  在主控台樹狀目錄的 [命名空間] 節點下，以滑鼠右鍵按一下命名空間，然後按一下 [內容]。
 
 3.  在 **\[轉介\]** 索引標籤上，選取排序方法。
 
@@ -46,9 +46,9 @@ Windows Server 2012 中引進了 DFSN Windows PowerShell 模組。
 
 含目標的資料夾會繼承命名空間根目錄的排序方法。 您可以使用下列程序來覆寫排序方法：
 
-1.  按一下 [開始]  ，指向 [系統管理工具]  ，然後按一下 [DFS 管理]  。
+1.  按一下 [開始]，指向 [系統管理工具]，然後按一下 [DFS 管理]。
 
-2.  在主控台樹狀目錄的 [命名空間]  節點下，以滑鼠右鍵按一下含目標的資料夾，然後按一下 [內容]  。
+2.  在主控台樹狀目錄的 [命名空間] 節點下，以滑鼠右鍵按一下含目標的資料夾，然後按一下 [內容]。
 
 3.  在 **\[轉介\]** 索引標籤上，選取 **\[排除用戶端站台外的目標\]** 核取方塊。
 
@@ -67,7 +67,7 @@ Windows Server 2012 中引進了 DFSN Windows PowerShell 模組。
 
 在這種方法中，目標的排序如下所示：
 
-1.  目標相同的 Active Directory 目錄服務 (AD DS) 站台與用戶端會以隨機順序轉介的頂端列。
+1.  與用戶端相同的 Active Directory 目錄服務（AD DS）網站中的目標會以隨機順序列在參考的頂端。
 2.  用戶端站台外的目標隨機列出。
 
 如果沒有相同站台的目標伺服器可供使用，用戶端電腦會被轉介至隨機的目標伺服器，不考慮連線多昂貴或目標的距離多遠。

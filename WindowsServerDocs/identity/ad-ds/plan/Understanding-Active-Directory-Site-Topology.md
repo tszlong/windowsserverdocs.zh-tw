@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6f115cab76cdbb3cf810042a42cc30e84edd904
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2efc2156706e20d4749560b188e6ee1b442152f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858429"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402463"
 ---
 # <a name="understanding-active-directory-site-topology"></a>了解 Active Directory 站台拓撲
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-站台拓撲會大幅影響網路的效能和您的使用者能夠存取網路資源。 在開始設計您的站台拓撲之前，先熟悉 Windows Server 2008，組織通常使用不同的網路拓樸、 站台拓撲擁有者，以及一些 Active Directory 複寫角色中的站台的函式概念。  
+您的網站拓撲會大幅影響網路的效能，以及您的使用者存取網路資源的能力。 在您開始設計您的網站拓撲之前，請先熟悉 Windows Server 2008 中的網站功能、組織通常使用的不同網路拓撲、網站拓撲擁有者的角色，以及一些 Active Directory 複寫想法.  
   
 ## <a name="in-this-section"></a>本節內容  
   
--   [站台函式](../../ad-ds/plan/Site-Functions.md)  
+-   [站台功能](../../ad-ds/plan/Site-Functions.md)  
   
 -   [站台拓撲擁有者角色](../../ad-ds/plan/Site-Topology-Owner-Role.md)  
   

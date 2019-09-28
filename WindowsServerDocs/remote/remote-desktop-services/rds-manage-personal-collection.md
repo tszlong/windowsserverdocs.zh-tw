@@ -2,7 +2,7 @@
 title: 管理 RDS 中的個人桌面工作階段集合
 description: 了解如何將 RDSH 和 RemoteApp 程式新增至您的 RDS 部署。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 286c7ba4bd4428669d135c35c825033d22b8f40e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6bf0ad3a2cd35c9794fd13631ed29df94725685c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743520"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387413"
 ---
 ## <a name="manage-your-personal-desktop-session-collections"></a>管理您的個人桌面工作階段集合
 

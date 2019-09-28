@@ -1,8 +1,8 @@
 ---
 title: nslookup set timeout
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f6c8863d0a9330fd3a8499b0e6dbc802bd95022
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 32fcfcaeccb6599e9aaca21f9c085bb00857479c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436515"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372762"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-變更初始的等候回覆的查閱要求的秒數。
+變更等候查閱要求回復的初始秒數。
 ## <a name="syntax"></a>語法
 ```
 set timeout=<Number>
@@ -33,16 +33,16 @@ set timeout=<Number>
 
 |    參數    |                                           描述                                            |
 |-----------------|--------------------------------------------------------------------------------------------------|
-|    <Number>     | 指定等候回覆的秒數。 要等候的秒數的預設數目為 5。 |
-| {help &#124; ?} |                      顯示的簡短摘要**nslookup**子命令。                       |
+|    <Number>     | 指定等待回復的秒數。 預設等候的秒數為5。 |
+| {help &#124; ？} |                      顯示**nslookup**子命令的簡短摘要。                       |
 
 ## <a name="remarks"></a>備註
-- 在指定的時間週期內未收到要求的回覆，逾時增加一倍，並要求就會再次傳送。 您可以使用**集重試**命令控制重試次數。
-  ## <a name="BKMK_examples"></a>範例
-  下列範例會設定取得回應為 2 秒的逾時：
+- 在指定的時段內未收到要求的回復時，會將超時時間加倍，並再次傳送要求。 您可以使用 [**設定重試**] 命令來控制重試次數。
+  ## <a name="BKMK_examples"></a>典型
+  下列範例會將取得回應的時間設定為2秒：
   ```
   set timeout=2
   ```
-  ## <a name="additional-references"></a>其他參考資料
-  [命令列語法重點](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考
+  [命令列語法索引鍵](command-line-syntax-key.md)
   [nslookup 設定重試](nslookup-set-retry.md)

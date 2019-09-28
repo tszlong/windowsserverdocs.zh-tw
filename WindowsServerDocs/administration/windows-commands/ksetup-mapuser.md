@@ -1,8 +1,8 @@
 ---
-title: ksetup:mapuser
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： mapuser
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5bc68fe9e8f4cbb9869cb74e4eb20a3400eb56ad
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6b80538999c364e9ed10ca0ed43387f603ac9ad3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437958"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374985"
 ---
-# <a name="ksetupmapuser"></a>ksetup:mapuser
+# <a name="ksetupmapuser"></a>ksetup： mapuser
 
 
 
-對應至帳戶的 Kerberos 主體名稱。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+將 Kerberos 主體的名稱對應至帳戶。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,36 +36,36 @@ ksetup /mapuser <Principal> <Account>
 
 |  參數   |                                                   描述                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<主體 > |              完整的網域任何的名稱主體;比方說， mike@corp.CONTOSO.COM。              |
-|  \<Account>  | 任何帳戶或安全性群組名稱存在於此電腦上，例如客體、 網域使用者或系統管理員。 |
+| \<Principal > |              任何主體的完整功能變數名稱;例如，mike@corp.CONTOSO.COM。              |
+|  \<Account >  | 存在於此電腦上的任何帳戶或安全性群組名稱，例如 [來賓]、[網域使用者] 或 [系統管理員]。 |
 
 ## <a name="remarks"></a>備註
 
-帳戶可以在明確地辨識，例如網域來賓。 或者，您可以使用萬用字元 （*） 以包含所有的帳戶。
+可以明確識別帳戶，例如網域來賓。 或者，您可以使用萬用字元（*）來包含所有帳戶。
 
-如果省略帳戶名稱，則對應中刪除指定的主體。
+如果省略帳戶名稱，則會刪除指定主體的對應。
 
-如果它們存在有效的 Kerberos 票證，電腦將只會驗證指定領域的主體。
+只有在指定領域的主體出示有效的 Kerberos 票證時，電腦才會進行驗證。
 
-使用**ksetup**不含任何參數或引數，以查看目前的對應設定和預設領域。
+請使用不含任何參數或引數的**ksetup**來查看目前的對應設定和預設領域。
 
-每當對外部的金鑰發佈中心 (KDC) 和領域設定進行變更，需要重新啟動已在變更設定的電腦。
+每當對外部金鑰發佈中心（KDC）和領域設定進行變更時，就需要重新開機已變更設定的電腦。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-Kerberos 領域 CONTOSO 內的 Mike Danseglio 帳戶對應到此電腦上，授與他不必向這台電腦的所有成員的內建的 Guest 帳戶的權限的來賓帳戶：
+將 Kerberos 領域 CONTOSO 內的 Mike Danseglio 帳戶對應到這部電腦上的 guest 帳戶，授與他內建來賓帳戶成員的擁有權限，而不需向此電腦驗證：
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM guest
 ```
-移除 Mike Danseglio 帳戶以防止這台電腦。 其認證驗證從 CONTOSO 他這台電腦上的 guest 帳戶的對應：
+移除 Mike Danseglio 帳戶與這部電腦上來賓帳戶的對應，以防止他使用 CONTOSO 的認證向這部電腦進行驗證：
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM 
 ```
-將 CONTOSO Kerberos 領域內的 Mike Danseglio 帳戶對應至任何現有的帳戶，在此電腦上。 （如果只有標準使用者和來賓帳戶是在此電腦上作用，Mike 的權限會設定為那些）：
+將 CONTOSO Kerberos 領域內的 Mike Danseglio 帳戶對應到這部電腦上任何現有的帳戶。 （如果只有標準使用者和來賓帳戶在這部電腦上為作用中，則 Mike 的許可權將會設定為那些）：
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM *
 ```
-對應至任何現有的帳戶相同名稱的這台電腦上的 CONTOSO Kerberos 領域內的所有帳戶：
+將 CONTOSO Kerberos 領域內的所有帳戶對應到此電腦上相同名稱的任何現有帳戶：
 ```
 ksetup /mapuser * *
 ```

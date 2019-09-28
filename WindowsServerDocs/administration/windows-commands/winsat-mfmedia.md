@@ -2,7 +2,7 @@
 title: winsat mfmedia
 description: Windows 命令
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c63682e474311a49b01dc8078b023547e1fb170
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3684d4b23ba6d34febe226f54b8b2ab2204f610c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440019"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361905"
 ---
 # <a name="winsat-mfmedia"></a>winsat mfmedia
 
 
 
-測量效能的視訊解碼 （播放） 使用的媒體基礎架構。
+使用媒體基礎架構來測量影片解碼（播放）的效能。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,31 +38,31 @@ winsat mfmedia <parameters>
 
 |參數|描述|
 |----------|-----------|
-|-輸入\<檔案名稱 >|必要：指定包含要播放或編碼的視訊剪輯的檔案。 檔案可以是任何可以轉譯的媒體基礎的格式。|
-|-dumpgraph|指定的篩選圖形應該會儲存至 GraphEdit 相容的檔案開始評估之前。|
-|-ns|指定的篩選圖形，應該執行的輸入檔正常播放速度。 根據預設，篩選圖形會以最快速度，忽略簡報時間執行。|
-|-play|執行中的評估解碼模式與任何提供音訊內容中指定的檔案中的播放 **-輸入**使用預設的 DirectSound 裝置。 根據預設，會停用音訊的播放。|
-|-nopmp|請勿使用的媒體基礎保護媒體管線 (MFPMP) 處理序在評估期間。|
-|-pmp|請使用 MFPMP 在評估期間的處理序。</br>注意:如果 **-pmp**或是 **-nopmp**未指定，只在必要時，會使用 MFPMP。|
-|-v|傳送至 STDOUT，包括狀態和進度的相關資訊的詳細資訊輸出。 任何錯誤也會寫入至命令視窗。|
-|xml\<檔案名稱 >|將評估的輸出儲存為指定的 XML 檔案中。 如果指定的檔案存在，它會覆寫。|
-|-idiskinfo|儲存實體的磁碟區和邏輯磁碟的相關資訊的一部分 **\<SystemConfig >** XML 輸出中的區段。|
-|-iguid|在 XML 輸出檔中的全域唯一識別碼 (GUID)。|
-|-請注意 「 附註文字 」|新增註解文字 **\<注意 >** XML 輸出檔中的一節。|
-|-icn|在 XML 輸出檔中包含本機電腦名稱。|
-|-eef|列舉中的 XML 輸出檔的額外的系統資訊。|
+|-輸入 \<file 名稱 >|必要：指定包含要播放或編碼之影片剪輯的檔案。 檔案可以是媒體基礎可轉譯的任何格式。|
+|-dumpgraph|指定在評估開始之前，應該將篩選圖形儲存至與 GraphEdit 相容的檔案。|
+|-ns|指定篩選圖表應以輸入檔的正常播放速度執行。 根據預設，篩選圖表會盡可能快速地執行，而忽略呈現時間。|
+|-play|以解碼模式執行評量，並使用預設的 DirectSound 裝置，在 **-input**指定的檔案中播放任何提供的音訊內容。 根據預設，會停用音訊播放。|
+|-nopmp|請不要在評估期間使用受媒體基礎保護的媒體管線（MFPMP）程式。|
+|-pmp|在評估期間，請一律使用 MFPMP 流程。</br>注意：如果未指定 **-pmp**或 **-nopmp** ，則只有在必要時才會使用 MFPMP。|
+|-v|將詳細資訊輸出傳送至 STDOUT，包括狀態和進度資訊。 任何錯誤也會寫入至命令視窗。|
+|-xml \<檔案名 >|將評量的輸出儲存為指定的 XML 檔案。 如果指定的檔案存在，則會覆寫該檔案。|
+|-idiskinfo|將實體磁片區和邏輯磁片的相關資訊儲存為 XML 輸出中 **\<SystemConfig >** 區段的一部分。|
+|-iguid|在 XML 輸出檔中建立全域唯一識別碼（GUID）。|
+|-注意「附注文字」|將附注文字加入至 XML 輸出檔中的 **\<note >** 區段。|
+|-icn|在 XML 輸出檔中包含本機電腦名稱稱。|
+|-eef|列舉 XML 輸出檔中的額外系統資訊。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-- 下列範例會執行與輸入檔案期間所使用的評量**winsat 正式**評估，而不採用 Media Foundation 受保護的媒體管線 (MFPMP)，在 c:\windows 所在位置的電腦上[Windows] 資料夾中。  
+- 下列範例會使用在**winsat 正式**評估期間使用的輸入檔來執行評估，而不會在 C：\windows 是 windows 資料夾位置的電腦上採用媒體基礎保護的媒體管線（MFPMP）。  
   ```
   winsat mfmedia -input c:\windows\performance\winsat\winsat.wmv -nopmp
   ```
 
 ## <a name="remarks"></a>備註
 
--   在本機的 Administrators 群組或同等權限的成員資格會使用所需的最小**winsat**。 必須從提升權限的命令提示字元 視窗中執行命令。
--   若要開啟提升權限的命令提示字元視窗，請按一下**開始**，按一下**附屬應用程式**，以滑鼠右鍵按一下**命令提示字元**，然後按一下**的系統管理員身分執行**.
+-   若要使用**winsat**，至少需要本機 Administrators 群組的成員資格或同等許可權。 命令必須從提高許可權的命令提示字元視窗執行。
+-   若要開啟提高許可權的命令提示字元視窗，請依序按一下 **開始**、**附屬**應用程式、**命令提示**字元 和 **以系統管理員身分執行**
 
 #### <a name="additional-references"></a>其他參考資料
 

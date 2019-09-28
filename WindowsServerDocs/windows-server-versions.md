@@ -2,7 +2,7 @@
 title: IT 系統管理員適用的 Windows Server 技術內容 - Windows Server
 description: 取得適用於 IT 專業人員的 Windows Server 新版與舊版技術文章，以及產品評估，
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -14,12 +14,12 @@ author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: f9a4e4e0dde0c2c6178629f0dee744448edc72dd
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 5430dfa2facfb7412077931637f5e95e35f0d934
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812596"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392470"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 新版與舊版 IT 系統管理員內容
 
@@ -40,19 +40,19 @@ Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基
 
 [Windows Server 2012 R2 和 Windows Server 2012 技術文件庫](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/) 
 
-[Windows Server 2012 R2 開發人員文件庫上 MSDN](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
+[MSDN 上的 Windows Server 2012 R2 開發人員程式庫](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
 
 ## <a name="windows-server-2008-r2-and-windows-server-2008"></a>Windows Server 2008 R2 和 Windows Server 2008
 
 [Windows Server 2008 R2 和 Windows Server 2008 技術文件庫](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008)
  
-[MSDN 上的 Windows Server 2008 開發人員程式庫](https://msdn.microsoft.com/library/hh738539.aspx) 
+[MSDN 上的 Windows Server 2008 開發人員文件庫](https://msdn.microsoft.com/library/hh738539.aspx) 
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 
 [Windows Server 2003 技術文件庫](https://www.microsoft.com/download/details.aspx?id=53314)-下載 PDF 版的封存內容
 
-[MSDN 上的 Windows Server 2003 開發人員程式庫](https://msdn.microsoft.com/library/dn792549.aspx)
+[MSDN 上的 Windows Server 2003 開發人員文件庫](https://msdn.microsoft.com/library/dn792549.aspx)
 
 ## <a name="product-evaluations"></a>產品評估
 
@@ -61,7 +61,7 @@ Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基
 [下載 Windows Server 2012 R2 試用版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
 ## <a name="related-links"></a>相關連結
-[Windows Server 2016 的產品資訊](https://www.microsoft.com/cloud-platform/windows-server) 
+[Windows Server 2016 產品資訊](https://www.microsoft.com/cloud-platform/windows-server) 
 
 > [!TIP]
 > 您遇到問題了嗎？ 從 [Microsoft 支援服務](https://support.microsoft.com)開始 - 只需在搜尋列中輸入您的問題。 您可以取得有關 Windows、Office、Skype 等方面的協助，應有盡有。 

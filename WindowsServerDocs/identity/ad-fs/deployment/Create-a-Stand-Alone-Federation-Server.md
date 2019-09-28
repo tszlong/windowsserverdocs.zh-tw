@@ -6,55 +6,55 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4b70b0b048f66f9a8ba19cd7990dde57e0655ae4
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3a948fadeb1cfa2ebe259a9bb659e93a85e06910
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192226"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359665"
 ---
 # <a name="create-a-stand-alone-federation-server"></a>建立獨立同盟伺服器
 
-安裝 Federation Service 角色服務後，當您在電腦上設定必要的憑證，您就能夠將電腦設定為同盟伺服器。 您可以使用下列程序來設定電腦成為獨立\-單獨的同盟伺服器。 建立獨立的動作\-單獨的同盟伺服器也會建立新的 Federation Service。 您使用 AD FS 同盟伺服器設定精靈建立同盟伺服器。  
+安裝同盟服務角色服務並在電腦上設定所需的憑證之後，您就可以設定電腦成為同盟伺服器。 您可以使用下列程式，將電腦設定為 no__t 0alone 同盟伺服器。 建立待命 @ no__t-0alone 同盟伺服器的動作也會建立新的同盟服務。 您可以使用 AD FS 同盟伺服器設定 Wizard 來建立同盟伺服器。  
   
 > [!NOTE]  
-> 同盟網頁單一\-號\-上\(SSO\)設計中，您必須在帳戶夥伴組織中的至少一部同盟伺服器和資源夥伴組織中的至少一部同盟伺服器. 如需詳細資訊，請參閱[同盟伺服器放置位置](https://technet.microsoft.com/library/dd807127.aspx)。  
+> 針對同盟 Web Single @ no__t-0Sign @ no__t-1On \(SSO @ no__t-3 設計，您必須在帳戶夥伴組織中至少有一部同盟伺服器，並在資源夥伴組織中至少要有一部同盟伺服器。 如需詳細資訊，請參閱[同盟伺服器放置位置](https://technet.microsoft.com/library/dd807127.aspx)。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  檢閱詳細使用適當帳戶和群組成員[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/嗎？LinkId\=83477\)。   
+若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477) \(HTTP：\/ \/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
   
-### <a name="to-create-a-stand-alone-federation-server"></a>若要建立獨立\-單獨的同盟伺服器  
+### <a name="to-create-a-stand-alone-federation-server"></a>建立獨立式 @ no__t-0alone 同盟伺服器  
   
-1.  有兩種方式可以啟動 AD FS 同盟伺服器設定精靈。 若要啟動該精靈，請執行下列其中一個動作：  
+1.  有兩種方式可以啟動 [AD FS 同盟伺服器設定向導]。 若要啟動該精靈，請執行下列其中一個動作：  
   
-    -   Federation Service 角色服務安裝完成之後，開啟 AD FS 管理嵌入式管理單元\-中，按一下  **AD FS 同盟伺服器設定精靈**上的連結**概觀**頁面或在**動作**窗格。  
+    -   同盟服務角色服務安裝完成後，請開啟 AD FS 管理 snap @ no__t-0in，然後按一下 [**總覽**] 頁面或 [**動作**] 窗格中的 [ **AD FS 同盟伺服器設定]** 連結。  
   
-    -   隨時安裝精靈完成，請開啟 Windows 檔案總管後，瀏覽至**c:\\Windows\\ADFS**資料夾，，然後按兩下\-按一下**FsConfigWizard.exe**.  
+    -   在安裝程式完成之後，請開啟 [Windows Explorer]，流覽至**C： \\Windows @ no__t-2ADFS**資料夾，然後按兩下 @ no__t-3click **fsconfigwizard.exe .exe**。  
   
-2.  在 [歡迎]  頁面上，確認已選取 [建立新的 Federation Service]  ，然後按一下 [下一步]  。  
+2.  在 [歡迎] 頁面上，確認已選取 [建立新的 Federation Service]，然後按一下 [下一步]。  
   
-3.  上**選取獨立\-Alone 或伺服陣列部署**頁面上，按一下**獨立\-單獨的同盟伺服器**，然後按一下**下一步** 。  
+3.  在 [**選取待命 @ no__t-1Alone 或伺服器陣列部署**] 頁面上，按一下 [待命 **@ no__t-3Alone 同盟伺服器**]，然後按 **[下一步]** 。  
   
     > [!IMPORTANT]  
-    > 當您選取之獨立\-單獨的同盟伺服器選項，在 AD FS 同盟伺服器設定精靈中，與此同盟服務相關聯的服務帳戶會自動指派給網路服務帳戶。 在您要在其中評估測試實驗室環境中的 AD FS 的情況下，才建議使用 NETWORK SERVICE 做為服務帳戶。 如果您想要使用之獨立\-單獨的同盟伺服器選項，以部署同盟伺服器在生產環境中，請務必將此服務帳戶變更至更適當的服務帳戶可以專屬於服務這個新的 Federation Service 的要求。 變更服務帳戶，而非網路服務帳戶將會降低會將您的同盟伺服器容易遭受惡意攻擊的攻擊媒介。  
+    > 當您在 [AD FS 同盟伺服器設定] Wizard 中選取 [待命 @ no__t-0alone 同盟伺服器] 選項時，與此同盟服務相關聯的服務帳戶將會自動指派給網路服務帳戶。 只有當您在測試實驗室環境中評估 AD FS 時，才建議使用 NETWORK SERVICE 做為服務帳戶。 如果您想要使用 [待命 @ no__t-0alone 同盟伺服器] 選項，在生產環境中部署同盟伺服器，請務必將此服務帳戶變更為更適當的服務帳戶，以便專用於服務的要求這個新的同盟服務。 將服務帳戶變更為網路服務以外的帳戶，將可減輕可能的攻擊媒介，否則會讓您的同盟伺服器容易遭受惡意攻擊。  
   
-4.  在 [指定 Federation Service 名稱]  頁面上，確認顯示的 [SSL 憑證]  是正確的。 如果沒有，請選取適當的憑證，從**SSL 憑證**清單。  
+4.  在 [指定 Federation Service 名稱] 頁面上，確認顯示的 [SSL 憑證] 是正確的。 如果沒有，請從 [ **SSL 憑證**] 清單中選取適當的憑證。  
   
-    此憑證會產生從 Secure Sockets Layer \(SSL\)在預設的網站的設定。 若「預設的網站」只設定一個 SSL 憑證，則會出示該憑證並自動選取該憑證以供使用。 若已為「預設的網站」設定多個 SSL 憑證，則此處會列出所有那些憑證，而且您必須從中選取一個憑證。 若沒有為「預設的網站」設定 SSL 設定，則會從本機電腦上個人憑證存放區中可用的憑證產生清單。  
+    此憑證是從預設網站的安全通訊端層 \(SSL @ no__t-1 設定產生。 若「預設的網站」只設定一個 SSL 憑證，則會出示該憑證並自動選取該憑證以供使用。 若已為「預設的網站」設定多個 SSL 憑證，則此處會列出所有那些憑證，而且您必須從中選取一個憑證。 若沒有為「預設的網站」設定 SSL 設定，則會從本機電腦上個人憑證存放區中可用的憑證產生清單。  
   
     > [!NOTE]  
-    > 若已為 IIS 設定 SSL 憑證，精靈將不會允許您覆寫該憑證。 這樣可確保先前為 IIS 設定的 SSL 憑證都會被保留。 若要解決這項限制，您可以移除憑證，或以手動方式重新加以設定使用 IIS Management Console。  
+    > 若已為 IIS 設定 SSL 憑證，精靈將不會允許您覆寫該憑證。 這樣可確保先前為 IIS 設定的 SSL 憑證都會被保留。 若要解決此限制，您可以移除憑證，或使用 IIS 管理主控台手動重新設定它。  
   
-5.  如果您已選取的 AD FS 資料庫的話**AD FS 組態資料庫偵測到現有的**頁面隨即出現。 如果出現該頁面，按一下 **[刪除資料庫]** ，然後按一下 **[下一步]** 。  
+5.  如果您選取的 AD FS 資料庫已經存在，則會出現 [偵測**到現有的 AD FS 設定資料庫**] 頁面。 如果出現該頁面，按一下 **[刪除資料庫]** ，然後按一下 **[下一步]** 。  
   
     > [!CAUTION]  
-    > 只有當您確定此 AD FS 資料庫中的資料並不重要或不使用生產同盟伺服器陣列中，請選取此選項。  
+    > 只有在您確定此 AD FS 資料庫中的資料不重要，或在生產同盟伺服器陣列中未使用時，才選取此選項。  
   
-6.  在 [準備套用設定]  頁面上，檢閱詳細資料。 如果設定正確，請按一下**下一步** 若要開始設定 AD FS 使用這些設定。  
+6.  在 [準備套用設定] 頁面上，檢閱詳細資料。 如果設定看起來是正確的，請按 **[下一步]** 開始使用這些設定來設定 AD FS。  
   
-7.  在 [設定結果]  頁面上，檢閱結果。 當所有的組態步驟都完成後時，按一下**關閉**結束精靈。  
+7.  在 [設定結果] 頁面上，檢閱結果。 完成所有設定步驟之後，請按一下 [**關閉**] 結束嚮導。  
   
 ## <a name="additional-references"></a>其他參考資料  
 [檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)  

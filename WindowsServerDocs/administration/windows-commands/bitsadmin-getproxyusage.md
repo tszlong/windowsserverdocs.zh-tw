@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getproxyusage
-description: 適用於 Windows 命令主題**bitsadmin getproxyusage** -擷取指定作業的 proxy 使用方式設定。
+description: '**Bitsadmin getproxyusage**的 Windows 命令主題-抓取指定工作的 proxy 使用方式設定。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 20ba418b8dfcf3d96d9b20b22e53797a232a13f1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea9a22f4fb35af3436d02d9f23b62ce0888a26b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863879"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381286"
 ---
 # <a name="bitsadmin-getproxyusage"></a>bitsadmin getproxyusage
 
 
 
-擷取指定作業的 proxy 使用方式設定。
+抓取指定之作業的 proxy 使用方式設定。
 
 ## <a name="syntax"></a>語法
 
@@ -41,14 +41,14 @@ bitsadmin /GetProxyUsage <Job>
 ## <a name="remarks"></a>備註
 
 可能值為：
--   預先設定，使用擁有者的 Internet Explorer 的預設值。
--   NO_PROXY — 不使用 proxy 伺服器。
--   覆寫，使用明確的 proxy 清單。
--   自動偵測，自動偵測 proxy 設定。
+-   LNK-WHAT-ARE-PRECONFIG-SOLUTIONS —使用擁有者的 Internet Explorer 預設值。
+-   NO_PROXY —請勿使用 PROXY 伺服器。
+-   覆寫—使用明確的 proxy 清單。
+-   自動偵測：自動偵測 proxy 設定。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的 proxy 使用方式*myDownloadJob*。
+下列範例會抓取名為*myDownloadJob*之作業的 proxy 使用方式。
 ```
 C:\>bitsadmin /GetProxyUsage myDownloadJob
 ```

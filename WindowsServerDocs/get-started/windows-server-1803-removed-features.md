@@ -1,28 +1,28 @@
 ---
 title: Windows Server 版本 1803 - 已移除的功能
 description: 了解在 Windows Server 版本 1803 或未來版本中將會移除或取代的功能
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: plan
 ms.localizationpriority: medium
 ms.sitesec: library
 author: jasongerend
 ms.author: jgerend
 ms.date: 08/22/2019
-ms.openlocfilehash: 8b871d6fa939271c7468a8b51a195539ee268e9c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 482897b31bfaf3c4fe1f6b44a184463e88c5ae65
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868286"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391309"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>從 Windows Server 版本 1803 開始移除或計劃取代的功能
 
-> 適用於：Windows Server 1803 版
+> 適用於：Windows Server 版本 1803
 
 每個版本的 Windows Server 都會新增新特色與功能；我們有時也會移除特性與功能，這通常是因為我們新增了更好的選項。 以下是我們在 Windows Server 版本 1803 中已移除的特色與功能詳細資料。   
 
 > [!TIP]
-> - 您可以加入 [Windows 測試人員計畫](https://insider.windows.com)來優先存取 Windows Server 組建，這是測試功能變更的絕佳方式。
+> - 您可以加入 [Windows 測試人員計劃](https://insider.windows.com)來優先存取 Windows Server 組建，這是測試功能變更的絕佳方式。
 > - 對其他版本有任何問題嗎？ 查看 [Windows Server 中已移除或計劃取代的功能](../get-started-19/removed-features.md)。
 
 **清單隨時會變更，可能無法完全列出各項受影響的特色與功能。** 

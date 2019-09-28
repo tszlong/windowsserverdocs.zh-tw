@@ -2,7 +2,7 @@
 title: Windows Store 用戶端中的新功能
 description: 了解適用於 Windows Store 的遠端桌面用戶端最新的變更
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a4a6ae860dc8eabc4856ff3aa66268ed8d588de
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: e6d57f2feb5b21385cf247856be05f752ddee0cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987367"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404085"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows Store 用戶端中的新功能
 
@@ -32,7 +32,7 @@ ms.locfileid: "70987367"
 - 您現在可以在新增遠端資源時選取現有的使用者帳戶。
 - 已修正用戶端未正確終止的問題。
 - 用戶端現在會正確處理當第二個視窗開啟時遭到擱置的問題。
-- 其他錯誤修正。
+- 其他 Bug 修正。
 
 ## <a name="updates-for-version-1011088"></a>10.1.1088 版的更新
 
@@ -43,7 +43,7 @@ ms.locfileid: "70987367"
 - 已修正在將用戶端最小化之後，重新連線會造成停止回應的問題。
 - 允許在群組中的任何位置拖曳桌面。
 - 確保從 jumplist 啟動連線時，會按照需要產生個別的視窗。
-- 其他錯誤修正。
+- 其他 Bug 修正。
 
 ## <a name="updates-for-version-1011060"></a>10.1.1060 版的更新
 
@@ -53,7 +53,7 @@ ms.locfileid: "70987367"
 - 已修正在本機虛擬桌面之間切換時導致當機的問題。
 - 現在將工作階段移至不同的監視器時，也會更新工作階段縮放比例。
 - 可處理如 AltGr 等其他系統金鑰。
-- 其他錯誤修正。
+- 其他 Bug 修正。
 
 ## <a name="updates-for-version-1011046"></a>10.1.1046 版的更新
 
@@ -66,4 +66,4 @@ ms.locfileid: "70987367"
 *發行日期：04/02/2018*
 
 - 解決 CVE-2018-0886 中所述 CredSSP 加密 Oracle 修復的更新。
-- 其他錯誤修正。
+- 其他 Bug 修正。

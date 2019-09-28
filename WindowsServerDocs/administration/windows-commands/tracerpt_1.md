@@ -2,7 +2,7 @@
 title: tracerpt
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25014d23c797f37dcc488b5fea20c73907eb6f4c
-ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
+ms.openlocfilehash: 1c8e85acc59383d0a027c8d5ec51e68942a76b85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975297"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385682"
 ---
 # <a name="tracerpt"></a>tracerpt
 
@@ -57,7 +57,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |           -report [filename]           |                                  產生文字輸出報告檔案。 如果未指定，則為 Filename，其為工作負載 .xml。                                   |
 |                  -lr                   |                        指定「較不嚴格」。 這會針對不符合事件架構的事件使用最佳做法。                         |
 |           -export [filename]           |                                  產生事件架構匯出檔案。 如果未指定 Filename，則為 schema. man。                                   |
-|       [-l]\<值 [值 [...]]>        |                                                   指定要處理的事件追蹤記錄檔。                                                    |
+|       [-l] \<value [value [...]]>        |                                                   指定要處理的事件追蹤記錄檔。                                                    |
 | -rt \<session_name [session_name [...]]> |                                                指定即時事件追蹤會話資料來源。                                                |
 
 ## <a name="BKMK_EXAMPLES"></a>典型

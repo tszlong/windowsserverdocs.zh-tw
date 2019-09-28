@@ -1,19 +1,19 @@
 ---
 title: 效能調整網路介面卡
 description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a0d87f2e8c9b3ca7581d20009cd9c0e030241270
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e9c0ba73a1df874edc63001812d059a9e70f187f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871889"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405528"
 ---
 # <a name="performance-tuning-network-adapters"></a>效能調整網路介面卡
 

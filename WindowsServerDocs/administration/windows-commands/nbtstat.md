@@ -1,8 +1,8 @@
 ---
 title: nbtstat
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e670b1490f1c4c54b8cf377d48755849faa16f8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bd9148c922ac97e83b3b21bcb8b6585775505bf2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437127"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373325"
 ---
 # <a name="nbtstat"></a>nbtstat
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示 NetBIOS over TCP/IP (NetBT) 通訊協定統計資料、 本機電腦和遠端電腦的 NetBIOS 名稱資料表和 NetBIOS 名稱的快取。 **nbtstat**可讓重新整理的 NetBIOS 名稱快取以及註冊使用 Windows 網際網路名稱服務 (WINS) 的名稱。 不含參數， **nbtstat**顯示說明。 
+顯示 NetBIOS over TCP/IP （NetBT）通訊協定統計資料、本機電腦和遠端電腦的 NetBIOS 名稱表，以及 NetBIOS 名稱快取。 **nbtstat**允許重新整理 NetBIOS 名稱快取，以及使用 Windows 網際網路名稱服務（WINS）註冊的名稱。 使用時不含參數， **nbtstat**會顯示說明。 
 
 ## <a name="syntax"></a>語法
 
@@ -36,99 +36,99 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 |    參數    |                                                                                                                         描述                                                                                                                         |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /a <remoteName> |    顯示遠端電腦的 NetBIOS 名稱資料表所在*remoteName*是遠端電腦的 NetBIOS 電腦名稱。 NetBIOS 名稱表格是對應至該電腦上執行的 NetBIOS 應用程式清單中的 NetBIOS 名稱。     |
-| /A <IPaddress>  |                                                           顯示遠端電腦的 IP 位址 （在小數點十進位表示法） 所指定的遠端電腦的 NetBIOS 名稱資料表。                                                            |
-|       /c        |                                                                        顯示內容的 netbios 命名快取、 NetBIOS 名稱的資料表和其已解析的 IP 位址。                                                                         |
-|       /n        |                                            顯示本機電腦的 NetBIOS 名稱資料表。 狀態**註冊**表示已經註冊名稱，透過廣播或 WINS 伺服器。                                             |
-|       /r        |      顯示 NetBIOS 名稱解析的統計資料。 在執行 Windows XP 或 Windows Server 2003 設定為使用 WINS 的電腦，此參數會傳回已解決的名稱的數目和已註冊使用廣播和 WINS。       |
-|       /R        |                                                                      清除的 NetBIOS 名稱快取內容，然後再重新載入 # 預先 tagged 項目**Lmhosts**檔案。                                                                      |
-|       /RR       |                                                                           釋出，然後更新 WINS 伺服器已註冊在本機電腦的 NetBIOS 名稱。                                                                            |
-|       /s        |                                                                          會顯示 NetBIOS 用戶端和伺服器工作階段，嘗試將轉換的目的地 IP 位址的名稱。                                                                           |
-|       /S        |                                                                          會顯示 NetBIOS 用戶端和伺服器工作階段，根據目的地 IP 位址只列出在遠端電腦。                                                                          |
-|   <Interval>    | 會重新顯示所選的統計資料，暫停中指定的秒數*間隔*每部顯示器之間。 按下 CTRL + C 來停止重新統計資料。 如果省略這個參數，則**nbtstat**列印目前的組態資訊一次。 |
+| /a <remoteName> |    顯示遠端電腦的 NetBIOS 名稱資料表，其中*remoteName*是遠端電腦的 netbios 電腦名稱稱。 NetBIOS 名稱資料表是對應于該電腦上執行之 NetBIOS 應用程式的 NetBIOS 名稱清單。     |
+| /A <IPaddress>  |                                                           顯示遠端電腦的 NetBIOS 名稱表，由遠端電腦的 IP 位址（小數點十進位標記法）所指定。                                                            |
+|       /c        |                                                                        顯示 NetBIOS 名稱快取的內容、NetBIOS 名稱的資料表及其已解析的 IP 位址。                                                                         |
+|       /n        |                                            顯示本機電腦的 NetBIOS 名稱表。 [**已註冊**] 狀態表示此名稱是透過廣播或 WINS 伺服器註冊。                                             |
+|       /r        |      顯示 NetBIOS 名稱解析統計資料。 在執行 Windows XP 或 Windows Server 2003 且設定為使用 WINS 的電腦上，此參數會傳回已解析並使用 [廣播] 和 [WINS] 註冊的名稱數目。       |
+|       /R        |                                                                      清除 NetBIOS 名稱快取的內容，然後重載**Lmhosts**檔案中 #PRE 標記的專案。                                                                      |
+|       /RR       |                                                                           發行並重新整理已向 WINS 伺服器註冊之本機電腦的 NetBIOS 名稱。                                                                            |
+|       /s        |                                                                          顯示 NetBIOS 用戶端和伺服器會話，並嘗試將目的地 IP 位址轉換成名稱。                                                                           |
+|       /S        |                                                                          顯示 NetBIOS 用戶端和伺服器會話，僅根據目的地 IP 位址列出遠端電腦。                                                                          |
+|   <Interval>    | 重新顯示選取的統計資料，並暫停每個顯示器之間*間隔*中所指定的秒數。 按 CTRL + C 停止重新重新加入統計資料。 如果省略此參數， **nbtstat**只會列印一次目前的設定資訊。 |
 |       /?        |                                                                                                            在命令提示字元顯示說明。                                                                                                             |
 
 ## <a name="remarks"></a>備註
 
 -   **nbtstat**命令列參數會區分大小寫。
 
--   下表描述所產生的資料行標題**nbtstat**:
+-   下表描述由**nbtstat**產生的資料行標題：
 
     |朝向|描述|
     |------|--------|
     |Input|已接收的位元組數目。|
-    |輸出|傳送的位元組數目。|
-    |輸入/輸出|連接是否從 （輸出） 的電腦或從本機電腦的另一部電腦 （輸入）。|
-    |生命週期|名稱資料表快取項目會存留在之前的剩餘時間則在清除。|
-    |區域名稱|與連接相關聯的本機 NetBIOS 名稱。|
-    |遠端主機|名稱或 IP 位址與遠端的電腦相關聯。|
-    |<03>|NetBIOS 名稱的最後一個位元組轉換為十六進位。 每個 NetBIOS 名稱是 16 個字元。 此最後一個位元組會經常有特殊意義，因為相同的名稱可能會出現數次的電腦上，只有不同的最後一個位元組。 例如，< 20 > 是以 ASCII 文字的空間。|
-    |type|名稱類型。 名稱可以是唯一的名稱或群組名稱。|
-    |狀態|是否在遠端電腦上的 NetBIOS 服務正在執行 （登錄） 或重複的電腦名稱已註冊相同的服務 （衝突）。|
-    |State|NetBIOS 連線的狀態。|
+    |Output|已傳送的位元組數目。|
+    |輸入/輸出|連線是從電腦（輸出）還是從另一部電腦連接到本機電腦（輸入）。|
+    |現實|名稱資料表快取專案在清除前存留的剩餘時間。|
+    |區功能變數名稱稱|與連接相關聯的本機 NetBIOS 名稱。|
+    |遠端主機|與遠端電腦相關聯的名稱或 IP 位址。|
+    |< 03 >|轉換成十六進位之 NetBIOS 名稱的最後一個位元組。 每個 NetBIOS 名稱長度為16個字元。 最後一個位元組通常具有特殊的重要性，因為相同的名稱可能會出現在電腦上數次，但只有最後一個位元組不同。 例如，< 20 > 是 ASCII 文字中的空格。|
+    |型別|名稱的類型。 名稱可以是唯一的名稱或組名。|
+    |狀態|遠端電腦上的 NetBIOS 服務是否正在執行（已註冊）或重複的電腦名稱稱已註冊相同的服務（衝突）。|
+    |State|NetBIOS 連接的狀態。|
 
--   下表說明可能的 NetBIOS 連線狀態：
+-   下表描述可能的 NetBIOS 連接狀態：
 
     |State|描述|
     |-----|--------|
-    |已連線|已建立工作階段。|
-    |相關聯|「 連線 」 端點已建立並相關聯的 IP 位址。|
-    |接聽|此端點可供輸入的連線。|
-    |閒置|此端點已經開啟，但不能接收的連線。|
-    |連接|工作階段是在連接階段中，而且正在解析目的地的名稱到 IP 位址對應。|
-    |接受|傳入的工作階段目前接受，並將在短時間內連線。|
-    |重新連線|工作階段會嘗試重新連線 （它第一次嘗試連接失敗）。|
-    |輸出|工作階段是在連接階段中，目前正在建立 TCP 連線。|
-    |輸入|傳入的工作階段是在連接階段中。|
-    |中斷連線|工作階段正在中斷連接。|
-    |Disconnected|在本機電腦發出中斷連接，它正在等待從遠端系統的確認。|
+    |已連線|已建立會話。|
+    |與|已建立連接端點，並與 IP 位址相關聯。|
+    |接聽|此端點適用于輸入連線。|
+    |閒置|已開啟此端點，但無法接收連接。|
+    |到|會話在連線階段中，而目的地的名稱與 IP 位址對應已被解析。|
+    |接受|目前已接受傳入會話，很快就會連接。|
+    |正在|會話嘗試重新連線（第一次嘗試連接失敗）。|
+    |輸出|會話正在連接階段，而且目前正在建立 TCP 連線。|
+    |輸入|輸入會話在連接階段。|
+    |斷開|會話正在中斷連接的過程中。|
+    |Disconnected|本機電腦已發出中斷連線，而且正在等候遠端系統的確認。|
 
--   此命令才會提供網際網路通訊協定 (TCP/IP) 通訊協定安裝為在 網路連線的網路介面卡的內容中的元件。
+-   只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
 
-## <a name="BKMK_Examples"></a>範例
-若要顯示電腦的 NetBIOS 名稱 CORP07 的遠端電腦的 NetBIOS 名稱表格，請輸入：
+## <a name="BKMK_Examples"></a>典型
+若要顯示 NetBIOS 電腦名稱稱為 CORP07 之遠端電腦的 NetBIOS 名稱資料表，請輸入：
 
 ```
 nbtstat /a CORP07
 ```
 
-若要顯示指派 10.0.0.99 的 IP 位址的遠端電腦的 NetBIOS 名稱表格，請輸入：
+若要顯示指派給 IP 位址為10.0.0.99 的遠端電腦的 NetBIOS 名稱表，請輸入：
 
 ```
 nbtstat /A 10.0.0.99
 ```
 
-若要顯示本機電腦的 NetBIOS 名稱資料表，請輸入：
+若要顯示本機電腦的 NetBIOS 名稱表，請輸入：
 
 ```
 nbtstat /n
 ```
 
-若要顯示本機電腦 NetBIOS 名稱快取的內容，請輸入：
+若要顯示本機電腦的 NetBIOS 名稱快取內容，請輸入：
 
 ```
 nbtstat /c
 ```
 
-若要清除的 NetBIOS 名稱快取，然後重新載入 # 預先 tagged 的項目，在本機的 Lmhosts 檔案中，輸入：
+若要清除 NetBIOS 名稱快取，並在本機 Lmhosts 檔案中重載 #PRE 標記的專案，請輸入：
 
 ```
 nbtstat /R
 ```
 
-若要釋放登錄至 WINS 伺服器的 NetBIOS 名稱，並重新註冊它們，請輸入：
+若要釋放向 WINS 伺服器註冊的 NetBIOS 名稱並重新註冊，請輸入：
 
 ```
 nbtstat /RR
 ```
 
-若要顯示的 IP 位址每隔五秒 NetBIOS 工作階段統計資料，請輸入：
+若要每隔五秒以 IP 位址顯示 NetBIOS 會話統計資料，請輸入：
 
 ```
 nbtstat /S 5
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [命令列語法關鍵](command-line-syntax-key.md)
 

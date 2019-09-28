@@ -1,8 +1,8 @@
 ---
-title: bitsadmin gethttpmethod
-description: 適用於 Windows 命令主題**bitsadmin gethttpmethod** -取得用來使用的 HTTP 動詞命令。
+title: bitsadmin getHTTPmethod
+description: 適用于**bitsadmin getHTTPmethod**的 Windows 命令主題-取得要使用的 HTTP 指令動詞。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 7f34e9e22fbb8051f9d8595cf5d54573344459c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8b5b933d402ff5b621cc6073a54f34b5d3095533
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861619"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381564"
 ---
-# <a name="bitsadmin-gethttpmethod"></a>bitsadmin gethttpmethod
+# <a name="bitsadmin-gethttpmethod"></a>bitsadmin getHTTPmethod
 
-取得要使用的 HTTP 動詞命令。
+取得要使用的 HTTP 指令動詞。
 
 ## <a name="syntax"></a>語法
 

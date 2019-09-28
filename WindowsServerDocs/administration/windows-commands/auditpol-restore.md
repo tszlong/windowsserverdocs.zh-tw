@@ -1,8 +1,8 @@
 ---
-title: auditpol 還原
-description: 適用於 Windows 命令主題**auditpol 還原**-從語法一致使用逗號分隔的檔案還原系統稽核原則設定，每個使用者稽核原則設定，為所有使用者及所有的稽核選項/backup 所使用的值 (CSV) 檔案格式選項。
+title: auditpol restore
+description: '**Auditpol restore**的 Windows 命令主題-還原系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及與逗號分隔值（CSV）檔案格式一致之檔案中的所有審核選項由/備份選項使用。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1961387083a8a61b27f3e44a2380a6060a02f98
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b91f3745354c695c4ab0c71b429718bff05d8098
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868979"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382406"
 ---
-# <a name="auditpol-restore"></a>auditpol 還原
+# <a name="auditpol-restore"></a>auditpol restore
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-從檔案 /backup 所使用的逗號分隔值 (CSV) 檔案格式與語法一致還原系統稽核原則設定，每個使用者稽核原則設定，所有使用者和所有的稽核選項的選項。
+針對所有使用者，還原系統稽核原則設定、每個使用者的稽核原則設定，以及與/備份選項所使用之逗號分隔值（CSV）檔案格式一致的檔案中所有的審核選項。
 
 ## <a name="syntax"></a>語法
 ```
@@ -33,15 +33,15 @@ auditpol /restore /file:<filename>
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|/file|指定應該從中還原的稽核原則的檔案。 該檔案必須已建立的使用 /backup 選項，或必須是語法配合 /backup 所使用的 CSV 檔案格式選項。|
+|/file|指定應該從中還原稽核原則的檔案。 檔案必須已經使用/備份選項建立，或必須與/備份選項所使用的 CSV 檔案格式一致。|
 |/?|在命令提示字元顯示說明。|
 ## <a name="remarks"></a>備註
-針對每位使用者的原則和系統原則的還原作業，您必須撰寫或該物件上的完全控制權限設定中的安全性描述元。 您也可以執行還原作業所擁有**管理稽核及安全性記錄**(SeSecurityPrivilege) 使用者權限。 發生意外的錯誤或惡意的攻擊時還原的安全性描述元時，適合使用 SeSecurityPrivilege。
-## <a name="BKMK_examples"></a>範例
-若要從名為 auditpolicy.csv 使用 /backup 所建立的檔案還原系統稽核原則設定，每個使用者稽核原則設定，所有使用者和所有的稽核選項的命令中，輸入：
+針對每個使用者原則和系統原則的還原作業，您必須在安全描述項中設定該物件的「寫入」或「完全控制」許可權。 您也可以透過擁有 [管理] [**審核及安全性記錄檔**] （SeSecurityPrivilege）使用者權限來執行還原作業。 在發生意外錯誤或惡意攻擊的情況中還原安全描述項時，SeSecurityPrivilege 會很有用。
+## <a name="BKMK_examples"></a>典型
+若要針對所有使用者還原系統稽核原則設定、每個使用者的稽核原則設定，以及使用/備份命令所建立之名為 auditpolicy 之檔案中的所有審核選項，請輸入：
 ```
 auditpol /restore /file:c:\auditpolicy.csv
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[auditpol 備份](auditpol-backup.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+[auditpol backup](auditpol-backup.md)

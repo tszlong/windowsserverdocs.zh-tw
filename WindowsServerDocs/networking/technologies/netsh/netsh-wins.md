@@ -1,43 +1,43 @@
 ---
 title: 網路 Shell (Netsh) 範例批次檔
-description: 您可以使用本主題以了解如何建立執行 Windows Server 2016 中使用 Netsh 的多個工作批次檔。
-ms.prod: windows-server-threshold
+description: 您可以使用本主題來瞭解如何建立批次檔，以在 Windows Server 2016 中使用 Netsh 執行多項工作。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: c94e37a4-3637-4613-9eb5-ed604e831eca
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b0528cfaef201ba30e00e30f56a763be39a6b828
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 86fbe66978f7c09a332bba16a27a13fa029cb5a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880169"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401912"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>網路殼層\(Netsh\)範例批次檔
+# <a name="network-shell-netsh-example-batch-file"></a>網路命令介面 \(Netsh @ no__t-1 範例批次檔
 
 適用於：Windows Server 2016
 
-您可以使用本主題以了解如何建立 Windows Server 2016 中使用 Netsh 來執行多個工作批次檔。 在這個範例批次檔中， **netsh wins**會使用內容。
+您可以使用本主題來瞭解如何使用 Windows Server 2016 中的 Netsh，建立執行多項工作的批次檔。 在此範例批次檔中，會使用**netsh wins**內容。
 
-## <a name="example-batch-file-overview"></a>範例批次檔概觀
+## <a name="example-batch-file-overview"></a>範例批次檔總覽
 
-您可以使用 Windows 網際網路名稱服務的 Netsh 命令\(WINS\)批次檔和其他自動化工作的指令碼中。 下列批次檔範例示範如何使用 WINS 的 Netsh 命令執行的各種相關的工作。
+您可以在批次檔和其他腳本中，使用 Windows 網際網路名稱服務的 Netsh 命令 \(WINS @ no__t-1 來自動化工作。 下列批次檔範例示範如何使用適用于 WINS 的 Netsh 命令來執行各種相關的工作。
 
-在這個範例批次檔，贏得\-A 是 WINS 伺服器 IP 位址 192.168.125.30 與 WINS\-B 是 WINS 伺服器 IP 位址 192.168.0.189。
+在此範例批次檔中，WINS @ no__t-0A 是具有 IP 位址192.168.125.30 的 WINS 伺服器，而 WINS @ no__t-1B 是 IP 位址為192.168.0.189 的 WINS 伺服器。
 
 範例批次檔會完成下列工作。
 
-- 加入動態的名稱記錄 IP 位址 192.168.0.205，MY\_記錄\[04 h\]，到 WINS\-A
-- 設定 WINS\-B 為推播/提取複寫夥伴的 WINS\-A
-- 連接到 WINS\-B，然後按一下 設定 WINS\-WINS 的推播/提取複寫協力電腦 A\-B
-- 起始從 WINS 推入複寫\-A 到 WINS\-B
-- 連接到 WINS\-B 以確認新的記錄，MY\_記錄中，已成功複寫
+- 將具有 IP 位址192.168.0.205、MY @ no__t-0RECORD \[04h @ no__t-2 的動態名稱記錄新增至 WINS @ no__t-3A
+- 將 WINS @ no__t-0B 設定為 WINS @ no__t-1A 的推送/提取複寫協力電腦
+- 連接到 WINS @ no__t-0B，然後將 WINS @ no__t-1A 設定為 WINS @ no__t-2B 的推送/提取複寫協力電腦
+- 起始從 WINS @ no__t-0A 到 WINS @ no__t-1B 的推送複寫
+- 連接到 WINS @ no__t-0B，以確認已成功複寫新的記錄（MY @ no__t-1RECORD）
 
 ## <a name="netsh-example-batch-file"></a>Netsh 範例批次檔
 
-在下列範例的批次檔，包含註解的行前面加上"rem，"的備註。 Netsh 會忽略註解。
+在下列範例批次檔中，包含批註的程式列前面會加上 "rem"，以取得批註。 Netsh 會忽略批註。
 
     rem: Begin example batch file.
     
@@ -69,14 +69,14 @@ ms.locfileid: "59880169"
     
     rem 6. End example batch file.
 
-## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>中的範例批次檔使用 Netsh WINS 命令
+## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>範例批次檔中使用的 Netsh WINS 命令
 
-下列區段會列出**netsh wins**會在此範例程序的命令。
+下一節列出此範例程式中使用的**netsh wins**命令。
 
-- **伺服器**。 將目前的 WINS 命令\-列內容，以指定其名稱或 IP 位址的伺服器。
-- **新增名稱**。 登錄至 WINS 伺服器的名稱。
-- **新增夥伴**。 新增複寫協力電腦上的 WINS 伺服器。
-- **init 推播**。 初始並傳送至 WINS 伺服器的推入觸發程序。
-- **顯示名稱**。 會顯示在 WINS 伺服器資料庫中的特定記錄的詳細的資訊。  
+- **伺服器**。 將目前的 WINS 命令 @ no__t-0line 內容移至其名稱或 IP 位址所指定的伺服器。
+- **新增名稱**。 在 WINS 伺服器上註冊名稱。
+- **新增合作夥伴**。 在 WINS 伺服器上新增複寫協力電腦。
+- **init push**。 起始推播觸發程式，並將其傳送至 WINS 伺服器。
+- **顯示名稱**。 顯示 WINS 伺服器資料庫中特定記錄的詳細資訊。  
 
-如需詳細資訊，請參閱 <<c0> [ 網路殼層 (Netsh)](netsh.md)。
+如需詳細資訊，請參閱[Network Shell （Netsh）](netsh.md)。

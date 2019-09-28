@@ -1,7 +1,7 @@
 ---
 title: 部署 Nano Server
 description: 說明建立及部署自訂映像、套件、驅動程式、網域、角色及功能
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,12 +12,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e61844cfb04f95723fe9d08b9bd2e8b481714eea
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 34cb9a50fad7ea64cd8af5b893f5fbd5217a95e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66442218"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391855"
 ---
 # <a name="deploy-nano-server"></a>部署 Nano Server
 

@@ -1,18 +1,18 @@
 ---
 title: 偵測虛擬化環境中的瓶頸
 description: 如何偵測並解決可能的 Hyper-v 效能瓶頸
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a0d6d263b344cde412ee4dd3caa80305742d56e7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 53ec6159d177284773f17a05a37dd89184ef3c12
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866594"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370119"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>偵測虛擬化環境中的瓶頸
 
@@ -28,15 +28,15 @@ ms.locfileid: "70866594"
 
 您可以使用主機的下列效能計數器：
 
--   邏輯處理器使用率- \\hyper-v 虛擬機器邏輯處理器（\*）\\% 總執行時間
+-   邏輯處理器使用率-\\Hyper-V 虛擬機器邏輯處理器（\*） \\% 總執行時間
 
--   虛擬處理器使用率- \\hyper-v 虛擬處理器（\*）\\% 總執行時間
+-   虛擬處理器使用率-\\Hyper-V 虛擬處理器（\*） \\% 總執行時間
 
--   根虛擬處理器使用率- \\hyper-v 虛擬機器根虛擬處理器（\*）\\% 總執行時間
+-   根虛擬處理器使用率-\\Hyper-V 虛擬機器根虛擬處理器（\*） \\% 總執行時間
 
-如果**hyper-v 虛擬機器邏輯處理器（\_總計）\\% total Runtime**計數器超過 90%，則會多載主機。 您應該增加更多處理能力，或將部分虛擬機器移至不同的主機。
+如果**Hyper-v 虛擬機器邏輯處理器（@no__t 1Total） \\% Total Runtime**計數器大於 90%，則會多載主機。 您應該增加更多處理能力，或將部分虛擬機器移至不同的主機。
 
-如果所有虛擬處理器的**hyper-v 虛擬處理器（VM 名稱： VP x）\\% Total Runtime**計數器大於 90%，您應該執行下列動作：
+如果**hyper-v 虛擬處理器（VM 名稱： VP x） \\% Total Runtime**計數器大於 90% 的所有虛擬處理器，您應該執行下列動作：
 
 -   確認主機未超載
 
@@ -44,7 +44,7 @@ ms.locfileid: "70866594"
 
 -   將更多虛擬處理器指派給虛擬機器
 
-若為部分（而非全部）的虛擬處理器， **hyper-v 虛擬\\處理器（VM 名稱： VP x）% Total Runtime**計數器大於 90%，您應該執行下列動作：
+如果**hyper-v 虛擬處理器（VM 名稱： VP x） \\% Total Runtime**計數器大於 90% 的部分（而非全部）虛擬處理器，您應該執行下列動作：
 
 -   如果您的工作負載需要大量網路，您應該考慮使用 vRSS。
 
@@ -52,7 +52,7 @@ ms.locfileid: "70866594"
 
 -   如果您的工作負載需要大量儲存空間，您應該啟用虛擬 NUMA 並新增更多虛擬磁片。
 
-如果有 **\\** 部分（而非全部）虛擬處理器和處理器（x  **\\）% 插斷時間和處理器（x\\）% DPC time 的 hyper-v 虛擬機器根虛擬處理器（根 VP x）% Total Runtime 計數器超過 90%** 計數器大約會增加 [**根虛擬處理器（根 VP x）\\% Total Runtime** ] 計數器的值，您應該確定在網路介面卡上啟用 VMQ。
+如果**hyper-v 虛擬機器根虛擬處理器（根副總 x） \\% Total Runtime**計數器大於 90% 的部分（而非全部）虛擬處理器和**處理器（x） \\% 停機時間和處理器（x） \\% DPC time**計數器大約會加上**根虛擬處理器（根 VP x） \\% Total Runtime**計數器的值，您應該確定在網路介面卡上啟用 VMQ。
 
 ## <a name="memory-bottlenecks"></a>記憶體瓶頸
 

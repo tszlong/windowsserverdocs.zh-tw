@@ -1,19 +1,19 @@
 ---
 title: 資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 description: 資料夾重新導向、離線檔案和漫遊使用者設定檔技術的總覽。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c980cd9e7d96261ffe467f4d9da627e3c50102
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ae1b23244f141cd0806ee14d3c40117ba72aeebb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867241"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402055"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 

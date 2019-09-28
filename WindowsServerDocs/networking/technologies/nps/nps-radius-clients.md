@@ -1,86 +1,86 @@
 ---
 title: RADIUS 用戶端
-description: 本主題提供 Windows Server 2016 中的網路原則伺服器的 RADIUS 用戶端的概觀。
+description: 本主題概要說明 Windows Server 2016 中網路原則伺服器的 RADIUS 用戶端。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d3a09ac9-75f8-4f57-aab4-b0fdfe110118
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fdca45237d971c1b2e08443112b63d3ce77e4a2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1dfc1bb71d2800a8a9587e54147950dfd7fb371f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874309"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396003"
 ---
 # <a name="radius-clients"></a>RADIUS 用戶端
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-網路存取伺服器\(NAS\)是提供某種程度的大型網路存取權的裝置。 使用 RADIUS 基礎結構的 NAS 也是 RADIUS 用戶端，傳送連接要求及帳戶處理訊息到 RADIUS 伺服器進行驗證、 授權以及帳戶處理。
+網路存取伺服器 \(NAS @ no__t-1 是提供較大型網路存取層級的裝置。 使用 RADIUS 基礎結構的 NAS 也是 RADIUS 用戶端，將連線要求和帳戶處理訊息傳送至 RADIUS 伺服器，以進行驗證、授權和帳戶處理。
 
 >[!NOTE]
->用戶端電腦，例如膝上型電腦及其他執行用戶端作業系統的電腦不是 RADIUS 用戶端。 RADIUS 用戶端網路存取伺服器-例如無線存取點、 802.1 X 驗證交換器、 虛擬私人網路\(VPN\)伺服器和撥號伺服器-因為它們使用 RADIUS 通訊協定來與 RADIUS 通訊網路原則伺服器的伺服器\(NPS\)伺服器。
+>用戶端電腦（例如膝上型電腦和其他執行用戶端作業系統的電腦）不是 RADIUS 用戶端。 RADIUS 用戶端是網路存取伺服器，例如無線存取點、802.1 X 驗證交換器、虛擬私人網路 \(VPN @ no__t-1 部伺服器和撥號伺服器，因為它們使用 RADIUS 通訊協定與 RADIUS 伺服器（例如做為網路原則伺服器 \(NPS @ no__t-3 部伺服器。
 
-若要部署 NPS 為 RADIUS 伺服器或 RADIUS proxy，您必須在 NPS 中設定 RADIUS 用戶端。
+若要將 NPS 部署為 RADIUS 伺服器或 RADIUS proxy，您必須在 NPS 中設定 RADIUS 用戶端。
 
 ## <a name="radius-client-examples"></a>RADIUS 用戶端範例
 
 網路存取伺服器的範例如下：
 
-- 提供組織網路或網際網路的遠端存取連線的網路存取伺服器。 舉例來說，組織內部網路中執行 Windows Server 2016 作業系統和遠端存取服務的提供是傳統撥號或虛擬私人網路 (VPN) 遠端存取服務的電腦。
-- 提供使用無線為基礎的傳輸與接收技術的組織網路實體層存取的無線存取點。
-- 提供使用傳統 LAN 技術，例如乙太網路的組織網路實體層存取的參數。
-- RADIUS proxy，將連線要求轉送到 RADIUS 伺服器的 RADIUS proxy 設定的遠端 RADIUS 伺服器群組的成員。
+- 為組織網路或網際網路提供遠端存取連線的網路存取伺服器。 例如，執行 Windows Server 2016 作業系統的電腦和遠端存取服務，可提供傳統的撥號或虛擬私人網路（VPN）遠端存取服務給組織內部網路。
+- 無線存取點，使用以無線為基礎的傳輸與接收技術，為組織網路提供實體層存取。
+- 使用傳統 LAN 技術（例如 Ethernet）提供組織網路之實體層存取的交換器。
+- 將連線要求轉寄到 radius 伺服器（在 RADIUS proxy 上設定的遠端 RADIUS 伺服器群組的成員）的 RADIUS 代理程式。
 
-## <a name="radius-access-request-messages"></a>RADIUS Access-request 訊息
+## <a name="radius-access-request-messages"></a>RADIUS 存取要求訊息
 
-RADIUS 用戶端建立 RADIUS Access-request 訊息，並將其轉送到 RADIUS proxy 或 RADIUS 伺服器，或者將 Access-request 訊息到 RADIUS 伺服器，它們來自另一個 RADIUS 用戶端都已接收但本身尚未建立。
+RADIUS 用戶端會建立 RADIUS 存取要求訊息，並將它們轉送到 RADIUS proxy 或 RADIUS 伺服器，或將存取要求訊息轉送到已從其他 RADIUS 用戶端接收但尚未自行建立的 RADIUS 伺服器。
 
-RADIUS 用戶端不會執行驗證、 授權以及帳戶處理所處理 Access-request 訊息。 只有 RADIUS 伺服器會執行這些函式。
+RADIUS 用戶端不會藉由執行驗證、授權和帳戶管理來處理存取要求訊息。 只有 RADIUS 伺服器會執行這些功能。
 
-NPS 中，不過，可以設定為 RADIUS proxy 與 RADIUS 伺服器，同時，讓它處理一些 Access-request 訊息及轉送其他訊息。
+不過，NPS 可以同時設定為 RADIUS proxy 和 RADIUS 伺服器，以便處理一些存取要求訊息並轉送其他訊息。
 
 ## <a name="nps-as-a-radius-client"></a>NPS 做為 RADIUS 用戶端
 
-NPS 會扮演 RADIUS 用戶端，當您將它設定為 RADIUS proxy 將 Access-request 訊息轉送到其他 RADIUS 伺服器進行處理。 當您使用 NPS 做為 RADIUS proxy 時，下列的一般組態步驟所需：
+當您將 NPS 設定為 RADIUS proxy 以將存取要求訊息轉送到其他 RADIUS 伺服器進行處理時，NPS 會作為 RADIUS 用戶端。 當您使用 NPS 做為 RADIUS proxy 時，需要下列一般設定步驟：
 
-1. 網路存取伺服器，例如無線存取點與 VPN 伺服器，設定 NPS proxy 做為指定的 RADIUS 伺服器或驗證伺服器的 IP 位址。 這可讓網路存取伺服器，建立 Access-request 訊息根據資訊它們從存取用戶端，將訊息轉送到 NPS proxy 接收。
+1. 網路存取伺服器，例如無線存取點和 VPN 伺服器，會使用 NPS proxy 的 IP 位址做為指定的 RADIUS 伺服器或驗證服務器來設定。 這可讓網路存取伺服器根據從存取用戶端接收的資訊建立存取要求訊息，以將訊息轉送到 NPS proxy。
 
-2. 藉由新增每個網路存取伺服器的 RADIUS 用戶端設定 NPS proxy。 此組態步驟可讓 NPS proxy 從網路存取伺服器接收訊息，並在驗證期間與它們通訊。 此外，會設定 NPS proxy 上的連線要求原則，以指定哪些 Access-request 訊息轉送到一或多個 RADIUS 伺服器。 這些原則也會設定使用遠端 RADIUS 伺服器群組，告訴 NPS 將從網路存取伺服器接收的訊息傳送到何處。
+2. NPS proxy 是藉由新增每個網路存取伺服器做為 RADIUS 用戶端來設定。 此設定步驟可讓 NPS proxy 從網路存取伺服器接收訊息，並在驗證期間與它們通訊。 此外，NPS proxy 上的連線要求原則會設定為指定要轉送至一或多個 RADIUS 伺服器的存取要求訊息。 這些原則也會使用遠端 RADIUS 伺服器群組進行設定，告訴 NPS 從網路存取伺服器接收訊息的位置。
 
-3. NPS 或其他 RADIUS 伺服器，NPS proxy 上遠端 RADIUS 伺服器群組的成員會設定為從 NPS proxy 接收訊息。 這是藉由設定 NPS proxy 做為 RADIUS 用戶端來完成。
+3. Nps 或屬於 NPS proxy 上遠端 RADIUS 伺服器群組成員的其他 RADIUS 伺服器，會設定為接收來自 NPS proxy 的訊息。 這是藉由將 NPS proxy 設定為 RADIUS 用戶端來完成。
 
-## <a name="radius-client-properties"></a>RADIUS 用戶端內容
+## <a name="radius-client-properties"></a>RADIUS 用戶端屬性
 
-當您新增 RADIUS 用戶端至 NPS 設定透過 NPS 主控台，或透過使用 NPS 的 netsh 命令或 Windows PowerShell 命令時，您要設定 NPS 從網路存取伺服器接收 RADIUS Access-request 訊息或RADIUS proxy。
+當您透過 NPS 主控台將 RADIUS 用戶端新增至 NPS 設定，或透過使用 NPS 或 Windows PowerShell 命令的 netsh 命令時，您會設定 NPS 從網路存取伺服器接收 RADIUS 存取要求訊息，或RADIUS proxy。
 
 當您在 NPS 中設定 RADIUS 用戶端時，您可以指定下列屬性：
 
 ### <a name="client-name"></a>用戶端名稱
 
- RADIUS 用戶端，可讓您更輕鬆地找出 nps 使用 NPS 嵌入式管理單元或 netsh 命令時的易記名稱。
+ RADIUS 用戶端的易記名稱，可讓您在使用 nps 嵌入式管理單元或 NPS 的 netsh 命令時更容易識別。
 
 ### <a name="ip-address"></a>IP 位址
 
-網際網路通訊協定第 4 版\(IPv4\)位址或網域名稱系統\(DNS\) RADIUS 用戶端的名稱。
+網際網路通訊協定第4版 \(IPv4 @ no__t-1 位址或網域名稱系統 \(DNS @ no__t-3 RADIUS 用戶端的名稱。
 
-### <a name="client-vendor"></a>用戶端廠商
+### <a name="client-vendor"></a>用戶端-廠商
 
-RADIUS 用戶端的廠商。 否則，您可以使用 RADIUS 標準值的用戶端廠商。
+RADIUS 用戶端的廠商。 否則，您可以使用用戶端廠商的 RADIUS 標準值。
 
 ### <a name="shared-secret"></a>共用密碼
 
-做為 RADIUS 用戶端、 RADIUS 伺服器與 RADIUS proxy 之間密碼文字字串。 使用訊息驗證者屬性時，共用的密碼也會做為金鑰來加密 RADIUS 訊息。 此字串必須設定 RADIUS 用戶端與 NPS 嵌入式管理單元。
+在 RADIUS 用戶端、RADIUS 伺服器和 RADIUS proxy 之間用來作為密碼的文字字串。 使用 [訊息驗證者] 屬性時，也會使用共用密碼做為加密 RADIUS 訊息的金鑰。 此字串必須在 RADIUS 用戶端和 NPS 嵌入式管理單元中設定。
 
 ### <a name="message-authenticator-attribute"></a>訊息驗證者屬性
 
-RFC 2869，「 RADIUS 擴充功能，"Message Digest 5 中所述\(MD5\)整個 RADIUS 訊息的雜湊。 如果 RADIUS 訊息驗證者屬性，則它會驗證它。 如果驗證失敗，則會捨棄 RADIUS 訊息。 如果用戶端設定需要訊息驗證者屬性，並不存在，則會捨棄 RADIUS 訊息。 建議使用訊息驗證者屬性。
+在 RFC 2869 （「RADIUS 延伸」）中描述的訊息摘要 5 \(MD5 @ no__t-1 雜湊的整個 RADIUS 訊息。 如果 RADIUS 訊息驗證器屬性存在，就會進行驗證。 如果驗證失敗，則會捨棄 RADIUS 訊息。 如果用戶端設定需要 [訊息驗證者] 屬性，但它不存在，則會捨棄 RADIUS 訊息。 建議使用訊息驗證器屬性。
 
 >[!NOTE]
->就需要訊息驗證者屬性，而且依預設啟用，當您使用可延伸驗證通訊協定\(EAP\)驗證。 
+>當您使用可延伸的驗證通訊協定 \(EAP @ no__t-1 驗證時，[訊息驗證者] 屬性是必要的，而且預設為啟用。 
 
-如需 NPS 的詳細資訊，請參閱[網路原則伺服器 (NPS)](nps-top.md)。
+如需 NPS 的詳細資訊，請參閱[網路原則伺服器（NPS）](nps-top.md)。
 

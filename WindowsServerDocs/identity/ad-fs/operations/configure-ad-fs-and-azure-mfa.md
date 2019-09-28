@@ -7,14 +7,14 @@ author: billmath
 manager: mtillman
 ms.date: 01/28/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a5ee03e649ae570849c4a17aabb5761774dd2c1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d00092ee2cd4e6cc74d48e08ad5c316c2b309ab4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865616"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357874"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>使用 AD FS 將 Azure MFA 設定為驗證提供者
 
@@ -87,7 +87,7 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 >[!NOTE]
 >請確定已在伺服器陣列中的**所有**AD FS 伺服器上執行這些步驟。 如果您的伺服器陣列中有多部 AD FS 伺服器，您可以使用 Azure AD PowerShell 從遠端執行必要的設定。  
 
-### <a name="step-1-generate-a-certificate-for-azure-mfa-on-each-ad-fs-server-using-the-new-adfsazuremfatenantcertificate-cmdlet"></a>步驟 1：使用`New-AdfsAzureMfaTenantCertificate` Cmdlet 在每部 AD FS 伺服器上產生 Azure MFA 的憑證
+### <a name="step-1-generate-a-certificate-for-azure-mfa-on-each-ad-fs-server-using-the-new-adfsazuremfatenantcertificate-cmdlet"></a>步驟 1:使用`New-AdfsAzureMfaTenantCertificate` Cmdlet 在每部 AD FS 伺服器上產生 Azure MFA 的憑證
 
 您需要做的第一件事，就是產生憑證供 Azure MFA 使用。  這可以使用 PowerShell 來完成。  產生的憑證可以在 [本機電腦] 憑證存放區中找到，並以主體名稱標示，其中包含您 Azure AD 目錄的 TenantID。
 
@@ -98,7 +98,7 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 
 ![AD FS 和 MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA1.PNG)  
   
-### <a name="step-2-add-the-new-credentials-to-the-azure-multi-factor-auth-client-service-principal"></a>步驟 2：將新認證新增至 Azure 多因素驗證用戶端服務主體
+### <a name="step-2-add-the-new-credentials-to-the-azure-multi-factor-auth-client-service-principal"></a>步驟 2:將新認證新增至 Azure 多因素驗證用戶端服務主體
 
 為了讓 AD FS 伺服器能夠與 Azure 多因素驗證用戶端通訊，您必須將認證新增至 Azure 多因素驗證用戶端的服務主體。 使用`New-AdfsAzureMFaTenantCertificate` Cmdlet 產生的憑證將會作為這些認證。 請使用 PowerShell 來執行下列動作，以將新認證新增至 Azure 多因素驗證用戶端服務主體。  
 

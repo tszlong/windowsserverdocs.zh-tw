@@ -1,8 +1,8 @@
 ---
-title: ftp [send_1]
-description: '適用於 Windows 命令主題 * * *- '
+title: ftp send_1
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39423aff3c64f41c4fc0f8998484e6dcc38f822e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bd9f658b4fbfa5f6c9fa9a58fb0c524ad53627bc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438447"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375996"
 ---
-# <a name="ftp-send1"></a>ftp: send_1
+# <a name="ftp-send_1"></a>ftp： send_1
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將本機檔案複製到遠端電腦使用目前的檔案傳輸類型。   
+使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。   
 ## <a name="syntax"></a>語法  
 ```  
 send <LocalFile> [<remoteFile>]  
@@ -37,16 +37,16 @@ send <LocalFile> [<remoteFile>]
 | <remoteFile> | 指定要在遠端電腦上使用的名稱。 |
 
 ## <a name="remarks"></a>備註  
-- **傳送**命令等同於**放**命令。  
-- 如果*remoteFile*未指定，在指定的檔案*LocalFile*名稱。  
-  ## <a name="BKMK_Examples"></a>範例  
-  將本機檔案複製**test.txt**並將它命名**test1.txt**遠端電腦上。  
+- **Send**命令等同于**put**命令。  
+- 如果未指定*remoteFile* ，則會為檔案提供*LocalFile*名稱。  
+  ## <a name="BKMK_Examples"></a>典型  
+  複製本機檔案**test.txt** ，並在遠端電腦上將它命名為**test1. .txt** 。  
   ```  
   send test.txt test1.txt  
   ```  
-  將本機檔案複製**program.exe**到遠端電腦。  
+  將本機檔案**program**複製到遠端電腦。  
   ```  
   send program.exe  
   ```  
-  ## <a name="additional-references"></a>其他參考資料  
+  ## <a name="additional-references"></a>其他參考  
 - [命令列語法關鍵](command-line-syntax-key.md)  

@@ -1,6 +1,6 @@
 ---
 title: 檔案伺服器資源管理員 (FSRM) 概觀
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: brianlic
 ms.technology: storage
@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: 檔案伺服器 Resource Manager （FSRM）是一種工具，可讓您管理和分類 Windows Server 檔案伺服器上的資料。
-ms.openlocfilehash: 49e7731c9f1e0f312728894e99bc88b0391738d8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866952"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394174"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>檔案伺服器資源管理員 (FSRM) 概觀
 
@@ -88,7 +88,7 @@ ms.locfileid: "70866952"
                     System Reserved \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
         C                           \\?\Volume{8d3c9e8a-0000-0000-0000-501f00000000}\
        ```
-    2. 回到 [登錄編輯程式]，以滑鼠右鍵按一下**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**機碼，然後選取 [**新增** > **多字串值**]。
+    2. 回到 [登錄編輯程式]，以滑鼠右鍵按一下 [ **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** ] 機碼，然後選取 [**新增** > **多字串值**]。
     3. 將值`SkipUSNCreationForVolumes`命名為。
     4. 輸入您略過建立變更日誌之每個磁片區的路徑，並將每個路徑放在不同的行上。 例如:
 
@@ -98,7 +98,7 @@ ms.locfileid: "70866952"
         ```
 
         > [!NOTE] 
-        > 登錄編輯程式可能會告訴您它已移除空字串，並顯示此警告，您可以放心地忽略：*REG_MULTI_SZ 類型的資料不能包含空字串。登錄編輯程式將會移除所有找到的空字串。*
+        > 登錄編輯程式可能會告訴您它已移除空字串，並顯示此警告，您可以放心地忽略：類型為 REG_MULTI_SZ 的 @no__t 0Data 不能包含空字串。登錄編輯程式將會移除所有找到的空字串。*
 
 7. 啟動 SRMSVC 服務。 例如，在 PowerShell 會話中輸入`Start-Service SrmSvc`。
 

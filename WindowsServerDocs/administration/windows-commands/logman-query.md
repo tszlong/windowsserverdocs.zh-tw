@@ -1,8 +1,8 @@
 ---
 title: logman query
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e00e1ca7e6e090fd618af5b0ca2307bb573ab8c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6acf6cf5240dd59357f4c788577190699a354744
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437727"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374425"
 ---
 # <a name="logman-query"></a>logman query
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-查詢資料收集器或資料收集器設定屬性。  
+查詢資料收集器或資料收集器集合屬性。  
 
 ## <a name="syntax"></a>語法  
 ```  
@@ -36,22 +36,22 @@ logman query [providers|"Data Collector Set name"] [options]
 |--------------------|------------------------------------------------------------------------------|
 |         /?         |                       顯示即時線上說明。                       |
 | -s <computer name> |            在指定的遠端電腦上執行命令。             |
-|  -config <value>   |           指定包含命令選項的設定檔。            |
+|  -config <value>   |           指定包含命令選項的設定檔案。            |
 |    [-n] <name>     |                          目標物件的名稱。                          |
-|        -ets        | 請將命令傳送至事件追蹤工作階段中，直接，但不儲存，或排程。 |
+|        -ets        | 直接將命令傳送至事件追蹤會話，而不儲存或排程。 |
 
-## <a name="BKMK_examples"></a>範例  
-下列命令會列出所有資料收集器集合工具設定目標系統上。  
+## <a name="BKMK_examples"></a>典型  
+下列命令會列出目標系統上設定的所有資料收集器集合。  
 ```  
 logman query  
 ```  
-下列命令會列出包含在資料收集器集合工具 perf_log 資料收集器。  
+下列命令會列出包含在資料收集器集合中名為 perf_log 的資料收集器。  
 ```  
 logman query "perf_log"  
 ```  
-下列命令會列出所有可用的提供者的目標系統上的資料收集器。  
+下列命令會列出目標系統上所有可用的資料收集器提供者。  
 ```  
 logman query providers  
 ```  
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [logman](logman.md)  

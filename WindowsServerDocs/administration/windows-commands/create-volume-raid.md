@@ -1,8 +1,8 @@
 ---
-title: 建立磁碟區的 raid
-description: '適用於 Windows 命令主題 * * *- '
+title: 建立磁片區 raid
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca75dd9af441446081cb10743329eb8e42166c0c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5a3c13cb5b78ae3e771b461a35a7130a48e7ec01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434069"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378859"
 ---
-# <a name="create-volume-raid"></a>建立磁碟區的 raid
+# <a name="create-volume-raid"></a>建立磁片區 raid
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立 RAID\-5 磁碟區使用三個或多個指定的動態磁碟。  
+使用三個或多個指定的動態磁碟，建立 RAID @ no__t-05 磁片區。  
   
 > [!IMPORTANT]  
-> 無法在任何版本的 Windows Vista 中使用這個 DiskPart 命令。  
+> Windows Vista 的任何版本都無法使用此 DiskPart 命令。  
   
   
   
@@ -41,23 +41,23 @@ create volume raid [size=<n>] disk=<n>,<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 |           參數           |                                                                                                                                                                                                                                              描述                                                                                                                                                                                                                                              |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           size\=<n>           | 以 mb 為單位的磁碟空間數量\(MB\)的磁碟區佔據每個磁碟上。 如果未指定大小，最大的可能 RAID\-將建立 5 個磁碟區。 具有最小可用連續剩餘空間的磁碟的 RAID，以決定大小\-5 磁碟區和相同的空間量就會從每個磁碟配置。 在 RAID 中的可用磁碟空間實際數量\-5 磁碟區是合併的磁碟空間量小於因為同位檢查需要部分磁碟空間。 |
-| disk\=<n>,<n>,<n>\[,<n>,...\] |                                                                                                                                               動態磁碟，在其上建立 RAID\-5 磁碟區。 您需要至少三個動態磁碟，才能建立 RAID\-5 磁碟區。 相等的空間量**大小\=<n>** 配置每個磁碟上。                                                                                                                                                |
-|          align\=<n>           |                                                                                                                   對齊最接近對齊界限的所有磁碟區範圍。 多半搭配硬體 RAID 邏輯單元編號\(LUN\)陣列來改善效能。 *n*是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。                                                                                                                   |
-|             noerr             |                                                                                                                                                 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                                                                                                                                                  |
+|           size @ no__t-0 @ no__t-1           | 磁片區將在每個磁片上佔用的磁碟空間量（以 mb 為單位） \(MB @ no__t-1。 如果沒有指定大小，將會建立最大可能的 RAID @ no__t-05 磁片區。 具有最小可用連續可用空間的磁片，會決定 RAID @ no__t-05 磁片區的大小，並從每個磁片配置相同的空間量。 在 RAID @ no__t-05 磁片區中，可用磁碟空間的實際量小於磁碟空間的總和，因為同位檢查需要一些磁碟空間。 |
+| disk @ no__t-0 @ no__t-1，<n>，<n> @ no__t-4，<n>,... \] |                                                                                                                                               要在其上建立 RAID @ no__t-05 磁片區的動態磁碟。 您至少需要三個動態磁碟，才能建立 RAID @ no__t-05 磁片區。 在每個磁片上配置**大小等於 @ no__t-1 @ no__t-2**的空間量。                                                                                                                                                |
+|          align @ no__t-0 @ no__t-1           |                                                                                                                   將所有磁片區範圍對齊最接近的對齊界限。 通常用於硬體 RAID 邏輯單元編號 \(LUN @ no__t-1 陣列以改善效能。 *n*是從磁片開頭到最接近對齊界限的 \(kb @ no__t-2 kb 數。                                                                                                                   |
+|             noerr             |                                                                                                                                                 僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                                                                                                                                  |
   
 ## <a name="remarks"></a>備註  
   
--   建立磁碟區之後，焦點會自動移到新的磁碟區。  
+-   建立磁片區之後，焦點會自動移至新的磁片區。  
   
-## <a name="BKMK_examples"></a>範例  
-若要建立 RAID\-5 磁碟區的大小，使用 1、 2 和 3，類型的磁碟的 1000 mb:  
+## <a name="BKMK_examples"></a>典型  
+若要使用磁片1、2和3，建立大小為 1000 mb 的 RAID @ no__t-05 磁片區，請輸入：  
   
 ```  
 create volume raid size=1000 disk=1,2,3  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

@@ -1,8 +1,8 @@
 ---
 title: nslookup set class
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7953f450c17afdee849515f8d8945631a30f4b98
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 312b409490603fcb0ded63a78f3a2936f5216de1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436847"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372985"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 
 
 
-變更查詢類別。 此類別會指定通訊協定群組的資訊。
+變更查詢類別。 類別會指定資訊的通訊協定群組。
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +36,7 @@ set class=<Class>
 
 | 參數 |                                                                                                                                    描述                                                                                                                                    |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<類別 >  | 預設類別是 in。 以下列出有效的值，這個命令。</br>在：指定網際網路類別。</br>-混亂：指定的 Chaos 類別。</br>-HESIOD:指定 MIT Athena Hesiod 類別。</br>-任何：指定任何先前所列的萬用字元。 |
+| \<類別 >  | 預設類別是在中。 以下列出此命令的有效值。</br>在指定網際網路類別。</br>片指定混亂類別。</br>- HESIOD:指定 MIT Athena-io Hesiod 類別。</br>任何指定先前列出的任何萬用字元。 |
 |   {說明   |                                                                                                                                        ?}                                                                                                                                         |
 
 #### <a name="additional-references"></a>其他參考資料

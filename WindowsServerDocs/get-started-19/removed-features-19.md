@@ -2,7 +2,7 @@
 title: Windows Server 2019 中已移除或已計劃移除的功能
 description: 深入了解從 Windows Server 2019 起開始移除或計畫移除的特色與功能。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,18 +13,18 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 08/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6b6ac42c096c6c80404c2d650905e73da8a97a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 261023223b56e235320b7ad414fa91206420b1ed
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360845"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>從 Windows Server 2019 開始移除或計劃取代的功能
 
 >適用於：Windows Server Standard 2012 R2
 
-每個版本的 Windows Server 都會新增新特色與功能；我們有時也會移除特性與功能，這通常是因為我們新增了更好的選項。 以下是有關我們在 Windows Server 2019 中已移除的特色與功能詳細資訊。
+每個版本的 Windows Server 都會加入新特色與功能；我們有時也會移除特性與功能，這通常是因為我們新增了更好的選項。 以下是有關我們在 Windows Server 2019 中已移除的特色與功能詳細資訊。
 
 > [!TIP]
 > - 您可以加入 [Windows 測試人員計畫](https://insider.windows.com)來優先存取 Windows Server 組建，這是測試功能變更的絕佳方式。

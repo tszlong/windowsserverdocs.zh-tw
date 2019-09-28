@@ -1,8 +1,8 @@
 ---
 title: reg 匯入
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d1dd1b61848671b528c62fd22fe656e14fda7b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e1c7920a64469717c30cfcddda7b8002db5ba10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861839"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384729"
 ---
 # <a name="reg-import"></a>reg 匯入
 
 
 
-包含的檔案的內容複製到本機電腦的登錄，匯出登錄子機碼、 項目，以及值。
+將包含已匯出登錄子機碼、專案和值的檔案內容複寫到本機電腦的登錄中。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,21 +38,21 @@ Reg import FileName
 
 |參數|描述|
 |---------|-----------|
-|\<FileName>|指定包含要複製到本機電腦上的內容檔案的路徑與名稱。 必須事先建立此檔案，使用**reg 匯出**。|
-|/?|顯示的說明**reg 匯入**在命令提示字元。|
+|\<檔案名 >|指定檔案的名稱和路徑，該檔案包含要複製到本機電腦之登錄中的內容。 必須事先使用**reg export**建立此檔案。|
+|/?|在命令提示字元中顯示**reg 匯入**的說明。|
 
 ## <a name="remarks"></a>備註
 
-下表列出的傳回值**reg 匯入**作業。
+下表列出**reg 匯入**作業的傳回值。
 
 |值|描述|
 |-----|-----------|
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要從名為 AppBkUp.reg 檔案，匯入登錄項目，請輸入：
+若要從名為 AppBkUp 的檔案匯入登錄專案，請輸入：
 ```
 reg import AppBkUp.reg
 ```

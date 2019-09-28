@@ -1,24 +1,24 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
-title: 事件識別碼 2088-DNS 查閱失敗，發生複寫成功
+title: 事件識別碼 2088-複寫成功時發生 DNS 查閱失敗
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e0c5e838290a8ebf33f0f7891dc10f8b00e5bcba
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d51cbcc93a8decbcb72a1e91854a09345507511d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442655"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71368906"
 ---
-# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件識別碼 2088年:DNS 查閱失敗，發生複寫成功
+# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件識別碼2088：複寫成功時發生 DNS 查閱失敗
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
     
     <developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd">
@@ -42,43 +42,39 @@ ms.locfileid: "66442655"
     Active Directory Domain Services successfully replicated using the NetBIOS 
     or fully qualified computer name of the source domain controller. 
 
-無效的 DNS 設定可能會影響其他成員電腦、 網域控制站或此 Active Directory 網域服務樹系，包括登入驗證或存取網路資源的應用程式伺服器上的基本作業。 
+DNS 設定無效可能會影響成員電腦、網域控制站或此 Active Directory Domain Services 樹系中的應用程式伺服器上的其他必要作業，包括登入驗證或網路資源的存取。 
 
-您應該立即解決此 DNS 設定錯誤，好讓此網域控制站可以解析使用 DNS 的來源網域控制站的 IP 位址。 
+您應該立即解決此 DNS 設定錯誤，讓此網域控制站可以使用 DNS 來解析來源網域控制站的 IP 位址。 
 
-替代的伺服器名稱：DC1 容錯的 DNS 主機名稱：4a8717eb-8e58-456c-995a-c92e4add7e8e._msdcs.contoso.com 
+替代伺服器名稱：DC1 失敗的 DNS 主機名稱：4a8717eb-8e58-456c-995a-c92e4add7e8e. _msdcs. contoso .com 
 
-注意：根據預設，只有最多 10 個 DNS 失敗會顯示任何指定 12 小時，即使發生超過 10 個失敗。  若要記錄所有的個別失敗事件，設定下列診斷登錄值設為 1: 
+注意：根據預設，即使發生超過10次失敗，任何指定的12小時內，最多隻會顯示10個 DNS 失敗。  若要記錄所有個別失敗事件，請將下列診斷登錄值設定為1： 
 
-登錄路徑：HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC Client 
+登錄路徑：HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC 用戶端 
 
 使用者動作： 
 
-1) 如果來源網域控制站不再運作或其作業系統重新安裝使用不同的電腦名稱或 NTDSDSA 物件 GUID，移除來源網域控制站的中繼資料，使用 ntdsutil.exe，MSKB 文章中所述的步驟216498。 
+1) 如果來源網域控制站已不再正常運作，或其作業系統已使用不同的電腦名稱稱或 NTDSDSA 物件 GUID 重新安裝，請使用 MSKB 文章中所述的步驟，移除來源網域控制站的中繼資料與 ntdsutil.exe216498。 
 
-2) 確認來源網域控制站正在執行 Active Directory，而且是可存取網路上，輸入"net 檢視\\&lt;來源 DC 名稱&gt;"或"ping&lt;來源 DC 名稱&gt;"。 
+2) 確認來源網域控制站正在執行 Active Directory 且可在網路上存取，方法是輸入 "net view \\ @ no__t-1source DC name @ no__t-2" 或 "ping &lt;source DC name @ no__t-4"。 
 
-3) 確認來源網域控制站會使用有效的 DNS 伺服器，DNS 服務和來源網域控制站的主機記錄和 CNAME 記錄正確註冊，請使用 DCDIAG 的 DNS 增強型版本。上可用的 EXE <https://www.microsoft.com/dns> 
+3) 請確認來源網域控制站使用 DNS 服務的有效 DNS 伺服器，而且來源網域控制站的主機記錄和 CNAME 記錄已正確登錄，並使用 DNS 增強版的 DCDIAG。@No__t 上可用的 EXE-0 
 
-dcdiag /test:dns 
+dcdiag/test： dns 
 
-4) 確認此目的地網域控制站使用有效的 DNS 伺服器的 DNS 服務，執行 DCDIAG 的 DNS 增強型版本。在主控台中，如下所示的目的地網域控制站的 EXE 命令： 
+4) 藉由執行 DNS 增強版的 DCDIAG，確認這個目的地網域控制站使用 DNS 服務的有效 DNS 伺服器。在目的地網域控制站的主控台上執行 EXE 命令，如下所示： 
 
-dcdiag /test:dns 
+dcdiag/test： dns 
 
-5) 以便進一步分析 DNS 錯誤失敗，請參閱 KB 824449: <https://support.microsoft.com/?kbid=824449> 
+5) 如需 DNS 錯誤失敗的進一步分析，請參閱 KB 824449： <https://support.microsoft.com/?kbid=824449> 
 
-其他資料錯誤值：11004 要求的名稱有效，但找不到要求類型的任何資料</code> </introduction>
+其他資料錯誤值：11004要求的名稱有效，但找不到所要求類型的資料 @ no__t-0 </introduction>
   <section>
-    <title>診斷</title>
-    <content>
-      <para>無法解析在 DNS 中使用的別名 (CNAME) 資源記錄的來源網域控制站名稱可能是因為 DNS 設定錯誤或 DNS 資料傳播延遲。</para>
+    <title>Diagnosis @ no__t-1 @ no__t-2 @ no__t-3<para>若無法使用 DNS 中的別名（CNAME）資源記錄來解析來源網域控制站名稱，可能是因為 dns 的錯誤或 DNS 資料傳播中的延遲所致。</para>
     </content>
   </section>
   <section>
-    <title>解決方式</title>
-    <content>
-      <para>繼續進行 DNS 測試中所述&quot;<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">事件識別碼 2087年:DNS 查閱失敗造成複寫失敗</link>。&quot;</para>
+    <title>Resolution @ no__t-1 @ no__t-2 @ no__t-3<para>如 &quot; @ no__t-1Event ID 2087 中所述繼續進行 DNS 測試：DNS 查閱失敗導致複寫失敗 @ no__t-0。 &quot;</para>
     </content>
   </section>
   <relatedTopics />

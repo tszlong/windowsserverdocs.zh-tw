@@ -1,8 +1,8 @@
 ---
-title: 建立
-description: '適用於 Windows 命令主題 * * *- '
+title: create
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cccf47a38fc61cdb225a44c08ba7d68d21b4fc3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 25c3b87ef4d7d929185481c79156c754466b788b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433967"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378845"
 ---
-# <a name="create"></a>建立
+# <a name="create"></a>create
 
 
 
-在磁碟上，一或多個磁碟或虛擬硬碟 (VHD) 上的磁碟區建立磁碟分割。
+在磁片上、一或多個磁片上的磁片區，或虛擬硬碟（VHD）上建立分割區。
 
 ## <a name="syntax"></a>語法
 

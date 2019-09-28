@@ -1,9 +1,9 @@
 ---
 title: 新增 DNS 資源記錄
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 本主題是 Windows Server 2016 中 IP 位址管理（IPAM）管理指南的一部分。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,66 +12,66 @@ ms.topic: article
 ms.assetid: 5379373f-a3d9-4f51-b6fc-bf0f6df1d244
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 36773525187229e498b9addf4b1e6532fd413701
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: f8fd9974ad1670ae4106c5c38470fa51b53cf4f5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282316"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405730"
 ---
 # <a name="add-a-dns-resource-record"></a>新增 DNS 資源記錄
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題使用 IPAM 用戶端主控台，新增一或多個新的 DNS 資源記錄。  
+您可以使用此主題，利用 IPAM 用戶端主控台新增一或多個新的 DNS 資源記錄。  
   
 若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。  
   
-### <a name="to-add-a-dns-resource-record"></a>若要新增的 DNS 資源記錄  
+### <a name="to-add-a-dns-resource-record"></a>新增 DNS 資源記錄  
   
-1.  在 [伺服器管理員] 中，按一下**IPAM**。 IPAM 用戶端主控台隨即出現。  
+1.  在伺服器管理員中，按一下 [ **IPAM**]。 IPAM 用戶端主控台隨即出現。  
   
-2.  在 [導覽] 窗格中，在**監視與管理**，按一下**DNS 區域**。  瀏覽窗格會分割成上方瀏覽窗格和下方的瀏覽窗格中。  
+2.  在流覽窗格的 [**監視及管理**] 中，按一下 [ **DNS 區域**]。  流覽窗格會分割成上方流覽窗格和較低的流覽窗格。  
   
-3.  在下方瀏覽窗格中，按一下**正向對應**。 在顯示窗格搜尋結果中，會顯示所有受 IPAM 管理 DNS 正向對應區域。 以滑鼠右鍵按一下您要新增資源記錄，然後再按的區域**新增 DNS 資源記錄**。  
+3.  在下方的流覽窗格中，按一下 [**正向查閱**]。 所有 IPAM 管理的 DNS 正向對應區域都會顯示在顯示窗格的搜尋結果中。 在您要新增資源記錄的區域上按一下滑鼠右鍵，然後按一下 [**新增 DNS 資源記錄**]。  
   
     ![新增 DNS 資源記錄](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_01.jpg)
   
-4.  **新增 DNS 資源記錄**對話方塊隨即開啟。 在 **資源記錄的內容**，按一下**DNS 伺服器**選取您要新增一或多個新的資源記錄的 DNS 伺服器。 在 **設定的 DNS 資源記錄**，按一下**新增**。  
+4.  [**新增 DNS 資源記錄**] 對話方塊隨即開啟。 在 [**資源記錄**內容] 中，按一下 [ **dns 伺服器**]，然後選取您要新增一或多個新資源記錄的 dns 伺服器。 在 [**設定 DNS 資源記錄**] 中，按一下 [**新增**]。  
   
     ![設定 DNS 資源記錄](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_02.jpg)  
   
-5.  此對話方塊會展開以顯示**新的資源記錄**。 按一下 **資源記錄類型**。  
+5.  對話方塊會展開以顯示**新的資源記錄**。 按一下 [**資源記錄類型**]。  
   
     ![資源記錄類型](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_03.jpg)  
   
-6.  資源記錄類型的清單隨即顯示。 按一下您想要新增的資源記錄類型。  
+6.  資源記錄類型的清單隨即顯示。 按一下您要新增的資源記錄類型。  
   
     ![選取要新增的記錄類型](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_04.jpg)  
   
-7.  在 **新的資源記錄，** 中**名稱**，輸入資源記錄名稱。 在  **IP 位址**，輸入 IP 位址，然後選取 適用於您部署的資源記錄屬性。 按一下 **將資源記錄新增**。  
+7.  在 [**新增資源記錄**] 的 [**名稱**] 中，輸入資源記錄名稱。 在 [ **Ip 位址**] 中，輸入 ip 位址，然後選取適用于您的部署的資源記錄屬性。 按一下 [**新增資源記錄**]。  
   
     ![新增資源記錄](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_06.jpg)  
   
-8.  如果您不想要建立其他新的資源記錄，請按一下**確定**。 如果您想要建立其他新的資源記錄，請按一下**新增**。  
+8.  如果您不想要建立其他新的資源記錄，請按一下 **[確定]** 。 如果您想要建立其他新的資源記錄，請按一下 [**新增**]。  
   
-    ![按一下 OK 或 新增](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_01.jpg)
+    ![按一下 [確定] 或 [新增]](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_01.jpg)
   
-9. 此對話方塊會展開以顯示**新的資源記錄**。 按一下 **資源記錄類型**。 資源記錄類型的清單隨即顯示。 按一下您想要新增的資源記錄類型。  
+9. 對話方塊會展開以顯示**新的資源記錄**。 按一下 [**資源記錄類型**]。 資源記錄類型的清單隨即顯示。 按一下您要新增的資源記錄類型。  
   
-10. 在 **新的資源記錄，** 中**名稱**，輸入資源記錄名稱。 在  **IP 位址**，輸入 IP 位址，然後選取 適用於您部署的資源記錄屬性。 按一下 **將資源記錄新增**。  
+10. 在 [**新增資源記錄**] 的 [**名稱**] 中，輸入資源記錄名稱。 在 [ **Ip 位址**] 中，輸入 ip 位址，然後選取適用于您的部署的資源記錄屬性。 按一下 [**新增資源記錄**]。  
   
     ![新增資源記錄](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_02.jpg)  
   
-11. 如果您想要新增更多的資源記錄，請重複此程序建立記錄。 當您完成建立新的資源記錄之後時，按一下**套用**。  
+11. 如果您想要新增更多資源記錄，請重複建立記錄的程式。 當您完成建立新的資源記錄時，**按一下 [** 套用]。  
   
-    ![完整的資源記錄的建立](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_03.jpg)  
+    ![完成建立資源記錄](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_03.jpg)  
   
-12. **新增資源記錄** 對話方塊中顯示的資源記錄摘要，在 IPAM 建立您所指定的 DNS 伺服器上的資源記錄。 已成功建立記錄，當**狀態**記錄的已**成功**。  
+12. [**新增資源記錄**] 對話方塊會顯示資源記錄摘要，而 IPAM 會在您指定的 DNS 伺服器上建立資源記錄。 成功建立記錄時，記錄的**狀態**會是 [**成功**]。  
   
-    ![資料錄加入狀態](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_04.jpg)  
+    ![記錄新增狀態](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_04.jpg)  
   
-13. 按一下 [確定]  。  
+13. 按一下 [確定]。  
   
 ## <a name="see-also"></a>另請參閱  
 [DNS 資源記錄管理](DNS-Resource-Record-Management.md)  

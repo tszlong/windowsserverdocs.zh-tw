@@ -2,18 +2,18 @@
 title: 磁碟管理概觀
 description: '[磁碟管理] 是 Windows 中的系統公用程式，可讓您執行進階儲存體工作，例如將新磁碟機初始化、延伸磁碟區、壓縮磁碟分割及變更磁碟機代號。'
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812544"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402150"
 ---
 # <a name="overview-of-disk-management"></a>磁碟管理概觀
 

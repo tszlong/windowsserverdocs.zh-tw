@@ -1,97 +1,97 @@
 ---
-title: 疑難排解-Fiddler-WS-同盟的 AD FS
-description: 本文件說明 WS-同盟 exchange 與 AD FS 的深入的追蹤
+title: AD FS 疑難排解-Fiddler-WS-FEDERATION
+description: 本檔顯示 WS-同盟交換與 AD FS 的深入追蹤
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: be1c9f466ec13272d10f0fb9ca31cf326a1ec29a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d263f48aadff7c77cba44a2328d472ebbe5dfbbf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846899"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407217"
 ---
-# <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>疑難排解-Fiddler-WS-同盟的 AD FS
+# <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>AD FS 疑難排解-Fiddler-WS-FEDERATION
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler9.png)
 
-## <a name="step-1-and-2"></a>步驟 1 和 2
-這是我們追蹤的開頭。  在此框架中我們看到下列項目： ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler1.png)
+## <a name="step-1-and-2"></a>步驟1和2
+這是我們追蹤的開端。  在此畫面中，我們看到下列內容： ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler1.png)
 
-要求：
+邀請
 
-- HTTP GET 為我們信賴憑證者的合作對象 （ http://sql1.contoso.com/SampApp)
+- 信賴憑證者的 HTTP GET （ http://sql1.contoso.com/SampApp)
 
-回應：
+回應
 
-- 回應是 HTTP 302 （重新導向）。  傳輸資料，回應標頭中的顯示為 （重新導向的位置 https://sts.contoso.com/adfs/ls)
-- 重新導向 URL 包含 wa = wsignin 1.0 告訴我們，我們的 RP 應用程式有沒有針對我們所建置的 WS-同盟登入要求，如此傳送至 AD FS 的 adfs/oauth2//ls/端點。  這稱為重新導向繫結。
+- 回應是 HTTP 302 （重新導向）。  回應標頭中的傳輸資料會顯示要重新導向至何處（ https://sts.contoso.com/adfs/ls)
+- [重新導向 URL] 包含 wa = wsignin1.0 1.0，告訴我們 RP 應用程式已為我們建立 WS-同盟登入要求，並將其傳送至 AD FS 的/adfs/ls/端點。  這就是所謂的重新導向系結。
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler2.png)
 
-## <a name="step-3-and-4"></a>步驟 3 和 4
+## <a name="step-3-and-4"></a>步驟3和4
 
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler3.png)
 
-要求：
+邀請
 
-- HTTP GET 至我們的 AD FS server(sts.contoso.com)
+- AD FS 伺服器的 HTTP GET （sts .com）
 
-回應：
+回應
 
-- 回應是認證的提示。  這表示，我們使用表單進行
-- 按一下 web 回應的檢視中，您可以看到提示的認證。
+- 回應是認證的提示。  這表示我們使用表單 authnetication
+- 按一下回應的 [Web 工作]，您就可以看到認證提示。
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler6.png)
 
-## <a name="step-5-and-6"></a>步驟 5 和 6
+## <a name="step-5-and-6"></a>步驟5和6
 
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler4.png)
 
-要求：
+邀請
 
-- 我們的使用者名稱和密碼的 HTTP POST。  
-- 我們會提供我們的認證。  藉由查看要求的原始資料中，我們可以看到認證
+- 包含使用者名稱和密碼的 HTTP POST。  
+- 我們會提供認證。  藉由查看要求中的原始資料，我們可以看到認證
 
-回應：
+回應
 
-- 發現和 MSIAuth 加密的 cookie 會建立並傳回回應。  這用來驗證用戶端所產生的 SAML 判斷提示。  這就是所謂的 「 驗證 cookie"，並將只會出現 AD FS 時的 Idp。
+- 找到回應，並會建立並傳回 MSIAuth 加密的 cookie。  這是用來驗證用戶端所產生的 SAML 判斷提示。  這也稱為「驗證 cookie」，只有在 AD FS 為 Idp 時才會出現。
 
 
-## <a name="step-7-and-8"></a>步驟 7 和 8
+## <a name="step-7-and-8"></a>步驟7和8
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler5.png)
 
-要求：
+邀請
 
-- 既然我們已通過驗證我們 AD FS 伺服器的另一個 HTTP GET 作業，並提供我們的驗證權杖
+- 現在我們已驗證過，我們會對 AD FS 伺服器執行另一個 HTTP GET，並出示我們的驗證權杖
 
-回應：
+回應
 
-- 回應是 HTTP OK 表示 AD FS 已經驗證讓使用者根據提供的認證
-- 此外，我們設定了 3 個 cookie 傳回給用戶端
-    - MSISAuthenticated 包含用戶端驗證時的 base64 編碼的時間戳記值。
-    - 在同盟伺服器無限重新導向迴圈中有最後停止用戶端的 AD FS 無限迴圈偵測機制會使用 MSISLoopDetectionCookie。 Cookie 資料是 base64 編碼的時間戳記。
-    - MSISSignout 用來追蹤的 IdP，而且所有 RPs 瀏覽都過的 SSO 工作階段。 WS-同盟登出會叫用時，會使用此 cookie。 您可以看到使用 base64 解碼器此 cookie 的內容。
+- 回應是 HTTP OK，表示 AD FS 已根據提供的認證來驗證使用者
+- 此外，我們也將3個 cookie 設定回用戶端
+    - MSISAuthenticated 包含以 base64 編碼的時間戳記值，適用于用戶端已驗證時。
+    - AD FS 的無限迴圈偵測機制會使用 MSISLoopDetectionCookie，以停止在同盟伺服器上最後進入無限重新導向迴圈的用戶端。 Cookie 資料是以 base64 編碼的時間戳記。
+    - MSISSignout 是用來追蹤 IdP 和所有已造訪 SSO 會話的 RPs。 叫用 WS-同盟登出時，會使用此 cookie。 您可以使用 base64 解碼器來查看此 cookie 的內容。
     
-## <a name="step-9-and-10"></a>步驟 9 和 10
+## <a name="step-9-and-10"></a>步驟9和10
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler7.png) 要求：
 
 - HTTP POST
 
-回應：
+回應
 
-- 回應是找到
+- 回應是找到的
 
-## <a name="step-11-and-12"></a>步驟 11 和 12
+## <a name="step-11-and-12"></a>步驟11和12
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler8.png) 要求：
 
 - HTTP GET
 
-回應：
+回應
 
-- 回應是 [確定]
+- 回應正常
 
 ## <a name="next-steps"></a>後續步驟
 
-- [疑難排解 AD FS](ad-fs-tshoot-overview.md)
+- [AD FS 疑難排解](ad-fs-tshoot-overview.md)

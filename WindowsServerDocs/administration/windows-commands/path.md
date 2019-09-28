@@ -1,8 +1,8 @@
 ---
 title: path
-description: 了解如何設定 PATH 環境變數。
+description: 瞭解如何設定 PATH 環境變數。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a637abc91dd3342afb3a2723d1b3a835be149122
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 81e8441e7c67e42bdf929e703c8fe780a6f8aff8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436325"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372418"
 ---
 # <a name="path"></a>path
 
 
 
-設定命令路徑在 PATH 環境變數 （用來搜尋可執行檔的目錄集）。 如果未指定參數，使用**路徑**顯示目前的命令路徑。
+設定 PATH 環境變數中的命令路徑（用來搜尋可執行檔的目錄集合）。 如果在沒有參數的情況下使用， **path**會顯示目前的命令路徑。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -39,24 +39,24 @@ path ;
 
 |     參數     |                                                                                                     描述                                                                                                      |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive>:]<Path> |                                                                            指定的磁碟機和目錄中的命令路徑設定。                                                                             |
-|         ;         | 區隔中的命令路徑的目錄。 如果未指定其他參數，使用 **;** 清除現有的命令路徑，從 PATH 環境變數，並指示只在目前的目錄中搜尋的 Cmd.exe。 |
-|      %PATH%       |                                                         將命令路徑附加至現有的 PATH 環境變數中所列的目錄集合中。                                                         |
+| [\<Drive >：] <Path> |                                                                            指定要在命令路徑中設定的磁片磁碟機和目錄。                                                                             |
+|         ;         | 在命令路徑中分隔目錄。 如果使用時沒有其他參數，**則**會從 PATH 環境變數清除現有的命令路徑，並指示 cmd.exe 只在目前目錄中搜尋。 |
+|      路徑名       |                                                         將命令路徑附加到 PATH 環境變數中所列的現有目錄集。                                                         |
 |        /?         |                                                                                         在命令提示字元顯示說明。                                                                                         |
 
 ## <a name="remarks"></a>備註
 
--   當您包含 **%路徑 %** 在語法中，Cmd.exe 取代它在 PATH 環境變數中，找到的命令路徑值不需要手動輸入這些值，在命令提示字元。
--   命令路徑中指定的目錄之前一律搜尋目前的目錄。
--   您可能擁有的目錄中的檔案共用相同的檔案名稱，但有不同的副檔名。 比方說，您可能有一個名為 Accnt.com 啟動會計程式檔案和名為 Accnt.bat 將伺服器連線帳戶處理系統網路的另一個檔案。
+-   當您在語法中包含 **% PATH%** 時，cmd.exe 會將它取代為 path 環境變數中找到的命令路徑值，而不需要在命令提示字元中手動輸入這些值。
+-   在命令路徑中指定的目錄之前，一律會搜尋目前的目錄。
+-   您的目錄中可能有共用相同檔案名但具有不同副檔名的檔案。 例如，您可能會有一個名為 Accnt.com 的檔案，它會啟動一個會計程式，另一個名為 Accnt 的檔案，將您的伺服器連接到帳戶處理系統網路。
 
-    Windows 作業系統會搜尋檔案以下列順序的優先順序，使用預設檔案名稱副檔名：.exe、.com、.bat、 和。 cmd。 若要 Accnt.bat Accnt.com 已存在時執行相同的目錄中，您必須包含.bat 延伸模組，在命令提示字元。
--   如果命令路徑中的兩個或多個檔案有相同的檔案名稱與擴充功能中，**路徑**目前目錄中的第一個搜尋指定的檔案名稱。 然後它會搜尋目錄中的命令路徑，它們會列在 PATH 環境變數的順序。
--   如果您將放**路徑**命令在 Autoexec.nt 檔案中，Windows 作業系統會自動將附加指定的 MS-DOS 子系統搜尋路徑，每次登入您的電腦。 Cmd.exe 不會使用 Autoexec.nt 檔案。 從捷徑啟動時，Cmd.exe 便會繼承設定 我的電腦/屬性/進階/環境中的環境變數。
+    Windows 作業系統會依照下列優先順序，使用預設的副檔名來搜尋檔案： .exe、.com、.bat 和 .cmd。 當 Accnt.com 存在於相同的目錄時，若要執行 Accnt，您必須在命令提示字元中包含 .bat 副檔名。
+-   如果命令路徑中有兩個以上的檔案具有相同的檔案名和副檔名，**路徑**會先搜尋目前目錄中指定的檔案名。 然後，它會依照 PATH 環境變數中列出的順序，搜尋命令路徑中的目錄。
+-   如果您將**path**命令放在 Autoexec 檔案中，Windows 作業系統會在您每次登入電腦時，自動附加指定的 MS-DOS 子系統搜尋路徑。 Cmd.exe 不會使用 Autoexec 檔案。 從快捷方式啟動時，Cmd.exe 會繼承在我的電腦/Properties/Advanced/環境中設定的環境變數。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要搜尋的路徑，C:\User\Taxes、 B:\User\Invest 和 B:\Bin 外部命令，請輸入：
+若要搜尋路徑 C:\User\Taxes、B:\User\Invest 和 B:\Bin 中的外部命令，請輸入：
 
 `path c:\user\taxes;b:\user\invest;b:\bin`
 

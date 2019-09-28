@@ -2,7 +2,7 @@
 title: Windows Server 2019 和 Microsoft Server 應用程式相容性
 description: Windows Server 2019 和 Microsoft Server 應用程式的相容性表格
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,16 +13,16 @@ author: coreyp
 ms.author: coreyp-at-msft
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dcaff6ab8a296790158f59035bd4a5c1a093cbd
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 40c90b179321062949af5eea6d92f6238fb9b460
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66442377"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391995"
 ---
 # <a name="windows-server-2019-and-microsoft-server-application-compatibility"></a>Windows Server 2019 和 Microsoft Server 應用程式相容性
 
->適用於：Windows Server 2019
+>適用於：Windows Server Standard 2012 R2
 
 這個表格列出支援 Window Server 2019 安裝和功能的 Microsoft Server 應用程式。 這項資訊適用於快速參考，並不是要取代個別產品規格、需求、宣告或每個個別伺服器應用程式的一般通訊。 請參閱每項產品的官方文件，完全了解相容性和選項。
 

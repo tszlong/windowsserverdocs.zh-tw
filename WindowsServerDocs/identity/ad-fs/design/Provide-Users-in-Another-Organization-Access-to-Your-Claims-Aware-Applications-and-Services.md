@@ -7,43 +7,43 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4a13332cd7cf6361824f05ead4568a45211cc70a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: a0b2429599036f2893f23df7921a11c8232d9f67
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191024"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359075"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>為其他組織的使用者提供您的宣告感知應用程式與服務的存取權
 
 
-在 Active Directory Federation Services 資源夥伴組織中的系統管理員時\(AD FS\) ，而且您有部署目標是另一個組織中的使用者提供同盟的存取\(帳戶夥伴組織\)宣告\-感知應用程式或 Web\-型服務，它位於您的組織\(資源夥伴組織\):  
+當您是 Active Directory 同盟服務 @no__t 0AD FS @ no__t-1 的資源夥伴組織中的系統管理員，而且您的部署目標是要為另一個組織中的使用者提供同盟存取權 \(the 帳戶夥伴組織 @ no__t-3 至宣告 @ no__t-4aware 應用程式，或位於組織中的 Web @ no__t-5based 服務 \(the 資源夥伴組織 @ no__t-7：  
   
--   同盟組織中和在組織中人員已設定同盟信任您組織的使用者\(帳戶夥伴組織\)可以存取 AD FS 保護應用程式或服務所裝載的程式組織。 如需詳細資訊，請參閱 [Federated Web SSO Design](Federated-Web-SSO-Design.md)。  
+-   組織中和已設定同盟信任給組織的組織 @no__t 0account 夥伴組織 @ no__t-1，可以存取您組織所裝載的 AD FS 安全應用程式或服務。 如需詳細資訊，請參閱 [Federated Web SSO Design](Federated-Web-SSO-Design.md)。  
   
     例如，Fabrikam 可能想要其公司網路員工對於裝載於 Contoso 的 Web 服務具有同盟存取權。  
   
--   同盟與受信任的組織沒有直接關聯的使用者\(例如個別客戶\)，裝載在您的周邊網路中的屬性存放區登入可以存取多個 AD FS\-受保護應用程式，也裝載在您的周邊網路中的登入一次從用戶端電腦位於網際網路上。 換句話說，當您裝載客戶帳戶以存取周邊網路中的應用程式或服務時，您在屬性存放區中裝載的客戶只要登入一次，就可以存取周邊網路中的一或多個應用程式或服務。 如需詳細資訊，請參閱 [Web SSO Design](Web-SSO-Design.md)。  
+-   與受信任的組織沒有直接關聯的同盟使用者 @no__t 0such 為個別客戶 @ no__t-1 （登入周邊網路中裝載的屬性存放區），可以存取多個 AD FS @ no__t 2secured 應用程式，這也裝載在您的周邊網路中，方法是從位於網際網路的用戶端電腦登入一次。 換句話說，當您裝載客戶帳戶以存取周邊網路中的應用程式或服務時，您在屬性存放區中裝載的客戶只要登入一次，就可以存取周邊網路中的一或多個應用程式或服務。 如需詳細資訊，請參閱 [Web SSO Design](Web-SSO-Design.md)。  
   
-    例如，Fabrikam 可能想要客戶利用單一\-號\-上\(SSO\)存取多個應用程式或在其周邊網路中裝載的服務。  
+    例如，Fabrikam 可能會想要讓客戶擁有單一 @ no__t-0sign @ no__t-1on \(SSO @ no__t-3 存取裝載在其周邊網路中的多個應用程式或服務。  
   
 此部署目標需要下列元件：  
   
--   **Active Directory 網域服務\(AD DS\):** 資源夥伴同盟伺服器必須加入 Active Directory 網域。  
+-   **Active Directory Domain Services \(AD DS @ no__t-2：** 資源夥伴同盟伺服器必須加入 Active Directory 網域。  
   
--   **周邊網路 DNS：** 網域名稱系統\(DNS\)應該包含簡單的主機\(A\)資源記錄，以便用戶端電腦可以找到資源夥伴同盟伺服器和 Web 伺服器。 DNS 伺服器可以裝載周邊網路也需要的其他 DNS 記錄。 如需詳細資訊，請參閱 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   **周邊網路 DNS：** 網域名稱系統 \(DNS @ no__t-1 應包含簡單的主機 \(A @ no__t-3 資源記錄，讓用戶端電腦可以找到資源夥伴同盟伺服器和 Web 服務器。 DNS 伺服器可以裝載周邊網路也需要的其他 DNS 記錄。 如需詳細資訊，請參閱 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
--   **資源夥伴同盟伺服器：** 資源夥伴同盟伺服器會驗證帳戶夥伴傳送的 AD FS 權杖。 帳戶夥伴探索是透過此同盟伺服器執行。 如需詳細資訊，請參閱 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
+-   **資源夥伴同盟伺服器：** 資源夥伴同盟伺服器會驗證帳戶夥伴所傳送 AD FS 權杖。 帳戶夥伴探索是透過此同盟伺服器執行。 如需詳細資訊，請參閱 <<c0> [ 檢閱資源夥伴中的同盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   
 -   **Web 伺服器：** Web 伺服器可以裝載 Web 應用程式或 Web 服務。 Web 伺服器會先確認它從同盟使用者接收有效的 AD FS 權杖，才允許存取受保護的 Web 應用程式或 Web 服務。  
   
-    使用 Windows Identity Foundation \(WIF\)，您可以開發 Web 應用程式或服務，使其接受同盟使用者登入要求的任何標準登入方法，例如使用者名稱和密碼。  
+    藉由使用 Windows Identity Foundation \(WIF @ no__t-1，您可以開發 Web 應用程式或服務，讓它接受使用任何標準登入方法（例如使用者名稱和密碼）所提出的同盟使用者登入要求。  
   
-檢閱連結主題中的資訊之後，您可以開始部署此目標中的步驟[檢查清單：實作同盟的網頁 SSO 設計](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)和[檢查清單：實作網頁 SSO 設計](../../ad-fs/deployment/Checklist--Implementing-a-Web-SSO-Design.md)。  
+在查閱連結主題中的資訊之後，您可以遵循 [Checklist 中的步驟，開始部署此目標：執行同盟網頁 SSO 設計 @ no__t-0 和 @no__t 1Checklist：執行網頁 SSO 設計 @ no__t-0。  
   
-下圖顯示每個此 AD FS 部署目標所需的元件。  
+下圖顯示此 AD FS 部署目標的每個必要元件。  
   
 ![存取您的宣告](media/75358b16-2a6f-4e16-9cc4-b0e614480305.gif)  
   

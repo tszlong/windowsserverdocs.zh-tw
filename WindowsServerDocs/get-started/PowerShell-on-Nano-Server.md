@@ -1,7 +1,7 @@
 ---
 title: Nano Server 上的 PowerShell
 description: Nano Server 上縮減 PowerShell 功能的差異
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -11,12 +11,12 @@ ms.assetid: 9b25b939-1e2c-4bed-a8d3-2a8e8e46b53d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a19082121e2d859bc4694fd3f7332e9d0d0b3b9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: f662f1f48e903fac69c85185222c08954c5994a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63687649"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360262"
 ---
 # <a name="powershell-on-nano-server"></a>Nano Server 上的 PowerShell
 
@@ -29,8 +29,8 @@ ms.locfileid: "63687649"
   
 從 5.1 版開始，PowerShell 提供代表各種功能集和平台相容性的不同版本。  
   
-- **電腦版：** 建置在 .NET Framework 上，並與目標為完整版 Windows (Server Core 和 Windows Desktop 等) 上執行之 PowerShell 版本的指令碼和模組相容。  
-- **核心版：** 建置在 .NET Core 上，並與目標為縮減版 Windows (Nano Server 和 Windows IoT 等) 上執行之 PowerShell 版本的指令碼和模組相容。  
+- **Desktop Edition：** 建置在 .NET Framework 上，並與目標為完整版 Windows (Server Core 和 Windows Desktop 等) 上執行之 PowerShell 版本的指令碼和模組相容。  
+- **Core Edition：** 建置在 .NET Core 上，並與目標為縮減版 Windows (Nano Server 和 Windows IoT 等) 上執行之 PowerShell 版本的指令碼和模組相容。  
   
 $PSVersionTable 的 PSEdition 屬性會顯示正在執行的 PowerShell 版本。  
 ```powershell  

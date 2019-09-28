@@ -1,19 +1,19 @@
 ---
 title: 服務品質 (QoS) 原則
 description: 本主題提供「服務品質」（QoS）原則的總覽，讓您可以使用群組原則來設定 Windows Server 2016 中特定應用程式和服務的網路流量頻寬優先順序。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 16918506-102c-482e-89d3-004ad8d6aabe
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8f139f047218c4c8da3a462206d4541c1fc255ec
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 429c38d93c2c5c0053153d538304767c8261229c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871856"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395863"
 ---
 # <a name="quality-of-service-qos-policy"></a>服務\(品質 QoS\)原則
 

@@ -7,26 +7,26 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 49798f785fe02b5a97fd8bd979c327b86c9ddef2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd265fecce06b849bd14d4d6b81503aba7311656
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874219"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390069"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 發行
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明 RID 主機 FSMO 角色的變更，包括 RID 主機中新的發行和監督功能，以及如何分析和疑難排解 RID 發行。  
   
 -   [管理 RID 發行](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Manage)  
   
--   [疑難排解 RID 發行](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
+-   [針對 RID 發行進行疑難排解](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
   
-詳細的資訊位於[AskDS 部落格](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)。  
+如需詳細資訊，請[請參閱 askds 的 Blog](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)。  
   
 ## <a name="BKMK_Manage"></a>管理 RID 發行  
 根據預設，網域有約 10 億個安全性主體 (例如使用者、群組及電腦) 的容量。 當然，沒有一個網域有那麼多正在使用的物件。 不過，Microsoft 客戶支援服務卻發現以下情況：  
@@ -45,7 +45,7 @@ ms.locfileid: "59874219"
   
 上述這些情況都造成 RID 不必要的浪費 長期以來，有一些環境因用完了 RID 而被迫移轉至新網域或執行樹系復原。  
   
-Windows Server 2012 可解決隨 Active Directory 的成熟發展和普遍性而益發嚴重的 RID 配置問題。 其中包括更好的事件記錄、 更適當的限制，以及能夠在發生緊急狀況-網域的全域 RID 空間整體大小的兩倍。  
+Windows Server 2012 可解決隨 Active Directory 的成熟發展和普遍性而益發嚴重的 RID 配置問題。 其中包括更好的事件記錄、更適當的限制，以及能夠在緊急情況下，讓網域的全域 RID 空間的整體大小加倍。  
   
 ### <a name="periodic-consumption-warnings"></a>定期消耗警告  
 Windows Server 2012 新增了全域 RID 空間事件追蹤，可在越過主要里程碑時提供早期的警告。 此模型會計算全域集區中使用了 10% 的標記，並在達到時記錄一個事件。 然後它會計算剩餘部分下一個使用了 10% 的標記，事件週期也會繼續。 隨著全域 RID 空間耗盡，減少的集區中的事件將因為更快達到 10% 而加速 (但事件記錄檔抑制功能會防止每小時超過 1 個項目)。 記錄在網域控制站中的系統事件會寫入 Directory-Services-SAM 警告事件 16658 中。  
@@ -55,7 +55,7 @@ Windows Server 2012 新增了全域 RID 空間事件追蹤，可在越過主要�
 > [!IMPORTANT]  
 > 此事件並非預期事件；請立即調查網域中的使用者、電腦和群組建立程序。 建立上億個 AD DS 物件並不正常。  
   
-![RID 的發行](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)  
+![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)  
   
 ### <a name="rid-pool-invalidation-events"></a>RID 集區失效事件  
 有新的事件會警示本機 DC RID 集區已被捨棄。 這些是參考事件，並且可以預期，尤其是因為新的 VDC 功能時。 如需事件的詳細資訊，請參閱下列事件清單。  
@@ -75,7 +75,7 @@ RID Block Size
   
 如果該值設為*超過* 15,000，會將該值視為 15,000，而網域控制站會在每次重新開機時在目錄服務中記錄事件 16653，一直到該值更正為止。  
   
-### <a name="BKMK_GlobalRidSpaceUnlock"></a>解除全域 RID 空間大小限制  
+### <a name="BKMK_GlobalRidSpaceUnlock"></a>全域 RID 空間大小解除鎖定  
 在 Windows Server 2012 之前，全域 RID 空間大小限制為 2<sup>30</sup> (或共 1,073,741,823 個 RID)。 一旦達到此限制，只能移轉網域或將樹系復原到早期允許新建 SID 的時間範圍內，亦即用盡一切方法執行災難復原。 自 Windows Server 2012 起，已可解除 2<sup>31</sup> 位元大小的限制，以將全域集區增加到 2,147,483,648 個 RID。  
   
 AD DS 將此設定儲存在所有網域控制站的 RootDSE 內容內一個名為 **SidCompatibilityVersion** 的特殊隱藏屬性中。 這個屬性無法透過 ADSIEdit、LDP 或其他工具來讀取。 如果要查看全域 RID 空間是否增加，請自 Directory-Services-SAM 檢查系統事件記錄檔中是否有警告事件 16655，或使用下列 Dcdiag 命令：  
@@ -85,9 +85,9 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
   
 ```  
   
-如果您增加全域 RID 集區，可用的集區將變為 2,147,483,647，而非預設的 1,073,741,823。 例如:   
+如果您增加全域 RID 集區，可用的集區將變為 2,147,483,647，而非預設的 1,073,741,823。 例如:  
   
-![RID 的發行](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)  
+![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)  
   
 > [!WARNING]  
 > 解除這項限制*僅*是為了防止 RID 用完，而且*僅*能與「RID 上限強制」方法 (請參閱下一節) 一起使用。 請勿在還有數百萬個剩餘的 RID 且消耗速度慢的環境中先行設定此最大值，因為從解除大小限制的 RID 集區中產生的 SID 可能存在著應用程式相容性問題。  
@@ -95,7 +95,7 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
 > 除非是將樹系完整復原到較早的備份，否則這項解除大小限制作業無法還原或取消。  
   
 #### <a name="important-caveats"></a>重要的注意事項  
-Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域 RID 集區第 <sup>31</sup> 個位元的大小限制後發行 RID。 Windows Server 2008 R2 網域控制站*可以*使用 31<sup>st</sup>個位元 Rid*但僅限*它們有 hotfix [KB 2642658](https://support.microsoft.com/kb/2642658)安裝。 不支援和未更新的網域控制站在解除大小限制時會將全域 RID 集區視為耗盡。  
+Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域 RID 集區第 <sup>31</sup> 個位元的大小限制後發行 RID。 Windows Server 2008 R2 網域控制站*可以*使用 31<sup>St</sup>位的 rid，*但只有*在已安裝修補程式[KB 2642658](https://support.microsoft.com/kb/2642658)的情況。 不支援和未更新的網域控制站在解除大小限制時會將全域 RID 集區視為耗盡。  
   
 此功能不是由任何網域功能等級強制實行；請特別注意只有 Windows Server 2012 或更新的 Windows Server 2008 R2 網域控制站存在網域中。  
   
@@ -112,7 +112,7 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
   
 5.  確認 [DN] 為空白。  
   
-6.  在 **編輯項目屬性**，型別：  
+6.  在 [**編輯專案] 屬性**中，輸入：  
   
     ```  
     SidCompatibilityVersion  
@@ -128,7 +128,7 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
   
 9. 選取 [同步] 和 [延伸] 選項，然後按一下 [執行]。  
   
-    ![RID 的發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)  
+    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)  
   
 10. 如果成功，LDP 輸出視窗會顯示：  
   
@@ -139,7 +139,7 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
   
     ```  
   
-    ![RID 的發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)  
+    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)  
   
 11. 檢查該網域控制站上系統事件記錄檔的 Directory-Services-SAM 資訊事件 16655，確認全域 RID 集區已增加。  
   
@@ -154,7 +154,7 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
   
 一旦觸發時，RID 主機會將物件上的 Active Directory 屬性 [msDS-RIDPoolAllocationEnabled] (一般名稱 [ms-DS-RID-Pool-Allocation-Enabled]) 設為 FALSE：  
   
-CN=RID Manager$,CN=System,DC=*<domain>*  
+CN = RID 管理員 $，CN = System，DC = *<domain>*  
   
 這會寫入 16657 事件，並防止另外的 RID 區塊發行到所有網域控制站。 網域控制站會繼續使用已發行給它們的任何待處理的 RID 集區。  
   
@@ -189,7 +189,7 @@ CN=RID Manager$,CN=System,DC=*<domain>*
   
 9. 啟用 [同步] 和 [延伸] 選項，然後按一下 [執行]：  
   
-    ![RID 的發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)  
+    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)  
   
 10. 如果成功，LDP 輸出視窗會顯示：  
   
@@ -200,10 +200,10 @@ CN=RID Manager$,CN=System,DC=*<domain>*
   
     ```  
   
-    ![RID 的發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)  
+    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)  
   
 ### <a name="other-rid-fixes"></a>其他 RID 修正  
-舊版的 Windows Server 作業系統在遺失 rIDSetReferences 屬性時會發生 RID 集區流失。 若要解決此問題在執行 Windows Server 2008 R2 網域控制站上的，安裝的 hotfix[知識庫文章 2618669](https://support.microsoft.com/kb/2618669)。  
+舊版的 Windows Server 作業系統在遺失 rIDSetReferences 屬性時會發生 RID 集區流失。 若要在執行 Windows Server 2008 R2 的網域控制站上解決此問題，請從[KB 2618669](https://support.microsoft.com/kb/2618669)安裝此修補程式。  
   
 ### <a name="unfixed-rid-issues"></a>未修正的 RID 問題  
 過去在帳戶建立失敗時，往往會導致 RID 流失；在建立帳戶時，即使失敗仍會用掉一個 RID。 常見的範例為使用不符合複雜性的密碼建立使用者。  
@@ -211,12 +211,12 @@ CN=RID Manager$,CN=System,DC=*<domain>*
 ### <a name="rid-fixes-for-earlier-versions-of-windows-server"></a>舊版的 Windows Server 的 RID 修正  
 上述所有修正和變更包含在已發行的 Windows Server 2008 R2 Hotfix 中。 目前沒有計劃中或進行中的 Windows Server 2008 Hotfix。  
   
-## <a name="BKMK_Tshoot"></a>疑難排解 RID 發行  
+## <a name="BKMK_Tshoot"></a>針對 RID 發行進行疑難排解  
   
 ### <a name="introduction-to-troubleshooting"></a>疑難排解簡介  
 RID 發行的疑難排解需要邏輯與線性方法。 除非您正在仔細監視事件記錄檔中 RID 觸發的警告與錯誤，否則您發生問題的第一個指標可能會是帳戶建立失敗。 疑難排解 RID 發行的重點是了解當時的徵兆是否為預期的徵兆；許多 RID 發行問題可能只會影響一個網域控制站，而與元件改良無關。 下面這張簡單的圖表有助於更清楚說明這些決策：  
   
-![RID 的發行](media/Managing-RID-Issuance/adds_rid_issuance_troubleshooting.png)  
+![RID 發行](media/Managing-RID-Issuance/adds_rid_issuance_troubleshooting.png)  
   
 ### <a name="troubleshooting-options"></a>疑難排解選項  
   
@@ -244,7 +244,7 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
   
 3.  傳回的錯誤是否明確提及 RID，但其他方面卻不明確？ 例如，「 Windows 無法建立物件，因為目錄服務無法配置相關的識別元。 」  
   
-    1.  檢查 「 舊版 」 (用於 Windows Server 2012) 的網域控制站的系統事件記錄檔中的 RID 事件詳述[RID 集區要求](https://technet.microsoft.com/library/ee406152(WS.10).aspx)（16642、 16643、 16644、 16645、 16656）。  
+    1.  檢查網域控制站上的系統事件記錄檔，以取得[Rid 集區要求](https://technet.microsoft.com/library/ee406152(WS.10).aspx)（16642、16643、16644、16645、16656）中詳述的「舊版」（Windows Server 2012 之前） rid 事件。  
   
     2.  檢查網域控制站上的系統事件與 RID 主機是否有詳細記載於本主題下方的新區塊指標事件 (16655、16656、16657)。  
   
@@ -258,7 +258,7 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 |事件識別碼|16653|  
 |Source|Directory-Services-SAM|  
 |Severity|警告|  
-|訊息|系統管理員設定的帳戶識別元 (RID) 的集區大小超過支援的最大值。 當網域控制站是 RID 主機時，將使用最大值 %1。<br /><br />如需詳細資訊，請參閱 [RID 區塊大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。|  
+|Message|系統管理員設定的帳戶識別元 (RID) 的集區大小超過支援的最大值。 當網域控制站是 RID 主機時，將使用最大值 %1。<br /><br />如需詳細資訊，請參閱 [RID 區塊大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。|  
 |注意事項與解決方法|RID 區塊大小的最大值現在是 15000 十進位 (3A98 十六進位)。 網域控制站無法要求 15000 個以上的 RID。 此事件會在每次開機時記錄，直到此值設為等於或低於此最大值為止。|  
   
 |||  
@@ -266,7 +266,7 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 |事件識別碼|16654|  
 |Source|Directory-Services-SAM|  
 |Severity|資訊|  
-|訊息|帳戶識別碼 (RID) 集區成為無效。 在下列預期情況中可能會發生此問題：<br /><br />1.網域控制站是從備份還原的。<br /><br />2.在虛擬機器上執行的網域控制站是從快照還原的。<br /><br />3.系統管理員已手動將集區設定為無效。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=226247。|  
+|Message|帳戶識別碼 (RID) 集區成為無效。 在下列預期情況中可能會發生此問題：<br /><br />1.網域控制站是從備份還原的。<br /><br />2.在虛擬機器上執行的網域控制站是從快照還原的。<br /><br />3.系統管理員已手動將集區設定為無效。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=226247 。|  
 |注意事項與解決方法|如果此事件是非預期的，請連絡所有網域系統管理員，確定由誰執行了動作。 目錄服務事件記錄檔也包含這些步驟的其中之一是在何時執行時的詳細資訊。|  
   
 |||  
@@ -274,7 +274,7 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 |事件識別碼|16655|  
 |Source|Directory-Services-SAM|  
 |Severity|資訊|  
-|訊息|帳戶識別元 (RID) 的全域最大值已增加至 %1。|  
+|Message|帳戶識別元 (RID) 的全域最大值已增加至 %1。|  
 |注意事項與解決方法|如果此事件是非預期的，請連絡所有網域系統管理員，確定由誰執行了動作。 此事件會記錄整體的 RID 集區大小增加到超過預設值 2<sup>30</sup>，但不會自動記錄；需由系統管理員指定。|  
   
 |||  
@@ -282,15 +282,15 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 |事件識別碼|16656|  
 |Source|Directory-Services-SAM|  
 |Severity|警告|  
-|訊息|帳戶識別元 (RID) 的全域最大值已增加至 %1。|  
-|注意事項與解決方法|需要採取動作！ 帳戶識別元 (RID) 集區已配置給此網域控制站。 集區值指示這個網域耗用了可用的帳戶識別元總數中相當大的一部分。<br /><br />當網域達到下列可用帳戶識別元總數剩餘的臨界值時，將會啟用保護機制: %1。  直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610。|  
+|Message|帳戶識別元 (RID) 的全域最大值已增加至 %1。|  
+|注意事項與解決方法|需要採取動作！ 帳戶識別元 (RID) 集區已配置給此網域控制站。 集區值指示這個網域耗用了可用的帳戶識別元總數中相當大的一部分。<br /><br />當網域達到下列可用帳戶識別碼總計的閾值時，將會啟用保護機制：% 1。  直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
   
 |||  
 |-|-|  
 |事件識別碼|16657|  
 |Source|Directory-Services-SAM|  
-|Severity|錯誤|  
-|訊息|需要採取動作！ 這個網域耗用了可用的帳戶識別元 (RID) 總數中相當大的一部分。 保護機制已經啟用，因為剩餘的可用帳戶識別元總數小於：X% [人為設定的上限引數]。<br /><br />直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<br /><br />重要的是，在重新啟用帳戶建立功能之前必須執行某些診斷，以確保此網域不會以異常高的速率耗用帳戶識別元。 在重新啟用帳戶建立功能之前，應先解決發現的任何問題。<br /><br />未能診斷和修正導致帳戶識別元以異常高的速率消耗的相關問題，可能會導致網域中的帳戶識別元耗盡，因而使這個網域中的帳戶建立功能永久停用。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610。|  
+|Severity|Error|  
+|Message|需要採取動作！ 這個網域耗用了可用的帳戶識別元 (RID) 總數中相當大的一部分。 保護機制已經啟用，因為剩餘的可用帳戶識別元總數小於：X% [人為設定的上限引數]。<br /><br />直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<br /><br />重要的是，在重新啟用帳戶建立功能之前必須執行某些診斷，以確保此網域不會以異常高的速率耗用帳戶識別元。 在重新啟用帳戶建立功能之前，應先解決發現的任何問題。<br /><br />未能診斷和修正導致帳戶識別元以異常高的速率消耗的相關問題，可能會導致網域中的帳戶識別元耗盡，因而使這個網域中的帳戶建立功能永久停用。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
 |注意事項與解決方法|連絡所有網域系統管理員，通知他們在覆寫此保護機制前不能在此網域中建立任何安全性主體。 如需如何覆寫保護機制與增加整體 RID 集區 (可能的話) 的詳細資訊，請參閱[解除全域 RID 空間大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock)。|  
   
 |||  
@@ -298,7 +298,7 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 |事件識別碼|16658|  
 |Source|Directory-Services-SAM|  
 |Severity|警告|  
-|訊息|此事件會定期更新剩餘的可用帳戶識別元 (RID) 總數。 剩餘的帳戶識別元數目大約是: %1。<br /><br />帳戶建立時會使用帳戶識別元，當帳戶識別元用完後，即無法在網域中建立新帳戶。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228745。|  
+|Message|此事件會定期更新剩餘的可用帳戶識別元 (RID) 總數。 剩餘的帳戶識別碼數目約為：% 1。<br /><br />帳戶建立時會使用帳戶識別元，當帳戶識別元用完後，即無法在網域中建立新帳戶。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228745 。|  
 |注意事項與解決方法|連絡所有網域系統管理員，通知他們 RID 耗用量已越過主要里程碑；複查安全信任者建立模式以判斷這是否為預期行為。 看到此事件是極不尋常的，因為這表示至少已配置了上億個 RID。|  
   
 ## <a name="see-also"></a>另請參閱  

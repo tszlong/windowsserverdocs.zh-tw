@@ -2,22 +2,22 @@
 title: 檔案伺服器資源管理員命令列工具
 description: 本文說明 Windows Server 2016 命令列工具
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b31c133b0ee4382b5b9aeded9b3852c7230d2d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 78c054c5b0c3de19d1f3acd825335eab2f140541
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858439"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394304"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>檔案伺服器資源管理員命令列工具
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 檔案伺服器資源管理員會安裝 [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) PowerShell Cmdlet，以及下列命令列工具：
 
@@ -27,9 +27,9 @@ ms.locfileid: "59858439"
 
 您可以使用這些工具，來管理在本機電腦或遠端電腦上的儲存資源。 如需這些命令列工具的詳細資訊，請參閱下列參考資料：
 
--   **Dirquota**: <https://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**: <https://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**: <https://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**： <https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**： <https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**： <https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]

@@ -1,50 +1,50 @@
 ---
-title: PowerShell 指令碼的效能考量
-description: 在 PowerShell 中效能的指令碼
-ms.prod: windows-server-threshold
+title: PowerShell 腳本效能考慮
+description: PowerShell 中的效能腳本
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: JasonSh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: df406c7e382907ca32006ec4dae6537a140a91cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2898cf5ee965da77c9f6a3473e55c1cee6b53f2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830369"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71354974"
 ---
-# <a name="powershell-scripting-performance-considerations"></a>PowerShell 指令碼的效能考量
+# <a name="powershell-scripting-performance-considerations"></a>PowerShell 腳本效能考慮
 
-PowerShell 指令碼，直接利用.NET 和避免管線通常較快，慣用的 PowerShell。 慣用的 PowerShell 通常會使用 cmdlet 和 PowerShell 函式高度，通常利用管線，並放.NET 只在必要時。
+直接利用 .NET 並避免管線的 PowerShell 腳本，通常會比慣用 PowerShell 快。 慣用 PowerShell 通常會使用 Cmdlet 和 PowerShell 函式（通常會利用管線），並只在必要時才將其拖放到 .NET 中。
 
 >[!Note] 
-> 此處所述的技巧的許多不是慣用的 PowerShell 和 PowerShell 指令碼的可讀性，可能會降低。 建議除非效能另有規定，使用慣用的 PowerShell 指令碼作者。
+> 這裡所述的許多技巧並不慣用 PowerShell，而且可能會降低 PowerShell 腳本的可讀性。 除非效能規定，否則建議腳本作者使用慣用 PowerShell。
 
 ## <a name="suppressing-output"></a>隱藏輸出
 
-有許多方法可避免寫入到管線的物件：
+有許多方法可避免將物件寫入管線：
 
 ```PowerShell
 $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-指派給`$null`或轉型至`[void]`大致上相當和通常應該是慣用位置的效能很重要。
+指派給 `$null` 或轉換成 `[void]` 大致相等，而且通常是效能重要的建議。
 
 ```PowerShell
 $arrayList.Add($item) > $null
 ```
 
-檔案重新導向至`$null`是幾乎一樣好先前的替代方案，最指令碼會永遠不會注意到的差異。
-根據案例中，檔案重新導向會透過導致少量的額外負荷。
+檔案重新導向至 `$null` 幾乎與先前的替代專案相同，大部分的腳本都不會注意到差異。
+根據案例而定，檔案重新導向會造成一些額外負荷。
 
 ```PowerShell
 $arrayList.Add($item) | Out-Null
 ```
 
-將傳送至`Out-Null`的額外負荷相較於替代項目。
-它應該避免在效能敏感的程式碼。
+相較于替代方案，管線到 `Out-Null` 會有相當大的負擔。
+應該避免在效能敏感的程式碼中。
 
 ```PowerShell
 $null = . {
@@ -53,14 +53,14 @@ $null = . {
 }
 ```
 
-介紹的指令碼區塊，然後呼叫 （使用點來源或其他） 則指派結果`$null`是方便的技巧，以抑制指令碼的大型區塊的輸出。
-這項技術大致上會執行管線，以以及`Out-Null`，應該予以避免效能敏感的指令碼中。
-在此範例中的額外負荷，來自於建立和叫用先前內嵌指令碼的指令碼區塊。
+導入腳本區塊並呼叫它（使用句點來源或其他方式），然後將結果指派給 `$null` 是一個方便的技術，用來隱藏大型腳本區塊的輸出。
+這項技術會大致執行，並以管線傳送至 `Out-Null`，而且應該避免在效能敏感腳本中進行。
+此範例中的額外負荷來自于建立和叫用先前內嵌腳本的腳本區塊。
 
 
-## <a name="array-addition"></a>陣列加法
+## <a name="array-addition"></a>陣列新增
 
-產生一份項目通常是使用加法運算子的陣列：
+使用具有加法運算子的陣列，通常會產生專案清單：
 
 ```PowerShell
 $results = @()
@@ -69,13 +69,13 @@ $results += Do-SomethingElse
 $results
 ```
 
-這可能是非常 inefficent，因為陣列是固定不變。
-每次新增至陣列實際上會建立新的陣列不夠大，無法容納這兩個左、 右運算元的所有項目，然後這兩個運算元的元素複製到新的陣列。
-適用於小型集合，這個額外負荷可能不重要。
-如需更多，這絕對是問題。
+這可能非常 inefficent，因為陣列是不可變的。
+陣列的每個新增實際上會建立一個足以容納左右運算元之所有專案的新陣列，然後將這兩個運算元的元素複製到新的陣列中。
+針對小型集合，此額外負荷可能並不重要。
+對於大型集合而言，這可能是個問題。
 
-有幾個替代項目。
-如果您實際上不需要陣列，改為考慮使用 ArrayList:
+有幾個替代方案。
+如果您不是真的需要陣列，請考慮使用 ArrayList：
 
 ```PowerShell
 $results = [System.Collections.ArrayList]::new()
@@ -84,8 +84,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-如果您需要陣列，您可以使用您自己`ArrayList`，直接呼叫`ArrayList.ToArray`當您想要的陣列。
-或者，您可以讓建立的 PowerShell`ArrayList`和`Array`讓您：
+如果您需要陣列，您可以使用自己的 `ArrayList`，並只在需要陣列時呼叫 `ArrayList.ToArray`。
+或者，您可以讓 PowerShell 為您建立 `ArrayList` 並 `Array`：
 
 ```PowerShell
 $results = @(
@@ -94,18 +94,18 @@ $results = @(
 )
 ```
 
-在此範例中，PowerShell 會建立`ArrayList`來容納寫入管線內陣列運算式的結果。
-之前指派給`$results`，PowerShell 會將轉換`ArrayList`至`object[]`。
+在此範例中，PowerShell 會建立 `ArrayList`，以在陣列運算式內保存寫入管線的結果。
+在指派給 `$results` 之前，PowerShell 會將 `ArrayList` 轉換成 `object[]`。
 
 ## <a name="processing-large-files"></a>處理大型檔案
 
-慣用的方式來處理在 PowerShell 中的檔案可能看起來像：
+在 PowerShell 中處理檔案的慣用方法可能如下所示：
 
 ```PowerShell
 Get-Content $path | Where-Object { $_.Length -gt 10 }
 ```
 
-這可以是幾乎重要性順序低於直接使用.NET Api:
+這可能比直接使用 .NET Api 來得慢：
 
 ```PowerShell
 try
@@ -127,9 +127,9 @@ finally
 
 ## <a name="avoid-write-host"></a>避免寫入主機
 
-它通常會被視為不佳的做法，來直接將輸出寫入主控台中，但許多指令碼所使用的時機， `Write-Host`。
+一般來說，將輸出直接寫入主控台是不佳的作法，但當有意義時，許多腳本會使用 `Write-Host`。
 
-如果您必須將許多訊息寫入主控台中，`Write-Host`可以是一個級距低於`[Console]::WriteLine()`。 不過，請注意，`[Console]::WriteLine()`是特定的主機，例如 powershell.exe 或 powershell_ise.exe-它具有不保證可以運作中的所有主機只適合的替代方案。
+如果您必須將許多訊息寫入主控台，`Write-Host` 的順序會比 `[Console]::WriteLine()` 慢。 不過，請注意，`[Console]::WriteLine()` 只是適用于特定主機（例如 powershell 或 powershell_ise）的適當替代方案，不保證所有主機都能使用它。
 
-而不是使用`Write-Host`，請考慮使用[Write-output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1)。
+請考慮使用[寫入輸出](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1)，而不是使用 `Write-Host`。
 

@@ -2,7 +2,7 @@
 title: Windows Server 2016 的升級和轉換選項
 description: 說明到 Windows Server 2016 的所有支援升級路徑。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.date: 01/18/2017
@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 299cf420b44e4a15985d00489edf84784316540d
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 2484363db661620844993d52914700cb8b6cdf56
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810582"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391588"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Windows Server 2016 的升級和轉換選項
 
@@ -29,7 +29,7 @@ ms.locfileid: "66810582"
 
 視您開始使用的作業系統和採取的方式而定，移至 Windows Server 2016 的程序可能有極大的差異。 我們使用下列詞彙來區別不同的動作，任何一項都可能涉及新的 Windows Server 2016 部署。
 
-- **安裝** 是讓您的硬體有新作業系統的基本概念。 特別是， **全新安裝** 需要刪除之前的作業系統。 如需安裝 Windows Server 2016 的相關資訊，請參閱 [Windows Server 2016 的系統需求與安裝資訊](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements--and-installation) (機器翻譯)。 如需安裝其他 Windows Server 版本的相關資訊，請參閱 [Windows Server Installation and Upgrade](https://technet.microsoft.com//windowsserver/dn527667) (Windows Server 安裝與升級)。
+- **安裝** 是讓您的硬體有新作業系統的基本概念。 特別是， **全新安裝** 需要刪除之前的作業系統。 如需安裝 Windows Server 2016 的相關資訊，請參閱 [System Requirements and Installation Information for Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements--and-installation) (Windows Server 2016 的系統需求與安裝資訊)。 如需安裝其他 Windows Server 版本的相關資訊，請參閱 [Windows Server Installation and Upgrade](https://technet.microsoft.com//windowsserver/dn527667) (Windows Server 安裝與升級)。
 
 - **移轉**表示透過轉移到一組不同的硬體或虛擬機器，從現有的作業系統移至 Windows Server 2016。 視您安裝的伺服器角色而定，移轉可能有極大的差異，這會在 [Windows Server Installation, Upgrade, and Migration](https://technet.microsoft.com/windowsserver/dn458795) (Windows Server 安裝、升級和移轉) 中深入討論。
 
@@ -37,7 +37,7 @@ ms.locfileid: "66810582"
 
 - **授權轉換**：在某些作業系統版本中，您可使用簡單的命令與適當的授權金鑰執行一個步驟，就能將特定的版本轉換成另一種版本。 我們將此方式稱為「授權轉換」。 例如，如果您的伺服器執行 Windows Server 2016 Standard，您可以將它轉換為 Windows Server 2016 Datacenter。
 
-- **升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體。 (這有時稱為「就地」用戶端)。例如，如果您的伺服器執行 Windows Server 2012 或 Windows Server 2012 R2，則可以將它升級到 Windows Server 2016。 您可以從評估版的作業系統升級到零售版，或從較舊的零售版升級到較新的版本，而在某些情況下，您甚至可以從大量授權版本的作業系統升級到一般的零售版。
+- **升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體 (這有時稱為「就地」用戶端)。例如，如果您的伺服器執行 Windows Server 2012 或 Windows Server 2012 R2，則可以將它升級到 Windows Server 2016。 您可以從評估版的作業系統升級到零售版，或從較舊的零售版升級到較新的版本，而在某些情況下，您甚至可以從大量授權版本的作業系統升級到一般的零售版。
 
 > [!IMPORTANT]  
 > 虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。  

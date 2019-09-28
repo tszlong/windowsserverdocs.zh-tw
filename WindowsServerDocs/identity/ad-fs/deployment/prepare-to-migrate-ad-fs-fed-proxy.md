@@ -1,31 +1,31 @@
 ---
 title: 準備移轉 AD FS 2.0 同盟伺服器 Proxy
-description: 提供已準備好移轉到 Windows Server 2012 的 AD FS 伺服器 proxy 的相關資訊。
+description: 提供準備將 AD FS 伺服器 proxy 遷移至 Windows Server 2012 的相關資訊。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2b2275af0934413fa2de02de720d609feda7392c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 20fbf3ea9231706635df2bd4c1d541fde0c1484b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444457"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408204"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-proxy"></a>準備移轉 AD FS 2.0 同盟伺服器 Proxy
 
-若要準備將 AD FS 2.0 同盟伺服器 proxy 移轉到 Windows Server 2012，您必須匯出並備份 AD FS 設定資料，從這個伺服器 proxy。  本主題中的步驟適用於具備一個 Proxy 同盟伺服器或多個 Proxy 同盟伺服器的案例。  
+若要準備將 AD FS 2.0 同盟伺服器 proxy 遷移至 Windows Server 2012，您必須從這個伺服器 proxy 匯出並備份 AD FS 設定資料。  本主題中的步驟適用於具備一個 Proxy 同盟伺服器或多個 Proxy 同盟伺服器的案例。  
   
  若要匯出 AD FS 設定資料，請執行下列工作：  
   
--   [步驟 1：匯出 proxy 服務設定](#step-1-export-proxy-service-settings)  
+-   [步驟 1：匯出 proxy 服務設定 @ no__t-0  
   
--   [步驟 2：備份網頁自訂項目](#step-2-back-up-webpage-customizations)  
+-   [步驟 2：備份網頁自訂 @ no__t-0  
   
-##  <a name="step-1-export-proxy-service-settings"></a>步驟 1：匯出 Proxy 服務設定  
+##  <a name="step-1-export-proxy-service-settings"></a>步驟 1:匯出 Proxy 服務設定  
  若要匯出同盟伺服器 Proxy 服務設定，請執行下列程序：  
   
 ### <a name="to-export-proxy-service-settings"></a>匯出 Proxy 服務設定  
@@ -49,12 +49,12 @@ ms.locfileid: "66444457"
   
 -   HTTP Proxy 的位址和連接埠 (如果 AD FS 同盟伺服器 Proxy 與 AD FS 同盟伺服器之間有 HTTP Proxy 的話)  
   
-##  <a name="step-2-back-up-webpage-customizations"></a>步驟 2：備份網頁的自訂項目  
+##  <a name="step-2-back-up-webpage-customizations"></a>步驟 2:備份網頁的自訂項目  
  若要備份網頁自訂項目，請複製 AD FS Proxy 網頁和 **web.config** 檔案，它位於與 IIS 中虛擬路徑 **“/adfs/ls”** 對應的目錄中。  根據預設，它在 **%systemdrive%\inetpub\adfs\ls** 目錄中。  
   
 ## <a name="next-steps"></a>後續步驟
- [準備移轉 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備移轉 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [移轉 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
- [移轉 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)

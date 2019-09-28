@@ -1,8 +1,8 @@
 ---
 title: if
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9751dfe3e0cb0965cc2c5169ea19e0f08110b0ff
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fd7857251b0b6a943f2eea33f56732ec57e7e8d1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438106"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375476"
 ---
 # <a name="if"></a>if
 
 
 
-在批次程式，會執行條件式處理。
+在 batch 程式中執行條件式處理。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -46,35 +46,35 @@ if defined <Variable> <Command> [else <Expression>]
 
 |        參數        |                                                                                                                                                                                                                描述                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           否           |                                                                                                                                                                              指定的命令執行只有當條件為 false。                                                                                                                                                                              |
-|  errorlevel\<數字 >   |                                                                                                                                                      指定的則為 true 的條件，才執行 Cmd.exe 的前一個程式傳回的結束代碼，等於或大於*數字*。                                                                                                                                                       |
-|       \<命令 >        |                                                                                                                                                                            指定應該執行如果符合上述條件的命令。                                                                                                                                                                             |
-|  \<String1>==<String2>  |                                                                                                             指定，則為 true 的條件才*String1*並*String2*都相同。 這些值可以是常值字串或批次的變數 (例如，%1)。 您不需要以引號括住的常值字串。                                                                                                              |
-|    存在\<檔名 >    |                                                                                                                                                                                       如果指定的檔案名稱存在，請指定，則為 true 的條件。                                                                                                                                                                                        |
-|      \<CompareOp>       |                                                                               指定三個字母的比較運算子。 下列清單顯示有效值*CompareOp*:</br>**EQU**等於</br>**NEQ**不等於</br>**LSS**小於</br>**LEQ**小於或等於</br>**GTR**大於</br>**GEQ**大於或等於                                                                                |
-|           /i            |                                                            強制執行字串比較時忽略大小寫。  您可以使用 **/i**上<em>String1</em> **==** <em>String2</em>形式**如果**。 這些是一般的比較，在中，如果兩個*String1*並*String2*數字所組成，將字串轉換成數字，而且會執行數值的比較。                                                            |
-| cmdextversion\<數字 > | 指定，則為 true 的條件才 Cmd.exe 的功能是相等的命令延伸模組相關聯或大於指定的數字的內部版本號碼。 第一個版本是 1。 顯著的增強功能新增至命令延伸模組時，它會以其中一個的遞增值增加。 **Cmdextversion**條件永遠不會為 true，則是當命令延伸模組已停用 （根據預設，命令會啟用擴充功能）。 |
-|   定義\<變數 >   |                                                                                                                                                                                            如果指定條件為真*變數*定義。                                                                                                                                                                                            |
-|      \<運算式 >      |                                                                                                                                                                   指定要傳遞至命令中的 命令列命令和任何參數**其他**子句。                                                                                                                                                                   |
+|           否           |                                                                                                                                                                              指定只有在條件為 false 時，才執行命令。                                                                                                                                                                              |
+|  errorlevel \<Number >   |                                                                                                                                                      只有在 Cmd.exe 執行的先前程式傳回的結束代碼等於或大於*數位*時，才指定 true 條件。                                                                                                                                                       |
+|       \<Command >        |                                                                                                                                                                            指定在符合前述條件時應執行的命令。                                                                                                                                                                             |
+|  \<String1 > = = <String2>  |                                                                                                             只有在*String1*和*String2*相同時，才指定 true 條件。 這些值可以是常值字串或批次變數（例如，% 1）。 您不需要將常值字串括在引號中。                                                                                                              |
+|    存在 \<FileName >    |                                                                                                                                                                                       如果指定的檔案名存在，則指定 true 條件。                                                                                                                                                                                        |
+|      \<CompareOp >       |                                                                               指定三個字母的比較運算子。 下列清單代表*CompareOp*的有效值：</br>**等於**等於</br>**NEQ**不等於</br>**LSS**小於</br>**LEQ**小於或等於</br>**GTR**大於</br>**GEQ**大於或等於                                                                                |
+|           /i            |                                                            強制字串比較以忽略大小寫。  **如果**是，您可以在<em>String1</em> **==** <em>String2</em>的形式使用 **/i** 。 這些比較是泛型的，在這種情況下，如果*String1*和*string2*都只由數位組成，則字串會轉換成數位，並執行數值比較。                                                            |
+| cmdextversion \<Number > | 只有當與 Cmd.exe 的命令延伸功能相關聯的內部版本號碼等於或大於指定的數位時，才指定 true 條件。 第一個版本是1。 當命令延伸模組中新增了顯著的增強功能時，它會增加一個增量。 當停用命令延伸模組時， **cmdextversion**條件一律為 true （預設會啟用命令延伸）。 |
+|   定義的 \<Variable >   |                                                                                                                                                                                            如果已定義*變數*，則指定 true 條件。                                                                                                                                                                                            |
+|      \<Expression >      |                                                                                                                                                                   指定命令列命令，以及要傳遞給**else**子句中命令的任何參數。                                                                                                                                                                   |
 |           /?            |                                                                                                                                                                                                    在命令提示字元顯示說明。                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>備註
 
--   如果在指定的條件**如果**子句為 true 時，執行命令所示的條件。如果條件為 false 中的命令**如果**子句會被忽略，命令會執行任何命令中指定**else**子句。
--   當程式停止時，它會傳回結束代碼。 若要當作條件使用結束代碼，請使用**errorlevel**。
--   如果您使用**定義**，下列三個變數新增到環境： **%errorlevel%** ， **cmdcmdline %** ，和 **%cmdextversion**.  
-    -   **%errorlevel%** 展開成 ERRORLEVEL 環境變數的目前值的字串表示。 這是假設沒有現有的環境變數，其名稱 ERRORLEVEL，如果沒有，您會收到該 ERRORLEVEL 值。
-    -   **%cmdcmdline%** 展開成原始的任何處理之前由 Cmd.exe 傳遞至 Cmd.exe 命令列。 這是假設沒有現有的環境變數，其名稱 CMDCMDLINE — 如果沒有，您會得到 CMDCMDLINE 的值。
-    -   **%cmdextversion**展開目前的值的字串表示成**cmdextversion**。 這是假設沒有現有的環境變數，其名稱 CMDEXTVERSION — 如果沒有，您會得到 CMDEXTVERSION 的值。
--   您必須使用**else**命令之後的同一行上的子句**如果**。
+-   如果在**if**子句中指定的條件為 true，則會執行在條件之後的命令。如果條件為 false，則會忽略**if**子句中的命令，而命令會執行**else**子句中指定的任何命令。
+-   當程式停止時，它會傳回結束代碼。 若要使用結束代碼做為條件，請使用**errorlevel**。
+-   如果您使用**已定義**的，則會將下列三個變數加入至環境： **% errorlevel%** 、 **% cmdcmdline%** 和 **% cmdextversion%** 。  
+    -   **% errorlevel%** 會展開為 errorlevel 環境變數目前值的字串表示。 這會假設沒有名稱為 ERRORLEVEL 的現有環境變數（如果有的話），您會改為取得該 ERRORLEVEL 值。
+    -   **% cmdcmdline%** 會擴展到在 cmd.exe 進行任何處理之前傳遞至 cmd.exe 的原始命令列。 這會假設沒有名為 CMDCMDLINE 的現有環境變數（如果有的話），您會改為取得 CMDCMDLINE 值。
+    -   **% cmdextversion%** 會展開為目前**cmdextversion**值的字串表示。 這會假設沒有名為 CMDEXTVERSION 的現有環境變數（如果有的話），您會改為取得 CMDEXTVERSION 值。
+-   在**if**之後，您必須在命令的同一行上使用**else**子句。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要顯示訊息 「 找不到資料檔 」 檔案找不到 Product.dat，如果輸入：
+若要顯示訊息「找不到資料檔」，如果找不到檔案產品，請輸入：
 ```
 if not exist product.dat echo Cannot find data file 
 ```
-若要格式化磁碟機 A 中的磁碟，並顯示錯誤訊息，在格式化程序期間發生錯誤時，輸入下列命令列批次檔中：
+若要格式化磁片磁碟機 A 中的磁片，並在格式化過程中發生錯誤時顯示錯誤訊息，請在批次檔中輸入下列幾行：
 ```
 :begin
 @echo off
@@ -84,7 +84,7 @@ echo An error occurred during formatting.
 :end
 echo End of batch program.
 ```
-若要從目前的目錄中刪除檔案 Product.dat 或顯示一則訊息，如果找不到 Product.dat，輸入下列命令列批次檔中：
+若要從目前目錄中刪除檔案產品，或在找不到產品 .dat 時顯示訊息，請在批次檔中輸入下列幾行：
 ```
 IF EXIST Product.dat (
 del Product.dat
@@ -94,11 +94,11 @@ echo The Product.dat file is missing.
 ```
 
 > [!NOTE]
-> 這幾行可以結合成單一行，如下所示：
+> 這些行可以合併成一行，如下所示：
 > ```
 > IF EXIST Product.dat (del Product.dat) ELSE (echo The Product.dat file is missing.)
 > ```
-> 若要執行批次檔之後，回應將 ERRORLEVEL 環境變數的值，輸入下列命令列批次檔中：
+> 若要在執行批次檔之後回應 ERRORLEVEL 環境變數的值，請在批次檔中輸入下列幾行：
 > ```
 > goto answer%errorlevel%
 > :answer1
@@ -109,7 +109,7 @@ echo The Product.dat file is missing.
 > :end
 > echo Done! 
 > ```
-> 若要將 ERRORLEVEL 環境變數的值是否小於或等於 1，型別，請前往 「 好 」 的標籤：
+> 若要移至 "ok" 標籤，如果 ERRORLEVEL 環境變數的值小於或等於1，請輸入：
 > ```
 > if %errorlevel% LEQ 1 goto okay
 > ```
@@ -118,6 +118,6 @@ echo The Product.dat file is missing.
 
 [命令列語法關鍵](command-line-syntax-key.md)
 
-[If](if.md)
+[只有](if.md)
 
-[移至](goto.md)
+[Goto](goto.md)

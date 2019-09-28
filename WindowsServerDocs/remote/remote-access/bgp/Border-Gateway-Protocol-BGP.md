@@ -1,9 +1,9 @@
 ---
 title: 邊界閘道通訊協定 (BGP)
-description: 您可以使用本主題以了解的邊界閘道通訊協定 (BGP) 在 Windows Server 2016 中，包括 BGP 支援部署拓撲和 BGP 特性與功能。
+description: 您可以使用本主題來瞭解 Windows Server 2016 中的邊界閘道協定（BGP），包括 BGP 支援的部署拓撲和 BGP 特性和功能。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,21 +12,21 @@ ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 655a7b02468db4246b85b495289806a3f9735a95
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ae6fddce1564e44ad72a5630c6abb16cdb6735d1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281998"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388976"
 ---
 # <a name="border-gateway-protocol-bgp"></a>邊界閘道通訊協定 (BGP)
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 您可以使用本主題來了解邊界閘道通訊協定 (BGP)，包括 BGP 支援的部署拓撲和 BGP 特性與功能。  
   
 > [!NOTE]  
-> 本主題中，除了下列的 BGP 文件使用。  
+> 除了本主題之外，還有下列 BGP 檔可供使用。  
 >   
 > -   [BGP Windows PowerShell 命令參考](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
   
@@ -36,20 +36,20 @@ ms.locfileid: "67281998"
   
 -   [BGP 功能](#bkmk_features)  
   
-設定在 Windows Server 2016 遠端存取服務時\(RAS\)多租用戶模式中的閘道，邊界閘道通訊協定 (BGP) 為您提供管理的租用戶 VM 網路之間的網路流量路由的能力和其遠端站台。 您也可以針對單一租用戶 RAS 閘道部署，並且在部署為區域網路的遠端存取時使用 BGP \(LAN\)路由器。  
+在 Windows Server 2016 遠端存取服務上設定時 @no__t-多租使用者模式中的 0RAS @ no__t-1 閘道，邊界閘道協定（BGP）可讓您管理租使用者 VM 網路與其遠端之間的網路流量路由網站. 您也可以針對單一租使用者 RAS 閘道部署使用 BGP，並將遠端存取部署為區域網路 \(LAN @ no__t-1 路由器。  
   
 BGP 可以降低在路由器上手動路由設定的需求，因為它是動態路由通訊協定，並且會自動學習使用站台對站台 VPN 連線來連接的網站之間的路由。  
   
-若要使用 BGP 路由，您必須安裝**遠端存取服務\(RAS\)** 和/或**路由**電腦或虛擬機器的遠端存取伺服器角色的角色服務\(VM\) -您使用的系統類型取決於您是否有多租用戶部署：  
+若要使用 BGP 路由，您必須在電腦或虛擬機器上安裝遠端存取**服務 \(RAS @ no__t-2**和/或遠端存取服務器角色的**路由**角色服務 \(VM @ no__t-5-您使用的系統類型取決於您是否有多租使用者部署：  
   
--   針對多租用戶部署，建議您在一或多個 Vm 上安裝 RAS 閘道。 使用多個 Vm 提供高可用性。 RAS 閘道能夠處理來自多個租用戶，多個連線，並由 HYPER-V 主機和實際設定為閘道的 VM。 此閘道會設定站對站 VPN 連線做為 exchange 租用戶和雲端服務提供者的多租用戶 BGP 路由器\(CSP\)子網路路由。  
+-   針對多租使用者部署，建議您在一或多個 Vm 上安裝 RAS 閘道。 使用多個 Vm 可提供高可用性。 RAS 閘道能夠處理來自多個租使用者的多個連線，並且是由 Hyper-v 主機和實際設定為閘道的 VM 所組成。 此閘道設定為使用站對站 VPN 連線做為多租使用者 BGP 路由器，以交換租使用者和雲端服務提供者 \(CSP @ no__t-1 個子網路由。  
   
--   對於單一租用戶 edge 閘道部署或 LAN 路由器部署，您可以在實體電腦或 VM 上安裝 RAS 閘道。  
+-   針對單一租使用者邊緣閘道部署或 LAN 路由器部署，您可以在實體電腦或 VM 上安裝 RAS 閘道。  
   
 > [!IMPORTANT]  
-> 當您安裝 RAS 閘道時，您必須指定是否以您使用輸入每個租用戶啟用 BGP **Enable-remoteaccessroutingdomain** Windows PowerShell 命令搭配**型別**參數值**所有**。 若要安裝遠端存取做為已啟用 BGP 的 LAN 路由器，不含多租用戶的功能，您可以使用命令**Install-remoteaccess-VpnType RoutingOnly**。  
+> 當您安裝 RAS 閘道時，您必須使用**Enable-remoteaccessroutingdomain** Windows PowerShell 命令，並將**類型**參數值為**All**，指定是否要為每個租使用者啟用 BGP。 若要將遠端存取安裝為已啟用 BGP 的 LAN 路由器，而不使用多租使用者功能，您可以使用命令**install-RemoteAccess-VpnType RoutingOnly**。  
 >   
-> 下列範例程式碼說明如何在所有的 RAS 功能的多租用戶模式中安裝 RAS (點對站 VPN、 站對站 VPN 和 BGP 路由) 為兩個租用戶，Contoso 和 Fabrikam 啟用。  
+> 下列範例程式碼說明如何在多租使用者模式中安裝 RAS，其中包含兩個租使用者 Contoso 和 Fabrikam 的所有 RAS 功能（點對站 VPN、站對站 VPN 和 BGP 路由）。  
   
 ```  
 $Contoso_RoutingDomain = "ContosoTenant"  
@@ -64,24 +64,24 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
 ## <a name="bkmk_top"></a>BGP 支援的部署拓撲  
 以下列出企業網站連接到雲端服務提供者 (CSP) 的資料中心支援的部署拓撲。  
   
-在所有案例中，CSP 閘道是邊緣 Windows Server 2016 RAS 閘道。 RAS 閘道，也就是能夠處理來自多個租用戶的多個連線，是由 HYPER-V 主機和實際設定為閘道的 VM 所組成。 此邊緣閘道是設定為使用站台對站台 VPN 連線做為多租用戶 BGP 路由器，以交換企業和 CSP 子網路路由。  
+在所有案例中，CSP 閘道是邊緣的 Windows Server 2016 RAS 閘道。 RAS 閘道能夠處理來自多個租使用者的多個連線，這是由 Hyper-v 主機和實際設定為閘道的 VM 所組成。 此邊緣閘道是設定為使用站台對站台 VPN 連線做為多租用戶 BGP 路由器，以交換企業和 CSP 子網路路由。  
   
 租用戶使用站台對站台 (S2S) VPN 連線連接到其在 CSP 資料中心的資源。 此外，部署 BGP 路由通訊協定以用於企業和 CSP 閘道之間的動態路由資訊交換。  
   
 支援下列部署拓撲。  
   
--   [RAS VPN 站對站閘道與企業網站邊緣的 BGP](#bkmk_top1)  
+-   [在企業網站邊緣具有 BGP 的 RAS VPN 站對站閘道](#bkmk_top1)  
   
--   [協力廠商閘道與企業網站邊緣的 BGP](#bkmk_top2)  
+-   [在企業網站邊緣具有 BGP 的協力廠商閘道](#bkmk_top2)  
   
--   [多個企業網站與協力廠商閘道](#bkmk_top3)  
+-   [具有協力廠商閘道的多個企業網站](#bkmk_top3)  
   
--   [BGP 和 VPN 的另一個終止點](#bkmk_top4)  
+-   [BGP 和 VPN 的個別終止點](#bkmk_top4)  
   
 下列各節包含每個支援的 BGP 拓撲的其他資訊。  
   
-### <a name="bkmk_top1"></a>RAS VPN 站對站閘道與企業網站邊緣的 BGP  
-此拓撲描述連接至 CSP 的企業網站。 企業路由拓撲包含內部路由器，Windows Server 2016 RAS 閘道設定為 CSP，與在邊緣防火牆裝置的 VPN 站對站連線。 RAS 閘道會終止 S2S VPN 和 BGP 連線。  
+### <a name="bkmk_top1"></a>在企業網站邊緣具有 BGP 的 RAS VPN 站對站閘道  
+此拓撲描述連接至 CSP 的企業網站。 企業路由拓撲包含內部路由器、針對與 CSP 的 VPN 站對站連線設定的 Windows Server 2016 RAS 閘道，以及邊緣防火牆裝置。 RAS 閘道會終止 S2S VPN 和 BGP 連線。  
   
 ![RAS VPN 站對站閘道](../../media/Border-Gateway-Protocol-BGP/bgp_01.jpg)  
   
@@ -89,7 +89,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 在這個案例中，BGP 適用以下方式。  
   
--   企業網站邊緣裝置會學習使用 BGP 裝載在雲端的虛擬化子網路路由 (10.2.1.0/24)。 此裝置也會通告 CSP RAS 多租用戶閘道的內部部署子網路路由 (10.1.1.0/24)。  
+-   企業網站邊緣裝置會學習使用 BGP 裝載在雲端的虛擬化子網路路由 (10.2.1.0/24)。 此裝置也會向 CSP RAS 多租使用者閘道通告內部部署子網路由（10.1.1.0/24）。  
   
 -   客戶邊緣路由器可透過下列其中一個機制學習內部部署內部路由：  
   
@@ -97,7 +97,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
     -   邊緣裝置可以使用 BGP 設定為使用靜態路由或介面以選取通告的路由。 邊緣裝置也會將外部路由發佈至使用 IGP 的其他內部部署路由器。  
   
-### <a name="bkmk_top2"></a>協力廠商閘道與企業網站邊緣的 BGP  
+### <a name="bkmk_top2"></a>在企業網站邊緣具有 BGP 的協力廠商閘道  
 此拓撲描述使用協力廠商邊緣路由器連線至 CSP 的企業網站。 邊緣路由器也可做為站台對站台 VPN 閘道。  
   
 ![協力廠商閘道與企業網站邊緣的 BGP](../../media/Border-Gateway-Protocol-BGP/bgp_02.jpg)  
@@ -108,10 +108,10 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 -   邊緣裝置會實作內部閘道通訊協定 (IGP)，並直接參與內部路由。  
   
-### <a name="bkmk_top3"></a>連線至 CSP 的多個企業網站雲端資料中心  
+### <a name="bkmk_top3"></a>連接至 CSP 雲端資料中心的多個企業網站  
 此拓撲描述使用協力廠商閘道連線至 CSP 的多個企業網站。 協力廠商邊緣裝置做為站台對站台 VPN 閘道和 BGP 路由器。  
   
-![連線至 CSP 的多個企業網站雲端資料中心](../../media/Border-Gateway-Protocol-BGP/bgp_03.jpg)  
+![連接至 CSP 雲端資料中心的多個企業網站](../../media/Border-Gateway-Protocol-BGP/bgp_03.jpg)  
   
 客戶邊緣路由器可透過下列其中一個機制學習內部部署內部路由：  
   
@@ -123,10 +123,10 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 每個企業網站會學習直接裝載的網路路由，並透過使用其他企業網站，但會根據路由的成本選取最佳的路由。  
   
-如果在企業網站 1 BGP 路由器無法使用企業站台 2 BGP 路由器連接，因為連線失敗，網站 1 BGP 路由器以動態方式開始學習 CSP BGP 路由器，企業站台 2 的網路路由，流量會順暢地重新路由傳送從站台 1 到站台 2 中透過 CSP 上的 Windows Server BGP 路由器。  
+如果企業網站1的 BGP 路由器無法與企業網站 2 BGP 路由器連線，因為連線已失敗，則 Site 1 BGP 路由器會動態開始學習從 CSP BGP 路由器到 Enterprise Site 2 網路的路由，而流量會順暢地透過 CSP 的 Windows Server BGP 路由器，從網站1重新路由至網站2。  
   
-### <a name="bkmk_top4"></a>BGP 和 VPN 的另一個終止點  
-此拓撲描述使用兩個不同的路由器做為 BGP 和站台對站台 VPN 端點的企業。 站對站 VPN 被終止 Windows Server 2016 RAS 閘道，而內部路由器上終止 BGP。 在連接的 CSP 端，CSP 會終止與 RAS 閘道的 VPN 和 BGP 連線。 使用這種設定，內部的協力廠商路由器硬體必須支援對 BGP 的 IGP 路由轉散發，以及對 IGP 路由的 BGP 轉散發。  
+### <a name="bkmk_top4"></a>BGP 和 VPN 的個別終止點  
+此拓撲描述使用兩個不同的路由器做為 BGP 和站台對站台 VPN 端點的企業。 站對站 VPN 會在 Windows Server 2016 RAS 閘道上終止，而 BGP 則是在內部路由器上終止。 在連線的 CSP 端，CSP 會同時終止與 RAS 閘道的 VPN 和 BGP 連線。 使用這種設定，內部的協力廠商路由器硬體必須支援對 BGP 的 IGP 路由轉散發，以及對 IGP 路由的 BGP 轉散發。  
   
 ![區隔 BGP 和 VPN 的終止點](../../media/Border-Gateway-Protocol-BGP/bgp_04.jpg)  
   
@@ -140,14 +140,14 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 在企業網站使用任何 IGP 時，內部路由器必須轉散發 IGP 路由到 BGP，以及轉散發 BGP 路由到 IGP 路由，用於保有 CSP 虛擬網路與本機企業子網路之間的子網路連線。  
   
-與此部署中，企業 RAS 閘道有站對站 VPN 連線，透過 CSP RAS 閘道，提供企業 RAS 閘道通往 CSP 閘道的路由。 然後企業內部路由器會使用 iBGP 搭配企業 RAS 閘道學習這個通往 CSP 閘道。 因此，企業內部路由器就能夠建立與 CSP RAS 閘道 BGP 路由器的對等互連工作階段。  
+在此部署中，企業 RAS 閘道具有與 CSP RAS 閘道的站對站 VPN 連線，可為企業 RAS 閘道提供 CSP 閘道的路由。 然後，企業內部路由器會使用 iBGP 搭配企業 RAS 閘道來學習此路由至 CSP 閘道。 因此，企業內部路由器就能夠與 CSP RAS 閘道 BGP 路由器建立對等互連會話。  
   
-從這一點，企業內部路由器和 CSP RAS 閘道交換路由資訊。 與企業 RAS BGP 路由器會學習的 CSP 路由和企業實體路由封包在網路之間的路由。  
+從現在開始，企業內部路由器和 CSP RAS 閘道會交換路由資訊。 而企業 RAS BGP 路由器會學習 CSP 路由和企業路由，以在網路之間實際路由封包。  
   
 ## <a name="bkmk_features"></a>BGP 功能  
 以下是 RAS 閘道 BGP 路由器的功能。  
   
-**BGP 路由遠端存取角色服務**。 您現在可以安裝**路由**而不需要安裝遠端存取伺服器角色的角色服務**遠端存取服務 (RAS)** 當您想要為 BGP LAN 路由器使用 「 遠端存取角色服務。  這可減少 BGP 路由器的記憶體耗用量，並只會安裝 BGP 的動態路由所需的元件。 路由角色服務是很有用時只有 BGP 路由器 VM 是必要的而且您不需要使用 DirectAccess 或 VPN。 此外，使用 「 遠端存取與 BGP 的 LAN 路由器為您提供動態內部網路上的 BGP 路由優點。  
+**作為遠端存取角色服務的 BGP 路由**。 當您想要使用遠端存取作為 BGP LAN 路由器時，您現在可以安裝遠端存取服務器角色的**路由**角色服務，而不需要安裝**遠端存取服務（RAS）** 角色服務。  這會減少 BGP 路由器記憶體使用量，而且只會安裝動態 BGP 路由所需的元件。 只有當需要 BGP 路由器 VM，而且您不需要使用 DirectAccess 或 VPN 時，路由角色服務才會很有用。 此外，使用「遠端存取」作為具有 BGP 的 LAN 路由器，可提供您內部網路上 BGP 的動態路由優勢。  
   
 **BGP 統計資料 (訊息計數器、路由計數器)** 。 如需要，BGP 路由器可支援顯示訊息和路由的統計資料，方法是使用 **Get-BgpStatistics** Windows PowerShell 命令。  
   
@@ -163,26 +163,26 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 **IPv4 和 IPv6 單點傳播路由學習和通告功能 (多重通訊協定網路層連線資訊 [NLRI])** 。 不論您使用何種傳輸，在建立工作階段時如果其他 BGP 路由器推出適當的功能，BGP 路由器即可以交換 IPv4 和 IPv6 路由。 若要設定 IPv6 路由，必須啟用參數 IPv6Routing，並且必須在路由器層級設定本機全域 IPv6 位址。  
   
-**混合模式與被動模式對等互連**。 您可以在混合的模式-其中 BGP 路由器可做為啟動器和回應程式 」 或 「 被動模式，其中 BGP 路由器不會啟動對等互連，設定 BGP 對等互連工作階段，但不會回應傳入的要求。 混合模式是預設值，並建議用於 BGP 對等互連。 除非您想要將被動模式用於偵錯或診斷用途，否則也是如此。 針對所有 BGP 路由器部署拓撲，需要混合模式對等互連，才能在發生失敗事件時啟用自動重新啟動。  
+**混合模式與被動模式對等互連**。 您可以在混合模式中設定 BGP 對等互連會話，其中 BGP 路由器會作為啟動器和回應者或被動模式，其中 BGP 路由器不會起始對等互連，但會回應傳入的要求。 混合模式是預設值，並建議用於 BGP 對等互連。 除非您想要將被動模式用於偵錯或診斷用途，否則也是如此。 針對所有 BGP 路由器部署拓撲，需要混合模式對等互連，才能在發生失敗事件時啟用自動重新啟動。  
   
 **路由屬性重寫功能**。 您可以從 BGP 路由器輸入和輸出路由通告新增、修改或移除下列屬性，方法是使用 BGP 路由原則 Next-Hop、MED、Local-Pref 和 Community。  
   
 **路由篩選**。 BGP 路由器支援根據多個路由屬性 (例如 Prefix、ASN-Range、Community 和 Next-Hop) 篩選輸入或輸出路由通告。  
   
-**路由反射程式 (RR) 和 RR 用戶端**。 BGP 路由器可做為路由反映程式 」 和 「 RR 用戶端。 這適合複雜的拓撲，其中 RR 時，可以藉由形成 RR 叢集來簡化網路中。  
+**路由反映器（rr）和 RR 用戶端**。 BGP 路由器可以做為路由反映程式和 RR 用戶端。 這適用于複雜的拓撲，其中 RR 可以藉由形成 RR 叢集來簡化網路。  
   
-**路由重新整理支援**。 BGP 路由器支援路由重新整理，並預設會在對等互連通告這項功能。 它可以傳送全新一組路由更新對等透過路由重新整理訊息要求時，以及傳送來更新路由表，例如路由原則變更事件中的對等路由重新整理。 這可讓變更或更新 Windows Server 2016 中的 BGP 路由原則，而不需要重新啟動的對等互連的案例。  
+**路由重新整理支援**。 BGP 路由器支援路由重新整理，並預設會在對等互連通告這項功能。 當對等端透過路由重新整理訊息要求時，它能夠傳送一組全新的路由更新，以及傳送路由重新整理來更新對等的路由策略變更等事件中的路由表。 這可讓您在 Windows Server 2016 中變更或更新 BGP 路由原則的案例，而不需要重新開機對等互連。  
   
 **靜態路由設定支援**。 您可以在 BGP 路由器上使用 **Add-BgpCustomRoute** Windows PowerShell 命令來設定靜態路由或介面。 您設定的靜態路由可以是必須從中選擇之路由的前置詞或介面名稱。 但是，只有具有可解析的下一個躍點的路由會連接至 BGP 路由表並通告給對等。  
   
-**傳輸路由支援**。 BGP 路由器支援 iBGP 對 iBGP 連線、 iBGP 對 eBGP 連線，以及 eBGP 對 eBGP 連線的傳輸路由。  
+**傳輸路由支援**。 BGP 路由器支援 iBGP 至 iBGP 連線、iBGP 至 eBGP 連線，以及 eBGP 至 eBGP 連線的傳輸路由。  
   
-**路由翼後抑制**。 若要在 Windows Server 2016 中的 BGP 路由的路由翼後抑制路由翼後抑制提供支援。 比方說，不斷地通告的路由，並提領，使路由表不穩定，您可以設定 BGP 路由器，以將抑制權數指派至路由和監視的襟翼-，並據以隱藏或取消-視需要將它隱藏。 這有助於維護穩定的路由表，並降低 BGP 路由器的處理。  
+**路由擺動抑制**。 在 Windows Server 2016 中路由擺動抑制至 BGP 路由，可支援路由擺動抑制。 例如，當路由持續被公告和撤銷，使路由表不穩定時，您可以將 BGP 路由器設定為指派抑制權數給路由，並加以監視以進行副總，並視需要予以抑制或取消隱藏。 這有助於維護穩定的路由表，以及 BGP 路由器的較少處理。  
   
-**路由彙總**。 BGP 路由器的路由彙總為您提供設定彙總路由，並取代更細微的路由通告給對等的摘要或彙總路由的能力。 這會導致較少的網路上傳輸的路由通告 」 訊息數目。  
+**路由匯總**。 將匯總路由至 BGP 路由器可提供您設定匯總路由的能力，並以摘要或匯總路由取代更細微的路由通告給對等。 這會導致在網路上傳輸的路由通告訊息數目較少。  
   
 > [!NOTE]  
-> 在 System Center，RAS 閘道是命名為 Windows Server 閘道。  
+> 在 System Center 中，RAS 閘道的名稱是 Windows Server Gateway。  
   
 
   

@@ -2,7 +2,7 @@
 title: certutil
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bc1e544c0e0684678bc168f286b52e5573f3ac2
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300689"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379647"
 ---
 # <a name="certutil"></a>certutil
 
@@ -62,7 +62,7 @@ Certutil 是安裝為憑證服務一部分的命令列程式。 您可以使用 
 |[-ca cert](#-cacert)|取得憑證授權單位單位的憑證|
 |[-ca. 鏈](#-cachain)|取得憑證授權單位單位的憑證鏈|
 |[-GetCRL](#-getcrl)|取得憑證撤銷清單 (CRL)|
-|[-CRL](#-crl)|發佈新的憑證撤銷清單 (Crl) [或僅限 delta Crl]|
+|[-CRL](#-crl)|發佈新的憑證撤銷清單（Crl） [或僅限 delta Crl]|
 |[-關機](#-shutdown)|關閉 Active Directory 憑證服務|
 |[-installCert](#-installcert)|安裝憑證授權單位單位憑證|
 |[-renewCert](#-renewcert)|更新憑證授權單位單位憑證|
@@ -146,7 +146,7 @@ Certutil 是安裝為憑證服務一部分的命令列程式。 您可以使用 
 下表描述用來表示命令列語法的標記法。
 
 
-|            萬用字元             |                  描述                  |
+|            表示法             |                  描述                  |
 |---------------------------------|-----------------------------------------------|
 | 不含括弧或大括弧的文字 |         您必須輸入的專案, 如下所示          |
 |  \<角括弧內的文字 >  | 您必須為其提供值的預留位置 |
@@ -350,7 +350,7 @@ InfoName 引數語法:
 - 文字檔檔案版本
 - 基礎產品版本
 - exitcount:結束模組計數
-- exit [Index]:結束模組描述
+- exit [Index]：結束模組描述
 - 策略原則模組描述
 - 檔案名CA 名稱
 - sanitizedname:已淨化的 CA 名稱
@@ -366,33 +366,33 @@ InfoName 引數語法:
 - kracount:KRA 憑證計數
 - kraused:KRA 憑證已使用計數
 - propidmax:CA PropId 上限
-- certstate [Index]:CA 憑證
-- certversion [Index]:CA 憑證版本
-- certstatuscode [Index]:CA 憑證驗證狀態
-- crlstate [Index]:.CRL
-- krastate [Index]:KRA 憑證
-- crossstate + [Index]:正向交叉憑證
-- crossstate-[Index]:反向交叉憑證
-- cert [Index]:CA 憑證
-- certchain [Index]:CA 憑證鏈
-- certcrlchain [Index]:具有 Crl 的 CA 憑證鏈
-- xchg [Index]:CA 交換憑證
-- xchgchain [Index]:CA exchange 憑證鏈
-- xchgcrlchain [Index]:CA exchange 憑證鏈與 Crl
-- kra [Index]:KRA 憑證
-- cross + [Index]:正向交叉憑證
-- 交叉-[索引]:反向交叉憑證
-- CRL [索引]:基底 CRL
-- deltacrl [Index]:Delta CRL
-- crlstatus [Index]:CRL 發行狀態
-- deltacrlstatus [Index]:Delta CRL 發佈狀態
+- certstate [Index]：CA 憑證
+- certversion [Index]：CA 憑證版本
+- certstatuscode [Index]：CA 憑證驗證狀態
+- crlstate [Index]：.CRL
+- krastate [Index]：KRA 憑證
+- crossstate + [Index]：正向交叉憑證
+- crossstate-[Index]：反向交叉憑證
+- cert [Index]：CA 憑證
+- certchain [Index]：CA 憑證鏈
+- certcrlchain [Index]：具有 Crl 的 CA 憑證鏈
+- xchg [Index]：CA 交換憑證
+- xchgchain [Index]：CA exchange 憑證鏈
+- xchgcrlchain [Index]：CA exchange 憑證鏈與 Crl
+- kra [Index]：KRA 憑證
+- cross + [Index]：正向交叉憑證
+- 交叉-[索引]：反向交叉憑證
+- CRL [索引]：基底 CRL
+- deltacrl [Index]：Delta CRL
+- crlstatus [Index]：CRL 發行狀態
+- deltacrlstatus [Index]：Delta CRL 發佈狀態
 - dnsDNS 名稱
 - 角色角色分離
 - 公佈Advanced Server
 - 範本範本
-- csp [索引]:OCSP Url
-- aia [索引]:AIA Url
-- cdp [Index]:CDP Url
+- csp [索引]：OCSP Url
+- aia [索引]：AIA Url
+- cdp [Index]：CDP Url
 - localenameCA 地區設定名稱
 - subjecttemplateoids:主旨範本 Oid
 
@@ -442,7 +442,7 @@ CertUtil [Options]-GetCRL OutFile [Index] [delta]
 
 ## <a name="-crl"></a>-CRL
 
-CertUtil [Options]-CRL [dd: hh | 重新發佈] [delta]
+CertUtil [Options]-CRL [dd： hh | 重新發佈] [delta]
 
 發行新的 Crl [或僅限 delta Crl]
 
@@ -540,7 +540,7 @@ csv以逗號分隔值輸出
 
 若要顯示整個 CRL 資料表:.CRL
 
-針對日期限制使用 "Date [+ |-dd: hh]"
+針對日期限制使用 "Date [+ |-dd： hh]"
 
 針對相對於目前時間的日期使用 "now + dd: hh"
 
@@ -729,7 +729,7 @@ CertUtil [Options]-store [CertificateStoreName [CertId [OutputFile]]]
 
 傾印證書存儲
 
-CertificateStoreName憑證存放區名稱。 範例：
+CertificateStoreName憑證存放區名稱。 例如：
 
 - 「我的」、「CA」 (預設值)、「根」、
 - "ldap:///CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ one？ objectClass = Microsoft-windows-certificationauthority" (查看根憑證)
@@ -751,7 +751,7 @@ OutputFile: 用來儲存相符憑證的檔案
 
 使用-grouppolicy 存取電腦群組策略存放區。
 
-範例：
+例如：
 
 - -enterprise NTAuth
 - -企業根37
@@ -849,7 +849,7 @@ CertUtil [Options]-viewstore [CertificateStoreName [CertId [OutputFile]]]
 
 傾印證書存儲
 
-CertificateStoreName憑證存放區名稱。 範例：
+CertificateStoreName憑證存放區名稱。 例如：
 
 - 「我的」、「CA」 (預設值)、「根」、
 - "ldap:///CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ one？ objectClass = Microsoft-windows-certificationauthority" (查看根憑證)
@@ -871,7 +871,7 @@ OutputFile: 用來儲存相符憑證的檔案
 
 使用-grouppolicy 存取電腦群組策略存放區。
 
-範例：
+例如：
 
 1. -enterprise NTAuth
 2. -企業根37
@@ -888,7 +888,7 @@ CertUtil [Options]-viewdelstore [CertificateStoreName [CertId [OutputFile]]]
 
 從存放區刪除憑證
 
-CertificateStoreName憑證存放區名稱。 範例：
+CertificateStoreName憑證存放區名稱。 例如：
 
 - 「我的」、「CA」 (預設值)、「根」、
 - "ldap:///CN=Certification 機關, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com？ cACertificate？ one？ objectClass = Microsoft-windows-certificationauthority" (查看根憑證)
@@ -910,7 +910,7 @@ OutputFile: 用來儲存相符憑證的檔案
 
 使用-grouppolicy 存取電腦群組策略存放區。
 
-範例：
+例如：
 
 1. -enterprise NTAuth
 2. -企業根37
@@ -1121,7 +1121,7 @@ CertUtil [選項]-Installdefaulttemplates 動作
 
 ## <a name="-urlcache"></a>-URLCache
 
-CertUtil [Options]-URLCache [URL |CRL |\* [刪除]]
+CertUtil [Options]-URLCache [URL |CRL |\* [delete]]
 
 顯示或刪除 URL 快取專案
 
@@ -1168,7 +1168,7 @@ CertUtil [選項]-DCInfo [網域] [驗證 |DeleteBad |DeleteAll
 [-f][-使用者][-urlfetch verify][-dc DCName][-t Timeout]
 
 > [!TIP]
-> 指定 Active Directory Domain Services (AD DS) 網域 **[domain]** 以及指定網域控制站 ( **-dc**) 的功能已在 Windows Server 2012 中新增。 若要成功執行命令, 您必須使用屬於**Domain admins**或**Enterprise admins**成員的帳戶。 此命令的行為修改如下所示:</br>> 1。  如果未指定網域, 而且未指定特定的網域控制站, 則此選項會傳回要從預設網域控制站處理的網域控制站清單。</br>> 2。  如果未指定網域, 但指定網域控制站, 則會產生指定之網域控制站上的憑證報告。</br>> 3。  如果指定網域, 但未指定網域控制站, 則會在清單中為每個網域控制站的憑證上產生一份網域控制站清單, 以及報告。</br>> 4。  如果指定了網域和網域控制站, 則會從目標網域控制站產生網域控制站清單。 也會產生清單中每個網域控制站的憑證報告。
+> 指定 Active Directory Domain Services （AD DS）網域 **[domain]** 以及指定網域控制站（ **-dc**）的功能已在 Windows Server 2012 中新增。 若要成功執行命令, 您必須使用屬於**Domain admins**或**Enterprise admins**成員的帳戶。 此命令的行為修改如下所示:</br>> 1。  如果未指定網域, 而且未指定特定的網域控制站, 則此選項會傳回要從預設網域控制站處理的網域控制站清單。</br>> 2。  如果未指定網域, 但指定網域控制站, 則會產生指定之網域控制站上的憑證報告。</br>> 3。  如果指定網域, 但未指定網域控制站, 則會在清單中為每個網域控制站的憑證上產生一份網域控制站清單, 以及報告。</br>> 4。  如果指定了網域和網域控制站, 則會從目標網域控制站產生網域控制站清單。 也會產生清單中每個網域控制站的憑證報告。
 
 例如, 假設有一個名為 CPANDL 的網域, 且名為 CPANDL 的網域控制站。 您可以執行下列命令來抓取 CPANDL 的網域控制站及其憑證的清單-DC1: certutil-dc CPANDL-dc1-dcinfo CPANDL
 
@@ -1208,7 +1208,7 @@ CRYPT_DELETEKEYSET:刪除智慧卡上的所有金鑰
 
 CertUtil [選項]-SCRoots update [+] [InputRootFile] [ReaderName]
 
-CertUtil [選項]-SCRoots 儲存\@OutputRootFile [ReaderName]
+CertUtil [選項]-SCRoots 儲存 \@OutputRootFile [ReaderName]
 
 CertUtil [選項]-SCRoots view [InputRootFile |ReaderName]
 
@@ -1308,7 +1308,7 @@ CertFile: 包含要驗證之憑證的檔案。 憑證會針對 CTL 專案進行�
 
 ## <a name="-sign"></a>-sign
 
-CertUtil [選項]-sign InFileList |SerialNumber |CRL OutFileList [開始日期 + dd: hh] [+ SerialNumberList |-SerialNumberList |-ObjectIdList |\@ExtensionFile]
+CertUtil [選項]-sign InFileList |SerialNumber |CRL OutFileList [開始日期 + dd： hh] [+ SerialNumberList |-SerialNumberList |-ObjectIdList | \@ExtensionFile]
 
 CertUtil [選項]-sign InFileList |SerialNumber |CRL OutFileList [#HashAlgorithm] [+ AlternateSignatureAlgorithm |-AlternateSignatureAlgorithm]
 
@@ -1322,7 +1322,7 @@ SerialNumber要建立的憑證序號。 有效期間和其他選項不得存在�
 
 OutFileList: 已修改的憑證或 CRL 輸出檔案清單 (以逗號分隔)。 檔案數目必須符合 InFileList。
 
-開始日期 + dd: hh: 新的有效期間: 選擇性的日期加上;選擇性的天數和時數有效期間;如果同時指定這兩者, 請使用加號 (+) 分隔字元。 使用 [now [+ dd: hh]], 在目前的時間開始。 使用「永不」無到期日 (僅適用于 Crl)。
+開始日期 + dd: hh: 新的有效期間: 選擇性的日期加上;選擇性的天數和時數有效期間;如果同時指定這兩者, 請使用加號 (+) 分隔字元。 使用 [now [+ dd： hh]]，在目前的時間開始。 使用「永不」無到期日 (僅適用于 Crl)。
 
 SerialNumberList: 要新增或移除的逗號分隔序號清單
 
@@ -1461,7 +1461,7 @@ CertUtil [Options]-錯誤 ErrorCode
 
 ## <a name="-getreg"></a>-getreg
 
-CertUtil [選項]-getreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers}\[ProgId\]] [RegistryValueName]
+CertUtil [選項]-getreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 顯示登錄值
 
@@ -1487,9 +1487,9 @@ RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
 值: 新的數值、字串或日期登錄值或檔案名。 如果數值的開頭為 "+" 或 "-", 則會在現有的登錄值中設定或清除在新值中指定的位。
 
-如果字串值的開頭為 "+" 或 "-", 而現有的值為 REG_MULTI_SZ 值, 則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值, 請在字串值的結尾加上 "\n"。
+如果字串值的開頭為 "+" 或 "-"，而現有的值為 REG_MULTI_SZ 值，則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值，請在字串值的結尾加上 "\n"。
 
-如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案, 則會改為將它剖析為 [Date] [+ |-] [dd: hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
+如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將它剖析為 [Date] [+ |-] [dd： hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
 
 使用 "chain\ChainCacheResyncFiletime \@now" 可有效地清除快取的 crl。
 
@@ -1499,7 +1499,7 @@ RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
 ## <a name="-setreg"></a>-setreg
 
-CertUtil [選項]-setreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers}\[ProgId\]] RegistryValueName 值
+CertUtil [選項]-setreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers} \[ProgId @ no__t-1] RegistryValueName 值
 
 設定登錄值
 
@@ -1525,9 +1525,9 @@ RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
 值: 新的數值、字串或日期登錄值或檔案名。 如果數值的開頭為 "+" 或 "-", 則會在現有的登錄值中設定或清除在新值中指定的位。
 
-如果字串值的開頭為 "+" 或 "-", 而現有的值為 REG_MULTI_SZ 值, 則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值, 請在字串值的結尾加上 "\n"。
+如果字串值的開頭為 "+" 或 "-"，而現有的值為 REG_MULTI_SZ 值，則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值，請在字串值的結尾加上 "\n"。
 
-如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案, 則會改為將它剖析為 [Date] [+ |-] [dd: hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
+如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將它剖析為 [Date] [+ |-] [dd： hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
 
 使用 "chain\ChainCacheResyncFiletime \@now" 可有效地清除快取的 crl。
 
@@ -1537,7 +1537,7 @@ RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
 ## <a name="-delreg"></a>-delreg
 
-CertUtil [選項]-delreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers}\[ProgId\]] [RegistryValueName]
+CertUtil [選項]-delreg [{ca | 還原 | 原則 | 結束 | 範本 | 註冊 | 連鎖店 |PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 刪除登錄值
 
@@ -1563,9 +1563,9 @@ RegistryValueName: 登錄值名稱 (使用 "name\*" 表示前置詞相符)
 
 值: 新的數值、字串或日期登錄值或檔案名。 如果數值的開頭為 "+" 或 "-", 則會在現有的登錄值中設定或清除在新值中指定的位。
 
-如果字串值的開頭為 "+" 或 "-", 而現有的值為 REG_MULTI_SZ 值, 則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值, 請在字串值的結尾加上 "\n"。
+如果字串值的開頭為 "+" 或 "-"，而現有的值為 REG_MULTI_SZ 值，則會在現有的登錄值中加入或移除字串。 若要強制建立 REG_MULTI_SZ 值，請在字串值的結尾加上 "\n"。
 
-如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案, 則會改為將它剖析為 [Date] [+ |-] [dd: hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
+如果值的開頭是 "\@", 則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將它剖析為 [Date] [+ |-] [dd： hh]--選擇性日期加或減去選擇性的日和小時。 如果同時指定這兩者, 請使用加號 (+) 或減號 (-) 分隔字元。 針對相對於目前時間的日期使用 "now + dd: hh"。
 
 使用 "chain\ChainCacheResyncFiletime \@now" 可有效地清除快取的 crl。
 
@@ -1588,7 +1588,7 @@ CertIdKMS 匯出檔案解密憑證符合 token。  請參閱[-store](#-store)。
 
 使用-f 匯入不是由 CA 發行的憑證。
 
-[-f][-無訊息][-split][-config Machine\CAName][-p 密碼][-symkeyalg SymmetricKeyAlgorithm [, KeyLength]]
+[-f][-無訊息][-split][-config Machine\CAName][-p 密碼][-symkeyalg SymmetricKeyAlgorithm [，KeyLength]]
 
 返回[功能表](#menu)
 
@@ -1602,7 +1602,7 @@ CertUtil [Options]-ImportCert Certfile [ExistingRow]
 
 使用-f 匯入不是由 CA 發行的憑證。
 
-CA 也可能需要設定為支援外部憑證匯入: certutil-setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
+CA 也可能需要設定為支援外部憑證匯入： certutil-setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
 
 [-f][-config Machine\CAName]
 
@@ -1673,7 +1673,7 @@ ExtendedProperties包含擴充屬性
 
 ## <a name="-convertepf"></a>-ConvertEPF
 
-CertUtil [Options]-ConvertEPF PFXInFileList EPFOutFile [cast | cast-] [V3CACertId] [, Salt]
+CertUtil [Options]-ConvertEPF PFXInFileList EPFOutFile [cast | cast-] [V3CACertId] [，Salt]
 
 將 PFX 檔案轉換為 EPF 檔案
 
@@ -1726,13 +1726,13 @@ SaltEPF 輸出檔 salt 字串
 |-UserName 使用者名稱|使用命名帳戶作為 SSL 認證。 針對 [選取] U/I, 請使用-UserName。|
 |-Cert CertId|簽署憑證|
 |-dc DCName|以特定網域控制站為目標|
-|-限制 RestrictionList|以逗號分隔的限制清單。 每個限制都包含一個資料行名稱、一個關聯式運算子和一個常數整數、字串或日期。 一個資料行名稱前面可能會加上加號或減號, 以指出排序次序。 範例：</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>「-RequesterName > 網域, 配置 = 21」|
+|-限制 RestrictionList|以逗號分隔的限制清單。 每個限制都包含一個資料行名稱、一個關聯式運算子和一個常數整數、字串或日期。 一個資料行名稱前面可能會加上加號或減號, 以指出排序次序。 例如：</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>「-RequesterName > 網域, 配置 = 21」|
 |-out ColumnList|逗號分隔的資料行清單|
 |-p 密碼|密碼|
 |-ProtectTo SAMNameAndSIDList|以逗號分隔的 SAM 名稱/SID 清單|
 |-csp 提供者|提供者|
 |-t Timeout|URL 提取超時 (以毫秒為單位)|
-|-symkeyalg SymmetricKeyAlgorithm [, KeyLength]|具有選擇性金鑰長度的對稱金鑰演算法名稱, 範例:AES、128或3DES|
+|-symkeyalg SymmetricKeyAlgorithm [，KeyLength]|具有選擇性金鑰長度的對稱金鑰演算法名稱, 範例:AES、128或3DES|
 
 返回[功能表](#menu)
 

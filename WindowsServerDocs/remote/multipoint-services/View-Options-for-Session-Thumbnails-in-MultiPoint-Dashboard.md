@@ -2,7 +2,7 @@
 title: 檢視 MultiPoint 儀表板中有關工作階段縮圖的選項
 description: 瞭解如何自訂 MultiPoint 服務的視圖選項
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: a11f2f2bbafe4d21e1cd5d56d66a97e08cf35b11
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9b6fa08a6f3215140a528dab0fb55bac23c60ccc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871474"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394795"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>檢視 MultiPoint 儀表板中有關工作階段縮圖的選項
 監視個別桌面上之使用者活動的最簡單方式，就是檢視 MultiPoint 服務系統上每個使用中桌面的縮圖影像。 根據預設，桌面的影像會顯示在 [常用] 索引標籤**上的 [** MultiPoint 儀表板] 中。  

@@ -1,41 +1,41 @@
 ---
 title: 網域名稱系統 (DNS)
-description: 本主題提供 Windows Server 2016 中 DNS 的概觀
+description: 本主題概要說明 Windows Server 2016 中的 DNS
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 1324ba18-4e28-4b9d-bbe7-75707e6d30ab
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3d4ec63e904dd899a3ddc53a59274ad607136edd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ad3b66ff0b271c3b6f6134a96aaf6b5171bc7d4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870819"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406162"
 ---
 # <a name="domain-name-system-dns"></a>網域名稱系統 (DNS)
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-網域名稱系統 (DNS) 是其中一個構成 TCP/IP 通訊協定的業界標準套件，並在一起的 DNS 用戶端和 DNS 伺服器提供 電腦名稱到 IP 位址對應名稱解析服務的電腦和使用者。  
+網域名稱系統（DNS）是由 TCP/IP 組成的業界標準通訊協定套件之一，而且 DNS 用戶端和 DNS 伺服器會將電腦名稱稱到 IP 位址對應名稱解析服務提供給電腦和使用者。  
   
 > [!NOTE]  
-> 本主題中，除了下列的 DNS 內容使用。  
+> 除了本主題之外，還有下列 DNS 內容可供使用。  
 >   
-> -   [什麼是 DNS 用戶端的新功能](What-s-New-in-DNS-Client.md)  
-> -   [什麼是 DNS 伺服器的新功能](What-s-New-in-DNS-Server.md)  
+> -   [DNS 用戶端的新功能](What-s-New-in-DNS-Client.md)  
+> -   [DNS 伺服器的新功能](What-s-New-in-DNS-Server.md)  
 > -   [DNS 原則案例指南](deploy/DNS-Policy-Scenario-Guide.md)  
-> -   視訊：[Windows Server 2016:在 IPAM 中的 DNS 管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
+> -   視訊：@no__t 0Windows 伺服器2016：IPAM 中的 DNS 管理 no__t-0  
   
-在 Windows Server 2016 中，DNS 會是您可以使用伺服器管理員] 或 [Windows PowerShell 命令來安裝伺服器角色。 如果您要安裝新的 Active Directory 樹系和網域，DNS 會自動與 Active Directory 安裝的樹系和網域的全域目錄伺服器。  
+在 Windows Server 2016 中，DNS 是一種伺服器角色，您可以使用伺服器管理員或 Windows PowerShell 命令來安裝它。 如果您要安裝新的 Active Directory 樹系和網域，則會自動安裝 DNS，Active Directory 做為樹系和網域的全域目錄伺服器。  
   
-Active Directory 網域服務 (AD DS) 會使用 DNS，做為網域控制站的位置機制。 任何主體的 Active Directory 作業執行時，例如驗證、 更新或搜尋，電腦使用 DNS 來找出 Active Directory 網域控制站。 此外，網域控制站會使用 DNS，可以找到彼此。  
+Active Directory Domain Services （AD DS）會使用 DNS 作為其網域控制站位置機制。 執行任何主體 Active Directory 作業時（例如驗證、更新或搜尋），電腦會使用 DNS 來尋找 Active Directory 網域控制站。 此外，網域控制站會使用 DNS 來尋找彼此。  
   
-DNS 用戶端服務包含在所有的用戶端和伺服器版本的 Windows 作業系統中，並預設在安裝作業系統時執行。 當您設定 TCP/IP 網路連線的 DNS 伺服器的 IP 位址時，DNS 用戶端會查詢 DNS 伺服器來探索網域控制站，以及電腦名稱解析為 IP 位址。 例如，當網路使用者與 Active Directory 使用者帳戶登入 Active Directory 網域時，DNS 用戶端服務會查詢 DNS 伺服器，以找出 Active Directory 網域的網域控制站。 當 DNS 伺服器回應查詢，並提供給用戶端的網域控制站的 IP 位址時，用戶端連絡網域控制站，可以開始驗證程序。  
+DNS 用戶端服務會包含在 Windows 作業系統的所有用戶端和伺服器版本中，而且預設會在作業系統安裝時執行。 當您使用 DNS 伺服器的 IP 位址設定 TCP/IP 網路連線時，DNS 用戶端會查詢 DNS 伺服器以探索網域控制站，並將電腦名稱稱解析成 IP 位址。 例如，當具有 Active Directory 使用者帳戶的網路使用者登入 Active Directory 網域時，DNS 用戶端服務會查詢 DNS 伺服器，以找出 Active Directory 網域的網域控制站。 當 DNS 伺服器回應查詢，並將網域控制站的 IP 位址提供給用戶端時，用戶端會連線到網域控制站，而驗證程式就可以開始。  
   
-Windows Server 2016 的 DNS 伺服器和 DNS 用戶端服務會使用 DNS 通訊協定包含 TCP/IP 通訊協定套件中。 DNS 是 TCP/IP 參考模型的應用程式層的一部分，如下圖所示。  
+Windows Server 2016 DNS 伺服器和 DNS 用戶端服務會使用 TCP/IP 通訊協定套件中包含的 DNS 通訊協定。 DNS 是 TCP/IP 參考模型的應用層一部分，如下圖所示。  
   
 ![TCP/IP 中的 DNS](../media/Domain-Name-System--DNS-/dns_in_tcpip.jpg)  
   

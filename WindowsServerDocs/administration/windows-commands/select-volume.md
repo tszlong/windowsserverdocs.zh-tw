@@ -1,8 +1,8 @@
 ---
 title: select volume
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98f42324dbd4c6b3add3333cf4687d1613b1f700
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: cc981131c8de2dc4534e390645ef45c39a7b02ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441421"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371059"
 ---
 # <a name="select-volume"></a>select volume
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-選取指定的磁碟區，並將焦點轉移到它。 此命令也可用來顯示目前的焦點在所選磁碟的磁碟區。  
+選取指定的磁片區，並將焦點移至其上。 此命令也可以用來顯示目前在所選磁片中具有焦點的磁片區。  
   
   
   
@@ -38,45 +38,45 @@ select volume={<n>|<d>}
   
 | 參數 |                                                                               描述                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <n>    | 要接收焦點的磁碟區數目。 您可以檢視所有磁碟區的數字上使用目前選取的磁碟**列出磁碟區**DiskPart 命令。 |
-|    <d>    |                                                 磁碟機代號或掛接點路徑要接收焦點的磁碟區。                                                 |
+|    <n>    | 要接收焦點的磁片區編號。 您可以使用 DiskPart 中的 [**列出**磁片區] 命令，來查看目前選取之磁片上的所有磁片區編號。 |
+|    <d>    |                                                 要接收焦點之磁片區的磁碟機號或掛接點路徑。                                                 |
   
 ## <a name="remarks"></a>備註  
   
--   如果未不指定任何磁碟區，則此命令會顯示目前的焦點在所選磁碟的磁碟區。  
+-   如果未指定磁片區，此命令會顯示目前在所選磁片中具有焦點的磁片區。  
   
--   在基本磁碟上，選取磁碟區也會將焦點置於對應的資料分割。  
+-   在基本磁碟上，選取磁片區也會將焦點提供給對應的分割區。  
   
--   如果有對應的資料分割選取磁碟區，則將會自動選取資料分割。  
+-   如果選取了具有對應磁碟分割的磁片區，則會自動選取該磁碟分割。  
   
--   如果已選取的分割區，與對應的磁碟區，將會自動選取磁碟區。  
+-   如果選取的資料分割具有對應的磁片區，則會自動選取該磁片區。  
   
-## <a name="BKMK_examples"></a>範例  
-若要將焦點移到 2 的磁碟區，輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要將焦點移到第2卷，請輸入：  
   
 ```  
 select volume=2  
 ```  
   
-若要將焦點移到磁碟機 C，輸入：  
+若要將焦點移至 C 磁片磁碟機，請輸入：  
   
 ```  
 select volume=c  
 ```  
   
-若要將焦點移至裝載在名為"mountpath"的資料夾上的磁碟區，輸入：  
+若要將焦點移至名為 "mountpath" 的資料夾上所裝載的磁片區，請輸入：  
   
 ```  
 select volume=c:\mountpath  
 ```  
   
-若要顯示目前的焦點在所選磁碟的磁碟區，請輸入：  
+若要顯示目前在所選磁片中具有焦點的音量，請輸入：  
   
 ```  
 select volume  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

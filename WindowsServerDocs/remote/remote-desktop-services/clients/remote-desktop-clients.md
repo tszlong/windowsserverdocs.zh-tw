@@ -2,7 +2,7 @@
 title: 遠端桌面用戶端
 description: 了解適用於您所有裝置的不同遠端桌面用戶端
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: dougkim
 ms.author: helohr
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b7810d0b8b7cbd8d886b99a07d1419cb5e8197ed
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: b96ec92fea067d6482baeb54f19a1ec07e2229a8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546416"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404160"
 ---
 # <a name="remote-desktop-clients"></a>遠端桌面用戶端
 

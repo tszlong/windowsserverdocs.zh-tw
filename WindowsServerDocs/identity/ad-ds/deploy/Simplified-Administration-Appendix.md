@@ -7,35 +7,35 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 36cdacec27e64586c359146b858a9d68750e5026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858259"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369637"
 ---
 # <a name="simplified-administration-appendix"></a>簡化的系統管理附錄
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
--   [伺服器管理員加入伺服器 對話方塊中 (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
+-   [伺服器管理員新增伺服器 對話方塊（Active Directory）](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
   
 -   [伺服器管理員遠端伺服器狀態](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
   
 -   [Windows PowerShell 模組載入](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_PSLoadModule)  
   
--   [舊版作業系統的 RID 發行的 Hotfix](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
+-   [舊版作業系統的 RID 發行修補程式](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
   
--   [Ntdsutil.exe Install from Media Changes](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
+-   [Ntdsutil.exe 從媒體變更安裝](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
   
-## <a name="BKMK_AddServers"></a>伺服器管理員加入伺服器 對話方塊中 (Active Directory)  
+## <a name="BKMK_AddServers"></a>伺服器管理員新增伺服器 對話方塊（Active Directory）  
 
-**新增伺服器**對話方塊可讓搜尋 Active Directory 伺服器作業系統，使用萬用字元，以及位置。 此對話方塊也可讓使用完整的網域名稱或前置詞名稱的 DNS 查詢。 這些搜尋會使用原生的 DNS 和 LDAP 通訊協定透過.NET，不針對透過 SOAP-這表示網域控制站連絡伺服器管理員甚至可以執行 Windows Server 2003 AD Management Gateway AD Windows PowerShell 實作。 您也可以匯入伺服器名稱的佈建用途的檔案。  
+[**新增伺服器**] 對話方塊可讓您搜尋伺服器、作業系統、使用萬用字元和位置的 Active Directory。 此對話方塊也可讓您依完整功能變數名稱或首碼名稱使用 DNS 查詢。 這些搜尋會使用透過 .NET 執行的原生 DNS 和 LDAP 通訊協定，而非透過 SOAP 的 ad 管理閘道進行 AD Windows PowerShell，這表示伺服器管理員聯繫的網域控制站甚至可以執行 Windows Server 2003。 您也可以匯入具有伺服器名稱的檔案，以供布建之用。  
   
-Active Directory 搜尋會使用下列的 LDAP 篩選器：  
+Active Directory 搜尋會使用下列 LDAP 篩選準則：  
   
 ```  
 (&(ObjectCategory=computer)  
@@ -58,30 +58,30 @@ Active Directory 搜尋會傳回下列屬性：
 ```  
   
 ## <a name="BKMK_ServerMgrStatus"></a>伺服器管理員遠端伺服器狀態  
-伺服器管理員測試使用位址路由通訊協定的遠端伺服器存取範圍。 未列出任何伺服器沒有回應 ARP 要求，即使它們是集區中。  
+伺服器管理員使用位址路由通訊協定來測試遠端伺服器存取範圍。 未回應 ARP 要求的任何伺服器都不會列出，即使它們在集區中也一樣。  
   
-如果 ARP 回應，然後 DCOM 和 WMI 連線會對伺服器傳回狀態資訊。 如果無法連線到 RPC、 DCOM 和 WMI，伺服器管理員無法完整管理的伺服器。  
+如果 ARP 回應，則會對伺服器發出 DCOM 和 WMI 連接，以傳回狀態資訊。 如果無法連線到 RPC、DCOM 和 WMI，伺服器管理員就無法完全管理伺服器。  
   
 ## <a name="BKMK_PSLoadModule"></a>Windows PowerShell 模組載入  
-Windows PowerShell 3.0 會實作動態載入的模組。 使用**Import-module** cmdlet 通常是不再需要; 相反地，只需叫用 cmdlet、 別名或函式會自動載入的模組。  
+Windows PowerShell 3.0 會執行動態模組載入。 通常不再需要使用**import-module** Cmdlet;相反地，只要叫用 Cmdlet、alias 或 function，就會自動載入模組。  
   
-若要查看已載入的模組，請使用**Get-module** cmdlet。  
+若要查看已載入的模組，請使用**get-help** Cmdlet。  
   
 ```  
 Get-Module  
   
 ```  
   
-![簡化的管理](media/Simplified-Administration-Appendix/ADDS_PSGetModule.gif)  
+![簡化的系統管理](media/Simplified-Administration-Appendix/ADDS_PSGetModule.gif)  
   
-若要查看所有已安裝的模組匯出的函式與指令程式，請使用：  
+若要使用其匯出的函式和 Cmdlet 查看所有已安裝的模組，請使用：  
   
 ```  
 Get-Module -ListAvailable  
   
 ```  
   
-主要使用案例**匯入模組**命令是當您需要存取 「 AD: 」Windows PowerShell 虛擬磁碟機，而無其他內容已載入模組。 例如，使用下列命令：  
+使用**import-module**命令的主要案例是當您需要存取 "AD："Windows PowerShell 虛擬磁片磁碟機和其他東西都已載入模組。 例如，使用下列命令：  
   
 ```  
 import-module activedirectory  
@@ -90,23 +90,23 @@ dir
   
 ```  
   
-## <a name="BKMK_Rid"></a>舊版作業系統的 RID 發行的 Hotfix  
-請參閱[有可用來偵測並防止過度消耗全域的 RID 集區，在執行 Windows Server 2008 R2 的網域控制站上的更新](https://support.microsoft.com/kb/2618669)。  
+## <a name="BKMK_Rid"></a>舊版作業系統的 RID 發行修補程式  
+查看有[更新可用來偵測並防止在執行 Windows Server 2008 R2 的網域控制站上過度使用全域 RID 集](https://support.microsoft.com/kb/2618669)區。  
   
-## <a name="BKMK_IFM"></a>Ntdsutil.exe Install from Media Changes  
-Windows Server 2012 的 Ntdsutil.exe 命令列工具來新增兩個其他選項**IFM （IFM 媒體建立）** 功能表。 這些可讓您建立 IFM 存放區，而不需要先執行匯出的 NTDS 離線磁碟重組。DIT 資料庫檔案。 當磁碟空間不是進階時，這樣可以節省建立 IFM 的時間。  
+## <a name="BKMK_IFM"></a>Ntdsutil.exe 從媒體變更安裝  
+Windows Server 2012 會針對**ifm （Ifm 媒體建立）** 功能表，將兩個額外的選項新增至 ntdsutil.exe 命令列工具。 這些可讓您建立 IFM 存放區，而不需要先對匯出的 NTDS 執行離線磁碟重組。DIT 資料庫檔案。 當磁碟空間不是 premium 時，這會節省建立 IFM 的時間。  
   
 下表描述兩個新的功能表項目：  
   
 |||  
 |-|-|  
 |功能表項目|說明|  
-|建立完整 NoDefrag %s|建立不含 AD 的完整 DC 或 AD LDS/執行個體到資料夾 %s 重組的 IFM 媒體|  
-|建立 Sysvol 全文 NoDefrag %s|建立 IFM 媒體包含 SYSVOL 和不含資料夾 %s 重組針對完整的 AD 網域控制站|  
+|建立完整的 NoDefrag% s|建立沒有磁碟重組的 IFM 媒體，將完整的 AD DC 或 AD/LDS 實例重組到資料夾% s|  
+|建立 Sysvol 完整 NoDefrag% s|建立具有 SYSVOL 的 IFM 媒體，但不將完整 AD DC 的磁碟重組到資料夾% s|  
   
-![簡化的管理](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)  
+![簡化的系統管理](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)  
   
-![簡化的管理](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)  
+![簡化的系統管理](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)  
   
 
 

@@ -7,30 +7,30 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fc2aaa9f7c7c42b6e94995ff473a580ce560ed93
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00e307da35911189114257eea88ccaf90ceab1ae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819999"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390723"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-此主題涵蓋更新之 Active Directory 管理中心的新 Active Directory 資源回收筒、更細緻的密碼原則與 Windows PowerShell 歷程記錄檢視器的詳細資料，包括架構、常見工作的範例與疑難排解資訊。 如需簡介，請參閱[Introduction to Active Directory Administrative Center Enhancements&#40;技術等級 100&#41;](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)。  
+此主題涵蓋更新之 Active Directory 管理中心的新 Active Directory 資源回收筒、更細緻的密碼原則與 Windows PowerShell 歷程記錄檢視器的詳細資料，包括架構、常見工作的範例與疑難排解資訊。 如需簡介，請參閱[Active Directory 管理中心增強&#40;層級 100&#41;的簡介](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)。  
   
 - [Active Directory 管理中心架構](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)  
-- [啟用及管理 Active Directory 資源回收筒 使用 Active Directory 管理中心](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
-- [設定和管理使用 Active Directory 管理中心更細緻的密碼原則](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
-- [使用 Active Directory 管理中心 Windows PowerShell 歷程記錄檢視器](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
+- [使用 Active Directory 管理中心啟用和管理 Active Directory 回收站](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
+- [使用 Active Directory 管理中心設定和管理更細緻的密碼原則](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
+- [使用 Active Directory 管理中心的 Windows PowerShell 歷程記錄檢視器](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
 - [疑難排解 AD DS 管理](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
   
 ## <a name="BKMK_Arch"></a>Active Directory 管理中心架構  
   
-### <a name="active-directory-administrative-center-executables-dlls"></a>Active Directory Administrative Center 可執行檔、 Dll  
+### <a name="active-directory-administrative-center-executables-dlls"></a>Active Directory 管理中心可執行檔，Dll  
 
 Active Directory 管理中心的模組和基礎架構並未隨著新的資源回收筒、FGPP 與歷程記錄檢視器功能而變更。  
   
@@ -42,13 +42,13 @@ Active Directory 管理中心的模組和基礎架構並未隨著新的資源回
   
 下面說明新資源回收筒功能的基礎 Windows PowerShell 和操作層：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
   
-## <a name="BKMK_EnableRecycleBin"></a>啟用及管理 Active Directory 資源回收筒 使用 Active Directory 管理中心  
+## <a name="BKMK_EnableRecycleBin"></a>使用 Active Directory 管理中心啟用和管理 Active Directory 回收站  
   
 ### <a name="capabilities"></a>功能  
   
-- Windows Server 2012 或更新版本的 Active Directory 管理中心可讓您設定及管理 Active Directory 資源回收筒針對樹系中任何網域分割區。 不再需要使用 Windows PowerShell 或 Ldp.exe 來啟用 Active Directory 資源回收筒或還原網域分割中的物件。
+- Windows Server 2012 或更新版本的 Active Directory 管理中心可讓您設定和管理樹系中任何網域磁碟分割的 Active Directory 回收站。 不再需要使用 Windows PowerShell 或 Ldp.exe 來啟用 Active Directory 資源回收筒或還原網域分割中的物件。
 - Active Directory 管理中心提供進階篩選條件，可讓您在具有許多刻意刪除之物件的大型環境中較容易執行目標性還原。
   
 ### <a name="limitations"></a>限制  
@@ -58,17 +58,17 @@ Active Directory 管理中心的模組和基礎架構並未隨著新的資源回
 - Active Directory 管理中心無法以單一動作還原物件的樹狀子目錄。 例如，如果您刪除含巢狀 OU、使用者、群組與電腦的 OU，還原基底 OU 時並不會還原子物件。  
   
     > [!NOTE]  
-    > Active Directory 管理中心批次還原操作會的 「 最大努力 」 的已刪除的物件*只在選取範圍內*以便排序之前在還原清單的子系的父系。 在簡單的測試案例中，可以用單一動作還原物件的樹狀子目錄。 但邊角案例，例如包含部分樹狀結構-某些遺漏的已刪除的父節點的樹狀結構-選取範圍或錯誤的情況下，例如當父還原失敗，可能無法如預期般運作時，請略過子物件。 基於這個理由，您應該一律在還原父物件之後，以個別的動作還原物件的子樹狀目錄。  
+    > Active Directory 管理中心批次還原作業會在*選取範圍內*進行已刪除之物件的「最佳工作」，讓父代在還原清單的子系之前排序。 在簡單的測試案例中，可以用單一動作還原物件的樹狀子目錄。 但是角落的情況，例如包含部分樹狀結構的選取範圍，其中某些已刪除的父節點遺失-或錯誤案例，例如當父還原失敗時略過子物件，可能無法如預期般運作。 基於這個理由，您應該一律在還原父物件之後，以個別的動作還原物件的子樹狀目錄。  
   
-Active Directory 資源回收筒需要 Windows Server 2008 R2 樹系功能等級，您必須是 Enterprise Admins 群組的成員。 啟用 Active Directory 資源回收筒之後，您便無法將它停用。 Active Directory 資源回收筒會使得樹系中每個網域控制站上的 Active Directory 資料庫 (NTDS.DIT) 大小增加。 資源回收筒所使用的磁碟空間會隨著時間持續增加，因為它會保留物件與其所有屬性資料。  
+Active Directory 回收站需要 Windows Server 2008 R2 樹系功能等級，而且您必須是 Enterprise Admins 群組的成員。 啟用 Active Directory 資源回收筒之後，您便無法將它停用。 Active Directory 資源回收筒會使得樹系中每個網域控制站上的 Active Directory 資料庫 (NTDS.DIT) 大小增加。 資源回收筒所使用的磁碟空間會隨著時間持續增加，因為它會保留物件與其所有屬性資料。  
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>使用 Active Directory 管理中心來啟用 Active Directory 資源回收筒
 
-若要啟用 Active Directory 資源回收筒，請開啟 [Active Directory 管理中心]  ，然後按一下瀏覽窗格中您樹系的名稱。 從 [工作] 窗格中，按一下 [啟用資源回收筒]。  
+若要啟用 Active Directory 資源回收筒，請開啟 [Active Directory 管理中心] ，然後按一下瀏覽窗格中您樹系的名稱。 從 [工作] 窗格中，按一下 [啟用資源回收筒]。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
-Active Directory 管理中心會顯示 [啟用資源回收筒確認]  對話方塊。 這個對話方塊會警告您啟用資源回收筒是無法還原的動作。 按一下 [確定] 來啟用 Active Directory 資源回收筒。 Active Directory 管理中心會顯示另一個對話方塊，提醒您 Active Directory 資源回收筒要等到所有網域控制站都複寫設定變更之後，才能完全正常運作。  
+Active Directory 管理中心會顯示 [啟用資源回收筒確認] 對話方塊。 這個對話方塊會警告您啟用資源回收筒是無法還原的動作。 按一下 [確定] 來啟用 Active Directory 資源回收筒。 Active Directory 管理中心會顯示另一個對話方塊，提醒您 Active Directory 資源回收筒要等到所有網域控制站都複寫設定變更之後，才能完全正常運作。  
   
 > [!IMPORTANT]  
 > 在下列情況下，無法使用啟用 Active Directory 資源回收筒的選項：  
@@ -76,7 +76,7 @@ Active Directory 管理中心會顯示 [啟用資源回收筒確認]  對話方�
 > - 樹系功能等級低於 Windows Server 2008 R2  
 > - 選項已啟用  
 
-對等的 Active Directory Windows PowerShell cmdlet 是：  
+對等 Active Directory Windows PowerShell Cmdlet 為：  
 
 ```powershell
 Enable-ADOptionalFeature  
@@ -88,21 +88,21 @@ Enable-ADOptionalFeature
 
 本節使用名為 **corp.contoso.com**的現有網域做為範例。 此網域會將使用者組織成名為 **UserAccounts**的父系 OU。 **UserAccounts** OU 包含三個依部門命名的子系 OU，每個皆包含進一步的 OU、使用者與群組。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)  
   
 #### <a name="storage-and-filtering"></a>儲存及篩選
 
 Active Directory 資源回收筒會保留樹系中已刪除的所有物件。 它會根據 **msDS-deletedObjectLifetime** 屬性儲存這些物件，這個屬性預設是設定為符合樹系的 **tombstoneLifetime** 的屬性。 在任何使用 Windows Server 2003 SP1 或更新版本建立的樹系中， **tombstoneLifetime** 的值預設設定為 180 天。 在任何從 Windows 2000 升級或隨 Windows Server 2003 (不含 Service Pack) 安裝的樹系中，預設並未設定 tombstoneLifetime 屬性，因此 Windows 會使用內部預設值 (60 天)。 所有這些都是可設定的。您可以使用 Active Directory 管理中心從樹系的網域分割還原任何已刪除的物件。 您必須繼續使用 **Restore-ADObject** Cmdlet 從其他分割 (例如「設定」) 還原已刪除的物件。啟用 Active Directory 資源回收筒會在 Active Directory 管理中心內每個網域分割下面顯示 [刪除的物件] 容器。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
   
 「刪除的物件」容器會顯示該網域分割中所有可還原的物件。 存留期超過 **msDS-deletedObjectLifetime** 的已刪除物件稱為「已回收的物件」。 Active Directory 管理中心不會顯示已回收的物件，而且您也無法使用 Active Directory 管理中心來還原這些物件。  
   
-如需資源回收筒架構與處理規則的更深入說明，請參閱[AD 資源回收筒：了解、 實作、 最佳做法以及疑難排解](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)。  
+如需回收站架構和處理規則的更深入說明，請參閱 @no__t 0The AD 回收站：瞭解、執行、最佳作法，以及針對 @ no__t-0 進行疑難排解。  
   
 Active Directory 管理中心以人為方式將一個容器傳回的預設物件數目限制為 20,000 個物件。 您可以按一下 [管理] 功能表，然後按一下 [管理清單選項]，將此限制最高提高至 100,000 個物件。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_MgmtList.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_MgmtList.png)  
   
 #### <a name="restoration"></a>還原  
   
@@ -110,21 +110,21 @@ Active Directory 管理中心以人為方式將一個容器傳回的預設物件
 
 Active Directory 管理中心提供功能強大的條件和篩選選項，您應該先熟悉這些條件和選項，以便在您需要於實際還原中使用它們時使用。 網域會刻意刪除許多超過存留期的物件。如果可能刪除之物件的存留期為 180 天，當發生意外時，您將無法很簡單地就復原所有物件。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_AddCriteria.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_AddCriteria.png)  
   
-與其撰寫複雜的 LDAP 篩選條件並將 UTC 值轉換成日期和時間，不如使用基本和進階 [篩選]  功能表只列出相關物件。 如果您知道刪除的日期、物件的名稱或任何其他關鍵資料，請利用該資料來進行篩選。 請按一下搜尋方塊右邊的＞形箭號來切換進階篩選選項。  
+與其撰寫複雜的 LDAP 篩選條件並將 UTC 值轉換成日期和時間，不如使用基本和進階 [篩選] 功能表只列出相關物件。 如果您知道刪除的日期、物件的名稱或任何其他關鍵資料，請利用該資料來進行篩選。 請按一下搜尋方塊右邊的＞形箭號來切換進階篩選選項。  
   
 還原操作與任何其他搜尋相同，支援所有標準的篩選條件選項。 在內建的篩選條件中，還原物件的重要篩選條件通常包括：  
   
-- *ANR (模糊名稱解析-未列於功能表上，但您在輸入時會用 * * * 篩選 * * * 方塊)*  
+- *ANR （模糊名稱解析-功能表中沒有列出，但是在您于 [篩選] * * * * * * * * * * * * * * * * * * **  
 - 上次修改時間 (介於指定日期之間)  
 - 物件是使用者/inetorgperson/電腦/群組/組織單位  
-- 名稱  
+- Name  
 - 刪除時  
 - 上次已知父系  
-- 類型  
+- Type  
 - 描述  
-- 縣市  
+- 縣/市  
 - 國家 / 地區  
 - 部門  
 - 員工識別碼  
@@ -137,11 +137,11 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
 - UPN  
 - 郵遞區號  
 
-您可以新增多個條件。 比方說，您可以尋找在 2012 年 9 月 24 日從伊利諾州芝加哥，刪除與職稱為經理的所有使用者物件。
+您可以新增多個條件。 例如，您可以在2012年9月24日從芝加哥伊利諾州刪除的所有使用者物件，以及職稱為經理的職稱。
   
 您也可以在評估要復原哪些物件時，新增、修改或重新排列欄標題來提供更多詳細資料。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)  
   
 如需有關模糊名稱解析的詳細資訊，請參閱 [ANR 屬性](https://msdn.microsoft.com/library/ms675092(VS.85).aspx)。  
   
@@ -151,21 +151,21 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
   
 1. 按一下 Active Directory 管理中心瀏覽窗格中的網域名稱。  
 2. 按兩下管理清單中的 [刪除的物件]。  
-3. 在物件上按一下滑鼠右鍵，然後按一下 [還原] ，或按一下 [工作]  窗格中的 [還原]  。  
+3. 在物件上按一下滑鼠右鍵，然後按一下 [還原]，或按一下 [工作] 窗格中的 [還原] 。  
   
 物件會還原至其原始位置。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)  
   
-按一下 **還原至...** 變更還原位置。 如果已刪除的物件的父容器也被刪除，但您不想要還原父，這非常有用。  
+按一下 [**還原至**] 以變更還原位置。 如果已刪除的物件的父容器也已刪除，但是您不想要還原父系，這會很有用。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)  
   
 ##### <a name="multiple-peer-objects"></a>多個對等物件
 
 您可以還原多個對等層級物件，例如某個 OU 中的所有使用者。 按住 CTRL 鍵，然後按一下一或多個您要還原的已刪除物件。 按一下 [工作] 窗格中的 [還原]。 您也可以按住 CTRL 鍵和 A 鍵來選取所有顯示的物件，或使用 SHIFT 鍵並按一下來選取某個範圍的物件。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestorePeers.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestorePeers.png)  
   
 ##### <a name="multiple-parent-and-child-objects"></a>多個父物件和子物件
 
@@ -180,29 +180,29 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
   
 **無法執行操作，因為物件的父系可能無法建立例項或已被刪除。**  
   
-「上次已知父系」屬性會顯示每個物件的父系關係。 在還原父系之後重新整理 Active Directory 管理中心時，「上次已知父系」  屬性會從已刪除位置變更為已還原位置。 因此，您可以還原該子物件，當父物件的位置不會再顯示刪除的物件容器的辨別的名稱。  
+「上次已知父系」屬性會顯示每個物件的父系關係。 在還原父系之後重新整理 Active Directory 管理中心時，「上次已知父系」 屬性會從已刪除位置變更為已還原位置。 因此，當父物件的位置不再顯示 [已刪除的物件] 容器的辨別名稱時，您可以還原該子物件。  
   
 考量一下系統管理員不小心刪除包含子系 OU 和使用者的 Sales OU 案例。  
   
-首先，請觀察值**上次已知父系**所有已刪除之使用者的屬性及如何讀取 **OU ou=sales\0adel:*< guid + 已刪除的物件容器辨別名稱 > * * *:  
+首先，請觀察所有已刪除之使用者的 [**上次已知父系**] 屬性值，以及它如何讀取 **OU = Sales\0ADEL：* < guid + 已刪除的物件容器辨別名稱 > * * *：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)  
   
 篩選模糊名稱 Sales 以傳回已刪除的 OU (這是您稍後要還原的 OU)：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSales.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSales.png)  
   
-重新整理 Active Directory 管理中心內，若要查看已刪除的使用者物件的上次已知父系 」 屬性變更為已還原的 Sales OU 辨別名稱：  
+重新整理 Active Directory 管理中心，以查看已刪除的使用者物件的 [上次已知父系] 屬性變更為 [已還原的銷售 OU 辨別名稱]：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesRestored.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesRestored.gif)  
   
-篩選所有 Sales 使用者。 按住 CTRL 鍵和 A 鍵來選取所有已刪除的 Sales 使用者。 按一下 [還原]  將物件從 [刪除的物件]  容器移到 Sales OU，其中物件的群組成員資格和屬性保持不變。  
+篩選所有 Sales 使用者。 按住 CTRL 鍵和 A 鍵來選取所有已刪除的 Sales 使用者。 按一下 [還原] 將物件從 [刪除的物件] 容器移到 Sales OU，其中物件的群組成員資格和屬性保持不變。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesUndelete.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesUndelete.png)  
   
 如果 **Sales** OU 包含自己的子系 OU，則您將先還原這些子系 OU，再還原它們的子系 OU 等等。  
   
-若要還原所有巢狀刪除的物件，透過指定已刪除的父容器，請參閱[附錄 b:還原多個已刪除的 Active Directory 物件 （範例指令碼）](https://technet.microsoft.com/library/dd379504(WS.10).aspx)。  
+若要藉由指定已刪除的父容器來還原所有已嵌套的已刪除物件，請參閱 [Appendix B：還原多個已刪除的 Active Directory 物件（範例腳本） ](https://technet.microsoft.com/library/dd379504(WS.10).aspx)。  
   
 用於還原已刪除之物件的 Active Directory Windows PowerShell Cmdlet 是：  
 
@@ -220,7 +220,7 @@ Restore-adobject
 2. 按一下＞形箭號以顯示 [+新增條件] 功能表，選取並新增 [上次修改時間介於指定日期之間]。 上次修改時間 (**whenChanged** 屬性) 是刪除時間的近似值，它們在大多數環境中都一樣。 這個查詢會執行伺服器端搜尋。  
 3. 在結果中使用進一步的顯示篩選、排序等等來找出要還原的已刪除物件，然後正常地還原它們。  
   
-## <a name="BKMK_FGPP"></a>設定和管理使用 Active Directory 管理中心更細緻的密碼原則  
+## <a name="BKMK_FGPP"></a>使用 Active Directory 管理中心設定和管理更細緻的密碼原則  
   
 ### <a name="configuring-fine-grained-password-policies"></a>設定更細緻的密碼原則
 
@@ -228,21 +228,21 @@ Active Directory 管理中心可讓您建立及管理更細緻的密碼原則 (F
   
 如需有關更細緻的密碼原則之資訊，請參閱 [AD DS 更細緻的密碼與帳戶鎖定原則逐步指南 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)。  
   
-在瀏覽窗格中，依序按一下樹狀檢視、您的網域、[系統] 、[密碼設定容器] ，然後在 [工作] 窗格中，按一下 [新增]  和 [密碼設定] 。  
+在瀏覽窗格中，依序按一下樹狀檢視、您的網域、[系統]、[密碼設定容器]，然後在 [工作] 窗格中，按一下 [新增] 和 [密碼設定]。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
   
 ### <a name="managing-fine-grained-password-policies"></a>管理更細緻的密碼原則
 
 建立新的 FGPP 或編輯現有的 FGPP 會顯示 [密碼設定] 編輯器。 您可以從這裡設定所有想要的密碼原則，就如同在 Windows Server 2008 或 Windows Server 2008 R2 中一樣，只有現在是使用具有特殊用途的編輯器。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
-填寫所有必要 (紅色星號) 的欄位和任何選用的欄位，然後按一下 [新增]  以設定接收這個原則的使用者或群組。 FGPP 會覆寫這些指定之安全性主體的預設網域原則設定。 在上圖中，有一個限制性極高的原則僅套用至內建的 Administrator 帳戶，用來防止洩露。 該原則對標準使用者來說太過複雜而難以遵守，但是非常適合只有 IT 專業人員才會使用的高風險帳戶。  
+填寫所有必要 (紅色星號) 的欄位和任何選用的欄位，然後按一下 [新增] 以設定接收這個原則的使用者或群組。 FGPP 會覆寫這些指定之安全性主體的預設網域原則設定。 在上圖中，有一個限制性極高的原則僅套用至內建的 Administrator 帳戶，用來防止洩露。 該原則對標準使用者來說太過複雜而難以遵守，但是非常適合只有 IT 專業人員才會使用的高風險帳戶。  
   
 您也可以設定指定網域內原則的優先順序，以及原則要套用至哪些使用者和群組。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_Precedence.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_Precedence.png)  
   
 用於更細緻的密碼原則之 Active Directory Windows PowerShell Cmdlet 是：  
   
@@ -258,19 +258,19 @@ Set-ADFineGrainedPasswordPolicy
 
 更細緻的密碼原則 Cmdlet 功能在 Windows Server 2008 R2 與 Windows Server 2012 之間並沒有變更。 為了方便起見，下圖說明 Cmdlet 的相關引數：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)  
   
-Active Directory 管理中心也可讓您針對特定的使用者尋找已套用之 FGPP 的結果組。 以滑鼠右鍵按一下任何使用者，然後按一下**檢視結果密碼設定...** 以開啟*密碼設定*適用於透過隱含或明確指派該使用者的頁面：  
+Active Directory 管理中心也可讓您針對特定的使用者尋找已套用之 FGPP 的結果組。 以滑鼠右鍵按一下任何使用者，然後按一下 [**查看結果密碼設定**]，以開啟透過隱含或明確指派套用至該使用者的 [*密碼設定*] 頁面：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)  
   
-檢查任何使用者或群組的 [內容]  會顯示 [直接關聯的密碼設定] ，這些是明確指派的 FGPP：  
+檢查任何使用者或群組的 [內容] 會顯示 [直接關聯的密碼設定]，這些是明確指派的 FGPP：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)  
   
-隱含的 FGPP 指派不會顯示為此，您必須使用**檢視結果密碼設定...** 選項。  
+隱含的 FGPP 指派不會顯示在這裡;為此，您必須使用 [**查看結果密碼設定 ...** ] 選項。  
   
-## <a name="BKMK_HistoryViewer"></a>使用 Active Directory 管理中心 Windows PowerShell 歷程記錄檢視器
+## <a name="BKMK_HistoryViewer"></a>使用 Active Directory 管理中心的 Windows PowerShell 歷程記錄檢視器
 
 Windows 管理未來會透過 Windows PowerShell 完成。 透過在工作自動化架構上建構分層圖形工具，使得最複雜分散式系統的管理變得一致且有效率。 您必須了解 Windows PowerShell 的運作方式，才能完全發揮您的潛能並將您的運算投資發揮到淋漓盡致。  
   
@@ -278,27 +278,27 @@ Active Directory 管理中心現在提供它所執行之所有 Windows PowerShel
   
 Active Directory 管理中心 Windows PowerShell 歷程記錄檢視器的目的是要讓您透過實務經驗來了解。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_HistoryViewer.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_HistoryViewer.gif)  
   
 按一下＞形箭號來顯示 Windows PowerShell 歷程記錄檢視器。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RaiseViewer.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RaiseViewer.png)  
   
 接著，建立使用者或修改群組的成員資格。 歷程記錄檢視器會不斷更新，提供 Active Directory 管理中心用指定引數所執行的每個 Cmdlet 的摺疊檢視。  
   
 展開任何感興趣的明細項目，即可查看提供給 Cmdlet 引數的所有值：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)  
   
-在使用 Active Directory 管理中心來建立、修改或刪除物件之前，請先按一下 [開始工作] 功能表來建立手動注釋。 輸入您剛才進行的工作。  完成變更之後，請選取 [結束工作] 。 工作附註會將所有這些執行的動作組成一個可供您用來便於了解的可摺疊附註。  
+在使用 Active Directory 管理中心來建立、修改或刪除物件之前，請先按一下 [開始工作] 功能表來建立手動注釋。 輸入您剛才進行的工作。  完成變更之後，請選取 [結束工作]。 工作附註會將所有這些執行的動作組成一個可供您用來便於了解的可摺疊附註。  
   
 例如，若要查看用來變更某個使用者密碼及將該使用者從群組移除的 Windows PowerShell 命令：  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RemoveUser.gif)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RemoveUser.gif)  
   
 選取 [全部顯示] 核取方塊也會顯示只擷取資料的 Get-* 動詞命令 Windows PowerShell Cmdlet。  
   
-![進階的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ShowAll.png)  
+![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ShowAll.png)  
   
 歷程記錄檢視器會顯示 Active Directory 管理中心執行的常值命令，而且您可能會注意到某些 Cmdlet 的執行似乎並非必要。 例如，您可以使用下列命令建立新的使用者：  
 
@@ -326,9 +326,9 @@ Active Directory 管理中心的設計只需使用最低限度的程式碼和模
   
 #### <a name="logging-options"></a>記錄選項
 
-Active Directory 管理中心現在包含內建的記錄，追蹤設定檔的一部分。 請在 dsac.exe 所在的資料夾中建立/修改下列檔案：  
+Active Directory 管理中心現在包含內建的記錄功能，做為追蹤設定檔的一部分。 請在 dsac.exe 所在的資料夾中建立/修改下列檔案：  
   
-**dsac.exe.config**
+**dsac.exe .exe .config**
   
 請建立下列內容：  
   
@@ -439,7 +439,7 @@ Active Directory 管理中心現在包含內建的記錄，追蹤設定檔的一
 設定「詳細資訊」等級也會顯示每個函式的 .NET 堆疊，但是除了在對發生存取違規或損毀的 Dsac.exe 進行疑難排解時有幫助以外，這些堆疊所包含的資料並不足以提供特別有用的資訊。 此問題的兩個可能原因包括：
   
 - ADWS 服務沒有在任何可存取的網域控制站上執行。
-- 到 ADWS 服務會封鎖網路通訊，從執行 Active Directory 管理中心的電腦。
+- 從執行 Active Directory 管理中心的電腦對 ADWS 服務封鎖網路通訊。
 
 > [!IMPORTANT]  
 > 該服務還有一個頻外版本，稱為 [Active Directory 管理閘道](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=2852)，這個閘道可在 Windows Server 2008 SP2 和 Windows Server 2003 SP2 上執行。
@@ -447,10 +447,10 @@ Active Directory 管理中心現在包含內建的記錄，追蹤設定檔的一
 
 當沒有任何 Active Directory Web 服務執行個體可用時，顯示的錯誤是：  
   
-|錯誤|運算|
+|Error|運算|
 | --- | --- |  
 |「 無法連線到任何網域。 請重新整理或在連線可用之後再試一次。」|在 Active Directory 管理中心應用程式啟動時顯示|
-|「 找不到可用的伺服器，在*<NetBIOS domain name>* 執行 Active Directory Web 服務 (ADWS) 的網域 」|嘗試選取 Active Directory 管理中心內的某個網域節點時顯示|
+|「在執行 Active Directory Web 服務（ADWS）的 *<NetBIOS domain name>* 網域中找不到可用的伺服器」|嘗試選取 Active Directory 管理中心內的某個網域節點時顯示|
   
 若要針對此問題進行疑難排解，請使用下列步驟：  
   
@@ -486,4 +486,4 @@ Active Directory 管理中心現在包含內建的記錄，追蹤設定檔的一
   
 ## <a name="see-also"></a>另請參閱
 
-[AD 資源回收筒、 更細緻的密碼原則和 PowerShell 歷程記錄](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  
+[AD 資源回收筒、更細緻的密碼原則和 PowerShell 歷程記錄](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

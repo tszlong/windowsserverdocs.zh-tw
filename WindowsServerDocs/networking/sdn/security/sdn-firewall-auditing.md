@@ -1,32 +1,32 @@
 ---
 title: SDN 防火牆稽核
-description: 防火牆稽核是一項新功能在 Windows Server 2019 SDN 防火牆。 當您啟用 SDN 防火牆時，取得記錄中任何具有已啟用記錄的 SDN 防火牆規則 (Acl) 所處理的流程。
+description: 防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，會記錄已啟用記錄的 SDN 防火牆規則（Acl）所處理的任何流程。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: a73cdc443dd55b16f6e6cb187e001581620ce771
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 246adc6b4fd3ea130196cf1786f7fa130703de1a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890899"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355762"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN 防火牆稽核
 
->適用於：Windows Server 2019
+>適用於：Windows Server Standard 2012 R2
 
-防火牆稽核是一項新功能在 Windows Server 2019 SDN 防火牆。 當您啟用 SDN 防火牆時，取得記錄中任何具有已啟用記錄的 SDN 防火牆規則 (Acl) 所處理的流程。 記錄檔必須位於與一致的語法[Azure 網路監看員流程記錄](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)。 這些記錄可用於診斷或備份起來以供稍後分析。 
+防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，會記錄已啟用記錄的 SDN 防火牆規則（Acl）所處理的任何流程。 記錄檔必須是與[Azure 網路監看員流量記錄](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的語法。 這些記錄可用於診斷或封存，以供日後分析。 
 
-我們很快就會提供一些範例，示範如何處理這些檔案，使用 Power BI 之類的工具。
+我們很快就會提供一些範例，說明如何使用 Power BI 之類的工具來處理這些檔案。
 
-_**現在就試試看，並提供意見反應 ！**_
+_**試試看，並提供意見反應給我們！**_
 
-以下是範例指令碼，以啟用稽核與 HYPER-V 主機上的防火牆。 更新的變數開頭，並執行此 Windows Server 2019 電腦上已安裝 RSAT NetworkController 功能：
+以下是在 Hyper-v 主機上啟用防火牆審核的範例腳本。 一開始就更新變數，並在已安裝 RSAT-NetworkController 功能的 Windows Server 2019 電腦上執行此動作：
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +54,7 @@ foreach ($s in $servers) {
 }
 ```
 
-一旦啟用新的檔案會出現在每小時一次有關每個主機上指定的目錄。  您應該定期處理這些檔案，並將它們從主機移除。  目前的檔案都具有長度為零，而會鎖定，直到下一個小時標記處排清：
+一旦啟用，新的檔案就會出現在每個主機上指定的目錄中每小時一次。  您應該定期處理這些檔案，並將它們從主機中移除。  目前檔案的長度為零，且在下一個小時標記排清之前已鎖定：
 
 ```syntax
 PS C:\test\log1> dir
@@ -100,7 +100,7 @@ Mode                LastWriteTime         Length Name
 ```
 
 
-請注意，記錄發生於只具備的規則**記錄**設為**已啟用**，例如：
+請注意，記錄僅適用于將**記錄**設定為 [**已啟用**] 的規則，例如：
 
 ```syntax
 {

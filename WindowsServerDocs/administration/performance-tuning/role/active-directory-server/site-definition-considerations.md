@@ -1,83 +1,83 @@
 ---
-title: 網站定義和網域控制站的建置在 ADDS 效能微調
-description: 網站定義和網域控制站放置考量事項中 Active Directory 效能微調。
-ms.prod: windows-server-threshold
+title: 中的網站定義和網域控制站位置新增效能微調
+description: Active Directory 效能微調中的網站定義和網域控制站放置考慮。
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9861703e5ae88dcaec5e76d9fab426b928d0cb9a
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: ba3c9e8792b425fd24d01ab997a5f7c2ac573814
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811501"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370246"
 ---
-# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>獲得正確位置的網域控制站和站台考量
+# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適當位置的網域控制站和網站考慮
 
-適當的站台定義效能很重要。 站台外的用戶端可能會遇到驗證和查詢的效能不佳。 此外，隨著 IPv6 的用戶端上，要求可以來自 IPv4 或 IPv6 位址和 Active Directory 必須能夠正確地定義適用於 IPv6 的網站。 同時設定時，作業系統會偏好 IPv6 ipv4。
+適當的網站定義對於效能很重要。 失去網站的用戶端可能會遇到效能不佳的驗證和查詢。 此外，在用戶端上引進 IPv6 之後，要求可能來自 IPv4 或 IPv6 位址，Active Directory 必須為 IPv6 正確定義網站。 當設定兩者時，作業系統偏好 IPv6 到 IPv4。
 
-從 Windows Server 2008 中，網域控制站嘗試使用名稱解析來進行反向的對應，以判斷站台用戶端應該位於中。 這會造成耗盡 ATQ 執行緒集區，並且會導致網域控制站沒有回應。 適當的解決方式，這個是 ipv6 定義適當的站台拓撲。 因應措施，其中可以最佳化的名稱解析基礎結構，以快速回應要網域控制站要求。 如需詳細資訊，請參閱[Windows Server 2008 或 Windows Server 2008 R2 網域控制站的延遲回應 LDAP 或 Kerberos 要求](https://support.microsoft.com/kb/2668820)。
+從 Windows Server 2008 開始，網域控制站會嘗試使用名稱解析來執行反向查詢，以判斷用戶端應該位於的網站。 這可能會導致 ATQ 執行緒集區耗盡，並導致網域控制站變成沒有回應。 適當的解決方法是正確定義 IPv6 的網站拓撲。 因應措施是，您可以將名稱解析基礎結構優化，以快速回應網域控制站要求。 如需詳細資訊，請參閱[Windows server 2008 或 Windows server 2008 R2 網域控制站延遲回應 LDAP 或 Kerberos 要求](https://support.microsoft.com/kb/2668820)。
 
-需要考量的另一個區域尋找讀取/寫入網域控制站的 Rodc 正在使用中的案例。  某些作業需要存取可寫入的網域控制站或唯讀網域控制站即已足夠時，目標可寫入的網域控制站。  最佳化這些案例會採用兩個路徑：
--   當唯讀網域控制站即已足夠，請連絡可寫入網域控制站。  這需要應用程式程式碼變更。
--   其中可能需要可寫入的網域控制站。  進行讀寫網域控制站在中央位置以將延遲降至最低。
+另一個考慮區域是在使用 Rodc 的案例中尋找讀取/寫入 Dc。  某些作業需要存取可寫入的網域控制站，或在唯讀網域控制站夠好時，將目標設為可寫入的網域控制站。  將這些案例優化會採用兩個路徑：
+-   當唯讀網域控制站足夠時，聯絡可寫入的網域控制站。  這需要變更應用程式代碼。
+-   可能需要可寫入的網域控制站。  將讀寫網域控制站放在中央位置，以將延遲降到最低。
 
-如需進一步資訊參考：
--   [應用程式與 rodc 之間的相容性](https://technet.microsoft.com/library/cc772597.aspx)
--   [Active Directory 服務介面 (ADSI) 和讀取只有網域控制站 (RODC) – 避免效能問題](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+如需進一步資訊，請參閱：
+-   [Rodc 的應用程式相容性](https://technet.microsoft.com/library/cc772597.aspx)
+-   [Active Directory 服務介面（ADSI）和唯讀網域控制站（RODC）–避免效能問題](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
 
-## <a name="optimize-for-referrals"></a>最佳化的轉介
+## <a name="optimize-for-referrals"></a>針對參考優化
 
-轉介是如何 LDAP 查詢會重新導向網域控制站未裝載一份分割區查詢。 傳回一個轉介時，它會包含資料分割的辨別的名稱、 DNS 名稱和連接埠號碼。 用戶端會使用此資訊以繼續在裝載資料分割伺服器上的查詢。 這是 DCLocator 案例的所有建議網站定義和設置網域控制站會保留下來，但通常會忽略應用程式相依於轉介。 建議您確保 AD 拓撲，包括網站定義和設置網域控制站會正確反映在用戶端的需求。 此外，這可能包括從多個調整 DNS 設定，或重新放置應用程式的站台的單一站台中的網域中有網域控制站。
+參照是當網域控制站未裝載所查詢的資料分割複本時，LDAP 查詢的重新導向方式。 傳回參考時，它會包含分割區的辨別名稱、DNS 名稱和埠號碼。 用戶端會使用此資訊在裝載資料分割的伺服器上繼續查詢。 這是 DCLocator 的案例，而且所有建議的網站定義和網域控制站放置都會維持不變，但相依于參照的應用程式通常會被忽略。 建議您確保 AD 拓撲（包括網站定義和網域控制站放置）正確反映用戶端的需求。 此外，這可能包括在單一網站中擁有來自多個網域的網域控制站、調整 DNS 設定，或重新放置應用程式的網站。
 
-## <a name="optimization-considerations-for-trusts"></a>信任的最佳化考量
+## <a name="optimization-considerations-for-trusts"></a>信任的優化考慮
 
-在樹系內的案例中，信任會根據下列網域階層處理：直屬子網域-&gt;子網域-&gt;樹系根網域-&gt;子網域-&gt;直屬子網域。 安全通道的樹系根目錄中和每個父代，這表示可以成為多載，因為傳輸網域控制站信任階層中的驗證要求的彙總。 驗證也會對傳輸高度隱蔽的連結，以影響上述流程時，這也可能會遇到延遲，大型的地理散佈情況之 Active Directory 中。 多載可能會發生在跨樹系和下層信任案例中。 下列建議適用於所有案例：
+在樹系內案例中，會根據下列網域階層來處理信任：總計-子域-&gt; 子域-&gt; 樹系根域-&gt; 子域-&gt; 的單一子域。 這表示在樹系根節點和每個父系上的安全通道可能會因為驗證要求的匯總而超載，傳輸信任階層中的 Dc。 當驗證也必須傳輸高度潛在的連結來影響上述流程時，這也可能會導致大型地理散佈的 Active Directory 延遲。 多載可能發生在樹系和下層信任案例中。 下列建議適用于所有案例：
 
--   適當地調整 MaxConcurrentAPI，若要透過安全的通道支援的負載。 如需詳細資訊，請參閱 <<c0> [ 如何使用 MaxConcurrentApi 設定 NTLM 驗證的效能微調](https://support.microsoft.com/kb/2688798/EN-US)。
+-   適當地調整 MaxConcurrentAPI，以支援跨安全通道的負載。 如需詳細資訊，請參閱[如何使用 MaxConcurrentApi 設定進行 NTLM 驗證的效能微調](https://support.microsoft.com/kb/2688798/EN-US)。
 
--   建立捷徑信任，視需要根據負載。
+-   根據負載，適當地建立快捷方式信任。
 
--   請確定網域中的每個網域控制站可執行名稱解析，並與受信任網域的網域控制站進行通訊。
+-   請確定網域中的每個網域控制站都能夠執行名稱解析，並與受信任網域中的網域控制站進行通訊。
 
--   請確定位置考量會納入為信任的帳戶。
+-   請確定已將位置考慮納入信任。
 
--   啟用 Kerberos，可能的話，並使用安全通道來降低風險的 MaxConcurrentAPI 瓶頸時遇到的最小化。
+-   盡可能啟用 Kerberos，並將安全通道的使用降到最低，以降低遇到 MaxConcurrentAPI 瓶頸的風險。
 
-跨網域信任的案例包括已一致許多客戶的痛苦點的區域。 名稱解析與連線問題，通常都是因為防火牆，導致資源耗盡，信任的網域控制站上，並會影響所有的用戶端。 此外，經常被忽略的案例最佳化的受信任的網域控制站的存取。 以確保其正常運作的主要區域如下所示：
+跨網域信任案例是針對許多客戶一直都是痛點的領域。 名稱解析和連線問題通常是因為防火牆而造成信任網域控制站上的資源耗盡，並影響所有用戶端。 此外，經常被忽略的案例是將對受信任網域控制站的存取進行優化。 確保此作業正常運作的主要區域如下所示：
 
--   請確定使用信任的網域控制站的 DNS 和 WINS 名稱解析可以解析正確的受信任網域的網域控制站清單。
+-   請確定信任的網域控制站所使用的 DNS 和 WINS 名稱解析，可以解析受信任網域的正確網域控制站清單。
 
-    -   以靜態方式新增的記錄都有容易變成過時，而且經過一段時間研討連線問題。 DNS 轉送，動態 DNS，並合併 WINS/DNS 基礎結構是長期來說更容易維護。
+    -   以靜態方式新增的記錄在一段時間後會變得過時並重新產生連接問題。 DNS 轉送、動態 DNS 和合併 WINS/DNS 基礎結構在長期執行中比較容易維護。
 
-    -   請確定正確設定轉寄站，條件式轉送，並在用戶端可能需要存取的環境中的每個資源的兩個正向和反向對應區域的次要複本。 同樣地，這需要手動維護，大多傾向於變成過時。 彙總基礎結構的是最理想的。
+    -   針對用戶端可能需要存取的環境中的每個資源，請務必適當地設定轉寄和反向對應區域的轉寄站、條件式轉寄和次要複本。 同樣地，這需要手動維護，而且往往會變得過時。 基礎結構的匯總非常理想。
 
--   信任網域中的網域控制站會嘗試尋找網域控制站受信任的網域中，位於相同站台第一次，然後容錯回復到一般的定位器。
+-   信任網域中的網域控制站會先嘗試在位於相同網站的受信任網域中尋找網域控制站，然後再容錯回復到一般定位器。
 
-    -   如需 DCLocator 的運作方式的詳細資訊，請參閱[尋找最接近的站台中的網域控制站](https://technet.microsoft.com/library/cc978016.aspx)。
+    -   如需 DCLocator 運作方式的詳細資訊，請參閱在[最接近的網站中尋找網域控制站](https://technet.microsoft.com/library/cc978016.aspx)。
 
-    -   收斂的受信任且信任的網域，以反映相同的位置中的網域控制站之間的站台名稱。 請確定子網路和 IP 位址對應正確地連結至這兩個樹系中的站台。 如需詳細資訊，請參閱 <<c0> [ 網域定位器跨樹系信任](http://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
+    -   在受信任網域與信任網域之間融合網站名稱，以反映相同位置中的網域控制站。 請確定子網和 IP 位址對應已適當地連結至兩個樹系中的網站。 如需詳細資訊，請參閱[跨樹系信任的網域定位器](http://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
 
-    -   根據 DCLocator 的需求，網域控制站的位置，請確定已開啟，連接埠。 如果網域之間，有防火牆，請確定防火牆已正確設定所有信任的。 無法開啟防火牆時，信任的網域控制站將仍嘗試存取受信任的網域。 如果通訊失敗，因為任何原因，信任的網域控制站會最後逾受信任的網域控制站的要求。 不過，這些逾時可能需要幾秒鐘，每個要求，而且可以耗盡信任的網域控制站上的網路連接埠，如果連入要求數量很高。 用戶端可能會遇到逾時，網域控制站，等待視為無回應的執行緒，無法轉譯為無回應的應用程式中，（如果應用程式在前景執行緒中執行要求）。 如需詳細資訊，請參閱 <<c0> [ 如何設定防火牆供網域及信任](https://support.microsoft.com/kb/179442)。
+    -   確定埠已根據 DCLocator 需求開啟，適用于網域控制站位置。 如果網域之間有防火牆存在，請確定已針對所有信任正確設定防火牆。 如果防火牆未開啟，信任的網域控制站仍然會嘗試存取受信任的網域。 如果通訊因任何原因而失敗，信任的網域控制站最終會將要求提供給受信任的網域控制站。 不過，這些時間輸出可能會花費數秒的每個要求，如果傳入要求的數量很高，則可能會耗盡信任網域控制站上的網路埠。 用戶端可能會在網域控制站上遇到等待時間超時的擱置執行緒，這可能會轉譯成無回應的應用程式（如果應用程式在前景執行緒中執行要求）。 如需詳細資訊，請參閱[如何設定網域和信任的防火牆](https://support.microsoft.com/kb/179442)。
 
-    -   您可以使用 DnsAvoidRegisterRecords 來排除效能不佳執行或高延遲的網域控制站，例如衛星站台，從一般的定位器的廣告中。 如需詳細資訊，請參閱 <<c0> [ 如何來最佳化網域控制站或通用類別目錄存在於用戶端的站台外的位置](https://support.microsoft.com/kb/306602)。
+    -   使用 DnsAvoidRegisterRecords 來消除效能不佳或高延遲的網域控制站，例如在衛星網站中，從廣告到一般定位器。 如需詳細資訊，請參閱[如何優化位於用戶端網站外部之網域控制站或通用類別目錄的位置](https://support.microsoft.com/kb/306602)。
 
         > [!NOTE]
-        > 沒有實際限制為大約 50%到用戶端可以取用的網域控制站數目。 這些應該是最大站台最佳且最高的容量的網域控制站。
+        > 用戶端可以使用的網域控制站數目有大約50的實際限制。 這些應該是最理想的網站和最高容量網域控制站。
 
     
-    -  請考慮將網域控制站放在相同的實體位置中的受信任且信任網域。
+    -  請考慮將網域控制站放在同一個實體位置中受信任和信任的網域。
 
-所有信任的情況下，認證會路由都傳送根據驗證要求中指定的網域。 這也適用於查詢的 LookupAccountName 和 LsaLookupNames （以及其他項目，這些都只是最常使用的） Api。 當這些 Api 的網域參數傳遞 NULL 值時，網域控制站會嘗試尋找每個受信任的網域中指定的帳戶名稱。
+在所有信任案例中，認證會根據驗證要求中指定的網域來路由傳送。 這也適用于 LookupAccountName 和 LsaLookupNames 的查詢（以及其他專案，這些只是最常使用的） Api。 當這些 Api 的網域參數傳遞 Null 值時，網域控制站會嘗試尋找每個可用信任網域中指定的帳號名稱。
 
--   停用時已指定 NULL 的網域，請檢查所有可用的信任。 [如何使用 LsaLookupRestrictIsolatedNameLevel 登錄項目來限制在外部信任的網域隔離名稱查閱](https://support.microsoft.com/kb/818024)
+-   當指定 Null 網域時，停用檢查所有可用的信任。 [如何使用 LsaLookupRestrictIsolatedNameLevel 登錄專案來限制外部受信任網域中的隔離名稱查閱](https://support.microsoft.com/kb/818024)
 
--   停用傳遞驗證要求與 NULL 指定跨所有可用的信任的網域。 [Lsass.exe 程序可能會停止回應，如果您的 Active Directory 網域控制站上有許多外部信任](https://support.microsoft.com/kb/923241/EN-US)
+-   停用在所有可用的信任上指定 Null 網域的傳遞驗證要求。 [如果 Active Directory 網域控制站上有許多外部信任，Lsass.exe 進程可能會停止回應](https://support.microsoft.com/kb/923241/EN-US)
 
 ## <a name="see-also"></a>另請參閱
-- [效能微調 Active Directory 伺服器](index.md)
+- [Active Directory 伺服器的效能微調](index.md)
 - [硬體考量](hardware-considerations.md)
 - [LDAP 考量](ldap-considerations.md)
 - [針對 ADDS 效能問題進行疑難排解](troubleshoot.md) 

@@ -6,64 +6,64 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7d046c720c5c6250b6efa03e068aa66e2a6bbe3d
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: de4627f2e03e6432f4e678cd9ca932819cb483d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828522"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408437"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>在僅適用於周邊網路的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析
 
 
-以便在 Active Directory 同盟服務的同盟伺服器的名稱解析可以順利運作\(AD FS\)的一或多個網域名稱系統中的案例\(DNS\)區域提供只周邊網路網路，下列必須完成工作：  
+如此一來，Active Directory 同盟服務 \(AD FS @ no__t-1 案例中的同盟伺服器，名稱解析可以順利運作，其中一或多個網域名稱系統 \(DNS @ no__t-3 區域僅服務周邊網路，如下所示工作必須完成：  
   
--   新增同盟伺服器的 IP 位址，必須更新同盟伺服器 proxy 上的主機檔案。  
+-   必須更新同盟伺服器 proxy 上的 hosts 檔案，才能新增同盟伺服器的 IP 位址。  
   
--   周邊網路中的 DNS 必須解決所有的用戶端要求，AD FS 的主機名稱的同盟伺服器 proxy 設定。 若要這樣做，您將主機新增\(A\)同盟伺服器 proxy 的周邊 DNS 資源記錄。  
+-   周邊網路中的 DNS 必須設定為將 AD FS 主機名稱的所有用戶端要求，解析為同盟伺服器 proxy。 若要這麼做，請將主機 \(A @ no__t-1 資源記錄新增至同盟伺服器 proxy 的周邊 DNS。  
   
 > [!NOTE]  
-> 這些程序假設主機\(A\)資源記錄的同盟伺服器已建立在公司網路 DNS。 如果尚未存在此記錄，建立這筆記錄，並再執行這些程序。 如需有關如何建立主機\(A\)資源記錄，同盟伺服器，請參閱[將主機新增&#40;的&#41;至同盟伺服器的公司 DNS 資源記錄](Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)。  
+> 這些程式假設已在公司網路 DNS 中建立同盟伺服器的主機 @no__t 0A @ no__t-1 資源記錄。 如果此記錄尚未存在，請建立此記錄，然後執行這些程式。 如需有關如何為同盟伺服器建立主機 \(A @ no__t-1 資源記錄的詳細資訊，請參閱[將&#40;主機 a&#41;資源記錄新增至同盟伺服器的公司 DNS](Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)。  
   
-## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>將同盟伺服器的 IP 位址新增至主機檔案  
-如此的同盟伺服器 proxy 能如預期般在帳戶夥伴的周邊網路中，您必須新增項目指向同盟伺服器的 DNS 主機名稱的同盟伺服器 proxy 上的主機檔案\(如 fs.fabrikam.com\)和 IP 位址\(例如 192.168.1.4\)帳戶夥伴的公司網路中。 將此項目新增至主機檔案防止同盟伺服器 proxy 本身，以解析用戶端連絡\-起始呼叫在帳戶夥伴的同盟伺服器。  
+## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>將同盟伺服器的 IP 位址新增至 hosts 檔案  
+如此一來，同盟伺服器 proxy 就可以在帳戶夥伴的周邊網路中如預期般運作。在帳戶夥伴的公司網路中，您必須將專案新增至該同盟伺服器 proxy 上的主機檔案中，指向同盟伺服器的 DNS 主機名稱 \(for 範例、no__t，以及 IP 位址 \(for 範例、192.168.1.4 @ no__t-3。 將此專案新增至 hosts 檔案，可防止同盟伺服器 proxy 自行聯繫，以將用戶端 @ no__t-0initiated 呼叫解析為帳戶夥伴中的同盟伺服器。  
   
 若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
-#### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>若要將同盟伺服器的 IP 位址新增至主機檔案  
+#### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>將同盟伺服器的 IP 位址新增至 hosts 檔案  
   
-1.  瀏覽至 %systemroot%\\Winnt\\System32\\驅動程式的目錄資料夾並找出**主機**檔案。  
+1.  流覽至% systemroot% \\Winnt @ no__t-1System32 @ no__t-2Drivers directory 資料夾，並找出**hosts**檔案。  
   
 2.  開啟 [記事本]，然後開啟 **[主機]** 檔案。  
   
-3.  新增 IP 位址和同盟伺服器的主機名稱在帳戶夥伴**主機**檔案，如下列範例所示：  
+3.  將帳戶夥伴中同盟伺服器的 IP 位址和主機名稱新增至**hosts**檔案，如下列範例所示：  
   
     **192.168.1.4fs.fabrikam.com**  
   
 4.  儲存並關閉檔案。  
   
-## <a name="add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>將主機新增\(A\)同盟伺服器 proxy 的周邊 DNS 資源記錄  
-以便在網際網路上的用戶端成功可以存取同盟伺服器，透過新部署的同盟伺服器 proxy，您必須先建立一個主機\(A\)中的周邊 DNS 資源記錄。 此資源記錄的主機名稱解析 account federation server\(例如，fs.fabrikam.com\)帳戶同盟伺服器 proxy 的 IP 位址\(比方說，131.107.27.68\)中周邊網路。  
+## <a name="add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>將主機 \(A @ no__t-1 資源記錄新增至同盟伺服器 proxy 的周邊 DNS  
+因此，網際網路上的用戶端可以透過新部署的同盟伺服器 proxy 成功存取同盟伺服器，您必須先在周邊 DNS 中建立主機 \(A @ no__t-1 資源記錄。 此資源記錄會將帳戶同盟伺服器的主機名稱 \(for 範例，fs. fabrikam .com @ no__t-1 解析為帳戶同盟伺服器 proxy 的 IP 位址，\(for 範例中為周邊網路中的 131.107.27.68 @ no__t-3。  
   
 > [!NOTE]  
-> 它會假設您使用 DNS 伺服器，執行 Windows 2000 Server、 Windows Server 2003 或 Windows Server 2008 DNS 伺服器服務，來控制周邊 DNS 區域。  
+> 假設您使用的 DNS 伺服器執行 Windows 2000 Server、Windows Server 2003 或 Windows Server 2008 與 DNS 伺服器服務，以控制周邊 DNS 區域。  
   
-中的成員資格**系統管理員**，或同等權限，才能完成此程序的最小值。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程式，至少需要**Administrators**的成員資格或同等許可權。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
-#### <a name="to-add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>若要新增的主機\(A\)同盟伺服器 proxy 的周邊 DNS 資源記錄  
+#### <a name="to-add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>若要將主機 \(A @ no__t-1 資源記錄新增至同盟伺服器 proxy 的周邊 DNS  
   
-1.  在周邊網路的 DNS 伺服器，開啟 [DNS] 嵌入式管理單元\-中。 按一下 **開始**，指向**系統管理工具**，然後按一下**DNS**。  
+1.  在周邊網路的 DNS 伺服器上，開啟 DNS snap @ no__t-0in。 按一下 [**開始**]，指向 [系統**管理工具**]，然後按一下 [ **DNS**]。  
   
-2.  在主控台樹狀目錄中，以滑鼠右鍵\-按一下適用的正向對應區域，然後按一下**新主機\(A 或 AAAA\)** 。  
+2.  在主控台樹中，右 @ no__t-0click 適用的正向對應區域，然後按一下 [**新增主機] \(a 或 AAAA @ no__t-3**。  
   
-3.  在 **名稱**，輸入只有同盟伺服器的電腦名稱。 例如，若為完整的網域名稱\(FQDN\) fs.fabrikam.com，輸入**fs**。  
+3.  在 [**名稱**] 中，只輸入同盟伺服器的電腦名稱稱。 例如，針對完整功能變數名稱 \(FQDN @ no__t-1 fs.fabrikam.com，輸入**fs**。  
   
-4.  在  **IP 位址**，比方說，輸入新的同盟伺服器 proxy 的 IP 位址**131.107.27.68**。  
+4.  在 [ **ip 位址**] 中，輸入新的同盟伺服器 PROXY 的 IP 位址，例如**131.107.27.68**。  
   
-5.  按一下 [新增主機]  。  
+5.  按一下 [新增主機]。  
   
 ## <a name="additional-references"></a>其他參考資料  
 [檢查清單：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  

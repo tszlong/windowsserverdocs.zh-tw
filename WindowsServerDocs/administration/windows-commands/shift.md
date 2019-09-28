@@ -1,8 +1,8 @@
 ---
 title: shift
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e72b4be1b265d682d489cf372cdfe5ef54bb444d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f74e0f1f9041a4a7b95d83772ea79376c82876de
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441240"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371246"
 ---
 # <a name="shift"></a>shift
 
 
 
-變更批次參數的批次檔的位置。
+變更批次檔中批次參數的位置。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,20 +38,20 @@ shift [/n <N>]
 
 |參數|描述|
 |---------|-----------|
-|/n \<N>|指定開始轉移*N*個引數，其中*N*是介於 0 到 8 的任何值。 需要命令延伸模組，依預設會啟用。|
+|/n \<N >|指定在第*N*個引數開始轉移，其中*N*是0到8之間的任何值。 需要預設啟用的命令延伸模組。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-- **Shift**命令會將變更批次參數的值 **%0**透過 **%9**複製到前一個的每個參數 — 值 **%1**複製到 **%0**的值 **%2**複製到 **%1**，依此類推。 這是適用於撰寫批次檔執行於任何數量的參數相同的作業。
-- 如果已啟用命令延伸模組， **shift**命令支援 **/n**命令列選項。 **/N**選項會指定開始轉移第 n 個引數，其中**N**是介於 0 到 8 的任何值。 比方說， **SHIFT/2**都會移位 **%3**來 **%2**， **%4**到 **%3**，依此類推，並將 **%0**並 **%1**不會受到影響。 預設會啟用命令延伸模組。
-- 您可以使用**shift**命令來建立可接受超過 10 個批次參數的批次檔。 如果您在命令列上指定 10 個以上的參數，這些會顯示之後的第十個 ( **%9**) 將會變動的入一次 **%9**。
-- **Shift**命令並不會影響 **% \\** * 批次參數。
-- 沒有不回溯**shift**命令。 實作後**shift**命令時，您無法復原的批次參數 ( **%0**) 的排班之前就已存在。
+- **Shift**命令會藉由將每個參數複製到前一個參數來變更批次參數 **% 0**到 **% 9**的值- **% 1**的值會複製到 **% 0**，而 **% 2**的值會複製到 **% 1**，依此類推。 這適用于撰寫在任何數目的參數上執行相同作業的批次檔。
+- 如果已啟用命令延伸模組， **shift**命令會支援 **/n**命令列選項。 **/N**選項指定在第 n 個引數開始轉移，其中**n**是0到8之間的任何值。 例如， **shift/2**會將 **% 3**改成% **2**， **% 4**到 **% 3**，依此類推，而不會影響 **% 0**和 **% 1** 。 預設會啟用命令延伸模組。
+- 您可以使用**shift**命令來建立可接受10個以上批次參數的批次檔。 如果您在命令列上指定超過10個參數，則在第十個（ **% 9**）之後出現的參數，將會一次移位一個到 **% 9**。
+- **Shift**命令對 **% @ no__t-3*** batch 參數不會有任何影響。
+- 沒有回溯**shift**命令。 在您執行**shift**命令之後，就無法復原在轉移之前已存在的批次參數（ **% 0**）。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列幾行範例批次檔呼叫 Mycopy.bat 示範如何使用**shift**與任意數目的批次參數。 在此範例中，Mycopy.bat 會將一份檔案複製到特定的目錄。 批次參數是由目錄和檔案名稱引數表示。
+來自名為 Mycopy 之範例批次檔的下列幾行會示範如何搭配使用**shift**與任意數目的批次參數。 在此範例中，Mycopy 會將檔案清單複製到特定目錄。 批次參數是以目錄和檔案名引數來表示。
 ```
 @echo off 
 rem MYCOPY.BAT copies any number of files

@@ -2,7 +2,7 @@
 title: 使用 MultiPoint 服務的消費者入門
 description: 介紹 MultiPoint 服務，並讓您開始使用它。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2ed2084038236dc8914eefe6bdafc133817b7b41
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: cf31e62345b006ef9572a2ea97a23e3e0bf41b64
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871676"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395367"
 ---
 # <a name="getting-started-with-multipoint-services"></a>使用 MultiPoint 服務的消費者入門
 您的 MultiPoint 服務系統可讓許多使用者使用只有一部電腦的多個已實體連線的工作站。 每部工作站通常都是由一部工作站集線器、滑鼠、鍵盤和視頻監視器所組成。 MultiPoint 服務站上的每位使用者都會遇到唯一的 Windows 運算會話，您可以使用 MultiPoint 管理員進行管理。  

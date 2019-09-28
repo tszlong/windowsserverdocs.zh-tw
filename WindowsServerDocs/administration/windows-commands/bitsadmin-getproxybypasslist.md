@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getproxybypasslist
-description: 適用於 Windows 命令主題**bitsadmin getproxybypasslist** -擷取 proxy 略過清單，指定作業。
+description: '**Bitsadmin getproxybypasslist**的 Windows 命令主題-抓取指定工作的 proxy 略過清單。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 020b8fc0019eb103a0e469258be8705b80dd45de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87cc131402707eac40329750e98218ec52083b94
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854109"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381424"
 ---
 # <a name="bitsadmin-getproxybypasslist"></a>bitsadmin getproxybypasslist
 
-擷取指定作業的 proxy 略過清單。
+抓取指定之作業的 proxy 略過清單。
 
 ## <a name="syntax"></a>語法
 
@@ -38,11 +38,11 @@ bitsadmin /GetProxyBypassList <Job>
 
 ## <a name="remarks"></a>備註
 
-略過清單包含主機名稱或 IP 位址，或兩者不是要透過 proxy 路由傳送。 清單可以包含 「\<本機 >"來參照相同的區域網路上的所有伺服器。 清單可以是以分號或者逗號分隔。
+「略過清單」包含不會透過 proxy 路由傳送的主機名稱或 IP 位址（或兩者）。 此清單可包含「@no__t 0local >」，以參照相同 LAN 上的所有伺服器。 清單可以是分號或空格分隔。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的 proxy 略過清單*myDownloadJob*。
+下列範例會針對名為*myDownloadJob*的作業，抓取 proxy 略過清單。
 ```
 C:\>bitsadmin /GetProxyBypassList myDownloadJob
 ```

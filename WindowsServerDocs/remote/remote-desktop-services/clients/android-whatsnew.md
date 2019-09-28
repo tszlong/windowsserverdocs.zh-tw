@@ -2,7 +2,7 @@
 title: Android 用戶端中的新功能
 description: 了解適用於 Android 的遠端桌面 Web 用戶端最新的變更
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2061878cdbc7a5ace923835a334736e976e248
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: e9008515213c69090ac1f85a7c7866398a682349
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987335"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387789"
 ---
 # <a name="whats-new-in-the-android-client"></a>Android 用戶端中的新功能
 
@@ -83,5 +83,5 @@ ms.locfileid: "70987335"
 
 *發行日期：04/30/2018*
 
-- 解決 CVE-2018-0886 中所述 CredSSP 加密 Oracle 修復的更新。
+- 解決 CVE-2018-0886 中所述的 CredSSP 加密 Oracle 修復的更新。
 - 已修正從先前版本啟動連線時發生損毀的問題。

@@ -1,7 +1,7 @@
 ---
 title: 開始使用
 description: 有關 Windows Server 2019 以及準備好部署、升級或遷移的詳細資訊。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: jasgroce
 ms.technology: get-started
 layout: LandingPage
@@ -9,16 +9,16 @@ ms.topic: landing-page
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e75f4262ea3e1d20b399b3fa1214f0ede33e1e0
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: acc18e9b960473098f59d8980b4b85e63f209b82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023903"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360804"
 ---
 # <a name="get-started-with-windows-server-2019"></a>開始使用 Windows Server 2019
 
-> 適用於：Windows Server 2019
+> 適用於：Windows Server Standard 2012 R2
 
 這個集合所包含的詳細資訊可協助您判斷是否準備好移至 Windows Server 2019。 檢查系統需求、升級選項，以及移至 Windows Server 2019 的其他資訊之後，即可開始往下安裝您需要的最佳版本和安裝選項。 若要下載 Windows Server 2019，請參閱 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)。
 

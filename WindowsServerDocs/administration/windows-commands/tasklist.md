@@ -1,8 +1,8 @@
 ---
 title: Tasklist
-description: 了解如何顯示在本機或遠端電腦上執行的處理程序的清單。
+description: 瞭解如何顯示在本機或遠端電腦上執行的處理常式清單。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2c933bb68c488d83311856958a56809f2f5b859
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f7ad61dfe8beb86c8299dd71bec1d862805e50e0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440991"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383677"
 ---
 # <a name="tasklist"></a>Tasklist
 
-顯示目前在本機電腦或遠端電腦上正在執行的處理序清單。 **Tasklist**會取代**tlist**工具。
+顯示目前在本機電腦或遠端電腦上正在執行的處理序清單。 **Tasklist**取代了**tlist.exe**工具。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -36,60 +36,60 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 |          參數           |                                                                                                                                            描述                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        /s\<電腦 >        |                                                                                         指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。                                                                                         |
-| /u [\<網域 >\\\]\<使用者名稱 > | 所指定的使用者帳戶權限執行命令*使用者名稱*或是*網域*\*UserName<em>。\* \*/u</em> \*可以指定只有當 **/s**指定。 預設值是目前登入的電腦，會發出命令之使用者的權限。 |
-|        /p \<Password>        |                                                                                                       指定在指定的使用者帳戶的密碼 **/u**參數。                                                                                                        |
-|         /m\<模組 >         |                                                               列出與載入的 DLL 模組符合指定的模式名稱的所有工作。 如果未指定模組名稱，這個選項會顯示每項工作所載入的所有模組。                                                                |
-|             /svc             |                                                                                    列出每個處理序，而不會截斷的所有服務資訊。 時才有效 **/fo**參數設為**資料表**。                                                                                    |
-|              /v              |                                                                                 在輸出中，會顯示詳細資訊的工作資訊。 對於完整而不會截斷的詳細資訊輸出，使用 **/v**並 **/svc**在一起。                                                                                 |
-|  /fo {表格\|清單\|csv}  |                                                                             指定要用於輸出的格式。 有效值**表格**，**清單**，並**csv**。 輸出的預設格式**資料表**。                                                                             |
-|             /nh              |                                                                                             隱藏在輸出中的資料行標頭。 時才有效 **/fo**參數設為**表格**或是**csv**。                                                                                              |
-|        /fi \<Filter>         |                                                                          指定處理序中包含或排除的查詢的類型。 請參閱下列表格以取得有效的篩選條件名稱、 運算子和值。                                                                          |
+|        /s \<Computer >        |                                                                                         指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。                                                                                         |
+| /u [@no__t 0Domain > \\ @ no__t-2 @ no__t-3UserName > | 使用*UserName*或*Domain*\*UserName 所指定使用者的帳戶許可權來執行命令<em>。 \* @ no__t-5/u</em>\* 只有在指定 **/s**時才可指定。 預設為目前登入發出命令之電腦的使用者許可權。 |
+|        /p \<密碼 >        |                                                                                                       指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                        |
+|         /m \<Module >         |                                                               列出載入符合指定模式名稱之 DLL 模組的所有工作。 如果未指定模組名稱，此選項會顯示每個工作載入的所有模組。                                                                |
+|             /svc             |                                                                                    列出每個進程的所有服務資訊，而不進行截斷。 當 **/fo**參數設定為**table**時有效。                                                                                    |
+|              /v              |                                                                                 在輸出中顯示詳細的工作資訊。 如需完整的詳細資訊輸出而不截斷，請同時使用 **/v**和 **/svc** 。                                                                                 |
+|  /fo {table \| 清單 \| csv}  |                                                                             指定要用於輸出的格式。 有效值為**table**、 **list**和**csv**。 輸出的預設格式為**table**。                                                                             |
+|             /nh              |                                                                                             隱藏輸出中的資料行標頭。 當 **/fo**參數設定為**table**或**csv**時有效。                                                                                              |
+|        /fi \<篩選 >         |                                                                          指定要在查詢中包含或排除的處理常式類型。 請參閱下表以取得有效的篩選器名稱、運算子和值。                                                                          |
 |              /?              |                                                                                                                                在命令提示字元顯示說明。                                                                                                                                |
 
-### <a name="filter-names-operators-and-values"></a>篩選條件名稱、 運算子和值
+### <a name="filter-names-operators-and-values"></a>篩選名稱、運算子和值
 
 | 篩選器名稱 |    有效的運算子     |                                                                 有效的值                                                                 |
 |-------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-|   狀態    |         eq、ne         |                                                                   執行                                                                    |
-|  IMAGENAME  |         eq、ne         |                                                                  映像名稱                                                                  |
+|   狀態    |         eq、ne         |                                                                   運行                                                                    |
+|  IMAGENAME  |         eq、ne         |                                                                  映射名稱                                                                  |
 |     PID     | eq、ne、gt、lt、ge、le |                                                                  PID 值                                                                   |
-|   工作階段   | eq、ne、gt、lt、ge、le |                                                                工作階段數目                                                                |
-| 工作階段名稱 |         eq、ne         |                                                                 工作階段名稱                                                                 |
-|   CPUTIME   | eq、ne、gt、lt、ge、le | CPU 時間格式<em>HH</em> **:** <em>MM</em> **:** <em>SS</em>，其中*MM*並*SS*是介於 0 到 59 之間並*HH*是任何不帶正負號的數字 |
-|  MEMUSAGE   | eq、ne、gt、lt、ge、le |                                                              以 kb 為單位的記憶體使用量                                                              |
+|   本次   | eq、ne、gt、lt、ge、le |                                                                會話編號                                                                |
+| 會話 |         eq、ne         |                                                                 會話名稱                                                                 |
+|   CPUTIME   | eq、ne、gt、lt、ge、le | CPU 時間，格式為<em>HH</em> **：** <em>MM</em> **：** <em>SS</em>，其中*MM*和*SS*介於0到59之間，而*HH*則為任何不帶正負號的數位 |
+|  MEMUSAGE   | eq、ne、gt、lt、ge、le |                                                              記憶體使用量（KB）                                                              |
 |  USERNAME   |         eq、ne         |                                                             任何有效的使用者名稱                                                              |
-|  服務   |         eq、ne         |                                                                 服務名稱                                                                 |
-| WINDOWTITLE |         eq、ne         |                                                                 視窗標題                                                                 |
+|  伺服器   |         eq、ne         |                                                                 服務名稱                                                                 |
+| SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 視窗標題                                                                 |
 |   模組   |         eq、ne         |                                                                   DLL 名稱                                                                   |
 
 ## <a name="remarks"></a>備註
 
-當指定遠端系統時，不支援的 WINDOWTITLE 和狀態篩選器。
+當指定遠端系統時，不支援 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 篩選。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要列出所有的工作處理序識別碼為大於 1000，並將它們顯示在 CSV 格式中，輸入：
+若要列出處理序識別碼大於1000的所有工作，並將其顯示為 CSV 格式，請輸入：
 ```
 tasklist /v /fi "PID gt 1000" /fo csv
 ```
-若要列出目前正在執行的系統處理程序，請輸入：
+若要列出目前正在執行的系統進程，請輸入：
 ```
 tasklist /fi "USERNAME ne NT AUTHORITY\SYSTEM" /fi "STATUS eq running"
 ```
-若要列出目前正在執行的所有處理程序的詳細的資訊，請輸入：
+若要列出目前正在執行之所有進程的詳細資訊，請輸入：
 ```
 tasklist /v /fi "STATUS eq running"
 ```
-若要列出所有服務資訊的處理程序的 DLL 名稱開頭是"ntdll"的"Srvmain 」 在遠端電腦上，請輸入：
+若要列出遠端電腦 "Srvmain" 上之進程的所有服務資訊，其 DLL 名稱開頭為 "ntdll.dll"，請輸入：
 ```
 tasklist /s srvmain /svc /fi "MODULES eq ntdll*"
 ```
-若要列出 「 Srvmain，「 使用您目前登入的使用者帳戶的認證在遠端電腦上的處理程序中，輸入：
+若要使用您目前登入的使用者帳戶的認證來列出遠端電腦上的處理常式 "Srvmain"，請輸入：
 ```
 tasklist /s srvmain 
 ```
-若要列出 「 Srvmain，「 使用 Hiropln，使用者帳戶的認證在遠端電腦上的處理程序中，輸入：
+若要使用使用者帳戶 Hiropln 的認證來列出遠端電腦上的處理常式 "Srvmain"，請輸入：
 ```
 tasklist /s srvmain /u maindom\hiropln /p p@ssW23
 ```

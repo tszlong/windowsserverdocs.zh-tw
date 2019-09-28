@@ -1,8 +1,8 @@
 ---
 title: bitsadmin wrap
-description: 適用於 Windows 命令主題**bitsadmin 換行**-包裝輸出文字擴充至下一行的 [命令] 視窗的最右側邊緣以外的任何行。
+description: 適用于**bitsadmin**的 Windows 命令主題會將任何會延伸到命令視窗最右邊邊緣的輸出文字換行至下一行。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4834a8a17c72394b6ee8f051ec76919af9880124
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5609fb6f38716795a545e0c7fe3939f893a8c8d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881669"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380686"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-包裝輸出至命令視窗大小。
+包裝輸出以放入命令視窗中。
 
 ## <a name="syntax"></a>語法
 
@@ -40,16 +40,16 @@ bitsadmin /Wrap Job
 
 ## <a name="remarks"></a>備註
 
-指定其他參數之前。 根據預設，所有參數，除了[bitsadmin 監視器](bitsadmin-monitor.md)參數，輸出包裝。
+在其他參數之前指定。 根據預設，除了[bitsadmin 監視器](bitsadmin-monitor.md)參數之外，所有參數都會包裝輸出。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的資訊*myDownloadJob*和包裝的輸出。
+下列範例會抓取名為*myDownloadJob*之作業的資訊，並包裝輸出。
 
 ```
 C:\>bitsadmin /Wrap /Info myDownloadJob /verbose
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+#### <a name="additional-references"></a>其他參考
 
 [命令列語法關鍵](command-line-syntax-key.md)

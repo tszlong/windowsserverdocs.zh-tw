@@ -2,7 +2,7 @@
 title: Windows 桌面用戶端的新功能
 description: 了解適用於 Windows 桌面的遠端桌面用戶端最新變更
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/17/2019
+ms.date: 09/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 587ad44509451497b253689238c3aef233a37153
-ms.sourcegitcommit: e210fce039452a9855353520c7f8698acd76ffce
+ms.openlocfilehash: 4325bd7b33c16d972cac980e17c10bacbfeffd8c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71071287"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387595"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -30,7 +30,7 @@ ms.locfileid: "71071287"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|Public     |1.2.246  |
+|Public     |1.2.247  |
 |測試人員    |1.2.247  |
 
 ## <a name="updates-for-version-12247"></a>1\.2.247 版的更新

@@ -1,8 +1,8 @@
 ---
-title: 建立邏輯磁碟分割
-description: '適用於 Windows 命令主題 * * *- '
+title: 建立磁碟分割邏輯
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3af60aed6c8305e410c6ebfba3cf2e006034ad7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4f18048272eda710f7cb53a631ddeda81784a56b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434148"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378886"
 ---
-# <a name="create-partition-logical"></a>建立邏輯磁碟分割
+# <a name="create-partition-logical"></a>建立磁碟分割邏輯
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在現有的延伸磁碟分割中建立的邏輯磁碟分割。 您只可以使用此命令在主開機記錄\(MBR\)磁碟。  
+在現有的擴展資料分割中建立邏輯分割區。 您只能在主開機記錄 \(MBR @ no__t-1 磁片上使用此命令。  
   
   
   
@@ -38,27 +38,27 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 |  參數  |                                                                                                                                                                                                                       描述                                                                                                                                                                                                                        |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size\=<n>  |                                                                                                              指定邏輯分割區的大小以 mb 為單位\(MB\)，該值必須小於延伸磁碟分割。 如果未指定大小，磁碟分割會繼續直到延伸磁碟分割沒有更多的可用空間。                                                                                                               |
-| offset\=<n> | 指定的位移，以 kb 為單位\(KB\)，在建立資料分割。 位移會以完全填滿磁柱大小會無條件進位。 如果沒有指定位移，資料分割會置於足夠容納它的第一個磁碟範圍內。 指定的數字為至少長度以位元組為單位的磁碟分割**大小\=<n>** 。 如果您指定邏輯分割區的大小，它必須小於延伸磁碟分割。 |
-| align\=<n>  |                                                                                     對齊最接近對齊界限的所有磁碟區或分割區範圍。 多半搭配硬體 RAID 邏輯單元編號\(LUN\)陣列來改善效能。  <n> 是的 kb 數\(KB\)從開始到最接近對齊界限的磁碟。                                                                                      |
-|    noerr    |                                                                                                                           針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                                                                                                                           |
+|  size @ no__t-0 @ no__t-1  |                                                                                                              指定邏輯分割區的大小（以 mb 為單位） \(MB @ no__t-1，其必須小於延伸磁碟分割。 如果沒有指定大小，磁碟分割會繼續進行，直到延伸磁碟分割中沒有其他可用空間為止。                                                                                                               |
+| offset @ no__t-0 @ no__t-1 | 指定分割區的位移（以 kb 為單位） \(KB @ no__t-1。 位移會向上舍入，以完全填滿使用的任何圓柱大小。 如果沒有指定位移，則會將分割區放在夠大的第一個磁片範圍中以容納它。 資料分割的長度至少是以位元組為單位，如**size @ no__t-1 @ no__t-2**所指定的數位。 如果您指定了邏輯分割區的大小，它必須小於延伸磁碟分割。 |
+| align @ no__t-0 @ no__t-1  |                                                                                     將所有磁片區或資料分割範圍對齊最接近的對齊界限。 通常用於硬體 RAID 邏輯單元編號 \(LUN @ no__t-1 陣列以改善效能。  <n> 是從磁片開頭到最接近對齊界限的 kb 數 \(KB @ no__t-2。                                                                                      |
+|    noerr    |                                                                                                                           僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                                                                                                           |
   
 ## <a name="remarks"></a>備註  
   
--   如果**大小**並**位移**參數沒有指定，則延伸磁碟分割中的最大磁碟範圍內建立邏輯分割區。  
+-   如果未指定**size**和**offset**參數，則會在延伸磁碟分割可用的最大磁片範圍內建立邏輯分割區。  
   
--   在建立資料分割之後，焦點會自動移到新的邏輯磁碟分割。  
+-   建立分割區之後，焦點會自動移至新的邏輯分割區。  
   
--   這項作業成功時，必須選取一個基本 MBR 磁碟。 使用**選取磁碟**命令來選取磁碟，並將焦點移到它。  
+-   必須選取基本的 MBR 磁碟，此操作才能成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。  
   
-## <a name="BKMK_examples"></a>範例  
-若要建立邏輯分割區 1000 mb 為單位的大小，在 延伸磁碟分割的所選的磁碟，輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要建立大小為 1000 mb 的邏輯分割區，請在所選磁片的延伸磁碟分割中，輸入：  
   
 ```  
 create partition logical size=1000  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

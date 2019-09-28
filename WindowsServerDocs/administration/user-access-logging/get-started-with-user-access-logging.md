@@ -2,7 +2,7 @@
 title: 開始使用使用者存取記錄
 desctription: Describes the User Access Logging feature and how to start using it.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-user-access-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1706756b52777f5dd3bf1db59fb2ed087ca8648
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 15906e8cc1e5e85a471f1b8725435eb60852f6f5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866262"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382873"
 ---
 # <a name="get-started-with-user-access-logging"></a>開始使用使用者存取記錄
 
@@ -104,7 +104,7 @@ UAL 可以支援下列伺服器角色和服務：
 ## <a name="data-logged-with-ual"></a>使用 UAL 記錄的資料  
 下列使用者相關資料會使用 UAL 加以記錄。  
   
-|Data|說明|  
+|Data|描述|  
 |--------|---------------|  
 |**使用者名稱**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|  
 |**ActivityCount**|特定使用者存取角色或服務的次數。|  

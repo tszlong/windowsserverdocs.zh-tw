@@ -1,7 +1,7 @@
 ---
 title: 針對受防護網狀架構部署快速入門
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: e060e052-39a0-4154-90bb-b97cc6dde68e
 manager: dongill
@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 48ac73e79709f28816ea9eff35361bd54710c66e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870534"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402418"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>針對受防護網狀架構部署快速入門
 
@@ -69,13 +69,13 @@ ms.locfileid: "70870534"
 
 ![現有的 Hyper-v 網狀架構](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-existing-hyper-v.png)
 
-## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>步驟 1：部署執行 Windows Server 2016 的 Hyper-v 主機 
+## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>步驟 1:部署執行 Windows Server 2016 的 Hyper-v 主機 
 
 Hyper-v 主機必須執行 Windows Server 2016 Datacenter edition 或更新版本。 如果您要升級主機，可以從 Standard edition[升級](https://technet.microsoft.com/windowsserver/dn527667.aspx)到 Datacenter edition。
 
 ![升級 Hyper-v 主機](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
-## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>步驟 2：部署主機守護者服務（HGS）
+## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>步驟 2:部署主機守護者服務（HGS）
 
 然後安裝 HGS 伺服器角色，並將它部署為三個節點的叢集，例如下圖中的 relecloud.com 範例。 這需要三個 PowerShell Cmdlet：
 

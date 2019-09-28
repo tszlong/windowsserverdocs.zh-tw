@@ -2,22 +2,22 @@
 title: 建立檔案檢測例外
 description: 本文說明如何建立檔案檢測例外
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1f0e93cb2535862b9259d438de00c3b769c2282c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6a0fa660db6b03104b585c8ee78a4f20aafe5c88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866299"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403148"
 ---
 # <a name="create-a-file-screen-exception"></a>建立檔案檢測例外
 
-> 適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 您有時需要允許檔案檢測有例外。 例如，您可能會想要封鎖檔案伺服器的視訊檔案，但卻必須允許訓練小組儲存視訊檔案以進行他們的電腦輔助訓練。 若要允許其他檔案檢測封鎖中的檔案，請建立*檔案檢測例外*。
 
@@ -33,17 +33,17 @@ ms.locfileid: "59866299"
 
 1.  在 **\[檔案檢測管理\]** 中，按一下 **\[檔案檢測\]** 節點。
 
-2.  在 **\[檔案檢測\]** 上按滑鼠右鍵，再按一下 **\[建立檔案檢測例外\]** (或從 **\[動作\]** 窗格中選取 **\[建立檔案檢測例外\]**)。 如此會開啟 **\[建立檔案檢測例外\]** 對話方塊。
+2.  在 **\[檔案檢測\]** 上按滑鼠右鍵，再按一下 **\[建立檔案檢測例外\]** (或從 **\[動作\]** 窗格中選取 **\[建立檔案檢測例外\]** )。 如此會開啟 **\[建立檔案檢測例外\]** 對話方塊。
 
 3.  在 **\[例外路徑\]** 文字方塊中，輸入或選取例外會套用到的路徑。 此例外將會套用至選取的資料夾及其所有的子資料夾。
 
 4.  若要指定從檢測檔案排除哪些檔案：
 
     -   在 **\[檔案群組\]** 中，選取您要從檔案檢測排除的每個檔案群組 (若要選取檔案群組的核取方塊，按兩下檔案群組標籤即可)。
-    -   如果您想要檢視檔案群組包含與排除的檔案類型，按一下 檔案群組標籤，然後按一下 **編輯**。
-    -   若要建立新的檔案群組，按一下 **\[建立\]**。
+    -   如果您想要查看檔案群組包含和排除的檔案類型，請按一下 [檔案群組] 標籤，然後按一下 [ **編輯**]。
+    -   若要建立新的檔案群組，按一下 **\[建立\]** 。
 
-5.  按一下 [確定] 。
+5.  按一下 [確定]。
 
 ## <a name="see-also"></a>另請參閱
 

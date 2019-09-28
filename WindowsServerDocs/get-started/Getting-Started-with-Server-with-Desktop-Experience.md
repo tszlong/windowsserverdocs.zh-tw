@@ -2,7 +2,7 @@
 title: 安裝含有桌面體驗的伺服器
 description: '說明如何取得並安裝含有桌面體驗的伺服器安裝 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.date: 01/18/2017
@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: cf67a1c9675191936a6150bb950c59e6f99b54ad
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 2d92ae9e0013d622c1e0a6b8b6a1662dc82360f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810700"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391795"
 ---
 # <a name="install-server-with-desktop-experience"></a>安裝含有桌面體驗的伺服器
 > 適用於：Windows Server 2016
@@ -62,7 +62,7 @@ ms.locfileid: "66810700"
 > [!IMPORTANT]  
 > 在此版本中，虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。 否則，建議使用移轉選項。  
 
-- 不支援從 32 位元到 64 位元架構的就地升級。 所有 Windows Server 2016 版本都只支援 64 位元。
+- 不支援從 32 位元到 64 位元架構的就地升級。 所有 Windows Server 2016 版本只支援 64 位元。
 - 不支援從某種語言到另一種語言的就地升級。
 - 如果伺服器是網域控制站，請參閱[將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx) 以取得重要資訊。
 - 不支援從 Windows Server 2016 的發行前版本 (預覽) 升級。 執行 Windows Server 2016 的全新安裝。

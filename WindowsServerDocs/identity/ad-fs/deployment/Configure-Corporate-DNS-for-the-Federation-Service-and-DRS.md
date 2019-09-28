@@ -7,47 +7,47 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cd8febf9eff300b1a83d22828874b4a577b8af36
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9f0b04f9dc050117fdefc630759c86d2b1bb1ecc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192323"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408444"
 ---
 # <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>設定同盟服務與 DRS 的公司 DNS
   
-## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>步驟 6：將主機新增\(A\)和別名\(CNAME\)同盟服務和 DRS 的公司 DNS 資源記錄  
-您必須加入公司網域名稱系統中的下列資源記錄\(DNS\)您的 federation service 和您在上一個步驟中設定的裝置註冊服務。  
+## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>步驟 6：將主機 \(A @ no__t-1 和 Alias \(CNAME @ no__t-3 資源記錄新增至同盟服務和 DRS 的公司 DNS  
+您必須針對您在先前步驟中設定的 federation service 和裝置註冊服務，將下列資源記錄新增至公司網域名稱系統 \(DNS @ no__t-1。  
   
-|進入|類型|地址|  
+|進入|Type|地址|  
 |---------|--------|-----------|  
-|federation\_service\_name|主機\(A\)|在 AD FS 伺服器或 AD FS 伺服器陣列之前已設定的負載平衡器的 IP 位址的 IP 位址|  
-|enterpriseregistration|別名\(CNAME\)|federation\_server\_name.contoso.com|  
+|同盟 @ no__t-0service @ no__t-1name|主機 \(A @ no__t-1|AD FS 伺服器的 IP 位址，或在 AD FS 伺服器陣列前方設定的負載平衡器 IP 位址|  
+|enterpriseregistration|Alias \(CNAME @ no__t-1|同盟 @ no__t-0server\_name.contoso.com|  
   
-您可以使用下列程序，新增的主機\(A\)和別名\(CNAME\)公司 DNS，同盟伺服器和裝置註冊服務的資源記錄。  
+您可以使用下列程式，將主機 \(A @ no__t-1 和 alias \(CNAME @ no__t-3 資源記錄新增至同盟伺服器和裝置註冊服務的公司 DNS。  
   
-中的成員資格**系統管理員**，或同等權限，才能完成此程序的最低需求。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程式，至少需要**Administrators**的成員資格或同等許可權。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
-#### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>若要新增的主機\(A\)和別名\(CNAME\) dns 資源記錄您的同盟伺服器  
+#### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>若要將主機 \(A @ no__t-1 和 alias \(CNAME @ no__t-3 資源記錄新增至同盟伺服器的 DNS  
   
-1.  您網域控制站上，在 [伺服器管理員] 中，在**工具**功能表上，按一下**DNS**以開啟 DNS 嵌入式管理單元\-中。  
+1.  在您的網域控制站上，于伺服器管理員的 [**工具**] 功能表上，按一下 [ **dns** ] 以開啟 dns 貼齊 @ no__t-2in。  
   
-2.  在主控台樹狀目錄中，依序展開**網域\_控制器\_名稱**節點，展開**正向對應區域**，以滑鼠右鍵\-按一下**網域\_名稱**，然後按一下**新的主控件\(A 或 AAAA\)** 。  
+2.  在主控台樹中，依序展開 [ **domain @ no__t-1controller @ no__t-2name** ] 節點、[**正向對應區域**]、[右 @ no__t-4click**網域 @ no__t-6name**]，然後按一下 [**新增主機] \(A 或 AAAA @ no__t-9**。  
   
-3.  在 **名稱**方塊中，輸入要使用您的 AD FS 伺服器陣列的名稱。  
+3.  在 [**名稱**] 方塊中，輸入要用於 AD FS 伺服器陣列的名稱。  
   
-4.  在 [**IP 位址**] 方塊中，輸入您的同盟伺服器的 IP 位址。 按一下 [新增主機]  。  
+4.  在 [**IP 位址**] 方塊中，輸入您的同盟伺服器的 IP 位址。 按一下 [新增主機]。  
   
-5.  右\-按一下 **網域\_名稱**節點，然後再按一下**新別名\(CNAME\)** 。  
+5.  Right @ no__t-0click [ **domain @ no__t-2name** ] 節點，然後按一下 [**新增別名] \(CNAME @ no__t-5**。  
   
-6.  在 [新增資源記錄]  對話方塊中，在 [別名名稱]  方塊中輸入 **enterpriseregistration**。  
+6.  在 [新增資源記錄] 對話方塊中，在 [別名名稱] 方塊中輸入 **enterpriseregistration**。  
   
-7.  在 完整的網域名稱\(FQDN\)的目標主機 方塊中，輸入**同盟\_服務\_伺服陣列\_name.domain\_名稱.com**，，然後按一下 **確定**。  
+7.  在 [目標主機] 方塊的 [完整功能變數名稱 \(FQDN @ no__t-1] 中，輸入**同盟 @ no__t-3service @ no__t-4farm @ no__t-5name. domain @ no__t-6name .com**，然後按一下 **[確定]** 。  
   
     > [!IMPORTANT]  
-    > 在真實世界部署中，如果您的公司有多個使用者主體名稱\(UPN\)尾碼，您必須為每一個 UPN 尾碼，在 DNS 中建立多個 CNAME 記錄。  
+    > 在真實世界的部署中，如果您的公司有多個使用者主體名稱 \(UPN @ no__t-1 尾碼，您就必須為 DNS 中的每個 UPN 尾碼建立多個 CNAME 記錄。  
   
 ## <a name="see-also"></a>另請參閱 
 

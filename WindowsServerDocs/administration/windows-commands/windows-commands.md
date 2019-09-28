@@ -8,52 +8,34 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d0cf58ea8d37efccf80ce262b64e604218bd8d0b
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.prod: windows-server
+ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407652"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362058"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
-所有支援的 Windows （伺服器和用戶端） 版本有一組內建的 Win32 主控台命令。
+所有支援的 Windows 版本（伺服器和用戶端）都有一組內建的 Win32 主控台命令。
 
-這組文件說明您可用來自動化工作，藉由使用指令碼或指令碼工具的 Windows 命令。
+這一組檔描述可讓您使用腳本或腳本工具來自動化工作的 Windows 命令。
 
-若要尋找特定命令的相關資訊，下列 A-Z、0-9 功能表中，按一下此命令會啟動，字母，然後按一下命令名稱。
+若要尋找特定命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
 
-[A](#a) |
-[B](#b) | 
+[@NO__T-](#a)1[B](#b) | 
 [C](#c) | 
 [D](#d) | 
-[E](#e)  | 
- [F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[我](#i) |
- [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
- [O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r)  | 
-[S](#s) | 
-[T](#t) | 
-[U](#u) | 
-[V](#v) | 
- [W](#w) | 
-[X](#x) |Y |Z
+[E](#e) | 
+[F](#f) |
+1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |Z
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-包含在本主題資訊適用於：
+本主題所包含的資訊適用于：
 
--   Windows Server 2019
+-   Windows Server Standard 2012 R2
 -   Windows Server (半年度管道)
 -   Windows Server 2016
 -   Windows Server 2012 R2
@@ -63,56 +45,38 @@ ms.locfileid: "67407652"
 -   Windows 10
 -   Windows 8.1
 
-### <a name="command-shell-overview"></a>命令殼層概觀
+### <a name="command-shell-overview"></a>命令 shell 總覽
 
-命令殼層的內建於 Windows 自動使用者帳戶管理或夜間備份，這類的例行工作批次 (.bat) 檔案的第一個殼層。 使用 Windows Script Host 中，您可以執行更複雜的指令碼命令殼層中。 如需詳細資訊，請參閱 < [cscript](cscript.md)或是[wscript](wscript.md)。 您可以使用指令碼，比您可以藉由使用使用者介面，更有效率地執行作業。 指令碼會接受在命令列可用的所有命令。
+命令 shell 是 Windows 內建的第一個 shell，可使用 batch （.bat）檔案，將例行工作（例如使用者帳戶管理或夜間備份）自動化。 使用 Windows Script Host，您可以在命令 shell 中執行更複雜的腳本。 如需詳細資訊，請參閱[cscript](cscript.md)或[wscript.echo](wscript.md)。 您可以使用腳本，而不是使用使用者介面來更有效率地執行作業。 腳本會接受命令列上可用的所有命令。
 
-Windows 具有兩個命令殼層：命令殼層並[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每個介面會提供您和作業系統或應用程式，提供一個環境，可自動化 IT 作業之間的直接通訊的軟體程式。
+Windows 有兩個命令 shell：命令 shell 和[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每個 shell 都是一種軟體程式，可提供您與作業系統或應用程式之間的直接通訊，並提供環境來自動化 IT 作業。
 
-PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱為 cmdlet。 Cmdlet 是 Windows 命令類似，但提供更具擴充性的指令碼語言。 您可以在 Powershell 中，執行 Windows 的命令及 PowerShell 指令程式，但只能執行 Windows 的命令及 PowerShell 指令程式的命令殼層。
+PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 Cmdlet 的 PowerShell 命令。 Cmdlet 類似于 Windows 命令，但提供更可擴充的指令碼語言。 您可以在 Powershell 中執行 Windows 命令和 PowerShell Cmdlet，但命令 shell 只能執行 Windows 命令，而不是 PowerShell Cmdlet。
 
-最穩健、 最新 Windows 自動化，我們建議使用 PowerShell，而不 Windows 命令或 Windows 指令碼主機的 Windows 自動化。 
+為了充分發揮最新的 Windows 自動化功能，我們建議您針對 Windows 自動化使用 PowerShell，而不是 Windows 命令或 Windows Script Host。 
 > [!NOTE]
->您也可以下載並安裝[PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，PowerShell 的開放原始碼版本。 
+>您也可以下載並安裝 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，也就是 powershell 的開放原始碼版本。 
 
 > [!CAUTION]
-> 不正確地編輯登錄可能會對系統造成嚴重的損害。 下列變更登錄前，您應該備份電腦上任何重要的資料。
+> 不正確地編輯登錄可能會對系統造成嚴重的損害。 在對登錄進行下列變更之前，您應該先備份電腦上任何重要的資料。
 
 > [!NOTE]
-> 若要啟用或停用檔案及目錄名稱完成命令殼層中的電腦或使用者的登入工作階段，請執行**regedit.exe**並設定下列**reg_DWOrd 值**:
+> 若要在電腦或使用者登入會話的命令 shell 中啟用或停用檔案和目錄名稱自動完成，請執行**regedit.exe** ，並設定下列**reg_DWOrd 值**：
 > 
 > HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
 > 
-> 若要設定**reg_DWOrd**值，請使用特定的函式的控制字元的十六進位值 (例如**0 9**  索引標籤和**0 08**會退格鍵)。 使用者指定的設定值優先於電腦設定，以及命令列選項的優先順序高於登錄設定。
+> 若要設定**reg_DWOrd**值，請針對特定函式使用控制字元的十六進位值（例如， **0 9**為 Tab， **0 08**為倒退鍵）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 
-## <a name="command-line-reference-a-z"></a>命令列參照 A-Z
+## <a name="command-line-reference-a-z"></a>命令列參考 A-Z
 
-若要尋找特定的 Windows 命令，資訊在下列 [A-Z] 功能表中，按一下此命令會啟動，字母，然後按一下命令名稱。
+若要尋找特定 Windows 命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
 
-[A](#a) |
-[B](#b) | 
+[@NO__T-](#a)1[B](#b) | 
 [C](#c) | 
 [D](#d) | 
-[E](#e)  | 
- [F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[我](#i) |
- [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
- [O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r)  | 
-[S](#s) | 
-[T](#t) | 
-[U](#u) | 
-[V](#v) | 
- [W](#w) | 
-[X](#x) |Y |Z)
+[E](#e) | 
+[F](#f) |
+1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -316,7 +280,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="i"></a>I
+### <a name="i"></a>怎樣
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -324,34 +288,34 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [ipxroute](ipxroute.md)
 -   [irftp](irftp.md)
 
-### <a name="j"></a>J
+### <a name="j"></a>韓文
 -   [jetpack](jetpack.md)
 
 ### <a name="k"></a>K
 - [klist](klist.md)
 - [ksetup](ksetup.md)
-  -   [ksetup:setrealm](ksetup-setrealm.md)
-  -   [ksetup:mapuser](ksetup-mapuser.md)
-  -   [ksetup:addkdc](ksetup-addkdc.md)
-  -   [ksetup:delkdc](ksetup-delkdc.md)
-  -   [ksetup:addkpasswd](ksetup-addkpasswd.md)
-  -   [ksetup:delkpasswd](ksetup-delkpasswd.md)
-  -   [ksetup:server](ksetup-server.md)
-  -   [ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
-  -   [ksetup:removerealm](ksetup-removerealm.md)
-  -   [ksetup:domain](ksetup-domain.md)
-  -   [ksetup:changepassword](ksetup-changepassword.md)
-  -   [ksetup:listrealmflags](ksetup-listrealmflags.md)
-  -   [ksetup:setrealmflags](ksetup-setrealmflags.md)
-  -   [ksetup:addrealmflags](ksetup-addrealmflags.md)
-  -   [ksetup:delrealmflags](ksetup-delrealmflags.md)
-  -   [ksetup:dumpstate](ksetup-dumpstate.md)
-  -   [ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)
-  -   [ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)
-  -   [ksetup:setenctypeattr](ksetup-setenctypeattr.md)
-  -   [ksetup:getenctypeattr](ksetup-getenctypeattr.md)
-  -   [ksetup:addenctypeattr](ksetup-addenctypeattr.md)
-  -   [ksetup:delenctypeattr](ksetup-delenctypeattr.md) 
+  -   [ksetup： setrealm](ksetup-setrealm.md)
+  -   [ksetup： mapuser](ksetup-mapuser.md)
+  -   [ksetup： addkdc](ksetup-addkdc.md)
+  -   [ksetup： delkdc](ksetup-delkdc.md)
+  -   [ksetup： addkpasswd](ksetup-addkpasswd.md)
+  -   [ksetup： delkpasswd](ksetup-delkpasswd.md)
+  -   [ksetup：伺服器](ksetup-server.md)
+  -   [ksetup： setcomputerpassword](ksetup-setcomputerpassword.md)
+  -   [ksetup： removerealm](ksetup-removerealm.md)
+  -   [ksetup：網域](ksetup-domain.md)
+  -   [ksetup： changepassword](ksetup-changepassword.md)
+  -   [ksetup： listrealmflags](ksetup-listrealmflags.md)
+  -   [ksetup： setrealmflags](ksetup-setrealmflags.md)
+  -   [ksetup： addrealmflags](ksetup-addrealmflags.md)
+  -   [ksetup： delrealmflags](ksetup-delrealmflags.md)
+  -   [ksetup： dumpstate](ksetup-dumpstate.md)
+  -   [ksetup： addhosttorealmmap](ksetup-addhosttorealmmap.md)
+  -   [ksetup： delhosttorealmmap](ksetup-delhosttorealmmap.md)
+  -   [ksetup： setenctypeattr](ksetup-setenctypeattr.md)
+  -   [ksetup： getenctypeattr](ksetup-getenctypeattr.md)
+  -   [ksetup： addenctypeattr](ksetup-addenctypeattr.md)
+  -   [ksetup： delenctypeattr](ksetup-delenctypeattr.md) 
 - [ktmutil](ktmutil.md)
 - [ktpass](ktpass.md)
 
@@ -364,7 +328,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
   -   [logman start & 124;停止](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [logman 匯入 & bi&#124;匯出](logman-import-export.md)
+  -   [logman 匯入 & 124;進出口](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)
@@ -373,24 +337,24 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 - [macfile](macfile.md)
 - [makecab](makecab.md)
 - [manage-bde](manage-bde.md)
-  -   [管理 bde： 狀態](manage-bde-status.md)
-  -   [管理 bde： 上](manage-bde-on.md)
-  -   [管理 bde： 關閉](manage-bde-off.md)
-  -   [管理 bde： 暫停](manage-bde-pause.md)
-  -   [管理 bde： 繼續](manage-bde-resume.md)
-  -   [管理 bde： 鎖定](manage-bde-lock.md)
-  -   [管理 bde： 解除鎖定](manage-bde-unlock.md)
-  -   [管理 bde： 自動鎖定](manage-bde-autounlock.md)
-  -   [管理 bde： 保護裝置](manage-bde-protectors.md)
-  -   [管理 bde: tpm](manage-bde-tpm.md)
-  -   [管理 bde: setidentifier](manage-bde-setidentifier.md)
-  -   [管理 power shell:ForceRecovery](manage-bde-forcerecovery.md)
-  -   [manage-bde: changepassword](manage-bde-changepassword.md)
-  -   [管理 bde: changepin](manage-bde-changepin.md)
-  -   [管理 bde: changekey](manage-bde-changekey.md)
-  -   [管理 power shell:KeyPackage](manage-bde-keypackage.md)
-  -   [管理 bde： 升級](manage-bde-upgrade.md)
-  -   [管理 power shell:WipeFreeSpace](manage-bde-wipefreespace.md)
+  -   [manage-bde：狀態](manage-bde-status.md)
+  -   [manage-bde： on](manage-bde-on.md)
+  -   [manage-bde： off](manage-bde-off.md)
+  -   [manage-bde： pause](manage-bde-pause.md)
+  -   [manage-bde： resume](manage-bde-resume.md)
+  -   [manage-bde： lock](manage-bde-lock.md)
+  -   [manage-bde：解除鎖定](manage-bde-unlock.md)
+  -   [manage-bde：再次](manage-bde-autounlock.md)
+  -   [manage-bde：保護裝置](manage-bde-protectors.md)
+  -   [manage-bde： tpm](manage-bde-tpm.md)
+  -   [manage-bde： setidentifier](manage-bde-setidentifier.md)
+  -   [manage-manage-bde：ForceRecovery](manage-bde-forcerecovery.md)
+  -   [manage-bde： changepassword](manage-bde-changepassword.md)
+  -   [manage-bde： changepin](manage-bde-changepin.md)
+  -   [manage-bde： changekey](manage-bde-changekey.md)
+  -   [manage-manage-bde：KeyPackage](manage-bde-keypackage.md)
+  -   [manage-bde： upgrade](manage-bde-upgrade.md)
+  -   [manage-manage-bde：WipeFreeSpace](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
 - [mkdir](mkdir.md)
@@ -422,7 +386,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 - [nlbmgr](nlbmgr.md)
 - [nslookup](nslookup.md)
   -   [nslookup exit 命令](nslookup-exit-command.md)
-  -   [nslookup 手指命令](nslookup-finger-command.md)
+  -   [nslookup finger 命令](nslookup-finger-command.md)
   -   [nslookup help](nslookup-help.md)
   -   [nslookup ls](nslookup-ls.md)
   -   [nslookup lserver](nslookup-lserver.md)
@@ -491,17 +455,17 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 - [rdpsign](rdpsign.md)
 - [recover](recover.md)
 - [reg](reg.md)
-  -   [新增登錄](reg-add.md)
-  -   [reg compare](reg-compare.md)
+  -   [reg 新增](reg-add.md)
+  -   [reg 比較](reg-compare.md)
   -   [reg copy](reg-copy.md)
   -   [reg delete](reg-delete.md)
-  -   [reg export](reg-export.md)
+  -   [reg 匯出](reg-export.md)
   -   [reg 匯入](reg-import.md)
-  -   [reg load](reg-load.md)
+  -   [reg 載入](reg-load.md)
   -   [reg 查詢](reg-query.md)
   -   [reg 還原](reg-restore.md)
-  -   [儲存登錄](reg-save.md)
-  -   [Reg 卸載](reg-unload.md)
+  -   [reg 儲存](reg-save.md)
+  -   [reg unload](reg-unload.md)
 - [regini](regini.md)
 - [regsvr32](regsvr32.md)
 - [relog](relog.md)
@@ -525,19 +489,19 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 ### <a name="s"></a>S
 - [schtasks](schtasks.md)
 - [scwcmd](Scwcmd.md)
-  -   [scwcmd: analyze](scwcmd-analyze.md)
-  -   [scwcmd: configure](scwcmd-configure.md)
-  -   [scwcmd: register](scwcmd-register.md) 
-  -   [scwcmd: rollback](scwcmd-rollback.md) 
-  -   [scwcmd: transform](scwcmd-transform.md) 
-  -   [scwcmd： 檢視](scwcmd-view.md) 
+  -   [scwcmd：分析](scwcmd-analyze.md)
+  -   [scwcmd：設定](scwcmd-configure.md)
+  -   [scwcmd： register](scwcmd-register.md) 
+  -   [scwcmd： rollback](scwcmd-rollback.md) 
+  -   [scwcmd：轉換](scwcmd-transform.md) 
+  -   [scwcmd： view](scwcmd-view.md) 
 - [secedit](secedit.md)
-  -   [secedit:analyze](secedit-analyze.md)
-  -   [secedit:configure](secedit-configure.md)
-  -   [secedit:export](secedit-export.md)
-  -   [secedit:generaterollback](secedit-generaterollback.md)
-  -   [secedit:import](secedit-import.md)
-  -   [secedit:validate](secedit-validate.md)
+  -   [secedit：分析](secedit-analyze.md)
+  -   [secedit：設定](secedit-configure.md)
+  -   [secedit：匯出](secedit-export.md)
+  -   [secedit： generaterollback](secedit-generaterollback.md)
+  -   [secedit：匯入](secedit-import.md)
+  -   [secedit：驗證](secedit-validate.md)
 - [serverceipoptin](serverceipoptin.md)
 - [Servermanagercmd](Servermanagercmd.md)
 - [serverweroptin](serverweroptin.md)
@@ -581,7 +545,7 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 -   [typeperf](typeperf.md)
 -   [tzutil](tzutil.md)
 
-### <a name="u"></a>U
+### <a name="u"></a>那麼
 -   [unlodctr](unlodctr_1.md)
 
 ### <a name="v"></a>V
@@ -594,21 +558,21 @@ PowerShell 被設計成擴充功能的命令殼層來執行 PowerShell 命令稱
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)
 - [wbadmin](wbadmin.md)
-  -   [Wbadmin 啟用備份](wbadmin-enable-backup.md)
-  -   [Wbadmin 停用備份](wbadmin-disable-backup.md)
-  -   [Wbadmin start backup](wbadmin-start-backup.md)
-  -   [Wbadmin 停止作業](wbadmin-stop-job.md)
+  -   [wbadmin 啟用備份](wbadmin-enable-backup.md)
+  -   [wbadmin 停用備份](wbadmin-disable-backup.md)
+  -   [wbadmin 開始備份](wbadmin-start-backup.md)
+  -   [wbadmin 停止作業](wbadmin-stop-job.md)
   -   [wbadmin get 版本](wbadmin-get-versions.md)
-  -   [Wbadmin get 項目](wbadmin-get-items.md)
-  -   [wbadmin 開始復原](wbadmin-start-recovery.md)
-  -   [Wbadmin get 狀態](wbadmin-get-status.md)
-  -   [Wbadmin get 磁碟](wbadmin-get-disks.md)
+  -   [wbadmin 取得專案](wbadmin-get-items.md)
+  -   [wbadmin start recovery](wbadmin-start-recovery.md)
+  -   [wbadmin get 狀態](wbadmin-get-status.md)
+  -   [wbadmin 取得磁片](wbadmin-get-disks.md)
   -   [wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)
-  -   [Wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)
+  -   [wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)
   -   [wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)
-  -   [Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)
-  -   [Wbadmin 還原類別目錄](wbadmin-restore-catalog.md)
-  -   [Wbadmin delete 類別目錄](wbadmin-delete-catalog.md)
+  -   [wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)
+  -   [wbadmin restore catalog](wbadmin-restore-catalog.md)
+  -   [wbadmin delete catalog](wbadmin-delete-catalog.md)
 - [wdsutil](wdsutil.md)
 - [wecutil](wecutil.md)
 - [wevtutil](wevtutil.md)

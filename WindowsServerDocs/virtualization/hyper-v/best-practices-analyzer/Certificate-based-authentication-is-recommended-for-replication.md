@@ -1,7 +1,7 @@
 ---
-title: 憑證型驗證被建議的複寫
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+title: 建議以憑證為基礎的驗證進行複寫
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: d931cc57-414f-4bdf-9ebd-08fd5e22b19d
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5bd131b48b009b43b6379f72f370b4179dea5a03
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0eac99fddd8bbc6dc585931cd25f2a440be16c76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873059"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365184"
 ---
-# <a name="certificate-based-authentication-is-recommended-for-replication"></a>憑證型驗證被建議的複寫
+# <a name="certificate-based-authentication-is-recommended-for-replication"></a>建議以憑證為基礎的驗證進行複寫
 
 >適用於：Windows Server 2016
 
@@ -30,18 +30,18 @@ ms.locfileid: "59873059"
 |**Severity**|警告|  
 |**分類**|組態|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。  
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
 ## <a name="issue"></a>**問題**  
-*選取以進行複寫的一或多個虛擬機器會設定為 Kerberos 驗證。*  
+*為複寫選取的一或多部虛擬機器已設定 Kerberos 驗證。*  
   
-## <a name="impact"></a>**影響**  
-*從主要伺服器與複寫伺服器的複寫網路流量是未加密。這會影響下列虛擬機器：*  
+## <a name="impact"></a>**產生**  
+從主伺服器到複寫伺服器的 @no__t 0The 複寫網路流量未加密。這會影響下列虛擬機器： *  
   
-\<虛擬機器清單 >  
+@no__t 0list 的虛擬機器 >  
   
 ## <a name="resolution"></a>**解決方法**  
-*如果另一種方法來執行加密，您可以忽略此。否則，請修改虛擬機器設定，來選擇憑證型驗證。*  
+@no__t 0If 另一個方法是用來執行加密，您可以忽略它。否則，請修改虛擬機器設定，以選擇以憑證為基礎的驗證。 *  
   
 
 

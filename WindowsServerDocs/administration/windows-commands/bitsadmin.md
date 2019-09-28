@@ -1,8 +1,8 @@
 ---
 title: bitsadmin
-description: 適用於 Windows 命令主題**bitsadmin** -bitsadmin 是命令列工具，可用來建立、 下載或上傳工作及監視其進度。
+description: '**Bitsadmin**的 Windows 命令主題-bitsadmin 是一種命令列工具，可讓您用來建立、下載或上傳作業，以及監視其進度。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,36 +13,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da0f05ec716cffb7d7532ebac50a091729a6bb18
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b53293b28a83ecced34d248741996c958531d517
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821069"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380103"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> **適用於**:Windows Server （半年通道）、 Windows Server 2016、 Windows Server 2012 R2、 Windows Server 2012、 Windows 10
+> **適用**物件：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
 
-bitsadmin 是命令列工具可用來建立下載或上傳作業並監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。  您可以呼叫`bitsadmin /?`或`bitsadmin /HELP`取得交換器的清單。
+bitsadmin 是一種命令列工具，可讓您用來建立下載或上傳作業，以及監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。  您可以呼叫 `bitsadmin /?` 或 `bitsadmin /HELP` 來取得參數的清單。
 
-大部分的交換器需要\<作業\>參數，您將設定為作業的顯示名稱或 GUID。 請注意工作的顯示名稱可能不是唯一的。 **/Create**並 **/list**參數傳回作業的 GUID。
+大部分的交換器都需要 \<Job @ no__t-1 參數，您必須將它設定為作業的顯示名稱或 GUID。 請注意，作業的顯示名稱可能不是唯一的。 **/Create**和 **/list**參數會傳回作業的 GUID。
 
-根據預設，您可以存取有關您自己的作業的資訊。 若要存取之其他使用者的作業的資訊，您必須具有系統管理員權限。 如果已建立作業，在提升權限的狀態，然後您必須執行 bitsadmin 從較高權限的視窗;否則，您將必須至作業的唯讀存取。
+根據預設，您可以存取自己作業的相關資訊。 若要存取其他使用者工作的資訊，您必須具有系統管理員許可權。 如果作業是在提高許可權的狀態下建立，則您必須從提高許可權的視窗執行 bitsadmin;否則，您將會擁有該作業的唯讀存取權。
 
-許多參數的對應中的方法[位元介面](/windows/desktop/bits/bits-interfaces)。 可能使用交換器與相關的其他詳細資訊，請參閱對應的方法。
+許多參數都會對應至[BITS 介面](/windows/desktop/bits/bits-interfaces)中的方法。 如需使用參數時可能相關的其他詳細資料，請參閱對應的方法。
 
-使用下列參數來建立作業、 設定和擷取作業的屬性，及監視工作的狀態。 如需示範如何使用一些這些參數來執行工作的範例，請參閱[bitsadmin 範例](bitsadmin-examples.md)。
+使用下列參數來建立作業、設定和取出作業的屬性，以及監視作業的狀態。 如需示範如何使用這些參數來執行工作的範例，請參閱[bitsadmin 範例](bitsadmin-examples.md)。
 
 ## <a name="switches"></a>參數
 
 [bitsadmin addfile](bitsadmin-addfile.md)  
 [bitsadmin addfileset](bitsadmin-addfileset.md)  
 [bitsadmin addfilewithranges](bitsadmin-addfilewithranges.md)  
-[bitsadmin 快取](bitsadmin-cache.md)  
-[bitsadmin 取消](bitsadmin-cancel.md)  
-[bitsadmin 完成](bitsadmin-complete.md)  
-[bitsadmin 建立](bitsadmin-create.md)  
+[bitsadmin cache](bitsadmin-cache.md)  
+[bitsadmin cancel](bitsadmin-cancel.md)  
+[bitsadmin complete](bitsadmin-complete.md)  
+[bitsadmin create](bitsadmin-create.md)  
 [bitsadmin getaclflags](bitsadmin-getaclflags.md)  
 [bitsadmin getbytestotal](bitsadmin-getbytestotal.md)  
 [bitsadmin getbytestransferred](bitsadmin-getbytestransferred.md)  
@@ -58,7 +58,7 @@ bitsadmin 是命令列工具可用來建立下載或上傳作業並監視其進�
 [bitsadmin getfilestransferred](bitsadmin-getfilestransferred.md)  
 [bitsadmin gethelpertokenflags](bitsadmin-gethelpertokenflags.md)  
 [bitsadmin gethelpertokensid](bitsadmin-gethelpertokensid.md)  
-[bitsadmin gethttpmethod](bitsadmin-gethttpmethod.md)
+[bitsadmin getHTTPmethod](bitsadmin-gethttpmethod.md)
 [bitsadmin getmaxdownloadtime](bitsadmin-getmaxdownloadtime.md)  
 [bitsadmin getminretrydelay](bitsadmin-getminretrydelay.md)  
 [bitsadmin getmodificationtime](bitsadmin-getmodificationtime.md)  
@@ -80,21 +80,21 @@ bitsadmin 是命令列工具可用來建立下載或上傳作業並監視其進�
 [bitsadmin gettemporaryname](bitsadmin-gettemporaryname.md)  
 [bitsadmin gettype](bitsadmin-gettype.md)  
 [bitsadmin getvalidationstate](bitsadmin-getvalidationstate.md)  
-[bitsadmin 說明](bitsadmin-help.md)  
-[bitsadmin 資訊](bitsadmin-info.md)  
-[bitsadmin 清單](bitsadmin-list.md)  
+[bitsadmin help](bitsadmin-help.md)  
+[bitsadmin info](bitsadmin-info.md)  
+[bitsadmin list](bitsadmin-list.md)  
 [bitsadmin listfiles](bitsadmin-listfiles.md)  
 [bitsadmin makecustomheaderswriteonly](bitsadmin-makecustomheaderswriteonly.md)
-[bitsadmin 監視器](bitsadmin-monitor.md)  
+[bitsadmin 監視](bitsadmin-monitor.md)  
 [bitsadmin nowrap](bitsadmin-nowrap.md)  
-[bitsadmin 對等快取](bitsadmin-peercaching.md)  
-[bitsadmin 對等](bitsadmin-peers.md)  
+[bitsadmin peercaching](bitsadmin-peercaching.md)  
+[bitsadmin peers](bitsadmin-peers.md)  
 [bitsadmin rawreturn](bitsadmin-rawreturn.md)  
 [bitsadmin removeclientcertificate](bitsadmin-removeclientcertificate.md)  
 [bitsadmin removecredentials](bitsadmin-removecredentials.md)  
 [bitsadmin replaceremoteprefix](bitsadmin-replaceremoteprefix.md)  
 [bitsadmin reset](bitsadmin-reset.md)  
-[bitsadmin 繼續](bitsadmin-resume.md)  
+[bitsadmin resume](bitsadmin-resume.md)  
 [bitsadmin setaclflag](bitsadmin-setaclflag.md)  
 [bitsadmin setclientcertificatebyid](bitsadmin-setclientcertificatebyid.md)  
 [bitsadmin setclientcertificatebyname](bitsadmin-setclientcertificatebyname.md)  
@@ -104,7 +104,7 @@ bitsadmin 是命令列工具可用來建立下載或上傳作業並監視其進�
 [bitsadmin setdisplayname](bitsadmin-setdisplayname.md)  
 [bitsadmin sethelpertoken](bitsadmin-sethelpertoken.md)  
 [bitsadmin sethelpertokenflags](bitsadmin-sethelpertokenflags.md)  
-[bitsadmin sethttpmethod](bitsadmin-sethttpmethod.md)
+[bitsadmin setHTTPmethod](bitsadmin-sethttpmethod.md)
 [bitsadmin setmaxdownloadtime](bitsadmin-setmaxdownloadtime.md)  
 [bitsadmin setminretrydelay](bitsadmin-setminretrydelay.md)  
 [bitsadmin setnoprogresstimeout](bitsadmin-setnoprogresstimeout.md)  
@@ -116,8 +116,8 @@ bitsadmin 是命令列工具可用來建立下載或上傳作業並監視其進�
 [bitsadmin setreplyfilename](bitsadmin-setreplyfilename.md)  
 [bitsadmin setsecurityflags](bitsadmin-setsecurityflags.md)  
 [bitsadmin setvalidationstate](bitsadmin-setvalidationstate.md)  
-[bitsadmin 暫止](bitsadmin-suspend.md)  
+[bitsadmin suspend](bitsadmin-suspend.md)  
 [bitsadmin takeownership](bitsadmin-takeownership.md)  
-[bitsadmin 傳輸](bitsadmin-transfer.md)  
+[bitsadmin transfer](bitsadmin-transfer.md)  
 [bitsadmin util](bitsadmin-util.md)  
 [bitsadmin wrap](bitsadmin-wrap.md)  

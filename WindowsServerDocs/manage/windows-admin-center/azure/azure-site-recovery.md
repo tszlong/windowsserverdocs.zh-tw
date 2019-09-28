@@ -1,5 +1,5 @@
 ---
-title: 保護 HYPER-V 虛擬機器與 Azure Site Recovery 及 Windows Admin Center
+title: 使用 Azure Site Recovery 和 Windows 系統管理中心保護您的 Hyper-v 虛擬機器
 description: 與 Azure Site Recovery 搭配使用 Windows Admin Center (Project Honolulu)，以保護 Hyper-V VM。
 ms.technology: manage
 ms.topic: article
@@ -7,19 +7,19 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 66e9b2e23a60d1e4725321e88fc1ac262b9c31fa
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 4995ed433d34fddfa91548fa42d67eea3a319c1f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445920"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357349"
 ---
-# <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>保護 HYPER-V 虛擬機器與 Azure Site Recovery 及 Windows Admin Center
+# <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>使用 Azure Site Recovery 和 Windows 系統管理中心保護您的 Hyper-v 虛擬機器
 
->適用於：Windows Admin Center 預覽中，Windows Admin Center
+>適用於：Windows 管理中心預覽, Windows 系統管理中心
 
-[深入了解 Azure 與 Windows Admin Center 整合。](../plan/azure-integration-options.md)
+[深入瞭解 Azure 與 Windows 管理中心的整合。](../plan/azure-integration-options.md)
 
 Windows Admin Center 簡化在您的 Hyper-V 伺服器或叢集上複寫虛擬機器的程序，讓您更輕鬆地從自己的資料中心運用 Azure 的強大功能。 若要將安裝工作自動化，您可以將 Windows Admin Center 閘道連線至 Azure。
 
@@ -40,7 +40,7 @@ Azure Site Recovery 包含兩個元件：**複寫**和**容錯移轉**。 複寫
 - [將 Windows Admin Center 閘道連線至 Azure](azure-integration.md)。
 - [檢閱容量計劃工具以評估成功複寫及容錯移轉的需求](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-capacity)。
 
-## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>步驟 1：設定您的目標主機上的 VM 保護
+## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>步驟 1:在目標主機上設定 VM 保護
 
 > [!NOTE] 
 > 您必須對每個包含所要保護之目標 VM 的主機伺服器或叢集執行此步驟一次。
@@ -52,20 +52,20 @@ Azure Site Recovery 包含兩個元件：**複寫**和**容錯移轉**。 複寫
 5. 登入 Azure 帳戶。
 6. 輸入必要的資訊：
 
-   - **訂用帳戶：** 您想要使用此主機上的 Vm 複寫的 Azure 訂用帳戶。
-   - **位置:** ASR 資源應該建立所在的 Azure 區域。
-   - **儲存體帳戶：** 要儲存複寫的 VM 工作負載，此主機上的儲存體帳戶。
-   - **保存庫：** 此主機上的受保護 Vm 的選擇 Azure Site Recovery 保存庫的名稱。
+   - **預定**您想要在此主機上用來複寫 Vm 的 Azure 訂用帳戶。
+   - **位置:** 應在其中建立 ASR 資源的 Azure 區域。
+   - **儲存體帳戶：** 將儲存此主機上複寫之 VM 工作負載的儲存體帳戶。
+   - **保險櫃**為此主機上受保護的 Vm 選擇 Azure Site Recovery 保存庫的名稱。
 
 7. 選取 **\[安裝 ASR\]** 。
-8. 請等候直至您看見的通知：**Site Recovery 設定已完成**。
+8. 請等候直到您看到通知：**Site Recovery 設定已完成**。
  
 這最多可能需要花費 10 分鐘。 您可以移至 **\[通知\]** (右上方鈴鐺圖示) 觀看進度。
 
 >[!NOTE]
 > 此步驟會自動將 ASR 代理程式安裝到目標伺服器或節點 (若在叢集上進行設定)，使用指定的 **\[儲存體帳戶\]** 及 **\[保存庫\]** 在指定的 **\[位置\]** 中建立 **\[資源群組\]** 。 這也會向 ASR 服務註冊目標主機，並設定預設複寫原則。
 
-## <a name="step-2-select-virtual-machines-to-protect"></a>步驟 2：選取要保護的虛擬機器
+## <a name="step-2-select-virtual-machines-to-protect"></a>步驟 2:選取要保護的虛擬機器
 
 1. 瀏覽回到您在上述步驟 2 中設定的伺服器或叢集，然後移至 **\[虛擬機器\] > \[清查\]** 。
 2. 選取您想要保護的 VM。
@@ -78,7 +78,7 @@ Azure Site Recovery 包含兩個元件：**複寫**和**容錯移轉**。 複寫
 
 6. ASR 將會開始複寫。 當 **\[虛擬機器清查\]** 方格中 **\[受保護\]** 欄的值變更為 **\[是\]** 時，複寫已完成且 VM 已受保護。 這可能需要幾分鐘的時間。  
 
-## <a name="step-3-configure-and-run-a-test-failover-in-the-azure-portal"></a>步驟 3：設定和在 Azure 入口網站中執行測試容錯移轉
+## <a name="step-3-configure-and-run-a-test-failover-in-the-azure-portal"></a>步驟 3：在 Azure 入口網站中設定和執行測試容錯移轉
 
  雖然開始 VM 複寫 (VM 只是使用複寫即已受保護) 時您不需要完成此步驟，但還是建議您在設定 Azure Site Recovery 時設定容錯移轉時設定。 如果您想要準備 Azure VM 的容錯移轉，請完成下列步驟：
 

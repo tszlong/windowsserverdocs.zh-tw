@@ -1,135 +1,135 @@
 ---
 ms.assetid: ''
 title: 設定系統的高精確度
-description: 在 Windows 10 和 Windows Server 2016 中的時間同步處理已經過大幅改良。  在合理的運作狀況，系統可以設定為維護 1 毫秒 （毫秒） 或 （相對於 UTC) 的更佳的精確度。
+description: 已大幅改善 Windows 10 和 Windows Server 2016 中的時間同步處理。  在合理的作業狀況下，系統可以設定為維持1毫秒（毫秒）精確度或更佳（相對於 UTC）。
 author: shortpatti
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 9bfa4e7d4f8777f8fef299cf3991238e31564ace
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469600"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405193"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>設定系統的高精確度
->適用於：Windows Server 2016 和 Windows 10 版本 1607年或更新版本
+>適用於：Windows Server 2016 和 Windows 10 1607 版或更新版本
 
-在 Windows 10 和 Windows Server 2016 中的時間同步處理已經過大幅改良。  在合理的運作狀況，系統可以設定為維護 1 毫秒 （毫秒） 或 （相對於 UTC) 的更佳的精確度。
+已大幅改善 Windows 10 和 Windows Server 2016 中的時間同步處理。  在合理的作業狀況下，系統可以設定為維持1毫秒（毫秒）精確度或更佳（相對於 UTC）。
 
-下列指引將協助您設定您的系統，以達到高精確度。  這篇文章討論下列需求：
+下列指導方針可協助您設定系統，以達到高準確度。  本文討論下列需求：
 
 - 支援的作業系統
 - 系統設定 
 
 > [!WARNING]
-> **舊版作業系統精確度目標**<br>
->Windows Server 2012 R2 和以下不符合相同的高精確度目標。 這些作業系統不支援的高精確度。
+> **先前的作業系統精確度目標**<br>
+>Windows Server 2012 R2 和以下不能達到相同的高精確度目標。 這些作業系統不支援高準確度。
 >
->在這些版本中，Windows 時間服務滿足下列需求：
+>在這些版本中，Windows Time 服務滿足下列需求：
 >
-> - 提供所需的時間精確度，以滿足 Kerberos 版本 5 驗證需求。
-> - Windows 用戶端與伺服器加入常見的 Active Directory 樹系提供鬆散準確的時間。
+> - 提供必要的時間精確度以滿足 Kerberos 第5版的驗證需求。
+> - 為已加入 common Active Directory 樹系的 Windows 用戶端和伺服器提供了鬆散精確的時間。
 >
->Windows Time 服務的設計規格之外，會於 2012 R2 和以下更高的容錯。
+>2012 R2 和更新版本的更大容限超出 Windows 時間服務的設計規格。
 
 ## <a name="windows-10-and-windows-server-2016-default-configuration"></a>Windows 10 和 Windows Server 2016 預設設定
 
-雖然我們在 Windows 10 或 Windows Server 2016 上支援最多 1 毫秒的精確度，大部分的客戶不需要高精確度的時間。
+雖然我們在 Windows 10 或 Windows Server 2016 上支援最高1毫秒的精確度，但大部分的客戶並不需要非常精確的時間。
 
-因此，**預設組態**滿足與舊版作業系統為相同的需求：
+因此，**預設**設定的目的是要滿足與先前作業系統相同的需求，如下所示：
 
-- 提供所需的時間精確度，以滿足 Kerberos 版本 5 驗證需求。
-- Windows 用戶端與伺服器加入常見的 Active Directory 樹系提供鬆散準確的時間。
+- 提供必要的時間精確度，以滿足 Kerberos 第5版的驗證需求。
+- 為已加入 common Active Directory 樹系的 Windows 用戶端和伺服器提供鬆散準確的時間。
 
-## <a name="how-to-configure-systems-for-high-accuracy"></a>如何設定高精確度的系統
+## <a name="how-to-configure-systems-for-high-accuracy"></a>如何設定系統的高精確度
 
 >[!IMPORTANT]
->**高度精確的系統可支援性的相關附註**<br>
-> 時間精確度需要端對端分佈的精確時間從的授權時間來源裝置。  任何項目加入 assymetry 在沿著此路徑的測量會造成負面影響精確度會影響您的裝置上可達成的精確度。
+>**有關高準確度系統的可支援性注意事項**<br>
+> 時間精確度需要端對端將正確時間從授權時間來源發佈到終端裝置。  在此路徑中，以測量方式新增 assymetry 的任何專案將會對精確度造成負面影響，而會影響裝置上的精確度。
 >
->基於這個理由，我們已記載[支援的界限，以設定 Windows 時間服務的高精確度的環境](support-boundary.md)大綱環境的需求，也必須滿足才能達到高精確度的目標。
+>基於這個理由，我們已記載[支援界限來設定高精確度環境的 Windows 時間服務](support-boundary.md)，並概述必須滿足才能達到高準確度目標的環境需求。
 
 ### <a name="operating-system-requirements"></a>作業系統需求
 
-高精確度組態需要 Windows 10 或 Windows Server 2016。  「 時間 」 拓撲中的所有 Windows 裝置必須都符合此需求包括較高的 stratum Windows 時間伺服器，以及在虛擬化案例中，執行時間緊迫的虛擬機器的 HYPER-V 主機。 所有這些裝置必須至少為 Windows 10 或 Windows Server 2016。
+高精確度設定需要 Windows 10 或 Windows Server 2016。  時間拓撲中的所有 Windows 裝置都必須符合這項需求，包括較高層級的 Windows 時間伺服器，以及虛擬化案例中執行時間緊迫虛擬機器的 Hyper-v 主機。 所有這些裝置都必須至少是 Windows 10 或 Windows Server 2016。
 
-在圖中，如下所示，需要高精確度的虛擬機器正在執行 Windows 10 或 Windows Server 2016。  同樣地，虛擬機器所在，HYPER-V 主機和上游的 Windows 時間伺服器也必須執行 Windows Server 2016。
+如下圖所示，需要高精確度的虛擬機器執行 Windows 10 或 Windows Server 2016。  同樣地，虛擬機器所在的 Hyper-v 主機，以及上游 Windows 時間伺服器也必須執行 Windows Server 2016。
 
-![時間拓樸-1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
+![時間拓撲-1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
 
 
 >[!TIP] 
 >**判斷 Windows 版本**<br>
-> 您可以執行命令`winver`命令提示字元，若要確認 OS 版本是 1607年 （或更新版本），OS 組建 14393 （或更新版本），如下所示：
+> 您可以在命令提示字元中執行命令 `winver`，以確認作業系統版本是1607（或更高版本），而 OS 組建是14393（或更新版本），如下所示：
 >
 > ![Winver-2016 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/winver2016.png)
 
 ### <a name="system-configuration"></a>系統設定
 
-達到高精確度目標需要系統設定。  有各種不同的方式來執行這項設定，包括在登錄中直接或透過群組原則。  所有這些設定的詳細資訊可在 Windows 時間服務技術參考 – [Windows 時間服務工具](Windows-Time-Service-Tools-and-Settings.md#windows-time-service-tools)。
+達到高準確度目標需要系統組態。  有各種方式可以執行這項設定，包括直接在登錄中或透過群組原則。  如需每個設定的詳細資訊，請參閱 Windows 時間服務技術參考– [Windows 時間服務工具](Windows-Time-Service-Tools-and-Settings.md#windows-time-service-tools)。
 
 #### <a name="windows-time-service-startup-type"></a>Windows 時間服務啟動類型
 
-Windows 時間服務 (W32Time) 必須持續執行。  若要這樣做，請設定 Windows 時間服務的啟動類型設定為 'Automatic' 的開始。
+Windows 時間服務（W32Time）必須持續執行。  若要這麼做，請將 Windows 時間服務的啟動類型設定為「自動」啟動。
 
 ![自動設定](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/AutomaticService.PNG)
 
-#### <a name="cumulative-one-way-network-latency"></a>累計單向的網路延遲
+#### <a name="cumulative-one-way-network-latency"></a>累計單向網路延遲
 
-測量不確定性和 「 雜訊 」 浮現為網路延遲會增加。  因此，務必網路延遲是合理的界限內。  特定的需求取決於您目標的精確度和所述[支援的界限，以設定 Windows 時間服務的高精確度的環境](support-boundary.md)文章。
+當網路延遲增加時，測量不確定性和「雜訊」時間。  因此，網路延遲必須在合理的界限內。  特定需求取決於您的目標精確度，並在支援界限中概述，[以設定高準確度環境的 Windows 時間服務](support-boundary.md)一文。
 
-若要計算的累計單向的網路延遲，個別單向之間加入延遲成對 NTP 用戶端-伺服器節點，在時間拓撲中，從目標開始和結束時間高精確度 stratum 1 時間來源。
+若要計算累計單向網路延遲，請在時間拓撲中的一組 NTP 用戶端-伺服器節點之間新增個別的單向延遲，從目標開始，並以高準確度層級1時間來源結束。
 
-例如: 請考慮使用高度精確的來源、 兩個中繼 NTP 伺服器 A 和 B 和該訂單中的目標電腦的時間同步處理階層。 若要取得的目標和來源之間的累計的網路延遲，測量個別 NTP 往返時間 (RTTs) 之間的平均：
+例如: 假設有一個時間同步階層，其具有高精確度的來源、兩個中繼 NTP 伺服器 A 和 B，以及該順序的目的電腦。 若要取得目標和來源之間的累計網路延遲，請測量平均個別 NTP 往返時間（RTTs）：
 
 - 目標和時間伺服器 B
-- 時間伺服器 B 與時間伺服器 A
+- 時間伺服器 B 和時間伺服器 A
 - 時間伺服器 A 和來源
 
-您可以使用收件匣 w32tm.exe 工具取得這個度量單位。  請這樣做：
+您可以使用收件匣的 w32tm 工具來取得這項測量。  請這樣做：
 
-1. 從目標與時間伺服器 b 執行計算
+1. 從目標和時間伺服器 B 執行計算。
     
     `w32tm /stripchart /computer:TimeServerB /rdtsc /samples:450 > c:\temp\Target_TsB.csv`
 
-2. 執行計算對的時間伺服器 b （指向） 時間伺服器。
+2. 從時間伺服器 b 執行計算（指向）時間伺服器 a。
     
     `w32tm /stripchart /computer:TimeServerA /rdtsc /samples:450 > c:\temp\Target_TsA.csv`
 
-3. 時間伺服器從執行計算對來源。
+3. 針對來源從時間伺服器 a 執行計算。
  
-4. 接下來，新增 平均 RoundTripDelay 測量上一個步驟中，並除以 2，以取得目標與來源之間的累計的網路延遲。
+4. 接下來，新增在上一個步驟中測量的平均 RoundTripDelay，並除以2來取得目標和來源之間的累計網路延遲。
 
 #### <a name="registry-settings"></a>登錄設定
 
 # <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
-設定最小的間隔，以允許系統輪詢 log2 秒為單位。
+設定系統輪詢所允許的最小間隔（以 log2 秒為單位）。
 
 |  |  | 
 |---------|---------|
-|索引鍵位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
+|金鑰位置     | HKLM： \ SYSTEM\CurrentControlSet\Services\W32Time\Config        |
 |設定    | 6        |
-|結果 | 最短的輪詢間隔現在是 64 的秒數。 |
+|結果 | 最小輪詢間隔現在為64秒。 |
 
-下列命令會告知 Windows 時間，以取得更新的設定：
+下列命令會指示 Windows 時間取得已更新的設定：
 
 `w32tm /config /update`
 
 
 # <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
-設定以允許系統輪詢 log2 秒為單位的最大時間間隔。
+設定允許進行系統輪詢的最大間隔（以 log2 秒為單位）。
 
 |  |  |  
 |---------|---------|
-|索引鍵位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
+|金鑰位置     | HKLM： \ SYSTEM\CurrentControlSet\Services\W32Time\Config        |
 |設定    | 6        |
-|結果 | 輪詢間隔上限現在是 64 的秒數。  |
+|結果 | 輪詢間隔上限現在為64秒。  |
 
-下列命令會告知 Windows 時間，以取得更新的設定：
+下列命令會指示 Windows 時間取得已更新的設定：
 
 `w32tm /config /update`
 
@@ -138,24 +138,24 @@ Windows 時間服務 (W32Time) 必須持續執行。  若要這樣做，請設�
 
 |  |  |  
 |---------|---------|
-|索引鍵位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config       |
+|金鑰位置     | HKLM： \ SYSTEM\CurrentControlSet\Services\W32Time\Config       |
 |設定    | 100        |
-|結果 | 100 刻度的現在階段更正調整之間的時鐘刻度數目。 |
+|結果 | 階段更正調整之間的時鐘刻度數目現在是100刻度。 |
 
-下列命令會告知 Windows 時間，以取得更新的設定：
+下列命令會指示 Windows 時間取得已更新的設定：
 
 `w32tm /config /update`
 
 # <a name="specialpollintervaltabspecialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
-以秒為單位的 SpecialInterval 0x1 旗標在啟用時，會設定輪詢間隔。
+設定啟用 SpecialInterval 0x1 旗標時的輪詢間隔（以秒為單位）。
 
 |  |  |  
 |---------|---------|
-|索引鍵位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
+|金鑰位置     | HKLM： \ SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
 |設定    | 64        |
-|結果 | 輪詢間隔現在是 64 的秒數。 |
+|結果 | 輪詢間隔現在為64秒。 |
 
-下列命令會重新啟動 Windows 時間，以取得更新的設定：
+下列命令會重新開機 Windows 時間以挑選更新的設定：
 
 `net stop w32time && net start w32time`
 
@@ -163,7 +163,7 @@ Windows 時間服務 (W32Time) 必須持續執行。  若要這樣做，請設�
 
 |  |  |  
 |---------|---------|
-|索引鍵位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config      |
+|金鑰位置     | HKLM： \ SYSTEM\CurrentControlSet\Services\W32Time\Config      |
 |設定    | 2        |
 
 

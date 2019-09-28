@@ -1,8 +1,8 @@
 ---
 title: nslookup set port
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47eb780631da766f49c0ca2cac8ef90007a95c7e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5e1d7565499b87d861b727be54442a86527a85a7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436716"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372924"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 
 
 
-指定的值變更預設 TCP/UDP 網域名稱系統 (DNS) 名稱的伺服器連接埠。
+將預設的 TCP/UDP 網域名稱系統（DNS）名稱伺服器埠變更為指定的值。
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +36,7 @@ set port=<Port>
 
 | 參數 |                                          描述                                          |
 |-----------|-----------------------------------------------------------------------------------------------|
-|  \<連接埠 >  | 指定預設的 TCP/UDP DNS 名稱伺服器連接埠的新值。 預設連接埠是 53。 |
+|  \<Port >  | 指定預設 TCP/UDP DNS 名稱伺服器埠的新值。 預設通訊埠為53。 |
 |   {說明   |                                              ?}                                               |
 
 #### <a name="additional-references"></a>其他參考資料

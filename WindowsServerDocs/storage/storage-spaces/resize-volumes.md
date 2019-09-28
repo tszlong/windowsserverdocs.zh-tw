@@ -1,42 +1,42 @@
 ---
 title: 延伸儲存空間直接存取中的磁碟區
-description: 如何調整儲存空間直接存取使用 Windows Admin Center 和 PowerShell 中的磁碟區。
-ms.prod: windows-server-threshold
+description: 如何使用 Windows 管理中心和 PowerShell 調整儲存空間直接存取中的磁片區大小。
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: 3be6a4cda20f4d7d7d881ad8a272dc38fd787bba
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613223"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366088"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>延伸儲存空間直接存取中的磁碟區
-> 適用於：Windows Server 2019，Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
-本主題提供大小的磁碟區上的指示[儲存空間直接存取](storage-spaces-direct-overview.md)使用 Windows Admin Center 的叢集。
+本主題提供使用 Windows 系統管理中心調整[儲存空間直接存取](storage-spaces-direct-overview.md)叢集上磁片區大小的指示。
 
-快速觀看如何調整磁碟區。
+觀賞如何調整音量的快速影片。
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hqyBzipBoTI]
 
-## <a name="extending-volumes-using-windows-admin-center"></a>使用 Windows Admin Center 擴充的磁碟區
+## <a name="extending-volumes-using-windows-admin-center"></a>使用 Windows 管理中心擴充磁片區
 
-1. 在 Windows Admin Center，連接到儲存空間直接存取叢集中，然後再選取**磁碟區**從**工具**窗格。
-2. 在 [磁碟區] 頁面中，選取**清查**索引標籤，然後再選取您想要調整大小的磁碟區。
+1. 在 Windows 系統管理中心，連接到儲存空間直接存取叢集，然後從 [**工具**] 窗格中選取 [**磁片**區]。
+2. 在 [磁片區] 頁面上，選取 [**清查**] 索引標籤，然後選取您想要調整大小的磁片區。
 
-    在磁碟區的詳細資料頁面上，其代表磁碟區的儲存體容量。 您也可以直接從儀表板開啟的磁碟區詳細資料頁面。 在 [警示] 窗格中，儀表板，選取的警示，如果磁碟區儲存體容量不足，會通知您，然後按**移至磁碟區**。
+    在 [大量詳細資料] 頁面上，會指出磁片區的儲存容量。 您也可以直接從儀表板開啟 [磁片區詳細資料] 頁面。 在 [儀表板] 的 [警示] 窗格中，選取警示，這會在磁片區的儲存容量不足時通知您，然後選取 [**移至磁片**區]。
 
-4. 在 [磁碟區的詳細資料] 頁面頂端，選取**調整大小**。
-5. 輸入新的較大大小，然後選取**調整大小**。
+4. 在 [磁片區詳細資料] 頁面的頂端，選取 [重**設大小**]。
+5. 輸入新的較大大小，然後選取 [重**設大小**]。
 
-    在磁碟區的詳細資料頁面上，會指出較大儲存體容量的磁碟區，而且儀表板上的發生該警示會清除。
+    在 [磁片區] 詳細資料頁面上，會指出磁片區的較大儲存體容量，並清除儀表板上的警示。
 
-## <a name="extending-volumes-using-powershell"></a>使用 PowerShell 的擴充磁碟區
+## <a name="extending-volumes-using-powershell"></a>使用 PowerShell 擴充磁片區
 
 ### <a name="capacity-in-the-storage-pool"></a>儲存集區的容量
 
@@ -50,7 +50,7 @@ ms.locfileid: "65613223"
 
 若要熟悉它們，請嘗試執行**Get-** 搭配 PowerShell 的對應名詞使用。
 
-例如: 
+例如:
 
 ```PowerShell
 Get-VirtualDisk
@@ -142,6 +142,6 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 ## <a name="see-also"></a>另請參閱
 
 - [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
-- [規劃中儲存空間直接存取磁碟區](plan-volumes.md)
-- [建立磁碟區中儲存空間直接存取](create-volumes.md)
-- [刪除磁碟區中儲存空間直接存取](delete-volumes.md)
+- [規劃儲存空間直接存取中的磁片區](plan-volumes.md)
+- [在儲存空間直接存取中建立磁片區](create-volumes.md)
+- [刪除儲存空間直接存取中的磁片區](delete-volumes.md)

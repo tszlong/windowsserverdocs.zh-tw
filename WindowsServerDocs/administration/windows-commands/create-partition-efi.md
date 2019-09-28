@@ -1,8 +1,8 @@
 ---
-title: 建立 efi 磁碟分割
-description: '適用於 Windows 命令主題 * * *- '
+title: 建立磁碟分割 efi
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99970fba41a747a6bb4b1ca6cc4b7f603c547790
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 76d97129fd67345f23eee2fc7b300493a1632cc6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434166"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379015"
 ---
-# <a name="create-partition-efi"></a>建立 efi 磁碟分割
+# <a name="create-partition-efi"></a>建立磁碟分割 efi
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 Itanium\-電腦，會建立可延伸韌體介面\(EFI\) GUID 磁碟分割資料表上的系統磁碟分割\(gpt\)磁碟。  
+在 Itanium @ no__t-0based 電腦上，會在 GUID 磁碟分割資料表上建立可擴充固件介面 \(EFI @ no__t-2 \(gpt @ no__t-4 磁片。  
   
   
   
@@ -38,24 +38,24 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
   
 |  參數  |                                                                                             描述                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size\=<n>  |                         以 mb 為單位的磁碟分割的大小\(MB\)。 如果未指定大小，磁碟分割會繼續，直到目前的區域中沒有更多的可用空間。                         |
-| offset\=<n> |             以 kb 為單位的位移\(KB\)，在建立資料分割。 如果沒有指定位移，資料分割會置於足夠容納它的第一個磁碟範圍內。              |
-|    noerr    | 針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。 |
+|  size @ no__t-0 @ no__t-1  |                         分割區的大小（以 mb 為單位） \(MB @ no__t-1。 如果未指定大小，則磁碟分割會繼續，直到目前的區域中沒有更多可用空間為止。                         |
+| offset @ no__t-0 @ no__t-1 |             建立資料分割的位移（以 kb 為單位） \(KB @ no__t-1。 如果沒有指定位移，磁碟分割就會放在夠大的第一個磁片範圍中以容納它。              |
+|    noerr    | 僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
   
 ## <a name="remarks"></a>備註  
   
--   在建立資料分割之後，新的資料分割提供焦點。  
+-   建立分割區之後，會將焦點提供給新的資料分割。  
   
--   這項作業成功時，必須選取 gpt 磁碟。 使用**選取磁碟**命令來選取磁碟，並將焦點移到它。  
+-   必須選取 gpt 磁片，此操作才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。  
   
-## <a name="BKMK_examples"></a>範例  
-若要在所選磁碟上建立 EFI 磁碟分割的 1000 mb，請輸入：  
+## <a name="BKMK_examples"></a>典型  
+若要在選取的磁片上建立 1000 mb 的 EFI 磁碟分割，請輸入：  
   
 ```  
 create partition efi size=1000  
 ```  
   
-#### <a name="additional-references"></a>其他參考資料  
+#### <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
   
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
-title: fsutil 已變更
-ms.prod: windows-server-threshold
+title: Fsutil dirty
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: d8a5c4905991203a051fea360ed91c9b372f6993
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 01b5490ef7c57e48a43cae15902e03a33794a826
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439082"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377007"
 ---
-# <a name="fsutil-dirty"></a>fsutil 已變更
->適用於：Windows Server （半年通道）、 Windows Server 2016、 Windows 10，Windows Server 2012 R2、 Windows 8.1、 Windows Server 2012 中，Windows 8、 Windows Server 2008 R2、 Windows 7
+# <a name="fsutil-dirty"></a>Fsutil dirty
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
-查詢，或設定磁碟區的已變更位元。 磁碟區的已變更時設定位元**autochk**會自動檢查是否有錯誤的磁碟區在下次重新啟動電腦。
+查詢或設定磁片區的中途位。 設定磁片區的中途位時， **autochk**會在下一次電腦重新開機時，自動檢查磁片區是否有錯誤。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -33,38 +33,38 @@ fsutil dirty {query | set} <VolumePath>
 
 |   參數   |                                                 描述                                                  |
 |---------------|--------------------------------------------------------------------------------------------------------------|
-|     查詢     |                                  查詢指定的磁碟區已變更位元。                                   |
-|      設定      |                                    設定指定的磁碟區已變更位元。                                    |
-| \<VolumePath> | 指定磁碟機名稱後面加上冒號或 GUID 格式如下：**磁碟區 {** <em>GUID</em> **}** 。 |
+|     query     |                                  查詢指定的磁片區的中途位。                                   |
+|      設定      |                                    設定指定磁片區的中途位。                                    |
+| \<VolumePath > | 以下列格式指定磁片磁碟機名稱，後面接著冒號或 GUID：**磁片區 {** <em>GUID</em> **}** 。 |
 
 ## <a name="remarks"></a>備註
 
--   磁碟區的已變更位元表示檔案系統可能處於不一致的狀態。 您可以設定已變更位元，因為：
+-   磁片區的中途位表示檔案系統可能處於不一致的狀態。 您可以設定變更的位，原因如下：
 
-    -   磁碟區在線上，而且它有未處理的變更。
+    -   磁片區已上線，且有未完成的變更。
 
-    -   磁碟區已變更，並在電腦關機之前所做的變更已認可至磁碟。
+    -   已對磁片區進行變更，而且電腦已在將變更認可到磁片之前關閉。
 
-    -   偵測到損毀磁碟區上。
+    -   在磁片區上偵測到損毀。
 
--   如果在電腦重新啟動時，設定已變更位元**chkdsk**執行以驗證檔案系統的完整性，並嘗試修正任何問題，與磁碟區。
+-   如果重新開機電腦時設定了中途的位， **chkdsk**就會執行以驗證檔案系統完整性，並嘗試修正磁片區的任何問題。
 
-## <a name="BKMK_examples"></a>範例
-若要查詢已變更的位元 C 磁碟機上，請輸入：
+## <a name="BKMK_examples"></a>典型
+若要查詢磁片磁碟機 C 上的中途位，請輸入：
 
 ```
 fsutil dirty query c:
 ```
 
--   如果磁碟區已變更，則會顯示下列輸出：
+-   如果磁片區已變更，則會顯示下列輸出：
 
     `Volume C: is dirty`
 
--   如果磁碟區未變更，則會顯示下列輸出：
+-   如果磁片區未變更，則會顯示下列輸出：
 
     `Volume C: is not dirty`
 
-若要設定已變更位元 C 磁碟機上，輸入：
+若要在磁片磁碟機 C 上設定中途位，請輸入：
 
 ```
 fsutil dirty set C:

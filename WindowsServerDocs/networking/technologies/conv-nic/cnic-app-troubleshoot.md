@@ -1,19 +1,19 @@
 ---
 title: 針對聚合式 NIC 設定進行疑難排解
 description: 本主題是 Windows Server 2016 的交集 NIC 設定指南的一部分。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0a732c91b1eaee870a8aeb6d33c5aa604bf4f2a7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 297044397088bfb64b51e1553d3f69d5b933e81b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870125"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405898"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>針對聚合式 NIC 設定進行疑難排解
 

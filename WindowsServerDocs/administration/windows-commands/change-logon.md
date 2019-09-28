@@ -1,8 +1,8 @@
 ---
 title: change logon
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45c171a1b14cf69abf039d57697cad933a2dd87b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c04eaffe366dce079aed53351589c1b5026954e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434575"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379639"
 ---
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 # <a name="change-logon"></a>change logon
-啟用或停用登入，從用戶端工作階段，或顯示目前的登入狀態。
-此公用程式可用於系統維護。
+啟用或停用來自用戶端會話的登入，或顯示目前的登入狀態。
+這個公用程式適用于系統維護。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要了解最新版本的新功能，請參閱[Windows Server 2012 中的遠端桌面服務在何種新的 s](https://technet.microsoft.com/library/hh831527)在 Windows Server TechNet 文件庫中。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
 > ## <a name="syntax"></a>語法
 > ```
 > change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
@@ -36,22 +36,22 @@ ms.locfileid: "66434575"
 > 
 > |     參數      |                                                       描述                                                        |
 > |--------------------|--------------------------------------------------------------------------------------------------------------------------|
-> |       /query       |                             顯示目前登入狀態，啟用或停用。                              |
-> |      /enable       |                              可讓用戶端工作階段，但不是從主控台的登入。                              |
-> |      /disable      |  停用後續的登入，從用戶端工作階段，但不是從主控台。 不會影響目前登入的使用者。   |
-> |       /drain       |                 停用登入，從新的用戶端工作階段，但是允許重新連線到現有的工作階段。                 |
-> | /drainuntilrestart | 停用從新用戶端工作階段，直到電腦重新啟動，但是允許重新連線到現有的工作階段的登入。 |
+> |       /query       |                             顯示目前的登入狀態，無論是已啟用或已停用。                              |
+> |      /enable       |                              允許來自用戶端會話的登入，但無法從主控台進行登入。                              |
+> |      /disable      |  停用用戶端會話的後續登入，但不從主控台。 不會影響目前登入的使用者。   |
+> |       /drain       |                 停用來自新用戶端會話的登入，但允許重新附加至現有的會話。                 |
+> | /drainuntilrestart | 停用來自新用戶端會話的登入，直到電腦重新開機，但允許重新附加至現有的會話。 |
 > |         /?         |                                           在命令提示字元顯示說明。                                           |
 > 
 > ## <a name="remarks"></a>備註
-> - 只有系統管理員可以使用**變更登入**命令。
-> - 當您重新啟動系統時，會重新啟用登入。 如果您從用戶端工作階段連線至遠端桌面工作階段主機 (rd 工作階段主機) 伺服器並停用登入，並接著登出然後再重新啟用 登入，您將無法重新連線到您的工作階段。 若要重新啟用用戶端工作階段的登入，請在主控台登入。
->   ## <a name="BKMK_examples"></a>範例
+> - 只有系統管理員可以使用 [**變更登**入] 命令。
+> - 當您重新開機系統時，會重新啟用登入。 如果您是從用戶端會話連線到遠端桌面工作階段主機（rd 工作階段主機）伺服器並停用登入，然後在重新啟用登錄之前登出，您將無法重新連線到您的會話。 若要從用戶端會話重新啟用登入，請在主控台登入。
+>   ## <a name="BKMK_examples"></a>典型
 > - 若要顯示目前的登入狀態，請輸入：
 >   ```
 >   change logon /query
 >   ```
-> - 若要啟用從用戶端工作階段的登入，請輸入：
+> - 若要啟用用戶端會話的登入，請輸入：
 >   ```
 >   change logon /enable
 >   ```
@@ -59,7 +59,7 @@ ms.locfileid: "66434575"
 >   ```
 >   change logon /disable
 >   ```
->   #### <a name="additional-references"></a>其他參考資料
->   [命令列語法重點](command-line-syntax-key.md)
+>   #### <a name="additional-references"></a>其他參考
+>   [命令列語法索引鍵](command-line-syntax-key.md)
 >   [變更](change.md)
->   [遠端桌面服務&#40;終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)
+>   [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)

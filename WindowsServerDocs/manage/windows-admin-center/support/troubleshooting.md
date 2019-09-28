@@ -6,25 +6,25 @@ ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 4d108161dd4f6b57d4a86cbcaa5852aff53f0ac3
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: f4e772550aaba6fe9a4f78a6032eaabde4aeb0bf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469516"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406868"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑難排解
 
-> 適用於：Windows Admin Center，Windows Admin Center 預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 > [!Important]
 > 此指南將協助您診斷並解決讓您無法使用 Windows Admin Center 的問題。 如果您的特定工具發生問題，請檢查您是否遇到了[已知問題。](http://aka.ms/wacknownissues)
 
-## <a name="installer-fails-with-message-the-module-microsoftpowershelllocalaccounts-could-not-be-loaded"></a>安裝程式會失敗，訊息： **_無法載入模組 'Microsoft.PowerShell.LocalAccounts'。_ **
+## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>安裝程式失敗，訊息為： **_無法載入模組 ' LocalAccounts '。_**
 
-如果已修改或移除預設 PowerShell 模組路徑，會發生這項目。 若要解決此問題，請確定```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules```已**第一次**您 PSModulePath 環境變數中的項目。 您可以使用下列 PowerShell 程式來達到此目的：
+如果您的預設 PowerShell 模組路徑已修改或移除，就會發生這種情況。 若要解決此問題，請確定 ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` 是 PSModulePath 環境變數中的**第一個**專案。 您可以使用下列 PowerShell 行來達到此目的：
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PSModulePath","%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules;" + ([Environment]::GetEnvironmentVariable("PSModulePath","User")),"User")
@@ -34,7 +34,7 @@ ms.locfileid: "67469516"
 
 ### <a name="if-youve-installed-windows-admin-center-as-an-app-on-windows-10"></a>如果您已將 Windows Admin Center 安裝為 **Windows 10 上的應用程式**
 
-* 請檢查以確定 Windows Admin Center 正在執行中。 尋找 Windows Admin Center 圖示![](../media/trayIcon.PNG)系統匣中或**Windows Admin Center 桌面 / SmeDesktop.exe**工作管理員 中。 如果找不到，請從 [開始] 功能表啟動 **\[Windows Admin Center\]** 。
+* 請檢查以確定 Windows Admin Center 正在執行中。 在 [工作管理員] 中，于系統匣或**Windows Admin Center Desktop/SmeDesktop**中尋找 ![](../media/trayIcon.PNG) 的 Windows 系統管理中心圖示。 如果找不到，請從 [開始] 功能表啟動 **\[Windows Admin Center\]** 。
 
 > [!NOTE] 
 > 重新啟動之後，您必須從 [開始] 功能表啟動 Windows Admin Center。  
@@ -47,13 +47,13 @@ ms.locfileid: "67469516"
 
   * 嘗試在私人工作階段中開啟瀏覽器，如果可以運作，您需要清除快取。
 
-* 沒有您最近將 Windows 10 升級至新的組建或版本？
+* 您最近是否將 Windows 10 升級為新的組建或版本？
 
-  * 這可能會清除您信任的主控件的設定。 [請遵循這些指示來更新您的受信任的主控件設定。](#configure-trustedhosts)
+  * 這可能已清除您信任的主機設定。 [請遵循這些指示來更新信任的主機設定。](#configure-trustedhosts)
 
 ### <a name="if-youve-installed-windows-admin-center-as-a-gateway-on-windows-server"></a>如果您已將 Windows Admin Center 安裝為 **Windows Server 上的閘道**
 
-* 您未升級從舊版的 Windows Admin Center 嗎？ 請檢查以確定原因未刪除防火牆規則[已知問題這](known-issues.md#upgrade)。 您可以使用下列 PowerShell 命令來判斷規則是否存在。 如果沒有，請遵循[這些指示](known-issues.md#upgrade)來重新建立它。
+* 您是否從舊版的 Windows 管理中心升級？ 請檢查並確定防火牆規則並未因為[此已知問題](known-issues.md#upgrade)而刪除。 請使用下列 PowerShell 命令來判斷規則是否存在。 如果沒有，請遵循[這些指示](known-issues.md#upgrade)來重新建立它。
     
     ```powershell
     Get-NetFirewallRule -DisplayName "SmeInboundOpenException"
@@ -63,20 +63,20 @@ ms.locfileid: "67469516"
 
 * 確定您用來做為網頁瀏覽器的是 Microsoft Edge 或 Google Chrome。
 
-* 在伺服器上，開啟 工作管理員 > 服務，並確定**ServerManagementGateway / Windows Admin Center**正在執行。
+* 在伺服器上，開啟 [工作管理員] [> 服務]，並確定 [ **ServerManagementGateway/Windows 管理中心**] 正在執行。
 ![](../media/Service-TaskMan.PNG)
 
-* 測試網路連線至閘道 (取代\<值 > 您的部署中的資訊)
+* 測試閘道的網路連線（以您部署中的資訊取代 @no__t 0values >）
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
     ```
 
-### <a name="if-you-have-installed-windows-admin-center-in-an-azure-windows-server-vm"></a>如果您已安裝 Windows Admin Center，在 Azure Windows Server VM
+### <a name="if-you-have-installed-windows-admin-center-in-an-azure-windows-server-vm"></a>如果您已在 Azure Windows Server VM 中安裝 Windows 系統管理中心
 
 * [檢查 Windows 版本](#check-the-windows-version)
 * 您是否已新增 HTTPS 的輸入連接埠規則？ 
-* [深入了解 Azure VM 中安裝 Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [深入瞭解在 Azure VM 中安裝 Windows 管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
 
 ### <a name="check-the-windows-version"></a>檢查 Windows 版本
 
@@ -84,38 +84,38 @@ ms.locfileid: "67469516"
 
 * 如果您使用的是 Windows 10 版本 1703 或較早的版本，您的 Microsoft Edge 版本不支援 Windows Admin Center。 請升級至最新版本的 Windows 10，或使用 Chrome。
 
-* 如果您使用 Windows 10 或 Server insider preview 版本 17134 和 17637 之間的組建版本，Windows 就會有錯誤導致失敗的 Windows Admin Center。 請使用目前支援的 Windows 版本。
+* 如果您使用的是 Windows 10 或伺服器的 insider preview 版本，其組建版本介於17134和17637之間，Windows 就會發生錯誤，導致 Windows 系統管理中心失敗。 請使用目前支援的 Windows 版本。
 
-### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>請確定在閘道電腦和受管理的節點上執行的 Windows 遠端管理 (WinRM) 服務
+### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>請確定 Windows 遠端管理（WinRM）服務正在閘道電腦和受控節點上執行
 
-* 開啟 [執行] 對話方塊 WindowsKey + R
-* 型別```services.msc```然後按 enter 鍵
-* 在開啟的視窗中，尋找 Windows 遠端管理 (WinRM)，請確定它正在執行且設定為自動啟動
+* 使用 WindowsKey + R 開啟 [執行] 對話方塊
+* 輸入 ```services.msc```，然後按 enter 鍵
+* 在開啟的視窗中，尋找 [Windows 遠端管理（WinRM）]，確定它正在執行，並設定為 [自動啟動]
 
-### <a name="did-you-upgrade-your-server-from-2016-to-2019"></a>是否已升級您的伺服器從 2016年到 2019年？
+### <a name="did-you-upgrade-your-server-from-2016-to-2019"></a>您是否已將伺服器從2016升級至2019？
 
-* 這可能會清除您信任的主控件的設定。 [請遵循這些指示來更新您的受信任的主控件設定。](#configure-trustedhosts) 
+* 這可能已清除您信任的主機設定。 [請遵循這些指示來更新信任的主機設定。](#configure-trustedhosts) 
 
-## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>我會收到訊息：「 無法安全地連線到此頁面。 這可能是因為站台使用過期或不安全的 TLS 安全性設定。
+## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>我收到下列訊息：「無法安全地連接到此頁面。 這可能是因為網站使用過時或不安全的 TLS 安全性設定。
 
-只有 HTTP/2 連線到您的電腦。 Windows Admin Center 會使用整合式的 Windows 驗證，不支援 HTTP/2。 新增下列兩個登錄值之下```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters```上的索引鍵**執行瀏覽器的電腦**移除 HTTP/2 限制：
+您的電腦限制為 HTTP/2 連線。 Windows 管理中心使用整合式 Windows 驗證，在 HTTP/2 中不受支援。 在執行**瀏覽器的電腦**上，于 ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` 金鑰底下新增下列兩個登錄值，以移除 HTTP/2 限制：
 
 ```
 EnableHttp2Cleartext=dword:00000000
 EnableHttp2Tls=dword:00000000
 ```
 
-## <a name="im-having-trouble-with-the-remote-desktop-events-and-powershell-tools"></a>我無法使用遠端桌面、 事件和 PowerShell 工具。
+## <a name="im-having-trouble-with-the-remote-desktop-events-and-powershell-tools"></a>我在使用遠端桌面、事件和 PowerShell 工具時遇到問題。
 
-這些工具需要的 websocket 通訊協定，通常是由 proxy 伺服器和防火牆封鎖。 如果您使用 Google Chrome，則[已知問題](known-issues.md#google-chrome)websockets 和 NTLM 驗證。
+這三個工具都需要 websocket 通訊協定，這通常是由 proxy 伺服器和防火牆封鎖。 如果您使用 Google Chrome，則會有 websocket 和 NTLM 驗證的[已知問題](known-issues.md#google-chrome)。
 
 ## <a name="i-can-connect-to-some-servers-but-not-others"></a>我可以連線到一些伺服器，但連線至其他則不行
 
-* 登入閘道機器本機，並嘗試```Enter-PSSession <machine name>```在 PowerShell 中，取代\<電腦名稱 > 您嘗試在 Windows Admin Center 中管理的電腦的名稱。 
+* 在本機登入閘道電腦，並嘗試在 PowerShell 中 ```Enter-PSSession <machine name>```，以您嘗試在 Windows 系統管理中心中管理的機器名稱取代 @no__t 1machine 名稱 >。 
 
 * 如果您的環境使用工作群組而不使用網域，請參閱[在工作群組中使用 Windows Admin Center](#using-windows-admin-center-in-a-workgroup)。
 
-* **使用本機系統管理員帳戶：** 如果您使用的不是內建的 administrator 帳戶的本機使用者帳戶，您必須藉由執行下列命令在 PowerShell 中或在命令提示字元以系統管理員身分在目標電腦上啟用目標電腦上的原則：
+* **使用本機系統管理員帳戶：** 如果您使用的本機使用者帳戶不是內建的系統管理員帳戶，您必須在 PowerShell 中執行下列命令，或在目的電腦上以系統管理員身分在命令提示字元中，在目的電腦上啟用此原則：
 
     ```
     REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
@@ -149,7 +149,7 @@ REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalA
 
 安裝 Windows Admin Center 時，您可以選擇讓 Windows Admin Center 管理閘道的 TrustedHosts 設定。 在工作群組環境中，或在網域中使用本機系統管理員認證時，這是必要的。 如果您選擇省略這項設定，就必須手動設定 TrustedHosts。
 
-**若要修改 TrustedHosts 使用 PowerShell 命令：**
+**若要使用 PowerShell 命令修改 TrustedHosts：**
 
 1. 開啟系統管理員 PowerShell 工作階段。
 2. 檢視目前的 TrustedHosts 設定：
@@ -186,42 +186,42 @@ REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalA
     Set-Item WSMan:localhost\Client\TrustedHosts -Value '<paste values from text file>'
     ```
 
-## <a name="i-previously-had-windows-admin-center-installed-and-now-nothing-else-can-use-the-same-tcpip-port"></a>先前安裝的 Windows Admin Center 和現在沒有其他項目可以使用相同的 TCP/IP 連接埠
+## <a name="i-previously-had-windows-admin-center-installed-and-now-nothing-else-can-use-the-same-tcpip-port"></a>我先前已安裝 Windows 系統管理中心，現在沒有其他任何人可以使用相同的 TCP/IP 通訊埠
 
-在提升權限的命令提示字元中手動執行這兩個命令：
+在提高許可權的命令提示字元中手動執行這兩個命令：
 
 ```cmd
 netsh http delete sslcert ipport=0.0.0.0:443
 netsh http delete urlacl url=https://+:443/
 ```
 
-## <a name="azure-features-dont-work-properly-in-edge"></a>在 Edge 中無法正常運作的 azure 功能
+## <a name="azure-features-dont-work-properly-in-edge"></a>Azure 功能無法在 Edge 中正常運作
 
-邊[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)相關影響 Azure 登入 Windows Admin Center 中的安全性區域。 如果您無法使用 Azure 功能，當使用 Edge 時，再次嘗試新增 https://login.microsoftonline.com ， https://login.live.com 和信任的網站做為您閘道的 URL，並以允許站台的 Edge 瀏覽器用戶端端上的快顯封鎖程式設定。 
+Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，這些問題會影響 Windows 管理中心的 Azure 登入。 如果您在使用 Edge 時遇到使用 Azure 功能的問題，請嘗試在用戶端瀏覽器上新增 https://login.microsoftonline.com 、 https://login.live.com 和閘道的 URL 做為信任的網站，以及允許的邊緣快顯封鎖程式設定的網站。 
 
 請這樣做：
-1. 搜尋**網際網路選項**在 Windows 中開始功能表
-2. 移至**安全性** 索引標籤
-3. 底下**信任的網站**選項中，按一下 **站台**按鈕，然後在對話方塊中，開啟 新增 Url。 您必須新增您的閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
-4. 移至**隱私權** 索引標籤
-5. 底下**快顯封鎖程式**區段中，按一下**設定**按鈕，然後在對話方塊中，開啟 新增 Url。 您必須新增您的閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
+1. 在 Windows [開始] 功能表中搜尋 [**網際網路選項**]
+2. 移至 [**安全性**] 索引標籤
+3. 在 [**信任的網站**] 選項底下，按一下 [**網站**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
+4. 前往 [**隱私權**] 索引標籤
+5. 在 [快顯封鎖**程式**] 區段下，按一下 [**設定**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
 
-## <a name="having-an-issue-with-an-azure-related-feature"></a>問題與 Azure 相關的功能？
+## <a name="having-an-issue-with-an-azure-related-feature"></a>遇到與 Azure 相關的功能有問題嗎？
 
-請傳送電子郵件到wacFeedbackAzure@microsoft.com具有下列資訊：
-* 從一般的問題資訊[以下列出的問題](#providing-feedback-on-issues)。
-* 描述您的問題，以及您用來重現問題的步驟。 
-* 沒有您先前註冊您的閘道，以使用新 AadApp.ps1 可下載指令碼的 Azure，並接著升級到版本 1807年嗎？ 您是否已註冊您的閘道，使用從閘道設定 UI 在 azure 或者 > Azure 嗎？
-* 是您與多個目錄/租用戶相關聯的 Azure 帳戶嗎？
-    * 如果是：註冊時的 Azure AD 應用程式，以 Windows Admin Center，已在 Azure 中使用您的預設目錄的目錄？ 
-* 您的 Azure 帳戶有存取多個訂用帳戶嗎？
-* 您所使用的訂用帳戶是否有附加的帳單？
-* 是您登入多個 Azure 帳戶時遇到問題嗎？
-* 您的 Azure 帳戶之前，是否需要多重要素驗證？
-* 是您嘗試管理 Azure VM 的機器？
-* 在 Azure VM 上安裝的 Windows Admin Center？
+請在 wacFeedbackAzure@microsoft.com 傳送電子郵件給我們，並提供下列資訊：
+* [下面所列問題](#providing-feedback-on-issues)的一般問題資訊。
+* 描述您的問題，以及重現問題所採取的步驟。 
+* 您先前是否使用 New-AadApp 可下載的腳本將閘道註冊至 Azure，然後升級至1807版？ 或者您是否使用 UI 從閘道設定 > Azure 向 Azure 註冊您的閘道？
+* 您的 Azure 帳戶是否與多個目錄/租使用者相關聯？
+    * 如果是：向 Windows 管理中心註冊 Azure AD 應用程式時，您在 Azure 中使用預設目錄的目錄是嗎？ 
+* 您的 Azure 帳戶是否可存取多個訂用帳戶？
+* 您使用的訂用帳戶是否已附加帳單？
+* 當您遇到問題時，是否登入了多個 Azure 帳戶？
+* 您的 Azure 帳戶需要多重要素驗證嗎？
+* 您嘗試管理 Azure VM 的機器嗎？
+* Azure VM 上是否已安裝 Windows 系統管理中心？
 
-## <a name="providing-feedback-on-issues"></a>提供意見反應的問題
+## <a name="providing-feedback-on-issues"></a>提供有關問題的意見反應
 
 移至 [事件檢視器] > [應用程式及服務] > [Microsoft-ServerManagementExperience]，並尋找任何錯誤或警告。
 
@@ -230,8 +230,8 @@ netsh http delete urlacl url=https://+:443/
 請包含任何您在事件記錄檔中找到的錯誤或警告，以及下列資訊： 
 
 * **安裝** Windows Admin Center 所在的平台 (Windows 10 或 Windows Server)：
-    * 如果伺服器上安裝，什麼是 Windows[版本](#check-the-windows-version)的**執行瀏覽器的機器**存取 Windows Admin Center: 
-    * 您使用安裝程式所建立的自我簽署的憑證？
+    * 如果安裝在伺服器上，執行**瀏覽器**來存取 windows 管理中心的電腦的 Windows[版本](#check-the-windows-version)是什麼： 
+    * 您是否使用安裝程式所建立的自我簽署憑證？
     * 如果您使用您自己的憑證，主體名稱是否符合電腦？
     * 如果您使用您自己的憑證，此憑證是否指定替代主體名稱？
 * 您是否使用了預設連接埠設定來安裝？

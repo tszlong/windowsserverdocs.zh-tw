@@ -6,14 +6,14 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 07/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d8437e0e33a370ab698d25f25b43fbbcbae97792
-ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
+ms.openlocfilehash: 391430b75670f207520a7d972b54ba293616d0e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206918"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393912"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -133,7 +133,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
   記錄檔名稱：    StorageMigrationService-Proxy/Debug 來源：      StorageMigrationService-Proxy 日期：        2/26/2019 9:00:04 AM 事件識別碼：    10000工作類別：無層級：       錯誤關鍵字：      
   使用者：        網路服務電腦： srv1.contoso.com 描述：
 
-  02/26/2019-09：00： 04.860 [Error] srv1 的\\傳輸錯誤。 com\public\indy.png：（5）拒絕存取。
+  02/26/2019-09：00： 04.860 [Error] 傳送錯誤給 \\srv1。 com\public\indy.png：（5）拒絕存取。
 堆疊追蹤：在 StorageMigration. FileDirUtils. OpenFile （String fileName，DesiredAccess desiredAccess，ShareMode shareMode，CreationDisposition creationDisposition，FlagsAndAttributes flagsAndAttributes），位於StorageMigration. FileDirUtils. GetTargetFile （String path），網址為： FileDirUtils （GetTargetFile 檔案），網址為. FileInfo. StorageMigration。FileTransfer. InitializeSourceFileInfo （），位於 Microsoft. StorageMigration. Proxy. FileTransfer. transfer. StorageMigration （），位於StorageMigration. FileTransfer. TryTransfer （） [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs：： TryTransfer：： 55]
 
 

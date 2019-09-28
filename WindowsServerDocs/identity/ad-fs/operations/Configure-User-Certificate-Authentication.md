@@ -7,14 +7,14 @@ ms.author: billmath
 manager: samueld
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1616a1fe2e28534cc30c8955b0309c233555fa14
-ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
+ms.openlocfilehash: 82d826d41e95be18fba689706025ce6f5195f726
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70878149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407666"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>設定使用者憑證驗證的 AD FS
 

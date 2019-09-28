@@ -2,18 +2,18 @@
 title: 將 GUID 磁碟分割表格 (GPT) 磁碟變更為主開機記錄 (MBR) 磁碟
 description: 描述如何將 GUID 磁碟分割表格 (GPT) 磁碟變更為主開機記錄 (MBR) 磁碟分割樣式磁碟。
 ms.date: 06/19/2018
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5cd345230ce5c0fc556bfd8b421d866bd827507b
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 5c6efb0697af663b32ce6f0e27634c3962eca492
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812451"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402110"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>將 GPT 磁碟轉換為 MBR 磁碟
 

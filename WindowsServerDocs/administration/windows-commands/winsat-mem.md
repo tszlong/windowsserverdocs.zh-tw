@@ -2,7 +2,7 @@
 title: winsat 記憶體
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb0d0027b1b896a51517fb8d58f0a7562fcbd960
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 23bbaf8551031a2e573b117e672a656213efde12
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868758"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361982"
 ---
 # <a name="winsat-mem"></a>winsat 記憶體
 
@@ -36,13 +36,13 @@ winsat mem <parameters>
 
 ## <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-向上|強制執行只有一個執行緒的記憶體測試。 預設為每個實體 CPU 或核心執行一個執行緒。|
 |-rn|指定評估的執行緒應該以一般優先權執行。 預設值是以優先順序15執行。|
 |-nc|指定評估應配置記憶體，並將其標示為未快取。 這表示將會略過處理器的快取來進行複製作業。 預設值是在快取空間中執行。|
-|-do \<n >|指定來源緩衝區結尾與目的地緩衝區開頭之間的距離（以位元組為單位）。 預設值為64個位元組。 可允許的目的地位移上限為16MB。 指定不正確目的地位移會導致錯誤。</br>注意:零是 **\<n >** 的有效值，但負數不是。|
-|-mint \<n >|指定評量的最小執行時間（以秒為單位）。 預設值為2.0。 最小值為1.0。 最大值為30.0。</br>注意:當使用兩個參數組合時，指定大於 **-maxt**值的 **-mint**值會導致錯誤。|
+|-do \<n >|指定來源緩衝區結尾與目的地緩衝區開頭之間的距離（以位元組為單位）。 預設值為64個位元組。 可允許的目的地位移上限為16MB。 指定不正確目的地位移會導致錯誤。</br>注意：零是 **\<n >** 的有效值，但負數不是。|
+|-mint \<n >|指定評量的最小執行時間（以秒為單位）。 預設值為2.0。 最小值為1.0。 最大值為30.0。</br>注意：當使用兩個參數組合時，指定大於 **-maxt**值的 **-mint**值會導致錯誤。|
 |-maxt \<n >|指定評量的執行時間上限（以秒為單位）。 預設值為5.0。 最小值為1.0。 最大值為30.0。 如果搭配 **-mint**參數使用，評估會在 **-mint**中指定的一段時間之後，開始定期統計檢查其結果。 如果統計檢查通過，則評量會在 **-maxt**中指定的一段時間過後完成。 如果評估會在 **-maxt**中指定的期間內執行，而不符合統計檢查，則評估會在該時間完成，並傳回其所收集的結果。|
 |-buffersize \<n >|指定記憶體複製測試應該使用的緩衝區大小。 系統會為每個 CPU 配置此數量兩次，以決定從一個緩衝區複製到另一個緩衝區的資料量。 預設值為16MB。 這個值會舍入到最接近的 4 KB 界限。 最大值為32MB。 最小值為 4 KB。 指定不正確緩衝區大小會導致錯誤。|
 |-v|將詳細資訊輸出傳送至 STDOUT，包括狀態和進度資訊。 任何錯誤也會寫入至命令視窗。|

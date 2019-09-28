@@ -7,40 +7,40 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3e3d1e5d86afbef2fdabd211047f513d31a40300
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: be522f4dd990a920e910950c1bf2564d795bf9fa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190319"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358593"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>AD FS 支援憑證驗證的替代主機名稱繫結
 
-在許多網路上的本機防火牆原則可能不允許流量透過非標準連接埠 49443 等。 嘗試完成之前 Windows Server 2016 中的 AD FS 的 AD FS 使用的憑證驗證時，這會成為問題。 這是因為您不能有裝置驗證和使用者憑證驗證的不同繫結到相同主機上。 預設連接埠 443 繫結至接收裝置憑證，並無法改變以支援在相同的通道中的多個繫結。 結果是，智慧卡驗證就無法運作，而且使用者已知道因為沒有真正發生的指示，發生了什麼事。  
+在許多網路上，本機防火牆原則可能不允許透過非標準埠（例如49443）的流量。 當您嘗試使用 Windows Server 2016 中 AD FS 之前的 AD FS 完成憑證驗證時，就會發生此問題。 這是因為在相同主機上，您的裝置驗證和使用者憑證驗證不能有不同的系結。 預設通訊埠443系結至接收裝置憑證，而且無法改變以支援相同通道中的多個系結。 結果是智慧卡驗證無法正常執行，而且使用者不知道發生了什麼事，因為根本不會發生任何問題。  
   
-Windows Server 2016 中的 AD FS 即可。
+透過 Windows Server 2016 中的 AD FS，就可以完成這項作業。
   
-在 Windows Server 2016 上的 AD FS 中，這已變更。 我們現在支援兩種模式，則第一個會將相同的主機 (也就是 adfs.contoso.com) 使用不同的連接埠 （443、 49443）。 第二個使用不同的主控件 （adfs.contoso.com 和 certauth.adfs.contoso.com） 使用相同的連接埠 (443)。 這將需要 SSL 憑證來支援 「 certauth。 < adfs--s e n > 做為替代主體名稱。 這可以在建立陣列時或稍後透過 PowerShell 完成。  
+在 Windows Server 2016 上的 AD FS 中，這項變更。 現在，我們支援兩種模式，第一個會使用具有不同埠（443、49443）的相同主機（亦即 adfs.contoso.com）。 第二個使用相同埠（443）的不同主機（adfs.contoso.com 和 certauth.adfs.contoso.com）。 這將需要 SSL 憑證，以支援 "certauth" 做為替代主體名稱。 < 的 adfs-服務名稱 > "。 這可以在建立伺服器陣列時或稍後透過 PowerShell 來完成。  
   
-## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>如何設定憑證驗證的替代主機名稱繫結  
-有兩種方式，您可以新增憑證驗證的替代主機名稱繫結。 首先，設定新的 AD FS 伺服器陣列與 AD FS，適用於 Windows Server 2016 中，如果憑證包含主體別名 (SAN)，則系統會自動將安裝程式以使用先前所述的第二個方法時。 也就是說，它會自動設定兩個不同的主機 （sts.contoso.com 和 certauth.sts.contoso.com 的相同連接埠。 如果憑證沒有 SAN，您會看到警告，指出憑證主體替代名稱中不支援 certauth.*。 請參閱以下螢幕擷取畫面。 第一個顯示其中的憑證有 SAN，而第二個示範未將憑證安裝。  
+## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>如何設定憑證驗證的替代主機名稱系結  
+有兩種方式可以新增憑證驗證的替代主機名稱系結。 第一種是設定具有 Windows Server 2016 AD FS 的新 AD FS 伺服器陣列時，如果憑證包含主體別名（SAN），則會自動將它設定為使用上述的第二個方法。 也就是說，它會自動設定兩個不同的主機（sts.contoso.com 和 certauth.sts.contoso.com 具有相同的埠）。 如果憑證不包含 SAN，則您會看到一則警告，告訴您憑證主體別名不支援 certauth. *。 請參閱下列螢幕擷取畫面。 第一個範例顯示憑證具有 SAN 的安裝，第二個則顯示未使用的憑證。  
   
-![替代的主機名稱繫結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_1.png)  
+![替代主機名稱系結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_1.png)  
   
-![替代的主機名稱繫結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_2.png)  
+![替代主機名稱系結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_2.png)  
   
-同樣地，Windows Server 2016 中的 AD FS 部署之後，您可以使用 PowerShell cmdlet:Set-AdfsAlternateTlsClientBinding.
+同樣地，在 Windows Server 2016 中部署 AD FS 之後，您就可以使用 PowerShell Cmdlet：AdfsAlternateTlsClientBinding。
   
 ```powershell
 Set-AdfsAlternateTlsClientBinding -Member DC1.contoso.com -Thumbprint '<thumbprint of cert>'
 ```
 
-出現提示時，按一下 [是] 確認。  而且，應該是它。
+出現提示時，按一下 [是] 確認。  這應該是。
 
-![替代的主機名稱繫結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_3.png)
+![替代主機名稱系結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_3.png)
 
 ## <a name="additional-references"></a>其他參考資料
 
-* [在 AD FS 和 Windows Server 2016 中的 WAP 中管理 SSL 憑證](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+* [在 Windows Server 2016 的 AD FS 和 WAP 中管理 SSL 憑證](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)

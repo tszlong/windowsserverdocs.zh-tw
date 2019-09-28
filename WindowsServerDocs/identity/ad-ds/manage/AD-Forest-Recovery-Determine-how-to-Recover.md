@@ -1,98 +1,98 @@
 ---
-title: AD 樹系復原-判斷如何復原樹系
+title: AD 樹系修復-決定如何復原樹系
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 30d23d977b4d7cd320d78ff340120df7013dee4c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d604efded5b6a2ff3911a92f52817498f43c9933
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817729"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369173"
 ---
-# <a name="determine-how-to-recover-the-forest"></a>判斷如何復原樹系
+# <a name="determine-how-to-recover-the-forest"></a>決定如何復原樹系
 
->適用於：Windows Server 2016 中，Windows Server 2012 和 2012 R2 中，Windows Server 2008 和 2008 R2
+>適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
 
-復原整個 Active Directory 樹系包含從備份中還原，或重新安裝 Active Directory 網域服務 (AD DS) 樹系中每個網域控制站 (DC) 上。 復原樹系會還原樹系中的每個網域到其狀態在信任的最後備份的時間。 因此，在還原作業會導致遺失至少下列的 Active Directory 資料：
+復原整個 Active Directory 樹系牽涉到在樹系中的每個網域控制站（DC）上，從備份或重新安裝 Active Directory Domain Services （AD DS）還原它。 復原樹系會將樹系中的每個網域還原到上次信任備份時的狀態。 因此，還原作業會導致至少遺失下列 Active Directory 資料：
 
-- （例如使用者和電腦） 已加入信任的最後備份之後的所有物件
-- 已對現有的物件由於受信任的最後一個備份的所有更新
-- 在受信任的上次備份之後對設定磁碟分割或結構描述中的資料分割 （例如結構描述變更） 的 AD DS 所做的所有變更
+- 上次受信任備份之後新增的所有物件（例如使用者和電腦）
+- 自上次受信任備份之後，對現有物件所做的所有更新
+- 自上次信任備份後，對 AD DS 中的設定分割區或架構分割區進行的所有變更（例如架構變更）
 
-樹系中的每個網域必須知道網域系統管理員帳戶的密碼。 最好的是，這是內建的系統管理員帳戶的密碼。 您也必須知道 DSRM 密碼，才能執行系統狀態還原的 DC。 一般情況下，最好的只要是有效的備份，也就是或已刪除的物件存留期內標記存留期期間，如果 Active Directory 資源回收封存在安全的地方的 DSRM 密碼歷程記錄與系統管理員帳戶已啟用分類收納。 您也可以使用網域使用者帳戶同步 DSRM 密碼，以使其更容易記住。 如需詳細資訊，請參閱知識庫文章[961320](https://support.microsoft.com/kb/961320)。 同步處理 DSRM 帳戶必須完成前的準備過程在樹系復原。
+對於樹系中的每個網域，必須知道網域系統管理員帳戶的密碼。 最好的是內建系統管理員帳戶的密碼。 您也必須知道 DSRM 密碼，才能執行 DC 的系統狀態還原。 一般來說，將系統管理員帳戶和 DSRM 密碼歷程記錄封存在安全的位置，只要備份有效，也就是在標記存留期期間內，或在 Active Directory 回收的已刪除物件存留期期間內，這是很好的作法。已啟用 Bin。 您也可以同步處理 DSRM 密碼與網域使用者帳戶，以便更容易記住。 如需詳細資訊，請參閱知識庫文章[961320](https://support.microsoft.com/kb/961320)。 同步處理 DSRM 帳戶必須在樹系復原之前完成，做為準備工作的一部分。
 
 > [!NOTE]
-> 系統管理員帳戶是 Domain Admins 與 Enterprise Admins 群組為依預設，內建的 Administrators 群組的成員。 此群組擁有網域中的所有網域控制站的完整控制權。
+> 系統管理員帳戶預設是內建系統管理員群組的成員，如同 Domain Admins 和 Enterprise Admins 群組。 此群組具有網域中所有 Dc 的完全控制權。
 
-## <a name="determining-which-backups-to-use"></a>決定要使用哪一個備份
+## <a name="determining-which-backups-to-use"></a>判斷要使用的備份
 
-針對每個網域的至少兩個可寫入 Dc 定期備份讓您有數個可從中選擇的備份。 請注意，您無法使用唯讀網域控制站 (RODC) 的備份來還原可寫入 DC。 我們建議您在使用已取得失敗的項目之前的幾天的備份來還原網域控制站。 一般情況下，您必須決定 recentness 並還原資料的 safeness 之間進行取捨。 選擇較新的備份復原更有用的資料，但可能會增加重新將危險資料到已還原的樹系的風險。
+請定期備份每個網域的至少兩個可寫入 Dc，讓您有數個備份可供選擇。 請注意，您無法使用唯讀網域控制站（RODC）的備份來還原可寫入的 DC。 我們建議您在失敗發生之前的幾天內，使用備份來還原 Dc。 一般來說，您必須決定已還原資料的 recentness 與 safeness 之間的取捨。 選擇較新的備份會復原更有用的資料，但可能會增加將危險資料重新介紹基於到還原樹系的風險。
 
-還原系統狀態備份，取決於原始的作業系統和伺服器的備份。 例如，您應該還原系統狀態備份到不同的伺服器。 在此情況下，您可能會看到下列警告：
+還原系統狀態備份取決於原始的作業系統和備份伺服器。 例如，您不應該將系統狀態備份還原到不同的伺服器。 在此情況下，您可能會看到下列警告：
 
-「 指定的備份是伺服器的在不同與目前。 我們不建議執行系統狀態復原的備份來替代伺服器，因為伺服器可能變成無法使用。 確定您想要用於此備份復原目前的伺服器？ 」
+「指定的備份與目前的伺服器不同。 我們不建議使用備份來執行系統狀態復原，因為伺服器可能會變得無法使用。 您確定要使用此備份來復原目前的伺服器嗎？」
 
-如果您需要將 Active Directory 還原至不同的硬體，請建立完整伺服器備份，並執行完整伺服器復原的計劃。
+如果您需要將 Active Directory 還原到不同的硬體，請建立完整伺服器備份，並規劃執行完整伺服器復原。
 
 > [!IMPORTANT]
-> 從 Windows Server 2008 開始，它不支援系統狀態備份還原到新的硬體或相同的硬體上新安裝的 Windows Server。 如果稍後在本指南建議的方式，在相同硬體上，會重新安裝 Windows Server，您就可以還原網域控制站，依此順序：
+> 從 Windows Server 2008 開始，不支援將系統狀態備份還原至新硬體或相同硬體上的新 Windows Server 安裝。 如果在同一個硬體上重新安裝 Windows Server，如本指南稍後所建議，您可以依照下列順序還原網域控制站：
 >
-> 1. 若要還原的作業系統和所有檔案和應用程式執行完整伺服器都還原。
-> 2. 執行系統狀態還原，才能將 SYSVOL 標示為權威使用 wbadmin.exe。
+> 1. 執行完整伺服器還原，以便還原作業系統和所有檔案和應用程式。
+> 2. 使用 wbadmin 執行系統狀態還原，以將 SYSVOL 標示為授權。
 >
 > 如需詳細資訊，請參閱 Microsoft 知識庫文章[249694](https://support.microsoft.com/kb/249694)。
 
-如果失敗的發生時間不明，進一步調查，以識別備份保存在樹系的最後一個安全的狀態。 這種方法是較不建議。 因此，我們強烈建議您每天都保持健全狀況狀態的 AD DS 相關的詳細的記錄，以便全樹系失敗時，可以識別失敗的大約時間。 您也應該保留備份，以啟用更快獲得復原的本機副本。
+如果發生失敗的時間不明，請進一步調查，以找出保留樹系最後安全狀態的備份。 這種方法比較不理想。 因此，我們強烈建議您每日保留有關 AD DS 健全狀況狀態的詳細記錄，如此一來，如果發生全樹系失敗，則可以識別大約失敗的時間。 您也應該保留備份的本機複本，以加快復原的速度。
 
-如果已啟用 Active Directory 資源回收筒，備份的存留期會等於**deletedObjectLifetime**值，或**tombstoneLifetime**值，兩者中較少。 如需詳細資訊，請參閱 < [Active Directory 資源回收筒逐步指南](https://go.microsoft.com/fwlink/?LinkId=178657)(https://go.microsoft.com/fwlink/?LinkId=178657)。
+如果已啟用 Active Directory 回收站，則備份存留期會等於**msds-deletedobjectlifetime**值或**tombstoneLifetime**值（取兩者中較小者）。 如需詳細資訊，請參閱[Active Directory 回收站逐步指南](https://go.microsoft.com/fwlink/?LinkId=178657)（ https://go.microsoft.com/fwlink/?LinkId=178657) 。
 
-或者，您也可以使用 Active Directory 資料庫掛接工具 (Dsamain.exe)，而且是輕量型目錄存取通訊協定 (LDAP) 工具，例如 Ldp.exe 或 Active Directory 使用者和電腦，以識別哪一個備份的最後一個安全的狀態樹系。 Active Directory 資料庫掛接工具，隨附於 Windows Server 2008 和更新版本的 Windows Server 作業系統，會公開為 LDAP 伺服器儲存在備份或快照集的 Active Directory 資料。 然後，您可以使用的 LDAP 工具來瀏覽資料。 這種方法的優點是能夠不需要您重新啟動任何 DC 在目錄服務還原模式 (DSRM) 來檢查 AD ds 備份的內容。
+或者，您也可以使用 Active Directory 資料庫掛接工具（Dsamain.exe）和輕量型目錄存取協定（LDAP）工具（例如 Ldp.exe 或 Active Directory 使用者和電腦）來識別哪一個備份具有的最後安全狀態狀. Windows Server 2008 和更新版本的 Windows Server 作業系統中包含的 Active Directory 資料庫掛接工具，會將儲存在備份或快照中的 Active Directory 資料公開為 LDAP 伺服器。 然後，您可以使用 LDAP 工具來流覽資料。 這種方法的優點是不需要您重新開機任何目錄服務還原模式（DSRM）中的 DC 來檢查 AD DS 備份的內容。
 
-如需使用 Active Directory 資料庫掛接工具的詳細資訊，請參閱[Active Directory 資料庫掛接工具逐步指南](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx)。
+如需有關使用 Active Directory 資料庫掛接工具的詳細資訊，請參閱[Active Directory 資料庫掛接工具逐步指南](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx)。
 
-您也可以使用**ntdsutil 快照集**命令來建立 Active Directory 資料庫的快照集。 排程工作以定期建立快照集，您可以取得額外的 Active Directory 資料庫的複本一段時間。 若要更精確識別發生全樹系失敗時]，然後選擇 [要還原的最佳備份，您可以使用這些複本。 若要建立快照集，使用新版**ntdsutil**隨附的 Windows Server 2008 或遠端伺服器管理工具 (RSAT) 適用於 Windows Vista 或更新版本。 目標 DC 可以執行任何版本的 Windows Server。 如需使用詳細資訊**ntdsutil 快照**命令，請參閱[快照集](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx)。
+您也可以使用**ntdsutil snapshot**命令來建立 Active Directory 資料庫的快照集。 藉由排程工作定期建立快照集，您可以在一段時間內取得 Active Directory 資料庫的其他複本。 您可以使用這些複本來更清楚地識別整個樹系失敗發生的時間，然後選擇要還原的最佳備份。 若要建立快照集，請使用 Windows Server 2008 隨附的**ntdsutil**版本，或適用于 windows Vista 或更新版本的遠端伺服器管理工具（RSAT）。 目標 DC 可以執行任何版本的 Windows Server。 如需使用**ntdsutil snapshot**命令的詳細資訊，請參閱[快照](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx)集。
 
 ## <a name="determining-which-domain-controllers-to-restore"></a>判斷要還原的網域控制站
 
-當您決定要還原哪一個網域控制站時，簡化還原程序會是重要的因素。 建議您擁有專用的 DC，每個網域都是慣用的 DC 進行還原。 專用的還原 DC 輕鬆可靠地計劃和執行樹系復原，因為您是使用相同的來源組態用來執行還原測試。 您可以編寫指令碼復原，並不都努力應付著不同的組態，例如是否 DC 持有作業主機角色，或是否不在 GC 或 DNS 伺服器。
+在決定要還原的網域控制站時，簡化還原程式是一個很重要的因素。 建議將每個網域的專用 DC 用於還原的慣用 DC。 專用的還原 DC 可讓您更容易可靠地規劃和執行樹系復原，因為您使用的是用來執行還原測試的相同來源設定。 您可以編寫復原的腳本，而不會爭用不同的設定，例如 DC 是否保留操作主機角色，或是否為 GC 或 DNS 伺服器。
 
 > [!NOTE]
-> 雖然不建議以還原操作主機角色持有者為了簡單起見，某些組織可能選擇要還原另一個用於其他優點。 例如還原 RID 主機，有助於避免管理 Rid 在復原期間發生問題。  
+> 雖然不建議您在簡單的情況下還原操作主機角色持有者，但某些組織可能會選擇還原一個，以提供其他優點。 例如，還原 RID 主機可能有助於防止在復原期間管理 Rid 的問題。  
 
-選擇最符合下列準則的 DC:
+選擇最符合下列準則的 DC：
 
-- 是可寫入 DC。 這是必要的。
+- 可寫入的 DC。 這是必要的。
 
-- 做為虛擬機器執行 Windows Server 2012，在支援 Vm-generationid 之 hypervisor 上的 DC。 此 DC 可以用做為來源，進行複製。
-- DC 實體或虛擬網路可供存取，且最好位於資料中心。 如此一來，您可以輕鬆地隔離它從網路樹系復原。
-- 有很好的完整伺服器備份 DC。 良好的備份是備份可以成功還原、 建立失敗前, 幾天，其中包含為盡可能更有用的資料。
-- 已在失敗前的網域名稱系統 (DNS) 伺服器的 DC。 這樣可以節省重新安裝 DNS 所需的時間。
-- 如果您也可以使用 Windows 部署服務，請選擇 未設定為使用 BitLocker 網路解除鎖定的 DC。 在此情況下，BitLocker 網路解除鎖定不支援用於從備份還原在樹系復原期間的第一個 DC。
+- 執行 Windows Server 2012 作為虛擬機器的 DC，在支援 VM GenerationID 的管理程式上。 此 DC 可用來做為複製的來源。
+- 可以在實體或虛擬網路上存取，且最好位於資料中心的 DC。 如此一來，您就可以在樹系復原期間，輕鬆地將它與網路隔離。
+- 具有良好完整伺服器備份的 DC。 良好的備份是可以成功還原的備份，在失敗前的幾天內會執行，並盡可能包含最多有用的資料。
+- 在失敗前做為網域名稱系統（DNS）伺服器的 DC。 這可節省重新安裝 DNS 所需的時間。
+- 如果您也使用 Windows 部署服務，請選擇未設定為使用 BitLocker 網路解除鎖定的 DC。 在此情況下，不支援將 BitLocker 網路解除鎖定用於您在樹系復原期間從備份還原的第一個 DC。
 
-   BitLocker 網路解除鎖定做*僅*金鑰保護裝置*無法*用於網域控制站因為這樣做會導致案例中，已部署 Windows 部署服務 (WDS) 需要的第一個 DC 的位置Active Directory 和 WDS 努力才能解除鎖定。 但是，第一個 DC 在還原之前，Active Directory 尚無法使用 wds，因此無法解除鎖定。
+   BitLocker 網路解除鎖定作為*唯一*的金鑰保護裝置，*無法*在您已部署 Windows 部署服務（WDS）的 dc 上使用，因為這樣做會導致第一個 DC 需要 Active Directory 和 WDS 才能運作的案例解除鎖定. 但在還原第一個 DC 之前，Active Directory 尚未提供 WDS 使用，因此無法解除鎖定。
 
-   若要判斷是否 DC 已設定為使用 BitLocker 網路解除鎖定，請檢查下列登錄機碼中，已識別的網路解除鎖定憑證：
+   若要判斷 DC 是否設定為使用 BitLocker 網路解除鎖定，請檢查下列登錄機碼中是否已識別出網路解除鎖定憑證：
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-維護安全性程序處理，或還原備份的檔案，包括 Active Directory 時。 急迫性所附的樹系復原不小心可能怎麼也發掘安全性最佳作法。 如需詳細資訊，請參閱中的 「 建立網域控制站備份和還原策略 」 一節[保護 Active Directory 安裝和 Day-to-Day 作業的最佳做法指南：第二部](https://technet.microsoft.com/library/bb727066.aspx)。
+維護安全性程式，以處理或還原包含 Active Directory 的備份檔案。 隨附樹系復原的緊急程度可能會不小心導致忽略的安全性最佳作法。 如需詳細資訊，請參閱 [Best 練習指南中的 < 建立網域控制站備份和還原策略一節，以確保 Active Directory 的安裝和日常作業：第二部分 @ no__t-0。
 
-## <a name="identify-the-current-forest-structure-and-dc-functions"></a>識別目前的樹系結構和 DC 函式
+## <a name="identify-the-current-forest-structure-and-dc-functions"></a>識別目前的樹系結構和 DC 函數
 
-判斷目前的樹系結構識別樹系中的所有網域。 請在每個網域中，尤其是有備份的網域控制站和可複製的來源虛擬網域控制站的所有網域控制站的清單。 樹系根網域的網域控制站清單將會最重要的因為您會先復原這個網域。 還原樹系根網域之後，您可以使用 Active Directory 的嵌入式管理單元來取得其他網域、 Dc 及樹系中的站台的清單。
+藉由識別樹系中的所有網域來判斷目前的樹系結構。 建立每個網域中所有 Dc 的清單，特別是具有備份的 Dc，以及可以做為複製來源的虛擬 Dc。 樹系根域的 Dc 清單會是最重要的，因為您會先復原此網域。 還原樹系根域之後，您可以使用 Active Directory 嵌入式管理單元，取得樹系中其他網域、Dc 和網站的清單。
 
-準備在網域中，顯示每個 DC 的函式的資料表，如下列範例所示。 這有助於還原回為失敗前設定樹系復原之後。
+準備一個資料表，以顯示網域中每個 DC 的功能，如下列範例所示。 這可協助您在復原之後還原為樹系的預先失敗設定。
 
 |DC 名稱|作業系統|FSMO|GC|RODC|備份|DNS|Server Core|VM|VM-GenID|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|架構主機網域命名主機|是|否|是|否|否|是|是|  
+|DC_1|Windows Server 2012|架構主機、網域命名主機|是|否|是|否|否|是|是|  
 |DC_2|Windows Server 2012|None|是|否|是|是|否|是|是|  
 |DC_3|Windows Server 2012|基礎結構主機|否|否|否|是|是|是|是|  
 |DC_4|Windows Server 2012|PDC 模擬器，RID 主機|是|否|否|否|否|是|否|  
@@ -100,49 +100,49 @@ ms.locfileid: "59817729"
 |RODC_1|Windows Server 2008 R2|None|是|是|是|是|是|是|否|  
 |RODC_2|Windows Server 2008|None|是|是|否|是|是|是|否|  
 
-每個網域樹系中，找出單一的可寫入 DC 具有受信任的網域的 Active Directory 資料庫的備份。 當您選擇要還原 DC 的備份時，請務必小心。 如果大約已知的日期和失敗的原因，一般建議是使用已在該日期之前的幾天的備份。
+針對樹系中的每個網域，識別具有該網域之 Active Directory 資料庫之受信任備份的單一可寫入 DC。 當您選擇要還原 DC 的備份時，請務必小心。 如果發生失敗的日期和原因大約是已知的，一般建議是使用在該日期之前的幾天進行的備份。
   
-在此範例中，有四個備份的候選項目：DC_1、 DC_2、 DC_4 和 DC_5。 這些備份的候選項目，您要還原其中之一。 建議的 DC 是 DC_5，原因如下：  
+在此範例中，有四個備份候選項目：DC_1、DC_2、DC_4 和 DC_5。 在這些備份候選項目中，您只會還原一個。 建議的 DC 因下列原因而 DC_5：  
 
-- 它符合使用它做為虛擬化 DC 複製，來源是的需求、 支援 VM 世代識別碼 」 的 hypervisor 上的虛擬 DC 執行軟體，可為執行 Windows Server 2012 複製 （或如果不可以是複製可以移除的d) 中。 在還原之後，PDC 模擬器角色會以取回伺服器，而且可以加入網域的 Cloneable Domain Controllers 群組。  
-- 它會執行 Windows Server 2012 的完整安裝。 執行 Server Core 安裝的 DC 可以是較不方便做為目標進行復原。  
-- 它是 DNS 伺服器。 因此，DNS 並沒有重新安裝。  
+- 它滿足使用它做為虛擬化 DC 複製來源的需求，也就是，它會在支援 VM GenerationID 的管理程式上執行 Windows Server 2012 作為虛擬 DC，執行允許複製的軟體（如果無法複製，則可以移除）。d）。 還原之後，PDC 模擬器角色將會被取回至該伺服器，並可新增至該網域的 Cloneable 網域控制站群組。  
+- 它會執行 Windows Server 2012 的完整安裝。 執行 Server Core 安裝的 DC 可能比較不方便做為復原目標。  
+- 這是一台 DNS 伺服器。 因此，不需要重新安裝 DNS。  
 
 > [!NOTE]
-> 因為 DC_5 不是通用類別目錄伺服器，它也有一項優點在於不需要在還原之後，會移除通用類別目錄。 但無論 DC 也是通用類別目錄伺服器並不是決定性因素因為從 Windows Server 2012 開始，所有網域控制站為通用類別目錄伺服器的預設值，並移除它之後還原為建議在樹系新增通用類別目錄復原在任何情況下處理。  
+> 由於 DC_5 不是通用類別目錄伺服器，因此也有一個優點，就是通用類別目錄不需要在還原後移除。 但是，不論 DC 是否也是通用類別目錄伺服器，都不是決定性因素，因為從 Windows Server 2012 開始，所有 Dc 預設都是通用類別目錄伺服器，並在建議還原之後移除和新增通用類別目錄，做為樹系的一部分復原程式在任何情況下。  
 
-## <a name="recover-the-forest-in-isolation"></a>復原中隔離的樹系
+## <a name="recover-the-forest-in-isolation"></a>獨立復原樹系
 
-建議的案例是關閉所有可寫入的網域控制站之前先還原的網域控制站回復到生產環境。 這可確保任何危險的資料不會複寫回復原樹系。 它會關閉所有操作主機角色持有者特別重要。  
+慣用的案例是在第一個還原的 DC 重新進入生產環境之前，關閉所有可寫入的 dc。 這可確保任何危險的資料都不會複寫回已復原的樹系。 關閉所有操作主機角色持有者是特別重要的。  
 
 > [!NOTE]
-> 可能會發生您用來移動您打算復原到隔離網路的每個網域，同時允許其他網域控制站，以維持線上為了盡量減少系統停機時間的第一個 DC 的情況。 例如，如果您要從失敗的結構描述升級復原，您可以選擇保留在隔離狀態執行修復步驟時，生產網路上執行的網域控制站。
+> 在某些情況下，您可能會將您打算針對每個網域復原的第一個 DC 移至隔離的網路，同時允許其他 Dc 保持連線，以將系統停機時間降到最低。 例如，如果您要從失敗的架構升級復原，您可以選擇讓網域控制站在生產網路上執行，而在隔離的情況下執行修復步驟。
 
-如果您正在執行虛擬網域控制站，您可以前往它們的虛擬網路與生產網路隔離，您將在其中執行修復。 將虛擬網域控制站移至不同的網路提供兩個優點：  
+如果您執行的是虛擬網域控制站，您可以將它們移至虛擬網路，而該虛擬網路會與您要執行復原的生產網路隔離。 將虛擬化的 Dc 移至不同的網路提供兩個優點：  
 
-- 造成樹系復原，因為它們是隔離的問題再次發生無法復原的網域控制站。  
-- 虛擬化 DC 複製可以對個別的網路，以便可以執行重要的數目的 Dc 並測試之前他們就可以享受回復到生產環境網路。
+- 復原的 Dc 無法重複發生導致樹系修復的問題，因為它們已隔離。  
+- 虛擬化的 DC 複製可以在不同的網路上執行，如此一來，很重要的 Dc 就可以在恢復到生產網路之前，執行和測試。
 
-如果您在實體硬體上執行的 Dc，中斷連接您計畫還原的樹系根網域中的第一個 DC 的網路纜線。 可能的話，也中斷連線所有其他網域控制站的網路纜的線。 這可防止網域控制站複寫，如果它們不小心在樹系修復程序啟動。  
+如果您在實體硬體上執行 Dc，請中斷您打算在樹系根域中還原之第一個 DC 的網路纜線。 可能的話，也請中斷所有其他 Dc 的網路纜線。 這可防止 Dc 複寫（如果它們在樹系復原程式中意外啟動）。  
 
-大型的樹系，則會分散到多個位置，很難保證所有的可寫入網域控制站已關閉。 基於這個理由，復原步驟 — 例如重設 krbtgt 帳戶與電腦帳戶除了中繼資料清理，旨在確保復原的可寫入網域控制站，不會複寫有危險的可寫入 Dc (以防有些仍保持線上狀態中樹系）。  
+在分散到多個位置的大型樹系中，很難以保證所有可寫入的 Dc 都已關閉。 基於這個理由，復原步驟（例如，重設電腦帳戶和 krbtgt 帳戶，以及中繼資料清除除外）的設計是為了確保復原的可寫入 Dc 不會使用危險的可寫入 Dc 來複寫（萬一部分仍在線上，樹系）。  
   
-不過，只能藉由離線可寫入網域控制站可以確保不會發生複寫。 因此，可能的話，您應該部署遠端管理技術，可協助您關閉並實際隔離的樹系復原期間的可寫入網域控制站。  
+不過，只有透過讓可寫入的 Dc 離線，您才能保證不會進行複寫。 因此，您應該盡可能部署遠端系統管理技術，協助您在樹系復原期間關閉並實際隔離可寫入的 Dc。  
   
-Rodc 可以繼續運作而可寫入網域控制站已離線。 其他 DC 完全沒有會直接從任何的 RODC 複寫任何變更，特別是，沒有結構描述或設定容器進行變更，讓它們在復原期間不會為可寫入網域控制站相同的風險。 所有可寫入網域控制站已復原和線上之後，您應該重建所有 Rodc。  
+當可寫入的 Dc 離線時，Rodc 可以繼續運作。 其他 DC 則不會直接從任何 RODC 複寫任何變更（尤其是不會變更任何架構或設定容器），因此它們在復原期間不會造成與可寫入 Dc 相同的風險。 在所有可寫入的 Dc 都復原並上線之後，您應該重建所有 Rodc。  
   
-Rodc 會繼續以允許存取時的復原作業以平行方式時，會其各自的網站中快取的本機資源。 不會快取在 RODC 的本機資源會有驗證要求轉送至可寫入 DC。 這些要求會失敗，因為可寫入網域控制站已離線。 直到您復原的可寫入網域控制站，也將無法運作如密碼變更的某些作業。  
+Rodc 會繼續允許存取在其個別網站中快取的本機資源，同時復原作業會以平行方式進行。 未在 RODC 上快取的本機資源，會將驗證要求轉送至可寫入的 DC。 這些要求將會失敗，因為可寫入的 Dc 已離線。 在您復原可寫入的 Dc 之前，某些作業（例如密碼變更）也無法運作。  
   
-如果您使用的中樞輪輻網路架構，您可以先專心在復原中中樞站台的可寫入 Dc。 稍後，您可以重建中遠端站台的 Rodc。  
+如果您使用中樞和輪輻網路架構，您可以先專注于復原中樞網站中的可寫入 Dc。 稍後，您可以在遠端網站中重建 Rodc。  
   
 ## <a name="next-steps"></a>後續步驟
 
-- [AD 樹系復原-必要條件](AD-Forest-Recovery-Prerequisties.md)  
-- [AD 樹系復原-設計自訂的樹系復原計劃](AD-Forest-Recovery-Devising-a-Plan.md)  
-- [AD 樹系復原-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
-- [AD 樹系復原-判斷如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [AD 樹系復原-執行初始的復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD 樹系修復程序](AD-Forest-Recovery-Procedures.md)  
-- [AD 樹系復原-常見問題集](AD-Forest-Recovery-FAQ.md)  
-- [AD 樹系復原-復原 Multidomain 樹系內的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [AD 樹系復原與 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)  
+- [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)  
+- [AD 樹系復原-設計自訂樹系復原計畫](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [AD 樹系復原-識別問題](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD 樹系復原-決定如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD 樹系復原-執行初始復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [AD 樹系復原 - 程序](AD-Forest-Recovery-Procedures.md)  
+- [AD 樹系復原-常見問題](AD-Forest-Recovery-FAQ.md)  
+- [AD 樹系復原-修復多網域樹系中的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [AD 樹系復原-具有 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)  

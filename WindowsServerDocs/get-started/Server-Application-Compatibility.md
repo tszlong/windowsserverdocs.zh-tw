@@ -2,7 +2,7 @@
 title: Microsoft Server 應用程式相容性
 description: Server 2016 和 Microsoft Server 應用程式的相容性表格。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.date: 08/01/2018
@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c1e104c4f2b5c270f36dc8d5789e00b5a30bdf
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 779f96d0c7f676be692425727ad6cd6ff6cc4e21
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63687356"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360193"
 ---
 # <a name="windows-server-2016-and-microsoft-server-application-compatibility"></a>Windows Server 2016 和 Microsoft Server 應用程式相容性
 
@@ -32,7 +32,7 @@ ms.locfileid: "63687356"
 |Microsoft Server 應用程式|  發行與否？|  產品連結|
 |-------------------------------------|--------------------------------------------|-------------------|
 |Microsoft SQL Server 2012|是| [安裝 SQL Server 2012 的硬體與軟體需求](https://msdn.microsoft.com/library/ms143506(v=sql.110).aspx) \(機器翻譯\)|
-|Microsoft SQL Server 2014|是|[安裝 SQL Server 2014 的硬體與軟體需求](https://msdn.microsoft.com/library/ms143506(SQL.120).aspx) \(部分機器翻譯\)|
+|Microsoft SQL Server 2014|是|[安裝 SQL Server 2014 的硬體與軟體需求](https://msdn.microsoft.com/library/ms143506(SQL.120).aspx)|
 |Microsoft SQL Server 2016| 是|    [SQL Server 2016](https://www.microsoft.com/en-us/cloud-platform/sql-server)| 
 |Microsoft System Center Virtual Machine Manager 2016|  是|    [System Center 的新功能](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
 |Microsoft System Center Operations Manager 2016|   是|    [System Center 的新功能](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|

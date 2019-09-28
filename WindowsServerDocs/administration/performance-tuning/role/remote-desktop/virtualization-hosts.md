@@ -1,18 +1,18 @@
 ---
 title: 效能微調遠端桌面虛擬主機
 description: 遠端桌面虛擬主機的效能微調
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 24e3243d4e9791c8941729d396e0a96cd8b11a7d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6aad1560fa9f9429af94426487d9a33369137ded
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866437"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370035"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>效能微調遠端桌面虛擬主機
 
@@ -129,7 +129,7 @@ RemoteFX 伺服器上提供下列效能計數器來測量虛擬 GPU 效能：
 
 -   **VRAM未使用的專用**視頻記憶體數量（每個 GPU 的可用 MB）
 
--   **VRAM已保留用於 RemoteFX**之專用視頻記憶體的每一 GPU 百分比保留%
+-   **VRAM每個 GPU 保留的百分比 @ no__t-已保留給 RemoteFX 的專用視頻記憶體 0%
 
 **RemoteFX 軟體**
 

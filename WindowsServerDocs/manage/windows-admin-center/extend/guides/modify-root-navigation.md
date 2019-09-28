@@ -1,35 +1,35 @@
 ---
 title: 修改根瀏覽行為
-description: 開發解決方案的擴充功能 Windows Admin Center SDK （專案檀香山）-修改根導覽行為
+description: 開發解決方案延伸模組 Windows 系統管理中心 SDK （Project 檀香山）-修改根導覽行為
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 4a5cba228aa3a0afed99c0d853c3720a5b46f650
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: 78c94f3ea13f54ac31f9de9dd60873b93eba2c17
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861729"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385283"
 ---
 # <a name="modify-root-navigation-behavior-for-a-solution-extension"></a>修改解決方案延伸模組的根導覽行為
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-本指南中我們將了解如何修改根導覽行為，您的解決方案會有不同的連接清單中的行為，以及如何隱藏或顯示於工具清單。
+在本指南中，我們將學習如何修改解決方案的根導覽行為，使其具有不同的連接清單行為，以及如何隱藏或顯示工具清單。
 
 ## <a name="modifying-root-navigation-behavior"></a>修改根導覽行為
 
-開啟 manifest.json 檔案中 {擴充功能根目錄} \src 並尋找 「 rootNavigationBehavior"的屬性。 這個屬性有兩個有效的值: 「 連線 」 或 「 路徑 」。 「 連線 」 行為會文件中稍後詳細說明。
+開啟 {extension root} \src 中的資訊清單 json 檔案，並尋找 "rootNavigationBehavior" 屬性。 此屬性有兩個有效的值： "connections" 或 "path"。 本檔稍後會詳述「連接」行為。
 
-### <a name="setting-path-as-a-rootnavigationbehavior"></a>設定路徑為 rootNavigationBehavior
+### <a name="setting-path-as-a-rootnavigationbehavior"></a>將路徑設定為 rootNavigationBehavior
 
-設定的值```rootNavigationBehavior```要```path```，然後再刪除```requirements```屬性，並保留```path```屬性為空字串。 您已完成所需的最低設定，建置解決方案的擴充功能。 儲存檔案，並 gulp 組建]-> [gulp 做為您想工具，以及然後端擴充功能載入至您本機的 Windows Admin Center 延伸模組。
+將 ```rootNavigationBehavior``` 的值設定為 ```path```，然後刪除 ```requirements``` 屬性，並將 ```path``` 屬性保留為空字串。 您已完成最基本的必要設定，以建立解決方案延伸模組。 儲存檔案，gulp 組建 > gulp 會如同您的工具般處理，然後將擴充功能載入本機的 Windows 管理中心延伸模組。
 
-有效的資訊清單進入點陣列看起來像這樣：
+有效的資訊清單 e 陣列看起來像這樣：
 ```
     "entryPoints": [
         {
@@ -45,13 +45,13 @@ ms.locfileid: "59861729"
     ],
 ```
 
-以這種結構的工具將不必要的連線，若要載入，但不是具有節點連線 」 功能。
+以這種結構建立的工具不需要連接載入，但也不會有節點連接功能。
 
-### <a name="setting-connections-as-a-rootnavigationbehavior"></a>將連線設定為 rootNavigationBehavior
+### <a name="setting-connections-as-a-rootnavigationbehavior"></a>將連接設定為 rootNavigationBehavior
 
-當您設定```rootNavigationBehavior```屬性設```connections```，會告訴 Windows Admin Center 殼層會有它應該連接的連線的節點 （一律某些類型的伺服器），並確認連線狀態。 以此方式，有 2 個步驟中驗證連接。 1) Windows Admin Center 會嘗試將會嘗試登入的節點，使用您的認證 （適用於建立遠端 PowerShell 工作階段），以及 2） 它將會執行 PowerShell 指令碼，您提供給識別節點是否處於可連接的狀態。
+當您將 [```rootNavigationBehavior```] 屬性設定為 [```connections```] 時，您會告訴 Windows 系統管理中心 Shell，其中會有一個連接的節點（一定是某種類型的伺服器），並確認線上狀態。 使用此功能時，驗證連接有2個步驟。 1） Windows 管理中心會嘗試使用您的認證登入節點（用於建立遠端 PowerShell 會話），而2）將會執行您提供的 PowerShell 腳本，以識別節點是否為可線上狀態。
 
-連接的有效的方案定義看起來像這樣：
+具有連接的有效解決方案定義如下所示：
 
 ``` json
         {
@@ -75,8 +75,8 @@ ms.locfileid: "59861729"
         },
 ```
 
-RootNavigationBehavior 設為 [連線] 時，您必須建置資訊清單中的連線定義。 這包括 「 標頭 」 屬性 （會用來顯示您方案的標頭中，當使用者從功能表選取它）、 connectionTypes 陣列 （這會指定哪一個 connectionTypes 解決方案中使用。 更多消費者文件中。）。
+當 rootNavigationBehavior 設定為「連接」時，您必須在資訊清單中建立連接定義。 這包括 "header" 屬性（當使用者從功能表中選取時，將會用來在您的方案標頭中顯示）、connectionTypes 陣列（這會指定要在解決方案中使用的 connectionTypes）。 如需詳細資訊，請參閱 connectionProvider 檔。）。
 
 ## <a name="enabling-and-disabling-the-tools-menu"></a>啟用和停用 [工具] 功能表 ##
 
-可用的方案定義中的另一個屬性是 [工具] 屬性。 這會指定是否顯示 [工具] 功能表，以及將會載入此工具。 啟用時，Windows Admin Center 會呈現左側的 [工具] 功能表。 使用 defaultTool，就需要資訊清單新增工具進入點，以載入適當的資源。 「 DefaultTool"的值必須是工具的"name"屬性，因為它定義資訊清單中。
+解決方案定義中提供的另一個屬性是「工具」屬性。 這會指示是否顯示 [工具] 功能表，以及要載入的工具。 啟用時，Windows 管理中心會轉譯左側 [工具] 功能表。 使用 defaultTool 時，您必須將工具進入點新增至資訊清單，才能載入適當的資源。 在資訊清單中定義時，"defaultTool" 的值必須是工具的「名稱」屬性。

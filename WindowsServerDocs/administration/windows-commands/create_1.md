@@ -1,8 +1,8 @@
 ---
-title: 建立
-description: '適用於 Windows 命令主題 * * *- '
+title: create
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70a8f53d9cb90fc36a76b11de2f93da71874617a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2245efb6c3bce8aecf8edf730694804ffbdc3d80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881269"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378769"
 ---
-# <a name="create"></a>建立
+# <a name="create"></a>create
 
 
 
-啟動陰影複製建立程序，使用目前的內容和選項設定。 需要至少一個磁碟區陰影複製設定組中。
+使用目前的內容和選項設定，啟動陰影複製建立進程。 在陰影複製組中至少需要一個磁片區。
 
 ## <a name="syntax"></a>語法
 
@@ -34,9 +34,9 @@ create
 
 ## <a name="remarks"></a>備註
 
--   您必須新增至少一個磁碟區**新增磁碟區**命令之前，您可以使用**建立**命令。
--   您可以使用**開始備份**命令，以指定完整備份，而不是複製備份。
--   在執行後**建立**命令時，您可以使用**exec**命令來執行備份的重複資料刪除指令碼從陰影複製。
+-   您必須使用 [**新增磁片**區] 命令新增至少一個磁片區，才能使用**create**命令。
+-   您可以使用 [**開始備份**] 命令來指定完整備份，而不是複本備份。
+-   執行**create**命令之後，您可以使用**exec**命令從陰影複製執行備份的複製腳本。
 
 #### <a name="additional-references"></a>其他參考資料
 

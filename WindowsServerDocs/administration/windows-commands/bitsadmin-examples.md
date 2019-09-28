@@ -1,8 +1,8 @@
 ---
 title: bitsadmin 範例
-description: 下列範例示範如何使用 bitsadmin 工具來執行常見工作。
+description: 下列範例示範如何使用 bitsadmin 工具來執行最常見的工作。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,60 +13,60 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: a98e1a876c972b0f146ff37aff0a77399b684e99
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.openlocfilehash: c675f08752b3464f7ab1eddd4e9fddf3b16db5f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308554"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381767"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin 範例
 
-下列範例示範如何使用`bitsadmin`工具執行常見工作。
+下列範例示範如何使用 `bitsadmin` 工具來執行最常見的工作。
 
-## <a name="transfer-a-file"></a>將檔案傳輸
+## <a name="transfer-a-file"></a>傳輸檔案
 
-**/Transfer**參數是執行下列工作的捷徑。 此參數會建立作業、 將檔案加入工作、 在傳輸佇列中，作業就會啟動和完成的工作。 BITSAdmin 會繼續在 MS-DOS 視窗中顯示進度資訊，直到傳送完成或發生錯誤。
+**/Transfer**參數是執行下面所列工作的快捷方式。 此參數會建立作業、將檔案新增至作業、在傳送佇列中啟動作業，以及完成作業。 BITSAdmin 會繼續在 MS-DOS 視窗中顯示進度資訊，直到傳輸完成或發生錯誤為止。
 
-**bitsadmin /transfer myDownloadJob /download /priority 正常 `https://downloadsrv/10mb.zip c:\\10mb.zip`**
+**bitsadmin/transfer myDownloadJob/download/priority normal `https://downloadsrv/10mb.zip c:\\10mb.zip`**
 
-## <a name="create-a-download-job"></a>建立下載工作
+## <a name="create-a-download-job"></a>建立下載作業
 
-使用 **/ 建立**參數，以建立名為 myDownloadJob 的下載作業。
+使用 **/create**參數來建立名為 myDownloadJob 的下載作業。
 
-**bitsadmin /create myDownloadJob**
+**bitsadmin/create myDownloadJob**
 
-BITSAdmin 傳回唯一識別作業的 GUID。 在後續呼叫中使用的 GUID 或作業名稱。 下列文字是範例輸出。
+BITSAdmin 會傳回可唯一識別作業的 GUID。 在後續呼叫中使用 GUID 或作業名稱。 下列文字是範例輸出。
 
 ``` syntax
 Created job {C775D194-090F-431F-B5FB-8334D00D1CB6}.
 ```
 
-接下來，使用 **/addfile**將一或多個檔案新增至下載作業的參數。
+接下來，使用 **/addfile**參數將一或多個檔案新增至下載作業。
 
 ## <a name="add-files-to-the-download-job"></a>將檔案新增至下載作業
 
-使用 **/addfile**將檔案新增至作業的參數。 針對您想要新增每個檔案重複這個呼叫。 如果有多個作業使用 myDownloadJob 做為其名稱，您必須取代 myDownloadJob 來唯一識別作業的作業的 guid。
+使用 **/addfile**參數將檔案新增至作業。 針對您要新增的每個檔案重複此呼叫。 如果多個作業使用 myDownloadJob 作為其名稱，您必須將 myDownloadJob 取代為作業的 GUID，以唯一識別作業。
 
-**bitsadmin /addfile myDownloadJob https://downloadsrv/10mb.zip c:\\10mb.zip**
+**bitsadmin/addfile myDownloadJob https://downloadsrv/10mb.zip c： \\ 10mb .zip**
 
-若要啟動的傳送佇列中的作業，使用 **/繼續**切換。
+若要在傳送佇列中啟用作業，請使用 **/resume**參數。
 
 ## <a name="activate-the-download-job"></a>啟動下載作業
 
-當您建立新的工作時，則 BITS 會暫停工作。 若要啟動的傳送佇列中的作業，使用 **/繼續**切換。 如果有多個作業使用 myDownloadJob 做為其名稱，您必須取代 myDownloadJob 來唯一識別作業的作業的 guid。
+當您建立新的作業時，BITS 會暫停工作。 若要在傳送佇列中啟用作業，請使用 **/resume**參數。 如果多個作業使用 myDownloadJob 作為其名稱，您必須將 myDownloadJob 取代為作業的 GUID，以唯一識別作業。
 
-**bitsadmin /resume myDownloadJob**
+**bitsadmin/resume myDownloadJob**
 
-若要判斷作業的進度，請使用 **/list**， **/info**，或 **/監視**切換。
+若要判斷作業的進度，請使用 **/list**、 **/info**或 **/監視**參數。
 
 ## <a name="determine-the-progress-of-the-download-job"></a>判斷下載作業的進度
 
-使用 **/info**參數來判斷作業的進度。 如果有多個作業使用 myDownloadJob 做為其名稱，您必須取代 myDownloadJob 來唯一識別作業的作業的 guid。
+使用 **/info**參數來判斷作業的進度。 如果多個作業使用 myDownloadJob 作為其名稱，您必須將 myDownloadJob 取代為作業的 GUID，以唯一識別作業。
 
-**bitsadmin /info myDownloadJob /verbose**
+**bitsadmin/info myDownloadJob/verbose**
 
-**/Info** switch 就會傳回工作的狀態和檔案傳輸的位元組數目。 當傳送狀態時，位元已成功轉移作業中的所有檔案。 **/Verbose**引數會提供作業的完整詳細資料。 下列文字是範例輸出。
+**/Info**參數會傳回作業的狀態，以及所傳輸的檔案和位元組數目。 當狀態為「已傳輸」時，BITS 已成功傳送作業中的所有檔案。 **/Verbose**引數會提供作業的完整詳細資料。 下列文字是範例輸出。
 
 ``` syntax
 GUID: {482FCAF0-74BF-469B-8929-5CCD028C9499} DISPLAY: myDownloadJob
@@ -87,21 +87,21 @@ JOB FILES:
 NOTIFICATION COMMAND LINE: none
 ```
 
-若要在傳輸佇列中收到所有作業的資訊，請使用 **/list**或是 **/監視**切換。
+若要接收傳送佇列中所有作業的資訊，請使用 **/list**或 **/監視**參數。
 
-## <a name="completing-the-download-job"></a>完成下載作業
+## <a name="completing-the-download-job"></a>正在完成下載工作
 
-當傳送作業的狀態時，位元已成功轉移作業中的所有檔案。 不過，不會提供檔案直到您使用 **/ 完成**切換。 如果有多個作業使用 myDownloadJob 做為其名稱，您必須取代 myDownloadJob 來唯一識別作業的作業的 guid。
+當作業的狀態為「已傳輸」時，BITS 已成功傳送作業中的所有檔案。 不過，除非您使用 **/complete**參數，否則無法使用這些檔案。 如果多個作業使用 myDownloadJob 作為其名稱，您必須將 myDownloadJob 取代為作業的 GUID，以唯一識別作業。
 
 **bitsadmin /complete myDownloadJob**
 
-## <a name="monitoring-jobs-in-the-transfer-queue"></a>傳輸佇列中的監視作業
+## <a name="monitoring-jobs-in-the-transfer-queue"></a>監視傳輸佇列中的工作
 
-使用 **/list**， **/監視**，或 **/info**切換到監視的傳輸佇列中的作業。 **/List**交換器提供佇列中的所有作業的資訊。
+使用 **/list**、 **/監視**或 **/info**參數來監視傳送佇列中的作業。 **/List**參數會提供佇列中所有作業的資訊。
 
-**bitsadmin /list**
+**bitsadmin/list**
 
-**/List** switch 就會傳回工作的狀態和檔案和傳輸佇列中的所有作業傳送的位元組數目。 下列文字是範例輸出。
+**/List**參數會傳回作業的狀態，以及傳送佇列中所有作業所傳輸的檔案和位元組數目。 下列文字是範例輸出。
 
 ``` syntax
 {6AF46E48-41D3-453F-B7AF-A694BBC823F7} job1 SUSPENDED 0 / 0 0 / 0
@@ -110,11 +110,11 @@ NOTIFICATION COMMAND LINE: none
 Listed 2 job(s).
 ```
 
-使用 **/監視**來監視佇列中的所有作業的參數。 **/監視**交換器就重新整理資料，每隔 5 秒。 若要停止重新整理，請輸入 CTRL + C。
+使用 **/監視**參數來監視佇列中的所有作業。 **/監視**交換器每5秒會重新整理資料一次。 若要停止重新整理，請輸入 CTRL + C。
 
-**bitsadmin /monitor**
+**bitsadmin/監視**
 
-**/監視**switch 就會傳回工作的狀態和檔案和傳輸佇列中的所有作業傳送的位元組數目。 下列文字是範例輸出。
+**/監視**參數會傳回作業的狀態，以及傳送佇列中所有作業所傳輸的檔案和位元組數目。 下列文字是範例輸出。
 
 ``` syntax
 MONITORING BACKGROUND COPY MANAGER(5 second refresh)
@@ -123,11 +123,11 @@ MONITORING BACKGROUND COPY MANAGER(5 second refresh)
 {0B138008-304B-4264-B021-FD04455588FF} job3 TRANSFERRED 1 / 1 100379370 / 100379370
 ```
 
-## <a name="deleting-jobs-from-the-transfer-queue"></a>刪除來自傳輸佇列的作業
+## <a name="deleting-jobs-from-the-transfer-queue"></a>從傳送佇列刪除作業
 
-使用**重設/** 切換到從傳輸佇列中移除所有工作。
+使用 **/reset**參數從傳輸佇列中移除所有作業。
 
-**bitsadmin /reset**
+**bitsadmin/reset**
 
 下列文字是範例輸出。
 

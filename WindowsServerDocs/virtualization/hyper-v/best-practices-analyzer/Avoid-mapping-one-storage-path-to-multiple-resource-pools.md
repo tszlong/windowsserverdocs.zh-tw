@@ -1,7 +1,7 @@
 ---
 title: 避免將一個儲存體路徑對應至多個資源集區
-description: 此最佳做法分析程式規則之文字的線上版本。
-ms.prod: windows-server-threshold
+description: 此最佳做法分析程式規則的線上版本文字。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 24992453-762b-4892-9a50-55d237b9b7f2
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 7c012836309f722e55c28b2ddbe3d54de641b4af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e89c0382d20d586d8c0b50396ddbd56d6fdadf0b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823959"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365260"
 ---
 # <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>避免將一個儲存體路徑對應至多個資源集區
 
@@ -28,20 +28,20 @@ ms.locfileid: "59823959"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**Severity**|警告|  
-|**分類**|操作|  
+|**分類**|作業|  
   
-在下列章節中，斜體表示會出現在此問題的最佳做法分析程式工具的 UI 文字。
+在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
   
 ## <a name="issue"></a>**問題**  
 *儲存體檔案路徑會對應至多個資源集區。*  
   
-## <a name="impact"></a>**影響**  
-*針對指定的儲存體集區類型，下列的父系和子系集區會共用相同的儲存體路徑：*  
+## <a name="impact"></a>**產生**  
+*針對指定的存放集區類型，下列父系和子集區會共用相同的儲存體路徑：*  
   
-\<集區的清單 >  
+@no__t 集區的 0list >  
   
 ## <a name="resolution"></a>**解決方法**  
-*使用 Windows PowerShell 來重新設定存放裝置資源集區，好讓多個集區不會使用相同的儲存體路徑。*  
+*使用 Windows PowerShell 重新設定存放裝置資源集區，讓多個集區不會使用相同的儲存路徑。*  
   
 
 

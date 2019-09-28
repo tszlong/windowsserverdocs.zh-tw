@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6af0dd0fe88099c04bca291a7b3351aa8e83d253
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 0119cb063d2a68fb4cc96d3fa1cc2867230989ff
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192565"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408583"
 ---
 # <a name="ad-fs-design"></a>AD FS 設計
 
@@ -26,8 +26,8 @@ ms.locfileid: "66192565"
 
   
 ## <a name="see-also"></a>另請參閱  
-如需容量規劃，如 Windows Server 2016 中的 AD FS，請參閱[AD FS 容量規劃工作表。](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
+如需 Windows Server 2016 中 AD FS 的容量規劃，請參閱[AD FS 容量規劃工作表。](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
   
-[Active Directory Federation Services 概觀](../Active-Directory-Federation-Services.md)  
+[Active Directory 同盟服務總覽](../Active-Directory-Federation-Services.md)  
   
 

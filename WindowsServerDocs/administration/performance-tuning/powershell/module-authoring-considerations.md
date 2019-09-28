@@ -1,39 +1,39 @@
 ---
-title: 撰寫考量的 PowerShell 模組
-description: 撰寫考量的 PowerShell 模組
-ms.prod: windows-server-threshold
+title: PowerShell 模組撰寫考慮
+description: PowerShell 模組撰寫考慮
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: JasonSh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 37dd860019b91daf70947dba93d20274048487a0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8945339e7a7950d3cd722ab2af629b45e7f6dd5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818719"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370365"
 ---
-# <a name="powershell-module-authoring-considerations"></a>撰寫考量的 PowerShell 模組
+# <a name="powershell-module-authoring-considerations"></a>PowerShell 模組撰寫考慮
 
-本文件包含一些模組以獲得最佳效能的撰寫方式與相關的指導方針。
+本檔包含有關如何撰寫模組以獲得最佳效能的一些指導方針。
 
 ## <a name="module-manifest-authoring"></a>模組資訊清單撰寫
 
-不會使用下列指導方針的模組資訊清單可以有明顯影響一般的 PowerShell 效能，即使模組不會用於工作階段。
+不使用下列指導方針的模組資訊清單，可能會對一般 PowerShell 效能產生明顯的影響，即使該模組並未用於會話中也一樣。
 
-命令自動搜索會分析每個模組，以判斷哪些命令模組匯出與這項分析可能會耗費資源。
-每位使用者的快取模組分析的結果，但快取無法使用第一次執行，這是典型的案例，使用容器。
-模組在分析期間，如果匯出的命令可完全由資訊清單中，您可以避免昂貴的分析的模組。
+命令自動探索會分析每個模組，以判斷模組匯出的命令，而這項分析可能會很耗費資源。
+系統會針對每個使用者快取模組分析的結果，但在第一次執行時無法使用快取，這是容器的一般案例。
+在模組分析期間，如果可以從資訊清單完全判斷匯出的命令，則可以避免模組的更昂貴分析。
 
 ### <a name="guidelines"></a>指導方針
 
-* 在模組資訊清單中，不會使用在中的使用萬用字元`AliasesToExport`， `CmdletsToExport`，和`FunctionsToExport`項目。
+* 在模組資訊清單中，請勿在 `AliasesToExport`、`CmdletsToExport` 和 @no__t 2 專案中使用萬用字元。
 
-* 如果模組不會匯出為特定類型的命令，這明確指定資訊清單中指定`@()`。
-遺漏或`$null`項目相當於指定萬用字元`*`。
+* 如果模組不會匯出特定類型的命令，請指定 `@()`，在資訊清單中明確指定。
+遺漏或 `$null` 專案相當於指定萬用字元 `*`。
 
-下列應該盡量避免：
+應盡可能避免下列情況：
 
 ```PowerShell
 @{
@@ -45,7 +45,7 @@ ms.locfileid: "59818719"
 }
 ```
 
-相反地，使用：
+相反地，請使用：
 
 ```PowerShell
 @{
@@ -55,19 +55,19 @@ ms.locfileid: "59818719"
 }
 ```
 
-## <a name="avoid-cdxml"></a>Avoid CDXML
+## <a name="avoid-cdxml"></a>避免 CDXML
 
-在決定如何實作您的模組時，有三個主要選項：
+在決定如何執行模組時，有三個主要選項：
 
-* 二進位 (通常是C#)
-* 指令碼 (PowerShell)
-* CDXML （包裝 CIM 是 XML 檔案）
+* Binary （通常C#為）
+* 腳本（PowerShell）
+* CDXML （XML 檔案包裝 CIM）
 
-如果載入模組的速度很重要，但 CDXML 大約是一個級距低於二進位模組。
+如果載入模組的速度很重要，則 CDXML 的順序大致上比二進位模組慢一倍。
 
-二進位模組載入速度最快，因為它會預先編譯，JIT 編譯一次每台機器可以使用 NGen。
+Binary 模組的載入速度最快，因為它是在一段時間內編譯，而且可以針對每部電腦使用 NGen 來進行 JIT 編譯。
 
-指令碼模組通常會是二進位模組比更慢載入，因為 PowerShell 必須剖析的指令碼，然後再編譯並執行它。
+腳本模組的載入速度通常會比二進位模組慢一點，因為 PowerShell 必須在編譯和執行腳本之前先行剖析。
 
-CDXML 模組是通常比慢很多指令碼模組，因為它必須先剖析接著會產生相當多的 PowerShell 指令碼，然後在剖析和編譯的 XML 檔案。
+CDXML 模組的速度通常會比腳本模組慢，因為它必須先剖析 XML 檔案，然後再產生相當多的 PowerShell 腳本，然後進行剖析和編譯。
 

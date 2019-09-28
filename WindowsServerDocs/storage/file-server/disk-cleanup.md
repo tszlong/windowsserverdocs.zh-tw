@@ -1,19 +1,19 @@
 ---
 title: 在 Windows Server 上使用磁片清理
 description: 瞭解如何使用命令列選項來設定磁片清理工具（Cleanmgr.exe 釋放），以自動清除特定檔案。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 4bf32520dc6fa2be36d44fbd66a7efc885a8f5d7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867407"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402120"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>在 Windows Server 上使用磁片清理
 
@@ -37,11 +37,11 @@ ms.locfileid: "70867407"
 
 1. 在 [**管理**] 功能表上，選取 [新增**角色及功能**]。
 
-1. 在 [**開始之前**] 頁面上，確認您的目的地伺服器和網路環境已準備好要安裝的功能。 選取 [下一步]。
+1. 在 [**開始之前**] 頁面上，確認您的目的地伺服器和網路環境已準備好要安裝的功能。 選取 **\[下一步\]** 。
 
-1. 在 [**選取安裝類型**] 頁面上，選取 [**角色型或功能型安裝**]，以在單一伺服器上安裝所有元件功能。 選取 [下一步]。
+1. 在 [**選取安裝類型**] 頁面上，選取 [**角色型或功能型安裝**]，以在單一伺服器上安裝所有元件功能。 選取 **\[下一步\]** 。
 
-1. 在 [選取目的地伺服器] 頁面上，從伺服器集區選取一部伺服器，或者選取一個離線 VHD。 選取 [下一步]。
+1. 在 [選取目的地伺服器] 頁面上，從伺服器集區選取一部伺服器，或者選取一個離線 VHD。 選取 **\[下一步\]** 。
 
 1. 在 [**選取伺服器角色**] 頁面上，選取 **[下一步]** 。
 

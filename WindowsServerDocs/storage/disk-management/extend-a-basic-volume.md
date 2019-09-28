@@ -2,18 +2,18 @@
 title: 延伸基本磁碟區
 description: 本文描述如何在延伸基本磁碟區的主要及邏輯磁碟機上新增空間
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4cad773746ae64a2244178be83e4d59c7c44b6a7
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a98bd3553c3223716d70ed4329bd7e265e697b73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812433"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402101"
 ---
 # <a name="extend-a-basic-volume"></a>延伸基本磁碟區
 
@@ -45,8 +45,8 @@ ms.locfileid: "66812433"
 
 | 值 | 描述 |
 | --- | --- |
-| **list volume** | 顯示所有磁碟上的基本和動態磁碟區。 |
-| **select volume** | 選取指定的磁碟區 (其中 <em>volumenumber</em> 是磁碟區編號)，並讓它成為焦點。 如果沒有指定磁碟區，**select** 會命令列出焦點所在的目前磁碟區。 您可以用編號、磁碟機代號或掛接點路徑來指定磁碟區。 在基本磁碟上，選取磁碟區也會讓對應的磁碟分割成為焦點。 |
+| **list volume** | 顯示所有磁碟上的基本和動態磁碟區清單。 |
+| **select volume** | 選取指定的磁碟區 (其中 <em>volumenumber</em> 是磁碟區編號)，並讓它成為焦點。 如果沒有指定磁碟區，**select** 命令會列出焦點所在的目前磁碟區。 您可以用編號、磁碟機代號或掛接點路徑來指定磁碟區。 在基本磁碟上，選取磁碟區也會讓對應的磁碟分割成為焦點。 |
 | **extend** | <ul><li>將焦點所在磁碟區延伸到下一個連續未配置的空間。 延伸基本磁碟區時，未配置的空間必須在同一個磁碟上，且必須跟隨在具有焦點的磁碟分割之後 (磁區位移較高)。 動態的簡單磁碟區或合併磁碟區可以延伸到任何動態磁碟上任何空白空間。 您可以使用這個命令，將現有磁碟區延伸到新建立的空間。</li ><li>如果先前已透過 NTFS 檔案系統將磁碟分割格式化，檔案系統會自動進行延伸以佔用更大的磁碟分割。 不會遺失任何資料。 如果磁碟分割先前是使用 NTFS 以外的任何檔案系統格式來格式化，則命令會失敗，但不會變更磁碟分割。</li></ul> |
 | **size=** <em>size</em> | 要新增至目前磁碟分割的空間數量，以 MB 為單位。 如果未指定大小，則會將磁碟延伸到占用所有的連續未配置空間。 |
 

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin create
-description: 適用於 Windows 命令主題**bitsadmin 建立**-指定的顯示名稱建立一個傳送工作。
+description: '**Bitsadmin create**的 Windows 命令主題-使用指定的顯示名稱建立傳送工作。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6ce5a4fdc21d879bf0a265e3c4185d83311464a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f6d641d44c56ea4ff11f48a725367de7dcf472a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817189"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381815"
 ---
 # <a name="bitsadmin-create"></a>bitsadmin create
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定的顯示名稱，建立一個傳送工作。 從伺服器的作業傳輸資料下載到本機檔案中。 上傳作業傳輸資料，從本機檔案至伺服器。 上傳-回覆作業將資料從本機檔案傳輸至伺服器，並從伺服器接收回覆檔案。
+建立具有指定之顯示名稱的傳送工作。 下載作業會將資料從伺服器傳送到本機檔案。 上傳作業會將資料從本機檔案傳送到伺服器。 上傳-回復作業會將資料從本機檔案傳送到伺服器，並從伺服器接收回複檔案。
 
-使用[bitsadmin 繼續](bitsadmin-resume.md)切換至啟動的傳送佇列中的作業。
+使用[bitsadmin resume](bitsadmin-resume.md)參數來啟動傳送佇列中的作業。
 
 ## <a name="syntax"></a>語法
 
@@ -38,19 +38,19 @@ bitsadmin /create [type] DisplayName
 
 |參數|描述|
 |-------|--------|
-|型別|-   **/ 下載**將資料從伺服器傳送到本機檔案。<br />-   **/ 上傳**將資料從本機檔案傳輸到伺服器。<br />-   **/ 上傳-回覆**將資料從本機檔案傳輸到伺服器，並從伺服器接收回覆檔案。<br />-此參數的預設值 **/下載**時未指定命令列上。|
-|DisplayName|顯示名稱指派給新建立的作業。|
+|型別|-    **/Download**會將資料從伺服器傳送到本機檔案。<br />-    **/Upload**會將資料從本機檔案傳送到伺服器。<br />-    **/Upload-Reply**會將資料從本機檔案傳送到伺服器，並從伺服器接收回複檔案。<br />-在命令列上未指定時，此參數的預設值為 **/Download** 。|
+|DisplayName|指派給新建立之作業的顯示名稱。|
 
-**1.2 及更早版本的位元**: /Upload 和 /Upload-Reply 類型無法使用。
+**BITS 1.2 和更早版本**： 無法使用/Upload 和/Upload-Reply 類型。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-建立名為的下載作業*myDownloadJob*。
+建立名為*myDownloadJob*的下載作業。
 
 ```
 C:\>bitsadmin /create myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,8 +1,8 @@
 ---
 title: clip
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b10876e115c1f0dcac3448948003852449012087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 82186869782c47f41930d46b4c33a710e6addedf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862389"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379328"
 ---
 # <a name="clip"></a>clip
 
 
 
-將重新導向到 Windows 剪貼簿，從命令列命令輸出。 然後，您就可以將此文字輸出至其他程式。
+從命令列將命令輸出重新導向至 Windows 剪貼簿。 然後，您可以將此文字輸出貼入其他程式中。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -39,25 +39,25 @@ clip < <FileName>
 
 |參數|描述|
 |---------|-----------|
-|\<命令 >|指定您想要傳送到 Windows 剪貼簿其輸出的命令。|
-|\<FileName>|指定您想要傳送到 Windows 剪貼簿內容的檔案。|
+|\<Command >|指定要傳送至 Windows 剪貼簿之輸出的命令。|
+|\<檔案名 >|指定您想要傳送至 Windows 剪貼簿之內容的檔案。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-您可以使用**剪輯**命令，以將資料複製到任何應用程式都可以接收文字從剪貼簿直接。
+您可以使用 [**剪輯**] 命令，將資料直接複製到任何可以從剪貼簿接收文字的應用程式。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要複製到 Windows 剪貼簿 列出目前的目錄，請輸入：
+若要將目前的目錄清單複製到 Windows 剪貼簿，請輸入：
 ```
 dir | clip
 ```
-若要複製到 Windows 剪貼簿 Generic.awk 程式的輸出，請輸入：
+若要將名為 Generic 的程式輸出複製到 Windows 剪貼簿，請輸入：
 ```
 awk -f generic.awk input.txt | clip
 ```
-若要複製呼叫到 Windows 剪貼簿的 Readme.txt 檔案的內容，請輸入：
+若要將稱為 readme.txt 的檔案內容複寫到 Windows 剪貼簿，請輸入：
 ```
 clip < readme.txt
 ```

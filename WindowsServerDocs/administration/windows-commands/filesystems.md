@@ -1,8 +1,8 @@
 ---
-title: 檔案系統
-description: '適用於 Windows 命令主題 * * *- '
+title: 檔
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f19d1977c5a66f5835326b31b1fae573af43d455
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6ebb65223bd69af2253bc77dcbe2c433255513b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848559"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377182"
 ---
-# <a name="filesystems"></a>檔案系統
+# <a name="filesystems"></a>檔
 
 
 
-顯示目前的檔案系統，具有焦點的磁碟區的相關資訊，並列出支援格式化磁碟區的檔案系統。
+顯示具有焦點之磁片區目前檔案系統的相關資訊，並列出格式化磁片區所支援的檔案系統。
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +34,7 @@ filesystems
 
 ## <a name="remarks"></a>備註
 
--   這項作業成功，就必須選取磁碟區。 使用**選取磁碟區**命令來選取磁碟區，並將焦點移到它。
+-   必須選取磁片區，此操作才能成功。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。
 
 #### <a name="additional-references"></a>其他參考資料
 

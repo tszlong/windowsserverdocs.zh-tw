@@ -7,28 +7,28 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e07965b079a953d062f5bdaaca8f9f9f32500610
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0effdb3ae3ba6294e8a28f4f6b780f4d0c6a8582
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851789"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402615"
 ---
 # <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>決定是否要升級現有網域或部署新網域
 
->適用於：Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在您的設計中的每個網域會是新的網域或現有的升級網域。 您未升級的現有網域的使用者必須移至新的網域。  
+您設計中的每個網域都是新的網域或現有的升級網域。 現有網域中的使用者若未升級，則必須移至新網域。  
   
-在網域之間移動帳戶可能會影響終端使用者。 然後再決定是否將使用者移至新的網域，或升級現有的網域，評估長期的成本，將使用者移至網域對新的 AD DS 網域的系統管理好處。  
+在網域之間移動帳戶可能會影響終端使用者。 在決定是否要將使用者移至新網域或升級現有網域之前，請根據將使用者移至網域的成本，評估新 AD DS 網域的長期管理優勢。  
   
-如需有關如何升級到 Windows Server 2008 的 Active Directory 網域的詳細資訊，請參閱 < [Windows Server 2008 和 Windows Server 2008 R2 AD DS 網域升級 Active Directory 網域](https://technet.microsoft.com/library/cc731188.aspx)。  
+如需將 Active Directory 網域升級至 Windows Server 2008 的詳細資訊，請參閱[將 Active Directory 網域升級至 Windows server 2008 和 Windows server 2008 R2 AD DS 網域](https://technet.microsoft.com/library/cc731188.aspx)。  
   
-如需有關重新建構 AD DS 網域內和樹系之間的詳細資訊，請參閱 < Active Directory 遷移工具 3.1 版遷移指南 》 ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))。  
+如需有關在樹系內和之間重組 AD DS 網域的詳細資訊，請參閱 Active Directory 遷移工具版本3.1 遷移指南（[https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)）。  
   
-可協助您記載您的計劃，為新的和升級網域的工作表，請從 工作輔助工具的 Windows Server 2003 Deployment Kit 下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip ([ https://go.microsoft.com/fwlink/?LinkID=102558 ](https://go.microsoft.com/fwlink/?LinkID=102558))然後，開啟 「 網域規劃 」 (DSSLOGI_5.doc)。  
+如需協助您記錄新網域和升級網域之計畫的工作表，請從適用于 Windows Server 2003 部署套件（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）的工作輔助下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟「網域」規劃 "（DSSLOGI_5）。  
   
 
 

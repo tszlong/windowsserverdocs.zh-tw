@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fd25927a11f12deb9cf23866dcad447f397d3173
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 49061aaab2f46d7d3abe80d4fade98c10654fc37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869314"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407293"
 ---
 # <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>使用傳遞或篩選宣告規則的時機
 當您需要接受特定的傳入\(宣告\)類型，然後套用動作來根據傳入宣告中的值判斷應該發生的輸出時，您可以在 Active Directory 同盟服務 AD FS 中使用此規則。 當您使用此規則時，您會根據您在規則中設定的選項之一，傳遞或篩選任何與下表中的規則邏輯相符的宣告。  

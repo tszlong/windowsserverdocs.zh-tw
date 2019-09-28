@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 151118c51904b50df8e63f705b0870dbb1053609
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 956d026edf5de87a2c20d058f9be5cfec186191b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867767"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408002"
 ---
 # <a name="planning-for-ad-fs-server-capacity"></a>規劃 AD FS 伺服器容量
 
@@ -33,7 +33,7 @@ Active Directory 同盟服務\( \-AD FS\)的容量規劃是預測同盟服務的
   
 在您繼續閱讀這個容量規劃內容之前，建議您先依照以下兩個表格中所示的順序來完成工作。 在第一個表格中，我們提供建議工作的連結，以協助提供適用於這個容量規劃討論的相關內容。  
   
-|建議的工作|說明|參考資料|  
+|建議的工作|描述|參考資料|  
 |--------------------|---------------|-------------|  
 |瞭解部署 AD FS 同盟伺服器和同盟伺服器 proxy 的需求|檢閱部署同盟伺服器和同盟伺服器 Proxy 所需的重要硬體和軟體需求。|[附錄 A：檢閱 AD FS 需求](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
 |選取您將在組織中部署的 AD FS 設定資料庫類型|在您開始使用本節中的容量規劃資料之前，您必須先決定要部署哪一個 AD FS 的設定資料庫類型，也就是 Windows \(內部\)資料庫 WID 或結構化查詢語言 (SQL) \( SQL\) database。|[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md);<br /><br />[AD FS 部署拓撲考量](AD-FS-Deployment-Topology-Considerations.md)|  
@@ -42,7 +42,7 @@ Active Directory 同盟服務\( \-AD FS\)的容量規劃是預測同盟服務的
   
 在檢閱上表的內容之後，您現在可以完成下表中的必要工作。  
   
-|必要的工作|說明|參考資料|  
+|必要的工作|描述|參考資料|  
 |---------------------|---------------|-------------|  
 |下載 AD FS 容量規劃調整大小試算表|AD FS 容量規劃調整大小試算表可協助您判斷 AD FS 同盟伺服器陣列部署所需的同盟伺服器數目。 以下提供的連結中有如何使用這個試算表的指示，可供第二個工作使用。|[AD FS 容量規劃試算表](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacityPlanning.xlsx)|  
 |收集\-需要對目標宣告\( \) 感知應用\-程式具有單一登入存取權的使用者人數，以及與此存取相關聯的預期尖峰使用期間的資料|您收集的這個使用者資料將用於 AD FS 容量規劃調整大小試算表內所需的輸入值。|[估計貴組織的同盟伺服器數目](Planning-for-Federation-Server-Capacity.md#bk_estimatefs)|  

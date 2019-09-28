@@ -1,7 +1,7 @@
 ---
 title: 版本資訊 - Windows Server 2019 的重要問題
 description: 摘要說明需要因應措施以避免損毀、停止回應、安裝失敗和資料遺失的重要問題
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.assetid: 134aab85-664f-4d55-87ef-9e5fd098371f
@@ -10,16 +10,16 @@ ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 515255c301d343aa1b83bcfb506f2e3baa6ca969
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6f0a13401810adebb299f0b0c9607bfe58bb405d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810736"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360809"
 ---
 # <a name="release-notes---important-issues-in-windows-server-2019"></a>版本資訊 - Windows Server 2019 的重要問題
 
->適用於：Windows Server 2019
+>適用於：Windows Server Standard 2012 R2
 
 這些版本資訊摘要說明 Windows Server 2019 作業系統中最重要的問題，包括可避免或暫時解決問題 (如果已知) 的方式。 如需這個版本的設計變更、新功能及修正資訊，請參閱 [Windows Server 2019 新功能](whats-new-19.md)和特定功能小組的通知。 除非另有說明，否則這其中每個回報的問題都適用於 Windows Server 2019 所有版本和安裝選項。  
 

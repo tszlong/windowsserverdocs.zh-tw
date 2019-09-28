@@ -1,72 +1,72 @@
 ---
-title: 管理 Windows Admin Center 使用的容錯移轉叢集
-description: 管理 Windows Admin Center （專案檀香山） 與容錯移轉叢集
+title: 使用 Windows 管理中心管理容錯移轉叢集
+description: 使用 Windows 管理中心管理容錯移轉叢集（Project 檀香山）
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: f7e14581f7f6b14b0cf39308de236b68a07e8c9f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.prod: windows-server
+ms.openlocfilehash: 16e758f0a8746d41adcdafb2bc1be2d91a3fc29c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824069"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406804"
 ---
-# <a name="manage-failover-clusters-with-windows-admin-center"></a>管理 Windows Admin Center 使用的容錯移轉叢集
+# <a name="manage-failover-clusters-with-windows-admin-center"></a>使用 Windows 管理中心管理容錯移轉叢集
 
->適用於：Windows Admin Center，Windows Admin Center 預覽
+>適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 > [!Tip]
 > 對 Windows Admin Center 不熟悉？
 > [深入了解 Windows Admin Center](../understand/windows-admin-center.md) 或[立即下載](https://aka.ms/windowsadmincenter).
 
 ## <a name="managing-failover-clusters"></a>管理容錯移轉叢集
-[容錯移轉叢集](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)是 Windows Server 功能，可讓您將多部伺服器一起容錯叢集，以增加可用性和延展性的應用程式和服務，例如向外延展檔案伺服器、 HYPER-V 和Microsoft SQL Server。
+[容錯移轉](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)叢集是一項 Windows Server 功能，可讓您將多部伺服器組成一個容錯叢集，以提高應用程式和服務（例如向外延展檔案伺服器、hyper-v 和）的可用性和擴充性Microsoft SQL Server。
 
-雖然您也可以將它們做為個別的伺服器管理容錯移轉叢集節點[伺服器連線](manage-servers.md)在 Windows Admin Center，您也可以將它們為容錯移轉叢集來檢視和管理叢集資源、 儲存體、 網路、 節點角色、 虛擬機器和虛擬交換器。
+雖然您可以在 Windows 系統管理中心將容錯移轉叢集節點新增為[伺服器](manage-servers.md)連線來將它們當做個別伺服器來管理，但您也可以將它們新增為容錯移轉叢集，以查看和管理叢集資源、儲存體、網路、節點、角色、虛擬機器和虛擬交換器。
 
-![容錯移轉叢集概觀畫面](../media/manage-failover-clusters/fcm-overview.png)
+![容錯移轉叢集總覽畫面](../media/manage-failover-clusters/fcm-overview.png)
 
-## <a name="adding-a-failover-cluster-to-windows-admin-center"></a>將容錯移轉叢集新增至 Windows Admin Center
-將叢集新增至 Windows Admin Center:
+## <a name="adding-a-failover-cluster-to-windows-admin-center"></a>將容錯移轉叢集新增至 Windows 管理中心
+若要將叢集新增至 Windows 系統管理中心：
 
-1. 按一下  **+ 新增**下所有連接。
-2. 選擇新增**容錯移轉連線**。
-3. 輸入叢集的名稱，如果出現提示，要使用的認證。
-4. 您必須將叢集節點新增為 Windows Admin Center 中的個別伺服器連接選項。
-5. 按一下 **送出**才能完成。
+1. 按一下 [所有連接] 底下的 [ **+ 新增**]。
+2. 選擇新增**容錯移轉連接**。
+3. 輸入叢集的名稱，如果出現提示，則為要使用的認證。
+4. 在 Windows 系統管理中心，您可以選擇將叢集節點新增為個別的伺服器連接。
+5. 按一下 [**提交**] 完成。
 
-連線清單在 [概觀] 頁面上，將會新增叢集。 按一下以連線到叢集。
+叢集將會新增至 [總覽] 頁面上的連接清單。 按一下以連接到叢集。
 
 > [!NOTE]
-> 您也可以管理超交集叢集新增為叢集[Hyper-Converged 叢集連線](manage-hyper-converged.md)Windows Admin Center 中。
+> 您也可以在 Windows 管理中心新增叢集作為[超](manage-hyper-converged.md)交集叢集連線，以管理超融合叢集。
 
 ## <a name="tools"></a>工具
 
-下列工具可供容錯移轉叢集的連線：
+下列工具適用于容錯移轉叢集連接：
 
 | 工具 | 描述 |
 | ---- | ----------- |
-| 總覽 | 檢視容錯移轉叢集的詳細資料和管理叢集資源 |
-| [磁碟] | 檢視叢集共用磁碟和磁碟區 |
-| [網路] | 檢視叢集中的網路 |
-| 節點 | 檢視及管理叢集節點 |
-| 角色 | 管理叢集角色，或建立空白的角色 |
-| 更新 | 管理叢集感知更新 |
-| [虛擬機器](manage-virtual-machines.md) | 檢視及管理虛擬機器 |
-| 虛擬交換器 | 檢視及管理虛擬交換器 |
+| 總覽 | 查看容錯移轉叢集詳細資料和管理叢集資源 |
+| [磁碟] | 查看叢集共用磁片和磁片區 |
+| [網路] | 在叢集中查看網路 |
+| 節點 | 查看和管理叢集節點 |
+| 角色 | 管理叢集角色或建立空白角色 |
+| 更新 | 管理叢集感知更新（需要[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)） |
+| [虛擬機器](manage-virtual-machines.md) | 查看和管理虛擬機器 |
+| 虛擬交換器 | 查看和管理虛擬交換器 |
 
 ## <a name="more-coming"></a>更多即將推出
 
-容錯移轉叢集管理的 Windows Admin Center 正在開發，並將在不久的將來加入新功能。 您可以檢視 狀態 和 票選功能在 UserVoice 中：
+Windows 管理中心內的容錯移轉叢集管理正積極開發，未來將會新增新功能。 您可以在 UserVoice 中查看功能的狀態和投票：
 
 |功能要求|
 |-------|
-| [顯示更多的叢集的磁碟資訊](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31740424--cluster-more-disk-info-in-failover-cluster-manag) |
-| [支援其他的叢集動作](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/33558076--fcm-full-csv-management-cycle-in-one-place) |
-| [支援聚合式的叢集在不同的叢集上執行 HYPER-V 與向外延展檔案伺服器](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31729741--cluster-support-for-converged-architecture) |
-| [檢視 CSV 區塊快取](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31669477--cluster-csv-block-cache) |
-| [查看所有或提出新功能](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bcluster%5D) |
+| [顯示更多叢集磁片資訊](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31740424--cluster-more-disk-info-in-failover-cluster-manag) |
+| [支援其他叢集動作](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/33558076--fcm-full-csv-management-cycle-in-one-place) |
+| [支援在不同叢集上執行 Hyper-v 和向外延展檔案伺服器的聚合式叢集](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31729741--cluster-support-for-converged-architecture) |
+| [查看 CSV 區塊快取](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31669477--cluster-csv-block-cache) |
+| [查看全部或提議新功能](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bcluster%5D) |

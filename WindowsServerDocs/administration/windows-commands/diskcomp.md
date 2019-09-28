@@ -1,8 +1,8 @@
 ---
 title: diskcomp
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ccd1a347f9ac51fc98c963dedb1c0ab3fcd27d41
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ca5ea0f4587b21b2a274c772aab239668b7868b4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439595"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377866"
 ---
 # <a name="diskcomp"></a>diskcomp
 
 
 
-比較兩個磁碟的內容。 如果未指定參數，使用**diskcomp**來比較兩個磁碟會使用目前的磁碟機。如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+比較兩個磁片磁碟機的內容。 如果在沒有參數的情況下使用， **diskcomp**會使用目前的磁片磁碟機來比較這兩個磁片。如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,86 +36,86 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
 |參數|描述|
 |---------|-----------|
-|\<Drive1>|指定包含其中一個磁碟的磁碟機。|
-|\<Drive2>|指定包含其他磁碟的磁碟機。|
+|\<Drive1 >|指定包含其中一個軟碟的磁片磁碟機。|
+|\<Drive2 >|指定包含其他軟碟的磁片磁碟機。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-- 使用磁碟
+- 使用磁片
 
-  **Diskcomp**命令只適用於磁碟。 您無法使用**diskcomp**與硬碟。 如果您指定的硬碟*Drive1*或是*Drive2*， **diskcomp**會顯示下列錯誤訊息：  
+  **Diskcomp**命令只適用于磁片磁碟機。 您不能將**diskcomp**與硬碟搭配使用。 如果您為*Drive1*或*Drive2*指定硬碟， **diskcomp**會顯示下列錯誤訊息：  
   ```
   Invalid drive specification
   Specified drive does not exist
   or is nonremovable
   ```  
-- 比較磁碟
+- 比較磁片
 
-  如果要比較的兩個磁碟上的所有追蹤都都一樣， **diskcomp**顯示下列訊息：  
+  如果要比較的兩個磁片上的所有追蹤都相同， **diskcomp**會顯示下列訊息：  
   ```
   Compare OK
   ```  
-  曲目不相同，如果**diskcomp**會顯示類似下面的訊息：  
+  如果追蹤不同， **diskcomp**會顯示類似下列的訊息：  
   ```
   Compare error on
   side 1, track 2
   ```  
-  當**diskcomp**完成相較之下，它會顯示下列訊息：  
+  當**diskcomp**完成比較時，會顯示下列訊息：  
   ```
   Compare another diskette (Y/N)?
   ```  
-  如果您按下 Y **diskcomp**會提示您插入磁碟，以供下一步 的比較。 如果您按下 N **diskcomp**停止比較。
+  如果您按下 [Y]， **diskcomp**會提示您插入磁片以進行下一個比較。 如果您按 N， **diskcomp**會停止比較。
 
-  當**diskcomp**進行比較，它會忽略磁碟的磁碟區數目。
-- 省略磁碟機參數
+  當**diskcomp**進行比較時，它會忽略磁片的磁片區編號。
+- 省略磁片磁碟機參數
 
-  如果您省略*Drive2*參數**diskcomp**使用的目前磁碟機*Drive2*。 如果省略這兩個磁碟機的參數， **diskcomp**同時使用目前的磁碟機。 如果目前的磁碟機是相同*Drive1*， **diskcomp**會提示您視需要交換磁碟。
-- 使用一個磁碟機
+  如果您省略*Drive2*參數， **diskcomp**會使用目前的磁片磁碟機來進行*Drive2*。 如果您省略這兩個磁片磁碟機參數， **diskcomp**會同時使用目前的磁片磁碟機。 如果目前的磁片磁碟機與*Drive1*相同， **diskcomp**會提示您視需要交換磁片。
+- 使用一部磁片磁碟機
 
-  如果您指定的相同軟碟機*Drive1*並*Drive2*， **diskcomp**比較它們使用一個磁碟機，並提示您視需要插入磁片。 您可能要一次以上，將磁碟交換容量的磁碟以及可用的記憶體數量而定。
-- 比較不同類型的磁碟
+  如果您為*Drive1*和*Drive2*指定相同的軟碟磁碟機， **diskcomp**會使用一個磁片磁碟機來比較它們，並視需要提示您插入磁片。 視磁片的容量和可用的記憶體數量而定，您可能必須多次交換磁片。
+- 比較不同類型的磁片
 
-  **Diskcomp**無法比較的單面磁碟雙面磁碟時，也不適用之高密度的雙精度浮點數密度磁碟。 如果使用中的磁碟*Drive1*不是在磁碟相同的型別*Drive2*， **diskcomp**顯示下列訊息：  
+  **Diskcomp**無法比較單側磁片與雙側磁片，也不能與高密度磁片搭配雙密度磁片。 如果*Drive1*中的磁片與*Drive2*中的磁片類型不同， **diskcomp**就會顯示下列訊息：  
   ```
   Drive types or diskette types not compatible
   ```  
-- 使用**diskcomp**的網路和重新導向的磁碟機
+- 將**diskcomp**與網路和重新導向的磁片磁碟機搭配使用
 
-  **Diskcomp**或建立的磁碟機上的網路磁碟機無法運作**subst**命令。 如果您嘗試使用**diskcomp**與這些類型的任何磁碟機**diskcomp**會顯示下列錯誤訊息：  
+  **Diskcomp**無法在網路磁碟機機或由**subst**命令所建立的磁片磁碟機上運作。 如果您嘗試使用**diskcomp**搭配任何一種類型的磁片磁碟機， **diskcomp**會顯示下列錯誤訊息：  
   ```
   Invalid drive specification
   ```  
-- 比較原始磁碟的複本
+- 比較原始磁片與複本
 
-  當您使用**diskcomp**使用您所使用的磁碟**複製**， **diskcomp**可能會顯示類似下面的訊息：  
+  當您使用**diskcomp**搭配使用**複製**所建立的磁片時， **diskcomp**可能會顯示類似下列的訊息：  
   ```
   Compare error on 
   side 0, track 0
   ```  
-  即使在磁碟上的檔案都相同，就會發生這種類型的錯誤。 雖然**複製**複製的詳細資訊，它不會不一定是將它放在目的地磁碟上的相同位置。
-- 了解**diskcomp**結束代碼
+  即使磁片上的檔案完全相同，也可能會發生這種錯誤。 雖然**複製**重複資訊，但不一定要將它放在目的地磁片上的相同位置。
+- 瞭解**diskcomp**結束代碼
 
   下表說明每個結束代碼。  
 
   |結束代碼|描述|
   |---------|-----------|
-  |0|是相同的磁碟|
-  |1|找不到的差異|
-  |3|發生硬體錯誤|
+  |0|磁片相同|
+  |1|發現差異|
+  |3|發生硬錯誤|
   |4|發生初始化錯誤|
 
-  要傳回的處理序結束代碼**diskcomp**，您可以使用 ERRORLEVEL 環境變數上**如果**批次程式中的命令列。
+  若要處理**diskcomp**傳回的結束代碼，您可以在 batch 程式的**if**命令列上使用 ERRORLEVEL 環境變數。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-如果您的電腦有只有一個軟碟機 （例如，磁碟機的），而且您想要比較兩個磁碟，輸入：
+如果您的電腦只有一個磁片磁碟機（例如磁片磁碟機 A），而您想要比較兩個磁片，請輸入：
 ```
 diskcomp a: a:
 ```
-**Diskcomp**會提示您插入每個磁碟，視需要。
+**Diskcomp**會提示您視需要插入每個磁片。
 
-下列範例說明如何處理**diskcomp**結束批次程式上使用 ERRORLEVEL 環境變數中的程式碼**如果**命令列：
+下列範例說明如何在使用**if**命令列上 ERRORLEVEL 環境變數的 batch 程式中處理**diskcomp**結束代碼：
 ```
 rem Checkout.bat compares the disks in drive A and B 
 echo off 

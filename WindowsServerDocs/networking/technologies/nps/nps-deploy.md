@@ -1,45 +1,45 @@
 ---
 title: 部署網路原則伺服器
-description: 本主題提供的 Windows Server 2016 中，網路原則伺服器部署內容的連結，並包含 NPS 的其他指導連結。
+description: 本主題提供 Windows Server 2016 的網路原則伺服器部署內容連結，並包含 NPS 其他指引的連結。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 6cfb50e0-7088-4295-97c5-14ff8776cbf8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8da8951a9c6ed5022c892bbf01b33614d38abc5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 33cada472c314088bc1485bab6d9631226b0ffaf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814839"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405416"
 ---
 # <a name="deploy-network-policy-server"></a>部署網路原則伺服器
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題針對部署網路原則伺服器的相關資訊。
+您可以使用本主題以取得部署網路原則伺服器的相關資訊。
 
 >[!NOTE]
->如需其他網路原則伺服器文件，您可以使用下列的程式庫各節。  
->- [開始使用網路原則伺服器](nps-getstart-top.md)
+>如需其他網路原則伺服器檔，您可以使用下列程式庫區段。  
+>- [網路原則伺服器的消費者入門](nps-getstart-top.md)
 >- [規劃網路原則伺服器](nps-plan-top.md)
 >- [管理網路原則伺服器](nps-manage-top.md)
 
-Windows Server 2016 核心網路指南包含規劃與安裝網路原則伺服器上的區段\(NPS\)，而且手冊中的技術做為部署在 Active Directory 網域中的 NPS 的必要條件。 如需詳細資訊，請參閱 Windows Server 2016 中的 「 部署 NPS1 」 一節[核心網路指南](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide#BKMK_deployNPS1)。
+《 Windows Server 2016 核心網路指南》包含規劃和安裝網路原則伺服器 \(NPS @ no__t-1 一節，而本指南所提供的技術可作為在 Active Directory 網域中部署 NPS 的必要條件。 如需詳細資訊，請參閱《 Windows Server 2016[核心網路指南》](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide#BKMK_deployNPS1)中的「部署 NPS1」一節。
 
-## <a name="deploy-nps-certificates-for-vpn-and-8021x-access"></a>部署 VPN 和 802.1x 存取的 NPS 憑證
+## <a name="deploy-nps-certificates-for-vpn-and-8021x-access"></a>部署適用于 VPN 和 802.1 X 存取的 NPS 憑證
 
-如果您想要部署驗證方法，例如可延伸驗證通訊協定\(EAP\)並受保護的 EAP 需要使用伺服器憑證在您的 NPS 上，您可以使用本指南來部署 NPS 憑證[部署 802.1x 有線和無線部署的伺服器憑證](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)。
+如果您想要部署驗證方法（例如可延伸驗證通訊協定 \(EAP @ no__t-1）和受保護的 EAP （需要在您的 NPS 上使用伺服器憑證），您可以部署 NPS 憑證，其中包含 [[部署伺服器憑證] 指南802.1 x 有線和無線部署](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)。
 
-## <a name="deploy-nps-for-8021x-wireless-access"></a>將 NPS 部署 802.1x 無線存取
+## <a name="deploy-nps-for-8021x-wireless-access"></a>部署適用于 802.1 X 無線存取的 NPS
 
-若要部署 NPS 用於無線存取，您可以使用快速入門[部署密碼型 802.1x 驗證無線存取](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access)。
+若要部署 NPS 以進行無線存取，您可以使用指南[部署以密碼為基礎的 802.1 x 驗證無線存取](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access)。
 
-## <a name="deploy-nps-for-windows-10-vpn-access"></a>將 NPS 部署為 Windows 10 VPN 存取
+## <a name="deploy-nps-for-windows-10-vpn-access"></a>部署適用于 Windows 10 VPN 存取的 NPS
 
-您可以使用 NPS 來處理連線要求一律在虛擬私人網路\(VPN\)遠端員工使用執行 Windows 10 電腦和裝置的連線。
+您可以使用 NPS 為使用執行 Windows 10 之電腦和裝置的遠端員工，處理 Always On 虛擬私人網路 \(VPN @ no__t-1 連線的連線要求。
 
-如需詳細資訊，請參閱 <<c0> [ 遠端存取一律在 VPN 部署指南的 Windows Server 2016 和 Windows 10](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)。
+如需詳細資訊，請參閱[Windows Server 2016 和 windows 10 的遠端存取 ALWAYS ON VPN 部署指南](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)。
 
