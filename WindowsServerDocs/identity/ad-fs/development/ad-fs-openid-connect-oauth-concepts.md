@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a0a1da3dd5c92dff885478c1669bbda5ae07fe5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0e680e07ce1ee27a73791e310a71b85ad76d6318
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867483"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358756"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth 概念
 適用于 AD FS 2016 和更新版本
@@ -55,7 +55,7 @@ ms.locfileid: "70867483"
  
 在 AD FS 中註冊資源時，可以將範圍設定為允許 AD FS 執行特定的動作。 除了設定範圍之外，也必須在要求中傳送範圍值，以執行動作 AD FS。 例如，在資源註冊期間，系統管理員必須將範圍設定為 openid，而應用程式（用戶端）必須在驗證要求中傳送 scope = openid，以 AD FS 發行識別碼權杖。 以下提供 AD FS 中可用範圍的詳細資料 
  
-- aza-如果使用訊息  [代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)，而且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及設定refresh_token_expires_in 欄位到新主要重新整理權杖的存留期（如果有強制執行）。 
+- aza-如果使用 [適用于訊息代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) and 如果 scope 參數包含範圍 "aza"，伺服器會發出新的主要重新整理權杖，並在回應的 refresh_token 欄位中設定它，以及設定 refresh_token_expires_in 欄位到新主要重新整理權杖的存留期（如果有強制執行）。 
 - openid-允許應用程式要求使用 OpenID Connect 授權通訊協定。 
 - logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整的 PKI 回應。  [這裡](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。
 - user_impersonation-必須有 user_impersonation 範圍，才能成功地向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理程式（OBO）建立多層式應用程式](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 

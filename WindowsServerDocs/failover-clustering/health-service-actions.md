@@ -1,6 +1,6 @@
 ---
 title: 健全狀況服務動作
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: efdf8f04e68fcbdc7051e78d6725cb919e740ffa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 519f0321f36fb7afc86962950aeab729d7a38adb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843019"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361105"
 ---
 # <a name="health-service-actions"></a>健全狀況服務動作
 
-> 適用於 Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
-健全狀況服務是中改善的日常監視的 Windows Server 2016 和操作經驗執行儲存空間直接存取叢集的新功能。
+健全狀況服務是 Windows Server 2016 中的新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
 
 ## <a name="actions"></a>動作  
 
@@ -35,7 +35,7 @@ Get-StorageHealthAction
 
 ### <a name="coverage"></a>涵蓋範圍  
 
-在 Windows Server 2016、windows **Get-storagehealthaction** cmdlet 可以傳回任何下列資訊：  
+在 Windows Server 2016 中， **StorageHealthAction** Cmdlet 可以傳回下列任何資訊：  
 
 -   淘汰失敗、失去連線，或實體磁碟沒有回應  
 
@@ -48,4 +48,4 @@ Get-StorageHealthAction
 ## <a name="see-also"></a>另請參閱
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)
-- [開發人員文件、 範例程式碼，以及 MSDN 上的 API 參考](https://msdn.microsoft.com/windowshealthservice)
+- [MSDN 上的開發人員檔、範例程式碼和 API 參考](https://msdn.microsoft.com/windowshealthservice)

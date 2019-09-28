@@ -1,54 +1,54 @@
 ---
-title: 設定 WEB1 以發佈憑證撤銷清單 (Crl)
-description: 本主題是本指南適用於 802.1x 有線和無線部署的部署伺服器憑證的一部分
+title: 設定 WEB1 以發佈憑證撤銷清單（Crl）
+description: 本主題是 802.1 X 有線和無線部署的部署伺服器憑證指南的一部分
 manager: brianlic
 ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 57fa45eff87a1f0cdaae8b780d7f605e54ff6871
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5d53cbba37699346db110f0748a9c3e0c834c18e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839189"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356292"
 ---
-# <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>設定 WEB1 以發佈憑證撤銷清單 (Crl)
+# <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>設定 WEB1 以發佈憑證撤銷清單（Crl）
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-若要設定 web 伺服器 WEB1 以發佈 Crl，您可以使用此程序。  
+您可以使用這個程式來設定 web 伺服器 WEB1 來散發 Crl。  
   
-在 根 CA 的延伸模組，它所述，從根 CA 的 CRL 可以透過 https://pki.corp.contoso.com/pki。 目前，沒有 PKI 虛擬目錄在 WEB1 上，因此必須建立一個。  
+在根 CA 的延伸模組中，會指出根 CA 的 CRL 可透過 https://pki.corp.contoso.com/pki 提供。 目前，WEB1 上沒有 PKI 虛擬目錄，因此必須建立一個。  
   
-若要執行此程序，您必須隸屬**Domain Admins**。  
+若要執行此程式，您必須是**Domain Admins**的成員。  
   
 > [!NOTE]  
-> 在下列程序，取代的使用者帳戶名稱、 Web 伺服器名稱、 資料夾名稱和位置和其他值的適用於您的部署。  
+> 在下列程式中，以適用于您部署的使用者帳戶名稱、Web 服務器名稱、資料夾名稱和位置，以及其他值來取代。  
   
-#### <a name="to-configure-web1-to-distribute-certificates-and-crls"></a>若要設定 WEB1 以發佈憑證與 Crl  
+#### <a name="to-configure-web1-to-distribute-certificates-and-crls"></a>設定 WEB1 以散發憑證和 Crl  
   
-1.  在 WEB1 上，以系統管理員身分執行 Windows PowerShell 中，輸入`explorer c:\`，然後按 ENTER 鍵。 Windows 檔案總管會開啟至 c 磁碟機。   
+1.  在 WEB1 上，以系統管理員身分執行 Windows PowerShell，輸入 `explorer c:\`，然後按 ENTER。 Windows Explorer 會開啟到 C 磁片磁碟機。   
   
-2.  建立新的資料夾 c： 磁碟機上名為 PKI。 若要這樣做，請按一下**首頁**，然後按一下**新資料夾**。 反白顯示出暫存名稱建立新的資料夾。 型別**pki**然後按 ENTER 鍵。  
+2.  在 C：磁片磁碟機上建立名為 PKI 的新資料夾。 若要這麼做，請按一下 [**首頁**]，然後按一下 [**新增資料夾**]。 隨即會建立新的資料夾，並反白顯示暫時名稱。 輸入**pki** ，然後按 enter。  
   
-3.  在 Windows 檔案總管中，以滑鼠右鍵按一下您剛才建立的資料夾中，滑鼠游標暫留**分享**，然後按一下**特定人員**。 **檔案共用**對話方塊隨即開啟。  
+3.  在 Windows Explorer 中，以滑鼠右鍵按一下您剛才建立的資料夾，將滑鼠游標停留在 [**共用**] 上方，然後按一下 [**特定人員**]。 [檔案**共用**] 對話方塊隨即開啟。  
   
-4.  在 **檔案共用**，型別**Cert Publishers**，然後按一下**新增**。 Cert Publishers 群組新增至清單。 在清單中，在**權限層級**，按一下箭號旁**Cert Publishers**，然後按一下 **讀取/寫入**。 按一下 **共用**，然後按一下**完成**。  
+4.  在 [檔案**共用**] 中，輸入**Cert 發行者**，然後按一下 [**新增**]。 [憑證發行者] 群組會新增至清單。 在清單的 [**許可權等級**] 中，按一下 [ **Cert 發行者**] 旁的箭號，然後按一下 [**讀取/寫入**]。 按一下 [**共用**]，然後按一下 [**完成**]。  
   
-5.  關閉 Windows 檔案總管。  
+5.  關閉 [Windows Explorer]。  
   
 6.  開啟 IIS 主控台。 在 [伺服器管理員] 按一下 [工具]，然後按一下 [Internet Information Services (IIS) 管理員]。  
   
-7.  在 Internet Information Services (IIS) 管理員主控台樹狀目錄中，依序展開**WEB1**。 如果系統邀請您開始使用 Microsoft Web Platform，請按一下 [取消]。  
+7.  在 [Internet Information Services （IIS）管理員] 主控台樹中，展開 [ **WEB1**]。 如果系統邀請您開始使用 Microsoft Web Platform，請按一下 [取消]。  
   
 8.  展開 [站台] 後，以滑鼠右鍵按一下 [Default Web Site]，然後按一下 [新增虛擬目錄]。  
   
-9. 在 **別名**，型別**pki**。 在 **實體路徑**型別**C:\pki**，然後按一下**確定**。  
+9. 在 [**別名**] 中，輸入**pki**。 在 [**實體路徑**] 中輸入**C:\pki**，然後按一下 **[確定]** 。  
   
-10. 啟用匿名存取 pki 虛擬目錄，以便任何用戶端檢查有效性的 CA 憑證與 Crl。 方法如下：  
+10. 啟用 pki 虛擬目錄的匿名存取，讓任何用戶端都可以檢查 CA 憑證和 Crl 的有效性。 方法如下：  
   
     1.  在 [連線] 窗格中，確認已選取 [pki]。  
   
@@ -56,26 +56,26 @@ ms.locfileid: "59839189"
   
     3.  在 [動作] 窗格中，按一下 [編輯權限]。  
   
-    4.  在 [安全性] 索引標籤上，按一下 [編輯] 。  
+    4.  在 [安全性] 索引標籤上，按一下 [編輯]。  
   
-    5.  在 [pki 的權限]  對話方塊上，按一下 [新增] 。  
+    5.  在 [pki 的權限] 對話方塊上，按一下 [新增]。  
   
-    6.  在 **選取使用者、 電腦、 服務帳戶或群組**，輸入**匿名登入;每個人都**，然後按一下 **檢查名稱**。 按一下 [確定] 。  
+    6.  在 [**選取使用者、電腦、服務帳戶或群組**] 中，輸入**ANONYMOUS LOGON;[所有人**]，然後按一下 [**檢查名稱**]。 按一下 [確定]。  
   
-    7.  按一下 [ **[確定]** 上**選取使用者、 電腦、 服務帳戶或群組**] 對話方塊。  
+    7.  按一下 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊上的 **[確定]** 。  
   
-    8.  按一下 [ **[確定]** 上**pki 的權限**] 對話方塊。  
+    8.  按一下 [pki 的**許可權**] 對話方塊上的 **[確定**]。  
   
-11. 按一下 [ **[確定]** 上**pki 屬性**] 對話方塊。  
+11. 按一下 [ **Pki 屬性**] 對話方塊上的 **[確定]** 。  
   
-12. 在 [pki 首頁]  窗格中，按兩下 [要求篩選] 。  
+12. 在 [pki 首頁] 窗格中，按兩下 [要求篩選]。  
   
-13. 在 [要求篩選] 窗格中，預設會選取 [副檔名] 索引標籤。 在 [動作]  窗格中，按一下 [編輯功能設定] 。  
+13. 在 [要求篩選] 窗格中，預設會選取 [副檔名] 索引標籤。 在 [動作] 窗格中，按一下 [編輯功能設定]。  
   
-14. 在 [編輯要求篩選設定] 中，選取 [允許雙重逸出]  ，然後按一下 [確定] 。  
+14. 在 [編輯要求篩選設定]中，選取 [允許雙重逸出] ，然後按一下 [確定]。  
   
-15. 在 Internet Information Services (IIS) 管理員 MMC 中，按一下您的 Web 伺服器名稱。 例如，如果您的 Web 伺服器名為 WEB1，按一下**WEB1**。  
+15. 在 [Internet Information Services （IIS）管理員] MMC 中，按一下您的 Web 服務器名稱。 例如，如果您的 Web 服務器名為 WEB1，請按一下 [ **WEB1**]。  
   
-16. 在 **動作**，按一下**重新啟動**。 網際網路服務停止，然後重新啟動。  
+16. 在 [**動作**] 中，按一下 [**重新開機**]。 網際網路服務會停止，然後重新開機。  
   
 

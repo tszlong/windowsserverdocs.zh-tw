@@ -1,50 +1,50 @@
 ---
 ms.assetid: ''
-title: 如需 Windows Server 2019 HPN 功能 insider Preview
-description: 深入了解 Windows Server 2019 的新高效能的網路功能。
+title: Windows Server 2019 中適用于 HPN 功能的 Insider Preview
+description: 瞭解 Windows Server 2019 中的新高效能網路功能。
 manager: dougkim
 author: shortpatti
 ms.author: pashort
 ms.date: 09/12/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 3d3e974472f28c30d093fbd1094ef3693d984d19
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7098e81f486a5b0b4974c19b47e2d48c6f98832b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886269"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355370"
 ---
 # <a name="insider-preview"></a>Insider Preview
 
 
 ## <a name="dynamic-vrss-and-vmmq"></a>動態 vRSS 和 VMMQ
 
->適用於：Windows Server 2019
+>適用於：Windows Server Standard 2012 R2
 
-在過去，虛擬機器佇列和虛擬機器多佇列啟用到個別 VMs 的輸送量為先達到 10GbE 標示的網路輸送量和更新版本。 不幸的是，規劃、 設定基準中、 調整和監視所需成功變成大型的工作;多個 IT 系統管理員通常要花費。 
+在過去，虛擬機器佇列和虛擬機器多佇列已啟用個別 Vm 的輸送量更高，因為網路輸送量第一次達到10GbE 標記和更遠。 可惜的是，成功所需的規劃、基準化、微調和監視變得很大，通常不只是 IT 系統管理員想要花費的。 
 
-Windows Server 2019 藉由動態分配和微調處理所需的網路工作負載，改善這些最佳化。 Windows Server 2019 可確保尖峰效率，並為 IT 系統管理員移除組態負擔。
+Windows Server 2019 藉由動態散佈和微調網路工作負載的處理，來改善這些優化。 Windows Server 2019 可確保尖峰效率，並移除 IT 系統管理員的設定負擔。
 
 如需詳細資訊，請參閱：
 
--   [公告部落格](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
+-   [公告 blog](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 
--   [驗證指南適用於 IT 專業人員](https://aka.ms/DVMMQ-Validation)
+-   [IT 專業人員的驗證指南](https://aka.ms/DVMMQ-Validation)
 
 ## <a name="receive-segment-coalescing-rsc-in-the-vswitch"></a>在 vSwitch 中接收區段聯合 (RSC)
 
->適用於：Windows Server 2019 和 Windows 10 版本 1809
+>適用於：Windows Server 2019 和 Windows 10，版本1809
 
-接收區段聯合 (RSC) 中的 vSwitch 是聯合成較大的區段資料周遊 vSwitch 之前的多個 TCP 區段的增強功能。 大型的區段可改善網路效能的虛擬工作負載。
+VSwitch 中的接收區段聯合（RSC）是一項增強功能，可在資料通過 vSwitch 之前，將多個 TCP 區段合併成較大的區段。 大型區段可改善虛擬工作負載的網路效能。
 
-先前，這是藉由將 NIC 卸載 不幸的是，這已停用您連接到虛擬交換器，配接器的時刻。 在 Windows Server 2019 和 Windows 上 vSwitch 的 RSC 10 年 10 月 2018年更新會移除這項限制。
+先前，這是 NIC 所執行的卸載。 可惜的是，當您將介面卡連接至虛擬交換器時，這是停用的。 Windows Server 2019 上的 vSwitch 和 Windows 10 2018 年10月更新中的 RSC 會移除這項限制。
 
-根據預設，RSC 在 vSwitch 是外部虛擬交換器上啟用。
+根據預設，會在外部虛擬交換器上啟用 vSwitch 中的 RSC。
 
 如需詳細資訊，請參閱：
 
--  [公告部落格](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
+-  [公告 blog](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 
--  [驗證指南適用於 IT 專業人員](https://aka.ms/RSC-Validation)
+-  [IT 專業人員的驗證指南](https://aka.ms/RSC-Validation)

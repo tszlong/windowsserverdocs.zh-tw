@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b73baacc1115359b1d3d8b494cc285b5edd7c5fc
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866025"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358448"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 中的用戶端存取控制原則
 Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或授與使用者對資源的存取權。  本檔說明如何在 AD FS 2.0 中啟用用戶端存取原則，以及如何設定最常見的案例。
@@ -23,11 +23,11 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 
 若要啟用用戶端存取原則，請遵循下列步驟。
 
-### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>步驟 1：在您的 AD FS 伺服器上安裝 AD FS 2.0 套件的更新彙總套件2
+### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>步驟 1:在您的 AD FS 伺服器上安裝 AD FS 2.0 套件的更新彙總套件2
 
 下載[Active Directory 同盟服務（AD FS）2.0 套件的更新彙總套件 2](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，並將它安裝在所有同盟伺服器和同盟伺服器 proxy 上。
 
-### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>步驟 2：將五個宣告規則新增至 Active Directory 的宣告提供者信任
+### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>步驟 2:將五個宣告規則新增至 Active Directory 的宣告提供者信任
 
 在所有 AD FS 伺服器和 proxy 上安裝更新彙總套件2之後，請使用下列程式來新增一組宣告規則，讓原則引擎可以使用新的宣告類型。
 
@@ -162,15 +162,15 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>上述案例中使用的宣告規則語言語法描述
 
-|                                                                                                   說明                                                                                                   |                                                                     宣告規則語言語法                                                                     |
+|                                                                                                   描述                                                                                                   |                                                                     宣告規則語言語法                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              預設 AD FS 規則允許所有使用者的存取權。 此規則應該已經存在於 Microsoft Office 365 身分識別平臺信賴憑證者信任發行授權規則清單中。              |                                  = > 問題（類型 = "<https://schemas.microsoft.com/authorization/claims/permit>"，值 = "true"）;                                   |
 |                               將此子句新增至新的自訂規則，會指定要求來自同盟伺服器 proxy （也就是，它具有 x-ms proxy 標頭）                                |                                                                                                                                                                    |
 |                                                                                 建議所有規則都包含此。                                                                                  |                                    exists （[Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"]）                                    |
 |                                                         用來建立要求是來自已定義可接受範圍內 IP 的用戶端。                                                         | 不存在（[類型 = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>"，值 = ~ "客戶提供的公用 ip 位址 RegEx"]） |
-|                                    這個子句是用來指定如果存取的應用程式不是 Microsoft，則會拒絕要求。                                     |       不存在（[類型 = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>"，值 = = "Microsoft. Exchange ActiveSync"]）        |
+|                                    這個子句是用來指定如果存取的應用程式不是 Microsoft，則會拒絕要求。                                     |       不存在（[Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>"，Value = = "Microsoft. Exchange ActiveSync"]）        |
 |                                                      此規則可讓您判斷呼叫是否透過網頁瀏覽器，且不會遭到拒絕。                                                      |              不存在（[類型 = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>"，值 = = "/adfs/ls/"]）               |
-| 此規則說明特定 Active Directory 群組中的唯一使用者（根據 SID 值）應被拒絕。 將 NOT 加入此語句表示將允許一組使用者，無論位置為何。 |             exists （[類型 = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>"，值 = ~ "{允許的 AD 群組} 的群組 SID 值}"]）              |
+| 此規則說明特定 Active Directory 群組中的唯一使用者（根據 SID 值）應被拒絕。 將 NOT 加入此語句表示將允許一組使用者，無論位置為何。 |             exists （[類型 = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>"，值 = ~ "{允許 AD 群組} 的群組 SID 值}"]）              |
 |                                                                這是必要的子句，可在符合所有前述條件時發出拒絕。                                                                 |                                   = > 問題（類型 = "<https://schemas.microsoft.com/authorization/claims/deny>"，值 = "true"）;                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>建立 IP 位址範圍運算式
@@ -209,7 +209,7 @@ X 毫秒轉送的用戶端 ip 宣告是從目前僅由 Exchange Online 設定的
 
 因此，只比對兩個位址的範例（例如192.168.1.1 或10.0.0.1）會是： \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 
-如此一來，您就可以輸入任意數目的位址。 需要允許的位址範圍（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192\.168\.1\.（[1-9] | 1 [0-9] | 2 [0-5]） \b
+如此一來，您就可以輸入任意數目的位址。 需要允許的位址範圍（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192 @ no__t-0168 @ no__t-11 @ no__t-2 （[1-9] | 1 [0-9] | 2 [0-5]） \b
 
 >[!Note] 
 >IP 位址會被視為字串，而不是數位。
@@ -229,9 +229,9 @@ X 毫秒轉送的用戶端 ip 宣告是從目前僅由 Exchange Online 設定的
 >[!Note]
 >括弧必須正確定位，如此您才不會開始比對 IP 位址的其他部分。
 
-在與192區塊相符的情況下，我們可以針對10個區塊撰寫類似的\.運算式\.：\.\b10 0 0 （[1-9] | 1 [0-4]） \b
+在192區塊相符的情況下，我們可以針對10個區塊撰寫類似的運算式： \b10 @ no__t-00 @ no__t-10 @ no__t-2 （[1-9] | 1 [0-4]） \b
 
-並將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有位址： \b192\.168\.1\.（[1-9] | 1 [0-9] | 2 [0-5]） \b | \b10\.0\.0\.（[1-9] | 1 [0-4]） \b
+並將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有位址： \b192 @ no__t-0168 @ no__t-11 @ no__t-2 （[1-9] | 1 [0-9] | 2 [0-5]） \b | \b10 @ no__t-30 @ no__t-40 @ no__t-5 （[1-9] | 1 [0-4]） \b
 
 #### <a name="testing-the-expression"></a>測試運算式
 

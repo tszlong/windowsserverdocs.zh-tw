@@ -6,14 +6,14 @@ ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: b222cd4b97beecd25c14b9f8f39627bf46cb7716
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a579d0274ff4b53a72c17760a6d53ef796625d3a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869543"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356908"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -136,7 +136,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 當您使用鍵盤流覽資料表時，選取範圍可能會跳到資料表群組的頂端。 [16646059]
 
-### <a name="events"></a>事件
+### <a name="events"></a>Events
 
 - 事件會受 [使用 Proxy 服務時的 WebSocket 相容性](#websocket-compatibility-when-using-a-proxy-service)影響。
 
@@ -146,7 +146,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="files"></a>檔案
 
-- 尚未支援上傳或下載大型檔案。 （\~100mb 限制） [12524234]
+- 尚未支援上傳或下載大型檔案。 （@no__t 0100mb 限制）[12524234]
 
 ### <a name="powershell"></a>PowerShell
 

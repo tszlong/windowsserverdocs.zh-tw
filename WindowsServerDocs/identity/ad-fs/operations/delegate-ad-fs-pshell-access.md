@@ -7,14 +7,14 @@ manager: daveba
 ms.reviewer: zhvolosh
 ms.date: 01/31/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f4b8f09e5c75f3b9086847a47d33bd76775f3cd1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 334bb96c77b0bc1e76a54ed1e0871f53753ded87
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865502"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357747"
 ---
 # <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>將 AD FS Powershell Commandlet 存取權委派給非系統管理員使用者 
 根據預設，透過 PowerShell 的 AD FS 管理只能由 AD FS 系統管理員完成。 對於許多大型組織而言，處理其他角色（例如技術支援人員）時，這可能不是可行的營運模式。  

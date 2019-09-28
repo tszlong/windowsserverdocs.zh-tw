@@ -1,44 +1,44 @@
 ---
-title: 移轉 AD FS 2.0 同盟 proxy 伺服器
-description: 提供移轉到 Windows Server 2012 R2 的 AD FS proxy 伺服器的相關資訊。
+title: 遷移 AD FS 2.0 同盟 proxy 伺服器
+description: 提供將 AD FS proxy 伺服器遷移至 Windows Server 2012 R2 的相關資訊。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a2eb6c670e704564bed49486b8950dab96da8a80
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 57367cadd3c7ce3d031c6eb3a53c333422543dae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444576"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359367"
 ---
-# <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>移轉到 Windows Server 2012 R2 的 Active Directory Federation Services Proxy 伺服器
+# <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>將 Active Directory 同盟服務 Proxy 伺服器遷移至 Windows Server 2012 R2
 
-在 Active Directory Federation Services (AD FS) 在 Windows Server 2012 R2 中，同盟伺服器 proxy 的角色會處理由稱為 Web Application Proxy 的新遠端存取角色服務。 在 Windows Server 2012 R2，若要啟用從公司網路外部存取 AD FS 您可以部署一或多個 Web 應用程式 Proxy。 不過，您無法移轉 Windows Server 2008 R2 或 Windows Server 2012 上執行 Windows Server 2012 R2 上執行的 Web 應用程式 proxy 的同盟伺服器 proxy。  
+在 Windows Server 2012 R2 的 Active Directory 同盟服務（AD FS）中，同盟伺服器 proxy 的角色是由新的遠端存取角色服務（稱為 Web 應用程式 Proxy）所處理。 在 Windows Server 2012 R2 中，若要讓您的 AD FS 可從公司網路外部存取，您可以部署一或多個 Web 應用程式 proxy。 不過，您無法將在 Windows Server 2008 R2 或 Windows Server 2012 上執行的同盟伺服器 proxy，遷移到在 Windows Server 2012 R2 上執行的 Web 應用程式 Proxy。  
   
 > [!IMPORTANT]
->  不支援執行 Windows Server 2008、 Windows Server 2008 R2 或 Windows Server 2012 上執行 Windows Server 2012 R2 上的 Web 應用程式 Proxy 的同盟伺服器 proxy 移轉。  
+>  不支援將在 Windows Server 2008、Windows Server 2008 R2 或 Windows Server 2012 上執行的同盟伺服器 proxy 遷移到在 Windows Server 2012 R2 上執行的 Web 應用程式 Proxy。  
   
-如果您想要設定 AD FS 外部網路存取的 Windows Server 2012 R2 移轉伺服器陣列中，您必須執行一或多個 Web Application Proxy 電腦重新部署，為您的 AD FS 基礎結構的一部分。  
+如果您想要在 Windows Server 2012 R2 遷移的伺服器陣列中設定 AD FS 以進行外部網路存取，您必須在 AD FS 基礎結構中執行一或多個 Web 應用程式 Proxy 電腦的全新部署。  
   
 若要規劃 Web Application Proxy部署，您可以檢閱下列主題的資訊：  
   
-- [規劃 Web Application Proxy 基礎結構](https://technet.microsoft.com/library/dn383648.aspx)  
+- [規劃 Web 應用程式 Proxy 基礎結構](https://technet.microsoft.com/library/dn383648.aspx)  
   
-- [規劃 Web Application Proxy 伺服器](https://technet.microsoft.com/library/dn383647.aspx)  
+- [規劃 Web 應用程式 Proxy 伺服器](https://technet.microsoft.com/library/dn383647.aspx)  
   
   若要部署 Web Application Proxy，您可以依照下列主題的程序：  
   
-- [設定 Web Application Proxy 基礎結構](https://technet.microsoft.com/library/dn383644.aspx)  
+- [設定 Web 應用程式 Proxy 基礎結構](https://technet.microsoft.com/library/dn383644.aspx)  
   
-- [安裝和設定 Web Application Proxy 伺服器](https://technet.microsoft.com/library/dn383662.aspx)  
+- [安裝和設定 Web 應用程式 Proxy 伺服器](https://technet.microsoft.com/library/dn383662.aspx)  
   
 ## <a name="next-steps"></a>後續步驟
- [將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [準備移轉 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)   
- [移轉 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)    
- [驗證 AD FS 移轉到 Windows Server 2012 R2](verify-ad-fs-migration.md)
+ [將 Active Directory 同盟服務角色服務遷移至 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)   
+ [遷移 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)    
+ [確認 AD FS 遷移至 Windows Server 2012 R2](verify-ad-fs-migration.md)
 

@@ -7,61 +7,61 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d49ae34d83d4a0b912bd92dbb9de16e18cc5b7ff
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 6a123afaebba002b8ee4fb98d5cee5aded286a96
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191345"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359129"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>使用 WID 和 Proxy 的同盟伺服器陣列
 
-Active Directory Federation Services 使用此部署拓撲\(AD FS\)等同於同盟伺服器陣列含有 Windows Internal Database \(WID\)拓撲，但它加入至 proxy 電腦若要支援外部使用者的周邊網路。 這些 proxy 重新導向至同盟伺服器陣列均來自公司網路外部的用戶端驗證要求。 在舊版的 AD FS 中，這些 proxy 呼叫同盟伺服器 proxy。  
+此 Active Directory 同盟服務的部署拓撲 \(AD FS @ no__t-1 等同于具有 Windows 內部資料庫 \(WID @ no__t-3 拓撲的同盟伺服器陣列，但它會將 proxy 電腦新增至周邊網路，以支援外部使用者。 這些 proxy 會將來自公司網路外部的用戶端驗證要求重新導向至同盟伺服器陣列。 在舊版的 AD FS 中，這些 proxy 稱為同盟伺服器 proxy。  
   
 > [!IMPORTANT]  
-> 在 Active Directory Federation Services \(AD FS\) Windows Server 2012 r2 中的同盟伺服器 proxy 角色由稱為 Web Application Proxy 的新遠端存取角色服務。 若要啟用從公司網路外部的也就是部署舊版 AD FS 中，例如 AD FS 2.0 和 Windows Server 2012 中的 AD FS 同盟伺服器 proxy 的目的的協助工具的 AD FS 中，您可以部署為 A 的一或多個 web 應用程式 proxyWindows Server 2012 R2 中的 D FS。  
+> 在 Active Directory 同盟服務 @no__t-Windows Server 2012 R2 中的 0AD FS @ no__t-1 中，同盟伺服器 proxy 的角色是由新的遠端存取角色服務（稱為 Web 應用程式 Proxy）所處理。 若要讓您的 AD FS 可從公司網路外部存取（這是在舊版 AD FS 中部署同盟伺服器 proxy 的目的，例如 Windows Server 2012 中的 AD FS 2.0 和 AD FS，您可以部署一或多個 web 應用程式 proxyWindows Server 2012 R2 中的 D FS。  
 >   
-> 在 AD FS 內容中，Web 應用程式 Proxy 做為 AD FS 同盟伺服器 proxy。 此外，Web 應用程式 Proxy 為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以讓任何裝置上的使用者能從公司網路外部存取這些應用程式。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱 Web 應用程式 Proxy 概觀。  
+> 在 AD FS 的內容中，Web 應用程式 Proxy 會當做 AD FS 的同盟伺服器 proxy。 此外，Web 應用程式 Proxy 為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以讓任何裝置上的使用者能從公司網路外部存取這些應用程式。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱 Web 應用程式 Proxy 概觀。  
 >   
 > 若要規劃 Web 應用程式 Proxy 的部署，您可以檢閱下列主題的資訊：  
 >   
-> -   [規劃 Web Application Proxy 基礎結構 (WAP)](https://technet.microsoft.com/library/dn383648.aspx)  
-> -   [規劃 Web Application Proxy 伺服器](https://technet.microsoft.com/library/dn383647.aspx)  
+> -   [規劃 Web 應用程式 Proxy 基礎結構（WAP）](https://technet.microsoft.com/library/dn383648.aspx)  
+> -   [規劃 Web 應用程式 Proxy 伺服器](https://technet.microsoft.com/library/dn383647.aspx)  
   
 ## <a name="deployment-considerations"></a>部署考量  
-本章節會描述相關的適用對象、 權益和限制，這種部署拓撲相關聯的各種考量。  
+本節說明與此部署拓撲相關聯的目標物件、優點和限制的各種考慮。  
   
 ### <a name="who-should-use-this-topology"></a>誰應該使用此拓撲？  
   
--   需要其內部使用者以及外部使用者所提供的 100 或更少設定的信任關係的組織\(誰登入實際上位於公司網路外部的電腦\)單一登\-上\(SSO\)同盟應用程式或服務的存取權  
+-   若組織具有100或更少的已設定信任關係，且必須提供內部使用者和外部使用者 @no__t 0who，則會使用單一正負號 @ no__t-2on，登入實際位於公司網路外部的電腦上： @ no__t-1\(SSO @ no__t-4 對同盟應用程式或服務的存取權  
   
--   必須提供其內部使用者以及外部使用者的 SSO 存取至 Microsoft Office 365 的組織  
+-   需要提供內部使用者和外部使用者 Microsoft Office 365 的 SSO 存取權的組織  
   
--   較小的組織有外部使用者，而且需要備援、 可調整的服務  
+-   具有外部使用者並需要重複、可擴充服務的小型組織  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>使用此拓撲的優點有哪些？  
   
--   相同有益於如列[伺服陣列使用 WID 的同盟伺服器](Federation-Server-Farm-Using-WID.md)拓樸，再加上外部使用者提供額外的存取權的優點  
+-   [使用 WID 拓撲針對同盟伺服器](Federation-Server-Farm-Using-WID.md)陣列所列出的相同優點，以及為外部使用者提供額外存取權的好處  
   
-### <a name="what-are-the-limitations-of-using-this-topology"></a>使用此拓撲的限制有哪些？  
+### <a name="what-are-the-limitations-of-using-this-topology"></a>使用此拓撲的限制為何？  
   
--   列出針對相同的限制[伺服陣列使用 WID 的同盟伺服器](Federation-Server-Farm-Using-WID.md)拓樸  
+-   [使用 WID 拓撲針對同盟伺服器](Federation-Server-Farm-Using-WID.md)陣列所列出的相同限制  
 
-||1 \- 100 的 RP 信任|100 個以上的 RP 信任 
+||1 \- 100 RP 信任|超過 100 RP 信任 
 | ----- |-----| ------ |
-|1 \- 30 AD FS 節點|WID 支援|不支援使用 WID\-所需的 SQL 
-|30 多個 AD FS 節點|不支援使用 WID\-所需的 SQL|不支援使用 WID\-所需的 SQL  
+|1 \- 30 AD FS 節點|支援 WID|不支援使用 WID \- SQL 
+|超過30個 AD FS 節點|不支援使用 WID \- SQL|不支援使用 WID \- SQL  
   
-## <a name="server-placement-and-network-layout-recommendations"></a>伺服器的位置和網路配置的建議  
-若要部署此拓撲中的，除了新增兩個 web 應用程式 proxy，您必須確定您的周邊網路，可以同時提供存取權的網域名稱系統\(DNS\)伺服器和第二個的網路負載平衡\(NLB\)主應用程式。 第二部 NLB 主機都必須設有會使用網際網路 NLB 叢集\-可存取的叢集 IP 位址，而且必須使用相同的叢集 DNS 名稱設定為先前您在公司網路上設定 NLB 叢集\(fs.fabrikam.com\)。 也必須設定 web 應用程式 proxy 與網際網路\-可存取的 IP 位址。  
+## <a name="server-placement-and-network-layout-recommendations"></a>伺服器放置和網路設定建議  
+若要部署此拓撲，除了新增兩個 web 應用程式 proxy 以外，您還必須確定您的周邊網路也可以提供網域名稱系統 @no__t 0DNS @ no__t-1 伺服器的存取權，以及第二個網路負載平衡 \(NLB @ no__t-3 主機。 第二部 NLB 主機必須透過使用 Internet @ no__t-0accessible 叢集 IP 位址的 NLB 叢集來設定，而且它必須使用與您在公司網路上設定的先前 NLB 叢集相同的叢集 DNS 名稱設定 \(fs. fabrikam .com @ no__t-2。 Web 應用程式 proxy 也應該使用 Internet @ no__t-0accessible IP 位址進行設定。  
   
-下圖顯示使用先前所述的 WID 拓撲和 Fabrikam，Inc.，這家虛構公司如何提供周邊 DNS 伺服器，以存取現有的同盟伺服器陣列新增第二個 NLB 主機具有相同的叢集 DNS 名稱\(fs.fabrikam.com\)，並將兩個 web 應用程式 proxy \(wap1 和 wap2\)至周邊網路。  
+下圖顯示具有先前所述之 WID 拓撲的現有同盟伺服器陣列，以及虛構 Fabrikam，Inc.，公司如何提供周邊 DNS 伺服器的存取、新增第二個具有相同叢集 DNS 名稱 \(fs 的 NLB 主機，以及將兩個 web 應用程式 proxy \(wap1 和 wap2 @ no__t-3 新增至周邊網路。  
   
-![WID 伺服器陣列和 Proxy](media/WIDFarmADFSBlue.gif)  
+![WID 伺服器陣列和 proxy](media/WIDFarmADFSBlue.gif)  
   
-如需如何設定您的網路環境使用與同盟伺服器或 web 應用程式 proxy 的詳細資訊，請參閱 「 名稱解析需求 」 一節中[AD FS 需求](AD-FS-Requirements.md)和[規劃網路應用程式 Proxy 基礎結構 (WAP)](https://technet.microsoft.com/library/dn383648.aspx)。  
+如需有關如何設定網路環境以與同盟伺服器或 web 應用程式 Proxy 搭配使用的詳細資訊，請參閱[AD FS 需求](AD-FS-Requirements.md)和[規劃 Web 應用程式 Proxy 基礎結構中的「名稱解析需求」一節。（WAP）](https://technet.microsoft.com/library/dn383648.aspx)。  
   
 ## <a name="see-also"></a>另請參閱  
 [規劃您的 AD FS 部署拓撲](Plan-Your-AD-FS-Deployment-Topology.md)  

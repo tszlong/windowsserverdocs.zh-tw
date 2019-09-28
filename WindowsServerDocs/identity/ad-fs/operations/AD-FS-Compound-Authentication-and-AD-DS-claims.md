@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 09/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b67177c8bf0ce9869aa51c3012d57f3208ac02f5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 78db6f8b6961cecea55b8d371e9abf952cafdab3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866285"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358673"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>AD FS 中的複合驗證和 AD DS 宣告
 Windows Server 2012 引進複合驗證，藉此增強 Kerberos 驗證。  複合驗證可讓 Kerberos 票證授權服務（TGS）要求包含兩個身分識別： 
@@ -40,7 +40,7 @@ AD FS 2012 和更新版本可讓 AD DS 發出的使用者或裝置宣告，使�
 ## <a name="steps-for-configuring-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 中設定 AD FS 的步驟
 使用下列步驟來設定複合驗證和宣告 
 
-### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>步驟 1：在預設網域控制站原則上啟用宣告、複合驗證和 Kerberos 防護的 KDC 支援
+### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>步驟 1:在預設網域控制站原則上啟用宣告、複合驗證和 Kerberos 防護的 KDC 支援
 1.  在伺服器管理員中，選取 [工具]、[**群組原則管理**]。
 2.  向下流覽至 [**預設網域控制站原則**]，按一下滑鼠右鍵，然後選取 [**編輯**]。
 ![群組原則管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc1.png)
@@ -51,7 +51,7 @@ AD FS 2012 和更新版本可讓 AD DS 發出的使用者或裝置宣告，使�
 6.  在 [選項] 下，從下拉式功能表中選取 [**支援**]，**然後按一下 [** 套用 **] 和 [確定]** 。
 ![群組原則管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc3.png)
 
-### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>步驟 2：在存取同盟應用程式的電腦上啟用宣告、複合驗證和 Kerberos 防護的 Kerberos 用戶端支援
+### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>步驟 2:在存取同盟應用程式的電腦上啟用宣告、複合驗證和 Kerberos 防護的 Kerberos 用戶端支援
 
 1.  在套用至存取同盟應用程式之電腦的群組原則上，于**群組原則管理編輯器**的 [**電腦**設定] 底下，展開 [**原則**]，展開 [**系統管理範本**]，然後展開 [**系統]** ，然後選取 [ **Kerberos**]。
 2.  在 [群組原則管理編輯器] 視窗的右窗格中，按兩下 [**宣告、複合驗證和 kerberos 防護的 kerberos 用戶端支援]。**
@@ -133,7 +133,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3.  在 [**編輯 Active Director**的宣告規則] 按一下 [**新增規則**]。
 4.  在 [**新增轉換宣告規則] 嚮導**上，選取 [**傳遞或篩選傳入**宣告]，然後按 **[下一步]** 。
 5.  新增 [顯示名稱]，然後從 [傳入宣告**類型**] 下拉式選單選取 [ **Windows 裝置群組**]。
-6.  按一下 [ **完成**]。  按一下 [套用 **] 和 [確定]** 。 
+6.  按一下 **[完成]** 。  按一下 [套用 **] 和 [確定]** 。 
 ![宣告描述](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>步驟 8：在預期會有 ' WindowsDeviceGroup ' 宣告的信賴憑證者上，新增類似的「傳遞」或「轉換」宣告規則。
@@ -141,14 +141,14 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3. 在 [**發行轉換規則**] 上，按一下 [**新增規則**]。
 4. 在 [**新增轉換宣告規則] 嚮導**上，選取 [**傳遞或篩選傳入**宣告]，然後按 **[下一步]** 。
 5. 新增 [顯示名稱]，然後從 [傳入宣告**類型**] 下拉式選單選取 [ **Windows 裝置群組**]。
-6. 按一下 [ **完成**]。  按一下 [套用 **] 和 [確定]** 。
+6. 按一下 **[完成]** 。  按一下 [套用 **] 和 [確定]** 。
    ![宣告描述](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
 ## <a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>在 Windows Server 2016 中設定 AD FS 的步驟
 下面將詳細說明在 Windows Server 2016 的 AD FS 上設定複合驗證的步驟。
 
-### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>步驟 1：在預設網域控制站原則上啟用宣告、複合驗證和 Kerberos 防護的 KDC 支援
+### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>步驟 1:在預設網域控制站原則上啟用宣告、複合驗證和 Kerberos 防護的 KDC 支援
 1.  在伺服器管理員中，選取 [工具]、[**群組原則管理**]。
 2.  向下流覽至 [**預設網域控制站原則**]，按一下滑鼠右鍵，然後選取 [**編輯**]。
 3.  在 **群組原則管理編輯器**的 **電腦**設定 底下，依序展開 **原則**、**系統管理範本**、**系統**，然後選取  **KDC**。
@@ -157,7 +157,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 6.  在 [選項] 下，從下拉式功能表中選取 [**支援**]，**然後按一下 [** 套用 **] 和 [確定]** 。
 
 
-### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>步驟 2：在存取同盟應用程式的電腦上啟用宣告、複合驗證和 Kerberos 防護的 Kerberos 用戶端支援
+### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>步驟 2:在存取同盟應用程式的電腦上啟用宣告、複合驗證和 Kerberos 防護的 Kerberos 用戶端支援
 
 1.  在套用至存取同盟應用程式之電腦的群組原則上，于**群組原則管理編輯器**的 [**電腦**設定] 底下，展開 [**原則**]，展開 [**系統管理範本**]，然後展開 [**系統]** ，然後選取 [ **Kerberos**]。
 2.  在 [群組原則管理編輯器] 視窗的右窗格中，按兩下 [**宣告、複合驗證和 kerberos 防護的 kerberos 用戶端支援]。**
@@ -204,7 +204,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3.  在 [**編輯 Active Director**的宣告規則] 按一下 [**新增規則**]。
 4.  在 [**新增轉換宣告規則] 嚮導**上，選取 [**傳遞或篩選傳入**宣告]，然後按 **[下一步]** 。
 5.  新增 [顯示名稱]，然後從 [傳入宣告**類型**] 下拉式選單選取 [ **Windows 裝置群組**]。
-6.  按一下 [ **完成**]。  按一下 [套用 **] 和 [確定]** 。 
+6.  按一下 **[完成]** 。  按一下 [套用 **] 和 [確定]** 。 
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>步驟 6：在預期會有 ' WindowsDeviceGroup ' 宣告的信賴憑證者上，新增類似的「傳遞」或「轉換」宣告規則。
@@ -212,7 +212,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3. 在 [**發行轉換規則**] 上，按一下 [**新增規則**]。
 4. 在 [**新增轉換宣告規則] 嚮導**上，選取 [**傳遞或篩選傳入**宣告]，然後按 **[下一步]** 。
 5. 新增 [顯示名稱]，然後從 [傳入宣告**類型**] 下拉式選單選取 [ **Windows 裝置群組**]。
-6. 按一下 [ **完成**]。  按一下 [套用 **] 和 [確定]** 。
+6. 按一下 **[完成]** 。  按一下 [套用 **] 和 [確定]** 。
 
 ## <a name="validation"></a>驗證
 若要驗證 ' WindowsDeviceGroup ' 宣告的發行，請使用 .Net 4.6 建立測試宣告感知應用程式。 使用 WIF SDK 4.0。

@@ -7,56 +7,56 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bcb6c415aae33b9742d7a7080ec169ca947098b9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a7646144b591fd7327f881cb54489201140e9287
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445005"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358155"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已註冊的裝置設定內部部署條件式存取
 
 
-下列文件將引導您完成安裝和設定內部部署條件式存取與已註冊的裝置。
+下列檔將引導您安裝和設定使用已註冊裝置的內部部署條件式存取。
 
 ![條件式存取](media/Using-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
-## <a name="infrastructure-pre-requisites"></a>基礎結構的必要條件
-您可以開始使用內部部署條件式存取之前需要下列必要條件。 
+## <a name="infrastructure-pre-requisites"></a>基礎結構先決條件
+在您開始使用內部部署條件式存取之前，必須先執行下列每個元件。 
 
 |需求|描述
 |-----|-----
-|使用 Azure AD Premium 的 Azure AD 訂用帳戶 | 若要啟用裝置寫入回在內部部署條件式存取-[是正常的免費試用版](https://azure.microsoft.com/trial/get-started-active-directory/)  
-|Intune 訂用帳戶|只有所需的裝置合規性案例-MDM 整合[是正常的免費試用版](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
-|Azure AD Connect|11 月 2015 QFE 或更新版本。  取得最新版[此處](https://www.microsoft.com/en-us/download/details.aspx?id=47594)。  
-|Windows Server 2016|組建 10586 或更新版本，適用於 AD FS  
-|Windows Server 2016 的 Active Directory 結構描述|需要結構描述層級 85 部或更高版本。
-|Windows Server 2016 網域控制站|這只是為了 Hello 的業務索引鍵信任層級部署。  其他資訊位於[此處](https://aka.ms/whfbdocs)。  
-|Windows 10 用戶端|組建 10586 或更新版本，加入上述的網域和所需的 Windows 10 網域加入 Microsoft Passport 只適合工作  
-|使用 Azure AD Premium 授權指派的 azure AD 使用者帳戶|註冊裝置  
+|具有 Azure AD Premium 的 Azure AD 訂用帳戶 | 啟用內部部署條件式存取的裝置回寫-[免費試用版正常](https://azure.microsoft.com/trial/get-started-active-directory/)  
+|Intune 訂用帳戶|只有適用于裝置合規性案例的 MDM 整合才需要-[免費試用版正常](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
+|Azure AD Connect|2015年11月 QFE 或更新版本。  在[這裡](https://www.microsoft.com/en-us/download/details.aspx?id=47594)取得最新版本。  
+|Windows Server 2016|適用于 AD FS 的組建10586或更新版本  
+|Windows Server 2016 Active Directory 架構|需要架構層級85或更高版本。
+|Windows Server 2016 網域控制站|這只是 Hello 企業版金鑰信任部署的必要條件。  您可以在[這裡](https://aka.ms/whfbdocs)找到其他資訊。  
+|Windows 10 用戶端|只有加入上述網域的組建10586或更新版本，才能加入 Windows 10 網域和 Microsoft Passport for Work 案例  
+|已指派 Azure AD Premium 授權的 Azure AD 使用者帳戶|註冊裝置  
 
 
  
-## <a name="upgrade-your-active-directory-schema"></a>升級您的 Active Directory 結構描述
-若要使用內部部署條件式存取與已註冊的裝置，您必須先升級您的 AD 結構描述。  必須符合下列條件：
-    - 結構描述應為 85 部或更新版本的版本
-    - 這只是需要 AD FS 已加入的樹系
+## <a name="upgrade-your-active-directory-schema"></a>升級您的 Active Directory 架構
+若要將內部部署條件式存取與已註冊的裝置搭配使用，您必須先升級您的 AD 架構。  必須符合下列條件：
+    - 架構應為85或更新版本
+    - 只有 AD FS 加入的樹系才需要此參數
 
 > [!NOTE]
-> 如果您已安裝 Azure AD Connect，然後才能升級到 Windows Server 2016 中的結構描述版本 （層級 85 部或更高），您必須重新執行 Azure AD Connect 安裝並重新整理內部部署 AD 結構描述，以確保同步處理規則設定 Msds-keycredentiallink。
+> 如果您在升級至 Windows Server 2016 中的架構版本（層級85或更高）之前已安裝 Azure AD Connect，您必須重新執行 Azure AD Connect 安裝，並重新整理內部部署 AD 架構，以確保的同步處理規則已設定 Msds-keycredentiallink。
 
-### <a name="verify-your-schema-level"></a>請確認您的結構描述層級
-若要確認您的結構描述層級，執行下列作業：
+### <a name="verify-your-schema-level"></a>驗證您的架構層級
+若要驗證您的架構層級，請執行下列動作：
 
-1.  您可以使用 ADSIEdit 或 LDP，並連接到結構描述命名內容。  
-2.  使用 ADSIEdit，以滑鼠右鍵按一下"CN = Schema，CN = Configuration，DC =<domain>，DC =<com>並選取 [屬性]。  Relpace 網域和樹系資訊的 com 部分。
-3.  在 [屬性編輯器] 下找出 objectVersion 屬性，然後它會告訴您，您的版本。  
+1.  您可以使用 ADSIEdit 或 LDP，並連接到架構命名內容。  
+2.  使用 ADSIEdit，以滑鼠右鍵按一下 [CN = Schema，CN = Configuration，DC = <domain>，DC = <com>]，然後選取 [屬性]。  Relpace 網域和 com 部分與您的樹系資訊。
+3.  在 [屬性編輯器] 下找到 objectVersion 屬性，它會告訴您您的版本。  
 
 ![ADSI 編輯器](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
 
-您也可以使用下列 PowerShell cmdlet （取代您命名內容資訊的結構描述的物件）：
+您也可以使用下列 PowerShell Cmdlet （將物件取代為您的架構命名內容資訊）：
 
 ``` powershell
 Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVersion
@@ -65,40 +65,40 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![PowerShell](media/Configure-Device-Based-Conditional-Access-on-Premises/pshell1.png) 
 
-如需有關升級的詳細資訊，請參閱[網域控制站升級到 Windows Server 2016](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2016.md)。 
+如需有關升級的詳細資訊，請參閱[將網域控制站升級至 Windows Server 2016](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2016.md)。 
 
 ## <a name="enable-azure-ad-device-registration"></a>啟用 Azure AD 裝置註冊  
-若要設定此案例中，您必須在 Azure AD 中設定裝置註冊功能。  
+若要設定此案例，您必須在 Azure AD 中設定裝置註冊功能。  
 
-若要這樣做，請遵循下方步驟[設定您組織中的 Azure AD Join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-setup/)  
+若要這麼做，請遵循[在組織中設定 Azure AD 聯結](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-setup/)底下的步驟  
 
-## <a name="setup-ad-fs"></a>設定 AD FS  
-1. 建立[新的 AD FS 2016 伺服器陣列](https://technet.microsoft.com/library/dn486775.aspx)。   
-2.  或是[移轉](../../ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)從 AD FS 2012 R2 ad FS 2016 伺服器陣列  
-4. 部署[Azure AD Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnectfed-whatis/)使用自訂路徑來連線至 Azure AD 的 AD FS。  
+## <a name="setup-ad-fs"></a>安裝 AD FS  
+1. 建立新的[AD FS 2016 伺服器](https://technet.microsoft.com/library/dn486775.aspx)陣列。   
+2.  或從 AD FS 2012 R2 將伺服器陣列[遷移](../../ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)至 AD FS 2016  
+4. 使用自訂路徑來部署[Azure AD Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnectfed-whatis/) ，以將 AD FS 連接到 Azure AD。  
 
-## <a name="configure-device-write-back-and-device-authentication"></a>設定裝置寫回 」 和 「 裝置驗證  
+## <a name="configure-device-write-back-and-device-authentication"></a>設定裝置回寫和裝置驗證  
 > [!NOTE]
-> 如果您執行使用 Express 設定 Azure AD Connect 時，有已為您建立正確的 AD 物件。  不過，在大部分的 AD FS 案例中，Azure AD Connect 已執行與自訂設定來設定 AD FS 中，因此下列步驟所需。  
+> 如果您使用 [快速設定] 執行 Azure AD Connect，就會為您建立正確的 AD 物件。  不過，在大部分 AD FS 案例中，Azure AD Connect 是以自訂設定來執行，以設定 AD FS，因此需要下列步驟。  
 
 ### <a name="create-ad-objects-for-ad-fs-device-authentication"></a>建立 AD FS 裝置驗證的 AD 物件  
 如果 AD FS 伺服器陣列尚未進行裝置驗證設定 (您可以在 AD FS 管理主控台的 [服務]-> [裝置註冊] 底下查看是否已設定)，請使用下列步驟建立正確的 AD DS 物件和設定。  
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
->注意:以下命令需要 Active Directory 系統管理工具，如果您的同盟伺服器也不是網域控制站，請先利用下面的步驟 1 來安裝工具。  否則略過步驟 1。  
+>注意：以下命令需要 Active Directory 系統管理工具，如果您的同盟伺服器也不是網域控制站，請先利用下面的步驟 1 來安裝工具。  否則略過步驟 1。  
 
 1.  執行 **\[新增角色及功能\]** 精靈，然後選取 **\[遠端伺服器管理工具\]**  ->  **\[角色管理工具\]**  ->  **\[AD DS 及 AD LDS 工具\]** -> 選擇 **\[Windows PowerShell 的 Active Directory 模組\]** 及 **\[AD DS 工具\]** 。
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
   
-2. 在您的 AD FS 主要伺服器，請確定您具有企業系統管理員 」 (EA) 的權限的 AD DS 使用者身分登入，並開啟提升權限的 powershell 命令提示字元。  接著，執行下列 PowerShell 命令：  
+2. 在您的 AD FS 主伺服器上，確定您是以具有企業系統管理員（EA）許可權 AD DS 使用者的身分登入，並開啟已提升許可權的 powershell 提示字元。  然後，執行下列 PowerShell 命令：  
     
    `Import-module activedirectory`  
    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
-3. 在快顯視窗上按 [是]。
+3. 在快顯視窗上，按 [是]。
 
->注意:如果 AD FS 服務已設定要使用 GMSA 帳戶，請依格式「domain\accountname$」輸入帳戶名稱
+>注意：如果 AD FS 服務已設定要使用 GMSA 帳戶，請依格式「domain\accountname$」輸入帳戶名稱
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
 
@@ -115,13 +115,13 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png) 
 
-###        <a name="create-service-connection-point-scp-in-ad"></a>在 AD 中建立服務連接點 (SCP)  
+###        <a name="create-service-connection-point-scp-in-ad"></a>在 AD 中建立服務連接點（SCP）  
 如果您打算使用此處所述的 Windows 10 網域加入 (搭配 Azure AD 自動註冊)，請執行下列命令以建立 AD DS 中的服務連接點  
 1.  開啟 Windows PowerShell，然後執行下列命令：
     
     `PS C:>Import-Module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1" ` 
 
->附註： 如有必要，請複製您的 Azure AD Connect 伺服器中 AdSyncPrep.psm1 檔案。  此檔案位於 Program Files\Microsoft Azure Active Directory Connect\AdPrep
+>注意：如有必要，請從您的 Azure AD Connect 伺服器複製 AdSyncPrep .psm1 檔案。  此檔案位於 Program Files\Microsoft Azure Active Directory Connect\AdPrep
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device6.png)   
 
@@ -183,46 +183,46 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
   - 新物件上指定之 AD 連接器帳戶名稱的讀寫存取權限</br></br> 
 
 
-- 物件的型別 msDS-DeviceRegistrationServiceContainer 在 CN = Device Registration Services，CN = Device Registration Configuration，CN = Services，CN = Configuration，DC = & ltdomain >  
+- CN = Device Registration Services，CN = Device Registration Configuration，cn = Services，CN = Configuration，DC = & > ltdomain 的 DeviceRegistrationServiceContainer 類型物件  
 
 
 - 上述容器中類型為 msDS-DeviceRegistrationService 的物件  
 
-### <a name="see-it-work"></a>查看其運作方式  
-若要評估的新宣告和原則，請先註冊裝置。  例如，您可以使用系統設定] 應用程式的 Windows 10 電腦]-> [關於，Azure AD Join 或進行自動裝置註冊額外的步驟，您可以設定 Windows 10 網域聯結[此處](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)。  如需加入 Windows 10 行動裝置，請參閱文件[此處](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)。  
+### <a name="see-it-work"></a>查看其工作  
+若要評估新的宣告和原則，請先註冊裝置。  例如，您可以使用 [系統 > 關於] 底下的 [設定] 應用程式 Azure AD 加入 Windows 10 電腦，或者可以遵循[這裡](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)的其他步驟，使用自動裝置註冊設定 windows 10 網域加入。  如需有關加入 Windows 10 行動裝置版的資訊，請參閱[這裡](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)的檔。  
 
-對於最簡單的評估，登入 AD FS 使用宣告的清單會顯示測試應用程式。 您會看到新的宣告包括 isManaged、 isCompliant 和 trusttype。  如果您啟用 Microsoft Passport for work 時，您也會看到 prt 宣告。  
+若要進行最簡單的評估，請使用顯示宣告清單的測試應用程式登入 AD FS。 您將能夠看到新的宣告，包括 isManaged、isCompliant 和 trusttype 內容。  如果您啟用 Microsoft Passport for work，您也會看到 prt 宣告。  
  
 
 ## <a name="configure-additional-scenarios"></a>設定其他案例  
-### <a name="automatic-registration-for-windows-10-domain-joined-computers"></a>自動註冊的 Windows 10 已加入網域的電腦  
-若要啟用 Windows 10 網域的自動裝置註冊加入的電腦，請遵循步驟 1 和 2[此處](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)。   
-這將協助您達到下列目的：  
+### <a name="automatic-registration-for-windows-10-domain-joined-computers"></a>自動註冊加入網域的 Windows 10 電腦  
+若要為已加入網域的 Windows 10 電腦啟用自動註冊裝置，請遵循[這裡](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)的步驟1和2。   
+這可協助您達成下列目標：  
 
-1. 請確認您的服務連接點，在 AD DS 中存在且具有適當的權限 （我們在建立此物件，但它不會不會進行詳細的檢查會降低）。  
-2. 請確定已正確設定 AD FS  
-3. 請確定您的 AD FS 系統已正確啟用的端點和宣告規則設定   
-4. 設定自動裝置註冊加入網域的電腦所需的群組原則設定   
+1. 請確定您 AD DS 中的服務連接點存在，而且具有適當的許可權（我們已在上面建立此物件，但不會傷害重複檢查）。  
+2. 確定已正確設定 AD FS  
+3. 請確定您的 AD FS 系統已啟用正確的端點，並已設定宣告規則   
+4. 為已加入網域的電腦設定自動裝置註冊所需的群組原則設定   
 
 ### <a name="microsoft-passport-for-work"></a>Microsoft Passport for Work   
-如需啟用與 Microsoft Passport for Work 的 Windows 10 的資訊，請參閱[啟用 Microsoft Passport for Work 在您的組織。](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)  
+如需使用 Microsoft Passport for Work 啟用 Windows 10 的詳細資訊，請參閱[在您的組織中啟用 Microsoft Passport for Work。](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)  
 
-### <a name="automatic-mdm-enrollment"></a>自動執行 MDM 註冊   
-若要啟用的已註冊的裝置的自動 MDM 註冊，使您可以使用 isCompliant 宣告在存取控制原則，請遵循[這裡。](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
+### <a name="automatic-mdm-enrollment"></a>自動 MDM 註冊   
+若要啟用已註冊裝置的自動 MDM 註冊，讓您可以在存取控制原則中使用 isCompliant 宣告，請遵循[此處](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)的步驟。  
 
 ## <a name="troubleshooting"></a>疑難排解  
-1.  如果您收到錯誤`Initialize-ADDeviceRegistration`，會反映物件中已經存在錯誤的狀態，例如"drs 服務物件被發現具有沒有所有必要的屬性 」，您可能會有先前執行 Azure AD Connect powershell 命令和在 AD DS 中的某項部分設定。  請嘗試手動刪除底下的物件**CN = Device Registration Configuration，CN = Services，CN = Configuration，DC =&lt;網域&gt;** ，然後再試。  
-2.  針對 Windows 10 已加入網域的用戶端  
-    1. 若要確認該裝置驗證運作，以登入網域聯結用戶端的測試使用者帳戶。 觸發程序快速佈建、 鎖定和解除鎖定桌面至少一次。   
-    2. 若要檢查 sdk 金鑰認證的指示連結在 AD DS 物件上 （同步仍必須執行兩次？）  
-3.  如果您收到錯誤時嘗試註冊已註冊裝置，但您無法或已取消註冊裝置的 Windows 電腦，您可能必須在登錄中的片段的裝置註冊設定。  若要調查，並移除此，使用下列步驟：  
-    1. 在 Windows 電腦上，開啟 Regedit，然後瀏覽至**HKLM\Software\Microsoft\Enrollments**   
-    2. 此機碼，會有許多子機碼 GUID 格式。  瀏覽至的子機碼中有大約 17 值，且其為"6"[聯結的 MDM] 的 「 EnrollmentType"或"13"(已加入 Azure AD)  
-    3. 修改**EnrollmentType**到**0** 
-    4. 重試註冊的裝置註冊  
+1.  如果您收到 `Initialize-ADDeviceRegistration` 的錯誤，抱怨有關已在錯誤狀態中的物件，例如「找不到具有所有必要屬性的 drs 服務物件」，表示您先前已執行 Azure AD Connect powershell 命令，並具有AD DS 中的部分設定。  請嘗試手動刪除 [ **cn = Device Registration configuration，cn = Services，cn = Configuration，DC = &lt;domain @ no__t-2** ] 底下的物件，然後再試一次。  
+2.  適用于已加入網域的 Windows 10 用戶端  
+    1. 若要確認裝置驗證是否正常運作，請以測試使用者帳戶身分登入加入網域的用戶端。 若要快速觸發布建，請至少一次鎖定並解除鎖定桌面。   
+    2. 在 AD DS 物件上檢查 stk 金鑰認證連結的指示（同步處理是否仍然需要執行兩次？）  
+3.  如果您在嘗試註冊已註冊裝置的 Windows 電腦時發生錯誤，但無法或尚未取消註冊裝置，您可能會在登錄中擁有裝置註冊設定的片段。  若要調查並移除此項，請使用下列步驟：  
+    1. 在 Windows 電腦上，開啟 Regedit 並流覽至**HKLM\Software\Microsoft\Enrollments**   
+    2. 在此機碼下，GUID 表單中將會有許多子機碼。  流覽至具有 ~ 17 值的子機碼，並具有 "6" [已加入 MDM] 或 [13] （Azure AD 聯結）的 "EnrollmentType"  
+    3. 將**EnrollmentType**修改為**0** 
+    4. 再次嘗試註冊裝置或註冊  
 
 ### <a name="related-articles"></a>相關文章  
-* [保護存取 Office 365 和其他應用程式連接至 Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
+* [保護存取 Office 365 和其他連接到 Azure Active Directory 的應用程式](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
 * [Office 365 服務的條件式存取裝置原則](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-device-policies/)  
-* [設定內部部署條件式存取使用 Azure Active Directory 裝置註冊](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
-* [已加入網域的裝置連接到 Azure AD 以體驗 Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  
+* [使用 Azure Active Directory 裝置註冊設定內部部署條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
+* [將已加入網域的裝置連接到適用于 Windows 10 體驗的 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  

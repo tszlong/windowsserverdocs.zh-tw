@@ -1,7 +1,7 @@
 ---
 title: 快速更新傳遞 ISV 支援
 description: Windows Server Update Service （WSUS）主題-獨立軟體廠商（ISV）如何使用 WSUS 來設定快速更新傳遞
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f5893d47219e9263ed7f35bee472848a47c6164
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a4880a1a66d9c722cfda9e194c4eff38c5058674
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361719"
 ---
 # <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 
@@ -95,7 +95,7 @@ ISV 檔案快取必須填入與要安裝在受管理用戶端上的更新相關�
 
 1. 使用[WSUS api](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx)來存取 MU 服務的更新檔案路徑和檔案名。
 
-    WSUS 伺服器上每個更新的中繼資料會在 Microsoft Update 上包含更新的檔案路徑和檔案名，如下所示（以粗體 Microsoft Update 主機名稱，後面接著檔案路徑 **<http://download.windowsupdate.com>** 和檔案名）：/c/msdownload/update/software/updt/2016/09/windows 10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74
+    WSUS 伺服器上每個更新的中繼資料會在 Microsoft Update 上包含更新的檔案路徑和檔案名，如下所示（以粗體 Microsoft Update 主機名稱，後面接著檔案路徑和檔案名）： **<http://download.windowsupdate.com>** /c/msdownload/update/software/updt/2016/09/windows 10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74
 
 2. 從 Microsoft Update 下載檔案，並使用下列兩種方法的其中一種將檔案儲存在 ISV 檔案快取中： 
 

@@ -1,8 +1,8 @@
 ---
 title: winrs
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f9c612a7c6f5d0935223b3c193c52fe970c970d7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d6ee44cb530614485f0dbd58a9ec13a4788370fe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440051"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361936"
 ---
 # <a name="winrs"></a>winrs
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows 遠端管理可讓您管理和遠端執行程式。   
+Windows 遠端系統管理可讓您從遠端系統管理及執行程式。   
 ## <a name="syntax"></a>語法  
 ```  
 winrs [/<parameter>[:<value>]] <command>  
@@ -33,26 +33,26 @@ winrs [/<parameter>[:<value>]] <command>
 
 |           參數            |                                                                                                                                                                                    描述                                                                                                                                                                                     |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      / 遠端：\<端點 >       |                                                                                          指定目標端點使用的 NetBIOS 名稱或標準連線：<br /><br />-   <url>: [\<transport>://]\<target>[:\<port>]<br /><br />如果未指定， **/r:localhost**用。                                                                                          |
-|          / 未加密          | 指定遠端殼層的訊息將不會加密。 這是適用於疑難排解，或當使用已加密的網路流量**ipsec**，或強制執行實體安全性的時機。<br /><br />根據預設，訊息會使用 Kerberos 或 ntlm 驗證的金鑰來加密。<br /><br />選取 HTTPS 傳輸時，會忽略此命令列選項。 |
-|     /username:\<使用者名稱 >      |                                                                                命令列上指定使用者名稱。<br /><br />如果未指定，工具會使用交涉驗證或命令提示字元的名稱。<br /><br />如果 **/username**指定，則 **/password**也必須指定。                                                                                 |
-|     /password:\<密碼 >      |                                                                           命令列上指定密碼。<br /><br />如果 **/password**未指定，但 **/username**是，此工具會提示您輸入密碼。<br /><br />如果 **/password**指定，則 **/username**也必須指定。                                                                            |
-|      /timeout:\<seconds>       |                                                                                                                                                                             此選項已被取代。                                                                                                                                                                             |
-|       / 目錄：\<路徑 >       |                                                                                            指定遠端殼層的起始目錄。<br /><br />如果未指定，遠端殼層會在使用者的環境變數所定義的主目錄中啟動 **%USERPROFILE%** 。                                                                                             |
-| /environment:\<string>=<value> |                                                                          指定當殼層的殼層啟動時，以允許變更預設環境設定的單一環境變數。<br /><br />若要指定多個環境變數，必須使用這個參數的多個項目。                                                                          |
-|            /noecho             |                                                                                                    指定應該停用該回應。 這可能需要以確保遠端提示使用者的答案都不會在本機的顯示。<br /><br />預設回應是 「 開啟 」。                                                                                                    |
-|           /noprofile           |                                              指定未載入使用者設定檔。<br /><br />根據預設，伺服器會嘗試載入使用者設定檔。<br /><br />如果遠端使用者不是在目標系統上，本機系統管理員，則將會需要這個選項 （預設值就會產生錯誤）。                                               |
-|         /allowdelegate         |                                                                                                                  指定的使用者的認證可用來存取遠端共用，例如，比目標端點的不同電腦上找到。                                                                                                                   |
-|          /compression          |                                                                           開啟壓縮。  在遠端電腦上的舊版安裝可能不支援壓縮，因此它預設為關閉。<br /><br />預設設定已關閉，因為在遠端電腦上的舊版安裝可能不支援壓縮。                                                                           |
-|            /usessl             |                                                                                                               使用遠端端點時，請使用 SSL 連線。  指定此而不傳輸**https:** 會使用預設**WinRM**預設連接埠。                                                                                                                |
+|      /remote： \<endpoint >       |                                                                                          使用 NetBIOS 名稱或標準連接來指定目標端點：<br /><br />-    @ no__t-1： [\<transport >：/] \<target > [： \<port >]<br /><br />如果未指定，則會使用 **/r： localhost** 。                                                                                          |
+|          /unencrypted          | 指定不會加密遠端 shell 的訊息。 這適用于疑難排解，或當網路流量已經使用**ipsec**加密或強制執行實體安全性時。<br /><br />根據預設，訊息會使用 Kerberos 或 NTLM 金鑰進行加密。<br /><br />選取 [HTTPS 傳輸] 時，會忽略此命令列選項。 |
+|     /username： \<username >      |                                                                                指定命令列上的使用者名稱。<br /><br />如果未指定，此工具會使用 Negotiate 驗證或提示輸入名稱。<br /><br />如果指定 **/username** ，則也必須指定 **/password** 。                                                                                 |
+|     /password： \<password >      |                                                                           在命令列上指定密碼。<br /><br />如果未指定 **/password** ，但 **/username**為，則工具會提示輸入密碼。<br /><br />如果指定 **/password** ，則也必須指定 **/username** 。                                                                            |
+|      /timeout： \<seconds >       |                                                                                                                                                                             此選項已被取代。                                                                                                                                                                             |
+|       /目錄： \<path >       |                                                                                            指定遠端 shell 的起始目錄。<br /><br />如果未指定，則遠端 shell 將會在環境變數 **% USERPROFILE%** 定義的使用者主目錄中啟動。                                                                                             |
+| /environment： \<string > =<value> |                                                                          指定要在 shell 啟動時設定的單一環境變數，這可讓您變更 shell 的預設環境。<br /><br />這個參數的多次出現必須用來指定多個環境變數。                                                                          |
+|            /noecho             |                                                                                                    指定應該停用 echo。 這可能是為了確保使用者的遠端提示答案不會顯示在本機。<br /><br />根據預設，echo 會是 "on"。                                                                                                    |
+|           /noprofile           |                                              指定不應載入使用者的設定檔。<br /><br />根據預設，伺服器會嘗試載入使用者設定檔。<br /><br />如果遠端使用者不是目標系統上的本機系統管理員，則需要此選項（預設會導致錯誤）。                                               |
+|         /allowdelegate         |                                                                                                                  指定使用者的認證可以用來存取遠端共用，例如，位於與目標端點不同的電腦上。                                                                                                                   |
+|          /compression          |                                                                           開啟壓縮。  遠端電腦上的舊版安裝可能不支援壓縮，因此預設為關閉。<br /><br />預設設定為 off，因為遠端電腦上的舊版安裝可能不支援壓縮。                                                                           |
+|            /usessl             |                                                                                                               使用遠端端點時，請使用 SSL 連線。  指定此項，而不是傳輸**HTTPs：** 會使用預設的**WinRM**預設通訊埠。                                                                                                                |
 |               /?               |                                                                                                                                                                        在命令提示字元顯示說明。                                                                                                                                                                        |
 
 ## <a name="remarks"></a>備註  
--   簡短形式] 或 [完整格式，就會接受所有的命令列選項。 比方說，同時 **/r**並 **/遠端**有效。  
--   終止 **/遠端**命令時，使用者可以輸入**Ctrl + C**或是**ctrl-break**，這將會傳送至遠端殼層。 第二個**Ctrl + C**會強制終止**winrs.exe**。  
--   若要管理使用中的遠端殼層或 winrs 組態，請使用 WinRM 工具。  URI 是別名，以管理使用中的殼層**殼層/命令**。  Winrs 設定別名的 URI 是**winrm/config/winrs**。  
+-   所有命令列選項都接受簡短形式或完整格式。 例如， **/r**和 **/remote**都是有效的。  
+-   若要終止 **/remote**命令，使用者可以輸入**ctrl-c**或**ctrl break**，這會傳送至遠端 shell。 第二個**ctrl-c**會強制終止**winrs**。  
+-   若要管理作用中的遠端 shell 或 winrs 設定，請使用 WinRM 工具。  管理使用中 shell 的 URI 別名是**shell/cmd**。  Winrs 設定的 URI 別名是**winrm/config/winrs**。  
 
-## <a name="BKMK_Examples"></a>範例  
+## <a name="BKMK_Examples"></a>典型  
 ```  
 winrs /r:https://contoso.com command  
 ```  

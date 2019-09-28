@@ -6,37 +6,37 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ac9f9b95ad6226a8e3b7012e317899f1d48c60c9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: c8b2246842dd70c06442faed995f6b883dbaf70a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192472"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360093"
 ---
 # <a name="add-a-token-signing-certificate"></a>新增權杖簽署憑證
 
 
-在 Active Directory Federation Services 中的同盟伺服器\(AD FS\)要求權杖\-簽署憑證讓攻擊者無法改變或盜用安全性權杖，以嘗試取得未經授權的存取為同盟的資源。 每個語彙基元\-簽署憑證包含私密金鑰的密碼編譯金鑰和用來數位簽章的公開金鑰\(透過私密金鑰\)安全性權杖。 稍後，夥伴同盟伺服器會收到這些機碼之後，他們驗證真實性\(透過公開金鑰\)加密的安全性權杖。  
+Active Directory 同盟服務中的同盟伺服器 \(AD FS @ no__t-1 需要 token @ no__t-2signing 憑證，以防止攻擊者改變或偽造安全性權杖，以嘗試取得同盟的未經授權存取人員. 每個\-權杖簽署憑證都包含密碼編譯私密金鑰和公開金鑰，這些金鑰是用\(來以私密金鑰\)做為安全性權杖，以數位方式簽署。 之後，在夥伴同盟伺服器收到這些金鑰之後，他們會驗證密碼的真實性 @no__t 0by，也就是加密安全性權杖的公開金鑰 @ no__t-1。  
   
 > [!CAUTION]  
-> 憑證用於語彙基元\-簽署至關重要的 Federation Service 的穩定性。 因為遺失或意外的移除基於此目的設定的任何憑證的中斷服務，您應該備份任何針對此目的設定的憑證。  
+> 用於 token @ no__t-0signing 的憑證對於同盟服務的穩定性而言非常重要。 由於遺失或未計畫移除任何針對此用途所設定的憑證可能會中斷服務，因此您應該備份為此用途所設定的任何憑證。  
   
-語彙基元\-簽署憑證應該鏈結到 Federation Service 中受信任的根。 您可以使用下列程序來新增語彙基元\-簽章憑證至 AD FS 管理嵌入式管理單元\-中從您已匯出的檔案。  
+Token @ no__t-0signing 憑證應連結至同盟服務中受信任的根。 您可以使用下列程式，將 token @ no__t-0signing 憑證新增至您已匯出的檔案中的 AD FS 管理貼齊 @ no__t-1in。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  檢閱詳細使用適當帳戶和群組成員[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/嗎？LinkId\=83477\)。   
+若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477) \(HTTP：\/ \/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
   
-### <a name="to-add-a-token-signing-certificate"></a>若要新增權杖\-簽署憑證  
+### <a name="to-add-a-token-signing-certificate"></a>新增權杖 @ no__t-0signing 憑證  
   
-1.  在 **開始**畫面上，輸入**AD FS 管理**，然後按 ENTER 鍵。  
+1.  在 **開始** 畫面上，輸入**AD FS 管理**，然後按 enter。  
   
-2.  在主控台樹狀目錄中，按兩下\-按一下 **服務**，然後按一下**憑證**。  
+2.  在主控台樹中，按兩下 @ no__t-0click **Service**，然後按一下 [**憑證**]。  
   
-3.  在 **動作**窗格中，按一下**新增權杖\-簽署憑證**連結。  
+3.  在 [**動作**] 窗格中，按一下 [**新增權杖 @ No__t-2Signing 憑證**] 連結。  
   
-4.  在 **瀏覽憑證檔案**對話方塊方塊中，瀏覽至您想要新增選取的憑證檔案，然後按一下 憑證檔案**開啟**。  
+4.  在 [**流覽憑證**檔案] 對話方塊中，流覽至您要新增的憑證檔案，選取憑證檔案，然後按一下 [**開啟**]。  
   
 ## <a name="additional-references"></a>其他參考資料  
 [檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)  

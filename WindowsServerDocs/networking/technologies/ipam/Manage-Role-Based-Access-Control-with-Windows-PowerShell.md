@@ -1,9 +1,9 @@
 ---
 title: 使用 Windows PowerShell 管理角色型存取控制
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 本主題是 Windows Server 2016 中 IP 位址管理（IPAM）管理指南的一部分。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,35 +12,35 @@ ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 11dd417be4720b09851fc03f111edaaf06b55e59
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: dec5c9b9b5d5fe858e063af70ff0a8e16991e632
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282128"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355217"
 ---
 # <a name="manage-role-based-access-control-with-windows-powershell"></a>使用 Windows PowerShell 管理角色型存取控制
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題以了解如何使用 IPAM 來管理角色型存取控制，使用 Windows PowerShell。  
+您可以使用本主題來瞭解如何使用 IPAM 來管理以 Windows PowerShell 為基礎的角色型存取控制。  
   
 >[!NOTE]
->如需 IPAM 的 Windows PowerShell 命令參考，請參閱[IpamServer cmdlet，在 Windows PowerShell 中的](https://docs.microsoft.com/powershell/module/ipamserver/?view=win10-ps)。  
+>如需 IPAM Windows PowerShell 命令參考，請參閱[Windows powershell 中的 IpamServer Cmdlet](https://docs.microsoft.com/powershell/module/ipamserver/?view=win10-ps)。  
   
-新的 Windows PowerShell IPAM 命令為您提供擷取和變更的 DNS 和 DHCP 物件的存取範圍的能力。 下表說明了正確的命令，將 IPAM 中的每個物件。  
+新的 Windows PowerShell IPAM 命令可讓您取得和變更 DNS 和 DHCP 物件的存取範圍。 下表說明要用於每個 IPAM 物件的正確命令。  
   
 |IPAM 物件|命令|描述|  
 |---------------|-----------|---------------|  
-|DNS 伺服器|Get-IpamDnsServer|此 cmdlet 會傳回在 IPAM 中的 DNS 伺服器物件|  
-|DNS 區域|Get-IpamDnsZone|此 cmdlet 會傳回在 IPAM 中的 DNS 區域物件|  
-|DNS 資源記錄|Get-IpamResourceRecord|此 cmdlet 會傳回在 IPAM 中的 DNS 資源記錄物件|  
-|DNS 條件轉寄站|Get-IpamDnsConditionalForwarder|此 cmdlet 會傳回在 IPAM 中的 DNS 條件轉寄站物件|  
-|DHCP 伺服器|Get-IpamDhcpServer|此 cmdlet 會傳回在 IPAM 中的 DHCP 伺服器物件|  
-|DHCP 超級領域|Get-IpamDhcpSuperscope|此 cmdlet 會傳回在 IPAM 中的 DHCP 超級領域物件|  
-|DHCP 領域|Get-IpamDhcpScope|此 cmdlet 會傳回在 IPAM 中的 DHCP 範圍的物件|  
+|DNS 伺服器|IpamDnsServer|此 Cmdlet 會傳回 IPAM 中的 DNS 伺服器物件|  
+|DNS 區域|IpamDnsZone|此 Cmdlet 會傳回 IPAM 中的 DNS 區域物件|  
+|DNS 資源記錄|IpamResourceRecord|此 Cmdlet 會傳回 IPAM 中的 DNS 資源記錄物件|  
+|DNS 條件轉寄站|IpamDnsConditionalForwarder|此 Cmdlet 會傳回 IPAM 中的 DNS 條件轉寄站物件|  
+|DHCP 伺服器|IpamDhcpServer|此 Cmdlet 會傳回 IPAM 中的 DHCP 伺服器物件|  
+|DHCP 超級領域|IpamDhcpSuperscope|此 Cmdlet 會傳回 IPAM 中的 DHCP 超級領域物件|  
+|DHCP 領域|IpamDhcpScope|此 Cmdlet 會傳回 IPAM 中的 DHCP 領域物件|  
   
-在下列範例中的命令輸出中，`Get-IpamDnsZone`指令程式可抓取**dublin.contoso.com** DNS 區域。  
+在下列命令輸出範例中，`Get-IpamDnsZone` Cmdlet 會抓取**Dublin.contoso.com** DNS 區域。  
   
 ```  
 PS C:\Users\Administrator.CONTOSO> Get-IpamDnsZone -ZoneType Forward -ZoneName dublin.contoso.com  
@@ -53,8 +53,8 @@ DynamicUpdateStatus  : None
 ScavengeStaleRecords : False  
 ```  
   
-## <a name="setting-access-scopes-on-ipam-objects"></a>IPAM 物件上設定存取領域  
-您也可以使用 IPAM 物件上設定存取領域`Set-IpamAccessScope`命令。 物件的特定值來設定存取領域，或造成要繼承自父物件的存取領域的物件，您可以使用此命令。 以下是您可以使用此命令來設定的物件。  
+## <a name="setting-access-scopes-on-ipam-objects"></a>設定 IPAM 物件的存取範圍  
+您可以使用 `Set-IpamAccessScope` 命令來設定 IPAM 物件的存取範圍。 您可以使用這個命令，將存取領域設定為物件的特定值，或讓物件繼承父物件的存取範圍。 以下是您可以使用此命令來設定的物件。  
   
 -   DHCP 領域  
   
@@ -76,9 +76,9 @@ ScavengeStaleRecords : False
   
 -   IP 位址空間  
   
--   IP 位址子網路  
+-   IP 位址子網  
   
-下列是語法`Set-IpamAccessScope`命令。  
+以下是 `Set-IpamAccessScope` 命令的語法。  
   
 ```  
 NAME  
@@ -116,7 +116,7 @@ SYNTAX
     Set-IpamAccessScope [-IpamBlock] -InputObject <ciminstance[]> [-AccessScopePath <string>] [-IsInheritedAccessScope] [-PassThru] [-CimSession <CimSession[]>] [-ThrottleLimit <int>] [-AsJob] [-WhatIf] [-Confirm]  [<CommonParameters>]  
 ```  
   
-在下列範例中，DNS 區域的存取範圍**dublin.contoso.com**已從**都柏林**來**歐洲**。  
+在下列範例中，DNS 區域**dublin.contoso.com**的存取領域已從**都柏林**變更為**歐洲**。  
   
 ```  
 PS C:\Users\Administrator.CONTOSO> Get-IpamDnsZone -ZoneType Forward -ZoneName dublin.contoso.com  

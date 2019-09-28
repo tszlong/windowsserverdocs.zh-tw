@@ -1,60 +1,60 @@
 ---
 title: 將現有檔案伺服器設定為內容伺服器
-description: 本主題是 BranchCache 部署指南的 Windows Server 2016 中，示範如何以最佳化 WAN 頻寬使用量，在分公司的分散式和裝載式快取模式部署 BranchCache 的一部分
+description: 本主題是 Windows Server 2016 的 BranchCache 部署指南的一部分，示範如何在分散式和託管快取模式中部署 BranchCache，以優化分公司的 WAN 頻寬使用量
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: bdac7d2a-25b4-4f61-bed1-b290700c18f3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d031e8aa853849c322692552ca9107838cebb5e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f675322c32db0816d5afb155d53fad9f096ad650
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866909"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356690"
 ---
 # <a name="configure-an-existing-file-server-as-a-content-server"></a>將現有檔案伺服器設定為內容伺服器
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用此程序來安裝**網路檔案的 BranchCache**執行 Windows Server 2016 的電腦上的檔案服務伺服器角色的角色服務。  
+您可以使用此程式，在執行 Windows Server 2016 的電腦上安裝檔案服務伺服器角色的 [網路檔案的**BranchCache** ] 角色服務。  
   
 > [!IMPORTANT]  
-> 如果尚未安裝檔案服務伺服器角色，請勿遵循此程序。 相反地，請參閱 <<c0> [ 安裝新的檔案伺服器做為內容伺服器](../../branchcache/deploy/Install-a-New-File-Server-as-a-Content-Server.md)。  
+> 如果尚未安裝檔案服務伺服器角色，請不要遵循此程式。 相反地，請參閱[安裝新的檔案伺服器做為內容伺服器](../../branchcache/deploy/Install-a-New-File-Server-as-a-Content-Server.md)。  
   
-中的成員資格**系統管理員**，或同等權限才能執行此程序的最小值。  
+若要執行此程式，至少需要**Administrators**的成員資格或同等許可權。  
   
 > [!NOTE]  
-> 使用 Windows PowerShell，以系統管理員身分執行 Windows PowerShell 執行此程序的 Windows PowerShell 提示字元中，輸入下列命令，然後按 ENTER 鍵。  
+> 若要使用 Windows PowerShell 執行此程式，請以系統管理員身分執行 Windows PowerShell，在 Windows PowerShell 提示字元中輸入下列命令，然後按 ENTER。  
 >   
 > `Install-WindowsFeature FS-BranchCache -IncludeManagementTools`  
 >   
-> 若要安裝 「 重複資料刪除 」 角色服務，請輸入下列命令，，然後按 ENTER 鍵。  
+> 若要安裝重復資料刪除角色服務，請輸入下列命令，然後按 ENTER。  
 >   
 > `Install-WindowsFeature FS-Data-Deduplication -IncludeManagementTools`  
   
-### <a name="to-install-the-branchcache-for-network-files-role-service"></a>若要安裝 網路檔案 」 角色服務的 BranchCache  
+### <a name="to-install-the-branchcache-for-network-files-role-service"></a>安裝網路檔案的 BranchCache 角色服務  
   
-1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能精靈] 隨即開啟。 按一下 [下一步] 。  
+1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按一下 [下一步]。  
   
-2.  在 [**選取安裝類型**，請確認**角色型或功能型安裝**已選取，然後按一下**下一步]**。  
+2.  在 [**選取安裝類型**] 中，確定已選取 [以**角色為基礎] 或 [功能型安裝**]，然後按 **[下一步]** 。  
   
-3.  在 [**選取目的地伺服器**，確定正確的伺服器已選取，然後按一下**下一步]**。  
+3.  在 [**選取目的地伺服器**] 中，確定已選取正確的伺服器，然後按 **[下一步]** 。  
   
-4.  在**選取伺服器角色**，請在**角色**，注意**檔案與儲存體服務**已安裝角色並按一下 角色名稱，以展開左邊的箭號選取的角色服務，然後按一下左側的箭號**檔案和 iSCSI 服務**。  
+4.  在 [**選取伺服器角色**] 的 [**角色**] 中，請注意檔案**和存放服務**角色已安裝;按一下角色名稱左側的箭號以展開 [角色服務] 的選取範圍，然後按一下 [檔案**和 ISCSI 服務**] 左邊的箭號。  
   
-5.  選取核取方塊**網路檔案的 BranchCache**。  
+5.  選取 [網路檔案的**BranchCache**] 核取方塊。  
   
     > [!TIP]  
-    > 如果您尚未這樣做，則建議您也選取核取方塊**重複資料刪除**。  
+    > 如果您尚未這麼做，建議您同時選取**重復資料刪除**的核取方塊。  
   
-    按一下 [下一步] 。  
+    按一下 [下一步]。  
   
-6.  在 [**選取的功能**，按一下**下一步]**。  
+6.  在 [**選取功能**] 中，按 **[下一步]** 。  
   
-7.  在 **確認安裝選項**，檢閱您的選擇，然後按一下**安裝**。 **Průběh instalace**窗格會顯示在安裝期間。 安裝完成時，按一下**關閉**。  
+7.  在 [**確認安裝選項**] 中，檢查您的選擇，然後按一下 [**安裝**]。 安裝期間會顯示 [**安裝進度**] 窗格。 安裝完成時，按一下 [**關閉**]。  
   
 
 

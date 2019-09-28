@@ -1,8 +1,8 @@
 ---
 title: Windows Server Backup 命令參考資料
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,37 +13,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ded5039e122832c95eda864bcdcc76f580ca7108
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c05a44d3390e110fbaf276dfb9b40c1f0adc1dd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839809"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362055"
 ---
 # <a name="windows-server-backup-command-reference"></a>Windows Server Backup 命令參考資料
 
 
 
-下列子命令的**wbadmin**提供備份和復原功能，從命令提示字元。
+下列適用于**wbadmin**的子命令會從命令提示字元提供備份和復原功能。
 
-若要設定備份排程，您必須隸屬**系統管理員**群組。 若要執行此命令使用的所有其他工作，您必須隸屬**Backup Operators**或**系統管理員**群組，或者您必須已經被委派適當的權限。
+若要設定備份排程，您必須是**Administrators**群組的成員。 若要使用此命令執行所有其他工作，您必須是**Backup Operators**或**Administrators**群組的成員，或者必須已被委派適當的許可權。
 
-您必須執行**wbadmin**從提升權限的命令提示字元。 (若要開啟提升權限的命令提示字元，請按一下**開始**，以滑鼠右鍵按一下**命令提示字元**，然後按一下**系統管理員身分執行**。)
+您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請按一下 **開始**，以滑鼠右鍵按一下 **命令提示**字元，然後按一下 以**系統管理員身分執行**
 
-|子命令|描述|
+|來|描述|
 |----------|-----------|
-|[Wbadmin 啟用備份](wbadmin-enable-backup.md)|設定，並可讓每日備份排程。|
-|[Wbadmin 停用備份](wbadmin-disable-backup.md)|停用您的每日備份。|
-|[Wbadmin start backup](wbadmin-start-backup.md)|執行一次性的備份。 如果使用不含任何參數，會使用從每日備份排程設定。|
-|[Wbadmin 停止作業](wbadmin-stop-job.md)|停止目前執行的備份或復原作業。|
-|[wbadmin get 版本](wbadmin-get-versions.md)|列出可從本機電腦復原備份的詳細資料，或如果指定另一個位置，從另一部電腦。|
-|[Wbadmin get 項目](wbadmin-get-items.md)|列出特定的備份中包含的項目。|
-|[wbadmin 開始復原](wbadmin-start-recovery.md)|執行復原的磁碟區、 應用程式、 檔案或指定的資料夾。|
-|[Wbadmin get 狀態](wbadmin-get-status.md)|顯示目前執行的備份或復原作業的狀態。|
-|[Wbadmin get 磁碟](wbadmin-get-disks.md)|列出目前上線的磁碟。|
-|[wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)|執行系統狀態復原。|
+|[Wbadmin enable backup](wbadmin-enable-backup.md)|設定並啟用每日備份排程。|
+|[Wbadmin disable backup](wbadmin-disable-backup.md)|停用您的每日備份。|
+|[Wbadmin start backup](wbadmin-start-backup.md)|執行一次性備份。 如果與沒有參數搭配使用，則會使用每日備份排程的設定。|
+|[Wbadmin stop job](wbadmin-stop-job.md)|停止目前正在執行的備份或復原作業。|
+|[Wbadmin get versions](wbadmin-get-versions.md)|列出可從本機電腦復原的備份詳細資料，或從另一部電腦指定另一個位置。|
+|[Wbadmin get items](wbadmin-get-items.md)|列出特定備份中包含的專案。|
+|[Wbadmin start recovery](wbadmin-start-recovery.md)|執行指定的磁片區、應用程式、檔案或資料夾的復原。|
+|[Wbadmin get status](wbadmin-get-status.md)|顯示目前正在執行之備份或復原作業的狀態。|
+|[Wbadmin get disks](wbadmin-get-disks.md)|列出目前上線的磁片。|
+|[Wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)|執行系統狀態復原。|
 |[Wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)|執行系統狀態備份。|
 |[Wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)|刪除一或多個系統狀態備份。|
-|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|執行完整的系統 （最少的所有磁碟區含有作業系統的狀態） 的復原。 此子命令才可使用，如果您使用 Windows 修復環境。|
-|[Wbadmin 還原類別目錄](wbadmin-restore-catalog.md)|從指定的儲存體位置，在本機電腦上備份的目錄發生損毀的情況下復原備份類別目錄。|
-|[Wbadmin delete 類別目錄](wbadmin-delete-catalog.md)|刪除本機電腦上的備份目錄。 只有當這部電腦上的備份資料目錄已損毀，而且沒有備份儲存在另一個位置可供您還原類別目錄，請使用此命令。|
+|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|執行完整系統的復原（至少包含作業系統狀態的所有磁片區）。 只有當您使用 Windows 修復環境時，才能使用此子命令。|
+|[Wbadmin restore catalog](wbadmin-restore-catalog.md)|當本機電腦上的備份類別目錄已損毀時，從指定的儲存位置復原備份類別目錄。|
+|[Wbadmin delete catalog](wbadmin-delete-catalog.md)|刪除本機電腦上的備份類別目錄。 只有當這部電腦上的備份類別目錄已損毀，而且您沒有將備份儲存在另一個可用來還原類別目錄的位置時，才使用此命令。|

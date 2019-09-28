@@ -1,9 +1,9 @@
 ---
 title: SDN 的軟體負載平衡 (SLB)
-description: 您可以使用本主題來了解軟體負載平衡適用於 Windows Server 2016 中的軟體定義網路功能。
+description: 您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路的軟體負載平衡。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,217 +12,217 @@ ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 26fb4aa21e80618c4c63bd9edbf8731bf886db62
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35743d9e1a25c71a35eed018a4a3882a3d094d76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853759"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355572"
 ---
-# <a name="software-load-balancing-slb-for-sdn"></a>軟體負載平衡\(SLB\)適用於 SDN
+# <a name="software-load-balancing-slb-for-sdn"></a>軟體負載平衡 @no__t-適用于 SDN 的 0SLB @ no__t-1
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題來了解軟體負載平衡適用於 Windows Server 2016 中的軟體定義網路功能。  
+您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路的軟體負載平衡。  
 
-雲端服務提供者 (Csp) 和要部署軟體定義網路 (SDN) Windows Server 2016 中的企業可以使用軟體負載平衡 (SLB) 將租用戶和租用戶客戶網路流量在虛擬網路資源之間平均地分散。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。
+在 Windows Server 2016 中部署軟體定義網路（SDN）的雲端服務提供者（Csp）和企業可以使用軟體負載平衡（SLB），將租使用者和租使用者客戶網路流量平均分散到虛擬網路資源。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。
   
-Windows Server SLB 可包含下列功能。  
+Windows Server SLB 包含下列功能。  
   
--   第 4 (L4) 層負載平衡的服務，' 北-南 '和' 東-西 ' TCP/UDP 流量。  
+-   第4層（L4）為「北歐」和「美國東部」 TCP/UDP 流量的負載平衡服務。  
   
 -   公用和內部網路流量負載平衡。  
   
--   您使用 HYPER-V 網路虛擬化建立的虛擬網路和虛擬區域網路 (Vlan) 上，支援動態 IP 位址 (Dip)。  
+-   支援虛擬區域網路（Vlan）和您使用 Hyper-v 網路虛擬化所建立之虛擬網路上的動態 IP 位址（Dip）。  
   
 -   健康情況探查支援。  
   
--   雲端規模，包括向外延展功能，可供和 multiplexers 和主機代理程式擴充功能。  
+-   準備好進行雲端規模，包括向外延展功能，以及 multiplexers (和主機代理程式的相應增加功能。  
   
-如需詳細資訊，請參閱 <<c0> [ 軟體負載平衡功能](#bkmk_features)本主題中。  
+如需詳細資訊，請參閱本主題中的[軟體負載平衡功能](#bkmk_features)。  
   
 > [!NOTE]  
-> 網路控制卡所不支援 Vlan，多租用戶，不過，您可以使用 SLB 使用虛擬區域網路服務提供者管理的工作負載，例如資料中心基礎結構和高的密度網頁伺服器。  
+> 網路控制卡不支援 Vlan 的多租使用者，不過您可以針對服務提供者管理的工作負載（例如資料中心基礎結構和高密度 Web 服務器）使用具有 SLB 的 Vlan。  
   
-使用 Windows Server SLB，您可以相應放大您的負載平衡功能，使用您用於其他 VM 工作負載在相同 HYPER-V 計算伺服器上的 SLB Vm。 因為這個緣故，SLB 會支援的快速建立和刪除負載平衡端點所需的 CSP 的作業。 此外，Windows Server SLB 支援十幾個 gb，每個叢集，提供簡單的佈建模式，而且容易相應放大和縮小。  
+使用 Windows Server SLB，您可以在您用於其他 VM 工作負載的相同 Hyper-v 計算伺服器上，使用 SLB Vm 來相應放大您的負載平衡功能。 因此，SLB 支援快速建立和刪除 CSP 作業所需的負載平衡端點。 此外，Windows Server SLB 支援每個叢集數十 gb、提供簡單的布建模型，而且很容易相應放大和縮小。  
   
 **SLB 的運作方式**  
   
-SLB 的運作方式是將虛擬 IP 位址 (Vip) 對應到動態 IP 位址 (Dip) 是資料中心內各項資源的雲端服務集的一部分。  
+SLB 的運作方式是將虛擬 IP 位址（Vip）對應到屬於資料中心內雲端服務集合之一部分的動態 IP 位址（Dip）。  
   
-Vip 是負載的提供公用存取權的集區平衡 Vm 的單一 IP 位址。 比方說，Vip 會使租用戶和租用戶的客戶可以連線到雲端資料中心內的租用戶資源，在網際網路公開的 IP 位址。  
+Vip 是單一 IP 位址，可提供負載平衡 Vm 集區的公用存取權。 例如，Vip 是在網際網路上公開的 IP 位址，讓租使用者和租使用者客戶可以連線到雲端資料中心內的租使用者資源。  
   
-Dip 是成員的背後的 VIP 負載平衡集區 Vm 的 IP 位址。 Dip 指派給租用戶資源的雲端基礎結構內。  
+Dip 是在 VIP 後方的負載平衡集區之成員 Vm 的 IP 位址。 Dip 會指派給租使用者資源的雲端基礎結構內。  
   
-Vip 位在 SLB 多工器 (MUX)。  MUX 是由一或多個虛擬機器 (Vm) 所組成。  網路控制站提供使用每個 VIP，每個 MUX 和每個 MUX 依次使用邊界閘道通訊協定 (BGP) 通告每個 VIP 上實體網路為/32 的路由器的路由。  BGP 可讓實體網路路由器：  
+Vip 位於 SLB 多工器（MUX）中。  MUX 包含一或多部虛擬機器（Vm）。  網路控制站會為每個 VIP 提供每個 MUX，而每個 MUX 接著會使用邊界閘道協定（BGP），將每個 VIP 公告至實體網路上的路由器作為/32 路由。  BGP 允許實體網路路由器：  
   
--   了解 VIP 是用於每個 MUX，即使是在第 3 層網路中的不同子網路上的多工器。  
+-   瞭解每個 MUX 上都有可用的 VIP，即使 Mux 位於第3層網路中的不同子網也一樣。  
   
--   負載分散到每個 VIP 使用多重路徑 (ECMP) 路由的所有可用多工。  
+-   使用相同的成本多重路徑（ECMP）路由，將每個 VIP 的負載分散到所有可用的 Mux。  
   
 -   自動偵測 MUX 失敗或移除，並停止將流量傳送到失敗的 MUX。  
   
--   從失敗或已移除 MUX 負載分散到狀況良好的多工器。  
+-   在狀況良好的 Mux 中，將負載從失敗或移除的 MUX 分散。  
   
-從網際網路的公用流量時，SLB MUX 會檢查流量，包含做為目的地的 VIP 對應，以及重寫流量，因此它將會看見個別的 DIP。 輸入網路流量，此交易被利用 MUX 虛擬機器 (Vm) 與目的地 DIP 所在的 HYPER-V 主機之間分割成兩個步驟：  
+當公用流量從網際網路抵達時，SLB MUX 會檢查流量（其中包含 VIP 作為目的地），然後對應並重寫流量，使其抵達個別的 DIP。 對於輸入網路流量，此交易會在兩個步驟的程式中執行，該進程會在 MUX 虛擬機器（Vm）與目的地 DIP 所在的 Hyper-v 主機之間分割：  
   
--   負載平衡-MUX 使用的 VIP，以選取 DIP，封裝的封包，並將流量轉送到 DIP 所在的 HYPER-V 主機。  
+-   負載平衡-MUX 會使用 VIP 來選取 DIP、封裝封包，並將流量轉送至 DIP 所在的 Hyper-v 主機。  
   
--   網路位址轉譯 (NAT)-HYPER-V 主機移除封裝從封包、 轉譯到 DIP VIP、 重新對應連接埠，並將封包轉送到 DIP 的 VM。  
+-   網路位址轉譯（NAT）-Hyper-v 主機會從封包移除封裝、將 VIP 轉譯為 DIP、重新對應埠，然後將封包轉送至 DIP VM。  
   
-MUX 知道如何將 Vip 對應至正確的 Dip，因為負載平衡原則，您可以使用網路控制卡定義。 這些規則包括通訊協定、 前端連接埠、 後端連接埠，以及分配演算法 (5，3，或 2 的 tuple)。  
+MUX 知道如何將 Vip 對應到正確的 Dip，因為您使用網路控制站定義的負載平衡原則。 這些規則包括通訊協定、前端埠、後端埠，以及散發演算法（5、3或2個元組）。  
   
-當租用戶 Vm 回應並傳送輸出網路流量回到網際網路或在遠端租用戶位置，因為 NAT 由 HYPER-V 主機，而流量會略過 MUX，並會直接移至邊緣路由器從 HYPER-V 主機。 這個 MUX 略過處理程序稱為 Direct Server Return (DSR)。  
+當租使用者 Vm 回應並將輸出網路流量傳送回網際網路或遠端租使用者位置時，因為 NAT 是由 Hyper-v 主機執行，所以流量會略過 MUX，並從 Hyper-v 主機直接前往邊緣路由器。 此 MUX 略過程式稱為 Direct Server Return （DSR）。  
   
-並將傳入的網路流量建立初始的網路流量流程之後，完全略過 SLB MUX。  
+建立初始網路流量之後，輸入網路流量就會完全略過 SLB MUX。  
   
-在下圖中，用戶端電腦會執行公司 SharePoint 站台-在此情況下，名為 Contoso 的虛構公司的 IP 位址的 DNS 查詢。 下列程序就會發生。  
+在下圖中，用戶端電腦會針對公司 SharePoint 網站的 IP 位址執行 DNS 查詢-在此案例中，是名為 Contoso 的虛構公司。 會發生下列進程。  
   
--   DNS 伺服器會傳回給用戶端的 VIP 107.105.47.60。  
+-   DNS 伺服器會將 VIP 107.105.47.60 傳回給用戶端。  
   
--   用戶端會傳送 HTTP 要求到 VIP。  
+-   用戶端會將 HTTP 要求傳送至 VIP。  
   
--   實體網路具有多個路徑可用來連線到位於任何 MUX 的 VIP。  在過程中每個路由器使用 ECMP，挑選下一個區段的路徑，直到要求抵達 MUX。  
+-   實體網路有多個路徑可供連線到位於任何 MUX 上的 VIP。  沿著這種方式，每個路由器都會使用 ECMP 來挑選路徑的下一個區段，直到要求抵達 MUX 為止。  
   
--   接收要求 MUX 檢查設定的原則，並看到有兩個下降，10.10.10.5 和 10.10.20.5，來處理要求至 VIP 107.105.47.60 虛擬網路上  
+-   接收要求的 MUX 會檢查已設定的原則，並看到虛擬網路上有兩個可用的 Dip （10.10.10.5 和10.10.20.5），以處理對 VIP 107.105.47.60 的要求。  
   
--   MUX 選取 DIP 10.10.10.5，並使用 VXLAN，因此它可以傳送給包含 DIP 使用主機的主機實體網路位址的封包封裝。  
+-   MUX 會選取 DIP 10.10.10.5，並使用 VXLAN 封裝封包，使其可以使用主機實體網路位址將它傳送至包含 DIP 的主機。  
   
--   主應用程式收到封裝的封包，並檢查它。  它會移除封裝，並讓目的地現在是 DIP 10.10.10.5 而不是 VIP，並將流量傳送到 DIP 的 VM，請重寫封包。  
+-   主機會接收封裝的封包並加以檢查。  它會移除封裝並重寫封包，讓目的地現在是 DIP 10.10.10.5，而不是 VIP，並將流量傳送至 DIP VM。  
   
--   要求現在已達到伺服器陣列 2 Contoso SharePoint 網站。 伺服器會產生回應，並將它傳送到用戶端，使用自己的 IP 位址作為來源。  
+-   要求現在已到達伺服器陣列2中的 Contoso SharePoint 網站。 伺服器會產生回應，並使用自己的 IP 位址做為來源，將它傳送至用戶端。  
   
--   主應用程式會攔截傳出的封包中的虛擬交換器，這會記住，用戶端，現在的目的地，原始要求對 VIP。  主應用程式重寫為 VIP，因此，用戶端不會看到的 DIP 位址的封包的來源。  
+-   主機會攔截虛擬交換器中的傳出封包，這會記住用戶端（現在是目的地）已對 VIP 提出原始要求。  主機會將封包的來源重寫為 VIP，讓用戶端看不到 DIP 位址。  
   
--   主應用程式會將轉送的封包，直接向它轉送至用戶端，最終會在收到回應封包會使用其標準的路由表的實體網路的預設閘道。  
+-   主機會將封包直接轉送至實體網路的預設閘道，而該閘道會使用其標準路由表將封包轉送到最後接收回應的用戶端。  
   
-![軟體負載平衡程序](../../../media/Software-Load-Balancing--SLB--for-SDN/slb_process.jpg)  
+![軟體負載平衡程式](../../../media/Software-Load-Balancing--SLB--for-SDN/slb_process.jpg)  
   
-**負載平衡內部的資料中心流量**  
+**負載平衡內部資料中心流量**  
   
-何時負載平衡網路流量內部的資料中心，例如之間不同的伺服器上執行，而且是成員的相同虛擬網路的租用戶資源，Vm 會連線到 HYPER-V 虛擬交換器執行 nat。  
+當負載平衡資料中心內部的網路流量（例如，在不同伺服器上執行的租使用者資源，以及相同虛擬網路的成員）時，Vm 連線的 Hyper-v 虛擬交換器會執行 NAT。  
   
-負載平衡內部流量，第一個要求會傳送至，並處理 MUX，選取適當的 DIP，並將流量路由傳送到 DIP。 從該點之後，已建立的流量會略過 MUX，並直接從 VM 移至 VM。  
+使用內部流量負載平衡時，第一個要求會傳送至 MUX 並由 MUX 處理，這會選取適當的 DIP 並將流量路由傳送至 DIP。 從該時間點開始，已建立的流量會略過 MUX，並直接從 VM 移至 VM。  
   
 **健康情況探查**  
   
-SLB 會包含要驗證的網路基礎結構，包括下列健全狀況的健全狀況探查。  
+SLB 包含健康情況探查，可驗證網路基礎結構的健康情況，包括下列各項。  
   
--   連接埠的 TCP 探查  
+-   TCP 探查至埠  
   
--   若要連接埠和 URL 的 HTTP 探查  
+-   HTTP 探查至埠和 URL  
   
-不同於傳統負載平衡器裝置探查起始應用裝置上的位置，並會透過網路傳輸到 DIP，源自其中 DIP 的所在位置，而影片會直接從 SLB 主機代理程式，以進一步散發的 DIP 在主機上的 SLB 探查運作的各個主機。  
+不同于傳統負載平衡器設備，其中探查是在應用裝置上進行，並透過網路傳輸至 DIP，SLB 探查會在 DIP 所在的主機上產生，並直接從 SLB 主機代理程式傳送至 DIP，進一步發佈跨主機工作。  
   
-## <a name="bkmk_infrastructure"></a>軟體負載平衡的基礎結構  
-若要部署 Windows Server SLB，您必須先部署 Windows Server 2016 中的網路控制站和一個或多個 SLB MUX Vm。  
+## <a name="bkmk_infrastructure"></a>軟體負載平衡基礎結構  
+若要部署 Windows Server SLB，您必須先在 Windows Server 2016 中部署網路控制站，以及一或多個 SLB MUX Vm。  
   
-此外，您必須使用 SDN 啟用 HYPER-V 虛擬交換器設定 HYPER-V 主機，並確定 SLB 主機代理程式正在執行。  服務主機的路由器必須支援相同成本多重路徑 (ECMP) 路由和邊界閘道通訊協定 (BGP)，而且必須設定為接受來自 SLB Mux 的 BGP 對等互連要求。  
+此外，您必須使用已啟用 SDN 的 Hyper-v 虛擬交換器來設定 Hyper-v 主機，並確定 SLB 主機代理程式正在執行。  服務主機的路由器必須支援相等的成本多重路徑（ECMP）路由和邊界閘道協定（BGP），而且必須設定為接受 SLB Mux 的 BGP 對等互連要求。  
   
-以下是 SLB 基礎結構的概觀。  
+以下是 SLB 基礎結構的總覽。  
 
-![軟體負載平衡的基礎結構](../../../media/Software-Load-Balancing--SLB--for-SDN/slb_overview1.png)  
+![軟體負載平衡基礎結構](../../../media/Software-Load-Balancing--SLB--for-SDN/slb_overview1.png)  
   
-下列各節提供有關這些元素的 SLB 基礎結構的詳細資訊。  
+下列各節提供 SLB 基礎結構的這些元素的詳細資訊。  
   
 ### <a name="scvmm"></a>SCVMM  
-使用 System Center 2016，您可以包括 SLB 管理員和健全狀況監視的 Windows Server 2016 上設定網路控制站。 您也可以使用 System Center 部署 SLB MUXs，以及安裝在執行 Windows Server 2016 和 HYPER-V 的電腦上的 SLB 主機代理程式。  
+使用 System Center 2016，您可以在 Windows Server 2016 上設定網路控制站，包括 SLB 管理員和健全狀況監視。 您也可以使用 System Center 來部署 SLB MUXs，以及在執行 Windows Server 2016 和 Hyper-v 的電腦上安裝 SLB 主機代理程式。  
   
-如需有關 System Center 2016 的詳細資訊，請參閱 < [System Center 2016](https://www.microsoft.com/server-cloud/products/system-center-2016/)。  
+如需 System Center 2016 的詳細資訊，請參閱[System center 2016](https://www.microsoft.com/server-cloud/products/system-center-2016/)。  
   
 > [!NOTE]  
-> 如果您不想要使用 System Center 2016，您可以使用 Windows PowerShell 或其他管理應用程式來安裝和設定網路控制站和其他 SLB 基礎結構。 如需詳細資訊，請參閱 <<c0> [ 部署網路控制站使用 Windows PowerShell](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)。  
+> 如果您不想要使用 System Center 2016，您可以使用 Windows PowerShell 或其他管理應用程式來安裝和設定網路控制站和其他 SLB 基礎結構。 如需詳細資訊，請參閱[使用 Windows PowerShell 部署網路控制](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)站。  
   
 ### <a name="network-controller"></a>網路控制卡  
-網路控制站裝載 SLB 管理員，並執行下列動作的 SLB。  
+網路控制卡會裝載 SLB 管理員，並針對 SLB 執行下列動作。  
   
--   處理來自 Northbound API 透過 System Center、 Windows PowerShell 或其他網路管理應用程式的 SLB 命令。  
+-   處理透過 Northbound API 從 System Center、Windows PowerShell 或其他網路管理應用程式傳入的 SLB 命令。  
   
--   計算以散發給 HYPER-V 主機和 SLB Mux 的原則。  
+-   計算散發至 Hyper-v 主機和 SLB Mux 的原則。  
   
--   提供的 SLB 基礎結構的健全狀況狀態。  
+-   提供 SLB 基礎結構的健全狀況狀態。  
   
 ### <a name="slb-mux"></a>SLB MUX  
-SLB MUX 處理輸入的網路流量，並將 Vip 對應到 Dip，然後將流量轉送到正確的 DIP。 每個 MUX 也會使用 BGP 將 VIP 路由發佈至邊緣路由器。 保持運作 BGP 通知 MUX 失敗時，可讓作用中的多工器，以便分散故障 MUX-本質上提供的負載平衡器的 負載平衡負載的多工器。  
+SLB MUX 會處理輸入網路流量，並將 Vip 對應至 Dip，然後將流量轉送至正確的 DIP。 每個 MUX 也會使用 BGP 將 VIP 路由發佈到邊緣路由器。 當 MUX 失敗時，BGP Keep-alive 會通知 Mux，這可讓作用中的 Mux 在發生 MUX 失敗時重新發佈負載，基本上是提供負載平衡器的負載平衡。  
   
-### <a name="hosts-that-are-running-hyper-v"></a>執行 HYPER-V 的主機  
-您可以使用 SLB，與執行 Windows Server 2016 和 HYPER-V 的電腦。 HYPER-V 主機上的 Vm 可以執行任何 HYPER-V 所支援的作業系統。  
+### <a name="hosts-that-are-running-hyper-v"></a>執行 Hyper-v 的主機  
+您可以使用 SLB 搭配執行 Windows Server 2016 和 Hyper-v 的電腦。 Hyper-v 主機上的 Vm 可以執行 Hyper-v 所支援的任何作業系統。  
   
 ### <a name="slb-host-agent"></a>SLB 主機代理程式  
-當您部署 SLB 時，則您必須使用 System Center、 Windows PowerShell 或其他管理應用程式，來部署 SLB 主機代理程式，每個 HYPER-V 主機電腦上。 您可以在 Windows Server 2016 的 HYPER-V 支援，包括 Nano 伺服器的所有版本上安裝 SLB 主機代理程式。  
+當您部署 SLB 時，您必須使用 System Center、Windows PowerShell 或其他管理應用程式，在每部 Hyper-v 主機電腦上部署 SLB 主機代理程式。 您可以在提供 Hyper-v 支援的所有 Windows Server 2016 版本（包括 Nano 伺服器）上安裝 SLB 主機代理程式。  
   
-SLB 主機代理程式會接聽從網路控制站的 SLB 原則更新。 此外，主機代理程式的程式規則的 SLB 到 SDN 啟用 HYPER-V 虛擬交換器設定本機電腦上。  
+SLB 主機代理程式會從網路控制卡接聽 SLB 原則更新。 此外，主機代理程式會在本機電腦上設定為啟用 SDN 的 Hyper-v 虛擬交換器中的 SLB 規則。  
   
-### <a name="sdn-enabled-hyper-v-virtual-switch"></a>SDN 啟用 HYPER-V 虛擬交換器  
-SLB，相容的虛擬交換器的您必須使用 HYPER-V 虛擬交換器管理員] 或 [Windows PowerShell 命令來建立交換器，然後再您必須啟用虛擬篩選平台 (VFP) 虛擬交換器。  
+### <a name="sdn-enabled-hyper-v-virtual-switch"></a>已啟用 SDN 的 Hyper-v 虛擬交換器  
+若要讓虛擬交換器與 SLB 相容，您必須使用 Hyper-v 虛擬交換器管理員或 Windows PowerShell 命令來建立交換器，然後您必須啟用虛擬交換器的虛擬篩選平臺（VFP）。  
   
-在 虛擬交換器上啟用 VFP 的資訊，請參閱 Windows PowerShell 命令[Get-vmsystemswitchextension](https://technet.microsoft.com/library/hh848603.aspx)並[Enable-vmswitchextension](https://technet.microsoft.com/library/hh848541.aspx?f=255&MSPPError=-2147217396)。  
+如需在虛擬交換器上啟用 VFP 的詳細資訊，請參閱 Windows PowerShell 命令[get-vmsystemswitchextension](https://technet.microsoft.com/library/hh848603.aspx)和[Enable-VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx?f=255&MSPPError=-2147217396)。  
   
-SDN 啟用 HYPER-V 虛擬交換器的 SLB 執行下列動作。  
+SDN 已啟用的 Hyper-v 虛擬交換器會針對 SLB 執行下列動作。  
   
--   SLB 處理的資料路徑。  
+-   處理 SLB 的資料路徑。  
   
--   從 MUX 接收輸入的網路流量。  
+-   接收來自 MUX 的輸入網路流量。  
   
--   會略過輸出網路流量，將它傳送給 DSR 路由器的 MUX。  
+-   略過輸出網路流量的 MUX，使用 DSR 將它傳送至路由器。  
   
--   在 Nano Server 執行個體的 HYPER-V 上執行。  
+-   在 Hyper-v 的 Nano Server 實例上執行。  
   
 ### <a name="bgp-enabled-router"></a>已啟用 BGP 的路由器  
-BGP 路由器的 SLB 執行下列動作。  
+BGP 路由器會針對 SLB 執行下列動作。  
   
--   若要使用 ECMP MUX 輸入的流量的路由。  
+-   使用 ECMP 將輸入流量路由傳送至 MUX。  
   
--   對於輸出網路流量，會使用主應用程式所提供的路由。  
+-   對於輸出網路流量，會使用主機所提供的路由。  
   
--   會接聽路由更新從 SLB MUX 的 Vip。  
+-   從 SLB MUX 接聽 Vip 的路由更新。  
   
--   如果保持運作失敗，則您可以移除 SLB 旋轉 SLB Mux。  
+-   如果保持運作失敗，則從 SLB 旋轉移除 SLB Mux。  
   
 ## <a name="bkmk_features"></a>軟體負載平衡功能  
-以下是一些功能和 SLB 的功能。  
+以下是 SLB 的部分特性和功能。  
   
 **核心功能**  
   
--   SLB 會提供第 4 層負載平衡 '北-南' 和 '東-西' TCP/UDP 流量的服務  
+-   SLB 為「北-南部」和「美國東部」 TCP/UDP 流量提供第4層負載平衡服務  
   
--   您可以使用 HYPER-V 網路虛擬化型網路上的 SLB  
+-   您可以在 Hyper-v 網路虛擬化為基礎的網路上使用 SLB  
   
--   您可以使用 SLB 與 VLAN 型網路，適用於 DIP 的 Vm 連線至 SDN 啟用 HYPER-V 虛擬交換器。  
+-   您可以針對連線到已啟用 SDN 的 Hyper-v 虛擬交換器的 DIP Vm，使用 SLB 搭配 VLAN 型網路。  
   
--   一個的 SLB 執行個體可以處理多個租用戶  
+-   一個 SLB 實例可以處理多個租使用者  
   
--   SLB 和 DIP 支援可調整且低延遲的傳回路徑，因為實作由 Direct Server Return (DSR)  
+-   SLB 和 DIP 支援可調整且低延遲的傳回路徑，如同由 Direct Server Return （DSR）所實行  
   
--   您也會使用 Switch Embedded Teaming (SET) 或單一根目錄輸入/輸出虛擬化 (SR-IOV) 時的 SLB 函式  
+-   當您也使用交換器內嵌小組（SET）或單一根目錄輸入/輸出虛擬化（SR-IOV）時的 SLB 函數  
   
--   SLB 包含網際網路通訊協定第 4 版 (IPv4) 支援  
+-   SLB 包含網際網路通訊協定第4版（IPv4）支援  
   
--   站對站閘道的情況下，SLB 提供 NAT 功能，可讓所有的站對站連線，以利用單一公用 IP  
+-   針對站對站閘道案例，SLB 提供 NAT 功能，可讓所有站對站連線使用單一公用 IP  
   
--   您可以安裝 SLB，包括完整的主機代理程式和 MUX，Windows Server 2016，、 Core 和 Nano 安裝。  
+-   您可以在 Windows Server 2016、完整版、核心版和 Nano 安裝上安裝 SLB，包括主機代理程式和 MUX。  
   
-**規模和效能**  
+**規模與效能**  
   
--   雲端規模，包括向外延展功能，可供與多工器和主機代理程式擴充功能。  
+-   準備好進行雲端規模，包括向外延展功能，以及 Mux 和主機代理程式的相應增加功能。  
   
--   一個使用中的 SLB 管理員網路控制器模組可支援 8 個 MUX 執行個體  
+-   一個有效的 SLB 管理員網路控制卡模組可支援8個 MUX 實例  
   
 **高可用性**  
   
--   您可以將 SLB 部署至主動/主動組態中的 2 個以上節點  
+-   在主動/主動設定中，您可以將 SLB 部署到2個以上的節點  
   
--   多工器可以新增或移除 MUX 集區，而不會影響的 SLB 服務。 這樣會維護 SLB 可用性時   
-    正在修補個別的多工器。  
+-   Mux 可以從 MUX 集區新增和移除，而不會影響 SLB 服務。 這會在下列情況下維護 SLB 可用性   
+    正在修補個別 Mux。  
   
--   個別的 MUX 執行個體都有 99%的執行時間  
+-   個別的 MUX 實例具有 99% 的執行時間  
   
--   健全狀況監視資料可供管理實體  
+-   健全狀況監視資料可供管理實體使用  
   
-**對齊方式**  
+**對齊**  
   
--   您可以部署和設定 SCVMM SLB  
+-   您可以使用 SCVMM 部署和設定 SLB  
   
--   SLB 會提供多租用戶的統一的邊緣，順暢地整合與 Microsoft 設備，例如 RAS 多租用戶閘道、 資料中心防火牆和路由反映程式。  
+-   SLB 藉由與 Microsoft 應用裝置緊密整合，例如 RAS 多租使用者閘道、資料中心防火牆和路由反映程式，提供多租使用者整合的優勢。  
   
 
