@@ -1,25 +1,25 @@
 ---
-title: List shadows
-description: Vssadmin 清單的描述會遮蔽命令。
-ms.prod: windows-server-threshold
+title: Vssadmin 清單陰影
+description: Vssadmin list shadows 命令的描述。
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3601986a51e8c5b362a28c686ed132eda8e4b640
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 49bee3deac463b68fda94097bb183bcbf1c89810
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63706567"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362589"
 ---
-# <a name="vssadmin-list-shadows"></a>List shadows
+# <a name="vssadmin-list-shadows"></a>Vssadmin 清單陰影
 
->適用於：Windows 10，Windows 8.1，Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012、 Windows Server 2008 R2、 Windows Server 2008
+>適用於：Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-列出所有現有的指定磁碟區的陰影複本。 如果您使用此命令不加任何參數，它會依照順序在電腦上顯示所有磁碟區陰影複製**陰影複製設定**。
+列出指定磁片區的所有現有陰影複製。 如果您在沒有參數的情況下使用此命令，它會依**陰影複製組所規定**的順序，顯示電腦上的所有磁片區陰影複製。
 
 ## <a name="syntax"></a>語法
 
@@ -31,10 +31,10 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 
 |參數|描述|
 |---|---|
-|/for=\<ForVolumeSpec>|指定將針對列出的陰影複製的磁碟區。|
-|/shadow=\<ShadowID>|列出 ShadowID 所指定的陰影複製。 若要取得的陰影複製識別碼，請使用**list shadows**命令。 當您輸入陰影複製識別碼，使用下列格式，其中每個*X*代表十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/for = \<ForVolumeSpec >|指定將為其列出陰影複製的磁片區。|
+|/shadow = \<ShadowID >|列出 ShadowID 所指定的陰影複製。 若要取得陰影複製識別碼，請使用**vssadmin list shadows**命令。 當您輸入陰影複製識別碼時，請使用下列格式，其中每個*X*代表一個十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXX）|
 
 ## <a name="additional-references"></a>其他參考資料
 
-* [命令列語法關鍵](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
+* [命令列語法索引鍵](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [Vssadmin](vssadmin.md)

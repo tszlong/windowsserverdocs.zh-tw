@@ -1,8 +1,8 @@
 ---
 title: 其中
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ff50405dd53ee383abc8e13f67befecf73e37c1d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: abebe5799075653d2ace1af4eadbdd5d477d97a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832449"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362164"
 ---
 # <a name="where"></a>其中
 
 
 
-顯示符合指定之搜尋模式之檔案的位置。
+顯示符合指定搜尋模式之檔案的位置。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,21 +38,21 @@ where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...]
 
 |參數|描述|
 |---------|-----------|
-|/r \<Dir>|表示遞迴搜尋，開頭為指定的目錄。|
-|/q|傳回的結束代碼 (**0**成功時，如**1**失敗) 而不會顯示相符的檔案清單。|
-|/f|顯示的結果**其中**命令在引號內。|
-|/t|顯示檔案大小和上次修改的日期和時間的每個相符的檔案。|
-|[$\<ENV >:\|\<路徑 >:]\<模式 > [...]|指定檔案，以符合搜尋的模式。 至少一個模式，而且模式可以包含萬用字元 (**&#42;** 並 **？**)。 根據預設，**其中**搜尋目前的目錄與路徑環境變數中指定的路徑。 您可以指定不同的路徑，若要搜尋使用格式 $*ENV*:*模式*(其中*ENV*是現有環境變數，其中包含一或多個路徑) 或使用格式*路徑*:*模式*(其中*路徑*是您想要搜尋的目錄路徑)。 這些選擇性的格式不應使用 **/r**命令列選項。|
+|/r \<Dir >|表示遞迴搜尋，從指定的目錄開始。|
+|/q|傳回結束代碼（**0**表示成功， **1**表示失敗），而不顯示相符檔案的清單。|
+|/f|以引號顯示**where**命令的結果。|
+|一起|顯示每個相符檔案的檔案大小和上次修改日期和時間。|
+|[$ \<ENV >： \| @ no__t-2Path >：] \<Pattern > [...]|指定要比對之檔案的搜尋模式。 至少需要一個模式，而且該模式可以包含萬用字元（ **&#42;** 和 **？** ）。 根據預設，會**在其中**搜尋目前目錄，以及在 PATH 環境變數中指定的路徑。 您可以指定不同的路徑來搜尋，方法是使用 $*ENV*：*pattern*格式（其中*ENV*是包含一或多個路徑的現有環境變數），或使用格式*path*：*pattern* （其中*path*是您想要搜尋的目錄路徑）。 這些選用格式不應與 **/r**命令列選項搭配使用。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   如果您未指定副檔名，PATHEXT 環境變數中所列的延伸模組預設會附加模式。
--   **其中**可以執行遞迴搜尋，顯示檔案的資訊，例如日期或大小，並接受環境變數來取代在本機電腦上的路徑。
+-   如果您未指定副檔名，PATHEXT 環境變數中所列的延伸模組預設會附加至模式。
+-   **其中**可以執行遞迴搜尋、顯示日期或大小等檔案資訊，並接受環境變數來取代本機電腦上的路徑。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要尋找名為 Test，目前的電腦和其子目錄的 C 磁碟機中的所有檔案，請輸入：
+若要在目前電腦及其子目錄的磁片磁碟機 C 中尋找名為 Test 的所有檔案，請輸入：
 ```
 where /r c:\ test 
 ```
@@ -60,7 +60,7 @@ where /r c:\ test
 ```
 where $public:*.*
 ```
-若要尋找名為 「 記事本 」，遠端電腦的 C 磁碟機中的所有檔案，分別是 Computer1 和其子目錄中，輸入：
+若要在遠端電腦的 C 磁片磁碟機、Computer1 及其子目錄中尋找名為 [記事本] 的所有檔案，請輸入：
 ```
 where /r \\computer1\c notepad.*
 ```

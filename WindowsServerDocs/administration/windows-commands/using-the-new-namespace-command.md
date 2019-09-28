@@ -1,8 +1,8 @@
 ---
-title: 使用新命名空間命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用新的-Namespace 命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50d51101afe95c99b7034fc50b3d30b799ee02ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1df6634bc7598701db050f3d240e41dbb6f06019
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363013"
 ---
-# <a name="using-the-new-namespace-command"></a>使用新命名空間命令
+# <a name="using-the-new-namespace-command"></a>使用新的-Namespace 命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立並設定新的命名空間。 當您有只傳輸伺服器角色服務安裝時，您應該使用此選項。 如果您有部署伺服器角色服務和傳輸伺服器角色服務安裝 （這是預設值），請使用[使用新 MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 請注意，您必須先註冊內容提供者，才能使用此選項。
+建立並設定新的命名空間。 當您只安裝傳輸伺服器角色服務時，應該使用此選項。 如果您已安裝「部署伺服器」角色服務和「傳輸伺服器」角色服務（這是預設值），請使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 請注意，在使用此選項之前，您必須先註冊內容提供者。
 ## <a name="syntax"></a>語法
 ```
 wdsutil [Options] /New-Namespace [/Server:<Server name>]
@@ -40,25 +40,25 @@ wdsutil [Options] /New-Namespace [/Server:<Server name>]
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|[/ 伺服器：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整的網域名稱 (FQDN)。 如果沒有指定伺服器名稱時，會使用本機伺服器。|
-|/Friendlyname:<Friendly name>|指定的命名空間的易記名稱。|
-|[/ 描述：<Description>]|設定命名空間的描述。|
-|/ 命名空間：<Namespace name>|指定的命名空間名稱。 請注意，這不是易記的名稱，它必須是唯一的。<br /><br />-   **部署伺服器角色服務**:此選項的語法是 /Namespace:WDS:<Image group>/<Image name>/<Index>。 例如: **WDS:ImageGroup1/install.wim/1**<br />-   **傳輸伺服器角色服務**:這個值應該符合伺服器上建立命名空間時提供的名稱。|
-|/ContentProvider:<Name>]|指定的命名空間會提供內容的內容提供者的名稱。|
-|[/ConfigString:<Configuration string>]|指定內容的提供者的組態字串。|
-|/Namespacetype: {AutoCast &#124; ScheduledCast}|指定傳輸設定。 您指定的設定，使用下列選項：<br /><br />-[/time: <time>]-設定傳輸應使用下列格式啟動的時間：YYYY/MM/y。 此選項僅適用於排程傳送 」 傳輸。<br />-[/ 用戶端： <Number of clients>]-設定用戶端傳輸啟動之前要等待的最小數目。 此選項僅適用於排程傳送 」 傳輸。|
-## <a name="BKMK_examples"></a>範例
-若要建立自動傳送命名空間，請輸入：
+|[/Server： <Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|/FriendlyName： <Friendly name>|指定命名空間的易記名稱。|
+|/Description<Description>]|設定命名空間的描述。|
+|/Namespace： <Namespace name>|指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<br /><br />-   **部署伺服器角色服務**：此選項的語法為/Namespace： WDS： <Image group> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4。 例如: **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：這個值應該符合在伺服器上建立命名空間時所指定的名稱。|
+|/ContentProvider： <Name>]|指定將為命名空間提供內容的內容提供者名稱。|
+|[/ConfigString： <Configuration string>]|指定內容提供者的設定字串。|
+|/Namespacetype： {AutoCast &#124; ScheduledCast}|指定傳輸的設定。 您可以使用下列選項來指定設定：<br /><br />-[/time： <time>]-設定傳輸應使用下列格式啟動的時間：YYYY/MM/DD： hh： MM。 此選項只適用于已排程的轉換傳輸。<br />-[/Clients： <Number of clients>]-設定要在傳輸開始前等待的最小用戶端數目。 此選項只適用于已排程的轉換傳輸。|
+## <a name="BKMK_examples"></a>典型
+若要建立自動轉換命名空間，請輸入：
 ```
 wdsutil /New-Namespace /FriendlyName:"Custom AutoCast Namespace" /Namespace:"Custom Auto 1" /ContentProvider:MyContentProvider /Namespacetype:AutoCast
 ```
-若要建立排程傳送命名空間，請輸入：
+若要建立排程轉換命名空間，請輸入：
 ```
 wdsutil /New-Namespace /Server:MyWDSServer /FriendlyName:"Custom Scheduled Namespace" /Namespace:"Custom Auto 1" /ContentProvider:MyContentProvider 
 /Namespacetype:ScheduledCast /time:"2006/11/20:17:00" /Clients:20
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[使用 get AllNamespaces 命令](using-the-get-allnamespaces-command.md)
-[使用 移除命名空間命令](using-the-remove-namespace-command.md)
- [子命令： 開始命名空間](subcommand-start-namespace.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+[使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md)
+[使用 remove-Namespace 命令](using-the-remove-namespace-command.md)
+[子命令： start-namespace](subcommand-start-namespace.md)

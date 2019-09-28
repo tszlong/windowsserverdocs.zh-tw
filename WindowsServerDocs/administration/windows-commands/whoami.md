@@ -1,8 +1,8 @@
 ---
 title: whoami
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6844ba001c2ebd7407b77f97204069a48a1b595b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9731ba3be3983eb53ade88fceaee863800229084
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362139"
 ---
 # <a name="whoami"></a>whoami
 
 
 
-顯示目前登入本機系統的使用者的使用者、 群組和權限資訊。 如果未指定參數，使用**whoami**會顯示目前的網域和使用者名稱。
+顯示目前登入本機系統之使用者的使用者、群組和許可權資訊。 如果使用時不含參數， **whoami**會顯示目前的網域和使用者名稱。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -40,28 +40,28 @@ whoami /all [/fo <Format>] [/nh]
 
 |參數|描述|
 |---------|-----------|
-|/upn|在 使用者主體名稱 (UPN) 格式顯示的使用者名稱。|
-|/fqdn|完整的網域名稱 (FQDN) 格式顯示的使用者名稱。|
+|/upn|顯示使用者主體名稱（UPN）格式的使用者名稱。|
+|/fqdn|以完整功能變數名稱（FQDN）格式顯示使用者名稱。|
 |/logonid|顯示目前使用者的登入識別碼。|
-|/user|顯示目前的網域和使用者名稱和安全性識別碼 (SID)。|
+|/user|顯示目前的網域和使用者名稱以及安全識別碼（SID）。|
 |/groups|顯示目前使用者所屬的使用者群組。|
-|/priv|顯示目前使用者的安全性權限。|
-|/fo\<格式 >|指定輸出格式。 有效值包括：</br>**資料表**以表格顯示輸出。 這是預設值。</br>**清單**會以清單顯示輸出。</br>**csv**以逗號分隔值 (CSV) 格式顯示輸出。|
-|/all|顯示目前的存取權杖，包括目前的使用者名稱、 安全性識別元 (SID)、 權限，以及目前使用者所屬的群組中所有的資訊。|
-|/nh|指定不應該在輸出中顯示資料行標頭。 這是僅適用於資料表和 CSV 格式。|
+|/priv|顯示目前使用者的安全性許可權。|
+|/fo \<Format >|指定輸出格式。 有效的值包括:</br>**資料表**在資料表中顯示輸出。 這是預設值。</br>**清單**顯示清單中的輸出。</br>**csv**以逗號分隔值（CSV）格式顯示輸出。|
+|/all|顯示目前存取權杖中的所有資訊，包括目前使用者的名稱、安全識別碼（SID）、許可權，以及目前使用者所屬的群組。|
+|/nh|指定不應該在輸出中顯示資料行標題。 這只對資料表和 CSV 格式有效。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要顯示目前登入此電腦之人員的網域和使用者名稱，請輸入：
+若要顯示目前登入這部電腦之人員的網域和使用者名稱，請輸入：
 ```
 whoami
 ```
-此時會出現如下所示的輸出：
+輸出如下所示：
 ```
 DOMAIN1\administrator
 ```
-若要在目前的存取權杖中顯示的所有資訊，請輸入：
+若要顯示目前存取權杖中的所有資訊，請輸入：
 ```
 whoami /all
 ```

@@ -1,9 +1,9 @@
 ---
-title: 步驟 2 設定 RADIUS 伺服器
-description: 本主題是 Windows Server 2016 中的 OTP 驗證部署遠端存取快速入門的一部分。
+title: 步驟2設定 RADIUS 伺服器
+description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署遠端存取指南的一部分。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,49 +12,49 @@ ms.topic: article
 ms.assetid: 0326818f-9144-496c-b946-f82be4eefbd3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9c111ce52f2cca0cc37ea4d5b873c5fde12bce18
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 00ea76d6995f875e509a3bc9ef0bab3d2689c52b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367026"
 ---
-# <a name="step-2-configure-the-radius-server"></a>步驟 2 設定 RADIUS 伺服器
+# <a name="step-2-configure-the-radius-server"></a>步驟2設定 RADIUS 伺服器
 
->適用於：Windows Server （半年通道），Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-設定遠端存取伺服器支援之前 DirectAccess OTP 與支援、 設定 RADIUS 伺服器。  
+設定遠端存取服務器以支援具有 OTP 支援的 DirectAccess 之前，您必須先設定 RADIUS 伺服器。  
   
 |工作|描述|  
 |----|--------|  
-|[2.1.設定 RADIUS 軟體發佈權杖](#BKMK_1.1)|RADIUS 伺服器上設定軟體發佈語彙基元。|  
-|[2.2.設定 RADIUS 安全性資訊](#BKMK_1.2)|RADIUS 伺服器上設定的連接埠與要使用的共用的密碼。|  
-|[2.3 新增使用者帳戶的 OTP 探查](#BKMK_Probe)|RADIUS 伺服器上建立新的使用者帳戶，對於 OTP 探查。|  
-|[2.4 與 Active Directory 同步](#BKMK_Active)|RADIUS 伺服器上建立使用者帳戶與 Active Directory 帳戶進行同步處理。|  
-|[2.5 設定 RADIUS 驗證代理程式](#BKMK_AuthAgent)|設定遠端存取伺服器做為 RADIUS 驗證代理程式。|  
+|[2.1。設定 RADIUS 軟體發佈權杖 @ no__t-0|在 RADIUS 伺服器上設定軟體發佈權杖。|  
+|[2.2。設定 RADIUS 安全性資訊 @ no__t-0|在 RADIUS 伺服器上，設定要使用的埠和共用密碼。|  
+|[2.3 新增 OTP 探查的使用者帳戶](#BKMK_Probe)|在 RADIUS 伺服器上，為 OTP 探查建立新的使用者帳戶。|  
+|[2.4 與 Active Directory 同步處理](#BKMK_Active)|在 RADIUS 伺服器上，建立與 Active Directory 帳戶同步處理的使用者帳戶。|  
+|[2.5 設定 RADIUS 驗證代理程式](#BKMK_AuthAgent)|將遠端存取服務器設定為 RADIUS 驗證代理程式。|  
   
-## <a name="BKMK_1.1"></a>2.1 設定 RADIUS 軟體發佈語彙基元  
-所需的授權與 DirectAccess OTP 與所使用的軟體和/或硬體發佈語彙基元，必須設定 RADIUS 伺服器。 此程序將會每個 RADIUS 廠商實作特有的。  
+## <a name="BKMK_1.1"></a>2.1 設定 RADIUS 軟體發佈權杖  
+RADIUS 伺服器必須設定為使用必要的授權和軟體和/或硬體散發權杖，以供 DirectAccess 使用 OTP。 此程式將專屬於每個 RADIUS 廠商的執行。  
   
-## <a name="BKMK_1.2"></a>2.2 設定 RADIUS 的安全性資訊  
-RADIUS 伺服器會使用 UDP 連接埠進行通訊，以及每個 RADIUS 供應商都有它自己的預設 UDP 連接埠的傳入和傳出通訊。 若要使用的遠端存取伺服器的 RADIUS 伺服器，請確定環境中的所有防火牆都設定為視需要允許 DirectAccess 和 OTP 伺服器之間透過必要的連接埠 UDP 流量。  
+## <a name="BKMK_1.2"></a>2.2 設定 RADIUS 安全性資訊  
+RADIUS 伺服器會針對通訊目的使用 UDP 埠，而每個 RADIUS 廠商都有自己的預設 UDP 埠供傳入和傳出通訊之用。 若要讓 RADIUS 伺服器與遠端存取服務器搭配使用，請確定環境中的所有防火牆都已設定為允許 DirectAccess 和 OTP 伺服器之間的 UDP 流量（如有需要）。  
   
-RADIUS 伺服器會使用共用的密碼進行驗證。 設定 RADIUS 伺服器與共用祕密的強式密碼，並記下 使用 DirectAccess OTP 與設定 DirectAccess 伺服器的用戶端電腦設定，供使用時，將使用此。  
+RADIUS 伺服器會使用共用密碼來進行驗證。 為共用密碼設定具有強式密碼的 RADIUS 伺服器，並請注意，當您設定 DirectAccess 伺服器的用戶端電腦設定以搭配使用 DirectAccess 與 OTP 時，將會用到。  
   
-## <a name="BKMK_Probe"></a>2.3 新增使用者帳戶的 OTP 探查  
-RADIUS 伺服器上建立新的使用者帳戶，稱為**DAProbeUser**並指定其密碼**DAProbePass**。  
+## <a name="BKMK_Probe"></a>2.3 新增 OTP 探查的使用者帳戶  
+在 RADIUS 伺服器上建立名為**DAProbeUser**的新使用者帳戶，並提供密碼**DAProbePass**。  
   
-## <a name="BKMK_Active"></a>2.4 與 Active Directory 同步  
-RADIUS 伺服器必須有對應至利用 OTP 會使用 DirectAccess 的 Active Directory 中使用者的使用者帳戶。  
+## <a name="BKMK_Active"></a>2.4 與 Active Directory 同步處理  
+RADIUS 伺服器的使用者帳戶必須與將使用 DirectAccess 搭配 OTP 的 Active Directory 中的使用者對應。  
   
 #### <a name="to-synchronize-the-radius-and-active-directory-users"></a>同步處理 RADIUS 和 Active Directory 使用者  
   
-1.  記錄的使用者資訊從 Active Directory 所有 DirectAccess OTP 使用者使用。  
+1.  記錄所有具有 OTP 使用者之 DirectAccess 的 Active Directory 的使用者資訊。  
   
-2.  使用廠商特定的程序來建立相同的使用者**domain\username** RADIUS 伺服器中所記錄的帳戶。  
+2.  使用廠商專屬程式，在所記錄的 RADIUS 伺服器中建立相同的使用者網域 **\** 網域帳戶。  
   
 ## <a name="BKMK_AuthAgent"></a>2.5 設定 RADIUS 驗證代理程式  
-遠端存取伺服器必須設定為 DirectAccess 與實作 OTP 的 RADIUS 驗證代理程式。 請依照 RADIUS 廠商指示來設定遠端存取伺服器做為 RADIUS 驗證代理程式。  
+遠端存取服務器必須設定為具有 OTP 執行之 DirectAccess 的 RADIUS 驗證代理程式。 遵循 RADIUS 廠商指示，將遠端存取服務器設定為 RADIUS 驗證代理程式。  
   
 
 

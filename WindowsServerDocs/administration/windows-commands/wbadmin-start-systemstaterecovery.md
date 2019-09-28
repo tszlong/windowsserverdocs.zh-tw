@@ -1,8 +1,8 @@
 ---
 title: wbadmin start systemstaterecovery
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,29 +13,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4282da2011c39daec0315a7f3836d5517f29debb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6ae534eed26629be264b698869edc57232e2b571
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440200"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362219"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
 
 
-執行系統狀態復原的位置，並從您指定的備份。
+執行系統狀態復原至某個位置，以及您指定的備份。
 
 > [!NOTE]
-> Windows Server Backup 不會備份或復原系統狀態備份或系統狀態復原的一部分的登錄使用者 hive 控制檔 (HKEY_CURRENT_USER)。
+> Windows Server Backup 不會備份或復原登錄使用者 hive （HKEY_CURRENT_USER）做為系統狀態備份或系統狀態修復的一部分。
 
-若要執行此子命令的系統狀態復原，您必須隸屬**Backup Operators**群組或有**系統管理員**群組，或者您必須已經被委派適當的權限。 此外，您必須執行**wbadmin**從提升權限的命令提示字元。 (若要開啟提升權限的命令提示字元上按一下滑鼠右鍵**命令提示字元**，然後按一下**系統管理員身分執行**。)
+若要使用這個子命令來執行系統狀態復原，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請以滑鼠右鍵按一下**命令提示**字元，然後按一下 [以**系統管理員身分執行**]）。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
-適用於 Windows Server 2008 的語法：
+Windows Server 2008 的語法：
 ```
 wbadmin start systemstaterecovery
 -version:<VersionIdentifier>
@@ -46,7 +46,7 @@ wbadmin start systemstaterecovery
 [-authsysvol]
 [-quiet]
 ```
-適用於 Windows Server 2008 R2 或更新版本的語法：
+Windows Server 2008 R2 或更新版本的語法：
 ```
 wbadmin start systemstaterecovery
 -version:<VersionIdentifier>
@@ -63,22 +63,22 @@ wbadmin start systemstaterecovery
 
 |參數|描述|
 |---------|-----------|
-|-version|指定要復原 MM/DD/yyyy 的備份的版本識別碼-hh: mm 格式。 如果您不知道的版本識別碼，鍵入**wbadmin 取得版本**。|
-|-showsummary|報告最後一個系統狀態復原的摘要 （之後重新啟動，才能完成此作業）。 這個參數無法搭配任何其他參數。|
-|-backupTarget|指定包含您想要復原的備份儲存位置。 不同於此電腦的備份通常的儲存位置的儲存位置時，這個參數是很有用。|
-|-電腦|指定您想要復原的電腦名稱。 相同的位置已備份多部電腦時，這個參數是很有用。 應何時 **-backupTarget**指定參數。|
-|-recoveryTarget|指定要還原至目錄。 這個參數是很有用，如果在備份還原到替代位置。|
-|-authsysvol|如果使用，執行系統授權還原的 SYSVOL （系統磁碟區共用目錄）。|
-|-autoReboot|指定要重新啟動系統的系統狀態復原作業結尾處。 這個參數是僅適用於復原到原始位置。 我們不建議您使用這個參數，如果您需要執行復原作業之後的步驟。|
-|-quiet|子命令會以不執行任何提示給使用者。|
+|-版本|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
+|-showsummary|報告上一次系統狀態復原的摘要（完成作業所需的重新開機之後）。 這個參數不能與任何其他參數一起使用。|
+|-backupTarget|指定包含您要復原之備份或備份的儲存位置。 當儲存位置與通常儲存此電腦的備份位置不同時，這個參數很有用。|
+|-機器|指定您要復原之電腦的名稱。 當多部電腦已備份到相同的位置時，這個參數很有用。 當指定 **-backupTarget**參數時，應該使用。|
+|-recoveryTarget|指定要還原到其中的目錄。 如果備份還原至替代位置，此參數會很有用。|
+|-authsysvol|如果使用，會執行 SYSVOL 的授權還原（系統磁碟區共用目錄）。|
+|-autoReboot|指定在系統狀態復原操作結束時重新開機系統。 此參數僅適用于復原到原始位置。 如果您需要在復原操作之後執行步驟，則不建議使用此參數。|
+|-quiet|執行子命令，而不提示使用者。|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-- 若要執行的備份系統狀態復原，從 03/31/2013年上午 9:00，輸入：  
+- 若要在上午9:00 從03/31/2013 執行備份的系統狀態復原，請輸入：  
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- 若要執行系統狀態復原的備份從 2013 年 04 月 30 日，上午 9:00 儲存在共用資源上\\ \\servername\share for server01 中，類型：  
+- 若要在上午9:00 從04/30/2013 執行備份的系統狀態復原 這會儲存在共用資源 \\ @ no__t-1servername\share for server01，請輸入：  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
@@ -86,5 +86,5 @@ wbadmin start systemstaterecovery
 #### <a name="additional-references"></a>其他參考資料
 
 -   [命令列語法關鍵](command-line-syntax-key.md)
--   [Wbadmin](wbadmin.md)
--   [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) cmdlet
+-   [Restore](wbadmin.md)
+-   [WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) Cmdlet
