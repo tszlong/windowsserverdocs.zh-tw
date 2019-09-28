@@ -1,8 +1,8 @@
 ---
 title: nlbmgr
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 757b218ad3a88cc10c4d1bcfed15a83bfd34cc74
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2843e303b296beca24132b62073b6776a343544b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437030"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373164"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-使用網路負載平衡管理員，您還可以設定及管理您的網路負載平衡叢集與所有叢集主機從單一電腦，以及您可以將複寫至其他主機的叢集設定。 您可以從命令列使用命令來啟動網路負載平衡管理員**nlbmgr.exe**，這會安裝在**systemroot\System32**資料夾。
+使用網路負載平衡管理員，您可以從單一電腦設定和管理您的網路負載平衡叢集和所有叢集主機，也可以將叢集設定複寫到其他主機。 您可以從命令列使用安裝在**systemroot\System32**資料夾中的**nlbmgr**命令，啟動「網路負載平衡管理員」。
 ## <a name="syntax"></a>語法
 ```
 nlbmgr [/help] [/noping] [/hostlist <filename>] [/autorefresh <interval>]
@@ -34,11 +34,11 @@ nlbmgr [/help] [/noping] [/hostlist <filename>] [/autorefresh <interval>]
 |        參數        |                                                                                                                                                                                                描述                                                                                                                                                                                                |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          /help          |                                                                                                                                                                                   在命令提示字元顯示說明。                                                                                                                                                                                    |
-|         /noping         | 網路負載平衡管理員可防止 ping 之前嘗試連絡他們透過 Windows Management Instrumentation (WMI) 的主機。 如果您已在所有可用的網路介面卡上停用網際網路控制訊息通訊協定 (ICMP)，請使用此選項。 如果網路負載平衡管理員會嘗試連絡未提供的主機，您就會發生延遲，使用此選項時。 |
-|  /hostlist <filename>   |                                                                                                                                                                載入到網路負載平衡管理員在 filename 中指定的主機。                                                                                                                                                                 |
-| /autorefresh <interval> |                                                                                                          會導致網路負載平衡管理員重新整理其主機和叢集的資訊每隔<interval>秒。 如果未不指定任何間隔，資訊就會重新整理每隔 60 秒。                                                                                                          |
+|         /noping         | 防止「網路負載平衡管理員」在嘗試透過 Windows Management Instrumentation （WMI）連線之前 ping 主機。 如果您已在所有可用的網路介面卡上停用網際網路控制訊息通訊協定（ICMP），請使用此選項。 如果「網路負載平衡管理員」嘗試連線到無法使用的主機，您會在使用此選項時遇到延遲。 |
+|  /hostlist <filename>   |                                                                                                                                                                將 filename 中指定的主機載入「網路負載平衡管理員」。                                                                                                                                                                 |
+| /autorefresh <interval> |                                                                                                          導致網路負載平衡管理員每 <interval> 秒重新整理其主機和叢集資訊。 如果未指定間隔，則會每隔60秒重新整理一次資訊。                                                                                                          |
 |           /?            |                                                                                                                                                                                   在命令提示字元顯示說明。                                                                                                                                                                                    |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   [命令列語法關鍵](command-line-syntax-key.md)
 

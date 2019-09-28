@@ -1,8 +1,8 @@
 ---
 title: bitsadmin listfiles
-description: 適用於 Windows 命令主題**bitsadmin listfiles** -列出指定的作業中的檔案。
+description: '**Bitsadmin listfile**的 Windows 命令主題-列出指定之作業中的檔案。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f0f86a7e176c601c51dbdf403baf51f70e53dc4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 43823e4f5c8443396e21405f22ba8b3c5687da44
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852969"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381058"
 ---
 # <a name="bitsadmin-listfiles"></a>bitsadmin listfiles
 
 
 
-列出指定的作業中的檔案。
+列出指定之作業中的檔案。
 
 ## <a name="syntax"></a>語法
 
@@ -38,9 +38,9 @@ bitsadmin /ListFiles <Job>
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的檔案清單*myDownloadJob*。
+下列範例會針對名為*myDownloadJob*的作業，抓取檔案清單。
 ```
 C:\>bitsadmin /GetNotifyFlags myDownloadJob
 ```

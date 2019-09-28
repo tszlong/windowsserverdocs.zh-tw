@@ -1,8 +1,8 @@
 ---
 title: endlocal
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e516b2bf9e8a45ada910dfbd93e3ed5e7d86c14
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16d2b7b445a2220a10f88f21029948ed10ee96e4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862139"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377568"
 ---
 # <a name="endlocal"></a>endlocal
 
 
 
-結束的環境變更批次檔，並還原為其值的環境變數，相對應**setlocal**執行命令。
+結束批次檔中環境變更的當地語系化，並在執行對應的**setlocal**命令之前，將環境變數還原到其值。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -42,16 +42,16 @@ endlocal
 
 ## <a name="remarks"></a>備註
 
--   **Endlocal**命令之外的指令碼或批次檔中沒有任何作用。
--   沒有隱含**endlocal**命令批次檔的結尾。
--   如果已啟用命令擴充功能 （命令會預設啟用延伸模組）， **endlocal**命令會將命令延伸模組 （也就是啟用或停用） 的狀態還原到之前對應**setlocal**執行命令。
+-   **Endlocal**命令在腳本或批次檔外沒有任何作用。
+-   批次檔的結尾處有隱含的**endlocal**命令。
+-   如果已啟用命令延伸模組（預設會啟用命令延伸模組）， **endlocal**命令會將命令延伸模組的狀態（也就是啟用或停用）還原為執行對應的**setlocal**命令之前的內容。
 
 > [!NOTE]
-> 如需有關啟用和停用擴充命令的詳細資訊，請參閱 < [Cmd](cmd.md)。
+> 如需啟用和停用命令延伸的詳細資訊，請參閱[Cmd](cmd.md)。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-您可以當地語系化的批次檔中的環境變數。 比方說，下列程式會啟動 superapp 批次程式在網路上，將輸出導向檔案，並在 [記事本] 中顯示的檔案：
+您可以將批次檔中的環境變數當地語系化。 例如，下列程式會在網路上啟動 superapp batch 程式、將輸出導向至檔案，然後在 [記事本] 中顯示檔案：
 ```
 @echo off
 setlocal

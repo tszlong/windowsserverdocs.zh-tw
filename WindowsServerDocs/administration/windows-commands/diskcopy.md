@@ -1,8 +1,8 @@
 ---
 title: diskcopy
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: aadb3a77cda7f1403cd2f04ced12c17617f046df
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 553a85ac4fd9b7708d7adc668be4e000b36a9346
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439576"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377825"
 ---
 # <a name="diskcopy"></a>diskcopy
 
 
 
-來源磁碟機的磁碟片的內容複製至格式化或未格式化磁片中的目的地磁碟機中。 如果未指定參數，使用**diskcopy**來源磁碟的目的地磁碟會使用目前的磁碟機。
+將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中已格式化或未格式化的軟碟。 如果使用時不含參數，則**diskcopy**會使用來源磁片和目的地磁片的目前磁片磁碟機。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 > [!NOTE]
-> 此命令不包含在 Windows 10。
+> 此命令不包含在 Windows 10 中。
 
 ## <a name="syntax"></a>語法
 
@@ -41,70 +41,70 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 |參數|描述|
 |---------|-----------|
-|\<Drive1>|指定包含來源磁碟的磁碟機。|
-|\<Drive2>|指定包含目的地磁碟的磁碟機。|
-|/v|確認已正確複製資訊。 此選項會降低複製程序。|
+|\<Drive1 >|指定包含來源磁片的磁片磁碟機。|
+|\<Drive2 >|指定包含目的地磁片的磁片磁碟機。|
+|/v|確認已正確複製資訊。 此選項會使複製程式變慢。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   使用磁碟
+-   使用磁片
 
-    **Diskcopy**只適用於卸除式磁碟，例如磁碟，必須是相同的型別。 您無法使用**diskcopy**與硬碟。 如果您指定的硬碟*Drive1*或是*Drive2*， **diskcopy**會顯示下列錯誤訊息：  
+    **Diskcopy**僅適用于卸載式磁片（如磁片），其類型必須相同。 您不能將**diskcopy**與硬碟搭配使用。 如果您為*Drive1*或*Drive2*指定硬碟，則**diskcopy**會顯示下列錯誤訊息：  
     ```
     Invalid drive specification
     Specified drive does not exist or is nonremovable
     ```  
-    **Diskcopy**命令會提示您插入的來源和目的地磁碟，並等候您按鍵盤上的任何索引鍵，然後再繼續。
+    **Diskcopy**命令會提示您插入來源和目的地磁片，並等待您在鍵盤上按下任何鍵，然後再繼續。
 
-    它會複製磁碟之後, **diskcopy**顯示下列訊息：  
+    在複製磁片之後， **diskcopy**會顯示下列訊息：  
     ```
     Copy another diskette (Y/N)?
     ```  
-    如果您按下 Y **diskcopy**會提示您插入下一個複製作業的來源和目的地磁碟。 若要停止**diskcopy**程序時，按下**N**。
+    如果您按下 Y，則**diskcopy**會提示您插入下一個複製作業的來源和目的地磁片。 若要停止**diskcopy**進程，請按**N**。
 
-    如果您複製到中的未格式化磁片*Drive2*， **diskcopy**格式化磁碟，以使用相同數目的側邊和每個使用中的磁碟上盡可能的磁軌的磁區*Drive1*。 **Diskcopy**時它格式化磁碟，並將檔案複製，則會顯示下列訊息：  
+    如果您要在*Drive2*中複製到未格式化的磁片磁碟機，則**diskcopy**會將每個磁軌的相同邊和磁區數目格式化磁片，如同*Drive1*中的磁片。 **Diskcopy**會在格式化磁片並複製檔案時顯示下列訊息：  
     ```
     Formatting while copying
     ```  
--   磁碟序號
+-   磁片序號
 
-    如果來源磁碟有磁碟區序號**diskcopy**會建立新的磁碟區數列數字，目的地磁碟，並複製作業完成時，會顯示數字。
--   省略磁碟機參數
+    如果來源磁片具有磁片區序號， **diskcopy**會為目的地磁片建立新的磁片區序號，並在複製作業完成時顯示該數位。
+-   省略磁片磁碟機參數
 
-    如果您省略*Drive2*參數**diskcopy**目前的磁碟機做為目的地磁碟機。 如果省略這兩個磁碟機的參數， **diskcopy**同時使用目前的磁碟機。 如果目前的磁碟機是相同*Drive1*， **diskcopy**會提示您視需要交換磁碟。
--   使用一個磁碟機複製
+    如果您省略*Drive2*參數， **diskcopy**會使用目前的磁片磁碟機做為目的地磁片磁碟機。 如果您省略這兩個磁片磁碟機參數， **diskcopy**會同時使用目前的磁片磁碟機。 如果目前的磁片磁碟機與*Drive1*相同，則**diskcopy**會提示您視需要交換磁片。
+-   使用一個磁片磁碟機進行複製
 
-    執行**diskcopy**從以外軟碟機的磁碟機，例如 C 磁碟機。 如果磁碟片*Drive1*和 磁碟片*Drive2*相同， **diskcopy**會提示您在切換磁碟。 如果磁碟包含詳細的資訊可以保存的可用記憶體，比**diskcopy**無法讀取的所有資訊一次。 **Diskcopy**從來源磁碟中讀取、 寫入目的地磁碟，並提示您重新插入來源磁碟。 此程序會繼續直到您複製整個磁碟。
--   避免磁碟分散程度
+    從軟碟磁碟機以外的磁片磁碟機（例如 C 磁片磁碟機）執行**diskcopy** 。 如果磁片磁碟機*Drive1*和磁片*Drive2*相同，則**diskcopy**會提示您切換磁片。 如果磁片包含的資訊超過可用記憶體的可能，則**diskcopy**無法一次讀取所有資訊。 **Diskcopy**讀取來源磁片，寫入目的地磁片，並提示您重新插入來源磁片。 此程式會繼續進行，直到您已複製整個磁片為止。
+-   避免磁碟片段
 
-    分散程度過小的磁碟上的現有檔案之間的未使用的磁碟空間的區域存在。 分散的來源磁碟是以尋找、 讀取或寫入檔案的程序變慢。
+    片段是磁片上的現有檔案之間是否有未使用磁碟空間的小型區域。 分割的來源磁片可能會使尋找、讀取或寫入檔案的程式變慢。
 
-    因為**diskcopy**使目的地磁碟的來源磁碟、 來源磁碟上的所有片段的完全相同複本傳輸至目的地磁碟。 若要避免從一部磁碟的分散程度傳輸到另一個，請使用**複製**或是**xcopy**複製您的磁碟。 因為**複製**並**xcopy**複製檔案循序，新的磁碟未分散。
+    因為**diskcopy**會在目的地磁片上建立完全相同的來源磁片複本，所以來源磁片上的任何片段都會傳輸到目的地磁片。 若要避免將片段從一個磁片傳輸到另一個磁片，請使用**copy**或**xcopy**來複製磁片。 由於**copy**和**xcopy**會依序複製檔案，因此不會分割新的磁片。
 
 > [!NOTE]
-> 您無法使用**xcopy**複製啟動磁碟。
-> -   了解**diskcopy**結束代碼
+> 您不能使用**xcopy**來複製啟動磁片。
+> -   瞭解**diskcopy**結束代碼
 
     The following table explains each exit code.  
     |結束代碼|描述|
     |---------|-----------|
-    |0|複製作業已順利完成|
+    |0|複製操作成功|
     |1|發生非嚴重的讀取/寫入錯誤|
-    |3|發生嚴重的硬體錯誤|
+    |3|發生嚴重硬體錯誤|
     |4|發生初始化錯誤|
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要將磁碟機 B 中的複製到磁碟機 A 中的磁碟，請輸入：
+若要將磁片磁碟機 B 中的磁碟複製到磁片磁碟機 A 中的磁片，請輸入：
 ```
 diskcopy b: a:
 ```
-若要使用軟碟機的複製到另一個磁碟，請先切換到 C 磁碟機，然後輸入：
+若要使用軟碟磁碟機 A 將磁碟複製到另一張軟碟，請先切換至 C 磁片磁碟機，然後輸入：
 
-diskcopy a: a:
+diskcopy a： a：
 
 #### <a name="additional-references"></a>其他參考資料
 

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin suspend
-description: 適用於 Windows 命令主題**bitsadmin 暫停**-暫停指定的工作。
+description: '**Bitsadmin 暫停**的 Windows 命令主題-暫停指定的工作。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87e1bbd1b068d68fb60655043735c6c1aeb07707
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a3a484df2b50cdc8893512020b835f913793d2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825919"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380377"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
-> 適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 暫停指定的工作。
 
@@ -40,16 +40,16 @@ bitsadmin /Suspend <Job>
 
 ## <a name="remarks"></a>備註
 
-若要重新啟動作業，請使用[bitsadmin 繼續](bitsadmin-resume.md)切換。
+若要重新開機作業，請使用[bitsadmin resume](bitsadmin-resume.md)參數。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會暫停工作名為*myDownloadJob*。
+下列範例會暫停名為*myDownloadJob*的作業。
 
 ```
 C:\>bitsadmin /Suspend myDownloadJob
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+#### <a name="additional-references"></a>其他參考
 
 [命令列語法關鍵](command-line-syntax-key.md)

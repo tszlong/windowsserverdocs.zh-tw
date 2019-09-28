@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getaclflags
-description: 適用於 Windows 命令主題**bitsadmin getaclflags** -擷取存取控制清單傳用旗標。
+description: 適用于**bitsadmin getaclflags**的 Windows 命令主題-抓取存取控制清單傳播旗標。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 185445a97168344f910abc0e644718296de2c712
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad98cd742161ae06be5cba7acde7b810eaf199d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861449"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381795"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
-擷取存取控制清單 (ACL) 傳用旗標。
+抓取存取控制清單（ACL）傳播旗標。
 
 ## <a name="syntax"></a>語法
 
@@ -38,15 +38,15 @@ bitsadmin /GetAclFlags <Job>
 
 ## <a name="remarks"></a>備註
 
-會顯示一或多個下列的旗標值：
--   /O:複製檔案的擁有者資訊。
--   G:複製檔案群組資訊。
--   D:複製檔案的 DACL 資訊。
--   S:SACL 資訊複製檔案。
+顯示下列一個或多個旗標值：
+-   I/O使用檔案複製擁有者資訊。
+-   G使用 file 複製群組資訊。
+-   D:使用 file 複製 DACL 資訊。
+-   今日使用 file 複製 SACL 資訊。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的存取控制清單傳用旗標*myDownloadJob*。
+下列範例會針對名為*myDownloadJob*的作業，抓取存取控制清單傳播旗標。
 ```
 C:\>bitsadmin /getaclflags myDownloadJob
 ```

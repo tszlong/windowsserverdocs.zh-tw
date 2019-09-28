@@ -1,7 +1,7 @@
 ---
 ms.assetid: e5f55f3e-8d2a-4526-8d67-36a539126c22
-title: fsutil 階層處理
-ms.prod: windows-server-threshold
+title: Fsutil 分層
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: dcb69e4e9c71a723bfd735eb7915472f1232a92b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6863940d69e30f4984897a7e03369a834da21d1d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859249"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376776"
 ---
-# <a name="fsutil-tiering"></a>fsutil 階層處理
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows 10
+# <a name="fsutil-tiering"></a>Fsutil 分層
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
 
-可管理的儲存體層功能，例如設定和停用旗標和層級的清單。
+啟用儲存層功能的管理，例如設定和停用旗標和層級清單。
 
 ## <a name="syntax"></a>語法
 
@@ -35,42 +35,42 @@ fsutil tiering [tierlist] <volume>
 
 |參數|描述|
 |-------------|---------------|
-|clearflags|停用磁碟區的分層行為旗的標。|
-|\<volume>|指定的磁碟區。|
-|/TrNH|針對使用分層式儲存體的磁碟區，會導致要停用收集的熱度圖。<br /><br>僅適用於 NTFS 和 ReFS。|
-|queryflags|查詢磁碟區的分層行為旗標。|
-|regionlist|列出磁碟區和其個別的儲存層的分層式的區域。|
-|setflags|可讓磁碟區的分層行為旗標。|
-|tierlist|列出磁碟區相關聯的儲存體 tieres。|
+|clearflags|停用磁片區的分層行為旗標。|
+|\<volume >|指定磁片區。|
+|/TrNH|針對具有階層式存放裝置的磁片區，將會停用熱收集。<br /><br>僅適用于 NTFS 和 ReFS。|
+|queryflags|查詢磁片區的分層行為旗標。|
+|regionlist|列出磁片區的分層區域及其各自的儲存層。|
+|setflags|啟用磁片區的分層行為旗標。|
+|tierlist|列出與磁片區相關聯的儲存體 tieres。|
 
 
 ### <a name="examples"></a>範例
 
-若要查詢磁碟區 C 上的旗標，請輸入：
+若要查詢磁片區 C 上的旗標，請輸入：
 
 ```
 fsutil tiering clearflags C:
 ```
 
-若要設定磁碟區 C 旗標，請輸入：
+若要在磁片區 C 上設定旗標，請輸入：
 
 ```
 fsutil tiering setflags C: /TrNH
 ```
 
-若要清除的磁碟區 C 上的旗標，請輸入：
+若要清除磁片區 C 上的旗標，請輸入：
 
 ```
 fsutil tiering clearflags C: /TrNH
 ```
 
-若要列出的磁碟區 C 和其個別的儲存層的區域，請輸入：
+若要列出磁片區 C 的區域及其各自的儲存層，請輸入：
 
 ```
 fsutil tiering regionlist C:
 ```
 
-若要列出的磁碟區 C 層，請輸入：
+若要列出磁片區 C 的層級，請輸入：
 
 ```
 fsutil tiering tierlist C:

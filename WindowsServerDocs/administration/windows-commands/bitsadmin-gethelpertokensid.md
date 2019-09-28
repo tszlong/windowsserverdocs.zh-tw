@@ -1,8 +1,8 @@
 ---
 title: bitsadmin gethelpertokensid
-description: 適用於 Windows 命令主題**bitsadmin gethelpertokensid** -傳回的 BITS 傳送工作的協助程式權杖中，SID，若已設定。
+description: 適用于**bitsadmin gethelpertokensid**的 Windows 命令主題-傳回 BITS 傳送作業的協助程式權杖的 SID （如果有設定的話）。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 1a956357b786c1d151f1363dacf78dbced137a2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a8c2a9f319defd8ac9acd36063ee079c24ad8ae0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874659"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381588"
 ---
 # <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
-傳回的 BITS 傳送工作的 SID [協助程式的語彙基元](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)，若已設定。
+傳回 BITS 傳送作業的協助程式 [權杖](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)SID （如果已設定的話）。
 
-**3.0 版和更早版本的位元**: 未支援。
+**BITS 3.0 和更早版本**： 未支援。
 
 ## <a name="syntax"></a>語法
 

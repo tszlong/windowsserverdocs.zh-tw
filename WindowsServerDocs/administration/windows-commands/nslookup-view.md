@@ -1,8 +1,8 @@
 ---
 title: nslookup view
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 623064db7a3e89decbfc1fbc27fa0598e398ac34
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 61a01a25317bdf42491f05e896ddd5bb022193fe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436416"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372724"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-排序和列出先前的輸出**ls**子命令。  
+排序並列出前一個**ls**子命令或命令的輸出。  
 ## <a name="syntax"></a>語法  
 ```  
 view <FileName>  
@@ -33,9 +33,9 @@ view <FileName>
 
 |    參數    |                                            描述                                            |
 |-----------------|---------------------------------------------------------------------------------------------------|
-|   <FileName>    | 指定的名稱，該檔案包含從先前的輸出**ls**子命令。 |
-| {help &#124; ?} |                       顯示的簡短摘要**nslookup**子命令。                       |
+|   <FileName>    | 指定包含前一個**ls**子命令或命令之輸出的檔案名。 |
+| {help &#124; ？} |                       顯示**nslookup**子命令的簡短摘要。                       |
 
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 [命令列語法關鍵](command-line-syntax-key.md)  
 [nslookup ls](nslookup-ls.md)  

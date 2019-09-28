@@ -1,8 +1,8 @@
 ---
 title: ktmutil
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7af47ab8697345b81018c2539e0c451359bd2a2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1a8fbc6360eca628d380a9c24612d952120162d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826459"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374780"
 ---
 # <a name="ktmutil"></a>ktmutil
 
 
 
-啟動核心交易管理員公用程式。 如果未指定參數，使用**ktmutil**會顯示可用的子命令。
+啟動核心交易管理員公用程式。 如果使用時不含參數，則**ktmutil**會顯示可用的子命令。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -45,9 +45,9 @@ ktmutil forget
 
 ## <a name="remarks"></a>備註
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要強制認可 GUID 311a9209-03f4-11dc-918f-00188b8f707b Indoubt 交易，請輸入：
+若要強制具有 GUID 311a9209-03f4-11dc-918f-00188b8f707b 的 Indoubt 交易認可，請輸入：
 ```
 ktmutil force commit {311a9209-03f4-11dc-918f-00188b8f707b}
 ```

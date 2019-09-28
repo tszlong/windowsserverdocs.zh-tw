@@ -1,8 +1,8 @@
 ---
-title: 集中繼資料
-description: '適用於 Windows 命令主題 * * *- '
+title: 設定中繼資料
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82d2cd9ba447a0ea261f91dc01c11e45dfc0aa9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac73a4131d3f4065cd1aeae873734b079ad664e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835989"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370949"
 ---
-# <a name="set-metadata"></a>集中繼資料
+# <a name="set-metadata"></a>設定中繼資料
 
 
 
-設定用來將陰影複製從一部電腦傳輸到另一個的陰影建立中繼資料檔案的位置與名稱。 如果未指定參數，使用**集中繼資料**在命令提示字元中顯示說明。
+設定陰影建立中繼資料檔案的名稱和位置，用來將陰影複製從一部電腦傳輸到另一部電腦。 如果使用時不含參數，**設定中繼資料**會在命令提示字元中顯示說明。
 
 ## <a name="syntax"></a>語法
 
@@ -36,8 +36,8 @@ set metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |參數|描述|
 |---------|-----------|
-|[\<Drive>:][<Path>]|指定要建立的中繼資料檔案的位置。|
-|\<MetaData.cab>|指定儲存陰影建立中繼資料的封包檔的名稱。|
+|[\<Drive >：][<Path>]|指定要建立中繼資料檔案的位置。|
+|\<MetaData .cab >|指定要儲存陰影建立中繼資料的 cab 檔案名稱。|
 
 #### <a name="additional-references"></a>其他參考資料
 

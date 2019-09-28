@@ -1,8 +1,8 @@
 ---
 title: 線上
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8063ac09b1d8d9bf4dd4e6665c1725fcb77ae89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 489cef1ad4dc5fec5f477f95a6f2fad391b3bf02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828109"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372489"
 ---
 # <a name="online"></a>線上
 
 
 
-為線上狀態，會採用離線的磁碟區。
+使離線磁片或磁片區處於線上狀態。
 
 ## <a name="syntax"></a>語法
 
@@ -37,8 +37,8 @@ Offline volume
 
 |參數|描述|
 |---------|-----------|
-|[離線的磁碟](offline-disk.md)|需要具有焦點的離線磁碟線上狀態。|
-|[磁碟區離線](offline-volume.md)|需要具有焦點的離線磁碟區為線上狀態。|
+|[離線磁片](offline-disk.md)|將具有焦點的離線磁片帶到線上狀態。|
+|[離線磁片區](offline-volume.md)|將具有焦點的離線磁片區帶到線上狀態。|
 
 #### <a name="additional-references"></a>其他參考資料
 

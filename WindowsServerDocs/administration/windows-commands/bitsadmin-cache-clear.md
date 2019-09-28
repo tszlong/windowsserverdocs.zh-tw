@@ -1,8 +1,8 @@
 ---
 title: bitsadmin 快取清除
-description: 適用於 Windows 命令主題**bitsadmin 快取清除**-清除本機快取。
+description: Bitsadmin 快取的 Windows 命令主題**清除**-清除本機快取。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebf99efad228899129e696fe9cf56ef03a80bee4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c91079c439c505a0e73e48cc5fbcb26679b150b6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868479"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381935"
 ---
-# <a name="bitsadmin-cache-and-clear"></a>bitsadmin 快取，然後清除
+# <a name="bitsadmin-cache-and-clear"></a>bitsadmin 快取和清除
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "59868479"
 bitsadmin /Cache /Clear 
 ```
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
 下列範例會清除本機快取。
 ```

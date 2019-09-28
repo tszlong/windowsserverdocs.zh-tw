@@ -2,7 +2,7 @@
 title: secedit：分析
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83f9e977a059e1a1f1b882d5a968054dacf6b3be
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6fd12d5055853a97b6bd253a83798d35effaa1f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868874"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371175"
 ---
 # <a name="seceditanalyze"></a>secedit：分析
 
@@ -39,7 +39,7 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 |db|必要。</br>指定資料庫的路徑和檔案名，其中包含將執行分析的儲存設定。</br>如果 [檔案名] 指定的資料庫沒有與其相關聯的安全性範本（如設定檔所表示），則`/cfg \<configuration file name>`也必須指定命令列選項。|
 |cfg|選擇性。</br>指定將匯入至資料庫以進行分析之安全性範本的路徑和檔案名。</br>只有在搭配`/db \<database file name>`參數使用時，此/cfg 選項才有效。 如果未指定此項，則會針對已經儲存在資料庫中的任何設定來執行分析。|
 |overwrite|選擇性。</br>指定/cfg 參數中的安全性範本是否應覆寫儲存在資料庫中的任何範本或複合範本，而不是將結果附加至儲存的範本。</br>只有在同時使用`/cfg \<configuration file name>`參數時，此命令列選項才有效。 如果未指定此項，會將/cfg 參數中的範本附加至儲存的範本。|
-|日誌|選擇性。</br>指定要在進程中使用之記錄檔的路徑和檔案名。|
+|log|選擇性。</br>指定要在進程中使用之記錄檔的路徑和檔案名。|
 |無訊息|選擇性。</br>隱藏螢幕輸出。 您仍然可以使用 Microsoft Management Console （MMC）的 [安全性設定及分析] 嵌入式管理單元來查看分析結果。|
 
 ## <a name="remarks"></a>備註

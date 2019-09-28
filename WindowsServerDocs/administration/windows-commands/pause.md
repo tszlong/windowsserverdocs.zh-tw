@@ -1,8 +1,8 @@
 ---
 title: pause
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5805fcc14d6874d95ba90537d72b560229ba99b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6501859eacf30dd6c1e64f34eee29ff81bd78ec9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436316"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372367"
 ---
 # <a name="pause"></a>pause
 
 
 
-會暫停處理的批次程式，並顯示下列提示：
+暫停 batch 程式的處理，並顯示下列提示：
 ```
 Press any key to continue . . .
 ```
@@ -44,20 +44,20 @@ pause
 
 ## <a name="remarks"></a>備註
 
-- 當您執行**暫停**命令時，會出現下列訊息：  
+- 當您執行**pause**命令時，會出現下列訊息：  
   ```
   Press any key to continue . . .
   ```  
-- 如果您按下 CTRL + C 來停止批次程式，就會出現下列訊息：  
+- 如果您按下 CTRL + C 來停止 batch 程式，則會出現下列訊息：  
   ```
   Terminate batch job (Y/N)?
   ```  
-  如果您按 Y (是），以回應這個訊息，批次程式便會結束並將控制傳回至作業系統。
-- 您可以插入**暫停**命令之前，您可能不想要處理的批次檔的區段。 當**暫停**暫止處理的批次程式，您可以按 CTRL + C，再按 停止批次程式 Y。
+  如果您按 Y （為 [是]）來回應此訊息，則 batch 程式會結束，且控制權會回到作業系統。
+- 您可以在可能不想要處理的批次檔區段之前，插入**pause**命令。 **暫停**batch 程式的處理時，您可以按下 CTRL + C，然後按 Y 以停止 batch 程式。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要建立批次程式，以提示使用者變更其中一種磁碟機的磁碟，請輸入：
+若要建立批次程式，以提示使用者變更其中一個磁片磁碟機中的磁片，請輸入：
 ```
 @echo off 
 :Begin 
@@ -66,7 +66,7 @@ echo Put a new disk into drive A
 pause 
 goto begin
 ```
-在此範例中，在磁碟機 a 的磁碟上的所有檔案都複製到目前的目錄。 訊息會提示您將新的磁碟放在磁碟機之後,**暫停**命令會暫停處理，讓您可以變更磁碟，然後按下任意鍵以繼續處理。 批次執行此程式在無止盡的迴圈 — **goto 開始**命令會將命令解譯器傳送至批次檔的開始標籤。 若要停止此批次程式，請按 CTRL + C，，然後按 Y。
+在此範例中，磁片磁碟機 A 中磁片上的所有檔案都會複製到目前的目錄。 當訊息提示您將新磁片放在磁片磁碟機 A 之後， **pause**命令就會暫停處理，讓您可以變更磁片，然後按任意鍵繼續處理。 此批次程式會在無止盡的迴圈中執行， **goto begin**命令會將命令直譯器傳送至批次檔的開始標籤。 若要停止此 batch 程式，請按 CTRL + C，然後按下 Y 鍵。
 
 #### <a name="additional-references"></a>其他參考資料
 

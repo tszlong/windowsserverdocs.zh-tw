@@ -1,18 +1,18 @@
 ---
 title: Hyper-V 設定
 description: 效能微調的 hyper-v 設定考慮
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c608d3762c45a0b1478bcb3303159feef963291
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866619"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370164"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V 設定
 
@@ -76,11 +76,11 @@ Hyper-v 會發佈效能計數器，以協助描述虛擬化伺服器的行為，
 
 您應該一律使用 Hyper-v 虛擬機器邏輯處理器效能計數器來測量實體系統的 CPU 使用量。 「工作管理員」和「效能監視器」報表在根和子分割區中的 CPU 使用率計數器，並不會反映實際的實體 CPU 使用量。 使用下列效能計數器來監視效能：
 
-- **Hyper-v 虛擬機器邏輯處理器（\*）\\% 總執行時間**-邏輯處理器的非閒置時間總計
+- **Hyper-v 虛擬機器邏輯處理器（\*） \\% 總執行時間**邏輯處理器的非閒置時間總計
 
-- **Hyper-v 虛擬機器邏輯處理器（\*）\\% Guest 執行時間**花費在來賓或主機內執行迴圈的時間
+- **Hyper-v 虛擬機器邏輯處理器（\*） \\% 來賓執行時間**在來賓或主機內執行迴圈所花費的時間
 
-- **Hyper-v 虛擬機器邏輯處理器（\*）\\% 監控程式執行時間**花費在虛擬機器內執行的時間
+- **Hyper-v 虛擬機器邏輯處理器（\*） \\% 執行器執行時間**在虛擬機器內執行所花費的時間
 
 - **Hyper-v 虛擬機器根虛擬\*處理器（）\\ \\** * 測量根磁碟分割的 CPU 使用量
 

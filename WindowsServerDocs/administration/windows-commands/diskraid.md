@@ -2,7 +2,7 @@
 title: diskraid
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2dfda058a7ca266adedbacf8860137c5d1782c7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f72e91f856da3b24e7450381b293f4b365d914f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867077"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377804"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -55,7 +55,7 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 -   [啟動器](#BKMK_15)
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
--   [名單](#BKMK_19)
+-   [list](#BKMK_19)
 -   [login](#BKMK_20)
 -   [登出](#BKMK_21)
 -   [保養](#BKMK_22)
@@ -561,7 +561,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 **磁片磁碟機 =**
 
-指定建立\<LUN 時要使用之磁片磁碟機的 drive_number >。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 提供者會盡可能以指定的順序使用磁片磁碟機。
+指定建立 LUN 時要使用之磁片磁碟機的 @no__t 0drive_number >。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 提供者會盡可能以指定的順序使用磁片磁碟機。
 
 **noerr**
 
@@ -944,7 +944,7 @@ replace drive=<drive_number>
 
 **磁片磁碟機 =**
 
-指定要\<取代之磁片磁碟機的 drive_number >。
+指定要取代之磁片磁碟機的 @no__t 0drive_number >。
 
 #### <a name="remarks"></a>備註
 
@@ -986,15 +986,15 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 指定要選取的物件類型。 物件 > 類型可以是提供者、子系統、控制器、磁片磁碟機或 LUN。 \<
 
-**hbaport**[\<n >]
+**hbaport** [\<n >]
 
 將焦點設定為指定的本機 HBA 埠。 如果未指定 HBA 埠，此命令會顯示目前選取的 HBA 埠（如果有的話）。 指定不正確 HBA 埠索引會導致沒有焦點的 HBA 埠。 選取 HBA 埠會取消選取任何所選的啟動器介面卡和啟動器入口網站。
 
-**iadapter**[\<n >]
+**iadapter** [\<n >]
 
 將焦點設定為指定的本機 iSCSI 啟動器介面卡。 如果未指定啟動器介面卡，此命令會顯示目前選取的啟動器介面卡（如果有的話）。 指定不正確啟動器介面卡索引會導致沒有焦點的啟動器介面卡。 選取啟動器介面卡，會取消選取任何所選的 HBA 埠和啟動器入口網站。
 
-**iportal**[\<n >]
+**iportal** [\<n >]
 
 將焦點設定為所選 iSCSI 啟動器介面卡內指定的本機 iSCSI 啟動器入口網站。 如果未指定啟動器入口網站，此命令會顯示目前選取的啟動器入口網站（如果有的話）。 指定不正確啟動器入口網站索引會導致沒有選取的啟動器入口網站。
 
@@ -1018,7 +1018,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 將焦點設定到目前所選子系統內的指定磁片磁碟機或實體主軸。 如果未指定任何磁片磁碟機，此命令會顯示目前選取的磁片磁碟機（如果有的話）。 指定不正確磁片磁碟機索引會導致沒有焦點磁片磁碟機。 選取磁片磁碟機會取消選取任何所選的控制器、控制器埠、Lun、目標入口網站、目標和目標入口網站群組。
 
-**lun**[\<n >]
+**lun** [\<n >]
 
 將焦點設定為目前所選子系統內的指定 LUN。 如果未指定任何 LUN，此命令會顯示目前選取的 LUN （如果有的話）。 指定不正確 LUN 索引會導致沒有選取的 LUN。 選取 LUN 會取消選取任何所選的控制器、控制器埠、磁片磁碟機、目標入口網站、目標和目標入口網站群組。
 
@@ -1030,7 +1030,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 將焦點設定為目前所選子系統內的指定 iSCSI 目標。 如果未指定任何目標，此命令會顯示目前選取的目標（如果有的話）。 指定不正確目標索引會導致沒有選取的目標。 選取目標會取消選取任何控制器、控制器埠、磁片磁碟機、Lun、目標入口網站和目標入口網站群組。
 
-**tpgroup**[\<n >]
+**tpgroup** [\<n >]
 
 將焦點設定為目前所選取 iSCSI 目標內的指定 iSCSI 目標入口網站群組。 如果未指定目標入口網站群組，此命令會顯示目前選取的目標入口網站群組（如果有的話）。 指定不正確目標入口網站群組索引會導致沒有焦點的目標入口網站群組。
 

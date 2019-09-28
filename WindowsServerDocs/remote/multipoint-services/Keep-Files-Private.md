@@ -1,8 +1,8 @@
 ---
 title: 不公開檔案
-description: 了解如何保護某些檔案從 MultiPoint 服務中的使用者
+description: 瞭解如何從 MultiPoint 服務中的使用者保護特定檔案
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: f254b07c1f6f8ffdc83a1fe506bee7e6d5aa89ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b9ff84678787e53ef5def822e33139b9839411a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879649"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395343"
 ---
 # <a name="keep-files-private"></a>不公開檔案
 本主題適用於您 \(身為「系統管理使用者」\) 和「標準使用者」不想與 MultiPoint 服務系統中其他使用者共用的內容，例如文件。  

@@ -1,22 +1,22 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
-title: 在 Windows Server 2016 中更新磁碟機韌體
-ms.prod: windows-server-threshold
+title: 更新磁碟機韌體
+ms.prod: windows-server
 ms.author: toklima
 ms.manager: dmoss
 ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 50291bd4da05d9c2736c84443b444b9a43f46344
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f0530101bb7d597d2d95c26648aad65d62b69ca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884779"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365869"
 ---
-# <a name="updating-drive-firmware-in-windows-server-2016"></a>在 Windows Server 2016 中更新磁碟機韌體
->適用於：Windows 10、windows Server （半年通道），Windows Server 2016
+# <a name="updating-drive-firmware"></a>更新磁碟機韌體
+>適用於：Windows Server 2019、Windows Server 2016、Windows 10
 
 更新磁碟機韌體向來都是可能導致停機的麻煩工作，這就是我們要改善儲存空間、Windows Server 及 Windows 10 版本 1703 和更新版本的原因。 如果您的磁碟機支援 Windows 中所含的新韌體更新機制，則可以更新生產磁碟機的磁碟機韌體，而不造成停機。 不過，如果您要更新生產磁碟機的韌體，請務必閱讀在使用這個功能強大的新功能時如何將風險降到最低的提示。
 
@@ -30,11 +30,11 @@ ms.locfileid: "59884779"
 如需硬體是否支援 Windows 更新磁碟機韌體的相關資訊，請連絡解決方案廠商。
 以下是各種需求的連結︰
 
--   SATA:[Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) -在 **[如果實作\]韌體下載和啟用**區段
+-   SATANo__t[中的](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) **[如果已執行 @-2 固件下載 & 啟用**] 區段
     
--   SAS:[Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) -在 **[如果實作\]韌體下載和啟用**區段
+-   SASNo__t[中的](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) **[如果已執行 @-2 固件下載 & 啟用**] 區段
 
--   NVMe:[Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) -在區段**5.7**並**5.8**。
+-   NVMe[ControllerDrive. NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) -在**5.7**和**5.8**區段中。
 
 ## <a name="powershell-cmdlets"></a>PowerShell Cmdlet
 
@@ -164,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-如果您想要查看作用中的健全狀況服務，並深入了解其推出機制，看看這段影片： https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+如果您想要查看作用中的健全狀況服務，並深入瞭解其推出機制，請查看這段影片： https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
@@ -195,7 +195,7 @@ $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponen
 
 ### <a name="what-happens-if-the-update-fails"></a>如果更新失敗，會發生什麼事
 
-更新可能會因為各種原因而失敗，有些則：1） 的磁碟機不支援 Windows 更新其韌體的正確命令。 在此情況下，新的韌體映像永遠不會啟用，而且磁碟機會繼續使用舊的映像運作。 2) 映像無法下載至或套用至這個磁碟機 (版本不符、影像損毀…)。 在此情況下，磁碟機會讓 activate 命令失敗。 同樣地，舊的韌體映像將會繼續使用函數。
+更新可能會因為各種原因而失敗，其中有些是：1）磁片磁碟機不支援適用于 Windows 的正確命令來更新其固件。 在此情況下，新的韌體映像永遠不會啟用，而且磁碟機會繼續使用舊的映像運作。 2) 映像無法下載至或套用至這個磁碟機 (版本不符、影像損毀…)。 在此情況下，磁碟機會讓 activate 命令失敗。 同樣地，舊的韌體映像將會繼續使用函數。
 
 如果磁碟機在韌體更新之後根本未回應，則您可能會在磁碟機韌體本身發現錯誤。 先測試實驗室環境中的所有韌體更新，再將它們放到生產環境中。 唯一的補救方式可能是更換磁碟機。
 

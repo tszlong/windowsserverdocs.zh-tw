@@ -1,8 +1,8 @@
 ---
-title: 磁碟屬性
-description: 適用於 Windows 命令主題**屬性磁碟**-顯示、 集合或清除磁碟的屬性。
+title: 屬性磁片
+description: '**屬性磁片**的 Windows 命令主題-顯示、設定或清除磁片的屬性。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cacc2fb6b47d095f5e452ca470c89f228949594
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 415125208b13d82adeed736107f59fda9489a953
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890349"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382575"
 ---
-# <a name="attributes-disk"></a>磁碟屬性
+# <a name="attributes-disk"></a>屬性磁片
 
 
 
-顯示、 設定，或清除磁碟的屬性。
+顯示、設定或清除磁片的屬性。
 
 > [!IMPORTANT]
-> 此參數不適用於所有版本的 Windows Vista。
+> 在任何 Windows Vista 版本中都無法使用這個參數。
 
 ## <a name="syntax"></a>語法
 
@@ -39,23 +39,23 @@ attributes disk [{set | clear}] [readonly] [noerr]
 
 |參數|描述|
 |---------|-----------|
-|設定|設定具有焦點的磁碟的指定的屬性。|
-|clear|清除指定的屬性具有焦點的磁碟。|
-|唯讀|指定磁碟處於唯讀狀態。|
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|
+|設定|設定具有焦點之磁片的指定屬性。|
+|clear|清除具有焦點之磁片的指定屬性。|
+|唯讀|指定磁片是唯讀的。|
+|noerr|僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|
 
 ## <a name="remarks"></a>備註
 
--   當**屬性磁碟**是用來顯示磁碟的目前屬性，啟動磁碟屬性表示用來啟動電腦的磁碟。 動態鏡像，它會顯示包含的開機磁碟區網狀開機磁碟區的磁碟。
--   必須選取一個磁碟**屬性磁碟**命令才會成功。 使用**選取磁碟**命令來選取磁碟，並將焦點移到它。
+-   當 [**屬性磁片**] 用來顯示磁片的目前屬性時，[啟動磁片] 屬性會代表用來啟動電腦的磁片。 若為動態鏡像，則會顯示包含開機磁碟區之開機 plex 的磁片。
+-   必須選取磁片，**屬性 disk**命令才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要檢視所選磁碟的屬性，請輸入：
+若要查看所選磁片的屬性，請輸入：
 ```
 attributes disk
 ```
-若要將所選的磁碟設為唯讀模式中，輸入：
+若要將選取的磁片設定為唯讀，請輸入：
 ```
 attributes disk set readonly
 ```

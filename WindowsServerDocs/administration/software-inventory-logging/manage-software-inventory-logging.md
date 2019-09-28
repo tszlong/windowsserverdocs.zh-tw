@@ -2,7 +2,7 @@
 title: 管理軟體清查記錄
 description: 說明如何管理軟體清查記錄
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 686bb61426e49f00597c423bcf4f52d949a358ab
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866382"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382972"
 ---
 # <a name="manage-software-inventory-logging"></a>管理軟體清查記錄
 
@@ -221,7 +221,7 @@ SystemManufacturer        : Microsoft Corporation
 > 如果作業系統因故必須進行修復安裝或升級，則儲存在本機的任何記錄檔將會遺失。  如果這份資料對於營運非常重要，建議您在安裝新的作業系統之前先行備份。 修復或升級之後，只需還原至相同的位置。  
   
 > [!NOTE]  
-> 如果基於任何原因管理 SIL 在本機記錄的資料保留持續時間變得很重要，您可以在這裡變更登錄值來設定：\\\HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 預設值為 ' 30 ' 30 天。  
+> 如果基於任何原因管理 SIL 在本機記錄的資料保留持續時間變得很重要，您可以在這裡變更登錄值來設定： \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 預設值為 ' 30 ' 30 天。  
   
 ## <a name="BKMK_Step6"></a>讀取軟體清查記錄所記錄和發行的資料  
 SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），或成功轉送到目標匯總伺服器的資料，會儲存在二進位檔案中（適用于每日的資料）。 若要在 PowerShell 中顯示這項資料，請使用 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) Cmdlet。  
@@ -244,7 +244,7 @@ SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），�
 ## <a name="BKMK_Step10"></a>在掛接的虛擬硬碟中啟用和設定軟體清查記錄  
 離線虛擬機器也支援軟體清查記錄的設定及啟用。 這適用于這種情況的實際用途，是為了涵蓋跨資料中心進行寬部署的「黃金影像」安裝，以及設定從部署到雲端部署的終端使用者映射。  
   
-若要支援這些用途，軟體清查記錄會有與每個可設定選項相關聯的登錄項目。  您可以在 \HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 中找到這些登錄值。  
+若要支援這些用途，軟體清查記錄會有與每個可設定選項相關聯的登錄項目。  這些登錄值可以在 \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 下找到。  
   
 |||||  
 |-|-|-|-|  

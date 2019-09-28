@@ -1,8 +1,8 @@
 ---
 title: append
-description: '適用於 Windows 命令主題 '
+description: '的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe641e1336c163b5e98421a5fc32f8dbe64023b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fdc4243bee8055888b023a56921cef757dda6b7e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435320"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382747"
 ---
 # <a name="append"></a>append
 
 
 
-可讓程式開啟資料檔中指定的目錄，如同它們是在目前的目錄。 如果未指定參數，使用**附加**顯示附加的目錄清單。
+允許程式在指定的目錄中開啟資料檔案，就像是在目前目錄中的檔案一樣。 如果使用時不含參數， **append**會顯示附加的目錄清單。
 
 > [!NOTE]
-> Windows 10 中不支援此命令。
+> Windows 10 不支援此命令。
 >
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -43,22 +43,22 @@ append ;
 
 |     參數     |                                                                                 描述                                                                                 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive>:]<Path> |                                                                 指定磁碟機和要附加的目錄。                                                                  |
-|       / x： 上       |                                                  搜尋檔案並啟動應用程式，適用於附加的目錄。                                                  |
-|      / x： 關閉       |                                     僅適用於附加的目錄開啟檔案的要求。</br>**/ x： 關閉**是預設設定。                                     |
-|     /path:on      |                               適用於已指定路徑的檔案要求附加的目錄。 **/path： 上**是預設設定。                               |
-|     /path:off     |                                                                    關閉的效果 **/path： 上**。                                                                    |
-|        /e         | 名為附加的環境變數中儲存一份附加的目錄清單。 **/e**可能使用只有您使用第一次**附加**啟動您的系統之後。 |
+| [\<Drive >：] <Path> |                                                                 指定要附加的磁片磁碟機和目錄。                                                                  |
+|       /x： on       |                                                  將附加的目錄套用至檔案搜尋和啟動應用程式。                                                  |
+|      /x： off       |                                     只會將附加的目錄套用至開啟檔案的要求。</br>**/x： off**是預設設定。                                     |
+|     /path： on      |                               將附加的目錄套用到已指定路徑的檔案要求。 **/path： on**是預設設定。                               |
+|     /path： off     |                                                                    關閉 **/path： on**的效果。                                                                    |
+|        /e         | 將附加的目錄清單複本儲存在名為 APPEND 的環境變數中。 只有在您啟動系統之後第一次使用 [**附加**] 時，才能使用 **/e** 。 |
 |         ;         |                                                                     清除附加的目錄清單。                                                                     |
 |        /?         |                                                                    在命令提示字元顯示說明。                                                                     |
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
 若要清除附加的目錄清單，請輸入：
 ```
 append ;
 ```
-若要儲存一份附加的目錄，以名為附加的環境變數，請輸入：
+若要將附加目錄的複本儲存至名為 APPEND 的環境變數，請輸入：
 ```
 append /e
 ```

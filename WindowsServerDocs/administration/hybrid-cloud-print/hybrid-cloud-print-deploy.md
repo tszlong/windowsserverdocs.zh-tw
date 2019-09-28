@@ -1,7 +1,7 @@
 ---
 title: 部署 Windows Server 混合式雲端列印
 description: 如何設定 Microsoft 混合式雲端列印
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: Windows Server 2016
@@ -12,12 +12,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 552695626c98ee0fc01148536b50d4466d1b96e4
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: af5cd5f83633df7e704f4b768baf8dc6d78546aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866808"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370437"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print-with-pre-authentication"></a>使用預先驗證來部署 Windows Server 混合式雲端列印
 
@@ -61,8 +61,8 @@ ms.locfileid: "70866808"
 
 本指南概述五（5）個安裝步驟：
 
-- 步驟 1：安裝 Azure AD Connect 以在 Azure AD 與內部部署 AD 之間同步
-- 步驟 2：在列印伺服器上安裝混合式雲端列印套件
+- 步驟 1:安裝 Azure AD Connect 以在 Azure AD 與內部部署 AD 之間同步
+- 步驟 2:在列印伺服器上安裝混合式雲端列印套件
 - 步驟 3：使用 Kerberos 限制委派（KCD）安裝 Azure 應用程式 Proxy （AAP-SCHEME）
 - 步驟 4：設定必要的 MDM 原則
 - 步驟 5：發佈共用印表機
@@ -188,7 +188,7 @@ ms.locfileid: "70866808"
        - 外部 URL：設定適合您的組織
        - 預先驗證方法：Azure Active Directory
 
-     >   注意:如果您找不到上述所有設定，請新增具有可用設定的 proxy，然後選取您剛才建立的應用程式 proxy，並移至 [**應用程式 proxy** ] 索引標籤，並新增上述所有資訊。
+     >   注意：如果您找不到上述所有設定，請新增具有可用設定的 proxy，然後選取您剛才建立的應用程式 proxy，並移至 [**應用程式 proxy** ] 索引標籤，並新增上述所有資訊。
 
    - 建立之後，返回 [**企業應用程式** -> ] [**所有應用程式**]，選取您剛建立的新應用程式
    - 移至 [**單一登入**]，確認 [單一登入模式] 設定為 [整合式 Windows 驗證]
@@ -228,7 +228,7 @@ ms.locfileid: "70866808"
   - CloudPrintResourceId = 在步驟3.5 中建立之企業雲端列印服務 Azure 應用程式 Proxy 的外部 URL （必須完全相同，包括尾端/）
   - DiscoveryMaxPrinterLimit = \<正整數\>
 
->   注意:如果您使用 Microsoft Intune 服務，您可以在 [雲端印表機] 類別下找到這些設定。
+>   注意：如果您使用 Microsoft Intune 服務，您可以在 [雲端印表機] 類別下找到這些設定。
 
 |Intune 顯示名稱                     |原則                         |
 |----------------------------------------|-------------------------------|
@@ -239,7 +239,7 @@ ms.locfileid: "70866808"
 |要查詢的印表機上限（僅限行動裝置）  |DiscoveryMaxPrinterLimit       |
 |印表機探索服務資源 URI  |MopriaDiscoveryResourceId      |
 
->   注意:如果 [雲端列印原則] 群組無法使用，但 MDM 提供者支援 OMA-URI 設定，則您可以設定相同的原則。  如需其他資訊，請參閱這<a href="https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority">篇文章</a>。
+>   注意：如果 [雲端列印原則] 群組無法使用，但 MDM 提供者支援 OMA-URI 設定，則您可以設定相同的原則。  如需其他資訊，請參閱這<a href="https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority">篇文章</a>。
 
 - OMA-URI
     - `CloudPrintOAuthAuthority = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority`
@@ -285,7 +285,7 @@ ms.locfileid: "70866808"
 
         > 注意：您也可以在命令列中輸入所有必要的參數值。<br>
         **發行-CloudPrinter**PowerShell 命令語法： <br>
-        發行-CloudPrinter-印表機\<字串\> -製造商\<字串\> -模型\<字串\> -OrgLocation \<字串\> -Sddl \<字串\> DiscoveryEndpoint字串-\> PrintServerEndpoint\>字串- AzureClientId\<string-\> AzureTenantGuid \< \< \<字串[\> - DiscoveryResourceId\<string]\> <br>
+        CloudPrinter-Printer \<string @ no__t-1-製造商 \<string @ no__t-3-Model \<string @ no__t-5-OrgLocation \<string @ no__t-7-Sddl \<string @ no__t-9-DiscoveryEndpoint \>0string @ no__t-11-PrintServerEndpoint 2string @ no__t-13-AzureClientId 4string @ no__t-15-AzureTenantGuid 6string @ no__t-17 [-DiscoveryResourceId 8string @ no__t-19] <br>
         範例命令：`publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
 
 
@@ -302,4 +302,4 @@ ms.locfileid: "70866808"
     - 選取印表機，然後按一下 [**新增裝置**] 按鈕
     - 成功安裝印表機之後，從您最愛的應用程式列印到印表機
 
->   注意:如果使用 "EcpPrintTest" 印表機，您可以在 "C：\\ECPTestOutput\\EcpTestPrint. xps" 位置下的列印伺服器電腦中找到輸出檔案。
+>   注意：如果使用 "EcpPrintTest" 印表機，您可以在 "C：\\ECPTestOutput\\EcpTestPrint. xps" 位置下的列印伺服器電腦中找到輸出檔案。

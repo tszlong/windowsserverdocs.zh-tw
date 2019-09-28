@@ -1,8 +1,8 @@
 ---
 title: 新增別名
-description: 適用於 Windows 命令主題**新增別名**-將別名新增至 「 別名 」 環境。
+description: '**新增別名**的 Windows 命令主題-將別名新增至別名環境。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50de932ea0153546816face61f0852a08707ea85
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2834376e497f54eadf1d9077e74f9c398202c5a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862219"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382823"
 ---
 # <a name="add-alias"></a>新增別名
 
 
 
-將別名新增至 「 別名 」 環境中。 如果未指定參數，使用**新增別名**在命令提示字元中顯示說明。
+將別名新增至別名環境。 如果在沒有參數的情況下使用， **add alias**會在命令提示字元中顯示說明。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -39,29 +39,29 @@ add alias <AliasName> <AliasValue>
 |參數|描述|
 |---------|-----------|
 |\<AliasName >|指定別名的名稱。|
-|\<AliasValue>|指定別名的值。|
+|\<AliasValue >|指定別名的值。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   別名會儲存在中繼資料檔案，而且也會載入具有**載入中繼資料**命令。
+-   別名會儲存在中繼資料檔案中，並且會使用 [**載入中繼資料**] 命令載入。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要列出所有的陰影，包括它們的別名，請輸入：
+若要列出所有陰影，包括其別名，請輸入：
 ```
 list shadows all
 ```
-下列摘錄顯示已被指派預設別名 VSS_SHADOW_x，陰影複製：
+下列摘錄顯示已指派預設別名 VSS_SHADOW_x 的陰影複製：
 ```
 * Shadow Copy ID = {ff47165a-1946-4a0c-b7f4-80f46a309278}
 %VSS_SHADOW_1%
 ```
-若要將新的別名名稱 nic:1 指派到這個陰影複製，請輸入：
+若要將名稱為 System1 的新別名指派給此陰影複製，請輸入：
 ```
 add alias System1 %VSS_SHADOW_1%
 ```
-或者，您可以指派別名使用陰影複製識別碼：
+或者，您可以使用陰影複製識別碼來指派別名：
 ```
 add alias System1 {ff47165a-1946-4a0c-b7f4-80f46a309278}
 ```

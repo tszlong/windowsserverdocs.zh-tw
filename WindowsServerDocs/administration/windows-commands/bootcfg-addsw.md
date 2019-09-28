@@ -1,8 +1,8 @@
 ---
 title: bootcfg addsw
-description: 適用於 Windows 命令主題**bootcfg addsw** -新增作業系統載入選項，可針對指定的作業系統項目。
+description: 適用于**bootcfg addsw**的 Windows 命令主題-新增指定之作業系統專案的作業系統載入選項。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a056cec15bf804dafed4c4d39a80386e58c87fea
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2dd727c839babe1ae4f7743285844f35cf5bf76e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434878"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380176"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-新增作業系統載入選項，可針對指定的作業系統項目。
+為指定的作業系統專案新增作業系統載入選項。
 
 ## <a name="syntax"></a>語法
 ```
@@ -34,18 +34,18 @@ bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumR
 
 |         詞彙         |                                                                                                            定義                                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s <computer>     |                                                        指定的名稱或遠端電腦的 IP 位址 （不使用反斜線）。 預設是本機電腦。                                                        |
-| /u <Domain>\\<User>  |               使用指定的使用者帳戶權限執行命令<User>或是<Domain> \\ <User>。 預設值是目前登入的使用者發出命令的電腦上的權限。               |
-|    /p <Password>     |                                                                      指定在指定的使用者帳戶的密碼 **/u**參數。                                                                       |
-|   /mm <MaximumRAM>   |                                          指定最大的 RAM 數量，以 mb 為單位，可以使用的作業系統。 值必須等於或大於 32 Mb。                                          |
-|         /bv          |                                    新增 **/basevideo**選項設為指定<OSEntryLineNum>，將導向作業系統使用標準的 VGA 模式來安裝的視訊驅動程式。                                     |
-|         /so          |                                      新增 **/sos**選項設為指定*OSEntryLineNum*，導向至顯示裝置驅動程式名稱，而正在載入作業系統。                                      |
-|         /ng          |                                         新增 **/noguiboot**選項設為指定<OSEntryLineNum>，停用出現之前 CTRL + ALT + del 登入提示的進度列。                                          |
-| /id <OSEntryLineNum> | Boot.ini 檔案加入作業系統載入選項的 [operating systems] 區段中指定的作業系統項目行號。 [Operating systems] 區段標頭之後的第一行會是 1。 |
+|    /s <computer>     |                                                        指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。                                                        |
+| /u <Domain> @ no__t-1 @ no__t-2  |               以 <User> 或 <Domain> @ no__t-2 @ no__t-3 指定之使用者的帳戶許可權來執行命令。 預設為發出命令之電腦上目前登入使用者的許可權。               |
+|    /p <Password>     |                                                                      指定 **/u**參數中指定之使用者帳戶的密碼。                                                                       |
+|   /mm <MaximumRAM>   |                                          指定作業系統可使用的 RAM 數量上限（以 mb 為單位）。 值必須等於或大於 32 Mb。                                          |
+|         /bv          |                                    將 **/basevideo**選項新增至指定的 <OSEntryLineNum>，將作業系統導向使用已安裝之視頻驅動程式的標準 VGA 模式。                                     |
+|         /so          |                                      將 **/sos**選項新增至指定的*OSEntryLineNum*，並在載入時，引導作業系統顯示裝置磁碟機名稱。                                      |
+|         /ng          |                                         將 **/noguiboot**選項新增至指定的 <OSEntryLineNum>，停用在 CTRL + ALT + del 登入提示字元之前出現的進度列。                                          |
+| /id <OSEntryLineNum> | 在新增作業系統載入選項的 Boot.ini 檔案的 [作業系統] 區段中，指定作業系統專案行號。 [作業系統] 區段標頭後面的第一行是1。 |
 |          /?          |                                                                                               在命令提示字元顯示說明。                                                                                               |
 
-## <a name="BKMK_examples"></a>範例
-下列範例示範如何使用**bootcfg /addsw**命令：
+## <a name="BKMK_examples"></a>典型
+下列範例會示範如何使用**bootcfg/addsw**命令：
 ```
 bootcfg /addsw /mm 64 /id 2 
 bootcfg /addsw /so /id 3 
@@ -53,5 +53,5 @@ bootcfg /addsw /so /ng /s srvmain /u hiropln /id 2
 bootcfg /addsw /ng /id 2 
 bootcfg /addsw /mm 96 /ng /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>其他參考資料
+#### <a name="additional-references"></a>其他參考
 [命令列語法關鍵](command-line-syntax-key.md)

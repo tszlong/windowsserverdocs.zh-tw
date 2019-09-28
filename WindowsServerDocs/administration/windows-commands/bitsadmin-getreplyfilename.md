@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getreplyfilename
-description: 適用於 Windows 命令主題**bitsadmin getreplyfilename** -取得包含伺服器回應的檔案路徑。
+description: '**Bitsadmin getreplyfilename**的 Windows 命令主題-取得包含伺服器回復之檔案的路徑。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 46130700e9ac7e2d0076b368712e5dcb3f02ba2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 96b77e9bd19cdc094e6b025e143b05aff7bc60d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381270"
 ---
 # <a name="bitsadmin-getreplyfilename"></a>bitsadmin getreplyfilename
 
-取得包含伺服器回應的檔案路徑。
+取得包含伺服器回復之檔案的路徑。
 
-**1.2 及更早版本的位元**: 未支援。
+**BITS 1.2 和更早版本**： 未支援。
 
 ## <a name="syntax"></a>語法
 
@@ -40,11 +40,11 @@ bitsadmin /GetReplyFileName <Job>
 
 ## <a name="remarks"></a>備註
 
-僅適用於上傳-回覆作業。
+僅適用于上傳-回復作業。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列範例會擷取名為作業的回覆檔名*myDownloadJob*。
+下列範例會抓取名為*myDownloadJob*之作業的回復檔案名。
 ```
 C:\>bitsadmin /GetReplyFileName myDownloadJob
 ```

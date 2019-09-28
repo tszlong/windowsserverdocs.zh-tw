@@ -1,8 +1,8 @@
 ---
-title: 將連結 vdisk
-description: 適用於 Windows 命令主題**連結 vdisk** -附加 （有時稱為的掛接或介面） 的虛擬硬碟 (VHD)，使其出現在主機電腦，為本機硬碟上。
+title: 附加 vdisk
+description: '**Attach vdisk**的 Windows 命令主題-附加（有時稱為掛接或介面）虛擬硬碟（VHD），使其在主機電腦上顯示為本機硬碟。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb33d040ce0b2a7a9d06951a7e80251a0d0da614
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d29eacfc8575ec50859733612a3d58b166d9402d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435227"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382636"
 ---
-# <a name="attach-vdisk"></a>將連結 vdisk
+# <a name="attach-vdisk"></a>附加 vdisk
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-附加 （有時稱為的掛接或介面） 的虛擬硬碟 (VHD)，使其出現在主機電腦，為本機硬碟上。 如果 VHD 已經有磁碟分割區和檔案系統磁碟區，當您在附加時，VHD 內的磁碟區指派磁碟機代號。
+連接（有時稱為裝載或介面）虛擬硬碟（VHD），使其在主機電腦上顯示為本機硬碟。 如果 VHD 在您連結時已經有磁碟分割和檔案系統磁片區，則會將磁碟機號指派給 VHD 內的磁片區。
 > [!NOTE]
-> 此命令僅適用於 Windows 7 和 Windows Server 2008 R2。
+> 此命令僅適用于 Windows 7 和 Windows Server 2008 R2。
 
 ## <a name="syntax"></a>語法
 ```
@@ -36,24 +36,24 @@ attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 
 |    參數     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     唯讀     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                             附加為唯讀的 VHD。 任何寫入作業會傳回錯誤。                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| sd=<SDDL string> | 在 VHD 上設定使用者篩選器。 篩選條件字串必須以 Security Descriptor Definition Language (SDDL) 格式。 根據預設使用者篩選器會允許存取，例如實體磁碟上。<br /><br />SDDL 字串可能很複雜，但其最簡單的形式，保護存取的安全性描述元稱為判別存取控制清單 (DACL)。 它的格式為：D:<dacl_flags><string_ace1><string_ace2>... <string_acen><br /><br />常見的 DACL 旗標如下：<br /><br />-   **A**允許存取<br />-   **D**拒絕存取<br /><br />一般權限如下：<br /><br />-   **GA**所有存取<br />-   **GR**讀取權限<br />-   **GW**寫入權限<br /><br />一般使用者帳戶是：<br /><br />-   **BA**內建的系統管理員<br />-   **AU**已驗證的使用者<br />-   **CO** Creator owner<br />-   **WD** -任何人<br /><br />範例：<br /><br />**D:P:(A;;GR;;AU**讀取權限提供給所有已驗證的使用者<br /><br />**D:P:(A;;GA;;WD**提供每個使用者的完整存取 |
-|    usefilesd     |                                                                                                                                                                                                                                                                                                                                                                                          指定在 VHD 上，應該使用.vhd 檔案上的安全性描述元。 如果**Usefilesd**未指定參數、 VHD 不會有明確的安全性描述元，除非指定**Sd**參數。                                                                                                                                                                                                                                                                                                                                                                                          |
-|      noerr       |                                                                                                                                                                                                                                                                                                                                                                                                           用於僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。                                                                                                                                                                                                                                                                                                                                                                                                           |
+|     唯讀     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                             將 VHD 附加為唯讀。 任何寫入作業都會傳回錯誤。                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| sd = <SDDL string> | 設定 VHD 上的使用者篩選。 篩選字串必須是安全描述項定義語言（SDDL）格式。 根據預設，使用者篩選允許實體磁片上的存取。<br /><br />SDDL 字串可能很複雜，但在其最簡單的形式中，保護存取權的安全描述項稱為任意存取控制清單（DACL）。 其形式如下：D： < dacl_flags > < string_ace1 > < string_ace2 > .。。< string_acen ><br /><br />常見的 DACL 旗標如下：<br /><br />@no__t **-0 允許**存取<br />-   **D**拒絕存取<br /><br />一般許可權如下：<br /><br />-   **GA**所有存取<br />-   **GR**讀取權限<br />-   **GW**寫入權限<br /><br />一般使用者帳戶如下：<br /><br />-   **BA**內建系統管理員<br />-   **AU**驗證使用者<br />-   **CO** Creator 擁有者<br />-   **WD** -Everyone<br /><br />例如：<br /><br />**D:P：（A;;）GR;;;AU**提供所有已驗證使用者的讀取權限<br /><br />**D:P：（A;;）GA;;;WD**讓所有人都能完整地進行 |
+|    usefilesd     |                                                                                                                                                                                                                                                                                                                                                                                          指定應該在 VHD 上使用 .vhd 檔案的安全描述項。 如果未指定**Usefilesd**參數，VHD 將不會有明確的安全描述項，除非以**Sd**參數指定。                                                                                                                                                                                                                                                                                                                                                                                          |
+|      noerr       |                                                                                                                                                                                                                                                                                                                                                                                                           僅用於腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 ## <a name="remarks"></a>備註
-- 必須選取 VHD，並將其卸離此作業才會成功。 使用**選取 vdisk**命令來選取 VHD，並將焦點移到它。
-  ## <a name="BKMK_Examples"></a>範例
-  若要附加選取的 VHD，以唯讀模式，請輸入：
+- 必須選取並卸離 VHD，此作業才能成功。 使用 [**選取 vdisk** ] 命令來選取 VHD，並將焦點移至它。
+  ## <a name="BKMK_Examples"></a>典型
+  若要將選取的 VHD 附加為唯讀，請輸入：
   ```
   attach vdisk readonly
   ```
-  ## <a name="additional-references"></a>其他參考資料
+  ## <a name="additional-references"></a>其他參考
 - [命令列語法關鍵](command-line-syntax-key.md)
 - [compact vdisk](compact-vdisk.md)
 
-- [detail vdisk](detail-vdisk.md)
-- [中斷連結 vdisk](detach-vdisk.md)
+- [詳細資料 vdisk](detail-vdisk.md)
+- [卸離 vdisk](detach-vdisk.md)
 - [展開 vdisk](expand-vdisk.md)
 - [合併 vdisk](merge-vdisk.md)
 - [選取 vdisk](select-vdisk.md)

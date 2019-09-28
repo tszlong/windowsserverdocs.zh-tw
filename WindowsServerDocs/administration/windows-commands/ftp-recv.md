@@ -1,8 +1,8 @@
 ---
 title: ftp 接收
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5bfd68dcb745ebf7ef239883aa1c5322241b32df
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6ec35a2044945e3d39a2a78d39923de3a56eb18d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438429"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376123"
 ---
-# <a name="ftp-recv"></a>ftp: recv
+# <a name="ftp-recv"></a>ftp：接收
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將遠端檔案複製到本機電腦使用目前的檔案傳輸類型。   
+使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。   
 ## <a name="syntax"></a>語法  
 ```  
 recv <remoteFile> [<LocalFile>]  
@@ -37,19 +37,19 @@ recv <remoteFile> [<LocalFile>]
 | [<LocalFile>] | 指定要在本機電腦上使用的名稱。 |
 
 ## <a name="remarks"></a>備註  
-- **接收**命令等同於**取得**命令。  
-- 如果*LocalFile*未指定，在指定的檔案*remoteFile*名稱。  
-  ## <a name="BKMK_Examples"></a>範例  
-  複製**test.txt**到本機電腦使用目前的檔案傳輸類型。  
+- [**接收**] 命令等同于**get**命令。  
+- 如果未指定*LocalFile* ，則會為檔案提供*remoteFile*名稱。  
+  ## <a name="BKMK_Examples"></a>典型  
+  使用目前的檔案傳輸類型，將**test.txt**複製到本機電腦。  
   ```  
   recv test.txt  
   ```  
-  複製**test.txt**本機電腦**test1.txt**使用目前的檔案傳輸類型。  
+  使用目前的檔案傳輸類型，將**test.txt**複製到本機電腦做為**test1 .txt。**  
   ```  
   recv test.txt test1.txt  
   ```  
-  ## <a name="additional-references"></a>其他參考資料  
-- [ftp: ascii](ftp-ascii.md)  
-- [ftp: binary](ftp-binary.md)  
-- [ftp: get](ftp-get.md)  
+  ## <a name="additional-references"></a>其他參考  
+- [ftp： ascii](ftp-ascii.md)  
+- [ftp： binary](ftp-binary.md)  
+- [ftp： get](ftp-get.md)  
 - [命令列語法關鍵](command-line-syntax-key.md)  

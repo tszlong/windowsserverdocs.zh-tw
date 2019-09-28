@@ -1,8 +1,8 @@
 ---
-title: ksetup:addkpasswd
-description: '適用於 Windows 命令主題 * * *- '
+title: ksetup： addkpasswd
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a85eb6dfe30c33126504744a7659fe2cc573087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72c27cb6b068dc46cd58e753b4b08d68b39bfb20
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856819"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375189"
 ---
-# <a name="ksetupaddkpasswd"></a>ksetup:addkpasswd
+# <a name="ksetupaddkpasswd"></a>ksetup： addkpasswd
 
 
 
-新增領域的 Kerberos 密碼 (Kpasswd) 伺服器位址。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+新增領域的 Kerberos 密碼（Kpasswd）伺服器位址。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -34,28 +34,28 @@ ksetup /addkpasswd <RealmName> [<KpasswdName>]
 
 ### <a name="parameters"></a>參數
 
-如果 Kerberos 領域，工作站會向支援 Kerberos 變更密碼通訊協定，您可以設定為使用 Kerberos 密碼伺服器執行 Windows 作業系統的用戶端電腦。 這項設定的領域的一端。
+如果工作站要驗證的 Kerberos 領域支援 Kerberos 變更密碼通訊協定，您可以將執行 Windows 作業系統的用戶端電腦設定為使用 Kerberos 密碼伺服器。 此設定是在領域端設定。
 
 |參數|描述|
 |---------|-----------|
-|\<RealmName>|領域名稱會指定為大寫的 DNS 名稱，例如 CORP.CONTOSO.COM，且預設值會列為領域 = 當**ksetup**執行。|
-|\<KpasswdName>|KDC 名稱所要做為 Kerberos 密碼伺服器是做為不區分大小寫的完整的網域名稱，例如 mitkdc.microsoft.com 所述。 如果省略 KDC 名稱，則 DNS 可能會用來尋找 Kdc 中。|
+|\<RealmName >|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，且在執行**ksetup**時列為預設領域或領域 =。|
+|\<KpasswdName >|作為 Kerberos 密碼伺服器使用的 KDC 名稱會被視為不區分大小寫的完整功能變數名稱，例如 mitkdc.microsoft.com。 如果省略 KDC 名稱，則可能會使用 DNS 來尋找 Kdc。|
 
 ## <a name="remarks"></a>備註
 
-如果 Kerberos 領域，工作站會向支援 Kerberos 變更密碼通訊協定，您可以設定為使用 Kerberos 密碼伺服器執行 Windows 作業系統的用戶端電腦。
+如果工作站要驗證的 Kerberos 領域支援 Kerberos 變更密碼通訊協定，您可以將執行 Windows 作業系統的用戶端電腦設定為使用 Kerberos 密碼伺服器。
 
-執行命令**ksetup**確認 KDC 名稱。 如果**kpasswd =** 不會出現在輸出中，對應尚未設定。
+執行命令**ksetup**來驗證 KDC 名稱。 如果**kpasswd =** 未出現在輸出中，表示尚未設定對應。
 
-您可以新增額外的 KDC 名稱一次。
+您可以一次新增一個額外的 KDC 名稱。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-設定領域 CORP.CONTOSO.COM，因此它會使用非 Windows KDC 伺服器上，mitkdc.contoso.com，做為密碼伺服器：
+設定領域 CORP。CONTOSO.COM，使其使用非 Windows KDC 伺服器 mitkdc.contoso.com，做為密碼伺服器：
 ```
 ksetup /addkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-這會導致控制項進行驗證，它和領域之間的所有密碼的非 Windows Kerberos 密碼伺服器。
+這會導致非 Windows Kerberos 密碼伺服器，以控制它與領域之間驗證的所有密碼。
 
 #### <a name="additional-references"></a>其他參考資料
 

@@ -1,8 +1,8 @@
 ---
 title: PowerShell_ise
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,59 +13,59 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5619396e29b446dbc6804ece7444f355dae4c0a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 65d8b9e7b7952ec64cd24e8106802cf66de693c6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436307"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372186"
 ---
-# <a name="powershellise"></a>PowerShell_ise
+# <a name="powershell_ise"></a>PowerShell_ise
 
 
 
-Windows PowerShell 整合式指令碼環境 (ISE) 是可讓您讀取、 寫入、 執行、 偵錯和測試指令碼和模組圖形輔助的環境中的圖形化的主機應用程式。 主要功能，例如 IntelliSense、 顯示命令、 程式碼片段、 tab 鍵自動完成、 語法著色、 視覺化偵錯，和提供豐富的指令碼撰寫體驗的即時線上說明。
+Windows PowerShell 整合式腳本環境（ISE）是一個圖形化主機應用程式，可讓您在圖形輔助環境中讀取、寫入、執行、偵測及測試腳本和模組。 IntelliSense、顯示命令、程式碼片段、tab 鍵自動完成、語法著色、視覺化調試和即時線上說明等主要功能提供豐富的腳本撰寫體驗。
 
-**PowerShell_ISE.exe**工具啟動 Windows PowerShell ISE 工作階段。 當您使用**PowerShell_ISE.exe**，在 Windows PowerShell ISE 中開啟檔案，或不含設定檔，或使用多執行緒 apartment 啟動 Windows PowerShell ISE 工作階段，您可以使用其選擇性參數。
+**PowerShell_ISE**工具會啟動 Windows PowerShell ISE 會話。 當您使用**PowerShell_ISE**時，您可以使用它的選擇性參數，在 Windows PowerShell ISE 中開啟檔案，或啟動不含設定檔或多執行緒單元的 Windows PowerShell ISE 會話。
 
-**PowerShell_ISE.exe**已在 Windows PowerShell 2.0 引進，並在 Windows PowerShell 3.0 大幅擴充。
+**PowerShell_ISE**是在 windows powershell 2.0 引進，並在 windows powershell 3.0 中大幅擴充。
 
-## <a name="using-powershelliseexe"></a>使用 PowerShell_ISE.exe
+## <a name="using-powershell_iseexe"></a>使用 PowerShell_ISE
 
-您可以使用**PowerShell_ISE.exe**開始和結束 Windows PowerShell 工作階段，如下所示：
-- 若要啟動 Windows PowerShell ISE 工作階段，在命令提示字元視窗中，在 Windows PowerShell 中，或在 [開始] 功能表中，輸入：  
+您可以使用**PowerShell_ISE**來啟動和結束 Windows PowerShell 會話，如下所示：
+- 若要啟動 Windows PowerShell ISE 會話，請在 [命令提示字元] 視窗的 Windows PowerShell 中，或在 [開始] 功能表中輸入：  
   ```
   PowerShell_Ise
   ```  
-- 若要在 Windows PowerShell ISE 中開啟指令碼 (.ps1)、 指令碼模組 (.psm1)、 模組資訊清單 (.psd1)、 XML 檔案或任何其他支援的檔案，請使用下列命令格式：  
+- 若要在 Windows PowerShell ISE 中開啟腳本（ps1）、腳本模組（. .psm1）、模組資訊清單（.psd1）、XML 檔案或任何其他支援的檔案，請使用下列命令格式：  
   ```
   PowerShell_Ise <FilePath>
   ```  
-  在 Windows PowerShell 3.0 中，您可以使用選擇性**檔案**參數，如下所示：  
+  在 Windows PowerShell 3.0 中，您可以使用選擇性的**File**參數，如下所示：  
   ```
   PowerShell_Ise -File <FilePath>
   ```  
-- 若要啟動的 Windows PowerShell ISE 工作階段，而不需要您的 Windows PowerShell 設定檔，請使用**NoProfile**參數。 ( **NoProfile**參數在 Windows PowerShell 3.0 引進。)  
+- 若要在沒有 Windows PowerShell 設定檔的情況下啟動 Windows PowerShell ISE 會話，請使用**NoProfile**參數。 （ **NoProfile**參數是在 Windows PowerShell 3.0 引進）。  
   ```
   PowerShell_Ise -NoProfile
   ```  
-- 若要查看**PowerShell_ISE.exe**協助檔案中的命令提示字元視窗，請使用下列命令格式：  
+- 若要在 [命令提示字元] 視窗中查看**PowerShell_ISE** ，請使用下列命令格式：  
   ```
   PowerShell_Ise -help, -?, /?
   ```  
-  如需完整的清單**PowerShell_ISE.exe**命令列參數，請參閱[about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)。
+  如需**PowerShell_ISE**命令列參數的完整清單，請參閱[about_PowerShell_Ise。](https://go.microsoft.com/fwlink/?LinkId=256512)
 
-## <a name="start-windows-powershell-ise-in-other-ways"></a>其他方法啟動 Windows PowerShell ISE
+## <a name="start-windows-powershell-ise-in-other-ways"></a>以其他方式啟動 Windows PowerShell ISE
 
-若要啟動 Windows PowerShell ISE 的其他方式的相關資訊，請參閱[啟動 Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=135259)。
+如需其他啟動 Windows PowerShell ISE 方式的相關資訊，請參閱[啟動 Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=135259)。
 
 ## <a name="remarks"></a>備註
 
-在 Windows Server 作業系統的 Server Core 安裝選項上，執行 Windows PowerShell。 不過，Windows PowerShell ISE 需要圖形化使用者介面，因為它無法執行 Server Core 安裝上。
+Windows PowerShell 會在 Windows Server 作業系統的 Server Core 安裝選項上執行。 不過，由於 Windows PowerShell ISE 需要圖形使用者介面，因此不會在 Server Core 安裝上執行。
 
 ## <a name="additional-references"></a>其他參考資料
 
-[about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)
-[about_PowerShell.exe](https://go.microsoft.com/fwlink/?LinkID=113439)
-[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[使用 Windows 撰寫指令碼PowerShell](https://technet.microsoft.com/scriptcenter/dd742419)另請參閱
+[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
+[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
+[windows Powershell](https://go.microsoft.com/fwlink/?LinkID=107116)
+[使用 windows powershell 的腳本，](https://technet.microsoft.com/scriptcenter/dd742419)另請參閱

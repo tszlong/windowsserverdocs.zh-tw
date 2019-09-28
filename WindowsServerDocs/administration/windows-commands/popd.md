@@ -1,8 +1,8 @@
 ---
 title: popd
-description: 了解如何將目錄變更到最近儲存 pushd 命令的目錄。
+description: 瞭解如何將目錄變更為由 pushd 命令最近儲存的目錄。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6da6dc9d1fc2d8965f8a081831cb1150375209a4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a9e0a301a5f8b46e1907a4f43c5ed9247b85f77
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827459"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372235"
 ---
 # <a name="popd"></a>popd
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將目前目錄變更至最近所儲存的目錄**pushd**命令。
+將目前的目錄變更為由**pushd**命令最近儲存的目錄。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
@@ -38,13 +38,13 @@ popd
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   每次您使用**pushd**命令，供您使用儲存單一目錄。 不過，您可以儲存多個目錄，使用**pushd**命令多次。
-    目錄會依序儲存在虛擬的堆疊。 如果您使用**pushd**命令之後，您可以在其中使用命令的目錄會放在堆疊的底部。 如果您一次使用此命令，第二個目錄會放在第一個之上。 每次您使用的程序會重複**pushd**命令。
-    您可以使用**popd**命令來將目前的目錄變更為最近儲存的目錄**pushd**命令。 如果您使用**popd**命令中，從堆疊中移除的堆疊頂端的目錄，並在目前的目錄變更至該目錄。 如果您使用**popd**同樣地，命令會移除在堆疊上的下一步 目錄。
--   命令延伸模組啟用時， **popd**命令會移除建立的任何磁碟機代號 assignations **pushd**。
+-   每次使用**pushd**命令時，即會儲存單一目錄以供您使用。 不過，您可以多次使用**pushd**命令來儲存多個目錄。
+    這些目錄會依序儲存在虛擬堆疊中。 如果您使用**pushd**命令一次，則使用命令的目錄會放在堆疊的底部。 如果您再次使用命令，第二個目錄就會放在第一個目錄的頂端。 每次使用**pushd**命令時，都會重複此程式。
+    您可以使用**popd**命令，將目前的目錄變更為由**pushd**命令最近儲存的目錄。 如果您使用**popd**命令，堆疊頂端的目錄會從堆疊中移除，而目前的目錄則會變更為該目錄。 如果您再次使用**popd**命令，則會移除堆疊上的下一個目錄。
+-   啟用命令延伸模組時， **popd**命令會移除由**pushd**所建立的任何磁碟機號 assignations。
 
-## <a name="BKMK_examples"></a>範例
-下列範例示範如何使用**pushd**命令並**popd**命令批次程式，從批次程式已執行的並將它變更回變更目前的目錄中：
+## <a name="BKMK_examples"></a>典型
+下列範例顯示如何在 batch 程式中使用**pushd**命令和**popd**命令，以變更執行 batch 程式的目錄，然後將它變更回來：
 
 ```
 @echo off
@@ -56,7 +56,7 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   [pushd](pushd.md)
 -   [命令列語法關鍵](command-line-syntax-key.md)
 

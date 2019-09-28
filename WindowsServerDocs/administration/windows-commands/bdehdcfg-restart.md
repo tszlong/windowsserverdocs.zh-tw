@@ -1,8 +1,8 @@
 ---
-title: bdehdcfg 重新啟動
-description: Windows 命令主題 bdehdcfg restart-會告訴 bdehdcfg 的磁碟機準備已完成之後，應該重新啟動電腦。
+title: bdehdcfg 重新開機
+description: Bdehdcfg 重新開機的 Windows 命令主題-告訴 bdehdcfg，電腦應該在磁片磁碟機準備結束後重新開機。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f361db8fdf33bd414556575de75241f7dbd9327
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6c4e48b051f567c98ea679feaa22f995982a899
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879459"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382208"
 ---
-# <a name="bdehdcfg-restart"></a>bdehdcfg: restart
+# <a name="bdehdcfg-restart"></a>bdehdcfg：重新開機
 
 
 
-通知 Bdehdcfg 命令列工具的磁碟機準備已完成之後，應該重新啟動電腦。 如需如何使用此命令的範例，請參閱 <<c0> [ 範例](#BKMK_Examples)。
+通知 Bdehdcfg 命令列工具，電腦應該在磁片磁碟機準備結束後重新開機。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -34,15 +34,15 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} 
 
 ### <a name="parameters"></a>參數
 
-此命令會接受任何其他參數。
+此命令不接受任何其他參數。
 
 ## <a name="remarks"></a>備註
 
-如果其他使用者登入電腦並**安靜**命令未指定，會顯示提示，以確認應重新啟動電腦。
+如果有其他使用者登入電腦，但未指定 [ **quiet** ] 命令，則會顯示提示，確認電腦是否應重新開機。
 
-## <a name="BKMK_Examples"></a>範例
+## <a name="BKMK_Examples"></a>典型
 
-下列範例說明如何利用**重新啟動**命令。
+下列範例說明如何使用**重新開機**命令。
 ```
 bdehdcfg -target default -restart
 ```

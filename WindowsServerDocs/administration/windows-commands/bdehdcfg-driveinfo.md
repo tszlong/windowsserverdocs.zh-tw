@@ -1,8 +1,8 @@
 ---
-title: bdehdcfg driveinfo
-description: '適用於 Windows 命令主題 * * bdehdcfg: driveinfo * *-會顯示磁碟機代號、 的總大小、 最大的可用空間，以及分割區的特性。'
+title: bdehdcfg system.io.driveinfo
+description: '\* * Bdehdcfg： system.io.driveinfo * * 的 Windows 命令主題-顯示磁碟機號、總大小、可用空間上限和磁碟分割特性。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2dd62e34f8205e0b5d395ba759fff4b4937b0ad
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b0f4541bfd71fb7639d18e6e548559ed02918815
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435038"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382266"
 ---
-# <a name="bdehdcfg-driveinfo"></a>Bdehdcfg: driveinfo
+# <a name="bdehdcfg-driveinfo"></a>bdehdcfg： system.io.driveinfo
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示磁碟機代號、 總大小、 最大的可用空間和分割區的特性。 列出有效的磁碟分割。 四個主要或延伸磁碟分割存在時，不會列出未配置的空間。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+顯示磁碟機號、總大小、可用空間上限，以及磁碟分割特性。 只會列出有效的磁碟分割。 如果已有四個主要或擴充分割區，則不會列出未配置的空間。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 ## <a name="syntax"></a>語法
 ```
 bdehdcfg -driveinfo <DriveLetter>
@@ -33,15 +33,15 @@ bdehdcfg -driveinfo <DriveLetter>
 
 |   參數   |                  描述                  |
 |---------------|-----------------------------------------------|
-| <DriveLetter> | 指定磁碟機代號，後面接著冒號。 |
+| <DriveLetter> | 指定後面接著冒號的磁碟機號。 |
 
 ## <a name="remarks"></a>備註
-此命令只是參考，並不會對磁碟機進行任何修改。
-## <a name="BKMK_Examples"></a>範例
-下列範例會顯示 c 磁碟機的磁碟機資訊
+此命令僅供參考，而且不會對磁片磁碟機進行任何修改。
+## <a name="BKMK_Examples"></a>實例
+下列範例會顯示磁片磁碟機 C 的磁片磁碟機資訊。
 ```
 bdehdcfg  driveinfo C:
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   [命令列語法關鍵](command-line-syntax-key.md)
 -   [bdehdcfg](bdehdcfg.md)

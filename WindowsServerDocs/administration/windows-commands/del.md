@@ -1,8 +1,8 @@
 ---
 title: del
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b10da1a6035155d525a516f35f83a25209e90075
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6e569443a56646862c7a2c9fbd2c599cede941a1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433895"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378699"
 ---
 # <a name="del"></a>del
 
 
 
-刪除一個或多個檔案。 此命令等同於**清除**命令。
+刪除一或多個檔案。 此命令與 [**清除**] 命令相同。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -39,29 +39,29 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 |參數|描述|
 |---------|-----------|
-|\<名稱 >|指定一或多個檔案或目錄的清單。 若要刪除多個檔案，可能會使用萬用字元。 如果指定的目錄，則會刪除目錄中的所有檔案。|
-|/p|確認再刪除指定的檔案的提示。|
+|\<Names >|指定一或多個檔案或目錄的清單。 萬用字元可用來刪除多個檔案。 如果指定目錄，則會刪除目錄中的所有檔案。|
+|/p|在刪除指定的檔案之前提示您確認。|
 |/f|強制刪除唯讀檔案。|
-|/s|刪除指定的檔案從目前的目錄和所有子目錄。 正在刪除會顯示檔案的名稱。|
-|/q|指定無訊息模式。 系統不會提示確認刪除。|
-|/a[:]\<Attributes>|刪除下列檔案屬性為基礎的檔案：</br>**r**唯讀檔案</br>**h**隱藏檔案</br>**我**不內容索引的檔案</br>**s**系統檔案</br> 封存的檔案</br>**l**重新分析點</br>-首碼 'not' 表示|
+|/s|從目前的目錄和所有子目錄中刪除指定的檔案。 顯示刪除檔案時的名稱。|
+|/q|指定無訊息模式。 系統不會提示您進行刪除確認。|
+|/a [：] \<Attributes >|根據下列檔案屬性刪除檔案：</br>**r**唯讀檔案</br>**h**隱藏的檔案</br>**我**不是內容索引檔案</br>**s**系統檔案</br>準備**封存的檔案**</br>**l**重新分析點</br>-前置詞意義 ' not '|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
 > [!CAUTION]
-> 如果您使用**del**從磁碟刪除檔案，您無法擷取它。
-> -   如果您使用 **/p**， **del**顯示檔案的名稱，並將傳送下列訊息：
+> 如果您使用**del**從磁片刪除檔案，就無法抓取檔案。
+> -   如果您使用 **/p**， **del**會顯示檔案名，並傳送下列訊息：
 
     `FileName, Delete (Y/N)?`
 
     To confirm the deletion, press Y. To cancel the deletion and display the next file name (that is, if you specified a group of files), press N. To stop the **del** command, press CTRL+C.
-- 如果您停用擴充命令，請 **/s**顯示而不是顯示 正在刪除的檔案名稱找不到任何檔案的名稱 （也就是相反的行為）。
-- 如果您指定的資料夾中*名稱*，也會刪除所有資料夾中的檔案。 例如，下列命令會刪除所有 \Work 資料夾中的檔案：  
+- 如果您停用命令延伸模組， **/s**會顯示找不到的任何檔案名，而不是顯示所要刪除之檔案的名稱（也就是相反的行為）。
+- 如果您在 [*名稱*] 中指定資料夾，則會刪除資料夾中的所有檔案。 例如，下列命令會刪除 \Work 資料夾中的所有檔案：  
   ```
   del \work
   ```  
-- 您可以使用萬用字元 ( **&#42;** 並 **？** ) 若要刪除多個檔案一次。 不過，若要避免不小心刪除檔案，您應該使用萬用字元小心**del**命令。 例如，如果您輸入下列命令：  
+- 您可以使用萬用字元（ **&#42;** 和 **？** ）一次刪除一個以上的檔案。 不過，若要避免不慎刪除檔案，您應該使用**del**命令來謹慎使用萬用字元。 例如，如果您輸入下列命令：  
   ```
   del *.*
   ```  
@@ -69,20 +69,20 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
   `Are you sure (Y/N)?`
 
-  若要刪除所有目前的目錄中的檔案，請按下 Y 鍵，然後按 ENTER 鍵。 若要取消刪除，按 N 然後按 ENTER。
+  若要刪除目前目錄中的所有檔案，請按下 Y，然後按 ENTER 鍵。 若要取消刪除，請按 N，然後按 ENTER 鍵。
 
 > [!NOTE]
-> 在您使用萬用字元的字元之前**del**命令，使用具有相同的萬用字元**dir**命令，列出將會被刪除的所有檔案。
-> -   **Del**命令，使用不同的參數，可從修復主控台。
+> 使用萬用字元搭配**del**命令之前，請使用與**dir**命令相同的萬用字元來列出將要刪除的所有檔案。
+> -   具有不同參數的**del**命令可從 [修復主控台] 取得。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要刪除名為 Test C 磁碟機上的資料夾中的所有檔案，請輸入下列其中一項：
+若要刪除磁片磁碟機 C 上名為 Test 的資料夾中的所有檔案，請輸入下列其中一項：
 ```
 del c:\test
 del c:\test\*.*
 ```
-若要從目前的目錄中刪除所有副檔名為.bat 檔案的檔案，請輸入：
+若要刪除目前目錄中副檔名為 .bat 的所有檔案，請輸入：
 ```
 del *.bat
 ```

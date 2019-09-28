@@ -1,8 +1,8 @@
 ---
-title: 公開 （expose)
-description: '適用於 Windows 命令主題 * * *- '
+title: 向
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51cc744bc2b61862ed05ca2e7d0aaa8f70d38692
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 819484364e8375c4d58e4d022681eedeaa7084ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886659"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377284"
 ---
-# <a name="expose"></a>公開 （expose)
+# <a name="expose"></a>向
 
 
 
-會公開為磁碟機代號、 共用或掛接點的持續性的陰影複製。
+將持續性陰影複製公開為磁碟機號、共用或掛接點。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -38,18 +38,18 @@ expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 
 |參數|描述|
 |---------|-----------|
-|ShadowID|指定您想要公開 （expose） 的陰影複製的陰影識別碼。|
-|\<磁碟機： >|會將指定的陰影複製公開為磁碟機代號 （例如，p:）。|
-|\<Share>|會公開指定的陰影複製，在共用資源 (例如\\ \\ *MachineName*\)。|
-|\<MountPoint>|會公開指定的陰影複製到掛接點 (例如 C:\shadowcopy\)。|
+|ShadowID|指定您要公開之陰影複製的陰影識別碼。|
+|\<Drive： >|將指定的陰影複製公開為磁碟機號（例如 P：）。|
+|\<Share >|在共用上公開指定的陰影複製（例如，\\ @ no__t-1*MachineName*\)。|
+|\<MountPoint >|將指定的陰影複製公開到掛接點（例如，C:\shadowcopy @ no__t-0。|
 
 ## <a name="remarks"></a>備註
 
--   您可以使用現有的別名或環境變數的位置*ShadowID*。 使用**新增**不含參數，若要查看現有的別名。
+-   您可以使用現有的別名或環境變數來取代*ShadowID*。 請使用不含參數的**add**來查看現有的別名。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要公開為磁碟機 X 相關聯 VSS_SHADOW_1 環境變數的持續性的陰影複製，請輸入：
+若要將與 VSS_SHADOW_1 環境變數相關聯的持續陰影複製公開為磁片磁碟機 X，請輸入：
 ```
 expose %vss_shadow_1% x:
 ```

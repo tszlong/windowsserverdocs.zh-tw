@@ -7,110 +7,110 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 66ae6992775319cf614b0cb4c21f864150746687
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5d5ab971327ab7ec16bf2748571882458cc38f72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71368993"
 ---
 # <a name="command-line-process-auditing"></a>命令列程序稽核
 
->適用於：Windows Server 2016, Windows Server 2012 R2
+>適用於：Windows Server 2016、Windows Server 2012 R2
 
-**作者**:Justin Turner 資深支援高階工程師，與 Windows 群組  
+**作者**：Justin Turner，Microsoft 團隊的資深支援擴大工程師  
   
 > [!NOTE]  
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
   
 ## <a name="overview"></a>總覽  
   
--   預先存在的處理程序建立稽核事件識別碼 4688 現在將包含命令列程序的稽核資訊。  
+-   預先存在的進程建立 audit 事件識別碼4688現在會包含命令列處理常式的審核資訊。  
   
--   它也會在 Applocker 事件記錄檔中記錄的可執行檔/2 的 SHA1 雜湊  
+-   它也會在 Applocker 事件記錄檔中記錄可執行檔的 SHA1/2 雜湊  
   
     -   應用程式和服務 Logs\Microsoft\Windows\AppLocker  
   
--   您啟用透過 GPO，但是它預設會停用  
+-   您可透過 GPO 啟用，但預設為停用  
   
-    -   [包含在程序建立事件的命令列]  
+    -   「在進程建立事件中包含命令列」  
   
-![命令列稽核](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
+![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
   
-**圖 SEQ Figure \\ \*阿拉伯文 16 事件 4688**  
+**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文16事件4688**  
   
-檢閱更新的事件識別碼 4688 中 REF _Ref366427278 \h 圖 16。  在此之前更新的資訊沒有任何**程序的命令列**取得記錄。  這個額外的記錄功能因為我們現在可以看到，不僅 wscript.exe 程序已啟動，但也是用來執行 Vbscript 指令碼。  
+請參閱 REF _Ref366427278 \h [圖 16] 中的更新事件識別碼4688。  在此更新之前，不會記錄**處理常式命令列**的任何資訊。  基於這項額外的記錄，我們現在可以看到 wscript.echo 程式尚未啟動，但也用來執行 VB 腳本。  
   
 ## <a name="configuration"></a>組態  
-若要查看此更新的影響，您必須啟用兩個原則設定。  
+若要查看此更新的效果，您必須啟用兩個原則設定。  
   
-### <a name="you-must-have-audit-process-creation-auditing-enabled-to-see-event-id-4688"></a>您必須啟用才能看到事件識別碼 4688 的稽核程序建立稽核。  
-若要啟用稽核程序建立原則，請編輯下列群組原則：  
+### <a name="you-must-have-audit-process-creation-auditing-enabled-to-see-event-id-4688"></a>您必須啟用「Audit 進程建立」審核，才能看到事件識別碼4688。  
+若要啟用 Audit 進程建立原則，請編輯下列群組原則：  
   
-**原則的位置：** 電腦設定 > 原則 > Windows 設定 > 安全性設定 > 進階稽核設定 > 詳細的追蹤  
+**原則位置：** 電腦設定 > 原則 > Windows 設定 > 安全性設定 > Advanced Audit Configuration > 詳細追蹤  
   
 **原則名稱：** 建立稽核程序  
   
-**支援的作業：** Windows 7 和更新版本  
+**支援于：** Windows 7 和更新版本  
   
-**描述/Help:**  
+**描述/說明：**  
   
-此安全性原則設定會決定作業系統是否會產生稽核事件時建立 （啟動） 的處理序和程式或建立它的使用者名稱。  
+此安全性原則設定可決定作業系統是否會在建立進程時產生 audit 事件（啟動），以及建立程式的程式或使用者名稱。  
   
-這些稽核事件可協助您了解如何使用電腦時，並追蹤使用者活動。  
+這些 audit 事件可協助您瞭解電腦的使用方式，以及追蹤使用者活動的方式。  
   
-事件的磁碟區：低到中等，根據系統的使用方式  
+事件量：低至中，視系統使用量而定  
   
-**預設值：** 未設定  
+**預設**未設定  
   
-### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>若要查看事件識別碼 4688 的新增項目，您必須啟用新的原則設定：在 程序建立事件中包含命令列  
-**資料表 SEQ 表格\\\*阿拉伯文 19 命令列程序原則設定**  
+### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>為了查看事件識別碼4688的新增專案，您必須啟用新的原則設定：在進程建立事件中包含命令列  
+**資料表 SEQ 資料表 \\ @ no__t-2 阿拉伯文19命令列程式原則設定**  
   
 |原則設定|詳細資料|  
 |------------------------|-----------|  
-|**路徑**|建立系統管理 Templates\System\Audit 處理程序|  
-|**設定**|**在 程序建立事件中包含命令列**|  
-|**預設設定**|設定 （未啟用）|  
-|**支援的作業：**|?|  
-|**描述**|此原則設定會決定在建立新的處理序時，安全性稽核事件中記錄哪些資訊。<br /><br />啟用稽核程序建立原則時，僅適用於這項設定。 如果您啟用此原則設定的命令列資訊的每個處理序將會記錄在安全性事件記錄在稽核程序建立事件 4688 中的純文字時，「 新的處理序已建立，「 工作站和這個伺服器上原則套用設定。<br /><br />如果您停用或未設定此原則設定時，處理程序的命令列資訊將不會包含在稽核程序建立事件。<br /><br />Default：未設定<br /><br />注意：啟用此原則設定時，存取任何使用者，讀取安全性事件都能夠成功讀取的任何命令列引數就會建立處理程序。 命令列引數可以包含敏感或私人的資訊，例如密碼或使用者資料。|  
+|**路徑**|系統管理 Templates\System\Audit 進程的建立|  
+|**設**|**在進程建立事件中包含命令列**|  
+|**預設設定**|未設定（未啟用）|  
+|**支援于：**|?|  
+|**描述**|此原則設定可決定在建立新進程時，哪些資訊會記錄在安全性 audit 事件中。<br /><br />此設定只適用于已啟用 Audit 進程建立原則的情況。 如果您啟用此原則設定，則每個進程的命令列資訊將會以純文字記錄在安全性事件記錄檔中，做為此原則的「建立新進程」事件4688已套用設定。<br /><br />如果您停用或未設定此原則設定，處理常式的命令列資訊將不會包含在 Audit 進程建立事件中。<br /><br />預設值：未設定<br /><br />注意：啟用此原則設定時，任何具有讀取安全性事件存取權的使用者都可以讀取任何已成功建立之進程的命令列引數。 命令列引數可以包含機密或私用資訊，例如密碼或使用者資料。|  
   
-![命令列稽核](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
+![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
   
-當您使用 [進階稽核原則設定] 設定時，必須確認這些設定不會被基本稽核原則設定覆寫。  設定會覆寫時，會記錄事件 4719。  
+當您使用 [進階稽核原則設定] 設定時，必須確認這些設定不會被基本稽核原則設定覆寫。  覆寫設定時，會記錄事件4719。  
   
-![命令列稽核](media/Command-line-process-auditing/GTR_ADDS_Event4719.gif)  
+![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_Event4719.gif)  
   
 下列程序顯示如何透過封鎖任一基本稽核原則設定的套用，以防止發生衝突。  
   
 ### <a name="to-ensure-that-advanced-audit-policy-configuration-settings-are-not-overwritten"></a>確定進階稽核原則設定的設定不會被覆寫  
-![命令列稽核](media/Command-line-process-auditing/GTR_ADDS_AdvAuditPolicy.gif)  
+![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_AdvAuditPolicy.gif)  
   
-1.  開啟 群組原則管理主控台  
+1.  開啟群組原則管理主控台  
   
-2.  以滑鼠右鍵按一下 [預設網域原則]，然後按一下 [編輯]。  
+2.  在 [預設網域原則] 上按一下滑鼠右鍵，然後按一下 [編輯]。  
   
-3.  連按兩下 電腦設定中，按兩下原則，然後按兩下 Windows 設定。  
+3.  按兩下 [電腦設定]，按兩下 [原則]，然後按兩下 [Windows 設定]。  
   
-4.  按兩下 安全性設定，按兩下 本機原則，然後按一下 安全性選項。  
+4.  按兩下 [安全性設定]，按兩下 [本機原則]，然後按一下 [安全性選項]。  
   
-5.  按兩下 稽核：強制執行稽核原則子類別設定 (Windows Vista 或更新版本) 以覆寫稽核原則類別設定，然後按一下 定義這個原則設定。  
+5.  按兩下 [Audit]：強制執行稽核原則子類別設定（Windows Vista 或更新版本）以覆寫稽核原則類別設定，然後按一下 [定義此原則設定]。  
   
 6.  按一下 [已啟用]，然後按一下 [確定]。  
   
 ## <a name="additional-resources"></a>其他資源  
-[稽核程序建立](https://technet.microsoft.com/library/dd941613(v=WS.10).aspx)  
+[建立 Audit 進程](https://technet.microsoft.com/library/dd941613(v=WS.10).aspx)  
   
-[進階安全性稽核原則逐步指南](https://technet.microsoft.com/library/dd408940(v=WS.10).aspx)  
+[Advanced Security 稽核原則逐步指南](https://technet.microsoft.com/library/dd408940(v=WS.10).aspx)  
   
-[AppLocker:常見問題集](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
+[AppLocker：常見問題集](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
   
-## <a name="try-this-explore-command-line-process-auditing"></a>試試看吧：瀏覽命令列程序稽核  
+## <a name="try-this-explore-command-line-process-auditing"></a>試試看：探索命令列進程審核  
   
-1.  啟用**稽核程序建立**事件，並確定進階稽核原則設定不會覆寫  
+1.  啟用**Audit 進程建立**事件，並確保不會覆寫預先審核原則設定  
   
-2.  建立會產生一些感興趣的事件，並執行指令碼的指令碼。  查看的事件。  用來在課程中產生事件的指令碼看起來像這樣：  
+2.  建立腳本，以產生一些感的事件並執行腳本。  觀察事件。  在課程中用來產生事件的腳本看起來像這樣：  
   
     ```  
     mkdir c:\systemfiles\temp\commandandcontrol\zone\fifthward  
@@ -119,9 +119,9 @@ ms.locfileid: "59859549"
     del c:\systemfiles\temp\*.* /Q  
     ```  
   
-3.  啟用命令列程序稽核  
+3.  啟用命令列進程審核  
   
-4.  執行前的相同指令碼，並查看的事件  
+4.  執行與之前相同的腳本，並觀察事件  
   
 
 

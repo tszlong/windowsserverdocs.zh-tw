@@ -1,8 +1,8 @@
 ---
 title: dispdiag
-description: '適用於 Windows 命令主題 * * *- '
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c96c70aac1b3329e050fa8b02743e61fed44d15
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b640883a207648d2ef6c9a7d6e5366cd0bb384c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831459"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377763"
 ---
 # <a name="dispdiag"></a>dispdiag
 
 
 
-記錄檔會顯示資訊至檔案。
+記錄會將資訊顯示到檔案。
 
 ## <a name="syntax"></a>語法
 
@@ -36,8 +36,8 @@ dispdiag [-testacpi] [-d] [-delay <Seconds>] [-out <FilePath>]
 
 |參數|描述|
 |---------|-----------|
-|- testacpi|會執行熱鍵診斷測試。 顯示索引鍵的名稱，在測試期間按下的任何索引鍵的程式碼，並掃描碼。|
-|-d|產生測試結果的傾印檔案。|
-|-delay\<秒 >|指定的時間，在所收集的資料會延遲*秒*。|
-|-out \<FilePath>|指定路徑和檔案名稱來儲存收集的資料。 這必須是最後一個參數。|
-|-?|顯示可用的命令參數，並提供說明使用它們。|
+|- testacpi|執行熱鍵診斷測試。 顯示測試期間按下之任何金鑰的金鑰名稱、程式碼和掃描代碼。|
+|-d.ddd...e|產生包含測試結果的傾印檔案。|
+|-delay \<Seconds >|依指定的時間 *（以秒為單位）* 延遲資料收集。|
+|-out \<FilePath >|指定路徑和檔案名，以儲存收集的資料。 這必須是最後一個參數。|
+|-?|顯示可用的命令參數，並提供使用它們的協助。|

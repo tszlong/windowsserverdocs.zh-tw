@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestDFSIntegrity
-description: '適用於 Windows 命令主題 * * *- '
+title: dfsdiag TestDFSIntegrity
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,24 +13,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a79e034f7c60be89266eb29dcd69e8f73b2aafe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7f344e2d1fecc542efc39688f20165fd3e39a04a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837089"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378435"
 ---
-# <a name="dfsdiag-testdfsintegrity"></a>Dfsdiag TestDFSIntegrity
+# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-檢查 「 分散式檔案系統的完整性\(DFS\)命名空間，藉由執行下列測試：  
+藉由執行下列測試，檢查分散式檔案系統 \(DFS @ no__t-1 命名空間的完整性：  
   
--   DFS 中繼資料損毀或網域控制站之間的不一致性檢查。  
+-   檢查網域控制站之間的 DFS 中繼資料損毀或不一致。  
   
--   驗證的存取權限設定\-基礎的列舉，以確保一致 DFS 中繼資料和命名空間伺服器共用。  
+-   驗證 access @ no__t-0based 列舉的設定，以確保 DFS 中繼資料與命名空間伺服器共用之間的設定一致。  
   
--   偵測到重疊的 DFS 資料夾\(連結\)，重複的資料夾和重疊資料夾目標的資料夾。  
+-   偵測重迭的 DFS 資料夾 \(links @ no__t-1，重複的資料夾，以及具有重迭資料夾目標的資料夾。  
   
   
   
@@ -44,18 +44,18 @@ dfsdiag /TestDFSIntegrity /DFSRoot:<DFS root path> [/Recurse] [/Full]
   
 |參數|描述|  
 |-------|--------|  
-|\/DFSRoot:<DFS root path>|若要診斷 DFS 命名空間。|  
-|\/Recurse|執行測試其中包括命名空間連結。|  
-|\/完整|確認共用和所有資料夾目標上的 NTFS Acl 和用戶端端設定的一致性。 它也會確認，線上屬性會設定。|  
+|\/DFSRoot： <DFS root path>|要診斷的 DFS 命名空間。|  
+|\/Recurse|執行測試，包括命名空間連結。|  
+|\/Full|在所有資料夾目標上驗證共用和 NTFS Acl 和用戶端設定的一致性。 它也會驗證 online 屬性是否已設定。|  
   
-## <a name="BKMK_Examples"></a>範例  
-若待決定，要輸入：  
+## <a name="BKMK_Examples"></a>典型  
+若要 TBD，請輸入：  
   
 ```  
 dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full  
 ```  
   
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
   
 -   [命令列語法關鍵](command-line-syntax-key.md)  
   

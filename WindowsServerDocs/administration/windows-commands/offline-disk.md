@@ -1,8 +1,8 @@
 ---
-title: 離線的磁碟
-description: '適用於 Windows 命令主題 * * *- '
+title: 離線磁片
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 617371583a3f0cb3d0cb739845208e4216573d9c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f28d473cdb557d6adb3aaf235bebdfbc4e78b24a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834619"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372596"
 ---
-# <a name="offline-disk"></a>離線的磁碟
+# <a name="offline-disk"></a>離線磁片
 
 
 
-需要具有焦點的線上磁碟為離線狀態。
+將具有焦點的線上磁片帶到離線狀態。
 
 > [!IMPORTANT]
-> 無法在任何版本的 Windows Vista 中使用這個 DiskPart 命令。
+> Windows Vista 的任何版本都無法使用此 DiskPart 命令。
 
 ## <a name="syntax"></a>語法
 
@@ -39,17 +39,17 @@ offline disk [noerr]
 
 |參數|描述|
 |---------|-----------|
-|noerr|針對僅限指令碼。 發生錯誤時，DiskPart 會繼續處理命令，如同未發生錯誤。 如果沒有這個參數，錯誤會造成 DiskPart 結束，錯誤碼。|
+|noerr|僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|
 
 ## <a name="remarks"></a>備註
 
--   此命令會在 SAN 線上模式中的磁碟上運作。 它會將其 SAN 模式變更為離線。
--   如果離線磁碟群組中的動態磁碟，磁碟的狀態會變更為**遺漏**和群組顯示為離線的磁碟。 遺失的磁碟移至無效的群組。 如果動態磁碟會在群組中，最後一個磁碟，則磁碟的狀態會變更為**離線**，將會移除空的群組。
--   必須選取一個磁碟**離線磁碟**命令才會成功。 使用**選取磁碟**命令來選取磁碟，並將焦點移到它。
+-   此命令會在處於 SAN 線上模式的磁片上操作。 它會將其 SAN 模式變更為離線。
+-   如果磁片群組中的動態磁碟已離線，則磁片的狀態會變更為 [**遺失**]，而群組會顯示離線的磁片。 遺失的磁片會移至不正確群組。 如果動態磁碟是群組中的最後一個磁片，則磁片的狀態會變更為 [**離線**]，而空的群組則會被移除。
+-   必須選取磁片，[**離線磁片**] 命令才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-若要讓具有焦點的磁碟離線，請輸入：
+若要讓磁片具有離線焦點，請輸入：
 ```
 offline disk
 ```

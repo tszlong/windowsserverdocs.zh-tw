@@ -1,23 +1,23 @@
 ---
 title: 管理 Windows Server
 description: 了解管理 Windows Server 的相關工具、建議和指導方針
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae87b12997aa3cb3ae3fe290c9243995b30d6b0
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 880f8da5bfb872fba6fe4886198d932c91f4bf86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452824"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370472"
 ---
 # <a name="manage-windows-server"></a>管理 Windows Server
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
@@ -66,7 +66,7 @@ ms.locfileid: "66452824"
 >Windows Admin Center 是我們用來稱呼「Project Honolulu」的正式名稱。
 
 ### <a name="manage-on-premises-systems-with-server-manager"></a>使用伺服器管理員管理內部部署系統
-[伺服器管理員](server-manager/server-manager.md)是 Windows Server 完整安裝隨附的管理主控台。 （它不適用於沒有 UI 的安裝-Server Core 不包含伺服器管理員）。使用伺服器管理員來安裝和移除伺服器角色新增和移除遠端伺服器、 開始和停止服務，以及檢視資料收集關於您的環境。
+[伺服器管理員](server-manager/server-manager.md)是 Windows Server 完整安裝隨附的管理主控台。 (這不適用於沒有 UI 的安裝 - Server Core 不包含伺服器管理員)。使用伺服器管理員來安裝和移除伺服器角色、新增和移除遠端伺服器、啟動和停止服務，以及檢視有關環境的蒐集資料。
 
 ### <a name="manage-remote-systems-and-systems-without-ui-with-remote-server-administration-tools-rsat"></a>使用遠端伺服器管理工具 (RSAT) 管理遠端系統和不顯示 UI 的系統
 如果您的環境包含安裝 Server Core 或遠端伺服器 (內部部署或虛擬機器)，您可以使用[遠端伺服器管理工具 (RSAT)](../remote/remote-server-administration-tools.md) 來管理這些系統。 RSAT 包含伺服器管理員，因此您可以使用它來管理所有伺服器。
@@ -84,7 +84,7 @@ ms.locfileid: "66452824"
 
 從[設定您組織中的 Windows 診斷資料](/windows/configuration/configure-windows-diagnostic-data-in-your-organization)開始，了解可從 Windows 10 與 Windows Server 收集的診斷資料相關資訊。
 
-### <a name="setup-and-boot-event-collectionget-started-with-setup-and-boot-event-collectionmd"></a>[安裝與開機事件集合](get-started-with-setup-and-boot-event-collection.md)
+### <a name="setup-and-boot-event-collectionget-started-with-setup-and-boot-event-collectionmd"></a>[安裝並啟動事件收集](get-started-with-setup-and-boot-event-collection.md)
 「安裝與開機事件集合」可讓您指定「收集者」電腦，這部電腦會收集其他電腦開機或進行設定程序時所發生的各種重要事件。 您隨後可以使用事件檢視器、訊息分析器、Wevtutil 或 Windows PowerShell Cmdlet 來分析收集到的事件。 
 
 ### <a name="software-inventory-logging-silsoftware-inventory-loggingget-started-with-software-inventory-loggingmd"></a>[軟體清查記錄 (SIL)](software-inventory-logging/get-started-with-software-inventory-logging.md)
@@ -98,7 +98,7 @@ Windows Server 中的軟體清查記錄功能有一組簡單的 PowerShell Cmdle
 ## <a name="tune-your-windows-server-environment-for-performance"></a>調整 Windows Server 環境的效能
 使用下列資訊可協助調整您環境的效能。
 
-### <a name="performance-tuning-guidelinesperformance-tuningindexmd"></a>[效能微調指導方針](performance-tuning/index.md)
+### <a name="performance-tuning-guidelinesperformance-tuningindexmd"></a>[效能調整指導方針](performance-tuning/index.md)
 檢視一組可用來調整 Windows Server 2016 中的伺服器設定的指導方針，並取得增量效能或提高能源效率，尤其是當工作負載的本質隨著時間變化很小時。
 
 ### <a name="microsoft-server-performance-advisorserver-performance-advisormicrosoft-server-performance-advisormd"></a>[Microsoft Server Performance Advisor](server-performance-advisor/microsoft-server-performance-advisor.md)
