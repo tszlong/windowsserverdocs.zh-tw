@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 25ba9505f3f93fb236d6e60e49efc4206482f977
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f4dd1d45646475be3788cd6b615b1743976eedae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866011"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358409"
 ---
 # <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>在 Active Directory 同盟服務中使用 Azure AD UX Web 主題
 AD FS 表單登入目前不會反映 Azure/O365 登入體驗。  為了為使用者提供更一致且流暢的體驗，我們發行了遵循的級聯樣式表 web 主題，可套用至您的 AD FS 伺服器。  目前，Windows Server 2016 上 AD FS 的表單登入如下所示：

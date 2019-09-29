@@ -6,15 +6,15 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 82added5018d83aeb9fe7d8033204a0d19bd047a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 37dd52b8771eda695069dd996fbd920e31f80ef1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868094"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359815"
 ---
 # <a name="configure-performance-monitoring"></a>設定效能監視
   
@@ -41,7 +41,7 @@ AD FS 包含自己專屬的效能計數器，可協助您監視同盟伺服器�
   
 7. 當系統提示您新增要監視的登錄機碼時，請按 **[下一步]** 。  
   
-8. 當系統提示您指定儲存效能資料的位置時，您可以接受\(預設位置 **% systemdrive\\% PerfLogs\\Admin\\**  _< 資料\_收集器設定\_>_ ，然後按 **[下一步]** 。  
+8. 當系統提示您指定儲存效能資料的位置時，您可以接受預設位置 \( **% systemdrive% \\PerfLogs @ no__t-3Admin @ no__t-4** _< data @ no__t-6collector @ no__t-7set >_ ，然後按一下**下一步**。  
   
 9. 當系統提示您建立資料收集器集合人員時，請選取 [**儲存並關閉**]，然後按一下 **[完成]** 。  
   

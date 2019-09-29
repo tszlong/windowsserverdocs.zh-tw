@@ -1,8 +1,8 @@
 ---
-title: bitsadmin 快取和 getexpirationtime
-description: 適用於 Windows 命令主題**bitsadmin 快取和 getexpirationtime** -擷取快取到期時間。
+title: bitsadmin cache 和 getexpirationtime
+description: Bitsadmin 快取**和 getexpirationtime**的 Windows 命令主題-會抓取快取到期時間。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f5bf145b02de111cc6c009375d6ab46e46c18ac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01a2443a5f2ff78adfdead3e17b4bd1c24dd4b5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868059"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382046"
 ---
-# <a name="bitsadmin-cache-and-getexpirationtime"></a>bitsadmin 快取和 getexpirationtime
+# <a name="bitsadmin-cache-and-getexpirationtime"></a>bitsadmin cache 和 getexpirationtime
 
 
 
-擷取快取到期時間。
+抓取快取到期時間。
 
 ## <a name="syntax"></a>語法
 
@@ -32,9 +32,9 @@ ms.locfileid: "59868059"
 bitsadmin /Cache /GetExpirationTime 
 ```
 
-## <a name="BKMK_examples"></a>範例
+## <a name="BKMK_examples"></a>典型
 
-下列擷取快取到期時間。
+以下會抓取快取到期時間。
 ```
 C:\>bitsadmin /Cache /GetExpirationTime
 ```
