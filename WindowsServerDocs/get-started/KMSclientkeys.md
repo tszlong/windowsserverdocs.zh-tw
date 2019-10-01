@@ -1,7 +1,7 @@
 ---
 title: KMS 用戶端安裝識別碼
 description: 從 KMS 伺服器啟動 Windows 產品所需的識別碼
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: jasongerend
@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 964139ac5fdaee4d580d29ab0f7543c7d5f15d0b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e981343e0a811ada6a1634b193d6e1af3531f9ae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868454"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391773"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
@@ -91,8 +91,8 @@ ms.locfileid: "70868454"
 |-----------------------------------|-------------------------------|
 |Windows 10 專業版|W269N-WFGWX-YVC9B-4J6C9-T83GX|
 |Windows 10 Pro N|MH37W-N47XK-V7XM9-C7227-GCQG9|
-|Windows 10 Pro Workstations|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
-|Windows 10 Pro Workstations N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
+|Windows 10 工作站專業版|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
+|Windows 10 工作站專業版 N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
 |Windows 10 專業教育版|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
 |Windows 10 專業教育版 N|YVWGF-BXNMC-HTQYQ-CPQ99-66QFC|
 |Windows 10 教育版|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|

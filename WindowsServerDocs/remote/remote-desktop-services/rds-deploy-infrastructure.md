@@ -1,7 +1,7 @@
 ---
 title: 部署遠端桌面環境
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: 部署遠端桌面環境的基本步驟。
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e00be471b2607ad4bc8cc8e11652d428419b4fd6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805127"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404017"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>部署遠端桌面環境
 
@@ -46,7 +46,7 @@ ms.locfileid: "66805127"
 4.  啟用 RD 授權伺服器，並將其新增至「授權伺服器」群組：  
     1.  在 [伺服器管理員] 中，按一下 [工具 > 終端機服務 > 遠端桌面授權管理員]  。  
     2.  在 [RD 授權管理員] 中選取伺服器，然後按一下 [動作 > 啟用伺服器]  。  
-    3.  接受「啟用伺服器精靈」中的預設值，直到您進入 [公司資訊]  頁面。 然後，輸入您的公司資訊。  
+    3.  接受 [啟用伺服器精靈] 中的預設值。 繼續接受預設值，直到 [公司資訊]  頁面為止。 然後，輸入您的公司資訊。  
     4.  接受其餘頁面的預設值，直到最後一頁。 清除 [立即啟動安裝授權精靈]  ，然後按一下 [完成]  。  
     5.  按一下 [動作 > 檢閱設定 > 新增至群組 > 確定]  。 為 AAD DC 系統管理員群組中的使用者輸入認證，並註冊為 SCP。 如果您使用 Azure AD Domain Services，此步驟可能無法運作，但您可以忽略任何警告或錯誤。  
 5.  新增 RD 閘道伺服器和憑證名稱：  
