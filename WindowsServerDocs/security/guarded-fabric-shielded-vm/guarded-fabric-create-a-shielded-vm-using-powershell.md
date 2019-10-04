@@ -6,13 +6,13 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: 888177c1288216c28f7d4c0a667fd81e93bdce8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: 317da0ae3c41d142db6f5a076fd3004d9970b815
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402397"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940748"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>使用 PowerShell 建立受防護的 VM
 
@@ -90,6 +90,19 @@ Save-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0 -Path
 
 ```powershell
 New-ShieldedVM -Name 'MyShieldedVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait
+```
+
+如果您的防護資料回應檔案包含特製化值，您可以將取代值提供給 ShieldedVM。 在此範例中，回應檔案會設定為靜態 IPv4 位址的預留位置值。
+
+```powershell
+$specializationValues = @{
+    "@IP4Addr-1@" = "192.168.1.10"
+    "@MacAddr-1@" = "Ethernet"
+    "@Prefix-1-1@" = "192.168.1.0/24"
+    "@NextHop-1-1@" = "192.168.1.254"
+}
+New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -SpecializationValues $specializationValues -Wait
+
 ```
 
 如果您的範本磁片包含以 Linux 為基礎的作業系統，請在執行命令時包含 `-Linux` 旗標：

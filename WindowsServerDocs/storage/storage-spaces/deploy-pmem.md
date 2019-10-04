@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 3/26/2019
 ms.localizationpriority: ''
-ms.openlocfilehash: 497fa201c500919fc857d25166d37ce87613d0f0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 549cc6dbeec3d414e886f6ebf32315ae13627812
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872014"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940812"
 ---
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>瞭解和部署持續性記憶體
@@ -26,8 +26,7 @@ ms.locfileid: "70872014"
 
 ## <a name="background"></a>背景
 
-「PMem」是一種非變動性 DRAM （NVDIMM-N），其具有 DRAM 的速度，但會透過電源週期保留其記憶體內容（即使系統電源在發生非預期的電源中斷、使用者起始關機、系統損毀、以此類推）。 因此，從停止的地方繼續會大幅加快，因為您的 RAM 內容不需要重載。 另一個唯一的特性是，PMem 是可定址的 byte，這表示您也可以使用它做為儲存體（這就是您可能會聽到將 PMem 稱為儲存類別記憶體的原因）。
-
+「PMem」是一種非動態 RAM （NVDIMM-N），可透過電源週期保留其內容。 即使系統電源在發生非預期的電源中斷、使用者起始關機、系統損毀等事件時，仍會保留記憶體內容。這種獨特的特性表示您也可以使用 PMem 作為儲存體，這就是為什麼您會聽到將 PMem 稱為「儲存類別記憶體」的原因。
 
 為了查看其中一些優點，讓我們來看一下 Microsoft Ignite 2018 的示範：
 
@@ -57,13 +56,13 @@ ms.locfileid: "70872014"
 
 ### <a name="supported-hardware"></a>支援的硬體
 
-下表顯示 Windows Server 2019 和 Windows Server 2016 的支援持續性記憶體硬體。 請注意，Intel Optane 特別支援記憶體模式和應用程式直接模式。 Windows Server 2019 支援混合模式作業。
+下表顯示 Windows Server 2019 和 Windows Server 2016 的支援持續性記憶體硬體。 請注意，Intel Optane 支援記憶體（也就是 volatile）和應用程式直接存取（亦即， 持續性）模式。
 
 | 持續性記憶體技術                                      | Windows Server 2016 | Windows Server Standard 2012 R2 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
-| 應用程式直接模式中的**nvdimm-n**                                       | 支援                | 支援                |
+| 持續模式中**的 nvdimm-n**                                  | 支援                | 支援                |
 | Intel Optane 在應用程式直接模式中**™ DC 持續性記憶體**             | 不支援            | 支援                |
-| Intel Optane 在兩層記憶體模式中**™ DC 持續性記憶體**（2LM） | 不支援            | 支援                |
+| **Intel Optane™ DC**在記憶體模式中的持續性記憶體 | 支援            | 支援                |
 
 現在，讓我們深入瞭解如何設定持續性記憶體。
 

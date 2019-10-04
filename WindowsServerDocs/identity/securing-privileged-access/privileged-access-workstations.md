@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 29e3785d1c004d669e0060854acb6af1d2953644
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb91ca583fd71a7fbe38369606d2dcc4a816d8aa
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357922"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935011"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 
@@ -511,66 +511,136 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 在本節中，我們將設定群組原則，以防特殊權限系統管理帳戶登入較低層的主機。
 
 1. 建立新的**限制工作站登入** GPO - 此設定將會限制第 0 層和第 1 層系統管理員帳戶登入標準工作站。  此 GPO 應連結至「工作站」頂層 OU，並具有下列設定：
-   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕中，以批次工作登入，選取 [**定義這些原則設定**]，然後新增第0層和第1層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕中，以批次工作登入，選取 [**定義這些原則設定**]，然後新增第0層和第1層群組：
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 內建第0層群組，如需詳細資訊，請參閱第0層對等。
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 具有有效第0層存取權的任何自訂已建立群組，如需詳細資訊，請參閱第0層等。
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > This Group was created earlier in Phase 1.
+     > [!NOTE]
+     > 此群組是稍早在階段1建立的。
 
-   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕 [以服務方式登入] 中，選取 [**定義這些原則設定**]，並新增第0層和第1層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕 [以服務方式登入] 中，選取 [**定義這些原則設定**]，並新增第0層和第1層群組：
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 注意：內建第0層群組，如需詳細資訊，請參閱第0層對等。
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 注意：具有有效第0層存取權的任何自訂已建立群組，如需詳細資訊，請參閱第0層等。
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > Note: This Group was created earlier in Phase 1
+     > [!NOTE]
+     > 注意：此群組是稍早在階段1建立
 
 2. 建立新的**限制伺服器登**入 GPO-此設定將會限制第0層系統管理員帳戶登入第1層伺服器。  此 GPO 應連結至「第1層伺服器」頂層 OU，並具有下列設定：
-   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕中，以批次工作登入，選取 [**定義這些原則設定**] 並新增第0層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕中，以批次工作登入，選取 [**定義這些原則設定**] 並新增第0層群組：
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕 [以服務方式登入] 中，選取 [**定義這些原則設定**] 並新增第0層群組：   Enterprise Admins 網域系統管理員架構系統管理員 DOMAIN\Administrators 帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯 Operators
-
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * 在 [電腦設定 \ \windows] [設定 \ 本機設定 \] \ 使用者權限指派 \ 拒絕本機登入中，選取 [**定義這些原則設定**] 並新增第0層群組：   企業系統管理員網域系統管理員架構管理員帳戶操作員備份操作員列印操作員伺服器操作員網域控制站唯讀網域控制站群組原則建立者擁有者密碼編譯運算子
-
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 內建第0層群組，如需詳細資訊，請參閱第0層對等。
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 具有有效第0層存取權的任何自訂已建立群組，如需詳細資訊，請參閱第0層等。
+
+   * 在 [電腦設定 \ \windows] [設定 \] \ 使用者權限指派 \ 拒絕 [以服務方式登入] 中，選取 [**定義這些原則設定**] 並新增第0層群組：
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > 內建第0層群組，如需詳細資訊，請參閱第0層對等。
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > 具有有效第0層存取權的任何自訂已建立群組，如需詳細資訊，請參閱第0層等。
+
+   * 在 [電腦設定 \ \windows] [設定 \ 本機設定 \] \ 使用者權限指派 \ 拒絕本機登入中，選取 [**定義這些原則設定**] 並新增第0層群組：
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > 注意：內建第0層群組，如需詳細資訊，請參閱第0層對等。
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > 注意：具有有效第0層存取權的任何自訂已建立群組，如需詳細資訊，請參閱第0層等。
 
 #### <a name="deploy-your-paws"></a>部署 PAW
 

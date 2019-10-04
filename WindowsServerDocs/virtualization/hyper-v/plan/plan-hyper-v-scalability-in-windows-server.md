@@ -1,5 +1,5 @@
 ---
-title: 規劃 Windows Server 2016 中的 Hyper-v 擴充性
+title: 規劃 Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 擴充性
 description: 列出您可以在 Hyper-v 和虛擬機器中新增或移除之元件的最大支援數目，像是多少記憶體和多少個虛擬處理器。
 ms.prod: windows-server
 ms.service: na
@@ -10,14 +10,14 @@ ms.topic: article
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: 3d94d8475f5de8d6b3d1d3f0bc549a8791e1d0c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 493f7926a6ef686e6d47c1a3120a65ed0799b0db
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364056"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71934949"
 ---
-# <a name="plan-for-hyper-v-scalability-in-windows-server-2016"></a>規劃 Windows Server 2016 中的 Hyper-v 擴充性
+# <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>規劃 Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 擴充性
 
 > 適用於：Windows Server 2016、Windows Server 2019
   

@@ -7,13 +7,13 @@ ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 01/30/2019
-ms.openlocfilehash: 86047420cb4b1095d5715739d76daa3dba3ff5d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: 1ae6f881e1bd4b9b317e5622f18958f25f692eec
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403457"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940797"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>受防護的租使用者 Vm-建立防護資料以定義受防護的 VM
 
@@ -24,11 +24,11 @@ ms.locfileid: "71403457"
 如需防護資料檔案內容的清單和圖表，請參閱[什麼是防護資料，以及為何需要它？](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)。
 
 > [!IMPORTANT]
-> 本節中的步驟應該在執行 Windows Server 2016 的租使用者電腦上完成。 該機器不得屬於受防護網狀架構（也就是不應該設定為使用 HGS 叢集）。
+> 本節中的步驟應該在受防護網狀架構以外的另一部信任電腦上完成。 一般而言，VM 擁有者（租使用者）會建立其 Vm 的防護資料，而不是網狀架構系統管理員。
 
 若要準備建立防護資料檔案，請執行下列步驟：
 
-- [取得遠端桌面連線的憑證](#obtain-a-certificate-for-remote-desktop-connection)
+- [取得遠端桌面連線的憑證](#optional-obtain-a-certificate-for-remote-desktop-connection)
 - [建立回應檔案](#create-an-answer-file)
 - [取得磁片區簽章類別目錄檔案](#get-the-volume-signature-catalog-file)
 - [選取信任的網狀架構](#select-trusted-fabrics)
@@ -37,23 +37,20 @@ ms.locfileid: "71403457"
 
 - [建立防護資料檔案並新增監護人](#create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard)
 
-
-## <a name="obtain-a-certificate-for-remote-desktop-connection"></a>取得遠端桌面連線的憑證
+## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a>選擇性取得遠端桌面連線的憑證
 
 由於租使用者只能使用遠端桌面連線或其他遠端系統管理工具來連線到其受防護的 Vm，因此請務必確保租使用者可以驗證它們是否連線到正確的端點（也就是不會有「中間人」）。攔截連接）。
 
 驗證您要連線到目標伺服器的其中一種方式，就是安裝和設定憑證，讓遠端桌面服務在您起始連線時顯示。 連接到伺服器的用戶端電腦將會檢查它是否信任憑證，如果沒有，則會顯示警告。 一般而言，若要確保連線的用戶端信任憑證，RDP 憑證會從租使用者的 PKI 發行。 如需如何[在遠端桌面服務中使用憑證](https://technet.microsoft.com/library/dn781533.aspx)的詳細資訊，請參閱 TechNet。
 
-> [!NOTE]
+ 為了協助您決定是否需要取得自訂的 RDP 憑證，請考慮下列事項：
+
+- 如果您只是在實驗室環境中測試受防護的 Vm，就**不**需要自訂的 RDP 憑證。
+- 如果您的 VM 已設定為加入 Active Directory 網域，則電腦憑證通常會自動由貴組織的憑證授權單位單位發行，並在 RDP 連線期間用來識別電腦。 您**不**需要自訂的 RDP 憑證。
+- 如果您的 VM 未加入網域，但您想要在使用遠端桌面時驗證連線到正確電腦的方法，您**應該考慮**使用自訂的 RDP 憑證。
+
+> [!TIP]
 > 選取要包含在防護資料檔案中的 RDP 憑證時，請務必使用萬用字元憑證。 一個防護資料檔案可用來建立不限數目的 Vm。 由於每個 VM 會共用相同的憑證，因此不論 VM 的主機名稱為何，萬用字元憑證都會確保憑證有效。
-
-如果您正在評估受防護的 Vm，但尚未準備好向憑證授權單位單位要求憑證，您可以執行下列 Windows PowerShell 命令，在租使用者機器上建立自我簽署憑證（其中*contoso.com*是租使用者的網域）：
-
-``` powershell
-$rdpCertificate = New-SelfSignedCertificate -DnsName '\*.contoso.com'
-$password = ConvertTo-SecureString -AsPlainText 'Password1' -Force
-Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $password
-```
 
 ## <a name="create-an-answer-file"></a>建立回應檔案
 
@@ -64,40 +61,50 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
 - VM 是否打算在初始化程式結束時加入網域？
 - 您將使用每個 VM 的大量授權或特定產品金鑰嗎？
 - 您使用的是 DHCP 或靜態 IP 嗎？
-- 您將使用遠端桌面通訊協定（RDP）憑證來證明該 VM 是否屬於您的組織？
+- 您將使用自訂的遠端桌面通訊協定（RDP）憑證來證明 VM 是否屬於您的組織？
 - 您想要在初始化結束時執行腳本嗎？
-- 您是否使用 Desired State Configuration （DSC）伺服器進行進一步的設定？
 
 系統會在每個使用該防護資料檔案建立的 VM 上使用防護資料檔案中所使用的回應檔案。 因此，您應該確定您不會將任何 VM 特定的資訊硬式編碼到回應檔案中。 VMM 支援自動安裝檔案中的一些替代字串（請參閱下表），以處理可能會從 VM 變更為 VM 的特製化值。 您不需要使用這些值;不過，如果它們存在，VMM 將會利用它們。
 
 為受防護的 Vm 建立 unattend.xml 檔案時，請記住下列限制：
 
--   自動安裝檔案必須在設定完成後關閉 VM。 這是為了讓 VMM 知道 VM 何時應向租使用者報告，以供 VM 完成布建並準備好可供使用。 VMM 會在虛擬機器偵測到布建期間已關閉後，自動啟動 VM。
+- 如果您使用 VMM 來管理您的資料中心，自動安裝檔案必須在設定好之後關閉 VM。 這是為了讓 VMM 知道 VM 何時應向租使用者報告，以供 VM 完成布建並準備好可供使用。 VMM 會在虛擬機器偵測到布建期間已關閉後，自動啟動 VM。
 
--   強烈建議您設定 RDP 憑證，以確保您連接的是正確的 VM，而不是設定為攔截式攻擊的另一部電腦。
+- 請務必啟用 RDP 和對應的防火牆規則，以便您可以在 VM 設定完成後加以存取。 您不能使用 VMM 主控台來存取受防護的 Vm，因此您將需要 RDP 來連線到您的 VM。 如果您想要使用 Windows PowerShell 遠端處理來管理您的系統，請確定已啟用 WinRM。
 
--   請務必啟用 RDP 和對應的防火牆規則，以便您可以在 VM 設定完成後加以存取。 您不能使用 VMM 主控台來存取受防護的 Vm，因此您將需要 RDP 來連線到您的 VM。 如果您想要使用 Windows PowerShell 遠端處理來管理您的系統，請確定已啟用 WinRM。
+- 受防護的 VM 自動安裝檔案中唯一支援的替代字串如下：
 
--   受防護的 VM 自動安裝檔案中唯一支援的替代字串如下：
+    | 可取代的元素 | 替代字串 |
+    |-----------|-----------|
+    | ComputerName        | @ComputerName@      |
+    | TimeZone            | @TimeZone@          |
+    | ProductKey          | @ProductKey@        |
+    | IPAddr4-1           | @IP4Addr-1@         |
+    | IPAddr6-1           | @IP6Addr-1@         |
+    | MACAddr-1           | @MACAddr-1@         |
+    | 前置詞-1-1          | @Prefix-1-1@        |
+    | NextHop-1-1         | @NextHop-1-1@       |
+    | 前置詞-1-2          | @Prefix-1-2@        |
+    | NextHop-1-2         | @NextHop-1-2@       |
 
-| 可取代的元素 | 替代字串 |
-|-----------|-----------|
-| ComputerName        | @ComputerName@      |
-| TimeZone            | @TimeZone@          |
-| ProductKey          | @ProductKey@        |
-| IPAddr4-1           | @IP4Addr-1@         |
-| IPAddr6-1           | @IP6Addr-1@         |
-| MACAddr-1           | @MACAddr-1@         |
-| 前置詞-1-1          | @Prefix-1-1@        |
-| NextHop-1-1         | @NextHop-1-1@       |
-| 前置詞-1-2          | @Prefix-1-2@        |
-| NextHop-1-2         | @NextHop-1-2@       |
+    如果您有多個 NIC，您可以藉由遞增第一個數位來新增多個 IP 設定的替代字串。 例如，若要設定2個 Nic 的 IPv4 位址、子網和閘道，您可以使用下列替代字串：
+
+    | 替代字串 | 替代範例 |
+    |---------------------|----------------------|
+    | @IP4Addr-1@         | 192.168.1.10         |
+    | @MACAddr-1@         | Ethernet             |
+    | @Prefix-1-1@        | 192.168.1.0/24       |
+    | @NextHop-1-1@       | 192.168.1.254        |
+    | @IP4Addr-2@         | 10.0.20.30           |
+    | @MACAddr-2@         | Ethernet 2           |
+    | @Prefix-2-1@        | 10.0.20.0/24         |
+    | @NextHop-2-1@       | 10.0.20.1            |
 
 使用替代字串時，請務必確定在 VM 布建程式期間將會填入字串。 如果在部署期間未提供字串（例如 @ProductKey @），將自動安裝檔案中的 &lt;ProductKey @ no__t 2 節點保留空白，則特製化程式將會失敗，而且您將無法連線到您的 VM。
 
 此外，請注意，只有在您利用 VMM 靜態 IP 位址池時，才會使用與資料表結尾相對應的網路相關替代字串。 您的主機服務提供者應該能夠告訴您是否需要這些替代字串。 如需 VMM 範本中靜態 IP 位址的詳細資訊，請參閱 VMM 檔中的下列內容：
 
-- [IP 位址池的指導方針](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools) 
+- [IP 位址池的指導方針](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
 - [在 VMM 網狀架構中設定靜態 IP 位址池](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
 
 最後，請務必注意，受防護的 VM 部署程式只會加密 OS 磁片磁碟機。 如果您部署具有一或多個資料磁片磁碟機的受防護 VM，強烈建議您在租使用者網域中新增自動安裝命令或群組原則設定，以自動加密資料磁片磁碟機。
@@ -111,17 +118,21 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
 
 有兩種方式可以取得範本磁片的 VSC：
 
--  主機服務提供者（或租使用者，如果租使用者具有 VMM 的存取權）會使用 VMM PowerShell Cmdlet 來儲存 VSC，並將其授與給租使用者。 這可以在已安裝並設定 VMM 主控台的任何電腦上執行，以管理主控網狀架構的 VMM 環境。 用來儲存 VSC 的 PowerShell Cmdlet 包括：
+1. 主機服務提供者（或租使用者，如果租使用者具有 VMM 的存取權）會使用 VMM PowerShell Cmdlet 來儲存 VSC，並將其授與給租使用者。 這可以在已安裝並設定 VMM 主控台的任何電腦上執行，以管理主控網狀架構的 VMM 環境。 用來儲存 VSC 的 PowerShell Cmdlet 包括：
 
-        $disk = Get-SCVirtualHardDisk -Name "templateDisk.vhdx"
-    
-        $vsc = Get-SCVolumeSignatureCatalog -VirtualHardDisk $disk
-    
-        $vsc.WriteToFile(".\templateDisk.vsc")
+    ```powershell
+    $disk = Get-SCVirtualHardDisk -Name "templateDisk.vhdx"
 
--  租使用者可存取範本磁片檔案。 如果租使用者建立一個要上傳至主機服務提供者的範本磁片，或租使用者可以下載主機服務提供者的範本磁片，就可能發生這種情況。 在此情況下，在圖片中沒有 VMM，租使用者會執行下列 Cmdlet （以受防護的 VM 工具功能安裝，遠端伺服器管理工具的一部分）：
+    $vsc = Get-SCVolumeSignatureCatalog -VirtualHardDisk $disk
 
-        Save-VolumeSignatureCatalog -TemplateDiskPath templateDisk.vhdx -VolumeSignatureCatalogPath templateDisk.vsc
+    $vsc.WriteToFile(".\templateDisk.vsc")
+    ```
+
+2. 租使用者可存取範本磁片檔案。 如果租使用者建立一個要上傳至主機服務提供者的範本磁片，或租使用者可以下載主機服務提供者的範本磁片，就可能發生這種情況。 在此情況下，在圖片中沒有 VMM，租使用者會執行下列 Cmdlet （以受防護的 VM 工具功能安裝，遠端伺服器管理工具的一部分）：
+
+    ```powershell
+    Save-VolumeSignatureCatalog -TemplateDiskPath templateDisk.vhdx -VolumeSignatureCatalogPath templateDisk.vsc
+    ```
 
 ## <a name="select-trusted-fabrics"></a>選取信任的網狀架構
 
@@ -131,15 +142,18 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
 
 您或您的主機服務提供者可以藉由執行下列其中一個動作，從 HGS 取得守護者中繼資料：
 
--  執行下列 Windows PowerShell 命令，或流覽至網站並儲存所顯示的 XML 檔案，直接從 HGS 取得守護者中繼資料：
+- 執行下列 Windows PowerShell 命令，或流覽至網站並儲存所顯示的 XML 檔案，直接從 HGS 取得守護者中繼資料：
 
-        Invoke-WebRequest 'http://hgs.bastion.local/KeyProtection/service/metadata/2014-07/metadata.xml' -OutFile .\RelecloudGuardian.xml
+    ```powershell
+    Invoke-WebRequest 'http://hgs.bastion.local/KeyProtection/service/metadata/2014-07/metadata.xml' -OutFile .\RelecloudGuardian.xml
+    ```
 
--  使用 VMM PowerShell Cmdlet，從 VMM 取得守護者中繼資料：
+- 使用 VMM PowerShell Cmdlet，從 VMM 取得守護者中繼資料：
 
-        $relecloudmetadata = Get-SCGuardianConfiguration
-
-        $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
+    ```powershell
+    $relecloudmetadata = Get-SCGuardianConfiguration
+    $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
+    ```
 
 取得您想要授權受防護的 Vm 執行的每個受保護網狀架構的守護者中繼資料檔案，然後再繼續。
 
@@ -147,13 +161,15 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
 
 執行 [防護資料檔案嚮導] 以建立防護資料（PDK）檔案。 在這裡，您將新增 RDP 憑證、自動安裝檔案、磁片區簽章目錄、擁有者防護，以及在上一個步驟中取得的下載的守護者中繼資料。
 
-1.  使用伺服器管理員或下列 Windows PowerShell 命令，在您的電腦上安裝**遠端伺服器管理工具 @no__t 1 功能管理工具 @no__t 2 個受防護的 VM 工具**：
+1. 使用伺服器管理員或下列 Windows PowerShell 命令，在您的電腦上安裝**遠端伺服器管理工具 @no__t 1 功能管理工具 @no__t 2 個受防護的 VM 工具**：
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools
+    ```powershell
+    Install-WindowsFeature RSAT-Shielded-VM-Tools
+    ```
 
-2.  從 [開始] 功能表上的 [系統管理員工具] 區段，或藉由執行下列**C： \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**，以開啟 [防護資料檔案]。
+2. 從 [開始] 功能表上的 [系統管理員工具] 區段，或藉由執行下列**C： \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**，以開啟 [防護資料檔案]。
 
-3.  在第一個頁面上，使用第二個 [檔案選擇] 方塊，為您的防護資料檔案選擇位置和檔案名。 一般來說，您會在擁有以該防護資料（例如，HR、IT、財務）及其執行的工作負載角色（例如，檔案伺服器、網頁伺服器或自動安裝檔案所設定的任何專案）所建立的任何 Vm 的實體之後，將防護資料檔案命名為。 將 [**受防護的範本的資料**] 選項按鈕設定為 [防護資料]。
+3. 在第一個頁面上，使用第二個 [檔案選擇] 方塊，為您的防護資料檔案選擇位置和檔案名。 一般來說，您會在擁有以該防護資料（例如，HR、IT、財務）及其執行的工作負載角色（例如，檔案伺服器、網頁伺服器或自動安裝檔案所設定的任何專案）所建立的任何 Vm 的實體之後，將防護資料檔案命名為。 將 [**受防護的範本的資料**] 選項按鈕設定為 [防護資料]。
 
     > [!NOTE]
     > 在 [防護資料檔案] 中，您會看到下列兩個選項：
@@ -163,12 +179,12 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
 
     ![防護資料檔案嚮導，檔案選取](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-wizard-01.png)
 
-       此外，您還必須選擇使用此防護資料檔案建立的 Vm 是否會真正受到防護，或在「支援加密」模式下設定。 如需這兩個選項的詳細資訊，請參閱受防護網狀[架構可以執行哪些類型的虛擬機器？](guarded-fabric-and-shielded-vms.md#what-are-the-types-of-virtual-machines-that-a-guarded-fabric-can-run)。
+    此外，您還必須選擇使用此防護資料檔案建立的 Vm 是否會真正受到防護，或在「支援加密」模式下設定。 如需這兩個選項的詳細資訊，請參閱受防護網狀[架構可以執行哪些類型的虛擬機器？](guarded-fabric-and-shielded-vms.md#what-are-the-types-of-virtual-machines-that-a-guarded-fabric-can-run)。
 
     > [!IMPORTANT]
     > 請小心注意下一個步驟，因為它會定義受防護 Vm 的擁有者，以及受防護的 Vm 將獲授權執行的網狀架構。<br>若要在稍後將現有的受防護 VM 從受**防護**變更為**支援的加密**，或反之亦然，必須擁有**擁有者**守護程式。
-    
-4.  您在此步驟中的目標是兩折迭：
+
+4. 您在此步驟中的目標是兩折迭：
 
     - 建立或選取代表您身為 VM 擁有者的擁有者
 
@@ -180,15 +196,15 @@ Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $p
 
     ![防護資料檔案嚮導、擁有者和監護人](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-wizard-02.png)
 
-5.  在 [磁片區識別碼限定詞] 頁面上，按一下 [**新增**]，在您的防護資料檔案中授權已簽署的範本磁片。 當您在對話方塊中選取 VSC 時，它會顯示該磁片的名稱、版本，以及用來簽署它的憑證的相關資訊。 針對每個您想要授權的範本磁片重複此程式。
+5. 在 [磁片區識別碼限定詞] 頁面上，按一下 [**新增**]，在您的防護資料檔案中授權已簽署的範本磁片。 當您在對話方塊中選取 VSC 時，它會顯示該磁片的名稱、版本，以及用來簽署它的憑證的相關資訊。 針對每個您想要授權的範本磁片重複此程式。
 
-6.  在 [特製**化值**] 頁面上，按一下 **[流覽]** 以選取將用來將您的 vm 特殊化的 unattend.xml 檔案。
+6. 在 [特製**化值**] 頁面上，按一下 **[流覽]** 以選取將用來將您的 vm 特殊化的 unattend.xml 檔案。
 
-    使用底部的 [**新增**] 按鈕，將任何額外的檔案新增至特製化程式期間所需的 PDK。 例如，如果您的自動安裝檔案會將 RDP 憑證安裝到 VM （如[使用 ShieldingDataAnswerFile 函式產生回應](guarded-fabric-sample-unattend-xml-file.md)檔案中所述），您應該在此新增自動安裝檔案中參考的 RDPCert 檔案。 請注意，您在此處指定的任何檔案，都會在建立的 VM 上自動複製到 C： @no__t 0temp @ no__t-1。 當您的自動安裝檔案依路徑參考檔案時，應該會預期該資料夾中的檔案。
+    使用底部的 [**新增**] 按鈕，將任何額外的檔案新增至特製化程式期間所需的 PDK。 例如，如果您的自動安裝檔案會將 RDP 憑證安裝到 VM （如[使用 ShieldingDataAnswerFile 函式產生回應](guarded-fabric-sample-unattend-xml-file.md)檔案中所述），您應該新增 RDP 憑證 PFX 檔案和 RDPCertificateConfig。這裡的腳本。 請注意，您在此處指定的任何檔案，都會在建立的 VM 上自動複製到 C： @no__t 0temp @ no__t-1。 當您的自動安裝檔案依路徑參考檔案時，應該會預期該資料夾中的檔案。
 
-7.  在下一個頁面上檢查您的選擇，然後按一下 [**產生**]。
+7. 在下一個頁面上檢查您的選擇，然後按一下 [**產生**]。
 
-8.  完成後，請關閉嚮導。
+8. 完成後，請關閉嚮導。
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-powershell"></a>使用 PowerShell 建立防護資料檔案並新增監護人
 
@@ -226,6 +242,9 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 $viq = New-VolumeIDQualifier -VolumeSignatureCatalogFilePath 'C:\temp\marketing-ws2016.vsc' -VersionRule Equals
 New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy EncryptionSupported -Owner 'Owner' -Guardian 'EAST-US Datacenter' -VolumeIDQualifier $viq -AnswerFile 'C:\temp\marketing-ws2016-answerfile.xml'
 ```
+
+> [!TIP]
+> 如果您使用的是自訂的 RDP 憑證、SSH 金鑰或其他需要隨附于防護資料檔案的檔案，請使用 `-OtherFile` 參數來包含這些檔案。 您可以提供以逗號分隔的檔案路徑清單，例如 `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 在上述命令中，名為 "Owner" 的守護者（從 HgsGuardian 取得）將能夠在未來變更 VM 的安全性設定，而「美國東部資料中心」則可以執行 VM，但不能變更其設定。
 如果您有一個以上的守護者，請使用逗號來分隔監護人的名稱，如 `'EAST-US Datacenter', 'EMEA Datacenter'`。

@@ -7,16 +7,17 @@ ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: be817a2c06b13af254b80090b9a7488209d4df0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: d34bbeee1a980aba76b5bed994be8db7fc8c8acf
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403530"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940816"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>針對主機守護者服務進行疑難排解
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 本主題說明在受防護網狀架構中部署或操作主機守護者服務（HGS）伺服器時所遇到之常見問題的解決方法。
 如果您不確定問題的本質，請先嘗試在您的 HGS 伺服器和 Hyper-v 主機上執行受防護的網狀[架構診斷](guarded-fabric-troubleshoot-diagnostics.md)，以縮小可能的原因。
@@ -80,6 +81,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 
 如果您的憑證私密金鑰是由硬體安全性模組（HSM）或自訂金鑰儲存提供者（KSP）所支援，則許可權模型將取決於您的特定軟體廠商。
 如需最佳結果，請參閱廠商的檔或支援網站，以取得如何針對特定裝置/軟體處理私密金鑰許可權的相關資訊。
+在所有情況下，HGS 使用的 gMSA 都需要加密、簽署和通訊憑證私密金鑰的*讀取*許可權，才能執行簽署和加密作業。
 
 某些硬體安全模組不支援將私密金鑰的存取權授與特定的使用者帳戶;相反地，它們允許電腦帳戶存取特定金鑰集中的所有金鑰。
 對於這類裝置，通常會有足夠的許可權可讓電腦存取您的金鑰，而 HGS 則可以利用該連線。
@@ -93,7 +95,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 HSM 品牌/系列      | 建議
 ----------------------|-------------
 Gemalto SafeNet       | 請確定憑證要求檔案中的 [金鑰使用方法] 屬性已設為 [0xa0]，以允許憑證用於簽署和加密。 此外，您必須使用本機憑證管理員工具（請參閱上述步驟）將私密金鑰的*讀取*權授與 gMSA 帳戶。
-nCipher nShield        | 請確定每個 HGS 節點都可以存取包含簽署和加密金鑰的安全性世界。 您不需要設定 gMSA 特定的許可權。
+nCipher nShield        | 請確定每個 HGS 節點都可以存取包含簽署和加密金鑰的安全性世界。 您可能還需要使用本機憑證管理員（請參閱上述步驟），授與 gMSA 對私密金鑰的*讀取*許可權。
 Utimaco CryptoServers | 請確定憑證要求檔案中的 [金鑰使用方法] 屬性已設定為 [0x13]，以允許憑證用於加密、解密和簽署。
 
 ### <a name="certificate-requests"></a>憑證要求

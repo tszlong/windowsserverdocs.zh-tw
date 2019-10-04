@@ -7,13 +7,13 @@ ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: b3e6aadbcbf2f2b826ca97d4ebb58c3736528b59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: e8f4a3696ec5096281ba1ffd130aa97004530cc1
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386516"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940739"
 ---
 # <a name="obtain-certificates-for-hgs"></a>取得 HGS 的憑證
 
@@ -81,7 +81,7 @@ Hyper-v 主機和 HGS 節點都必須信任您提供的 SSL 憑證，因此建�
 
 SSL 憑證屬性 | 必要值
 -------------------------|---------------
-主體名稱             | HGS 叢集的名稱（分散式網路名稱）。 這會將提供給 `Initialize-HgsServer` 和您 HGS 功能變數名稱的 HGS 服務名稱串連。
+主體名稱             | HGS 叢集的名稱（稱為「分散式網路名稱」或「虛擬電腦物件 FQDN」）。 這會將提供給 `Initialize-HgsServer` 和您 HGS 功能變數名稱的 HGS 服務名稱串連。
 主體替代名稱 | 如果您將使用不同的 DNS 名稱來連線到 HGS 叢集（例如，如果它位於負載平衡器後方），請務必在憑證要求的 SAN 欄位中包含這些 DNS 名稱。
 
 [設定第一個 hgs 節點](guarded-fabric-initialize-hgs.md)時，會涵蓋在初始化 HGS 伺服器時指定此憑證的選項。

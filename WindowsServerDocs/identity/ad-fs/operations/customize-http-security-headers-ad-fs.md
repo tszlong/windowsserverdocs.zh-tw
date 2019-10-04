@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1042ad4dae0b023c9816dff798c25b05b60eccf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407448"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935039"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>使用 AD FS 2019 自訂 HTTP 安全性回應標頭 
  
@@ -53,7 +53,7 @@ Set-AdfsResponseHeaders -EnableResponseHeaders $false
 ### <a name="http-strict-transport-security-hsts"></a>HTTP Strict-傳輸安全性（HSTS） 
 HSTS 是一種 web 安全性原則機制，可協助減少同時具有 HTTP 和 HTTPS 端點之服務的通訊協定降級攻擊和 cookie 劫持。 它可讓網頁伺服器宣告網頁瀏覽器（或其他符合使用者代理程式）只能使用 HTTPS 與其互動，而不是透過 HTTP 通訊協定。  
  
-Web 驗證流量的所有 AD FS 端點都會以獨佔方式透過 HTTPS 開啟。 因此，AD FS 有效地降低 HTTP Strict 傳輸安全性原則機制所提供的威脅（因為 HTTP 中沒有接聽程式，所以預設不會降級至 HTTP）。 您可以藉由設定下列參數來自訂標頭 
+Web 驗證流量的所有 AD FS 端點都會以獨佔方式透過 HTTPS 開啟。 因此，AD FS 有效地降低 HTTP Strict 傳輸安全性原則機制所提供的威脅（因為 HTTP 中沒有接聽程式，所以預設不會降級至 HTTP）。 您可以藉由設定下列參數來自訂標頭：
  
 - **最大壽命 =&lt; &gt;到期**時間–到期時間（以秒為單位）指定網站只能使用 HTTPS 存取的時間長度。 預設和建議值為31536000秒（1年）。  
 - **includeSubDomains** –這是選擇性參數。 若已指定，HSTS 規則也會套用至所有子域。  
@@ -107,7 +107,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ```
 
 ### <a name="x-xss-protection"></a>X-XSS-Protection 
-當瀏覽器偵測到跨網站腳本（XSS）攻擊時，此 HTTP 安全性回應標頭可用來停止載入網頁。 這稱為 XSS 篩選。 標頭可設為下列其中一個值 
+當瀏覽器偵測到跨網站腳本（XSS）攻擊時，此 HTTP 安全性回應標頭可用來停止載入網頁。 這稱為 XSS 篩選。 標頭可設為下列其中一個值：
  
 - **0** –停用 XSS 篩選。 不建議使用。  
 - **1** –啟用 XSS 篩選。 如果偵測到 XSS 攻擊，browser 會淨化該頁面。   
@@ -138,7 +138,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection"
 為了進一步瞭解 CORS 要求，讓我們逐步解說單一頁面應用程式（SPA）需要使用不同網域呼叫 Web API 的案例。 此外，請考慮在 ADFS 2019 上設定 SPA 和 API，且 AD FS 已啟用 CORS，也就是 AD FS 可以識別 HTTP 要求中的 CORS 標頭、驗證標頭值，並在回應中包含適當的 CORS 標頭（詳細資料，以瞭解如何啟用和在下面的 CORS 自訂區段中，設定 AD FS 2019 上的 CORS）。 範例流程： 
 
 1. 使用者透過用戶端瀏覽器存取 SPA，並重新導向至 AD FS auth 端點進行驗證。 由於 SPA 是針對隱含授與流程所設定，因此在成功驗證之後，要求會將存取 + 識別碼權杖傳回至瀏覽器。  
-2. 使用者驗證之後，SPA 中包含的前端 JavaScript 就會要求存取 Web API。 要求會被重新導向至具有下列標頭的 AD FS
+2. 使用者驗證之後，SPA 中包含的前端 JavaScript 就會要求存取 Web API。 要求會被重新導向至具有下列標頭的 AD FS：
     - 選項–描述目標資源的通訊選項 
     - 來源–包含 Web API 的來源
     - 存取控制-要求-方法-識別提出實際要求時所要使用的 HTTP 方法（例如，DELETE） 
@@ -146,11 +146,11 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection"
     
    >[!NOTE]
    >CORS 要求類似于標準 HTTP 要求，不過，原始標頭的存在表示連入要求與 CORS 相關。 
-3. AD FS 會驗證標頭中所包含的 Web API 來源是否列于 AD FS 中設定的受信任來源（詳細資料關於如何在 CORS 自訂中修改信任的來源一節）。 AD FS 接著會以下列標頭回應。  
+3. AD FS 會驗證標頭中所包含的 Web API 來源是否列于 AD FS 中設定的受信任來源（詳細資料關於如何在 CORS 自訂中修改信任的來源一節）。 AD FS 接著會以下列標頭回應：  
     - 存取控制-允許-來源-與原始標頭中的值相同 
     - 存取控制--------方法標頭中的值與相同 
     - 存取控制-允許-標頭-值與在存取控制-要求標頭標題中相同 
-4. 瀏覽器傳送包含下列標頭的實際要求 
+4. Browser 會傳送包含下列標頭的實際要求：
     - HTTP 方法（例如，DELETE） 
     - 來源–包含 Web API 的來源 
     - 包含在存取控制-Allow 標頭中的所有標頭 
@@ -199,7 +199,7 @@ frame-src 'self'; manifest-src 'self'; media-src 'self';"
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 
 ```
-您可以為預設的-src 原則定義下列來源 
+您可以為預設的-src 原則定義下列來源：
  
 - ' self ' –指定此項會限制內容的來源載入網頁的來源 
 - 「unsafe-內嵌」–在原則中指定此項可允許使用內嵌的 JavaScript 和 CSS 
@@ -223,7 +223,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
  
 ![Fiddler](media/customize-http-security-headers-ad-fs/header2.png)
 
-## <a name="web-browswer-compatibility"></a>Web 瀏覽器相容性
+## <a name="web-browser-compatibility"></a>網頁瀏覽器相容性
 使用下表和連結，判斷哪些網頁瀏覽器與每個安全性回應標頭相容。
 
 |HTTP 安全性回應標頭|瀏覽器相容性|
@@ -236,5 +236,5 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 
 ## <a name="next"></a>下一個
 
-- [使用 AD FS Help troublehshooting 指南](https://aka.ms/adfshelp/troubleshooting )
+- [使用 AD FS 協助疑難排解指南](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS 疑難排解](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 12410d619245153f759b54e7a8aff257888f04dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 92fe505c3ae7d76f7a8d5bd9d2ed0ce845159fde
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386068"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940753"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)
 
@@ -217,7 +217,7 @@ Windows 和 DFS 複寫支援最多32000個字元的資料夾路徑。 DFS 複寫
 
 ### <a name="what-are-the-supported-limits-of-dfs-replication"></a>DFS 複寫支援的限制為何？
 
-下列清單提供一組已由 Microsoft 在 Windows Server 2012 R2 上測試過的擴充性指導方針：
+下列清單提供一組已由 Microsoft 測試並適用于 Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 的擴充性指導方針。
 
   - 伺服器上所有已複寫檔案的大小：100 tb。  
       
@@ -228,7 +228,7 @@ Windows 和 DFS 複寫支援最多32000個字元的資料夾路徑。 DFS 複寫
 
 
 > [!IMPORTANT]
-> 建立具有大量或大小檔案的複寫群組時，我們建議您匯出資料庫複製並使用預先植入技術，將初始複寫的持續時間降至最低。 如需詳細資訊， <A href="http://blogs.technet.com/b/filecab/archive/2013/08/21/dfs-replication-initial-sync-in-windows-server-2012-r2-attack-of-the-clones.aspx">請參閱 DFS 複寫 Windows Server 2012 R2 中的初始同步處理：複製</A>的攻擊。 
+> 建立具有大量或大小檔案的複寫群組時，我們建議您匯出資料庫複製並使用預先植入技術，將初始複寫的持續時間降至最低。 如需詳細資訊， [請參閱 DFS 複寫 Windows Server 2012 R2 中的初始同步處理：複製](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/DFS-Replication-Initial-Sync-in-Windows-Server-2012-R2-Attack-of/ba-p/424877)的攻擊。 
 <br>
 
 
