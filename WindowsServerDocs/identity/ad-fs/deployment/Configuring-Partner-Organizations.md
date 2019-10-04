@@ -6,33 +6,33 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 3d7389ce806a5e3aebf4fe166b10e5262df0be8a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 575d7e3fc97496c3f7c147220fe342add66517c3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192243"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408399"
 ---
 # <a name="configuring-partner-organizations"></a>設定夥伴組織
 
-若要部署新的夥伴組織中 Active Directory Federation Services \(AD FS\)，在完成[檢查清單：Configuring the Resource Partner Organization](Checklist--Configuring-the-Resource-Partner-Organization.md)或[檢查清單：設定帳戶夥伴組織](Checklist--Configuring-the-Account-Partner-Organization.md)，取決於您的 AD FS 設計。  
+若要在 Active Directory 同盟服務中部署新的夥伴組織 \(AD FS @ no__t-1，請在 [[Checklist] 中完成下列工作：設定資源夥伴組織 @ no__t-0 或 [Checklist：根據您的 AD FS 設計，設定帳戶夥伴組織 @ no__t-0。  
   
 > [!NOTE]  
-> 當您使用任一檢查清單時，我們強烈建議您先閱讀參考帳戶夥伴或資源夥伴計劃中的指導方針[Windows Server 2012 中 AD FS 設計指南](https://technet.microsoft.com/library/dd807036.aspx)然後再繼續設定新的交易夥伴組織的程序。 遵循的檢查清單，如此一來，可幫助提供進一步了解完整 AD FS 設計和部署案例的帳戶夥伴或資源夥伴組織。  
+> 當您使用其中一個檢查清單時，強烈建議您先閱讀[Windows Server 2012 中 AD FS 設計指南](https://technet.microsoft.com/library/dd807036.aspx)中的帳戶夥伴或資源夥伴規劃指南的參考，再繼續進行設定的程式。新的夥伴組織。 依照這種方式執行檢查清單，可讓您更瞭解帳戶夥伴或資源夥伴組織的完整 AD FS 設計和部署案例。  
   
 ## <a name="about-account-partner-organizations"></a>關於帳戶夥伴組織  
-帳戶夥伴是同盟信任關係，實際儲存在 AD FS 支援的屬性存放區中的 使用者帳戶中的組織。 帳戶夥伴負責收集和驗證使用者的認證、 建立該使用者的宣告，以及將宣告封裝到安全性權杖。 這些權杖接著會看到跨同盟信任，以存取 Web\-位於資源夥伴組織中的資源。  
+帳戶夥伴是同盟信任關係中的組織，實際上會將使用者帳戶儲存在 AD FS 支援的屬性存放區中。 帳戶夥伴會負責收集和驗證使用者的認證、建立該使用者的宣告，並將宣告封裝到安全性權杖中。 然後，您可以在同盟信任中顯示這些權杖，以存取位於資源夥伴組織中的 Web @ no__t-0based 資源。  
   
-換句話說，帳戶夥伴代表組織為其使用者帳戶\-端同盟伺服器簽發安全性權杖。 帳戶夥伴組織中的同盟伺服器會驗證本機使用者，並建立資源夥伴使用的安全性權杖進行授權決策。  
+換句話說，帳戶夥伴代表其使用者帳戶 @ no__t-0side 同盟伺服器發出安全性權杖的組織。 帳戶夥伴組織中的同盟伺服器會驗證本機使用者，並建立資源夥伴用來進行授權決策的安全性權杖。  
   
-關於屬性存放區，在 AD FS 帳戶夥伴是概念上相當於單一 Active Directory 樹系的帳戶需要存取實體上位於另一個樹系的資源。 外部信任或樹系信任存在兩個樹系之間的關聯性，並使用適當的權限已設定的使用者嘗試存取的資源時，才在此樹系中的帳戶可以存取資源樹系中的資源權限。  
+就屬性存放區而言，AD FS 中的帳戶夥伴在概念上相當於單一 Active Directory 樹系，其帳戶需要存取實體位於另一個樹系中的資源。 只有當兩個樹系之間有外部信任或樹系信任關係存在，而且使用者嘗試取得存取權的資源已設定適當的授權時，此樹系中的帳戶才能存取資源樹系中的資源無權.  
   
 ## <a name="about-resource-partner-organizations"></a>關於資源夥伴組織  
-資源夥伴是 AD FS 部署中的組織，網頁伺服器位於何處。 資源夥伴可信任帳戶夥伴來驗證使用者。 因此，來製作授權決策，資源夥伴所使用的封裝在來自帳戶夥伴中的使用者的安全性權杖的宣告。  
+資源夥伴是 Web 服務器所在之 AD FS 部署中的組織。 資源夥伴信任帳戶夥伴來驗證使用者。 因此，若要進行授權決策，資源夥伴會取用封裝于帳戶夥伴中使用者的安全性權杖中的宣告。  
   
-換句話說，資源夥伴代表的組織之 Web 伺服器受到資源\-側邊的同盟伺服器。 在資源夥伴同盟伺服器會使用帳戶夥伴要在資源夥伴中的 Web 伺服器的授權決策時所產生的安全性權杖。  
+換句話說，資源夥伴代表其 Web 服務器受到 resource @ no__t-0side 同盟伺服器保護的組織。 資源夥伴的同盟伺服器會使用帳戶夥伴所產生的安全性權杖，對資源夥伴中的 Web 服務器做出授權決策。  
   
-若要做為 AD FS 資源，資源夥伴組織中的網頁伺服器必須有 Windows Identity Foundation \(WIF\)安裝，或有 Active Directory Federation Services \(AD FS\) 1.x宣告\-感知網路代理程式安裝的角色服務。 Web 伺服器，做為 AD FS 資源可以裝載任一 Web\-瀏覽器\-或 Web\-服務\-架構的應用程式。  
+若要做為 AD FS 資源，資源夥伴組織中的 Web 服務器必須已安裝 Windows Identity Foundation \(WIF @ no__t-1，或 Active Directory 同盟服務 \(AD FS @ no__t-3 1. x 宣告 @ no__t-4Aware Web已安裝代理程式角色服務。 當做 AD FS 資源運作的 web 伺服器可以裝載 Web @ no__t-0browser @ no__t-1based 或 Web @ no__t-2service @ no__t-3based 應用程式。  

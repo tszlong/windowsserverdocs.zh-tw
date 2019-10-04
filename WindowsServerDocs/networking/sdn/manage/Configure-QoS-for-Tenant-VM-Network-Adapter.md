@@ -1,9 +1,9 @@
 ---
 title: 設定租使用者 VM 網路介面卡的服務品質（QoS）
-description: 當您設定租使用者 VM 網路介面卡的 QoS 時，您可以選擇 [資料中心橋接] DCB 或 [ 軟體定義的網路] SDN QoS。
+description: 當您設定租使用者 VM 網路介面卡的 QoS 時，您可以選擇 [資料中心橋\(接\)] DCB 或 [ \(軟體\)定義的網路] SDN QoS。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,12 +13,12 @@ ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 99ef286b91bec4bcb008bfd9f62003e75a5a5921
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1074525abe375e78ab0d2065ce8e98f894f50c61
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870016"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355851"
 ---
 # <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>設定租使用者 VM 網路介面卡的服務品質（QoS）
 
@@ -32,7 +32,7 @@ ms.locfileid: "70870016"
 
 透過網路介面內容的埠設定，套用所有 SDN QoS 設定。 如需詳細資訊，請參閱下表。
 
-|元素名稱|說明|
+|元素名稱|描述|
 |------------|-----------| 
 |macSpoofing| 允許 vm 將傳出封包中的來源\(媒體\)存取控制 MAC 位址變更為未指派給 VM 的 MAC 位址。<p>允許的值：<ul><li>[已啟用] –使用不同的 MAC 位址。</li><li>已停用-僅使用指派給它的 MAC 位址。</li></ul>|
 |arpGuard| 只允許 ArpFilter 中指定的 ARP 防護位址通過埠。<p>允許的值：<ul><li>已啟用-允許</li><li>Disabled –不允許</li></ul>|

@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2ab6141b84d03102c5dedd1ede0ba99e5adf3e4a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 106262b63b5aad0eddb08618eb808d2d9ff5b425
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867752"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407802"
 ---
 # <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>案例：Web API 呼叫 Web API （代表案例） 
 > 適用於：AD FS 2019 和更新版本 
@@ -136,7 +136,7 @@ ms.locfileid: "70867752"
   
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi20.png)
 
-  28. 在 [宣告**規則名稱：** ] 欄位中輸入**PassAllClaims** ， **x： [] = > 問題（宣告 = x）;** 自訂規則中的宣告規則：欄位，然後按一下 [完成]。  
+  28. 在 [宣告**規則名稱：** ] 欄位中輸入**PassAllClaims** ， **x： [] = > 問題（宣告 = x）;** 自訂規則中的宣告規則：] 欄位，然後按一下 [完成]。  
    
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi21.png)
 
@@ -147,7 +147,7 @@ ms.locfileid: "70867752"
 
   31. 在 [WebApiToWebApi-Web API 2 屬性] 畫面上，選取 [發行轉換規則] 索引標籤，然後按一下 [新增規則 ...] 
 
-  32. 在 [新增轉換宣告規則] 上，選取使用來自 dopdown 的自訂規則傳送![宣告，然後按一下 下一步應用程式](media/adfs-msal-web-api-web-api/webapi23.png)
+  32. 在 [新增轉換宣告規則] 上，選取 [使用來自 dopdown 的自訂規則傳送![宣告，然後按一下 下一步應用程式](media/adfs-msal-web-api-web-api/webapi23.png)
 
   33. 在 [宣告規則名稱：] 欄位中輸入 PassAllClaims， **x： [] = > 問題（宣告 = x）;** **自訂規則**中的宣告規則： 欄位，然後按一下 **[完成]** 。  
    
