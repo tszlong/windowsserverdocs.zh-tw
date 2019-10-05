@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a776920caa85c3ee133070d52b020c8ad3c799e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
+ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402995"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973867"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
 
@@ -34,15 +34,15 @@ ms.locfileid: "71402995"
 
 ## <a name="are-clusters-supported-as-sources-or-destinations"></a>叢集是否支援做為來源或目的地？
 
-儲存體遷移服務目前不會在 Windows Server 2019 中的叢集之間進行遷移。 我們計畫在未來的儲存體遷移服務版本中新增叢集支援。
+儲存體遷移服務支援在安裝累計更新[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)或後續更新之後，從叢集遷移到叢集。 這包括從來源叢集遷移至目的地叢集，以及從獨立來源伺服器遷移至目的地叢集，以進行裝置合併的目的。 
 
 ## <a name="do-local-groups-and-local-users-migrate"></a>本機群組和本機使用者是否遷移？
 
-儲存體遷移服務目前不會在 Windows Server 2019 中遷移本機使用者或本機群組。 我們計畫在未來的儲存體遷移服務版本中新增本機使用者和本機群組遷移支援。
+儲存體遷移服務支援在安裝累積更新[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)或後續更新之後，遷移本機使用者和群組。 
 
 ## <a name="is-domain-controller-migration-supported"></a>是否支援網域控制站遷移？
 
-儲存體遷移服務目前不會在 Windows Server 2019 中遷移網域控制站。 因應措施是，只要您在 Active Directory 網域中有多個網域控制站，請先將網域控制站降級，再進行遷移，然後在剪下完成後將目的地升級。 我們計畫在未來的儲存體遷移服務版本中新增網域控制站遷移支援。
+儲存體遷移服務目前不會在 Windows Server 2019 中遷移網域控制站。 因應措施是，只要您在 Active Directory 網域中有多個網域控制站，請先將網域控制站降級，再進行遷移，然後在剪下完成後將目的地升級。
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>儲存體遷移服務會遷移哪些屬性？
 
@@ -73,11 +73,11 @@ ms.locfileid: "71402995"
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>我可以將多部伺服器合併成一部伺服器嗎？
 
-Windows Server 2019 隨附的儲存體遷移服務版本不支援將多部伺服器合併成一部伺服器。 合併的範例是將三個不同的來源伺服器（可能具有相同的共用名稱和本機檔案路徑）遷移到單一新伺服器上，將這些路徑和共用虛擬化，以防止任何重迭或衝突，然後全部回答三個先前的伺服器名稱和 IP 位址。 我們可能會在未來的儲存體遷移服務版本中新增這項功能。 
+Windows Server 2019 隨附的儲存體遷移服務版本不支援將多部伺服器合併成一部伺服器。 合併的範例是將三個不同的來源伺服器（可能具有相同的共用名稱和本機檔案路徑）遷移到單一新伺服器上，將這些路徑和共用虛擬化，以防止任何重迭或衝突，然後全部回答三個先前的伺服器名稱和 IP 位址。 不過，您可以將獨立伺服器遷移至單一叢集上的多個檔案伺服器資源。 
 
 ## <a name="can-i-migrate-from-sources-other-than-windows-server"></a>我可以從 Windows Server 以外的來源進行遷移嗎？
 
-Windows Server 2019 隨附的儲存體遷移服務版本支援從 Windows Server 2003 和更新版本的作業系統進行遷移。 您也可以從使用 Samba 的 Linux 伺服器或裝置遷移儲存體;若要這麼做，請在執行 Windows Server 1903 或更新版本的伺服器上執行儲存體遷移服務。
+儲存體遷移服務支援在安裝累計更新[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)或後續更新之後，從 Samba Linux 伺服器進行遷移。 如需支援的 Samba 版本和 Linux 散發版本清單，請參閱需求。
 
 ## <a name="can-i-migrate-previous-file-versions"></a>我可以遷移先前的檔案版本嗎？
 
@@ -129,7 +129,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 儲存體遷移服務會使用依預設安裝在隱藏的 c:\programdata\microsoft\storagemigrationservice 資料夾中的可擴充儲存引擎（ESE）資料庫。 此資料庫會隨著作業的新增和傳輸完成而成長，如果您未刪除作業，則在遷移數百萬個檔案之後，可能會耗用大量的磁碟空間。 如果需要移動資料庫，請執行下列步驟：
 
 1. 停止 orchestrator 電腦上的「儲存體遷移服務」服務。
-2. 取得`%programdata%/Microsoft/StorageMigrationService`資料夾的擁有權
+2. 取得 @no__t 0 資料夾的擁有權
 3. 新增您的使用者帳戶，以對該共用及其所有檔案和子資料夾擁有完整控制權。
 4. 將資料夾移至 orchestrator 電腦上的另一個磁片磁碟機。
 5. 設定下列登錄 REG_SZ 值：
@@ -145,7 +145,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 
 - 使用包含在 Windows 10 中的意見反應中樞工具，按一下 [建議功能]，並指定「Windows Server」的類別和「儲存體遷移」的子類別
 - 使用[Windows Server UserVoice](https://windowsserver.uservoice.com)網站
-- 電子郵件smsfeed@microsoft.com
+- 電子郵件 smsfeed@microsoft.com
 
 若要提出錯誤：
 
