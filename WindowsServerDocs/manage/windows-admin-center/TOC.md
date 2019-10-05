@@ -65,6 +65,7 @@
 #### [使用工具擴充功能中的自訂閘道外掛程式](extend/guides/use-custom-gateway-plugin.md)
 #### [建立連線提供者](extend/guides/create-connection-provider.md)
 #### [修改根瀏覽行為](extend/guides/modify-root-navigation.md)
+#### [Windows 系統管理中心 1909 版中的叢集連線類型變更](extend/guides/cluster-connection-change-wac-1909.md)
 #### [控制您的工具可見性](extend/guides/dynamic-tool-display.md)
 #### [字串和當地語系化](extend/guides/strings-localization.md)
 #### [UI 文字與設計樣式指南](extend/guides/ui-text-style-guide.md)
