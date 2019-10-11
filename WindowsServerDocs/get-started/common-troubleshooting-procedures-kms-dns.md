@@ -1,26 +1,26 @@
 ---
-title: KMS 和 DNS 問題的常見疑難排解程序
+title: 針對 DNS 相關啟用問題進行疑難排解的指導方針
 description: ''
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 09/10/2019
 ms.technology: server-general
 ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e3c1fa82a567c43507df2f2ffd72595c3903ba
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: e2bd9c766f07591e0c643a6cea644b2db7a95364
+ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68664890"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960947"
 ---
-# <a name="common-troubleshooting-procedures-for-kms-and-dns-issues"></a>KMS 和 DNS 問題的常見疑難排解程序
+# <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>針對 DNS 相關啟用問題進行疑難排解的指導方針
 
 如果下列其中一個或多個條件成立，您可能必須使用其中一些方法：
 
 - 您可以使用大量授權的媒體和大量授權一般產品金鑰來安裝下列其中一個作業系統：&nbsp;
-   - Windows Server 2019
+   - Windows Server Standard 2012 R2
    - Windows Server 2016
    - Windows Server 2012 R2
    - Windows Server 2012

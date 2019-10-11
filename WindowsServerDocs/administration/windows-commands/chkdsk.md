@@ -1,24 +1,20 @@
 ---
 title: chkdsk
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Chkdsk 的 Windows 命令主題，它會檢查磁片區的檔案系統和檔案系統中繼資料是否有邏輯和實體的錯誤。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 62912a3c-d2cc-4ef6-9679-43709a286035
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: lizapo
-ms.date: 10/16/2017
-ms.openlocfilehash: fac941a0ad5638fafa86d31a9af1cce1cc475823
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 10/09/2019
+ms.openlocfilehash: 130b51e472ebf3d900186d6d63e318c88a340579
+ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379445"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252357"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -43,19 +39,27 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 
 ## <a name="parameters"></a>參數
 
-|      參數      |                                                                                                                      描述                                                                                                                       |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      \<Volume >      |                                                                                     指定磁碟機號（後面接著冒號）、掛接點或磁片區名稱。                                                                                     |
+|      參數       |                  描述                                    |
+| -------------------- | ------------------------------------------------------------------------ |
+|      \<Volume >      | 指定磁碟機號（後面接著冒號）、掛接點或磁片區名稱。  |
 | [\<Path >] <FileName> | 僅與檔案分配表（FAT）和 FAT32 搭配使用。 指定您想要**chkdsk**檢查片段的檔案或一組檔案的位置和名稱。 您可以使用 **？** 和 **&#42;** 萬用字元來指定多個檔案。 |
-|         /f          |                             修正磁片上的錯誤。 磁片必須鎖定。 如果**chkdsk**無法鎖定磁片磁碟機，則會出現一則訊息，詢問您是否要在下一次重新開機電腦時檢查磁片磁碟機。                             |
-|         /v          |                                                                                       在檢查磁片時，顯示每個目錄中每個檔案的名稱。                                                                                        |
-|         /r          |                                   找出錯誤的磁區，並復原可讀取的資訊。 磁片必須鎖定。 **/r**包括 **/f**的功能，以及實體磁片錯誤的額外分析。                                   |
-|         /x          |                                                  必要時，強制先卸載磁片區。 磁片磁碟機所有開啟的控制碼都將失效。 **/x**也包括 **/f**的功能。                                                   |
-|         /i          |                                                           僅使用 NTFS。 對索引項目執行較少的 vigorous 檢查，這可減少執行**chkdsk**所需的時間量。                                                            |
-|         /c          |                                                          僅使用 NTFS。 不會檢查資料夾結構內的迴圈，這會減少執行**chkdsk**所需的時間量。                                                           |
-|    /l [： \<Size >]     |                                                         僅使用 NTFS。 將記錄檔大小變更為您輸入的大小。 如果您省略 size 參數， **/l**會顯示目前的大小。                                                          |
-|         /b          |           僅限 NTFS：清除磁片區上的錯誤叢集清單，並重新掃描所有已配置和可用的叢集是否有錯誤。 **/b**包含 **/r**的功能。 將磁片區映射處理到新的硬碟之後，請使用此參數。            |
-|         /?          |                                                                                                          在命令提示字元顯示說明。                                                                                                          |
+|         /f          | 修正磁片上的錯誤。 磁片必須鎖定。 如果**chkdsk**無法鎖定磁片磁碟機，則會出現一則訊息，詢問您是否要在下一次重新開機電腦時檢查磁片磁碟機。 |
+|         /v          | 在檢查磁片時，顯示每個目錄中每個檔案的名稱。     |
+|         /r          | 找出錯誤的磁區，並復原可讀取的資訊。 磁片必須鎖定。 **/r**包括 **/f**的功能，以及實體磁片錯誤的額外分析。                                   |
+|         /x          | 必要時，強制先卸載磁片區。 磁片磁碟機所有開啟的控制碼都將失效。 **/x**也包括 **/f**的功能。  |
+|         /i          | 僅使用 NTFS。 對索引項目執行較少的 vigorous 檢查，這可減少執行**chkdsk**所需的時間量。  |
+|         /c          | 僅使用 NTFS。 不會檢查資料夾結構內的迴圈，這會減少執行**chkdsk**所需的時間量。  |
+|    /l [： \<Size >]     | 僅使用 NTFS。 將記錄檔大小變更為您輸入的大小。 如果您省略 size 參數， **/l**會顯示目前的大小。 |
+|         /b          | 僅限 NTFS：清除磁片區上的錯誤叢集清單，並重新掃描所有已配置和可用的叢集是否有錯誤。 **/b**包含 **/r**的功能。 將磁片區映射處理到新的硬碟之後，請使用此參數。            |
+| /scan               | 僅限 NTFS：在磁片區上執行線上掃描。 |
+| /forceofflinefix    | 僅限 NTFS：（必須與 "/scan" 一起使用）。 略過所有線上修復;所有找到的缺失都會排入離線修復的佇列（亦即 "chkdsk/spotfix"）。 |
+| /perf               | 僅限 NTFS：（必須與 "/scan" 一起使用）。 使用更多系統資源，以快速 aspossible 的方式來完成掃描。 對於在系統上執行的其他工作，這可能會對效能造成負面影響。|
+| /spotfix            | 僅限 NTFS：在磁片區上執行點修正。 |
+| /sdcleanup          | 僅限 NTFS：垃圾收集不必要的安全描述項資料（隱含/F）。 |
+| /offlinescanandfix  | 在磁片區上執行離線掃描和修正。 |
+| /freeorphanedchains | 僅限 FAT/FAT32/exFAT：釋放任何孤立的叢集鏈，而不是復原其內容。 |
+| /markclean          | 僅限 FAT/FAT32/exFAT：如果未偵測到任何損毀，則會將磁片區標示為清除，即使未指定/F 也一樣。 |
+|         /?          | 在命令提示字元顯示說明。                       |
 
 ## <a name="remarks"></a>備註
 
@@ -137,6 +141,7 @@ chkdsk *.*
 ```
 
 **Chkdsk**會顯示狀態報表，然後列出符合具有非連續區塊之檔案規格的檔案。
-#### <a name="additional-references"></a>其他參考資料
+
+## <a name="additional-references"></a>其他參考資料
 
 [命令列語法關鍵](command-line-syntax-key.md)

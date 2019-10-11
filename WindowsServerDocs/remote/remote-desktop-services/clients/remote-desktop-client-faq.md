@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b1dd3b728f941d9c3732abccf19363cf631284e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387754"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935030"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>關於遠端桌面用戶端的常見問題集
 
@@ -166,7 +166,7 @@ Web 用戶端支援 Windows、macOS、Linux 和 ChromeOS。 目前不支援行�
 2. 啟用 [使用所有監視器]  和 [全螢幕]  。
 
 ### <a name="is-bi-directional-sound-supported"></a>是否支援雙向音效？
-遠端桌面用戶端不支援逆向音效 (例如，從用戶端到伺服器的麥克風音效)。
+雙向音效可以在 Windows 用戶端針對每個連線進行設定。 您可以在 [本機資源]  選項索引標籤的 [遠端音訊]  區段中存取相關設定。
 
 ### <a name="what-can-i-do-if-the-sound-wont-play"></a>無法播放音效時，該如何處理？
 登出工作階段 (不只是中斷連線，而應完全登出)，然後再次登入。

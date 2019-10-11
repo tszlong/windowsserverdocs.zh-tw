@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3111d4e980395c1a7c971af715017d455e1a29c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 51693f81e8e394df02bf35f1a6d91ed06b98e4bb
+ms.sourcegitcommit: c9d856c22b42d2a4fb8fe6acc6c5b6be673647f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384924"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165049"
 ---
 # <a name="qprocess"></a>qprocess
 
@@ -32,7 +32,7 @@ ms.locfileid: "71384924"
 ## <a name="remarks"></a>備註
 此命令與**查詢處理**命令相同。
 
-#### <a name="additional-references"></a>其他參考
-[查詢](query-process.md)程式 
-[命令列語法索引鍵](command-line-syntax-key.md)
-[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>其他參考資料
+[查詢進程](query-process.md)  
+[命令列語法關鍵](command-line-syntax-key.md)  
+[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)  

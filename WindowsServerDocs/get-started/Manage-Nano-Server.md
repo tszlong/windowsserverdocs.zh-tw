@@ -12,12 +12,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: dc3a2386573c5beb4ec156fdfca3b77f025b1738
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 132f4e1966b332cd6bb6e21402984db7ceed4497
+ms.sourcegitcommit: d599eea5203f95609fb21801196252d5dd9f2669
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391765"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005220"
 ---
 # <a name="manage-nano-server"></a>管理 Nano Server
 
@@ -206,9 +206,9 @@ $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -A
 
 **注意：**  
 這些命令會列出安裝項目，但不會在輸出中特別指出「已安裝」。 如果您需要輸出加入該指示 (例如針對報表)，您可以執行  
-```  
-Get-WindowsPackage--Online  
-```  
+```PowerShell
+Get-WindowsPackage -Online
+```
 
 ### <a name="using-wsus"></a>使用 WSUS  
 ---  

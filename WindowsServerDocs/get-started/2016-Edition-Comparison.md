@@ -1,84 +1,82 @@
 ---
 title: Windows Server 2016 產品與版本
-description: 說明 Standard 和 Datacenter 版本之間的差異
-ms.custom: na
+description: 說明 Windows Server Standard 與 Windows Server Datacenter 版本的差異
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.date: 01/03/2017
+ms.date: 10/04/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-a932-80cab33f419e
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d32d596746d2ff137fe2517a6430976f9e77ce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2940e5ad75fab90f717284eabafd555573cab35
+ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391884"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973854"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 Standard 和 Datacenter 版本的比較
 
 > 適用於：Windows Server 2016
   
 ## <a name="locks-and-limits"></a>鎖定與限制
-|鎖定與限制|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
-|使用者數目上限|以 CAL 為依據|以 CAL 為依據|
-|SMB 連線數上限|16777216|16777216|
-|RRAS 連線數上限|沒有限制|沒有限制|
-|IAS 連線數上限|2147483647|2147483647|
-|RDS 連線數上限|65535|65535|
-|64 位元通訊端數目上限|64|64|
-|核心數目上限|沒有限制|沒有限制|
-|RAM 上限|24 TB|24 TB|
-|可以用作虛擬客體|是，2 部虛擬機器，加上每份授權一部 Hyper-V 主機|是，無限制的虛擬機器，加上每份授權一部 Hyper-V 主機|
-|伺服器可加入網域|是|是|
-|邊緣網路保護/防火牆|否|否|
-|DirectAccess|是|是|
-|DLNA 轉碼器和網路媒體串流|是，若以桌面體驗安裝為伺服器|是，若以桌面體驗安裝為伺服器|
+
+| 鎖定與限制 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
+| ------------------- |---------- | --------------------------- |  
+| 使用者數目上限 | 以 CAL 為依據   | 以 CAL 為依據     |
+| SMB 連線數上限 | 16,777,216      | 16,777,216          |
+| RRAS 連線數上限| 沒有限制       | 沒有限制         |
+| IAS 連線數上限 | 2,147,483,647   | 2,147,483,647        |
+| RDS 連線數上限 | 65535           | 65535             |
+| 64 位元通訊端數目上限 | 64     | 64                |
+| 核心數目上限 | 沒有限制       | 沒有限制      |
+| RAM 上限             | 24 TB           | 24 TB             |
+| 可以用作虛擬客體 | 是，2 部虛擬機器，加上每份授權一部 Hyper-V 主機 | 是，<strong>無限制的虛擬機器</strong>，加上每份授權一部 Hyper-V 主機 |
+| 伺服器可加入網域 | 是            | 是                |
+| 邊緣網路保護/防火牆 | 否     | 否                 |
+| DirectAccess            | 是             | 是                |
+| DLNA 轉碼器和網路媒體串流 | 是，若以桌面體驗安裝為伺服器 | 是，若以桌面體驗安裝為伺服器 |
 
 ## <a name="server-roles"></a>伺服器角色
-|可用的 Windows Server 角色|角色服務|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|----------|---------------------------|  
-|Active Directory 憑證服務| |是|是|
-|Active Directory Domain Services| |是|是|
-|Active Directory 同盟服務| |是|是|
-|AD 輕量型目錄服務| |是|是|
-|AD Rights Management Services| |是|是|
-|裝置健康情況證明| |是|是|
-|DHCP 伺服器| |是|是|
-|DNS 伺服器| |是|是|
-|傳真伺服器| |是|是|
-|檔案和存放服務|檔案伺服器|是|是|
-|檔案和存放服務|網路檔案的 BranchCache|是|是|
-|檔案和存放服務|重複資料刪除|是|是|
-|檔案和存放服務|DFS 命名空間|是|是|
-|檔案和存放服務|DFS 複寫|是|是|
-|檔案和存放服務|檔案伺服器資源管理員|是|是|
-|檔案和存放服務|檔案伺服器 VSS 代理程式服務|是|是|
-|檔案和存放服務|iSCSI 目標伺服器|是|是|
-|檔案和存放服務|iSCSI 目標儲存提供者|是|是|
-|檔案和存放服務|Server for NFS|是|是|
-|檔案和存放服務|工作資料夾|是|是|
-|檔案和存放服務|存放服務|是|是|
-|主機守護者服務| |是|是|
-|Hyper-V| |是|是；包含受防護的虛擬機器|
-|MultiPoint 服務| |是|是|
-|網路控制卡| |否|是|
-|網路原則與存取服務| |是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
-|列印和文件服務| |是|是|
-|遠端存取| |是|是|
-|遠端桌面服務| |是|是|
-|大量啟用服務| |是|是|
-|Web 服務 (IIS)| |是|是|
-|Windows 部署服務| |是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
-|Windows Server Essentials 體驗| |是|是|
-|Windows Server Update Services| |是|是|
+
+| 可用的 Windows Server 角色     | 角色服務 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
+| -------------------                | ----------    | ----------                   | ---------------------------    |  
+| Active Directory 憑證服務|              | 是                          | 是                            |
+| Active Directory Domain Services    |               | 是                          | 是                            |
+| Active Directory 同盟服務|               | 是                          | 是                            |
+| AD 輕量型目錄服務| |是|是|
+| AD Rights Management Services| |是|是|
+| 裝置健康情況證明| |是|是|
+| DHCP 伺服器| |是|是|
+| DNS 伺服器| |是|是|
+| 傳真伺服器| |是|是|
+| 檔案和存放服務|檔案伺服器|是|是|
+| 檔案和存放服務|網路檔案的 BranchCache|是|是|
+| 檔案和存放服務|重複資料刪除|是|是|
+| 檔案和存放服務|DFS 命名空間|是|是|
+| 檔案和存放服務|DFS 複寫|是|是|
+| 檔案和存放服務|檔案伺服器資源管理員|是|是|
+| 檔案和存放服務|檔案伺服器 VSS 代理程式服務|是|是|
+| 檔案和存放服務|iSCSI 目標伺服器|是|是|
+| 檔案和存放服務|iSCSI 目標儲存提供者|是|是|
+| 檔案和存放服務|Server for NFS|是|是|
+| 檔案和存放服務|工作資料夾|是|是|
+| 檔案和存放服務|存放服務|是|是|
+| 主機守護者服務| |是|是|
+| Hyper-V| |是|是；<strong>包含受防護的虛擬機器</strong>|
+| MultiPoint 服務| |是|是|
+| 網路控制卡| |否| <strong>是</strong> |
+| 網路原則與存取服務| |是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
+| 列印和文件服務| |是|是|
+| 遠端存取| |是|是|
+| 遠端桌面服務| |是|是|
+| 大量啟用服務| |是|是|
+| Web 服務 (IIS)| |是|是|
+| Windows 部署服務| |是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
+| Windows Server Essentials 體驗| |是|是|
+| Windows Server Update Services| |是|是|
 
 ## <a name="features"></a>功能
 
@@ -97,7 +95,7 @@ ms.locfileid: "71391884"
 |增強的存放區|是|是|
 |容錯移轉叢集|是|是|
 |群組原則管理|是|是|
-|主機守護者 Hyper-V 支援|否|是|
+|主機守護者 Hyper-V 支援|否|<strong>是</strong> |
 |I/O 服務品質|是|是|
 |可裝載 IIS 的 Web 核心|是|是|
 |網際網路列印用戶端|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
@@ -123,7 +121,7 @@ ms.locfileid: "71391884"
 |SMB 頻寬限制|是|是|
 |SMTP 伺服器|是|是|
 |SNMP 服務|是|是|
-|軟體負載平衡器|否|是|
+|軟體負載平衡器|否| <strong>是</strong> |
 |儲存體複本|否|是|
 |Telnet 用戶端|是|是|
 |TFTP 用戶端|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
@@ -160,15 +158,15 @@ ms.locfileid: "71391884"
 |Nano Server 安裝選項|是|是|
 |伺服器管理員|是|是|
 |SMB 直接傳輸與 SMB (透過 RDMA)|是|是|
-|軟體定義網路|否|是|
-|存放管理服務|是|是|
+| 軟體定義網路 | 否 | <strong>是</strong> |
+|儲存體複本 | 否 | <strong>是</strong> |
 |儲存空間|是|是|
-|儲存空間直接存取|否|是|
+|儲存空間直接存取|否| <strong>是</strong> |
 |大量啟用服務|是|是|
 |VSS (磁碟區陰影複製服務) 整合|是|是|
 |Windows Server Update Services|是|是|
 |Windows 系統資源管理員|是|是|
 |伺服器授權記錄|是|是|
-|已繼承的啟用|若託管於 Datacenter 則作為客體|可為主機或客體|
+|已繼承的啟用|若託管於 Datacenter 則作為客體| <strong>可為主機或客體</strong> |
 |工作資料夾|是|是|
 

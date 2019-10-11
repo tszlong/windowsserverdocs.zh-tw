@@ -4,16 +4,16 @@ description: 儲存體遷移服務的已知問題和疑難排解支援，例如�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 07/09/2019
+ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 150c9f1e70df4f634886ea65efd9c61ef075f26a
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: e3ec7ee787fb6fd2e8e9f59249a6c4013a76b377
+ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940693"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252365"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -48,7 +48,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 在 Windows 系統管理中心使用0.57 版的儲存體遷移服務延伸模組，且您進入切換階段時，您無法選取位址的靜態 IP。 系統會強制您使用 DHCP。
 
-若要解決此問題，請在 Windows 系統管理中心的 [**設定** > ] [**擴充**功能] 底下查看警示，指出已更新的 [儲存體遷移服務 0.57.2] 可供安裝。 您可能需要重新開機 Windows 系統管理中心的 [瀏覽器] 索引標籤。
+若要解決此問題，請在 Windows 系統管理中心中，查看 [**設定**] [ > **延伸**模組] 底下的警示，其會指出已更新的版本儲存體遷移服務0.57.2 可供安裝。 您可能需要重新開機 Windows 系統管理中心的 [瀏覽器] 索引標籤。
 
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>儲存體遷移服務轉換驗證失敗，錯誤為「目的地電腦上的權杖篩選原則拒絕存取」
 
@@ -225,7 +225,7 @@ DFSR Debug 記錄檔：
   使用者：        網路服務電腦：    FS02.TailwindTraders.net 描述：無法清查電腦。
 作業： foo2 電腦：FS01.TailwindTraders.net 狀態：失敗錯誤：-2147463168 錯誤訊息：指引：請檢查詳細錯誤，並確定已符合清查需求。 清查無法判斷指定來源電腦的任何層面。 這可能是因為來源或封鎖的防火牆埠缺少許可權或許可權。
   
-當您以使用者主體名稱（UPN）的形式提供遷移認證（例如 'meghan@contoso.com'）時，儲存體遷移服務中的程式碼缺失會導致此錯誤。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
+當您以使用者主體名稱（UPN）的形式提供遷移認證（例如 ' meghan@contoso.com '）時，儲存體遷移服務中的程式碼缺失會導致此錯誤。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
 
 若要解決此問題，請以 domain\user 格式提供認證，例如 ' Contoso\Meghan '。
 
@@ -264,6 +264,28 @@ DFSR Debug 記錄檔：
     There are no more endpoints available from the endpoint mapper  
 
 若要解決此問題，請從儲存體遷移服務協調器電腦暫時卸載 KB4512534 累計更新（以及取代它的任何）。 當遷移完成時，請重新安裝最新的累計更新。  
+
+請注意，在某些情況下，卸載 KB4512534 或其取代更新可能會導致儲存體遷移服務無法再啟動。 若要解決此問題，您可以備份和刪除儲存體遷移服務資料庫：
+
+1.  開啟提升許可權的 cmd 提示字元，其中您是儲存體遷移服務 orchestrator 伺服器上的系統管理員成員，並執行：
+
+     ```
+     MD c:\ProgramData\Microsoft\StorageMigrationService\backup
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService\* /grant Administrators:(GA)
+
+     XCOPY c:\ProgramData\Microsoft\StorageMigrationService\* .\backup\*
+
+     DEL c:\ProgramData\Microsoft\StorageMigrationService\* /q
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService  /GRANT networkservice:F /T /C
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA)F /T /C
+     ```
+   
+2.  啟動儲存體遷移服務服務，這會建立新的資料庫。
+
+
 
 ## <a name="see-also"></a>另請參閱
 

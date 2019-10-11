@@ -14,12 +14,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d11e8ad0cac1f9cf024097450e90d9be95d950b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 829608ae1a4c6b78b3b191f248ed4a4195500669
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387765"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940720"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -221,7 +221,7 @@ ms.locfileid: "71387765"
 |---------------|----------------------|-------------------------------------------------------------------------|
 | 直接觸控  | 按滑鼠左鍵           | 使用一指點選                                                     |
 | 直接觸控  | 按一下滑鼠右鍵          | 使用一指點選並按住，然後放開                              |
-| 滑鼠指標 | Zoom                 | 將兩指捏合以放大，或將手指分開以縮小。 |
+| 滑鼠指標 | Zoom                 | 將兩指捏合以縮小，或將手指分開以放大。 |
 | 滑鼠指標 | 按滑鼠左鍵           | 使用一指點選                                                     |
 | 滑鼠指標 | 按滑鼠左鍵並拖曳  | 使用一指點兩下並按住，然後拖曳                          |
 | 滑鼠指標 | 按一下滑鼠右鍵          | 使用兩指點選                                                    |

@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 35bb2d547c4af2b90d5ed68e32dfa214bee6b3a7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 175c4dbd23bac1822365ce80f05d69509d27321c
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403235"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935027"
 ---
 ## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>在包含桌面體驗的 Windows Server 2016 上停用系統服務的指引
 
@@ -1729,9 +1729,20 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br /><br/>
-## <a name="sensor-servicebr--br------br---strongservice-descriptionstrong----a-service-for-sensors-that-manages-different-sensors39-functionality-manages-simple-device-orientation-sdo-and-history-for-sensors-loads-the-sdo-sensor-that-reports-device-orientation-changes--if-this-service-is-stopped-or-disabled-the-sdo-sensor-will-not-be-loaded-and-so-auto-rotation-will-not-occur-history-collection-from-sensors-will-also-be-stopped"></a>感應器服務<br/>| | |<br/>|---|---|<br/>|   <strong>服務描述</strong> | 用來管理不同感應器功能的感應器服務。 管理感應器的簡易裝置方向 (SDO) 與記錄。 載入 SDO 感應器以報告裝置方向變更。  如果停止或停用此服務，將不會載入 SDO 感應器，因此將不會發生自動旋轉。 來自感應器的記錄收集也將停止。
-|   <strong>服務名稱</strong>    |   SensorService |   <strong>安裝</strong>    |   僅限桌面體驗 |   <strong>StartType</strong>   |   手動 |   <strong>建議</strong>  |   確定停用 |   <strong>註解</strong>    |<br/>|||<br/>
+<br />
+
+## <a name="sensor-service"></a>感應器服務
+
+| | |
+|---|---|
+|   **服務描述** |   用來管理不同感應器功能的感應器服務。 管理感應器的簡易裝置方向 (SDO) 與記錄。 載入 SDO 感應器以報告裝置方向變更。  如果停止或停用此服務，將不會載入 SDO 感應器，因此將不會發生自動旋轉。 來自感應器的記錄收集也將停止。
+|   **服務名稱**    |   SensorService
+|   **安裝**    |   僅包含桌面體驗
+|   **StartType**   |   Manual
+|   **建議**  |   確定停用
+|   **註解**    |
+|||
+  
 <br />          
 
 ## <a name="server"></a>Server           

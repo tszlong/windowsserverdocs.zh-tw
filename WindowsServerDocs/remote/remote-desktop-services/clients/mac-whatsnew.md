@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 092804ea84ba2d0e68eede3a597cb354c53bb8bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc09a60882c481cea974508b0ef967aad0ed82fa
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404200"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940638"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS 用戶端中的新功能
 
@@ -189,7 +189,7 @@ ms.locfileid: "71404200"
 - 新增包含橢圓曲線非對稱金鑰的 RD 端點憑證支援。
 - 修正在某些情況下，無法下載受控資源的 Bug。
 - 解決釘選連線中心的裁剪問題。
-- 修正顯示屬性工作表中的核取方塊以更妥善地搭配運作。
+- 修正 [新增桌面] 視窗的 [顯示] 索引標籤中的核取方塊，更妥善地搭配運作。
 - 當動態顯示變更作用中時，現在會停用 [鎖定長寬比]。
 - 解決 F5 基礎結構的相容性問題。
 - 更新空白密碼的處理方式，以確保在連線時顯示正確的訊息。

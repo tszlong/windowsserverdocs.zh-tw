@@ -1,21 +1,21 @@
 ---
-title: 針對啟用錯誤碼進行疑難排解
+title: 解決 Windows 啟用錯誤碼
 description: 了解如何針對啟用錯誤碼進行疑難排解
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 9/18/2019
 ms.technology: server-general
 ms.assetid: ''
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 506aa5969228a17fe64581ec2a7143537b1fa05a
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 26b107264c9dfaca16ef445760089b8ac0ae8e22
+ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658864"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960965"
 ---
-# <a name="troubleshooting-activation-error-codes"></a>針對啟用錯誤碼進行疑難排解
+# <a name="resolve-windows-activation-error-codes"></a>解決 Windows 啟用錯誤碼
 
 > **家庭用戶**  
 > 本文適用於支援專員和 IT 專業人員。 如需 Windows 啟用錯誤訊息的詳細資訊，請參閱[取得 Windows 啟用錯誤的說明](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)。  
@@ -30,40 +30,162 @@ ms.locfileid: "68658864"
 
 ## <a name="summary-of-error-codes"></a>錯誤碼摘要
 
-|錯誤碼 |錯誤訊息 |啟用類型 |
+|錯誤碼 |錯誤訊息 |啟用類型&nbsp;|
 |-----------|--------------|----------------|
+|[0x8004FE21](#0x8004fe21-this-computer-is-not-running-genuine-windows) |這部電腦未執行正版 Windows。  |MAK<br />KMS 用戶端 |
+|[0x80070005](#0x80070005-access-denied) |拒絕存取。 要求的動作需要提高的權限。 |MAK<br />KMS 用戶端<br />KMS 主機 |
+|[0x8007007b](#0x8007007b-dns-name-does-not-exist) |0x8007007b DNS 名稱不存在。 |KMS 用戶端 |
+|[0x80070490](#0x80070490-the-product-key-you-entered-didnt-work) |輸入的產品金鑰無效。 請檢查產品金鑰並再試一次，或輸入其他金鑰。 |MAK |
+|[0x800706BA](#0x800706ba-the-rpc-server-is-unavailable) |RPC 伺服器無法使用。 |KMS 用戶端 |
+|[0x8007232A](#0x8007232a-dns-server-failure) |DNS 伺服器失敗。  |KMS 主機  |
+|[0x8007232B](#0x8007232b-dns-name-does-not-exist) |DNS 名稱不存在。 |KMS 用戶端 |
+|[0x8007251D](#0x8007251d-no-records-found-for-dns-query) |找不到 DNS 查詢記錄。 |KMS 用戶端 |
+|[0x80092328](#0x80092328-dns-name-does-not-exist) |DNS 名稱不存在。  |KMS 用戶端 |
+|[0xC004B100](#0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated) |啟用伺服器判定無法啟用電腦。 |MAK |
 |[0xC004C001](#0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid) |啟用伺服器判定所指定的產品金鑰無效 |MAK|
 |[0xC004C003](#0xc004c003-the-activation-server-determined-the-specified-product-key-is-blocked) |啟用伺服器判定所指定的產品金鑰已被封鎖 |MAK |
 |[0xC004C008](#0xc004c008-the-activation-server-determined-that-the-specified-product-key-could-not-be-used) |啟用伺服器判定無法使用所指定的產品金鑰。 |KMS |
-|[0xC004B100](#0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated) |啟用伺服器判定無法啟用電腦。 |MAK |
 |[0xC004C020](#0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit) |啟用伺服器報告多次啟用金鑰已超過其限制。 |MAK |
 |[0xC004C021](#0xc004c021-the-activation-server-reported-that-the-multiple-activation-key-extension-limit-has-been-exceeded) |啟用伺服器報告已超過多次啟用金鑰延伸限制。 |MAK |
 |[0xC004F009](#0xc004f009-the-software-protection-service-reported-that-the-grace-period-expired) |軟體保護服務報告指出寬限期已過。 |MAK |
-|[0xC004F00F](#0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance) |軟體授權伺服器報告指出硬體識別碼繫結超出容忍度。 |MAK/KMS 用戶端/KMS 主機 |
-|[0xC004F014](#0xc004f014-the-software-protection-service-reported-that-the-product-key-is-not-available) |軟體保護服務報告指出產品金鑰無法使用 |MAK/KMS 用戶端 |
-|[0xC004F02C](#0xc004f02c-the-software-protection-service-reported-that-the-format-for-the-offline-activation-data-is-incorrect) |軟體保護服務報告指出離線啟用資料格式不正確。 |MAK/KMS 用戶端 |
-|[0xC004F035](#0xc004f035-invalid-volume-license-key) |此錯誤碼相當於「軟體保護服務報告指出無法使用大量授權產品金鑰啟用電腦...」錯誤文字正確，但模稜兩可。 此錯誤指出電腦在 BIOS 中缺少 Windows 標記 - OEM 系統上提供該標記以指出電腦隨附合格的 Windows 版本，這是 KMS 用戶端啟用的需求。 錯誤：大量授權金鑰無效。若要啟用，您必須將產品金鑰變更為有效的多次啟用金鑰 (MAK) 或零售金鑰。 您必須有合格的作業系統授權以及大量授權的 Windows 7 之升級授權，或從零售來源取得 Windows 7 的完整授權。 此軟體的任何其他安裝都違反您合約及適用的著作權法。 |KMS 用戶端/KMS 主機 |
+|[0xC004F00F](#0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance) |軟體授權伺服器報告指出硬體識別碼繫結超出容忍度。 |MAK<br />KMS 用戶端<br />KMS 主機 |
+|[0xC004F014](#0xc004f014-the-software-protection-service-reported-that-the-product-key-is-not-available) |軟體保護服務報告指出產品金鑰無法使用 |MAK<br />KMS 用戶端 |
+|[0xC004F02C](#0xc004f02c-the-software-protection-service-reported-that-the-format-for-the-offline-activation-data-is-incorrect) |軟體保護服務報告指出離線啟用資料格式不正確。 |MAK<br />KMS 用戶端 |
+|[0xC004F035](#0xc004f035-invalid-volume-license-key) |軟體保護服務報告指出無法使用大量授權產品金鑰啟用電腦。 |KMS 用戶端<br />KMS 主機 |
 |[0xC004F038](#0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient) |軟體保護服務報告指出無法啟用電腦。 您的金鑰管理服務 (KMS) 報告的計數不足。 請連絡您的系統管理員。 |KMS 用戶端 |
 |[0xC004F039](#0xc004f039-the-key-management-service-kms-is-not-enabled) |軟體保護服務報告指出無法啟用電腦。 金鑰管理服務 (KMS) 未啟用。 |KMS 用戶端 |
 |[0xC004F041](#0xc004f041-the-software-protection-service-determined-that-the-key-management-server-kms-is-not-activated) |軟體保護服務判定金鑰管理伺服器 (KMS) 並未啟用。 必須啟用 KMS。  |KMS 用戶端 |
 |[0xC004F042](#0xc004f042-the-software-protection-service-determined-that-the-specified-key-management-service-kms-cannot-be-used) |軟體保護服務判定無法使用所指定的金鑰管理服務 (KMS)。 |KMS 用戶端 |
-|[0xC004F050](#0xc004f050-the-software-protection-service-reported-that-the-product-key-is-invalid) |軟體保護服務報告指出產品金鑰無效。 |KMS、KMS 用戶端、MAK |
-|[0xC004F051](#0xc004f051-the-software-protection-service-reported-that-the-product-key-is-blocked) |軟體保護服務報告指出產品金鑰被封鎖。 |MAK/KMS |
+|[0xC004F050](#0xc004f050-the-software-protection-service-reported-that-the-product-key-is-invalid) |軟體保護服務報告指出產品金鑰無效。 |MAK<br />KMS<br />KMS 用戶端 |
+|[0xC004F051](#0xc004f051-the-software-protection-service-reported-that-the-product-key-is-blocked) |軟體保護服務報告指出產品金鑰被封鎖。 |MAK<br />KMS |
 |[0xC004F064](#0xc004f064-the-software-protection-service-reported-that-the-non-genuine-grace-period-expired) |軟體保護服務報告指出非正版寬限期已過。 |MAK |
-|[0xC004F065](#0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period) |軟體保護服務報告指出應用程式在有效的非正版期間執行。 |MAK/KMS 用戶端 |
+|[0xC004F065](#0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period) |軟體保護服務報告指出應用程式在有效的非正版期間執行。 |MAK<br />KMS 用戶端 |
 |[0xC004F06C](#0xc004f06c-the-request-timestamp-is-invalid) |軟體保護服務報告指出無法啟用電腦。 金鑰管理服務 (KMS) 判斷出要求時間戳記無效。  |KMS 用戶端 |
-|[0x80070005](#0x80070005-access-denied) |拒絕存取。 要求的動作需要提高的權限。 |KMS 用戶端/MAK/KMS 主機 |
-|[0x8007232A](#0x8007232a-dns-server-failure) |DNS 伺服器失敗。  |KMS 主機  |
-|[0x8007232B](#0x8007232b-dns-name-does-not-exist) |DNS 名稱不存在。 |KMS 用戶端 |
-|[0x800706BA](#0x800706ba-the-rpc-server-is-unavailable) |RPC 伺服器無法使用。 |KMS 用戶端 |
-|[0x8007251D](#0x8007251d-no-records-found-for-dns-query) |找不到 DNS 查詢記錄。 |KMS 用戶端 |
 |[0xC004F074](#0xc004f074-no-key-management-service-kms-could-be-contacted) |軟體保護服務報告指出無法啟用電腦。 無法聯繫金鑰管理服務 (KMS)。 如需其他資訊，請參閱應用程式事件記錄檔。  |KMS 用戶端 |
-|[0x8004FE21](#0x8004fe21-this-computer-is-not-running-genuine-windows) |這部電腦未執行正版 Windows。  |MAK/KMS 用戶端 |
-|[0x80092328](#0x80092328-dns-name-does-not-exist) |0x80092328 DNS 名稱不存在。  |KMS 用戶端 |
-|[0x8007007b](#0x8007007b-dns-name-does-not-exist) |0x8007007b DNS 名稱不存在。 |KMS 用戶端 |
-|[0x80070490](#0x80070490-the-product-key-you-entered-didnt-work) |輸入的產品金鑰無效。 請檢查產品金鑰並再試一次，或輸入其他金鑰。 |MAK |
 
 ## <a name="causes-and-resolutions"></a>原因和解決方式
+
+### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21 這部電腦未執行正版 Windows  
+
+#### <a name="possible-cause"></a>可能的原因
+
+多種原因會導致發生此問題。 最可能的造成原因是電腦上尚未安裝語言套件 (MUI)，這些電腦所執行 Windows 版本沒有其他語言套件的授權。  
+
+> [!NOTE]
+> 此問題不一定表示遭到竄改。 某些應用程式可以安裝多語支援，即使該 Windows 版本沒有這些語言套件的授權也一樣。  
+
+如果 Windows 遭到惡意程式碼修改為允許安裝其他功能，也可能會發生此問題。 如果特定系統檔案已損毀，也可能會發生此問題。  
+
+#### <a name="resolution"></a>解析度
+
+若要解決此問題，您必須重新安裝作業系統。  
+
+### <a name="0x80070005-access-denied"></a>0x80070005 拒絕存取
+
+此錯誤訊息的完整文字與下列類似：
+
+> 拒絕存取。 要求的動作需要提高的權限。
+
+#### <a name="possible-cause"></a>可能的原因
+
+使用者帳戶控制 (UAC) 禁止啟用處理程序在未提升權限的命令提示字元視窗中執行。  
+
+#### <a name="resolution"></a>解析度
+
+從提升權限的命令提示字元執行 **slmgr.vbs**。 若要這麼做，請在 [開始]  功能表上，以滑鼠右鍵按一下 **cmd.exe**，然後選取 [以系統管理員身分執行]  。  
+
+### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b DNS 名稱不存在
+
+#### <a name="possible-cause"></a>可能的原因
+
+如果 KMS 用戶端在 DNS 中找不到 KMS SRV 資源記錄，就可能會發生此問題。  
+
+#### <a name="resolution"></a>解析度
+
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+
+### <a name="0x80070490-the-product-key-you-entered-didnt-work"></a>0x80070490 輸入的產品金鑰無效
+
+此錯誤的完整文字與下列類似：
+> 輸入的產品金鑰無效。 請檢查產品金鑰並再試一次，或輸入其他金鑰。  
+
+#### <a name="possible-cause"></a>可能的原因
+
+因為輸入的 MAK 無效，或由於 Windows Server 2019 中的已知問題，所以發生此問題。  
+
+#### <a name="resolution"></a>解析度
+
+若要暫時解決此問題並啟動電腦，請在提升權限的命令提示字元執行 **slmgr -ipk <5x5 key>** 。
+
+### <a name="0x800706ba-the-rpc-server-is-unavailable"></a>0x800706BA RPC 伺服器無法使用
+
+#### <a name="possible-cause"></a>可能的原因
+
+未在 KMS 主機上設定防火牆設定，或 DNS SRV 記錄已過時。  
+
+#### <a name="resolution"></a>解析度
+
+在 KMS 主機上，確定已針對金鑰管理服務 (TCP 連接埠 1688) 啟用防火牆例外。
+
+確定 DNS SRV 記錄指向有效的 KMS 主機。 
+
+針對網路連線進行疑難排解。  
+
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+
+### <a name="0x8007232a-dns-server-failure"></a>0x8007232A DNS 伺服器失敗
+
+#### <a name="possible-cause"></a>可能的原因
+
+系統有網路或 DNS 問題。
+
+#### <a name="resolution"></a>解析度
+
+針對網路與 DNS 進行疑難排解。  
+
+### <a name="0x8007232b-dns-name-does-not-exist"></a>0x8007232B DNS 名稱不存在
+
+#### <a name="possible-cause"></a>可能的原因
+
+KMS 用戶端在 DNS 中找不到 KMS 伺服器資源記錄 (SRV RR)。  
+
+#### <a name="resolution"></a>解析度
+
+確認已安裝 KMS 主機，且已啟用 DNS 發佈 (預設值)。 若 DNS 無法使用，請使用 **slmgr.vbs /skms <*kms_host_name*>** 將 KMS 用戶端指向 KMS 主機。  
+
+如果您沒有 KMS 主機，請取得並安裝 MAK。 然後，啟動系統。
+
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+
+### <a name="0x8007251d-no-records-found-for-dns-query"></a>0x8007251D 找不到 DNS 查詢記錄
+
+#### <a name="possible-cause"></a>可能的原因
+
+KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
+
+#### <a name="resolution"></a>解析度
+
+針對網路連線與 DNS 進行疑難排解。 如需如何針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+
+### <a name="0x80092328-dns-name-does-not-exist"></a>0x80092328 DNS 名稱不存在
+
+#### <a name="possible-cause"></a>可能的原因
+
+如果 KMS 用戶端在 DNS 中找不到 KMS SRV 資源記錄，就可能會發生此問題。
+
+#### <a name="resolution"></a>解析度
+
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+
+### <a name="0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated"></a>0xC004B100 啟用伺服器判定無法啟用電腦
+
+#### <a name="possible-cause"></a>可能的原因
+
+不支援該 MAK。  
+
+#### <a name="resolution"></a>解析度
+
+若要針對此問題進行疑難排解，請確認您所使用的 MAK 是 Microsoft 所提供的 MAK。 若要驗證 MAK 是否有效，請連絡 [Microsoft 授權啟用中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid"></a>0xC004C001 啟用伺服器判定所指定的產品金鑰無效
 
@@ -94,16 +216,6 @@ ms.locfileid: "68658864"
 #### <a name="resolution"></a>解析度
 
 如果您需要額外啟用，請連絡 [Microsoft 授權啟用中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。  
-
-### <a name="0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated"></a>0xC004B100 啟用伺服器判定無法啟用電腦
-
-#### <a name="possible-cause"></a>可能的原因
-
-不支援該 MAK。  
-
-#### <a name="resolution"></a>解析度
-
-若要針對此問題進行疑難排解，請確認您所使用的 MAK 是 Microsoft 所提供的 MAK。 若要驗證 MAK 是否有效，請連絡 [Microsoft 授權啟用中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit"></a>0xC004C020 啟用伺服器報告多次啟用金鑰已超過其限制
 
@@ -175,15 +287,23 @@ ms.locfileid: "68658864"
 
 > 錯誤：大量授權金鑰無效。 若要啟用，您必須將產品金鑰變更為有效的多次啟用金鑰 (MAK) 或零售金鑰。 您必須有合格的作業系統授權以及大量授權的 Windows 7 之升級授權，或從零售來源取得 Windows 7 的完整授權。 此軟體的任何其他安裝都違反您合約及適用的著作權法。  
 
+錯誤文字正確，但模稜兩可。 此錯誤表示電腦在其 BIOS 中遺漏 Windows 標記，而該標記可將其識別為執行合格 Windows 版本的 OEM 系統。 KMS 用戶端啟用需要此資訊。 此程式碼的更具體意義是「錯誤：大量授權金鑰無效」
+
 #### <a name="possible-cause"></a>可能的原因
 
 只有 Windows 7 大量授權版本已授權升級。 Microsoft 不支援在未安裝合格作業系統的電腦上安裝大量授權作業系統。  
 
-此錯誤碼表示下列情況：「軟體保護服務報告指出無法使用大量授權產品金鑰啟用電腦...」錯誤文字是正確的，但語意模糊。 此錯誤表示電腦在 BIOS 中遺失 Windows 標記。 此標記會出現在 OEM 系統上，指出與合格的 Windows 版本一起運送的電腦。 KMS 用戶端啟用需要此標記。  
-
 #### <a name="resolution"></a>解析度
 
-請安裝 Microsoft 作業系統的合格版本，然後使用 MAK 進行啟用。
+若要啟用，您必須執行下列其中一項動作：
+
+- 將產品金鑰變更為有效的多次啟用金鑰 (MAK) 或零售金鑰。 您必須有合格的作業系統授權以及大量授權的 Windows 7 之升級授權，或從零售來源取得 Windows 7 的完整授權。
+  > [!NOTE]
+  > 如果您在嘗試啟用時收到錯誤 0x80072ee2，請改用後面的電話啟用方法。
+- 依照下列步驟透過電話啟用：
+   1. 執行 **slmgr /dti**，然後記錄安裝識別碼的值。 </li>
+   1. 請洽詢 [Microsoft 授權啟用中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)並提供安裝識別碼，以便接收確認識別碼。</li>
+   1. 若要使用確認識別碼進行啟用，請執行 **slmgr /atp &lt;確認識別碼&gt;** 。
 
 ### <a name="0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient"></a>0xC004F038 您的金鑰管理服務 (KMS) 報告的計數不足
 
@@ -290,70 +410,6 @@ Windows 啟用工具判定系統不是正版。 系統將會在非正版寬限�
 
 請變更用戶端上的系統時間使其與 KMS 主機同步，以修正此問題。 建議使用網路時間通訊協定 (NTP) 時間來源或 Active Directory Domain Services 來進行時間同步。 此問題導因於使用 UTP 時間，而且與時區選擇無關。  
 
-### <a name="0x80070005-access-denied"></a>0x80070005 拒絕存取
-
-此錯誤訊息的完整文字與下列類似：
-
-> 拒絕存取。 要求的動作需要提高的權限。
-
-#### <a name="possible-cause"></a>可能的原因
-
-使用者帳戶控制 (UAC) 禁止啟用處理程序在未提升權限的命令提示字元視窗中執行。  
-
-#### <a name="resolution"></a>解析度
-
-從提升權限的命令提示字元執行 **slmgr.vbs**。 若要這麼做，請在 [開始]  功能表上，以滑鼠右鍵按一下 **cmd.exe**，然後選取 [以系統管理員身分執行]  。  
-
-### <a name="0x8007232a-dns-server-failure"></a>0x8007232A DNS 伺服器失敗
-
-#### <a name="possible-cause"></a>可能的原因
-
-系統有網路或 DNS 問題。
-
-#### <a name="resolution"></a>解析度
-
-針對網路與 DNS 進行疑難排解。  
-
-### <a name="0x8007232b-dns-name-does-not-exist"></a>0x8007232B DNS 名稱不存在
-
-#### <a name="possible-cause"></a>可能的原因
-
-KMS 用戶端在 DNS 中找不到 KMS 伺服器資源記錄 (SRV RR)。  
-
-#### <a name="resolution"></a>解析度
-
-確認已安裝 KMS 主機，且已啟用 DNS 發佈 (預設值)。 若 DNS 無法使用，請使用 **slmgr.vbs /skms <*kms_host_name*>** 將 KMS 用戶端指向 KMS 主機。  
-
-如果您沒有 KMS 主機，請取得並安裝 MAK。 然後，啟動系統。
-
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
-
-### <a name="0x800706ba-the-rpc-server-is-unavailable"></a>0x800706BA RPC 伺服器無法使用
-
-#### <a name="possible-cause"></a>可能的原因
-
-未在 KMS 主機上設定防火牆設定，或 DNS SRV 記錄已過時。  
-
-#### <a name="resolution"></a>解析度
-
-在 KMS 主機上，確定已針對金鑰管理服務 (TCP 連接埠 1688) 啟用防火牆例外。
-
-確定 DNS SRV 記錄指向有效的 KMS 主機。 
-
-針對網路連線進行疑難排解。  
-
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
-
-### <a name="0x8007251d-no-records-found-for-dns-query"></a>0x8007251D 找不到 DNS 查詢記錄
-
-#### <a name="possible-cause"></a>可能的原因
-
-KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
-
-#### <a name="resolution"></a>解析度
-
-針對網路連線與 DNS 進行疑難排解。 如需如何針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
-
 ### <a name="0xc004f074-no-key-management-service-kms-could-be-contacted"></a>0xC004F074 無法聯繫金鑰管理服務 (KMS)
 
 此錯誤訊息的完整文字與下列類似：
@@ -369,51 +425,3 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 在應用程式事件記錄中，找出具有事件識別碼 12288 並與啟用嘗試相關聯的每個事件。 針對這些事件的錯誤進行疑難排解。
 
 如需針對 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
-
-### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21 這部電腦未執行正版 Windows  
-
-#### <a name="possible-cause"></a>可能的原因
-
-多種原因會導致發生此問題。 最可能的造成原因是電腦上尚未安裝語言套件 (MUI)，這些電腦所執行 Windows 版本沒有其他語言套件的授權。  
-
-> [!NOTE]
-> 此問題不一定表示遭到竄改。 某些應用程式可以安裝多語支援，即使該 Windows 版本沒有這些語言套件的授權也一樣。  
-
-如果 Windows 遭到惡意程式碼修改為允許安裝其他功能，也可能會發生此問題。 如果特定系統檔案已損毀，也可能會發生此問題。  
-
-#### <a name="resolution"></a>解析度
-
-若要解決此問題，您必須重新安裝作業系統。  
-
-### <a name="0x80092328-dns-name-does-not-exist"></a>0x80092328 DNS 名稱不存在
-
-#### <a name="possible-cause"></a>可能的原因
-
-如果 KMS 用戶端在 DNS 中找不到 KMS SRV 資源記錄，就可能會發生此問題。 
-
-#### <a name="resolution"></a>解析度
-
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
-
-### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b DNS 名稱不存在
-
-#### <a name="possible-cause"></a>可能的原因
-
-如果 KMS 用戶端在 DNS 中找不到 KMS SRV 資源記錄，就可能會發生此問題。  
-
-#### <a name="resolution"></a>解析度
-
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
-
-### <a name="0x80070490-the-product-key-you-entered-didnt-work"></a>0x80070490 輸入的產品金鑰無效
-
-此錯誤的完整文字與下列類似：
-> 輸入的產品金鑰無效。 請檢查產品金鑰並再試一次，或輸入其他金鑰。  
-
-#### <a name="possible-cause"></a>可能的原因
-
-因為輸入的 MAK 無效，或由於 Windows Server 2019 中的已知問題，所以發生此問題。  
-
-#### <a name="resolution"></a>解析度
-
-若要暫時解決此問題並啟動電腦，請在提升權限的命令提示字元執行 **slmgr -ipk <5x5 key>** 。
