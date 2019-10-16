@@ -1,8 +1,8 @@
 ---
-title: 使用 get 映像命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用取得映射命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,52 +13,52 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b78f4ed9352c21bf6de19136a625a4f4fe7ac5f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 73b25fd70c1512f99b5097b2317c3f0403f3526c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877439"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363113"
 ---
-# <a name="using-the-get-image-command"></a>使用 get 映像命令
+# <a name="using-the-get-image-command"></a>使用取得映射命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-擷取映像的相關資訊。
+抓取影像的相關資訊。
 ## <a name="syntax"></a>語法
-針對開機映像：
+開機映射：
 ```
 wdsutil [Options] /Get-Imagmedia:<Image name> [/Server:<Server name>mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<File name>]
 ```
-安裝映像：
+針對安裝映射：
 ```
 wdsutil [Options] /Get-Imagmedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] [/Filename:<File name>]
 ```
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-媒體：<Image name>|指定映像的名稱。|
-|[/ 伺服器：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整的網域名稱 (FQDN)。 如果未不指定任何伺服器名稱，則會使用本機伺服器。|
-媒體類型: {開機&#124;安裝}|指定映像的類型。|
-|/ 架構: {x86 &#124; ia64 &#124; x64}|指定映像的架構。 因為可能有不同的架構中的開機映像的相同映像名稱，指定架構值可確保會傳回正確的映像。|
-|[/ Filename:<File name>]|如果映像無法依名稱來唯一識別，您必須使用此選項來指定檔案名稱。|
-|\mediaGroup:<Image group name>]|指定包含該映像的映像群組。 如果未指定任何映像群組，而且只有一個映像群組存在於伺服器上，將會使用該群組。 如果伺服器上有一個以上的映像群組，您必須使用這個參數來指定映像群組。|
-## <a name="BKMK_examples"></a>範例
-若要擷取開機映像的相關資訊，請輸入下列其中一項：
+媒體： <Image name>|指定映射的名稱。|
+|[/Server： <Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+媒體： {Boot &#124; Install}|指定映射的類型。|
+|/Architecture： {x86 &#124; ia64 &#124; x64}|指定映射的架構。 因為不同架構中的開機映射可能會有相同的映射名稱，所以指定架構值可確保傳回正確的映射。|
+|[/Filename： <File name>]|如果無法以名稱唯一識別映射，您就必須使用這個選項來指定檔案名。|
+|\mediaGroup： <Image group name>]|指定包含影像的映射群組。 如果未指定映射群組，而且伺服器上只存在一個映射群組，則會使用該群組。 如果伺服器上有一個以上的映射群組，您就必須使用這個參數來指定映射群組。|
+## <a name="BKMK_examples"></a>典型
+若要取出開機映射的相關資訊，請輸入下列其中一項：
 ```
 wdsutil /Get-Imagmedia:"WinPE boot imagemediatype:Boot /Architecture:x86
 wdsutil /verbose /Get-Imagmedia:"WinPE boot image" /Server:MyWDSServemediatype:Boot /Architecture:x86 /Filename:boot.wim
 ```
-若要擷取安裝映像的相關資訊，請輸入下列其中一項：
+若要取出安裝映射的相關資訊，請輸入下列其中一項：
 ```
 wdsutil /Get-Imagmedia:"Windows Vista with Officemediatype:Install
 wdsutil /verbose /Get-Imagmedia:"Windows Vista with Office" /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 /Filename:install.wim
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[使用新增映像命令](using-the-add-image-command.md)
-[使用 [複製影像] 命令](using-the-copy-image-command.md)
-[使用匯出映像命令](using-the-export-image-command.md)
-[移除映像命令](using-the-remove-image-command.md)
-[使用 [取代影像] 命令](using-the-replace-image-command.md)
- [子命令： 設定影像](subcommand-set-image.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+ [使用新增映射命令](using-the-add-image-command.md)
+[使用複製映射命令](using-the-copy-image-command.md)
+，[使用匯出影像命令](using-the-export-image-command.md)
+[使用移除映射命令](using-the-remove-image-command.md)
+[使用取代-影像命令](using-the-replace-image-command.md)
+[子命令：設定-影像](subcommand-set-image.md)
