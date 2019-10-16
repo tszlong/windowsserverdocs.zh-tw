@@ -1,7 +1,7 @@
 ---
 title: 虛擬接收端調整 (vRSS)
 description: 瞭解 Windows Server 中的虛擬接收端調整（vRSS），以及如何設定虛擬網路介面卡，以對 VM 中多個邏輯處理器核心的傳入網路流量進行負載平衡。 您也可以為主機虛擬網路介面卡（vNIC）設定數個實體核心。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 9be477b3-f81d-4e84-a6b0-ac4c1ea97715
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ae017d7d78adea565942a952aaea3da1669f39a9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b24cabe3597af35e7c7f3c6f81d360bb11675e23
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871803"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395794"
 ---
 # <a name="virtual-receive-side-scaling-vrss"></a>虛擬接收端調整\(vRSS\)
 
@@ -30,7 +30,7 @@ ms.locfileid: "70871803"
 
 vRSS 與所有其他的 hyper-v\-網路技術相容。 vRSS 相依于 hyper-v \( \-主機中\)的虛擬機器佇列 VMQ 和 VM 中的 RSS 或主機 vNIC。
 
-根據預設，Windows Server 會啟用 vRSS，但是您可以使用 Windows PowerShell 在 VM 中停用它。 如需詳細資訊，請參閱適用于 RSS 和 vRSS 的 [Manage vRSS](vrss-manage.md) 和 [Windows PowerShell 命令](vrss-wps.md)。
+根據預設，Windows Server 會啟用 vRSS，但是您可以使用 Windows PowerShell 在 VM 中停用它。 如需詳細資訊， 請參閱[管理適用于 RSS](vrss-manage.md) 和 vRSS 的 VRSS 和 [Windows PowerShell 命令](vrss-wps.md)。
 
 
 

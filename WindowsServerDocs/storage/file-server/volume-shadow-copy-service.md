@@ -1,17 +1,17 @@
 ---
 title: 磁碟區陰影複製服務
 ms.date: 01/30/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 3fc184f8f23e4325198e3a1a08f20109c2c577e8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19e07504dad49c5e23cc49630015529e2a746aa7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867323"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394454"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -298,7 +298,7 @@ LUN 重新同步處理與 LUN 交換不同。 LUN 交換是一種快速復原案
 
 共用資料夾陰影複製使用磁碟區陰影複製服務來提供檔案的時間點複本，這些檔案位於共用網路資源上，例如檔案伺服器。 透過共用資料夾陰影複製，使用者可以快速復原已刪除或變更儲存在網路上的檔案。 因為他們可以在沒有系統管理員協助的情況下這麼做，所以共用資料夾陰影複製可以提高生產力並降低管理成本。
 
-如需共用資料夾陰影複製的詳細資訊，請參閱[共用資料夾陰影複製](http://go.microsoft.com/fwlink/?linkid=180898)（ http://go.microsoft.com/fwlink/?LinkId=180898) TechNet 上的。
+如需共用資料夾陰影複製的詳細資訊，[請參閱共用資料夾陰影複製](http://go.microsoft.com/fwlink/?linkid=180898)（ http://go.microsoft.com/fwlink/?LinkId=180898) TechNet 上的。
 
 ### <a name="data-mining-by-using-transportable-shadow-copies"></a>使用可轉移的陰影複製來進行資料採礦
 
@@ -330,7 +330,7 @@ LUN 重新同步處理與 LUN 交換不同。 LUN 交換是一種快速復原案
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
-此常見問題會回答有關系統管理員磁碟區陰影複製服務（VSS）的問題。 如需 VSS 應用程式開發介面的詳細資訊， http://go.microsoft.com/fwlink/?LinkId=180899) 請參閱[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180899)（在 Windows 開發人員中心程式庫中）。
+此常見問題會回答有關系統管理員磁碟區陰影複製服務（VSS）的問題。 如需 VSS 應用程式開發介面的詳細資訊，請參閱[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180899)（ http://go.microsoft.com/fwlink/?LinkId=180899) 在 Windows 開發人員中心程式庫中）。
 
 ### <a name="when-was-volume-shadow-copy-service-introduced-on-which-windows-operating-system-versions-is-it-available"></a>何時磁碟區陰影複製服務引進？ 有哪些可用的 Windows 作業系統版本？
 
@@ -392,7 +392,7 @@ VSS 的設計目的是要建立整個磁片區的陰影複製。 系統會自動
 
 系統管理員可以使用下列 Microsoft TechNet Library 網站上的 VSS 疑難排解資訊，收集有關 VSS 相關問題的診斷資訊。
 
-如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=180905)[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180905)（TechNet 上的。
+如需詳細資訊，請參閱[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180905)（ http://go.microsoft.com/fwlink/?LinkId=180905) TechNet 上的。
 
 ### <a name="what-is-the-diff-area"></a>什麼是「差異區域」？
 

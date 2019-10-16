@@ -1,8 +1,8 @@
 ---
-title: 使用移除映像命令
-description: '適用於 Windows 命令主題 * * *- '
+title: 使用移除映射命令
+description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,56 +13,55 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2aaf7d63d858045f9dd5df399c5f3f92b038bc2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0876649a4de55604707f03ca98cf0ceed2920b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846699"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362853"
 ---
-# <a name="using-the-remove-image-command"></a>使用移除映像命令
+# <a name="using-the-remove-image-command"></a>使用移除映射命令
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-從伺服器刪除映像。
+從伺服器刪除影像。
 ## <a name="syntax"></a>語法
-針對開機映像：
+開機映射：
 ```
 wdsutil [Options] /remove-Imagmedia:<Image name> [/Server:<Server name>mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<Filename>]
 ```
-安裝映像：
+針對安裝映射：
 ```
 wdsutil [Options] /remove-Imagmedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] [/Filename:<Filename>]
 ```
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-媒體：<Image name>|指定映像的名稱。|
-|[/ 伺服器：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整的網域名稱 (FQDN)。 如果未不指定任何伺服器名稱，則會使用本機伺服器。|
-媒體類型: {開機&#124;安裝}|指定映像的類型。|
-|/ 架構: {x86 &#124; ia64 &#124; x64}|指定映像的架構。 因為它可能會有不同的開機映像的相同映像名稱不同的架構中，指定架構值可確保正確的映像將會移除。|
-|\mediaGroup:<Image group name>]|指定包含該映像的映像群組。 如果沒有映像群組名稱指定，且只能有一個映像群組存在於伺服器上，將會使用該映像群組。 有一個以上的映像群組時，您必須使用此選項來指定映像群組。|
-|[/ Filename:<File name>]|如果映像無法依名稱來唯一識別，您必須使用此選項來指定檔案名稱。|
-## <a name="BKMK_examples"></a>範例
-若要移除的開機映像，請輸入：
+媒體： <Image name>|指定映射的名稱。|
+|[/Server： <Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+媒體： {Boot &#124; Install}|指定映射的類型。|
+|/Architecture： {x86 &#124; ia64 &#124; x64}|指定映射的架構。 因為不同架構中的不同開機映射可能會有相同的映射名稱，所以指定架構值可確保移除正確的映射。|
+|\mediaGroup： <Image group name>]|指定包含影像的映射群組。 如果未指定映射組名，且伺服器上只存在一個映射群組，則會使用該映射群組。 如果有一個以上的映射群組存在，您就必須使用此選項來指定映射群組。|
+|[/Filename： <File name>]|如果無法以名稱唯一識別映射，您就必須使用這個選項來指定檔案名。|
+## <a name="BKMK_examples"></a>典型
+若要移除開機映射，請輸入：
 ```
 wdsutil /remove-Imagmedia:"WinPE Boot Imagemediatype:Boot /Architecture:x86
 ```
 ```
 wdsutil /verbose /remove-Imagmedia:"WinPE Boot Image" /Server:MyWDSServemediatype:Boot /Architecture:x64 /Filename:boot.wim
 ```
-若要移除的安裝映像，請輸入：
+若要移除安裝映射，請輸入：
 ```
 wdsutil /remove-Imagmedia:"Windows Vista with Officemediatype:Install
 ```
 ```
 wdsutil /verbose /remove-Imagmedia:"Windows Vista with Office" /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 /Filename:install.wim
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[使用新增映像命令](using-the-add-image-command.md)
-[使用 [複製影像] 命令](using-the-copy-image-command.md)
-[使用匯出映像命令](using-the-export-image-command.md)
-[取得映像命令](using-the-get-image-command.md)
-[使用 [取代影像] 命令](using-the-replace-image-command.md)
- [子命令： 設定影像](subcommand-set-image.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+[使用新增映射命令](using-the-add-image-command.md)
+[使用複製影像命令](using-the-copy-image-command.md)
+[使用匯出影像命令](using-the-export-image-command.md)
+[使用取得圖像命令](using-the-get-image-command.md)
+[使用取代影像命令](using-the-replace-image-command.md)[子命令：設定影像](subcommand-set-image.md)
