@@ -1,8 +1,8 @@
 ---
-title: 子命令設定伺服器
-description: '適用於 Windows 命令主題 * * *- '
+title: 子命令集-伺服器
+description: '* * * * 的 Windows 命令主題 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abc3fe23558f077e0ba9ac69f2641e3b8c9cde4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 24ff739fa249fdcdae5009a46c8bd018d0be3c24
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858379"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383876"
 ---
-# <a name="subcommand-set-server"></a>子命令： 設定伺服器
+# <a name="subcommand-set-server"></a>子命令： set-Server
 
->適用於：Windows Server （半年通道），Windows Server 2016 中，Windows Server 2012 R2 中，Windows Server 2012
+>適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設定 Windows 部署服務伺服器的設定。
 ## <a name="syntax"></a>語法
@@ -120,40 +120,40 @@ wdsutil [Options] /Set-Server [/Server:<Server name>]
 ## <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|[/ 伺服器：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整的網域名稱 (FQDN)。 如果未不指定任何伺服器名稱，則會使用本機伺服器。|
-|[授權 /: {[是] &#124; No}]|指定是否授權此伺服器中動態主機控制通訊協定 (DHCP)。|
-|[/RogueDetection:{Yes &#124; No}]|啟用或停用 DHCP rogue 偵測。|
-|[/ AnswerClients: {所有&#124;已知&#124;None}]|指定此伺服器將會回答哪些用戶端。 如果您將此值設定為**已知**，必須在 active directory 網域服務 (AD DS) 中預先設置的電腦將會回應由 Windows 部署服務伺服器之前。|
-|[/ Responsedelay:<time in seconds>]|伺服器會接聽開機的用戶端之前先等候的時間量。 此設定不適用於預先設置的電腦。|
-|[/AllowN12forNewClients:{Yes &#124; No}]|對於 Windows Server 2008，請指定未知的用戶端將不需要按 F12 鍵以啟動網路開機。 已知的用戶端會收到指定電腦的開機程式，或如果未指定，為指定的開機程式架構。<br /><br />Windows Server 2008 r2，此選項已被取代下列命令： r2:wdsutil /Set-Server /PxepromptPolicy /New:Noprompt|
-|[/ ArchitectureDiscovery: {[是] &#124; No}]|啟用或停用架構探索。 這有助於進行探索的不正確地廣播其架構的 x64 型用戶端。|
-|[/resetBootProgram:{Yes &#124; No}]|判斷開機路徑只是開機而不需要按 F12 按鍵的用戶端，是否將被清除。|
-|[/ DefaultX86X64Imagetype: {x86 &#124; x64&#124;兩者}]|開機映像的控制項將會顯示 x64 型用戶端。|
-|[/UseDhcpPorts:{Yes &#124; No}]|指定是否在 PXE 伺服器應該嘗試繫結 DHCP 連接埠，TCP 連接埠 67。 如果在同一部電腦上執行 DHCP 和 Windows 部署服務，您應該將此選項設定為**否**若要啟用使用連接埠，並設定 DHCP 伺服器 **/DhcpOption60**參數**是**。 此值的預設設定**是**。|
-|[/DhcpOption60:{Yes &#124; No}]|指定的 PXE 支援，是否應該設定 DHCP 選項 60。 如果 DHCP 和 Windows 部署服務相同的伺服器上執行，此選項設定為 **[是]** 並設定 **/UseDhcpPorts**選項設定為**No**。 此值的預設設定**No**。|
-|[/RpcPort:<Port number>]|指定用來服務用戶端要求的 TCP 連接埠號碼。|
-|[/PxepromptPolicy]|設定如何已知 （預先設置） 和新的用戶端會起始 PXE 開機。 此選項僅適用於 Windows Server 2008 R2。 您將使用下列選項的設定：<br /><br />-[/ 已知: {OptIn&#124;輸出&#124;Noprompt}]-針對預先設置的用戶端設定的原則。<br />-[/ [新增: {OptIn&#124;輸出&#124;Noprompt}]-新的用戶端設定的原則。<br /><br />**OptIn**表示用戶端必須按任一鍵以進行 PXE 開機順序，否則它會切換回下一個開機裝置。<br /><br />**Noprompt**表示用戶端一律會 PXE 開機。<br /><br />**OptOut**表示用戶端將 PXE 開機，除非按下 Esc 鍵。|
-|[/ BootProgram:<Relative path>] /Architecture: {x86 &#124; ia64 &#124; x64}|指定 remoteInstall 資料夾的相對路徑的開機程式 (例如**boot\x86\pxeboot.n12**)，並指定開機程式的架構。|
-|[/ N12BootProgram:<Relative path>] /Architecture: {x86 &#124; ia64 &#124; x64}|指定相對路徑，不需要按 F12 鍵的開機程式 (例如**boot\x86\pxeboot.n12**)，並指定開機程式的架構。|
-|[/ BootImage:<Relative path>] /Architecture: {x86 &#124; ia64 &#124; x64}|指定開機映像，開機用戶端應接收，並指定開機映像架構的相對路徑。 您可以將它指定為每個架構。|
-|[/PreferredDC:<DC Name>]|指定應該使用 Windows 部署服務的網域控制站的名稱。 這可以是 NetBIOS 名稱或 FQDN。|
-|[/PreferredGC:<GC Name>]|指定應該使用 Windows 部署服務的通用類別目錄伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。|
-|[/ PrestageUsingMAC: {[是] &#124; No}]|指定 Windows 部署服務，在 AD DS 建立電腦帳戶時是否應使用的 MAC 位址，而不是 GUID/UUID 來識別電腦。|
-|[/NewMachineNamingPolicy:<Policy>]|指定要產生用戶端的電腦名稱時所使用的格式。 如需有關要使用的格式資訊<policy>，以滑鼠右鍵按一下 mmc 嵌入式管理單元中的伺服器，再按**屬性**，並檢視**目錄服務** 索引標籤。例如， **/NewMachineNamingPolicy: %61username%#**。|
-|[/NewMachineOU]|用戶端電腦帳戶將會建立用來在 AD DS 中指定的位置。 您指定的位置，使用下列選項。<br /><br />-[類型：Serverdomain &#124; Userdomain &#124; UserOU&#124;自訂] 指定之位置的類型。 **Serverdomain**會建立在 Windows 部署服務伺服器相同網域中的帳戶。 **Userdomain**會建立在執行安裝的使用者相同的網域中的帳戶。 **UserOU**執行安裝的使用者組織單位中建立帳戶。 **自訂**可讓您指定自訂的位置 (您也必須指定的值 **/OU**使用此選項)。<br />-[/ OU:<Domain name of OU>]-如果您指定**自訂**如 **/type**選項時，這個選項會指定應該在其中建立電腦帳戶的組織單位。|
-|[/DomainSearchOrder:{GCOnly &#124; DCFirst}]|指定搜尋 AD DS （通用類別目錄 」 或 「 網域控制站） 中的電腦帳戶的原則。|
-|[/NewMachineDomainJoin:{Yes &#124; No}]|指定尚未已預先設置在 AD DS 中的電腦應該已加入之網域在安裝期間。 預設值是**是**。|
-|[/WdsClientLogging]|指定伺服器的記錄層級。<br /><br />-[/Enabled: {[是] &#124; No}]-啟用或停用的 Windows 部署服務用戶端動作的記錄。<br />-[/ LoggingLevel: {無&#124;錯誤&#124;警告&#124;資訊}-設定記錄層級。 **無**就相當於停用記錄。 **錯誤**是記錄的最低層級，並指出僅將錯誤將會記錄。 **警告**包含警告和錯誤。 **資訊**是最高層級的記錄，包含錯誤、 警告和資訊事件。|
-|[/WdsUnattend]|這些設定會控制 Windows 部署服務用戶端的自動的安裝行為。 您將使用下列選項的設定：<br /><br />-[/ 原則: {已啟用&#124;已停用}]-指定是否要使用自動的安裝。<br />-[/ CommandlinePrecedence: {[是] &#124; No}]-指定是否可使用 Autounattend.xml 檔案 （如果有在用戶端上） 或已直接傳遞至 /Unattend 選項的 Windows 部署服務用戶端自動的安裝檔案而不是用戶端安裝期間將映像自動安裝檔案。 預設值是**No**。<br />-[/File:<Relative path> /Architecture: {x86 &#124; ia64 &#124; x64}]-指定檔案名稱、 路徑和架構的自動安裝檔案。|
-|[/AutoaddPolicy]|這些設定可控制自動新增原則。 您定義使用下列選項的設定：<br /><br />-[/ 原則: {AdminApproval&#124;已停用}]- **AdminApprove**會導致要加入至擱置佇列，其中系統管理員可以接著檢閱電腦清單以及核准或拒絕每個要求，為所有未知的電腦適當的。 **已停用**表示未知的電腦嘗試開機到伺服器時，就會採取任何額外的動作。<br />-[/ PollInterval: {time 以秒為單位}]-指定的網路開機程式應該輪詢的 Windows 部署服務伺服器的間隔 （以秒為單位）。<br />-[/ MaxRetry: <Number>]-指定的網路開機程式應該輪詢的 Windows 部署服務伺服器的次數。 此值，以及 **/PollInterval**，規定網路開機程式將等候的時間來核准或拒絕逾時之前的電腦系統管理員。例如， **MaxRetry**值為 10， **PollInterval** vlue 60 的表示，用戶端應輪詢伺服器 10 次，等候 60 秒嘗試之間。 因此，用戶端會在 10 分鐘 （10 x 60 秒數 = 10 分鐘） 後，會逾時。<br />-[/ 訊息： <Message>]-指定會顯示網路開機程式] 對話方塊頁面上的用戶端的訊息。<br />-[/RetentionPeriod]-指定的電腦可以是處於擱置狀態，自動在清除之前的天數。<br />-[/ 核准︰ <time in days>]-指定已核准的電腦的保留期限。 您必須使用此參數與 **/RetentionPeriod**選項。<br />-[/ 其他人： <time in days>]-指定未核准的電腦的保留期限 （拒絕或擱置中）。 您必須使用此參數與 **/RetentionPeriod**選項。|
-|[/AutoaddSettings]|指定要套用至每一部電腦的預設設定。 您定義使用下列選項的設定：<br /><br />-/Architecture: {x86 &#124; ia64 &#124; x64}-指定架構。<br />-[/ BootProgram: <Relative path>]-指定在傳送至已核准電腦的開機程式。 如果未不指定任何的開機程式，則會使用 （如 在伺服器上所指定） 的電腦架構的預設值。<br />-[/ WdsClientUnattend: <Relative path>]-設定應該會收到核准的用戶端自動安裝檔案的相對路徑。<br />-[/ ReferralServer: <Server name>]-指定用戶端將用來下載映像的 Windows 部署服務伺服器。<br />-[/ BootImage: <Relative path>]-指定已核准的用戶端將收到的開機映像。<br />-[/ 使用者： < 網域 \ 使用者&#124; User@Domain>]-若要將電腦加入網域的必要權限授與指定的使用者的電腦帳戶物件上設定權限。<br />-[JoinRights: {JoinOnly&#124;完整}]-指定要指派給使用者的權限類型。 **JoinOnly**需要系統管理員使用者可以將電腦加入網域之前，重設電腦帳戶。 **完整**可完整存取權提供給使用者，包括將電腦加入網域的權限。<br />-[/ JoinDomain: {[是] &#124; No}]-指定是否電腦應加入網域成為這個電腦帳戶在 Windows 部署服務安裝期間。 預設值是**是**。|
-|[/BindPolicy]|設定要接聽的 PXE 提供者的網路介面。 您定義的原則使用下列選項：<br /><br />-[/ 原則: {Include&#124;排除}]-設定要包含或排除的介面清單上的位址的介面繫結原則。<br />-[/ 新增]-將介面加入至清單。 您也必須指定 /addresstype 和 /address。<br />-[/remove]-從清單中移除介面。 您也必須指定 /addresstype 和 /address。<br />-/ 位址：<IP or MAC address> -指定要新增或移除介面的 IP 或 MAC 位址。<br />-/addresstype: {IP &#124; MAC}-指出位址中指定的型別 **/位址**選項。|
-|[/ RefreshPeriod: <seconds>]|指定頻率 （以秒為單位），伺服器會重新整理設定。|
-|[/BannedGuidPolicy]|管理遭到禁用的 Guid，使用下列選項的清單：<br /><br />-[/ 新增] /Guid:<GUID> -遭到禁用的 Guid 清單中加入指定的 GUID。 任何用戶端具有此 GUID 將改為識別其 MAC 位址。<br />-[/remove] /Guid:<GUID> -從遭到禁用的 Guid 的清單中移除指定的 GUID。|
-|[/BcdRefreshPolicy]|設定重新整理 Bcd 檔案使用下列選項：<br /><br />-[/Enabled: {[是] &#124; No}]-指定 Bcd 重新整理原則。 當 **/enabled**設為**是**，Bcd 檔案會在指定的時間間隔重新整理。<br />-[/ RefreshPeriod:<time in minutes>]-指定在哪個 Bcd 檔案會重新整理的時間間隔。|
-|[/Transport]|設定下列選項：<br /><br /><ul><li>[/ ObtainIpv4From: {Dhcp&#124;範圍}]-指定 IPv4 位址的來源。<br /><br /><ul><li>[] / [開始： <starting Ipv4 address>]-指定的 IP 位址範圍的開頭。 這是必要選項，有效才 **/ObtainIpv4From**設定為**範圍**</li><li>[結束： <Ending Ipv4 address>]-指定的 IP 位址範圍的結尾。 這是必要選項，有效才 **/ObtainIpv4From**設為**範圍**。</li></ul></li><li>[/ ObtainIpv6From:Range][] / [開始：<start IP address>] [/ 結束：<End IP address>] 指定 IPv6 位址的來源。 此選項僅適用於 Windows Server 2008 R2，唯一支援的值範圍。</li><li>[/ startPort: <starting port>]-指定的連接埠範圍的開頭。</li><li>[/ EndPort: <Ending port>]-指定的連接埠範圍的結尾。</li><li>[/ 設定檔: {10Mbps &#124; 100Mbps &#124; 1Gbps&#124;自訂}]-指定要使用的網路設定檔。 只支援的 forservers 執行 Windows Server 2008 時，此選項。</li><li>[/MulticastSessionPolicy] 設定多點傳送傳輸的傳輸設定。 此命令只適用於 Windows Server 2008 R2。<br /><br /><ul><li>[/ 原則: {無&#124;自動中斷連線&#124;多資料流}]-決定如何處理緩慢的用戶端。 [無] 表示要保留在一個工作階段中的所有用戶端相同的速度。 自動中斷連線表示如下指定 /Threshold 卸除任何用戶端將會中斷連線。 多資料流表示用戶端會分成 /StreamCount 所指定的多個工作階段。</li><li>[/ 閾值：<Speed in KBps>]-針對 /Policy:AutoDisconnect，這個選項會設定最小傳輸速率以 kbps 為單位。 放在此速率下的用戶端將會中斷從多點傳送傳輸。</li><li>[/ StreamCount: {2 &#124; 3}][/ 後援: {[是] &#124; No}]-/Policy:Multistream，針對這個選項會決定工作階段的數目。 2 表示兩個工作階段 （快速和低速） 3 表示三個工作階段 (緩慢、 中、 fast)。</li><li>[/ 後援: {[是]&#124; No}]-決定是否都已中斷連線的用戶端會繼續使用其他方法 （如果支援用戶端） 傳送。 如果您使用的 WDS 用戶端，電腦會將改為單點傳播。 Wdsmcast.exe 不支援的後援機制。 此選項也適用於不支援多資料流的用戶端。 在此情況下，電腦會切換回另一種方法，而不需要移動的速度較慢的傳輸工作階段。</li></ul></li></ul>|
-## <a name="BKMK_examples"></a>範例
-若要設定讓伺服器只回應已知用戶端，以回應延遲 4 分鐘，請輸入：
+|[/Server： <Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Authorize： {Yes &#124; No}]|指定是否要在動態主機控制通訊協定（DHCP）中授權此伺服器。|
+|[/RogueDetection： {Yes &#124; No}]|啟用或停用 DHCP rogue 偵測。|
+|[/AnswerClients： {所有&#124;已知&#124;的 None}]|指定這部伺服器將回答的用戶端。 如果您將此值設定為 [**已知**]，則必須在 Active Directory 網域服務（AD DS）中預先設置電腦，才會由 Windows 部署服務伺服器進行回應。|
+|[/Responsedelay： <time in seconds>]|伺服器在接聽開機用戶端之前會等待的時間量。 此設定不適用於預先設置的電腦。|
+|[/AllowN12forNewClients： {Yes &#124; No}]|若為 Windows Server 2008，指定不明的用戶端不需要按 F12 鍵，就能起始網路開機。 已知的用戶端會收到針對該電腦指定的開機程式，如果未指定，則會針對架構指定開機程式。<br /><br />針對 Windows Server 2008 R2，已使用下列命令取代此選項： wdsutil/Set-Server/PxepromptPolicy/New： Noprompt|
+|[/ArchitectureDiscovery： {Yes &#124; No}]|啟用或停用架構探索。 這有助於探索不會正確廣播其架構的 x64 型用戶端。|
+|[/resetBootProgram： {Yes &#124; No}]|判斷開機路徑是否會針對剛啟動的用戶端清除，而不需要按 F12 鍵。|
+|[/DefaultX86X64Imagetype： {x86 &#124; x64 &#124; Both}]|控制要對 x64 型用戶端顯示哪些開機映射。|
+|[/UseDhcpPorts： {Yes &#124; No}]|指定 PXE 伺服器是否應該嘗試系結至 DHCP 埠（TCP 埠67）。 如果 DHCP 和 Windows 部署服務在同一部電腦上執行，您應該將此選項設定為 [**否**]，讓 DHCP 伺服器使用該埠，並將 **/DhcpOption60**參數設定為 **[是]**。 此值的預設設定為 **[是]**。|
+|[/DhcpOption60： {Yes &#124; No}]|指定是否應該為 PXE 支援設定 DHCP 選項60。 如果 DHCP 和 Windows 部署服務在同一部伺服器上執行，請將此選項設定為 **[是]** ，並將 **/UseDhcpPorts**選項設為 [**否**]。 此值的預設設定為 [**否**]。|
+|[/RpcPort： <Port number>]|指定要用來服務用戶端要求的 TCP 通訊埠編號。|
+|[/PxepromptPolicy]|設定已知（預先設置）和新的用戶端如何起始 PXE 開機。 此選項僅適用于 Windows Server 2008 R2。 您可以使用下列選項來設定設定：<br /><br />-[/Known： {OptIn&#124;輸出&#124;Noprompt}]-設定預先設置用戶端的原則。<br />-[/New： {OptIn&#124;輸出&#124;Noprompt}]-設定新用戶端的原則。<br /><br />**OptIn**表示用戶端必須按下按鍵才能進行 PXE 開機，否則會回復到下一個開機裝置。<br /><br />**Noprompt**表示用戶端一律會進行 PXE 開機。<br /><br />**輸出**表示用戶端將會進行 PXE 開機，除非按下 Esc 鍵。|
+|[/BootProgram： <Relative path>]/Architecture： {x86 &#124; ia64 &#124; x64}|指定 remoteInstall 資料夾中開機程式的相對路徑（例如， **boot\x86\pxeboot.n12**），並指定開機程式的架構。|
+|[/N12BootProgram： <Relative path>]/Architecture： {x86 &#124; ia64 &#124; x64}|指定不需要按 F12 鍵的開機程式的相對路徑（例如， **boot\x86\pxeboot.n12**），並指定開機程式的架構。|
+|[/BootImage： <Relative path>]/Architecture： {x86 &#124; ia64 &#124; x64}|指定開機映射的相對路徑，以啟動用戶端應接收，並指定開機映射的架構。 您可以為每個架構指定此項。|
+|[/PreferredDC： <DC Name>]|指定 Windows 部署服務應該使用的網域控制站名稱。 這可以是 NetBIOS 名稱或 FQDN。|
+|[/PreferredGC： <GC Name>]|指定 Windows 部署服務應該使用之通用類別目錄伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。|
+|[/PrestageUsingMAC： {Yes &#124; No}]|指定 Windows 部署服務，在 AD DS 中建立電腦帳戶時，是否應使用 MAC 位址，而不是 GUID/UUID 來識別電腦。|
+|[/NewMachineNamingPolicy： <Policy>]|指定為用戶端產生電腦名稱稱時所要使用的格式。 如需 <policy> 使用之格式的相關資訊，請在 mmc 嵌入式管理單元中的伺服器上按一下滑鼠右鍵 **，按一下 [** 內容]，然後查看 [**目錄服務**] 索引標籤。例如， **/NewMachineNamingPolicy：% 61Username% #**。|
+|[/NewMachineOU]|用來指定要在 AD DS 中建立用戶端電腦帳戶的位置。 您可以使用下列選項來指定位置。<br /><br />-[/type：Serverdomain &#124; Userdomain &#124; UserOU &#124; Custom] 指定位置的類型。 **Serverdomain**會在 Windows 部署服務伺服器所在的相同網域中建立帳戶。 **Userdomain**會在執行安裝的使用者所在的相同網域中建立帳戶。 **UserOU**會在執行安裝之使用者的組織單位中建立帳戶。 [**自訂**] 可讓您指定自訂位置（您也必須使用此選項指定 **/ou**的值）。<br />-[/OU： <Domain name of OU>]-如果您針對 **/type**選項指定**Custom** ，此選項會指定應該在其中建立電腦帳戶的組織單位。|
+|[/DomainSearchOrder： {GCOnly &#124; DCFirst}]|指定在 AD DS （通用類別目錄或網域控制站）中搜尋電腦帳戶的原則。|
+|[/NewMachineDomainJoin： {Yes &#124; No}]|指定在安裝期間，是否應將尚未預先設置在 AD DS 中的電腦加入網域。 預設設定為 **[是]**。|
+|/WdsClientLogging|指定伺服器的記錄層級。<br /><br />-[/Enabled： {Yes &#124; No}]-啟用或停用 Windows 部署服務用戶端動作的記錄。<br />-[/LoggingLevel： {None &#124; Errors &#124;警告&#124; Info}-設定記錄層級。 **None**相當於停用記錄。 **錯誤**是最低的記錄層級，表示只會記錄錯誤。 **警告**同時包含警告和錯誤。 **Info**是最高層級的記錄，並包含錯誤、警告和資訊事件。|
+|/WdsUnattend|這些設定會控制 Windows 部署服務用戶端的自動安裝行為。 您可以使用下列選項來設定設定：<br /><br />-[/Policy： {Enabled &#124; Disabled}]-指定是否要使用自動安裝。<br />-[/CommandlinePrecedence： {Yes &#124; No}]-指定是否要使用 autounattend.xml .xml 檔案（如果在用戶端上）或直接以/unattend 選項傳遞至 Windows 部署服務用戶端的自動安裝檔案，而不是在用戶端安裝期間的映射自動安裝檔案。 預設設定為 [**否**]。<br />-[/File： <Relative path>/Architecture： {x86 &#124; ia64 &#124; X64}]-指定自動安裝檔案的檔案名、路徑和架構。|
+|[/AutoaddPolicy]|這些設定會控制自動新增原則。 您可以使用下列選項來定義設定：<br /><br />-[/Policy： {AdminApproval &#124; Disabled}]- **AdminApprove**會將所有未知的電腦新增至擱置佇列，讓系統管理員可以在其中檢查電腦清單，並視需要核准或拒絕每個要求。 [**已停用**] 表示當未知電腦嘗試開機至伺服器時，不會採取任何其他動作。<br />-[/PollInterval： {time （秒）}]-指定網路開機程式應輪詢 Windows 部署服務伺服器的間隔時間（以秒為單位）。<br />-[/MaxRetry： <Number>]-指定網路開機程式應輪詢 Windows 部署服務伺服器的次數。 此值和 **/PollInterval**會指示網路開機程式在超時之前，會等待系統管理員核准或拒絕電腦的時間長度。例如， **MaxRetry**值為10，而**PollInterval** vlue 為60時，表示用戶端應輪詢伺服器10次，等待嘗試之間的60秒。 因此，用戶端會在10分鐘後完成時間（10 x 60 秒 = 10 分鐘）。<br />-[/Message： <Message>]-指定在 [網路開機程式] 對話方塊頁面上顯示給用戶端的訊息。<br />-[/RetentionPeriod]-指定電腦在自動清除之前可以處於擱置狀態的天數。<br />-[/Approved： <time in days>]-指定已核准電腦的保留期限。 您必須使用此參數搭配 **/RetentionPeriod**選項。<br />-[/Others： <time in days>]-指定未核准電腦的保留期限（已拒絕或擱置）。 您必須使用此參數搭配 **/RetentionPeriod**選項。|
+|[/AutoaddSettings]|指定要套用至每部電腦的預設設定。 您可以使用下列選項來定義設定：<br /><br />-/Architecture： {x86 &#124; ia64 &#124; x64}-指定架構。<br />-[/BootProgram： <Relative path>]-指定要傳送至已核准電腦的開機程式。 如果未指定開機程式，則會使用電腦架構的預設值（如伺服器上所指定）。<br />-[/WdsClientUnattend： <Relative path>]-設定核准的用戶端應接收的自動安裝檔案的相對路徑。<br />-[/ReferralServer： <Server name>]-指定用戶端將用來下載映射的 Windows 部署服務伺服器。<br />-[/BootImage： <Relative path>]-指定核准的用戶端將接收的開機映射。<br />-[/User： < Domain\User &#124; User@Domain >]-設定電腦帳戶物件的許可權，以授與指定的使用者將電腦加入網域所需的許可權。<br />-[JoinRights： {JoinOnly &#124; Full}]-指定要指派給使用者的許可權類型。 **JoinOnly**需要系統管理員先重設電腦帳戶，使用者才能將電腦加入網域。 **Full**會提供使用者的完整存取權，包括將電腦加入網域的許可權。<br />-[/JoinDomain： {Yes &#124; No}]-指定是否應該在 Windows 部署服務安裝期間，將電腦加入網域做為此電腦帳戶。 預設設定為 **[是]**。|
+|/BindPolicy|設定 PXE 提供者接聽的網路介面。 您可以使用下列選項來定義原則：<br /><br />-[/Policy： {Include &#124; Exclude}]-設定介面系結原則，以包含或排除介面清單上的位址。<br />-[/add]-將介面新增至清單。 您也必須指定/addresstype 和/address。<br />-[/remove]-從清單中移除介面。 您也必須指定/addresstype 和/address。<br />-/address： <IP or MAC address>-指定要新增或移除之介面的 IP 或 MAC 位址。<br />-/addresstype： {IP &#124; MAC}-表示 **/address**選項中指定的網址類別型。|
+|[/RefreshPeriod： <seconds>]|指定伺服器將重新整理其設定的頻率（以秒為單位）。|
+|[/BannedGuidPolicy]|使用下列選項管理禁止的 Guid 清單：<br /><br />-[/add]/Guid： <GUID>-將指定的 GUID 新增至禁用的 Guid 清單。 具有此 GUID 的任何用戶端將會以其 MAC 位址來識別。<br />-[/remove]/Guid： <GUID>-從禁止的 Guid 清單中移除指定的 GUID。|
+|[/BcdRefreshPolicy]|使用下列選項設定重新整理 Bcd 檔案的設定：<br /><br />-[/Enabled： {Yes &#124; No}]-指定 Bcd 重新整理原則。 當 **/Enabled**設定為 **[是]** 時，會在指定的時間間隔重新整理 Bcd 檔案。<br />-[/RefreshPeriod： <time in minutes>]-指定重新整理 Bcd 檔案的時間間隔。|
+|/傳輸|設定下列選項：<br /><br /><ul><li>[/ObtainIpv4From： {Dhcp &#124; Range}]-指定 IPv4 位址的來源。<br /><br /><ul><li>[/start： <starting Ipv4 address>]-指定 IP 位址範圍的開頭。 此選項是必要的，只有在 **/ObtainIpv4From**設定為**範圍**時才有效</li><li>[/End： <Ending Ipv4 address>]-指定 IP 位址範圍的結尾。 此選項是必要的，只有在 **/ObtainIpv4From**設定為**Range**時才有效。</li></ul></li><li>[/ObtainIpv6From： Range][/start： <start IP address>][/End： <End IP address>] 指定 IPv6 位址的來源。 此選項僅適用于 Windows Server 2008 R2，而且唯一支援的值為 [範圍]。</li><li>[/startPort： <starting port>]-指定埠範圍的開頭。</li><li>[/EndPort： <Ending port>]-指定埠範圍的結尾。</li><li>[/Profile： {10Mbps &#124; 100mbps &#124; 1Gbps &#124; Custom}]-指定要使用的網路設定檔。 只有執行 Windows Server 2008 的 forservers 支援此選項。</li><li>[/MulticastSessionPolicy] 設定多播傳輸的傳輸設定。 此命令僅適用于 Windows Server 2008 R2。<br /><br /><ul><li>[/Policy： {None &#124; AutoDisconnect &#124; Multistream}]-決定如何處理緩慢的用戶端。 None 表示將所有用戶端保持在同一個會話的速度。 AutoDisconnect 表示放置於指定/Threshold 下方的任何用戶端將會中斷連線。 Multistream 表示用戶端將會分成多個會話，如/StreamCount. 所指定</li><li>[/Threshold： <Speed in KBps>]-對於/Policy： AutoDisconnect，這個選項會設定以 KBps 為單位的最小傳輸速率。 低於此速率的用戶端將會與多播傳輸中斷連線。</li><li>[/StreamCount： {2 &#124; 3}][/Fallback： {Yes &#124; No}]-對於/Policy： Multistream，這個選項會決定會話的數目。 2表示兩個會話（快速且緩慢）3表示三個會話（緩慢、中、快速）。</li><li>[/Fallback： {Yes&#124; No}]-判斷中斷連線的用戶端是否會使用另一種方法繼續傳輸（如果用戶端支援的話）。 如果您使用 WDS 用戶端，電腦會回到單播。 Wdsmcast.exe 不支援 fallback 機制。 此選項也適用于不支援 Multistream 的用戶端。 在這種情況下，電腦會切換回另一種方法，而不是移至較慢的傳輸會話。</li></ul></li></ul>|
+## <a name="BKMK_examples"></a>典型
+若要將伺服器設定為只回答已知的用戶端，回應延遲為4分鐘，請輸入：
 ```
 wdsutil /Set-Server /AnswerClients:Known /Responsedelay:4
 ```
@@ -161,24 +161,24 @@ wdsutil /Set-Server /AnswerClients:Known /Responsedelay:4
 ```
 wdsutil /Set-Server /BootProgram:boot\x86\pxeboot.n12 /Architecture:x86
 ```
-若要啟用登入伺服器，請輸入：
+若要在伺服器上啟用記錄，請輸入：
 ```
 wdsutil /Set-Server /WdsClientLogging /Enabled:Yes /LoggingLevel:Warnings
 ```
-若要啟用自動安裝在伺服器上，以及架構和用戶端自動安裝檔案類型：
+若要在伺服器上啟用自動安裝，以及架構和用戶端自動安裝檔案，請輸入：
 ```
 wdsutil /Set-Server /WdsUnattend /Policy:Enabled /File:WDSClientUnattend \unattend.xml /Architecture:x86
 ```
-若要設定開機前執行環境 (PXE) 伺服器，以嘗試繫結至 TCP 連接埠 67 和 60，請輸入：
+若要將開機前執行環境（PXE）伺服器設定為嘗試系結至 TCP 埠67和60，請輸入：
 ```
 wdsutil /Set-server /UseDhcpPorts:No /DhcpOption60:Yes
 ```
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法重點](command-line-syntax-key.md)
-[使用停用伺服器命令](using-the-disable-server-command.md)
-[使用 啟用伺服器命令](using-the-enable-server-command.md)
-[使用取得伺服器的命令](using-the-get-server-command.md)
+#### <a name="additional-references"></a>其他參考
+[命令列語法索引鍵](command-line-syntax-key.md)
+[使用 disable-server 命令](using-the-disable-server-command.md)
+[使用啟用伺服器命令](using-the-enable-server-command.md)
+[使用取得伺服器命令](using-the-get-server-command.md)
 [使用初始化伺服器命令](using-the-initialize-server-command.md)
-[子命令： 啟動 Server](subcommand-start-server.md) 
- [子命令： 停止伺服器](subcommand-stop-server.md)
-[取消初始化伺服器選項](the-uninitialize-server-option.md)
+[子命令： start-Server](subcommand-start-server.md)
+[子命令： Stop-server](subcommand-stop-server.md)
+[[解除初始化-伺服器] 選項](the-uninitialize-server-option.md)
