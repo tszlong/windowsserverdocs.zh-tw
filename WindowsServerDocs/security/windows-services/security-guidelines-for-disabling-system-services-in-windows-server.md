@@ -1432,7 +1432,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **安裝**    |   必須安裝
 |   **StartType**   |   自動
 |   **建議**  |   如果不是列印伺服器或 DC，則確定停用
-|   **註解**    |   在網域控制站上，安裝 DC 角色會將執行緒新增至負責執行列印剪除的多工緩衝處理器服務：從 Active Directory 中移除過時的列印佇列物件。  如果多工緩衝處理器服務未在每個網站中至少一個 DC 上執行，則 AD 就無法移除不再存在的舊佇列。 https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/
+|   **註解**    |   在網域控制站上，安裝 DC 角色會將執行緒新增至負責執行列印剪除的多工緩衝處理器服務：從 Active Directory 中移除過時的列印佇列物件。  如果多工緩衝處理器服務未在每個網站中至少一個 DC 上執行，則 AD 就無法移除不再存在的舊佇列。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
 |||         
 
 <br />          
