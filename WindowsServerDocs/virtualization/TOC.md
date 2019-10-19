@@ -51,6 +51,7 @@
 #### [啟用 Intel 效能監視硬體](hyper-v/manage/Performance-Monitoring-Hardware.md)
 #### [使用即時移轉移動 VM](hyper-v/manage/Live-migration-overview.md)
 ##### [即時移轉概觀](hyper-v/manage/Live-migration-overview.md)
+
 ##### [設定可進行即時移轉的主機](hyper-v/deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md) 
 ##### [在不使用容錯移轉叢集的情況下使用即時移轉](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
 
