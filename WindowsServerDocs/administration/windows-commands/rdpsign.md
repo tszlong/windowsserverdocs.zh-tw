@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: aa1f8f8f31abd85a1ad106a3c4764fc4ccf74258
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 406563a07d3760c2846c201410f3a7b8f1c2829b
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384774"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588060"
 ---
 # <a name="rdpsign"></a>rdpsign
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可讓您以數位方式簽署遠端桌面通訊協定（.rdp）檔案。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -35,18 +35,19 @@ ms.locfileid: "71384774"
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
-|參數|描述|
+|參數|說明|
 |-------|--------|
-|/sha1 \<hash >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法1（SHA1）雜湊。|
+|/sha1 \<hash >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法1（SHA1）雜湊。 在 Windows Server 2012 R2 和更舊版本中使用。|
+|/sha256 \<hash >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法256（SHA256）雜湊。 取代 Windows Server 2016 和更新版本中的/sha1。|
 |/q|無訊息模式。 當命令成功時沒有輸出，而如果命令失敗，則會產生最少的輸出。|
 |/v|詳細資訊模式。 顯示所有警告、訊息和狀態。|
 |/l|測試簽署和輸出結果，而不實際取代任何輸入檔。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   SHA1 憑證指紋應該代表受信任的 .rdp 檔案發行者。 若要取得憑證指紋，請開啟 [憑證] 嵌入式管理單元，按兩下您要使用的憑證（不論是在本機電腦的憑證存放區或個人憑證存儲中），按一下 [**詳細資料**] 索引標籤，然後在**欄位**清單中，按一下 [**指紋**]。
+-   SHA1 或 SHA256 憑證指紋應該代表受信任的 .rdp 檔案發行者。 若要取得憑證指紋，請開啟 [憑證] 嵌入式管理單元，按兩下您要使用的憑證（不論是在本機電腦的憑證存放區或個人憑證存儲中），按一下 [**詳細資料**] 索引標籤，然後在**欄位**清單中，按一下 [**指紋**]。
 
     > [!NOTE]
     > 當您複製指紋以與 rdpsign.exe 搭配使用時，您必須移除任何空格。
@@ -70,6 +71,5 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   ```
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
-  ## <a name="see-also"></a>另請參閱
-  [命令列語法索引鍵](command-line-syntax-key.md)
-  [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+  ## <a name="see-also"></a>請參閱
+  @No__t_1[ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)

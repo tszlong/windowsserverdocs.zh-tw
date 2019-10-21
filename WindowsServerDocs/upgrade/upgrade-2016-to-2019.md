@@ -7,12 +7,12 @@ ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 99133f2c582b180f240740fc2f39e99527bc0cf8
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 62fe4f00cef121e6241a403ee339047cda9488b5
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124818"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591083"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>將 Windows Server 2016 升級至 Windows Server 2019
 
@@ -24,13 +24,13 @@ ms.locfileid: "71124818"
 
 ### <a name="to-collect-your-info"></a>若要收集您的資訊
 
-1. 開啟命令提示字元，移至`c:\Windows\system32`，然後輸入**systeminfo**。
+1. 開啟命令提示字元，移至 [`c:\Windows\system32`]，然後輸入**systeminfo**。
 
 2. 複製、貼上並將產生的系統資訊儲存在裝置的某個地方。
 
 3. 在命令提示字元中輸入**ipconfig/all** ，然後將產生的設定資訊複製並貼到與上述相同的位置。
 
-4. 開啟 [登錄編輯程式]，移至 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion hive，然後將 Windows Server **BuildLabEx** （版本）和**EditionID** （版本）複製並貼到與上述相同的位置。
+4. 開啟 [登錄編輯程式]，移至 [`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion`] 機碼，然後將 Windows Server **BuildLabEx** （版本）和**EditionID** （edition）複製並貼到與上述相同的位置。
 
 收集所有 Windows Server 相關資訊之後，強烈建議您備份您的作業系統、應用程式和虛擬機器。 您也必須**關閉**、**快速遷移**或**即時移轉**目前正在伺服器上執行的任何虛擬機器。 就地升級期間，您不能有任何虛擬機器正在執行。
 
@@ -80,11 +80,11 @@ ms.locfileid: "71124818"
 
 ### <a name="to-make-sure-your-upgrade-was-successful"></a>確保升級成功
 
-1. 開啟 [登錄編輯程式]，移至 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion] hive，然後查看 [ **ProductName**]。 您應該會看到您的 Windows Server 2019 版本，例如**Windows server 2019 Datacenter**。
+1. 開啟 [登錄編輯程式]，移至 [`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion`] 機碼，並查看 [ **ProductName**]。 您應該會看到您的 Windows Server 2019 版本，例如**Windows server 2019 Datacenter**。
 
 2. 請確定您所有的應用程式都在執行中，且您的用戶端連線成功。
 
-如果您認為升級期間可能發生錯誤，請複製並壓縮`%SystemRoot%\Panther` （通常`C:\Windows\Panther`）目錄，並聯絡 Microsoft 支援服務。
+如果您認為升級期間可能發生錯誤，請複製並壓縮 `%SystemRoot%\Panther` （通常是 `C:\Windows\Panther`）目錄，並聯絡 Microsoft 支援服務。
 
 ## <a name="related-articles"></a>相關文章
 

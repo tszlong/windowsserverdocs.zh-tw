@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d930cbf7acbfceab16f2fa619aaaac6e789c131
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7a5f9b819f16d058feb1dee74a8408ed174e04c
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373636"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588046"
 ---
 # <a name="mklink"></a>mklink
 建立符號連結。
@@ -31,9 +31,9 @@ ms.locfileid: "71373636"
 mklink [[/d] | [/h] | [/j]] <Link> <Target>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |/d|建立目錄符號連結。 根據預設， **mklink**會建立檔案符號連結。|
 |/h|建立硬式連結，而不是符號連結。|
@@ -44,7 +44,7 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 
 ## <a name="BKMK_examples"></a>典型
 
-以下範例示範如何建立和移除名為 MyFolder 的符號連結，以及從根目錄到 \Users\User1\Documents 目錄的 Myfile.txt，以及位於目錄內的範例檔案：
+下列範例示範如何建立和移除名為 MyFolder 和 Myfile.txt 的符號連結，從根目錄到 \Users\User1\Documents 目錄，以及位於目錄中的範例檔案：
 ```
 mklink /d \MyFolder \Users\User1\Documents
 mklink /h \MyFile.file \User1\Documents\example.file

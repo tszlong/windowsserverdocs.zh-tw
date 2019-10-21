@@ -1,189 +1,163 @@
 ---
-title: Windows Server 的最佳支援解決方案
-description: 取得 Windows Server 問題解決方案的連結
+title: Windows Server 疑難排解
+description: 取得 Windows Server 問題疑難排解文章的連結
 layout: LandingPage
 ms.prod: windows-server
 ms.service: na
-manager: alant
+manager: ''
 ms.technology: server-general
-ms.date: 03/16/2018
+ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
-ms.author: elizapo
-ms.openlocfilehash: 796f2351813218955a72ee9746dddb63453ac112
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: kaushika
+ms.openlocfilehash: 0d593ab28234d5abfa0b5d2931eb7d2c958efe2a
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365654"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588071"
 ---
-# <a name="top-support-solutions-for-windows-server"></a>Windows Server 的最佳支援解決方案
+# <a name="troubleshooting-windows-server-components"></a>Windows Server 元件疑難排解
 
->[!TIP]
-> 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
+>- [!TIP]
+> 尋找舊版 Windows Server 的相關資訊嗎？ 請參閱 docs.microsoft.com 上的其他[Windows 伺服器程式庫](/previous-versions/windows/)。 您也可以在[此網站上搜尋](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)特定資訊。
 
-Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確保您的伺服器可以收到日後的更新 (包括安全性更新)，請務必持續更新這些伺服器。 如需已發行更新的完整清單，請查看 [Windows 10 及 Windows Server 2016 更新記錄](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)。
+Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您的伺服器可以收到日後的更新 (包括安全性更新)，請務必持續更新這些伺服器。 如需已發行更新的完整清單，請參閱[windows 10 和 Windows Server 2016 更新歷程記錄](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)。
 
-這些是使用 Windows Server 2016 時所發生最常見問題的最佳 Microsoft 支援服務解決方案。 下列連結包括 KB 文件、更新及文件庫文章的連結。
+本節包含先進的疑難排解主題和連結，可協助您解決 Windows Server 的問題。 其他主題將會在可用時新增。
 
-<HR />
+### <a name="troubleshoot-activation"></a>啟用疑難排解
+- [針對 Windows 大量啟用進行疑難排解](https://docs.microsoft.com/windows-server/get-started/activation-troubleshooting-guide)
+- [針對 KMS 進行疑難排解的指導方針](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-kms-general)
+- [用於取得大量啟用資訊的 Slmgr.vbs 選項](https://docs.microsoft.com/windows-server/get-started/activation-slmgr-vbs-options)
+- [解析 Windows 啟用錯誤碼](https://docs.microsoft.com/windows-server/get-started/activation-error-codes)
+- [KMS 啟用的已知問題](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-kms-issues)
+- [MAK 啟用的已知問題](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-mak-issues)
+- [針對 DNS 相關啟用問題進行疑難排解的指導方針](https://docs.microsoft.com/windows-server/get-started/common-troubleshooting-procedures-kms-dns)
+- [重建 Tokens.dat 檔案](https://docs.microsoft.com/windows-server/get-started/activation-rebuild-tokens-dat-file)
+- [針對 ADBA 用戶端進行疑難排解](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
 
-<ul class="cardsF panelContent">
-<li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>安裝和升級 Windows Server</h3>
-<hr> 
-                        <a href="\windows\deployment\upgrade\resolve-windows-10-upgrade-errors">解決 Windows 10 升級錯誤：IT 專業人員的技術資訊</a>
-<hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4035631">適用于 Windows 10 版本1607和 Windows Server 2016 的服務堆疊更新：2017年8月8日）</a></p>
-<hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4033524">升級至 Windows 10 版本1607和 Windows Server 2016 的相容性更新：2017年8月3日）</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/en-US/help/4014997">以 Windows 為基礎的 Azure Vm 不支援就地升級系統</a></p>
-<hr>
-                        <p><a href="..\get-started\supported-upgrade-paths.md">Windows Server 2016 的升級和轉換選項）</a></p>
-<hr>
-                       <p><a href="..\get-started\server-role-upgradeability-table.md">Windows Server 2016 的伺服器角色升級和遷移矩陣）</a></p>
-<hr>
-                       <p><a href="..\get-started\installation-and-upgrade.md">Windows Server 安裝和升級）</a></p>
-<hr>
-                       <p><a href="..\get-started\windows-server-2016-ga-release-notes.md">版本資訊：Windows Server 2016 中的重要問題）</a></p>
-<hr>
-                       <p><a href="..\get-started\recommendations-moving-to-server2016.md">移至 Windows Server 2016 的建議）</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>大量啟用</h3>
-<hr> 
-                        <a href="../get-started/server-2016-activation.md">Windows Server 2016 啟用</a>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/jj134256(ws.11).aspx">審查並選取啟用方法</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/dn502528.aspx">大量啟用的啟用錯誤碼</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ee939272.aspx">如何針對金鑰管理服務（KMS）進行疑難排解</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ff793439.aspx">大量啟用疑難排解</a></p>
-<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">啟用錯誤代碼</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows 安裝可能會失敗， &quot;並出現錯誤：輸入的產品金鑰不符合任何可供安裝的 Windows 映像。輸入不同的產品金鑰&quot;</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>DCPromo 和安裝網域控制站</h3>
-<hr> 
-                        <a href="https://technet.microsoft.com/library/dd772723(v=ws.10).aspx">Active Directory 和 Active Directory Domain Services 埠需求</a>
-<hr>
-                        <p> <a href="http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/">Active Directory 防火牆埠–讓我們試著簡化</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx">Windows Server 2016 的 Exchange Server 支援</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/kb/255504">使用 Ntdsutil.exe 傳輸或抓取 FSMO 角色到網域控制站</a></p>
-<hr>
-                        <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">疑難排解網域控制站部署</a></p>
-<hr>
-                        <p><a href="https://msdn.microsoft.com/library/bb727058.aspx">疑難排解 Active Directory 安裝精靈問題</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/cc754463(v=ws.10).aspx">安裝和移除 AD DS 的已知問題</a></p>
-                      </div>
-                 </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Active Directory Federation Services (AD FS)</h3>
-<hr> 
-                        <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">如何設定以 Azure Active Directory 自動向已加入網域的 Windows 裝置註冊</a>
-<hr>
-                        <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">設定宣告的發行</a></p>
-<hr><br/>                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">設定 AD FS 驗證 LDAP 目錄中儲存的使用者</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">AD FS 支援憑證驗證的替代主機名稱繫結</a></p>
-<hr>
-                        <p><a href="https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/"></a> 
-                        <a href="../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md">使用 WID 資料庫來防止密碼攻擊升級至 Windows Server 2016 中的 AD FS</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md">Windows 10 登入-使用 AD FS 啟用裝置驗證</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md">在 Windows Server 2016 的 AD FS 和 WAP 中管理 SSL 憑證</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/access-control-policies-in-ad-fs.md">Windows Server 2016 中的存取控制原則 AD FS</a></p>
-                      </div>
-                 </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Active Directory 複寫</h3>
-<hr> 
-                         <a href="../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md">疑難排解 Active Directory 複寫問題</a>
-<hr>
-                         <a href="https://www.microsoft.com/en-in/download/details.aspx?id=30005">e2e如何針對常見的 Active Directory 複寫錯誤進行疑難排解</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/3108513">從 Microsoft 下載中心下載 Active Directory 複寫狀態工具</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2028495">疑難排解 AD 複寫錯誤8606：提供的屬性不足，無法建立物件</a></p>
-<hr>
-                         <a href="https://support.microsoft.com/kb/837932">Windows 2000 伺服器和 Windows Server 2003 中 Active Directory 的輸入複寫期間，發生事件識別碼2108和事件識別碼1084</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2645996">疑難排解 AD 複寫錯誤8451：複寫作業發生資料庫錯誤</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2025726">疑難排解 AD 複寫錯誤1127：存取硬碟時，即使在重試之後磁片作業失敗</a>
-<hr>
-                         <a href="https://technet.microsoft.com/library/cc816907.aspx">清理伺服器中繼資料</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+### <a name="troubleshoot-ad-forest-recovery"></a>針對 AD 樹系復原進行疑難排解
+- [AD 樹系復原 - 常見問題](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/ad-forest-recovery-faq)
+
+### <a name="troubleshoot-ad-replication"></a>針對 AD 複寫進行疑難排解
+- [進行 Active Directory 複寫問題疑難排解](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems)
+- [虛擬網域控制站的疑難排解](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/virtual-dc/virtualized-domain-controller-troubleshooting)
+- [疑難排解網域控制站部署](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/troubleshooting-domain-controller-deployment)
+- [設定電腦進行疑難排解](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/troubleshoot/configuring-a-computer-for-troubleshooting)
+
+### <a name="troubleshoot-ad-fs"></a>疑難排解 AD FS
+- [疑難排解 AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
+- [AD FS 疑難排解-審核事件和記錄](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging)
+- [AD FS 疑難排解-SQL 連線能力](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-sql)
+- [AD FS 疑難排解-宣告發行](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-issuance)
+- [AD FS 疑難排解-迴圈偵測](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-loop)
+- [AD FS 疑難排解-憑證](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-certs)
+- [AD FS 疑難排解-Fiddler](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-fiddler)
+- [AD FS 疑難排解-Fiddler-WS-FEDERATION](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-fiddler-ws-fed)
+- [AD FS 疑難排解-宣告規則](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
+- [AD FS 疑難排解-整合式 Windows 驗證](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
+- [AD FS 疑難排解-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
+- [AD FS 常見問題](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [AD FS 說明診斷分析器](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
+
+### <a name="troubleshoot-aovpn"></a>針對 AoVPN 進行疑難排解
+- [Always On VPN 疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting)
+
+### <a name="troubleshoot-converged-nic"></a>針對聚合式 NIC 進行疑難排解
+- [針對聚合式 NIC 設定進行疑難排解](https://docs.microsoft.com/windows-server/networking/technologies/conv-nic/cnic-app-troubleshoot)
+
+### <a name="troubleshoot-dfsr"></a>針對 DFSR 進行疑難排解
+- [DFS 複寫：常見問題（FAQ）](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
+
+### <a name="troubleshoot-directaccess"></a>針對 DirectAccess 進行疑難排解
+- [對 DirectAccess 進行疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/directaccess/troubleshooting-directaccess)
+
+### <a name="troubleshoot-disk--management"></a>針對磁片管理進行疑難排解
+- [針對磁碟管理問題進行疑難排解](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
+
+### <a name="troubleshoot-dns"></a>DNS 疑難排解
+- [疑難排解網域名稱系統（DNS）問題](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-data-collection)
+- [對 DNS 用戶端進行疑難排解](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client)
+- [停用 DNS 用戶端上的 DNS 用戶端快取](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/disable-dns-client-side-caching)
+- [疑難排解 DNS 伺服器](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-server)
+
+### <a name="troubleshoot-failover-cluster"></a>疑難排解容錯移轉叢集
+- [使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
+- [叢集感知更新-常見問題](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+
+### <a name="troubleshoot-fsrm"></a>針對 FSRM 進行疑難排解
+- [檔案伺服器資源管理員疑難排解](https://docs.microsoft.com/windows-server/storage/fsrm/troubleshooting-file-server-resource-manager)
+
+### <a name="troubleshoot-guarded-fabric"></a>針對受防護網狀架構進行疑難排解
+- [使用受防護的網狀架構診斷工具進行疑難排解](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-diagnostics)
+- [針對主機守護者服務進行疑難排解](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-hgs)
+- [針對主機守護者服務進行疑難排解](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-hosts)
+
+### <a name="troubleshoot-multi-site-ras"></a>針對多網站 RAS 進行疑難排解
+- [啟用多站台的疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-enabling-multisite)
+- [新增進入點的疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-adding-entry-points)
+- [設定進入點網域控制站的疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-setting-the-entry-point-domain-controller)
+- [Web 探查 URL 的疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-web-probe-urls)
+
+### <a name="troubleshoot-nano-server"></a>針對 Nano 伺服器進行疑難排解
+- [針對 Nano 伺服器進行疑難排解](https://docs.microsoft.com/windows-server/get-started/troubleshooting-nano-server)
+
+### <a name="troubleshoot-nic-teaming"></a>針對 NIC 小組進行疑難排解
+- [對 NIC 小組進行疑難排解](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/troubleshooting-nic-teaming)
+
+### <a name="troubleshoot-otp-authentication"></a>針對 OTP 驗證進行疑難排解
+- [驗證問題的疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/ras/otp/troubleshoot/troubleshooting-authentication-issues)
+- [啟用 OTP 的疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/ras/otp/troubleshoot/troubleshooting-enabling-otp)
+
+### <a name="troubleshoot-qos"></a>疑難排解 QoS
+- [QoS 常見問題](https://docs.microsoft.com/windows-server/networking/technologies/qos/qos-policy-faq)
+
+### <a name="troubleshoot-s2d"></a>針對 S2D 進行疑難排解
+- [儲存空間直接存取疑難排解](https://docs.microsoft.com/windows-server/storage/storage-spaces/troubleshooting-storage-spaces)
+- [儲存空間直接存取的常見問題](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)
+- [儲存空間直接存取健全狀況和操作狀態](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-states)
+- [使用儲存空間直接存取收集診斷資料](https://docs.microsoft.com/windows-server/storage/storage-spaces/data-collection)
+- [Windows 中的存放裝置類別記憶體（NVDIMM-N）健全狀況管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
+
+### <a name="troubleshoot-sdn"></a>疑難排解 SDN
+- [疑難排解 SDN](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-software-defined-networking)
+- [針對 Windows Server 軟體定義網路堆疊進行疑難排解](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+
+### <a name="troubleshoot-rds-session-connectivity"></a>針對 RDS 會話連接進行疑難排解
+- [針對一般遠端桌面連線進行疑難排解](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-general-troubleshooting)
+- [用戶端無法連線並取得類別未註冊的錯誤](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-class-not-registered)
+- [用戶端無法連線，而且看不到可用的授權錯誤](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-no-licenses-available)
+- [使用者無法驗證，或必須驗證兩次](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/cannot-authenticate-or-must-authenticate-twice)
+- [連線時，使用者接收遠端桌面服務目前忙碌中的訊息](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/remote-desktop-service-currently-busy)
+- [遠端桌面用戶端連線中斷，且無法重新連線至同一工作階段](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session)
+- [遠端膝上型電腦從無線網路中斷連線](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/remote-laptop-disconnects-wireless-network)
+- [遠端桌面連線期間效能不佳或應用程式發生問題](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/poor-performance-or-application-problems)
+
+### <a name="troubleshoot-shielded-vm"></a>針對受防護的 VM 進行疑難排解
+- [針對受防護的 Vm 進行疑難排解](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms)
+
+### <a name="troubleshoot-software-restriction-policies"></a>為軟體限制原則進行疑難排解
+- [為軟體限制原則進行疑難排解](https://docs.microsoft.com/windows-server/identity/software-restriction-policies/troubleshoot-software-restriction-policies)
+
+### <a name="troubleshoot-storage-migration"></a>針對儲存體遷移進行疑難排解
+- [儲存體遷移服務的已知問題](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues)
+- [儲存體遷移服務常見問題（FAQ）](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq)
+
+### <a name="troubleshoot-storage-replica"></a>針對儲存體複本進行疑難排解
+- [儲存體複本的已知問題](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
+- [儲存體複本的相關常見問題](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
+
+### <a name="troubleshoot-user-profiles"></a>針對使用者設定檔進行疑難排解
+- [針對具有事件的使用者設定檔進行疑難排解](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
+
+### <a name="troubleshoot-vrss"></a>針對 vRSS 進行疑難排解
+- [vRSS 常見問題](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-faq)
+
+### <a name="troubleshoot-webproxy"></a>針對 WebProxy 進行疑難排解
+- [對 Web 應用程式 Proxy 進行疑難](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/troubleshooting-web-application-proxy)排解
+
+### <a name="troubleshoot-windows-admin-center"></a>針對 Windows Admin Center 問題進行疑難排解
+- [Windows 系統管理中心一般疑難排解步驟](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
+- [Windows 系統管理中心的已知問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
+- [Windows 系統管理中心常見問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)

@@ -9,16 +9,16 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00f3851ce74a496bd530c8ea682ea312f8b06a0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390928"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588097"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>降級網域控制站和網域
 
->適用於：Windows Server
+>適用於︰Windows Server
 
 這個主題說明如何使用伺服器管理員或 Windows PowerShell 移除 AD DS。
   
@@ -36,7 +36,7 @@ ms.locfileid: "71390928"
 |||  
 |-|-|  
 |**ADDSDeployment 和 ServerManager Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|Uninstall-AddsDomainController|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-Removeapplicationpartitions 範例*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
+|卸載-Uninstall-addsdomaincontroller|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-Removeapplicationpartitions 範例*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
 |Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<br /><br />***-IncludeManagementTools***<br /><br />*-重新開機*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
   
 > [!NOTE]  
@@ -104,7 +104,7 @@ Uninstall-windowsfeature
    > [!WARNING]  
    > 請不要選取這個選項，除非網域控制站無法連絡其他網域控制站，而且沒有其他正當的方法可以解決這個網路問題。 強制降級會在樹系的剩餘網域控制站上的 Active Directory 中留下孤立的中繼資料。 不僅如此，該網域控制站上所有未複寫的變更 (如密碼或新的使用者帳戶) 都會永遠遺失。 孤立的中繼資料是 Microsoft 客戶支援遇到大部分 AD DS、Exchange、SQL 及其他軟體問題的根本原因。  
    >
-   > 如果您強制降級網域控制站，則必須立即手動清理中繼資料。 如需相關步驟，請參閱 [清理伺服器中繼資料](https://technet.microsoft.com/library/cc816907(WS.10).aspx)。  
+   > 如果您強制降級網域控制站，則必須立即手動清理中繼資料。 如需相關步驟，請參閱 [清理伺服器中繼資料](ad-ds-metadata-cleanup.md)。  
 
    ![Active Directory Domain Services Configuration Wizard-認證強制移除](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)  
   
@@ -170,7 +170,7 @@ Uninstall-windowsfeature
 > [!WARNING]
 > 因為先前的兩個選項不會確認密碼，請小心使用：不會顯示密碼。
 
-您也可以提供轉換的純文字變數當做安全字串，不過我們不鼓勵這種做法。 例如:
+您也可以提供轉換的純文字變數當做安全字串，不過我們不鼓勵這種做法。 例如：
 
 ```
 -localadministratorpassword (convertto-securestring "Password1" -asplaintext -force)
@@ -188,12 +188,12 @@ Uninstall-windowsfeature
 按一下 [降級] 以執行以下 AD DS 部署 Cmdlet：
 
 ```
-Uninstall-DomainController
+Uninstall-ADDSDomainController
 ```
 
 搭配使用選擇性 **Whatif** 引數與 **Uninstall-ADDSDomainController** 及 Cmdlet 來檢閱組態資訊。 這可讓您看到明確和隱含的 Cmdlet 引數值。
 
-例如:
+例如：
 
 ![PowerShell 卸載-Uninstall-addsdomaincontroller 範例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 
@@ -208,7 +208,7 @@ Uninstall-DomainController
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log
 
-因為 **Uninstall-AddsDomainController** 和 **Uninstall-WindowsFeature** 只有一個動作，因此它們會在確認階段中在這裡顯示，且僅提供最低需求的引數。 按 ENTER 鍵會啟動不可撤銷的降級程序並重新啟動電腦。
+由於**uninstall-addsdomaincontroller**和**uninstall**只會有一個動作 su，因此在這裡的確認階段中會顯示它們，其中包含最少的必要引數。 按 ENTER 鍵會啟動不可撤銷的降級程序並重新啟動電腦。
 
 ![PowerShell 卸載-Uninstall-addsdomaincontroller 範例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallConfirm.png)
 

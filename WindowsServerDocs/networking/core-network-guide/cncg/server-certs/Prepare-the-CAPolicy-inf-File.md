@@ -8,15 +8,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 810f6f8ba9e33f1f26f49f542ad6d23819deb463
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2af3a621991627addb94238e84cceb357fb47731
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406284"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588081"
 ---
 # <a name="capolicyinf-syntax"></a>Capolicy.inf .inf 語法
->   適用於：Windows Server (半年度管道)、Windows Server 2016
+>   適用於：Windows Server (半年通道)、Windows Server 2016
 
 Capolicy.inf 是定義延伸模組、條件約束和其他設定的設定檔，這些設定會套用至根 CA 憑證和根 CA 發行的所有憑證。 在根 CA 的安裝程式常式開始之前，必須先在主機伺服器上安裝 Capolicy.inf .inf 檔案。 當根 CA 的安全性限制要修改時，必須更新根憑證，而且必須先在伺服器上安裝更新的 Capolicy.inf .inf 檔案，然後才能開始續訂程式。
 
@@ -42,7 +42,7 @@ Capolicy.inf 可以指定及設定各種不同的 CA 屬性和選項。 下一�
 
 -   _Value_ –是參數，並出現在等號的右邊。
 
-在下列範例中， **[Version]** 是區段， **Signature**是 key，而 **"@no__t 3Windows NT @ no__t-4"** 是值。
+在下列範例中， **[Version]** 是區段， **Signature**是 key，而 **"\$Windows NT \$"** 是值。
 
 範例：
 
@@ -51,7 +51,7 @@ Capolicy.inf 可以指定及設定各種不同的 CA 屬性和選項。 下一�
 Signature="$Windows NT$"      #key=value
 ```
 
-###  <a name="version"></a>Version
+###  <a name="version"></a>版本
 
 將檔案識別為 .inf 檔案。 版本是唯一必要的區段，而且必須在 Capolicy.inf .inf 檔案的開頭。
 
@@ -116,7 +116,7 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 
 -   引號必須以空格括住 Url。
 
--   如果未指定任何 Url （也就是，如果檔案中有 **[CRLDistributionPoint]** 區段，但卻是空的），則根 CA 憑證會省略授權單位資訊存取延伸模組。 這通常是設定根 CA 時的理想選項。 Windows 不會對根 CA 憑證執行撤銷檢查，因此，CDP 延伸模組在根 CA 憑證中是多餘的。
+-   如果未指定任何 Url （也就是，如果檔案中有 **[CRLDistributionPoint]** 區段，但卻是空的），則會省略根 CA 憑證中的 CRL 發佈點延伸模組。 這通常是設定根 CA 時的理想選項。 Windows 不會對根 CA 憑證執行撤銷檢查，因此，CDP 延伸模組在根 CA 憑證中是多餘的。
 
 -    例如，CA 可以發佈至檔案 UNC，以代表用戶端透過 HTTP 抓取之網站資料夾的共用。
 
@@ -142,7 +142,7 @@ URL=http://pki.wingtiptoys.com/Public/myCA.crt
 
 -   具有空格的 Url 必須以引號括住。
 
--   如果未指定任何 Url （也就是，如果檔案中有 **[AuthorityInformationAccess]** 區段，但卻是空的），則會省略根 CA 憑證中的 CRL 發佈點延伸模組。 同樣地，在根 CA 憑證的情況下，這會是慣用的設定，因為沒有任何授權高於根 CA，而其憑證的連結必須參考它。
+-   如果未指定任何 Url （也就是，如果檔案中有 **[AuthorityInformationAccess]** 區段，但卻是空的），則根 CA 憑證會省略授權單位資訊存取延伸模組。 同樣地，在根 CA 憑證的情況下，這會是慣用的設定，因為沒有任何授權高於根 CA，而其憑證的連結必須參考它。
 
 ### <a name="certsrv_server"></a>certsrv_Server
 
@@ -193,18 +193,17 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 
 您可能不想在安裝 CA 之後立即發行任何憑證，因此您可以使用 LoadDefaultTemplates 設定來防止將預設範本新增到企業 CA。 如果 CA 上未設定任何範本，則它不會發出任何憑證。
 
-**AlternateSignatureAlgorithm**會設定 ca，以支援 ca\#憑證和憑證要求的 PKCS 1 v 2.1 簽章格式。 在根 CA 上設定為1時，CA 憑證將包含 PKCS\#1 2.1 版簽章格式。 在次級 CA 上設定時，次級 CA 會建立包含 PKCS\#1 v 2.1 簽章格式的憑證要求。
+**AlternateSignatureAlgorithm**會設定 ca，以支援 ca 憑證和憑證要求的 PKCS \#1 2.1 版簽章格式。 在根 CA 上設定為1時，CA 憑證將包含 PKCS \#1 2.1 版簽章格式。 在次級 CA 上設定時，次級 CA 會建立憑證要求，其中包含 PKCS \#1 的2.1 版簽章格式。
 
 **ForceUTF8**會將主體和簽發者辨別名稱中的相對辨別名稱（RDNs）的預設編碼變更為 utf-8。 只有支援 UTF-8 的 RDNs （例如，由 RFC 定義為目錄字串類型的）會受到影響。 例如，網域元件（DC）的 RDN 支援將編碼成 IA5 或 UTF-8，而國家/地區 RDN （C）只支援編碼為可列印的字串。 因此，ForceUTF8 指示詞會影響 DC RDN，但不會影響 C RDN。
 
 **EnableKeyCounting**會設定 ca 在每次使用 ca 的簽署金鑰時遞增計數器。 除非您有支援金鑰計數的硬體安全性模組（HSM）和相關聯的密碼編譯服務提供者（CSP），否則請勿啟用此設定。 Microsoft 強式 CSP 或 Microsoft 軟體金鑰儲存提供者（KSP）都不支援金鑰計數。
 
-
 ## <a name="create-the-capolicyinf-file"></a>建立 Capolicy.inf .inf 檔案
 
 在安裝 AD CS 之前，您可以使用部署的特定設定來設定 Capolicy.inf .inf 檔案。
 
-**必要**您必須是 Administrators 群組的成員。
+必要條件 **：** 您必須是 Administrators 群組的成員。
 
 1. 在您打算安裝 AD CS 的電腦上，開啟 Windows PowerShell，輸入**notepad c:\CAPolicy.inf** ，然後按 enter。
 
@@ -243,7 +242,7 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 
    -   [編碼] 為 **[ANSI]**
 
-7. 按一下 [儲存]。
+7. 按一下 **\[儲存\]** 。
 
 8. 當系統提示您覆寫檔案時，按一下 [是]。
 
