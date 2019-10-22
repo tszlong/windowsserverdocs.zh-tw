@@ -8,19 +8,19 @@ ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bd9c766f07591e0c643a6cea644b2db7a95364
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960947"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588032"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>針對 DNS 相關啟用問題進行疑難排解的指導方針
 
 如果下列其中一個或多個條件成立，您可能必須使用其中一些方法：
 
 - 您可以使用大量授權的媒體和大量授權一般產品金鑰來安裝下列其中一個作業系統：&nbsp;
-   - Windows Server Standard 2012 R2
+   - Windows Server 2019
    - Windows Server 2016
    - Windows Server 2012 R2
    - Windows Server 2012
@@ -66,7 +66,7 @@ ms.locfileid: "71960947"
 
 KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環境中未設定 KMS 主機，請使用適當的 KMS 主機金鑰來安裝並啟動一個。 在網路上設定電腦來裝載 KMS 軟體之後，請發佈網域名稱系統 (DNS) 設定。
 
-如需 KMS 主機設定程序的詳細資訊，請參閱[使用金鑰管理服務進行啟用](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)及[安裝和設定 VMAT](https://docs.microsoft.com/windows/deployment/volume-activation/install-configure-vamt)。
+如需 KMS 主機設定程序的詳細資訊，請參閱[使用金鑰管理服務進行啟用](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)及[安裝和設定 VAMT](https://docs.microsoft.com/windows/deployment/volume-activation/install-configure-vamt)。
 
 [返回程式清單。](#list)
 

@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d233708c6d206569f42f2a883bd342e90813f6a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcbd3292bcd4653a4568492a996d53c17f465aa8
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404094"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591046"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
@@ -27,12 +27,22 @@ ms.locfileid: "71404094"
 > [!NOTE]
 > 我們已變更 Web 用戶端的版本控制系統。 從 1.0.18.0 版開始，所有 Web 用戶端發行版本將包含數字 (採用 "W.X.Y.Z" 的格式)。 遠端桌面 Web 用戶端的版本號碼結尾一律是 0 (例如，W.X.Y.0)。 每個 Windows 虛擬桌面 Web 用戶端版本都會變更最後一位數，直到發行下一版遠端桌面 Web 用戶端為止 (例如 1.0.18.1)。
 
+## <a name="updates-for-version-10200"></a>1\.0.20.0 版的更新
+*發行日期：2019/10/18*
+
+- 已新增對 Windows 7 和 Windows Server 2008 R2 主機連線的支援。
+- 已修正某些應用程式圖示顯示為透明磚的問題。
+- 已修正 Windows 7 上 Internet Explorer 瀏覽器的連線問題。
+- 已修正調整瀏覽器大小時，發生非預期中斷連線的問題。
+- 協助工具改善。
+- 已更新協力廠商程式庫。
+
 ## <a name="updates-for-version-10180"></a>1\.0.18.0 版的更新
 *發行日期：5/14/2019*
 
 - 已在 [設定] 索引標籤中新增 [資源啟動方法] 設定，讓使用者在瀏覽器中開啟資源，或下載要使用另一個用戶端處理的 .rdp 檔案。 此設定可以由您的系統管理員設定。關於這項功能的系統管理員設定的詳細資料，可以在 [Web 用戶端設定文件](remote-desktop-web-client-admin.md)中找到。
 - 已修正色彩呈現問題，可讓遠端工作階段中的色彩更鮮明。
-- 已修改與遠端資源摘要錯誤相關的錯誤訊息。 
+- 已修改與遠端資源摘要錯誤相關的錯誤訊息。
 - 已新增對更多 Office 快速鍵的支援，例如選擇性貼上 (Ctrl+Alt+V)。
 - 已新增鍵盤快速鍵，讓使用者在遠端工作階段中叫用 Windows 鍵 (Alt+F3)
 - 已更新使用者嘗試使用過期密碼進行驗證的錯誤訊息。
@@ -105,4 +115,3 @@ ms.locfileid: "71404094"
 - 使用 **CTRL+C** 和 **CTRL+V**，透過剪貼簿複製/貼上文字。
 - 列印至 PDF 檔案。
 - 進行 18 種語言的當地語系化。
- 
