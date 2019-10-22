@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e3ec7ee787fb6fd2e8e9f59249a6c4013a76b377
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 830a2d99443938c25625211f590984819a20d566
+ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252365"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690445"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -48,11 +48,11 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 在 Windows 系統管理中心使用0.57 版的儲存體遷移服務延伸模組，且您進入切換階段時，您無法選取位址的靜態 IP。 系統會強制您使用 DHCP。
 
-若要解決此問題，請在 Windows 系統管理中心中，查看 [**設定**] [ > **延伸**模組] 底下的警示，其會指出已更新的版本儲存體遷移服務0.57.2 可供安裝。 您可能需要重新開機 Windows 系統管理中心的 [瀏覽器] 索引標籤。
+若要解決此問題，請在 Windows 系統管理中心的 [**設定**]  >  [**延伸**模組] 底下，檢查是否有可用來安裝的更新版本儲存體遷移服務0.57.2 的警示。 您可能需要重新開機 Windows 系統管理中心的 [瀏覽器] 索引標籤。
 
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>儲存體遷移服務轉換驗證失敗，錯誤為「目的地電腦上的權杖篩選原則拒絕存取」
 
-執行轉換驗證時，您會收到錯誤「失敗：拒絕存取目的地電腦上的權杖篩選原則。」 即使您為來源和目的電腦提供正確的本機系統管理員認證，也會發生這種情況。
+執行轉換驗證時，您會收到「失敗：存取目的地電腦上的權杖篩選原則」錯誤。 即使您為來源和目的電腦提供正確的本機系統管理員認證，也會發生這種情況。
 
 此問題是由 Windows Server 2019 中的程式碼瑕疵所造成。 當您使用目的地電腦作為儲存體遷移服務協調器時，將會發生此問題。
 
@@ -74,7 +74,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 使用 Windows Admin Center 或 PowerShell 下載傳輸作業詳細的錯誤-僅限 CSV 記錄檔時，您會收到錯誤：
 
- >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 :傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間可能是較長時間的一部分。 這可能是因為服務仍在處理作業，或服務無法傳送回復訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
+ >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間可能是較長時間的一部分。 這可能是因為服務仍在處理作業，或服務無法傳送回復訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
 
 此問題是因為儲存體遷移服務所允許的預設一分鐘時間內，無法篩選出的傳輸檔案數量非常大。 
 
@@ -130,10 +130,10 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 從來源清查或傳輸檔案到目的地電腦時，使用者移除系統管理員群組許可權的檔案無法遷移。 檢查儲存體遷移服務-Proxy 調試顯示：
 
-  記錄檔名稱：    StorageMigrationService-Proxy/Debug 來源：      StorageMigrationService-Proxy 日期：        2/26/2019 9:00:04 AM 事件識別碼：    10000工作類別：無層級：       錯誤關鍵字：      
-  使用者：        網路服務電腦： srv1.contoso.com 描述：
+  記錄名稱： StorageMigrationService-Proxy/Debug 來源： Microsoft-Windows-StorageMigrationService-Proxy 日期： 2/26/2019 9:00:04 AM 事件識別碼：10000工作類別：無層級：錯誤關鍵字：      
+  使用者：網路服務電腦： srv1.contoso.com 描述：
 
-  02/26/2019-09：00： 04.860 [Error] 傳送錯誤給 \\srv1。 com\public\indy.png：（5）拒絕存取。
+  02/26/2019-09：00： 04.860 [Error] 傳送 \\srv1 的傳輸錯誤。 com\public\indy.png：（5）存取被拒。
 堆疊追蹤：在 StorageMigration. FileDirUtils. OpenFile （String fileName，DesiredAccess desiredAccess，ShareMode shareMode，CreationDisposition creationDisposition，FlagsAndAttributes flagsAndAttributes），位於StorageMigration. FileDirUtils. GetTargetFile （String path），網址為： FileDirUtils （GetTargetFile 檔案），網址為. FileInfo. StorageMigration。FileTransfer. InitializeSourceFileInfo （），位於 Microsoft. StorageMigration. Proxy. FileTransfer. transfer. StorageMigration （），位於StorageMigration. FileTransfer. TryTransfer （） [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs：： TryTransfer：： 55]
 
 
@@ -199,14 +199,14 @@ DFSR Debug 記錄檔：
 
    無法傳輸儲存體。
 
-   任務Job1 識別碼：  
+   作業： Job1 識別碼：  
    狀態：失敗錯誤：36931錯誤訊息： 
 
-   指引：請檢查詳細錯誤，並確定已符合傳輸需求。 傳送作業無法傳輸任何來源和目的地電腦。 這可能是因為協調器電腦無法連線到任何來源或目的地電腦，可能是因為防火牆規則或遺失許可權所致。
+   指引：檢查詳細的錯誤，並確定已符合傳輸需求。 傳送作業無法傳輸任何來源和目的地電腦。 這可能是因為協調器電腦無法連線到任何來源或目的地電腦，可能是因為防火牆規則或遺失許可權所致。
 
 檢查 StorageMigrationService-Proxy/Debug 記錄檔會顯示：
 
-   07/02/2019-13：35： 57.231 [Error] 傳輸驗證失敗。 錯誤碼40961，來源端點無法連線或不存在，或來源認證無效，或驗證的使用者沒有足夠的許可權可以存取它。
+   07/02/2019-13：35： 57.231 [Error] 傳輸驗證失敗。 錯誤碼：40961、來源端點無法連線或不存在，或來源認證無效，或驗證的使用者沒有足夠的許可權可以存取它。
 在 TransferOperation. StorageMigration （ProcessRequest fileTransferRequest，Guid operationId）上進行 StorageMigration （）的驗證（）（& g.）。   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
 如果您的遷移帳戶至少沒有 SMB 共用的讀取存取許可權，就會發生此錯誤。 若要解決此錯誤，請將包含來源遷移帳戶的安全性群組新增至來源電腦上的 SMB 共用，並授與讀取、變更或完全控制。 完成遷移之後，您可以移除此群組。
@@ -217,13 +217,13 @@ DFSR Debug 記錄檔：
 
   來自 HRESULT 的例外狀況：0x80005000
   
-  記錄檔名稱：    StorageMigrationService/Admin 來源：      Microsoft-Windows-StorageMigrationService 日期：        9/9/2019 5:21:42 PM 事件識別碼：    2503工作類別：無層級：       錯誤關鍵字：      
-  使用者：        網路服務電腦：    FS02.TailwindTraders.net 描述：無法清查電腦。
+  記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 9/9/2019 5:21:42 PM 事件識別碼：2503工作類別：無層級：錯誤關鍵字：      
+  使用者：網路服務電腦： FS02。TailwindTraders.net 描述：無法清查電腦。
 作業： foo2 識別碼：20ac3f75-4945-41d1-9a79-d11dbb57798b 狀態：失敗錯誤：36934錯誤訊息：所有裝置的清查失敗指引：請檢查詳細錯誤，並確定已符合清查需求。 作業無法清查任何指定的來源電腦。 這可能是因為協調器電腦無法透過網路連線，可能是因為防火牆規則或遺失許可權所致。
   
-  記錄檔名稱：    StorageMigrationService/Admin 來源：      Microsoft-Windows-StorageMigrationService 日期：        9/9/2019 5:21:42 PM 事件識別碼：    2509工作類別：無層級：       錯誤關鍵字：      
-  使用者：        網路服務電腦：    FS02.TailwindTraders.net 描述：無法清查電腦。
-作業： foo2 電腦：FS01.TailwindTraders.net 狀態：失敗錯誤：-2147463168 錯誤訊息：指引：請檢查詳細錯誤，並確定已符合清查需求。 清查無法判斷指定來源電腦的任何層面。 這可能是因為來源或封鎖的防火牆埠缺少許可權或許可權。
+  記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 9/9/2019 5:21:42 PM 事件識別碼：2509工作類別：無層級：錯誤關鍵字：      
+  使用者：網路服務電腦： FS02。TailwindTraders.net 描述：無法清查電腦。
+作業： foo2 電腦： FS01。TailwindTraders.net 狀態：失敗錯誤：-2147463168 錯誤訊息：指引：檢查詳細錯誤，並確定符合清查需求。 清查無法判斷指定來源電腦的任何層面。 這可能是因為來源或封鎖的防火牆埠缺少許可權或許可權。
   
 當您以使用者主體名稱（UPN）的形式提供遷移認證（例如 ' meghan@contoso.com '）時，儲存體遷移服務中的程式碼缺失會導致此錯誤。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
 
@@ -270,6 +270,8 @@ DFSR Debug 記錄檔：
 1.  開啟提升許可權的 cmd 提示字元，其中您是儲存體遷移服務 orchestrator 伺服器上的系統管理員成員，並執行：
 
      ```
+     TAKEOWN /d /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
+     
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService\* /grant Administrators:(GA)
@@ -280,13 +282,13 @@ DFSR Debug 記錄檔：
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService  /GRANT networkservice:F /T /C
 
-     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA)F /T /C
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA) /T /C
      ```
    
 2.  啟動儲存體遷移服務服務，這會建立新的資料庫。
 
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [儲存體遷移服務總覽](overview.md)
