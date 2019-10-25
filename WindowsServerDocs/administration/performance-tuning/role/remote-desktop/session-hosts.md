@@ -4,15 +4,15 @@ description: 遠端桌面工作階段主機的效能微調指導方針
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS
+ms.author: HammadBu; VladmiS; DenisGun
 author: phstee
-ms.date: 10/16/2017
-ms.openlocfilehash: c50c0c981362bd96ed3bf1c603cde6bfeec289f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 10/22/2019
+ms.openlocfilehash: b439b0cbab66f98a1f74faeb7bff996b30a188d5
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385024"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812336"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>效能微調遠端桌面工作階段主機
 
@@ -40,7 +40,7 @@ ms.locfileid: "71385024"
 
 ### <a name="memory-configuration"></a>記憶體設定
 
-記憶體配置取決於使用者採用的應用程式;不過，您可以使用下列公式來估計所需的記憶體數量：TotalMem = OSMem + SessionMem \* NS
+記憶體配置取決於使用者採用的應用程式;不過，您可以使用下列公式來估計所需的記憶體數量： TotalMem = OSMem + SessionMem \* NS
 
 OSMem 是作業系統執行所需的記憶體數量（例如系統二進位影像、資料結構等等）、SessionMem 是在一個會話中執行的記憶體處理常式需要多少，而 NS 則是作用中會話的目標數目。 會話所需的記憶體數量大部分取決於會話內執行之應用程式和系統進程的私用記憶體參考集。 共用程式碼或資料頁的效果不大，因為系統上只有一個複本存在。
 
@@ -130,9 +130,9 @@ RD 工作階段主機伺服器的網路使用量包含兩個主要類別：
 
 桌面上的通知圖示可能會有相當昂貴的重新整理機制。 您應該停用任何通知，方法是移除從啟動清單註冊它們的元件，或變更應用程式和系統元件上的設定以停用它們。 您可以使用 [**自訂通知] 圖示**來檢查伺服器上可用的通知清單。
 
-### <a name="remotefx-data-compression"></a>RemoteFX 資料壓縮
+### <a name="remote-desktop-protocol-data-compression"></a>遠端桌面通訊協定資料壓縮
 
-Microsoft RemoteFX 壓縮可以使用 [電腦設定] 下的群組原則進行設定 **&gt; 系統管理範本 &gt; Windows 元件 &gt; 遠端桌面服務 &gt; 遠端桌面工作階段主機 &gt; 遠端會話環境 &gt; 設定 RemoteFX 資料的壓縮**。 可能的值有三個：
+遠端桌面通訊協定壓縮可以使用 **電腦**設定 &gt;**系統管理範本**&gt; **Windows 元件**&gt;**遠端桌面服務** 下的群組原則進行設定 &gt;**遠端桌面工作階段主機**&gt;**遠端會話環境**&gt;**設定 RemoteFX 資料的壓縮**。 可能的值有三個：
 
 -   已**優化以使用較少的記憶體**會耗用每個會話最少的記憶體數量，但具有最低的壓縮比率，因而達到最高的頻寬耗用量。
 
@@ -140,11 +140,11 @@ Microsoft RemoteFX 壓縮可以使用 [電腦設定] 下的群組原則進行設
 
 -   **優化以使用較少的網路頻寬**以大約每個會話 2 MB 的成本，進一步降低網路頻寬使用量。 如果您想要使用此設定，您應該在將伺服器放置於生產環境之前，使用這項設定來評估會話的最大數目並測試到該層級。
 
-您也可以選擇不使用 RemoteFX 壓縮演算法。 選擇不要使用 RemoteFX 壓縮演算法會使用較多的網路頻寬，而且只有在您使用設計來優化網路流量的硬體裝置時，才建議您使用。 即使您選擇不使用 RemoteFX 壓縮演算法，還是會壓縮一些圖形資料。
+您也可以選擇不要使用遠端桌面通訊協定的壓縮演算法，因此我們只建議使用它搭配設計來優化網路流量的硬體裝置。 即使您選擇不使用壓縮演算法，還是會壓縮某些圖形資料。
 
 ### <a name="device-redirection"></a>裝置重新導向
 
-裝置重新導向可使用 [電腦設定] **&gt; 系統管理範本 &gt; Windows 元件 &gt; 遠端桌面服務 &gt; 遠端桌面工作階段主機 &gt; 裝置和資源] 下的 [群組原則**重新導向，或使用伺服器管理員中的 [**會話集合**屬性] 方塊。
+您可以使用 **電腦**設定 &gt;**系統管理範本**&gt; **Windows 元件** **&gt; 遠端桌面服務**遠端 底下的 群組原則 來設定裝置重新導向**桌面工作階段主機**&gt;**裝置和資源**重新導向，或使用伺服器管理員中的 **會話集合**屬性 方塊。
 
 一般而言，裝置重新導向會增加 RD 工作階段主機伺服器連線所使用的網路頻寬量，因為用戶端電腦上的裝置與伺服器會話中執行的進程之間的資料交換。 增加的程度是在伺服器上對重新導向的裝置執行之應用程式所執行的作業頻率的功能。
 
@@ -172,7 +172,7 @@ Microsoft RemoteFX 壓縮可以使用 [電腦設定] 下的群組原則進行設
 
 -   **拖曳時顯示 windows 的內容**（停用完整視窗拖曳： i：1）停用此設定時，它只會顯示視窗框架，而不是所有內容，而是在拖曳視窗時，減少頻寬。
 
--   **功能表和視窗動畫**（停用功能表 anims： i：1並停用游標設定： i：1）：停用這些設定時，會停用功能表上的動畫（例如淡化）和游標，以降低頻寬。
+-   **功能表和視窗動畫**（停用功能表 anims： i：1和停用游標設定： i：1）：停用這些設定時，會停用功能表上的動畫（例如淡化）和游標，藉此減少頻寬。
 
 -   **字型平滑**效果（允許字型平滑處理： i：0）控制 ClearType 字型轉譯支援。 連接到執行 Windows 8 或 Windows Server 2012 和更新版本的電腦時，啟用或停用此設定並不會對頻寬使用量造成重大影響。 不過，對於執行 Windows 7 和 Windows 2008 R2 之前版本的電腦，啟用這種設定會大幅影響網路頻寬耗用量。
 

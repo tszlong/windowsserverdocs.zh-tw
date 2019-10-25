@@ -4,33 +4,25 @@ description: 遠端桌面虛擬主機的效能微調
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS
+ms.author: HammadBu; VladmiS; denisgun
 author: phstee
-ms.date: 10/16/2017
-ms.openlocfilehash: 6aad1560fa9f9429af94426487d9a33369137ded
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 10/22/2019
+ms.openlocfilehash: dbdf211138ddcd553171f3c8ce9c2e915ccf0057
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370035"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812268"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>效能微調遠端桌面虛擬主機
 
+遠端桌面虛擬主機（RD 虛擬主機）是支援虛擬桌面基礎結構（VDI）案例的角色服務，可讓多個使用者在裝載于執行 Windows Server 之伺服器上的虛擬機器中執行 Windows 應用程式，以及Hyper-v。
 
-遠端桌面虛擬主機（RD 虛擬主機）是支援虛擬桌面基礎結構（VDI）案例的角色服務，可讓多個並行使用者在執行之伺服器上裝載的虛擬機器中執行 Windows 應用程式Windows Server 2016 和 Hyper-v。
-
-Windows Server 2016 支援兩種類型的虛擬桌面、個人虛擬桌面和集區虛擬桌面。
-
-**本主題內容：**
-
--   [一般考慮](#general-considerations)
-
--   [效能優化](#performance-optimizations)
+Windows Server 支援兩種類型的虛擬桌面：個人虛擬桌面和集區虛擬桌面。
 
 ## <a name="general-considerations"></a>一般考慮
 
-
-### <a name="storage"></a>儲存體
+### <a name="storage"></a>儲存空間
 
 儲存體是最可能的效能瓶頸，因此請務必調整您的儲存體大小，以適當處理虛擬機器狀態變更所產生的 i/o 負載。 如果試驗或模擬不可行，最好的指導方針是為四部作用中的虛擬機器布建一個磁片主軸。 使用具有良好寫入效能的磁片設定（例如 RAID 1 + 0）。
 
@@ -40,7 +32,7 @@ Windows Server 2016 支援兩種類型的虛擬桌面、個人虛擬桌面和集
 
 在 Windows Server 2012 R2 中引進，重復資料刪除支援開啟檔案的優化。 若要使用在重復資料刪除磁片區上執行的虛擬機器，虛擬機器檔案必須儲存在與 Hyper-v 主機不同的主機上。 如果 Hyper-v 和重復資料刪除在同一部電腦上執行，這兩個功能將會爭用系統資源，並對整體效能造成負面影響。
 
-磁片區也必須設定為使用「虛擬桌面基礎結構（VDI）」重復資料刪除優化類型。 您可以使用伺服器管理員（檔案**和存放服務** - &gt; **磁片** - &gt;區**重復資料刪除設定**），或使用下列 Windows PowerShell 命令來進行設定：
+磁片區也必須設定為使用「虛擬桌面基礎結構（VDI）」重復資料刪除優化類型。 您可以使用伺服器管理員（檔案**和存放服務** -&gt;**磁片**區 -&gt;**重復資料刪除設定**），或使用下列 Windows PowerShell 命令來進行設定：
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
@@ -53,11 +45,11 @@ Enable-DedupVolume <volume> -UsageType HyperV
 
 伺服器記憶體使用量是由三個主要因素所驅動：
 
--   作業系統額外負荷
+- 作業系統額外負荷
 
--   每個虛擬機器的 hyper-v 服務額外負荷
+- 每個虛擬機器的 hyper-v 服務額外負荷
 
--   配置給每部虛擬機器的記憶體
+- 配置給每部虛擬機器的記憶體
 
 針對一般的知識工作者工作負載，執行 x86 Window 8 或 Windows 8.1 的來賓虛擬機器應該提供 ~ 512 MB 的記憶體做為基準。 不過，視工作負載而定，動態記憶體可能會將來賓虛擬機器的記憶體增加到大約 800 MB。 在 x64 中，我們會看到大約 800 MB 的啟動，並增加到 1024 MB。
 
@@ -68,112 +60,6 @@ Enable-DedupVolume <volume> -UsageType HyperV
 當您規劃 RD 虛擬主機伺服器的伺服器容量時，每個實體核心的虛擬機器數目將取決於工作負載的本質。 作為起點，可合理規劃每個實體核心12部虛擬機器，然後執行適當的案例來驗證效能和密度。 根據工作負載的細節而定，可能會達到較高的密度。
 
 我們建議您啟用超執行緒，但請務必根據實體核心數目，而不是邏輯處理器數目來計算超額訂閱比例。 這可確保每個 CPU 的預期效能層級。
-
-### <a name="virtual-gpu"></a>虛擬 GPU
-
-適用于 RD 虛擬主機的 Microsoft RemoteFX 透過主機端遠端處理、轉譯-捕捉編碼管線、高效率的 GPU 型編碼、根據用戶端的節流，為虛擬桌面基礎結構（VDI）提供豐富的圖形體驗活動，以及啟用 DirectX 的虛擬 GPU。 RD 虛擬主機的 RemoteFX 將虛擬 GPU 從 DirectX9 升級至 DirectX11。 它也藉由以較高的解析度支援更多監視器，來改善使用者體驗。
-
-透過軟體模擬驅動程式，可以使用 RemoteFX DirectX11 體驗，而不需要硬體 GPU。 雖然此軟體 GPU 提供良好的體驗，但 RemoteFX 虛擬圖形處理單元（VGPU）會為虛擬桌面電腦增加硬體加速體驗。
-
-若要在執行 Windows Server 2016 的伺服器上利用 RemoteFX VGPU 體驗，您需要主機伺服器上的 GPU 驅動程式（例如 DirectX 11.1 或 WDDM 1.2）。 如需有關要與 RD 虛擬主機的 RemoteFX 搭配使用之 GPU 供應專案的詳細資訊，請洽詢您的 GPU 提供者。
-
-如果您在 VDI 部署中使用 RemoteFX 虛擬 GPU，部署容量會根據使用案例和硬體設定而有所不同。 當您規劃部署時，請考慮下列事項：
-
--   系統上的 Gpu 數目
-
--   Gpu 上的視訊記憶體容量
-
--   系統上的處理器和硬體資源
-
-### <a name="remotefx-server-system-memory"></a>RemoteFX 伺服器系統記憶體
-
-針對以虛擬 GPU 啟用的每個虛擬桌面，RemoteFX 會使用客體作業系統和已啟用 RemoteFX 之伺服器中的系統記憶體。 虛擬程式保證系統記憶體的可用性可供客體作業系統使用。 在伺服器上，每個具備虛擬 GPU 功能的虛擬桌面都必須將其系統記憶體需求公佈到虛擬機器。 啟動已啟用虛擬 GPU 的虛擬桌面時，虛擬機器會在啟用了已啟用 VGPU 的虛擬桌面的伺服器中保留額外的系統記憶體。
-
-已啟用 RemoteFX 之伺服器的記憶體需求是動態的，因為已啟用 RemoteFX 之伺服器上所耗用的記憶體數量取決於與已啟用 VGPU 之虛擬桌面相關聯的監視器數目，以及的最大解析度這些監視器。
-
-### <a name="remotefx-server-gpu-video-memory"></a>RemoteFX 伺服器 GPU 視訊記憶體
-
-每個啟用虛擬 GPU 的虛擬桌面都會使用主機伺服器上 GPU 硬體中的視訊記憶體來呈現桌面。 除了轉譯之外，編解碼器也會使用視頻記憶體來壓縮轉譯的螢幕。 所需的記憶體數量是直接根據布建至虛擬機器的監視器數量而定。
-
-保留的視訊記憶體會根據監視器數目和系統螢幕解析度而有所不同。 某些使用者可能需要更高的螢幕解析度來進行特定工作。 如果所有其他設定都維持不變，則具有較低解析度設定的擴充性會更高。
-
-### <a name="remotefx-processor"></a>RemoteFX 處理器
-
-虛擬程式會排程已啟用 RemoteFX 的伺服器和 CPU 上已啟用虛擬 GPU 的虛擬桌面電腦。 不同于系統記憶體，與 RemoteFX 需要與虛擬機器共用的其他資源沒有相關的資訊。 RemoteFX 帶入已啟用虛擬 GPU 之虛擬桌面的額外 CPU 負荷，與執行虛擬 GPU 驅動程式和使用者模式遠端桌面通訊協定堆疊有關。
-
-在具備 RemoteFX 功能的伺服器上，會增加額外負荷，因為系統會針對每個啟用虛擬 GPU 的虛擬桌面執行額外的進程（rdvgm）。 此程式會使用圖形設備磁碟機在 GPU 上執行命令。 編解碼器也會使用 Cpu 來壓縮需要傳送回用戶端的螢幕資料。
-
-更多虛擬處理器表示更好的使用者體驗。 建議您為每個啟用虛擬 GPU 的虛擬桌面配置至少兩個虛擬 Cpu。 我們也建議針對啟用虛擬 GPU 的虛擬桌面電腦使用 x64 架構，因為與 x86 虛擬機器相比，x64 虛擬機器上的效能比較好。
-
-### <a name="remotefx-gpu-processing-power"></a>RemoteFX GPU 處理能力
-
-針對每個已啟用虛擬 GPU 的虛擬桌面，會在啟用 RemoteFX 的伺服器上執行對應的 DirectX 程式。 此程式會重新執行它從 RemoteFX 虛擬桌面接收到實體 GPU 的所有圖形命令。 針對實體 GPU，它相當於同時執行多個 DirectX 應用程式。
-
-一般而言，圖形裝置和驅動程式會調整為在桌面上執行幾個應用程式。 RemoteFX 會以獨特的方式來延伸要使用的 Gpu。 為了測量 GPU 在 RemoteFX 伺服器上的執行情況，已新增效能計數器來測量 RemoteFX 要求的 GPU 回應。
-
-通常當 GPU 資源的資源不足時，GPU 的讀取和寫入作業需要很長的時間才能完成。 藉由使用效能計數器，系統管理員可以採取預防措施，以避免其終端使用者停機的可能性。
-
-RemoteFX 伺服器上提供下列效能計數器來測量虛擬 GPU 效能：
-
-**RemoteFX 圖形**
-
--   **略過的框架/秒-沒有足夠的用戶端資源**因為用戶端資源不足，每秒略過的畫面數
-
--   **圖形壓縮比例**編碼為輸入位元組數的位元組數比率
-
-**RemoteFX 根 GPU 管理**
-
--   **人員伺服器 gpu**中的 tdr TDR 在伺服器 gpu 的總次數
-
--   **人員執行 remotefx**已安裝 remotefx 3d 視訊卡之虛擬機器的虛擬機器總數
-
--   **VRAM未使用的專用**視頻記憶體數量（每個 GPU 的可用 MB）
-
--   **VRAM每個 GPU 保留的百分比 @ no__t-已保留給 RemoteFX 的專用視頻記憶體 0%
-
-**RemoteFX 軟體**
-
--   **監視的 Capture 速率**\[ 1-4\]顯示監視的 RemoteFX 捕捉速率1-4
-
--   **壓縮比例**在 Windows 8 中被取代，並以**圖形壓縮比例**取代
-
--   **延遲畫面數/秒**未在一段時間內傳送圖形資料的每秒畫面格數
-
--   **來自 Capture 的 GPU 回應時間**要完成 GPU 作業的 RemoteFX 捕捉（微秒）內測量的延遲
-
--   **來自轉譯的 GPU 回應時間**要完成 GPU 作業的 RemoteFX 轉譯（以微秒為單位）內所測量的延遲
-
--   **輸出位元組**RemoteFX 輸出位元組總數
-
--   **等候用戶端計數/秒**在 Windows 8 中已被取代，並由**略過的框架取代/第二-不完整**
-
-**RemoteFX vGPU 管理**
-
--   **人員Tdr 本機到虛擬機器**在此虛擬機器中發生的 tdr 總數（tdr，不包含伺服器傳播到虛擬機器）
-
--   **人員Tdr 由伺服器**上發生且已傳播至虛擬機器的 tdr 總數所傳播
-
-**RemoteFX 虛擬機器 vGPU 效能**
-
--   **Data叫用的顯示**次數/秒，每秒呈現給虛擬機器桌上型電腦的目前作業總數（以秒為單位）
-
--   **Data傳出顯示數/** 秒，虛擬機器每秒傳送到伺服器 GPU 的目前作業總數
-
--   **Data每秒從 RemoteFX**啟用的伺服器讀取位元組數/秒的讀取位元組總數
-
--   **Data每秒傳送到**啟用 RemoteFX 之伺服器 GPU 的傳送位元組數/秒總數
-
--   **DMA通訊緩衝區平均延遲（秒）** 在通訊緩衝區中花費的平均時間量（以秒為單位）
-
--   **DMA從 dma 送出到完成**之前的 dma 緩衝區延遲（秒）時間長度（秒）
-
--   **DMARemoteFX 3d**視訊卡的佇列長度 DMA 佇列長度
-
--   **人員針對虛擬機器上**每個 gpu 發生的 TDR 超時計數，TDR 每一 gpu 的超時
-
--   **人員每個 gpu 引擎**在虛擬機器上每個 gpu 引擎發生的 TDR 超時計數 TDR 超時
-
-除了 RemoteFX 虛擬 GPU 效能計數器，您也可以使用 Process Explorer 來測量 GPU 使用率，這會顯示視訊記憶體的使用量和 GPU 使用率。
 
 ## <a name="performance-optimizations"></a>效能最佳化
 
@@ -222,8 +108,6 @@ Windows Server 2012 和更新版本中的容錯移轉叢集提供叢集共用磁
 > [!NOTE]
 > 這份清單不是完整清單，因為任何變更都會影響到所需的目標和案例。 如需詳細資訊，請參閱[熱門的按下、立即取得、Windows 8 VDI 優化腳本，PFE！](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
 
- 
+
 > [!NOTE]
 > Windows 8 中的 SuperFetch 預設為啟用。 它是 VDI 感知，不應停用。 SuperFetch 可以透過記憶體頁面共用進一步減少記憶體耗用量，這對 VDI 很有用。 執行 Windows 7 的集區虛擬桌面電腦應停用，但在執行 Windows 7 的個人虛擬桌面電腦上應該保持開啟。
-
- 
