@@ -8,22 +8,22 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
-ms.date: 02/06/2018
-ms.openlocfilehash: 7084f4951ebe1d1203f4c9e45bc5f73cc6487a84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 08/21/2019
+ms.openlocfilehash: 114dd87b86bfffd1070229af57ae65deea2c2db0
+ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364188"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923868"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>規劃使用離散裝置指派來部署裝置
->適用於：Microsoft Hyper-v Server 2016、Windows Server 2016、Microsoft Hyper-v Server 2019、Windows Server 2019
+>適用于： Microsoft Hyper-v Server 2016、Windows Server 2016、Microsoft Hyper-v Server 2019、Windows Server 2019
 
 離散裝置指派可讓實體 PCIe 硬體直接從虛擬機器存取。  本指南將討論可以使用離散裝置指派、主機系統需求、在虛擬機器上施加的限制，以及個別裝置指派的安全性含意的裝置類型。
 
 針對離散裝置指派的初始版本，我們將焦點放在 Microsoft 正式支援的兩個裝置類別：圖形配接器和 NVMe 存放裝置。  其他裝置可能會正常執行，而硬體廠商則能夠提供這些裝置的支援聲明。  針對這些其他裝置，請與這些硬體廠商聯繫以取得支援。
 
-如果您已準備好嘗試使用離散裝置指派，您可以跳至[使用離散裝置指派來部署圖形裝置](../deploy/Deploying-graphics-devices-using-dda.md)，或[使用離散裝置指派來部署存放裝置](../deploy/Deploying-storage-devices-using-dda.md)以開始使用！
+若要瞭解 GPU 虛擬化的其他方法，請參閱[在 Windows Server 中規劃 GPU 加速](plan-for-gpu-acceleration-in-windows-server.md)。 如果您已準備好嘗試使用離散裝置指派，您可以跳至[使用離散裝置指派來部署圖形裝置](../deploy/Deploying-graphics-devices-using-dda.md)，或[使用離散裝置指派來部署存放裝置](../deploy/Deploying-storage-devices-using-dda.md)以開始。
 
 ## <a name="supported-virtual-machines-and-guest-operating-systems"></a>支援的虛擬機器和客體作業系統
 第1代或第二部 Vm 支援個別的裝置指派。  此外，支援的來賓包括 Windows 10、Windows Server 2019、Windows Server 2016、已套用[KB 3133690](https://support.microsoft.com/kb/3133690)的 windows server 2012r2，以及[Linux OS](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)的各種發行版本。
@@ -104,7 +104,7 @@ Express Endpoint -- more secure.
 若要深入瞭解 MMIO 空間，請參閱 TechCommunity blog 上的[個別裝置指派-gpu](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266) 。
 
 ## <a name="machine-profile-script"></a>電腦設定檔腳本
-為了簡化識別伺服器是否正確設定的情況，以及哪些裝置可透過使用個別的裝置指派來傳遞，我們的其中一位工程師將下列 PowerShell 腳本放在一起：[SurveyDDA. ps1。](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
+為了簡化識別伺服器是否正確設定的情況，以及哪些裝置可透過個別的裝置指派傳遞，我們的其中一個工程師會將下列 PowerShell 腳本放在一起： [SurveyDDA. ps1。](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
 
 使用腳本之前，請確定您已安裝 Hyper-v 角色，而且您是從具有系統管理員許可權的 PowerShell 命令視窗執行腳本。
 
@@ -113,42 +113,3 @@ Express Endpoint -- more secure.
 針對它找到的每個裝置，此工具會顯示其是否能夠與離散裝置指派搭配使用。 如果將裝置識別為與不同的裝置指派相容，則腳本會提供原因。  當裝置成功識別為相容時，將會顯示裝置的位置路徑。  此外，如果該裝置需要[MMIO 空間](#mmio-space)，則會一併顯示。
 
 ![SurveyDDA. ps1](./images/hyper-v-surveydda-ps1.png)
-
-## <a name="frequently-asked-questions"></a>常見問題集
-
-### <a name="how-does-remote-desktops-remotefx-vgpu-technology-relate-to-discrete-device-assignment"></a>遠端桌面的 RemoteFX vGPU 技術與離散裝置指派有何關聯？
-它們是完全不同的技術。 不需要安裝 RemoteFX vGPU，即可讓個別的裝置指派運作。 此外，也不需要安裝其他角色。 RemoteFX vGPU 需要安裝 RDVH 角色，RemoteFX vGPU 驅動程式才會出現在 VM 中。 針對離散裝置指派，因為您將會在虛擬機器中安裝硬體廠商的驅動程式，所以不需要有其他角色。  
-
-### <a name="ive-passed-a-gpu-into-a-vm-but-remote-desktop-or-an-application-isnt-recognizing-the-gpu"></a>我已將 GPU 傳遞至 VM，但遠端桌面或應用程式未辨識 GPU
-有許多原因會發生這種情況，但以下列出幾個常見的問題。
-- 請確定已安裝最新的 GPU 廠商的驅動程式，並檢查 Device Manager 中的裝置狀態，而不報告錯誤。
-- 請確認裝置在 VM 內配置了足夠的[MMIO 空間](#mmio-space)。
-- 請確定您使用的是廠商支援在此設定中使用的 GPU。 例如，某些廠商會在傳遞至 VM 時，防止取用者卡運作。
-- 請確定正在執行的應用程式支援在 VM 內執行，而且應用程式支援 GPU 及其關聯的驅動程式。 有些應用程式有 Gpu 和環境的白名單。
-- 如果您在來賓上使用遠端桌面工作階段主機角色或 Windows Multipoint 服務，則必須確定已將特定的群組原則專案設定為允許使用預設 GPU。 使用套用至來賓的群組原則物件（或來賓上的本機群組原則編輯器），流覽至下列群組原則專案：
-   - 電腦設定
-   - 系統管理員範本
-   - Windows 元件
-   - 遠端桌面服務
-   - 遠端桌面工作階段主機
-   - 遠端會話環境
-   - 針對所有遠端桌面服務會話使用硬體預設圖形配接器
-
-    將此值設定為 [已啟用]，然後在套用原則之後重新開機 VM。
-
-### <a name="can-discrete-device-assignment-take-advantage-of-remote-desktops-avc444-codec"></a>不同的裝置指派是否可以利用遠端桌面的 AVC444 編解碼器？
-是，如需詳細資訊，請造訪這篇 blog 文章：[Windows 10 和 Windows Server 2016 Technical Preview 中的遠端桌面通訊協定（RDP） 10 AVC/h.264 改良功能。](https://blogs.technet.microsoft.com/enterprisemobility/2016/01/11/remote-desktop-protocol-rdp-10-avch-264-improvements-in-windows-10-and-windows-server-2016-technical-preview/)
-
-### <a name="can-i-use-powershell-to-get-the-location-path"></a>我可以使用 PowerShell 來取得位置路徑嗎？
-沒錯，有各種方式可以執行這種做法。 以下是其中一個範例：
-```
-#Enumerate all PNP Devices on the system
-$pnpdevs = Get-PnpDevice -presentOnly
-#Select only those devices that are Display devices manufactured by NVIDIA
-$gpudevs = $pnpdevs |where-object {$_.Class -like "Display" -and $_.Manufacturer -like "NVIDIA"}
-#Select the location path of the first device that's available to be dismounted by the host.
-$locationPath = ($gpudevs | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
-```
-
-### <a name="can-discrete-device-assignment-be-used-to-pass-a-usb-device-into-a-vm"></a>是否可以使用不同的裝置指派將 USB 裝置傳遞至 VM？
-雖然並未正式支援，但我們的客戶已使用個別的裝置指派來執行這項作業，方法是將整個 USB3 控制器傳遞至 VM。  當整個控制器傳入時，插到該控制器的每個 USB 裝置也會在 VM 中存取。  請注意，只有一些 USB3 控制器可以正常執行，而 USB2 控制器則無法用於個別的裝置指派。
