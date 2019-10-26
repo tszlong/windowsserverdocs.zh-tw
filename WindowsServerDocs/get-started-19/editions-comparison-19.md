@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ae0e11a3e8ca2b50bd6722f7bd7d18b8c1c532
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: 2cb368b5ff4723c1afb53c5a9e787d9f8a39bef3
+ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973868"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690452"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Windows Server 2019 Standard 和 Datacenter 版本的比較
 
-> 適用於：Windows Server Standard 2012 R2
+> 適用於：Windows Server 2019
   
 ## <a name="locks-and-limits"></a>鎖定與限制
 
@@ -155,7 +155,6 @@ ms.locfileid: "71973868"
 |網路負載平衡|是|是|
 |Windows PowerShell|是|是|
 |Server Core 安裝選項|是|是|
-|Nano Server 安裝選項|是|是|
 |伺服器管理員|是|是|
 |SMB 直接傳輸與 SMB (透過 RDMA)|是|是|
 |軟體定義網路|否| <strong>是</strong> |

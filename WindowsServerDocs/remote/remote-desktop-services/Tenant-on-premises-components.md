@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: a9ff1382d2a2e7e2acf0247fa2ba4ae8e9642162
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ae0a711d146de5b7eff272916cc7f06568848e6
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387838"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812259"
 ---
 # <a name="tenant-on-premises-components"></a>租用戶內部部署元件
 
@@ -30,7 +30,6 @@ ms.locfileid: "71387838"
 若要存取裝載的桌面和應用程式，使用者必須使用支援遠端桌面通訊協定 (RDP) 7.1 或更新版本的遠端桌面用戶端。 尤其，用戶端必須支援遠端桌面閘道和遠端桌面連線代理人。 若要將應用程式傳遞到本機桌面，用戶端也必須支援 RemoteApp 功能。 若要達到最大的閘道規模，用戶端必須支援對 RD 閘道的純 HTTP 傳輸連線。  
   
 其他資訊：  
-[已啟用 RemoteFX 的裝置](https://social.technet.microsoft.com/wiki/contents/articles/14534.remotefx-enabled-devices.aspx)  
 [Windows Server 2012 R2 遠端桌面閘道的新功能](https://blogs.technet.microsoft.com/enterprisemobility/2013/03/14/whats-new-in-windows-server-2012-remote-desktop-gateway/#transport)  
 [Microsoft 遠端桌面用戶端](https://technet.microsoft.com/library/dn473009.aspx)  
 [Microsoft Store 中的 Windows 遠端桌面應用程式](https://apps.microsoft.com/windows/app/remote-desktop/051f560e-5e9b-4dad-8b2e-fa5e0b05a480)  

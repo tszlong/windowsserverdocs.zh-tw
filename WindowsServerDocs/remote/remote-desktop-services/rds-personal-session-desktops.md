@@ -10,14 +10,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
-ms.date: 09/16/2016
+ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: 7429cd9cb87db310a716136c171de47cfe0892f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9386733911ca81ad60d038854bd68e5603aae4cf
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387357"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812281"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>搭配使用個人工作階段桌面與遠端桌面服務
 
@@ -100,6 +100,3 @@ ms.locfileid: "71387357"
 
 
 所有的新 Cmdlet 均支援一般參數：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216)。
-
-## <a name="hardware-accelerated-graphics"></a>硬體加速圖形
-Windows Server 2016 延伸了 RemoteFX 3D 圖形介面卡 (vGPU) 技術，以支援 OpenGL 和單一使用者 Windows Server 2016 客體 VM。 您可以將個人工作階段桌面與新的 vGPU 功能結合，以支援需要使用加速圖形的主控應用程式。 或者，您可以將個人工作階段桌面與新的離散裝置指派 (DDA) 功能結合，以同時支援需要使用加速圖形的託管應用程式。
