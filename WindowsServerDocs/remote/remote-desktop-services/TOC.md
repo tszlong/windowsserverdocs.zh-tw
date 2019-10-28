@@ -12,7 +12,7 @@
 ### [高可用性](rds-plan-high-availability.md)
 ### [多重要素驗證](rds-plan-mfa.md)
 ### [安全資料存放區](rds-plan-secure-data-storage.md)
-### [選擇您的圖形轉譯技術](rds-graphics-virtualization.md)
+### [GPU 加速](rds-graphics-virtualization.md)
 ### [從任何裝置連線](rds-plan-connect-from-any-device.md)
 ### [選擇支付方式](rds-plan-choose-how-you-pay.md)
 ### [RDS 和 VDI 部署中的 Office 2016](https://docs.microsoft.com/deployoffice/rds-office-vdi-rdsh)
@@ -56,7 +56,6 @@
 ##### [建立您的災害復原計劃](rds-disaster-recovery-plan.md)
 
 ## [執行並微調](rds-run-and-tune.md)
-### [設定遠端桌面服務的 RemoteFX vGPU](rds-remotefx-vgpu.md)
 ### [管理個人桌面工作階段集合](rds-manage-personal-collection.md)
 ### [建議的 VDI 桌面設定](rds-vdi-recommendations.md)
 ### [針對虛擬桌面基礎結構 (VDI) 角色最佳化 Windows 10 版本 1803](rds-vdi-recommendations-1803.md)
