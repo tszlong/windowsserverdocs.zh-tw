@@ -7,18 +7,18 @@ ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 11/08/2016
+ms.date: 10/22/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: cec1ae43b51b17da5617f95e13b839d4ecfbb40c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404011"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812252"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>建立遠端桌面服務集合，以執行桌面和應用程式
 
@@ -33,7 +33,7 @@ ms.locfileid: "71404011"
  
 使用集區工作階段時，多位使用者可以存取資源的共用集區，而使用個人桌面工作階段時，使用者可獲得集區內的專屬桌面指派。 集區工作階段可提供較低的整體成本，而個人工作階段可讓使用者自訂他們的桌面體驗。
 
-如果您需要共用含大量圖形的主控應用程式，您可以結合個人工作階段桌面與針對圖形加速設定的 RemoteFX vGPU。 或者，您可以將個人工作階段桌面與新的離散裝置指派 (DDA) 功能結合，以同時支援需要使用加速圖形的主控應用程式。 如需詳細資訊，請參閱[哪一種圖形虛擬化技術適合您？](rds-graphics-virtualization.md)
+如果您需要共用圖形密集型託管應用程式，則可以將個人工作階段桌面與新的離散裝置指派 (DDA) 功能結合，以同時支援需要使用加速圖形的託管應用程式。 如需詳細資訊，請參閱[哪一種圖形虛擬化技術適合您？](rds-graphics-virtualization.md)
 
 
 不論您選擇哪種集合類型，都要使用 RemoteApps 填入這些集合，其包含的程式和資源可讓使用者從任何支援的裝置進行存取，並如本機執行程式般加以使用。

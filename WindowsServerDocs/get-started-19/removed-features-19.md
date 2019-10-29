@@ -11,18 +11,18 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 manager: jasgro
-ms.date: 08/22/2019
+ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 261023223b56e235320b7ad414fa91206420b1ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2d3a871165812ac3a27e65b5f52cc56a05c9efe
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360845"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812288"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>從 Windows Server 2019 開始移除或計劃取代的功能
 
->適用於：Windows Server Standard 2012 R2
+>適用於：Windows Server 2019
 
 每個版本的 Windows Server 都會加入新特色與功能；我們有時也會移除特性與功能，這通常是因為我們新增了更好的選項。 以下是有關我們在 Windows Server 2019 中已移除的特色與功能詳細資訊。
 
@@ -41,6 +41,7 @@ ms.locfileid: "71360845"
 | 企業掃描，也稱為分散式掃描管理 (DSM)|我們會移除此安全掃描和掃描器的管理功能 - 沒有任何支援此功能的裝置。 |
 | 列印元件 - 現在是核心安裝的選用元件|在舊版 Windows Server 中，列印元件在核心安裝選項中預設為「停用」  。 我們在 Windows Server 2016 中變更了此設定，改成預設為啟用。 在 Windows Server 2019 中，這些列印元件再次針對 Server Core 預設為停用。 如果您需要啟用列印元件，可以藉由執行 **Install-WindowsFeature Print-Server** Cmdlet 來完成。 |
 | 核心安裝中的[遠端桌面連線代理人和遠端桌面虛擬化主機](../remote/remote-desktop-services/desktop-hosting-service.md)|大部分遠端桌面服務部署都有這些與遠端桌面工作階段主機 (RDSH) 共置的角色，這需要含有桌面體驗的伺服器；為了與 RDSH 一致，我們正在將這些角色變更為同樣需要含有桌面體驗的伺服器。 [核心安裝](../administration/server-core/what-is-server-core.md)中將不再提供 RDS 角色。 如果您需要[將這些角色部署成遠端桌面基礎結構的一部分](../remote/remote-desktop-services/rds-deploy-infrastructure.md)，您可以[在含有桌面體驗的 Windows Server 上安裝這些角色](../get-started/getting-started-with-server-with-desktop-experience.md)。 <br/><br/>這些角色也已包含在 Windows Server 2019 的桌面體驗安裝選項中。 |
+| [RemoteFX 3D 視訊卡 (vGPU)](../remote/remote-desktop-services/rds-remotefx-vgpu.md)|我們正在針對虛擬化環境開發新的圖形加速選項。 您也可以使用[離散裝置指派 (DDA)](../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md) 作為替代方法。 |
 
 ## <a name="features-were-no-longer-developing"></a>我們不再開發的功能
 

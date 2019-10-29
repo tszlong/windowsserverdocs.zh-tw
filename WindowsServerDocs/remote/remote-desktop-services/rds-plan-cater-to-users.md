@@ -13,18 +13,37 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: eaf242309dbdbd4716ea8f39e7ebcb1d9225b53a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c04909e9e0cfbf71b6632c154ac8b9b20b5bac10
+ms.sourcegitcommit: b4b0e73ce35f8b594eb467a2bb2aa91bd6d86369
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387328"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893081"
 ---
 # <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>遠端桌面服務 - 迎合不同類型的使用者
 
 >適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-根據各類使用者的預期需求調整您的部署。
-例如，使用者可能會在輕量型應用程式上執行資料輸入、使用 Office 等生產力應用程式來操作大型資料集，或使用高負載的工程或圖形應用程式。
+遠端桌面服務支援不同類型的工作負載。 根據各類使用者的預期需求調整您的部署。
 
-建議您同時以壓力測試和實際使用量模擬對部署進行負載測試。 請改變負載大小以避免意外狀況！ 請確定回應性符合使用者需求，且整個系統具復原能力。 請使用模擬工具 (如 LoginVSI) 建立負載測試，以確認部署的能力符合使用者需求。 
+## <a name="types-of-users"></a>使用者類型
+
+### <a name="knowledge-user"></a>[知識] 使用者
+
+知識使用者使用輕量型生產力應用程式，例如 Microsoft Word、Excel、Outlook 和 Microsoft Edge 瀏覽器。
+
+### <a name="professional-user"></a>[專業] 使用者
+
+專業使用者除了支援更密集的工作負載 (例如開發軟體和建立多媒體內容) 之外，還可以使用網際網路瀏覽器和生產力應用程式。
+
+### <a name="power-user"></a>[進階] 使用者
+
+進階使用者可以使用工程和圖形應用程式，例如電腦輔助設計 (CAD) 和 Adobe Photoshop 等。 對於經常使用圖形密集型程式進行影片轉譯、3D 設計和模擬的使用者而言，GPU 通常是不錯的選擇。
+
+如需深入了解圖形加速，請參閱[選擇您的圖形轉譯技術](rds-graphics-virtualization.md)。
+
+Azure 具有其他圖形加速部署選項和多個可用的 GPU VM 大小。 深入了解 [GPU 最佳化虛擬機器大小](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu)。
+
+## <a name="test-workload"></a>測試工作負載
+
+我們建議您同時進行壓力測試和實際使用情況模擬來負載測試部署。 您可以使用 LoginVSI 等的模擬工具來負載測試您的部署。 請確保系統的回應能力和彈性足以滿足使用者需求，並記得改變負載大小以避免發生意外。

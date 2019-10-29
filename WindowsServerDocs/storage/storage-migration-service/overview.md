@@ -1,25 +1,25 @@
 ---
 title: 儲存體遷移服務總覽
-description: 儲存空間移轉服務可讓您更輕鬆地將伺服器遷移至較新版本的 Windows Server。 其提供的圖形工具可清查伺服器上的資料，然後將資料和設定轉送至較新的伺服器 — 完全不需要應用程式或使用者變更任何項目。
+description: 儲存體遷移服務可讓您更輕鬆地將存放裝置遷移至 Windows Server 或 Azure。 它提供了一種圖形化工具，可清查 Windows 和 Linux 伺服器上的資料，然後將資料傳輸到較新的伺服器或 Azure 虛擬機器。 儲存體遷移服務也提供將伺服器身分識別傳送至目的地伺服器的選項，讓應用程式和使用者可以存取其資料，而不需要變更連結或路徑。
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 08/16/2019
+ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 022b0c3445c007960c490159f6580a702233ee41
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 712befacaf1d5bddd4f9bd993ce0d423b15cba36
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402978"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986454"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
->適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server （半年通道）
+>適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server （半年通道）
 
-儲存空間移轉服務可讓您更輕鬆地將伺服器遷移至較新版本的 Windows Server。 其提供的圖形工具可清查伺服器上的資料，然後將資料和設定轉送至較新的伺服器 — 完全不需要應用程式或使用者變更任何項目。
+儲存體遷移服務可讓您更輕鬆地將存放裝置遷移至 Windows Server 或 Azure。 它提供了一種圖形化工具，可清查 Windows 和 Linux 伺服器上的資料，然後將資料傳輸到較新的伺服器或 Azure 虛擬機器。 儲存體遷移服務也提供將伺服器身分識別傳送至目的地伺服器的選項，讓應用程式和使用者可以存取其資料，而不需要變更連結或路徑。
 
 本主題討論您想要使用儲存體遷移服務的原因、遷移程式的運作方式，以及來源和目的地伺服器的需求。
 
@@ -34,7 +34,7 @@ ms.locfileid: "71402978"
 
 ![此圖顯示儲存體遷移服務將檔案從來源伺服器遷移至目的地伺服器、Azure Vm 或 Azure 檔案同步的 & 設定。](media/overview/storage-migration-service-diagram.png)
 
-**圖 1:儲存體遷移服務的來源和目的地**
+**圖1：儲存體遷移服務的來源和目的地**
 
 ## <a name="how-the-migration-process-works"></a>遷移程式的運作方式
 
@@ -42,17 +42,17 @@ ms.locfileid: "71402978"
 
 1. **清查伺服器**以收集其檔案和設定的相關資訊（如 [圖 2] 所示）。
 2. 將資料從來源伺服器**傳輸（複製）** 到目的地伺服器。
-3. **切換到新的伺服器**（選擇性）。<br>目的地伺服器會假設來源伺服器先前的身分識別，讓應用程式和使用者不必變更任何專案。 <br>來源伺服器會進入維護狀態，其中仍包含它們一律具有的相同檔案（我們絕對不會移除來源伺服器中的檔案），但無法供使用者和應用程式使用。 然後您就可以方便地解除委任伺服器。
+3. **切換至新的伺服器**（選擇性）。<br>目的地伺服器會假設來源伺服器先前的身分識別，讓應用程式和使用者不必變更任何專案。 <br>來源伺服器會進入維護狀態，其中仍包含它們一律具有的相同檔案（我們絕對不會移除來源伺服器中的檔案），但無法供使用者和應用程式使用。 然後您就可以方便地解除委任伺服器。
 
-![螢幕擷取畫面：顯示已準備好要](media/migrate/inventory.png)
-掃描**的伺服器 [圖 2]儲存體遷移服務清查伺服器**
+![螢幕擷取畫面，顯示已準備好掃描的伺服器](media/migrate/inventory.png)
+**圖2：儲存體遷移服務清查伺服器**
 
 ## <a name="requirements"></a>需求
 
 若要使用儲存體遷移服務，您需要下列各項：
 
 - 用來遷移檔案和資料的**來源伺服器**或**容錯移轉**叢集
-- 執行 Windows Server 2019 （叢集或獨立）以遷移至的**目的地伺服器**。 Windows Server 2016 和 Windows Server 2012 R2 也可以運作，但速度大約是 50%
+- 執行 Windows Server 2019 （叢集或獨立）以遷移至的**目的地伺服器**。 Windows Server 2016 和 Windows Server 2012 R2 也可以運作，但速度大約是50%
 - 執行 Windows Server 2019 以管理遷移的**協調器伺服器**  <br>如果您只是要遷移少數伺服器，而且其中一部伺服器正在執行 Windows Server 2019，您可以使用它作為協調器。 如果您要遷移更多伺服器，建議使用個別的 orchestrator 伺服器。
 - 除非您偏好使用 PowerShell 來管理遷移，否則執行 **[Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)的電腦或伺服器**會執行儲存體遷移服務使用者介面。 Windows 管理中心和 Windows Server 2019 版本必須至少為1809版。
 
@@ -80,9 +80,9 @@ ms.locfileid: "71402978"
 來源伺服器必須執行下列其中一個作業系統：
 
 - Windows Server 半年通道
-- Windows Server Standard 2012 R2
-- Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2019
+- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
@@ -96,7 +96,7 @@ ms.locfileid: "71402978"
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 
-注意：Windows Small Business Server 和 Windows Server Essentials 是網域控制站。 儲存體遷移服務無法從網域控制站進行切換，但可以清查和傳輸檔案。   
+注意： Windows Small Business Server 和 Windows Server Essentials 是網域控制站。 儲存體遷移服務無法從網域控制站進行切換，但可以清查和傳輸檔案。   
 
 如果協調器執行的是 Windows Server、1903版或更新版本，或如果協調器執行舊版的 Windows Server 並安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ，您可以遷移下列其他來源類型：
 
@@ -114,9 +114,9 @@ ms.locfileid: "71402978"
 目的地伺服器必須執行下列其中一個作業系統：
 
 - Windows Server 半年通道
-- Windows Server Standard 2012 R2
-- Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2019
+- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2012 R2
 
 > [!TIP]
 > 執行 Windows Server 2019 或 Windows Server、半年通道或更新版本的目的地伺服器，具有舊版 Windows Server 的兩倍傳輸效能。 這種效能提升的原因是包含內建的儲存體遷移服務 proxy 服務，這也會開啟必要的防火牆埠（如果尚未開啟）。
@@ -131,7 +131,7 @@ ms.locfileid: "71402978"
 - 使用 Azure 檔案同步，更輕鬆地同步已遷移至 Azure 的共用
 - 遷移新的網路，例如 Azure
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [使用儲存體遷移服務遷移檔案伺服器](migrate-data.md)
 - [儲存體遷移服務常見問題（FAQ）](faq.md)

@@ -8,16 +8,17 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 686fd2ed5969d191240bbd726f1d759e9974f08a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70014c04bbb4425fe3c3fd0379f10cf00abe00ee
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386676"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986439"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>建立 Windows 受防護的 VM 範本磁片
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2019
+
 
 如同一般 Vm，您可以建立 VM 範本（例如， [Virtual Machine Manager （VMM）中的 vm 範本](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-library-add-vm-templates)），讓租使用者和系統管理員可以輕鬆地使用範本磁片在網狀架構上部署新的 vm。 由於受防護的 Vm 是安全性敏感的資產，因此有額外的步驟可建立支援防護的 VM 範本。 本主題涵蓋在 VMM 中建立受防護的範本磁片和 VM 範本的步驟。
 
@@ -27,13 +28,13 @@ ms.locfileid: "71386676"
 
 首先準備一個 OS 磁片，然後再透過受防護的範本磁片建立嚮導來執行。 此磁片將用來做為租使用者 Vm 中的 OS 磁片。 您可以使用任何現有的工具來建立此磁片，例如 Microsoft 桌面映射 Service Manager （DISM），或手動設定具有空白 VHDX 的 VM，並將 OS 安裝到該磁片。 設定磁片時，必須遵守下列專屬於第2代和/或受防護 Vm 的需求： 
 
-| VHDX 的需求 | `Reason` |
+| VHDX 的需求 | 原因 |
 |-----------|----|
 |必須是 GUID 磁碟分割表格（GPT）磁片 | 第2代虛擬機器需要支援 UEFI|
 |磁片類型必須是 [**基本**]，而不是 [**動態**]。 <br>注意：這是指邏輯磁片類型，而不是 Hyper-v 所支援的「動態擴充」 VHDX 功能。 | BitLocker 不支援動態磁碟。|
 |磁片至少有兩個磁碟分割。 一個磁碟分割必須包含安裝 Windows 的磁片磁碟機。 這是 BitLocker 將加密的磁片磁碟機。 另一個磁碟分割是作用中的磁碟分割，其中包含開機載入器，並且會保持未加密狀態，讓電腦可以啟動。|BitLocker 所需|
 |檔案系統為 NTFS | BitLocker 所需|
-|安裝在 VHDX 上的作業系統是下列其中一項：<br>-Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 需要支援第2代虛擬機器和 Microsoft 安全開機範本|
+|安裝在 VHDX 上的作業系統是下列其中一項：<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 需要支援第2代虛擬機器和 Microsoft 安全開機範本|
 |作業系統必須一般化（執行 sysprep.inf） | 範本布建牽涉到將 Vm 專門用於特定租使用者的工作負載| 
 
 > [!NOTE]
@@ -50,7 +51,7 @@ ms.locfileid: "71386676"
 > [!NOTE]
 > 範本磁片 wizard 會修改您指定的範本磁片。 在執行 wizard 之後，您可能會想要建立未受保護的 VHDX 複本，稍後再更新磁片。 您將無法修改已使用「範本磁片」 wizard 保護的磁片。
 
-在執行 Windows Server 2016 （不需要是受防護主機或 VMM 伺服器）的電腦上執行下列步驟：
+在執行 Windows Server 2016、Windows 10 （已安裝遠端伺服器管理工具、RSAT）或更新版本（不需要是受防護主機或 VMM 伺服器）的電腦上執行下列步驟：
 
 1. 將 [[準備作業系統 VHDX](#prepare-an-operating-system-vhdx) ] 中建立的一般化 VHDX 複製到伺服器（如果尚未加入）。
 
@@ -92,7 +93,7 @@ ms.locfileid: "71386676"
 
 如果您使用 VMM，在建立範本磁片之後，您需要將它複製到 VMM 程式庫共用，讓主機可以在布建新的 Vm 時下載並使用該磁片。 請使用下列程式將範本磁碟複製到 VMM 程式庫，然後重新整理程式庫。
 
-1. 將 VHDX 檔案複製到 VMM 程式庫共用資料夾。 如果您使用預設 VMM 設定，請將範本磁碟複製到 _\\ @ no__t-2\MSSCVMMLibrary\VHDs_。
+1. 將 VHDX 檔案複製到 VMM 程式庫共用資料夾。 如果您使用預設 VMM 設定，請將範本磁碟複製到 _\\<vmmserver>\MSSCVMMLibrary\VHDs_。
 
 2. 重新整理程式庫伺服器。 開啟 [連結**庫**] 工作區，展開 [連結**庫伺服器**]，在您想要重新整理的程式庫伺服器**上按一下滑鼠**右鍵，然後按一下 [重新整理]。
 
@@ -100,7 +101,7 @@ ms.locfileid: "71386676"
 
     a. 在 [連結**庫**] 工作區的程式庫伺服器上，尋找新匯入的範本磁片。
 
-    b. 以滑鼠右鍵按一下磁片，然後按一下 [**屬性**]。
+    b。 以滑鼠右鍵按一下磁片，然後按一下 [**屬性**]。
 
     c. 在 [**作業系統**] 中，展開清單並選取安裝在磁片上的作業系統。 選取作業系統會向 VMM 指出 VHDX 不是空白。
 
@@ -135,7 +136,8 @@ ms.locfileid: "71386676"
 
 ## <a name="prepare-and-protect-the-vhdx-using-powershell"></a>使用 PowerShell 來準備和保護 VHDX
 
-除了執行「範本磁片」 Wizard 以外，您還可以將您的範本磁片和憑證複製到執行 RSAT 的電腦，並 [Protect-TemplateDisk @ no__t-1 來起始簽署程式。
+除了執行「範本磁片」 Wizard 以外，您還可以將您的範本磁片和憑證複製到執行 RSAT 的電腦，並執行 TemplateDisk 來起始簽署[程式](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
+)。
 下列範例會使用_TemplateName_和_version_參數所指定的名稱和版本資訊。
 您提供給 `-Path` 參數的 VHDX 將會以更新的範本磁片覆寫，因此請務必在執行命令之前複製複本。
 
@@ -165,7 +167,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [建立防護資料檔案](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

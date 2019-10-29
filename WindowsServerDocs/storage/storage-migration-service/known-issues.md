@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 830a2d99443938c25625211f590984819a20d566
-ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
+ms.openlocfilehash: 597bcbe647bca3595dc8251ce4d6bf52265d8731
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690445"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986427"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -133,7 +133,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
   記錄名稱： StorageMigrationService-Proxy/Debug 來源： Microsoft-Windows-StorageMigrationService-Proxy 日期： 2/26/2019 9:00:04 AM 事件識別碼：10000工作類別：無層級：錯誤關鍵字：      
   使用者：網路服務電腦： srv1.contoso.com 描述：
 
-  02/26/2019-09：00： 04.860 [Error] 傳送 \\srv1 的傳輸錯誤。 com\public\indy.png：（5）存取被拒。
+  02/26/2019-09：00： 04.860 [Error] \\srv1 的傳輸錯誤。 com\public\indy.png：（5）存取被拒。
 堆疊追蹤：在 StorageMigration. FileDirUtils. OpenFile （String fileName，DesiredAccess desiredAccess，ShareMode shareMode，CreationDisposition creationDisposition，FlagsAndAttributes flagsAndAttributes），位於StorageMigration. FileDirUtils. GetTargetFile （String path），網址為： FileDirUtils （GetTargetFile 檔案），網址為. FileInfo. StorageMigration。FileTransfer. InitializeSourceFileInfo （），位於 Microsoft. StorageMigration. Proxy. FileTransfer. transfer. StorageMigration （），位於StorageMigration. FileTransfer. TryTransfer （） [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs：： TryTransfer：： 55]
 
 
@@ -287,7 +287,25 @@ DFSR Debug 記錄檔：
    
 2.  啟動儲存體遷移服務服務，這會建立新的資料庫。
 
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>錯誤「CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 無法針對網路伺服器資源進行故障」，而 Windows Server 2008 R2 叢集轉換失敗
 
+嘗試在 Windows Server 2008 R2 叢集來源上執行剪下時，切換會停滯在階段「重新命名來源電腦 ...」而且您會收到下列錯誤：
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          10/17/2019 6:44:48 PM
+    Event ID:      10000
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      WIN-RNS0D0PMPJH.contoso.com
+    Description:
+    10/17/2019-18:44:48.727 [Erro] Exception error: 0x1. Message: Control code CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO failed against netName resource 2008r2FS., stackTrace:    at Microsoft.FailoverClusters.Framework.ClusterUtils.NetnameRepairVCO(SafeClusterResourceHandle netNameResourceHandle, String netName)
+       at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
+       at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
+
+這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後變更目的地叢集網路名稱和 IP，以手動執行切換要與原始來源相符的位址。 
 
 ## <a name="see-also"></a>請參閱
 
