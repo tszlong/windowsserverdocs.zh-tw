@@ -20,9 +20,9 @@
 ##### [宣告轉換規則語言](solution-guides/Claims-Transformation-Rules-Language.md)
 #### [附錄 A：動態存取控制詞彙](solution-guides/appendix-A--Dynamic-Access-Control-Glossary.md)
 #### [附錄 B：設定測試環境](solution-guides/appendix-B--Setting-Up-the-Test-Environment.md)
+### [在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務](solution-guides/certificate-enrollment-certificate-key-based-renewal.md)
 
-
-## [Active Directory 網域服務](ad-ds/active-directory-Domain-Services.md)
+## [Active Directory Domain Services](ad-ds/active-directory-Domain-Services.md)
 
 ### [Active Directory 網域服務的新功能](whats-new-active-directory-domain-services.md)
 
