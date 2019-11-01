@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 597bcbe647bca3595dc8251ce4d6bf52265d8731
-ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
+ms.openlocfilehash: 5889ae43c4b572ae75c8df10d0c47fc21337d558
+ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72986427"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73413263"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -270,7 +270,7 @@ DFSR Debug 記錄檔：
 1.  開啟提升許可權的 cmd 提示字元，其中您是儲存體遷移服務 orchestrator 伺服器上的系統管理員成員，並執行：
 
      ```
-     TAKEOWN /d /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
+     TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
      
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
 

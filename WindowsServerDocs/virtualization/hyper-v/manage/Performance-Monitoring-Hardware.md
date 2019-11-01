@@ -8,12 +8,12 @@ ms.author: ifufondu
 manager: chhuybre
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: 6938739d7c8efdf60c859d2d5ea5bc63246ae4fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 515831df6b97271b52c4a715fd979f2afff4a3a1
+ms.sourcegitcommit: f73662069329b1abf6aa950c2a826bc113718857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364105"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73240349"
 ---
 # <a name="enable-intel-performance-monitoring-hardware-in-a-hyper-v-virtual-machine"></a>啟用 Hyper-v 虛擬機器中的 Intel 效能監視硬體
 
@@ -23,31 +23,43 @@ Intel 處理器包含統稱為效能監視硬體的功能（例如 PMU、PEBS、
 
 若要在虛擬機器中啟用效能監視硬體，您需要：
 
-- 具有效能監控硬體的 Intel 處理器（亦即 PMU、PEBS、IPT）
+- 具有效能監控硬體的 Intel 處理器（亦即 PMU、PEBS、LBR）。  請參閱 Intel 的[這份檔]( https://software.intel.com/en-us/vtune-amplifier-cookbook-configuring-a-hyper-v-virtual-machine-for-hardware-based-hotspots-analysis)，以判斷您的系統支援哪些效能監視硬體。
 - Windows Server 2019 或 Windows 10 版本1809（10月2018更新）或更新版本
 - _沒有_[嵌套虛擬化](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)也處於已停止狀態的 hyper-v 虛擬機器
- 
+
+若要在虛擬機器中啟用即將推出的 Intel 處理器追蹤（IPT）效能監視硬體，您將需要：
+
+- 支援 IPT 和 PT2GPA 功能的 Intel 處理器。  請參閱 Intel 的[這份檔]( https://software.intel.com/en-us/vtune-amplifier-cookbook-configuring-a-hyper-v-virtual-machine-for-hardware-based-hotspots-analysis)，以判斷您的系統支援哪些效能監視硬體。
+- Windows Server 1903 版（SAC）或 Windows 10 1903 版（可能為2019更新）或更新版本
+- _沒有_[嵌套虛擬化](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)也處於已停止狀態的 hyper-v 虛擬機器
+
 ## <a name="enabling-performance-monitoring-components-in-a-virtual-machine"></a>在虛擬機器中啟用效能監視元件
 
-若要為特定來賓虛擬機器啟用不同的效能監視元件，請`Set-VMProcessor`使用 PowerShell Cmdlet：
- 
+若要為特定來賓虛擬機器啟用不同的效能監視元件，請使用 `Set-VMProcessor` PowerShell Cmdlet，並以系統管理員身分執行：
+
 ``` Powershell
-# Enable all components
+# Enable all components except IPT
 Set-VMProcessor MyVMName -Perfmon @("pmu", "lbr", "pebs")
 ```
- 
+
 ``` Powershell
 # Enable a specific component
 Set-VMProcessor MyVMName -Perfmon @("pmu")
 ```
- 
+
+``` Powershell
+# Enable IPT 
+Set-VMProcessor MyVMName -Perfmon @("ipt")
+```
+
 ``` Powershell
 # Disable all components
 Set-VMProcessor MyVMName -Perfmon @()
 ```
 > [!NOTE]
-> 啟用效能監視元件時，如果`"pebs"`指定，則`"pmu"`必須指定。  此外，若要啟用不受主機實體處理器支援的元件，將會導致虛擬機器啟動失敗。
- 
+> 啟用效能監視元件時，如果指定 `"pebs"`，則也必須指定 `"pmu"`。 只有 PMU 版本 > = 4 的硬體才支援 PEBS。 啟用不受主機實體處理器支援的元件會導致虛擬機器啟動失敗。
+
 ## <a name="effects-of-enabling-performance-monitoring-hardware-on-saverestore-export-and-live-migration"></a>在儲存/還原、匯出和即時移轉時啟用效能監視硬體的效果
- 
+
 Microsoft 不建議在具有不同 Intel 硬體的系統之間，即時移轉或儲存/還原具有效能監控硬體的虛擬機器。 效能監控硬體的特定行為通常不會在 Intel 硬體系統之間進行架構和變更。  在不同的系統之間移動執行中的虛擬機器，可能會導致非架構計數器的無法預期行為。
+
