@@ -8,21 +8,21 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: f4e772550aaba6fe9a4f78a6032eaabde4aeb0bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406868"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567093"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑難排解
 
-> 適用於：Windows Admin Center、Windows Admin Center 預覽版
+> 適用于： Windows 系統管理中心、Windows 系統管理中心預覽
 
 > [!Important]
-> 此指南將協助您診斷並解決讓您無法使用 Windows Admin Center 的問題。 如果您的特定工具發生問題，請檢查您是否遇到了[已知問題。](http://aka.ms/wacknownissues)
+> 此指南將協助您診斷並解決讓您無法使用 Windows Admin Center 的問題。 如果您的特定工具發生問題，請檢查您是否遇到了[已知問題。](https://aka.ms/wacknownissues)
 
-## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>安裝程式失敗，訊息為： **_無法載入模組 ' LocalAccounts '。_**
+## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>安裝程式失敗並出現訊息： **_無法載入模組 ' LocalAccounts '。_**
 
 如果您的預設 PowerShell 模組路徑已修改或移除，就會發生這種情況。 若要解決此問題，請確定 ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` 是 PSModulePath 環境變數中的**第一個**專案。 您可以使用下列 PowerShell 行來達到此目的：
 
@@ -34,7 +34,7 @@ ms.locfileid: "71406868"
 
 ### <a name="if-youve-installed-windows-admin-center-as-an-app-on-windows-10"></a>如果您已將 Windows Admin Center 安裝為 **Windows 10 上的應用程式**
 
-* 請檢查以確定 Windows Admin Center 正在執行中。 在 [工作管理員] 中，于系統匣或**Windows Admin Center Desktop/SmeDesktop**中尋找 ![](../media/trayIcon.PNG) 的 Windows 系統管理中心圖示。 如果找不到，請從 [開始] 功能表啟動 **\[Windows Admin Center\]** 。
+* 請檢查以確定 Windows Admin Center 正在執行中。 在 [工作管理員] 的 [系統匣] 或 [ **Windows 管理中心 Desktop/SmeDesktop** ] 中，尋找 [Windows admin center] 圖示 ![](../media/trayIcon.PNG)。 如果找不到，請從 [開始] 功能表啟動 **\[Windows Admin Center\]** 。
 
 > [!NOTE] 
 > 重新啟動之後，您必須從 [開始] 功能表啟動 Windows Admin Center。  
@@ -53,12 +53,6 @@ ms.locfileid: "71406868"
 
 ### <a name="if-youve-installed-windows-admin-center-as-a-gateway-on-windows-server"></a>如果您已將 Windows Admin Center 安裝為 **Windows Server 上的閘道**
 
-* 您是否從舊版的 Windows 管理中心升級？ 請檢查並確定防火牆規則並未因為[此已知問題](known-issues.md#upgrade)而刪除。 請使用下列 PowerShell 命令來判斷規則是否存在。 如果沒有，請遵循[這些指示](known-issues.md#upgrade)來重新建立它。
-    
-    ```powershell
-    Get-NetFirewallRule -DisplayName "SmeInboundOpenException"
-    ```
-
 * 請為用戶端和伺服器[檢查 Windows 版本](#check-the-windows-version)。
 
 * 確定您用來做為網頁瀏覽器的是 Microsoft Edge 或 Google Chrome。
@@ -66,7 +60,7 @@ ms.locfileid: "71406868"
 * 在伺服器上，開啟 [工作管理員] [> 服務]，並確定 [ **ServerManagementGateway/Windows 管理中心**] 正在執行。
 ![](../media/Service-TaskMan.PNG)
 
-* 測試閘道的網路連線（以您部署中的資訊取代 @no__t 0values >）
+* 測試閘道的網路連線（以部署中的資訊取代 > \<值）
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
@@ -111,11 +105,11 @@ EnableHttp2Tls=dword:00000000
 
 ## <a name="i-can-connect-to-some-servers-but-not-others"></a>我可以連線到一些伺服器，但連線至其他則不行
 
-* 在本機登入閘道電腦，並嘗試在 PowerShell 中 ```Enter-PSSession <machine name>```，以您嘗試在 Windows 系統管理中心中管理的機器名稱取代 @no__t 1machine 名稱 >。 
+* 在本機登入閘道電腦，並嘗試在 PowerShell 中 ```Enter-PSSession <machine name>```，以您嘗試在 Windows 系統管理中心中管理的機器名稱取代 \<的電腦名稱稱 >。 
 
 * 如果您的環境使用工作群組而不使用網域，請參閱[在工作群組中使用 Windows Admin Center](#using-windows-admin-center-in-a-workgroup)。
 
-* **使用本機系統管理員帳戶：** 如果您使用的本機使用者帳戶不是內建的系統管理員帳戶，您必須在 PowerShell 中執行下列命令，或在目的電腦上以系統管理員身分在命令提示字元中，在目的電腦上啟用此原則：
+* **使用本機系統管理員帳戶：** 如果您正在使用的本機使用者帳戶不是內建的 Administrator 帳戶，則必須以目標電腦的系統管理員身分在 PowerShell 或命令提示字元中執行下列命令，以啟用目標電腦上的原則：
 
     ```
     REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
@@ -197,14 +191,14 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure 功能無法在 Edge 中正常運作
 
-Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，這些問題會影響 Windows 管理中心的 Azure 登入。 如果您在使用 Edge 時遇到使用 Azure 功能的問題，請嘗試在用戶端瀏覽器上新增 https://login.microsoftonline.com 、 https://login.live.com 和閘道的 URL 做為信任的網站，以及允許的邊緣快顯封鎖程式設定的網站。 
+Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，這些問題會影響 Windows 管理中心的 Azure 登入。 如果您在使用 Edge 時遇到使用 Azure 功能的問題，請嘗試將閘道的 https://login.microsoftonline.com 、 https://login.live.com 和 URL 新增為信任的網站，並在用戶端瀏覽器上加入允許的邊緣快顯封鎖程式設定的網站。 
 
-請這樣做：
+做法如下：
 1. 在 Windows [開始] 功能表中搜尋 [**網際網路選項**]
 2. 移至 [**安全性**] 索引標籤
-3. 在 [**信任的網站**] 選項底下，按一下 [**網站**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
+3. 在 [**信任的網站**] 選項底下，按一下 [**網站**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
 4. 前往 [**隱私權**] 索引標籤
-5. 在 [快顯封鎖**程式**] 區段下，按一下 [**設定**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
+5. 在 [快顯封鎖**程式**] 區段下，按一下 [**設定**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>遇到與 Azure 相關的功能有問題嗎？
 
