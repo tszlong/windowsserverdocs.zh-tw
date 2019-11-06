@@ -27,6 +27,7 @@
 ## 用法
 ### [入門](use/get-started.md)
 ### [管理伺服器](use/manage-servers.md)
+### [部署超融合式基礎結構](use/deploy-hyperconverged-infrastructure.md)
 ### [管理超融合式基礎結構](use/manage-hyper-converged.md)
 ### [管理容錯移轉叢集](use/manage-failover-clusters.md)
 ### [管理 Hyper-V 虛擬機器](use/manage-virtual-machines.md)
