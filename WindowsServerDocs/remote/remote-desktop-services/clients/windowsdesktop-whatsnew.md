@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4325bd7b33c16d972cac980e17c10bacbfeffd8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387595"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567063"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -31,7 +31,25 @@ ms.locfileid: "71387595"
 |使用者群組 |版本  |
 |-----------|---------|
 |Public     |1.2.247  |
-|測試人員    |1.2.247  |
+|測試人員    |1.2.428  |
+
+## <a name="updates-for-version-12428"></a>1\.2.428 版的更新
+
+*發行日期：2019/10/31*
+
+- 現已推出 32 位元和 ARM64 版本的用戶端預覽！
+- 現在，用戶端會儲存您對連線列所做的任何變更 (例如其位置、大小和釘選狀態)，並將這些變更套用至工作階段。
+- 更新的閘道資訊和連線狀態對話方塊。
+- 已解決在 Azure Active Directory 權杖過期之後嘗試連線時，同時提示兩個認證的問題。
+- 在 Windows 7 上，如果使用者在伺服器不允許其儲存認證時已儲存認證，則系統會正確提示他們認證。
+- 重新連線時，Azure Active Directory 提示現在會出現在連線視窗的前方。
+- 釘選到工作列的項目現在會在摘要重新整理期間更新。
+- 改善使用觸控時在連線中心的捲動功能。
+- 從解決方法下拉式功能表中移除空白行。
+- 已從 Windows 認證管理員中移除不必要的項目。
+- 結束全螢幕時，桌面工作階段會適當調整大小。
+- 當您在進入睡眠模式後恢復工作階段時，[RemoteApp 中斷連線] 對話方塊現在會在前景中顯示。
+- 已解決協助工具問題，例如鍵盤瀏覽。
 
 ## <a name="updates-for-version-12247"></a>1\.2.247 版的更新
 

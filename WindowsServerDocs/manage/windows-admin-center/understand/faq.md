@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server
-ms.openlocfilehash: 74d886246eb9d27264c0b8653f90f2eed86b891c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e443616b4fcae3e84cfd00b3c20a4ebbf72749ea
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406824"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567121"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常見問題集
 
@@ -143,7 +143,7 @@ Windows Admin Center 與 SCVMM 相輔相成；Windows Admin Center 主要用來�
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-* 如果您是 IT 系統管理員，但無法經常進行更新，或是需要較長時間驗證用於生產的版本時，此版本正合您需要。 我們目前已正式推出 (GA) 的版本是 Windows Admin Center 1904。
+* 如果您是 IT 系統管理員，但無法經常進行更新，或是需要較長時間驗證用於生產的版本時，此版本正合您需要。 我們目前已正式推出 (GA) 的版本是 Windows Admin Center 1910。
 * [!INCLUDE [support-policy](../includes/support-policy.md)]
 * 若要取得最新的版本，請[從這裡下載](https://aka.ms/WACDownload)。
 

@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 961d636fb59b33d0c562ec25d13174abbe766606
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404076"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567169"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>開始使用 Windows 桌面用戶端
 
@@ -33,13 +33,15 @@ ms.locfileid: "71404076"
 
 ## <a name="install-the-client"></a>安裝用戶端
 
-您目前可下載適用於 Windows 64 位元的用戶端。 當用戶端可供更多 Windows 版本使用時，我們就會更新此清單。
+選擇符合您 Windows 版本的用戶端：
 
-- [Windows 64 位元用戶端](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Windows 32 位元預覽](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Windows ARM64 預覽](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 您可以為目前使用者安裝用戶端，這不需要系統管理員權限，或者您的系統管理員可以安裝和設定用戶端，讓裝置上的所有使用者都可以存取它。
 
-安裝用戶端之後，您可藉由搜尋 [遠端桌面]  ，從 [開始] 功能表啟動用戶端。
+一旦安裝用戶端之後，您可藉由搜尋 [遠端桌面]  ，從 [開始] 功能表啟動用戶端。
 
 ## <a name="update-the-client"></a>更新用戶端
 
@@ -109,7 +111,7 @@ ms.locfileid: "71404076"
 
 除非關閉 [使用預設設定]  選項，否則用戶端將會使用系統管理員所設定的設定。 這麼做可讓您設定下列選項：
 
-- **使用所有監視器**會在使用所有可用的本機監視器和僅使用一個監視器時切換桌面工作階段。
+- **使用所有監視器**可在使用所有可用的本機監視器和只使用一個監視器之間切換桌面工作階段。
 - **以全螢幕方式啟動**會決定工作階段是以全螢幕或視窗模式啟動。 使用所有監視器時，會自動啟用此設定。
 - **更新調整大小的解析度**會在以視窗模式調整工作階段大小時變更其行為。 若已啟用，則遠端桌面的解析度會更新，以符合本機視窗的大小。 若已停用，則工作階段會在整個持續時間保留 [解析度]  中所指定的解析度。 使用所有監視器時，會自動啟用此設定。
 - **解析度**可讓您指定遠端桌面的解析度。 工作階段會在整個持續時間保留此解析度。 如果解析度設定為在調整大小時更新，則會自動停用此設定。

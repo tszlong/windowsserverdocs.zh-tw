@@ -10,14 +10,14 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 175c4dbd23bac1822365ce80f05d69509d27321c
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 54352f47a31826b91b5696eb90104ca166a4299d
+ms.sourcegitcommit: 18f6b104e73e0397009283d55bee7984ac7ef0d1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935027"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73632656"
 ---
-## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>在包含桌面體驗的 Windows Server 2016 上停用系統服務的指引
+# <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>在包含桌面體驗的 Windows Server 2016 上停用系統服務的指引
 
 適用於：Windows Server 2016
 
@@ -47,7 +47,7 @@ Microsoft 建議客戶在包含桌面體驗的 Windows Server 2016 上停用下�
 
 (您也可以檢視附加的 Microsoft Excel 試算表，來存取本文詳述之所有服務的相關資訊：[在包含桌面體驗的 Windows Server 2016 上停用系統服務的指引](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx) \(英文\))
 
-<br />
+
 
 ### <a name="disabling-services-not-installed-by-default"></a>停用預設未安裝的服務
 
@@ -57,10 +57,10 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 -  停用非預設 Windows 服務 (例如 W3SVC) 的基準或效能評定，將為一些稽核員給予該技術 (例如 IIS) 原本就不安全且不應使用的錯誤印象。
 -  如果從未安裝功能 (和服務)，這只會大規模新增不必要的基準和驗證工作。
 
-<br />
+
 針對本文件列出的所有系統服務，下列這兩個表格均提供在包含桌面體驗的 Windows Server 2016 中啟用和停用系統服務的欄及 Microsoft 建議的說明： 
 
-<br />
+
 
 ### <a name="explanation-of-columns"></a>欄說明
 
@@ -68,12 +68,12 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |---|---|
 |**服務描述**|   服務的描述 (來自 sc.exe qdescription)。|
 |**名稱** |服務的金鑰 (內部) 名稱|
-|**安裝** |必須安裝：服務位於 Server Core 及包含桌面體驗的伺服器上  <br /> 僅包含桌面體驗：服務位於包含桌面體驗的 Windows Server 2016 上，但***不***在 Server Core 上 |
+|**安裝** |必須安裝：服務位於 Server Core 及包含桌面體驗的伺服器上。 僅包含桌面體驗：服務位於包含桌面體驗的 Windows Server 2016 上，但***不***在 Server Core 上 |
 |**StartType**  |Windows Server 2016 上的服務啟動類型|
 |**建議** |Microsoft 建議/通知在管理完善的典型企業部署中，在未將伺服器用來作為終端使用者桌面取代項目的情況下，於 Windows Server 2016 上停用此服務。|
 |**註解** |其他說明|
 
-<br />
+
 
 ### <a name="explanation-of-microsoft-recommendations"></a>Microsoft 建議的說明
 
@@ -84,11 +84,11 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |**已經停用**|  此服務預設會停用；不需透過原則強制執行|
 |**應該停用** |永遠都不應在管理完善的企業系統上啟用此服務。|
 
-<br />
+
 
 下列表格提供在包含桌面體驗的 Windows Server 2016 上停用系統服務的 Microsoft 指引：
 
-<br />
+
 
 ##  <a name="activex-installer-axinstsv"></a>ActiveX 安裝程式 (AxInstSV)
 
@@ -102,7 +102,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   如果不需要功能，則確定停用 |
 
 
-<br />
+
 
 ## <a name="alljoyn-router-service"></a>AllJoyn 路由器服務   
 
@@ -116,7 +116,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |       |
 | | |
 
-<br />
+
 
 ## <a name="app-readiness"></a>應用程式整備
 
@@ -130,7 +130,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 **註解**    |   
 | | |
 
-<br />
+
 
 ##  <a name="application-identity"></a>應用程式識別碼
 
@@ -144,7 +144,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 **註解**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-information"></a>應用程式資訊 
 
@@ -158,7 +158,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   支援與 UAC 相同的桌面提高權限
 |||     
 
-<br />
+
 
 ##  <a name="application-layer-gateway-service"></a>應用程式層閘道服務       
 
@@ -172,7 +172,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-management"></a>應用程式管理      
 
@@ -186,7 +186,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="appx-deployment-service-appxsvc"></a>AppX 部署服務 (AppXSVC)       
 
@@ -200,7 +200,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="auto-time-zone-updater"></a>自動時區更新程式           
 
@@ -214,7 +214,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="background-intelligent-transfer-service"></a>背景智慧型傳送服務          
 
@@ -228,7 +228,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="background-tasks-infrastructure-service"></a>背景工作基礎結構服務      
@@ -243,7 +243,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="base-filtering-engine"></a>基礎篩選引擎            
 
@@ -257,7 +257,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="bluetooth-support-service"></a>藍芽支援服務            
 
@@ -271,7 +271,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   若未用到，則確定停用。 另一個停用機制： https://technet.microsoft.com/library/dd252791.aspx
 |||         
 
-<br />          
+
 
 
 ## <a name="cdpusersvc"></a>CDPUserSvc           
@@ -286,7 +286,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   使用者服務範本
 |||         
 
-<br />          
+
 
 
 ##  <a name="certificate-propagation"></a>憑證傳播     
@@ -301,7 +301,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="client-license-service-clipsvc"></a>用戶端授權服務 (ClipSVC)        
 
@@ -315,7 +315,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cng-key-isolation"></a>CNG 金鑰隔離
 
@@ -329,7 +329,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-event-system"></a>COM+ 事件系統       
 
@@ -343,7 +343,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-system-application"></a>COM+ 系統應用程式     
 
@@ -357,7 +357,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="computer-browser"></a>電腦瀏覽器        
 
@@ -371,7 +371,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-devices-platform-service"></a>已連線的裝置平台服務       
 
@@ -385,7 +385,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-user-experiences-and-telemetry"></a>已連線使用者體驗與遙測     
 
@@ -399,7 +399,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="contact-data"></a>連絡人資料        
 
@@ -413,7 +413,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   使用者服務範本
 |||         
 
-<br />          
+
 
 ## <a name="coremessaging"></a>CoreMessaging            
 
@@ -427,7 +427,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="credential-manager"></a>認證管理員           
 
@@ -441,7 +441,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cryptographic-services"></a>密碼編譯服務           
 
@@ -455,7 +455,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="data-sharing-service"></a>資料共用服務         
 
@@ -469,7 +469,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="datacollectionpublishingservice"></a>DataCollectionPublishingService          
 
@@ -483,7 +483,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dcom-server-process-launcher"></a>DCOM 伺服器處理序啟動器         
 
@@ -497,7 +497,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-association-service"></a>裝置關聯服務      
 
@@ -511,7 +511,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-install-service"></a>裝置安裝服務
 
@@ -525,7 +525,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |
 |||
 
-<br />          
+
 
 ##  <a name="device-management-enrollment-service"></a>裝置管理註冊服務        
 
@@ -539,7 +539,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="device-setup-manager"></a>裝置設定管理員         
 
@@ -553,7 +553,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="devquery-background-discovery-broker"></a>DevQuery 背景探索代理人         
 
@@ -567,7 +567,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dhcp-client"></a>DHCP 用戶端          
 
@@ -581,7 +581,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-policy-service"></a>診斷原則服務            
 
@@ -595,7 +595,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="diagnostic-service-host"></a>診斷服務裝載     
 
@@ -609,7 +609,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-system-host"></a>診斷系統裝載           
 
@@ -623,7 +623,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-link-tracking-client"></a>散佈式連結追蹤用戶端            
 
@@ -637,7 +637,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-transaction-coordinator"></a>分散式交易協調器     
 
@@ -651,7 +651,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="dmwappushsvc"></a>dmwappushsvc        
 
@@ -665,7 +665,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   用戶端裝置上需要針對 Intune、MDM 和類似管理技術，以及針對統一寫入篩選器使用的服務。 不需針對伺服器使用。
 |||         
 
-<br />      
+
 
 ##  <a name="dns-client"></a>DNS 用戶端      
 
@@ -679,7 +679,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="downloaded-maps-manager"></a>已下載的地圖管理員     
 
@@ -693,7 +693,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   停用中斷依賴服務的應用程式；如果應用程式未依賴它，則確定停用
 |||         
 
-<br />          
+
 
 ## <a name="embedded-mode"></a>內嵌模式            
 
@@ -707,7 +707,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="encrypting-file-system-efs"></a>加密檔案系統 (EFS)
 
@@ -721,7 +721,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**   |
 |||                 
 
-<br />  
+
 
 ## <a name="enterprise-app-management-service"></a>企業應用程式管理服務            
 
@@ -735,7 +735,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="extensible-authentication-protocol"></a>可延伸的驗證通訊協定           
 
@@ -749,7 +749,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-provider-host"></a>功能探索提供者裝載         
 
@@ -763,7 +763,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-resource-publication"></a>功能探索資源發佈      
 
@@ -777,7 +777,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="geolocation-service"></a>地理位置服務          
 
@@ -791,7 +791,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   停用中斷依賴服務的應用程式；如果應用程式未依賴它，則確定停用
 |||         
 
-<br />          
+
 
 ##  <a name="group-policy-client"></a>群組原則用戶端     
 
@@ -805,7 +805,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="human-interface-device-service"></a>人性化介面裝置服務           
@@ -820,7 +820,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="hv-host-service"></a>HV 主機服務     
 
@@ -834,7 +834,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   適用於客體 VM 的效能加強程式。 除了明確填入 VM 之外，目前並未使用，但將用於應用程式防護
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-data-exchange-service"></a>Hyper-V 資料交換服務        
 
@@ -848,7 +848,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||         
 
-<br />      
+
 
 ## <a name="hyper-v-guest-service-interface"></a>Hyper-V 客體服務介面          
 
@@ -862,7 +862,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||         
 
-<br />  
+
 
 ## <a name="hyper-v-guest-shutdown-service"></a>Hyper-V 客體關機服務           
 
@@ -876,7 +876,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||         
 
-<br />
+
 
 ## <a name="hyper-v-heartbeat-service"></a>Hyper-V 活動訊號服務
 | | |
@@ -889,7 +889,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||
 
-<br />          
+
 
 ## <a name="hyper-v-powershell-direct-service"></a>Hyper-V PowerShell Direct 服務            
 
@@ -903,7 +903,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-remote-desktop-virtualization-service"></a>Hyper-V 遠端桌面虛擬服務            
 
@@ -917,7 +917,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-time-synchronization-service"></a>Hyper-V 時間同步化服務         
 
@@ -931,7 +931,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-V 磁碟區陰影複製要求者         
 
@@ -945,7 +945,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   請參閱 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="ike-and-authip-ipsec-keying-modules"></a>IKE 和 AuthIP IPsec 金鑰處理模組          
 
@@ -959,7 +959,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |    
 |||         
 
-<br />          
+
 
 ## <a name="interactive-services-detection"></a>互動式服務偵測           
 
@@ -973,7 +973,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />  
+
 
 ## <a name="internet-connection-sharing-ics"></a>網際網路連線共用 (ICS)            
 
@@ -987,7 +987,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   用來作為 WiFi 熱點用戶端需要，而在 Miracast 投影兩端也需要。 ICS 可以使用下列 GPO 設定來封鎖：「禁止在您的 DNS 網域網路中使用網際網路連線共用」
 |||         
 
-<br />          
+
 
 ## <a name="ip-helper"></a>IP 協助程式            
 
@@ -1001,7 +1001,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 
 ##  <a name="ipsec-policy-agent"></a>IPSec 原則代理程式      
@@ -1016,7 +1016,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
+
 
 ##  <a name="kdc-proxy-server-service-kps"></a>KDC Proxy 伺服器服務 (KPS)      
 
@@ -1030,7 +1030,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ktmrm-for-distributed-transaction-coordinator"></a>用於分散式交易協調器的 KtmRm            
 
@@ -1044,7 +1044,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
+
 
 ##  <a name="link-layer-topology-discovery-mapper"></a>連結階層拓撲探索對應程式        
 
@@ -1058,7 +1058,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   如果網路對應上沒有任何相依性，則確定停用
 |||         
 
-<br />
+
 
 ## <a name="local-session-manager"></a>本機工作階段管理員                    
 
@@ -1072,7 +1072,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||                 
 
-<br />                  
+
 
 ## <a name="microsoft-r-diagnostics-hub-standard-collector"></a>Microsoft (R) 診斷集線器標準收集器         
 
@@ -1086,7 +1086,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
+
 
 ## <a name="microsoft-account-sign-in-assistant"></a>Microsoft 帳戶登入小幫手
 | | |
@@ -1099,7 +1099,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   Microsoft 帳戶在 Windows Server 上為 N/A
 |||
 
-<br />          
+
 
 ##  <a name="microsoft-app-v-client"></a>Microsoft App-V 用戶端      
 
@@ -1113,7 +1113,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-iscsi-initiator-service"></a>Microsoft iSCSI 啟動器服務            
 
@@ -1127,7 +1127,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   我們的診斷資料指出這適用於用戶端以及伺服器上。 停用此服務沒有任何好處。
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport"></a>Microsoft Passport           
 
@@ -1141,7 +1141,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   為伺服器上不支援之 PIN/Hello 登入的必要項
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport-container"></a>Microsoft Passport 容器         
 
@@ -1155,7 +1155,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-software-shadow-copy-provider"></a>Microsoft 軟體陰影複製提供者          
 
@@ -1169,7 +1169,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-storage-spaces-smp"></a>Microsoft 儲存空間 SMP         
 
@@ -1183,7 +1183,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   如果沒有此服務，儲存管理 API 就會失敗。 範例："Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage"。
 |||         
 
-<br />          
+
 
 ## <a name="nettcp-port-sharing-service"></a>Net.Tcp 連接埠共用服務         
 
@@ -1197,7 +1197,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="netlogon"></a>Netlogon         
 
@@ -1211,7 +1211,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-connection-broker"></a>網路連線代理人            
 
@@ -1225,7 +1225,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connections"></a>網路連線         
 
@@ -1239,7 +1239,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connectivity-assistant"></a>網路連線助理      
 
@@ -1253,7 +1253,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="network-list-service"></a>網路清單服務        
 
@@ -1267,7 +1267,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-location-awareness"></a>網路定位知悉           
 
@@ -1281,7 +1281,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-setup-service"></a>網路設定服務       
 
@@ -1295,7 +1295,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-store-interface-service"></a>網路儲存介面服務      
 
@@ -1309,7 +1309,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="offline-files"></a>離線檔案            
 
@@ -1323,7 +1323,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="optimize-drives"></a>最佳化磁碟機          
 
@@ -1337,7 +1337,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
+
 
 ## <a name="performance-counter-dll-host"></a>效能計數器 DLL主機         
 
@@ -1351,7 +1351,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="performance-logs--alerts"></a>效能記錄及警示            
 
@@ -1365,7 +1365,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="phone-service"></a>電話服務       
 
@@ -1379,7 +1379,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   由新式 VoIP 應用程式所使用
 |||         
 
-<br />          
+
 
 ##      <a name="plug-and-play"></a>隨插即用       
 
@@ -1393,7 +1393,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="portable-device-enumerator-service"></a>可攜式裝置列舉程式服務           
 
@@ -1407,7 +1407,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="power"></a>電源            
 
@@ -1421,7 +1421,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="print-spooler"></a>列印多工緩衝處理器            
 
@@ -1435,7 +1435,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   在網域控制站上，安裝 DC 角色會將執行緒新增至負責執行列印剪除的多工緩衝處理器服務：從 Active Directory 中移除過時的列印佇列物件。  如果多工緩衝處理器服務未在每個網站中至少一個 DC 上執行，則 AD 就無法移除不再存在的舊佇列。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
 |||         
 
-<br />          
+
 
 ##  <a name="printer-extensions-and-notifications"></a>印表機擴充功能與通知        
 
@@ -1449,7 +1449,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="problem-reports-and-solutions-control-panel-support"></a>問題報告及解決方案控制台支援     
 
@@ -1463,7 +1463,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="program-compatibility-assistant-service"></a>程式相容性助理服務     
 
@@ -1477,7 +1477,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="quality-windows-audio-video-experience"></a>高品質 Windows 音訊/視訊體驗      
 
@@ -1491,7 +1491,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   用戶端 QoS 服務
 |||         
 
-<br />          
+
 
 ##      <a name="radio-management-service"></a>Radio Management Service        
 
@@ -1505,7 +1505,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-auto-connection-manager"></a>Remote Access Auto Connection Manager            
 
@@ -1519,7 +1519,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-connection-manager"></a>遠端存取連線管理員         
 
@@ -1533,7 +1533,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-configuration"></a>遠端桌面設定         
 
@@ -1547,7 +1547,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-services"></a>遠端桌面服務          
 
@@ -1561,7 +1561,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-desktop-services-usermode-port-redirector"></a>遠端桌面服務使用者模式連接埠重新導向器        
 
@@ -1575,7 +1575,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   在連線的伺服器端上支援重新導向。
 |||         
 
-<br />          
+
 
 ## <a name="remote-procedure-call-rpc"></a>遠端程序呼叫 (RPC)          
 
@@ -1589,7 +1589,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-procedure-call-rpc-locator"></a>遠端程序呼叫 (RPC) 尋找程式             
 
@@ -1603,7 +1603,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |       |
 |||             
 
-<br />              
+
 
 ## <a name="remote-registry"></a>遠端登錄          
 
@@ -1617,7 +1617,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="resultant-set-of-policy-provider"></a>原則結果組提供者            
 
@@ -1631,7 +1631,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="routing-and-remote-access"></a>路由及遠端存取            
 
@@ -1645,7 +1645,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   已經停用
 |||         
 
-<br />          
+
 
 ## <a name="rpc-endpoint-mapper"></a>RPC 端點對應程式          
 
@@ -1659,7 +1659,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secondary-logon"></a>次要登入     
 
@@ -1673,7 +1673,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secure-socket-tunneling-protocol-service"></a>安全通訊端通道通訊協定服務            
 
@@ -1687,7 +1687,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   停用中斷 RRAS   |
 |||             
 
-<br />              
+
 
 ## <a name="security-accounts-manager"></a>安全性帳戶管理員            
 
@@ -1701,7 +1701,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sensor-data-service"></a>感應器資料服務  
 
@@ -1715,7 +1715,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />  
+
 
 ## <a name="sensor-monitoring-service"></a>感應器監視服務            
 
@@ -1729,21 +1729,17 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
-
 ## <a name="sensor-service"></a>感應器服務
 
 | | |
 |---|---|
-|   **服務描述** |   用來管理不同感應器功能的感應器服務。 管理感應器的簡易裝置方向 (SDO) 與記錄。 載入 SDO 感應器以報告裝置方向變更。  如果停止或停用此服務，將不會載入 SDO 感應器，因此將不會發生自動旋轉。 來自感應器的記錄收集也將停止。
+|   **服務描述** |   管理不同感應器功能的感應器服務。 管理感應器的簡易裝置方向 (SDO) 與記錄。 載入 SDO 感應器以報告裝置方向變更。  如果停止或停用此服務，將不會載入 SDO 感應器，因此將不會發生自動旋轉。 來自感應器的記錄收集也將停止。
 |   **服務名稱**    |   SensorService
 |   **安裝**    |   僅包含桌面體驗
 |   **StartType**   |   Manual
 |   **建議**  |   確定停用
 |   **註解**    |
 |||
-  
-<br />          
 
 ## <a name="server"></a>Server           
 
@@ -1757,7 +1753,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   對於遠端管理、IPC$、SMB 檔案共用的必要項
 |||         
 
-<br />          
+
 
 ## <a name="shell-hardware-detection"></a>殼層硬體偵測             
 
@@ -1771,7 +1767,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card"></a>智慧卡           
 
@@ -1785,7 +1781,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card-device-enumeration-service"></a>智慧卡裝置列舉服務                    
 
@@ -1799,7 +1795,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   幾乎是專供 WinRT 應用程式使用的必要項    |
 |||             
 
-<br />              
+
 
 ## <a name="smart-card-removal-policy"></a>智慧卡移除原則        
 
@@ -1813,7 +1809,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="snmp-trap"></a>SNMP 陷阱            
 
@@ -1827,7 +1823,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="software-protection"></a>軟體保護             
 
@@ -1841,7 +1837,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="special-administration-console-helper"></a>特殊的管理主控台協助程式        
 
@@ -1855,7 +1851,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="spot-verifier"></a>錯誤檢查器            
 
@@ -1869,7 +1865,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ssdp-discovery"></a>SSDP 探索           
 
@@ -1883,7 +1879,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="state-repository-service"></a>狀態存放庫服務         
 
@@ -1897,7 +1893,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="still-image-acquisition-events"></a>靜止影像擷取事件
 
@@ -1911,7 +1907,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />  
+
 
 ## <a name="storage-service"></a>儲存空間服務          
 
@@ -1925,7 +1921,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="storage-tiers-management"></a>儲存層管理        
 
@@ -1939,7 +1935,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="superfetch"></a>Superfetch          
 
@@ -1953,7 +1949,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sync-host"></a>同步主機            
 
@@ -1967,7 +1963,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   使用者服務範本
 |||         
 
-<br />          
+
 
 ## <a name="system-event-notification-service"></a>系統事件通知服務            
 
@@ -1981,7 +1977,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="system-events-broker"></a>系統事件代理人             
 
@@ -1995,7 +1991,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   儘管其描述表示它僅適用於 WinRT 應用程式，但工作排程器、代理人基礎結構服務及其他內部元件仍然需要它。
 |||         
 
-<br />          
+
 
 ## <a name="task-scheduler"></a>工作排程器           
 
@@ -2009,7 +2005,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="tcpip-netbios-helper"></a>TCP/IP NetBIOS 協助程式            
 
@@ -2023,7 +2019,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="telephony"></a>Telephony           
 
@@ -2037,7 +2033,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   停用中斷 RRAS
 |||         
 
-<br />          
+
 
 ## <a name="themes"></a>佈景主題           
 
@@ -2051,7 +2047,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   若停用此服務，便無法設定協助工具佈景主題
 |||         
 
-<br />  
+
 
 ## <a name="tile-data-model-server"></a>磚資料模型伺服器           
 
@@ -2065,7 +2061,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   如果停用此服務，則開始功能表會中斷
 |||         
 
-<br />          
+
 
 ##  <a name="time-broker"></a>計時代理人     
 
@@ -2079,7 +2075,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   儘管其描述表示它僅適用於 WinRT 應用程式，但工作排程器、代理人基礎結構服務及其他內部元件仍然需要它。
 |||         
 
-<br />          
+
 
 ## <a name="touch-keyboard-and-handwriting-panel-service"></a>觸控式鍵盤與手寫面板服務         
 
@@ -2093,7 +2089,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="update-orchestrator-service-for-windows-update"></a>更新 Windows Update 的 Orchestrator 服務           
 
@@ -2107,7 +2103,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   V1607 中遺漏了服務描述；Windows Update (包括 WSUS) 相依於此服務。
 |||         
 
-<br />          
+
 
 ## <a name="upnp-device-host"></a>UPnP 裝置主機         
 
@@ -2121,7 +2117,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-access-logging-service"></a>使用者存取記錄服務          
 
@@ -2135,7 +2131,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-data-access"></a>使用者資料存取        
 
@@ -2149,7 +2145,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   使用者服務範本
 |||         
 
-<br />          
+
 
 ## <a name="user-data-storage"></a>使用者資料儲存            
 
@@ -2163,7 +2159,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   使用者服務範本
 |||         
 
-<br />          
+
 
 ## <a name="user-experience-virtualization-service"></a>使用者體驗虛擬化服務           
 
@@ -2177,7 +2173,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-manager"></a>使用者管理員        
 
@@ -2191,7 +2187,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-profile-service"></a>使用者設定檔服務         
 
@@ -2205,7 +2201,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="virtual-disk"></a>虛擬磁碟             
 
@@ -2219,7 +2215,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="volume-shadow-copy"></a>磁碟區陰影複製           
 
@@ -2233,7 +2229,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="walletservice"></a>WalletService           
 
@@ -2247,7 +2243,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio"></a>Windows 音訊            
 
@@ -2261,7 +2257,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio-endpoint-builder"></a>Windows 音訊端點產生器           
 
@@ -2275,7 +2271,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-biometric-service"></a>Windows 生物特徵辨識服務            
 
@@ -2289,7 +2285,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-camera-frame-server"></a>Windows 相機框架伺服器         
 
@@ -2303,7 +2299,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-connection-manager"></a>Windows 連線管理員           
 
@@ -2317,7 +2313,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-network-inspection-service"></a>Windows Defender 網路檢查服務          
 
@@ -2331,7 +2327,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-service"></a>Windows Defender 服務         
 
@@ -2345,7 +2341,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-driver-foundation---user-mode-driver-framework"></a>Windows 驅動程式基礎 - 使用者模式驅動程式架構           
 
@@ -2359,7 +2355,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-encryption-provider-host-service"></a>Windows 加密提供者主機服務     
 
@@ -2373,7 +2369,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-error-reporting-service"></a>Windows 錯誤報告服務          
 
@@ -2387,7 +2383,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   收集並傳送 MS 和協力廠商 ISV/IHV 所使用的當機/停止回應資料。 此資料可用來診斷當機引發的錯誤，其中可能包括安全性錯誤。 也需要用於企業錯誤報告
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-collector"></a>Windows 事件收集器          
 
@@ -2401,7 +2397,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   基於管理與診斷目的來收集 ETW 事件 (包括安全性事件)。  許多功能和協力廠商工具均依賴此功能，包括安全性稽核工具
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-log"></a>Windows 事件日誌            
 
@@ -2415,7 +2411,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-firewall"></a>Windows 防火牆         
 
@@ -2429,7 +2425,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-font-cache-service"></a>Windows 字型快取服務      
 
@@ -2443,7 +2439,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-image-acquisition-wia"></a>Windows Image Acquisition (WIA)          
 
@@ -2457,7 +2453,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-insider-service"></a>Windows 測試人員服務     
 
@@ -2471,7 +2467,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   伺服器不支援正式發行前小眾測試，因此它不會在伺服器上執行任何操作。 功能也可透過 GP 停用。
 |||         
 
-<br />          
+
 
 ##  <a name="windows-installer"></a>Windows Installer       
 
@@ -2485,7 +2481,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-license-manager-service"></a>Windows 授權管理員服務          
 
@@ -2499,7 +2495,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation       
 
@@ -2513,7 +2509,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-mobile-hotspot-service"></a>Windows 行動熱點服務          
 
@@ -2527,7 +2523,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-modules-installer"></a>Windows 模組安裝程式        
 
@@ -2541,7 +2537,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-push-notifications-system-service"></a>Windows 推播通知系統服務            
 
@@ -2555,7 +2551,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   對於動態磚和其他功能的必要項
 |||         
 
-<br />      
+
 
 ## <a name="windows-push-notifications-user-service"></a>Windows 推播通知使用者服務          
 
@@ -2569,7 +2565,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   使用者服務範本
 |||         
 
-<br />
+
 
 ## <a name="windows-remote-management-ws-management"></a>Windows 遠端管理 (WS-Management)
 | | |
@@ -2582,7 +2578,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   遠端管理的必要項
 |||
 
-<br />          
+
 
 ##  <a name="windows-search"></a>Windows 搜尋      
 
@@ -2596,7 +2592,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-time"></a>Windows Time        
 
@@ -2610,7 +2606,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-update"></a>Windows Update           
 
@@ -2624,7 +2620,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="winhttp-web-proxy-auto-discovery-service"></a>WinHTTP Web Proxy 自動探索服務         
 
@@ -2638,7 +2634,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   任何使用網路堆疊的項目都會對此服務具有功能相依性。 許多組織都依賴此服務來設定其內部網路的 HTTP Proxy 路由。  如果沒有此服務，則源自內部且連至網際網路的 HTTP 連線全部都將失敗。
 |||         
 
-<br />          
+
 
 ## <a name="wired-autoconfig"></a>有線自動設定服務         
 
@@ -2652,7 +2648,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="wmi-performance-adapter"></a>WMI 效能配接器          
 
@@ -2666,7 +2662,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="workstation"></a>工作站          
 
@@ -2680,7 +2676,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />
+
 
 ## <a name="xbox-live-auth-manager"></a>Xbox Live Auth Manager           
 
@@ -2694,7 +2690,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   
 |||         
 
-<br />          
+
 
 ## <a name="xbox-live-game-save"></a>Xbox Live Game Save          
 
@@ -2708,6 +2704,6 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |   **註解**    |   此服務會針對 Xbox Live 中已啟用儲存功能的遊戲同步處理儲存資料。  如果停止此服務，遊戲儲存資料將不會上傳至 Xbox Live 或從中下載。
 |||         
 
-<br /> 
-<br /> 
+
+
 

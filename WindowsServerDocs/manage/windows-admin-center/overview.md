@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: e235c8013afa573712feaec75bbd1ca195c0e307
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356996"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567124"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,9 +25,9 @@ ms.locfileid: "71356996"
 
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
 
-![Windows Admin Center 資訊圖表](media/WAC1809Poster_thumb.PNG)
+![Windows Admin Center 資訊圖表](media/WAC1910Poster_thumb.PNG)
 
-[下載 PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1809Poster.pdf)
+[下載 PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
 
 ## <a name="quick-start"></a>快速入門
 
@@ -86,6 +86,7 @@ ms.locfileid: "71356996"
             <ul>
             <li><a href="use/get-started.md">啟動及新增連線</a>
             <li><a href="use/manage-servers.md">管理伺服器</a>
+            <li><a href="use/deploy-hyperconverged-infrastructure.md">部署超融合式基礎結構</a>
             <li><a href="use/manage-hyper-converged.md">管理超融合式基礎結構</a>
             <li><a href="use/manage-failover-clusters.md">管理容錯移轉叢集</a>
             <li><a href="use/manage-virtual-machines.md">管理虛擬機器</a>
@@ -129,11 +130,12 @@ ms.locfileid: "71356996"
 
 了解我們最新發行的功能：
 
+- 版本 [1910](https://aka.ms/wac1910) 是最新的 GA 版本 - 引進數個新的 Azure 混合式服務，並將先前預覽版中的功能帶入 GA 通道。
 - 版本 [1909](https://aka.ms/wac1909) 引進了 Azure VM 特定的連線類型，並將傳統容錯移轉叢集和 HCI 叢集的連線類型統一。
 - 版本 [1908](https://aka.ms/wac1908) 新增了視覺更新、Packetmon、FlowLog Audit、叢集的 Azure 監視器上架，以及透過 HTTPS 支援 WinRM (連接埠 5986)。
 - 版本 [1907](https://aka.ms/wac1907) 新增了 Azure 成本預估連結，並改善了匯入/匯出和標記虛擬機器的功能。
 - 版本 [1906](https://aka.ms/wac1906) 新增匯入/匯出 VM、切換 Azure 帳戶、從 Azure 新增連線、連線能力設定實驗、效能改進和效能分析工具。
-- 版本 1904.1 是最新的 GA 版本 - 用來改善閘道外掛程式穩定性的維護更新。
+- 版本 1904.1 是一項維護更新，旨在改善閘道外掛程式的穩定性。
 - 版本 [1904](https://aka.ms/wac1904) 是引進 Azure 混合式服務工具的 GA 版本，其中已將先前預覽版中的功能帶入 GA 通道。
 - 版本 [1903](https://aka.ms/wac1903) 新增來自 Azure 監視器的電子郵件通知、從 Active Directory 新增伺服器或電腦連線的能力，以及用來管理 Active Directory、DHCP 和 DNS 的新工具。
 - 版本 [1902](https://aka.ms/wac1902) 已對軟體定義網路 (SDN) 管理新增共用連線清單並進行改善，包括新增用來管理 ACL、閘道連線和邏輯網路的 SDN 工具。
