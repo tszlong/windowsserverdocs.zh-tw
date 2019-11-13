@@ -17,7 +17,7 @@ ms.locfileid: "71394174"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>檔案伺服器資源管理員 (FSRM) 概觀
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server （半年通道）、 
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server （半年通道）、 
 
 檔案伺服器資源管理員 (FSRM) 是 Windows Server 中的角色服務，可讓您管理和分類儲存在檔案伺服器上的資料。 您可以使用 [檔案伺服器 Resource Manager] 自動分類檔案、根據這些分類執行工作、設定資料夾配額，以及建立監視儲存體使用量的報表。
 
@@ -61,7 +61,7 @@ ms.locfileid: "71394174"
 
 若要防止檔案伺服器 Resource Manager 在服務啟動時于部分或所有磁片區上建立變更日誌，請使用下列步驟： 
 
-1. 停止 SRMSVC 服務。 例如，以系統管理員身分開啟 PowerShell 會話，然後輸入`Stop-Service SrmSvc`。
+1. 停止 SRMSVC 服務。 例如，以系統管理員身分開啟 PowerShell 會話，然後輸入 `Stop-Service SrmSvc`。
 2. 使用 fsutil 命令，刪除您想要用來節省空間的磁片區 USN 日誌： 
 
       ```
@@ -69,14 +69,14 @@ ms.locfileid: "71394174"
       ```
     例如：`fsutil usn deletejournal /d c:`
 
-3. 開啟 [登錄編輯程式]，例如，在`regedit`相同的 PowerShell 會話中輸入。
-4. 流覽至下列機碼：**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**
+3. 開啟 [登錄編輯程式]，例如，在相同的 PowerShell 會話中輸入 `regedit`。
+4. 流覽至下列機碼： **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**
 5. 選擇性地略過整部伺服器的變更日誌建立（如果您只想要在特定磁片區上停用，請略過此步驟）：
-    1. 在 [**設定**] 機碼上按一下滑鼠右鍵，然後選取 [**新增** >  **DWORD （32-位）值**]。 
-    1. 將值`SkipUSNCreationForSystem`命名為。
+    1. 在 [**設定**] 機碼上按一下滑鼠右鍵，然後選取 [**新增** > **DWORD （32-位）值**]。 
+    1. 將值命名為 `SkipUSNCreationForSystem`。
     1. 將值設為**1** （十六進位）。
 6. 若要選擇性地略過特定磁片區的變更日誌建立：
-    1. 使用`fsutil volume list`命令或下列 PowerShell 命令來取得您想要略過的磁片區路徑：
+    1. 使用 [`fsutil volume list`] 命令或下列 PowerShell 命令來取得您想要略過的磁片區路徑：
         ```PowerShell
         Get-Volume | Format-Table DriveLetter,FileSystemLabel,Path
         ```
@@ -88,9 +88,9 @@ ms.locfileid: "71394174"
                     System Reserved \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
         C                           \\?\Volume{8d3c9e8a-0000-0000-0000-501f00000000}\
        ```
-    2. 回到 [登錄編輯程式]，以滑鼠右鍵按一下 [ **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** ] 機碼，然後選取 [**新增** > **多字串值**]。
-    3. 將值`SkipUSNCreationForVolumes`命名為。
-    4. 輸入您略過建立變更日誌之每個磁片區的路徑，並將每個路徑放在不同的行上。 例如:
+    2. 回到 [登錄編輯程式]，以滑鼠右鍵按一下**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**機碼，然後選取 [**新增** > **多字串值**]。
+    3. 將值命名為 `SkipUSNCreationForVolumes`。
+    4. 輸入您略過建立變更日誌之每個磁片區的路徑，並將每個路徑放在不同的行上。 例如：
 
         ```
         \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
@@ -98,12 +98,12 @@ ms.locfileid: "71394174"
         ```
 
         > [!NOTE] 
-        > 登錄編輯程式可能會告訴您它已移除空字串，並顯示此警告，您可以放心地忽略：類型為 REG_MULTI_SZ 的 @no__t 0Data 不能包含空字串。登錄編輯程式將會移除所有找到的空字串。*
+        > 登錄編輯程式可能會告訴您它已移除空字串，並顯示此警告，您可以放心地忽略： *REG_MULTI_SZ 類型的資料不能包含空字串。登錄編輯程式將會移除所有找到的空字串。*
 
-7. 啟動 SRMSVC 服務。 例如，在 PowerShell 會話中輸入`Start-Service SrmSvc`。
+7. 啟動 SRMSVC 服務。 例如，在 PowerShell 會話中，輸入 `Start-Service SrmSvc`。
 
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [動態存取控制](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx) 

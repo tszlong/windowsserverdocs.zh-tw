@@ -19,16 +19,16 @@ ms.locfileid: "71366695"
 ---
 # <a name="a-virtual-san-should-be-associated-with-a-physical-host-bus-adapter"></a>虛擬 SAN 應該與實體主機匯流排介面卡相關聯
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
@@ -37,10 +37,10 @@ ms.locfileid: "71366695"
 *已設定虛擬存放區域網路（SAN），而沒有與主機匯流排介面卡（HBA）的關聯。*  
   
 ## <a name="impact"></a>**產生**  
-當虛擬光纖通道介面卡設定了連線到設定錯誤的虛擬 SAN 時，@no__t 0A 虛擬機器將無法啟動。這會影響下列虛擬 San： *  
+*當虛擬機器使用連線至設定錯誤之虛擬 SAN 的虛擬光纖通道介面卡時，將無法啟動。這會影響下列虛擬 San：*  
   
   
-@no__t 虛擬 San > 的0list  
+\<虛擬 San 清單 >  
   
   
 ## <a name="resolution"></a>**解決方法**  

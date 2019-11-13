@@ -18,7 +18,7 @@ ms.locfileid: "71408987"
 ---
 # <a name="collecting-network-information"></a>收集網路資訊
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Active Directory Domain Services （AD DS）中設計有效網站拓撲的第一個步驟，就是洽詢貴組織的網路群組來收集資訊，並定期與實體網路拓撲進行通訊。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71408987"
   
 頻寬是指您可以在指定的一段時間內，透過通道傳輸的資料量。 可用的頻寬是指實際可供 AD DS 使用的頻寬量。 您可以從網路群組取得可用的頻寬資訊，也可以使用通訊協定分析器（例如網路監視器）分析每個連結上的流量。 如需有關安裝網路監視器的詳細資訊，請參閱[監視網路流量](https://go.microsoft.com/fwlink/?LinkId=107058)一文。  
   
-記錄每個位置和連結到它的其他位置。 此外，請記錄通訊連結的類型及其可用的頻寬。 如需協助您列出通訊連結和可用頻寬的工作表，請參閱[適用于 Windows Server 2003 部署套件的工作輔助](https://go.microsoft.com/fwlink/?LinkID=102558)工具、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，以及開放的地理位置位置和通訊連結」（DSSTOPO_1）。  
+記錄每個位置和連結到它的其他位置。 此外，請記錄通訊連結的類型及其可用的頻寬。 如需協助您列出通訊連結和可用頻寬的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://go.microsoft.com/fwlink/?LinkID=102558)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，然後開啟「地理位置和通訊連結」（DSSTOPO_1 .doc）。  
   
 ## <a name="listing-ip-subnets-within-each-location"></a>列出每個位置中的 IP 子網
 
@@ -40,13 +40,13 @@ ms.locfileid: "71408987"
   
 AD DS 會藉由比較工作站的 IP 位址與與每個網站相關聯的子網，讓工作站與網站產生關聯。 當您將網域控制站新增至網域時，AD DS 也會檢查其 IP 位址，並將它們放在最適當的網站中。  
   
-如需協助您列出每個位置中的 IP 子網的工作表，請參閱[Windows Server 2003 部署套件的工作輔助](https://go.microsoft.com/fwlink/?LinkID=102558)工具、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，以及開啟「位置和子網」（DSSTOPO_2）。  
+如需協助您列出每個位置中的 IP 子網的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://go.microsoft.com/fwlink/?LinkID=102558)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，然後開啟「位置和子網」（DSSTOPO_2 .doc）。  
   
 > [!NOTE]  
-> 除了 IP 第4版（IPv4）位址，Windows Server 也支援 IP 版本6（IPv6）子網首碼。 如需協助您列出 IPv6 子網首碼的工作表，請參閱 [Appendix A：位置和子網首碼 @ no__t-0。  
+> 除了 IP 第4版（IPv4）位址，Windows Server 也支援 IP 版本6（IPv6）子網首碼。 如需協助您列出 IPv6 子網首碼的工作表，請參閱[附錄 a：位置和子網首碼](../../ad-ds/plan/Appendix-A--Locations-and-Subnet-Prefixes.md)。  
 
 ## <a name="listing-domains-and-number-of-users-for-each-location"></a>列出每個位置的網域和使用者數目
 
 在位置中表示的每個地區網域的使用者數目，都是判斷地區網域控制站和通用類別目錄伺服器位置的因素之一，這是網站拓朴設計程式的下一個步驟。 例如，規劃將區域網域控制站放在包含超過100個地區網域使用者的位置，如此一來，如果 WAN 連結失敗，他們仍然可以登入網域。  
   
-記錄位置、每個位置中表示的網域，以及每個位置中表示之每個網域的使用者數目。 若要協助您列出的網域和每個位置中的使用者數目為工作表，請參閱[工作輔助工具的 Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558)，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟 [網域和使用者在每個位置]\(DSSTOPO_3.doc)。  
+記錄位置、每個位置中表示的網域，以及每個位置中表示之每個網域的使用者數目。 如需協助您列出網域以及每個位置中所代表的使用者數目的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://go.microsoft.com/fwlink/?LinkID=102558)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，以及開啟「每個位置的網域和使用者」（DSSTOPO_3 .doc）。  

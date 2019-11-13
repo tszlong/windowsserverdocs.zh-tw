@@ -18,7 +18,7 @@ ms.locfileid: "71369173"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>決定如何復原樹系
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 復原整個 Active Directory 樹系牽涉到在樹系中的每個網域控制站（DC）上，從備份或重新安裝 Active Directory Domain Services （AD DS）還原它。 復原樹系會將樹系中的每個網域還原到上次信任備份時的狀態。 因此，還原作業會導致至少遺失下列 Active Directory 資料：
 
@@ -51,7 +51,7 @@ ms.locfileid: "71369173"
 
 如果發生失敗的時間不明，請進一步調查，以找出保留樹系最後安全狀態的備份。 這種方法比較不理想。 因此，我們強烈建議您每日保留有關 AD DS 健全狀況狀態的詳細記錄，如此一來，如果發生全樹系失敗，則可以識別大約失敗的時間。 您也應該保留備份的本機複本，以加快復原的速度。
 
-如果已啟用 Active Directory 回收站，則備份存留期會等於**msds-deletedobjectlifetime**值或**tombstoneLifetime**值（取兩者中較小者）。 如需詳細資訊，請參閱[Active Directory 回收站逐步指南](https://go.microsoft.com/fwlink/?LinkId=178657)（ https://go.microsoft.com/fwlink/?LinkId=178657) 。
+如果已啟用 Active Directory 回收站，則備份存留期會等於**msds-deletedobjectlifetime**值或**tombstoneLifetime**值（取兩者中較小者）。 如需詳細資訊，請參閱[Active Directory 回收站逐步指南](https://go.microsoft.com/fwlink/?LinkId=178657)（ https://go.microsoft.com/fwlink/?LinkId=178657)。
 
 或者，您也可以使用 Active Directory 資料庫掛接工具（Dsamain.exe）和輕量型目錄存取協定（LDAP）工具（例如 Ldp.exe 或 Active Directory 使用者和電腦）來識別哪一個備份具有的最後安全狀態狀. Windows Server 2008 和更新版本的 Windows Server 作業系統中包含的 Active Directory 資料庫掛接工具，會將儲存在備份或快照中的 Active Directory 資料公開為 LDAP 伺服器。 然後，您可以使用 LDAP 工具來流覽資料。 這種方法的優點是不需要您重新開機任何目錄服務還原模式（DSRM）中的 DC 來檢查 AD DS 備份的內容。
 
@@ -76,13 +76,13 @@ ms.locfileid: "71369173"
 - 在失敗前做為網域名稱系統（DNS）伺服器的 DC。 這可節省重新安裝 DNS 所需的時間。
 - 如果您也使用 Windows 部署服務，請選擇未設定為使用 BitLocker 網路解除鎖定的 DC。 在此情況下，不支援將 BitLocker 網路解除鎖定用於您在樹系復原期間從備份還原的第一個 DC。
 
-   BitLocker 網路解除鎖定作為*唯一*的金鑰保護裝置，*無法*在您已部署 Windows 部署服務（WDS）的 dc 上使用，因為這樣做會導致第一個 DC 需要 Active Directory 和 WDS 才能運作的案例解除鎖定. 但在還原第一個 DC 之前，Active Directory 尚未提供 WDS 使用，因此無法解除鎖定。
+   BitLocker 網路解除鎖定作為*唯一*的金鑰保護裝置，*無法*在您已部署 Windows 部署服務（WDS）的 dc 上使用，因為這樣做會導致第一個 DC 需要 Active Directory 和 WDS 才能解除鎖定的情況。 但在還原第一個 DC 之前，Active Directory 尚未提供 WDS 使用，因此無法解除鎖定。
 
    若要判斷 DC 是否設定為使用 BitLocker 網路解除鎖定，請檢查下列登錄機碼中是否已識別出網路解除鎖定憑證：
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-維護安全性程式，以處理或還原包含 Active Directory 的備份檔案。 隨附樹系復原的緊急程度可能會不小心導致忽略的安全性最佳作法。 如需詳細資訊，請參閱 [Best 練習指南中的 < 建立網域控制站備份和還原策略一節，以確保 Active Directory 的安裝和日常作業：第二部分 @ no__t-0。
+維護安全性程式，以處理或還原包含 Active Directory 的備份檔案。 隨附樹系復原的緊急程度可能會不小心導致忽略的安全性最佳作法。 如需詳細資訊，請參閱[保護 Active Directory 安裝和日常作業的最佳作法指南](https://technet.microsoft.com/library/bb727066.aspx)中的「建立網域控制站備份和還原策略」一節：第二部分。
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>識別目前的樹系結構和 DC 函數
 
@@ -92,24 +92,24 @@ ms.locfileid: "71369173"
 
 |DC 名稱|作業系統|FSMO|GC|RODC|備份|DNS|Server Core|VM|VM-GenID|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|架構主機、網域命名主機|是|否|是|否|否|是|是|  
-|DC_2|Windows Server 2012|None|是|否|是|是|否|是|是|  
-|DC_3|Windows Server 2012|基礎結構主機|否|否|否|是|是|是|是|  
-|DC_4|Windows Server 2012|PDC 模擬器，RID 主機|是|否|否|否|否|是|否|  
-|DC_5|Windows Server 2012|None|否|否|是|是|否|是|是|  
-|RODC_1|Windows Server 2008 R2|None|是|是|是|是|是|是|否|  
-|RODC_2|Windows Server 2008|None|是|是|否|是|是|是|否|  
+|DC_1|Windows Server 2012|架構主機、網域命名主機|是|不可以|是|不可以|不可以|是|是|  
+|DC_2|Windows Server 2012|無|是|不可以|是|是|不可以|是|是|  
+|DC_3|Windows Server 2012|基礎結構主機|不可以|不可以|不可以|是|是|是|是|  
+|DC_4|Windows Server 2012|PDC 模擬器，RID 主機|是|不可以|不可以|不可以|不可以|是|不可以|  
+|DC_5|Windows Server 2012|無|不可以|不可以|是|是|不可以|是|是|  
+|RODC_1|Windows Server 2008 R2|無|是|是|是|是|是|是|不可以|  
+|RODC_2|Windows Server 2008|無|是|是|不可以|是|是|是|不可以|  
 
 針對樹系中的每個網域，識別具有該網域之 Active Directory 資料庫之受信任備份的單一可寫入 DC。 當您選擇要還原 DC 的備份時，請務必小心。 如果發生失敗的日期和原因大約是已知的，一般建議是使用在該日期之前的幾天進行的備份。
   
-在此範例中，有四個備份候選項目：DC_1、DC_2、DC_4 和 DC_5。 在這些備份候選項目中，您只會還原一個。 建議的 DC 因下列原因而 DC_5：  
+在此範例中，有四個備份候選項目： DC_1、DC_2、DC_4 和 DC_5。 在這些備份候選項目中，您只會還原一個。 建議的 DC 會因為下列原因而 DC_5：  
 
 - 它滿足使用它做為虛擬化 DC 複製來源的需求，也就是，它會在支援 VM GenerationID 的管理程式上執行 Windows Server 2012 作為虛擬 DC，執行允許複製的軟體（如果無法複製，則可以移除）。d）。 還原之後，PDC 模擬器角色將會被取回至該伺服器，並可新增至該網域的 Cloneable 網域控制站群組。  
 - 它會執行 Windows Server 2012 的完整安裝。 執行 Server Core 安裝的 DC 可能比較不方便做為復原目標。  
 - 這是一台 DNS 伺服器。 因此，不需要重新安裝 DNS。  
 
 > [!NOTE]
-> 由於 DC_5 不是通用類別目錄伺服器，因此也有一個優點，就是通用類別目錄不需要在還原後移除。 但是，不論 DC 是否也是通用類別目錄伺服器，都不是決定性因素，因為從 Windows Server 2012 開始，所有 Dc 預設都是通用類別目錄伺服器，並在建議還原之後移除和新增通用類別目錄，做為樹系的一部分復原程式在任何情況下。  
+> 因為 DC_5 不是通用類別目錄伺服器，所以也有一項優點，那就是不需要在還原之後移除通用類別目錄。 但是，不論 DC 是否也是通用類別目錄伺服器，都不是決定性因素，因為從 Windows Server 2012 開始，所有 Dc 預設都是通用類別目錄伺服器，並在建議還原之後移除和新增通用類別目錄，做為樹系的一部分復原程式在任何情況下。  
 
 ## <a name="recover-the-forest-in-isolation"></a>獨立復原樹系
 

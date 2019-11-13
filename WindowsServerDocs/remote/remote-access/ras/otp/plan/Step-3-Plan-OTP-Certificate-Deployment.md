@@ -21,7 +21,7 @@ ms.locfileid: "71366954"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>步驟3規劃 OTP 憑證部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在規劃 RADIUS 伺服器之後，您必須規劃憑證授權單位單位（CA）需求，包括將會發出單次密碼（OTP）憑證的 CA、OTP 憑證範本，以及遠端所使用的登錄授權單位憑證。存取伺服器以簽署所有 DirectAccess 用戶端 OTP 憑證要求。 這些憑證的使用方式如下：  
   
@@ -75,7 +75,7 @@ ms.locfileid: "71366954"
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 4：為遠端存取服務器規劃 OTP @ no__t-0  
+-   [步驟4：為遠端存取服務器規劃 OTP](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
 
 

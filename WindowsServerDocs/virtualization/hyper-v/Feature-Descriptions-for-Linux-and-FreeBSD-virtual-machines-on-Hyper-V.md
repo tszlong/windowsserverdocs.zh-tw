@@ -20,11 +20,11 @@ ms.locfileid: "71366804"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上 Linux 和 FreeBSD 虛擬機器的功能描述
 
->適用於：Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 本文說明在虛擬機器上使用 Linux 和 FreeBSD 時，核心、網路、儲存體和記憶體等元件中可用的功能。
 
-## <a name="core"></a>Core
+## <a name="core"></a>核心版
 
 |**功能**|**描述**|
 |-|-|
@@ -70,7 +70,7 @@ ms.locfileid: "71366804"
 |動態記憶體-佔用|主機可以動態地增加或減少虛擬機器在運作時可用的記憶體數量。 在布建之前，系統管理員會在 [虛擬機器設定] 面板中啟用動態記憶體，並指定虛擬機器的啟動記憶體、最小記憶體和最大記憶體。 當虛擬機器在作業中時動態記憶體無法停用，而且只能變更最小值和最大值設定。 （最佳作法是將這些記憶體大小指定為128MB 的倍數）。<br /><br />當虛擬機器第一次啟動時，可用的記憶體會等於**啟動記憶體**。 由於應用程式工作負載導致記憶體需求增加，Hyper-v 可能會透過熱新增機制（如上）動態配置更多記憶體給虛擬機器。 當記憶體需求降低時，Hyper-v 可能會透過氣球機制自動從虛擬機器取消布建記憶體。 Hyper-v 不會將記憶體解除布建在**最小記憶體**參數之下。<br /><br />Hyper-v 管理員的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器中的記憶體統計資料將會顯示配置的最高記憶體數量。<br /><br />如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。<br /><br />|
 |執行時間記憶體大小調整|系統管理員可以設定虛擬機器在運作時可用的記憶體數量、增加記憶體（「熱新增」）或減少它（「熱移除」）。 記憶體會透過氣球驅動程式傳回到 Hyper-v （請參閱 "動態記憶體-佔用"）。 氣球驅動程式會在佔用（稱為「樓層」）後維持最小的可用記憶體數量，因此指派的記憶體無法縮減低於目前的需求加上此樓層數量。 Hyper-v 管理員的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器中的記憶體統計資料將會顯示配置的最高記憶體數量。 （最佳作法是將記憶體值指定為128MB 的倍數）。|
 
-## <a name="video"></a>視訊
+## <a name="video"></a>影片
 
 |**功能**|**描述**|
 |-|-|
@@ -80,7 +80,7 @@ ms.locfileid: "71366804"
 
 |**功能**|**描述**|
 |-|-|
-|KVP （機碼值組）交換|這項功能提供虛擬機器的索引鍵/值組（KVP）交換服務。 系統管理員通常會使用 KVP 機制來執行虛擬機器上的讀取和寫入自訂資料作業。 如需詳細資訊，請參閱 @no__t 0Data Exchange：使用機碼值組，在 Hyper-v @ no__t-0 上的主機和來賓之間共用資訊。|
+|KVP （機碼值組）交換|這項功能提供虛擬機器的索引鍵/值組（KVP）交換服務。 系統管理員通常會使用 KVP 機制來執行虛擬機器上的讀取和寫入自訂資料作業。 如需詳細資訊，請參閱[資料交換：使用機碼值組在 hyper-v 上的主機和來賓之間共用資訊](https://technet.microsoft.com/library/dn798287.aspx)。|
 |非遮罩式插斷|透過這項功能，系統管理員可以將非遮罩式插斷（NMI）發行至虛擬機器。 Nmi 有助於取得因應用程式錯誤而變得沒有回應的作業系統損毀傾印。 重新開機之後，即可診斷這些損毀傾印。|
 |從主機到來賓的檔案複製|這項功能可讓您從主機實體電腦將檔案複製到來賓虛擬機器，而不需要使用網路介面卡。 如需詳細資訊，請參閱[來賓服務](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_guest)。|
 |lsvmbus 命令|此命令會取得 Hyper-v 虛擬機器匯流排（VMBus）上裝置的相關資訊，類似于 lspci 之類的資訊命令。|
@@ -94,7 +94,7 @@ ms.locfileid: "71366804"
 |使用 UEFI 開機|這項功能可讓虛擬機器使用整合可延伸韌體介面（UEFI）開機。<br /><br />如需詳細資訊，請參閱[第 2 代虛擬機器概觀](https://technet.microsoft.com/library/dn282285.aspx)。|
 |安全開機|這項功能可讓虛擬機器使用以 UEFI 為基礎的安全開機模式。 當虛擬機器以安全模式開機時，會使用 UEFI 資料存放區中存在的簽章來驗證各種作業系統元件。<br /><br />如需詳細資訊，請參閱[安全開機](https://technet.microsoft.com/library/dn486875.aspx)。|
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

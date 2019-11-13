@@ -22,17 +22,17 @@ ms.locfileid: "71404629"
 ---
 # <a name="configure-a-remote-access-cluster"></a>設定遠端存取叢集
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
  Windows Server 2016 和 Windows Server 2012 將 Always On VPN 和路由及遠端存取服務（RRAS） VPN 合併成一個遠端存取角色。 本總覽提供在負載平衡叢集中部署單一 Windows Server 2016 或 Windows Server 2012 遠端存取服務器所需之設定步驟的簡介。
   
--  步驟 1:[使用 Advanced 選項部署 Always ON VPN 伺服器](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md)。
+-  步驟1：[使用 Advanced 選項部署 Always ON VPN 伺服器](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md)。
   
--   [步驟 2：準備叢集伺服器 @ no__t-0。  
+-   [步驟2：準備叢集伺服器](Step-2-Prepare-Cluster-Servers.md)。  
   
--   [步驟 3：設定負載平衡叢集 @ no__t-0。  
+-   [步驟3：設定負載平衡](Step-3-Configure-a-Load-Balanced-Cluster.md)叢集。  
   
--   [步驟 4：驗證叢集 @ no__t-0。  
+-   [步驟4：驗證](Step-4-Verify-the-Cluster.md)叢集。  
   
 
 

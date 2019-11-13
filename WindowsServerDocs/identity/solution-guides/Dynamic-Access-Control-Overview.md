@@ -18,7 +18,7 @@ ms.locfileid: "71357506"
 ---
 # <a name="dynamic-access-control-overview"></a>動態存取控制概觀
 
->適用於：Windows Server 2012 R2、Windows Server 2012
+>適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 這個適用於 IT 專業人員的概觀主題將說明動態存取控制及其相關聯的項目，這些項目已於 Windows Server 2012 和 Windows 8 中推出。  
   
@@ -92,7 +92,7 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
 ### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>支援 Active Directory，以儲存使用者和裝置宣告、資源內容和集中存取原則物件。  
   
 ### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>支援使用群組原則來部署集中存取原則物件。  
-下列群組原則設定可讓您將集中存取原則物件部署到組織中的檔案伺服器：**電腦 Configuration\Policies\ Windows 設置 \ 許可權 Settings\File 安全性系統集中存取原則**。  
+以下的群組原則設定讓您能夠將集中存取原則物件部署到組織中的檔案伺服器：**電腦設定\原則\ Windows 設定\安全性設定\檔案系統\集中存取原則**。  
   
 ### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>使用群組原則和全域物件存取稽核，支援宣告型檔案授權並對檔案系統進行稽核  
 您必須啟用分段集中存取原則稽核，使用建議的權限來稽核集中存取原則的有效存取權。 您可以在群組原則物件 (GPO) 的 [安全性設定] 中，在 [進階稽核原則設定] 下方設定這個電腦設定。 當您在 GPO 中設定安全性原則設定之後，就可以將 GPO 部署到網路中的電腦上。  
@@ -128,7 +128,7 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
 執行 Windows Server 2012 或 Windows Server 2012 R2 的檔案伺服器必須具有一個群組原則設定，指定它是否需要針對不含宣告的使用者權杖取得使用者宣告。 這個設定預設會設定為 [自動]，如果有包含該檔案伺服器的使用者或裝置宣告的集中原則，則會將這個群組原則設定轉換為 [開啟]。 如果檔案伺服器包含內含使用者宣告的判別 ACL，您需要將這個群組原則設定為 [開啟]，如此便能讓伺服器知道要代表在存取伺服器時未提供宣告的使用者要求宣告。  
   
 ## <a name="additional-resource"></a>其他資源  
-如需根據這項技術來執行解決方案的詳細資訊，請參閱 @no__t 0Dynamic 存取控制：案例總覽 @ no__t-0。  
+如需根據這項技術來執行解決方案的詳細資訊，請參閱[Dynamic 存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)。  
   
 
 

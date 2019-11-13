@@ -1,5 +1,5 @@
 ---
-title: Manage the Local Server and the Server Manager Console
+title: 管理本機伺服器和伺服器管理員主控台
 description: 伺服器管理員
 ms.custom: na
 ms.prod: windows-server
@@ -20,17 +20,17 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71383114"
 ---
-# <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
+# <a name="manage-the-local-server-and-the-server-manager-console"></a>管理本機伺服器和伺服器管理員主控台
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Windows Server 中，伺服器管理員可讓您同時管理本機伺服器（如果您是在 Windows Server 上執行伺服器管理員，而不是在以 Windows 為基礎的用戶端作業系統上執行），以及執行 Windows Server 2008 和更新版本之 Windows 的遠端伺服器。伺服器作業系統。
 
-伺服器管理員中的 [**本機伺服器**] 頁面會顯示伺服器屬性、事件、服務和效能計數器資料，以及本機伺服器的最佳做法分析程式（BPA）結果。 事件、服務、BPA 和效能磚的運作方式與在角色和伺服器群組頁面上相同。 如需關於設定這些磚中所顯示資料的詳細資訊，請參閱[檢視與設定效能、事件及服務資料](view-and-configure-performance-event-and-service-data.md)以及[執行最佳做法分析程式掃描與管理掃描結果](run-best-practices-analyzer-scans-and-manage-scan-results.md)。
+伺服器管理員中的 [**本機伺服器**] 頁面會顯示伺服器屬性、事件、服務和效能計數器資料，以及本機伺服器的最佳做法分析程式（BPA）結果。 事件、服務、BPA 和效能磚的運作方式與在角色和伺服器群組頁面上相同。 如需有關設定這些磚中顯示之資料的詳細資訊，請參閱 [View 和 Configure Performance, Event, 和 Service Data](view-and-configure-performance-event-and-service-data.md) 和 [Run Best Practices Analyzer Scans 和 Manage Scan Results](run-best-practices-analyzer-scans-and-manage-scan-results.md)。
 
 伺服器管理員主控台標題列中的功能表命令和設定會全域套用至伺服器集區中的所有伺服器，並可讓您使用伺服器管理員來管理整個伺服器集區。
 
-本主題涵蓋下列各節。
+本主題包含下列各節。
 
 -   [關閉本機伺服器](#BKMK_shutdown)
 
@@ -43,7 +43,7 @@ ms.locfileid: "71383114"
 -   [管理角色首頁上的角色](#BKMK_roles)
 
 ## <a name="BKMK_shutdown"></a>關閉本機伺服器
-本地**伺服器 [** **屬性**] 磚中的 [工作] 功能表可讓您在本機伺服器上啟動 Windows PowerShell 會話、開啟 [**電腦管理**] mmc 嵌入式管理單元，或針對本機上安裝的角色或功能開啟 mmc 嵌入式管理單元。伺服器. 您也可以使用這個 [工作] 功能表中的 [關閉本機伺服器] 命令來關閉本機伺服器。 您也可以在 [所有伺服器] 頁面的 [伺服器] 磚中或在本機伺服器代表的任何角色或群組頁面中，找到供本機伺服器使用的 [關閉本機伺服器] 命令。
+本地**伺服器 [** **屬性**] 磚中的 [工作] 功能表可讓您在本機伺服器上啟動 Windows PowerShell 會話、開啟 [**電腦管理**] mmc 嵌入式管理單元，或開啟本機伺服器上所安裝角色或功能的 mmc 嵌入式管理單元。 您也可以使用這個 [工作] 功能表中的 [關閉本機伺服器] 命令來關閉本機伺服器。 您也可以在 [所有伺服器] 頁面的 [伺服器] 磚中或在本機伺服器代表的任何角色或群組頁面中，找到供本機伺服器使用的 [關閉本機伺服器] 命令。
 
 與從 [**開始**] 畫面關閉 windows server 2016 不同的是，使用這個方法關閉本機伺服器會開啟 [**關閉 windows** ] 對話方塊，讓您在 [**關機事件追蹤**器] 區域中指定關機的原因。
 
@@ -56,7 +56,7 @@ ms.locfileid: "71383114"
 > [!NOTE]
 > 通常本機伺服器 [屬性] 磚中顯示的屬性只能在本機伺服器上變更。 您無法使用伺服器管理員從遠端電腦變更本機伺服器屬性，因為 [**屬性**] 磚只能取得本機電腦的相關資訊，而非遠端電腦。
 > 
-> 因為 [**屬性**] 磚中顯示的許多屬性是由不屬於伺服器管理員的工具所控制（例如 [控制台]），所以 [**屬性] 設定的**變更不一定會顯示在 [**屬性**] 磚中。隨即. 根據預設，[屬性] 磚中的資料每兩分鐘會重新整理一次。 若要立即重新整理**屬性**磚資料，請按一下伺服器管理員網址列**中的 [** 重新整理]。
+> 因為 [**屬性**] 磚中顯示的許多屬性是由不屬於伺服器管理員的工具所控制（例如 [控制台]），所以 [**屬性] 設定的**變更不一定會立即顯示在 [**屬性**] 磚中。 根據預設，[屬性] 磚中的資料每兩分鐘會重新整理一次。 若要立即重新整理**屬性**磚資料，請按一下伺服器管理員網址列**中的 [** 重新整理]。
 
 |設定|描述|
 |------|--------|
@@ -74,7 +74,7 @@ ms.locfileid: "71383114"
 |上次檢查更新的時間|顯示上次檢查伺服器是否有可用 Windows 更新的日期和時間。 開啟 [控制台\系統及安全性\Windows Update]。|
 |Windows 錯誤報告|顯示 Windows 錯誤報告選擇加入狀態。 開啟 [Windows 錯誤報告設定] 對話方塊。 如需 Windows 錯誤報告、其優點、隱私權聲明及選擇加入設定的詳細資訊，請參閱 [Windows 錯誤報告](https://go.microsoft.com/fwlink/?LinkID=245991)。|
 |客戶經驗改進計畫|顯示 Windows 客戶經驗改進計畫選擇加入狀態。 開啟 [客戶經驗改進計畫設定] 對話方塊。 如需 Windows 客戶經驗改進計畫、其優點及選擇加入設定的詳細資訊，請參閱 [Windows 客戶經驗改進計畫](https://go.microsoft.com/fwlink/?LinkID=245992)。|
-|Internet Explorer (IE) 增強式安全性設定|顯示 IE 增強式安全性設定 (也稱為 IE 強化或 IE ESC) 為開啟或關閉。 開啟 [Internet Explorer 增強式安全性設定] 對話方塊。 IE 增強式安全性設定是用於伺服器的安全性手段，可避免網頁在 Internet Explorer 中開啟。 如需 IE 增強式安全性設定、其優點及設定的詳細資訊，請參閱 @no__t 0Internet Explorer：增強式安全性設定 @ no__t-0。|
+|Internet Explorer (IE) 增強式安全性設定|顯示 IE 增強式安全性設定 (也稱為 IE 強化或 IE ESC) 為開啟或關閉。 開啟 [Internet Explorer 增強式安全性設定] 對話方塊。 IE 增強式安全性設定是用於伺服器的安全性手段，可避免網頁在 Internet Explorer 中開啟。 如需 IE 增強式安全性設定、其優點及設定的詳細資訊，請參閱 [Internet Explorer：增強式安全性設定](https://go.microsoft.com/fwlink/?LinkId=253461)。|
 |時區|顯示本機伺服器的時區。 開啟 [**日期和時間**] 對話方塊。|
 |產品識別碼|顯示 Windows Server 2016 作業系統的 Windows 啟用狀態和產品識別碼（如果 Windows 已啟用）。 這個識別碼與 Windows 產品金鑰不同。 開啟 [Windows 啟用] 對話方塊。|
 |處理器|此唯讀欄位會顯示本機伺服器處理器的製造商、型號名稱和速度資訊。|
@@ -104,7 +104,7 @@ ms.locfileid: "71383114"
 遠端桌面服務、IP 位址管理以及檔案和存放服務的伺服器管理員角色首頁中所顯示的資料不會自動重新整理。 手動重新整理這些頁面中顯示的資料，方法是在您使用這些頁面時，按**F5** **或按一下伺服器管理員**主控台標題中的 [重新整理]。
 
 ### <a name="add-or-remove-roles-or-features"></a>新增或移除角色或功能
-開啟 [新增角色及功能] 嚮導和 [移除角色及功能] Wizard 的命令，並可讓您在伺服器集區的伺服器中新增或移除角色、角色服務和功能，位於伺服器管理員主控台的 [**管理**] 功能表中，**以及 [工作]** 角色或群組頁面上 [**角色和功能**] 磚的功能表。 如需如何新增或移除角色或功能的詳細資訊，請參閱[安裝或解除安裝角色、 角色服務或功能](install-or-uninstall-roles-role-services-or-features.md)。
+開啟 [新增角色及功能嚮導] 和 [移除角色及功能] 的命令，並讓您在伺服器集區的伺服器中新增或移除角色、角色服務和功能，位於伺服器管理員主控台的 [**管理**] 功能表，以及角色或群組頁面上 [**角色和功能**]**磚的 [工作] 功能表。** 如需如何新增或移除角色或功能的詳細資訊，請參閱 [Install or Uninstall Roles, Role Services, or Features](install-or-uninstall-roles-role-services-or-features.md)。
 
 在伺服器管理員中，角色和功能資料會以系統的基礎語言顯示（也稱為系統預設 GUI 語言），或是在安裝作業系統期間選取的語言。
 
@@ -148,7 +148,7 @@ ms.locfileid: "71383114"
     > [!NOTE]
     > 如果您將存取許可權制為已複製到 [系統管理工具] 的整個資料夾，受限制的使用者就不會在 [伺服器管理員**工具**] 功能表中看到資料夾或其內容。
     > 
-    > 在 [系統**管理工具**] 資料夾中編輯資料夾的許可權。 由於 [系統管理**工具] 中**的隱藏檔案和資料夾一律會顯示在 [伺服器管理員**工具**] 功能表中，因此請勿使用檔案或資料夾的 [內容] 對話方塊上的 [**隱藏**] 設定來限制使用者存取您的自訂工具快捷方式.
+    > 在 [系統**管理工具**] 資料夾中編輯資料夾的許可權。 由於 [系統管理**工具] 中**的隱藏檔案和資料夾一律會顯示在 [伺服器管理員**工具**] 功能表中，因此請勿使用檔案或資料夾的 [內容] 對話方塊上的 [**隱藏**] 設定來限制使用者存取自訂工具快捷方式。
     > 
     > [拒絕] 權限一律覆寫 [允許] 權限。
 
@@ -175,13 +175,14 @@ ms.locfileid: "71383114"
 
     如需部署和管理 IPAM 的詳細資訊，請參閱[IP 位址管理（ipam）](https://go.microsoft.com/fwlink/p/?LinkId=241533)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [伺服器管理員](server-manager.md)
 [將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)
 [建立和管理伺服器群組](create-and-manage-server-groups.md)
-[查看和設定效能、事件及服務資料](view-and-configure-performance-event-and-service-data.md)
- 檔案[和存放服務](https://go.microsoft.com/fwlink/p/?LinkId=241530)
-[遠端桌面服務（rdS）](https://go.microsoft.com/fwlink/p/?LinkId=241532)1 個[IP 位址管理（IPAM）](https://go.microsoft.com/fwlink/p/?LinkId=241533)
+[查看和設定效能、事件和服務資料](view-and-configure-performance-event-and-service-data.md)
+檔案[和存放服務](https://go.microsoft.com/fwlink/p/?LinkId=241530)
+[遠端桌面服務（rdS）](https://go.microsoft.com/fwlink/p/?LinkId=241532)
+[IP 位址管理（IPAM）](https://go.microsoft.com/fwlink/p/?LinkId=241533)
 
 
 

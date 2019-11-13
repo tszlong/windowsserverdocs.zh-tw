@@ -19,15 +19,15 @@ ms.locfileid: "71361688"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步驟 3：在 WSUS 中核准和部署更新
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 電腦群組中的電腦會在接下來的 24 小時內連絡 WSUS 伺服器來取得更新。 您可以使用 WSUS 報告功能來判斷這些更新是否已經部署到測試電腦。 在成功完成測試之後，您可以為組織中適當的電腦群組核准更新。 下列檢查清單描述使用 WSUS 管理主控台來核准和部署更新的步驟。
 
 |工作|描述|
 |----|--------|
-|[3.1。核准和部署 WSUS 更新 @ no__t-0|使用 WSUS 管理主控台來核准和部署 WSUS 更新。|
-|[3.2。設定自動核准規則 @ no__t-0|設定 WSUS 來自動核准安裝所選群組的更新，以及如何核准現有更新的修訂。|
-|[3.3。使用 WSUS 報告審核已安裝的更新 @ no__t-0|使用 WSUS 報告功能檢閱已經安裝的更新、接收這些更新的電腦及其他詳細資料。|
+|[3.1. 核准和部署 WSUS 更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.1.)|使用 WSUS 管理主控台來核准和部署 WSUS 更新。|
+|[3.2. 設定自動核准規則](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|設定 WSUS 來自動核准安裝所選群組的更新，以及如何核准現有更新的修訂。|
+|[3.3. 使用 WSUS 報告來審查已安裝的更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|使用 WSUS 報告功能檢閱已經安裝的更新、接收這些更新的電腦及其他詳細資料。|
 
 ## <a name="BKM_3.1."></a>3.1。 核准和部署 WSUS 更新
 使用下列程序來核准和部署更新。
@@ -69,7 +69,7 @@ ms.locfileid: "71361688"
 
 5.  在 **[步驟2：編輯屬性**] 中，按一下每個列出的選項，然後為每個選項選取適當的選項。
 
-6.  在 **Step 3：指定名稱 @ no__t-0，輸入規則的名稱，然後按一下 **[確定]** 。
+6.  在 [**步驟3：指定名稱**] 中，輸入規則的名稱，然後按一下 **[確定]** 。
 
 7.  按一下 [確定] 關閉 [自動核准] 對話方塊。
 

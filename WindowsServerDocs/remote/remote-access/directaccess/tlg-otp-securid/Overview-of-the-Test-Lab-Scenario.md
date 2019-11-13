@@ -21,9 +21,9 @@ ms.locfileid: "71404740"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>測試實驗室案例概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-遠端存取是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 作業系統中的一個伺服器角色，可讓遠端使用者使用 DirectAccess 或虛擬私人網路（Vpn），以安全地存取內部網路資源。路由及遠端存取服務（RRAS）。 本指南包含延伸 @no__t 0Test 實驗室指南的逐步指示：示範使用混合 IPv4 和 IPv6 @ no__t-0 的 DirectAccess 單一伺服器安裝，以示範遠端存取一次性密碼（OTP）設定。  
+遠端存取是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 作業系統中的一個伺服器角色，可讓遠端使用者使用 DirectAccess 或虛擬私人網路（Vpn），以安全地存取內部網路資源。路由及遠端存取服務（RRAS）。 本指南包含擴充[測試實驗室指南的逐步指示：使用混合的 IPv4 與 IPv6 示範 DirectAccess 單一伺服器安裝](https://go.microsoft.com/fwlink/p/?LinkId=237004)，以示範遠端存取一次性密碼（OTP）設定。  
   
 > [!WARNING]  
 > 此測試實驗室指南的設計包括基礎結構伺服器，例如網域控制站和執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的憑證授權單位單位（CA）。 使用此測試實驗室指南來設定執行其他作業系統的基礎結構伺服器尚未經過測試，且本指南不含設定其他作業系統的指示。  

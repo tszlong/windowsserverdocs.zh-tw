@@ -38,7 +38,7 @@ AD FS 中的存取控制會使用發行授權宣告規則來執行，以用來�
 
 如需有關這些規則選項和邏輯的詳細資訊，請參閱 [When to Use an Authorization Claim Rule](https://technet.microsoft.com/library/ee913560.aspx)。
 
-在 Windows Server 2012 R2 的 AD FS 中，以多因素（包括使用者、裝置、位置和驗證資料）增強了存取控制。 這種方法之所以可行是因為授權宣告規則有多種不同的宣告類型。  換句話說，在 Windows Server 2012 R2 的 AD FS 中，您可以根據使用者身分識別或群組成員資格、網路位置、裝置（無論是否已加入工作地點）來強制執行條件式存取控制，如需詳細資訊，請參閱[從任何裝置針對 SSO 加入工作場所以及跨公司應用程式的無縫第二因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)），以及驗證狀態（是否已執行多重要素驗證（MFA））。
+在 Windows Server 2012 R2 的 AD FS 中，以多因素（包括使用者、裝置、位置和驗證資料）增強了存取控制。 這種方法之所以可行是因為授權宣告規則有多種不同的宣告類型。  換句話說，在 Windows Server 2012 R2 的 AD FS 中，您可以根據使用者身分識別或群組成員資格、網路位置、裝置（不論是否已加入工作地點）來強制執行條件式存取控制，如需詳細資訊，請參閱[從任何裝置加入工作場所，以進行 SSO，以及跨公司應用程式進行無縫式第二因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)），以及驗證狀態
 
 Windows Server 2012 R2 AD FS 中的條件式存取控制提供下列優點：
 
@@ -50,7 +50,7 @@ Windows Server 2012 R2 AD FS 中的條件式存取控制提供下列優點：
 
 -   為進階條件式存取控制案例提供豐富的宣告語言和 Windows PowerShell 支援
 
--   自訂（每個信賴憑證者應用程式）「拒絕存取」訊息。 如需詳細資訊，請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。 透過自訂這些訊息，您可以解釋拒絕使用者存取的原因，同時視需要提供自助補救，例如，提示使用者將裝置加入工作地點。 如需詳細資訊，請參閱[從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+-   自訂（每個信賴憑證者應用程式）「拒絕存取」訊息。 如需詳細資訊，請參閱 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。 透過自訂這些訊息，您可以解釋拒絕使用者存取的原因，同時視需要提供自助補救，例如，提示使用者將裝置加入工作地點。 如需詳細資訊，請參閱 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 下表包含要用來執行條件式存取控制的 Windows Server 2012 R2 AD FS 中所有可用的宣告類型。
 
@@ -58,7 +58,7 @@ Windows Server 2012 R2 AD FS 中的條件式存取控制提供下列優點：
 |--------------|---------------|
 |電子郵件地址|使用者的電子郵件地址。|
 |名字|使用者的名字。|
-|Name|使用者的唯一名稱。|
+|名稱|使用者的唯一名稱。|
 |UPN|使用者的使用者主要名稱 (UPN)。|
 |一般名稱|使用者的一般名稱。|
 |AD FS 1 x 電子郵件地址|與 AD FS 1.1 或 AD FS 1.0 交互作業時的使用者電子郵件地址。|
@@ -99,14 +99,14 @@ Windows Server 2012 R2 AD FS 中的條件式存取控制提供下列優點：
 |簽發者名稱|憑證簽發者的辨別名稱。|
 |金鑰使用方法|說明憑證的其中一個增強金鑰使用方法。|
 |不能晚於|憑證不再有效的當地時間日期。|
-|生效時間|憑證生效的當地時間日期。|
+|不能早於|憑證生效的當地時間日期。|
 |憑證原則|發行憑證所遵循的原則。|
 |公開金鑰|憑證的公開金鑰。|
 |憑證原始資料|憑證的原始資料。|
 |主體別名|憑證的其中一個替代名稱。|
 |序號|憑證的序號。|
 |簽章演算法|建立憑證簽章所用的演算法。|
-|Subject|來自憑證的主體。|
+|主體|來自憑證的主體。|
 |主體金鑰識別碼|憑證的主體金鑰識別碼。|
 |主體名稱|來自憑證的主體辨別名稱。|
 |V2 範本名稱|發行或續約憑證時所用的版本 2 憑證範本名稱。 這是 Microsoft 特定的值。|
@@ -123,9 +123,9 @@ Windows Server 2012 R2 AD FS 中的條件式存取控制提供下列優點：
 使用可用的設定，實作條件式存取控制來管理風險的方法有很多種。
 
 ### <a name="common-scenarios"></a>常見案例
-例如，假設有一個簡單的案例，根據特定應用程式（信賴憑證者信任）的使用者群組成員資格資料來執行條件式存取控制。 換句話說，您可以在同盟伺服器上設定發行授權規則，讓屬於您 AD 網域中某個群組的使用者存取受 AD FS 保護的特定應用程式。  @No__t 0Walkthrough 指南中會涵蓋執行此案例的詳細逐步指示（使用 UI 和 Windows PowerShell）：使用條件式存取控制 @ no__t-0 來管理風險。 若要完成本逐步解說中的步驟，您必須設定實驗室環境，並依照在[Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步驟進行。
+例如，假設有一個簡單的案例，根據特定應用程式（信賴憑證者信任）的使用者群組成員資格資料來執行條件式存取控制。 換句話說，您可以在同盟伺服器上設定發行授權規則，讓屬於您 AD 網域中某個群組的使用者存取受 AD FS 保護的特定應用程式。  如需實作此案例的詳細逐步指示 (使用 UI 和 Windows PowerShell)，請參閱 [Walkthrough Guide: Manage Risk with Conditional Access Control](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)。 若要完成本逐步解說中的步驟，您必須設定實驗室環境，並依照在[Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步驟進行。
 
-### <a name="advanced-scenarios"></a>進階的案例
+### <a name="advanced-scenarios"></a>進階案例
 在 Windows Server 2012 R2 中的 AD FS 中執行條件式存取控制的其他範例包括下列各項：
 
 -   只有在此使用者的身分識別已通過 MFA 驗證時，才允許存取受 AD FS 保護的應用程式
@@ -174,8 +174,9 @@ Windows Server 2012 R2 AD FS 中的條件式存取控制提供下列優點：
 
     ```
 
-## <a name="see-also"></a>另請參閱
-[逐步解說指南：使用條件存取控制 @ no__t-0 @ no__t 管理風險-1[在 Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+## <a name="see-also"></a>請參閱
+[逐步解說指南：使用條件式存取控制管理風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+[在 Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

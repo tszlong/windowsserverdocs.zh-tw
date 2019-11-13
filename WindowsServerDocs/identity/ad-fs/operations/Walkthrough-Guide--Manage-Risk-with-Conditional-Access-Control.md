@@ -26,13 +26,13 @@ ms.locfileid: "71407466"
 
 本逐步解說包含下列各節：
 
--   [步驟 1：設定實驗室環境 @ no__t-0
+-   [步驟1：設定實驗室環境](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [步驟 2：確認預設 AD FS 存取控制機制 @ no__t-0
+-   [步驟2：確認預設 AD FS 存取控制機制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
--   [步驟 3：根據使用者資料設定條件式存取控制原則 @ no__t-0
+-   [步驟3：根據使用者資料設定條件式存取控制原則](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_3)
 
--   [步驟 4：驗證條件式存取控制機制 @ no__t-0
+-   [步驟4：驗證條件式存取控制機制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
 
 ## <a name="BKMK_1"></a>步驟1：設定實驗室環境
 若要完成本逐步解說，您的環境必須包含下列元件：
@@ -52,7 +52,7 @@ ms.locfileid: "71407466"
 
 如需有關如何設定此環境的指示，請參閱在[Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)。
 
-## <a name="BKMK_2"></a>步驟2：驗證預設的 AD FS 存取控制機制
+## <a name="BKMK_2"></a>步驟2：確認預設 AD FS 存取控制機制
 在這個步驟您要驗證預設的 AD FS 存取控制機制，使用者會被重新導向到 AD FS 登入頁面、提供有效的認證，然後授與應用程式的存取權。 您可以使用**Robert Hatley** AD 帳戶，以及您在[為 Windows Server 2012 R2 中的 AD FS 設定實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中所設定的**claimapp**範例應用程式。
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>驗證預設的 AD FS 存取控制機制
@@ -126,9 +126,9 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 
 3.  輸入另一個不屬於 **Finance** 群組的 AD 使用者認證 （如需如何在 AD 中建立使用者帳戶的詳細資訊，請參閱[https://technet.microsoft.com/library/cc7833232.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx)。
 
-    此時，因為您在上一個步驟中設定的存取控制原則，所以會針對不屬於**財務**群組的此 AD 使用者顯示「拒絕存取」訊息。 預設郵件內文為 @no__t 0You 未獲授權，無法存取此網站。按一下這裡登出並重新登入，或洽詢您的系統管理員以取得許可權。 ** 。不過，您可以完全自訂這段文字內容。 如需如何自訂登入體驗的詳細資訊，請參閱＜ [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)＞。
+    此時，因為您在上一個步驟中設定的存取控制原則，所以會針對不屬於**財務**群組的此 AD 使用者顯示「拒絕存取」訊息。 預設郵件內文是**您未獲授權存取此網站。按一下這裡登出並重新登入，或洽詢您的系統管理員以取得許可權。** 。不過，您可以完全自訂這段文字內容。 如需如何自訂登入體驗的詳細資訊，請參閱＜ [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)＞。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [使用條件式存取控制管理風險](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 [在 Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

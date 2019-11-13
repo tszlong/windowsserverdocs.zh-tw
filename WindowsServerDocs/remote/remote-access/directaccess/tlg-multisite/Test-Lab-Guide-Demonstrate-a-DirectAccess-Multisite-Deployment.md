@@ -19,11 +19,11 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388216"
 ---
-# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>測試實驗室指南：示範 DirectAccess 多網站部署
+# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>測試實驗室指南：示範 DirectAccess 多站台部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-遠端存取是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 作業系統中的一個伺服器角色，可讓遠端使用者使用 DirectAccess 或 RRAS VPN 安全地存取內部網路資源。 本指南包含延伸 @no__t 0Test 實驗室指南的逐步指示：示範使用混合 IPv4 和 IPv6 @ no__t-0 的 DirectAccess 單一伺服器安裝，以示範如何在多站案例中進行遠端存取。  
+遠端存取是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 作業系統中的一個伺服器角色，可讓遠端使用者使用 DirectAccess 或 RRAS VPN 安全地存取內部網路資源。 本指南包含擴充[測試實驗室指南的逐步指示：使用混合 IPv4 和 IPv6 示範 DirectAccess 單一伺服器安裝](https://go.microsoft.com/fwlink/p/?LinkId=237004)，以示範在多站案例中的遠端存取。  
   
 在多網站案例中部署遠端存取可讓您在不同地理位置上設定遠端存取服務器。 過去，遠端使用者必須一律透過特定 DirectAccess 伺服器連線到公司網路。 在 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 和 Windows 10 或 Windows 8 中，您可以設定部署中每個地理位置的進入點。 每個進入點都可以是單一遠端存取服務器或遠端存取服務器的叢集。 遠端使用者可以選擇連接到組織的任何遠端存取進入點。 例如，如果遠端使用者通常連線到位於亞洲的「遠端存取」進入點，但又到達「歐洲」的商務旅程，則用戶端電腦會自動連接到最接近的「遠端存取」進入點。  
   

@@ -19,19 +19,19 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361659"
 ---
-# <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步驟 4：設定自動更新的群組原則設定
+# <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步驟 4︰設定自動更新的群組原則設定
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 active directory 環境中，您可以使用群組原則來定義電腦和使用者（在本檔中稱為 WSUS 用戶端）如何與 Windows Update 互動，以從 Windows Server Update Services （WSUS）取得自動更新。
 
 本主題包含兩個主要區段：
 
-[Wsus 用戶端更新的群組原則設定](#group-policy-settings-for-wsus-client-updates)，其中提供群組原則的 Windows Update 和維護排程器設定的規範性指引和行為詳細資料，以控制 WSUS 用戶端如何與 Windows Update 互動取得自動更新。
+[Wsus 用戶端更新的群組原則設定](#group-policy-settings-for-wsus-client-updates)，其中提供有關群組原則的 Windows Update 和維護排程器設定的規範性指引和行為詳細資料，以控制 WSUS 用戶端如何與 Windows Update 互動以取得自動更新。
 
 [補充資訊](#supplemental-information)包含下列各節：
 
--   [存取群組原則中的 Windows Update 設定](#accessing-the-windows-update-settings-in-group-policy)，其中提供使用 [群組原則管理編輯器] 的一般指引，以及存取 [群組] 中的 [更新服務原則延伸] 和 [維護排程器] 設定的相關資訊策略.
+-   [存取群組原則中的 Windows Update 設定](#accessing-the-windows-update-settings-in-group-policy)，其中提供使用群組原則管理編輯器的一般指引，以及在群組原則中存取 [更新服務] 原則延伸和 [維護排程器] 設定的相關資訊。
 
 -   與[本指南相關的 Wsus 變更](#changes-to-wsus-relevant-to-this-guide)：對於熟悉 WSUS 3.2 和舊版的系統管理員，本節提供與本指南相關之目前和過去版本的 wsus 之間主要差異的簡短摘要。
 
@@ -40,11 +40,11 @@ ms.locfileid: "71361659"
 ## <a name="group-policy-settings-for-wsus-client-updates"></a>WSUS 用戶端更新的群組原則設定
 本節提供三個群組原則擴充功能的相關資訊。 在這些延伸模組中，您會找到可用來設定 WSUS 用戶端如何與 Windows Update 互動以接收自動更新的設定。
 
--   [電腦設定 &gt; Windows Update 原則設定](#computer-configuration--windows-update-policy-settings)
+-   [Windows Update 原則設定 &gt; 電腦設定](#computer-configuration--windows-update-policy-settings)
 
 -   [電腦設定 &gt; 維護排程器原則設定](#computer-configuration--maintenance-scheduler-policy-settings)
 
--   [使用者設定 &gt; Windows Update 原則設定](#user-configuration--windows-update-policy-settings)
+-   [&gt; Windows Update 原則設定的使用者配置](#user-configuration--windows-update-policy-settings)
 
 > [!NOTE]
 > 本主題假設您已經使用，並熟悉群組原則。 如果您不熟悉群組原則，建議您先參閱本檔的[補充資訊](#supplemental-information)一節中的資訊，再嘗試設定 WSUS 的原則設定。
@@ -64,7 +64,7 @@ ms.locfileid: "71361659"
 
 -   [延遲重新開機已排程的安裝](#delay-restart-for-scheduled-installations)
 
--   [不會調整關閉關閉 Windows 對話方塊中的預設選項來 安裝更新並關機](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
+-   [請勿在 [關閉 Windows] 對話方塊中，將預設選項調整為 [安裝更新並關機]](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
 -   [不要在 [關閉 Windows] 對話方塊中顯示 [安裝更新並關機] 選項](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
@@ -84,7 +84,7 @@ ms.locfileid: "71361659"
 
 -   [開啟軟體通知](#turn-on-software-notifications)
 
-在 GPME 中，以電腦為基礎的設定 Windows Update 原則位於下列路徑：*PolicyName* >  部**電腦**設定  >  個**原則** > **系統管理範本** >  個**Windows 元件** > **Windows Update**。
+在 GPME 中，以電腦為基礎的設定 Windows Update 原則*位於 > * **電腦**設定 > **原則** > **系統管理範本** > **Windows 元件** > Windows Update 的路徑**中。**
 
 > [!NOTE]
 > 根據預設，不會設定這些設定。
@@ -212,7 +212,7 @@ ms.locfileid: "71361659"
 |-|-|
 |**原則設定狀態**|**表現**|
 |**未設定**|指定在群組原則層級未指定自動更新的使用。 不過，電腦系統管理員仍然可以在 [控制台] 中設定自動更新。|
-|**已啟用**|指定 Windows 可辨識電腦何時上線，並使用其網際網路連線搜尋 Windows Update 是否有可用的更新。<br /><br />啟用時，會允許本機系統管理員使用 Windows Update 控制台來選取其選擇的設定選項。 不過，不允許本機系統管理員停用自動更新的設定。<br /><br />-   **2-通知下載並通知安裝**<br />    當 Windows Update 找到適用于電腦的更新時，系統會通知使用者更新已準備就緒可供下載。 然後，使用者可以執行 Windows Update 下載並安裝任何可用的更新。<br />-   **3-自動下載並通知安裝**（預設設定）<br />    Windows Update 會尋找適用的更新，並在背景下載它們。在程式期間，使用者不會收到通知或中斷。 當下載完成時，系統會通知使用者已準備好要安裝的更新。 然後，使用者可以執行 Windows Update 以安裝下載的更新。<br />-   **4-自動下載和排程安裝**<br />    您可以使用此群組原則設定中的選項來指定排程。 如果未指定排程，所有安裝的預設排程會在每天上午3:00 如果有任何更新需要重新開機才能完成安裝，Windows 將會自動重新開機電腦。 （如果使用者在 Windows 準備好重新開機時已登入電腦，則會通知使用者，並提供延遲重新開機的選項。）**注意：** 啟動 Windows 8，您可以將更新設定為在自動維護期間安裝，而不是使用與 Windows Update 系結的特定排程。 自動維護會在電腦未使用時安裝更新，並避免在電腦以電池電源執行時安裝更新。 如果自動維護在天內無法安裝更新，Windows Update 會立即安裝更新。 然後，系統會通知使用者有關暫止的重新開機。 只有在沒有意外資料遺失的情況下，才會進行擱置中的重新開機。    您可以在 [GPME 維護排程器] 設定（位於路徑、 *PolicyName* > **電腦**設定  >  個**原則** > **系統管理範本** >  **）中指定排程選項。Windows 元件** > **維護**排程器 1**自動維護啟用界限**。 請參閱本參考的章節，其標題為：[維護](#computer-configuration--maintenance-scheduler-policy-settings)排程器設定，用於設定詳細資料。    **5-允許本機系統管理員選擇設定**<br />-指定是否允許本機系統管理員使用自動更新控制台來選取其選擇的設定選項，例如本機系統管理員是否可以選擇排程的安裝時間。<br />    本機系統管理員不可停用自動更新的設定。|
+|**已啟用**|指定 Windows 可辨識電腦何時上線，並使用其網際網路連線搜尋 Windows Update 是否有可用的更新。<br /><br />啟用時，會允許本機系統管理員使用 Windows Update 控制台來選取其選擇的設定選項。 不過，不允許本機系統管理員停用自動更新的設定。<br /><br />-   **2-通知下載並通知安裝**<br />    當 Windows Update 找到適用于電腦的更新時，系統會通知使用者更新已準備就緒可供下載。 然後，使用者可以執行 Windows Update 下載並安裝任何可用的更新。<br />-   **3-自動下載並通知安裝**（預設設定）<br />    Windows Update 會尋找適用的更新，並在背景下載它們。在程式期間，使用者不會收到通知或中斷。 當下載完成時，系統會通知使用者已準備好要安裝的更新。 然後，使用者可以執行 Windows Update 以安裝下載的更新。<br />-   **4-自動下載和排程安裝**<br />    您可以使用此群組原則設定中的選項來指定排程。 如果未指定排程，所有安裝的預設排程會在每天上午3:00 如果有任何更新需要重新開機才能完成安裝，Windows 將會自動重新開機電腦。 （如果使用者在 Windows 準備好重新開機時已登入電腦，則會通知使用者，並提供延遲重新開機的選項。）**注意：** 啟動 Windows 8，您可以將更新設定為在自動維護期間安裝，而不是使用與 Windows Update 系結的特定排程。 自動維護會在電腦未使用時安裝更新，並避免在電腦以電池電源執行時安裝更新。 如果自動維護在天內無法安裝更新，Windows Update 會立即安裝更新。 然後，系統會通知使用者有關暫止的重新開機。 只有在沒有意外資料遺失的情況下，才會進行擱置中的重新開機。    您可以在 [GPME 維護排程器] 設定（位於路徑、 *PolicyName* ** >  > ** **原則** > **系統管理範本** > **Windows 元件** > **維護**排程器 > **自動維護啟用界限**）中，指定排程選項。 如需設定詳細資料，請參閱此參考的區段，其標題為：維護排程器[設定](#computer-configuration--maintenance-scheduler-policy-settings)。    **5-允許本機系統管理員選擇設定**<br />-指定是否允許本機系統管理員使用自動更新控制台來選取其選擇的設定選項，例如本機系統管理員是否可以選擇排程的安裝時間。<br />    本機系統管理員不可停用自動更新的設定。|
 |**已停用**|指定可從公用 Windows Update 服務取得的任何用戶端更新，都必須從網際網路手動下載並安裝。|
 
 #### <a name="delay-restart-for-scheduled-installations"></a>延遲重新開機已排程的安裝
@@ -242,13 +242,13 @@ ms.locfileid: "71361659"
 |仍在其 Microsoft 產品內的 Windows 作業系統[支援生命週期](https://support.microsoft.com/gp/lifeselect)。|null|
 
 > [!NOTE]
-> 如果*PolicyName*@no__t 1**電腦**設定  >  個**原則** > **系統管理範本** > **Windows 元件** > **Windows Update**@no_，此原則設定就不會有任何影響。_t-11 **[關閉 Windows] 對話方塊原則設定中不會顯示 [安裝更新並關機] 選項**。
+> 如果*PolicyName* > **電腦**設定 > **原則** > **系統管理範本** > **Windows 元件** ** > Windows Update** > **不會在 [關閉 Windows] 對話方塊原則設定中顯示 [安裝更新並關機] 選項**，此原則設定就不會有任何影響。
 
 |||
 |-|-|
 |**原則設定狀態**|**表現**|
 |**未設定**|指定當使用者選取 [關機] 選項以關閉電腦時，[**安裝更新] 和 [關機**] 將會是 [**關閉 Windows** ] 對話方塊中的預設選項。|
-|**已啟用**|如果您啟用此原則設定，使用者的上次關機選擇（例如 [休眠] 或 [重新開機]）是 [**關閉 Windows** ] 對話方塊中的預設選項，不論是否有 [**安裝更新] 和 [關機**] 選項。**您要電腦執行什麼動作？** 下拉式功能表.|
+|**已啟用**|如果您啟用此原則設定，使用者的上次關機選擇（例如 [休眠] 或 [重新開機]）是 [**關閉 Windows** ] 對話方塊中的預設選項，不論 [**您要電腦執行什麼動作嗎？** ] 功能表中是否有 [**安裝更新] 和 [關機**] 選項。|
 |**已停用**|指定當使用者選取 [關機] 選項以關閉電腦時，[**安裝更新] 和 [關機**] 將會是 [**關閉 Windows** ] 對話方塊中的預設選項。|
 
 **選項：** 此設定沒有任何選項。
@@ -466,7 +466,7 @@ ms.locfileid: "71361659"
 **選項：** 此設定沒有任何選項。
 
 ### <a name="computer-configuration--maintenance-scheduler-policy-settings"></a>電腦設定 > 維護排程器原則設定
-在 [設定自動更新] 設定中，您已選取 [ **4-自動下載和排程安裝**] 選項，您可以在 GPMC 中為執行 Windows 8 和 Windows RT 的電腦指定排程維護排程器設定。 如果您未在 [設定自動更新] 設定中選取選項4，就不需要針對自動更新的目的來設定這些設定。 維護排程器設定位於下列路徑：*PolicyName* >  部**電腦**設定  >  個**原則** > **系統管理範本** >  個**Windows 元件** >  個**維護**排程器。 群組原則的維護排程器延伸模組包含下列設定：
+在 [設定自動更新] 設定中，您已選取 [ **4-自動下載和排程安裝**] 選項，您可以在 GPMC 中為執行 Windows 8 和 Windows RT 的電腦指定排程維護排程器設定。 如果您未在 [設定自動更新] 設定中選取選項4，就不需要針對自動更新的目的來設定這些設定。 維護排程器設定位於路徑： *PolicyName* > **電腦 Configuration** > **原則** > **系統管理範本** > 的**Windows 元件** > **維護**排程器。 群組原則的維護排程器延伸模組包含下列設定：
 
 -   [自動維護啟用界限](#automatic-maintenance-activation-boundary)
 
@@ -489,9 +489,9 @@ ms.locfileid: "71361659"
 |||
 |-|-|
 |**原則設定狀態**|**表現**|
-|**未設定**|如果未設定此原則設定，則會套用 [**行動中心**] 中用戶端電腦上所指定的每日排程時間  >  個**自動維護**控制台。|
-|**已啟用**|啟用此原則設定會覆寫 [**控制台**] 中用戶端電腦上設定的任何預設或已修改設定  >  [**動作中心**] [@no__t 3**自動維護**] （或在某些用戶端版本中，[**維護**]）。|
-|**已停用**|如果您將此原則設定設為 [**停用**]，則會套用 [控制台] 中所指定的每日排程**時間 @no__t-** 2**自動維護**。|
+|**未設定**|如果未設定此原則設定，則會套用 [**動作中心**] 中用戶端電腦上所指定的每日排程時間 > **自動維護**控制台。|
+|**已啟用**|啟用此原則設定會覆寫 [**控制台**] 中用戶端電腦上設定的任何預設或已修改設定 > [**動作中心**] > **自動維護**（或在某些用戶端版本中，**維護**）。|
+|**已停用**|如果您將此原則設定設為 [**停用**]，則會套用 [控制台] 中所**指定的每**日排定時間 > **自動維護**。|
 
 #### <a name="automatic-maintenance-random-delay"></a>自動維護隨機延遲
 此原則設定可讓您設定自動維護啟用隨機延遲。
@@ -532,20 +532,20 @@ ms.locfileid: "71361659"
 |||
 |-|-|
 |**原則設定狀態**|**表現**|
-|**未設定**|如果您未設定此原則設定，則會套用 [**動作中心**] 中所指定的喚醒設定  >  [**自動維護**] 控制台。|
+|**未設定**|如果您未設定此原則設定，則會套用 [**動作中心**] 中所指定的喚醒設定 > [**自動維護**] 控制台。|
 |**已啟用**|如果您啟用此原則設定，自動維護將會嘗試設定作業系統喚醒原則，並在需要時對每日排定的時間提出喚醒要求。|
-|**已停用**|如果您停用此原則設定，則會套用 [**動作中心**] 中所指定的喚醒設定  >  [**自動維護**] 控制台。|
+|**已停用**|如果您停用此原則設定，則會套用 [**動作中心**] 中所指定的喚醒設定 > [**自動維護**] 控制台。|
 
 ### <a name="user-configuration--windows-update-policy-settings"></a>> Windows Update 原則設定的使用者配置
 本節提供下列以使用者為基礎的原則設定詳細資料：
 
--   [不會在關閉關閉 Windows 對話方塊中顯示 安裝更新並關機 選項](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
+-   [不要在 [關閉 Windows] 對話方塊中顯示 [安裝更新並關機] 選項](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
 -   [請勿在 [關閉 Windows] 對話方塊中，將預設選項調整為 [安裝更新並關機]](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
 -   [移除存取權以使用所有 Windows Update 功能](#remove-access-to-use-all-windows-update-features)
 
-在 GPMC 中，自動電腦更新的使用者設定位於下列路徑：*PolicyName* >  個**使用者**設定  >  個**原則** > **系統管理範本** >  個**Windows 元件** > **Windows Update**。 當選取 [Windows Update 原則] 的 [**設定**] 索引標籤以字母順序排序設定時，這些設定的順序會與 [電腦設定] 和 [使用者設定延伸模組] 中的群組原則相同。
+在 GPMC 中，自動電腦更新的使用者設定位於下列路徑： *PolicyName* > **使用者配置** > **原則** > **系統管理範本** > **Windows 元件** > **Windows Update**。 當選取 [Windows Update 原則] 的 [**設定**] 索引標籤以字母順序排序設定時，這些設定的順序會與 [電腦設定] 和 [使用者設定延伸模組] 中的群組原則相同。
 
 > [!NOTE]
 > 根據預設，除非另有注明，否則不會設定這些設定。
@@ -577,13 +577,13 @@ ms.locfileid: "71361659"
 |仍在其 Microsoft 產品內的 Windows 作業系統[支援生命週期](https://support.microsoft.com/gp/lifeselect)。|null|
 
 > [!NOTE]
-> 如果*PolicyName* >  個**使用者**設定  >  個**原則** > **系統管理範本** > **Windows 元件** > **Windows Update**，此原則設定就不會有任何影響 @no__ **[關閉 Windows] 對話方塊中的 [t-11] 不會顯示 [安裝更新並關機] 選項**。
+> 如果*PolicyName* > **使用者**設定 > **原則** > **系統管理範本** > **Windows 元件** ** > Windows Update** > **不會在 [關閉 Windows] 對話方塊中顯示 [安裝更新並關機] 選項**，此原則設定就不會有任何影響。
 
 |||
 |-|-|
 |**原則設定狀態**|**表現**|
 |**未設定**|指定當使用者選取 [關機] 選項以關閉電腦時，[**安裝更新] 和 [關機**] 選項是否會成為 [**關閉 Windows** ] 對話方塊中的預設選項。|
-|**已啟用**|指定使用者的上次關機選擇（例如 [休眠] 或 [重新開機]）是否為 [**關閉 Windows** ] 對話方塊中的預設選項，不論 [**安裝更新] 和 [關機] 選項**是否都可在 [**您要如何]要讓電腦執行嗎？** 下拉式功能表.|
+|**已啟用**|指定使用者的上次關機選擇（例如 [休眠] 或 [重新開機]）是否為 [**關閉 Windows** ] 對話方塊中的預設選項，不論 [**您要電腦執行什麼動作嗎？** ] 功能表中是否有 [**安裝更新] 和 [關機] 選項**。|
 |**已停用**|指定當使用者選取 [關機] 選項以關閉電腦時，[**安裝更新] 和 [關機**] 選項是否會成為 [**關閉 Windows** ] 對話方塊中的預設選項。|
 
 **選項：** 此設定沒有任何選項。
@@ -599,7 +599,7 @@ ms.locfileid: "71361659"
 |-|-|
 |**原則設定狀態**|**表現**|
 |**未設定**|使用者可以連接到 Windows Update 網站。|
-|**已啟用**|**重要：** 如果啟用，則會移除所有 Windows Update 功能。 這包括封鎖在 Windows Update 網站的存取權 [https://windowsupdate.microsoft.com](https://windowsupdate.microsoft.com )，從開始功能表 或 [開始] 畫面上，同時也會在 Windows Update hyperlink**工具**Internet Explorer 中的功能表。 Windows 自動更新也已停用;系統不會通知使用者，也不會收到來自 Windows Update 的重大更新。 此設定也會防止 Device Manager 從 Windows Update 網站自動安裝驅動程式更新。<br /><br />啟用時，您可以設定下列其中一個通知選項：<br /><br />-   **0-不顯示任何通知**<br />    此設定將會移除 Windows Update 功能的所有存取權，而且不會顯示任何通知。<br />-   **1-顯示 [需要重新開機] 通知**<br />    此設定會顯示完成安裝所需的重新開機通知。 **注意：** 在執行 Windows 8 和 Windows RT 的電腦上，如果已啟用此原則，則只會顯示與重新開機相關的通知，以及無法偵測到更新的情況。 不支援通知選項。 登入畫面上的通知一律會顯示。|
+|**已啟用**|**重要：** 如果啟用，則會移除所有 Windows Update 功能。 這包括在 https://windowsupdate.microsoft.com、[開始] 功能表或 [開始] 畫面上的 [Windows Update] 超連結，以及 Internet Explorer 的 [**工具**] 功能表上，封鎖對 Windows Update 網站的存取。 Windows 自動更新也已停用;系統不會通知使用者，也不會收到來自 Windows Update 的重大更新。 此設定也會防止 Device Manager 從 Windows Update 網站自動安裝驅動程式更新。<br /><br />啟用時，您可以設定下列其中一個通知選項：<br /><br />-   **0-不顯示任何通知**<br />    此設定將會移除 Windows Update 功能的所有存取權，而且不會顯示任何通知。<br />-   **1-顯示重新開機所需的通知**<br />    此設定會顯示完成安裝所需的重新開機通知。 **注意：** 在執行 Windows 8 和 Windows RT 的電腦上，如果已啟用此原則，則只會顯示與重新開機相關的通知，以及無法偵測到更新的情況。 不支援通知選項。 登入畫面上的通知一律會顯示。|
 |**已停用**|使用者可以連接到 Windows Update 網站。|
 
 **選項：** 如需此設定，請參閱資料表中的 [**已啟用**]。
@@ -636,11 +636,11 @@ ms.locfileid: "71361659"
 
 1.  在群組原則管理編輯器 中，執行下列其中一項動作：
 
-    -   **開啟 [電腦設定] > 群組原則的 Windows Update 延伸**模組。 瀏覽至：*PolicyName* >  部**電腦**設定  >  個**原則** / **系統管理範本** >  個**Windows 元件** > **Windows Update**。
+    -   **開啟 [電腦設定] > 群組原則的 Windows Update 延伸**模組。 流覽至： *PolicyName* > **電腦**設定 > **原則** / **系統管理範本** > **Windows 元件** > **Windows Update**。
 
-    -   **開啟群組原則的 使用者設定 > Windows Update 延伸**模組。 瀏覽至：*PolicyName* >  個**使用者**設定  >  個**原則** > **系統管理範本** >  個**Windows 元件** > **Windows Update**。
+    -   **開啟群組原則的 使用者設定 > Windows Update 延伸**模組。 流覽至： *PolicyName* > **使用者**設定 > **原則** > **系統管理範本** > **Windows 元件** > **Windows Update**。
 
-    -   **開啟 [電腦設定] > [維護**] 排程器延伸模組群組原則。 在 GPOE 中，流覽至*PolicyName* >  部**電腦**設定  >  個**原則** > **系統管理範本** >  個**Windows 元件** >  個**維護**排程器。
+    -   **開啟 [電腦設定] > [維護**] 排程器延伸模組群組原則。 在 GPOE 中，流覽至*PolicyName* >  > **電腦**設定 ** > ** **系統管理範本** > 的**Windows 元件** > **維護**排程器。
 
 如需群組原則的詳細資訊，請參閱[群組原則總覽](https://technet.microsoft.com/library/hh831791.aspx(v=ws.12))。
 
@@ -682,7 +682,7 @@ ms.locfileid: "71361659"
 
 |詞彙|定義|
 |----|-------|
-|自動更新|**在 Windows 電腦上執行的服務**（自動更新）：指的是內建在 Microsoft Windows Vista、Windows Server 2003、Windows XP 和 Windows 2000 （含 SP3）作業系統的用戶端電腦群組件，以從 Microsoft Update 或 Windows Update 取得更新。<br /><br />一般**參考**（自動更新）：用來描述 Windows Update 代理程式何時會自動排程及下載更新的詞彙。|
+|自動更新|**在 Windows 電腦上執行的服務**（自動更新）：指的是內建于 Microsoft windows Vista、windows Server 2003、windows XP 和 windows 2000 （含 SP3）作業系統的用戶端電腦群組件，以從 Microsoft Update 或 Windows Update 取得更新。<br /><br />一般**參考**（自動更新）：用來描述 Windows Update 代理程式何時自動排程及下載更新的詞彙。|
 |自發伺服器|使用來參照下游 Windows Server Update Services （WSUS）伺服器，系統管理員可以在其上管理 WSUS 元件。|
 |下游伺服器|使用來參考 Windows Server Update Services （WSUS）伺服器，以從另一個 WSUS 伺服器取得更新，而不是從 Microsoft Update 或 Windows Update。|
 |群組原則延伸模組（和：群組原則的延伸模組|群組原則中的設定集合，可用來控制使用者和電腦（套用原則的方式）如何設定及使用各種 Windows 服務和功能。 系統管理員可以使用 WSUS 搭配群組原則進行自動更新用戶端的用戶端設定，以協助確保使用者無法停用或規避公司更新原則。<br /><br />WSUS 不需要使用 active directory 或群組原則。 您也可以使用本機群組原則或修改 Windows 登錄來套用用戶端設定。|

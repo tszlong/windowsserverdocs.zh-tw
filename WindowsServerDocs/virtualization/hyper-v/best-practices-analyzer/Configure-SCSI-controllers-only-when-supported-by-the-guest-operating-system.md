@@ -19,16 +19,16 @@ ms.locfileid: "71366425"
 ---
 # <a name="configure-scsi-controllers-only-when-supported-by-the-guest-operating-system"></a>只有在客體作業系統支援時，才設定 SCSI 控制器
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -38,13 +38,13 @@ ms.locfileid: "71366425"
   
 ## <a name="impact"></a>影響  
   
-@no__t 0Virtual 的機器無法使用連接到 SCSI 控制器的存放裝置。這會影響下列虛擬機器： *  
+*虛擬機器無法使用連接到 SCSI 控制器的儲存體。這會影響下列虛擬機器：*  
   
-@no__t 0list 的虛擬機器 >  
+\<的虛擬機器清單 >  
   
 ## <a name="resolution"></a>解析度  
   
-@no__t-向下0Shut 虛擬機器，並使用 Hyper-v 管理員從虛擬機器移除 SCSI 控制器。然後重新開機虛擬機器。 *  
+*關閉虛擬機器，並使用 Hyper-v 管理員從虛擬機器移除 SCSI 控制器。然後，重新開機虛擬機器。*  
   
 
 

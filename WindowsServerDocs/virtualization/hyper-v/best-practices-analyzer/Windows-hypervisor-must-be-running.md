@@ -19,14 +19,14 @@ ms.locfileid: "71393051"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>Windows 虛擬程式必須正在執行
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|必要條件|  
+|**低於**|警告|  
+|**類別**|必要條件|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -40,9 +40,9 @@ ms.locfileid: "71393051"
   
 ## <a name="resolution"></a>解析度  
   
-@no__t 0Check Windows Server 類別目錄，以查看此伺服器是否已限定執行 Hyper-v。接下來，請確定已啟用 BIOS 來進行硬體輔助虛擬化和硬體強制的資料執行防止。然後，檢查 Hyper-v-虛擬機器的事件記錄檔。 *  
+*檢查 Windows 伺服器目錄，以查看此伺服器是否已限定執行 Hyper-v。接下來，請確定已啟用 BIOS 來進行硬體輔助虛擬化和硬體強制的資料執行防止。然後，檢查 Hyper-v-虛擬機器的事件記錄檔。*  
   
-若要檢查目錄，請參閱[Windows Server catalog](https://go.microsoft.com/fwlink/?LinkId=111228) （ https://go.microsoft.com/fwlink/?LinkId=111228) 。  
+若要檢查目錄，請參閱[Windows Server catalog](https://go.microsoft.com/fwlink/?LinkId=111228) （ https://go.microsoft.com/fwlink/?LinkId=111228)。  
   
 > [!CAUTION]  
 > 變更電腦的系統 BIOS 中的某些參數，可能會導致該電腦停止載入作業系統，或是讓硬體裝置（例如硬碟機）無法使用。 請務必洽詢電腦的使用者手冊，以判斷設定系統 BIOS 的正確方式。 此外，追蹤您修改的參數及其原始值，是個不錯的主意，以便您可以在稍後視需要進行還原。 如果您在變更系統 BIOS 中的參數之後遇到問題，請嘗試載入預設設定（[BIOS 設定公用程式] 中通常會提供選項），或洽詢電腦製造商尋求協助。  
@@ -76,9 +76,9 @@ ms.locfileid: "71393051"
   
 #### <a name="to-check-the-event-logs"></a>若要檢查事件記錄檔  
   
-1.  開啟 [事件檢視器]。 依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [**事件檢視器**]。  
+1.  開啟 \[事件檢視器\]。 依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [**事件檢視器**]。  
   
-2.  開啟 [Hyper-v-虛擬機器] 事件記錄檔。 在流覽窗格中，依序展開 **應用程式及服務記錄**檔  >> **Microsoft** >> **Windows** >> **hyper-v-虛擬機器**，然後按一下 **操作**。  
+2.  開啟 [Hyper-v-虛擬機器] 事件記錄檔。 在流覽窗格中，展開 **應用程式及服務記錄**檔 >> **Microsoft** >> **Windows** >> **hyper-v-虛擬機器**，然後按一下 **操作**。  
   
 3.  如果 Windows 虛擬機器正在執行，則不需要採取進一步的動作。 如果 Windows 程式管理程式未執行，請執行下列動作：  
   
@@ -88,7 +88,7 @@ ms.locfileid: "71393051"
     1. 在 [**動作**] 窗格中，按一下 [**篩選目前的記錄**]。 針對 [**事件來源**]，指定 [Hyper-v-虛擬機器]。   
     2. 尋找報告問題的事件。 例如，事件識別碼41表示 BIOS 設定的問題：「Hyper-v 啟動失敗;VMX 不存在或未在 BIOS 中啟用。」  
   
-### <a name="see-also"></a>另請參閱  
+### <a name="see-also"></a>請參閱  
 如需在 Windows 10 上使用 Hyper-v 的詳細資訊，包括如何檢查您的電腦是否可以執行 Hyper-v，請參閱[Windows 10 Hyper-v 系統需求](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)。 
 
 

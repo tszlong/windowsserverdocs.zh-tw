@@ -18,7 +18,7 @@ ms.locfileid: "71390077"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何處理 LDAP 伺服器 Cookie
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 LDAP 中，某些查詢會產生大型結果集。 此類查詢會對 Windows Server 帶來一些挑戰。  
   
@@ -48,15 +48,15 @@ Windows Server 將 Cookie 傳回給用户端，有時候會在伺服器上儲存
 ## <a name="how-the-cookie-pool-is-managed"></a>如何管理 Cookie 集區  
 很顯然，LDAP 伺服器一次不只服務一個用戶端，同一時間也會有多個用戶端啟動需要用到伺服器 Cookie 快取的查詢。因此 Windows Server 實作會追蹤 Cookie 集區使用情況，並加上限制條件，讓 Cookie 集區不致佔用過多資源。 系統管理員可以使用 LDAP 原則中的下列設定，來設定限制。 預設值和說明如下：  
   
-**MinResultSets：4 @ no__t-0  
+**MinResultSets：4**  
   
 如果伺服器 Cookie 快取中的項目數少於 MinResultSets，則 LDAP 伺服器不會查看下面討論的最大集區大小。  
   
-**MaxResultSetSize：262144個位元組 @ no__t-0  
+**MaxResultSetSize：262,144 位元組**  
   
 伺服器上的 Cookie 快取大小總計不得超過 MaxResultSetSize 的最大值 (以位元組為單位)。 如果超過，則會從最舊的 Cookie 開始刪除，直到集區小於 MaxResultSetSize 位元組或集區中少於 MinResultSets 個 Cookie。 這表示在預設設定下，LDAP 伺服器會認為只儲存了 3 個 Cookie 的 450KB 集區是適當的。  
   
-**MaxResultSetsPerConn：10 @ no__t-0  
+**MaxResultSetsPerConn：10**  
   
 LDAP 伺服器不允許集區中每個 LDAP 連線超過 MaxResultSetsPerConn 個 Cookie。  
   

@@ -19,16 +19,16 @@ ms.locfileid: "71393013"
 ---
 # <a name="windows-server-2016-should-be-configured-with-the-recommended-amount-of-memory"></a>應該使用建議的記憶體數量來設定 Windows Server 2016
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
   
@@ -36,9 +36,9 @@ ms.locfileid: "71393013"
 *執行 Windows Server 2016 的虛擬機器設定了小於建議的 RAM 數量，也就是 1 GB。*  
   
 ## <a name="impact"></a>**產生**  
-@no__t 0The 的客體作業系統和應用程式可能無法順利執行。可能沒有足夠的記憶體可以同時執行多個應用程式。這會影響下列虛擬機器： *  
+*客體作業系統和應用程式可能無法順利執行。可能沒有足夠的記憶體可以同時執行多個應用程式。這會影響下列虛擬機器：*  
   
-@no__t 0list 的虛擬機器 > 
+\<的虛擬機器清單 > 
   
 ## <a name="resolution"></a>**解決方法**  
 *使用 [Hyper-v 管理員]，將配置給此虛擬機器的記憶體增加到至少 1 GB。*  
@@ -67,7 +67,7 @@ ms.locfileid: "71393013"
 Set-VMMemory <MyVM> -StartupBytes 1GB  
 ```  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

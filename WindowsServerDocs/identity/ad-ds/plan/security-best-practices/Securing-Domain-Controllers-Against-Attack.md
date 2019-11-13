@@ -18,9 +18,9 @@ ms.locfileid: "71367617"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>保護網域控制站不受攻擊
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-@no__t 0Law 數位3：如果不良的人員對您的電腦擁有不受限制的實體存取權，就不是您的電腦了。 * - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*第三條法則：如果不良的人員對您的電腦具有不受限制的實體存取權，則不是您的電腦。* - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 除了提供可讓企業有效管理其伺服器、工作站、使用者和應用程式的服務和資料以外，網域控制站還提供 AD DS 資料庫的實體儲存體。 如果惡意使用者取得網域控制站的特殊許可權存取權，該使用者就可以修改、損毀或終結 AD DS 資料庫，並根據延伸模組，Active Directory 所管理的所有系統和帳戶。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "71367617"
   
 #### <a name="physical-domain-controllers"></a>實體網域控制站
 
-在資料中心中，實體網域控制站應該安裝在與一般伺服器擴展不同的專用安全機架或機殼中。 可能的話，應該使用信賴平臺模組（TPM）晶片來設定網域控制站，而域控制器伺服器中的所有磁片區都應該透過 BitLocker 磁碟機加密來保護。 BitLocker 通常會在單一位數的百分比中增加效能額外負荷，但即使已從伺服器移除磁片，還是會保護目錄免于危害。 BitLocker 也可以協助保護系統免于遭受攻擊，例如 rootkit，因為修改開機檔會導致伺服器開機進入修復模式，以便載入原始的二進位檔。 如果網域控制站設定為使用軟體 RAID、序列連接 SCSI、SAN/NAS 存放裝置或動態磁碟區，則無法執行 BitLocker，因此每次都應該在網域控制站中使用本機連接的存放裝置（不論是否使用硬體 RAID）的話.  
+在資料中心中，實體網域控制站應該安裝在與一般伺服器擴展不同的專用安全機架或機殼中。 可能的話，應該使用信賴平臺模組（TPM）晶片來設定網域控制站，而域控制器伺服器中的所有磁片區都應該透過 BitLocker 磁碟機加密來保護。 BitLocker 通常會在單一位數的百分比中增加效能額外負荷，但即使已從伺服器移除磁片，還是會保護目錄免于危害。 BitLocker 也可以協助保護系統免于遭受攻擊，例如 rootkit，因為修改開機檔會導致伺服器開機進入修復模式，以便載入原始的二進位檔。 如果網域控制站設定為使用軟體 RAID、序列連接 SCSI、SAN/NAS 存放裝置或動態磁碟區，則無法執行 BitLocker，因此，應盡可能在網域控制站中使用本機連接的存放裝置（不論是否有硬體 RAID）。  
   
 #### <a name="virtual-domain-controllers"></a>虛擬網域控制站 
 
@@ -70,7 +70,7 @@ ms.locfileid: "71367617"
   
 ### <a name="microsoft-security-compliance-toolkit"></a>Microsoft 安全性合規性工具組
 
-[Microsoft 安全性合規性工具](https://www.microsoft.com/download/details.aspx?id=55319)組 [網域控制站設定] 可以與 [安全性設定] [Wizard] 設定結合，針對部署于的 gpo 部署和強制執行的網域控制站產生完整設定基準。Active Directory 中的網域控制站 OU。  
+[Microsoft 安全性合規性工具](https://www.microsoft.com/download/details.aspx?id=55319)組： [網域控制站設定] 可以與 [安全性設定] [Wizard] 設定結合，為在 Active Directory 中的網域控制站 OU 部署的 gpo，產生已部署和強制執行之網域控制站的完整設定基準。  
   
 ### <a name="rdp-restrictions"></a>RDP 限制
 
@@ -84,7 +84,7 @@ ms.locfileid: "71367617"
 
 在 Active Directory 安全性評估中執行的其中一項檢查，就是在網域控制站上使用和設定 Internet Explorer。 Internet Explorer （或任何其他網頁瀏覽器）不應在網域控制站上使用，但對上千個網域控制站的分析，發現有許多情況下，有許可權的使用者使用 Internet Explorer 流覽組織的內部網路或網際.  
   
-如先前在「設定錯誤」一節中所述，使用高許可權帳戶從 Windows 基礎結構[中的其中](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)一個最強大的電腦流覽網際網路（或受感染的內部網路）（這是唯一的預設允許登入網域控制站的帳戶，會對組織的安全性帶來極危險的風險。 無論是透過下載或下載惡意程式碼感染的「公用程式」，攻擊者都可以存取所需的所有專案，以完全洩露或摧毀 Active Directory 環境。  
+如先前在「設定錯誤」一節中所述，使用高許可權帳戶（這是唯一允許在本機登入網域控制站的帳戶），從 Windows 基礎結構中最強大的電腦流覽網際網路（或受感染的內部網路[），會對組織](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)的安全性帶來一項特別的風險。 無論是透過下載或下載惡意程式碼感染的「公用程式」，攻擊者都可以存取所需的所有專案，以完全洩露或摧毀 Active Directory 環境。  
   
 雖然 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 和目前版本的 Internet Explorer 提供一些保護以防止惡意下載，但在大部分情況下，已使用網域控制站和特殊許可權帳戶來流覽網際網路、網域控制站執行的是 Windows Server 2003，或已刻意停用較新作業系統和瀏覽器所提供的保護。  
   
@@ -92,7 +92,7 @@ ms.locfileid: "71367617"
   
 ### <a name="perimeter-firewall-restrictions"></a>周邊防火牆限制
 
-周邊防火牆應設定為封鎖從網域控制站到網際網路的輸出連線。 雖然網域控制站可能需要跨網站界限進行通訊，但您可以遵循[如何設定網域和信任的防火牆](https://support.microsoft.com/kb/179442)中所提供的指導方針，將周邊防火牆設定為允許站對站通訊Microsoft 支援服務網站。  
+周邊防火牆應設定為封鎖從網域控制站到網際網路的輸出連線。 雖然網域控制站可能需要跨網站界限進行通訊，但您可以遵循如何在 Microsoft 支援服務網站上[設定網域和信任的防火牆](https://support.microsoft.com/kb/179442)中所提供的指導方針，將周邊防火牆設定為允許站對站通訊。  
   
 ### <a name="dc-firewall-configurations"></a>DC 防火牆設定  
 

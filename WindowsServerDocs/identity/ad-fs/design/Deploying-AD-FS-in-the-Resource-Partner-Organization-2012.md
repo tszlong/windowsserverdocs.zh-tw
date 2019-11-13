@@ -18,11 +18,11 @@ ms.locfileid: "71408139"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>在資源夥伴組織中部署 AD FS
 
-Active Directory 同盟服務中的資源夥伴組織 \(AD FS @ no__t-1 代表其 Web 服務器可能受到 resource @ no__t-2side 同盟伺服器保護的組織。 資源夥伴的同盟伺服器會使用帳戶夥伴所產生的安全性權杖，向位於資源夥伴的 Web 服務器提供宣告。  
+Active Directory 同盟服務 \(AD FS\) 中的資源夥伴組織，代表其 Web 服務器可能受到資源\-端同盟伺服器保護的組織。 資源夥伴的同盟伺服器會使用帳戶夥伴所產生的安全性權杖，向位於資源夥伴的 Web 服務器提供宣告。  
   
 在您需要將同盟服務或應用程式的存取權提供給許多不同的使用者（在某些使用者位於不同的組織時），您可以設定資源同盟伺服器，讓您可以部署多個帳戶夥伴。  
   
-如需有關如何安裝和設定資源夥伴組織的詳細資訊，請參閱 @no__t 0Checklist：正在設定資源夥伴組織 @ no__t-0。  
+如需有關如何安裝和設定資源夥伴組織的詳細資訊，請參閱 [Checklist: Configuring the Resource Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)。  
   
 ## <a name="in-this-section"></a>本節內容  
   
@@ -33,5 +33,5 @@ Active Directory 同盟服務中的資源夥伴組織 \(AD FS @ no__t-1 代表�
 -   [決定資源夥伴的同盟應用程式策略](Determine-Your-Federated-Application-Strategy-in-the-Resource-Partner.md)  
   
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

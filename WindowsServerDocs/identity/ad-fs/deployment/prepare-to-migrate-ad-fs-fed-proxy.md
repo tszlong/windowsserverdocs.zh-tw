@@ -21,11 +21,11 @@ ms.locfileid: "71408204"
   
  若要匯出 AD FS 設定資料，請執行下列工作：  
   
--   [步驟 1：匯出 proxy 服務設定 @ no__t-0  
+-   [步驟1：匯出 proxy 服務設定](#step-1-export-proxy-service-settings)  
   
--   [步驟 2：備份網頁自訂 @ no__t-0  
+-   [步驟2：備份網頁自訂專案](#step-2-back-up-webpage-customizations)  
   
-##  <a name="step-1-export-proxy-service-settings"></a>步驟 1:匯出 Proxy 服務設定  
+##  <a name="step-1-export-proxy-service-settings"></a>步驟 1：匯出 Proxy 服務設定  
  若要匯出同盟伺服器 Proxy 服務設定，請執行下列程序：  
   
 ### <a name="to-export-proxy-service-settings"></a>匯出 Proxy 服務設定  
@@ -49,12 +49,12 @@ ms.locfileid: "71408204"
   
 -   HTTP Proxy 的位址和連接埠 (如果 AD FS 同盟伺服器 Proxy 與 AD FS 同盟伺服器之間有 HTTP Proxy 的話)  
   
-##  <a name="step-2-back-up-webpage-customizations"></a>步驟 2:備份網頁的自訂項目  
+##  <a name="step-2-back-up-webpage-customizations"></a>步驟 2：備份網頁的自訂項目  
  若要備份網頁自訂項目，請複製 AD FS Proxy 網頁和 **web.config** 檔案，它位於與 IIS 中虛擬路徑 **“/adfs/ls”** 對應的目錄中。  根據預設，它在 **%systemdrive%\inetpub\adfs\ls** 目錄中。  
   
 ## <a name="next-steps"></a>後續步驟
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)

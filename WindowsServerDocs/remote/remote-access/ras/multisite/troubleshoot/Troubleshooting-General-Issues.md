@@ -21,7 +21,7 @@ ms.locfileid: "71404444"
 ---
 # <a name="troubleshooting-general-issues"></a>疑難排解一般問題
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題包含與遠端存取相關之一般問題的疑難排解資訊。  
   
@@ -38,12 +38,12 @@ DirectAccess 無法存取部署中其中一個進入點的 GPO，因此無法載
   
 請確定部署中的每個進入點在其網域控制站上都有對應的 GPO，並確認登入的使用者具有遠端存取部署中設定之所有 Gpo 的讀取和寫入權限。  
   
-因應措施是使用 configuration Cmdlet，而不是使用遠端存取管理主控台;例如，使用 `Get-RemoteAccess` 並 `Get-DAEntryPoint`。  
+因應措施是使用 configuration Cmdlet，而不是使用遠端存取管理主控台;例如，使用 `Get-RemoteAccess` 和 `Get-DAEntryPoint`。  
   
 > [!NOTE]  
 > 當目前進入點的伺服器 GPO 無法使用時，不會發生這種情況。  
   
-您可以使用 `Get-DAEntryPointDC` Cmdlet 列出所有儲存伺服器 Gpo 的網域控制站，以及與 `Get-RemoteAccess` 一起 `Get-DAMultiSite`，以取得部署中伺服器 Gpo 的完整清單。 例如:  
+您可以使用 `Get-DAEntryPointDC` Cmdlet 列出所有存放伺服器 Gpo 的網域控制站，以及與 `Get-RemoteAccess` 一起 `Get-DAMultiSite`，以取得部署中伺服器 Gpo 的完整清單。 例如：  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   
@@ -78,7 +78,7 @@ Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_L
   
 -   **問題1**  
   
-    **收到錯誤**。 無法連線到 < server_name 或 entry_point_name > 的網域控制站 < domain_controller >。  
+    **收到錯誤**。 < Server_name 或 entry_point_name > 無法連線到網域控制站 < domain_controller >。  
   
     **原因**  
   
@@ -86,7 +86,7 @@ Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_L
   
     **解決方法**  
   
-    遵循 [2.4 中所述的「變更管理伺服器 Gpo 的網域控制站」程式。設定 Gpo @ no__t-0。  
+    遵循2.4 中所述的「變更管理伺服器 Gpo 的網域控制站」程式[。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 -   **問題2**  
   
@@ -98,7 +98,7 @@ Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_L
   
     **解決方法**  
   
-    遵循 [2.4 中所述的「傳送 PDC 模擬器角色」程式。設定 Gpo @ no__t-0。  
+    遵循2.4 中所述的「傳送 PDC 模擬器角色」程式[。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 
 

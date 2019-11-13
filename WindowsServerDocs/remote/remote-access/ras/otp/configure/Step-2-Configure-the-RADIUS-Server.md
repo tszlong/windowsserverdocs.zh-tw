@@ -21,14 +21,14 @@ ms.locfileid: "71367026"
 ---
 # <a name="step-2-configure-the-radius-server"></a>步驟2設定 RADIUS 伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 設定遠端存取服務器以支援具有 OTP 支援的 DirectAccess 之前，您必須先設定 RADIUS 伺服器。  
   
 |工作|描述|  
 |----|--------|  
-|[2.1。設定 RADIUS 軟體發佈權杖 @ no__t-0|在 RADIUS 伺服器上設定軟體發佈權杖。|  
-|[2.2。設定 RADIUS 安全性資訊 @ no__t-0|在 RADIUS 伺服器上，設定要使用的埠和共用密碼。|  
+|[2.1. 設定 RADIUS 軟體發佈權杖](#BKMK_1.1)|在 RADIUS 伺服器上設定軟體發佈權杖。|  
+|[2.2. 設定 RADIUS 安全性資訊](#BKMK_1.2)|在 RADIUS 伺服器上，設定要使用的埠和共用密碼。|  
 |[2.3 新增 OTP 探查的使用者帳戶](#BKMK_Probe)|在 RADIUS 伺服器上，為 OTP 探查建立新的使用者帳戶。|  
 |[2.4 與 Active Directory 同步處理](#BKMK_Active)|在 RADIUS 伺服器上，建立與 Active Directory 帳戶同步處理的使用者帳戶。|  
 |[2.5 設定 RADIUS 驗證代理程式](#BKMK_AuthAgent)|將遠端存取服務器設定為 RADIUS 驗證代理程式。|  

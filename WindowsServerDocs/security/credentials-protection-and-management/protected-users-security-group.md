@@ -22,7 +22,7 @@ ms.locfileid: "71403777"
 ---
 # <a name="protected-users-security-group"></a>Protected Users 安全性群組
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 這個 IT 專業人員主題描述 Active Directory 的 Protected Users 安全性群組，並說明它的運作方式。 此群組是在 Windows Server 2012 R2 網域控制站中引進。
 
@@ -31,7 +31,7 @@ ms.locfileid: "71403777"
 此安全性群組的設計是管理企業內認證暴露的策略之一部分。 此群組的成員帳戶會自動套用不可設定的保護。 Protected Users 群組中的成員資格預設應該要有限制性和主動防護。 修改帳戶的這些保護的唯一方式就是從安全性群組移除帳戶。
 
 > [!WARNING]
-> 服務和電腦的帳戶不應該是 Protected Users 群組的成員。 此群組仍會提供不完整的保護，因為主機上的密碼或憑證一律可供使用。 驗證將會失敗，並出現錯誤 \"the 使用者名稱或密碼不正確 @ no__t-1 適用于新增至 Protected Users 群組的任何服務或電腦。
+> 服務和電腦的帳戶不應該是 Protected Users 群組的成員。 此群組仍會提供不完整的保護，因為主機上的密碼或憑證一律可供使用。 驗證會失敗並出現錯誤 \"使用者名稱或密碼不正確，\" 適用于新增至 Protected Users 群組的任何服務或電腦。
 
 此網域相關的全域群組會在執行 windows Server 2012 R2 的裝置和主機電腦上觸發不可設定的保護，並針對執行 Windows Server 2012 R2 的主域控制站的網域中的使用者，在 Windows 8.1 或更新版本。 當使用者登入具有這些保護的電腦時，這可大幅減少認證的預設記憶體使用量。
 
@@ -66,13 +66,13 @@ ms.locfileid: "71403777"
 |屬性|值|
 |-------|-----|
 |已知的 SID/RID|S-1-5-21-<domain>-525|
-|Type|網域全域|
+|類型|網域全域|
 |預設容器|CN=Users, DC=<domain>, DC=|
-|預設成員|None|
-|下列群組的預設成員|None|
-|是否受到 ADMINSDHOLDER 保護？|否|
+|預設成員|無|
+|下列群組的預設成員|無|
+|是否受到 ADMINSDHOLDER 保護？|不可以|
 |是否可從預設容器放心地移出？|是|
-|是否可將此群組的管理放心地委派給非服務系統管理員？|否|
+|是否可將此群組的管理放心地委派給非服務系統管理員？|不可以|
 |預設使用者權限|沒有預設使用者權限|
 
 ## <a name="BKMK_HowItWorks"></a>Protected Users 群組的運作方式
@@ -90,7 +90,7 @@ ms.locfileid: "71403777"
 -   從 Windows 8.1 和 Windows Server 2012 R2 開始，即使啟用 Windows 摘要，Windows 摘要式也不會快取使用者的純文字認證。
 
 > [!Note]
-> 安裝[Microsoft 安全性諮詢 2871997](https://technet.microsoft.com/library/security/2871997)之後，Windows 摘要式會繼續快取認證，直到設定登錄機碼為止。 請參閱 @no__t 0Microsoft 的安全性諮詢：更新以改善認證保護和管理：2014年5月13日 @ no__t-0，以取得相關指示。
+> 安裝[Microsoft 安全性諮詢 2871997](https://technet.microsoft.com/library/security/2871997)之後，Windows 摘要式會繼續快取認證，直到設定登錄機碼為止。 如需指示，請參閱[Microsoft 安全性摘要報告：更新以改善認證保護和管理： 2014 5 月13日](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)。
 
 -   NTLM 不會快取使用者的純文字認證或 NT 單向函式（NTOWF）。
 
@@ -120,11 +120,11 @@ ms.locfileid: "71403777"
 
 |事件識別碼和記錄檔|描述|
 |----------|--------|
-|104<br /><br />**ProtectedUser-Client**|原因：在用戶端的安全性封裝沒有包含認證。<br /><br />當帳戶是 Protected Users 安全性群組的成員時，錯誤會記錄在用戶端電腦上。 這個事件指出安全性封裝並未快取向伺服器驗證時所需的認證。<br /><br />會顯示封裝名稱、使用者名稱、網域名稱及伺服器名稱。|
+|104<br /><br />**ProtectedUser-Client**|原因：用戶端上的安全性套件未包含認證。<br /><br />當帳戶是 Protected Users 安全性群組的成員時，錯誤會記錄在用戶端電腦上。 這個事件指出安全性封裝並未快取向伺服器驗證時所需的認證。<br /><br />會顯示封裝名稱、使用者名稱、網域名稱及伺服器名稱。|
 |304<br /><br />**ProtectedUser-Client**|原因：安全性封裝不會儲存受保護使用者的認證。<br /><br />用戶端中會記錄資訊事件，以指出安全性封裝不會快取使用者的登入認證。 預期摘要 (WDigest)、認證委派 (CredSSP) 及 NTLM 無法擁有 Protected Users 的登入認證。 如果應用程式提示輸入認證，則仍然可以登入成功。<br /><br />會顯示封裝名稱、使用者名稱及網域名稱。|
-|100<br /><br />**ProtectedUserFailures-DomainController**|原因：Protected Users 安全性群組中的帳戶發生 NTLM 登入失敗。<br /><br />錯誤會記錄在網域控制站中，指出因為帳戶是 Protected Users 安全性群組的成員，所以 NTLM 驗證失敗。<br /><br />會顯示帳戶名稱和裝置名稱。|
-|104<br /><br />**ProtectedUserFailures-DomainController**|原因：使用 DES 或 RC4 加密類型進行 Kerberos 驗證，而 Protected Users 安全性群組中的使用者發生登入失敗。<br /><br />Kerberos 預先驗證失敗，因為當帳戶是 Protected Users 安全性群組的成員時，不能使用 DES 與 RC4 加密類型。<br /><br />(可以接受 AES)。|
-|303<br /><br />**ProtectedUserSuccesses-DomainController**|原因：已成功為 Protected Users 群組的成員發出 Kerberos 票證授權票證 (TGT)。|
+|100<br /><br />**ProtectedUserFailures-DomainController**|原因：受保護使用者安全性群組中的帳戶發生 NTLM 登入失敗。<br /><br />錯誤會記錄在網域控制站中，指出因為帳戶是 Protected Users 安全性群組的成員，所以 NTLM 驗證失敗。<br /><br />會顯示帳戶名稱和裝置名稱。|
+|104<br /><br />**ProtectedUserFailures-DomainController**|原因： DES 或 RC4 加密類型用於 Kerberos 驗證，而受保護使用者安全性群組中的使用者發生登入失敗。<br /><br />Kerberos 預先驗證失敗，因為當帳戶是 Protected Users 安全性群組的成員時，不能使用 DES 與 RC4 加密類型。<br /><br />(可以接受 AES)。|
+|303<br /><br />**ProtectedUserSuccesses-DomainController**|原因：已成功為受保護使用者群組的成員發出 Kerberos 票證授權票證（TGT）。|
 
 
 

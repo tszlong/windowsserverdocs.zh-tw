@@ -21,7 +21,7 @@ ms.locfileid: "71388526"
 ---
 # <a name="step-3-verify-deployments"></a>步驟3驗證部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題描述如何確認您已正確設定基本 DirectAccess 部署。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71388526"
   
 ## <a name="BKMK_Links"></a>上一個步驟  
   
--   [步驟 2：設定 DirectAccess 伺服器 @ no__t-0  
+-   [步驟2：設定 DirectAccess 伺服器](da-basic-configure-s2-server.md)  
   
 
 

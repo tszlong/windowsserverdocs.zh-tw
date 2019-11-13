@@ -21,18 +21,18 @@ ms.locfileid: "71404417"
 ---
 # <a name="configure-remote-access-with-otp-authentication"></a>使用 OTP 驗證設定遠端存取
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
  Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與路由及遠端存取服務（RRAS） VPN 合併成一個遠端存取角色。 本總覽提供部署單一 Windows Server 2016 或 Windows Server 2012 遠端存取多網站部署所需之設定步驟的簡介。  
 
 
-- [步驟 1：執行單一伺服器遠端存取部署 @ no__t-0。 安裝和設定單一遠端存取服務器。 如需指示，請參閱[使用 Advanced Settings 部署單一 DirectAccess 伺服器](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)。
+- [步驟1：執行單一伺服器遠端存取部署](../../multisite/configure/Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)。 安裝和設定單一遠端存取服務器。 如需指示，請參閱[使用 Advanced Settings 部署單一 DirectAccess 伺服器](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)。
 
-- [步驟 2：設定 RADIUS 伺服器 @ no__t-0。
+- [步驟2：設定 RADIUS 伺服器](Step-2-Configure-the-RADIUS-Server.md)。
 
-- [步驟 3：設定 OTP @ no__t-0 的遠端存取服務器。
+- [步驟3：設定 OTP 的遠端存取服務器](Step-3-Configure-the-Remote-Access-Server-for-OTP.md)。
 
-- [步驟 4：使用 OTP @ no__t-0 驗證 DirectAccess。
+- [步驟4：使用 OTP 驗證 DirectAccess](Step-4-Verify-DirectAccess-with-OTP.md)。
   
 
 

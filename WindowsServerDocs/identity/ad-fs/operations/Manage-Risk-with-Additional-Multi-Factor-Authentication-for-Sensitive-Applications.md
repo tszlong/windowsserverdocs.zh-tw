@@ -27,7 +27,7 @@ ms.locfileid: "71407528"
 
 -   [設定 AD FS 的其他驗證方法](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
-## <a name="in-this-guide"></a>本指南內容
+## <a name="in-this-guide"></a>此指南內容
 本指南提供下列資訊：
 
 -   [AD FS 中的驗證機制](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)-Windows Server 2012 R2 中 Active Directory 同盟服務（AD FS）提供的驗證機制描述
@@ -37,7 +37,7 @@ ms.locfileid: "71407528"
     > [!NOTE]
     > 在 Windows Server 2012 R2 的 AD FS 中，您可以根據網路位置、裝置身分識別，以及使用者身分識別或群組成員資格來啟用 MFA。
 
-    如需設定和驗證此案例的詳細逐步解說指示，請參閱 @no__t 0Walkthrough 指南：透過其他多因素驗證管理機密應用程式](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)的風險。
+    如需設定和驗證此案例的詳細逐步解說指示，請參閱逐步解說[指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
 ## <a name="BKMK_1"></a>主要概念-AD FS 中的驗證機制
 
@@ -51,7 +51,7 @@ Windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）為 IT 系
     -   針對無縫式次要因素驗證啟用裝置驗證。 這會將使用者的身分識別系結至用來存取資源的已註冊裝置，因此在存取受保護的資源之前，會提供更安全的複合身分識別驗證。
 
         > [!NOTE]
-        > 如需裝置物件、裝置註冊服務、Workplace Join 和裝置的詳細資訊，做為無縫式的第二因素驗證和 SSO，請參閱[從任何裝置加入工作場所以進行 sso，以及跨公司進行無縫第二因素驗證應用程式](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+        > 如需裝置物件、裝置註冊服務、Workplace Join 和裝置的詳細資訊，做為無縫式的第二因素驗證和 SSO，請參閱[從任何裝置加入工作場所以進行 SSO，以及跨公司應用程式進行無縫第二因素驗證](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
     -   設定所有外部網路存取的 MFA 需求，或根據使用者的身分識別、網路位置或用來存取受保護資源的裝置，有條件地進行。
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）為 IT 系
 
 -   MFA 的設定和方法
 
--   是否已啟用裝置驗證。 如需詳細資訊，請參閱 [從任何裝置加入工作地點，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+-   是否已啟用裝置驗證。 如需詳細資訊，請參閱 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 每個信賴憑證者信任驗證原則會特別套用以嘗試存取該特定信賴憑證者信任 (應用程式或服務)。 您可以在每個信賴憑證者信任驗證原則中設定下列設定：
 
@@ -94,7 +94,7 @@ Windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）為 IT 系
 您也可以針對無縫式次要因素驗證啟用裝置驗證。 這會將使用者的身分識別系結至用來存取資源的已註冊裝置，因此在存取受保護的資源之前，會提供更安全的複合身分識別驗證。
 
 > [!NOTE]
-> 如需裝置物件、裝置註冊服務、Workplace Join 和裝置的詳細資訊，做為無縫式的第二因素驗證和 SSO，請參閱[從任何裝置加入工作場所以進行 sso，以及跨公司進行無縫第二因素驗證應用程式](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+> 如需裝置物件、裝置註冊服務、Workplace Join 和裝置的詳細資訊，做為無縫式的第二因素驗證和 SSO，請參閱[從任何裝置加入工作場所以進行 SSO，以及跨公司應用程式進行無縫第二因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 如果您指定在內部網路資源使用 Windows 驗證方法 (預設選項)，驗證要求可在支援 Windows 驗證的瀏覽器上無縫地使用這個方法。
 
@@ -123,32 +123,33 @@ MFA 設定 (需要 MFA 的條件) 有下列可用選項：
 
 更具體來說，在這個案例中，您針對名為 **claimapp** 的宣告測試應用程式啟用驗證原則，因此 AD 使用者 **Robert Hatley** 將需要使用 MFA，因為他屬於 AD 群組 **Finance**。
 
-@No__t 0Walkthrough 指南中提供設定和驗證此案例的逐步指示：透過其他多因素驗證管理機密應用程式](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)的風險。 若要完成本逐步解說中的步驟，您必須設定實驗室環境，並依照在[Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步驟進行。
+逐步解說[指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)中提供設定和驗證此案例的逐步指示。 若要完成本逐步解說中的步驟，您必須設定實驗室環境，並依照在[Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步驟進行。
 
 在 AD FS 中啟用 MFA 的其他案例包括下列各項：
 
--   如果存取要求來自外部網路，則啟用 MFA。 您可以修改 @no__t 0Walkthrough 指南的「設定 MFA 原則」一節中顯示的程式碼：使用其他多因素驗證管理機密應用程式的風險 @ no__t-0，具有下列各項：
+-   如果存取要求來自外部網路，則啟用 MFA。 您可以修改[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)一節中顯示的程式碼，如下所示：
 
     ```
     'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'
     ```
 
--   如果存取要求來自未加入工作地點的裝置，則啟用 MFA。  您可以修改 @no__t 0Walkthrough 指南的「設定 MFA 原則」一節中顯示的程式碼：使用其他多因素驗證管理機密應用程式的風險 @ no__t-0，具有下列各項：
+-   如果存取要求來自未加入工作地點的裝置，則啟用 MFA。  您可以修改[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)一節中顯示的程式碼，如下所示：
 
     ```
     'NOT EXISTS([type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"]) => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
 
     ```
 
--   如果使用者以加入工作地點的裝置傳送存取要求，但該裝置不是以該使用者的身分註冊，則啟用 MFA。 您可以修改 @no__t 0Walkthrough 指南的「設定 MFA 原則」一節中顯示的程式碼：使用其他多因素驗證管理機密應用程式的風險 @ no__t-0，具有下列各項：
+-   如果使用者以加入工作地點的裝置傳送存取要求，但該裝置不是以該使用者的身分註冊，則啟用 MFA。 您可以修改[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)一節中顯示的程式碼，如下所示：
 
     ```
     'c:[type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser", value == "false"] => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
 
     ```
 
-## <a name="see-also"></a>另請參閱
-[逐步解說指南：使用其他多因素驗證管理機密應用程式的風險 @ no__t-0 @ no__t-1 在[Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+## <a name="see-also"></a>請參閱
+[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+[設定 Windows Server 2012 R2 中 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

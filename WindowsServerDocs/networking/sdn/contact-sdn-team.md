@@ -17,21 +17,21 @@ ms.locfileid: "71355992"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 
-> 適用於：Windows Server 2016
+> 適用於︰Windows Server 2016
 
-Microsoft 的**軟體定義網路 \(SDN @ no__t-2**和**容器網路**解決方案是由資料中心和雲端網路小組所建立。 請使用此頁面與小組聯絡--提出問題、提供意見反應、回報錯誤或提出功能要求。
+Microsoft 的**軟體定義網路 \(SDN\)** 和**容器網路**解決方案是由資料中心和雲端網路小組所建立。 請使用此頁面與小組聯絡--提出問題、提供意見反應、回報錯誤或提出功能要求。
 
 有很多途徑可以聯繫 Microsoft 團隊，雖然我們在 SDN 團隊中的最佳做法是遵循我們的社區所用的所有途徑，但以下是一份最常使用的論壇清單。 *這些是我們的使用者的重要資源，因此我們會觀賞最接近的途徑。*
 
 ## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
-我們最近在 Twitter 上啟動了[@Microsoft_SDN 的](https://twitter.com/Microsoft_SDN)目前狀態。 歡迎使用我們的 Twitter 控制碼提出問題、提供意見反應或提出功能/檔要求。
-> 除了您可以與問題/意見反應/要求聯繫的地方外，請考慮將您的「摘要」放在所有 SDN 和 Windows 容器網路相關的地方--Twitter 是我們**張貼新聞**的第一個位置，宣佈**新的功能**並將該社區指向所有**最新的 blog 和資源**。
+最近，我們已將 Twitter 上的目前狀態啟動為[@Microsoft_SDN](https://twitter.com/Microsoft_SDN)。 歡迎使用我們的 Twitter 控制碼提出問題、提供意見反應或提出功能/檔要求。
+> 除了您可以與問題/意見反應/要求聯繫的地方外，請考慮將您的「摘要」放在所有 SDN 和 Windows 容器網路相關的地方--Twitter 是我們**張貼新聞**的第一個位置，宣佈**新功能**，並將該社區指向所有**最新的 blog 和資源**。
 
 ## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub （[Microsoft/SDN](https://github.com/Microsoft/SDN/issues)存放庫）
 前往[這裡](https://github.com/Microsoft/SDN/issues)，透過我們的 GitHub 存放庫將問題提交給 SDN 小組。 這是**取得協助疑難排解**或**報告 bug**的最佳位置。
 
-> GitHub 是與我們聯繫的最佳位置，其中包含的主題與您可以在推文中輕鬆容納的專案類型有關。 @no__t 0Need 您的 SDN 部署的協助？不確定我們的功能可以如何滿足您組織的獨特需求？是否由潛在 bug 所保有？ * 藉由提交 GitHub 問題，讓我們能夠與我們聯繫的所有好原因。
+> GitHub 是與我們聯繫的最佳位置，其中包含的主題與您可以在推文中輕鬆容納的專案類型有關。 *您的 SDN 部署需要協助嗎？不確定我們的功能可以如何滿足您組織的獨特需求？有可能的 bug 嗎？* 藉由提交 GitHub 問題，讓我們能夠與我們聯繫的所有好原因。
 
 ## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
 我們的[容器網路檔](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs （docs.microsoft.com）](https://docs.microsoft.com/)上找到，其具有**內建的批註功能**。 若要在 Microsoft Docs 直接登入來回複留言，請在您想要參考的 [Microsoft Docs] 頁面底部向下流覽，然後在該處提交批註。

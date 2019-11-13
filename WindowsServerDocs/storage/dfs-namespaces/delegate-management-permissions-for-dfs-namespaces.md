@@ -17,7 +17,7 @@ ms.locfileid: "71402213"
 ---
 # <a name="delegate-management-permissions-for-dfs-namespaces"></a>委派 DFS 命名空間的管理權限
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 下表描述預設可以執行基本命名空間工作的群組，以及委派執行這些工作之能力的方法：
 
@@ -32,4 +32,4 @@ ms.locfileid: "71402213"
 
 <br />
 
-如果使用者是命名空間伺服器上本機系統管理員群組的成員，則管理獨立命名空間的 @no__t 0Delegating 管理許可權不會授與使用者使用 [**委派**] 索引標籤來查看和管理安全性的能力。 這個問題是因為 DFS 管理嵌入式管理單元無法從登錄擷取獨立命名空間的判別存取控制清單 (DACL)。 若要讓嵌入式管理單元顯示委派資訊，您必須遵循 Microsoft<sup>®</sup>知識庫文章中的步驟：[KB314837：如何管理登錄 @ no__t 的遠端存取-0
+\*委派管理許可權來管理獨立命名空間，並不會授與使用者使用 [**委派**] 索引標籤來查看和管理安全性的能力，除非使用者是命名空間伺服器上本機系統管理員群組的成員。 這個問題是因為 DFS 管理嵌入式管理單元無法從登錄擷取獨立命名空間的判別存取控制清單 (DACL)。 若要讓嵌入式管理單元顯示委派資訊，您必須遵循 Microsoft<sup>®</sup> 知識庫文章：[KB314837：如何管理遠端登錄存取權](https://go.microsoft.com/fwlink?linkid=46803)中的步驟執行

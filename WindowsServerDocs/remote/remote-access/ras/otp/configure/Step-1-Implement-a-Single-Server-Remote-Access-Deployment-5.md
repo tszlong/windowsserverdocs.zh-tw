@@ -21,7 +21,7 @@ ms.locfileid: "71404410"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步驟1執行單一伺服器遠端存取部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 使用 OTP 部署「遠端存取」的第一個設定步驟是執行「先進的單一伺服器」部署，然後規劃新增 RADIUS 伺服器。  
   
@@ -30,7 +30,7 @@ ms.locfileid: "71404410"
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 2：設定 RADIUS 伺服器 @ no__t-0  
+-   [步驟2：設定 RADIUS 伺服器](Step-2-Configure-the-RADIUS-Server.md)  
   
 
 

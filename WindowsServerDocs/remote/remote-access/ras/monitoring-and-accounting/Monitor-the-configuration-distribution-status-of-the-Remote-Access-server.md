@@ -21,7 +21,7 @@ ms.locfileid: "71368254"
 ---
 # <a name="monitor-the-configuration-distribution-status-of-the-remote-access-server"></a>監視「遠端存取」伺服器的設定發佈狀態
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 **注意：** Windows Server 2012 將 DirectAccess 與遠端存取服務（RAS）結合成一個遠端存取角色。  
   
@@ -39,14 +39,14 @@ ms.locfileid: "71368254"
   
 |||||  
 |-|-|-|-|  
-|Severity|Message|意義|該怎麼辦？|  
+|嚴重性|訊息|意義|該怎麼辦？|  
 |成功|已成功散佈設定。|已將 GPO 中的設定成功套用在伺服器上。|不需要採取任何動作。|  
-|警告|未從網域控制站抓取伺服器 [伺服器名稱] 的設定。 未連結 GPO。|GPO 中的設定尚未送達伺服器。 這可能是因為 GPO 未連結到伺服器。|將 GPO 連結到套用至伺服器的管理領域，或是在暫存 GPO 案例中，手動將設定從暫存 GPO 中匯出，再匯入到實際執行 GPO 中。 如需有關暫存 Gpo 的詳細資訊，**請參閱在**[步驟 1-----DirectAccess--------------------](../../directaccess/single-server-advanced/Step-1-Plan-the-DirectAccess-Infrastructure.md) 如需 GPO 暫存步驟，請參閱在 @no__t 中設定**具有有限許可權的遠端存取 Gpo** 1Step 1：設定 DirectAccess 基礎結構 @ no__t-0。|  
+|警告|未從網域控制站抓取伺服器 [伺服器名稱] 的設定。 未連結 GPO。|GPO 中的設定尚未送達伺服器。 這可能是因為 GPO 未連結到伺服器。|將 GPO 連結到套用至伺服器的管理領域，或是在暫存 GPO 案例中，手動將設定從暫存 GPO 中匯出，再匯入到實際執行 GPO 中。 如需有關暫存 Gpo 的詳細資訊，**請參閱在**[步驟 1-----DirectAccess--------------------](../../directaccess/single-server-advanced/Step-1-Plan-the-DirectAccess-Infrastructure.md) 如需 GPO 暫存步驟，請參閱[步驟1：設定 DirectAccess 基礎結構](../../directaccess/single-server-advanced/Step-1-Configuring-DirectAccess-Infrastructure.md)中**的使用有限的許可權設定遠端存取 gpo** 。|  
 |警告|尚未從網域控制站抓取伺服器 [伺服器名稱] 的設定。|GPO 中的設定尚未送達伺服器。<br /><br />最多可能需要花 10 分鐘才能傳播新設定。|允許更多時間來更新伺服器上的原則。|  
-|Error|無法從網域控制站抓取伺服器 [伺服器名稱] 的設定。|GPO 中的設定未送達伺服器，並且自變更設定後已經超過 10 分鐘。|在下列其中一種情況下就可能發生這種情形：<br /><br />-伺服器無法連線到網域以更新原則。 您可以在伺服器上執行 "gpupdate/force"，以強制執行原則更新。<br />-可能需要 GPO 複寫才能取得已更新的設定。<br />-遠端存取服務器的 Active Directory 網站中沒有可寫入的網域控制站。<br /><br />等候 GPO 複寫到所有的網域控制站，然後使用 Windows PowerShell Cmdlet **Set-DAEntryPointDC**，將進入點與「遠端存取」伺服器之 Active Directory 中的可寫入網域控制站建立關聯。|  
+|錯誤|無法從網域控制站抓取伺服器 [伺服器名稱] 的設定。|GPO 中的設定未送達伺服器，並且自變更設定後已經超過 10 分鐘。|在下列其中一種情況下就可能發生這種情形：<br /><br />-伺服器無法連線到網域以更新原則。 您可以在伺服器上執行 "gpupdate/force"，以強制執行原則更新。<br />-可能需要 GPO 複寫才能取得已更新的設定。<br />-遠端存取服務器的 Active Directory 網站中沒有可寫入的網域控制站。<br /><br />等候 GPO 複寫到所有的網域控制站，然後使用 Windows PowerShell Cmdlet **Set-DAEntryPointDC**，將進入點與「遠端存取」伺服器之 Active Directory 中的可寫入網域控制站建立關聯。|  
 |警告|已從網域控制站抓取伺服器 [伺服器名稱] 的設定，但尚未套用。|GPO 中的設定已送達伺服器，但尚未套用。<br /><br />最多可能需要花 15 分鐘才能套用設定。|允許更多時間來將設定完整套用到伺服器。|  
-|Error|無法套用從網域控制站抓取的伺服器 [伺服器名稱] 設定。|GPO 中的設定已送達伺服器，但是未成功套用，並且自變更設定後已經超過 15 分鐘。|在下列其中一種情況下就可能發生這種情形：<br /><br />1.目前正在套用設定。 這會顯示為錯誤，因為可能已經花費很長的時間從 GPO 抓取設定。<br />    若要確認這是否為原因，請使用 [工作排程器] 並瀏覽到 Microsoft\Windows\RemoteAccess 以確認 **RAConfigTask** 目前是否正在執行。<br />2.如果 **RAConfigTask** 目前未執行，表示它可能無法將設定套用在伺服器上。<br />    檢查 [事件檢視器] 中「遠端存取」伺服器操作通道 (位於 \Applications and Services Logs\Microsoft\Windows\RemoteAccess-RemoteAccessServer) 底下是否有錯誤。<br />    檢查 [遠端存取管理主控台] 的 [操作狀態] 中是否有錯誤。 如需詳細資訊，請參閱[監視遠端存取伺服器及其元件的操作狀態](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)。|  
-|Error|已從網域控制站抓取多站台伺服器的設定。 這個設定並未在所有伺服器上都相符。|多站台部署中的伺服器 GPO 設定版本之間不一致。<br /><br />在理想的情況下，所有進入點的所有伺服器 GPO 都會有相同的全域設定，但是因為某種原因，它們並未同步。|當變更設定失敗且未成功回復時，便可能發生這種情況。<br /><br />您應該將 GPO 從備份狀態 (所有伺服器 GPO 皆已同步) 復原。 如需您可以使用之腳本的相關資訊，請參閱[備份及還原遠端存取](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6)設定。|  
+|錯誤|無法套用從網域控制站抓取的伺服器 [伺服器名稱] 設定。|GPO 中的設定已送達伺服器，但是未成功套用，並且自變更設定後已經超過 15 分鐘。|在下列其中一種情況下就可能發生這種情形：<br /><br />1. 設定目前正在進行套用。 這會顯示為錯誤，因為可能已經花費很長的時間從 GPO 抓取設定。<br />    若要確認這是否為原因，請使用 [工作排程器] 並瀏覽到 Microsoft\Windows\RemoteAccess 以確認 **RAConfigTask** 目前是否正在執行。<br />2. 如果**RAConfigTask**目前不在執行中，它可能無法在伺服器上套用設定。<br />    檢查 [事件檢視器] 中「遠端存取」伺服器操作通道 (位於 \Applications and Services Logs\Microsoft\Windows\RemoteAccess-RemoteAccessServer) 底下是否有錯誤。<br />    檢查 [遠端存取管理主控台] 的 [操作狀態] 中是否有錯誤。 如需詳細資訊，請參閱[監視遠端存取伺服器及其元件的操作狀態](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)。|  
+|錯誤|已從網域控制站抓取多站台伺服器的設定。 這個設定並未在所有伺服器上都相符。|多站台部署中的伺服器 GPO 設定版本之間不一致。<br /><br />在理想的情況下，所有進入點的所有伺服器 GPO 都會有相同的全域設定，但是因為某種原因，它們並未同步。|當變更設定失敗且未成功回復時，便可能發生這種情況。<br /><br />您應該將 GPO 從備份狀態 (所有伺服器 GPO 皆已同步) 復原。 如需您可以使用之腳本的相關資訊，請參閱[備份及還原遠端存取](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6)設定。|  
   
 
 

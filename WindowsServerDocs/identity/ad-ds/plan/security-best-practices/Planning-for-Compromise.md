@@ -18,9 +18,9 @@ ms.locfileid: "71360136"
 ---
 # <a name="planning-for-compromise"></a>規劃危害因應措施
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-@no__t 0Law 數位一：任何人都認為不會發生任何不良的問題。 * - [10 不變的安全性管理法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第一條定律：沒有人認為可能發生的任何錯誤。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
   
 許多組織中的嚴重損壞修復計畫，著重于從導致計算服務遺失的區域性災難或失敗中復原。 不過，在與遭入侵的客戶合作時，我們通常會發現在其嚴重損壞修復計畫中不會有刻意洩露的復原。 特別是當洩露會導致智慧財產權遭竊或利用邏輯界限（例如，銷毀所有 Active Directory 網域或所有伺服器）而非實體界限（例如資料中心的銷毀）。 雖然組織可能會有事件回應計畫，以定義在發現洩露時要採取的初始活動，但這些計畫通常會省略會影響整個運算基礎結構的危害復原的步驟。  
   
@@ -32,10 +32,10 @@ ms.locfileid: "71360136"
   
 若要建立有效的防禦，同時對依賴您基礎結構和應用程式的使用者和企業提供服務，您可能需要考慮 novel 的方法來防止、偵測並包含您環境中的漏洞，然後再進行復原。入侵。 本檔中的方法與建議可能無法協助您修復遭盜用的 Active Directory 安裝，但可協助您保護下一個。  
   
-@No__t 0Windows 伺服器2012中會顯示覆原 Active Directory 樹系的建議：規劃 Active Directory 樹系復原 @ no__t-0。 您可能可以防止新的環境完全遭到入侵，但是即使您無法這樣做，您還是可以使用工具來復原和重新取得環境的控制權。  
+Windows Server 2012 中會顯示覆原 Active Directory 樹系的建議[：規劃 Active Directory 樹](https://www.microsoft.com/download/details.aspx?id=16506)系復原。 您可能可以防止新的環境完全遭到入侵，但是即使您無法這樣做，您還是可以使用工具來復原和重新取得環境的控制權。  
   
 ## <a name="rethinking-the-approach"></a>重新思考方法  
-@no__t 0Law 數位八：網路防禦的困難在於其複雜性。 * - [10 不變的安全性管理法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律號碼8：網路防禦的困難在於其複雜性。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
   
 一般來說，如果攻擊者已取得電腦的系統、管理員、根目錄或對等的存取權（無論作業系統為何），該電腦就無法再被視為值得信任，無論是多少努力「清理」筆記本電腦. Active Directory 並無不同。 如果攻擊者已在 Active Directory 中取得網域控制站或高許可權帳戶的特殊許可權存取權，除非您有一筆記錄，其中包含攻擊者所進行的每項修改或已知良好的備份，否則您絕對無法將目錄還原至完整的值得信賴的狀態。  
   
@@ -47,11 +47,11 @@ ms.locfileid: "71360136"
   
 這些結果與 Verizon 的2012資料缺口調查報告中的幾個發現一致，這表示：  
   
--   從外部代理程式詞幹分析的 98% 資料缺口  
+-   從外部代理程式詞幹分析的98% 資料缺口  
   
 -   85% 的資料缺口花費數周或更多時間來探索  
   
--   協力廠商探索到 92% 的事件，以及  
+-   協力廠商探索到92% 的事件，以及  
   
 -   97% 的漏洞是透過簡單或中繼控制項肇因。  
   
@@ -63,7 +63,7 @@ ms.locfileid: "71360136"
   
 並不是專注于並嘗試修正「中斷」的所有專案，而是考慮依據您的業務和基礎結構中最重要的動作來排定優先順序的方法。 請考慮建立新的小型安全環境，讓您可以安全地將最重要的使用者、系統和資訊移植到您的，而不是嘗試補救已過期、設定錯誤的系統和應用程式的環境。公司.  
   
-在本節中，我們會說明一種方法，讓您建立初始化 AD DS 樹系，做為核心商務基礎結構的「生命船」或「安全資料格」。 初始化樹系只是新安裝的 Active Directory 樹系，通常會在大小和範圍內受到限制，且是使用目前的作業系統、應用程式，以及[降低 Active Directory 攻擊所述的原則所建立。介面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)。  
+在本節中，我們會說明一種方法，讓您建立初始化 AD DS 樹系，做為核心商務基礎結構的「生命船」或「安全資料格」。 初始化樹系只是新安裝的 Active Directory 樹系，通常會在大小和範圍內受到限制，而且是使用目前的作業系統、應用程式，以及[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述的原則所建立的。  
   
 藉由在新建立的樹系中執行建議的設定，您可以建立從全新建立的 AD DS 安裝，並提供安全的設定和作法，而且可以減少支援舊版系統的挑戰，以及應用程式. 雖然 AD DS 初始化的設計和執行的詳細指示不在本檔的討論範圍內，但您應該遵循一些一般的原則和指導方針來建立「安全資料格」，您可以在其中存放最重要的固定資產. 這些指導方針如下：  
   
@@ -81,7 +81,7 @@ ms.locfileid: "71360136"
   
 ### <a name="identifying-principles-for-segregating-and-securing-critical-assets"></a>識別用來隔離和保護重要資產的原則  
 
-您所建立用來存放重要資產的初始化環境特性，可能會有很大的差異。 例如，您可以選擇建立初始化樹系，只遷移使用者只能存取的 VIP 使用者和敏感性資料。 您可以建立初始化樹系，而不只遷移 VIP 使用者，而是將其實作為系統管理樹系，以執行[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)來建立安全的系統管理帳戶中所述的原則和主機，可以用來從初始化樹系管理舊版樹系。 您可以執行「專門建立」的樹系，其中裝載 VIP 帳戶、特殊許可權帳戶，以及需要額外安全性的系統，例如執行 Active Directory 憑證服務（AD CS）的伺服器，其唯一目的是將它們與較不安全的隔離。樹系. 最後，您可能會執行初始化樹系，使其成為所有新使用者、系統、應用程式和資料的實際位置，讓您最終可以透過流失解除委任舊版樹系。  
+您所建立用來存放重要資產的初始化環境特性，可能會有很大的差異。 例如，您可以選擇建立初始化樹系，只遷移使用者只能存取的 VIP 使用者和敏感性資料。 您可以建立初始化樹系，而不只遷移 VIP 使用者，而是將其實作為系統管理樹系，並實行[降低 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)來建立安全的系統管理帳戶和主機（可用於從初始化樹系管理舊版樹系）中所述的原則。 您可以執行「專門建立」的樹系，其中裝載 VIP 帳戶、特殊許可權帳戶，以及需要額外安全性的系統，例如執行 Active Directory 憑證服務（AD CS）的伺服器，其唯一目的是將它們與較不安全的隔離。樹系. 最後，您可能會執行初始化樹系，使其成為所有新使用者、系統、應用程式和資料的實際位置，讓您最終可以透過流失解除委任舊版樹系。  
   
 無論您的初始化樹系是否包含少數的使用者和系統，或其構成更積極的遷移基礎，您都應該遵循規劃中的下列原則：  
   
@@ -144,7 +144,7 @@ ms.locfileid: "71360136"
   
 例如，您可以定義一個原則，讓主管和其他 Vip 需要使用安全的工作站來存取敏感性資料和系統，以使用其他裝置來存取較不敏感的資料。 這是讓使用者記住的簡單原則，但是您可以執行一些後端控制項，以協助強制執行此方法。  
 
-您可以使用[驗證機制保證](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)，只有在使用者使用其智慧卡登入安全系統時，才允許他們存取機密資料，而且可以使用 IPsec 和使用者權限限制來控制可以進行的系統連接到敏感性資料存放庫。 您可以使用[Microsoft 資料分類工具](https://www.microsoft.com/download/details.aspx?id=27123)組來建立健全的檔案分類基礎結構，而且您可以根據存取嘗試的特性，執行[動態存取控制](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)來限制資料的存取權，並翻譯商務規則融入技術控制項。  
+您可以使用[驗證機制保證](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)，只有在使用者使用智慧卡登入安全系統時，才允許他們存取機密資料，而且可以使用 IPsec 和使用者權限限制來控制可連線到敏感性資料存放庫的系統。 您可以使用[Microsoft 資料分類工具](https://www.microsoft.com/download/details.aspx?id=27123)組來建立健全的檔案分類基礎結構，而且您可以根據存取嘗試的特性來執行[動態存取控制](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以限制資料的存取，將商務規則轉譯為技術控制項。  
   
 從使用者的觀點來看，從安全的系統存取機密資料「直接運作」，然後從不安全的系統中嘗試這麼做。」 不過，從監控和管理環境的觀點來看，您可以在使用者如何存取機密資料和系統時，協助您建立可識別的模式，讓您更輕鬆地偵測異常的存取嘗試。  
   

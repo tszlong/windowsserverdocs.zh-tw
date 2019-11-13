@@ -17,19 +17,19 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361669"
 ---
-# <a name="step-2-configure-wsus"></a>步驟 2:設定 WSUS
+# <a name="step-2-configure-wsus"></a>步驟 2：設定 WSUS
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在您的伺服器上安裝 WSUS 伺服器角色之後，需要正確地設定它。 下列檢查清單摘要說明執行 WSUS 伺服器初始設定所需的步驟。
 
 |工作|描述|
 |----|--------|
-|[2.1。設定網路連接 @ no__t-0|使用 [網路設定精靈] 設定叢集網路。|
-|[2.2。使用 WSUS Configuration Wizard 來設定 WSUS @ no__t-0|使用 WSUS 設定精靈執行基本 WSUS 設定。|
-|[2.3。設定 WSUS 電腦群組 @ no__t-0|在 WSUS 系統管理主控台中建立電腦群組，以管理組織中的更新。|
-|[2.4。設定用戶端更新 @ no__t-0|指定將自動更新套用到用戶端電腦的方式和時機。|
-|[2.5。使用安全通訊端層通訊協定的安全 WSUS @ no__t-0|設定安全通訊端層 (SSL) 通訊協定，以協助保護 Windows Server Update Services (WSUS)。|
+|[2.1. 設定網路連線](#21-configure-network-connections)|使用 [網路設定精靈] 設定叢集網路。|
+|[2.2. 使用 WSUS Configuration Wizard 設定 WSUS](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|使用 WSUS 設定精靈執行基本 WSUS 設定。|
+|[2.3. 設定 WSUS 電腦群組](#23-configure-wsus-computer-groups)|在 WSUS 系統管理主控台中建立電腦群組，以管理組織中的更新。|
+|[2.4. 設定用戶端更新](#24-configure-client-updates)|指定將自動更新套用到用戶端電腦的方式和時機。|
+|[2.5. 使用安全通訊端層通訊協定保護 WSUS](#25-secure-wsus-with-the-secure-sockets-layer-protocol)|設定安全通訊端層 (SSL) 通訊協定，以協助保護 Windows Server Update Services (WSUS)。|
 
 ## <a name="21-configure-network-connections"></a>2.1. 設定網路連線
 開始設定程序之前，務必確定您知道下列問題的答案：
@@ -56,33 +56,33 @@ ms.locfileid: "71361669"
 ### <a name="211-connection-from-the-wsus-server-to-the-internet"></a>2.1.1. WSUS 伺服器與網際網路之間的連線
 如果 WSUS 與網際網路之間設有公司防火牆，可能需要設定防火牆以確保 WSUS 可以取得更新。 為了從 Microsoft Update 取得更新，WSUS 伺服器會為 HTTPS 通訊協定使用連接埠 443。 雖然大部分的公司防火牆都允許這種類型的流量，但還是有一些公司因為公司的安全性原則而限制了從伺服器存取網際網路。 如果您的公司限制存取，您必須取得授權，以允許從 WSUS 到下列 Url 清單的網際網路存取：
 
-- HTTP @ no__t-0//windowsupdate.log. microsoft .com
+- HTTP\://windowsupdate.microsoft.com
 
-- HTTP @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
+- HTTP\://\*. windowsupdate.microsoft.com
 
-- HTTPs @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
+- HTTPs\://\*. windowsupdate.microsoft.com
 
-- HTTP @ no__t-0 @ no__t-1\*.update.microsoft.com
+- HTTP\://\*. update.microsoft.com
 
-- HTTPs @ no__t-0 @ no__t-1\*.update.microsoft.com
+- HTTPs\://\*. update.microsoft.com
 
-- HTTP @ no__t-0 @ no__t-1\*.windowsupdate.com
+- HTTP\://\*. windowsupdate.com
 
-- HTTP @ no__t-0//下載 windowsupdate.log .com
+- HTTP\://download.windowsupdate.com
 
-- HTTPs @ no__t-0//下載。 microsoft .com
+- HTTPs\://download.microsoft.com
 
-- HTTP @ no__t-0 @ no__t-1\*.download.windowsupdate.com
+- HTTP\://\*. download.windowsupdate.com
 
-- HTTP @ no__t-0//wustat. windows .com
+- HTTP\://wustat.windows.com
 
-- HTTP @ no__t-0//ntservicepack. microsoft .com
+- HTTP\://ntservicepack.microsoft.com
 
-- HTTP @ no__t-0//go. microsoft .com
+- HTTP\://go.microsoft.com
 
-- HTTP @ no__t-0//dl. microsoft .com
+- HTTP\://dl.delivery.mp.microsoft.com
 
-- HTTPs @ no__t-0//dl。
+- HTTPs\://dl.delivery.mp.microsoft.com
 
 > [!IMPORTANT]
 > 針對 WSUS 因為防火牆設定而無法取得更新的案例，請參閱 Microsoft 知識庫中的[文章 885819](https://support.microsoft.com/kb/885819) 。
@@ -123,7 +123,7 @@ WSUS 伺服器上的防火牆必須設定為允許這些連接埠上的輸入流
 
 4.  在 [命令提示字元] 視窗中，移至 C:\Program Files\Update Services\Tools 資料夾。 輸入下列命令：
 
-    **Wsusutil ConfigureSSlproxy [< proxy_server proxy_port >]-enable**，其中：
+    **Wsusutil ConfigureSSlproxy [< proxy_server proxy_port >]-啟用**，其中：
 
     1.  proxy_server 是指支援 HTTPS 的 Proxy 伺服器名稱。
 
@@ -155,13 +155,13 @@ WSUS 伺服器上的防火牆必須設定為允許這些連接埠上的輸入流
 
     5.  如果 Proxy 伺服器支援基本驗證，請選取 [允許基本驗證 (密碼會以純文字傳送)] 核取方塊。
 
-    6.  按一下 [確定]。
+    6.  按一下 **\[確定\]** 。
 
     ###### <a name="to-remove-a-proxy-server-from-the-wsus-configuration"></a>將 Proxy 伺服器從 WSUS 設定中移除
 
     1.  若要將 Proxy 伺服器從 WSUS 設定中移除，請清除 [同步處理時使用 Proxy 伺服器] 核取方塊。
 
-    2.  按一下 [確定]。
+    2.  按一下 **\[確定\]** 。
 
 ## <a name="22-configure-wsus-by-using-the-wsus-configuration-wizard"></a>2.2. 使用 WSUS 設定精靈設定 WSUS
 這個程序假設您使用 WSUS 設定精靈，該設定精靈會在第一次啟動 WSUS 管理主控台時出現。 這個主題稍後將會說明如何使用 [選項] 頁面進行這些設定：
@@ -198,7 +198,7 @@ WSUS 伺服器上的防火牆必須設定為允許這些連接埠上的輸入流
 
 7.  如果您想要使用特定使用者認證連接到 proxy 伺服器，請選取 [**使用使用者認證連線到 proxy 伺服器]** 核取方塊，然後在對應的方塊中輸入使用者的使用者名稱、網域和密碼。 如果您想要為連線到 proxy 伺服器的使用者啟用基本驗證，請選取 [**允許基本驗證（密碼會以純文字傳送）** ] 核取方塊。
 
-8.  按一下 [下一步]。 在 [連線**到上游伺服器]** 頁面上，按一下 [**開始**連線]。
+8.  按一下 **\[下一步\]** 。 在 [連線**到上游伺服器]** 頁面上，按一下 [**開始**連線]。
 
 9. 連線之後，按 [下一步] 繼續。
 
@@ -232,7 +232,7 @@ WSUS 伺服器上的防火牆必須設定為允許這些連接埠上的輸入流
 現在您已經執行完基本的 WSUS 設定，請繼續閱讀下面幾個小節，了解使用 WSUS 管理主控台變更設定的詳細資料。
 
 ## <a name="23-configure-wsus-computer-groups"></a>2.3. 設定 WSUS 電腦群組
-電腦群組是 Windows Server Update Services （WSUS）部署的重要部分。 電腦群組允許您測試並將更新對應到特定的電腦。 預設電腦群組有兩個：[所有電腦] 和 [未指派的電腦]。 根據預設，當每個用戶端電腦第一次連絡 WSUS 伺服器的時候，伺服器會將這個用戶端電腦新增到這兩個群組中。
+電腦群組是 Windows Server Update Services （WSUS）部署的重要部分。 電腦群組允許您測試並將更新對應到特定的電腦。 預設電腦群組有兩個： [所有電腦] 和 [未指派的電腦]。 根據預設，當每個用戶端電腦第一次連絡 WSUS 伺服器的時候，伺服器會將這個用戶端電腦新增到這兩個群組中。
 
 您可以依需要的數量建立許多自訂電腦群組，以管理組織中的更新。 最佳做法是至少建立一個電腦群組來測試更新，然後再將這些更新部署到組織的其他電腦。
 
@@ -262,9 +262,9 @@ WSUS 安裝程式會自動設定 IIS，將最新版本的自動更新散佈到�
 
 使用下列程序為用戶端電腦設定自動更新：
 
--   [步驟 4：設定自動更新的群組原則設定](4-configure-group-policy-settings-for-automatic-updates.md)
+-   [步驟4：設定自動更新的群組原則設定](4-configure-group-policy-settings-for-automatic-updates.md)
 
--   [2.3。在本主題中設定電腦群組 @ no__t-0
+-   2\.3. 本主題中的[設定電腦群組](#23-configure-wsus-computer-groups)
 
 ### <a name="configure-automatic-updates-in-group-policy"></a>在群組原則中設定自動更新
 
@@ -301,12 +301,12 @@ WSUS 安裝程式會自動設定 IIS，將最新版本的自動更新散佈到�
 
 8.  在 [Windows Update] 詳細資料窗格中，按兩下 [指定內部網路 Microsoft 更新服務的位置]。
 
-9. 按一下 [啟用]，然後在 [設定偵測更新的近端內部網路更新服務] 和 [設定近端內部網路統計伺服器] 文字方塊中，輸入 WSUS 伺服器的相同 URL。 例如，在這兩個方塊中輸入 *http://servername* （其中*servername*是 WSUS 伺服器的名稱）。
+9. 按一下 [啟用]，然後在 [設定偵測更新的近端內部網路更新服務] 和 [設定近端內部網路統計伺服器] 文字方塊中，輸入 WSUS 伺服器的相同 URL。 例如，在這兩個方塊中輸入 *http://servername* （其中*SERVERNAME*是指 WSUS 伺服器的名稱）。
 
     > [!WARNING]
     > 輸入您 WSUS 伺服器的內部網路位址時，請務必指定要使用的連接埠。 根據預設，WSUS 會為 HTTP 使用連接埠 8530，為 HTTPS 使用連接埠 8531。 例如，如果您使用 HTTP，您應該輸入 **http://servername:8530** 。
 
-10. 按一下 [確定]。
+10. 按一下 **\[確定\]** 。
 
 設定用戶端電腦之後，會需要幾分鐘的時間，電腦才會出現在 WSUS 管理主控台的 [**電腦**] 頁面上。 對於使用網域群組原則物件設定的用戶端電腦，群組原則大約需要 20 分鐘的時間才能將新的原則設定套用到用戶端電腦。 根據預設，每隔90分鐘會在背景中更新群組原則，隨機位移為0-30 分鐘。 如果您想要更快更新群組原則，您可以在用戶端電腦上開啟 [命令提示字元] 視窗，然後輸入 gpupdate/force。
 
@@ -375,7 +375,7 @@ WSUS 需要兩個連接埠供 SSL 使用：一個連接埠會使用 HTTPS 來傳
 
 -   您必須將憑證匯入所有將與 WSUS 伺服器通訊的電腦。 這包括所有用戶端電腦、下游伺服器和執行 WSUS 系統管理主控台的電腦。 憑證應該匯入本機電腦受信任的根 CA 存放區，或 Windows Server Update Service 受信任的根 CA 存放區。
 
--   您可以針對 SSL 使用任何通訊埠。 不過，針對 SSL 設定的連接埠也可以決定 WSUS 用來傳送未加密 HTTP 流量的連接埠。 請考量下列範例：
+-   您可以針對 SSL 使用任何通訊埠。 不過，針對 SSL 設定的連接埠也可以決定 WSUS 用來傳送未加密 HTTP 流量的連接埠。 請考量以下範例：
 
     -   如果您針對 HTTPS 流量使用業界標準埠443，WSUS 會使用業界標準埠80來清除 HTTP 流量。
 
@@ -389,7 +389,7 @@ WSUS 需要兩個連接埠供 SSL 使用：一個連接埠會使用 HTTPS 來傳
 
 2.  移至 [**開始**]，輸入**CMD**，以滑鼠右鍵按一下 [**命令提示**字元]，然後按一下 [以**系統管理員身分執行**]。
 
-3.  流覽至 _% ProgramFiles%_ **\\Update Services @ no__t-3Tools @ no__t-4**資料夾。
+3.  流覽至 _% ProgramFiles%_ **\\更新服務\\工具\\** 資料夾。
 
 4.  在 [命令提示字元] 視窗中，輸入下列命令：
 

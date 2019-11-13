@@ -19,7 +19,7 @@ ms.locfileid: "71391118"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Windows Server 2016 中的身分識別與存取
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
@@ -36,10 +36,10 @@ Windows Server 2016 中 AD FS 所有可用新功能的概觀。
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41httpstechnetmicrosoftcomlibrarydn903243aspx"></a>[Active Directory Domain Services &#40;AD DS 的特殊許可權存取管理&#41;](https://technet.microsoft.com/library/dn903243.aspx)
 Active Directory Domain Services (AD DS) 的 Privileged Access Management (PAM) 是根據 Microsoft Identity Manager (MIM) 與 Windows Server 2012 R2 和 Windows Server 2016 的解決方案。
 
-## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>@no__t-適用于企業的 0Windows 10：使用裝置進行工作 @ no__t 的方式-0
+## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>[適用于企業的 Windows 10：使用裝置工作的方式](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)
 Windows 10 可讓您運用 Azure Active Directory。 Windows 10 裝置可以連線至 Azure AD，使用者可以使用 Azure AD 帳戶登入 Windows，或新增他們的 Azure ID 以存取商務應用程式和資源。
 
-## <a name="active-directory-domain-servicesidentityad-dsactive-directory-domain-servicesmd"></a>[Active Directory Domain Services](../identity/ad-ds/Active-Directory-Domain-Services.md)
+## <a name="active-directory-domain-servicesidentityad-dsactive-directory-domain-servicesmd"></a>[Active Directory 網域服務](../identity/ad-ds/Active-Directory-Domain-Services.md)
 Windows Server 2016 中 AD DS 所有可用功能的詳細記載。
 
 ## <a name="active-directory-federation-servicesactive-directory-federation-servicesmd"></a>[Active Directory 同盟服務](Active-Directory-Federation-Services.md)

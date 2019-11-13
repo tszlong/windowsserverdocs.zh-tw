@@ -21,7 +21,7 @@ ms.locfileid: "71404463"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>疑難排解新增進入點
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題包含與 `Add-DAEntryPoint` 命令問題有關的疑難排解資訊。 若要確認您所收到的錯誤與新增進入點有關，請檢查 Windows 事件記錄檔中的事件識別碼 10067。  
   
@@ -37,13 +37,13 @@ ms.locfileid: "71404463"
 執行命令，並確定將 *RemoteAccessServer* 參數指定成要加入做為進入點的伺服器名稱。  
   
 ## <a name="remote-access-is-not-configured"></a>未設定遠端存取  
-**收到錯誤**。 未在 < server_name > 上設定遠端存取。 請指定屬於多站台部署之伺服器的名稱。  
+**收到錯誤**。 < Server_name > 上未設定遠端存取。 請指定屬於多站台部署之伺服器的名稱。  
   
 **原因**  
   
 *ComputerName* 參數指定的電腦或執行命令的電腦，沒有設定遠端存取。  
   
-將新進入點新增至多網站部署時，您必須指定兩個參數：*ComputerName*和*RemoteAccessServer*。 *ComputerName* 是已經屬於多站台部署的伺服器名稱，*RemoteAccessServer* 則是您要加入做為新進入點的伺服器名稱。 如果您從屬於多站台部署的電腦執行，就不需要 ComputerName 參數。  
+將新進入點新增到多站台部署時，您必須指定兩個參數：*ComputerName* 和 *RemoteAccessServer*。 *ComputerName* 是已經屬於多站台部署的伺服器名稱，*RemoteAccessServer* 則是您要加入做為新進入點的伺服器名稱。 如果您從屬於多站台部署的電腦執行，就不需要 ComputerName 參數。  
   
 **解決方法**  
   
@@ -91,7 +91,7 @@ ms.locfileid: "71404463"
     2.  執行 `Add-DAEntryPoint` Cmdlet，並在 *ClientIPv6Prefix* 參數指定 IP-HTTPS 首碼。  
   
 ## <a name="connectto-address"></a>ConnectTo 位址  
-**收到錯誤**。 在 RemoteAccess 伺服器上連線的 DirectAccess 用戶端的位址（< connect_to_address >）與網路位置伺服器位址相同。 請指定其他值。  
+**收到錯誤**。 DirectAccess 用戶端在 RemoteAccess 伺服器上連線的位址（< connect_to_address >）與網路位置伺服器位址相同。 請指定其他值。  
   
 **原因**  
   
@@ -102,11 +102,11 @@ ConnectTo 位址與網路位置伺服器位址相同。
 ConnectTo 位址應該可以透過網際網路解析，以便讓用戶端電腦透過 IP-HTTPS 連線。 網路位置伺服器位址應該可以透過公司網路解析，但不可以透過網際網路解析。 請確定網路位置伺服器與 ConnectTo 位址不同。 選取其他位址，然後再試一次。  
   
 ## <a name="directaccess-or-vpn-already-installed"></a>已安裝 DirectAccess 或 VPN  
-**收到錯誤**。 在伺服器上偵測到 < server_name > 的 VPN 安裝。 請指定其他未安裝遠端存取的伺服器，或從伺服器中移除 VPN 設定。  
+**收到錯誤**。 在伺服器上偵測到 < server_name > 上的 VPN 安裝。 請指定其他未安裝遠端存取的伺服器，或從伺服器中移除 VPN 設定。  
   
 或  
   
-伺服器 < server_name > 上已安裝遠端存取。 請指定未執行 DirectAccess 的其他伺服器，或移除伺服器中的現有 DirectAccess 設定。  
+遠端存取已安裝在伺服器 < server_name > 上。 請指定未執行 DirectAccess 的其他伺服器，或移除伺服器中的現有 DirectAccess 設定。  
   
 **原因**  
   
@@ -119,7 +119,7 @@ ConnectTo 位址應該可以透過網際網路解析，以便讓用戶端電腦�
 執行命令，並確認 *RemoteAccessServer* 參數指定的伺服器沒有設定 DirectAccess 或 VPN。  
   
 ## <a name="ipsec-root-certificate"></a>IPsec 根憑證  
-**收到錯誤**。 伺服器 < server_name > 上找不到所設定的 IPsec 根憑證。  
+**收到錯誤**。 在伺服器 < server_name > 上找不到所設定的 IPsec 根憑證。  
   
 **原因**  
   
@@ -147,7 +147,7 @@ ConnectTo 位址應該可以透過網際網路解析，以便讓用戶端電腦�
   
     **解決方法**  
   
-    如果整個內部網路使用 IPv6 和 IPv4 位址進行設定，請考慮移到 IPv6+IPv4 部署以充分利用 IPv6 技術。 請參閱 [Step 3 中的「從純 IPv4 轉換至 IPv6 + IPv4 公司網路」：規劃 @ no__t-0 的多網站部署。  
+    如果整個內部網路使用 IPv6 和 IPv4 位址進行設定，請考慮移到 IPv6+IPv4 部署以充分利用 IPv6 技術。 請參閱[步驟3：規劃多網站部署](assetId:///19d49dbf-1786-47bb-ab97-f0458c53d91d)中的「從純 IPv4 轉換成 IPv6 + IPv4 公司網路」。  
   
 -   **問題2**  
   
@@ -203,7 +203,7 @@ ConnectTo 位址應該可以透過網際網路解析，以便讓用戶端電腦�
   
 -   **問題2**  
   
-    **收到錯誤**。 伺服器 GPO 必須位於遠端存取服務器網域中。 在 ServerGpoName 參數中指定網域 < domain_name >。  
+    **收到錯誤**。 伺服器 GPO 必須位於遠端存取服務器網域中。 在 ServerGpoName 參數中指定 domain_name > 的網域 <。  
   
     **原因**  
   
@@ -214,7 +214,7 @@ ConnectTo 位址應該可以透過網際網路解析，以便讓用戶端電腦�
     伺服器 GPO 應該要位於與遠端存取伺服器相同的網域。 使用伺服器 GPO 的伺服器網域名稱，然後再試一次。  
   
 ## <a name="split-brain-dns"></a>拆分式 DNS  
-**收到警告**。 DNS 尾碼 < DNS_suffix > 的 NRPT 專案包含用戶端電腦用來連線到遠端存取服務器的公用名稱。 將名稱 < connect_to_address > 新增為 NRPT 中的豁免。  
+**收到警告**。 DNS 尾碼的 NRPT 專案 < DNS_suffix > 包含用戶端電腦用來連線到遠端存取服務器的公用名稱。 將名稱 < connect_to_address > 新增為 NRPT 中的豁免。  
   
 **原因**  
   
@@ -240,7 +240,7 @@ ConnectTo 位址應該可以透過網際網路解析，以便讓用戶端電腦�
 若要疑難排解此錯誤，請參閱針對[啟用多網站進行疑難排解](https://technet.microsoft.com/library/jj591658.aspx)中的儲存伺服器 GPO 設定。  
   
 ## <a name="gpo-updates-cannot-be-applied"></a>無法套用 GPO 更新  
-**收到警告**。 GPO 更新無法套用在 < server_name > 上。 直到下次重新整理原則之前，變更都不會生效。  
+**收到警告**。 無法在 < server_name > 上套用 GPO 更新。 直到下次重新整理原則之前，變更都不會生效。  
   
 **原因**  
   

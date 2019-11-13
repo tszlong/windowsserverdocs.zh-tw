@@ -19,16 +19,16 @@ ms.locfileid: "71364743"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>應設定複本伺服器，以識別已獲授權傳送複寫流量的特定主伺服器
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -39,11 +39,11 @@ ms.locfileid: "71364743"
 *所有主伺服器的複寫都儲存在一個位置，這可能會導致隱私權或安全性問題。*  
   
 ## <a name="resolution"></a>解析度  
-@no__t 0Use Hyper-v 管理員，為特定的主伺服器建立新的授權專案，並為每個伺服器指定個別的儲存位置。您可以使用萬用字元，將主伺服器群組為每個授權專案的集合。 *  
+*使用 [Hyper-v 管理員] 為特定的主伺服器建立新的授權專案，並為每個伺服器指定個別的儲存位置。您可以使用萬用字元，將主伺服器分組為每個授權專案的集合。*  
   
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>使用 Hyper-v 管理員建立授權專案  
   
-1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員，按一下 [**工具**] [ > ] [**hyper-v 管理員**]）。  
+1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員按一下 [**工具** > **hyper-v 管理員**]）。  
   
 2.  在主機清單中，以滑鼠右鍵按一下您想要的主控制項，然後按一下 [ **Hyper-v 設定**]。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "71364743"
   
     -   指定專用的位置來儲存該伺服器的檔案。  
   
-7.  按一下 [確定]。  
+7.  按一下 **\[確定\]** 。  
   
 8.  針對每部主伺服器重複執行。  
   
@@ -83,7 +83,7 @@ ms.locfileid: "71364743"
 New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMStorage DEFAULT  
 ```  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [新增-New-vmreplicationauthorizationentry](https://technet.microsoft.com/library/hh848606.aspx)  
   
 

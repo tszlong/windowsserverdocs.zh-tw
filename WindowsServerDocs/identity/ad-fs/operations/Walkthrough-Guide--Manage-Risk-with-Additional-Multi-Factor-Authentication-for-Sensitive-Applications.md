@@ -28,13 +28,13 @@ ms.locfileid: "71357792"
 
 本逐步解說包含下列各節：
 
--   [步驟 1：設定實驗室環境 @ no__t-0
+-   [步驟1：設定實驗室環境](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [步驟 2：確認預設 AD FS 驗證機制 @ no__t-0
+-   [步驟2：驗證預設 AD FS 驗證機制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)
 
--   [步驟 3：在您的同盟伺服器上設定 MFA @ no__t-0
+-   [步驟3：在您的同盟伺服器上設定 MFA](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_3)
 
--   [步驟 4：驗證 MFA 機制 @ no__t-0
+-   [步驟4：驗證 MFA 機制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
 
 ## <a name="BKMK_1"></a>步驟1：設定實驗室環境
 若要完成本逐步解說，您的環境必須包含下列元件：
@@ -54,7 +54,7 @@ ms.locfileid: "71357792"
 
 如需有關如何設定此環境的指示，請參閱在[Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)。
 
-## <a name="BKMK_2"></a>步驟2：驗證預設的 AD FS 驗證機制
+## <a name="BKMK_2"></a>步驟2：驗證預設 AD FS 驗證機制
 在這個步驟您要驗證預設的 AD FS 存取控制機制 (外部網路為 [表單驗證] ，內部網路為 [Windows 驗證] )，使用者會被重新導向到 AD FS 登入頁面、提供有效的認證，然後授與應用程式的存取權。 您可以使用**Robert Hatley** AD 帳戶，以及您在[為 Windows Server 2012 R2 中的 AD FS 設定實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中所設定的**claimapp**範例應用程式。
 
 1.  在您的用戶端電腦上，開啟瀏覽器視窗，並流覽至您的範例應用程式： **https://webserv1.contoso.com/claimapp** 。
@@ -65,7 +65,7 @@ ms.locfileid: "71357792"
 
     您將會獲得應用程式的存取權。
 
-## <a name="BKMK_3"></a>步驟3：在同盟伺服器上設定 MFA
+## <a name="BKMK_3"></a>步驟3：在您的同盟伺服器上設定 MFA
 在 Windows Server 2012 R2 的 AD FS 中設定 MFA 有兩個部分：
 
 -   [選取其他驗證方法](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_5)
@@ -205,7 +205,7 @@ ms.locfileid: "71357792"
 
 ##### <a name="to-configure-the-mfa-policy-based-on-users-group-membership-data-for-claimapp--via-the-ad-fs-management-console"></a>透過 AD FS 管理主控台，根據 ' claimapp ' 的使用者群組成員資格資料來設定 MFA 原則
 
-1.  在您的同盟伺服器上，于 AD FS 管理主控台中，流覽至 **驗證原則** **每個信賴**憑證者信任 節點 \\，然後選取代表您範例應用程式（**claimapp**）的信賴憑證者信任。
+1.  在您的同盟伺服器上，于 AD FS 管理主控台中，流覽至 [**每個信賴**憑證者信任] 節點\\的 [**驗證原則**]，然後選取代表您範例應用程式（**claimapp**）的信賴憑證者信任。
 
 2.  在 [動作] 頁面，或在 [claimapp]按一下滑鼠右鍵，選取 [編輯自訂多因素驗證]。
 
@@ -243,12 +243,12 @@ ms.locfileid: "71357792"
 
     此時根據您已設定的 MFA 原則，系統會提示使用者進行其他驗證。 預設訊息文字是「基於安全性考量，我們需要額外的資訊，以驗證您的帳戶。」 。不過，您可以完全自訂這段文字內容。 如需如何自訂登入體驗的詳細資訊，請參閱＜ [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)＞。
 
-    如果您將憑證驗證設為其他驗證方法，預設郵件內文會 @no__t 0Select 您要用於驗證的憑證。如果您取消此作業，請關閉瀏覽器，然後再試一次。 **
+    如果您將憑證驗證設為其他驗證方法，預設文字訊息為 [選取驗證所要使用的憑證。如果您取消此作業，請關閉瀏覽器再重試一次]。
 
     如果您設定 Windows Azure Multi-factor Authentication 做為其他驗證方法，預設訊息文字是 [系統將會撥打電話以完成驗證]。 。如需使用 Windows Azure Multi-Factor Authentication 登入並使用偏好驗證方法各種選項的詳細資訊，請參閱 [Windows Azure Multi-Factor Authentication 概觀](https://technet.microsoft.com/library/dn249479.aspx)。
 
-## <a name="see-also"></a>另請參閱
-[使用其他多重要素驗證管理機密應用程式的風險](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+## <a name="see-also"></a>請參閱
+[使用其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 [設定 Windows Server 2012 R2 中 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 

@@ -43,15 +43,15 @@ LSASS 在 DC 上使用的記憶體數量會根據 Active Directory 使用量而�
 LSASS 內最大的變數記憶體使用量是 ESE 資料庫緩衝區快取。 快取大小的範圍可從小於 1 MB 到整個資料庫的大小。 因為較大的快取可改善效能，所以 Active Directory （ESENT）的資料庫引擎會嘗試盡可能將快取保持在最大的大小。 雖然快取的大小因電腦的記憶體壓力而有所不同，但是 ESE 資料庫緩衝區快取的大小上限*只*受限於電腦上安裝的實體 RAM。 只要沒有其他記憶體不足的壓力，快取就會成長到 Active Directory 的 ntds.dit 資料庫檔案的大小。 可以快取的資料庫越多，DC 的效能就愈好。  
   
 > [!NOTE]
-> 由於資料庫快取演算法的運作方式，在資料庫大小小於可用 RAM 的64位系統上，資料庫快取的成長可能會比資料庫大小高達30到 40%。
+> 由於資料庫快取演算法的運作方式，在資料庫大小小於可用 RAM 的64位系統上，資料庫快取的成長可能會比資料庫大小高達30到40%。
 
 ## <a name="ese-version-store"></a>ESE 版本存放區
 
 ESE 版本存放區（上圖中的紅色部分）有變數記憶體使用量。 使用的記憶體數量取決於您是否有 Windows Server 2019 或舊版的 Windows。
 
-- 在 predating Windows Server 2019 的 Windows Server 版本中，根據預設，LSASS 可能會針對 ESE 版本存放區使用64位電腦上最多的為400MB 記憶體（視 Cpu 數目而定）。 如需如何使用版本存放區的詳細資訊，請參閱 Ryan Ries 的下列請參閱 ASKDS blog 文章：[版本存放區已被呼叫，而且全部都不在 bucket 內](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415)。
+- 在 predating Windows Server 2019 的 Windows Server 版本中，根據預設，LSASS 可能會針對 ESE 版本存放區使用64位電腦上最多的為400MB 記憶體（視 Cpu 數目而定）。 如需如何使用版本存放區的詳細資訊，請參閱 Ryan Ries 的下列請參閱 ASKDS blog 文章：[名為的版本存放區，而它們全都超出 bucket](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415)。
 
-- 在 Windows Server 2019 中，這是簡化的，而且當 NTDS 服務第一次啟動時，ESE 版本存放區大小現在會計算為 10% 的實體 RAM，最低為為400MB，最大值為 4 GB。 如需有關此和版本存放區疑難排解的絕佳詳細資料，請參閱 Ryan Ries 的另一個絕佳的 blog：[深入探討：Active Directory Server 2019 @ no__t-0 中的 ESE 版本存放區變更。
+- 在 Windows Server 2019 中，這是簡化的，而且當 NTDS 服務第一次啟動時，ESE 版本存放區大小現在會計算為10% 的實體 RAM，最低為為400MB，最大值為 4 GB。 如需有關此和版本存放區疑難排解的絕佳詳細資料，請參閱 Ryan Ries 的另一個絕佳的 blog：[深入探討：在伺服器2019中 ACTIVE DIRECTORY ESE 版本存放區變更](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Deep-Dive-Active-Directory-ESE-Version-Store-Changes-in-Server/ba-p/400510)。
 
 ## <a name="other-memory-use"></a>其他記憶體使用量
 
@@ -63,7 +63,7 @@ ESE 版本存放區（上圖中的紅色部分）有變數記憶體使用量。 
 
 基於此原因，若要提升效能，最好將 DC 上的程式數目限制為或最小化。 如果沒有記憶體要求，LSASS 會使用此記憶體來快取 Active Directory 資料庫，因而達到最佳效能。
 
-當您發現 DC 發生效能問題時，也請留意具有大量記憶體使用率的進程。 這些可能會有問題，您必須進行疑難排解。 他們可能包括 Microsoft 元件。 請確定您隨時掌握最新的服務更新 @ no__t-0Microsoft 包含過多的記憶體使用量解決方案，做為品質更新的一部分，這也可能有助於 DC 效能。
+當您發現 DC 發生效能問題時，也請留意具有大量記憶體使用率的進程。 這些可能會有問題，您必須進行疑難排解。 他們可能包括 Microsoft 元件。 請確定您隨時掌握最新的服務更新&mdash;Microsoft 包含過多的記憶體使用量解決方案，做為品質更新的一部分，這也可能有助於您的 DC 效能。
 
 根據使用設定檔而定，有內建的 OS 設備可能會耗用大量的 RAM：
 

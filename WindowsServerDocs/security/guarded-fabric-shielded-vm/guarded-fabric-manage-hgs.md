@@ -16,7 +16,7 @@ ms.locfileid: "71386538"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主機守護者服務
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 「主機守護者服務」（HGS）是受防護網狀架構解決方案的成為。
 它負責確保主機服務提供者或企業可以得知網狀架構中的 Hyper-v 主機，並執行受信任的軟體，以及管理用來啟動受防護 Vm 的金鑰。
@@ -51,7 +51,7 @@ HGS 隨附兩個預先設定的 JEA 角色：
 
 若要使用 JEA，您必須先建立新的標準使用者，並將其設為 HGS 管理員或 HGS 審核者群組的成員。
 如果您使用 `Install-HgsServer` 來設定 HGS 的新樹系，則這些群組會分別命名為「*servicename*系統管理員」和「*servicename*審核者」，其中*servicename*是 HGS 叢集的網路名稱。
-如果您將 HGS 加入現有的網域，您應該參考您在 `Initialize-HgsServer` 中所指定的組名。
+如果您將 HGS 加入現有的網域，您應該參考您在 `Initialize-HgsServer`中指定的組名。
 
 **建立 HGS 系統管理員和審核者角色的標準使用者**
 
@@ -76,7 +76,7 @@ Add-ADGroupMember -Identity $reviewerGroup -Members 'hgsreviewer01'
 Enter-PSSession -ComputerName <hgsnode> -Credential '<hgsdomain>\hgsreviewer01' -ConfigurationName 'microsoft.windows.hgs'
 ```
 
-接著，您可以使用 `Get-Command` 來檢查會話中允許哪些命令，並執行任何允許的命令來審查設定。
+接著，您可以使用 `Get-Command` 來檢查會話中允許的命令，並執行任何允許的命令來審查設定。
 在下列範例中，我們會檢查 HGS 上啟用的原則。
 
 ```powershell
@@ -201,7 +201,7 @@ Export-HgsServerState -Path C:\temp\HGSBackup.xml
 
 **備份憑證**
 
-@No__t-0 命令會在命令執行時，備份新增至 HGS 的任何 PFX 型憑證。
+`Export-HgsServerState` 命令會在命令執行時，備份新增至 HGS 的任何 PFX 型憑證。
 如果您使用指紋將憑證新增至 HGS （一般用於不可匯出和硬體支援的憑證），您將需要手動備份憑證的私密金鑰。
 若要識別哪些憑證已向 HGS 註冊，而且需要以手動方式進行備份，請在任何工作中的 HGS 伺服器節點上執行下列 PowerShell 命令。
 
@@ -220,7 +220,7 @@ Get-HgsKeyProtectionCertificate | Where-Object { $_.CertificateData.GetType().Na
 備份的 HGS 伺服器狀態不會包含 HGS 叢集的名稱、Active Directory 的任何資訊，或用來保護與 HGS Api 通訊的任何 SSL 憑證。
 這些設定對一致性而言很重要，但在嚴重損壞之後讓 HGS 叢集恢復上線，並不重要。
 
-若要捕捉 HGS 服務的名稱，請執行 `Get-HgsServer`，並記下證明和金鑰保護 Url 中的一般名稱。
+若要捕捉 HGS 服務的名稱，請執行 `Get-HgsServer` 並記下證明和金鑰保護 Url 中的一般名稱。
 例如，如果證明 URL 是 "<http://hgs.contoso.com/Attestation>"，"hgs" 就是 HGS 服務名稱。
 
 HGS 使用的 Active Directory 網域應該與任何其他 Active Directory 網域一樣進行管理。
@@ -260,9 +260,9 @@ Get-WebBinding -Protocol https | Select-Object certificateHash
 Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 ```
 
-如果您只想要匯入系統管理員信任的證明原則或 TPM 信任的證明原則，您可以指定 `-ImportActiveDirectoryModeState` 或 `-ImportTpmModeState` 旗標來匯[入-HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)。
+如果您只想要匯入系統管理員信任的證明原則或 TPM 信任的證明原則，可以藉由指定 `-ImportActiveDirectoryModeState` 或 `-ImportTpmModeState` 旗標來匯[入-HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)來完成此動作。
 
-執行 `Import-HgsServerState` 之前，請確定已安裝 Windows Server 2016 的最新累計更新。
+執行 `Import-HgsServerState`之前，請確定已安裝 Windows Server 2016 的最新累計更新。
 如果無法這樣做，可能會導致匯入錯誤。
 
 > [!NOTE]
@@ -280,7 +280,7 @@ Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 您必須在新增至已還原之 HGS 叢集的每個額外節點上重複此步驟。
 
 #### <a name="review-imported-attestation-policies"></a>檢查匯入的證明原則
-從備份匯入設定之後，建議您使用 `Get-HgsAttestationPolicy` 來仔細檢查所有匯入的原則，以確保只有您信任的主機能夠執行受防護的 Vm 才能成功進行證明。
+從備份匯入設定之後，建議您使用 `Get-HgsAttestationPolicy` 仔細檢查所有匯入的原則，以確保只有您信任的主機能夠執行受防護的 Vm 才能成功進行證明。
 如果您發現任何不再符合安全性狀態的原則，您可以停用[或移除它們](#review-attestation-policies)。
 
 #### <a name="run-diagnostics-to-check-system-state"></a>執行診斷以檢查系統狀態
@@ -355,8 +355,8 @@ Hgs_BitLockerEnabled           | 需要在 Hyper-v 主機上啟用 BitLocker。 
 Hgs_IommuEnabled               | 需要主機具有使用的 IOMMU 裝置，以防止直接記憶體存取攻擊。 停用此原則，並在未啟用 IOMMU 的情況下使用主機，可以公開租使用者 VM 秘密來直接進行記憶體攻擊。
 Hgs_NoHibernation              | 需要在 Hyper-v 主機上停用休眠。 停用此原則可能會允許主機將受防護的 VM 記憶體儲存到未加密的休眠檔案。
 Hgs_NoDumps                    | 需要在 Hyper-v 主機上停用記憶體傾印。 如果您停用此原則，建議您設定傾印加密，以防止受防護的 VM 記憶體儲存到未加密的損毀傾印檔案。
-Hgs_DumpEncryption             | 需要記憶體傾印（如果在 Hyper-v 主機上啟用），以使用 HGS 信任的加密金鑰進行加密。 如果主機上未啟用傾印，則不適用此原則。 如果此原則和*Hgs @ no__t-1NoDumps*都已停用，則受防護的 VM 記憶體可能會儲存到未加密的傾印檔案。
-Hgs_DumpEncryptionKey          | 否定原則，以確保設定為允許記憶體傾印的主機使用名為 HGS 的系統管理員定義傾印檔案加密金鑰。 當*Hgs @ no__t-1DumpEncryption*停用時，不適用此原則。
+Hgs_DumpEncryption             | 需要記憶體傾印（如果在 Hyper-v 主機上啟用），以使用 HGS 信任的加密金鑰進行加密。 如果主機上未啟用傾印，則不適用此原則。 如果此原則和*Hgs\_NoDumps*都已停用，則受防護的 VM 記憶體可能會儲存到未加密的傾印檔案。
+Hgs_DumpEncryptionKey          | 否定原則，以確保設定為允許記憶體傾印的主機使用名為 HGS 的系統管理員定義傾印檔案加密金鑰。 停用*Hgs\_DumpEncryption*時，不適用此原則。
 
 ### <a name="authorizing-new-guarded-hosts"></a>授權新的受防護主機
 若要授權新主機成為受防護的主機（例如證明已成功），HGS 必須信任主機，並（當設定為使用 TPM 信任證明時）在其上執行的軟體。
@@ -394,7 +394,7 @@ Add-HgsAttestationHostGroup -Name "Contoso Guarded Hosts" -Identifier "S-1-5-21-
 《部署指南》提供如何設定主機網域與 HGS 之間信任的指示。
 
 #### <a name="tpm-trusted-attestation"></a>TPM 信任證明
-當 HGS 以 TPM 模式設定時，主機必須傳遞所有鎖定的原則和「已啟用」原則（前面加上 "Hgs_"），以及至少一個 TPM 基準、TPM 識別碼和程式碼完整性原則。
+當 HGS 以 TPM 模式設定時，主機必須傳遞所有已鎖定的原則，並在前面加上 "Hgs_" 的「已啟用」原則，以及至少一個 TPM 基準、TPM 識別碼和程式碼完整性原則。
 每次您新增新的主機時，都必須向 HGS 註冊新的 TPM 識別碼。
 只要主機執行的軟體相同（且已套用相同的程式碼完整性原則）和 TPM 基準作為您環境中的另一部主機，您就不需要加入新的 CI 原則或基準。
 
@@ -433,7 +433,7 @@ Add-HgsAttestationTpmPolicy -Name 'HardwareConfig01' -Path 'C:\temp\hardwareConf
 ```
 
 **加入新的程式碼完整性原則**如果您已變更在 Hyper-v 主機上執行的程式碼完整性原則，則必須先向 HGS 註冊新的原則，這些主機才能成功進行證明。
-在參照主機上，可做為環境中受信任 Hyper-v 電腦的主要映射，使用 `New-CIPolicy` 命令來捕捉新的 CI 原則。
+在參照主機上，可做為您環境中受信任 Hyper-v 電腦的主要映射，請使用 `New-CIPolicy` 命令來捕捉新的 CI 原則。
 我們鼓勵您使用 Hyper-v 主機 CI 原則的**FilePublisher**層級和**雜湊**回退。
 您應該先在 audit 模式中建立 CI 原則，以確保所有專案都能如預期般運作。
 驗證系統上的範例工作負載之後，您可以強制執行原則，並將強制版本複製到 HGS。
@@ -468,7 +468,7 @@ Add-HgsAttestationCiPolicy -Name 'WS2016-Hardware01' -Path 'C:\temp\ws2016-hardw
 
 **新增記憶體傾印加密金鑰**
 
-當*hgs @ no__t-1NoDumps*原則已停用，且已啟用*hgs @ no__t-3DumpEncryption*原則時，受防護主機可以擁有記憶體傾印（包括損毀傾印），只要這些傾印已加密就可以啟用。 只有當受防護主機已停用記憶體傾印，或使用 HGS 已知的金鑰組其進行加密時，才會通過證明。 根據預設，不會在 HGS 上設定傾印加密金鑰。
+當*hgs\_NoDumps*原則已停用，且已啟用*hgs\_DumpEncryption*原則時，受防護主機可以使用記憶體傾印（包括損毀傾印）來啟用，只要這些傾印已加密即可。 只有當受防護主機已停用記憶體傾印，或使用 HGS 已知的金鑰組其進行加密時，才會通過證明。 根據預設，不會在 HGS 上設定傾印加密金鑰。
 
 若要將傾印加密金鑰新增至 HGS，請使用 `Add-HgsAttestationDumpPolicy` Cmdlet，以傾印加密金鑰的雜湊來提供 HGS。
 如果您在使用傾印加密設定的 Hyper-v 主機上捕捉 TPM 基準，則雜湊會包含在 tcglog 中，並可提供給 `Add-HgsAttestationDumpPolicy` Cmdlet。
@@ -497,7 +497,7 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 Set-HgsClientConfiguration -KeyProtectionServerUrl 'http://hgs.bastion.local/KeyProtection' -AttestationServerUrl 'http://hgs.bastion.local/Attestation'
 ```
 
-如果產生的狀態未指出「IsHostGuarded：True 「您將需要針對設定進行疑難排解。
+如果產生的狀態未指出「IsHostGuarded： True」，您將需要針對設定進行疑難排解。
 在通過證明的主機上，執行下列命令，以取得可協助您解決失敗證明之問題的詳細報告。
 
 ```powershell
@@ -505,7 +505,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 ```
 
 > [!IMPORTANT]
-> 如果您使用 Windows Server 2019 或 Windows 10 版本1809，且使用程式碼完整性原則，則 `Get-HgsTrace` 可能會傳回程序**代碼完整性原則**作用中診斷的失敗。
+> 如果您使用 Windows Server 2019 或 Windows 10 版本1809，且使用程式碼完整性原則，`Get-HgsTrace` 可能會傳回程序**代碼完整性原則**作用中診斷的失敗。
 > 當這是唯一失敗的診斷時，您可以放心地忽略此結果。
 
 ### <a name="review-attestation-policies"></a>審查證明原則
@@ -527,7 +527,7 @@ Disable-HgsAttestationPolicy -Name 'PolicyName'
 
 同樣地，您可以使用 `Enable-HgsAttestationPolicy` 來重新啟用原則。
 
-如果您不再需要原則，而且想要將它從所有 HGS 節點移除，請執行 `Remove-HgsAttestationPolicy -Name 'PolicyName'` 來永久刪除原則。
+如果您不再需要原則，而且想要將它從所有 HGS 節點移除，請執行 `Remove-HgsAttestationPolicy -Name 'PolicyName'` 以永久刪除原則。
 
 ## <a name="changing-attestation-modes"></a>變更證明模式
 如果您使用系統管理員信任的證明來啟動受防護的網狀架構，當您的環境中有足夠的 TPM 2.0 相容主機時，您可能會想要升級到更強的 TPM 證明模式。
@@ -564,7 +564,7 @@ Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode
 Set-HgsServer -TrustTpm
 ```
 
-如果您遇到問題，而需要切換回 Active Directory 模式，您可以執行 `Set-HgsServer -TrustActiveDirectory` 來完成此動作。
+如果您遇到問題，而需要切換回 Active Directory 模式，您可以執行 `Set-HgsServer -TrustActiveDirectory`來完成此動作。
 
 確認一切都如預期般運作之後，您應該從 HGS 移除所有受信任的 Active Directory 主機群組，並移除 HGS 和網狀架構網域之間的信任。
 如果您將 Active Directory 信任保持在原處，則會有其他人重新啟用信任並將 HGS 切換至 Active Directory 模式的風險，這可能會允許未受信任的程式碼在您的受防護主機上執行取消核取。
@@ -586,7 +586,7 @@ Set-HgsServer -TrustTpm
 
 新增金鑰的程式會根據您所使用的憑證類型而有所不同。
 
-**選項 1:新增儲存在 HSM @ no__t-0 中的憑證
+**選項1：新增儲存在 HSM 中的憑證**
 
 保護 HGS 金鑰的建議方法是使用硬體安全模組（HSM）中建立的憑證。
 Hsm 可確保您的金鑰使用，系結至資料中心內安全性敏感裝置的實體存取。
@@ -607,7 +607,7 @@ Hsm 可確保您的金鑰使用，系結至資料中心內安全性敏感裝置�
     Add-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint "99887766554433221100FFEEDDCCBBAA"
     ```
 
-**選項 2:新增不可匯出的軟體憑證 @ no__t-0
+**選項2：新增不可匯出的軟體憑證**
 
 如果您的公司或具有不可匯出私密金鑰的公用憑證授權單位單位所發行之軟體支援的憑證，您將需要使用其指紋將憑證新增至 HGS。
 1. 根據您的憑證授權單位單位指示，在您的電腦上安裝憑證。
@@ -622,7 +622,7 @@ Hsm 可確保您的金鑰使用，系結至資料中心內安全性敏感裝置�
 > 您必須手動安裝私密金鑰，並將讀取權限授與每個 HGS 節點上的 gMSA 帳戶。
 > HGS 無法自動複寫其指紋所註冊之*任何*憑證的私密金鑰。
 
-**Option 3：新增儲存在 PFX 檔案中的憑證 @ no__t-0
+**選項3：新增儲存在 PFX 檔案中的憑證**
 
 如果您的軟體支援憑證具有可匯出的私密金鑰，且可以使用 PFX 檔案格式儲存並受到密碼保護，則 HGS 可以自動為您管理您的憑證。
 使用 PFX 檔案新增的憑證會自動複寫至 HGS 叢集的每個節點，而 HGS 則會保護私密金鑰的存取權。
@@ -714,7 +714,7 @@ HGS 上過期的加密或簽署憑證並未指出受防護 Vm 的弱點或遺失
 
 更新所有 Vm 以授權新的守護者金鑰之後，您就可以停用和移除舊金鑰。
 
-13. 從 @no__t 取得舊憑證的指紋-0
+13. 從 `Get-HgsKeyProtectionCertificate -IsPrimary $false` 取得舊憑證的指紋
 
 14. 執行下列命令來停用每個憑證：  
 

@@ -21,7 +21,7 @@ ms.locfileid: "71404482"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步驟1執行單一伺服器遠端存取部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在多網站拓撲中部署遠端存取的第一個設定步驟是執行先進的單一伺服器部署，然後規劃將伺服器新增至每個多網站的進入點。  
   
@@ -30,7 +30,7 @@ ms.locfileid: "71404482"
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 2：設定多網站基礎結構 @ no__t-0  
+-   [步驟2：設定多網站基礎結構](Step-2-Configure-the-Multisite-Infrastructure.md)  
 
 
 

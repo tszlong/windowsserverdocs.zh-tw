@@ -21,12 +21,12 @@ ms.locfileid: "71394552"
 ---
 # <a name="directaccess-test-lab-guides"></a>DirectAccess 測試實驗室指南
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 以下是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中適用于 DirectAccess 的測試實驗室指南的連結。
 
-- [測試實驗室指南：示範具有 Windows NLB @ no__t-0 的叢集中的 DirectAccess
+- [測試實驗室指南：示範使用 Windows NLB 的叢集中的 DirectAccess](tlg-cluster-nlb/Test-Lab-Guide-Demonstrate-DirectAccess-in-a-Cluster-with-Windows-NLB.md)
 
-- [測試實驗室指南：示範 DirectAccess 多網站部署 @ no__t-0
+- [測試實驗室指南：示範 DirectAccess 多網站部署](tlg-multisite/Test-Lab-Guide-Demonstrate-a-DirectAccess-Multisite-Deployment.md)
 
-- [測試實驗室指南：示範使用 OTP 驗證和 RSA SecurID @ no__t-0 的 DirectAccess
+- [測試實驗室指南：示範使用 OTP 驗證和 RSA SecurID 的 DirectAccess](tlg-otp-securid/Test-Lab-Guide-Demonstrate-DirectAccess-with-OTP-Authentication-and-RSA-SecurID.md)

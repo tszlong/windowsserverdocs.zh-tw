@@ -40,23 +40,23 @@ AD DS 可以在 Azure 虛擬機器（VM）上執行，就像在許多內部部�
 
 Azure CLI 可用來從命令列或在腳本中建立和管理 Azure 資源。 本教學課程詳細說明如何使用 Azure CLI 來部署執行 Windows Server 2019 的虛擬機器。 部署完成之後，我們會連接到伺服器並安裝 AD DS。
 
-如果您沒有 Azure 訂用帳戶, 請在開始前[建立免費帳戶](https://azure.microsoft.com/free)。
+如果您沒有 Azure 訂用帳戶，請在開始前[建立免費帳戶](https://azure.microsoft.com/free)。
 
 ### <a name="using-azure-cli"></a>使用 Azure CLI
 
 下列腳本會將建立兩個 Windows Server 2019 Vm 的程式自動化，以便在 Azure 中建立新 Active Directory 樹系的網域控制站。 系統管理員可以修改下列變數，以符合其需求，然後完成一項作業。 此腳本會使用遠端桌面、虛擬網路和子網和可用性群組的流量規則，來建立必要的資源群組、網路安全性群組。 然後，每個 Vm 都會以 20 GB 的資料磁片建立，並已停用快取以供安裝 AD DS。
 
-您可以直接從 Azure 入口網站執行下列腳本。 如果您選擇在本機安裝和使用 CLI，本快速入門會要求您執行 Azure CLI 2.0.4 版或更新版本。 執行 `az --version` 以尋找版本。 如果您需要安裝或升級, 請參閱[安裝 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)。
+您可以直接從 Azure 入口網站執行下列腳本。 如果您選擇在本機安裝和使用 CLI，本快速入門會要求您執行 Azure CLI 2.0.4 版或更新版本。 執行 `az --version` 以尋找版本。 如果您需要安裝或升級，請參閱[安裝 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)。
 
 | 變數名稱 | 用途 |
 | :---: | :--- |
-| adminUsername | 要在每個 VM 上設定為本機系統管理員的使用者名稱。 |
-| adminPassword | 要在每個 VM 上設定為本機系統管理員密碼的純文字密碼。 |
+| AdminUsername | 要在每個 VM 上設定為本機系統管理員的使用者名稱。 |
+| AdminPassword | 要在每個 VM 上設定為本機系統管理員密碼的純文字密碼。 |
 | ResourceGroupName | 要用於資源群組的名稱。 不應該複製現有的名稱。 |
-| Location | 您想要部署的 Azure 位置名稱。 使用 `az account list-locations`，列出目前訂用帳戶支援的區域。 |
+| Location | 您想要部署的 Azure 位置名稱。 使用 `az account list-locations`列出目前訂用帳戶支援的區域。 |
 | VNetName | 指派 Azure 虛擬網路的名稱不應重複現有的名稱。 |
 | VNetAddress | 要用於 Azure 網路的 IP 範圍。 不應該複製現有的範圍。 |
-| subnetName | 指派 IP 子網的名稱。 不應該複製現有的名稱。 |
+| SubnetName | 指派 IP 子網的名稱。 不應該複製現有的名稱。 |
 | SubnetAddress | 網域控制站的子網位址。 應該是 VNet 內的子網。 |
 | AvailabilitySet | 網域控制站 Vm 將加入的可用性設定組名稱。 |
 | VMSize | 部署位置中可用的標準 Azure VM 大小。 |
@@ -159,7 +159,8 @@ az vm create \
 
 在 Azure 中升級新的網域控制站之後，他們必須設定為虛擬網路的主要和次要 DNS 伺服器，而且任何內部部署 DNS 伺服器都會降級為第三和之後。 如需變更 DNS 伺服器的詳細資訊，請參閱[建立、變更或刪除虛擬網路一](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
 
-如需將內部部署網路擴充至 Azure 的相關資訊，請參閱 [Creating a 站對站 VPN 連接 @ no__t-1 一文。
+如需將內部部署網路擴充至 Azure 的相關資訊，請參閱[建立站對站 VPN 連接一](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+)文。
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>設定 Vm 並安裝 Active Directory Domain Services
 
@@ -171,7 +172,7 @@ az vm create \
 
 * 將資料磁片初始化並格式化為 F：
    * 開啟 [開始] 功能表，然後流覽至 [**電腦管理**]
-   * 流覽至**儲存體** >  個**磁片管理**
+   * 流覽至**儲存體** > **磁片管理**
    * 將磁片初始化為 MBR
    * 建立新的簡單磁片區並指派磁碟機號 F：如有需要，您可以提供磁片區標籤
 * 使用伺服器管理員安裝 Active Directory Domain Services
@@ -201,7 +202,7 @@ az vm create \
 
 * 將資料磁片初始化並格式化為 F：
    * 開啟 [開始] 功能表，然後流覽至 [**電腦管理**]
-   * 流覽至**儲存體** >  個**磁片管理**
+   * 流覽至**儲存體** > **磁片管理**
    * 將磁片初始化為 MBR
    * 建立新的簡單磁片區並指派磁碟機號 F：如有需要，您可以提供磁片區標籤
 * 使用伺服器管理員安裝 Active Directory Domain Services

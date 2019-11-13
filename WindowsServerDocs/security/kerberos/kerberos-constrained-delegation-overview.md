@@ -22,7 +22,7 @@ ms.locfileid: "71403421"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 這個適用于 IT 專業人員的總覽主題說明 Windows Server 2012 R2 和 Windows Server 2012 中 Kerberos 限制委派的新功能。
 
@@ -36,7 +36,7 @@ Windows Server 2003 推出的 Kerberos 限制委派，可提供一種較安全�
 
 如需 Windows Server 2003 推出之限制委派的詳細資訊，請參閱 [Kerberos 通訊協定轉換與限制委派](https://technet.microsoft.com/library/cc739587(v=ws.10))。
 
-Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執行包含特別用於限制委派的延伸模組。  Service for User to Proxy (S4U2Proxy) 讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。 這些擴充功能可讓您在後端服務的帳戶上設定限制委派，這可以位於另一個網域中。 如需這些擴充功能的詳細資訊，請參閱 [ @ no__t-1 毫秒-SFU @ no__t-2：Kerberos 通訊協定延伸：MSDN Library 中的 Service for User 和限制委派通訊協定規格 @ no__t-0。
+Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執行包含特別用於限制委派的延伸模組。  Service for User to Proxy (S4U2Proxy) 讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。 這些擴充功能可讓您在後端服務的帳戶上設定限制委派，這可以位於另一個網域中。 如需這些擴充功能的詳細資訊，請參閱 MSDN Library 中的[\[ms-chap\]： Kerberos 通訊協定延伸模組：適用于使用者的服務和限制委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
 
 **實際應用**
 
@@ -58,9 +58,9 @@ Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執�
 
 基礎通訊協定中的變更允許跨網域的限制委派。 Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執行包含服務的擴充功能，可供使用者對 Proxy （S4U2Proxy）通訊協定。 此為一組 Kerberos 通訊協定的延伸，讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。
 
-如需這些延伸模組的執行資訊，請參閱 [ @ no__t-1 毫秒-SFU @ no__t-2：Kerberos 通訊協定延伸：MSDN 中的 Service for User 和限制委派通訊協定規格 @ no__t-0。
+如需這些延伸模組的執行資訊，請參閱 MSDN 中的[\[ms-chap\]： Kerberos 通訊協定延伸模組：適用于使用者的服務和限制委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
 
-相較於 Service for User (S4U) 延伸，如需有關含轉送票證授權票證 (TGT) 之 Kerberos 委派基本訊息順序的詳細資訊，請參閱 [1.3.3 通訊協定概觀](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx)一節，位於＜[MS-SFU]：Kerberos 通訊協定延伸：Service for User 與限制委派通訊協定規格＞中。
+相較於 Service for User (S4U) 延伸，如需有關含轉送票證授權票證 (TGT) 之 Kerberos 委派基本訊息順序的詳細資訊，請參閱 [1.3.3 通訊協定概觀](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) 一節，位於＜[MS-SFU]：Kerberos 通訊協定延伸：Service for User 與限制委派通訊協定規格＞中。
 
 **以資源為基礎之限制委派的安全性含意**
 
@@ -81,9 +81,9 @@ Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執�
 
 -   若要抓取主體清單，請使用**get-adcomputer**、 **get-uninstall-adserviceaccount**和**adserviceaccount** Cmdlet 搭配**Properties PrincipalsAllowedToDelegateToAccount**參數。
 
--   若要設定資源服務，請使用**get-adcomputer**、 **uninstall-adserviceaccount**、 **adserviceaccount**、 **set-get-adcomputer**、 **set-uninstall-adserviceaccount**和**set-adserviceaccount** Cmdlet**搭配PrincipalsAllowedToDelegateToAccount**參數。
+-   若要設定資源服務，請使用**get-adcomputer**、 **uninstall-adserviceaccount**、 **adserviceaccount**、 **set-get-adcomputer**、 **set-uninstall-adserviceaccount**和**adserviceaccount**參數的**Cmdlet。**
 
 ## <a name="BKMK_SOFT"></a>軟體需求
 以資源為基礎的限制委派只能在執行 Windows Server 2012 R2 和 Windows Server 2012 的網域控制站上設定，但可以在混合模式樹系中套用。
 
-您必須在執行 Windows Server 之前作業系統的前端和後端網域之間，于使用者帳戶網域中的所有域2012控制器上套用下列修補程式：以 Windows Server 2008 R2 為基礎的網域控制站（ https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro) 的環境中，以資源為基礎的限制委派 KDC_ERR_POLICY 失敗。
+您必須在執行 windows server 之前作業系統的前端和後端網域之間，于使用者帳戶網域中的所有域2012控制器上套用下列修補程式：以資源為基礎的限制委派 KDC_ERR_POLICY 失敗的環境中有 Windows Server 2008 R2 架構的網域控制站（ https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro)。

@@ -17,11 +17,11 @@ ms.locfileid: "71394375"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>針對具有事件的使用者設定檔進行疑難排解
 
->適用於：Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server （半年通道）。
+>適用于： Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server （半年通道）。
 
 本主題討論如何使用事件和追蹤記錄，針對載入及卸載使用者設定檔的問題進行疑難排解。 下列各節說明如何使用三個記錄使用者設定檔資訊的事件記錄檔。
 
-## <a name="step-1-checking-events-in-the-application-log"></a>步驟 1:檢查應用程式記錄檔中的事件
+## <a name="step-1-checking-events-in-the-application-log"></a>步驟1：檢查應用程式記錄檔中的事件
 
 針對載入及卸載使用者設定檔的問題進行疑難排解的第一個步驟（包括漫遊使用者設定檔），是使用事件檢視器來檢查使用者設定檔服務記錄在應用程式記錄檔中的任何警告和錯誤事件。
 
@@ -38,7 +38,7 @@ ms.locfileid: "71394375"
 >[!NOTE]
 >您可以放心地忽略「使用者設定檔服務」事件1530「Windows 偵測到您的登錄檔案仍由其他應用程式或服務使用中」。
 
-## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>步驟 2:查看使用者設定檔服務的操作記錄
+## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>步驟2：查看使用者設定檔服務的操作記錄
 
 如果您無法單獨使用應用程式記錄檔來解決此問題，請使用下列程式，在操作記錄中查看使用者設定檔服務事件。 此記錄檔會顯示服務的部分內部工作，並可協助找出發生問題的設定檔載入或卸載程式中的位置。
 
@@ -49,7 +49,7 @@ Windows 應用程式記錄檔和「使用者設定檔服務」作業記錄檔預
 1. 在事件檢視器主控台樹中，依序流覽至 [**應用程式及服務記錄**檔]、[ **Microsoft**]、[ **Windows**]、[**使用者設定檔服務**] 和 [**操作**]。
 2. 檢查您在應用程式記錄檔中所記下的錯誤或警告事件時間前後發生的事件。
 
-## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>步驟 3：啟用和查看分析和調試記錄
+## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>步驟3：啟用和查看分析和調試記錄
 
 如果您需要比作業記錄提供的更多詳細資料，您可以在受影響的電腦上啟用分析和調試記錄。 此記錄層級更詳細，應停用，但在嘗試針對問題進行疑難排解時除外。
 
@@ -58,10 +58,10 @@ Windows 應用程式記錄檔和「使用者設定檔服務」作業記錄檔預
 1. 在事件檢視器的 [**動作**] 窗格中，選取 [ **View**]，然後選取 [**顯示分析和調試記錄**]。
 2. 依序流覽至 [**應用程式及服務記錄**檔]、[ **Microsoft**]、[ **Windows**]、[**使用者設定檔服務**] 和 [**診斷**]。
 3. 選取 [**啟用記錄**]，然後選取 **[是]** 。 這會啟用 [診斷記錄]，這將會開始記錄。
-4. 如果您需要更詳細的資訊，請參閱 @no__t 0Step 4：建立和解碼追蹤 @ no__t-0，以取得如何建立追蹤記錄檔的詳細資訊。
+4. 如果您需要更詳細的資訊，請參閱[步驟4：建立和解碼追蹤](#step-4-creating-and-decoding-a-trace)，以取得如何建立追蹤記錄的詳細資訊。
 5. 當您完成問題的疑難排解時，流覽至 [**診斷**記錄]，選取 [**停用記錄**]，選取 [**查看**]，然後清除 [**顯示分析和偵錯工具記錄**] 核取方塊，以隱藏分析和偵錯工具記錄。
 
-## <a name="step-4-creating-and-decoding-a-trace"></a>步驟 4：建立和解碼追蹤
+## <a name="step-4-creating-and-decoding-a-trace"></a>步驟4：建立和解碼追蹤
 
 如果您無法使用事件來解決此問題，您可以在重現問題時建立追蹤記錄（ETL 檔案），然後使用 Microsoft 符號伺服器的公用符號將其解碼。 追蹤記錄會提供有關使用者設定檔服務所執行之動作的非常特定資訊，並有助於找出發生失敗的位置。
 
@@ -70,7 +70,7 @@ Windows 應用程式記錄檔和「使用者設定檔服務」作業記錄檔預
 以下說明如何建立和解碼使用者設定檔服務的追蹤：
 
 1. 使用本機系統管理員群組成員的帳戶，登入使用者遇到問題的電腦。
-2. 從提高許可權的命令提示字元輸入下列命令，其中 *\<Path @ no__t-2*是您先前建立之本機資料夾的路徑，例如 C： \\logs：
+2. 從提高許可權的命令提示字元輸入下列命令，其中 *\<路徑\>* 是您先前建立之本機資料夾的路徑，例如 C：\\記錄檔：
         
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
@@ -84,13 +84,13 @@ Windows 應用程式記錄檔和「使用者設定檔服務」作業記錄檔預
     ```PowerShell
     logman stop -n RUP -ets
     ```
-7. 輸入下列命令，將 ETL 檔案匯出至目前目錄中人類可讀取的檔案（可能是您的主資料夾或% WINDIR% \\System32 資料夾）：
+7. 輸入下列命令，將 ETL 檔案匯出至目前目錄中人類可讀取的檔案（可能是您的主資料夾或% WINDIR%\\System32 資料夾）：
     
     ```PowerShell
     Tracerpt <path>\RUP.etl
     ```
 8. 開啟**摘要 .txt**檔案和**dumpfile.xml**檔案（您可以在 Microsoft Excel 中開啟它們，以更輕鬆地查看記錄檔的完整詳細資料）。 尋找包含**fail**或**failed**的事件;您可以放心地忽略包含**未知**事件名稱的程式程式碼。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
 * [部署漫遊使用者設定檔](deploy-roaming-user-profiles.md)

@@ -22,7 +22,7 @@ ms.locfileid: "71403504"
 ---
 # <a name="passwords-overview"></a>密碼概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題適用于 IT 專業人員，說明 Windows 作業系統中使用的密碼，以及在認證管理原則中使用密碼的相關檔和討論的連結。
 
@@ -35,9 +35,9 @@ ms.locfileid: "71403504"
 在 Windows 和許多其他作業系統中，驗證使用者身分識別最常見的方法是使用密碼複雜密碼或密碼。 保護您的網路環境需要所有使用者都必須使用強式密碼。 這有助於避免惡意使用者猜測弱式密碼的威脅，不論是透過手動方法或使用工具，取得遭到盜用的使用者帳戶的認證。 尤其是系統管理帳戶的情況。 當您定期變更複雜密碼時，它會降低密碼攻擊危害該帳戶的可能性。
 
 ## <a name="BKMK_NEW"></a>新的和已變更的功能
-在 Windows Server 2012 和 Windows 8 中，圖片密碼是新的。 圖片密碼是使用者選取影像與一系列手勢結合的組合。 已停用網域 @ no__t-0joined 電腦上的圖片密碼功能。 如需圖片密碼的詳細資訊連結，[請參閱](#BKMK_LINKS)下文。
+在 Windows Server 2012 和 Windows 8 中，圖片密碼是新的。 圖片密碼是使用者選取影像與一系列手勢結合的組合。 已在加入網域\-的電腦上停用圖片密碼功能。 如需圖片密碼的詳細資訊連結，[請參閱](#BKMK_LINKS)下文。
 
-Windows Server 2012 和 Windows 8 中的密碼功能沒有任何變更。 尚未新增任何新的群組原則設定。 不過，認證 @no__t 0and 密碼 @ no__t-1 管理（例如使用圖片密碼、認證保險箱，以及使用 Microsoft 帳戶（之前稱為 Windows Live ID）登入 Windows 8 的改良功能和增強功能。
+Windows Server 2012 和 Windows 8 中的密碼功能沒有任何變更。 尚未新增任何新的群組原則設定。 不過，認證 \(和密碼\) 管理方面的改進和增強功能，例如使用圖片密碼、認證保險箱和以 Microsoft 帳戶登入 Windows 8 （先前稱為 Windows Live ID）。
 
 ## <a name="BKMK_DEP"></a>已淘汰的功能
 Windows Server 2012 和 Windows 8 中沒有任何密碼功能已被取代。
@@ -53,7 +53,7 @@ Windows Server 2012 和 Windows 8 中沒有任何密碼功能已被取代。
 |**案例檔**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**操作**|[Active Directory 使用者和電腦](https://technet.microsoft.com/library/cc754217.aspx)|
 |**疑難排解**|[瞭解您的密碼何時過期 \- Active Directory PowerShell Blog](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
-|**安全性**| Windows Server 2008 R2 和 Windows 7 @no__t 0Threats 和對策指南：帳戶原則 @ no__t-0<br /><br />[變更和建立強式密碼的](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)指引|
+|**安全性**| Windows Server 2008 R2 和 Windows 7 的[威脅與對策指南：帳戶原則](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx)<br /><br />[變更和建立強式密碼的](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)指引|
 |**工具及設定**|[Microsoft 下載中心上的 Windows 和 Windows Server 群組原則設定參考](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
 |**社群資源**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[使用 Windows Live ID 登入 Windows 8](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[使用圖片密碼登入](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[優化圖片密碼安全性](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 

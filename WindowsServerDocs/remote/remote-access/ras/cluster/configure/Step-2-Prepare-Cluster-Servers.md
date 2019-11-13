@@ -21,7 +21,7 @@ ms.locfileid: "71367415"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>步驟2準備叢集伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在您可以設定叢集部署之前，請先準備要新增至叢集的其他伺服器。  
   
@@ -85,7 +85,7 @@ ms.locfileid: "71367415"
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 3：設定負載平衡叢集 @ no__t-0  
+-   [步驟3：設定負載平衡叢集](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   
 
 

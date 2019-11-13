@@ -18,7 +18,7 @@ ms.locfileid: "71408591"
 ---
 # <a name="audit-policy-recommendations"></a>稽核原則建議
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1、Windows 7
+>適用於︰Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1、Windows 7
 
 本節說明 Windows 預設稽核原則設定、基準建議的稽核原則設定，以及 Microsoft 針對工作站和伺服器產品提供的更積極建議。  
 
@@ -34,7 +34,7 @@ ms.locfileid: "71408591"
 ## <a name="recommended-audit-policies-by-operating-system"></a>依作業系統建議的稽核原則  
 本節包含的資料表會列出適用于下列作業系統的審核設定建議：  
 
--   Windows Server 2016 
+-   Windows Server 2016 
 
 -   Windows Server 2012  
 
@@ -257,7 +257,7 @@ ms.locfileid: "71408591"
 
 登入失敗的 aberrant 數目可能表示密碼猜測攻擊。 若要讓企業提供異常大量失敗登入的警示，他們必須先瞭解其環境內失敗登入的一般層級，再進行惡意的安全性事件。  
 
-如需監視入侵徵兆時應包含的完整事件清單，請參閱 [Appendix L：用來監視 @ no__t-0 的事件。  
+如需監視入侵徵兆時應包含的完整事件清單，請參閱[附錄 L：要監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。  
 
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>Active Directory 要監視的物件和屬性  
 以下是您應該監視的帳戶、群組和屬性，以協助您偵測危害 Active Directory Domain Services 安裝的嘗試。  
@@ -270,11 +270,11 @@ ms.locfileid: "71408591"
 
 -   AD DS 中的特殊許可權和 VIP 帳戶。 監視變更，特別是 [帳戶] 索引標籤上的屬性變更（例如 cn、name、sAMAccountName、userPrincipalName 或 userAccountControl）。 除了監視帳戶，限制誰可以將帳戶修改為一組較小的系統管理使用者。  
 
-請參閱 [Appendix L：監視 @ no__t-0 的事件，以取得要監視的建議事件清單、其重要性評等，以及事件訊息摘要。  
+請參閱[附錄 L：監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)以取得要監視的建議事件清單、其重要性評等，以及事件訊息摘要。  
 
 -   依據工作負載的分類來分組伺服器，可讓您快速識別應該是最嚴密監視且最而更加嚴格設定的伺服器  
 
--   下列 AD DS 群組的屬性和成員資格變更：Enterprise Admins （EA）、Domain Admins （DA）、Administrators （BA）和 Schema Admins （SA）  
+-   下列 AD DS 群組的屬性和成員資格變更： Enterprise Admins （EA）、Domain Admins （DA）、Administrators （BA）和 Schema Admins （SA）  
 
 -   已停用特殊許可權帳戶（例如 Active Directory 和成員系統上的內建系統管理員帳戶）來啟用帳戶  
 
@@ -298,12 +298,12 @@ ms.locfileid: "71408591"
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>安全性事件識別碼建議嚴重性的一般清單  
 所有事件識別碼建議都會伴隨著重要性評等，如下所示：  
 
-**更**具有高重要性評等的事件識別碼應一律會立即收到警示並進行調查。  
+**高：** 具有高重要性評等的事件識別碼應一律會立即收到警示並進行調查。  
 
-**中場**具有中度重要性評等的事件識別碼可能表示惡意活動，但必須伴隨一些其他異常（例如，在特定時段內發生不尋常的數位、未預期的次數，或電腦上出現通常不會預期記錄事件）。 中等重要性事件可能也會收集為計量，並在一段時間內進行比較。  
+**中：** 具有「中」重要性評等的事件識別碼可能表示惡意活動，但必須伴隨一些其他異常（例如，在特定時段發生不尋常的數位、非預期的出現次數，或通常不會記錄事件的電腦發生）。 中等重要性事件可能也會收集為計量，並在一段時間內進行比較。  
 
-**量**而且具有低重要性事件的事件識別碼不應獲得注意或引發警示，除非與中等或高重要性事件相互關聯。  
+**低：** 而且具有低重要性事件的事件識別碼不應獲得注意或引發警示，除非與中等或高重要性事件相互關聯。  
 
 這些建議旨在提供系統管理員的基準指南。 在生產環境中執行之前，應該先徹底檢查所有建議。  
 
-請參閱 [Appendix L：監視 @ no__t-0 的事件，以取得要監視的建議事件清單、其重要性評等，以及事件訊息摘要。  
+請參閱[附錄 L：監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)以取得要監視的建議事件清單、其重要性評等，以及事件訊息摘要。  

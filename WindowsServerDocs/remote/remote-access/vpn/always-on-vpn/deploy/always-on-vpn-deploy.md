@@ -18,10 +18,10 @@ ms.locfileid: "71388138"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>適用于 Windows Server 和 Windows 10 的 Always On VPN 部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**處**遠端存取 @ no__t-0<br>
-- [**下一個**瞭解 Always On 的 VPN 特性和功能 @ no__t-0
+- [**上一步：** 遠端存取](../../../Remote-Access.md)<br>
+- [**下一步：** 瞭解 Always On 的 VPN 特性和功能](../../vpn-map-da.md)
 
 Always On VPN 為遠端存取提供單一且一致的解決方案，並支援已加入網域、未加入網域（工作組）或已加入 Azure AD 的裝置，甚至是個人擁有的裝置。 使用 Always On VPN，連線類型不必是專用使用者或裝置，但可以是兩者的組合。 例如，您可以為遠端裝置管理啟用裝置驗證，然後再啟用使用者驗證以連線到內部公司站台及服務。
 

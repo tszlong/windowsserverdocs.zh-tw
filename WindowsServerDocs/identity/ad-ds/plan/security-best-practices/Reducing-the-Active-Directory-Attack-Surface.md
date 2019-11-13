@@ -18,23 +18,23 @@ ms.locfileid: "71367652"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>減少 Active Directory 的攻擊面
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本節著重于要執行的技術控制項，以減少 Active Directory 安裝的受攻擊面。 區段包含下列資訊：  
   
--   [執行最低許可權的系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)著重于找出使用高特殊許可權帳戶來進行日常管理的風險，以及提供建議來降低風險有許可權的帳戶存在。  
+-   [執行最低許可權的系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)著重于找出使用高許可權帳戶進行日常管理的風險，以及提供建議來降低有許可權的帳戶所帶來的風險。  
   
 -   除了安全的系統管理主機部署的一些範例方法以外，[執行安全的系統管理主機](../../../ad-ds/plan/security-best-practices/Implementing-Secure-Administrative-Hosts.md)也會說明部署專用、安全管理系統的原則。  
   
--   [保護網域控制站免于遭受攻擊](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)的討論原則和設定，雖然與安全系統管理主機的執行建議類似，但還是包含一些網域控制站特定的建議來協助確保用來管理它們的網域控制站和系統受到妥善保護。  
+-   [保護網域控制站免于遭受攻擊](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)的討論原則和設定，雖然類似于安全系統管理主機的執行建議，但包含一些網域控制站特定的建議，可協助確保用來管理這些網域控制站和系統的安全性受到妥善保護。  
   
 ## <a name="privileged-accounts-and-groups-in-active-directory"></a>Active Directory 中的特殊許可權帳戶和群組  
-本節提供 Active Directory 中的特殊許可權帳戶和群組的背景資訊，以說明 Active Directory 中的特殊許可權帳戶和群組之間的共通性和差異。 瞭解這些差異後，無論您是實作為原實行[最低許可權系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)的建議，或是選擇為組織自訂它們，都可以使用您所需的工具來保護每個群組和已適當地帳戶。  
+本節提供 Active Directory 中的特殊許可權帳戶和群組的背景資訊，以說明 Active Directory 中的特殊許可權帳戶和群組之間的共通性和差異。 瞭解這些差異後，無論您是實作為原實行[最低許可權系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)的建議，或是選擇為組織自訂它們，您都擁有適當的工具來保護每個群組和帳戶。  
   
 ### <a name="built-in-privileged-accounts-and-groups"></a>內建的特殊許可權帳戶和群組  
 Active Directory 有助於管理委派，並支援指派權利和許可權的最低許可權原則。 根據預設，在網域中具有帳戶的「一般」使用者，可以讀取儲存在目錄中的大部分內容，但只能變更目錄中非常有限的資料集。 需要額外許可權的使用者可以被授與目錄內建之各種「特殊許可權」群組的成員資格，使其可以執行與其角色相關的特定工作，但無法執行與其責任無關的工作。 組織也可以建立專為特定工作責任量身打造的群組，並獲得更細微的權利和許可權，讓 IT 人員能夠執行日常的系統管理功能，而不需授與的權利和許可權超過這是這些函式的必要參數。  
   
-在 Active Directory 中，三個內建群組是目錄中最高的許可權群組：Enterprise Admins、Domain Admins 和 Administrators。 下列各節將說明每個群組的預設設定和功能：  
+在 Active Directory 中，三個內建群組是目錄中最高的許可權群組： Enterprise Admins、Domain Admins 和 Administrators。 下列各節將說明每個群組的預設設定和功能：  
   
 #### <a name="highest-privilege-groups-in-active-directory"></a>Active Directory 中的最高許可權群組  
   
@@ -103,9 +103,9 @@ Active Directory 中的大部分物件都是由網域的 BA 群組所擁有。 �
 在 Windows Server 2008 之前的 Windows 版本中，物件的擁有者可以變更物件的許可權，包括授與本身原本不具有的許可權。 因此，網域 AdminSDHolder 物件的預設許可權會防止屬於 BA 或 EA 群組成員的使用者變更網域 AdminSDHolder 物件的許可權。 不過，網域系統管理員群組的成員可以取得物件的擁有權，並授與自己其他許可權，這表示這項保護是基本的，而且只會保護物件免于遭到下列情況的使用者意外修改：不是網域中的 DA 群組成員。 此外，BA 和 EA （若適用）群組具有在本機網域（EA 的根域）中變更 AdminSDHolder 物件屬性的許可權。  
   
 > [!NOTE]  
-> AdminSDHolder 物件（dSHeuristics）上的屬性（attribute）允許有限的自訂（移除）被視為受保護群組且受到 AdminSDHolder 和 SDProp 影響的群組。 這項自訂應該仔細考慮是否已實行，雖然在某些情況下，在 AdminSDHolder 上修改 dSHeuristics 很有用。 如需有關在 AdminSDHolder 物件上修改 dSHeuristics 屬性的詳細資訊，請參閱 Microsoft 支援服務文章[817433](https://support.microsoft.com/?id=817433)和[973840](https://support.microsoft.com/kb/973840)，以及 [Appendix C：Active Directory @ no__t-0 中的受保護帳戶和群組。  
+> AdminSDHolder 物件（dSHeuristics）上的屬性（attribute）允許有限的自訂（移除）被視為受保護群組且受到 AdminSDHolder 和 SDProp 影響的群組。 這項自訂應該仔細考慮是否已實行，雖然在某些情況下，在 AdminSDHolder 上修改 dSHeuristics 很有用。 如需有關在 AdminSDHolder 物件上修改 dSHeuristics 屬性的詳細資訊，請參閱 Microsoft 支援服務文章[817433](https://support.microsoft.com/?id=817433)和[973840](https://support.microsoft.com/kb/973840)，以及[附錄 C： Active Directory 中的受保護帳戶和群組](Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
   
-雖然此處描述 Active Directory 中最具特殊許可權的群組，但有一些其他群組已授與較高的許可權層級。 如需 Active Directory 中所有預設和內建組的詳細資訊，以及指派給每個群組的使用者權限，請參閱 [Appendix B：Active Directory @ no__t-0 中的特殊許可權帳戶和群組。  
+雖然此處描述 Active Directory 中最具特殊許可權的群組，但有一些其他群組已授與較高的許可權層級。 如需 Active Directory 中的所有預設和內建組，以及指派給每個群組之使用者權限的詳細資訊，請參閱[附錄 B： Active Directory 中的特殊許可權帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory.md)。  
   
 
 

@@ -21,7 +21,7 @@ ms.locfileid: "71404533"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何在數個潛在案例中設定遠端存取多樹系部署。 所有案例均假設 DirectAccess 目前已部署於名為 Forest1 的單一樹系上，而您正在設定 DirectAccess 以便與名為 Forest2 的新樹系一起運作。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "71404533"
   
 -   帳戶樹系-拓撲中的所有其他樹系。  
   
-PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 @no__t 0AD CS：適用于跨樹系憑證註冊 @ no__t-0 的 Pkisync.ps1 腳本。  
+PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD CS：適用於跨樹系憑證註冊的 PKISync.ps1 指令碼](https://technet.microsoft.com/library/ff961506.aspx)。  
   
 > [!NOTE]  
 > 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -100,7 +100,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 @no
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>  
     ```  
   
-    （如果您在根 CA 上執行命令，您可以省略連線資訊，-config < 電腦名稱稱 > \\ < 根 CA 名稱 >）  
+    （如果您在根 CA 上執行命令，您可以省略連線資訊-config < 電腦名稱稱 >\\< 根 CA 名稱 >）  
   
     1.  從提升權限的命令提示字元執行下列命令，在帳戶樹系 CA 上匯入上一個步驟的根 CA 憑證：  
   
@@ -108,7 +108,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 @no
         certutil -dspublish -f <root-ca-cert-filename.cer> RootCA  
         ```  
   
-    2.  將資源樹系憑證範本的讀取/寫入權限授與 @no__t 0Account 樹系 @ no__t-1 @ no__t-2 < 系統管理員帳戶 @ no__t-3。  
+    2.  將資源樹系憑證範本的讀取/寫入權限授與 \<帳戶樹系\>\\< 系統管理員帳戶\>。  
   
     3.  從提升權限的命令提示字元執行下列命令，以擷取所有資源樹系企業 CA 憑證：  
   
@@ -116,7 +116,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 @no
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>  
         ```  
   
-        （如果您在根 CA 上執行命令，您可以省略連線資訊，-config < 電腦名稱稱 > \\ < 根 CA 名稱 >）  
+        （如果您在根 CA 上執行命令，您可以省略連線資訊-config < 電腦名稱稱 >\\< 根 CA 名稱 >）  
   
     4.  從提升權限的命令提示字元執行下列命令，在帳戶樹系 CA 上匯入上一個步驟的企業 CA 憑證：  
   
@@ -177,9 +177,9 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [網路位置伺服器] 頁面上，按 [下一步]。  
   
-3.  在 [DNS] 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址] 中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按一下 [下一步]。  
+3.  在 [DNS] 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址] 中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按一下 \[下一步\]。  
   
-4.  選擇性：在 [DNS 尾碼搜尋清單] 頁面的 [新尾碼] 方塊中輸入尾碼，然後按一下 [新增] 來新增任意的 DNS 尾碼。 然後按一下 [下一步]。  
+4.  選擇性：在 [DNS 尾碼搜尋清單] 頁面的 [新尾碼] 方塊中輸入尾碼，然後按一下 [新增]來新增任意的 DNS 尾碼。 然後按一下 \[下一步\]。  
   
 5.  在 [管理] 頁面上，按一下 [完成]。  
   
@@ -202,7 +202,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [遠端存取伺服器安裝精靈] 中，按一下 [首碼設定]。  
   
-3.  在 [首碼設定] 頁面的 [內部網路 IPv6 首碼] 中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按一下 [下一步]。  
+3.  在 [首碼設定] 頁面的 [內部網路 IPv6 首碼] 中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按一下 \[下一步\]。  
   
 4.  在 [驗證] 頁面上，按一下 [完成]。  
   
@@ -221,7 +221,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [DirectAccess 用戶端安裝精靈] 中，按一下 [選取群組]，然後在 [選取群組] 頁面上按一下 [新增]。  
   
-3.  在 [選取群組] 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。 然後按一下 [下一步]。  
+3.  在 [選取群組] 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。 然後按一下 \[下一步\]。  
   
 4.  在 [網路連線助理] 頁面上，按一下 [完成]。  
   

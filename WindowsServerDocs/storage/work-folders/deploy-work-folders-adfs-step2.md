@@ -15,21 +15,21 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365777"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟2，AD FS 設定後的工作
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 2 AD FS 後續設定工作
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明使用 Active Directory 同盟服務 (AD FS) 和 Web 應用程式 Proxy 部署工作資料夾的第二個步驟。 您可以在這些主題中找到這個程序的其他步驟︰  
   
--   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：總覽 @ no__t-0  
+-   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：總覽](deploy-work-folders-adfs-overview.md)  
   
--   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟1，設定 AD FS @ no__t-0  
+-   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟1，設定 AD FS](deploy-work-folders-adfs-step1.md)  
   
--   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟3，設定工作資料夾 @ no__t-0  
+-   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟3、設定工作資料夾](deploy-work-folders-adfs-step3.md)  
   
--   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟4，設定 Web 應用程式 Proxy @ no__t-0  
+-   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟4，設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
   
--   @no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟5：設定用戶端 @ no__t-0  
+-   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟5，設定用戶端](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
 > 本節涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx)。
@@ -75,7 +75,7 @@ DNS 項目的格式如下︰
   
 6.  在 **\[新增資源記錄\]** 視窗中，新增別名 **enterpriseregistration** 並輸入 AD FS 伺服器的 FQDN。 此別名是用於裝置加入，而且必須呼叫 **enterpriseregistration**。
   
-7.  按一下 [確定]。  
+7.  按一下 **\[確定\]** 。  
   
 若要透過 Windows PowerShell 完成相同的步驟，請使用下列命令。 命令必須在網域控制站中執行。  
   
@@ -104,7 +104,7 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name enterpriseregistratio
   
 7.  在 **\[設定 URL\]** 頁面上，按 **\[下一步\]** 。  
   
-8. 在 [**設定識別碼**] 頁面上，新增下列識別碼： `https://windows-server-work-folders/V1`。 此識別碼是工作資料夾所使用的硬式編碼，「工作資料夾」服務在與 AD FS 通訊時會進行傳送。 按一下 [下一步]。  
+8. 在 [**設定識別碼**] 頁面上，新增下列識別碼： `https://windows-server-work-folders/V1`。 此識別碼是工作資料夾所使用的硬式編碼，「工作資料夾」服務在與 AD FS 通訊時會進行傳送。 按一下 **\[下一步\]** 。  
   
 9. 在 \[選擇存取控制原則\] 頁面上，選取 **\[允許所有人\]** ，然後按 **\[下一步\]** 。  
   
@@ -124,13 +124,13 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name enterpriseregistratio
   
 17. 在對應表格中，輸入這些值︰  
   
-    -   使用者-主體-名稱：UPN  
+    -   User-Principal-Name: UPN  
   
-    -   顯示名稱：Name  
+    -   Display Name: Name  
   
-    -   姓氏姓氏  
+    -   Surname: Surname  
   
-    -   名字：名字  
+    -   Given-Name: Given Name  
   
 18. 按一下 **[完成]** 。 您會看到 \[發佈轉換規則\] 標籤上列出的 WorkFolders 規則，按一下 **\[確定\]** 。  
   
@@ -184,7 +184,7 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
   
 若要匯出憑證，請依照下列步驟執行︰  
   
-1.  按一下 [開始]，然後按一下 [執行]。  
+1.  按一下 **\[開始\]** ，然後按一下 **\[執行\]** 。  
   
 2.  輸入 **MMC**。  
   
@@ -192,11 +192,11 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
   
 4.  在 **\[可用的嵌入式管理單元\]** 清單中，選取 **\[憑證\]** ，然後按一下 **\[新增\]** 。 \[憑證嵌入式管理單元精靈\] 就會啟動。  
   
-5.  選取 [電腦帳戶]，然後按 [下一步]。  
+5.  選取 **\[電腦帳戶\]** ，然後按 **\[下一步\]** 。  
   
 6.  選取 **\[本機電腦 (執行這個主控台的電腦)\]** ，然後按一下 **\[完成\]** 。  
   
-7.  按一下 [確定]。  
+7.  按一下 **\[確定\]** 。  
   
 8.  展開資料夾 **Console Root\Certificates\(Local Computer)\Personal\Certificates**。  
   
@@ -206,7 +206,7 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
   
 11. 在 **\[匯出檔案格式\]** 頁面上，維持選取預設選項，然後按 **\[下一步\]** 。  
   
-12. 建立憑證的密碼。 這是您在匯入憑證到其他裝置時稍後將會使用密碼。 按一下 [下一步]。  
+12. 建立憑證的密碼。 這是您在匯入憑證到其他裝置時稍後將會使用密碼。 按一下 **\[下一步\]** 。  
   
 13. 輸入憑證的位置和名稱，然後按一下 **\[完成\]** 。  
   
@@ -216,7 +216,7 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
 
 您必須提供 AD FS 服務帳戶權限，才能存取新憑證的私密金鑰。 在通訊憑證過期後，您在取代該憑證時將需要再次授與此權限。 若要授與權限，請依照下列步驟執行︰  
   
-1.  按一下 [開始]，然後按一下 [執行]。  
+1.  按一下 **\[開始\]** ，然後按一下 **\[執行\]** 。  
   
 2.  輸入 **MMC**。  
   
@@ -224,11 +224,11 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
   
 4.  在 **\[可用的嵌入式管理單元\]** 清單中，選取 **\[憑證\]** ，然後按一下 **\[新增\]** 。 \[憑證嵌入式管理單元精靈\] 就會啟動。  
   
-5.  選取 [電腦帳戶]，然後按 [下一步]。  
+5.  選取 **\[電腦帳戶\]** ，然後按 **\[下一步\]** 。  
   
 6.  選取 **\[本機電腦 (執行這個主控台的電腦)\]** ，然後按一下 **\[完成\]** 。  
   
-7.  按一下 [確定]。  
+7.  按一下 **\[確定\]** 。  
   
 8.  展開資料夾 **Console Root\Certificates\(Local Computer)\Personal\Certificates**。  
   
@@ -238,7 +238,7 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
   
 11. 在 **\[物件類型\]** 視窗中，選取 **\[服務帳戶\]** ，然後按一下 **\[確定\]** 。  
   
-12. 輸入執行 AD FS 的帳戶名稱。 在測試範例中，這是 ADFSService。 按一下 [確定]。  
+12. 輸入執行 AD FS 的帳戶名稱。 在測試範例中，這是 ADFSService。 按一下 **\[確定\]** 。  
   
 13. 在 **\[權限\]** 視窗中，提供帳戶至少讀取的權限，然後按一下 **\[確定\]** 。  
   
@@ -246,11 +246,11 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
   
 ## <a name="verify-that-ad-fs-is-operational"></a>請確認 AD FS 可操作
 
-若要確認 AD FS 可運作，請開啟瀏覽器視窗並移至 `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`，將 URL 變更為符合您的環境。
+若要確認 AD FS 可運作，請開啟瀏覽器視窗，然後移至 `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`，將 URL 變更為符合您的環境。
   
 瀏覽器視窗將會顯示不含任何格式的同盟伺服器中繼資料。 您可以查看資料，而不會有任何 SSL 錯誤或警告，您的同盟伺服器是可操作的。  
   
-後續步驟：@no__t-使用 AD FS 和 Web 應用程式 Proxy 來0Deploy 工作資料夾：步驟3，設定工作資料夾 @ no__t-0  
+後續步驟：[搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 3 設定工作資料夾](deploy-work-folders-adfs-step3.md)  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [工作資料夾總覽](Work-Folders-Overview.md)

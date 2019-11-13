@@ -18,10 +18,10 @@ ms.locfileid: "71404279"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On VPN 功能和功能
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
 
-- [**處**適用于 Windows Server 和 Windows 10 @ no__t 的 Always On VPN 部署-0
-- [**下一個**瞭解 Always On 的 VPN 增強功能 @ no__t-0
+- [**上一步：** 適用于 Windows Server 和 Windows 10 的 Always On VPN 部署](always-on-vpn/deploy/always-on-vpn-deploy.md)
+- [**下一步：** 瞭解 Always On 的 VPN 增強功能](../vpn/always-on-vpn/always-on-vpn-enhancements.md)
 
 在本主題中，您將瞭解 Always On VPN 的特性和功能。  下表不是詳盡的清單，但其中包含一些最常見的遠端存取解決方案中使用的功能。 
 

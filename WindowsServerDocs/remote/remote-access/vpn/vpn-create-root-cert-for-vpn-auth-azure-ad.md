@@ -20,10 +20,10 @@ ms.locfileid: "71388013"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>步驟 7.2. 使用 Azure AD 建立 VPN 驗證的條件式存取根憑證
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**處**步驟 7.1.設定 EAP-TLS 以忽略憑證撤銷清單 (CRL) 檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)
-- [**下一個**步驟 7.3.設定條件式存取原則](vpn-config-conditional-access-policy.md)
+- [**上一步：** 步驟7.1。設定 EAP-TLS 以忽略憑證撤銷清單（CRL）檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)
+- [**下一步：** 步驟7.3。設定條件式存取原則](vpn-config-conditional-access-policy.md)
 
 在此步驟中，您會使用 Azure AD 來設定 VPN 驗證的條件式存取根憑證，這會自動在租使用者中建立名為 VPN 伺服器的雲端應用程式。 若要設定 VPN 連線能力的條件式存取，您需要：
 
@@ -49,8 +49,8 @@ VPN 用戶端接著會將憑證問題 Azure AD 傳送至 VPN 以進行認證驗�
 4. 在 [**條件式存取**] 頁面的 [**管理**] 區段中，按一下 [ **VPN 連線能力（預覽）** ]。
 5. 在 [ **VPN 連線能力**] 頁面上，按一下 [**新增憑證**]。
 6. 在 [**新增**] 頁面上，執行下列步驟： a。 針對 [**選取持續時間**]，選取1、2或3年。
-   b. 選取 [建立]。
+   b. 選取 **\[建立\]** 。
 
 ## <a name="next-steps"></a>後續步驟
 
-[步驟 7.3.設定條件式存取原則 @ no__t-0：在此步驟中，您會設定 VPN 連線能力的條件式存取原則。
+[步驟7.3。設定條件式存取原則](vpn-config-conditional-access-policy.md)：在此步驟中，您會設定 VPN 連線的條件式存取原則。

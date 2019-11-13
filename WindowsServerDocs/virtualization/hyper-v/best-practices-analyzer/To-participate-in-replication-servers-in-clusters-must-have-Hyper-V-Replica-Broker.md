@@ -19,16 +19,16 @@ ms.locfileid: "71364603"
 ---
 # <a name="to-participate-in-replication-servers-in-failover-clusters-must-have-a-hyper-v-replica-broker-configured"></a>若要參與複寫，容錯移轉叢集中的伺服器必須已設定 Hyper-v 複本代理人
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71364603"
 *如果虛擬機器已移至不同的容錯移轉叢集節點，則無法繼續複寫。*  
   
 ## <a name="resolution"></a>解析度  
-@no__t 0Use 容錯移轉叢集管理員以設定 Hyper-v 複本代理人。在 [Hyper-v 管理員] 中，確定複寫設定使用 Hyper-v 複本代理人名稱做為伺服器名稱。 *  
+*使用容錯移轉叢集管理員設定 Hyper-v 複本代理人。在 [Hyper-v 管理員] 中，確定複寫設定使用 Hyper-v 複本代理人名稱做為伺服器名稱。*  
   
 
 

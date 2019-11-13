@@ -19,16 +19,16 @@ ms.locfileid: "71393487"
 ---
 # <a name="storage-controllers-should-be-enabled-in-virtual-machines-to-provide-access-to-attached-storage"></a>應該在虛擬機器中啟用存放控制器，以提供對附加存放裝置的存取權
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法和掃描的詳細資訊，請參閱 [最佳做法分析程式](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
 
@@ -38,13 +38,13 @@ ms.locfileid: "71393487"
   
 ## <a name="impact"></a>影響  
   
-@no__t 0Virtual 機器無法使用已連線至已停用存放裝置控制器的存放裝置。這會影響下列虛擬機器： *  
+*虛擬機器無法使用連線至已停用之存放裝置控制器的存放裝置。這會影響下列虛擬機器：*  
   
-@no__t 0list 的虛擬機器名稱 >  
+\<虛擬機器名稱清單 >  
   
 ## <a name="resolution"></a>解析度  
   
-@no__t 0Use Device Manager 在客體作業系統中，以啟用所有存放控制器。如果儲存體控制器不是必要的，請使用 Hyper-v 管理員將其從虛擬機器中移除。 *  
+*使用客體作業系統中的 Device Manager 來啟用所有存放控制器。如果儲存體控制器不是必要的，請使用 Hyper-v 管理員將它從虛擬機器中移除。*  
   
 如需如何使用 Device Manager 的指示，請參閱客體作業系統中的說明。 如需有關如何移除存放裝置控制器的指示，請參閱下列程式。  
   

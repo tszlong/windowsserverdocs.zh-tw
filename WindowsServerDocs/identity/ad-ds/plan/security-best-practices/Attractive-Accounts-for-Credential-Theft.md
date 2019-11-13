@@ -18,7 +18,7 @@ ms.locfileid: "71367738"
 ---
 # <a name="attractive-accounts-for-credential-theft"></a>常成為認證竊取目標的帳戶
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 認證竊取攻擊是攻擊者一開始可以取得最高許可權（root、Administrator 或 SYSTEM，視使用中的作業系統而定）存取網路上的電腦，然後使用自由可用的工具來解壓縮認證來自其他已登入之帳戶的會話。 視系統組態而定，這些認證可以用雜湊、票證或甚至是純文字密碼的形式來解壓縮。 如果有任何搜集到認證適用于可能存在於網路上其他電腦上的本機帳戶（例如，Windows 中的系統管理員帳戶，或 OSX、UNIX 或 Linux 中的根帳號），攻擊者會將認證提供給上的其他電腦網路以將危害傳播到其他電腦，並嘗試取得兩種特定帳戶類型的認證：  
 
@@ -38,10 +38,10 @@ ms.locfileid: "71367738"
 
 因為 Active Directory 中的高許可權帳戶可以用來傳播入侵，以及操作 VIP 帳戶或其可以存取的資料，所以認證竊取攻擊最有用的帳戶就是 Enterprise Admins 成員的帳戶，網域系統管理員和系統管理員群組 Active Directory。  
 
-由於網域控制站是 AD DS 資料庫的存放庫，而網域控制站具有 Active Directory 中所有資料的完整存取權，因此，網域控制站也會以危害的目標，不論是與認證竊取攻擊，還是在之後有一或多個高度許可權的 Active Directory 帳戶遭到入侵。 雖然許多發行集（和許多攻擊者）在描述傳遞雜湊和其他認證竊取攻擊（如[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述）時，都專注于 Domain Admins 群組成員資格，但該帳戶為這裡所列的任何群組成員都可以用來危害整個 AD DS 安裝。  
+由於網域控制站是 AD DS 資料庫的存放庫，而網域控制站具有 Active Directory 中所有資料的完整存取權，因此，網域控制站也會以危害的目標，不論是與認證竊取攻擊，還是在之後有一或多個高度許可權的 Active Directory 帳戶遭到入侵。 雖然許多發行集（以及許多攻擊者）在描述傳遞雜湊和其他認證竊取攻擊（如[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述）時，都著重在 Domain Admins 群組成員資格，但您也可以使用此處所列之任何群組的成員帳戶來危害整個 AD DS 安裝。  
 
 > [!NOTE]  
-> 如需有關傳遞雜湊和其他認證竊取攻擊的完整資訊，請參閱 [Appendix M 中所列的[緩和傳遞雜湊（PTH）攻擊和其他認證竊取技術](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)白皮書：檔連結和建議的讀取 @ no__t-0。 如需透過判斷敵人（有時稱為「先進的持續性威脅」（Apt））攻擊的詳細資訊，請參閱[判斷的敵人和目標攻擊](https://www.microsoft.com/download/details.aspx?id=34793)。  
+> 如需有關傳遞雜湊和其他認證竊取攻擊的完整資訊，請參閱[附錄 M：檔連結和建議閱讀](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)中所列的[緩和傳遞雜湊（PTH）攻擊和其他認證竊取技術](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)白皮書。 如需透過判斷敵人（有時稱為「先進的持續性威脅」（Apt））攻擊的詳細資訊，請參閱[判斷的敵人和目標攻擊](https://www.microsoft.com/download/details.aspx?id=34793)。  
 
 ## <a name="activities-that-increase-the-likelihood-of-compromise"></a>增加危害可能性的活動  
 由於認證竊取的目標通常是具有高許可權的網域帳戶和 VIP 帳戶，因此系統管理員很重視可提高認證竊取攻擊成功機率的活動。 雖然攻擊者也將目標設為 VIP 帳戶，但如果未在系統或網域中提供較高層級的許可權，則竊取其認證需要其他類型的攻擊，例如社交設計 VIP 以提供秘密資訊。 或者，攻擊者必須先取得快取 VIP 認證之系統的特殊許可權存取權。 因此，提高認證竊取可能性的活動主要著重于防止取得高特殊許可權的系統管理認證。 這些活動是常見的機制，攻擊者可以利用這種方式來危害系統，以取得特殊許可權的認證。  
@@ -58,7 +58,7 @@ ms.locfileid: "71367738"
 當使用高許可權的網域帳戶以互動方式登入遭盜用的工作站或成員伺服器時，該遭到入侵的電腦可能會從登入系統的任何帳戶收集認證。  
 
 #### <a name="unsecured-administrative-workstations"></a>不安全的系統管理工作站  
-在許多組織中，IT 人員使用多個帳戶。 一個帳戶用來登入員工的工作站，而且因為這些是 IT 人員，他們通常會在工作站上具有本機系統管理員許可權。 在某些情況下，UAC 會保持啟用狀態，讓使用者至少會在登入時收到分割存取權杖，而且必須在需要許可權時提升。 當這些使用者執行維護活動時，他們通常會使用本機安裝的管理工具，並藉由選取 [**以系統管理員身分執行**] 選項或提供下列各項，提供其網域許可權帳戶的認證：出現提示時的認證。 雖然這種設定看起來可能很適合，但它會使環境暴露于洩露，因為：  
+在許多組織中，IT 人員使用多個帳戶。 一個帳戶用來登入員工的工作站，而且因為這些是 IT 人員，他們通常會在工作站上具有本機系統管理員許可權。 在某些情況下，UAC 會保持啟用狀態，讓使用者至少會在登入時收到分割存取權杖，而且必須在需要許可權時提升。 當這些使用者執行維護活動時，他們通常會使用本機安裝的管理工具，並藉由選取 [**以系統管理員身分執行**] 選項或在出現提示時提供認證，來提供其網域許可權帳戶的認證。 雖然這種設定看起來可能很適合，但它會使環境暴露于洩露，因為：  
 
 -   員工用來登入工作站的「一般」使用者帳戶具有本機系統管理員許可權，而電腦容易遭受以[磁片磁碟機為依據的下載](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)攻擊，使用者相信要安裝惡意程式碼。  
 

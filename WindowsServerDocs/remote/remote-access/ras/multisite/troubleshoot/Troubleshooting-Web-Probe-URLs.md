@@ -21,7 +21,7 @@ ms.locfileid: "71404440"
 ---
 # <a name="troubleshooting-web-probe-urls"></a>疑難排解 Web 探查 URL
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題包含與 `Set-DAEntryPointDC` 命令問題有關的疑難排解資訊。 若要確認您所收到的錯誤與設定進入點網域控制站有關，請檢查 Windows 事件記錄檔中的事件識別碼 10065。  
   
@@ -31,11 +31,11 @@ ms.locfileid: "71404440"
 若要疑難排解這個錯誤，請參閱儲存伺服器 GPO 設定。  
   
 ## <a name="remote-access-is-not-configured"></a>未設定遠端存取  
-**收到錯誤**。 未在 < server_name > 上設定遠端存取。 請指定屬於多站台部署之伺服器的名稱。  
+**收到錯誤**。 < Server_name > 上未設定遠端存取。 請指定屬於多站台部署之伺服器的名稱。  
   
 或  
   
-伺服器上未設定遠端存取 < server_name >。 請指定已啟用 DirectAccess 的電腦。  
+伺服器 < server_name > 上未設定遠端存取。 請指定已啟用 DirectAccess 的電腦。  
   
 **原因**  
   
@@ -116,7 +116,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 -   **問題3**  
   
-    **收到錯誤**。 % 2！ s！無法達到網域控制站 < domain_controller >。  
+    **收到錯誤**。 無法到達 %2！ s！的網域控制站 < domain_controller >。  
   
     **原因**  
   
@@ -124,7 +124,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     **解決方法**  
   
-    遵循 [2.4 中所述的「變更管理伺服器 Gpo 的網域控制站」程式。設定 Gpo @ no__t-0。  
+    遵循2.4 中所述的「變更管理伺服器 Gpo 的網域控制站」程式[。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 -   **問題4**  
   
@@ -136,7 +136,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
     **解決方法**  
   
-    遵循 [2.4 中所述的「傳送 PDC 模擬器角色」程式。設定 Gpo @ no__t-0。  
+    遵循2.4 中所述的「傳送 PDC 模擬器角色」程式[。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 ## <a name="read-only-domain-controller"></a>唯讀網域控制站  
 **收到錯誤**。 < Domain_controller > 的網域控制站是唯讀的。 請指定不是唯讀的網域控制站。  
@@ -153,7 +153,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 -   **問題1**  
   
-    **收到錯誤**。 無法從網域控制站 < replacement_domain_controller > 取得網域控制站上的 GPO < GPO_name > < previous_domain_controller >，因為它們不在相同的網域中。  
+    **收到錯誤**。 無法從網域控制站 previous_domain_controller > < 取得網域控制站上的 GPO < GPO_name > < replacement_domain_controller >，因為它們不在相同的網域中。  
   
     **原因**  
   
@@ -165,7 +165,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 -   **問題2**  
   
-    **收到錯誤**。 無法從網域控制站 < replacement_domain_controller > 取得網域控制站上的 GPO < GPO_name > < previous_domain_controller >。 請等候網域複寫完成，然後再試一次。  
+    **收到錯誤**。 無法從網域控制站 previous_domain_controller > < 取得網域控制站上的 GPO < GPO_name > < replacement_domain_controller >。 請等候網域複寫完成，然後再試一次。  
   
     **原因**  
   
@@ -188,7 +188,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
     網域控制站上有 GPO，但無法讀取。 請確認您具有必要的權限，然後再試一次。  
   
 ## <a name="entry-point-not-part-of-multisite-deployment"></a>進入點不屬於多站台部署  
-**收到錯誤**。 < Entry_point_name > 的進入點不是多網站部署的一部分。 請指定其他值。  
+**收到錯誤**。 進入點 < entry_point_name > 不是多網站部署的一部分。 請指定其他值。  
   
 **原因**  
   
@@ -202,7 +202,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 -   **問題1**  
   
-    **收到錯誤**。 無法存取進入點中的伺服器 < server_name > < entry_point_name >。  
+    **收到錯誤**。 無法存取進入點 < entry_point_name > 中的伺服器 < server_name >。  
   
     **原因**  
   
@@ -214,7 +214,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 -   **問題2**  
   
-    **收到錯誤**。 您無法將設定儲存到伺服器上的登錄，< server_name > 進入點 < entry_point_name >。  
+    **收到錯誤**。 無法將設定儲存到伺服器 < 上的登錄，server_name > 進入點 < entry_point_name >。  
   
     **原因**  
   
@@ -226,7 +226,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 -   **問題3**  
   
-    **收到錯誤**。 GPO 更新無法套用在 < server_name > 上。 直到下次重新整理原則之前，變更都不會生效。  
+    **收到錯誤**。 無法在 < server_name > 上套用 GPO 更新。 直到下次重新整理原則之前，變更都不會生效。  
   
     **原因**  
   
@@ -237,7 +237,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
     使用遠端存取管理主控台的 [儀表板] 中的 [設定狀態] 可以看到所有未更新的伺服器。 這不會造成任何功能上的問題；但是您可以在任何未更新的伺服器上執行 `gpupdate /force`，立即更新設定狀態。  
   
 ## <a name="problem-resolving-fqdn"></a>解析 FQDN 時發生問題  
-**收到錯誤**。 無法存取進入點中的伺服器 < server_name > < entry_point_name >。  
+**收到錯誤**。 無法存取進入點 < entry_point_name > 中的伺服器 < server_name >。  
   
 **原因**  
   
@@ -252,7 +252,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
   
 **原因**  
   
-以 *ExistingDC* 參數呼叫 `Set-DaEntryPointDC` Cmdlet 時，DirectAccess 會檢查所有進入點，並更新與指定的網域控制站相關聯的進入點。 不過，沒有任何進入點使用指定的 *ExistingDC*。  
+以 `Set-DaEntryPointDC`ExistingDC*參數呼叫* Cmdlet 時，DirectAccess 會檢查所有進入點，並更新與指定的網域控制站相關聯的進入點。 不過，沒有任何進入點使用指定的 *ExistingDC*。  
   
 **解決方法**  
   

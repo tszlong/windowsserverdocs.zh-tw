@@ -21,17 +21,17 @@ ms.locfileid: "71359322"
   
 若要匯出 AD FS 設定資料，請執行下列工作：  
   
--   [步驟 1：匯出服務設定 @ no__t-0  
+-   [步驟1：匯出服務設定](#step-1-export-service-settings)  
   
--   [步驟 2：匯出宣告提供者信任 @ no__t-0  
+-   [步驟2：匯出宣告提供者信任](#step-2-export-claims-provider-trusts)  
   
--   [步驟 3：匯出信賴憑證者信任 @ no__t-0  
+-   [步驟3：匯出信賴憑證者信任](#step-3-export-relying-party-trusts)  
   
--   [步驟 4：備份自訂屬性存放區 @ no__t-0  
+-   [步驟4：備份自訂屬性存放區](#step-4-back-up-custom-attribute-stores)  
   
--   [步驟 5：備份網頁自訂 @ no__t-0  
+-   [步驟5：備份網頁自訂專案](#step-5-back-up-webpage-customizations)  
   
-## <a name="step-1-export-service-settings"></a>步驟 1:匯出服務設定  
+## <a name="step-1-export-service-settings"></a>步驟1：匯出服務設定  
  若要匯出服務設定，請執行下列程序：  
   
 ### <a name="to-export-service-settings"></a>匯出服務設定  
@@ -43,7 +43,7 @@ ms.locfileid: "71359322"
 >   
 >  匯出 SSL 憑證是選擇性的，因為此憑證儲存在本機電腦個人憑證存放區中，作業系統升級時會予以保留。  
   
-2. 記錄 AD FS 服務通訊、權杖解密與權杖簽署憑證的設定。  若要查看使用的所有憑證，請開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至您的 Windows PowerShell 會話： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，以建立在檔案中使用的所有憑證清單 `PSH:>Get-ADFSCertificate | Out-File “.\certificates.txt”`  
+2. 記錄 AD FS 服務通訊、權杖解密與權杖簽署憑證的設定。  若要查看使用的所有憑證，請開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至您的 Windows PowerShell 會話： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，以建立檔案中使用的所有憑證清單 `PSH:>Get-ADFSCertificate | Out-File “.\certificates.txt”`  
   
 > [!NOTE]
 >  或者，除了所有自我簽署憑證以外，您也可以匯出不是內部產生的任何權杖簽署、權杖加密或服務通訊憑證以及金鑰。 您可以使用 Windows PowerShell 來檢視伺服器上使用中的所有憑證。 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell`。 然後執行下列命令，以查看您的伺服器上使用中的所有憑證 `PSH:>Get-ADFSCertificate`。 這個命令的輸出包括指定每個憑證存放區位置的 StoreLocation 與 StoreName 值。 然後，您可以使用[匯出伺服器驗證憑證的私用金鑰部分](Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)中的指導方針，將每個憑證及其私密金鑰匯出至 .pfx 檔案。  
@@ -87,29 +87,29 @@ ms.locfileid: "71359322"
   
 若要這麼做，請開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至您的 Windows PowerShell 會話： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，將任何自訂宣告描述匯出至檔案： `Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`。  
   
-##  <a name="step-2-export-claims-provider-trusts"></a>步驟 2:匯出宣告提供者信任  
+##  <a name="step-2-export-claims-provider-trusts"></a>步驟2：匯出宣告提供者信任  
  若要匯出宣告提供者信任，請執行下列程序：  
   
 ### <a name="to-export-claims-provider-trusts"></a>匯出宣告提供者信任  
   
 1.  您可以使用 Windows PowerShell 來匯出所有宣告提供者信任。 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，匯出所有宣告提供者信任： `PSH:>Get-ADFSClaimsProviderTrust | Out-File “.\cptrusts.txt”`。  
   
-## <a name="step-3-export-relying-party-trusts"></a>步驟 3：匯出信賴憑證者信任  
+## <a name="step-3-export-relying-party-trusts"></a>步驟3：匯出信賴憑證者信任  
  若要匯出信賴憑證者信任，請執行下列程序：  
   
 ### <a name="to-export-relying-party-trusts"></a>匯出信賴憑證者信任  
   
-1.  若要匯出所有信賴憑證者信任，請開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至您的 Windows PowerShell 會話： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，匯出所有信賴憑證者信任： `PSH:>Get-ADFSRelyingPartyTrust | Out-File “.\rptrusts.txt”`。  
+1.  若要匯出所有信賴憑證者信任，請開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至您的 Windows PowerShell 會話： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令，匯出所有信賴憑證者信任：`PSH:>Get-ADFSRelyingPartyTrust | Out-File “.\rptrusts.txt”`。  
   
-## <a name="step-4-back-up-custom-attribute-stores"></a>步驟 4：備份自訂屬性存放區  
+## <a name="step-4-back-up-custom-attribute-stores"></a>步驟4：備份自訂屬性存放區  
  您可以使用 Windows PowerShell 命令，尋找 AD FS 使用的自訂屬性存放區的相關資訊。 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令來尋找自訂屬性存放區的相關資訊： `PSH:>Get-ADFSAttributeStore`。 升級或移轉自訂屬性存放區的步驟會有所不同。  
   
-## <a name="step-5-back-up-webpage-customizations"></a>步驟 5：備份網頁的自訂項目  
+## <a name="step-5-back-up-webpage-customizations"></a>步驟5：備份網頁自訂專案  
  若要備份任何網頁自訂，請從對應到 IIS 中虛擬路徑 **"/adfs/ls"** 的目錄複寫 AD FS 網頁**和 web.config 檔案**。 根據預設，它在 **%systemdrive%\inetpub\adfs\ls** 目錄中。  
 
 ## <a name="next-steps"></a>後續步驟
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)

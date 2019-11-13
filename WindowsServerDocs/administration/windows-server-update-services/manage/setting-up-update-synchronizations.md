@@ -22,7 +22,7 @@ ms.locfileid: "71361604"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新同步處理設定
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在同步處理期間，WSUS 伺服器會從更新來源下載更新（更新中繼資料和檔案）。 它也會下載新的產品分類和類別（如果有的話）。 當您的 WSUS 伺服器第一次進行同步處理時，它會下載您在設定同步處理選項時所指定的所有更新。 在第一次同步處理之後，您的 WSUS 伺服器只會下載更新來源的更新，以及現有更新的中繼資料中的修訂，以及更新的到期日。
 
@@ -38,7 +38,7 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 
 您可以在 [**產品和分類**] 底下的 [**選項**] 頁面上指定更新產品和分類。 產品會列在階層中，並依產品系列分組。 如果您選取 [Windows]，則會自動選取落在該產品階層底下的每個產品。 選取 [父系] 核取方塊，即可選取其底下的所有專案，以及所有未來的版本。 選取子核取方塊並不會選取父核取方塊。 [產品] 的預設設定是 [所有 Windows 產品]，而 [分類] 的預設設定為 [重大] 和 [安全性更新]。
 
-如果 WSUS 伺服器是在「複本」模式下執行，您將無法執行這項工作。 如需有關複本模式的詳細資訊，請參閱執行[WSUS 複本模式](running-wsus-replica-mode.md)和 [Step 1：準備 WSUS 部署 @ no__t-0。
+如果 WSUS 伺服器是在「複本」模式下執行，您將無法執行這項工作。 如需有關複本模式的詳細資訊，請參閱執行[Wsus 複本模式](running-wsus-replica-mode.md)和[步驟1：準備部署 wsus](../plan/plan-your-wsus-deployment.md)。
 
 ##### <a name="to-specify-update-products-and-classifications-for-synchronization"></a>若要指定同步處理的更新產品和分類
 
@@ -59,7 +59,7 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 您的 WSUS 伺服器會根據您指定的語言來下載更新。 您可以在所有可用的語言中同步處理更新，也可以指定語言的子集。 如果您有 WSUS 伺服器階層，而且需要下載不同語言的更新，請確定您已在上游伺服器上指定所有必要的語言。 在下游伺服器上，您可以指定在上游伺服器上指定的語言子集。
 
 ### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>從 Microsoft Update 類別目錄同步處理更新
-如需有關從 Microsoft Update 目錄網站同步處理更新的詳細資訊，請參閱：[WSUS 和類別目錄網站](wsus-and-the-catalog-site.md)。
+如需有關從 Microsoft Update 目錄網站同步處理更新的詳細資訊，請參閱： [WSUS 和類別目錄網站](wsus-and-the-catalog-site.md)。
 
 ## <a name="configuring-proxy-server-settings"></a>進行 Proxy 伺服器設定
 您可以在與上游伺服器或 Microsoft Update 同步處理期間，將 WSUS 伺服器設定為使用 proxy 伺服器。 只有當您的 WSUS 伺服器執行同步處理時，才會套用此設定。 根據預設，您的 WSUS 伺服器會嘗試直接連接到上游伺服器或 Microsoft Update。
@@ -77,7 +77,7 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 
     -   如果您想要為連接到 proxy 伺服器的使用者啟用基本驗證，請選取 [**允許基本驗證（密碼會以純文字傳送）** ] 核取方塊。
 
-3.  按一下 [確定]。
+3.  按一下 **\[確定\]** 。
 
     > [!NOTE]
     > 因為 WSUS 會起始其所有網路流量，所以不需要在直接連線到 Microsoft update 的 WSUS 伺服器上設定 Windows 防火牆。
@@ -87,9 +87,9 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 
 自訂 WSUS 伺服器與更新來源進行同步處理的選項包括下列各項：
 
--   您可以指定自訂埠進行同步處理。 如需設定埠的詳細資訊，請參閱 [Step 3：請在 WSUS 部署指南中設定 WSUS @ no__t-0。
+-   您可以指定自訂埠進行同步處理。 如需設定埠的詳細資訊，請參閱《 WSUS 部署指南》中的[步驟3：設定 wsus](../deploy/2-configure-wsus.md) 。
 
--   您可以使用安全通訊端層（SSL）來保護 WSUS 伺服器之間更新資訊的同步處理。 如需使用 SSL 的詳細資訊，請參閱「3.5」一節。 使用 @no__t 0Step 3 的安全通訊端層通訊協定來保護 WSUS：請在 WSUS 部署指南中設定 WSUS @ no__t-0。
+-   您可以使用安全通訊端層（SSL）來保護 WSUS 伺服器之間更新資訊的同步處理。 如需使用 SSL 的詳細資訊，請參閱「3.5」一節。 保護 wsus 與安全通訊端層通訊協定」的[步驟3：](../deploy/2-configure-wsus.md)在 wsus 部署指南中設定 wsus。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手動或自動同步處理
 您可以手動同步處理您的 WSUS 伺服器，或指定自動同步處理的時間。
@@ -110,7 +110,7 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 
 4.  針對 **[每天同步處理]** ，選取您想要每天進行的同步處理次數。 例如，如果您一天從上午3:00 開始進行四次同步處理，則同步處理將會發生在上午3:00、9:00 A.M.、下午3:00 和下午9:00。 每天。 （請注意，隨機時間位移將會加入到排定的同步處理時間，以便將伺服器連接空間以 Microsoft Update。）
 
-5.  按一下 [確定]。
+5.  按一下 **\[確定\]** 。
 
 #### <a name="to-synchronize-your-wsus-server-immediately"></a>立即同步處理您的 WSUS 伺服器
 

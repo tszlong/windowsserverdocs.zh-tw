@@ -21,7 +21,7 @@ ms.locfileid: "71404397"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>步驟2規劃 RADIUS 伺服器部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 部署單一遠端存取服務器之後，請規劃一次性密碼（OTP）驗證服務器。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71404397"
   
 -   當您部署 RADIUS 伺服器時，您會設定共用密碼和 RADIUS 流量的埠號碼。 記下這些詳細資料;當您設定遠端存取服務器時，這是必要的。  
   
-您可以在 @no__t 0Test 的實驗室指南中，查看使用 RSA SecurID 伺服器設定 OTP 驗證的範例測試實驗室指南：示範使用 OTP 驗證和 RSA SecurID @ no__t-0 的 DirectAccess。  
+您可以在[測試實驗室指南：示範使用 otp 驗證的 DirectAccess 和 Rsa securid](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid)中，查看使用 RSA securid 伺服器設定 OTP 驗證的範例測試實驗室指南。  
   
   
   

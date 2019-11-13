@@ -51,7 +51,7 @@ ms.locfileid: "71359196"
   
     2.  使用 Scwcmd 命令列工具，登錄適當的角色延伸檔案。 請參閱下表，以取得如何在為電腦設定的角色中使用這個工具的詳細資料。  
   
-    3.  檢查位於 WindowssecurityMsscwLogs 目錄中的 SCWRegister_log，確認命令是否已順利完成。  
+    3.  檢查 WindowssecurityMsscwLogs 目錄中的 SCWRegister_log .xml 檔案，確認命令是否已順利完成。  
   
     您必須在想要套用以 AD FS 為基礎的 SCW 安全性原則的每台同盟伺服器或同盟伺服器 Proxy 電腦上，執行所有的這些步驟。  
   
@@ -61,8 +61,8 @@ ms.locfileid: "71359196"
     |---------------------|-------------------------------------|---------------------------------------------------|  
     |獨立同盟伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |已加入伺服陣列的同盟伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
-    |已加入伺服陣列的同盟伺服器|[SQL Server]|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |同盟伺服器 Proxy|N/A|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |已加入伺服陣列的同盟伺服器|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
+    |同盟伺服器 Proxy|不適用|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     如需您可以與 AD FS 搭配使用之資料庫的相關詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
@@ -89,7 +89,7 @@ ms.locfileid: "71359196"
     |-------------------|------------------|----------------------|  
     |必要|會完全強化伺服器。|會強制執行且一律必須強制執行延伸的保護。|  
     |允許|會部分強化伺服器。|若已修補所涉及的系統來支援此功能，即會強制執行延伸的保護。|  
-    |None|伺服器容易受到攻擊。|不會強制執行延伸的保護。|  
+    |無|伺服器容易受到攻擊。|不會強制執行延伸的保護。|  
   
 -   **如果您使用記錄和追蹤，請確定任何敏感性資訊的隱私權。**  
   
@@ -117,11 +117,11 @@ ms.locfileid: "71359196"
 當使用這些資料庫技術來管理 AD FS 設計和部署中的資料時，下列安全性最佳做法是使用 Microsoft SQL Server®或 Windows 內部資料庫（WID）所特有。  
   
 > [!NOTE]  
-> 這些建議的用意是要延伸 (而非取代) SQL Server 產品安全性指導方針。 如需有關規劃安全 SQL Server 安裝的詳細資訊，請參閱安全[SQL 安裝的安全性考慮](https://go.microsoft.com/fwlink/?LinkID=139831)（ https://go.microsoft.com/fwlink/?LinkID=139831) 。  
+> 這些建議的用意是要延伸 (而非取代) SQL Server 產品安全性指導方針。 如需有關規劃安全 SQL Server 安裝的詳細資訊，請參閱安全[SQL 安裝的安全性考慮](https://go.microsoft.com/fwlink/?LinkID=139831)（ https://go.microsoft.com/fwlink/?LinkID=139831)。  
   
 -   **一律在實際安全的網路環境中，部署防火牆後方的 SQL Server。**  
   
-    絕對不應將 SQL Server 安裝直接向網際網路公開。 只有位於您資料中心內的電腦，才能夠連接到支援 AD FS 的 SQL server 安裝。 如需詳細資訊，請參閱[安全性最佳做法檢查清單](https://go.microsoft.com/fwlink/?LinkID=189229)（ https://go.microsoft.com/fwlink/?LinkID=189229) 。  
+    絕對不應將 SQL Server 安裝直接向網際網路公開。 只有位於您資料中心內的電腦，才能夠連接到支援 AD FS 的 SQL server 安裝。 如需詳細資訊，請參閱[安全性最佳做法檢查清單](https://go.microsoft.com/fwlink/?LinkID=189229)（ https://go.microsoft.com/fwlink/?LinkID=189229)。  
   
 -   **在服務帳戶下執行 SQL Server，而不是使用內建的預設系統服務帳戶。**  
   
@@ -129,11 +129,11 @@ ms.locfileid: "71359196"
   
 -   **將 SQL Server 的介面區最小化。**  
   
-    只啟用必要的 SQL Server 端點。 根據預設，SQL Server 會提供單一內建 TCP 端點，且無法移除。 針對 AD FS，您應該啟用此 TCP 端點以進行 Kerberos 驗證。 若要檢閱目前的 TCP 端點以查看是否已將其他使用者定義的 TCP 連接埠新增到 SQL 安裝，您可以在 Transact-SQL (T-SQL) 工作階段中使用 "SELECT * FROM sys.tcp_endpoints" 查詢陳述式。 如需 SQL Server 端點設定的詳細資訊，請參閱 [How 至：設定資料庫引擎接聽多個 TCP 通訊埠 @ no__t-0 （ https://go.microsoft.com/fwlink/?LinkID=189231) 。  
+    只啟用必要的 SQL Server 端點。 根據預設，SQL Server 會提供單一內建 TCP 端點，且無法移除。 針對 AD FS，您應該啟用此 TCP 端點以進行 Kerberos 驗證。 若要檢閱目前的 TCP 端點以查看是否已將其他使用者定義的 TCP 連接埠新增到 SQL 安裝，您可以在 Transact-SQL (T-SQL) 工作階段中使用 "SELECT * FROM sys.tcp_endpoints" 查詢陳述式。 如需 SQL Server 端點設定的詳細資訊，請參閱[如何：設定資料庫引擎接聽多個 TCP 通訊埠](https://go.microsoft.com/fwlink/?LinkID=189231)（ https://go.microsoft.com/fwlink/?LinkID=189231)。  
   
 -   **避免使用以 SQL 為基礎的驗證。**  
   
-    為避免必須透過網路以純文字形式傳輸密碼或在組態設定中儲存密碼，請只將 Windows 驗證與 SQL Server 安裝搭配使用。 SQL Server 驗證是舊有的驗證模式。 不建議您在使用 SQL Server 驗證時儲存結構化查詢語言 (SQL) 登入認證 (SQL 使用者名稱和密碼)。 如需詳細資訊，請參閱[驗證模式](https://go.microsoft.com/fwlink/?LinkID=189232)（ https://go.microsoft.com/fwlink/?LinkID=189232) 。  
+    為避免必須透過網路以純文字形式傳輸密碼或在組態設定中儲存密碼，請只將 Windows 驗證與 SQL Server 安裝搭配使用。 SQL Server 驗證是舊有的驗證模式。 不建議您在使用 SQL Server 驗證時儲存結構化查詢語言 (SQL) 登入認證 (SQL 使用者名稱和密碼)。 如需詳細資訊，請參閱[驗證模式](https://go.microsoft.com/fwlink/?LinkID=189232)（ https://go.microsoft.com/fwlink/?LinkID=189232)。  
   
 -   **請仔細評估 SQL 安裝中額外的通道安全性需求。**  
   
@@ -149,5 +149,5 @@ ms.locfileid: "71359196"
   
     若要提供更安全的服務和資料隔離，您可以針對所有屬性存放區查閱命令建立預存程序。 您可以建立資料庫角色，然後授與權限以執行預存程序。 將 AD FS Windows 服務的服務識別指派給這個資料庫角色。 除了用於屬性查閱的適當預存程式以外，AD FS Windows 服務不能執行任何其他 SQL 語句。 以這種方式鎖定對 SQL Server 資料庫的存取，可降低受到「權限提高」攻擊的風險。  
   
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

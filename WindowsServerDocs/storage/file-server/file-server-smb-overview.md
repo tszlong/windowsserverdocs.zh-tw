@@ -17,7 +17,7 @@ ms.locfileid: "71402087"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>在 Windows Server 中使用 SMB 3 通訊協定的檔案共用總覽
 
->適用於：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用于： Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 本主題說明 Windows Server®2012、Windows Server 2012 R2 和 Windows Server 2016 中的 SMB 3.0 功能，這項功能的實際用法、與舊版相較之下，此版本中最重要的新功能或更新功能，以及硬體滿足.
 
@@ -49,7 +49,7 @@ Windows Server 2012 和 Windows Server 2016 中的 SMB 包含新的 SMB 3.0 通�
 <tr class="header">
 <th><p>特色/功能</p></th>
 <th><p>新功能或更新功能</p></th>
-<th><p>總結</p></th>
+<th><p>摘要</p></th>
 </tr>
 </thead>
 <tbody>
@@ -123,7 +123,7 @@ SMB 直接傳輸具備下列需求：
 * 至少需要兩部執行 Windows Server 2012 的電腦。 不需要安裝任何其他的功能 - 預設會啟用這項技術。
 * 需要含有 RDMA 功能的網路介面卡。 這些介面卡目前可用於三種不同類型：iWARP、Infiniband 或 RoCE (透過聚合式乙太網路的 RDMA)。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
 下列清單提供網路上有關 SMB 的其他資源，以及 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 中的相關技術。
 
@@ -133,4 +133,4 @@ SMB 直接傳輸具備下列需求：
 * [部署透過 SMB 的 Hyper-v](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
 * [部署 SMB 多重通道](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
 * [為伺服器應用程式部署快速又有效率的檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB：疑難排解指南 @ no__t-0
+* [SMB：疑難排解指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)

@@ -21,15 +21,15 @@ ms.locfileid: "71404898"
 ---
 # <a name="install-and-configure-basic-directaccess"></a>安裝和設定基本 DirectAccess
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本總覽提供部署執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012with 基本設定之單一 DirectAccess 伺服器所需之設定步驟的簡介。  
   
--   [步驟 1：設定基本 DirectAccess 基礎結構 @ no__t-0。 這個步驟包括設定網路和伺服器設定、DNS 設定及 Active Directory 設定。  
+-   [步驟1：設定基本 DirectAccess 基礎結構](da-basic-configure-s1-infrastructure.md)。 這個步驟包括設定網路和伺服器設定、DNS 設定及 Active Directory 設定。  
   
--   [步驟 2：設定基本 DirectAccess 伺服器 @ no__t-0。 此步驟包括設定 DirectAccess 用戶端電腦與伺服器設定。  
+-   [步驟2：設定基本 DirectAccess 伺服器](da-basic-configure-s2-server.md)。 此步驟包括設定 DirectAccess 用戶端電腦與伺服器設定。  
   
--   [步驟 3：確認部署 @ no__t-0。 這包括確認部署的步驟。  
+-   [步驟3：確認部署](da-basic-configure-s3-verify.md)。 這包括確認部署的步驟。  
   
 開始部署之前，請先確認[規劃基本 DirectAccess 部署](Plan-a-Basic-DirectAccess-Deployment.md)中所述的步驟。  
   

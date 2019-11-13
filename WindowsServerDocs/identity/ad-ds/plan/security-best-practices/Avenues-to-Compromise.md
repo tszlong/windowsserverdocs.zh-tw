@@ -18,9 +18,9 @@ ms.locfileid: "71367700"
 ---
 # <a name="avenues-to-compromise"></a>危及系統安全的途徑
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-@no__t 0Law 數位七：最安全的網路是一項妥善管理的網路。 * - [10 不變的安全性管理法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第七條法則：最安全的網路是妥善管理的網路。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
   
 在發生嚴重入侵事件的組織中，評量通常會顯示組織對 IT 基礎結構的實際狀態具有有限的可見度，這可能會因為其「記載」而變得很明顯。提示. 這些變異會引進弱點，讓環境暴露于洩露，而在入侵進入實際「擁有」環境的那一點之前，幾乎不會有探索風險。  
   
@@ -46,19 +46,19 @@ IT 檔、進程和程式的分析，識別由攻擊者利用的系統管理實�
 ## <a name="initial-breach-targets"></a>初始漏洞目標  
 沒有人刻意建立 IT 基礎結構，讓組織暴露于入侵。 第一次建立 Active Directory 樹系時，通常是初始化且最新的。 隨著數年的通過和新的作業系統和應用程式被取得，它們就會新增至樹系。 隨著 Active Directory 所提供的管理能力優點，已將更多內容新增至目錄、更多人將其電腦或應用程式與 AD DS 整合，以及將網域升級，以支援最常提供的新功能目前的 Windows 作業系統版本。 不過，一段時間後也會發生什麼事，就算是新增了新的基礎結構，基礎結構的其他部分可能也不會一一一開始維護，系統和應用程式也能正常運作，因此不會收到而且組織會開始忘了它們尚未消除其舊版基礎結構。 根據我們在評估遭盜用的基礎結構、較舊、較大且更複雜的環境中所看到的內容，最有可能的情況是經常利用弱點的許多實例。  
   
-無論攻擊者的動機為何，大部分資訊安全性漏洞都是一次洩露一或兩個系統。 這些初始事件或進入網路的進入點，通常會利用可能已經修正的弱點，而不是。 [2012 資料缺口調查報告（DBIR）](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)，這是 Verizon 風險小組與許多國家安全性機關和其他公司合作所產生的年度研究，說明 96% 的攻擊「不是非常棘手」，而是「97% 的漏洞是透過簡單或中繼控制項肇因。」 這些發現可能是常見的惡意探索弱點的直接結果。  
+無論攻擊者的動機為何，大部分資訊安全性漏洞都是一次洩露一或兩個系統。 這些初始事件或進入網路的進入點，通常會利用可能已經修正的弱點，而不是。 [2012 資料缺口調查報告（DBIR）](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)，這是由 Verizon 風險小組與許多國家安全性機關及其他公司合作所產生的年度研究，說明96% 的攻擊「不太難」，而且「97% 的缺口是透過簡單或中繼控制肇因。」 這些發現可能是常見的惡意探索弱點的直接結果。  
   
 ### <a name="gaps-in-antivirus-and-antimalware-deployments"></a>防毒軟體和反惡意程式碼部署的間距  
-@no__t 0Law 數位八：過時的惡意程式碼掃描器只會比完全沒有掃描器來得好。 * - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*第8條法則：過期的惡意程式碼掃描程式，只比完全沒有掃描器來得好。* - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 組織的防毒軟體和反惡意程式碼部署的分析通常會顯示環境，其中大部分的工作站都設定了啟用和最新的防毒軟體和反惡意程式碼軟體。 例外狀況通常是不常連線到公司環境的工作站，或可能很容易部署、設定和更新防毒軟體和反惡意程式碼軟體的員工裝置。  
   
-不過，伺服器的擴展通常會在許多遭入侵的環境中受到較不一致的保護。 如[2012 資料缺口調查](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)中所述，所有資料的 94% 都會與伺服器相關，這代表前一年增加了 18%，而將惡意程式碼納入攻擊的 69%。 在伺服器擴展中，發現防毒軟體和反惡意程式碼安裝的設定不一致、已過時、設定不正確，甚至是停用的情況並不常見。 在某些情況下，防毒軟體和反惡意程式碼軟體會由系統管理人員停用，但在其他情況下，攻擊者會在透過其他弱點危害伺服器後停用軟體。 當防毒軟體和反惡意程式碼軟體停用時，攻擊者會在伺服器上植入惡意程式碼，並專注于在伺服器擴展中傳播危害。  
+不過，伺服器的擴展通常會在許多遭入侵的環境中受到較不一致的保護。 如[2012 資料缺口調查](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)中所述，所有資料的94% 都會與伺服器相關，這代表前一年增加了18%，而將惡意程式碼納入攻擊的69%。 在伺服器擴展中，發現防毒軟體和反惡意程式碼安裝的設定不一致、已過時、設定不正確，甚至是停用的情況並不常見。 在某些情況下，防毒軟體和反惡意程式碼軟體會由系統管理人員停用，但在其他情況下，攻擊者會在透過其他弱點危害伺服器後停用軟體。 當防毒軟體和反惡意程式碼軟體停用時，攻擊者會在伺服器上植入惡意程式碼，並專注于在伺服器擴展中傳播危害。  
   
 這不只是為了確保您的系統受到最新的完整惡意程式碼保護所保護，同時也可監視系統以停用或移除防毒軟體和反惡意程式碼軟體，以及在其為時自動重新開機保護已手動停用。 雖然沒有防毒軟體和反惡意程式碼軟體可保證所有感染的防護和偵測，但已正確設定及部署的防毒程式和反惡意程式碼的執行可能會降低感染的可能性。  
   
 ### <a name="incomplete-patching"></a>不完整的修補  
-@no__t 0Law 數位3：如果您沒有跟上安全性修正程式，您的網路將不會是您的長時間。 * - [10 不變的安全性管理法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第三條法則：如果您沒有跟上安全性修正程式，您的網路將不會是您的長時間。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
   
 Microsoft 會在每個月的第二個星期二發行安全性公告，不過，在少數情況下，安全性更新會在每月的安全性更新（也稱為「頻外」更新）之間發行，而此弱點是在判斷是否要造成的客戶系統的緊急風險。 無論小型企業是否將其 Windows 電腦設定為使用 Windows Update 來管理系統和應用程式修補，或大型組織使用 System Center Configuration Manager （SCCM）之類的管理軟體來根據詳細資訊部署修補程式，階層式計畫，許多客戶會以相對及時的方式修補其 Windows 基礎結構。  
   
@@ -81,14 +81,14 @@ IT 的消費化引進了額外的挑戰，就是員工擁有的裝置用來存�
 若要排除舊版系統和應用程式，您應該先專注于識別和編目它們，然後決定是否要升級或取代應用程式或主機。 雖然難以找到不支援或升級路徑的高度特殊化應用程式的替代專案，但您可以利用名為「創意損毀」的概念，將繼承應用程式取代為新的應用程式這會提供必要的功能。 本檔稍後的「正在進行危害的規劃」中有更深入的說明[規劃危害](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)。  
   
 ### <a name="misconfiguration"></a>設定錯誤  
-@no__t 0Law 數位四：在從未受到保護的電腦上安裝安全性修正程式並不是很好。 * - [10 不變的安全性管理法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第四條法則：在從未受到保護的電腦上安裝安全性修正，並不會有太大的好處。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
   
 即使在系統通常會保持最新狀態和修補的環境中，我們通常會識別作業系統、電腦上執行的應用程式，以及 Active Directory 的間隙或錯誤配置。 有些錯誤的錯誤處理只會公開本機電腦來危害，但是在電腦「擁有」之後，攻擊者通常會專注于進一步將危害傳播到其他系統，最後再 Active Directory。 以下是一些常見的區域，我們會在其中識別引進風險的設定。  
   
 #### <a name="in-active-directory"></a>在 Active Directory  
 Active Directory 中最常成為攻擊者的帳戶，就是具有最高許可權群組的成員，例如網域系統管理員（DA）、企業系統管理員（EA）或內建系統管理員（BA）群組的成員。Directory. 這些群組的成員資格應縮減為最小的帳戶數目，讓這些群組的受攻擊面受到限制。 甚至可以排除這些特殊許可權群組中的「永久」成員資格;也就是說，您可以執行設定，讓您只在需要其網域和全樹系許可權時，才會暫時填入這些群組。 使用高許可權帳戶時，只能在指定的安全系統上使用，例如網域控制站或安全的管理主機。 以下提供可協助您執行這些設定的詳細資訊，以[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)。  
   
-當我們評估 Active Directory 中最高許可權群組的成員資格時，通常會發現這三個最具許可權的群組中有過多的成員資格。 在某些情況下，組織會在 DA 群組中擁有數十個或數百個帳戶。 在其他情況下，組織會直接將帳戶放入內建的系統管理員群組中，並認為群組「許可權較小」，而不是 DAs 群組。 不是。 我們經常會在樹系根域中找到一些 EA 群組的永久成員，儘管 EA 許可權很少且暫時是必要的事實。 即使這是有效的重複設定，在所有三個群組中尋找 IT 使用者的日常系統管理帳戶也是常見的。 如[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述，帳戶是否為這些群組之一的永久成員或全部，帳戶可以用來危害，甚至終結 it AD DS 所管理的系統和帳戶. 在 Active Directory 中提供安全設定和使用特殊許可權帳戶的建議，以[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)。  
+當我們評估 Active Directory 中最高許可權群組的成員資格時，通常會發現這三個最具許可權的群組中有過多的成員資格。 在某些情況下，組織會在 DA 群組中擁有數十個或數百個帳戶。 在其他情況下，組織會直接將帳戶放入內建的系統管理員群組中，並認為群組「許可權較小」，而不是 DAs 群組。 不是。 我們經常會在樹系根域中找到一些 EA 群組的永久成員，儘管 EA 許可權很少且暫時是必要的事實。 即使這是有效的重複設定，在所有三個群組中尋找 IT 使用者的日常系統管理帳戶也是常見的。 如[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述，帳戶是否為其中一個群組或全部的永久成員，帳戶可以用來危害，甚至終結其所管理的 AD DS 環境和系統和帳戶。 在 Active Directory 中提供安全設定和使用特殊許可權帳戶的建議，以[減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)。  
   
 #### <a name="on-domain-controllers"></a>在網域控制站上  
 當我們評估網域控制站時，通常會發現它們的設定和管理方式與成員伺服器不同。 網域控制站有時候會執行安裝在成員伺服器上的相同應用程式和公用程式，而不是因為在網域控制站上需要它們，但是因為應用程式是標準組建的一部分。 這些應用程式可能會在網域控制站上提供最少的功能，但會要求設定以開啟埠、建立高許可權服務帳戶，或將存取權授與使用者除了驗證和群組原則應用程式以外，不應連接到網域控制站。 在某些缺口中，攻擊者已使用已安裝在網域控制站上的工具，而不只是為了取得網域控制站的存取權，而是修改或損毀 AD DS 資料庫。  
@@ -99,14 +99,14 @@ Active Directory 中最常成為攻擊者的帳戶，就是具有最高許可權
 應將網域控制站視為重要的基礎結構元件，安全地而更加嚴格，並設定為比檔案、列印和應用程式伺服器更嚴格。 網域控制站不應執行網域控制站運作所需的任何軟體，或不會保護網域控制站免于遭受攻擊。 不應允許網域控制站存取網際網路，而且安全性設定應由群組原則物件（Gpo）進行設定和強制執行。 保護網域控制站的安全安裝、設定和管理的詳細建議，是為了[防範攻擊](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)。  
   
 #### <a name="within-the-operating-system"></a>在作業系統內  
-@no__t 0Law 數位二：如果不良的人可以改變您電腦上的作業系統，就不是您的電腦了。 * - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*第二條法則：如果不良的人可以改變電腦上的作業系統，則不是您的電腦。* - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 雖然某些組織會為不同類型的伺服器建立基準設定，並在安裝作業系統之後允許對其進行有限的自訂，但遭入侵環境的分析通常會發現大量部署于的伺服器臨機操作的方式，並手動和獨立設定。 兩部執行相同功能的伺服器之間的設定可能完全不同，因為伺服器沒有安全地設定。 相反地，伺服器設定基準可能會一致地強制執行，但也會一致地進行設定。也就是說，伺服器的設定方式，會在指定類型的所有伺服器上建立相同的弱點。 設定錯誤包括停用安全性功能、授與帳戶過多的權利和許可權（特別是服務帳戶）、在系統上使用相同的本機認證，以及允許安裝未經授權的應用程式和公用程式會建立自己的弱點。  
   
 ##### <a name="disabling-security-features"></a>停用安全性功能  
-組織有時會停用具有 Advanced Security （WFAS）的 Windows 防火牆，而不是因為 WFAS 很容易設定或需要耗費大量工作的設定。 不過，從 Windows Server 2008 開始，在伺服器上安裝任何角色或功能時，預設會以角色或功能運作所需的最低許可權來設定，而 Windows 防火牆會自動設定為支援角色或功能。 藉由停用 WFAS （而不是在其位置使用另一個主機型防火牆），組織會增加整個 Windows 環境的受攻擊面。 周邊防火牆會針對直接以網際網路為環境的攻擊提供一些保護，但它們不會針對惡意探索其他攻擊媒介的攻擊提供保護，例如[磁片磁碟機下載](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)攻擊，或攻擊來自內部網路上的其他遭入侵系統。  
+組織有時會停用具有 Advanced Security （WFAS）的 Windows 防火牆，而不是因為 WFAS 很容易設定或需要耗費大量工作的設定。 不過，從 Windows Server 2008 開始，在伺服器上安裝任何角色或功能時，預設會以角色或功能運作所需的最低許可權來設定，而 Windows 防火牆會自動設定為支援角色或功能。 藉由停用 WFAS （而不是在其位置使用另一個主機型防火牆），組織會增加整個 Windows 環境的受攻擊面。 周邊防火牆針對直接以網際網路為目標環境的攻擊提供一些保護，但它們不會保護惡意探索其他攻擊媒介的攻擊，例如[磁片磁碟機下載](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)攻擊，或源自內部網路上其他遭入侵系統的攻擊。  
   
-伺服器上的使用者帳戶控制（UAC）設定有時會停用，因為系統管理人員會發現干擾性的提示。 雖然[Microsoft 支援服務文章 2526083](https://support.microsoft.com/kb/2526083)說明在 Windows Server 上可能停用 uac 的案例，但除非您執行的是 Server core 安裝（其設計已停用 uac），否則您不應該小心停用伺服器上的 uac。考慮與研究。  
+伺服器上的使用者帳戶控制（UAC）設定有時會停用，因為系統管理人員會發現干擾性的提示。 雖然[Microsoft 支援服務文章 2526083](https://support.microsoft.com/kb/2526083)說明在 Windows Server 上可能停用 uac 的案例，但除非您執行的是 Server core 安裝（其設計已停用 uac），否則您不應該在伺服器上停用 uac，而不需要謹慎考慮和研究。  
   
 在其他情況下，伺服器設定會設定為較不安全的值，因為組織會將過時的伺服器設定套用至新的作業系統，例如將 Windows Server 2003 基準套用到執行 Windows Server 2012 的電腦、Windows伺服器 2008 R2 或 Windows Server 2008，而不會變更基準以反映作業系統中的變更。 部署新的作業系統時，請檢查安全性變更和設定，以確保所實行的設定適用，且適用于新的作業系統，而不是在新的作業系統上攜帶舊的伺服器基準。  
   
@@ -125,10 +125,10 @@ Active Directory 中最常成為攻擊者的帳戶，就是具有最高許可權
 只要有另一部電腦的本機帳戶具有與所顯示帳號憑證相同的使用者名稱和密碼（或密碼雜湊），登入嘗試就會成功，而攻擊者會取得目的電腦的特殊許可權存取權。 在目前的 Windows 版本中，[預設會停用](https://technet.microsoft.com/library/cc753450.aspx)內建的系統管理員帳戶，但在舊版作業系統中，此帳戶預設為啟用。  
   
 > [!NOTE]  
-> 有些組織故意設定本機系統管理員帳戶，以確保在系統鎖定所有其他特殊許可權帳戶時，會提供「安全」功能。 不過，即使已停用本機系統管理員帳戶，而且沒有其他可啟用帳戶或以系統管理員許可權登入系統的帳戶，系統仍可開機進入安全模式和內建的本機系統管理員。帳戶可以重新啟用，如[Microsoft 支援服務文章 814777](https://support.microsoft.com/kb/814777)中所述。 此外，如果系統仍成功套用 Gpo，則可以將 GPO 修改為（暫時）重新啟用系統管理員帳戶，或將限制的群組設定為將網域型帳戶新增至本機系統管理員群組。 可以執行修復，而且系統管理員帳戶可以再次停用。 若要有效避免使用內建本機系統管理員帳號憑證的橫向入侵，必須為本機系統管理員帳戶設定唯一的使用者名稱和密碼。 若要透過 GPO 部署本機系統管理員帳戶的唯一密碼，請參閱 technet 上的透過[gpo 管理內建的系統管理員帳戶密碼的解決方案](https://technet.microsoft.com/mt227395.aspx)。  
+> 有些組織故意設定本機系統管理員帳戶，以確保在系統鎖定所有其他特殊許可權帳戶時，會提供「安全」功能。 不過，即使已停用本機系統管理員帳戶，而且沒有其他可啟用帳戶或以系統管理員許可權登入系統的帳戶，系統還是可以開機進入安全模式，而內建的本機系統管理員帳戶可以重新啟用，如[Microsoft 支援服務文章 814777](https://support.microsoft.com/kb/814777)中所述。 此外，如果系統仍成功套用 Gpo，則可以將 GPO 修改為（暫時）重新啟用系統管理員帳戶，或將限制的群組設定為將網域型帳戶新增至本機系統管理員群組。 可以執行修復，而且系統管理員帳戶可以再次停用。 若要有效避免使用內建本機系統管理員帳號憑證的橫向入侵，必須為本機系統管理員帳戶設定唯一的使用者名稱和密碼。 若要透過 GPO 部署本機系統管理員帳戶的唯一密碼，請參閱 technet 上的透過[gpo 管理內建的系統管理員帳戶密碼的解決方案](https://technet.microsoft.com/mt227395.aspx)。  
   
 ##### <a name="permitting-installation-of-unauthorized-applications"></a>允許安裝未經授權的應用程式  
-@no__t 0Law 數位一：如果不良的人可以說服您在電腦上執行他的程式，它就不是只有電腦了。 * - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*第一條法則：如果不良的人可以說服您在電腦上執行他的程式，這不是完全是您的電腦而已。* - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 無論組織是否跨伺服器部署一致的基準設定，都不應該允許安裝不屬於伺服器定義角色的應用程式。 藉由允許安裝不屬於伺服器指定功能的軟體，伺服器會暴露于不小心或惡意的軟體安裝，以增加伺服器的受攻擊面、引進應用程式弱點，或造成系統不穩定。  
   

@@ -16,19 +16,19 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71368943"
 ---
-# <a name="appendix-m-document-links-and-recommended-reading"></a>附錄 M：檔連結和建議的閱讀
+# <a name="appendix-m-document-links-and-recommended-reading"></a>附錄 M︰文件連結與建議閱讀資料
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
-## <a name="appendix-m-document-links-and-recommended-reading"></a>附錄 M：檔連結和建議的閱讀  
+## <a name="appendix-m-document-links-and-recommended-reading"></a>附錄 M︰文件連結與建議閱讀資料  
   
 ### <a name="document-links"></a>檔連結  
 下表包含外部檔和其 Url 的連結清單，讓這份檔的讀取者可以存取這項資訊。 連結會依其出現在檔中的順序列出。  
   
 |||  
 |-|-|  
-|**Links**|**Url**|  
+|**相關**|**Url**|  
 |[10個不變的安全性管理法則](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Microsoft 安全性合規性管理員](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -40,7 +40,7 @@ ms.locfileid: "71368943"
 |[Microsoft 支援服務文章814777](https://support.microsoft.com/kb/814777)|[https://support.microsoft.com/kb/814777](https://support.microsoft.com/kb/814777)|  
 |[開啟 Web 應用程式安全性專案（OWASP）](https://www.owasp.org/index.php/Main_Page)|[https://www.owasp.org/index.php/Main_Page](https://www.owasp.org/index.php/Main_Page)|  
 |[Microsoft 安全性開發週期 (SDL)](https://www.microsoft.com/security/sdl/default.aspx)|[https://www.microsoft.com/security/sdl/default.aspx](https://www.microsoft.com/security/sdl/default.aspx)|  
-|[降低傳遞雜湊（PtH）攻擊和其他認證竊取技術](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|[@no__t 1 傳遞雜湊（PtH）攻擊和其他認證竊取 Techniques_English .pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
+|[降低傳遞雜湊（PtH）攻擊和其他認證竊取技術](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|[https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating 傳遞雜湊（PtH）攻擊和其他認證竊取 Techniques_English .pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
 |[判斷敵人和目標攻擊](https://www.microsoft.com/download/details.aspx?id=34793)|[https://www.microsoft.com/download/details.aspx?id=34793](https://www.microsoft.com/download/details.aspx?id=34793)|  
 |[透過 GPO 管理內建系統管理員帳戶密碼的解決方案](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789)|[https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789)|  
 |[Microsoft 支援服務文章817433](https://support.microsoft.com/?id=817433)|[https://support.microsoft.com/?id=817433](https://support.microsoft.com/?id=817433)|  
@@ -90,7 +90,7 @@ ms.locfileid: "71368943"
 |[Retina CS 管理](http://www.wideeyesecurity.com/products.asp)|[http://www.wideeyesecurity.com/products.asp](http://www.wideeyesecurity.com/products.asp)|  
 |[Lumension](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|[http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|  
 |[Lumension 弱點管理](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|[http://www.lumension.com/Solutions/Vulnerability-Management.aspx](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|  
-|@no__t 0Threats 和對策指南：使用者權限 @ no__t-0|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
+|[威脅與對策指南：使用者權限](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
 |[威脅和弱點緩和](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc755181(v=ws.10).aspx](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|  
 |[使用者權限](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd349804(v=WS.10).aspx](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|  
 |[以信任的呼叫者身分存取認證管理員](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|  
@@ -166,7 +166,7 @@ ms.locfileid: "71368943"
 |委派 Windows Server 2003 [Active Directory 系統管理的最佳做法](https://www.microsoft.com/download/details.aspx?id=21678)|[https://www.microsoft.com/en-us/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Microsoft 支援服務生命週期](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory 技術規格](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
-|當已委派控制項的非管理員使用者嘗試將電腦加入 Windows Server 2003 或 Windows Server 2008 架構的網域控制站時，@no__t 0Error 訊息：「拒絕存取」 ](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
+|[當已委派控制權的非管理員使用者嘗試將電腦加入 Windows Server 2003 或 Windows Server 2008 型網域控制站時，出現錯誤訊息：「拒絕存取」](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
 |[Windows Server 2008 R2 逐步指南中 AD DS 的驗證機制保證](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
 |[嚴格的 KDC 驗證](https://www.microsoft.com/download/details.aspx?id=6382)|[https://www.microsoft.com/download/details.aspx?id=6382](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
@@ -189,7 +189,7 @@ ms.locfileid: "71368943"
 |委派 Windows Server 2003 [Active Directory 系統管理的最佳做法](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Microsoft 支援服務生命週期](https://support.microsoft.com/lifecycle/)|  
 |[Active Directory 技術規格](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)-dSHeuristics 資訊|  
-|當已委派控制項的非管理員使用者嘗試將電腦加入 Windows Server 2003 或 Windows Server 2008 架構的網域控制站時，@no__t 0Error 訊息：「拒絕存取」 ](https://support.microsoft.com/kb/932455)|  
+|[當已委派控制權的非管理員使用者嘗試將電腦加入 Windows Server 2003 或 Windows Server 2008 型網域控制站時，出現錯誤訊息：「拒絕存取」](https://support.microsoft.com/kb/932455)|  
 |[保護 Active Directory 安裝的最佳作法指南。 doc](https://go.microsoft.com/fwlink/?LinkId=140862)|  
 |[Hyper-v 安全性指南](https://www.microsoft.com/download/details.aspx?id=16650)|  
 |[Windows Server 2008 R2 逐步指南中 AD DS 的驗證機制保證](https://technet.microsoft.com/library/dd378897(WS.10).aspx)。|  

@@ -39,7 +39,7 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 ### <a name="scenarios-that-benefit-in-adding-indices"></a>可受益于新增索引的案例
 
--   要求資料的用戶端負載會產生大量的 CPU 使用量，而且用戶端查詢行為無法變更或優化。 藉由大量負載，請考慮它本身會顯示在 Server Performance Advisor 的前10個入侵者清單中，或內建的 Active Directory 資料收集器集合中，並使用超過 1% 的 CPU。
+-   要求資料的用戶端負載會產生大量的 CPU 使用量，而且用戶端查詢行為無法變更或優化。 藉由大量負載，請考慮它本身會顯示在 Server Performance Advisor 的前10個入侵者清單中，或內建的 Active Directory 資料收集器集合中，並使用超過1% 的 CPU。
 
 -   用戶端負載因為未編制索引的屬性而在伺服器上產生大量的磁片 i/o，而且無法變更或優化用戶端查詢行為。
 
@@ -47,12 +47,12 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 - 具有高持續時間的大量查詢，會導致使用 ATQ LDAP 執行緒的耗用量和耗盡。 監視下列效能計數器：
 
-    - **NTDS @ no__t-1Request 延遲**–這取決於要求處理所需的時間長度。 在120秒（預設值）之後，Active Directory 會超時要求，但大部分的執行速度應該會更快，而且在整體的數位中應該會隱藏長時間執行的查詢。 尋找此基準中的變更，而不是絕對臨界值。
+    - **NTDS\\要求延遲**–這取決於要求處理所需的時間長度。 在120秒（預設值）之後，Active Directory 會超時要求，但大部分的執行速度應該會更快，而且在整體的數位中應該會隱藏長時間執行的查詢。 尋找此基準中的變更，而不是絕對臨界值。
 
         > [!NOTE]
         > 這裡的高值也可能是對其他網域和 CRL 檢查的「代理」要求延遲的指標。
 
-    - **NTDS @ no__t-1Estimated 佇列延遲**–這應該在理想的情況下接近0以達到最佳效能，這表示要求沒有時間等待服務。
+    - **NTDS\\估計的佇列延遲**–在理想的情況下，這應該會接近0以達到最佳效能，這表示要求沒有時間等待維修。
 
 您可以使用下列一或多種方法來偵測這些案例：
 
@@ -60,31 +60,31 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 -   [追蹤昂貴且效率不佳的搜尋](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   Active Directory 效能監視器中的診斷資料收集器集合工具（SPA 的 @no__t 0Son：Win2008 中和 @ no__t-0 以外的 AD 資料收集器集合
+-   Active Directory 效能監視器中的診斷資料收集器集合工具（[SPA 的子物： Win2008 和其他的 AD 資料收集器集合](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)）
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 套件
 
--   使用 "（objectClass = \*）" 以外的任何篩選準則進行搜尋，其使用祖系索引。
+-   使用 "（objectClass =\*）" 以外的任何篩選準則進行搜尋，其使用祖系索引。
 
 ### <a name="other-index-considerations"></a>其他索引考慮
 
 -   確定在微調查詢已用盡為選項之後，建立索引是問題的正確解決方案。 適當地調整硬體大小十分重要。 只有在適當的修正是要為屬性編制索引，而不是嘗試模糊處理硬體問題時，才應新增索引。
 
--   索引會增加資料庫的大小，其最小值為要編制索引之屬性的總大小。 因此，可以藉由採用屬性中資料的平均大小，並乘以將填入屬性的物件數目，來評估資料庫成長的估計。 這通常大約是資料庫大小增加 1%。 如需詳細資訊，請參閱[資料存放區的運作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   索引會增加資料庫的大小，其最小值為要編制索引之屬性的總大小。 因此，可以藉由採用屬性中資料的平均大小，並乘以將填入屬性的物件數目，來評估資料庫成長的估計。 這通常大約是資料庫大小增加1%。 如需詳細資訊，請參閱[資料存放區的運作方式](https://technet.microsoft.com/library/cc772829.aspx)。
 
 -   如果搜尋行為主要是在組織單位層級完成，請考慮編制容器化搜尋的索引。
 
--   元組索引比一般索引大，但估計大小的難度就愈多。 使用一般索引大小估計值作為成長的樓層，最大值為 20%。 如需詳細資訊，請參閱[資料存放區的運作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   元組索引比一般索引大，但估計大小的難度就愈多。 使用一般索引大小估計值作為成長的樓層，最大值為20%。 如需詳細資訊，請參閱[資料存放區的運作方式](https://technet.microsoft.com/library/cc772829.aspx)。
 
 -   如果搜尋行為主要是在組織單位層級完成，請考慮編制容器化搜尋的索引。
 
 -   需要元組索引，才能支援中詞搜尋字串和最終搜尋字串。 初始搜尋字串不需要元組索引。
 
-    -   初始搜尋字串–（samAccountName = MYPC @ no__t-0）
+    -   初始搜尋字串–（samAccountName = MYPC\*）
 
-    -   中詞搜尋字串-（samAccountName = \*MYPC @ no__t-1）
+    -   中詞搜尋字串-（samAccountName =\*MYPC\*）
 
-    -   最終搜尋字串–（samAccountName = \*MYPC $）
+    -   最終搜尋字串–（samAccountName =\*MYPC $）
 
 -   建立索引時將會產生磁片 i/o。 這會在優先順序較低的背景執行緒上完成，傳入要求會優先于索引組建。 如果環境的容量規劃已正確完成，這應該是透明的。 不過，大量寫入案例或網域控制站儲存體上負載不明的環境可能會降低用戶端體驗，而且應該在數小時後完成。
 
@@ -98,7 +98,7 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 -   [已編制索引的屬性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [Active Directory 伺服器的效能微調](index.md)
 - [硬體考量](hardware-considerations.md)

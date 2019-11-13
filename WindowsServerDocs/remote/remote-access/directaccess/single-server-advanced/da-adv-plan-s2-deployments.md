@@ -21,7 +21,7 @@ ms.locfileid: "71404924"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>步驟2規劃 Advanced DirectAccess 部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在規劃 DirectAccess 基礎結構之後，使用 IPv4 和 IPv6 在單一伺服器上部署進階 DirectAccess 的下一步，就是規劃「遠端存取安裝精靈」的設定。  
   
@@ -138,7 +138,7 @@ DirectAccess 需要三種類型的基礎結構伺服器：
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端  
 有些協力廠商 VPN 用戶端不會在 [網路連線] 資料夾中建立連線。 這可能導致在已建立 VPN 連線且有內部網路連線能力時，DirectAccess 將它判斷為沒有內部網路連線能力。 當協力廠商 VPN 用戶端藉由將其介面定義為「網路裝置介面規格」(NDIS) 端點類型來登錄這些介面時，就會發生這種情況。 您可以藉由在 DirectAccess 用戶端上將下列登錄值設定為 1，讓這些類型的 VPN 用戶端並存：  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces （REG_DWORD）**  
   
 有些協力廠商 VPN 用戶端使用分割通道設定，此設定會允許 VPN 用戶端電腦直接存取網際網路，而不需要透過 VPN 連線將流量傳送到內部網路。  
   
@@ -146,11 +146,11 @@ DirectAccess 需要三種類型的基礎結構伺服器：
   
 如果 VPN 連線列出的預設閘道為空白或全部為零 (0.0.0.0)，即表示您的 VPN 用戶端就是以這種方式設定的。 根據預設，DirectAccess 用戶端無法識別分割通道設定。 若要設定 DirectAccess 用戶端來偵測這些類型的 VPN 用戶端設定，並與其並存，請將下列登錄值設定為 1：  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection （REG_DWORD）**  
   
 ## <a name="previous-step"></a>上一步  
   
--   [步驟 1：規劃 DirectAccess 基礎結構 @ no__t-0  
+-   [步驟1：規劃 DirectAccess 基礎結構](da-adv-plan-s1-infrastructure.md)  
   
 
 

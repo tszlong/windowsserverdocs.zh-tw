@@ -18,7 +18,7 @@ ms.locfileid: "71408408"
 ---
 # <a name="deploying-federation-server-proxies"></a>部署同盟伺服器 Proxy
 
-若要在 Active Directory 同盟服務中部署同盟伺服器 proxy \(AD FS @ no__t-1，請完成 [Checklist 中的每一項工作：設定同盟伺服器 Proxy @ no__t-0。  
+若要在 Active Directory 同盟服務 \(AD FS\)中部署同盟伺服器 Proxy，請完成[檢查清單：設定同盟伺服器 Proxy](Checklist--Setting-Up-a-Federation-Server-Proxy.md)中的每個工作。  
   
 > [!NOTE]  
 > 當您使用此檢查清單時，建議您先閱讀[Windows server 2012 中 AD FS 設計指南中](https://technet.microsoft.com/library/dd807036.aspx)的同盟伺服器 proxy 規劃指引的參考，然後再開始設定伺服器的程式。 遵循檢查清單可進一步瞭解同盟伺服器 proxy 的設計和部署程式。  
