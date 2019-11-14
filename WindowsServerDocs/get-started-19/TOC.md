@@ -1,6 +1,6 @@
 # [開始使用 Windows Server 2019](get-started-19.md) 
 ## [Windows Server 2019 中的新功能](whats-new-19.md)
-## [Windows Server 版本 1903 中的新功能](whats-new-in-windows-server-1903.md)
+## [Windows Server 版本 1903 和 1909 中的新功能](whats-new-in-windows-server-1903-1909.md)
 ## [維護通道比較](servicing-channels-19.md)
 ## [安裝 | 升級 | 移轉](install-upgrade-migrate-19.md)
 ## [版本資訊：Windows Server 2019 中的重要問題](rel-notes-19.md)
