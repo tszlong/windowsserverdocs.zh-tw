@@ -17,7 +17,7 @@ ms.locfileid: "71356113"
 ---
 # <a name="server-certificate-deployment-planning"></a>伺服器憑證部署規劃
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在您部署伺服器憑證之前，您必須先規劃下列專案：  
   

@@ -31,7 +31,7 @@ ms.locfileid: "71407888"
   
 當同盟伺服器放在帳戶夥伴的公司網路時，其角色就是驗證瀏覽器、Web 服務或身分識別選取器用戶端的使用者認證，並將安全性權杖傳送給用戶端。 如需詳細資訊，請參閱＜ [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)＞。  
   
-當同盟伺服器放在資源夥伴的公司網路時，其角色是根據資源夥伴組織中的同盟伺服器所發出的安全性權杖來驗證使用者，或其角色是重新導向權杖要求針對用戶端所屬的帳戶夥伴組織，設定 Web 應用程式或 Web 服務。 如需詳細資訊，請參閱 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
+當同盟伺服器放在資源夥伴的公司網路時，其角色是根據資源夥伴組織中的同盟伺服器所發出的安全性權杖來驗證使用者，或其角色是重新導向權杖要求針對用戶端所屬的帳戶夥伴組織，設定 Web 應用程式或 Web 服務。 如需詳細資訊，請參閱 <<c0> [ 檢閱資源夥伴中的同盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>判斷要部署哪一種 AD FS 設計  
 當您想要部署下列任何一項 AD FS 設計時，您可以在組織中建立同盟伺服器：  
@@ -72,7 +72,7 @@ ms.locfileid: "71407888"
   
     如需如何將同盟伺服器加入至伺服陣列的詳細資訊，請參閱＜ [Add a Federation Server to a Federation Server Farm](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)＞。  
   
-如需其中每一個選項之運作方式的更詳細資訊，請參閱＜ [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)＞。  
+如需詳細的每一種選項之運作方式的相關資訊，請參閱[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
 如需如何設定所有必要的先決條件以部署同盟伺服器的詳細資訊，請參閱＜ [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)＞。  
   

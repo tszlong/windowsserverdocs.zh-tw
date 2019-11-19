@@ -52,7 +52,7 @@ ms.locfileid: "72591077"
 ## <a name="BKMK_2"></a>KCC  
 KCC 是在所有網域控制站上執行的內建程式，會產生 Active Directory 樹系的複寫拓撲。 KCC 會根據複寫是否發生在網站（站上）或網站間（站上），來建立不同的複寫拓撲。 KCC 也會動態調整拓撲，以配合新增網域控制站的加入、移除現有的網域控制站、在網站間移動網域控制站、變更成本和排程，以及網域控制站暫時無法使用或處於錯誤狀態。  
   
-在網站內，可寫入網域控制站之間的連線一律會以雙向環形排列，並以額外的快捷方式連線來減少大型網站中的延遲。 相反地，網站間拓撲是跨越樹狀結構的分層，這表示每個目錄分割的兩個網站之間存在一個站間連線，而且通常不會包含快捷方式連接。 如需跨越樹狀結構和 Active Directory 複寫拓撲的詳細資訊，請參閱 Active Directory 複寫拓撲技術參考（[ https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)）。  
+在網站內，可寫入網域控制站之間的連線一律會以雙向環形排列，並以額外的快捷方式連線來減少大型網站中的延遲。 相反地，網站間拓撲是跨越樹狀結構的分層，這表示每個目錄分割的兩個網站之間存在一個站間連線，而且通常不會包含快捷方式連接。 如需跨越樹狀結構和 Active Directory 複寫拓撲的詳細資訊，請參閱 Active Directory 複寫拓撲技術參考（[https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)）。  
   
 在每個網域控制站上，KCC 會建立一個單向的輸入連線物件來定義來自其他網域控制站的連線，藉以建立複寫路由。 對於相同網站中的網域控制站，KCC 會自動建立連線物件，而不需要系統管理介入。 當您有多個網站時，您可以設定網站之間的站台連結，而每個網站中的單一 KCC 也會自動在網站之間建立連線。  
   
@@ -64,16 +64,16 @@ KCC 是在所有網域控制站上執行的內建程式，會產生 Active Direc
   
 不過，舊版 Windows Server 作業系統上的中樞輪輻拓撲反白顯示的一個管理挑戰，是在中樞新增新的橋頭網域控制站之後，沒有自動機制可重新發佈分支網域控制站與中樞網域控制站之間的複寫連線，以利用新的中樞網域控制站。  
   
-對於 Windows Server 2003 網域控制站，您可以從 Windows Server 2003 Branch Office 部署指南（[ https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)）使用如 Adlb 的工具，重新平衡工作負載。  
+對於 Windows Server 2003 網域控制站，您可以從 Windows Server 2003 Branch Office 部署指南（[https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)）使用如 Adlb 的工具，重新平衡工作負載。  
   
 對於 Windows Server 2008 Rodc，KCC 正常運作會提供一些重新平衡，因此不需要使用額外的工具，例如 Adlb。 預設會啟用新功能。 您可以藉由在 RODC 上新增下列登錄機碼來停用它：  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\NTDS\Parameters**  
   
 **"Random BH Loadbalancing 允許"**  
 **1 = 已啟用（預設值），0 = 已停用**  
   
-如需有關這些 KCC 如何改善的詳細資訊，請參閱規劃和部署分公司的 Active Directory Domain Services （[ https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)）。  
+如需有關這些 KCC 如何改善的詳細資訊，請參閱規劃和部署分公司的 Active Directory Domain Services （[https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)）。  
   
 ## <a name="BKMK_3"></a>容錯移轉功能  
 網站可確保複寫會根據網路失敗和離線網域控制站來路由傳送。 KCC 會依照指定的間隔執行，以調整 AD DS 中發生之變更的複寫拓撲，例如新增新的網域控制站和建立新的網站時。 KCC 會檢查現有連接的複寫狀態，以判斷是否有任何連線無法運作。 如果連線因為網域控制站失敗而無法運作，則 KCC 會自動建立與其他複寫協力電腦的暫時連線（如果有的話），以確保會進行複寫。 如果網站中的所有網域控制站都無法使用，則 KCC 會自動從另一個網站的網域控制站之間建立複寫連線。  

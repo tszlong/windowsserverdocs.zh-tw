@@ -22,11 +22,11 @@ ms.locfileid: "71359257"
   
 -   [步驟1：-匯出服務設定](#step-1-export-service-settings)  
   
--   [步驟 2：備份自訂屬性存放區 @ no__t-0  
+-   [步驟2：備份自訂屬性存放區](#step-2-back-up-custom-attribute-stores)  
   
--   [步驟 3：備份網頁自訂 @ no__t-0  
+-   [步驟3：備份網頁自訂專案](#step-3-back-up-webpage-customizations)  
   
-## <a name="step-1-export-service-settings"></a>步驟 1:匯出服務設定  
+## <a name="step-1-export-service-settings"></a>步驟1：匯出服務設定  
  若要匯出服務設定，請執行下列程序：  
   
 ### <a name="to-export-service-settings"></a>匯出服務設定  
@@ -49,15 +49,15 @@ ms.locfileid: "71359257"
   
 若要尋找識別值，請檢查 [**服務**] 主控台中**AD FS 2.0 Windows 服務**的 [**登**入身分] 資料行，然後手動記錄值。  
   
-## <a name="step-2-back-up-custom-attribute-stores"></a>步驟 2:備份自訂屬性存放區  
+## <a name="step-2-back-up-custom-attribute-stores"></a>步驟2：備份自訂屬性存放區  
  您可以使用 Windows PowerShell 命令，尋找 AD FS 使用的自訂屬性存放區的相關資訊。 開啟 Windows PowerShell 並執行下列命令，將 AD FS Cmdlet 新增至 Windows PowerShell 工作階段： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然後執行下列命令來尋找自訂屬性存放區的相關資訊： `PSH:>Get-ADFSAttributeStore`。 升級或移轉自訂屬性存放區的步驟會有所不同。  
   
-## <a name="step-3-back-up-webpage-customizations"></a>步驟 3：備份網頁的自訂項目  
+## <a name="step-3-back-up-webpage-customizations"></a>步驟3：備份網頁自訂專案  
  若要備份任何網頁自訂，請從對應到 IIS 中虛擬路徑 **"/adfs/ls"** 的目錄複寫 AD FS 網頁**和 web.config 檔案**。 根據預設，它在 **%systemdrive%\inetpub\adfs\ls** 目錄中。  
 
 ## <a name="next-steps"></a>後續步驟
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)

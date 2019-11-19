@@ -35,19 +35,19 @@ ms.locfileid: "72588060"
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |-------|--------|
-|/sha1 \<hash >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法1（SHA1）雜湊。 在 Windows Server 2012 R2 和更舊版本中使用。|
-|/sha256 \<hash >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法256（SHA256）雜湊。 取代 Windows Server 2016 和更新版本中的/sha1。|
+|/sha1 \<雜湊 >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法1（SHA1）雜湊。 在 Windows Server 2012 R2 和更舊版本中使用。|
+|/sha256 \<雜湊 >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法256（SHA256）雜湊。 取代 Windows Server 2016 和更新版本中的/sha1。|
 |/q|無訊息模式。 當命令成功時沒有輸出，而如果命令失敗，則會產生最少的輸出。|
 |/v|詳細資訊模式。 顯示所有警告、訊息和狀態。|
 |/l|測試簽署和輸出結果，而不實際取代任何輸入檔。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   SHA1 或 SHA256 憑證指紋應該代表受信任的 .rdp 檔案發行者。 若要取得憑證指紋，請開啟 [憑證] 嵌入式管理單元，按兩下您要使用的憑證（不論是在本機電腦的憑證存放區或個人憑證存儲中），按一下 [**詳細資料**] 索引標籤，然後在**欄位**清單中，按一下 [**指紋**]。
+-   SHA1 或 SHA256 憑證指紋應該代表受信任的 .rdp 檔案發行者。 若要取得憑證指紋，請開啟 [憑證] 嵌入式管理單元，按兩下您要使用的憑證（在本機電腦的憑證存放區或個人憑證存儲中），按一下 [**詳細資料**] 索引標籤，然後在 [**欄位**] 清單中按一下 [**指紋**]。
 
     > [!NOTE]
     > 當您複製指紋以與 rdpsign.exe 搭配使用時，您必須移除任何空格。
@@ -72,4 +72,5 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
   ## <a name="see-also"></a>請參閱
-  @No__t_1[ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)
+  
+  [ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)
