@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5889ae43c4b572ae75c8df10d0c47fc21337d558
-ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
+ms.openlocfilehash: e20913b1245ce7e453b87e9b88a7a418a5c71de2
+ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413263"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166177"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -44,21 +44,11 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 若要解決此問題，請使用或升級至 Windows Server 2019 build 1809 或更新版本。
 
-## <a name="storage-migration-service-doesnt-let-you-choose-static-ip-on-cutover"></a>儲存體遷移服務不會讓您在轉換時選擇靜態 IP
-
-在 Windows 系統管理中心使用0.57 版的儲存體遷移服務延伸模組，且您進入切換階段時，您無法選取位址的靜態 IP。 系統會強制您使用 DHCP。
-
-若要解決此問題，請在 Windows 系統管理中心的 [**設定**]  >  [**延伸**模組] 底下，檢查是否有可用來安裝的更新版本儲存體遷移服務0.57.2 的警示。 您可能需要重新開機 Windows 系統管理中心的 [瀏覽器] 索引標籤。
-
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>儲存體遷移服務轉換驗證失敗，錯誤為「目的地電腦上的權杖篩選原則拒絕存取」
 
 執行轉換驗證時，您會收到「失敗：存取目的地電腦上的權杖篩選原則」錯誤。 即使您為來源和目的電腦提供正確的本機系統管理員認證，也會發生這種情況。
 
-此問題是由 Windows Server 2019 中的程式碼瑕疵所造成。 當您使用目的地電腦作為儲存體遷移服務協調器時，將會發生此問題。
-
-若要解決此問題，請在不是預定遷移目的地的 Windows Server 2019 電腦上安裝儲存體遷移服務，然後使用 Windows 管理中心連線到該伺服器並執行遷移。
-
-我們已在較新版本的 Windows Server 中修正此問題。 請透過[Microsoft 支援服務](https://support.microsoft.com)開啟支援案例，以要求建立此修正程式的將。
+此問題已在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中修正。 
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>儲存體遷移服務未包含在 Windows Server 2019 評估或 Windows Server 2019 Essentials 版本中
 
@@ -105,16 +95,6 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 我們想要在較新版本的 Windows Server 2019 中變更此行為。  
 
-## <a name="cutover-fails-when-migrating-between-networks"></a>在網路間遷移時轉換失敗
-
-當您遷移至與來源不同的網路（例如 Azure IaaS 實例）中執行的目的地電腦時，如果來源使用靜態 IP 位址，則無法完成轉換。 
-
-這是設計的行為，可防止從使用者、應用程式和透過 IP 位址連線的腳本進行遷移後的連線問題。 將 IP 位址從舊來源電腦移至新的目的地目標時，不會與新的網路子網資訊（可能是 DNS 和 WINS）相符。
-
-若要解決此問題，請在相同網路上的電腦上執行遷移。 然後將該電腦移至新的網路，並重新指派其 IP 資訊。 例如，如果遷移至 Azure IaaS，請先遷移至本機 VM，然後使用 Azure Migrate 將 VM 移至 Azure。  
-
-我們已在較新版本的 Windows 管理中心修正此問題。 我們現在可讓您指定不會改變目的地伺服器網路設定的遷移。 已更新的擴充功能將在發行時列于此處。 
-
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>目的地 proxy 和認證系統管理許可權的驗證警告
 
 驗證傳送作業時，您會看到下列警告：
@@ -153,7 +133,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 目的地檔案：
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher .png D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S:PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/save out .txt/t thatcher .png D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S： PAINO_ACCESS_CONTROL**
 
 DFSR Debug 記錄檔：
 
@@ -163,17 +143,7 @@ DFSR Debug 記錄檔：
 
   複製 ACL 雜湊：**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** LastWriteTime： 20190308 18：09： 44.876 FileSizeLow： 1131654 FileSizeHigh：0屬性：32 
 
-此問題是由儲存體遷移服務用來設定安全性 audit Acl （SACL）的程式庫中的程式碼脫離所造成。 當 SACL 是空的時，會不慎設定非 null 的 SACL，而導致 DFSR 正確識別雜湊不符。 
-
-若要解決此問題，請繼續針對[dfsr 預先植入和 Dfsr 資料庫複製作業](../dfs-replication/preseed-dfsr-with-robocopy.md)（而不是儲存體遷移服務）使用 Robocopy。 我們正在調查此問題，並打算在較新版本的 Windows Server 中解決此問題，而且可能是 backport Windows Update。 
-
-## <a name="error-404-when-downloading-csv-logs"></a>下載 CSV 記錄檔時發生錯誤404
-
-嘗試在傳送作業結束時下載傳輸或錯誤記錄檔時，您會收到錯誤：
-
-  $jobname：傳輸記錄檔： ajax 錯誤404
-
-如果您未在 orchestrator 伺服器上啟用「檔案及印表機共用（SMB）」防火牆規則，就會發生此錯誤。 Windows 系統管理中心檔案下載需要連線電腦上的埠 TCP/445 （SMB）。  
+[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新已修正此問題
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>從 Windows Server 2008 R2 傳輸時，發生錯誤「無法在任何端點上轉移存放裝置」
 
@@ -213,7 +183,7 @@ DFSR Debug 記錄檔：
 
 ## <a name="error-0x80005000-when-running-inventory"></a>執行清查時發生錯誤0x80005000
 
-安裝[KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534)並嘗試執行清查之後，清查會失敗，並出現錯誤：
+安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)並嘗試執行清查之後，清查會失敗，並出現錯誤：
 
   來自 HRESULT 的例外狀況：0x80005000
   
@@ -287,7 +257,7 @@ DFSR Debug 記錄檔：
    
 2.  啟動儲存體遷移服務服務，這會建立新的資料庫。
 
-## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>錯誤「CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 無法針對網路伺服器資源進行故障」，而 Windows Server 2008 R2 叢集轉換失敗
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>錯誤「針對網路服務名稱的 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失敗」和 Windows Server 2008 R2 叢集轉換失敗
 
 嘗試在 Windows Server 2008 R2 叢集來源上執行剪下時，切換會停滯在階段「重新命名來源電腦 ...」而且您會收到下列錯誤：
 
@@ -306,6 +276,43 @@ DFSR Debug 記錄檔：
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
 這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後變更目的地叢集網路名稱和 IP，以手動執行切換要與原始來源相符的位址。 
+
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-comnputer"></a>在來源 comnputer 上的「38% 對應網路介面已停止回應」 
+
+當嘗試在來源電腦上執行剪下時，將來源電腦設定為在一或多個網路介面上使用新的靜態（而非 DHCP） IP 位址時，剪下會停滯在「來源 comnputer 上的「38% 對應網路介面」階段 ...」而且您會在 SMS 事件記錄檔中收到下列錯誤：
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          11/13/2019 3:47:06 PM
+    Event ID:      20494
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      orc2019-rtm.corp.contoso.com
+    Description:
+    Couldn't set the IP address on the network adapter.
+
+    Computer: fs12.corp.contoso.com
+    Adapter: microsoft hyper-v network adapter
+    IP address: 10.0.0.99
+    Network mask: 16
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+Examinining 來源電腦顯示原始 IP 位址無法變更。 
+
+如果您在 Windows 系統管理中心的 [設定轉換] 畫面上選取 [使用 DHCP]，則只有在指定新的靜態 IP 位址、子網和閘道時，才會發生此問題。 
+
+此問題是因為[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中的回歸所造成。 此問題目前有兩個解決方法：
+
+  - 切換之前：在切換前不要設定新的靜態 IP 位址，請選取 [使用 DHCP]，並確定 DHCP 領域涵蓋該子網。 SMS 會將來源電腦設定為在來源電腦介面上使用 DHCP，而將其切換為正常進行。 
+  
+  - 如果 [剪下] 已停滯，請在確定 DHCP 領域涵蓋該子網後，登入來源電腦，並在其網路介面上啟用 DHCP。 當來源電腦取得 DHCP 提供的 IP 位址時，SMS 會在正常情況下繼續進行切換。
+  
+在這兩種因應措施中，在完成之後，您就可以視需要在舊的來源電腦上設定靜態 IP 位址，並使用 DHCP 來停止。   
 
 ## <a name="see-also"></a>請參閱
 

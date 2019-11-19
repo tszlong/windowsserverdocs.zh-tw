@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a52676ffc89c9fc5ce0eba4f44407e76520fef0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407436"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163098"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題（FAQ）
 
@@ -71,6 +71,8 @@ AD FS 支援多個多樹系設定，並依賴基礎 AD DS 信任網路來驗證�
 - 在單向樹系信任（例如包含合作夥伴身分識別的 DMZ 樹系）的事件中，我們建議在 corp 樹系中部署 ADFS，並將 DMZ 樹系視為另一個本機宣告提供者信任透過 LDAP 連線。 在此情況下，Windows 整合式驗證將無法用於 DMZ 樹系使用者，而且需要執行密碼驗證，因為這是唯一支援的 LDAP 機制。 如果您無法採用此選項，您將需要在 DMZ 樹系中設定另一個 ADFS，並在 corp 樹系的 ADFS 中將它新增為宣告提供者信任。 使用者必須進行主領域探索，但 Windows 整合式驗證和密碼驗證都能正常執行。 請在 DMZ 樹系中的 ADFS 發佈規則中進行適當的變更，因為 corp 樹系中的 ADFS 將無法從 DMZ 樹系取得使用者的額外使用者資訊。
 - 雖然支援網域層級信任且可以使用，但我們強烈建議您移至樹系層級信任模型。 此外，您還需要確保名稱的 UPN 路由和 NETBIOS 名稱解析必須能夠正確地正常執行。
 
+>[!NOTE]  
+>如果選用 authentication 與雙向信任設定搭配使用，請確定呼叫者使用者被授與目標服務帳戶的「允許驗證」許可權。 
 
 
 ## <a name="design"></a>設計
@@ -103,17 +105,17 @@ Apple 已發行一組稱為應用程式傳輸安全性（ATS）的需求，可�
 
 ## <a name="developer"></a>開發人員
 
-### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>針對以 AD 進行驗證的使用者產生 id_token with ADFS 時，如何在 id_token 中產生「子」宣告？
+### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>針對以 AD 進行驗證的使用者產生具有 ADFS 的 id_token 時，如何在 id_token 中產生「子」宣告？
 "Sub" 宣告的值是用戶端識別碼 + 錨點宣告值的雜湊。
 
 ### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>當使用者透過 WS-ADDRESSING/SAML-P 透過遠端宣告提供者信任登入時，重新整理權杖/存取權杖的存留期為何？
 重新整理權杖的存留期會是 ADFS 從遠端宣告提供者信任所得到權杖的存留期。 存取權杖的存留期將是發出存取權杖之信賴憑證者的權杖存留期。
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>除了 OpenId 範圍之外，我還需要傳回設定檔和電子郵件範圍。 我可以使用範圍取得其他資訊嗎？ 如何在 AD FS 中執行？
-您可以使用自訂的 id_token，在 id_token 本身新增相關資訊。 如需詳細資訊，請參閱[自訂要在 id_token 中發出的宣告](../development/Custom-Id-Tokens-in-AD-FS.md)一文。
+您可以使用自訂的 id_token，在 id_token 本身新增相關資訊。 如需詳細資訊，請參閱[自訂要在 id_token 中發出的宣告](../development/Custom-Id-Tokens-in-AD-FS.md)文章。
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>如何在 JWT 權杖內發行 json blob？
-AD FS 2016 中已加入<http://www.w3.org/2001/XMLSchema#json>這個的特殊 ValueType （""）和 escape 字元（\x22）。 請參閱下列適用于發佈規則的範例，以及來自存取權杖的最終輸出。
+AD FS 2016 中已加入這個的特殊 ValueType （"<http://www.w3.org/2001/XMLSchema#json>"）和 escape 字元（\x22）。 請參閱下列適用于發佈規則的範例，以及來自存取權杖的最終輸出。
 
 範例發行規則：
 
@@ -124,23 +126,23 @@ AD FS 2016 中已加入<http://www.w3.org/2001/XMLSchema#json>這個的特殊 Va
     "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
 
 ### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>我可以將資源值當做範圍值的一部分來傳遞，像是如何對 Azure AD 進行要求？
-使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如：  
+使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如  
 **< 建立有效的範例要求 >**
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>AD FS 是否支援 PKCE 延伸模組？
 伺服器2019中的 AD FS 支援 OAuth 授權碼授與流程的程式碼交換的證明金鑰（PKCE）
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>AD FS 支援哪些允許的範圍？
-- aza-如果使用訊息[代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)，而且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及設定 refresh_token_expires_in 欄位到新主要重新整理權杖的存留期（如果有強制執行）。
+- aza-如果使用訊息[代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)模組，且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及將 [refresh_token_expires_in] 欄位設定為新主要重新整理權杖的存留期（如果有強制執行）。
 - openid-允許應用程式要求使用 OpenID Connect 授權通訊協定。
 - logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整的 PKI 回應。 [這裡](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。 
-- user_impersonation-必須有 user_impersonation 範圍，才能成功地向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理者（OBO）建立多層式應用程式](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)。
+- user_impersonation-必須有 user_impersonation 範圍，才能成功向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理者（OBO）建立多層式應用程式](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)。
 - vpn_cert-vpn_cert 範圍可讓應用程式要求 VPN 憑證，其可用來建立使用 EAP-TLS 驗證的 VPN 連線。 這已不再受到支援。
 - 電子郵件-允許應用程式要求已登入使用者的電子郵件宣告。 這已不再受到支援。 
 - 設定檔-允許應用程式要求登入使用者的設定檔相關宣告。 這已不再受到支援。 
 
 
-## <a name="operations"></a>作業
+## <a name="operations"></a>操作
 
 ### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>如何? 取代 AD FS 的 SSL 憑證？
 AD FS SSL 憑證與 AD FS 管理嵌入式管理單元中找到的 AD FS 服務通訊憑證不同。  若要變更 AD FS SSL 憑證，您必須使用 PowerShell。 遵循下列文章中的指導方針：
@@ -185,11 +187,11 @@ AD FS SSL 憑證與 AD FS 管理嵌入式管理單元中找到的 AD FS 服務�
 
 **已註冊的裝置**
 
-- PRT 和 SSO cookie：90天的最大值，受 PSSOLifeTimeMins 控管。 （提供的裝置至少每隔14天會使用，其由 DeviceUsageWindow 所控制）
+- PRT 和 SSO cookie：90天的最大值，由 PSSOLifeTimeMins 控管。 （提供的裝置至少每隔14天會使用，其由 DeviceUsageWindow 所控制）
 
 - 重新整理權杖：根據上面的計算來提供一致的行為
 
-- access_token:預設為1小時，根據信賴憑證者
+- access_token：預設為1小時，根據信賴憑證者
 
 - id_token：與存取權杖相同
 
@@ -200,7 +202,7 @@ AD FS SSL 憑證與 AD FS 管理嵌入式管理單元中找到的 AD FS 服務�
 
 - 重新整理權杖：預設為8小時。 已啟用 KMSI 的24小時
 
-- access_token:預設為1小時，根據信賴憑證者
+- access_token：預設為1小時，根據信賴憑證者
 
 - id_token：與存取權杖相同
 
@@ -216,9 +218,9 @@ Web 驗證流量的所有 AD FS 端點都會以獨佔方式透過 HTTPS 開啟�
 
 ### <a name="x-ms-forwarded-client-ip-does-not-contain-the-ip-of-the-client-but-contains-ip-of-the-firewall-in-front-of-the-proxy-where-can-i-get-the-right-ip-of-the-client"></a>X-ms 轉送-用戶端 ip 不包含用戶端的 IP，而是包含 proxy 前面的防火牆 IP。 哪裡可以取得正確的用戶端 IP？
 不建議在 WAP 之前進行 SSL 終止。 如果在 WAP 前面完成 SSL 終止，則 X 毫秒轉送的用戶端 ip 將包含 WAP 前面的網路裝置 IP。 以下是 AD FS 支援的各種 IP 相關宣告的簡短說明：
- - x-ms-用戶端 ip：連線到 STS 之裝置的網路 IP。  在外部網路要求的情況下，這一律包含 WAP 的 IP。
- - x-毫秒-轉送-用戶端 ip：多重值宣告，其中會包含由 Exchange Online 轉送至 ADFS 的任何值，加上連接到 WAP 的裝置 IP 位址。
- - Userip:針對外部網路要求，此宣告會包含「x-毫秒-轉送-用戶端 ip」的值。  針對內部網路要求，此宣告會包含與 [x-ms-用戶端 ip] 相同的值。
+ - x-ms-用戶端-ip：連線到 STS 之裝置的網路 IP。  在外部網路要求的情況下，這一律包含 WAP 的 IP。
+ - x-ms 轉送-用戶端 ip：多重值宣告，其中會包含由 Exchange Online 轉送至 ADFS 的任何值，加上連接到 WAP 的裝置 IP 位址。
+ - Userip：針對外部網路要求，此宣告會包含「x-毫秒-轉送-用戶端 ip」的值。  針對內部網路要求，此宣告會包含與 [x-ms-用戶端 ip] 相同的值。
 
  此外，在 AD FS 2016 （具有最新的修補程式）和更高版本中，也支援捕捉 x 轉送的標頭。 在第3層（保留 IP）未轉寄的任何負載平衡器或網路裝置，都應該將連入的用戶端 IP 新增至業界標準 x 轉送的標頭。 
 
@@ -230,10 +232,10 @@ AD FS 的使用者資訊端點一律會傳回 OpenID 標準中所指定的主體
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>為什麼我會看到無法將 AD FS 服務帳戶新增至 Enterprise Key Admins 群組的警告？
 只有當網域中存在具有 FSMO PDC 角色的 Windows 2016 網域控制站時，才會建立此群組。 若要解決此錯誤，您可以手動建立群組，並遵循下列步驟，在將服務帳戶新增為群組成員之後，授與必要的許可權。
-1.  開啟 [Active Directory 使用者和電腦]。
+1.  開啟 **\[Active Directory 使用者和電腦\]** 。
 2.  在流覽窗格中，以**滑鼠右鍵按一下**您的功能變數名稱，然後**按一下**[屬性]。
-3.  **按一下**安全性 （如果 安全性 索引標籤，開啟進階功能檢視 功能表中）。
-4.  **按一下**進階。 **按一下**新增。 **按一下**選取一個主體。
+3.  **按一下**安全性（如果遺失 [安全性] 索引標籤，請從 [View] 功能表開啟 [Advanced Features]）。
+4.  **按一下**提前. **按一下**載入. **按一下**選取 [主體]。
 5.  [選取使用者、電腦、服務帳戶或群組] 對話方塊隨即出現。  在 [輸入要選取的物件名稱] 文字方塊中，輸入 Key Admin Group。  按一下 [確定]。
 6.  在 [套用至] 清單方塊中，選取 [子系**使用者物件**]。
 7.  使用捲軸，並**按一下**頁面底部的 [全部清除]。
@@ -280,7 +282,7 @@ AD FS 不支援 HEAD 要求。  應用程式不應該對 AD FS 端點使用 HEAD
 
     a. netsh HTTP add sslcert hostnameport = fs。 contoso .com： 443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
 
-    b. netsh HTTP add sslcert hostnameport = localhost： 443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
+    b。 netsh HTTP add sslcert hostnameport = localhost： 443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
 
     c. netsh HTTP add sslcert hostnameport = fs。 contoso .com： 49443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices
 
@@ -299,7 +301,7 @@ AD FS 不支援 HEAD 要求。  應用程式不應該對 AD FS 端點使用 HEAD
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>當 Web 應用程式 Proxy （WAP）伺服器位於 Azure Web 應用程式防火牆（WAF）後方時，是否支援 ADFS？
 ADFS 和 Web 應用程式伺服器支援任何不會在端點上執行 SSL 終止的防火牆。 此外，ADFS/WAP 伺服器具有內建機制，可防止常見的 web 攻擊，例如跨網站腳本、ADFS proxy，以及滿足[MS ADFSPIP 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)所定義的所有需求。
 
-### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>我看到「事件441：找到具有錯誤標記系結機碼的權杖。」 我該怎麼做才能解決此問題？
+### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>我看到「事件441：找到具有錯誤標記系結機碼的權杖」。 我該怎麼做才能解決此問題？
 在 AD FS 2016 中，會自動啟用權杖系結，並會導致發生此錯誤的 proxy 和同盟案例有多個已知問題。 若要解決此問題，請執行下列 Powershell 命令，並移除權杖系結支援。
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`
