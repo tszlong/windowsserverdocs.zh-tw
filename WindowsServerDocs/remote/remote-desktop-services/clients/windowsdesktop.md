@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567169"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019605"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>開始使用 Windows 桌面用戶端
 
@@ -36,8 +36,8 @@ ms.locfileid: "73567169"
 選擇符合您 Windows 版本的用戶端：
 
 - [Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2068602)
-- [Windows 32 位元預覽](https://go.microsoft.com/fwlink/?linkid=2098960)
-- [Windows ARM64 預覽](https://go.microsoft.com/fwlink/?linkid=2098961)
+- [Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 您可以為目前使用者安裝用戶端，這不需要系統管理員權限，或者您的系統管理員可以安裝和設定用戶端，讓裝置上的所有使用者都可以存取它。
 

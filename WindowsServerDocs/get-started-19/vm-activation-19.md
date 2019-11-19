@@ -12,12 +12,12 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8887f2419176dd187ab01fb4d04988000c7ba74d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 43c0ce500058bd4115d58b68dc79068a52c0bb3e
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391908"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956087"
 ---
 # <a name="automatic-virtual-machine-activation"></a>自動虛擬機器啟用
 
@@ -49,9 +49,9 @@ AVMA 需要執行 Windows Server 2019 Datacenter、Windows Server 2016 Datacente
 
 以下是不同版本主機可以啟用的客體：
 
-|伺服器主機版本|Windows Server Standard 2012 R2|Windows Server 2016|Windows Server 2012 R2|
+|伺服器主機版本|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
-|Windows Server Standard 2012 R2|X|X|X|
+|Windows Server 2019|X|X|X|
 |Windows Server 2016| |X|X|
 |Windows Server 2012 R2| ||X|
 
@@ -88,7 +88,7 @@ AVMA 需要執行 Windows Server 2019 Datacenter、Windows Server 2016 Datacente
 |Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 |Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
-下列 AVMA 金鑰可用於 Windows Server 1809 版。
+下列 AVMA 金鑰可用於 Windows Server 1909、1903 和 1809 版。
 
 |版本|   AVMA 金鑰|
 |-|-|
@@ -134,7 +134,7 @@ AVMA 需要執行 Windows Server 2019 Datacenter、Windows Server 2016 Datacente
 
   - RDP 位址
 
-如需有關如何取得這項資訊的詳細資訊，請參閱 [Hyper-V 指令碼：了解 KVP GuestIntrinsicExchangeItems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)。
+如需有關如何取得這項資訊的詳細資訊，請參閱 [Hyper-V 指令碼：了解 KVP GuestIntrinsicExchangeItems](https://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)。
 
 
 > [!NOTE]

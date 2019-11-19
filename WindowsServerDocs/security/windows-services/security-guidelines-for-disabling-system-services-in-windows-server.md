@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 54352f47a31826b91b5696eb90104ca166a4299d
-ms.sourcegitcommit: 18f6b104e73e0397009283d55bee7984ac7ef0d1
+ms.openlocfilehash: 1711eb94b622775feaf02f6bada596fe03b08ea9
+ms.sourcegitcommit: b8e120fc574450e9eee13e7315424137a43e6a6c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73632656"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74044802"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>在包含桌面體驗的 Windows Server 2016 上停用系統服務的指引
 
@@ -68,7 +68,7 @@ Microsoft 建議不要套用原則來停用預設未安裝的服務。
 |---|---|
 |**服務描述**|   服務的描述 (來自 sc.exe qdescription)。|
 |**名稱** |服務的金鑰 (內部) 名稱|
-|**安裝** |必須安裝：服務位於 Server Core 及包含桌面體驗的伺服器上。 僅包含桌面體驗：服務位於包含桌面體驗的 Windows Server 2016 上，但***不***在 Server Core 上 |
+|**安裝** | *必須安裝*：服務已安裝於 Windows Server 2016 Core 和具有桌面體驗的 Windows Server 2016。 *僅包含桌面體驗*：服務位於具有桌面體驗的 Windows Server 2016 上，但***未***安裝於 Server Core 上。 |
 |**StartType**  |Windows Server 2016 上的服務啟動類型|
 |**建議** |Microsoft 建議/通知在管理完善的典型企業部署中，在未將伺服器用來作為終端使用者桌面取代項目的情況下，於 Windows Server 2016 上停用此服務。|
 |**註解** |其他說明|

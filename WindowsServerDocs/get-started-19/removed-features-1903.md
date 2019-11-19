@@ -4,22 +4,22 @@ description: 以下清單列出的 Windows Server 1903 版特性與功能已從�
 ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
-ms.date: 08/22/2019
+ms.date: 10/15/2019
 author: jasongerend
 ms.author: jgerend
 manager: daveba
-ms.openlocfilehash: b31cde8216b3ceb230c9c197924b40e8cc8fc3f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b72f75509e9a50477bb1857782ef5dd4e2670b3f
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361183"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956117"
 ---
-# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>從 Windows Server 版本 1903 開始移除或計劃取代的功能
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903-and-1909"></a>從 Windows Server 版本 1903 和 1909 開始移除或計劃取代的功能
 
->適用於：Windows Server 版本 1903
+>適用於：Windows Server 版本 1903 和 1909
 
-以下清單列出的 Windows Server 1903 版特性與功能已從該版本的產品中移除，或開始考慮可能在後續版本中取代。 適用對象是在商業環境中更新作業系統的 IT 專業人員。 **此清單的後續版本可能會變更，並非所有受影響的特色或功能都包含在其中。**
+以下清單列出的 Windows Server 版本 1903 和 1909 特性與功能已從該版本的產品中移除，或開始考慮可能在後續版本中取代。 適用對象是在商業環境中更新作業系統的 IT 專業人員。 **此清單的後續版本可能會變更，並非所有受影響的特色或功能都包含在其中。**
 
 另請參閱 [Windows Server 中已移除或計劃取代的功能](removed-features.md)。
 
@@ -32,7 +32,7 @@ ms.locfileid: "71361183"
 
 |                         功能                         |                                                                                                                                                                                                                                                                                                                                                                                                                           您可以改用                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              Wi-Fi WEP 和 TKIP (**新增**)               |                                                                                                                                                                  使用舊版 WEP 和 TKIP 加密的 Wi-Fi 網路並不如使用 AES (例如 WPA2 和 WPA3) 的 Wi-Fi 網路安全。 在 Windows 10 版本 1903 中，連線到 WEP 或 TKIP 網路時將會顯示網路不安全的警告訊息，但 Windows Server 版本 1903 中不會顯示任何訊息。 在未來的版本中，任何使用這些舊式加密連接到 Wi-Fi 網路的連線都將遭到拒絕。 如需有關 WEP 和 TKIP 安全性風險的詳細資訊，請參閱此[部落格文章](https://go.microsoft.com/fwlink/p/?linkid=2008426)。                                                                                                                                                                   |
+|              LBFO 上的 Hyper-V vSwitch                |                                                                                                                                                                  在未來版本中，Hyper-V vSwitch 將不再具有繫結至 LBFO 小組的功能。 相反地，它必須透過 [交換器內嵌小組 (SET)](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md#switch-embedded-teaming-set) 加以繫結。                                                                                                                                                                    |
 |       XDDM 型遠端顯示驅動程式 (**新增**)        |                                                                                                                                          從此版本開始，遠端桌面服務會針對單一工作階段的遠端桌面，使用以 Windows 顯示驅動程式模型 (WDDM) 為基礎的間接顯示驅動程式 (IDD)。 未來版本中將移除以 Windows 2000 顯示驅動程式模型 (XDDM) 為基礎的遠端顯示驅動程式支援。 獨立軟體廠商若使用以 XDDM 為基礎的遠端顯示驅動程式，則應開始計畫遷移至 WDDM 驅動程式模型。 若要深入了解如何實作遠端顯示的間接顯示驅動程式 ISV，請連絡 [rdsdev@microsoft.com](mailto:rdsdev@microsoft.com)。                                                                                                                                           |
 |            UCS 記錄收集工具 (**新增**)            |                                                                                                                                                                                                                                                                                                                                                         雖然 UCS 記錄收集工具並非明確地用於 Windows Server，但仍由 Windows 10 上的意見反應中樞所取代。                                                                                                                                                                                                                                                                                                                                                         |
 |              Hyper-V 中的金鑰存放磁碟機               |                                                                                                                                                                                                        Hyper-V 中將不再使用金鑰存放磁碟機功能。 如果您使用第 1 代 VM，請參閱[第 1 代 VM 虛擬化安全性](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v)，以了解之後的相關資訊。 如果您要建立新的 VM，請使用搭配 TPM 裝置的第 2 代虛擬機器，以取得更安全的解決方案。                                                                                                                                                                                                         |

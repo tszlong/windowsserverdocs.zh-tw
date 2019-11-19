@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567063"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019587"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -30,14 +30,14 @@ ms.locfileid: "73567063"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|Public     |1.2.247  |
-|測試人員    |1.2.428  |
+|Public     |1.2.431  |
+|測試人員    |1.2.431  |
 
-## <a name="updates-for-version-12428"></a>1\.2.428 版的更新
+## <a name="updates-for-version-12431"></a>1\.2.431 版的更新
 
-*發行日期：2019/10/31*
+*發行日期：2019/11/12*
 
-- 現已推出 32 位元和 ARM64 版本的用戶端預覽！
+- 現已推出 32 位元和 ARM64 版本的用戶端！
 - 現在，用戶端會儲存您對連線列所做的任何變更 (例如其位置、大小和釘選狀態)，並將這些變更套用至工作階段。
 - 更新的閘道資訊和連線狀態對話方塊。
 - 已解決在 Azure Active Directory 權杖過期之後嘗試連線時，同時提示兩個認證的問題。
