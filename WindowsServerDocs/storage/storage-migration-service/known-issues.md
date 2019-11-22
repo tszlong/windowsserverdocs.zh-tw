@@ -1,6 +1,6 @@
 ---
-title: 儲存體遷移服務的已知問題
-description: 儲存體遷移服務的已知問題和疑難排解支援，例如如何收集 Microsoft 支援服務的記錄。
+title: Storage Migration Service known issues
+description: Known issues and troubleshooting support for Storage Migration Service, such as how to collect logs for Microsoft Support.
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
@@ -8,69 +8,69 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e20913b1245ce7e453b87e9b88a7a418a5c71de2
-ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
+ms.openlocfilehash: 46a1e2aa8c116f79c164448ab5644a7dda9607c8
+ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166177"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310374"
 ---
-# <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
+# <a name="storage-migration-service-known-issues"></a>Storage Migration Service known issues
 
-本主題包含使用[儲存體遷移服務](overview.md)來遷移伺服器時的已知問題的解答。
+This topic contains answers to known issues when using [Storage Migration Service](overview.md) to migrate servers.
 
-儲存體遷移服務的發行分為兩個部分： Windows Server 中的服務，以及 Windows 系統管理中心內的使用者介面。 此服務適用于 Windows Server、長期維護通道，以及 Windows Server、半年通道、雖然 Windows 系統管理中心可供個別下載。 我們也會定期包含 Windows Server 累計更新中的變更（透過 Windows Update 發行）。 
+Storage Migration Service is released in two parts: the service in Windows Server, and the user interface in Windows Admin Center. The service is available in Windows Server, Long-Term Servicing Channel, as well as Windows Server, Semi-Annual Channel; while Windows Admin Center is available as a separate download. We also periodically include changes in cumulative updates for Windows Server, released via Windows Update. 
 
-例如，Windows Server 1903 版包含儲存體遷移服務的新功能和修正，其也適用于 Windows Server 2019 和 Windows Server 1809 版，安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)。
+For example, Windows Server, version 1903 includes new features and fixes for Storage Migration Service, which are also available for Windows Server 2019 and Windows Server, version 1809 by installing [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534).
 
-## <a name="collecting-logs"></a>如何在使用 Microsoft 支援服務時收集記錄檔
+## <a name="collecting-logs"></a> How to collect log files when working with Microsoft Support
 
-儲存體遷移服務包含 Orchestrator 服務和 Proxy 服務的事件記錄檔。 Urchestrator 伺服器一律會同時包含事件記錄檔，以及已安裝 proxy 服務的目的地伺服器包含 proxy 記錄。 這些記錄檔位於：
+The Storage Migration Service contains event logs for the Orchestrator service and the Proxy Service. The urchestrator server always contains both event logs, and destination servers with the proxy service installed contain the proxy logs. These logs are located under:
 
-- 應用程式和服務記錄檔 \ Microsoft \ Windows \ StorageMigrationService
-- 應用程式和服務記錄檔 \ Microsoft \ Windows \ StorageMigrationService-Proxy
+- Application and Services Logs \ Microsoft \ Windows \ StorageMigrationService
+- Application and Services Logs \ Microsoft \ Windows \ StorageMigrationService-Proxy
 
-如果您需要收集這些記錄以進行離線查看或傳送至 Microsoft 支援服務，GitHub 上有開放原始碼 PowerShell 腳本可供使用：
+If you need to gather these logs for offline viewing or to send to Microsoft Support, there is an open source PowerShell script available on GitHub:
 
- [儲存體遷移服務協助程式](https://aka.ms/smslogs) 
+ [Storage Migration Service Helper](https://aka.ms/smslogs) 
 
-請參閱讀我檔案以取得使用方式。
+Review the README for usage.
 
-## <a name="storage-migration-service-doesnt-show-up-in-windows-admin-center-unless-managing-windows-server-2019"></a>除非管理 Windows Server 2019，否則存放裝置遷移服務不會顯示在 Windows 系統管理中心
+## <a name="storage-migration-service-doesnt-show-up-in-windows-admin-center-unless-managing-windows-server-2019"></a>Storage Migration Service doesn't show up in Windows Admin Center unless managing Windows Server 2019
 
-使用1809版的 Windows 管理中心來管理 Windows Server 2019 orchestrator 時，您看不到儲存體遷移服務的工具選項。 
+When using the 1809 version of Windows Admin Center to manage a Windows Server 2019 orchestrator, you don't see the tool option for Storage Migration Service. 
 
-Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會管理 Windows Server 2019 1809 版或更新版本的作業系統。 如果您使用它來管理舊版的 Windows Server 作業系統或 insider preview，則不會顯示此工具。 此行為是設計使然。 
+The Windows Admin Center Storage Migration Service extension is version-bound to only manage Windows Server 2019 version 1809 or later operating systems. If you use it to manage older Windows Server operating systems or insider previews, the tool will not appear. 此行為是設計使然。 
 
-若要解決此問題，請使用或升級至 Windows Server 2019 build 1809 或更新版本。
+To resolve, use or upgrade to Windows Server 2019 build 1809 or later.
 
-## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>儲存體遷移服務轉換驗證失敗，錯誤為「目的地電腦上的權杖篩選原則拒絕存取」
+## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>Storage Migration Service cutover validation fails with error "Access is denied for the token filter policy on destination computer"
 
-執行轉換驗證時，您會收到「失敗：存取目的地電腦上的權杖篩選原則」錯誤。 即使您為來源和目的電腦提供正確的本機系統管理員認證，也會發生這種情況。
+When running cutover validation, you receive error "Fail: Access is denied for the token filter policy on destination computer." This occurs even if you provided correct local administrator credentials for both the source and destination computers.
 
-此問題已在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中修正。 
+This issue was fixed in the [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update. 
 
-## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>儲存體遷移服務未包含在 Windows Server 2019 評估或 Windows Server 2019 Essentials 版本中
+## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>Storage Migration Service isn't included in Windows Server 2019 Evaluation or Windows Server 2019 Essentials edition
 
-使用 Windows 系統管理中心連線到[Windows server 2019 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)或 windows Server 2019 Essentials edition 時，不會有管理儲存體遷移服務的選項。 儲存體遷移服務也不包含在角色和功能中。
+When using Windows Admin Center to connect to a [Windows Server 2019 Evaluation release](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) or Windows Server 2019 Essentials edition, there isn't an option to manage the Storage Migration Service. Storage Migration Service also isn't included in Roles and Features.
 
-此問題是由 Windows Server 2019 和 Windows Server 2019 Essentials 評估媒體中的服務問題所造成。 
+This issue is caused by a servicing issue in the Evaluation media of Windows Server 2019 and Windows Server 2019 Essentials. 
 
-若要解決此問題以進行評估，請安裝零售、MSDN、OEM 或大量授權版本的 Windows Server 2019，而不要啟動它。 如果沒有啟用，所有版本的 Windows Server 都會在評估模式下運作達180天。 
+To work around this issue for evaluation, install a retail, MSDN, OEM, or Volume License version of Windows Server 2019 and don't activate it. Without activation, all editions of Windows Server operate in evaluation mode for 180 days. 
 
-我們已在較新版本的 Windows Server 中修正此問題。  
+We have fixed this issue in a later release of Windows Server.  
 
-## <a name="storage-migration-service-times-out-downloading-the-transfer-error-csv"></a>儲存體遷移服務超時下載傳輸錯誤 CSV
+## <a name="storage-migration-service-times-out-downloading-the-transfer-error-csv"></a>Storage Migration Service times out downloading the transfer error CSV
 
-使用 Windows Admin Center 或 PowerShell 下載傳輸作業詳細的錯誤-僅限 CSV 記錄檔時，您會收到錯誤：
+When using Windows Admin Center or PowerShell to download the transfer operations detailed errors-only CSV log, you receive error:
 
- >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間可能是較長時間的一部分。 這可能是因為服務仍在處理作業，或服務無法傳送回復訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
+ >   Transfer Log - Please check file sharing is allowed in your firewall. : This request operation sent to net.tcp://localhost:28940/sms/service/1/transfer did not receive a reply within the configured timeout (00:01:00). The time allotted to this operation may have been a portion of a longer timeout. This may be because the service is still processing the operation or because the service was unable to send a reply message. Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
 
-此問題是因為儲存體遷移服務所允許的預設一分鐘時間內，無法篩選出的傳輸檔案數量非常大。 
+This issue is caused by an extremely large number of transferred files that cannot be filtered in the default one minute timeout allowed by Storage Migration Service. 
 
-若要解決此問題：
+To work around this issue:
 
-1. 在 orchestrator 電腦上，使用 Notepad.exe 編輯 *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*檔案，將 "sendTimeout" 從其1分鐘的預設值變更為10分鐘
+1. On the orchestrator computer, edit the *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config* file using Notepad.exe to change the "sendTimeout" from its 1 minute default to 10 minutes
 
    ```
      <bindings>
@@ -79,165 +79,165 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
                  sendTimeout="00:01:00"
    ```
 
-2. 重新開機 orchestrator 電腦上的「儲存體遷移服務」服務。 
-3. 在 orchestrator 電腦上，啟動 Regedit.exe
+2. Restart the "Storage Migration Service" service on the orchestrator computer. 
+3. On the orchestrator computer, start Regedit.exe
 4. 找到並按一下以下的登錄子機碼： 
 
    `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
 5. 在 [編輯] 功能表中指向 [新增]，然後按一下 [DWORD 值]。 
-6. 輸入 "WcfOperationTimeoutInMinutes" 作為 DWORD 的名稱，然後按 ENTER。
-7. 在 [WcfOperationTimeoutInMinutes] 上按一下滑鼠右鍵，然後按一下 [修改]。 
-8. 在 [基本資料] 方塊中，按一下 [十進位]
-9. 在 [數值資料] 方塊中，輸入 "10"，然後按一下 [確定]。
-10. 結束 [登錄編輯程式]。
-11. 嘗試再次下載僅限錯誤的 CSV 檔案。 
+6. Type "WcfOperationTimeoutInMinutes" for the name of the DWORD, and then press ENTER.
+7. Right-click "WcfOperationTimeoutInMinutes", and then click Modify. 
+8. In the Base data box, click "Decimal"
+9. In the Value data box, type "10", and then click OK.
+10. Exit Registry Editor.
+11. Attempt to download the errors-only CSV file again. 
 
-我們想要在較新版本的 Windows Server 2019 中變更此行為。  
+We intend to change this behavior in a later release of Windows Server 2019.  
 
-## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>目的地 proxy 和認證系統管理許可權的驗證警告
+## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>Validation warnings for destination proxy and credential administrative privileges
 
-驗證傳送作業時，您會看到下列警告：
+When validating a transfer job, you see the following warnings:
 
- > **認證具有系統管理許可權。**
- > 警告：無法從遠端使用動作。
- > **目的地 proxy 已註冊。**
- > 警告：找不到目的地 proxy。
+ > **The credential has administrative privileges.**
+ > Warning: Action isn't available remotely.
+ > **The destination proxy is registered.**
+ > Warning: The destination proxy wasn't found.
 
-如果您尚未在 Windows Server 2019 目的地電腦上安裝儲存體遷移服務 Proxy 服務，或目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，則此行為是依設計而定。 我們建議您遷移至已安裝 proxy 的 Windows Server 2019 電腦，以大幅改善傳輸效能。  
+If you have not installed the Storage Migration Service Proxy service on the Windows Server 2019 destination computer, or the destination computer is Windows Server 2016 or Windows Server 2012 R2, this behavior is by design. We recommend migrating to a Windows Server 2019 computer with the proxy installed for significantly improved transfer performance.  
 
-## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>某些檔案不會進行清查或傳輸，錯誤5「拒絕存取」
+## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>Certain files do not inventory or transfer, error 5 "Access is denied"
 
-從來源清查或傳輸檔案到目的地電腦時，使用者移除系統管理員群組許可權的檔案無法遷移。 檢查儲存體遷移服務-Proxy 調試顯示：
+When inventorying or transferring files from source to destination computers, files from which a user has removed Administrators group permissions fail to migrate. Examining the Storage Migration Service-Proxy debug shows:
 
-  記錄名稱： StorageMigrationService-Proxy/Debug 來源： Microsoft-Windows-StorageMigrationService-Proxy 日期： 2/26/2019 9:00:04 AM 事件識別碼：10000工作類別：無層級：錯誤關鍵字：      
-  使用者：網路服務電腦： srv1.contoso.com 描述：
+  Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug Source:        Microsoft-Windows-StorageMigrationService-Proxy Date:          2/26/2019 9:00:04 AM Event ID:      10000 Task Category: None Level:         Error Keywords:      
+  User:          NETWORK SERVICE Computer:      srv1.contoso.com Description:
 
-  02/26/2019-09：00： 04.860 [Error] \\srv1 的傳輸錯誤。 com\public\indy.png：（5）存取被拒。
-堆疊追蹤：在 StorageMigration. FileDirUtils. OpenFile （String fileName，DesiredAccess desiredAccess，ShareMode shareMode，CreationDisposition creationDisposition，FlagsAndAttributes flagsAndAttributes），位於StorageMigration. FileDirUtils. GetTargetFile （String path），網址為： FileDirUtils （GetTargetFile 檔案），網址為. FileInfo. StorageMigration。FileTransfer. InitializeSourceFileInfo （），位於 Microsoft. StorageMigration. Proxy. FileTransfer. transfer. StorageMigration （），位於StorageMigration. FileTransfer. TryTransfer （） [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs：： TryTransfer：： 55]
+  02/26/2019-09:00:04.860 [Error] Transfer error for \\srv1.contoso.com\public\indy.png: (5) Access is denied.
+Stack Trace: at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.OpenFile(String fileName, DesiredAccess desiredAccess, ShareMode shareMode, CreationDisposition creationDisposition, FlagsAndAttributes flagsAndAttributes) at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile(String path) at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile(FileInfo file) at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo() at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer() at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()    [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs::TryTransfer::55]
 
 
-此問題是由儲存體遷移服務中的程式碼缺失所造成，其中不會叫用備份許可權。 
+This issue is caused by a code defect in the Storage Migration Service where the backup privilege was not being invoked. 
 
-若要解決此問題，請在[KB4490481 （OS 組建17763.404）](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481)在 orchestrator 電腦和目的地電腦（如果已安裝 proxy 服務）上安裝 Windows Update。 請確定來源遷移使用者帳戶是來源電腦上的本機系統管理員，以及儲存體遷移服務協調器。 請確定目的地遷移使用者帳戶是目的地電腦上的本機系統管理員，以及儲存體遷移服務協調器。 
+To resolve this issue, install [Windows Update April 2, 2019—KB4490481 (OS Build 17763.404)](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) on the orchestrator computer and the destination computer if the proxy service is installed there. Ensure that the source migration user account is a local administrator on the source computer and the Storage Migration Service orchestrator. Ensure that the destination migration user account is a local administrator on the destination computer and the Storage Migration Service orchestrator. 
 
-## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用儲存體遷移服務預置資料時，DFSR 雜湊不相符
+## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>DFSR hashes mismatch when using Storage Migration Service to preseed data
 
-當使用儲存體遷移服務將檔案傳輸到新的目的地，然後設定 DFS 複寫（DFSR）透過 preseeded 複寫或 DFSR 資料庫複製來複寫該資料與現有的 DFSR 伺服器時，所有檔案都會 experiemce 雜湊不相符，而且會重新複寫。 在使用 SMS 傳送資料流程、安全性資料流程、大小和屬性之後，這些資料流程會完全相符。 使用 ICACLS 或 DFSR 資料庫複製 debug 記錄來檢查檔案會顯示：
+When using the Storage Migration Service to transfer files to a new destination, then configuring the DFS Replication (DFSR) to replicate that data with an existing DFSR server through preseeded replication or DFSR database cloning, all files experiemce a hash mismatch and are re-replicated. The data streams, security streams, sizes, and attributes all appear to be perfectly matched after using SMS to transfer them. Examining the files with ICACLS or the DFSR Database cloning debug log reveals:
 
-來源檔案：
+Source file:
 
-  icacls d:\test\Source：
+  icacls d:\test\Source:
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher .png D:AI （A;;FA;;;BA）（A;; 0x1200a9;;;DD）（A;; 0x1301bf;;;DU）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png D:AI(A;;FA;;;BA)(A;;0x1200a9;;;DD)(A;;0x1301bf;;;DU)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)
 
-目的地檔案：
+Destination file:
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher .png D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S： PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
 
-DFSR Debug 記錄檔：
+DFSR Debug Log:
 
-  20190308 10：18： 53.116 3948 DBCL 4045 [警告] DBClone：： IDTableImportUpdate 不相符的記錄。 
+  20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found. 
 
-  本機 ACL 雜湊： 1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 LastWriteTime： 20190308 18：09： 44.876 FileSizeLow： 1131654 FileSizeHigh：0屬性：32 
+  Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 LastWriteTime:20190308 18:09:44.876 FileSizeLow:1131654 FileSizeHigh:0 Attributes:32 
 
-  複製 ACL 雜湊：**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** LastWriteTime： 20190308 18：09： 44.876 FileSizeLow： 1131654 FileSizeHigh：0屬性：32 
+  Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** LastWriteTime:20190308 18:09:44.876 FileSizeLow:1131654 FileSizeHigh:0 Attributes:32 
 
-[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新已修正此問題
+This issue is fixed by the [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update
 
-## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>從 Windows Server 2008 R2 傳輸時，發生錯誤「無法在任何端點上轉移存放裝置」
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Error "Couldn't transfer storage on any of the endpoints" when transferring from Windows Server 2008 R2
 
-嘗試從 Windows Server 2008 R2 來源電腦傳輸資料時，不會傳輸任何資料，而且您會收到錯誤訊息：  
+When attempting to transfer data from a Windows Server 2008 R2 source computer, no data transfers and you receive error:  
 
-  無法在任何端點上傳輸儲存體。
+  Couldn't transfer storage on any of the endpoints.
 0x9044
 
-如果您的 Windows Server 2008 R2 電腦未使用 Windows Update 的所有重大和重要更新進行完整修補，則預期會發生此錯誤。 無論儲存體遷移服務為何，基於安全考慮，我們一律建議修補 Windows Server 2008 R2 電腦，因為該作業系統並未包含較新版本 Windows Server 的安全性改進。
+This error is expected if your Windows Server 2008 R2 computer isn't fully patched with all Critical and Important updates from Windows Update. Irrespective of Storage Migration Service, we always recommend patching a Windows Server 2008 R2 computer for security purposes, as that operating system doesn't contain the security improvements of newer versions of Windows Server.
 
-## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>「無法在任何端點上轉移儲存體」和「檢查來源裝置是否在線上-我們無法存取它」錯誤。
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>Error "Couldn't transfer storage on any of the endpoints" and "Check if the source device is online - we couldn't access it."
 
-嘗試從來源電腦傳送資料時，部分或所有共用不會傳輸，摘要錯誤如下：
+When attempting to transfer data from a source computer, some or all shares do not transfer, with summary error:
 
-   無法在任何端點上傳輸儲存體。
+   Couldn't transfer storage on any of the endpoints.
 0x9044
 
-檢查 SMB 傳輸詳細資料會顯示錯誤：
+Examining the SMB transfer details shows error:
 
-   檢查來源裝置是否在線上-我們無法存取它。
+   Check if the source device is online - we couldn't access it.
 
-檢查 StorageMigrationService/Admin 事件記錄檔會顯示：
+Examining the StorageMigrationService/Admin event log shows:
 
-   無法傳輸儲存體。
+   Couldn't transfer storage.
 
-   作業： Job1 識別碼：  
-   狀態：失敗錯誤：36931錯誤訊息： 
+   Job: Job1 ID:  
+   State: Failed Error: 36931 Error Message: 
 
-   指引：檢查詳細的錯誤，並確定已符合傳輸需求。 傳送作業無法傳輸任何來源和目的地電腦。 這可能是因為協調器電腦無法連線到任何來源或目的地電腦，可能是因為防火牆規則或遺失許可權所致。
+   Guidance: Check the detailed error and make sure the transfer requirements are met. The transfer job couldn't transfer any source and destination computers. This could be because the orchestrator computer couldn't reach any source or destination computers, possibly due to a firewall rule, or missing permissions.
 
-檢查 StorageMigrationService-Proxy/Debug 記錄檔會顯示：
+Examining the StorageMigrationService-Proxy/Debug log shows:
 
-   07/02/2019-13：35： 57.231 [Error] 傳輸驗證失敗。 錯誤碼：40961、來源端點無法連線或不存在，或來源認證無效，或驗證的使用者沒有足夠的許可權可以存取它。
-在 TransferOperation. StorageMigration （ProcessRequest fileTransferRequest，Guid operationId）上進行 StorageMigration （）的驗證（）（& g.）。   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
+   07/02/2019-13:35:57.231 [Error] Transfer validation failed. ErrorCode: 40961, Source endpoint is not reachable, or doesn't exist, or source credentials are invalid, or authenticated user doesn't have sufficient permissions to access it.
+at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate() at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest(FileTransferRequest fileTransferRequest, Guid operationId)    [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
-如果您的遷移帳戶至少沒有 SMB 共用的讀取存取許可權，就會發生此錯誤。 若要解決此錯誤，請將包含來源遷移帳戶的安全性群組新增至來源電腦上的 SMB 共用，並授與讀取、變更或完全控制。 完成遷移之後，您可以移除此群組。
+This was a code defect that would manifest if your migration account does not have at least Read permissions to the SMB shares. This issue was first fixed in cumulative update [4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062). 
 
-## <a name="error-0x80005000-when-running-inventory"></a>執行清查時發生錯誤0x80005000
+## <a name="error-0x80005000-when-running-inventory"></a>Error 0x80005000 when running inventory
 
-安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)並嘗試執行清查之後，清查會失敗，並出現錯誤：
+After installing [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) and attempting to run inventory, inventory fails with errors:
 
-  來自 HRESULT 的例外狀況：0x80005000
+  EXCEPTION FROM HRESULT: 0x80005000
   
-  記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 9/9/2019 5:21:42 PM 事件識別碼：2503工作類別：無層級：錯誤關鍵字：      
-  使用者：網路服務電腦： FS02。TailwindTraders.net 描述：無法清查電腦。
-作業： foo2 識別碼：20ac3f75-4945-41d1-9a79-d11dbb57798b 狀態：失敗錯誤：36934錯誤訊息：所有裝置的清查失敗指引：請檢查詳細錯誤，並確定已符合清查需求。 作業無法清查任何指定的來源電腦。 這可能是因為協調器電腦無法透過網路連線，可能是因為防火牆規則或遺失許可權所致。
+  Log Name:      Microsoft-Windows-StorageMigrationService/Admin Source:        Microsoft-Windows-StorageMigrationService Date:          9/9/2019 5:21:42 PM Event ID:      2503 Task Category: None Level:         Error Keywords:      
+  User:          NETWORK SERVICE Computer:      FS02.TailwindTraders.net Description: Couldn't inventory the computers.
+Job: foo2 ID: 20ac3f75-4945-41d1-9a79-d11dbb57798b State: Failed Error: 36934 Error Message: Inventory failed for all devices Guidance: Check the detailed error and make sure the inventory requirements are met. The job couldn't inventory any of the specified source computers. This could be because the orchestrator computer couldn't reach it over the network, possibly due to a firewall rule or missing permissions.
   
-  記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 9/9/2019 5:21:42 PM 事件識別碼：2509工作類別：無層級：錯誤關鍵字：      
-  使用者：網路服務電腦： FS02。TailwindTraders.net 描述：無法清查電腦。
-作業： foo2 電腦： FS01。TailwindTraders.net 狀態：失敗錯誤：-2147463168 錯誤訊息：指引：檢查詳細錯誤，並確定符合清查需求。 清查無法判斷指定來源電腦的任何層面。 這可能是因為來源或封鎖的防火牆埠缺少許可權或許可權。
+  Log Name:      Microsoft-Windows-StorageMigrationService/Admin Source:        Microsoft-Windows-StorageMigrationService Date:          9/9/2019 5:21:42 PM Event ID:      2509 Task Category: None Level:         Error Keywords:      
+  User:          NETWORK SERVICE Computer:      FS02.TailwindTraders.net Description: Couldn't inventory a computer.
+Job: foo2 Computer: FS01.TailwindTraders.net State: Failed Error: -2147463168 Error Message: Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
   
-當您以使用者主體名稱（UPN）的形式提供遷移認證（例如 ' meghan@contoso.com '）時，儲存體遷移服務中的程式碼缺失會導致此錯誤。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
+This error is caused by a code defect in Storage Migration Service when you provide migration credentials in the form of a User Principal Name (UPN), such as 'meghan@contoso.com'. The Storage Migration Service orchestrator service fails to parse this format correctly, which leads to a failure in a domain lookup that was added for cluster migration support in KB4512534 and 19H1.
 
-若要解決此問題，請以 domain\user 格式提供認證，例如 ' Contoso\Meghan '。
+To workaround this issue, provide credentials in the domain\user format, such as 'Contoso\Meghan'.
 
-## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>錯誤「ServiceError0x9006」或「目前無法使用 proxy」。 遷移至 Windows Server 容錯移轉叢集時
+## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>Error "ServiceError0x9006" or "The proxy isn't currently available." when migrating to a Windows Server failover cluster
 
-嘗試傳輸叢集檔案伺服器的資料時，您會收到如下的錯誤： 
+When attempting to transfer data against a clustered File Server, you receive errors such as: 
 
-   請確定 proxy 服務已安裝且正在執行，然後再試一次。 目前無法使用 proxy。
-0x9006 ServiceError0x9006，StorageMigration. 命令. UnregisterSmsProxyCommand
+   Make sure the proxy service is installed and running, and then try again. The proxy isn't currently available.
+0x9006 ServiceError0x9006,Microsoft.StorageMigration.Commands.UnregisterSmsProxyCommand
 
-如果檔案伺服器資源從其原始的 Windows Server 2019 叢集擁有者節點移至新節點，而該節點上未安裝儲存體遷移服務 Proxy 功能，就會發生此錯誤。
+This error is expected if the File Server resource moved from its original Windows Server 2019 cluster owner node to a new node and the Storage Migration Service Proxy feature wasn't installed on that node.
 
-因應措施是將目的地檔案伺服器資源移回您第一次設定傳輸配對時所使用的原始擁有者叢集節點。
+As a workaround, move the destination File Server resource back to the original owner cluster node that was in use when you first configured transfer pairings.
 
-另一個因應措施：
+As an alternative workaround:
 
-1. 在叢集中的所有節點上安裝儲存體遷移服務 Proxy 功能。
-2. 在 orchestrator 電腦上執行下列儲存體遷移服務 PowerShell 命令： 
+1. Install the Storage Migration Service Proxy feature on all nodes in a cluster.
+2. Run the following Storage Migration Service PowerShell command on the orchestrator computer: 
 
    ```PowerShell
    Register-SMSProxy -ComputerName *destination server* -Force
    ```
-## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>從叢集節點執行清查時發生「找不到 Dll」錯誤
+## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>Error "Dll was not found" when running inventory from a cluster node
 
-嘗試使用安裝在 Windows Server 2019 容錯移轉叢集節點上的儲存體遷移服務協調器執行清查，並將目標設為 Windows Server 容錯移轉叢集一般使用檔案伺服器來源時，您會收到下列錯誤：
+When attempting to run inventory with the Storage Migration Service orchestrator installed on a Windows Server 2019 failover cluster node and targeting a Windows Server failover cluster general use file server source, you receive the following error:
 
     DLL not found
     [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   
 
-若要解決此問題，請在執行儲存體遷移服務協調器的伺服器上安裝「容錯移轉叢集管理工具」（RSAT-叢集-管理）。 
+To workaround this issue, install the "Failover Cluster Management Tools" (RSAT-Clustering-Mgmt) on the server running the Storage Migration Service orchestrator. 
 
-## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>針對 Windows Server 2003 來源電腦執行清查時，發生「端點對應程式中沒有其他可用的端點」錯誤
+## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Error "There are no more endpoints available from the endpoint mapper" when running inventory against a Windows Server 2003 source computer
 
-當嘗試使用[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)累計更新或更新版本修補的儲存體遷移服務 orchestrator 伺服器來執行清查時，您會收到下列錯誤：
+When attempting to run inventory with the Storage Migration Service orchestrator server patched with the [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) cumulative update or later, you receive the following error:
 
     There are no more endpoints available from the endpoint mapper  
 
-若要解決此問題，請從儲存體遷移服務協調器電腦暫時卸載 KB4512534 累計更新（以及取代它的任何）。 當遷移完成時，請重新安裝最新的累計更新。  
+To workaround this issue, temporarily uninstall the KB4512534 cumulative update (and any that superceded it) from the Storage Migration Service orchestrator computer. When the migration is complete, reinstall the latest cumulative update.  
 
-請注意，在某些情況下，卸載 KB4512534 或其取代更新可能會導致儲存體遷移服務無法再啟動。 若要解決此問題，您可以備份和刪除儲存體遷移服務資料庫：
+Note, under some circumstances, uninstalling KB4512534 or its superseding updates may cause Storage Migration Service to no longer start. To resolve this issue, you can backup and delete the Storage Migration Service database:
 
-1.  開啟提升許可權的 cmd 提示字元，其中您是儲存體遷移服務 orchestrator 伺服器上的系統管理員成員，並執行：
+1.  Open an elevated cmd prompt, where you are a member of Administrators on the Storage Migration Service orchestrator server, and run:
 
      ```
      TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
@@ -255,11 +255,11 @@ DFSR Debug 記錄檔：
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA) /T /C
      ```
    
-2.  啟動儲存體遷移服務服務，這會建立新的資料庫。
+2.  Start the Storage Migration Service service, which will create a new database.
 
-## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>錯誤「針對網路服務名稱的 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失敗」和 Windows Server 2008 R2 叢集轉換失敗
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>Error "CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO failed against netName resource" and Windows Server 2008 R2 cluster cutover fails
 
-嘗試在 Windows Server 2008 R2 叢集來源上執行剪下時，切換會停滯在階段「重新命名來源電腦 ...」而且您會收到下列錯誤：
+When attempting to run cut over of a Windows Server 2008 R2 cluster source, the cut over gets stuck at phase "Renaming the source computer..." and you receive the following error:
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -275,11 +275,11 @@ DFSR Debug 記錄檔：
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後變更目的地叢集網路名稱和 IP，以手動執行切換要與原始來源相符的位址。 
+This issue is caused by a missing API in older versions of Windows Server. Currently there is no way to migrate Windows Server 2008 and Windows Server 2003 clusters. You can perform inventory and transfer without issue on Windows Server 2008 R2 clusters, then manually perform cutover by manually changing the cluster's source file server resource netname and IP address, then changing the the destination cluster netname and IP address to match the original source. 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-comnputer"></a>在來源 comnputer 上的「38% 對應網路介面已停止回應」 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>Cutover hangs on "38% Mapping network interfaces on the source computer..." 
 
-當嘗試在來源電腦上執行剪下時，將來源電腦設定為在一或多個網路介面上使用新的靜態（而非 DHCP） IP 位址時，剪下會停滯在「來源 comnputer 上的「38% 對應網路介面」階段 ...」而且您會在 SMS 事件記錄檔中收到下列錯誤：
+When attempting to run cut over of a source computer, having set the source computer to use a new static (not DHCP) IP address on one or more network interfaces, the cut over gets stuck at phase "38% Mapping network interfaces on the source comnputer..." and you receive the following error in the SMS event log:
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -302,18 +302,18 @@ DFSR Debug 記錄檔：
 
     Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
 
-Examinining 來源電腦顯示原始 IP 位址無法變更。 
+Examining the source computer shows that the original IP address fails to change. 
 
-如果您在 Windows 系統管理中心的 [設定轉換] 畫面上選取 [使用 DHCP]，則只有在指定新的靜態 IP 位址、子網和閘道時，才會發生此問題。 
+This issue does not happen if you selected "Use DHCP" on the Windows Admin Center "configure cutover" screen, only if you specify a new static IP address, subnet, and gateway. 
 
-此問題是因為[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中的回歸所造成。 此問題目前有兩個解決方法：
+This issue is caused by a regression in the [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update. There are currently two workarounds for this issue:
 
-  - 切換之前：在切換前不要設定新的靜態 IP 位址，請選取 [使用 DHCP]，並確定 DHCP 領域涵蓋該子網。 SMS 會將來源電腦設定為在來源電腦介面上使用 DHCP，而將其切換為正常進行。 
+  - Prior to cut over: instead of setting a new static IP address on cutover, select "Use DHCP" and ensure that a DHCP scope covers that subnet. SMS will configure the source computer to use DHCP on source computer interfaces and cut over will proceed normally. 
   
-  - 如果 [剪下] 已停滯，請在確定 DHCP 領域涵蓋該子網後，登入來源電腦，並在其網路介面上啟用 DHCP。 當來源電腦取得 DHCP 提供的 IP 位址時，SMS 會在正常情況下繼續進行切換。
+  - If cut over is already stuck: logon to the source computer and enable DHCP on its network interfaces, after ensuring that a DHCP scope covers that subnet. When the source computer acquires a DHCP-provided IP address, SMS will proceed with the cut over normally.
   
-在這兩種因應措施中，在完成之後，您就可以視需要在舊的來源電腦上設定靜態 IP 位址，並使用 DHCP 來停止。   
+In both workarounds, after cut over completes, you can then set a static IP address on the old source computer as you see fit and stop using DHCP.   
 
 ## <a name="see-also"></a>請參閱
 
-- [儲存體遷移服務總覽](overview.md)
+- [Storage Migration Service overview](overview.md)
