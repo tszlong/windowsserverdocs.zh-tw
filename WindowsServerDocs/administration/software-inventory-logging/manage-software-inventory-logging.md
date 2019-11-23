@@ -22,7 +22,7 @@ ms.locfileid: "71382972"
 ---
 # <a name="manage-software-inventory-logging"></a>管理軟體清查記錄
 
->適用於：Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+>適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 本檔說明如何管理軟體清查記錄，這項功能可協助資料中心系統管理員在一段時間內，輕鬆地記錄其部署的 Microsoft 軟體資產管理資料。 本文件說明如何管理軟體清查記錄。 在使用 Windows Server 2012 R2 的軟體清查記錄之前，請確定每個需要清查的系統上都已安裝 Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850)和[KB 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要任何 Wndows 更新。 這項功能會在要清查的每部伺服器上本機執行。 它不會從遠端伺服器收集資料。  
 
@@ -33,7 +33,7 @@ ms.locfileid: "71382972"
 > [!NOTE] 
 > 套用下方的更新程式封裝前，請確定您已安裝了 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)。
 
--  適用于 Windows Server 2012 的 WMF 4.0 更新套件：[KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
+-  Windows Server 2012 的 WMF 4.0 更新程式封裝： [KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
@@ -44,7 +44,7 @@ ms.locfileid: "71382972"
 - 需要 [.NET Framework 4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
 
 
-- 適用于 Windows Server 2008 R2 的 WMF 4.0 更新套件：[KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
+- Windows Server 2008 R2 的 WMF 4.0 更新程式封裝： [KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
 
 
 使用這項功能進行清查有兩種主要的方法：  
@@ -140,17 +140,17 @@ ms.locfileid: "71382972"
 ## <a name="BKMK_Step3"></a>顯示軟體清查記錄資料  
 除了先前章節所述的 PowerShell Cmdlet 之外，還有其他 6 個 Cmdlet 可以用來收集軟體清查記錄資料：  
   
--   **[Get-silcomputer](https://technet.microsoft.com/library/dn283392.aspx)** ：顯示特定伺服器和作業系統相關資料的時間點值，以及實體主機的 FQDN 或主機名稱 (如果有的話)。  
+-   **[Get-silcomputer](https://technet.microsoft.com/library/dn283392.aspx)** ：顯示特定伺服器和作業系統相關資料的時間點值，以及實體主機的 FQDN 或主機名稱（如果有的話）。  
   
 -   **[Get-silcomputeridentity （KB 3000850）](https://technet.microsoft.com/library/dn858074.aspx)** ：顯示 SIL 用於個別伺服器的識別碼。  
   
 -   **[Publish-sildata](https://technet.microsoft.com/library/dn283388.aspx)** ：顯示所有軟體清查記錄資料的時間點集合。  
   
--   **[SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)** ：顯示安裝於電腦上的所有軟體的時間點識別。  
+-   **[SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)** ：顯示安裝在電腦上之所有軟體的時間點識別。  
   
--   **[Get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)** ：顯示唯一用戶端裝置要求和兩天前伺服器的用戶端使用者要求的總數。  
+-   **[Get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)** ：顯示唯一用戶端裝置要求的總數，以及伺服器在過去兩天內的用戶端使用者要求。  
   
--   **[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)** ：顯示安裝於電腦上的所有 Windows 更新的時間點清單。  
+-   **[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)** ：顯示安裝在電腦上的所有 Windows 更新的時間點清單。  
   
 軟體清查記錄 Cmdlet 的典型使用案例是系統管理員使用 [Get SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)查詢軟體清查記錄，以取得所有軟體清查記錄資料的時間點集合。  
   
@@ -218,10 +218,10 @@ SystemManufacturer        : Microsoft Corporation
 如果透過網路轉送失敗，軟體清查記錄會暫時儲存每小時收集的資料。 記錄檔會儲存在 \Windows\System32\LogFiles\SIL\ 目錄中。 您可以搭配已排定的定期伺服器備份來進行此軟體清查記錄資料的備份。  
   
 > [!IMPORTANT]  
-> 如果作業系統因故必須進行修復安裝或升級，則儲存在本機的任何記錄檔將會遺失。  如果這份資料對於營運非常重要，建議您在安裝新的作業系統之前先行備份。 修復或升級之後，只需還原至相同的位置。  
+> 如果作業系統因故必須進行修復安裝或升級，則儲存在本機的任何記錄檔將會遺失。  如果這是作業的重要資料，建議在新的作業系統安裝之前進行備份。 修復或升級之後，只需還原至相同的位置。  
   
 > [!NOTE]  
-> 如果基於任何原因管理 SIL 在本機記錄的資料保留持續時間變得很重要，您可以在這裡變更登錄值來設定： \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 預設值為 ' 30 ' 30 天。  
+> 如果因任何原因而導致 SIL 在本機登入的資料保留持續時間變得很重要，可以藉由變更這裡的登錄值來設定： \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 預設值為 ' 30 ' 30 天。  
   
 ## <a name="BKMK_Step6"></a>讀取軟體清查記錄所記錄和發行的資料  
 SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），或成功轉送到目標匯總伺服器的資料，會儲存在二進位檔案中（適用于每日的資料）。 若要在 PowerShell 中顯示這項資料，請使用 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) Cmdlet。  
@@ -229,30 +229,30 @@ SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），�
 ## <a name="BKMK_Step7"></a>軟體清查記錄安全性  
 若要順利地從軟體清查記錄 WMI 與 PowerShell API 中擷取資料，您必須要有本機伺服器上的系統管理權限。  
   
-若要成功運用軟體清查記錄功能的完整功能，並在一段時間內持續 (以每個小時為間隔) 將資料轉送至彙總點，則系統管理員必須採用用戶端憑證，以確保安全的 SSL 工作階段以供透過 HTTPS 傳輸資料使用。 您可以在這裡找到 HTTPS 驗證的基本概觀：[HTTPS 驗證](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)。  
+若要成功運用軟體清查記錄功能的完整功能，並在一段時間內持續 (以每個小時為間隔) 將資料轉送至彙總點，則系統管理員必須採用用戶端憑證，以確保安全的 SSL 工作階段以供透過 HTTPS 傳輸資料使用。 您可以在這裡找到 HTTPS 驗證的基本概觀： [HTTPS 驗證](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)。  
   
 只有本機伺服器上的系統管理權限，才能存取在 Windows Server 上本機儲存的任何資料 (只有當已啟動此功能，但因故無法存取目標時才會發生這個情況)。  
   
 ## <a name="BKMK_Step8"></a>使用 Windows Server 2012 R2 軟體清查記錄中的日期和時間設定  
   
--   使用 [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay 來設定執行 SIL 記錄的時間時，您必須指定日期和時間。 設定行事曆日期，且在未到達日期之前不會發生記錄 (以本機系統時間為準)。  
+-   使用 [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay 來設定執行 SIL 記錄的時間時，您必須指定日期和時間。 將設定行事曆日期，而且在到達日期之前（以本機系統時間為限），將不會進行記錄。  
   
 -   使用[SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)或[get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)時，"InstallDate" 一律會顯示12：00：上午 10:00 pst，這是無意義的值。  
   
--   使用[get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)時，"SampleDate" 一律會顯示11：59：00，這是無意義的值。  在這些 Cmdlet 查詢中，日期是相關資料。  
+-   使用[get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)時，"SampleDate" 一律會顯示11：59：00，這是無意義的值。  日期是這些 Cmdlet 查詢的相關資料。  
   
 ## <a name="BKMK_Step10"></a>在掛接的虛擬硬碟中啟用和設定軟體清查記錄  
 離線虛擬機器也支援軟體清查記錄的設定及啟用。 這適用于這種情況的實際用途，是為了涵蓋跨資料中心進行寬部署的「黃金影像」安裝，以及設定從部署到雲端部署的終端使用者映射。  
   
-若要支援這些用途，軟體清查記錄會有與每個可設定選項相關聯的登錄項目。  這些登錄值可以在 \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 下找到。  
+若要支援這些用途，軟體清查記錄會有與每個可設定選項相關聯的登錄項目。  您可以在 \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 中找到這些登錄值  
   
 |||||  
 |-|-|-|-|  
 |**函數**|**值名稱**|**資料**|**對應的 Cmdlet （僅適用于執行中的 OS）**|  
 |啟動/停止功能|CollectionState|1 或 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
-|在網路上指定目標彙總點|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
-|指定用於目標 Web 伺服器 SSL 驗證的憑證指紋或憑證雜湊|憑證指紋|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
-|指定應該開始功能的日期和時間 (如果值設定在未來，以本機系統時間為準)|CollectionTime|預設值：2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
+|在網路上指定目標彙總點|TargetUri|字串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
+|指定用於目標 Web 伺服器 SSL 驗證的憑證指紋或憑證雜湊|憑證指紋|字串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
+|指定應該開始功能的日期和時間 (如果值設定在未來，以本機系統時間為準)|CollectionTime|預設：2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
   
 若要在離線 VHD 上修改這些值 (未執行 VM OS)，則 VHD 必須先掛接，然後才可以使用下列命令來進行變更：  
   
@@ -280,22 +280,22 @@ SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），�
 > [!NOTE]  
 > 在 [KB 3000850](https://support.microsoft.com/kb/3000850) 更新的安裝中已移除這項功能。  
   
-在 Windows Server 2012 R2 Hyper-v 主機上使用軟體清查記錄時，如果已在來賓中啟動 SIL 記錄，則可以從本機執行的 Windows Server 2012 R2 來賓中取出 SIL 資料。 不過，只有在使用 Publish-sildata 和 Publish-sildata Powershell Cmdlet 時，才有可能發生這種情況，而且只有在主機和來賓的 WIndows Server 2012 R2 中才可行。  這項功能的目的是讓提供客體 VM 給租用戶或其他大型公司實體的資料中心系統管理員，可以在 Hypervisor 主機擷取軟體清查資料，然後後續將所有資料轉送至彙總工具 (或目標 URI)。  
+在 Windows Server 2012 R2 Hyper-v 主機上使用軟體清查記錄時，如果已在來賓中啟動 SIL 記錄，則可以從本機執行的 Windows Server 2012 R2 來賓中取出 SIL 資料。 不過，只有在使用 Publish-sildata 和 Publish-sildata Powershell Cmdlet 時，才有可能發生這種情況，而且只有在主機和來賓的 WIndows Server 2012 R2 中才可行。  這項功能的目的是讓提供來賓 Vm 的資料中心系統管理員，或大型公司的其他實體，在虛擬機器主機上捕獲軟體清查資料，然後再將所有此資料轉送到匯總工具（或目標 URI）。  
   
-以下兩個範例說明 PowerShell 主控台上的輸出會在 Windows Server 2012 R2 Hyper-v 主機上執行，其中包含 SIL 記錄啟動的 windows server 2012 R2 的來賓 VM。  您會注意到單使用 Get-SilData 的第一個範例，會如預期般輸出主機的所有資料。  另還包含在內的是客體的所有 SIL 資料，但會以摺疊格式表示。  若要展開並檢視客體的這項資料，您只需剪下並貼上以下第二個範例中所使用的程式碼片段即可。  客體的 SIL 資料物件的物件內一定會有相關聯的 VM GUID。  
+以下兩個範例說明 PowerShell 主控台上的輸出會在 Windows Server 2012 R2 Hyper-v 主機上執行，其中包含 SIL 記錄啟動的 windows server 2012 R2 的來賓 VM。  您會注意到第一個使用 Publish-sildata 的範例，將會如預期般輸出主機中的所有資料。  此外，也包含來賓的所有 SIL 資料，但會以折迭的格式呈現。  若要從來賓擴充及查看這項資料，只需剪下並貼上下列第二個範例中所使用的程式碼片段。  來自來賓的 SIL 資料物件一律會有物件中相關聯的 VM GUID。  
   
 > [!NOTE]  
-> 由於 SIL 資料會輸出在主控台上，使用 Get-SilData Cmdlet 時，在資料流中，不一定永遠都能以預測的順序輸出物件。  在下列兩個範例中，文字已經過色彩標示 (藍色表示實體主機資料，綠色表示虛擬客體資料)，這單純只做為這份文件的說明工具使用。  
+> 由於 SIL 資料會輸出在主控台上，使用 Get-SilData Cmdlet 時，在資料流中，不一定永遠都能以預測的順序輸出物件。  在下列兩個範例中，文字已使用色彩標示（藍色代表實體主機資料，而綠色代表虛擬來賓資料），僅做為此檔的說明工具。  
   
 **輸出範例1**  
   
 ![](../media/software-inventory-logging/SILHyper-VExample1.png)  
   
-**輸出範例 2**（w/Expand-Publish-sildata 函數）  
+**輸出範例 2** （w/Expand-publish-sildata 函數）  
   
 ![](../media/software-inventory-logging/SILHyper-VExample2.png)  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [軟體清查記錄入門](get-started-with-software-inventory-logging.md)  
 [軟體清查記錄彙總工具](software-inventory-logging-aggregator.md)  
 [Windows PowerShell 中的軟體清查記錄 Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)  

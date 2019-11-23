@@ -21,7 +21,7 @@ ms.locfileid: "71388629"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>步驟2設定 Advanced DirectAccess 伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何針對在混合了 IPv4 和 IPv6 的環境中使用單一「遠端存取」伺服器的進階「遠端存取」部署，設定所需的用戶端和伺服器設定。 開始部署步驟之前，請確定您已完成[規劃先進的 DirectAccess 部署](Plan-an-Advanced-DirectAccess-Deployment.md)中所述的規劃步驟。  
   
@@ -56,7 +56,7 @@ ms.locfileid: "71388629"
   
 6.  在 [安裝進度] 頁面上，確認安裝成功，然後按一下 [關閉]。  
   
-![Installation 進度成功](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![安裝進度成功](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -77,7 +77,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-configure-the-deployment-type"></a>設定部署類型  
   
-1.  在「遠端存取」伺服器上，開啟 [遠端存取管理主控台]：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在遠端存取服務器上，開啟 [遠端存取管理] 主控台：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
   
 2.  在 [遠端存取管理] 主控台的中央窗格中，按一下 [執行遠端存取安裝精靈]。  
   
@@ -103,7 +103,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 6.  視需要選取 [使用強制通道] 核取方塊，以透過「遠端存取」伺服器路由傳送所有用戶端流量 (至內部網路和至網際網路)。  
   
-7.  按一下 [下一步]。  
+7.  按一下 **\[下一步\]** 。  
   
 8.  在 [網路連線助理] 頁面上：  
   
@@ -163,7 +163,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 3.  在 [DNS] 頁面的表格中，輸入將套用為「名稱解析原則表格」(NRPT) 豁免的任何其他名稱尾碼。 選取本機名稱解析選項，然後按 [下一步]。  
   
-4.  在 [DNS 尾碼搜尋清單] 頁面上，「遠端存取」伺服器會自動偵測部署中的任何網域尾碼。 請使用 [新增] 和 [移除] 按鈕，從要使用的網域尾碼清單中新增和移除網域尾碼。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按一下 [下一步]。  
+4.  在 [DNS 尾碼搜尋清單] 頁面上，「遠端存取」伺服器會自動偵測部署中的任何網域尾碼。 請使用 [新增] 和 [移除] 按鈕，從要使用的網域尾碼清單中新增和移除網域尾碼。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按一下 **\[下一步\]** 。  
   
 5.  在 [管理] 頁面上，新增系統不會自動偵測的任何管理伺服器，然後按 [下一步]。 「遠端存取」會自動新增網域控制站和 System Center Configuration Manager 伺服器。  
   
@@ -186,14 +186,14 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 3.  若要限制只能存取應用程式伺服器安全群組中的伺服器，請選取 [僅允許存取安全性群組內含的伺服器] 核取方塊。  
   
-4.  若要在沒有加密的情況下使用驗證，請選取 [**Do 不加密] 流量。僅使用 [驗證 @ no__t-0] 核取方塊。  
+4.  若要在沒有加密的情況下使用驗證，請選取 **不要加密流量。僅使用驗證** 核取方塊。  
   
 5.  按一下 **[完成]** 。  
   
 ## <a name="BKMK_GPO"></a>2.7。 設定摘要和替代 GPO  
 當「遠端存取」設定完成時，會顯示 [遠端存取檢閱]。 您可以檢閱先前選取的所有設定，包括：  
   
-1.  **GPO 設定**：會列出 DirectAccess 伺服器 GPO 名稱和用戶端 GPO 名稱。 此外，您也可以按一下 [GPO 設定] 標題旁邊的 [變更] 連結來修改 GPO 設定。  
+1.  **GPO 設定**：列出 DirectAccess 伺服器 GPO 名稱與用戶端 GPO 名稱。 此外，您也可以按一下 [GPO 設定] 標題旁邊的 [變更] 連結來修改 GPO 設定。  
   
 2.  **遠端用戶端**：會顯示 DirectAccess 用戶端設定，包括安全性群組、強制通道狀態、連線能力檢查器，以及 DirectAccess 連線名稱。  
   
@@ -204,11 +204,11 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
 5.  **應用程式伺服器**：除了對特定應用程式伺服器的端對端驗證狀態之外，還會顯示 DirectAccess 遠端管理狀態。  
   
 ## <a name="BKMK_PS"></a>2.8。 如何使用 Windows PowerShell 來設定遠端存取伺服器  
-@no__t 0Windows PowerShell](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
+![Windows PowerShell](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
-若只要針對根目錄為 **corp.contoso.com** 之網域中的 DirectAccess 在「遠端存取」的邊緣拓撲中執行完整安裝，並使用下列參數：伺服器 GPO：**DirectAccess Server Settings**，用戶端 GPO：DirectAccess Client Settings，內部網路介面卡：**Corpnet**，外部網路介面卡：**網際網路**、connectto 位址： **edge1.contoso.com**和網路位置伺服器： **nls.corp.contoso.com**：  
+若要在遠端存取的邊緣拓撲中，只在具有根**corp.contoso.com**的網域中執行完整安裝，並使用下列參數：伺服器 GPO： **DirectAccess 伺服器設定**、用戶端 GPO： DirectAccess 用戶端設定、內部網路介面卡：**公司**網路、外部網路介面卡： **Internet**、connectto address： **edge1.contoso.com**和 network location server： **nls.corp.contoso.com**：  
   
 ```  
 Install-RemoteAccess -Force -PassThru -ServerGpoName 'corp.contoso.com\DirectAccess Server Settings' -ClientGpoName 'corp.contoso.com\DirectAccess Client Settings' -DAInstallType 'FullInstall' -InternetInterface 'Internet' -InternalInterface 'Corpnet' -ConnectToAddress 'edge1.contoso.com' -NlsUrl 'https://nls.corp.contoso.com/'  
@@ -243,11 +243,11 @@ Set-DAClientExperienceConfiguration -FriendlyName 'Contoso DirectAccess Connecti
   
 ## <a name="BKMK_Links"></a>上一個步驟  
   
--   [步驟 1：設定進階 DirectAccess 基礎結構](da-adv-configure-s1-infrastructure.md)  
+-   [步驟1：設定 Advanced DirectAccess 基礎結構](da-adv-configure-s1-infrastructure.md)  
   
 ## <a name="next-step"></a>後續步驟  
   
--   [步驟 3：檢查部署](Step-3-Verify-the-Deployment.md)  
+-   [步驟3：驗證部署](Step-3-Verify-the-Deployment.md)  
   
 
 

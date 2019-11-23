@@ -22,14 +22,14 @@ ms.locfileid: "71372726"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 變更會影響查閱功能的設定。
 ## <a name="syntax"></a>語法
 ```
 set <KeyWord>[=<Value>]
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |    參數    |                                                                                                                    描述                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,5 +40,5 @@ set <KeyWord>[=<Value>]
 ## <a name="remarks"></a>備註
 使用 [**全部設定**] 以查看目前設定的清單。
 ## <a name="additional-references"></a>其他參考
-[命令列語法關鍵](command-line-syntax-key.md)
- [nslookup 設定全部](nslookup-set-all.md)
+[命令列語法索引鍵](command-line-syntax-key.md)
+[nslookup 設定全部](nslookup-set-all.md)

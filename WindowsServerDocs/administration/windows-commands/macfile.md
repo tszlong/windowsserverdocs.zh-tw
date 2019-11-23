@@ -22,7 +22,7 @@ ms.locfileid: "71374173"
 ---
 # <a name="macfile"></a>macfile
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 管理適用于 Macintosh 伺服器、磁片區、目錄和檔案的檔案伺服器。 您可以在批次檔中包含一系列命令，並以手動方式或在預先定義的時間啟動它們，來自動化管理工作。 
 -   [修改 Macintosh 可存取磁片區中的目錄](#BKMK_Moddirs)
@@ -37,20 +37,20 @@ ms.locfileid: "71374173"
 macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName>] [/group:<GroupName>] [/permissions:<Permissions>]
 ```
 
-### <a name="parameters"></a>參數
--   /server： \\ @ no__t-1 @ no__t-2指定要變更目錄的伺服器。 如果省略，則會在本機電腦上執行此操作。
--   /path： <directory>必要。 指定您要變更之目錄的路徑。 目錄必須存在。 **macfile 目錄**不會建立目錄。
--   /owner： <OwnerName> 會變更目錄的擁有者。 如果省略，則擁有者會保持不變。
--   /group： <GroupName>指定或變更與目錄相關聯的 Macintosh 主要群組。 如果省略，主要群組會保持不變。
--   /permissions： <Permissions>為擁有者、主要群組和全球（everyone）設定目錄的許可權。 使用11位數的數位來設定許可權。 數位1會授與許可權，0則會撤銷許可權（例如，11111011000）。 如果省略，許可權會維持不變。
+### <a name="parameters"></a>Parameters
+-   /server：\\\\<computerName> 指定要變更目錄的伺服器。 如果省略，則會在本機電腦上執行此操作。
+-   /path：<directory> 需要。 指定您要變更之目錄的路徑。 目錄必須存在。 **macfile 目錄**不會建立目錄。
+-   /owner：<OwnerName> 變更目錄的擁有者。 如果省略，則擁有者會保持不變。
+-   /group：<GroupName> 指定或變更與目錄相關聯的 Macintosh 主要群組。 如果省略，主要群組會保持不變。
+-   /permissions：<Permissions> 為擁有者、主要群組和全球（everyone）設定目錄的許可權。 使用11位數的數位來設定許可權。 數位1會授與許可權，0則會撤銷許可權（例如，11111011000）。 如果省略，許可權會維持不變。
     數位的位置會決定要設定的許可權，如下表所述。
 
     |位置|設定許可權|
     |------|------------|
     |第一個|OwnerSeeFiles|
     |第二個|OwnerSeeFolders|
-    |第三個|OwnerMakechanges|
-    |第四個|GroupSeeFiles|
+    |第|OwnerMakechanges|
+    |四維|GroupSeeFiles|
     |步|GroupSeeFolders|
     |六分之一|GroupMakechanges|
     |第|WorldSeeFiles|
@@ -78,16 +78,16 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeName>]  [/datafork:<Filepath>] [/resourcefork:<Filepath>] /targetfile:<Filepath>
 ```
 
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 
 |         參數          |                                                                                                           描述                                                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /server： \\ @ no__t-1 @ no__t-2 |                                                            指定要聯結檔案的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                            |
-|   /creator： <CreatorName>   |                                      指定檔案的建立者。 Macintosh 搜尋工具會使用 **/creator**命令列選項來判斷建立檔案的應用程式。                                       |
-|      /type： <typeName>      |                                 指定檔的類型。 Macintosh 搜尋工具會使用 **/type**命令列選項來判斷應用程式內建立檔案的檔案類型。                                 |
-|    /datafork： <Filepath>    |                                                                   指定要聯結的資料分叉位置。 您可以指定遠端路徑。                                                                   |
-|  /resourcefork： <Filepath>  |                                                                 指定要聯結的資源分支位置。 您可以指定遠端路徑。                                                                 |
-|   /targetfile： <Filepath>   | 必要。 指定透過聯結資料分支和資源分支所建立之檔案的位置，或指定您要變更其類型或建立者之檔案的位置。 檔案必須在指定的伺服器上。 |
+| /server：\\\\<computerName> |                                                            指定要聯結檔案的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                            |
+|   /creator：<CreatorName>   |                                      指定檔案的建立者。 Macintosh 搜尋工具會使用 **/creator**命令列選項來判斷建立檔案的應用程式。                                       |
+|      /type：<typeName>      |                                 指定檔的類型。 Macintosh 搜尋工具會使用 **/type**命令列選項來判斷應用程式內建立檔案的檔案類型。                                 |
+|    /datafork：<Filepath>    |                                                                   指定要聯結的資料分叉位置。 您可以指定遠端路徑。                                                                   |
+|  /resourcefork：<Filepath>  |                                                                 指定要聯結的資源分支位置。 您可以指定遠端路徑。                                                                 |
+|   /targetfile：<Filepath>   | 必要。 指定透過聯結資料分支和資源分支所建立之檔案的位置，或指定您要變更其類型或建立者之檔案的位置。 檔案必須在指定的伺服器上。 |
 |             /?             |                                                                                               在命令提示字元顯示說明。                                                                                               |
 
 ### <a name="remarks"></a>備註
@@ -98,7 +98,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
-若要將檔案建立者變更為 Microsoft Word 5.1，請針對目錄 D:\Word documents\Group 檔中的檔案單字，在伺服器 \\ \ SERverA 上輸入：
+若要將檔案建立者變更為 Microsoft Word 5.1，請針對目錄 D:\Word documents\Group 檔中的檔案單字，在伺服器 \\\SERverA 上，輸入：
 ```
 macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:"d:\Word documents\Group files\Word.txt"
 ```
@@ -109,13 +109,13 @@ macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:"d:\Word 
 macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/loginmessage:<Message>]
 ```
 
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 
 |               參數                |                                                                                                                                                                           描述                                                                                                                                                                            |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /server： \\ @ no__t-1 @ no__t-2       |                                                                                                                        指定要在其上變更參數的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                                                                                         |
+|       /server：\\\\<computerName>       |                                                                                                                        指定要在其上變更參數的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                                                                                         |
 | /maxsessions： {無&#124;限制數位} |                                                                                         指定可以同時使用 Macintosh 檔案和列印伺服器的最大使用者數目。 如果省略，伺服器的**maxsessions**設定會維持不變。                                                                                         |
-|        /loginmessage： <Message>         | 變更 Macintosh 使用者登入 Macintosh 伺服器的檔案伺服器時所看到的訊息。 登入訊息的字元數上限為199。 如果省略，伺服器的**loginmessage**訊息會保持不變。 若要移除現有的登入訊息，請包含 **/loginmessage**參數，但將*訊息*變數保留空白。 |
+|        /loginmessage：<Message>         | 變更 Macintosh 使用者登入 Macintosh 伺服器的檔案伺服器時所看到的訊息。 登入訊息的字元數上限為199。 如果省略，伺服器的**loginmessage**訊息會保持不變。 若要移除現有的登入訊息，請包含 **/loginmessage**參數，但將*訊息*變數保留空白。 |
 |                   /?                   |                                                                                                                                                               在命令提示字元顯示說明。                                                                                                                                                               |
 
 ### <a name="remarks"></a>備註
@@ -134,18 +134,18 @@ macfile volume {/add|/set} [/server:\\<computerName>] /name:<volumeName>/path:<d
 macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 ```
 
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 
 |              參數               |                                                                                                                                                                       描述                                                                                                                                                                        |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          {/add &#124; /set}          |                                                                                                                      當您新增或變更 Macintosh 可存取的磁片區時，這是必要的。 新增或變更指定的磁片區。                                                                                                                       |
-|      /server： \\ @ no__t-1 @ no__t-2      |                                                                                                             指定要在其上新增、變更或移除磁片區的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                                                                              |
-|          /name： <volumeName>          |                                                                                                                                          必要。 指定要新增、變更或移除的磁片區名稱。                                                                                                                                           |
-|          /path： <directory>           |                                                                                                                只有在新增磁片區時才需要和有效。 指定要新增之磁片區根目錄的路徑。                                                                                                                 |
+|      /server：\\\\<computerName>      |                                                                                                             指定要在其上新增、變更或移除磁片區的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                                                                              |
+|          /name：<volumeName>          |                                                                                                                                          必要。 指定要新增、變更或移除的磁片區名稱。                                                                                                                                           |
+|          /path：<directory>           |                                                                                                                只有在新增磁片區時才需要和有效。 指定要新增之磁片區根目錄的路徑。                                                                                                                 |
 |    /readonly： {true &#124; false}     | 指定使用者是否可以變更磁片區中的檔案。 輸入 true，指定使用者無法變更磁片區中的檔案。 輸入 false 以指定使用者可以變更磁片區中的檔案。 如果在新增磁片區時省略，則允許變更檔案。 如果在變更磁片區時省略，則磁片區的**readonly**設定會保持不變。 |
 |  /guestsallowed： {true &#124; false}  |      指定以來賓身分登入的使用者是否可以使用該磁片區。 輸入 true，指定來賓可以使用磁片區。 輸入 false 以指定來賓無法使用磁片區。 如果在新增磁片區時省略，來賓可以使用磁片區。 如果在變更磁片區時省略，磁片區的**guestsallowed**設定會維持不變。       |
-|         /password： <Password>         |                                                                               指定存取磁片區時所需的密碼。 新增磁片區時若省略此參數，則不會建立任何密碼。 如果在變更磁片區時省略，密碼會保持不變。                                                                               |
-| /maxusers： {<Number> >&#124;無限制} |                                                 指定可以同時使用磁片區上之檔案的最大使用者數目。 如果在新增磁片區時省略，則不限數目的使用者可以使用該磁片區。 如果在變更磁片區時省略， **maxusers**值會維持不變。                                                 |
+|         /password：<Password>         |                                                                               指定存取磁片區時所需的密碼。 新增磁片區時若省略此參數，則不會建立任何密碼。 如果在變更磁片區時省略，密碼會保持不變。                                                                               |
+| /maxusers： {<Number>>&#124;無限制} |                                                 指定可以同時使用磁片區上之檔案的最大使用者數目。 如果在新增磁片區時省略，則不限數目的使用者可以使用該磁片區。 如果在變更磁片區時省略， **maxusers**值會維持不變。                                                 |
 |               /remove                |                                                                                                                                當您移除 Macintosh 存取磁片區時，這是必要的。 移除指定的磁片區。                                                                                                                                |
 |                  /?                  |                                                                                                                                                           在命令提示字元顯示說明。                                                                                                                                                           |
 
@@ -161,7 +161,7 @@ macfile volume /add /name:"US Marketing Statistics" /guestsallowed:false /path:e
 ```
 macfile volume /set /name:"US Marketing Statistics" /readonly:true /password:saturn /maxusers:5
 ```
-若要新增名為 [橫向設計] 的磁片區，請在伺服器 \\ \ 木蘭上，使用 E 磁片磁碟機中的樹狀目錄，並指定來賓可以存取該磁片區，請輸入：
+若要新增名為 [橫向設計] 的磁片區，請在伺服器 \\\Magnolia 上，使用 E 磁片磁碟機中的樹狀目錄，並指定來賓可以存取該磁片區，請輸入：
 ```
 macfile volume /add /server:\\Magnolia /name:"Landscape Design" /path:e:\trees
 ```

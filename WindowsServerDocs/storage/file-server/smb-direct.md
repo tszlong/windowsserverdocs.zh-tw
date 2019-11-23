@@ -17,11 +17,11 @@ ms.locfileid: "71394464"
 ---
 # <a name="smb-direct"></a>SMB 直接傳輸
 
->適用於：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用于： Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 包含一個稱為 SMB Direct 的功能，可支援使用具有遠端直接記憶體存取（RDMA）功能的網路介面卡。 具備 RDMA 功能的網路介面卡可以在使用非常少量 CPU 資源的情況下，以非常低的延遲全速運作。 對於像是 Hyper-V 或 Microsoft SQL Server 的工作負載，這讓遠端檔案伺服器能夠類似本機存放裝置。 SMB 直接傳輸包括：
 
-- 增加輸送量：利用高速網路的全部輸送量，其中網路介面卡會以線路速度協調大量資料的傳輸。
+- 增加輸送量：充分利用高速網路的輸送量，其中網路介面卡會協調以線路速度進行大量資料傳輸。
 - 低延遲：對網路要求提供非常快速的回應，因此讓遠端檔案存放裝置感覺好像是直接連接的區塊存放裝置一樣。
 - 低 CPU 使用率：透過網路傳輸資料時，使用較少的 CPU 週期，這會將較多的運算能力留給伺服器應用程式使用。
 
@@ -121,8 +121,8 @@ Set-NetOffloadGlobalSetting -NetworkDirect Enabled
 >[!NOTE]
 >若要避免未使用 SMB 直接傳輸的工作負載發生錯誤，請確定沒有其他工作負載使用中斷連線的網路路徑。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
 - [伺服器訊息區總覽](file-server-smb-overview.md)
-- @no__t 0Increasing 伺服器、存放裝置及網路可用性：案例概觀](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [增加伺服器、存放裝置及網路可用性：案例總覽](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [部署透過 SMB 的 Hyper-v](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

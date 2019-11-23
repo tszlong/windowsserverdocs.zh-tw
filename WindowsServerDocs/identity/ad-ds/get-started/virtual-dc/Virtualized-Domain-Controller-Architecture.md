@@ -18,7 +18,7 @@ ms.locfileid: "71390515"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虛擬網域控制站架構
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 此主題涵蓋虛擬網域控制站複製與安全還原的架構。 本文以流程圖顯示複製與安全還原的程序，並提供程序中每個步驟的詳細說明。  
   
@@ -28,7 +28,7 @@ ms.locfileid: "71390515"
   
 ## <a name="BKMK_CloneArch"></a>虛擬網域控制站複製架構  
   
-### <a name="overview"></a>總覽  
+### <a name="overview"></a>概觀  
 虛擬網域控制站複製依賴 Hypervisor 平台公開稱為「VM 世代識別碼」 的識別碼來偵測虛擬機器的建立。 在網域控制站升級期間，AD DS 一開始會將此識別碼的值儲存在其資料庫 (NTDS.DIT)。 當虛擬機器開機時，會比較目前來自虛擬機器之「VM 世代識別碼」的值與資料庫中的值。 如果兩個值不同，網域控制站會重設「引動過程識別碼」並捨棄 RID 集區，因此可以防止重複使用 USN 或可能會建立重複安全性主體的問題。 接著，網域控制站會在＜ [Cloning Detailed Processing](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)＞步驟 3 所述的位置中尋找 DCCloneConfig.xml 檔案。 如果發現 DCCloneConfig.xml 檔案，它會做出被部署為複本的結論，因此它會起始複製程序，使用現有的 NTDS.DIT 與從來源媒體複製的 SYSVOL 內容重新升級，將自己佈建為其他網域控制站。  
   
 在有些 Hypervisor 支援「VM 世代識別碼」，而有些不支援的混合環境中，可能會不小心在不支援「VM 世代識別碼」的 Hypervisor 上部署複製媒體。 DCCloneConfig.xml 檔案存在表示系統管理員意圖複製 DC。 因此，如果在開機期間發現 DCCloneConfig.xml 檔案，但主機未提供「VM 世代識別碼」，表示複製 DC 開機進入目錄服務還原模式 (DSRM)，以防止環境中的其他部分受影響。 接著，您可以將複製媒體移動到支援「VM 世代識別碼」的 Hypervisor，然後重試複製。  
@@ -112,7 +112,7 @@ ms.locfileid: "71390515"
   
 15. 客體會強制 NT5DS (Windows NTP) 的時間與另一部網域控制站同步 (在預設的「Windows 時間服務」階層中，這表示使用 PDCE)。 客體會連絡 PDCE。 所有現有的 Kerberos 票證都會被排清。  
   
-16. 客體會將 DFSR 或 NTFRS 服務設定為自動執行。 來賓會刪除所有現有的 DFSR 和 NTFRS 資料庫檔案（預設值： c:\windows\ntfrs 和 c:\system volume information\dfsr @ no__t-0 *< database_GUID >* ），以便在下一次服務時強制執行 SYSVOL 的非權威同步處理開頭. 稍後當同步開始後，客體不會刪除 SYSVOL 的檔案內容以先植 SYSVOL。  
+16. 客體會將 DFSR 或 NTFRS 服務設定為自動執行。 來賓會刪除所有現有的 DFSR 和 NTFRS 資料庫檔案（預設值： c:\windows\ntfrs 和 c:\system volume information\dfsr\\ *< database_GUID >* ），以便在下次啟動服務時，強制執行 SYSVOL 的非權威同步處理。 稍後當同步開始後，客體不會刪除 SYSVOL 的檔案內容以先植 SYSVOL。  
   
 17. 系統會重新命名客體。 客體上的「DS 角色伺服器」服務會開始進行 AD DS 設定 (升級)，並使用現有的 NTDS.DIT 資料庫檔案做為來源，而不是使用位在 c:\windows\system32 的範本資料庫做為來源 (升級程序通常會這樣做)。  
   
@@ -144,7 +144,7 @@ ms.locfileid: "71390515"
   
 ## <a name="BKMK_SafeRestoreArch"></a>虛擬網域控制站安全還原架構  
   
-### <a name="overview"></a>總覽  
+### <a name="overview"></a>概觀  
 AD DS 依賴 Hypervisor 平台公開稱為「VM 世代識別碼」 的識別碼來偵測虛擬機器的快照還原。 在網域控制站升級期間，AD DS 一開始會將此識別碼的值儲存在其資料庫 (NTDS.DIT)。 當系統管理員從先前的快照還原虛擬機器時，會比較目前來自虛擬機器的「VM 世代識別碼」值與資料庫中的值。 如果兩個值不同，網域控制站會重設「引動過程識別碼」並捨棄 RID 集區，因此可以防止重複使用 USN 或可能會建立重複安全性主體的問題。 有兩種情況可能發生安全還原：  
   
 -   當虛擬網域控制站在快照還原 (在它關閉時) 後啟動。  
@@ -192,7 +192,7 @@ AD DS 依賴 Hypervisor 平台公開稱為「VM 世代識別碼」 的識別碼�
   
 -   若使用 FRS，客體會停止 NTFRS 服務，並設定 D2 BURFLAGS 登錄值。 接著，它會啟動 NTFRS 服務，此服務會以非權威方式進行複寫，並盡可能地重複使用未變更的 SYSVOL 資料。  
   
--   若使用 DFSR，來賓會停止 DFSR 服務並刪除 DFSR 資料庫檔案（預設位置：%systemroot%\system volume volume information\dfsr @ no__t-0 *<database GUID>* ）。 接著，它會啟動 DFSR 服務，此服務會以非權威方式進行複寫，並盡可能地重複使用現有且未變更的 SYSVOL 資料。  
+-   若使用 DFSR，來賓會停止 DFSR 服務並刪除 DFSR 資料庫檔案（預設位置：%systemroot%\system volume volume information\dfsr\\ *<database GUID>* ）。 接著，它會啟動 DFSR 服務，此服務會以非權威方式進行複寫，並盡可能地重複使用現有且未變更的 SYSVOL 資料。  
   
 > [!NOTE]  
 > -   如果 Hypervisor 未提供「VM 世代識別碼」供比較，表示 Hypervisor 不支援「虛擬化防護」，客體將以執行 Windows Server 2008 R2 或更早版本之虛擬網域控制站的方式運作。 若嘗試用非夥伴 DC 所見過的上一個最高 USN 啟用複寫，客體會實作 USN 復原隔離保護。 如需有關 USN 復原隔離保護的詳細資訊，請參閱＜ [USN 和 USN 復原](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx)＞。  

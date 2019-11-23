@@ -17,21 +17,21 @@ ms.locfileid: "71402055"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 
->適用於：Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
+>適用于： Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
 
 本主題討論資料夾重新導向、離線檔案（用戶端快取或 CSC）以及漫遊使用者設定檔（有時稱為 RUP）技術，包括新功能和尋找其他資訊的位置。
 
 ## <a name="technology-description"></a>技術說明
 
-資料夾重新導向與離線檔案一併使用時，可將本機資料夾 (例如 [文件] 資料夾) 的路徑重新導向到網路位置，同時在本機快取該資料夾的內容，以提升速度及可用性。 您可以使用漫遊使用者設定檔將使用者設定檔重新導向到網路位置。 這些功能通常稱為 Intellimirror。
+資料夾重新導向與離線檔案一併使用時，可將本機資料夾 (例如 \[文件\] 資料夾) 的路徑重新導向到網路位置，同時在本機快取該資料夾的內容，以提升速度及可用性。 您可以使用漫遊使用者設定檔將使用者設定檔重新導向到網路位置。 這些功能通常稱為 Intellimirror。
 
-- **資料夾**重新導向可讓使用者和系統管理員以手動方式或使用群組原則，將已知資料夾的路徑重新導向至新位置。  這個新位置可以是本機電腦上的資料夾，或是檔案共用上的目錄。 使用者與重新導向資料夾中檔案的互動方式，就像它們仍然存在本機磁碟機中一樣。 例如，您可以將通常儲存在本機磁碟機上的 [文件] 資料夾重新導向到網路位置。 接著，使用者可從網路上的任一電腦使用資料夾中的檔案。
-- **離線檔案即使伺服器**的網路連線無法使用或速度很慢，也可以讓使用者使用網路檔案。  在線上工作時，檔案存取效能是依據網路和伺服器速度而定。 當離線工作時，會以本機存取速度從 [離線檔案] 資料夾擷取檔案。 在下列狀況下，電腦會切換到離線模式：
+- [**資料夾**重新導向] 可讓使用者和系統管理員以手動方式或使用群組原則，將已知資料夾的路徑重新導向至新位置。 這個新位置可以是本機電腦上的資料夾，或是檔案共用上的目錄。 使用者與重新導向資料夾中檔案的互動方式，就像它們仍然存在本機磁碟機中一樣。 例如，您可以將通常儲存在本機磁碟機上的 [文件] 資料夾重新導向到網路位置。 接著，使用者可從網路上的任一電腦使用資料夾中的檔案。
+- **離線檔案** 可讓使用者使用網路檔案，即使伺服器的網路連線無法使用或速度很慢也一樣。 在線上工作時，檔案存取效能是依據網路和伺服器速度而定。 當離線工作時，會以本機存取速度從 [離線檔案] 資料夾擷取檔案。 在下列狀況下，電腦會切換到離線模式：
   - **Always Offline**模式已啟用
   - 伺服器無法使用
   - 網路連線速度低於可設定的閾值
   - 使用者使用 Windows 檔案總管中的 [離線工作] 按鈕手動切換到離線模式
-- **漫遊使用者設定檔** 會將使用者設定檔重新導向到檔案共用，讓使用者可在多部電腦上接收相同的作業系統和應用程式設定。 當使用者使用以檔案共用設定為設定檔路徑的帳戶登入電腦時，會將使用者的設定檔下載到本機電腦，並與本機設定檔合併（如果有的話）。 當使用者登出電腦時，他們的設定檔本機複本 (包含所有的變更) 會合併到設定檔的伺服器複本中。 一般而言，網路系統管理員會啟用網域帳戶的漫遊使用者設定檔。
+- **漫遊使用者設定檔** 會將使用者設定檔重新導向到檔案共用，讓使用者可以在多部電腦上接收相同的作業系統和應用程式設定。 當使用者使用以檔案共用設定為設定檔路徑的帳戶登入電腦時，會將使用者的設定檔下載到本機電腦，並與本機設定檔合併（如果有的話）。 當使用者登出電腦時，他們的設定檔本機複本 (包含所有的變更) 會合併到設定檔的伺服器複本中。 一般而言，網路系統管理員會啟用網域帳戶的漫遊使用者設定檔。
 
 ## <a name="practical-applications"></a>實際應用
 
@@ -69,7 +69,7 @@ ms.locfileid: "71402055"
 
 使用 Always Offline 模式時，當設定 [設定**低速連結模式]** 群組原則設定，而且 [**延遲**閾值] 參數設定為1毫秒時，電腦永遠不會轉換到線上模式。 根據預設，每隔 120 分鐘在背景執行一次同步處理，但是您可以使用 **Configure Background Sync** 群組原則設定來設定同步處理。
 
-如需詳細資訊，請參閱[啟用永遠離線模式以提供更快速的檔案存取](enable-always-offline.md)。
+如需詳細資訊，請參閱 [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md)。
 
 ## <a name="cost-aware-synchronization"></a>成本感知同步處理
 
@@ -107,12 +107,12 @@ ms.locfileid: "71402055"
 
 若要限制下載私密使用者資料到主要電腦，資料夾重新導向及漫遊使用者設定檔技術會在使用者登入電腦時執行下列邏輯檢查：
 
-1. Windows 作業系統會檢查新的群組原則設定（**僅下載主要電腦上的漫遊設定檔**，並**只重新導向主要電腦上的資料夾**），以判斷作用中的**主機電腦**屬性是否有效Directory 網域服務（AD DS）應會影響漫遊使用者設定檔或套用資料夾重新導向的決定。
+1. Windows 作業系統會檢查新的群組原則設定（**僅下載主要電腦上的漫遊設定檔**，並**只重新導向主要電腦上的資料夾**），以判斷 Active Directory Domain Services （AD DS）中的「**電腦**」屬性是否應該影響漫遊使用者設定檔或套用資料夾重新導向的決定。
 2. 如果這個原則設定啟用主要電腦支援，Windows 會確認 AD DS 結構描述支援 **msDS-Primary-Computer** 屬性。 若是如此，Windows 會判斷使用者登入的電腦是否被指定為該使用者的主要電腦，如下所示：
     1. 如果電腦是其中一個使用者的主要電腦，Windows 會套用漫遊使用者設定檔和資料夾重新導向設定。
     2. 如果電腦不是其中一個使用者的主要電腦，Windows 會載入使用者的快取本機設定檔（如果有的話），或建立新的本機設定檔。 Windows 也會依據先前套用的群組原則設定所指定的移除動作 (保存在本機資料夾重新導向設定中)，移除任何現有的重新導向資料夾。
 
-如需詳細資訊，請參閱[部署資料夾重新導向及漫遊使用者設定檔的主要電腦](deploy-primary-computers.md)
+如需詳細資訊，請參閱 [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md)。
 
 ## <a name="hardware-requirements"></a>硬體需求
 
@@ -125,13 +125,13 @@ ms.locfileid: "71402055"
 - Active Directory Domain Services （AD DS）架構必須更新為包含 Windows Server 2012 架構和條件（安裝 Windows Server 2012 或更新版本的網域控制站會自動更新架構）。 如需有關升級 AD DS 架構的詳細資訊，請參閱[將網域控制站升級至 Windows Server 2016](../../identity/ad-ds/deploy/upgrade-domain-controllers.md)。
 - 用戶端電腦必須執行 Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012，並加入您所管理的 Active Directory 網域。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
 如需其他相關資訊，請參閱下列資源。
 
 | 內容類型 | 參考 |
 | --- | --- |
-| 產品評估 | [以可靠的檔案服務和儲存空間支援資訊工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（Windows 7 和 Windows Server 2008 R2）<br>[Windows Vista 離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中離線檔案的變更](<https://technet.microsoft.com/library/2007.11.offline.aspx>)（TechNet 雜誌） |
+| 產品評估 | [以可靠的檔案服務和儲存空間支援資訊工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（windows 7 和 windows Server 2008 R2）<br>[Windows Vista 離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中離線檔案的變更](<https://technet.microsoft.com/library/2007.11.offline.aspx>)（TechNet 雜誌） |
 | 部署 | [部署資料夾重新導向、離線檔案和漫遊使用者設定檔](deploy-folder-redirection.md)<br>[執行使用者資料集中化解決方案：資料夾重新導向和離線檔案技術驗證與部署](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫遊使用者資料部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[設定 Windows 7 電腦之新離線檔案功能的逐步指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[執行資料夾](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)重新導向（Windows Server 2003） |
 | 工具及設定 | [MSDN 上的離線檔案](https://msdn.microsoft.com/library/cc296092.aspx)<br>[離線檔案群組原則參考](https://msdn.microsoft.com/library/ms878937.aspx)（Windows 2000） |
 | 社群資源 | [檔案服務和儲存體論壇](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[您好，編寫腳本的專家！如何使用 Windows 中的離線檔案功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[您好，編寫腳本的專家！如何啟用和停用離線檔案？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |

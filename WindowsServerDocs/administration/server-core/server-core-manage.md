@@ -16,7 +16,7 @@ ms.locfileid: "71383404"
 ---
 # <a name="manage-a-server-core-server"></a>管理 Server Core 伺服器
  
-> 適用於：Windows Server 2019、Windows Server 2016 和 Windows Server （半年通道）
+> 適用于： Windows Server 2019、Windows Server 2016 和 Windows Server （半年通道）
 
 您可以利用下列方式來管理 Server Core 伺服器：
 - 使用[Windows 管理中心](../../manage/windows-admin-center/overview.md)
@@ -30,7 +30,7 @@ ms.locfileid: "71383404"
 
 當您使用 Server Core 時，有一些重要的限制和秘訣必須牢記在心：
 
-- 如果您關閉所有命令提示字元視窗，而且想要開啟新的 [命令提示字元] 視窗，您可以從 [工作管理員] 執行此動作。 按**CTRL @ no__t-1ALT @ no__t-2DELETE**，按一下 [**啟動工作管理員**]，按一下 [**更多詳細資料] > [檔案 > 執行**]，然後輸入**cmd.exe**。 （輸入**powershell**以開啟 powershell 命令視窗。）或者，您可以登出後再重新登入。
+- 如果您關閉所有命令提示字元視窗，而且想要開啟新的 [命令提示字元] 視窗，您可以從 [工作管理員] 執行此動作。 按**CTRL\+ALT\+刪除**，按一下 **啟動工作管理員**，按一下 **更多詳細資料 >** 檔案 > 執行，然後輸入**cmd.exe**。 （輸入**powershell**以開啟 powershell 命令視窗。）或者，您可以登出後再重新登入。
 - 嘗試啟動 Windows 檔案總管的任何命令或工具都將無法運作。 例如，執行 [**啟動]。** 從命令提示字元無法使用。
 - 在 Server Core 中不支援 HTML 轉譯或 HTML 說明。
 - Server Core 支援在無訊息模式下 Windows Installer，讓您可以從 Windows Installer 檔案安裝工具和公用程式。 在 Server Core 上安裝 Windows Installer 套件時，請使用 **/qb**選項來顯示基本使用者介面。
@@ -149,4 +149,4 @@ sc query type= driver
 sc delete <service_name>
 ```
 
-其中， *service_name*是您執行**sc query type = driver**時所得到的服務名稱。
+其中*service_name*是您執行**sc query type = driver**時所得到的服務名稱。

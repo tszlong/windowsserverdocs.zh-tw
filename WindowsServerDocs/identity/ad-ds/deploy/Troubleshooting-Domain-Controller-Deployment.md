@@ -18,7 +18,7 @@ ms.locfileid: "71369620"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>疑難排解網域控制站部署
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 本主題涵蓋網域控制站組態和部署的詳細疑難排解方法。  
 
@@ -34,9 +34,9 @@ ms.locfileid: "71369620"
 |---------|-------|  
 |伺服器管理員或 ADDSDeployment Windows PowerShell 作業|- %systemroot%\debug\dcpromoui.log<br /><br />-%systemroot%\debug\dcpromoui * .log|  
 |網域控制站的安裝/升級|-%systemroot%\debug\dcpromo.log<br /><br />-%systemroot%\debug\dcpromo * .log<br /><br />-Event 檢視器 \windows 記錄 \ 系統<br /><br />-Event 檢視器 \windows logs\Application<br /><br />-事件 viewer\Applications 和服務 logs\Directory 服務<br /><br />-事件 viewer\Applications 和服務 logs\File 複寫服務<br /><br />-事件 viewer\Applications 和服務 logs\DFS 複寫|  
-|樹系或網域升級|-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\adprep.log<br /><br />-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\csv.log<br /><br />-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\dspecup.log<br /><br />-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\ldif.log *|  
+|樹系或網域升級|-%systemroot%\debug\adprep\\<datetime>\adprep.log<br /><br />-%systemroot%\debug\adprep\\<datetime>\csv.log<br /><br />-%systemroot%\debug\adprep\\<datetime>\dspecup.log<br /><br />-%systemroot%\debug\adprep\\<datetime>\ldif.log *|  
 |伺服器管理員 ADDSDeployment Windows PowerShell 部署引擎|-事件 viewer\Applications 和服務 logs\Microsoft\Windows\DirectoryServices-Deployment\Operational|  
-|Windows 維護|-%systemroot%\Logs\CBS @ no__t-0 @ no__t-1<br /><br />- %systemroot%\servicing\sessions\sessions.xml<br /><br />- %systemroot%\winsxs\poqexec.log<br /><br />- %systemroot%\winsxs\pending.xml|  
+|Windows 維護|-%systemroot%\Logs\CBS\\*<br /><br />- %systemroot%\servicing\sessions\sessions.xml<br /><br />- %systemroot%\winsxs\poqexec.log<br /><br />- %systemroot%\winsxs\pending.xml|  
 
 ### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>適用於疑難排解網域控制站設定的工具和命令
 
@@ -96,14 +96,14 @@ ms.locfileid: "71369620"
 
 1. 使用伺服器管理員時，請在自動重新開機之前十秒內檢查升級結果。  
 
-2. 使用 ADDSDeployment Windows PowerShell 時，請在自動重新開機之前十秒內檢查升級結果。 或者，在完成時選擇不要自動重新啟動。 您應該新增**格式清單**管線以方便閱讀輸出結果。 例如:  
+2. 使用 ADDSDeployment Windows PowerShell 時，請在自動重新開機之前十秒內檢查升級結果。 或者，在完成時選擇不要自動重新啟動。 您應該新增**格式清單**管線以方便閱讀輸出結果。 例如：  
 
    ```  
    Install-addsdomaincontroller <options> -norebootoncompletion:$true | format-list  
 
    ```  
 
-   先決條件驗證和確認錯誤不會在重新開機時持續發生，因此在所有情況下都會看到那些錯誤。 例如:  
+   先決條件驗證和確認錯誤不會在重新開機時持續發生，因此在所有情況下都會看到那些錯誤。 例如：  
 
    ![疑難排解](media/Troubleshooting-Domain-Controller-Deployment/ADDS_PSPrereqError.png)  
 
@@ -168,7 +168,7 @@ ms.locfileid: "71369620"
 |     49     |                                               指定的網域不存在                                                |                                                                                                                       請驗證您輸入的網域名稱                                                                                                                        |
 |     50     | 在降級期間，偵測到最後一個網域控制站 (即使它並不是)，或已指定最後一個網域控制站 (但它並不是) |        除非網域控制站確實是**網域中最後一個網域控制站**( **-lastdomaincontrollerindomain**)，否則請勿指定此項目。 如果這確實是最後一個網域控制站，而且有虛設網域控制站中繼資料，請使用 **-ignorelastdcindomainmismatch**來覆寫        |
 |     51     |                                          此網域控制站上有應用程式磁碟分割存在                                          |                                                                                              請指定**移除應用程式磁碟分割**( **-removeapplicationpartitions**)                                                                                               |
-|     52     |            遺失必要的命令列引數 (也就是命令列中必須指定回應檔案)             |                                                                                              @no__t-使用 dcpromo/unattend 看到的0Only 已被取代。請參閱舊版檔 @ no__t-0                                                                                              |
+|     52     |            遺失必要的命令列引數 (也就是命令列中必須指定回應檔案)             |                                                                                              *只有在已被取代的 dcpromo/unattend 中才看得到。請參閱舊版檔*                                                                                              |
 |     53     |                               升級/降級失敗，必須重新開機以清理電腦                                |                                                                                                                    請檢查延伸錯誤和記錄檔                                                                                                                     |
 |     54     |                                                  升級/降級失敗                                                   |                                                                                                                    請檢查延伸錯誤和記錄檔                                                                                                                     |
 |     55     |                                         使用者已取消升級/降級                                          |                                                                                                                    請檢查延伸錯誤和記錄檔                                                                                                                     |
@@ -177,14 +177,14 @@ ms.locfileid: "71369620"
 |     59     |                        此網域控制站在降級期間是其其中一個區域中的最後一部 DNS 伺服器                         |                                                                                    請指定這是**網域中最後一個 DNS 伺服器**或使用 **-ignorelastdnsserverfordomain**                                                                                     |
 |     60     |         網域中必須有執行 Windows Server 2008 或更新版本的網域控制站存在才能升級 RODC          |                                                                                             請至少升級一個 Windows Server 2008 或更新版本的模型可寫入網域控制站                                                                                             |
 |     61     |        您無法在尚未主控 DNS 的現有網域中，安裝具有 DNS 的 Active Directory 網域服務         |                                                                                                                      *無法取得此錯誤*                                                                                                                      |
-|     62     |                                         回應檔案中沒有 [DCInstall] 區段                                          |                                                                                             @no__t-使用 dcpromo/unattend 看到的0Only 已被取代。請參閱舊版檔。 *                                                                                              |
+|     62     |                                         回應檔案中沒有 [DCInstall] 區段                                          |                                                                                             *只有在已被取代的 dcpromo/unattend 中才看得到。請參閱較舊的檔。*                                                                                              |
 |     63     |                                       樹系功能等級低於 Windows Server 2003                                       |                                                            請將樹系功能等級至少提高至 Windows Server 2003 原生。 已不再支援 Windows 2000 與 Windows NT 4.0 作業系統                                                             |
 |     64     |                                      升級失敗，因為元件二進位偵測失敗                                      |                                                                                                                           請安裝 AD DS 角色                                                                                                                           |
 |     65     |                                    升級失敗，因為元件二進位安裝失敗                                     |                                                                                                                           請安裝 AD DS 角色                                                                                                                           |
 |     66     |                                      升級失敗，因為作業系統偵測失敗                                      |                                  請檢查延伸錯誤和記錄檔。伺服器無法傳回其作業系統版本。 可能必須重新安裝電腦，因為高度懷疑電腦的整體健康狀況不佳                                   |
-|     68     |                                                  複寫協力電腦無效                                                  |                                                                             使用 repadmin 或**get-adreplication @ no__t-1**\* Windows PowerShell 來驗證夥伴網域控制站的健全狀況                                                                              |
+|     68     |                                                  複寫協力電腦無效                                                  |                                                                             使用 repadmin 或**get-adreplication\\** \* Windows PowerShell 來驗證夥伴網域控制站的健全狀況                                                                              |
 |     69     |                                    必要的連接埠已由其他應用程式使用                                     |                                                                                    請使用 **netstat.exe anob** 尋找錯誤地指派給保留 AD DS 連接埠的處理程序                                                                                     |
-|     70     |                                          樹系根網域控制站必須是 GC                                          |                                                                                              @no__t-使用 dcpromo/unattend 看到的0Only 已被取代。請參閱舊版檔 @ no__t-0                                                                                              |
+|     70     |                                          樹系根網域控制站必須是 GC                                          |                                                                                              *只有在已被取代的 dcpromo/unattend 中才看得到。請參閱舊版檔*                                                                                              |
 |     71     |                                                 已安裝 DNS 伺服器                                                  |                                                                                          如果已安裝 DNS 伺服器，請勿指定安裝 DNS ( **-installDNS**)                                                                                           |
 |     72     |                                  電腦正以非系統管理模式執行遠端桌面服務                                   |        您無法升級此網域控制站，因為它也是針對兩個以上的系統管理員使用者設定的 RDS 伺服器。 請勿在未仔細清查 RDS 的使用狀況之前將它移除。如果應用程式或使用者正在使用它，移除它將會導致中斷         |
 |     73     |                                        指定的樹系功能等級無效。                                         |                                                                                                                  請指定有效的樹系功能等級                                                                                                                   |
@@ -210,9 +210,9 @@ ms.locfileid: "71369620"
 |     93     |                                網域控制站服務未執行，無法執行非強制降級                                |                                                                                                                          請啟動 AD DS 服務                                                                                                                           |
 |     94     |                           本機系統管理員密碼不符合需求： 空白或非必要                           |                                                                                         請提供非空白密碼並確保本機密碼原則有要求密碼                                                                                         |
 |     95     |              無法將即時 RODC 所在之網域中的最後一個 Windows Server 2008 或更新版本的網域控制站降級。              |                                                                             您必須先將所有 RODC 降級，才能將所有 Windows Server 2008 或更新版本的可寫入網域控制站降級                                                                             |
-|     96     |                                                 無法解除安裝 DS 二進位檔                                                  |                                                                                              @no__t-使用 dcpromo/unattend 看到的0Only 已被取代。請參閱舊版檔 @ no__t-0                                                                                              |
+|     96     |                                                 無法解除安裝 DS 二進位檔                                                  |                                                                                              *只有在已被取代的 dcpromo/unattend 中才看得到。請參閱舊版檔*                                                                                              |
 |     97     |                      樹系功能等級版本高於子網域作業系統版本                       |                                                                                           提供與樹系功能等級相同或更高的子網域功能                                                                                            |
-|     98     |                                        元件二進位安裝/解除安裝正在進行中。                                        |                                                                                              @no__t-使用 dcpromo/unattend 看到的0Only 已被取代。請參閱舊版檔 @ no__t-0                                                                                              |
+|     98     |                                        元件二進位安裝/解除安裝正在進行中。                                        |                                                                                              *只有在已被取代的 dcpromo/unattend 中才看得到。請參閱舊版檔*                                                                                              |
 |     99     |                              樹系功能等級太低 (只有 Windows Server 2012 才會發生此錯誤)                              |                                                            請將樹系功能等級至少提高至 Windows Server 2003 原生。 已不再支援 Windows 2000 與 Windows NT 4.0 作業系統                                                             |
 |    100     |                              網域功能等級太低 (只有 Windows Server 2012 才會發生此錯誤)                              |                                                            請將網域功能等級至少提高至 Windows Server 2003 原生。 已不再支援 Windows 2000 與 Windows NT 4.0 作業系統                                                             |
 
@@ -257,7 +257,7 @@ ms.locfileid: "71369620"
 
 |問題|使用 Dism.exe 移除 DirectoryServices-DomainController 角色會導致伺服器無法開機|  
 |---------|---------------------------------------------------------------------------------------------------|  
-|問題|如果在順利降級網域控制站之前使用 Dism.exe 移除 AD DS 角色，伺服器就無法再正常開機並且會顯示錯誤：<br /><br />程式碼-狀態：0x000000000<br />資訊發生未預期的錯誤。|  
+|問題|如果在順利降級網域控制站之前使用 Dism.exe 移除 AD DS 角色，伺服器就無法再正常開機並且會顯示錯誤：<br /><br />程式碼-狀態：0x000000000<br />資訊：發生未預期的錯誤。|  
 |解決方式和注意事項|使用 *Shift + F8* 開機進入目錄服務修復模式。 重新新增 AD DS 角色，然後強制降級網域控制站。 或者，從備份還原系統狀態。 請勿使用 Dism.exe 來移除 AD DS 角色，此公用程式無法識別網域控制站。|  
 
 |問題|設定 Win2012 的 Forestmode 時安裝新樹系失敗|  
@@ -286,8 +286,8 @@ ms.locfileid: "71369620"
 |||  
 |-|-|  
 |問題|預先建立之電腦帳戶中的 RODC 升級失敗|  
-|問題|使用 ADDSDeployment Windows PowerShell 來升級具備分段電腦帳戶的新 RODC 時，收到錯誤：<br /><br />無法使用指定的具名引數解析程式代碼參數集。    <br />InvalidArgument:ParameterBindingException<br />    + FullyQualifiedErrorId：AmbiguousParameterSet、Microsoft.directoryservices、Install。|  
-|解決方式和注意事項|請勿提供已在預先建立的 RODC 帳戶中定義的參數。 它們包括：<br /><br />程式碼--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns|  
+|問題|使用 ADDSDeployment Windows PowerShell 來升級具備分段電腦帳戶的新 RODC 時，收到錯誤：<br /><br />無法使用指定的具名引數解析程式代碼參數集。    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId： AmbiguousParameterSet、Microsoft.directoryservices，然後安裝|  
+|解決方式和注意事項|請勿提供已在預先建立的 RODC 帳戶中定義的參數。 這些地方包括：<br /><br />程式碼--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns|  
 
 |||  
 |-|-|  
@@ -304,7 +304,7 @@ ms.locfileid: "71369620"
 |||  
 |-|-|  
 |問題|先決條件 adprep 檢查失敗，發生「 無法執行 Exchange 架構衝突檢查 」錯誤|  
-|問題|嘗試將 Windows Server 2012 網域控制站升級到現有的 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 樹系時，先決條件檢查失敗並發生錯誤：<br /><br />AD 準備的必要條件的程式碼驗證失敗。 無法對網域 *<domain name>* 執行 Exchange 架構衝突檢查（例外狀況： RPC 伺服器無法使用）<br /><br />adprep.log 顯示錯誤：<br /><br />程式碼-Adprep 無法從伺服器取出資料 *<domain controller>*<br /><br />透過 Windows Management Instrumentation （WMI）。|  
+|問題|嘗試將 Windows Server 2012 網域控制站升級到現有的 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 樹系時，先決條件檢查失敗並發生錯誤：<br /><br />AD 準備的必要條件的程式碼驗證失敗。 無法對網域 *<domain name>* 執行 Exchange 架構衝突檢查（例外狀況： RPC 伺服器無法使用）<br /><br />adprep.log 顯示錯誤：<br /><br />Code-Adprep 無法從伺服器取得資料 *<domain controller>*<br /><br />透過 Windows Management Instrumentation （WMI）。|  
 |解決方式和注意事項|新的網域控制站無法透過 DCOM/RPC 通訊協定對現有網域控制站存取 WMI。 到目前為止，有三個原因造成此問題：<br /><br />-防火牆規則會封鎖對現有網域控制站的存取<br /><br />-現有網域控制站上的「以服務方式登入」（SeServiceLogonRight）許可權遺漏網路服務帳戶<br /><br />-在網域控制站上停用 NTLM，使用[Ntlm 驗證的限制簡介](https://technet.microsoft.com/library/dd560653(WS.10).aspx)中所述的安全性原則|  
 
 |||  
@@ -316,7 +316,7 @@ ms.locfileid: "71369620"
 |||  
 |-|-|  
 |問題|Windows PowerShell-whatif 引數傳回不正確的 DNS 伺服器資訊|  
-|問題|如果您在設定具備隱含或明確 **-installdns： $true** 的網域控制站時使用 **-whatif** 引數，會顯示以下輸出結果：<br /><br />代碼-「DNS 伺服器：不要|  
+|問題|如果您在設定具備隱含或明確 **-installdns： $true** 的網域控制站時使用 **-whatif** 引數，會顯示以下輸出結果：<br /><br />代碼-「DNS 伺服器：否」|  
 |解決方式和注意事項|忽略。 已正確安裝及設定 DNS。|  
 
 |||  
@@ -329,7 +329,7 @@ ms.locfileid: "71369620"
 |-|-|  
 |問題|[網域控制站選項] 頁面的 [下一步] 按鈕無法使用|  
 |問題|即使您已設定密碼，伺服器管理員的 [網域控制站選項] 頁面中還是無法使用 [下一步] 按鈕。 [站台名稱] 功能表中沒有列出任何站台。|  
-|解決方式和注意事項|您有多個 AD DS 站台且至少有一個站台遺失子網路。這個新的網域控制站隸屬於那些子網路的其中之一。 您必須從 [站台名稱] 下拉式功能表手動選取子網路。 您也應該使用 DSSITE.MSC 檢閱所有 AD 站台，或使用以下 Windows PowerShell 命令來尋找遺失子網路的所有站台：<br /><br />New-adreplicationsite-filter \*-屬性子網&#124; ，其中-object {！ $ _ subnet-eq "\*"} &#124;格式-資料表名稱|  
+|解決方式和注意事項|您有多個 AD DS 站台且至少有一個站台遺失子網路。這個新的網域控制站隸屬於那些子網路的其中之一。 您必須從 [站台名稱] 下拉式功能表手動選取子網路。 您也應該使用 DSSITE.MSC 檢閱所有 AD 站台，或使用以下 Windows PowerShell 命令來尋找遺失子網路的所有站台：<br /><br />New-adreplicationsite-filter \*-property 子網&#124; ，其中-object {！ $ _ subnet-eq "\*"} &#124;格式-資料表名稱|  
 
 |||  
 |-|-|  
@@ -357,10 +357,10 @@ ms.locfileid: "71369620"
 
 |問題|Dcpromo /unattend 允許使用不支援的功能等級|  
 |-|-|  
-|問題|如果您搭配下列範例回應檔案使用 dcpromo /unattend 來升級網域控制站：<br /><br />錯誤碼<br /><br />DCInstall<br />NewDomain = 樹系<br /><br />ReplicaOrNewDomain = 網域<br /><br />NewDomainDNSName = corp. contoso .com<br /><br />SafeModeAdminPassword = Safepassword@6<br /><br />DomainNetbiosName = corp<br /><br />DNSOnNetwork = 是<br /><br />AutoConfigDNS = 是<br /><br />RebootOnSuccess = NoAndNoPromptEither<br /><br />RebootOnCompletion = 否<br /><br />*DomainLevel = 0*<br /><br />*ForestLevel = 0*<br /><br />升級失敗且 dcpromoui.log 中會顯示下列錯誤：<br /><br />程式碼 dcpromoui.log EA 4.5 B8 0089 13：31： 50.783 Enter CArgumentsSpec：： ValidateArgument DomainLevel<br /><br />dcpromoui.log EA 4.5 B8 008A 13：31： DomainLevel 的50.783 值為0<br /><br />dcpromoui.log EA 4.5 B8 008B 13：31：50.783 結束代碼為77<br /><br />dcpromoui.log EA 4.5 B8 008C 13：31：50.783 指定的引數無效。<br /><br />dcpromoui.log EA 4.5 B8 008D 13：31：50.783 關閉記錄檔<br /><br />dcpromoui.log EA 4.5 B8 0032 13：31：50.830 結束代碼為77<br /><br />等級 0 為 Windows 2000，Windows Server 2012 不支援。|  
+|問題|如果您搭配下列範例回應檔案使用 dcpromo /unattend 來升級網域控制站：<br /><br />錯誤碼<br /><br />DCInstall<br />NewDomain = 樹系<br /><br />ReplicaOrNewDomain = 網域<br /><br />NewDomainDNSName = corp. contoso .com<br /><br />SafeModeAdminPassword =Safepassword@6<br /><br />DomainNetbiosName = corp<br /><br />DNSOnNetwork = 是<br /><br />AutoConfigDNS = 是<br /><br />RebootOnSuccess = NoAndNoPromptEither<br /><br />RebootOnCompletion = 否<br /><br />*DomainLevel = 0*<br /><br />*ForestLevel = 0*<br /><br />升級失敗且 dcpromoui.log 中會顯示下列錯誤：<br /><br />程式碼 dcpromoui.log EA 4.5 B8 0089 13：31： 50.783 Enter CArgumentsSpec：： ValidateArgument DomainLevel<br /><br />dcpromoui.log EA 4.5 B8 008A 13：31： DomainLevel 的50.783 值為0<br /><br />dcpromoui.log EA 4.5 B8 008B 13：31：50.783 結束代碼為77<br /><br />dcpromoui.log EA 4.5 B8 008C 13：31：50.783 指定的引數無效。<br /><br />dcpromoui.log EA 4.5 B8 008D 13：31：50.783 關閉記錄檔<br /><br />dcpromoui.log EA 4.5 B8 0032 13：31：50.830 結束代碼為77<br /><br />等級 0 為 Windows 2000，Windows Server 2012 不支援。|  
 |解決方式和注意事項|請勿使用過時的 dcpromo /unattend，而且它允許您指定之後會失敗的無效設定。 此行為是預期的行為且是設計使然。|  
 
 |問題|在建立 NTDS 設定物件時升級「停止回應」，永遠不會完成|  
 |-|-|  
 |問題|如果您升級複本 DC 或 RODC，升級會到達「建立 NTDS 設定物件」，而且永遠不會繼續或完成。 記錄檔也停止更新。|  
-|解決方式和注意事項|這是因提供了與內建網域系統管理員帳戶密碼相同之內建本機系統管理員帳戶的認證而產生的已知問題。 這會導致核心安裝程式引擎失敗，但不會發生錯誤，而是會無限期等待 (odd 迴圈)。 這是預期的-但不需要的行為。<br /><br />修正伺服器：<br /><br />1.將它重新開機。<br /><br />1.在 AD 中，刪除該伺服器的成員電腦帳戶（它還不會是 DC 帳戶）<br /><br />1.在該伺服器上，將它從網域強制退出<br /><br />1.在該伺服器上移除 AD DS 角色。<br /><br />1.重新開機<br /><br />1.重新加入 AD DS 角色並重試升級，確保您一律將***domain\admin***格式的認證提供給 DC 升級，而不只是內建的本機系統管理員帳戶。|  
+|解決方式和注意事項|這是因提供了與內建網域系統管理員帳戶密碼相同之內建本機系統管理員帳戶的認證而產生的已知問題。 這會導致核心安裝程式引擎失敗，但不會發生錯誤，而是會無限期等待 (odd 迴圈)。 這是預期的-但不需要的行為。<br /><br />修正伺服器：<br /><br />1. 重新開機它。<br /><br />1. 在 AD 中，刪除該伺服器的成員電腦帳戶（它還不會是 DC 帳戶）<br /><br />1. 在該伺服器上，強制從網域退出後它<br /><br />1. 在該伺服器上，移除 AD DS 角色。<br /><br />1. 重新開機<br /><br />1. 重新加入 AD DS 角色並重試升級，確保您一律將***domain\admin***格式的認證提供給 DC 升級，而不只是內建的本機系統管理員帳戶。|  

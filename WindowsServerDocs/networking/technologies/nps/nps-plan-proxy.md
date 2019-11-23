@@ -17,9 +17,9 @@ ms.locfileid: "71396021"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>將 NPS 作為 RADIUS Proxy 規劃
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-當您將網路原則伺服器（NPS）部署為遠端驗證撥入使用者服務時 \(RADIUS @ no__t-1 proxy，NPS 會接收來自 RADIUS 用戶端（例如網路存取伺服器或其他 RADIUS proxy）的連線要求，然後轉送這些對執行 NPS 或其他 RADIUS 伺服器之伺服器的連接要求。 您可以使用這些規劃指導方針來簡化您的 RADIUS 部署。
+當您將網路原則伺服器（NPS）部署為遠端驗證撥入使用者服務 \(RADIUS\) proxy 時，NPS 會接收來自 RADIUS 用戶端（例如網路存取伺服器或其他 RADIUS proxy）的連線要求，然後將這些連接要求轉送到執行 NPS 或其他 RADIUS 伺服器的伺服器。 您可以使用這些規劃指導方針來簡化您的 RADIUS 部署。
 
 這些規劃指導方針不包括您想要將 NPS 部署為 RADIUS 伺服器的情況。 當您將 NPS 部署為 RADIUS 伺服器時，NPS 會針對本機網域和信任本機網域的網域，執行連線要求的驗證、授權和帳戶處理。
 
@@ -39,7 +39,7 @@ ms.locfileid: "71396021"
 
 ## <a name="plan-nps-configuration"></a>規劃 NPS 設定
 
-當您使用 NPS 做為 RADIUS proxy 時，NPS 會將連線要求轉送到 NPS 或其他 RADIUS 伺服器進行處理。 因此，NPS proxy 的網域成員資格並不相關。 Proxy 不需要在 Active Directory Domain Services 中註冊 \(AD DS @ no__t-1，因為它不需要存取使用者帳戶的撥入屬性。 此外，您不需要在 NPS proxy 上設定網路原則，因為 proxy 不會執行連線要求的授權。 NPS proxy 可以是網域成員，也可以是不含網域成員資格的獨立伺服器。
+當您使用 NPS 做為 RADIUS proxy 時，NPS 會將連線要求轉送到 NPS 或其他 RADIUS 伺服器進行處理。 因此，NPS proxy 的網域成員資格並不相關。 Proxy 不需要在 Active Directory Domain Services \(AD DS\) 中註冊，因為它不需要存取使用者帳戶的撥入屬性。 此外，您不需要在 NPS proxy 上設定網路原則，因為 proxy 不會執行連線要求的授權。 NPS proxy 可以是網域成員，也可以是不含網域成員資格的獨立伺服器。
 
 NPS 必須設定為使用 RADIUS 通訊協定與 RADIUS 用戶端（也稱為網路存取伺服器）進行通訊。 此外，您可以設定 NPS 記錄在事件記錄檔中的事件種類，也可以輸入伺服器的描述。
 
@@ -59,7 +59,7 @@ NPS 必須設定為使用 RADIUS 通訊協定與 RADIUS 用戶端（也稱為網
 
 ## <a name="plan-radius-clients"></a>規劃 RADIUS 用戶端
 
-RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人網路 \(VPN @ no__t-1 伺服器、802.1 X 功能的交換器和撥號伺服器。 將連線要求訊息轉寄到 RADIUS 伺服器的 RADIUS proxy 也是 RADIUS 用戶端。 NPS 支援所有符合 RADIUS 通訊協定的網路存取伺服器和 RADIUS proxy （如 RFC 2865 < 遠端驗證撥入使用者服務 \(RADIUS @ no__t-1），以及 RFC 2866 「RADIUS 帳戶處理」中所述。
+RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人網路 \(VPN\) 伺服器、802.1 X 功能交換器和撥號伺服器。 將連線要求訊息轉寄到 RADIUS 伺服器的 RADIUS proxy 也是 RADIUS 用戶端。 NPS 支援所有符合 RADIUS 通訊協定的網路存取伺服器和 RADIUS proxy，如 RFC 2865 遠端驗證撥入使用者服務 \(RADIUS\)」和 RFC 2866 「RADIUS 帳戶處理」中所述。
 
 此外，無線存取點和交換器都必須能夠 802.1 X 驗證。 如果您想要部署可擴充的驗證通訊協定（EAP）或受保護的可延伸驗證通訊協定（PEAP），存取點和交換器必須支援使用 EAP。
 
@@ -155,7 +155,7 @@ RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人�
 
 - 如果您打算將帳戶處理訊息轉送到其他伺服器，請規劃連接要求原則設定步驟。 如果您停用 NPS proxy 的本機帳戶處理，您在該 proxy 上設定的每個連線要求原則，都必須啟用並正確設定帳戶處理訊息轉送。
 
-- 決定您想要使用的記錄格式：IAS 格式記錄檔、資料庫相容的格式記錄檔，或 NPS SQL Server 記錄。
+- 決定您想要使用的記錄格式： IAS 格式記錄檔、資料庫相容的格式記錄檔，或 NPS SQL Server 記錄。
 
 若要將 NPS 的負載平衡設定為 RADIUS proxy，請參閱[Nps Proxy 伺服器負載平衡](nps-manage-proxy-lb.md)。
 

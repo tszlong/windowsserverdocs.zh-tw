@@ -21,7 +21,7 @@ ms.locfileid: "71388571"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>步驟1設定基本 DirectAccess 基礎結構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何針對在混合了 IPv4 和 IPv6 的環境中使用單一 DirectAccess 伺服器的基本 DirectAccess 部署，設定所需的基礎結構。 開始部署步驟之前，請確定您已完成[規劃基本 DirectAccess 部署](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md)中所述的規劃步驟。  
   
@@ -119,9 +119,9 @@ ms.locfileid: "71388571"
   
 4.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入 Web 探查的 DNS 名稱 (預設 Web 探查的名稱是 directaccess-webprobehost)。 在 [IP 位址] 方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]。 為 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [DNS] 對話方塊中，按一下 [確定]。  
   
-5.  按一下 [完成]。  
+5.  按一下 \[完成\]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -134,7 +134,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   Ip-HTTPs**伺服器**-DirectAccess 用戶端必須能夠從網際網路解析遠端存取服務器的 DNS 名稱。  
   
--   **CRL 撤銷檢查**-directaccess 會針對 directaccess 用戶端與遠端存取服務器之間的 ip-HTTPs 連線，以及 directaccess 用戶端與網路之間的 HTTPs 連接，使用憑證撤銷檢查位置伺服器。 在這兩種情況下，DirectAccess 用戶端都必須要能夠解析和存取 CRL 發佈點位置。  
+-   **CRL 撤銷檢查**-directaccess 會針對 directaccess 用戶端與遠端存取服務器之間的 ip-HTTPs 連線，以及 directaccess 用戶端與網路位置伺服器之間的 HTTPS 連接，使用憑證撤銷檢查。 在這兩種情況下，DirectAccess 用戶端都必須要能夠解析和存取 CRL 發佈點位置。  
   
 ## <a name="ConfigAD"></a>設定 Active Directory  
 遠端存取伺服器和所有 DirectAccess 用戶端電腦都必須加入 Active Directory 網域。 DirectAccess 用戶端電腦必須是下列其中一種網域類型的成員：  
@@ -149,7 +149,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 1.  在 [伺服器管理員] 中，按一下 [本機伺服器]。 在詳細資料窗格中，按一下 [電腦名稱] 旁邊的連結。  
   
-2.  在 [系統內容] 對話方塊上，按一下 [電腦名稱] 索引標籤。在 [電腦名稱] 索引標籤中，按一下 [變更]。  
+2.  在 [**系統**內容] 對話方塊中，按一下 [**電腦名稱稱**] 索引標籤。在 [**電腦名稱稱**] 索引標籤上，按一下 [**變更**]。  
   
 3.  在 [電腦名稱] 中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]下面，按一下 [網域]，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]。  
   
@@ -183,7 +183,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 9. 按一下 [系統內容] 對話方塊中的 [關閉]。 出現提示時，按一下 [立即重新啟動]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -227,7 +227,7 @@ Restart-Computer
   
 6.  在 [選取使用者、連絡人、電腦或服務帳戶] 對話方塊中，選取您想要啟用 DirectAccess 的用戶端電腦，然後按一下 [確定]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -238,7 +238,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>下一步  
   
--   [步驟 2：設定基本 DirectAccess 伺服器](da-basic-configure-s2-server.md)  
+-   [步驟2：設定基本 DirectAccess 伺服器](da-basic-configure-s2-server.md)  
   
 
 

@@ -55,7 +55,7 @@ ksetup
 
 ```
 
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -68,7 +68,7 @@ ksetup
 |[Ksetup:server](ksetup-server.md)|可讓您指定要套用變更的 Windows 電腦名稱稱。|
 |[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|設定電腦網域帳戶（或主機主體）的密碼。|
 |[Ksetup:removerealm](ksetup-removerealm.md)|從登錄中刪除指定領域的所有資訊。|
-|[Ksetup:domain](ksetup-domain.md)|可讓您指定網域（如果尚未使用 [ **/domain**] 設定 @no__t 0DomainName >）。|
+|[Ksetup:domain](ksetup-domain.md)|可讓您指定網域（如果 \<DomainName > 尚未使用 [ **/domain**] 設定）。|
 |[Ksetup:changepassword](ksetup-changepassword.md)|可讓您使用 Kpasswd 來變更登入使用者的密碼。|
 |[Ksetup:listrealmflags](ksetup-listrealmflags.md)|列出**ksetup**可以偵測到的可用領域旗標。|
 |[Ksetup:setrealmflags](ksetup-setrealmflags.md)|設定特定領域的領域旗標。|
@@ -87,7 +87,7 @@ ksetup
 
 **Ksetup**是用來變更用來尋找 Kerberos 領域的電腦設定。 在以非 Microsoft Kerberos 為基礎的內部部署中，這項資訊通常會保留在 Krb5 檔案中。 在 Windows Server 作業系統中，它會保留在登錄中。 您可以使用此工具來修改這些設定。 工作站會使用這些設定來尋找 Kerberos 領域和網域控制站，以找出跨領域信任關係的 Kerberos 領域。
 
-如果電腦執行的是 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2，而且不是 Windows 的成員，則**Ksetup**會初始化 Kerberos 安全性支援提供者（SSP）用來尋找 KERBEROS 領域 KDC 的登錄機碼domain. 設定之後，執行 Windows 作業系統的用戶端電腦使用者就可以登入 Kerberos 領域中的帳戶。
+如果電腦執行的是 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2，而且不是 Windows 網域的成員，則**Ksetup**會初始化 Kerberos 安全性支援提供者（SSP）用來尋找 KERBEROS 領域 KDC 的登錄機碼。 設定之後，執行 Windows 作業系統的用戶端電腦使用者就可以登入 Kerberos 領域中的帳戶。
 
 Kerberos 第5版通訊協定是執行 Windows XP Professional、Windows Vista 和 Windows 7 之電腦上的網路驗證預設值。 Kerberos SSP 會在登錄中搜尋使用者領域的功能變數名稱，然後藉由查詢 DNS 伺服器，將名稱解析成 IP 位址。 Kerberos 通訊協定可以使用 DNS 來尋找 Kdc，方法是只使用領域名稱，但必須特別設定才能執行這項操作。
 

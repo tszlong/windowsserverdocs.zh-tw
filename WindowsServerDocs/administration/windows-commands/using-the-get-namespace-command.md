@@ -22,7 +22,7 @@ ms.locfileid: "71363077"
 ---
 # <a name="using-the-get-namespace-command"></a>使用 get-Namespace 命令
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示自訂命名空間的相關資訊。
 ## <a name="syntax"></a>語法
@@ -34,12 +34,12 @@ Windows Server 2008 R2
 ```
 wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/details:Clients]
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |               參數               |                                                                                                                                                                                         描述                                                                                                                                                                                          |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /Namespace： <Namespace name>      | 指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<br /><br />-部署伺服器：命名空間名稱的語法為/Namspace： WDS： <ImageGroup> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4。 例如: **WDS： ImageGroup1/install .wim/1**<br />-傳輸伺服器：這個值應該符合在伺服器上建立命名空間時所提供的名稱。 |
-|        [/Server： <Server name>]        |                                                                                                             指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                              |
+|      /Namespace：<Namespace name>      | 指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<br /><br />-部署伺服器：命名空間名稱的語法是/Namspace： WDS：<ImageGroup>/<ImageName>/<Index>。 例如： **WDS： ImageGroup1/install .wim/1**<br />-傳輸伺服器：此值應符合在伺服器上建立命名空間時所提供的名稱。 |
+|        [/Server：<Server name>]        |                                                                                                             指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                              |
 | [/Show： Clients] 或 [/details： Clients] |                                                                                                                                                  顯示連線到指定命名空間之用戶端電腦的相關資訊。                                                                                                                                                  |
 
 ## <a name="BKMK_examples"></a>典型
@@ -52,7 +52,7 @@ wdsutil /Get-Namespace /Namespace:"Custom Auto 1"
 - Windows Server 2008 R2： `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /details:Clients`
   #### <a name="additional-references"></a>其他參考
   [命令列語法索引鍵](command-line-syntax-key.md)
-   使用[AllNamespaces 命令](using-the-get-allnamespaces-command.md)
-   使用[新的命名](using-the-new-namespace-command.md)空間命令 
-  [使用 Remove-namespace 命令](using-the-remove-namespace-command.md)
+  [使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md)
+  使用[new namespace](using-the-new-namespace-command.md)命令
+  [使用 remove-namespace 命令](using-the-remove-namespace-command.md)
   [子命令： start-namespace](subcommand-start-namespace.md)

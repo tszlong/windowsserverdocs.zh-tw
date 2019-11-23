@@ -18,7 +18,7 @@ ms.locfileid: "71391106"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>安裝 Windows Server 2012 Active Directory 唯讀網域控制站 (RODC) (等級 200)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明如何建立執行的 RODC 帳戶，並在 RODC 安裝期間將伺服器連結至該帳戶。 本主題也說明如何不透過執行階段式安裝來安裝 RODC。  
   
@@ -58,12 +58,12 @@ ms.locfileid: "71391106"
 > [!NOTE]  
 > 當您不是以 Domain Admins 群組成員的身分登入時，才需要 **-credential** 引數。  
   
-## <a name="staging"></a>預備環境  
+## <a name="staging"></a>執行  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_PreCreateRODC.png)  
   
 開啟 [Active Directory 管理中心] (**Dsac.exe**) 以執行唯讀網域控制站電腦帳戶的執行操作 。 按一下瀏覽窗格中的網域名稱。 按兩下管理清單中的 [網域控制站]。 按一下工作窗格中的 [預先建立唯讀網域控制站帳戶]。  
   
-如需有關 Active Directory 管理中心的詳細資訊，請參閱[使用 Active Directory 管理中心&#40;層級 200&#41;的 Advanced AD DS Management](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)和複習 [Active Directory 管理中心：消費者入門 @ no__t-0。  
+如需有關 Active Directory 管理中心的詳細資訊，請參閱[使用&#40;Active Directory 管理中心層級 200&#41;的先進 AD DS 管理](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)和評論[Active Directory 管理中心：消費者入門](https://technet.microsoft.com/library/dd560651(WS.10).aspx)。  
   
 如果您曾經建立過唯讀網域控制站，您會發現安裝精靈的圖形化介面和從 Windows Server 2008 使用舊版 [Active Directory 使用者和電腦] 嵌入式管理單元時所見的相同，並且使用相同的程式碼，其中包括匯出過時的 dcpromo 所使用的自動安裝檔案格式中的設定。  
   
@@ -173,7 +173,7 @@ Add-addsreadonlydomaincontrolleraccount
 -delegatedadministratoraccountname <string>  
 ```  
   
-### <a name="summary"></a>總結  
+### <a name="summary"></a>摘要  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1Summary.png)  
   
 [摘要] 對話方塊可讓您確認您的設定。 這是在精靈建立執行帳戶前可停止安裝的最後機會。 當您準備好建立執行的 RODC 電腦帳戶時，按一下 [下一步]。  按一下 [匯出設定] 可以過時的 dcpromo 自動安裝檔案格式儲存回應檔案。  
@@ -229,7 +229,7 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>網域控制站選項  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2DCOptions.png)  
   
-[網域控制站選項] 頁面顯示新網域控制站的網域控制站選項。 當這個頁面載入時，Active Directory 網域服務設定精靈會將 LDAP 查詢傳送到現有的網域控制站，以檢查是否有未使用的帳戶。 如果查詢找到與目前電腦共用相同名稱的未使用網域控制站電腦帳戶，則此 wizard 會在頁面頂端顯示參考用訊息，其中會讀取「@no__t 0A 預先建立的 RODC 帳戶，其名稱與目標伺服器存在於目錄中。選擇要使用這個現有的 RODC 帳戶，或重新安裝此網域控制站 @ no__t-0。」 精靈會使用 [使用現有的 RODC 帳戶] 做為預設設定。  
+[網域控制站選項] 頁面顯示新網域控制站的網域控制站選項。 當這個頁面載入時，Active Directory 網域服務設定精靈會將 LDAP 查詢傳送到現有的網域控制站，以檢查是否有未使用的帳戶。 如果查詢找到與目前電腦共用相同名稱的未使用網域控制站電腦帳戶，則此 wizard 會在頁面頂端顯示一個參考用訊息，其中會讀取「**預先建立的 RODC 帳戶，符合目錄中存在的目標伺服器名稱。選擇要使用這個現有的 RODC 帳戶或重新安裝此網域控制站**。」 精靈會使用 [使用現有的 RODC 帳戶] 做為預設設定。  
   
 > [!IMPORTANT]  
 > 當網域控制站發生實體問題而無法回復功能時，您可以使用 [重新安裝此網域控制站] 。 這可節省設定取代網域控制站的時間，因為能在 Active Directory 中保留網域控制站電腦帳戶與物件中繼資料。 使用 *相同的名稱*安裝新的電腦，並將它升級為網域中的網域控制站。 如果您從 Active Directory 移除網域控制站物件的中繼資料（中繼資料清除），[**重新安裝此網域控制站**] 選項就無法使用。  
@@ -278,7 +278,7 @@ Install-AddsDomainController
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如:  
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如：  
   
 ```  
 $file = "c:\pw.txt"  
@@ -328,7 +328,7 @@ IFM 來源的指導方針：• IFM 選項所使用的媒體是使用具有相�
 ### <a name="review-options-and-view-script"></a>檢閱選項和檢視指令碼  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2ReviewOptions.png)  
   
-[檢閱選項] 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。 [伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如:  
+[檢閱選項] 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。 [伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如：  
   
 ```  
 #  
@@ -495,7 +495,7 @@ Install-AddsDomainController
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如:  
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如：  
   
 ```  
 $file = "c:\pw.txt"  
@@ -607,7 +607,7 @@ IFM 來源的指導方針：• IFM 選項所使用的媒體是使用具有相�
   
 [檢閱選項] 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。  
   
-[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如:  
+[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如：  
   
 ```  
 #  

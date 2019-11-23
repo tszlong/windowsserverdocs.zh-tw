@@ -33,12 +33,12 @@ icacls <FileName> [/grant[:r] <Sid>:<Perm>[...]] [/deny <Sid>:<Perm>[...]] [/rem
 icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c] [/l] [/q]]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|\<檔案名 >|指定要顯示其 Dacl 的檔案。|
-|\<Directory >|指定要顯示其 Dacl 的目錄。|
+|\<FileName >|指定要顯示其 Dacl 的檔案。|
+|\<目錄 >|指定要顯示其 Dacl 的目錄。|
 |一起|對目前目錄及其子目錄中的所有指定檔案執行作業。|
 |/c|即使有任何檔案錯誤，仍繼續操作。 仍然會顯示錯誤訊息。|
 |/l|在符號連結和其目的地上執行運算。|
@@ -48,13 +48,13 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
 |[/findSID \<Sid > [/t] [/c] [/l] [/q]]|尋找包含 DACL 的所有相符檔案，明確提及指定的安全識別碼（SID）。|
 |[/verify [/t] [/c] [/l] [/q]]|尋找 Acl 不是標準的所有檔案，或長度與 ACE 不一致的檔案（存取控制專案）計數。|
 |[/reset [/t] [/c] [/l] [/q]]|以預設繼承的 Acl 取代所有相符檔案的 Acl。|
-|[/grant [： r] \<Sid >： <Perm> [...]]|授與指定的使用者存取權限。 許可權會取代先前授與的明確許可權。</br>如果沒有 **： r**，許可權就會新增至任何先前授與的明確許可權。|
-|[/deny \<Sid >： <Perm> [...]]|明確拒絕指定的使用者存取權限。 系統會為指定的許可權新增明確的拒絕 ACE，並移除任何明確授與中的相同許可權。|
-|[/remove [： g @ no__t-0： d]] \<Sid > [...]]一起/c/l一起|從 DACL 中移除所有出現的指定 SID。</br>**： g**會移除所指定 SID 的所有已授與許可權。</br>**:d**移除指定之 SID 的所有已拒絕許可權。|
-|[/setintegritylevel [（CI）（OI）] \<Level >： <Policy> [...]]|將完整性 ACE 明確新增至所有相符的檔案。 *層級*指定為：</br>-   **L**[允許]</br>-   **M**[edium]</br>-   **H**[igh]</br>完整性 ACE 的繼承選項可能在層級之前，而且僅適用于目錄。|
+|[/grant [： r] \<Sid >：<Perm>[...]]|授與指定的使用者存取權限。 許可權會取代先前授與的明確許可權。</br>如果沒有 **： r**，許可權就會新增至任何先前授與的明確許可權。|
+|[/deny \<Sid >：<Perm>[...]]|明確拒絕指定的使用者存取權限。 系統會為指定的許可權新增明確的拒絕 ACE，並移除任何明確授與中的相同許可權。|
+|[/remove [： g\|:d]] \<Sid > [...]]一起/c/l一起|從 DACL 中移除所有出現的指定 SID。</br>**： g**會移除所指定 SID 的所有已授與許可權。</br>**:d**移除指定之 SID 的所有已拒絕許可權。|
+|[/setintegritylevel [（CI）（OI）]\<層級 >：<Policy>[...]]|將完整性 ACE 明確新增至所有相符的檔案。 *層級*指定為：</br>-   **L**[允許]</br>-   **M**[edium]</br>-   **H**[igh]</br>完整性 ACE 的繼承選項可能在層級之前，而且僅適用于目錄。|
 |[/substitute \<SidOld > <SidNew> [...]]|以新的 SID （*SidNew*）取代現有的 Sid （*SidOld*）。 需要*Directory*參數。|
 |/restore \<ACLfile > [/c] [/l] [/q]|將預存的 Dacl 從*ACLfile*套用至指定目錄中的檔案。 需要*Directory*參數。|
-|/inheritancelevel： [e @ no__t-0d @ no__t-1r]|設定繼承層級： <br>  **e** -啟用 enheritance <br>**d** -停用繼承並複製 ace <br>**r** -移除所有繼承的 ace
+|/inheritancelevel： [e\|d\|r]|設定繼承層級： <br>  **e** -啟用 enheritance <br>**d** -停用繼承並複製 ace <br>**r** -移除所有繼承的 ace
 
 ## <a name="remarks"></a>備註
 

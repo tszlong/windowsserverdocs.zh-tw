@@ -22,7 +22,7 @@ ms.locfileid: "71383956"
 ---
 # <a name="shadow"></a>shadow
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可讓您從遠端控制遠端桌面工作階段主機（rd 工作階段主機）伺服器上另一位使用者的使用中會話。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -32,12 +32,12 @@ ms.locfileid: "71383956"
 shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```
 
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 |參數|描述|
 |-------|--------|
 |\<SessionName >|指定您想要遠端控制的會話名稱。|
 |\<SessionID >|指定您想要遠端控制之會話的識別碼。 使用 [**查詢使用者**] 顯示會話及其會話識別碼的清單。|
-|/server： \<ServerName >|指定包含您要遠端控制之會話的 rd 工作階段主機伺服器。 根據預設，會使用目前的 rd 會話 Host4 伺服器。|
+|/server：\<ServerName >|指定包含您要遠端控制之會話的 rd 工作階段主機伺服器。 根據預設，會使用目前的 rd 會話 Host4 伺服器。|
 |/v|顯示正在執行之動作的相關資訊。|
 |/?|在命令提示字元顯示說明。|
 
@@ -48,7 +48,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   開始監視之前，除非停用此警告，否則伺服器會警告使用者即將從遠端控制會話。 您的會話可能會在等待使用者回應的幾秒鐘後出現凍結。 若要設定使用者和會話的遠端控制，請使用 遠端桌面服務設定工具 或 遠端桌面服務延伸模組給 本機使用者和群組 和 active directory 使用者和電腦。
 -   您的會話必須能夠支援您遠端控制的會話所使用的影片解析，否則作業會失敗。
 -   主控台會話不能從遠端控制另一個會話，也不能由另一個會話遠端控制。
--   當您想要結束遠端控制（遮蔽）時，請按 CTRL + \* （僅使用數位鍵臺上的 \*）。
+-   當您想要結束遠端控制（遮蔽）時，請按 CTRL +\* （僅使用數位鍵臺上的 \*）。
 
 ## <a name="BKMK_examples"></a>典型
 -   若要遮蔽會話93，請輸入：
@@ -61,5 +61,5 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
     ```
 
 #### <a name="additional-references"></a>其他參考
-[命令列語法索引鍵](command-line-syntax-key.md)
-[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+
+[ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)

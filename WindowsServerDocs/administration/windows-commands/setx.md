@@ -36,22 +36,22 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] [<Variable>] 
 setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName> {[<Variable>] {/a <X>,<Y> | /r <X>,<Y> "<String>"} [/m] | /x} [/d <Delimiters>]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |         參數          |                                                                                                                                              描述                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<Computer >       |                                                                                  指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設值是本機電腦的名稱。                                                                                  |
-| /u [\<Domain > \] @ no__t-2 |                                                                                           使用指定之使用者帳戶的認證執行腳本。 預設值是系統許可權。                                                                                            |
-|      /p [\<Password >]      |                                                                                                         指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                         |
-|        \<Variable >         |                                                                                                                 指定您想要設定的環境變數名稱。                                                                                                                  |
-|          \<Value >          |                                                                                                                指定您要設定環境變數的值。                                                                                                                 |
-|         /k \<Path >         | 指定根據登錄機碼中的資訊來設定變數。 P*路徑 a)* 會使用下列語法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，您可以指定下列路徑：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
-|      /f \<File 名稱 >       |                                                                                                                               指定您想要使用的檔案。                                                                                                                                |
+|       /s \<電腦 >       |                                                                                  指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設值是本機電腦的名稱。                                                                                  |
+| /u [\<Domain >\]<User name> |                                                                                           使用指定之使用者帳戶的認證執行腳本。 預設值是系統許可權。                                                                                            |
+|      /p [\<密碼 >]      |                                                                                                         指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                         |
+|        \<變數 >         |                                                                                                                 指定您想要設定的環境變數名稱。                                                                                                                  |
+|          \<值 >          |                                                                                                                指定您要設定環境變數的值。                                                                                                                 |
+|         /k \<路徑 >         | 指定根據登錄機碼中的資訊來設定變數。 P*路徑 a)* 會使用下列語法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，您可以指定下列路徑：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<檔案名 >       |                                                                                                                               指定您想要使用的檔案。                                                                                                                                |
 |        /a \<X >，<Y>         |                                                                                                                    指定絕對座標和位移作為搜尋參數。                                                                                                                    |
 |   /r \<X >，<Y> "<String>"   |                                                                                                            指定**字串**的相對座標和位移作為搜尋參數。                                                                                                            |
 |             /m             |                                                                                                指定在系統內容中設定變數。 預設設定是本機環境。                                                                                                 |
 |             /x             |                                                                                                       顯示檔案座標，忽略 **/a**、 **/r**和 **/d**命令列選項。                                                                                                        |
-|      /d \<Delimiters >      |                    除了四個內建分隔符號（空格、TAB、ENTER 和換行字元）以外，還會指定要使用的分隔符號，例如 " **，** " 或 " **\\** "。 有效的分隔符號包含任何 ASCII 字元。 分隔符號的最大數目為15，包括內建的分隔符號。                    |
+|      /d \<分隔符號 >      |                    除了四個內建分隔符號（空格、TAB、ENTER 和換行字元）以外，還會指定要使用的分隔符號，例如 " **，** " 或 " **\\** "。 有效的分隔符號包含任何 ASCII 字元。 分隔符號的最大數目為15，包括內建的分隔符號。                    |
 |             /?             |                                                                                                                                 在命令提示字元顯示說明。                                                                                                                                  |
 
 ## <a name="remarks"></a>備註
@@ -61,7 +61,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 -   您可以使用**setx**命令，從三個來源（模式）的其中一個設定使用者和系統內容變數的值：命令列模式、登錄模式或檔案模式。
 -   **Setx**會將變數寫入登錄中的主要環境。 使用**setx**變數設定的變數僅適用于未來的命令視窗，而不是在目前的命令視窗中。
 -   **HKEY_CURRENT_USER**和**HKEY_LOCAL_MACHINE**是唯一支援的 hive。 REG_DWORD、REG_EXPAND_SZ、REG_SZ 和 REG_MULTI_SZ 是有效的**RegKey**資料類型。
--   當您在登錄中取得**REG_MULTI_SZ**值的存取權時，只會解壓縮和使用第一個專案。
+-   當您取得登錄中**REG_MULTI_SZ**值的存取權時，只會解壓縮和使用第一個專案。
 -   您無法使用**setx**命令來移除已新增至本機或系統內容的值。 您可以使用**set**搭配變數名稱，沒有值可從本機環境中移除對應的值。
 -   REG_DWORD 登錄值會解壓縮並在十六進位模式中使用。
 -   [檔案模式] 僅支援剖析 [回車] 和 [換行字元（CRLF）] 文字檔。
@@ -92,19 +92,19 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 MACHINE Brand1
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23 MYPATH %PATH%
 ```
-若要將本機環境中的 TZONE 環境變數設定為**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName**登錄機碼中找到的值，請輸入：
+若要將本機環境中的 TZONE 環境變數設定為**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname**登錄機碼中找到的值，請輸入：
 ```
 setx TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
 ```
-若要在名為 Computer1 的遠端電腦本機環境中，將 TZONE 環境變數設定為**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName**登錄機碼中找到的值，請輸入：
+若要在名為 Computer1 的遠端電腦本機環境中，將 TZONE 環境變數設定為**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname**登錄機碼中找到的值，請輸入：
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
 ```
-若要將系統內容中的組建環境變數設定為**HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber**登錄機碼中找到的值，請輸入：
+若要將系統內容中的組建環境變數設定為**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**登錄機碼中找到的值，請輸入：
 ```
 setx BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber" /m
 ```
-若要將名為 Computer1 之遠端電腦的系統內容中的組建環境變數設定為**HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber**登錄機碼中找到的值，請輸入：
+若要在名為 Computer1 的遠端電腦系統內容中，將組建環境變數設定為在**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**登錄機碼中找到的值，請輸入：
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber" /m
 ```
@@ -116,7 +116,7 @@ setx /f ipconfig.out /x
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-若要將本機環境中的 OCTET1 環境變數設定為在座標5中找到的值，請在檔案 Ipconfig 中的3處，使用分隔符號 **"# $ \*."** ，輸入：
+若要將本機環境中的 OCTET1 環境變數設定為在座標5中找到的值，請將檔案 Ipconfig 中的3（以分隔符號 **"# $\*."** ），輸入：
 ```
 setx OCTET1 /f ipconfig.out /a 5,3 /d "#$*." 
 ```

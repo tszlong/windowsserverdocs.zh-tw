@@ -19,16 +19,16 @@ ms.locfileid: "71365260"
 ---
 # <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>避免將一個儲存體路徑對應至多個資源集區
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|作業|  
+|**低於**|警告|  
+|**類別**|操作|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
   
@@ -38,7 +38,7 @@ ms.locfileid: "71365260"
 ## <a name="impact"></a>**產生**  
 *針對指定的存放集區類型，下列父系和子集區會共用相同的儲存體路徑：*  
   
-@no__t 集區的 0list >  
+\<集區清單 >  
   
 ## <a name="resolution"></a>**解決方法**  
 *使用 Windows PowerShell 重新設定存放裝置資源集區，讓多個集區不會使用相同的儲存路徑。*  

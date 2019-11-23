@@ -30,7 +30,7 @@ ms.locfileid: "71379341"
 cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}] [/v:{on|off}] [<String>]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -41,32 +41,32 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |/d|停用自動執行命令。|
 |/a|將內部命令輸出格式化為管道或檔案，做為美國國家標準局（ANSI）。|
 |u|將內部命令輸出格式化為管道或檔案，以做為 Unicode。|
-|/t： {\<B @ no__t-1 @ no__t-2F @ no__t-3 @ no__t-4 @ no__t-5F @ no__t-6}|設定背景（*B*）和前景（*F*）色彩。|
+|/t： {\<B\>\<F\>\|\<F\>}|設定背景（*B*）和前景（*F*）色彩。|
 |/e：開啟|啟用命令延伸模組。|
 |/e： off|停用命令延伸模組。|
 |/f：開啟|啟用檔案和目錄名稱的完成。|
 |/f： off|停用檔案和目錄名稱完成。|
 |/v：開啟|啟用延遲的環境變數擴充。|
 |/v： off|停用延遲環境變數擴充。|
-|\<String >|指定您想要執行的命令。|
+|\<字串 >|指定您想要執行的命令。|
 |/?|在命令提示字元顯示說明。|
 
-下表列出可用來做為 \<B @ no__t-1 和 \<F @ no__t-3 值的有效十六進位數位。
+下表列出可用來做為 \<B\> 和 \<光圈值的有效十六進位數位\>
 
 |值|色彩|
 |-----|-----|
-|0|黑色|
+|0|號|
 |1|藍天|
 |2|綠色|
 |3|綠色|
 |4|紅色|
 |5|變成|
 |6|黃色|
-|7|白皮書|
+|7|份|
 |8|灰色|
 |9|淺藍色|
 |a|淺綠色|
-|B|淺淺綠色|
+|b|淺淺綠色|
 |c|淺紅色|
 |d|淺紫色|
 |版|淺黃色|
@@ -76,7 +76,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 -   使用多個命令
 
-    若要針對 @no__t 0String > 使用多個命令，請以命令分隔符號 **&&** 來分隔它們，並將它們括在引號中。 例如:
+    若要針對 \<字串 > 使用多個命令，請 **&&** 命令分隔符號來分隔它們，並將它們括在引號中。 例如：
 
     ```
     "<Command>&&<Command>&&<Command>"
@@ -96,9 +96,9 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     如果您未在*字串*中指定 **/d** ，cmd.exe 會尋找下列登錄子機碼：
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun\REG_SZ**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun\REG_EXPAND_SZ**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\AutoRun\ REG_EXPAND_SZ**
 
     如果有一或兩個登錄子機碼存在，則會在所有其他變數之前執行。
 
@@ -109,9 +109,9 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     Windows XP 預設會啟用命令延伸模組。 您可以使用 **/e： off**，針對特定進程停用它們。 您可以藉由設定下列**REG_DWORD**值，為電腦或使用者會話上的所有**cmd**命令列選項啟用或停用延伸模組：
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
     使用 Regedit.exe，在登錄中將**REG_DWORD**值設定為**0 × 1** （已啟用）或**0 × 0** （已停用）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 
@@ -145,13 +145,13 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     檔案和目錄名稱的自動完成預設為不啟用。 您可以使用 **/f：** {**on**|**off**} 來啟用或停用**cmd**命令之特定進程的檔案名完成。 您可以藉由設定下列**REG_DWORD**值，針對電腦上**cmd**命令的所有進程或使用者登入會話，啟用或停用檔案和目錄名稱完成：
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\PathCompletionChar\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\PathCompletionChar\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
     若要設定**REG_DWORD**值，請執行 regedit.exe，並針對特定函式使用控制字元的十六進位值（例如， **0 × 9**是 TAB， **0 × 08**是倒退鍵）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 

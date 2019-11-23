@@ -18,7 +18,7 @@ ms.locfileid: "71383086"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Server Performance Advisor 使用者指南
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8
 
 本 Microsoft Server Performance Advisor （SPA）使用者指南提供如何使用 SPA 來識別部署于各種伺服器角色之系統效能瓶頸的指導方針。
 
@@ -173,7 +173,7 @@ SPA 建基於 Windows Presentation Foundation （WPF）2.0，這是 Microsoft .N
 
 ### <a href="" id="bkmk-setupspa"></a>設定 SPA
 
-SPA 封裝成 .cab 檔案，其中包含 SPA 架構的所有二進位檔、用於 advanced 案例的 Windows PowerShell Cmdlet，以及下列 advisor 套件：核心作業系統、Hyper-v、active directory 和 IIS。 將 .cab 檔案解壓縮至資料夾之後，不需要進行其他安裝。 不過，若要執行 SPA，您必須從目標伺服器啟用資料收集，如下所示：
+SPA 封裝成 .cab 檔案，其中包含 SPA 架構的所有二進位檔、用於 advanced 案例的 Windows PowerShell Cmdlet，以及下列 advisor 套件：核心 OS、Hyper-v、active directory 和 IIS。 將 .cab 檔案解壓縮至資料夾之後，不需要進行其他安裝。 不過，若要執行 SPA，您必須從目標伺服器啟用資料收集，如下所示：
 
 * 若要執行 PLA 資料收集，您用來執行 SPA 主控台的使用者帳戶必須是目標伺服器上的 Administrators 安全性群組的一部分。 如果目標伺服器和主控台位於相同的網域中，則網域使用者帳戶必須是目標伺服器上 [系統管理員] 安全性群組的一部分。 如果目標伺服器和主控台不在相同的網域中，請在目標伺服器上建立系統管理使用者帳戶，其具有與您用來執行 SPA 主控台的使用者帳戶相同的使用者名稱和密碼。
 
@@ -196,7 +196,7 @@ SPA 主控台會使用相同的帳戶來讀取記錄，並將它們匯入至資�
 
 * 在主控台和每部目標伺服器上開啟網路探索。
 
-* 如果目標伺服器未加入網域，請啟用下列登錄設定：**HKLM @ no__t-1SOFTWARE @ no__t-2Microsoft @ no__t-3Windows @ no__t-4Currentversion @ no__t-5Policies @ no__t-6system @ no__t-7LocalAccountTokenFilterPolicy**。
+* 如果目標伺服器未加入網域，請啟用下列登錄設定： **HKLM\\SOFTWARE\\Microsoft\\Windows\\Currentversion\\的原則\\system\\LocalAccountTokenFilterPolicy**。
 
 **注意**根據預設，SPA 會將診斷記錄寫入至 SpaConsole 所在的資料夾。 如果 SPA 安裝在 Program Files 資料夾底下，只有在以系統管理員身分執行 SpaConsole 時，SPA 才能夠寫入記錄檔。
 
@@ -222,9 +222,9 @@ SPA 主控台會使用相同的帳戶來讀取記錄，並將它們匯入至資�
 
     * 將伺服器新增至目標伺服器清單
 
-3.  按一下 [下一步]。 [**建立專案資料庫**] 頁面會要求您提供要在其中建立資料庫之 Microsoft SQL Server 實例的名稱。 例如，如果與主控台位於同一部電腦上，您可以使用**localhost @ no__t-1 @ no__t-2YOUR SQL server 名稱 @ no__t-3**。
+3.  按一下 **\[下一步\]** 。 [**建立專案資料庫**] 頁面會要求您提供要在其中建立資料庫之 Microsoft SQL Server 實例的名稱。 例如，如果與主控台位於同一部電腦上，您可以使用**localhost\\&lt;您的 SQL server 名稱&gt;** 。
 
-    **注意**SQL Server 2008 R2 Express 安裝的預設實例名稱是 SQLExpress。 針對安裝在本機電腦上 SQL Server 2008 R2 Express 的實例，資料庫通常會預設為**localhost @ no__t-1SQLExpress**。 不過，在 SQL Server 安裝期間可能已變更，因此您必須確定使用的是正確的 SQL Server 實例名稱。
+    **注意**SQL Server 2008 R2 Express 安裝的預設實例名稱是 SQLExpress。 針對安裝在本機電腦上 SQL Server 2008 R2 Express 的實例，資料庫通常會預設為**localhost\\SQLExpress**。 不過，在 SQL Server 安裝期間可能已變更，因此您必須確定使用的是正確的 SQL Server 實例名稱。
 
      
 
@@ -238,7 +238,7 @@ SPA 主控台會使用相同的帳戶來讀取記錄，並將它們匯入至資�
 
 6.  在 [**建立專案資料庫**] 頁面上，按 **[下一步]** 。 第一次使用時，Wizard 會建立資料庫，並在資料庫中產生所有 SPA 相關的資料庫架構、函數和預存程式。 視硬體和網路速度而定，此步驟可能需要幾秒鐘的時間。
 
-    **注意：** 如果此步驟失敗，則會出現錯誤訊息。 一些常見的問題包括：主控台無法連接到 SQL Server 實例、建立資料庫的許可權不足，或資料庫名稱已存在。
+    **注意：** 如果此步驟失敗，則會出現錯誤訊息。 常見的問題包括：主控台無法連接到 SQL Server 實例、建立資料庫的許可權不足，或資料庫名稱已經存在。
 
      
 
@@ -254,7 +254,7 @@ SPA 主控台會使用相同的帳戶來讀取記錄，並將它們匯入至資�
 
      
 
-9.  在 [**新增伺服器**] 頁面上，針對要新增至目標伺服器清單的每個伺服器，會有兩個必要欄位可填入：**伺服器**和檔案**共用位置**的名稱。
+9.  在 [**新增伺服器**] 頁面上，針對要新增至目標伺服器清單的每個伺服器，有兩個必要欄位要填入：**伺服器名稱**和檔案**共用位置**。
 
     **注意**另外還有一個 [**備註**] 欄位，主要是用來分類或尋找伺服器。 在您有許多伺服器的實例中，您可以匯入逗號分隔值（.csv）檔案，其中包含 [伺服器名稱]、[結果] 資料夾和選擇性的 [備註] 欄位。 [**批註**] 欄位用來描述伺服器，而此詞彙可用來篩選伺服器以進行資料收集。 如果您要透過 .csv 檔案初始化伺服器，檔案內的剖析錯誤不會載入伺服器。
 
@@ -368,11 +368,11 @@ Advisor 套件名稱旁邊有三個圖示，可顯示伺服器上最新分析執
 
 * **清單值**這有時候是索引鍵/值組，但清單值可以包含多個欄位。 例如，CPU 的屬性可以顯示在含有多個資料行和多個資料列的資料表中。 每個資料列都代表一個 CPU，而每個資料行都代表 CPU 的屬性。
 
-* **統計資料**可以視為特殊類型的單一值。 它只能包含數值資料。 在資料收集期間，許多數值資料點會波動，而不是保持不變。 例如，每次 PLA 收集效能計數器時，CPU 使用量就會變更。 僅顯示單一值無法精確地反映效能狀況。 不只顯示一個值，average、maximum、下限和 90% 值是用於這類動態數值資料點。 90% 值代表該計數器在該指定收集間隔內，所有事件在其90個百分位數的活動。
+* **統計資料**可以視為特殊類型的單一值。 它只能包含數值資料。 在資料收集期間，許多數值資料點會波動，而不是保持不變。 例如，每次 PLA 收集效能計數器時，CPU 使用量就會變更。 僅顯示單一值無法精確地反映效能狀況。 不只顯示一個值，average、maximum、下限和90% 值是用於這類動態數值資料點。 90% 值代表該計數器在該指定收集間隔內，所有事件在其90個百分位數的活動。
 
 * **最上層清單**通常包含特定資源的前幾名取用者，或經歷特定事件的前幾個實體。 例如，**平均 cpu 使用量的前10個**套裝程式含在資料收集期間，平均 cpu 使用率最高的前十個進程。 因為 CPU 使用量也是動態數值資料點，所以清單中也包含了 [最大值]、[最小值] 和 [90%] 值等其他統計資料，讓使用者更完整地瞭解 CPU 耗用量。
 
-如先前章節所述，SPA 會依賴 PLA 來收集 ETW 追蹤、WMI 查詢、效能計數器、登錄機碼和設定檔，以產生報告。 請務必瞭解報表中每個資料點背後的資料來源。 SPA 透過工具提示提供這類資訊。 您可以將滑鼠指標停留在索引鍵資料行或資料列上方，以查看資料來源工具提示。 例如， **wmi： Win32 @ no__t-1DisDrive： Caption**表示資料來源來自 wmi 查詢、wmi 類別名稱為 Win32 @ No__t-2DiskDrive，而屬性為**Caption**。
+如先前章節所述，SPA 會依賴 PLA 來收集 ETW 追蹤、WMI 查詢、效能計數器、登錄機碼和設定檔，以產生報告。 請務必瞭解報表中每個資料點背後的資料來源。 SPA 透過工具提示提供這類資訊。 您可以將滑鼠指標停留在索引鍵資料行或資料列上方，以查看資料來源工具提示。 例如， **wmi： Win32\_DisDrive： Caption**表示資料來源來自 wmi 查詢、wmi 類別名稱為 Win32\_DiskDrive，而屬性為**Caption**。
 
 ### <a href="" id="side-by-side-report-"></a>並存報表
 
@@ -464,7 +464,7 @@ SPA 包含適用于核心作業系統、Hyper-v、active directory 和 IIS 的 a
 
 **若要布建新的 advisor 套件**
 
-1.  複製 *% SpaRoot%* \\APs 目錄下的 advisor 套件的所有內容。
+1.  複製 *% SpaRoot%* \\ap 目錄下的 advisor 套件的所有內容。
 
 2.  在主視窗中 **，按一下 [** 設定]，然後按一下 [**設定 Advisor 套件**]。 [**設定 Advisor 套件**] 對話方塊隨即開啟。
 
@@ -557,7 +557,7 @@ SPA 提供管理目標伺服器的基本功能。 您可以選擇將新的伺服
 
      
 
-4.  如果您想要使用具有大量伺服器的 SPA，SPA 支援以逗號分隔值（.csv）格式進行匯入。 檔案必須包含至少兩個欄位：**伺服器**和檔案**共用位置**。 第三個欄位是選擇性的**批註**，但建議您組織伺服器。 您也可以將伺服器清單匯出成 .csv 檔案，以判斷適當的格式或備份您的伺服器設定。
+4.  如果您想要使用具有大量伺服器的 SPA，SPA 支援以逗號分隔值（.csv）格式進行匯入。 檔案必須包含至少兩個欄位： [**伺服器**] 和 [檔案**共用位置**]。 第三個欄位是選擇性的**批註**，但建議您組織伺服器。 您也可以將伺服器清單匯出成 .csv 檔案，以判斷適當的格式或備份您的伺服器設定。
 
 ### <a name="searching-and-filtering"></a>搜尋和篩選
 
@@ -586,12 +586,12 @@ SPA 主控台支援透過 UI 進行週期性資料收集。 如果該功能不�
 
 下表描述 SPA Windows PowerShell Cmdlet：
 
-| Cmdlet 名稱 | 參數 | 描述 |
+| Cmdlet 名稱 | Parameters | 描述 |
 | ------ | ------- | ------ |
 | 開始-SpaAnalysis | **-ServerName**目標伺服器的名稱。<br>**-AdvisorPackName**要在伺服器上排入佇列之 advisor 套件的完整名稱。 當有多個套件排程為同時執行時，參數的值應格式化為 AP1name，AP2name。<br>**-持續時間**資料收集的持續時間。<br>**-認證**在目標伺服器上執行資料收集之帳戶的使用者認證。<br>**-SqlInstanceName**SQL Server 實例的名稱。<br>**-SqlDatabaseName**SPA 專案資料庫的名稱。 | 在指定的伺服器上啟動 SPA 資料收集會話。 |
 | 停止-SpaAnalysis | **-SqlInstanceName**SQL Server 實例的名稱。<br>**-SqlDatabaseName**SPA 專案資料庫的名稱。<br>**-ServerName**目標伺服器的名稱。 | 嘗試停止執行中的 SPA 會話。 如果會話已完成，則會傳回，而不會執行任何動作。 |
-| SpaServer | **-SqlInstanceName**SQL Server 實例的名稱。<br>**-SqlDatabaseName**SPA 專案資料庫的名稱。 | 取得資料庫中的伺服器清單。 它會傳回物件的清單，包括下列屬性：[名稱]、[狀態]、[檔案共用] 和 [批註]。 |
-| SpaAdvisorPacks | **-SqlInstanceName**SQL Server 實例的名稱<br>**-SqlDatabaseName**SPA 專案資料庫的名稱 | 取得資料庫中的 advisor 套件清單。 它會傳回物件的清單，包括下列屬性：Name、DisplayName、Author 和 Version。 |
+| SpaServer | **-SqlInstanceName**SQL Server 實例的名稱。<br>**-SqlDatabaseName**SPA 專案資料庫的名稱。 | 取得資料庫中的伺服器清單。 它會傳回物件的清單，包括下列屬性：名稱、狀態、檔案共用和批註。 |
+| SpaAdvisorPacks | **-SqlInstanceName**SQL Server 實例的名稱<br>**-SqlDatabaseName**SPA 專案資料庫的名稱 | 取得資料庫中的 advisor 套件清單。 它會傳回物件的清單，包括下列屬性： Name、DisplayName、Author 和 Version。 |
 
 Windows PowerShell 提供透過加密檔案傳遞認證的功能，以啟用自動化案例。 如需使用加密檔案將認證傳遞給 Cmdlet 的詳細資訊，請參閱[建立可接受認證的 Windows PowerShell 腳本](https://technet.microsoft.com/magazine/ff714574.aspx)。
 
@@ -717,7 +717,7 @@ SQL Server Express 的使用者資料庫大小限制為 10 GB。 此大小資料
 
 ### <a name="sql-server-express-log-size-and-disk-capacity"></a>SQL Server Express 記錄大小和磁片容量
 
-如果您使用 SQL Server Express，則使用者資料庫的限制為 10 GB，但對應的記錄檔可能會超過 70 GB。 基於這些理由，建議 SQL Server Express 100 GB 或更多的可用磁碟空間。 此磁碟空間應足以儲存大約20000到30000的報表。 此記錄檔名為 SPADB\_log.ldf，且位於 **% Program Files% \\Microsoft SQL Server @ no__t-3MSSQL10. SQLEXPRESS @ no__t-4MSSQL @ no__t-5DatA**。
+如果您使用 SQL Server Express，則使用者資料庫的限制為 10 GB，但對應的記錄檔可能會超過 70 GB。 基於這些理由，建議 SQL Server Express 100 GB 或更多的可用磁碟空間。 此磁碟空間應足以儲存大約20000到30000的報表。 此記錄檔的名稱為 SPADB\_log .ldf，位於 **% Program Files%\\Microsoft SQL Server\\mssql10.mssqlserver。SQLEXPRESS\\MSSQL\\資料**。
 
 ### <a name="failure-to-connect-to-target-server"></a>無法連接到目標伺服器
 
@@ -729,7 +729,7 @@ SQL Server Express 的使用者資料庫大小限制為 10 GB。 此大小資料
 
 * 請確定**效能記錄 & 警示**服務正在執行
 
-* 安全性設定 @no__t 0Network 存取：[不允許存放網路驗證的密碼和認證] @ no__t-0 已停用。 必須停用安全性設定，因為 SPA 需要使用使用者認證，在目標伺服器上建立資料收集組。
+* [安全性設定] [**網路存取：不允許儲存密碼] 和 [網路驗證的認證**] 已停用。 必須停用安全性設定，因為 SPA 需要使用使用者認證，在目標伺服器上建立資料收集組。
 
 ### <a href="" id="running-spa-against-the-console-"></a>針對主控台執行 SPA
 
@@ -753,7 +753,7 @@ SPA 會保護 SPA 成功產生之每個報告的完整性。 同時，SPA 並不
 
 某些許可權問題也可能會導致略過登錄或 WMI 查詢。 不過，這比 ETW 事件遺失更不可能發生。 因此，資料收集器集合結果有時不會包含所有要求的值。 您必須確定所有 advisor 套件的 T-sql 腳本都會處理此情況。 如果資料不存在於資料收集結果中，則會在報表中將其標示為 [無資料]。
 
-因為對 PLA 而言，ETW 事件遺失是常見的，所以根據 ETW 追蹤產生的資料點可能不會與根據（例如效能計數器）所產生的資料點一致。 例如，您可以看到 IIS 的總 CPU 使用量是 80% （來自效能計數器），而前幾個 Url 只會使用 10% 的所有 CPU 時間（也就是來自 ETW 追蹤的資料點）。 通常，您可以透過資料點的工具提示來查看一個資料點的資料來源。 您應該瞭解這類資料遺失的影響。
+因為對 PLA 而言，ETW 事件遺失是常見的，所以根據 ETW 追蹤產生的資料點可能不會與根據（例如效能計數器）所產生的資料點一致。 例如，您可以看到 IIS 的總 CPU 使用量是80% （來自效能計數器），而前幾個 Url 只會使用10% 的所有 CPU 時間（也就是來自 ETW 追蹤的資料點）。 通常，您可以透過資料點的工具提示來查看一個資料點的資料來源。 您應該瞭解這類資料遺失的影響。
 
 若要避免這類事件遺失，應將結果資料夾關閉到目標伺服器。
 

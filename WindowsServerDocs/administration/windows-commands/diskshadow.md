@@ -22,9 +22,9 @@ ms.locfileid: "71377775"
 ---
 # <a name="diskshadow"></a>diskshadow
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-diskshadow 是一種工具，它會公開磁片區陰影複製服務所提供的功能 \(VSS @ no__t-1。 根據預設，diskshadow 會使用類似于 diskraid 或 DiskPart 的互動式命令直譯器。 diskshadow 也包含可編寫腳本的模式。  
+diskshadow 是一種工具，可公開磁片區陰影複製服務 \(VSS\)所提供的功能。 根據預設，diskshadow 會使用類似于 diskraid 或 DiskPart 的互動式命令直譯器。 diskshadow 也包含可編寫腳本的模式。  
   
 > [!NOTE]  
 > 若要執行 diskshadow，至少需要本機 Administrators 群組的成員資格或同等許可權。  
@@ -63,10 +63,10 @@ diskshadow -s script.txt
 |[啟動](reset.md)|將 diskshadow 重設為預設狀態。|  
 |[list](list.md)|列出系統上的寫入器、陰影複製或目前已註冊的陰影複製提供者。|  
 |[刪除陰影](delete-shadows.md)|刪除陰影複製。|  
-|[import](import.md)|從載入的中繼資料檔案，將可轉移的陰影複製匯入到系統中。|  
-|[mask](mask.md)|移除使用匯**入**命令匯入的硬體陰影複製。|  
+|[導](import.md)|從載入的中繼資料檔案，將可轉移的陰影複製匯入到系統中。|  
+|[遮罩](mask.md)|移除使用匯**入**命令匯入的硬體陰影複製。|  
 |[向](expose.md)|將持續性陰影複製公開為磁碟機號、共用或掛接點。|  
-|[diskshadow.exe 取消公開](unexpose.md)|unexposes 使用**公開**命令公開的陰影複製。|  
+|[diskshadow.exe 取消公開](unexpose.md)|Unexposes 使用**公開**命令公開的陰影複製。|  
 |[break_2](break_2.md)|將陰影複製磁片區與 VSS 解除。|  
 |[還原](revert.md)|將磁片區還原回指定的陰影複製。|  
 |[exit_1](exit_1.md)|結束 diskshadow。|  
@@ -76,15 +76,15 @@ diskshadow -s script.txt
 -   至少要有**add**和**create** ，才可建立陰影複製。 不過，這會要略過內容和選項設定，將會是複本備份，而且只會建立沒有備份執行腳本的陰影複製。  
   
 ## <a name="BKMK_examples"></a>典型  
-這是命令的範例順序，會建立備份的陰影複製。 它可以儲存為 dsh 檔案，並以 diskshadow \/-0 的腳本來執行。 dsh  
+這是命令的範例順序，會建立備份的陰影複製。 它可以儲存為 dsh 檔案，並以 diskshadow \/s 腳本執行。 dsh  
   
 假設下列各項：  
   
--   您有一個名為 c： @no__t 0diskshadowdata 的現有目錄。  
+-   您有一個名為 c：\\diskshadowdata 的現有目錄。  
   
 -   您的系統磁碟區是 C：，而您的資料磁片區是 d：  
   
--   您在 c： \\diskshadowdata 中有一個 backupscript .cmd 檔案。  
+-   您在 c：\\diskshadowdata 中有一個 backupscript .cmd 檔案。  
   
 -   您的 backupscript .cmd 檔案會將陰影資料 p：和 q：的複本執行到您的備份磁片磁碟機。  
   

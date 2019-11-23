@@ -17,7 +17,7 @@ ms.locfileid: "71386500"
 ---
 # <a name="create-os-specialization-answer-file"></a>建立 OS 特殊化回應檔案
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 在準備部署受防護的 Vm 時，您可能需要建立作業系統特製化回應檔案。 在 Windows 上，這通常稱為「unattend.xml」檔案。 ShieldingDataAnswerFile 的 Windows PowerShell 函**式**可協助您執行此動作。 然後，當您使用 System Center Virtual Machine Manager （或任何其他網狀架構控制器）從範本建立受防護的 Vm 時，就可以使用回應檔案。
 
@@ -31,9 +31,9 @@ ms.locfileid: "71386500"
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-@No__t 0 輸出可以封裝到防護資料中，以及其他成品，以便用來從範本建立受防護的 Vm。
+`unattend.xml` 輸出可以封裝到防護資料中，以及其他成品，以便用來從範本建立受防護的 Vm。
 
-下列各節顯示如何針對包含各種選項的 @no__t 0 檔案使用函數參數：
+下列各節顯示如何針對包含各種選項的 `unattend.xml` 檔案使用函數參數：
 
 - [基本 Windows 回應檔案](#basic-windows-answer-file)
 - [具有加入網域的 Windows 回應檔案](#windows-answer-file-with-domain-join)
@@ -76,7 +76,7 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials
 
 下列命令會建立 Windows 回應檔案，該檔案會使用網狀架構管理員在部署期間提供的靜態 IP 位址，例如 System Center Virtual Machine Manager。
 
-Virtual Machine Manager 使用 IP 集區，將三個元件提供給靜態 IP 位址：IPv4 位址、IPv6 位址、閘道位址和 DNS 位址。 如果您想要包含任何其他欄位或需要自訂網路設定，您必須手動編輯腳本所產生的回應檔案。
+Virtual Machine Manager 使用 IP 集區，將三個元件提供給靜態 IP 位址： IPv4 位址、IPv6 位址、閘道位址和 DNS 位址。 如果您想要包含任何其他欄位或需要自訂網路設定，您必須手動編輯腳本所產生的回應檔案。
 
 下列螢幕擷取畫面顯示您可以在 Virtual Machine Manager 中設定的 IP 集區。 如果您想要使用靜態 IP，則需要這些集區。
 
@@ -92,7 +92,7 @@ Virtual Machine Manager 使用 IP 集區，將三個元件提供給靜態 IP 位
 
 ![設定硬體以使用靜態 IP](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-network-adapter-settings.png)
 
-然後，您可以使用 `-StaticIPPool` 參數，在回應檔案中包含靜態 IP 元素。 回應檔案中 `@IPAddr-1@`、`@NextHop-1-1@` 和 `@DNSAddr-1-1@` 的參數，將會取代為您在部署期間于 Virtual Machine Manager 中指定的實際值。
+然後，您可以使用 `-StaticIPPool` 參數，在回應檔案中包含靜態 IP 元素。 回應檔案中 `@IPAddr-1@`、`@NextHop-1-1@`和 `@DNSAddr-1-1@` 的參數，將會取代為您在部署期間于 Virtual Machine Manager 中指定的實際值。
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"
@@ -128,7 +128,7 @@ $rootPassword = Read-Host -Prompt "Root password" -AsSecureString
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -RootPassword $rootPassword -RootSshKey '~\.ssh\id_rsa.pub'
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

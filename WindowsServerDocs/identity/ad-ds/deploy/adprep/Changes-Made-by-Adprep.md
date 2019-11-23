@@ -18,7 +18,7 @@ ms.locfileid: "71369433"
 ---
 # <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明在 Windows Server 2012 R2 和 Windows Server 2012 中，Adprep 所做的變更。  
   
@@ -30,9 +30,9 @@ ms.locfileid: "71369433"
   
 -   [架構更新](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>另請參閱  
-@no__t 0Windows Server 2008 R2：支援 AD DS @ no__t-0 的 Adprep 變更附錄  
-@no__t 0Windows 伺服器2008：支援 AD DS @ no__t-0 的 Adprep 變更附錄  
+## <a name="see-also"></a>請參閱  
+[Windows Server 2008 R2：支援 AD DS 的 Adprep 變更附錄](https://technet.microsoft.com/library/dd378876.aspx)  
+[Windows Server 2008：支援 AD DS 的 Adprep 變更附錄](https://technet.microsoft.com/library/cc770703.aspx)  
   
 
 

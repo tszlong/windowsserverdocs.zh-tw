@@ -24,7 +24,7 @@ ms.locfileid: "71380219"
 
 設定使用服務帳戶傳輸檔案時所要使用的 proxy 設定。
 
-**BITSAdmin 1.5 和更早版本**： 未支援。
+**BITSAdmin 1.5 和更早版本**：不支援。
 
 ## <a name="syntax"></a>語法
 
@@ -32,12 +32,12 @@ ms.locfileid: "71380219"
 bitsadmin /Util /SetIEProxy <Account> <Usage>[/Conn <ConnectionName>]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|帳戶|指定您想要定義其 proxy 設定的服務帳戶類型。 可能值為：</br>-LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
-|使用量|指定要使用的 proxy 偵測格式。 可能值為：</br>-NO_PROXY —請勿使用 PROXY 伺服器。</br>-自動偵測：自動偵測 proxy 設定。</br>-MANUAL_PROXY —使用明確的 PROXY 清單和略過清單。 在 usage 標記之後，立即指定 proxy 清單和略過清單。 例如，MANUAL_PROXY proxy1，proxy2 Null。</br>    -Proxy 清單是要使用的 proxy 伺服器清單（以逗號分隔）。</br>    -略過清單是以空格分隔的主機名稱或 IP 位址清單，或兩者都不會透過 proxy 路由傳送。 這可以是 @no__t 0local 的 >，以參照相同 LAN 上的所有伺服器。 Null 或 "" 的值可能會用於空的 proxy 略過清單。</br>-AUTOSCRIPT —與自動偵測相同，但它也會執行腳本。 指定緊接在 usage 標記之後的腳本 URL。 例如，AUTOSCRIPT http://server/proxy.js 。</br>-RESET —與 NO_PROXY 相同，不同之處在于它會移除手動 PROXY Url （若有指定），以及使用自動偵測所探索到的 Url。|
+|帳戶|指定您想要定義其 proxy 設定的服務帳戶類型。 可能的值為：</br>-LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
+|用途|指定要使用的 proxy 偵測格式。 可能的值為：</br>-NO_PROXY-請勿使用 PROXY 伺服器。</br>-自動偵測：自動偵測 proxy 設定。</br>-MANUAL_PROXY-使用明確的 PROXY 清單和略過清單。 在 usage 標記之後，立即指定 proxy 清單和略過清單。 例如，MANUAL_PROXY proxy1，proxy2 Null。</br>    -Proxy 清單是要使用的 proxy 伺服器清單（以逗號分隔）。</br>    -略過清單是以空格分隔的主機名稱或 IP 位址清單，或兩者都不會透過 proxy 路由傳送。 這可以是 \<本機 >，以參照相同 LAN 上的所有伺服器。 Null 或 "" 的值可能會用於空的 proxy 略過清單。</br>-AUTOSCRIPT —與自動偵測相同，但它也會執行腳本。 指定緊接在 usage 標記之後的腳本 URL。 例如，AUTOSCRIPT http://server/proxy.js。</br>-RESET —與 NO_PROXY 相同，不同之處在于它會移除手動 PROXY Url （若有指定），以及使用自動偵測所探索到的 Url。|
 |ConnectionName|選擇性：與 **/Conn**參數搭配使用，以指定要使用的數據機連接。 如果您未指定 **/Conn**參數，BITS 會使用 LAN 連接。 指定緊接在 **/Conn**參數後面的數據機連接名稱。|
 
 ## <a name="remarks"></a>備註

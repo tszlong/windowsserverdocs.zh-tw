@@ -32,7 +32,7 @@ ms.locfileid: "71375099"
 ksetup /delrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
 ```
 
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -45,14 +45,14 @@ ksetup /delrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 |值|領域旗標|描述|
 |-----|----------|-----------|
 |0xF|全部|所有領域旗標都已設定。|
-|0x00|None|未設定領域旗標，且未啟用任何其他功能。|
+|0x00|無|未設定領域旗標，且未啟用任何其他功能。|
 |0x01|SendAddress|IP 位址會包含在票證授權票證中。|
 |0x02|TcpSupported|此領域支援傳輸控制通訊協定（TCP）和使用者資料包協定（UDP）。|
 |0x04|委派|此領域中的每個人都受信任，可進行委派。|
 |0x08|NcSupported|此領域支援名稱標準化，其允許 DNS 和領域命名標準。|
 |0x80|RC4|此領域支援 RC4 加密來啟用跨領域信任，以允許使用 TLS。|
 
-領域旗標會儲存在登錄中的**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>RealmName</em>。 此項目依預設不存在於登錄中。 您可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令來填入登錄。
+領域旗標會儲存在登錄中的**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>RealmName</em>中。 此項目依預設不存在於登錄中。 您可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令來填入登錄。
 
 您可以查看**ksetup**或**ksetup/dumpstate**的輸出，以查看有哪些領域旗標可供使用和設定。
 

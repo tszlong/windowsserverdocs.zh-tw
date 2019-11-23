@@ -34,12 +34,12 @@ ms.locfileid: "71384705"
 reg load KeyName FileName
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName >|指定要載入之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。|
-|\<檔案名 >|指定要載入之檔案的名稱和路徑。 這個檔案必須事先使用**reg save**作業和 hiv 副檔名來建立。|
+|\<KeyName >|指定要載入之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\\\ComputerName\) 作為*KeyName*的一部分。 省略 \\\\ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。|
+|\<FileName >|指定要載入之檔案的名稱和路徑。 這個檔案必須事先使用**reg save**作業和 hiv 副檔名來建立。|
 |/?|在命令提示字元中顯示**reg 載入**的說明。|
 
 ## <a name="remarks"></a>備註

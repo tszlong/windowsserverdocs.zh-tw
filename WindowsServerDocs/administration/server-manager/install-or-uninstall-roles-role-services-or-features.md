@@ -22,7 +22,7 @@ ms.locfileid: "71383195"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>安裝或解除安裝角色、角色服務或功能
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Windows Server 中，適用于伺服器管理員的伺服器管理員主控台和 Windows PowerShell Cmdlet 允許將角色和功能安裝到本機或遠端伺服器，或是離線虛擬硬碟（Vhd）。 您可以在單一遠端伺服器或離線 VHD 上，將多個角色和功能安裝在單一的 [新增角色及功能] 或 [Windows PowerShell] 會話中。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "71383195"
   
 如需哪些角色、角色服務和功能的詳細資訊，請參閱[角色、角色服務和功能](https://go.microsoft.com/fwlink/p/?LinkId=239558)。  
   
-本主題涵蓋下列各節。  
+本主題包含下列各節。  
   
 -   [使用新增角色及功能嚮導來安裝角色、角色服務和功能](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)  
   
@@ -63,9 +63,9 @@ ms.locfileid: "71383195"
   
 2.  在 [**管理**] 功能表上，按一下 [**新增角色及功能**]。  
   
-3.  在 [在您開始前] 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按一下 [下一步]。  
+3.  在 [在您開始前] 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按一下 **\[下一步\]** 。  
   
-4.  在 [選取安裝類型] 頁面上，選取 [角色型或功能型安裝] 以在單一伺服器上安裝角色或功能的所有部分，或 [遠端桌面服務安裝] 來為遠端桌面服務安裝虛擬機器型桌面基礎結構或工作階段型桌面基礎結構。 [遠端桌面服務安裝] 選項可讓系統管理員視需要將遠端桌面服務角色的邏輯部分分散到不同的伺服器。 按一下 [下一步]。  
+4.  在 [選取安裝類型] 頁面上，選取 [角色型或功能型安裝] 以在單一伺服器上安裝角色或功能的所有部分，或 [遠端桌面服務安裝] 來為遠端桌面服務安裝虛擬機器型桌面基礎結構或工作階段型桌面基礎結構。 [遠端桌面服務安裝] 選項可讓系統管理員視需要將遠端桌面服務角色的邏輯部分分散到不同的伺服器。 按一下 **\[下一步\]** 。  
   
 5.  在 [選取目的地伺服器] 頁面上，從伺服器集區選取一部伺服器，或者選取一個離線 VHD。 若要選取離線 VHD 做為目的地伺服器，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 如需如何將伺服器新增到伺服器集區的相關資訊，請參閱[將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)。 選取目的地伺服器之後，按 [下一步]。  
   
@@ -91,9 +91,9 @@ ms.locfileid: "71383195"
   
     [確認安裝選項] 頁面上的 [指定替代來源路徑] 命令，可以讓您針對所選伺服器上安裝角色與功能所需的檔案指定替代來源路徑。 在 Windows Server 2012 和更新版本的 Windows Server 中，「[功能隨選](https://go.microsoft.com/fwlink/p/?LinkID=241573)安裝」可讓您從遠端系統管理的伺服器中移除角色和功能檔案，以減少作業系統使用的磁碟空間量。 如果您已經使用 `Uninstall-WindowsFeature -remove` Cmdlet 移除伺服器中的角色與功能檔案，您日後可以透過指定替代來源路徑或指定儲存必要角色與功能檔案的共用，在伺服器上安裝角色與功能。 來源路徑或檔案共用必須將 [**讀取**] 許可權授與**Everyone**群組（基於安全性因素不建議這麼做）或目的地伺服器的電腦帳戶（*網域*\\*SERverNAME*$）。授與使用者帳戶存取權是不夠的。 如需功能隨選安裝的相關資訊，請參閱 [Windows Server 安裝選項](https://go.microsoft.com/fwlink/p/?LinkId=241573)。  
   
-    當您在執行中的實體伺服器上安裝角色、角色服務和功能時，您可以將 WIM 檔案指定為替代功能檔案來源。 WIM 檔案的來源路徑應該使用下列格式，並以**WIM**做為前置詞，並將功能檔案所在的索引做為尾碼：**WIM： e： \sources\install.wim： 4**。 不過，您無法直接使用 WIM 檔案做為在離線 VHD 上安裝角色、角色服務和功能的來源;您必須掛接離線 VHD 並指向其原始程式檔的掛接路徑，或者必須指向包含 WIM 檔案內容複本的資料夾。  
+    當您在執行中的實體伺服器上安裝角色、角色服務和功能時，您可以將 WIM 檔案指定為替代功能檔案來源。 WIM 檔案的來源路徑應該使用下列格式，加上 **WIM** 做為首碼，並用功能檔案所在的索引做為尾碼：**WIM:e:\sources\install.wim:4**。 不過，您無法直接使用 WIM 檔案做為在離線 VHD 上安裝角色、角色服務和功能的來源;您必須掛接離線 VHD 並指向其原始程式檔的掛接路徑，或者必須指向包含 WIM 檔案內容複本的資料夾。  
   
-8.  按一下 [**安裝**] 之後，[**安裝進度**] 頁面就會顯示安裝進度、結果及訊息，例如警告、失敗，或是您所執行的角色或功能所需的後續安裝設定步驟。客戶. 在 Windows Server 2012 和更新版本的 Windows Server 中，您可以在安裝仍在進行時關閉 [新增角色及功能嚮導]，並在伺服器管理員頂端的 [**通知**] 區域中，查看安裝結果或其他訊息。控制. 按一下 [**通知**] 旗標圖示，即可查看您在伺服器管理員中執行的安裝或其他工作的詳細資料。  
+8.  按一下 [**安裝**] 之後，[**安裝進度**] 頁面就會顯示安裝進度、結果以及訊息，例如警告、失敗，或您安裝的角色或功能所需的後續安裝設定步驟。 在 Windows Server 2012 和更新版本的 Windows Server 中，您可以在安裝仍在進行時關閉 [新增角色及功能嚮導]，並在伺服器管理員主控台頂端的 [**通知**] 區域中，查看安裝結果或其他訊息。 按一下 [**通知**] 旗標圖示，即可查看您在伺服器管理員中執行的安裝或其他工作的詳細資料。  
   
 ## <a name="install-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell Cmdlet 來安裝角色、角色服務與功能  
 適用于 Windows PowerShell 的伺服器管理員部署 Cmdlet 的運作方式與以 GUI 為基礎的 [新增角色及功能嚮導] 和 [移除角色及功能] Wizard 相似，但有一項重要的差異。 在 Windows PowerShell 中，與 [新增角色及功能] Wizard 不同的是，預設不會包含角色的管理工具和嵌入式管理單元。 若要在角色安裝中包含管理工具，請新增 `IncludeManagementTools` 參數到 Cmdlet。 如果您要在執行 Windows Server 2012 或更新版本之 Server Core 安裝選項的伺服器上安裝角色和功能，您可以將角色的管理工具新增至安裝，但是無法安裝 GUI 管理工具和嵌入式管理單元在執行 Windows Server 之 Server Core 安裝選項的伺服器上。 只有命令列和 Windows PowerShell 管理工具可以安裝在 Server Core 安裝選項上。  
@@ -109,14 +109,14 @@ ms.locfileid: "71383195"
   
    -   在 Windows [**開始**] 畫面上，以滑鼠右鍵按一下 windows PowerShell 的磚，然後在應用程式行上，按一下 [**以系統管理員身分執行**]。  
   
-2. 輸入 **Get-WindowsFeature** ，然後按 **Enter** ，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行**get-help-computerName < 電腦**名稱 **>** *，其中*computerName 代表遠端電腦的名稱正在執行 Windows Server 2016。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
+2. 輸入 **Get-WindowsFeature** ，然後按 **Enter** ，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行 <<em>computer_name</em> **>** 中的 [ **get-help-computerName**]，其中*computer_name*代表執行 Windows server 2016 的遠端電腦名稱稱。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
   
    > [!NOTE]  
    > 在 windows PowerShell 3.0 和更新版本的 Windows PowerShell 中，在執行屬於模組的 Cmdlet 之前，不需要將伺服器管理員 Cmdlet 模組匯入 Windows PowerShell 會話。 當您首次執行屬於模組的 Cmdlet 時，會自動匯入模組。 此外，Windows PowerShell Cmdlet 和與 Cmdlet 搭配使用的功能名稱都不區分大小寫。  
   
-3. 輸入**Get-help Install-add-windowsfeature**，然後按下**enter**以查看 `Install-WindowsFeature` Cmdlet 的語法和接受的參數。  
+3. 輸入**Get-help Install-add-windowsfeature**，然後按**enter**以查看 `Install-WindowsFeature` Cmdlet 的語法和接受的參數。  
   
-4. 輸入下列命令，然後按**enter**，其中*feature_name*代表您想要安裝之角色或功能的命令名稱（在步驟2中取得） *，而電腦*類型代表您要安裝的遠端電腦。角色和功能。 使用逗號來分隔多個 *feature_name* 值。 如果角色或功能安裝需要重新啟動目的地伺服器，則 `Restart` 參數會自動重新啟動目的地伺服器。  
+4. 輸入下列命令，然後按**enter**，其中*feature_name*代表您要安裝的角色或功能的命令名稱（在步驟2中取得），而*computer_name*代表您要安裝角色和功能的遠端電腦。 使用逗號來分隔多個 *feature_name* 值。 如果角色或功能安裝需要重新啟動目的地伺服器，則 `Restart` 參數會自動重新啟動目的地伺服器。  
   
    ```  
    Install-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
@@ -140,13 +140,13 @@ ms.locfileid: "71383195"
    Install-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
    ```  
   
-   **範例:** 下列 Cmdlet 會在遠端伺服器 ContosoDC1 上安裝 active directory 網域服務角色和群組原則管理功能。 管理工具和嵌入式管理單元都已使用 `IncludeManagementTools` 參數新增，如果安裝需要重新啟動伺服器，則會自動啟動目的地伺服器。  
+   **範例：** 下列 Cmdlet 會在遠端伺服器 ContosoDC1 上安裝 active directory 網域服務角色和群組原則管理功能。 管理工具和嵌入式管理單元都已使用 `IncludeManagementTools` 參數新增，如果安裝需要重新啟動伺服器，則會自動啟動目的地伺服器。  
   
    ```  
    Install-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
    ```  
   
-5. 安裝完成時，請在伺服器管理員中開啟 [**所有伺服器**] 頁面，選取已安裝角色和功能的伺服器，然後在所選伺服器的頁面上，查看 [**角色及功能**] 磚，藉以驗證安裝。 您也可以執行以選取的伺服器為目標的 `Get-WindowsFeature` Cmdlet *（< computerName*>），以查看伺服器上所安裝的角色和功能清單。  
+5. 安裝完成時，請在伺服器管理員中開啟 [**所有伺服器**] 頁面，選取已安裝角色和功能的伺服器，然後在所選伺服器的頁面上，查看 [**角色及功能**] 磚，藉以驗證安裝。 您也可以執行以選取的伺服器為目標的 `Get-WindowsFeature` Cmdlet （<*computer_name*>），以查看伺服器上所安裝的角色和功能清單。  
   
 ## <a name="remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard"></a>使用移除角色及功能的 Wizard 來移除角色、角色服務和功能  
 您必須以系統管理員的身分登入伺服器，才能卸載角色、角色服務和功能。 使用解除安裝目標伺服器上不具有系統管理員權限的帳戶登入本機電腦時，請以滑鼠右鍵按一下 [伺服器] 磚中的目標伺服器，然後按一下 [管理為] 以提供具系統管理員權限的帳戶。 您要掛接離線 VHD 的伺服器必須新增到 [伺服器管理員]，而且您必須具備該伺服器的系統管理員權限。  
@@ -161,7 +161,7 @@ ms.locfileid: "71383195"
   
 2.  在 [管理] 功能表上，按一下 [移除角色及功能]。  
   
-3.  在 [在您開始前] 頁面中，確認您已準備好從伺服器移除角色或功能。 按一下 [下一步]。  
+3.  在 [在您開始前] 頁面中，確認您已準備好從伺服器移除角色或功能。 按一下 **\[下一步\]** 。  
   
 4.  在 [**選取目的地伺服器**] 頁面上，從伺服器集區中選取伺服器，或選取離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。  
   
@@ -200,7 +200,7 @@ ms.locfileid: "71383195"
   
    -   在 Windows [**開始**] 畫面上，以滑鼠右鍵按一下 [windows PowerShell] 磚，然後在應用程式行上，按一下 [**以系統管理員身分執行**]。  
   
-2. 輸入 **Get-WindowsFeature** ，然後按 **Enter** ，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行**get-help-computerName < 電腦**名稱 **>** *，其中*computerName 代表遠端電腦的名稱正在執行 Windows Server 2016。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
+2. 輸入 **Get-WindowsFeature** ，然後按 **Enter** ，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行 <<em>computer_name</em> **>** 中的 [ **get-help-computerName**]，其中*computer_name*代表執行 Windows server 2016 的遠端電腦名稱稱。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
   
    > [!NOTE]  
    > 在 windows PowerShell 3.0 和更新版本的 Windows PowerShell 中，在執行屬於模組的 Cmdlet 之前，不需要將伺服器管理員 Cmdlet 模組匯入 Windows PowerShell 會話。 當您首次執行屬於模組的 Cmdlet 時，會自動匯入模組。 此外，Windows PowerShell Cmdlet 和與 Cmdlet 搭配使用的功能名稱都不區分大小寫。  
@@ -227,25 +227,25 @@ ms.locfileid: "71383195"
    Uninstall-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
    ```  
   
-   **範例:** 下列 Cmdlet 會從遠端伺服器 ContosoDC1 移除 active directory 網域服務角色和群組原則管理功能。 也會將管理工具和嵌入式管理單元移除，如果移除需要重新啟動伺服器，則會自動啟動目的地伺服器。  
+   **範例：** 下列 Cmdlet 會從遠端伺服器 ContosoDC1 移除 active directory 網域服務角色和群組原則管理功能。 也會將管理工具和嵌入式管理單元移除，如果移除需要重新啟動伺服器，則會自動啟動目的地伺服器。  
   
    ```  
    Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
    ```  
   
-5. 移除完成時，請在 伺服器管理員中開啟 **所有伺服器** 頁面，選取移除角色和功能的伺服器，然後在頁面上查看 **角色及功能** 磚，藉以確認角色和功能已移除。選取的伺服器。 您也可以執行以選取的伺服器為目標的 `Get-WindowsFeature` Cmdlet *（< computerName*>），以查看伺服器上所安裝的角色和功能清單。  
+5. 移除完成時，請在 伺服器管理員中開啟 **所有伺服器** 頁面，選取移除角色和功能的伺服器，然後在所選伺服器的頁面上查看 **角色及功能** 磚，藉以確認角色和功能已移除。 您也可以執行以選取的伺服器為目標的 `Get-WindowsFeature` Cmdlet （<*computer_name*>），以查看伺服器上所安裝的角色和功能清單。  
   
 ## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>執行 Windows PowerShell 指令碼，在多個伺服器上安裝角色和功能  
-雖然您不能在單一的 Wizard 會話中使用 [新增角色及功能] 嚮導在多個目標伺服器上安裝角色、角色服務和功能，但您可以使用 Windows PowerShell 腳本，在多個目標上安裝角色、角色服務和功能。使用伺服器管理員管理的伺服器。 您用來執行批次部署的腳本，會呼叫此程式，指向您可以使用 [新增角色及功能] [瀏覽器] 輕鬆建立的 XML 設定檔，然後在完成後按一下 [**匯出設定**]wizard 前往 [新增角色及功能] 嚮導的 [**確認安裝選項**] 頁面。  
+雖然您不能在單一的 Wizard 會話中使用 [新增角色及功能] 嚮導在多個目標伺服器上安裝角色、角色服務和功能，但您可以使用 Windows PowerShell 腳本，在多個目標上安裝角色、角色服務和功能。使用伺服器管理員管理的伺服器。 您用來執行批次部署的腳本會使用 [新增角色及功能] Wizard，指向您可以輕鬆建立的 XML 設定檔，然後在瀏覽器前進至 [新增角色及功能] 嚮導的 [**確認安裝選項**] 頁面後，按一下 [**匯出設定**]。  
   
 > [!IMPORTANT]  
 > 腳本中指定的所有目標伺服器都必須執行符合您在本機電腦上執行之伺服器管理員版本的 Windows Server 版本。 例如，如果您是在 Windows 10 上執行伺服器管理員，您可以在執行 Windows Server 2016 的伺服器上安裝角色、角色服務和功能。 如果將 GUI 管理工具新增至安裝，安裝程式會自動將執行 Windows Server 之 Server Core 安裝選項的目標伺服器轉換成完整安裝選項（含完整 GUI 的伺服器，也稱為做為執行伺服器圖形化介面）。  
 >   
-> 本節提供的腳本範例說明如何使用 `Install-WindowsFeature` Cmdlet 和 Windows PowerShell 腳本來執行批次部署。 在多個伺服器上執行批次部署還有其他可能的指令碼和方法。 若要搜尋或提供部署角色和功能的其他指令碼，請搜尋 [Script Center Repository (指令碼中心存放庫)](https://gallery.technet.microsoft.com/ScriptCenter)。  
+> 本節所提供的腳本範例說明如何使用 `Install-WindowsFeature` Cmdlet 和 Windows PowerShell 腳本來執行批次部署。 在多個伺服器上執行批次部署還有其他可能的指令碼和方法。 若要搜尋或提供部署角色和功能的其他指令碼，請搜尋 [Script Center Repository (指令碼中心存放庫)](https://gallery.technet.microsoft.com/ScriptCenter)。  
   
 #### <a name="to-install-roles-and-features-on-multiple-servers"></a>在多個伺服器上安裝角色和功能  
   
-1.  如果您尚未這麼做，請建立一個 XML 設定檔，其中包含您想要安裝在多部伺服器上的角色、角色服務和功能。 您可以藉由執行 [新增角色及功能] [建立]、選取 [角色]、[角色服務] 和所需的功能，然後在瀏覽器前進至 [確認] 後按一下 [**匯出設定**]，來建立此設定檔 **[安裝選項**] 頁面。 將設定檔儲存到方便的位置。 如果您只是要建立設定檔才執行，就不需要按一下 [安裝] 或完成精靈。  
+1.  如果您尚未這麼做，請建立一個 XML 設定檔，其中包含您想要安裝在多部伺服器上的角色、角色服務和功能。 您可以藉由執行 [新增角色及功能] [建立]、選取 [角色]、[角色服務] 和所需的功能，然後在瀏覽器前進至 [**確認安裝選項**] 頁面之後，按一下 [**匯出設定**]，來建立此設定檔。 將設定檔儲存到方便的位置。 如果您只是要建立設定檔才執行，就不需要按一下 [安裝] 或完成精靈。  
   
 2.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。  
   
@@ -280,7 +280,7 @@ ms.locfileid: "71383195"
   
 4.  執行下列動作來執行函式。  
   
-    1.  建立變數以儲存目標電腦的名稱，以逗號分隔。 在下列範例中，變數 `$ServerNames` 儲存了目標伺服器名稱 *Contoso_01* 和 *Contoso_02*。 按 **Enter** 鍵。  
+    1.  建立變數以儲存目標電腦的名稱，以逗號分隔。 在下列範例中，變數 `$ServerNames` 儲存了目標伺服器名稱 *Contoso_01* 和 *Contoso_02*。 按 **Enter**。  
   
         ```  
         # Sample Invocation  
@@ -292,7 +292,7 @@ ms.locfileid: "71383195"
   
         **Invoke-Invoke-windowsfeaturebatchdeployment-computerNames $ServerNames-ConfigurationFilepath C:\Users\Sampleuser\Desktop\DeploymentConfigTemplate.xml**  
   
-5.  安裝完成時，請在伺服器管理員中開啟 [**所有伺服器**] 頁面，選取已安裝角色和功能的伺服器，然後在所選伺服器的頁面上，查看 [**角色及功能**] 磚，藉以驗證安裝。 您也可以執行以特定伺服器為目標的 `Get-WindowsFeature` Cmdlet （`Get-WindowsFeature -computerName` @ no__t *-2 電腦*名 >），以查看伺服器上所安裝的角色和功能清單。  
+5.  安裝完成時，請在伺服器管理員中開啟 [**所有伺服器**] 頁面，選取已安裝角色和功能的伺服器，然後在所選伺服器的頁面上，查看 [**角色及功能**] 磚，藉以驗證安裝。 您也可以執行以特定伺服器為目標的 `Get-WindowsFeature` Cmdlet （`Get-WindowsFeature -computerName` <*computer_name*>），以查看伺服器上所安裝的角色和功能清單。  
   
 ## <a name="install-net-framework-35-and-other-features-on-demand"></a>安裝 .NET Framework 3.5 和其他指定功能  
 從 Windows Server 2012 和 Windows 8 開始，預設不會在本機電腦上使用 .NET Framework 3.5 的功能檔案（包括 .NET Framework 2.0 和 .NET Framework 3.0）。 這些檔案已移除。 在「功能隨選安裝」設定中已移除的功能檔案，以及 .NET Framework 3.5 的功能檔案，皆可透過 Windows Update 提供。 根據預設，如果執行 Windows Server 2012 或更新版本的目的地伺服器上沒有可用的功能檔案，安裝程式會藉由連接到 Windows Update 來搜尋遺失的檔案。 不論您是使用 [新增角色及功能] [Wizard GUI] 或命令列來安裝，都可以藉由在安裝期間設定群組原則設定或指定替代來源路徑來覆寫預設行為。  
@@ -312,7 +312,7 @@ ms.locfileid: "71383195"
 >   
 > 即使工作群組伺服器的電腦帳戶擁有外部共用的 [讀取] 權限，工作群組中的伺服器仍無法存取外部檔案共用。 用於工作群組伺服器的替代來源位置包括安裝媒體、Windows Update，以及儲存在本機工作群組伺服器上的 VHD 或 WIM 檔。  
 >   
-> 當您在執行中的實體伺服器上安裝角色、角色服務和功能時，您可以將 WIM 檔案指定為替代功能檔案來源。 WIM 檔案的來源路徑應該使用下列格式，並以**WIM**做為前置詞，並將功能檔案所在的索引做為尾碼：**WIM： e： \sources\install.wim： 4**。 不過，您無法直接使用 WIM 檔案做為在離線 VHD 上安裝角色、角色服務和功能的來源;您必須掛接離線 VHD 並指向其原始程式檔的掛接路徑，或者必須指向包含 WIM 檔案內容複本的資料夾。  
+> 當您在執行中的實體伺服器上安裝角色、角色服務和功能時，您可以將 WIM 檔案指定為替代功能檔案來源。 WIM 檔案的來源路徑應該使用下列格式，加上 **WIM** 做為首碼，並用功能檔案所在的索引做為尾碼：**WIM:e:\sources\install.wim:4**。 不過，您無法直接使用 WIM 檔案做為在離線 VHD 上安裝角色、角色服務和功能的來源;您必須掛接離線 VHD 並指向其原始程式檔的掛接路徑，或者必須指向包含 WIM 檔案內容複本的資料夾。  
   
 ### <a name="to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet"></a>執行 Install-WindowsFeature Cmdlet 來安裝 .NET Framework 3.5  
   
@@ -349,11 +349,11 @@ ms.locfileid: "71383195"
   
 5. 在安裝媒體中提供並列存放 (稱為 **SxS**) 或 WIM 檔案的路徑。 在下列範例中，安裝媒體位於 D 磁碟機上。  
   
-   **D:\Sources\SxS @ no__t-1**  
+   **D:\Sources\SxS\\**  
   
    若要指定 WIM 檔案，請新增 **WIM:** 首碼，然後將影像索引新增到 WIM 檔案中當做尾碼，如以下範例所示。  
   
-   **WIM： \\ @ no__t-2**<em>server_name</em> **\share\install.wim： 3**  
+   **WIM：\\\\** <em>server_name</em> **\share\install.wim： 3**  
   
 6. 按一下 [確定]，然後按一下 [安裝]。  
   
@@ -388,7 +388,7 @@ ms.locfileid: "71383195"
     > DISM 命令會區分大小寫。  
   
 ### <a name="configure-alternate-sources-for-feature-files-in-group-policy"></a>設定群組原則中功能檔案的替代來源  
-本節描述的群組原則設定會指定 .NET Framework 3.5 檔案的授權來源位置，以及其他被視為「功能隨選安裝」設定一部分而遭移除的功能檔案。 此原則設定可**指定選用元件安裝和元件修復的設定**，位於群組原則管理主控台或本機群組原則的**電腦設定檔管理的範本 \ 系統**資料夾中。法.  
+本節描述的群組原則設定會指定 .NET Framework 3.5 檔案的授權來源位置，以及其他被視為「功能隨選安裝」設定一部分而遭移除的功能檔案。 此原則設定可**指定選用元件安裝和元件修復的設定**，位於 [群組原則管理主控台或本機群組原則編輯器] 的 [**電腦設定檔管理] 範本 \ 系統**資料夾中。  
   
 > [!NOTE]  
 > 您必須是 Administrators 群組成員，才能在本機電腦上變更群組原則設定。 如果您要管理的電腦是在網域層級控制群組原則設定，那麼您必須是 Domain Administrators 群組的成員，才能變更群組原則設定。  
@@ -403,9 +403,9 @@ ms.locfileid: "71383195"
   
 3. 在 [選項] 區域中的 [替代來源檔案路徑] 文字方塊中，指定共用資料夾或 WIM 檔案的完整路徑。 若要將 WIM 檔案指定為替代來源檔案位置，請將首碼 **WIM:** 新增至路徑，然後新增影像索引，在 WIM 檔案中當做尾碼。 下列是您可以指定的值範例。  
   
-   - 共用資料夾的路徑： **\\ @ no__t-2**<em>server_name</em> **\share @ no__t-5**<em>folder_name</em>  
+   - 共用資料夾的路徑： **\\\\** <em>server_name</em> **\share\\** <em>folder_name</em>  
   
-   - WIM 檔案的路徑，其中**3**代表功能檔案所在之映射的索引：**WIM： \\ @ no__t-2**<em>server_name</em> **\share\install.wim： 3**  
+   - WIM 檔案的路徑，其中**3**代表功能檔案所在之映射的索引： **WIM：\\\\** <em>server_name</em> **\share\install.wim： 3**  
   
 4. 如果您不想讓受此原則設定控制的電腦在 Windows Update 中搜尋遺失的功能檔案，請選取 [**永不嘗試從 Windows Update 下載**內容]。  
   
@@ -413,9 +413,9 @@ ms.locfileid: "71383195"
   
 6. 您完成變更此原則設定之後，請按一下 [確定]，然後關閉群組原則編輯器。  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [Windows Server 安裝選項](https://go.microsoft.com/fwlink/p/?LinkId=241573)  
-[Microsoft .NET Framework 3.5 部署考慮](https://go.microsoft.com/fwlink/p/?LinkId=248869)  
+[Microsoft .NET Framework 3.5 部署考量](https://go.microsoft.com/fwlink/p/?LinkId=248869)  
 [如何啟用或停用 Windows 功能](https://go.microsoft.com/fwlink/p/?LinkId=246552)  
   
 

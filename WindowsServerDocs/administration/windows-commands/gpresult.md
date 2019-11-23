@@ -22,7 +22,7 @@ ms.locfileid: "71375662"
 ---
 # <a name="gpresult"></a>gpresult
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端使用者和電腦的原則結果組（RSoP）資訊。
 若要透過防火牆針對遠端目的電腦使用 RSoP 報告，您必須具有可在埠上啟用輸入網路流量的防火牆規則。
@@ -33,17 +33,17 @@ ms.locfileid: "71375662"
 gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\]<TARGETUSER>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <FILENAME> [/f] | /?}
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 > [!NOTE]
 > 除了使用 **/？** 時，您必須包含 **/r**、 **/v**、 **/z**、 **/x**或 **/h**這兩個輸出選項。
 
 |                參數                 |                                                                                                     描述                                                                                                      |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              /s \<system @ no__t-1               |                                                  指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。                                                   |
-|             /u \<USERNAME @ no__t-1              |                                使用指定使用者的認證來執行命令。 預設使用者是登入發出命令之電腦的使用者。                                 |
-|            /p [\<PASSWOrd @ no__t-1]             |            指定 **/u**參數中提供之使用者帳戶的密碼。 如果省略 **/p** ， **gpresult**會提示輸入密碼。 **/p**不能搭配 **/x**或 **/h**使用。            |
-| /user [\<TARGETDOMAIN @ no__t-1 @ no__t-2] \<TARGETUSER @ no__t-4 |                                                                            指定要顯示其 RSoP 資料的遠端使用者。                                                                             |
+|              /s \<系統\>               |                                                  指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。                                                   |
+|             /u \<使用者名稱\>              |                                使用指定使用者的認證來執行命令。 預設使用者是登入發出命令之電腦的使用者。                                 |
+|            /p [\<密碼\>]             |            指定 **/u**參數中提供之使用者帳戶的密碼。 如果省略 **/p** ， **gpresult**會提示輸入密碼。 **/p**不能搭配 **/x**或 **/h**使用。            |
+| /user [\<TARGETDOMAIN\>\\]\<TARGETUSER\> |                                                                            指定要顯示其 RSoP 資料的遠端使用者。                                                                             |
 |      /scope {user &#124; computer}       |                                顯示使用者或電腦的 RSoP 資料。 如果省略 **/scope** ， **gpresult**會顯示使用者和電腦的 RSoP 資料。                                 |
 |        [/x &#124; /h] <FILENAME>         | 以 XML （ **/x**）或 HTML （ **/h**）格式將報表儲存在位置，並以*FILENAME*參數所指定的檔案名儲存。 不能與 **/u**、 **/p**、 **/r**、 **/v**或 **/z**搭配使用。 |
 |                    /f                    |                                                           強制**gpresult**覆寫 **/x**或 **/h**選項中所指定的檔案名。                                                           |
@@ -58,19 +58,19 @@ gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\
 - 由於 **/v**和 **/z**會產生許多資訊，因此將輸出重新導向至文字檔（例如， **gpresult/z > 的原則 .txt**）會很有用。
 - **Gpresult**命令適用于 windows server 2012、windows Server 2008 R2、windows Server2008、windows 8、windows 7 和 windows Vista。
   ## <a name="examples"></a>範例
-  下列範例會抓取電腦**srvmain**的遠端使用者**targetusername**的 rsop 資料，並只顯示有關使用者的 rsop 資料。 命令會以使用者**maindom\hiropln**的認證執行，而<strong>p@ssW23</strong>則會輸入為該使用者的密碼。
+  下列範例會抓取電腦**srvmain**的遠端使用者**targetusername**的 rsop 資料，並只顯示有關使用者的 rsop 資料。 命令會以使用者**maindom\hiropln**的認證來執行，並輸入<strong>p@ssW23</strong>做為該使用者的密碼。
 
   ```
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
   ```
   
-下列範例會將電腦**srvmain**的遠端使用者**targetusername**的所有可用群組原則資訊儲存至名為**Policy .txt**的檔案。 電腦未包含任何資料。 命令會以使用者**maindom\hiropln**的認證執行，而<strong>p@ssW23</strong>則會輸入為該使用者的密碼。
+下列範例會將電腦**srvmain**的遠端使用者**targetusername**的所有可用群組原則資訊儲存至名為**Policy .txt**的檔案。 電腦未包含任何資料。 命令會以使用者**maindom\hiropln**的認證來執行，並輸入<strong>p@ssW23</strong>做為該使用者的密碼。
 
   ```
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt
   ```
   
-下列範例會顯示電腦**srvmain**和已登入使用者的 RSoP 資料。 同時包含使用者和電腦的相關資料。 命令會以使用者**maindom\hiropln**的認證執行，而<strong>p@ssW23</strong>則會輸入為該使用者的密碼。
+下列範例會顯示電腦**srvmain**和已登入使用者的 RSoP 資料。 同時包含使用者和電腦的相關資料。 命令會以使用者**maindom\hiropln**的認證來執行，並輸入<strong>p@ssW23</strong>做為該使用者的密碼。
 
   ```
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r

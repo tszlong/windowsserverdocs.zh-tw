@@ -22,7 +22,7 @@ ms.locfileid: "71377032"
 ---
 # <a name="freedisk"></a>freedisk
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在繼續進行安裝程式之前，請先檢查指定的磁碟空間容量是否可用。
 
@@ -30,14 +30,14 @@ ms.locfileid: "71377032"
 ```
 freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [<Value>]
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |       參數       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
-| /u [<Domain> @ no__t-1] <User> |                                            以指定之使用者帳戶的許可權執行腳本。 預設值為 [系統許可權]。                                            |
+| /u [<Domain>\\]<User> |                                            以指定之使用者帳戶的許可權執行腳本。 預設值為 [系統許可權]。                                            |
 |    /p [<Password>]    |                                                           指定 **/u**中所指定使用者帳戶的密碼。                                                            |
-|      /d <Drive>       |                              指定您想要找出可用空間可用性的磁片磁碟機。 您必須指定0for 遠端電腦的 @no__t。                               |
+|      /d <Drive>       |                              指定您想要找出可用空間可用性的磁片磁碟機。 您必須指定遠端電腦的 <Drive>。                               |
 |        <Value>        |                                     檢查是否有特定的可用磁碟空間量。 您可以指定 <Value>以位元組、KB、MB、GB、TB、PB、EB、ZB 或 YB。                                      |
 
 ## <a name="remarks"></a>備註

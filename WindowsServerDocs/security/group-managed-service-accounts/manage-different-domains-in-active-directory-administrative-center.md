@@ -20,14 +20,14 @@ ms.locfileid: "71386934"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>管理 Active Directory 管理中心中的不同網域
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-  當您開啟 Active Directory 系統管理時，您目前在這部電腦上登入的網域 \(the local domain @ no__t-1 會出現在 Active Directory 管理中心流覽窗格中，\(the 左窗格 @ no__t-3。 根據您目前登入認證集的許可權，您可以查看或管理此本機網域中的 Active Directory 物件。
+  當您開啟 Active Directory 系統管理時，您目前用來登入這部電腦的網域 \(本機網域\) 會出現在左窗格 \(\)的 Active Directory 管理中心流覽窗格中。 根據您目前登入認證集的許可權，您可以查看或管理此本機網域中的 Active Directory 物件。
 
- 您也可以使用同一組登入認證和相同的 Active Directory 管理中心實例，來查看或管理相同樹系中任何其他網域中的 Active Directory 物件，或另一個樹系中已建立與本機的信任的網域domain. 同時支援一個 @ no__t-0way 信任和兩個 @ no__t-1way 信任。
+ 您也可以使用同一組登入認證和相同的 Active Directory 管理中心實例，來查看或管理相同樹系中任何其他網域中的 Active Directory 物件，或另一個樹系中已建立與本機的信任的網域domain. 同時支援一種\-的信任和兩種\-方式信任。
 
 > [!NOTE]
->  如果網域 A 和網域 B 之間有一個 @ no__t-0way 信任，而網域 A 中的使用者可以存取網域 B 中的資源，但網域 B 中的使用者無法存取網域 A 中的資源，則如果您在電腦上執行 Active Directory 管理中心，網域 A 是您的本機網域，您可以使用目前的登入認證組和 Active Directory 管理中心的相同實例來連接到網域 B。 但是，如果您是在網域 B 是本機網域的電腦上執行 Active Directory 管理中心，就無法在相同的 Active Directory 管理中心實例中，使用同一組認證連接到網域 A。
+>  如果在網域 A 和網域 B 之間有一個\-的信任方式，而網域 A 中的使用者可以存取網域 B 中的資源，但網域 B 中的使用者無法存取網域 A 中的資源 Active Directory 管理中心，則您可以使用目前的登入認證集，以及在相同的 Active Directory 管理中心實例中，連接到網域 B。 但是，如果您是在網域 B 是本機網域的電腦上執行 Active Directory 管理中心，就無法在相同的 Active Directory 管理中心實例中，使用同一組認證連接到網域 A。
 
  完成此程序沒有最低群組成員資格的限制。
 
@@ -46,9 +46,9 @@ ms.locfileid: "71386934"
 
      ![顯示 [新增流覽節點] * * UI 的螢幕擷取畫面](media/ADDS_ADACConnectToDomain.gif)
 
-4.  在 **[連線到]** 中，輸入您要管理的外部功能變數名稱 \(for 範例中， **contoso.com**\)，然後按一下 **[確定]** 。
+4.  在**連線到**中，輸入您要管理的外部功能變數名稱 \(例如**contoso.com**\)，然後按一下**確定**。
 
-5.  當您成功連線到外部網域時，流覽 [**新增流覽節點**] 視窗中的資料行，選取要加入至 Active Directory 管理中心流覽窗格的容器，然後按一下 **[確定]。** .
+5.  當您成功連線到外部網域時，流覽 [**新增流覽節點**] 視窗中的資料行，選取要加入至 Active Directory 管理中心流覽窗格的容器，然後按一下 **[確定]** 。
 
 ### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2：若要使用目前的登入認證集來管理所選 Active Directory 管理中心實例中的外部網域
 
@@ -62,19 +62,19 @@ ms.locfileid: "71386934"
     ![顯示 [新增流覽節點] * * UI 的螢幕擷取畫面](media/click_add_nav_nodes.gif)
 
    > [!NOTE]
-   >  另一種開啟 [**新增導覽節點**] 的方式是在 Active Directory 管理中心流覽窗格中，于空白空間的任何位置1click，然後按一下 [**新增導覽節點**]。
+   >  另一個開啟 [**新增導覽節點**] 的方式是以滑鼠右鍵\-按一下 Active Directory 管理中心流覽窗格中空白處的任何位置，然後按一下 [**新增導覽節點**]。
 
 3. 在 [**新增流覽節點**] 中，按一下 **[連接到其他網域]** ，如下圖所示。
 
     ![顯示 [新增流覽節點] * * * [連接到其他網域] * * UI 的螢幕擷取畫面](media/add_nav_nodes.gif)
 
-4. 在 **[連線到]** 中，輸入您要管理的外部功能變數名稱 \(for 範例中， **contoso.com**\)，然後按一下 **[確定]** 。
+4. 在**連線到**中，輸入您要管理的外部功能變數名稱 \(例如**contoso.com**\)，然後按一下**確定**。
 
-5. 當您成功連線到外部網域時，流覽 [**新增流覽節點**] 視窗中的資料行，選取要加入至 Active Directory 管理中心流覽窗格的容器，然後按一下 **[確定]。** .
+5. 當您成功連線到外部網域時，流覽 [**新增流覽節點**] 視窗中的資料行，選取要加入至 Active Directory 管理中心流覽窗格的容器，然後按一下 **[確定]** 。
 
    如需自訂 Active Directory 管理中心流覽窗格的詳細資訊，請參閱[自訂 Active Directory 管理中心流覽窗格](customize-the-active-directory-administrative-center-navigation-pane.md)。
 
-   您也可以使用一組不同于目前登入認證的登入認證來開啟 Active Directory 管理中心。 如果您使用一般使用者認證登入執行 Active Directory 管理中心的電腦，但想要在這部電腦上使用 Active Directory 管理中心來管理您的，則下列程式中的命令會很有用。以系統管理員身分使用的本機網域。 如果您想要使用 Active Directory 管理中心從遠端系統管理與您的本機網域不同的外部網域，而這組認證與您目前的登入認證組不同，@no__t 0This 命令也會很有用。 不過，外部網域必須與本機網域建立信任。 \)
+   您也可以使用一組不同于目前登入認證的登入認證來開啟 Active Directory 管理中心。 如果您使用一般使用者認證登入執行 Active Directory 管理中心的電腦，但想要在這部電腦上使用 Active Directory 管理中心來管理您的，則下列程式中的命令會很有用。以系統管理員身分使用的本機網域。 如果您想要使用 Active Directory 管理中心從遠端系統管理與您的本機網域不同的外部網域，而這組認證與您目前的登入認證組不同，此命令 \(也會很有用。 不過，外部網域必須與本機網域建立信任。\)
 
    完成此程序沒有最低群組成員資格的限制。
 
@@ -84,7 +84,7 @@ ms.locfileid: "71386934"
 
      `runas /user:<domain\user> dsac`
 
-     其中 `<domain\user>` 是您想要開啟 Active Directory 管理中心的一組認證，而 `dsac` 是 Active Directory 管理中心可執行檔名稱 \(Dsac @ no__t-3。
+     其中 `<domain\user>` 是您想要開啟 Active Directory 管理中心的一組認證，而 `dsac` 是 \(Dsac.exe 的 Active Directory 管理中心可執行檔名稱。\)
 
      例如，輸入下列命令，然後按下 ENTER：
 

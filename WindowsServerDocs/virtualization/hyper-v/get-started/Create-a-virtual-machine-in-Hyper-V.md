@@ -20,7 +20,7 @@ ms.locfileid: "71364253"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>在 Hyper-v 中建立虛擬機器
 
->適用於：Windows 10，Windows Server 2016，Microsoft Hyper-v Server 2016，Windows Server 2019，Microsoft Hyper-v Server 2019
+>適用于： Windows 10、Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
 瞭解如何使用 Hyper-v 管理員和 Windows PowerShell 建立虛擬機器，以及當您在 Hyper-v 管理員中建立虛擬機器時有哪些選項。  
 
@@ -38,7 +38,7 @@ ms.locfileid: "71364253"
 
 6.  在 [Hyper-v 管理員] 中，以滑鼠右鍵按一下虛擬機器，然後選取 **[連線]** 。  
 
-7.  在 [虛擬機器連線] 視窗中，選取 [**動作**] [ > **開始**]。  
+7.  在 虛擬機器連線 視窗中，選取 **動作** > **啟動**。  
 
 ## <a name="create-a-virtual-machine-by-using-windows-powershell"></a>使用 Windows PowerShell 建立虛擬機器  
 
@@ -70,7 +70,7 @@ ms.locfileid: "71364253"
        New-VM -Name <Name> -MemoryStartupBytes <Memory> -BootDevice <BootDevice> -VHDPath <VHDPath> -Path <Path> -Generation <Generation> -Switch <SwitchName>  
        ```  
 
-       例如:  
+       例如：  
 
        ```  
        New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -VHDPath .\VMs\Win10.vhdx -Path .\VMData -Generation 2 -Switch ExternalSwitch  
@@ -92,7 +92,7 @@ ms.locfileid: "71364253"
    Start-VM -Name <Name>  
    ```  
 
-   例如:  
+   例如：  
 
    ```  
    Start-VM -Name Win10VM  
@@ -107,17 +107,17 @@ ms.locfileid: "71364253"
 ## <a name="options-in-hyper-v-manager-new-virtual-machine-wizard"></a>Hyper-v 管理員中的選項新增虛擬機器嚮導  
 下表列出當您在 [Hyper-v 管理員] 中建立虛擬機器時，可以選擇的選項，以及每個虛擬機器的預設值。  
 
-|Page|Windows Server 2016 和 Windows 10 的預設值|其他選項|  
+|頁面|Windows Server 2016 和 Windows 10 的預設值|其他選項|  
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|  
-|**指定名稱和位置**|名稱：新增虛擬機器。<br /><br />位置:**C:\ProgramData\Microsoft\Windows\Hyper-V @ no__t-1**。|您也可以輸入自己的名稱，並為虛擬機器選擇另一個位置。<br /><br />這是將儲存虛擬機器組態檔案的位置。|  
+|**指定名稱和位置**|名稱：新的虛擬機器。<br /><br />位置： **C:\ProgramData\Microsoft\Windows\Hyper-V\\** 。|您也可以輸入自己的名稱，並為虛擬機器選擇另一個位置。<br /><br />這是將儲存虛擬機器組態檔案的位置。|  
 |**指定世代**|第 1 代|您也可以選擇建立第2代虛擬機器。 如需詳細資訊，請參閱[我應該在 hyper-v 中建立第1代或第2代虛擬機器嗎？。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|  
-|**指派記憶體**|啟動記憶體：1024 MB<br /><br />動態記憶體：**未選取**|您可以將啟動記憶體從32MB 設定為5902MB。<br /><br />您也可以選擇使用動態記憶體。 如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。|  
+|**指派記憶體**|啟動記憶體： 1024 MB<br /><br />動態記憶體：**未選取**|您可以將啟動記憶體從32MB 設定為5902MB。<br /><br />您也可以選擇使用動態記憶體。 如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。|  
 |**設定網路功能**|未連接|您可以從現有的虛擬交換器清單中選取要用於虛擬機器的網路連線。 請參閱[為 hyper-v 虛擬機器建立虛擬交換器](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)。|  
-|**連接虛擬硬碟**|建立虛擬硬碟<br /><br />名稱： <*vmname*> .vhdx<br /><br />**位置**：**C:\Users\Public\Documents\Hyper-V\Virtual 硬碟 @ no__t-1**<br /><br />**大小**：127GB|您也可以選擇使用現有的虛擬硬碟，或稍後等候並連接虛擬硬碟。|  
+|**連接虛擬硬碟**|建立虛擬硬碟<br /><br />名稱： <*vmname*> .vhdx<br /><br />**位置**： **C:\Users\Public\Documents\Hyper-V\Virtual 硬碟\\**<br /><br />**大小**：127GB|您也可以選擇使用現有的虛擬硬碟，或稍後等候並連接虛擬硬碟。|  
 |**安裝選項**|稍後安裝作業系統|這些選項會變更虛擬機器的開機順序，讓您可以從 .iso 檔案、可開機的磁片或網路安裝服務（如 Windows 部署服務（WDS））進行安裝。|  
-|**摘要**|顯示您所選擇的選項，讓您可以確認它們是否正確。<br /><br />-Name<br />-產生<br />-記憶體<br />-網路<br />-硬碟<br />-作業系統|**變更複寫用快取資料夾路徑**您可以從頁面複製摘要，並將其貼到電子郵件或其他地方，以協助您追蹤虛擬機器。|  
+|**摘要**|顯示您所選擇的選項，讓您可以確認它們是否正確。<br /><br />-Name<br />-產生<br />-記憶體<br />-網路<br />-硬碟<br />-作業系統|**秘訣：** 您可以從頁面複製摘要，並將其貼到電子郵件或其他地方，以協助您追蹤虛擬機器。|  
 
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 
 - [新增-VM](https://technet.microsoft.com/library/hh848537.aspx)  
 

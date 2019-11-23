@@ -21,7 +21,7 @@ ms.locfileid: "71367265"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>監視連線的遠端用戶端以查看其活動和狀態
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 **注意：** Windows Server 2012 將 DirectAccess 與遠端存取服務（RAS）結合成一個遠端存取角色。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71367265"
   
 4.  您會看到已連線到遠端存取服務器的使用者清單，以及相關的詳細統計資料。 按一下清單中對應至用戶端的第一個資料列。 當您選取資料列時，[遠端使用者] 活動會顯示在 [預覽] 窗格中。  
   
-@no__t 0Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -52,9 +52,9 @@ PS> Get-RemoteAccessConnectionStatistics
   
 |欄位名稱|值|  
 |-------|-----|  
-|使用者名稱|遠端使用者的使用者名稱或別名。 您可以使用萬用字元來選取使用者群組，例如 contoso @ no__t-0 * 或 \* \ 系統管理員。|  
+|使用者名稱|遠端使用者的使用者名稱或別名。 您可以使用萬用字元來選取使用者群組，例如 contoso\\* 或 \*\administrator。|  
 |主機名稱|遠端使用者的電腦帳戶名稱。 也可以指定 IPv4 或 IPv6 位址。|  
-|Type|DirectAccess 或 VPN。 如果選取 [DirectAccess]，則會列出所有使用 DirectAccess 連線的遠端使用者。 如果選取 VPN，則會列出所有使用 VPN 連線的遠端使用者。|  
+|類型|DirectAccess 或 VPN。 如果選取 [DirectAccess]，則會列出所有使用 DirectAccess 連線的遠端使用者。 如果選取 VPN，則會列出所有使用 VPN 連線的遠端使用者。|  
 |ISP 位址|遠端使用者的 IPv4 或 IPv6 位址。|  
 |IPv4 位址|將遠端使用者連接到公司網路之通道的內部 IPv4 位址。|  
 |IPv6 位址|將遠端使用者連接到公司網路之通道的內部 IPv6 位址|  

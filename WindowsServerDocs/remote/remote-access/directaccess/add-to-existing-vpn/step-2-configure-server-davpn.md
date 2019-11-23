@@ -21,7 +21,7 @@ ms.locfileid: "71388744"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>步驟2：設定 DirectAccess-VPN 伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何使用啟用 DirectAccess 精靈，設定基本的遠端存取部署所需的用戶端與伺服器設定。
 
@@ -40,7 +40,7 @@ ms.locfileid: "71388744"
 
 2. 如果 wizard 不會自動啟動，請以滑鼠右鍵按一下 [路由及遠端存取] 樹狀目錄中的伺服器節點，然後按一下 [**啟用 DirectAccess**]。
 
-3. 按一下 [下一步]。
+3. 按一下 **\[下一步\]** 。
 
 ## <a name="configure-directaccess-clients"></a>設定 DirectAccess 用戶端
 
@@ -54,7 +54,7 @@ ms.locfileid: "71388744"
 
 4. 選取 [使用強制通道] 核取方塊，透過遠端存取伺服器路由所有用戶端流量 (到內部網路和到網際網路)。
 
-5. 按一下 [下一步]。
+5. 按一下 **\[下一步\]** 。
 
 ## <a name="configure-the-network-topology"></a>設定網路拓撲
 
@@ -70,7 +70,7 @@ ms.locfileid: "71388744"
 
 2. 在 [**新尾碼**] 中輸入新的尾碼名稱，然後按一下 [**加入**]。 此外，您也可以變更搜尋順序，並從**要使用的網域尾碼**移除尾碼。
 
->下在脫離的命名空間案例中 \(where 一或多個網域電腦的 DNS 尾碼不符合電腦所屬的 Active Directory 網域 @ no__t-1，您應該確保搜尋清單已自訂為包含所有必要的一直. 遠端存取精靈預設會將 Active Directory DNS 名稱設定為用戶端上的主要 DNS 尾碼。 系統管理員必須確定新增用戶端使用的 DNS 尾碼進行名稱解析。
+>下在脫離的命名空間案例中 \(如果一或多個網域電腦的 DNS 尾碼不符合電腦\)所屬的 Active Directory 網域，您應該確保搜尋清單已自訂為包含所有必要的尾碼。 遠端存取精靈預設會將 Active Directory DNS 名稱設定為用戶端上的主要 DNS 尾碼。 系統管理員必須確定新增用戶端使用的 DNS 尾碼進行名稱解析。
 
 針對電腦和伺服器，會預先決定下列預設 DNS 搜尋行為，並在完成和解析簡短、不完整的名稱時使用。當尾碼搜尋清單是空的或未指定時，會將電腦的主要 DNS 尾碼附加至簡短的不完整名稱，並使用 DNS 查詢來解析結果 FQDN。 
 
@@ -99,6 +99,6 @@ ms.locfileid: "71388744"
 
 2. **DirectAccess 伺服器 GPO**。 此 GPO 包含 DirectAccess 設定，可套用至在部署中設定為遠端存取服務器的任何伺服器。 它也包含「具有進階安全性的 Windows 防火牆」連線安全性規則。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 完成「遠端存取」設定之後，就會顯示 [**摘要**]。 您可以變更已設定的設定，或按一下 **[完成]** 套用設定。

@@ -19,16 +19,16 @@ ms.locfileid: "71364734"
 ---
 # <a name="serial-ports-should-not-be-configured-on-generation-2-virtual-machines"></a>第2代虛擬機器上不應設定序列埠
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -38,10 +38,10 @@ ms.locfileid: "71364734"
 ## <a name="impact"></a>**產生**  
 *下列虛擬機器的效能可能會受到影響：*  
   
-@no__t 0list 的虛擬機器 >  
+\<的虛擬機器清單 >  
   
 ## <a name="resolution"></a>**解決方法**  
-*If 這是刻意的，不需要採取進一步的動作。否則，請考慮使用 Hyper-v 管理員或 Windows PowerShell，從虛擬機器上的序列埠移除連接字串。*  
+*如果這是故意的，則不需要採取進一步的動作。否則，請考慮使用 Hyper-v 管理員或 Windows PowerShell，從虛擬機器上的序列埠移除連接字串。*  
   
 
 

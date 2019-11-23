@@ -17,15 +17,15 @@ ms.locfileid: "71396076"
 ---
 # <a name="configure-nps-on-a-multihomed-computer"></a>設定多重主目錄電腦上的 NPS
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來設定具有多個網路介面卡的 NPS。
 
 當您在執行網路原則伺服器（NPS）的伺服器中使用多個網路介面卡時，您可以設定下列各項：
 
-- 執行並不會傳送和接收遠端驗證撥入使用者服務的網路介面卡，\(RADIUS @ no__t-1 流量。
-- 根據每個網路介面卡，NPS 會監視網際網路通訊協定第4版的 RADIUS 流量 \(IPv4 @ no__t-1、IPv6 或 IPv4 和 IPv6。
-- UDP 埠號碼，會根據每個通訊協定 @no__t 0IPv4 或 IPv6 @ no__t-1、每個網路介面卡來傳送和接收 RADIUS 流量。
+- 執行並不會傳送和接收遠端驗證撥入使用者服務 \(RADIUS\) 流量的網路介面卡。
+- 根據每個網路介面卡，NPS 會監視網際網路通訊協定第4版上的 RADIUS 流量 \(IPv4\)、IPv6 或 IPv4 和 IPv6 兩者。
+- 在每個通訊協定上傳送和接收 RADIUS 流量的 UDP 埠號碼 \(IPv4 或 IPv6\)，每個網路介面卡的基礎。
 
 根據預設值，NPS 會針對所有已安裝的網路介面卡，接聽埠1812、1813、1645和1646上的 RADIUS 流量（適用于 IPv6 和 IPv4）。 由於 NPS 會自動針對 RADIUS 流量使用所有網路介面卡，因此當您想要防止 NPS 使用特定的網路介面卡時，您只需要指定您想要 NPS 用於 RADIUS 流量的網路介面卡。
 
@@ -42,8 +42,8 @@ ms.locfileid: "71396076"
 
 若要設定 NPS 在網路介面卡上接聽和傳送 RADIUS 流量，請在 NPS 主控台的 [網路原則伺服器] 的 [內容] 對話方塊中使用下列語法：
 
-- IPv4 流量語法：IPAddress： UDPport，其中 IPAddress 是在您要傳送 RADIUS 流量的網路介面卡上設定的 IPv4 位址，而 UDPport 是您要用於 RADIUS 驗證或帳戶處理流量的 RADIUS 埠號碼。
-- IPv6 流量語法： [IPv6Address]：UDPport，其中需要 IPv6Address 的括弧，IPv6Address 是在您要用來傳送 RADIUS 流量的網路介面卡上設定的 IPv6 位址，而 UDPport 是您想要用於 RADIUS 驗證的 RADIUS 埠號碼，或帳戶處理流量。
+- IPv4 流量語法： IPAddress： UDPport，其中 IPAddress 是在您要傳送 RADIUS 流量的網路介面卡上設定的 IPv4 位址，而 UDPport 是您要用於 RADIUS 驗證或帳戶處理的 RADIUS 埠號碼流量.
+- IPv6 流量語法： [IPv6Address]： UDPport，其中需要 IPv6Address 的括弧，IPv6Address 是在您要用來傳送 RADIUS 流量的網路介面卡上設定的 IPv6 位址，而 UDPport 是您想要的 RADIUS 埠號碼用於 RADIUS 驗證或帳戶處理流量。
 
 下列字元可用來做為設定 IP 位址和 UDP 埠資訊的分隔符號：
 

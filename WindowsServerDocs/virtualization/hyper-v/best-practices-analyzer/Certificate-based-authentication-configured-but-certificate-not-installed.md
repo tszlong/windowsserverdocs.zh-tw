@@ -19,7 +19,7 @@ ms.locfileid: "71365197"
 ---
 # <a name="certificate-based-authentication-is-configured-but-the-specified-certificate-is-not-installed-on-the-replica-server-or-failover-cluster-nodes"></a>以憑證為基礎的驗證已設定，但指定的憑證未安裝在複本伺服器或容錯移轉叢集節點上
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 
   
@@ -27,10 +27,10 @@ ms.locfileid: "71365197"
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|設定|  
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
 
@@ -40,9 +40,9 @@ ms.locfileid: "71365197"
   
 ## <a name="impact"></a>影響  
   
-*In 叢集容錯移轉或移至另一個節點的事件時，如果新節點尚未安裝適當的憑證，Hyper-v 複寫將會暫停。這會影響下列節點：*  
+*當叢集容錯移轉或移至另一個節點時，如果新節點也沒有安裝適當的憑證，Hyper-v 複寫就會暫停。這會影響下列節點：*  
   
-@no__t 節點的 0list >  
+\<的節點清單 >  
   
 ## <a name="resolution"></a>解析度  
   

@@ -22,7 +22,7 @@ ms.locfileid: "71383005"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>軟體清查記錄入門
 
->適用於：Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
  軟體清查記錄會以每一伺服器為基礎來收集 Microsoft 軟體清查資料。 在使用 Windows Server 2012 R2 的軟體清查記錄之前，請確定每個要清查的系統上都已安裝 Windows Update [KB 3000850](https://support.microsoft.com/kb/3000850)和[KB 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Windows Update。 此外，如果您想要使用 SIL 的功能將資料轉送到匯總伺服器，請確定您的網路有有效的 SSL 憑證。
 
@@ -44,10 +44,10 @@ Windows Server 中的軟體清查記錄功能有一組簡單的 PowerShell Cmdle
 
 -   藉由啟用每部伺服器的軟體清查記錄功能，並選擇網頁伺服器目標 URI 和憑證指紋以進行驗證，來匯總各種軟體資產管理案例的軟體和伺服器清查資訊。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [軟體清查記錄彙總工具](https://technet.microsoft.com/library/mt572043.aspx)<br>
 [管理軟體清查記錄](manage-software-inventory-logging.md)<br>
 [Windows PowerShell 中的軟體清查記錄 Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[Microsoft 評估及規劃](https://www.microsoft.com/download/en/details.aspx?id=7826)
-工具組[大量啟用管理工具](http://blogs.technet.com/b/volume-licensing/)
+[Microsoft 評估及規劃](https://www.microsoft.com/download/en/details.aspx?id=7826)工具組
+[大量啟用管理工具](http://blogs.technet.com/b/volume-licensing/)
 

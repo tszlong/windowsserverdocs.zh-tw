@@ -26,7 +26,7 @@ ms.locfileid: "71377806"
 
 在 Windows 2000 中，預設不會啟用實體和邏輯磁片效能計數器。
 
-**Diskperf**包含在 windows XP、windows server 2003、windows server 2008、windows Vista、windows Server 2008 R2 和 Windows 7 中，因此可以用來從遠端啟用或停用執行的電腦上的實體或邏輯磁片效能計數器。Windows 2000。
+**Diskperf**包含在 windows XP、windows server 2003、windows server 2008、windows Vista、windows Server 2008 R2 和 Windows 7 中，因此可用來從遠端啟用或停用執行 Windows 2000 之電腦上的實體或邏輯磁片效能計數器。
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +34,7 @@ ms.locfileid: "71377806"
 diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 ```
 
-## <a name="options"></a>選項。
+## <a name="options"></a>選項
 
 |選項|描述|
 |------|-----------|
@@ -45,4 +45,4 @@ diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 |-N|當電腦重新開機時，停用所有磁片效能計數器。|
 |-ND|當電腦重新開機時，停用實體磁片磁碟機的磁片效能計數器。|
 |-NV|當電腦重新開機時，請停用邏輯磁碟機或存放磁片區的磁片效能計數器。|
-|\\ @ no__t-1 *\<computername >*|指定您要啟用或停用磁片效能計數器的電腦名稱稱。|
+|\\\\ *\<computername >*|指定您要啟用或停用磁片效能計數器的電腦名稱稱。|

@@ -43,13 +43,13 @@ BCDEdit 僅限於標準資料類型，主要是用來對 BCD 執行單一一般�
 BCDEdit /Command [<Argument1>] [<Argument2>] ...
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 ### <a name="general-bcdedit-command-line-option"></a>一般 BCDEdit 命令列選項
 
 |選項|描述|
 |------|-----------|
-|/?|顯示 BCDEdit 命令的清單。 不使用引數執行此命令會顯示可用命令的摘要。 若要顯示特定命令的詳細說明，請執行**bcdedit/？** @no__t 0command >，其中 <command> 是您要搜尋的命令名稱，以取得的詳細資訊。 例如， **bcdedit/？ createstore**會顯示 createstore 命令的詳細說明。|
+|/?|顯示 BCDEdit 命令的清單。 不使用引數執行此命令會顯示可用命令的摘要。 若要顯示特定命令的詳細說明，請執行**bcdedit/？** \<命令 >，其中 <command> 是您要搜尋的命令名稱，以取得的詳細資訊。 例如， **bcdedit/？ createstore**會顯示 createstore 命令的詳細說明。|
 
 ### <a name="parameters-that-operate-on-a-store"></a>在存放區上操作的參數
 

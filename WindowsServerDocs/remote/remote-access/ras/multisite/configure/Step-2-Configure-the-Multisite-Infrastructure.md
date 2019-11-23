@@ -21,7 +21,7 @@ ms.locfileid: "71367203"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>步驟2設定多網站基礎結構
 
->適用於：Windows Server 2012 R2、Windows Server 2012
+>適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 若要設定多網站部署，必須執行幾個步驟來修改網路基礎結構設定，包括：設定額外的 Active Directory 網站和網域控制站、設定其他安全性群組，以及設定如果您未使用自動設定的 Gpo，群組原則物件（Gpo）。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71367203"
   
 8.  關閉 Active Directory 的網站和服務。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -169,7 +169,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 8.  重複此程式，視需要為每個進入點建立一個安全性群組。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -241,7 +241,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 #### <a name="ChangeDC"></a>變更管理伺服器 Gpo 的網域控制站  
   
--   在遠端存取服務器上執行 `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC` 的 Windows PowerShell Cmdlet，並為*ExistingDC*參數指定無法連線的網域控制站名稱。 此命令會針對目前由該網域控制站管理的進入點，修改其伺服器 Gpo 的網域控制站關聯。  
+-   在遠端存取服務器上執行 Windows PowerShell Cmdlet `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC`，並為*ExistingDC*參數指定無法連線的網域控制站名稱。 此命令會針對目前由該網域控制站管理的進入點，修改其伺服器 Gpo 的網域控制站關聯。  
   
     -   若要以網域控制站 "dc2.corp.contoso.com" 取代無法連線的網域控制站 "dc1.corp.contoso.com"，請執行下列動作：  
   
@@ -289,7 +289,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc3.png)  
   
-3.  若要同步「進入點1」伺服器 GPO 中「進入點2」伺服器 GPO 的網域控制站關聯，請執行命令以「DC3」取代 "DC2"，並指定未同步處理其伺服器 GPO 的遠端存取服務器（在此案例中為 *"DA1"）ComputerName*參數。  
+3.  若要同步「進入點1」伺服器 GPO 中「進入點2」伺服器 GPO 的網域控制站關聯，請執行命令以「DC3」取代 "DC2"，並指定其伺服器 GPO 未同步處理的遠端存取服務器（在此案例中為 "DA1"），代表*ComputerName*參數。  
   
     ```  
     Set-DAEntryPointDC "ExistingDC 'DC2' "NewDC 'DC3' "ComputerName 'DA1' "ErrorAction Continue  
@@ -300,7 +300,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>設定散發的優化  
-進行設定變更時，只有在伺服器 Gpo 傳播至遠端存取服務器之後，才會套用變更。 若要減少設定散發時間，遠端存取會自動選取可寫入的網域控制站，這是建立其伺服器 GPO 時最接近遠端存取服務器的超連結 "<https://technet.microsoft.com/library/cc978016.aspx>"。  
+進行設定變更時，只有在伺服器 Gpo 傳播至遠端存取服務器之後，才會套用變更。 若要減少設定散發時間，遠端存取會自動選取可寫入的網域控制站，這是在建立其伺服器 GPO 時，與遠端存取服務器最接近的超連結「<https://technet.microsoft.com/library/cc978016.aspx>」。  
   
 在某些情況下，可能需要手動修改管理伺服器 GPO 的網域控制站，以便優化設定散發時間：  
   
@@ -310,7 +310,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 -   由於網域控制站上的維護工作，已手動修改進入點的網域控制站關聯，現在網域控制站已重新上線。  
   
-在這些案例中，請在遠端存取服務器上執行 PowerShell Cmdlet `Set-DAEntryPointDC`，並使用參數*EntryPointName*指定您想要優化的進入點名稱。 只有在目前儲存伺服器 GPO 的網域控制站的 GPO 資料已完全複寫到所需的新網域控制站之後，您才應該執行此動作。  
+在這些案例中，請在遠端存取服務器上執行 PowerShell Cmdlet `Set-DAEntryPointDC`，並使用參數*EntryPointName*來指定您想要優化的進入點名稱。 只有在目前儲存伺服器 GPO 的網域控制站的 GPO 資料已完全複寫到所需的新網域控制站之後，您才應該執行此動作。  
   
 > [!NOTE]  
 > 修改網域控制站關聯之前，請確定遠端存取部署中的所有 Gpo 都已複寫到網域中的所有網域控制站。 如果 GPO 未同步處理，可能會在修改網域控制站關聯之後遺失最近的設定變更，這可能會導致設定損毀。 若要確認 GPO 同步處理，請參閱[檢查群組原則的基礎結構狀態](https://technet.microsoft.com/library/jj134176.aspx)。  
@@ -334,6 +334,6 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 3：設定多網站部署 @ no__t-0  
--   [步驟 1：執行單一伺服器遠端存取部署 @ no__t-0  
+-   [步驟3：設定多網站部署](Step-3-Configure-the-Multisite-Deployment.md)  
+-   [步驟1：執行單一伺服器遠端存取部署](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
 

@@ -18,11 +18,11 @@ ms.locfileid: "71395704"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支援的網路功能案例
 
->適用於：Windows Server \(Semi-每年通道 @ no__t-1、Windows Server 2016
+>適用于： Windows Server \(半年通道\)、Windows Server 2016
 
 本主題提供您可以或無法在此 Windows Server 2016 版本中執行之支援和不支援案例的相關資訊。  
 >[!IMPORTANT]
->針對所有生產案例，請使用原始設備製造商所提供的最新簽署硬體驅動程式 \(OEM @ no__t-1 或獨立硬體廠商 \(IHV @ no__t-3。
+>針對所有生產案例，請使用原始設備製造商所提供的最新簽署硬體驅動程式 \(OEM\) 或獨立硬體廠商 \(IHV\)。
   
 ## <a name="bkmk_supp"></a>支援的網路案例
 
@@ -38,7 +38,7 @@ ms.locfileid: "71395704"
   
 -   [NIC 小組案例](#bkmk_nicteam)
 
-- [切換內嵌小組 \(SET @ no__t-2 案例](#bkmk_set)
+- [切換內嵌小組 \(設定\) 案例](#bkmk_set)
   
 ### <a name="bkmk_sdn"></a>軟體定義網路（SDN）案例
  
@@ -86,7 +86,7 @@ NFV 案例可讓您：
   
 ### <a name="bkmk_netp"></a>網路平臺案例
 
-在本節的案例中，Windows Server 網路小組支援使用任何 Windows Server 2016 認證的驅動程式。 請洽詢您的網路介面卡 \(NIC @ no__t-1 製造商，以確保您有最新的驅動程式更新。
+在本節的案例中，Windows Server 網路小組支援使用任何 Windows Server 2016 認證的驅動程式。 請洽詢您的網路介面卡 \(NIC\) 製造商，以確保您有最新的驅動程式更新。
   
 網路平臺案例可讓您：  
   
@@ -169,7 +169,7 @@ NIC 小組案例可讓您：
 
 如需詳細資訊，請參閱[NIC](technologies/nic-teaming/NIC-Teaming.md)小組。 
 
-### <a name="bkmk_set"></a>切換內嵌小組 \(SET @ no__t-2 案例
+### <a name="bkmk_set"></a>切換內嵌小組 \(設定\) 案例
 
 SET 是替代的 NIC 小組解決方案，可供您在 Windows Server 2016 中包含 Hyper-v 和軟體定義網路（SDN）堆疊的環境中使用。 將一些 NIC 小組功能整合到 Hyper-v 虛擬交換器。 
 

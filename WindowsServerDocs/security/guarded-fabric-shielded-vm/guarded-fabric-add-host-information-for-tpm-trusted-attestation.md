@@ -15,7 +15,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71386816"
 ---
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 ### <a name="add-host-information-for-tpm-trusted-attestation"></a>新增 TPM 信任證明的主機資訊
 
@@ -39,9 +39,9 @@ ms.locfileid: "71386816"
     > 您可以在 [記事本] 之類的編輯器中開啟 XML 檔案，並檢查是否有指出找不到 EKCert 的錯誤訊息，以檢查是否遺漏 EKCert。
     > 如果是這種情況，而且您信任電腦中的 TPM 是真實的，您可以使用 `-Force` 旗標來覆寫此安全性檢查，並將主機識別碼新增至 HGS。
 
-2. 取得網狀架構系統管理員為主機建立的程式碼完整性原則（二進位格式，@no__t 4.9.0-. p7b）。 將它複製到 HGS 伺服器。 然後執行下列命令。
+2. 取得網狀架構系統管理員為主機建立的程式碼完整性原則（二進位格式（\*. p7b）。 將它複製到 HGS 伺服器。 然後執行下列命令。
 
-    針對 `<PolicyName>`，指定 CI 原則的名稱，以描述其適用的主機類型。 最佳做法是在您的機器的製作/型號和其上執行的任何特殊軟體設定之後，將它命名為。<br>針對 `<Path>`，指定程式碼完整性原則的路徑和檔案名。
+    針對 `<PolicyName>`，請指定 CI 原則的名稱，以描述其適用的主機類型。 最佳做法是在您的機器的製作/型號和其上執行的任何特殊軟體設定之後，將它命名為。<br>針對 `<Path>`，請指定程式碼完整性原則的路徑和檔案名。
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'

@@ -22,9 +22,9 @@ ms.locfileid: "71379015"
 ---
 # <a name="create-partition-efi"></a>建立磁碟分割 efi
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 Itanium @ no__t-0based 電腦上，會在 GUID 磁碟分割資料表上建立可擴充固件介面 \(EFI @ no__t-2 \(gpt @ no__t-4 磁片。  
+在以 Itanium\-為基礎的電腦上，會在 GUID 磁碟分割表格上建立可延伸固件介面 \(EFI\) 系統磁碟分割 \(gpt\) 磁片。  
   
   
   
@@ -34,12 +34,12 @@ ms.locfileid: "71379015"
 create partition efi [size=<n>] [offset=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>參數  
+## <a name="parameters"></a>Parameters  
   
 |  參數  |                                                                                             描述                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size @ no__t-0 @ no__t-1  |                         分割區的大小（以 mb 為單位） \(MB @ no__t-1。 如果未指定大小，則磁碟分割會繼續，直到目前的區域中沒有更多可用空間為止。                         |
-| offset @ no__t-0 @ no__t-1 |             建立資料分割的位移（以 kb 為單位） \(KB @ no__t-1。 如果沒有指定位移，磁碟分割就會放在夠大的第一個磁片範圍中以容納它。              |
+|  大小\=<n>  |                         分割區的大小（以 mb 為單位） \(MB\)。 如果未指定大小，則磁碟分割會繼續，直到目前的區域中沒有更多可用空間為止。                         |
+| offset\=<n> |             建立資料分割的位移（以 kb 為單位） \(KB\)。 如果沒有指定位移，磁碟分割就會放在夠大的第一個磁片範圍中以容納它。              |
 |    noerr    | 僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
   
 ## <a name="remarks"></a>備註  

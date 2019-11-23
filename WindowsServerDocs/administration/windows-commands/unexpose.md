@@ -24,7 +24,7 @@ ms.locfileid: "71392261"
 
 
 
-unexposes 使用**公開**命令公開的陰影複製。 公開的陰影複製可以透過其陰影識別碼、磁碟機號、共用或掛接點來指定。
+Unexposes 使用**公開**命令公開的陰影複製。 公開的陰影複製可以透過其陰影識別碼、磁碟機號、共用或掛接點來指定。
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
@@ -34,14 +34,14 @@ unexposes 使用**公開**命令公開的陰影複製。 公開的陰影複製�
 unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
 |\<ShadowID >|Unexposes 給定陰影識別碼所指定的陰影複製。|
-|\<Drive： >|Unexposes 與指定磁碟機號相關聯的陰影複製（例如，磁片磁碟機 P）。|
-|\<Share >|Unexposes 與指定共用相關聯的陰影複製（例如，\\ @ no__t-1*MachineName*\)。|
-|\<MountPoint >|Unexposes 與指定掛接點相關聯的陰影複製（例如，C:\shadowcopy @ no__t-0。|
+|\<磁片磁碟機： >|Unexposes 與指定磁碟機號相關聯的陰影複製（例如，磁片磁碟機 P）。|
+|\<共用 >|Unexposes 與指定共用相關聯的陰影複製（例如，\\*MachineName*\)\\。|
+|\<掛接點 >|Unexposes 與指定掛接點相關聯的陰影複製（例如，C:\shadowcopy\)。|
 
 ## <a name="remarks"></a>備註
 

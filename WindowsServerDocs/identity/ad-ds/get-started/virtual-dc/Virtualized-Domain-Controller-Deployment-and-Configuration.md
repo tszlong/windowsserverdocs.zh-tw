@@ -18,7 +18,7 @@ ms.locfileid: "71390703"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虛擬網域控制站的部署與設定
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題涵蓋：  
   
@@ -65,7 +65,7 @@ ms.locfileid: "71390703"
 |**具有 Hyper-v 功能的 Microsoft Windows Server 2012 伺服器**|是|  
 |**Microsoft Windows Server 2012 Hyper-v 伺服器**|是|  
 |**Microsoft Windows 8 with Hyper-v Client 功能**|是|  
-|**Windows Server 2008 R2 和 Windows Server 2008**|否|  
+|**Windows Server 2008 R2 和 Windows Server 2008**|不可以|  
 |**非 Microsoft 虛擬化解決方案**|請連絡廠商|  
   
 即使 Microsoft 支援 Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004 及 Virtual Server 2005，它們還是無法執行 64 位元的客體，也不支援-VM 世代識別碼。  
@@ -91,22 +91,22 @@ ms.locfileid: "71390703"
 >   
 > 還原快照之後，在快照後源自於該網域控制站之先前未複寫的變更差異將永久遺失。 安全還原會實作自動非權威還原，「僅能」防止意外發生網域控制站隔離。  
   
-如需 USN 氣泡和延遲物件的詳細資訊，請參閱失敗的 @no__t 0Troubleshooting Active Directory 作業，錯誤為8606：「指定的屬性不足以建立物件」 ](https://support.microsoft.com/kb/2028495)。  
+如需 USN 泡泡與延遲物件的詳細資訊，請參閱 [Troubleshooting Active Directory operations that fail with error 8606: "Insufficient attributes were given to create an object"](https://support.microsoft.com/kb/2028495)(為 Active Directory 作業失敗進行疑難排解，出現錯誤 8606：「提供的屬性不足以建立物件」)。  
   
 ## <a name="BKMK_VDCCloning"></a>虛擬網域控制站複製  
 不論使用的是圖形工具或 Windows PowerShell，複製虛擬網域控制站都有許多階段和步驟。 可概略分為下列三個階段：  
   
 **準備環境**  
   
--   步驟 1:驗證 Hypervisor 支援 VM 世代識別碼，因此可進行複製  
+-   步驟 1：驗證 Hypervisor 是否支援 VM 世代識別碼，且可進行複製  
   
--   步驟 2:確認 PDC 模擬器角色是由執行 Windows Server 2012 的網域控制站主控，且在複製期間已上線，而且已由複製的網域控制站連線。  
+-   步驟2：確認 PDC 模擬器角色是由執行 Windows Server 2012 的網域控制站主控，且在複製期間已上線，而且已由複製的網域控制站連線。  
   
 **準備來源網域控制站**  
   
 -   步驟 3：授權來源網域控制站進行複製  
   
--   步驟 4：移除不相容的服務或程式，或者將它們新增至 CustomDCCloneAllowList.xml 檔案。  
+-   步驟 4：移除不相容的服務或程式，或將其加入 CustomDCCloneAllowList.xml 檔案中。  
   
 -   步驟 5：建立 DCCloneConfig.xml  
   
@@ -114,9 +114,9 @@ ms.locfileid: "71390703"
   
 **建立複製的網域控制站**  
   
--   步驟 7：複製或匯出來源 VM，並新增 XML (如果尚未複製)  
+-   步驟 7：複製或匯出來源 VM，並新增 XML (若尚未複製)  
   
--   步驟 8：從複本中建立新的虛擬機器  
+-   步驟 8：從複本建立新的虛擬機器  
   
 -   步驟 9：啟動新的虛擬機器以開始複製  
   
@@ -427,7 +427,7 @@ Export-vm
 > Windows Server 2012 Hyper-V 支援新的匯出和匯入功能 (這些功能已超出本訓練的範圍)。 如需詳細資訊，請檢閱 TechNet。  
   
 #### <a name="exporting-merged-disks-using-hyper-v"></a>使用 Hyper-V 匯出合併的磁碟  
-最後一個選擇是使用 Hyper-V 中的 [磁碟合併] 與 [轉換] 選項。 這些選項可讓您製作現有磁碟結構的複本 (即使在包含快照集 AVHD/AVHDX 檔案時也一樣)，使其成為單一的新磁碟。 就像手動磁碟複製案例，這主要是針對只使用單一磁片磁碟機的較簡單虛擬機器，例如 C： \\。 它的唯一優點是不需要先刪除快照，這是它與手動複製的不同。 這個操作的速度必然會比只刪除快照並複製磁碟的程序還要慢。  
+最後一個選擇是使用 Hyper-V 中的 [磁碟合併] 與 [轉換] 選項。 這些選項可讓您製作現有磁碟結構的複本 (即使在包含快照集 AVHD/AVHDX 檔案時也一樣)，使其成為單一的新磁碟。 就像手動磁碟複製案例，這主要是針對只使用單一磁片磁碟機的較簡單虛擬機器，例如 C：\\。 它的唯一優點是不需要先刪除快照，這是它與手動複製的不同。 這個操作的速度必然會比只刪除快照並複製磁碟的程序還要慢。  
   
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法  
 使用 [HYPER-V 管理員] 建立合併的磁碟：  
@@ -546,7 +546,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-例如:  
+例如：  
   
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
@@ -640,14 +640,14 @@ Get-VMSnapshot
 Remove-VMSnapshot  
 ```  
   
-例如:  
+例如：  
   
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
 > [!WARNING]
 > 確定在匯入電腦時，不會將靜態 MAC 位址指派給來源網域控制站。 如果複製的來源電腦具有靜態 MAC，這些複製的電腦將不會正確傳送或接收任何網路流量。 如果是這種情況，請設定新的唯一靜態或動態 MAC 位址。 您可以使用下列命令來查看 VM 是否使用靜態 MAC 位址：  
 > 
-> **取得-VM-VMName**   
+> **取得 VM-VMName**   
 >  ***測試-vm* |VMNetworkAdapter |fl \\** *  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>步驟 9 - 複製新的虛擬機器  
@@ -664,7 +664,7 @@ Remove-VMSnapshot
 Start-VM  
 ```  
   
-例如:  
+例如：  
   
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
   

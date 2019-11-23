@@ -34,9 +34,9 @@ ms.locfileid: "71385555"
 AD FS 2019 提供下列額外的安全性改進：
 - **使用智慧卡登入的遠端 PSH** -客戶現在可以使用智慧卡透過 PSH 遠端連線到 ADFS，並使用它來管理所有 PSH 功能，包括多節點 PSH Cmdlet。
 - **HTTP 標頭自訂**-客戶現在可以自訂在 ADFS 回應期間發出的 HTTP 標頭。 這包括下列標頭
-     - HSTS這會傳達 ADFS 端點只能在適用于相容瀏覽器的 HTTPS 端點上使用，以強制執行
-     - x 框架-選項：允許 ADFS 系統管理員允許特定的信賴憑證者內嵌 ADFS 互動式登入頁面的 Iframe。 這應該謹慎使用，而且只適用于 HTTPS 主機。 
-     - 未來的標頭：也可以設定其他未來的標頭。 
+     - HSTS：這會傳達 ADFS 端點只能用於相容瀏覽器的 HTTPS 端點，以強制執行
+     - x 框架-選項：可讓 ADFS 系統管理員允許特定的信賴憑證者內嵌 ADFS 互動式登入頁面的 Iframe。 這應該謹慎使用，而且只適用于 HTTPS 主機。 
+     - 未來標頭：其他未來的標頭也可以設定。 
 
 如需詳細資訊，請參閱[使用 AD FS 2019 自訂 HTTP 安全性回應標頭](../../ad-fs/operations/customize-http-security-headers-ad-fs.md) 
 
@@ -52,7 +52,7 @@ AD FS 2019 提供下列額外的安全性改進：
 已在 AD FS 2019 中進行下列登入 SSO 改善：
 
 - [具有](../operations/AD-FS-paginated-sign-in.md)置中主題的編頁 ux： adfs 現在已移至分頁 ux 流程，可讓 adfs 驗證並提供更流暢的登入體驗。 ADFS 現在使用中央 UI （而不是畫面的右側）。 您可能需要較新的標誌和背景影像，才能與此體驗一致。 這也會反映 Azure AD 中提供的功能。
-- **Bug fix：執行 PRT auth @ no__t 時，Win10 裝置的持續 SSO 狀態：這會解決在 Windows 10 裝置上使用 PRT 驗證時，未保存 MFA 狀態的問題。 問題的結果是終端使用者經常會收到第二個要素認證（MFA）的提示。 修正程式也會在透過用戶端 TLS 和透過 PRT 機制成功執行裝置驗證時，讓體驗保持一致。 
+- **Bug 修正：執行 PRT auth 時 Win10 裝置的持續 SSO 狀態**  這可解決使用 Windows 10 裝置的 PRT authentication 時，未保存 MFA 狀態的問題。 問題的結果是終端使用者經常會收到第二個要素認證（MFA）的提示。 修正程式也會在透過用戶端 TLS 和透過 PRT 機制成功執行裝置驗證時，讓體驗保持一致。 
 
 
 ### <a name="suppport-for-building-modern-line-of-business-apps"></a>建立現代化企業營運應用程式的支援
@@ -60,9 +60,9 @@ AD FS 2019 提供下列額外的安全性改進：
 
  - **Oauth 裝置流程/設定檔**-AD FS 現在支援 oauth 裝置流程設定檔，以在沒有 UI 介面區的裝置上執行登入，以支援豐富的登入體驗。 這可讓使用者在不同的裝置上完成登入體驗。 這是 Azure Stack 中 Azure CLI 體驗的必要功能，而且可以在其他情況下使用。 
  - **移除 ' Resource ' 參數**-AD FS 現在已移除指定資源參數的需求，這是以目前的 Oauth 規格為行。 除了要求的許可權之外，用戶端現在可以提供信賴憑證者信任識別碼做為範圍參數。 
- - **AD FS 回應中的 CORS 標頭**-客戶現在可以建立單一頁面應用程式，讓用戶端 JS 程式庫在 AD FS 上查詢 OIDC 探索檔中的簽署金鑰，以驗證 id_token 的簽章。 
+ - **AD FS 回應中的 CORS 標頭**-客戶現在可以建立單一頁面應用程式，讓用戶端 JS 程式庫從 AD FS 上的 OIDC 探索檔查詢簽署金鑰，以驗證 id_token 的簽章。 
  - **PKCE 支援**-AD FS 新增 PKCE 支援，以在 OAuth 中提供安全的驗證程式代碼流程。 這會在此流程中增加額外的安全性層級，以避免攔截程式碼，並從不同的用戶端重新執行它。 
- - **Bug fix：傳送 x5t 和小孩理賠 @ no__t-0-這是次要的錯誤修正。 AD FS 現在會另外傳送 ' 小孩 ' 宣告，以表示用來驗證簽章的金鑰識別碼提示。 先前 AD FS 只會將此傳送為 ' x5t ' 宣告。
+ - **Bug 修正：傳送 x5t 和小孩索賠**-這是次要的錯誤修正。 AD FS 現在會另外傳送 ' 小孩 ' 宣告，以表示用來驗證簽章的金鑰識別碼提示。 先前 AD FS 只會將此傳送為 ' x5t ' 宣告。
 
 ### <a name="supportability-improvements"></a>支援性改善
 下列可支援性改進不是 AD FS 2019 的一部分：
@@ -76,14 +76,14 @@ AD FS 2019 現在包含下列部署更新：
 
 ### <a name="saml-updates"></a>SAML 更新
 下列 SAML 更新位於 AD FS 2019：
-- **Bug fix：修正匯總同盟 @ no__t-0 中的 bug-針對匯總的同盟支援（例如 InCommon），有許多 bug 修正。 已解決下列問題： 
-  - 改善匯總同盟元資料檔案中大量實體的調整。先前，這會失敗並出現「ADMIN0017」錯誤。 
+- **Bug 修正：修正匯總同盟中的 bug** -針對匯總的同盟支援（例如 InCommon），已有許多 bug 修正。 已解決下列問題： 
+  - 已改善匯總同盟元資料檔案中大量實體的縮放比例。之前，這會失敗，並出現 "ADMIN0017" 錯誤。 
   - 透過 AdfsRelyingPartyTrustsGroup PSH Cmdlet 使用 ' ScopeGroupID ' 參數進行查詢。 
   - 處理重複 entityID 前後的錯誤狀況
 
 
 ### <a name="azure-ad-style-resource-specification-in-scope-parameter"></a>範圍參數中 Azure AD 樣式資源規格 
-之前，AD FS 需要在任何驗證要求中，將所需的資源和範圍放在不同的參數中。 例如，一般的 oauth 要求看起來會像下面這樣：7 **HTTPs：&#47;&#47;fs.contoso.com/adfs/oauth2/authorize？ </br>response_type = code & client_id = claimsxrayclient & 資源 = urn： microsoft： </br>adfs： claimsxray & scope = oauth & redirect_uri = HTTPs：&#47; &#47;adfshelp.microsoft.com/</br> ClaimsXray/TokenResponse & prompt = login**
+之前，AD FS 需要在任何驗證要求中，將所需的資源和範圍放在不同的參數中。 例如，一般的 oauth 要求看起來會像下面這樣： 7 **HTTPs&#47;&#47;： fs.contoso.com/adfs/oauth2/authorize？</br>response_type = code & client_id = claimsxrayclient & resource = urn： microsoft：</br>adfs： claimsxray & 範圍 = oauth & redirect_uri = HTTPs&#47;&#47;： adfshelp.microsoft.com/</br> claimsxray/TokenResponse & prompt = login**
  
 使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 這與 Azure AD 也可以對其進行驗證的方式一致。 
 
@@ -100,15 +100,15 @@ AD FS 2019 現在包含下列部署更新：
 
 ![Proofkey](media/whats-new-in-active-directory-federation-services-for-windows-server-2016/adfs2019.png)
 
-A. 用戶端會建立並記錄名為 "code_verifier" 的密碼，並衍生轉換後的 "t （code_verifier）" 版本（稱為 "code_challenge"），這會在 OAuth 2.0 授權要求中傳送，並搭配轉換方法 "t_m"。 
+A. 用戶端會建立並記錄名為 "code_verifier" 的密碼，並衍生轉換後的 "t （code_verifier）" （稱為「code_challenge」），該版本會在 OAuth 2.0 授權要求中傳送，以及轉換方法 "t_m"。 
 
 B. 授權端點會如往常般回應，但會記錄 "t （code_verifier）" 和轉換方法。 
 
-C. 接著，用戶端會如往常般傳送存取權杖要求中的授權碼，但包含在（A）產生的 "code_verifier" 密碼。 
+C. 接著，用戶端會如往常般傳送存取權杖要求中的授權碼，但包含在（A）產生的「code_verifier」秘密。 
 
-D. AD FS 會轉換 "code_verifier"，並將它與（B）的 "t （code_verifier）" 進行比較。  如果存取不相等，則會遭到拒絕。 
+d. AD FS 會轉換 "code_verifier"，並將它與（B）的 "t （code_verifier）" 進行比較。  如果存取不相等，則會遭到拒絕。 
 
-#### <a name="faq"></a>常見問題集 
+#### <a name="faq"></a>常見問題 
 **問題解答.** 我可以將資源值當做範圍值的一部分來傳遞，像是如何對 Azure AD 進行要求？ 
 </br>**為.** 使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如：  
 **< 建立有效的範例要求 >**

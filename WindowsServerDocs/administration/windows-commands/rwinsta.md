@@ -22,7 +22,7 @@ ms.locfileid: "71371368"
 ---
 # <a name="rwinsta"></a>rwinsta
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可讓您重設（刪除）遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話。
 
@@ -33,5 +33,6 @@ ms.locfileid: "71371368"
 此命令與 [**重設會話**] 命令相同。
 
 #### <a name="additional-references"></a>其他參考
-[重設會話](reset-session.md)
-[命令列語法索引鍵](command-line-syntax-key.md)@no__t-[3 &#40;遠端桌面服務終端&#41;機服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+
+[命令列語法金鑰](command-line-syntax-key.md)
+[重設會話](reset-session.md)[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)

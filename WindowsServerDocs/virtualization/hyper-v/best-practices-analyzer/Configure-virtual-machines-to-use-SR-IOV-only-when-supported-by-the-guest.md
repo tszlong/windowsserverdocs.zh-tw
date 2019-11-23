@@ -19,16 +19,16 @@ ms.locfileid: "71366262"
 ---
 # <a name="configure-virtual-machines-to-use-sr-iov-only-when-supported-by-the-guest-operating-system"></a>將虛擬機器設定為只有在客體作業系統支援時才使用 SR-IOV
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71366262"
 ## <a name="impact"></a>影響  
 *SR-IOV 虛擬函式將不會配置給下列虛擬機器：*  
   
-@no__t 0list 的虛擬機器 >  
+\<的虛擬機器清單 >  
   
 ## <a name="resolution"></a>解析度  
 *在執行不支援 SR-IOV 之客體作業系統的所有虛擬機器上，停用 SR-IOV。*  

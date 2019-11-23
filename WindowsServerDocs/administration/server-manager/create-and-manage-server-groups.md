@@ -22,7 +22,7 @@ ms.locfileid: "71383224"
 ---
 # <a name="create-and-manage-server-groups"></a>建立和管理伺服器群組
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明如何在 Windows Server 的伺服器管理員中，建立自訂的使用者定義伺服器群組。
 
@@ -71,7 +71,7 @@ ms.locfileid: "71383224"
 
 3.  當您完成對群組的變更後，按一下 [確定]。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)
 [伺服器管理員](server-manager.md)
 

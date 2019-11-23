@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376794"
 ---
 # <a name="fsutil-usn"></a>Fsutil usn
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 管理更新序號（USN）變更日誌。
 
@@ -33,31 +33,31 @@ fsutil usn [readdata] <FileName>
 fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |-------------|---------------|
 |createjournal|建立 USN 變更日誌。|
-|m = \<MaxSize >|指定 NTFS 為變更日誌配置的大小上限（以位元組為單位）。|
-|a = @no__t 0AllocationDelta >|指定新增至結尾並從變更日誌開頭移除的記憶體配置大小（以位元組為單位）。|
+|m =\<MaxSize >|指定 NTFS 為變更日誌配置的大小上限（以位元組為單位）。|
+|a =\<AllocationDelta >|指定新增至結尾並從變更日誌開頭移除的記憶體配置大小（以位元組為單位）。|
 |\<VolumePath >|指定磁碟機號（後面接著冒號）。|
-|deletejournal|刪除或停用 active USN 變更日誌。 **注意**：刪除變更日誌會影響檔案複寫服務（FRS）和索引服務，因為它需要這些服務來執行磁片區的完整（且耗時）掃描。 這在重新掃描磁片區時，會反過來對 FRS SYSVOL 複寫和 DFS 連結替代之間的複寫造成負面影響。|
+|deletejournal|刪除或停用 active USN 變更日誌。 **注意：** 刪除變更日誌會影響檔案複寫服務（FRS）和索引服務，因為它需要這些服務來執行磁片區的完整（且耗時）掃描。 這在重新掃描磁片區時，會反過來對 FRS SYSVOL 複寫和 DFS 連結替代之間的複寫造成負面影響。|
 |/d|停用 active USN 變更日誌，並在停用變更日誌時傳回輸入/輸出（i/o）控制。|
 |/n|停用使用中的 USN 變更日誌，只有在停用變更日誌之後，才會傳回 i/o 控制。|
 |enablerangetracking|啟用磁片區的 USN 寫入範圍追蹤。|
-|c = \<chunk-size >|指定要在磁片區上追蹤的區塊大小。|
-|s = \<file-大小-閾值 >|指定範圍追蹤的檔案大小閾值。|
+|c =\<區塊大小 >|指定要在磁片區上追蹤的區塊大小。|
+|s =\<檔案大小-閾值 >|指定範圍追蹤的檔案大小閾值。|
 |enumdata|列舉並列出兩個指定界限之間的變更日誌專案。|
 |\<FileRef >|指定要開始列舉之磁片區上檔案內的序數位置。|
 |\<LowUSN >|指定用來篩選所傳回記錄之 USN 值範圍的下限。 只會傳回上次變更日誌 USN 介於或等於*LowUSN*和*HighUSN*成員值的記錄。|
 |\<HighUSN >|指定用來篩選所傳回檔案之 USN 值範圍的上限。|
 |queryjournal|查詢磁片區的 USN 資料，以收集目前變更日誌、其記錄及其容量的相關資訊。|
 |readdata|讀取檔案的 USN 資料。|
-|\<檔案名 >|指定檔案的完整路徑，包括檔案名和副檔名，例如：C:\documents\filename.txt|
+|\<FileName >|指定檔案的完整路徑，包括檔案名和副檔名，例如： C:\documents\filename.txt|
 |readjournal|讀取 USN 日誌中的 USN 記錄。|
-|minver = \<number >|要傳回之 USN_RECORD 的最小主要版本。 預設值 = 2。|
-|maxver = \<number >|要傳回之 USN_RECORD 的最大主要版本。 預設值 = 4。|
-|startusn = \<USN number >|要開始讀取 USN 日誌的 USN。 預設值 = 0。|
+|minver =\<數位 >|要傳回 USN_RECORD 的最小主要版本。 預設值 = 2。|
+|maxver =\<數位 >|要傳回之 USN_RECORD 的最大主要版本。 預設值 = 4。|
+|startusn =\<USN 號碼 >|要開始讀取 USN 日誌的 USN。 預設值 = 0。|
 
 
 ## <a name="remarks"></a>備註

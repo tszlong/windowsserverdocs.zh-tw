@@ -21,7 +21,7 @@ ms.locfileid: "71388658"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步驟1規劃 Advanced DirectAccess 基礎結構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 為單一伺服器上的進階 DirectAccess 部署做規劃的第一步，就是規劃部署所需的基礎結構。 本主題描述基礎結構規劃步驟。 這些規劃工作不需要依特定的順序完成。  
   
@@ -66,7 +66,7 @@ ms.locfileid: "71388658"
   
     ||外部網路介面卡|內部網路介面卡|路由需求|  
     |-|--------------|--------------|------------|  
-    |IPv4 網際網路和 IPv4 內部網路|請設定兩個靜態連續公用 IPv4 位址搭配適當的子網路遮罩 (只有 Teredo 才需要)。<br/><br/>另外，也請設定網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。 **注意：** DirectAccess 伺服器需要兩個連續的公用 IPv4 位址，才能做為 Teredo 伺服器，而 Windows 型用戶端可以使用 DirectAccess 伺服器來偵測它們前方的 NAT 裝置的類型。|設定下列各項：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意**：不要在任何 Intranet 接口上配置預設的閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|  
+    |IPv4 網際網路和 IPv4 內部網路|請設定兩個靜態連續公用 IPv4 位址搭配適當的子網路遮罩 (只有 Teredo 才需要)。<br/><br/>另外，也請設定網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。 **注意：** DirectAccess 伺服器需要兩個連續的公用 IPv4 位址，使其可作為 Teredo 伺服器，而 Windows 型用戶端可以使用 DirectAccess 伺服器來偵測其背後的 NAT 裝置類型。|設定下列各項：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意：** 請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|  
     |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br/><br/>-使用 ISP 所提供的位址設定。<br/>-使用**Route Print**命令來確保預設的 ipv6 路由存在，並且指向 ipv6 路由表中的 ISP 路由器。<br/>-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。<br/>    如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。|設定下列各項：<br/><br/>-如果您不是使用預設的喜好設定層級，您可以使用下列命令：**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**來設定內部網路介面。<br/>    這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以使用下列命令來取得您內部網路介面的介面索引：**netsh interface ipv6 show interface**。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv6 位址空間。<br/>-使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|  
     |IPv4 網際網路和 IPv6 內部網路|DirectAccess 伺服器會透過 Microsoft 6to4 介面卡，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令為 Microsoft 6to4 介面卡的 IPv4 位址設定 DirectAccess 伺服器：`netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`。|||  
   
@@ -84,7 +84,7 @@ ms.locfileid: "71388658"
 > - 若要支援 DirectAccess 用戶端電腦對您組織網路上的 IPv4 資源起始的連線，並不需要在您的網路上使用 IPv6。 針對這個目的，會使用 NAT64/DNS64。  
 > - 如果您並不管理遠端 DirectAccess 用戶端，就不需要部署 IPv6。  
 > - 在 DirectAccess 部署中不支援內部網站自動通道定址通訊協定 (ISATAP)。  
-> - 使用 IPv6 時，您可以使用下列 Windows PowerShell 命令啟用 DNS64 的 IPv6 主機 (AAAA) 資源記錄查詢： **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**。  
+> - 使用 IPv6 時，您可以使用下列 Windows PowerShell 命令啟用 DNS64 的 IPv6 主機 (AAAA) 資源記錄查詢：**Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**。  
   
 ### <a name="113-plan-for-force-tunneling"></a>1.1.3 為強制通道做規劃
 
@@ -264,7 +264,7 @@ DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺
   
     3.  開啟 IP-HTTPS 狀態設定，並將 URL 變更為 **https://<DirectAccess 伺服器名稱 (例如 server.contoso.com)>: 44500/IPHTTPS**。  
   
-    4.  按一下 **[套用]** 。  
+    4.  按一下 [套用]。  
   
 2.  修改用戶端 GPO 中的 Kerberos Proxy 用戶端設定。  
   
@@ -272,7 +272,7 @@ DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺
   
     2.  開啟 IPHTTPS 狀態設定，並將 URL 變更為 **https://<DirectAccess 伺服器名稱 (例如 server.contoso.com)>: 44500/IPHTTPS**。  
   
-    3.  按一下 **[套用]** 。  
+    3.  按一下 [套用]。  
   
 3.  修改用戶端 IPsec 原則設定以使用 ComputerKerb 和 UserKerb。  
   
@@ -282,7 +282,7 @@ DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺
   
     3.  在 [驗證] 索引標籤中，按一下 [進階]。  
   
-    4.  針對 Auth1：移除現有的驗證方法，然後以 ComputerKerb 取代它。 針對 Auth2：移除現有的驗證方法，然後以 UserKerb 取代它。  
+    4.  針對 Auth1：移除現有的驗證方法，然後以 ComputerKerb 取代它。 對於 Auth2：移除現有的驗證方法，然後以 UserKerb 取代它。  
   
     5.  按一下 [套用]，然後按一下 [確定]。  
   
@@ -336,7 +336,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
     -   DNS 尾碼規則 - 用於根網域或 DirectAccess 伺服器的網域名稱，以及與 DNS64 位址對應的 IPv6 位址。 在僅支援 IPv6 的公司網路中，是在 DirectAccess 伺服器上設定內部網路 DNS 伺服器。 例如，如果 DirectAccess 伺服器是 corp.contoso.com 網域的成員，就會為 corp.contoso.com DNS 尾碼建立規則。  
   
-    -   網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL <https://nls.corp.contoso.com>，則會為 FQDN nls.corp.contoso.com 建立豁免規則。  
+    -   網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL <https://nls.corp.contoso.com>，就會為 FQDN nls.corp.contoso.com 建立豁免規則。  
   
 -   **IP-HTTPS 伺服器**  
   
@@ -375,7 +375,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 -   使用支援動態更新的 DNS 伺服器。 您可以使用不支援動態更新的 DNS 伺服器，但是您必須手動更新這些伺服器上的項目。  
   
--   必須可以使用 DNS 伺服器來解析可透過網際網路存取之 CRL 發佈點的 FQDN。 例如，如果 URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> 位在 DirectAccess 伺服器之 IP-HTTPS 憑證的 [ **CRL 發佈點**] 欄位中，您就必須確定可以使用網際網路 DNS 伺服器來解析 FQDN crld.contoso.com。  
+-   必須可以使用 DNS 伺服器來解析可透過網際網路存取之 CRL 發佈點的 FQDN。 例如，如果 URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> 在 DirectAccess 伺服器之 IP-HTTPS 憑證的 [ **CRL 發佈點**] 欄位中，您必須使用網際網路 DNS 伺服器確保 FQDN crld.contoso.com 可解析。  
   
 ### <a name="142-plan-for-local-name-resolution"></a>1.4.2 為本機名稱解析做規劃  
 為本機名稱解析做規劃時，請考量下列問題：  
@@ -396,7 +396,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 **單一標籤名稱**  
   
-單一標籤名稱（例如 <https://paycheck>）有時候會用於內部網路伺服器。 如果要求的是單一標籤名稱，並且已設定 DNS 尾碼搜尋清單，系統就會將清單中的 DNS 尾碼附加到單一標籤名稱。 例如，當屬於 corp.contoso.com 網欄位型別成員的電腦上的使用者在網頁瀏覽器中 <https://paycheck> 時，就會 paycheck.corp.contoso.com 視為名稱的 FQDN。 附加的尾碼預設會根據用戶端電腦的主要 DNS 尾碼。  
+單一標籤名稱（例如 <https://paycheck>）有時候會用於內部網路伺服器。 如果要求的是單一標籤名稱，並且已設定 DNS 尾碼搜尋清單，系統就會將清單中的 DNS 尾碼附加到單一標籤名稱。 例如，當使用者在屬於 corp.contoso.com 網欄位型別成員的電腦上 <https://paycheck> 在網頁瀏覽器中時，視為名稱的 FQDN 是 paycheck.corp.contoso.com。 附加的尾碼預設會根據用戶端電腦的主要 DNS 尾碼。  
   
 > [!NOTE]  
 > 在不相鄰的名稱空間案例中 (其中一或多部網域電腦有不符合電腦所屬 Active Directory 網域的 DNS 尾碼)，您應該確保搜尋清單已自訂為包含所有必要的尾碼。 「遠端存取精靈」預設會將 Active Directory DNS 名稱設定為用戶端上的主要 DNS 尾碼。 請務必新增用戶端用來進行名稱解析的 DNS 尾碼。  
@@ -419,7 +419,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
   
 **DirectAccess 用戶端的本機名稱解析行為**  
   
-如果無法使用 DNS 解析名稱，若要解析本機子網上的名稱，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 和 Windows 7 中的 DNS 用戶端服務可以使用本機名稱解析，並搭配連結本機多播名稱 Resolution （LLMNR）和 NetBIOS over TCP/IP 通訊協定。  
+如果無法使用 DNS 解析名稱，若要解析本機子網上的名稱，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 和 Windows 7 中的 DNS 用戶端服務可以使用本機名稱解析，並搭配連結本機多播名稱解析（LLMNR）和 NetBIOS over TCP/IP 通訊協定。  
   
 當電腦位於私人網路 (例如單一子網路的家用網路) 時，通常需要本機名稱解析，才能進行對等連線。 當 DNS 用戶端服務執行內部網路伺服器名稱的本機名稱解析，並且電腦連線到網際網路上的共用子網路時，惡意使用者將可以擷取 LLMNR 和 NetBIOS over TCP/IP 訊息來判斷內部網路伺服器名稱。 在 [基礎結構伺服器安裝精靈] 的 [DNS] 頁面上，您可以根據從內部網路 DNS 伺服器收到的回應類型，設定本機名稱解析行為。 可用的選項如下：  
   
@@ -585,10 +585,10 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
 > [!NOTE]  
 > 在設定 DirectAccess 使用特定的 GPO 之後，就無法再設定它使用不同的 GPO。  
   
-不論您使用自動還是手動設定的 GPO，只要您的用戶端會使用 3G 網路，您就需要新增低速連結偵測原則。 @No__t 0Policy 的路徑：設定群組原則低速連結偵測 @ no__t-0 是：**電腦設定/原則/系統管理範本/系統/群組原則**。  
+不論您使用自動還是手動設定的 GPO，只要您的用戶端會使用 3G 網路，您就需要新增低速連結偵測原則。 **原則：設定群組原則低速連接偵測**的路徑為：**Computer configuration/Polices/Administrative Templates/System/Group Policy**。  
   
 > [!CAUTION]  
-> 在您執行 DirectAccess Cmdlet 之前，請使用下列程序來備份所有「遠端存取 GPO」：[備份和還原遠端存取設定](https://go.microsoft.com/fwlink/?LinkID=257928)。  
+> 在您執行 DirectAccess Cmdlet 之前，請使用下列程序來備份所有「遠端存取群組原則物件 (GPO)」：[備份並還原遠端存取設定](https://go.microsoft.com/fwlink/?LinkID=257928)。  
   
 如果沒有正確的權限 (列在接下來的小節中) 來連結 GPO，系統會發出警告。 「遠端存取」操作將會繼續，但是不會建立連結。 如果系統發出這個警告，則即使稍後新增權限，也不會自動建立連結。 系統管理員將必須改為手動建立連結。  
   
@@ -675,7 +675,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 從已刪除的 GPO 復原  
 如果不小心刪除了某個用戶端、DirectAccess 伺服器或應用程式伺服器 GPO，而且沒有備份可用，您就必須移除組態設定，然後重新設定。 如果有備份可用，您便可以從備份還原 GPO。  
   
-[遠端存取管理主控台] 會顯示下列錯誤訊息：**找不到 gpo （gpo 名稱）** 。 若要移除組態設定，請執行下列步驟：  
+[遠端存取管理] 主控台會顯示下列錯誤訊息：**找不到 gpo （gpo 名稱）** 。 若要移除組態設定，請執行下列步驟：  
   
 1.  執行 Windows PowerShell Cmdlet **Uninstall-remoteaccess**。  
   
@@ -685,7 +685,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 ## <a name="next-steps"></a>後續步驟  
   
--   [步驟 2：規劃 DirectAccess 部署 @ no__t-0  
+-   [步驟2：規劃 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
   
 
 

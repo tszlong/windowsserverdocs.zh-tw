@@ -21,7 +21,7 @@ ms.locfileid: "71388415"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>測試實驗室案例概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在此測試實驗室案例中，會使用下列內容來部署 DirectAccess：  
   
@@ -41,7 +41,7 @@ ms.locfileid: "71388415"
   
 -   **NAT1**-設定為使用網際網路連線共用的網路位址轉譯器（NAT）裝置的用戶端電腦。  
   
--   **CLIENT1 和 CLIENT2**-設定為 directaccess 用戶端的兩部用戶端電腦，在內部網路、模擬的網際網路和家用網路之間移動時，將會用來測試 directaccess 連線能力。 **CLIENT2**是 Windows 7 @ no__t-1 用戶端。  
+-   **CLIENT1 和 CLIENT2**-設定為 directaccess 用戶端的兩部用戶端電腦，在內部網路、模擬的網際網路和家用網路之間移動時，將會用來測試 directaccess 連線能力。 **CLIENT2**是 Windows 7&reg; 用戶端。  
   
 測試實驗室包含四個子網，可模擬下列各項：  
   

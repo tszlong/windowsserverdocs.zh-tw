@@ -18,14 +18,14 @@ ms.locfileid: "71390299"
 ---
 # <a name="ad-forest-recovery---resetting-the-krbtgt-password"></a>AD 樹系復原-重設 krbtgt 密碼
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 使用下列程式重設網域的 krbtgt 密碼。 下列程式會套用可寫入的 Dc，而不是唯讀網域控制站（Rodc）。
   
 > [!IMPORTANT]
 > 如果您想要在樹系復原期間線上復原 Rodc，請不要刪除 Rodc 的 krbtgt 帳戶。 RODC 的 krbtgt 帳戶會以 krbtgt_*號碼*的格式列出。
 >
-> 如果您在 DC 上使用自訂的密碼篩選器（例如 passfilt.dll），則當您嘗試重設 krbtgt 密碼時，可能會收到錯誤。 如需詳細資訊，包括因應措施，請參閱 Microsoft 知識庫[文章 2549833](https://support.microsoft.com/kb/2549833) （ https://support.microsoft.com/kb/2549833) 。
+> 如果您在 DC 上使用自訂的密碼篩選器（例如 passfilt.dll），則當您嘗試重設 krbtgt 密碼時，可能會收到錯誤。 如需詳細資訊，包括因應措施，請參閱 Microsoft 知識庫[文章 2549833](https://support.microsoft.com/kb/2549833) （ https://support.microsoft.com/kb/2549833)。
   
 ## <a name="to-reset-the-krbtgt-password"></a>重設 krbtgt 密碼  
   
@@ -33,7 +33,7 @@ ms.locfileid: "71390299"
 2. 按一下 [檢視]，然後按一下 [進階功能]。
 3. 在主控台樹中，按兩下網域容器，然後按一下 [**使用者**]。
 4. 在詳細資料窗格中，以滑鼠右鍵按一下**krbtgt**使用者帳戶，然後按一下 [**重設密碼**]。
-   ![Reset 密碼 @ no__t-1
+   ![重設密碼](media/AD-Forest-Recovery-Resetting-the-krbtgt-password/resetpass1.png)
 5. 在 [**新密碼**] 中輸入新密碼，然後在 [**確認密碼**] 中重新輸入密碼，再按一下 **[確定]** 。 您指定的密碼並不重要，因為系統會自動產生與您所指定之密碼無關的強式密碼。
   
 > [!NOTE]

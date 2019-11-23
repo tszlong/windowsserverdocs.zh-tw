@@ -32,9 +32,9 @@ ms.locfileid: "71374966"
 ksetup /listrealmflags
 ```
 
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 
-None
+無
 
 ## <a name="remarks"></a>備註
 
@@ -43,14 +43,14 @@ None
 |值|領域旗標|描述|
 |-----|----------|-----------|
 |0xF|全部|所有領域旗標都已設定。|
-|0x00|None|未設定領域旗標，且未啟用任何其他功能。|
+|0x00|無|未設定領域旗標，且未啟用任何其他功能。|
 |0x01|SendAddress|IP 位址會包含在票證授權票證中。|
 |0x02|TcpSupported|此領域支援「傳輸控制通訊協定」（TCP）和「使用者資料包協定」（UDP）。|
 |0x04|委派|此領域中的每個人都受信任，可進行委派。|
 |0x08|NcSupported|此領域支援名稱標準化，其允許 DNS 和領域命名標準。|
 |0x80|RC4|此領域支援 RC4 加密來啟用跨領域信任，以允許使用 TLS。|
 
-領域旗標會儲存在登錄中的**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>領域名稱</em>。 此項目依預設不存在於登錄中。 您可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令來填入登錄。
+領域旗標會儲存在登錄中， **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>領域名稱</em>。 此項目依預設不存在於登錄中。 您可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令來填入登錄。
 
 ## <a name="BKMK_Examples"></a>典型
 

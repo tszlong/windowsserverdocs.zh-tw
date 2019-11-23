@@ -28,10 +28,10 @@ ms.locfileid: "71370365"
 
 ### <a name="guidelines"></a>指導方針
 
-* 在模組資訊清單中，請勿在 `AliasesToExport`、`CmdletsToExport` 和 @no__t 2 專案中使用萬用字元。
+* 在模組資訊清單中，請勿在 `AliasesToExport`、`CmdletsToExport`和 `FunctionsToExport` 專案中使用萬用字元。
 
-* 如果模組不會匯出特定類型的命令，請指定 `@()`，在資訊清單中明確指定。
-遺漏或 `$null` 專案相當於指定萬用字元 `*`。
+* 如果模組不會匯出特定類型的命令，請藉由指定 `@()`在資訊清單中明確指定。
+遺失或 `$null` 專案相當於指定萬用字元 `*`。
 
 應盡可能避免下列情況：
 

@@ -26,7 +26,7 @@ ms.locfileid: "71377804"
 
 DiskRAID 是一種命令列工具，可讓您設定和管理獨立（或便宜）磁片（RAID）儲存子系統的重複陣列。
 
-RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級提供各種效能、可靠性和成本組合。 RAID 通常是在伺服器上使用。 有些伺服器提供三種 RAID 層級：層級0（等量）、層級1（鏡像）和層級5（以同位檢查等量分割）。
+RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級提供各種效能、可靠性和成本組合。 RAID 通常是在伺服器上使用。 有些伺服器會提供三個 RAID 層級：層級0（等量）、層級1（鏡像）和層級5（以同位方式分割）。
 
 硬體 RAID 子系統會使用邏輯單元編號（LUN），區別實體可定址的儲存單位。 LUN 物件必須至少有一個 plex，而且可以有任意數目的額外 plex。 每個 plex 都包含 LUN 物件上的資料複本。 可以在 LUN 物件中新增和移除 plex。
 
@@ -38,12 +38,12 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 ## <a name="diskraid-commands"></a>DiskRAID 命令
 
 若要查看命令語法，請按一下命令：
--   [add](#BKMK_1)
+-   [載入](#BKMK_1)
 -   [起來](#BKMK_2)
 -   [automagic](#BKMK_3)
 -   [break](#BKMK_4)
 -   [dh-chap](#BKMK_5)
--   [create](#BKMK_6)
+-   [建立](#BKMK_6)
 -   [delete](#BKMK_7)
 -   [資訊](#BKMK_8)
 -   [中斷關聯](#BKMK_9)
@@ -56,7 +56,7 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
 -   [list](#BKMK_19)
--   [login](#BKMK_20)
+-   [登入](#BKMK_20)
 -   [登出](#BKMK_21)
 -   [保養](#BKMK_22)
 -   [name](#BKMK_23)
@@ -64,7 +64,7 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 -   [線上](#BKMK_25)
 -   [recover](#BKMK_26)
 -   [reenumerate](#BKMK_27)
--   [refresh](#BKMK_28)
+-   [恢復](#BKMK_28)
 -   [rem](#BKMK_29)
 -   [取消](#BKMK_30)
 -   [replace](#BKMK_31)
@@ -86,9 +86,9 @@ add plex lun=n [noerr]
 add tpgroup tportal=n [noerr]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
-**plex lun** = *n*
+**plex lun**=*n*
 
 指定要新增為目前所選 LUN 之 plex 的 LUN 編號。
 
@@ -115,7 +115,7 @@ associate ports [add] <n-m>[,<n-m>[,…]]
 associate targets [add] <n>[,<n> [,…]]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **控制器**
 
@@ -129,7 +129,7 @@ associate targets [add] <n>[,<n> [,…]]
 
 僅與 VDS 1.1 提供者搭配使用。 新增或取代與目前所選 LUN 相關聯的 iSCSI 目標清單。
 
-**add**
+**載入**
 
 對於 VDS 1.0 提供者，會將指定的控制器新增至與 LUN 相關聯的現有控制器清單。 如果未指定此參數，控制器清單會取代與此 LUN 相關聯的現有控制器清單。
 
@@ -169,13 +169,13 @@ Controller port associations changed.
 automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **set**
 
 將指定的旗標設定為指定的值。
 
-**明確**
+**clear**
 
 清除指定的旗標。 **All**關鍵字會清除所有的 automagic 旗標。
 
@@ -217,7 +217,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 break plex=<plex_number> [noerr]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **複雜**
 
@@ -251,7 +251,7 @@ chap target set secret=[<secret>] [initiator=<initiatorname>]
 chap target remember secret=[<secret>] initiator=<initiatorname>
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **起始端集合**
 
@@ -311,7 +311,7 @@ create tpgroup [noerr]
 
 建立具有同位的等量 LUN。
 
-**mirror**
+**對稱**
 
 建立鏡像 LUN。
 
@@ -319,7 +319,7 @@ create tpgroup [noerr]
 
 使用目前作用中的*automagic*提示，建立 LUN。 如需詳細資訊，請參閱**automagic**子命令。
 
-**容量**=
+**大小**=
 
 指定 LUN 總大小（以 mb 為單位）。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。
 
@@ -333,7 +333,7 @@ create tpgroup [noerr]
 -   **Tb** ，用於 tb。
 -   **Pb （pb** ）。
 
-**硬**=
+**磁片磁碟機**=
 
 指定要用來建立 LUN 之磁片磁碟機的*drive_number* 。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 如果已指定**size =** 參數，提供者會從指定的磁片磁碟機清單中選取磁片磁碟機，以建立 LUN。 提供者會嘗試依照指定的順序來使用磁片磁碟機。
 
@@ -386,7 +386,7 @@ delete target [noerr]
 delete tpgroup [noerr]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **lun**
 
@@ -418,7 +418,7 @@ delete tpgroup [noerr]
 Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup} [verbose]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **hbaport**
 
@@ -432,11 +432,11 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 列出目前選取的 iSCSI 啟動器入口網站的詳細資訊。
 
-**provider**
+**那裡**
 
 列出目前所選提供者的詳細資訊。
 
-**subsystem**
+**子系統**
 
 列出目前所選子系統的詳細資訊。
 
@@ -448,7 +448,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 列出目前選取的控制器埠的詳細資訊。
 
-**drive**
+**硬碟磁碟機**
 
 列出目前所選磁片磁碟機的詳細資訊，包括佔用的 Lun。
 
@@ -545,7 +545,7 @@ exit
 extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noerr]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **大小 =**
 
@@ -561,7 +561,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 **磁片磁碟機 =**
 
-指定建立 LUN 時要使用之磁片磁碟機的 @no__t 0drive_number >。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 提供者會盡可能以指定的順序使用磁片磁碟機。
+指定建立 LUN 時要使用之磁片磁碟機的 \<drive_number >。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 提供者會盡可能以指定的順序使用磁片磁碟機。
 
 **noerr**
 
@@ -569,7 +569,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 #### <a name="remarks"></a>備註
 
-必須指定*大小*或\<磁片磁碟機 > 參數。 它們也可以一起使用。
+必須指定*大小*或 \<磁片磁碟機 > 參數。 它們也可以一起使用。
 
 ### <a name="BKMK_12"></a>flushcache
 
@@ -638,7 +638,7 @@ lbpolicy set lun type=<type> [paths=<path>-{primary | <weight>}[,<path>-{primary
 lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[,…]]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **type**
 
@@ -660,7 +660,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 **路線圖**
 
-指定路徑為**主要**或具有特定\<權數 >。 未指定的任何路徑都會隱含地設定為備份。 列出的任何路徑都必須是目前所選取 LUN 的其中一個路徑。
+指定路徑為**主要**或具有特定的 \<權數 >。 未指定的任何路徑都會隱含地設定為備份。 列出的任何路徑都必須是目前所選取 LUN 的其中一個路徑。
 
 ### <a name="BKMK_19"></a>名單
 
@@ -672,7 +672,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 List {hbaports | iadapters | iportals | providers | subsystems | controllers | ports | drives | LUNs | tportals | targets | tpgroups}
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **hbaports**
 
@@ -732,7 +732,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none | oneway | mutual}] [iportal=<iportal>] [tportal=<tportal>] [<flag> [<flag> […]]]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **type**
 
@@ -760,7 +760,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 由三個字母的縮寫所識別：
 
-**IP**：需要 IPsec
+**Ip**：需要 IPsec
 
 **EMP**：啟用多重路徑
 
@@ -778,7 +778,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 logout target iadapter= <iadapter>
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **iadapter**
 
@@ -794,7 +794,7 @@ logout target iadapter= <iadapter>
 maintenance <object operation> [count=<iteration>]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 \<物件 >
 
@@ -880,7 +880,7 @@ Reenumerates 指定之類型的物件。 如果您使用 [擴充 LUN] 命令，�
 reenumerate {subsystems | drives}
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **分系統**
 
@@ -944,7 +944,7 @@ replace drive=<drive_number>
 
 **磁片磁碟機 =**
 
-指定要取代之磁片磁碟機的 @no__t 0drive_number >。
+指定要取代之磁片磁碟機的 \<drive_number >。
 
 #### <a name="remarks"></a>備註
 
@@ -960,7 +960,7 @@ replace drive=<drive_number>
 Reset {controller | port}
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **控制器**
 
@@ -980,11 +980,11 @@ Reset {controller | port}
 Select {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup } [<n>]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **目標**
 
-指定要選取的物件類型。 物件 > 類型可以是提供者、子系統、控制器、磁片磁碟機或 LUN。 \<
+指定要選取的物件類型。 \<物件 > 類型可以是**提供者**、**子系統**、**控制器**、**磁片磁碟機**或**LUN**。
 
 **hbaport** [\<n >]
 
@@ -1036,7 +1036,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 [\<n >]
 
-指定要\<選取 > 的物件編號。 如果指定<object number>的無效，則會清除指定類型之物件的任何現有選取專案。 <object number>如果未指定，則會顯示目前的物件。
+指定要選取的 \<物件編號 >。 如果指定的 <object number> 無效，則會清除指定類型之物件的任何現有選取專案。 如果未指定 <object number>，則會顯示目前的物件。
 
 ### <a name="BKMK_34"></a>setflag
 
@@ -1048,7 +1048,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 setflag drive hotspare={true | false}
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **true**
 
@@ -1072,7 +1072,7 @@ setflag drive hotspare={true | false}
 shrink lun size=<n> [noerr]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **大小 =**
 
@@ -1092,7 +1092,7 @@ shrink lun size=<n> [noerr]
 standby hbaport
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **hbaport**
 
@@ -1108,7 +1108,7 @@ standby hbaport
 unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [;…]] | [add] initiator=<initiator>[;<initiator>[;…]]} [uninstall]
 ```
 
-#### <a name="parameters"></a>參數
+#### <a name="parameters"></a>Parameters
 
 **這**
 
@@ -1124,7 +1124,7 @@ unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [
 > [!IMPORTANT]
 > 您必須先登出目標，才能執行「取消遮罩 LUN NONE」命令。
 
-**add**
+**載入**
 
 指定必須將指定的主機新增至可存取此 LUN 的現有主機清單。 如果未指定此參數，則提供的主機清單會取代可存取此 LUN 的現有主機清單。
 
@@ -1165,7 +1165,7 @@ diskraid /s <script.txt>
 ```
 diskraid
 ```
-按 ENTER 鍵。 隨即顯示下列內容：
+按 ENTER。 隨即顯示下列內容：
 ```
 Microsoft Diskraid version 5.2.xxxx
 Copyright (©) 2003 Microsoft Corporation
@@ -1175,7 +1175,7 @@ On computer: COMPUTER_NAME
 ```
 select subsystem 0
 ```
-按 ENTER 鍵。 會顯示類似下列的輸出:
+按 ENTER。 會顯示類似下列的輸出：
 ```
 Subsystem 0 is now the selected subsystem.
 

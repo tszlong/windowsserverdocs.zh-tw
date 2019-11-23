@@ -19,16 +19,16 @@ ms.locfileid: "71366644"
 ---
 # <a name="a-virtual-machine-running-windows-server-2008-r2-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows Server 2008 R2 並設定動態記憶體的虛擬機器應該使用建議的記憶體設定值
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -38,14 +38,14 @@ ms.locfileid: "71366644"
 ## <a name="impact"></a>影響  
 *下列虛擬機器上的客體作業系統可能無法執行，或可能執行 unreliably：*  
   
-@no__t 0list 的虛擬機器 >  
+\<的虛擬機器清單 >  
   
 ## <a name="resolution"></a>解析度  
 *使用 Hyper-v 管理員或 Windows PowerShell，將最小記憶體增加到至少 256 MB，啟動記憶體至少為 512 MB，最多可達 2 GB 的記憶體。*  
   
 #### <a name="increase-memory-using-hyper-v-manager"></a>使用 Hyper-v 管理員增加記憶體  
   
-1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員，按一下 [**工具**] [ > ] [**hyper-v 管理員**]）。  
+1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員按一下 [**工具** > **hyper-v 管理員**]）。  
   
 2.  從虛擬機器清單中，以滑鼠右鍵按一下您想要的，然後按一下 [**設定**]。  
   
@@ -55,7 +55,7 @@ ms.locfileid: "71366644"
   
 5.  在 [**動態記憶體**] 底下，將 [**最小 ram** ] 變更為至少 256 MB，並將 [**最大 RAM** ] 設為 2 GB  
   
-6.  按一下 [確定]。  
+6.  按一下 **\[確定\]** 。  
   
 ### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加記憶體  
   

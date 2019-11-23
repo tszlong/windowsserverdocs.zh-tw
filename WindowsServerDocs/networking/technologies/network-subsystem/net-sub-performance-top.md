@@ -17,7 +17,7 @@ ms.locfileid: "71401884"
 ---
 # <a name="network-subsystem-performance-tuning"></a>網路子系統效能調整
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，以取得網路子系統的總覽，以及本指南中其他主題的連結。
 
@@ -37,7 +37,7 @@ ms.locfileid: "71401884"
   
 3. **通訊協定堆疊**。 通訊協定堆疊會執行 TCP/IP 和 UDP/IP 之類的通訊協定。 這些層級會針對其上方的層級公開傳輸層介面。
   
-4. **系統驅動程式**。 這些通常是使用傳輸資料延伸模組（TDX）或 Winsock 核心（WSK）介面的用戶端，以公開介面給使用者模式應用程式。 WSK 介面是在 Windows Server 2008 和 Windows @ no__t-0 Vista 中引進，而且是由 AFD 所公開。 介面藉由排除在使用者模式和核心模式之間切換，來改善效能。
+4. **系統驅動程式**。 這些通常是使用傳輸資料延伸模組（TDX）或 Winsock 核心（WSK）介面的用戶端，以公開介面給使用者模式應用程式。 WSK 介面是在 Windows Server 2008 和 Windows&reg; Vista 中引進，而且是由 AFD 所公開。 介面藉由排除在使用者模式和核心模式之間切換，來改善效能。
   
 5. **使用者模式應用程式**。 這些通常是 Microsoft 解決方案或自訂應用程式。
 

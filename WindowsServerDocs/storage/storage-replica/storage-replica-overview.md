@@ -44,19 +44,19 @@ ms.locfileid: "71393815"
 
 ![這個圖表顯示紐約州兩個使用儲存體複本的叢集節點如何與紐澤西州的兩個節點複寫儲存體](./media/Storage-Replica-Overview/Storage_SR_StretchCluster.png)  
 
-**FIGURE 1：使用儲存體複本的延展叢集中的儲存體複寫 @ no__t-0  
+**圖1：使用儲存體複本的延展叢集中的儲存體複寫**  
 
 「叢集對叢集」允許在兩個不同的叢集之間複寫，其中某個叢集會以同步或非同步的方式與另一個叢集進行複寫。 此案例可以運用具有共用 SAS 儲存體、SAN 和連接 iSCSI 的 LUN 的儲存空間直接存取和儲存空間。 它是使用 Windows 管理中心和 PowerShell 進行管理，而且需要手動介入以進行容錯移轉。 
 
 ![這個圖表顯示洛杉磯使用儲存體複本的叢集如何與拉斯維加斯的不同叢複寫其儲存體](./media/Storage-Replica-Overview/Storage_SR_ClustertoCluster.png)  
 
-**FIGURE 2：使用儲存體複本的叢集對叢集儲存體複寫 @ no__t-0  
+**圖2：使用儲存體複本的叢集對叢集儲存體複寫**  
 
 **伺服器對伺服器**允許在兩個獨立伺服器之間，使用具有共用 SAS 儲存體、SAN 和連接 iSCSI 的 LUN 的儲存空間以及本機磁碟機，進行同步和非同步複寫。 它是使用 Windows 管理中心和 PowerShell 進行管理，而且需要手動介入以進行容錯移轉。  
 
 ![這個圖表顯示與建築物 9 的伺服器進行複寫之建築物 5 的伺服器](./media/Storage-Replica-Overview/Storage_SR_ServertoServer.png)  
 
-**FIGURE 3：使用儲存體複本的伺服器對伺服器儲存體複寫 @ no__t-0  
+**圖3：使用儲存體複本的伺服器對伺服器儲存體複寫**  
 
 > [!NOTE]
 > 您也可以在一部電腦上使用四個不同的磁碟區，設定伺服器對自我複寫。 不過，本指南並未涵蓋此案例。  
@@ -73,7 +73,7 @@ ms.locfileid: "71393815"
 
 * **安全性**。 與許多廠商的產品不同，儲存體複本具備領先業界的安全性技術。 這包括封包簽署、AES-128-GCM 完整資料加密、Intel AES NI 加密加速的支援，以及預先驗證完整性攔截式攻擊預防。 儲存體複本在節點之間利用 Kerberos AES256 進行所有驗證。  
 
-* **高效能的初始同步**：儲存體複本支援已植入的初始同步，其中資料的子集已經存在於舊版複本、備份，或隨附磁碟機的目標上。 初始複寫只會複製不同的區塊，可能會縮短初始同步處理時間，並防止資料使用有限的頻寬。 儲存體複本會封鎖總和檢查碼計算和彙總，也就是說，初始同步效能只會受到儲存體和網路速度的限制。  
+* **高效能的初始同步**。儲存體複本支援已植入的初始同步，其中資料的子集已經存在於舊版複本、備份，或隨附磁碟機的目標上。 初始複寫只會複製不同的區塊，可能會縮短初始同步處理時間，並防止資料使用有限的頻寬。 儲存體複本會封鎖總和檢查碼計算和彙總，也就是說，初始同步效能只會受到儲存體和網路速度的限制。  
 
 * **一致性群組**： 寫入順序可保證 Microsoft SQL Server 之類的應用程式可以寫入多個複寫的磁片區，並知道目的地伺服器上的資料是依序寫入。  
 
@@ -87,9 +87,9 @@ ms.locfileid: "71393815"
 
 | 功能 | 詳細資料 |
 | ----------- | ----------- |  
-| Type | 主機型 |
+| 類型 | 主機型 |
 | 同步 | 是 |
-| 非同步的 | 是 |
+| 非同步 | 是 |
 | 儲存硬體無關 | 是 |
 | 複寫單位 | 磁碟區 (磁碟分割) |
 | Windows Server stretch cluster 建立 | 是 |
@@ -111,7 +111,7 @@ ms.locfileid: "71393815"
 
 ## <a name="BKMK_SR3"></a>儲存體複本必要條件
 
-* Active Directory 網域服務樹系。
+* Active Directory Domain Services 樹系。
 * 具有 SAS JBOD、儲存空間直接存取、光纖通道 SAN、共用 VHDX、iSCSI 目標或本機 SAS/SCSI/SATA 儲存體的儲存空間。 針對複寫記錄檔磁碟機，建議使用 SSD 或更快的裝置。 Microsoft 建議記錄檔儲存體應該要比資料儲存體更快。 記錄檔磁碟區不得用於其他工作負載。
 * 每部伺服器上至少要有一個乙太網路/TCP 連線，以進行同步複寫，但最好是 RDMA。
 * 每部伺服器至少要有 2 GB 的 RAM 和兩個核心。
@@ -140,7 +140,7 @@ ms.locfileid: "71393815"
 
 | 模式 | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
-| **同步**<br /><br />零資料遺失<br /><br />RPO | ![這個圖表顯示儲存體複本如何在同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.應用程式寫入資料<br />2.記錄檔資料已寫入，且資料已複寫至遠端站台<br />3.記錄檔資料已在遠端站台寫入<br />4.遠端站台做出確認<br />5.應用程式寫入已確認<br /><br />t & t1：資料排清到磁片區，記錄一律會透過寫入 |
+| **同步**<br /><br />零資料遺失<br /><br />RPO | ![這個圖表顯示儲存體複本如何在同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.應用程式寫入資料<br />2.記錄檔資料已寫入，且資料已複寫至遠端站台<br />3.記錄檔資料已在遠端站台寫入<br />4.遠端站台做出確認<br />5.應用程式寫入已確認<br /><br />t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
 
 ### <a name="asynchronous-replication"></a>非同步複寫
 
@@ -152,7 +152,7 @@ ms.locfileid: "71393815"
 
 | 模式 | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
-| **同步**<br /><br />接近零的資料遺失<br /><br />(取決於多個因素)<br /><br />RPO | ![這個圖表顯示儲存體複本如何在非同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.應用程式寫入資料<br />2.記錄檔資料已寫入<br />3.應用程式寫入已確認<br />4.資料複寫到遠端站台<br />5.記錄檔資料已在遠端站台寫入<br />6.遠端站台做出確認<br /><br />t & t1：資料排清到磁片區，記錄一律會透過寫入 |
+| **同步**<br /><br />接近零的資料遺失<br /><br />(取決於多個因素)<br /><br />RPO | ![這個圖表顯示儲存體複本如何在非同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.應用程式寫入資料<br />2.記錄檔資料已寫入<br />3.應用程式寫入已確認<br />4.資料複寫到遠端站台<br />5.記錄檔資料已在遠端站台寫入<br />6.遠端站台做出確認<br /><br />t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>重要的評估點和行為  
 
@@ -160,7 +160,7 @@ ms.locfileid: "71393815"
 
 -   在 Windows Server 2016 中複寫時，將無法存取目的地磁碟區。 當您設定複寫時，目的地磁碟區將會卸載，進而讓使用者無法進行任何讀取或寫入。 其磁碟機代號可能會顯示在一般介面上，例如檔案總管，但應用程式無法存取磁碟區本身。 區塊層級的複寫技術不相容於允許對目的地目標位於磁碟區中已掛接的檔案系統進行存取；NTFS 和 ReFS 不支援使用者在區塊變更期間將資料寫入至磁碟區。 
 
-Windows Server （版本1709）中的**測試容錯移轉**Cmdlet 推出也包含在 windows server 2019 中。 這現在支援針對備份、測試等暫時掛接目的地磁片區的讀寫快照集。如需詳細資訊，請參閱 https://aka.ms/srfaq 。
+Windows Server （版本1709）中的**測試容錯移轉**Cmdlet 推出也包含在 windows server 2019 中。 這現在支援針對備份、測試等暫時掛接目的地磁片區的讀寫快照集。如需詳細資訊，請參閱 https://aka.ms/srfaq。
 
 -   Microsoft 非同步複寫的實作與大多數實作不同： 業界大部分的非同步複寫實作依賴以快照為基礎的複寫，其中定期的差異傳輸會移到其他節點並合併。 儲存體複本的非同步複寫的運作方式和同步複寫相同，唯一不同之處在於它移除了目的地進行序列化同步通知的需求。 也就是說，儲存體複本的 RPO 在理論上會比較低，因為它會連續複寫。 不過，這也表示它會依賴內部應用程式的一致性保證，而不是使用快照在應用程式檔案中強制執行一致性。 儲存體複本可以在所有複寫模式中保證絕對一致性  
 
@@ -188,12 +188,12 @@ Windows Server （版本1709）中的**測試容錯移轉**Cmdlet 推出也包�
 
 如需 Windows Server 2019 中儲存體複本的新功能清單，請參閱[儲存體的新](../whats-new-in-storage.md#storage-replica2019)功能
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)  
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)  
 - [叢集對叢集儲存體複寫](cluster-to-cluster-storage-replication.md)  
 - [儲存體複本：已知問題](storage-replica-known-issues.md)  
-- [儲存體複本：常見問題集](storage-replica-frequently-asked-questions.md)  
+- [儲存體複本：常見問題](storage-replica-frequently-asked-questions.md)  
 - [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)
 - [Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)

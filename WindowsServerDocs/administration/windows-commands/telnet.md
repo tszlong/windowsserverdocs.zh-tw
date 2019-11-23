@@ -22,22 +22,22 @@ ms.locfileid: "71385149"
 ---
 # <a name="telnet"></a>telnet
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 與執行 telnet 伺服器服務的電腦通訊。 
 ## <a name="syntax"></a>語法
 ```
 telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 | ansi | vtnt}] [<Host> [<Port>]] [/?]
 ```
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 |參數|描述|
 |-------|--------|
 |/a|嘗試自動登入。 與/l 選項相同，但會使用目前登入的使用者名稱。|
 |/e \<EscapeChar >|用來輸入 telnet 用戶端提示的 Escape 字元。|
 |/f \<FileName >|用於用戶端記錄的檔案名。|
-|/l \<UserName >|指定要在遠端電腦上登入的使用者名稱。|
+|/l \<使用者名稱 >|指定要在遠端電腦上登入的使用者名稱。|
 |/t {vt100 &#124; vt52 &#124; ansi &#124; vtnt}|指定終端機類型。 支援的終端機類型為 vt100、vt52、ansi 和 vtnt。|
-|@no__t 0Host > [\<Port >]|指定要連接之遠端電腦的主機名稱或 IP 位址，以及選擇性地使用的 TCP 埠（預設為 TCP 埠23）。|
+|\<主機 > [\<埠 >]|指定要連接之遠端電腦的主機名稱或 IP 位址，以及選擇性地使用的 TCP 埠（預設為 TCP 埠23）。|
 |/?|在命令提示字元顯示說明。 或者，您也可以輸入/h。|
 
 ## <a name="remarks"></a>備註

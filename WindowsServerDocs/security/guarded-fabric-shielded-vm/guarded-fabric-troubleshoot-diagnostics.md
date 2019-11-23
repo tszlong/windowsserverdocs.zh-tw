@@ -16,7 +16,7 @@ ms.locfileid: "71386461"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受防護的網狀架構診斷工具進行疑難排解
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 本主題說明如何使用受防護的網狀架構診斷工具，來找出並修復部署、設定和受防護網狀架構基礎結構的持續性作業中常見的失敗。 這包括主機守護者服務（HGS）、所有受防護的主機和支援的服務，例如 DNS 和 Active Directory。 診斷工具可以用來在分級失敗的受防護網狀架構時執行第一階段，為系統管理員提供解決中斷的起點，並找出設定錯誤的資產。 此工具並不是為了讓您瞭解如何操作受防護的網狀架構，而只是為了快速驗證日常作業期間最常遇到的問題。
 
@@ -30,9 +30,9 @@ ms.locfileid: "71386461"
 ```PowerShell
 Get-HgsTrace -RunDiagnostics -Detailed
 ```
-這會自動偵測目前主機的角色，並診斷可自動偵測到的任何相關問題。  此程式期間所產生的所有結果都會顯示，因為 `-Detailed` 參數的存在。
+這會自動偵測目前主機的角色，並診斷可自動偵測到的任何相關問題。  此程式期間所產生的所有結果都會顯示，因為 `-Detailed` 參數是否存在。
 
-本主題的其餘部分將提供詳細的逐步解說，說明如何使用 `Get-HgsTrace` 來進行一次診斷多部主機，以及偵測複雜的跨節點錯誤設定等作業。
+本主題的其餘部分將提供詳細的逐步解說，說明如何使用 `Get-HgsTrace` 的先進方法，來進行一次診斷多部主機，以及偵測複雜的跨節點設定錯誤。
 
 ## <a name="diagnostics-overview"></a>診斷總覽
 已安裝受防護虛擬機器相關工具和功能的任何主機上都可以使用受保護的網狀架構診斷，包括執行 Server Core 的主機。  目前，診斷包含在下列功能/套件中：
@@ -44,38 +44,38 @@ Get-HgsTrace -RunDiagnostics -Detailed
 
 這表示在所有受防護主機、HGS 節點、特定網狀架構管理伺服器，以及安裝了[RSAT](https://www.microsoft.com/download/details.aspx?id=45520)的任何 Windows 10 工作站上，都可以使用診斷工具。  診斷可以從上述任何電腦叫用，並以診斷受防護網狀架構中任何受防護主機或 HGS 節點的目的來進行;使用遠端追蹤目標，診斷可以找出並連接到執行診斷的電腦以外的主機。
 
-診斷目標的每個主機稱為「追蹤目標」。  追蹤目標是由其主機名稱和角色所識別。  角色會描述指定的追蹤目標在受防護網狀架構中執行的函式。  目前，追蹤目標支援 `HostGuardianService` 和 @no__t 1 角色。  請注意，主機可以同時佔用多個角色，而且診斷也會支援這種情況，但這不應該在生產環境中完成。  HGS 和 Hyper-v 主機隨時都應保持獨立且不同的狀態。
+診斷目標的每個主機稱為「追蹤目標」。  追蹤目標是由其主機名稱和角色所識別。  角色會描述指定的追蹤目標在受防護網狀架構中執行的函式。  目前，追蹤目標支援 `HostGuardianService` 和 `GuardedHost` 角色。  請注意，主機可以同時佔用多個角色，而且診斷也會支援這種情況，但這不應該在生產環境中完成。  HGS 和 Hyper-v 主機隨時都應保持獨立且不同的狀態。
 
-系統管理員可以藉由執行 `Get-HgsTrace` 來開始任何診斷工作。  此命令會根據執行時間所提供的參數執行兩個不同的函式：追蹤收集和診斷。  這兩個組合構成了整個受防護網狀架構診斷工具。  雖然不明確需要，但最有用的診斷只需要追蹤目標上的系統管理員認證才能收集的追蹤。  如果執行追蹤集合的使用者擁有不足的許可權，則需要提高許可權的追蹤將會失敗，而其他所有專案則會通過。  這可在具有低許可權的操作員正在執行分級的事件中進行部分診斷。 
+系統管理員可以藉由執行 `Get-HgsTrace`來開始任何診斷工作。  此命令會根據執行時間所提供的參數執行兩個不同的函式：追蹤收集和診斷。  這兩個組合構成了整個受防護網狀架構診斷工具。  雖然不明確需要，但最有用的診斷只需要追蹤目標上的系統管理員認證才能收集的追蹤。  如果執行追蹤集合的使用者擁有不足的許可權，則需要提高許可權的追蹤將會失敗，而其他所有專案則會通過。  這可在具有低許可權的操作員正在執行分級的事件中進行部分診斷。 
 
 ### <a name="trace-collection"></a>追蹤集合
 根據預設，`Get-HgsTrace` 只會收集追蹤，並將它們儲存至暫存資料夾。  追蹤的格式為在目標主機之後命名的資料夾，並填入特別格式化的檔案，說明如何設定主機。  這些追蹤也包含中繼資料，描述如何叫用診斷來收集追蹤。  此資料會在執行手動診斷時，供診斷用來解除凍結主機的相關資訊。
 
-如有必要，可以手動檢查追蹤。  所有格式都是人們可讀取的（XML），也可以使用標準工具（例如 X509 憑證和 Windows 密碼編譯 Shell 延伸模組）來立即進行檢查。  不過要注意的是，追蹤並不是針對手動診斷而設計，而且使用 `Get-HgsTrace` 的診斷功能處理追蹤時，一律會更有效率。
+如有必要，可以手動檢查追蹤。  所有格式都是人們可讀取的（XML），也可以使用標準工具（例如 X509 憑證和 Windows 密碼編譯 Shell 延伸模組）來立即進行檢查。  不過，請注意，追蹤並不是針對手動診斷而設計，而且在使用 `Get-HgsTrace`的診斷功能處理追蹤時，一律會更有效率。
 
-執行追蹤集合的結果不會對指定之主控制項的健全狀況做出任何指示。  它們只是表示已成功收集追蹤。  您必須使用 `Get-HgsTrace` 的診斷功能來判斷追蹤是否表示失敗的環境。
+執行追蹤集合的結果不會對指定之主控制項的健全狀況做出任何指示。  它們只是表示已成功收集追蹤。  您必須使用 `Get-HgsTrace` 的診斷工具來判斷追蹤是否表示失敗的環境。
 
 使用 `-Diagnostic` 參數，您可以將追蹤集合限制為只有操作指定之診斷所需的追蹤。  這會減少所收集的資料量，以及叫用診斷所需的許可權。
 
 ### <a name="diagnosis"></a>診斷
-您可以透過 `-Path` 參數並指定 `-RunDiagnostics` 交換器，藉由提供 `Get-HgsTrace` 的追蹤位置來診斷收集的追蹤。  此外，`Get-HgsTrace` 可以藉由提供 `-RunDiagnostics` 參數和追蹤目標清單，在單一階段中執行收集和診斷。  如果未提供任何追蹤目標，則會使用目前的電腦作為隱含目標，並藉由檢查已安裝的 Windows PowerShell 模組來推斷其角色。
+藉由提供 `Get-HgsTrace` 追蹤的位置，透過 `-Path` 參數並指定 `-RunDiagnostics` 參數，即可診斷收集的追蹤。  此外，`Get-HgsTrace` 可以藉由提供 `-RunDiagnostics` 參數和追蹤目標清單，在單一階段中執行收集和診斷。  如果未提供任何追蹤目標，則會使用目前的電腦作為隱含目標，並藉由檢查已安裝的 Windows PowerShell 模組來推斷其角色。
 
 診斷會以階層格式提供結果，顯示哪些追蹤目標、診斷集和個別診斷會負責特定的失敗。  失敗包括補救和解決建議，以便判斷接下來應採取什麼動作。  根據預設，會隱藏傳遞和不相關的結果。  若要查看診斷所測試的所有專案，請指定 `-Detailed` 參數。  這會導致所有結果顯示，不論其狀態為何。
 
-您可以使用 `-Diagnostic` 參數來限制執行的診斷集合。  這可讓您指定應該針對追蹤目標來執行的診斷類別，並隱藏所有其他類別。  可用診斷類別的範例包括網路功能、最佳作法和用戶端硬體。  請參閱[Cmdlet 檔](https://technet.microsoft.com/library/mt718831.aspx)，以尋找最新的可用診斷清單。
+您可以限制使用 `-Diagnostic` 參數執行的診斷集合。  這可讓您指定應該針對追蹤目標來執行的診斷類別，並隱藏所有其他類別。  可用診斷類別的範例包括網路功能、最佳作法和用戶端硬體。  請參閱[Cmdlet 檔](https://technet.microsoft.com/library/mt718831.aspx)，以尋找最新的可用診斷清單。
 
 > [!WARNING]
 > 診斷不會取代強大的監視和事件回應管線。  有一個 System Center Operations Manager 套件可用來監視受防護的網狀架構，以及各種可監視以及早偵測問題的事件記錄檔通道。  然後，可以使用診斷來快速將這些失敗分類，並建立一項動作。
 
 ## <a name="targeting-diagnostics"></a>目標診斷
 
-`Get-HgsTrace` 會針對追蹤目標進行操作。  追蹤目標是一個物件，它會對應至受保護網狀架構內的 HGS 節點或受防護主機。  您可以將它視為 @no__t 的延伸模組，其中包括診斷所需的資訊，例如網狀架構中的主機角色。  目標可以隱含地產生（例如本機或手動診斷），或明確地使用 `New-HgsTraceTarget` 命令。
+`Get-HgsTrace` 會針對追蹤目標進行操作。  追蹤目標是一個物件，它會對應至受保護網狀架構內的 HGS 節點或受防護主機。  您可以將它視為 `PSSession` 的延伸模組，其中包括診斷所需的資訊，例如在網狀架構中的主機角色。  目標可以隱含地產生（例如本機或手動診斷），或明確地使用 `New-HgsTraceTarget` 命令。
 
 ### <a name="local-diagnosis"></a>本機診斷
 
-根據預設，`Get-HgsTrace` 會以 localhost （亦即叫用 Cmdlet 的位置）為目標。  這就是所謂的隱含本機目標。  只有在 `-Target` 參數中未提供任何目標，而且在 `-Path` 中找不到既有的追蹤時，才會使用隱含本機目標。
+根據預設，`Get-HgsTrace` 會將目標設為 localhost （也就是叫用 Cmdlet 的位置）。  這就是所謂的隱含本機目標。  只有當 `-Target` 參數中未提供任何目標，而且在 `-Path`中找不到既有的追蹤時，才會使用隱含的本機目標。
 
-隱含本機目標會使用角色推斷來判斷目前主機在受防護網狀架構中所扮演的角色。  這是以已安裝的 Windows PowerShell 模組為基礎，其大致對應于系統上已安裝的功能。  @No__t 0 模組出現時，會導致追蹤目標將角色 `HostGuardianService`，而 @no__t 2 模組的存在會導致追蹤目標將角色 `GuardedHost`。  給定的主機可能會同時有這兩個模組，在這種情況下，它會被視為 `HostGuardianService` 和 `GuardedHost`。
+隱含本機目標會使用角色推斷來判斷目前主機在受防護網狀架構中所扮演的角色。  這是以已安裝的 Windows PowerShell 模組為基礎，其大致對應于系統上已安裝的功能。  `HgsServer` 模組的存在會使追蹤目標將角色 `HostGuardianService`，而 `HgsClient` 模組的存在會使追蹤目標接受角色 `GuardedHost`。  給定的主機可能會同時有這兩個模組，在這種情況下，它會被視為 `HostGuardianService` 和 `GuardedHost`。
 
 因此，診斷的預設調用會在本機收集追蹤：
 ```PowerShell
@@ -95,7 +95,7 @@ New-HgsTraceTarget -Local | Get-HgsTrace
 $server = New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianService -Credential (Enter-Credential)
 Get-HgsTrace -RunDiagnostics -Target $server
 ```
-這個範例會產生收集遠端使用者認證的提示，然後使用 `hgs-01.secure.contoso.com` 的遠端主機來執行診斷，以完成追蹤收集。  產生的追蹤會下載至 localhost，然後進行診斷。  診斷結果的顯示方式與執行[本機診斷](#local-diagnosis)時相同。  同樣地，您也不需要指定角色，因為它可以根據遠端系統上安裝的 Windows PowerShell 模組來推斷。
+這個範例會產生收集遠端使用者認證的提示，然後在 `hgs-01.secure.contoso.com` 使用遠端主機來執行診斷，以完成追蹤收集。  產生的追蹤會下載至 localhost，然後進行診斷。  診斷結果的顯示方式與執行[本機診斷](#local-diagnosis)時相同。  同樣地，您也不需要指定角色，因為它可以根據遠端系統上安裝的 Windows PowerShell 模組來推斷。
 
 遠端診斷會針對遠端主機的所有存取，利用 Windows PowerShell 遠端功能。  因此，追蹤目標必須啟用 Windows PowerShell 遠端功能（請參閱[Enable PSRemoting](https://technet.microsoft.com/library/hh849694.aspx)），而且 localhost 已正確設定，以便啟動目標的連接。
 
@@ -111,14 +111,14 @@ $server | Test-HgsTraceTarget
 
 #### <a name="implicit-credentials"></a>隱含認證
 
-從具有足夠許可權的使用者執行遠端診斷以從遠端連線到追蹤目標時，不需要提供認證給 `New-HgsTraceTarget`。  @No__t-0 Cmdlet 會在開啟連線時，自動重複使用叫用 Cmdlet 的使用者認證。
+當您從具有足夠許可權的使用者執行遠端診斷以從遠端連線到追蹤目標時，不需要提供認證來 `New-HgsTraceTarget`。  `Get-HgsTrace` Cmdlet 會在開啟連線時，自動重複使用叫用 Cmdlet 的使用者認證。
 
 > [!WARNING]
 > 有些限制適用于重複使用認證，特別是在執行所謂的「第二個躍點」時。  嘗試從遠端會話內部將認證重複使用到另一部電腦時，就會發生這種情況。  您必須[設定 CredSSP](https://technet.microsoft.com/library/hh849872.aspx)以支援此案例，但這不在受防護網狀架構管理和疑難排解的範圍內。
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>使用 Windows PowerShell 的系統管理（JEA）和診斷功能剛好足夠
 
-遠端診斷支援使用 JEA 限制的 Windows PowerShell 端點。 根據預設，遠端追蹤目標會使用預設的 `microsoft.powershell` 端點進行連接。  如果追蹤目標具有 `HostGuardianService` 角色，則也會嘗試使用安裝 HGS 時所設定的 `microsoft.windows.hgs` 端點。
+遠端診斷支援使用 JEA 限制的 Windows PowerShell 端點。 根據預設，遠端追蹤目標會使用預設的 `microsoft.powershell` 端點進行連接。  如果追蹤目標具有 `HostGuardianService` 角色，則也會嘗試使用在安裝 HGS 時所設定的 `microsoft.windows.hgs` 端點。
 
 如果您想要使用自訂端點，您必須在使用 `-PSSessionConfigurationName` 參數來建立追蹤目標時指定會話設定名稱，如下所示：
 
@@ -128,7 +128,7 @@ New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianServi
 
 #### <a name="diagnosing-multiple-hosts"></a>診斷多部主機
 
-您可以一次將多個追蹤目標傳遞給 `Get-HgsTrace`。  這包括混合使用本機和遠端目標。  每個目標會輪流追蹤，然後會同時診斷每個目標的追蹤。  診斷工具可以使用您的部署知識，以識別複雜的跨節點錯誤處理，否則無法偵測。  使用這項功能只需要同時提供多個主機的追蹤（在手動診斷的情況下），或在呼叫 `Get-HgsTrace` 時以目標為多個主機（如果是遠端診斷）。
+您可以一次將多個追蹤目標傳遞給 `Get-HgsTrace`。  這包括混合使用本機和遠端目標。  每個目標會輪流追蹤，然後會同時診斷每個目標的追蹤。  診斷工具可以使用您的部署知識，以識別複雜的跨節點錯誤處理，否則無法偵測。  使用這項功能只需要同時提供多個主機的追蹤（在手動診斷的情況下），或在呼叫 `Get-HgsTrace` 時以多部主機為目標（如果是遠端診斷）。
 
 以下範例會使用遠端診斷來分級由兩個 HGS 節點和兩個受防護主機組成的網狀架構，其中其中一部受防護主機用來啟動 `Get-HgsTrace`。
 
@@ -154,7 +154,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
 
 執行手動診斷的步驟如下：
 
-1. 要求每部主機管理員執行 `Get-HgsTrace`，指定已知的 @no__t 1 和您想要針對產生的追蹤執行的診斷清單。  例如:
+1. 要求每部主機管理員執行 `Get-HgsTrace` 指定已知的 `-Path`，以及您想要針對產生的追蹤執行的診斷清單。  例如：
 
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
@@ -179,7 +179,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
          |- [..]
       ```
 
-4. 執行診斷，提供 @no__t 0 參數上組合的追蹤資料夾的路徑，並指定 @no__t 1 交換器，以及您要求系統管理員收集追蹤的診斷。  診斷會假設它無法存取在路徑內找到的主機，因此會嘗試僅使用預先收集的追蹤。  如果有任何追蹤遺失或損毀，診斷將只會使受影響的測試失敗，並正常進行。  例如:
+4. 執行診斷，並在 `-Path` 參數上提供組合追蹤資料夾的路徑，並指定 `-RunDiagnostics` 參數，以及您要求系統管理員收集追蹤的診斷。  診斷會假設它無法存取在路徑內找到的主機，因此會嘗試僅使用預先收集的追蹤。  如果有任何追蹤遺失或損毀，診斷將只會使受影響的測試失敗，並正常進行。  例如：
 
    ```PowerShell
    Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
@@ -189,7 +189,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
 
 在某些情況下，您可能會有一組預先收集的追蹤，您想要使用額外的主機追蹤來增強。  您可以混合預先收集的追蹤與其他目標，以便在診斷的單一呼叫中進行追蹤和診斷。
 
-遵循指示來收集並組合上面指定的追蹤資料夾，使用在預先收集的追蹤資料夾中找不到的其他追蹤目標來呼叫 `Get-HgsTrace`：
+遵循指示收集並組合上述指定的追蹤資料夾，使用在預先收集的追蹤資料夾中找不到的其他追蹤目標來呼叫 `Get-HgsTrace`：
 
 ```PowerShell
 $hgs03 = New-HgsTraceTarget -HostName "hgs-03.secure.contoso.com" -Credential (Enter-Credential)

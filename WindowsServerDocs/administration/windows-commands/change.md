@@ -22,7 +22,7 @@ ms.locfileid: "71379550"
 ---
 # <a name="change"></a>change
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 變更登入、COM 埠對應和安裝模式遠端桌面工作階段主機（rd 工作階段主機）伺服器設定。
 > [!NOTE]
@@ -33,7 +33,7 @@ ms.locfileid: "71379550"
 > change port
 > change user
 > ```
-> ## <a name="parameters"></a>參數
+> ## <a name="parameters"></a>Parameters
 > 
 > |            參數            |                                                   描述                                                   |
 > |---------------------------------|-----------------------------------------------------------------------------------------------------------------|
@@ -42,5 +42,5 @@ ms.locfileid: "71379550"
 > |  [change user](change-user.md)  |                            變更 rd 工作階段主機伺服器的安裝模式。                             |
 > 
 > #### <a name="additional-references"></a>其他參考
-> [命令列語法索引鍵](command-line-syntax-key.md)
-> [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+> 
+> [ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)

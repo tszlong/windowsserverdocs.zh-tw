@@ -22,13 +22,13 @@ ms.locfileid: "71378444"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 藉由在指定網域中的每個網域控制站上執行下列測試，檢查網域控制站的設定：  
   
--   確認分散式檔案系統 \(DFS @ no__t-1 Namespace 服務正在執行，且其啟動類型設定為 [自動]。  
+-   確認分散式檔案系統 \(DFS\) 命名空間服務正在執行，且其啟動類型設定為 [自動]。  
   
--   檢查是否支援 NETLOGON 和 SYSvol 的 site @ no__t-0costed 的參考。  
+-   檢查是否支援 NETLOGON 和 SYSvol 的 site\-成本參考。  
   
 -   依主機名稱和 IP 位址驗證網站關聯的一致性。  
   
@@ -40,14 +40,14 @@ ms.locfileid: "71378444"
 dfsdiag /TestDCs [/Domain:<Domain name>]  
 ```  
   
-### <a name="parameters"></a>參數  
+### <a name="parameters"></a>Parameters  
   
 |參數|描述|  
 |-------|--------|  
-|\/Domain： <Domain name>|您想要檢查的網域。|  
+|\/網域：<Domain name>|您想要檢查的網域。|  
   
 ## <a name="remarks"></a>備註  
-@no__t 0Domain 是選擇性參數。 預設值是本機主機加入的本機網域。  
+\/網域是選擇性參數。 預設值是本機主機加入的本機網域。  
   
 ## <a name="BKMK_Examples"></a>典型  
 若要確認 Contoso.com 網域中的網域控制站設定，請輸入：  

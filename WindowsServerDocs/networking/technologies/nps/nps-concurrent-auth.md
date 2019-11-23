@@ -17,11 +17,11 @@ ms.locfileid: "71396435"
 ---
 # <a name="increase-concurrent-authentications-processed-by-nps"></a>增加 NPS 所處理的並行驗證
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，取得設定網路原則伺服器並行驗證的指示。
 
-如果您已在網域控制站以外的電腦上安裝網路原則伺服器 \(NPS @ no__t-1，而且 NPS 每秒都會收到大量的驗證要求，您可以增加並行的數目來改善 NPS 效能NPS 與網域控制站之間允許的驗證。
+如果您已在網域控制站以外的電腦上安裝網路原則伺服器 \(NPS\)，而 NPS 每秒都會收到大量的驗證要求，您可以增加 NPS 和網域控制站之間允許的並行驗證次數，藉此改善 NPS 效能。
 
 若要這樣做，您必須編輯下列登錄機碼： 
 

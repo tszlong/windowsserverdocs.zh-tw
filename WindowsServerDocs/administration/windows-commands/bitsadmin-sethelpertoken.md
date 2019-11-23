@@ -23,7 +23,7 @@ ms.locfileid: "71380574"
 
 將目前的命令提示字元主要權杖（或任意本機使用者帳戶的權杖，如果有指定）設定為 BITS 傳送作業的 [helper token](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)。
 
-**BITS 3.0 和更早版本**： 未支援。
+**BITS 3.0 和更早版本**：不支援。
 
 ## <a name="syntax"></a>語法
 
@@ -31,12 +31,12 @@ ms.locfileid: "71380574"
 bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID。|
-|\< @ no__t-1 @ no__t-2 \<password @ no__t-4|選擇性 @ no__t-0The 要使用其權杖的本機使用者帳號憑證。|
+|\<username@domain\> \<密碼\>|選擇性&mdash;要使用其權杖的本機使用者帳號憑證。|
 
 #### <a name="additional-references"></a>其他參考資料
 

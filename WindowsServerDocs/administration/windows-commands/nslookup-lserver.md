@@ -22,14 +22,14 @@ ms.locfileid: "71373084"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將預設伺服器變更為指定的網域名稱系統（DNS）網域。
 ## <a name="syntax"></a>語法
 ```
 lserver <DNSDomain> 
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |    參數    |                      描述                      |
 |-----------------|-------------------------------------------------------|
@@ -39,5 +39,5 @@ lserver <DNSDomain>
 ## <a name="remarks"></a>備註
 - **Lserver**命令會使用初始伺服器來查閱指定之 DNS 網域的相關資訊。 這與使用目前預設伺服器的**伺服器**命令相反。
   ## <a name="additional-references"></a>其他參考
-  [命令列語法關鍵](command-line-syntax-key.md)
-   [nslookup 伺服器](nslookup-server.md)
+  [命令列語法索引鍵](command-line-syntax-key.md)
+  [nslookup 伺服器](nslookup-server.md)

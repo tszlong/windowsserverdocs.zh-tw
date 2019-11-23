@@ -45,12 +45,12 @@ command </parameter>
 |內容|顯示所有全域參數的目前值。|
 |[quit \| exit]|結束 WMIC 命令 shell。|
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|</parameter>|@no__t 0Concise 描述，以動詞開頭。 >|
-|</param2>|@no__t 0Another 簡要描述，以動詞開頭。 >|
+|</parameter>|\<簡潔的描述，會以動詞開頭。 >|
+|</param2>|\<另一個簡明的描述，請從動詞開始。 >|
 
 
 ## <a name="BKMK_examples"></a>典型

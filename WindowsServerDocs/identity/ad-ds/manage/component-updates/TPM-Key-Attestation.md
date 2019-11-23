@@ -18,18 +18,18 @@ ms.locfileid: "71389856"
 ---
 # <a name="tpm-key-attestation"></a>TPM 金鑰證明
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者**：Justin Turner，Microsoft 團隊的資深支援擴大工程師  
+**作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
 > [!NOTE]  
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
   
-## <a name="overview"></a>總覽  
+## <a name="overview"></a>概觀  
 雖然從 Windows 8 開始支援 TPM 保護的金鑰已經存在，但 Ca 無法以密碼編譯方式證明憑證要求者私密金鑰實際上是由信賴平臺模組（TPM）所保護。 此更新可讓 CA 執行該證明，並在已發行的憑證中反映該證明。  
   
 > [!NOTE]  
-> 本文假設讀者熟悉憑證範本概念（如需參考，請參閱[憑證範本](https://technet.microsoft.com/library/cc730705.aspx)）。 它也假設讀者熟悉如何設定企業 Ca 來根據憑證範本頒發證書（如需參考，請參閱 @no__t 0Checklist：設定 Ca 以發行和管理憑證 @ no__t-0）。  
+> 本文假設讀者熟悉憑證範本概念（如需參考，請參閱[憑證範本](https://technet.microsoft.com/library/cc730705.aspx)）。 它也假設讀者熟悉如何設定企業 Ca，以根據憑證範本來頒發證書（如需參考，請參閱[檢查清單：設定 ca 以發行和管理憑證](https://technet.microsoft.com/library/cc771533.aspx)）。  
   
 ### <a name="terminology"></a>詞彙  
   
@@ -52,9 +52,9 @@ ms.locfileid: "71389856"
 TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，憑證要求中的 RSA 金鑰是由 CA 所信任的「a」或「TPM」所保護。 在本主題稍後的[部署總覽](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentOverview)一節中，會詳細討論 TPM 信任模型。  
   
 ### <a name="why-is-tpm-key-attestation-important"></a>為什麼 TPM 金鑰證明很重要？  
-具有 TPM 證明金鑰的使用者憑證可提供更高的安全性保證, 由 TPM 所提供的非匯出性、反 anti-hammering 和金鑰隔離所備份。  
+具有 TPM 證明金鑰的使用者憑證可提供更高的安全性保證，由 TPM 所提供的非匯出性、反 anti-hammering 和金鑰隔離所備份。  
   
-使用 TPM 金鑰證明，現在可以進行全新的管理範例：系統管理員可以定義一組裝置，讓使用者用來存取公司資源（例如，VPN 或無線存取點），並具有**強**式保證不會使用其他裝置來存取它們。 這個新的存取控制範例很**強**，因為它系結至*硬體*系結的使用者身分識別，這比以軟體為基礎的認證更強。
+使用 TPM 金鑰證明，現在可以進行新的管理範例：系統管理員可以定義一組裝置，讓使用者用來存取公司資源（例如，VPN 或無線存取點），並具有**強**式保證不會使用其他裝置來存取它們。 這個新的存取控制範例很**強**，因為它系結至*硬體*系結的使用者身分識別，這比以軟體為基礎的認證更強。
   
 ### <a name="how-does-tpm-key-attestation-work"></a>TPM 金鑰證明如何運作？  
 一般來說，TPM 金鑰證明是以下列支柱為基礎：  
@@ -74,25 +74,25 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
 1.  **規劃 TPM 信任模型：** 第一個步驟是決定要使用哪一個 TPM 信任模型。 有3種支援的方式可執行此作業：  
   
-    -   **以使用者認證為基礎的信任：** 企業 CA 會信任使用者提供的 EKPub 做為憑證要求的一部分，而且不會執行使用者網域認證以外的驗證。  
+    -   以**使用者認證為基礎的信任：** 企業 CA 會信任使用者提供的 EKPub 做為憑證要求的一部分，而且不會執行使用者網域認證以外的驗證。  
   
-    -   **以 EKCert 為基礎的信任：** 企業 CA 會根據系統管理員管理的*可接受的 EK 憑證鏈*清單，驗證所提供的 EKCert 鏈是否為憑證要求的一部分。 可接受的鏈會根據製造商定義，並透過發行 CA 上的兩個自訂憑證存放區來表示（一個存放區用於中繼，另一個用於根 CA 憑證）。 此信任模式表示指定制造商的**所有**tpm 都是受信任的。 請注意，在此模式中，環境中使用的 Tpm 必須包含 EKCerts。
+    -   以**EKCert 為基礎的信任：** 企業 CA 會根據系統管理員管理的*可接受的 EK 憑證鏈*清單，驗證所提供的 EKCert 鏈是否為憑證要求的一部分。 可接受的鏈會根據製造商定義，並透過發行 CA 上的兩個自訂憑證存放區來表示（一個存放區用於中繼，另一個用於根 CA 憑證）。 此信任模式表示指定制造商的**所有**tpm 都是受信任的。 請注意，在此模式中，環境中使用的 Tpm 必須包含 EKCerts。
   
-    -   **以 EKPub 為基礎的信任：** 企業 CA 會驗證提供做為憑證要求一部分的 EKPub 會出現在允許 EKPubs 的系統管理員管理清單中。 此清單會表示為檔案目錄，其中此目錄中每個檔案的名稱是允許 EKPub 的 SHA-1 雜湊。 此選項可提供最高的保證層級，但需要更多管理工作，因為每個裝置都是個別識別的。 在此信任模型中，只有已將 TPM EKPub 新增至允許 EKPubs 清單的裝置，才能夠註冊 TPM 證明憑證。  
+    -   以**EKPub 為基礎的信任：** 企業 CA 會驗證提供做為憑證要求一部分的 EKPub 會出現在允許 EKPubs 的系統管理員管理清單中。 此清單會表示為檔案目錄，其中此目錄中每個檔案的名稱是允許 EKPub 的 SHA-1 雜湊。 此選項可提供最高的保證層級，但需要更多管理工作，因為每個裝置都是個別識別的。 在此信任模型中，只有已將 TPM EKPub 新增至允許 EKPubs 清單的裝置，才能夠註冊 TPM 證明憑證。  
   
     視使用的方法而定，CA 會將不同的發佈原則 OID 套用至已發行的憑證。 如需發佈原則 Oid 的詳細資訊，請參閱本主題中[設定憑證範本](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_ConfigCertTemplate)一節中的發行原則 oid 表格。  
   
     請注意，您可以選擇 TPM 信任模型的組合。 在此情況下，CA 將會接受任何證明方法，而發佈原則 Oid 會反映所有成功的證明方法。  
   
-2.  **設定憑證範本：** 設定憑證範本的說明請參閱本主題中的[部署詳細資料](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)一節。 本文不涵蓋如何將此憑證範本指派給企業 CA，或如何將註冊存取權提供給一組使用者。 如需詳細資訊，請參閱 [Checklist：設定 Ca 以發行和管理憑證 @ no__t-0。  
+2.  **設定憑證範本：** 設定憑證範本的說明請參閱本主題中的[部署詳細資料](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)一節。 本文不涵蓋如何將此憑證範本指派給企業 CA，或如何將註冊存取權提供給一組使用者。 如需詳細資訊，請參閱[檢查清單：設定 ca 以發行和管理憑證](https://technet.microsoft.com/library/cc771533.aspx)。  
   
 3.  **設定 TPM 信任模型的 CA**  
   
-    1.  **以使用者認證為基礎的信任：** 不需要特定設定。  
+    1.  以**使用者認證為基礎的信任：** 不需要特定設定。  
   
-    2.  **以 EKCert 為基礎的信任：** 系統管理員必須從 TPM 製造商取得 EKCert 鏈憑證，並將它們匯入至系統管理員在執行 TPM 金鑰證明的 CA 上建立的兩個新憑證存放區。 如需詳細資訊，請參閱本主題中的[CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig)設定一節。  
+    2.  以**EKCert 為基礎的信任：** 系統管理員必須從 TPM 製造商取得 EKCert 鏈憑證，並將它們匯入至系統管理員在執行 TPM 金鑰證明的 CA 上建立的兩個新憑證存放區。 如需詳細資訊，請參閱本主題中的[CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig)設定一節。  
   
-    3.  **以 EKPub 為基礎的信任：** 系統管理員必須為每個需要 TPM 證明憑證的裝置取得 EKPub，並將其新增至允許的 EKPubs 清單。 如需詳細資訊，請參閱本主題中的[CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig)設定一節。  
+    3.  以**EKPub 為基礎的信任：** 系統管理員必須為每個需要 TPM 證明憑證的裝置取得 EKPub，並將其新增至允許的 EKPubs 清單。 如需詳細資訊，請參閱本主題中的[CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig)設定一節。  
   
     > [!NOTE]  
     > -   這項功能需要 Windows 8.1/Windows Server 2012 R2。  
@@ -132,11 +132,11 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
     ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_KeyModes.gif)  
   
-    -   **無**表示不得使用金鑰證明  
+    -   **無：** 表示不得使用金鑰證明  
   
-    -   **必要，如果用戶端能夠：** 允許不支援 TPM 金鑰證明的裝置上的使用者繼續註冊該憑證。 可以執行證明的使用者會與特殊發佈原則 OID 進行區別。 某些裝置可能無法執行證明，因為舊的 TPM 不支援金鑰證明，或裝置完全沒有 TPM。
+    -   必要 **，如果用戶端能夠：** 允許不支援 TPM 金鑰證明的裝置上的使用者繼續註冊該憑證。 可以執行證明的使用者會與特殊發佈原則 OID 進行區別。 某些裝置可能無法執行證明，因為舊的 TPM 不支援金鑰證明，或裝置完全沒有 TPM。
   
-    -   **必填：** 用戶端*必須*執行 TPM 金鑰證明，否則憑證要求將會失敗。  
+    -   **必要：** 用戶端*必須*執行 TPM 金鑰證明，否則憑證要求將會失敗。  
   
     然後選擇 TPM 信任模型。 另外還有三個選項：  
   
@@ -154,9 +154,9 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
     |OID|金鑰證明類型|描述|保證層級|  
     |-------|------------------------|---------------|-------------------|  
-    |1.3.6.1.4.1.311.21.30|EK|「EK 已驗證」： 適用于系統管理員管理的 EK 清單|高|  
-    |1.3.6.1.4.1.311.21.31|簽署憑證|「EK 憑證已驗證」：驗證 EK 憑證鏈時|中等|  
-    |1.3.6.1.4.1.311.21.32|使用者認證|"EK Trusted on Use"：針對使用者-證明 EK|低|  
+    |1.3.6.1.4.1.311.21.30|EK|「EK 已驗證」：適用于系統管理員管理的 EK 清單|高|  
+    |1.3.6.1.4.1.311.21.31|簽署憑證|「已驗證的 EK 憑證」：當已驗證 EK 憑證鏈時|中等|  
+    |1.3.6.1.4.1.311.21.32|使用者認證|「在使用中的 EK 受信任」：適用于使用者證明的 EK|低|  
   
     如果已選取 [**包含發佈原則**] （預設設定），則會將 oid 插入已發行的憑證。  
   
@@ -192,18 +192,18 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
     1.  **建立 EndorsementKeyListDirectories 登錄專案：** 使用 Certutil 命令列工具來設定資料夾位置，其中定義了信任的 EKpubs，如下表所述。  
   
-        |運算|命令語法|  
+        |操作|命令語法|  
         |-------------|------------------|  
         |新增資料夾位置|certutil-setreg CA\EndorsementKeyListDirectories + "<folder>"|  
         |移除資料夾位置|certutil-setreg CA\EndorsementKeyListDirectories-"<folder>"|  
   
         Certutil 命令中的 EndorsementKeyListDirectories 是一項登錄設定，如下表所述。  
   
-        |值名稱|Type|Data|  
+        |值名稱|類型|資料|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 本機或 UNC 路徑 EKPUB 允許清單 ><br /><br />範例：<br /><br />*\\ \ blueCA. contoso. com\ekpub*<br /><br />*\\ \ bluecluster1. contoso. com\ekpub*<br /><br />D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 本機或 UNC 路徑 EKPUB 允許清單 ><br /><br />範例：<br /><br />*\\\blueCA.contoso.com\ekpub*<br /><br />*\\\bluecluster1.contoso.com\ekpub*<br /><br />D:\ekpub|  
   
-        HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration @ no__t-0 @ no__t-1  
+        HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
         *EndorsementKeyListDirectories*會包含 UNC 或本機檔案系統路徑的清單，每個檔案都指向 CA 擁有讀取權限的資料夾。 每個資料夾可能包含零個或多個允許清單專案，其中每個專案都是名稱是受信任 EKpub 之 SHA-1 雜湊的檔案，不含副檔名。 
         建立或編輯此登錄機碼設定需要重新開機 CA，就像現有的 CA 登錄設定一樣。 不過，對 configuration 設定的編輯會立即生效，且不需要重新開機 CA。  
@@ -225,17 +225,17 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
 1.  相容性設定未正確設定。 請確定其設定如下：  
   
-    1.  **憑證授權單位**：**Windows Server 2012 R2**  
+    1.  **憑證授權單位**單位： **Windows Server 2012 R2**  
   
-    2.  **憑證收件**者：**Windows 8.1/Windows Server 2012 R2**  
+    2.  **憑證收件**者： **Windows 8.1/Windows Server 2012 R2**  
   
 2.  密碼編譯設定未正確設定。 請確定其設定如下：  
   
-    1.  **提供者分類**：**金鑰儲存提供者**  
+    1.  **提供者類別**：**金鑰儲存提供者**  
   
-    2.  **演算法名稱**：**與眾不同**  
+    2.  **演算法名稱**： **RSA**  
   
-    3.  **提供者**:**Microsoft 平臺密碼編譯提供者**  
+    3.  **提供者**： **Microsoft 平臺密碼編譯提供者**  
   
 3.  要求處理設定未正確設定。 請確定其設定如下：  
   
@@ -275,6 +275,6 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
         PS C:>new-object System.Security.Cryptography.X509Certificates.X509Certificate2 "c:\diagnose\myEKcert.cer" | Confirm-CAEndorsementKeyInfo  
         ```  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [信賴平臺模組技術總覽](https://technet.microsoft.com/library/jj131725.aspx)  
-@no__t 0External 資源：信賴平臺模組 @ no__t-0  
+[外部資源：信賴平臺模組](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

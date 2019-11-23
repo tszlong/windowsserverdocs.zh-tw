@@ -30,7 +30,7 @@ ms.locfileid: "71381424"
 bitsadmin /GetProxyBypassList <Job>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -38,7 +38,7 @@ bitsadmin /GetProxyBypassList <Job>
 
 ## <a name="remarks"></a>備註
 
-「略過清單」包含不會透過 proxy 路由傳送的主機名稱或 IP 位址（或兩者）。 此清單可包含「@no__t 0local >」，以參照相同 LAN 上的所有伺服器。 清單可以是分號或空格分隔。
+「略過清單」包含不會透過 proxy 路由傳送的主機名稱或 IP 位址（或兩者）。 此清單可包含「\<本機 >」，以參照相同 LAN 上的所有伺服器。 清單可以是分號或空格分隔。
 
 ## <a name="BKMK_examples"></a>典型
 

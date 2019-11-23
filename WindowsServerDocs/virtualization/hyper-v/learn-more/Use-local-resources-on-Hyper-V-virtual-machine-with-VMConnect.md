@@ -20,11 +20,11 @@ ms.locfileid: "71392893"
 ---
 # <a name="use-local-resources-on-hyper-v-virtual-machine-with-vmconnect"></a>Use local resources on Hyper-V virtual machine with VMConnect
 
->適用於：Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2
+>適用于： Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2
 
 虛擬機器連線（VMConnect）可讓您在虛擬機器（例如卸載式 USB 快閃磁片磁碟機或印表機）中使用電腦的本機資源。 增強的會話模式也可讓您調整 VMConnect 視窗的大小。 本文說明如何設定主機，然後將本機資源的存取權授與虛擬機器。
 
-[增強的會話模式] 和 [類型剪貼簿] 文字僅適用于執行最近的 Windows 作業系統的虛擬機器。 @no__t-在下方[使用本機資源的需求](#requirements-for-using-local-resources)0See。 \) 
+[增強的會話模式] 和 [類型剪貼簿] 文字僅適用于執行最近的 Windows 作業系統的虛擬機器。 \(參閱下面[的使用本機資源的需求](#requirements-for-using-local-resources)。\) 
 
 如需執行 Ubuntu 的虛擬機器，請參閱[變更 HYPER-V VM 中的 Ubuntu 螢幕解析度](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)。 
   
@@ -71,7 +71,7 @@ ms.locfileid: "71392893"
   
 3.  按一下 [顯示選項]。  
   
-    ![如果螢幕擷取畫面左下方的顯示選項 對話方塊的 出呼叫。](media/HyperV-VMConnect-DisplayConfig.png)  
+    ![在對話方塊左下方呼叫 [顯示選項] 的螢幕擷取畫面。](media/HyperV-VMConnect-DisplayConfig.png)  
   
 4.  選取 [本機資源]。  
   
@@ -89,7 +89,7 @@ ms.locfileid: "71392893"
   
     ![呼叫核取方塊以選取此選項的螢幕擷取畫面。](media/HyperV-VMConnect-SaveSettings.png)  
   
-8.  按一下 **[連接]** 。  
+8.  按一下 [連線]。  
   
 ## <a name="edit-vmconnect-settings"></a>編輯 VMConnect 設定
 
@@ -138,7 +138,7 @@ ms.locfileid: "71392893"
   
 -   在不使用 RDP 的情況下，對需要 USB 和健全重新導向的開發人員應用程式進行測試和疑難排解。  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [連接至虛擬機器](https://technet.microsoft.com/library/cc742407.aspx)  
 [我應該在 Hyper-v 中建立第1代或第2代虛擬機器嗎？](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
 

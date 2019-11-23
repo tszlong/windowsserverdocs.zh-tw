@@ -32,13 +32,13 @@ ms.locfileid: "71372949"
 set [no]debug
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |  參數  |                         描述                          |
 |-------------|--------------------------------------------------------------|
 | **nodebug** | 關閉偵錯模式。 預設語法為**nodebug**。 |
-|  **debug**  |                   開啟 [偵錯模式]。                   |
-|  \* @ no__t-1 {說明  |                            ?}\* @ no__t-1                            |
+|  **debug.exe**  |                   開啟 [偵錯模式]。                   |
+|  \*\*{說明  |                            ?}\*\*                            |
 
 ## <a name="remarks"></a>備註
 

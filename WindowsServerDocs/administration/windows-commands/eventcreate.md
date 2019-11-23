@@ -32,18 +32,18 @@ ms.locfileid: "71377516"
 eventcreate [/s <Computer> [/u <Domain\User> [/p <Password>]] {[/l {APPLICATION|SYSTEM}]|[/so <SrcName>]} /t {ERROR|WARNING|INFORMATION|SUCCESSAUDIT|FAILUREAUDIT} /id <EventID> /d <Description>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|/s \<Computer >|指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。|
-|/u \<Domain \ 使用者 >|以 @no__t 0User > 所指定使用者的帳戶許可權執行命令，或 < 網域 \ 使用者 >。 預設為發出命令之電腦上目前登入使用者的許可權。|
+|/s \<電腦 >|指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。|
+|/u \<的網域 \ 使用者 >|使用 \<使用者 > 所指定使用者的帳戶許可權，或 < 的 Domain\User > 來執行命令。 預設為發出命令之電腦上目前登入使用者的許可權。|
 |/p \<密碼 >|指定 **/u**參數中指定之使用者帳戶的密碼。|
-|/l {APPLICATION @ no__t-0SYSTEM}|指定將建立事件的事件記錄檔名稱。 有效的記錄檔名稱為 APPLICATION 和 SYSTEM。|
+|/l {應用程式\|系統}|指定將建立事件的事件記錄檔名稱。 有效的記錄檔名稱為 APPLICATION 和 SYSTEM。|
 |/so \<SrcName >|指定事件要使用的來源。 有效的來源可以是任何字串，而且應該代表正在產生事件的應用程式或元件。|
-|/t {ERROR @ no__t-0WARNING @ no__t-1INFORMATION @ no__t-2</br>SUCCESSAUDIT @ NO__T-0FAILUREAUDIT}|指定要建立的事件種類。 有效的類型為 ERROR、WARNING、INFORMATION、SUCCESSAUDIT 和 FAILUREAUDIT。|
+|/t {ERROR\|警告\|資訊\|</br>SUCCESSAUDIT\|FAILUREAUDIT}|指定要建立的事件種類。 有效的類型為 ERROR、WARNING、INFORMATION、SUCCESSAUDIT 和 FAILUREAUDIT。|
 |/id \<EventID >|指定事件的事件識別碼。 有效的識別碼是從1到1000的任何數位。|
-|/d \<Description >|指定要用於新建立事件的描述。|
+|/d \<描述 >|指定要用於新建立事件的描述。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註

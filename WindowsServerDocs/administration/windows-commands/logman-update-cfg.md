@@ -22,7 +22,7 @@ ms.locfileid: "71374364"
 ---
 # <a name="logman-update-cfg"></a>logman 更新 cfg
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新現有設定資料收集器的屬性。  
 
@@ -30,7 +30,7 @@ ms.locfileid: "71374364"
 ```  
 logman update cfg <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+## <a name="parameters"></a>Parameters  
 
 |                    參數                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,7 +62,7 @@ logman update cfg <[-n] <name>> [options]
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
 ## <a name="BKMK_examples"></a>典型  
-下列命令會更新現有的設定資料收集器 cfg_log，以收集 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0 的登錄機碼。  
+下列命令會更新現有的設定資料收集器 cfg_log，以 HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\Currentverion\\收集登錄機碼。  
 ```  
 logman update cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\"  
 ```  

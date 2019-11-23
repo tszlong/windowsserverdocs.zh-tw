@@ -22,14 +22,14 @@ ms.locfileid: "71373386"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將伺服器的預設伺服器變更為網域名稱系統（DNS）功能變數名稱空間的根目錄。
 ## <a name="syntax"></a>語法
 ```
 root 
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |    參數    |                      描述                      |
 |-----------------|-------------------------------------------------------|
@@ -39,4 +39,4 @@ root
 - 目前會使用 ns.nic.ddn.mil 名稱伺服器。 此命令是 lserver ns.nic.ddn.mil 的同義字。 您可以使用 [**設定根**] 命令來變更根功能變數名稱伺服器的名稱。
   ## <a name="additional-references"></a>其他參考
   [命令列語法索引鍵](command-line-syntax-key.md)
-  [nslookup 設定根目錄](nslookup-set-root.md)
+  [nslookup 集根](nslookup-set-root.md)
