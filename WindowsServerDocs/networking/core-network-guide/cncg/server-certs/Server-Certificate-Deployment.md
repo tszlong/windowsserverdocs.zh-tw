@@ -17,12 +17,12 @@ ms.locfileid: "71406272"
 ---
 # <a name="server-certificate-deployment"></a>伺服器憑證部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 請遵循下列步驟來安裝企業根憑證授權單位（CA），並部署要與 PEAP 和 EAP 搭配使用的伺服器憑證。  
   
 > [!IMPORTANT]  
-> 在安裝 Active Directory 憑證服務之前，您必須先將電腦命名為，並將電腦設定為使用靜態 IP 位址，並將電腦加入網域。 安裝 AD CS 之後，您就無法變更電腦名稱稱或電腦的網域成員資格，不過，您可以視需要變更 IP 位址。 如需如何完成這些工作的詳細資訊，請參閱《 Windows Server @ no__t-0 2016[核心網路指南》](../../Core-Network-Guide.md)。  
+> 在安裝 Active Directory 憑證服務之前，您必須先將電腦命名為，並將電腦設定為使用靜態 IP 位址，並將電腦加入網域。 安裝 AD CS 之後，您就無法變更電腦名稱稱或電腦的網域成員資格，不過，您可以視需要變更 IP 位址。 如需如何完成這些工作的詳細資訊，請參閱《 Windows Server&reg; 2016[核心網路指南》](../../Core-Network-Guide.md)。  
 
   
 -   [安裝網頁伺服器 WEB1](../../../core-network-guide/cncg/server-certs/Install-the-Web-Server-WEB1.md)  

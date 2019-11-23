@@ -19,7 +19,7 @@ ms.locfileid: "71358393"
 # <a name="add-an-attribute-store"></a>新增屬性存放區
 
 
-需要存取受 Active Directory 同盟服務保護之資源的使用者帳戶和電腦帳戶 \(AD FS @ no__t-1 會儲存在屬性存放區中，例如 Active Directory Domain Services \(AD DS @ no__t-3。 宣告發行引擎會使用屬性存放區來收集發行宣告所需的資料。 然後會將屬性存放區中的資料投射為宣告。  
+需要存取 Active Directory 同盟服務 \(AD FS\) 所保護之資源的使用者帳戶和電腦帳戶，會儲存在屬性存放區中，例如 Active Directory Domain Services \(AD DS\)。 宣告發行引擎會使用屬性存放區來收集發行宣告所需的資料。 然後會將屬性存放區中的資料投射為宣告。  
   
 您可以使用下列程式，將屬性存放區新增至同盟服務。  
   
@@ -39,14 +39,14 @@ ms.locfileid: "71358393"
   
    -   在 [**屬性存放區類型**] 中，選取支援的屬性存放區類型， **Active Directory**、 **LDAP**或**SQL**。  
   
-   -   在 [**連接字串**] 中，如果您選取了輕量目錄存取通訊協定 \(LDAP @ no__t-2 存放區或結構化查詢語言 (SQL) \(SQL @ no__t-4 存放區，請輸入您用來建立屬性連接的字串。存放區. 若為 Active Directory 屬性存放區，則不需要連接字串。因此，此欄位已停用。  
+   -   在 [**連接字串**] 中，如果您已選取 \(LDAP\) 存放區或結構化查詢語言 (SQL) \(SQL\) 存放區的輕量型目錄存取協定，請輸入您用來建立與屬性存放區之連接的字串。 若為 Active Directory 屬性存放區，則不需要連接字串。因此，此欄位已停用。  
   
        > [!NOTE]  
        > AD FS 預設會自動建立 Active Directory 屬性存放區。  
  
 ![新增屬性存放區](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4. 按一下 [確定]。  
+4. 按一下 **\[確定\]** 。  
   
 ## <a name="additional-references"></a>其他參考資料  
 

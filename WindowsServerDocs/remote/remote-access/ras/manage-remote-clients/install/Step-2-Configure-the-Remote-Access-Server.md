@@ -21,7 +21,7 @@ ms.locfileid: "71404561"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>步驟2設定遠端存取服務器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何設定遠端系統管理 DirectAccess 用戶端所需的用戶端和伺服器設定。 開始部署步驟之前，請確定您已完成[步驟2規劃遠端存取部署](../plan/Step-2-Plan-the-Remote-Access-Deployment.md)中所述的規劃步驟。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71404561"
   
 8.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -83,7 +83,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-configure-the-deployment-type"></a>設定部署類型  
   
-1.  在「遠端存取」伺服器上，開啟 [遠端存取管理主控台]：在 [**開始**] 畫面上，輸入，輸入**遠端存取管理主控台**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [遠端存取] 伺服器上，開啟 [遠端存取管理] 主控台：在 [**開始**] 畫面上，輸入，輸入 [**遠端存取管理主控台**]，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
   
 2.  在 [遠端存取管理] 主控台的中央窗格中，按一下 [執行遠端存取安裝精靈]。  
   
@@ -142,7 +142,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
     -   Ip-HTTPs 憑證。 這是根據您在前一個步驟中設定之部署的公用名稱。 如果嚮導未偵測到正確的 IP-HTTPS 憑證，請按一下 **[流覽]** 以手動選取正確的憑證。  
   
-4.  按一下 [下一步]。  
+4.  按一下 **\[下一步\]** 。  
   
 5.  在 [**首碼**設定] 頁面上（只有在內部網路中偵測到 ipv6 時才會顯示此頁面），嚮導會自動偵測內部網路上使用的 ipv6 設定。 如果您的部署需要額外的首碼，請設定內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。  
   
@@ -175,7 +175,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 3.  在 [ **DNS** ] 頁面的表格中，輸入將套用為名稱解析原則表格（NRPT）豁免的其他名稱尾碼。 選取本機名稱解析選項，然後按 [下一步]。  
   
-4.  在 [ **DNS 尾碼搜尋清單**] 頁面上，「遠端存取」伺服器會自動偵測部署中的網域尾碼。 使用 [**新增**] 和 [**移除**] 按鈕來建立您要使用的網域尾碼清單。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按一下 [下一步]。  
+4.  在 [ **DNS 尾碼搜尋清單**] 頁面上，「遠端存取」伺服器會自動偵測部署中的網域尾碼。 使用 [**新增**] 和 [**移除**] 按鈕來建立您要使用的網域尾碼清單。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按一下 **\[下一步\]** 。  
   
 5.  在 [**管理**] 頁面上，新增未自動偵測到的管理伺服器，然後按 **[下一步]** 。 「遠端存取」會自動新增網域控制站和 System Center Configuration Manager 伺服器。  
   
@@ -205,7 +205,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 3：檢查部署](Step-3-Verify-the-Deployment_2.md)  
+-   [步驟3：驗證部署](Step-3-Verify-the-Deployment_2.md)  
   
   
 

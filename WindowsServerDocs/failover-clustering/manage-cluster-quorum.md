@@ -17,7 +17,7 @@ ms.locfileid: "71361022"
 ---
 # <a name="configure-and-manage-quorum"></a>設定和管理仲裁
 
->適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題提供在 Windows Server 容錯移轉叢集中設定和管理仲裁的背景和步驟。
 
@@ -95,7 +95,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>仲裁設定的一般建議
 
-叢集軟體會根據設定的節點數目和共用存放裝置的可用性，為新叢集自動設定仲裁。 這通常是最適合該叢集的仲裁設定。 不過，最好在建立叢集之後先檢閱仲裁設定，然後再將叢集置入實際執行環境。 若要查看詳細的叢集仲裁設定，您可以使用 [驗證設定向導] 或 [[測試](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)叢集 Windows PowerShell] Cmdlet 來執行 [**驗證仲裁**設定] 測試。 在容錯移轉叢集管理員中，基本仲裁設定會顯示在所選叢集的摘要資訊中，或者您可以在執行[Set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell 時，檢查所傳回仲裁資源的相關資訊。Cmdlet.
+叢集軟體會根據設定的節點數目和共用存放裝置的可用性，為新叢集自動設定仲裁。 這通常是最適合該叢集的仲裁設定。 不過，最好在建立叢集之後先檢閱仲裁設定，然後再將叢集置入實際執行環境。 若要查看詳細的叢集仲裁設定，您可以使用 [驗證設定向導] 或 [[測試](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)叢集 Windows PowerShell] Cmdlet 來執行 [**驗證仲裁**設定] 測試。 在容錯移轉叢集管理員中，基本仲裁設定會顯示在所選叢集的摘要資訊中，或者您可以在執行[Set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell Cmdlet 時，檢查所傳回仲裁資源的相關資訊。
 
 您可以隨時執行 [驗證仲裁設定] 測試，以驗證仲裁設定是否為叢集適用的最佳設定。 測試輸出會指出是否建議變更仲裁設定，以及設定是否為最佳設定。 如果建議變更，您可以使用 [設定叢集仲裁精靈] 來套用建議的設定。
 
@@ -157,7 +157,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 4. 選取 **\[下一步\]** 。 在出現的確認頁面上確認您的選擇，然後選取 **[下一步]** 。
 
-在執行 wizard 並出現 [**摘要**] 頁面之後，如果您想要查看嚮導執行之工作的報告，請選取 [ **view report**]。 最新的報告將保留在<em>systemroot</em> **\\Cluster @ no__t-3Reports**資料夾中，名稱為**為 quorumconfiguration.mht. .mht**。
+在執行 wizard 並出現 [**摘要**] 頁面之後，如果您想要查看嚮導執行之工作的報告，請選取 [ **view report**]。 最新的報告將保留在<em>systemroot</em> **\\Cluster\\Reports**  資料夾中，名稱為**為 quorumconfiguration.mht。**
 
 > [!NOTE]
 > 在您設定叢集仲裁之後，我們建議您執行 [驗證仲裁設定] 測試，以確認更新的仲裁設定。
@@ -178,7 +178,7 @@ Set-ClusterQuorum –Cluster CONTOSO-FC1 -NodeMajority
 Set-ClusterQuorum -NodeAndDiskMajority "Cluster Disk 2"
 ```
 
-以下範例會將本機叢集上的仲裁設定變更為包含見證設定的節點多數。 名為 *\\ @ no__t-2CONTOSO-FS @ no__t-3fsw*的檔案共用資源已設定為檔案共用見證。
+以下範例會將本機叢集上的仲裁設定變更為包含見證設定的節點多數。 名為 *\\\\CONTOSO-FS\\fsw*的檔案共用資源會設定為檔案共用見證。
 
 ```PowerShell
 Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
@@ -310,7 +310,7 @@ Net Start ClusSvc /PQ
 - 一開始只會在 *SiteA* 的節點中設定仲裁投票。 這是為了確保 *SiteB* 的節點狀態不會影響叢集仲裁。
 - 復原步驟會視 *SiteA* 是否可以承受暫時失敗或長期失敗而改變。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
 * [容錯移轉叢集](failover-clustering.md)
 * [容錯移轉叢集 Windows PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)

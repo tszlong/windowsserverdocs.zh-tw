@@ -22,7 +22,7 @@ ms.locfileid: "71373507"
 ---
 # <a name="mqbkup"></a>mqbkup
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將 MSMQ 訊息檔案和登錄設定備份到存放裝置，並還原先前儲存的訊息和設定。   
 備份和還原作業都會停止本機 MSMQ 服務。 如果已事先啟動 MSMQ 服務，公用程式會嘗試在備份結束或還原作業後重新開機 MSMQ 服務。 如果在執行公用程式之前已停止服務，則不會嘗試重新開機服務。  
@@ -31,12 +31,12 @@ ms.locfileid: "71373507"
 ```  
 mqbkup {/b | /r} <folder path_to_storage_device>  
 ```  
-### <a name="parameters"></a>參數  
+### <a name="parameters"></a>Parameters  
 |參數|描述|  
 |-------|--------|  
 |/b|指定備份作業|  
 |/r|指定還原作業|  
-|< 資料夾 path_to_storage @ no__t-0device >|指定儲存 MSMQ 訊息檔案和登錄設定的路徑|  
+|< 資料夾 path_to_storage\_裝置 >|指定儲存 MSMQ 訊息檔案和登錄設定的路徑|  
 |/?|在命令提示字元顯示說明。|  
 ## <a name="BKMK_Examples"></a>典型  
 若要備份所有 MSMQ 訊息檔案和登錄設定，並將它們儲存在 C：磁片磁碟機的*Msmqbkup*資料夾中。  

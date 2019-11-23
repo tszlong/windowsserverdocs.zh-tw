@@ -17,11 +17,11 @@ ms.locfileid: "71406227"
 ---
 # <a name="dns-policy-scenario-guide"></a>DNS 原則案例指南
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本指南旨在供 DNS、網路和系統管理員使用。  
   
-DNS 原則是 Windows Server @ no__t-0 2016 中 DNS 的新功能。 您可以使用本指南來瞭解如何使用 DNS 原則來控制 DNS 伺服器如何根據您在原則中定義的不同參數來處理名稱解析查詢。   
+DNS 原則是 Windows Server&reg; 2016 中 DNS 的新功能。 您可以使用本指南來瞭解如何使用 DNS 原則來控制 DNS 伺服器如何根據您在原則中定義的不同參數來處理名稱解析查詢。   
   
 本指南包含 DNS 原則總覽資訊，以及特定的 DNS 原則案例，其中提供如何設定 DNS 伺服器行為以達成目標的指示，包括主要和的地理位置型流量管理次要 DNS 伺服器、應用程式高可用性、分裂式 DNS 等等。  
   

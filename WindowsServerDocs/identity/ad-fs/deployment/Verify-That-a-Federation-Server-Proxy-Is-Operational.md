@@ -19,7 +19,7 @@ ms.locfileid: "71359975"
 # <a name="verify-that-a-federation-server-proxy-is-operational"></a>驗證同盟伺服器 Proxy 運作正常
 
 
-您可以使用下列程式來確認同盟伺服器 proxy 可以與 Active Directory 同盟服務 @no__t 0AD FS @ no__t-1 中的同盟服務進行通訊。 執行此程式之後，請執行此程式**AD FS 同盟伺服器 proxy 設定向導** ，將電腦設定為在同盟伺服器 proxy 角色中執行。 如需有關如何執行此嚮導的詳細資訊，請參閱[設定電腦的同盟伺服器 Proxy 角色](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。  
+您可以使用下列程式來確認同盟伺服器 proxy 可以與 Active Directory 同盟服務 \(AD FS\)中的同盟服務進行通訊。 執行此程式之後，請執行此程式**AD FS 同盟伺服器 proxy 設定向導** ，將電腦設定為在同盟伺服器 proxy 角色中執行。 如需有關如何執行此嚮導的詳細資訊，請參閱[設定電腦的同盟伺服器 Proxy 角色](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。  
   
 > [!IMPORTANT]  
 > 此測試的結果是在同盟伺服器 Proxy 電腦上的事件檢視器中成功產生特定事件。  
@@ -32,7 +32,7 @@ ms.locfileid: "71359975"
   
 2.  在 [**開始**] 畫面上，輸入**事件檢視器**，然後按 enter。  
   
-3.  在詳細資料窗格中，\-按兩下 [**應用程式及服務記錄**檔]，再按兩下\-[ **AD FS 事件**]，然後按一下 [系統**管理員**]。  
+3.  在詳細資料窗格中，\-按兩下 [**應用程式及服務記錄**檔]，再\-按兩下 [ **AD FS 事件**]，然後按一下 [系統**管理員**]。  
   
 4.  在 **[事件識別碼]** 欄中，尋找事件識別碼 198。  
   

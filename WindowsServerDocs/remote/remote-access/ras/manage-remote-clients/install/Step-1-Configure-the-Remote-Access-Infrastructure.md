@@ -21,11 +21,11 @@ ms.locfileid: "71367319"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>步驟1設定遠端存取基礎結構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-**注意：** Windows Server 2012 將 DirectAccess 以及「路由及遠端存取服務」(RRAS) 合併成一個遠端存取角色。  
+**注意：** Windows Server 2012 將 DirectAccess 與「路由及遠端存取服務」(RRAS) 整合成一個遠端存取角色。  
   
-本主題說明如何使用混合 IPv4 和 IPv6 環境中的單一遠端存取服務器，設定 advanced Remote Access 部署所需的基礎結構。 開始部署步驟之前，請確定您已完成 @no__t 0Step 1 中所述的規劃步驟：規劃遠端存取基礎結構 @ no__t-0。  
+本主題說明如何使用混合 IPv4 和 IPv6 環境中的單一遠端存取服務器，設定 advanced Remote Access 部署所需的基礎結構。 開始部署步驟之前，請確定您已完成[步驟1：規劃遠端存取基礎結構](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md)中所述的規劃步驟。  
   
 |工作|描述|  
 |----|--------|  
@@ -118,7 +118,7 @@ ms.locfileid: "71367319"
 ### <a name="remote-access-traffic"></a>遠端存取流量  
 對遠端存取流量套用下列內部網路防火牆例外：  
   
--   ISATAP通訊協定41輸入和輸出  
+-   ISATAP：通訊協定41輸入和輸出  
   
 -   適用于所有 IPv4 或 IPv6 流量的 TCP/UDP  
   
@@ -198,7 +198,7 @@ ms.locfileid: "71367319"
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>從內部 CA 安裝 IP-HTTPS 憑證  
   
-1.  在遠端存取伺服器上：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
+1.  在 [遠端存取] 伺服器上：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
   
 2.  在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
   
@@ -241,9 +241,9 @@ ms.locfileid: "71367319"
   
 5.  為 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [ **DNS** ] 對話方塊中，按一下 **[確定]** 。  
   
-6.  按一下 [完成]。  
+6.  按一下 \[完成\]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -315,7 +315,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 10. 出現提示時，按一下 [立即重新啟動]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -370,7 +370,7 @@ Restart-Computer
   
 7.  在 [選取使用者、連絡人、電腦或服務帳戶] 對話方塊方塊中，選取您要啟用 DirectAccess 的用戶端電腦，然後按一下 [確定]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -405,7 +405,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>從內部 CA 安裝網路位置伺服器憑證  
   
-1.  在將裝載網路位置伺服器網站的伺服器：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
+1.  在將裝載網路位置伺服器網站的伺服器上：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
   
 2.  在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
   
@@ -447,7 +447,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
     -   使用以 HTTP 為基礎之 URL 的 Web 服務器，例如： https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   透過通用命名慣例（UNC）路徑（例如 \\ \ com\crld\corp-APP1-CA.crl）存取的檔案伺服器。  
+    -   透過通用命名慣例（UNC）路徑存取的檔案伺服器，例如 \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl  
   
     如果內部 CRL 發佈點只能透過 IPv6 連線，您就必須設定具有 Advanced Security 連線安全性規則的 Windows 防火牆。 這會豁免 IPsec 保護從內部網路的 IPv6 位址空間到 CRL 發佈點的 IPv6 位址。  
   
@@ -455,5 +455,5 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 2：設定遠端存取伺服器](Step-2-Configure-the-Remote-Access-Server.md)
+-   [步驟2：設定遠端存取服務器](Step-2-Configure-the-Remote-Access-Server.md)
 

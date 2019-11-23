@@ -18,7 +18,7 @@ ms.locfileid: "71402447"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>使用組織網域樹系模型
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在組織網域樹系模型中，有數個自發群組各自擁有一個樹系中的網域。 每個群組都會控制網域層級的服務管理，讓他們能夠自主管理服務管理的特定層面，而樹系擁有者則控制樹系層級的服務管理。  
 
@@ -58,4 +58,4 @@ ms.locfileid: "71402447"
 所有的網域擁有者都必須注意，如果這些情況下有任何一項變更，可能就需要將組織網域移至多個樹系部署中。  
 
 > [!NOTE]  
-> 將 Windows Server 2008 Active Directory 網域的安全性風險降至最低的另一種方法是採用系統管理員角色隔離，這需要在您的 Active Directory 基礎結構中部署唯讀網域控制站（RODC）。 RODC 是 Windows Server 2008 作業系統中一種新類型的網域控制站，主控 Active Directory 資料庫的唯讀磁碟分割。 在 Windows Server 2008 發行之前，網域控制站上的任何伺服器維護工作都必須由網域系統管理員執行。 在 Windows Server 2008 中，您可以將 RODC 的本機系統管理許可權委派給任何網域使用者，而不需要授與該使用者任何網域或其他網域控制站的系統管理許可權。 這允許委派的使用者登入 RODC，並在伺服器上執行維護工作，例如升級驅動程式。 不過，此委派的使用者無法登入任何其他網域控制站，或在網域中執行任何其他系統管理工作。 如此一來，任何受信任的使用者都可以獲得有效管理 RODC 的能力，而不會危及網域其餘部分的安全性。 如需 Rodc 的詳細資訊，請參閱 @no__t 0AD DS：唯讀網域控制站 @ no__t-0。  
+> 將 Windows Server 2008 Active Directory 網域的安全性風險降至最低的另一種方法是採用系統管理員角色隔離，這需要在您的 Active Directory 基礎結構中部署唯讀網域控制站（RODC）。 RODC 是 Windows Server 2008 作業系統中一種新類型的網域控制站，主控 Active Directory 資料庫的唯讀磁碟分割。 在 Windows Server 2008 發行之前，網域控制站上的任何伺服器維護工作都必須由網域系統管理員執行。 在 Windows Server 2008 中，您可以將 RODC 的本機系統管理許可權委派給任何網域使用者，而不需要授與該使用者任何網域或其他網域控制站的系統管理許可權。 這允許委派的使用者登入 RODC，並在伺服器上執行維護工作，例如升級驅動程式。 不過，此委派的使用者無法登入任何其他網域控制站，或在網域中執行任何其他系統管理工作。 如此一來，任何受信任的使用者都可以獲得有效管理 RODC 的能力，而不會危及網域其餘部分的安全性。 如需 Rodc 的詳細資訊，請參閱[AD DS：唯讀網域控制站](https://go.microsoft.com/fwlink/?LinkId=106616)。  

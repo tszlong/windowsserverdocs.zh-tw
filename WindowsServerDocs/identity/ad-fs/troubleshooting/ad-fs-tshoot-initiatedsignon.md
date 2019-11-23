@@ -22,18 +22,18 @@ AD FS 登入 頁面可用來測試驗證是否正常運作。  這是藉由流�
 根據預設，Windows 2016 中的 AD FS 不會啟用 [登入] 頁面。  若要啟用它，您可以使用 PowerShell 命令集-Set-adfsproperties。  使用下列程式啟用頁面：
 
 1.  開啟 Windows PowerShell
-2.  輸入： `Get-AdfsProperties`，然後按 enter 鍵
-3.  確認**EnableIdpInitiatedSignonPage**設定為 false，![False @ no__t-2
+2.  輸入： `Get-AdfsProperties` 並按 enter 鍵
+3.  確認**EnableIdpInitiatedSignonPage**設定為 False ![false](media/ad-fs-tshoot-initiatedsignon/idp2.png)
 4.  在 PowerShell 中，輸入： `Set-AdfsProperties -EnableIdpInitiatedSignonPage $true`
 5.  您將不會看到確認，因此請再次輸入 Set-adfsproperties，並確認**EnableIdpInitatedSignonPage**已設定為 true。
-![True @ no__t-1
+![True](media/ad-fs-tshoot-initiatedsignon/idp4.png)
 
 ## <a name="test-authentication"></a>測試驗證
 使用下列程式，透過 Idp 起始的登入頁面來測試 AD FS 驗證。
 
-1.  開啟網頁瀏覽器，並流覽至 [Idp 登入] 頁面。  實例 https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
+1.  開啟網頁瀏覽器，並流覽至 [Idp 登入] 頁面。  範例： https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 2.  系統應該會提示您登入。  輸入您的認證。
-![Sign-on @ no__t-1
+![登入](media/ad-fs-tshoot-initiatedsignon/idp5.png)
 3.  如果這項作業成功，您應該已登入。
 
 
@@ -42,14 +42,14 @@ AD FS 登入 頁面可用來測試驗證是否正常運作。  這是藉由流�
 
 1.  在 Windows 10 用戶端上，按一下 [開始] 並輸入 [網際網路選項]，然後選取 [網際網路選項]。
 2.   按一下 [安全性] 索引標籤、按一下 [近端內部網路]，然後按一下 [網站] 按鈕。
-![Seamless @ no__t-1
+![順暢的](media/ad-fs-tshoot-initiatedsignon/idp8.png)
 1.  按一下 [進階]。
 2.  輸入您的 url，然後按一下 [新增]。  按一下 [關閉]。
-@no__t 0Add url @ no__t-1
+![新增 url](media/ad-fs-tshoot-initiatedsignon/idp9.png)
 1.  按一下 [確定]。  按一下 [確定]。  這應該會關閉 [網際網路選項]。
-2.  開啟網頁瀏覽器，並流覽至 [Idp 登入] 頁面。  實例 https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
+2.  開啟網頁瀏覽器，並流覽至 [Idp 登入] 頁面。  範例： https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 3.  按一下 [登入] 按鈕。  您應該會自動登入，而不會提示您輸入認證。
-![Seamless @ no__t-1
+![順暢的](media/ad-fs-tshoot-initiatedsignon/idp6.png)
 
 ## <a name="next-steps"></a>後續步驟
 

@@ -19,16 +19,16 @@ ms.locfileid: "71393293"
 ---
 # <a name="vmq-should-be-enabled-on-vmq-capable-physical-network-adapters-bound-to-an-external-virtual-switch"></a>必須在系結至外部虛擬交換器的具備 VMQ 功能的實體網路介面卡上啟用 VMQ
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71393293"
 ## <a name="impact"></a>**產生**  
 *Windows 無法充分利用下列網路介面卡上可用的硬體卸載：*  
   
-@no__t 網路介面卡的 0list >  
+\<的網路介面卡清單 >  
   
 ## <a name="resolution"></a>**解決方法**  
 *使用 Get-netadaptervmq Windows PowerShell Cmdlet 或使用網路介面卡的 Advanced Properties 使用者介面來啟用 VMQ。*  

@@ -29,7 +29,7 @@ ms.locfileid: "71407206"
 
 ### <a name="to-use-a-ping-test"></a>若要使用 PING 測試
 1.  開啟命令提示字元
-2. 輸入 PING <name of adfs server> a。 範例：PING sts.contoso.com
+2. 輸入 PING <name of adfs server> a。 範例： PING sts.contoso.com
 3. 您應該會看到來自伺服器的回復
 
 ![Ping](media/ad-fs-tshoot-dns/dns1.png)
@@ -40,7 +40,7 @@ ms.locfileid: "71407206"
 ### <a name="to-use-a-nslookup"></a>使用 NSLookup
 1.  開啟命令提示字元
 2. 輸入 PING <name of adfs server> a。 範例： nslookup sts.contoso.com
-3. 您應該會看到伺服器的 dns 資訊 ![NSLookup @ no__t-1
+3. 您應該會看到伺服器的 dns 資訊 ![NSLookup](media/ad-fs-tshoot-dns/dns2.png)
 
 ## <a name="tracert"></a>Tracert
 藉由將網際網路控制訊息通訊協定（ICMP） Echo 要求或 ICMPv6 訊息傳送至目的地，並以累加方式增加存留時間（TTL）域值，來決定目的地所採用的路徑。   如需詳細資訊，請參閱[Tracert](https://technet.microsoft.com/library/ff961507.aspx)。
@@ -48,8 +48,8 @@ ms.locfileid: "71407206"
 
 ### <a name="to-use-tracert"></a>若要使用 Tracert
 1.  開啟命令提示字元
-2. 輸入 tracert <name of adfs server>。 範例： tracert sts.contoso.com
-3. 您應該會看到用來連接伺服器的目的地路徑 ![Tracert @ no__t-1
+2. 輸入 tracert <name of adfs server> a。 範例： tracert sts.contoso.com
+3. 您應該會看到用來連接伺服器的目的地路徑 ![Tracert](media/ad-fs-tshoot-dns/dns3.png)
 
 ## <a name="next-steps"></a>後續步驟
 

@@ -19,9 +19,9 @@ ms.locfileid: "71405255"
 ---
 # <a name="enable-vrss-on-a-virtual-network-adapter"></a>在虛擬網路介面卡上啟用 vRSS
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-虛擬 RSS \(vRSS @ no__t-1 需要來自實體介面卡的虛擬機器佇列 \(VMQ @ no__t-3 支援。 如果 VMQ 已停用或不受支援，則會停用虛擬接收端調整。 
+虛擬 RSS \(vRSS\) 需要來自實體介面卡的虛擬機器佇列 \(VMQ\) 支援。 如果 VMQ 已停用或不受支援，則會停用虛擬接收端調整。 
 
 如需詳細資訊，請參閱[規劃使用 vRSS](vrss-plan.md)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "71405255"
 
 7.  確定 [**值**] 中的選取專案已**啟用**。 
 
-8.  按一下 [確定]。
+8.  按一下 **\[確定\]** 。
   
 > [!NOTE]
 > 在 [ **Advanced** ] 索引標籤上，某些網路介面卡也會顯示介面卡支援的 RSS 佇列數目。

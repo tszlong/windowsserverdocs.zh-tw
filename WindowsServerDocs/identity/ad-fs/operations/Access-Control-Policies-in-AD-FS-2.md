@@ -23,11 +23,11 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 
 若要啟用用戶端存取原則，請遵循下列步驟。
 
-### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>步驟 1:在您的 AD FS 伺服器上安裝 AD FS 2.0 套件的更新彙總套件2
+### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>步驟1：在您的 AD FS 伺服器上安裝 AD FS 2.0 套件的更新彙總套件2
 
 下載[Active Directory 同盟服務（AD FS）2.0 套件的更新彙總套件 2](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，並將它安裝在所有同盟伺服器和同盟伺服器 proxy 上。
 
-### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>步驟 2:將五個宣告規則新增至 Active Directory 的宣告提供者信任
+### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>步驟2：將五個宣告規則新增至 Active Directory 的宣告提供者信任
 
 在所有 AD FS 伺服器和 proxy 上安裝更新彙總套件2之後，請使用下列程式來新增一組宣告規則，讓原則引擎可以使用新的宣告類型。
 
@@ -44,7 +44,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 4. 在 [選取規則範本] 頁面的 [宣告規則範本] 底下，選取 [從清單傳遞或篩選傳入宣告]，然後按 [下一步]。
 5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱;在 [傳入宣告類型] 中，輸入下列宣告類型 URL，然後選取 [傳遞所有宣告值]。</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
-6. 若要驗證規則，請在清單中選取它，按一下 [編輯規則]，然後按一下 [查看規則語言]。 宣告規則語言應會如下所示：`c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
+6. 若要驗證規則，請在清單中選取它，按一下 [編輯規則]，然後按一下 [查看規則語言]。 宣告規則語言應會如下所示： `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
 7. 按一下 [完成]。
 8. 在 [編輯宣告規則] 對話方塊中，按一下 [確定] 以儲存規則。
 9. 重複步驟2到6，為下面所示的其餘四個宣告類型建立額外的宣告規則，直到建立所有五個規則為止。
@@ -60,14 +60,14 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 ~~~
 
-### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>步驟 3：更新 Microsoft Office 365 身分識別平臺信賴憑證者信任
+### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>步驟3：更新 Microsoft Office 365 身分識別平臺信賴憑證者信任
 
 選擇下列其中一個範例案例，在最符合您組織需求的 Microsoft Office 365 身分識別平臺信賴憑證者信任上設定宣告規則。
 
 ## <a name="client-access-policy-scenarios-for-ad-fs-20"></a>AD FS 2.0 的用戶端存取原則案例
 下列章節將說明 AD FS 2.0 存在的案例
 
-### <a name="scenario-1-block-all-external-access-to-office-365"></a>案例 1：封鎖所有對 Office 365 的外部存取
+### <a name="scenario-1-block-all-external-access-to-office-365"></a>案例1：封鎖所有對 Office 365 的外部存取
 
 此用戶端存取原則案例允許從所有內部用戶端進行存取，並根據外部用戶端的 IP 位址封鎖所有外部用戶端。 根據預設發佈授權規則所建立的規則集，允許所有使用者的存取權。 您可以使用下列程式，將發佈授權規則新增至 Office 365 信賴憑證者信任。
 
@@ -79,7 +79,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 2. 在主控台樹的 [AD FS 2.0 \ 信任關係] 底下，按一下 [信賴憑證者信任]，以滑鼠右鍵按一下 [Microsoft Office 365 身分識別平臺信任]，然後按一下 [編輯宣告規則]。 
 3. 在 [編輯宣告規則] 對話方塊中，選取 [發佈授權規則] 索引標籤，然後按一下 [新增規則] 以啟動 [宣告規則嚮導]。
 4. 在 [選取規則範本] 頁面的 [宣告規則範本] 底下，選取 [使用自訂規則傳送宣告]，然後按 [下一步]。
-5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法： `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
@@ -90,7 +90,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 >您必須使用有效的 IP 運算式，將「公用 ip 位址 RegEx」的值取代為：如需詳細資訊，請參閱建立 IP 位址範圍運算式。
 
 
-### <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a>案例 2：封鎖除了 Exchange ActiveSync 以外的所有 Office 365 外部存取
+### <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a>案例2：封鎖 Exchange ActiveSync 以外的所有 Office 365 外部存取
 
 下列範例可讓您從內部用戶端（包括 Outlook）存取所有的 Office 365 應用程式，包括 Exchange Online。 除了 Exchange ActiveSync 用戶端（例如智慧型手機）之外，它還會封鎖位於公司網路外部的用戶端存取（如用戶端 IP 位址所示）。 規則集是以預設發佈授權規則為基礎，其標題為 [允許所有使用者存取]。 使用下列步驟，使用 [宣告規則] 嚮導將發佈授權規則新增至 Office 365 信賴憑證者信任：
 
@@ -102,7 +102,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 2. 在主控台樹的 [AD FS 2.0 \ 信任關係] 底下，按一下 [信賴憑證者信任]，以滑鼠右鍵按一下 [Microsoft Office 365 身分識別平臺信任]，然後按一下 [編輯宣告規則]。 
 3. 在 [編輯宣告規則] 對話方塊中，選取 [發佈授權規則] 索引標籤，然後按一下 [新增規則] 以啟動 [宣告規則嚮導]。
 4. 在 [選取規則範本] 頁面的 [宣告規則範本] 底下，選取 [使用自訂規則傳送宣告]，然後按 [下一步]。
-5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法： `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
     Value=="Microsoft.Exchange.Autodiscover"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
@@ -116,7 +116,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 >[!NOTE]
 >您必須使用有效的 IP 運算式，將「公用 ip 位址 RegEx」的值取代為：如需詳細資訊，請參閱建立 IP 位址範圍運算式。
 
-### <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a>案例 3：封鎖以瀏覽器為基礎的應用程式以外的所有 Office 365 外部存取
+### <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a>案例3：封鎖以瀏覽器為基礎的應用程式以外的所有 Office 365 外部存取
 
 規則集是以預設發佈授權規則為基礎，其標題為 [允許所有使用者存取]。 使用下列步驟，使用 [宣告規則] Wizard 將發行授權規則新增至 Microsoft Office 365 身分識別平臺信賴憑證者信任：
 
@@ -131,7 +131,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 2. 在主控台樹的 [AD FS 2.0 \ 信任關係] 底下，按一下 [信賴憑證者信任]，以滑鼠右鍵按一下 [Microsoft Office 365 身分識別平臺信任]，然後按一下 [編輯宣告規則]。 
 3. 在 [編輯宣告規則] 對話方塊中，選取 [發佈授權規則] 索引標籤，然後按一下 [新增規則] 以啟動 [宣告規則嚮導]。
 4. 在 [選取規則範本] 頁面的 [宣告規則範本] 底下，選取 [使用自訂規則傳送宣告]，然後按 [下一步]。
-5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法： `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
@@ -151,7 +151,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 2. 在主控台樹的 [AD FS 2.0 \ 信任關係] 底下，按一下 [信賴憑證者信任]，以滑鼠右鍵按一下 [Microsoft Office 365 身分識別平臺信任]，然後按一下 [編輯宣告規則]。 
 3. 在 [編輯宣告規則] 對話方塊中，選取 [發佈授權規則] 索引標籤，然後按一下 [新增規則] 以啟動 [宣告規則嚮導]。
 4. 在 [選取規則範本] 頁面的 [宣告規則範本] 底下，選取 [使用自訂規則傳送宣告]，然後按 [下一步]。
-5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. 在 [設定規則] 頁面的 [宣告規則名稱] 下，輸入此規則的顯示名稱。 在 [自訂規則] 底下，輸入或貼上下列宣告規則語言語法： `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "Group SID value of allowed AD group"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
@@ -168,7 +168,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 |                               將此子句新增至新的自訂規則，會指定要求來自同盟伺服器 proxy （也就是，它具有 x-ms proxy 標頭）                                |                                                                                                                                                                    |
 |                                                                                 建議所有規則都包含此。                                                                                  |                                    exists （[Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"]）                                    |
 |                                                         用來建立要求是來自已定義可接受範圍內 IP 的用戶端。                                                         | 不存在（[類型 = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>"，值 = ~ "客戶提供的公用 ip 位址 RegEx"]） |
-|                                    這個子句是用來指定如果存取的應用程式不是 Microsoft，則會拒絕要求。                                     |       不存在（[Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>"，Value = = "Microsoft. Exchange ActiveSync"]）        |
+|                                    這個子句是用來指定如果存取的應用程式不是 Microsoft，則會拒絕要求。                                     |       不存在（[類型 = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>"，值 = = "Microsoft. Exchange. ActiveSync"]）        |
 |                                                      此規則可讓您判斷呼叫是否透過網頁瀏覽器，且不會遭到拒絕。                                                      |              不存在（[類型 = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>"，值 = = "/adfs/ls/"]）               |
 | 此規則說明特定 Active Directory 群組中的唯一使用者（根據 SID 值）應被拒絕。 將 NOT 加入此語句表示將允許一組使用者，無論位置為何。 |             exists （[類型 = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>"，值 = ~ "{允許 AD 群組} 的群組 SID 值}"]）              |
 |                                                                這是必要的子句，可在符合所有前述條件時發出拒絕。                                                                 |                                   = > 問題（類型 = "<https://schemas.microsoft.com/authorization/claims/deny>"，值 = "true"）;                                    |
@@ -187,7 +187,7 @@ X 毫秒轉送的用戶端 ip 宣告是從目前僅由 Exchange Online 設定的
 
 透過 VPN 或 Microsoft DirectAccess （DA）連線到公司網路的用戶端，可能會顯示為內部公司用戶端，或作為外部用戶端（視 VPN 或 DA 的設定而定）。
 
-一或多個 IP 位址：當 Exchange Online 無法判斷連線用戶端的 IP 位址時，它會根據 x 轉送的標頭值來設定值，這是一種非標準標頭，可包含在 HTTP 型要求中，並受到許多用戶端、負載平衡器的支援以及市場上的 proxy。
+一或多個 IP 位址：當 Exchange Online 無法判斷連線用戶端的 IP 位址時，它會根據 x 轉送的標頭值來設定值，這是一個非標準標頭，可包含在 HTTP 要求中，並受到許多支援用戶端、負載平衡器，以及市場上的 proxy。
 
 >[!Note]
 >多個 IP 位址，指出通過要求的每個 proxy 的用戶端 IP 位址和位址，將以逗號分隔。
@@ -203,19 +203,19 @@ X 毫秒轉送的用戶端 ip 宣告是從目前僅由 Exchange Online 設定的
 - 192.168.1.1 –192.168.1.25
 - 10.0.0.1 –10.0.0.14
 
-首先，將符合單一 IP 位址的基本模式如下： \b #\.# #### \. ### \.# # # \b
+首先，將符合單一 IP 位址的基本模式如下： \b # # #\.###\.###\.# # # \b
 
-擴充此項，我們可以使用 OR 運算式來比對兩個不同的 IP 位址，如下所\.示： \b # # #\. \. \. ### ### \.# # # \b | \b # # #### ######\b \.
+擴充此項，我們可以使用 OR 運算式來比對兩個不同的 IP 位址，如下所示： \b # # #\.###\.###\.# # # \b | \b # # #\.###\.###\.# # # \b
 
 因此，只比對兩個位址的範例（例如192.168.1.1 或10.0.0.1）會是： \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 
-如此一來，您就可以輸入任意數目的位址。 需要允許的位址範圍（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192 @ no__t-0168 @ no__t-11 @ no__t-2 （[1-9] | 1 [0-9] | 2 [0-5]） \b
+如此一來，您就可以輸入任意數目的位址。 需要允許的位址範圍（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192\.168\.1\.（[1-9] | 1 [0-9] | 2 [0-5]） \b
 
 >[!Note] 
 >IP 位址會被視為字串，而不是數位。
 
 
-此規則的細分方式如下： \b192\.168 1\.\.
+此規則的細分方式如下： \b192\.168\.1\.
 
 這會比對開頭為 192.168.1. 的任何值。
 
@@ -229,9 +229,9 @@ X 毫秒轉送的用戶端 ip 宣告是從目前僅由 Exchange Online 設定的
 >[!Note]
 >括弧必須正確定位，如此您才不會開始比對 IP 位址的其他部分。
 
-在192區塊相符的情況下，我們可以針對10個區塊撰寫類似的運算式： \b10 @ no__t-00 @ no__t-10 @ no__t-2 （[1-9] | 1 [0-4]） \b
+在與192區塊相符的情況下，我們可以為10個區塊撰寫類似的運算式： \b10\.0\.0\.（[1-9] | 1 [0-4]） \b
 
-並將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有位址： \b192 @ no__t-0168 @ no__t-11 @ no__t-2 （[1-9] | 1 [0-9] | 2 [0-5]） \b | \b10 @ no__t-30 @ no__t-40 @ no__t-5 （[1-9] | 1 [0-4]） \b
+並將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有位址： \b192\.168\.1\.（[1-9] | 1 [0-9] | 2 [0-5]） \b | \b10\.0\.0\.（[1-9] | 1 [0-4]） \b
 
 #### <a name="testing-the-expression"></a>測試運算式
 

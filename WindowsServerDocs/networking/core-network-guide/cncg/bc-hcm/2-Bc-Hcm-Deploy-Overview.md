@@ -17,7 +17,7 @@ ms.locfileid: "71406374"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>BranchCache 託管快取模式部署概觀
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用本指南，在將電腦加入網域的分公司中部署 BranchCache 託管快取伺服器。 您可以使用本主題來深入瞭解 BranchCache 託管快取模式部署程式。
 
@@ -25,7 +25,7 @@ ms.locfileid: "71406374"
 
 ## <a name="bkmk_components"></a>託管快取伺服器部署基礎結構
 
-在此部署中，託管快取伺服器是使用 Active Directory Domain Services @no__t 0AD DS @ no__t-1 中的服務連接點來部署，而且您可以選擇 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的 BranchCache。若要預先雜湊 Web 和檔案型內容伺服器上的共用內容，請在託管快取伺服器上預先載入內容。
+在此部署中，會使用 Active Directory Domain Services \(AD DS\)中的服務連接點來部署託管快取伺服器，而且您可以選擇 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的 BranchCache 來預先雜湊 Web 和檔案型內容伺服器上的共用內容，然後在託管快取伺服器上預先載入內容。
 
 下圖顯示部署 BranchCache 託管快取伺服器所需的基礎結構。
 
@@ -40,11 +40,11 @@ ms.locfileid: "71406374"
 
 ### <a name="web1-in-the-cloud-data-center"></a>雲端資料中心內的 WEB1
 
-WEB1 是 BranchCache @ no__t-0enabled 內容伺服器。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 WEB1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
+WEB1 是啟用的內容伺服器\-BranchCache。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 WEB1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
 
 ### <a name="file1-in-the-cloud-data-center"></a>雲端資料中心的 FILE1
 
-FILE1 是 BranchCache @ no__t-0enabled 內容伺服器。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 FILE1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
+FILE1 是啟用內容伺服器\-BranchCache。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 FILE1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
   
 ### <a name="dc1-in-the-main-office"></a>總公司中的 DC1
 
@@ -68,12 +68,12 @@ DC1 是網域控制站，而且您必須設定預設網域原則，或其他更�
 
 1. 在 HCS1 上，使用 Windows PowerShell 命令將電腦設定為託管快取伺服器，並在 Active Directory 中註冊服務連接點。
 
-2. \(Optional @ no__t-1 On HCS1，如果 BranchCache 預設值不符合伺服器和託管快取的部署目標，請設定您想要為託管快取配置的磁碟空間量。 此外，也請設定您偏好用於託管快取的磁片位置。
+2. \(選擇性\) 在 HCS1 上，如果 BranchCache 預設值不符合伺服器和託管快取的部署目標，請設定您要為託管快取配置的磁碟空間量。 此外，也請設定您偏好用於託管快取的磁片位置。
 
-3. \(Optional @ no__t-1 預先雜湊內容伺服器上的內容、建立資料套件，以及在託管快取伺服器上預先載入內容。
+3. \(選擇性\) 在內容伺服器上預先雜湊內容、建立資料套件，以及在託管快取伺服器上預先載入內容。
 
     > [!NOTE]
-    > 在託管快取伺服器上 Prehashing 並預先載入內容是選擇性的，不過，如果您選擇預先雜湊和預先載入，則必須執行下列適用于您部署的所有步驟。 @no__t 0For 範例中，如果您沒有 Web 服務器，就不需要執行任何與 prehashing 和預先載入 Web 服務器內容相關的步驟。 \)
+    > 在託管快取伺服器上 Prehashing 並預先載入內容是選擇性的，不過，如果您選擇預先雜湊和預先載入，則必須執行下列適用于您部署的所有步驟。 \(例如，如果您沒有 Web 服務器，就不需要執行任何與 prehashing 和預先載入網頁伺服器內容相關的步驟。\)
 
     1. 在 WEB1 上，預先雜湊網頁伺服器內容並建立資料封裝。
 

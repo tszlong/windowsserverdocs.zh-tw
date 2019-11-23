@@ -20,7 +20,7 @@ ms.locfileid: "71358460"
 
 
 ## <a name="to-add-a-help-desk-link"></a>新增技術支援中心連結  
-若要新增 [正負號 @ no__t-0in] 頁面上顯示的服務台連結，請使用下列 Windows PowerShell Cmdlet 和語法。  
+若要新增 [登\-] 頁面中顯示的服務台連結，請使用下列 Windows PowerShell Cmdlet 和語法。  
 
 ![新增技術支援中心](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

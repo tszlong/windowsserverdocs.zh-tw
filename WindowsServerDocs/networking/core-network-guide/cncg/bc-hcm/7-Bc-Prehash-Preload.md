@@ -15,9 +15,9 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356251"
 ---
-# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>預先雜湊和預先載入託管快取伺服器上的內容 \(Optional @ no__t-1
+# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>在託管快取伺服器上預先雜湊並預先載入內容 \(選擇性\)
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用本節中的程式來預先雜湊內容伺服器上的內容、將內容新增至資料封裝，然後在託管快取伺服器上預先載入內容。 
 

@@ -18,13 +18,13 @@ ms.locfileid: "71408819"
 ---
 # <a name="finding-additional-resources-for-enabling-advanced-features"></a>尋找啟用進階功能的其他資源
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以在 Windows Server 2008 技術文件庫中找到下列關於 Active Directory Domain Services （AD DS）的檔：  
   
--   如需部署 Windows Server 2008 樹系根域的詳細資訊，請參閱[部署 Windows server 2008 樹系根域 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)。  
+-   如需部署 Windows Server 2008 樹系根域的詳細資訊，請參閱[部署 Windows server 2008 樹系根域 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)。  
   
--   如需將 Active Directory 網域升級至 Windows Server 2008 的詳細資訊，請參閱[將 Active Directory 網域升級至 Windows server 2008 AD DS 網域 \[LH @ no__t-2](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61)。  
+-   如需將 Active Directory 網域升級至 Windows Server 2008 的詳細資訊，請參閱[將 Active Directory 網域升級至 Windows server 2008 AD DS 網域 \[LH\]](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61)。  
   
 -   如需部署 AD DS 的詳細資訊，請參閱 Windows Server 2008 Active Directory Domain Services 安裝和移除的逐步指南（[https://go.microsoft.com/fwlink/?LinkId=100492](https://go.microsoft.com/fwlink/?LinkId=100492)）。  
   

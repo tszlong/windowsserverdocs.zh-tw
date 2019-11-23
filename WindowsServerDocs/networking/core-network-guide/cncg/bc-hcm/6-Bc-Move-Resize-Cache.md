@@ -15,13 +15,13 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406369"
 ---
-# <a name="move-and-resize-the-hosted-cache-optional"></a>移動和調整託管快取的大小 \(Optional @ no__t-1
+# <a name="move-and-resize-the-hosted-cache-optional"></a>移動託管快取並調整其大小 \(選擇性\)
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用此程式將託管快取移至您偏好的磁片磁碟機和資料夾，並指定託管快取伺服器可用於託管快取的磁碟空間量。
 
-此程序是選用的。 如果預設快取位置 \(% windir% \\ServiceProfiles @ no__t-2NetworkService @ no__t-3AppData @ no__t-4Local @ no__t-5PeerDistPub @ no__t-6 和 size –這是總硬碟空間的 5% –適用于您的部署，您不需要需要變更它們。
+此程序是選用的。 如果預設快取位置 \(% windir%\\ServiceProfiles\\NetworkService\\AppData\\本機\\PeerDistPub\) 和大小–這是總硬碟空間的5% –適用于您的部署，您不需要變更它們。
 
 您必須是 Administrators 群組的成員，才能執行此程式。
 
@@ -38,10 +38,10 @@ ms.locfileid: "71406369"
     Set-BCCache -Path C:\datacache –MoveTo D:\datacache
     ``` 
 
-3.  輸入下列命令來調整託管快取的大小–尤其是本機電腦上的 datacache \-。 按 ENTER 鍵。
+3.  輸入下列命令來調整託管快取的大小–尤其是本機電腦上的 datacache \-。 按 ENTER。
 
     > [!IMPORTANT]
-    > 執行下列命令之前，請將參數值（例如 @no__t 0Percentage）取代為適用于您的部署的值。  
+    > 執行下列命令之前，請將參數值（例如 \-百分比）取代為適用于您的部署的值。  
 
     ``` 
     Set-BCCache -Percentage 20
@@ -55,8 +55,8 @@ ms.locfileid: "71406369"
 
     命令的結果會顯示 BranchCache 安裝所有層面的狀態。 以下是幾個 BranchCache 設定和每個專案的正確值：
 
-    -   DataCache |CacheFileDirectoryPath:顯示符合您使用 SetBCCache 命令的– MoveTo 參數提供之值的硬碟位置。 例如，如果您提供值 D： \\datacache，則該值會顯示在命令輸出中。
+    -   DataCache |CacheFileDirectoryPath：顯示符合您使用 SetBCCache 命令的– MoveTo 參數提供之值的硬碟位置。 例如，如果您提供值 D：\\datacache，則該值會顯示在命令輸出中。
 
-    -   DataCache |MaxCacheSizeAsPercentageOfDiskVolume:顯示與您使用 SetBCCache 命令的–百分比參數提供的值相符的數位。 例如，如果您提供值20，則該值會顯示在命令輸出中。
+    -   DataCache |MaxCacheSizeAsPercentageOfDiskVolume：顯示與您使用 SetBCCache 命令的–百分比參數提供的值相符的數位。 例如，如果您提供值20，則該值會顯示在命令輸出中。
 
 若要繼續進行本指南，請參閱[預先雜湊和預先載入託管快取&#40;伺服器&#41;上的內容（選擇性](7-Bc-Prehash-Preload.md)）。

@@ -17,9 +17,9 @@ ms.locfileid: "71402138"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>使用繼承的權限搭配存取型列舉
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-根據預設，用於 DFS 資料夾的權限是繼承自命名空間伺服器的本機檔案系統。 許可權繼承自系統磁片磁碟機的根目錄，並將讀取權限授與 DOMAIN @ no__t-0Users 群組。 因此，就算啟用存取型列舉，命名空間中的所有資料夾仍維持顯示給所有網域使用者。
+根據預設，用於 DFS 資料夾的權限是繼承自命名空間伺服器的本機檔案系統。 許可權繼承自系統磁片磁碟機的根目錄，並將讀取權限授與網域\\的使用者群組。 因此，就算啟用存取型列舉，命名空間中的所有資料夾仍維持顯示給所有網域使用者。
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>繼承的權限的優點和限制
 
@@ -58,6 +58,6 @@ ms.locfileid: "71402138"
 
 4.  若要變更 DFS 命名空間中資料夾或命名空間根目錄的繼承權限，請使用 Windows 檔案總管或 **ICacls** 命令。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)

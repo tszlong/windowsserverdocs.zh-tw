@@ -16,11 +16,11 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408722"
 ---
-# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C：Active Directory 中的受保護帳戶和群組
+# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C：Active Directory 中的受保護帳戶和群組
+## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
 在 Active Directory 內，會將一組預設的高許可權帳戶和群組視為受保護的帳戶和群組。 在 Active Directory 中的大部分物件，委派的系統管理員（已委派管理 Active Directory 物件的許可權）可以變更物件的許可權，包括變更許可權以允許自己變更的成員資格例如，群組。  
 
@@ -32,7 +32,7 @@ ms.locfileid: "71408722"
 
 #### <a name="protected-accounts-and-groups-in-active-directory-by-operating-system"></a>Active Directory 中受保護的帳戶和群組（依作業系統）
 
-| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012、 <br> Windows Server 2008 R2、 <br> Windows Server 2008 | Windows Server 2016 |
+| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012、 <br> Windows Server 2008 R2、 <br> Windows Server 2008 | Windows Server 2016 |
 | --- | --- | --- | --- |
 |Account Operators|Account Operators|Account Operators|Account Operators|
 |Administrator|Administrator|Administrator|Administrator|
@@ -53,7 +53,7 @@ ms.locfileid: "71408722"
 
 #### <a name="adminsdholder"></a>AdminSDHolder
 
-AdminSDHolder 物件的目的是要為網域中受保護的帳戶和群組提供「範本」許可權。 AdminSDHolder 會自動建立為每個 Active Directory 網域之系統容器中的物件。 其路徑為：**CN = AdminSDHolder，CN = System，DC = < domain_component >，DC = < domain_component >？。**  
+AdminSDHolder 物件的目的是要為網域中受保護的帳戶和群組提供「範本」許可權。 AdminSDHolder 會自動建立為每個 Active Directory 網域之系統容器中的物件。 其路徑為： **cn = AdminSDHolder，cn = System，dc = < domain_component >，dc = < domain_component >？。**  
 
 不同于系統管理員群組所擁有之 Active Directory 網域中的大部分物件，AdminSDHolder 是由 Domain Admins 群組所擁有。 根據預設，EAs 可以對任何網域的 AdminSDHolder 物件進行變更，就像網域的 Domain Admins 和 Administrators 群組一樣。 此外，雖然 AdminSDHolder 的預設擁有者是網域的 Domain Admins 群組，但系統管理員或企業系統管理員的成員可以取得物件的擁有權。  
 
@@ -88,11 +88,11 @@ SDProp 是在保存網域 PDC 模擬器（PDCE）的網域控制站上每60分�
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)  
 
-4. 請確認您已成功連線，如 @no__t 0Dn 所指示：（RootDSE） @no__t 下列螢幕擷取畫面中的-0 **，按一下 [** **連接**]，然後按一下 [系結]。  
+4. 請確認您已成功連線，如下列螢幕擷取畫面中的**Dn：（RootDSE）** 所指示 **，按一下 [** **連接**]，然後按一下 [系結]。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)  
 
-5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為**目前登入的使用者]）。按一下 [確定]。  
+5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為**目前登入的使用者]）。按一下 **[確定]** 。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)  
 
@@ -107,7 +107,7 @@ SDProp 是在保存網域 PDC 模擬器（PDCE）的網域控制站上每60分�
 8. 在 [填入的修改] 對話方塊中，按一下 [執行]，並確認您對 AdminSDHolder 物件所做的變更已出現在該物件上。  
 
 > [!NOTE]  
-> 如需修改 AdminSDHolder 以允許指定的無特殊許可權帳戶修改受保護群組之成員資格的相關資訊，請參閱 [Appendix I：在 Active Directory @ no__t-0 中建立受保護帳戶和群組的管理帳戶。  
+> 如需修改 AdminSDHolder 以允許指定的無許可權帳戶修改受保護群組成員資格的相關資訊，請參閱[附錄 I：在 Active Directory 中建立受保護帳戶和群組的管理帳戶](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)。  
 
 如果您想要透過 LDIFDE 或腳本手動執行 SDProp，您可以建立修改專案，如下所示：  
 
@@ -127,11 +127,11 @@ SDProp 是在保存網域 PDC 模擬器（PDCE）的網域控制站上每60分�
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)  
 
-4. 請確認您已成功連線，如 @no__t 0Dn 所指示：（RootDSE） @no__t 下列螢幕擷取畫面中的-0 **，按一下 [** **連接**]，然後按一下 [系結]。  
+4. 請確認您已成功連線，如下列螢幕擷取畫面中的**Dn：（RootDSE）** 所指示 **，按一下 [** **連接**]，然後按一下 [系結]。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)  
 
-5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為目前登入的使用者**]）。按一下 [確定]。  
+5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為目前登入的使用者**]）。按一下 **[確定]** 。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)  
 

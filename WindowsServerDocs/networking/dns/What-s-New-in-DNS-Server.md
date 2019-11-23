@@ -17,7 +17,7 @@ ms.locfileid: "71406241"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Windows Server 中 DNS 伺服器的新功能
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明 Windows Server 2016 中新增或變更的網域名稱系統（DNS）伺服器功能。  
   
@@ -34,16 +34,16 @@ ms.locfileid: "71406241"
   
 ## <a name="dns-policies"></a>DNS 原則
 
-您可以將 DNS 原則用於以地理位置為基礎的流量管理、以當天時間為基礎的智慧型 DNS 回應、管理設定為分割 @ no__t-0brain 部署的單一 DNS 伺服器、在 DNS 查詢上套用篩選等等。 下列專案提供有關這些功能的詳細資料。
+您可以將 DNS 原則用於地理位置型流量管理、以一天的時間為基礎的智慧型 DNS 回應、管理設定為分割\-大腦部署的單一 DNS 伺服器、在 DNS 查詢上套用篩選等等。 下列專案提供有關這些功能的詳細資料。
 
 -   **應用程式負載平衡。** 當您已在不同位置部署應用程式的多個實例時，可以使用 DNS 原則來平衡不同應用程式實例之間的流量負載，以動態方式配置應用程式的流量負載。
 
--   **異地 @ no__t-以1Location 為基礎的流量管理。** 您可以使用 DNS 原則，允許主要和次要 DNS 伺服器根據用戶端和用戶端嘗試連線之資源的地理位置來回應 DNS 用戶端查詢，為用戶端提供最接近的 IP 位址resource. 
+-   **異地\-位置為基礎的流量管理。** 您可以使用 DNS 原則，允許主要和次要 DNS 伺服器根據用戶端和用戶端嘗試連線之資源的地理位置來回應 DNS 用戶端查詢，為用戶端提供最接近的 IP 位址resource. 
 
--   **分割大腦 DNS。** 使用 split @ no__t-0brain DNS 時，DNS 記錄會分割成相同 DNS 伺服器上的不同區域範圍，而且 DNS 用戶端會根據用戶端是內部或外部用戶端來接收回應。 您可以針對 Active Directory 整合區域或獨立 DNS 伺服器上的區域，設定 split @ no__t-0brain DNS。
+-   **分割大腦 DNS。** 使用 split\-大腦 DNS 時，DNS 記錄會分割成相同 DNS 伺服器上的不同區域範圍，而且 DNS 用戶端會根據用戶端是內部或外部用戶端接收回應。 您可以針對 Active Directory 整合區域或獨立 DNS 伺服器上的區域，設定分割\-大腦 DNS。
 
 -   **濾除.** 您可以設定 DNS 原則，根據您提供的準則建立查詢篩選器。 DNS 原則中的查詢篩選器可讓您設定 DNS 伺服器，以自訂的方式，根據傳送 DNS 查詢的 DNS 查詢和 DNS 用戶端進行回應。 
--   **鑒識.** 您可以使用 DNS 原則，將惡意的 DNS 用戶端重新導向至非 @ no__t 0existent 的 IP 位址，而不是將它們引導至他們嘗試連線的電腦。
+-   **鑒識.** 您可以使用 DNS 原則，將惡意的 DNS 用戶端重新導向至不\-的現有 IP 位址，而不是將它們引導至其嘗試連線的電腦。
 
 -   **以天為基礎的重新導向時間。** 您可以使用 DNS 原則，利用以當天時間為基礎的 DNS 原則，將應用程式流量分散到應用程式的不同地理位置上。 
   
@@ -75,7 +75,7 @@ ms.locfileid: "71406241"
   
 ## <a name="dane-support"></a>來支援
 
-您可以使用來支援 \(RFC 6394 和 6698 @ no__t-1 來指定您的 DNS 用戶端，應從哪些 CA 針對您的 DNS 伺服器所裝載的網功能變數名稱稱，頒發證書。 這可避免某種形式的攔截式攻擊，讓某人能夠損毀 DNS 快取，並將 DNS 名稱指向自己的 IP 位址。  
+您可以使用來支援 \(RFC 6394 和 6698\) 來指定您的 DNS 用戶端，應將憑證發佈到您的 DNS 伺服器所裝載之網功能變數名稱稱的 CA。 這可避免某種形式的攔截式攻擊，讓某人能夠損毀 DNS 快取，並將 DNS 名稱指向自己的 IP 位址。  
   
 例如，假設您使用名為 CA1 的知名授權單位所提供的憑證，在 www.contoso.com 上裝載使用 SSL 的安全網站。 有些人仍然可以從名為 CA2 的不同、不知名的憑證授權單位單位取得 www.contoso.com 的憑證。 然後，裝載假 www.contoso.com 網站的實體可能會損毀用戶端或伺服器的 DNS 快取，以將 www.contoto.com 指向其假的網站。 終端使用者將會看到來自 CA2 的憑證，而且可能只是確認它並聯機到假的網站。 透過來，用戶端會對 DNS 伺服器提出要求，以供 contoso.com 要求 TLSA 記錄，並瞭解 www.contoso.com 的憑證是否由 CA1 發出。 如果與另一個 CA 的憑證一起顯示，則會中止連線。  
   
@@ -150,7 +150,7 @@ Windows Server 2016 中引進了下列新的 Windows PowerShell Cmdlet 和參數
 - [DnsServer 模組](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
 - [Set-dnsclient 模組](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
 
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
   
 -   [DNS 用戶端的新功能](What-s-New-in-DNS-Client.md)  
   

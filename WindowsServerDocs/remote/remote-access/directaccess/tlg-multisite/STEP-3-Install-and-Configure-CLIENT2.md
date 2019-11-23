@@ -21,11 +21,11 @@ ms.locfileid: "71388324"
 ---
 # <a name="step-3-install-and-configure-client2"></a>步驟3安裝和設定 CLIENT2
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-CLIENT2 是 Windows 7 @ no__t-0 電腦，用來示範 Windows Server 2016 伺服器上執行之遠端存取的回溯相容性。  
+CLIENT2 是一部 Windows 7&reg; 的電腦，用來示範在 Windows Server 2016 伺服器上執行之遠端存取的回溯相容性。  
   
-1. 在 CLIENT2 上安裝作業系統。 在 CLIENT2 上安裝 Windows @ no__t-0 7 Enterprise 或 Windows @ no__t-1 7 旗艦版。  
+1. 在 CLIENT2 上安裝作業系統。 在 CLIENT2 上安裝 Windows&reg; 7 Enterprise 或 Windows&reg; 7 旗艦版。  
   
 2. 將 CLIENT2 加入 CORP 網域。 將 CLIENT2 加入 corp.contoso.com 網域。  
   

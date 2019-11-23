@@ -17,7 +17,7 @@ ms.locfileid: "71361075"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的健全狀況服務
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 健全狀況服務是 Windows Server 2016 中的新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
 
@@ -90,7 +90,7 @@ ms.locfileid: "71361075"
 
 健全狀況服務提供強制機制，將儲存空間直接存取所使用的元件限制為系統管理員或解決方案廠商所提供的支援元件檔。 這可以防止您或其他人誤用不支援的硬體，這有助於符合保固或支援合約的規定。 此功能目前僅限於實體磁片裝置，包括 Ssd、Hdd 和 NVMe 磁片磁碟機。 支援的元件檔可以限制型號、製造商（選擇性）和固件版本（選擇性）。
 
-### <a name="usage"></a>使用量  
+### <a name="usage"></a>用途  
 
 支援的元件檔使用以 XML 為靈感的語法。 建議您使用您慣用的文字編輯器（例如免費的[Visual Studio Code](http://code.visualstudio.com/)或記事本）來建立可儲存和重複使用的 XML 檔。
 
@@ -98,9 +98,9 @@ ms.locfileid: "71361075"
 
 檔有兩個獨立的區段： `Disks` 和 `Cache`。
 
-如果提供 `Disks` 區段，則只允許列出的磁片磁碟機（如 `Disk`）來加入集區。 任何未列出的磁片磁碟機都無法加入集區，這可有效地避免其在生產環境中使用。 如果此區段保留空白，則會允許任何磁片磁碟機加入集區。
+如果提供 `Disks` 區段，則只允許列出的磁片磁碟機（如 `Disk`）加入集區。 任何未列出的磁片磁碟機都無法加入集區，這可有效地避免其在生產環境中使用。 如果此區段保留空白，則會允許任何磁片磁碟機加入集區。
 
-如果提供 `Cache` 區段，則只會使用列出的磁片磁碟機（如 `CacheDisk`）來進行快取。 如果此區段保留空白，儲存空間直接存取會嘗試[根據媒體類型和匯流排類型來猜測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)。 此處所列的磁片磁碟機也應該列在 `Disks` 中。
+如果提供 `Cache` 區段，則只會使用列出的磁片磁碟機（如 `CacheDisk`）進行快取。 如果此區段保留空白，儲存空間直接存取會嘗試[根據媒體類型和匯流排類型來猜測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)。 此處所列的磁片磁碟機也應該列在 `Disks`中。
 
 >[!IMPORTANT]
 > 支援的元件檔並不會將追溯套用到已集區和使用中的磁片磁碟機。  
@@ -141,7 +141,7 @@ ms.locfileid: "71361075"
 
 ```
 
-若要列出多個磁片磁碟機，只要新增額外的 `<Disk>` 或 @no__t 1 標記即可。
+若要列出多個磁片磁碟機，只要新增額外的 `<Disk>` 或 `<CacheDisk>` 標記即可。
 
 若要在部署儲存空間直接存取時插入此 XML，請使用 `-XML` 參數：
 
@@ -170,7 +170,7 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 請參閱[健全狀況服務設定](health-service-settings.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [健全狀況服務報表](health-service-reports.md)
 - [健全狀況服務錯誤](health-service-faults.md)

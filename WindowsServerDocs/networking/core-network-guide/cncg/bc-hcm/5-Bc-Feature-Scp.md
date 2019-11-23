@@ -17,9 +17,9 @@ ms.locfileid: "71356353"
 ---
 # <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>安裝 BranchCache 功能並依據服務連接點設定託管快取伺服器
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-您可以使用此程式在託管快取伺服器 HCS1 上安裝 BranchCache 功能，並將伺服器設定為在 Active Directory Domain Services \(AD DS @ no__t-3 中註冊服務連接點 \(SCP @ no__t-1。
+您可以使用此程式在託管快取伺服器 HCS1 上安裝 BranchCache 功能，並將伺服器設定為在 Active Directory Domain Services \(AD DS\)中註冊服務連接點 \(SCP\)。
 
 當您在 AD DS 中註冊具有 SCP 的託管快取伺服器時，SCP 會允許已正確設定的用戶端電腦，藉由查詢 SCP 的 AD DS 來自動探索託管快取伺服器。 本指南稍後會提供如何設定用戶端電腦來執行此動作的指示。
 
@@ -50,11 +50,11 @@ ms.locfileid: "71356353"
   
     命令的結果會顯示 BranchCache 安裝所有層面的狀態。 以下是幾個 BranchCache 設定和每個專案的正確值：  
   
-    -   BranchCacheIsEnabled:True
+    -   BranchCacheIsEnabled： True
 
-    -   HostedCacheServerIsEnabled:True
+    -   HostedCacheServerIsEnabled： True
 
-    -   HostedCacheScpRegistrationEnabled:True
+    -   HostedCacheScpRegistrationEnabled： True
 
 4. 若要準備將您的資料封裝從內容伺服器複製到託管快取伺服器的步驟，請在託管快取伺服器上識別現有的共用，或建立新的資料夾並共用該資料夾，以便從您的內容伺服器進行存取。 在內容伺服器上建立資料套件之後，您會將資料套件複製到託管快取伺服器上的這個共用資料夾。
   

@@ -18,7 +18,7 @@ ms.locfileid: "71356164"
 ---
 # <a name="configure-the-cdp-and-aia-extensions-on-ca1"></a>在 CA1 上設定 CDP 及 AIA 延伸模組
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式，在 CA1 上設定憑證撤銷清單（CRL）發佈點（CDP）和授權單位資訊存取（AIA）設定。  
   
@@ -31,15 +31,15 @@ ms.locfileid: "71356164"
 2.  在 [憑證授權單位單位] 主控台樹中，以滑鼠右鍵按一下 [ **corp-CA1-CA**]，然後按一下 [**屬性**]。  
   
     > [!NOTE]  
-    > 如果您未將電腦命名為 CA1，而且您的功能變數名稱與此範例中的名稱不同，則 CA 的名稱會不同。 CA 名稱的格式為*domain*-*CAComputerName*-CA。  
+    > 如果您未將電腦命名為 CA1，而且您的功能變數名稱與此範例中的名稱不同，則 CA 的名稱會不同。 CA 名稱的格式為*domain*-*CAComputerName*-ca。  
   
-3.  按一下 [延伸] 索引標籤。請確定 [**選取延伸**] 是設定為 **[CRL 發佈點（CDP）** ]，然後在 [**指定使用者可以取得憑證撤銷清單（CRL）的位置**] 中，執行下列動作：  
+3.  按一下 [**擴充**功能] 索引標籤。請確認 [**選取延伸**] 已設定為 **[CRL 發佈點（CDP）** ]，然後在 [**指定使用者可以取得憑證撤銷清單（CRL）的位置**] 中，執行下列動作：  
   
-    1.  選取 `file://\\<ServerDNSName>\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` 的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
+    1.  選取 `file://\\<ServerDNSName>\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
   
-    2.  選取 `http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` 的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
+    2.  選取 `http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
   
-    3.  選取以路徑 `ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>` 開頭的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
+    3.  選取以 `ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>`路徑開頭的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
   
 4.  在 [**指定使用者可以從中取得憑證撤銷清單（CRL）的位置**] 中，按一下 [**新增**]。 [**新增位置**] 對話方塊隨即開啟。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "71356164"
   
 6.  在 [**擴充**功能] 索引標籤上，選取下列核取方塊：  
   
-    -   Crl 中的 @no__t 0Include。用戶端會使用此來尋找 Delta CRL 位置 @ no__t-0  
+    -   **包含在 Crl 中。用戶端會使用此來尋找 Delta CRL 位置**  
   
     -   **包含在已頒發證書的 CDP 延伸中**  
   
@@ -63,11 +63,11 @@ ms.locfileid: "71356164"
   
 10. 將 [**選取延伸**] 變更為 [**授權單位資訊存取（AIA）** ]，然後在 [**指定使用者可以取得憑證撤銷清單（CRL）的位置**] 中，執行下列動作：  
   
-    1.  選取以路徑 `ldap:///CN=<CATruncatedName>,CN=AIA,CN=Public Key Services` 開頭的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
+    1.  選取以 `ldap:///CN=<CATruncatedName>,CN=AIA,CN=Public Key Services`路徑開頭的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
   
-    2.  選取 `http://<ServerDNSName>/CertEnroll/<ServerDNSName>_<CaName><CertificateName>.crt` 的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
+    2.  選取 `http://<ServerDNSName>/CertEnroll/<ServerDNSName>_<CaName><CertificateName>.crt`的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
   
-    3.  選取 `file://\\<ServerDNSName>\CertEnroll\<ServerDNSName><CaName><CertificateName>.crt` 的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
+    3.  選取 `file://\\<ServerDNSName>\CertEnroll\<ServerDNSName><CaName><CertificateName>.crt`的專案，然後按一下 [**移除**]。 在 [**確認移除**] 中，按一下 **[是]** 。  
   
 11. 在 [**指定使用者可以從此 CA 取得憑證的位置**] 中，按一下 [**新增**]。 [**新增位置**] 對話方塊隨即開啟。  
   

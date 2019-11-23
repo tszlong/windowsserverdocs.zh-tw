@@ -18,11 +18,11 @@ ms.locfileid: "71366886"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>規劃儲存空間直接存取中的磁碟區
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 此主題提供如何規劃儲存空間直接存取中的磁碟區，符合您工作負載的效能與容量需要，包括選擇它們的系統、復原類型和大小。
 
-## <a name="review-what-are-volumes"></a>檢閱什麼是磁片區
+## <a name="review-what-are-volumes"></a>檢閱：什麼是磁碟區
 
 磁片區是您放置工作負載所需之檔案的位置，例如 Hyper-v 虛擬機器的 VHD 或 VHDX 檔案。 磁碟區結合儲存集區的磁碟機，導入儲存空間直接存取的容錯、延展性和效能好處。
 
@@ -31,7 +31,7 @@ ms.locfileid: "71366886"
 
 ![what-are-volumes](media/plan-volumes/what-are-volumes.png)
 
-所有磁碟區可以由叢集中所有伺服器同時存取。 建立之後，它們會顯示在所有伺服器上的**C:\ClusterStorage @ no__t-1** 。
+所有磁碟區可以由叢集中所有伺服器同時存取。 建立之後，它們會顯示在所有伺服器上的**C:\ClusterStorage\\** 。
 
 ![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "71366886"
 
 我們建議您將磁片區總數限制為：
 
-| Windows Server 2016          | Windows Server Standard 2012 R2          |
+| Windows Server 2016          | Windows Server 2019          |
 |------------------------------|------------------------------|
 | 每個叢集最多32個磁片區 | 每個叢集最多64個磁片區 |
 
@@ -69,7 +69,7 @@ ms.locfileid: "71366886"
 
 ![two-way-mirror](media/plan-volumes/two-way-mirror.png)
 
-Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之伺服器之間的資料復原，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使其中一部伺服器正在重新開機或無法使用，嵌套也會提供資料復原。 其儲存效率為 25%，具有嵌套的雙向鏡像，以及大約 35-40% 的嵌套鏡像加速同位。 Nested 復原可以安全地容忍兩個硬體失敗（兩個磁片磁碟機，或是伺服器和其餘伺服器上的磁片磁碟機）。 基於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩個伺服器叢集的生產部署上使用嵌套的復原功能。 如需詳細資訊，請參閱[Nested 復原](nested-resiliency.md)。
+Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之伺服器之間的資料復原，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使其中一部伺服器正在重新開機或無法使用，嵌套也會提供資料復原。 其儲存效率為25%，具有嵌套的雙向鏡像，以及大約35-40% 的嵌套鏡像加速同位。 Nested 復原可以安全地容忍兩個硬體失敗（兩個磁片磁碟機，或是伺服器和其餘伺服器上的磁片磁碟機）。 基於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩個伺服器叢集的生產部署上使用嵌套的復原功能。 如需詳細資訊，請參閱[Nested 復原](nested-resiliency.md)。
 
 ![嵌套鏡像加速同位](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
@@ -83,7 +83,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 
 有四部以上的伺服器，您可以選擇每個磁片區，不論是使用三向鏡像、雙重同位檢查（通常稱為「抹除編碼」），或混用鏡像加速同位的兩個。
 
-雙同位提供與三向鏡像相同的容錯功能，但具有更佳的儲存效率。 有四部伺服器，其儲存體效率 50.0% —若要儲存 2 TB 的資料，您需要在存放集區中使用 4 TB 的實體儲存體容量。 使用七部伺服器時增加到 66.7% 儲存效率，並持續增至 80.0% 儲存效率。 缺點是同位編碼大量耗用運算資源，這可能會限制其效能。
+雙同位提供與三向鏡像相同的容錯功能，但具有更佳的儲存效率。 有四部伺服器，其儲存體效率50.0% —若要儲存 2 TB 的資料，您需要在存放集區中使用 4 TB 的實體儲存體容量。 使用七部伺服器時增加到 66.7% 儲存效率，並持續增至 80.0% 儲存效率。 缺點是同位編碼大量耗用運算資源，這可能會限制其效能。
 
 ![dual-parity](media/plan-volumes/dual-parity.png)
 
@@ -91,9 +91,9 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 
 | 復原類型 | 容量效率 | 速度 | 工作負載 |
 | ------------------- | ----------------------  | --------- | ------------- |
-| **鏡像**         | ![儲存體效率顯示 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向鏡像：33% <br>雙向鏡像：50%     |![顯示 100% 的效能](media/plan-volumes/three-way-mirror-perf.png)<br> 最高效能  | 虛擬化工作負載<br> 資料庫<br>其他高效能工作負載 |
-| **鏡像加速的同位** |![顯示大約 50% 的儲存體效率](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 視鏡像和同位的比例而定 | ![顯示大約 20% 的效能](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>速度比鏡像慢很多，但最多兩倍的雙同位檢查速度<br> 適用于大型順序寫入和讀取 | 封存和備份<br> 虛擬桌面基礎結構     |
-| **雙同位**               | ![顯示大約 80% 的儲存體效率](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4部伺服器：50% <br>16部伺服器：最多 80% | ![顯示大約 10% 的效能](media/plan-volumes/dual-parity-perf.png)<br>寫入時 CPU 使用量 & 最高的 i/o 延遲<br> 適用于大型順序寫入和讀取 | 封存和備份<br> 虛擬桌面基礎結構  |
+| **鏡像**         | ![儲存體效率顯示33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向鏡像：33% <br>雙向鏡像：50%     |![顯示100% 的效能](media/plan-volumes/three-way-mirror-perf.png)<br> 最高效能  | 虛擬化工作負載<br> 資料庫<br>其他高效能工作負載 |
+| **鏡像加速的同位** |![顯示大約50% 的儲存體效率](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 視鏡像和同位的比例而定 | ![顯示大約20% 的效能](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>速度比鏡像慢很多，但最多兩倍的雙同位檢查速度<br> 適用于大型順序寫入和讀取 | 封存和備份<br> 虛擬桌面基礎結構     |
+| **雙同位**               | ![顯示大約80% 的儲存體效率](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4部伺服器：50% <br>16部伺服器：最多80% | ![顯示大約10% 的效能](media/plan-volumes/dual-parity-perf.png)<br>寫入時 CPU 使用量 & 最高的 i/o 延遲<br> 適用于大型順序寫入和讀取 | 封存和備份<br> 虛擬桌面基礎結構  |
 
 #### <a name="when-performance-matters-most"></a>當效能是最重要時
 
@@ -128,7 +128,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 
 我們建議您將每個磁片區的大小限制為：
 
-| Windows Server 2016 | Windows Server Standard 2012 R2 |
+| Windows Server 2016 | Windows Server 2019 |
 | ------------------- | ------------------- |
 | 最高 32 TB         | 最高 64 TB         |
 
@@ -193,13 +193,13 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
    >[!TIP]
    > 您不需要立即建立所有磁碟區。 您隨時可以延伸磁碟區，或稍後建立新的磁碟區。
 
-為了簡化，這整個範例使用十進位 (以 10 為底數) 單位，表示 1 TB = 1,000,000,000,000 位元組。 不過，Windows 中的儲存數量以二進位 (以 2 為底數) 單位表示。 例如，每個 2 TB 磁碟機在 Windows 中顯示為 1.82 TiB。 同樣地，128 TB 儲存集區顯示為 116.41 TiB。 這是預期行為。
+為了簡化，這整個範例使用十進位 (以 10 為底數) 單位，表示 1 TB = 1,000,000,000,000 位元組。 不過，Windows 中的儲存數量以二進位 (以 2 為底數) 單位表示。 例如，每個 2 TB 磁碟機在 Windows 中顯示為 1.82 TiB。 同樣地，128 TB 儲存集區顯示為 116.41 TiB。 此為預期性行為。
 
-## <a name="usage"></a>使用量
+## <a name="usage"></a>用途
 
 請參閱[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 
-### <a name="see-also"></a>另請參閱
+### <a name="see-also"></a>請參閱
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [選擇儲存空間直接存取的磁片磁碟機](choosing-drives.md)

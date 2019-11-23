@@ -22,7 +22,7 @@ ms.locfileid: "71382446"
 ---
 # <a name="auditpol-backup"></a>auditpol 備份
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 備份系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及逗號分隔值（CSV）文字檔的所有 [審核選項]。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71382446"
 ```
 auditpol /backup /file:<filename>
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 | 參數 |                                 描述                                 |
 |-----------|-----------------------------------------------------------------------------|

@@ -21,7 +21,7 @@ ms.locfileid: "71394508"
 ---
 # <a name="directaccess"></a>DirectAccess
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，以取得 DirectAccess 的簡短總覽，包括支援 DirectAccess 的伺服器和用戶端作業系統，以及適用于 Windows Server 2016 其他 DirectAccess 檔的連結。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71394508"
 DirectAccess 可讓遠端使用者連線到組織網路資源，而不需要傳統虛擬私人網路（VPN）連線。 使用 DirectAccess 連線時，遠端用戶端電腦一律會連接到您的組織-在 VPN 連線需要時，遠端使用者不需要啟動和停止連接。 此外，您的 IT 系統管理員可以在每次執行和連線到網際網路時，管理 DirectAccess 用戶端電腦。
 
 >[!IMPORTANT]
->請勿嘗試在 Microsoft Azure 的虛擬機器上部署遠端存取 \(VM @ no__t-1。 不支援在 Microsoft Azure 中使用遠端存取。 您無法在 Azure VM 中使用「遠端存取」來部署 VPN、DirectAccess，或 Windows Server 2016 或舊版 Windows Server 中的任何其他遠端存取功能。 如需詳細資訊，請參閱[Microsoft Microsoft Azure 虛擬機器的伺服器軟體支援](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
+>請勿嘗試在 Microsoft Azure 的虛擬機器 \(VM\) 上部署遠端存取。 不支援在 Microsoft Azure 中使用遠端存取。 您無法在 Azure VM 中使用「遠端存取」來部署 VPN、DirectAccess，或 Windows Server 2016 或舊版 Windows Server 中的任何其他遠端存取功能。 如需詳細資訊，請參閱[Microsoft Microsoft Azure 虛擬機器的伺服器軟體支援](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
   
 DirectAccess 僅為加入網域的用戶端提供支援，包括 DirectAccess 的作業系統支援。  
   

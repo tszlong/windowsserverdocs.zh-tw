@@ -32,12 +32,12 @@ AD FS 表單登入目前不會反映 Azure/O365 登入體驗。  為了為使用
 
 ### <a name="to-enable-the-new-azure-ad-ux-web-theme-in-ad-fs"></a>若要在 AD FS 中啟用新的 Azure AD UX web 主題
 1. 以系統管理員身分啟動 PowerShell
-2. 使用 PowerShell 建立新的 web 主題：`New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"}`
-3. 使用 PowerShell 將新主題設定為作用中主題：`Set-AdfsWebConfig -ActiveThemeName custom`
+2. 使用 PowerShell 建立新的 web 主題： `New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"}`
+3. 使用 PowerShell 將新主題設定為作用中主題： `Set-AdfsWebConfig -ActiveThemeName custom`
    ![PowerShell](media/Azure-UX-Web-Theme-in-AD-FS/two.png)
 4. 前往 HTTPs://<AD FS name.domain>/adfs/ls/iDPInitiatedsignon.htm ![登入來測試登入](media/Azure-UX-Web-Theme-in-AD-FS/three.png)
 
-> !下您必須確定已啟用 iDPInitiatedsignon.aspx)。  預設不會啟用此功能。  若要啟用 iDPInitiatedsignon.aspx)，請使用下列 PowerShell 命令：`Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
+> !下您必須確定已啟用 iDPInitiatedsignon.aspx)。  預設不會啟用此功能。  若要啟用 iDPInitiatedsignon.aspx)，請使用下列 PowerShell 命令： `Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
 
 ## <a name="image-recommendations"></a>映射建議
 啟用中央 UI 可讓您將相同的影像用於背景和標誌，而您可能已經有 Azure Active Directory 公司商標。 一般來說，大小、比例和格式的相同建議也適用。
@@ -46,13 +46,13 @@ AD FS 表單登入目前不會反映 Azure/O365 登入體驗。  為了為使用
 
 描述 | 限制式 | 建議
 ------- | ------- | ----------
-標誌會顯示在 [登入] 面板頂端。 | 透明 JPG 或 PNG<br>最大高度：36 px<br>最大寬度：245 px | 請在這裡使用您組織的標誌。<br>使用透明影像。 請不要假設背景是白色。<br>請勿在影像中的標誌周圍加上填補，或您的標誌看起來不會太小。
+標誌會顯示在 [登入] 面板頂端。 | 透明 JPG 或 PNG<br>最大高度： 36 px<br>寬度上限： 245 px | 請在這裡使用您組織的標誌。<br>使用透明影像。 請不要假設背景是白色。<br>請勿在影像中的標誌周圍加上填補，或您的標誌看起來不會太小。
 
 ### <a name="background"></a>背景
 
 描述 | 限制式 | 建議
 ------- | ------- | ----------
-此選項會出現在登入頁面的背景中，錨定到可查看空間的中央，並縮放和裁剪以填滿瀏覽器視窗。    <br>在行動電話之類的窄螢幕上，不會顯示此影像。<br>載入頁面時，會在此影像上套用具有0.55 不透明度的黑色 mask。 | JPG 或 PNG<br>影像維度：1920x1080 px<br>檔案大小：&lt;300 KB | <br>使用沒有強式主體焦點的影像。 不透明的登入表單會出現在此影像的中央，而且可以根據瀏覽器視窗的大小來涵蓋影像的任何部分。<br>將檔案大小保持小，以確保快速載入時間。
+此選項會出現在登入頁面的背景中，錨定到可查看空間的中央，並縮放和裁剪以填滿瀏覽器視窗。    <br>在行動電話之類的窄螢幕上，不會顯示此影像。<br>載入頁面時，會在此影像上套用具有0.55 不透明度的黑色 mask。 | JPG 或 PNG<br>影像維度： 1920x1080 px<br>檔案大小： &lt; 300 KB | <br>使用沒有強式主體焦點的影像。 不透明的登入表單會出現在此影像的中央，而且可以根據瀏覽器視窗的大小來涵蓋影像的任何部分。<br>將檔案大小保持小，以確保快速載入時間。
 
 ## <a name="next-steps"></a>後續步驟
 - [Windows Server 2016 中的 AD FS 自訂](AD-FS-Customization-in-Windows-Server-2016.md)

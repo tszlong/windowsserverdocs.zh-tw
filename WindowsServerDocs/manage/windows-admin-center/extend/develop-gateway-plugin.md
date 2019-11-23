@@ -37,10 +37,10 @@ Windows 管理中心閘道外掛程式可讓您從工具或解決方案的 UI，
 
 ## <a name="create-a-gateway-plugin-c-library"></a>建立閘道外掛程式（C#程式庫）
 
-若要建立自訂閘道外掛程式，請C#建立新的類別，以從 ```Microsoft.ManagementExperience.FeatureInterfaces``` 命名空間中執行 @no__t 1 介面。  
+若要建立自訂閘道外掛程式，請C#建立新的類別，以從 ```Microsoft.ManagementExperience.FeatureInterfaces``` 命名空間中執行 ```IPlugIn``` 介面。  
 
 > [!NOTE]
-> 舊版 SDK 中提供的 @no__t 0 介面現在標示為過時。  所有閘道外掛程式開發應該使用 IPlugIn （或選擇性的 HttpPlugIn 抽象類別）。
+> 舊版 SDK 中提供的 ```IFeature``` 介面現在標示為已淘汰。  所有閘道外掛程式開發應該使用 IPlugIn （或選擇性的 HttpPlugIn 抽象類別）。
 
 ### <a name="download-sample-from-github"></a>從 GitHub 下載範例
 
@@ -54,22 +54,22 @@ Windows 管理中心閘道外掛程式可讓您從工具或解決方案的 UI，
 
 藉由將您的自訂閘道外掛程式 DLL 載入 Windows 管理中心閘道程式來進行測試。
 
-Windows 系統管理中心會在目前電腦的 [應用程式資料] 資料夾中，尋找 @no__t 0 資料夾中的所有外掛程式（使用 SpecialFolder 列舉的 CommonApplicationData 值）。 在 Windows 10 上，此位置為 ```C:\ProgramData\Server Management Experience```。  如果 @no__t 0 資料夾尚未存在，您可以自行建立資料夾。
+Windows 管理中心會在目前電腦的 [應用程式資料] 資料夾中的 ```plugins``` 資料夾內尋找所有外掛程式（使用 SpecialFolder 列舉的 CommonApplicationData 值）。 在 Windows 10 上，此位置為 ```C:\ProgramData\Server Management Experience```。  如果 [```plugins```] 資料夾尚不存在，您可以自行建立資料夾。
 
 > [!NOTE]
 > 您可以藉由更新 "StaticsFolder" 設定值，覆寫偵錯工具組建中的外掛程式位置。 如果您是在本機進行偵錯工具，則此設定位於桌面解決方案的 app.config 中。 
 
-在 [外掛程式] 資料夾中（在此範例中，```C:\ProgramData\Server Management Experience\plugins```）
+在 [外掛程式] 資料夾中（在此範例中為 ```C:\ProgramData\Server Management Experience\plugins```）
 
-* 建立新資料夾，其名稱與您自訂閘道外掛程式 DLL 中 ```Feature``` 的 ```Name``` 屬性值相同（在我們的範例專案中，```Name``` 為 "Sample Uno"）
+* 建立新資料夾，其名稱與您自訂閘道外掛程式 DLL 中 ```Feature``` 的 ```Name``` 屬性值相同（在我們的範例專案中，```Name``` 是 "Sample Uno"）
 * 將您的自訂閘道外掛程式 DLL 檔案複製到這個新資料夾
 * 重新開機 Windows 系統管理中心進程
 
-Windows 系統管理員程式重新開機之後，您將能夠在您的自訂閘道外掛程式 DLL 中執行 Api，方法是發出 GET、PUT、PATCH、DELETE 或 POST 給 ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
+Windows 系統管理員進程重新開機之後，您將能夠在自訂閘道外掛程式 DLL 中執行 Api，方法是發出 GET、PUT、PATCH、DELETE 或 POST 至 ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
 
 ### <a name="optional-attach-to-plugin-for-debugging"></a>選擇性：附加至外掛程式以進行偵錯工具
 
-在 Visual Studio 2017 的 [偵錯工具] 功能表中，選取 [附加至進程]。 在下一個視窗中，流覽 [可使用的進程] 清單，選取 [SMEDesktop]，然後按一下 [附加]。 偵錯工具啟動之後，您可以將中斷點放在您的功能程式碼中，然後透過上述的 URL 格式進行練習。 針對我們的範例專案（功能名稱："Sample Uno"） URL 為： "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+在 Visual Studio 2017 的 [偵錯工具] 功能表中，選取 [附加至進程]。 在下一個視窗中，流覽 [可使用的進程] 清單，選取 [SMEDesktop]，然後按一下 [附加]。 偵錯工具啟動之後，您可以將中斷點放在您的功能程式碼中，然後透過上述的 URL 格式進行練習。 針對我們的範例專案（功能名稱： "Sample Uno"），URL 為： "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>使用 Windows Admin Center CLI 建立工具擴充功能 ##
 

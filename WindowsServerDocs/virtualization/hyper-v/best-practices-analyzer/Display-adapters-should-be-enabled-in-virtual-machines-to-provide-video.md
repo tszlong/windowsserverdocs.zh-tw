@@ -19,7 +19,7 @@ ms.locfileid: "71364914"
 ---
 # <a name="display-adapters-should-be-enabled-in-virtual-machines-to-provide-video-capabilities"></a>應在虛擬機器中啟用顯示介面卡，以提供影片功能
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 
   
@@ -27,10 +27,10 @@ ms.locfileid: "71364914"
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -44,7 +44,7 @@ Microsoft 虛擬機器匯流排 Video 裝置是針對與 Hyper-v 虛擬機器搭
   
 *下列虛擬機器的影片效能將會降低：*  
   
-@no__t 0list 的虛擬機器名稱 >  
+\<虛擬機器名稱清單 >  
   
 ## <a name="resolution"></a>解析度  
   

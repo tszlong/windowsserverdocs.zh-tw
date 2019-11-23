@@ -22,11 +22,11 @@ ms.locfileid: "71406040"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>虛擬網路中的客體叢集
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 連線到虛擬網路的虛擬機器只能使用網路控制站已指派來在網路上進行通訊的 IP 位址。  需要浮動 IP 位址的叢集技術（例如 Microsoft 容錯移轉叢集）需要一些額外的步驟，才能正常運作。
 
-讓浮動 IP 得以連線的方法，是使用軟體 Load Balancer \(SLB @ no__t-1 虛擬 IP \(VIP @ no__t-3。  軟體負載平衡器必須在該 IP 的埠上設定健康情況探查，讓 SLB 將流量導向目前具有該 IP 的電腦。
+讓浮動 IP 得以連線的方法，是使用軟體 Load Balancer \(SLB\) 虛擬 IP \(VIP\)。  軟體負載平衡器必須在該 IP 的埠上設定健康情況探查，讓 SLB 將流量導向目前具有該 IP 的電腦。
 
 
 ## <a name="example-load-balancer-configuration"></a>範例：負載平衡器設定
@@ -50,7 +50,7 @@ ms.locfileid: "71406040"
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. 建立 front @ no__t-0end IP 位址。
+3. 建立 front\-的結束 IP 位址。
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -63,7 +63,7 @@ ms.locfileid: "71406040"
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. 建立 back @ no__t-0end 集區以包含叢集節點。
+4. 建立後端\-結束集區，以包含叢集節點。
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -132,7 +132,7 @@ ms.locfileid: "71406040"
 
 9. 選擇性如果您使用的是 Microsoft 容錯移轉叢集，請繼續進行下一個範例。 
 
-## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>範例 2：設定 Microsoft 容錯移轉叢集
+## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>範例2：設定 Microsoft 容錯移轉叢集
 
 您可以使用下列步驟來設定容錯移轉叢集。
 

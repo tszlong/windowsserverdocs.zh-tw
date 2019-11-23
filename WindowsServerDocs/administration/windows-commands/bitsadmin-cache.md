@@ -22,7 +22,7 @@ ms.locfileid: "71381859"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin 快取
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="syntax"></a>語法
 
@@ -39,11 +39,11 @@ bitsadmin /Cache /GetExpirationtime
 bitsadmin /Cache /SetExpirationtime
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |-------|--------|
-|[bitsadmin cache and help](bitsadmin-cache-and-help.md)|顯示 \/Cache 參數的 @ no__t-0line 使用命令。|
+|[bitsadmin cache and help](bitsadmin-cache-and-help.md)|顯示 \/快取參數的命令\-行使用方式。|
 |[bitsadmin cache and clear](bitsadmin-cache-clear.md)|清除本機快取。|
 |[bitsadmin cache and delete](bitsadmin-cache-and-delete.md)|刪除快取專案。|
 |[bitsadmin cache and deleteurl](bitsadmin-cache-and-deleteurl.md)|刪除指定 URL 的所有快取專案。|

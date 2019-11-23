@@ -18,12 +18,12 @@ ms.locfileid: "71407999"
 ---
 # <a name="planning-your-deployment"></a>規劃您的部署
 
-當您規劃 cross @ no__t-0organizational \(federation @ no__t-2based @ no__t-3 共同作業使用 Active Directory 同盟服務 \(AD FS @ no__t-5 時，請先判斷您的組織是否會裝載要由其他使用者存取的 Web 資源網際網路上的組織，或如果您將可存取組織中員工的 Web 資源。 這項決定會影響您部署 AD FS 的方式，而且它是規劃 AD FS 基礎結構的基礎。  
+當您使用 Active Directory 同盟服務 \(AD FS\)來規劃跨\-的組織 \(同盟\-\) 共同作業時，請先判斷您的組織是否會裝載網路資源，以供其他組織透過網際網路存取，或是您將為組織中的員工提供 Web 資源的存取權。 這項決定會影響您部署 AD FS 的方式，而且它是規劃 AD FS 基礎結構的基礎。  
   
 > [!NOTE]  
 > 請確定所有合作對象清楚瞭解組織在同盟協議中所扮演的角色。  
   
-在同盟[網頁 SSO 設計](Federated-Web-SSO-Design.md)中，AD FS 會在 AD FS 管理 snap @ no__t-4 英吋 @ no__t-5 和*資源夥伴*\(also *中，使用帳戶夥伴 @no__t 2also，稱為「識別提供者」。* AD FS Management snap @ no__t-9in @ no__t-10 中的信賴憑證者，可協助區分從裝載 Web @ no__t-no__t 資源 @no__t 13based 資源的組織，將裝載帳戶的組織 @no__t 11 帳戶夥伴 @ 14the-12partner @ no__t-15。  
+針對同盟[網頁 SSO 設計](Federated-Web-SSO-Design.md)，AD FS 會使用*帳戶夥伴*\(這類詞彙，在\) 和*資源夥伴*的 AD FS 管理嵌入式\-管理單元中也稱為*識別提供者*，\(中的 AD FS 管理嵌入式管理單元\-也稱為「*信賴*憑證者」，以協助區別主控\) 帳戶夥伴 \(組織的組織，\)資源夥伴\)。\-\(  
   
 在 [Web SSO Design](Web-SSO-Design.md)中，組織會同時作為帳戶夥伴和資源夥伴角色，因為它提供其使用者其應用程式的存取權。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "71407999"
   
 -   [在資源夥伴組織中部署 AD FS](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
   
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 
 

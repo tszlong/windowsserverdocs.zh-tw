@@ -22,7 +22,7 @@ ms.locfileid: "71380763"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-設定作業的存取控制清單（ACL）傳播旗標。 旗標指出您想要使用所要下載的檔案來維護擁有者和 ACL 資訊。 例如，若要使用檔案來維護擁有者和群組，請  to `OG` 中設定 **旗標**。
+設定作業的存取控制清單（ACL）傳播旗標。 旗標指出您想要使用所要下載的檔案來維護擁有者和 ACL 資訊。 例如，若要以檔案維護擁有者和群組，請將 **旗標** 設定為 `OG`。
 
 ## <a name="syntax"></a>語法
 
@@ -30,12 +30,12 @@ ms.locfileid: "71380763"
 bitsadmin /SetAclFlags <Job> <Flags>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
-|Flags|指定下列一個或多個旗標值：</br>I/O使用檔案複製擁有者資訊。</br>G使用 file 複製群組資訊。</br>D使用 file 複製 DACL 資訊。</br>-S：使用 file 複製 SACL 資訊。|
+|Flags|指定下列一個或多個旗標值：</br>-O：使用檔案複製擁有者資訊。</br>-G：使用 file 複製群組資訊。</br>-D：使用 file 複製 DACL 資訊。</br>-S：使用 file 複製 SACL 資訊。|
 
 ## <a name="remarks"></a>備註
 

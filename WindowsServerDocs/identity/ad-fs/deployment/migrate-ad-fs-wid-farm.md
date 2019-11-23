@@ -35,11 +35,11 @@ ms.locfileid: "71408248"
 您可以使用 [ **AD FS 同盟伺服器設定] Wizard** ，將同盟伺服器新增到 WID 伺服器陣列，以建立原始的 AD FS 設定。 如需詳細資訊，請參閱[將同盟伺服器新增至同盟伺服器陣列](add-a-federation-server-to-a-federation-server-farm.md)。  
   
 > [!NOTE]
-> 當您到達 [ **AD FS 同盟伺服器設定] Wizard**中的 [**指定主要同盟伺服器和服務帳戶**] 頁面時，請輸入 WID 伺服器陣列的主要同盟伺服器名稱，並務必輸入服務帳戶準備 AD FS 遷移時所記錄的資訊。 如需詳細資訊，請參閱[準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-a-wid-farm.md)。 
+> 當您到達 [ **AD FS 同盟伺服器設定] Wizard**中的 [**指定主要同盟伺服器和服務帳戶**] 頁面時，請輸入 WID 伺服器陣列的主要同盟伺服器名稱，並務必輸入您在準備 AD FS 遷移時所記錄的服務帳戶資訊。 如需詳細資訊，請參閱[準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-a-wid-farm.md)。 
 >  
 > 當您到達 [**指定同盟服務名稱**] 頁面時，請務必選取您在[準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-a-wid-farm.md)的「準備遷移 WID 伺服器陣列」中所記錄的同一個 SSL 憑證。  
   
-5. 更新這個伺服器上您的 AD FS 網頁。 如果您在準備進行遷移時備份了自訂的 AD FS 網頁，則需要使用備份資料來覆寫在 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁，這是 AD FS 的結果。Windows Server 2012 上的設定。  
+5. 更新這個伺服器上您的 AD FS 網頁。 當您準備進行遷移時，如果您已備份自訂的 AD FS 網頁，則需要使用備份資料來覆寫 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁，做為 Windows Server 2012 上 AD FS 設定的結果。  
   
 6. 將您剛升級至 Windows Server 2012 的伺服器新增至負載平衡器。  
   
@@ -65,15 +65,15 @@ ms.locfileid: "71408248"
 >  
 > 當您到達 [**指定同盟服務名稱**] 頁面時，請務必選取您在[準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-a-wid-farm.md)中所記錄的同一個 SSL 憑證。  
   
-13. 在 WID 伺服器陣列中的最後一部伺服器上更新您的 AD FS 網頁。 當您準備進行遷移時，如果您已備份自訂的 AD FS 網頁，請使用備份資料來覆寫在 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁，做為 AD FS 的結果Windows Server 2012 上的設定。  
+13. 在 WID 伺服器陣列中的最後一部伺服器上更新您的 AD FS 網頁。 當您準備進行遷移時，如果您已備份自訂的 AD FS 網頁，請使用備份資料來覆寫 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁，做為 Windows Server 2012 上 AD FS 設定的結果。  
   
 14. 將您剛升級至 Windows Server 2012 的 WID 伺服器陣列的最後一部伺服器新增至負載平衡器。  
   
 15. 還原任何剩餘的 AD FS 自訂項目，例如自訂屬性存放區。  
   
 ## <a name="next-steps"></a>後續步驟
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)

@@ -17,7 +17,7 @@ ms.locfileid: "71369805"
 ---
 # <a name="create-a-failover-cluster"></a>建立容錯移轉叢集
 
->適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012
+>適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012
 
 這個主題示範如何使用容錯移轉叢集管理員嵌入式管理單元或 Windows PowerShell 建立容錯移轉叢集。 這個主題涵蓋一般部署，會在 Active Directory 網域服務 (AD DS) 中建立叢集的電腦物件及其關聯的叢集角色。 如果您要部署儲存空間直接存取叢集，請改為參閱[部署儲存空間直接存取](../storage/storage-spaces/deploy-storage-spaces-direct.md)。
 
@@ -25,7 +25,7 @@ ms.locfileid: "71369805"
 
 #### <a name="checklist-create-a-failover-cluster"></a>檢查清單：建立容錯移轉叢集
 
-| 狀態 | 工作 | 參考資料 |
+| 狀態 | 工作 | 參考 |
 | ---    | ---  | ---       |
 | ☐    | 確認先決條件 | [驗證必要條件](#verify-the-prerequisites) |
 | ☐    | 在想要新增為叢集節點的每個伺服器上安裝容錯移轉叢集功能 | [安裝容錯移轉叢集功能](#install-the-failover-clustering-feature) |
@@ -88,7 +88,7 @@ ms.locfileid: "71369805"
 1. 在已從遠端伺服器管理工具安裝了容錯移轉叢集管理工具的電腦上，或是在安裝了容錯移轉叢集功能的伺服器上，啟動 [容錯移轉叢集管理員]。 若要在伺服器上執行此動作，請啟動伺服器管理員，然後在 [**工具**] 功能表上，選取 [**容錯移轉叢集管理員**]。
 2. 在 [**容錯移轉叢集管理員**] 窗格的 [**管理**] 底下，選取 [**驗證**設定]。
 3. 在 [**開始之前**] 頁面上，選取 **[下一步]** 。
-4. 在 [**選取伺服器或**叢集] 頁面的 [**輸入名稱**] 方塊中，輸入您計畫新增為容錯移轉叢集節點之伺服器的 NetBIOS 名稱或完整功能變數名稱，然後選取 [**新增**]。 對您要新增的每部伺服器重複此步驟。 若要同時新增多部伺服器，請以逗號或分號分隔名稱。 例如，以 `server1.contoso.com, server2.contoso.com` 的格式輸入名稱。 完成後，選取 **[下一步]** 。
+4. 在 [**選取伺服器或**叢集] 頁面的 [**輸入名稱**] 方塊中，輸入您計畫新增為容錯移轉叢集節點之伺服器的 NetBIOS 名稱或完整功能變數名稱，然後選取 [**新增**]。 對您要新增的每部伺服器重複此步驟。 若要同時新增多部伺服器，請以逗號或分號分隔名稱。 例如，輸入 `server1.contoso.com, server2.contoso.com`格式的名稱。 完成後，選取 **[下一步]** 。
 5. 在 [**測試選項**] 頁面上，選取 [**執行所有測試（建議）** ]，然後選取 **[下一步]** 。
 6. 在 [**確認**] 頁面上，選取 **[下一步]** 。
 
@@ -123,7 +123,7 @@ ms.locfileid: "71369805"
     1. 在 [叢集名稱] 方塊中，輸入您要用來管理叢集的名稱。 執行這個動作之前，請檢閱下列資訊：
         
           - 叢集建立期間，此名稱會在 AD DS 中登錄為叢集電腦物件 (也稱為「叢集名稱物件」 或「CNO」)。 如果您指定叢集的 NetBIOS 名稱，就會在叢集節點電腦物件所在的相同位置建立 CNO。 這可以是預設的電腦容器或 OU。
-          - 若要為 CNO 指定不同的位置，您可以在 [叢集名稱] 方塊中輸入 OU 的辨別名稱。 例如: *CN=ClusterName, OU=Clusters, DC=Contoso, DC=com*。
+          - 若要為 CNO 指定不同的位置，您可以在 [叢集名稱] 方塊中輸入 OU 的辨別名稱。 例如： *CN=ClusterName, OU=Clusters, DC=Contoso, DC=com*。
           - 如果網域系統管理員已在不同於叢集節點所在的其他 OU 中預先設置 CNO，請指定網域系統管理員提供的辨別名稱。
     2. 如果伺服器沒有設定使用 DHCP 的網路介面卡，您必須為容錯移轉叢集設定一或多個靜態 IP 位址。 選取您想要用於叢集管理的每個網路旁邊的核取方塊。 選取所選網路旁邊的 [**位址**] 欄位，然後輸入您要指派給叢集的 IP 位址。 此 IP 位址 (或多個位址) 會與網域名稱系統 (DNS) 的叢集名稱相關聯。
     3. 完成後，選取 **[下一步]** 。
@@ -156,7 +156,7 @@ ms.locfileid: "71369805"
    | ---------       | ---------                    |
    | 命名空間伺服器     |   命名空間（檔案伺服器角色的一部分）       |
    | DFS 命名空間伺服器     |  DHCP 伺服器角色       |
-   | 分散式交易協調器 (DTC)     | None        |
+   | 分散式交易協調器 (DTC)     | 無        |
    | 檔案伺服器     |  檔案伺服器角色       |
    | 泛型應用程式     |  不適用       |
    | 泛型指令碼     |   不適用      |
@@ -165,7 +165,7 @@ ms.locfileid: "71369805"
    | iSCSI 目標伺服器     |    iSCSI 目標伺服器 (檔案伺服器角色的一部分)     |
    | iSNS 伺服器     |  iSNS 伺服器服務功能       |
    | 訊息佇列     |  訊息佇列服務的功能       |
-   | 其他伺服器     |  None       |
+   | 其他伺服器     |  無       |
    | 虛擬機器     |  Hyper-V 角色       |
    | WINS 伺服器     |   WINS 伺服器功能      |
 
@@ -193,7 +193,7 @@ Test-Cluster –Node Server1, Server2
 ```
 
 > [!NOTE]
-> **測試**叢集 Cmdlet 會將結果輸出到目前工作目錄中的記錄檔。 例如: C:\Users @ no__t-0username > \Appdata\local\temp。
+> **測試**叢集 Cmdlet 會將結果輸出到目前工作目錄中的記錄檔。 例如： C:\Users\<username > \Appdata\local\temp。
 
 以下範例會建立一個名為 *MyCluster* 且包含 *Server1* 和 *Server2*節點的容錯移轉叢集，指派靜態 IP 位址 *192.168.1.12*，以及將所有合格的存放裝置新增到容錯移轉叢集。
 
@@ -215,7 +215,7 @@ New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Serve
 
 如需如何新增叢集角色的範例，請參閱 [Add-ClusterFileServerRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 和 [Add-ClusterGenericApplicationRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)之類的主題。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
   - [容錯移轉叢集](failover-clustering.md)
   - [部署 Hyper-v 叢集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)

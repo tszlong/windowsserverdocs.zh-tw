@@ -34,12 +34,12 @@ ms.locfileid: "71370893"
 start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/b {<Command> | <Program>} [<Parameters>]]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|「@no__t 0Title >」|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
-|/d \<Path >|指定啟動目錄。|
+|「\<標題 >」|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
+|/d \<路徑 >|指定啟動目錄。|
 |/i|將 Cmd.exe 啟動環境傳遞至新的命令提示字元視窗。 如果未指定 **/i** ，則會使用目前的環境。|
 |/min \|/max|指定以最小化（ **/min**）或最大化（ **/max**）新的命令提示字元視窗。|
 |/separate \|/shared|在個別的記憶體空間（ **/separate**）或共用記憶體空間（ **/shared**）中啟動16位程式。 64位平臺上不支援這些選項。|
@@ -47,8 +47,8 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/affinity \<HexAffinity >|將指定的處理器親和性遮罩（以十六進位數表示）套用至新的應用程式。|
 |/wait|啟動應用程式，並等候它結束。|
 |/b|啟動應用程式，而不開啟新的命令提示字元視窗。 除非應用程式啟用 CTRL + C 處理，否則會忽略 CTRL + C 處理。 使用 CTRL + BREAK 來中斷應用程式。|
-|/b \<Command > \| \<Program >|指定要啟動的命令或程式。|
-|\<Parameters >|指定要傳遞給命令或程式的參數。|
+|/b \<命令 > \| \<程式 >|指定要啟動的命令或程式。|
+|\<參數 >|指定要傳遞給命令或程式的參數。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註

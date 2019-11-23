@@ -15,20 +15,20 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356022"
 ---
-# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 原則進行分割 @ no__t-0Brain DNS 部署
+# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 原則進行分割\-大腦 DNS 部署
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-您可以使用本主題來瞭解如何在 Windows Server @ no__t-0 2016 中設定適用于分裂式 DNS 部署的 DNS 原則，其中有兩個版本的單一區域-一個用於組織內部網路上的內部使用者，另一個用於外部使用者，也就是通常是在網際網路上的使用者。
+您可以使用本主題來瞭解如何在 Windows Server&reg; 2016 中為分裂式 DNS 部署設定 DNS 原則，其中有兩個版本的單一區域-一個用於組織內部網路上的內部使用者，另一個用於外部使用者（通常是網際網路上的使用者）。
 
 >[!NOTE]
->如需有關如何將 DNS 原則用於使用 Active Directory 整合式 DNS 區域進行分割 @ no__t-0brain DNS 部署的詳細資訊，請參閱[在 Active Directory 中使用適用于分裂式 dns 的 Dns 原則](dns-sb-with-ad.md)。
+>如需如何使用 DNS 原則進行分割\-大腦 DNS 部署與 Active Directory 整合的 DNS 區域的相關資訊，請參閱[在 Active Directory 中使用適用于分裂式 dns 的 Dns 原則](dns-sb-with-ad.md)。
 
-在過去，此案例需要 DNS 系統管理員維護兩部不同的 DNS 伺服器，每個都提供服務給每一組使用者（內部和外部）。 如果區域內只有一些記錄已分割 @ no__t-0brained，或區域的兩個實例（內部和外部）都已委派給相同的父系網域，這就成為了管理之間謎。 
+在過去，此案例需要 DNS 系統管理員維護兩部不同的 DNS 伺服器，每個都提供服務給每一組使用者（內部和外部）。 如果區域內只有少數記錄已分割\-brained，或區域的兩個實例（內部和外部）都已委派給相同的父系網域，這就成為了管理之間謎。 
 
 分割大腦部署的另一個設定案例是 DNS 名稱解析的選擇性遞迴控制。 在某些情況下，企業 DNS 伺服器預期會透過網際網路對內部使用者執行遞迴解析，而它們也必須作為外部使用者的授權名稱伺服器，並封鎖它們的遞迴。 
 
-本主題涵蓋下列各節。
+本主題包含下列各節。
 
 - [DNS 分割大腦部署的範例](#bkmk_sbexample)
 - [DNS 選擇性遞迴控制的範例](#bkmk_recursion)
@@ -158,7 +158,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 如果收到的查詢是未授權的 Contoso DNS 伺服器（例如 www.microsoft.com），則會根據 DNS 伺服器上的原則來評估名稱解析要求。 
 
-因為這些查詢不屬於任何區域，所以不會評估在0as 中定義的區域層級 @no__t 原則。 @ no__t-1。 
+因為這些查詢不會落在任何區域底下，所以不會評估分割大腦範例中所定義的區域層級原則 \(\)。 
 
 DNS 伺服器會評估遞迴原則，而在私用介面上接收的查詢則符合**SplitBrainRecursionPolicy**。 此原則會指向已啟用遞迴的遞迴範圍。
 
@@ -179,7 +179,7 @@ DNS 伺服器會評估遞迴原則，而在私用介面上接收的查詢則符�
 
 遞迴範圍是一組設定的唯一實例，可控制 DNS 伺服器上的遞迴。 遞迴範圍包含轉寄站的清單，並指定是否啟用遞迴。 DNS 伺服器可以有許多遞迴範圍。 
 
-舊版遞迴設定和轉寄站清單稱為「預設遞迴範圍」。 您無法新增或移除預設遞迴範圍（以名稱點 \( "識別）\)。
+舊版遞迴設定和轉寄站清單稱為「預設遞迴範圍」。 您無法新增或移除預設遞迴範圍（以名稱點 \("." 識別）\)。
 
 在此範例中，預設遞迴設定是停用的，而內部用戶端的新遞迴範圍則是在啟用遞迴的情況下建立。
 

@@ -21,7 +21,7 @@ ms.locfileid: "71370437"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print-with-pre-authentication"></a>使用預先驗證來部署 Windows Server 混合式雲端列印
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 本主題適用于 IT 系統管理員，說明 Microsoft 混合式雲端列印解決方案的端對端部署。 此解決方案會在現有的 Windows Server （以列印伺服器執行）上分層，並啟用 Azure Active Directory 聯結和 MDM 管理的裝置，以探索及列印到組織管理的印表機。
 
@@ -39,7 +39,7 @@ ms.locfileid: "71370437"
 
 -   執行為 Active Directory 的 Windows Server
 
-    請[參閱逐步解說：設定 Windows Server 2016](https://blogs.technet.microsoft.com/canitpro/2017/02/22/step-by-step-setting-up-active-directory-in-windows-server-2016/)中的 Active Directory，以取得設定 Active Directory 的協助。
+    如需設定 Active Directory 的說明，請參閱逐步解說[：在 Windows Server 2016 中設定 Active Directory](https://blogs.technet.microsoft.com/canitpro/2017/02/22/step-by-step-setting-up-active-directory-in-windows-server-2016/)。
 
 -   已加入網域的 Windows Server 2016 做為列印伺服器
     
@@ -61,11 +61,11 @@ ms.locfileid: "71370437"
 
 本指南概述五（5）個安裝步驟：
 
-- 步驟 1:安裝 Azure AD Connect 以在 Azure AD 與內部部署 AD 之間同步
-- 步驟 2:在列印伺服器上安裝混合式雲端列印套件
-- 步驟 3：使用 Kerberos 限制委派（KCD）安裝 Azure 應用程式 Proxy （AAP-SCHEME）
-- 步驟 4：設定必要的 MDM 原則
-- 步驟 5：發佈共用印表機
+- 步驟1：安裝 Azure AD Connect 以在 Azure AD 與內部部署 AD 之間同步
+- 步驟2：在列印伺服器上安裝混合式雲端列印套件
+- 步驟3：使用 Kerberos 限制委派（KCD）安裝 Azure 應用程式 Proxy （AAP-SCHEME）
+- 步驟4：設定所需的 MDM 原則
+- 步驟5：發佈共用印表機
 
 ### <a name="step-1---install-azure-ad-connect-to-sync-between-azure-ad-and-on-premises-ad"></a>步驟 1-安裝 Azure AD 與內部部署 AD 之間同步的 Azure AD Connect
 1. 在 Windows Server Active Directory 機上，下載 Azure AD Connect 軟體
@@ -76,13 +76,13 @@ ms.locfileid: "71370437"
 
 1. 安裝混合式雲端列印 PowerShell 模組
    - 從提高許可權的 PowerShell 命令提示字元執行下列命令
-      - `find-module -Name "PublishCloudPrinter"`確認電腦可以觸達 PowerShell 資源庫（PSGallery）
+      - `find-module -Name "PublishCloudPrinter"` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
       - `install-module -Name "PublishCloudPrinter"`
 
-     > 注意：您可能會看到訊息，指出「PSGallery」是不受信任的存放庫。  輸入 ' y ' 以繼續安裝。
+     > 注意：您可能會看到訊息，指出 ' PSGallery ' 是不受信任的存放庫。  輸入 ' y ' 以繼續安裝。
 
 2. 安裝混合式雲端列印解決方案
-    - 在同一個已提升許可權的 PowerShell 命令提示字元中，將目錄變更為`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
+    - 在同一個已提升許可權的 PowerShell 命令提示字元中，將目錄變更為 `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
     - 執行 <br>
         `CloudPrintDeploy.ps1 -AzureTenant <Domain name used by Azure AD Connect> -AzureTenantGuid <Azure AD Directory ID>`
 3. 設定2個 IIS 端點以支援 SSL
@@ -95,10 +95,10 @@ ms.locfileid: "71370437"
    - 執行下列命令來安裝套件<br>
    `Install-Package system.data.sqlite [-requiredversion x.x.x.x] -providername nuget`
 
-   > 注意：建議您保留 "-requiredversion" 選項，以下載並安裝最新版本。
+   > 注意：建議您保留 "-requiredversion" 選項來下載並安裝最新版本。
 
-5. 將 SQLite dll 複製到\<MopriaCloudService Webapp bin\>資料夾（**C：\\inetpub\\ \\wwwroot\\MopriaCloudService bin**）： <br>
-   - SQLite 二進位檔\\應位於 "Program Files\\PackageManagement\\NuGet\\封裝"
+5. 將 SQLite dll 複製到 MopriaCloudService Webapp \<bin\> 資料夾（**C：\\inetpub\\wwwroot\\MopriaCloudService\\bin**）： <br>
+   - SQLite 二進位檔應位於 "\\Program Files\\PackageManagement\\NuGet\\套件"
 
            \\System.Data.SQLite.**Core**.x.x.x.x\\lib\\net46\\System.Data.SQLite.dll
            --\> \<bin\>\\System.Data.SQLite.dll  
@@ -113,7 +113,7 @@ ms.locfileid: "71370437"
 
    > 注意： x.x 是上面安裝的 SQLite 版本。
 
-6. 在下列\<運行時間assemblyBinding\>區段中，更新檔案以包含 SQLite 版本 x.x. x：\> / `c:\inetpub\wwwroot\MopriaCloudService\web.config` \<
+6. 更新 `c:\inetpub\wwwroot\MopriaCloudService\web.config` 檔案以包含下列 \<執行時間中的 SQLite 版本 x. x，\>/\<assemblyBinding\> 區段：
 
        <dependentAssembly>
        assemblyIdentity name="System.Data.SQLite" culture="neutral" publicKeyToken="db937bc2d44ff139" /
@@ -133,9 +133,9 @@ ms.locfileid: "71370437"
        </dependentAssembly>
 
 7. 建立 SQLite 資料庫：
-    -  從下載並安裝 SQLite 工具二進位檔<https://www.sqlite.org/>
-    -  移至**c：\\inetpub\\wwwroot\\MopriaCloudService\\資料庫**目錄
-    -  執行下列命令，在此目錄中建立資料庫：`sqlite3.exe MopriaDeviceDb.db ".read MopriaSQLiteDb.sql"`
+    -  從 <https://www.sqlite.org/> 下載並安裝 SQLite 工具二進位檔
+    -  前往**c：\\inetpub\\wwwroot\\MopriaCloudService\\資料庫**目錄
+    -  執行下列命令，在此目錄中建立資料庫： `sqlite3.exe MopriaDeviceDb.db ".read MopriaSQLiteDb.sql"`
     -  從 [檔案瀏覽器] 開啟 [MopriaDeviceDb] 檔案內容，以新增允許發佈至 [安全性] 索引標籤中 Mopria 資料庫的使用者/群組
         - 建議僅新增必要的管理使用者群組。
 8. 向 Azure AD 註冊2個 web 應用程式以支援 OAuth2 authentication
@@ -148,7 +148,7 @@ ms.locfileid: "71370437"
         - 登入 URL = "<http://MopriaDiscoveryService/CloudPrint>"
      3. 針對 native client 應用程式重複執行
         -   提供應用程式名稱時，請務必選取 [原生用戶端應用程式] 作為 [應用程式類型]
-        -   [重新導向 URI]\<= "HTTPs://services-\>機器-端點/RedirectUrl"
+        -   重新導向 URI = "HTTPs://\<services-機器端點\>/RedirectUrl"
      4. 進入原生用戶端應用程式的 [設定]
         -   複製 [應用程式識別碼] 值，以用於稍後的安裝步驟
         -   選取 [必要許可權]
@@ -159,7 +159,7 @@ ms.locfileid: "71370437"
             5.  請確定每個應用程式端點的 [委派的許可權] 選項已啟用
             6.  請確定您按一下底部的 [完成] 按鈕
             7.  一旦新增這兩個端點，請按一下 [授與許可權]。  當系統提示您核准要求時，請選取 [是]。
-        -   移至 [重新導向 URI]，並將下列重新導向 Uri 新增至清單：`ms-appx-web://Microsoft.AAD.BrokerPlugin/\<NativeClientAppID\>`
+        -   移至 [重新導向 URI]，並將下列重新導向 Uri 新增至清單： `ms-appx-web://Microsoft.AAD.BrokerPlugin/\<NativeClientAppID\>`
             `ms-appx-web://Microsoft.AAD.BrokerPlugin/S-1-15-2-3784861210-599250757-1266852909-3189164077-45880155-1246692841-283550366`
 
 ### <a name="step-3---install-azure-application-proxy-aap-with-kerberos-constrained-delegation-kcd"></a>步驟 3-使用 Kerberos 限制委派（KCD）安裝 Azure 應用程式 Proxy （AAP-SCHEME）
@@ -177,7 +177,7 @@ ms.locfileid: "71370437"
     - 選取 [**使用任何驗證通訊協定]。**
     - 在**此帳戶可以顯示委派認證的 [服務**] 底下
         - 新增執行服務之電腦的 SPN 身分識別值（MopriaDiscoveryService 和 MicrosoftEnterpriseCloudPrint 服務）
-            - 針對 [SPN]，輸入電腦本身的 SPN，亦即「主機/\<MachineName\>。\<網域\>」<br>
+            - 針對 SPN，輸入電腦本身的 SPN，即「主機/\<MachineName\>。\<網域\>」<br>
                 `HOST/appServer.Contoso.com`
 4. 回到 AAD 租使用者管理入口網站，並新增應用程式 proxy
    - 移至 [**企業應用程式**] 索引標籤
@@ -185,12 +185,12 @@ ms.locfileid: "71370437"
    - 選取 [內部**部署應用程式**] 並填寫欄位
        - 名稱：任何您想要的名稱
        - 內部 URL：這是您 WAP 電腦可以存取的 Mopria 探索雲端服務的內部 URL
-       - 外部 URL：設定適合您的組織
-       - 預先驗證方法：Azure Active Directory
+       - 外部 URL：為您的組織設定適當的
+       - 預先驗證方法： Azure Active Directory
 
      >   注意：如果您找不到上述所有設定，請新增具有可用設定的 proxy，然後選取您剛才建立的應用程式 proxy，並移至 [**應用程式 proxy** ] 索引標籤，並新增上述所有資訊。
 
-   - 建立之後，返回 [**企業應用程式** -> ] [**所有應用程式**]，選取您剛建立的新應用程式
+   - 建立之後，請回到 [**企業應用程式**] -> [**所有應用**程式]，選取您剛建立的新應用程式
    - 移至 [**單一登入**]，確認 [單一登入模式] 設定為 [整合式 Windows 驗證]
    - 將「內部應用程式 SPN」設定為您在上述步驟3.3 中指定的 SPN
    - 請確定「委派的登入身分識別」已設定為「使用者主體名稱」
@@ -243,7 +243,7 @@ ms.locfileid: "71370437"
 
 - OMA-URI
     - `CloudPrintOAuthAuthority = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority`
-        - 值 = `https://login.microsoftonline.com/` \<Azure AD 目錄識別碼\>
+        - 值 = `https://login.microsoftonline.com/`\<Azure AD 目錄識別碼\>
     - `CloudPrintOAuthClientId = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId`
         - 值 = \<Azure AD 原生應用程式的應用程式識別碼\>
     - `CloudPrinterDiscoveryEndPoint = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint`
@@ -262,20 +262,20 @@ ms.locfileid: "71370437"
 4. 儲存變更並關閉 [印表機內容] 視窗
 5. 從 Windows 10 秋季建立者更新電腦，開啟提升許可權的 Windows PowerShell 命令提示字元
    1. 執行下列命令
-      - `find-module -Name "PublishCloudPrinter"`確認電腦可以觸達 PowerShell 資源庫（PSGallery）
+      - `find-module -Name "PublishCloudPrinter"` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
       - `install-module -Name "PublishCloudPrinter"`
 
-        >   注意：您可能會看到訊息，指出「PSGallery」是不受信任的存放庫。  輸入 ' y ' 以繼續安裝。
+        >   注意：您可能會看到訊息，指出 ' PSGallery ' 是不受信任的存放庫。  輸入 ' y ' 以繼續安裝。
 
       - 發行-CloudPrinter
         - 印表機 = 已定義的共用印表機名稱
         - 製造商 = 印表機製造商
         - Model = 印表機型號
-        - OrgLocation = 指定印表機位置的 JSON 字串，例如：`{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"Microsoft", "depth":1}, {"category":"site", "vs":"Redmond, WA", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}`
-        - Sddl = 代表印表機權限的 SDDL 字串。 這可以藉由適當地修改 [印表機內容] 安全性索引標籤，然後在命令提示字元中執行下列命令來取得：`(Get-Printer PrinterName -full).PermissionSDDL`
-            比如.「G:DUD：（A; OICI; FA;;;WD）」
+        - OrgLocation = 指定印表機位置的 JSON 字串，例如： `{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"Microsoft", "depth":1}, {"category":"site", "vs":"Redmond, WA", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}`
+        - Sddl = 代表印表機權限的 SDDL 字串。 這可以藉由適當地修改 [印表機內容] 安全性索引標籤，然後在命令提示字元中執行下列命令來取得： `(Get-Printer PrinterName -full).PermissionSDDL`
+            例如 "G:DUD：（A; OICI; FA;;;WD）」
 
-          > 注意：將值設定為 SDDL **`O:BA`** 設定之前，您必須先從上述命令提示字元命令的結果中新增 as 前置詞。  範例：SDDL =`O:BAG:DUD:(A;OICI;FA;;;WD)`
+          > 注意：將值設定為 SDDL 設定之前，您必須將 **`O:BA`** 做為前置詞，加上命令提示字元命令的結果。  範例： SDDL = `O:BAG:DUD:(A;OICI;FA;;;WD)`
 
         - DiscoveryEndpoint = 步驟3.4 中所建立 Azure 應用程式 Proxy 的 Mopria 探索服務的外部 URL
         - PrintServerEndpoint = 在步驟3.5 中建立之企業雲端列印服務 Azure 應用程式 Proxy 的外部 URL
@@ -285,15 +285,15 @@ ms.locfileid: "71370437"
 
         > 注意：您也可以在命令列中輸入所有必要的參數值。<br>
         **發行-CloudPrinter**PowerShell 命令語法： <br>
-        CloudPrinter-Printer \<string @ no__t-1-製造商 \<string @ no__t-3-Model \<string @ no__t-5-OrgLocation \<string @ no__t-7-Sddl \<string @ no__t-9-DiscoveryEndpoint \>0string @ no__t-11-PrintServerEndpoint 2string @ no__t-13-AzureClientId 4string @ no__t-15-AzureTenantGuid 6string @ no__t-17 [-DiscoveryResourceId 8string @ no__t-19] <br>
-        範例命令：`publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
+        CloudPrinter-印表機 \<字串\>-製造商 \<字串\> 模型 \<string\>-OrgLocation \<string\>-Sddl \<string\>-DiscoveryEndpoint \<string\>-PrintServerEndpoint \<string\>-AzureClientId \<string\>-AzureTenantGuid \<string\> [-DiscoveryResourceId \<string\>] <br>
+        範例命令： `publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
 
 
 ## <a name="verifying-the-deployment"></a>驗證部署
 在已設定 MDM 原則的 Azure AD 聯結裝置上：
-- 開啟網頁瀏覽器，並移至 [&lt;HTTPs://服務]-[&gt;機器-端點/mcs/services] （探索端點的外部 URL）
+- 開啟網頁瀏覽器，並移至 HTTPs://&lt;services-電腦端點&gt;/mcs/services （探索端點的外部 URL）
 - 您應該會看到描述此端點功能集的 JSON 文字
-- 移至 [OS 設定-\>裝置-\>印表機 & 掃描器]
+- 移至 [OS 設定-\> 裝置-\> 印表機 & 掃描器]
     - 您應該會看到「搜尋雲端印表機」連結
     - 按一下連結
     - 按一下 [請選取搜尋位置] 連結
@@ -302,4 +302,4 @@ ms.locfileid: "71370437"
     - 選取印表機，然後按一下 [**新增裝置**] 按鈕
     - 成功安裝印表機之後，從您最愛的應用程式列印到印表機
 
->   注意：如果使用 "EcpPrintTest" 印表機，您可以在 "C：\\ECPTestOutput\\EcpTestPrint. xps" 位置下的列印伺服器電腦中找到輸出檔案。
+>   注意：如果使用 "EcpPrintTest" 印表機，您可以在列印伺服器電腦的 "C：\\ECPTestOutput\\EcpTestPrint. xps" 位置中找到輸出檔案。

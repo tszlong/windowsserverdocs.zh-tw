@@ -18,9 +18,9 @@ ms.locfileid: "71404232"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>使用 SharePoint、Exchange 及 RDG 發佈應用程式
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-@no__t 0This 內容與 Web 應用程式 Proxy 的內部部署版本有關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。 **  
+**此內容與內部部署版本的 Web 應用程式 Proxy 相關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
 
 本主題說明透過 Web 應用程式 Proxy 發佈 SharePoint Server、Exchange Server 或遠端桌面閘道（RDP）所需的工作。  
 
@@ -44,9 +44,9 @@ ms.locfileid: "71404232"
 下表描述您可以透過 Web 應用程式 Proxy 發佈的 Exchange 服務，以及這些服務支援的預先驗證：  
 
 
-|    Exchange 服務    |                                                                            預先驗證                                                                            |                                                                                                                                       注意                                                                                                                                        |
+|    Exchange 服務    |                                                                            預先驗證                                                                            |                                                                                                                                       附註                                                                                                                                        |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Outlook Web App     | -AD FS 使用非宣告式驗證<br />-傳遞<br />-針對內部部署 Exchange 2013 Service Pak 1 （SP1）使用宣告式驗證的 AD FS |                                                                  如需詳細資訊，請參閱：[使用 AD FS 宣告式驗證搭配 Outlook Web App 和 EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
+|    Outlook Web App     | -AD FS 使用非宣告式驗證<br />-傳遞<br />-針對內部部署 Exchange 2013 Service Pak 1 （SP1）使用宣告式驗證的 AD FS |                                                                  如需詳細資訊，請參閱： [使用 AD FS 宣告式驗證搭配 Outlook Web App 和 EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Exchange 控制台 |                                                                               傳遞                                                                               |                                                                                                                                                                                                                                                                                    |
 |    Outlook 無所不在    |                                                                               傳遞                                                                               | 您必須發行三個 URL，Outlook 無所不在才能正常運作：<br /><br />-自動探索 URL。<br />-Exchange Server 的外部主機名稱;也就是針對要連接的用戶端所設定的 URL。<br />-Exchange Server 的內部 FQDN。 |
 |  Exchange ActiveSync   |                                                     傳遞<br/> 使用 HTTP 基本驗證通訊協定 AD FS                                                      |                                                                                                                                                                                                                                                                                    |
@@ -66,11 +66,11 @@ ms.locfileid: "71404232"
 
 1. 根據您的 RD Web 存取（/rdweb）和 RD 閘道（rpc）角色位於相同伺服器或不同伺服器上，安裝將會有所不同。  
 
-2. 如果 RD Web 存取和 RD 閘道角色裝載在相同的 RDG 伺服器上，您可以直接在 Web 應用程式 Proxy （例如）中發佈根 FQDN， https://rdg.contoso.com/ 。  
+2. 如果 RD Web 存取和 RD 閘道角色裝載在相同的 RDG 伺服器上，您可以直接在 Web 應用程式 Proxy （例如）中發佈根 FQDN， https://rdg.contoso.com/。  
 
-   您也可以個別發佈兩個虛擬目錄，例如 <https://rdg.contoso.com/rdweb/>，然後 https://rdg.contoso.com/rpc/ 。  
+   您也可以個別發佈兩個虛擬目錄，例如<https://rdg.contoso.com/rdweb/> 和 https://rdg.contoso.com/rpc/。  
 
-3. 如果 RD Web 存取和 RD 閘道裝載在不同的 RDG 伺服器上，您就必須個別發佈兩個虛擬目錄。 您可以使用相同或不同的外部 FQDN，例如 https://rdweb.contoso.com/rdweb/ ，然後 https://gateway.contoso.com/rpc/ 。  
+3. 如果 RD Web 存取和 RD 閘道裝載在不同的 RDG 伺服器上，您就必須個別發佈兩個虛擬目錄。 您可以使用相同或不同的外部 FQDN，例如 https://rdweb.contoso.com/rdweb/ 和 https://gateway.contoso.com/rpc/。  
 
 4. 如果外部和內部 FQDN 不同，您不應該在 RDWeb 發行規則上停用要求標頭轉譯。 這可以藉由在 Web 應用程式 Proxy 伺服器上執行下列 PowerShell 腳本來完成，但它應該預設為啟用。
 
@@ -102,11 +102,11 @@ ms.locfileid: "71404232"
 
     3.  接受所有預設設定。  
 
-    4.  在 [信賴憑證者信任識別碼] 中，輸入您將用於 RDG 存取的外部 FQDN，例如 https://rdg.contoso.com/ 。  
+    4.  在 [信賴憑證者信任識別碼] 中，輸入您將用於 RDG 存取的外部 FQDN，例如 https://rdg.contoso.com/。  
 
         這是您在 Web 應用程式 Proxy 中發佈應用程式時將使用的信賴憑證者信任。  
 
-4.  在 Web 應用程式 Proxy 中發佈網站的根目錄（例如， https://rdg.contoso.com/ ）。 將預先驗證設定為 AD FS 並使用您在上面建立的信賴憑證者信任。 這會讓/rdweb 和/rpc 使用相同的 Web 應用程式 Proxy 驗證 cookie。  
+4.  在 Web 應用程式 Proxy 中發佈網站的根目錄（例如， https://rdg.contoso.com/）。 將預先驗證設定為 AD FS 並使用您在上面建立的信賴憑證者信任。 這會讓/rdweb 和/rpc 使用相同的 Web 應用程式 Proxy 驗證 cookie。  
 
     您可以將/rdweb 和/rpc 發佈為個別的應用程式，甚至是使用不同的已發行伺服器。 您只需要確保發行時使用的信賴憑證者信任與針對信賴憑證者信任發出的 Web 應用程式 Proxy 權杖相同，因此在使用相同的信賴憑證者信任發行的應用程式中有效。  
 
@@ -118,7 +118,7 @@ ms.locfileid: "71404232"
 
 6.  在 RDG 發行的應用程式上，停用 Web 應用程式 Proxy 中的 HttpOnly cookie 屬性。 若要允許 RDG ActiveX 控制項存取 Web 應用程式 Proxy 驗證 cookie，您必須停用 Web 應用程式 Proxy cookie 上的 HttpOnly 屬性。  
 
-    這需要安裝[Web 應用程式 Proxy](https://support.microsoft.com/en-gb/kb/3000850)或[https://support.microsoft.com/en-gb/kb/3000850](https://support.microsoft.com/en-gb/kb/3000850)的下列各項。  
+    這需要安裝[Web 應用程式 Proxy](https://support.microsoft.com/en-gb/kb/3000850)或[https://support.microsoft.com/en-gb/kb/3000850](https://support.microsoft.com/en-gb/kb/3000850)的下列程式。  
 
     安裝此修補程式之後，請在 Web 應用程式 Proxy 伺服器上執行下列 PowerShell 腳本，並指定相關的應用程式名稱：  
 
@@ -146,7 +146,7 @@ ms.locfileid: "71404232"
 
         1.  使用具有系統管理員許可權的帳戶登入終端機伺服器。  
 
-        2.  前往**開始** > 個系統**管理工具** >  個**終端機服務** >  個**TS RemoteApp 管理員。**  
+        2.  前往 **開始** >系統**管理工具**  > **終端機服務** > **TS RemoteApp 管理員。**  
 
         3.  在 TS RemoteApp 管理員的 [**總覽**] 窗格中，按一下 [RDP 設定] 旁的 [**變更**]。  
 

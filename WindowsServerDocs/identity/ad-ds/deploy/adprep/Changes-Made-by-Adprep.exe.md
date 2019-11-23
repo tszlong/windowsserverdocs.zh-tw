@@ -33,9 +33,9 @@ ms.locfileid: "71369484"
   
 -   [架構更新](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>另請參閱  
-@no__t 0Windows Server 2008 R2：支援 AD DS @ no__t-0 的 Adprep 變更附錄  
-@no__t 0Windows 伺服器2008：支援 AD DS @ no__t-0 的 Adprep 變更附錄  
+## <a name="see-also"></a>請參閱  
+[Windows Server 2008 R2：支援 AD DS 的 Adprep 變更附錄](https://technet.microsoft.com/library/dd378876(v=ws.10).aspx)  
+[Windows Server 2008：支援 AD DS 的 Adprep 變更附錄](https://technet.microsoft.com/library/cc770703(v=ws.10).aspx)  
   
 
 

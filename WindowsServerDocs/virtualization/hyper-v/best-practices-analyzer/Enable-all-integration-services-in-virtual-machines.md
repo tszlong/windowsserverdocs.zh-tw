@@ -19,16 +19,16 @@ ms.locfileid: "71364895"
 ---
 # <a name="enable-all-integration-services-in-virtual-machines"></a>啟用虛擬機器中的所有整合服務
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法和掃描的詳細資訊，請參閱 [最佳做法分析程式](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71364895"
   
 *下列虛擬機器的服務或整合功能可能無法正常運作：*  
   
-@no__t 0list 的虛擬機器名稱 >  
+\<虛擬機器名稱清單 >  
   
 ## <a name="resolution"></a>解析度  
   

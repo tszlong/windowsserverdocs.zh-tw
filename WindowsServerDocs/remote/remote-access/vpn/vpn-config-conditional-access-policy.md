@@ -24,20 +24,20 @@ ms.locfileid: "71404343"
 ---
 # <a name="step-73-configure-the-conditional-access-policy"></a>步驟 7.3. 設定條件式存取原則
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**處**步驟 7.2.使用 Azure AD 建立 VPN 驗證的根憑證](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
-- [**下一個**步驟 7.4.將條件式存取根憑證部署到內部部署 AD @ no__t-0
+- [**上一步：** 步驟7.2。使用 Azure AD 建立根憑證以進行 VPN 驗證](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**下一步：** 步驟7.4。將條件式存取根憑證部署到內部部署 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 
 在此步驟中，您會設定 VPN 連線能力的條件式存取原則。 當第一個根憑證建立于 [VPN 連線能力] 分頁時，它會自動在租使用者中建立「VPN 伺服器」雲端應用程式。
 
 建立指派給 VPN 使用者群組的條件式存取原則，並將**雲端應用程式**的範圍設為**vpn 伺服器**：
 
-- **Users**：VPN 使用者
-- **雲端應用程式**：VPN 伺服器
+- **使用者**： VPN 使用者
+- **雲端應用程式**： VPN 伺服器
 - **Grant （存取控制）** ：「需要多重要素驗證」。 如有需要，可以使用其他控制項。
 
-**步**此步驟涵蓋建立最基本的條件式存取原則。  如有需要，可以使用其他條件和控制項。
+程式 **：** 此步驟涵蓋建立最基本的條件式存取原則。  如有需要，可以使用其他條件和控制項。
 
 
 1. 在 [**條件式存取**] 頁面頂端的工具列中，選取 [**新增**]。
@@ -94,4 +94,4 @@ ms.locfileid: "71404343"
 
 
 ## <a name="next-steps"></a>後續步驟
-[步驟 7.4.將條件式存取根憑證部署到內部部署 AD @ no__t-0：在此步驟中，您會將條件式存取根憑證部署為受信任的根憑證，以進行 VPN 驗證至您的內部部署 AD。
+[步驟7.4。將條件式存取根憑證部署到內部部署 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)：在此步驟中，您會將條件式存取根憑證部署為受信任的根憑證，以進行 VPN 驗證至您的內部部署 ad。

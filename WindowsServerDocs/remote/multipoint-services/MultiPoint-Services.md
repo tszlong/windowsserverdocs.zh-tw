@@ -25,5 +25,5 @@ MultiPoint 服務是一種解決方案，可讓多個使用者各自擁有各自
 
 由監視器、鍵盤和滑鼠組成的使用者站台，可透過 USB 或視訊纜線直接連接到主機電腦。 因為 MultiPoint 服務是正版 Microsoft 發佈的軟體產品，在適當授權的情況下，您有資格獲得 Microsoft 或授權合作夥伴的支援。 這可提供您完整的 Windows 功能、存取所有最新的更新，並確信您已達到預期的體驗。
 
-由於 MultiPoint 服務可讓多個使用者共用一部電腦，因此可為每位使用者都有自己電腦的傳統運算案例提供低成本的替代方案。 MultiPoint 服務也為 MultiPoint 服務系統管理提供了簡單的管理解決方案，稱為 MultiPoint 管理員，以及為期 day @ no__t-0to @ no__t-1day administration （稱為 MultiPoint 儀表板）的簡易管理解決方案。  
+由於 MultiPoint 服務可讓多個使用者共用一部電腦，因此可為每位使用者都有自己電腦的傳統運算案例提供低成本的替代方案。 MultiPoint 服務也為 MultiPoint 服務系統管理提供了簡單的管理解決方案，也就是「MultiPoint 管理員」，這是一天簡單的管理解決方案，\-來\-天管理，稱為 MultiPoint 儀表板。  
   

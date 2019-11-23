@@ -26,11 +26,11 @@ AD FS 有許多設定，可支援用於驗證和應用程式開發的各種功�
 2. 執行診斷並上傳檔案以 AD FS 說明
 3. 查看診斷分析並解決任何問題
 
-請移至[AD FS 說明診斷分析器（ https://aka.ms/adfsdiagnosticsanalyzer)](https://aka.ms/adfsdiagnosticsanalyzer)開始進行疑難排解。
+請移至[AD FS 說明診斷分析器（ https://aka.ms/adfsdiagnosticsanalyzer)](https://aka.ms/adfsdiagnosticsanalyzer)以開始進行疑難排解。
 
 ![AD FS 說明上的 AD FS diagnostics analyzer 工具](media/ad-fs-diagonostics-analyzer/home.png)
 
-## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>步驟 1:在 AD FS 伺服器上設定 ADFSToolbox 模組
+## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>步驟1：在 AD FS 伺服器上設定 ADFSToolbox 模組
 
 若要執行[診斷分析器](https://aka.ms/adfsdiagnosticsanalyzer)，您必須安裝 ADFSToolbox PowerShell 模組。 如果 AD FS 伺服器可連線到網際網路，您可以直接從 PowerShell 資源庫安裝 ADFSToolbox 模組。 如果沒有網際網路連線，您可以手動安裝它。 
 
@@ -58,7 +58,7 @@ ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下�
     ```powershell
     Install-Module -Name ADFSToolbox -Force
     ```
-3. 將本機電腦上 `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` 的 ADFSToolbox 資料夾複製到 AD FS 或 WAP 電腦上的相同位置。
+3. 將位於本機電腦 `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` 的 ADFSToolbox 資料夾複製到 AD FS 或 WAP 電腦上的相同位置。
 
 4. 在 AD FS 機上啟動已提升許可權的 PowerShell 視窗，然後執行下列 Cmdlet 以匯入模組。
 
@@ -66,7 +66,7 @@ ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下�
     Import-Module ADFSToolbox -Force
     ```
 
-## <a name="step-2-execute-the-diagnostics-cmdlet"></a>步驟 2:執行診斷 Cmdlet
+## <a name="step-2-execute-the-diagnostics-cmdlet"></a>步驟2：執行診斷 Cmdlet
 
 ![AD FS 診斷分析器工具-執行和上傳結果](media/ad-fs-diagonostics-analyzer/step2_v2.png)
 
@@ -82,11 +82,11 @@ ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下�
     Export-AdfsDiagnosticsFile -ServerNames @("adfs1.contoso.com", "adfs2.contoso.com")
 ```
 
-結果是在命令執行所在的相同目錄中建立的 JSON 檔案。 檔案的名稱是 AdfsDiagnosticsFile-\<timestamp @ no__t-1。 範例檔案名為 AdfsDiagnosticsFile-07312019-184201. json。
+結果是在命令執行所在的相同目錄中建立的 JSON 檔案。 檔案的名稱是 AdfsDiagnosticsFile-\<timestamp\>。 範例檔案名為 AdfsDiagnosticsFile-07312019-184201. json。
 
-## <a name="step-3-upload-the-diagnostics-file"></a>步驟 3：上傳診斷檔案
+## <a name="step-3-upload-the-diagnostics-file"></a>步驟3：上傳診斷檔案
 
-在[https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer)的步驟3中，使用 [檔案瀏覽器] 選取要上傳的結果檔案。
+在步驟3的[https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer)使用檔案瀏覽器來選取要上傳的結果檔案。
 
 按一下 [上**傳**] 以完成上傳。
 
@@ -94,26 +94,26 @@ ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下�
 
 ![AD FS 診斷分析程式工具-登入](media/ad-fs-diagonostics-analyzer/sign_in_step.png)
 
-## <a name="step-4-view-diagnostics-analysis-and-resolve-any-issues"></a>步驟 4：查看診斷分析並解決任何問題
+## <a name="step-4-view-diagnostics-analysis-and-resolve-any-issues"></a>步驟4：查看診斷分析並解決任何問題
 
 測試結果有五個區段：
 
-1. 發生此章節包含失敗的測試清單。 每個結果包含：
+1. Failed：此區段包含失敗的測試清單。 每個結果包含：
 2. 警告：此區段包含已產生警告的測試清單。 這些問題不太可能會導致以更廣泛的方式進行驗證的任何問題，但應該儘早解決。
-3. 已此區段包含已通過的測試清單，而且沒有使用者的動作專案。
+3. 已通過：此區段包含通過的測試清單，而且沒有使用者的動作專案。
 4. 未執行：此區段包含因遺漏資訊而無法執行的測試清單。
 5. 不適用：此區段包含未執行的測試清單，因為它們不適用於命令執行所在的特定伺服器。
 
-@no__t 0AD FS 診斷分析程式工具-測試結果清單 @ no__t-1 每個測試結果都會以描述測試和解決步驟的詳細資料顯示：
+![AD FS 診斷分析器工具-測試結果](media/ad-fs-diagonostics-analyzer/step3a_v3.png) 清單會顯示每個測試結果的詳細資料，其中會說明測試和解決步驟：
 
 1. 測試名稱：已執行之測試的名稱
 2. 描述：測試的描述。
-3. 詳細資料：測試期間執行之整體作業的描述
-4. 解決步驟：解決測試所強調問題的建議步驟
+3. 詳細資料：在測試期間執行之整體作業的描述
+4. 解決步驟：解決測試所選問題的建議步驟
 
 ![AD FS 診斷分析器工具-失敗解決](media/ad-fs-diagonostics-analyzer/step3b_v3.png)
 
-## <a name="next"></a>下一個
+## <a name="next"></a>下一則
 
 - [使用 AD FS Help troublehshooting 指南](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS 疑難排解](ad-fs-tshoot-overview.md)

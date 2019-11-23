@@ -32,16 +32,16 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 ```
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |      參數      |                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<KeyName<em>></em> | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1 @ no__t-2ComputerName > \) 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
+| \<KeyName<em>></em> | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式 \\\\\<ComputerName >\) 做為*KeyName*的一部分。 省略 \\\\ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
 |   /v \<ValueName >   |                                                                                                                                                                                                                                指定要在指定的子機碼底下新增的登錄專案名稱。                                                                                                                                                                                                                                 |
 |         /ve         |                                                                                                                                                                                                                                指定新增至登錄的登錄專案具有 null 值。                                                                                                                                                                                                                                |
-|     /t \<Type >      |                                                                                                                                          指定登錄專案的類型。 *類型*必須是下列其中一項：</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ                                                                                                                                          |
-|   /s \<Separator >   |                                                                                                                                                              指定當指定了 REG_MULTI_SZ 資料類型，而且需要列出多個專案時，要用來分隔多個資料實例的字元。 如果未指定，預設分隔符號為 **\ 0**。                                                                                                                                                              |
-|     /d \<Data >      |                                                                                                                                                                                                                                                 指定新登錄專案的資料。                                                                                                                                                                                                                                                  |
+|     /t \<類型 >      |                                                                                                                                          指定登錄專案的類型。 *類型*必須是下列其中一項：</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ                                                                                                                                          |
+|   /s \<分隔符號 >   |                                                                                                                                                              指定當指定了 REG_MULTI_SZ 資料類型，而且需要列出多個專案時，要用來分隔多個資料實例的字元。 如果未指定，預設分隔符號為 **\ 0**。                                                                                                                                                              |
+|     /d \<資料 >      |                                                                                                                                                                                                                                                 指定新登錄專案的資料。                                                                                                                                                                                                                                                  |
 |         /f          |                                                                                                                                                                                                                                           新增登錄專案，而不提示確認。                                                                                                                                                                                                                                           |
 |         /?          |                                                                                                                                                                                                                                              在命令提示字元中顯示**reg add**的說明。                                                                                                                                                                                                                                               |
 
@@ -55,7 +55,7 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 |   0   |   成功   |
 |   1   |   失敗   |
 
--   針對 REG_EXPAND_SZ 金鑰類型，在/d 參數內部使用插入號（ **^** ）搭配 **%** 」
+-   針對 REG_EXPAND_SZ 金鑰類型，請在/d 參數內部使用插入號（ **^** ）搭配 **%** "
 
 ## <a name="BKMK_examples"></a>典型
 
@@ -63,15 +63,15 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 ```
 REG ADD \\ABC\HKLM\Software\MyCo
 ```
-若要將登錄專案新增至 HKLM\Software\MyCo，且其值為 REG_BINARY 類型的**資料**和**fe340ead**的資料，請輸入：
+若要將登錄專案新增至 HKLM\Software\MyCo，並將名稱為**data**的數值型別 REG_BINARY 和**fe340ead**的資料，請輸入：
 ```
 REG ADD HKLM\Software\MyCo /v Data /t REG_BINARY /d fe340ead
 ```
-若要將多值登錄專案新增至 HKLM\Software\MyCo，並將值名稱為類型為 REG_MULTI_SZ 的**MRU**和**fax\0mail\0\0**的資料，請輸入：
+若要將多值登錄專案新增至 HKLM\Software\MyCo，並將值名稱為**MRU**類型的 REG_MULTI_SZ 和**fax\0mail\0\0**的資料，請輸入：
 ```
 REG ADD HKLM\Software\MyCo /v MRU /t REG_MULTI_SZ /d fax\0mail\0\0
 ```
-若要將擴充的登錄專案新增至 HKLM\Software\MyCo，並將值名稱為 REG_EXPAND_SZ 類型的**路徑**，以及 **% systemroot%** 的資料，請輸入：
+若要將擴充的登錄專案新增至 HKLM\Software\MyCo，並將值名稱的**路徑**類型 REG_EXPAND_SZ 和 **% systemroot%** 的資料，請輸入：
 ```
 REG ADD HKLM\Software\MyCo /v Path /t REG_EXPAND_SZ /d ^%systemroot^%
 ```

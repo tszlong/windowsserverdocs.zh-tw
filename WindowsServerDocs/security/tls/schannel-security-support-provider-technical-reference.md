@@ -22,7 +22,7 @@ ms.locfileid: "71403401"
 ---
 # <a name="schannel-security-support-provider-technical-reference"></a>安全通道安全性支援提供者技術參考資料
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
 
 此適用于 IT 專業人員的參考資料報含傳輸層安全性（TLS）通訊協定、安全通訊端層（SSL）通訊協定，以及由安全通道安全性支援所實作為的資料包傳輸層安全性（DTLS）通訊協定的相關資訊提供者（SSP）。
 
@@ -31,8 +31,8 @@ ms.locfileid: "71403401"
 - [傳輸層安全性通訊協定](transport-layer-security-protocol.md)
 - [資料包傳輸層安全性通訊協定](datagram-transport-layer-security-protocol.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows 驗證](../windows-authentication/windows-authentication-overview.md)
- 個[Kerberos 驗證](../kerberos/kerberos-authentication-overview.md)
+[Kerberos 驗證](../kerberos/kerberos-authentication-overview.md)
 
 

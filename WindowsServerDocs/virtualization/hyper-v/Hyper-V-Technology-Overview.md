@@ -20,7 +20,7 @@ ms.locfileid: "71366780"
 ---
 # <a name="hyper-v-technology-overview"></a>Hyper-v 技術總覽
 
->適用於：Windows Server 2016，Microsoft Hyper-v Server 2016，Windows Server 2019，Microsoft Hyper-v Server 2019
+>適用于： Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
 Hyper-v 是 Microsoft 的硬體虛擬化產品。 它可讓您建立及執行電腦的軟體版本，稱為「*虛擬機器*」。 每部虛擬機器的作用就像完整的電腦，執行作業系統和程式。 當您需要計算資源時，虛擬機器可提供更大的彈性、協助節省時間和金錢，而且比起在實體硬體上執行一個作業系統，更有效率的方法是使用硬體。
 
@@ -90,7 +90,7 @@ Hyper-v 也有管理和連線能力的工具。 您可以將這些安裝在 Hype
 
 - Hyper-V 管理員
 - [適用于 Windows PowerShell 的 hyper-v 模組](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [虛擬機器連接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)@no__t-稱為 VMConnect @ no__t 的 1sometimes-2
+- [虛擬機器連接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\(有時稱為 VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>相關技術

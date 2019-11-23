@@ -21,7 +21,7 @@ ms.locfileid: "71367135"
 ---
 # <a name="step-4-verify-the-multisite-deployment"></a>步驟4確認多網站部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何確認您已正確設定遠端存取多網站部署。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "71367135"
   
     您應該能夠透過每個多網站伺服器存取所有公司資源。  
   
-4.  將 Windows 7 @ no__t-0 用戶端電腦連線到公司網路，並取得群組原則。  
+4.  將 Windows 7&reg; 用戶端電腦連線到公司網路，並取得群組原則。  
   
 5.  將 Windows 7 用戶端電腦連線到外部網路，並嘗試存取內部資源。  
   

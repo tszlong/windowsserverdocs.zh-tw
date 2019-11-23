@@ -18,7 +18,7 @@ ms.locfileid: "71407110"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>使用集中稽核原則部署安全性稽核 (示範步驟)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在此案例中，您會使用您在[部署集中存取原則&#40;示範步驟&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)中所建立的財務原則，來審核 [財務檔] 資料夾中的檔案存取權。 如果未獲得授權存取資料夾的使用者嘗試存取該資料夾，就會在事件檢視器中擷取該活動。   
  以下為測試這個案例的必要步驟。  
@@ -34,7 +34,7 @@ ms.locfileid: "71407110"
   
 #### <a name="to-configure-a-global-object-access-policy"></a>設定全域物件存取原則  
   
-1. 以<strong>pass@word1</strong>的密碼登入網域控制站 DC1 做為 contoso\administrator。  
+1. 以<strong>pass@word1</strong>的密碼登入網域控制站 DC1 as contoso\administrator。  
   
 2. 在 [伺服器管理員] 中，指向 [工具]，然後按一下 [群組原則管理]。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "71407110"
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>確認已套用全域物件存取原則  
   
-1.  以 Contoso\MReid 身分登入用戶端電腦 CLIENT1。 流覽至資料夾超連結 "file:///\\ @ no__t-1 @ no__t-2\ID_AD_FILE1 @ no__t-3\Finance" \\ \ FILE1\Finance 檔，並修改 Word 檔2。  
+1.  以 Contoso\MReid 身分登入用戶端電腦 CLIENT1。 流覽至資料夾超連結 "file:///\\\\\\\ ID_AD_FILE1\\\Finance" \\\ FILE1\Finance 檔，並修改 Word 檔2。  
   
 2.  以 contoso\administrator 身分登入檔案伺服器 FILE1。 開啟 [事件檢視器]，瀏覽至 [Windows 記錄]，選取 [安全性]，並確認您的活動產生稽核事件 **4656** 和 **4663** (即使您並未在所建立、修改和刪除的檔案或資料夾上明確設定稽核 SACL 也一樣)。  
   
@@ -93,10 +93,10 @@ ms.locfileid: "71407110"
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [案例：檔案存取稽核](Scenario--File-Access-Auditing.md)  
+-   [案例：檔案存取審核](Scenario--File-Access-Auditing.md)  
   
 -   [規劃檔案存取稽核](Plan-for-File-Access-Auditing.md)  
   
--   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

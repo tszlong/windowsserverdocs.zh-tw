@@ -15,15 +15,15 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356198"
 ---
-# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>在託管快取伺服器上匯入資料封裝 \(Optional @ no__t-1
+# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>在託管快取伺服器上匯入資料封裝 \(選擇性\)
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用這個程式匯入資料封裝，並在託管快取伺服器上預先載入內容。
 
 這個程式是選擇性的，因為您不需要在託管快取伺服器上預先雜湊和預先載入內容。
 
-如果您未預先 @ no__t-0load 內容，則資料會自動新增至託管快取，因為用戶端會透過 WAN 連線進行下載。
+如果您未預先\-載入內容，則會自動將資料新增至託管快取，因為用戶端會透過 WAN 連線進行下載。
 
 您必須是 Administrators 群組的成員，才能執行此程式。
 

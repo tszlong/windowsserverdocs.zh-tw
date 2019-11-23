@@ -18,17 +18,17 @@ ms.locfileid: "71407177"
 ---
 # <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 這個主題說明如何設定拒絕存取時的協助，並確認它可以正常運作。  
   
 **本檔中的**  
   
--   [步驟 1：設定拒絕存取時的協助 @ no__t-0  
+-   [步驟1：設定拒絕存取時的協助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
   
--   [步驟 2：設定電子郵件通知設定 @ no__t-0  
+-   [步驟2：設定電子郵件通知設定](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
   
--   [步驟 3：確認已正確設定 [拒絕存取時的協助] @ no__t-0  
+-   [步驟3：確認已正確設定拒絕存取時的協助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
   
 > [!NOTE]  
 > 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -70,7 +70,7 @@ ms.locfileid: "71407177"
   
     3.  保留其餘的預設設定。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -116,9 +116,9 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 7.  如果您想要查看使用者會看到的錯誤訊息，按一下 [預覽] 。  
   
-8.  按一下 [確定]。  
+8.  按一下 **\[確定\]** 。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
   
@@ -142,7 +142,7 @@ Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the
   
 5.  按一下 [已啟用]，然後按一下 [確定]。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。 
   
@@ -181,7 +181,7 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\W
   
 7.  按一下 [確定]，然後按一下 [關閉]。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。 
   
@@ -208,9 +208,9 @@ Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Va
   
 5.  按一下 [傳送測試電子郵件]，確保已正確設定電子郵件通知。  
   
-6.  按一下 [確定]。  
+6.  按一下 **\[確定\]** 。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
   
@@ -230,6 +230,6 @@ set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com"
   
 -   [規劃拒絕存取時的協助](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
--   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

@@ -21,9 +21,9 @@ ms.locfileid: "71367216"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>監視「遠端存取」伺服器上現有的負載
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-**注意：** Windows Server 2012 將 DirectAccess 以及「路由及遠端存取服務」(RRAS) 合併成一個遠端存取角色。  
+**注意：** Windows Server 2012 將 DirectAccess 與「路由及遠端存取服務」(RRAS) 整合成一個遠端存取角色。  
   
 「**載入**」一詞指的是與「遠端存取」伺服器上的連接數目相關的統計資料。 以下是在遠端存取服務器上追蹤負載所需的步驟。  
   
@@ -58,7 +58,7 @@ ms.locfileid: "71367216"
   
 **效能監視器**現在會以圖形方式顯示所選取的伺服器負載統計資料。  
   
-@no__t 0Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

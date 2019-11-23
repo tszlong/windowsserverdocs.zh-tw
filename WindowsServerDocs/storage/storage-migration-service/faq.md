@@ -62,8 +62,8 @@ ms.locfileid: "71973867"
     - 加密資料
     - 身分識別遠端
     - 基礎結構
-    - Name
-    - `Path`
+    - 名稱
+    - 路徑
     - 範圍
     - 領域名稱
     - 安全性描述元
@@ -91,7 +91,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先
 
 - **改變預設傳送執行緒。** 儲存體遷移服務 Proxy 服務會在指定的作業中同時複製8個檔案。 您可以藉由在每個執行儲存體遷移服務 Proxy 的節點上調整下列登錄 REG_DWORD 值名稱，來增加同時複製執行緒的數目：
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    HKEY_Local_Machine \Software\Microsoft\SMSProxy
     
     FileTransferThreadCount
 
@@ -110,7 +110,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先
    - 使用 NIC 小組設定的其他網路介面卡之一
    - 一或多個支援 RDMA 的網路介面卡
 
-- **更新驅動程式。** 視情況而定，安裝最新的廠商存放裝置和主機殼固件和驅動程式、最新廠商 HBA 驅動程式、最新廠商 BIOS/UEFI 固件、最新廠商網路驅動程式，以及來源、目的地和協調器上最新的主機板晶片組驅動程式伺服器. 視需要重新啟動節點。 如需設定共用儲存體和網路硬體，請參閱硬體廠商的文件。
+- **更新驅動程式。** 視情況而定，安裝最新的廠商存放裝置和主機殼固件和驅動程式、最新廠商 HBA 驅動程式、最新廠商 BIOS/UEFI 固件、最新廠商網路驅動程式，以及來源、目的地和 orchestrator 伺服器上最新的主機板晶片組驅動程式。 視需要重新啟動節點。 如需設定共用儲存體和網路硬體，請參閱硬體廠商的文件。
 
 - **啟用高效能處理。** 確定伺服器的 BIOS/UEFI 設定能提供高效能，例如停用 C-State、設定 QPI 速度、啟用 NUMA，以及設定最高的記憶體頻率。 確保 Windows Server 中的電源管理設定為高效能。 視需要重新啟動。 在完成遷移之後，別忘了將這些回復到適當的狀態。 
 
@@ -129,12 +129,12 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 儲存體遷移服務會使用依預設安裝在隱藏的 c:\programdata\microsoft\storagemigrationservice 資料夾中的可擴充儲存引擎（ESE）資料庫。 此資料庫會隨著作業的新增和傳輸完成而成長，如果您未刪除作業，則在遷移數百萬個檔案之後，可能會耗用大量的磁碟空間。 如果需要移動資料庫，請執行下列步驟：
 
 1. 停止 orchestrator 電腦上的「儲存體遷移服務」服務。
-2. 取得 @no__t 0 資料夾的擁有權
+2. 取得 `%programdata%/Microsoft/StorageMigrationService` 資料夾的擁有權
 3. 新增您的使用者帳戶，以對該共用及其所有檔案和子資料夾擁有完整控制權。
 4. 將資料夾移至 orchestrator 電腦上的另一個磁片磁碟機。
 5. 設定下列登錄 REG_SZ 值：
 
-    HKEY_Local_Machine\Software\Microsoft\SMS DatabasePath =*不同磁片區上新資料庫檔案夾的路徑*。 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*不同磁片區上新資料庫檔案夾的路徑*。 
 6. 確定系統對該資料夾的所有檔案和子資料夾具有完全控制權
 7. 移除您自己的帳戶許可權。
 8. 啟動「儲存體遷移服務」服務。
@@ -158,6 +158,6 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
  - [Windows Server 2019 Technet 論壇](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)上的文章 
  - 透過[Microsoft 支援服務](https://support.microsoft.com)開啟支援案例
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [儲存體遷移服務總覽](overview.md)

@@ -1,5 +1,5 @@
 ---
-title: 將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012
+title: 將 Active Directory 同盟服務角色服務移轉到 Windows Server 2012
 description: 提供將 AD FS 服務遷移至 Windows Server 2012 的指示。
 author: billmath
 ms.author: billmath
@@ -15,7 +15,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408272"
 ---
-# <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012"></a>將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012
+# <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012"></a>將 Active Directory 同盟服務角色服務移轉到 Windows Server 2012
 
 以下提供將下列角色服務遷移至 Windows Server 2012 上 Active Directory 同盟服務（AD FS）的指示：  
   
@@ -75,9 +75,9 @@ ms.locfileid: "71408272"
 |安裝在 Windows Server 2008 或 Windows Server 2008 R2 上的 AD FS 2.0 同盟伺服器|支援相同伺服器的移轉。 如需詳細資訊，請參閱：<br /><br /> [準備移轉 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)<br /><br /> [移轉 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)|  
 |在 Windows Server 2008 或 Windows Server 2008 R2 上安裝 AD FS 2.0 同盟伺服器 proxy|支援相同伺服器的移轉。  如需詳細資訊，請參閱：<br /><br /> [準備移轉 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)<br /><br /> [移轉 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)|  
   
-## <a name="see-also"></a>另請參閱  
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+## <a name="see-also"></a>請參閱  
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)

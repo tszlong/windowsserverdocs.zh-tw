@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71392771"
 ---
->適用於：Windows 10、Windows Server 2016、Windows Server 2019
+>適用于： Windows 10、Windows Server 2016、Windows Server 2019
 
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -190,15 +190,15 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
     ```
   
    可能列出的整合服務守護套裝程式括下列各項。 如果遺失，可能是您的系統不支援它們，或者它們可能尚未安裝。 尋找詳細資料，請參閱[Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器](https://technet.microsoft.com/library/dn531030.aspx)。  
-   - **hv_vss_daemon**：建立即時 Linux 虛擬機器備份時，必須要有此守護程式。
-   - **hv_kvp_daemon**：此背景程式可讓您設定和查詢內建和外來機碼值組。
-   - **hv_fcopy_daemon**：此 daemon 會在主機和來賓之間執行檔案複製服務。  
+   - **hv_vss_daemon**：建立即時 Linux 虛擬機器備份時，必須要有此 daemon。
+   - **hv_kvp_daemon**：此背景程式可讓您設定及查詢內建和外來機碼值組。
+   - **hv_fcopy_daemon**：此後台處理常式會在主機和來賓之間執行檔案複製服務。  
 
 ### <a name="examples"></a>範例
 
 這些範例示範如何停止和啟動 KVP daemon，名為 `hv_kvp_daemon`。
 
-1. 使用處理序識別碼 \(PID @ no__t-1 來停止 daemon 的進程。 若要尋找 PID，請查看輸出的第二個數據行，或使用 `pidof`。 Hyper-v 守護程式是以 root 身分執行，因此您需要根許可權。
+1. 使用處理序識別碼 \(PID\) 來停止 daemon 的進程。 若要尋找 PID，請查看輸出的第二個數據行，或使用 `pidof`。 Hyper-v 守護程式是以 root 身分執行，因此您需要根許可權。
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
@@ -216,7 +216,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
     sudo hv_kvp_daemon
     ``` 
 
-1. 若要確認 `hv_kvp_daemon` 進程是以新的處理序識別碼列出，請執行：
+1. 若要確認已使用新的處理序識別碼列出 `hv_kvp_daemon` 進程，請執行：
 
     ```
     ps -ef | hv
@@ -231,7 +231,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 > [!NOTE]
 > Windows 10 上的 Hyper-v 並未包含影像檔 vmguest.iso，因為不再需要此檔案。
 
-| Guest  | 更新機制 | 注意 |
+| Guest  | 更新機制 | 附註 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
@@ -239,7 +239,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | Windows 7 | Windows Update | 需要資料交換整合服務。* |
 | Windows Vista (SP 2) | Windows Update | 需要資料交換整合服務。* |
 | - | | |
-| Windows Server 2016 | Windows Update | |
+| Windows Server 2016 | Windows Update | |
 | Windows Server 半年通道 | Windows Update | |
 | Windows Server 2012 R2 | Windows Update | |
 | Windows Server 2012 | Windows Update | 需要資料交換整合服務。* |
@@ -250,11 +250,11 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | - | | |
 | Linux 客體 | 封裝管理員 | 適用于 Linux 的 Integration services 已內建于散發版本中，但可能有選擇性的更新可供使用。 ******** |
 
-\* 如果無法啟用資料交換整合服務，可從[下載中心](https://support.microsoft.com/kb/3071740)以封包（cab）檔案的形式取得這些來賓的整合服務。 此[blog 文章](https://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)提供套用 cab 的指示。
+\* 如果無法啟用資料交換整合服務，則可以從[下載中心](https://support.microsoft.com/kb/3071740)以封包（cab）檔案的形式取得這些來賓的整合服務。 此[blog 文章](https://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)提供套用 cab 的指示。
 
 **在 Windows 8.1 主機上執行虛擬機器：**
 
-| Guest  | 更新機制 | 注意 |
+| Guest  | 更新機制 | 附註 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
@@ -263,7 +263,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | Windows Vista (SP 2) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows XP (SP 2、SP 3) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2016 | Windows Update | |
+| Windows Server 2016 | Windows Update | |
 | Windows Server 半年通道 | Windows Update | |
 | Windows Server 2012 R2 | Windows Update | |
 | Windows Server 2012 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
@@ -279,7 +279,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 **在 Windows 8 主機上執行虛擬機器：**
 
-| Guest  | 更新機制 | 注意 |
+| Guest  | 更新機制 | 附註 |
 |:---------|:---------|:---------|
 | Windows 8.1 | Windows Update | |
 | Windows 8 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |

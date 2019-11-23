@@ -17,7 +17,7 @@ ms.locfileid: "71369253"
 ---
 # <a name="ad-forest-recovery---configuring-the-dns-server-service"></a>AD 樹系復原-設定 DNS 伺服器服務
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 如果您從備份還原的 DC 上未安裝 DNS 伺服器角色，您必須安裝和設定 DNS 伺服器。 
 
@@ -26,7 +26,7 @@ ms.locfileid: "71369253"
 在還原完成之後，針對未在 DNS 伺服器上執行的每個已還原 DC 完成此步驟。 
 
 > [!NOTE]
-> 如果您從備份還原的 DC 正在執行 Windows Server 2008 R2，您必須將 DC 連線到隔離的網路，才能安裝 DNS 伺服器。 然後將每個已還原的 DNS 伺服器連接到相互共用的隔離網路。 執行 repadmin/replsum，確認還原的 DNS 伺服器之間的複寫正常運作。 在確認複寫之後，如果已安裝 DNS 伺服器角色，您可以將還原的 Dc 連接到生產網路，您可以套用可讓 DNS 伺服器在伺服器未連線到任何網路時啟動的修補程式。 在您的自動化組建程式期間，您應該將此修補程式彙集到作業系統安裝映射中。 如需有關此修補程式的詳細資訊，請參閱 Microsoft 知識庫中的[文章 975654](https://go.microsoft.com/fwlink/?LinkId=184691) （ https://go.microsoft.com/fwlink/?LinkId=184691) 。 
+> 如果您從備份還原的 DC 正在執行 Windows Server 2008 R2，您必須將 DC 連線到隔離的網路，才能安裝 DNS 伺服器。 然後將每個已還原的 DNS 伺服器連接到相互共用的隔離網路。 執行 repadmin/replsum，確認還原的 DNS 伺服器之間的複寫正常運作。 在確認複寫之後，如果已安裝 DNS 伺服器角色，您可以將還原的 Dc 連接到生產網路，您可以套用可讓 DNS 伺服器在伺服器未連線到任何網路時啟動的修補程式。 在您的自動化組建程式期間，您應該將此修補程式彙集到作業系統安裝映射中。 如需有關此修補程式的詳細資訊，請參閱 Microsoft 知識庫中的[文章 975654](https://go.microsoft.com/fwlink/?LinkId=184691) （ https://go.microsoft.com/fwlink/?LinkId=184691)。 
 
 完成以下的安裝和設定步驟。
 
@@ -39,15 +39,15 @@ ms.locfileid: "71369253"
 5. 在 **伺服器角色** 畫面上選取  **DNS 伺服器**，如果出現提示，請按一下 **新增功能**，然後按一下
 6. 在 [**功能**] 畫面上，按 **[下一步]** 。
 7. 閱讀 [ **DNS 伺服器**] 頁面上的資訊，然後按 **[下一步]** 。
-   @no__t 0DNS 伺服器 @ no__t-1  
+   ![DNS 伺服器](media/AD-Forest-Recovery-Configure-DNS/dns1.png)  
 8. 在 [**確認**] 頁面上，確認將會安裝 DNS 伺服器角色，然後按一下 [**安裝**]。 
 
 ### <a name="to-configure-the-dns-server-service"></a>設定 DNS 伺服器服務
 
 1. 開啟伺服器管理員，按一下 [**工具**]，然後按一下 [ **DNS**]。
-   @no__t 0DNS 伺服器 @ no__t-1
+   ![DNS 伺服器](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
 2. 為 DNS 伺服器上裝載的相同 DNS 功能變數名稱建立 DNS 區域，然後才會發生嚴重的故障。 如需詳細資訊，請參閱新增正向對應區域（[https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)）。
-3. 在嚴重的故障之前，設定 DNS 資料。 例如:  
+3. 在嚴重的故障之前，設定 DNS 資料。 例如：  
 
    - 設定要儲存在 AD DS 中的 DNS 區域。 如需詳細資訊，請參閱變更區欄位型別（[https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)）。
    - 設定網域控制站定位程式（DC 定位器）資源記錄的授權 DNS 區域，以允許安全的動態更新。 如需詳細資訊，請參閱只允許安全的動態更新（[https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)）。

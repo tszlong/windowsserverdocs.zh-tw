@@ -18,7 +18,7 @@ ms.locfileid: "71390056"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>AD 樹系復原-Windows Server 2003 修復
 
->適用於：Windows Server 2003
+>適用于： Windows Server 2003
 
 本主題包含執行 Windows Server 2003 之網域控制站（Dc）的樹系修復程式。 樹系復原的一般程式與 Windows Server 2003 Dc 沒有任何不同之處，但因為有不同的工具，所以特定程式可能有所不同。 例如，Ntdsutil.exe 可以用來備份和還原執行 Windows Server 2003 Dc 的 Dc，而 Windows Server Backup 或 Wbadmin 則是用於執行 Windows Server 2008 或更新版本的 Dc。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71390056"
 3. 選取您想要在還原模式中啟動的作業系統。  
 4. 以系統管理員身分登入（您只能使用本機電腦帳戶，沒有可用的網域登入選項）。  
 5. 在命令提示字元中，輸入**ntbackup**，然後按 enter。  
-6. 在 [**歡迎使用**] 頁面上，按一下 [**先進模式**]，然後選取 [**還原和管理媒體**] 索引標籤。（請勿選取 [**還原嚮導]** ）。  
+6. 在 [**歡迎使用**] 頁面上，按一下 [**先進模式**]，然後選取 [**還原並管理媒體**] 索引標籤（請勿選取 [**還原嚮導]** ）。  
 7. 選取要從中還原的適當備份檔案，並確定已選取 [**系統磁片**] 和 [**系統狀態**] 核取方塊。  
 8. 按一下 [**開始還原**]。  
 9. 當還原作業完成時，請重新開機電腦。  
@@ -77,7 +77,7 @@ ms.locfileid: "71390056"
    > [!NOTE]
    > 將還原的資料標示為備份中的主要資料，相當於在下列登錄子機碼下將**BurFlags**專案設定為 D4：  
    >   
-   > **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative Replica set @ no__t-1** *GUID*  
+   > **HKEY_LOCAL_MACHINE \System\currentcontrolset\services\ntfrs\parameters\cumulative 複本集\\** *GUID*  
 
 4. 當還原作業完成時，請重新開機電腦。  
   
@@ -100,7 +100,7 @@ ms.locfileid: "71390056"
 
 5. 按一下 [**開始**]，指向 [**所有程式**]，指向 [系統**管理工具**]，然後按一下 [ **DNS**]。  
 6. 為 DNS 伺服器上裝載的相同 DNS 功能變數名稱建立 DNS 區域，然後才會發生嚴重的故障。 如需詳細資訊，請參閱新增正向對應區域（[https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)）。  
-7. 在嚴重的故障之前，設定 DNS 資料。 例如:  
+7. 在嚴重的故障之前，設定 DNS 資料。 例如：  
 
    - 設定要儲存在 AD DS 中的 DNS 區域。 如需詳細資訊，請參閱變更區欄位型別（[https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)）。  
    - 設定網域控制站定位程式（DC 定位器）資源記錄的授權 DNS 區域，以允許安全的動態更新。 如需詳細資訊，請參閱只允許安全的動態更新（[https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)）。  

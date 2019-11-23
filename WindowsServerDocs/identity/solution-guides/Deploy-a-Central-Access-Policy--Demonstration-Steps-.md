@@ -18,7 +18,7 @@ ms.locfileid: "71357504"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>部署集中存取原則 (示範步驟)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在此案例中，財務部門安全性作業使用中央資訊安全性，以指定集中存取原則的需求，讓它們可以保護儲存在檔案伺服器上的封存財務資訊。 每個國家/地區的已封存財經資訊可以由來自相同的國家/地區的財務員工以唯讀方式存取。 中央財務管理群組可以存取所有國家/地區的財務資訊。  
 
@@ -26,15 +26,15 @@ ms.locfileid: "71357504"
 
 |階段|描述  
 |---------|---------------  
-|[Plan：找出部署 @ no__t-0 所需的原則和設定需求|識別原則的需求，以及部署所需的設定。 
-|[Implement：設定元件和原則 @ no__t-0|設定元件與原則。  
+|[規劃：識別原則的需求和部署所需的設定](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|識別原則的需求，以及部署所需的設定。 
+|[執行：設定元件和原則](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3)|設定元件與原則。  
 |[部署集中存取原則](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|部署原則。  
-|[Maintain：變更和暫存原則 @ no__t-0|原則變更和預備。 
+|[維護：變更和暫存原則](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|原則變更和預備。 
 
 ## <a name="BKMK_1.1"></a>設定測試環境  
-在開始之前，您需要設定測試此案例的實驗室。 @No__t-0Appendix B 中會詳細說明設定實驗室的步驟：設定測試環境 @ no__t-0。  
+在開始之前，您需要設定測試此案例的實驗室。 [附錄 B：設定測試環境](Appendix-B--Setting-Up-the-Test-Environment.md)中會詳細說明設定實驗室的步驟。  
 
-## <a name="BKMK_1.2"></a>圖識別原則的需求，以及部署所需的設定  
+## <a name="BKMK_1.2"></a>規劃：識別原則的需求和部署所需的設定  
 本節提供一系列高階步驟，協助部署的規劃階段。  
 
 ||步驟|範例|  
@@ -46,10 +46,10 @@ ms.locfileid: "71357504"
 |1.5|判斷原則所需的宣告類型和群組|宣告類型：<br /><br />-國家/地區<br />-部門<br /><br />使用者群組：<br /><br />-FinanceAdmin<br />-FinanceException|  
 |1.6|決定要套用此原則的伺服器|將原則套用到所有的財務檔案伺服器。|  
 
-## <a name="BKMK_1.3"></a>實作設定元件與原則  
+## <a name="BKMK_1.3"></a>執行：設定元件和原則  
 本節說明部署財務文件集中存取原則的範例。  
 
-|否|步驟|範例|  
+|不可以|步驟|範例|  
 |------|--------|-----------|  
 |2.1|建立宣告類型|建立下列宣告類型：<br /><br />-部門<br />-國家/地區|  
 |2.2|建立資源內容|建立並啟用下列資源內容：<br /><br />-部門<br />-國家/地區|  
@@ -58,11 +58,11 @@ ms.locfileid: "71357504"
 |2.5|檔案伺服器的目標集中存取原則|將財務原則 CAP 發佈至檔案伺服器。|  
 |2.6|啟用宣告、複合驗證和 Kerberos 防護的 KDC 支援。|為 contoso.com 啟用宣告、複合驗證和 Kerberos 防護的 KDC 支援。|  
 
-在下列程序中，您會建立兩個宣告類型：國家/地區和部門。  
+在下列程式中，您會建立兩個宣告類型：國家/地區和部門。  
 
 #### <a name="to-create-claim-types"></a>建立宣告類型  
 
-1. 在 [Hyper-v 管理員] 中開啟 Server DC1，以 contoso\administrator 的身分登入，密碼<strong>pass@word1</strong>。  
+1. 在 [Hyper-v 管理員] 中開啟 Server DC1，以 contoso\administrator 的身分登入，並以<strong>pass@word1</strong>密碼。  
 
 2. 開啟「Active Directory 管理中心」。  
 
@@ -73,7 +73,7 @@ ms.locfileid: "71357504"
    > [!TIP]  
    > 您也可以從 [工作] 窗格開啟 [建立宣告類型:] 視窗。 在 [工作] 窗格中，依序按一下 [新增] 和 [宣告類型]。  
 
-4. 在 [來源屬性] 清單中，向下捲動屬性清單，按一下 [部門]。 如此會在 [顯示名稱] 欄位填入 [部門]。 按一下 [確定]。  
+4. 在 [來源屬性] 清單中，向下捲動屬性清單，按一下 [部門]。 如此會在 [顯示名稱] 欄位填入 [部門]。 按一下 **\[確定\]** 。  
 
 5. 在 [工作] 窗格中，依序按一下 [新增] 和 [宣告類型]。  
 
@@ -85,7 +85,7 @@ ms.locfileid: "71357504"
 
 9. 重複上述步驟。 在 [新增建議值] 對話方塊中的 [值] 和 [顯示名稱] 欄位中輸入**日本**，然後按一下 [確定]。  
 
-@no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
 
@@ -117,11 +117,11 @@ ms.locfileid: "71357504"
 
 6.  在 Active Directory 管理中心內瀏覽窗格上的 [資源內容] 清單中，現在會有兩個已啟用的資源內容：  
 
-    -   Country  
+    -   國家/地區  
 
     -   部門  
 
-@no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
 
@@ -147,7 +147,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
 或者，使用 Windows Server 2012 結構來表示規則：  
 
-目標：Resource.Department Contains Finance  
+目標：資源。部門包含財務  
 
 存取規則：  
 
@@ -171,7 +171,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 5. 在 [權限] 區段中，選取 [使用下列權限做為目前權限]，按一下 [編輯]，然後在 [權限的進階安全性設定] 對話方塊中，按一下 [新增]。  
 
    > [!NOTE]  
-   > [使用下列權限做為建議權限] 選項可以讓您建立暫存原則。 如需如何執行此動作的詳細資訊，請參閱本主題中「維護：變更和暫存原則」一節。  
+   > [使用下列權限做為建議權限] 選項可以讓您建立暫存原則。 如需有關如何執行這項操作的詳細資訊，請參閱本主題中的維護：變更和暫存原則一節。  
 
 6. 在 [權限的權限項目] 對話方塊中，按一下 [選取主體]，輸入**已驗證的使用者**，然後按一下 [確定]。  
 
@@ -189,7 +189,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
 11. 按一下 [確定] 三次，以完成並返回 Active Directory 管理中心。  
 
-    @no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+    ![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
     下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
 
@@ -206,9 +206,9 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 
 > [!IMPORTANT]  
-> 在上列 Cmdlet 範例中，FinanceAdmin 群組和使用者的安全性識別碼 (SID) 是在建立時決定，因此會與範例不同。 例如，為 FinanceAdmin 群組提供的 SID 值 (S-1-5-21-1787166779-1215870801-2157059049-1113)，必須以您在部署時建立的 FinanceAdmin 群組的實際 SID 取代。 您可以使用 Windows PowerShell 來查閱這個群組的 SID 值，將該值指派給變數，然後在這裡使用變數。 如需詳細資訊，請參閱 @no__t 0Windows PowerShell 秘訣：使用 Sid @ no__t-0。  
+> 在上列 Cmdlet 範例中，FinanceAdmin 群組和使用者的安全性識別碼 (SID) 是在建立時決定，因此會與範例不同。 例如，為 FinanceAdmin 群組提供的 SID 值 (S-1-5-21-1787166779-1215870801-2157059049-1113)，必須以您在部署時建立的 FinanceAdmin 群組的實際 SID 取代。 您可以使用 Windows PowerShell 來查閱這個群組的 SID 值，將該值指派給變數，然後在這裡使用變數。 如需詳細資訊，請參閱[Windows PowerShell 秘訣：使用 sid](https://go.microsoft.com/fwlink/?LinkId=253545)。  
 
-您現在應該會有集中存取規則，允許人員存取相同國家/地區和相同部門的文件。 這個規則允許 FinanceAdmin 群組編輯文件，也允許 FinanceException 群組讀取文件。 這個規則只針對分類為「財務」的文件。  
+您現在應該會有集中存取規則，允許人員存取相同國家和相同部門的文件。 這個規則允許 FinanceAdmin 群組編輯文件，也允許 FinanceException 群組讀取文件。 這個規則只針對分類為「財務」的文件。  
 
 #### <a name="to-add-a-central-access-rule-to-a-central-access-policy"></a>將集中存取規則新增到集中存取原則  
 
@@ -224,7 +224,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 6. 按一下 [確定] 以完成。 您現在應該有一個稱為「財務原則」的集中存取原則。  
 
-   @no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+   ![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
    下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
 
@@ -245,7 +245,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
     > [!TIP]  
     > 在生產環境中，您應該建立檔案伺服器組織單位 (OU)，並將所有的檔案伺服器新增至要套用此原則的這個 OU 中。 接著您可以建立群組原則，然後將這個 OU 新增到該原則。  
 
-2.  在這個步驟中，您會編輯在＜測試環境＞中[建立網域控制站](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)所建立的群組原則物件，以包含剛才建立的集中存取原則。 在 [群組原則管理編輯器] 中，瀏覽至網域中的組織單位並加以選取 (在這個範例中為 contoso.com)：[群組原則管理]、[樹系: contoso.com]、[網域]、[contoso.com]、[Contoso]、[FileServerOU]。  
+2.  在這個步驟中，您會編輯在＜測試環境＞中[建立網域控制站](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)所建立的群組原則物件，以包含剛才建立的集中存取原則。 在 群組原則管理編輯器中，流覽至並選取網域中的組織單位（在此範例中為 contoso.com）：**群組原則管理**、**樹系： contoso.com**、**網域**、 **contoso.com**、 **contoso**、 **fileserverou**。  
 
 3.  以滑鼠右鍵按一下 [FlexibleAccessGPO]，然後按一下 [編輯]。  
 
@@ -301,7 +301,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
    > [!TIP]
    > 您也可以藉由登入檔案伺服器，以重新整理全域資源內容。 若要從檔案伺服器重新整理全域資源內容，請執行下列動作  
    > 
-   > 1. 以 contoso\administrator 的身分登入檔案伺服器 FILE1，並使用<strong>pass@word1</strong>的密碼。  
+   > 1. 使用<strong>pass@word1</strong>的密碼，以 contoso\administrator 的身分登入檔案伺服器 FILE1。  
    > 2. 開啟檔案伺服器資源管理員。 若要開啟檔案伺服器資源管理員，按一下 [開始]，輸入 **檔案伺服器資源管理員**，然後按一下 [檔案伺服器資源管理員]。  
    > 3. 在 [檔案伺服器資源管理員] 中按一下 [檔案分類管理]，以滑鼠右鍵按一下 [分類內容]，然後按一下 [重新整理]。  
 
@@ -328,7 +328,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 2.  按一下 [安全性] 索引標籤，按一下 [進階]，然後按一下 [有效存取權] 索引標籤。  
 
-3.  若要檢查使用者的許可權，請按一下 [**選取使用者**]，輸入使用者的名稱，然後按一下 [**查看有效存取**權] 來查看有效存取權限。 例如:  
+3.  若要檢查使用者的許可權，請按一下 [**選取使用者**]，輸入使用者的名稱，然後按一下 [**查看有效存取**權] 來查看有效存取權限。 例如：  
 
     -   Myriam Delesalle (MDelesalle) 在財務部門中工作，應該具有資料夾的讀取存取權。  
 
@@ -340,11 +340,11 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
     請注意有效存取權視窗中名為 [存取限制依據] 的最後一欄。 此欄會告訴您哪些閘道會影響該人員的許可權。 在此例中，共用和 NTFS 權限允許所有使用者具有完全控制的權限。 不過，集中存取原則會根據您先前設定的規則限制存取權。  
 
-## <a name="BKMK_1.5"></a>保證變更和暫存原則  
+## <a name="BKMK_1.5"></a>維護：變更和暫存原則  
 
 ||||  
 |-|-|-|  
-|Number|步驟|範例|  
+|數字|步驟|範例|  
 |4.1|設定用戶端裝置宣告|設定群組原則設定，以啟用裝置宣告|  
 |4.2|啟用裝置宣告。|啟用裝置的國家/地區宣告類型。|  
 |4.3|將暫存原則新增至您想要修改的現有集中存取規則。|修改財務文件規則以新增暫存原則。|  
@@ -360,20 +360,20 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 #### <a name="to-enable-a-claim-for-devices"></a>啟用裝置宣告  
 
-1. 在 [Hyper-v 管理員] 中開啟 Server DC1，以 contoso\Administrator 的身分登入，密碼<strong>pass@word1</strong>。  
+1. 在 [Hyper-v 管理員] 中開啟 Server DC1，以 contoso\Administrator 的身分登入，並以<strong>pass@word1</strong>密碼。  
 
 2. 從 [工具] 功能表上開啟 [Active Directory 管理中心]。  
 
 3. 按一下 [樹狀檢視]，展開 [動態存取控制]，按兩下 [宣告類型]，按兩下 [國家/地區] 宣告。  
 
-4. 在 [可以針對下列類別發行此類型的宣告] 中，選取 [電腦] 核取方塊。 按一下 [確定]。   
+4. 在 [可以針對下列類別發行此類型的宣告] 中，選取 [電腦] 核取方塊。 按一下 **\[確定\]** 。   
    [使用者] 和 [電腦] 兩個核取方塊現在應該都已選取。 國家/地區宣告現在除了可以搭配使用者以外，還可以搭配裝置。  
 
 下一個步驟是建立暫存原則規則。 暫存原則可以用來在啟用新的原則項目之前先監視它的效果。 在下列步驟中，您將建立暫存原則項目，並監視它在共用資料夾上的效果。  
 
 #### <a name="to-create-a-staging-policy-rule-and-add-it-to-the-central-access-policy"></a>建立暫存原則規則並將它新增到集中存取原則  
 
-1. 在 [Hyper-v 管理員] 中開啟 Server DC1，以 contoso\Administrator 的身分登入，密碼<strong>pass@word1</strong>。  
+1. 在 [Hyper-v 管理員] 中開啟 Server DC1，以 contoso\Administrator 的身分登入，並以<strong>pass@word1</strong>密碼。  
 
 2. 開啟「Active Directory 管理中心」。  
 
@@ -392,7 +392,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 8. 再次按一下 [新增條件] 並新增下列條件。  
    和   
-    [**使用者**][**群組**][**Any 的成員**][**值**] \(**FinanceException**）  
+    [**使用者**][**群組**][**Any 的成員**][**值**]\(**FinanceException**）  
 
 9. 若要設定 FinanceException 群組，按一下 [新增項目]，然後在 [選取使用者、電腦、服務帳戶或群組] 視窗中，輸入 **FinanceException**。  
 
@@ -402,7 +402,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 12. 按一下 [確定] 兩次以完成。  
 
-@no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
 
@@ -423,13 +423,13 @@ Set-ADCentralAccessRule
 
 #### <a name="to-verify-the-results-of-the-staging-policy"></a>確認暫存原則的結果  
 
-1. 在 Hyper-v 管理員中連線到檔案伺服器 FILE1，並以 contoso\administrator 的身分登入，密碼<strong>pass@word1</strong>。  
+1. 在 [Hyper-v 管理員] 中連線到檔案伺服器 FILE1，並以 contoso\administrator 的身分登入，密碼<strong>pass@word1</strong>。  
 
 2. 開啟 [命令提示字元] 視窗，然後輸入 **gpupdate /force**。 這可確保您的群組原則變更能在伺服器上生效。  
 
-3. 在 [HYPER-V 管理員] 中，連線至 CLIENT1。 登出目前已登入的使用者。 重新啟動虛擬機器 CLIENT1。 然後使用 contoso\EValle pass@word1 登入電腦。  
+3. 在 [HYPER-V 管理員] 中，連線至 CLIENT1。 登出目前已登入的使用者。 重新啟動虛擬機器 CLIENT1。 然後使用 contoso\EValle pass@word1登入電腦。  
 
-4. 按兩下桌面快捷方式以 \\ \ FILE1\Finance 檔。 EValle 應該還是可以存取檔案。 切換回 FILE1。  
+4. 按兩下桌面快捷方式以 \\\FILE1\Finance 檔。 EValle 應該還是可以存取檔案。 切換回 FILE1。  
 
 5. 從桌面上的捷徑開啟 [事件檢視器]。 展開 [Windows 記錄檔]，然後選取 [安全性]。 在 [**集中存取原則暫存**] 工作類別底下，開啟**事件識別碼為 4818**的專案。 您會看到 EValle 被允許存取。不過，根據暫存原則，使用者會被拒絕存取。  
 

@@ -24,7 +24,7 @@ ms.locfileid: "71389402"
 在 MultiPoint 儀表板中重新對應站台可讓您在鍵盤及滑鼠與螢幕之間建立關聯。 MultiPoint 服務系統重新對應時，會暫停本機使用者站台。  
   
 > [!CAUTION]  
-> 重新對應功能通常作為疑難排解之用。 工作站設定（例如 name 和 auto @ no__t-0logon 資訊）會在重新對應過程中清除。  
+> 重新對應功能通常作為疑難排解之用。 工作站設定（例如名稱和自動\-登入資訊）會在重新對應過程中清除。  
   
 #### <a name="to-remap-a-multipoint-services-system"></a>若要重新對應 MultiPoint 服務系統  
   

@@ -21,7 +21,7 @@ ms.locfileid: "70865038"
 ---
 # <a name="configure-server-storage"></a>設定伺服器儲存體
 
->適用於：Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ## <a name="sample-hard-disk-configurations"></a>硬碟設定範例  
  下表是建議的範例硬碟設定。 預估值是依據一般使用和功能而得出，但不會解決影響最佳效能的問題。 您可以依據客戶的喜好設定和需求，使用任何支援的硬碟類型來進行這些設定 (如 SATA 或 SCSI)。  
@@ -31,7 +31,7 @@ ms.locfileid: "70865038"
   
 |伺服器層級|磁碟設定|  
 |------------------|------------------------|  
-|進入|-兩個實體磁片<br /><br /> -設定為 RAID 1 鏡像集，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1000 GB|  
+|項目|-兩個實體磁片<br /><br /> -設定為 RAID 1 鏡像集，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1000 GB|  
 |中等|-三個實體磁片<br /><br /> -設定為 RAID 5 集合，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1500 GB|  
 |高|-五個以上的實體磁片總計<br /><br /> -RAID 1 鏡像集內的兩個磁片，其中包含 C： volume？ 100 GB<br /><br /> -RAID 5 集合中的所有剩餘磁片，其中包含下列各項：<br /><br /> -D： volume？ 1500 GB<br /><br /> -E：磁片區？ 1500 GB|  
   
@@ -43,17 +43,17 @@ ms.locfileid: "70865038"
 ## <a name="partition-configuration"></a>磁碟分割設定  
  在伺服器的初始設定期間，會在磁碟 0 最大的資料磁碟分割中建立一組包含共用資料夾的預設伺服器資料夾，以及用戶端電腦備份資料夾。  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 
- [使用 Windows Server Essentials ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)
 
- [使用 Windows Server Essentials ADK 消費者入門](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [消費者入門與 Windows Server ESSENTIALS ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
  [其他自訂](../install/Additional-Customizations.md)   
- [準備要部署的映射](../install/Preparing-the-Image-for-Deployment.md)   
+ [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

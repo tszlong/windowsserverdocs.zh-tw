@@ -22,7 +22,7 @@ ms.locfileid: "71371845"
 ---
 # <a name="query"></a>query
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示處理常式、會話和遠端桌面工作階段主機（RD 工作階段主機）伺服器的相關資訊。
 
@@ -37,7 +37,7 @@ query termserver
 query user
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 |參數|描述|
 |-------|--------|
 |[查詢進程](query-process.md)|顯示在 rd 工作階段主機伺服器上執行之處理常式的相關資訊。|
@@ -46,5 +46,5 @@ query user
 |[查詢使用者](query-user.md)|顯示 rd 工作階段主機伺服器上使用者會話的相關資訊。|
 
 #### <a name="additional-references"></a>其他參考
-[命令列語法索引鍵](command-line-syntax-key.md)
-[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+
+[ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)

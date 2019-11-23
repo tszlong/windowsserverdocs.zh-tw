@@ -30,9 +30,9 @@ ms.locfileid: "71402318"
 
 ### <a id="install-dedup-via-server-manager"></a>使用伺服器管理員安裝重復資料刪除
 1. 在 [新增角色及功能精靈] 中，選取 [伺服器角色]，然後選取 [重複資料刪除]。  
-@no__t-透過伺服器管理員0Install 重復資料刪除：從伺服器角色選取重復資料刪除 @ no__t-1
+![透過伺服器管理員安裝重復資料刪除：從伺服器角色選取重復資料刪除](media/install-dedup-via-server-manager-1.png)
 2. 按一下 [下一步] 直到 [安裝] 按鈕被啟用，然後按一下 [安裝]。  
-@no__t-透過伺服器管理員0Install 重復資料刪除：按一下 [安裝] @ no__t-1
+![透過伺服器管理員安裝重復資料刪除：按一下 [安裝]](media/install-dedup-via-server-manager-2.png)
 
 ### <a id="install-dedup-via-powershell"></a>使用 PowerShell 安裝重復資料刪除
 若要安裝重複資料刪除，請以系統管理員身分執行下列 PowerShell 命令︰  
@@ -41,13 +41,13 @@ ms.locfileid: "71402318"
 若要在 Nano 伺服器安裝中安裝重複資料刪除︰
 
 1. 利用[開始使用 Nano 伺服器](../../get-started/getting-started-with-nano-server.md)所述的已安裝存放裝置，建立 Nano 伺服器安裝。
-2. 從執行 Nano 伺服器以外之任何模式的 Windows Server 2016 伺服器中，或從已安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520) (RSAT) 的 Windows 電腦中，將具有明確參考的重複資料刪除安裝到 Nano 伺服器執行個體上 (以 Nano 伺服器執行個體的實際名稱取代 'MyNanoServer')：  
+2. 從執行 Nano 伺服器以外之任何模式的 Windows Server 2016 伺服器中，或從已安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520) (RSAT) 的 Windows 電腦中，將具有明確參考的重複資料刪除安裝到 Nano 伺服器執行個體上 (以 Nano 伺服器執行個體的實際名稱取代 'MyNanoServer')：  
     ```PowerShell
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
     <br />
     <strong>--或--</strong>
-    @ NO__T-2<br />
+    <br />
     使用 PowerShell 遠端執行功能遠端連線至 Nano 伺服器執行個體，然後使用 DISM 安裝重複資料刪除：  
     
     ```PowerShell
@@ -95,7 +95,7 @@ ms.locfileid: "71402318"
     `Files excluded by policy: 20`  
     `Files excluded by error: 0`  
 
-2. @no__t 0What 工作負載對其資料集的 i/o 模式是否看起來像這樣？我的工作負載有何效能？ **  
+2. **我的工作負載對其資料集的 i/o 模式看起來像什麼？我的工作負載有何效能？**  
      重複資料刪除會將檔案最佳化為定期工作，而不是將檔案寫入至磁碟時。 因此，一定要檢查的是工作負載對已經過重複資料刪除處理之磁碟區的預期讀取模式。 由於重複資料刪除會將檔案內容移入區塊存放區中，並嘗試盡可能依檔案來組織區塊存放區，因此針對檔案循序範圍所套用的讀取作業，將會有最佳的效能。  
 
     類資料庫的工作負載通常具有較為隨機的讀取模式 (而非循序讀取模式)，因為資料庫通常並不會保證資料庫配置會針對所有可能執行的查詢進行最佳化。 由於區塊存放區的區段可能會分散在磁碟區各處，因此針對資料庫查詢存取區塊存放區中的資料範圍，可能會產生額外的延遲。 高效能的工作負載特別容易受到上述額外延遲的影響，但其他類資料庫的工作負載可能不會。
@@ -115,13 +115,13 @@ ms.locfileid: "71402318"
 
 #### <a id="enable-dedup-via-server-manager"></a>使用伺服器管理員啟用重復資料刪除
 1. 選取伺服器管理員中的 [檔案和存放服務]。  
-@no__t 0Click 檔案和存放服務 @ no__t-1
+![按一下 [檔案和存放服務]](media/enable-dedup-via-server-manager-1.PNG)
 2. 從 [檔案和存放服務] 中，選取 [磁碟區]。  
-@no__t 0Click 的磁片區 @ no__t-1
+![按一下 [磁片區]](media/enable-dedup-via-server-manager-2.png)
 3. 在所需的磁碟區上按一下滑鼠右鍵，然後選取 [設定重複資料刪除]。  
-@no__t 0Click 設定重復資料刪除 @ no__t-1
+![按一下 [設定重復資料刪除]](media/enable-dedup-via-server-manager-3.png)
 4. 從下拉式清單方塊中選取所需的 [使用類型]，然後選取 [確定]。  
-@no__t-從下拉式 no__t 中0Select 所需的使用類型-1
+![從下拉式](media/enable-dedup-via-server-manager-4.png) 選取所需的使用類型
 5. 如果您是執行建議的工作負載，即大功告成。 針對其他工作負載，請參閱[其他考量](#enable-dedup-sometimes-considerations)。
 
 > [!Note]  
@@ -147,7 +147,7 @@ ms.locfileid: "71402318"
 * 如果您工作負載的資源需求不高，或者完成最佳化工作比起完成工作負載要求更為重要，則您可以[調整記憶體、CPU，以及重複資料刪除工作的優先順序](advanced-settings.md#modifying-job-schedules)。
 
 ## <a id="faq"></a>常見問題（FAQ）
-@no__t 0 I 想要在 X 工作負載的資料集上執行重復資料刪除。這是支援的嗎？ **  
+**我想要在 X 工作負載的資料集上執行重復資料刪除。這是支援的嗎？**  
 除了[已知無法與重複資料刪除功能相互操作](interop.md)的工作負載之外，我們完全支援搭配任何工作負載之重複資料刪除的資料完整性。 建議的工作負載也受到 Microsoft 針對效能上的支援。 其他工作負載的效能大量取決於它們對您伺服器上執行的作業。 您必須判斷重複資料刪除對您工作負載造成的效能影響，以及該影響對此工作負載是否可以接受。
 
 **重復資料刪除磁片區的磁片區調整大小需求為何？**  

@@ -18,14 +18,14 @@ ms.locfileid: "71368993"
 ---
 # <a name="command-line-process-auditing"></a>命令列程序稽核
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用于： Windows Server 2016、Windows Server 2012 R2
 
-**作者**：Justin Turner，Microsoft 團隊的資深支援擴大工程師  
+**作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
 > [!NOTE]  
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
   
-## <a name="overview"></a>總覽  
+## <a name="overview"></a>概觀  
   
 -   預先存在的進程建立 audit 事件識別碼4688現在會包含命令列處理常式的審核資訊。  
   
@@ -39,11 +39,11 @@ ms.locfileid: "71368993"
   
 ![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文16事件4688**  
+**圖 SEQ 圖 \\\* 阿拉伯文16事件4688**  
   
-請參閱 REF _Ref366427278 \h [圖 16] 中的更新事件識別碼4688。  在此更新之前，不會記錄**處理常式命令列**的任何資訊。  基於這項額外的記錄，我們現在可以看到 wscript.echo 程式尚未啟動，但也用來執行 VB 腳本。  
+在 REF _Ref366427278 \h [圖 16] 中查看更新的事件識別碼4688。  在此更新之前，不會記錄**處理常式命令列**的任何資訊。  基於這項額外的記錄，我們現在可以看到 wscript.echo 程式尚未啟動，但也用來執行 VB 腳本。  
   
-## <a name="configuration"></a>組態  
+## <a name="configuration"></a>設定  
 若要查看此更新的效果，您必須啟用兩個原則設定。  
   
 ### <a name="you-must-have-audit-process-creation-auditing-enabled-to-see-event-id-4688"></a>您必須啟用「Audit 進程建立」審核，才能看到事件識別碼4688。  
@@ -51,7 +51,7 @@ ms.locfileid: "71368993"
   
 **原則位置：** 電腦設定 > 原則 > Windows 設定 > 安全性設定 > Advanced Audit Configuration > 詳細追蹤  
   
-**原則名稱：** 建立稽核程序  
+**原則名稱：** 建立 Audit 進程  
   
 **支援于：** Windows 7 和更新版本  
   
@@ -61,12 +61,12 @@ ms.locfileid: "71368993"
   
 這些 audit 事件可協助您瞭解電腦的使用方式，以及追蹤使用者活動的方式。  
   
-事件量：低至中，視系統使用量而定  
+事件量：低到中，視系統使用量而定  
   
-**預設**未設定  
+**預設：** 未設定  
   
-### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>為了查看事件識別碼4688的新增專案，您必須啟用新的原則設定：在進程建立事件中包含命令列  
-**資料表 SEQ 資料表 \\ @ no__t-2 阿拉伯文19命令列程式原則設定**  
+### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>為了查看事件識別碼4688的新增專案，您必須啟用新的原則設定： [在進程建立事件中包含命令列]。  
+**資料表 SEQ 資料表 \\\* 阿拉伯文19命令列程式原則設定**  
   
 |原則設定|詳細資料|  
 |------------------------|-----------|  
@@ -95,7 +95,7 @@ ms.locfileid: "71368993"
   
 4.  按兩下 [安全性設定]，按兩下 [本機原則]，然後按一下 [安全性選項]。  
   
-5.  按兩下 [Audit]：強制執行稽核原則子類別設定（Windows Vista 或更新版本）以覆寫稽核原則類別設定，然後按一下 [定義此原則設定]。  
+5.  按兩下 [Audit：強制稽核原則子類別設定（Windows Vista 或更新版本）] 以覆寫稽核原則類別設定，然後按一下 [定義此原則設定]。  
   
 6.  按一下 [已啟用]，然後按一下 [確定]。  
   
@@ -104,9 +104,9 @@ ms.locfileid: "71368993"
   
 [Advanced Security 稽核原則逐步指南](https://technet.microsoft.com/library/dd408940(v=WS.10).aspx)  
   
-[AppLocker：常見問題集](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
+[AppLocker：常見問題](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
   
-## <a name="try-this-explore-command-line-process-auditing"></a>試試看：探索命令列進程審核  
+## <a name="try-this-explore-command-line-process-auditing"></a>試試看：探索命令列處理常式  
   
 1.  啟用**Audit 進程建立**事件，並確保不會覆寫預先審核原則設定  
   

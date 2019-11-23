@@ -36,10 +36,10 @@ AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。 
 1. 開啟 [記事本]，並將檔案儲存為 [.udl]。  請確定您已從 [**儲存類型**] 的下拉式選單選取**所有**檔案。
 2. 按兩下 [測試]。 udl
 3. 填寫下列資訊： a。 **選取或輸入伺服器名稱：** 使用來自 b 以上連接字串的資料來源。 **輸入資訊以登入伺服器：** 使用 AD FS 服務帳戶或具有遠端登入權利的帳戶。  如果帳戶是 windows 帳戶，請使用整合式驗證，否則請輸入使用者名稱和密碼。
-    c. **選取伺服器上的資料庫：** 使用上述字串中的初始目錄。  範例：AdfsConfigurationV3.
+    c. **選取伺服器上的資料庫：** 使用上述字串中的初始目錄。  範例： AdfsConfigurationV3。
    ![測試連接](media/ad-fs-tshoot-sql/sql4.png)
 1. 按一下 [**測試連接**]。</br>
-![Success @ no__t-1
+![成功](media/ad-fs-tshoot-sql/sql3.png)
 
 ## <a name="use-sql-server-management-studio-to-test-connectivity"></a>使用 SQL Server Management Studio 來測試連線能力
 您也可以[下載](https://go.microsoft.com/fwlink/?linkid=864329)並安裝 SSMS，以測試資料庫連線能力。
@@ -49,9 +49,9 @@ AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。 
 ![安裝](media/ad-fs-tshoot-sql/sql5.png)
 1. 開啟 SSMS，輸入伺服器名稱。  上述的資料來源。
 2. 使用 AD FS 服務帳戶或具有遠端登入權利的帳戶。  如果帳戶是 windows 帳戶，請使用整合式驗證，否則請輸入使用者名稱和密碼。
-![Connect @ no__t-1
+![連接](media/ad-fs-tshoot-sql/sql6.png)
 1. 您應該會看到左側已填入。  展開 [資料庫]，並確認您看到 AD FS 資料庫。
-@no__t 0AD FS 資料庫 @ no__t-1
+![AD FS 資料庫](media/ad-fs-tshoot-sql/sql7.png)
 
 ## <a name="next-steps"></a>後續步驟
 

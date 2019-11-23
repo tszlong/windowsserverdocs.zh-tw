@@ -18,7 +18,7 @@ ms.locfileid: "71408902"
 ---
 # <a name="deploying-ad-ds-in-a-windows-server-2003-organization"></a>在 Windows Server 2003 組織中部署 AD DS
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如果您的組織目前正在執行 Windows Server 2003 Active Directory，您可以將部分或所有網域控制站的作業系統就地升級至，以部署 Windows Server 2008 Active Directory Domain Services （AD DS） Windows Server 2008 或引進執行 Windows Server 2008 的網域控制站至您的環境。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "71408902"
   
 將從 Windows Server 2003 環境就地升級的資源網域和帳戶網域合併為 Windows Server 2008 AD DS 部署的一部分，可能需要樹林或林內網域重建。 在樹系之間重建 AD DS 網域，可協助您降低組織在 AD DS 中的呈現複雜度，並協助降低相關的管理成本。 在樹系中重建 AD DS 網域，可協助您降低組織的系統管理負擔，方法是減少複寫流量、減少所需的使用者和群組管理，以及簡化群組的管理。策略. 如需詳細資訊，請參閱 ADMT 3.1 版遷移指南（[https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)）。  
   
-如需您可以用來在執行 Windows Server 2003 Active Directory 的組織中規劃和部署 AD DS 的詳細工作清單，請參閱 [Checklist：在 Windows Server 2003 組織 @ no__t-0 中部署 AD DS。  
+如需您可以用來在執行 Windows Server 2003 Active Directory 的組織中規劃和部署 AD DS 的詳細工作清單，請參閱[檢查清單：在 Windows server 2003 組織中部署 AD DS](https://technet.microsoft.com/library/cc771407.aspx)。  
   
 
 

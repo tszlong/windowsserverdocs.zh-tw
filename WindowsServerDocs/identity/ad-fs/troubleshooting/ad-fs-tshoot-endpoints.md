@@ -24,7 +24,7 @@ ms.locfileid: "71366219"
 
 1.  使用網頁瀏覽器，流覽至您的 AD FS 同盟中繼資料端點。  例如： https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
 2. Xml 檔案應該會在本機下載至您的電腦。
-3. 開啟該檔案，並確認它包含類似下面資訊的資訊：![Passive @ no__t-1
+3. 開啟該檔案，並確認它包含類似下面資訊的資訊： ![被動式](media/ad-fs-tshoot-endpoints/meta2.png)
 
 ## <a name="ws-mex-test-active-test"></a>WS-MEX 測試（現用測試）
 透過 ws-metadataexchange 是一種 web 服務通訊協定，屬於 WS-同盟藍圖的一部分。  它會使用 SOAP 訊息來要求中繼資料。  藉由測試端點，我們可以判斷 AD FS 伺服器是否正在回應透過 ws-metadataexchange 的 web 要求。  請使用下列程式來測試端點。

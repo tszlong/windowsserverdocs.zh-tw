@@ -1,5 +1,5 @@
 ---
-title: SMB應開啟檔案及印表機共用埠
+title: SMB：檔案和印表機共用連接埠應該開啟
 TOCTitle: 'SMB: File and printer sharing ports should be open'
 ms.date: 07/02/2012
 ms.prod: windows-server
@@ -14,14 +14,14 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71385828"
 ---
-# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB應開啟檔案及印表機共用埠
+# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：檔案和印表機共用連接埠應該開啟
 
 
-更新日期：2011年2月2日
+已更新：2011年2月2日
 
-適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012、Windows Server 2008 R2
+適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012、Windows Server 2008 R2
 
-@no__t 0This 主題旨在解決最佳做法分析程式掃描所識別的特定問題。本主題中的資訊僅適用于已對其執行「檔案服務」最佳做法分析程式並遇到本主題所解決之問題的電腦。如需最佳做法和掃描的詳細資訊，請參閱 < @ no__t-0[最佳做法分析](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)程式。
+*本主題旨在解決最佳做法分析程式掃描所識別的特定問題。本主題中的資訊僅適用于已對其執行「檔案服務」最佳做法分析程式並遇到本主題所解決之問題的電腦。如需最佳做法和掃描的詳細資訊，請參閱*[最佳做法分析](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)程式。
 
 
 <table>
@@ -39,12 +39,12 @@ ms.locfileid: "71385828"
 <td><p>檔案服務</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Severity</strong></p></td>
-<td><p>Error</p></td>
+<td><p><strong>低於</strong></p></td>
+<td><p>錯誤</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>分類</strong></p></td>
-<td><p>組態</p></td>
+<td><p><strong>類別</strong></p></td>
+<td><p>設定</p></td>
 </tr>
 </tbody>
 </table>

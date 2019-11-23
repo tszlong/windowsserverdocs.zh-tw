@@ -22,7 +22,7 @@ ms.locfileid: "71407153"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>使用軟體限制原則規則
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題描述使用軟體限制原則來處理憑證、路徑、網際網路區域和雜湊規則的程式。
 
@@ -88,7 +88,7 @@ ms.locfileid: "71407153"
 
 2.  在主控台樹中，按一下位於 [安全性設定]/[本機原則] 底下的 [**安全性選項**]。
 
-3.  在詳細資料窗格中，按兩下 [@no__t 0System 設定]：在適用于軟體限制原則 @ no__t-0 的 Windows 可執行檔上使用憑證規則。
+3.  在詳細資料窗格中，按兩下 [系統設定: 於軟體限制原則對 Windows 可執行檔使用憑證規則]。
 
 4.  執行下列其中一個動作，然後按一下 [確定]：
 
@@ -112,7 +112,7 @@ ms.locfileid: "71407153"
 
 7.  在主控台樹中，按一下 [*物件/windows* [*ComputerName*] 原則/電腦設定]/[Windows 設定/安全性設定/本機原則/] 底下的 [**安全性選項**]。
 
-8.  在詳細資料窗格中，按兩下 [@no__t 0System 設定]：在適用于軟體限制原則 @ no__t-0 的 Windows 可執行檔上使用憑證規則。
+8.  在詳細資料窗格中，按兩下 [系統設定: 於軟體限制原則對 Windows 可執行檔使用憑證規則]。
 
 9. 如果尚未定義此原則設定，選取 [定義這些原則設定] 核取方塊。
 
@@ -134,7 +134,7 @@ ms.locfileid: "71407153"
 
 5.  在主控台樹中，按一下 [*物件/windows*[*ComputerName*] 原則/電腦設定]/[Windows 設定/安全性設定/本機原則] 底下的 [**安全性選項**]。
 
-6.  在詳細資料窗格中，按兩下 [@no__t 0System 設定]：在適用于軟體限制原則 @ no__t-0 的 Windows 可執行檔上使用憑證規則。
+6.  在詳細資料窗格中，按兩下 [系統設定: 於軟體限制原則對 Windows 可執行檔使用憑證規則]。
 
 7.  如果尚未定義此原則設定，選取 [定義這些原則設定] 核取方塊。
 
@@ -150,7 +150,7 @@ ms.locfileid: "71407153"
 
 2.  在主控台樹狀目錄中，按一下位於 [**群組原則物件** [*電腦名稱*] 原則/電腦設定/Windows 設定/安全性設定/本機原則/] 下的 [安全性選項]。
 
-3.  在詳細資料窗格中，按兩下 [@no__t 0System 設定]：在適用于軟體限制原則 @ no__t-0 的 Windows 可執行檔上使用憑證規則。
+3.  在詳細資料窗格中，按兩下 [系統設定: 於軟體限制原則對 Windows 可執行檔使用憑證規則]。
 
 4.  如果尚未定義此原則設定，選取 [定義這些原則設定] 核取方塊。
 
@@ -310,7 +310,7 @@ ms.locfileid: "71407153"
 
 5.  在 [**路徑**] 中，貼上登錄機碼名稱，後面加上值名稱。
 
-6.  以百分比符號（%）括住登錄路徑，例如%HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%。
+6.  以百分比符號（%）括住登錄路徑，例如% HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%。
 
 7.  在 [**安全性等級**] 中，按一下 [不**允許**] 或 [**無限制**]
 

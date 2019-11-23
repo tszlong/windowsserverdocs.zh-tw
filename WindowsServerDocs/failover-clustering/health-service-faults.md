@@ -16,7 +16,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369714"
 ---
 # <a name="health-service-faults"></a>健全狀況服務錯誤
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-faults"></a>什麼是錯誤
 
@@ -24,7 +24,7 @@ ms.locfileid: "71369714"
 
 每個錯誤都包含五個重要欄位：  
 
--   Severity
+-   嚴重性
 -   問題描述
 -   解決此問題的下一個建議步驟
 -   錯誤實體的識別資訊
@@ -74,7 +74,7 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 ### <a name="connect"></a>連線
 
-為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用 C @ no__t-0，這是最直接的此資料存取層選擇。
+為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例將使用 C\#，這是最直接的此資料存取層選擇。
 
 ``` 
 ...
@@ -106,7 +106,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT @ no__t-1StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft @ no__t-1StorageNode** ，以及每個**msft @ no__t-3Volume**，資料磁片區。 最後，您還需要**MSFT @ no__t-1StorageHealth**，也就是健全狀況服務本身。
+在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT\_StorageSubSystem** ，代表叢集上的儲存空間直接存取。 使用這種方式，您就可以取得叢集中的每個**msft\_StorageNode** ，以及每個**msft\_磁片**區的資料磁片區。 最後，您還需要**MSFT\_StorageHealth**，也就是健全狀況服務本身。
 
 ```
 CimInstance Cluster;
@@ -174,9 +174,9 @@ public void GetFaults(CimSession Session, CimInstance Target)
 }
 ```
 
-### <a name="optional-myfault-class"></a>選擇性：MyFault 類別
+### <a name="optional-myfault-class"></a>選擇性： MyFault 類別
 
-您可以建立自己的錯誤表示並加以保存，這是合理的做法。 例如，這個**MyFault**類別會儲存幾個錯誤的索引鍵屬性，包括**FaultId**，稍後可以用來關聯更新或移除通知，或在偵測到相同錯誤多次時刪除重複。基於任何原因。
+您可以建立自己的錯誤表示並加以保存，這是合理的做法。 例如，這個**MyFault**類別會儲存幾個錯誤的索引鍵屬性，包括**FaultId**，稍後可以用來關聯更新或移除通知，或在偵測到相同錯誤多次時刪除重複，而不論原因為何。
 
 ```       
 public class MyFault {
@@ -214,7 +214,7 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 
 當您建立、移除或更新錯誤時，健全狀況服務會產生 WMI 事件。 這些是讓應用程式狀態保持同步，而不需要經常輪詢的必要專案，而且有助於判斷傳送電子郵件警示的時機，例如。 為了訂閱這些事件，此範例程式碼會再次使用觀察者設計模式。
 
-首先，訂閱**MSFT @ no__t-1StorageFaultEvent**事件。
+首先，訂閱**MSFT\_StorageFaultEvent**事件。
 
 ```      
 public void ListenForFaultEvents()
@@ -285,13 +285,13 @@ class FaultsObserver : IObserver
 
 ### <a name="properties-of-faults"></a>錯誤的屬性
 
-下表提供錯誤物件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT @ no__t-1StorageDiagnoseResult**類別。
+下表提供錯誤物件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT\_StorageDiagnoseResult**類別。
 
-| **屬性**              | **範例**                                                     |
+| **Property**              | **範例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType. Volume. 容量                      |
-| `Reason`                    | 「磁片區的可用空間不足。」                 |
+| 原因                    | 「磁片區的可用空間不足。」                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N。 123456789                                  |
 | FaultingObjectLocation    | 機架 A06，RU 25，插槽11                                        |
@@ -309,16 +309,16 @@ class FaultsObserver : IObserver
 
 ## <a name="properties-of-fault-events"></a>錯誤事件的屬性
 
-下表提供錯誤事件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT @ no__t-1StorageFaultEvent**類別。
+下表提供錯誤事件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT\_StorageFaultEvent**類別。
 
 請注意**ChangeType**，它會指出是否正在建立、移除或更新錯誤，以及**FaultId**。 事件也包含受影響之錯誤的所有屬性。
 
-| **屬性**              | **範例**                                                     |
+| **Property**              | **範例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType. Volume. 容量                      |
-| `Reason`                    | 「磁片區的可用空間不足。」                 |
+| 原因                    | 「磁片區的可用空間不足。」                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N。 123456789                                  |
 | FaultingObjectLocation    | 機架 A06，RU 25，插槽11                                        |
@@ -332,195 +332,195 @@ class FaultsObserver : IObserver
 
 ### <a name="physicaldisk-8"></a>**PhysicalDisk （8）**
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultTypeFaultType. PhysicalDisk. FailedMedia
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType： FaultType. PhysicalDisk. FailedMedia
 * 嚴重性：警告
-* 原因： *「實體磁片已失敗」。*
-* RecommendedAction: *「更換實體磁片」。*
+* 原因：「*實體磁片已失敗。* 」
+* RecommendedAction：「*取代實體磁片」。*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultTypeFaultType. PhysicalDisk. LostCommunication
+#### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultType： FaultType. PhysicalDisk. LostCommunication
 * 嚴重性：警告
-* 原因： *「實體磁片的連線已中斷」。*
-* RecommendedAction: *「檢查實體磁片是否正常運作並已正確連線」。*
+* 原因：「*實體磁片的連線已中斷。* 」
+* RecommendedAction：「*檢查實體磁片是否正常運作並已正確連線」。*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultTypeFaultType. PhysicalDisk. 沒有回應
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultType： FaultType. PhysicalDisk。沒有回應
 * 嚴重性：警告
-* 原因： *「實體磁片出現週期性的無回應」。*
-* RecommendedAction: *「更換實體磁片」。*
+* 原因：「*實體磁片出現週期性的無回應。* 」
+* RecommendedAction：「*取代實體磁片」。*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultTypeFaultType. PhysicalDisk. PredictiveFailure
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultType： FaultType. PhysicalDisk. PredictiveFailure
 * 嚴重性：警告
-* 原因： *「實體磁片故障預測即將發生。」*
-* RecommendedAction: *「更換實體磁片」。*
+* 原因：「*實體磁片故障預測即將發生。* 」
+* RecommendedAction：「*取代實體磁片」。*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultTypeFaultType. PhysicalDisk. UnsupportedHardware
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultType： FaultType. PhysicalDisk. UnsupportedHardware
 * 嚴重性：警告
-* 原因： *「實體磁片已隔離，因為解決方案廠商不支援。」*
-* RecommendedAction: *「以支援的硬體取代實體磁片」。*
+* 原因：「*實體磁片已隔離，因為解決方案廠商不支援。* 」
+* RecommendedAction：「*以支援的硬體取代實體磁片」。*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultTypeFaultType. PhysicalDisk. UnsupportedFirmware
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultType： FaultType. PhysicalDisk. UnsupportedFirmware
 * 嚴重性：警告
-* 原因： *「實體磁片已在隔離中，因為您的解決方案廠商不支援其固件版本」。*
-* RecommendedAction: *「將實體磁片上的固件更新為目標版本」。*
+* 原因：「*實體磁片已在隔離中，因為您的解決方案廠商不支援其固件版本」。*
+* RecommendedAction：「將*實體磁片上的固件更新為目標版本」。*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultTypeFaultType. PhysicalDisk. UnrecognizedMetadata
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultType： FaultType. PhysicalDisk. UnrecognizedMetadata
 * 嚴重性：警告
-* 原因： *「實體磁片具有無法辨識中繼資料」。*
-* RecommendedAction: *"此磁片可能包含來自未知存放集區的資料。請先確定此磁片上沒有任何有用的資料，然後重設磁片。」*
+* 原因：「*實體磁片具有無法辨識中繼資料」。*
+* RecommendedAction：「*此磁片可能包含來自未知存放集區的資料。請先確定此磁片上沒有任何有用的資料，然後重設磁片。* 」
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultTypeFaultType. PhysicalDisk. FailedFirmwareUpdate
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultType： FaultType. PhysicalDisk. FailedFirmwareUpdate
 * 嚴重性：警告
-* 原因： *「嘗試更新實體磁片上的固件失敗。」*
-* RecommendedAction: *「嘗試使用不同的固件二進位檔」。*
+* 原因：「*嘗試更新實體磁片上的固件失敗」。*
+* RecommendedAction：「*嘗試使用不同的固件二進位*檔」。
 
 ### <a name="virtual-disk-2"></a>**虛擬磁片（2）**
 
-#### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultTypeFaultType. VirtualDisks. NeedsRepair
+#### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType： FaultType. VirtualDisks. NeedsRepair
 * 嚴重性：資訊
-* 原因： *"此磁片區上的某些資料未完全復原。它仍然可供存取。」*
-* RecommendedAction: *「還原資料的復原」。*
+* 原因：「*這個磁片區上的某些資料不是完全復原的。它仍然可供存取。* 」
+* RecommendedAction：「*還原資料的復原」。*
 
-#### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultTypeFaultType. VirtualDisks. 已卸離
+#### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType： FaultType. VirtualDisks. 已卸離
 * 嚴重性：重大
-* 原因： *」無法存取磁片區。有些資料可能會遺失。」*
-* RecommendedAction: *"檢查所有存放裝置的實體和/或網路連線能力。您可能需要從備份還原。」*
+* 原因：「*無法存取磁片區。有些資料可能會遺失。* 」
+* RecommendedAction：「*檢查所有存放裝置的實體和/或網路連線能力。您可能需要從備份還原。* 」
 
 ### <a name="pool-capacity-1"></a>**集區容量（1）**
 
-#### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultTypeFaultType. StoragePool. InsufficientReserveCapacityFault
+#### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType： FaultType. StoragePool. InsufficientReserveCapacityFault
 * 嚴重性：警告
-* 原因： *"存放集區沒有最小的建議保留容量。這可能會限制您在發生磁片磁碟機失敗時還原資料復原的能力。」*
-* RecommendedAction: *"將額外的容量新增至存放集區，或釋放容量。最小的建議保留會因部署而有所不同，但大約是2個磁片磁碟機的容量。」*
+* 原因：「*存放集區沒有最小的建議保留容量。這可能會限制您在發生磁片磁碟機失敗時還原資料復原的能力。* 」
+* RecommendedAction：「*將額外的容量新增至存放集區，或釋放容量。最小的建議保留會因部署而有所不同，但大約是2個磁片磁碟機的容量。* 」
 
 ### <a name="volume-capacity-2sup1sup"></a>**磁片區容量（2）** <sup>1</sup>
 
-#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultTypeFaultType. Volume. 容量
+#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType： FaultType. Volume. 容量
 * 嚴重性：警告
-* 原因： *「磁片區的可用空間不足。」*
-* RecommendedAction: *「擴充磁片區或將工作負載遷移至其他磁片區」。*
+* 原因：「*磁片區的可用空間不足。* 」
+* RecommendedAction：「*擴充磁片區或將工作負載遷移至其他磁片*區」。
 
-#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultTypeFaultType. Volume. 容量
+#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType： FaultType. Volume. 容量
 * 嚴重性：重大
-* 原因： *「磁片區的可用空間不足。」*
-* RecommendedAction: *「擴充磁片區或將工作負載遷移至其他磁片區」。*
+* 原因：「*磁片區的可用空間不足。* 」
+* RecommendedAction：「*擴充磁片區或將工作負載遷移至其他磁片*區」。
 
 ### <a name="server-3"></a>**伺服器（3）**
 
-#### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultTypeFaultType. 伺服器向下
+#### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType： FaultType。伺服器關閉
 * 嚴重性：重大
-* 原因： *「無法連線到伺服器。」*
-* RecommendedAction: *「啟動或取代伺服器」。*
+* 原因：「*無法連線到伺服器。* 」
+* RecommendedAction： *「啟動或取代伺服器」。*
 
-#### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultTypeFaultType。獨立模式
+#### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType： FaultType. Server. 獨立模式
 * 嚴重性：重大
-* 原因： *「伺服器因連線問題而與叢集隔離。」*
-* RecommendedAction: *「如果隔離持續，請檢查網路，或將工作負載遷移至其他節點。」*
+* 原因：「*伺服器因連線問題*而與叢集隔離。」
+* RecommendedAction：「*如果隔離持續，請檢查網路，或將工作負載遷移至其他節點。* 」
 
-#### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultTypeFaultType. 伺服器隔離
+#### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType： FaultType. 伺服器隔離
 * 嚴重性：重大
-* 原因： *「伺服器因重複失敗而由叢集隔離。」*
-* RecommendedAction: *「更換伺服器或修正網路」。*
+* 原因：「叢集*因週期性失敗而隔離伺服器。* 」
+* RecommendedAction：「*取代伺服器或修正網路」。*
 
 ### <a name="cluster-1"></a>**叢集（1）**
 
-#### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultTypeFaultType. ClusterQuorumWitness。錯誤
+#### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType： FaultType. ClusterQuorumWitness。錯誤
 * 嚴重性：重大
-* 原因： *「叢集是離開的一部伺服器失敗。」*
-* RecommendedAction: *"檢查見證資源，並視需要重新開機。啟動或取代失敗的伺服器。」*
+* 原因：「叢集*是一部伺服器故障，離開。* 」
+* RecommendedAction：「*檢查見證資源，並視需要重新開機」。啟動或取代失敗的伺服器。」*
 
 ### <a name="network-adapterinterface-4"></a>**網路介面卡/介面（4）**
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultTypeFaultType. NetworkAdapter. 已中斷連線
+#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType： FaultType NetworkAdapter。已中斷連線
 * 嚴重性：警告
-* 原因： *「網路介面已中斷連線」。*
-* RecommendedAction: *「重新連接網路纜線」。*
+* 原因：「*網路介面已中斷*連線」。
+* RecommendedAction：「*重新連接網路纜線」。*
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultTypeFaultType. NetworkInterface. 遺失
+#### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType： FaultType. NetworkInterface. 遺失
 * 嚴重性：警告
-* 原因： *「伺服器 {伺服器} 缺少連線到叢集網路 {cluster network} 的網路介面卡。」*
-* RecommendedAction: *「將伺服器連接到遺失的叢集網路」。*
+* 原因：「*伺服器 {伺服器} 缺少連線到叢集網路 {cluster network} 的網路介面卡。* 」
+* RecommendedAction：「*將伺服器連線到遺失的叢集網路」。*
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultTypeFaultType. NetworkAdapter. 硬體
+#### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType： FaultType. NetworkAdapter. 硬體
 * 嚴重性：警告
-* 原因： *「網路介面發生硬體故障。」*
-* RecommendedAction: *「更換網路介面介面卡」。*
+* 原因：「*網路介面發生硬體故障。* 」
+* RecommendedAction：「*取代網路介面介面卡」。*
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultTypeFaultType. NetworkAdapter. Disabled
+#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultType： FaultType. NetworkAdapter. 已停用
 * 嚴重性：警告
-* 原因： *「網路介面 {網路介面} 未啟用，而且未在使用中。」*
-* RecommendedAction: *「啟用網路介面」。*
+* 原因：「*網路介面 {網路介面} 未啟用，且未在使用中。* 」
+* RecommendedAction：「*啟用網路介面」。*
 
 ### <a name="enclosure-6"></a>**主機殼（6）**
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultTypeFaultType. StorageEnclosure. LostCommunication
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType： FaultType. StorageEnclosure. LostCommunication
 * 嚴重性：警告
-* 原因： *「存放裝置主機殼的通訊已遺失。」*
-* RecommendedAction: *「啟動或更換存放裝置主機殼」。*
+* 原因：「*存放裝置主機殼的通訊已遺失。* 」
+* RecommendedAction： *「啟動或更換存放裝置主機殼」。*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultTypeFaultType. StorageEnclosure. FanError
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultType： FaultType. StorageEnclosure. FanError
 * 嚴重性：警告
-* 原因： *「儲存主機殼位置 {位置} 的風扇已失敗。」*
-* RecommendedAction: *「更換儲存主機殼中的風扇」。*
+* 原因：「*儲存主機殼位置 {位置} 的風扇已失敗。* 」
+* RecommendedAction：「*更換儲存主機殼中的風扇」。*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultTypeFaultType. StorageEnclosure. CurrentSensorError
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultType： FaultType. StorageEnclosure. CurrentSensorError
 * 嚴重性：警告
-* 原因： *「儲存主機殼的目前感應器位於位置 {位置} 已失敗。」*
-* RecommendedAction: *「更換儲存主機殼中的目前感應器。」*
+* 原因：「*儲存主機殼的目前感應器位於位置 {位置} 已失敗。* 」
+* RecommendedAction：「*更換儲存主機殼中的目前感應器」。*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultTypeFaultType. StorageEnclosure. VoltageSensorError
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultType： FaultType. StorageEnclosure. VoltageSensorError
 * 嚴重性：警告
-* 原因： *「儲存主機殼的位置 {位置} 的電壓感應器失敗。」*
-* RecommendedAction: *「更換儲存主機殼中的電壓感應器」。*
+* 原因：「*儲存主機殼的位置 {位置} 的電壓感應器已失敗。* 」
+* RecommendedAction：「*更換儲存主機殼中的電壓感應器」。*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultTypeFaultType. StorageEnclosure. IoControllerError
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultType： FaultType. StorageEnclosure. IoControllerError
 * 嚴重性：警告
-* 原因： *「儲存主機殼的位置 {位置} 的 IO 控制器已失敗。」*
-* RecommendedAction: *「更換儲存主機殼中的 IO 控制器」。*
+* 原因：「*儲存主機殼的位置 {位置} 的 IO 控制器已失敗。* 」
+* RecommendedAction：「*更換儲存主機殼中的 IO 控制器」。*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultTypeFaultType. StorageEnclosure. TemperatureSensorError
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultType： FaultType. StorageEnclosure. TemperatureSensorError
 * 嚴重性：警告
-* 原因： *「儲存主機殼位置 {位置} 的溫度感應器失敗。」*
-* RecommendedAction: *「更換儲存主機殼中的溫度感應器」。*
+* 原因：「*儲存主機殼位置 {位置} 的溫度感應器失敗。* 」
+* RecommendedAction：「*更換儲存主機殼中的溫度感應器」。*
 
 ### <a name="firmware-rollout-3"></a>**固件推出（3）**
 
-#### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultTypeFaultType. FaultDomain. FailedMaintenanceMode
+#### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType： FaultType. FaultDomain. FailedMaintenanceMode
 * 嚴重性：警告
-* 原因： *「在執行固件推出時，目前無法進行進度」。*
-* RecommendedAction: *「確認所有儲存空間都狀況良好，而且沒有任何容錯網域目前處於維護模式。」*
+* 原因：「*在執行固件推出時，目前無法進行進度」。*
+* RecommendedAction：「*確認所有儲存空間都狀況良好，而且沒有任何容錯網域處於維護模式。* 」
 
-#### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultTypeFaultType. FaultDomain. FirmwareVerifyVersionFaile
+#### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultType： FaultType. FaultDomain. FirmwareVerifyVersionFaile
 * 嚴重性：警告
-* 原因： *「在套用固件更新之後，因為無法讀取或非預期的固件版本資訊，所以已取消固件推出」。*
-* RecommendedAction: *「一旦固件問題解決，即重新開機固件」。*
+* 原因：「套用*固件更新之後，因為無法讀取或非預期的固件版本資訊而取消了固件推出」。*
+* RecommendedAction：「*一旦固件問題解決，即重新開機固件」。*
 
-#### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultTypeFaultType. FaultDomain. TooManyFailedUpdates
+#### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultType： FaultType. FaultDomain. TooManyFailedUpdates
 * 嚴重性：警告
-* 原因： *「因為有太多實體磁片導致固件更新嘗試失敗，所以已取消固件推出。」*
-* RecommendedAction: *「一旦固件問題解決，即重新開機固件」。*
+* 原因：「*因為有太多實體磁片導致固件更新嘗試失敗，所以已取消固件推出。* 」
+* RecommendedAction：「*一旦固件問題解決，即重新開機固件」。*
 
 ### <a name="storage-qos-3sup2sup"></a>**存放裝置 QoS （3）** <sup>2</sup>
 
-#### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultTypeFaultType. StorQos. InsufficientThroughput
+#### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType： FaultType. StorQos. InsufficientThroughput
 * 嚴重性：警告
-* 原因： *「儲存體輸送量不足以滿足保留。」*
-* RecommendedAction: *「重新設定存放裝置 QoS 原則」。*
+* 原因：「*儲存體輸送量不足以滿足保留。* 」
+* RecommendedAction：「*重新設定存放裝置 QoS 原則」。*
 
-#### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultTypeFaultType. StorQos. LostCommunication
+#### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultType： FaultType. StorQos. LostCommunication
 * 嚴重性：警告
-* 原因： *「存放裝置 QoS 原則管理員已失去與磁片區的通訊。」*
-* RecommendedAction: *「請重新開機節點 {節點}」*
+* 原因：「*存放裝置 QoS 原則管理員已失去與磁片區的通訊」。*
+* RecommendedAction：「*請重新開機節點 {節點}* 」
 
-#### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultTypeFaultType. StorQos. MisconfiguredFlow
+#### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType： FaultType. StorQos. MisconfiguredFlow
 * 嚴重性：警告
-* 原因： *「一或多個儲存體取用者（通常虛擬機器）使用識別碼為 {id} 的不存在原則」。*
-* RecommendedAction: *「重新建立任何遺失的儲存體 QoS 原則」。*
+* 原因：「*一或多個儲存體取用者（通常虛擬機器）使用識別碼為 {id} 的不存在原則」。*
+* RecommendedAction：「*重新建立任何遺失的儲存體 QoS 原則」。*
 
-<sup>1</sup>表示磁片區已達到 80% 的完整（次要嚴重性）或 90% 已滿（主要嚴重性）。  
-<sup>2</sup>表示磁片區上的某些 .vhd 並未達到其最小 IOPS （超過 10% （次要））、30% （主要）或 50% （重大）的輪流24小時時間範圍。  
+<sup>1</sup>表示磁片區已達到80% 的完整（次要嚴重性）或90% 已滿（主要嚴重性）。  
+<sup>2</sup>表示磁片區上的某些 .vhd 並未達到其最小 IOPS （超過10% （次要））、30% （主要）或50% （重大）的輪流24小時時間範圍。  
 
 >[!NOTE]
 > 存放裝置機箱組件 (如風扇、電源供應器和感應器) 的健康情況是衍生自 SCSI 機箱服務 (SES)。 如果您的廠商沒有提供這項資訊，「健全狀況服務」就無法顯示它。  
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

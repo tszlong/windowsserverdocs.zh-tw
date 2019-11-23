@@ -28,7 +28,7 @@ ms.locfileid: "71952769"
 
 ## <a name="manifestjson---solutionsids-and-connectiontypes"></a>solutionsIds 和 connectionTypes
 
-先前，若要讓您的工具顯示在容錯移轉叢集或 HCI 叢集連線類型中，您可以使用 ```manifest.json``` 檔案中的下列其中一個定義。
+先前，若要讓您的工具顯示在容錯移轉叢集或 HCI 叢集連線類型中，您必須在 ```manifest.json``` 檔案中使用下列其中一個定義。
 
 針對容錯移轉叢集：
 ``` json
@@ -85,7 +85,7 @@ ms.locfileid: "71952769"
 這是目前唯一支援的叢集相關 solutionIds 和 connectionTypes 類型。 如果您的工具只以此 solutionIds 和 connectionTypes 類型定義，則會針對任何容錯移轉叢集連線載入，不論它是否為 HCI 叢集。 如果您想要將工具限制為僅供 HCI 叢集或非 HCI 叢集使用，您必須另外使用下一節所述的新清查屬性。
 
 ## <a name="manifestjson--inventory-properties"></a>資訊清單 json –清查屬性
-連線到伺服器或叢集時，Windows 管理中心會查詢一組清查內容，讓您用來建立條件來判斷您的工具何時可以使用（請參閱控制您的工具的「清查內容」一節）。 [可見度](dynamic-tool-display.md)檔以取得詳細資訊）。 在 Windows Admin Center v1909 中，我們已將兩個新屬性新增至此清單，可用來判斷叢集是否為超交集叢集。 
+當連接到伺服器或叢集時，Windows 管理中心會查詢一組清查內容，您可以使用這些屬性來建立條件，以決定何時可以使用您的工具（如需詳細資訊，請參閱[控制您工具的可見度](dynamic-tool-display.md)檔的「清查屬性」一節）。 在 Windows Admin Center v1909 中，我們已將兩個新屬性新增至此清單，可用來判斷叢集是否為超交集叢集。 
 
 ### <a name="iss2denabled"></a>isS2dEnabled
 技術上而言，超交集叢集會定義為已啟用儲存空間直接存取（S2D）的容錯移轉叢集。 如果您想要讓工具僅適用于超交集叢集，亦即，啟用 S2D 時，請新增下列清查條件：
@@ -168,8 +168,8 @@ ms.locfileid: "71952769"
     ]
 ```
 
-## <a name="known-issue-appcontextserviceactiveconnectionishyperconvergedclusterisfailovercluster-is-not-set-properly-in-windows-admin-center-v1909"></a>已知問題：Windows 系統管理中心 v1909 中的 AppCoNtextService. activeConnection. isHyperConvergedCluster/isFailoverCluster 未正確設定
-最近一次變更的回歸是在 Windows 系統管理中心 v1909 中，未正確設定 @no__t 0 內容，而且一律會是 false。 這會在下一版的 v1910 中修正，但也會在2020的下列 GA 版本中被取代並不再提供使用。 未來，您可以使用下列程式碼取代此項，並使用 ```this.connectHCI```。
+## <a name="known-issue-appcontextserviceactiveconnectionishyperconvergedclusterisfailovercluster-is-not-set-properly-in-windows-admin-center-v1909"></a>已知問題： AppCoNtextService. activeConnection. isHyperConvergedCluster/isFailoverCluster 在 Windows Admin Center v1909 中未正確設定
+最近一次變更的回歸是 Windows 系統管理中心 v1909 中的 ```AppContextService.activeConnection.isHyperConvergedCluster/isFailoverCluster``` 屬性未正確設定，而且一定會是 false。 這會在下一版的 v1910 中修正，但也會在2020的下列 GA 版本中被取代並不再提供使用。 未來，您可以使用下列程式碼取代此項，並使用 ```this.connectHCI```。
 ```
     import { ClusterInventoryCache } from '@msft-sme/core';
 

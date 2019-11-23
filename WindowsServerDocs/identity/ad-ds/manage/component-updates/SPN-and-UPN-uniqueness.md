@@ -18,14 +18,14 @@ ms.locfileid: "71390035"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 的唯一性
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者**：Justin Turner，Microsoft 團隊的資深支援擴大工程師  
+**作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
 > [!NOTE]  
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
   
-## <a name="overview"></a>總覽  
+## <a name="overview"></a>概觀  
 執行 Windows Server 2012 R2 的網域控制站會阻止建立重複的服務主體名稱（SPN）和使用者主體名稱（UPN）。 這包括若還原或重新引發已刪除的物件，或物件的重新命名會導致重複。  
   
 ### <a name="background"></a>背景  
@@ -35,9 +35,9 @@ ms.locfileid: "71390035"
   
 \* Setspn 通常用來建立新的 Spn，而功能內建在 Windows Server 2008 發行的版本中，這會新增重複檢查。  
   
-@no__t 0Table SEQ 資料表 \\ @ no__t-2 阿拉伯文1：UPN 和 SPN 唯一性 @ no__t-0  
+**資料表 SEQ 資料表 \\\* 阿拉伯文1： UPN 和 SPN 唯一性**  
   
-|功能|註解|  
+|功能|留言|  
 |-----------|-----------|  
 |UPN 唯一性|重複的 Upn 會中斷內部部署 AD 帳戶與 Windows Azure AD 型服務（例如 Office 365）的同步處理。|  
 |SPN 唯一性|Kerberos 需要 Spn 以進行相互驗證。  重複的 Spn 會導致驗證失敗。|  
@@ -49,9 +49,9 @@ ms.locfileid: "71390035"
   
 -   寫入是由 Windows Server 2012 R2 DC 處理  
   
-@no__t 0Table SEQ 資料表 \\ @ no__t-2 阿拉伯文2：UPN 和 SPN 唯一性錯誤代碼 @ no__t-0  
+**資料表 SEQ 資料表 \\\* 阿拉伯文2： UPN 和 SPN 唯一性錯誤代碼**  
   
-|Decimal|Hex|符號|字串|  
+|DECIMAL|Hex|符號|字串|  
 |-----------|-------|------------|----------|  
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給新增/修改的 SPN 值不是唯一全樹系。|  
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給新增/修改的 UPN 值不是唯一全樹系。|  
@@ -74,18 +74,18 @@ ms.locfileid: "71390035"
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig03_DupUPNADAC.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文1當新使用者建立因 UPN 重複而失敗時，在 AD 管理中心顯示的錯誤**  
+**圖 SEQ 圖 \\\* 阿拉伯文1當新的使用者建立因 UPN 重複而失敗時，AD 管理中心顯示的錯誤**  
   
-### <a name="event-2974-source-activedirectory_domainservice"></a>事件2974來源：ActiveDirectory_DomainService  
+### <a name="event-2974-source-activedirectory_domainservice"></a>事件2974來源： ActiveDirectory_DomainService  
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig04_Event2974.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文2事件識別碼2974，錯誤8648**  
+**圖 SEQ 圖 \\\* 阿拉伯文2事件識別碼2974，錯誤8648**  
   
-事件2974會列出已封鎖的值，以及一或多個已包含該值的物件清單（最多10個）。  在下圖中，您可以看到 UPN 屬性值 **<em>dhunt@blue.contoso.com</em>** 已存在於其他四個物件上。  由於這是 Windows Server 2012 R2 的新功能，因此當下層 Dc 處理寫入嘗試時，仍然會在混合環境中意外建立重複的 UPN 和 Spn。  
+事件2974會列出已封鎖的值，以及一或多個已包含該值的物件清單（最多10個）。  在下圖中，您可以看到 UPN 屬性值 **<em>dhunt@blue.contoso.com</em>** 已經存在於其他四個物件上。  由於這是 Windows Server 2012 R2 的新功能，因此當下層 Dc 處理寫入嘗試時，仍然會在混合環境中意外建立重複的 UPN 和 Spn。  
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文3事件2974，顯示包含重複 UPN 的所有物件**  
+**圖 SEQ 圖 \\\* 阿拉伯文3事件2974，顯示包含重複 UPN 的所有物件**  
   
 > [!TIP]  
 > 定期查看事件識別碼2974s：  
@@ -108,7 +108,7 @@ The operation failed because UPN value provided for addition/modification is not
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig06_ADSI21c8.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文4當已封鎖重複的 UPN 時，會顯示在 ADSIEdit 中的錯誤訊息**  
+**圖 SEQ 圖 \\當已封鎖重複的 UPN 時，\* 顯示在 ADSIEdit 中的阿拉伯文4錯誤訊息**  
   
 ### <a name="windows-powershell"></a>Windows PowerShell  
 Windows Server 2012 R2：  
@@ -123,11 +123,11 @@ Windows Server 2012 R2：
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig09_UserCreateError.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文 5 DSAC.EXE 在以 Windows server 2012 R2 DC 為目標時，非 Windows Server 2012 R2 上的使用者建立錯誤**  
+**圖 SEQ 圖 \\\* 阿拉伯文 5 DSAC.EXE 在非 Windows Server 2012 R2 上的使用者建立錯誤，同時以 Windows Server 2012 R2 DC 為目標**  
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig10_UserModError.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文 6 DSAC.EXE 以 Windows server 2012 R2 DC 為目標時，非 Windows Server 2012 R2 的使用者修改錯誤**  
+**圖 SEQ 圖 \\\* 阿拉伯文 6 DSAC.EXE 以 Windows server 2012 R2 DC 為目標時的非 Windows Server 2012 R2 使用者修改錯誤**  
   
 ### <a name="restore-of-an-object-that-would-result-in-a-duplicate-upn-fails"></a>還原會導致重複 UPN 的物件失敗：  
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig11_RestoreDupUPN.gif)  
@@ -210,9 +210,9 @@ Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDe
 ### <a name="duplicate-spn"></a>重複的 SPN  
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig16_DupSPN.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文8當加入重複的 SPN 遭到封鎖時，ADSIEdit 中顯示的錯誤訊息**  
+**圖 SEQ 圖 \\當已封鎖重複的 SPN 時，\* 顯示在 ADSIEdit 中的阿拉伯文8錯誤訊息**  
   
-記錄在目錄服務事件記錄檔中是**ActiveDirectory_DomainService**事件識別碼**2974**。  
+[目錄服務] 事件記錄檔是**ActiveDirectory_DomainService**事件識別碼**2974**。  
   
 ```  
 Operation failed. Error code: 0x21c7  
@@ -224,7 +224,7 @@ servicePrincipalName Value=<SPN>
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig17_DupSPN2974.gif)  
   
-**圖 SEQ 圖 \\ @ no__t-2 阿拉伯文9在建立重複的 SPN 遭到封鎖時記錄的錯誤**  
+**圖 SEQ 圖 \\\* 已封鎖建立重複的 SPN 時記錄的阿拉伯文9錯誤**  
   
 ### <a name="workflow"></a>工作流程  
   
@@ -320,7 +320,7 @@ servicePrincipalName Value=<SPN>
   
     -   ATT_USER_ACCOUNT_CONTROL  
   
-如果有任何新的 SPN 值重複，我們就無法進行修改。 在上述清單中，重要的屬性為 ATT_DNS_HOST_NAME （電腦名稱稱）和 ATT_SAM_ACCOUNT_NAME （SAM 帳戶名稱）。  
+如果有任何新的 SPN 值重複，我們就無法進行修改。 在上述清單中，重要屬性是 ATT_DNS_HOST_NAME （電腦名稱稱）和 ATT_SAM_ACCOUNT_NAME （SAM 帳戶名稱）。  
   
 ### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>試試看：探索 SPN 和 UPN 的唯一性  
 這是課程模組中的幾個「**嘗試此**」活動的第一個。  此課程模組沒有個別的實驗室指南。  **試用這**項活動基本上是自由形式的活動，可讓您在實驗室環境中探索課程材料。  您可以選擇遵循 [提示] 或 [關閉腳本]，並啟動您自己的活動。  

@@ -17,7 +17,7 @@ ms.locfileid: "71361138"
 ---
 # <a name="fault-domain-awareness"></a>容錯網域感知
 
-> 適用於：Windows Server 2019 和 Windows Server 2016
+> 適用于： Windows Server 2019 和 Windows Server 2016
 
 「容錯移轉叢集」可讓多部伺服器共同合作以提供高可用性，或透過另一種方式來提供節點容錯功能。 但現今的企業需要其基礎結構的更高可用性。 為了達到類似雲端的存留時間，即使是不太可能發生的項目 (例如，底座故障、機架中斷或天然災害) 都必須受到保護。 這就是為什麼 Windows Server 2016 中的容錯移轉叢集也引進了底座、機架和網站容錯功能。
 
@@ -26,7 +26,7 @@ ms.locfileid: "71361138"
 容錯網域和容錯功能是密切相關的概念。 容錯網域是一組共用單一失敗點的硬體元件。 若要容錯到特定層級，您在該層級上需要有多個容錯網域。 例如，若要進行機架容錯，您的伺服器和資料必須散佈於多個機架上。
 
 這段短片將介紹 Windows Server 2016 中的容錯網域：  
-[@no__t 1Click 此映射，以觀看 Windows Server 2016 中的容錯網域總覽](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+[![按一下此影像，觀看 Windows Server 2016 中容錯網域的總覽](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
 
 ### <a name="fault-domain-awareness-in-windows-server-2019"></a>Windows Server 2019 中的容錯網域感知
 
@@ -58,7 +58,7 @@ ms.locfileid: "71361138"
 
 ![不同容錯網域層級的圖表](media/Fault-Domains-in-Windows-Server-2016/levels-of-fault-domains.png)
 
-## <a name="usage"></a>使用量  
+## <a name="usage"></a>用途  
 您可以使用 PowerShell 或 XML 標記來指定容錯網域。 這兩種方法是一樣的，而且都可以提供完整功能。
 
 >[!IMPORTANT]
@@ -72,9 +72,9 @@ Windows Server 2016 引進下列 Cmdlet 來處理容錯網域：
 * `Remove-ClusterFaultDomain`
 
 這段短片示範這些 Cmdlet 的用法。
-[![Click 此影像，觀看有關使用叢集容錯網域 Cmdlet 的短片](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
+[![按一下此影像，觀看有關叢集容錯網域 Cmdlet 使用方式的簡短影片](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
 
-使用 `Get-ClusterFaultDomain` 來查看目前的容錯網域拓撲。 這將列出叢集中的所有節點，外加您所建立的任何底座、機架或站台。 您可以使用像是 **-Type** 或 **-Name** 等參數來篩選，不過這些並非必要參數。
+使用 `Get-ClusterFaultDomain` 查看目前的容錯網域拓撲。 這將列出叢集中的所有節點，外加您所建立的任何底座、機架或站台。 您可以使用像是 **-Type** 或 **-Name** 等參數來篩選，不過這些並非必要參數。
 
 ```PowerShell
 Get-ClusterFaultDomain
@@ -82,7 +82,7 @@ Get-ClusterFaultDomain -Type Rack
 Get-ClusterFaultDomain -Name "server01.contoso.com"
 ```
 
-使用 `New-ClusterFaultDomain` 來建立新的底座、機架或網站。 需要 `-Type` 和 @no__t 1 參數。 @No__t-0 的可能值為 `Chassis`、`Rack` 和 `Site`。 @No__t-0 可以是任何字串。 （針對 `Node` 類型的容錯網域，名稱必須是自動設定的實際節點名稱）。
+使用 `New-ClusterFaultDomain` 建立新的底座、機架或網站。 `-Type` 和 `-Name` 參數是必要的。 `-Type` 的可能值為 `Chassis`、`Rack`和 `Site`。 `-Name` 可以是任何字串。 （針對 `Node` 類型容錯網域，名稱必須是 [自動設定] 的實際節點名稱）。
 
 ```PowerShell
 New-ClusterFaultDomain -Type Chassis -Name "Chassis 007"
@@ -91,9 +91,9 @@ New-ClusterFaultDomain -Type Site -Name "Shanghai"
 ```
 
 > [!IMPORTANT]  
-> Windows Server 無法執行，而且不會驗證您所建立的任何容錯網域是否對應至真實實體世界中的任何專案。 （這聽起來可能很明顯，但請務必瞭解）。如果在真實世界中，您的節點全都放在一個機架中，則在軟體中建立兩個 `-Type Rack` 容錯網域將無法提供機架容錯功能。 您必須負責確保使用這些 Cmdlet 所建立的拓撲符合硬體的實際排列方式。
+> Windows Server 無法執行，而且不會驗證您所建立的任何容錯網域是否對應至真實實體世界中的任何專案。 （這聽起來可能很明顯，但請務必瞭解）。如果在實體世界中，您的節點全都放在一個機架中，那麼在軟體中建立兩個 `-Type Rack` 容錯網域並不會神奇地提供機架容錯功能。 您必須負責確保使用這些 Cmdlet 所建立的拓撲符合硬體的實際排列方式。
 
-使用 `Set-ClusterFaultDomain`，將一個容錯網域移到另一個。 詞彙「父項」和「子項」常用來描述這個巢狀關聯性。 需要 `-Name` 和 @no__t 1 參數。 在 [`-Name`] 中，提供要移動之容錯網域的名稱;在 `-Parent` 中，提供目的地的名稱。 若要一次移動多個容錯網域，請列出其名稱。
+使用 `Set-ClusterFaultDomain` 將一個容錯網域移到另一個。 詞彙「父項」和「子項」常用來描述這個巢狀關聯性。 `-Name` 和 `-Parent` 參數是必要的。 在 `-Name`中，提供要移動之容錯網域的名稱;在 `-Parent`中，提供目的地的名稱。 若要一次移動多個容錯網域，請列出其名稱。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent "Rack A"
@@ -103,9 +103,9 @@ Set-ClusterFaultDomain -Name "Rack A", "Rack B", "Rack C", "Rack D" -Parent "Sha
 > [!IMPORTANT]  
 > 當容錯網域移動時，其子項也會跟著移動。 在上述範例中，如果機架 A 是 server01.contoso.com 的父項，則不需要將後者個別移至 Shanghai 站台，因為它的父項已位於該處，所以它也已經位於該處，就像在真實世界一樣。
 
-您可以在 [`ParentName`] 和 [@no__t 2] 資料行中 `Get-ClusterFaultDomain` 的輸出中，看到父子式關聯性。
+在 [`ParentName`] 和 [`ChildrenNames`] 資料行中，您可以在 `Get-ClusterFaultDomain`的輸出中查看父子式關聯性。
 
-您也可以使用 `Set-ClusterFaultDomain` 來修改容錯網域的某些其他屬性。 例如，您可以為任何容錯網域提供選擇性的 `-Location` 或 @no__t 1 的中繼資料。 如已提供，此資訊將會納入來自「健康情況服務」的硬體警示中。 您也可以使用 `-NewName` 參數重新命名容錯網域。 請勿重新命名 `Node` 類型的容錯網域。
+您也可以使用 `Set-ClusterFaultDomain` 來修改容錯網域的某些其他屬性。 例如，您可以為任何容錯網域提供選擇性的 `-Location` 或 `-Description` 中繼資料。 如已提供，此資訊將會納入來自「健康情況服務」的硬體警示中。 您也可以使用 `-NewName` 參數重新命名容錯網域。 請勿重新命名 `Node` 類型容錯網域。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "Rack A" -Location "Building 34, Room 4010"
@@ -113,7 +113,7 @@ Set-ClusterFaultDomain -Type Node -Description "Contoso XYZ Server"
 Set-ClusterFaultDomain -Name "Shanghai" -NewName "China Region"
 ```
 
-使用 `Remove-ClusterFaultDomain` 來移除您已建立的底座、機架或網站。 `-Name` 是必要參數。 您無法移除包含子系的容錯網域–先移除子系，或使用 `Set-ClusterFaultDomain` 將其移到外部。 若要將容錯網域移出所有其他容錯網域以外的地方，請將其 `-Parent` 設定為空字串（""）。 您無法移除 `Node` 類型的容錯網域。 若要一次移除多個容錯網域，請列出其名稱。
+使用 `Remove-ClusterFaultDomain` 來移除您已建立的底座、機架或網站。 `-Name` 是必要參數。 您無法移除包含子系的容錯網域–首先，移除子系，或使用 `Set-ClusterFaultDomain`將其移到外部。 若要將容錯網域移出所有其他容錯網域以外的地方，請將其 `-Parent` 設定為空字串（""）。 您無法移除 `Node` 類型的容錯網域。 若要一次移除多個容錯網域，請列出其名稱。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent ""
@@ -125,9 +125,9 @@ Remove-ClusterFaultDomain -Name "Rack A"
 
 這段短片示範使用 XML 標記來指定容錯網域的用法。
 
-[@no__t 1Click 此影像，觀看短片以瞭解如何使用 XML 來指定容錯網域](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
+[![按一下此影像，觀看有關如何使用 XML 來指定容錯網域的簡短影片](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
 
-在 PowerShell 中，執行下列 Cmdlet： `Get-ClusterFaultDomainXML`。 這會以 XML 形式傳回叢集目前的容錯網域規格。 這會反映每個探索到的 `<Node>`，包裝在開頭和結尾的 `<Topology>` 個標記中。  
+在 PowerShell 中，執行下列 Cmdlet： `Get-ClusterFaultDomainXML`。 這會以 XML 形式傳回叢集目前的容錯網域規格。 這反映了每個探索到的 `<Node>`，包裝在開頭和結尾的 `<Topology>` 標記中。  
 
 執行下列命令，將此輸出儲存至檔案。  
 
@@ -135,13 +135,13 @@ Remove-ClusterFaultDomain -Name "Rack A"
 Get-ClusterFaultDomainXML | Out-File <Path>  
 ```
 
-開啟檔案，並新增 `<Site>`、`<Rack>` 和 @no__t 2 標籤，以指定如何在網站、機架和底座間散發這些節點。 每個標記都必須以唯一的 **Name** 來識別。 對於節點，您必須保留預設填入的節點名稱。  
+開啟檔案，並新增 `<Site>`、`<Rack>`和 `<Chassis>` 標籤，以指定如何在網站、機架和底座間散發這些節點。 每個標記都必須以唯一的 **Name** 來識別。 對於節點，您必須保留預設填入的節點名稱。  
 
 > [!IMPORTANT]  
 > 儘管所有其他標記都是選擇性的，但它們還是必須遵守可轉移的站台 &gt; 機架 &gt; 底座 &gt; 節點階層，而且必須正確地關閉。  
-除了名稱以外，可以將自由格式的 `Location="..."` 和 @no__t 1 描述元加入至任何標記。  
+除了名稱之外，您也可以將自由格式的 `Location="..."` 和 `Description="..."` 描述元加入至任何標記。  
 
-#### <a name="example-two-sites-one-rack-each"></a>範例：兩個網站，每個都有一個機架  
+#### <a name="example-two-sites-one-rack-each"></a>範例︰兩個站台，每個都有一個機架  
 
 ```XML
 <Topology>  
@@ -185,15 +185,15 @@ $xml = Get-Content <Path> | Out-String
 Set-ClusterFaultDomainXML -XML $xml
 ```
 
-本指南只提供兩個範例，但是 `<Site>`、`<Rack>`、@no__t 2 和 @no__t 3 標記可以混合，並以許多其他方式進行比對，以反映部署的實體拓撲（可能的）。 我們希望這些範例說明這些標記的彈性及自由格式位置描述項的值，以釐清它們。  
+本指南只提供兩個範例，但是 `<Site>`、`<Rack>`、`<Chassis>`和 `<Node>` 標記可以混合起來，並以許多其他方式進行比對，以反映部署的實體拓撲，不論是什麼。 我們希望這些範例說明這些標記的彈性及自由格式位置描述項的值，以釐清它們。  
 
 ### <a name="optional-location-and-description-metadata"></a>選擇性：位置和描述中繼資料
 
 您可以為任何容錯網域提供選擇性的**位置**或**描述**中繼資料。 如已提供，此資訊將會納入來自「健康情況服務」的硬體警示中。 這段短片示範加入這類描述項的價值。
 
-[@no__t 1Click，以查看示範將位置描述項新增至容錯網域的值的簡短影片](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
+[![按一下以查看簡短影片，示範將位置描述項新增至容錯網域的值](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 - [開始使用 Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
 - [Windows Server 2016 入門](https://docs.microsoft.com/windows-server/get-started/server-basics)  
 -   [儲存空間直接存取總覽](../storage/storage-spaces/storage-spaces-direct-overview.md) 

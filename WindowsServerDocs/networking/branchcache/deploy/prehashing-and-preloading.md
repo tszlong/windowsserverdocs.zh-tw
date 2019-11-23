@@ -17,7 +17,7 @@ ms.locfileid: "71356386"
 ---
 # <a name="prehashing-and-preloading-content-on-hosted-cache-servers-optional"></a>在託管快取伺服器上預先雜湊處理並預先載入內容 (選擇性)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用這個程式來強制在啟用 BranchCache 的 Web 和檔案伺服器上建立內容資訊（也稱為雜湊）。 您也可以將檔案和 web 伺服器上的資料收集到可以傳輸到遠端託管快取伺服器的封裝中。  這讓您能夠在遠端託管快取伺服器上預先載入內容，讓資料可供第一次用戶端存取。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71356386"
   
 1.  登入包含您要預先載入之資料的檔案或網頁伺服器，並找出您想要在一或多部遠端託管快取伺服器上載入的資料夾和檔案。  
   
-2.  以系統管理員身分執行 Windows PowerShell。 針對每個資料夾和檔案，執行 `Publish-BCFileContent` 命令或 @no__t 1 命令（視內容伺服器的類型而定）來觸發雜湊產生，以及將資料加入至資料封裝。  
+2.  以系統管理員身分執行 Windows PowerShell。 針對每個資料夾和檔案，根據內容伺服器的類型執行 [`Publish-BCFileContent`] 命令或 [`Publish-BCWebContent`] 命令，以觸發雜湊產生並將資料加入至資料封裝。  
   
 3.  將所有資料都新增至資料封裝之後，請使用 `Export-BCCachePackage` 命令將其匯出，以產生資料封裝檔案。  
   

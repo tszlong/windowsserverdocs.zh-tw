@@ -18,7 +18,7 @@ ms.locfileid: "71402672"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>使用 Windows PowerShell 進行進階的 Active Directory 複寫和拓撲管理 (層級 200)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 此主題詳細說明新的 AD DS 複寫和拓撲管理 Cmdlet，並提供額外的範例。 如需簡介，請參閱[使用 Windows PowerShell &#40;層級 100&#41;的 Active Directory 複寫和拓撲管理簡介](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71402672"
 8.  [拓](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Topo)  
   
 ## <a name="BKMK_Intro"></a>問世  
-Windows Server 2012 對「適用於 Windows PowerShell 的 Active Directory 模組」擴充了 25 個新的 Cmdlet 來管理複寫和樹系拓撲。 在此之前，您已強制使用泛型 **\*-AdObject**名詞或呼叫 .net 函數。  
+Windows Server 2012 對「適用於 Windows PowerShell 的 Active Directory 模組」擴充了 25 個新的 Cmdlet 來管理複寫和樹系拓撲。 在此之前，您已強制使用一般 **\*AdObject**名詞或呼叫 .net 函數。  
   
 就像所有 Active Directory Windows PowerShell Cmdlet 一樣，此功能必須至少在一部網域控制站 (或者最好在所有網域控制站) 安裝 [Active Directory 管理閘道服務](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852) 。  
   
@@ -82,7 +82,7 @@ Windows Server 2012 對「適用於 Windows PowerShell 的 Active Directory 模�
 Get-command -module ActiveDirectory  
 ```  
   
-如需所有 Active Directory Windows PowerShell Cmdlet 引數的完整清單，請參閱說明。 例如:  
+如需所有 Active Directory Windows PowerShell Cmdlet 引數的完整清單，請參閱說明。 例如：  
   
 ```  
 Get-help New-ADReplicationSite  
@@ -228,7 +228,7 @@ Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,
   
 例如，新的分公司迅速擴編加上與其他分公司整併，根據實體位置、網路變更和新的容量需求，您可能會有上百個站台變更需要處理。 比起使用 Dssites.msc 和 Adsiedit.msc 進行變更，您可以進行自動化。 當您使用網路和設備團隊提供的試算表資料時，這樣會特別方便。  
   
-**Get-adreplication @ no__t-1*** 指令程式會傳回複寫拓撲的相關資訊，並且適用于大量執行**get-adreplication @ no__t-3*** Cmdlet 的管線。 **Get** Cmdlet 不會變更資料，而只會顯示資料，或建立可以管線處理**get-adreplication @ no__t-2*** Cmdlet 的 Windows PowerShell 會話物件。 **New** 和 **Remove** Cmdlet 可用來建立或移除 Active Directory 拓撲物件。  
+**Get-adreplication\\** * Cmdlet 會傳回複寫拓撲的相關資訊，並且適用于大量**get-adreplication\\** * Cmdlet。 **Get** Cmdlet 不會變更資料，而只會顯示資料，或建立可以管線處理**get-adreplication\\** * Cmdlet 的 Windows PowerShell 會話物件。 **New** 和 **Remove** Cmdlet 可用來建立或移除 Active Directory 拓撲物件。  
   
 例如，您可以使用 CSV 檔案建立新的站台：  
   
@@ -267,7 +267,7 @@ get-adreplicationsite -filter * -property subnets | where-object {!$_.subnets -e
   
 ![使用 powershell 進行先進的管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteFiltrer.png)  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [使用 Windows PowerShell &#40;層級100的 Active Directory 複寫和拓撲管理簡介&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
   
 

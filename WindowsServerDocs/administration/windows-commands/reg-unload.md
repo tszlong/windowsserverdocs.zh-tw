@@ -34,11 +34,11 @@ ms.locfileid: "71384625"
 reg unload <KeyName>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName >|指定要卸載之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為 HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰就是 HKLM 和 HKU。|
+|\<KeyName >|指定要卸載之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\\\ComputerName\) 作為*KeyName*的一部分。 省略 \\\\ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為 HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰就是 HKLM 和 HKU。|
 |/?|在命令提示字元中顯示**reg unload**的說明。|
 
 ## <a name="remarks"></a>備註

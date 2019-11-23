@@ -18,7 +18,7 @@ ms.locfileid: "71390723"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 此主題涵蓋更新之 Active Directory 管理中心的新 Active Directory 資源回收筒、更細緻的密碼原則與 Windows PowerShell 歷程記錄檢視器的詳細資料，包括架構、常見工作的範例與疑難排解資訊。 如需簡介，請參閱[Active Directory 管理中心增強&#40;層級 100&#41;的簡介](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)。  
   
@@ -98,7 +98,7 @@ Active Directory 資源回收筒會保留樹系中已刪除的所有物件。 �
   
 「刪除的物件」容器會顯示該網域分割中所有可還原的物件。 存留期超過 **msDS-deletedObjectLifetime** 的已刪除物件稱為「已回收的物件」。 Active Directory 管理中心不會顯示已回收的物件，而且您也無法使用 Active Directory 管理中心來還原這些物件。  
   
-如需回收站架構和處理規則的更深入說明，請參閱 @no__t 0The AD 回收站：瞭解、執行、最佳作法，以及針對 @ no__t-0 進行疑難排解。  
+如需資源回收筒架構與處理規則的較深入說明，請參閱 [AD 資源回收筒：了解、實作、最佳做法以及疑難排解](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)。  
   
 Active Directory 管理中心以人為方式將一個容器傳回的預設物件數目限制為 20,000 個物件。 您可以按一下 [管理] 功能表，然後按一下 [管理清單選項]，將此限制最高提高至 100,000 個物件。  
   
@@ -119,12 +119,12 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
 - *ANR （模糊名稱解析-功能表中沒有列出，但是在您于 [篩選] * * * * * * * * * * * * * * * * * * **  
 - 上次修改時間 (介於指定日期之間)  
 - 物件是使用者/inetorgperson/電腦/群組/組織單位  
-- Name  
+- 名稱  
 - 刪除時  
 - 上次已知父系  
-- Type  
+- 類型  
 - 描述  
-- 縣/市  
+- 縣市  
 - 國家 / 地區  
 - 部門  
 - 員工識別碼  
@@ -202,7 +202,7 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
   
 如果 **Sales** OU 包含自己的子系 OU，則您將先還原這些子系 OU，再還原它們的子系 OU 等等。  
   
-若要藉由指定已刪除的父容器來還原所有已嵌套的已刪除物件，請參閱 [Appendix B：還原多個已刪除的 Active Directory 物件（範例腳本） ](https://technet.microsoft.com/library/dd379504(WS.10).aspx)。  
+若要透過指定已刪除的父容器來還原所有巢狀的已刪除物件，請參閱 [附錄 B：還原多個已刪除的 Active Directory 物件 (範例指令碼)](https://technet.microsoft.com/library/dd379504(WS.10).aspx)。  
   
 用於還原已刪除之物件的 Active Directory Windows PowerShell Cmdlet 是：  
 
@@ -447,7 +447,7 @@ Active Directory 管理中心現在包含內建的記錄功能，做為追蹤設
 
 當沒有任何 Active Directory Web 服務執行個體可用時，顯示的錯誤是：  
   
-|Error|運算|
+|錯誤|操作|
 | --- | --- |  
 |「 無法連線到任何網域。 請重新整理或在連線可用之後再試一次。」|在 Active Directory 管理中心應用程式啟動時顯示|
 |「在執行 Active Directory Web 服務（ADWS）的 *<NetBIOS domain name>* 網域中找不到可用的伺服器」|嘗試選取 Active Directory 管理中心內的某個網域節點時顯示|
@@ -484,6 +484,6 @@ Active Directory 管理中心現在包含內建的記錄功能，做為追蹤設
   
 4. 在執行 Active Directory 管理中心的電腦和 NLTEST 所傳回的網域控制站上，安裝 NetMon 或其他網路擷取公用程式。 從您啟動 Active Directory 管理中心的兩部電腦收集同時網路擷取，並在停止擷取之前先查看錯誤。 確認用戶端能夠透過連接埠 TCP 9389 傳送至網域控制站及從此網域控制站接收。 如果已傳送封包但一直沒送達，或是有送達且網域控制站有回覆，但是用戶端從未收到，則可能是網路上電腦之間有防火牆將該連接埠上的封包捨棄。 這個防火牆可能是軟體或硬體，也可能是協力廠商端點保護 (防毒) 軟體的一部分。  
   
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [AD 資源回收筒、更細緻的密碼原則和 PowerShell 歷程記錄](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

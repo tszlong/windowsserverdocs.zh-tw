@@ -17,7 +17,7 @@ ms.locfileid: "71393941"
 ---
 # <a name="storage-quality-of-service"></a>存放裝置服務品質
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server (半年通道)、Windows Server 2016
 
 Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，以使用 Hyper-V 與向外延展檔案伺服器角色來集中監視和管理虛擬機器的存放裝置效能。 此功能會使用相同的檔案伺服器叢集，自動改善多個虛擬機器之間存放裝置資源的公平性，並允許使用已標準化的 IOPS 來設定以原則為基礎的最小和最大效能目標。  
 
@@ -45,7 +45,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
     針對存放裝置 QoS，存放裝置伺服器上需要有容錯移轉叢集，但容錯移轉叢集中不需要計算伺服器。 所有伺服器 (用於「存放裝置」和「計算」) 都必須執行 Windows Server 2016。  
 
-    如果您沒有針對評估用途部署的擴充檔案伺服器叢集，如需使用現有伺服器或虛擬機器來建立一個的逐步指示，請參閱 @no__t 0Windows Server 2012 R2 Storage：儲存空間、SMB 相應放大和共用 VHDX （實體） ](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx) 的逐步解說。  
+    如果您尚未針對評估用途來部署向外延展檔案伺服器叢集，如需使用現有伺服器或虛擬機器來建置一個的逐步指示，請參閱 [Windows Server 2012 R2 存放裝置︰使用儲存空間、SMB 向外延展和共用 VHDX (實體) 的逐步指示](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)。  
 
 -   **使用叢集共用磁片區的 hyper-v。** 此案例需要下列兩項：  
 
@@ -60,7 +60,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 ![向外延展檔案伺服器和存放裝置 QoS](media/overview-Clustering_SOFSStorageQoS.png)  
 
-**圖 1:在向外延展檔案伺服器 @ no__t-0 的軟體定義存放裝置解決方案中使用存放裝置 QoS  
+**圖1：在向外延展檔案伺服器的軟體定義存放裝置解決方案中使用存放裝置 QoS**  
 
 當 Hyper-V 伺服器啟動虛擬機器時，原則管理員即會監視它們。 原則管理員會將存放裝置 QoS 原則和任何限制或保留項目傳遞回 Hyper-V 伺服器，其可適當地控制虛擬機器的效能。  
 
@@ -74,8 +74,8 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 |流程|每個由 Hyper-V 伺服器開啟到 VHD 或 VHDX 檔案的檔案控制代碼都會被視為一個「流程」。 如果一個虛擬機器連接了兩個虛擬硬碟，則每個檔案中都會有 1 個連至檔案伺服器叢集的流程。 如果 VHDX 會與多個虛擬機器共用，則每個虛擬機器中將會有 1 個流程。|  
 |InitiatorName|針對每個流程要對向外延展檔案伺服器報告的虛擬機器名稱。|  
 |InitiatorID|符合虛擬機器識別碼的識別碼。  這一律可用來唯一識別個別流程的虛擬機器，即使虛擬機器具有相同的 InitiatorName 也一樣。|  
-|原則|存放裝置 QoS 原則會儲存在叢集資料庫中，並具有下列屬性：PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
-|`PolicyId`|原則的唯一識別碼。  根據預設所產生，但可視需要加以指定。|  
+|原則|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、 ParentPolicy 和 PolicyType。|  
+|PolicyId|原則的唯一識別碼。  根據預設所產生，但可視需要加以指定。|  
 |MinimumIOPS|原則將提供的最小值標準化 IOPS。  也稱為「保留項目」。|  
 |MaximumIOPS|原則將限制的最大值標準化 IOPS。  也稱為「限制」。|  
 |彙總 |原則類型，指定的 MinimumIOPS 與 MaximumIOPS 和 Bandwidth 會在指派給原則的所有流程中加以共用。 在該存放系統上指派原則的所有 VHD，在它們到所有共用之間都會有單一配置的 I/O 頻寬。|  
@@ -95,7 +95,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 ![[存放裝置 QoS 資源] 會出現在 [叢集核心資源] 中](media/overview-Clustering_StorageQoSFCM.png)  
 
-**圖 2:存放裝置 QoS 資源在容錯移轉叢集管理員 @ no__t-0 中顯示為叢集核心資源  
+**圖2：存放裝置 QoS 資源在容錯移轉叢集管理員中顯示為叢集核心資源**  
 
 請使用下列 PowerShell Cmdlet 來檢視存放裝置 QoS 資源的狀態。  
 
@@ -115,14 +115,14 @@ Windows Server 2016 中的 Hyper-V 角色具備存放裝置 QoS 的內建支援�
 
 **RSAT-Clustering** 選用功能包括適用於遠端管理容錯移轉叢集 (包括存放裝置 QoS) 的 Windows PowerShell 模組。  
 
--   Windows PowerShell：載入的 RSAT-叢集  
+-   Windows PowerShell：Add-WindowsFeature RSAT-Clustering  
 
 **RSAT-Hyper-V-Tools** 選用功能包括適用於遠端管理 Hyper-V 的 Windows PowerShell 模組。  
 
--   Windows PowerShell：載入的 RSAT-Hyper-v-工具  
+-   Windows PowerShell：Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>基於測試目的部署虛擬機器來執行工作負載  
-您需要將一些具有相關工作負載的虛擬機器儲存於向外延展檔案伺服器上。  如需如何模擬負載並執行一些壓力測試的一些秘訣，請參閱下列頁面以取得建議的工具（DiskSpd）和一些範例使用方式：[DiskSpd、PowerShell 和儲存效能：測量本機磁片和 SMB 檔案共用的 IOPs、輸送量和延遲。](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
+您需要將一些具有相關工作負載的虛擬機器儲存於向外延展檔案伺服器上。  如需如何模擬負載並執行某些壓力測試的一些秘訣，請參閱下列頁面以取得建議的工具 (DiskSpd) 和一些使用方式範例︰[DiskSpd、PowerShell 和存放裝置效能︰測量本機磁碟和 SMB 檔案共用的 IOPS、輸送量和延遲](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)。  
 
 本指南中所示的範例案例包含五個虛擬機器。 BuildVM1、BuildVM2、BuildVM3 和 BuildVM4 正以低到中等的儲存需求來執行桌面工作負載。 TestVm1 正以高等級的儲存需求來執行線上交易處理的效能評定。  
 
@@ -300,7 +300,7 @@ MinimumIops    : 781
 如果您針對不同的虛擬機器建立多個類似原則，且虛擬機器具有同等的存放裝置需求，它們將會收到類似的 IOPS 共用。  如果有一個 VM 的需求較多而其他的較少，則 IOPS 會遵循該需求。  
 
 ### <a name="types-of-storage-qos-policies"></a>存放裝置 QoS 原則的類型  
-原則有兩種類型：匯總（先前稱為 SingleInstance）和專用（先前稱為多重實例）。 彙總原則會針對一組它們所套用的 VHD/VHDX 檔案和虛擬機器組合來套用最大值和最小值。 事實上，它們會共用一組指定的 IOPS 和頻寬。 專用原則會針對每個 VHD/VHDX 個別套用最小值和最大值。 這可讓您輕鬆地建立單一原則，將類似限制套用到多個 VHD/VHDX 檔案。  
+有兩種原則類型︰「彙總」(先前稱為 SingleInstance) 和「專用」(先前稱為 MultiInstance)。 彙總原則會針對一組它們所套用的 VHD/VHDX 檔案和虛擬機器組合來套用最大值和最小值。 事實上，它們會共用一組指定的 IOPS 和頻寬。 專用原則會針對每個 VHD/VHDX 個別套用最小值和最大值。 這可讓您輕鬆地建立單一原則，將類似限制套用到多個 VHD/VHDX 檔案。  
 
 例如，假設您建立一個彙總原則，其最小值為 300 個 IOPS 且最大值為 500 個 IOPS。 如果您將此原則套用到 5 個不同的 VHD/VHDX 檔案，即可確定這 5 個 VHD/VHDX 檔案組合將保證至少有 300 個 IOPS (如果有需求且存放系統可以提供該效能)，而且不會超過 500 個 IOPS。 如果 VHD/VHDX 檔案對於 IOPS 具有類似的高度需求且存放系統可以掌握，則每個 VHD/VHDX 檔案大約可取得 100 個 IOPS。  
 
@@ -840,7 +840,7 @@ Windows Server 2016 中有兩個新的存放裝置 QoS 功能：
 
     當您因為標準化計算中的變更而變更 IOPS 標準化時，要考慮的是相同 IO 模式/輸送量在存放裝置 QoS 輸出中顯示不同的 IOPS 數量。  如果您正在比較存放裝置叢集之間的 IOPS，您可能也想要確認每一個正在使用的標準化值，因為它將影響所報告的標準化 IOPS。    
 
-#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>範例 1：建立新原則，並在存放裝置叢集上查看最大頻寬  
+#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>範例 1︰建立新的原則，並檢視存放裝置叢集上的最大頻寬  
 在 PowerShell 中，您可以指定一個用數字表示的單位。  下列範例使用 10 MB 做為最大頻寬值。  存放裝置 QoS 將轉換此值，並以每秒位元組為單位來儲存它。因此，會將 10 MB 轉換為每秒 10485760 個位元組。  
 
 ```PowerShell
@@ -866,7 +866,7 @@ InitiatorLatency   : 1.5455
 InitiatorBandwidth : 37888  
 ```  
 
-#### <a name="example-2-get-iops-normalization-settings-and-specify--a-new-value"></a>範例 2：取得 IOPS 正規化設定並指定新值  
+#### <a name="example-2-get-iops-normalization-settings-and-specify--a-new-value"></a>範例 2︰取得 IOPS 標準化設定，並指定新值  
 
 下列範例示範如何取得存放裝置叢集的 IOPS 標準化設定 (預設值為 8 KB)，接著將它設定為 32 KB，然後再次顯示。  注意，在此範例中，請指定 "32 KB"，因為 PowerShell 可讓您指定單位，而不需轉換為位元組。   輸出會以每秒位元組為單位來顯示值。  
 
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 中的儲存體複本](../storage-replica/storage-replica-overview.md)  
 - [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)  

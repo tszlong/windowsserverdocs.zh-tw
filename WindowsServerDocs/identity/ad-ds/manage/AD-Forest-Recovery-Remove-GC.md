@@ -18,7 +18,7 @@ ms.locfileid: "71409093"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>AD 樹系復原-移除通用類別目錄  
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
  使用下列程式從 DC 移除通用類別目錄。 
   
@@ -31,8 +31,8 @@ ms.locfileid: "71409093"
 3. 展開 [**伺服器**] 容器，然後展開您要移除其通用類別目錄之 DC 的*伺服器*物件。 
 4. 以滑鼠右鍵按一下 [ **NTDS 設定**]，然後按一下 [**屬性**]。 
 5. 清除 [**通用類別目錄**] 核取方塊。 
-   ![Remove GC @ no__t-1
-6. 按一下 **[套用]** 。
+   ![移除 GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
+6. 按一下 [套用]。
   
 ## <a name="to-remove-the-global-catalog-using-repadmin"></a>使用 Repadmin 移除通用類別目錄  
   

@@ -1,5 +1,5 @@
 ---
-title: time
+title: 時間
 description: 瞭解如何設定和顯示系統時間。
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369947"
 ---
-# <a name="time"></a>time
+# <a name="time"></a>時間
 
 
 
@@ -34,11 +34,11 @@ ms.locfileid: "71369947"
 time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|\<HH > [： \|pm > [： \<SS > [. \<NN >]]] [am @ no__t-]|將系統時間設定為指定的新時間，其中*HH*是以小時為單位， *MM*為分鐘，而*SS*則以秒為單位。 *NN*可以用來指定百分之一秒。 如果未指定**am**或**pm** ，**時間**預設會使用24小時制格式。|
+|\<HH > [：\<MM > [：\<SS > [.\<NN >]]] [am\|pm]|將系統時間設定為指定的新時間，其中*HH*是以小時為單位， *MM*為分鐘，而*SS*則以秒為單位。 *NN*可以用來指定百分之一秒。 如果未指定**am**或**pm** ，**時間**預設會使用24小時制格式。|
 |一起|顯示目前的時間，而不提示您輸入新的時間。|
 |/?|在命令提示字元顯示說明。|
 

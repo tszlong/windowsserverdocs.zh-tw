@@ -17,7 +17,7 @@ ms.locfileid: "71405350"
 ---
 # <a name="network-policies"></a>網路原則
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，以取得 NPS 中的網路原則總覽。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71405350"
 
 以遠端驗證撥入使用者服務（RADIUS）伺服器的形式處理連線要求時，NPS 會對連線要求執行驗證和授權。 在驗證過程中，NPS 會驗證連線到網路的使用者或電腦的身分識別。 在授權程式期間，NPS 會決定是否允許使用者或電腦存取網路。
 
-為了做出這些決定，NPS 會使用 NPS 主控台中設定的網路原則。 NPS 也會在 Active Directory @ no__t-0 網域服務 \(AD DS @ no__t-2 中檢查使用者帳戶的撥入屬性，以執行授權。
+為了做出這些決定，NPS 會使用 NPS 主控台中設定的網路原則。 NPS 也會在 Active Directory&reg; 網域服務 \(AD DS\) 中，檢查使用者帳戶的撥入內容，以執行授權。
 
 ## <a name="network-policies---an-ordered-set-of-rules"></a>網路原則-一組已排序的規則
 
@@ -47,7 +47,7 @@ ms.locfileid: "71405350"
 
 每個網路原則都有四個類別的屬性：
 
-### <a name="overview"></a>總覽
+### <a name="overview"></a>概觀
 
  這些屬性可讓您指定是否要啟用原則、原則是否會授與或拒絕存取權，以及連線要求是否需要特定的網路連線方法或網路存取伺服器（NAS）類型。 總覽屬性也可讓您指定是否忽略 AD DS 中使用者帳戶的撥入屬性。 如果您選取此選項，NPS 只會使用網路原則中的設定來判斷連線是否已獲授權。
 

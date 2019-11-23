@@ -18,19 +18,19 @@ ms.locfileid: "71408365"
 ---
 # <a name="enroll-an-ssl-certificate-for-ad-fs"></a>註冊 AD FS 的 SSL 憑證
 
-Active Directory 同盟服務 \(AD FS @ no__t-1 需要憑證，才能在同盟伺服器陣列中的每部同盟伺服器上使用安全通訊端層 \(SSL @ no__t-3 伺服器驗證。 伺服器陣列中的每部同盟伺服器都可以使用相同的憑證。 您必須準備好憑證和私密金鑰。 例如，如果 .pfx 檔案內有憑證和私密金鑰，您可以直接將該檔案匯入 Active Directory Federation Services 設定精靈。 此 SSL 憑證必須包含下列內容：  
+Active Directory 同盟服務 \(AD FS\) 需要在同盟伺服器陣列中的每部同盟伺服器上，安全通訊端層 \(SSL\) 伺服器驗證的憑證。 伺服器陣列中的每部同盟伺服器都可以使用相同的憑證。 您必須準備好憑證和私密金鑰。 例如，如果 .pfx 檔案內有憑證和私密金鑰，您可以直接將該檔案匯入 Active Directory Federation Services 設定精靈。 此 SSL 憑證必須包含下列內容：  
   
 1.  [主體名稱] 和 [主體替代名稱] 必須包含您的同盟服務名稱，例如 fs.contoso.com。  
   
-2.  主體別名必須包含值**enterpriseregistration** ，後面接著您組織的使用者主體名稱 \(UPN @ no__t-2 尾碼，例如**enterpriseregistration.corp.contoso.com**。  
+2.  主體別名必須包含值**enterpriseregistration** ，後面接著您組織的使用者主體名稱 \(UPN\) 尾碼，例如**enterpriseregistration.corp.contoso.com**。  
   
     > [!WARNING]  
-    > 如果您計畫啟用裝置註冊服務，請指定主體別名 \(DRS @ no__t-1 以進行 Workplace Join。  
+    > 如果您計畫啟用裝置註冊服務 \(DRS\) 以進行 Workplace Join，請指定主體別名。  
   
 > [!IMPORTANT]  
 > 如果您的組織使用多個 UPN 尾碼，而且您打算啟用 DRS，則 SSL 憑證必須包含每個尾碼的主體別名專案。  
   
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [AD FS 部署](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 部署指南](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  

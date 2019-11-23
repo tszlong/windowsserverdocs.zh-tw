@@ -18,7 +18,7 @@ ms.locfileid: "71405146"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows 時間服務的運作方式
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更新版本
+>適用于： Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更新版本
 
 **本節內容**  
   
@@ -171,7 +171,7 @@ Windows 時間服務是設計用來同步處理網路上的電腦時鐘。 網�
 以網域階層為基礎的同步處理會使用 AD DS 網域階層，來尋找用來同步處理時間的可靠來源。 根據網域階層，Windows 時間服務會決定每個時間伺服器的精確度。 在 Windows Server 2003 樹系中，保留主域控制站（PDC）模擬器操作主機角色（位於樹系根域中）的電腦會保留最佳時間來源的位置，除非已設定另一個可靠的時間來源。 下圖說明網域階層中電腦之間的時間同步處理路徑。  
   
 **AD DS 階層中的時間同步處理**  
-![Windows Time @ no__t-1
+![Windows 時間](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_ntw_adhc.gif)
   
 #### <a name="reliable-time-source-configuration"></a>可靠的時間來源設定  
 設定為可靠時間來源的電腦會被識別為時間服務的根目錄。 時間服務的根目錄是網域的授權伺服器，通常是設定為從外部 NTP 伺服器或硬體裝置取出時間。 您可以將時間伺服器設定為可靠的時間來源，以優化整個網域階層的時間傳輸方式。 如果網域控制站設定為可靠的時間來源，Net Logon 服務會在登入網路時，將網域控制站宣佈為可靠的時間來源。 當其他網域控制站尋找與同步處理的時間來源時，他們會先選擇可靠的來源（如果有的話）。  
@@ -259,10 +259,10 @@ Windows 時間服務會在網路上進行通訊，以識別可靠的時間來源
   
 |服務名稱|UDP|TCP|  
 |----------------|-------|-------|  
-|NTP|123|N/A|  
-|SNTP|123|N/A|  
+|NTP|123|不適用|  
+|SNTP|123|不適用|  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [Windows 時間服務技術參考](windows-time-service-tech-ref.md)
 [Windows 時間服務工具和設定](Windows-Time-Service-Tools-and-Settings.md)
 [Microsoft 知識庫文章 902229](https://go.microsoft.com/fwlink/?LinkId=186066)

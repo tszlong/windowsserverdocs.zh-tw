@@ -22,9 +22,9 @@ ms.locfileid: "71378695"
 ---
 # <a name="detach-vdisk"></a>卸離 vdisk
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-停止選取的虛擬硬碟 \(VHD @ no__t-1，使其在主機電腦上顯示為本機硬碟機。 卸離 VHD 之後，您可以將它複製到其他位置。  
+停止選取的虛擬硬碟 \(VHD\) 不會顯示為主電腦上的本機硬碟。 卸離 VHD 之後，您可以將它複製到其他位置。  
   
 > [!NOTE]  
 > 此命令僅適用于 Windows 7 和 Windows Server 2008 R2。  
@@ -35,7 +35,7 @@ ms.locfileid: "71378695"
 detach vdisk [noerr]  
 ```  
   
-### <a name="parameters"></a>參數  
+### <a name="parameters"></a>Parameters  
   
 |參數|描述|  
 |-------|--------|  

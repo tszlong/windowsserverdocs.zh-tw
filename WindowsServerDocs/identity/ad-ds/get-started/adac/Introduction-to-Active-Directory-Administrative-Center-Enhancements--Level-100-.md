@@ -18,7 +18,7 @@ ms.locfileid: "71390620"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 中的 Active Directory 管理中心包括下列各項的管理功能：
 
@@ -36,7 +36,7 @@ Windows Server 中的 Active Directory 管理中心包括下列各項的管理�
 
 從 Windows Server 2008 R2 開始，提供的 Active Directory 資源回收筒是建立在現有的標記重新引發基礎結構上，可以增強保存和復原意外刪除 Active Directory 物件的能力。
 
-啟用 Active Directory 資源回收筒時，會保留已刪除之 Active Directory 物件的所有連結值與非連結值屬性，並將物件完整還原為與刪除之前相同的邏輯狀態。 例如，還原的使用者帳戶會自動重新取得它們在刪除之前，在網域內外擁有的所有群組成員資格和對應的存取權限。 Active Directory 資源回收筒可在 AD DS 與 AD LDS 環境中運作。 如需 Active Directory 回收站的詳細說明，請參閱 [What's 中的新功能 AD DS：Active Directory 回收站 @ no__t-0。
+啟用 Active Directory 資源回收筒時，會保留已刪除之 Active Directory 物件的所有連結值與非連結值屬性，並將物件完整還原為與刪除之前相同的邏輯狀態。 例如，還原的使用者帳戶會自動重新取得它們在刪除之前，在網域內外擁有的所有群組成員資格和對應的存取權限。 Active Directory 資源回收筒可在 AD DS 與 AD LDS 環境中運作。 如需 Active Directory 資源回收筒的詳細說明，請參閱 [AD DS 的新功能：Active Directory 資源回收筒](https://technet.microsoft.com/library/dd391916(WS.10).aspx)。
 
 **新功能** 在 Windows Server 2012 和更新版本中，會使用新的圖形化使用者介面增強 Active Directory 回收站功能，讓使用者可以管理和還原已刪除的物件。 使用者現在可以看到已刪除物件的清單，並將它們還原到原始位置或您想要的位置。
 
@@ -55,10 +55,10 @@ Windows Server 中的 Active Directory 管理中心包括下列各項的管理�
 
 在下列步驟中，您將使用 ADAC 來執行 Windows Server 2012 中的下列 Active Directory 回收站工作：
 
-- [步驟 1：提高樹系功能等級 @ no__t-0
-- [步驟 2：啟用回收站 @ no__t-0
-- [步驟 3：建立測試使用者、群組和組織單位 @ no__t-0
-- [步驟 4：還原已刪除的物件 @ no__t-0
+- [步驟1：提高樹系功能等級](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_raise_ffl)
+- [步驟2：啟用回收站](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_enable_recycle_bin)
+- [步驟3：建立測試使用者、群組和組織單位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)
+- [步驟4：還原已刪除的物件](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_restore_del_obj)
 
 > [!NOTE]
 > 若要執行下列步驟，需要 Enterprise Admins 群組的成員資格或同等權限。
@@ -75,7 +75,7 @@ Windows Server 中的 Active Directory 管理中心包括下列各項的管理�
 
 3. 在左瀏覽窗格中按一下目標網域，然後在 [工作] 窗格中按一下 [提高樹系功能等級]。 選取至少為 Windows Server 2008 R2 或更高版本的樹系功能等級，然後按一下 **[確定]** 。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -85,7 +85,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 針對 **-Identity**引數，指定完整的 DNS 功能變數名稱。
 
-### <a name="bkmk_enable_recycle_bin"></a>步驟2：啟用資源回收筒
+### <a name="bkmk_enable_recycle_bin"></a>步驟2：啟用回收站
 
 在這個步驟中，您將啟用資源回收筒，以還原在 AD DS 中刪除的物件。
 
@@ -99,7 +99,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 4. 按 F5 重新整理 ADAC。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -107,7 +107,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,CN=Directory Service,CN=Windows NT,CN=Services,CN=Configuration,DC=contoso,DC=com' -Scope ForestOrConfigurationSet -Target 'contoso.com'
 ```
 
-### <a name="bkmk_create_test_env"></a>步驟3：建立測試使用者、群組及組織單位
+### <a name="bkmk_create_test_env"></a>步驟3：建立測試使用者、群組和組織單位
 
 在下列程序中，您將建立兩個測試使用者。 接著建立一個測試群組，並將測試使用者新增到該群組。 此外，您也將建立組織單位。
 
@@ -142,7 +142,7 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 5. 按一下 [group1]，然後按一下 [工作] 窗格下方的 [內容]。
 6. 依序按一下 [成員]、[新增]，輸入 **test1;test2**，然後按一下 [確定]。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -159,7 +159,7 @@ Add-ADGroupMember -Identity group1 -Member test1
 
    - **NameOU1**
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -169,7 +169,7 @@ New-ADGroup -Name "group1" -SamAccountName group1 -GroupCategory Security -Group
 New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 ```
 
-### <a name="bkmk_restore_del_obj"></a>步驟4：還原刪除的物件
+### <a name="bkmk_restore_del_obj"></a>步驟4：還原已刪除的物件
 
 在下列程序中，您要將 [Deleted Objects] 容器中的刪除物件還原到其原始位置和其他位置。
 
@@ -181,7 +181,7 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 3. 選取使用者 **test1** 與 **test2**，按一下 [工作] 窗格中的 [刪除] ，然後按一下 [是] 確認刪除。
 
-    ![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+    AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
     下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -198,7 +198,7 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 ```powershell
 Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADObject
@@ -218,7 +218,7 @@ Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADOb
 
 6. 為確認物件已還原到 [OU1]，瀏覽至目標網域，按兩下 [OU1] ，確認使用者帳戶已經列出。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -230,7 +230,7 @@ Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADOb
 
 Windows Server 2008 作業系統可以讓組織為網域中的不同使用者集合定義不同的密碼和帳戶鎖定原則。 在 Windows Server 2008 以前的 Active Directory 網域中，網域中的所有使用者只能套用一個密碼原則和帳戶鎖定原則。 這些原則是在網域的 "Default Domain Policy" 中指定。 因此，需針對不同使用者集合設定不同密碼和帳戶鎖定設定的組織，就必須建立密碼篩選器或部署多個網域。 這兩種方法都是相當耗費成本的選項。
 
-您可以使用更細緻的密碼原則在單一網域內指定多個密碼原則，然後將密碼和帳戶鎖定原則的不同限制套用到網域中的不同使用者集合。 例如，您可以將較嚴格的設定套用到權限帳戶，然後將較不嚴格的設定套用到其他使用者的帳戶。 在其他狀況下，您可能想為密碼與其他資料來源同步的帳戶套用特殊的密碼原則。 如需更細緻的密碼原則的詳細說明，請參閱 @no__t 0AD DS：更細緻的密碼原則 @ no__t-0
+您可以使用更細緻的密碼原則在單一網域內指定多個密碼原則，然後將密碼和帳戶鎖定原則的不同限制套用到網域中的不同使用者集合。 例如，您可以將較嚴格的設定套用到權限帳戶，然後將較不嚴格的設定套用到其他使用者的帳戶。 在其他狀況下，您可能想為密碼與其他資料來源同步的帳戶套用特殊的密碼原則。 如需更細緻的密碼原則的詳細說明，請參閱 [AD DS：更細緻的密碼原則](https://technet.microsoft.com/library/cc770394(WS.10).aspx)
 
 **新功能**
 
@@ -251,12 +251,12 @@ Windows Server 2008 作業系統可以讓組織為網域中的不同使用者集
 
 在下列步驟中，您將使用 ADAC 來執行下列更細緻的密碼原則工作：
 
-- [步驟 1：提高網域功能等級 @ no__t-0
-- [步驟 2：建立測試使用者、群組及組織單位 @ no__t-0
-- [步驟 3：建立新的更細緻的密碼原則 @ no__t-0
-- [步驟 4：查看使用者的原則結果組 @ no__t-0
-- [步驟 5：編輯更細緻的密碼原則 @ no__t-0
-- [步驟 6：刪除更細緻的密碼原則 @ no__t-0
+- [步驟1：提高網域功能等級](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_raise_dfl)
+- [步驟2：建立測試使用者、群組和組織單位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk2_test_fgpp)
+- [步驟3：建立更細緻的新密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)
+- [步驟4：查看使用者的原則結果組](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_view_resultant_fgpp)
+- [步驟5：編輯更細緻的密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_edit_fgpp)
+- [步驟6：刪除更細緻的密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_delete_fgpp)
 
 > [!NOTE]
 > 若要執行下列步驟，需要 Domain Admins 群組的成員資格或同等權限。
@@ -273,7 +273,7 @@ Windows Server 2008 作業系統可以讓組織為網域中的不同使用者集
 
 3. 在左瀏覽窗格中按一下目標網域，然後在 [工作] 窗格中按一下 [提高網域功能等級]。 選取至少為 Windows Server 2008 或更高版本的樹系功能等級，然後按一下 **[確定]** 。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -281,9 +281,9 @@ Windows Server 2008 作業系統可以讓組織為網域中的不同使用者集
 Set-ADDomainMode -Identity contoso.com -DomainMode 3
 ```
 
-#### <a name="bkmk2_test_fgpp"></a>步驟2：建立測試使用者、群組及組織單位
+#### <a name="bkmk2_test_fgpp"></a>步驟2：建立測試使用者、群組和組織單位
 
-若要建立此步驟所需的測試使用者和群組，請遵循此處的程式：[步驟 3：建立測試使用者、群組和組織單位 @ no__t-0 （您不需要建立 OU 來示範更細緻的密碼原則）。
+若要建立此步驟所需的測試使用者和群組，請遵循此處的程式：[步驟3：建立測試使用者、群組和組織單位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)（您不需要建立 OU 來示範更細緻的密碼原則）。
 
 #### <a name="bkmk_create_fgpp"></a>步驟3：建立更細緻的新密碼原則
 
@@ -309,7 +309,7 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 6. 按一下 [確定] 以提交建立。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -318,9 +318,9 @@ New-ADFineGrainedPasswordPolicy TestPswd -ComplexityEnabled:$true -LockoutDurati
 Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 ```
 
-#### <a name="bkmk_view_resultant_fgpp"></a>步驟4：檢視使用者的原則結果組
+#### <a name="bkmk_view_resultant_fgpp"></a>步驟4：查看使用者的原則結果組
 
-在下列程式中，您將會看到使用者的結果密碼設定，該使用者是您在 [Step 3 中為其指派更細緻的密碼原則之群組的成員：建立新的更細緻的密碼原則 @ no__t-0。
+在下列程序中，您將檢視使用者的結果密碼設定，該使用者是您在 [Step 3: Create a new fine-grained password policy](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中為其指派更細緻的密碼原則之群組的成員。
 
 ##### <a name="to-view-a-resultant-set-of-policies-for-a-user"></a>檢視使用者的原則結果組
 
@@ -328,13 +328,13 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 2. 依序按一下 [管理]、[新增瀏覽節點] ，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 選取屬於您在 [Step 3 中與更細緻的密碼原則相關聯之群組（ **group1** ）的使用者（ **test1** ）：建立新的更細緻的密碼原則 @ no__t-0。
+3. 選取使用者 **test1**，該使用者隸屬於您在**步驟 3：建立更細緻的新密碼原則**中關聯更細緻的密碼原則的 [group1](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) 群組。
 
 4. 按一下 [工作] 窗格中的 [檢視結果原則設定]。
 
 5. 檢查密碼設定原則，然後按一下 [取消]。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -344,7 +344,7 @@ Get-ADUserResultantPasswordPolicy test1
 
 #### <a name="bkmk_edit_fgpp"></a>步驟5：編輯更細緻的密碼原則
 
-在下列程式中，您將編輯在 [Step 3 中所建立的更細緻的密碼原則：建立新的更細緻的密碼原則 @ no__t-0
+在下列程序中，您將編輯在[步驟 3：建立更細緻的新密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中建立的更細緻的密碼原則。
 
 ##### <a name="to-edit-a-fine-grained-password-policy"></a>編輯更細緻的密碼原則
 
@@ -354,13 +354,13 @@ Get-ADUserResultantPasswordPolicy test1
 
 3. 在 ADAC [瀏覽窗格] 中，展開 [System]，然後按一下 [Password Settings Container]。
 
-4. 選取您在 [Step 3 中所建立的更細緻的密碼原則：建立新的更細緻的密碼原則 @ no__t-0，然後**按一下 [工作**] 窗格中的 [**屬性**]。
+4. 選取您在 [Step 3: Create a new fine-grained password policy](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) 中建立的更細緻的密碼原則，然後按一下 [工作] 窗格中的 [內容] 。
 
 5. 在 [強制密碼歷程記錄]下方，將 [記住的密碼數目] 值變更為 **30**。
 
-6. 按一下 [確定]。
+6. 按一下 **\[確定\]** 。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -378,7 +378,7 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 3. 在 ADAC [瀏覽窗格] 中，展開 [System] ，然後按一下 [Password Settings Container]。
 
-4. 選取您在 [Step 3 中所建立的更細緻的密碼原則：建立新的更細緻的密碼原則 @ no__t-0，然後在 **[工作**] 窗格中按一下 [**屬性**]。
+4. 選取您在[步驟 3：建立更細緻的新密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中建立的更細緻的密碼原則，然後在 [工作] 窗格按一下 [內容]。
 
 5. 清除 [保護以防止被意外刪除] 核取方塊，然後按一下 [確定]。
 
@@ -386,7 +386,7 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 7. 按一下確認對話方塊中的 [確定]。
 
-![Intro 至 AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+AD 系統管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>的 ![簡介***
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -434,6 +434,6 @@ ADAC 是建立在 Windows PowerShell 之上的使用者介面工具。 在 Windo
 
     例如，您可以修改命令以將其他使用者新增到 **group1**，或將 **test1** 新增到其他群組。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [使用 Active Directory 管理中心&#40;層級200的 Advanced AD DS Management&#41;](Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)

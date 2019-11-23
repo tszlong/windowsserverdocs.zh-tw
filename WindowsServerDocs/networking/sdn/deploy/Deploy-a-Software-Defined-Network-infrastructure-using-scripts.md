@@ -19,7 +19,7 @@ ms.locfileid: "71356001"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用指令碼部署軟體定義網路的基礎結構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，您會使用腳本來部署 Microsoft 軟體定義網路（SDN）基礎結構。 基礎結構包含高可用性（HA）網路控制站、HA 軟體 Load Balancer （SLB）/MUX、虛擬網路，以及相關聯的存取控制清單（Acl）。 此外，另一個腳本會部署租使用者工作負載，以驗證您的 SDN 基礎結構。  
 
@@ -89,7 +89,7 @@ ms.locfileid: "71356001"
    a. 以滑鼠右鍵按一下 [**開始**]，按一下 [**系統**]，然後按一下 [**變更設定**]。  
    b. 按一下 [變更]。  
    c. 按一下 [**網域**]，並指定功能變數名稱。  
-   d. 按一下 [確定]。  
+   d. 按一下 **\[確定\]** 。  
    e. 出現提示時，輸入使用者名稱和密碼認證。  
    f. 重新啟動伺服器。  
 
@@ -127,7 +127,7 @@ ms.locfileid: "71356001"
 1. 所有 Nano 節點都必須使用語言套件安裝 DSC 套件：  
 
    - Microsoft-NanoServer-DSC-Package .cab  
-   - Microsoft-NanoServer-DSC-Package_en-us .cab
+   - NanoServer-DSC-Package_en-us .cab
 
      ``dism /online /add-package /packagepath:<Path> /loglevel:4``  
 
@@ -145,11 +145,11 @@ ms.locfileid: "71356001"
    >[!NOTE]
    >指定的部署電腦必須執行 Windows Server 2016 或更新版本。
 
-3. 展開 zip 檔案，並將**SDNExpress**資料夾複製到部署電腦的 @no__t 1 資料夾。  
+3. 展開 zip 檔案，並將 [ **SDNExpress** ] 資料夾複製到部署電腦的 [`C:\`] 資料夾。  
 
 4. 將 `C:\SDNExpress` 資料夾共用為 "**SDNExpress**"，並具有可供**每個人** **讀取/寫入**的許可權。  
 
-5. 流覽至`C:\SDNExpress`資料夾。<p>您會看到下列資料夾：  
+5. 流覽至 [`C:\SDNExpress`] 資料夾。<p>您會看到下列資料夾：  
 
 
    | 資料夾名稱 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -165,7 +165,7 @@ ms.locfileid: "71356001"
 
 6. 確認 Windows Server 2016 VHDX 檔案位於 [ **Images** ] 資料夾中。  
 
-7. 藉由變更 < < 以特定值**取代 > >** 標記來自訂 SDNExpress\scripts\FabricConfig.psd1 檔案，以符合您的實驗室基礎結構，包括主機名稱、功能變數名稱、使用者名稱和密碼，以及的網路資訊。規劃網路主題中所列的網路。  
+7. 藉由變更 < < 以特定值**取代 > >** 標記來自訂 SDNExpress\scripts\FabricConfig.psd1 檔案，以符合您的實驗室基礎結構，包括主機名稱、功能變數名稱、使用者名稱和密碼，以及規劃網路主題中所列網路的網路資訊。  
 
 8. 針對 NetworkControllerRestName （FQDN）和 NetworkControllerRestIP，在 DNS 中建立主機 A 記錄。  
 
@@ -190,13 +190,13 @@ ms.locfileid: "71356001"
 
 現在已部署網狀架構資源，您可以藉由部署範例租使用者工作負載，端對端驗證您的 SDN 部署。 此租使用者工作負載是由兩個虛擬子網（web 層和資料庫層）所組成，使用 SDN 分散式防火牆透過存取控制清單（ACL）規則來保護。 Web 層的虛擬子網可透過使用虛擬 IP （VIP）位址的 SLB/MUX 來存取。 腳本會自動部署兩個 web 層虛擬機器和一個資料庫層虛擬機器，並將其連接到虛擬子網。  
 
-1.  藉由變更 < < 以特定值**取代 > >** 標記來自訂 SDNExpress\scripts\TenantConfig.psd1 檔案（例如：VHD 映射名稱、網路控制器 REST 名稱、vSwitch 名稱等，如先前在 Fabricconfig.psd1. .psd1 檔案中所定義）  
+1.  藉由變更 **< > > <** 以特定值（例如： VHD 映射名稱、網路控制器 REST 名稱、vSwitch 名稱等等）來自訂 SDNExpress\scripts\TenantConfig.psd1 檔案，如先前在 fabricconfig.psd1. .psd1 檔案中所定義）  
 
-2.  執行腳本。 例如:  
+2.  執行腳本。 例如：  
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 
-3.  若要復原設定，請使用**undo**參數執行相同的腳本。 例如:  
+3.  若要復原設定，請使用**undo**參數執行相同的腳本。 例如：  
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 
@@ -219,6 +219,6 @@ ms.locfileid: "71356001"
    >[!TIP]
    >搜尋 TenantConfig. .psd1 中的 `VIPIP` 變數。
 
-   執行此多個時間，以查看可用 Dip 之間的負載平衡器切換。 您也可以使用網頁瀏覽器來觀察此行為。 瀏覽至 `<VIP IP address>/unique.htm`。 關閉瀏覽器並開啟新的實例，然後再流覽一次。 您會看到藍色頁面和綠色頁面替代，除非瀏覽器在快取超時前快取頁面。
+   執行此多個時間，以查看可用 Dip 之間的負載平衡器切換。 您也可以使用網頁瀏覽器來觀察此行為。 流覽至 `<VIP IP address>/unique.htm`。 關閉瀏覽器並開啟新的實例，然後再流覽一次。 您會看到藍色頁面和綠色頁面替代，除非瀏覽器在快取超時前快取頁面。
 
 ---

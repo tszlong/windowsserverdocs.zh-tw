@@ -17,16 +17,16 @@ ms.locfileid: "71405464"
 ---
 # <a name="realm-names"></a>領域名稱
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 
 您可以使用本主題，以瞭解在網路原則伺服器連線要求處理中使用領域名稱的總覽。
 
 使用者名稱 RADIUS 屬性是一個字元字串，通常包含使用者帳戶位置和使用者帳戶名稱。 使用者帳戶位置也稱為「領域」或「領域名稱」，與網域的概念同義，包括 DNS 網域、Active Directory®網域和 Windows NT 4.0 網域。 例如，如果使用者帳戶位於名為 example.com 之網域的使用者帳戶資料庫中，則 example.com 是領域名稱。
 
-在另一個範例中，如果使用者名稱 RADIUS 屬性包含 user1@example.com 的使用者名稱，user1 就是使用者帳戶名稱，而 example.com 是領域名稱。 領域名稱可以在使用者名稱中以前置詞或尾碼形式呈現：
+在另一個範例中，如果使用者名稱 RADIUS 屬性包含 user1@example.com的使用者名稱，user1 就是使用者帳戶名稱，而 example.com 是領域名稱。 領域名稱可以在使用者名稱中以前置詞或尾碼形式呈現：
 
-- **Example\user1**。 在此範例中，領域名稱**範例**是前置詞;此外，它也是 Active Directory @ no__t-1 網域服務 \(AD DS @ no__t-3 網域的名稱。
+- **Example\user1**。 在此範例中，領域名稱**範例**是前置詞;而且也是&reg; 網域服務 \(AD DS\) 網域的 Active Directory 名稱。
 
 - <strong>user1@example.com</strong>。 在此範例中，領域名稱**example.com**是尾碼;而且它可以是 DNS 功能變數名稱或 AD DS 網域的名稱。
 
@@ -58,9 +58,9 @@ ms.locfileid: "71405464"
 
 您可以設定使用者名稱屬性的屬性操作規則，以變更下列各項：
 
-- 從使用者名稱中移除領域名稱 \(also，稱為領域去除 @ no__t-1。 例如，user1@example.com 的使用者名稱會變更為 user1。
+- 從使用者名稱中移除領域名稱 \(也稱為領域去除\)。 例如，user1@example.com 的使用者名稱變更為 user1。
 
-- 變更領域名稱，而不是其語法。 例如，user1@example.com 的使用者名稱會變更為 user1@wcoast.example.com。
+- 變更領域名稱，而不是其語法。 例如，user1@example.com 的使用者名稱變更為 user1@wcoast.example.com。
 
 - 變更領域名稱的語法。 例如，使用者名稱 example\user1 會變更為 user1@example.com。
 

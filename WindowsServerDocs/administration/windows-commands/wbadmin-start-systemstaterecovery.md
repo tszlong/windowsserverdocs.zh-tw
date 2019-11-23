@@ -27,7 +27,7 @@ ms.locfileid: "71362219"
 執行系統狀態復原至某個位置，以及您指定的備份。
 
 > [!NOTE]
-> Windows Server Backup 不會備份或復原登錄使用者 hive （HKEY_CURRENT_USER）做為系統狀態備份或系統狀態修復的一部分。
+> Windows Server Backup 不會在系統狀態備份或系統狀態復原時，備份或復原登錄使用者 hive （HKEY_CURRENT_USER）。
 
 若要使用這個子命令來執行系統狀態復原，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請以滑鼠右鍵按一下**命令提示**字元，然後按一下 [以**系統管理員身分執行**]）。
 
@@ -59,7 +59,7 @@ wbadmin start systemstaterecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -78,7 +78,7 @@ wbadmin start systemstaterecovery
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- 若要在上午9:00 從04/30/2013 執行備份的系統狀態復原 這會儲存在共用資源 \\ @ no__t-1servername\share for server01，請輸入：  
+- 若要在上午9:00 從04/30/2013 執行備份的系統狀態復原 這會儲存在共用資源 \\\\servername\share 以進行 server01，請輸入：  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

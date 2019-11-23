@@ -10,14 +10,14 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 20b311e9330880c2b26e2494aabe27bb04891868
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71407038"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>設定使用者存取控制和許可權
 
-> 適用於：Windows Admin Center、Windows Admin Center 預覽版
+> 適用于： Windows 系統管理中心、Windows 系統管理中心預覽
 
 如果您還沒有這麼做，請熟悉[Windows 系統管理中心的使用者存取控制選項](../plan/user-access-options.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "71407038"
 **閘道系統管理員**可以設定誰取得存取權，以及使用者如何向閘道進行驗證。 只有閘道系統管理員可以在 Windows 系統管理中心中查看和設定存取設定。 閘道電腦上的本機系統管理員一律是 Windows Admin Center 閘道服務的管理員。
 
 > [!NOTE]
-> 對閘道的存取並不表示存取閘道所見的受管理伺服器。 若要管理目標伺服器，連接的使用者必須使用具有系統管理存取權的認證（透過其傳遞的 Windows 認證，或透過 Windows Admin Center 會話中**提供的認證**）目標伺服器。
+> 對閘道的存取並不表示存取閘道所見的受管理伺服器。 若要管理目標伺服器，連接的使用者必須使用具有該目標伺服器之系統管理存取權的認證（透過其傳遞的 Windows 認證，或透過 Windows 管理中心會話中**提供的認證**）。
 
 ## <a name="active-directory-or-local-machine-groups"></a>Active Directory 或本機電腦群組
 
@@ -41,7 +41,7 @@ ms.locfileid: "71407038"
 
 在 [**使用者**] 索引標籤上，您可以控制誰可以存取 Windows 管理中心做為閘道使用者。 根據預設，如果您未指定安全性群組，則任何存取閘道 URL 的使用者都有存取權。 一旦您將一或多個安全性群組新增至 [使用者] 清單，存取權就會限制為這些群組的成員。
 
-如果您未在您的環境中使用 Active Directory 網域，則存取是由 Windows 管理中心閘道電腦上的 `Users` 和 @no__t 1 本機群組所控制。
+如果您未在您的環境中使用 Active Directory 網域，則存取是由 Windows 管理中心閘道電腦上的 `Users` 和 `Administrators` 本機群組所控制。
 
 ### <a name="smartcard-authentication"></a>智慧卡驗證
 
@@ -55,21 +55,21 @@ ms.locfileid: "71407038"
 
 ### <a name="accessing-windows-admin-center-when-azure-ad-authentication-is-enabled"></a>在啟用 Azure AD 驗證時存取 Windows 系統管理中心
 
-視使用的瀏覽器而定，某些存取 Windows 系統管理中心並設定 Azure AD authentication 的使用者將會在**瀏覽器**中收到額外的提示，他們必須為電腦提供其 Windows 帳號憑證。已安裝 Windows 系統管理中心。 輸入該資訊之後，使用者會收到額外的 Azure Active Directory 驗證提示，這需要已在 Azure 中的 Azure AD 應用程式中授與存取權的 Azure 帳號憑證。
+視使用的瀏覽器而定，某些存取 Windows 管理中心並設定 Azure AD authentication 的使用者將會在**瀏覽器**中收到額外的提示，他們必須為安裝 Windows 系統管理中心的電腦提供其 windows 帳號憑證。 輸入該資訊之後，使用者會收到額外的 Azure Active Directory 驗證提示，這需要已在 Azure 中的 Azure AD 應用程式中授與存取權的 Azure 帳號憑證。
 
 > [!NOTE]
 > Windows 帳戶在閘道電腦上具有**系統管理員許可權**的使用者，將不會收到 Azure AD 驗證的提示。
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>設定 Windows 管理中心預覽的 Azure Active Directory 驗證
 
-移至 [Windows 系統管理中心**設定**]  >  [**存取**]，並使用切換開關來開啟 [使用 Azure Active Directory 將安全性層級新增至閘道]。 如果您尚未向 Azure 註冊閘道，系統會引導您在此時執行此動作。
+移至 Windows 系統管理中心**設定** > **存取**，並使用切換開關開啟 使用 Azure Active Directory 將安全性層級新增至閘道。 如果您尚未向 Azure 註冊閘道，系統會引導您在此時執行此動作。
 
 根據預設，Azure AD 租使用者的所有成員都具有 Windows Admin Center 閘道服務的使用者存取權。 只有閘道機器上的本機系統管理員才具有 Windows 管理中心閘道的系統管理員存取權。 請注意，閘道機器上的本機系統管理員許可權不能受到限制-本機系統管理員可以執行任何動作，不論是否使用 Azure AD 進行驗證。
 
 如果您想要為特定 Azure AD 使用者或群組閘道使用者或閘道系統管理員授與 Windows Admin Center 服務的存取權，您必須執行下列動作：
 
 1.  使用 [存取設定] 中提供的超連結，移至 Azure 入口網站中的 Windows 系統管理中心 Azure AD 應用程式。 注意：只有在啟用 Azure Active Directory authentication 時，才可以使用此超連結。 
-    -   您也可以在 Azure 入口網站中找到您的應用程式，方法是前往**Azure Active Directory**@no__t 1 個**企業應用程式** >  個 [**所有應用程式**] 和 [搜尋] **WindowsAdminCenter** （Azure AD 應用程式將會命名為WindowsAdminCenter-<gateway name>）。 如果您沒有取得任何搜尋結果，請確定 [**顯示**] 設定為 [**所有應用程式**]、[**應用程式狀態**] 設為 [**任何**]，然後按一下 [套用]，然後嘗試進行搜尋。 找到應用程式之後，請移至 [**使用者和群組**]
+    -   您也可以在 Azure 入口網站中找到您的應用程式，方法是前往**Azure Active Directory** > **企業應用程式** > [**所有應用程式**] 和 [搜尋] **WindowsAdminCenter** （Azure AD 應用程式將命名為 WindowsAdminCenter-<gateway name>）。 如果您沒有取得任何搜尋結果，請確定 [**顯示**] 設定為 [**所有應用程式**]、[**應用程式狀態**] 設為 [**任何**]，然後按一下 [套用]，然後嘗試進行搜尋。 找到應用程式之後，請移至 [**使用者和群組**]
 2.  在 [屬性] 索引標籤中，將 [**使用者指派**] 設定為 [是]。
     完成這項作業之後，只有 [**使用者和群組**] 索引標籤中列出的成員才能夠存取 Windows Admin Center 閘道。
 3.  在 [使用者和群組] 索引標籤中，選取 [**新增使用者**]。 您必須為每個新增的使用者/群組指派閘道使用者或閘道系統管理員角色。
@@ -88,7 +88,7 @@ ms.locfileid: "71407038"
 
 1.  在 Azure 入口網站中，移至您的 SME Azure AD 應用程式。 
     -   當您按一下 [**變更存取控制**]，然後從 [Windows 管理中心] [存取設定] 選取 [ **Azure Active Directory** ] 時，您可以使用 UI 中提供的超連結來存取 Azure 入口網站中的 Azure AD 應用程式。 當您按一下 [儲存] 並選取 Azure AD 做為存取控制身分識別提供者之後，[存取設定] 也會提供此超連結。
-    -   您也可以在 Azure 入口網站中找到您的應用程式，方法是前往**Azure Active Directory**@no__t 1 個**企業應用程式** >  個 [**所有應用程式**] 和 [搜尋**sme** ] （Azure AD 應用程式將命名為 sme-<gateway>）。 如果您沒有取得任何搜尋結果，請確定 [**顯示**] 設定為 [**所有應用程式**]、[**應用程式狀態**] 設為 [**任何**]，然後按一下 [套用]，然後嘗試進行搜尋。 找到應用程式之後，請移至 [**使用者和群組**]
+    -   您也可以在 Azure 入口網站中找到您的應用程式，方法是前往**Azure Active Directory** > **企業應用程式** > **所有應用程式**，並搜尋**sme** （Azure AD 應用程式將命名為 sme-<gateway>）。 如果您沒有取得任何搜尋結果，請確定 [**顯示**] 設定為 [**所有應用程式**]、[**應用程式狀態**] 設為 [**任何**]，然後按一下 [套用]，然後嘗試進行搜尋。 找到應用程式之後，請移至 [**使用者和群組**]
 2.  在 [屬性] 索引標籤中，將 [**使用者指派**] 設定為 [是]。
     完成這項作業之後，只有 [**使用者和群組**] 索引標籤中列出的成員才能夠存取 Windows Admin Center 閘道。
 3.  在 [使用者和群組] 索引標籤中，選取 [**新增使用者**]。 您必須為每個新增的使用者/群組指派閘道使用者或閘道系統管理員角色。
@@ -144,7 +144,7 @@ Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
 單一機器部署模型非常適合只需要少數電腦來管理的簡單環境。
 設定具有角色型存取控制支援的電腦，將會產生下列變更：
 
--   具有 Windows 管理中心所需功能的 PowerShell 模組，將會安裝在您的系統磁片磁碟機的 `C:\Program Files\WindowsPowerShell\Modules` 之下。 所有模組都將以**Microsoft. Sme**開頭
+-   具有 Windows 管理中心所需功能的 PowerShell 模組，將會安裝在您的系統磁片磁碟機的 [`C:\Program Files\WindowsPowerShell\Modules`] 底下。 所有模組都將以**Microsoft. Sme**開頭
 -   Desired State Configuration 將會執行一次性設定，以在名為**Microsoft**的電腦上設定剛好足夠的管理端點。 此端點會定義 Windows 管理中心所使用的3個角色，並會在使用者連線到它時，以暫時的本機系統管理員身分執行。
 -   3將會建立新的本機群組，以控制哪些使用者被指派哪些角色的存取權：
     -   Windows 系統管理中心系統管理員
@@ -154,7 +154,7 @@ Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
 若要在單一電腦上啟用角色型存取控制的支援，請遵循下列步驟：
 
 1.  開啟 Windows 管理中心，並使用在目的電腦上具有本機系統管理員許可權的帳戶，連接到您想要以角色型存取控制設定的電腦。
-2.  在 [**總覽**] 工具上，按一下 [**設定**] [ > ] [**角色型存取控制**]。
+2.  在 [**總覽**] 工具上，按一下 [**設定**] > [**角色型存取控制**]。
 3.  按一下頁面底部的 [套用]，**以在目標**電腦上支援角色型存取控制。 應用程式進程包含複製 PowerShell 腳本，以及叫用目的電腦上的設定（使用 PowerShell Desired State Configuration）。 最多可能需要10分鐘的時間才能完成，並會導致 WinRM 重新開機。 這會暫時中斷 Windows 系統管理中心、PowerShell 和 WMI 使用者的連線。
 4.  重新整理頁面，以檢查角色型存取控制的狀態。 當它已準備好可供使用時，狀態將會**變更為 [** 已套用]。
 
@@ -196,12 +196,12 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 - InstallJeaFeatures. ps1
 - JustEnoughAdministration （目錄）
 - 模組（目錄）
-    - @No__t-0 （目錄）
+    - \* （目錄）
     - WindowsAdminCenter. Jea （目錄）
 
 若要在節點上設定角色型存取控制的支援，您需要執行下列動作：
 
-1.  將 JustEnoughAdministration @no__t、WindowsAdminCenter 和 Jea 模組複製到目的電腦上的 PowerShell 模組目錄中。 這通常位於 `C:\Program Files\WindowsPowerShell\Modules`。
+1.  複製 JustEnoughAdministration，Microsoft SME。\*，並將 Jea 模組 WindowsAdminCenter 到目的電腦上的 PowerShell 模組目錄。 這通常位於 `C:\Program Files\WindowsPowerShell\Modules`。
 2.  更新**InstallJeaFeature**檔案，以符合您所需的 RBAC 端點設定。
 3.  執行 InstallJeaFeature 來編譯 DSC 資源。
 4.  將 DSC 設定部署到所有電腦，以套用設定。
@@ -210,7 +210,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 
 #### <a name="deploy-on-multiple-machines"></a>在多部電腦上部署
 
-若要將您下載的設定部署到多部電腦上，您必須更新**InstallJeaFeatures**腳本，為您的環境包含適當的安全性群組，將檔案複製到每一部電腦，並叫用設定腳本。
+若要將下載的設定部署到多部電腦上，您必須更新**InstallJeaFeatures**腳本以包含適用于您環境的適當安全性群組、將檔案複製到每一部電腦，以及叫用設定腳本。
 您可以使用慣用的自動化工具來完成這項操作，但本文將著重于純 PowerShell 型方法。
 
 根據預設，設定腳本會在電腦上建立本機安全性群組，以控制每個角色的存取權。

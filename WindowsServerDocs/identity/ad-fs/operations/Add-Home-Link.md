@@ -18,7 +18,7 @@ ms.locfileid: "71407771"
 ---
 # <a name="add-home-link"></a>新增首頁連結 
 
-若要新增 [正負號 @ no__t-0in] 頁面上顯示的首頁連結，請使用下列 Windows PowerShell Cmdlet 和語法。 
+若要新增 [登\-] 頁面中顯示的首頁連結，請使用下列 Windows PowerShell Cmdlet 和語法。 
 
 
 ![新增主連結](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
@@ -28,7 +28,7 @@ ms.locfileid: "71407771"
  
   
 > [!IMPORTANT]  
-> 此 Cmdlet 的 `linkText` 並非必要參數，除非您使用其他值，而不是預設的 *Home*。 使用預設的優點是會根據所有用戶端地區設定來當地語系化。 自訂 [正負號 @ no__t-0in] 頁面之後，自訂的優先順序會較高;因此，您應該針對您想要支援的所有語言進行自訂。
+> 此 Cmdlet 的 `linkText` 並非必要參數，除非您使用其他值，而不是預設的 *Home*。 使用預設的優點是會根據所有用戶端地區設定來當地語系化。 自訂頁面中的 登入\-之後，自訂的優先順序會較高;因此，您應該針對您想要支援的所有語言進行自訂。
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

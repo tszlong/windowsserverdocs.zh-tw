@@ -50,9 +50,9 @@ ms.locfileid: "71403658"
 
 2.  下載並安裝[Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)。 如果電腦未連線到網際網路，請遵循[離線安裝指示](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)。
 
-3.  開啟 Web Platform Installer 並尋找 @no__t 0Windows Azure Pack：入口網站和 API Express @ no__t-0 下的 [**產品**] 索引標籤。按一下 [**新增**]，然後在視窗底部進行 [**安裝**]。
+3.  開啟 Web Platform Installer 並尋找 **產品** 索引標籤底下的  **Windows Azure 套件：入口網站和 API Express** 。按一下 **新增**，然後在視窗底部**安裝**。
 
-4.  繼續安裝。 安裝完成之後，就會在您的網頁瀏覽器中開啟設定網站（*HTTPs://&lt;wapserver @ no__t-2： 30101/* ）。 在此網站上，提供 SQL server 的相關資訊，並完成 WAP 的設定。
+4.  繼續安裝。 安裝完成之後，就會在您的網頁瀏覽器中開啟設定網站（*HTTPs://&lt;wapserver&gt;： 30101/* ）。 在此網站上，提供 SQL server 的相關資訊，並完成 WAP 的設定。
 
 如需設定 Windows Azure 套件的說明，請參閱[安裝 Windows Azure 套件的快速部署](https://technet.microsoft.com/dn296439.aspx)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "71403658"
 
 使用 Windows Azure 套件之前，您應該已經安裝並設定您的基礎結構。
 
-1.  流覽至位於*HTTPs://&lt;wapserver @ no__t-2： 30091*的 Windows Azure 套件系統管理員入口網站，然後使用您的系統管理員認證登入。
+1.  流覽至位於*HTTPs://&lt;wapserver&gt;： 30091*的 Windows Azure 套件系統管理員入口網站，然後使用您的系統管理員認證登入。
 
 2.  在左窗格中，按一下 [ **VM**雲端]。
 
@@ -77,7 +77,7 @@ ms.locfileid: "71403658"
 
 為了讓租使用者能夠在 WAP 中建立 Vm，您必須先建立可供租使用者訂閱的主控方案。 方案會為您的租使用者定義允許的 VM 雲端、範本、網路和計費實體。
 
-1. 在入口網站的下方窗格中，按一下 [ **+ 新增**] [&gt;**方案**] [&gt;**建立方案**]。
+1. 在入口網站的下方窗格中，按一下  **+ 新增** &gt;**方案**&gt;**建立方案**。
 
 2. 在嚮導的第一個步驟中，為您的方案選擇 [名稱]。 這是您的租使用者在訂閱時將會看到的名稱。
 
@@ -113,7 +113,7 @@ ms.locfileid: "71403658"
 
     此時，已設定 Windows Azure 套件，而且租使用者將能夠訂閱您剛建立的方案，並部署受防護的 Vm。 如需租使用者需要完成的其他步驟，請參閱適用于租使用者的[受防護 vm-使用 Windows Azure 套件部署受防護的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

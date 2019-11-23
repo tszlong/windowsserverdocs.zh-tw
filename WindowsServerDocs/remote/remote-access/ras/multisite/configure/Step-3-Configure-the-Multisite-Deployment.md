@@ -21,7 +21,7 @@ ms.locfileid: "71404504"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>步驟3設定多網站部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 設定多網站基礎結構之後，請遵循下列步驟來設定遠端存取多網站部署。  
   
@@ -66,7 +66,7 @@ ms.locfileid: "71404504"
 11.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
   
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
 
   
 步驟 1-3 必須以手動方式執行，而且不能使用此 Windows PowerShell Cmdlet 來完成。  
@@ -142,7 +142,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-install-a-certificate-for-network-location"></a>若要安裝網路位置的憑證  
   
-1.  在遠端存取伺服器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [遠端存取] 伺服器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
   
 2.  按一下 [檔案]，**然後按一下 [** **新增/移除嵌入式管理單元**]。  
   
@@ -190,12 +190,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 5.  針對部署中的每一部遠端存取服務器，重複步驟3和4。  
   
-6.  按一下 [完成]。  
+6.  按一下 \[完成\]。  
   
 7.  在新增伺服器做為部署中的其他進入點之前，重複此程式。  
   
 ## <a name="BKMK_Client"></a>3.5。 設定多網站部署的 DirectAccess 用戶端  
-DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安全性群組成員。 啟用多網站之前，這些安全性群組可以包含 Windows 8 用戶端和 Windows 7 用戶端（如果已選取適當的「下層」模式）。 啟用多網站之後，現有的用戶端安全性群組（在單一伺服器模式中）只會轉換成 Windows 8 的安全性群組。 啟用多網站之後，DirectAccess Windows 7 用戶端電腦必須移至對應的專用 Windows 7 用戶端安全性群組（與特定的進入點相關聯），否則將無法透過 DirectAccess 進行連線。 Windows 7 用戶端必須先從現有的安全性群組（現在是 Windows 8 安全性群組）中移除。 注意：同時為 Windows 7 和 Windows 8 用戶端安全性群組成員的 windows 7 用戶端電腦將會失去遠端連線，而且未安裝 SP1 的 Windows 7 用戶端也會失去公司連線能力。 因此，所有 Windows 7 用戶端電腦都必須從 Windows 8 安全性群組中移除。  
+DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安全性群組成員。 啟用多網站之前，這些安全性群組可以包含 Windows 8 用戶端和 Windows 7 用戶端（如果已選取適當的「下層」模式）。 啟用多網站之後，現有的用戶端安全性群組（在單一伺服器模式中）只會轉換成 Windows 8 的安全性群組。 啟用多網站之後，DirectAccess Windows 7 用戶端電腦必須移至對應的專用 Windows 7 用戶端安全性群組（與特定的進入點相關聯），否則將無法透過 DirectAccess 進行連線。 Windows 7 用戶端必須先從現有的安全性群組（現在是 Windows 8 安全性群組）中移除。 注意：屬於 Windows 7 和 Windows 8 用戶端安全性群組成員的 Windows 7 用戶端電腦將會失去遠端連線，而且未安裝 SP1 的 Windows 7 用戶端也會失去公司的連線能力。 因此，所有 Windows 7 用戶端電腦都必須從 Windows 8 安全性群組中移除。  
   
 #### <a name="remove--windows-7--clients-from-windows-8-security-groups"></a>從 Windows 8 安全性群組移除 Windows 7 用戶端  
   
@@ -231,7 +231,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
   
 5.  在 [**進入點選擇**] 頁面上，執行下列其中一項動作：  
   
-    -   按一下 [**自動指派進入點]，並允許用戶端手動選取**[自動將用戶端電腦路由至最適合的進入點]，同時允許用戶端電腦手動選取進入點。 手動進入點選擇僅適用于 Windows 8 電腦。 按一下 [下一步]。  
+    -   按一下 [**自動指派進入點]，並允許用戶端手動選取**[自動將用戶端電腦路由至最適合的進入點]，同時允許用戶端電腦手動選取進入點。 手動進入點選擇僅適用于 Windows 8 電腦。 按一下 **\[下一步\]** 。  
   
     -   按一下 [**自動指派進入點**]，自動將用戶端電腦路由至最適合的進入點，然後按 **[下一步]** 。  
   
@@ -242,7 +242,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
         > [!NOTE]  
         > 選取此選項時，用戶端電腦會自動連接到其最接近的進入點。  
   
-    -   如果您想要對所有進入點之間的流量進行負載平衡，請按一下 **[是，使用全域負載平衡]** 。 在 **[輸入所有進入點要使用的全域負載平衡 fqdn**] 中，輸入全域負載平衡 fqdn，然後在 **[輸入此進入點的全域負載平衡 IP 位址**] 中包含第一部遠端存取服務器，輸入全域負載平衡此進入點的 IP 位址，然後按 **[下一步]** 。  
+    -   如果您想要對所有進入點之間的流量進行負載平衡，請按一下 **[是，使用全域負載平衡]** 。 在 **[輸入所有進入點要使用的全域負載平衡 fqdn**] 中，輸入全域負載平衡 fqdn，然後在 **[輸入此進入點的全域負載平衡 ip 位址**] 中包含第一部遠端存取服務器，輸入此進入點的全域負載平衡 ip 位址，然後按 **[下一步]** 。  
   
 7.  在 [**用戶端支援**] 頁面上，執行下列其中一項動作：  
   
@@ -250,7 +250,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
   
     -   若要允許執行 Windows 7 的用戶端電腦存取此進入點，請按一下 [**允許執行 windows 7 的用戶端電腦存取此進入點**]，然後按一下 [**新增**]。 在 [**選取群組**] 對話方塊中，選取包含 Windows 7 用戶端電腦的安全性群組，按一下 **[確定]** ，然後按 **[下一步**]。  
   
-8.  在 [**用戶端 GPO 設定**] 頁面上，針對此進入點接受 Windows 7 用戶端電腦的預設 gpo、輸入想要遠端存取自動建立的 gpo 名稱，或按一下 **[流覽]** 找出 Windows 7 用戶端電腦的 gpo。，然後按 **[下一步]** 。  
+8.  在 [**用戶端 GPO 設定**] 頁面上，針對此進入點接受 Windows 7 用戶端電腦的預設 gpo，輸入要自動建立遠端存取的 gpo 名稱，或按一下 **[流覽]** 找出 Windows 7 用戶端電腦的 Gpo，然後按 **[下一步]** 。  
   
     > [!NOTE]  
     > -   只有當您設定進入點以允許 Windows 7 用戶端電腦存取進入點時，才會出現 [**用戶端 GPO 設定**] 頁面。  
@@ -260,7 +260,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
   
 10. 在 [**啟用多網站部署**] 對話方塊中，按一下 [**關閉**]，然後在 [啟用多網站部署嚮導] 上按一下 [**關閉**]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -270,7 +270,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
 Enable-DAMultiSite -Name 'Contoso' -EntryPointName 'Edge1-US' -ManualEntryPointSelectionAllowed 'Enabled'  
 ```  
   
-若要允許 Windows 7 用戶端電腦透過安全性群組 DA_Clients_US 的第一個進入點存取，並使用 GPO DA_W7_Clients_GPO_US。  
+若要允許 Windows 7 用戶端電腦透過安全性群組的第一個進入點存取 DA_Clients_US 並使用 GPO DA_W7_Clients_GPO_US。  
   
 ```  
 Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_US') -DownlevelGpoName @('corp.contoso.com\DA_W7_Clients_GPO_US)  
@@ -302,7 +302,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 5.  在 [**網路拓撲**] 頁面上，按一下與您要新增之遠端存取服務器的網路拓撲對應的拓撲，然後按 **[下一步]** 。  
   
-6.  在 [**網路名稱或 Ip 位址**] 頁面的 [輸入**用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址]** 中，輸入用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址。 公用名稱會對應至 IP-HTTPS 憑證的主體名稱。 在執行邊緣網路拓撲的情況下，IP 位址會是遠端存取服務器的外部介面卡。 按一下 [下一步]。  
+6.  在 [**網路名稱或 Ip 位址**] 頁面的 [輸入**用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址]** 中，輸入用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址。 公用名稱會對應至 IP-HTTPS 憑證的主體名稱。 在執行邊緣網路拓撲的情況下，IP 位址會是遠端存取服務器的外部介面卡。 按一下 **\[下一步\]** 。  
   
 7.  在 [**網路介面卡**] 頁面上，執行下列其中一項：  
   
@@ -310,7 +310,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
     -   如果您要使用一個網路介面卡部署拓撲，請在 [**網路介面卡**] 中，選取連線到內部網路的介面卡。  
   
-8.  在 [**網路介面卡**] 頁面的 [**選取用來驗證 ip-HTTPs 連線的憑證**] 中，按一下 **[流覽]** 以找出並選取 ip-HTTPs 憑證。 按一下 [下一步]。  
+8.  在 [**網路介面卡**] 頁面的 [**選取用來驗證 ip-HTTPs 連線的憑證**] 中，按一下 **[流覽]** 以找出並選取 ip-HTTPs 憑證。 按一下 **\[下一步\]** 。  
   
 9. 如果在公司網路上設定 IPv6，請在 [**首碼**設定] 頁面上，于 [**指派給用戶端電腦的 ipv6 首碼**] 中輸入 ip-HTTPs 首碼，以將 Ipv6 位址指派給 DirectAccess 用戶端電腦，然後按 **[下一步]** 。  
   
@@ -320,7 +320,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
     -   若要允許執行 Windows 7 的用戶端電腦存取此進入點，請按一下 [**允許執行 windows 7 的用戶端電腦存取此進入點**]，然後按一下 [**新增**]。 在 [**選取群組**] 對話方塊中，選取包含將連線至此進入點之 Windows 7 用戶端電腦的安全性群組，按一下 **[確定]** ，然後按 **[下一步**]。  
   
-11. 在 [**用戶端 GPO 設定**] 頁面上，針對此進入點接受 Windows 7 用戶端電腦的預設 gpo，輸入您要讓遠端存取自動建立的 gpo 名稱，或按一下 **[流覽]** 找出 windows 7 用戶端電腦的 gpo，然後按 **[下一步]** 。  
+11. 在 [**用戶端 GPO 設定**] 頁面上，針對此進入點接受 Windows 7 用戶端電腦的預設 gpo，輸入您要讓遠端存取自動建立的 gpo 名稱，或按一下 **[流覽]** 找出 Windows 7 用戶端電腦的 Gpo，然後按 **[下一步]** 。  
   
     > [!NOTE]  
     > -   只有當您設定進入點以允許 Windows 7 用戶端電腦存取進入點時，才會出現 [**用戶端 GPO 設定**] 頁面。  
@@ -338,21 +338,21 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
 15. 在 [**新增進入點**] 對話方塊中，按一下 [**關閉**]，然後在 [新增進入點] 嚮導上，按一下 [**關閉**]。  
   
     > [!NOTE]  
-    > 如果新增的進入點與現有的進入點或用戶端電腦位於不同的樹系，則必須按一下 **[工作] 窗格中的 [** 重新整理**管理伺服器**]，以探索網域控制站和 System Center新樹系中的 Configuration Manager。  
+    > 如果新增的進入點與現有的進入點或用戶端電腦位於不同的樹系，則必須按一下 **[工作] 窗格中的 [** 重新整理**管理伺服器**]，以探索新樹系中的網域控制站和 System Center Configuration Manager。  
   
 16. 針對您想要新增至多網站部署的每個進入點，重複步驟2中的此程式。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
-若要將電腦 edge2 從 corp2 網域新增為第二個進入點，名為 Edge2-歐洲。 進入點設定是：用戶端 IPv6 首碼 ' 2001： db8：2：2000：：/64 '、連線到位址（edge2 電腦上的 IP-HTTPS 憑證） ' edge2.contoso.com '、名為「DirectAccess 伺服器設定-Edge2-歐洲」的伺服器 GPO，以及內部和分別名為 Internet 和 Corpnet2 的外部介面：  
+若要將電腦 edge2 從 corp2 網域新增為第二個進入點，名為 Edge2-歐洲。 進入點設定是：用戶端 IPv6 首碼 ' 2001： db8：2：2000：：/64 '、連接到位址（edge2 電腦上的 IP-HTTPS 憑證） ' edge2.contoso.com '、名為「DirectAccess 伺服器設定-Edge2-歐洲」的伺服器 GPO，以及分別名為 Internet 和 Corpnet2 的內部和外部介面：  
   
 ```  
 Add-DAEntryPoint -RemoteAccessServer 'edge2.corp2.corp.contoso.com' -Name 'Edge2-Europe' -ClientIPv6Prefix '2001:db8:2:2000::/64' -ConnectToAddress 'Europe.contoso.com' -ServerGpoName 'corp2.corp.contoso.com\DirectAccess Server Settings - Edge2-Europe' -InternetInterface 'Internet' -InternalInterface 'Corpnet2'  
 ```  
   
-若要允許 Windows 7 用戶端電腦透過安全性群組 DA_Clients_Europe，並使用 GPO DA_W7_Clients_GPO_Europe 來存取第二個進入點。  
+若要允許 Windows 7 用戶端電腦透過安全性群組 DA_Clients_Europe 的第二個進入點進行存取，並使用 GPO DA_W7_Clients_GPO_Europe。  
   
 ```  
 Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.com\ DA_W7_Clients_GPO_Europe') -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_Europe')  
@@ -360,4 +360,4 @@ Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.co
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 2：設定多網站基礎結構 @ no__t-0
+-   [步驟2：設定多網站基礎結構](Step-2-Configure-the-Multisite-Infrastructure.md)

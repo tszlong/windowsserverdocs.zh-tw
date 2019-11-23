@@ -22,14 +22,14 @@ ms.locfileid: "71406119"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>使用 Windows PowerShell 部署網路控制卡
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題提供在執行 Windows Server 2016 的一或多部虛擬機器（Vm）上，使用 Windows PowerShell 部署網路控制站的指示。
 
 >[!IMPORTANT]
->請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在安裝于 Hyper-v 主機上的 Hyper-v 虛擬機器上安裝網路控制站伺服器角色 \(VM @ no__t-1。 在三個不同的超 no__t-0V 主機上的 Vm 上安裝了網路控制站之後，您必須使用 Windows PowerShell 將主機新增至網路控制站，以啟用軟體定義網路的超 @ no__t 1V 主機 \(SDN @ no__t-3命令**新增-NetworkControllerServer**。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。 如需詳細資訊，請參閱[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在 hyper-v 虛擬機器上安裝網路控制站伺服器角色，\(安裝在 Hyper-v 主機上的 VM\)。 在三部不同的\-Hyper-v 主機上的 Vm 上安裝網路控制站之後，您必須使用 Windows PowerShell 命令**NetworkControllerServer**，將主機新增至網路控制站，以啟用軟體定義網路的超\-主機 \(SDN\)。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。 如需詳細資訊，請參閱[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
 
-本主題涵蓋下列各節。
+本主題包含下列各節。
 
 - [安裝網路控制卡伺服器角色](#install-the-network-controller-server-role)
 
@@ -47,10 +47,10 @@ ms.locfileid: "71406119"
 
 ## <a name="install-the-network-controller-server-role"></a>安裝網路控制卡伺服器角色
 
-您可以使用此程式，在虛擬機器上安裝網路控制卡伺服器角色 \(VM @ no__t-1。
+您可以使用此程式，在虛擬機器上安裝網路控制卡伺服器角色 \(VM\)。
 
 >[!IMPORTANT]
->請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在安裝于 Hyper-v 主機上的 Hyper-v 虛擬機器上安裝網路控制站伺服器角色 \(VM @ no__t-1。 在三個不同的超 no__t-0V 主機上的 Vm 上安裝了網路控制站之後，您必須將主機新增至網路控制站，以啟用軟體定義網路的超 @ no__t 1V 主機 \(SDN @ no__t-3。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。
+>請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在 hyper-v 虛擬機器上安裝網路控制站伺服器角色，\(安裝在 Hyper-v 主機上的 VM\)。 在三部不同的\-Hyper-v 主機上的 Vm 上安裝網路控制站之後，您必須將主機新增至網路控制站，以啟用軟體定義網路的超\-主機 \(SDN\)。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。
 
 若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。  
 
@@ -88,9 +88,9 @@ New-NetworkControllerNodeObject -Name <string> -Server <String> -FaultDomain <st
 
 |參數|描述|
 |-------------|---------------|
-|Name|**Name**參數會指定您想要新增至叢集之伺服器的易記名稱|
+|名稱|**Name**參數會指定您想要新增至叢集之伺服器的易記名稱|
 |Server|**伺服器**參數指定您想要新增至叢集之伺服器的主機名稱、完整功能變數名稱（FQDN）或 IP 位址。 若為已加入網域的電腦，則需要 FQDN。|
-|FaultDomain|**FaultDomain**參數會指定您要新增至叢集之伺服器的失敗網域。 此參數會定義與您要新增至叢集的伺服器同時發生失敗的伺服器。 這項失敗可能是因為共用實體相依性（例如電源和網路來源）所致。 容錯網域通常代表與這些共用相依性相關的階層，而且有更多伺服器可能會與容錯網域樹狀結構中較高的點一起失敗。 在執行時間期間，網路控制卡會考慮叢集中的容錯網域，並嘗試散佈網路控制站服務，使其位於不同的容錯網域中。 此程式有助於確保任何一個容錯網域失敗時，該服務的可用性及其狀態不會受到危害。 容錯網域是以階層格式來指定。 例如: "Fd：/DC1/Rack1/Host1"，其中 DC1 是資料中心名稱，Rack1 是機架名稱，Host1 是放置節點所在的主機名稱。|
+|FaultDomain|**FaultDomain**參數會指定您要新增至叢集之伺服器的失敗網域。 此參數會定義與您要新增至叢集的伺服器同時發生失敗的伺服器。 這項失敗可能是因為共用實體相依性（例如電源和網路來源）所致。 容錯網域通常代表與這些共用相依性相關的階層，而且有更多伺服器可能會與容錯網域樹狀結構中較高的點一起失敗。 在執行時間期間，網路控制卡會考慮叢集中的容錯網域，並嘗試散佈網路控制站服務，使其位於不同的容錯網域中。 此程式有助於確保任何一個容錯網域失敗時，該服務的可用性及其狀態不會受到危害。 容錯網域是以階層格式來指定。 例如： "Fd：/DC1/Rack1/Host1"，其中 DC1 是資料中心名稱，Rack1 是機架名稱，Host1 是放置節點所在的主機名稱。|
 |RestInterface|**RestInterface**參數會在具像狀態傳輸（REST）通訊終止的節點上指定介面的名稱。 此網路控制站介面會從網路的管理層接收 Northbound 的 API 要求。|
 |NodeCertificate|**NodeCertificate**參數會指定網路控制站用來進行電腦驗證的憑證。 如果您針對叢集中的通訊使用以憑證為基礎的驗證，則需要憑證;憑證也會用於網路控制站服務之間的流量加密。 憑證主體名稱必須與節點的 DNS 名稱相同。|
 

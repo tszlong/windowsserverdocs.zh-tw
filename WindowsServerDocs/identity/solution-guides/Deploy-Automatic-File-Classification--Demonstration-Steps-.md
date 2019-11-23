@@ -18,7 +18,7 @@ ms.locfileid: "71357595"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 這個主題說明如何啟用 Active Directory 中的資源內容、在檔案伺服器上建立分類規則，然後將值指派給檔案伺服器上檔案的資源內容。 針對這個範例會建立下列分類規則：  
   
@@ -28,18 +28,18 @@ ms.locfileid: "71357595"
   
 **本檔中的**  
   
--   [步驟 1：建立資源屬性定義 @ no__t-0  
+-   [步驟1：建立資源屬性定義](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
--   [步驟 2：建立字串內容分類規則 @ no__t-0  
+-   [步驟2：建立字串內容分類規則](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step2)  
   
--   [步驟 3：建立正則運算式內容分類規則 @ no__t-0  
+-   [步驟3：建立正則運算式內容分類規則](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [步驟 4：確認檔案已分類 @ no__t-0  
+-   [步驟4：確認檔案已分類](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
 > 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Step1"></a>步驟1：建立資源內容定義  
+## <a name="BKMK_Step1"></a>步驟1：建立資源屬性定義  
 [影響] 和 [個人識別資訊] 資源內容已啟用，所以檔案分類基礎結構可以使用這些資源內容來標記網路共用資料夾上掃描到的檔案。  
   
 [使用 Windows PowerShell 執行此步驟](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
@@ -56,7 +56,7 @@ ms.locfileid: "71357595"
   
 5.  在 [個人識別資訊] 上按一下滑鼠右鍵，然後按一下 [啟用]。  
   
-@no__t 0solution 指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -89,7 +89,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
 8.  在 [範圍] 索引標籤上，按一下 [新增]，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。  
   
     > [!NOTE]  
-    > 您也可以為範圍選擇動態命名空間。 如需分類規則的動態命名空間的詳細資訊，請參閱[Windows server 2012 中檔案伺服器 Resource Manager 的新功能 \[redirected @ no__t-2](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
+    > 您也可以為範圍選擇動態命名空間。 如需分類規則的動態命名空間的詳細資訊，請參閱[Windows server 2012 中檔案伺服器 Resource Manager 的新功能 \[重新導向\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
   
 9. 在 [分類] 索引標籤中，設定下列選項：  
   
@@ -107,7 +107,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 13. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。  
   
-@no__t 0solution 指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -118,7 +118,7 @@ Set-FsrmClassification -Continuous -schedule $AutomaticClassificationScheduledTa
 New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -PropertyValue "3000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("StringEx=Min=1;Expr=Contoso Confidential") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step3"></a>步驟3：建立規則運算式內容分類規則  
+## <a name="BKMK_Step3"></a>步驟3：建立正則運算式內容分類規則  
 規則運算式分類規則會掃描檔案，尋找符合規則運算式的模式。 如果找到符合規則運算式的字串，則可以設定資源內容的值。 在這個範例中，我們會掃描網路共用資料夾上的每個檔案，尋找符合身份證號碼 (XXX-XX-XXXX) 模式的字串。 如果找到這種模式，關聯的檔案會被分類為包含個人識別資訊。  
   
 [使用 Windows PowerShell 執行此步驟](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
@@ -149,13 +149,13 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 9. 在 [運算式類型] 欄中，選取 [規則運算式]。  
   
-10. 在 [**運算式**] 資料行中，輸入 **^ （？！000）（[0-7] \d @ no__t-2 | 7 （[0-7] \d | 7 [012]））（[-]？）(?!00） \d\d\3 （？！0000） \d @ no__t-3 $**  
+10. 在 [**運算式**] 資料行中，輸入 **^ （？！000）（[0-7] \d{2}| 7 （[0-7] \d | 7 [012]））（[-]？）(?!00） \d\d\3 （？！0000） \d{4}$**  
   
 11. 在 [發生次數下限] 欄中，輸入 **10**，然後按一下 [確定]。  
   
 12. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。  
   
-@no__t 0solution 指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -163,7 +163,7 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
 New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=10;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step4"></a>步驟4：確認檔案正確分類  
+## <a name="BKMK_Step4"></a>步驟4：確認檔案已正確分類  
 您可以檢視分類規則中指定的資料夾中建立的檔案的內容，確認檔案已正確分類。  
   
 #### <a name="to-verify-that-the-files-are-classified-correctly"></a>確認檔案正確分類  
@@ -176,7 +176,7 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
     3.  關閉自動分類報告。  
   
-    4.  您可以使用 Windows PowerShell 的下列命令執行這個作業：**開始-Start-fsrmclassification ' "RunDuration 0-Confirm： $false**  
+    4.  若要這麼做，您可以使用 Windows PowerShell 搭配下列命令： **start-fsrmclassification ' "RunDuration 0-Confirm： $false**  
   
 2.  瀏覽至分類規則中指定的資料夾，例如 D:\Finance Documents。  
   
@@ -186,11 +186,11 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [案例：使用分類深入了解您的資料](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [案例：使用分類深入瞭解您的資料](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
 -   [自動檔案分類的規劃](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
 
   
--   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

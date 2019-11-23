@@ -21,7 +21,7 @@ ms.locfileid: "71404456"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步驟3規劃多網站部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 規劃多網站基礎結構之後，請規劃任何額外的憑證需求、用戶端電腦如何選取進入點，以及在您的部署中指派的 IPv6 位址。  
 
@@ -162,11 +162,11 @@ ms.locfileid: "71404456"
   
    3. Teredo 首碼（選擇性）。 只有在外部介面卡上使用兩個連續的公用 IPv4 位址設定遠端存取服務器時，這個前置詞才會相關。 前置詞是以位址配對的第一個公用 IPv4 位址為基礎。 例如，如果外部地址為：  
   
-      1. www\.xxx.yyy.zzz  
+      1. www\.xxx. yyy. zzz  
   
-      2. www\.xxx.yyy.zzz + 1  
+      2. www\.xxx. zzz + 1  
   
-      然後，要設定的 Teredo 首碼是2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 位址 www\.xxx.yyy.zzz 的十六進位標記法。  
+      然後，要設定的 Teredo 首碼是2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 位址 www\.xxx. zzz 的十六進位標記法。  
   
       請注意，您可以使用下列腳本來計算 Teredo 首碼：  
   
@@ -190,7 +190,7 @@ ms.locfileid: "71404456"
 ### <a name="active-directory-site-specific-ipv6-prefixes"></a>Active Directory 網站特定 IPv6 首碼  
 當執行 Windows 10 或 Windows 8 的用戶端電腦連線到進入點時，用戶端電腦會立即與進入點的 Active Directory 網站相關聯，並使用與該進入點相關聯的 IPv6 首碼進行設定。 喜好設定是讓用戶端電腦使用這些 IPv6 首碼來連線到資源，因為它們是在連接到進入點時，以較高的優先順序，在 IPv6 首碼原則表格中以動態方式設定。  
   
-如果您的組織使用含有網站特定 IPv6 首碼的 Active Directory 拓撲（例如，內部資源 FQDN app.corp.com 同時裝載于北美洲和歐洲，且每個位置都有網站特定的 IP 位址），則不會設定此項預設會使用遠端存取主控台，而且不會針對每個進入點設定網站特定的 IPv6 首碼。 如果您想要啟用此選擇性案例，您必須使用特定的 IPv6 首碼來設定每個進入點，用戶端電腦應該將這些前置詞連接到特定的進入點。 執行此動作, 如下所示:  
+如果您的組織使用含有網站特定 IPv6 首碼的 Active Directory 拓撲（例如，內部資源 FQDN app.corp.com 同時裝載于北美洲和歐洲，且每個位置都有網站特定的 IP 位址），則不會設定此項預設會使用遠端存取主控台，而且不會針對每個進入點設定網站特定的 IPv6 首碼。 如果您想要啟用此選擇性案例，您必須使用特定的 IPv6 首碼來設定每個進入點，用戶端電腦應該將這些前置詞連接到特定的進入點。 執行此動作，如下所示：  
   
 1.  針對 Windows 10 或 Windows 8 用戶端電腦所使用的每個 GPO，執行 DAEntryPointTableItem PowerShell Cmdlet  
   
@@ -247,7 +247,7 @@ ms.locfileid: "71404456"
     > [!NOTE]  
     > 當您同時安裝其他 DirectAccess 部署時，請確定沒有任何兩個進入點共用相同的用戶端前置詞。  
     >   
-    > 如果您使用消費者入門 Wizard 或 Cmdlet `Install-RemoteAccess` 安裝 DirectAccess，遠端存取會自動將部署中第一個進入點的用戶端首碼設定為預設值 < IPv6 子網 @ no__t-1prefix >：1000：：/64。 如有需要，您必須變更前置詞。  
+    > 如果您使用消費者入門 Wizard 或 Cmdlet `Install-RemoteAccess`來安裝 DirectAccess，遠端存取會自動將部署中第一個進入點的用戶端首碼設定為預設值 < IPv6 子網\_首碼 >：1000：：/64。 如有需要，您必須變更前置詞。  
   
 2.  從第一個部署中移除選擇的用戶端安全性群組。  
   
@@ -270,7 +270,7 @@ ms.locfileid: "71404456"
   
     -   IP 位址：：：1  
   
-    -   輸入：AAAA  
+    -   類型： AAAA  
   
   
   

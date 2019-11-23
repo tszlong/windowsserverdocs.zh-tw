@@ -22,14 +22,14 @@ ms.locfileid: "71403220"
 本文件說明如何修改進階[重複資料刪除](overview.md)設定。 針對[建議的工作負載](install-enable.md#enable-dedup-candidate-workloads)，預設設定應已足夠。 修改這些設定的主要原因，是為了改進重複資料刪除搭配其他工作負載類型時的效能。
 
 ## <a id="modifying-job-schedules"></a>修改重復資料刪除工作排程
-[預設重複資料刪除工作排程](understand.md#job-info)是專為搭配建議的工作負載運作並盡可能不干擾工作而設計 (不包括為[**備份**使用類型](understand.md#usage-type-backup)啟用的「優先順序最佳化」工作)。 當工作負載有大型資源需求時，它可以確保工作僅在閒置時間執行，或是減少或增加允許重複資料刪除工作使用的系統資源量。
+[預設重複資料刪除工作排程](understand.md#job-info)是專為搭配建議的工作負載運作並盡可能不干擾工作而設計 (不包括為備份[使用類型**啟用的**「優先順序最佳化」](understand.md#usage-type-backup)工作)。 當工作負載有大型資源需求時，它可以確保工作僅在閒置時間執行，或是減少或增加允許重複資料刪除工作使用的系統資源量。
 
 ### <a id="modifying-job-schedules-change-schedule"></a>變更重復資料刪除排程
 重複資料刪除工作是透過 Windows 工作排程器排程，並且可以在 Microsoft\Windows\Deduplication 路徑下檢視及編輯。 重複資料刪除包括數個可讓您輕鬆排程的 Cmdlet。
 * [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx)會顯示目前的排程工作。
 * [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx)會建立新的排程工作。
-* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx)會修改現有的排程工作。
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)會移除已排程的工作。
+* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx)修改現有的排程工作。
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)移除排程工作。
 
 變更重複資料刪除工作執行時間最常見的原因，是為了確保工作在非尖峰時間執行。 以下的逐步範例示範如何針對「陽光普照的一天」案例修改重複資料刪除排程：有一部超交集 Hyper-V 主機會在週末以及工作日下午 7:00 之後閒置。 為了變更排程，請使用系統管理員身分執行下列 PowerShell Cmdlet。
 
@@ -51,7 +51,7 @@ ms.locfileid: "71403220"
     ```
 
     >[!NOTE]  
-    > 為 `-Start` 提供之 `System.Datetime` 中的「日期」部分是無關的 (只要是過去的日期即可)，但「時間」部分會指定工作應該開始的時間。
+    > 為 *提供之* 中的「日期」`System.Datetime``-Start`部分是無關的 (只要是過去的日期即可)，但「時間」部分會指定工作應該開始的時間。
 4. 建立每週的記憶體回收工作，它會在星期六上午 7:00 執行，具有高優先順序，並使用系統上所有可用的 CPU 和記憶體。
     ```PowerShell
     New-DedupSchedule -Name "WeeklyGarbageCollection" -Type GarbageCollection -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(6) -Start (Get-Date "2016-08-13 07:00:00")
@@ -76,13 +76,13 @@ ms.locfileid: "71403220"
     </thead>
     <tbody>
         <tr>
-            <td>Type</td>
+            <td>類型</td>
             <td>應排定的工作類型</td>
             <td>
                 <ul>
                     <li>Optimization</li>
                     <li>GarbageCollection</li>
-                    <li>擦選</li>
+                    <li>Scrubbing</li>
                 </ul>
             </td>
             <td>此值為必要，因為它是您要排定的工作類型。 在工作排定之後，您就無法變更這個值。</td>
@@ -100,7 +100,7 @@ ms.locfileid: "71403220"
             <td>這個值有助於系統判斷如何配置 CPU 時間。 <em>High</em> 將使用較多的 CPU 時間，<em>Low</em> 則會使用較少的 CPU 時間。</td>
         </tr>
         <tr>
-            <td>日</td>
+            <td>天</td>
             <td>排定執行工作的日子</td>
             <td>0-6 的整數陣列，代表星期幾：<ul>
                 <li>0 = 星期日</li>
@@ -126,7 +126,7 @@ ms.locfileid: "71403220"
             <td>防止工作負載&#39;的非閒置時間</td>
         </tr>
         <tr>
-            <td>Enabled</td>
+            <td>啟用</td>
             <td>是否將執行工作</td>
             <td>True/false</td>
             <td>停用工作而不移除工作</td>
@@ -150,7 +150,7 @@ ms.locfileid: "71403220"
             <td>控制工作將對系統上的記憶體資源產生的影響程度</td>
         </tr>
         <tr>
-            <td>Name</td>
+            <td>名稱</td>
             <td>已排程工作的名稱</td>
             <td>字串</td>
             <td>工作必須有可唯一識別的名稱。</td>
@@ -165,7 +165,7 @@ ms.locfileid: "71403220"
             <td>開始時間</td>
             <td>指定工作應該開始的時間</td>
             <td><code>System.DateTime</code></td>
-            <td>提供給<em>啟動</em>之 @no__t 1 的&#39;<em>日期</em>部分無關（只要它在過去），但時間部分會指定工作應該開始的<em>時機</em>。</td>
+            <td>提供給<em>開始</em>之 <code>System.Datetime</code> 的&#39;<em>日期</em>部分無關（前提是它是在過去），但時間部分會指定工作應該開始的<em>時機</em>。</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -208,7 +208,7 @@ ms.locfileid: "71403220"
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>區塊在複製到區塊存放區的熱點區段之前，區塊被參考的次數。 [作用點] 區段的值是所謂的 @no__t 0hot @ no__t-1 區塊，通常會有多個存取路徑來改善存取時間。</td>
+            <td>區塊在複製到區塊存放區的熱點區段之前，區塊被參考的次數。 [作用點] 區段的值是所謂的 &quot;熱門&quot; 區塊，通常會參考多個存取路徑來改善存取時間。</td>
             <td>正整數</td>
             <td>修改此數字的主要原因是為了增加具有高度重複資料磁碟區的儲存速率。 一般來說，預設值（100）是建議的設定，因此您&#39;不應該進行修改。</td>
         </tr>
@@ -318,7 +318,7 @@ ms.locfileid: "71403220"
 </table>
 
 ## <a id="faq"></a>常見問題
-<a id="faq-use-responsibly"></a>**I 已變更重復資料刪除設定，而現在作業變慢或未完成，或我的工作負載效能已降低。為什麼？**  
+<a id="faq-use-responsibly"></a>**我變更了重復資料刪除設定，而現在作業變慢或未完成，或我的工作負載效能已降低。因此?**  
 這些設定提供您許多強大的功能來控制重複資料刪除的執行方式。 請謹慎使用這些設定，並[監視效能](run.md#monitoring-dedup)。
 
 <a id="faq-running-dedup-jobs-manually"></a>**我想要立即執行重復資料刪除工作，但我不想建立新的排程--我可以這麼做嗎？**  

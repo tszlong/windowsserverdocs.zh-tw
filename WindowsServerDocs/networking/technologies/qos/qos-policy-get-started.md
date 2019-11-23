@@ -17,9 +17,9 @@ ms.locfileid: "71405287"
 ---
 # <a name="getting-started-with-qos-policy"></a>使用 QoS 原則消費者入門
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-您可以使用下列主題來開始使用服務品質 \(QoS @ no__t-1 原則。
+您可以使用下列主題，開始使用服務品質 \(QoS\) 原則。
 
 - [QoS 原則的運作方式](qos-policy-works.md)
 - [QoS 原則架構](qos-policy-architecture.md)

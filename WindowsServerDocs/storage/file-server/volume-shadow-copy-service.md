@@ -15,7 +15,7 @@ ms.locfileid: "71394454"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
-適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2、Windows Server 2008、Windows 10、Windows 8.1、Windows 8、Windows 7
+適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2、Windows Server 2008、Windows 10、Windows 8.1、Windows 8、Windows 7
 
 備份和還原重要的商務資料可能會因為下列問題而非常複雜：
 
@@ -39,32 +39,32 @@ VSS 會協調建立所要備份之資料的一致陰影複製（也稱為快照�
 
 使用 VSS 的 Windows 功能和應用程式包含下列各項：
 
-  - [Windows Server Backup](http://go.microsoft.com/fwlink/?linkid=180891)(http://go.microsoft.com/fwlink/?LinkId=180891)  
+  - [Windows Server Backup](http://go.microsoft.com/fwlink/?linkid=180891) （ http://go.microsoft.com/fwlink/?LinkId=180891)  
       
-  - [共用資料夾的陰影複製](http://go.microsoft.com/fwlink/?linkid=142874)(http://go.microsoft.com/fwlink/?LinkId=142874)  
+  - [共用資料夾的陰影複製](http://go.microsoft.com/fwlink/?linkid=142874)（ http://go.microsoft.com/fwlink/?LinkId=142874)  
       
-  - [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=180892)(http://go.microsoft.com/fwlink/?LinkId=180892)  
+  - [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=180892) （ http://go.microsoft.com/fwlink/?LinkId=180892)  
       
-  - [系統還原](http://go.microsoft.com/fwlink/?linkid=180893)(http://go.microsoft.com/fwlink/?LinkId=180893)  
+  - [系統還原](http://go.microsoft.com/fwlink/?linkid=180893)（ http://go.microsoft.com/fwlink/?LinkId=180893)  
       
 
 ## <a name="how-volume-shadow-copy-service-works"></a>磁碟區陰影複製服務的運作方式
 
 完整的 VSS 解決方案需要下列所有基本元件：
 
-   Windows 作業系統的 VSS 服務部分，可確保其他元件可以適當地彼此通訊，並一起運作。
+**VSS 服務**   Windows 作業系統的一部分，可確保其他元件可以適當地彼此通訊，並一起運作。
 
-**VSS**要求軟體提出實際的陰影複製建立（或其他高階作業，例如匯入或刪除它們）。    一般來說，這是備份應用程式。 Windows Server Backup 公用程式和 System Center Data Protection Manager 應用程式都是 VSS 要求者。 非 Microsoft® VSS 要求者包含幾乎所有在 Windows 上執行的備份軟體。
+**VSS**要求者   需要實際建立陰影複製的軟體（或其他高階作業，例如匯入或刪除它們）。 一般來說，這是備份應用程式。 Windows Server Backup 公用程式和 System Center Data Protection Manager 應用程式都是 VSS 要求者。 非 Microsoft® VSS 要求者包含幾乎所有在 Windows 上執行的備份軟體。
 
-**VSS writer**    會保證我們具有一致的資料集來進行備份的元件。 這通常會在企業營運應用程式中提供，例如 SQL Server®或 Exchange Server。 適用于各種 Windows 元件（例如登錄）的 VSS 寫入器隨附于 Windows 作業系統中。 Windows 的許多應用程式都包含非 Microsoft VSS 寫入器，需要在備份期間保證資料的一致性。
+**VSS 寫入器**   元件，可確保我們有一致的資料集來進行備份。 這通常會在企業營運應用程式中提供，例如 SQL Server®或 Exchange Server。 適用于各種 Windows 元件（例如登錄）的 VSS 寫入器隨附于 Windows 作業系統中。 Windows 的許多應用程式都包含非 Microsoft VSS 寫入器，需要在備份期間保證資料的一致性。
 
-**VSS 提供者**   會建立及維護陰影複製的元件。 這可能會發生在軟體或硬體中。 Windows 作業系統包含使用「寫入時複製」的 VSS 提供者。 如果您使用存放區域網路（SAN），請務必安裝適用于 SAN 的 VSS 硬體提供者（如果有提供的話）。 硬體提供者會從主機作業系統卸載建立和維護陰影複製的工作。
+**VSS 提供者**   建立和維護陰影複製的元件。 這可能會發生在軟體或硬體中。 Windows 作業系統包含使用「寫入時複製」的 VSS 提供者。 如果您使用存放區域網路（SAN），請務必安裝適用于 SAN 的 VSS 硬體提供者（如果有提供的話）。 硬體提供者會從主機作業系統卸載建立和維護陰影複製的工作。
 
 下圖說明 VSS 服務如何與要求者、寫入器和提供者協調，以建立磁片區的陰影複製。
 
 ![](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
-**圖 1**    磁碟區陰影複製服務的架構圖
+**圖 1**磁碟區陰影複製服務的   架構圖
 
 ### <a name="how-a-shadow-copy-is-created"></a>陰影複製的建立方式
 
@@ -106,11 +106,11 @@ VSS 會協調建立所要備份之資料的一致陰影複製（也稱為快照�
 
 硬體或軟體陰影複製提供者會使用下列其中一種方法來建立陰影複製：
 
-**完成複製**   此方法會在指定的時間點，建立原始磁片區的完整複本（稱為「完整複本」或「複製」）。 此複本為唯讀。
+**完成複製**   此方法會在指定的時間點建立原始磁片區的完整複本（稱為「完整複本」或「複製」）。 此複本為唯讀。
 
-**寫入時複製**此方法不會複製原始磁片區   。 相反地，它會藉由複製在給定時間點之後對磁片區進行的所有變更（完成寫入 i/o 要求）來建立差異複本。
+**寫入時複製**   此方法不會複製原始磁片區。 相反地，它會藉由複製在給定時間點之後對磁片區進行的所有變更（完成寫入 i/o 要求）來建立差異複本。
 
-   「重新導向-寫入」此方法不會複製原始磁片區，而且不會在指定的時間點之後對原始磁片區進行任何變更。 相反地，它會將所有變更重新導向至不同的磁片區，藉此建立差異複本。
+重新**導向-寫入**   此方法不會複製原始磁片區，而且不會在指定的時間點之後對原始磁片區進行任何變更。 相反地，它會將所有變更重新導向至不同的磁片區，藉此建立差異複本。
 
 ## <a name="complete-copy"></a>完成複製
 
@@ -136,7 +136,7 @@ VSS 會協調建立所要備份之資料的一致陰影複製（也稱為快照�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Time</th>
+<th>時間</th>
 <th>來源資料（狀態和資料）</th>
 <th>陰影複製（狀態和資料）</th>
 </tr>
@@ -144,23 +144,23 @@ VSS 會協調建立所要備份之資料的一致陰影複製（也稱為快照�
 <tbody>
 <tr class="odd">
 <td><p>T0</p></td>
-<td><p>原始資料：1 2 3 4 5</p></td>
+<td><p>原始資料： 1 2 3 4 5</p></td>
 <td><p>無複本：—</p></td>
 </tr>
 <tr class="even">
 <td><p>T1</p></td>
-<td><p>快取中的資料變更：3到 3 '</p></td>
+<td><p>快取中的資料變更：3到3</p></td>
 <td><p>已建立陰影複製（僅限差異）：3</p></td>
 </tr>
 <tr class="odd">
 <td><p>T2</p></td>
-<td><p>覆寫原始資料：1 2 3 ' 4 5</p></td>
+<td><p>覆寫原始資料： 1 2 3 ' 4 5</p></td>
 <td><p>陰影複製上儲存的差異和索引：3</p></td>
 </tr>
 </tbody>
 </table>
 
-**表 1**    建立陰影複製的「寫入時複製」方法
+**表 1**   建立陰影複製的寫入時複製方法
 
 「寫入時複製」方法是建立陰影複製的快速方法，因為它只會複製已變更的資料。 差異區域中複製的區塊可以與原始磁片區上的已變更資料結合，以便在進行任何變更之前，將磁片區還原到其狀態。 如果有許多變更，則寫入時複製方法可能會變得昂貴。
 
@@ -177,7 +177,7 @@ VSS 會協調建立所要備份之資料的一致陰影複製（也稱為快照�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Time</th>
+<th>時間</th>
 <th>來源資料（狀態和資料）</th>
 <th>陰影複製（狀態和資料）</th>
 </tr>
@@ -185,23 +185,23 @@ VSS 會協調建立所要備份之資料的一致陰影複製（也稱為快照�
 <tbody>
 <tr class="odd">
 <td><p>T0</p></td>
-<td><p>原始資料：1 2 3 4 5</p></td>
+<td><p>原始資料： 1 2 3 4 5</p></td>
 <td><p>無複本：—</p></td>
 </tr>
 <tr class="even">
 <td><p>T1</p></td>
-<td><p>快取中的資料變更：3到 3 '</p></td>
-<td><p>已建立陰影複製（僅限差異）：第</p></td>
+<td><p>快取中的資料變更：3到3</p></td>
+<td><p>已建立陰影複製（僅限差異）： 3 '</p></td>
 </tr>
 <tr class="odd">
 <td><p>T2</p></td>
-<td><p>原始資料未變更：1 2 3 4 5</p></td>
-<td><p>陰影複製上儲存的差異和索引：第</p></td>
+<td><p>原始資料未變更： 1 2 3 4 5</p></td>
+<td><p>陰影複製上儲存的差異和索引： 3 '</p></td>
 </tr>
 </tbody>
 </table>
 
-**表 2**    建立陰影複製的重新導向寫入方法
+[**表 2** ]   建立陰影複製的重新導向寫入方法
 
 如同複製時寫入方法，重新導向寫入方法是建立陰影複製的快速方法，因為它只會複製資料的變更。 差異區域中複製的區塊可以與原始磁片區上未變更的資料結合，以建立完整的最新資料複本。 如果有許多讀取 i/o 要求，則重新導向寫入方法可能會變得昂貴。
 
@@ -247,11 +247,11 @@ Windows 作業系統包含一組 VSS 寫入器，負責列舉各種 Windows 功�
 
 如需這些寫入器的詳細資訊，請參閱下列 Microsoft 網站：
 
-  - [內建 VSS 寫入](http://go.microsoft.com/fwlink/?linkid=180895)器(http://go.microsoft.com/fwlink/?LinkId=180895)  
+  - [內建 VSS 寫入](http://go.microsoft.com/fwlink/?linkid=180895)器（ http://go.microsoft.com/fwlink/?LinkId=180895)  
       
-  - [適用于 Windows Server 2008 和 Windows VISTA SP1 的全新內建 VSS 寫入](http://go.microsoft.com/fwlink/?linkid=180896)器(http://go.microsoft.com/fwlink/?LinkId=180896)  
+  - [適用于 Windows Server 2008 和 Windows VISTA SP1 的全新內建 VSS 寫入](http://go.microsoft.com/fwlink/?linkid=180896)器（ http://go.microsoft.com/fwlink/?LinkId=180896)  
       
-  - [適用于 Windows Server 2008 R2 和 windows 7 的全新內建 VSS 寫入](http://go.microsoft.com/fwlink/?linkid=180897)器(http://go.microsoft.com/fwlink/?LinkId=180897)  
+  - [適用于 Windows Server 2008 R2 和 windows 7 的全新內建 VSS 寫入](http://go.microsoft.com/fwlink/?linkid=180897)器（ http://go.microsoft.com/fwlink/?LinkId=180897)  
       
 
 ## <a name="how-shadow-copies-are-used"></a>如何使用陰影複製
@@ -298,7 +298,7 @@ LUN 重新同步處理與 LUN 交換不同。 LUN 交換是一種快速復原案
 
 共用資料夾陰影複製使用磁碟區陰影複製服務來提供檔案的時間點複本，這些檔案位於共用網路資源上，例如檔案伺服器。 透過共用資料夾陰影複製，使用者可以快速復原已刪除或變更儲存在網路上的檔案。 因為他們可以在沒有系統管理員協助的情況下這麼做，所以共用資料夾陰影複製可以提高生產力並降低管理成本。
 
-如需共用資料夾陰影複製的詳細資訊，[請參閱共用資料夾陰影複製](http://go.microsoft.com/fwlink/?linkid=180898)（ http://go.microsoft.com/fwlink/?LinkId=180898) TechNet 上的。
+如需共用資料夾陰影複製的詳細資訊，[請參閱共用資料夾陰影複製](http://go.microsoft.com/fwlink/?linkid=180898)（ http://go.microsoft.com/fwlink/?LinkId=180898)TechNet 上的。
 
 ### <a name="data-mining-by-using-transportable-shadow-copies"></a>使用可轉移的陰影複製來進行資料採礦
 
@@ -316,7 +316,7 @@ LUN 重新同步處理與 LUN 交換不同。 LUN 交換是一種快速復原案
 
 ![](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
-**[圖 3**    ] 在兩部伺服器之間建立和傳輸陰影複製
+[**圖 3** ] 在兩部伺服器之間建立和傳輸   陰影複製
 
 
 > [!NOTE]
@@ -330,7 +330,7 @@ LUN 重新同步處理與 LUN 交換不同。 LUN 交換是一種快速復原案
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
-此常見問題會回答有關系統管理員磁碟區陰影複製服務（VSS）的問題。 如需 VSS 應用程式開發介面的詳細資訊，請參閱[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180899)（ http://go.microsoft.com/fwlink/?LinkId=180899) 在 Windows 開發人員中心程式庫中）。
+此常見問題會回答有關系統管理員磁碟區陰影複製服務（VSS）的問題。 如需 VSS 應用程式開發介面的詳細資訊，請參閱[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180899)（ http://go.microsoft.com/fwlink/?LinkId=180899)在 Windows 開發人員中心程式庫中）。
 
 ### <a name="when-was-volume-shadow-copy-service-introduced-on-which-windows-operating-system-versions-is-it-available"></a>何時磁碟區陰影複製服務引進？ 有哪些可用的 Windows 作業系統版本？
 
@@ -362,16 +362,16 @@ VSS 是在 Windows XP 中引進。 其適用于 Windows XP、Windows Server 2003
 
 如需詳細資訊，請參閱下列 Microsoft TechNet 網站：
 
-  - [系統還原](http://go.microsoft.com/fwlink/?linkid=157113)(http://go.microsoft.com/fwlink/?LinkID=157113)  
+  - [系統還原](http://go.microsoft.com/fwlink/?linkid=157113)（ http://go.microsoft.com/fwlink/?LinkID=157113)  
       
-  - [Windows Server Backup](http://go.microsoft.com/fwlink/?linkid=180891)(http://go.microsoft.com/fwlink/?LinkID=180891)  
+  - [Windows Server Backup](http://go.microsoft.com/fwlink/?linkid=180891) （ http://go.microsoft.com/fwlink/?LinkID=180891)  
       
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>我可以從陰影複製中排除檔案來節省空間嗎？
 
 VSS 的設計目的是要建立整個磁片區的陰影複製。 系統會自動從陰影複製省略暫存檔案，例如分頁檔案，以節省空間。
 
-若要從陰影複製中排除特定檔案，請使用下列登錄機碼：**FilesNotToSnapshot**。
+若要從陰影複製中排除特定檔案，請使用下列登錄機碼： **FilesNotToSnapshot**。
 
 
 > [!NOTE]
@@ -384,7 +384,7 @@ VSS 的設計目的是要建立整個磁片區的陰影複製。 系統會自動
 > <LI>檔案會以最大的方式從陰影複製中刪除。 這表示不保證會刪除它們。<BR><BR></LI></UL>
 
 
-如需詳細資訊，請參閱 MSDN 上的[從陰影複製排除](http://go.microsoft.com/fwlink/?linkid=180904)檔案（ http://go.microsoft.com/fwlink/?LinkId=180904) 英文）。
+如需詳細資訊，請參閱 MSDN 上的[從陰影複製排除](http://go.microsoft.com/fwlink/?linkid=180904)檔案（ http://go.microsoft.com/fwlink/?LinkId=180904)。
 
 ### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>我的非 Microsoft 備份程式失敗，發生 VSS 錯誤。 我可以做什麼？
 
@@ -392,7 +392,7 @@ VSS 的設計目的是要建立整個磁片區的陰影複製。 系統會自動
 
 系統管理員可以使用下列 Microsoft TechNet Library 網站上的 VSS 疑難排解資訊，收集有關 VSS 相關問題的診斷資訊。
 
-如需詳細資訊，請參閱[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180905)（ http://go.microsoft.com/fwlink/?LinkId=180905) TechNet 上的。
+如需詳細資訊，請參閱[磁碟區陰影複製服務](http://go.microsoft.com/fwlink/?linkid=180905)（ http://go.microsoft.com/fwlink/?LinkId=180905)TechNet 上的。
 
 ### <a name="what-is-the-diff-area"></a>什麼是「差異區域」？
 
@@ -417,7 +417,7 @@ Diff 區域可以位於任何本機磁片區上。 不過，它必須位於擁�
 
 ### <a name="can-vss-create-shadow-copies-of-non-ntfs-volumes"></a>VSS 是否可以建立非 NTFS 磁片區的陰影複製？
 
-是的。 不過，持續性陰影複製只能針對 NTFS 磁片區進行。 此外，在系統上至少掛接一個磁片區必須是 NTFS 磁片區。
+是。 不過，持續性陰影複製只能針對 NTFS 磁片區進行。 此外，在系統上至少掛接一個磁片區必須是 NTFS 磁片區。
 
 ### <a name="whats-the-maximum-number-of-shadow-copies-i-can-create-at-one-time"></a>一次可以建立的最大陰影複製數目？
 
@@ -425,13 +425,13 @@ Diff 區域可以位於任何本機磁片區上。 不過，它必須位於擁�
 
 ### <a name="whats-the-maximum-number-of-software-shadow-copies-created-by-the-system-provider-that-i-can-maintain-for-a-volume"></a>可以為磁片區維護的系統提供者所建立的軟體陰影複製數目上限為何？
 
-每個磁片區的軟體陰影複製數目上限為512。 不過，根據預設，您只能維護「共用資料夾的陰影複製」功能所使用的64陰影複製。 若要變更 [共用資料夾的陰影複製] 功能的限制，請使用下列登錄機碼：**MaxShadowCopies**。
+每個磁片區的軟體陰影複製數目上限為512。 不過，根據預設，您只能維護「共用資料夾的陰影複製」功能所使用的64陰影複製。 若要變更 [共用資料夾的陰影複製] 功能的限制，請使用下列登錄機碼： **MaxShadowCopies**。
 
 ### <a name="how-can-i-control-the-space-that-is-used-for-shadow-copy-storage-space"></a>如何控制用於陰影複製儲存空間的空間？
 
 輸入**vssadmin resize shadowstorage**命令。
 
-如需詳細資訊，請參閱[Vssadmin resize shadowstorage](http://go.microsoft.com/fwlink/?linkid=180906) （ http://go.microsoft.com/fwlink/?LinkId=180906) TechNet 上的。
+如需詳細資訊，請參閱 TechNet 上的[Vssadmin resize shadowstorage](http://go.microsoft.com/fwlink/?linkid=180906) （ http://go.microsoft.com/fwlink/?LinkId=180906)。
 
 ### <a name="what-happens-when-i-run-out-of-space"></a>當我用盡空間時，會發生什麼事？
 
@@ -441,16 +441,16 @@ Diff 區域可以位於任何本機磁片區上。 不過，它必須位於擁�
 
 Windows 作業系統提供下列工具來使用 VSS：
 
-  - [DiskShadow](http://go.microsoft.com/fwlink/?linkid=180907)(http://go.microsoft.com/fwlink/?LinkId=180907)  
+  - [DiskShadow](http://go.microsoft.com/fwlink/?linkid=180907) （ http://go.microsoft.com/fwlink/?LinkId=180907)  
       
-  - [VssAdmin](http://go.microsoft.com/fwlink/?linkid=84008)(http://go.microsoft.com/fwlink/?LinkId=84008)  
+  - [VssAdmin](http://go.microsoft.com/fwlink/?linkid=84008) （ http://go.microsoft.com/fwlink/?LinkId=84008)  
       
 
 ### <a name="diskshadow"></a>DiskShadow
 
 DiskShadow 是 VSS 要求者，可讓您用來管理系統上可以擁有的所有硬體和軟體快照集。 DiskShadow 包含如下所示的命令：
 
-  - **list**：列出 VSS 寫入器、VSS 提供者和陰影複製  
+  - **list**：列出 vss 寫入器、vss 提供者和陰影複製  
       
   - **建立**：建立新的陰影複製  
       
@@ -479,7 +479,7 @@ VssAdmin 包含如下所示的命令：
       
   - **清單寫入**器：列出所有已訂閱的 VSS 寫入器  
       
-  - **調整 shadowstorage 的大小**：變更陰影複製存放區域的大小上限  
+  - **調整 shadowstorage 大小**：變更陰影複製存放區域的大小上限  
       
 
 VssAdmin 只能用來管理系統軟體提供者所建立的陰影複製。
@@ -503,9 +503,9 @@ VssAdmin 適用于 Windows 用戶端和 Windows Server 作業系統版本。
 
 如需詳細資訊，請參閱 MSDN 網站上的下列專案：
 
-  - [寫入器的安全性考慮](http://go.microsoft.com/fwlink/?linkid=157739)(http://go.microsoft.com/fwlink/?LinkId=157739)  
+  - [寫入器的安全性考慮](http://go.microsoft.com/fwlink/?linkid=157739)（ http://go.microsoft.com/fwlink/?LinkId=157739)  
       
-  - [要求者的安全性考慮](http://go.microsoft.com/fwlink/?linkid=180908)(http://go.microsoft.com/fwlink/?LinkId=180908)  
+  - [要求者的安全性考慮](http://go.microsoft.com/fwlink/?linkid=180908)（ http://go.microsoft.com/fwlink/?LinkId=180908)  
       
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
@@ -514,7 +514,7 @@ VssAdmin 適用于 Windows 用戶端和 Windows Server 作業系統版本。
 
 如需詳細資訊，請參閱 MSDN 網站上的下列專案：
 
-**MaxShadowCopies**在登錄機[碼下進行備份和還原](http://go.microsoft.com/fwlink/?linkid=180909)（ http://go.microsoft.com/fwlink/?LinkId=180909)
+[用於備份和還原的](http://go.microsoft.com/fwlink/?linkid=180909)登錄機碼**MaxShadowCopies** （ http://go.microsoft.com/fwlink/?LinkId=180909)
 
 ### <a name="mindiffareafilesize"></a>MinDiffAreaFileSize
 
@@ -522,7 +522,7 @@ VssAdmin 適用于 Windows 用戶端和 Windows Server 作業系統版本。
 
 如需詳細資訊，請參閱 MSDN 網站上的下列專案：
 
-**MinDiffAreaFileSize**在登錄機[碼下進行備份和還原](http://go.microsoft.com/fwlink/?linkid=180910)（ http://go.microsoft.com/fwlink/?LinkId=180910)
+[用於備份和還原的](http://go.microsoft.com/fwlink/?linkid=180910)登錄機碼**MinDiffAreaFileSize** （ http://go.microsoft.com/fwlink/?LinkId=180910)
 
 `##`# ' 支援的作業系統版本
 
@@ -625,6 +625,6 @@ VssAdmin 適用于 Windows 用戶端和 Windows Server 作業系統版本。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [Windows 開發人員中心中的磁碟區陰影複製服務](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

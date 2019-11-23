@@ -17,7 +17,7 @@ ms.locfileid: "71355644"
 ---
 # <a name="network-controller"></a>網路控制卡
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 Windows Server 2016 中的新功能，網路控制站提供集中式、可程式化的自動化點，以管理、設定、監視和疑難排解資料中心內的虛擬和實體網路基礎結構。 
 
@@ -34,23 +34,23 @@ Windows Server 2016 中的新功能，網路控制站提供集中式、可程式
 
 ## <a name="bkmk_overview"></a>網路控制卡總覽
 
-網路控制站是高度可用且可調整的伺服器角色，並提供一個應用程式開發介面 \(API @ no__t-1，可讓網路控制站與網路通訊，以及可讓您與之通訊的第二個 API。網路控制卡。
+網路控制站是高度可用且可擴充的伺服器角色，可提供一個應用程式開發介面 \(API\)，讓網路控制站能夠與網路通訊，以及可讓您與網路控制站通訊的第二個 API。
 
 您可以在網域和非網域環境中部署網路控制站。 在網域環境中，網路控制卡會使用 Kerberos 來驗證使用者和網路裝置;在非網域環境中，您必須部署憑證以進行驗證。
 
 >[!IMPORTANT]
->請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在安裝于 Hyper-v 主機上的 Hyper-v 虛擬機器上安裝網路控制站伺服器角色 \(VM @ no__t-1。 在三個不同的超 no__t-0V 主機上的 Vm 上安裝了網路控制站之後，您必須使用 Windows PowerShell 將主機新增至網路控制站，以啟用軟體定義網路的超 @ no__t 1V 主機 \(SDN @ no__t-3命令**新增-NetworkControllerServer**。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。 如需詳細資訊，請參閱[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在 hyper-v 虛擬機器上安裝網路控制站伺服器角色，\(安裝在 Hyper-v 主機上的 VM\)。 在三部不同的\-Hyper-v 主機上的 Vm 上安裝網路控制站之後，您必須使用 Windows PowerShell 命令**NetworkControllerServer**，將主機新增至網路控制站，以啟用軟體定義網路的超\-主機 \(SDN\)。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。 如需詳細資訊，請參閱[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
 
 網路控制器會使用 Southbound API 和網路裝置、服務和元件通訊。 利用 Southbound API，網路控制器可以探索網路裝置、偵測服務組態，以及收集所有您所需的網路相關資訊。 此外，Southbound API 可提供路徑讓網路控制器將資訊傳送至網路基礎結構，例如您所做的組態變更。
 
 網路控制器 Northbound API 會提供您從網路控制器收集網路資訊，並使用它來監視和設定網路的能力。
 
-網路控制站 Northbound API 可讓您使用 Windows PowerShell、具像狀態傳輸 \(REST @ no__t-1 API 或具有圖形化的管理應用程式，在網路上設定、監視、疑難排解和部署新裝置使用者介面，例如 System Center Virtual Machine Manager。
+網路控制站 Northbound API 可讓您使用 Windows PowerShell、具像狀態傳輸 \(REST\) API，或具有圖形化使用者介面（例如 System Center Virtual Machine Manager）的管理應用程式，在網路上設定、監視、疑難排解和部署新的裝置。
 
 >[!NOTE]
 >網路控制器 Northbound API 會實作為 REST 介面。
 
-您可以使用管理應用程式（例如 System Center Virtual Machine Manager \(SCVMM @ no__t-1）和 System Center Operations Manager \(SCOM @ no__t-3，透過網路控制卡管理您的資料中心網路，因為網路控制站可讓您設定、監視、程式和疑難排解其控制之下的網路基礎結構。
+您可以使用管理應用程式（例如 System Center Virtual Machine Manager \(SCVMM\)，以及 System Center Operations Manager \(SCOM\)），透過網路控制卡管理資料中心網路，因為網路控制站可讓您設定、監視、程式和疑難排解其控制下的網路基礎結構。
 
 使用 Windows PowerShell、REST API 或管理應用程式時，您可以使用網路控制器來管理下列實體和虛擬網路基礎結構：
 
@@ -58,7 +58,7 @@ Windows Server 2016 中的新功能，網路控制站提供集中式、可程式
 
 - 資料中心防火牆
 
-- 遠端存取服務 \(RAS @ no__t-1 個多租使用者閘道、虛擬閘道和閘道集區
+- 遠端存取服務 \(RAS\) 多租使用者閘道、虛擬閘道和閘道集區
 
 - 軟體負載平衡器
 
@@ -66,7 +66,7 @@ Windows Server 2016 中的新功能，網路控制站提供集中式、可程式
 
 ![網路控制卡總覽](../../../media/Network-Controller/NetController_overview.png)  
 
-如果您要在測試實驗室環境中部署網路控制站，您可以在 hyper-v 虛擬機器上執行網路控制卡伺服器角色，\(VM @ no__t-1 安裝在 Hyper-v 主機上。
+如果您要在測試實驗室環境中部署網路控制站，您可以在 hyper-v 虛擬機器上執行網路控制卡伺服器角色，\(安裝在 Hyper-v 主機上的 VM\)。
 
 若要在較大的資料中心內提供高可用性，您可以使用安裝在三部或多部 Hyper-v 主機上的三個 Vm 來部署叢集。 如需詳細資訊，請參閱[網路控制站高可用性](network-controller-high-availability.md)。
 
@@ -128,7 +128,7 @@ Windows Server 2016 中的新功能，網路控制站提供集中式、可程式
 
 ## <a name="network-controller-deployment-options"></a>網路控制卡部署選項
 
-若要使用 System Center Virtual Machine Manager \(VMM @ no__t-1 來部署網路控制站，請參閱在[VMM 網狀架構中設定 SDN 網路控制](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)站。
+若要使用 System Center Virtual Machine Manager \(VMM\)來部署網路控制站，請參閱在[vmm 網狀架構中設定 SDN 網路控制](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)站。
 
 若要使用腳本部署網路控制站，請參閱[使用腳本部署軟體定義網路基礎結構](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
 

@@ -21,7 +21,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71379515"
 ---
 # <a name="chglogon"></a>chglogon
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
 在 rd 工作階段主機伺服器上啟用或停用來自用戶端會話的登入，或顯示目前的登入狀態。
@@ -30,5 +30,6 @@ ms.locfileid: "71379515"
 > ## <a name="remarks"></a>備註
 > 此命令與 [**變更登**入] 命令相同。
 > #### <a name="additional-references"></a>其他參考
-> [變更登](change-logon.md)入 
-> [命令列語法索引鍵](command-line-syntax-key.md)@no__t-[3 &#40;遠端桌面服務終端&#41;機服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+> [變更登](change-logon.md)[入
+> 命令列語法金鑰](command-line-syntax-key.md)
+> [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)

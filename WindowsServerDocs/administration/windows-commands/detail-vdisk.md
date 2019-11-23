@@ -22,9 +22,9 @@ ms.locfileid: "71378564"
 ---
 # <a name="detail-vdisk"></a>詳細資料 vdisk
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示所選虛擬硬碟的屬性 \(VHD @ no__t-1。  
+顯示所選虛擬硬碟 \(VHD\)的屬性。  
   
 ## <a name="syntax"></a>語法  
   

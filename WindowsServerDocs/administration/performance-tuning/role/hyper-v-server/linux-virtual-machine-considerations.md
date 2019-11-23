@@ -26,7 +26,7 @@ ms.locfileid: "71385075"
 
 Linux 預設會啟用硬體加速和卸載。 如果在主機上的 NIC 屬性中啟用了 vRSS，而 Linux 來賓具有使用 vRSS 的功能，將會啟用此功能。 在 Powershell 中，您可以使用 `EnableNetAdapterRSS` 命令來變更相同的參數。
 
-同樣地，您可以在來賓**屬性**所使用的實體 NIC 上啟用 VMMQ （虛擬交換器 RSS）功能， > **設定 ...**  >  [**Advanced** ] 索引標籤 > 使用下列命令，將**虛擬交換器 RSS**設定為**已啟用**或啟用 Powershell 中的 VMMQ：
+同樣地，您可以在來賓**屬性**所使用的實體 NIC 上啟用 VMMQ （虛擬交換器 rss）**功能 > [設定]**  > [ **Advanced** ] 索引標籤 > 將**虛擬交換器 RSS**設定為 [**啟用**]，或使用下列命令在 Powershell 中啟用 VMMQ：
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -49,7 +49,7 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-適用于網路 microbenchmarks 的公用程式是 ntttcp，其適用于 Linux 和 Windows。 Linux 版本是開放原始碼，可從[github.com 上的 ntttcp for linux 取得](https://github.com/Microsoft/ntttcp-for-linux)。 您可以在[下載中心](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)找到 Windows 版本。 微調工作負載時，最好盡可能使用所需數量的資料流程來取得最佳的輸送量。 使用 ntttcp 來建立流量模型時，@no__t 0 參數會設定所使用的平行連接數目。
+適用于網路 microbenchmarks 的公用程式是 ntttcp，其適用于 Linux 和 Windows。 Linux 版本是開放原始碼，可從[github.com 上的 ntttcp for linux 取得](https://github.com/Microsoft/ntttcp-for-linux)。 您可以在[下載中心](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)找到 Windows 版本。 微調工作負載時，最好盡可能使用所需數量的資料流程來取得最佳的輸送量。 使用 ntttcp 來建立流量模型時，`-P` 參數會設定所使用的平行連接數目。
 
 ## <a name="linux-storage-performance"></a>Linux 儲存體效能
 
@@ -57,7 +57,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 與網路類似，Linux 的來賓效能與存放裝置的優點是多個佇列的深度，足以讓主機保持忙碌。 使用 libaio 引擎的 fio 基準測試，Microbenchmarking 儲存體效能可能最佳。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [Hyper-V 術語](terminology.md)
 

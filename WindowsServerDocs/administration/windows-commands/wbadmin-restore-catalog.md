@@ -39,7 +39,7 @@ wbadmin restore catalog
 [-quiet]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -57,7 +57,7 @@ wbadmin restore catalog
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-若要從儲存在共用資料夾中的備份還原目錄 \\ @ no__t-1servername\share of server01，請輸入：
+若要從儲存在共用資料夾中的備份還原目錄 \\\\servername\share 的 server01，請輸入：
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```

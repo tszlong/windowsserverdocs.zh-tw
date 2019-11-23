@@ -32,11 +32,11 @@ ms.locfileid: "71362572"
 vol [<Drive>:]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|@no__t 0Drive >：|指定包含您要顯示其磁片區標籤和序號的磁片磁碟機。|
+|\<磁片磁碟機 >：|指定包含您要顯示其磁片區標籤和序號的磁片磁碟機。|
 |/?|在命令提示字元顯示說明。|
 
 #### <a name="additional-references"></a>其他參考資料

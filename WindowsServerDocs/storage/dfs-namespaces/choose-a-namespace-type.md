@@ -17,9 +17,9 @@ ms.locfileid: "71402193"
 ---
 # <a name="choose-a-namespace-type"></a>選擇命名空間類型
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-建立命名空間時，您必須選擇兩種命名空間其中一種：獨立命名空間或網域型命名空間。 此外，如果您選擇網域型命名空間，則必須選擇命名空間模式：Windows 2000 Server 模式或 Windows Server 2008 模式。
+建立命名空間時，您必須選擇兩種命名空間其中一種：獨立命名空間或網域型命名空間。 此外，如果您選擇網域型命名空間，則必須選擇命名空間模式： [Windows 2000 伺服器模式] 或 [Windows Server 2008 模式]。
 
 ## <a name="choosing-a-namespace-type"></a>選擇命名空間類型
 
@@ -59,17 +59,17 @@ ms.locfileid: "71402193"
 
 |特性|獨立命名空間|網域型命名空間 (Windows 2000 Server 模式) |網域型命名空間 (Windows Server 2008 模式) | 
 |---|---|---|---|
-|命名空間的路徑|\\ @ no__t-1*ServerName\RootName* |\\ @ no__t-1*NetBIOSDomainName\RootName* <br />\\ @ no__t-1*DNSDomainName\RootName*|\\ @ no__t-1*NetBIOSDomainName\RootName* <br /> \\ @ no__t-1*DNSDomainName\RootName*|
+|命名空間的路徑|\\\ *ServerName\RootName* |\\\ *NetBIOSDomainName\RootName* <br />\\\ *DNSDomainName\RootName*|\\\ *NetBIOSDomainName\RootName* <br /> \\\ *DNSDomainName\RootName*|
 |命名空間資訊儲存位置|在登錄以及命名空間伺服器的記憶體快取中|在 AD DS 以及每個命名空間伺服器的記憶體快取中|在 AD DS 以及每個命名空間伺服器的記憶體快取中|
 |命名空間大小建議|命名空間可以包含超過 5000 個含目標的資料夾。建議的限制是 50000 個含目標的資料夾|AD DS 中命名空間物件的大小應該低於 5 MB，以維持與未執行 Windows Server 2008 之網域控制站的相容性。 這表示不超過大約 5000 個含目標的資料夾。|命名空間可以包含超過 5000 個含目標的資料夾。建議的限制是 50000 個含目標的資料夾 |
 |最低 AD DS 樹系功能等級|不需要 AD DS|Windows 2000|Windows Server 2003|
 |最低 AD DS 網域功能等級|不需要 AD DS|Windows 2000 混合模式|Windows Server 2008|
 |最低支援的命名空間伺服器|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
-|支援存取型列舉 (若啟用)|是，需要 Windows Server 2008 命名空間伺服器|否|是|
+|支援存取型列舉 (若啟用)|是，需要 Windows Server 2008 命名空間伺服器|不可以|是|
 |確保命名空間可用性的支援方法|在容錯移轉叢集上建立獨立命名空間。|使用多個命名空間伺服器來裝載命名空間。 (命名空間伺服器必須位於相同的網域中)。|使用多個命名空間伺服器來裝載命名空間。 (命名空間伺服器必須位於相同的網域中)。|
 |支援使用 DFS 複寫來複寫資料夾目標|加入 AD DS 網域時支援|支援|支援|
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
 -   [將網域型命名空間移轉到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)

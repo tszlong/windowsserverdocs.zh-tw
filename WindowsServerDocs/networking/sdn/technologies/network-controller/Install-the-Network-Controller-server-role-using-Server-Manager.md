@@ -18,18 +18,18 @@ ms.locfileid: "71405840"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>使用伺服器管理員安裝網路控制卡伺服器角色
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題提供有關如何使用伺服器管理員安裝網路控制卡伺服器角色的指示。
 
 >[!IMPORTANT]
->請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在安裝于 Hyper-v 主機上的 Hyper-v 虛擬機器上安裝網路控制站伺服器角色 \(VM @ no__t-1。 在三個不同的超 no__t-0V 主機上的 Vm 上安裝了網路控制站之後，您必須使用 Windows PowerShell 將主機新增至網路控制站，以啟用軟體定義網路的超 @ no__t 1V 主機 \(SDN @ no__t-3命令**新增-NetworkControllerServer**。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。 如需詳細資訊，請參閱[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>請勿在實體主機上部署網路控制卡伺服器角色。 若要部署網路控制站，您必須在 hyper-v 虛擬機器上安裝網路控制站伺服器角色，\(安裝在 Hyper-v 主機上的 VM\)。 在三部不同的\-Hyper-v 主機上的 Vm 上安裝網路控制站之後，您必須使用 Windows PowerShell 命令**NetworkControllerServer**，將主機新增至網路控制站，以啟用軟體定義網路的超\-主機 \(SDN\)。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。 如需詳細資訊，請參閱[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
   
 安裝網路控制站之後，您必須使用 Windows PowerShell 命令來進行其他網路控制站設定。 如需詳細資訊，請參閱[使用 Windows PowerShell 部署網路控制](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)站。  
   
 ### <a name="to-install-network-controller"></a>安裝網路控制卡  
   
-1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按一下 [下一步]。  
+1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按一下 **\[下一步\]** 。  
   
 2.  在 [**選取安裝類型**] 中，保留預設設定，然後按 **[下一步]** 。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71405840"
   
 8.  在**網路控制**卡中按 **[下一步]** 。  
   
-9. 在 [**確認安裝選項**] 中，檢查您的選擇。 安裝網路控制卡時，需要您在執行嚮導之後重新開機電腦。 因此，按一下 **[必要時自動重新開機目的地伺服器**]。 [**新增角色及功能嚮導**] 對話方塊隨即開啟。 按一下 [ **是**]。  
+9. 在 [**確認安裝選項**] 中，檢查您的選擇。 安裝網路控制卡時，需要您在執行嚮導之後重新開機電腦。 因此，按一下 **[必要時自動重新開機目的地伺服器**]。 [**新增角色及功能嚮導**] 對話方塊隨即開啟。 按一下 [是]。  
   
     ![新增角色及功能精靈](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   
@@ -63,7 +63,7 @@ ms.locfileid: "71405840"
   
     ![伺服器管理員](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [網路控制卡](Network-Controller.md)  
   
 

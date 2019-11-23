@@ -21,9 +21,9 @@ ms.locfileid: "71404563"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>識別並解決「遠端存取」伺服器操作問題
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-**注意：** Windows Server 2012 將 DirectAccess 以及「路由及遠端存取服務」(RRAS) 合併成一個遠端存取角色。  
+**注意：** Windows Server 2012 將 DirectAccess 與「路由及遠端存取服務」(RRAS) 整合成一個遠端存取角色。  
   
 您可以使用下列程式來識別遠端存取服務器作業問題、其根本原因，以及解決問題所需的解決方法。  
   
@@ -91,7 +91,7 @@ IP 協助程式服務（IPHlpSvc）會裝載 IPv6 轉換技術（例如 IP-HTTPS
   
 2.  在**服務**清單中，向下並以滑鼠右鍵按一下 [ **IP Helper**]，然後按一下 [**啟動**]。  
   
-@no__t 0Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

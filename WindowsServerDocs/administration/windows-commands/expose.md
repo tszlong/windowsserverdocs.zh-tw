@@ -34,14 +34,14 @@ ms.locfileid: "71377284"
 expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
 |ShadowID|指定您要公開之陰影複製的陰影識別碼。|
-|\<Drive： >|將指定的陰影複製公開為磁碟機號（例如 P：）。|
-|\<Share >|在共用上公開指定的陰影複製（例如，\\ @ no__t-1*MachineName*\)。|
-|\<MountPoint >|將指定的陰影複製公開到掛接點（例如，C:\shadowcopy @ no__t-0。|
+|\<磁片磁碟機： >|將指定的陰影複製公開為磁碟機號（例如 P：）。|
+|\<共用 >|在共用上公開指定的陰影複製（例如，\\\\*MachineName*\)。|
+|\<掛接點 >|將指定的陰影複製公開到掛接點（例如，C:\shadowcopy\)。|
 
 ## <a name="remarks"></a>備註
 

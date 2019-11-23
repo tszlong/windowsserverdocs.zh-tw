@@ -38,7 +38,7 @@ ms.locfileid: "71408287"
 
   - 開啟 Windows PowerShell 並執行下列命令： `$fscredential = Get-Credential`。  
   - 輸入準備移轉 SQL Server 伺服器陣列時所記錄之服務帳戶的名稱和密碼。  
-  - 執行下列命令： `Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"`，其中 `Data Source` 是下列檔案中的原則存放區連接字串值中的資料來源值： `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`。  
+  - 執行下列命令： `Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"`，其中 `Data Source` 是下列檔案的原則存放區連接字串值中的資料來源值： `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`。  
   
 5. 將您剛升級至 Windows Server 2012 的伺服器新增至負載平衡器。  
   
@@ -47,9 +47,9 @@ ms.locfileid: "71408287"
 7. 當您 SQL Server 服務器陣列中的所有伺服器都升級至 Windows Server 2012 時，請還原任何剩餘的 AD FS 自訂專案，例如自訂屬性存放區。  
 
 ## <a name="next-steps"></a>後續步驟
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)
 

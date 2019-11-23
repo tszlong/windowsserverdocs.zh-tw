@@ -22,7 +22,7 @@ ms.locfileid: "71370206"
 ---
 # <a name="tftp"></a>tftp
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在執行簡單檔案傳輸通訊協定（tftp）服務或 daemon 的遠端電腦（通常是執行 UNIX 的電腦）之間傳輸檔案。 tftp 通常是由內嵌裝置或從 tftp 伺服器開機過程中抓取固件、設定資訊或系統映射的系統所使用。   
 
@@ -31,15 +31,15 @@ ms.locfileid: "71370206"
 tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]  
 ```  
 
-### <a name="parameters"></a>參數  
+### <a name="parameters"></a>Parameters  
 |參數|描述|  
 |-------|--------|  
 |-i|指定二進位影像傳輸模式（也稱為「八位模式」）。 在二進位影像模式中，檔案是以一個位元組的單位傳輸。 傳送二進位檔案時，請使用此模式。 如果省略 **-i** ，則會以 ASCII 模式傳送檔案。 這是預設的傳輸模式。 此模式會將指定電腦的行尾（EOL）字元轉換為適當的格式。 傳送文字檔時，請使用此模式。 如果檔案傳輸成功，則會顯示資料傳送速率。|  
-|\<Host @ no__t-1|指定本機或遠端電腦。|  
+|\<主機\>|指定本機或遠端電腦。|  
 |提出|將本機電腦上的檔案*來源*傳送到遠端電腦上的檔案*目的地*。 因為 tftp 通訊協定不支援使用者驗證，所以使用者必須登入遠端電腦，而且檔案必須可在遠端電腦上寫入。|  
 |取得|將遠端電腦上的檔案*目的地*傳送到本機電腦上的檔案*來源*。|  
-|\<Source\>|指定要傳送的檔案。|  
-|\<Destination @ no__t-1|指定要將檔案傳送到何處。|  
+|\<來源\>|指定要傳送的檔案。|  
+|\<目的地\>|指定要將檔案傳送到何處。|  
 
 ## <a name="remarks"></a>備註  
 -   您可以使用 [新增功能] [Wizard] 來安裝 tftp 用戶端。  

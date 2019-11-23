@@ -21,9 +21,9 @@ ms.locfileid: "71380580"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
 
-設定協助程式 [權杖](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)的使用方式旗標   與 BITS 傳送工作相關聯。
+設定與 BITS 傳送工作相關聯之 [helper token](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs) 的使用旗標。
 
-**BITS 3.0 和更早版本**： 未支援。
+**BITS 3.0 和更早版本**：不支援。
 
 ## <a name="syntax"></a>語法
 
@@ -31,12 +31,12 @@ ms.locfileid: "71380580"
 bitsadmin /SetHelperTokenFlags <Job> <Flags>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID。|
-|Flags|可能的值包括下列各項。 0x0001 @ no__t-0The helper token 可用來開啟上傳工作的本機檔案、建立或重新命名下載作業的暫存檔案，或建立或重新命名上傳-回復作業的回復檔案。 0x0002 @ no__t-0The helper token 可用來開啟伺服器訊息區（SMB）上傳或下載作業的遠端檔案，或回應 HTTP 伺服器或 proxy 挑戰的隱含 NTLM 或 Kerberos 認證。 您必須呼叫 @ no__t-0 @ no__t-1to 允許透過 HTTP 傳送認證。|
+|Flags|可能的值包括下列各項。 0x0001&mdash;協助程式權杖用來開啟上傳作業的本機檔案、建立或重新命名下載作業的暫存檔案，或建立或重新命名上傳-回復作業的回復檔案。 0x0002&mdash;協助程式權杖可用來開啟伺服器訊息區（SMB）上傳或下載作業的遠端檔案，或回應 HTTP 伺服器或 proxy 挑戰的隱含 NTLM 或 Kerberos 認證。 您必須呼叫 `/SetCredentialsJob TargetScheme NULL NULL` ，以允許透過 HTTP 傳送認證。|
 
 #### <a name="additional-references"></a>其他參考資料
 

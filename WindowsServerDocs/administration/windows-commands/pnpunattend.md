@@ -30,14 +30,14 @@ ms.locfileid: "71372266"
 PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
 |auditSystem|指定線上驅動程式安裝。</br>必要項，但使用 **/help**或 **/？** 來執行**pnpunattend**時除外 參數.|
-|/s|選擇性。 指定不安裝就搜尋驅動程式。|
-|/L|選擇性。 指定在命令提示字元中顯示此命令的記錄資訊。|
-|/?|選擇性。 在命令提示字元中顯示此命令的說明。|
+|/s|選用。 指定不安裝就搜尋驅動程式。|
+|/L|選用。 指定在命令提示字元中顯示此命令的記錄資訊。|
+|/?|選用。 在命令提示字元中顯示此命令的說明。|
 
 ## <a name="remarks"></a>備註
 
@@ -47,8 +47,8 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. 下載並解壓縮您裝置的驅動程式套件。 將包含您作業系統版本之 INF 檔案的子資料夾內容，以及您所建立之 [video] 資料夾的任何子資料夾複製到其中。 例如，將影片驅動程式檔案複製到 C:\Drivers\Video。
 3. 將系統內容路徑變數新增至您在步驟1中建立的資料夾。例如， **C:\Drivers\Video**。
 4. 建立下列登錄機碼，然後針對您建立的**DriverPaths**金鑰，將**值資料**設定為**1**。
-5. 若為 Windows®7，請流覽登錄路徑：**HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**，然後建立金鑰：**UnattendSettings\PnPUnattend\DriverPaths @ no__t-1**
-6. 針對 Windows Vista，流覽至登錄路徑：**HK_LM\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**，然後建立 keys = **\UnattendSettings\PnPUnattend\DriverPaths**。
+5. 若為 Windows®7，請流覽登錄路徑： **HKEY_LOCAL_Machine \Software\microsoft\windows server\ NT\CurrentVersion\\** ，然後建立金鑰： **UnattendSettings\PnPUnattend\DriverPaths\\**
+6. 針對 Windows Vista，流覽至登錄路徑： **HK_LM \Software\microsoft\windows server\ NT\CurrentVersion\\** ，然後建立金鑰 = **\UnattendSettings\PnPUnattend\DriverPaths**。
 
 ## <a name="examples"></a>範例
 

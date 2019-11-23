@@ -17,11 +17,11 @@ ms.locfileid: "71366866"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>設定和檢視 Hyper-V 虛擬交換器連接埠上的 VLAN 設定
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解在 Hyper-v 虛擬交換器埠上設定和查看虛擬區域網路（VLAN）設定的最佳作法。
 
-當您想要在 Hyper-v 虛擬交換器埠上設定 VLAN 設定時，您可以使用 Windows @ no__t-0 Server 2016 Hyper-v 管理員或 System Center Virtual Machine Manager （VMM）。
+當您想要在 Hyper-v 虛擬交換器埠上設定 VLAN 設定時，您可以使用 Windows&reg; Server 2016 Hyper-v 管理員或 System Center Virtual Machine Manager （VMM）。
 
 如果您使用 VMM，VMM 會使用下列 Windows PowerShell 命令來設定交換器埠。
 
@@ -48,8 +48,8 @@ Set-VMNetworkAdapterVlan <VM-name|-managementOS> -Access -VlanID <vlan-value>
 
 如果您未遵循這些指導方針，您可能會遇到下列問題。
 
-- 在您已部署 SDN 並使用 VMM、網路控制站或**VMNetworkAdapterIsolation** Cmdlet 來設定 Hyper-v 虛擬交換器埠上的 VLAN 設定的情況下：如果您使用 Hyper-v 管理員或**Get set-vmnetworkadaptervlan**來查看設定，命令輸出將不會顯示您的 VLAN 設定。 相反地，您必須使用**VMNetworkIsolation** Cmdlet 來查看 VLAN 設定。
-- 在您未部署 SDN 的情況下，而是使用 Hyper-v 管理員或**set-vmnetworkadaptervlan** Cmdlet 來設定 Hyper-v 虛擬交換器埠上的 VLAN 設定：如果您使用**VMNetworkIsolation** Cmdlet 來查看設定，命令輸出將不會顯示您的 VLAN 設定。 相反地，您必須使用**Get set-vmnetworkadaptervlan** Cmdlet 來查看 VLAN 設定。
+- 在您已部署 SDN 並使用 VMM、網路控制站或**VMNetworkAdapterIsolation** Cmdlet 來設定 Hyper-v 虛擬交換器埠上的 VLAN 設定的情況下：如果您使用 hyper-v 管理員或**取得 set-vmnetworkadaptervlan**來查看設定，命令輸出將不會顯示您的 VLAN 設定。 相反地，您必須使用**VMNetworkIsolation** Cmdlet 來查看 VLAN 設定。
+- 如果您未部署 SDN，而改為使用 Hyper-v 管理員或**set-vmnetworkadaptervlan** Cmdlet 來設定 Hyper-v 虛擬交換器埠上的 VLAN 設定：如果您使用**VMNetworkIsolation** Cmdlet 來查看設定，命令輸出將不會顯示您的 VLAN 設定。 相反地，您必須使用**Get set-vmnetworkadaptervlan** Cmdlet 來查看 VLAN 設定。
 
 也請務必不要嘗試使用這兩種設定方法來設定相同的交換器埠 VLAN 設定。 如果您這樣做，交換器埠的設定不正確，且結果可能是網路通訊失敗。
 

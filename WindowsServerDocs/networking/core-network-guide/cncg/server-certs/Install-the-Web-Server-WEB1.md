@@ -17,7 +17,7 @@ ms.locfileid: "71356215"
 ---
 # <a name="install-the-web-server-web1"></a>安裝網頁伺服器 WEB1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管理、模組化且可擴充的平臺，讓您能夠可靠地裝載網站、服務和應用程式。 使用 IIS 時，您可以與網際網路、內部網路或外部網路上的使用者共用資訊。 IIS 是整合 IIS、ASP.NET、FTP 服務、PHP 和 Windows Communication Foundation （WCF）的統一 web 平臺。  
 

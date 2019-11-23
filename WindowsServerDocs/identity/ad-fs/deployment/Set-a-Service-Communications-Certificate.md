@@ -19,24 +19,24 @@ ms.locfileid: "71408322"
 # <a name="set-a-service-communications-certificate"></a>設定服務通訊憑證
 
 
-Active Directory 同盟服務中的同盟伺服器 \(AD FS @ no__t-1 使用服務通訊憑證來保護 Web 服務流量，以進行安全通訊端層 \(SSL @ no__t-3 與 Web 用戶端或同盟伺服器的通訊proxy.
+Active Directory 同盟服務 \(AD FS 中的同盟伺服器\) 使用服務通訊憑證來保護 Web 服務流量，以進行安全通訊端層 \(SSL\) 與 Web 用戶端通訊，或與同盟伺服器 proxy 進行通訊。
 
 > [!NOTE]  
 > 服務通訊憑證與 SSL 憑證不同。 若要變更 AD FS SSL 憑證，您必須使用 Powershell。 請遵循這[篇文章](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap)中的指導方針。
 
 
-您可以使用下列程式，利用 AD FS Management snap @ no__t-0in 來變更服務通訊憑證。  
+您可以使用下列程式，透過中的 [AD FS 管理] 嵌入式\-管理單元來變更服務通訊憑證。  
 
 > [!NOTE]  
-> AD FS Management snap @ no__t-0in 指的是同盟伺服器的伺服器驗證憑證，做為服務通訊憑證。  
+> 中的 [AD FS 管理] 嵌入式\-管理單元是指做為服務通訊憑證之同盟伺服器的伺服器驗證憑證。  
 
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477) \(HTTP：\/ \/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
+若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)\(HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
 
 ### <a name="to-set-a-service-communications-certificate"></a>設定服務通訊憑證  
 
 1.  在 **開始** 畫面上，輸入**AD FS 管理**，然後按 enter。  
 
-2.  在主控台樹中，按兩下 @ no__t-0click **Service**，然後按一下 [**憑證**]。  
+2.  在主控台樹中，\-按一下 [**服務**]，然後按一下 [**憑證**]。  
 
 3.  在 [**動作**] 窗格中，按一下 [**設定服務通訊憑證**] 連結。  
 

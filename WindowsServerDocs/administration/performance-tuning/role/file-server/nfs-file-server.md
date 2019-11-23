@@ -33,7 +33,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>調整 NFS 檔案伺服器的參數
 
-下列 REG @ no__t-0DWORD 登錄設定可能會影響 NFS 檔案伺服器的效能：
+下列 REG\_DWORD 登錄設定可能會影響 NFS 檔案伺服器的效能：
 
 -   **OptimalReads**
 
@@ -41,7 +41,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    預設值為 0。 這個參數會決定檔案 @ no__t-0RANDOM @ no__t-1ACCESS 或 FILE @ no__t-2SEQUENTIAL @ no__t-3ONLY 的檔案是否開啟，視工作負載 i/o 特性而定。 將此值設定為1，以強制開啟檔案 @ no__t-0RANDOM @ no__t-1ACCESS 的檔案。 FILE @ no__t-0RANDOM @ no__t-1ACCESS 會防止檔案系統和快取管理員進行預先提取。
+    預設值為 0。 此參數會決定是否要針對檔案\_隨機\_存取，或僅根據工作負載 i/o 特性，針對檔案\_順序\_來開啟檔案。 將此值設定為1，以強制開啟檔案\_隨機\_存取。 FILE\_RANDOM\_ACCESS 會防止檔案系統和快取管理員進行預先提取。
 
     >[!NOTE]
     > 必須仔細評估這種設定，因為它可能會對系統檔案快取成長造成潛在的影響。
@@ -53,7 +53,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrHandleLifeTime
     ```
 
-    預設值為 5。 這個參數會控制檔案控制代碼快取中 NFS 快取專案的存留期。 參數會參考具有相關聯之開啟 NTFS 檔案控制代碼的快取專案。 實際存留期大約等於 RdWrHandleLifeTime 乘以 RdWrThreadSleepTime。 最小值為1，最大值為60。
+    預設值是 5。 這個參數會控制檔案控制代碼快取中 NFS 快取專案的存留期。 參數會參考具有相關聯之開啟 NTFS 檔案控制代碼的快取專案。 實際存留期大約等於 RdWrHandleLifeTime 乘以 RdWrThreadSleepTime。 最小值為1，最大值為60。
 
 -   **RdWrNfsHandleLifeTime**
 
@@ -61,7 +61,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsHandleLifeTime
     ```
 
-    預設值為 5。 這個參數會控制檔案控制代碼快取中 NFS 快取專案的存留期。 參數會參考沒有相關聯之開啟的 NTFS 檔案控制代碼的快取專案。 Services for NFS 會使用這些快取專案來儲存檔案的檔案屬性，而不需要在檔案系統中保留開啟的控制碼。 實際存留期大約等於 RdWrNfsHandleLifeTime 乘以 RdWrThreadSleepTime。 最小值為1，最大值為60。
+    預設值是 5。 這個參數會控制檔案控制代碼快取中 NFS 快取專案的存留期。 參數會參考沒有相關聯之開啟的 NTFS 檔案控制代碼的快取專案。 Services for NFS 會使用這些快取專案來儲存檔案的檔案屬性，而不需要在檔案系統中保留開啟的控制碼。 實際存留期大約等於 RdWrNfsHandleLifeTime 乘以 RdWrThreadSleepTime。 最小值為1，最大值為60。
 
 -   **RdWrNfsReadHandlesLifeTime**
 
@@ -69,7 +69,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsReadHandlesLifeTime
     ```
 
-    預設值為 5。 這個參數會控制檔案控制代碼快取中 NFS 讀取快取專案的存留期。 實際存留期大約等於 RdWrNfsReadHandlesLifeTime 乘以 RdWrThreadSleepTime。 最小值為1，最大值為60。
+    預設值是 5。 這個參數會控制檔案控制代碼快取中 NFS 讀取快取專案的存留期。 實際存留期大約等於 RdWrNfsReadHandlesLifeTime 乘以 RdWrThreadSleepTime。 最小值為1，最大值為60。
 
 -   **RdWrThreadSleepTime**
 
@@ -77,7 +77,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrThreadSleepTime
     ```
 
-    預設值為 5。 這個參數會控制在檔案控制代碼快取上執行清除執行緒之前的等待間隔。 值是以刻度為單位，且不具決定性。 滴答相當於大約100毫微秒。 最小值為1，最大值為60。
+    預設值是 5。 這個參數會控制在檔案控制代碼快取上執行清除執行緒之前的等待間隔。 值是以刻度為單位，且不具決定性。 滴答相當於大約100毫微秒。 最小值為1，最大值為60。
 
 -   **FileHandleCacheSizeinMB**
 
@@ -85,7 +85,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    預設值是 4。 這個參數會指定檔案控制代碼快取專案所使用的最大記憶體。 最小值為1，最大值為 1 @ no__t-01024 @ no__t-11024 @ no__t-21024 （1073741824）。
+    預設值是 4。 這個參數會指定檔案控制代碼快取專案所使用的最大記憶體。 最小值為1，最大值為 1\*1024\*1024\*1024 （1073741824）。
 
 -   **LockFileHandleCacheInMemory**
 

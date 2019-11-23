@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405217"
 ---
 # <a name="windows-time-for-traceability"></a>追蹤的 Windows 時間
->適用於：Windows Server 2016 1709 版或更新版本，以及 Windows 10 1703 或更新版本
+>適用于： Windows Server 2016 1709 版或更新版本，以及 Windows 10 1703 或更新版本
 
 
 許多磁區中的法規都需要系統能夠追蹤到 UTC。  這表示系統的位移可以與 UTC 相對證明。  若要啟用法規遵循案例，Windows 10 （1703版或更高版本）和 Windows Server 2016 （1709版或更高版本）提供新的事件記錄檔，以從作業系統的角度提供一張圖片，以構成對所採取之動作的瞭解系統時鐘。  這些事件記錄檔會持續針對 Windows 時間服務產生，並可加以檢查或封存以供日後分析。
@@ -32,7 +32,7 @@ ms.locfileid: "71405217"
 
 這些改良功能包含在 Windows 10 1703 版或更高版本，以及 Windows Server 2016 1709 或更高版本中。
 
-## <a name="configuration"></a>組態
+## <a name="configuration"></a>設定
 
 不需要進行任何設定，就能實現這項功能。  這些事件記錄檔預設會啟用，而且可以在 [**應用程式和服務 Log\Microsoft\Windows\Time-Service\Operational** ] 通道下的 [事件檢視器] 中找到。
 
@@ -51,7 +51,7 @@ ms.locfileid: "71405217"
 |記錄的資料 |<ul><li>目前時間（UTC）</li><li>目前的滴答計數</li><li>W32Time 設定</li><li>時間提供者設定</li><li>頻率</li></ul> |
 |節流機制  |無。 每次服務啟動時，就會引發這個事件。 |
 
-**範例:**
+**範例：**
 ```
 W32time service has started at 2018-02-27T04:25:17.156Z (UTC), System Tick Count 3132937.
 ```

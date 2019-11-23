@@ -18,18 +18,18 @@ ms.locfileid: "71407945"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>在帳戶夥伴中準備用戶端電腦
 
-若要讓帳戶夥伴組織中的系統管理員準備用戶端電腦以存取 Active Directory 同盟服務 @no__t 0AD FS @ no__t-1 同盟應用程式，最簡單的方式就是使用群組原則。 群組原則提供便利的方式，讓您將同盟所需的特定憑證和設定，推入到將用來存取同盟應用程式的所有用戶端電腦。  
+讓帳戶夥伴組織中的系統管理員準備用戶端電腦以存取 Active Directory 同盟服務 \(AD FS\) 同盟應用程式的最簡單方式，就是使用群組原則。 群組原則提供便利的方式，讓您將同盟所需的特定憑證和設定，推入到將用來存取同盟應用程式的所有用戶端電腦。  
   
 如此一來，您的用戶端電腦就可以順暢地存取同盟應用程式，而不需要憑證提示或信任的網站相關提示，建議您先準備每部用戶端電腦，然後才在組織中廣泛部署 AD FS。 請考慮使用群組原則來自動進行：  
   
 -   在每部用戶端電腦上設定 Internet Explorer，以信任帳戶同盟伺服器。  
   
-    如需詳細資訊，請參閱 [設定用戶端電腦信任帳戶同盟伺服器](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)。  
+    如需詳細資訊，請參閱 [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)。  
   
--   安裝適當的帳戶同盟伺服器、資源同盟伺服器和 Web 服務器安全通訊端層 @no__t 0SSL @ no__t-1 憑證 \(or 對應至每部用戶端電腦上受根信任 @ no__t-3 的對等憑證。  
+-   安裝適當的帳戶同盟伺服器、資源同盟伺服器和 Web 服務器安全通訊端層 \(SSL\) 憑證 \(或與每部用戶端電腦上受信任的根\) 鏈連結的對等憑證。  
   
     如需詳細資訊，請參閱[使用群組原則將憑證散發到用戶端電腦](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md)。  
   
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

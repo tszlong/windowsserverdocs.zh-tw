@@ -16,12 +16,12 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71367843"
 ---
-# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附錄 D：在 Active Directory 中保護內建的系統管理員帳戶
+# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附錄 D︰保護 Active Directory 中的內建的 Administrator 帳戶
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附錄 D：在 Active Directory 中保護內建的系統管理員帳戶  
+## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附錄 D︰保護 Active Directory 中的內建的 Administrator 帳戶  
 在 Active Directory 中的每個網域中，系統會在建立網域的過程中建立系統管理員帳戶。 此帳戶預設為網域中 Domain Admins 和 Administrators 群組的成員，如果網域是樹系根域，則此帳戶也是 Enterprise Admins 群組的成員。
 
 使用網域的系統管理員帳戶應僅保留給初始組建活動，以及可能發生的嚴重損壞修復案例。 若要確保在沒有其他帳戶可使用的情況下，可以使用系統管理員帳戶來影響修復，您不應該變更樹系中任何網域中系統管理員帳戶的預設成員資格。 相反地，您應該保護樹系中每個網域的系統管理員帳戶，如下一節所述，並在後續的逐步指示中詳述。 
@@ -39,7 +39,7 @@ ms.locfileid: "71367843"
 
 -   設定 Gpo 來限制系統管理員帳戶在已加入網域的系統上的使用：  
 
-    -   在您建立的一或多個 Gpo 中，並連結到每個網域中的工作站和成員伺服器 Ou，請將每個網域的系統管理員帳戶新增至電腦設定 \ \windows 的 [設為] \ [**本機原則] \使用者權限指派**：  
+    -   在您建立的一或多個 Gpo 中，並連結到每個網域中的工作站和成員伺服器 Ou，請將每個網域的系統管理員帳戶新增至**電腦設定 \ \windows 設定 \ 使用者權限 \ 使用授權指派**中的下列使用者權利：  
 
         -   拒絕從網路存取這台電腦  
 
@@ -58,7 +58,7 @@ ms.locfileid: "71367843"
 ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)  
 
 -   設定 Gpo 來限制網域控制站上的系統管理員帳戶  
-    -   在樹系中的每個網域中，應修改預設網域控制站 GPO 或連結至網域控制站 OU 的原則，以將每個網域的系統管理員帳戶新增至 [**電腦設定 \ \windows 設定] 中的下列使用者權限安全性設定 \ 本機原則 \ 許可權指派**：   
+    -   在樹系中的每個網域中，應修改預設網域控制站 GPO 或連結至網域控制站 OU 的原則，以將每個網域的系統管理員帳戶新增至**電腦設定 \ \windows 設定 \ 使用者權限 \ 許可權指派**中的下列使用者權利：   
         -   拒絕從網路存取這台電腦  
 
         -   拒絕以批次工作登入  
@@ -105,7 +105,7 @@ ms.locfileid: "71367843"
 
 1.  在**伺服器管理員**中，按一下 [**工具**]，然後按一下 [**群組原則管理**]。  
 
-2.  在主控台樹中，展開 [<Forest> \ 網域 @ no__t-1 @ no__t-2]，然後**群組原則物件**（其中 <Forest> 是樹系的名稱，而 <Domain> 是您想要建立群組原則之網域的名稱）。  
+2.  在主控台樹中，展開 <Forest>\Domains\\<Domain>，然後**群組原則物件** （其中 <Forest> 是樹系的名稱，而 <Domain> 是您想要建立群組原則的網功能變數名稱稱）。  
 
 3.  在主控台樹中，以滑鼠右鍵按一下 [**群組原則物件**]，然後按一下 [**新增**]。  
 
@@ -115,7 +115,7 @@ ms.locfileid: "71367843"
 
     ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)  
 
-5.  在詳細資料窗格中，以滑鼠右鍵按一下 [<GPO Name>]，然後按一下 [**編輯**]。  
+5.  在詳細資料窗格中，以滑鼠右鍵按一下 <GPO Name>，然後按一下 [**編輯**]。  
 
 6.  流覽至 [**電腦設定 \ \windows] [設置 \ 本機原則**]，然後按一下 [**使用者權限指派**]。  
 
@@ -127,7 +127,7 @@ ms.locfileid: "71367843"
 
     2.  按一下 [**新增使用者或群組**]，然後按一下 **[流覽]** 。  
 
-    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶如下列螢幕擷取畫面所示，以 <DomainName> \ 使用者名稱格式顯示。  
+    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶以 <DomainName>\Username 格式顯示，如下列螢幕擷取畫面所示。  
 
         ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)  
 
@@ -139,7 +139,7 @@ ms.locfileid: "71367843"
 
     2.  按一下 [**新增使用者或群組**]，然後按一下 **[流覽]** 。  
 
-    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶如下列螢幕擷取畫面所示，以 <DomainName> \ 使用者名稱格式顯示。  
+    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶以 <DomainName>\Username 格式顯示，如下列螢幕擷取畫面所示。  
 
         ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)  
 
@@ -151,7 +151,7 @@ ms.locfileid: "71367843"
 
     2.  按一下 [**新增使用者或群組**]，然後按一下 **[流覽]** 。  
 
-    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶如下列螢幕擷取畫面所示，以 <DomainName> \ 使用者名稱格式顯示。  
+    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶以 <DomainName>\Username 格式顯示，如下列螢幕擷取畫面所示。  
 
         ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)  
 
@@ -163,7 +163,7 @@ ms.locfileid: "71367843"
 
     2.  按一下 [**新增使用者或群組**]，然後按一下 **[流覽]** 。  
 
-    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶如下列螢幕擷取畫面所示，以 <DomainName> \ 使用者名稱格式顯示。  
+    3.  輸入**系統管理員**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。 確認帳戶以 <DomainName>\Username 格式顯示，如下列螢幕擷取畫面所示。  
 
         ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)  
 
@@ -173,7 +173,7 @@ ms.locfileid: "71367843"
 
 12. 在**群組原則管理** 中，執行下列動作，將 GPO 連結到成員伺服器和工作站 ou：  
 
-    1.  流覽至 [<Forest> \ 網域 @ no__t-1 @ no__t-2] （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
+    1.  流覽至 [<Forest>\Domains]\\<Domain> （其中 <Forest> 是樹系的名稱，而 [<Domain>] 是您要設定群組原則之網域的名稱）。  
 
     2.  以滑鼠右鍵按一下要套用 GPO 的 OU，然後按一下 [**連結到現有的 gpo**]。  
 
@@ -218,7 +218,7 @@ ms.locfileid: "71367843"
 
     ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)  
 
-5.  在 [**命令提示**字元] 視窗中，輸入**net use \\ @ no__t-3 @ No__t-4Server name @ no__t-5\c $** ，其中 \<Server name @ no__t-7 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
+5.  在 [**命令提示**字元] 視窗中，輸入**net use \\\\\<伺服器名稱\>\c $** ，其中 \<伺服器名稱\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
 
 6.  下列螢幕擷取畫面顯示應該顯示的錯誤訊息。  
 
@@ -238,7 +238,7 @@ ms.locfileid: "71367843"
 
 4.  按一下 [檔案] **，然後按一下**[**另存**新檔]。  
 
-5.  在 [**檔案名**] 欄位中，輸入 **<Filename>** （其中 <Filename> 是新批次檔的名稱）。  
+5.  在 [**檔案名**] 欄位中，輸入 **<Filename>.bat** （其中 <Filename> 是新批次檔的名稱）。  
 
 ###### <a name="schedule-a-task"></a>排程工作  
 
@@ -259,7 +259,7 @@ ms.locfileid: "71367843"
 
 7.  在 [**程式/腳本：** ] 底下，按一下 **[流覽]** ，找出並選取 [建立批次檔] 區段中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 [確定]。  
+8.  按一下 **\[確定\]** 。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -269,7 +269,7 @@ ms.locfileid: "71367843"
 
 12. 選取 **[執行] 表示使用者是否登入**，而且不會**儲存密碼**。 此工作只會存取本機電腦資源。  
 
-13. 按一下 [確定]。  
+13. 按一下 **\[確定\]** 。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

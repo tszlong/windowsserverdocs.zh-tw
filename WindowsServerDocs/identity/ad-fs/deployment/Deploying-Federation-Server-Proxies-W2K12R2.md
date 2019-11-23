@@ -18,7 +18,7 @@ ms.locfileid: "71359682"
 ---
 # <a name="deploying-federation-server-proxies"></a>部署同盟伺服器 Proxy
 
-在 Active Directory 同盟服務 @no__t-Windows Server 2012 R2 中的 0AD FS @ no__t-1 中，同盟伺服器 proxy 的角色是由新的遠端存取角色服務（稱為 Web 應用程式 Proxy）所處理。 若要讓您的 AD FS 可從公司網路外部存取（這是在舊版 AD FS 中部署同盟伺服器 proxy 的目的，例如 Windows Server 2012 中的 AD FS 2.0 和 AD FS，您可以部署一或多個 web 應用程式 proxyWindows Server 2012 R2 中的 D FS。  
+在 Windows Server 2012 R2 中的 Active Directory 同盟服務 \(AD FS\) 中，同盟伺服器 proxy 的角色是由新的遠端存取角色服務（稱為 Web 應用程式 Proxy）所處理。 若要讓您的 AD FS 可從公司網路外部存取（這是在舊版 AD FS 中部署同盟伺服器 proxy 的目的，例如 Windows Server 2012 中的 AD FS 2.0 和 AD FS，您可以部署一或多個 web 應用程式 proxyWindows Server 2012 R2 中的 D FS。  
   
 在 AD FS 的內容中，Web 應用程式 Proxy 會當做 AD FS 的同盟伺服器 proxy。 此外，Web 應用程式 Proxy 為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以讓任何裝置上的使用者能從公司網路外部存取這些應用程式。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱 Web 應用程式 Proxy 概觀。  
   
@@ -35,7 +35,7 @@ ms.locfileid: "71359682"
 -   [安裝和設定 Web 應用程式 Proxy 伺服器](https://technet.microsoft.com/library/dn383662.aspx)  
   
  
-## <a name="see-also"></a>另請參閱 
+## <a name="see-also"></a>請參閱 
 
 [AD FS 部署](../../ad-fs/AD-FS-Deployment.md)  
 

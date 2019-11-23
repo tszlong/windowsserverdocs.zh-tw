@@ -16,7 +16,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71407473"
 ---
-# <a name="walkthrough-workplace-join-to-an-android-device"></a>逐步解說：Workplace Join 至 Android 裝置
+# <a name="walkthrough-workplace-join-to-an-android-device"></a>逐步解說： Workplace Join 至 Android 裝置
 
 
 
@@ -29,8 +29,8 @@ ms.locfileid: "71407473"
 
 1.  您將需要在您的裝置上安裝 Azure 驗證器應用程式，以建立可將您的裝置加入工作地點聯結的公司帳戶。 下列 URL 提供如何在 Android 裝置上安裝 Azure 驗證器應用程式並新增工作帳戶的指示。 工作帳戶會讓您的 Android 裝置進入受信任的裝置，並提供單一登入（SSO）給裝置上的應用程式。 您可以使用受信任的裝置，依您的 IT 系統管理員的建議來存取 web 應用程式和現代化的企業營運應用程式。 如需詳細資訊，請參閱[適用于 Android 的 Azure 驗證](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to)器。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [從任何裝置加入工作場所以進行 SSO，並在公司應用程式之間進行無縫第二因素驗證](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-[使用 Azure Active Directory 裝置註冊服務設定內部部署條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
+[設定使用 Azure Active Directory 裝置註冊服務的內部部署條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
 
 

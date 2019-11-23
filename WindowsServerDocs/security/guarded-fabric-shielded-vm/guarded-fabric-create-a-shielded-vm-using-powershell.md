@@ -16,7 +16,7 @@ ms.locfileid: "71940748"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>使用 PowerShell 建立受防護的 VM
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 在生產環境中，您通常會使用網狀架構管理員（例如 VMM）來部署受防護的 Vm。 不過，下面所述的步驟可讓您在不使用網狀架構管理員的情況下，部署及驗證整個案例。
 
@@ -42,7 +42,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 針對您想要執行受防護 VM 的每個虛擬化網狀架構，您必須取得網狀架構的 HGS 叢集的守護者中繼資料。
 您的主機服務提供者應該能夠為您提供這種資訊。
 
-如果您在企業環境中，而且可以與 HGS 伺服器通訊，則守護者中繼資料可在*HTTP://\<HGSCLUSTERNAME @ no__t-2/KeyProtection/service/metadata/2014-07/metadata .xml 取得。*
+如果您在企業環境中，而且可以與 HGS 伺服器通訊，則會在*HTTP://\<HGSCLUSTERNAME\>/KeyProtection/service/metadata/2014-07/metadata.xml*提供者中繼資料。
 
 ## <a name="create-shielding-data-pdk-file"></a>建立防護資料（PDK）檔案
 
@@ -80,7 +80,7 @@ New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-您也可以在另一部具有網際網路存取的電腦上下載模組，並將產生的模組複製到受防護主機上的 `C:\Program Files\WindowsPowerShell\Modules`。
+您也可以在另一部具有網際網路存取的電腦上下載模組，然後將產生的模組複製到受防護主機上的 `C:\Program Files\WindowsPowerShell\Modules`。
 
 ```powershell
 Save-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0 -Path C:\temp\
@@ -111,7 +111,7 @@ New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vh
 New-ShieldedVM -Name 'MyLinuxVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait -Linux
 ```
 
-請使用 `Get-Help New-ShieldedVM -Full` 來檢查說明內容，以深入瞭解您可以傳遞給 Cmdlet 的其他選項。
+請使用 `Get-Help New-ShieldedVM -Full` 檢查說明內容，以深入瞭解您可以傳遞給 Cmdlet 的其他選項。
 
 一旦 VM 完成布建，它會進入 OS 特定的特製化階段，之後就可以開始使用。
 請務必將 VM 連線到有效的網路，如此一來，您就可以在執行（使用 RDP、PowerShell、SSH 或您偏好的管理工具）時連線到該虛擬機器。

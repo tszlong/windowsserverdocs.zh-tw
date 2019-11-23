@@ -25,7 +25,7 @@ ms.locfileid: "71407754"
 
 2.  AD FS 根據轉送至用戶端 AD FS 的資訊建立宣告，做為 HTTP 標頭  
 
->**重要**事項:如下所述的原則將會封鎖 Windows 10 網域加入和登入需要存取下列其他端點的案例
+>**重要**事項：如下所述的原則將會封鎖 Windows 10 網域加入和登入需要存取下列其他端點的案例
 
 Windows 10 網域加入和登入所需的 AD FS 端點
 - [federation service 名稱]/adfs/services/trust/2005/windowstransport
@@ -35,7 +35,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 - [federation service 名稱]/adfs/services/trust/2005/certificatemixed
 - [federation service 名稱]/adfs/services/trust/13/certificatemixed
 
->**重要**事項：/adfs/services/trust/2005/windowstransport 和/adfs/services/trust/13/windowstransport 端點應僅啟用內部網路存取，因為它們的目的是在 HTTPS 上使用 WIA 系結的內部網路面向端點。 將它們公開到外部網路, 可能會允許對這些端點的要求略過鎖定保護。 這些端點應該停用在 proxy 上（也就是從外部網路停用），以保護 AD 帳戶鎖定。 
+>**重要**事項：/adfs/services/trust/2005/windowstransport 和/adfs/services/trust/13/windowstransport 端點應僅啟用內部網路存取，因為它們的目的是在 HTTPS 上使用 WIA 系結的內部網路面向端點。 將它們公開到外部網路，可能會允許對這些端點的要求略過鎖定保護。 這些端點應該停用在 proxy 上（也就是從外部網路停用），以保護 AD 帳戶鎖定。 
 
 若要解決此問題，請更新根據端點宣告拒絕的任何原則，以允許上述端點發生例外狀況。
 
@@ -58,9 +58,9 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 |**案例**|**描述**| 
 | --- | --- | 
-|案例 1：封鎖所有對 Office 365 的外部存取|您可以從內部公司網路上的所有用戶端存取 Office 365，但來自外部用戶端的要求會根據外部用戶端的 IP 位址而遭到拒絕。|  
-|案例 2：封鎖除了 Exchange ActiveSync 以外的所有 Office 365 外部存取|您可以從內部公司網路上的所有用戶端，以及使用 Exchange ActiveSync 的任何外部用戶端裝置（例如智慧型手機）來存取 Office 365。 所有其他外部用戶端（例如使用 Outlook 的其他）都會遭到封鎖。|  
-|案例 3：封鎖以瀏覽器為基礎的應用程式以外的所有 Office 365 外部存取|封鎖對 Office 365 的外部存取，但被動（以瀏覽器為基礎）的應用程式（例如 Outlook Web 存取或 SharePoint Online）除外。|  
+|案例1：封鎖所有對 Office 365 的外部存取|您可以從內部公司網路上的所有用戶端存取 Office 365，但來自外部用戶端的要求會根據外部用戶端的 IP 位址而遭到拒絕。|  
+|案例2：封鎖 Exchange ActiveSync 以外的所有 Office 365 外部存取|您可以從內部公司網路上的所有用戶端，以及使用 Exchange ActiveSync 的任何外部用戶端裝置（例如智慧型手機）來存取 Office 365。 所有其他外部用戶端（例如使用 Outlook 的其他）都會遭到封鎖。|  
+|案例3：封鎖以瀏覽器為基礎的應用程式以外的所有 Office 365 外部存取|封鎖對 Office 365 的外部存取，但被動（以瀏覽器為基礎）的應用程式（例如 Outlook Web 存取或 SharePoint Online）除外。|  
 |案例4：除了指定的 Active Directory 群組以外，封鎖所有對 Office 365 的外部存取|此案例是用來測試和驗證用戶端存取原則部署。 它只會封鎖一或多個 Active Directory 群組的成員對 Office 365 的外部存取。 它也可以用來提供僅限群組成員的外部存取權。|  
 
 ## <a name="enabling-client-access-policy"></a>啟用用戶端存取原則  
@@ -87,9 +87,9 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 7.  若要儲存新規則，請在 [**編輯宣告規則**] 對話方塊中按一下 **[確定]** 。 產生的清單看起來應該如下所示。  
 
-     ![發佈驗證規則](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
+     ![發行驗證規則](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
 
-###  <a name="scenario2"></a>案例2：封鎖除了 Exchange ActiveSync 以外的所有 Office 365 外部存取  
+###  <a name="scenario2"></a>案例2：封鎖 Exchange ActiveSync 以外的所有 Office 365 外部存取  
  下列範例可讓您從內部用戶端（包括 Outlook）存取所有的 Office 365 應用程式，包括 Exchange Online。 除了 Exchange ActiveSync 用戶端（例如智慧型手機）之外，它還會封鎖位於公司網路外部的用戶端存取（如用戶端 IP 位址所示）。  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-exchange-activesync"></a>建立規則以封鎖 Exchange ActiveSync 以外的所有 Office 365 外部存取  
@@ -181,7 +181,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
     ![發佈](media/Access-Control-Policies-W2K12/clientaccess3.png)  
 
 ###  <a name="scenario4"></a>案例4：除了指定的 Active Directory 群組以外，封鎖所有對 Office 365 的外部存取  
- 下列範例會根據 IP 位址啟用內部用戶端的存取。 它會封鎖來自公司網路外部用戶端 IP 位址的用戶端存取權，但指定的 Active Directory 群組中的人員除外。請使用下列步驟，將正確的發佈授權規則新增至使用宣告規則嚮導 Microsoft Office 365 身分識別平臺信賴憑證者信任：  
+ 下列範例會根據 IP 位址啟用內部用戶端的存取。 它會封鎖來自公司網路外部用戶端 IP 位址的用戶端存取權，但指定的 Active Directory 群組中的人員除外。使用下列步驟，將正確的發佈授權規則新增至**Microsoft Office 365 身分識別平臺**信賴憑證者信任，並使用 [宣告規則] 嚮導：  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a>建立規則以封鎖所有外部存取 Office 365，但指定的 Active Directory 群組除外  
 
@@ -240,7 +240,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 > - 公司網路上用戶端的 IP 位址將會顯示為組織的輸出 proxy 或閘道的外部介面 IP 位址。  
 >   -   透過 VPN 或 Microsoft DirectAccess （DA）連線到公司網路的用戶端，可能會顯示為內部公司用戶端，或作為外部用戶端（視 VPN 或 DA 的設定而定）。  
 
--   一或多個 IP 位址：當 Exchange Online 無法判斷連線用戶端的 IP 位址時，它會根據 x 轉送的標頭值來設定值，這是一種非標準標頭，可包含在 HTTP 型要求中，並受到許多用戶端、負載平衡器的支援以及市場上的 proxy。  
+-   一或多個 IP 位址：當 Exchange Online 無法判斷連線用戶端的 IP 位址時，它會根據 x 轉送的標頭值來設定值，這是一個非標準標頭，可包含在 HTTP 要求中，並受到許多支援用戶端、負載平衡器，以及市場上的 proxy。  
 
 > [!NOTE]
 > 1. 多個 IP 位址，指出通過要求的每個 proxy 的用戶端 IP 位址和位址，將以逗號分隔。  
@@ -255,17 +255,17 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
   首先，將符合單一 IP 位址的基本模式如下： \b # # #\\. # # #\\. # # #\\. # # # \b  
 
-  延伸此項，我們可以使用 OR 運算式比對兩個不同的 IP 位址，如下所示\\： \b # #\\#. # #\\#. # # #&#124;.\\# # # \b \b # #\\#. # #\\#. # # #. # # # \b  
+  擴充此項，我們可以使用 OR 運算式來比對兩個不同的 IP 位址，如下所示： \b # # #\\. # # #\\\\. # #&#124;# _ \b # # #\\. # # #\\. # # #\\. # # # \b  
 
-  因此，只比對兩個位址的範例（例如192.168.1.1 或10.0.0.1）會是： \b192\\. 168\\0.1\\.1 \ b&#124;\b10\\.0\\.0\\. 1 \ b  
+  因此，只比對兩個位址的範例（例如192.168.1.1 或10.0.0.1）會是： \b192\\. 168\\.1\\.1 \ b&#124;\b10\\.0\\. 0\\. 1 \ b  
 
-  如此一來，您就可以輸入任意數目的位址。 需要允許的位址範圍（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b  
+  如此一來，您就可以輸入任意數目的位址。 需要允許的位址範圍（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192\\. 168\\。 1\\。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b  
 
   請注意下列事項：  
 
 - IP 位址會被視為字串，而不是數位。  
 
-- 此規則的細分方式如下： \b192\\. 168\\.1\\。  
+- 此規則的細分方式如下： \b192\\. 168\\. 1\\。  
 
 - 這會比對開頭為 192.168.1. 的任何值。  
 
@@ -279,9 +279,9 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 - 請注意，括弧必須正確定位，如此您才不會開始比對 IP 位址的其他部分。  
 
-- 在與192區塊相符的情況下，我們可以針對10個區塊撰寫類似的運算式： \b10 @ no__t-0.0 @ no__t-1.0 @ no__t-2。（[1-9]&#124;1 [0-4]） \b  
+- 在與192區塊相符的情況下，我們可以為10個區塊撰寫類似的運算式： \b10\\.0\\. 0\\。（[1-9]&#124;1 [0-4]） \b  
 
-- 並將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14"： \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2 的所有位址。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b&#124;\b10 @ no__t-6.0 @ no__t-7.0 @ no__t-8。（[1-9]&#124;1 [0-4]） \b  
+- 並將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有位址： \b192\\168\\. 1\\。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b&#124;\b10\\.0\\. 0\\。（[1-9]&#124;1 [0-4]） \b  
 
 ### <a name="testing-the-expression"></a>測試運算式  
  Regex 運算式可能會變得相當棘手，因此強烈建議使用 RegEx 驗證工具。 如果您在網際網路上搜尋「線上 RegEx 運算式產生器」，您將會發現幾個良好的線上公用程式，可讓您針對範例資料嘗試運算式。  
@@ -296,7 +296,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
  Windows Server 2012 R2 中的 AD FS 會使用下列宣告類型來提供要求內容資訊：  
 
 ### <a name="x-ms-forwarded-client-ip"></a>X-毫秒-轉送-用戶端 IP  
- 宣告類型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
+ 宣告類型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
 
  此 AD FS 宣告代表在查明使用者的 IP 位址（例如 Outlook 用戶端）提出要求時的「最佳嘗試」。 此宣告可以包含多個 IP 位址，包括轉送要求的每個 proxy 的位址。  此宣告會從 HTTP 填入。 宣告的值可以是下列其中一項：  
 
@@ -318,7 +318,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 >  Exchange Online 目前僅支援 IPV4 位址;它不支援 IPV6 位址。  
 
 ### <a name="x-ms-client-application"></a>X-MS-用戶端-應用程式  
- 宣告類型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
+ 宣告類型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
 
  此 AD FS 宣告代表終端用戶端所使用的通訊協定，其對應鬆散于所使用的應用程式。  此宣告是從目前僅由 Exchange Online 設定的 HTTP 標頭填入，在將驗證要求傳遞至 AD FS 時，會填入標頭。 根據應用程式而定，此宣告的值將會是下列其中一項：  
 
@@ -345,7 +345,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
     -   Microsoft。  
 
 ### <a name="x-ms-client-user-agent"></a>X-MS-用戶端-使用者-代理程式  
- 宣告類型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
+ 宣告類型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
 
  此 AD FS 宣告會提供字串，以代表用戶端用來存取服務的裝置類型。 當客戶想要防止特定裝置（例如特定類型的智慧型手機）的存取權時，可以使用此方法。  此宣告的範例值包括（但不限於）以下的值。  
 
@@ -368,23 +368,23 @@ Windows 10 網域加入和登入所需的 AD FS 端點
   這個值也可能是空的。  
 
 ### <a name="x-ms-proxy"></a>X-MS-Proxy  
- 宣告類型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
+ 宣告類型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
 
  此 AD FS 宣告表示要求已通過 Web 應用程式 proxy。  此宣告會由 Web 應用程式 proxy 填入，在將驗證要求傳遞給後端同盟服務時，會填入標頭。 AD FS 然後將它轉換為宣告。  
 
  宣告的值是通過要求的 Web 應用程式 proxy 的 DNS 名稱。  
 
 ### <a name="insidecorporatenetwork"></a>InsideCorporateNetwork  
- 宣告類型：`http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
+ 宣告類型： `http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
 
  與上述的 [x-ms-proxy] 宣告類型類似，此宣告類型會指出要求是否通過 web 應用程式 proxy。 不同于 x-ms-proxy，insidecorporatenetwork 是布林值，其中 True 表示直接從公司網路內部對 federation service 的要求。  
 
 ### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-端點-絕對路徑（主動與被動）  
- 宣告類型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
+ 宣告類型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
 
  此宣告類型可用來判斷源自「作用中」（豐富）用戶端與「被動」（以 web 瀏覽器為基礎）用戶端的要求。 這可讓來自瀏覽器型應用程式（例如 Outlook Web 存取、SharePoint Online 或 Office 365 入口網站）的外部要求允許，而源自豐富用戶端（例如 Microsoft Outlook）的要求會遭到封鎖。  
 
  宣告的值是收到要求的 AD FS 服務名稱。  
 
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
  [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)

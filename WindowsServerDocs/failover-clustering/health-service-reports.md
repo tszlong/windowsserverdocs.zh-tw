@@ -16,7 +16,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369685"
 ---
 # <a name="health-service-reports"></a>健全狀況服務報表
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-reports"></a>什麼是報表  
 
@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>連線
 
-為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用 C @ no__t-0，這是最直接的此資料存取層選擇。
+為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例將使用 C\#，這是最直接的此資料存取層選擇。
 
 ``` 
 ...
@@ -80,7 +80,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT @ no__t-1StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft @ no__t-1StorageNode** ，以及每個**msft @ no__t-3Volume**，資料磁片區。 最後，您還需要**MSFT @ no__t-1StorageHealth**，也就是健全狀況服務本身。
+在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT\_StorageSubSystem** ，代表叢集上的儲存空間直接存取。 使用這種方式，您就可以取得叢集中的每個**msft\_StorageNode** ，以及每個**msft\_磁片**區的資料磁片區。 最後，您還需要**MSFT\_StorageHealth**，也就是健全狀況服務本身。
 
 ```
 CimInstance Cluster;
@@ -209,13 +209,13 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 計量的每個範例都是一個「報表」，其中包含多個對應于個別計量的「記錄」。
 
-如需完整的架構，請檢查*storagewmi*中的**msft @ no__t-1StorageHealthReport**和**msft @ no__t-3HealthRecord**類別。
+如需完整的架構，請檢查*storagewmi*中的**msft\_StorageHealthReport**和**msft\_HealthRecord**類別。
 
 根據此資料表，每個計量都只有三個屬性。
 
-| **屬性** | **範例**       |
+| **Property** | **範例**       |
 | -------------|-------------------|
-| Name         | IOLatencyAverage  |
+| 名稱         | IOLatencyAverage  |
 | 值        | 0.00021           |
 | 單位        | 3                 |
 
@@ -282,6 +282,6 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

@@ -21,7 +21,7 @@ ms.locfileid: "71404918"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>步驟2設定基本 DirectAccess 伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何設定基本 DirectAccess 部署所需的用戶端與伺服器設定。 開始部署步驟之前，請確定您已完成[規劃基本 DirectAccess 部署](Plan-a-Basic-DirectAccess-Deployment.md)中所述的規劃步驟。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "71404918"
   
 7.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 或 Cmdlet 會安裝遠端存取角色： 
 
@@ -90,7 +90,7 @@ ms.locfileid: "71404918"
   
 3.  按一下 [僅部署 DirectAccess]。  
   
-4.  選取網路設定拓樸，然後輸入遠端存取用戶端會連接的公用名稱。 按一下 [下一步]。  
+4.  選取網路設定拓樸，然後輸入遠端存取用戶端會連接的公用名稱。 按一下 **\[下一步\]** 。  
   
     > [!NOTE]  
     > 根據預設值，開始使用精靈會將 WMI 篩選器套用至用戶端設定 GPO，進而將 DirectAccess 部署至網域內的所有膝上型或筆記型電腦。  
@@ -121,7 +121,7 @@ ms.locfileid: "71404918"
   
 ## <a name="BKMK_Links"></a>上一個步驟  
   
--   [步驟 1：設定 DirectAccess 基礎結構](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
+-   [步驟1：設定 DirectAccess 基礎結構](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   
 ## <a name="next-step"></a>後續步驟  
   

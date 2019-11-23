@@ -16,9 +16,9 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369209"
 ---
-# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附錄 I：在 Active Directory 中建立受保護帳戶和群組的管理帳戶
+# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附錄 I︰為 Active Directory 中的受保護帳戶和群組建立管理帳戶
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 若不依賴高許可權群組中的永久成員資格，其中一項 Active Directory 挑戰就是在需要群組的暫時成員資格時，必須有一種機制來填入這些群組。 某些特殊許可權身分識別管理解決方案要求軟體的服務帳戶會被授與群組中的永久成員資格，例如在樹系中的每個網域中的 DA 或系統管理員。 不過，在技術上，Privileged Identity Management （PIM）解決方案不需要在這類高許可權的內容中執行其服務。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71369209"
 在生產環境中執行這些程式之前，您應該徹底測試所有這些程式，並根據環境的需要加以修改。 您也應該驗證所有設定是否如預期般運作（本附錄中提供一些測試程式），而且您應該測試嚴重損壞修復案例，其中管理帳戶無法用來填入受保護的群組進行復原用途. 如需備份和還原 Active Directory 的詳細資訊，請參閱[AD DS 備份和復原逐步指南](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)。  
   
 > [!NOTE]  
-> 藉由執行本附錄所述的步驟，您將會建立帳戶，以管理每個網域中所有受保護群組的成員資格，而不只是最高許可權的 Active Directory 群組，例如 EAs、DAs 和 BAs。 如需 Active Directory 中受保護群組的詳細資訊，請參閱 [Appendix C：Active Directory @ no__t-0 中的受保護帳戶和群組。  
+> 藉由執行本附錄所述的步驟，您將會建立帳戶，以管理每個網域中所有受保護群組的成員資格，而不只是最高許可權的 Active Directory 群組，例如 EAs、DAs 和 BAs。 如需 Active Directory 中受保護群組的詳細資訊，請參閱[附錄 C： Active Directory 中的受保護帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
   
 ### <a name="step-by-step-instructions-for-creating-management-accounts-for-protected-groups"></a>為受保護的群組建立管理帳戶的逐步指示  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71369209"
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
-3.  在您剛剛建立的群組上按一下滑鼠右鍵，按一下 [內容]，然後按一下 [物件] 索引標籤。在群組的 [**物件屬性**] 對話方塊中，選取 [**保護物件不被意外刪除**]，這不僅可以防止其他授權使用者刪除群組，還可以將它移至另一個 OU，除非屬性是第一個選擇.  
+3.  以滑鼠右鍵按一下您剛才建立的群組，按一下 [**屬性**]，然後按一下 [**物件**] 索引標籤。在群組的 [**物件屬性**] 對話方塊中，選取 [**保護物件不被意外刪除**]，這不僅可以防止其他授權使用者刪除群組，還可以將它移至另一個 OU，除非第一次取消選取該屬性。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)  
   
@@ -71,7 +71,7 @@ ms.locfileid: "71369209"
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_118.png)  
   
-5.  如果您尚未這麼做，請在 [ **Active Directory 使用者和電腦**] 主控台中，按一下 [ **View** ]，然後選取 [ **Advanced Features**]。 在您剛才建立的群組上按一下滑鼠右鍵 **，按一下 [** 內容]，然後按一下 [**安全性**] 索引標籤。在 [安全性] 索引標籤上，按一下 [進階]。  
+5.  如果您尚未這麼做，請在 [ **Active Directory 使用者和電腦**] 主控台中，按一下 [ **View** ]，然後選取 [ **Advanced Features**]。 在您剛才建立的群組上按一下滑鼠右鍵 **，按一下 [** 內容]，然後按一下 [**安全性**] 索引標籤。在 [**安全性**] 索引標籤上，按一下 [ **Advanced**]。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_119.png)  
   
@@ -135,12 +135,12 @@ ms.locfileid: "71369209"
 
 8. 按一下 [**帳戶**] 索引標籤。  
 
-9. 在 [**帳戶選項**] 欄位中，選取 [此**帳戶為機密，無法委派**] 旗標，選取 [**此帳戶支援 kerberos aes 128 位加密**及/或**此帳戶支援 kerberos aes 256 加密**旗標]。然後按一下 **[確定]** 。  
+9. 在 [**帳戶選項**] 欄位中，選取 [此**帳戶為機密，無法委派**] 旗標，選取 [**此帳戶支援 kerberos aes 128 位加密**] 及/或 [**此帳戶支援 kerberos aes 256 加密**] 旗標，然後按一下 **[確定]** 。  
 
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)  
 
    > [!NOTE]  
-   > 因為此帳戶與其他帳戶一樣，將具有有限但功能強大的功能，所以該帳戶只能用於安全的系統管理主機。 對於環境中所有安全的系統管理主機，您應該考慮執行群組原則設定 @no__t 0Network 安全性：設定 Kerberos @ no__t-0 允許的加密類型，只允許您可以為安全主機執行的最安全加密類型。  
+   > 因為此帳戶與其他帳戶一樣，將具有有限但功能強大的功能，所以該帳戶只能用於安全的系統管理主機。 對於您環境中所有安全的系統管理主機，您應該考慮執行群組原則設定 [**網路安全性：設定 Kerberos 允許的加密類型**]，只允許您可以為安全主機執行的最安全加密類型。  
    >
    > 雖然為主機執行更安全的加密類型並不會減輕認證竊取攻擊，但安全主機的適當使用和設定也會受到保護。 為僅供特殊許可權帳戶使用的主機設定更強的加密類型，只會減少電腦的整體攻擊面。  
    >
@@ -182,11 +182,11 @@ ms.locfileid: "71369209"
 
 17. 按一下 [隸屬於] 索引標籤。  
 
-18. 按一下 [新增]。  
+18. 按一下 **\[新增\]** 。  
 
 19. 在 [**選取使用者、連絡人、電腦**] 對話方塊中，輸入**拒絕的 RODC 密碼複寫群組**，然後按一下 [**檢查名稱**]。 當物件選擇器中的群組名稱加上底線時，按一下 **[確定]** ，並確認該帳戶現在是下列螢幕擷取畫面中所顯示的兩個群組的成員。 請勿將帳戶新增至任何受保護的群組。  
 
-20. 按一下 [確定]。  
+20. 按一下 **\[確定\]** 。  
 
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -233,7 +233,7 @@ ms.locfileid: "71369209"
   
 您可以改為建立群組，以委派許可權來填入及 unpopulate 受保護的群組，但您必須保護群組和您在其中放置的帳戶。 因為您目錄中的帳戶應該會被授與管理受保護群組之成員資格的能力，所以建立個別帳戶可能是最簡單的方法。  
   
-無論您選擇如何建立群組來放置管理帳戶，您都應該確保每個帳戶都受到保護，如先前所述。 您也應該考慮採用類似于 @no__t 0Appendix D 中所述的 GPO 限制：在 Active Directory @ no__t-0 中保護內建的系統管理員帳戶。  
+無論您選擇如何建立群組來放置管理帳戶，您都應該確保每個帳戶都受到保護，如先前所述。 您也應該考慮採用類似于 Active Directory 中的內[建系統管理員帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述的 GPO 限制。  
   
 ##### <a name="auditing-management-accounts"></a>審核管理帳戶
 
@@ -247,7 +247,7 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
 
 在此程式中，您將在網域的 AdminSDHolder 物件上設定許可權，以允許新建立的管理帳戶修改網域中受保護群組的成員資格。 這個程式無法透過圖形化使用者介面（GUI）來執行。  
   
-如 @no__t 所討論-0Appendix C：受保護的帳戶和群組在 Active Directory @ no__t-0 中，當 SDProp 工作執行時，網域 AdminSDHolder 物件上的 ACL 會有效地「複製」到受保護的物件。 受保護的群組和帳戶不會從 AdminSDHolder 物件繼承其許可權;系統會明確設定其許可權，以符合 AdminSDHolder 物件上的許可權。 因此，當您修改 AdminSDHolder 物件的許可權時，必須針對您設為目標之受保護物件的類型適當地修改這些屬性。  
+如[附錄 C： Active Directory 中的受保護帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)中所述，當 SDProp 工作執行時，網域 AdminSDHolder 物件上的 ACL 會有效地「複製」到受保護的物件。 受保護的群組和帳戶不會從 AdminSDHolder 物件繼承其許可權;系統會明確設定其許可權，以符合 AdminSDHolder 物件上的許可權。 因此，當您修改 AdminSDHolder 物件的許可權時，必須針對您設為目標之受保護物件的類型適當地修改這些屬性。  
   
 在此情況下，您將授與新建立的管理帳戶，讓他們能夠讀取和寫入群組物件上的 members 屬性。 不過，AdminSDHolder 物件不是群組物件，而且不會在圖形化 ACL 編輯器中公開群組屬性。 基於這個理由，您將透過 Dsacls 命令列公用程式來執行許可權變更。 若要授與（已停用）管理帳戶許可權以修改受保護群組的成員資格，請執行下列步驟：  
   
@@ -286,7 +286,7 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
    如需使用**Dsacls**的詳細資訊，請在命令提示字元中輸入不含任何參數的 Dsacls。  
   
-   如果您已為網域建立多個管理帳戶，您應該針對每個帳戶執行 Dsacls 命令。 當您完成 AdminSDHolder 物件的 ACL 設定時，您應該強制執行 SDProp，或等到其排程的執行完成。 如需強制執行 SDProp 的相關資訊，請參閱 [Appendix C 中的 < 手動執行 SDProp：Active Directory @ no__t-0 中的受保護帳戶和群組。  
+   如果您已為網域建立多個管理帳戶，您應該針對每個帳戶執行 Dsacls 命令。 當您完成 AdminSDHolder 物件的 ACL 設定時，您應該強制執行 SDProp，或等到其排程的執行完成。 如需強制執行 SDProp 的相關資訊，請參閱[附錄 C： Active Directory 中的受保護帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)中的「手動執行 SDProp」。  
   
    當 SDProp 執行時，您可以確認您對 AdminSDHolder 物件所做的變更已套用到網域中的受保護群組。 您無法根據先前所述的原因，在 AdminSDHolder 物件上查看 ACL 來進行驗證，但您可以藉由在受保護的群組上查看 Acl 來確認許可權是否已套用。  
   
@@ -317,7 +317,7 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
 ##### <a name="test-the-group-that-will-enable-and-disable-management-accounts"></a>測試將啟用和停用管理帳戶的群組
   
-1.  若要測試啟用管理帳戶及重設其密碼，請使用您在 [Appendix I 中建立之群組成員的帳戶登入安全的系統管理工作站：在 Active Directory @ no__t-0 中建立受保護帳戶和群組的管理帳戶。  
+1.  若要測試啟用管理帳戶及重設其密碼，請使用您在[附錄 I：在 Active Directory 中建立受保護帳戶和群組的管理帳戶](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)中所建立之群組成員的帳戶登入安全的系統管理工作站。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_142.gif)  
   

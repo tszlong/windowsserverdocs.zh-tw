@@ -18,21 +18,21 @@ ms.locfileid: "71367707"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*Law 數位5：永久性警覺性來得是安全性的價格。* - [10 不變的安全性管理法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第五條法則：永久性警覺性來得是安全性的代價。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
   
 穩固的事件記錄檔監視系統是任何安全 Active Directory 設計的重要部分。 如果受害者制訂適當的事件記錄檔監視和警示，可能會提早在事件中發現許多電腦安全性性危害。 這是一段完整支援的獨立報表。 例如， [2009 Verizon 資料缺口報告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)指出：  
   
-「事件監視和記錄分析的明顯 ineffectiveness，會持續成為 enigma。 偵測的機會是：調查者已注意到 66% 的受害者在其記錄內有足夠的辨識項可用來探索缺口，讓他們更用心分析這類資源。」  
+「事件監視和記錄分析的明顯 ineffectiveness，會持續成為 enigma。 偵測的機會是：調查者已注意到66% 的受害者在其記錄內有足夠的辨識項可用來探索缺口，讓他們更用心分析這類資源。」  
   
-這種缺乏監視作用中事件記錄檔的漏洞，在許多公司的安全性防護計畫中仍然是一致的弱點。 [2012 Verizon 的資料缺口報告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)發現，即使有 85% 的缺口需要注意幾個星期，但 84% 的受害者在其事件記錄檔中有缺口的證據。  
+這種缺乏監視作用中事件記錄檔的漏洞，在許多公司的安全性防護計畫中仍然是一致的弱點。 [2012 Verizon 的資料缺口報告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)發現，即使有85% 的缺口需要注意幾個星期，但84% 的受害者在其事件記錄檔中有缺口的證據。  
   
 ## <a name="windows-audit-policy"></a>Windows 稽核原則
 
 以下是 Microsoft 官方企業支援 blog 的連結。 這些 blog 的內容提供有關審核的建議、指引和建議，可協助您增強 Active Directory 基礎結構的安全性，而且在設計稽核原則時是一項重要的資源。  
   
-* [全域物件存取的審核功能非常神奇](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-說明一種稱為「先進的稽核原則設定」的控制機制，已新增至 windows 7 和 Windows Server 2008 R2，讓您能夠輕鬆地設定您想要的資料類型，而不是操控腳本和auditpol .exe。  
+* [全域物件存取的審核功能非常神奇](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-說明一種稱為「先進的稽核原則設定」的控制機制，已新增至 windows 7 和 Windows Server 2008 R2，讓您能夠輕鬆地設定您想要的資料類型，而不是操控腳本和 auditpol .exe。  
 * [Windows 2008 中的審核變更簡介](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-引進 windows Server 2008 中的審核功能變更。  
 * [Vista 和2008中](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 的有趣審核功能，可用於疑難排解問題或查看環境中發生的狀況。  
 * [Windows server 2008 和 Windows vista 中的一次性審核](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
@@ -320,15 +320,15 @@ IPsec 驅動程式
 您可以使用群組原則、auditpol .exe、Api 或登錄編輯來設定 Windows 稽核原則。 為大部分公司設定稽核原則的建議方法是群組原則或 auditpol. exe。 設定系統的稽核原則時，需要有系統管理員層級的帳戶許可權或適當的委派許可權。  
   
 > [!NOTE]  
-> [**管理審核及安全性記錄**] 許可權必須提供給安全性主體（系統管理員預設為使用），以允許修改個別資源的物件存取審核選項，例如檔案、Active Directory 物件，以及登錄機碼。  
+> 「**管理」和「安全性記錄**」許可權必須提供給安全性主體（系統管理員預設會有），以允許修改個別資源（例如檔案、Active Directory 物件和登錄機碼）的物件存取審核選項。  
   
 ### <a name="setting-windows-audit-policy-by-using-group-policy"></a>使用群組原則設定 Windows 稽核原則
 
-若要使用群組原則來設定稽核原則，請在 [電腦設定] [設定 \**本機本機審核原則**] 底下設定適當的審核類別（請參閱下列螢幕擷取畫面，以取得本機的範例群組原則編輯器（gpedit.msc））。 可以針對**成功**、**失敗**或**成功**和失敗事件啟用每個稽核原則類別目錄。  
+若要使用群組原則來設定稽核原則，請在 [電腦設定] [設定 \**本機本機審核原則**] 底下設定適當的 audit 類別（請參閱下列螢幕擷取畫面，以取得本機群組原則編輯器（gpedit.msc）中的範例）。 可以針對**成功**、**失敗**或**成功**和失敗事件啟用每個稽核原則類別目錄。  
   
 ![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_6.gif)  
   
-您可以使用 Active Directory 或本機群組原則來設定 Advanced Audit Policy。 若要設定「先進的稽核原則」，請在 [**電腦設定 \windows] \windows 安全性進階 [稽核原則**] 底下設定適當的子類別（請參閱下列螢幕擷取畫面，以取得來自本機群組原則編輯器的範例（gpedit.msc））。 每個稽核原則子類別都可以啟用**成功**、**失敗**或**成功**和**失敗**事件。  
+您可以使用 Active Directory 或本機群組原則來設定 Advanced Audit Policy。 若要設定「高級稽核原則」，請在 [電腦設定 \ 檢查子設定] **\Windows 安全性進階稽核原則**（請參閱下列螢幕擷取畫面，以取得來自本機群組原則編輯器（gpedit.msc）的範例）。 每個稽核原則子類別都可以啟用**成功**、**失敗**或**成功**和**失敗**事件。  
   
 ![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)  
   
@@ -365,15 +365,15 @@ Auditpol 可以用來儲存和還原本機稽核原則，以及查看其他的�
   
 `auditpol /backup /file:<filename>`-用來將目前的本機稽核原則備份至二進位檔案  
   
-`auditpol /restore /file:<filename>`-用來將先前儲存的稽核原則檔案匯入本機稽核原則  
+`auditpol /restore /file:<filename>`-用來將先前儲存的稽核原則檔匯入本機稽核原則  
   
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-如果已啟用此稽核原則設定，則會導致系統立即停止（使用 [停止]：C0000244 {Audit Failed} message）如果基於任何原因而無法記錄安全性審查，則為。 一般而言，當安全性審核記錄已滿，而且針對安全性記錄檔指定的保留方法不會依天數**覆寫事件**或**覆寫事件**時，就無法記錄事件。 通常只會由需要更高保證安全性記錄檔正在記錄的環境來啟用。 啟用時，系統管理員必須仔細監看安全性記錄大小，並視需要輪替記錄。 也可以藉由修改安全性選項 **Audit 來設定群組原則：如果無法記錄安全性審核 @ no__t-0 （預設值 = 已停用），請立即關閉系統。  
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-如果已啟用此稽核原則設定，則如果因為任何原因無法記錄安全性 audit，它會導致系統立即停止（使用 STOP： C0000244 {Audit Failed} 訊息）。 一般而言，當安全性審核記錄已滿，而且針對安全性記錄檔指定的保留方法不會依天數**覆寫事件**或**覆寫事件**時，就無法記錄事件。 通常只會由需要更高保證安全性記錄檔正在記錄的環境來啟用。 啟用時，系統管理員必須仔細監看安全性記錄大小，並視需要輪替記錄。 也可以藉由修改安全性選項 [ **Audit：立即關閉系統] （如果無法記錄安全性審核**（預設值 = 已停用）來設定群組原則。  
   
 `auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`-此稽核原則設定會決定是否要審核全域系統物件的存取權。 如果啟用此原則，則會使用預設的系統存取控制清單（SACL）來建立系統物件，例如 mutex、事件、信號和 DOS 裝置。 大部分的系統管理員會考慮將全域系統物件視為「雜訊」，而只有在懷疑惡意入侵時才會啟用。 只有命名物件會獲得 SACL。 如果也啟用「audit 物件存取稽核原則」（或「核心物件」 audit 子類別），則會對這些系統物件的存取進行審核。 進行此安全性設定時，除非您重新開機 Windows，否則變更不會生效。 這項原則也可以透過下列方式來設定群組原則藉由修改安全性選項 [審查全域系統物件的存取權（預設值 = 停用）]。  
   
 `auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-此稽核原則設定指定在建立時，會為 Sacl 提供名為的核心物件（例如 mutex 和信號）。 當 AuditBaseObjects 影響不能包含其他物件的物件時，AuditBaseDirectories 會影響容器物件。  
   
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-此稽核原則設定指定當有一或多個許可權指派給使用者安全性權杖時，用戶端是否會產生事件：AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege,TakeOwnershipPrivilege 和 TcbPrivilege。 如果未啟用此選項（預設值 = 停用），則不會記錄 BackupPrivilege 和 RestorePrivilege 許可權。 啟用此選項可能會在備份作業期間，讓安全性記錄產生極雜訊的事件（有時候會有數百個事件）。 這項原則也可以藉由修改安全性選項 **Audit 來設定群組原則：審核備份和還原許可權 @ no__t-0 的使用。  
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-此稽核原則設定指定當有一或多個許可權指派給使用者安全性權杖時，用戶端是否會產生事件： AssignPrimaryTokenPrivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、SystemEnvironmentPrivilege、TakeOwnershipPrivilege 和 TcbPrivilege。 如果未啟用此選項（預設值 = 停用），則不會記錄 BackupPrivilege 和 RestorePrivilege 許可權。 啟用此選項可能會在備份作業期間，讓安全性記錄產生極雜訊的事件（有時候會有數百個事件）。 此原則也可以藉由修改安全性選項**Audit： audit 使用備份和還原許可權**來設定群組原則。  
   
 > [!NOTE]  
 > 此處提供的部分資訊是取自 Microsoft [Audit 選項類型](https://msdn.microsoft.com/library/dd973862(prot.20).aspx)和 microsoft SCM 工具。  
@@ -382,7 +382,7 @@ Auditpol 可以用來儲存和還原本機稽核原則，以及查看其他的�
 
 在 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows 8、Windows 7 和 Windows Vista 中，系統管理員可以選擇啟用九種傳統類別，或使用子類別。 這是必須在每個 Windows 系統中進行的二進位選擇。 可以啟用主要類別，或 subcategoriesit 不能同時為兩者。  
   
-若要防止傳統傳統類別目錄原則覆寫稽核原則子類別，您必須啟用 [**強制稽核原則子類別設定（Windows Vista 或更新版本）] 以覆寫稽核原則類別**設定原則設定（位於在 [**電腦配置**] 下，將 [本機原則 \ 安全性選項]  
+若要防止傳統傳統類別目錄原則覆寫稽核原則子類別，您必須啟用 [**強制稽核原則子類別設定（Windows Vista 或更新版本）** ]，以覆寫位於 [電腦設定] [設定] \ [保護 \] \ 安全性**選項**下的稽核原則類別設定原則  
   
 我們建議您啟用和設定子類別，而不是9個主要類別。 這需要啟用群組原則設定（以允許子類別覆寫審核類別），以及設定支援稽核原則的不同子類別。  
   

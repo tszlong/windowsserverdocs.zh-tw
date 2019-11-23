@@ -19,11 +19,11 @@ ms.locfileid: "71934949"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>規劃 Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 擴充性
 
-> 適用於：Windows Server 2016、Windows Server 2019
+> 適用于： Windows Server 2016、Windows Server 2019
   
 本文提供您可以在 Hyper-v 主機或其虛擬機器（例如虛擬處理器或檢查點）上新增和移除之元件最大設定的詳細資料。 當您規劃部署時，請考慮套用至每部虛擬機器的最大限制，以及適用于 Hyper-v 主機的上限。 
 
-記憶體和邏輯處理器的最大數目，與 Windows Server 2012 的增加，是為了回應支援較新案例（例如機器學習和資料分析）的要求。 Windows Server blog 最近發佈了虛擬機器的效能結果，其中包含 5.5 tb 的記憶體和128虛擬處理器，並執行 4 TB 記憶體內部資料庫。 效能大於實體伺服器效能的 95%。 如需詳細資訊，請參閱[記憶體中交易處理的 Windows Server 2016 hyper-v 大型 VM 效能](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 其他數位與適用于 Windows Server 2012 的號碼類似。 Windows Server 2012 R2 的 @no__t 0Maximums 與 Windows Server 2012 相同。 \) 
+記憶體和邏輯處理器的最大數目，與 Windows Server 2012 的增加，是為了回應支援較新案例（例如機器學習和資料分析）的要求。 Windows Server blog 最近發佈了虛擬機器的效能結果，其中包含 5.5 tb 的記憶體和128虛擬處理器，並執行 4 TB 記憶體內部資料庫。 效能大於實體伺服器效能的95%。 如需詳細資訊，請參閱[記憶體中交易處理的 Windows Server 2016 hyper-v 大型 VM 效能](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 其他數位與適用于 Windows Server 2012 的號碼類似。 Windows Server 2012 R2 的 \(上限與 Windows Server 2012 相同。\) 
   
 > [!NOTE]  
 > 如需有關 System Center 虛擬機器管理員 (VMM) 的資訊，請參閱 [Virtual Machine Manager](https://technet.microsoft.com/system-center-docs/vmm/vmm)。 VMM 是 Microsoft 的產品，用來管理虛擬化的資料中心，此產品單獨銷售。  
@@ -31,7 +31,7 @@ ms.locfileid: "71934949"
 ## <a name="maximums-for-virtual-machines"></a>虛擬機器的最大上限  
 這些最大上限適用于每部虛擬機器。 並非所有元件都可用於兩代的虛擬機器。 如需各層代的比較，請參閱[應該在 hyper-v 中建立第1代或第2代虛擬機器嗎？](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md) 
   
-|Component|最大值|注意|  
+|元件|最大值|附註|  
 |-------------|-----------|---------|  
 |檢查點|50|實際數字可能較低，取決於可用的存放裝置。 每個檢查點都會儲存為使用實體儲存體的 .avhd 檔案。|  
 |記憶體|第2代的 12 TB; <br>1 TB 的層代1|檢閱特定作業系統的需求，以判定需求量下限及建議的需求量。|  
@@ -49,7 +49,7 @@ ms.locfileid: "71934949"
 ## <a name="maximums-for-hyper-v-hosts"></a>Hyper-v 主機的最大上限  
 這些最大限制適用于每個 Hyper-v 主機。  
   
-|Component|最大值|注意|  
+|元件|最大值|附註|  
 |-------------|-----------|---------|  
 |邏輯處理器|512|這兩個都必須在固件中啟用：<br /><br />-硬體輔助虛擬化<br />-硬體強制的資料執行防止（DEP）<br /><br />主機 OS （根磁碟分割）只會看到最大320的邏輯處理器|  
 |記憶體|24 TB|無。|  
@@ -68,9 +68,9 @@ ms.locfileid: "71934949"
 
 若要瞭解容錯移轉叢集的更新（包括虛擬機器的新功能），請參閱[Windows Server 2016 中容錯移轉叢集的新](../../../failover-clustering/whats-new-in-failover-clustering.md)功能。
 
-|Component|最大值|注意|  
+|元件|最大值|附註|  
 |-------------|-----------|---------|  
-|每一叢集的節點|64|請考量要保留給容錯移轉的節點數目，以及例如套用更新等維護工作。 建議您規劃足夠的資源，將一個節點保留給容錯移轉；這表示該節點將維持閒置，直到其他節點容錯移轉至該節點為止 (這有時也稱為被動節點)。如果想要保留額外節點，則可增加此數字。 不建議將保留節點的比率或乘數用於作用中節點;唯一的要求是叢集中的節點總數不能超過最大值64。|  
+|每一叢集的節點|64|請考量要保留給容錯移轉的節點數目，以及例如套用更新等維護工作。 建議您規劃足夠的資源，將一個節點保留給容錯移轉；這表示該節點將維持閒置，直到其他節點容錯移轉至該節點為止 （這有時稱為被動節點）。如果您想要保留其他節點，可以增加此數目。 不建議將保留節點的比率或乘數用於作用中節點;唯一的要求是叢集中的節點總數不能超過最大值64。|  
 |每個叢集的每個節點執行的虛擬機器|每個叢集 8000 個|有數個因素會影響您可以在一個節點上同時執行的實際虛擬機器數目，例如：<br />-每部虛擬機器正在使用的實體記憶體數量。<br />-網路和儲存體頻寬。<br />-磁片軸的數目，會影響磁片 i/o 效能。|  
   
 

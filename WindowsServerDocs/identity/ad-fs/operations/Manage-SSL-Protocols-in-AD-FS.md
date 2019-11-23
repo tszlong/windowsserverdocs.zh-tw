@@ -42,7 +42,7 @@ AD FS 使用 Schannel 來執行其安全通訊互動。  目前 AD FS 支援 Sch
 
 在今天和年齡中，強化伺服器並移除舊版或弱式加密套件，對於許多組織而言都是主要的優先考慮。  提供的軟體套件將會測試您的伺服器，並提供這些通訊協定和套件的詳細資訊。  為了保持相容或達到安全的評等，移除或停用較弱的通訊協定或加密套件已成為必須。  本檔的其餘部分將提供如何啟用或停用特定通訊協定和加密套件的指引。
 
-下列登錄機碼位於相同的位置：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols.  使用 regedit 或 PowerShell 來啟用或停用這些通訊協定和加密套件。
+下列登錄機碼位於相同的位置： HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols。  使用 regedit 或 PowerShell 來啟用或停用這些通訊協定和加密套件。
 
 ![登錄位置](media/Managing-SSL-Protocols-in-AD-FS/registry.png)
 
@@ -50,16 +50,16 @@ AD FS 使用 Schannel 來執行其安全通訊互動。  目前 AD FS 支援 Sch
 使用下列登錄機碼及其值來啟用和停用 SSL 2.0。
 
 ### <a name="enable-ssl-20"></a>啟用 SSL 2。0
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"DisabledByDefault" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"DisabledByDefault" = dword：00000000 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"DisabledByDefault" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"DisabledByDefault" = dword：00000000 
 
 ### <a name="disable-ssl-20"></a>停用 SSL 2。0
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"DisabledByDefault" = dword：00000001 
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"DisabledByDefault" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 伺服器]"DisabledByDefault" = dword：00000001 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0 \ 用戶端]"DisabledByDefault" = dword：00000001
 
 ### <a name="using-powershell-to-disable-ssl-20"></a>使用 PowerShell 停用 SSL 2。0
 
@@ -82,16 +82,16 @@ Write-Host 'SSL 2.0 has been disabled.'
 使用下列登錄機碼及其值來啟用和停用 SSL 3.0。
 
 ### <a name="enable-ssl-30"></a>啟用 SSL 3.0
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"DisabledByDefault" = dword：00000000 
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"DisabledByDefault" = dword：00000000 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"DisabledByDefault" = dword：00000000 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"DisabledByDefault" = dword：00000000 
 
 ### <a name="disable-ssl-30"></a>停用 SSL 3。0
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"DisabledByDefault" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"DisabledByDefault" = dword：00000001 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 伺服器]"DisabledByDefault" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 用戶端]"DisabledByDefault" = dword：00000001 
 
 ### <a name="using-powershell-to-disable-ssl-30"></a>使用 PowerShell 停用 SSL 3。0
 
@@ -119,16 +119,16 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 
 ### <a name="enable-tls-10"></a>啟用 TLS 1。0
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"DisabledByDefault" = dword：00000000 
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"DisabledByDefault" = dword：00000000 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"DisabledByDefault" = dword：00000000 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"DisabledByDefault" = dword：00000000 
 
 ### <a name="disable-tls-10"></a>停用 TLS 1。0
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"DisabledByDefault" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"DisabledByDefault" = dword：00000001 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 伺服器]"DisabledByDefault" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 用戶端]"DisabledByDefault" = dword：00000001 
 
 ### <a name="using-powershell-to-disable-tls-10"></a>使用 PowerShell 來停用 TLS 1。0
 
@@ -152,16 +152,16 @@ Write-Host 'SSL 2.0 has been disabled.'
 使用下列登錄機碼及其值來啟用和停用 TLS 1.1。
 
 ### <a name="enable-tls-11"></a>啟用 TLS 1。1
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"DisabledByDefault" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"DisabledByDefault" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"DisabledByDefault" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"DisabledByDefault" = dword：00000000
 
 ### <a name="disable-tls-11"></a>停用 TLS 1。1
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"DisabledByDefault" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"DisabledByDefault" = dword：00000001 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 伺服器]"DisabledByDefault" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1 \ 用戶端]"DisabledByDefault" = dword：00000001 
 
 ### <a name="using-powershell-to-disable-tls-11"></a>使用 PowerShell 來停用 TLS 1。1
 
@@ -185,16 +185,16 @@ Write-Host 'SSL 2.0 has been disabled.'
 使用下列登錄機碼及其值來啟用和停用 TLS 1.2。
 
 ### <a name="enable-tls-12"></a>啟用 TLS 1。2
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"DisabledByDefault" = dword：00000000 
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"DisabledByDefault" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"DisabledByDefault" = dword：00000000 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"DisabledByDefault" = dword：00000000
 
 ### <a name="disable-tls-12"></a>停用 TLS 1。2
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"DisabledByDefault" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"DisabledByDefault" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 伺服器]"DisabledByDefault" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 用戶端]"DisabledByDefault" = dword：00000001
 
 ### <a name="using-powershell-to-disable-tls-12"></a>使用 PowerShell 來停用 TLS 1。2
 
@@ -217,7 +217,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 使用下列登錄機碼及其值來啟用和停用 RC4。  此加密套件的登錄機碼位於此處：
 
-- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\
+- HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\
 
 ![登錄位置](media/Managing-SSL-Protocols-in-AD-FS/cipher.png)
 
@@ -225,15 +225,15 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 ### <a name="enable-rc4"></a>啟用 RC4
 
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]"Enabled" = dword：00000001 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]"Enabled" = dword：00000001
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]"Enabled" = dword：00000001 
 
 ### <a name="disable-rc4"></a>停用 RC4
 
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]"Enabled" = dword：00000000 
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]"Enabled" = dword：00000000
+- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]"Enabled" = dword：00000000 
 
 ### <a name="using-powershell"></a>使用 PowerShell
 
@@ -250,11 +250,11 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 ## <a name="enabling-or-disabling-additional-cipher-suites"></a>啟用或停用其他加密套件
 
-您可以從 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\Local\SSL\00010002 中移除特定的加密，藉以停用這些密碼 
+您可以從 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\Local\SSL\00010002 中移除特定的加密，藉以停用這些密碼 
 
 ![登錄位置](media/Managing-SSL-Protocols-in-AD-FS/suites.png)
 
-若要啟用加密套件，請將其字串值新增至函數多字串值索引鍵。  例如，如果我們想要啟用 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521，則我們會將它新增至字串。
+若要啟用加密套件，請將其字串值新增至函數多字串值索引鍵。  例如，如果我們想要啟用 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521，則會將它新增至字串。
 
 如需支援的加密套件的完整清單，請參閱[TLS/SSL （安全通道 SSP）中的加密套件](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)。  本檔提供預設啟用的套件清單，以及預設支援但未啟用的套件。  若要設定加密套件的優先順序，請參閱設定[Schannel 加密套件的優先順序](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)。
 
@@ -262,14 +262,14 @@ Write-Host 'SSL 2.0 has been disabled.'
 .NET Framework 3.5/4.0/4.5. x 應用程式可以藉由啟用 SchUseStrongCrypto 登錄機碼，將預設通訊協定切換成 TLS 1.2。  此登錄機碼會強制 .NET 應用程式使用 TLS 1.2。
 
 > [!IMPORTANT]
-> 針對 Windows Server 2016 和 Windows Server 2012 R2 上的 AD FS，您必須使用 .NET Framework 4.0/4.5. x 金鑰：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0. NETFramework\v4.0.30319
+> 針對 Windows Server 2016 和 Windows Server 2012 R2 上的 AD FS，您必須使用 .NET Framework 4.0/4.5. x 金鑰： HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\。NETFramework\v4.0.30319
 
 
 針對 .NET Framework 3.5，請使用下列登錄機碼：
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft @ no__t-0. NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword：00000001
+[HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft\\。NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword：00000001
 
-針對 .NET Framework 4.0/4.5. x 使用下列登錄機碼：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0. NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword：00000001
+針對 .NET Framework 4.0/4.5. x 使用下列登錄機碼： HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\。NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword：00000001
 
 ![增強式驗證](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
 

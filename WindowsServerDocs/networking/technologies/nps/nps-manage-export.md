@@ -17,7 +17,7 @@ ms.locfileid: "71405440"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>匯出 NPS 設定以在另一部伺服器上匯入
 
-適用於：Windows Server 2016
+適用於︰Windows Server 2016
 
 您可以從一個 NPS 匯入整個 NPS 設定（包括 RADIUS 用戶端和伺服器、網路原則、連線要求原則、登錄和記錄設定），以便在另一個 NPS 上匯入。 
 
@@ -46,7 +46,7 @@ ms.locfileid: "71405440"
 
 |參數|描述|
 |---------|-----------|
-|`Path`|指定您要匯出 NPS 設定之 XML 檔案的名稱和位置。|
+|路徑|指定您要匯出 NPS 設定之 XML 檔案的名稱和位置。|
 
 **系統管理認證**
 
@@ -76,7 +76,7 @@ ms.locfileid: "71405440"
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>使用 Netsh 匯出和匯入 NPS 設定
 
-您可以使用網路命令介面 \(Netsh @ no__t-1，使用**netsh NPS export**命令匯出 NPS 設定。
+您可以使用 \(Netsh\) 的網路介面，使用**netsh NPS export**命令匯出 NPS 設定。
 
 執行**netsh nps import**命令時，nps 會自動以更新的設定進行重新整理。 您不需要在目的地電腦上停止 NPS 來執行**netsh NPS import**命令，不過，如果 nps 主控台或 nps mmc 嵌入式管理單元在設定匯入期間已開啟，則在您重新整理此視圖之前，不會顯示伺服器設定的變更。 
 
@@ -93,9 +93,9 @@ ms.locfileid: "71405440"
 
 2. 在**netsh**提示字元中，輸入**nps**，然後按 enter。 
 
-3. 在**netsh nps**提示字元中，輸入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是您要儲存 NPS 設定檔的資料夾位置，而*file*是 xml 檔案的名稱，該檔案名為您想要儲存。 按 Enter 鍵。 
+3. 在**netsh nps**提示字元中，輸入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是您要儲存 nps 設定檔的資料夾位置，而*file*是您想要儲存的 xml 檔案名。 按 Enter 鍵。 
 
-這會將0including 登錄設定 @ no__t-1 的 @no__t 設定儲存在 XML 檔案中。 路徑可以是相對或絕對路徑，也可以是通用命名慣例 \(UNC @ no__t-1 路徑。 按下 Enter 之後，會出現一則訊息，指出匯出至檔案是否成功。
+這會儲存設定 \(包括 XML 檔案中\) 的登錄設定。 路徑可以是相對或絕對路徑，也可以是 \(UNC\) 路徑的通用命名慣例。 按下 Enter 之後，會出現一則訊息，指出匯出至檔案是否成功。
 
 4. 將您建立的檔案複製到目的地 NPS。
 

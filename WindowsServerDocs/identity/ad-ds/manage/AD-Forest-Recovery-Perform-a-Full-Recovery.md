@@ -18,7 +18,7 @@ ms.locfileid: "71390545"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD 樹系復原-執行完整伺服器復原 
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 使用下列程式執行 Windows Server 2016、2012 R2 或2012的完整伺服器復原。 
 
@@ -37,23 +37,23 @@ ms.locfileid: "71390545"
   
 1. 啟動 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]** 。 
 2. 按一下 **\[修復您的電腦\]** 。
-   ![Server Restore @ no__t-1
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore1.png)
 3. 按一下 **\[疑難排解\]** 。</br>
-   ![Server Restore @ no__t-1
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore2.png)
 4. 按一下 [**系統映射**復原]。</br>
-   ![Server Restore @ no__t-1
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore3.png)
 5. 按一下 [ **Windows Server 2016**]。 
-   ![Server Restore @ no__t-1
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore4.png)
 6. 如果您要還原最近的本機備份，請按一下 **[使用最新可用的系統映射（建議選項）** ]，然後按 **[下一步]** 。
-   ![Server Restore @ no__t-1
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore5.png)
 7. 現在您將可選擇：
    -  格式化和重新分割磁片
    -  安裝驅動程式
    -  取消選取 [自動重新開機] 和 [檢查磁片錯誤] 的 [ **Advanced** ] 功能。 預設會啟用這些功能。
-   ![Server Restore @ no__t-1
-8. 按一下 [下一步]。
-9. 按一下 **[完成]** 。 系統會提示您是否確定要繼續。 按一下 [ **是**]。 
-   ![Server Restore @ no__t-1 
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
+8. 按一下 **\[下一步\]** 。
+9. 按一下 **[完成]** 。 系統會提示您是否確定要繼續。 按一下 [是]。 
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. 一旦此動作完成，就會如[AD 樹系復原-執行 DFSR 複寫 SYSVOL 的授權同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)處理中所述，執行 SYSVOL 的授權還原。
 
 ## <a name="perform-a-full-server-restore-with-any-image-local-or-remote"></a>以本機或遠端的任何映射執行完整伺服器還原
@@ -64,19 +64,19 @@ ms.locfileid: "71390545"
 4. 如果您要還原最近的本機備份，請按一下 [**選取系統映射**]，然後按 **[下一步]** 。
 5. 現在您可以選取您想要還原的備份位置。 如果是本機映射，您可以從清單中選取它。 
 6. 如果映射位於網路共用上，請選取 [ **Advanced**]。 如果您需要安裝驅動程式，您也可以選取 [ **Advanced** ]。
-   ![Server Restore @ no__t-1
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore7.png)
 7. 如果您在按一下 [ **Advanced** ] 之後從網路還原，請**搜尋網路上的系統映射**。 系統可能會提示您還原網路連線。 選取 [確定]。 </br>
-   ![Server Restore @ no__t-1
-8. 輸入備份共用位置的 UNC 路徑（例如，\\ \ server1\backups），然後按一下 **[確定]** 。 您也可以輸入目標伺服器的 IP 位址，例如 \\ \ 192.168.1.3 \ 備份。 
-   ![Server Restore @ no__t-1
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png)
+8. 輸入備份共用位置的 UNC 路徑（例如，\\\server1\backups），然後按一下 **[確定]** 。 您也可以輸入目標伺服器的 IP 位址，例如 \\\192.168.1.3\backups。 
+   ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png)
 9. 輸入存取共用所需的認證，然後按一下 [確定]。 
 10. 現在，**選取要還原的系統映射的日期和時間**，然後按 **[下一步]** 。
 11. 現在您將可選擇：
     - 格式化和重新分割磁片
     - 安裝驅動程式
     - 取消選取 [自動重新開機] 和 [檢查磁片錯誤] 的 [ **Advanced** ] 功能。 預設會啟用這些功能。
-12. 按一下 [下一步]。
-13. 按一下 **[完成]** 。 系統會提示您是否確定要繼續。 按一下 [ **是**]。  
+12. 按一下 **\[下一步\]** 。
+13. 按一下 **[完成]** 。 系統會提示您是否確定要繼續。 按一下 [是]。  
 14. 一旦此動作完成，就會如[AD 樹系復原-執行 DFSR 複寫 SYSVOL 的授權同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)處理中所述，執行 SYSVOL 的授權還原。
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>啟用網路備份的網路介面卡
@@ -120,13 +120,13 @@ ms.locfileid: "71390545"
    set address "Name of Network Adapter" static IPv4 Address SubnetMask IPv4 Gateway Address 1  
    ```  
 
-   例如:  
+   例如：  
   
    ```  
    set address "Local Area Connection" static 192.168.1.2 255.0.0.0 192.168.1.1 1  
    ```  
 
-   輸入 `quit`，以返回命令提示字元。 輸入 `ipconfig /all`，確認網路介面卡具有 IP 位址，並嘗試 ping 裝載備份共用之伺服器的 IP 位址，以確認連線能力。 當您完成時，請關閉命令提示字元。 
+   輸入 `quit` 以返回命令提示字元。 輸入 `ipconfig /all` 以確認網路介面卡具有 IP 位址，並嘗試 ping 裝載備份共用之伺服器的 IP 位址，以確認連線能力。 當您完成時，請關閉命令提示字元。 
 
 6. 現在網路介面卡已正常運作，請選取上述步驟以完成還原。
 

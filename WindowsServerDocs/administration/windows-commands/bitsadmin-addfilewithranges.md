@@ -30,19 +30,19 @@ ms.locfileid: "71382016"
 bitsadmin /AddFileWithRanges <Job> <RemoteURL> <LocalName> <RangeList>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
 |RemoteURL|*RemoteURL*是伺服器上檔案的 URL。|
 |LocalName|*LocalName*是本機電腦上的檔案名。 *LocalName*必須包含檔案的絕對路徑。|
-|RangeList|*RangeList*是以逗號分隔的位移：長度配對清單。 使用冒號來分隔 [長度] 值的位移值。 例如，`0:100,2000:100,5000:eof` 的值會告訴 BITS 要從位移0、100位元組到位移2000，以及從 offset 5000 到檔案結尾的剩餘位元組傳輸100個位元組。|
+|RangeList|*RangeList*是以逗號分隔的位移：長度配對清單。 使用冒號來分隔 [長度] 值的位移值。 例如，`0:100,2000:100,5000:eof` 的值會告訴 BITS 要從 offset 0、100個位元組到位移2000，以及從 offset 5000 到檔案結尾的剩餘位元組傳輸100個位元組。|
 
 ## <a name="more-information"></a>更多資訊
 
--   Token **eof**是 *@no__t 2RangeList >* 的位移和長度配對內的有效長度值。 它會指示服務讀取至指定檔案的結尾。
--   請注意，當指定零長度範圍和另一個具有相同位移的範圍時，AddFileWithRanges 將會失敗，錯誤碼為0x8020002c，例如：C:\bits > bitsadmin/addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100：0100：5
+-   Token **eof**是 *\<RangeList >* 的位移和長度配對內的有效長度值。 它會指示服務讀取至指定檔案的結尾。
+-   請注意，當指定零長度範圍和另一個具有相同位移的範圍時，AddFileWithRanges 將會失敗並出現錯誤碼0x8020002c，例如： C:\bits > bitsadmin/addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100：0100：5
 
     錯誤訊息：無法將檔案新增至作業-0x8020002c。 位元組範圍清單包含一些重迭的範圍，但不受支援。
 

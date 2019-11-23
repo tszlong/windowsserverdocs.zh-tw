@@ -35,7 +35,7 @@ ms.locfileid: "72588060"
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |-------|--------|

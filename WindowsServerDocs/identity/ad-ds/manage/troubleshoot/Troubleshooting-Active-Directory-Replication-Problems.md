@@ -1,6 +1,6 @@
 ---
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
-title: 進行 Active Directory 複寫問題疑難排解
+title: 疑難排解 Active Directory 複寫問題
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
@@ -16,9 +16,9 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71409066"
 ---
-# <a name="troubleshooting-active-directory-replication-problems"></a>進行 Active Directory 複寫問題疑難排解
+# <a name="troubleshooting-active-directory-replication-problems"></a>疑難排解 Active Directory 複寫問題
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory 複寫問題可以有數個不同的來源。 例如，網域名稱系統（DNS）問題、網路問題或安全性問題都可能導致 Active Directory 複寫失敗。 
 
@@ -51,7 +51,7 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 
 如果複寫錯誤是由嘗試複寫的網域控制站所報告，而該控制器已內建在預備網站中，而且目前正在離線等候其部署在最後一個生產網站（例如分公司），您可以考慮這些複寫錯誤。 若要避免長時間將網域控制站與複寫拓撲隔開，這會造成連續錯誤，直到網域控制站重新連線為止，請考慮一開始將這類電腦新增為成員伺服器，並使用 [從媒體安裝] （IFM）方法來安裝 Active Directory Domain Services （AD DS）。 您可以使用 Ntdsutil 命令列工具來建立可儲存在卸載式媒體（CD、DVD 或其他媒體）上的安裝媒體，並寄送到目的地網站。 然後，您可以使用安裝媒體在網站的網域控制站上安裝 AD DS，而不需要使用複寫。 
 
-### <a name="hardware-failures-or-upgradestitle"></a>硬體故障或升級 @ no__t-0
+### <a name="hardware-failures-or-upgradestitle"></a>硬體故障或升級</title>
 
 如果由於硬體故障而導致複寫問題（例如，主機板、磁片子系統或硬碟失敗），請通知伺服器擁有者，讓硬體問題得以解決。
 
@@ -82,9 +82,9 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 如果您排除刻意中斷連線、硬體失敗和過時的 Windows 2000 網域控制站，則複寫問題的其餘部分幾乎一律會有下列其中一個根本原因：
 
 - 網路連線能力：網路連線可能無法使用，或網路設定未正確設定。
-- 名稱解析：DNS 錯誤配置是複寫失敗的常見原因。
+- 名稱解析： DNS 錯誤配置是複寫失敗的常見原因。
 - 驗證和授權：當網域控制站嘗試連線到其複寫協力電腦時，驗證和授權問題會導致「拒絕存取」錯誤。
-- 目錄資料庫（存放區）：目錄資料庫的處理速度可能不夠快，而無法跟上複寫時間。
+- 目錄資料庫（存放區）：目錄資料庫可能無法快速處理交易，而無法跟上複寫時間。
 - 複寫引擎：如果網站間複寫排程太短，則複寫佇列可能太大，而無法在輸出複寫排程所需的時間內處理。 在此情況下，某些變更的複寫可能會無限期停止，長時間足以超過標記存留期。
 - 複寫拓撲：網域控制站在 AD DS 中必須有可對應到真實廣域網路（WAN）或虛擬私人網路（VPN）連線的站上連結。 如果您在 AD DS 中為網路的實際網站拓朴不支援的複寫拓撲建立物件，則需要設定錯誤拓撲的複寫會失敗。
 
@@ -102,7 +102,7 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 
 如需強制移除 AD DS 的詳細資訊，請參閱[強制移除網域控制站](https://go.microsoft.com/fwlink/?LinkId=128291)。
 
-## <a name="using-repadmin-to-retrieve-replication-statustitle"></a>使用 Repadmin 來取出複寫狀態 @ no__t-0
+## <a name="using-repadmin-to-retrieve-replication-statustitle"></a>使用 Repadmin 來取出複寫狀態</title>
 
 複寫狀態是評估目錄服務狀態的重要方式。 如果複寫正常運作而沒有錯誤，您就知道已上線的網域控制站。 您也知道下列系統和服務正在運作：
 
@@ -158,11 +158,11 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 
 若要識別 Active Directory 複寫問題，請使用<system>repadmin/showrepl</system>命令，如上一節所述。 下表顯示此命令所產生的錯誤訊息，以及錯誤的根本原因，以及提供錯誤解決方案的主題連結。
 
-|Repadmin 錯誤|根本原因|方案|
+|Repadmin 錯誤|根本原因|解決方案|
 | --- | --- | --- |
-|上次與此伺服器複寫後的時間已超過標記存留期。|網域控制站具有名為來源網域控制站的失敗輸入複寫，已有足夠的時間可從 AD DS 進行刪除、複寫和垃圾收集。|事件識別碼2042：這台機器已複寫，因此太長|
+|上次與此伺服器複寫後的時間已超過標記存留期。|網域控制站具有名為來源網域控制站的失敗輸入複寫，已有足夠的時間可從 AD DS 進行刪除、複寫和垃圾收集。|事件識別碼 2042：自此電腦複寫後已過太久|
 |沒有輸入鄰近專案。|如果在 repadmin/showrepl 產生的輸出之「輸入鄰近專案」區段中沒有任何專案出現，網域控制站就無法與另一個網域控制站建立複寫連結。|修正複寫連線問題 (事件識別碼 1925)| 
-|存取遭到拒絕。|兩個網域控制站之間存在複寫連結，但由於驗證失敗而無法正確執行複寫。|修正複寫安全性問題| 
+|拒絕存取。|兩個網域控制站之間存在複寫連結，但由於驗證失敗而無法正確執行複寫。|修正複寫安全性問題| 
 |上次嘗試于 < 日期時間 > 失敗，並出現「目標帳戶名稱不正確」。|此問題可能與連線能力、DNS 或驗證問題有關。 如果這是 DNS 錯誤，本機網域控制站無法解析其複寫協力電腦的全域唯一識別碼（GUID） DNS 名稱。|修正複寫 DNS 查閱問題（事件識別碼1925、2087、2088）修正複寫安全性問題修正複寫連接問題（事件識別碼1925）| 
 |LDAP 錯誤49。|網域控制站電腦帳戶可能未與金鑰發佈中心（KDC）同步處理。|修正複寫安全性問題| 
 |無法開啟連至本機主機的 LDAP 連線|管理工具無法與 AD DS 連線。|修正複寫 DNS 查閱問題 (事件識別碼 1925、2087、2088)| 
@@ -171,7 +171,7 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 
 下表列出可能表示 Active Directory 複寫問題的常見事件，以及問題的根本原因，以及為問題提供解決方案的主題連結。 
 
-|事件識別碼和來源|根本原因|方案|
+|事件識別碼和來源|根本原因|解決方案|
 | --- | --- | --- | 
 |1311 NTDS KCC|AD DS 中的複寫設定資訊不會正確反映網路的實體拓撲。|修正複寫拓撲問題 (事件識別碼 1311)| 
 |1388 NTDS 複寫|Strict 複寫一致性不會生效，且延遲物件已複寫至網域控制站。|修正複寫延遲物件問題 (事件識別碼 1388、1988、2042)|
@@ -186,4 +186,4 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
   
 ## <a name="next-steps"></a>後續步驟
 
-如需詳細資訊，包括錯誤碼特定的支援文章，請參閱支援文章：[如何針對常見的 Active Directory 複寫錯誤進行疑難排解](https://support.microsoft.com/help/3108513)
+如需詳細資訊，包括錯誤碼特定的支援文章，請參閱支援文章：[如何疑難排解常見的 Active Directory 複寫錯誤](https://support.microsoft.com/help/3108513)

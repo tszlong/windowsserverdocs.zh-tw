@@ -18,7 +18,7 @@ ms.locfileid: "71408611"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>實作安全的管理主機
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 安全的系統管理主機是已特別針對建立安全平臺所設定的工作站或伺服器，而特殊許可權帳戶可以在 Active Directory 或網域控制站上執行系統管理工作。已加入網域的系統，以及在已加入網域的系統上執行的應用程式。 在此情況下，「特殊許可權帳戶」不僅指的是 Active Directory 中最具特殊許可權群組成員的帳戶，還會參考任何已委派許可權的帳戶，以允許執行系統管理工作。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71408611"
 ### <a name="account-configuration"></a>帳戶設定  
 即使您的組織目前未使用智慧卡，您仍應考慮為特殊許可權帳戶和安全的系統管理主機來實行。 系統管理主機應設定為需要所有帳戶的智慧卡登入，方法是修改連結至包含管理主機之 Ou 的 GPO 中的下列設定：  
   
-@no__t 0Computer 設定 \ \windows \ 本機原則 \ Options\Interactive 登入：需要智慧卡 @ no__t-0  
+**電腦設定 \ \windows \ 本機原則 \ Options\Interactive 登入：需要智慧卡**  
   
 這項設定會要求所有互動式登入都使用智慧卡，而不論 Active Directory 中個別帳戶的設定為何。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "71408611"
 如果您在系統管理主機策略中執行跳躍伺服器，就應該使用內建的安全性設定向導來設定服務、登錄、audit 和防火牆設定，以減少伺服器的受攻擊面。 當您收集並設定 [安全性設定] Wizard 設定時，可以將設定轉換成用來在所有跳躍伺服器上強制執行一致基準設定的 GPO。 您可以進一步編輯 GPO 來執行跳躍伺服器特定的安全性設定，並且可以結合所有設定與從 Microsoft 安全性合規性管理員解壓縮的其他基準設定。  
   
 ### <a name="microsoft-security-compliance-manager"></a>Microsoft Security Compliance Manager  
-[Microsoft 安全性合規性管理員](https://technet.microsoft.com/library/cc677002.aspx)是免費的工具，可根據作業系統版本和角色設定來整合 Microsoft 建議的安全性設定，並以單一工具和 UI 收集這些設定用來建立及設定網域控制站的基準安全性設定。 Microsoft 安全性合規性管理員範本可以與 [安全性設定] [Wizard] 設定結合，針對部署在跳躍伺服器所在 Ou 的 Gpo 中部署和強制執行的「跳躍伺服器」，產生完整的設定基準。位於 Active Directory。  
+[Microsoft 安全性合規性管理員](https://technet.microsoft.com/library/cc677002.aspx)是一項免費的工具，可整合 Microsoft 建議的安全性設定（根據作業系統版本和角色設定），並以單一工具和 UI 收集，以用於建立和設定網域控制站的基準安全性設定。 Microsoft 安全性合規性管理員範本可以與 [安全性設定] [Wizard] 設定結合，針對部署在跳躍伺服器所在 Ou 的 Gpo 中部署和強制執行的「跳躍伺服器」，產生完整的設定基準。位於 Active Directory。  
   
 > [!NOTE]  
 > 在撰寫本文時，Microsoft 安全性合規性管理員不會包含跳躍伺服器或其他安全系統管理主機的特定設定，但仍可使用安全性合規性管理員（SCM）來建立系統管理的初始基準主機. 不過，若要適當地保護主機，您應該將額外的安全性設定套用到高度安全的工作站和伺服器。  
@@ -84,7 +84,7 @@ ms.locfileid: "71408611"
 您應該允許經過授權的使用者進行互動式登入，而且應該移除或甚至封鎖伺服器存取不需要的其他登入類型。  
   
 ### <a name="patch-and-configuration-management"></a>修補和設定管理  
-小型組織可能會依賴 Windows Update 或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）等供應專案來管理 Windows 系統更新的部署，而較大型的組織可能會實行企業修補程式和設定管理System Center Configuration Manager 之類的軟體。 無論您用來將更新部署至一般伺服器和工作站擴展的機制為何，您都應該考慮針對高度安全的系統（例如網域控制站、憑證授權單位單位和管理主機）進行個別部署。 藉由將這些系統與一般管理基礎結構隔離，如果您的管理軟體或服務帳戶遭到入侵，就無法輕易地將危害延伸到基礎結構中最安全的系統。  
+較小的組織可能會依賴 Windows Update 或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）等供應專案來管理 Windows 系統更新的部署，而較大型的組織可能會實行企業修補程式和設定管理軟體（例如 System Center Configuration Manager）。 無論您用來將更新部署至一般伺服器和工作站擴展的機制為何，您都應該考慮針對高度安全的系統（例如網域控制站、憑證授權單位單位和管理主機）進行個別部署。 藉由將這些系統與一般管理基礎結構隔離，如果您的管理軟體或服務帳戶遭到入侵，就無法輕易地將危害延伸到基礎結構中最安全的系統。  
   
 雖然您不應該為安全系統執行手動更新程式，但您應該設定不同的基礎結構來更新安全系統。 即使在非常大型的組織中，此基礎結構通常也可以透過專用的 WSUS 伺服器和 Gpo 來執行，以保護系統。  
   

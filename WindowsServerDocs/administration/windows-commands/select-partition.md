@@ -22,7 +22,7 @@ ms.locfileid: "71371066"
 ---
 # <a name="select-partition"></a>選取資料分割
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 選取指定的磁碟分割，並將焦點移至該分割區。 此命令也可以用來顯示目前在選取的磁片中有焦點的分割區。  
   
@@ -34,11 +34,11 @@ ms.locfileid: "71371066"
 select partition=<n>  
 ```  
   
-## <a name="parameters"></a>參數  
+## <a name="parameters"></a>Parameters  
   
 |   參數    |                                                                                    描述                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| partition @ no__t-0 @ no__t-1 | 要接收焦點的資料分割編號。 您可以使用 DiskPart 中的 [**清單磁碟分割**] 命令，來查看目前選取之磁片上的所有資料分割編號。 |
+| 分割區\=<n> | 要接收焦點的資料分割編號。 您可以使用 DiskPart 中的 [**清單磁碟分割**] 命令，來查看目前選取之磁片上的所有資料分割編號。 |
   
 ## <a name="remarks"></a>備註  
   

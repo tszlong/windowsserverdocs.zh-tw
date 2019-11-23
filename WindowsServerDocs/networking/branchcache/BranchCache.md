@@ -21,7 +21,7 @@ ms.locfileid: "71406766"
 ---
 # <a name="branchcache"></a>BranchCache
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題 (對象為資訊技術 (IT) 專家) 提供關於 BranchCache 的概觀資訊，包括 BranchCache 模式、特色、功能以及不同作業系統中可用的 BranchCache 功能。
 
@@ -45,7 +45,7 @@ ms.locfileid: "71406766"
 
 - 分公司的用戶端電腦正在執行 Windows 10、Windows 8.1、Windows 8 或 Windows 7。
 
-本主題包含下列各節：
+這個主題包括下列各節：
 
 -   [什麼是 BranchCache？](#bkmk_what)
 
@@ -190,11 +190,11 @@ BranchCache 可以改善網路應用程式效能和降低共用的資料快取�
 
 |功能|電腦位置|安裝這個 BranchCache 元素|
 |-----------------|---------------------|------------------------------------|
-|內容伺服器 \(BITS 架構的應用程式伺服器 @ no__t-1|總公司或雲端資料中心|BranchCache 功能|
-|內容伺服器 \(Web 服務器 @ no__t-1|總公司或雲端資料中心|BranchCache 功能|
-|內容伺服器 @no__t-使用 SMB 通訊協定 @ no__t-1 的0file 伺服器|總公司或雲端資料中心|檔案服務伺服器角色的 [網路檔案的 BranchCache] 角色服務|
+|內容伺服器 \(以 BITS 為基礎的應用程式伺服器\)|總公司或雲端資料中心|BranchCache 功能|
+|內容伺服器 \(網頁伺服器\)|總公司或雲端資料中心|BranchCache 功能|
+|使用 SMB 通訊協定的內容伺服器 \(檔案伺服器\)|總公司或雲端資料中心|檔案服務伺服器角色的 [網路檔案的 BranchCache] 角色服務|
 |託管快取伺服器|分公司|啟用託管快取伺服器模式的 BranchCache 功能|
-|啟用 BranchCache 的用戶端電腦|分公司|不需要安裝;只在用戶端上啟用 BranchCache 和 BranchCache 模式 \(distributed 或託管 @ no__t-1|
+|啟用 BranchCache 的用戶端電腦|分公司|不需要安裝;只在用戶端上啟用 BranchCache 和 BranchCache 模式 \(分散式或託管\)|
 
 若要安裝角色服務或功能，請開啟 [伺服器管理員]，然後選取您要啟用 BranchCache 功能的電腦。 在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [**新增角色及功能精靈**] 隨即開啟。 在執行精靈時，請選取下列項目：
 
@@ -235,7 +235,7 @@ BranchCache 可以改善網路應用程式效能和降低共用的資料快取�
 -   Windows 7 專業版，僅支援 BITS
 
 > [!NOTE]
-> 在 Windows Server 2008 或 Windows Vista 作業系統中，預設無法使用 BranchCache。 不過，在這些作業系統上，如果您下載並安裝 Windows Management Framework 更新，則 BranchCache 功能僅適用于背景智慧型傳送服務（BITS）通訊協定。 如需詳細資訊及下載 Windows Management Framework，請參閱[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) ，網址為 https://go.microsoft.com/fwlink/?LinkId=188677 。
+> 在 Windows Server 2008 或 Windows Vista 作業系統中，預設無法使用 BranchCache。 不過，在這些作業系統上，如果您下載並安裝 Windows Management Framework 更新，則 BranchCache 功能僅適用于背景智慧型傳送服務（BITS）通訊協定。 如需詳細資訊以及下載 Windows Management Framework，請參閱 https://go.microsoft.com/fwlink/?LinkId=188677的[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) 。
   
 ### <a name="operating-systems-for-branchcache-content-server-functionality"></a>適用於 BranchCache 內容伺服器功能的作業系統
 
@@ -322,19 +322,19 @@ BranchCache 使用同儕節點內容快取通訊協定與抓取架構通訊協�
 
 內容資訊與實際內容的流程分成下列四個階段：
 
-1.  @no__t 0BranchCache 進程：要求內容 @ no__t-0
+1.  [BranchCache 進程：要求內容](#BKMK_8)
 
-2.  @no__t 0BranchCache 進程：找出 content @ no__t-0
+2.  [BranchCache 進程：尋找內容](#BKMK_9)
 
-3.  @no__t 0BranchCache 進程：取出 content @ no__t-0
+3.  [BranchCache 進程：抓取內容](#BKMK_10)
 
-4.  @no__t 0BranchCache 進程：Cache content @ no__t-0
+4.  [BranchCache 進程：快取內容](#BKMK_11)
 
 下列各節會說明這些階段。
 
-## <a name="BKMK_8"></a>BranchCache 處理常式：要求內容
+## <a name="BKMK_8"></a>BranchCache 進程：要求內容
 
-在第一個階段中，分公司的用戶端電腦會向遠端位置 (例如總公司) 的內容伺服器要求內容，例如檔案或網頁。 內容伺服器會確認已授權該用戶端電腦接收要求的內容。 如果用戶端電腦已獲授權，且內容伺服器和用戶端都是 BranchCache @ no__t-0enabled，則內容伺服器會產生內容資訊。
+在第一個階段中，分公司的用戶端電腦會向遠端位置 (例如總公司) 的內容伺服器要求內容，例如檔案或網頁。 內容伺服器會確認已授權該用戶端電腦接收要求的內容。 如果用戶端電腦已獲授權，而且內容伺服器和用戶端都是 BranchCache\-啟用，內容伺服器就會產生內容資訊。
 
 內容伺服器接著會使用和傳送實際內容時所使用的相同通訊協定，將內容資訊傳送至用戶端電腦。 
 
@@ -352,7 +352,7 @@ BranchCache 使用同儕節點內容快取通訊協定與抓取架構通訊協�
 
 這個方法可確保讓沒有伺服器密碼的實體，無法探索資料區塊中的實際內容。 區段密碼會以和純文字區段本身相同的安全性等級來處理，因為只要知道指定區段的區段密碼，就可以讓該實體從同儕節點取得該區段，然後加以解密。 知道伺服器密碼並不會立即產生任何特定純文字，但可以用來從加密文字衍生特定的資料類型，然後可能將一些部分已知的資料洩漏給暴力密碼破解攻擊。 因此，伺服器密碼應該保密。
   
-## <a name="BKMK_9"></a>BranchCache 處理常式：尋找內容
+## <a name="BKMK_9"></a>BranchCache 進程：尋找內容
 
 在用戶端電腦收到內容資訊之後，該用戶端會使用區段識別碼在分公司快取中找出要求的內容，不論該快取是分散在用戶端電腦之間，或是位於託管快取伺服器上。
 
@@ -372,11 +372,11 @@ BranchCache 使用同儕節點內容快取通訊協定與抓取架構通訊協�
 
 會在收到內容之後，新增至用戶端電腦或是託管快取伺服器上的本機快取。 在這種情況下，內容資訊可以避免用戶端或託管快取伺服器將不符合雜湊的任何內容新增至本機快取。 比對雜湊以確認內容的程序可確保只會將有效的內容新增至快取，並可保護本機快取的完整性。
 
-## <a name="BKMK_10"></a>BranchCache 處理常式：擷取內容
+## <a name="BKMK_10"></a>BranchCache 進程：抓取內容
 
 用戶端電腦在內容主機 (託管快取伺服器或分散式快取模式用戶端電腦) 上找到所需的內容之後，用戶端電腦就會開始進行抓取內容的程序。
 
-首先，用戶端電腦會向內容主機傳送要求，以取得所需的第一個區塊。 該要求包含區段識別碼，以及可識別所需內容的區塊範圍。 因為只會傳回一個區塊，所以區塊範圍只包含單一區段。 (目前不支援要求多個區塊。)用戶端也會在本機的「未處理的要求」清單中儲存該要求。  
+首先，用戶端電腦會向內容主機傳送要求，以取得所需的第一個區塊。 該要求包含區段識別碼，以及可識別所需內容的區塊範圍。 因為只會傳回一個區塊，所以區塊範圍只包含單一區段。 （目前不支援多個區塊的要求）。用戶端也會將要求儲存在其本機未處理的要求清單中。  
 
 從用戶端收到有效的要求訊息時，內容主機會檢查要求中指定的區塊是否存在於內容主機的內容快取中。
 
@@ -421,7 +421,7 @@ BranchCache 會產生適用於加密演算法的初始化向量，並使用加�
 
     *資料的要求塞爆用戶端*。 BranchCache 通訊協定併入佇列管理計數器與計時器，避免用戶端超載。
 
-## <a name="BKMK_11"></a>BranchCache 處理常式：快取內容
+## <a name="BKMK_11"></a>BranchCache 進程：快取內容
 
 在分散式快取模式上，位於分公司的用戶端電腦與託管快取伺服器，內容快取是隨時間慢慢透過 WAN 連結抓取內容來建置。
 

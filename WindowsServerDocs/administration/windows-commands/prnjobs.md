@@ -22,7 +22,7 @@ ms.locfileid: "71372103"
 ---
 # <a name="prnjobs"></a>prnjobs
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 暫停、繼續、取消和列出列印工作。
 
@@ -32,7 +32,7 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 [-p <printerName>] [-j <JobID>] [-u <UserName>] [-w <Password>]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |          參數           |                                                                                                                                                                                        描述                                                                                                                                                                                        |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,18 +47,18 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 |              /?              |                                                                                                                                                                           在命令提示字元顯示說明。                                                                                                                                                                            |
 
 ## <a name="remarks"></a>備註
--   **Prnjobs**命令是位於%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnjobs 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如:
+-   **Prnjobs**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnjobs 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs
     ```
--   如果您提供的資訊包含空格，請使用引號括住文字（例如，`"computer Name"`）。
+-   如果您提供的資訊包含空格，請使用引號括住文字（例如 `"computer Name"`）。
 
 ## <a name="BKMK_examples"></a>典型
 若要暫停工作識別碼為27的列印工作，並傳送至名為 HRServer 的遠端電腦，以在名為 colorprinter 的印表機上列印，請輸入：
 ```
 cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
 ```
-若要在名為 colorprinter_2 的本機印表機的佇列中列出所有目前的列印工作，請輸入：
+若要列出本機印表機的佇列中名為 colorprinter_2 的所有目前列印工作，請輸入：
 ```
 cscript prnjobs.vbs -l -p colorprinter_2
 ```

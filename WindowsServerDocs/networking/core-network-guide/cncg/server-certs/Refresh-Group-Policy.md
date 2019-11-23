@@ -17,7 +17,7 @@ ms.locfileid: "71356193"
 ---
 # <a name="refresh-group-policy"></a>重新整理群組原則
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式，在本機電腦上手動重新整理群組原則。 重新整理群組原則時，如果已設定憑證自動註冊且正常運作，則會由憑證授權單位單位（CA）將憑證註冊到本機電腦。  
   
@@ -28,7 +28,7 @@ ms.locfileid: "71356193"
   
 ### <a name="to-refresh-group-policy-on-the-local-computer"></a>若要重新整理本機電腦上的群組原則  
   
-1.  在安裝 NPS 的電腦上，使用工作列上的圖示開啟 Windows PowerShell @ no__t-0。  
+1.  在安裝 NPS 的電腦上，使用工作列上的圖示開啟 Windows PowerShell&reg;。  
   
 2.  在 Windows PowerShell 命令提示字元中，輸入**gpupdate**，然後按 enter。  
   

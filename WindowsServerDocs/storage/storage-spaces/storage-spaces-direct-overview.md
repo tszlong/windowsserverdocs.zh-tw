@@ -19,7 +19,7 @@ ms.locfileid: "71402838"
 ---
 # <a name="storage-spaces-direct-overview"></a>儲存空間直接存取概觀
 
->適用於：Windows Server 2019、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server 2016
 
 儲存空間直接存取會使用業界標準的伺服器搭配本機連接的磁碟機，以比傳統 SAN 或 NAS 陣列更少的成本來建立高可用性、高延展性的軟體定義存放裝置。 其交集或超融合式架構會大幅簡化採購和部署，而快取、儲存層和抹除編碼等功能，以及最新的硬體革新（如 RDMA 網路和 NVMe 磁片磁碟機）提供無可匹敵的效率和效能。
 
@@ -112,24 +112,24 @@ ms.locfileid: "71402838"
 
 請造訪[Microsoft.com/HCI](https://www.microsoft.com/hci)以閱讀其故事：
 
-[@no__t 客戶標誌的1Grid](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
+[客戶標誌的 ![方格](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
 
 ## <a name="management-tools"></a>管理工具
 
 您可以使用下列工具來管理和/或監視儲存空間直接存取：
 
-| Name | 圖形化或命令列？ | 付費或包含？ |
+| 名稱 | 圖形化或命令列？ | 付費或包含？ |
 |-----------------|----------------------------|-------------------|
 | [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | 拖放式    | 內含 |
 | 伺服器管理員 & 容錯移轉叢集管理員                                 | 拖放式    | 內含 |
 | Windows PowerShell                                                        | 命令列 | 內含 |
 | [System Center Virtual Machine Manager （SCVMM）](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager （SCOM）](https://www.microsoft.com/download/details.aspx?id=54700) | 拖放式    | 付費     |
 
-## <a name="get-started"></a>開始使用
+## <a name="get-started"></a>立即開始
 
 [在 Microsoft Azure 中](https://blogs.technet.microsoft.com/filecab/2016/05/05/s2dazuretp5/)，立即試用儲存空間直接存取，或從 [Windows Server 評估版](https://go.microsoft.com/fwlink/?linkid=842602)下載 Windows Server 的 180 天授權評估版。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)
 - [儲存體複本](../storage-replica/storage-replica-overview.md)

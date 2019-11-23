@@ -18,7 +18,7 @@ ms.locfileid: "71388914"
 ---
 # <a name="remote-access"></a>遠端存取
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
 《遠端存取指南》提供 Windows Server 2016 中的「遠端存取」伺服器角色的總覽，並涵蓋下列主題：
 
@@ -34,15 +34,15 @@ ms.locfileid: "71388914"
 遠端存取服務器角色是這些相關網路存取技術的邏輯群組：[遠端存取服務（RAS）](#bkmk_da)、[路由](#bkmk_rras)和[Web 應用程式 Proxy](#bkmk_proxy)。 這些技術是遠端存取伺服器角色的 *角色服務* 。 當您使用 [**新增角色及功能] Wizard**或 Windows PowerShell 安裝遠端存取服務器角色時，您可以安裝這三個角色服務中的一或多個。
 
 >[!IMPORTANT]
->請勿嘗試在 Microsoft Azure 的虛擬機器上部署遠端存取 \(VM @ no__t-1。 不支援在 Microsoft Azure 中使用遠端存取。 您無法在 Azure VM 中使用「遠端存取」來部署 VPN、DirectAccess，或 Windows Server 2016 或舊版 Windows Server 中的任何其他遠端存取功能。 如需詳細資訊，請參閱[Microsoft Microsoft Azure 虛擬機器的伺服器軟體支援](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
+>請勿嘗試在 Microsoft Azure 的虛擬機器 \(VM\) 上部署遠端存取。 不支援在 Microsoft Azure 中使用遠端存取。 您無法在 Azure VM 中使用「遠端存取」來部署 VPN、DirectAccess，或 Windows Server 2016 或舊版 Windows Server 中的任何其他遠端存取功能。 如需詳細資訊，請參閱[Microsoft Microsoft Azure 虛擬機器的伺服器軟體支援](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
 
-## <a name="bkmk_da"></a>遠端存取服務 \(RAS @ no__t-2-RAS 閘道
+## <a name="bkmk_da"></a>遠端存取服務 \(RAS\)-RAS 閘道
 
-當您安裝**DirectAccess 和 VPN （RAS）** 角色服務時，您會將遠端存取服務閘道部署 \(**RAS 閘道**\)。 您可以將 RAS 閘道部署為單一租使用者 RAS 閘道虛擬私人網路 \(VPN @ no__t-1 伺服器、多租使用者 RAS 閘道 VPN 伺服器，以及做為 DirectAccess 伺服器。
+當您安裝**DirectAccess 和 VPN （RAS）** 角色服務時，您會將遠端存取服務閘道部署 \(**RAS 閘道**\)。 您可以將 RAS 閘道部署為單一租使用者 RAS 閘道虛擬私人網路，\(VPN\) 伺服器、多租使用者 RAS 閘道 VPN 伺服器和 DirectAccess 伺服器。
 
-- **RAS 閘道-單一租**使用者。 藉由使用 RAS 閘道，您可以部署 VPN 連線，讓使用者可以從遠端存取您組織的網路和資源。 如果您的用戶端執行的是 Windows 10，您可以部署 Always On VPN，這會在遠端電腦連線到網際網路時，維護用戶端與組織網路之間的持續連接。 使用 RAS 閘道時，您也可以在不同位置的兩部伺服器之間建立站對站 VPN 連線，例如在主要辦公室和分公司之間，以及使用網路位址轉譯 \(NAT @ no__t-1，讓網路內的使用者可以存取外部資源，例如網際網路。 此外，當您的遠端辦公室位置也有支援 BGP 的邊緣閘道時，RAS 閘道支援邊界閘道協定（BGP），可提供動態路由服務。
+- **RAS 閘道-單一租**使用者。 藉由使用 RAS 閘道，您可以部署 VPN 連線，讓使用者可以從遠端存取您組織的網路和資源。 如果您的用戶端執行的是 Windows 10，您可以部署 Always On VPN，這會在遠端電腦連線到網際網路時，維護用戶端與組織網路之間的持續連接。 使用 RAS 閘道時，您也可以在不同位置的兩部伺服器之間建立站對站 VPN 連線，例如主要辦公室和分公司，以及使用網路位址轉譯 \(NAT\) 讓網路內的使用者可以存取外部資源（例如網際網路）。 此外，當您的遠端辦公室位置也有支援 BGP 的邊緣閘道時，RAS 閘道支援邊界閘道協定（BGP），可提供動態路由服務。
 
-- **RAS 閘道-** 多租使用者。 當您使用的是 [超 no__t-0V 網路虛擬化]，或是您的 VM 網路是以虛擬區域網路部署，\(VLANs @ no__t-2 時，您可以將 RAS 閘道部署為多租使用者、以軟體為基礎的邊緣閘道和路由器。 使用 RAS 閘道，雲端服務提供者 \(CSPs @ no__t-1，企業可以在虛擬和實體網路（包括網際網路）之間啟用資料中心和雲端網路流量路由。 使用 RAS 閘道時，您的租使用者可以使用點對站 VPN 連線，從任何地方存取資料中心內的 VM 網路資源。 您也可以為租使用者提供其遠端網站與 CSP 資料中心之間的站對站 VPN 連線。 此外，您可以針對動態路由設定具有 BGP 的 RAS 閘道，也可以啟用網路位址轉譯 \(NAT @ no__t-1，為 VM 網路上的 Vm 提供網際網路存取。
+- **RAS 閘道-** 多租使用者。 當您使用\-Hyper-v 網路虛擬化時，您可以將 RAS 閘道部署為多租使用者、以軟體為基礎的邊緣閘道和路由器，或者您的 VM 網路 \(Vlan\)部署了虛擬區域網路絡。 使用 RAS 閘道，\(Csp\) 的雲端服務提供者，企業可以在虛擬和實體網路（包括網際網路）之間啟用資料中心和雲端網路流量路由。 使用 RAS 閘道時，您的租使用者可以使用點對站 VPN 連線，從任何地方存取資料中心內的 VM 網路資源。 您也可以為租使用者提供其遠端網站與 CSP 資料中心之間的站對站 VPN 連線。 此外，您可以針對動態路由設定具有 BGP 的 RAS 閘道，也可以啟用網路位址轉譯 \(NAT\)，為 VM 網路上的 Vm 提供網際網路存取。
 
 >[!IMPORTANT]
 > Windows Server 2012 R2 也提供具有多租使用者功能的 RAS 閘道。

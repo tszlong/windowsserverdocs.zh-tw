@@ -22,7 +22,7 @@ ms.locfileid: "71392339"
 ---
 # <a name="tskill"></a>tskill
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 結束在遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話中執行的處理常式。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -35,14 +35,14 @@ ms.locfileid: "71392339"
 tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /a] [/v]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |-------|--------|
 |\<ProcessID >|指定您想要結束之進程的識別碼。|
 |\<ProcessName >|指定您想要結束之進程的名稱。 這個參數可以包含萬用字元。|
-|/server： \<ServerName >|指定包含您要結束之進程的終端機伺服器。 如果未指定 **/server** ，則會使用目前的 RD 工作階段主機伺服器。|
-|/id： \<SessionID >|結束在指定會話中執行的進程。|
+|/server：\<ServerName >|指定包含您要結束之進程的終端機伺服器。 如果未指定 **/server** ，則會使用目前的 RD 工作階段主機伺服器。|
+|/id：\<SessionID >|結束在指定會話中執行的進程。|
 |/a|結束正在所有會話中執行的進程。|
 |/v|顯示正在執行之動作的相關資訊。|
 |/?|在命令提示字元顯示說明。|
@@ -62,5 +62,5 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   tskill explorer /id:5
   ```
   #### <a name="additional-references"></a>其他參考資料
-  [命令列語法索引鍵](command-line-syntax-key.md)
-  [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+  
+  [ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)

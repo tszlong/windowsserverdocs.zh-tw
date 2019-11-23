@@ -17,9 +17,9 @@ ms.locfileid: "71388019"
 ---
 # <a name="troubleshooting-web-application-proxy"></a>對 Web 應用程式 Proxy 進行疑難排解
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-@no__t 0This 內容與 Web 應用程式 Proxy 的內部部署版本有關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。 **  
+**此內容與內部部署版本的 Web 應用程式 Proxy 相關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
   
 本節提供 Web 應用程式 Proxy 的疑難排解程式，包括事件說明和解決方案。 有三個位置會顯示錯誤：  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71388019"
   
     系統管理員主控台中列出的每個事件識別碼都可以在 Windows 事件檢視器中查看，而對應的描述和解決方案則位於下面。  
   
-    開啟事件檢視器並尋找 [**應用程式及服務記錄**檔] 下的 Web 應用程式 Proxy 相關事件  > **Microsoft** > **Windows** > **Web 應用程式 proxy** >  系統**管理員**  
+    開啟事件檢視器，並在**應用程式和服務記錄**檔下尋找與 Web 應用程式 proxy 相關的事件 > **Microsoft** > **Windows** > **Web 應用程式 proxy** > 系統**管理員**  
   
     ![](media/Troubleshooting-Web-Application-Proxy/WebApplicationProxyTroubleshooting.png)  
   
@@ -57,12 +57,12 @@ ms.locfileid: "71388019"
   
 |事件或徵兆|可能的原因|解析度|  
 |--------------------|------------------|--------------|  
-|11005<br /><br />Web 應用程式 Proxy 無法使用設定中的密碼來建立 cookie 加密金鑰。|全域設定 "AccessCookiesEncryptionKey" 參數已由 PowerShell 命令變更：Set-webapplicationproxyconfiguration-RegenerateAccessCookiesEncryptionKey|不需要執行任何動作。 已移除問題的 cookie，並將使用者重新導向至 STS 進行驗證。|  
-|12000<br /><br />Web 應用程式 Proxy 無法檢查至少60分鐘的設定變更|Web 應用程式 Proxy 無法使用 Set-webapplicationproxyconfiguration/應用程式命令來存取 Web 應用程式 Proxy 設定。 這通常是因為沒有與 AD FS 的連線，或需要更新與 AD FS 的信任所造成。|檢查與 AD FS 的連線能力。 若要這麼做，您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 與 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
-|12003<br /><br />Web 應用程式 Proxy 無法剖析存取 cookie。|這可能表示 Web 應用程式 Proxy 和 AD FS 未連線，或未收到相同的設定。|檢查與 AD FS 的連線能力。 若要這麼做，您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 與 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
-|12004<br /><br />Web 應用程式 Proxy 收到具有無效存取 cookie 的要求。|此事件可能表示 Web 應用程式 Proxy 和 AD FS 未連線，或未收到相同的設定。<br /><br />如果您執行了 Set-Set-webapplicationproxyconfiguration-RegenerateAccessCookiesEncryptionKey PowerShell 命令所 chaged 的 "AccessCookiesEncryptionKey" 參數，則此事件是正常的，不需要任何解決步驟。|檢查與 AD FS 的連線能力。 若要這麼做，您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 與 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
+|11005<br /><br />Web 應用程式 Proxy 無法使用設定中的密碼來建立 cookie 加密金鑰。|全域設定 "AccessCookiesEncryptionKey" 參數已由 PowerShell 命令變更： Set-webapplicationproxyconfiguration-RegenerateAccessCookiesEncryptionKey|不需要執行任何動作。 已移除問題的 cookie，並將使用者重新導向至 STS 進行驗證。|  
+|12000<br /><br />Web 應用程式 Proxy 無法檢查至少60分鐘的設定變更|Web 應用程式 Proxy 無法使用 Set-webapplicationproxyconfiguration/應用程式命令來存取 Web 應用程式 Proxy 設定。 這通常是因為沒有與 AD FS 的連線，或需要更新與 AD FS 的信任所造成。|檢查與 AD FS 的連線能力。 您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy 來執行此動作 >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 和 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
+|12003<br /><br />Web 應用程式 Proxy 無法剖析存取 cookie。|這可能表示 Web 應用程式 Proxy 和 AD FS 未連線，或未收到相同的設定。|檢查與 AD FS 的連線能力。 您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy 來執行此動作 >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 和 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
+|12004<br /><br />Web 應用程式 Proxy 收到具有無效存取 cookie 的要求。|此事件可能表示 Web 應用程式 Proxy 和 AD FS 未連線，或未收到相同的設定。<br /><br />如果您執行了 Set-Set-webapplicationproxyconfiguration-RegenerateAccessCookiesEncryptionKey PowerShell 命令所 chaged 的 "AccessCookiesEncryptionKey" 參數，則此事件是正常的，不需要任何解決步驟。|檢查與 AD FS 的連線能力。 您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy 來執行此動作 >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 和 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
 |12008<br /><br />Web 應用程式 Proxy 超過後端伺服器允許的 Kerberos 驗證嘗試次數上限。|此事件可能表示 Web 應用程式 Proxy 與後端應用程式伺服器之間的設定不正確，或兩部電腦上的時間與日期設定發生問題。|後端伺服器已拒絕 Web 應用程式 Proxy 所建立的 Kerberos 票證。 確認 Web 應用程式 Proxy 和後端應用程式伺服器的設定是否正確。<br /><br />請確定 Web 應用程式 Proxy 和後端應用程式伺服器上的時間和日期設定已同步處理。|  
-|12011<br /><br />Web 應用程式 Proxy 收到具有無效存取 cookie 簽章的要求。|此事件可能表示 Web 應用程式 Proxy 和 AD FS 未連線，或未收到相同的設定。 如果您執行了 Set-Set-webapplicationproxyconfiguration-RegenerateAccessCookiesEncryptionKey PowerShell 命令所 chaged 的 "AccessCookiesEncryptionKey" 參數，則此事件是正常的，不需要任何解決步驟。|檢查與 AD FS 的連線能力。 若要這麼做，您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 與 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
+|12011<br /><br />Web 應用程式 Proxy 收到具有無效存取 cookie 簽章的要求。|此事件可能表示 Web 應用程式 Proxy 和 AD FS 未連線，或未收到相同的設定。 如果您執行了 Set-Set-webapplicationproxyconfiguration-RegenerateAccessCookiesEncryptionKey PowerShell 命令所 chaged 的 "AccessCookiesEncryptionKey" 參數，則此事件是正常的，不需要任何解決步驟。|檢查與 AD FS 的連線能力。 您可以使用連結 HTTPs：//< FQDN_AD_FS_Proxy 來執行此動作 >/FederationMetadata/2007-06/FederationMetadata.xmlMake 確定 AD FS 和 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|  
 |12027<br /><br />Proxy 在處理要求時發現意外的錯誤。 提供的名稱不是正確格式的帳戶名稱。|此事件可能表示 Web 應用程式 Proxy 與域控制器伺服器之間的設定不正確，或兩部電腦上的時間與日期設定發生問題。|網域控制站已拒絕 Web 應用程式 Proxy 所建立的 Kerberos 票證。 確認 Web 應用程式 Proxy 和後端應用程式伺服器的設定是否正確，尤其是 SPN 設定。 請確定 Web 應用程式 Proxy 已加入與網域控制站相同的網域，以確保網域控制站會與 Web 應用程式 Proxy 建立信任關係。請確定 Web 應用程式 Proxy 上的時間和日期設定和網域控制站已同步處理。|  
 |13012<br /><br />Web 應用程式 Proxy 收到不正確 edge 權杖簽章||請確定您已使用[KB 2955164](https://go.microsoft.com/fwlink/?LinkId=400701)更新 Web 應用程式 Proxy。|  
 |13013<br /><br />Web 應用程式 Proxy 收到包含已過期 edge 權杖的要求。|Web 應用程式 Proxy 和 AD FS 沒有已同步處理的時鐘。|同步處理 Web 應用程式 Proxy 與 AD FS 之間的時鐘。|  
@@ -89,10 +89,10 @@ ms.locfileid: "71388019"
 |12020<br /><br />Web 應用程式 Proxy 無法為下列 URL 建立保留區。|事件的可能原因是另一個服務在相同的 URL 上有一個保留。|系統管理員必須確定沒有任何人系結至相同的 Url。 若要檢查此動作，請執行下列命令： netsh HTTP show urlacl。 如果此 URL 是由 Web 應用程式 Proxy 電腦上執行的另一個元件所使用，請將它移除，或使用不同的 URL 透過 Web 應用程式 Proxy 發佈應用程式。|  
 |12021<br /><br />Web 應用程式 Proxy 無法系結 SSL 伺服器憑證。 已套用所有其他設定。|無法建立和設定 SSL 憑證資料的設定記錄。|請確定為 Web 應用程式 Proxyapplications 設定的憑證指紋已安裝在本機電腦存放區中具有私密金鑰的所有 Web 應用程式 Proxy 電腦上。|  
 |13001<br /><br />後端伺服器向 Web 應用程式 Proxy 呈現的 SSL 伺服器憑證無效;憑證不受信任。|伺服器所傳送的安全通訊端層（SSL）憑證中找到一或多個錯誤。 這可能表示後端伺服器提供了不正確 SSL，或 Web 應用程式 Proxy 與後端伺服器之間沒有信任關係。|驗證後端伺服器 SSL 憑證。 請確定已將 Web 應用程式 Proxy 電腦設定為使用正確的根 Ca，以信任後端伺服器憑證。|  
-|13006|0x80072ee7 錯誤碼時，failurrre 是因無法解析後端伺服器 URL 所造成。 其他錯誤碼如[https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85)](https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85))所述|請檢查後端伺服器 URL 是否正確，以及其名稱是否可以從 Web 應用程式 Proxy 電腦正確解析。|  
+|13006|0x80072ee7 錯誤碼時，failurrre 是因無法解析後端伺服器 URL 所造成。 其他錯誤碼詳述于[https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85)](https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85))|請檢查後端伺服器 URL 是否正確，以及其名稱是否可以從 Web 應用程式 Proxy 電腦正確解析。|  
 |13007<br /><br />在預期的間隔內，未收到來自後端伺服器的 HTTP 回應。|後端伺服器要求超時或變慢或沒有回應。|檢查後端伺服器設定。 如果速度非常慢，請檢查後端伺服器的連線能力，並考慮變更 InactiveTransactionsTimeoutSec 的 Web 應用程式 Proxy 全域設定參數 Cmdlet。|  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [Windows Server 2016 中 Web 應用程式 Proxy 的新功能](web-application-proxy-windows-server.md)  
 [使用 Web 應用程式 Proxy](assetId:///b607b717-2172-4271-98d1-fa8162e0bb2e)  
   

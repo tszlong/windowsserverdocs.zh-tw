@@ -19,13 +19,13 @@ ms.locfileid: "71358165"
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>建立規則傳送驗證方法相容宣告
 
 
-您可以使用 [**以宣告方式傳送群組成員資格**] 規則範本或 [**轉換傳入**宣告] 規則範本來傳送驗證方法宣告。 信賴憑證者可以使用驗證方法宣告來判斷使用者用來驗證和取得來自 Active Directory 同盟服務 \(AD FS @ no__t-1 之宣告的登入機制。 您也可以使用 Windows Server 2012 R2 中 Active Directory 同盟服務 \(AD FS @ no__t-1 的驗證機制保證功能做為輸入，以產生驗證方法宣告，以供信賴憑證者想要判斷的情況以智慧卡登入為基礎的存取層級。 例如，開發人員可以為信賴憑證者應用程式的同盟使用者指派不同層級的存取權。 存取層級取決於使用者是否以其使用者名稱和密碼認證登入，而不是使用其智慧卡。  
+您可以使用 [**以宣告方式傳送群組成員資格**] 規則範本或 [**轉換傳入**宣告] 規則範本來傳送驗證方法宣告。 信賴憑證者可以使用驗證方法宣告來判斷使用者用來驗證和取得來自 Active Directory 同盟服務 \(AD FS\)之宣告的登入機制。 您也可以使用 Windows Server 2012 R2 中的 Active Directory 同盟服務 \(AD FS\) 的驗證機制保證功能作為輸入，以產生驗證方法宣告，以便信賴憑證者想要判斷以智慧卡登入為基礎的存取層級。 例如，開發人員可以為信賴憑證者應用程式的同盟使用者指派不同層級的存取權。 存取層級取決於使用者是否以其使用者名稱和密碼認證登入，而不是使用其智慧卡。  
 
 視組織的需求而定，請使用下列其中一個程式：  
 
 -   使用 [**以宣告方式傳送群組成員資格**] 規則範本建立此規則 \- 當您想要在此範本中指定的群組最後判斷要發出的驗證方法時，可以使用此規則範本。  
 
--   使用**轉換傳入**的宣告規則範本來建立此規則 \- 當您想要將現有的驗證方法變更為與無法辨識的產品搭配使用的新驗證方法時，您可以使用此規則範本標準 AD FS 驗證方法宣告。  
+-   使用**轉換傳入**宣告規則範本來建立此規則 \- 當您想要將現有的驗證方法變更為與無法辨識標準 AD FS 驗證方法宣告的產品搭配使用的新驗證方法時，可以使用此規則範本。  
 
 
 
@@ -36,7 +36,7 @@ ms.locfileid: "71358165"
 2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
 4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
@@ -51,14 +51,14 @@ ms.locfileid: "71358165"
 
 8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的 [統一資源識別項] \(URI @ no__t-2 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
+9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的統一資源識別項 \(URI\) 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |                            實際的驗證方法                             |                                對應的 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        使用者名稱和密碼驗證                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 驗證                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 傳輸層安全性 \(TLS @ no__t-1 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509 @ no__t-不使用 TLS 的0based 驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 傳輸層安全性 \(TLS\) 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  以 x.509\-為基礎的驗證（不使用 TLS）                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
@@ -69,7 +69,7 @@ ms.locfileid: "71358165"
 2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
 4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
@@ -84,14 +84,14 @@ ms.locfileid: "71358165"
 
 8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的 [統一資源識別項] \(URI @ no__t-2 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
+9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的統一資源識別項 \(URI\) 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |                            實際的驗證方法                             |                                對應的 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        使用者名稱和密碼驗證                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 驗證                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 傳輸層安全性 \(TLS @ no__t-1 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509 @ no__t-不使用 TLS 的0based 驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 傳輸層安全性 \(TLS\) 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  以 x.509\-為基礎的驗證（不使用 TLS）                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
@@ -103,7 +103,7 @@ ms.locfileid: "71358165"
 2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
 4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
@@ -129,7 +129,7 @@ ms.locfileid: "71358165"
 |         使用者名稱和密碼驗證          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 驗證                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509 @ no__t-不使用 TLS 的0based 驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   以 x.509\-為基礎的驗證（不使用 TLS）    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -143,7 +143,7 @@ ms.locfileid: "71358165"
 2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
 4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
@@ -169,7 +169,7 @@ ms.locfileid: "71358165"
 |         使用者名稱和密碼驗證          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 驗證                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509 @ no__t-不使用 TLS 的0based 驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   以 x.509\-為基礎的驗證（不使用 TLS）    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -199,12 +199,12 @@ ms.locfileid: "71358165"
 
 1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
 
-2.  在主控台樹的 [ **AD FS\\信任關聯**性] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
+2.  在主控台樹的 [ **AD FS\\信任關係**] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
 
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
 
-4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，視您正在編輯的信任，以及您要在其中建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
+4.  在 [**編輯宣告規則**] 對話方塊中，根據您要編輯的信任以及要在其中建立此規則的規則集，選取下列其中一個索引標籤，然後按一下 [**新增規則**]，啟動與該規則集相關聯的規則嚮導：  
 
     -   **接受轉換規則**  
 
@@ -224,14 +224,14 @@ ms.locfileid: "71358165"
 
 8.  在 [**傳出宣告類型**] 中，選取清單中的 [**驗證方法**]。  
 
-9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的 [統一資源識別項] \(URI @ no__t-2 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
+9. 在 [**傳出宣告值**] 中，根據您慣用的驗證方法，在下表中輸入其中一個預設的統一資源識別項 \(URI\) 值，按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
 
 |                            實際的驗證方法                             |                                對應的 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        使用者名稱和密碼驗證                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 驗證                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 傳輸層安全性 \(TLS @ no__t-1 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509 @ no__t-不使用 TLS 的0based 驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 傳輸層安全性 \(TLS\) 使用 x.509 憑證的相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  以 x.509\-為基礎的驗證（不使用 TLS）                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
 
@@ -244,12 +244,12 @@ ms.locfileid: "71358165"
 
 1.  在伺服器管理員中，按一下 [**工具**]，然後按一下 [ **AD FS 管理**]。  
 
-2.  在主控台樹的 [ **AD FS\\信任關聯**性] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
+2.  在主控台樹的 [ **AD FS\\信任關係**] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
 
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。  
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
 
-4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您要建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
+4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您要建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導：  
 
     -   **接受轉換規則**  
 
@@ -280,7 +280,7 @@ ms.locfileid: "71358165"
 |         使用者名稱和密碼驗證          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 驗證                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509 @ no__t-不使用 TLS 的0based 驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   以 x.509\-為基礎的驗證（不使用 TLS）    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth3.PNG)
 
@@ -290,9 +290,9 @@ ms.locfileid: "71358165"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
 
-[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：建立信賴憑證者信任的宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[檢查清單：為宣告提供者信任建立宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
+[檢查清單：建立宣告提供者信任的宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
 
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

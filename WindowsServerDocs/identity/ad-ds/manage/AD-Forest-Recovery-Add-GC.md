@@ -18,7 +18,7 @@ ms.locfileid: "71369336"
 ---
 # <a name="ad-forest-recovery---adding-the-gc"></a>AD 樹系復原-新增 GC
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 請使用下列程式將通用類別目錄新增至 DC。  
   
@@ -29,7 +29,7 @@ ms.locfileid: "71369336"
 3. 展開 [**伺服器**] 容器，然後展開您要新增通用類別目錄之 DC 的伺服器物件。  
 4. 以滑鼠右鍵按一下 [ **NTDS 設定**]，然後按一下 [**屬性**]。  
 5. 選取 [**通用類別目錄**] 核取方塊。  
-![Add GC @ no__t-1
+![新增 GC](media/AD-Forest-Recovery-Add-GC/addgc1.png)
 
 ## <a name="to-add-the-global-catalog-using-repadmin"></a>使用 Repadmin 新增通用類別目錄  
 

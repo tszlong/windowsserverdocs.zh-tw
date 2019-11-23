@@ -18,24 +18,24 @@ ms.locfileid: "71359559"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>將伺服器驗證憑證匯入預設的網站中
 
-從憑證授權單位單位 \(CA @ no__t-1 取得伺服器驗證憑證之後，您必須在伺服器陣列中的每部同盟伺服器或同盟伺服器 proxy 的預設網站上手動安裝該憑證。  
+從憑證授權單位單位 \(CA\)取得伺服器驗證憑證之後，您必須在伺服器陣列中的每部同盟伺服器或同盟伺服器 proxy 的預設網站上手動安裝該憑證。  
   
 對於網頁伺服器，您必須手動在適當的網站上或您的同盟應用程式所在的虛擬目錄中安裝該伺服器驗證憑證。  
   
 如果您正在設定陣列，請務必一樣要使用相同的設定，在陣列中的每部伺服器上執行此程序。  
   
 > [!NOTE]  
-> AD FS Management snap @ no__t-0in 指的是同盟伺服器的伺服器驗證憑證，做為服務通訊憑證。  
+> 中的 [AD FS 管理] 嵌入式\-管理單元是指做為服務通訊憑證之同盟伺服器的伺服器驗證憑證。  
   
 若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
 ### <a name="to-import-a-server-authentication-certificate-to-the-default-web-site"></a>將伺服器驗證憑證匯入到預設的網站  
   
-1.  在 [**開始**] 畫面上，輸入**INTERNET INFORMATION SERVICES \(IIS @ No__t-3 管理員**，然後按 enter。  
+1.  在 **開始** 畫面上，輸入**Internet Information Services \(IIS\) 管理員**，然後按 enter。  
   
 2.  在主控台樹狀目錄中，按一下 [ComputerName]。  
   
-3.  在中央窗格中，按兩下 [no__t-0click**伺服器憑證**]。  
+3.  在中央窗格中，按兩下 [**伺服器憑證**]\-。  
   
 4.  在 [動作] 窗格中，按一下 [匯入]。  
   

@@ -17,7 +17,7 @@ ms.locfileid: "71402172"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>在命名空間上啟用存取型列舉
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 存取型列舉可以隱藏使用者沒有存取權限的檔案和資料夾。 預設情況下不會為 DFS 命名空間啟用此功能。 您可以使用 DFS 管理來啟用 DFS 資料夾的存取型列舉。 若要控制資料夾目標中檔案和資料夾的存取型列舉，您必須使用 \[共用與存放管理\]，在每個共用資料夾上啟用存取型列舉。
 
@@ -51,7 +51,7 @@ ms.locfileid: "71402172"
 
 1.  在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
 
-2.  輸入下列命令，其中 *< namespace @ no__t-1root >* 是命名空間的根目錄：
+2.  輸入下列命令，其中 *< 命名空間\_root >* 是命名空間的根目錄：
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ ms.locfileid: "71402172"
 
 1. 在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
 
-2. 輸入下列命令，其中 *&lt;DFSPath @ no__t-2*是 DFS 資料夾（連結）的路徑， *< DOMAIN @ no__t-4Account >* 是群組或使用者帳戶的名稱，而 *（...）* 會取代為其他存取控制專案（Ace）：
+2. 輸入下列命令，其中 *&lt;DFSPath&gt;* 是 DFS 資料夾（連結）的路徑， *< 網域\\帳戶 >* 是群組或使用者帳戶的名稱，而 *（...）* 會取代為其他存取控制專案（ace）：
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   例如，若要以允許 Domain Admins 和 CONTOSO @ no__t-0Trainers 群組的許可權來取代現有許可權，請在 \\contoso. office\public\training 資料夾中輸入下列命令：
+   例如，若要以允許 Domain Admins 和 CONTOSO\\講師群組的許可權來取代現有許可權 \\office\public\training 資料夾的讀取（R）存取權，請輸入下列命令：
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -101,7 +101,7 @@ ms.locfileid: "71402172"
 |[Dfsutil 屬性 sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |移除資料夾的所有權限。|
 |[Dfsutil 屬性 sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 從資料夾移除群組或使用者 ACE。 |
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

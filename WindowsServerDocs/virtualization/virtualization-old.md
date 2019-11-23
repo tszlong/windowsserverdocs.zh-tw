@@ -18,14 +18,14 @@ ms.locfileid: "71364043"
 ---
 # <a name="virtualization"></a>虛擬化
 
->適用於：Windows Server (半年度管道)、Windows Server 2016 
+>適用於：Windows Server (半年通道)、Windows Server 2016 
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> Windows Server 2016 中的虛擬化是建立軟體定義基礎結構所需的其中一種基礎技術。 搭配網路功能與儲存空間，虛擬化功能可以賦予為您客戶提供強大工作負載所需的彈性。
 
-Windows Server 虛擬化技術包括 Hyper-v、Hyper-v 虛擬交換器和受防護網狀架構的更新虛擬機器 @no__t 0VMs @ no__t-1，可提升安全性、擴充性和可靠性。 容錯移轉叢集、網路功能和儲存空間的更新讓您更容易在搭配 Hyper-V 時部署和管理這些技術。 
+Windows Server 虛擬化技術包括 Hyper-v、Hyper-v 虛擬交換器和受防護網狀架構的更新，以及可改善安全性、擴充性和可靠性的虛擬機器 \(Vm\)。 容錯移轉叢集、網路功能和儲存空間的更新讓您更容易在搭配 Hyper-V 時部署和管理這些技術。 
 
 
 <ul class="cardsI panelContent">
@@ -59,7 +59,7 @@ Windows Server 虛擬化技術包括 Hyper-v、Hyper-v 虛擬交換器和受防�
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Windows 10 企業版：用裝置來工作的方式</h3>
+                        <h3>適用於企業的 Windows 10：將裝置用於工作的方式</h3>
                         <p>Hyper-V 技術透過硬體虛擬化提供運算資源。 Hyper-V 會建立電腦的軟體版本 (稱為虛擬機器)，讓您用來執行作業系統和應用程式。 您可以同時執行多個虛擬機器，也能視需要建立和刪除它們。 </p>
                     </div>
                 </div>

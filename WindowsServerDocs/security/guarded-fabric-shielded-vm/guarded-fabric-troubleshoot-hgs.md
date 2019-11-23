@@ -17,7 +17,7 @@ ms.locfileid: "71940816"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>針對主機守護者服務進行疑難排解
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 本主題說明在受防護網狀架構中部署或操作主機守護者服務（HGS）伺服器時所遇到之常見問題的解決方法。
 如果您不確定問題的本質，請先嘗試在您的 HGS 伺服器和 Hyper-v 主機上執行受防護的網狀[架構診斷](guarded-fabric-troubleshoot-diagnostics.md)，以縮小可能的原因。
@@ -143,7 +143,7 @@ Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
-或者，您也可以手動執行排程工作，方法是開啟**工作排程器**（taskschd.msc），流覽至**工作排程器程式庫 > Microsoft > Windows > HGSServer** ，然後執行名為**AttestationSignerCertRenewalTask**。
+或者，您也可以手動執行排程工作，方法是開啟**工作排程器**（taskschd.msc），流覽至**工作排程器程式庫 > Microsoft > Windows > HGSServer** ，然後執行名為**AttestationSignerCertRenewalTask**的工作。
 
 ## <a name="switching-attestation-modes"></a>切換證明模式
 
@@ -161,7 +161,7 @@ AttestationSignerCertRenewalTask
 
 ## <a name="memory-dump-encryption-policies"></a>記憶體傾印加密原則
 
-如果您嘗試設定記憶體傾印加密原則，但看不到預設的 HGS 傾印原則（Hgs @ no__t-0NoDumps、Hgs @ no__t-1DumpEncryption 和 Hgs @ no__t-2DumpEncryptionKey）或傾印原則 Cmdlet （Add-HgsAttestationDumpPolicy），它是您可能未安裝最新的累計更新。
+如果您嘗試設定記憶體傾印加密原則，但看不到預設的 HGS 傾印原則（Hgs\_NoDumps、Hgs\_DumpEncryption 和 Hgs\_DumpEncryptionKey）或傾印原則 Cmdlet （HgsAttestationDumpPolicy），您可能未安裝最新的累計更新。
 若要修正此問題，請將[您的 HGS 伺服器更新](guarded-fabric-manage-hgs.md#patching-hgs)為最新的累積 Windows 更新，並[啟動新的證明原則](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation)。
 啟動新的證明原則之前，請確定您已將 Hyper-v 主機更新為相同的累積更新，因為未安裝新傾印加密功能的主機在啟用 HGS 原則之後，可能會失敗證明。
 
@@ -179,5 +179,5 @@ EKpub 會唯一識別該特定 TPM，而是 HGS 用來授與主機存取權以�
 如果您懷疑 TPM 發生這種情況，請向您的 OEM 確認您的 Tpm 不應該有 EKcert，並使用 `-Force` 旗標，手動向 HGS 註冊主機。
 如果您的 TPM 應該有 EKcert，但在平臺識別碼檔案中找不到，則請確定您在主機上執行[PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)時，使用的是系統管理員（提高許可權） PowerShell 主控台。
 
-如果您收到 EKcert 不受信任的錯誤，請確定您已在每部 HGS 伺服器上[安裝受信任的 tpm 根憑證封裝](guarded-fabric-install-trusted-tpm-root-certificates.md)，而且 TPM 廠商的根憑證存在於本機電腦的**TrustedTPM @ no__ 中。t 2RootCA**存放區。 任何適用的中繼憑證也必須安裝在本機電腦上的**TrustedTPM @ no__t-1IntermediateCA**存放區中。
-安裝根和中繼憑證之後，您應該能夠成功地執行 `Add-HgsAttestationTpmHost`。
+如果您收到 EKcert 不受信任的錯誤，請確定您已在每部 HGS 伺服器上[安裝受信任的 tpm 根憑證封裝](guarded-fabric-install-trusted-tpm-root-certificates.md)，而且 TPM 廠商的根憑證存在於本機電腦的**TrustedTPM\_rootca.cer**存放區中。 任何適用的中繼憑證也必須安裝在本機電腦上的**TrustedTPM\_IntermediateCA**存放區中。
+安裝根和中繼憑證之後，您應該能夠順利執行 `Add-HgsAttestationTpmHost`。

@@ -20,13 +20,13 @@ ms.locfileid: "71385599"
 適用于 AD FS 2016 和更新版本
 
 
-|狀況|使用範例的案例逐步解說|OAuth 2.0 流量/授與|用戶端類型|
+|案例|使用範例的案例逐步解說|OAuth 2.0 流量/授與|用戶端類型|
 |-----|-----|-----|-----|
-|單一頁面應用程式</br> | &bull;[使用 ADAL 的範例](../development/Single-Page-Application-with-AD-FS.md)|[隱](#implicit-grant-flow)|Public| 
-|登入使用者的 Web 應用程式</br> | &bull;[使用 OWIN 的範例](../development/enabling-openid-connect-with-ad-fs.md)|[授權碼](#authorization-code-grant-flow)|公用、機密|  
-|原生應用程式呼叫 Web API</br>|&bull;[使用 MSAL 的範例](../development/msal/adfs-msal-native-app-web-api.md)</br>&bull;[使用 ADAL 的範例](../development/native-client-with-ad-fs.md)|[授權碼](#authorization-code-grant-flow)|Public|   
-|Web 應用程式呼叫 Web API</br>|&bull;[使用 MSAL 的範例](../development/msal/adfs-msal-web-app-web-api.md)</br>&bull;[使用 ADAL 的範例](../development/enabling-oauth-confidential-clients-with-ad-fs.md)|[授權碼](#authorization-code-grant-flow)|機密性| 
-|Web API 會代表（OBO）使用者呼叫另一個 Web API</br>|&bull;[使用 MSAL 的範例](../development/msal/adfs-msal-web-api-web-api.md)</br>&bull;[使用 ADAL 的範例](../development/ad-fs-on-behalf-of-authentication-in-windows-server.md)|[代理者](#on-behalf-of-flow)|Web 應用程式的作用為機密| 
+|單一頁面應用程式</br> | [使用 ADAL &bull; 範例](../development/Single-Page-Application-with-AD-FS.md)|[隱](#implicit-grant-flow)|Public| 
+|登入使用者的 Web 應用程式</br> | [使用 OWIN &bull; 範例](../development/enabling-openid-connect-with-ad-fs.md)|[授權碼](#authorization-code-grant-flow)|公用、機密|  
+|原生應用程式呼叫 Web API</br>|[使用 MSAL &bull; 範例](../development/msal/adfs-msal-native-app-web-api.md)</br>[使用 ADAL &bull; 範例](../development/native-client-with-ad-fs.md)|[授權碼](#authorization-code-grant-flow)|Public|   
+|Web 應用程式呼叫 Web API</br>|[使用 MSAL &bull; 範例](../development/msal/adfs-msal-web-app-web-api.md)</br>[使用 ADAL &bull; 範例](../development/enabling-oauth-confidential-clients-with-ad-fs.md)|[授權碼](#authorization-code-grant-flow)|機密性| 
+|Web API 會代表（OBO）使用者呼叫另一個 Web API</br>|[使用 MSAL &bull; 範例](../development/msal/adfs-msal-web-api-web-api.md)</br>[使用 ADAL &bull; 範例](../development/ad-fs-on-behalf-of-authentication-in-windows-server.md)|[代理者](#on-behalf-of-flow)|Web 應用程式的作用為機密| 
 |Daemon 應用程式呼叫 Web API||[用戶端認證](#client-credentials-grant-flow)|機密性| 
 |Web 應用程式使用使用者認證呼叫 Web API||[資源擁有者密碼認證](#resource-owner-password-credentials-grant-flow-not-recommended)|公用、機密| 
 |Browserless 應用程式呼叫 Web API||[裝置程式碼](#device-code-flow)|公用、機密| 
@@ -63,22 +63,22 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |參數|必要/選用|描述| 
 |-----|-----|-----|
 |client_id|必要|AD FS 指派給應用程式的應用程式（用戶端）識別碼。| 
-|response_type|必要|必須包含 `id_token`  OpenID connect 登入。 它也可能包含 response_type @ no__t-0。 在這裡使用權杖，可讓您的應用程式立即從授權端點接收存取權杖，而不需要向權杖端點提出第二個要求。| 
-|redirect_uri|必要|應用程式的 redirect_uri，其中驗證回應可以由您的應用程式傳送及接收。 它必須完全符合您在 AD FS 中設定的其中一個 redirect_uris。| 
-|nonce|必要|包含在要求中的值（由應用程式產生），將會以宣告的形式包含在產生的 id_token 中。 然後, 應用程式可以驗證此值, 以減輕權杖重新執行攻擊。 此值通常是隨機的唯一字串，可以用來識別要求的來源。 只有在要求 id_token 時才需要。|
-|scope|選用|以空格分隔的範圍清單。 針對 OpenID Connect，它必須包含範圍 `openid`。|
-|resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。| 
-|response_mode|選用| 指定應該用來將產生的權杖傳回給應用程式的方法。 預設值為 `fragment`。| 
+|response_type|必要|必須包含 OpenID Connect 登入的 `id_token` 。 它也可能包含 response_type `token`。 在這裡使用權杖，可讓您的應用程式立即從授權端點接收存取權杖，而不需要向權杖端點提出第二個要求。| 
+|redirect_uri|必要|應用程式的 redirect_uri，您的應用程式可以在其中傳送及接收驗證回應。 它必須完全符合您在 AD FS 中設定的其中一個 redirect_uris。| 
+|nonce|必要|包含在要求中的值（由應用程式產生），將會以宣告的形式包含在產生的 id_token 中。 然後，應用程式可以驗證此值，以減輕權杖重新執行攻擊。 此值通常是隨機的唯一字串，可以用來識別要求的來源。 只有在要求 id_token 時才需要。|
+|scope|選用|以空格分隔的範圍清單。 若為 OpenID Connect，它必須包含範圍 `openid`。|
+|resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送： `scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。| 
+|response_mode|選用| 指定應該用來將產生的權杖傳回給應用程式的方法。 預設為 `fragment`。| 
 |state|選用|包含在要求中的值，也會在權杖回應中傳回。 它可以是您想要的任何內容的字串。 隨機產生的唯一值通常用於防止跨網站偽造要求攻擊。 此狀態也可用來在驗證要求發生之前，將使用者狀態的相關資訊編碼，例如他們所在的頁面或觀點。| 
-|prompt|選用|表示所需的使用者互動類型。 目前唯一有效的值是 login 和 none。</br>- `prompt=login` 會強制使用者在該要求上輸入其認證，否定單一登入。 </br>- `prompt=none` 相反-它會確保使用者不會看到任何互動式提示。 如果要求無法透過單一登入以無訊息方式完成，AD FS 將會傳回 interaction_required 錯誤。| 
-|login_hint|選用|如果您事先知道他們的使用者名稱，可以使用來預先填入使用者登入頁面的使用者名稱/電子郵件地址欄位。 通常應用程式會在重新驗證期間使用此參數，已經從使用 `upn`   `id_token`宣告的先前登入解壓縮使用者名稱。| 
+|prompt|選用|表示所需的使用者互動類型。 目前唯一有效的值是 login 和 none。</br>- `prompt=login` 會強制使用者在該要求上輸入其認證，否定單一登入。 </br>- `prompt=none` 相反，它會確保使用者不會看到任何互動式提示。 如果要求無法透過單一登入以無訊息方式完成，AD FS 會傳回 interaction_required 錯誤。| 
+|login_hint|選用|如果您事先知道他們的使用者名稱，可以使用來預先填入使用者登入頁面的使用者名稱/電子郵件地址欄位。 通常應用程式會在重新驗證期間使用此參數，已經使用 `id_token`的 `upn` 宣告，從先前的登入解壓縮使用者名稱。| 
 |domain_hint|選用|如果包含，它會略過使用者在登入頁面上經歷的網域型探索程式，進而提高使用者體驗的效率。| 
 
-此時，系統會要求使用者輸入其認證並完成驗證。 一旦使用者通過驗證，AD FS 授權端點就會使用 response_mode 參數中指定的方法，在指定的 redirect_uri 傳回應用程式的回應。  
+此時，系統會要求使用者輸入其認證並完成驗證。 一旦使用者通過驗證，AD FS 授權端點就會使用 response_mode 參數中指定的方法，將回應傳回至指定 redirect_uri 的應用程式。  
  
 ### <a name="successful-response"></a>成功的回應 
  
- `response_mode=fragment and response_type=id_token+token`使用 的成功回應看起來如下所示  
+使用 `response_mode=fragment and response_type=id_token+token` 的成功回應看起來如下所示  
  
 ```
 // Line breaks for legibility only 
@@ -95,19 +95,19 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZEstZnl0aEV...
 
 |參數|描述| 
 |-----|-----|
-|access_token|如果 response_type 包含 @ no__t-0，則包含在內。|
-|token_type|如果 response_type 包含 @ no__t-0，則包含在內。 一律會是持有人。| 
-|expires_in| 如果 response_type 包含 @ no__t-0，則包含在內。 指出權杖有效的秒數，以供快取之用。| 
+|access_token|如果 response_type 包含 `token`則包含在內。|
+|token_type|如果 response_type 包含 `token`則包含在內。 一律會是持有人。| 
+|expires_in| 如果 response_type 包含 `token`則包含在內。 指出權杖有效的秒數，以供快取之用。| 
 |scope| 表示 access_token 將會有效的範圍。|  
-|id_token|如果 response_type 包含 @ no__t-0，則包含在內。 帶正負號的 JSON Web 權杖（JWT）。 應用程式可以將此權杖的區段解碼，以要求已登入使用者的相關資訊。 應用程式可以快取並顯示值，但不應依賴它們來取得任何授權或安全性界限。| 
-|state|如果要求中包含狀態參數, 則回應中應該會出現相同的值。 應用程式應確認要求和回應中的狀態值完全相同。|
+|id_token|如果 response_type 包含 `id_token`則包含在內。 帶正負號的 JSON Web 權杖（JWT）。 應用程式可以將此權杖的區段解碼，以要求已登入使用者的相關資訊。 應用程式可以快取並顯示值，但不應依賴它們來取得任何授權或安全性界限。| 
+|state|如果要求中包含狀態參數，則回應中應該會出現相同的值。 應用程式應確認要求和回應中的狀態值完全相同。|
 
 ### <a name="refresh-tokens"></a>重新整理權杖 
-隱含授與不提供重新整理權杖。  `id_tokens` 和 `access_tokens`會在短時間後過期，因此您的應用程式必須準備好定期重新整理這些權杖。 若要重新整理任一類型的權杖，您可以使用 `prompt=none`  參數來執行相同的隱藏 iframe 要求，以控制身分識別平臺的行為。 如果您想要接收`new id_token`，請務必使用。 `response_type=id_token` 
+隱含授與不提供重新整理權杖。  `id_tokens` 和 `access_tokens` 會在短時間後過期，因此您的應用程式必須準備好定期重新整理這些權杖。 若要重新整理任一類型的權杖，您可以使用 `prompt=none` 參數來控制身分識別平臺的行為，以執行上述的相同隱藏 iframe 要求。 如果您想要接收 `new id_token`，請務必使用 `response_type=id_token`。 
 
 ## <a name="authorization-code-grant-flow"></a>授權碼授與流程 
  
-OAuth 2.0 授權碼授與可用於 web 應用程式，以取得受保護資源（例如 web Api）的存取權。 Oauth 2.0 授權碼流程的說明，請參閱 [oauth 2.0 規格的第4.1 節](https://tools.ietf.org/html/rfc6749)。 它是用來在大部分的應用程式類型（包括 web 應用程式和原生安裝的應用程式）中執行驗證和授權。 此流程可讓應用程式安全地取得 access_tokens，以便用來存取 AD FS 信任的資源。  
+OAuth 2.0 授權碼授與可用於 web 應用程式，以取得受保護資源（例如 web Api）的存取權。 Oauth 2.0 授權碼流程的說明，請參閱 [oauth 2.0 規格的第4.1 節](https://tools.ietf.org/html/rfc6749)。 它是用來在大部分的應用程式類型（包括 web 應用程式和原生安裝的應用程式）中執行驗證和授權。 此流程可讓應用程式安全地取得 access_tokens，以用來存取信任 AD FS 的資源。  
  
 ### <a name="protocol-diagram"></a>通訊協定圖表 
  
@@ -136,22 +136,22 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|-----| 
 |client_id|必要|AD FS 指派給應用程式的應用程式（用戶端）識別碼。|  
 |response_type|必要| 必須包含授權碼流程的程式碼。| 
-|redirect_uri|必要|應用`redirect_uri`程式的，您的應用程式可以在其中傳送及接收驗證回應。 其必須完全符合您在用戶端的 AD FS 中註冊的其中一個 redirect_uris。|  
-|resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。| 
+|redirect_uri|必要|應用程式的 `redirect_uri`，您的應用程式可以在其中傳送及接收驗證回應。 它必須完全符合您在用戶端的 AD FS 中註冊的其中一個 redirect_uris。|  
+|resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送： `scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。| 
 |scope|選用|以空格分隔的範圍清單。|
-|response_mode|選用|指定應該用來將產生的權杖傳回給應用程式的方法。 可以是下列其中一項： </br>-query </br>-片段 </br>- form_post</br>`query` 提供程式碼做為重新導向 URI 的查詢字串參數。 如果您要求程式碼，您可以使用 query、片段或 form_post。  `form_post` @ no__t-1executes 一個 POST，其中包含您重新導向 URI 的程式碼。|
+|response_mode|選用|指定應該用來將產生的權杖傳回給應用程式的方法。 可以是下列其中一項： </br>-query </br>-片段 </br>-form_post</br>`query` 在您的重新導向 URI 上提供程式碼作為查詢字串參數。 如果您要要求程式碼，您可以使用查詢、片段或 form_post。 `form_post` 會執行 POST，其中包含您重新導向 URI 的程式碼。|
 |state|選用|包含在要求中的值，也會在權杖回應中傳回。 它可以是您想要的任何內容的字串。 隨機產生的唯一值通常用於防止跨網站偽造要求攻擊。 此值也可以在驗證要求發生之前，在應用程式中將使用者狀態的相關資訊編碼，例如他們所在的頁面或觀點。|
-|prompt|選用|表示所需的使用者互動類型。 目前唯一有效的值是 login 和 none。</br>- `prompt=login` 會強制使用者在該要求上輸入其認證，否定單一登入。 </br>- `prompt=none` 相反-它會確保使用者不會看到任何互動式提示。 如果要求無法透過單一登入以無訊息方式完成，AD FS 將會傳回 interaction_required 錯誤。|
-|login_hint|選用|如果您事先知道他們的使用者名稱，可以使用來預先填入使用者登入頁面的使用者名稱/電子郵件地址欄位。 通常應用程式會在重新驗證期間使用此參數，已經從使用 `upn` `id_token`宣告的先前登入解壓縮使用者名稱。|
+|prompt|選用|表示所需的使用者互動類型。 目前唯一有效的值是 login 和 none。</br>- `prompt=login` 會強制使用者在該要求上輸入其認證，否定單一登入。 </br>- `prompt=none` 相反，它會確保使用者不會看到任何互動式提示。 如果要求無法透過單一登入以無訊息方式完成，AD FS 會傳回 interaction_required 錯誤。|
+|login_hint|選用|如果您事先知道他們的使用者名稱，可以使用來預先填入使用者登入頁面的使用者名稱/電子郵件地址欄位。 通常應用程式會在重新驗證期間使用此參數，已經使用 `id_token`的 `upn`宣告，從先前的登入解壓縮使用者名稱。|
 |domain_hint|選用|如果包含，它會略過使用者在登入頁面上經歷的網域型探索程式，進而提高使用者體驗的效率。|
-|code_challenge_method|選用|用來將 code_challenge 參數的 code_verifier 編碼的方法。 可為下列其中一個值： </br>-純文字 </br>-S256 </br>如果已排除，則如果包含 @ no__t-0 @ no__t-sp1 是，則會假設 code_challenge 為純文字。 AD FS 同時支援純文字和 S256。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
-|code_challenge|選用| 用來透過來自 native client 之 Code Exchange （PKCE）的證明金鑰來保護授權碼授與。  `code_challenge_method`如果 包含，則為必要。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)|
+|code_challenge_method|選用|用來編碼 code_challenge 參數之 code_verifier 的方法。 可為下列其中一個值： </br>-純文字 </br>-S256 </br>若已排除，如果包含 `code_challenge` ，則會假設 code_challenge 為純文字。 AD FS 同時支援純文字和 S256。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
+|code_challenge|選用| 用來透過來自 native client 之 Code Exchange （PKCE）的證明金鑰來保護授權碼授與。 如果包含 `code_challenge_method` ，則為必要。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)|
 
-此時，系統會要求使用者輸入其認證並完成驗證。 一旦使用者通過驗證，AD FS 就會使用 `redirect_uri`  參數 `response_mode`中指定的方法，將回應傳回至指定的應用程式。  
+此時，系統會要求使用者輸入其認證並完成驗證。 使用者驗證之後，AD FS 會使用 `response_mode` 參數中指定的方法，將回應傳回至指定 `redirect_uri`的應用程式。  
  
 ### <a name="successful-response"></a>成功的回應 
  
-使用 response_mode = query 的成功回應看起來像這樣： 
+使用 response_mode = 查詢的成功回應看起來像這樣： 
  
 ```
 GET https://adfs.contoso.com/common/oauth2/nativeclient? 
@@ -162,12 +162,12 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 |參數|描述|
 |-----|-----|
-|code|應用`authorization_code`程式所要求的。 應用程式可以使用授權碼來要求目標資源的存取權杖。 Authorization_codes 的存留期很短，通常會在大約10分鐘後到期。|
-|state|如果要求中包含參數,回應中就會出現相同的值。`state` 應用程式應確認要求和回應中的狀態值完全相同。|
+|code|應用程式要求的 `authorization_code`。 應用程式可以使用授權碼來要求目標資源的存取權杖。 Authorization_codes 是短期的，通常會在大約10分鐘後到期。|
+|state|如果要求中包含 `state` 參數，回應中就會出現相同的值。 應用程式應確認要求和回應中的狀態值完全相同。|
 
 ### <a name="request-an-access-token"></a>要求存取權杖 
  
-既然您已取得`authorization_code`並已授與使用者的許可權，您可以將的程式 `access_token`  代碼兌換成所需的資源。 請將 POST 要求傳送至/token 端點來執行此動作：  
+既然您已取得 `authorization_code` 並已授與使用者許可權，您可以兌換 `access_token` 的程式碼，以取得所需的資源。 請將 POST 要求傳送至/token 端點來執行此動作：  
  
 ```
 // Line breaks for legibility only 
@@ -186,15 +186,15 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |參數|必要條件/選擇性|描述|
 |-----|-----|-----| 
 |client_id|必要|AD FS 指派給應用程式的應用程式（用戶端）識別碼。| 
-|grant_type|必要|必須是 `authorization_code`  授權碼流程的。| 
-|code|必要|您`authorization_code`在流程的第一個階段中取得的。| 
-|redirect_uri|必要|用來`redirect_uri`取得的`authorization_code`相同值。| 
+|grant_type|必要|必須是授權碼流程的 `authorization_code` 。| 
+|code|必要|您在流程的第一個階段取得的 `authorization_code`。| 
+|redirect_uri|必要|用來取得 `authorization_code`的相同 `redirect_uri` 值。| 
 |client_secret|web 應用程式的必要|您在 AD FS 應用程式註冊期間所建立的應用程式密碼。 您不應該在原生應用程式中使用應用程式密碼，因為 client_secrets 無法可靠地儲存在裝置上。 這是 web 應用程式和 web Api 的必要功能，能夠將 client_secret 安全地儲存在伺服器端。 用戶端密碼必須在傳送之前先進行 URL 編碼。 這些應用程式也可以簽署 JWT 並將其新增為 client_assertion 參數，以使用以金鑰為基礎的驗證。| 
 |code_verifier|選用|用來取得 authorization_code 的相同 `code_verifier`。 如果在授權碼授與要求中使用 PKCE，則為必要項。 如需詳細資訊，請參閱 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。</br>注意–適用于 AD FS 2019 和更新版本| 
 
 ### <a name="successful-response"></a>成功的回應 
  
-成功的權杖回應看起來會像這樣: 
+成功的權杖回應看起來會像這樣： 
  
 ```
 { 
@@ -212,8 +212,8 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|
 |access_token|要求的存取權杖。 應用程式可以使用此權杖來驗證受保護的資源（Web API）。| 
 |token_type|指出 token 類型的值。 唯一 AD FS 支援的類型為持有人。
-|expires_in|存取權杖的有效時間長度 (以秒為單位)。
-|refresh_token|OAuth 2.0 重新整理權杖。 應用程式可以使用此權杖，在目前的存取權杖到期之後取得其他存取權杖。 Refresh_tokens 是長時間存留的，可用來長期保留資源的存取權。| 
+|expires_in|存取權杖的有效時間長度（以秒為單位）。
+|refresh_token|OAuth 2.0 重新整理權杖。 應用程式可以使用此權杖，在目前的存取權杖到期之後取得其他存取權杖。 Refresh_tokens 是長期的，而且可以用來保留資源的存取權一段較長的時間。| 
 |refresh_token_expires_in|重新整理權杖的有效時間長度（以秒為單位）。| 
 |id_token|JSON Web 權杖（JWT）。 應用程式可以將此權杖的區段解碼，以要求已登入使用者的相關資訊。 應用程式可以快取並顯示值，但不應依賴它們來取得任何授權或安全性界限。|
 
@@ -227,7 +227,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
 
 ### <a name="refresh-the-access-token"></a>重新整理存取權杖 
  
-Access_tokens 的存留期很短，而且您必須在過期後重新整理，才能繼續存取資源。 若要這麼做，您可以向 @ no__t-0 @ no__t-1endpoint 提交另一個 POST 要求，這次提供 refresh_token，而不是程式碼。 重新整理權杖對您的用戶端已收到存取權杖的擁有權限都是有效的。 
+Access_tokens 是短期的，而且您必須在過期後重新整理，才能繼續存取資源。 若要這麼做，您可以向 `/token` 端點提交另一個 POST 要求，這次提供 refresh_token，而不是程式碼。 重新整理權杖對您的用戶端已收到存取權杖的擁有權限都是有效的。 
  
 重新整理權杖沒有指定的存留期。 一般而言，重新整理權杖的存留期相對較長。 不過，在某些情況下，重新整理權杖會過期、遭到撤銷，或缺少所需動作的足夠許可權。 您的應用程式必須預期並正確處理權杖發行端點所傳回的錯誤。  
  
@@ -250,14 +250,14 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |參數|必要/選用|描述| 
 |-----|-----|-----|
 |client_id|必要|AD FS 指派給應用程式的應用程式（用戶端）識別碼。| 
-|grant_type|必要|必須是 `refresh_token`  授權碼流程的這個階段。| 
-|resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。|
+|grant_type|必要|必須是授權碼流程此階段的 `refresh_token` 。| 
+|resource|選用|Web API 的 url。</br>注意–如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送： `scope = [resource url]//[scope values e.g., openid]`</br>如果未在此傳遞資源，或在範圍內，ADFS 會使用預設資源 urn： microsoft：使用者資訊。 您無法自訂 MFA、發行或授權原則等使用者資源原則。|
 |scope|選用|以空格分隔的範圍清單。| 
 |refresh_token|必要|您在流程的第二個階段中取得的 refresh_token。| 
 |client_secret|web 應用程式的必要| 您在應用程式註冊入口網站中為應用程式建立的應用程式密碼。 不應在原生應用程式中使用，因為 client_secrets 無法可靠地儲存在裝置上。 這是 web 應用程式和 web Api 的必要功能，能夠將 client_secret 安全地儲存在伺服器端。 這些應用程式也可以簽署 JWT 並將其新增為 client_assertion 參數，以使用以金鑰為基礎的驗證。|
 
 ### <a name="successful-response"></a>成功的回應 
-成功的權杖回應看起來會像這樣: 
+成功的權杖回應看起來會像這樣： 
  
 ```
 { 
@@ -273,9 +273,9 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|
 |access_token|要求的存取權杖。 應用程式可以使用此權杖來驗證受保護的資源，例如 Web API。| 
 |token_type|指出 token 類型的值。 唯一 AD FS 支援的類型為持有人|
-|expires_in|存取權杖的有效時間長度 (以秒為單位)。|
+|expires_in|存取權杖的有效時間長度（以秒為單位）。|
 |scope|Access_token 有效的範圍。| 
-|refresh_token|OAuth 2.0 重新整理權杖。 應用程式可以使用此權杖，在目前的存取權杖到期之後取得其他存取權杖。 Refresh_tokens 是長時間存留的，可用來長期保留資源的存取權。| 
+|refresh_token|OAuth 2.0 重新整理權杖。 應用程式可以使用此權杖，在目前的存取權杖到期之後取得其他存取權杖。 Refresh_tokens 是長期的，而且可以用來保留資源的存取權一段較長的時間。| 
 |refresh_token_expires_in|重新整理權杖的有效時間長度（以秒為單位）。| 
 |id_token|JSON Web 權杖（JWT）。 應用程式可以將此權杖的區段解碼，以要求已登入使用者的相關資訊。 應用程式可以快取並顯示值，但不應依賴它們來取得任何授權或安全性界限。|
 
@@ -291,8 +291,8 @@ OAuth 2.0 代理者流程（OBO）提供應用程式叫用服務/Web API 的使�
 ![代理者流程](media/adfs-scenarios-for-developers/obo.png)
 
   1. 用戶端應用程式使用權杖 A 向 API A 提出要求。  
-  注意：在 AD FS 中設定 OBO 流程時，請`user_impersonation`確定已選取範圍，且`user_impersonation`要求中的用戶端要求範圍。 
-  2. API A 會向 AD FS 權杖發行端點進行驗證，並要求權杖以存取 API B。注意：在 AD FS 中設定此流程時，請確定 API A 也已註冊為伺服器應用程式，而 clientID 的值與 API A 中的資源識別碼相同。如需詳細資訊，請參閱這裡的範例新增連結。  
+  注意：在 AD FS 中設定 OBO 流程時，請確定已選取範圍 `user_impersonation`，而且用戶端要求 `user_impersonation` 範圍在要求中。 
+  2. API A 會向 AD FS 權杖發行端點進行驗證，並要求權杖以存取 API B。注意：在 AD FS 設定此流程時，請確定 API A 也已註冊為伺服器應用程式，而 clientID 的值與 API A 中的資源識別碼相同。如需詳細資訊，請參閱這裡的範例新增連結。  
   3. AD FS 權杖發行端點會使用權杖 A 來驗證 API A 的認證，併發出 API B （token B）的存取權杖。 
   4. 權杖 B 在對 API B 的要求的授權標頭中設定。 
   5. API B 傳回來自受保護資源的資料。 
@@ -302,9 +302,9 @@ OAuth 2.0 代理者流程（OBO）提供應用程式叫用服務/Web API 的使�
 若要要求存取權杖，請使用下列參數對 AD FS token 端點提出 HTTP POST。  
 
 
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一種情況:具有共用密碼的存取權杖要求 
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一個案例：具有共用密碼的存取權杖要求 
  
-使用共用密碼時, 服務對服務存取權杖要求包含下列參數: 
+使用共用密碼時，服務對服務存取權杖要求包含下列參數： 
 
 
 |參數|必要/選用|描述|
@@ -319,7 +319,7 @@ OAuth 2.0 代理者流程（OBO）提供應用程式叫用服務/Web API 的使�
 
 #### <a name="example"></a>範例 
  
-下列`HTTP POST`要求存取權杖和重新整理權杖 
+下列 `HTTP POST` 會要求存取權杖和重新整理權杖 
  
 ```
 //line breaks for legibility only 
@@ -337,9 +337,9 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 &scope=openid    
 ```
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>第二個案例:具有憑證的存取權杖要求 
+### <a name="second-case-access-token-request-with-a-certificate"></a>第二個案例：具有憑證的存取權杖要求 
  
-具有憑證的服務對服務存取權杖要求包含下列參數: 
+具有憑證的服務對服務存取權杖要求包含下列參數： 
 
 
 |參數|必要/選用|描述|
@@ -354,7 +354,7 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 |scope|選用|權杖要求範圍的空格分隔清單。|
 
 
-請注意，參數與共享密碼要求的情況幾乎相同，不同之處在于 client_secret 參數是由兩個參數所取代： client_assertion_type 和 client_assertion。 
+請注意，參數與共享密碼要求的情況幾乎相同，不同之處在于 client_secret 參數會取代為兩個參數： client_assertion_type 和 client_assertion。 
 
 #### <a name="example"></a>範例 
 下列 HTTP POST 會使用憑證要求 Web API 的存取權杖。
@@ -387,7 +387,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 |expires_in|存取權杖有效的時間長度（以秒為單位）。| 
 |access_token|要求的存取權杖。 呼叫端服務可以使用此權杖來驗證接收服務。| 
 |id_token|JSON Web 權杖（JWT）。 應用程式可以將此權杖的區段解碼，以要求已登入使用者的相關資訊。 應用程式可以快取並顯示值，但不應依賴它們來取得任何授權或安全性界限。| 
-|refresh_token|所要求之存取權杖的重新整理權杖。 呼叫的服務可以使用此權杖, 在目前的存取權杖到期後要求另一個存取權杖。|
+|refresh_token|所要求之存取權杖的重新整理權杖。 呼叫的服務可以使用此權杖，在目前的存取權杖到期後要求另一個存取權杖。|
 |Refresh_token_expires_in|重新整理權杖有效的時間長度（以秒為單位）。 
 
 ### <a name="success-response-example"></a>成功回應範例 
@@ -430,9 +430,9 @@ OAuth 2.0 用戶端認證授與流程可允許 web 服務（機密用戶端）�
 
 ### <a name="request-a-token"></a>要求權杖 
  
-若要使用用戶端認證授與來取得權杖，請`POST`將要求傳送至/token AD FS 端點：  
+若要使用用戶端認證授與來取得權杖，請將 `POST` 要求傳送至/token AD FS 端點：  
  
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一種情況:具有共用密碼的存取權杖要求 
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一個案例：具有共用密碼的存取權杖要求 
  
 ```
 POST /adfs/oauth2/token HTTP/1.1            
@@ -453,7 +453,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 |client_secret|必要|您在應用程式註冊入口網站中為應用程式產生的用戶端密碼。 用戶端密碼必須在傳送之前先進行 URL 編碼。| 
 |grant_type|必要|必須設定為 `client_credentials`。|
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>第二個案例:具有憑證的存取權杖要求 
+### <a name="second-case-access-token-request-with-a-certificate"></a>第二個案例：具有憑證的存取權杖要求 
 
 ``` 
 POST /adfs/oauth2/token HTTP/1.1                
@@ -520,7 +520,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |client_id|必要|用戶端識別碼| 
 |grant_type|必要|必須設定為 [密碼]。| 
 |username|必要|使用者的電子郵件地址。| 
-|password|必要|使用者的密碼。| 
+|密碼|必要|使用者的密碼。| 
 |scope|選用|以空格分隔的範圍清單。|
 
 ### <a name="successful-authentication-response"></a>成功的驗證回應 
@@ -553,7 +553,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 ## <a name="device-code-flow"></a>裝置程式碼流程 
  
-裝置程式碼授與可讓使用者登入受輸入限制的裝置，例如智慧型電視、IoT 裝置或印表機。 若要啟用此流程, 裝置會讓使用者在其他裝置的瀏覽器中造訪網頁以進行登入。 使用者登入後, 裝置就能夠視需要取得存取權杖和重新整理權杖。 
+裝置程式碼授與可讓使用者登入受輸入限制的裝置，例如智慧型電視、IoT 裝置或印表機。 若要啟用此流程，裝置會讓使用者在其他裝置的瀏覽器中造訪網頁以進行登入。 使用者登入後，裝置就能夠視需要取得存取權杖和重新整理權杖。 
  
 ### <a name="protocol-diagram"></a>通訊協定圖表 
  
@@ -562,7 +562,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 ![裝置程式碼流程](media/adfs-scenarios-for-developers/device.png)
 
 ### <a name="device-authorization-request"></a>裝置授權要求 
-用戶端必須先向驗證服務器檢查用來起始驗證的裝置和使用者程式碼。 用戶端會從/devicecode 端點收集此要求。 在此要求中, 用戶端也應該包含從使用者取得所需的許可權。 從傳送此要求開始，使用者只有15分鐘的時間來登入（expires_in 的一般值），因此只會在使用者已指出他們已準備好登入時，才提出此要求。 
+用戶端必須先向驗證服務器檢查用來起始驗證的裝置和使用者程式碼。 用戶端會從/devicecode 端點收集此要求。 在此要求中，用戶端也應該包含從使用者取得所需的許可權。 從傳送此要求開始，使用者只需要15分鐘的時間登入（expires_in 的一般值），因此只會在使用者指出他們已準備好登入時，才提出此要求。 
 
 ```
 // Line breaks are for legibility only. 
@@ -581,21 +581,21 @@ scope=openid
 |scope|選用|以空格分隔的範圍清單。|
 
 ### <a name="device-authorization-response"></a>裝置授權回應 
-成功的回應會是 JSON 物件, 其中包含允許使用者登入的必要資訊。 
+成功的回應會是 JSON 物件，其中包含允許使用者登入的必要資訊。 
 
 
 |參數|描述|
 |-----|-----| 
-|device_code|長字串, 用來驗證用戶端與授權伺服器之間的會話。 用戶端會使用此參數來向授權伺服器要求存取權杖。| 
-|user_code|向使用者顯示的簡短字串, 用來識別次要裝置上的會話。| 
-|verification_uri|使用者應該移至 user_code 以便登入的 URI。| 
-|verification_uri_complete|使用者應該移至 user_code 以便登入的 URI。 這會預先填入 user_code，讓使用者不需要輸入 user_code| 
+|device_code|長字串，用來驗證用戶端與授權伺服器之間的會話。 用戶端會使用此參數來向授權伺服器要求存取權杖。| 
+|user_code|向使用者顯示的簡短字串，用來識別次要裝置上的會話。| 
+|verification_uri|使用者應該移至 user_code 以登入的 URI。| 
+|verification_uri_complete|使用者應該移至 user_code 以登入的 URI。 這會預先填入 user_code，因此使用者不需要輸入 user_code| 
 |expires_in|Device_code 和 user_code 到期之前的秒數。| 
 |期間|用戶端應在輪詢要求之間等待的秒數。| 
-|message|人類看得懂的字串, 其中包含使用者的指示。 這可以藉由在要求中包含查詢參數來當地語系化，其格式為？ mkt = xx-XX，填入適當的語言文化特性代碼。  
+|訊息|人類看得懂的字串，其中包含使用者的指示。 這可以藉由在要求中包含查詢參數來當地語系化，其格式為？ mkt = xx-XX，填入適當的語言文化特性代碼。  
 
 ### <a name="authenticating-the-user"></a>驗證使用者 
-收到 user_code 和 verification_uri 之後，用戶端會向使用者顯示這些專案，指示他們使用其行動電話或電腦瀏覽器登入。 此外，用戶端可以使用 QR 代碼或類似的機制來顯示 verfication_uri_complete，這會採取步驟來進入使用者的 user_code。 當使用者在 verification_uri 進行驗證時，用戶端應該使用 device_code 輪詢所要求權杖的/token 端點。 
+收到 user_code 並 verification_uri 之後，用戶端會向使用者顯示這些專案，指示他們使用其行動電話或電腦瀏覽器登入。 此外，用戶端可以使用 QR 代碼或類似的機制來顯示 verfication_uri_complete，這會採取進入使用者 user_code 的步驟。 當使用者在 verification_uri 進行驗證時，用戶端應該使用 device_code，針對要求的權杖輪詢/token 端點。 
 
 ```
 POST https://adfs.contoso.com /adfs/oauth2/token 
@@ -614,13 +614,13 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8
 |code|必要|裝置授權要求中傳回的 device_code。|
 
 ### <a name="successful-authentication-response"></a>成功的驗證回應 
-成功的權杖回應看起來會像這樣:  
+成功的權杖回應看起來會像這樣：  
 
 
 |參數|描述|
 |-----|-----| 
 |token_type|一律為「持有人」。| 
-|scope|如果傳回存取權杖, 這會列出存取權杖有效的範圍。| 
+|scope|如果傳回存取權杖，這會列出存取權杖有效的範圍。| 
 |expires_in|所包含存取權杖有效的秒數。| 
 |access_token|已針對要求的範圍發出。| 
 |id_token|如果原始範圍參數包含 openid 範圍，則發出。| 

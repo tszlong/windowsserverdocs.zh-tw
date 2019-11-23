@@ -23,7 +23,7 @@ ms.locfileid: "71407819"
 
 >警告：您可以在這裡建立的範例僅供教育目的之用。 這些指示適用于公開模型所需元素的最簡單且最基本的執行方式。 此範例可能不包含錯誤處理和其他相關功能的所有層面，而且只著重于取得成功的 OBO authentication。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在此範例中，我們將建立一個驗證流程，其中用戶端會存取中介層 Web 服務，而 Web 服務接著會代表已驗證的用戶端採取行動，以取得存取權杖。
 
@@ -64,7 +64,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 
 1. **DC**：將主控 AD FS 之網域的網域控制站
 2. **AD FS 伺服器**：網域的 AD FS 伺服器
-3. **開發電腦**：已安裝 Visual Studio 的電腦，並將會開發我們的範例
+3. **開發電腦**：我們已安裝 Visual Studio 的電腦，並將會開發我們的範例
 
 如有需要，您可以只使用兩部電腦。 一個用於 DC/ADFS，另一個用於開發範例。
 
@@ -86,7 +86,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 當您開啟方案 WebAPI-OnBehalfOf-DotNet 時，您會注意到您在方案中有兩個專案
 
 * **ToDoListClient**：這會做為使用者將與之互動的 OpenID 用戶端
-* **ToDoListService**：這將是中介層 Web 服務器應用程式/服務，將與另一個後端 WebAPI OBO 已驗證的使用者互動
+* **ToDoListService**：這會是將與另一個後端 WebAPI 互動的仲介層 WEB 伺服器應用程式/服務 OBO 已驗證的使用者
 
 如您所見，我們稍後將需要新增另一個專案，以作為仲介層 ToDoListService 所存取的資源。
 
@@ -116,7 +116,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
 
-按 [下一步]，您會看到 [設定應用程式許可權] 頁面。 在此頁面上，選取 [允許的範圍] 作為 openid （預設為已選取）和 [user_impersonation]。 必須要有 ' user_impersonation ' 範圍，才能成功地從 AD FS 要求代理者存取權杖。
+按 [下一步]，您會看到 [設定應用程式許可權] 頁面。 在此頁面上，選取 允許的範圍 作為 openid （預設為已選取），然後 user_impersonation。 必須要有範圍 ' user_impersonation '，才能成功地從 AD FS 要求代理者存取權杖。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
 
@@ -274,7 +274,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 * 開啟 web.config 檔案
 * 修改下列金鑰
 
-| Key                      | 值                                                                                                                                                                                                                   |
+| 索引鍵                      | 值                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida：物件             | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如 https://localhost:44321/                                                                                         |
 | ida： ClientID             | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如 <https://localhost:44321/> </br>**Ida：受眾和 ida： ClientID 彼此相符非常重要** |
@@ -494,10 +494,10 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 您也可以在 Fiddler 上查看詳細的追蹤。 啟動 Fiddler，並啟用 HTTPS 解密。 您可以看到我們對/adfs/oautincludes 端點提出兩個要求。
-在第一個互動中，我們會對權杖端點提供存取程式碼，並取得 https://localhost:44321/ 的存取權杖 ![ AD FS OBO @ no__t-2
+在第一次互動中，我們會對權杖端點提供存取程式碼，並取得 https://localhost:44321/ ![AD FS OBO 的存取權杖](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
-在與權杖端點的第二個互動中，您可以看到我們將**requested_token_use**設定為**on_behalf_of** ，而我們使用的是針對仲介層 web 服務所取得的存取權杖，也就是 https://localhost:44321/ 作為判斷提示，以取得代理者 token。
-@NO__T 0AD FS OBO @ NO__T-1
+在與權杖端點的第二個互動中，您可以看到我們**requested_token_use**設定為**on_behalf_of** ，而我們使用的是針對仲介層 web 服務所取得的存取權杖，也就是 https://localhost:44321/ 作為判斷提示以取得代理者 token。
+![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>後續步驟
 [AD FS 開發](../../ad-fs/AD-FS-Development.md)  

@@ -18,7 +18,7 @@ ms.locfileid: "71408019"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>規劃同盟伺服器 Proxy 的位置
 
-在您收集將用來設計 Active Directory 同盟服務的所有資訊之後 @no__t 0AD FS @ no__t-1 基礎結構，而且在規劃同盟伺服器和 Web 服務器策略之後，您就可以規劃放置同盟伺服器的時機和位置。新設計中的 proxy。 下列主題中的資訊可協助您判斷何時及何時要放置同盟伺服器 proxy，以及是否要針對帳戶夥伴角色或資源夥伴角色進行設定：  
+在您收集要用來設計 Active Directory 同盟服務的所有資訊 \(AD FS\) 基礎結構，而且在規劃同盟伺服器和 Web 服務器策略之後，您就可以規劃在新設計中放置同盟伺服器 proxy 的時機和位置。 下列主題中的資訊可協助您判斷何時及何時要放置同盟伺服器 proxy，以及是否要針對帳戶夥伴角色或資源夥伴角色進行設定：  
   
 -   [檢閱帳戶夥伴中的同盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71408019"
   
 如需如何在兩個主要 AD FS 設計案例中放置同盟伺服器 proxy 的範例，請參閱將[部署目標對應至 AD FS 設計](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)。  
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
   
 

@@ -16,21 +16,21 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408697"
 ---
-# <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>附錄 F：保護 Active Directory 中的 Domain Admins 群組
+# <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>附錄 F︰保護 Active Directory 中的 Domain Admins 群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>附錄 F：保護 Active Directory 中的 Domain Admins 群組  
-就像 Enterprise Admins （EA）群組一樣，只有在組建或嚴重損壞修復的情況下，才需要 Domain Admins （DA）群組中的成員資格。 在 DA 群組中應該不會有每日的使用者帳戶，但網域的內建系統管理員帳戶除外，如果已受到保護，請參閱 [Appendix D：在 Active Directory @ no__t-0 中保護內建的系統管理員帳戶。  
+## <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>附錄 F︰保護 Active Directory 中的 Domain Admins 群組  
+就像 Enterprise Admins （EA）群組一樣，只有在組建或嚴重損壞修復的情況下，才需要 Domain Admins （DA）群組中的成員資格。 在 DA 群組中應該不會有每日的使用者帳戶，但網域的內建系統管理員帳戶除外，如[Active Directory 中的內建系統管理員帳戶的保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 
 根據預設，網域系統管理員會在其各自網域中的所有成員伺服器和工作站上，群組的成員。 此預設的嵌套不應針對支援性和嚴重損壞修復目的進行修改。 如果網域系統管理員已從成員伺服器上的本機 Administrators 群組中移除，則該群組應新增至每個成員伺服器上的 Administrators 群組和網域中的工作站。 每個網域的 Domain Admins 群組應受到保護，如下列逐步指示所述。  
 
 針對樹系中每個網域的 Domain Admins 群組：  
 
-1.  移除群組中的所有成員，但網域內建的 Administrator 帳戶可能例外，前提是它已受到保護，如 [Appendix D：在 Active Directory @ no__t-0 中保護內建的系統管理員帳戶。  
+1.  移除群組中的所有成員，但網域內建的系統管理員帳戶可能例外，前提是它已受到保護，如 Active Directory 中的內[建系統管理員帳戶的保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 
-2.  在連結到包含每個網域中成員伺服器和工作站之 Ou 的 Gpo 中，必須將 DA 群組新增至電腦設定 \ \windows 設定 \ 許可權 \ 使用者**許可證指派**中的下列使用者權限:  
+2.  在連結到包含每個網域中成員伺服器和工作站之 Ou 的 Gpo 中，您應該將 DA 群組新增至電腦設定 \ \windows 設定 \ 許可權 \ 使用者**許可證指派**中的下列使用者權限：  
 
     -   拒絕從網路存取這台電腦  
 
@@ -62,17 +62,17 @@ ms.locfileid: "71408697"
 
 1.  在**伺服器管理員**中，按一下 [**工具**]，然後按一下 [**群組原則管理**]。  
 
-2.  在主控台樹中，展開 [\<Forest @ no__t-1 @ no__t-2Domains @ no__t-3 @ no__t-4Domain @ no__t-5]，然後**群組原則物件**（其中 \<Forest @ no__t-8 是樹系的名稱，而 \<Domain @ no__t-10 是網域的名稱，其中您想要設定群組原則）。  
+2.  在主控台樹中，展開 \<樹系\>\\網域\\\<網域\>，然後**群組原則 物件** （其中 \<樹系\> 是樹系的名稱，\<網域\> 是您要設定群組原則的網功能變數名稱稱）。  
 
 3.  在主控台樹中，以滑鼠右鍵按一下 [**群組原則物件**]，然後按一下 [**新增**]。  
 
     ![保護網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_63.gif)  
 
-4.  在 [**新增 GPO** ] 對話方塊中，輸入 \<GPO Name @ no__t-2，然後按一下 **[確定]** （其中 \<GPO name @ no__t-5 是此 GPO 的名稱）。  
+4.  在 **新增 GPO**  對話方塊中，輸入 \<GPO 名稱\>，然後按一下**確定** （其中 \<GPO 名稱\> 是此 GPO 的名稱）。  
 
     ![保護網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_64.gif)  
 
-5.  在詳細資料窗格中，以滑鼠右鍵按一下 [\<GPO Name @ no__t-1]，然後按一下 [**編輯**]。  
+5.  在詳細資料窗格中，以滑鼠右鍵按一下 [\<GPO 名稱\>]，然後按一下 [**編輯**]。  
 
 6.  流覽至 [**電腦設定 \ \windows] [設置 \ 本機原則**]，然後按一下 [**使用者權限指派**]。  
 
@@ -142,7 +142,7 @@ ms.locfileid: "71408697"
 
 13. 在群組原則管理 中，執行下列動作，將 GPO 連結到成員伺服器和工作站 Ou：  
 
-    1.  流覽至 \<Forest @ no__t-1\Domains @ no__t-2 @ no__t-3Domain @ no__t-4 （其中 \<Forest @ no__t-6 是樹系的名稱，而 \<Domain @ no__t-8 是您想要設定群組原則的網功能變數名稱稱）。  
+    1.  流覽至 \<樹系\>\Domains\\\<網域\> （其中 \<樹系\> 是樹系的名稱，而 \<網域\> 是您要設定群組原則的網功能變數名稱稱）。  
 
     2.  以滑鼠右鍵按一下要套用 GPO 的 OU，然後按一下 [**連結到現有的 gpo**]。  
 
@@ -174,7 +174,7 @@ ms.locfileid: "71408697"
 
     ![保護網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_73.gif)  
 
-5.  在 [**命令提示**字元] 視窗中，輸入**net use \\ @ no__t-3 @ No__t-4Server name @ no__t-5\c $** ，其中 \<Server name @ no__t-7 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
+5.  在 [**命令提示**字元] 視窗中，輸入**net use \\\\\<伺服器名稱\>\c $** ，其中 \<伺服器名稱\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
 
 6.  下列螢幕擷取畫面顯示應該顯示的錯誤訊息。  
 
@@ -194,7 +194,7 @@ ms.locfileid: "71408697"
 
 4.  按一下 [檔案 **]，然後按一下 [** **另存**新檔]。  
 
-5.  在 [**檔案名**] 欄位中，輸入 **\<Filename\>.bat** （其中 \<Filename @ no__t-5 是新批次檔的名稱）。  
+5.  在 [**檔案名**] 欄位中，輸入 **\<filename\>.bat** （其中 \<Filename\> 是新批次檔的名稱）。  
 
 ###### <a name="schedule-a-task"></a>排程工作  
 
@@ -207,7 +207,7 @@ ms.locfileid: "71408697"
 
 3.  在 [**工作排程器**] 功能表列中，按一下 [**動作**]，然後按一下 [**建立**工作]。  
 
-4.  在 [**建立**工作] 對話方塊中，輸入 **\<Task name @ no__t-3** （其中 \<Task name @ no__t-5 是新工作的名稱）。  
+4.  在 [**建立**工作] 對話方塊中，輸入 **\<工作名稱\>** （其中 \<[工作名稱]\> 是新工作的名稱）。  
 
 5.  按一下 [**動作**] 索引標籤，然後按一下 [**新增**]。  
 
@@ -215,7 +215,7 @@ ms.locfileid: "71408697"
 
 7.  在 [**程式/腳本**] 底下，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 [確定]。  
+8.  按一下 **\[確定\]** 。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -225,7 +225,7 @@ ms.locfileid: "71408697"
 
 12. 選取 **[執行]，無論使用者是否登入**，並選取 [不要**儲存密碼**]。 此工作只會存取本機電腦資源。  
 
-13. 按一下 [確定]。  
+13. 按一下 **\[確定\]** 。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

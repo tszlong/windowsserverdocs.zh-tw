@@ -18,7 +18,7 @@ ms.locfileid: "71408916"
 ---
 # <a name="deploying-ad-ds-in-a-windows-2000-organization"></a>在 Windows Server 2000 組織中部署 AD DS
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如果您的組織目前正在執行 Windows 2000 Active Directory，您可以將部分或所有網域控制站的作業系統就地升級到 Windows，以部署 Windows Server 2008 Active Directory Domain Services （AD DS）伺服器2008或引進執行 Windows Server 2008 的網域控制站至您的環境。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "71408916"
   
 將從 Windows 2000 環境就地升級的資源和帳戶網域合併為 Windows Server 2008 AD DS 部署的一部分，可能需要樹林或林內網域重建。 在樹系之間重新建立 AD DS 網域，可協助您降低組織的複雜性和相關聯的管理成本。 在樹系中重建 AD DS 網域，可協助您降低組織的系統管理負擔，方法是減少複寫流量、減少所需的使用者和群組管理，以及簡化的系統管理。群組原則。 如需詳細資訊，請參閱 ADMT 3.1 版遷移指南（[https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)）。  
   
-如需您可以用來在目前執行 Windows 2000 Active Directory 的組織中規劃和部署 AD DS 的詳細工作清單，請參閱 [Checklist：在 Windows 2000 組織 @ no__t-0 中部署 AD DS。  
+如需您可以用來在目前執行 Windows 2000 Active Directory 的組織中規劃和部署 AD DS 的詳細工作清單，請參閱[檢查清單：在 Windows 2000 組織中部署 AD DS](https://technet.microsoft.com/library/cc732737.aspx)。  
   
 
 

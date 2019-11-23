@@ -22,7 +22,7 @@ ms.locfileid: "71369873"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 中斷會話與遠端桌面工作階段主機（rd 工作階段主機）伺服器的連線。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -35,13 +35,13 @@ ms.locfileid: "71369873"
 tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |-------|--------|
 |\<SessionId >|指定要中斷連線之會話的識別碼。|
 |\<SessionName >|指定要中斷連線之會話的名稱。|
-|/server： \<ServerName >|指定包含您要中斷連線之會話的終端機伺服器。 否則，會使用目前的 rd 工作階段主機伺服器。|
+|/server：\<ServerName >|指定包含您要中斷連線之會話的終端機伺服器。 否則，會使用目前的 rd 工作階段主機伺服器。|
 |/v|顯示正在執行之動作的相關資訊。|
 |/?|在命令提示字元顯示說明。|
 
@@ -66,5 +66,5 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   tsdiscon TERM04
   ```
   #### <a name="additional-references"></a>其他參考資料
-  [命令列語法索引鍵](command-line-syntax-key.md)
-  [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+  
+  [ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)

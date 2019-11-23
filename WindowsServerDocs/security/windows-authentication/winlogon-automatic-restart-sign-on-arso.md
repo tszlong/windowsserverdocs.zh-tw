@@ -22,14 +22,14 @@ ms.locfileid: "71402325"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新啟動登入 (ARSO)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-**作者**：Justin Turner，Microsoft 團隊的資深支援擴大工程師  
+**作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
 > [!NOTE]  
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
   
-## <a name="overview"></a>總覽  
+## <a name="overview"></a>概觀  
 Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用者的會話鎖定時執行並顯示通知（行事曆約會、電子郵件和訊息等）。  因為 Windows Update 程式而重新開機的裝置無法在重新開機時顯示這些鎖定畫面通知。  有些使用者相依于這些鎖定畫面應用程式。  
   
 ## <a name="whats-changed"></a>變更的功能有哪些？  
@@ -66,7 +66,7 @@ Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用�
   
     -   較佳的使用者體驗：不需要等候15分鐘的時間來完成安裝更新  
   
--   程度? AutoLogon  
+-   程度? Autologon  
   
     -   儲存密碼，使用該認證將您登入  
   
@@ -93,17 +93,17 @@ Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用�
   
 **登錄編輯程式**  
   
-|值名稱|Type|Data|  
+|值名稱|類型|資料|  
 |-------|----|----|  
-|DisableAutomaticRestartSignOn|DWORD|0<br /><br />**範例:**<br /><br />0（已啟用）<br /><br />1（已停用）|  
+|DisableAutomaticRestartSignOn|DWORD|0<br /><br />**範例：**<br /><br />0（已啟用）<br /><br />1（已停用）|  
   
 **原則登錄位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
-**類型：** DWORD  
+**類型：** 值  
   
-**登錄名稱：** DisableAutomaticRestartSignOn  
+登錄**名稱：** DisableAutomaticRestartSignOn  
   
-值：0 或 1  
+值：0或1  
   
 0 = 已啟用  
   
@@ -143,7 +143,7 @@ Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用�
 [登入時數] 和 [家長監護] 可以禁止建立新的使用者會話。  如果在此視窗期間發生重新開機，則不允許使用者登入。  還有其他原則會導致鎖定或登出做為合規性動作。  這可能會對許多子案例造成問題，其中的帳戶鎖定可能會在床時間和喚醒之間發生，特別是在這段期間通常是在維護期間。  
   
 ## <a name="additional-resources"></a>其他資源  
-@no__t 0Table SEQ 資料表 \\ @ no__t-2 阿拉伯文3：ARSO 詞彙 @ no__t-0  
+**資料表 SEQ 資料表 \\\* 阿拉伯文3： ARSO 詞彙**  
   
 |詞彙|定義|  
 |----|-------|  

@@ -17,9 +17,9 @@ ms.locfileid: "71387967"
 ---
 # <a name="web-application-proxy-in-windows-server-2016"></a>Windows Server 2016 中的 Web 應用程式 Proxy
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-@no__t 0This 內容與 Web 應用程式 Proxy 的內部部署版本有關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。 **  
+**此內容與內部部署版本的 Web 應用程式 Proxy 相關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
   
 本節中的內容說明 Windows Server 2016 Web 應用程式 Proxy 的新功能和變更。 此處所列的新功能和變更，是當您使用預覽時，最可能有最大的影響。  
   
@@ -55,7 +55,7 @@ ms.locfileid: "71387967"
   
 - 將用戶端 IP 位址傳播至後端應用程式  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
   
 -   [Windows Server 2016 中的新功能](https://technet.microsoft.com/library/dn765472.aspx)  
   

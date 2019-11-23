@@ -28,7 +28,7 @@ ms.locfileid: "71408355"
   
 2.  在 [在您開始前] 頁面上，按一下 [下一步]。  
   
-3.  在 [**選取安裝類型**] 頁面上，按一下 [ **Role @ no__t-2based] 或 [Feature @ no__t-3based 安裝**]，然後按 **[下一步]** 。  
+3.  在 [**選取安裝類型**] 頁面上，依序按一下 [**角色\-] 或 [功能\-型安裝**]，然後按 **[下一步]** 。  
   
 4.  在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，確認已選取目標電腦，然後按一下 [下一步]。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "71408355"
   
 6.  在 [選取功能] 頁面上，按 [下一步]。 系統會為您預先選取必要的必要條件。 您不需要選取任何其他功能。  
   
-7.  在 [ **Active Directory 同盟服務 \(AD FS @ no__t-2** ] 頁面上，按 **[下一步]** 。  
+7.  在 [ **Active Directory 同盟服務 \(AD FS\)** ] 頁面上，按 **[下一步]** 。  
   
 8.  確認 [**確認安裝選項**] 頁面上的資訊之後，請按一下 [**安裝**]。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "71408355"
   
 1.  在您要設定為同盟伺服器的電腦上，開啟 Windows PowerShell 命令視窗，然後執行下列命令： `Install-windowsfeature adfs-federation –IncludeManagementTools`。  
   
-## <a name="see-also"></a>另請參閱 
+## <a name="see-also"></a>請參閱 
 
 [AD FS 部署](../../ad-fs/AD-FS-Deployment.md)  
 

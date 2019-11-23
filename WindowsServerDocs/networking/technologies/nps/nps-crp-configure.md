@@ -17,11 +17,11 @@ ms.locfileid: "71405475"
 ---
 # <a name="configure-connection-request-policies"></a>設定連線要求原則
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來建立和設定連線要求原則，以指定本機 NPS 是否處理連線要求，或轉送到遠端 RADIUS 伺服器進行處理。
 
-連線要求原則是一組條件和設定，可讓網路系統管理員指定哪些遠端驗證撥入使用者服務（RADIUS）伺服器執行連線要求的驗證與授權，執行網路原則伺服器的伺服器 \(NPS @ no__t-1 從 RADIUS 用戶端接收。
+連線要求原則是一組條件和設定，可讓網路系統管理員指定哪些遠端驗證撥入使用者服務（RADIUS）伺服器執行連線要求的驗證和授權，而 \(NPS 的伺服器\) 從 RADIUS 用戶端接收網路原則伺服器。
 
 預設連線要求原則會使用 NPS 做為 RADIUS 伺服器，並在本機處理所有驗證要求。
 

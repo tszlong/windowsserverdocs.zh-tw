@@ -38,7 +38,7 @@ ms.locfileid: "71359378"
  |**同盟伺服器設定 Wizard 輸入選項**|**使用下列值**| 
 |-----|-----| 
 |[指定 Federation Service 名稱] 頁面上的 [SSL 憑證]|選取您準備 AD FS 同盟伺服器移轉時所記錄之主體名稱和憑證指紋的 SSL 憑證。|  
-|[指定服務帳戶] 頁面上的 [服務帳戶] 和 [密碼]|輸入您準備 AD FS 同盟伺服器移轉時所記錄的服務帳戶資訊。 **注意：** 如果您在精靈的第二頁上選取獨立的同盟伺服器時，會自動為服務帳戶使用網路服務。|  
+|[指定服務帳戶] 頁面上的 [服務帳戶] 和 [密碼]|輸入您準備 AD FS 同盟伺服器移轉時所記錄的服務帳戶資訊。 **注意：** 如果您在嚮導的第二頁上選取 [獨立同盟伺服器]，則會自動使用 NETWORK SERVICE 做為服務帳戶。|  
   
 > [!IMPORTANT] 
 > 只有當您使用 Windows 內部資料庫（WID）來儲存獨立同盟伺服器或單一節點 AD FS 伺服器陣列的 AD FS 設定資料庫時，才可以使用這個方法。  
@@ -57,7 +57,7 @@ ms.locfileid: "71359378"
 > [!NOTE]
 >  只有在移轉獨立的同盟伺服器或單一節點 WID 伺服器陣列時，才需要執行此步驟。  如果同盟伺服器使用 SQL Server 資料庫做為設定存放區，則服務設定和信任關係會保留在資料庫中。  
   
-5. 更新您的 AD FS 網頁。 這是手動步驟。 當您準備進行遷移時，如果您已備份自訂的 AD FS 網頁，請使用備份資料來覆寫在 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁，做為 AD FS 的結果Windows Server 2012 上的設定。  
+5. 更新您的 AD FS 網頁。 這是手動步驟。 當您準備進行遷移時，如果您已備份自訂的 AD FS 網頁，請使用備份資料來覆寫 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁，做為 Windows Server 2012 上 AD FS 設定的結果。  
   
 6. 還原任何剩餘的 AD FS 自訂項目，例如自訂屬性存放區。  
   
@@ -87,9 +87,9 @@ ms.locfileid: "71359378"
 -   在 AD FS 管理主控台，選取 [信賴憑證者信任]。 您必須使用 [新增信賴憑證者信任精靈]，手動重新建立每個信賴憑證者信任。 使用 AD FS 準備移轉期間所匯出和記錄的信賴憑證者信任的清單。 如需建立宣告提供者信任的詳細資訊，請參閱[使用同盟中繼資料建立信賴憑證者信任](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata)或[手動建立信賴憑證者信任](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually)。 
 
 ## <a name="next-steps"></a>後續步驟
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)
 

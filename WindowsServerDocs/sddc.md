@@ -21,7 +21,7 @@ ms.locfileid: "71403898"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server 軟體定義資料中心
 
->適用於：Windows Server 2019、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server 2016
 
 ![](media/sddc/heading.png)
 
@@ -71,7 +71,7 @@ Hyper-V 是以適用於 Windows、以 Hypervisor 為基礎的虛擬化技術。 
 
 ![](media/sddc/spacer1.png)![](media/sddc/hypervisor.png)
 
-![](media/sddc/learn.png) **[深入瞭解 Hyper-v 虛擬機器](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
+![](media/sddc/learn.png) **[深入瞭解 hyper-v 虛擬程式](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>具有共用 VHDX 的來賓叢集
 
@@ -82,7 +82,7 @@ Hyper-V 是以適用於 Windows、以 Hypervisor 為基礎的虛擬化技術。 
 ![](media/sddc/spacer1.png)![](media/sddc/cluster.png)
 
 - 共用 VHDX 可以存放在區塊存放裝置或 SMB 檔案型儲存體上的叢集共用磁碟區 (CSV)。
-- 免受共用 VHDX 支援 Hyper-v 複本和主機層級備份。
+- 受保護：共用 VHDX 支援 Hyper-V 複本和主機層級備份。
 
 ![](media/sddc/learn.png) **[深入瞭解具有共用 VHDX 的來賓](https://technet.microsoft.com/library/dn281956(v=ws.11).aspx)叢集**
 
@@ -155,7 +155,7 @@ SLB 可讓多部伺服器裝載相同的工作負載，並提供高度可用性�
 
 儲存空間直接存取將業界標準伺服器與本機連結磁碟機搭配使用，只需傳統 SAN 或 NAS 陣列的一小部分成本，就能提供高可用性、高延展性的軟體定義存放裝置。 其架構大幅簡化採購與部署作業。
 
-@no__t 0Each-節點具有在叢集層級的本機連接磁片磁碟機，儲存空間直接存取然後由 Vm 透過 Csv @ no__t-1 進行存取
+![每個節點都有在叢集層級的本機連結磁片磁碟機，儲存空間直接存取然後由 Vm 透過 Csv 來存取](media/sddc/spacer1.png)![](media/sddc/ssd.png)
 
 儲存空間直接存取導入了新的軟體儲存匯流排，並利用目前在 Windows Server 中熟知的許多功能，例如容錯移轉叢集、叢集共用磁碟區 (CSV)、伺服器訊息區 (SMB) 3，以及儲存空間。
 
@@ -190,7 +190,7 @@ SLB 可讓多部伺服器裝載相同的工作負載，並提供高度可用性�
 4. 遠端站台做出確認
 5. 應用程式寫入已確認
 
-t & t1：資料排清到磁片區，記錄一律會透過寫入
+t & t1︰資料排清到磁碟區，記錄檔一律寫入
 
 ![](media/sddc/learn.png) **[深入瞭解儲存體複本](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)**
 
@@ -272,10 +272,10 @@ Virtual Machine Manager 是 System Center 套件的一部分，用來設定、�
 
 ![](media/sddc/spacer1.png)![](media/sddc/vmm.png)
 
-- 版在 VMM 中將 datacenter 元件設定為單一網狀架構並加以管理。 
-- 虛擬化主機：VMM 可以新增、布建及管理 Hyper-v 和 VMware 虛擬化主機和叢集。
-- 連VMM 提供網路虛擬化，包括支援建立和管理虛擬網路和網路閘道。 
-- 存放裝置：VMM 可以探索、分類、布建、配置及指派本機和遠端存放裝置。
+- 資料中心：將資料中心元件當做為 VMM 中的單一網狀架構來設定和管理。 
+- 虛擬化主機：VMM 可以新增、佈建和管理 Hyper-V 及 VMWare 虛擬化主機與叢集。
+- 網路功能：VMM 提供網路虛擬化，包括支援建立和管理虛擬網路及網路閘道。 
+- 儲存空間：VMM 可以探索、分類、佈建、配置和指派本機及遠端儲存空間。
 
 ![](media/sddc/learn.png) **[深入瞭解 SYSTEM Center VMM](https://docs.microsoft.com/system-center/vmm/)**
 

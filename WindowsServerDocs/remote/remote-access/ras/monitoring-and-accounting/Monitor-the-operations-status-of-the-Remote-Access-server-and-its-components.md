@@ -21,9 +21,9 @@ ms.locfileid: "71404549"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>監視「遠端存取」伺服器及其元件的操作狀態
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-**注意：** Windows Server 2012 將 DirectAccess 以及「路由及遠端存取服務」(RRAS) 合併成一個遠端存取角色。  
+**注意：** Windows Server 2012 將 DirectAccess 與「路由及遠端存取服務」(RRAS) 整合成一個遠端存取角色。  
   
 您可以使用遠端存取服務器中的管理主控台來監視其作業狀態。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71404549"
   
 4.  在右窗格中 **，按一下 [** 工作] 下方的 [重新整理] 以**重載作業狀態**。 作業狀態會每隔五分鐘自動重新整理一次，這是預設的重新整理間隔。 若要變更預設的重新整理間隔，請按一下 [設定重新整理**間隔**]。  
   
-@no__t 0Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

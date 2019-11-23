@@ -18,7 +18,7 @@ ms.locfileid: "71407590"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>建立規則以傳送 AD FS 1.x 相容的宣告
 
-當您使用 Active Directory 同盟服務 \(AD FS @ no__t-1 來發出宣告，而執行 AD FS 1.0 \(Windows Server 2003 R2 @ no__t-3 或 AD FS 1.1 \(Windows Server 2008 或 Windows 的同盟伺服器會收到伺服器 2008 R2 @ no__t-5，您必須執行下列動作：  
+當您使用 Active Directory 同盟服務 \(AD FS\) 來發行執行 AD FS 1.0 \(Windows Server 2003 R2\) 或 AD FS 1.1 \(Windows server 2008 或 Windows Server 2008 R2\)的同盟伺服器所接收的宣告時，您必須執行下列動作：  
   
 -   建立規則，以使用 UPN、電子郵件或一般名稱的格式來傳送名稱識別碼宣告類型。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71407590"
   
     -   群組  
   
-    -   以 https://schemas.xmlsoap.org/claims/ 開頭的任何其他宣告類型，例如 https://schemas.xmlsoap.org/claims/EmployeeID  
+    -   以 https://schemas.xmlsoap.org/claims/開頭的任何其他宣告類型，例如 https://schemas.xmlsoap.org/claims/EmployeeID  
   
 視組織的需求而定，請使用下列其中一個程式來建立 AD FS 1。*x*相容的 NameID 宣告：  
   
@@ -50,7 +50,7 @@ ms.locfileid: "71407590"
 2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
 4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
@@ -63,11 +63,11 @@ ms.locfileid: "71407590"
   
 7.  在 [**傳入宣告類型**] 中，選取清單中的 [**名稱識別碼**]。  
   
-8.  在 [**傳入名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*@no__t-從清單中2compatible 宣告格式：  
+8.  在 [**傳入名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*\-清單中的相容宣告格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **電子\-郵件**  
   
     -   **一般名稱**  
   
@@ -92,7 +92,7 @@ ms.locfileid: "71407590"
 2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
@@ -105,11 +105,11 @@ ms.locfileid: "71407590"
   
 7.  在 [**傳入宣告類型**] 中，選取清單中的 [**名稱識別碼**]。  
   
-8.  在 [**傳入名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*@no__t-從清單中2compatible 宣告格式：  
+8.  在 [**傳入名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*\-清單中的相容宣告格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **電子\-郵件**  
   
     -   **一般名稱**  
   
@@ -134,7 +134,7 @@ ms.locfileid: "71407590"
 2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
   
 4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
@@ -149,11 +149,11 @@ ms.locfileid: "71407590"
   
 8.  在 [**傳出宣告類型**] 中，選取清單中的 [**名稱識別碼**]。  
   
-9. 在 [**外寄名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*@no__t-從清單中2compatible 宣告格式：  
+9. 在 [**外寄名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*\-清單中的相容宣告格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **電子\-郵件**  
   
     -   **一般名稱**  
   
@@ -163,7 +163,7 @@ ms.locfileid: "71407590"
   
     -   **以不同的傳出宣告值取代傳入宣告值**  
   
-    -   **以新的 e @ no__t-2mail 尾碼取代內送的 e @ no__t-1mail 尾碼宣告**  
+    -   **以新的電子\-郵件尾碼取代傳入的電子\-郵件尾碼宣告**  
 ![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
 11. 按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
@@ -178,7 +178,7 @@ ms.locfileid: "71407590"
 2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
@@ -193,11 +193,11 @@ ms.locfileid: "71407590"
   
 8.  在 [**傳出宣告類型**] 中，選取清單中的 [**名稱識別碼**]。  
   
-9. 在 [**外寄名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*@no__t-從清單中2compatible 宣告格式：  
+9. 在 [**外寄名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*\-清單中的相容宣告格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **電子\-郵件**  
   
     -   **一般名稱**  
   
@@ -207,7 +207,7 @@ ms.locfileid: "71407590"
   
     -   **以不同的傳出宣告值取代傳入宣告值**  
   
-    -   **以新的 e @ no__t-2mail 尾碼取代內送的 e @ no__t-1mail 尾碼宣告**  
+    -   **以新的電子\-郵件尾碼取代傳入的電子\-郵件尾碼宣告**  
 ![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
 
 11. 按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
@@ -229,12 +229,12 @@ ms.locfileid: "71407590"
   
 1.  在伺服器管理員中，按一下 [**工具**]，然後按一下 [ **AD FS 管理**]。  
   
-2.  在主控台樹的 [ **AD FS\\信任關聯**性] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
+2.  在主控台樹的 [ **AD FS\\信任關係**] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。  
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
   
-4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，取決於您正在編輯的信任，以及您要在其中建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
+4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，視您正在編輯的信任和您想要在其中建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導：  
   
     -   **接受轉換規則**  
   
@@ -252,11 +252,11 @@ ms.locfileid: "71407590"
   
 7.  在 [**傳入宣告類型**] 中，選取清單中的 [**名稱識別碼**]。  
   
-8.  在 [**傳入名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*@no__t-從清單中2compatible 宣告格式：  
+8.  在 [**傳入名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*\-清單中的相容宣告格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **電子\-郵件**  
   
     -   **一般名稱**  
   
@@ -278,12 +278,12 @@ ms.locfileid: "71407590"
   
 1.  在伺服器管理員中，按一下 [**工具**]，然後按一下 [ **AD FS 管理**]。  
   
-2.  在主控台樹的 [ **AD FS\\信任關聯**性] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
+2.  在主控台樹的 [ **AD FS\\信任關係**] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。  
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
   
-4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您要建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
+4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您要建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導：  
   
     -   **接受轉換規則**  
   
@@ -303,11 +303,11 @@ ms.locfileid: "71407590"
   
 8.  在 [**傳出宣告類型**] 中，選取清單中的 [**名稱識別碼**]。  
   
-9. 在 [**外寄名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*@no__t-從清單中2compatible 宣告格式：  
+9. 在 [**外寄名稱識別碼格式**] 中，選取下列其中一項 AD FS 1。*x*\-清單中的相容宣告格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **電子\-郵件**  
   
     -   **一般名稱**  
   
@@ -317,7 +317,7 @@ ms.locfileid: "71407590"
   
     -   **以不同的傳出宣告值取代傳入宣告值**  
   
-    -   **以新的 e @ no__t-2mail 尾碼取代內送的 e @ no__t-1mail 尾碼宣告**  
+    -   **以新的電子\-郵件尾碼取代傳入的電子\-郵件尾碼宣告**  
 ![建立規則](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs2.PNG)    
 
 11. 按一下 **[完成]** ，然後按一下 **[確定]** 以儲存規則。  
@@ -325,9 +325,9 @@ ms.locfileid: "71407590"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：建立信賴憑證者信任的宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[檢查清單：為宣告提供者信任建立宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
+[檢查清單：建立宣告提供者信任的宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

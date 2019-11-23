@@ -16,19 +16,19 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408710"
 ---
-# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E：保護 Active Directory 中的 Enterprise Admins 群組
+# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E︰保護 Active Directory 中的 Enterprise Admins 群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E：保護 Active Directory 中的 Enterprise Admins 群組  
-「企業系統管理員」（EA）群組（位於樹系根域中）每日不應包含任何使用者，但根域的「系統管理員」帳戶可能例外，前提是它會受到保護，如 [Appendix D：在 Active Directory @ no__t-0 中保護內建的系統管理員帳戶。  
+## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E︰保護 Active Directory 中的 Enterprise Admins 群組  
+「企業系統管理員」（EA）群組（位於樹系根域中）每日不應包含任何使用者，但根域的「系統管理員」帳戶可能例外，前提是它會受到保護，如[附錄 D：在 Active Directory 中保護內建的系統管理員帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 
 根據預設，企業系統管理員會在樹系中的每個網域中有 Administrators 群組的成員。 您不應該從每個網域中的 Administrators 群組移除 EA 群組，因為萬一發生樹系嚴重損壞修復案例，可能會需要 EA 許可權。 樹系的 Enterprise Admins 群組應受到保護，如下列逐步指示所述。  
 
 針對樹系中的 Enterprise Admins 群組：  
 
-1.  在連結到包含每個網域中成員伺服器和工作站之 Ou 的 Gpo 中，Enterprise Admins 群組應新增至電腦設定 \ \windows 的 [許可權] \ 使用授權許可權中的下列使用者權限**指派**：  
+1.  在連結到包含每個網域中成員伺服器和工作站之 Ou 的 Gpo 中，Enterprise Admins 群組應新增至電腦設定 \ \windows 設定 \ 使用者**許可證指派**中的下列使用者權限：  
 
     -   拒絕從網路存取這台電腦  
 
@@ -46,7 +46,7 @@ ms.locfileid: "71408710"
 
 1.  在**伺服器管理員**中，按一下 [**工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。  
 
-2.  如果您未管理樹系的根域，請在主控台樹中，以滑鼠右鍵按一下 [<Domain>]，然後按一下 [**變更網域**] （其中 <Domain> 是您目前管理的網功能變數名稱稱）。  
+2.  如果您未管理樹系的根域，請在主控台樹中的 [<Domain>] 上按一下滑鼠右鍵，然後按一下 [**變更網域**] （其中 <Domain> 是您目前管理的網功能變數名稱稱）。  
 
     ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)  
 
@@ -68,7 +68,7 @@ ms.locfileid: "71408710"
 
 1.  在**伺服器管理員**中，按一下 [**工具**]，然後按一下 [**群組原則管理**]。  
 
-2.  在主控台樹中，展開 <Forest> \ 網域 @ no__t-1 @ no__t-2，然後**群組原則物件** （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
+2.  在主控台樹中，展開 <Forest>\Domains\\<Domain>，然後**群組原則物件** （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
 
     > [!NOTE]  
     > 在包含多個網域的樹系中，應該在每個需要保護 Enterprise Admins 群組的網域中建立類似的 GPO。  
@@ -81,7 +81,7 @@ ms.locfileid: "71408710"
 
     ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)  
 
-5.  在詳細資料窗格中，以滑鼠右鍵按一下 [<GPO Name>]，然後按一下 [**編輯**]。  
+5.  在詳細資料窗格中，以滑鼠右鍵按一下 <GPO Name>，然後按一下 [**編輯**]。  
 
 6.  流覽至 [**電腦設定 \ \windows] [設置 \ 本機原則**]，然後按一下 [**使用者權限指派**]。  
 
@@ -163,7 +163,7 @@ ms.locfileid: "71408710"
 
 13. 在**群組原則管理** 中，執行下列動作，將 GPO 連結到成員伺服器和工作站 ou：  
 
-    1.  流覽至 [<Forest> \ 網域 @ no__t-1 @ no__t-2] （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
+    1.  流覽至 [<Forest>\Domains]\\<Domain> （其中 <Forest> 是樹系的名稱，而 [<Domain>] 是您要設定群組原則之網域的名稱）。  
 
     2.  以滑鼠右鍵按一下要套用 GPO 的 OU，然後按一下 [**連結到現有的 gpo**]。  
 
@@ -197,7 +197,7 @@ ms.locfileid: "71408710"
 
     ![保護企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)  
 
-5.  在 [**命令提示**字元] 視窗中，輸入**net use \\ @ no__t-3 @ No__t-4Server name @ no__t-5\c $** ，其中 \<Server name @ no__t-7 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
+5.  在 [**命令提示**字元] 視窗中，輸入**net use \\\\\<伺服器名稱\>\c $** ，其中 \<伺服器名稱\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
 
 6.  下列螢幕擷取畫面顯示應該顯示的錯誤訊息。  
 
@@ -217,7 +217,7 @@ ms.locfileid: "71408710"
 
 4.  按一下 [檔案 **]，然後按一下 [** **另存**新檔]。  
 
-5.  在 [**檔案名**] 方塊中，輸入 **<Filename>** （其中 <Filename> 是新批次檔的名稱）。  
+5.  在 [**檔案名**] 方塊中，輸入 **<Filename>.bat** （其中 <Filename> 是新批次檔的名稱）。  
 
 ##### <a name="schedule-a-task"></a>排程工作  
 
@@ -238,7 +238,7 @@ ms.locfileid: "71408710"
 
 7.  在 [**程式/腳本**] 底下，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 [確定]。  
+8.  按一下 **\[確定\]** 。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -248,7 +248,7 @@ ms.locfileid: "71408710"
 
 12. 選取 **[執行]，無論使用者是否登入**，並選取 [不要**儲存密碼**]。 此工作只會存取本機電腦資源。  
 
-13. 按一下 [確定]。  
+13. 按一下 **\[確定\]** 。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

@@ -17,7 +17,7 @@ ms.locfileid: "71940694"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>確認受防護主機可以證明
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 網狀架構系統管理員必須確認 Hyper-v 主機可以做為受防護主機來執行。 在至少一部受防護主機上，完成下列步驟：
 
@@ -31,7 +31,7 @@ ms.locfileid: "71940694"
 
 3. 設定主機的金鑰保護和證明 Url：
 
-    - **透過 Windows PowerShell**：您可以在提升許可權的 Windows PowerShell 主控台中執行下列命令，以設定金鑰保護和證明 Url。 針對 &lt;FQDN @ no__t-1，請使用 HGS 叢集的完整功能變數名稱（FQDN）（例如，hgs），或要求 HGS 系統管理員在 HGS 伺服器上執行**HgsServer 指令程式**，以取得 url）。
+    - **透過 Windows PowerShell**：您可以在提升許可權的 Windows PowerShell 主控台中執行下列命令，以設定金鑰保護和證明 url。 針對 &lt;FQDN&gt;，請使用 HGS 叢集的完整功能變數名稱（FQDN）（例如，hgs），或要求 HGS 系統管理員在 HGS 伺服器上執行**HgsServer 指令程式**，以取得 url）。
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'
@@ -39,10 +39,10 @@ ms.locfileid: "71940694"
 
         若要設定 fallback HGS 伺服器，請重複此命令，並指定金鑰保護和證明服務的 fallback Url。 如需詳細資訊，請參閱[Fallback configuration](guarded-fabric-manage-branch-office.md#fallback-configuration)。
 
-    - **透過 VMM**：如果您使用的是 System Center 2016-Virtual Machine Manager （VMM），您可以在 VMM 中設定證明和金鑰保護 Url。 如需詳細資訊，請參閱在**VMM 中**布建受防護主機中的[設定全域 HGS 設定](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)。
+    - **透過 VMM**：如果您使用 System Center 2016-VIRTUAL MACHINE MANAGER （vmm），您可以在 VMM 中設定證明和金鑰保護 url。 如需詳細資訊，請參閱在**VMM 中**布建受防護主機中的[設定全域 HGS 設定](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)。
 
     >**注意事項**
-    > - 如果 hgs 系統管理員在[hgs 伺服器上啟用 HTTPS](guarded-fabric-configure-hgs-https.md)，請使用 `https://` 開始 url。
+    > - 如果 hgs 系統管理員在[hgs 伺服器上啟用 HTTPS](guarded-fabric-configure-hgs-https.md)，請使用 `https://`開始 url。
     > - 如果 HGS 系統管理員在 HGS 伺服器上啟用 HTTPS，並使用自我簽署憑證，您必須將憑證匯入每部主機上的「受信任的根憑證授權」存放區中。 若要這麼做，請在每部主機上執行下列命令：
        ```PowerShell
        Import-Certificate -FilePath "C:\temp\HttpsCertificate.cer" -CertStoreLocation Cert:\LocalMachine\Root
@@ -55,7 +55,7 @@ ms.locfileid: "71940694"
     Get-HgsClientConfiguration
     ```
 
-    命令的輸出會指出主機是否通過證明，而且現在已受到保護。 如果 `IsHostGuarded` 未傳回**True**，您可以執行 HGS 診斷工具[HgsTrace](https://technet.microsoft.com/library/mt718831.aspx)來進行調查。 若要執行診斷，請在主機上提高許可權的 Windows PowerShell 提示字元中輸入下列命令：
+    命令的輸出會指出主機是否通過證明，而且現在已受到保護。 如果 `IsHostGuarded` 不會傳回**True**，您可以執行 HGS 診斷工具[HgsTrace](https://technet.microsoft.com/library/mt718831.aspx)來進行調查。 若要執行診斷，請在主機上提高許可權的 Windows PowerShell 提示字元中輸入下列命令：
 
     ```powershell
     Get-HgsTrace -RunDiagnostics -Detailed
@@ -70,7 +70,7 @@ ms.locfileid: "71940694"
 > [!div class="nextstepaction"]
 > [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [部署主機守護者服務（HGS）](guarded-fabric-deploying-hgs-overview.md)
 - [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)

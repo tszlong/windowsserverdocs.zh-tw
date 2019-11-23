@@ -21,7 +21,7 @@ ms.locfileid: "71404512"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>規劃多樹系部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明在多樹系部署中設定遠端存取時所需的規劃步驟。  
   
@@ -42,8 +42,8 @@ ms.locfileid: "71404512"
 您至少必須針對新樹系中的 DirectAccess 用戶端電腦，在新樹系中設定一個安全性群組。 這是因為單一安全性群組無法包含來自數個樹系的帳戶。  
   
 > [!NOTE]  
-> -   DirectAccess 針對每個樹系至少需要一個 Windows 10 @ no__t-0 或 Windows @ no__t-1 8 用戶端安全性群組。 不過，建議您針對每個包含 Windows 10 或 Windows 8 用戶端的網域，各擁有一個 Windows 10 或 Windows 8 用戶端安全性群組。  
-> -   啟用多網站時，DirectAccess 針對支援 Windows 7 用戶端電腦的每個 DirectAccess 進入點，每個樹系至少需要一個 Windows 7 @ no__t-0 用戶端安全性群組。 不過，對於每個包含 Windows 7 用戶端的網域，建議您針對每個進入點使用個別的 Windows 7 用戶端安全性群組。  
+> -   針對每個樹系，DirectAccess 至少需要一個 Windows 10&reg; 或 Windows&reg; 8 用戶端安全性群組。 不過，建議您針對每個包含 Windows 10 或 Windows 8 用戶端的網域，各擁有一個 Windows 10 或 Windows 8 用戶端安全性群組。  
+> -   啟用多網站時，DirectAccess 針對支援 Windows 7 用戶端電腦的每個 DirectAccess 進入點，每個樹系至少需要一個 Windows 7&reg; 的用戶端安全性群組。 不過，對於每個包含 Windows 7 用戶端的網域，建議您針對每個進入點使用個別的 Windows 7 用戶端安全性群組。  
 >   
 > 針對要在其他網域中用戶端電腦上套用的 DirectAccess，必須在這些網域上建立用戶端 GPO。 新增安全性群組會觸發寫入新網域的新用戶端 GPO，如果您將新的安全性群組從新網域新增到 DirectAccess 用戶端安全性群組清單，則會在新網域上自動建立用戶端 GPO，而來自新網域的用戶端電腦將透過用戶端 GPO 取得 DirectAccess 設定。  
 >   

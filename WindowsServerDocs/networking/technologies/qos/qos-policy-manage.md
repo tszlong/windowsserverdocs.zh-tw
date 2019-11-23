@@ -17,7 +17,7 @@ ms.locfileid: "71395875"
 ---
 # <a name="manage-qos-policy"></a>管理 QoS 原則
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何使用「QoS 原則」 wizard 來建立、編輯或刪除 QoS 原則。
 
@@ -80,9 +80,9 @@ QoS 原則名稱必須是唯一的。 原則套用至伺服器和使用者的方
 
 2. （選擇性）使用 [**指定 Dscp 值**] 來啟用 dscp 標示，然後設定介於0到63之間的 dscp 值。
 
-3. 或者，使用 [指定節流閥速率] 來啟用流量節流，並設定節流閥速率。 節流閥速率值必須大於1，而且您可以\(指定每秒 kb 的單位（kbps\) ）或每秒\(mb 的\)MBps。
+3. 或者，使用 [指定節流閥速率] 來啟用流量節流，並設定節流閥速率。 節流閥速率值必須大於1，而且您可以指定每秒 kb 單位 \(KBps\) 或每秒 mb 數 \(MBps\)。
 
-4. 按一下 [下一步]。
+4. 按一下 **\[下一步\]** 。
 
 ### <a name="wizard-page-2---application-name"></a>Wizard 第2頁-應用程式名稱
 
@@ -99,11 +99,11 @@ QoS 原則名稱必須是唯一的。 原則套用至伺服器和使用者的方
 >[!NOTE]
 >應用程式路徑不能包含解析成符號連結的路徑。
 
-URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]://<hostname\>:<port\>/<url-path>`為。 `‘*'`您可以針對`<hostname>` `<hostname>`和`<port>`/或使用萬用字元，例如`<port>`，但萬用字元不能代表或的子字串。 `https://training.\*/, https://\*.\*`
+URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式為 `http[s]://<hostname\>:<port\>/<url-path>`。 您可以針對 `<hostname>` 和/或 `<port>`使用萬用字元 `‘*'`，例如 `https://training.\*/, https://\*.\*`，但萬用字元不能代表 `<hostname>` 或 `<port>`的子字串。
 
-換句話說， `https://my\*site/`和`https://\*training\*/`都不是有效的。 
+換句話說，`https://my\*site/` 或 `https://\*training\*/` 都不是有效的。 
 
-（選擇性）您可以勾選 [**包含子目錄和**檔案]，以在 URL 後面的所有子目錄和檔案上執行比對。 例如，如果核取此選項且 URL 為`https://training`，QoS 原則將會考慮要求是否` https://training/video`符合良好。
+（選擇性）您可以勾選 [**包含子目錄和**檔案]，以在 URL 後面的所有子目錄和檔案上執行比對。 例如，如果核取此選項且 URL 為 `https://training`，QoS 原則將會考慮` https://training/video` 良好相符的要求。
 
 #### <a name="to-configure-the-application-name-page-of-the-qos-policy-wizard"></a>設定 QoS 原則嚮導的 [應用程式名稱] 頁面
 
@@ -111,7 +111,7 @@ URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]
 
 2. 如果選取 [僅此可執行檔名稱的應用程式]，請指定以 .exe 附檔名結尾的可執行檔名稱。
 
-3. 按一下 [下一步]。
+3. 按一下 **\[下一步\]** 。
 
 ### <a name="wizard-page-3---ip-addresses"></a>Wizard 第3頁-IP 位址
 
@@ -123,13 +123,13 @@ URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]
 
 如果選取 [僅下列來源 IP 位址] 或 [僅下列目的 IP 位址]，就必須輸入下列其中一項：
 
-- IPv4 位址，例如`192.168.1.1`
+- IPv4 位址，例如 `192.168.1.1`
 
-- 使用網路前置長度標記法的 IPv4 位址首碼，例如`192.168.1.0/24`
+- 使用網路前置長度標記法的 IPv4 位址首碼，例如 `192.168.1.0/24`
 
-- IPv6 位址，例如`3ffe:ffff::1`
+- IPv6 位址，例如 `3ffe:ffff::1`
 
-- IPv6 位址首碼，例如`3ffe:ffff::/48`
+- IPv6 位址首碼，例如 `3ffe:ffff::/48`
 
 如果您同時選取 **[僅下列來源 ip 位址**] 和 **[僅下列目的地 ip**位址]，則位址或位址首碼必須是 IPv4 或 IPv6 型。
 
@@ -147,7 +147,7 @@ URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]
 
 4. 如果您選取 **[僅下列 IP 目的地位址**]，請指定 IPv4 或 IPv6 位址或首碼，其對應至為來源位址指定的位址或首碼類型。
 
-5.  按一下 [下一步]。  
+5.  按一下 **\[下一步\]** 。  
 
 ### <a name="wizard-page-4---protocols-and-ports"></a>Wizard 第4頁-通訊協定和埠
 
@@ -240,7 +240,7 @@ Advanced QoS 設定可提供額外的控制，讓 IT 系統管理員管理電腦
   
 2.  在 [ **Qos 原則**] 上按一下滑鼠右鍵，然後按一下 [ **Advanced qos Settings**]。
 
-     下圖顯示兩個 [advanced QoS 設定] 索引標籤：**輸入 TCP 流量**和**DSCP 標記覆寫**。
+     下圖顯示兩個 [advanced QoS 設定] 索引標籤：**輸入 TCP 流量**和**DSCP 標示覆寫**。
   
 > [!NOTE]
 >  Advanced QoS 設定是電腦層級的群組原則設定。
@@ -270,7 +270,7 @@ Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows Server 2008 �
 
 3.  將 GPO 連結至 OU。
 
-#### <a name="advanced-qos-settings-dscp-marking-override"></a>Advanced QoS 設定：DSCP 標記覆寫
+#### <a name="advanced-qos-settings-dscp-marking-override"></a>Advanced QoS 設定： DSCP 標記覆寫
 
 DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而不是在 QoS 原則中指定的 DSCP 值。 藉由指定允許應用程式設定 DSCP 值，應用程式可以設定非零的 DSCP 值。 
 
@@ -280,7 +280,7 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>無線多媒體和 DSCP 值
 
-[Wi-fi 聯盟](https://go.microsoft.com/fwlink/?LinkId=160769)已建立無線多媒體 @no__t 1WMM @ no__t-2 的認證，其定義四個存取類別 \(WMM_AC @ no__t-4，以設定在 wi-fi @ No__t-5Fi 無線網路上傳輸的網路流量優先順序。 存取類別包含\(順序最高到最低的優先順序\)：語音、影片、最佳方式和背景; 分別縮寫為 VO、VI、as 和 BK。 WMM 規格會定義哪些 DSCP 值會對應到四個存取類別中的每一個：
+[Wi-fi 聯盟](https://go.microsoft.com/fwlink/?LinkId=160769)已建立無線多媒體 \(WMM\) 的認證，其定義了四個存取類別，\(WMM_AC\) 將在 Wi-fi\-Fi 無線網路上傳輸的網路流量排定優先順序。 存取分類包含以最高至最低優先順序\)的 \(：語音、影片、最佳方式和背景;分別縮寫為 VO、VI、as 和 BK。 WMM 規格會定義哪些 DSCP 值會對應到四個存取類別中的每一個：
   
 |DSCP 值|WMM 存取類別|
 |----------|-------------------|
@@ -289,7 +289,7 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 |24-31、0-7|最佳做法（是）|
 |8-23|背景（BK）|
 
-您可以建立使用這些 DSCP 值的 QoS 原則，以確保在 wmm 無線適配\-卡上，具有 wi-fi 認證™的可攜式電腦會在與適用\-于 wmm 存取點的 wi-fi 認證相關聯時，收到優先順序的處理。
+您可以建立使用這些 DSCP 值的 QoS 原則，以確保在 WMM 無線介面卡上，具有 Wi-fi\-Fi 認證™的攜帶型電腦，在與適用于 WMM 存取點的 Wi-fi\-Wi-fi 認證相關聯時，會收到優先順序的處理。
   
 ### <a name="BKMK_precedencerules"></a>QoS 原則優先順序規則
 
@@ -297,7 +297,7 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 
 一般而言，具有最符合條件的 QoS 原則會獲勝。 套用多個 QoS 原則時，規則會分成三個類別：使用者層級與電腦層級;應用程式與網路 quintuple;而在網路 quintuple 中。
 
-藉由*網路 quintuple*，我們表示來源 ip 位址、目的地 ip 位址、來源埠、目的地埠，以及通訊\(協定 TCP/\)UDP。  
+藉由*網路 quintuple*，我們表示來源 ip 位址、目的地 ip 位址、來源埠、目的地埠，以及通訊協定 \(TCP/UDP\)。  
 
  **使用者層級的 QoS 原則優先于電腦層級的 QoS 原則**
 
@@ -312,13 +312,13 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 
 或者，您也可以藉由指定非重迭的狀況，將多個 QoS 原則套用至相同的流量。 在應用程式的條件和網路 quintuple 之間，指定應用程式的原則會被視為更明確且會套用。 
 
-例如，policy_A 只會指定應用程式名稱（app.config），而 policy_B 會指定目的地 IP 位址 192.168.1.0/24。 當這些 QoS 原則衝突 \(app 會將流量傳送至 192.168.4.0/24 @ no__t-1 範圍內的 IP 位址，並套用 policy_A。
+例如，policy_A 只會指定應用程式名稱（app.config），而 policy_B 會指定目的地 IP 位址 192.168.1.0/24。 當這些 QoS 原則衝突時 \(app.config 會將流量傳送到 192.168.4.0/24\)範圍內的 IP 位址，policy_A 套用。
 
  **在網路 quintuple 中的優先順序更高**
 
 針對網路 quintuple 內的原則衝突，具有最符合條件的原則會優先使用。 例如，假設 policy_C 指定來源 IP 位址 "any"、目的地 IP 位址10.0.0.1、來源埠 "any"、目的地埠 "any" 和通訊協定 "TCP"。 
 
-接下來，假設 policy_D 指定來源 IP 位址 "any"、目的地 IP 位址10.0.0.1、來源埠 "any"、目的地埠80和通訊協定 "TCP"。 然後，policy_C 和 policy_D 都符合目的地10.0.0.1：80的連接。 由於 QoS 原則會套用具有最符合特定比對條件的原則，因此在此範例中，policy_D 的優先順序較高。  
+接下來，假設 policy_D 指定來源 IP 位址 "any"、目的地 IP 位址10.0.0.1、來源埠 "any"、目的地埠80和通訊協定 "TCP"。 然後 policy_C 和 policy_D 兩者都符合目的地10.0.0.1：80的連接。 由於 QoS 原則會套用具有最符合特定比對條件的原則，因此在此範例中，policy_D 的優先順序。  
   
 不過，QoS 原則可能會有相同數目的條件。 例如，數個原則可能只會指定網路 quintuple 的一個（但不是相同的）部分。 在網路 quintuple 中，下列順序是從較高到低的優先順序：
 

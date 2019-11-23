@@ -22,7 +22,7 @@ ms.locfileid: "71374595"
 ---
 # <a name="logman-create-cfg"></a>logman 建立 cfg
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立設定資料收集器。  
 
@@ -30,7 +30,7 @@ ms.locfileid: "71374595"
 ```  
 logman create cfg <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+## <a name="parameters"></a>Parameters  
 
 |                    參數                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,11 +62,11 @@ logman create cfg <[-n] <name>> [options]
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
 ## <a name="BKMK_examples"></a>典型  
-下列命令會使用登錄機碼 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0，建立名為 cfg_log 的設定資料收集器。  
+下列命令會使用登錄機碼 HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\Currentverion\\，建立稱為 cfg_log 的設定資料收集器。  
 ```  
 logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
 ```  
-下列命令會建立名為 cfg_log 的設定資料收集器，其會記錄資料庫資料行 MSNdis_Vendordriverversion 中 root\wmi 的所有 WMI 物件。  
+下列命令會建立名為 cfg_log 的設定資料收集器，以記錄資料庫資料行 MSNdis_Vendordriverversion 中 root\wmi 的所有 WMI 物件。  
 ```  
 logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
 ```  

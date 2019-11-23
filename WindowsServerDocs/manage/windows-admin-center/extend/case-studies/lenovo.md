@@ -35,6 +35,7 @@ XClarity 整合器延伸模組中包含的解決方案延伸模組，可讓您�
 
 容錯移轉叢集和超交集叢集的工具擴充功能提供儀表板，顯示整體叢集硬體健全狀況狀態、狀態警示、固件一致性狀態和報告、耗電量和溫度，以及風扇和電源供應器健全狀況狀態。
 
-@no__t 0Lenovo Extension @ no__t-1 @ no__t-2Lenovo Extension @ no__t-3
+![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-4.png)
+![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-5.png)
 
 在[聯想網站](https://support.lenovo.com/us/en/solutions/ht507549)上深入瞭解 Windows 系統管理中心的聯想 XClarity 整合器供應專案。

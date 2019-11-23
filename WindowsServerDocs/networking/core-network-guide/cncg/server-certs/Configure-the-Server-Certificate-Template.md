@@ -17,9 +17,9 @@ ms.locfileid: "71356764"
 ---
 # <a name="configure-the-server-certificate-template"></a>設定伺服器憑證範本
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-您可以使用此程式設定 Active Directory @ no__t-0 憑證服務（AD CS）的憑證範本，做為向網路上的伺服器註冊之伺服器憑證的基礎。  
+您可以使用此程式設定 Active Directory&reg; 憑證服務（AD CS）的憑證範本，做為向網路上的伺服器註冊之伺服器憑證的基礎。  
   
 設定此範本時，您可以 Active Directory 群組來指定要從 AD CS 自動接收伺服器憑證的伺服器。   
   

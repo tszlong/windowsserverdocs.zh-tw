@@ -19,7 +19,7 @@ ms.locfileid: "71358417"
 # <a name="add-privacy-link"></a>新增隱私權連結 
 
 
-若要新增 [正負號 @ no__t-0in] 頁面上顯示的隱私權連結，請使用下列 Windows PowerShell Cmdlet 和語法。  
+若要新增 [簽署\-] 頁面上顯示的隱私權連結，請使用下列 Windows PowerShell Cmdlet 和語法。  
 
 ![新增隱私權連結](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
   
@@ -28,7 +28,7 @@ ms.locfileid: "71358417"
  
   
 > [!IMPORTANT]  
-> 此 Cmdlet 的 `linkText` 並非必要參數，除非您使用其他值，而不是預設的 *Privacy*。 使用預設的優點是頁面會根據所有用戶端地區設定來當地語系化。 自訂 [正負號 @ no__t-0in] 頁面之後，自訂的優先順序會較高;因此，您應該針對您想要支援的所有語言進行自訂。 所有的自訂內容皆接受地區設定參數。 當您設定當地語系化的內容時，應先設定一個國家/地區 @ no__t-0less locale （例如 "en"），然後再設定 country 和 region @ no__t-1specific locale，例如 "en @ no__t-2us"。  
+> 此 Cmdlet 的 `linkText` 並非必要參數，除非您使用其他值，而不是預設的 *Privacy*。 使用預設的優點是頁面會根據所有用戶端地區設定來當地語系化。 自訂頁面中的 登入\-之後，自訂的優先順序會較高;因此，您應該針對您想要支援的所有語言進行自訂。 所有的自訂內容皆接受地區設定參數。 當您設定當地語系化的內容時，您應該先使用國家/地區\-較少的地區設定，例如 "en"，然後再設定國家和地區\-特定地區設定，例如 "en\-us"。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

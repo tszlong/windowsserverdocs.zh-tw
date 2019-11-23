@@ -22,14 +22,14 @@ ms.locfileid: "71372762"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 變更等候查閱要求回復的初始秒數。
 ## <a name="syntax"></a>語法
 ```
 set timeout=<Number>
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |    參數    |                                           描述                                            |
 |-----------------|--------------------------------------------------------------------------------------------------|

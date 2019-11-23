@@ -16,7 +16,7 @@ ms.locfileid: "71403601"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在現有的防禦樹系中安裝 HGS 
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>將 HGS 伺服器加入現有的網域
@@ -100,7 +100,7 @@ CNO 代表叢集的名稱，主要是由容錯移轉叢集在內部使用。
 VCO 代表位於叢集頂端的 HGS 服務，而且將會是向 DNS 伺服器註冊的名稱。
 
 > [!IMPORTANT]
-> 將執行 `Initialize-HgsServer` 的使用者必須**完全控制**Active Directory 中的 CNO 和 VCO 物件。
+> 將執行 `Initialize-HgsServer` 的使用者需要 Active Directory 中的 CNO 和 VCO 物件的**完整控制權**。
 
 若要快速預先設置您的 CNO 和 VCO，請 Active Directory 系統管理員執行下列 PowerShell 命令：
 
@@ -130,19 +130,19 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 **原則路徑：** 電腦設定 \Windows 設定 \ 本機原則 \ 許可權指派
 
-**原則名稱：** 拒絕從網路存取這台電腦
+**原則名稱：** 拒絕從網路存取這部電腦
 
 **必要值：** 請確定此值不會封鎖所有本機帳戶的網路登入。 不過，您可以安全地封鎖本機系統管理員帳戶。
 
-**原因**容錯移轉叢集依賴名為 CLIUSR 的非系統管理員本機帳戶來管理叢集節點。 封鎖此使用者的網路登入將會導致叢集無法正常運作。
+**原因：** 容錯移轉叢集依賴名為 CLIUSR 的非系統管理員本機帳戶來管理叢集節點。 封鎖此使用者的網路登入將會導致叢集無法正常運作。
 
 ### <a name="kerberos-encryption"></a>Kerberos 加密
 
-**原則路徑：** 電腦設定\Windows 設定\安全性設定\本機原則\安全性選項
+**原則路徑：** 電腦配置 \Windows 設置 \ 安全性 \ 本機原則選項
 
 **原則名稱：** 網路安全性：設定 Kerberos 允許的加密類型
 
-**動作**:如果已設定此原則，您必須使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)更新 gMSA 帳戶，以便只在此原則中使用支援的加密類型。 例如，如果您的原則只允許 AES128 @ no__t-0HMAC @ no__t-1SHA1 和 AES256 @ no__t-2HMAC @ no__t-3SHA1，您應該執行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`。
+**動作**：如果已設定此原則，您必須使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)更新 gMSA 帳戶，以便只在此原則中使用支援的加密類型。 比方說，如果您的原則只允許 AES128\_HMAC\_SHA1 和 AES256\_HMAC\_SHA1，您應該執行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`。
 
 
 

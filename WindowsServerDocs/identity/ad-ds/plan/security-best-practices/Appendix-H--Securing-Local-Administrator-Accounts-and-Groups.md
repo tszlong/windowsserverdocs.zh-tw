@@ -16,12 +16,12 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408636"
 ---
-# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>附錄 H：保護本機系統管理員帳戶和群組
+# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>附錄 H︰保護本機 Administrators 帳戶和群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>附錄 H：保護本機系統管理員帳戶和群組  
+## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>附錄 H︰保護本機 Administrators 帳戶和群組  
 在目前處於主流支援的所有 Windows 版本上，預設會停用本機系統管理員帳戶，讓帳戶無法用於傳遞雜湊和其他認證竊取攻擊。 不過，在包含舊版作業系統或已啟用本機系統管理員帳戶的環境中，可以使用這些帳戶，如先前所述，以在成員伺服器和工作站之間傳播危害。 每個本機系統管理員帳戶和群組都應該受到保護，如下列逐步指示所述。  
 
 如需保護內建的系統管理員（BA）群組之考慮的詳細資訊，請參閱[執行最低許可權的管理模型](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)。  
@@ -30,7 +30,7 @@ ms.locfileid: "71408636"
 對於樹系中每個網域的本機系統管理員帳戶，您應該設定下列設定：  
 
 -   設定 Gpo 來限制網域的系統管理員帳戶在已加入網域的系統上的使用  
-    -   在您建立的一或多個 Gpo 中，以及連結至每個網域中的工作站和成員伺服器 Ou，將系統管理員帳戶新增至電腦設定 \ \windows 的 [許可權 \] \ 使用者**權力指派**：  
+    -   在您建立的一或多個 Gpo 中，以及連結至每個網域中的工作站和成員伺服器 Ou，將系統管理員帳戶新增至**電腦設定 \ \windows 設定 \** 使用者權限 \ 許可權指派中的下列使用者權限：  
 
         -   拒絕從網路存取這台電腦  
 
@@ -46,7 +46,7 @@ ms.locfileid: "71408636"
 
 1.  在**伺服器管理員**中，按一下 [**工具**]，然後按一下 [**群組原則管理**]。  
 
-2.  在主控台樹中，展開 <Forest> \ 網域 @ no__t-1 @ no__t-2，然後**群組原則物件** （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
+2.  在主控台樹中，展開 <Forest>\Domains\\<Domain>，然後**群組原則物件** （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
 
 3.  在主控台樹中，以滑鼠右鍵按一下 [**群組原則物件**]，然後按一下 [**新增**]。  
 
@@ -56,7 +56,7 @@ ms.locfileid: "71408636"
 
     ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_102.png)  
 
-5.  在詳細資料窗格中，以滑鼠右鍵按一下 [ **<GPO Name>** ]，然後按一下 [**編輯**]。  
+5.  在詳細資料窗格中，以滑鼠右鍵按一下 **<GPO Name>** ，然後按一下 [**編輯**]。  
 
 6.  流覽至 [**電腦設定 \ \windows] [設置 \ 本機原則**]，然後按一下 [**使用者權限指派**]。  
 
@@ -83,7 +83,7 @@ ms.locfileid: "71408636"
 
         ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)  
 
-    3.  按一下 [確定]。  
+    3.  按一下 **\[確定\]** 。  
 
         > [!IMPORTANT]  
         > 當您將系統管理員帳戶新增至這些設定時，您可以指定是要依照如何為帳戶加上標籤來設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 TAILSPINTOYS 網域的系統管理員帳戶新增至這些拒絕許可權，您可以流覽至 TAILSPINTOYS 網域的系統管理員帳戶，這會顯示為 TAILSPINTOYS\Administrator。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入**系統管理員**，您將會限制套用 GPO 的每部電腦上的本機系統管理員帳戶，如先前所述。  
@@ -96,7 +96,7 @@ ms.locfileid: "71408636"
 
         ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)  
 
-    3.  按一下 [確定]。  
+    3.  按一下 **\[確定\]** 。  
 
         > [!IMPORTANT]  
         > 當您將系統管理員帳戶新增至這些設定時，您可以指定是要依照如何為帳戶加上標籤來設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 TAILSPINTOYS 網域的系統管理員帳戶新增至這些拒絕許可權，您可以流覽至 TAILSPINTOYS 網域的系統管理員帳戶，這會顯示為 TAILSPINTOYS\Administrator。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入**系統管理員**，您將會限制套用 GPO 的每部電腦上的本機系統管理員帳戶，如先前所述。  
@@ -109,7 +109,7 @@ ms.locfileid: "71408636"
 
         ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)  
 
-    3.  按一下 [確定]。  
+    3.  按一下 **\[確定\]** 。  
 
         > [!IMPORTANT]  
         > 當您將系統管理員帳戶新增至這些設定時，您可以指定是要依照如何為帳戶加上標籤來設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 TAILSPINTOYS 網域的系統管理員帳戶新增至這些拒絕許可權，您可以流覽至 TAILSPINTOYS 網域的系統管理員帳戶，這會顯示為 TAILSPINTOYS\Administrator。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入**系統管理員**，您將會限制套用 GPO 的每部電腦上的本機系統管理員帳戶，如先前所述。  
@@ -118,7 +118,7 @@ ms.locfileid: "71408636"
 
 12. 在**群組原則管理** 中，執行下列動作，將 GPO 連結到成員伺服器和工作站 ou：  
 
-    1.  流覽至 [<Forest> \ 網域 @ no__t-1 @ no__t-2] （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
+    1.  流覽至 [<Forest>\Domains]\\<Domain> （其中 <Forest> 是樹系的名稱，而 [<Domain>] 是您要設定群組原則之網域的名稱）。  
 
     2.  以滑鼠右鍵按一下要套用 GPO 的 OU，然後按一下 [**連結到現有的 gpo**]。  
 
@@ -148,7 +148,7 @@ ms.locfileid: "71408636"
 
     ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)  
 
-5.  在 [**命令提示**字元] 視窗中，輸入**net use \\ @ no__t-3 @ no__t-4\c $/user： <Server Name> \ Administrator**，其中 <Server Name> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
+5.  在 [**命令提示**字元] 視窗中，輸入**net use \\\\<Server Name>\c $/User：<Server Name>\Administrator**，其中 <Server Name> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
 
     > [!NOTE]  
     > 本機系統管理員認證必須來自您嘗試透過網路存取的相同系統。  
@@ -170,7 +170,7 @@ ms.locfileid: "71408636"
 
 4.  按一下 [檔案 **]，然後按一下 [** **另存**新檔]。  
 
-5.  在 [**檔案名**] 方塊中，輸入 **<Filename>** （其中 <Filename> 是新批次檔的名稱）。  
+5.  在 [**檔案名**] 方塊中，輸入 **<Filename>.bat** （其中 <Filename> 是新批次檔的名稱）。  
 
 ###### <a name="schedule-a-task"></a>排程工作  
 
@@ -191,7 +191,7 @@ ms.locfileid: "71408636"
 
 7.  在 [**程式/腳本**] 欄位中，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 [確定]。  
+8.  按一下 **\[確定\]** 。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -201,7 +201,7 @@ ms.locfileid: "71408636"
 
 12. 選取 **[執行] 表示使用者是否登入**，而且不會**儲存密碼**。 此工作只會存取本機電腦資源。  
 
-13. 按一下 [確定]。  
+13. 按一下 **\[確定\]** 。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

@@ -19,16 +19,16 @@ ms.locfileid: "71393231"
 ---
 # <a name="windows-7-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 7 至少應設定最少的記憶體數量
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法和掃描的詳細資訊，請參閱 [最佳做法分析程式](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|設定|  
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
 
@@ -64,13 +64,13 @@ ms.locfileid: "71393231"
   
 2.  以滑鼠右鍵按一下 [ **Windows PowerShell** ]，然後按一下 [**以系統管理員身分執行**]。  
   
-3.  以虛擬機器的名稱取代 @no__t 0MyVM > 之後，請執行此命令：  
+3.  以虛擬機器的名稱取代 \<MyVM > 之後，請執行此命令：  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

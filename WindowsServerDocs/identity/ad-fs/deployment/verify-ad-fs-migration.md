@@ -23,14 +23,14 @@ ms.locfileid: "71408184"
   
 ### <a name="to-verify-that-a-federation-server-is-operational"></a>確認該同盟伺服器運作正常  
   
-1.  開啟瀏覽器視窗，並在網址列中輸入同盟伺服器名稱，然後將它`federationmetadata/2007-06/federationmetadata.xml`附加至，以流覽至 federation service 中繼資料端點。 例如， `https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml` 。  
+1.  開啟瀏覽器視窗，然後在網址列中輸入同盟伺服器名稱，再附加 `federationmetadata/2007-06/federationmetadata.xml` 以流覽至 federation service 中繼資料端點。 例如，`https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`。  
   
 如果在瀏覽器視窗終可看到同盟伺服器中繼資料，不會出現任何 SSL 錯誤或警告，則您的同盟伺服器便是運作正常。  
   
 2. 您也可以瀏覽到 AD FS 登入頁面 (Federation Service 名稱後面加上 `adfs/ls/idpinitiatedsignon.htm`，例如，`https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`)。  這會顯示 AD FS 登入頁面，您可以使用網域系統管理員認證登入。  
   
 > [!IMPORTANT]
->  請務必將您的同盟服務名稱（ `https://fs.contoso.com`例如）新增至瀏覽器的近端內部網路區域，以將您的瀏覽器設定設為信任同盟伺服器角色。  
+>  請務必將您的同盟服務名稱（例如 `https://fs.contoso.com`）新增至瀏覽器的近端內部網路區域，以將您的瀏覽器設定設為信任同盟伺服器角色。  
   
 ## <a name="next-steps"></a>後續步驟
  [將 Active Directory 同盟服務角色服務遷移至 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   

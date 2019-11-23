@@ -18,7 +18,7 @@ ms.locfileid: "71396382"
 ---
 # <a name="use-regular-expressions-in-nps"></a>在 NPS 中使用規則運算式
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）
 
 本主題說明如何在 Windows Server 的 NPS 中使用正則運算式來進行模式比對。 您可以使用此語法來指定網路原則屬性和 RADIUS 領域的條件。
 
@@ -37,26 +37,26 @@ ms.locfileid: "71396382"
 |     `.`     |                                                           符合分行符號以外的任何單一字元。                                                           |                                                                 &nbsp;                                                                  |
 | `(pattern)` |                         符合「模式」並記住相符專案。<br />若要比對常值字元 `(` 和 `)` （括弧），請使用 `\(` 或 `\)`。                         |                                                                 &nbsp;                                                                  |
 |   `x | y `  |                                                                               符合 x 或 y。                                                          |
-|   `{n} `    |                                                          只比對 n 次 \(n 是非 @ no__t-1negative integer @ no__t-2。                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
-|   `{n,}`    |                                                          至少比對 n 次 \(n 為非 @ no__t-1negative integer @ no__t-2。                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
-|   `{n,m}`   |                                                至少比對 n 和最多 m 次，@no__t 0m，n 是非 @ no__t-1negative integer @ no__t-2。                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
-|   `[xyz]`   |                                                       符合任何一個括住的字元 \(a character set @ no__t-1。                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
-|  `[^xyz]`   |                                                  比對未括住 \(a 負字元集 @ no__t-1 的任何字元。                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
-|    `\b`     |                                                              符合字邊界 \(for 範例，空格 @ no__t-1。                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
+|   `{n} `    |                                                          只比對 n 次 \(n 是非\-的負整數\)。                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
+|   `{n,}`    |                                                          至少比對 n 次 \(n 是非\-的負整數\)。                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
+|   `{n,m}`   |                                                至少比對 n 和最多 m 次，\(m，n 則不會\-負整數\)。                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
+|   `[xyz]`   |                                                       符合任何一個括住的字元，\(字元集\)。                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
+|  `[^xyz]`   |                                                  符合未括住 \(負字元集\)的任何字元。                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
+|    `\b`     |                                                              符合字邊界 \(例如，空格\)。                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
 |    `\B`     |                                                                         符合文字界限。                                                                          |                                             `/ea*r\B/ matches the "ear" in "never early."`                                              |
-|    `\d`     |                                                       比對數位字元 \(equivalent 與0到 9 @ no__t-1 之間的數位。                                                        |                                                                 &nbsp;                                                                  |
-|    `\D`     |                                                           比對 nondigit 字元 \(equivalent 與 `[^0-9]` @ no__t-2。                                                           |                                                                 &nbsp;                                                                  |
+|    `\d`     |                                                       比對數位字元，\(等於0到 9\)的數位。                                                        |                                                                 &nbsp;                                                                  |
+|    `\D`     |                                                           符合 nondigit 字元 \(相當於 `[^0-9]`\)。                                                           |                                                                 &nbsp;                                                                  |
 |    `\f`     |                                                                        符合表單換頁字元。                                                                        |                                                                 &nbsp;                                                                  |
 |    `\n`     |                                                                        符合換行字元。                                                                        |                                                                 &nbsp;                                                                  |
 |    `\r`     |                                                                     符合換行字元。                                                                     |                                                                 &nbsp;                                                                  |
-|    `\s`     |                                   比對任何空白字元，包括空格、索引標籤和表單摘要 \(equivalent 至 `[ \f\n\r\t\v]` @ no__t-2。                                   |                                                                 &nbsp;                                                                  |
-|    `\S`     |                                                  比對任何非空白字元 \(equivalent 至 `[^ \f\n\r\t\v]` @ no__t-2。                                                   |                                                                 &nbsp;                                                                  |
+|    `\s`     |                                   符合任何空白字元，包括空格、索引標籤和表單摘要 \(相當於 `[ \f\n\r\t\v]`\)。                                   |                                                                 &nbsp;                                                                  |
+|    `\S`     |                                                  比對相當於 `[^ \f\n\r\t\v]`\)的任何非空白字元 \(。                                                   |                                                                 &nbsp;                                                                  |
 |    `\t`     |                                                                           符合 tab 字元。                                                                           |                                                                 &nbsp;                                                                  |
 |    `\v`     |                                                                      符合垂直定位字元。                                                                       |                                                                 &nbsp;                                                                  |
-|    `\w`     |                                              符合任何文字字元，包括底線 \(equivalent 至 `[A-Za-z0-9_]` @ no__t-2。                                              |                                                                 &nbsp;                                                                  |
-|    `\W`     |                                           比對任何非 @ no__t-0word 字元，但不包括底線 \(equivalent 至 `[^A-Za-z0-9_]` @ no__t-3。                                           |                                                                 &nbsp;                                                                  |
-|   `\num`    | 表示 \( @ no__t-1 的記憶相符專案，其中 num 是正整數 @ no__t-2。  此選項只能在設定屬性操作時，于 [**取代**] 文字方塊中使用。 |                                       `\1` 會取代第一個記住的相符項中儲存的內容。                                       |
-|   `/n/ `    |                      允許將 ASCII 碼插入正則運算式 \( @ no__t-1，其中 n 是八進位、十六進位或十進位的轉義值 @ no__t-2。                       |                                                                 &nbsp;                                                                  |
+|    `\w`     |                                              符合任何文字字元，包括底線 \(相當於 `[A-Za-z0-9_]`\)。                                              |                                                                 &nbsp;                                                                  |
+|    `\W`     |                                           比對任何非\-文字字元，不包括底線 \(相當於 `[^A-Za-z0-9_]`\)。                                           |                                                                 &nbsp;                                                                  |
+|   `\num`    | 指的是 \(`?num`記住的相符專案，其中 num 是正整數\)。  此選項只能在設定屬性操作時，于 [**取代**] 文字方塊中使用。 |                                       `\1` 取代第一個記住的相符項中儲存的內容。                                       |
+|   `/n/ `    |                      允許將 ASCII 碼插入正則運算式 \(`?n`，其中 n 是八進位、十六進位或十進位的轉義值\)。                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>網路原則屬性的範例
 
@@ -76,33 +76,33 @@ ms.locfileid: "71396382"
 
 **若要移除使用者名稱屬性的領域部分**
 
-在網際網路服務提供者 \(ISP @ no__t-1 將連線要求路由傳送至組織 NPS 的外包撥號案例中，ISP RADIUS proxy 可能需要領域名稱來路由驗證要求。 不過，NPS 可能無法辨識使用者名稱的領域名稱部分。 因此，ISP RADIUS proxy 必須先移除領域名稱，才能將它轉送到組織 NPS。
+在網際網路服務提供者 \(ISP\) 將連線要求路由傳送至組織 NPS 的外包撥號案例中，ISP RADIUS proxy 可能需要領域名稱來路由驗證要求。 不過，NPS 可能無法辨識使用者名稱的領域名稱部分。 因此，ISP RADIUS proxy 必須先移除領域名稱，才能將它轉送到組織 NPS。
 
-- 尋找： @microsoft @ no__t-1com
+- 尋找： @microsoft\.com
 
 - 將以下項目︰
 
 **若要取代<em>user@example.microsoft.com</em> ，_例如 com\user_ 。**
 
-- 尋找： `(.*)@(.*)`
+- 尋找：`(.*)@(.*)`
 
-- 取代： `$2\$1`
+- 取代：`$2\$1`
 
 
 
 **以_specific_domain\user_取代_domain\user_**
 
-- 尋找： `(.*)\\(.*)`
+- 尋找：`(.*)\\(.*)`
 
-- Replace： *specific_domain*`\$2`
+- 取代： *specific_domain*`\$2`
 
 
 
 <strong>將*user*取代為 *user@specific_domain</strong>*
 
-- 尋找： `$`
+- 尋找：`$`
 
-- Replace： @*specific_domain*
+- 取代： @*specific_domain*
 
 ## <a name="example-for-radius-message-forwarding-by-a-proxy-server"></a>Proxy 伺服器的 RADIUS 訊息轉送範例
 

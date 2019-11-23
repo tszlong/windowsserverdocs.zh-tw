@@ -17,7 +17,7 @@ ms.locfileid: "71393726"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在獨立伺服器上部署儲存空間
 
->適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明如何在獨立伺服器上部署儲存空間。 如需有關如何建立叢集儲存空間的詳細資訊，請參閱[在 Windows Server 2012 R2 上部署儲存空間](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)叢集。
 
@@ -34,7 +34,7 @@ ms.locfileid: "71393726"
 
 ![儲存空間工作流程](media/deploy-standalone-storage-spaces/storage-spaces-workflow.png)
 
-**圖 1:儲存空間工作流程 @ no__t-0
+**圖1：儲存空間工作流程**
 
 >[!NOTE]
 >本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。
@@ -46,7 +46,7 @@ ms.locfileid: "71393726"
 > [!IMPORTANT]
 > 如果您想要瞭解如何在容錯移轉叢集上部署儲存空間，請參閱[在 Windows Server 2012 R2 上部署儲存空間](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)叢集。 容錯移轉叢集部署有不同的必要條件，例如支援的磁片匯流排類型、支援的復原類型，以及所需的最小磁片數目。
 
-|區域|需求|注意|
+|區域|需求|附註|
 |---|---|---|
 |磁碟匯流排類型|-序列連接 SCSI （SAS）<br>-串列先進技術附件（SATA）<br>-iSCSI 和光纖通道控制器。 |您也可以使用 USB 磁碟機。 不過，在伺服器環境中使用 USB 磁片磁碟機並不是最佳作法。<br>ISCSI 和光纖通道（FC）控制器上所建立的虛擬磁片不具復原能力（簡單且有任意數目的資料行），則支援儲存空間。<br>|
 |磁碟設定|-實體磁片必須至少為 4 GB<br>-磁片必須為空白且未格式化。 請勿建立磁碟區。||
@@ -61,7 +61,7 @@ ms.locfileid: "71393726"
 |**鏡像**<br><br>-在一組實體磁片上儲存兩個或三個數據複本<br>-提高可靠性，但降低容量。 每次寫入時都進行複製。 鏡像空間也會將資料等量分散在多個實體磁碟上。<br>-較大的資料輸送量和較低的存取延遲<br>-使用中途區域追蹤（DRT）來追蹤對集區中磁片所做的修改。 當系統從非計劃中的關機繼續而空間重新上線時，DRT 會讓集區中的磁碟彼此一致。|至少需要兩個實體磁碟，才能在單一磁碟故障時提供防護。<br><br>至少需要五個實體磁碟，才能在兩個磁碟同時故障時提供防護。|用於大多數部署。 例如，鏡像空間適用於一般用途的檔案共用或虛擬硬碟 (VHD) 程式庫。|
 |**校驗**<br><br>-跨實體磁片的帶狀資料和同位資訊<br>-相較于簡單的空間，可提高可靠性，但會稍微降低容量<br>-透過日誌增加復原能力。 這有助於在發生非計劃中的關機時防止資料損毀。|至少需要三個實體磁碟，才能在單一磁碟故障時提供防護。|用於高度循序的工作負載 (例如封存或備份)。|
 
-## <a name="step-1-create-a-storage-pool"></a>步驟 1:建立儲存集區
+## <a name="step-1-create-a-storage-pool"></a>步驟 1：建立儲存集區
 
 您必須先將可用的實體磁碟組成一或多個儲存集區。
 
@@ -124,7 +124,7 @@ $PDToAdd = Get-PhysicalDisk –FriendlyName PhysicalDisk5
 Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToAdd –Usage HotSpare
 ```
 
-## <a name="step-2-create-a-virtual-disk"></a>步驟 2:建立虛擬磁碟
+## <a name="step-2-create-a-virtual-disk"></a>步驟 2：建立虛擬磁碟
 
 接著，您必須從儲存集區建立一或多個虛擬磁碟。 建立虛擬磁碟時，您可以選取將資料配置在各個實體磁碟上的方式。 這會同時影響可靠性和效能。 您也可以選取要建立精簡佈建或固定佈建的磁碟。
 

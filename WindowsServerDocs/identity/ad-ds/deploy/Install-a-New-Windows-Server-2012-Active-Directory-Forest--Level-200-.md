@@ -18,7 +18,7 @@ ms.locfileid: "71400373"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題簡單說明新的 Windows Server 2012 Active Directory 網域服務網域控制站升級功能。 在 Windows Server 2012 中，AD DS 以伺服器管理員和以 Windows PowerShell 為基礎的部署系統取代了 Dcpromo 工具。  
   
@@ -242,7 +242,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 如需有效網域名稱的詳細資訊，請參閱知識庫文章 [Active Directory 中的電腦、網域、網站及 OU 的命名慣例](https://support.microsoft.com/kb/909264)。  
   
 > [!WARNING]  
-> 請勿使用與外部 DNS 名稱相同的名稱來建立新的 Active Directory 樹系。 例如，如果您的網際網路 DNS URL http://contoso.com ，則必須為您的內部樹系選擇不同的名稱，以避免未來的相容性問題。 這個名稱必須是唯一而且不像是會用在網路流量的名稱。 例如：corp.contoso.com。  
+> 請勿使用與外部 DNS 名稱相同的名稱來建立新的 Active Directory 樹系。 例如，如果您的網際網路 DNS URL http://contoso.com，您必須為內部樹系選擇不同的名稱，以避免未來的相容性問題。 這個名稱必須是唯一而且不像是會用在網路流量的名稱。 例如：corp.contoso.com。  
   
 新樹系的網域系統管理員帳戶不需要新的認證。 網域控制站升級程序會使用用來建立樹系根的第一個網域控制站內建的 Administrator 帳戶的認證。 沒有任何方法 (依預設) 可停用或鎖定內建的 Administrator 帳戶，如果其他系統管理網域帳戶無法使用，它可能是樹系唯一的進入點。 在部署新樹系之前，請務必知道密碼。  
   
@@ -287,7 +287,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
   
 [檢閱選項] 頁面可讓您在開始安裝之前先驗證設定，並確保它們符合您的需求。 使用 [伺服器管理員] 時，這不是能停止安裝的最後機會。 這只是可讓您在繼續設定前確認設定的選項。  
   
-[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如:  
+[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如：  
   
 ```powershell 
 #  
@@ -367,7 +367,7 @@ ServerManager 模組公開 Windows PowerShell 的新 DISM 模組中角色安裝�
 Get-Command -module ServerManager  
 ```  
   
-例如:  
+例如：  
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetCommand.png)  
   
@@ -383,7 +383,7 @@ Install-WindowsFeature -name AD-Domain-Services
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools  
 ```  
   
-例如:  
+例如：  
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallWinFeature.png)  
   
@@ -417,7 +417,7 @@ Get-WindowsFeature | where displayname -like "*active dir*"
 Get-WindowsFeature | where {$_.displayname - like "*active dir*"}  
 ```  
   
-使用 Windows PowerShell 管線，您可以建立可讀取的結果。 例如:  
+使用 Windows PowerShell 管線，您可以建立可讀取的結果。 例如：  
   
 ```powershell  
 Install-WindowsFeature | Format-List  
@@ -497,7 +497,7 @@ Install-ADDSForest
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如:  
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如：  
   
 ```powershell  
 $file = "c:\pw.txt"  
@@ -544,7 +544,7 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
   
 使用選擇性的 **Whatif** 引數搭配 **Install-ADDSForest** Cmdlet 來檢閱設定資訊。 這可讓您看到明確和隱含的 Cmdlet 引數值。  
   
-例如:  
+例如：  
   
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSPaths.png)  
   
@@ -568,12 +568,12 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 > [!WARNING]  
 > 建議您不要覆寫重新開機設定。 網域控制站必須重新開機才能正常運作。  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 [Active Directory Domain Services （TechNet 入口網站）](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
 [適用于 Windows Server 2008 R2 的 Active Directory Domain Services](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
 [適用于 Windows Server 2008 的 Active Directory Domain Services](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
 [Windows Server 技術參考（Windows Server 2003）](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
-@no__t 0Active 目錄管理中心：消費者入門（Windows Server 2008 R2） ](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
+[Active Directory 管理中心：消費者入門（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [使用 Windows PowerShell 進行 Active Directory 管理（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
 [詢問目錄服務小組（官方 Microsoft 商業技術支援 Blog）](http://blogs.technet.com/b/askds)  
   

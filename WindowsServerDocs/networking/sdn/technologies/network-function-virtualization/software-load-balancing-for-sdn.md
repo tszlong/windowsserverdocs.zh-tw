@@ -19,9 +19,9 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71355572"
 ---
-# <a name="software-load-balancing-slb-for-sdn"></a>軟體負載平衡 @no__t-適用于 SDN 的 0SLB @ no__t-1
+# <a name="software-load-balancing-slb-for-sdn"></a>適用于 SDN 的軟體負載平衡 \(SLB\)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路的軟體負載平衡。  
 
@@ -215,7 +215,7 @@ BGP 路由器會針對 SLB 執行下列動作。
 -   Mux 可以從 MUX 集區新增和移除，而不會影響 SLB 服務。 這會在下列情況下維護 SLB 可用性   
     正在修補個別 Mux。  
   
--   個別的 MUX 實例具有 99% 的執行時間  
+-   個別的 MUX 實例具有99% 的執行時間  
   
 -   健全狀況監視資料可供管理實體使用  
   

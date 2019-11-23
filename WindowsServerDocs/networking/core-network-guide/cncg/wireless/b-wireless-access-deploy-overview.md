@@ -17,16 +17,16 @@ ms.locfileid: "71356084"
 ---
 # <a name="wireless-access-deployment-overview"></a>無線存取部署概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-下圖顯示使用 PEAP @ no__t-0 毫秒 @ no__t-1CHAP v2 部署 802.1 X 驗證無線存取所需的元件。  
+下圖顯示使用 PEAP\-MS\-CHAP v2 部署 802.1 X 驗證無線存取所需的元件。  
 
 ![802.1 x 部署基礎結構總覽](../../../media/8021X-Deploy-Overview/8021X-Deploy-Overview.jpg)
 
 ## <a name="wireless-access-deployment-components"></a>無線存取部署元件
 此無線存取部署需要下列基礎結構：
 
-### <a name="8021x-capable-wireless-access-points"></a>802.1 x @ no__t-0capable 無線存取點
+### <a name="8021x-capable-wireless-access-points"></a>802.1 x\-支援的無線存取點
 在支援無線區域網路的必要網路基礎結構服務就緒之後，您就可以開始設計無線 Ap 位置的程式。 無線 AP 部署設計程式牽涉到下列步驟：
 
 - 識別無線使用者涵蓋範圍的區域。 識別涵蓋範圍的區域時，請務必識別您是否要在大樓外提供無線服務，如果是的話，請特別判斷這些外部區域的所在位置。
@@ -42,13 +42,13 @@ ms.locfileid: "71356084"
 
 #### <a name="users-and-computers"></a>使用者和電腦
 
-使用 [Active Directory 使用者和電腦] 貼齊 @ no__t-0in 來建立和管理使用者帳戶，以及建立包含您要授與無線存取權之每個網域成員的無線安全性群組。
+使用中的 [Active Directory 使用者和電腦] 嵌入式\-管理單元來建立和管理使用者帳戶，以及建立包含您要授與無線存取權之每個網域成員的無線安全性群組。
 
-#### <a name="wireless-network-ieee-80211-policies"></a>無線網路 \(IEEE 802.11 @ no__t-1 個原則
+#### <a name="wireless-network-ieee-80211-policies"></a>無線網路 \(IEEE 802.11\) 原則
 
-您可以使用群組原則管理的無線網路 @no__t 0IEEE 802.11 @ no__t-1 原則延伸，設定在無線電腦嘗試存取網路時套用的原則。
+您可以使用群組原則管理的無線網路 \(IEEE 802.11\) 原則延伸，設定在無線電腦嘗試存取網路時套用的原則。
 
-在群組原則管理編輯器中，當您 right @ no__t-0click**無線 Network \(IEEE 802.11 @ no__t-3 原則**時，您會有下列兩個選項可供您建立的無線原則類型使用。
+在群組原則管理編輯器中，當您\-按一下 [**無線網路 \(IEEE 802.11\) 原則**] 時，您會有下列兩個選項可供您建立的無線原則類型使用。
 
 - **為 Windows Vista 和更新版本建立新的無線網路原則**
 
@@ -63,23 +63,23 @@ ms.locfileid: "71356084"
 
 如果您的無線用戶端跨組織的實體位置（例如總公司與分公司之間）移動，您可能會想要讓電腦連接到多個無線網路。 在此情況下，您可以設定無線設定檔，其中包含每個網路的特定連線能力和安全性設定。
 
-例如，假設您的公司有一個主要公司辦公室的無線網路，其中服務組識別碼 \(SSID @ no__t-1 WlanCorp。
+例如，假設您的公司有一個主要公司辦公室的無線網路，其中服務組識別碼 \(SSID\) WlanCorp。
 
 您的分公司也有一個您也想要連接的無線網路。 分公司的 SSID 設定為 WlanBranch。
 
 在此案例中，您可以設定每個網路的設定檔，而當公司辦公室和分公司所使用的電腦或其他裝置實際位於網路涵蓋範圍內時，可以連線到其中一個無線網路。
 
-##### <a name="mixed-mode-wireless-networks"></a>混合 @ no__t-0mode 無線網路
+##### <a name="mixed-mode-wireless-networks"></a>混合的\-模式無線網路
 
-或者，假設您的網路有混合的無線電腦和支援不同安全性標準的裝置。 也許有些較舊的電腦具有只能使用 WPA @ no__t-0Enterprise 的無線介面卡，而較新的裝置可以使用更強的 WPA2 @ no__t-1Enterprise 標準。
+或者，假設您的網路有混合的無線電腦和支援不同安全性標準的裝置。 也許有些較舊的電腦具有只能使用 WPA\-Enterprise 的無線介面卡，但較新的裝置可以使用更強的 WPA2\-Enterprise standard。
 
 您可以建立兩個不同的設定檔，使用相同的 SSID 和幾乎相同的連線能力和安全性設定。
 
-在一個設定檔中，您可以使用 AES 將無線驗證設定為 WPA2 @ no__t-0Enterprise，而在另一個設定檔中，您可以使用 TKIP 指定 WPA @ no__t-1Enterprise。
+在一個設定檔中，您可以使用 AES 將無線驗證設定為 WPA2\-Enterprise，而在另一個設定檔中，您可以使用 TKIP 指定 WPA\-Enterprise。
 
-這通常稱為混合 @ no__t-0mode 部署，可讓不同類型和無線功能的電腦共用相同的無線網路。
+這通常稱為混合\-模式部署，可讓不同類型和無線功能的電腦共用相同的無線網路。
 
-### <a name="network-policy-server-nps"></a>網路原則伺服器 \(NPS @ no__t-1
+### <a name="network-policy-server-nps"></a>網路原則伺服器 \(NPS\)
 NPS 可讓您建立和強制執行連線要求驗證和授權的網路存取原則。
 
 當您使用 NPS 做為 RADIUS 伺服器時，您會將網路存取伺服器（例如無線存取點）設定為 NPS 中的 RADIUS 用戶端。 您也可以設定 NPS 用來驗證存取用戶端及授權其連線要求的網路原則。  
@@ -91,7 +91,7 @@ NPS 可讓您建立和強制執行連線要求驗證和授權的網路存取原�
 
 根據預設，執行 Windows Server 的電腦會停用802.11 無線功能。
 
-若要在執行伺服器作業系統的電腦上啟用無線連線，您必須使用 Windows PowerShell 或伺服器管理員中的 [新增角色及功能]，來安裝和啟用無線區域網路 \(WLAN @ no__t-1 服務功能。
+若要在執行伺服器作業系統的電腦上啟用無線連線，您必須使用 Windows PowerShell 或伺服器管理員中的 [新增角色及功能]，來安裝和啟用無線區域網路 \(WLAN\) 服務功能。
 
 當您安裝**無線局域網路服務**功能時，會在**服務**中安裝新的服務**wlan**自動設定。 安裝完成時，您必須重新開機伺服器。
 

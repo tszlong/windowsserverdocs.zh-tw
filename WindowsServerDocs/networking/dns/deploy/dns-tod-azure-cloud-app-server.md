@@ -17,7 +17,7 @@ ms.locfileid: "71406194"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>使用 Azure 雲端應用程式伺服器以時間為基礎的 DNS 回應
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何使用以當天時間為基礎的 DNS 原則，將應用程式流量分散到應用程式的不同地理位置。 
 
@@ -40,14 +40,14 @@ DNS 伺服器也位於內部部署資料中心。
 
 Contoso 禮物服務會執行網站分析，併發現在當地時間下午6點到下午9：00，西雅圖 Web 服務器的流量激增。 網頁伺服器無法調整以在這些尖峰時間處理增加的流量，因而導致客戶拒絕服務。 
 
-為了確保 contosogiftservices.com 客戶從網站獲得回應式體驗，Contoso 禮物服務會決定在這段期間內，它會在 Microsoft Azure 上出租虛擬機器 \(VM @ no__t-1，以裝載其 Web 服務器的複本。  
+為了確保 contosogiftservices.com 客戶從網站獲得回應式體驗，Contoso 禮物服務會決定在這幾個小時內，將會租用虛擬機器 \(VM\) 在 Microsoft Azure 上，以裝載其 Web 服務器的複本。  
 
 Contoso 禮品服務會從 Azure 取得 VM 的公用 IP 位址（192.68.31.44），並開發自動化以在每天下午5-10 的 Azure 上部署 Web 服務器，允許一小時的應變週期。
 
 > [!NOTE]
 > 如需 Azure Vm 的詳細資訊，請參閱[虛擬機器檔](https://azure.microsoft.com/documentation/services/virtual-machines/) 
 
-DNS 伺服器是以區域範圍和 DNS 原則進行設定，因此每天下午5-9，會將 30% 的查詢傳送至 Azure 中執行的 Web 服務器實例。
+DNS 伺服器是以區域範圍和 DNS 原則進行設定，因此每天下午5-9，會將30% 的查詢傳送至 Azure 中執行的 Web 服務器實例。
 
 下圖描述此案例。
 
@@ -100,7 +100,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope
 
 在 AzureZoneScope 中，會使用位於 Azure 公用雲端中的 IP 位址192.68.31.44 新增記錄 www.contosogiftservices.com。 
 
-同樣地，在預設區域範圍中 \(contosogiftservices @ no__t-1，\(www 的記錄會加上在西雅圖內部部署資料中心執行之 Web 服務器的 IP 位址 no__t。
+同樣地，在預設區域範圍中 \(contosogiftservices.com\)，\(www.contosogiftservices.com\) 的記錄會與在西雅圖內部部署資料中心內執行之 Web 服務器的 IP 位址192.68.30.2 一併新增。
 
 在下面的第二個 Cmdlet 中，不包含– ZoneScope 參數。 因此，會在預設 ZoneScope 中新增記錄。 
 
@@ -117,7 +117,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 ### <a name="create-the-dns-policies"></a>建立 DNS 原則 
 建立區域範圍之後，您可以建立 DNS 原則，將傳入的查詢分散到這些範圍，以便發生下列情況。
 
-1. 每日下午6點至9點，30% 的用戶端會在 DNS 回應中接收 Azure 資料中心內 Web 服務器的 IP 位址，而 70% 的用戶端則會收到西雅圖內部部署 Web 服務器的 IP 位址。
+1. 每日下午6點至9點，30% 的用戶端會在 DNS 回應中接收 Azure 資料中心內 Web 服務器的 IP 位址，而70% 的用戶端則會收到西雅圖內部部署 Web 服務器的 IP 位址。
 2. 所有其他情況下，所有用戶端都會收到西雅圖內部部署 Web 服務器的 IP 位址。
 
 一天中的時間必須以 DNS 伺服器的當地時程表示。

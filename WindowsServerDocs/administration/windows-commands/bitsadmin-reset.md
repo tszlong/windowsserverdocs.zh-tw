@@ -24,7 +24,7 @@ ms.locfileid: "71380806"
 
 取消目前使用者擁有之傳輸佇列中的所有工作。
 
-**BITSAdmin 1.5 和更早版本**： 如果您有系統管理員許可權，請 **重設** cancels 佇列中的所有工作。 不支援/AllUsers 選項。
+**BITSAdmin 1.5 和更早版本**：如果您有系統管理員許可權，請 **重設** 取消佇列中的所有作業。 不支援/AllUsers 選項。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ ms.locfileid: "71380806"
 bitsadmin /Reset [/AllUsers]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|

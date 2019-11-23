@@ -22,19 +22,19 @@ ms.locfileid: "71375815"
 ---
 # <a name="getmac"></a>getmac
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 針對每部電腦中的所有網路卡，在本機或網路上，傳回媒體存取控制（MAC）位址和與每個位址相關聯的網路通訊協定清單。 
 ## <a name="syntax"></a>語法
 ```
 getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | list | CSV}][/nh][/v]
 ```
-### <a name="parameters"></a>參數
+### <a name="parameters"></a>Parameters
 
 |             參數              |                                                                                          描述                                                                                          |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           /s <computer>            |                                      指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。                                       |
-|        /u <Domain> @ no__t-1 @ no__t-2         | 以 User 或 Domain\user 所指定使用者的帳戶許可權來執行命令 預設為發出命令之電腦上目前登入使用者的許可權。 |
+|        /u <Domain>\\<User>         | 以 User 或 Domain\user 所指定使用者的帳戶許可權來執行命令 預設為發出命令之電腦上目前登入使用者的許可權。 |
 |           /p <Password>            |                                                     指定 **/u**參數中指定之使用者帳戶的密碼。                                                     |
 | /fo {資料表&#124;清單&#124; CSV} |                       指定要用於查詢輸出的格式。 有效值為**TABLE**、 **list**和**CSV**。 輸出的預設格式為**TABLE**。                        |
 |                /nh                 |                                             隱藏輸出中的資料行標頭。 當 **/fo**參數設定為**TABLE**或**CSV**時有效。                                              |

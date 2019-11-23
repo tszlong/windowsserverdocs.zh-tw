@@ -17,7 +17,7 @@ ms.locfileid: "71406382"
 ---
 # <a name="create-content-server-data-packages-for-web-and-file-content-optional"></a>建立 Web 與檔案內容的內容伺服器資料套件 (選用)
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用此程式來預先雜湊 Web 和檔案伺服器上的內容，然後建立要在託管快取伺服器上匯入的資料封裝。 
 
@@ -26,7 +26,7 @@ ms.locfileid: "71406382"
 此程式提供在檔案伺服器和網頁伺服器上 prehashing 內容的指示。 如果您沒有這種類型的內容伺服器，就不需要執行該內容伺服器類型的指示。
 
 >[!IMPORTANT]
->執行此程式之前，您必須先在內容伺服器上安裝和設定 BranchCache。 此外，如果您打算變更內容伺服器上的伺服器密碼，請在前 @ no__t-0hashing 內容之前先這麼做，修改伺服器密碼會使先前的 @ no__t-1generated 雜湊失效。
+>執行此程式之前，您必須先在內容伺服器上安裝和設定 BranchCache。 此外，如果您計畫變更內容伺服器上的伺服器密碼，請在預先\-雜湊內容之前先執行此動作-修改伺服器密碼會使先前\-產生的雜湊失效。
 
 若要執行此程序，您必須是 Administrators 群組成員。
 
@@ -53,7 +53,7 @@ ms.locfileid: "71406382"
         Publish-BCWebContent –Path D:\inetpub\wwwroot -StageData
         ```  
 
-4. 在每個內容伺服器上執行下列命令，以建立資料封裝。 以您在此程式開頭所識別或建立的位置取代-Destination 參數的範例值 \(D： \\temp @ no__t-2。
+4. 在每個內容伺服器上執行下列命令，以建立資料封裝。 以您在此程式開頭所識別或建立的位置取代-Destination 參數 \(D：\\temp\) 的範例值。
 
     ```  
     Export-BCDataPackage –Destination D:\temp

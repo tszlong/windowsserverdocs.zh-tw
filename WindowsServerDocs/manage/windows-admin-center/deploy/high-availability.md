@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406945"
@@ -32,18 +32,18 @@ ms.locfileid: "71406945"
 ## <a name="install-windows-admin-center-on-a-failover-cluster"></a>在容錯移轉叢集上安裝 Windows 系統管理中心
 
 1. 將 ```Install-WindowsAdminCenterHA.ps1``` 腳本複製到叢集中的節點。 將 Windows Admin Center .msi 下載或複製到相同的節點。
-2. 透過 RDP 連接到節點，並使用下列參數從該節點執行 @no__t 0 腳本：
+2. 透過 RDP 連接到節點，並使用下列參數從該節點執行 ```Install-WindowsAdminCenterHA.ps1``` 腳本：
     - `-clusterStorage`：用來儲存 Windows 管理中心資料之叢集共用磁碟區的本機路徑。
-    - `-clientAccessPoint`：選擇您要用來存取 Windows 系統管理中心的名稱。 例如，如果您使用參數執行腳本 `-clientAccessPoint contosoWindowsAdminCenter`，您將會造訪 `https://contosoWindowsAdminCenter.<domain>.com` 來存取 Windows Admin Center 服務
-    - `-staticAddress`:選擇性。 叢集一般服務的一或多個靜態位址。 
-    - `-msiPath`:Windows Admin Center .msi 檔案的路徑。
-    - `-certPath`:選擇性。 憑證 .pfx 檔案的路徑。
-    - `-certPassword`:選擇性。 @No__t 中提供的 .pfx 憑證 SecureString 密碼-0
-    - `-generateSslCert`:選擇性。 如果您不想要提供已簽署的憑證，請包含此參數旗標來產生自我簽署憑證。 請注意，自我簽署憑證將于60天后過期。
-    - `-portNumber`:選擇性。 如果您未指定埠，閘道服務會部署在埠443（HTTPS）。 若要使用不同的埠，請在此參數中指定。 請注意，如果您使用自訂埠（443以外的任何專案），您將會前往 HTTPs://\<clientAccessPoint @ no__t-1： \<port @ no__t-3 來存取 Windows 系統管理中心。
+    - `-clientAccessPoint`：選擇您要用來存取 Windows 系統管理中心的名稱。 例如，如果您使用參數 `-clientAccessPoint contosoWindowsAdminCenter`來執行腳本，您將存取 Windows Admin Center 服務，方法是造訪 `https://contosoWindowsAdminCenter.<domain>.com`
+    - `-staticAddress`：選擇性。 叢集一般服務的一或多個靜態位址。 
+    - `-msiPath`： Windows Admin Center .msi 檔案的路徑。
+    - `-certPath`：選擇性。 憑證 .pfx 檔案的路徑。
+    - `-certPassword`：選擇性。 `-certPath` 中提供的 .pfx 憑證 SecureString 密碼
+    - `-generateSslCert`：選擇性。 如果您不想要提供已簽署的憑證，請包含此參數旗標來產生自我簽署憑證。 請注意，自我簽署憑證將于60天后過期。
+    - `-portNumber`：選擇性。 如果您未指定埠，閘道服務會部署在埠443（HTTPS）。 若要使用不同的埠，請在此參數中指定。 請注意，如果您使用自訂埠（443以外的任何專案），您將會前往 HTTPs://\<clientAccessPoint\>：\<埠\>來存取 Windows 系統管理中心。
 
 > [!NOTE]
-> @No__t-0 腳本支援 ```-WhatIf ``` 和 @no__t 2 參數
+> ```Install-WindowsAdminCenterHA.ps1``` 腳本支援 ```-WhatIf ``` 和 ```-Verbose``` 參數
 
 ### <a name="examples"></a>範例
 
@@ -66,7 +66,7 @@ $certPassword = Read-Host -AsSecureString
 
 ### <a name="update-to-a-new-version-of-windows-admin-center"></a>更新至新版本的 Windows 管理中心
 
-發行新版本的 Windows 管理中心時，只要使用 ```msiPath``` 參數，就能再次執行 ```Install-WindowsAdminCenterHA.ps1``` 腳本：
+發行新版本的 Windows 管理中心時，只需使用 ```msiPath``` 參數再次執行 ```Install-WindowsAdminCenterHA.ps1``` 腳本：
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -msiPath '.\WindowsAdminCenter.msi' -Verbose
@@ -90,7 +90,7 @@ $certPassword = Read-Host -AsSecureString
 
 ## <a name="uninstall"></a>解除安裝
 
-若要從容錯移轉叢集卸載 Windows 系統管理中心的 HA 部署，請將 ```-Uninstall``` 參數傳遞給 ```Install-WindowsAdminCenterHA.ps1``` 腳本。
+若要從容錯移轉叢集卸載 Windows 系統管理中心的 HA 部署，請將 ```-Uninstall``` 參數傳遞至 ```Install-WindowsAdminCenterHA.ps1``` 腳本。
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -Uninstall -Verbose

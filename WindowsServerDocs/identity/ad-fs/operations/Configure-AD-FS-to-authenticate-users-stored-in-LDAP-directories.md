@@ -50,7 +50,7 @@ WS-TRUST active authorization 通訊協定也支援儲存在 LDAP 目錄中的�
    > [!NOTE]
    > 建議您為想要連接的每個 LDAP 伺服器建立新的連線物件。 AD FS 可以連接到多個複本 LDAP 伺服器，並在特定的 LDAP 伺服器關閉時自動故障切換。 針對這種情況，您可以為每個複本 LDAP 伺服器建立一個 AdfsLdapServerConnection，然後使用**AdfsLocalClaimsProviderTrust**指令程式的-**LdapServerConnection**參數來新增連線物件的陣列。
 
-   **注意：** 您嘗試使用 Get-Credential，並輸入用來系結至 LDAP 實例的 DN 和密碼，可能會導致失敗，因為特定輸入格式的使用者介面需求（例如，網域 \ 使用者或 user@domain.tld）。 您可以改為使用 Convertto-html-SecureString Cmdlet，如下所示（以下範例假設 uid = admin，ou = system 作為用來系結至 LDAP 實例之認證的 DN）：
+   **注意：** 您嘗試使用 Get-Credential，並輸入用來系結至 LDAP 實例的 DN 和密碼，可能會導致失敗，因為特定輸入格式的使用者介面需求，例如，網域 \ （或） user@domain.tld。 您可以改為使用 Convertto-html-SecureString Cmdlet，如下所示（以下範例假設 uid = admin，ou = system 作為用來系結至 LDAP 實例之認證的 DN）：
 
    ```
    $ldapuser = ConvertTo-SecureString -string "uid=admin,ou=system" -asplaintext -force
@@ -93,9 +93,9 @@ WS-TRUST active authorization 通訊協定也支援儲存在 LDAP 目錄中的�
    -OrganizationalAccountSuffix "vendors.contoso.com"
    ```
 
-   在上述範例中，您會建立名為「廠商」的本機宣告提供者信任。 您要指定連接資訊，讓 AD FS 連接到此本機宣告提供者信任所代表的 LDAP 目錄，方法是將 @no__t 指派給 `-LdapServerConnection` 參數。 請注意，在第一步中，您已指派 `$vendorDirectory`，連接到您的特定 LDAP 目錄時要使用的連接字串。 最後，您會指定要將 `$GivenName`、`$Surname` 和 `$CommonName` LDAP 屬性（對應至 AD FS 宣告）用於條件式存取控制，包括多重要素驗證原則和發佈授權規則，以及用於透過 AD FS 發行的安全性權杖中的宣告進行發行。 若要使用作用中的通訊協定（例如 Ws-trust 與 AD FS），您必須指定 OrganizationalAccountSuffix 參數，這可讓 AD FS 在服務使用中的授權要求時，能夠區分本機宣告提供者信任。
+   在上述範例中，您會建立名為「廠商」的本機宣告提供者信任。 您要指定連接資訊，讓 AD FS 連接到此本機宣告提供者信任所代表的 LDAP 目錄，方法是將 `$vendorDirectory` 指派給 `-LdapServerConnection` 參數。 請注意，在第一步中，您已指派 `$vendorDirectory` 連接字串，以在連線到您特定的 LDAP 目錄時使用。 最後，您會指定要將 `$GivenName`、`$Surname`和 `$CommonName` LDAP 屬性（對應至 AD FS 宣告）用於條件式存取控制，包括多重要素驗證原則和發佈授權規則，以及透過 AD FS 發行的安全性權杖中的宣告來發行。 若要使用作用中的通訊協定（例如 Ws-trust 與 AD FS），您必須指定 OrganizationalAccountSuffix 參數，這可讓 AD FS 在服務使用中的授權要求時，能夠區分本機宣告提供者信任。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)
 
 

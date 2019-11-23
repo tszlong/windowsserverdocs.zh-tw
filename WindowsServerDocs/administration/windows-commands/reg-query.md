@@ -34,25 +34,25 @@ ms.locfileid: "71371725"
 reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] [{/k | /d}] [/c] [/e] [/t <Type>] [/z]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName >|指定子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\ @ no__t-1ComputerName @ no__t-2 作為*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰如下：HKLM 和 HKU。|
+|\<KeyName >|指定子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\\\ComputerName\) 作為*KeyName*的一部分。 省略 \\\\ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。|
 |/v \<ValueName >|指定要查詢的登錄值名稱。 如果省略，則會傳回*KeyName*的所有值名稱。 如果也使用 **/f**選項，此參數的*ValueName*是選擇性的。|
 |/ve|針對空白的值名稱執行查詢。|
 |/s|指定以遞迴方式查詢所有子機碼和值名稱。|
-|/se \<Separator >|指定要在值名稱類型 REG_MULTI_SZ 中搜尋的單一值分隔符號。 如果未指定*Separator* ，則會使用 **\ 0** 。|
-|/f \<Data >|指定要搜尋的資料或模式。 如果字串包含空格，請使用雙引號。 如果未指定，則會使用 **&#42;** 萬用字元（）做為搜尋模式。|
+|/se \<分隔符號 >|指定要在值名稱類型 REG_MULTI_SZ 中搜尋的單一值分隔符號。 如果未指定*Separator* ，則會使用 **\ 0** 。|
+|/f \<資料 >|指定要搜尋的資料或模式。 如果字串包含空格，請使用雙引號。 如果未指定，則會使用 **&#42;** 萬用字元（）做為搜尋模式。|
 |/k|指定只搜尋索引鍵名稱。|
 |/d|指定只搜尋資料。|
 |/c|指定查詢區分大小寫。 根據預設，查詢不會區分大小寫。|
 |/e|指定只傳回完全相符的專案。 根據預設，會傳回所有相符專案。|
-|/t \<Type >|指定要搜尋的登錄類型。 有效類型為：REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 如果未指定，則會搜尋所有類型。|
+|/t \<類型 >|指定要搜尋的登錄類型。 有效的類型為： REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 如果未指定，則會搜尋所有類型。|
 |/z|指定在搜尋結果中包含登錄類型的對等數值。|
 |/?|在命令提示字元中顯示**reg 查詢**的說明。|
 
-## <a name="remarks-optional-section"></a>備註 \<optional 區段 >
+## <a name="remarks-optional-section"></a>\<選擇性區段的備註 >
 
 下表列出**reg 查詢**作業的傳回值。
 
@@ -71,15 +71,15 @@ REG QUERY HKLM\Software\Microsoft\ResKit /v Version
 ```
 REG QUERY \\ABC\HKLM\Software\Microsoft\ResKit\Nt\Setup /s
 ```
-若要使用 **#** 做為分隔符號來顯示類型為 REG_MULTI_SZ 的所有子機碼和值，請輸入：
+若要顯示使用 **#** 做為分隔符號 REG_MULTI_SZ 類型的所有子機碼和值，請輸入：
 ```
 REG QUERY HKLM\Software\Microsoft\ResKit\Nt\Setup /se #
 ```
-若要在資料類型為 REG_SZ 的 HKLM 根目錄下，顯示系統的確切和區分大小寫相符的索引鍵、值和資料，請輸入：
+若要在資料類型 REG_SZ 的 HKLM 根目錄底下，顯示系統的確切和區分大小寫相符專案的索引鍵、值和資料，請輸入：
 ```
 REG QUERY HKLM /f SYSTEM /t REG_SZ /c /e
 ```
-顯示索引鍵、值和資料，其符合資料類型 REG_BINARY 之 HKCU 根機碼下資料中的**0F** 。
+若要顯示索引鍵、值和資料，以符合**0F**資料類型之 HKCU 根機碼下的資料，請 REG_BINARY。
 ```
 REG QUERY HKCU /f 0F /d /t REG_BINARY
 ```

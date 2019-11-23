@@ -22,11 +22,11 @@ ms.locfileid: "71380103"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> **適用**物件：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
+> **適用于**： windows Server （半年通道）、windows server 2016、windows Server 2012 R2、windows server 2012、windows 10
 
 bitsadmin 是一種命令列工具，可讓您用來建立下載或上傳作業，以及監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。  您可以呼叫 `bitsadmin /?` 或 `bitsadmin /HELP` 來取得參數的清單。
 
-大部分的交換器都需要 \<Job @ no__t-1 參數，您必須將它設定為作業的顯示名稱或 GUID。 請注意，作業的顯示名稱可能不是唯一的。 **/Create**和 **/list**參數會傳回作業的 GUID。
+大部分的交換器都需要 \<作業\> 參數設定為作業的顯示名稱或 GUID。 請注意，作業的顯示名稱可能不是唯一的。 **/Create**和 **/list**參數會傳回作業的 GUID。
 
 根據預設，您可以存取自己作業的相關資訊。 若要存取其他使用者工作的資訊，您必須具有系統管理員許可權。 如果作業是在提高許可權的狀態下建立，則您必須從提高許可權的視窗執行 bitsadmin;否則，您將會擁有該作業的唯讀存取權。
 

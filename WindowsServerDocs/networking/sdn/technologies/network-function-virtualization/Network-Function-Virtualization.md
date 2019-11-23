@@ -21,9 +21,9 @@ ms.locfileid: "71355657"
 ---
 # <a name="network-function-virtualization"></a>網路函式虛擬化
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-您可以使用本主題來瞭解網路功能虛擬化，這可讓您部署虛擬網路設備（例如資料中心防火牆、多租使用者 RAS 閘道和軟體負載平衡） \(SLB @ no__t-1 多工器 \(MUX @ no__t-3。
+您可以使用本主題來瞭解網路功能虛擬化，這可讓您部署虛擬網路設備（例如資料中心防火牆、多租使用者 RAS 閘道，以及軟體負載平衡） \(SLB\) 多工器 \(MUX\)。
   
 >[!NOTE]  
 >除了本主題之外，也提供下列網路功能虛擬化檔。  
@@ -36,7 +36,7 @@ ms.locfileid: "71355657"
 Microsoft 從 Windows Server 2012 R2 開始，將獨立閘道納入為虛擬裝置。 如需詳細資訊，請參閱 [Windows Server 閘道](https://technet.microsoft.com/library/dn313101.aspx)。 現在，有了 Windows Server 2016 之後，Microsoft 就會繼續擴充並投資網路功能虛擬化市場。  
   
 ## <a name="virtual-appliance-benefits"></a>虛擬裝置的優點  
-虛擬裝置是動態且易於變更的，因為它是預先建立的自訂虛擬機器。 它可以是一或多個以一個單位封裝、更新及維護的虛擬機器。 搭配軟體定義網路（SDN），您可以在現今的雲端式基礎結構中取得所需的靈活性和彈性。 例如:  
+虛擬裝置是動態且易於變更的，因為它是預先建立的自訂虛擬機器。 它可以是一或多個以一個單位封裝、更新及維護的虛擬機器。 搭配軟體定義網路（SDN），您可以在現今的雲端式基礎結構中取得所需的靈活性和彈性。 例如：  
   
 -   SDN 會將網路呈現為集區和動態資源。  
   

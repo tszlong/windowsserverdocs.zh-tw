@@ -24,7 +24,7 @@ ms.locfileid: "71380285"
 
 如果 BITS 無法啟動，請使用此參數來修正各種版本 BITS 的已知問題。
 
-**BITSAdmin 1.5 和更早版本：** 支援 @no__t 1Not。
+**BITSAdmin 1.5 和更早版本：**  不受支援。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ ms.locfileid: "71380285"
 bitsadmin /Util /RepairService [/Force]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|

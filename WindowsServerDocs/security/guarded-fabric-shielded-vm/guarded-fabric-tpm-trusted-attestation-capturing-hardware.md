@@ -17,9 +17,9 @@ ms.locfileid: "71403516"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>使用 TPM 型證明授權受防護主機
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
-TPM 模式會使用 TPM 識別碼（也稱為平臺識別碼或簽署金鑰 \[EKpub @ no__t-1）開始判斷特定主機是否授權為「受防護」。 這種證明模式使用安全開機和程式碼完整性測量，以確保指定的 Hyper-v 主機處於狀況良好的狀態，而且只執行受信任的程式碼。 為了讓證明能夠瞭解哪些專案狀況不良，您必須捕捉下列成品：
+TPM 模式會使用 TPM 識別碼（也稱為平臺識別碼或簽署金鑰 \[EKpub\]）開始判斷特定主機是否授權為「受防護」。 這種證明模式使用安全開機和程式碼完整性測量，以確保指定的 Hyper-v 主機處於狀況良好的狀態，而且只執行受信任的程式碼。 為了讓證明能夠瞭解哪些專案狀況不良，您必須捕捉下列成品：
 
 1.  TPM 識別碼（EKpub）
 
@@ -45,7 +45,7 @@ Windows Server 2019 引進了證明的新方法，稱為*v2 證明*，其中必�
 
 1.  在網狀架構網域中，請確定每部主機上的 TPM 已準備好可供使用，也就是已初始化 TPM 並取得擁有權。 您可以藉由開啟 TPM 管理主控台（tpm services.msc），或在提升許可權的 Windows PowerShell 視窗中執行**取得 tpm** ，來檢查 tpm 的狀態。 如果您的 TPM 不是處於 [**就緒**] 狀態，您必須將它初始化並設定其擁有權。 這可以在 TPM 管理主控台中或藉由執行**初始化-TPM**來完成。
 
-2.  在每部受防護主機上，在提升許可權的 Windows PowerShell 主控台中執行下列命令，以取得其 EKpub。 對於 `<HostName>`，請將唯一的主機名稱替換成適合用來識別此主機的名稱，這可以是其主機名稱或網狀架構清查服務所使用的名稱（如果有的話）。 為方便起見，請使用主機名稱來命名輸出檔案。
+2.  在每部受防護主機上，在提升許可權的 Windows PowerShell 主控台中執行下列命令，以取得其 EKpub。 針對 `<HostName>`，請將唯一的主機名稱替換成適合用來識別此主機的名稱，這可以是其主機名稱或網狀架構清查服務所使用的名稱（如果有的話）。 為方便起見，請使用主機名稱來命名輸出檔案。
 
     ```powershell
     (Get-PlatformIdentifier -Name '<HostName>').InnerXml | Out-file <Path><HostName>.xml -Encoding UTF8
@@ -64,7 +64,7 @@ Windows Server 2019 引進了證明的新方法，稱為*v2 證明*，其中必�
     > 如果您在新增與不受信任的簽署金鑰憑證（EKCert）有關的 TPM 識別碼時遇到錯誤，請確定已將[受信任的 TPM 根憑證新增](guarded-fabric-install-trusted-tpm-root-certificates.md)至 HGS 節點。
     > 此外，某些 TPM 廠商不會使用 EKCerts。
     > 您可以在 [記事本] 之類的編輯器中開啟 XML 檔案，並檢查是否有指出找不到 EKCert 的錯誤訊息，以檢查是否遺漏 EKCert。
-    > 如果是這種情況，而且您信任電腦中的 TPM 是真實的，您可以使用 `-Force` 參數將主機識別碼新增至 HGS。 在 Windows Server 2019 中，當您使用 `-Force` 時，也必須使用 `-PolicyVersion v1` 參數。 這會建立與 Windows Server 2016 行為一致的原則，而且在註冊 CI 原則和 TPM 基準時，也會要求您使用 `-PolicyVersion v1`。
+    > 如果是這種情況，而且您信任電腦中的 TPM 是真實的，您可以使用 `-Force` 參數將主機識別碼新增至 HGS。 在 Windows Server 2019 中，當您使用 `-Force`時，也必須使用 `-PolicyVersion v1` 參數。 這會建立與 Windows Server 2016 行為一致的原則，而且在註冊 CI 原則和 TPM 基準時，也會要求您使用 `-PolicyVersion v1`。
 
 ## <a name="create-and-apply-a-code-integrity-policy"></a>建立和套用程式碼完整性原則
 
@@ -75,7 +75,7 @@ Windows Server 2019 引進了證明的新方法，稱為*v2 證明*，其中必�
 從 Windows Server 1709 版開始，Windows 會在 C:\Windows\schemas\CodeIntegrity\ExamplePolicies. 中包含範例程式碼完整性原則。 Windows Server 建議使用兩個原則：
 
 - **AllowMicrosoft**：允許 Microsoft 簽署的所有檔案。 這項原則建議用於 SQL 或 Exchange 等伺服器應用程式，或者，如果伺服器是由 Microsoft 所發行的代理程式所監視。
-- **DefaultWindows_Enforced**：僅允許 Windows 隨附的檔案，並不允許 Microsoft 所發行的其他應用程式，例如 Office。 針對僅執行內建伺服器角色和功能（例如 Hyper-v）的伺服器，建議使用此原則。 
+- **DefaultWindows_Enforced**：只允許 Windows 隨附的檔案，而且不允許 Microsoft 發行的其他應用程式，例如 Office。 針對僅執行內建伺服器角色和功能（例如 Hyper-v）的伺服器，建議使用此原則。 
 
 建議您先在 audit （記錄）模式中建立 CI 原則，以查看它是否遺漏任何專案，然後強制執行主機生產工作負載的原則。 
 
@@ -128,11 +128,11 @@ Windows Server 2019 引進了證明的新方法，稱為*v2 證明*，其中必�
     >[!NOTE]
     >將 CI 原則套用至主機，以及更新這些電腦上的任何軟體時，請務必小心。 任何不符合 CI 原則的核心模式驅動程式都可能會使電腦無法啟動。 
 
-6.  將二進位檔案（在此範例中為 HW1CodeIntegrity @ no__t-0enforced. p7b）提供給 HGS 系統管理員。
+6.  將二進位檔案（在此範例中為 HW1CodeIntegrity\_強制執行. p7b）提供給 HGS 系統管理員。
 
 7.  在 HGS 網域中，將程式碼完整性原則複製到 HGS 伺服器，然後執行下列命令。
 
-    針對 `<PolicyName>`，指定 CI 原則的名稱，以描述其適用的主機類型。 最佳做法是在您的機器的製作/型號和其上執行的任何特殊軟體設定之後，將它命名為。<br>針對 `<Path>`，指定程式碼完整性原則的路徑和檔案名。
+    針對 `<PolicyName>`，請指定 CI 原則的名稱，以描述其適用的主機類型。 最佳做法是在您的機器的製作/型號和其上執行的任何特殊軟體設定之後，將它命名為。<br>針對 `<Path>`，請指定程式碼完整性原則的路徑和檔案名。
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'

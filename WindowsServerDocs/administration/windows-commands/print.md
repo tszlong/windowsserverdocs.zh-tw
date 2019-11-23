@@ -34,13 +34,13 @@ ms.locfileid: "71372149"
 Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|/d： \<PrinterName >|指定您要列印工作的印表機。 若要列印到本機連線的印表機，請指定印表機連線所在電腦上的埠。</br>-平行埠的有效值為 LPT1、LPT2 和 LPT3。</br>-有效的序列埠值為 COM1、COM2、COM3 和 COM4。</br>您也可以使用其佇列名稱（\\ @ no__t-1*ServerName*\*PrinterName *）來指定網路印表機。 如果您沒有指定印表機，列印工作預設會傳送至 LPT1。|
-|@no__t 0Drive >：|指定您要列印之檔案所在的邏輯或實體磁片磁碟機。 如果您要列印的檔案位於目前磁片磁碟機上，則不需要此參數。|
-|\<Path >|指定您要列印之檔案的位置。 如果您要列印的檔案位於目前目錄中，則不需要這個參數。|
+|/d：\<PrinterName >|指定您要列印工作的印表機。 若要列印到本機連線的印表機，請指定印表機連線所在電腦上的埠。</br>-平行埠的有效值為 LPT1、LPT2 和 LPT3。</br>-有效的序列埠值為 COM1、COM2、COM3 和 COM4。</br>您也可以使用其佇列名稱（\\\\*ServerName*\*PrinterName *）來指定網路印表機。 如果您沒有指定印表機，列印工作預設會傳送至 LPT1。|
+|\<磁片磁碟機 >：|指定您要列印之檔案所在的邏輯或實體磁片磁碟機。 如果您要列印的檔案位於目前磁片磁碟機上，則不需要此參數。|
+|\<路徑 >|指定您要列印之檔案的位置。 如果您要列印的檔案位於目前目錄中，則不需要這個參數。|
 |\<FileName > [...]|必要。 指定您要列印的檔案。 您可以在一個命令中包含多個檔案。|
 |/?|在命令提示字元顯示說明。|
 
@@ -61,7 +61,7 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 print /d:lpt2 report.txt
 ```
-若要將 c:\Accounting 目錄中的檔案報告 .txt 傳送至 \\ @ no__t-1CopyRoom 伺服器上的 Printer1 列印佇列，請輸入：
+若要將 c:\Accounting 目錄中的檔案報告 .txt 傳送至 \\\\CopyRoom 伺服器上的 Printer1 列印佇列，請輸入：
 ```
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```

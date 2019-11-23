@@ -18,7 +18,7 @@ ms.locfileid: "71357539"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用檔案分類基礎結構與檔案伺服器資源管理員，為資料夾設定保留期間，以及將檔案設定為適用法務保存措施。  
   
@@ -26,13 +26,13 @@ ms.locfileid: "71357539"
   
 -   [必要條件](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [步驟 1：建立資源屬性定義 @ no__t-0  
+-   [步驟1：建立資源屬性定義](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
--   [步驟 2：設定通知 @ no__t-0  
+-   [步驟2：設定通知](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
   
--   [步驟 3：建立檔案管理工作 @ no__t-0  
+-   [步驟3：建立檔案管理工作](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [步驟 4：手動分類檔案 @ no__t-0  
+-   [步驟4：手動分類檔案](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
 > 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -40,7 +40,7 @@ ms.locfileid: "71357539"
 ## <a name="prerequisites"></a>必要條件  
 本主題中的步驟假設您已經設定 SMTP 伺服器執行檔案到期通知。  
   
-## <a name="BKMK_Step1"></a>步驟1：建立資源內容定義  
+## <a name="BKMK_Step1"></a>步驟1：建立資源屬性定義  
 在這個步驟中，將會啟用 [保留期間] 和 [發現性] 資源內容，如此檔案分類基礎結構便可以使用這些資源內容，標記在網路共用資料夾中掃描的檔案。  
   
 [使用 Windows PowerShell 執行此步驟](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
@@ -57,7 +57,7 @@ ms.locfileid: "71357539"
   
 5.  用滑鼠右鍵按一下 [發現性]，然後按一下 [啟用]。  
   
-@no__t 0solution 指南](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -89,9 +89,9 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
   
     -   在預設的 [**寄件者電子郵件地址]** 方塊中，輸入要用來傳送通知的電子郵件地址。  
   
-6.  按一下 [確定]。  
+6.  按一下 **\[確定\]** 。  
   
-@no__t 0solution 指南](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -140,9 +140,9 @@ Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEma
   
 10. 在 [排程] 索引標籤上，按一下 [每月] 選項，然後選取 [上次] 核取方塊。  
   
-11. 按一下 [確定]。  
+11. 按一下 **\[確定\]** 。  
   
-@no__t 0solution 指南](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![解決方案引導](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -185,10 +185,10 @@ $fmj1=New-FSRMFileManagementJob -Name "Retention Task" -Namespace @('D:\Finance 
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [案例：在檔案伺服器上實作資訊保留](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
+-   [案例：在檔案伺服器上執行資訊的保留](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
 -   [規劃檔案伺服器上的資訊保留](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
--   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

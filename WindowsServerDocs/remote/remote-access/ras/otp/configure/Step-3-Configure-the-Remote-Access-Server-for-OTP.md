@@ -21,7 +21,7 @@ ms.locfileid: "71404338"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>步驟3設定 OTP 的遠端存取服務器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 當 RADIUS 伺服器已設定軟體發佈權杖之後，就會開啟通訊埠、建立共用密碼、對應至 Active Directory 的使用者帳戶已在 RADIUS 伺服器上建立，而遠端存取服務器則具有已設定為 RADIUS 驗證代理程式，則必須將遠端存取服務器設定為支援 OTP。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "71404338"
   
 4.  如果需要 Windows 7 支援，請選取 [**啟用 windows 7 用戶端電腦透過 DirectAccess 進行連線]** 核取方塊。 注意：如規劃一節中所述，Windows 7 用戶端必須安裝 DCA 2.0，才能支援使用 OTP 的 DirectAccess。  
   
-5.  按一下 [下一步]。  
+5.  按一下 **\[下一步\]** 。  
   
 6.  在 [ **OTP RADIUS 伺服器**] 區段中，按兩下 [空白**伺服器名稱**] 欄位。  
   
@@ -74,14 +74,14 @@ ms.locfileid: "71404338"
     > [!NOTE]  
     > 如果 RADIUS 伺服器所在的網域與遠端存取服務器不同，則 [**伺服器名稱**] 欄位必須指定 RADIUS 伺服器的 FQDN。  
   
-8.  在 [ **OTP CA 伺服器**] 區段中，選取要用於註冊 OTP 用戶端驗證憑證的 CA 伺服器，然後按一下 [**新增**]。 按一下 [下一步]。  
+8.  在 [ **OTP CA 伺服器**] 區段中，選取要用於註冊 OTP 用戶端驗證憑證的 CA 伺服器，然後按一下 [**新增**]。 按一下 **\[下一步\]** 。  
   
 9. 在 [ **OTP 憑證範本**] 區段中，按一下 **[流覽]** 以選取憑證範本，用來註冊針對 OTP 驗證所簽發的憑證。  
   
     > [!NOTE]  
     > 公司 CA 所簽發之 OTP 憑證的憑證範本必須設定為不使用 [在發行的憑證中包含撤銷資訊] 選項。 如果在憑證範本建立期間選取此選項，OTP 用戶端電腦將無法正確登入。  
   
-    按一下 **[流覽]** 以選取憑證範本，用來註冊遠端存取服務器用來簽署 OTP 憑證註冊要求的憑證。 按一下 [確定]。 按一下 [下一步]。  
+    按一下 **[流覽]** 以選取憑證範本，用來註冊遠端存取服務器用來簽署 OTP 憑證註冊要求的憑證。 按一下 **\[確定\]** 。 按一下 **\[下一步\]** 。  
   
 10. 如果需要使用 OTP 從 DirectAccess 排除特定使用者，請在 [ **Otp 豁免**] 區段中，選取 [**不要求指定安全性群組中的使用者使用雙因素驗證來驗證**]。 按一下 [**安全性群組**]，然後選取針對 OTP 豁免所建立的安全性群組。  
   
@@ -105,7 +105,7 @@ ms.locfileid: "71404338"
   
 若要使用 PowerShell 命令來設定 OTP 的遠端存取：  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   

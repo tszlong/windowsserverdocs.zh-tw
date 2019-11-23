@@ -18,7 +18,7 @@ ms.locfileid: "71402418"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>針對受防護網狀架構部署快速入門
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明什麼是受防護的網狀架構、其需求，以及部署程式的摘要。 如需詳細的部署步驟，請參閱為[受防護的主機和受防護的 Vm 部署主機守護者服務](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)。
 
@@ -69,19 +69,19 @@ ms.locfileid: "71402418"
 
 ![現有的 Hyper-v 網狀架構](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-existing-hyper-v.png)
 
-## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>步驟 1:部署執行 Windows Server 2016 的 Hyper-v 主機 
+## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>步驟1：部署執行 Windows Server 2016 的 Hyper-v 主機 
 
 Hyper-v 主機必須執行 Windows Server 2016 Datacenter edition 或更新版本。 如果您要升級主機，可以從 Standard edition[升級](https://technet.microsoft.com/windowsserver/dn527667.aspx)到 Datacenter edition。
 
 ![升級 Hyper-v 主機](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
-## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>步驟 2:部署主機守護者服務（HGS）
+## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>步驟2：部署主機守護者服務（HGS）
 
 然後安裝 HGS 伺服器角色，並將它部署為三個節點的叢集，例如下圖中的 relecloud.com 範例。 這需要三個 PowerShell Cmdlet：
 
-- 若要新增 HGS 角色，請使用`Install-WindowsFeature` 
-- 若要安裝 HGS，請使用`Install-HgsServer` 
-- 若要使用您選擇的證明模式來初始化 HGS，請使用`Initialize-HgsServer` 
+- 若要新增 HGS 角色，請使用 `Install-WindowsFeature` 
+- 若要安裝 HGS，請使用 `Install-HgsServer` 
+- 若要使用您選擇的證明模式來初始化 HGS，請使用 `Initialize-HgsServer` 
 
 如果您現有的 Hyper-v 伺服器不符合 TPM 模式的必要條件（例如，它們沒有 TPM 2.0），您可以使用以系統管理員為基礎的證明（AD 模式）來初始化 HGS，這需要與網狀架構網域 Active Directory 的信任。 
 
@@ -89,7 +89,7 @@ Hyper-v 主機必須執行 Windows Server 2016 Datacenter edition 或更新版�
 
 ![安裝 HGS](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-two-deploy-hgs.png)
 
-## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>步驟 3：解壓縮身分識別、硬體基準和程式碼完整性原則
+## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>步驟3：解壓縮身分識別、硬體基準和程式碼完整性原則
 
 從 Hyper-v 主機解壓縮身分識別的程式，取決於所使用的證明模式。
 
@@ -105,20 +105,20 @@ Hyper-v 主機必須執行 Windows Server 2016 Datacenter edition 或更新版�
 
 針對 TPM 模式，需要三件事： 
 
-1.  每一部 Hyper-v 主機上的 TPM 2.0_公開簽署金鑰_（或_EKpub_）。 若要捕捉 EKpub，請`Get-PlatformIdentifier`使用。 
-2.  _硬體基準_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一基準。 如果不是，則每個硬體類別都需要一個。 基準的形式為可信任的運算群組記錄檔，或 TCGlog。 此 TCGlog 包含主機從 UEFI 固件到核心為止的所有專案，最高可由主機完全啟動。 若要捕獲硬體基準，請安裝 Hyper-v 角色和主機守護者 Hyper-v 支援功能並使用`Get-HgsAttestationBaselinePolicy`。 
-3.  程式_代碼完整性原則_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一 CI 原則。 如果不是，則每個硬體類別都需要一個。 Windows Server 2016 和 Windows 10 都有新的 CI 原則形式強制執行，稱為「_虛擬程式碼完整性」（HVCI）_ 。 HVCI 提供強式強制執行，並確保主機只能執行受信任的系統管理員允許它執行的二進位檔。 這些指示會包裝在新增至 HGS 的 CI 原則中。 HGS 會測量每個主機的 CI 原則，然後才允許它們執行受防護的 Vm。 若要捕獲 CI 原則，請`New-CIPolicy`使用。 接著，必須使用`ConvertFrom-CIPolicy`將原則轉換成其二進位格式。
+1.  每一部 Hyper-v 主機上的 TPM 2.0_公開簽署金鑰_（或_EKpub_）。 若要捕捉 EKpub，請使用 `Get-PlatformIdentifier`。 
+2.  _硬體基準_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一基準。 如果不是，則每個硬體類別都需要一個。 基準的形式為可信任的運算群組記錄檔，或 TCGlog。 此 TCGlog 包含主機從 UEFI 固件到核心為止的所有專案，最高可由主機完全啟動。 若要捕獲硬體基準，請安裝 Hyper-v 角色和主機守護者 Hyper-v 支援功能，並使用 `Get-HgsAttestationBaselinePolicy`。 
+3.  程式_代碼完整性原則_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一 CI 原則。 如果不是，則每個硬體類別都需要一個。 Windows Server 2016 和 Windows 10 都有新的 CI 原則形式強制執行，稱為「_虛擬程式碼完整性」（HVCI）_ 。 HVCI 提供強式強制執行，並確保主機只能執行受信任的系統管理員允許它執行的二進位檔。 這些指示會包裝在新增至 HGS 的 CI 原則中。 HGS 會測量每個主機的 CI 原則，然後才允許它們執行受防護的 Vm。 若要捕捉 CI 原則，請使用 `New-CIPolicy`。 接著，必須使用 `ConvertFrom-CIPolicy`，將原則轉換成其二進位格式。
 
 ![解壓縮身分識別、基準和 CI 原則](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 
 這就是建立受防護網狀架構的基礎結構，也就是要執行它的基礎結構。  
 現在您可以建立受防護的 VM 範本磁片和防護資料檔案，讓受防護的 Vm 可以簡單且安全的方式布建。 
 
-## <a name="step-4-create-a-template-for-shielded-vms"></a>步驟 4：建立受防護 Vm 的範本
+## <a name="step-4-create-a-template-for-shielded-vms"></a>步驟4：建立受防護 Vm 的範本
 
 受防護的 VM 範本會藉由在已知的可信任時間點建立磁片的簽章，來保護範本磁片。 
 如果範本磁片稍後受到惡意程式碼感染，其簽章將會不同于安全受防護的 VM 布建程式所偵測到的原始範本。 
-受防護的範本磁片是藉由執行 [**受防護的範本磁片建立嚮導]** 或`Protect-TemplateDisk`針對一般範本磁片來建立。 
+受防護的範本磁片是藉由執行 [**受防護的範本磁片建立嚮導]** `Protect-TemplateDisk` 或針對一般範本磁片來建立。 
 
 每個都包含在[適用于 Windows 10 的遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)中**受防護的 VM 工具**功能。
 下載 RSAT 之後，請執行此命令來安裝**受防護的 VM 工具**功能：
@@ -137,7 +137,7 @@ Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
 
 開始之前，請先參閱[範本磁片需求](guarded-fabric-create-a-shielded-vm-template.md)。 
 
-## <a name="step-5-create-a-shielding-data-file"></a>步驟 5：建立防護資料檔案 
+## <a name="step-5-create-a-shielding-data-file"></a>步驟5：建立防護資料檔案 
 
 防護資料檔案（也稱為 pdk 檔案）會捕獲有關虛擬機器的機密資訊，例如系統管理員密碼。 
 
@@ -157,7 +157,7 @@ Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
 
 您可以新增選用的管理元件，例如 VMM 或 Windows Azure 套件。 如果您想要在不安裝這些部分的情況下建立 VM，請參閱[逐步執行–不使用 VMM 建立受防護的 vm](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/)。
 
-## <a name="step-6-create-a-shielded-vm"></a>步驟 6：建立受防護的 VM
+## <a name="step-6-create-a-shielded-vm"></a>步驟6：建立受防護的 VM
 
 建立受防護的虛擬機器與一般虛擬機器的差異很小。 在 Windows Azure 套件中，體驗甚至會比建立一般 VM 更為容易，因為您只需要提供名稱、防護資料檔案（包含其餘的特製化資訊）和 VM 網路。 
 

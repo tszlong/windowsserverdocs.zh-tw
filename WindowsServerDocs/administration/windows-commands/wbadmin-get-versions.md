@@ -38,7 +38,7 @@ wbadmin get versions
 [-machine:BackupMachineName]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -55,7 +55,7 @@ wbadmin get versions
 ```
 wbadmin get versions -backupTarget:h:
 ```
-若要查看遠端共用資料夾中儲存的可用備份清單 \\ @ no__t-1servername\share 用於電腦 server01，請輸入：
+若要查看遠端共用資料夾中儲存的可用備份清單 \\\\servername\share 進行電腦 server01，請輸入：
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```

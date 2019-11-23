@@ -22,7 +22,7 @@ ms.locfileid: "71392314"
 ---
 # <a name="tsprof"></a>tsprof
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將遠端桌面服務的使用者設定資訊從一個使用者複製到另一個。
 [本機使用者和群組] 和 [active directory 使用者和電腦] 的 [遠端桌面服務延伸] 中會顯示遠端桌面服務的使用者設定資訊。
@@ -41,15 +41,15 @@ tsprof /copy {/domain:<DomainName> | /local} [/profile:<path>] <Src_usr> <Dest_u
 tsprof /q {/domain:<DomainName> | /local} <UserName>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 |參數|描述|
 |-------|--------|
 |/update|更新網域 <*DomainName*> 中 <*UserName*> 的設定檔路徑資訊，以 <*Profilepath*>。|
-|/domain： \<DomainName >|指定套用作業的網功能變數名稱稱。|
+|/domain：\<DomainName >|指定套用作業的網功能變數名稱稱。|
 |/local|僅將作業套用至本機使用者帳戶。|
-|/profile： \<path >|指定 [本機使用者和群組] 和 [active directory 使用者和電腦] 的 [遠端桌面服務延伸模組] 中所顯示的設定檔路徑。|
-|\<UserName >|指定您想要更新或查詢伺服器設定檔路徑的使用者名稱。|
-|/copy|將使用者設定資訊從 \<*SourceUser*> 複製到 @no__t 2*DestinationUser*>，並將 \<*DestinationUser*> 的設定檔路徑資訊更新為 \<*Profilepath*>。 @No__t-0*SourceUser*> 和 \<*DestinationUser*> 必須是本機或必須在網域 \<*DomainName*> 中。|
+|/profile：\<路徑 >|指定 [本機使用者和群組] 和 [active directory 使用者和電腦] 的 [遠端桌面服務延伸模組] 中所顯示的設定檔路徑。|
+|\<使用者名稱 >|指定您想要更新或查詢伺服器設定檔路徑的使用者名稱。|
+|/copy|將使用者設定資訊從 \<*SourceUser*> 複製到 \<*DestinationUser*>，並將 \<*DestinationUser*> 的設定檔路徑資訊更新為 \<*Profilepath*>。 \<*SourceUser*> 和 \<*DestinationUser*> 必須是本機，或是必須在 domain \<*DomainName*> 中。|
 |\<Src_usr >|指定您要從中複製使用者設定資訊的使用者名稱。|
 |\<Dest_usr >|指定您要將使用者設定資訊複製到其中的使用者名稱。|
 |/q|顯示您要查詢伺服器設定檔路徑的使用者目前的設定檔路徑。|
@@ -69,5 +69,5 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
     ```
 
 #### <a name="additional-references"></a>其他參考資料
-[命令列語法索引鍵](command-line-syntax-key.md)
-[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+
+[ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)

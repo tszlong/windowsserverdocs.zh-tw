@@ -19,7 +19,7 @@ ms.locfileid: "71358300"
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>變更 AD FS 登入頁面上的公司標誌
 
 #### <a name="change-company-logo"></a>變更公司標誌  
-若要變更 [正負號 @ no__t-0in] 頁面上顯示的公司標誌，請使用下列 PowerShell Windows PowerShell Cmdlet 和語法。  
+若要變更 [登\-] 頁面上顯示的公司標誌，請使用下列 PowerShell Windows PowerShell Cmdlet 和語法。  
 
 ![變更標誌](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

@@ -21,20 +21,20 @@ ms.locfileid: "71408528"
 
 安裝同盟服務角色服務並在電腦上設定所需的憑證之後，您就可以設定電腦成為同盟伺服器。 您可以使用下列程序，將電腦加入至新的同盟伺服器陣列。  
   
-您可以使用 AD FS 同盟伺服器設定 Wizard 將電腦加入伺服器陣列。 當您使用此嚮導將電腦加入至現有的伺服器陣列時，會使用 AD FS 設定資料庫的讀取 @ no__t-0only 複本來設定電腦，而且它必須接收來自主要同盟伺服器的更新。  
+您可以使用 AD FS 同盟伺服器設定 Wizard 將電腦加入伺服器陣列。 當您使用此嚮導將電腦加入至現有的伺服器陣列時，電腦會設定為僅讀取\-AD FS 設定資料庫的複本，而且必須從主要同盟伺服器接收更新。  
   
 > [!NOTE]  
-> 針對同盟 Web Single @ no__t-0Sign @ no__t-1On \(SSO @ no__t-3 設計，您必須在帳戶夥伴組織中至少有一部同盟伺服器，並在資源夥伴組織中至少要有一部同盟伺服器。 如需詳細資訊，請參閱[同盟伺服器放置位置](https://technet.microsoft.com/library/dd807127.aspx)。  
+> 若為同盟 Web 單一\-在 \(SSO\) 設計上登\-，您必須在帳戶夥伴組織中至少有一部同盟伺服器，且資源夥伴組織中至少要有一部同盟伺服器。 如需詳細資訊，請參閱[同盟伺服器放置位置](https://technet.microsoft.com/library/dd807127.aspx)。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477) \(HTTP：\/ \/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
+若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)\(HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
   
 ### <a name="to-add-a-federation-server-to-a-federation-server-farm"></a>將同盟伺服器新增至同盟伺服器陣列  
   
 1.  有兩種方式可以啟動 [AD FS 同盟伺服器設定向導]。 若要啟動該精靈，請執行下列其中一個動作：  
   
-    -   同盟服務角色服務安裝完成後，請開啟 AD FS 管理 snap @ no__t-0in，然後按一下 [**總覽**] 頁面或 [**動作**] 窗格中的 [ **AD FS 同盟伺服器設定]** 連結。  
+    -   同盟服務角色服務安裝完成後，請在中開啟 [AD FS 管理] 嵌入式\-管理單元，然後按一下 [**總覽**] 頁面或 [**動作**] 窗格中的 [ **AD FS 同盟伺服器設定]** 連結。  
   
-    -   在安裝程式完成之後，請開啟 [Windows Explorer]，流覽至**C： \\Windows @ no__t-2ADFS**資料夾，然後按兩下 @ no__t-3click **fsconfigwizard.exe .exe**。  
+    -   在安裝程式完成之後，請開啟 [Windows Explorer]，流覽至**C：\\Windows\\ADFS**資料夾，然後按兩下 [ **fsconfigwizard.exe**]\-。  
   
 2.  在 [歡迎] 頁面上，確認已選取 [將同盟伺服器新增至現有的 Federation Service]，然後按一下 [下一步]。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "71408528"
 4.  在 **[指定主要同盟伺服器及服務帳戶]** 頁面的 **[主要同盟伺服器名稱]** 底下，輸入伺服器陣列中的主要同盟伺服器電腦名稱，然後按一下 **[瀏覽]** 。 在 **[瀏覽]** 對話方塊中，找出其他所有同盟伺服器在現有的同盟伺服器陣列中當作服務帳戶使用的網域帳戶，然後按一下 **[確定]** 。 輸入密碼並加以確認，然後按 **[下一步]** ：  
   
     > [!NOTE]  
-    > 如需為同盟伺服器陣列指定服務帳戶的詳細資訊，請參閱[手動設定同盟伺服器陣列的服務帳戶](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md)。 同盟伺服器陣列中的每部同盟伺服器都必須指定相同的服務帳戶，伺服器陣列才能夠運作。 例如，如果建立的服務帳戶是 contoso @ no__t-0ADFS2SVC，您為同盟伺服器角色設定且將參與相同伺服器陣列的每一部電腦，都必須在同盟伺服器的這個步驟中指定 contoso @ no__t-1ADFS2SVC要讓伺服器陣列運作的 Configuration Wizard。  
+    > 如需為同盟伺服器陣列指定服務帳戶的詳細資訊，請參閱[手動設定同盟伺服器陣列的服務帳戶](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md)。 同盟伺服器陣列中的每部同盟伺服器都必須指定相同的服務帳戶，伺服器陣列才能夠運作。 例如，如果建立的服務帳戶是 contoso\\ADFS2SVC，則您為同盟伺服器角色設定且將參與相同伺服器陣列的每部電腦，都必須在同盟伺服器設定 Wizard 的這個步驟中指定 contoso\\ADFS2SVC，讓伺服器陣列能夠運作。  
   
 5.  在 [準備套用設定] 頁面上，檢閱詳細資料。 如果設定看起來是正確的，請按 **[下一步]** 開始使用這些設定來設定 AD FS。  
   

@@ -22,7 +22,7 @@ ms.locfileid: "71382578"
 ---
 # <a name="attributes-volume"></a>屬性磁片區
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示、設定或清除磁片區的屬性。  
   
@@ -34,13 +34,13 @@ ms.locfileid: "71382578"
 attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | shadowcopy}] [noerr]  
 ```  
   
-## <a name="parameters"></a>參數  
+## <a name="parameters"></a>Parameters  
   
 |參數|描述|  
 |-------|--------|  
-|設定|設定具有焦點之磁片區的指定屬性。|  
+|set|設定具有焦點之磁片區的指定屬性。|  
 |clear|清除具有焦點之磁片區的指定屬性。|  
-|唯讀|指定磁片區為讀取 @ no__t-0only。|  
+|唯讀|指定唯讀取\-的磁片區。|  
 |隱含|指定隱藏磁片區。|  
 |nodefaultdriveletter|指定磁片區預設不會接收磁碟機號。|  
 |拷貝|指定磁片區為陰影複製磁片區。|  
@@ -48,9 +48,9 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
   
 ## <a name="remarks"></a>備註  
   
--   在基本的主要開機記錄 \(MBR @ no__t-1 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數會套用到磁片上的所有磁片區。  
+-   在基本的主要開機記錄 \(MBR\) 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數適用于磁片上的所有磁片區。  
   
--   在基本 GUID 磁碟分割資料表上 \(gpt @ no__t-1 磁片，而在動態 MBR 和 gpt 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數只適用于選取的磁片區。  
+-   在基本 GUID 磁碟分割表格上 \(gpt\) 磁片，而在動態 MBR 和 gpt 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數只適用于選取的磁片區。  
   
 -   必須選取磁片區，**屬性 volume**命令才會成功。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。  
   
@@ -61,13 +61,13 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 attributes volume  
 ```  
   
-若要將選取的磁片區設定為 hidden 和 read @ no__t-0only，請輸入：  
+若要將選取的磁片區設定為 [隱藏] 和 [唯讀]\-，請輸入：  
   
 ```  
 attributes volume set hidden readonly  
 ```  
   
-若要移除所選磁片區上的 hidden 和 read @ no__t-0only 屬性，請輸入：  
+若要移除所選磁片區上的 [隱藏] 和 [唯讀]\-屬性，請輸入：  
   
 ```  
 attributes volume clear hidden readonly  

@@ -15,15 +15,15 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365687"
 ---
-# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>遠端直接記憶體存取 \(RDMA @ no__t-1 和 Switch Embedded 小組 \(SET @ no__t-3
+# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>\(RDMA\) 的遠端直接記憶體存取和交換器內嵌小組 \(設定\)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-本主題提供有關在 Windows Server 2016 中使用 Hyper-v 設定遠端直接記憶體存取 @no__t 0RDMA @ no__t-1 介面的資訊，以及有關 Switch Embedded 小組 \(SET @ no__t-3 的資訊。  
+本主題提供有關使用 Windows Server 2016 中的 Hyper-v 來設定遠端直接記憶體存取 \(RDMA\) 介面的資訊，以及有關交換器內嵌小組 \(設定\)的資訊。  
 
 > [!NOTE]
 > 除了本主題之外，還有下列交換器內嵌小組內容可供使用。 
-> - TechNet 元件庫下載：[Windows Server 2016 NIC 和交換器內嵌小組使用者指南](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
+> - TechNet 元件庫下載： [Windows Server 2016 NIC 和交換器內嵌小組使用者指南](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
 
 ## <a name="bkmk_rdma"></a>使用 Hyper-v 設定 RDMA 介面  
 
@@ -38,11 +38,11 @@ ms.locfileid: "71365687"
 
 ![架構變更](../media/RDMA-and-SET/rdma_over.jpg)
 
-下列各節提供有關如何使用 Windows PowerShell 命令來啟用資料中心橋接（DCB）、使用 RDMA 虛擬 NIC 建立 Hyper-v 虛擬交換器 \(vNIC @ no__t-1 的指示，以及使用 SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器。
+下列各節提供有關如何使用 Windows PowerShell 命令來啟用資料中心橋接（DCB）、使用 RDMA 虛擬 NIC 建立 Hyper-v 虛擬交換器 \(vNIC\)，以及使用 SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器的指示。
 
-### <a name="enable-data-center-bridging-dcb"></a>啟用資料中心橋接 \(DCB @ no__t-1
+### <a name="enable-data-center-bridging-dcb"></a>啟用資料中心橋接 \(DCB\)
 
-使用 rdma 的聚合式 Ethernet \(RoCE\)版本的任何 rdma 之前，您必須先啟用 DCB。  雖然網際網路範圍 RDMA 通訊協定不需要 \(iWARP @ no__t-1 網路，但測試已判定所有以乙太網路為基礎的 RDMA 技術，都能更適合 DCB。 因此，您應該考慮使用 DCB，即使是 iWARP RDMA 部署也是如此。
+在使用聚合式乙太網路上的任何 RDMA \(RoCE\) 版本的 RDMA 之前，您必須啟用 DCB。  雖然網際網路範圍 RDMA 通訊協定不需要 \(iWARP\) 網路，但測試已判定所有以乙太網路為基礎的 RDMA 技術，都能更適合 DCB。 因此，您應該考慮使用 DCB，即使是 iWARP RDMA 部署也是如此。
 
 下列 Windows PowerShell 範例命令示範如何啟用和設定 SMB 直接傳輸的 DCB。
 
@@ -96,7 +96,7 @@ ms.locfileid: "71365687"
 
 ###  <a name="bkmk_set-rdma"></a>使用 SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器
 
-若要使用 Hyper-v 主機虛擬網路介面卡上的 RDMA capabilies，請在支援 RDMA 小組的 Hyper-v 虛擬交換器上 \(vNICs @ no__t-1，您可以使用這些範例 Windows PowerShell 命令。
+若要使用 Hyper-v 主機虛擬網路介面卡上的 RDMA capabilies \(Vnic\) 在支援 RDMA 小組的 Hyper-v 虛擬交換器上，您可以使用這些範例 Windows PowerShell 命令。
 
     New-VMSwitch -Name SETswitch -NetAdapterName "SLOT 2","SLOT 3" -EnableEmbeddedTeaming $true
 
@@ -146,7 +146,7 @@ ms.locfileid: "71365687"
 
 ## <a name="bkmk_over"></a>設定總覽
 
-SET 是替代的 NIC 小組解決方案，您可以在包含 Hyper-v 和軟體定義網路功能的環境中使用，@no__t-Windows Server 2016 中的 0SDN @ no__t-1 堆疊。 將一些 NIC 小組功能整合到 Hyper-v 虛擬交換器。
+SET 是替代的 NIC 小組解決方案，可用於包含 Hyper-v 的環境，以及在 Windows Server 2016 中 \(SDN\) 堆疊的軟體定義網路功能。 將一些 NIC 小組功能整合到 Hyper-v 虛擬交換器。
 
 [設定] 可讓您將一或八個實體 Ethernet 網路介面卡組成一或多個以軟體為基礎的虛擬網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。
 
@@ -173,42 +173,42 @@ SET 適用于所有版本的 Windows Server 2016，包括 Hyper-v 和 SDN 堆疊
 
 ## <a name="bkmk_nics"></a>設定的支援 Nic
 
-您可以在 Windows Server 2016 的集合小組中，使用已通過 Windows 硬體合格和標誌 \(WHQL @ no__t-1 測試的任何乙太網路 NIC。 SET 會要求所有屬於集合小組成員的網路介面卡，都必須是相同的 \( i、相同的製造商、相同的型號、相同的固件和驅動程式 @ no__t-1。 設定小組中的一到八個網路介面卡之間的支援。
+您可以使用已通過 Windows 硬體合格和標誌的任何 Ethernet NIC，\(WHQL\) 測試在 Windows Server 2016 中的一組小組。 設定需要所有屬於集合小組成員的網路介面卡都必須相同 \(也就是相同的製造商、相同的型號、相同的固件和驅動程式\)。 設定小組中的一到八個網路介面卡之間的支援。
   
 ## <a name="bkmk_compat"></a>設定與 Windows Server 網路技術的相容性
 
 SET 與 Windows Server 2016 中的下列網路技術相容。
 
-- 資料中心橋接 \(DCB @ no__t-1
+- 資料中心橋接 \(DCB\)
   
 - Hyper-v 網路虛擬化-Windows Server 2016 支援 NV-GRE 和 VxLAN。  
-- 接收端總和檢查碼卸載 \(IPv4，IPv6，TCP @ no__t-1-如果有任何集合小組成員支援這些專案，就會支援這些專案。
+- 接收端總和檢查碼卸載 \(IPv4、IPv6、TCP\)-如果有任何集合小組成員支援，則支援這些專案。
 
-- 遠端直接記憶體存取 \(RDMA @ no__t-1
+- \(RDMA\) 的遠端直接記憶體存取
 
-- 單一根目錄 i/o 虛擬化 \(SR-SR-IOV @ no__t-1
+- 單一根目錄 i/o 虛擬化 \(SR-IOV\)
 
-- 傳輸端總和檢查碼卸載 \(IPv4，IPv6，TCP @ no__t-1-如果所有集合小組成員都支援這些專案，則支援這些。
+- 傳輸端總和檢查碼卸載 \(IPv4、IPv6、TCP\)-如果所有集合小組成員都支援，則支援這些專案。
 
-- 虛擬機器佇列 \(VMQ @ no__t-1
+- 虛擬機器佇列 \(VMQ\)
 
-- 虛擬接收端調整 \(RSS @ no__t-1
+- \(RSS\) 的虛擬接收端調整
 
 SET 與 Windows Server 2016 中的下列網路技術不相容。
 
-- 802.1 x 驗證。 802.1 x 可延伸驗證通訊協定 \(EAP @ no__t-1 封包會由設定案例中的超 no__t-2V 虛擬交換器自動卸載。
+- 802.1 x 驗證。 802.1 x 可延伸驗證通訊協定 \(EAP\) 封包會在設定的案例中，由超\-V 虛擬交換器自動卸載。
  
-- IPsec 工作卸載 \(IPsecTO @ no__t-1。 這是大多數網路介面卡不支援的舊版技術，而且存在的地方會預設為停用。
+- \(IPsecTO\)的 IPsec 工作卸載。 這是大多數網路介面卡不支援的舊版技術，而且存在的地方會預設為停用。
 
-- 在主機或原生作業系統中使用 QoS \(pacer @ no__t-1。 這些 QoS 案例不是超 no__t 0V 案例，因此這些技術不會交集。 此外，QoS 也可以使用，但預設不會啟用-您必須刻意啟用 QoS。
+- 在主機或原生作業系統中使用 QoS \(pacer .exe\)。 這些 QoS 案例不是超\-V 案例，因此這些技術不會交集。 此外，QoS 也可以使用，但預設不會啟用-您必須刻意啟用 QoS。
 
-- 接收端聯合 \(RSC @ no__t-1。 [超 no__t-0V 虛擬交換器] 會自動停用 RSC。
+- \(RSC\)的接收端聯合。 超\-V 虛擬交換器會自動停用 RSC。
 
-- 接收端調整 \(RSS @ no__t-1。 由於 Hyper-v 會使用 VMQ 和 VMMQ 的佇列，因此當您建立虛擬交換器時，一律會停用 RSS。
+- \(RSS\)接收端調整。 由於 Hyper-v 會使用 VMQ 和 VMMQ 的佇列，因此當您建立虛擬交換器時，一律會停用 RSS。
 
 - TCP 煙囪卸載。 這項技術預設為停用。
 
-- 虛擬機器 QoS \(VM-QoS @ no__t-1。 VM QoS 已可使用，但預設為停用。 如果您在設定的環境中設定 VM QoS，QoS 設定會導致無法預期的結果。
+- 虛擬機器 QoS \(VM-QoS\)。 VM QoS 已可使用，但預設為停用。 如果您在設定的環境中設定 VM QoS，QoS 設定會導致無法預期的結果。
 
 ## <a name="bkmk_modes"></a>設定模式和設定
 
@@ -260,20 +260,20 @@ VMQ 並妥善設定工作，而且您應該在每次使用 Hyper-v 並設定時�
 > [!NOTE]
 > [設定] 一律會顯示所有集合小組成員可用的佇列總數。 在 NIC 小組中，這稱為「佇列的總和」模式。
 
-大部分的網路介面卡都有可用來進行接收端調整的佇列 \(RSS @ no__t-1 或 VMQ，但不能同時用於兩者。
+大部分的網路介面卡都有佇列，可用於 \(RSS\) 或 VMQ 的接收端調整，但不能同時用於兩者。
   
-某些 VMQ 設定似乎是 RSS 佇列的設定，但實際上是根據目前使用中的功能，而在一般佇列上的設定。 每個 NIC 都在其 [advanced] 屬性中，`*RssBaseProcNumber` 和 `*MaxRssProcessors` 的值。
+某些 VMQ 設定似乎是 RSS 佇列的設定，但實際上是根據目前使用中的功能，而在一般佇列上的設定。 每個 NIC 都在其 [advanced] 屬性中，`*RssBaseProcNumber` 和 `*MaxRssProcessors`的值。
 
 以下是一些可提供較佳系統效能的 VMQ 設定。
 
-- 在理想情況下，每個 NIC 都應該將 @no__t 0 設定為大於或等於二（2）的偶數數位。 這是因為第一個實體處理器（核心0） @no__t 0logical 處理器0和 1 @ no__t-1，通常會執行大部分的系統處理，因此應該從這個實體處理器操縱網路處理。 
+- 在理想情況下，每個 NIC 的 `*RssBaseProcNumber` 都應該設為大於或等於二（2）的偶數數位。 這是因為第一個實體處理器（核心0） \(邏輯處理器0和 1\)，通常會執行大部分的系統處理，因此應該從這個實體處理器操縱網路處理。 
 
 >[!NOTE]
 >某些機器架構的每個實體處理器不會有兩個邏輯處理器，因此，針對這類機器，基底處理器應大於或等於1。 如果不確定，請假設您的主機使用每個實體處理器架構2個邏輯處理器。
 
-- 小組成員的處理器應該是實際、非重迭的範圍。 例如，在4核心主機  個邏輯處理器 @ no__t-1 與2個 10Gbps Nic 的小組，您可以將第一個設定為使用基底處理器2，並使用4個核心;第二個設定為使用基本處理器6，並使用2個核心。
+- 小組成員的處理器應該是實際、非重迭的範圍。 例如，在4核心主機 \(8 個邏輯處理器\) 與2個 10Gbps Nic 的小組一起使用時，您可以將第一個設定為使用基底處理器2，並使用4個核心;第二個設定為使用基本處理器6，並使用2個核心。
 
-## <a name="bkmk_hnv"></a>設定和 Hyper-v 網路虛擬化 \(HNV @ no__t-2
+## <a name="bkmk_hnv"></a>\(HNV\) 設定和 Hyper-v 網路虛擬化
 
 SET 與 Windows Server 2016 中的 Hyper-v 網路虛擬化完全相容。 HNV 管理系統會提供資訊給 SET 驅動程式，允許設定以針對 HNV 流量優化的方式來分散網路流量負載。
   
@@ -283,11 +283,11 @@ Windows Server 2016 支援即時移轉。
 
 ## <a name="bkmk_mac"></a>MAC 位址在傳輸的封包上使用
 
-當您使用動態負載分佈來設定集合小組時，來自單一來源的封包 @no__t 0such 為單一 VM @ no__t-1 會同時散發到多個小組成員。 
+當您使用動態負載分佈來設定集合小組時，來自單一來源 \(（例如單一 VM\)）的封包會同時分散到多個小組成員。 
 
 若要防止交換器混淆並防止 MAC flapping 警示，請在相似化為小組成員以外的小組成員上，設定以不同的 MAC 位址取代來源 MAC 位址。 因此，每個小組成員都使用不同的 MAC 位址，而且除非發生失敗，否則會阻止 MAC 位址衝突。
 
-在主要 NIC 上偵測到失敗時，集合小組軟體會開始使用已選擇做為暫時相似化為小組成員之團隊成員上的 VM MAC 位址，\( i，這項服務現在會顯示為 VM 介面 @ no_ 的交換器。_t-1。
+在主要 NIC 上偵測到失敗時，集合小組軟體會開始使用已選擇做為暫存相似化為小組成員之團隊成員上的 VM MAC 位址，\(也就是，現在會顯示為 VM 介面\)的交換器。
 
 這種變更僅適用于在 VM 的相似化為小組成員上傳送的流量，其具有 VM 自己的 MAC 位址作為其來源 MAC 位址。 其他流量會繼續與失敗前所使用的任何來源 MAC 位址一起傳送。
 
@@ -313,7 +313,7 @@ Windows Server 2016 支援即時移轉。
   
 ## <a name="bkmk_manage"></a>管理集合小組
 
-建議您使用 System Center Virtual Machine Manager \(VMM @ no__t-1 來管理集合小組，不過您也可以使用 Windows PowerShell 來管理集合。 下列各節提供可用來管理 SET 的 Windows PowerShell 命令。
+建議您使用 System Center Virtual Machine Manager \(VMM\) 來管理集合小組，不過您也可以使用 Windows PowerShell 來管理集合。 下列各節提供可用來管理 SET 的 Windows PowerShell 命令。
 
 如需有關如何使用 VMM 建立集合小組的詳細資訊，請參閱 System Center VMM 程式庫主題中的「設定邏輯交換器」一節，[建立邏輯交換器](https://docs.microsoft.com/system-center/vmm/network-switch)。
   
@@ -357,7 +357,7 @@ Remove-VMSwitch "SETvSwitch"
 
 ### <a name="changing-the-load-distribution-algorithm-for-a-set-team"></a>變更集合小組的負載分佈演算法
 
-**VMSwitchTeam** Cmdlet 具有**LoadBalancingAlgorithm**選項。 此選項會接受兩個可能值的其中一個：**HyperVPort**或**動態**。 若要設定或變更交換器內嵌小組的負載分佈演算法，請使用此選項。 
+**VMSwitchTeam** Cmdlet 具有**LoadBalancingAlgorithm**選項。 此選項會接受兩個可能值的其中一個： **HyperVPort**或**Dynamic**。 若要設定或變更交換器內嵌小組的負載分佈演算法，請使用此選項。 
 
 在下列範例中，名為**TeamedvSwitch**的 VMSwitchTeam 會使用**動態**負載平衡演算法。  
 ```  
@@ -365,9 +365,9 @@ Set-VMSwitchTeam -Name TeamedvSwitch -LoadBalancingAlgorithm Dynamic
 ```  
 ### <a name="affinitizing-virtual-interfaces-to-physical-team-members"></a>關聯實體小組成員的虛擬介面
 
-[設定] 可讓您在虛擬介面 \( i （Hyper-v 虛擬交換器埠 @ no__t-1）與小組中的其中一個實體 Nic 之間建立親和性。 
+設定可讓您在虛擬介面之間建立親和性 \(例如，Hyper-v 虛擬交換器埠\) 和小組中的其中一個實體 Nic。 
 
-例如，如果您建立兩個 SMB @ no__t-0Direct 的主機 Vnic，如使用[SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器](#bkmk_set-rdma)一節中所述，您可以確定兩個 vnic 使用不同的小組成員。 
+例如，如果您建立兩個 SMB\-Direct 的主機 Vnic，如使用[SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器](#bkmk_set-rdma)一節中所述，您可以確定這兩個 vnic 使用不同的小組成員。 
 
 將新增至該區段中的腳本，您可以使用下列 Windows PowerShell 命令。
 

@@ -37,34 +37,34 @@ typeperf -q [object] [options]
 typeperf -qx [object] [options]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
-|@no__t 0counter [counter [...]]>|指定要監視的效能計數器。|
+|\<計數器 [counter [...]]>|指定要監視的效能計數器。|
 
 > [!NOTE]
-> **@no__t 1counter >** 是效能計數器的完整名稱， *\\ @ no__t-4Computer\Object （實例） \Counter*格式，例如 **\\ @ no__t-7Server1\Processor （0） \% 使用者時間**。
+> **\<counter >** 是 *\\\\Computer\Object （實例） \Counter*格式之效能計數器的完整名稱，例如 **\\\\Server1\Processor （0）\% 使用者時間**。
 
-## <a name="options"></a>選項。
+## <a name="options"></a>選項
 
 |                   選項                   |                                                         描述                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               顯示即時線上說明。                                               |
-| -f \<CSV @ no__t-1TSV @ no__t-2BIN @ no__t-3SQL > |                                    指定輸出檔案格式。 預設值為 CSV。                                     |
+| -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL > |                                    指定輸出檔案格式。 預設值為 CSV。                                     |
 |              -cf \<filename >               |              指定包含要監視之效能計數器清單的檔案，每行一個計數器。               |
 |             -si < [[hh：] mm：] ss >             |                                  指定取樣間隔。 預設值為一秒。                                   |
-|               -o \<filename >               |     指定輸出檔或 SQL 資料庫的路徑。 預設值為 STDOUT （寫入至命令視窗）。      |
-|                -q [物件]                 | 顯示已安裝的計數器清單（沒有實例）。 若要列出一個物件的計數器，請包含物件名稱。 \* @ NO__T-1 @ NO__T-2EXAMPLE |
+|               -o \<檔案名 >               |     指定輸出檔或 SQL 資料庫的路徑。 預設值為 STDOUT （寫入至命令視窗）。      |
+|                -q [物件]                 | 顯示已安裝的計數器清單（沒有實例）。 若要列出一個物件的計數器，請包含物件名稱。 \*\*\*範例 |
 |                -qx [物件]                |        顯示已安裝的計數器清單和實例。 若要列出一個物件的計數器，請包含物件名稱。        |
-|               -sc \<samples >               |             指定要收集的樣本數。 預設為收集資料，直到按下 CTRL + C 為止。              |
+|               -sc \<範例 >               |             指定要收集的樣本數。 預設為收集資料，直到按下 CTRL + C 為止。              |
 |            -config \<檔案名 >             |                                    指定包含命令選項的設定檔案。                                     |
 |            -s \<computer_name >             |                   指定在計數器路徑中未指定電腦時要監視的遠端電腦。                    |
 |                     -y                     |                                        對所有問題回答 [是] 而不提示。                                        |
 
 ## <a name="BKMK_EXAMPLES"></a>典型
 
-- 下列範例會將本機電腦之效能計數器的值 **\\ @ no__t-2Processor （_total） \% 處理器時間**寫入到命令視窗的預設取樣間隔1秒，直到按下 CTRL + C 為止。  
+- 下列範例會將本機電腦之效能計數器的值 **\\\\processor （_Total）\% 處理器時間**寫入命令視窗的預設取樣間隔1秒，直到按下 CTRL + C 為止。  
   ```
   typeperf "\Processor(_Total)\% Processor Time"
   ```  

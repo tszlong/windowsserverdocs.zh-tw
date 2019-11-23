@@ -22,11 +22,11 @@ ms.locfileid: "71383273"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 本主題說明如何使用 Uninstall-WindowsFeature Cmdlet 移除 [功能隨選安裝] 設定中的功能檔案。
 
-[功能隨選安裝] 是 Windows 8 和 Windows Server 2012 中引進的功能，可讓您從作業系統中移除角色和功能檔案（有時*稱為功能裝載*）以節省磁碟空間，以及從安裝角色和功能遠端位置或安裝媒體，而不是從本機電腦。 您可以從執行中的實體或虛擬電腦移除功能檔案。 您也可以在 Windows 映像 (WIM) 檔或離線虛擬硬碟 (VHD) 中新增或移除功能檔案，以建立可重製的「功能隨選安裝」設定複本。
+[功能隨選安裝] 是 Windows 8 和 Windows Server 2012 中引進的功能，可讓您從作業系統中移除角色和功能檔案（有時*稱為功能裝載*）以節省磁碟空間，以及從遠端位置或安裝媒體（而不是從本機電腦）安裝角色和功能。 您可以從執行中的實體或虛擬電腦移除功能檔案。 您也可以在 Windows 映像 (WIM) 檔或離線虛擬硬碟 (VHD) 中新增或移除功能檔案，以建立可重製的「功能隨選安裝」設定複本。
 
 在 [功能隨選安裝] 設定中，當電腦上的功能檔案無法使用時，如果安裝需要這些功能檔案，可以將 Windows Server 2012 R2 或 Windows Server 2012 導向從並存功能存放區（共用資料夾）取得檔案其中包含功能檔案，且可供網路上的電腦使用）、Windows Update，或從安裝媒體。 根據預設，當目標伺服器未提供功能檔案時，[功能隨選安裝] 會依顯示的順序執行下列工作來搜尋遺漏的功能檔案。
 
@@ -44,7 +44,7 @@ ms.locfileid: "71383273"
 
 -   設定 [指定選用之元件安裝和元件修復的相關設定]
 
-本主題涵蓋下列各節。
+本主題包含下列各節。
 
 -   [建立功能檔案或並存存放區](#BKMK_store)
 
@@ -57,9 +57,9 @@ ms.locfileid: "71383273"
 
 #### <a name="to-create-a-feature-file-store"></a>建立功能檔案存放
 
-1.  在網路的伺服器上建立共用資料夾。 例如， *\\ \ network\share\sxs*。
+1.  在網路的伺服器上建立共用資料夾。 例如， *\\\network\share\sxs*。
 
-2.  確認您已在功能存放指派正確的權限。 來源路徑或檔案共用必須將 [**讀取**] 許可權授與**Everyone**群組（基於安全性因素不建議這麼做），或授與您打算安裝之伺服器的電腦帳戶（*網域*\\*SERverNAME*$）使用此功能存放區的功能;授與使用者帳戶存取權是不夠的。
+2.  確認您已在功能存放指派正確的權限。 來源路徑或檔案共用必須將 [**讀取**] 許可權授與**Everyone**群組（基於安全性因素不建議這麼做），或授與您打算使用此功能存放區安裝功能之伺服器的電腦帳戶（*網域*\\*SERverNAME*$）;授與使用者帳戶存取權是不夠的。
 
     您可以在 Windows 桌面上執行下列任一項操作，以存取檔案共用和權限設定。
 
@@ -75,7 +75,7 @@ ms.locfileid: "71383273"
 ## <a name="BKMK_methods"></a>移除功能檔案的方法
 在「功能隨選安裝」設定中，有兩種方法可以從 Windows Server 移除功能檔案。
 
--   @No__t-1 Cmdlet 的 `remove` 參數可讓您從執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器或離線虛擬硬碟（VHD）刪除功能檔案。 @No__t-0 參數的有效值為角色、角色服務和功能的名稱。
+-   `Uninstall-WindowsFeature` Cmdlet 的 `remove` 參數可讓您從執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器或離線虛擬硬碟（VHD）刪除功能檔案。 `remove` 參數的有效值為角色、角色服務和功能的名稱。
 
 -   部署映像服務與管理 (DISM) 命令可讓您建立自訂 WIM 檔，藉由省略不需要或是可以從其他遠端來源取得的功能檔案來節省磁碟空間。 如需有關使用 DISM 準備自訂映像的詳細資訊，請參閱 [如何啟用或停用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)。
 
@@ -104,13 +104,13 @@ ms.locfileid: "71383273"
     Uninstall-WindowsFeature -Name <feature_name> -computerName <computer_name> -remove
     ```
 
-    **範例:** 「遠端桌面授權」是遠端桌面服務最後剩下要安裝的角色服務。 命令會解除安裝遠端桌面授權，然後從指定的伺服器 *contoso_1* 刪除整個遠端桌面服務角色的功能檔案。
+    **範例：** 遠端桌面授權是遠端桌面服務保留安裝的最後一項角色服務。 命令會解除安裝遠端桌面授權，然後從指定的伺服器 *contoso_1* 刪除整個遠端桌面服務角色的功能檔案。
 
     ```
     Uninstall-WindowsFeature -Name rdS-Licensing -computerName contoso_1 -remove
     ```
 
-    **範例:** 在下列範例中，命令會從離線 VHD 移除 active directory 網域服務和群組原則管理。 角色和功能會最先解除安裝，然後其功能檔案會從離線 VHD *Contoso.vhd* 整個移除。
+    **範例：** 在下列範例中，命令會從離線 VHD 移除 active directory 網域服務和群組原則管理。 角色和功能會最先解除安裝，然後其功能檔案會從離線 VHD *Contoso.vhd* 整個移除。
 
     > [!NOTE]
     > 如果您是從執行 Windows 8.1 或 Windows 8 的電腦執行 Cmdlet，則必須新增 `computerName` 參數。
@@ -121,8 +121,10 @@ ms.locfileid: "71383273"
     Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -VHD C:\WS2012VHDs\Contoso.vhd -computerName ContosoDC1
     ```
 
-## <a name="see-also"></a>另請參閱
-[安裝或卸載角色、角色服務或功能](install-or-uninstall-roles-role-services-or-features.md)@no__t 1[Windows Server 安裝選項](https://technet.microsoft.com/library/hh831786.aspx)
-[如何啟用或停用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)@no__t 5[部署映射服務與管理（DISM）總覽](https://technet.microsoft.com/library/hh825236.aspx)
+## <a name="see-also"></a>請參閱
+[安裝或卸載角色、角色服務或功能](install-or-uninstall-roles-role-services-or-features.md)
+[Windows Server 安裝選項](https://technet.microsoft.com/library/hh831786.aspx)
+[如何啟用或停用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)
+[部署映射服務與管理（DISM）總覽](https://technet.microsoft.com/library/hh825236.aspx)
 
 

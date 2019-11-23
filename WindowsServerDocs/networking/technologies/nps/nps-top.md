@@ -18,7 +18,7 @@ ms.locfileid: "71396012"
 ---
 # <a name="network-policy-server-nps"></a>網路原則伺服器 (NPS)
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2019
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2019
 
 您可以使用本主題，以瞭解 Windows Server 2016 和 Windows Server 2019 中的網路原則伺服器。 當您在 Windows Server 2016 和伺服器2019中安裝網路原則與存取服務（NPAS）功能時，會安裝 NPS。
 
@@ -45,7 +45,7 @@ NPS 可讓您使用下列功能，集中設定和管理網路存取驗證、授�
 - **RADIUS 帳戶**處理。 您可以設定 NPS 將事件記錄到本機記錄檔或 Microsoft SQL Server 的本機或遠端實例。 如需詳細資訊，請參閱[NPS 記錄](#nps-logging)。
 
 > [!IMPORTANT]
-> 網路存取保護 \(NAP @ no__t-1、健康情況登錄授權單位 \(HRA @ no__t-3 和主機認證授權通訊協定 \(HCAP @ no__t-5 在 Windows Server 2012 R2 中已被取代，且在 Windows Server 2016 中無法使用。 如果您使用 Windows Server 2016 之前的作業系統進行 NAP 部署，就無法將 NAP 部署遷移至 Windows Server 2016。
+> 網路存取保護 \(NAP\)、健康情況登錄授權單位 \(HRA\)和主機認證授權通訊協定 \(HCAP\) 在 Windows Server 2012 R2 中已被取代，且在 Windows Server 2016 中無法使用。 如果您使用 Windows Server 2016 之前的作業系統進行 NAP 部署，就無法將 NAP 部署遷移至 Windows Server 2016。
 
 您可以使用這些功能的任何組合來設定 NPS。 例如，您可以將一個 NPS 設定為 VPN 連線的 RADIUS 伺服器，同時做為 RADIUS proxy，將一些連線要求轉送到遠端 RADIUS 伺服器群組的成員，以便在另一個網域中進行驗證和授權。
 
@@ -68,19 +68,19 @@ NPS 會根據您安裝的 Windows Server 版本提供不同的功能。
 
 ### <a name="radius-server"></a>RADIUS 伺服器
 
-NPS 是 Microsoft 在 Rfc 2865 和2866中，由網際網路工程任務推動小組 \(IETF @ no__t-1 所指定的 RADIUS 標準執行。 做為 RADIUS 伺服器，NPS 會針對許多網路存取類型執行集中式連線驗證、授權和帳戶管理，包括無線、驗證交換器、撥號和虛擬私人網路 \(VPN @ no__t-1 遠端存取，以及路由器對路由器連線。
+NPS 是由網際網路工程任務推動小組在 Rfc 2865 和2866中 \(IETF\) 所指定之 RADIUS 標準的 Microsoft 實施。 做為 RADIUS 伺服器，NPS 會針對許多網路存取類型執行集中式連線驗證、授權和帳戶管理，包括無線、驗證交換器、撥號和虛擬私人網路 \(VPN\) 遠端存取，以及路由器對路由器連線。
 
 > [!NOTE]
 > 如需將 NPS 部署為 RADIUS 伺服器的相關資訊，請參閱[部署網路原則伺服器](nps-deploy.md)。
 
 NPS 可讓您使用一組不同的無線、交換器、遠端存取或 VPN 設備。 您可以將 NPS 與遠端存取服務搭配使用，這可在 Windows Server 2016 中取得。
 
-NPS 會使用 Active Directory Domain Services @no__t 0AD DS @ no__t-1 網域或本機安全性帳戶管理員（SAM）使用者帳戶資料庫來驗證連線嘗試的使用者認證。 當執行 NPS 的伺服器是 AD DS 網域的成員時，NPS 會使用目錄服務做為其使用者帳戶資料庫，而且是單一登入解決方案的一部分。 網路存取控制會使用同一組認證 @no__t 0authenticating 和授權存取網路 @ no__t-1，以及登入 AD DS 網域。
+NPS 會使用 Active Directory Domain Services \(AD DS\) 網域或本機安全性帳戶管理員（SAM）使用者帳戶資料庫來驗證連線嘗試的使用者認證。 當執行 NPS 的伺服器是 AD DS 網域的成員時，NPS 會使用目錄服務做為其使用者帳戶資料庫，而且是單一登入解決方案的一部分。 相同的認證集用於網路存取控制 \(驗證和授權存取網路\) 以及登入 AD DS 網域。
 
 > [!NOTE]
 > NPS 會使用使用者帳戶的撥入內容和網路原則來授權連接。
 
-網際網路服務提供者 \(ISPs @ no__t-1 和維護網路存取的組織，無論使用哪一種網路存取設備，都能從單一管理點管理所有網路存取類型的挑戰。 RADIUS 標準在同質和異類環境中都支援這項功能。 RADIUS 是一種用戶端伺服器通訊協定，可讓網路存取設備（做為 RADIUS 用戶端）提交驗證和帳戶處理要求給 RADIUS 伺服器。
+網際網路服務提供者 \(Isp\) 和維護網路存取的組織，無論使用哪一種網路存取設備，都可以從單一管理點管理所有網路存取類型的挑戰。 RADIUS 標準在同質和異類環境中都支援這項功能。 RADIUS 是一種用戶端伺服器通訊協定，可讓網路存取設備（做為 RADIUS 用戶端）提交驗證和帳戶處理要求給 RADIUS 伺服器。
 
 RADIUS 伺服器具有使用者帳戶資訊的存取權，而且可以檢查網路存取驗證認證。 如果驗證使用者認證並授權連線嘗試，RADIUS 伺服器會根據指定的條件來授權使用者存取，然後在帳戶處理記錄中記錄網路存取連線。 使用 RADIUS 可讓網路存取使用者驗證、授權和帳戶處理資料在集中位置收集及維護，而不是在每部存取伺服器上。
 
@@ -99,7 +99,7 @@ RADIUS 伺服器具有使用者帳戶資訊的存取權，而且可以檢查網�
 
 ### <a name="radius-proxy"></a>RADIUS Proxy
 
-做為 RADIUS proxy，NPS 會將驗證和帳戶處理訊息轉送到 NPS 和其他 RADIUS 伺服器。 您可以使用 NPS 做為 RADIUS proxy，在 RADIUS 用戶端之間提供 RADIUS 訊息的路由 @no__t 0also 稱為網路存取伺服器 @ no__t-1 和 RADIUS 伺服器，以執行連線嘗試的使用者驗證、授權和帳戶處理。 
+做為 RADIUS proxy，NPS 會將驗證和帳戶處理訊息轉送到 NPS 和其他 RADIUS 伺服器。 您可以使用 NPS 做為 RADIUS proxy，在 RADIUS 用戶端之間提供 RADIUS 訊息的路由 \(也稱為網路存取伺服器\) 和 RADIUS 伺服器，以執行連線嘗試的使用者驗證、授權和帳戶處理。 
 
 做為 RADIUS proxy 使用時，NPS 是 RADIUS 存取和帳戶處理訊息流向的中央切換或路由點。 NPS 會在帳戶處理記錄中記錄轉送訊息的資訊。
 
@@ -139,9 +139,9 @@ RADIUS 伺服器具有使用者帳戶資訊的存取權，而且可以檢查網�
 
 **NPS 作為具有遠端帳戶處理伺服器的 RADIUS 伺服器**。 在此範例中，本機 NPS 未設定為執行帳戶處理，而且會修訂預設連線要求原則，以便將 RADIUS 帳戶處理訊息轉送到遠端 RADIUS 伺服器群組中的 NPS 或其他 RADIUS 伺服器。 雖然會轉送帳戶處理訊息，但不會轉送驗證和授權訊息，而且本機 NPS 會針對本機網域和所有信任的網域執行這些功能。
 
-**具有遠端 RADIUS 到 Windows 使用者對應的 NPS**。 在此範例中，NPS 會將驗證要求轉送到遠端 RADIUS 伺服器，並使用本機 Windows 使用者帳戶進行授權，以作為每個個別連線要求的 radius 伺服器和 RADIUS proxy。 此設定的執行方式是將遠端 RADIUS 設定為 Windows 使用者對應屬性，做為連線要求原則的條件。 @no__t 0In 加入時，必須在與遠端使用者帳戶相同名稱的 RADIUS 伺服器本機上建立使用者帳戶，以供遠端 RADIUS 伺服器執行驗證。 \)
+**具有遠端 RADIUS 到 Windows 使用者對應的 NPS**。 在此範例中，NPS 會將驗證要求轉送到遠端 RADIUS 伺服器，並使用本機 Windows 使用者帳戶進行授權，以作為每個個別連線要求的 radius 伺服器和 RADIUS proxy。 此設定的執行方式是將遠端 RADIUS 設定為 Windows 使用者對應屬性，做為連線要求原則的條件。 \(此外，您必須在與遠端使用者帳戶相同名稱的 RADIUS 伺服器本機上建立使用者帳戶，以供遠端 RADIUS 伺服器執行驗證。\)
 
-## <a name="configuration"></a>組態
+## <a name="configuration"></a>設定
 
 若要將 NPS 設定為 RADIUS 伺服器，您可以在 NPS 主控台或伺服器管理員中，使用 [標準設定] 或 [advanced configuration]。 若要將 NPS 設定為 RADIUS proxy，您必須使用 [advanced configuration]。
 

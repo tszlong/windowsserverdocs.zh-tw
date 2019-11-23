@@ -17,9 +17,9 @@ ms.locfileid: "71404262"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>使用 AD FS 預先驗證發佈應用程式
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-@no__t 0This 內容與 Web 應用程式 Proxy 的內部部署版本有關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。 **  
+**此內容與內部部署版本的 Web 應用程式 Proxy 相關。若要在雲端上啟用內部部署應用程式的安全存取，請參閱[Azure AD 應用程式 Proxy 內容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
   
 本主題描述如何使用 Active Directory 同盟服務（AD FS）預先驗證，透過 Web 應用程式 Proxy 發佈應用程式。  
   
@@ -30,7 +30,7 @@ ms.locfileid: "71404262"
 > [!NOTE]  
 > 此驗證流程不適用於使用 Microsoft Store 應用程式的用戶端。  
   
-1.  用戶端裝置會嘗試存取特定資源 URL 上已發佈的 web 應用程式;例如 https://app1.contoso.com/ 。  
+1.  用戶端裝置會嘗試存取特定資源 URL 上已發佈的 web 應用程式;例如 https://app1.contoso.com/。  
   
     資源 URL 是 Web 應用程式 Proxy 用來接聽傳入 HTTPS 要求的公用位址。  
   
@@ -77,7 +77,7 @@ ms.locfileid: "71404262"
   
 發行宣告式應用程式以及從瀏覽器存取應用程式的時候，一般驗證流程如下：  
   
-1.  用戶端會嘗試使用網頁瀏覽器來存取宣告式應用程式;例如， https://appserver.contoso.com/claimapp/ 。  
+1.  用戶端會嘗試使用網頁瀏覽器來存取宣告式應用程式;例如， https://appserver.contoso.com/claimapp/。  
   
 2.  網頁瀏覽器會將 HTTPS 要求傳送至 Web 應用程式 Proxy 伺服器，以將要求重新導向至 AD FS 伺服器。  
   
@@ -115,20 +115,20 @@ ms.locfileid: "71404262"
   
         這個名稱僅用於 [遠端存取管理] 主控台中已發行應用程式的清單中。  
   
-    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://sp.contoso.com/app1/ 。  
+    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://sp.contoso.com/app1/。  
   
     -   在 [外部憑證] 清單中，選取主體涵蓋外部 URL 的憑證。  
   
-    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 時，系統會自動輸入此值，而且只有在後端伺服器 URL 不同時，您才應該變更它。例如， https://sp/app1/ 。  
+    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 時，系統會自動輸入此值，而且只有在後端伺服器 URL 不同時，您才應該變更它。例如， https://sp/app1/。  
   
         > [!NOTE]  
-        > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但無法轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入 https://apps.contoso.com/app1/ 的外部 URL，以及 https://app-server/app1/ 的後端伺服器 URL。 不過，您無法輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/ 的後端伺服器 URL。  
+        > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但無法轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/的後端伺服器 URL。 不過，您不能輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/的後端伺服器 URL。  
   
 7.  在 [確認] 頁面上，檢查設定，然後按一下 [發行]。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
   
 8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -153,7 +153,7 @@ Web 應用程式 Proxy 可以用來發行使用整合式 Windows 驗證的應用
   
 對後端伺服器使用整合式 Windows 驗證時，Web 應用程式 Proxy 與已發行應用程式之間的驗證不是宣告式，而是使用 Kerberos 限制委派來驗證應用程式的使用者。 一般流程如下所述：  
   
-1.  用戶端嘗試使用網頁瀏覽器來存取非宣告式應用程式;例如， https://appserver.contoso.com/nonclaimapp/ 。  
+1.  用戶端嘗試使用網頁瀏覽器來存取非宣告式應用程式;例如， https://appserver.contoso.com/nonclaimapp/。  
   
 2.  網頁瀏覽器會將 HTTPS 要求傳送至 Web 應用程式 Proxy 伺服器，以將要求重新導向至 AD FS 伺服器。  
   
@@ -195,14 +195,14 @@ Web 應用程式 Proxy 可以用來發行使用整合式 Windows 驗證的應用
   
         這個名稱僅用於 [遠端存取管理] 主控台中已發行應用程式的清單中。  
   
-    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://owa.contoso.com/ 。  
+    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://owa.contoso.com/。  
   
     -   在 [外部憑證] 清單中，選取主體涵蓋外部 URL 的憑證。  
   
-    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 時，系統會自動輸入此值，而且只有在後端伺服器 URL 不同時，您才應該變更它。例如， https://owa/ 。  
+    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 時，系統會自動輸入此值，而且只有在後端伺服器 URL 不同時，您才應該變更它。例如， https://owa/。  
   
         > [!NOTE]  
-        > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但無法轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入 https://apps.contoso.com/app1/ 的外部 URL，以及 https://app-server/app1/ 的後端伺服器 URL。 不過，您無法輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/ 的後端伺服器 URL。  
+        > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但無法轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/的後端伺服器 URL。 不過，您不能輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/的後端伺服器 URL。  
   
     -   在 [後端伺服器 SPN] 方塊中，輸入後端伺服器的服務主體名稱，例如，HTTP/owa.contoso.com。  
   
@@ -210,7 +210,7 @@ Web 應用程式 Proxy 可以用來發行使用整合式 Windows 驗證的應用
   
 8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -310,7 +310,7 @@ HTTP Basic 是許多通訊協定所使用的授權通訊協定，可透過您的
   
 8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -403,16 +403,16 @@ Add-WebApplicationProxyApplication
   
         這個名稱僅用於 [遠端存取管理] 主控台中已發行應用程式的清單中。  
   
-    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://server1.contoso.com/app1/ 。  
+    -   在 [外部 URL] 方塊中，輸入這個應用程式的外部 URL，例如 https://server1.contoso.com/app1/。  
   
     -   在 [外部憑證] 清單中，選取主體涵蓋外部 URL 的憑證。  
   
         為了確保您的使用者可以存取您的應用程式，即使他們不想在 URL 中輸入 HTTPS，請選取 [**啟用 HTTP 至 HTTPS**重新導向] 方塊。  
   
-    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 時，系統會自動輸入此值，而且只有在後端伺服器 URL 不同時，您才應該變更它。例如， https://sp/app1/ 。  
+    -   在 [後端伺服器 URL] 方塊中，輸入後端伺服器的 URL。 請注意，當您輸入外部 URL 時，系統會自動輸入此值，而且只有在後端伺服器 URL 不同時，您才應該變更它。例如， https://sp/app1/。  
   
         > [!NOTE]  
-        > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但無法轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入 https://apps.contoso.com/app1/ 的外部 URL，以及 https://app-server/app1/ 的後端伺服器 URL。 不過，您無法輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/ 的後端伺服器 URL。  
+        > Web 應用程式 Proxy 可以轉譯 Url 中的主機名稱，但無法轉譯路徑名稱。 因此，您可以輸入不同的主機名稱，但是必須輸入相同的路徑名稱。 例如，您可以輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/的後端伺服器 URL。 不過，您不能輸入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/的後端伺服器 URL。  
   
 7.  在 [確認] 頁面上，檢查設定，然後按一下 [發行]。 您可以複製 PowerShell 命令來設定其他的已發行應用程式。  
   

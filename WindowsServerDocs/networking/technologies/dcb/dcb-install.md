@@ -15,9 +15,9 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405784"
 ---
-# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安裝資料中心橋接 \(DCB @ no__t-1
+# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安裝資料中心橋接 \(DCB\)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何在 Windows Server 2016 或 Windows 10 中安裝 DCB。
 
@@ -30,8 +30,8 @@ ms.locfileid: "71405784"
 您可以在下列作業系統中使用本指南中的 DCB 命令。
 
 - Windows Server (半年度管道)
-- Windows Server 2016
-- Windows 10 \( 所有版本 @ no__t-1
+- Windows Server 2016
+- Windows 10 \(所有版本\)
 
 下列作業系統包含舊版 DCB，這些版本與 Windows Server 2016 和 Windows 10 的 DCB 檔中所使用的命令不相容。
 
@@ -42,8 +42,8 @@ ms.locfileid: "71405784"
 
 以下是 DCB 的硬體需求清單。
 
-- DCB @ no__t-0capable Ethernet 網路介面卡 @ no__t-1s @ no__t-2 必須安裝在提供 Windows Server 2016 DCB 的電腦上。
-- DCB @ no__t-0capable 硬體交換器必須部署在您的網路上。
+- DCB\-功能的乙太網路介面卡\(s\) 必須安裝在提供 Windows Server 2016 DCB 的電腦上。
+- DCB\-支援的硬體交換器必須部署在您的網路上。
 
 
 ## <a name="install-dcb-in-windows-server-2016"></a>在 Windows Server 2016 中安裝 DCB
@@ -75,13 +75,13 @@ ms.locfileid: "71405784"
 1. 在 DC1 的伺服器管理員中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能精靈] 隨即開啟。
 2. 在 [在您開始前] 中，按 [下一步]。
 3. 在 [選取安裝類型] 中，確定已選取 [角色型或功能型安裝]，然後按 [下一步]。
-4. 在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 [下一步]。
+4. 在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 **\[下一步\]** 。
 5. 在 [選取伺服器角色] 中按 [下一步]。
 6. 在 [**選取功能**] 的 [**功能**] 中，按一下 [**資料中心橋接**]。 隨即會開啟對話方塊，詢問您是否要加入 DCB 必要的功能。 按一下 [**新增功能**]。
 7. 在 [**選取功能**] 中，按 **[下一步]** 。 
 8. 7.In**確認安裝選項**，按一下 **安裝**。 [**安裝進度**] 頁面會在安裝過程中顯示狀態。 出現指示安裝成功的訊息之後，請按一下 [**關閉**]。
 
-### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>將內核偵錯工具設定為允許 QoS \(Optional @ no__t-1
+### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>將內核偵錯工具設定為允許 QoS \(選擇性\)
 
  根據預設，核心偵錯工具會封鎖 NetQos。 不論您用來安裝 DCB 的方法為何，如果您已在電腦上安裝內核偵錯工具，您必須將偵錯工具設定為允許透過執行下列命令來啟用和設定 QoS。
 

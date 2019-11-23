@@ -31,7 +31,7 @@ ms.locfileid: "71358155"
 |具有 Azure AD Premium 的 Azure AD 訂用帳戶 | 啟用內部部署條件式存取的裝置回寫-[免費試用版正常](https://azure.microsoft.com/trial/get-started-active-directory/)  
 |Intune 訂用帳戶|只有適用于裝置合規性案例的 MDM 整合才需要-[免費試用版正常](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
 |Azure AD Connect|2015年11月 QFE 或更新版本。  在[這裡](https://www.microsoft.com/en-us/download/details.aspx?id=47594)取得最新版本。  
-|Windows Server 2016|適用于 AD FS 的組建10586或更新版本  
+|Windows Server 2016|適用于 AD FS 的組建10586或更新版本  
 |Windows Server 2016 Active Directory 架構|需要架構層級85或更高版本。
 |Windows Server 2016 網域控制站|這只是 Hello 企業版金鑰信任部署的必要條件。  您可以在[這裡](https://aka.ms/whfbdocs)找到其他資訊。  
 |Windows 10 用戶端|只有加入上述網域的組建10586或更新版本，才能加入 Windows 10 網域和 Microsoft Passport for Work 案例  
@@ -51,7 +51,7 @@ ms.locfileid: "71358155"
 若要驗證您的架構層級，請執行下列動作：
 
 1.  您可以使用 ADSIEdit 或 LDP，並連接到架構命名內容。  
-2.  使用 ADSIEdit，以滑鼠右鍵按一下 [CN = Schema，CN = Configuration，DC = <domain>，DC = <com>]，然後選取 [屬性]。  Relpace 網域和 com 部分與您的樹系資訊。
+2.  使用 ADSIEdit，以滑鼠右鍵按一下 CN = Schema，CN = Configuration，DC =<domain>，DC =<com> 然後選取 屬性。  Relpace 網域和 com 部分與您的樹系資訊。
 3.  在 [屬性編輯器] 下找到 objectVersion 屬性，它會告訴您您的版本。  
 
 ![ADSI 編輯器](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
@@ -86,7 +86,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
->注意：以下命令需要 Active Directory 系統管理工具，如果您的同盟伺服器也不是網域控制站，請先利用下面的步驟 1 來安裝工具。  否則略過步驟 1。  
+>注意：下列命令需要 Active Directory 的系統管理工具，因此，如果您的同盟伺服器也不是網域控制站，請先使用下列步驟1安裝工具。  否則略過步驟 1。  
 
 1.  執行 **\[新增角色及功能\]** 精靈，然後選取 **\[遠端伺服器管理工具\]**  ->  **\[角色管理工具\]**  ->  **\[AD DS 及 AD LDS 工具\]** -> 選擇 **\[Windows PowerShell 的 Active Directory 模組\]** 及 **\[AD DS 工具\]** 。
 
@@ -98,7 +98,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
 3. 在快顯視窗上，按 [是]。
 
->注意：如果 AD FS 服務已設定要使用 GMSA 帳戶，請依格式「domain\accountname$」輸入帳戶名稱
+>注意：如果您的 AD FS 服務設定為使用 GMSA 帳戶，請以 "domain\accountname $" 格式輸入帳戶名稱
 
 ![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
 
@@ -211,7 +211,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 若要啟用已註冊裝置的自動 MDM 註冊，讓您可以在存取控制原則中使用 isCompliant 宣告，請遵循[此處](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)的步驟。  
 
 ## <a name="troubleshooting"></a>疑難排解  
-1.  如果您收到 `Initialize-ADDeviceRegistration` 的錯誤，抱怨有關已在錯誤狀態中的物件，例如「找不到具有所有必要屬性的 drs 服務物件」，表示您先前已執行 Azure AD Connect powershell 命令，並具有AD DS 中的部分設定。  請嘗試手動刪除 [ **cn = Device Registration configuration，cn = Services，cn = Configuration，DC = &lt;domain @ no__t-2** ] 底下的物件，然後再試一次。  
+1.  如果您在 `Initialize-ADDeviceRegistration` 上發生錯誤，抱怨有關已存在錯誤狀態的物件，例如「找不到具有所有必要屬性的 drs 服務物件」，表示您先前已執行 Azure AD Connect powershell 命令，並在 AD DS 中具有部分設定。  請嘗試手動刪除**CN = Device Registration configuration，cn = Services，cn = Configuration，DC =&lt;網域&gt;** 下的物件，然後再試一次。  
 2.  適用于已加入網域的 Windows 10 用戶端  
     1. 若要確認裝置驗證是否正常運作，請以測試使用者帳戶身分登入加入網域的用戶端。 若要快速觸發布建，請至少一次鎖定並解除鎖定桌面。   
     2. 在 AD DS 物件上檢查 stk 金鑰認證連結的指示（同步處理是否仍然需要執行兩次？）  

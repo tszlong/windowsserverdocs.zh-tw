@@ -21,7 +21,7 @@ ms.locfileid: "71355227"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>管理多個 Active Directory 樹系中的資源
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何使用 IPAM 來管理多個 Active Directory 樹系中的網域控制站、DHCP 伺服器和 DNS 伺服器。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71355227"
 ![設定伺服器探索](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
 
 >[!NOTE]
->針對 Active Directory 跨樹系案例的群組原則 @ no__t-0based 布建，請確定您在 IPAM 伺服器上執行下列 Windows PowerShell Cmdlet，而不是在信任網域 Dc 上執行。 例如，如果您的 IPAM 伺服器已加入樹系 corp.contoso.com，而信任樹系是 fabrikam.com，您可以在 corp.contoso.com 中的 IPAM 伺服器上執行下列 Windows PowerShell Cmdlet，以進行群組原則 @ no__t-0based 布建fabrikam.com 樹系。 若要執行此 Cmdlet，您必須是 fabrikam.com 樹系中 Domain Admins 群組的成員。
+>針對 Active Directory 跨樹系案例的群組原則\-型布建，請確定您在 IPAM 伺服器上執行下列 Windows PowerShell Cmdlet，而不是在信任網域 Dc 上執行。 例如，如果您的 IPAM 伺服器已加入樹系 corp.contoso.com，而信任樹系是 fabrikam.com，您可以在 corp.contoso.com 中的 IPAM 伺服器上執行下列 Windows PowerShell Cmdlet，以在 fabrikam.com 樹系上以群組原則\-為基礎的布建。 若要執行此 Cmdlet，您必須是 fabrikam.com 樹系中 Domain Admins 群組的成員。
 
     
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM

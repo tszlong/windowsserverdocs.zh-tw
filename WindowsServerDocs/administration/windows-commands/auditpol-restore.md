@@ -1,6 +1,6 @@
 ---
 title: auditpol restore
-description: '**Auditpol restore**的 Windows 命令主題-還原系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及與逗號分隔值（CSV）檔案格式一致之檔案中的所有審核選項由/備份選項使用。'
+description: '**Auditpol restore**的 Windows 命令主題-還原系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及與/備份選項所使用之逗號分隔值（CSV）檔案格式一致的檔案中的所有審核選項。'
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -22,7 +22,7 @@ ms.locfileid: "71382406"
 ---
 # <a name="auditpol-restore"></a>auditpol restore
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 針對所有使用者，還原系統稽核原則設定、每個使用者的稽核原則設定，以及與/備份選項所使用之逗號分隔值（CSV）檔案格式一致的檔案中所有的審核選項。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71382406"
 ```
 auditpol /restore /file:<filename>
 ```
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 |參數|描述|
 |-------|--------|
 |/file|指定應該從中還原稽核原則的檔案。 檔案必須已經使用/備份選項建立，或必須與/備份選項所使用的 CSV 檔案格式一致。|

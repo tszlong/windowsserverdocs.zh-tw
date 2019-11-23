@@ -39,7 +39,7 @@ ms.locfileid: "71393786"
 
 ![此圖顯示一個範例環境，其 Redmond 網站中的叢集會以 Bellevue 網站中的叢集複寫](./media/Cluster-to-Cluster-Storage-Replication/SR_ClustertoCluster.png)  
 
-**FIGURE 1：叢集對叢集複寫 @ no__t-0  
+**圖1：叢集對叢集複寫**  
 
 ## <a name="prerequisites"></a>必要條件  
 
@@ -55,7 +55,7 @@ ms.locfileid: "71393786"
 
 這其中許多需求都可以使用 `Test-SRTopology` Cmdlet 來判斷。 如果您至少在一部伺服器上安裝儲存體複本或儲存體複本管理工具功能，便可存取此工具。 只要安裝此 Cmdlet 即可，不需要將儲存體複本設定為使用此工具。 詳細資訊收錄於下列步驟。  
 
-## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>步驟 1:佈建作業系統、功能、角色、儲存體及網路
+## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>步驟 1：佈建作業系統、功能、角色、儲存體及網路
 
 1.  在安裝類型為 Windows Server **（桌面體驗）** 的所有四個伺服器節點上安裝 windows server。 
 
@@ -109,7 +109,7 @@ ms.locfileid: "71393786"
     > -   記錄磁片區預設必須至少為8GB，而且可能會根據記錄需求而更大或更小。
     > -   搭配 NVME 或 SSD 快取使用儲存空間直接存取（儲存空間直接存取）時，您會在設定儲存空間直接存取叢集之間的儲存體複本複寫時看到大於預期的延遲增加。 當您在效能 + 容量設定中使用 NVME 和 SSD，而且沒有 HDD 層或容量層級時，延遲變更的比例會高於您所看到的內容。
 
-    此問題發生的原因是，與較慢的媒體相比，SR 記錄機制內的架構限制與 NVME 的極低延遲結合。 使用儲存空間直接存取儲存空間直接存取快取時，SR 記錄的所有 IO 以及應用程式所有最近的讀取/寫入 IO，都會出現在快取中，而且不會發生在效能或容量層級上。 這表示所有 SR 活動都是在相同的速度媒體上執行-不建議使用此設定（如需記錄建議，請參閱 https://aka.ms/srfaq ）。 
+    此問題發生的原因是，與較慢的媒體相比，SR 記錄機制內的架構限制與 NVME 的極低延遲結合。 使用儲存空間直接存取儲存空間直接存取快取時，SR 記錄的所有 IO 以及應用程式所有最近的讀取/寫入 IO，都會出現在快取中，而且不會發生在效能或容量層級上。 這表示所有 SR 活動都是在相同的速度媒體上執行-不建議使用此設定（請參閱 https://aka.ms/srfaq 記錄建議）。 
 
     搭配 Hdd 使用儲存空間直接存取時，您無法停用或避免快取。 因應措施是，如果只使用 SSD 和 NVME，您可以只設定效能和容量層。 如果使用該設定，而且只將 SR 記錄放在效能層，而只將其服務在容量層上的資料磁片區，您就可以避免上述的高延遲問題。 這種做法可以混合使用更快速且更慢的 Ssd，而且沒有 NVME。
 
@@ -119,7 +119,7 @@ ms.locfileid: "71393786"
 
 1. 請確定每個叢集只能看到該網站的存放裝置機箱，同時已正確設定 SAS 連線。  
 
-2. 遵循[在獨立伺服器上部署儲存空間](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
+2. 遵循**在獨立伺服器上部署儲存空間**中提供的[步驟 1-3](../storage-spaces/deploy-standalone-storage-spaces.md)，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
 
 -   **針對 iSCSI 目標儲存體：**  
 
@@ -135,7 +135,7 @@ ms.locfileid: "71393786"
 
 -   **針對儲存空間直接存取：**  
 
-1. 確定每個叢集只能透過部署儲存空間直接存取看到該網站的存放裝置機箱。 (https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
+1. 確定每個叢集只能透過部署儲存空間直接存取看到該網站的存放裝置機箱。 （ https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
 
 2. 確定 SR 記錄檔磁碟區一定位在最快速的快閃存放裝置，而資料磁碟區位在較慢的高容量存放裝置上。
 
@@ -156,7 +156,7 @@ ms.locfileid: "71393786"
 
    ![此圖顯示複寫拓撲報告結果](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
-## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>步驟 2:設定兩個向外延展檔案伺服器容錯移轉叢集  
+## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>步驟 2：設定兩個向外延展檔案伺服器容錯移轉叢集  
 您現在將建立兩個標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以複寫。 您可以直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦，執行下列所有步驟。  
 
 ### <a name="graphical-method"></a>圖形化方法  
@@ -175,7 +175,7 @@ ms.locfileid: "71393786"
     > [!WARNING]  
     > 如需仲裁設定的詳細資訊，請參閱[設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**見證**設定一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。  
 
-5.  在 **Redmond** 網站中將一部磁碟新增至叢集 CSV。 若要這樣做，在 [存放裝置] 區段的 [磁碟] 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]。  
+5.  在 **Redmond** 網站中將一部磁碟新增至叢集 CSV。 若要這樣做，在 **\[存放裝置\]** 區段的 **\[磁碟\]** 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 **\[新增至叢集共用磁碟區\]** 。  
 
 6.  使用[設定向外延展檔案伺服器](https://technet.microsoft.com/library/hh831718.aspx)中的指示，在兩個叢集上建立叢集向外延展檔案伺服器  
 
@@ -195,7 +195,7 @@ ms.locfileid: "71393786"
     New-Cluster -Name SR-SRVCLUSB -Node SR-SRV03,SR-SRV04 -StaticAddress <your IP here>  
     ```  
 
-3.  在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的每個叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如:  
+3.  在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的每個叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如：  
 
     ```PowerShell  
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
@@ -272,7 +272,7 @@ ms.locfileid: "71393786"
            Number of Bytes Recovered: 68583161856  
            Elapsed Time (seconds): 117  
        ```
-   3. 或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如:
+   3. 或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如：
 
       ```PowerShell
       (Get-SRGroup).Replicas | Select-Object numofbytesremaining
@@ -294,7 +294,7 @@ ms.locfileid: "71393786"
    Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
    ```
    > [!NOTE]
-   > 複寫時，目的地叢集磁碟永遠會顯示為 [線上 (沒有存取權)]。  
+   > 複寫時，目的地叢集磁碟永遠會顯示為 **/[線上 (沒有存取權)/]** 。  
 
 ## <a name="step-4-manage-replication"></a>步驟 4：管理複寫
 
@@ -310,23 +310,23 @@ ms.locfileid: "71393786"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -334,11 +334,11 @@ ms.locfileid: "71393786"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -370,7 +370,7 @@ ms.locfileid: "71393786"
     檢查事件記錄檔，以查看複寫方向變更以及復原模式發生的情況，接著予以調解。 然後寫入 IO 就可以寫入新的來源伺服器所擁有的儲存體。 變更複寫方向，將會在先前的來源電腦上封鎖寫入 IO。  
 
     > [!NOTE]  
-    > 複寫時，目的地叢集磁碟永遠會顯示為 [線上 (沒有存取權)]。  
+    > 複寫時，目的地叢集磁碟永遠會顯示為 **/[線上 (沒有存取權)/]** 。  
 
 4.  若要變更預設 8 GB 的記錄檔大小，請在來源和目的地儲存體複本群組上使用**set-srgroup** 。  
 
@@ -385,13 +385,13 @@ ms.locfileid: "71393786"
     ```  
 
     > [!NOTE]  
-    > 儲存空間複本會卸載目的地磁碟區。 這是原廠設定。
+    > 儲存空間複本會卸載目的地磁碟區。 這是原本設計的做法。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [儲存體複本總覽](storage-replica-overview.md) 
 -   [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)  
 -   [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)  
 -   [儲存體複本：已知問題](storage-replica-known-issues.md)  
--   [儲存體複本：常見問題集](storage-replica-frequently-asked-questions.md)  
+-   [儲存體複本：常見問題](storage-replica-frequently-asked-questions.md)  
 -   [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)  

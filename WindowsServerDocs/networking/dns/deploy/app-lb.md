@@ -17,7 +17,7 @@ ms.locfileid: "71356035"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 原則進行應用程式負載平衡
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何設定 DNS 原則來執行應用程式負載平衡。
 
@@ -48,13 +48,13 @@ Contosogiftservices.com 網站裝載于多個資料中心，每個都有不同�
 
 ### <a name="how-application-load-balancing-works"></a>應用程式負載平衡的運作方式
 
-使用此範例案例設定 DNS 伺服器與應用程式負載平衡的 DNS 原則之後，DNS 伺服器會以西雅圖 Web 服務器位址回應 50% 的時間，這是達拉斯 Web 服務器位址的 25%，而時間的 25%芝加哥 Web 服務器位址。
+使用此範例案例設定 DNS 伺服器與應用程式負載平衡的 DNS 原則之後，DNS 伺服器會以西雅圖 Web 服務器位址回應50% 的時間，這是達拉斯 Web 服務器位址的25%，而時間的25%芝加哥 Web 服務器位址。
 
 因此，針對每四個 DNS 伺服器收到的查詢，它會以西雅圖的兩個回應回應，而每個都適用于達拉斯和芝加哥。
 
 Dns 原則的負載平衡有一個可能的問題，就是 DNS 用戶端和解析程式/LDNS 快取 DNS 記錄，這可能會干擾負載平衡，因為用戶端或解析程式不會傳送查詢到 DNS 伺服器。
 
-您可以使用低時間 @ no__t-0to @ no__t-1Live \(TTL @ no__t-3 值，針對應進行負載平衡的 DNS 記錄，減輕此行為的影響。
+您可以使用低時間\-，針對應負載平衡的 DNS 記錄\-即時 \(TTL\) 值，以減輕此行為的影響。
 
 ### <a name="how-to-configure-application-load-balancing"></a>如何設定應用程式負載平衡
 
@@ -85,9 +85,9 @@ Dns 原則的負載平衡有一個可能的問題，就是 DNS 用戶端和解�
 
 在**SeattleZoneScope**中，您可以使用位於西雅圖資料中心的 IP 位址192.0.0.1 來新增記錄 www.contosogiftservices.com。
 
-在**ChicagoZoneScope**中，您可以使用芝加哥資料中心的 IP 位址182.0.0.1 來新增相同的記錄 \(www. contosogiftservices .com @ no__t-2。
+在**ChicagoZoneScope**中，您可以使用芝加哥資料中心的 IP 位址182.0.0.1 新增相同的記錄 \(www.contosogiftservices.com\)。
 
-同樣地，在**DallasZoneScope**中，您可以在芝加哥資料中心內，新增記錄 \(www. contosogiftservices .com @ no__t-2 與 IP 位址162.0.0.1。
+同樣地，在**DallasZoneScope**中，您可以在芝加哥資料中心內新增記錄 \(www.contosogiftservices.com\) 與 IP 位址162.0.0.1。
 
 您可以使用下列 Windows PowerShell 命令，將記錄新增至區域範圍。
     
@@ -102,12 +102,12 @@ Dns 原則的負載平衡有一個可能的問題，就是 DNS 用戶端和解�
 
 #### <a name="bkmk_policies"></a>建立 DNS 原則
 
-建立分割區（區域範圍）並新增記錄之後，您必須建立可將傳入查詢分散到這些範圍的 DNS 原則，以便將 contosogiftservices.com 的 50% 查詢以 Web 的 IP 位址回應西雅圖資料中心內的伺服器，其餘部分則平均分散于芝加哥和達拉斯的資料中心。
+建立分割區（區域範圍）並新增記錄之後，您必須建立可將傳入查詢分散到這些範圍的 DNS 原則，以便將 contosogiftservices.com 的50% 查詢以 Web 的 IP 位址回應西雅圖資料中心內的伺服器，其餘部分則平均分散于芝加哥和達拉斯的資料中心。
 
 您可以使用下列 Windows PowerShell 命令來建立將應用程式流量平衡到這三個資料中心的 DNS 原則。
 
 >[!NOTE]
->在下面的範例命令中，expression – ZoneScope "SeattleZoneScope，2;ChicagoZoneScope，1;DallasZoneScope，1 "將 DNS 伺服器設定為包含參數組合的陣列 \<ZoneScope @ no__t-1，\<weight @ no__t-3。
+>在下面的範例命令中，expression – ZoneScope "SeattleZoneScope，2;ChicagoZoneScope，1;DallasZoneScope，1 "將 DNS 伺服器設定為包含參數組合的陣列，\<ZoneScope\>，\<權數\>。
     
     Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
     

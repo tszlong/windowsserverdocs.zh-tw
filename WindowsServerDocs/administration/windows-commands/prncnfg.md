@@ -22,7 +22,7 @@ ms.locfileid: "71372145"
 ---
 # <a name="prncnfg"></a>prncnfg
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設定或顯示印表機的設定資訊。
 
@@ -31,26 +31,26 @@ ms.locfileid: "71372145"
 cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <NewprinterName>] [-u <UserName>] [-w <Password>] [-r <PortName>] [-l <Location>] [-h <Sharename>] [-m <Comment>] [-f <SeparatorFileName>] [-y <Datatype>] [-st <starttime>] [-ut <Untiltime>] [-i <DefaultPriority>] [-o <Priority>] [<+|->shared] [<+|->direct] [<+|->hidden] [<+|->published] [<+|->rawonly] [<+|->queued] [<+|->enablebidi] [<+|->keepprintedjobs] [<+|->workoffline] [<+|->enabledevq] [<+|->docompletefirst]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 |參數|描述|
 |-------|--------|
 |-g|顯示印表機的設定資訊。|
 |-t|設定印表機。|
 |-x|重新命名印表機。|
-|-S \<ServerName @ no__t-1|指定裝載您要管理之印表機的遠端電腦名稱稱。 如果您未指定電腦，則會使用本機電腦。|
-|-P \<printerName @ no__t-1|指定您想要管理的印表機名稱。 必要。|
-|-z \<NewprinterName @ no__t-1|指定新的印表機名稱。 需要 **-x**和 **-P**參數。|
-|-u \<UserName @ no__t-1-w \<Password @ no__t-3|指定具有許可權可連接到裝載您要管理之印表機的電腦的帳戶。 目的電腦的本機系統管理員群組的所有成員都具有這些許可權，但也可以將許可權授與給其他使用者。 如果您未指定帳戶，您必須使用具有這些許可權的帳戶登入，命令才能正常執行。|
-|-r \<PortName @ no__t-1|指定印表機連接的埠。 如果這是平行或序列埠，請使用埠的識別碼（例如，LPT1 或 COM1）。 如果這是 TCP/IP 通訊埠，請使用新增埠時所指定的埠名稱。|
-|-l \<Location @ no__t-1|指定印表機位置，例如「複製房間」。|
-|-h \<Sharename @ no__t-1|指定印表機的共用名稱。|
-|-m \<Comment @ no__t-1|指定印表機的批註字串。|
-|-f \<SeparatorFileName @ no__t-1|指定包含 [分隔符號] 頁面上所顯示文字的檔案。|
-|-y \<Datatype @ no__t-1|指定印表機可以接受的資料類型。|
-|-st \<starttime @ no__t-1|設定印表機的可用性有限。 指定印表機可供使用的時間。 如果您在印表機無法使用時將檔傳送至印表機，則會保留檔（多工緩衝處理），直到印表機變成可用為止。 您必須將時間指定為24小時制。 例如，若要指定下午11:00，請輸入**2300**。|
-|-未通過 \<Endtime @ no__t-1|設定印表機的可用性有限。 指定無法再使用印表機的當日時間。 如果您在印表機無法使用時將檔傳送至印表機，則會保留檔（多工緩衝處理），直到印表機變成可用為止。 您必須將時間指定為24小時制。 例如，若要指定下午11:00，請輸入**2300**。|
-|-o \<Priority @ no__t-1|指定多工緩衝處理器用來將列印工作路由到列印佇列的優先權。 優先順序較高的列印佇列會在優先順序較低的任何佇列之前，接收其所有作業。|
-|-i \<DefaultPriority @ no__t-1|指定指派給每個列印工作的預設優先權。|
+|-S \<ServerName\>|指定裝載您要管理之印表機的遠端電腦名稱稱。 如果您未指定電腦，則會使用本機電腦。|
+|-P \<printerName\>|指定您想要管理的印表機名稱。 必要。|
+|-z \<NewprinterName\>|指定新的印表機名稱。 需要 **-x**和 **-P**參數。|
+|-u \<UserName\>-w \<密碼\>|指定具有許可權可連接到裝載您要管理之印表機的電腦的帳戶。 目的電腦的本機系統管理員群組的所有成員都具有這些許可權，但也可以將許可權授與給其他使用者。 如果您未指定帳戶，您必須使用具有這些許可權的帳戶登入，命令才能正常執行。|
+|-r \<PortName\>|指定印表機連接的埠。 如果這是平行或序列埠，請使用埠的識別碼（例如，LPT1 或 COM1）。 如果這是 TCP/IP 通訊埠，請使用新增埠時所指定的埠名稱。|
+|-l \<位置\>|指定印表機位置，例如「複製房間」。|
+|-h \<共用名稱\>|指定印表機的共用名稱。|
+|-m \<批註\>|指定印表機的批註字串。|
+|-f \<SeparatorFileName\>|指定包含 [分隔符號] 頁面上所顯示文字的檔案。|
+|-y \<Datatype\>|指定印表機可以接受的資料類型。|
+|-st \<starttime\>|設定印表機的可用性有限。 指定印表機可供使用的時間。 如果您在印表機無法使用時將檔傳送至印表機，則會保留檔（多工緩衝處理），直到印表機變成可用為止。 您必須將時間指定為24小時制。 例如，若要指定下午11:00，請輸入**2300**。|
+|-未通過 \<Endtime\>|設定印表機的可用性有限。 指定無法再使用印表機的當日時間。 如果您在印表機無法使用時將檔傳送至印表機，則會保留檔（多工緩衝處理），直到印表機變成可用為止。 您必須將時間指定為24小時制。 例如，若要指定下午11:00，請輸入**2300**。|
+|-o \<優先順序\>|指定多工緩衝處理器用來將列印工作路由到列印佇列的優先權。 優先順序較高的列印佇列會在優先順序較低的任何佇列之前，接收其所有作業。|
+|-i \<DefaultPriority\>|指定指派給每個列印工作的預設優先權。|
 |{+&#124;-} 共用|指定此印表機是否會在網路上共用。|
 |{+&#124;-} direct|指定是否要將檔直接傳送至印表機，而不需要進行多工緩衝處理。|
 |{+&#124;-} 已發行|指定此印表機是否應在 active directory 中發佈。 如果您發行印表機，其他使用者可以根據其位置和功能（例如色彩列印和裝訂）來搜尋它。|
@@ -65,14 +65,14 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   **Prncnfg**命令是位於%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prncnfg 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如:
+-   **Prncnfg**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prncnfg 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg
     ```
--   如果您提供的資訊包含空格，請使用引號括住文字（例如，`"computer Name"`）。
+-   如果您提供的資訊包含空格，請使用引號括住文字（例如 `"computer Name"`）。
 
 ## <a name="BKMK_examples"></a>典型
-若要顯示名為 colorprinter_2 之印表機的設定資訊，以及名為 HRServer 的遠端電腦所主控的列印佇列，請輸入：
+若要使用名為 HRServer 的遠端電腦所裝載的列印佇列來顯示名為 colorprinter_2 之印表機的設定資訊，請輸入：
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
 ```

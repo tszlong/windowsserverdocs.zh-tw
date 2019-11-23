@@ -21,7 +21,7 @@ ms.locfileid: "71404635"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>步驟3：設定負載平衡叢集
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 準備好叢集的伺服器之後，請在單一伺服器上設定負載平衡、設定所需的憑證，以及部署叢集。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71404635"
   
 3.  在主控台中間窗格的 [**步驟 2 DirectAccess 伺服器**] 區域中，按一下 [**編輯**]。  
   
-4.  按一下 [**前置**詞設定]。 在 [**首碼**設定] 頁面的 [ **ipv6 首碼指派給 directaccess 用戶端電腦**] 中，輸入子網長度為59的 DirectAccess 用戶端電腦所使用的 ipv6 首碼，例如**2001： db8：1：1000：：/59**。 如果 VPN 也已啟用 IPv6，則會顯示 IPv6 首碼，而子網長度則需要變更為59。 按一下 [下一步]。  
+4.  按一下 [**前置**詞設定]。 在 [**首碼**設定] 頁面的 [ **ipv6 首碼指派給 directaccess 用戶端電腦**] 中，輸入子網長度為59的 DirectAccess 用戶端電腦所使用的 ipv6 首碼，例如**2001： db8：1：1000：：/59**。 如果 VPN 也已啟用 IPv6，則會顯示 IPv6 首碼，而子網長度則需要變更為59。 按一下 **\[下一步\]** 。  
   
 5.  在主控台中間窗格中，按一下 **[完成**]。  
   
@@ -100,7 +100,7 @@ ms.locfileid: "71404635"
     > [!NOTE]  
     > 如果正在使用外部負載平衡，請記下虛擬 Ip，並提供它們作為外部負載平衡器。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -247,7 +247,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 12. 在 [**新增和移除伺服器**] 對話方塊中，按一下 [**關閉**]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -277,7 +277,7 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 7.  在 [**新增和移除伺服器**] 對話方塊中，按一下 [**關閉**]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -298,7 +298,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 4.  在 [**停用負載平衡**] 對話方塊上，按一下 [**關閉**]。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -317,7 +317,7 @@ set-RemoteAccessLoadBalancer -disable
   
 ## <a name="BKMK_Links"></a>另請參閱  
   
--   [步驟 4：驗證叢集 @ no__t-0  
+-   [步驟4：驗證叢集](Step-4-Verify-the-Cluster.md)  
   
 
 

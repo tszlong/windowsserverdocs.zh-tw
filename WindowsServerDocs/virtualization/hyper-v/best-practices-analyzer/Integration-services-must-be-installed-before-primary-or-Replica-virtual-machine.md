@@ -19,16 +19,16 @@ ms.locfileid: "71393586"
 ---
 # <a name="integration-services-must-be-installed-before-primary-or-replica-virtual-machines-can-use-an-alternate-ip-address-after-a-failover"></a>必須先安裝 Integration services，主要或複本虛擬機器才能在容錯移轉之後使用替代的 IP 位址
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71393586"
 *參與複寫的虛擬機器可以設定為在容錯移轉時使用特定的 IP 位址，但只有在虛擬機器的客體作業系統中已安裝整合服務時。*  
   
 ## <a name="impact"></a>影響  
-*In 容錯移轉的事件（已規劃、未計畫或測試），複本虛擬機器將會使用與主要虛擬機器相同的 IP 位址上線。此設定可能會導致連線問題。這會影響下列虛擬機器：*  
+*發生容錯移轉（已規劃、未計畫或測試）時，複本虛擬機器將會使用與主要虛擬機器相同的 IP 位址上線。此設定可能會導致連線問題。這會影響下列虛擬機器：*  
   
-@no__t 0list 的虛擬機器 >  
+\<的虛擬機器清單 >  
   
 ## <a name="resolution"></a>解析度  
 *使用虛擬機器連線，在虛擬機器中安裝整合服務。*  

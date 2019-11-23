@@ -19,7 +19,7 @@ ms.locfileid: "71407568"
 # <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>自訂驗證方法的顯示名稱和描述 
 
 
-若要自訂驗證方法的顯示名稱和描述，您可以使用 `Set-AdfsAuthenticationProviderWebContent` PowerShell Cmdlt。  若要使用此 Cmdlt，您必須先取得您想要自訂的驗證方法的名稱。  作法是使用 `Get-AdfsGlobalAuthenticationPolicy`。  在下面的範例中，我們看到在 [正負號 @ no__t-0in] 頁面上會顯示下列內容：「使用 X.509 憑證登入」。  我們想要為使用者簡化這行文字。  
+若要自訂驗證方法的顯示名稱和描述，您可以使用 `Set-AdfsAuthenticationProviderWebContent` PowerShell Cmdlt。  若要使用此 Cmdlt，您必須先取得您想要自訂的驗證方法的名稱。  作法是使用 `Get-AdfsGlobalAuthenticationPolicy`。  在下面的範例中，我們看到，在頁面的 [登入]\-中顯示下列內容：「使用 x.509 憑證登入」。  我們想要為使用者簡化這行文字。  
   
 ![自訂 displayname](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update1.PNG)  
   

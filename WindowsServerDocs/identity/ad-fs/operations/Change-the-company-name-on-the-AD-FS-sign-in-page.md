@@ -18,7 +18,7 @@ ms.locfileid: "71407730"
 ---
 # <a name="change-the-company-name-on-the-ad-fs-sign-in-page"></a>變更 AD FS 登入頁面上的公司名稱
  
-若要變更 [正負號 @ no__t-0in] 頁面上顯示的公司名稱，請使用下列 Windows PowerShell Cmdlet 和語法。 這個值預設使用安裝期間輸入的 Federation Service 顯示名稱的值來設定。  
+若要變更 [登\-] 頁面上顯示的公司名稱，請使用下列 Windows PowerShell Cmdlet 和語法。 這個值預設使用安裝期間輸入的 Federation Service 顯示名稱的值來設定。  
 
 ![變更名稱](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
   
@@ -27,7 +27,7 @@ ms.locfileid: "71407730"
  
   
 > [!NOTE]  
-> 您也可以使用 Windows PowerShell 整合式腳本環境 \(ISE @ no__t-1 來變更公司名稱。 藉由使用 Windows PowerShell ISE，您可以在 Unicode @ no__t-0compliant 環境中顯示內容。 如需詳細資訊，請參閱 [Windows PowerShell ISE 簡介](https://technet.microsoft.com/library/dd315244.aspx)。  
+> 您也可以使用 Windows PowerShell 整合式腳本環境 \(ISE\) 變更公司名稱。 藉由使用 Windows PowerShell ISE，您可以在 Unicode\-相容的環境中顯示內容。 如需詳細資訊，請參閱 [Windows PowerShell ISE 簡介](https://technet.microsoft.com/library/dd315244.aspx)。  
 
 ## <a name="additional-references"></a>其他參考資料 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)  

@@ -47,18 +47,18 @@ ms.locfileid: "71358756"
 ## <a name="security-tokens"></a>安全性權杖 
  
 新式驗證會使用下列權杖類型： 
-- **id_token**： 由授權伺服器（AD FS）發出並由用戶端使用的 JWT 權杖。 識別碼權杖中的宣告會包含使用者的相關資訊，讓用戶端可以使用它。  
-- **access_token**： 由授權伺服器（AD FS）所發行且預定供資源使用的 JWT 權杖。 此 token 的 ' aud ' 或物件宣告必須符合資源或 Web API 的識別碼。  
-- **refresh_token**： 這是由 AD FS 發出的權杖，供用戶端在需要重新整理 id_token 和 access_token 時使用。 權杖對用戶端而言是不透明的，而且只能由 AD FS 使用。  
+- **id_token**：由授權伺服器（AD FS）發出並由用戶端使用的 JWT 權杖。 識別碼權杖中的宣告會包含使用者的相關資訊，讓用戶端可以使用它。  
+- **access_token**：由授權伺服器（AD FS）所發行且預定供資源使用的 JWT 權杖。 此 token 的 ' aud ' 或物件宣告必須符合資源或 Web API 的識別碼。  
+- **refresh_token**：這是由 AD FS 發出的權杖，供用戶端在需要重新整理 id_token 和 access_token 時使用。 權杖對用戶端而言是不透明的，而且只能由 AD FS 使用。  
 
 ## <a name="scopes"></a>任一 
  
 在 AD FS 中註冊資源時，可以將範圍設定為允許 AD FS 執行特定的動作。 除了設定範圍之外，也必須在要求中傳送範圍值，以執行動作 AD FS。 例如，在資源註冊期間，系統管理員必須將範圍設定為 openid，而應用程式（用戶端）必須在驗證要求中傳送 scope = openid，以 AD FS 發行識別碼權杖。 以下提供 AD FS 中可用範圍的詳細資料 
  
-- aza-如果使用 [適用于訊息代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) and 如果 scope 參數包含範圍 "aza"，伺服器會發出新的主要重新整理權杖，並在回應的 refresh_token 欄位中設定它，以及設定 refresh_token_expires_in 欄位到新主要重新整理權杖的存留期（如果有強制執行）。 
+- aza-如果使用 [適用于訊息代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) 而且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及將 [refresh_token_expires_in] 欄位設定為新主要重新整理權杖的存留期（如果有強制執行）。 
 - openid-允許應用程式要求使用 OpenID Connect 授權通訊協定。 
 - logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整的 PKI 回應。  [這裡](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。
-- user_impersonation-必須有 user_impersonation 範圍，才能成功地向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理程式（OBO）建立多層式應用程式](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
+- user_impersonation-必須有 user_impersonation 範圍，才能成功向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理程式（OBO）建立多層式應用程式](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
 - allatclaims – allatclaims 範圍可讓應用程式要求存取權杖中的宣告，以便在識別碼權杖中新增。   
 - vpn_cert-vpn_cert 範圍可讓應用程式要求 VPN 憑證，其可用來建立使用 EAP-TLS 驗證的 VPN 連線。 這已不再受到支援。 
 - 電子郵件-允許應用程式要求已登入使用者的電子郵件宣告。  
@@ -106,21 +106,21 @@ AD FS 發出的安全性權杖（存取和識別碼權杖）包含宣告或已�
 ## <a name="types-of-libraries"></a>程式庫類型 
   
 有兩種類型的程式庫會與 AD FS 搭配使用： 
-- **用戶端程式庫**:原生用戶端和伺服器應用程式會使用用戶端程式庫來取得存取權杖，以呼叫資源（例如 Web API）。 使用 AD FS 2019 時，Microsoft 驗證程式庫（MSAL）是最新且建議的用戶端程式庫。 Active Directory 驗證程式庫（ADAL）建議用於 AD FS 2016。  
+- **用戶端程式庫**：原生用戶端和伺服器應用程式會使用用戶端程式庫來取得存取權杖，以呼叫資源（例如 Web API）。 使用 AD FS 2019 時，Microsoft 驗證程式庫（MSAL）是最新且建議的用戶端程式庫。 Active Directory 驗證程式庫（ADAL）建議用於 AD FS 2016。  
 
-- **伺服器中介軟體程式庫**:Web apps 會使用伺服器中介軟體程式庫進行使用者登入。 Web Api 會使用伺服器中介軟體程式庫來驗證原生用戶端或其他伺服器所傳送的權杖。 OWIN （Open Web Interface for .NET）是建議的中介軟體程式庫。 
+- **伺服器中介軟體程式庫**： Web 應用程式會使用伺服器中介軟體程式庫進行使用者登入。 Web Api 會使用伺服器中介軟體程式庫來驗證原生用戶端或其他伺服器所傳送的權杖。 OWIN （Open Web Interface for .NET）是建議的中介軟體程式庫。 
 
 ## <a name="customize-id-token-additional-claims-in-id-token"></a>自訂識別碼權杖（識別碼權杖中的其他宣告）
  
 在某些情況下，Web 應用程式（用戶端）可能會需要識別碼權杖中的其他宣告，以協助此功能。 您可以使用下列其中一個選項來達成此目的。 
 
-**選項 1：** 當使用公用用戶端，且 web 應用程式沒有嘗試存取的資源時，應該使用。 此選項需要 
+**選項1：** 當使用公用用戶端，且 web 應用程式沒有嘗試存取的資源時，應該使用。 此選項需要 
 1.  response_mode 設定為 form_post 
 2.  信賴憑證者識別碼（Web API 識別碼）與用戶端識別碼相同
 
 ![AD FS 自訂權杖選項1](media/adfs-modern-auth-concepts/option1.png)
 
-**選項 2：** 當 web 應用程式具有其嘗試存取的資源，而且需要透過識別碼權杖傳遞其他宣告時，應該使用。 公用和機密用戶端都可以使用。 此選項需要 
+**選項2：** 當 web 應用程式具有其嘗試存取的資源，而且需要透過識別碼權杖傳遞其他宣告時，應該使用。 公用和機密用戶端都可以使用。 此選項需要 
 1.  response_mode 設定為 form_post 
 2.  KB4019472 安裝在您的 AD FS 伺服器上 
 3.  指派給用戶端– RP 配對的範圍 allatclaims。 如下列範例所示，您可以使用 ADFSApplicationPermission （使用已授與一次的 AdfsApplicationPermission） PowerShell Cmdlet 來指派範圍。 

@@ -18,7 +18,7 @@ ms.locfileid: "71355499"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>對 Windows Server 軟體定義網路堆疊進行疑難排解
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本指南會檢查常見的軟體定義網路（SDN）錯誤和失敗案例，並概述利用可用診斷工具的疑難排解工作流程。  
 
@@ -67,7 +67,7 @@ Import-Module hnvdiagnostics
 ### <a name="hyper-v-host-diagnostics"></a>Hyper-v 主機診斷  
 這些 Cmdlet 記載于 TechNet 上的[Hyper-v 網路虛擬化（HNV）診斷 Cmdlet 主題](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)。 它們有助於找出租使用者虛擬機器（東部/西部）之間的資料路徑問題，以及透過 SLB VIP （北/南部）輸入流量的方式。 
 
-_Debug-VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _ProviderAddress_、 _get-VMNetworkAdapterPortId_、 _get-VMSwitchExternalPortId_和_測試 EncapOverheadSettings_是所有可以從任何 hyper-v 主機執行的本機測試。 其他 Cmdlet 會透過網路控制卡叫用資料路徑測試，因此需要存取網路控制站，如上述 descried 所示。
+_VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _ProviderAddress_、 _get-VMNetworkAdapterPortId_、VMSwitchExternalPortId 和 EncapOverheadSettings_等都_是可以從任何 hyper-v 主機執行的本機測試（ _Test_ ）。 其他 Cmdlet 會透過網路控制卡叫用資料路徑測試，因此需要存取網路控制站，如上述 descried 所示。
 
 ### <a name="github"></a>GitHub
 [Microsoft/SDN GitHub](https://github.com/microsoft/sdn)存放庫有數個範例腳本和工作流程，建置於這些內建 Cmdlet 之上。 特別是，您可以在 [[診斷](https://github.com/Microsoft/sdn/diagnostics)] 資料夾中找到診斷腳本。 請透過提交提取要求，協助我們參與這些腳本。
@@ -121,9 +121,9 @@ Message:          Host is not Connected.
 下表根據觀察到的設定狀態，顯示要採取的錯誤碼、訊息和後續動作的清單。
 
 
-| **錯誤碼**| **Message**| **動作**|  
+| **錯誤碼**| **消息**| **動作**|  
 |--------|-----------|----------|  
-| 不明| 未知的錯誤| |  
+| Unknown| 未知的錯誤| |  
 | HostUnreachable                       | 無法連線到主機電腦 | 檢查網路控制站與主機之間的管理網路連線能力 |  
 | PAIpAddressExhausted                  | 已耗盡的 PA Ip 位址 | 增加 HNV 提供者邏輯子網的 IP 集區大小 |  
 | PAMacAddressExhausted                 | 已耗盡的 PA Mac 位址 | 增加 Mac 集區範圍 |  
@@ -168,7 +168,7 @@ netstat -anp tcp |findstr 6640
   TCP    10.127.132.153:50023   10.127.132.211:6640    ESTABLISHED
 ```
 #### <a name="check-host-agent-services"></a>檢查主機代理程式服務
-網路控制站會與 Hyper-v 主機上的兩個主機代理程式服務通訊：SLB 主機代理程式和 NC 主機代理程式。 其中一個或兩個服務都有可能不在執行中。 檢查其狀態並重新啟動（如果它們不在執行中）。
+網路控制站會與 Hyper-v 主機上的兩個主機代理程式服務通訊： SLB 主機代理程式和 NC 主機代理程式。 其中一個或兩個服務都有可能不在執行中。 檢查其狀態並重新啟動（如果它們不在執行中）。
 
 ```none
 Get-Service SlbHostAgent
@@ -237,7 +237,7 @@ Properties       : Microsoft.Windows.NetworkController.ServerProperties
 *補救*如果使用 SDNExpress 腳本或手動部署，請更新登錄中的 HostId 金鑰，以符合伺服器資源的實例識別碼。 如果您使用 VMM，請在 Hyper-v 主機（實體伺服器）上重新開機網路控制站主機代理程式，並從 VMM 刪除 Hyper-v 伺服器，並移除 HostId 登錄機碼。 然後，透過 VMM 重新新增伺服器。
 
 
-請檢查 hyper-v 主機（NC 主機代理程式服務）與網路控制站節點之間（SouthBound）通訊所使用的 x.509 憑證指紋（主機名稱將是證書的主體名稱）是否相同。 另請檢查網路控制站的 REST 憑證是否具有*CN = <FQDN or IP>* 的主體名稱。
+請檢查 hyper-v 主機（NC 主機代理程式服務）與網路控制站節點之間（SouthBound）通訊所使用的 x.509 憑證指紋（主機名稱將是證書的主體名稱）是否相同。 另請檢查網路控制站的 REST 憑證是否具有*CN =<FQDN or IP>* 的主體名稱。
 
 ```  
 # On Hyper-V Host
@@ -597,7 +597,7 @@ PA 路由資訊：
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
 
- <snip> ...
+ <snip> 。
 
 4. 出租檢查虛擬子網或 VM 網路介面上未指定任何分散式防火牆原則，這會封鎖流量。    
 
@@ -608,10 +608,10 @@ PA 路由資訊：
 
 # <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>查看參考此 ACL 的 IP 設定和虛擬子網
 
-1. Hoster.config在兩部裝載有問題的租使用者虛擬機器的 Hyper-v 主機上執行 ``Get-ProviderAddress``，然後從 Hyper-v 主機執行 ``Test-LogicalNetworkConnection`` 或 @no__t 2，以驗證 HNV 提供者邏輯網路上的連線能力
-2.  Hoster.config請確定 hyper-v 主機上的 MTU 設定是否正確，以及 Hyper-v 主機之間的任何第2層切換裝置。 在有問題的所有 Hyper-v 主機上執行 ``Test-EncapOverheadValue``。 此外，請檢查中的所有第2層交換器是否將 MTU 設定為至少1674個位元組，以考慮160個位元組的最大額外負荷。  
+1. Hoster.config在兩部裝載有兩個租使用者虛擬機器的 Hyper-v 主機上執行 ``Get-ProviderAddress``，然後從 Hyper-v 主機執行 ``Test-LogicalNetworkConnection`` 或 ``ping -c <compartment>``，以驗證 HNV 提供者邏輯網路上的連線能力
+2.  Hoster.config請確定 hyper-v 主機上的 MTU 設定是否正確，以及 Hyper-v 主機之間的任何第2層切換裝置。 在所有有問題的 Hyper-v 主機上執行 ``Test-EncapOverheadValue``。 此外，請檢查中的所有第2層交換器是否將 MTU 設定為至少1674個位元組，以考慮160個位元組的最大額外負荷。  
 3.  Hoster.config如果 PA IP 位址不存在，且/或 CA 連線中斷，請檢查以確定已收到網路原則。 執行 ``Get-PACAMapping``，以查看建立重迭虛擬網路所需的封裝規則和 CA PA 對應是否已正確建立。  
-4.  Hoster.config檢查網路控制站主機代理程式是否已連線到網路控制站。 執行 ``netstat -anp tcp |findstr 6640``，查看是否有   
+4.  Hoster.config檢查網路控制站主機代理程式是否已連線到網路控制站。 執行 ``netstat -anp tcp |findstr 6640`` 以查看   
 5.  Hoster.config檢查 HKLM/中的主機識別碼是否符合裝載租使用者虛擬機器之伺服器資源的實例識別碼。  
 6. Hoster.config檢查通訊埠設定檔識別碼是否符合租使用者虛擬機器之 VM 網路介面的實例識別碼。  
 
@@ -640,8 +640,8 @@ PA 路由資訊：
 您可以使用 ``Set-NetworkControllerDiagnostic`` Cmdlet 隨時變更記錄設定。 可以變更下列設定：
 
 - **集中式記錄位置**。  您可以使用 ``DiagnosticLogLocation`` 參數來變更儲存所有記錄檔的位置。  
-- **存取記錄位置的認證**。  您可以使用 ``LogLocationCredential`` 參數來變更認證以存取記錄位置。  
-- **移至本機記錄**。  如果您已提供集中位置來儲存記錄，您可以使用 ``UseLocalLogLocation`` 參數（不建議使用，因為磁碟空間需求很大），在網路控制站節點上以本機方式登入。  
+- **存取記錄位置的認證**。  您可以使用 ``LogLocationCredential`` 參數，變更認證以存取記錄位置。  
+- **移至本機記錄**。  如果您已提供集中位置來儲存記錄檔，您可以使用 ``UseLocalLogLocation`` 參數（不建議因為大型磁碟空間需求），在網路控制站節點上以本機方式登入。  
 - **記錄範圍**。  根據預設，系統會收集所有記錄。 您可以變更範圍，只收集網路控制站叢集記錄。  
 - **記錄層級**。  預設記錄層級為 [資訊]。 您可以將它變更為 [錯誤]、[警告] 或 [詳細資訊]。  
 - **記錄檔過時時間**。  記錄會以迴圈方式儲存。 根據預設，您會有3天的記錄資料，不論您是使用本機記錄還是集中式記錄。 您可以使用**LogTimeLimitInDays**參數來變更此時間限制。  
@@ -668,12 +668,12 @@ VMM 部署預設會針對網路控制卡使用集中式記錄。 部署網路控
 
 #### <a name="slbm-fabric-errors-hosting-service-provider-actions"></a>SLBM Fabric 錯誤（主機服務提供者動作）
 
-1.  檢查軟體 Load Balancer 管理員（SLBM）是否正常運作，以及協調流程層可以彼此溝通：SLBM-> SLB Mux 和 SLBM > SLB 主機代理程式。 從任何可存取網路控制站 REST 端點的節點執行[DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) 。  
+1.  檢查軟體 Load Balancer 管理員（SLBM）是否正常運作，以及協調流程層可以彼此溝通： SLBM > SLB Mux 和 SLBM > SLB 主機代理程式。 從任何可存取網路控制站 REST 端點的節點執行[DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) 。  
 2.  在其中一個網路控制站節點 Vm （最好是主要網路控制站節點-NetworkControllerReplica）上驗證 PerfMon 中的*SDNSLBMPerfCounters* ：
     1.  Load Balancer （LB）引擎是否已連線到 SLBM？ （*SLBM LBEngine 設定總計*> 0）  
     2.  SLBM 至少會知道自己的端點嗎？ （*VIP 端點總計*> = 2）  
     3.  Hyper-v （DIP）主機是否連線到 SLBM？ （*已連線的 HP 用戶端*= = num 部伺服器）   
-    4.  SLBM 是否已連線至 Mux？ （*Mux 已連線* == *mux 在 SLBM* == *mux 報告狀況良好*= # SLB mux vm）。  
+    4.  SLBM 是否已連線至 Mux？ （*Mux Connected* == *mux 在 SLBM* == *mux 報告狀況*良好 = # SLB mux vm）。  
 3.  請確定設定的 BGP 路由器已成功與 SLB MUX 對等互連  
     1.  如果搭配使用 RRAS 與遠端存取（亦即 BGP 虛擬機器）：  
         1.  Bgp 應該會顯示 [已連線]  
@@ -682,8 +682,8 @@ VMM 部署預設會針對網路控制卡使用集中式記錄。 部署網路控
         1.  例如： # show bgp 實例  
 4.  在 SLB Mux VM 上驗證 PerfMon 中的*SlbMuxPerfCounters*和*SLBMUX*計數器
 5.  檢查軟體 Load Balancer 管理員資源中的設定狀態和 VIP 範圍  
-    1.  NetworkControllerLoadBalancerConfiguration-ConnectionUri < HTTPs：//<FQDN or IP> |convertto-html-json-深度8（檢查 IP 集區中的 VIP 範圍，並確保 SLBM 自我 VIP （*LoadBalanacerManagerIPAddress*）和任何租使用者對應的 vip 都在這些範圍內）  
-        1. NetworkControllerIpPool-NetworkId "< 公用/私用 VIP 邏輯網路資源識別碼 >"-SubnetId "< 公用/私人 VIP 邏輯子網資源識別碼 >"-ResourceId "<IP Pool Resource Id>"-ConnectionUri $uri | convertto-html-json-深度8 
+    1.  NetworkControllerLoadBalancerConfiguration-ConnectionUri < HTTPs：//<FQDN or IP>|convertto-html-json-深度8（檢查 IP 集區中的 VIP 範圍，並確保 SLBM 自我 VIP （*LoadBalanacerManagerIPAddress*）和任何租使用者對應的 vip 都在這些範圍內）  
+        1. NetworkControllerIpPool-NetworkId "< 公用/私人 VIP 邏輯網路資源識別碼 >"-SubnetId "< 公用/私人 VIP 邏輯子網資源識別碼 >"-ResourceId "<IP Pool Resource Id>"-ConnectionUri $uri | convertto-html-json-深度8 
     2.  Debug-NetworkControllerConfigurationState-  
 
 如果上述任何檢查失敗，則租使用者 SLB 狀態也會處於失敗模式。  

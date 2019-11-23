@@ -17,18 +17,18 @@ ms.locfileid: "71405941"
 ---
 # <a name="network-controller-high-availability"></a>網路控制卡高可用性
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-您可以使用本主題來瞭解網路控制卡的高可用性和擴充性設定，以取得軟體定義的網路 \(SDN @ no__t-1。
+您可以使用本主題來瞭解網路控制卡的高可用性和擴充性設定，用於軟體定義的網路 \(SDN\)。
 
-當您在資料中心部署 SDN 時，您可以使用網路控制站來集中部署、監視和管理許多網路元素，包括 RAS 閘道、軟體負載平衡器、租使用者通訊的虛擬網路原則、資料中心防火牆原則、服務品質 @no__t-SDN 原則的 0QoS @ no__t-1、混合式網路原則等等。
+當您在資料中心部署 SDN 時，您可以使用網路控制站來集中部署、監視和管理許多網路元素，包括 RAS 閘道、軟體負載平衡器、租使用者通訊的虛擬網路原則、資料中心防火牆原則、SDN 原則的服務品質 \(QoS\)、混合式網路原則等等。
 
 因為網路控制站是 SDN 管理的基石，所以網路控制站部署必須提供高可用性，而且能夠輕鬆地相應增加或相應減少網路控制站節點與您的資料中心需求，這是很重要的。
 
 雖然您可以將網路控制站部署為單一機器叢集，但若要取得高可用性和容錯移轉，您必須在至少有三部電腦的多個電腦叢集中部署網路控制站。
 
 >[!NOTE]
->您可以將網路控制站部署在伺服器電腦或虛擬機器上，@no__t 0VMs @ no__t-1 （執行 Windows Server 2016 Datacenter edition）。 如果您在 Vm 上部署網路控制站，Vm 必須在同時執行 Datacenter edition 的 Hyper-v 主機上執行。 網路控制卡無法在 Windows Server 2016 Standard edition 上使用。
+>您可以在伺服器電腦或虛擬機器上，部署執行 Windows Server 2016 Datacenter edition \(Vm\) 上的網路控制站。 如果您在 Vm 上部署網路控制站，Vm 必須在同時執行 Datacenter edition 的 Hyper-v 主機上執行。 網路控制卡無法在 Windows Server 2016 Standard edition 上使用。
 
 ## <a name="network-controller-as-a-service-fabric-application"></a>做為 Service Fabric 應用程式的網路控制站
 
@@ -45,7 +45,7 @@ ms.locfileid: "71405941"
 
 每個 Service Fabric 服務都有一個主要複本和兩個次要複本。 主要服務複本會處理要求，而兩個次要服務複本會在主要複本已停用或因為某些原因而無法使用的情況下，提供高可用性。
 
-下圖說明網路控制卡 Service Fabric 具有五部機器的叢集。 四個服務會散佈在五部電腦上：防火牆服務、閘道服務、軟體負載平衡 \(SLB @ no__t-1 服務，以及虛擬網路 \(Vnet @ no__t-3 服務。  這四項服務中的每一個都包含一個主要服務複本和兩個次要服務複本。
+下圖說明網路控制卡 Service Fabric 具有五部機器的叢集。 四個服務會散佈在五部電腦上：防火牆服務、閘道服務、軟體負載平衡 \(SLB\) 服務，以及虛擬網路 \(Vnet\) 服務。  這四項服務中的每一個都包含一個主要服務複本和兩個次要服務複本。
 
 ![網路控制卡 Service Fabric 叢集](../../../media/Network-Controller-HA/Network-Controller-HA.jpg)
 
@@ -62,11 +62,11 @@ ms.locfileid: "71405941"
 
 ### <a name="persistent-storage"></a>持續性儲存體
 
-網路控制卡應用程式的設定和狀態有大型的儲存需求。 應用程式也必須可在已規劃和未計畫的中斷之間使用。 基於此目的，Service Fabric 會提供索引鍵/值存放區 \(KVS @ no__t-1，也就是複寫、交易式和保存的存放區。
+網路控制卡應用程式的設定和狀態有大型的儲存需求。 應用程式也必須可在已規劃和未計畫的中斷之間使用。 基於此目的，Service Fabric 會提供索引鍵/值存放區 \(KVS\)，也就是已複寫、交易式和保存的存放區。
 
 ### <a name="modularity"></a>模組
 
-網路控制站的設計具有模組化架構，每個網路服務（例如虛擬網路服務和防火牆服務）都是以個別服務的形式建立 @ no__t-0in。 
+網路控制站的設計具有模組化架構，每個網路服務（例如虛擬網路服務和防火牆服務）都是以個別服務的形式在中建立\-。 
 
 此應用程式架構提供下列優點。
 
@@ -80,7 +80,7 @@ Service Fabric 模組化會使用服務模型架構，將應用程式的開發�
 
 ## <a name="network-controller-deployment-options"></a>網路控制卡部署選項
 
-若要使用 System Center Virtual Machine Manager \(VMM @ no__t-1 來部署網路控制站，請參閱在[VMM 網狀架構中設定 SDN 網路控制](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)站。
+若要使用 System Center Virtual Machine Manager \(VMM\)來部署網路控制站，請參閱在[vmm 網狀架構中設定 SDN 網路控制](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)站。
 
 若要使用腳本部署網路控制站，請參閱[使用腳本部署軟體定義網路基礎結構](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
 

@@ -38,7 +38,7 @@ ms.locfileid: "71405719"
 
     ![C1 屬性](../../media/network-offload-and-optimization/c1-properties.png)
 
-   c. 按一下 [ **advanced** ] 索引標籤以查看 [advanced] 屬性。<p>此清單中的專案會與 @no__t 0 輸出中的專案相互關聯。
+   c. 按一下 [ **advanced** ] 索引標籤以查看 [advanced] 屬性。<p>此清單中的專案會與 `Get-NetAdapterAdvancedProperties` 輸出中的專案相互關聯。
 
    ![Chelsio 網路介面卡屬性](../../media/network-offload-and-optimization/chelsio-network-adapter-properties.png)
 

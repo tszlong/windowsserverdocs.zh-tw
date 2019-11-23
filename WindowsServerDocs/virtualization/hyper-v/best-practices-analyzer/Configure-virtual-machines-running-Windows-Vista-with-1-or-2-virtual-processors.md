@@ -19,16 +19,16 @@ ms.locfileid: "71364929"
 ---
 # <a name="configure-virtual-machines-running-windows-vista-with-1-or-2-virtual-processors"></a>使用1或2個虛擬處理器設定執行 Windows Vista 的虛擬機器
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|組態|  
-|**分類**|Error|  
+|**低於**|設定|  
+|**類別**|錯誤|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71364929"
   
 *Microsoft 不支援下列虛擬機器的設定：*  
   
-@no__t 0list 的虛擬機器名稱 >  
+\<虛擬機器名稱清單 >  
   
 ## <a name="resolution"></a>解析度  
   

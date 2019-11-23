@@ -18,11 +18,11 @@ ms.locfileid: "71407628"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>建立規則允許所有使用者
 
-在 Windows Server 2016 中，您可以使用**存取控制原則**來建立規則，讓所有使用者都能存取信賴憑證者。  在 Windows Server 2012 R2 中，使用 Active Directory 同盟服務 \(AD FS @ no__t-2 中的 [**允許所有使用者**] 規則範本，您可以建立授權規則，讓所有使用者都能存取信賴憑證者。 
+在 Windows Server 2016 中，您可以使用**存取控制原則**來建立規則，讓所有使用者都能存取信賴憑證者。  在 Windows Server 2012 R2 中，使用 Active Directory 同盟服務 \(AD FS\)中的 [**允許所有使用者**] 規則範本，您可以建立授權規則，讓所有使用者都能存取信賴憑證者。 
 
 您可以使用其他授權規則進一步限制存取權。 從同盟服務獲准存取信賴憑證者的使用者，仍可能遭信賴憑證者拒絕服務。  
   
-您可以使用下列程式，利用 AD FS Management snap @ no__t-0in 來建立宣告規則。  
+您可以使用下列程式，利用中的 [AD FS 管理] 嵌入式\-管理單元來建立宣告規則。  
   
 若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。 
 
@@ -43,12 +43,12 @@ ms.locfileid: "71407628"
   
 1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
   
-2.  在主控台樹的 [ **\\AD FS 信任關係\\** ] [信賴憑證者信任] 底下，按一下您要在其中建立此規則的清單中的特定信任。  
+2.  在主控台樹的 [ **AD FS\\信任關係]\\[信賴**憑證者信任] 底下，按一下您要在清單中建立此規則的特定信任。  
 
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。  
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall4.PNG)  
 
-4.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[發佈授權規則**] 索引標籤或 [ \(**委派授權規則**] 索引標籤（根據\)您所需的授權規則類型），然後按一下 [**新增規則]** 以啟動 [**新增授權宣告規則]** 。  
+4.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[發佈授權規則**] 索引標籤或 [**委派授權規則**] 索引標籤，\(根據您所需的授權規則類型\)，然後按一下 [**新增規則**] 來啟動 [**新增授權宣告規則]** 。  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)  
 5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [**允許所有使用者**從清單中]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall6.PNG)    
@@ -59,7 +59,7 @@ ms.locfileid: "71407628"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：建立信賴憑證者信任的宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

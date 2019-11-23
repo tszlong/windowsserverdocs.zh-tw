@@ -22,7 +22,7 @@ ms.locfileid: "71355671"
 ---
 # <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>Windows Server 2016 中 Hyper-v 網路虛擬化的新功能
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明 Windows Server 2016 中新增或變更的 Hyper-v 網路虛擬化（HNV）功能。  
   
@@ -41,7 +41,7 @@ HNV 是 Microsoft 更新過的軟體定義網路（SDN）解決方案的基礎�
   
 Microsoft 的新網路控制站會使用 Open vSwitch 資料庫管理通訊協定（OVSDB）做為 SouthBound 介面（為），將 HNV 原則推送至每部主機上執行的主機代理程式。 主機代理程式會使用[VTEP 架構](https://github.com/openvswitch/ovs/blob/master/vtep/vtep.ovsschema)的自訂來儲存此原則，並將複雜流程規則程式化至 hyper-v 交換器中的高效能流程引擎。  
   
-Hyper-v 交換器內的流程引擎與 Microsoft Azure @ no__t-0 中使用的引擎相同，其已在 Microsoft Azure 公用雲端中以超大規模證明。 此外，整個 SDN 堆疊透過網路控制站和網路資源提供者（即將推出的詳細資料）與 Microsoft Azure 一致，因此將 Microsoft Azure 公用雲端的威力帶入我們的企業和主機服務提供者客戶。  
+Hyper-v 交換器內的流程引擎與 Microsoft Azure&trade;中使用的引擎相同，其已在 Microsoft Azure 公用雲端中以超大規模證明。 此外，整個 SDN 堆疊透過網路控制站和網路資源提供者（即將推出的詳細資料）與 Microsoft Azure 一致，因此將 Microsoft Azure 公用雲端的威力帶入我們的企業和主機服務提供者客戶。  
   
 > [!NOTE]  
 > 如需 OVSDB 的詳細資訊，請參閱[RFC 7047](https://www.rfc-editor.org/info/rfc7047)。  
@@ -59,7 +59,7 @@ Windows Server 2016 包括軟體負載平衡器（SLB），具備虛擬網路流
 ### <a name="L2"></a>相容的 IEEE Ethernet 標頭  
 HNV 會執行正確的 L2 乙太網路標頭，以確保與相依于業界標準通訊協定的協力廠商虛擬和實體設備具有互通性。 Microsoft 會確保所有已傳輸的封包在所有欄位中都有相容的值，以確保此互通性。 此外，實體 L2 網路中的大型框架（MTU > 1780）支援將需要考慮封裝通訊協定（NVGRE、VXLAN）引進的封包額外負荷，同時確保來賓虛擬機器附加至 HNV 虛擬網路維護1514 MTU。  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
   
 -   [Hyper-V 網路虛擬化概觀](hyperv-network-virtualization-overview-windows-server.md)  
   

@@ -17,7 +17,7 @@ ms.locfileid: "71405353"
 ---
 # <a name="verify-configuration-after-nps-changes"></a>在 NPS 變更之後驗證設定
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在 IP 位址或名稱變更為伺服器後，您可以使用本主題來驗證 NPS 設定。
 
@@ -53,7 +53,7 @@ ms.locfileid: "71405353"
 
     a. 按兩下 [ **NPS （本機）** ]，按兩下 [ **radius 用戶端和伺服器**]，按一下 [ **radius 用戶端**]，然後在詳細資料窗格中，按兩下您想要變更的 RADIUS 用戶端。
 
-    b. 在 [RADIUS 用戶端**屬性**] 的 [**位址 \(IP] 或 [DNS @ no__t-3**] 中，輸入 NPS proxy 的新 IP 位址。
+    b. 在 [RADIUS**用戶端**內容] 的 [**位址 \(IP] 或 [DNS\)** ] 中，輸入 NPS proxy 的新 IP 位址。
 
 4. 如果您已設定 NPS proxy 使用 SQL Server 記錄，請確認執行 SQL Server 的電腦與 NPS proxy 之間的連線仍然正常運作。
 

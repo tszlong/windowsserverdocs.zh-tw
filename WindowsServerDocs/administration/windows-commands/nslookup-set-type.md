@@ -22,15 +22,15 @@ ms.locfileid: "71372885"
 ---
 # <a name="nslookup-set-type"></a>nslookup set type
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 變更查詢的資源記錄類型。
 ## <a name="syntax"></a>語法
 ```
 set type=<ResourceRecordtype>
 ```
-## <a name="parameters"></a>參數
-<ResourceRecordtype>指定 DNS 資源記錄類型。 預設的資源記錄類型為。下表列出此命令的有效值。
+## <a name="parameters"></a>Parameters
+<ResourceRecordtype> 指定 DNS 資源記錄類型。 預設的資源記錄類型為。下表列出此命令的有效值。
 
 | 值 |                                                   描述                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
@@ -59,4 +59,4 @@ set type=<ResourceRecordtype>
 - 如需資源記錄類型的詳細資訊，請參閱徵求意見（Rfc）1035。
   ## <a name="additional-references"></a>其他參考
   <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">命令列語法索引鍵</a>
-   <a href="nslookup-set-querytype.md" data-raw-source="[nslookup set querytype](nslookup-set-querytype.md)">nslookup set querytype</a>
+  <a href="nslookup-set-querytype.md" data-raw-source="[nslookup set querytype](nslookup-set-querytype.md)">nslookup set querytype</a>

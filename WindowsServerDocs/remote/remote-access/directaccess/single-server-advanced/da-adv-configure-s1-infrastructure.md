@@ -21,7 +21,7 @@ ms.locfileid: "71404936"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>步驟1設定 Advanced DirectAccess 基礎結構
 
->適用於：Windows Server 2012 R2、Windows Server 2012
+>適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 本主題說明如何針對在混合了 IPv4 和 IPv6 的環境中使用單一 DirectAccess 伺服器的進階「遠端存取」部署，設定所需的基礎結構。 開始部署步驟之前，請確定您已完成[規劃先進的 DirectAccess 部署](../../../remote-access/directaccess/single-server-advanced/Plan-an-Advanced-DirectAccess-Deployment.md)中所述的規劃步驟。  
   
@@ -263,7 +263,7 @@ DirectAccess 伺服器和所有 DirectAccess 用戶端上都必須有電腦憑�
   
 5.  在 [DNS] 對話方塊中，按一下 [確定]，然後按一下 [完成]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -335,7 +335,7 @@ DirectAccess 伺服器和所有 DirectAccess 用戶端電腦都必須加入 Acti
   
 10. 當提示您重新啟動電腦時，請按一下 [立即重新啟動]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -424,11 +424,11 @@ Restart-Computer
   
     10. 在 [掃描備份] 頁面上，按 [下一步]，然後按一下 [完成]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 對等命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
--   若要將網域 "corp.contoso.com" 中的預備用戶端 GPO "DirectAccess Client Settings-預備" 備份到備份檔案夾 "C:\Backups @ no__t-0：  
+-   若要將網域 "corp.contoso.com" 中的預備用戶端 GPO "DirectAccess Client Settings-預備" 備份到備份檔案夾 "C:\Backups\"：  
   
     ```  
     $backup = Backup-GPO "Name 'DirectAccess Client Settings - Staging' "Domain 'corp.contoso.com' "Path 'C:\Backups\'  
@@ -469,7 +469,7 @@ Restart-Computer
   
 6.  在 [選取使用者、連絡人、電腦或服務帳戶] 對話方塊方塊中，選取您要啟用 DirectAccess 的用戶端電腦，然後按一下 [確定]。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
@@ -501,7 +501,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>從內部 CA 安裝網路位置伺服器憑證  
   
-1.  在將裝載網路位置伺服器網站的伺服器：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
+1.  在將裝載網路位置伺服器網站的伺服器上：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
   
 2.  在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
   
@@ -545,9 +545,9 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
     存取 CRL 發佈點時可以透過：  
   
-    -   Web 服務器，方法是使用 HTTP 型 URL，例如： https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
+    -   網頁伺服器，方法是使用 HTTP 型 URL，例如： https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   透過通用命名慣例（UNC）路徑（例如 \\ \ com\crld\corp-APP1-CA.crl）存取的檔案伺服器。  
+    -   透過通用命名慣例（UNC）路徑存取的檔案伺服器，例如 \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl  
   
     如果只有透過 IPv6 才能連線到內部 CRL 發佈點，您就必須設定「具有進階安全性的 Windows 防火牆」連線安全性規則，以免除從內部網路 IPv6 位址到 CRL 發佈點 IPv6 位址的 IPsec 保護。  
   
@@ -555,7 +555,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>下一步  
   
--   [步驟 2：設定進階 DirectAccess 伺服器](da-adv-configure-s2-servers.md)  
+-   [步驟2：設定 Advanced DirectAccess 伺服器](da-adv-configure-s2-servers.md)  
   
 
 

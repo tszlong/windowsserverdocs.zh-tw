@@ -22,7 +22,7 @@ ms.locfileid: "71403302"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全性支援提供者介面架構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 這個適用于 IT 專業人員的參考主題說明安全性支援提供者介面（SSPI）架構中使用的 Windows 驗證通訊協定。
 
@@ -89,9 +89,9 @@ SSPI 是 Windows Server 作業系統中的一般安全性服務 API （GSSAPI）
 
 -   [Microsoft Kerberos （Windows）](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [ @ NO__T-1 毫秒-KILE @ NO__T-2：Kerberos 通訊協定延伸 @ no__t-0
+-   [\[MS KILE\]： Kerberos 通訊協定延伸模組](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [ @ NO__T-1 毫秒-SFU @ NO__T-2：Kerberos 通訊協定延伸：適用于使用者和限制委派通訊協定規格 @ no__t-0 的服務
+-   [\[MS-CHAP\]： Kerberos 通訊協定延伸模組：適用于使用者和限制委派通訊協定規格的服務](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [Kerberos SSP/AP （Windows）](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
@@ -114,13 +114,13 @@ NTLM 安全性支援提供者（NTLM SSP）是一種二進位訊息通訊協定�
 
 -   安全遠端程序呼叫服務或 DCOM 服務
 
-位置：%windir%\Windows\System32\msv1_0.dll
+位置：%windir%\Windows\System32\ msv1_0 .dll
 
 此提供者預設包含在本主題開頭的**適用**物件清單中指定的版本，以及 windows Server 2003 和 windows XP。
 
 **NTLM 通訊協定和 NTLM SSP 的其他資源**
 
--   [MSV1_0 Authentication 封裝（Windows）](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
+-   [MSV1_0 驗證套件（Windows）](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
 
 -   Windows 7 中[NTLM 驗證的變更](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) 
 
@@ -145,7 +145,7 @@ NTLM 安全性支援提供者（NTLM SSP）是一種二進位訊息通訊協定�
 
 -   [Microsoft Digest 驗證（Windows）](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [ @ NO__T-1 毫秒-DPSP @ NO__T-2：摘要式通訊協定擴充功能 @ no__t-0
+-   [\[DPSP\]：摘要式通訊協定延伸](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="BKMK_SchannelSSP"></a>Schannel 安全性支援提供者
 安全通道（Schannel）用於 web 型伺服器驗證，例如當使用者嘗試存取安全的 web 伺服器時。
@@ -183,7 +183,7 @@ TLS 通訊協定、SSL 通訊協定、私人通訊技術（百分比）通訊協
 
 -   [TLS/SSL 技術參考](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [ @ NO__T-1 毫秒-TLSP @ NO__T-2：傳輸層安全性（TLS）設定檔 @ no__t-0
+-   [\[MS TLSP\]：傳輸層安全性（TLS）設定檔](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="BKMK_NegoSSP"></a>Negotiate 安全性支援提供者
 簡單且受保護的 GSS-API 協調機制（SPNEGO）會形成 Negotiate SSP 的基礎，whichcan 可用來協調特定的驗證通訊協定。 當應用程式呼叫 SSPI 來登入網路時，它可以指定 SSP 來處理要求。 如果應用程式指定 Negotiate SSP，它會分析要求，並根據客戶設定的安全性原則，挑選適當的提供者來處理要求。
@@ -200,9 +200,9 @@ SPNEGO 是在 RFC 2478 中指定。
 
 -   [Microsoft Negotiate （Windows）](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [ @ NO__T-1 毫秒-SPNG @ NO__T-2：簡單且受保護的 GSS-API 協調機制（SPNEGO）擴充功能 @ no__t-0
+-   [\[SPNG\]：簡單且受保護的 GSS-API 協調機制（SPNEGO）延伸模組](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [ @ NO__T-1 毫秒-N2HT @ NO__T-2：Negotiate 和 Nego2 HTTP 驗證通訊協定規格 @ no__t-0
+-   [\[MS N2HT\]： Negotiate 和 Nego2 HTTP 驗證通訊協定規格](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="BKMK_CredSSP"></a>認證安全性支援提供者
 認證安全性服務提供者（CredSSP）可在啟動新的終端機服務和遠端桌面服務會話時，提供單一登入（SSO）使用者體驗。 CredSSP 可讓應用程式根據用戶端的原則，將使用者的認證從用戶端電腦（藉由使用用戶端 SSP）委派給目標伺服器（透過伺服器端 SSP）。 CredSSP 原則是使用群組原則進行設定，而且預設會關閉認證的委派。
@@ -213,7 +213,7 @@ SPNEGO 是在 RFC 2478 中指定。
 
 **認證 SSP 的其他資源**
 
--   [ @ NO__T-1 毫秒-CSSP @ NO__T-2：認證安全性支援提供者（CredSSP）通訊協定規格 @ no__t-0
+-   [\[MS CSSP\]：認證安全性支援提供者（CredSSP）通訊協定規格](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [適用于終端機服務登入的認證安全性服務提供者和 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
@@ -284,7 +284,7 @@ Windows SSPI 可以使用任何透過已安裝的安全性支援提供者所支�
 
     -   如果用戶端電腦不支援任何列出的通訊協定，驗證交換就會失敗。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 [Windows 驗證架構](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
 
 

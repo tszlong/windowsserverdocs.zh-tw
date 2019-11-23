@@ -31,7 +31,7 @@ ms.locfileid: "71408225"
 > [!IMPORTANT]
 >  作業系統升級會造成此伺服器上的 AD FS Proxy 設定遺失，且 AD FS 2.0 伺服器角色會被移除。 系統會改為安裝 Windows Server 2012 AD FS 伺服器角色，但未設定。 您必須手動建立原始 AD FS Proxy 設定並還原剩餘的 AD FS Proxy 設定，來完成同盟伺服器 Proxy 移轉。  
   
-4. 請使用 **AD FS 同盟伺服器 Proxy 設定精靈**建立原始 AD FS Proxy 設定。 如需詳細資訊，請參閱 [為電腦設定同盟伺服器 Proxy 角色](configure-a-computer-for-the-federation-server-proxy-role.md)。 當您執行精靈時，請使用您在「準備移轉 AD FS 2.0 同盟伺服器 Proxy」中收集的資訊，如下所示：  
+4. 請使用 **AD FS 同盟伺服器 Proxy 設定精靈**建立原始 AD FS Proxy 設定。 如需詳細資訊，請參閱 [Configure a Computer for the Federation Server Proxy Role](configure-a-computer-for-the-federation-server-proxy-role.md)。 當您執行精靈時，請使用您在「準備移轉 AD FS 2.0 同盟伺服器 Proxy」中收集的資訊，如下所示：  
   
  
 |**同盟伺服器 Proxy Wizard 輸入選項**|**使用下列值**|
@@ -41,7 +41,7 @@ ms.locfileid: "71408225"
 |**HTTP proxy 伺服器位址**|輸入 proxyproperties.txt 檔案中的 ForwardProxyUrl 值|  
 |認證提示|輸入帳戶的認證，且此帳戶必須是 AD FS 同盟伺服器的系統管理員帳戶或 AD FS 同盟服務據以執行的服務帳戶。|  
   
-5. 更新這個伺服器上您的 AD FS 網頁。 如果您在準備同盟伺服器 proxy 以進行遷移時，備份了自訂的 AD FS proxy 網頁，請使用備份資料來覆寫在 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁做為 Windows Server 2012 中 AD FS proxy 設定的結果。  
+5. 更新這個伺服器上您的 AD FS 網頁。 如果您在準備同盟伺服器 proxy 以進行遷移時，備份了自訂的 AD FS proxy 網頁，請使用備份資料來覆寫 **%systemdrive%\inetpub\adfs\ls**目錄中預設建立的預設 AD FS 網頁，做為 Windows server 2012 中 AD FS proxy 設定的結果。  
   
 6. 將此伺服器重新新增至負載平衡器。  
   
@@ -49,8 +49,8 @@ ms.locfileid: "71408225"
   
   
 ## <a name="next-steps"></a>後續步驟
- [準備將 AD FS 2.0 同盟伺服器遷移](prepare-to-migrate-ad-fs-fed-server.md)   
- [準備將 AD FS 2.0 同盟伺服器 Proxy 遷移](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [將 AD FS 2.0 同盟伺服器遷移](migrate-the-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
+ [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)

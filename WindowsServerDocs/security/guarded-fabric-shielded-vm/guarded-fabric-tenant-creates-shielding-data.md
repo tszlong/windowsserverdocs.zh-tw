@@ -17,7 +17,7 @@ ms.locfileid: "71940797"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>受防護的租使用者 Vm-建立防護資料以定義受防護的 VM
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 防護資料檔案 (也稱為佈建資料檔案或 PDK 檔案) 是一種加密檔案，租用戶或 VM 擁有者會建立該檔案以保護重要的 VM 組態資訊，例如系統管理員密碼、RDP 及其他身分識別相關的憑證、網域加入認證等等。 本主題提供如何建立防護資料檔案的相關資訊。 建立檔案之前，您必須從您的主機服務提供者取得範本磁片，或建立範本磁片，如租使用者的[受防護 vm-建立範本磁片（選擇性）](guarded-fabric-tenant-creates-template-disk.md)中所述。
 
@@ -100,7 +100,7 @@ ms.locfileid: "71940797"
     | @Prefix-2-1@        | 10.0.20.0/24         |
     | @NextHop-2-1@       | 10.0.20.1            |
 
-使用替代字串時，請務必確定在 VM 布建程式期間將會填入字串。 如果在部署期間未提供字串（例如 @ProductKey @），將自動安裝檔案中的 &lt;ProductKey @ no__t 2 節點保留空白，則特製化程式將會失敗，而且您將無法連線到您的 VM。
+使用替代字串時，請務必確定在 VM 布建程式期間將會填入字串。 如果在部署期間未提供如 @ProductKey@ 的字串，讓 [&lt;&gt; ProductKey] 自動安裝檔案中的節點保留空白，則特製化程式將會失敗，而且您將無法連線到您的 VM。
 
 此外，請注意，只有在您利用 VMM 靜態 IP 位址池時，才會使用與資料表結尾相對應的網路相關替代字串。 您的主機服務提供者應該能夠告訴您是否需要這些替代字串。 如需 VMM 範本中靜態 IP 位址的詳細資訊，請參閱 VMM 檔中的下列內容：
 
@@ -161,13 +161,13 @@ ms.locfileid: "71940797"
 
 執行 [防護資料檔案嚮導] 以建立防護資料（PDK）檔案。 在這裡，您將新增 RDP 憑證、自動安裝檔案、磁片區簽章目錄、擁有者防護，以及在上一個步驟中取得的下載的守護者中繼資料。
 
-1. 使用伺服器管理員或下列 Windows PowerShell 命令，在您的電腦上安裝**遠端伺服器管理工具 @no__t 1 功能管理工具 @no__t 2 個受防護的 VM 工具**：
+1. 使用伺服器管理員或下列 Windows PowerShell 命令，在您的電腦上安裝**遠端伺服器管理工具 &gt; 功能管理工具 &gt; 受防護的 VM 工具**：
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-2. 從 [開始] 功能表上的 [系統管理員工具] 區段，或藉由執行下列**C： \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**，以開啟 [防護資料檔案]。
+2. 從 開始 功能表上的 系統管理員工具 區段開啟 防護資料檔案，或執行下列**C：\\Windows\\System32\\ShieldingDataFileWizard**。
 
 3. 在第一個頁面上，使用第二個 [檔案選擇] 方塊，為您的防護資料檔案選擇位置和檔案名。 一般來說，您會在擁有以該防護資料（例如，HR、IT、財務）及其執行的工作負載角色（例如，檔案伺服器、網頁伺服器或自動安裝檔案所設定的任何專案）所建立的任何 Vm 的實體之後，將防護資料檔案命名為。 將 [**受防護的範本的資料**] 選項按鈕設定為 [防護資料]。
 
@@ -200,7 +200,7 @@ ms.locfileid: "71940797"
 
 6. 在 [特製**化值**] 頁面上，按一下 **[流覽]** 以選取將用來將您的 vm 特殊化的 unattend.xml 檔案。
 
-    使用底部的 [**新增**] 按鈕，將任何額外的檔案新增至特製化程式期間所需的 PDK。 例如，如果您的自動安裝檔案會將 RDP 憑證安裝到 VM （如[使用 ShieldingDataAnswerFile 函式產生回應](guarded-fabric-sample-unattend-xml-file.md)檔案中所述），您應該新增 RDP 憑證 PFX 檔案和 RDPCertificateConfig。這裡的腳本。 請注意，您在此處指定的任何檔案，都會在建立的 VM 上自動複製到 C： @no__t 0temp @ no__t-1。 當您的自動安裝檔案依路徑參考檔案時，應該會預期該資料夾中的檔案。
+    使用底部的 [**新增**] 按鈕，將任何額外的檔案新增至特製化程式期間所需的 PDK。 例如，如果您的自動安裝檔案會將 RDP 憑證安裝到 VM （如[使用 ShieldingDataAnswerFile 函式產生回應](guarded-fabric-sample-unattend-xml-file.md)檔案中所述），您應該在這裡新增 RDP 憑證 PFX 檔案和 RDPCertificateConfig 腳本。 請注意，您在此處指定的任何檔案，都會自動複製到所建立 VM 上的 C：\\temp\\。 當您的自動安裝檔案依路徑參考檔案時，應該會預期該資料夾中的檔案。
 
 7. 在下一個頁面上檢查您的選擇，然後按一下 [**產生**]。
 
@@ -230,11 +230,11 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 ```
 
 > [!TIP]
-> 如果您使用自我簽署憑證，或向 HGS 註冊的憑證已過期，您可能需要使用 `-AllowUntrustedRoot` 和/或 @no__t 1 旗標搭配 HgsGuardian 命令來略過安全性檢查。
+> 如果您使用自我簽署憑證，或向 HGS 註冊的憑證已過期，您可能需要使用 `-AllowUntrustedRoot` 和/或 `-AllowExpired` 旗標搭配 HgsGuardian 命令來略過安全性檢查。
 
 您也需要為每個要與此防護資料檔案搭配使用的範本磁片[取得磁片](#get-the-volume-signature-catalog-file)區簽章目錄，並針對[防護資料回應](#create-an-answer-file)檔案，讓作業系統能夠自動完成其特製化工作。
 最後，請決定您要讓 VM 受到完全防護或僅 vTPM 啟用。
-針對完全受防護的 VM 使用 `-Policy Shielded`，或 `-Policy EncryptionSupported` 用於允許基本主控台連線和 PowerShell Direct 的已啟用 vTPM 的 VM。
+針對已啟用 vTPM 的 VM，使用適用于完全受防護 VM 或 `-Policy EncryptionSupported` 的 `-Policy Shielded`，以允許基本主控台連線和 PowerShell Direct。
 
 一切就緒後，請執行下列命令來建立您的防護資料檔案：
 
@@ -247,15 +247,15 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 > 如果您使用的是自訂的 RDP 憑證、SSH 金鑰或其他需要隨附于防護資料檔案的檔案，請使用 `-OtherFile` 參數來包含這些檔案。 您可以提供以逗號分隔的檔案路徑清單，例如 `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 在上述命令中，名為 "Owner" 的守護者（從 HgsGuardian 取得）將能夠在未來變更 VM 的安全性設定，而「美國東部資料中心」則可以執行 VM，但不能變更其設定。
-如果您有一個以上的守護者，請使用逗號來分隔監護人的名稱，如 `'EAST-US Datacenter', 'EMEA Datacenter'`。
+如果您有一個以上的守護者，請使用逗號來分隔監護人的名稱，例如 `'EAST-US Datacenter', 'EMEA Datacenter'`。
 磁片區識別碼辨識符號會指定您是否也只信任範本磁片或未來版本（GreaterThanOrEquals）的確切版本（Equals）。
 磁片名稱和簽署憑證必須完全符合，才能在部署階段考慮版本比較。
-您可以藉由將以逗號分隔的磁片區識別碼限定詞清單提供給 `-VolumeIDQualifier` 參數來信任多個範本磁片。
-最後，如果您有其他需要隨附于 VM 之回應檔案的檔案，請使用 `-OtherFile` 參數，並提供檔案路徑的逗號分隔清單。
+您可以藉由將以逗號分隔的磁片區識別碼限定詞清單提供給 `-VolumeIDQualifier` 參數，以信任多個範本磁片。
+最後，如果您有其他需要隨 VM 一起回應檔案的檔案，請使用 `-OtherFile` 參數，並提供以逗號分隔的檔案路徑清單。
 
 請參閱[ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)和[VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)的 Cmdlet 檔，以瞭解設定防護資料檔案的其他方式。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

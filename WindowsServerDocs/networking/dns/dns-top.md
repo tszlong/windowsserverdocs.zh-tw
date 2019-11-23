@@ -17,7 +17,7 @@ ms.locfileid: "71406162"
 ---
 # <a name="domain-name-system-dns"></a>網域名稱系統 (DNS)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 網域名稱系統（DNS）是由 TCP/IP 組成的業界標準通訊協定套件之一，而且 DNS 用戶端和 DNS 伺服器會將電腦名稱稱到 IP 位址對應名稱解析服務提供給電腦和使用者。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71406162"
 > -   [DNS 用戶端的新功能](What-s-New-in-DNS-Client.md)  
 > -   [DNS 伺服器的新功能](What-s-New-in-DNS-Server.md)  
 > -   [DNS 原則案例指南](deploy/DNS-Policy-Scenario-Guide.md)  
-> -   視訊：@no__t 0Windows 伺服器2016：IPAM 中的 DNS 管理 no__t-0  
+> -   影片： [Windows Server 2016： IPAM 中的 DNS 管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
   
 在 Windows Server 2016 中，DNS 是一種伺服器角色，您可以使用伺服器管理員或 Windows PowerShell 命令來安裝它。 如果您要安裝新的 Active Directory 樹系和網域，則會自動安裝 DNS，Active Directory 做為樹系和網域的全域目錄伺服器。  
   

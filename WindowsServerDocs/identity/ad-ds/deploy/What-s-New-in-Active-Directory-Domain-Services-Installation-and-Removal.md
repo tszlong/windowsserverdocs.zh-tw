@@ -18,7 +18,7 @@ ms.locfileid: "71369559"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services 安裝和移除的新功能
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 中的 Active Directory Domain Services （AD DS）部署比舊版 Windows Server 更簡單且更快速。 AD DS 安裝程序現在建置於 Windows PowerShell 上，而且與 [伺服器管理員] 整合。 將網域控制站引入現有 Active Directory 環境所需執行的步驟也減少了。 這樣讓建立新 Active Directory 環境的程序變得更簡單且更有效率。 新的 AD DS 部署程序將可能阻止安裝的錯誤的機率降到最低。  
   
@@ -43,7 +43,7 @@ AD DS 安裝包括下列功能：
 > [!WARNING]  
 > 從 Windows Server 2012 開始，舊版 Active Directory Domain Services 安裝精靈（dcpromo.exe）已淘汰。  
 
-在[安裝 Active Directory Domain Services &#40;層級&#41;100](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 程式會示範如何啟動 [新增角色] 嚮導來安裝 AD DS 伺服器角色二進位檔，然後執行 [Active Directory Domain Services 設定] 嚮導來完成網域控制站安裝。 Windows PowerShell 範例示範如何使用 AD DS 部署 Cmdlet 完成這兩個程序的步驟。  
+在[安裝 Active Directory Domain Services &#40;層級&#41;100](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 程式會示範如何啟動 [新增角色] 嚮導來安裝 AD DS 伺服器角色二進位檔，然後執行 [Active Directory Domain Services 設定] 嚮導以完成網域控制站安裝。 Windows PowerShell 範例示範如何使用 AD DS 部署 Cmdlet 完成這兩個程序的步驟。  
   
 ## <a name="BKMK_NewAdprep"></a>Adprep 整合
 
@@ -114,7 +114,7 @@ AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決�
 - 架構主機可用性檢查：如果安裝精靈判斷需要執行 adprep /forestprep，它會確認架構主機已經連線，否則會失敗。  
 - 基礎結構主機可用性檢查：如果安裝精靈判斷需要執行 adprep /domainprep，它會確認基礎結構主機已經連線，否則會失敗。
 
-從舊版 [Active Directory 安裝精靈]\(dcpromo.exe) 開始執行的其他先決條件檢查包括：  
+從舊版 [Active Directory 安裝精靈] (dcpromo.exe) 開始執行的其他先決條件檢查包括：  
 
 - 樹系名稱驗證：確定樹系名稱是有效的，而且目前不存在。  
 - NetBIOS 名稱驗證：檢查提供的 NetBIOS 名稱是有效的，而且與現有名稱沒有衝突。  
@@ -124,7 +124,7 @@ AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決�
 
 ## <a name="BKMK_SystemReqs"></a>系統需求
 
-Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。  
+Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
 
 某些功能可能會有其他的需求。 例如，虛擬網域控制站複製功能需要 PDC 模擬器執行 Windows Server 2012，以及安裝有 Hyper-v 角色的 Windows Server 2012 電腦。  
 
@@ -176,7 +176,7 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 �
 
    在這個情況下，您需要將 ADDSDeployment Cmdlet 與不支援原生 64 位元程序的 Cmdlet 分開執行。  
 
-- Windows Server 2012 中有一個新的檔案系統，稱為復原檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building 適用于 Windows 的下一代檔案系統：ReFS @ no__t-0。  
+- Windows Server 2012 中有一個新的檔案系統，稱為復原檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building the next generation file system for Windows: ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(為 Windows 建立新一代的檔案系統：ReFS)。  
 - 在伺服器管理員中，在 Server Core 安裝上執行 AD DS 或其他伺服器角色並已升級至 Windows Server 2012 的伺服器，伺服器角色可能會出現紅色狀態，即使事件和狀態已如預期般收集也一樣。 執行初步發行版本 Windows Server 2012 的 Server Core 安裝的伺服器也可能受到影響。  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>如果錯誤阻止關鍵性複寫，Active Directory 網域服務安裝會停滯

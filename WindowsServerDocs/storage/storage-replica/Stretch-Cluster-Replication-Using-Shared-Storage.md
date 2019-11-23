@@ -36,7 +36,7 @@ ms.locfileid: "71402962"
 
 ![此圖顯示 Redmond 中的兩個節點，會使用 Bellevue 網站中相同叢集的兩個節點進行複寫](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**FIGURE 1：Stretch cluster 中的儲存體複寫 @ no__t-0  
+**圖1：延展叢集中的儲存體複寫**  
 
 ## <a name="prerequisites"></a>必要條件  
 -   Active Directory Domain Services 樹系 (不需要執行 Windows Server 2016)。  
@@ -104,7 +104,7 @@ ms.locfileid: "71402962"
     > -   這兩個記錄檔磁碟區的大小應該相同。  
     > -   所有複寫的資料磁碟都必須有相同的磁區大小。  
     > -   所有記錄檔磁碟都必須有相同的磁區大小。  
-    > -   記錄磁碟區應該使用 Flash 型存放裝置和高效能復原設定。 Microsoft 建議記錄檔儲存體應該要比資料儲存體更快。 記錄檔磁碟區不得用於其他工作負載。 
+    > -   記錄磁碟區應該使用快閃記憶儲存體和高效能復原設定。 Microsoft 建議記錄檔儲存體應該要比資料儲存體更快。 記錄檔磁碟區不得用於其他工作負載。 
     > -   資料磁碟可以使用 HDD、SSD 或階層式組合，而且可以使用鏡像或同位空間，或是 RAID 1 或 10、RAID 5 或 RAID 50。  
     > -  記錄磁碟區預設必須至少有 9 GB，而且根據記錄需求，可以更大或更小。  
     > - 磁碟區必須使用 NTFS 或 ReFS 格式化。
@@ -114,7 +114,7 @@ ms.locfileid: "71402962"
 
         1.  確定每組成對的伺服器節點只能看到該網站的存放裝置機箱 (亦即非對稱式存放裝置)，同時已正確設定 SAS 連線。  
 
-        2.  遵循[在獨立伺服器上部署儲存空間](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
+        2.  遵循**在獨立伺服器上部署儲存空間**中提供的[步驟 1-3](../storage-spaces/deploy-standalone-storage-spaces.md)，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
 
     -   **針對 iSCSI 儲存體：**  
 
@@ -162,7 +162,7 @@ ms.locfileid: "71402962"
 
 5. 檢閱 [Windows Server 2012 中 Hyper-V 叢集的網路建議](https://technet.microsoft.com/library/dn550728.aspx)，並確定您是以最佳方式設定叢集網路。  
 
-6. 在 Redmond 網站中，將一個磁碟新增到叢集 CSV。 若要這樣做，在 [存放裝置] 區段的 [磁碟] 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]。  
+6. 在 Redmond 網站中，將一個磁碟新增到叢集 CSV。 若要這樣做，在 **\[存放裝置\]** 區段的 **\[磁碟\]** 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 **\[新增至叢集共用磁碟區\]** 。  
 
 7. 使用[部署 Hyper-V 叢集](https://technet.microsoft.com/library/jj863389.aspx)指南，在 **Redmond** 網站中只遵循步驟 7-10 來建立測試虛擬機器，以確保叢集可在第一個測試網站中共用存放裝置的兩個節點內運作正常。  
 
@@ -182,7 +182,7 @@ ms.locfileid: "71402962"
    7. 將線上存放裝置新增至名為 [新角色 (2)] 的空白角色。
    8. 現在您已利用磁碟機代號掛接了所有存放裝置，接著可以使用 `Test-SRTopology` 來評估叢集。
 
-       例如:
+       例如：
 
            MD c:\temp  
 
@@ -220,7 +220,7 @@ ms.locfileid: "71402962"
 
 14. **(選擇性)** 設定叢集網路和 Active Directory，以進行更快速的 DNS 網站容錯移轉。 您可以利用 Hyper-V 軟體定義的網路功能、延展的 VLAN、網路抽象裝置、降低的 DNS TTL，以及其他常見的技巧。
 
-    如需詳細資訊，請參閱 Microsoft Ignite 會話：[在 Windows Server vNext 中延展容錯移轉叢集和使用儲存體複本](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)和在[網站之間啟用變更通知-如何和原因？](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx) blog 文章。  
+    如需詳細資訊，請參閱 Microsoft Ignite 工作階段：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) (在 Windows Server vNext 中延展容錯移轉叢集和使用儲存體複本) 和 [Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx) (啟用網站之間的變更通知 - 方式與原因？) 部落格文章。  
 
 15. **(選擇性)** 設定 VM 復原能力，讓客體在節點失敗期間不會長時間暫停。 相反地，在它們會在 10 秒內容錯移轉至新的複寫來源存放裝置。  
 
@@ -249,7 +249,7 @@ ms.locfileid: "71402962"
    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
    ```  
 
-3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如:  
+3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如：  
 
    ```PowerShell  
    Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
@@ -287,7 +287,7 @@ ms.locfileid: "71402962"
 
 9. **(選擇性)** 設定叢集網路和 Active Directory，以進行更快速的 DNS 網站容錯移轉。 您可以利用 Hyper-V 軟體定義的網路功能、延展的 VLAN、網路抽象裝置、降低的 DNS TTL，以及其他常見的技巧。  
 
-   如需詳細資訊，請參閱 Microsoft Ignite 會話：[在 Windows Server vNext 中延展容錯移轉叢集和使用儲存體複本](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)，並在[網站之間啟用變更通知-作法和原因](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)。  
+   如需詳細資訊，請參閱 Microsoft Ignite 工作階段：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) (在 Windows Server vNext 中延展容錯移轉叢集和使用儲存體複本) 和 [Enable Change Notifications between Sites - How and Why](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx) (啟用網站之間的變更通知 - 方式與原因)。  
 
 10. **(選擇性)** 設定 VM 復原能力，讓來賓不會因為長期處於節點失敗而暫停。 相反地，在它們會在 10 秒內容錯移轉至新的複寫來源存放裝置。  
 
@@ -330,11 +330,11 @@ ms.locfileid: "71402962"
     >[!NOTE]
     > 繼續進行下一個步驟之前，必須先在所有節點上安裝檔案伺服器角色。   |  
 
-7. 在 [角色] 中，按一下 [設定角色]。 檢閱 [在您開始前]，然後按 [下一步]。  
+7. 在 **\[角色\]** 中，按一下 **\[設定角色\]** 。 檢閱 [在您開始前]，然後按 [下一步]。  
 
 8. 選取 [檔案伺服器]，然後按 [下一步]。  
 
-9. 保留選取 [一般用途的檔案伺服器]，然後按 [下一步]。  
+9. 保留選取 **\[一般用途的檔案伺服器\]** ，然後按 **\[下一步\]** 。  
 
 10. 為 [用戶端存取點] 命名 (15 個字元或更少)，然後按 [下一步]。  
 
@@ -344,7 +344,7 @@ ms.locfileid: "71402962"
 
 13. 在新的檔案伺服器角色上按滑鼠右鍵，再按一下 **\[新增檔案共用\]** 。 繼續執行精靈以設定共用。  
 
-14. 選擇性：新增另一個使用此網站中其他存放裝置的檔案伺服器角色。  
+14. 選擇性︰新增其他會在此網站中使用另一個存放裝置的檔案伺服器角色。  
 
 15. 設定延展式叢集網站感知，如此一來，伺服器 SR-SRV01 和 SR-SRV02 會位於 Redmond 網站，且 SR-SRV03 和 SR-SRV04 會位於 Bellevue 網站，而 Redmond 是適用於來源存放裝置和 VM 之節點擁有權的慣用網站：  
 
@@ -390,7 +390,7 @@ ms.locfileid: "71402962"
     ```
 
 
-3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如:  
+3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如：  
 
     ```PowerShell
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -407,7 +407,7 @@ ms.locfileid: "71402962"
 
 5. 請確定您是以最佳方式設定叢集網路。  
 
-6.  設定檔案伺服器角色。 例如:
+6.  設定檔案伺服器角色。 例如：
 
     ```PowerShell  
     Get-ClusterResource  
@@ -453,14 +453,14 @@ ms.locfileid: "71402962"
 
     ![此畫面顯示 [設定存放裝置複本] 精靈的 [選取目的地磁碟] 頁面](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_SelectDestinationDataDisk2.png)  
 
-4.  選取適當的來源記錄磁碟，然後按 [下一步]。 來源記錄磁碟區必須是在使用 SSD 或同樣快速媒體的磁碟上，而不是轉盤式磁碟。  
+4.  選取適當的來源記錄磁碟，然後按 **\[下一步\]** 。 來源記錄磁碟區必須是在使用 SSD 或同樣快速媒體的磁碟上，而不是轉盤式磁碟。  
 
 5.  選取適當的目的地記錄檔磁碟區，然後按 [下一步]。 顯示的目的地記錄磁碟將擁有大小與所選來源記錄磁碟區相同的磁碟區。  
 
-6.  如果目的地磁碟區不包含先前來自來源伺服器的資料複本，請保留 [覆寫目的地磁碟區] 上的 [覆寫磁碟區] 值。 如果目的地包含來自最新備份或先前複寫的類似資料，選取 **\[已植入資料的目的地磁碟\]** ，然後按 **\[下一步\]** 。  
+6.  如果目的地磁碟區不包含先前來自來源伺服器的資料複本，請保留 **\[覆寫目的地磁碟區\]** 上的 **\[覆寫磁碟區\]** 值。 如果目的地包含來自最新備份或先前複寫的類似資料，選取 **\[已植入資料的目的地磁碟\]** ，然後按 **\[下一步\]** 。  
 
 7.  如果您不打算使用 RPO 複寫，請保留 **\[同步複寫\]** 上的 **\[複寫模式\]** 值。 如果您想要透過較高延遲的網路來延展叢集，或在主要網站節點上需要較低的 IO 延遲，請將它變更為 **\[非同步複寫\]** 。  
-8.  如果您不打算稍後搭配複寫群組中的其他磁碟配對來使用寫入順序，請保留 **\[最高效能\]** 上的 **\[一致性群組\]** 值。 如果您打算進一步將磁碟新增到此複寫群組，而且您需要保證寫入順序，選取 [啟用寫入順序]，然後按 [下一步]。  
+8.  如果您不打算稍後搭配複寫群組中的其他磁碟配對來使用寫入順序，請保留 **\[最高效能\]** 上的 **\[一致性群組\]** 值。 如果您打算進一步將磁碟新增到此複寫群組，而且您需要保證寫入順序，選取 **\[啟用寫入順序\]** ，然後按 **\[下一步\]** 。  
 
 9.  按 [下一步] 以設定複寫和延展性叢集資訊。  
 
@@ -470,7 +470,7 @@ ms.locfileid: "71402962"
 
 11. 此時，您已經在這兩半的叢集之間設定了儲存體複本關聯性，但複寫正在進行中。 有數種方式可以透過圖形化工具來檢視複寫的狀態。  
 
-    1.  使用 **\[複寫角色\]** 欄和 **\[複寫\]** 索引標籤。完成初始同步時，來源和目的地磁碟的複寫狀態都必須是 [持續複寫中]。   
+    1.  使用 **\[複寫角色\]** 欄和 **\[複寫\]** 索引標籤。完成初始同步時，來源和目的地磁碟的複寫狀態都必須是 **\[持續複寫中\]** 。   
 
         ![此畫面顯示容錯移轉叢集管理員中磁碟的 [複寫] 索引標籤](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_ReplicationDetails2.png)  
 
@@ -604,7 +604,7 @@ ms.locfileid: "71402962"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
         ```  
 
-    4.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如:  
+    4.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如：  
 
         ```PowerShell  
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining  
@@ -664,7 +664,7 @@ ms.locfileid: "71402962"
         > 在 Windows Server 2016 中，您可能需要使用容錯移轉叢集管理員或 Move-ClusterGroup，在節點重新上線之後，手動將目的地磁碟移回另一個網站。  
 
         > [!NOTE]
-        > 儲存空間複本會卸載目的地磁碟區。 這是原廠設定。  
+        > 儲存空間複本會卸載目的地磁碟區。 這是原本設計的做法。  
 
 4.  若要變更預設 8 GB 的記錄檔大小，請以滑鼠右鍵按一下來源和目的地記錄磁片，按一下 [複寫**記錄**檔] 索引標籤，然後變更兩個磁片上的大小以符合。  
 
@@ -699,23 +699,23 @@ ms.locfileid: "71402962"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -723,11 +723,11 @@ ms.locfileid: "71402962"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -768,7 +768,7 @@ ms.locfileid: "71402962"
     3.  若要執行非計劃的容錯移轉且複寫方向是從某一個網站到另一個網站：在某一個網站中，同時關閉這兩個節點的電源。  
 
         > [!NOTE]  
-        > 儲存空間複本會卸載目的地磁碟區。 這是原廠設定。  
+        > 儲存空間複本會卸載目的地磁碟區。 這是原本設計的做法。  
 
 4.  若要變更預設 8 GB 的記錄檔大小，請在來源和目的地儲存體複本群組上使用**set-srgroup** 。   例如，若要將所有記錄檔設定為 2 GB：  
 
@@ -797,8 +797,8 @@ ms.locfileid: "71402962"
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)  
 - [叢集對叢集儲存體複寫](cluster-to-cluster-storage-replication.md)  
 - [儲存體複本：已知問題](storage-replica-known-issues.md) 
-- [儲存體複本：常見問題集](storage-replica-frequently-asked-questions.md)  
+- [儲存體複本：常見問題](storage-replica-frequently-asked-questions.md)  
 
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)

@@ -21,7 +21,7 @@ ms.locfileid: "71407607"
 
 藉由使用 Active Directory 同盟服務（AD FS）中的 [**使用自訂規則來傳送宣告**] 範本，您可以針對標準規則範本無法滿足貴組織需求的情況，建立自訂宣告規則。 自訂宣告規則是以宣告規則語言撰寫，接著必須複製到 [**自訂規則**] 文字方塊中，才能用於規則集。 如需有關為「高級」規則建立語法的詳細資訊，請參閱宣告[規則語言的角色](../../ad-fs/technical-reference/The-Role-of-the-Claim-Rule-Language.md)。  
   
-您可以使用下列程式，利用 AD FS Management snap @ no__t-0in 來建立宣告規則。  
+您可以使用下列程式，使用中的 [AD FS 管理] 嵌入式\-管理單元來建立宣告規則。  
   
 若要完成此程式，至少需要本機電腦上之**Administrators**的成員資格或同等許可權。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。
 
@@ -34,7 +34,7 @@ ms.locfileid: "71407607"
 2.  在主控台樹的 [ **AD FS**] 底下，按一下 [信賴憑證者**信任**]。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告發布原則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告發布原則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
 4.  在 [**編輯宣告發布原則**] 對話方塊的 [**發行轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。 
@@ -57,7 +57,7 @@ ms.locfileid: "71407607"
 2.  在主控台樹的  **AD FS**底下，按一下 **宣告提供者信任**。 
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  在 [**編輯宣告規則**] 對話方塊的 [**接受轉換規則**] 底下，按一下 [**新增規則**] 以啟動規則嚮導。
@@ -95,12 +95,12 @@ ms.locfileid: "71407607"
   
 1.  在伺服器管理員中，按一下 [**工具**]，然後按一下 [ **AD FS 管理**]。  
   
-2.  在主控台樹的 [ **AD FS\\信任關聯**性] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
+2.  在主控台樹的 [ **AD FS\\信任關係**] 底下，按一下 [**宣告提供者信任**] 或 [信賴憑證者**信任**]，然後在清單中按一下您想要建立此規則的特定信任。  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。  
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
   
-4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您要建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導:  
+4.  在 [**編輯宣告規則**] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您要建立此規則的規則集，然後按一下 [**新增規則**] 來啟動與該規則集相關聯的規則嚮導：  
   
     -   **接受轉換規則**  
   
@@ -124,9 +124,9 @@ ms.locfileid: "71407607"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：建立信賴憑證者信任的宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[檢查清單：為宣告提供者信任建立宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
+[檢查清單：建立宣告提供者信任的宣告規則](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

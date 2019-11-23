@@ -21,7 +21,7 @@ ms.locfileid: "71404497"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>以多站台部署方式部署多個遠端存取伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
  Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服務（RAS） VPN 結合成一個遠端存取角色。 在多個企業案例中，我們可以部署「遠端存取」。 本總覽提供在多網站設定中部署遠端存取服務器的企業案例簡介。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71404497"
   
 -   必須部署公開金鑰基礎結構。  
   
-    如需詳細資訊，請參閱：@no__t 0Test Lab Guide 迷你模組：Windows Server 2012 的基本 PKI。 ](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
+    如需詳細資訊，請參閱： [測試實驗室指南小單元：Windows Server 2012 的基本 PKI。](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
   
 -   公司網路必須啟用 IPv6。 如果您使用 ISATAP，則應該將它移除，然後使用原生的 IPv6。  
   
@@ -139,7 +139,7 @@ ms.locfileid: "71404497"
   
     若用戶端已升級，請將用戶端電腦移至 Windows 8 安全性群組。  
   
--   使用 Windows PowerShell Cmdlet **DAEntryPointDC**修改網域控制站設定時，如果指定的 ComputerName 參數是進入點的遠端存取服務器，而不是最後一個新增到多網站部署的專案，就會出現警告將會顯示，表示指定的伺服器在下一次的原則重新整理之前不會更新。 在 [**遠端存取管理] 主控台**的 [**儀表板**] 中，您可以使用 [設定**狀態**] 看到未更新的實際伺服器。 這不會造成任何功能上的問題，不過，您可以在未更新的伺服器上執行**gpupdate/force** ，以立即更新設定狀態。  
+-   使用 Windows PowerShell Cmdlet **DAEntryPointDC**修改網域控制站設定時，如果指定的 ComputerName 參數是進入點的遠端存取服務器，而不是最後一個新增到多網站部署的專案，則會顯示警告，指出指定的伺服器在下一次原則重新整理之前不會更新。 在 [**遠端存取管理] 主控台**的 [**儀表板**] 中，您可以使用 [設定**狀態**] 看到未更新的實際伺服器。 這不會造成任何功能上的問題，不過，您可以在未更新的伺服器上執行**gpupdate/force** ，以立即更新設定狀態。  
   
 -   當多網站部署在僅 IPv4 的公司網路時，變更內部網路 IPv6 首碼也會變更 DNS64 位址，但不會更新允許 DNS 查詢至 DNS64 服務的防火牆規則上的位址。 若要解決此問題，請在變更內部網路 IPv6 首碼之後，執行下列 Windows PowerShell 命令：  
   
@@ -159,7 +159,7 @@ ms.locfileid: "71404497"
   
 -   如果在現有的 ISATAP 基礎結構存在時部署 DirectAccess，則移除屬於 ISATAP 主機的進入點時，將會從 NRPT 中所有 DNS 尾碼的 DNS 伺服器位址移除 DNS64 服務的 IPv6 位址。  
   
-    若要解決此問題，請在 [**基礎結構伺服器安裝程式**] 的 [ **dns** ] 頁面上，移除已修改的 dns 尾碼，然後在 dns 伺服器**位址按一下 [** 偵測]，以正確的 dns 伺服器位址新增它們。對話方塊。  
+    若要解決此問題，請在 [**基礎結構伺服器安裝程式**] 的 [ **dns** ] 頁面上 **，按一下 [** **dns 伺服器位址**] 對話方塊上的 [偵測]，移除已修改的 dns 尾碼，並使用正確的 DNS 伺服器位址再次新增。  
   
 
 

@@ -19,16 +19,16 @@ ms.locfileid: "71366274"
 ---
 # <a name="configure-virtual-machines-running-windows-7-with-no-more-than-4-virtual-processors"></a>設定執行 Windows 7 的虛擬機器，且不超過4個虛擬處理器
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|設定|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71366274"
 ## <a name="impact"></a>**產生**  
 *Microsoft 不支援下列虛擬機器的設定：*  
   
-@no__t 0list 的虛擬機器 >  
+\<的虛擬機器清單 >  
   
 ## <a name="resolution"></a>**解決方法**  
 *關閉虛擬機器，並移除一或多個虛擬處理器。*  

@@ -47,7 +47,7 @@ wbadmin start sysrecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -57,7 +57,7 @@ wbadmin start sysrecovery
 |-restoreAllVolumes|從選取的備份復原所有磁片區。 如果未指定此參數，則只會復原重要的磁片區（包含系統狀態和作業系統元件的磁片區）。 當您需要在系統修復期間復原非重要磁片區時，這個參數很有用。|
 |-recreateDisks|將磁片設定復原到建立備份時存在的狀態。</br>警告：此參數會刪除裝載作業系統元件的磁片區上的所有資料。 它也可能會刪除資料磁片區中的資料。|
 |-excludeDisks|只有在使用 **-recreateDisks**參數指定時才有效，而且必須輸入為以逗號分隔的磁片識別碼清單（如**wbadmin get 磁片**的輸出中所列）。 排除的磁片不會進行分割或格式化。 此參數可協助保留您不想在復原操作期間修改的磁片資料。|
-|-skipBadClusterCheck|略過檢查復原磁片是否有錯誤的叢集資訊。 如果您要還原至替代的伺服器或硬體，建議您不要使用此參數。 您可以隨時在復原磁片上手動執行**chkdsk/b** ，以檢查是否有錯誤的叢集，然後據此更新檔案系統資訊。</br>警告：在您依照所述執行**chkdsk**之前，已復原的系統上報告的錯誤叢集可能不正確。|
+|-skipBadClusterCheck|略過檢查復原磁片是否有錯誤的叢集資訊。 如果您要還原至替代的伺服器或硬體，建議您不要使用此參數。 您可以隨時在復原磁片上手動執行**chkdsk/b** ，以檢查是否有錯誤的叢集，然後據此更新檔案系統資訊。</br>警告：在您依照所述執行**Chkdsk**之前，已復原的系統上報告的錯誤叢集可能不正確。|
 |-quiet|執行命令，而不提示使用者。|
 
 ## <a name="BKMK_examples"></a>典型
@@ -66,7 +66,7 @@ wbadmin start sysrecovery
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-若要開始從2013年4月30日上午9:00 執行的備份復原資訊，位於共用資料夾中 \\ @ no__t-1servername\shared：若是 server01，請輸入：
+若要開始從2013年4月30日上午9:00 執行的備份復原資訊，位於共用資料夾 \\\\servername\shared：若是 server01，請輸入：
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

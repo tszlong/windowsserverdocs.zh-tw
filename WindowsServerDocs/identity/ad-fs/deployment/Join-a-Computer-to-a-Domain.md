@@ -18,9 +18,9 @@ ms.locfileid: "71408344"
 ---
 # <a name="join-a-computer-to-a-domain"></a>將電腦加入網域
 
-若要讓 Active Directory 同盟服務 \(AD FS @ no__t-1 to function，每一部做為同盟伺服器的電腦都必須加入網域。 同盟伺服器 proxy 可能已加入網域，但這不是必要條件。  
+若要讓 Active Directory 同盟服務 \(AD FS\) 功能，每一部做為同盟伺服器的電腦都必須加入網域。 同盟伺服器 proxy 可能已加入網域，但這不是必要條件。  
   
-如果網頁伺服器只裝載宣告 @ no__t-0aware 應用程式，您就不需要將 Web 服務器加入網域。  
+如果 Web 服務器只裝載宣告\-感知應用程式，您就不需要將網頁伺服器加入網域。  
   
 若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
