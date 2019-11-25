@@ -39,7 +39,7 @@ wbadmin get items
 [-machine:<BackupMachineName>]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
 |參數|描述|
 |---------|-----------|
@@ -53,7 +53,7 @@ wbadmin get items
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-列出從2013年4月30日上午9:00 點執行的 server01 備份中的專案 並儲存在 \\ @ no__t-1servername\share 上，輸入：
+列出從2013年4月30日上午9:00 點執行的 server01 備份中的專案 並儲存在 \\\\servername\share 上，輸入：
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

@@ -16,19 +16,19 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408643"
 ---
-# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附錄 G：保護 Active Directory 中的系統管理員群組
+# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附錄 G︰保護 Active Directory 中的 Administrators 群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附錄 G：保護 Active Directory 中的系統管理員群組  
-就像 Enterprise Admins （EA）和網域系統管理員（DA）群組一樣，只有在組建或嚴重損壞修復的情況下，才需要內建系統管理員（BA）群組中的成員資格。 系統管理員群組中應該不會有任何日常使用者帳戶，但網域的內建系統管理員帳戶除外，如果已受到保護，如 [Appendix D：在 Active Directory @ no__t-0 中保護內建的系統管理員帳戶。  
+## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附錄 G︰保護 Active Directory 中的 Administrators 群組  
+就像 Enterprise Admins （EA）和網域系統管理員（DA）群組一樣，只有在組建或嚴重損壞修復的情況下，才需要內建系統管理員（BA）群組中的成員資格。 系統管理員群組中應該不會有每日的使用者帳戶，但網域的內建系統管理員帳戶除外，如[Active Directory 中的內建系統管理員帳戶的保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 
 根據預設，系統管理員會在其各自的網域中，擁有大部分 AD DS 物件的擁有者。 在需要擁有權或取得物件擁有權之功能的組建或嚴重損壞修復案例中，可能需要此群組的成員資格。 此外，DAs 和 EAs 會藉由其系統管理員群組中的預設成員資格，繼承許多許可權和許可權。 Active Directory 中的特殊許可權群組的預設群組嵌套不應修改，而且每個網域的系統管理員群組都應該受到保護，如下列逐步指示所述。  
 
 針對樹系中每個網域的 Administrators 群組：  
 
-1.  移除 Administrators 群組中的所有成員，但網域內建的 Administrator 帳戶可能例外，前提是它已受到保護，如 [Appendix D：在 Active Directory @ no__t-0 中保護內建的系統管理員帳戶。  
+1.  移除 Administrators 群組中的所有成員，但網域內建的系統管理員帳戶可能例外，前提是它已受到保護，如 Active Directory 中的內[建系統管理員帳戶的保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 
 2.  在連結到包含每個網域中成員伺服器和工作站之 Ou 的 Gpo 中，BA 群組應新增至電腦設定 \ \windows 的 [自動**設置許可權] \ 使用者權限指派**中的下列使用者權限：  
 
@@ -66,17 +66,17 @@ ms.locfileid: "71408643"
 
 1.  在**伺服器管理員**中，按一下 [**工具**]，然後按一下 [**群組原則管理**]。  
 
-2.  在主控台樹中，展開 &lt;Forest @ no__t-1\Domains @ no__t-2 @ no__t-3Domain @ no__t-4，然後**群組原則物件** （其中 &lt;Forest @ no__t-7 是樹系的名稱，而 &lt;Domain @ no__t-9 是您想要在其中的網功能變數名稱稱設定群組原則）。  
+2.  在主控台樹中，展開 &lt;樹系&gt;\Domains\\&lt;網域&gt;，然後**群組原則物件**（其中 &lt;樹系&gt; 是樹系的名稱，而 &lt;網域&gt; 是您要設定群組原則的網功能變數名稱稱）。  
 
 3.  在主控台樹中，以滑鼠右鍵按一下 [**群組原則物件**]，然後按一下 [**新增**]。  
 
     ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)  
 
-4.  在 [**新增 GPO** ] 對話方塊中，輸入 <GPO Name>，然後按一下 **[確定]** （其中 [ *GPO 名稱*] 是此 GPO 的名稱）。  
+4.  在 [**新增 GPO** ] 對話方塊中，輸入 <GPO Name>，然後按一下 **[確定]** （其中 [ *GPO 名稱*] 是此 gpo 的名稱）。  
 
     ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)  
 
-5.  在詳細資料窗格中，以滑鼠右鍵按一下 [ **<GPO Name>** ]，然後按一下 [**編輯**]。  
+5.  在詳細資料窗格中，以滑鼠右鍵按一下 **<GPO Name>** ，然後按一下 [**編輯**]。  
 
 6.  流覽至 [**電腦設定 \ \windows] [設置 \ 本機原則**]，然後按一下 [**使用者權限指派**]。  
 
@@ -122,7 +122,7 @@ ms.locfileid: "71408643"
 
 11. 在**群組原則管理** 中，執行下列動作，將 GPO 連結到成員伺服器和工作站 ou：  
 
-    1.  流覽至 &lt;Forest @ no__t-1 > \Domains @ no__t-2 @ no__t-3Domain @ no__t-4 （其中 &lt;Forest @ no__t-6 是樹系的名稱，而 &lt;Domain @ no__t-8 是您要設定群組原則的網功能變數名稱稱）。  
+    1.  流覽至 &lt;樹系&gt;> \Domains\\&lt;網域&gt; （其中 &lt;樹系&gt; 是樹系的名稱，而 &lt;網域&gt; 是您要設定群組原則的網功能變數名稱稱）。  
 
     2.  以滑鼠右鍵按一下要套用 GPO 的 OU，然後按一下 [**連結到現有的 gpo**]。  
 
@@ -150,7 +150,7 @@ ms.locfileid: "71408643"
 
 1.  在**伺服器管理員**中，按一下 [**工具**]，然後按一下 [**群組原則管理**]。  
 
-2.  在主控台樹中，展開 <Forest> \ 網域 @ no__t-1 @ no__t-2，然後**群組原則物件** （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
+2.  在主控台樹中，展開 <Forest>\Domains\\<Domain>，然後**群組原則物件** （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
 
 3.  在主控台樹中，以滑鼠右鍵按一下 [**群組原則物件**]，然後按一下 [**新增**]。  
 
@@ -160,7 +160,7 @@ ms.locfileid: "71408643"
 
     ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)  
 
-5.  在詳細資料窗格中，以滑鼠右鍵按一下 [ **<GPO Name>** ]，然後按一下 [**編輯**]。  
+5.  在詳細資料窗格中，以滑鼠右鍵按一下 **<GPO Name>** ，然後按一下 [**編輯**]。  
 
 6.  流覽至 [**電腦設定 \ \windows] [設置 \ 本機原則**]，然後按一下 [**使用者權限指派**]。  
 
@@ -206,7 +206,7 @@ ms.locfileid: "71408643"
 
 11. 在**群組原則管理** 中，執行下列動作，將 GPO 連結到網域控制站 OU：  
 
-    1.  流覽至 [<Forest> \ 網域 @ no__t-1 @ no__t-2] （其中 <Forest> 是樹系的名稱，而 <Domain> 是您要設定群組原則的網功能變數名稱稱）。  
+    1.  流覽至 [<Forest>\Domains]\\<Domain> （其中 <Forest> 是樹系的名稱，而 [<Domain>] 是您要設定群組原則之網域的名稱）。  
 
     2.  以滑鼠右鍵按一下 [網域控制站] OU，然後按一下 [**連結到現有的 GPO**]。  
 
@@ -231,7 +231,7 @@ ms.locfileid: "71408643"
 
     ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)  
 
-5.  在 [**命令提示**字元] 視窗中，輸入**net use \\ @ no__t-3 @ No__t-4Server name @ no__t-5\c $** ，其中 \<Server name @ no__t-7 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
+5.  在 [**命令提示**字元] 視窗中，輸入**net use \\\\\<伺服器名稱\>\c $** ，其中 \<伺服器名稱\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。  
 
 6.  下列螢幕擷取畫面顯示應該顯示的錯誤訊息。  
 
@@ -250,7 +250,7 @@ ms.locfileid: "71408643"
 
 4.  按一下 [檔案 **]，然後按一下 [** **另存**新檔]。  
 
-5.  在 [**檔案名**] 欄位中，輸入 **<Filename>** （其中 <Filename> 是新批次檔的名稱）。  
+5.  在 [**檔案名**] 欄位中，輸入 **<Filename>.bat** （其中 <Filename> 是新批次檔的名稱）。  
 
 ###### <a name="schedule-a-task"></a>排程工作  
 
@@ -271,7 +271,7 @@ ms.locfileid: "71408643"
 
 7.  在 [**程式/腳本**] 欄位中，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 [確定]。  
+8.  按一下 **\[確定\]** 。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -281,7 +281,7 @@ ms.locfileid: "71408643"
 
 12. 選取 **[執行]，不論使用者是否已記錄 onor** ，而不是**儲存密碼**。 此工作只會存取本機電腦資源。  
 
-13. 按一下 [確定]。  
+13. 按一下 **\[確定\]** 。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 
