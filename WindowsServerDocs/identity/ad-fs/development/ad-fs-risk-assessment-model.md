@@ -61,7 +61,7 @@ ms.locfileid: "70867608"
 
    範例外掛程式會封鎖來自此檔案中所列**外部網路 ip**的任何驗證要求。 
 
-   >{!注意] 如果您有 AD FS 伺服器陣列，您可以在任何或所有 AD FS 伺服器上建立檔案。 任何檔案都可以用來將有風險的 Ip 匯入 AD FS。 我們將在下面的 <<c0>向 AD FS 註冊外掛程式 dll一節中詳細討論匯入程式。 
+   >{!注意] 如果您有 AD FS 伺服器陣列，您可以在任何或所有 AD FS 伺服器上建立檔案。 任何檔案都可以用來將有風險的 Ip 匯入 AD FS。 我們將在下面的[向 AD FS 註冊外掛程式 dll](#register-the-plug-in-dll-with-ad-fs)一節中詳細討論匯入程式。 
 
 3. 使用 Visual Studio 開啟`ThreatDetectionModule.sln`專案
 
