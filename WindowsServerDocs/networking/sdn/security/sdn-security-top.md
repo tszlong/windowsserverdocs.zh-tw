@@ -1,6 +1,6 @@
 ---
 title: SDN 的安全性
-description: 您可以使用本節中的主題來瞭解軟體定義網路中的安全性 @no__t-Windows Server 2016 Datacenter 中的 0SDN @ no__t-1。
+description: 您可以使用本節中的主題來瞭解軟體定義網路中的安全性 \(Windows Server 2016 Datacenter 中的 SDN\)。
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-sdn
@@ -17,9 +17,9 @@ ms.locfileid: "71355715"
 ---
 # <a name="security-for-sdn"></a>SDN 的安全性
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-您可以使用本節中的主題來瞭解軟體定義網路中的安全性 \(SDN @ no__t-1。
+您可以使用本節中的主題來瞭解軟體定義網路 \(SDN\)中的安全性。
 
 >[!Note]
 >如需其他軟體定義的網路功能檔，您可以使用下列程式庫區段。

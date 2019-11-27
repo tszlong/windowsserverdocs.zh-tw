@@ -18,7 +18,7 @@ ms.locfileid: "71369357"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 樹系復原-備份完整伺服器  
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 建議使用完整伺服器備份來準備樹系復原，因為它可以還原到不同的硬體或不同的作業系統實例。  使用 Windows Server Backup 您可以執行伺服器的完整備份。 
 
@@ -38,8 +38,8 @@ ms.locfileid: "71369357"
 3. 在 [**安裝類型**] 畫面上，保留預設的 [**角色型] 或 [功能型安裝**]，然後按 **[下一步]** 。
 4. 在 [**伺服器選取**] 畫面上，按 **[下一步]** 。
 5. 在 [**伺服器角色**] 畫面上，按 **[下一步]** 。
-6. 在 [**功能**] 畫面上，選取 [ **Windows Server Backup** ]，然後按 **[下一步]** 
-    @ no__t-4Install Backup @ no__t-5
+6. 在 [**功能** 畫面上，選取**Windows Server Backup** ，然後按 **[下一步]** 
+   ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
 7. 按一下 **\[安裝\]** 。
 8. 安裝完成後，按一下 [**關閉**]。
 

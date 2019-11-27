@@ -18,7 +18,7 @@ ms.locfileid: "71407144"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>附錄 B：設定測試環境
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題概述如何建置實際操作實驗室來測試動態存取控制的步驟。 文中的指示應該依序操作，因為許多元件具有相依性。  
 
@@ -89,7 +89,7 @@ ms.locfileid: "71407144"
 
 3.  在 [建立虛擬網路] 之下，選取 [內部]。  
 
-4.  按一下 [新增]。 [新的虛擬網路] 頁面隨即顯示。  
+4.  按一下 **\[新增\]** 。 [新的虛擬網路] 頁面隨即顯示。  
 
 5.  輸入 **ID_AD_Network** 做為新網路的名稱。 檢閱其他內容，並視需要修改。  
 
@@ -100,7 +100,7 @@ ms.locfileid: "71407144"
 
 ##### <a name="to-install-active-directory-domain-services"></a>安裝 Active Directory 網域服務  
 
-1. 將虛擬機器連線到 ID_AD_Network。 以系統管理員身分登入 DC1，密碼<strong>pass@word1</strong>。  
+1. 將虛擬機器連線到 ID_AD_Network。 以系統管理員身分登入 DC1，並使用密碼<strong>pass@word1</strong>。  
 
 2. 在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。  
 
@@ -122,7 +122,7 @@ ms.locfileid: "71407144"
 
 11. 在 [部署設定] 頁面上，按一下 [新增新的樹系]，輸入根網域的名稱 **contoso.com**，然後按一下 [下一步]。  
 
-12. 在 [**網域控制站選項**] 頁面上，選取網域和樹系功能等級為 Windows Server 2012，指定 DSRM 密碼<strong>pass@word1</strong>，然後按 **[下一步]** 。  
+12. 在 [**網域控制站選項**] 頁面上，選取網域和樹系功能等級為 Windows Server 2012， <strong>pass@word1</strong>指定 DSRM 密碼，然後按 **[下一步]** 。  
 
 13. 在 [DNS 選項] 頁面上，按一下 [下一步]。  
 
@@ -168,7 +168,7 @@ ms.locfileid: "71407144"
    |------------------|------------|------------------------|------------|------------------|----------------|
    | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  財務   |                  |       美國       |
    |    Miles Reid    |   MReid    |   MReid@contoso.com    |  財務   |   FinanceAdmin   |       美國       |
-   |   Esther Valle   |   EValle   |   EValle@contoso.com   | 作業 | FinanceException |       美國       |
+   |   Esther Valle   |   EValle   |   EValle@contoso.com   | 操作 | FinanceException |       美國       |
    |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       美國       |
    |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       美國       |
    |    RMS 伺服器    |    rms     |    rms@contoso.com     |            |                  |                |
@@ -205,7 +205,7 @@ ms.locfileid: "71407144"
 
 2. 將虛擬機器連線到 ID_AD_Network。  
 
-3. 將虛擬機器加入 contoso.com 網域，然後使用<strong>pass@word1</strong>的密碼登入 FILE1 作為 contoso\administrator。  
+3. 將虛擬機器加入 contoso.com 網域，然後使用密碼<strong>pass@word1</strong>登入 FILE1 作為 contoso\administrator。  
 
 #### <a name="install-file-services-resource-manager"></a>安裝檔案服務資源管理員  
 
@@ -245,13 +245,13 @@ ms.locfileid: "71407144"
 
 3. 在 [電子郵件通知] 索引標籤的 SMTP 伺服器名稱或 IP 位址之下，輸入要用來轉送電子郵件通知的 SMTP 伺服器的主機名稱或 IP 位址。  
 
-4. 如果您想要定期通知特定管理員配額或檔案檢測事件，請在 [**預設系統管理員**收件者] 下，輸入每個電子郵件地址，例如 fileadmin@contoso.com。 請使用 account@domain 的格式，並使用分號來分隔多個帳戶。  
+4. 如果您想要定期通知特定管理員配額或檔案檢測事件，請在 [**預設系統管理員**收件者] 下，輸入每個電子郵件地址，例如 fileadmin@contoso.com。 請使用 account@domain格式，並使用分號來分隔多個帳戶。  
 
 #### <a name="create-groups-on-file1"></a>在 FILE1 上建立群組  
 
 ###### <a name="to-create-security-groups-on-file1"></a>在 FILE1 上建立安全性群組  
 
-1. 以 contoso\administrator 的身分登入 FILE1，密碼為： <strong>pass@word1</strong>。  
+1. 以 contoso\administrator 的身分登入 FILE1，其密碼為： <strong>pass@word1</strong>。  
 
 2. 將 NT AUTHORITY\Authenticated Users 新增到 [WinRMRemoteWMIUsers__] 群組。  
 
@@ -263,7 +263,7 @@ ms.locfileid: "71407144"
 
     -   **Finance Memo.docx**：在文件中新增一些財務相關文字。 例如，「關於誰可以存取財務檔的商務規則已變更。 財務文件現在只能由 FinanceExpert 群組的成員存取。 沒有其他部門或群組有存取權。」 在環境中實作之前必須評估此變更的影響。 請確定這份文件的每個頁面的頁尾上都有「Contoso 公司機密」的字樣。  
 
-    -   **要求核准 Hire.docx**：在文件中建立一個收集應徵者資訊的表單。 文件中必須包含下列欄位：**應徵者姓名、身分證號碼、職稱、建議薪資、開始日期、主管姓名、部門**。 在包含**主管簽章、核准薪資、提供確認**和**提供狀態**表單的文件中新增其他區段。   
+    -   **要求核准 Hire.docx**：在文件中建立一個收集應徵者資訊的表單。 文件中必須包含下列欄位： **應徵者姓名、身分證號碼、職稱、建議薪資、開始日期、主管姓名、部門**。 在包含**主管簽章、核准薪資、提供確認**和**提供狀態**表單的文件中新增其他區段。   
         啟用文件權限管理。  
 
     -   **Word Document1.docx**：將一些測試內容新增到這份文件。  
@@ -275,7 +275,7 @@ ms.locfileid: "71407144"
     -   **Workbook2 .xlsx**  
 
     -   在桌面上建立稱為「規則運算式」的資料夾。 在名為 **RegEx-SSN**的資料夾下建立文字文件。 在檔案中輸入下列內容，然後儲存並關閉檔案：   
-        ^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
+        ^(?!000)([0-7]\d{4}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
 
 3.  將 D:\Finance Documents 資料夾共用為財務文件，並允許每個人都對該共用擁有讀取和寫入存取權。  
 
@@ -347,7 +347,7 @@ ms.locfileid: "71407144"
 
 27. 在 [確認] 畫面上，按一下 [安裝]。  
 
-28. 在 [結果] 畫面上，按一下 [關閉]，然後按一下 [安裝進度] 畫面上的 [關閉] 。 完成時，請使用所提供的密碼（<strong>pass@word1</strong>）登出並登入為 contoso\rms。  
+28. 在 [結果] 畫面上，按一下 [關閉]，然後按一下 [安裝進度] 畫面上的 [關閉] 。 完成時，請使用提供的密碼（<strong>pass@word1</strong>）登出並登入為 contoso\rms。  
 
 29. 啟動 AD RMS 主控台，並瀏覽至 [權限原則範本]。  
 
@@ -369,7 +369,7 @@ ms.locfileid: "71407144"
 
 33. 不變更其他設定，按一下剩餘的索引標籤，然後按一下 [完成]。 以 CONTOSO\Administrator 身分登入。  
 
-34. 流覽至資料夾 C:\inetpub\wwwroot @ no__t-0_wmcs\certification，選取 ServerCertification .asmx 檔案，並新增已驗證的使用者，使其擁有該檔案的讀取和寫入權限。  
+34. 流覽至 [C:\inetpub\wwwroot\\_wmcs] 資料夾，選取 [ServerCertification] 檔案，然後將 [已驗證的使用者] 加入檔案的 [讀取] 和 [寫入] 許可權。  
 
 35. 開啟 Windows PowerShell 並執行 `Get-FsrmRmsTemplate`。 確認在此程序中使用此命令可以看到您在前面步驟中建立的 RMS 範本。  
 
@@ -530,9 +530,9 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
    - 外寄郵件伺服器：SRV1 的靜態 IP 位址  
 
-   - 使用者名稱：fileadmin@contoso.com  
+   - 使用者名稱： fileadmin@contoso.com  
 
-   - 記住密碼：Select  
+   - 記住密碼：選取  
 
 4. 在 contoso\administrator 桌面上建立 Outlook 的捷徑。  
 
@@ -540,7 +540,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 6. 刪除任何產生的測試訊息。  
 
-7. 針對用戶端虛擬機器上指向 \\ \ FILE1\Finance 檔的所有使用者，在桌面上建立新的簡短剪下。  
+7. 針對用戶端虛擬機器上指向 \\\FILE1\Finance 檔的所有使用者，在桌面上建立新的短剪。  
 
 8. 需要重新開機。  
 
@@ -571,7 +571,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 ##### <a name="to-install-active-directory-domain-services"></a>安裝 Active Directory 網域服務  
 
-1. 將虛擬機器連線到 ID_AD_Network。 以系統管理員身分登入 DC2，密碼<strong>Pass@word1</strong>。  
+1. 將虛擬機器連線到 ID_AD_Network。 以系統管理員身分登入 DC2，並使用密碼<strong>Pass@word1</strong>。  
 
 2. 在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。  
 
@@ -596,7 +596,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 11. 在 [部署設定] 頁面上，按一下 [新增新的樹系]，輸入根網域的名稱 **adatum.com**，然後按一下 [下一步]。  
 
-12. 在 [**網域控制站選項**] 頁面上，選取網域和樹系功能等級為 Windows Server 2012，指定 DSRM 密碼<strong>pass@word1</strong>，然後按 **[下一步]** 。  
+12. 在 [**網域控制站選項**] 頁面上，選取網域和樹系功能等級為 Windows Server 2012， <strong>pass@word1</strong>指定 DSRM 密碼，然後按 **[下一步]** 。  
 
 13. 在 [DNS 選項] 頁面上，按一下 [下一步]。  
 
@@ -642,7 +642,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 8.  依照精靈中的指示繼續執行。  
 
 ### <a name="BKMK_2.4"></a>在 Adatum 樹系中建立其他使用者  
-以<strong>pass@word1</strong>的密碼建立 Jeff Low 使用者，並使用值**Adatum**指派 company 屬性。  
+使用<strong>pass@word1</strong>的密碼建立 Jeff Low 使用者，並使用值**Adatum**指派公司屬性。  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>建立包含公司屬性的使用者  
 
@@ -748,11 +748,11 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 5. 在 [權限的權限項目] 對話方塊中，按一下 [新增條件]，並輸入下列條件：[**User**] [**Company**] [**Equals**] [**Value**] [**Adatum**]。 權限應該是 [修改]、[讀取和執行]、[讀取]、[寫入]。  
 
-6. 按一下 [確定]。  
+6. 按一下 **\[確定\]** 。  
 
 7. 按一下 [確定] 三次，以完成並返回 Active Directory 管理中心。  
 
-   @no__t 0solution 指南](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
+   ![解決方案引導](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
    下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
 
@@ -821,7 +821,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>指派檔案伺服器上的集中存取原則  
 
-1. 在 [HYPER-V 管理員] 中，連線至伺服器 FILE1。 使用 Contoso\Administrator 登入伺服器，密碼<strong>pass@word1</strong>。  
+1. 在 [HYPER-V 管理員] 中，連線至伺服器 FILE1。 使用 Contoso\Administrator 和密碼<strong>pass@word1</strong>來登入伺服器。  
 
 2. 開啟提升權限的命令提示字元，輸入： **gpupdate /force**。 這可確保您的群組原則變更在伺服器上生效。  
 
@@ -829,11 +829,11 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 4. 開啟 [Windows 檔案總管]，然後瀏覽至 D:\EARNINGS。 以滑鼠右鍵按一下 [Earnings] 資料夾，再按一下 [內容]。  
 
-5. 按一下 [分類] 索引標籤。選取 [公司]，然後在 [值] 欄位中選取 [Adatum]。  
+5. 按一下 [**分類**] 索引標籤。選取 [**公司**]，然後在 [**值**] 欄位中選取 [ **Adatum** ]。  
 
 6. 按一下 [變更]，從下拉式功能表選取 [僅限 Adatum 存取原則] ，然後按一下 [套用]。  
 
-7. 按一下 [安全性] 索引標籤，按一下 [進階]，然後按一下 [集中原則] 索引標籤。您應該會看到已列出 **AdatumEmployeeAccessRule** 。 您可以展開項目以檢視在 Active Directory 中建立規則時設定的所有權限。  
+7. 按一下 [**安全性**] 索引標籤，然後按一下 [ **Advanced**]，再按一下 [**集中原則**] 索引標籤。您應該會看到列出的**AdatumEmployeeAccessRule** 。 您可以展開項目以檢視在 Active Directory 中建立規則時設定的所有權限。  
 
 8. 按一下 [確定] 返回 [Windows 檔案總管]。  
 

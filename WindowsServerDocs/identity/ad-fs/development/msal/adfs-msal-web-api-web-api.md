@@ -9,24 +9,24 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: 106262b63b5aad0eddb08618eb808d2d9ff5b425
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "71407802"
 ---
-# <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>案例：Web API 呼叫 Web API （代表案例） 
-> 適用於：AD FS 2019 和更新版本 
+# <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>案例： Web API 呼叫 Web API （代表案例） 
+> 適用于： AD FS 2019 和更新版本 
  
 瞭解如何代表使用者建立呼叫另一個 Web API 的 Web API。  
  
-在閱讀本文之前，您應該先熟悉[AD FS 概念](../ad-fs-openid-connect-oauth-concepts.md)和[Behalf_Of 流程](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#on-behalf-of-flow)
+在閱讀本文之前，您應該先熟悉[AD FS 概念](../ad-fs-openid-connect-oauth-concepts.md)和[內部 Behalf_Of 流程](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#on-behalf-of-flow)
 
-## <a name="overview"></a>總覽 
+## <a name="overview"></a>概觀 
 
 
 - 用戶端（Web 應用程式）-不會在下圖中表示-呼叫受保護的 Web API，並在其「授權」 Http 標頭中提供 JWT 持有人權杖。 
-- 受保護的 Web API 會驗證權杖，並使用 MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_)  方法來要求（從 AD FS）另一個權杖，使其本身可以代表使用者呼叫第二個 Web API （名為下游 Web API）。 
+- 受保護的 Web API 會驗證權杖，並使用 MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) 方法來要求（從 AD FS）另一個權杖，使其本身可以代表使用者呼叫第二個 Web API （名為下游 Web API）。 
 - 受保護的 Web API 會使用此權杖來呼叫下游 API。 它也可以呼叫 AcquireTokenSilentlater 來要求其他下游 Api （但仍代表相同的使用者）的權杖。 AcquireTokenSilent 會在需要時重新整理權杖。  
  
      ![概觀](media/adfs-msal-web-api-web-api/webapi1.png)
@@ -45,15 +45,15 @@ ms.locfileid: "71407802"
 
   1. 在 AD FS 管理 中，以滑鼠右鍵按一下 **應用程式群組**，然後選取 **新增應用程式群組**。  
   
-  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**WebApiToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按一下 [下一步]。
+  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**WebApiToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按一下 **\[下一步\]** 。
 
       ![應用程式註冊](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. 複製 [**用戶端識別碼**] 值。 稍後**在應用程式的 app.config**檔案中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：**  -  https://ToDoListClient 。 按一下 [新增]。 按一下 [下一步]。 
+  3. 複製 [**用戶端識別碼**] 值。 稍後**在應用程式的 app.config**檔案中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：**  - https://ToDoListClient。 按一下 **\[新增\]** 。 按一下 **\[下一步\]** 。 
   
       ![應用程式註冊](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/ 。 按一下 [新增]。 按一下 [下一步]。 稍後會在**應用程式的 app.config 和 web.config**檔案中使用此值 **。**  
+  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/。 按一下 **\[新增\]** 。 按一下 **\[下一步\]** 。 稍後會在**應用程式的 app.config 和 web.config**檔案中使用此值 **。**  
  
       ![應用程式註冊](media/adfs-msal-web-api-web-api/webapi4.png)
 
@@ -61,7 +61,7 @@ ms.locfileid: "71407802"
   
       ![應用程式註冊](media/adfs-msal-web-api-web-api/webapi5.png)  
 
-  6. 在 [設定應用程式許可權] 畫面上，選取 [ **openid** and **user_impersonation**]。 按一下 [下一步]。  
+  6. 在 [設定應用程式許可權] 畫面上，選取 [ **openid**和**user_impersonation**]。 按一下 **\[下一步\]** 。  
   
       ![應用程式註冊](media/adfs-msal-web-api-web-api/webapi6.png)  
 
@@ -82,7 +82,7 @@ ms.locfileid: "71407802"
   
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi9.png)
 
-  12. 在 [伺服器應用程式] https://localhost:44321/ 畫面上，加入做為**用戶端識別碼**和重新**導向 URI**。 
+  12. 在 [伺服器應用程式] 畫面上，將 https://localhost:44321/ 新增為**用戶端識別碼**和重新**導向 URI**。 
   
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi10.png)
 
@@ -106,7 +106,7 @@ ms.locfileid: "71407802"
   
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi14.png)  
 
-  19. 在 [設定 Web API] https://localhost:44300 上，新增作為**識別碼**。  
+  19. 在 [設定 Web API] 上，將 https://localhost:44300 新增為**識別碼**。  
   
       ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi15.png)
 
@@ -176,16 +176,16 @@ ms.locfileid: "71407802"
   4. 開啟 ToDoListService 底下的 web.config 檔案。 修改下列各項： 
        - ida：物件-在上 AD FS 區段中，從應用程式註冊 #12 輸入 [用戶端識別碼] 值
        - ida： ClientId-在上述 AD FS 區段中，輸入應用程式註冊 #12 的 [用戶端識別碼] 值。 
-       - idaClientSecret-在上述 AD FS 區段中，輸入從應用程式註冊 #13 複製的共用密碼。
+       - Ida： ClientSecret-輸入在上述 AD FS 區段中，從應用程式註冊 #13 複製的共用密碼。
        - ida： RedirectUri-在上述 AD FS 區段中，輸入應用程式註冊 #12 的 RedirectUri 值。 
-       - idaAdfsMetadataEndpoint-輸入 HTTPs：//[您的 AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml 
+       - ida： AdfsMetadataEndpoint-輸入 HTTPs：//[您的 AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml 
        - ida： OBOWebAPIBase-在上述 AD FS 區段中，輸入應用程式註冊 #19 的識別碼值。 
        - ida：授權單位-輸入 HTTPs：//[您的 AD FS hostname]/adfs 
   
           ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi26.png) 
 
  5. 開啟 WebAPIOBO 底下的 web.config 檔案。 修改下列各項： 
-       - idaAdfsMetadataEndpoint-輸入 HTTPs：//[您的 AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml 
+       - ida： AdfsMetadataEndpoint-輸入 HTTPs：//[您的 AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml 
        - ida：物件-在上 AD FS 區段中，從應用程式註冊 #12 輸入 [用戶端識別碼] 值 
  
           ![應用程式 Reg](media/adfs-msal-web-api-web-api/webapi27.png)
