@@ -11,7 +11,7 @@ ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 52f77e2cb60be66d8be2e3927fe0f97c2c945994
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71391019"
@@ -21,11 +21,11 @@ ms.locfileid: "71391019"
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
-您會在此頁面上找到 Active Directory 網域 services 內容的連結。   
+您會在此頁面上找到 Active Directory Domain services 內容的連結。   
 
 
 * [Active Directory Domain Services 的新功能](../whats-new-active-directory-domain-services.md)  
-* [AD DS 消費者入門](../ad-ds/AD-DS-Getting-Started.md)   
+* [AD DS 快速入門](../ad-ds/AD-DS-Getting-Started.md)   
 * [AD DS 設計與規劃](../ad-ds/plan/AD-DS-Design-and-Planning.md)  
 * [AD DS 部署](../ad-ds/deploy/AD-DS-Deployment.md)  
 * [AD DS 作業](../ad-ds/manage/component-updates/AD-DS-Operations.md)   

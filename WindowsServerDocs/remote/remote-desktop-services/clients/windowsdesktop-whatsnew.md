@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
+ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019587"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74265920"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -31,11 +31,22 @@ ms.locfileid: "74019587"
 |使用者群組 |版本  |
 |-----------|---------|
 |Public     |1.2.431  |
-|測試人員    |1.2.431  |
+|測試人員    |1.2.524  |
+
+## <a name="updates-for-version-12524"></a>1\.2.524 版的更新
+
+*發行日期：11/20/2019*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+
+- 您現在可以直接從用戶端頂端命令列上的 [更多選項] 按鈕，存取有關更新的資訊。
+- 您現在可以從用戶端的命令列報告意見反應。
 
 ## <a name="updates-for-version-12431"></a>1\.2.431 版的更新
 
 *發行日期：2019/11/12*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - 現已推出 32 位元和 ARM64 版本的用戶端！
 - 現在，用戶端會儲存您對連線列所做的任何變更 (例如其位置、大小和釘選狀態)，並將這些變更套用至工作階段。
@@ -55,15 +66,12 @@ ms.locfileid: "74019587"
 
 *發行日期：09/17/2019*
 
-- 已修正在連線期間驗證時所發生的損毀。
-- 已修正關閉用戶端時所發生的損毀。
-
-## <a name="updates-for-version-12246"></a>1\.2.246 版的更新
-
-*發行日期：08/28/2019*
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - 已改善當地語系化版本的遞補語言。 (例如，FR-CA 會正確地以法文顯示，而不是英文。)
 - 移除訂用帳戶時，用戶端現在會正確地從認證管理員移除已儲存的認證。
 - 用戶端更新程序現已在啟動後自動執行，且用戶端會在完成後重新啟動。
 - 用戶端現在可以在 Windows 10 上以 S 模式使用。
 - 已修正導致使用者名稱中有空格的使用者更新程序失敗的問題。
+- 已修正在連線期間驗證時所發生的損毀。
+- 已修正關閉用戶端時所發生的損毀。

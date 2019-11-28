@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/18/2019
+ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bcbd3292bcd4653a4568492a996d53c17f465aa8
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 41f5bd7be03e61471683d5fc04df9ee10bc09e58
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591046"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189482"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
@@ -26,6 +26,14 @@ ms.locfileid: "72591046"
 
 > [!NOTE]
 > 我們已變更 Web 用戶端的版本控制系統。 從 1.0.18.0 版開始，所有 Web 用戶端發行版本將包含數字 (採用 "W.X.Y.Z" 的格式)。 遠端桌面 Web 用戶端的版本號碼結尾一律是 0 (例如，W.X.Y.0)。 每個 Windows 虛擬桌面 Web 用戶端版本都會變更最後一位數，直到發行下一版遠端桌面 Web 用戶端為止 (例如 1.0.18.1)。
+
+## <a name="updates-for-version-10210"></a>1\.0.21.0 版的更新
+*發行日期：11/15/2019*
+
+- 已新增在遠端工作階段中使用輸入法編輯器 (IME) 來輸入複雜字元的支援。
+- 已修正使用者無法複製並貼到 macOS 裝置上遠端會話的迴歸問題。
+- 已修正將本機 Windows 金鑰傳送至 Firefox 上遠端工作階段的迴歸問題。
+- 已新增 RDWeb 密碼變更的連結，由您的系統管理員啟用。
 
 ## <a name="updates-for-version-10200"></a>1\.0.20.0 版的更新
 *發行日期：2019/10/18*

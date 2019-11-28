@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7d4641e2bb40a9a70264c68d0268208a30f36a69
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
+ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812306"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74187887"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>支援遠端桌面服務的設定
 
@@ -57,7 +57,7 @@ ms.locfileid: "72812306"
 
 遠端桌面服務支援已安裝 GPU 的系統。 可以透過遠端連線來使用需要 GPU 的應用程式。 此外，也可以啟用 GPU 加速轉譯和編碼，以改善應用程式效能和擴充性。
 
-遠端桌面服務工作階段裝載單一工作階段的用戶端作業系統，可以透過許多方式利用提供給作業系統的實體或虛擬 GPU，其中包含 [Azure GPU 最佳化的虛擬機器大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、實體 RDSH 伺服器可用的 GPU、RemoteFX vGPU (僅適用於 Windows Server 2016) 以及由支援的 Hypervisor 提供給 VM 的 GPU。
+遠端桌面服務工作階段裝載和單一工作階段的用戶端作業系統，可以透過許多方式利用提供給作業系統的實體或虛擬 GPU，其中包含 [Azure GPU 最佳化的虛擬機器大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、實體 RDSH 伺服器可用的 GPU、RemoteFX vGPU (僅適用於 Windows Server 2016) 以及由支援的 Hypervisor 提供給 VM 的 GPU。
 
 請參閱[哪一種圖形虛擬化技術適合您？](rds-graphics-virtualization.md)以協助找出您所需的技術。 如需 DDA 的特定資訊，請參閱[規劃部署離散裝置指派](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)。
 

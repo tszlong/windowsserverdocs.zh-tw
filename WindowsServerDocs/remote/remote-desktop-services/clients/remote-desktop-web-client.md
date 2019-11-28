@@ -8,12 +8,12 @@ ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 69beba2c59617da5b501dc55e2509e41ce4ee3fd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404115"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189466"
 ---
 # <a name="get-started-with-the-web-client"></a>開始使用 Web 用戶端
 
@@ -58,6 +58,10 @@ ms.locfileid: "71404115"
 ## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>從遠端桌面網頁用戶端複製和貼上
 
 網頁用戶端目前僅支援複製和貼上文字。 您無法在網頁用戶端中複製或貼上檔案。 此外，您只能使用 **Ctrl+C** 和 **Ctrl+V** 複製和貼上文字。
+
+## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>在遠端工作階段中使用輸入法編輯器 (IME)
+
+若要使用輸入法編輯器在遠端工作階段中輸入複雜字元，選取導覽列中的齒輪圖示以開啟 [設定]  側面板，然後將 [啟用輸入法編輯器]  開始設為 [開啟]  。 您的遠端工作階段必須已安裝並啟用輸入法編輯器 (IME)。 
 
 ## <a name="get-help-with-the-web-client"></a>取得網頁用戶端的協助
 

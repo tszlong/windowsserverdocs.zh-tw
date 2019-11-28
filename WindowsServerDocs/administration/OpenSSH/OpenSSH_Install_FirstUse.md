@@ -1,41 +1,41 @@
 ---
 ms.date: 09/27/2019
 ms.topic: conceptual
-keywords: OpenSSH，SSH，SSHD，安裝，安裝程式
+keywords: OpenSSH, SSH, SSHD, 安裝, 設定
 contributor: maertendMSFT
 author: maertendMSFT
-title: 安裝適用于 Windows 的 OpenSSH
+title: 安裝適用於 Windows 的 OpenSSH
 ms.openlocfilehash: 3c742e20432d20ea3c402af66f19a803ea1f3a56
 ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/03/2019
 ms.locfileid: "71934932"
 ---
-# <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>安裝適用于 Windows Server 2019 和 Windows 10 的 OpenSSH #
+# <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>安裝適用於 Windows Server 2019 和 Windows 10 的 OpenSSH #
 
 OpenSSH 用戶端和 OpenSSH 伺服器是 Windows Server 2019 和 Windows 10 1809 中可獨立安裝的元件。
-具有這些 Windows 版本的使用者應該使用遵循的指示來安裝和設定 OpenSSH。 
+具有這些 Windows 版本的使用者應該使用後續的指示來安裝和設定 OpenSSH。 
 
 > [!NOTE] 
-> 從 PowerShell Github 存放庫取得 OpenSSH 的使用者（ https://github.com/PowerShell/OpenSSH-Portable) 應使用該處的指示，且__不應__使用這些指示。 
+> 從 PowerShell Github 存放庫 (https://github.com/PowerShell/OpenSSH-Portable) ) 取得 OpenSSH 的使用者應該使用該處的指示，__不應該__使用這些指示。 
 
 
 ## <a name="installing-openssh-from-the-settings-ui-on-windows-server-2019-or-windows-10-1809"></a>從 Windows Server 2019 或 Windows 10 1809 上的設定 UI 安裝 OpenSSH
 
 OpenSSH 用戶端和伺服器是 Windows 10 1809 的可安裝功能。 
 
-若要安裝 OpenSSH，請啟動設定，然後移至 [應用程式] > [應用程式和功能] > 管理選擇性功能。 
+若要安裝 OpenSSH，請啟動 [設定]，然後移至 [應用程式] > [應用程式和功能] > [管理選用功能]。 
 
 掃描這份清單，查看是否已安裝 OpenSSH 用戶端。 如果沒有，請在頁面頂端選取 [新增功能]，然後： 
 
 * 若要安裝 OpenSSH 用戶端，請找出 [OpenSSH 用戶端]，然後按一下 [安裝]。 
-* 若要安裝 OpenSSH 伺服器，請找出「OpenSSH 伺服器」，然後按一下 [安裝]。 
+* 若要安裝 OpenSSH 伺服器，請找出 [OpenSSH 伺服器]，然後按一下 [安裝]。 
 
-安裝完成後，請回到 應用程式 > 應用程式和功能 > 管理選用功能，您應該會看到列出的 OpenSSH 元件。
+安裝完成之後，請回到 [應用程式] > [應用程式和功能] > [管理選用功能]，您應該會看到 OpenSSH 元件列出來。
 
 > [!NOTE]
-> 安裝 OpenSSH 伺服器將會建立並啟用名為「OpenSSH-伺服器-TCP」的防火牆規則。 這允許埠22上的輸入 SSH 流量。 
+> 安裝 OpenSSH 伺服器將會建立並啟用名為 "OpenSSH-Server-In-TCP" 的防火牆規則。 這個規則會允許連接埠 22 上的輸入 SSH 流量。 
 
 ## <a name="installing-openssh-with-powershell"></a>使用 PowerShell 安裝 OpenSSH 
 
@@ -69,11 +69,11 @@ Online        : True
 RestartNeeded : False
 ```
 
-## <a name="uninstalling-openssh"></a>卸載 OpenSSH
+## <a name="uninstalling-openssh"></a>解除安裝 OpenSSH
 
-若要使用 Windows 設定來卸載 OpenSSH，請啟動設定，然後移至 應用程式 > 應用程式和功能 > 管理選擇性功能。 在已安裝的功能清單中，選取 [OpenSSH 用戶端] 或 [OpenSSH 伺服器] 元件，然後選取 [卸載]。
+若要解除安裝 OpenSSH，請使用 Windows 設定，啟動 [設定]，然後移至 [應用程式] > [應用程式和功能] > [管理選用功能]。 在已安裝的功能清單中，選取 [OpenSSH 用戶端] 或 [OpenSSH 伺服器] 元件，然後選取 [解除安裝]。
 
-若要使用 PowerShell 卸載 OpenSSH，請使用下列其中一個命令：
+若要使用 PowerShell 解除安裝 OpenSSH，請使用下列其中一個命令：
 
 ```powershell
 # Uninstall the OpenSSH Client
@@ -83,7 +83,7 @@ Remove-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
-移除 OpenSSH 之後可能需要重新開機 Windows，如果服務在卸載時仍在使用中。
+如果服務在解除安裝時仍在使用中，則在移除 OpenSSH 之後可能需要重新啟動 Windows。
 
 
 ## <a name="initial-configuration-of-ssh-server"></a>SSH 伺服器的初始設定
@@ -101,15 +101,15 @@ Get-NetFirewallRule -Name *ssh*
 New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
 
-## <a name="initial-use-of-ssh"></a>第一次使用 SSH
+## <a name="initial-use-of-ssh"></a>初始使用 SSH
 
-在 Windows 上安裝 OpenSSH 伺服器後，您可以使用 PowerShell，從已安裝 SSH 用戶端的任何 Windows 裝置快速測試它。 在 PowerShell 中輸入下列命令： 
+在 Windows 上安裝 OpenSSH 伺服器之後，您可以使用 PowerShell，從已安裝 SSH 用戶端的任何 Windows 裝置快速測試它。 在 PowerShell 中輸入下列命令： 
 
 ```powershell
 Ssh username@servername
 ```
 
-第一次連接到任何伺服器時，將會產生類似下列的訊息：
+第一次連線到任何伺服器時，將會產生類似下列的訊息：
 
 ```
 The authenticity of host 'servername (10.00.00.001)' can't be established.
@@ -117,15 +117,15 @@ ECDSA key fingerprint is SHA256:(<a large string>).
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-答案必須是「是」或「否」。 回答 [是] 會將該伺服器新增到本機系統的已知 ssh 主機清單中。
+答案必須是「是」或「否」。 回答「是」會將該伺服器新增到本機系統的已知 ssh 主機清單中。
 
-此時，系統會提示您輸入密碼。 作為安全性預防措施，您的密碼不會在您輸入時顯示。 
+此時，系統會提示您輸入密碼。 作為安全性預防措施，您的密碼在您輸入時不會顯示。 
 
-連接之後，您會看到類似下面的命令 shell 提示字元：
+連線之後，您會看到類似下面的命令殼層提示字元：
 
 ```
 domain\username@SERVERNAME C:\Users\username>
 ```
 
-Windows OpenSSH 伺服器使用的預設 shell 是 Windows 命令 shell。 
+Windows OpenSSH 伺服器使用的預設殼層是 Windows 命令殼層。 
 
