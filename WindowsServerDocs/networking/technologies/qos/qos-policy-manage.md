@@ -8,12 +8,12 @@ ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ac717555d1ab751600527e294d32f10d1f05bfa5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b8f10ab7b3da05fbefabb735ee2b8bb4ef1cb8a
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395875"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781345"
 ---
 # <a name="manage-qos-policy"></a>管理 QoS 原則
 
@@ -90,7 +90,7 @@ QoS 原則名稱必須是唯一的。 原則套用至伺服器和使用者的方
 
 - [**所有應用程式**] 指定 [QoS 原則] 的第一頁上的流量管理設定適用于所有應用程式。
 
-- **只有具有此可執行檔名稱的應用程式**會指定 [QoS 原則] 的第一頁上的流量管理設定適用于特定應用程式。 可執行檔名稱必須以 .exe 副檔名結尾。
+- **只有具有此可執行檔名稱的應用程式**會指定 [QoS 原則] 的第一頁上的流量管理設定適用于特定應用程式。 可執行檔名稱的結尾必須是 .exe 副檔名。
 
 - **只有回應此 URL 之要求的 HTTP 伺服器應用程式**會指定 [QoS 原則] 的第一頁上的流量管理設定僅適用于特定的 HTTP 伺服器應用程式。
 

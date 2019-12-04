@@ -11,16 +11,16 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 71b1985da522ef9ee2d7745bd19d2548e0241a2f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366774"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791760"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Debian 虛擬機器
 
->適用於：Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 下列功能發佈對應會指出每個版本中出現的功能。 每個散發套件的已知問題和因應措施會列在表格之後。
 
@@ -32,9 +32,9 @@ ms.locfileid: "71366774"
 
 * （*空白*）-無法使用功能
 
-| **功能**                                                                                                                                  | **Windows Server 作業系統版本** | **10（buster）** | **9.0-9.6 （延展）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
+| **特徵**                                                                                                                                  | **Windows Server 作業系統版本** | **10（buster）** | **9.0-9.6 （延展）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
-| **Availability**                                                                                                                             |                                             | 內建              | 內建              | 內建              | 內建（注6）     |
+| **可用性**                                                                                                                             |                                             | 內建              | 內建              | 內建              | 內建（注6）     |
 | **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | Windows Server 2016 精確時間                                                                                                            | 2019、2016                                  | &#10004;附注8       | &#10004;附注8       |                       |                       |
 | **[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
@@ -68,7 +68,7 @@ ms.locfileid: "71366774"
 | PCI 通過/DDA                                                                                                                          | 2019、2016                                  | &#10004;附注8       | &#10004;附注8       |                       |                       |
 | **[第2代虛擬機器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
 | 使用 UEFI 開機                                                                                                                              | 2019、2016、2012 R2                         | &#10004;附注7       | &#10004;附注7       | &#10004;附注7       |                       |
-| 安全開機                                                                                                                                  | 2019、2016                                  |                       |                       |                       |                       |
+| 安全開機                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
 ## <a name="BKMK_notes"></a>紀錄
@@ -93,7 +93,7 @@ ms.locfileid: "71366774"
    ```
 8. 最新的上游核心功能僅適用于使用核心內含的[Debian 反向移植](https://wiki.debian.org/Backports)。
 
-另請參閱
+請參閱
 
 * [Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

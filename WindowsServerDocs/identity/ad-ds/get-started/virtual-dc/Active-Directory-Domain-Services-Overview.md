@@ -9,21 +9,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 84ce4986d27884f817eb5e632ac8dc1c5a22b922
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d5630ece940e5bd7895510c245d14b67c847a70
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390476"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791130"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory Domain Services 概觀
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
 目錄是一種階層式結構，可將物件的相關資訊儲存在網路上。 目錄服務（例如 Active Directory Domain Services （AD DS））提供儲存目錄資料的方法，並讓網路使用者和系統管理員可以使用此資料。 例如，AD DS 會儲存使用者帳戶的相關資訊，例如名稱、密碼、電話號碼等等，並讓相同網路上的其他授權使用者存取此資訊。
 
-Active Directory 會將物件的相關資訊儲存在網路上，並讓系統管理員和使用者輕鬆地尋找和使用此資訊。 Active Directory 使用結構化的資料存放區作為目錄資訊之邏輯階層式組織的基礎。
+Active Directory 會將物件的相關資訊儲存在網路上，並讓系統管理員和使用者輕鬆地尋找和使用此資訊。 Active Directory 使用結構化資料存放區作為目錄資訊的邏輯階層式組織基礎。
 
 此資料存放區（也稱為目錄）包含 Active Directory 物件的相關資訊。 這些物件通常包含共用的資源，例如伺服器、磁片區、印表機，以及網路使用者和電腦帳戶。 如需 Active Directory 資料存放區的詳細資訊，請參閱[目錄資料存放區](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx)。
 

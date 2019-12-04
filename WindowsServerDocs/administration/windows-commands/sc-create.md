@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ea8f1c33472b7ac95ec0282a50d902a9d7cf84d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ef1480a7c1ed9fb0aa7e42077565526e5c9f7540
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384369"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791176"
 ---
 # <a name="sc-create"></a>Sc 建立
 
@@ -31,18 +31,18 @@ ms.locfileid: "71384369"
 ## <a name="syntax"></a>語法
 
 ```
-sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys | rec | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
+sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys | rec | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto }] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
 ## <a name="parameters"></a>Parameters
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<ServerName >|指定服務所在的遠端伺服器名稱。 名稱必須使用通用命名慣例（UNC）格式（例如，\\\\myserver）。 若要在本機執行 SC.EXE，請省略此參數。|
 |\<ServiceName >|指定**getkeyname**作業所傳回的服務名稱。|
-|類型 = {自有 \| 共用 \| 核心 \| filesys \| rec \| 互動類型 = {自有 \| 共用}}|指定服務類型。 預設設定為**type = 自有**。</br>**自有**-指定服務在自己的進程中執行。 它不會與其他服務共用可執行檔。 此為預設設定。</br>**share** -指定服務以共用進程的形式執行。 它會與其他服務共用可執行檔。</br>**核心**-指定驅動程式。</br>**filesys** -指定檔案系統驅動程式。</br>**rec** -指定檔案系統辨識的驅動程式（識別電腦上使用的檔案系統）。</br>**互動**-指定服務可以與桌面互動，並接收使用者的輸入。 互動式服務必須以 LocalSystem 帳戶執行。 此類型必須與**type = 自有**或**type = shared**搭配使用。 使用**type = 互動**本身會產生「不正確參數」錯誤。|
-|啟動 = {boot \| 系統 \| 自動 \| 需求 \| 停用}|指定服務的啟動類型。 預設設定為 [**啟動 = 要求**]。</br>**開機**-指定開機載入器所載入的設備磁碟機。</br>**系統**-指定在核心初始化期間啟動的設備磁碟機。</br>**自動**指定每次電腦重新開機時自動啟動的服務。 請注意，即使沒有任何人登入電腦，服務也會執行。</br>**需求**-指定必須手動啟動的服務。 如果未指定**start =** ，這就是預設值。</br>**disabled** -指定無法啟動的服務。 若要啟動已停用的服務，請將 [啟動類型] 變更為其他值。|
-|錯誤 = {一般 \| 嚴重 \| 重大 \| 忽略}|指定當電腦啟動時服務失敗時的錯誤嚴重性。 預設設定為 [**錯誤 = 一般**]。</br>**normal** -指定記錄錯誤。 隨即顯示訊息方塊，通知使用者服務無法啟動。 啟動將會繼續。 此為預設設定。</br>**嚴重**-指定記錄錯誤（如果可能的話）。 電腦會嘗試使用上次的正確設定重新開機。 這可能會導致電腦能夠重新開機，但服務可能仍無法執行。</br>**重大**-指定記錄錯誤（如果可能的話）。 電腦會嘗試使用上次的正確設定重新開機。 如果最後一個已知的正確設定失敗，啟動也會失敗，且開機程式會中止並出現停止錯誤。</br>**忽略**-指定錯誤已記錄且啟動繼續進行。 除了在事件記錄檔中記錄錯誤以外，不會提供任何通知給使用者。|
+|類型 = {自有 \| 共用 \| 核心 \| filesys \| rec \| 互動類型 = {自有 \| 共用}}|指定服務類型。 預設設定為**type = 自有**。</br>**自有**-指定服務在自己的進程中執行。 它不會與其他服務共用可執行檔。 這是預設設定。</br>**share** -指定服務以共用進程的形式執行。 它會與其他服務共用可執行檔。</br>**核心**-指定驅動程式。</br>**filesys** -指定檔案系統驅動程式。</br>**rec** -指定檔案系統辨識的驅動程式（識別電腦上使用的檔案系統）。</br>**互動**-指定服務可以與桌面互動，並接收使用者的輸入。 互動式服務必須以 LocalSystem 帳戶執行。 此類型必須與**type = 自有**或**type = shared**搭配使用。 使用**type = 互動**本身會產生「不正確參數」錯誤。|
+|啟動 = {boot \| 系統 \| 自動 \| 需求 \| 停用 \| 延遲自動}|指定服務的啟動類型。 預設設定為 [**啟動 = 要求**]。</br>**開機**-指定開機載入器所載入的設備磁碟機。</br>**系統**-指定在核心初始化期間啟動的設備磁碟機。</br>**自動**指定每次電腦重新開機時自動啟動的服務。 請注意，即使沒有任何人登入電腦，服務也會執行。</br>**需求**-指定必須手動啟動的服務。 如果未指定**start =** ，這就是預設值。</br>**disabled** -指定無法啟動的服務。 若要啟動已停用的服務，請將 [啟動類型] 變更為其他值。</br>**延遲-自動**指定啟動其他自動服務之後，很快就會自動啟動的服務。|
+|錯誤 = {一般 \| 嚴重 \| 重大 \| 忽略}|指定當電腦啟動時服務失敗時的錯誤嚴重性。 預設設定為 [**錯誤 = 一般**]。</br>**normal** -指定記錄錯誤。 隨即顯示訊息方塊，通知使用者服務無法啟動。 啟動將會繼續。 這是預設設定。</br>**嚴重**-指定記錄錯誤（如果可能的話）。 電腦會嘗試使用上次的正確設定重新開機。 這可能會導致電腦能夠重新開機，但服務可能仍無法執行。</br>**重大**-指定記錄錯誤（如果可能的話）。 電腦會嘗試使用上次的正確設定重新開機。 如果最後一個已知的正確設定失敗，啟動也會失敗，且開機程式會中止並出現停止錯誤。</br>**忽略**-指定錯誤已記錄且啟動繼續進行。 除了在事件記錄檔中記錄錯誤以外，不會提供任何通知給使用者。|
 |bin 路徑 = \<BinaryPathName >|指定服務二進位檔案的路徑。 **Bin 路徑 =** 沒有預設值，而且必須提供此字串。|
 |群組 = \<LoadOrderGroup >|指定此服務為其成員之群組的名稱。 群組清單會儲存在登錄中的**HKLM\System\CurrentControlSet\Control\ServiceGroupOrder**子機碼中。 預設值為 null。|
 |標記 = {是 \| 否}|指定是否要從 CreateService 呼叫取得 TagID。 標記僅用於開機啟動和系統啟動驅動程式。|

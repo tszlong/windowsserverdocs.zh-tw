@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9840bc20ddf6193241fe36055698e2bd3222496
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361883"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781325"
 ---
 # <a name="wmic"></a>wmic
 
@@ -31,27 +31,19 @@ ms.locfileid: "71361883"
 ## <a name="syntax"></a>語法
 
 ```
-command </parameter>
+wmic </parameter>
 ```
 
 ## <a name="sub-commands"></a>子命令
 
 下列子命令隨時都可供使用：
 
-|子命令|描述|
+|子命令|說明|
 |-----------|-----------|
 |class|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的類別。|
 |path|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的實例。|
 |內容|顯示所有全域參數的目前值。|
 |[quit \| exit]|結束 WMIC 命令 shell。|
-
-## <a name="parameters"></a>Parameters
-
-|參數|描述|
-|---------|-----------|
-|</parameter>|\<簡潔的描述，會以動詞開頭。 >|
-|</param2>|\<另一個簡明的描述，請從動詞開始。 >|
-
 
 ## <a name="BKMK_examples"></a>典型
 

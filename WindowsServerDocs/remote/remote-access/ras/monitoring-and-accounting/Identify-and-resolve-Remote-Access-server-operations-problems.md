@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: db10f784f383938edb29b18d7e8febf869378abc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404563"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791167"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>識別並解決「遠端存取」伺服器操作問題
 
@@ -76,7 +76,7 @@ IP 協助程式服務（IPHlpSvc）會裝載 IPv6 轉換技術（例如 IP-HTTPS
   
     **解決方法**  
   
-    1.  若要確定服務正在執行，請在 Windows PowerShell 命令提示字元中輸入「**服務 iphlpsc** 」。  
+    1.  若要確定服務正在執行，請在 Windows PowerShell 命令提示字元中輸入「**服務 iphlpsvc** 」。  
   
     2.  若要啟用此服務，請從提升許可權的 Windows PowerShell 命令提示字元中輸入 [**啟動-服務 iphlpsvc** ]。  
   
@@ -95,9 +95,6 @@ IP 協助程式服務（IPHlpSvc）會裝載 IPv6 轉換技術（例如 IP-HTTPS
   
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
-```  
+```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  
-```  
-  
-
-
+```

@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: a0726752-0a78-472b-9667-2f91636c1b3b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4673fcf369bdb95d3aa20028ee57f78ffbcaf9c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6128dfb4ab4f6bd29d66cf4823345817f2cb119c
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356703"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791508"
 ---
 # <a name="branchcache-network-shell-and-windows-powershell-commands"></a>BranchCache 網路殼層與 Windows PowerShell 命令
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在 Windows Server 2016 中，您可以使用 Windows PowerShell 或 BranchCache 的 Network Shell （Netsh）命令來設定和管理 BranchCache。  
   
@@ -31,7 +31,7 @@ Windows PowerShell 與 netsh 命令參考位於下列位置。 雖然 Windows Se
   
 -   [Windows Server 2008 R2 中的 BranchCache Netsh 命令](https://technet.microsoft.com/library/dd979561(v=ws.10))  
   
--   Windows PowerShell for Windows Server 2012[中的 BranchCache Cmdlet](https://technet.microsoft.com/library/hh848392.aspx) 。  
+-   [Windows PowerShell 中的 BranchCache Cmdlet](https://docs.microsoft.com/powershell/module/branchcache/?view=win10-ps)
   
 > [!TIP]  
 > 若要在 Windows PowerShell 命令提示字元下檢視 BranchCache 的 Windows PowerShell 命令清單，請在 Windows PowerShell 命令提示字元下輸入 `Get-Command -Module BranchCache`，然後按 ENTER。  

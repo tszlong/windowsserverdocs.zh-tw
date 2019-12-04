@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fb0875c972f8259b47f48ef84ed486fc678d8b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370893"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781305"
 ---
 # <a name="start"></a>start
 
@@ -31,12 +31,12 @@ ms.locfileid: "71370893"
 ## <a name="syntax"></a>語法
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
 ```
 
 ## <a name="parameters"></a>Parameters
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |「\<標題 >」|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
 |/d \<路徑 >|指定啟動目錄。|
@@ -46,6 +46,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/low \|/normal \|/high ... program.exe \|/realtime \|/abovenormal \|/belownormal|以指定的優先權類別啟動應用程式。 有效的優先權類別值為 **/low**、 **/normal**、 **/high ... program.exe**、 **/realtime**、 **/abovenormal**和 **/belownormal**。|
 |/affinity \<HexAffinity >|將指定的處理器親和性遮罩（以十六進位數表示）套用至新的應用程式。|
 |/wait|啟動應用程式，並等候它結束。|
+|/elevate|以系統管理員身分執行應用程式。|
 |/b|啟動應用程式，而不開啟新的命令提示字元視窗。 除非應用程式啟用 CTRL + C 處理，否則會忽略 CTRL + C 處理。 使用 CTRL + BREAK 來中斷應用程式。|
 |/b \<命令 > \| \<程式 >|指定要啟動的命令或程式。|
 |\<參數 >|指定要傳遞給命令或程式的參數。|
