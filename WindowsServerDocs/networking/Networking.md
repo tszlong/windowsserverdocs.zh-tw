@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6d9abf96348a596fbd2f886cb67b5d97f686e2
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
+ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700151"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823843"
 ---
 # <a name="networking"></a>網路
 
@@ -252,7 +252,7 @@ ms.locfileid: "74700151"
             </div>
         </div>
     </li>
-    <hr />
+   <hr />
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -263,7 +263,7 @@ ms.locfileid: "74700151"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="dns/dns-top.md">網域名稱系統（DNS）&quot;&gt;</a></h3>
+                        <h3><a href="dns/dns-top.md">網域名稱系統 (DNS)</a></h3>
                         <hr />
                         <p>網域名稱系統（DNS）是由 TCP/IP 組成的業界標準通訊協定套件之一，而且 DNS 用戶端和 DNS 伺服器會將電腦名稱稱到 IP 位址對應名稱解析服務提供給電腦和使用者。</p>
                     </div>
@@ -382,7 +382,7 @@ ms.locfileid: "74700151"
                         <p>Windows Server 2016 中的網路卸載和最佳化技術包含「僅限軟體」(SO) 功能和技術、「硬體和軟體」(SH) 整合功能和技術，以及「僅限硬體」(HO) 功能和技術。</p>
                         <p>此外也提供下列卸載和最佳化技術文件：<p>
                         <hr />
-                        <a href="technologies/conv-nic/cnic-top.md">高效能網路</a>
+                        <a href="technologies/conv-nic/cnic-top.md">聚合式網路介面卡（NIC）</a>
                         <hr />
                         <a href="technologies/dcb/dcb-top.md">資料中心橋接（DCB）</a>
                         <hr />
