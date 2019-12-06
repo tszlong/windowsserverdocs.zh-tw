@@ -1,6 +1,6 @@
 ---
 title: 使用 Windows Server Essentials 記錄檔收集器
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,38 +12,38 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ba5c0de9d8689c63c95ea3410a74fc9a7289aeab
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: df467921f8a8f5633d2b0bd792885fe2c9ae2212
+ms.sourcegitcommit: a937eb17915a4a0e444a36ddb0fac9c9771cfbfa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435997"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74877903"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 記錄檔收集器
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-當您在疑難排解電腦問題時，從 Microsoft 客戶服務及支援服務人員可能會要求您從伺服器、 網路或兩者都使用 Windows Server Essentials 的記錄檔收集器上的電腦收集記錄檔。  
+當您對電腦問題進行疑難排解時，Microsoft 客戶服務和支援的代表可能會要求您從伺服器、網路上的電腦，或使用 Windows Server Essentials 記錄檔收集器來收集記錄。  
   
  記錄檔收集器會將程式記錄檔、事件檢閱者記錄檔及相關的環境資訊，複製到指定位置的單一 zip 檔案中。 您可直接從伺服器或網路上的任一部電腦執行記錄檔收集器，也可使用與電腦的遠端連線。  
   
 > [!NOTE]
-> - 記錄檔收集器不會分析網路問題，或對任何伺服器或網路上的電腦進行變更。 如需有關如何疑難排解網路問題的資訊，請參閱您的伺服器產品的說明文件。  
->   -   在本指南中，您的網路，而不是您的伺服器上的電腦稱為網路電腦。  
->   -   [下載 Windows Server Essentials 記錄檔收集器安裝套件](https://go.microsoft.com/fwlink/?LinkID=266341)。  
+>記錄檔收集器不會分析網路問題，或對任何伺服器或網路上的電腦進行變更。 如需有關如何疑難排解網路問題的資訊，請參閱您的伺服器產品的說明文件。  
+>在本指南中，您的網路上的電腦（而非您的伺服器）稱為網路電腦。  
+>[下載 Windows Server Essentials 記錄檔收集器安裝套件](https://www.microsoft.com/download/details.aspx?id=34821)。  
   
  如果要安裝並執行記錄檔收集器，請執行下列主題中的步驟：  
   
 
-1.  [安裝記錄檔收集器](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [安裝記錄檔收集器](Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [執行記錄檔收集器](Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [執行記錄檔收集器](Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
-1.  [安裝記錄檔收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
+3. [安裝記錄檔收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [執行記錄檔收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+4. [執行記錄檔收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
-  
+
 ## <a name="environment-information-collected"></a>收集的環境資訊  
  對於您指定的每部網路電腦或伺服器，記錄檔收集器會收集下列環境資訊，並將它放入記錄檔集合檔案。  
   
@@ -112,9 +112,9 @@ ms.locfileid: "66435997"
   
 ### <a name="server-logs-and-registry-information"></a>伺服器記錄檔和登錄資訊  
   
--   伺服器產品記錄檔，從 < ProgramData\>server\logs  
+-   伺服器產品記錄檔，從 < ProgramData\>\Microsoft\Windows Server\Logs  
   
--   排定的工作  
+-   排定工作  
   
 -   安裝程式 API 記錄檔  
   
@@ -132,17 +132,17 @@ ms.locfileid: "66435997"
   
 -   登錄機碼，來自於：  
   
-    -   \\\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\  
+    -   \\\ HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ 伺服器 \  
   
-    -   \\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DevicesProviderSvc  
+    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DevicesProviderSvc  
   
-    -   \\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc  
+    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc  
   
 ### <a name="network-computer-logs-and-registry-information"></a>網路電腦記錄檔和登錄資訊  
   
--   網路電腦產品記錄檔，位於 < ProgramData\>server\logs  
+-   < ProgramData\>\Microsoft\Windows Server\Logs 的網路電腦產品記錄檔  
   
--   健康狀態警示檔案，位於 < ProgramData\>\Microsoft\Windows Server\Data  
+-   健康狀態警示檔案位於 < ProgramData\>\Microsoft\Windows Server\Data  
   
 -   Windows Update 記錄檔  
   
@@ -150,7 +150,7 @@ ms.locfileid: "66435997"
   
 -   排定的工作資訊  
   
--   登錄機碼從\\\HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server\  
+-   來自 \\\ HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ 伺服器 \ 的登錄機碼  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>不是執行 Windows 作業系統版本的電腦的記錄檔  
  記錄檔收集器不會從不是執行 Windows 作業系統版本的電腦收集記錄檔 對於非 Windows 電腦，請以手動方式將下列記錄檔複製到您儲存記錄檔收集器檔案的相同位置。  
@@ -159,14 +159,14 @@ ms.locfileid: "66435997"
   
 -   Library/Logs/Windows Server.log  
   
--   Library/Logs/CrashReporter/LaunchPad-< nnn\> (複製所有 LaunchPad-< nnn\>.crash 檔案)  
+-   Library/Logs/CrashReporter/啟動列-< nnn\> （複製所有 [啟動列-< nnn]\>[損毀檔案]）  
   
--   Library/Logs/DiagnosticReports/LaunchPad-< nnn\> (複製所有 LaunchPad-< nnn\>.crash 檔案)  
+-   Library/Logs/DiagnosticReports/啟動列-< nnn\> （複製所有 [啟動列-< nnn]\>[損毀檔案]）  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
   
 
--   [疑難排解記錄檔收集器錯誤](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [針對記錄收集器錯誤進行疑難排解](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 
--   [疑難排解記錄檔收集器錯誤](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [針對記錄收集器錯誤進行疑難排解](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

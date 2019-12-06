@@ -197,6 +197,7 @@
 
 ### [對 AD DS 進行疑難排解](ad-ds/manage/AD-DS-Troubleshooting.md)
 #### [設定電腦進行疑難排解](ad-ds/manage/troubleshoot/Configuring-a-computer-for-Troubleshooting.md)
+#### [使用 ETW 對 LDAP 連線進行疑難排解](ad-ds/manage/troubleshoot/troubleshoot-ldap-using-etw.md)
 #### [進行 Active Directory 複寫問題疑難排解](ad-ds/manage/troubleshoot/Troubleshooting-active-directory-Replication-Problems.md)
 ##### [其他資源](additional-Resources_12.md)
 

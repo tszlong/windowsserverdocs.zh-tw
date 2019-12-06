@@ -10,12 +10,12 @@ ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 58f88dbe485860cf685e0cafc960f60af06fc911
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 829ae15495d54aca8c476909988ea5a44ea487e7
+ms.sourcegitcommit: 8a017624682fe0172076f9169a9fa17aa972907f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781579"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74852625"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 元件疑難排解
 
@@ -73,7 +73,7 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 ## <a name="troubleshoot-directaccess"></a>針對 DirectAccess 進行疑難排解
 - [對 DirectAccess 進行疑難排解](https://docs.microsoft.com/windows-server/remote/remote-access/directaccess/troubleshooting-directaccess)
 
-## <a name="troubleshoot-disk--management"></a>針對磁片管理進行疑難排解
+## <a name="troubleshoot-disk-management"></a>針對磁片管理進行疑難排解
 - [針對磁碟管理問題進行疑難排解](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
 
 ## <a name="troubleshoot-dns"></a>DNS 疑難排解
