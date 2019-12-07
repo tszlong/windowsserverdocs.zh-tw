@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: fb91ca583fd71a7fbe38369606d2dcc4a816d8aa
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 2625097c56e6b2121cbdac45e1cc5f86972e4898
+ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935011"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823853"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 
@@ -46,7 +46,7 @@ PAW 安全性控制項著重在緩和最大的影響力以及高可能性的危�
 
 > [!NOTE]
 > PAW 將不會保護環境，免於受到已經透過 Active Directory 樹系取得系統管理存取權的敵人攻擊。
-> 因為許多現有的 Active Directory Domain Services 實作在認證遭竊的風險方面都已經行之多年，因此組織應該假設入侵，並考慮他們可能還未偵測到網域或企業系統管理員認證受到危害的可能性。 懷疑網域遭到入侵的組織應該考慮使用專業的事件回應服務。
+> 因為許多現有的 Active Directory 網域服務實作在認證遭竊的風險方面都已經行之多年，因此組織應該假設入侵，並考慮他們可能還未偵測到網域或企業系統管理員認證受到危害的可能性。 懷疑網域遭到入侵的組織應該考慮使用專業的事件回應服務。
 >
 > 如需有關回應與復原指導方針的詳細資訊，請參閱 [Mitigating Pass-the-Hash and Other Credential Theft](https://aka.ms/pth) (第 2 版) 的 "Respond to suspicious activity" 和 "Recover from a breach" 章節。
 >
@@ -516,7 +516,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -545,7 +545,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -575,7 +575,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -599,7 +599,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -623,7 +623,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
