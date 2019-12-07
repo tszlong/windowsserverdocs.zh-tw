@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 23943c9567f371f7598c7dcda6db434760cabeab
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: c05987360256f7b7ed58911c1ded86586fc8b3aa
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567089"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903900"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -44,7 +44,7 @@ ms.locfileid: "73567089"
 
 - 在 Windows 管理中心模組中執行的 OSS 版本號碼和協力廠商軟體注意事項中所列出的內容之間，可能會有些許差異。
 
-### <a name="extension-manager"></a>延伸模組管理員
+### <a name="extension-manager"></a>擴充管理員
 
 - 當您更新 Windows 管理中心時，必須重新安裝擴充功能。
 - 如果您新增無法存取的延伸模組摘要，就不會出現警告。 [14412861]
@@ -82,7 +82,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
 
-## <a name="role-based-access-control-rbac"></a>以角色為基礎的存取控制（RBAC）
+## <a name="role-based-access-control-rbac"></a>角色型存取控制 (RBAC)
 
 - RBAC 部署無法在設定為使用 Windows Defender 應用程式控制 (WDAC，先前稱為程式碼完整性) 的電腦上成功進行。[16568455]
 
@@ -189,9 +189,9 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 如果您使用 Microsoft 帳戶（[MSA](https://account.microsoft.com/account/)），或使用 AZURE ACTIVE DIRECTORY （AAD）登入 Windows 10 電腦，則必須使用 [管理-as] 來提供本機系統管理員帳戶的認證 [16568455]
 
-- 當您嘗試管理 localhost 時，系統會提示您提高閘道程序的權限。 如果您在 \[使用者帳戶控制\] 快顯中按一下 **\[否\]** ，Windows Admin Center 將無法再次加以顯示。 在此情況下，以滑鼠右鍵按一下系統匣中的 Windows Admin Center 圖示並選擇 [結束] 以結束閘道程序，然後從 [開始] 功能表重新啟動 Windows Admin Center。
+- 當您嘗試管理 localhost 時，系統會提示您提高閘道程序的權限。 如果您在接下來的 [使用者帳戶控制] 快顯視窗中按一下 [**否**]，您必須取消連線嘗試並從頭開始。
 
-- Windows 10 預設不開啟 WinRM/PowerShell 遠端執行功能
+- Windows 10 預設不會開啟 WinRM/PowerShell 遠端功能。
   
   - 若要啟用 Windows 10 用戶端管理，您必須從提升權限的 PowerShell 命令提示字元發出命令 ```Enable-PSRemoting```。
 
@@ -226,4 +226,4 @@ Azure 檔案同步需要 Azure 中 Windows 系統管理中心未提供1910版之
 包括 Azure 監視器、Azure 更新管理和 Azure 資訊安全中心的 Azure 管理服務，會針對內部部署伺服器使用相同的代理程式： Microsoft Monitoring Agent。 Azure 更新管理有一組較有限的支援區域，而且需要將 Log Analytics 工作區連結至 Azure 自動化帳戶。 基於這項限制，如果您想要在 Windows 管理中心設定多個服務，您必須先設定 Azure 更新管理，然後 Azure 資訊安全中心或 Azure 監視器。 如果您已設定任何使用 Microsoft Monitoring Agent 的 Azure 管理服務，然後嘗試使用 Windows 管理中心來設定 Azure 更新管理，Windows 系統管理中心只會允許您設定 Azure 更新管理（如果現有的連結至 Microsoft Monitoring Agent 的資源支援 Azure 更新管理。 如果不是這種情況，您有兩個選項：
 
 1. 移至 [控制台] > Microsoft Monitoring Agent，將[您的伺服器與現有的 Azure 管理解決方案](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)（例如 Azure 監視器或 Azure 資訊安全中心）中斷連接。 然後在 Windows 系統管理中心設定 Azure 更新管理。 之後，您可以透過 Windows 系統管理中心返回設定其他 Azure 管理解決方案，而不會發生問題。
-2. 您可以[手動設定 azure 更新管理所需的 azure 資源](https://docs.microsoft.com/azure/automation/automation-update-management)，然後[手動更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （在 Windows 系統管理中心以外），以新增對應至更新管理解決方案的新工作區您想要使用。
+2. 您可以[手動設定 azure 更新管理所需的 azure 資源](https://docs.microsoft.com/azure/automation/automation-update-management)，然後[手動更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （在 Windows 系統管理中心以外），以新增對應至您想要使用之更新管理解決方案的新工作區。

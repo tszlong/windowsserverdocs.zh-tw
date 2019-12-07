@@ -1,6 +1,6 @@
 ---
-title: 開始使用 Windows 管理中心
-description: 開始使用 Windows 管理中心
+title: Windows 管理中心入門
+description: Windows 管理中心入門
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: fac17cd5975eeb699f205888edbe3f1c30b43394
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 1643568cd1a0cdbb693d773a8357d2c36b701fd3
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567162"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903973"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows 管理中心
 
@@ -153,134 +153,7 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 ## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>使用 PowerShell 匯入或匯出您的連線（含標籤）
 
-```powershell
-# Load the module
-Import-Module "$env:ProgramFiles\windows admin center\PowerShell\Modules\ConnectionTools"
-# Available cmdlets: Export-Connection, Import-Connection
-
-# Export connections (including tags) to .csv files
-Export-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-# Import connections (including tags) from .csv files
-Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-```
-
-### <a name="csv-file-format-for-importing-connections"></a>用於匯入連接的 CSV 檔案格式
-
-CSV 檔案的格式會以四個標題 ```"name","type","tags","groupId"```開頭，後面接著每個連接的新行。
-
-**name**是連接的 FQDN
-
-**類型**是連線類型。 對於 Windows 管理中心所包含的預設連接，您將使用下列其中一項：
-
-| 連線類型 | 連接字串 |
-|------|-------------------------------|
-| WIN ENT LTSB 2016 Estonian 64 Bits | msft. sme. 類型伺服器 |
-| Windows 10 電腦 | msft. 您的連線類型。 windows-用戶端 |
-| 容錯移轉叢集 | msft. sme. 連線類型 cluster |
-| 超交集叢集 | msft. sme 類型。超交集-叢集 |
-
-**標記**是以管線分隔。
-
-**groupId**用於共用連接。 請使用這個資料行中 ```global``` 的值，讓這個成為共用的連接。
-
-### <a name="example-csv-file-for-importing-connections"></a>匯入連接的範例 CSV 檔案
-
-```
-"name","type","tags","groupId"
-"myServer.contoso.com","msft.sme.connection-type.server","hyperv"
-"myDesktop.contoso.com","msft.sme.connection-type.windows-client","hyperv"
-"teamcluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016","global"
-"myHCIcluster.contoso.com,"msft.sme.connection-type.hyper-converged-cluster","myHCIcluster|hyperv|JIT|WS2019"
-"teamclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016","global"
-"myHCIclusterNode.contoso.com","msft.sme.connection-type.server","myHCIcluster|hyperv|JIT|WS2019"
-```
-
-## <a name="import-rdcman-connections"></a>匯入 RDCman 連接
-
-使用下列腳本，將[RDCman](https://blogs.technet.microsoft.com/rmilne/2014/11/19/remote-desktop-connection-manager-download-rdcman-2-7/)中儲存的連接匯出至檔案。 接著，您可以將檔案匯入 Windows 系統管理中心，使用標記來維護 RDCMan 群組階層。 試試看！
-
-1. 將下列程式碼複製並貼到您的 PowerShell 會話：
-
-   ```powershell
-   #Helper function for RdgToWacCsv
-   function AddServers {
-    param (
-    [Parameter(Mandatory = $true)]
-    [Xml.XmlLinkedNode]
-    $node,
-    [Parameter()]
-    [String[]]
-    $tags,
-    [Parameter(Mandatory = $true)]
-    [String]
-    $csvPath
-    )
-    if ($node.LocalName -eq 'server') {
-        $serverName = $node.properties.name
-        $tagString = $tags -join "|"
-        Add-Content -Path $csvPath -Value ('"'+ $serverName + '","msft.sme.connection-type.server","'+ $tagString +'"')
-    } 
-    elseif ($node.LocalName -eq 'group' -or $node.LocalName -eq 'file') {
-        $groupName = $node.properties.name
-        $tags+=$groupName
-        $currNode = $node.properties.NextSibling
-        while ($currNode) {
-            AddServers -node $currNode -tags $tags -csvPath $csvPath
-            $currNode = $currNode.NextSibling
-        }
-    } 
-    else {
-        # Node type isn't relevant to tagging or adding connections in WAC
-    }
-    return
-   }
-
-   <#
-   .SYNOPSIS
-   Convert an .rdg file from Remote Desktop Connection Manager into a .csv that can be imported into Windows Admin Center, maintaining groups via server tags. This will not modify the existing .rdg file and will create a new .csv file
-
-    .DESCRIPTION
-    This converts an .rdg file into a .csv that can be imported into Windows Admin Center.
-
-    .PARAMETER RDGfilepath
-    The path of the .rdg file to be converted. This file will not be modified, only read.
-
-    .PARAMETER CSVdirectory
-    Optional. The directory you wish to export the new .csv file. If not provided, the new file is created in the same directory as the .rdg file.
-
-    .EXAMPLE
-    C:\PS> RdgToWacCsv -RDGfilepath "rdcmangroup.rdg"
-    #>
-   function RdgToWacCsv {
-    param(
-        [Parameter(Mandatory = $true)]
-        [String]
-        $RDGfilepath,
-        [Parameter(Mandatory = $false)]
-        [String]
-        $CSVdirectory
-    )
-    [xml]$RDGfile = Get-Content -Path $RDGfilepath
-    $node = $RDGfile.RDCMan.file
-    if (!$CSVdirectory){
-        $csvPath = [System.IO.Path]::GetDirectoryName($RDGfilepath) + [System.IO.Path]::GetFileNameWithoutExtension($RDGfilepath) + "_WAC.csv"
-    } else {
-        $csvPath = $CSVdirectory + [System.IO.Path]::GetFileNameWithoutExtension($RDGfilepath) + "_WAC.csv"
-    }
-    New-item -Path $csvPath
-    Add-Content -Path $csvPath -Value '"name","type","tags"'
-    AddServers -node $node -csvPath $csvPath
-    Write-Host "Converted $RDGfilepath `nOutput: $csvPath"
-   }
-   ```
-
-2. 若要建立。CSV 檔案，請執行下列命令：
-
-   ```powershell
-   RdgToWacCsv -RDGfilepath "path\to\myRDCManfile.rdg"
-   ```
-
-3. 匯入所產生的。CSV 檔案到 Windows 管理中心，而且您所有的 RDCMan 群組階層都會以連接清單中的標記表示。 如需詳細資訊，請參閱[使用 PowerShell 匯入或匯出您的連線（使用標記）](#use-powershell-to-import-or-export-your-connections-with-tags)。
+[!INCLUDE [ps-connections](../includes/ps-connections.md)]
 
 ## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>查看 Windows 系統管理中心內使用的 PowerShell 腳本
 

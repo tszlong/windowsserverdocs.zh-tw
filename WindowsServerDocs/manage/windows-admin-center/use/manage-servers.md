@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 03/07/2019
+ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406780"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903717"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>使用 Windows 系統管理中心管理伺服器
 
@@ -23,7 +23,7 @@ ms.locfileid: "71406780"
 > 對 Windows Admin Center 不熟悉？
 > [深入了解 Windows Admin Center](../understand/windows-admin-center.md) 或[立即下載](https://aka.ms/windowsadmincenter).
 
-## <a name="managing-windows-server-machines"></a>管理 Windows Server 電腦
+## <a name="managing-windows-server-machines"></a>管理 Windows Server 機器
 
 您可以將執行 Windows Server 2012 或更新版本的個別伺服器新增到 Windows 管理中心，以一組完整的工具（包括憑證、裝置、事件、進程、角色和功能、更新虛擬機器等等）來管理伺服器。
 
@@ -47,25 +47,27 @@ ms.locfileid: "71406780"
 
 下列工具適用于伺服器連接：
 
-| 工具 | 描述 |
+| 工具 | 說明 |
 | ---- | ----------- |
 | [概觀](#overview) | View server 詳細資料和控制伺服器狀態 |
 | [Active Directory](#active-directory-preview) | 管理 Active Directory |
-| [備份](#backup) | 查看和設定 Azure 備份 |  
+| [Backup](#backup) | 查看和設定 Azure 備份 |  
 | [憑證](#certificates) | 查看和修改憑證 |
-| [那裡](#containers) | 查看容器 |
+| [[設定 SSIS 記錄]](#containers) | 檢視容器 |
 | [裝置](#devices) | 查看和修改裝置 |
 | [DHCP](#dhcp) | 查看和管理 DHCP 伺服器設定 |
 | [DNS](#dns) | 查看和管理 DNS 伺服器設定 |
-| [事件](#events) | View 事件 |
+| [[事件]](#events) | 檢視活動 |
 | [檔案](#files) | 流覽檔案和資料夾 |
-| [防火牆](#firewall) | 查看和修改防火牆規則 |
+| [Firewall](#firewall) | 查看和修改防火牆規則 |
 | [已安裝的應用程式](#installed-apps) | 查看和移除已安裝的應用程式 |
 | [本機使用者和群組](#local-users-and-groups) | 查看和修改本機使用者和群組 |
-| [網路](#network) | 查看和修改網路裝置 |
+| [Network](#network) | 查看和修改網路裝置 |
+| [封包監視](https://aka.ms/wac1908) | 監視網路封包 |
+| [效能監視器](https://aka.ms/perfmon-blog) | 查看效能計數器和報告 |
 | [PowerShell](#powershell) | 透過 PowerShell 與伺服器互動 |
-| [進程](#processes) | 查看和修改執行中的進程 |
-| [登錄](#registry) | 查看和修改登錄專案 |
+| [處理序](#processes) | 查看和修改執行中的進程 |
+| [Registry](#registry) | 查看和修改登錄專案 |
 | [遠端桌面](#remote-desktop) | 透過遠端桌面與伺服器互動 |
 | [角色和功能](#roles-and-features) | 查看和修改角色和功能 |
 | [排定的工作](#scheduled-tasks) | 查看和修改排定的工作 |
@@ -75,11 +77,11 @@ ms.locfileid: "71406780"
 | [儲存體遷移服務](#storage-migration-service) | 將伺服器和檔案共用遷移至 Azure 或 Windows Server 2019 |
 | [儲存體複本](#storage-replica) | 使用儲存體複本來管理伺服器對伺服器儲存體複寫 |
 | [系統深入解析](#system-insights) | 系統深入解析可讓您更深入瞭解伺服器的運作。 |
-| [Update](#updates) | 已安裝視圖並檢查是否有新的更新 |
+| [Updates](#updates) | 已安裝視圖並檢查是否有新的更新 |
 | [虛擬機器](manage-virtual-machines.md) | 查看和管理虛擬機器 |
 | [虛擬交換器](#virtual-switches) | 查看和管理虛擬交換器 |
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 「**總覽**」可讓您查看 CPU、記憶體和網路效能的目前狀態，以及執行作業及修改目的電腦或伺服器上的設定。
 
@@ -91,7 +93,7 @@ ms.locfileid: "71406780"
 - 查看 CPU 活動
 - 查看記憶體活動
 - 查看網路活動
-- 重新開機伺服器
+- 重新啟動伺服器
 - 關閉伺服器
 - 在伺服器上啟用磁片計量
 - 編輯服務器上的電腦識別碼
@@ -119,7 +121,7 @@ ms.locfileid: "71406780"
 
 [**查看 Active Directory 的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)。
 
-## <a name="backup"></a>備份
+## <a name="backup"></a>[備份]
 
 **備份**可讓您將伺服器直接備份到 Microsoft Azure，來保護您的 Windows server 免于損毀、遭受攻擊或嚴重損壞。
 [深入瞭解 Azure 備份。](https://aka.ms/windows-admin-center-backup)
@@ -160,7 +162,7 @@ ms.locfileid: "71406780"
 
 [**查看容器的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D)。
 
-## <a name="devices"></a>裝置
+## <a name="devices"></a>[裝置]
 
 **裝置**可讓您管理電腦或伺服器上已連線的裝置。
 
@@ -169,7 +171,7 @@ ms.locfileid: "71406780"
 裝置支援下列功能：
 
 - 流覽及搜尋裝置
-- 查看裝置詳細資料
+- 檢視裝置詳細資料
 - 停用裝置
 - 更新裝置上的驅動程式
 
@@ -202,7 +204,7 @@ ms.locfileid: "71406780"
 
 [**查看 DHCP 的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D)。
 
-## <a name="events"></a>Events
+## <a name="events"></a>事件
 
 **事件**可讓您管理電腦或伺服器上的事件記錄檔。
 
@@ -211,13 +213,13 @@ ms.locfileid: "71406780"
 事件支援下列功能：
 
 - 流覽和搜尋事件
-- View 事件詳細資料
+- 檢視事件詳細資料
 - 清除記錄檔中的事件
 - 從記錄檔匯出事件
 
 [**查看事件的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D)。
 
-## <a name="files"></a>檔案
+## <a name="files"></a>Files
 
 檔案**可讓您**管理電腦或伺服器上的檔案和資料夾。
 
@@ -227,7 +229,7 @@ ms.locfileid: "71406780"
 
 - 流覽檔案和資料夾
 - 搜尋檔案或資料夾
-- 建立新資料夾
+- 建立新的資料夾
 - 刪除檔案或資料夾
 - 下載檔案或資料夾
 - 上傳檔案或資料夾
@@ -320,8 +322,8 @@ PowerShell 支援下列功能：
 
 - 流覽及搜尋執行中的進程
 - 查看進程詳細資料
-- 啟動進程
-- 結束處理常式
+- 啟動處理序
+- 結束處理程序
 - 建立進程傾印
 - 尋找進程控制碼
 
@@ -402,7 +404,7 @@ PowerShell 支援下列功能：
 
 [**查看服務的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BServices%5D)。
 
-## <a name="settings"></a>設定
+## <a name="settings"></a>[設定]
 
 **設定**是在電腦或伺服器上管理設定的集中位置。
 
@@ -415,7 +417,7 @@ PowerShell 支援下列功能：
 - 查看和修改以角色為基礎的存取控制設定
 - 查看和修改 Hyper-v 主機設定（如果適用）
 
-## <a name="storage"></a>儲存體
+## <a name="storage"></a>儲存空間
 
 **儲存體**可讓您管理電腦或伺服器上的存放裝置。
 
@@ -430,9 +432,9 @@ PowerShell 支援下列功能：
 - 建立、附加和卸離虛擬硬碟（VHD）
 - 讓磁片離線
 - 格式化磁片區
-- 調整磁片區大小
+- 調整磁碟區的大小
 - 編輯磁片區屬性
-- 刪除磁片區
+- 刪除磁碟區
 - 安裝配額管理
 - 管理檔案伺服器 Resource Manager 配額[儲存體-> 建立/更新配額](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
 
@@ -454,7 +456,7 @@ PowerShell 支援下列功能：
 ## <a name="system-insights"></a>系統深入解析
 
 **System Insights**以原生方式引進 Windows Server 中的預測性分析，協助您更深入瞭解伺服器的運作。
-[深入瞭解 System Insights](http://aka.ms/systeminsights)
+[深入瞭解 System Insights](https://aka.ms/systeminsights)
 
 >[!NOTE]
 >System Insights 需要 Windows Server 2019。

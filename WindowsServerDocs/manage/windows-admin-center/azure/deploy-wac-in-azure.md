@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 42216375d1784a5bc853994a9de7cff72920088d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1da4df284febbf18b5796322868451c45ab247ab
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357318"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903930"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>在 Azure 中部署 Windows 管理中心
 
@@ -26,14 +26,14 @@ ms.locfileid: "71357318"
 ### <a name="prerequisites"></a>必要條件
 
 * 在[Azure Cloud Shell](https://shell.azure.com)中設定您的帳戶。 如果這是您第一次使用 Cloud Shell，系統會要求您將 Azure 儲存體帳戶與 Cloud Shell 建立關聯。
-* 在**PowerShell** Cloud Shell 中，流覽至您的主目錄：```PS Azure:\> cd ~```
-* 若要上```Deploy-WACAzVM.ps1```傳檔案，請將它從本機電腦拖放到 [Cloud Shell] 視窗上的任何位置。
+* 在**PowerShell** Cloud Shell 中，流覽至您的主目錄： ```PS Azure:\> cd ~```
+* 若要上傳 ```Deploy-WACAzVM.ps1``` 檔案，請將它從本機電腦拖放到 [Cloud Shell] 視窗上的任何位置。
 
 如果指定您自己的憑證：
 
 * 將憑證上傳至[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)。 首先，在 Azure 入口網站中建立金鑰保存庫，然後將憑證上傳至金鑰保存庫。 或者，您可以使用 Azure 入口網站為您產生憑證。
 
-### <a name="script-parameters"></a>腳本參數
+### <a name="script-parameters"></a>指令碼參數
 
 * **ResourceGroupName** -[String] 指定將建立 VM 的資源組名。
 
@@ -41,7 +41,7 @@ ms.locfileid: "71357318"
 
 * **認證**-[PSCredential] 指定 VM 的認證。
 
-* **MsiPath** -[String] 指定在現有 VM 上部署 windows 管理中心時，Windows 系統管理中心 MSI 的本機路徑。 [http://aka.ms/WACDownload](http://aka.ms/WACDownload ) 如果省略，則預設為的版本。
+* **MsiPath** -[String] 指定在現有 VM 上部署 windows 管理中心時，Windows 系統管理中心 MSI 的本機路徑。 [http://aka.ms/WACDownload](https://aka.ms/WACDownload ) 如果省略，則預設為的版本。
 
 * **VaultName** -[String] 指定包含憑證的金鑰保存庫名稱。
 
@@ -71,7 +71,7 @@ ms.locfileid: "71357318"
 
 有2個不同的選項可供 MSI 部署和用於 MSI 安裝的憑證。 MSI 可以從 aka.ms/WACDownload 下載，或者，如果部署到現有的 VM，則可以在 VM 本機上提供 MSI 的 filepath。 憑證可以在 Azure Key Vault 中找到，或自我簽署的憑證將由 MSI 產生。
 
-### <a name="script-examples"></a>腳本範例
+### <a name="script-examples"></a>指令碼範例
 
 首先，定義腳本參數所需的一般變數。
 
@@ -89,7 +89,7 @@ $Image = "Win2016Datacenter"
 $Credential = Get-Credential
 ```
 
-#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>範例 1：使用腳本，在新的虛擬網路和資源群組中的新 VM 上部署 WAC 閘道。 使用來自 aka.ms/WACDownload 的 MSI 和來自 MSI 的自我簽署憑證。
+#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>範例1：使用腳本，在新的虛擬網路和資源群組中的新 VM 上部署 WAC 閘道。 使用來自 aka.ms/WACDownload 的 MSI 和來自 MSI 的自我簽署憑證。
 
 ```PowerShell
 $scriptParams = @{
@@ -103,7 +103,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>範例 2：與 #1 相同，但使用 Azure Key Vault 的憑證。
+#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>範例2：與 #1 相同，但使用 Azure Key Vault 的憑證。
 
 ```PowerShell
 $scriptParams = @{
@@ -118,7 +118,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>範例 3：在現有的 VM 上使用本機 MSI 來部署 WAC。
+#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>範例3：在現有的 VM 上使用本機 MSI 來部署 WAC。
 
 ```PowerShell
 $MsiPath = "C:\Users\<username>\Downloads\WindowsAdminCenter<version>.msi"
@@ -147,7 +147,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>受控 Azure VM 的需求
 
 埠5985（WinRM over HTTP）必須開啟並具有作用中的接聽程式。
-您可以使用 Azure Cloud Shell 中的下列程式碼來更新受管理的節點。 ```$ResourceGroupName```和```$Name```會使用與部署腳本相同的變數，但您必須使用您所管理```$Credential```之 VM 的特定。
+您可以使用 Azure Cloud Shell 中的下列程式碼來更新受管理的節點。 ```$ResourceGroupName``` 和 ```$Name``` 使用與部署腳本相同的變數，但您必須使用您所管理之 VM 的特定 ```$Credential```。
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -166,7 +166,7 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 2. 建立 VM 的遠端桌面連線，然後從本機電腦複製 MSI 並貼到 VM 中。
 
-3. 按兩下 MSI 以開始安裝，並遵循嚮導中的指示進行。 請注意下列事項：
+3. 按兩下 MSI 以開始安裝，並遵循嚮導中的指示進行。 請注意以下事項：
 
    - 根據預設，安裝程式會使用建議的埠443（HTTPS）。 如果您想要選取不同的埠，請注意，您也必須在防火牆中開啟該埠。 
 
@@ -190,10 +190,10 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 此時，您應該能夠流覽至閘道 VM 的 DNS 名稱，以從本機電腦上的新式瀏覽器（邊緣或 Chrome）存取 Windows 管理中心。 
 
 > [!NOTE]
-> 如果您選取了443以外的埠，您可以透過流覽至 VM\< \>的 HTTPs://DNS 名稱來存取 Windows 管理中心：\<自訂埠\>
+> 如果您選取了443以外的埠，您可以流覽至 HTTPs://\<您 VM 的 DNS 名稱\>：\<自訂埠，以存取 Windows 管理中心\>
 
 當您嘗試存取 Windows 管理中心時，瀏覽器會提示您提供認證，以存取已安裝 Windows 系統管理中心的虛擬機器。 在這裡，您將需要輸入虛擬機器的 [本機使用者] 或 [本機系統管理員] 群組中的認證。 
 
-若要在 VNet 中新增其他 Vm，請確定 WinRM 是在目標 vm 上執行，方法是在 PowerShell 或目標 VM 上的命令提示字元中執行下列命令：`winrm quickconfig`
+若要在 VNet 中新增其他 Vm，請確定 WinRM 是在目標 vm 上執行，方法是在 PowerShell 或目標 VM 上的命令提示字元中執行下列命令： `winrm quickconfig`
 
 如果您尚未加入 Azure VM 的網域，VM 的行為就像工作組中的伺服器，因此您必須確定您[是在工作組中使用 Windows 系統管理中心](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup)的帳戶。
