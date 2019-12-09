@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 37be666643dee4e5b9051ae29562a86b23fb71f7
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567124"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903960"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -77,6 +77,7 @@ ms.locfileid: "73567124"
             <li><a href="configure/user-access-control.md">使用者存取控制與權限</a>
             <li><a href="configure/shared-connections.md">共用的連線</a>
             <li><a href="configure/using-extensions.md">擴充</a>
+            <li><a href="configure/use-powershell.md">使用 PowerShell 進行自動化</a>
             </ul>
         </td>
     </tr>

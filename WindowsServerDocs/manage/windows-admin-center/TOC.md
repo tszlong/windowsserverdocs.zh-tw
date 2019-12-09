@@ -23,6 +23,7 @@
 ### [使用者存取控制與權限](configure/user-access-control.md)
 ### [使用擴充功能](configure/using-extensions.md)
 ### [共用的連線](configure/shared-connections.md)
+### [使用 PowerShell 進行自動化](configure/use-powershell.md)
 
 ## 用法
 ### [入門](use/get-started.md)
