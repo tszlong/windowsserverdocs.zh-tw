@@ -1,6 +1,5 @@
 # [安全性和保證](security-and-assurance.md)
 ## [開始您的適用於 Windows Server 2016 的一般資料保護法規 (GDPR) 之旅](gdpr/gdpr-winserver-whitepaper.md)
-## [在 SQL Server 中設定適用於 Always Encrypted 的 HGS](set-up-hgs-for-always-encrypted-in-sql-server.md)
 ## [為受防護網狀架構與受防護的 VM 設定 HGS](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)
 ### [概觀](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)
 ### [規劃](guarded-fabric-shielded-vm/guarded-fabric-plan-overview.md)
