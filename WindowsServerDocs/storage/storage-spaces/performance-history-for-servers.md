@@ -1,98 +1,98 @@
 ---
-title: 效能歷程記錄伺服器
+title: 伺服器的效能歷程記錄
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 02/0s/2018
+ms.date: 02/05/2018
 Keywords: 儲存空間直接存取
 ms.localizationpriority: medium
-ms.openlocfilehash: 33fd62376e9769c23fc6b00eefde9a9b95eb4650
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bbfc92f7926b93f5f6716514e64672f4aa304c0f
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820589"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945243"
 ---
-# <a name="performance-history-for-servers"></a>效能歷程記錄伺服器
+# <a name="performance-history-for-servers"></a>伺服器的效能歷程記錄
 
-> 適用於：Windows Server Insider Preview
+> 適用于： Windows Server 2019
 
-子主題[效能歷程記錄的儲存空間直接存取](performance-history.md)詳細說明伺服器收集的效能歷程記錄。 效能歷程記錄可供叢集中的每一部伺服器。
+[儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題詳細說明為伺服器收集的效能歷程記錄。 效能歷程記錄適用于叢集中的每一部伺服器。
 
    > [!NOTE]
-   > 伺服器已關閉，無法收集效能歷程記錄。 集合將會自動繼續時伺服器恢復運作。
+   > 無法為關閉的伺服器收集效能歷程記錄。 當伺服器恢復運作時，集合會自動繼續。
 
-## <a name="series-names-and-units"></a>數列名稱與單位
+## <a name="series-names-and-units"></a>數列名稱和單位
 
-這些數列會收集每個符合資格的伺服器：
+系統會針對每個合格的伺服器收集這些系列：
 
-| 系列                           | 單位    |
+| 數列                           | 單位    |
 |----------------------------------|---------|
-| `clusternode.cpu.usage`          | 百分比 |
-| `clusternode.cpu.usage.guest`    | 百分比 |
-| `clusternode.cpu.usage.host`     | 百分比 |
+| `clusternode.cpu.usage`          | percent |
+| `clusternode.cpu.usage.guest`    | percent |
+| `clusternode.cpu.usage.host`     | percent |
 | `clusternode.memory.total`       | 位元組   |
 | `clusternode.memory.available`   | 位元組   |
 | `clusternode.memory.usage`       | 位元組   |
 | `clusternode.memory.usage.guest` | 位元組   |
 | `clusternode.memory.usage.host`  | 位元組   |
 
-此外，例如磁碟機數列`physicaldisk.size.total`針對所有適合的磁碟機連接到伺服器，例如網路介面卡數列彙總`networkadapter.bytes.total`會彙總所有符合資格的網路介面卡連接到伺服器。
+此外，系統會針對所有連接到伺服器的合格磁片磁碟機匯總 `physicaldisk.size.total` 的磁片磁碟機系列，而系統會針對所有附加至伺服器的合格網路介面卡，匯總 `networkadapter.bytes.total` 之類的網路介面卡系列。
 
-## <a name="how-to-interpret"></a>如何解譯
+## <a name="how-to-interpret"></a>如何解讀
 
-| 系列                           | 如何解譯                                                      |
+| 數列                           | 如何解讀                                                      |
 |----------------------------------|-----------------------------------------------------------------------|
-| `clusternode.cpu.usage`          | 不是閒置的處理器時間百分比。                        |
-| `clusternode.cpu.usage.guest`    | 用於客體 （虛擬機器） 需求的處理器時間百分比。 |
-| `clusternode.cpu.usage.host`     | 使用主應用程式需求的處理器時間百分比。                    |
-| `clusternode.memory.total`       | 伺服器的實體記憶體總數。                              |
-| `clusternode.memory.available`   | 伺服器可用的記憶體。                                   |
-| `clusternode.memory.usage`       | 伺服器的配置 （無法使用） 的記憶體。                   |
-| `clusternode.memory.usage.guest` | 客體 （虛擬機器） 的需求配置的記憶體。               |
-| `clusternode.memory.usage.host`  | 配置給主機要求的記憶體。                                  |
+| `clusternode.cpu.usage`          | 非閒置的處理器時間百分比。                        |
+| `clusternode.cpu.usage.guest`    | 用於來賓（虛擬機器）需求的處理器時間百分比。 |
+| `clusternode.cpu.usage.host`     | 用於主機需求的處理器時間百分比。                    |
+| `clusternode.memory.total`       | 伺服器的實體記憶體總計。                              |
+| `clusternode.memory.available`   | 伺服器的可用記憶體。                                   |
+| `clusternode.memory.usage`       | 伺服器的配置（無法使用）記憶體。                   |
+| `clusternode.memory.usage.guest` | 配置給來賓（虛擬機器）需求的記憶體。               |
+| `clusternode.memory.usage.host`  | 配置給主機需求的記憶體。                                  |
 
-## <a name="where-they-come-from"></a>各來源來自
+## <a name="where-they-come-from"></a>來自何處
 
-`cpu.*`系列會收集從不同的效能計數器，會根據是否啟用 HYPER-V。
+根據是否啟用 Hyper-v，會從不同的效能計數器收集 `cpu.*` 系列。
 
-如果已啟用 HYPER-V:
+如果已啟用 Hyper-v：
 
-| 系列                           | 來源計數器 |
+| 數列                           | 來源計數器 |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Hyper-V Hypervisor Logical Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.guest`    | `Hyper-V Hypervisor Virtual Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.host`     | `Hyper-V Hypervisor Root Virtual Processor` > `_Total` > `% Total Run Time` |
 
-使用`% Total Run Time`計數器，可確保 「 效能歷程記錄屬性的所有使用量。
+使用 `% Total Run Time` 計數器可確保效能歷程記錄屬性的所有使用方式。
 
-如果未啟用 HYPER-V:
+如果未啟用 Hyper-v：
 
-| 系列                           | 來源計數器 |
+| 數列                           | 來源計數器 |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Processor` > `_Total` > `% Processor Time` |
-| `clusternode.cpu.usage.guest`    | *zero* |
-| `clusternode.cpu.usage.host`     | *總使用量相同* |
+| `clusternode.cpu.usage.guest`    | *零* |
+| `clusternode.cpu.usage.host`     | *與總使用量相同* |
 
-完美的同步處理，儘管`clusternode.cpu.usage`總是`clusternode.cpu.usage.host`加上`clusternode.cpu.usage.guest`。
+儘管是完美同步處理，`clusternode.cpu.usage` 一律 `clusternode.cpu.usage.host` 加上 `clusternode.cpu.usage.guest`。
 
-使用相同的警告，`clusternode.cpu.usage.guest`一律為總和`vm.cpu.usage`主機伺服器上的所有虛擬機器。
+請注意，`clusternode.cpu.usage.guest` 一律是主機伺服器上所有虛擬機器的 `vm.cpu.usage` 總和。
 
-`memory.*`系列是 （即將推出）。
+`memory.*` 系列是（即將推出）。
 
   > [!NOTE]
-  > 計數器會測量整個間隔，不取樣。 例如，如果伺服器閒置 9 秒，但暴增到 100 %cpu 在 10 秒，其`clusternode.cpu.usage`會記錄為 10%平均 10 秒間隔期間。 這可確保其效能歷程記錄會擷取所有的活動，並是強固的雜訊。
+  > 計數器是以整個間隔來測量，而不是取樣。 例如，如果伺服器閒置9秒，但尖峰到 100% CPU 的第10秒，其 `clusternode.cpu.usage` 在此10秒的間隔期間，平均會記錄為10%。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
 
 ## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
 
-使用[Get-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode) cmdlet:
+使用[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode) Cmdlet：
 
 ```PowerShell
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
-- [效能歷程記錄的儲存空間直接存取](performance-history.md)
+- [儲存空間直接存取的效能歷程記錄](performance-history.md)

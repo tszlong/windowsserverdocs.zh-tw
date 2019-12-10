@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 46a1e2aa8c116f79c164448ab5644a7dda9607c8
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310374"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945234"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -64,11 +64,11 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 使用 Windows Admin Center 或 PowerShell 下載傳輸作業詳細的錯誤-僅限 CSV 記錄檔時，您會收到錯誤：
 
- >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間可能是較長時間的一部分。 這可能是因為服務仍在處理作業，或服務無法傳送回復訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
+ >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間，可能是較長逾時的一部分。 這可能是因為服務仍然在處理作業，或服務無法傳送回覆訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
 
 此問題是因為儲存體遷移服務所允許的預設一分鐘時間內，無法篩選出的傳輸檔案數量非常大。 
 
-若要解決此問題：
+若要解決這個問題：
 
 1. 在 orchestrator 電腦上，使用 Notepad.exe 編輯 *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*檔案，將 "sendTimeout" 從其1分鐘的預設值變更為10分鐘
 
@@ -90,7 +90,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 7. 在 [WcfOperationTimeoutInMinutes] 上按一下滑鼠右鍵，然後按一下 [修改]。 
 8. 在 [基本資料] 方塊中，按一下 [十進位]
 9. 在 [數值資料] 方塊中，輸入 "10"，然後按一下 [確定]。
-10. 結束 [登錄編輯程式]。
+10. 結束 [登錄編輯器]。
 11. 嘗試再次下載僅限錯誤的 CSV 檔案。 
 
 我們想要在較新版本的 Windows Server 2019 中變更此行為。  
@@ -313,6 +313,13 @@ DFSR Debug 記錄檔：
   - 如果 [剪下] 已停滯，請在確定 DHCP 領域涵蓋該子網後，登入來源電腦，並在其網路介面上啟用 DHCP。 當來源電腦取得 DHCP 提供的 IP 位址時，SMS 會在正常情況下繼續進行切換。
   
 在這兩種因應措施中，在完成之後，您就可以視需要在舊的來源電腦上設定靜態 IP 位址，並使用 DHCP 來停止。   
+
+## <a name="slower-than-expected-re-transfer-performance"></a>比預期的重新傳輸效能慢
+
+完成傳輸之後，如果來源伺服器上的資料同時發生變更，則在傳輸時間執行後續的重新傳輸時，您可能不會看到更大的改善。
+
+傳輸非常大量的檔案和嵌套資料夾時，這是預期的行為。 資料的大小不相關。 我們先對[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中的這項行為進行改良，並繼續優化傳輸效能。 若要進一步調整效能，請參閱[優化清查和傳輸效能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
+
 
 ## <a name="see-also"></a>請參閱
 
