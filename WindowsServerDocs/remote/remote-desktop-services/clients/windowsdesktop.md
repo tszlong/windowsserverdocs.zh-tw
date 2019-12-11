@@ -11,18 +11,18 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: e71aa2b1cccda85e0bf6f8a80ad68013346b30d4
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019605"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829613"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>開始使用 Windows 桌面用戶端
 
->適用於：Windows 10 和 Windows 7
+>適用於：Windows 10、Windows 10 IoT 企業版和 Windows 7
 
 您可以使用適用於 Windows 桌面的遠端桌面用戶端，從不同的 Windows 裝置遠端存取 Windows 應用程式和桌面。
 
@@ -33,7 +33,7 @@ ms.locfileid: "74019605"
 
 ## <a name="install-the-client"></a>安裝用戶端
 
-選擇符合您 Windows 版本的用戶端：
+選擇符合 Windows 版本的用戶端。 新的遠端桌面用戶端 (MSRDC) 支援 Windows 10、Windows 10 IoT 企業版和 Windows 7 用戶端裝置。 
 
 - [Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2068602)
 - [Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2098960)

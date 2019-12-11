@@ -12,14 +12,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/16/2019
+ms.date: 12/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 829608ae1a4c6b78b3b191f248ed4a4195500669
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: a1349f1181cdf2ead51a263a3ba62c1789c76b3b
+ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940720"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74700161"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -30,10 +30,10 @@ ms.locfileid: "71940720"
 使用下列資訊立即開始。 如果您有任何問題，請務必查看[常見問題集](remote-desktop-client-faq.md)。
 
 > [!NOTE]
-> - 想知道 Android 用戶端的新版本嗎？ 查看 [Android 用戶端的新功能](android-whatsnew.md)
+> - 想知道 Android 用戶端的新版本嗎？ 查看 [Android 用戶端的新功能](android-whatsnew.md)。
 > - Android 用戶端支援執行 Android 4.1 和更新版本的裝置，以及具有 ChromeOS 53 和更新版本的 Chromebook。 請在[這裡](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps)深入了解 Chrome 上的 Android 應用程式。
 
-## <a name="get-the-remote-desktop-client-and-start-using-it"></a>取得遠端桌面用戶端，並開始使用它
+## <a name="set-up-the-remote-desktop-client-for-android"></a>設定適用於 Android 的遠端桌面用戶端
 
 ### <a name="download-the-remote-desktop-client-from-the-google-play-store"></a>從 Google Play 商店下載遠端桌面用戶端
 
@@ -44,7 +44,7 @@ ms.locfileid: "71940720"
 3. 新增[遠端桌面連線](#add-a-remote-desktop-connection)或[遠端資源](#add-remote-resources)。 您可以使用連線直接連線到 Windows 電腦和遠端資源，以存取由系統管理員發佈給您的應用程式和桌上型電腦。
 
 > [!NOTE]
-> 如果您想要提早享用新功能，建議從 Google Play 商店下載我們的 [Microsoft 遠端桌面 Beta 版](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta)用戶端。
+> 如果您想要在新功能發行之前先進行測試，建議從 Google Play 商店下載我們的 [Microsoft 遠端桌面 Beta 版](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta)用戶端。
 
 ### <a name="add-a-remote-desktop-connection"></a>新增遠端桌面連線
 
@@ -67,9 +67,9 @@ ms.locfileid: "71940720"
    - **重新導向本機儲存體**可啟用本機儲存體重新導向。 此設定預設為停用。
 5. 當您完成時，請點選 [儲存]  。
 
-需要編輯這些設定嗎？ 點選桌面名稱旁邊的溢位功能表 ( **...** )，然後點選 [編輯]  。
+需要編輯這些設定嗎？ 點選桌面名稱旁邊的 [更多選項]  功能表 ( **...** )，然後點選 [編輯]  。
 
-想要移除連線嗎？ 再次點選溢位功能表 ( **...** )，然後點選 [移除]  。
+想要移除連線嗎？ 再次點選 [更多選項]  功能表 ( **...** )，然後點選 [移除]  。
 
 >[!TIP]
 > 如果您收到有關密碼錯誤的錯誤 0xf07 (「無法連線到遠端電腦，因為與使用者帳戶關聯的密碼已過期」)，請變更密碼，然後再試一次。
@@ -97,13 +97,13 @@ ms.locfileid: "71940720"
 2. 點選 [移除]  。
 3. 確認移除。
 
-### <a name="widgets--pin-a-saved-desktop-to-your-home-screen"></a>Widget – 將已儲存的桌面釘選到主畫面
+### <a name="use-a-widget-to-pin-a-saved-desktop-to-your-home-screen"></a>使用 Widget 將已儲存的桌面釘選到主畫面
 
 遠端桌面用戶端支援使用 Android 的 Widget 功能，將連線釘選到主畫面。 您新增 Widget 的方式取決於您所使用的 Android 裝置與其作業系統的類型。 以下是新增 Widget 最常見的方式：
 
 1. 點選 [應用程式]  以啟動 [應用程式] 功能表。
 2. 點選 [Widget]  。
-3. 撥動 Widget 清單，並尋找描述為「釘選遠端桌面」的 [遠端桌面] 圖示。
+3. 撥動 Widget 清單，並尋找有以下描述的 [遠端桌面] 圖示：「釘選遠端桌面。」
 4. 點選並按住該遠端桌面 Widget，並將它移到主畫面。
 5. 當您放開圖示時，您將看到已儲存的遠端桌面。 選擇您想要儲存到主畫面的連線。
 
@@ -114,14 +114,14 @@ ms.locfileid: "71940720"
 
 ## <a name="manage-general-app-settings"></a>管理一般應用程式設定
 
-若要變更一般應用程式設定，請點選 [設定]  ，然後從 [連線中心] 點選 [一般]  。
+若要變更一般應用程式設定，請移至 [連線中心] 並點選 [設定]  ，然後點選 [一般]  。
 
 您可以設定下列的一般設定：
 
 - **顯示桌面預覽**可讓您在連線到桌面之前，在連線中心查看其預覽。 預設會啟用此設定。
 - **捏合以縮放遠端工作階段**可讓您使用捏合以縮放手勢。 如果您要透過遠端桌面使用的應用程式支援多點觸控 (在 Windows 8 中引進)，請停用此功能。
 - 如果您的遠端應用程式未正確回應傳送為 scancode 的鍵盤輸入，請啟用 [當可用時，使用 scancode 輸入]  。 停用時，會以 Unicode 形式傳送輸入。
-- **協助改善遠端桌面**會傳送匿名資料給 Microsoft。 我們將使用這項資料來改善用戶端。 您可在 [Microsoft 隱私權聲明](https://privacy.microsoft.com/privacystatement)中深入了解我們如何處理這項匿名的私人資料。 預設會啟用此設定。
+- **協助改善遠端桌面**會將您如何使用 Android 版遠端桌面的匿名資料傳送至 Microsoft。 我們將使用這項資料來改善用戶端。 若要深入了解我們的隱私權政策及我們所收集的資料種類，請參閱 [Microsoft 隱私權聲明](https://privacy.microsoft.com/privacystatement)。 預設會啟用此設定。
 
 ## <a name="manage-display-settings"></a>管理顯示設定
 
@@ -130,28 +130,30 @@ ms.locfileid: "71940720"
 您可以設定下列的顯示設定：
 
 - **方向**會為您的工作階段設定慣用的方向 (橫向或直向)。
+  
   >[!NOTE]
-  > 如果您連線到執行 Windows 8 或舊版 Windows 的電腦，且裝置方向有變動，則工作階段不會正確縮放。 最好是中斷與電腦的連線，然後以您想要使用的方向重新連線。 更好的選擇是將電腦升級至 Windows 10。
+  > 如果您連線到執行 Windows 8 或更早版本的電腦，且裝置方向有變動，則工作階段不會正確縮放。 若要讓用戶端正確的縮放，請中斷與電腦的連線，然後以您想要使用的方向重新連線。 您也可以改為使用 Windows 10 的電腦來確保縮放正確。
 
 - **解析度**會設定您想要用於全域桌面連線的遠端解析度。 如果您已經為個別的連線設定自訂解析度，此設定不會變更該解析度。
+  
   >[!NOTE]
-  >當您變更其中一個顯示器設定時，它們只會套用到從那時之後開始的新連線。 若要查看您已連線之工作階段中的變更，請中斷連線，然後再重新連線。
+  >當您變更顯示設定時，所做的變更只會套用到變更設定之後所建立的新連線。 若要將變更套用至您目前連線的工作階段，請先中斷連線後再重新連線，以重新整理您的工作階段。
 
 ## <a name="manage-your-rd-gateways"></a>管理您的 RD 閘道
 
 遠端桌面閘道 (RD 閘道) 可讓您從網際網路上的任何位置連線至私人網路上的遠端電腦。 您可以使用遠端桌面用戶端來建立和管理閘道。
 
-設定新閘道：
+設定新 RD 閘道：
 
 1. 在 [連線中心] 內，點選 [設定]  ，然後點選 [閘道]  。
-1. 點選 **+** 來新增閘道。
-1. 輸入下列資訊：
+2. 點選 **+** 來新增閘道。
+3. 輸入下列資訊：
    - 在 [伺服器名稱]  中輸入您想要用來做為閘道的電腦名稱稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊新增至伺服器名稱 (例如：RDGateway:443 或 10.0.0.1:443)。
    - 選取您要用來存取 RD 閘道的 [使用者帳戶]  。
      - 選取 [使用桌面使用者帳戶]  ，以使用您為遠端電腦指定的相同認證。
-     - 選取 [新增使用者帳戶]  以儲存經常使用的帳戶，如此您就不需在每次登入時都輸入認證。 請依照這些指示來[管理您的使用者帳戶](#manage-your-user-accounts)。
+     - 選取 [新增使用者帳戶]  以儲存經常使用的帳戶，如此您就不需在每次登入時都輸入認證。 如需詳細資訊，請參閱[管理您的使用者帳戶](#manage-your-user-accounts)。
 
-若要刪除閘道：
+刪除 RD 閘道：
 
 1. 在 [連線中心] 內，點選 [設定]  ，然後點選 [閘道]  。
 2. 點選並按住清單中的閘道以選取它。 您可以一次選取多個閘道。
@@ -159,9 +161,9 @@ ms.locfileid: "71940720"
 
 ## <a name="manage-your-user-accounts"></a>管理您的使用者帳戶
 
-當您連線至桌面或遠端資源時，您可以儲存使用者帳戶以便再次從中選取。
+您可以儲存使用者帳戶，以便每次連線至遠端桌面或遠端資源時使用。
 
-若要建立新的使用者帳戶：
+儲存使用者帳戶：
 
 1. 在 [連線中心] 內，點選 [設定]  ，然後點選 [使用者帳戶]  。
 2. 點選 **+** 以新增使用者帳戶。
@@ -170,20 +172,20 @@ ms.locfileid: "71940720"
    - 您指定的使用者所使用的**密碼**。 您想要儲存以用於遠端連線的每個使用者帳戶都必須有相關聯的密碼。
 4. 當您完成時，請點選 [儲存]  。
 
-刪除使用者帳戶：
+刪除儲存的使用者帳戶：
 
 1. 在 [連線中心] 內，點選 [設定]  ，然後點選 [使用者帳戶]  。
-2. 點選並按住清單中的使用者帳戶以選取它。 您可以選取多個使用者。
+2. 點選並按住清單中的使用者帳戶以選取它。 您可以同時選取多個使用者。
 3. 點選垃圾筒以刪除選取的使用者。
 
 ## <a name="navigate-the-remote-desktop-session"></a>瀏覽遠端桌面工作階段
 
-當您啟動遠端桌面連線時，有一些工具可讓您用來巡覽工作階段。
+以下簡介如何開啟和瀏覽您的遠端桌面工作階段。
 
 ### <a name="start-a-remote-desktop-connection"></a>啟動遠端桌面連線
 
-1. 點選遠端桌面連線以啟動工作階段。
-2. 如果系統要求您驗證遠端桌面的憑證，請點選 [連線]  。 您也可以選取 [不要再詢問我是否要連線到這部電腦]  以一律接受憑證。
+1. 點選**遠端桌面連線的名稱**以啟動工作階段。
+2. 如果系統要求您驗證遠端桌面的憑證，請點選 [連線]  。 您也可以選取 [不要再詢問我是否要連線到這部電腦]  以一律接受憑證 (預設)。
 
 ### <a name="connection-bar"></a>連線列
 
@@ -200,7 +202,7 @@ ms.locfileid: "71940720"
 
 您可以同時向不同的電腦開啟多個連線。 點選連線列可顯示畫面左側的工作階段選取列。 工作階段選取列可讓您檢視已開啟的連線，並在兩者之間切換。
 
-當您連線到遠端資源時，可以在該工作階段中點選 [展開工具] 功能表 **>** ，然後從可用項目的清單中選擇，以便在應用程式之間切換。
+當您連線到遠端資源時，可以在該工作階段中點選 [展開工具] 功能表( **>** )，然後從可用項目的清單中選擇，以便在應用程式之間切換。
 
 若要從目前的連線中啟動新的工作階段，請點選 [啟動新工作階段]  ，然後從可用項目的清單中選擇。
 

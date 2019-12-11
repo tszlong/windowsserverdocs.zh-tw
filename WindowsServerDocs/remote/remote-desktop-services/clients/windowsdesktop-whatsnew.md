@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/20/2019
+ms.date: 12/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
-ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
+ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74265920"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829612"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -30,17 +30,21 @@ ms.locfileid: "74265920"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|Public     |1.2.431  |
-|測試人員    |1.2.524  |
+|Public     |1.2.535  |
+|測試人員    |1.2.535  |
 
-## <a name="updates-for-version-12524"></a>1\.2.524 版的更新
+## <a name="updates-for-version-12535"></a>1\.2.535 版的更新
 
-*發行日期：11/20/2019*
+*發行日期：12/04/2019*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
 
 - 您現在可以直接從用戶端頂端命令列上的 [更多選項] 按鈕，存取有關更新的資訊。
 - 您現在可以從用戶端的命令列報告意見反應。
+- 現在，只有在意見反應中樞可供使用時，才會顯示 [意見反應] 選項。
+- 透過原則停用通知時，確定不會顯示更新通知。
+- 已修正某些 RDP 檔案無法啟動的問題。
+- 已修正某些持續性設定損毀所導致的用戶端啟動當機。
 
 ## <a name="updates-for-version-12431"></a>1\.2.431 版的更新
 
