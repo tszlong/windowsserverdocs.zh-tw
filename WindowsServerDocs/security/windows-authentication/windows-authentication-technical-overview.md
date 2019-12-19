@@ -22,7 +22,7 @@ ms.locfileid: "71403269"
 ---
 # <a name="windows-authentication-technical-overview"></a>Windows 驗證技術概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題適用于 IT 專業人員，提供 Windows 驗證技術總覽的主題連結。 Windows 驗證是證明使用者或服務嘗試存取 Windows 之真實性的程式。
 
@@ -79,6 +79,6 @@ ms.locfileid: "71403269"
 
     -   [Windows Server 2008 R2 安全性基準](https://technet.microsoft.com/library/gg236605.aspx)
 
--   如需在 Windows 中審核登入和驗證事件的相關資訊，請參閱 <<c0>審核安全性事件。
+-   如需在 Windows 中審核登入和驗證事件的相關資訊，請參閱[審核安全性事件](https://technet.microsoft.com/library/cc776394.aspx)。
 
 
