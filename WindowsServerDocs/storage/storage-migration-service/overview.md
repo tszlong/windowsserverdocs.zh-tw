@@ -8,12 +8,12 @@ ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5963035846814f2ec3fd3417e629f71b146cc73e
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 968122612845a9be105ca7d3231edc0faa039e76
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310377"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352681"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -66,7 +66,7 @@ ms.locfileid: "74310377"
 - 來源和目的地電腦必須啟用下列防火牆規則（不過您可能*已經啟用）* ：
   - 檔案及印表機共用 (SMB-In)
   - Netlogon 服務（NP-IN）
-  - Windows Management Instrumentation （DCOM）
+  - Windows Management Instrumentation (DCOM-In)
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
@@ -81,9 +81,9 @@ ms.locfileid: "74310377"
 
 - Windows Server 半年通道
 - Windows Server 2019
-- Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
+- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2012 R2
+- Windows 2012 Server
 - Windows Server 2008 R2
 - Windows Server 2008
 - Windows Server 2003 R2
@@ -105,7 +105,7 @@ ms.locfileid: "74310377"
 
 如果協調器執行的是 Windows Server、1903版或更新版本，或如果協調器執行舊版的 Windows Server 並安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ，您可以遷移下列其他來源類型：
 
-- 容錯移轉叢集
+- 執行 Windows Server 2012、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 的容錯移轉叢集
 - 使用 Samba 的 Linux 伺服器。 我們已測試過下列各項：
     - CentOS 7
     - Debian GNU/Linux 8
@@ -120,8 +120,8 @@ ms.locfileid: "74310377"
 
 - Windows Server 半年通道
 - Windows Server 2019
-- Windows Server 2016
-- Windows Server 2012 R2
+- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2012 R2
 
 > [!TIP]
 > 執行 Windows Server 2019 或 Windows Server、半年通道或更新版本的目的地伺服器，具有舊版 Windows Server 的兩倍傳輸效能。 這種效能提升的原因是包含內建的儲存體遷移服務 proxy 服務，這也會開啟必要的防火牆埠（如果尚未開啟）。
