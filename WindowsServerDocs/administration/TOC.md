@@ -2,8 +2,7 @@
 ## [使用 Windows Admin Center 管理您的環境 (新增！)](../manage/windows-admin-center/overview.md)
 ## 管理 Windows Server 系統和環境
 ### [管理 Windows Server 混合式雲端列印](hybrid-cloud-print/hybrid-cloud-print-overview.md)
-#### [使用預先驗證來部署 Windows Server 混合式雲端列印](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
-#### [使用傳遞驗證來部署 Windows Server 混合式雲端列印](hybrid-cloud-print/hybrid-cloud-print-deploy-passthrough.md)
+#### [部署 Windows Server 混合式雲端列印](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
 ### [什麼是 Server Core 安裝選項？](server-core/what-is-server-core.md)
 #### [Server Core 安裝選項中包含的內容](server-core/server-core-roles-and-services.md)
 #### [Server Core 中的基本管理工作](server-core/server-core-administer.md)

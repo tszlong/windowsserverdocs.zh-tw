@@ -10,12 +10,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: b16b9235cbcb149ec7f10ce76b0cf594e9bb2a29
-  ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+  ms.openlocfilehash: 77f017388af44a0365113e890b2ae04a9185a2c8
+  ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74853573"
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75351576"
 highlightedContent:
   items:
   - title: Windows Server 2019 的新功能？
@@ -36,9 +36,9 @@ highlightedContent:
   - title: 開始使用 Windows Server 2016
     itemType: how-to-guide
     url: /windows-server/get-started/server-basics
-  - title: Windows Server 2008 R2 和 Windows Server 2008 終止服務
-    itemType: overview
-    url: /windows-server/get-started/modernize-windows-server-2008
+  - title: 使用 Windows Server 2008 和 2008 R2 擴充的安全性更新
+    itemType: how-to-guide
+    url: /windows-server/get-started/extended-security-updates
   - title: 適用於伺服器的 Windows 測試人員計畫
     itemType: overview
     url: /windows-insider/at-work/
@@ -89,7 +89,7 @@ conceptualContent:
     footerLink:
       url: /windows-server/failover-clustering/failover-clustering-overview
       text: 查看更多
-  - title: Management
+  - title: 管理
     links:
     - url: /windows-server/manage/windows-admin-center/overview
       itemType: overview
@@ -117,7 +117,7 @@ conceptualContent:
     footerLink:
       url: /windows-server/networking/networking
       text: 查看更多
-  - title: 遙控器
+  - title: 遠端
     links:
     - url: /windows-server/remote/remote-desktop-services/welcome-to-rds
       itemType: overview
@@ -145,7 +145,7 @@ conceptualContent:
     footerLink:
       url: /windows-server/security/security-and-assurance
       text: 查看更多
-  - title: 儲存體
+  - title: 存放裝置
     links:
     - url: /windows-server/storage/whats-new-in-storage
       itemType: whats-new

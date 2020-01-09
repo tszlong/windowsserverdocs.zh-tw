@@ -8,6 +8,7 @@
 ## [維護通道比較](..\get-started-19\servicing-channels-19.md)
 ## [安裝和升級 Windows Server 版本](Installation-and-Upgrade.md)
 ## [升級 Windows Server 2008 與 Windows Server 2008 R2](modernize-windows-server-2008.md)
+### [Windows Server 2008/2008 R2 擴充的安全性更新](extended-security-updates.md)
 ### [將 Windows Server 2008/2008 R2 專用映像上傳至 Azure](uploading-specialized-WS08-image-to-azure.md)
 ## [移轉 Windows Server 角色和功能](Migrate-Roles-and-Features.md)
 ## [Windows Server 2016 系統需求](System-Requirements.md)

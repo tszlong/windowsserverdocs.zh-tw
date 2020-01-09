@@ -5,14 +5,19 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse
-ms.date: 4/14/2017
-ms.openlocfilehash: 5f772d2333acb2d48bf27168aca42754013dd8be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: NedPyle; Danlo; DKruse; v-tea
+ms.date: 12/12/2019
+ms.custom:
+- CI ID 111495
+- CSSTroubleshoot
+manager: dcscontentpm
+audience: Admin
+ms.openlocfilehash: 2e37282abd246c8f2da387deda5e8bf4b400a3d8
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370219"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351642"
 ---
 # <a name="performance-tuning-for-file-servers"></a>檔案伺服器的效能微調
 
@@ -93,10 +98,24 @@ ms.locfileid: "71370219"
 
     預設值是 10 秒。 這是目錄快取逾時。
 
-    > [!NOTE]
+    > [!NOTE]  
     > 此參數可控制沒有目錄租用時的目錄中繼資料快取。
      
-
+     > [!NOTE]  
+     > Windows 10 版本 1803 中的已知問題會影響 Windows 10 快取大型目錄的能力。 將電腦升級至 Windows 10 版本 1803 之後，您可以存取包含上千個檔案和資料夾的網路共用，並開啟位於該共用上的文件。 在這兩項作業中，會感受到顯著的延遲。
+     >  
+     > 若要解決此問題，請安裝 Windows 10 版本 1809 或更新版本。
+     >  
+     > 若要因應此問題，請將 **DirectoryCacheLifetime** 設定為 **0**。
+     >  
+     > 此問題會影響下列的 Windows 10 版本：  
+     > - Windows 10 企業版 (版本 1803)
+     > - Windows 10 工作站專業版 (版本 1803)
+     > - Windows 10 專業教育版 (版本 1803)
+     > - Windows 10 專業版 (版本 1803)
+     > - Windows 10 教育版 (版本 1803)
+     > - Windows 10 家用版 (版本 1803)
+   
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -213,7 +232,7 @@ ms.locfileid: "71370219"
 
 用戶端電腦的一般微調參數可將電腦最佳化，以便存取遠端檔案共用，尤其是透過某些高延遲網路 (例如分公司、跨資料中心通訊、家庭辦公室，以及行動寬頻) 存取。 在所有電腦上，這些設定並不是最佳或適當的。 套用個別設定之前，您應該評估其影響。
 
-| 參數                   | 值 | 預設值 |
+| 參數                   | 值 | Default |
 |-----------------------------|-------|---------|
 | DisableBandwidthThrottling  | 1     | 0       |
 | FileInfoCacheEntriesMax     | 32768 | 64      |
