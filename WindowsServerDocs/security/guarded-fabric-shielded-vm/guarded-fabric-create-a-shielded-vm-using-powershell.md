@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 317da0ae3c41d142db6f5a076fd3004d9970b815
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 6111b3fbff508c3c485f2a998bab8c0b16beaed6
+ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940748"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548174"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>使用 PowerShell 建立受防護的 VM
 
@@ -22,7 +22,7 @@ ms.locfileid: "71940748"
 
 簡言之，您會在任何電腦上建立範本磁片、防護資料檔案、自動安裝回應檔案和其他安全性成品，然後將這些檔案複製到受防護的主機，並布建受防護的 VM。
 
-## <a name="create-a-signed-template-disk"></a>建立已簽署的範本磁片
+## <a name="create-a-signed-template-disk"></a>建立已簽署的範本磁碟
 
 若要建立新的受防護 VM，您必須先將受防護的 VM 範本磁片預先加密，並簽署其作業系統磁片區（或 Linux 上的開機和根磁碟分割）。
 如需如何建立範本磁片的詳細資訊，請遵循下列連結。
@@ -96,9 +96,9 @@ New-ShieldedVM -Name 'MyShieldedVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vh
 
 ```powershell
 $specializationValues = @{
-    "@IP4Addr-1@" = "192.168.1.10"
+    "@IP4Addr-1@" = "192.168.1.10/24"
     "@MacAddr-1@" = "Ethernet"
-    "@Prefix-1-1@" = "192.168.1.0/24"
+    "@Prefix-1-1@" = "24"
     "@NextHop-1-1@" = "192.168.1.254"
 }
 New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -SpecializationValues $specializationValues -Wait
