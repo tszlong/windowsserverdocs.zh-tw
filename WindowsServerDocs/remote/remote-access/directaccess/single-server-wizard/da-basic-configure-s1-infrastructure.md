@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2cd84949dddf75730aca6302f1244f784b5933d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6b8ebfe0a6b42fe174d4b376b981641f043cf58
+ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388571"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827675"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>步驟1設定基本 DirectAccess 基礎結構
 
@@ -25,7 +25,7 @@ ms.locfileid: "71388571"
 
 本主題說明如何針對在混合了 IPv4 和 IPv6 的環境中使用單一 DirectAccess 伺服器的基本 DirectAccess 部署，設定所需的基礎結構。 開始部署步驟之前，請確定您已完成[規劃基本 DirectAccess 部署](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md)中所述的規劃步驟。  
   
-|工作|描述|  
+|工作|說明|  
 |----|--------|  
 |設定伺服器網路設定|設定 DirectAccess 伺服器上的伺服器網路設定。|  
 |設定公司網路中的路由|設定公司網路中的路由，確保適當地路由流量。|  
@@ -147,11 +147,11 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 #### <a name="to-join-the-remote-access-server-to-a-domain"></a>將遠端存取伺服器加入網域  
   
-1.  在 [伺服器管理員] 中，按一下 [本機伺服器]。 在詳細資料窗格中，按一下 [電腦名稱] 旁邊的連結。  
+1.  在 [伺服器管理員] 中，按一下 [本機伺服器]。 在詳細資料窗格中，按一下 [電腦名稱]旁邊的連結。  
   
 2.  在 [**系統**內容] 對話方塊中，按一下 [**電腦名稱稱**] 索引標籤。在 [**電腦名稱稱**] 索引標籤上，按一下 [**變更**]。  
   
-3.  在 [電腦名稱] 中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]下面，按一下 [網域]，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]。  
+3.  在 [電腦名稱]中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]下面，按一下 [網域]，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]。  
   
 4.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]。  
   
@@ -208,7 +208,10 @@ Restart-Computer
 > 4.  如果在執行 DirectAccess 精靈之前尚未連結到 OU，則設定完成之後，系統管理員可以將 DirectAccess 群組原則物件連結到所需的組織單位。 您可以移除網域的連結。 在[這裡](https://technet.microsoft.com/library/cc732979.aspx)可以找到將群組原則物件連結到組織單位的步驟  
   
 > [!NOTE]  
-> 如果手動建立群組原則物件，則在 DirectAccess 設定期間可能會無法使用群組原則物件。 群組原則物件可能尚未複寫到最接近管理電腦的網域控制站。 在此情況下，系統管理員可以等候複寫完成，或強制複寫。  
+> 如果手動建立群組原則物件，則在 DirectAccess 設定期間可能會無法使用群組原則物件。 群組原則物件可能尚未複寫到最接近管理電腦的網域控制站。 在此情況下，系統管理員可以等候複寫完成，或強制複寫。
+
+> [!Warning]
+> 不支援使用 DirectAccess 設定向導以外的任何方式來設定 DirectAccess，例如直接修改 DirectAccess 群組原則物件，或手動修改伺服器或用戶端上的預設原則設定。
   
 ## <a name="ConfigSGs"></a>設定安全性群組  
 用戶端電腦群組策略物件中包含的 DirectAccess 設定只會套用到您在設定「遠端存取」時所指定之安全性群組的成員電腦。  

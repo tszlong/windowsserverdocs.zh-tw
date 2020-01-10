@@ -1,5 +1,5 @@
 ---
-title: 開始使用群組受管理的服務帳戶
+title: Getting Started with Group Managed Service Accounts
 description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 45fe605228189f49d40543e5da703f9afe0d962e
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: f3f3e1724ddb92ee3622a599fbc19fb8ca2a5803
+ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791207"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827685"
 ---
-# <a name="getting-started-with-group-managed-service-accounts"></a>開始使用群組受管理的服務帳戶
+# <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
 >適用於：Windows Server (半年通道)、Windows Server 2016
 
@@ -45,10 +45,10 @@ ms.locfileid: "74791207"
 > [!NOTE]
 > 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).
 
-## <a name="BKMK_Prereqs"></a>要求
+## <a name="BKMK_Prereqs"></a>必要條件
 請參閱本主題中的 [群組受管理的服務帳戶需求](#BKMK_gMSA_Req)一節。
 
-## <a name="BKMK_Intro"></a>問世
+## <a name="BKMK_Intro"></a>簡介
 當用戶端電腦連線到伺服器陣列上裝載的服務，且該伺服器陣列使用網路負載平衡 (NLB) 或是某個其他讓所有伺服器在用戶端看來都是相同服務的方法時，除非所有服務執行個體都使用相同的主體，否則無法使用支援相互驗證 (例如 Kerberos) 的驗證通訊協定。 這表示每個服務都使用相同的密碼/金鑰來證明其身分識別。
 
 > [!NOTE]
@@ -88,12 +88,12 @@ Windows 電腦帳戶、Windows 7 獨立「受管理的服務帳戶」(sMSA) 或�
 |------|--------|----------|
 |用戶端應用程式主機|RFC 相容的 Kerberos 用戶端|至少為 Windows XP|
 |使用者帳戶的網域 Dc|RFC 相容的 KDC|至少為 Windows Server 2003|
-|共用服務成員主機|| Windows Server 2012 |
+|共用服務成員主機|| Windows 2012 Server |
 |成員主機的網域 Dc|RFC 相容的 KDC|至少為 Windows Server 2003|
 |gMSA 帳戶的網域 Dc| 可供主機用來抓取密碼的 Windows Server 2012 Dc|Windows Server 2012 的網域，其可擁有比 Windows Server 2012 更早的某些系統 |
 |後端服務主機|RFC 相容的 Kerberos 應用程式伺服器|至少為 Windows Server 2003|
 |後端服務帳戶的網域 Dc|RFC 相容的 KDC|至少為 Windows Server 2003|
-|適用於 Active Directory 的 Windows PowerShell|安裝在支援 64 位元架構的電腦本機或安裝在遠端管理電腦 (例如使用「遠端伺服器管理工具組」) 上的「適用於 Active Directory 的 Windows PowerShell」| Windows Server 2012 |
+|適用於 Active Directory 的 Windows PowerShell|安裝在支援 64 位元架構的電腦本機或安裝在遠端管理電腦 (例如使用「遠端伺服器管理工具組」) 上的「適用於 Active Directory 的 Windows PowerShell」| Windows 2012 Server |
 
 **Active Directory 網域服務需求**
 
@@ -111,7 +111,7 @@ Windows 電腦帳戶、Windows 7 獨立「受管理的服務帳戶」(sMSA) 或�
 
 如需如何建立金鑰的指示，請參閱[建立金鑰發佈服務 Kds 根金鑰根金鑰](create-the-key-distribution-services-kds-root-key.md)。 Microsoft 金鑰發佈服務 (kdssvc.dll) 可管理 AD 的根金鑰。
 
-**內**
+**生命週期**
 
 使用 gMSA 功能之伺服器陣列的生命週期通常涉及下列工作：
 
@@ -147,27 +147,31 @@ Windows 電腦帳戶、Windows 7 獨立「受管理的服務帳戶」(sMSA) 或�
 
 若要完成下列程序，至少需要 **Domain Admins**、 **Account Operators** 的成員資格或是建立 msDS-GroupManagedServiceAccount 物件的能力。
 
+> [!NOTE]
+> -Name 參數的值一律是必要的（不論您指定-Name 或 not），其中-DNSHostName、-RestrictToSingleComputer 和-RestrictToOutboundAuthentication 是三個部署案例的次要需求。    
+
+
 #### <a name="BKMK_CreateGMSA"></a>使用 Uninstall-adserviceaccount Cmdlet 建立 gMSA
 
 1.  在 Windows Server 2012 網域控制站上，從工作列執行 Windows PowerShell。
 
 2.  在 Windows PowerShell 的命令提示字元中，輸入下列命令，然後按下 ENTER。 (Active Directory 模組將會自動載入。)
 
-    **Uninstall-adserviceaccount [-Name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName <string>-ServicePrincipalNames < string [] >**
+    **Uninstall-adserviceaccount [-Name] &lt;字串&gt;-DNSHostName &lt;字串&gt; [-KerberosEncryptionType &lt;ADKerberosEncryptionType&gt;] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >] [-SamAccountName &lt;字串&gt;] [-ServicePrincipalNames < string [] >]**
 
     |參數|字串|範例|
     |-------|-----|------|
     |名稱|帳戶的名稱|ITFarm1|
     |DNSHostName|服務的 DNS 主機名稱|ITFarm1.contoso.com|
-    |KerberosEncryptionType|主機伺服器支援的任何加密類型|RC4、AES128、AES256|
+    |KerberosEncryptionType|主機伺服器支援的任何加密類型|None、RC4、AES128、AES256|
     |ManagedPasswordIntervalInDays|密碼變更間隔 (單位為天) (如果未提供，則預設值為 30 天)|90|
     |PrincipalsAllowedToRetrieveManagedPassword|成員主機的電腦帳戶或成員主機所屬的安全性群組|ITFarmHosts|
     |SamAccountName|服務的 NetBIOS 名稱 (如果與 Name 不相同)|ITFarm1|
-    |ServicePrincipalNames|服務的服務主體名稱 (SPN)|http/ITFarm1.contoso.com/contoso.com、http/ITFarm1.contoso.com/contoso、http/ITFarm1/contoso.com、http/ITFarm1/contoso|
+    |ServicePrincipalNames|服務的服務主體名稱 (SPN)|HTTP/ITFarm1 .com/contoso .com，HTTP/ITFarm1。 contoso .com/contoso，HTTP/ITFarm1/contoso .com，HTTP/ITFarm1/contoso，MSSQLSvc/ITFarm1. contoso .com：1433，MSSQLSvc/ITFarm1。 contoso .com： INST01|
 
     > [!IMPORTANT]
     > 只有在建立時，才能設定密碼變更間隔。 如果您需要變更此間隔，就必須建立新的 gMSA，然後在建立時設定它。
-
+   
     **範例**
 
     請以單行輸入命令，即使由於格式限制，此處可能會顯示為換行成數行也一樣。
@@ -176,7 +180,7 @@ Windows 電腦帳戶、Windows 7 獨立「受管理的服務帳戶」(sMSA) 或�
     New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
-若要完成此程序，至少需要 **Domain Admins**、**Account Operators** 的成員資格或是建立 msDS-GroupManagedServiceAccount 物件的能力。 如需使用適當帳戶和群組成員資格的詳細資料，請參閱 [本機與網域的預設群組](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
+若要完成此程序，至少需要 **Domain Admins**、 **Account Operators**的成員資格或是建立 msDS-GroupManagedServiceAccount 物件的能力。 如需使用適當帳戶和群組成員資格的詳細資料，請參閱 [本機與網域的預設群組](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
 
 ##### <a name="to-create-a-gmsa-for-outbound-authentication-only-using-the-new-adserviceaccount-cmdlet"></a>使用 New-ADServiceAccount Cmdlet 來建立僅用於輸出驗證的 gMSA
 
@@ -184,7 +188,7 @@ Windows 電腦帳戶、Windows 7 獨立「受管理的服務帳戶」(sMSA) 或�
 
 2.  在 Windows PowerShell Active Directory 模組的命令提示字元中，輸入下列命令，然後按 ENTER 鍵：
 
-    **Uninstall-adserviceaccount [-Name] <string>-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
+    **Uninstall-adserviceaccount [-Name] &lt;string&gt;-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
 
     |參數|字串|範例|
     |-------|-----|------|
@@ -194,8 +198,8 @@ Windows 電腦帳戶、Windows 7 獨立「受管理的服務帳戶」(sMSA) 或�
 
     > [!IMPORTANT]
     > 只有在建立時，才能設定密碼變更間隔。 如果您需要變更此間隔，就必須建立新的 gMSA，然後在建立時設定它。
-
-**範例**
+    
+  **範例**
 
 ```PowerShell
 New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$
@@ -245,11 +249,11 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 
 2.  在 Windows PowerShell Active Directory 模組的命令提示字元中，輸入下列命令，然後按 ENTER 鍵：
 
-    **Uninstall-adserviceaccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
+    **Uninstall-adserviceaccount [-Name] &lt;string&gt;-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  在 Windows PowerShell Active Directory 模組的命令提示字元中，輸入下列命令，然後按 ENTER 鍵：
 
-    **Uninstall-adserviceaccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Uninstall-adserviceaccount [-Name] &lt;string&gt;-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |參數|字串|範例|
 |-------|-----|------|
@@ -276,7 +280,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 如需有關如何設定這些屬性的詳細資訊，請參閱 TechNet 文件庫中的 [Set-ADServiceAccount](https://technet.microsoft.com/library/ee617252.aspx) ，或是在「適用於 Windows PowerShell 的 Active Directory 模組」的命令提示字元中輸入 **Get-Help Set-ADServiceAccount** ，然後按下 ENTER。
 
 ## <a name="BKMK_DecommMemberHosts"></a>從現有的伺服器陣列解除委任成員主機
-若要完成這些程序，至少需要 **Domain Admins** 的成員資格或是將成員從安全性群組物件移除的能力。
+若要完成這些程序，至少需要 **Domain Admins**的成員資格或是將成員從安全性群組物件移除的能力。
 
 ### <a name="step-1-remove-member-host-from-gmsa"></a>步驟 1：將成員主機從 gMSA 移除
 如果使用安全性群組來管理成員主機，請使用下列其中一種方法，從 gMSA 成員主機所屬的安全性群組中移除已解除委任之成員主機的電腦帳戶。
@@ -303,11 +307,11 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
 2.  在 Windows PowerShell Active Directory 模組的命令提示字元中，輸入下列命令，然後按 ENTER 鍵：
 
-    **Uninstall-adserviceaccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
+    **Uninstall-adserviceaccount [-Name] &lt;string&gt;-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  在 Windows PowerShell Active Directory 模組的命令提示字元中，輸入下列命令，然後按 ENTER 鍵：
 
-    **Uninstall-adserviceaccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Uninstall-adserviceaccount [-Name] &lt;string&gt;-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |參數|字串|範例|
 |-------|-----|------|
@@ -337,7 +341,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
 2.  在 Windows PowerShell Active Directory 模組的命令提示字元中，輸入下列命令，然後按 ENTER 鍵：
 
-    **卸載-Uninstall-adserviceaccount < Uninstall-adserviceaccount >**
+    **卸載-Uninstall-adserviceaccount &lt;Uninstall-adserviceaccount&gt;**
 
     **範例**
 
@@ -353,4 +357,4 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
 ## <a name="BKMK_Links"></a>另請參閱
 
--   [群組受管理的服務帳戶總覽](group-managed-service-accounts-overview.md)
+-   [群組受管理的服務帳戶概觀](group-managed-service-accounts-overview.md) \(機器翻譯\)
