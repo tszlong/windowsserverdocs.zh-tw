@@ -7,18 +7,18 @@ ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
-ms.date: 09/23/2016
+ms.date: 12/06/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: e3a70f420d841311481962040f9d9ee78c08dd6a
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 9f0758679353efebfcea85eeb082f1dbe188a7ec
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923800"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351836"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>規劃和設計您的遠端桌面服務環境
 
@@ -28,7 +28,7 @@ ms.locfileid: "72923800"
 請使用下列資訊來規劃和設計您的部署：
 
 - [隨處建置](rds-plan-build-anywhere.md)
-- [迎合不同類型的使用者](rds-plan-cater-to-users.md)
+- [網路指導方針](network-guidance.md)
 - [隨處存取](rds-plan-access-from-anywhere.md)
 - [高可用性](rds-plan-high-availability.md)
 - [多重要素驗證](rds-plan-mfa.md)
