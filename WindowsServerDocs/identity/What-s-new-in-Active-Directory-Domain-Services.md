@@ -12,23 +12,23 @@ ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: e3af163855e2550383b119d504449b2b43208a78
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 064ccf80faf77bbf128351a78ea437730983bf06
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391097"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948189"
 ---
 # <a name="what39s-new-in-active-directory-domain-services"></a>Active Directory Domain Services&#39;的新功能 
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中有些應用程式和服務託管于雲端，其他則裝載于內部部署。 這些改良功能包括：  
+Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中有些應用程式和服務託管于雲端，其他則裝載于內部部署。 其中包括下列增強功能：  
   
 -   [特殊許可權存取管理](https://technet.microsoft.com/library/mt150258.aspx   
 )  
   
-- [透過 Azure Active Directory Join 將雲端功能延伸到 Windows 10 裝置](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
+- [透過 Azure Active Directory Join 擴充 Windows 10 裝置的雲端功能](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
   
 - [將已加入網域的裝置連接到 Azure AD 以進行 Windows 10 體驗](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
   
@@ -55,7 +55,7 @@ Active Directory Domain Services （AD DS）中的下列新功能可改善組織
   
 -   新的監視功能，可協助您輕鬆地找出要求存取的物件、授與的存取權，以及執行的活動。  
   
-**滿足**  
+**Requirements**  
   
 -   Microsoft Identity Manager  
   
@@ -70,7 +70,7 @@ Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗�
   
     -   漫遊或個人化、協助工具設定和認證  
   
-    -   備份與還原  
+    -   備份和還原  
   
     -   使用工作帳戶存取 Microsoft Store  
   
@@ -80,7 +80,7 @@ Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗�
   
 -   **單一登入**Office 365 和其他組織應用程式、網站和資源。  
   
--   **在 BYOD 裝置上**，將工作帳戶（從內部部署網域或 Azure AD）新增至個人擁有的裝置，並透過應用程式和 web 來享用 SSO，以協助確保符合條件帳戶控制等新功能和裝置健康情況證明。  
+-   **在 BYOD 裝置上**，將工作帳戶（從內部部署網域或 Azure AD）新增至個人擁有的裝置，並透過應用程式和 web 上的 SSO 來享用公司資源，以協助確保符合條件式帳戶控制和裝置健康情況證明等新功能。  
   
 -   **Mdm 整合**可讓您將裝置自動註冊到您的 MDM （Intune 或協力廠商）  
   
@@ -90,7 +90,7 @@ Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗�
   
 -   **影像處理**選項可讓您選擇映射處理，並允許使用者在第一次執行體驗期間直接設定公司擁有的裝置。  
   
-如需詳細資訊， [請參閱適用于企業的 Windows 10：使用裝置進行工作](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)的方式。  
+如需詳細資訊，請參閱[適用于企業的 Windows 10：使用裝置工作的方式](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)。  
   
 ## <a name="BKMK_IDLocker"></a>Microsoft Passport  
 Microsoft Passport 是以新的金鑰為基礎的驗證方法，也就是組織和取用者，不僅是密碼。 這種形式的驗證會依賴缺口、遭竊和網路釣魚認證。  
@@ -102,7 +102,7 @@ Microsoft Passport 是以新的金鑰為基礎的驗證方法，也就是組織�
 ## <a name="BKMK_FRSDeprecation"></a>檔案複寫服務（FRS）和 Windows Server 2003 功能等級的淘汰  
 雖然檔案複寫服務（FRS）和 Windows Server 2003 功能等級在舊版的 Windows Server 中已淘汰，但仍有重複的 Windows Server 2003 作業系統不再受到支援。 因此，執行 Windows Server 2003 的任何網域控制站都應該從網域中移除。 網域和樹系功能等級應至少提高至 Windows Server 2008，以防止執行舊版 Windows Server 的網域控制站新增至環境。  
   
-在 Windows Server 2008 及更高版本的網域功能等級上，分散式檔案服務（DFS）複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更新版本建立新的網域，DFS 複寫會自動用來複寫 SYSVOL。 如果您已在較低的功能層級建立網域，則需要從使用 FRS 遷移至 SYSVOL 的 DFS 複寫。 針對遷移步驟，您可以遵循[TechNet 上的程式](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，或參考[存放裝置小組檔案封包 blog 上的一組簡化的步驟](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  
+在 Windows Server 2008 及更高版本的網域功能等級，分散式檔案服務 (DFS) 複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更高版本建立新的網域，DFS 複寫會自動複寫 SYSVOL。 如果您已在較低的功能等級建立網域，則需要從使用 FRS 移轉至 SYSVOL 的 DFS 複寫。 至於移轉的步驟，您可以遵循 [TechNet 上的程序](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可以參閱[Storage Team File Cabinet 上的簡化步驟](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  
   
 Windows Server 2003 網域和樹系功能等級會繼續受到支援，但組織應將功能等級提升為 Windows Server 2008 （或更高版本），以確保未來的 SYSVOL 複寫相容性和支援。 此外，更高的功能層級也提供許多其他優點和功能。 請參閱下列資源以了解詳細資訊：  
   

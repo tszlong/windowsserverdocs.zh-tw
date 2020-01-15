@@ -9,22 +9,22 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f62692a420bbc6cdae08fa56ec12b8a2fd357ac8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1ef77613919ea6caf39a7cb41ba575652680466d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406973"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950110"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 Active Directory Domain Services 的新功能
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中有些應用程式和服務託管于雲端，其他則裝載于內部部署。 這些改良功能包括：  
+Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中有些應用程式和服務託管于雲端，其他則裝載于內部部署。 其中包括下列增強功能：  
   
 - [特殊許可權存取管理](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [透過 Azure Active Directory Join 將雲端功能延伸到 Windows 10 裝置](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [透過 Azure Active Directory Join 擴充 Windows 10 裝置的雲端功能](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
   
 - [將已加入網域的裝置連接到 Azure AD 以進行 Windows 10 體驗](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
   
@@ -66,13 +66,13 @@ Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗�
 - 公司擁有的 Windows 裝置上**的現代化設定可用性**。 氧氣 Services 不再需要個人 Microsoft 帳戶：他們現在會從使用者現有的工作帳戶執行，以確保合規性。 氧氣服務將適用于加入內部部署 Windows 網域的電腦，以及已加入 Azure AD 租使用者（「雲端網域」）的電腦和裝置。 這些設定包括︰  
 
    - 漫遊或個人化、協助工具設定和認證  
-   - 備份與還原  
+   - 備份和還原  
    - 使用工作帳戶存取 Microsoft Store  
    - 動態磚和通知  
   
 - 存取無法加入 Windows 網域之行動裝置（手機、phablets）上的**組織資源**，無論他們是公司擁有或 BYOD  
 - **單一登入**Office 365 和其他組織應用程式、網站和資源。  
-- **在 BYOD 裝置上**，將工作帳戶（從內部部署網域或 Azure AD）新增至個人擁有的裝置，並透過應用程式和 web 來享用 SSO，以協助確保符合條件帳戶控制等新功能和裝置健康情況證明。  
+- **在 BYOD 裝置上**，將工作帳戶（從內部部署網域或 Azure AD）新增至個人擁有的裝置，並透過應用程式和 web 上的 SSO 來享用公司資源，以協助確保符合條件式帳戶控制和裝置健康情況證明等新功能。  
 - **Mdm 整合**可讓您將裝置自動註冊到您的 MDM （Intune 或協力廠商）  
 - 為組織中的多個使用者**設定「kiosk」模式和共用的裝置**  
 - **開發人員體驗**可讓您使用共用的程式設計堆疊，建立可滿足企業和個人內容的應用程式。  
@@ -92,7 +92,7 @@ Windows Hello 企業版是一種以金鑰為基礎的驗證方法，是組織和
 
 雖然檔案複寫服務（FRS）和 Windows Server 2003 功能等級在舊版的 Windows Server 中已淘汰，但仍有重複的 Windows Server 2003 作業系統不再受到支援。 因此，執行 Windows Server 2003 的任何網域控制站都應該從網域中移除。 網域和樹系功能等級應至少提高至 Windows Server 2008，以防止執行舊版 Windows Server 的網域控制站新增至環境。
 
-在 Windows Server 2008 及更高版本的網域功能等級上，分散式檔案服務（DFS）複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更新版本建立新的網域，DFS 複寫會自動用來複寫 SYSVOL。 如果您已在較低的功能層級建立網域，則需要從使用 FRS 遷移至 SYSVOL 的 DFS 複寫。 針對遷移步驟，您可以遵循下列[步驟](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019\(v=ws.10\))，或者您可以參考[存放裝置小組檔案封包 blog 上的一組簡化的步驟](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  
+在 Windows Server 2008 及更高版本的網域功能等級，分散式檔案服務 (DFS) 複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更高版本建立新的網域，DFS 複寫會自動複寫 SYSVOL。 如果您已在較低的功能等級建立網域，則需要從使用 FRS 移轉至 SYSVOL 的 DFS 複寫。 針對遷移步驟，您可以遵循下列[步驟](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019\(v=ws.10\))，或者您可以參考[存放裝置小組檔案封包 blog 上的一組簡化的步驟](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  
   
 Windows Server 2003 網域和樹系功能等級會繼續受到支援，但組織應將功能等級提升為 Windows Server 2008 （或更高版本），以確保未來的 SYSVOL 複寫相容性和支援。 此外，更高的功能層級也提供許多其他優點和功能。 請參閱下列資源以了解詳細資訊：  
 

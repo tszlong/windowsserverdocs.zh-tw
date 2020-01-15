@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: de4d64e3dbe4bc7c7cba32f066a696636632224d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 82d0ce962dfab0f7c9e5180e4b471894f507fb26
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403730"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950339"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>受&#39;管理的服務帳戶的新功能
 
@@ -31,7 +31,7 @@ ms.locfileid: "71403730"
 ## <a name="versions"></a>Windows Server 2012 和 Windows 8 中受管理的服務帳戶的新功能
 以下說明 Windows Server 2012 和 Windows 8 中 MSA 的功能變更。
 
-### <a name="group-managed-service-accounts"></a>群組受管理的服務帳戶
+### <a name="group-managed-service-accounts"></a>Group Managed Service Accounts
 在網域中為伺服器設定網域帳戶時，用戶端電腦可以驗證並連接至該服務。 之前只有兩種帳戶類型在不需要密碼管理的情況下提供身分識別。 但是這些帳戶類型有所限制：
 
 -   電腦帳戶限制為一個網域伺服器，而且密碼受到電腦管理。
@@ -53,10 +53,10 @@ ms.locfileid: "71403730"
 
 ## <a name="see-also"></a>請參閱
 
--   [群組受管理的服務帳戶總覽](group-managed-service-accounts-overview.md)
+-   [群組受管理的服務帳戶概觀](group-managed-service-accounts-overview.md) \(機器翻譯\)
 
--   [Active Directory 網域服務概觀](active-directory-domain-services-overview.md)
+-   [Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)
 
--   [受管理的服務帳戶：瞭解、實施、最佳作法和疑難排解](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [受管理的服務帳戶：瞭解、實施、最佳作法和疑難排解](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

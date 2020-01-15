@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5449c9e96a5a9ecd08ca35e703a76927f4e27158
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356022"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950477"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 原則進行分割\-大腦 DNS 部署
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 您可以使用本主題來瞭解如何在 Windows Server&reg; 2016 中為分裂式 DNS 部署設定 DNS 原則，其中有兩個版本的單一區域-一個用於組織內部網路上的內部使用者，另一個用於外部使用者（通常是網際網路上的使用者）。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71356022"
 
 分割大腦部署的另一個設定案例是 DNS 名稱解析的選擇性遞迴控制。 在某些情況下，企業 DNS 伺服器預期會透過網際網路對內部使用者執行遞迴解析，而它們也必須作為外部使用者的授權名稱伺服器，並封鎖它們的遞迴。 
 
-本主題包含下列各節。
+本主題涵蓋下列各節。
 
 - [DNS 分割大腦部署的範例](#bkmk_sbexample)
 - [DNS 選擇性遞迴控制的範例](#bkmk_recursion)
@@ -36,7 +36,7 @@ ms.locfileid: "71356022"
 ## <a name="bkmk_sbexample"></a>DNS 分割大腦部署的範例
 以下是如何使用 DNS 原則來完成先前所述之分裂式 DNS 案例的範例。
 
-本節包含下列主題：
+本節包含下列主題。
 
 - [DNS 分割大腦部署的運作方式](#bkmk_sbhow)
 - [如何設定 DNS 分割大腦部署](#bkmk_sbconfigure)
@@ -132,7 +132,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 以下範例示範如何使用 DNS 原則來完成先前所述的 DNS 選擇性遞迴控制案例。
 
-本節包含下列主題：
+本節包含下列主題。
 
 - [DNS 選擇性遞迴控制的運作方式](#bkmk_recursionhow)
 - [如何設定 DNS 選擇性遞迴控制](#bkmk_recursionconfigure)
@@ -156,13 +156,13 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 ### <a name="bkmk_recursionhow"></a>DNS 選擇性遞迴控制的運作方式
 
-如果收到的查詢是未授權的 Contoso DNS 伺服器（例如 www.microsoft.com），則會根據 DNS 伺服器上的原則來評估名稱解析要求。 
+如果收到的查詢是未授權的 Contoso DNS 伺服器（例如 https://www.microsoft.com ），則會根據 DNS 伺服器上的原則來評估名稱解析要求。 
 
 因為這些查詢不會落在任何區域底下，所以不會評估分割大腦範例中所定義的區域層級原則 \(\)。 
 
 DNS 伺服器會評估遞迴原則，而在私用介面上接收的查詢則符合**SplitBrainRecursionPolicy**。 此原則會指向已啟用遞迴的遞迴範圍。
 
-然後，DNS 伺服器會執行遞迴以從網際網路取得 www.microsoft.com 的答案，並在本機快取回應。 
+DNS 伺服器接著會執行遞迴，以從網際網路取得 https://www.microsoft.com 的答案，並在本機快取回應。 
 
 如果在外部介面上收到查詢，則不會符合任何 DNS 原則，而且會套用預設遞迴設定（在此案例中為**停用**）。
 

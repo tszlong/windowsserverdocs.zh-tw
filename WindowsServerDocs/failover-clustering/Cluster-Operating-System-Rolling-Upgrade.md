@@ -7,12 +7,12 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: f7d20a099f287d2ee05ae6e908c173e1eb3cfc66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361839"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948531"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>叢集作業系統輪流升級
 
@@ -52,7 +52,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支援叢集 OS 輪�
 - 不支援將儲存空間直接存取叢集升級到 Windows Server，版本1709。
 - 如果叢集工作負載是 Hyper-v Vm 或向外延展檔案伺服器，您可以預期零停機升級。
 - 使用下列其中一種方法，確認 Hyper-v 節點具有支援第二層定址表（SLAT）的 Cpu;  
-        -請檢查[您是否相容 SLAT？WP8 SDK Tip 01](http://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)文章，描述兩種檢查 CPU 是否支援 SLATs 的方法  
+        -請檢查[您是否相容 SLAT？WP8 SDK Tip 01](https://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)文章，描述兩種檢查 CPU 是否支援 SLATs 的方法  
         -下載[Coreinfo v 3.31](https://technet.microsoft.com/sysinternals/cc835722)工具，以判斷 CPU 是否支援 SLAT。
 
 ## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>叢集 OS 輪流升級期間的叢集轉換狀態
@@ -263,7 +263,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支援叢集 OS 輪�
     是，我們已設計要使用 PowerShell 自動化叢集 OS 輪流升級。  
 
 **針對具有額外工作負載和容錯移轉容量的大型叢集，是否可以同時升級多個節點？**  
-    是。 從叢集移除一個節點以升級 OS 時，叢集將會有一個較少的節點來進行容錯移轉，因此會降低容錯移轉的容量。 對於具有足夠工作負載和容錯移轉容量的大型叢集，可以同時升級多個節點。 您可以暫時將叢集節點新增至叢集，以在叢集 OS 輪流升級程式期間提供改良的工作負載和容錯移轉功能。  
+    可以。 從叢集移除一個節點以升級 OS 時，叢集將會有一個較少的節點來進行容錯移轉，因此會降低容錯移轉的容量。 對於具有足夠工作負載和容錯移轉容量的大型叢集，可以同時升級多個節點。 您可以暫時將叢集節點新增至叢集，以在叢集 OS 輪流升級程式期間提供改良的工作負載和容錯移轉功能。  
 
 **成功執行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)之後，如果我在叢集中發現問題，該怎麼辦？**  
     如果您在執行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)之前，已使用系統狀態備份來備份叢集資料庫，您應該能夠在 Windows Server 2012 R2 叢集節點上執行授權還原，並還原原始叢集資料庫和設定。  

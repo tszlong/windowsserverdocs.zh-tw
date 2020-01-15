@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 498e72377197bd2185a518949520275c36295a77
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee14a2bd9290dbaa5653640a80528d163635142d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355083"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947217"
 ---
 # <a name="additional-performance-tuning-resources"></a>其他效能微調資源
 
@@ -25,7 +25,7 @@ ms.locfileid: "71355083"
 
 -   [交易處理效能委員會](http://www.tpc.org/)
 
--   [Windows 評定及部署套件](https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit)
+-   [Windows 評定及部署套件](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
 
 ## <a name="power-management-tuning-resources"></a>電源管理調整資源
 
@@ -33,11 +33,11 @@ ms.locfileid: "71355083"
 
 -   [使用 PowerCfg 評估系統能源效率](https://technet.microsoft.com/library/cc748940.aspx)
 
--   [中斷親和性原則工具](https://support.microsoft.com/en-us/kb/252867)
+-   [中斷親和性原則工具](https://support.microsoft.com/kb/252867)
 
 ## <a name="networking-subsystem-tuning-resources"></a>網路子系統調整資源
 
--   [可擴充的網路功能：排除接收處理瓶頸-RSS 簡介](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)
+-   [可擴充的網路：消除接收處理瓶頸-RSS 簡介](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)
 
 -   [Windows 篩選平台](https://msdn.microsoft.com/windows/hardware/gg463267.aspx)
 
@@ -65,7 +65,7 @@ ms.locfileid: "71355083"
 
 -   [Hyper-v 動態記憶體設定指南](https://technet.microsoft.com/library/ff817651.aspx)
 
--   [NUMA 節點平衡](http://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
+-   [NUMA 節點平衡](https://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
 
 -   [Hyper-v WMI 提供者](https://msdn2.microsoft.com/library/cc136992(VS.85).aspx)
 
@@ -73,9 +73,9 @@ ms.locfileid: "71355083"
 
 -   [關於虛擬機器和客體作業系統](https://technet.microsoft.com/library/cc794868(v=ws.10))
 
--   [優化和疑難排解 Hyper-v 存放裝置](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
+-   [優化和疑難排解 Hyper-v 存放裝置](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
 
--   [針對 Hyper-v 網路功能進行優化和疑難排解](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
+-   [針對 Hyper-v 網路功能進行優化和疑難排解](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
 
 ## <a name="print-server-tuning-resources"></a>列印伺服器調整資源
 

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 0e848260dd4ba3b37d1351fba7c24dd3cd283e69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393941"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950089"
 ---
 # <a name="storage-quality-of-service"></a>存放裝置服務品質
 
@@ -31,7 +31,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 本文件概述企業如何從新的存放裝置 QoS 功能中受益。 本文件假設您先前已具備使用 Windows Server、Windows Server 容錯移轉叢集、向外延展檔案伺服器、Hyper-V 和 Windows PowerShell 的知識。
 
-## <a name="BKMK_Overview"></a>簡要  
+## <a name="BKMK_Overview"></a>概觀  
 本節說明使用存放裝置 QoS 的需求、使用存放裝置 QoS 的軟體定義解決方案概觀，以及一份存放裝置 QoS 相關術語的清單。  
 
 ### <a name="BKMK_Requirements"></a>存放裝置 QoS 需求  
@@ -45,7 +45,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
     針對存放裝置 QoS，存放裝置伺服器上需要有容錯移轉叢集，但容錯移轉叢集中不需要計算伺服器。 所有伺服器 (用於「存放裝置」和「計算」) 都必須執行 Windows Server 2016。  
 
-    如果您尚未針對評估用途來部署向外延展檔案伺服器叢集，如需使用現有伺服器或虛擬機器來建置一個的逐步指示，請參閱 [Windows Server 2012 R2 存放裝置︰使用儲存空間、SMB 向外延展和共用 VHDX (實體) 的逐步指示](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)。  
+    如果您尚未針對評估用途來部署向外延展檔案伺服器叢集，如需使用現有伺服器或虛擬機器來建置一個的逐步指示，請參閱 [Windows Server 2012 R2 存放裝置︰使用儲存空間、SMB 向外延展和共用 VHDX (實體) 的逐步指示](https://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)。  
 
 -   **使用叢集共用磁片區的 hyper-v。** 此案例需要下列兩項：  
 
@@ -68,13 +68,13 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 ### <a name="BKMK_Glossary"></a>詞彙  
 
-|詞彙|描述|  
+|詞彙|說明|  
 |--------|---------------|  
 |標準化的 IOPS|所有的存放裝置使用量都是以「標準化的 IOPS」來測量。  這是存放裝置每秒輸入/輸出作業的計數。  任何等於或小於 8 KB 的 IO 都會被視為一個標準化的 IO。  任何大於 8 KB 的 IO 都會被視為多個標準化的 IO。 例如，256 KB 的要求會被視為 32 個標準化的 IOPS。<br /><br />Windows Server 2016 讓您能夠指定要用來將 IO 標準化的大小。  在存放裝置叢集上，可以指定標準化的大小，並在整個標準化計算叢集中生效。  預設值會維持 8 KB。|  
 |流程|每個由 Hyper-V 伺服器開啟到 VHD 或 VHDX 檔案的檔案控制代碼都會被視為一個「流程」。 如果一個虛擬機器連接了兩個虛擬硬碟，則每個檔案中都會有 1 個連至檔案伺服器叢集的流程。 如果 VHDX 會與多個虛擬機器共用，則每個虛擬機器中將會有 1 個流程。|  
 |InitiatorName|針對每個流程要對向外延展檔案伺服器報告的虛擬機器名稱。|  
 |InitiatorID|符合虛擬機器識別碼的識別碼。  這一律可用來唯一識別個別流程的虛擬機器，即使虛擬機器具有相同的 InitiatorName 也一樣。|  
-|原則|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、 ParentPolicy 和 PolicyType。|  
+|原則|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
 |PolicyId|原則的唯一識別碼。  根據預設所產生，但可視需要加以指定。|  
 |MinimumIOPS|原則將提供的最小值標準化 IOPS。  也稱為「保留項目」。|  
 |MaximumIOPS|原則將限制的最大值標準化 IOPS。  也稱為「限制」。|  
@@ -93,7 +93,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 #### <a name="verify-storage-qos-installation"></a>確認存放裝置 QoS 的安裝  
 在建立容錯移轉叢集並設定 CSV 磁碟之後，**存放裝置 QoS 資源**即會顯示為叢集核心資源，並出現在容錯移轉叢集管理員與 Windows PowerShell 中。 這表示容錯移轉叢集系統將會管理此資源，而您應該不需對此資源執行任何動作。  我們會在容錯移轉叢集管理員和 PowerShell 中顯示此資源，使其可與其他容錯移轉叢集系統資源 (例如新的健全狀況服務) 保持一致。  
 
-![[存放裝置 QoS 資源] 會出現在 [叢集核心資源] 中](media/overview-Clustering_StorageQoSFCM.png)  
+![\[存放裝置 QoS 資源\] 會出現在 \[叢集核心資源\] 中](media/overview-Clustering_StorageQoSFCM.png)  
 
 **圖2：存放裝置 QoS 資源在容錯移轉叢集管理員中顯示為叢集核心資源**  
 
@@ -122,7 +122,7 @@ Windows Server 2016 中的 Hyper-V 角色具備存放裝置 QoS 的內建支援�
 -   Windows PowerShell：Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>基於測試目的部署虛擬機器來執行工作負載  
-您需要將一些具有相關工作負載的虛擬機器儲存於向外延展檔案伺服器上。  如需如何模擬負載並執行某些壓力測試的一些秘訣，請參閱下列頁面以取得建議的工具 (DiskSpd) 和一些使用方式範例︰[DiskSpd、PowerShell 和存放裝置效能︰測量本機磁碟和 SMB 檔案共用的 IOPS、輸送量和延遲](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)。  
+您需要將一些具有相關工作負載的虛擬機器儲存於向外延展檔案伺服器上。  如需如何模擬負載並執行某些壓力測試的一些秘訣，請參閱下列頁面以取得建議的工具 (DiskSpd) 和一些使用方式範例︰[DiskSpd、PowerShell 和存放裝置效能︰測量本機磁碟和 SMB 檔案共用的 IOPS、輸送量和延遲](https://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)。  
 
 本指南中所示的範例案例包含五個虛擬機器。 BuildVM1、BuildVM2、BuildVM3 和 BuildVM4 正以低到中等的儲存需求來執行桌面工作負載。 TestVm1 正以高等級的儲存需求來執行線上交易處理的效能評定。  
 
@@ -304,7 +304,7 @@ MinimumIops    : 781
 
 例如，假設您建立一個彙總原則，其最小值為 300 個 IOPS 且最大值為 500 個 IOPS。 如果您將此原則套用到 5 個不同的 VHD/VHDX 檔案，即可確定這 5 個 VHD/VHDX 檔案組合將保證至少有 300 個 IOPS (如果有需求且存放系統可以提供該效能)，而且不會超過 500 個 IOPS。 如果 VHD/VHDX 檔案對於 IOPS 具有類似的高度需求且存放系統可以掌握，則每個 VHD/VHDX 檔案大約可取得 100 個 IOPS。  
 
-不過，如果您使用類似限制來建立專用原則，並將它套用到 5 個不同虛擬機器上的 VHD/VHDX 檔案，每個虛擬機器至少將取得 300 個 IOPS 且不會超過 500 個 IOPS。 如果虛擬機器對於 IOPS 具有類似的高度需求且存放系統可以掌握，則每個虛擬機器大約可取得 500 個 IOPS。 .  如果其中一個虛擬機器具有多個已設定相同 MulitInstance 原則的 VHD/VHDX 檔案，它們將會共用限制，如此一來，來自具有該原則之檔案的 VM 總 IO 將不會超過限制。  
+不過，如果您使用類似限制來建立專用原則，並將它套用到 5 個不同虛擬機器上的 VHD/VHDX 檔案，每個虛擬機器至少將取得 300 個 IOPS 且不會超過 500 個 IOPS。 如果虛擬機器對於 IOPS 具有類似的高度需求且存放系統可以掌握，則每個虛擬機器大約可取得 500 個 IOPS。 。  如果其中一個虛擬機器具有多個已設定相同 MulitInstance 原則的 VHD/VHDX 檔案，它們將會共用限制，如此一來，來自具有該原則之檔案的 VM 總 IO 將不會超過限制。  
 
 因此，如果您有一組 VHD/VHDX 檔案，而您想要讓它們展現相同的效能特性且想省去建立多個類似原則的麻煩，您可以使用單一的專用原則並套用到每個虛擬機器的檔案。
 

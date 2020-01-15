@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8880f26acd8b32a4ab8a32ede067d158f2d6aed1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369209"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949129"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附錄 I︰為 Active Directory 中的受保護帳戶和群組建立管理帳戶
 
@@ -81,9 +81,9 @@ ms.locfileid: "71369209"
   
 7.  在 [**安全性**] 索引標籤上，移除不允許存取此群組的群組。 例如，如果您不想讓已驗證的使用者能夠讀取群組的名稱和一般屬性，您可以移除該 ACE。 您也可以移除 Ace，例如適用于帳戶操作員的和 Windows 2000 Server 相容的存取。 不過，您應該保留一組最小的物件使用權限。 讓下列 Ace 保持不變：  
   
-    -   供電  
+    -   SELF  
   
-    -   筆記本電腦  
+    -   系統  
   
     -   Domain Admins  
   
@@ -133,7 +133,7 @@ ms.locfileid: "71369209"
 
 7. 以滑鼠右鍵按一下您剛建立的使用者物件，然後按一下 [**屬性**]。  
 
-8. 按一下 [**帳戶**] 索引標籤。  
+8. 按一下 [帳戶] 索引標籤。  
 
 9. 在 [**帳戶選項**] 欄位中，選取 [此**帳戶為機密，無法委派**] 旗標，選取 [**此帳戶支援 kerberos aes 128 位加密**] 及/或 [**此帳戶支援 kerberos aes 256 加密**] 旗標，然後按一下 **[確定]** 。  
 
@@ -144,7 +144,7 @@ ms.locfileid: "71369209"
    >
    > 雖然為主機執行更安全的加密類型並不會減輕認證竊取攻擊，但安全主機的適當使用和設定也會受到保護。 為僅供特殊許可權帳戶使用的主機設定更強的加密類型，只會減少電腦的整體攻擊面。  
    >
-   > 如需有關在系統和帳戶上設定加密類型的詳細資訊，請參閱[適用于 Kerberos 支援的加密類型的 Windows](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)設定。  
+   > 如需有關在系統和帳戶上設定加密類型的詳細資訊，請參閱[適用于 Kerberos 支援的加密類型的 Windows](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)設定。  
    >
    > 只有執行 Windows Server 2012、Windows Server 2008 R2、Windows 8 或 Windows 7 的電腦才支援這些設定。  
   
@@ -182,7 +182,7 @@ ms.locfileid: "71369209"
 
 17. 按一下 [隸屬於] 索引標籤。  
 
-18. 按一下 **\[新增\]** 。  
+18. 按一下 **[新增]** 。  
 
 19. 在 [**選取使用者、連絡人、電腦**] 對話方塊中，輸入**拒絕的 RODC 密碼複寫群組**，然後按一下 [**檢查名稱**]。 當物件選擇器中的群組名稱加上底線時，按一下 **[確定]** ，並確認該帳戶現在是下列螢幕擷取畫面中所顯示的兩個群組的成員。 請勿將帳戶新增至任何受保護的群組。  
 

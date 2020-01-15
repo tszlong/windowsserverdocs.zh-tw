@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382972"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946998"
 ---
 # <a name="manage-software-inventory-logging"></a>管理軟體清查記錄
 
@@ -31,20 +31,20 @@ ms.locfileid: "71382972"
 - **Windows Server 2012 （Standard 或 Datacenter Edition）** 
 
 > [!NOTE] 
-> 套用下方的更新程式封裝前，請確定您已安裝了 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)。
+> 套用下方的更新程式封裝前，請確定您已安裝了 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)。
 
--  Windows Server 2012 的 WMF 4.0 更新程式封裝： [KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
+-  Windows Server 2012 的 WMF 4.0 更新程式封裝： [KB 3119938](https://support.microsoft.com/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
 > [!NOTE] 
-> 套用下方的更新程式封裝前，請確定您已安裝了 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)。
+> 套用下方的更新程式封裝前，請確定您已安裝了 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)。
 
 
-- 需要 [.NET Framework 4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
+- 需要 [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)
 
 
-- Windows Server 2008 R2 的 WMF 4.0 更新程式封裝： [KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
+- Windows Server 2008 R2 的 WMF 4.0 更新程式封裝： [KB 3109118](https://support.microsoft.com/kb/3109118)
 
 
 使用這項功能進行清查有兩種主要的方法：  
@@ -90,7 +90,7 @@ ms.locfileid: "71382972"
 -   [在 Windows Server 2012 R2 Hyper-v 環境中使用軟體清查記錄（不含 KB 3000850）](manage-software-inventory-logging.md#BKMK_Step12)  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱使用 Cmdlet。
+> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱使用指令程式。
 
   
 ## <a name="BKMK_Step1"></a>啟動和停止軟體清查記錄  
@@ -125,7 +125,7 @@ ms.locfileid: "71382972"
   
 2.  使用 **Set-SilLogging –CertificateThumbprint** 指定有效 SSL 憑證的憑證指紋雜湊，其會用於驗證要傳輸到彙總伺服器的資料 (彙總伺服器必須設定為接受此雜湊)。  
   
-3.  在要轉寄資料之來源本機伺服器的**本機電腦/個人存放區** (或 **/LocalMachine/MY**) 安裝有效的 SSL 憑證。  
+3.  在要轉寄資料之來源本機伺服器的 **本機電腦/個人存放區** (或 **/LocalMachine/MY**) 安裝有效的 SSL 憑證。  
   
 建議您先完成這些步驟，然後再使用 **Start-SilLogging**。  若要在使用 **Start-SilLogging**之後再執行這些步驟，只須停止再重新啟動 SIL 即可。  您也可以使用 Publish-SilData Cmdlet，確認彙總伺服器具有此伺服器的所有資料。  
   
@@ -248,7 +248,7 @@ SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），�
   
 |||||  
 |-|-|-|-|  
-|**函數**|**值名稱**|**資料**|**對應的 Cmdlet （僅適用于執行中的 OS）**|  
+|**Function**|**值名稱**|**資料**|**對應的 Cmdlet （僅適用于執行中的 OS）**|  
 |啟動/停止功能|CollectionState|1 或 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
 |在網路上指定目標彙總點|TargetUri|字串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
 |指定用於目標 Web 伺服器 SSL 驗證的憑證指紋或憑證雜湊|憑證指紋|字串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  

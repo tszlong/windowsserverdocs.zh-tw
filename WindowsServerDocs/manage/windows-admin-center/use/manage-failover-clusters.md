@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 16e758f0a8746d41adcdafb2bc1be2d91a3fc29c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7f015ac4c9906447069501bf0922b36306a51d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406804"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950489"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>使用 Windows 管理中心管理容錯移轉叢集
 
@@ -21,12 +21,12 @@ ms.locfileid: "71406804"
 
 > [!Tip]
 > 對 Windows Admin Center 不熟悉？
-> [深入了解 Windows Admin Center](../understand/windows-admin-center.md) 或[立即下載](https://aka.ms/windowsadmincenter).
+> [下載或深入瞭解 Windows 系統管理中心](../overview.md)。
 
 ## <a name="managing-failover-clusters"></a>管理容錯移轉叢集
-[容錯移轉](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)叢集是一項 Windows Server 功能，可讓您將多部伺服器組成一個容錯叢集，以提高應用程式和服務（例如向外延展檔案伺服器、hyper-v 和）的可用性和擴充性Microsoft SQL Server。
+[容錯移轉](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)叢集是一種 Windows Server 功能，可讓您將多部伺服器組成一個容錯叢集，以提高應用程式和服務的可用性和擴充性，例如向外延展檔案伺服器、hyper-v 和 Microsoft SQL Server。
 
-雖然您可以在 Windows 系統管理中心將容錯移轉叢集節點新增為[伺服器](manage-servers.md)連線來將它們當做個別伺服器來管理，但您也可以將它們新增為容錯移轉叢集，以查看和管理叢集資源、儲存體、網路、節點、角色、虛擬機器和虛擬交換器。
+雖然您可以在 Windows 系統管理中心將容錯移轉叢集節點新增為[伺服器](manage-servers.md)連線來將它們當做個別伺服器來管理，但您也可以將它們新增為容錯移轉叢集，以查看和管理叢集資源、存放裝置、網路、節點、角色、虛擬機器和虛擬交換器。
 
 ![容錯移轉叢集總覽畫面](../media/manage-failover-clusters/fcm-overview.png)
 
@@ -48,9 +48,9 @@ ms.locfileid: "71406804"
 
 下列工具適用于容錯移轉叢集連接：
 
-| 工具 | 描述 |
+| 工具 | 說明 |
 | ---- | ----------- |
-| 總覽 | 查看容錯移轉叢集詳細資料和管理叢集資源 |
+| 概觀 | 查看容錯移轉叢集詳細資料和管理叢集資源 |
 | [磁碟] | 查看叢集共用磁片和磁片區 |
 | [網路] | 在叢集中查看網路 |
 | 節點 | 查看和管理叢集節點 |

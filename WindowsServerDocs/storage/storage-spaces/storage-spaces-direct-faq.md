@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df9dac8c761a83a13fb937a99cba3697dce95201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402794"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950234"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>儲存空間直接存取-常見問題（FAQ）
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402794"
 
 ## <a name="when-you-use-storage-spaces-direct-with-3-nodes-can-you-get-both-performance-and-capacity-tiers"></a>當您使用具有3個節點的儲存空間直接存取時，您可以同時取得效能和容量層嗎？
 
-是，您可以在2個節點或3個節點的儲存空間直接存取設定中取得效能和容量層級。 不過，您必須確定您有2個容量裝置。 這表示您必須使用三種類型的裝置：NVME、SSD 和 HDD。
+是，您可以在2個節點或3個節點的儲存空間直接存取設定中取得效能和容量層級。 不過，您必須確定您有2個容量裝置。 這表示您必須使用三種類型的裝置： NVME、SSD 和 HDD。
  
 ## <a name="refs-file-system-provides-real-time-tiaring-with-storage-spaces-direct-does-refs-provides-the-same-functionality-with-shared-storage-spaces-in-2016"></a>Refs 檔案系統提供儲存空間直接存取的即時 tiaring。 REFS 在2016中提供與共享儲存空間相同的功能嗎？
 
@@ -42,9 +42,9 @@ ms.locfileid: "71402794"
  
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>在建立 SSD 裝置的儲存空間直接存取之後，是否可以將旋轉磁片（HDD）新增至儲存空間直接存取集區？
 
-資料分割 根據預設，如果您使用單一裝置類型來建立集區，它不會設定快取磁片，而且所有磁片都會用於容量。 您可以在設定中新增 NVME 磁片，而 NVME 磁片則會針對快取進行設定。
+不。 根據預設，如果您使用單一裝置類型來建立集區，它不會設定快取磁片，而且所有磁片都會用於容量。 您可以在設定中新增 NVME 磁片，而 NVME 磁片則會針對快取進行設定。
  
-## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我已設定2個機架的容錯網域：機架1有2個容錯網域，機架2有1個容錯網域。 每部伺服器都有4個容量 100 GB 的裝置。 我可以從集區使用所有 1200 GB 的空間嗎？
+## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我設定了2個機架的容錯網域：機架1有2個容錯網域，第2機架有1個容錯網域。 每部伺服器都有4個容量 100 GB 的裝置。 我可以從集區使用所有 1200 GB 的空間嗎？
 
 不可以，您只能使用 800 GB。 在機架容錯網域中，您必須確定您有雙向鏡像設定，讓每個 chuck 和其重複進入不同的機架。
  
@@ -58,7 +58,7 @@ ms.locfileid: "71402794"
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有計算機會顯示針對快取、容量和復原所設定的確切磁片大小，讓我能夠更好地進行規劃？
 
-您可以使用「儲存空間」計算機協助您進行規劃。 可以在 http://aka.ms/s2dcalc 取得。
+您可以使用「儲存空間」計算機協助您進行規劃。 您可以在 https://aka.ms/s2dcalc 取得此功能。
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>設定6部伺服器和3個機架時，建議您最好的設定為何？
 
@@ -76,7 +76,7 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 
 我們建議您洽詢硬體廠商以確認支援。 硬體廠商會在其硬體上測試解決方案，並針對是否支援它進行批註。 例如，在撰寫本文時，具有8個以上磁片磁碟機位置的伺服器（例如 R730/R730xd/R630）可以支援 SES 並與儲存空間直接存取相容。 Dell 僅支援具有儲存空間直接存取的 HBA330。 R620 不支援 SES，而且與儲存空間直接存取不相容。
 
-如需更多硬體支援資訊，請移至下列網站：Windows Server Catalog
+如需更多硬體支援資訊，請移至下列網站： Windows Server Catalog
  
 ## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>儲存空間直接存取如何利用 SES？
 

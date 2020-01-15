@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: e76d1205c22d6ce484abc86ed5e3c74ac1010f29
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: b82d2eaa9283d99993102f1656262e2eda86cfff
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945308"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950119"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>將 Windows Server 連線到 Azure 混合式服務
 
@@ -31,7 +31,7 @@ ms.locfileid: "74945308"
 
 ## <a name="discover-integrated-services-in-the-azure-hybrid-services-tool"></a>探索 Azure 混合式服務工具中的整合式服務
 
-[Windows Admin Center](../understand/windows-admin-center.md) 中的 Azure 混合式服務工具會將所有整合的 Azure 服務合併到集中式中樞，您可以在其中輕鬆地找到所有可用的 Azure 服務，並將值帶到您內部部署或混合式環境中。  
+[Windows Admin Center](../overview.md) 中的 Azure 混合式服務工具會將所有整合的 Azure 服務合併到集中式中樞，您可以在其中輕鬆地找到所有可用的 Azure 服務，並將值帶到您內部部署或混合式環境中。  
 
 ![顯示 Azure 混合式服務工具的 Windows Admin Center 螢幕擷取畫面](../media/azure-services/ahs-discover.png)
 
@@ -155,7 +155,7 @@ Azure 混合式服務會在下列組態中與 Windows Server 搭配使用：
 如需詳細資訊，請參閱 [Azure Cloud Shell 概觀](https://docs.microsoft.com/azure/cloud-shell/overview)。
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [將 Windows Admin Center 連線到 Azure ](azure-integration.md)
 - [在 Azure 中部署 Windows Admin Center](deploy-wac-in-azure.md)

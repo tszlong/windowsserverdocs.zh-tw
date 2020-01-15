@@ -8,31 +8,31 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ff76a6dffd66296a02cffcbd79bc6dfadc91c14a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b27097ac64f981343c1d455c826fa1b9004133e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407791"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949587"
 ---
-# <a name="scenario-native-app-calling-web-api"></a>案例：呼叫 Web API 的原生應用程式 
->適用於：AD FS 2019 和更新版本 
+# <a name="scenario-native-app-calling-web-api"></a>案例：原生應用程式呼叫 Web API 
+>適用于： AD FS 2019 和更新版本 
  
 瞭解如何建立由 AD FS 2019 驗證的原生應用程式登入使用者，並使用[MSAL 程式庫](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)來呼叫 web api 來取得權杖。  
  
 在閱讀本文之前，您應該先熟悉[AD FS 概念](../ad-fs-openid-connect-oauth-concepts.md)和[授權碼授與流程](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#authorization-code-grant-flow)
  
-## <a name="overview"></a>總覽 
+## <a name="overview"></a>概觀 
  
- ![總覽](media/adfs-msal-native-app-web-api/native1.png)
+ ![概觀](media/adfs-msal-native-app-web-api/native1.png)
 
-在此流程中，您會將驗證新增至您的原生應用程式（公用用戶端），進而登入使用者並呼叫 Web API。 若要從登入使用者的原生應用程式呼叫 Web API，您可以使用 MSAL 的[AcquireTokenInteractive](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法。 為了啟用此互動，MSAL 會利用網頁瀏覽器。 
+在此流程中，您會將驗證新增至您的原生應用程式（公用用戶端），進而登入使用者並呼叫 Web API。 若要從登入使用者的原生應用程式呼叫 Web API，您可以使用 MSAL 的[AcquireTokenInteractive](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法。 為啟用此互動，MSAL 會利用網頁瀏覽器。 
 
  
 若要進一步瞭解如何在 ADFS 中設定原生應用程式以互動方式取得存取權杖，讓我們使用[這裡](https://github.com/microsoft/adfs-sample-msal-dotnet-native-to-webapi)提供的範例，並逐步解說應用程式註冊和程式碼設定步驟。  
  
 
-## <a name="pre-requisites"></a>先決條件 
+## <a name="pre-requisites"></a>必要條件 
 
 
 - GitHub 用戶端工具 
@@ -45,15 +45,15 @@ ms.locfileid: "71407791"
 
   1. 在**AD FS 管理** 中，以滑鼠右鍵按一下 **應用程式群組**，然後選取 **新增應用程式群組**。   
   
-  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**NativeAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按一下 [下一步]。  
+  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**NativeAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按一下 **\[下一步\]** 。  
   
       ![應用程式 Reg](media/adfs-msal-native-app-web-api/native2.png)  
 
-  3. 複製 [**用戶端識別碼**] 值。 稍後**在應用程式的 app.config**檔案中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：** https://ToDoListClient 。 按一下 [新增]。 按一下 [下一步]。  
+  3. 複製 [**用戶端識別碼**] 值。 稍後**在應用程式的 app.config**檔案中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：** https://ToDoListClient 。 按一下 **[新增]** 。 按一下 **\[下一步\]** 。  
  
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native3.png) 
 
-  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/ 。 按一下 [新增]。 按一下 [下一步]。 稍後會在**應用程式的 app.config 和 web.config**檔案中使用此值 **。**
+  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/ 。 按一下 **[新增]** 。 按一下 **\[下一步\]** 。 稍後會在**應用程式的 app.config 和 web.config**檔案中使用此值 **。**
  
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native4.png)   
   
@@ -98,7 +98,7 @@ ms.locfileid: "71407791"
 
 2. 使用 Visual Studio 開啟範例 
 
-3. 開啟 App.config 檔案。 修改下列各項： 
+3. 開啟 App.config 檔。 修改下列各項： 
    - ida：授權單位-輸入 HTTPs：//[您的 AD FS hostname]/adfs
    - ida： ClientId-在上述 AD FS 區段中，輸入應用程式註冊 #3 的 [**用戶端識別碼**] 值。 
    - ida： RedirectUri-在上述 AD FS 區段中，輸入應用程式註冊 #3 的 [重新**導向 URI** ] 值。
@@ -109,7 +109,7 @@ ms.locfileid: "71407791"
 
  4. 開啟 web.config 檔案。 修改下列各項： 
     - ida：物件-在上述 AD FS 區段中，從應用程式註冊 #4 輸入**識別碼**值 
-    - idaAdfsMetadataEndpoint-輸入 HTTPs：//[您的 AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml 
+    - ida： AdfsMetadataEndpoint-輸入 HTTPs：//[您的 AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml 
     
       ![程式碼設定](media/adfs-msal-native-app-web-api/native13.png)
  
@@ -137,7 +137,7 @@ ms.locfileid: "71407791"
 
     如果您沒有看到 [原生應用程式] 畫面，請在系統上儲存專案存放庫的資料夾中，搜尋並移除 * msalcache. bin 檔案。 
 
-  6. 系統會將您重新導向至 AD FS 登入頁面。 請繼續並登入。 
+  6. 系統會將您重新導向至 AD FS 登入頁面。 繼續進行並登入。 
   
       ![應用程式測試](media/adfs-msal-native-app-web-api/native18.png)
 

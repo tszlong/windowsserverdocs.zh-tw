@@ -8,19 +8,19 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0e680e07ce1ee27a73791e310a71b85ad76d6318
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 26c1635d4218c7d33377b6b8a90bc96ea4ad37b3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358756"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948786"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth 概念
 適用于 AD FS 2016 和更新版本
  
 ## <a name="modern-authentication-actors"></a>新式驗證執行者 
 
-|執行者| 描述|
+|執行者| 說明|
 |-----|-----|
 |使用者|這是需要存取資源的安全性主體（使用者、應用程式、服務和群組）。|  
 |用戶端|這是您的 web 應用程式，以其用戶端識別碼來識別。 用戶端通常是與使用者互動的合作物件，而且會向授權伺服器要求權杖。
@@ -34,7 +34,7 @@ ms.locfileid: "71358756"
 ## <a name="application-types"></a>應用程式類型 
  
 
-|應用程式類型|描述|Role|
+|應用程式類型|說明|[角色]|
 |-----|-----|-----|
 |原生應用程式|有時也稱為**公用用戶端**，這是要在電腦或裝置上執行的用戶端應用程式，並與使用者互動。|向授權伺服器要求權杖（AD FS），以供使用者存取資源。 使用權杖做為 HTTP 標頭，將 HTTP 要求傳送至受保護的資源。| 
 |伺服器應用程式（Web 應用程式）|在伺服器上執行的 web 應用程式，通常可透過瀏覽器存取使用者。 因為它能夠維護自己的用戶端「秘密」或認證，有時也稱為「**機密用戶端**」。 |向授權伺服器要求權杖（AD FS），以供使用者存取資源。 要求權杖之前，用戶端（Web 應用程式）必須使用其密碼進行驗證。 | 
@@ -51,13 +51,13 @@ ms.locfileid: "71358756"
 - **access_token**：由授權伺服器（AD FS）所發行且預定供資源使用的 JWT 權杖。 此 token 的 ' aud ' 或物件宣告必須符合資源或 Web API 的識別碼。  
 - **refresh_token**：這是由 AD FS 發出的權杖，供用戶端在需要重新整理 id_token 和 access_token 時使用。 權杖對用戶端而言是不透明的，而且只能由 AD FS 使用。  
 
-## <a name="scopes"></a>任一 
+## <a name="scopes"></a>範圍 
  
 在 AD FS 中註冊資源時，可以將範圍設定為允許 AD FS 執行特定的動作。 除了設定範圍之外，也必須在要求中傳送範圍值，以執行動作 AD FS。 例如，在資源註冊期間，系統管理員必須將範圍設定為 openid，而應用程式（用戶端）必須在驗證要求中傳送 scope = openid，以 AD FS 發行識別碼權杖。 以下提供 AD FS 中可用範圍的詳細資料 
  
 - aza-如果使用 [適用于訊息代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) 而且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及將 [refresh_token_expires_in] 欄位設定為新主要重新整理權杖的存留期（如果有強制執行）。 
 - openid-允許應用程式要求使用 OpenID Connect 授權通訊協定。 
-- logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整的 PKI 回應。  [這裡](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。
+- logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整的 PKI 回應。  [這裡](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。
 - user_impersonation-必須有 user_impersonation 範圍，才能成功向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理程式（OBO）建立多層式應用程式](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
 - allatclaims – allatclaims 範圍可讓應用程式要求存取權杖中的宣告，以便在識別碼權杖中新增。   
 - vpn_cert-vpn_cert 範圍可讓應用程式要求 VPN 憑證，其可用來建立使用 EAP-TLS 驗證的 VPN 連線。 這已不再受到支援。 
@@ -66,9 +66,9 @@ ms.locfileid: "71358756"
 
 ## <a name="claims"></a>宣告 
  
-AD FS 發出的安全性權杖（存取和識別碼權杖）包含宣告或已驗證之主體的相關資訊判斷提示。 應用程式可以使用宣告來執行各種工作，包括： 
+AD FS 發出的安全性權杖（存取和識別碼權杖）包含宣告或已驗證之主體的相關資訊判斷提示。 應用程式可使用宣告進行各種工作，包括： 
 - 驗證權杖 
-- 識別主體的目錄租使用者 
+- 識別主體的目錄租用戶 
 - 顯示使用者資訊 
 - 判斷在任何指定的安全性權杖中出現的宣告是否符合主體的授權，取決於權杖類型、用來驗證使用者的認證類型，以及應用程式設定。  
  
@@ -108,7 +108,7 @@ AD FS 發出的安全性權杖（存取和識別碼權杖）包含宣告或已�
 有兩種類型的程式庫會與 AD FS 搭配使用： 
 - **用戶端程式庫**：原生用戶端和伺服器應用程式會使用用戶端程式庫來取得存取權杖，以呼叫資源（例如 Web API）。 使用 AD FS 2019 時，Microsoft 驗證程式庫（MSAL）是最新且建議的用戶端程式庫。 Active Directory 驗證程式庫（ADAL）建議用於 AD FS 2016。  
 
-- **伺服器中介軟體程式庫**： Web 應用程式會使用伺服器中介軟體程式庫進行使用者登入。 Web Api 會使用伺服器中介軟體程式庫來驗證原生用戶端或其他伺服器所傳送的權杖。 OWIN （Open Web Interface for .NET）是建議的中介軟體程式庫。 
+- **伺服器中介軟體程式庫**： Web 應用程式會使用伺服器中介軟體程式庫進行使用者登入。 Web API 會使用伺服器中介軟體程式庫來驗證原生用戶端或其他伺服器所傳送的權杖。 OWIN （Open Web Interface for .NET）是建議的中介軟體程式庫。 
 
 ## <a name="customize-id-token-additional-claims-in-id-token"></a>自訂識別碼權杖（識別碼權杖中的其他宣告）
  
@@ -140,7 +140,7 @@ AD FS 發出的安全性權杖（存取和識別碼權杖）包含宣告或已�
 
 ## <a name="ad-fs-endpoints"></a>AD FS 端點
 
-|AD FS 端點|描述|
+|AD FS 端點|說明|
 |-----|-----|
 |/authorize|AD FS 會傳回可用於取得存取權杖的授權碼|
 |/token|AD FS 會傳回存取權杖，可用於存取資源（Web API）|

@@ -8,16 +8,16 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 26417f0fdbe2c4c8c374b3a1b8955c6297865397
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40342f43f7afbf020ba20f27586650767218fe83
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360830"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948035"
 ---
 # <a name="whats-new-in-failover-clustering"></a>容錯移轉叢集的新功能
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 本主題說明 Windows Server 2019 和 Windows Server 2016 容錯移轉叢集的新功能和已變更的功能。
 
@@ -53,7 +53,7 @@ ms.locfileid: "71360830"
   - 因遠端位置而不存在或極差的網際網路存取，因而導致無法使用雲端見證。 
   - 缺少磁片見證的共用磁片磁碟機。 這可能是儲存空間直接存取的超大範圍設定、SQL Server Always On 可用性群組（AG）或 * Exchange 資料庫可用性群組（DAG），都不會使用共用磁片。 
   - 因為叢集位於 DMZ 後方，所以缺少網域控制站連線。 
-  - 沒有 Active Directory 叢集名稱物件（CNO）的工作組或跨網域叢集。 如需這些增強功能的詳細資訊，請閱讀下列伺服器 & 管理的 Blog 文章：容錯移轉叢集檔案共用見證和 DFS。
+  - 沒有 Active Directory 叢集名稱物件（CNO）的工作組或跨網域叢集。 如需這些增強功能的詳細資訊，請閱讀下列伺服器 & 管理的文章：容錯移轉叢集檔案共用見證和 DFS。
     
     我們現在也會明確地封鎖使用 DFS 命名空間共用作為位置。 將檔案共用見證新增至 DFS 共用可能會對您的叢集造成穩定性問題，而且從未支援此設定。 我們新增了邏輯來偵測共用是否使用 DFS 命名空間，如果偵測到 DFS 命名空間，容錯移轉叢集管理員會封鎖建立見證，並顯示不支援的錯誤訊息。
 - **叢集強化**
@@ -64,7 +64,7 @@ ms.locfileid: "71360830"
     容錯移轉叢集不再使用 NTLM 驗證。 相反地，會以獨佔方式使用 Kerberos 和以憑證為基礎的驗證。 使用者或部署工具不需要進行任何變更，就能利用這項安全性增強功能。 它也允許在已停用 NTLM 的環境中部署容錯移轉叢集。 
 
 
-## <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新功能
+## <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
 ### <a name="BKMK_RollingUpgrade"></a>叢集作業系統輪流升級
 
@@ -72,7 +72,7 @@ ms.locfileid: "71360830"
 
 **這個變更增加了什麼價值？**  
 
-將 Hyper-v 或擴充檔案伺服器叢集從 Windows Server 2012 R2 升級到 Windows Server 2016 不再需要停機。 叢集將繼續在 Windows Server 2012 R2 層級上運作，直到叢集中的所有節點都執行 Windows Server 2016 為止。 叢集功能等級會使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel` 升級至 Windows Server 2016。 
+將 Hyper-v 或擴充檔案伺服器叢集從 Windows Server 2012 R2 升級到 Windows Server 2016 不再需要停機。 叢集將繼續在 Windows Server 2012 R2 層級上運作，直到叢集中的所有節點都執行 Windows Server 2016 為止。 使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel`，將叢集功能等級升級至 Windows Server 2016。 
 
 > [!WARNING]  
 > -   更新叢集功能等級之後，您就無法回到 Windows Server 2012 R2 叢集功能等級。 
@@ -127,7 +127,7 @@ Hyper-v 或向外延展檔案伺服器容錯移轉叢集現在可以輕鬆地升
 
 
 ### <a name="BKMK_CloudWitness"></a>雲端見證  
-雲端見證是 Windows Server 2016 中的新類型「容錯移轉叢集」仲裁見證，其利用 Microsoft Azure 作為仲裁點。 雲端見證 (例如任何其他仲裁見證) 會獲得票數，並可以參與仲裁計算。 您可以使用 [設定叢集仲裁精靈] 將雲端見證設定為仲裁見證。 
+雲端見證是 Windows Server 2016 中的新類型「容錯移轉叢集」仲裁見證，其利用 Microsoft Azure 作為仲裁點。 雲端見證 (例如任何其他仲裁見證) 會獲得票數，並可以參與仲裁計算。 您可以使用 [設定叢集仲裁精靈] 將雲端見證設定為仲裁見證。 
 
 **這個變更增加了什麼價值？**  
 
@@ -158,7 +158,7 @@ Hyper-v 或向外延展檔案伺服器容錯移轉叢集現在可以輕鬆地升
 
 -   **隔離狀況不良的節點：** 已隔離狀況不良的節點，且不再允許加入叢集。 這可防止 flapping 節點對其他節點和整體叢集造成負面影響。 
 
-如需可控制如何隔離或隔離節點的虛擬機器計算復原工作流程和節點隔離設定的詳細資訊，請參閱[Windows Server 2016 中的虛擬機器計算復原](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)功能。 
+如需可控制如何隔離或隔離節點的虛擬機器計算復原工作流程和節點隔離設定的詳細資訊，請參閱[Windows Server 2016 中的虛擬機器計算復原](https://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)功能。 
 
 **儲存體復原**在 Windows Server 2016 中，虛擬機器在暫時性儲存體失敗方面更有彈性。 改善的虛擬機器復原功能有助於在發生儲存體中斷時保留租使用者虛擬機器會話狀態。 這是透過智慧和快速虛擬機器對儲存體基礎結構問題的回應所達成。 
 
@@ -169,12 +169,12 @@ Hyper-v 或向外延展檔案伺服器容錯移轉叢集現在可以輕鬆地升
 ### <a name="BKMK_Diagnostics"></a>容錯移轉叢集的診斷改善  
 為了協助診斷容錯移轉叢集的問題，Windows Server 2016 包括下列各項：  
 
--   叢集記錄檔的幾項增強功能（例如時區資訊和 DiagnosticVerbose 記錄），可讓您更輕鬆地針對容錯移轉叢集問題進行疑難排解。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-叢集記錄](http://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)檔。 
+-   叢集記錄檔的幾項增強功能（例如時區資訊和 DiagnosticVerbose 記錄），可讓您更輕鬆地針對容錯移轉叢集問題進行疑難排解。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-叢集記錄](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)檔。 
 
--   一種新的「使用中**記憶體傾印**」類型，可篩選出配置給虛擬機器的大部分記憶體頁面，因而使記憶體的 dmp 變得更小且更容易儲存或複製。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-Active Dump](http://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
+-   一種新的「使用中**記憶體傾印**」類型，可篩選出配置給虛擬機器的大部分記憶體頁面，因而使記憶體的 dmp 變得更小且更容易儲存或複製。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-Active Dump](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
 
 ### <a name="BKMK_SiteAware"></a>網站感知容錯移轉叢集  
-Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位置（網站）在延展的叢集中啟用群組節點。 叢集網站感知會增強叢集生命週期期間的關鍵作業，例如容錯移轉行為、放置原則、節點之間的心跳，以及仲裁行為。 如需詳細資訊，請參閱[Windows Server 2016 中的網站感知容錯移轉](http://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)叢集。 
+Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位置（網站）在延展的叢集中啟用群組節點。 叢集網站感知會增強叢集生命週期期間的關鍵作業，例如容錯移轉行為、放置原則、節點之間的心跳，以及仲裁行為。 如需詳細資訊，請參閱[Windows Server 2016 中的網站感知容錯移轉](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)叢集。 
 
 ### <a name="BKMK_multidomainclusters"></a>工作組和多網域叢集  
 在 Windows Server 2012 R2 和先前版本中，只能在加入相同網域的成員節點之間建立叢集。 Windows Server 2016 已解除了這些障礙，並引進不需 Active Directory 相依性就能建立容錯移轉叢集的能力。 您現在可以在下列設定中建立容錯移轉叢集：  
@@ -185,7 +185,7 @@ Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位
 
 -   **工作組叢集。** 節點為成員伺服器/工作組（未加入網域）的叢集。 
 
-如需詳細資訊，請參閱[Windows Server 2016 中的工作組和多網域](http://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)叢集  
+如需詳細資訊，請參閱[Windows Server 2016 中的工作組和多網域](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)叢集  
 ### <a name="BKMK_VMLoadBalancing"></a>虛擬機器負載平衡  
 虛擬機器負載平衡是容錯移轉叢集的一項新功能，可讓您在叢集中跨節點順暢地對虛擬機器進行負載平衡。 系統會根據節點上的虛擬機器記憶體和 CPU 使用率來識別過度認可的節點。 然後，會將虛擬機器從過度認可的節點移動（即時移轉）到具有可用頻寬的節點（如果適用）。 您可以調整平衡的能力，以確保最佳的叢集效能和使用率。 預設會在 Windows Server 2016 Technical Preview 中啟用負載平衡。 不過，啟用 SCVMM 動態優化時，會停用負載平衡。 
 
@@ -197,6 +197,6 @@ Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位
 
 如需詳細資訊，請參閱[簡化的 SMB 多重通道和多個 NIC 叢集網路](smb-multichannel.md)。
 
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
 * [儲存空間](../storage/storage.md)  
 * [Windows Server 2016 中存放裝置的新功能](../storage/whats-new-in-storage.md)  

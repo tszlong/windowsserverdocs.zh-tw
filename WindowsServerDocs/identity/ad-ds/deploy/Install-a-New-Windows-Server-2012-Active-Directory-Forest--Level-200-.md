@@ -1,6 +1,6 @@
 ---
 ms.assetid: b3d6fb87-c4d4-451c-b3de-a53d2402d295
-title: 安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
+title: 安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
@@ -9,14 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a9bdc3b237d0d0f44995f2c359cc3ef6ed8568a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f87c383618bc1cef09652ea36e172fc634f5128e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71400373"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948818"
 ---
-# <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
+# <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -58,7 +58,7 @@ AD DS 簡化的系統管理是網域部署的重新構思。 其中的一些功�
   
 -   [適用于 Windows Server 2008 R2 的 Active Directory Domain Services](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
   
--   [適用于 Windows Server 2008 的 Active Directory Domain Services](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
+-   [適用於 Windows Server 2008 的 Active Directory 網域服務](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
   
 -   [Windows Server 技術參考](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
   
@@ -179,7 +179,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
   
 您可以視需要在此新增其他 [功能] 。  
   
-#### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
+#### <a name="active-directory-domain-services"></a>Active Directory 網域服務  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)  
   
 [Active Directory 網域服務] 對話方塊提供有限的需求及最佳做法資訊。 它主要是做為確認您已選擇 [AD DS 角色]，如果未顯示此畫面，表示您未選取 [AD DS]。  
@@ -242,7 +242,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 如需有效網域名稱的詳細資訊，請參閱知識庫文章 [Active Directory 中的電腦、網域、網站及 OU 的命名慣例](https://support.microsoft.com/kb/909264)。  
   
 > [!WARNING]  
-> 請勿使用與外部 DNS 名稱相同的名稱來建立新的 Active Directory 樹系。 例如，如果您的網際網路 DNS URL http://contoso.com，您必須為內部樹系選擇不同的名稱，以避免未來的相容性問題。 這個名稱必須是唯一而且不像是會用在網路流量的名稱。 例如：corp.contoso.com。  
+> 請勿使用與外部 DNS 名稱相同的名稱來建立新的 Active Directory 樹系。 例如，如果您的網際網路 DNS URL http://contoso.com ，您必須為內部樹系選擇不同的名稱，以避免未來的相容性問題。 這個名稱必須是唯一而且不像是會用在網路流量的名稱。 例如：corp.contoso.com。  
   
 新樹系的網域系統管理員帳戶不需要新的認證。 網域控制站升級程序會使用用來建立樹系根的第一個網域控制站內建的 Administrator 帳戶的認證。 沒有任何方法 (依預設) 可停用或鎖定內建的 Administrator 帳戶，如果其他系統管理網域帳戶無法使用，它可能是樹系唯一的進入點。 在部署新樹系之前，請務必知道密碼。  
   
@@ -251,7 +251,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 #### <a name="domain-controller-options"></a>網域控制站選項  
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)  
   
-[網域控制站選項] 可讓您設定新的樹系根網域的 [樹系功能等級] 和 [網域功能等級]。 根據預設，這些設定是新樹系根域中的 Windows Server 2012。 Windows Server 2012 樹系功能等級不會提供 Windows Server 2008 R2 樹系功能等級的任何新功能。 只有在執行新的 Kerberos 設定「永遠提供宣告」和「未受防護的驗證要求失敗」時，才需要 Windows Server 2012 網域功能等級。 Windows Server 2012 中功能等級的主要用途是將網域限制為符合最低允許作業系統需求的網域控制站。 換句話說，您可以指定 Windows Server 2012 網域功能等級，只有執行 Windows Server 2012 的網域控制站可以裝載網域。  Windows Server 2012 會在以獨佔方式找出 Windows Server 2012 網域控制站的 NetLogon 的**DSGetDcName**功能中，執行名為**DS_WIN8_REQUIRED**的新網域控制站旗標。 就何種作業系統可在網域控制站上執行而言，這可讓您彈性擁有更同質或異質的樹系。  
+[網域控制站選項] 可讓您設定新的樹系根網域的 [樹系功能等級] 和 [網域功能等級] 。 根據預設，這些設定是新樹系根域中的 Windows Server 2012。 Windows Server 2012 樹系功能等級不會提供 Windows Server 2008 R2 樹系功能等級的任何新功能。 只有在執行新的 Kerberos 設定「永遠提供宣告」和「未受防護的驗證要求失敗」時，才需要 Windows Server 2012 網域功能等級。 Windows Server 2012 中功能等級的主要用途是將網域限制為符合最低允許作業系統需求的網域控制站。 換句話說，您可以指定 Windows Server 2012 網域功能等級，只有執行 Windows Server 2012 的網域控制站可以裝載網域。  Windows Server 2012 會在以獨佔方式找出 Windows Server 2012 網域控制站的 NetLogon 的**DSGetDcName**功能中，執行名為**DS_WIN8_REQUIRED**的新網域控制站旗標。 就何種作業系統可在網域控制站上執行而言，這可讓您彈性擁有更同質或異質的樹系。  
   
 如需網域控制站定位的詳細資訊，請檢閱 [目錄服務功能](https://msdn.microsoft.com/library/ms675900(VS.85).aspx)。  
   
@@ -264,7 +264,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
   
 [DNS 選項] 頁面可讓您設定 DNS 委派，並提供替代的 DNS 系統管理認證。  
   
-安裝新的 Active Directory 樹系根網域時，若在 [網域控制站選項] 頁面上選取 [DNS 伺服器]，則您無法在 Active Directory 網域服務設定精靈中設定 DNS 選項或委派 。 在現有的 DNS 伺服器基礎結構中建立新的樹系根 DNS 區域時，會提供 [建立 DNS 委派] 選項。 此選項可讓您提供替代的 DNS 系統管理認證，擁有更新 DNS 區域的權限。  
+安裝新的 Active Directory 樹系根網域時，若在 [網域控制站選項] 頁面上選取 [DNS 伺服器] ，則您無法在 Active Directory 網域服務設定精靈中設定 DNS 選項或委派。 在現有的 DNS 伺服器基礎結構中建立新的樹系根 DNS 區域時，會提供 [建立 DNS 委派] 選項。 此選項可讓您提供替代的 DNS 系統管理認證，擁有更新 DNS 區域的權限。  
   
 如需是否需要建立 DNS 委派的詳細資訊，請參閱 [了解區域委派](https://technet.microsoft.com/library/cc771640.aspx)。  
   
@@ -353,7 +353,7 @@ Install-ADDSForest `
   
 |||  
 |-|-|  
-|ServerManager Cmdlet|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
+|ServerManager Cmdlet|引數 (**粗體** 的引數是必要的。 *斜體* 的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
 |Install-WindowsFeature/Add-WindowsFeature|***-Name***<br /><br />*-重新開機*<br /><br />*-IncludeAllSubFeature*<br /><br />*-IncludeManagementTools*<br /><br />-Source<br /><br />*-ComputerName*<br /><br />-Credential<br /><br />-LogPath<br /><br />*-Vhd*<br /><br />*-ConfigurationFilePath*|  
   
 > [!NOTE]  
@@ -435,7 +435,7 @@ Install-WindowsFeature | select-object | Format-List
 > **Select-Object -expandproperty** 引數會稍微降低整體安裝效能。  
   
 ### <a name="BKMK_PS"></a>使用 Windows PowerShell 建立 AD DS 樹系根域  
-如果要使用 DDSDeployment 模組安裝新的 Active Directory 樹系，請使用下列 Cmdlet：  
+如果要使用 ADDSDeployment 模組安裝新的 Active Directory 樹系，請使用下列 Cmdlet：  
   
 ```powershell  
 Install-addsforest  
@@ -445,7 +445,7 @@ Install-addsforest
   
 |||  
 |-|-|  
-|ADDSDeployment Cmdlet|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
+|ADDSDeployment Cmdlet|引數 (**粗體** 的引數是必要的。 *斜體* 的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
 |install-addsforest|-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />*-DatabasePath*<br /><br />*-DomainMode*<br /><br />***-DomainName***<br /><br />***-DomainNetBIOSName***<br /><br />*-DNSDelegationCredential*<br /><br />*-ForestMode*<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-NoDnsOnNetwork<br /><br />-NoRebootOnCompletion<br /><br />*-SafeModeAdministratorPassword*<br /><br />-SkipAutoConfigureDNS<br /><br />-SkipPreChecks<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
   
 > [!NOTE]  
@@ -468,7 +468,7 @@ Install-ADDSForest
   
 ```  
   
-如未指定，**Install-ADDSForest** 引數會使用與伺服器管理員相同的預設值。  
+如未指定， **Install-ADDSForest** 引數會使用與伺服器管理員相同的預設值。  
   
 **SafeModeAdministratorPassword** 引數的操作方式比較特殊：  
   
@@ -480,7 +480,7 @@ Install-ADDSForest
     Install-ADDSForest "DomainName corp.contoso.com  
     ```  
   
--   如果*使用值*指定，則這個值必須是安全字串。 這不是以互動方式執行 Cmdlet 時的慣用用法。  
+-   如果 *使用值*指定，則這個值必須是安全字串。 這不是以互動方式執行 Cmdlet 時的慣用用法。  
   
 例如，您可以使用 **Read-Host** Cmdlet 手動提示輸入密碼，提示使用者輸入安全字串：  
   
@@ -571,10 +571,10 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 ## <a name="see-also"></a>請參閱  
 [Active Directory Domain Services （TechNet 入口網站）](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
 [適用于 Windows Server 2008 R2 的 Active Directory Domain Services](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
-[適用于 Windows Server 2008 的 Active Directory Domain Services](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
+[適用於 Windows Server 2008 的 Active Directory 網域服務](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
 [Windows Server 技術參考（Windows Server 2003）](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
 [Active Directory 管理中心：消費者入門（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [使用 Windows PowerShell 進行 Active Directory 管理（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
-[詢問目錄服務小組（官方 Microsoft 商業技術支援 Blog）](http://blogs.technet.com/b/askds)  
+[詢問目錄服務小組（官方 Microsoft 商業技術支援 Blog）](https://blogs.technet.com/b/askds)  
   
 

@@ -11,18 +11,27 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 01/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d57f2feb5b21385cf247856be05f752ddee0cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b97b7a22d59727bedd6bdbd67a19087612ebfa0
+ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404085"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653043"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows Store 用戶端中的新功能
 
 我們會定期更新 [Windows Store 用戶端](windows.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
+
+## <a name="updates-for-version-1011107"></a>10.1.1107 版的更新
+
+*發行日期：09/04/2019*
+
+- 您現在可以在本機與遠端電腦之間複製檔案。
+- 您現在可以使用電子郵件地址來存取遠端資源 (如果系統管理員已加以啟用)。
+- 您現在可以變更遠端資源摘要的使用者帳戶指派。
+- 對於指派給此應用程式的 .rdp 檔案，應用程式現在已會在檔案總管中顯示適當的圖示，而不是空白的預設圖示。
 
 ## <a name="updates-for-version-1011098"></a>10.1.1098 版的更新
 

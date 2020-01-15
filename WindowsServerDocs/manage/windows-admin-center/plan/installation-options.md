@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: d4046cc10a5e0fdc12cfb9587eef10d4263c2ddd
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904019"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950509"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>什麼類型的安裝最適合您？
 
@@ -63,7 +63,7 @@ Microsoft Edge （包括[Microsoft edge insider](https://microsoftedgeinsider.co
 | Microsoft Hyper-V Server 2016 | [是] | [是] |
 | Windows Server 2012 R2 | [是] | [是] |
 | Microsoft Hyper-V Server 2012 R2 | [是] | [是] |
-| Windows Server 2012 | [是] | [是] |
+| Windows 2012 Server | [是] | [是] |
 | Windows Server 2008 R2 | 是，有限的功能 | 無 |
 
 > [!NOTE]
@@ -71,7 +71,7 @@ Microsoft Edge （包括[Microsoft edge insider](https://microsoftedgeinsider.co
 > 
 > 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。 
 > 
-> 如果未安裝 WMF，您可以[下載 wmf 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
+> 如果未安裝 WMF，您可以[下載 wmf 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
 ## <a name="high-availability"></a>高可用性
 

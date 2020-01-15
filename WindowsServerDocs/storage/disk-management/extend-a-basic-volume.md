@@ -1,59 +1,65 @@
 ---
 title: 延伸基本磁碟區
-description: 本文描述如何在延伸基本磁碟區的主要及邏輯磁碟機上新增空間
-ms.date: 06/07/2019
+description: 您可以在 Windows 中的現有磁碟區上新增空間，並將其延伸至磁碟機上的可用空間中，但此做法僅限於可用空間中沒有磁碟區 (未配置)，並且緊接在您要延伸的磁碟區之後，而中間沒有其他的磁碟區的情況。 本文說明如何執行這項作業。
+ms.date: 12/19/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a98bd3553c3223716d70ed4329bd7e265e697b73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c72b242437c4c308da77a25e06f3d76e4c65f480
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402101"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351890"
 ---
 # <a name="extend-a-basic-volume"></a>延伸基本磁碟區
 
 > **適用於：** Windows 10、Windows 8.1、Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-您可以藉由將現有主要磁碟分割及邏輯磁碟機延伸到相同磁碟上相鄰未配置的空間，將更多空間新增至這些磁碟區。 若要延伸基本磁碟區，此磁碟區必須是未經處理 (未透過檔案系統格式化) 或是已格式化為 NTFS 檔案系統。 您可以在包含邏輯磁碟機之延伸磁碟分割的連續可用空間內延伸該磁碟機。 如果您延伸邏輯磁碟機超出延伸磁碟分割中提供的可用空間，則會擴大延伸磁碟分割來包含邏輯磁碟機。
+您可以使用「磁碟管理」在現有的磁碟區上新增空間，並將其延伸至磁碟機上的可用空間中，但此做法僅限於可用空間中沒有磁碟區 (未配置)，並且緊接在您要延伸的磁碟區之後，而中間沒有其他的磁碟區的情況，如下圖所示。 要延伸的磁碟區也必須使用 NTFS 或 ReFS 檔案系統進行格式化。
 
-延伸邏輯磁碟機以及開機或系統磁碟區時，您只能將磁碟區延伸到連續空間，且僅限可以升級為動態磁碟的磁碟。 其他磁碟區則可以延伸至非連續空間中，但系統會提示您將磁碟轉換成動態磁碟。
+:::image type="content" source="media/extend-volume-space-highlighted.png" alt-text="磁碟管理顯示磁碟區可延伸至的可用空間。":::
 
-## <a name="extending-a-basic-volume"></a>延伸基本磁碟區
+## <a name="to-extend-a-volume-by-using-disk-management"></a>使用磁碟管理延伸磁碟區
 
-#### <a name="to-extend-a-basic-volume-using-the-windows-interface"></a>使用 Windows 介面延伸基本磁碟區
+以下說明在磁碟區位於磁碟機上之後，如何將磁碟區延伸至可用空間中：
 
-1. 在 [磁碟管理員] 中，以滑鼠右鍵按一下您想要延伸的基本磁碟區。
+1. 使用系統管理員權限開啟 [磁碟管理]。
 
-2. 按一下 [延伸磁碟區]  。
+   執行此動作的簡易方法，是在工作列上的 [搜尋] 方塊中輸入**電腦管理**，選取並按住 (以滑鼠右鍵按一下) [電腦管理]  ，然後選取 [以系統管理員身分執行]   > [是]  。 在開啟 [電腦管理] 後，移至 [存放裝置]   > [磁碟管理]  。
+2. 選取並按住 (或以滑鼠右鍵按一下) 您要延伸的磁碟區，然後選取 [延伸磁碟區]  。
 
-3. 遵循畫面上的指示操作。
+   如果 [延伸磁碟區]  呈現為灰色，請確認下列事項：
+    - 已使用系統管理員權限開啟「磁碟管理」或「電腦管理」
+    - 緊接在磁碟區的後面 (右側) 有未配置的空間，如上圖所示。 如果未配置的空間與您要延伸的磁碟區之間有另一個磁碟區，您可以刪除該磁碟區及其上的所有檔案 (請務必先備份或移出任何重要檔案！)，使用可在不損毀資料的情況下移動磁碟區的非 Microsoft 磁碟分割應用程式，或略過磁碟區延伸作業，而改為在未配置的空間中建立個別磁碟區。
+    - 磁碟區須使用 NTFS 或 ReFS 檔案系統進行格式化。 無法延伸其他檔案系統，因此您必須移出或備份磁碟區上的檔案，然後使用 NTFS 或 ReFS 檔案系統來格式化磁碟區。
+    - 如果磁碟大於 2 TB，請務必使用 GPT 分割配置。 若要在磁碟上使用超過 2 TB，則必須使用 GPT 分割配置加以初始化。 若要轉換為 GPT，請參閱[將 MBR 磁碟變更為 GPT 磁碟](change-an-mbr-disk-into-a-gpt-disk.md)。
+    - 如果仍然無法延伸磁碟區，請嘗試搜尋 [的 Microsoft 社群 - 檔案、資料夾與儲存體](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)網站，如果找不到答案，請在該處張貼問題，讓 Microsoft 或其他社群成員協助您，或是[連絡 Microsoft 支援服務](https://support.microsoft.com/contactus/)。
 
-#### <a name="to-extend-a-basic-volume-using-a-command-line"></a>使用命令列延伸基本磁碟區
+3. 選取 [下一步]  ，然後在精靈的 [選取磁碟]  頁面上 (如下所示)，指定要延伸磁碟區的數量。 一般來說只要使用預設值即可，此時會使用所有的可用空間，但如果您想要在可用空間中建立其他磁碟區，則可以使用較小的值。
 
-1. 開啟命令提示字元，然後輸入 `diskpart`：
+   :::image type="content" source="media/extend-volume-wizard.png" alt-text="延伸磁碟區精靈顯示要延伸以取得所有可用空間的磁碟區":::
 
-2. 在 **DISKPART** 提示中鍵入 `list volume`。 記下您要延伸的基本磁碟區。
+4. 選取 [下一步]  ，然後選取 [完成]  ，以延伸磁碟區。
 
-3. 在 **DISKPART** 提示中鍵入 `select volume <volumenumber>`。 這樣就會選取您要延伸至相同磁碟中連續空白空間的基本磁碟區 *volumenumber*。
+## <a name="to-extend-a-volume-by-using-powershell"></a>使用 PowerShell 延伸磁碟區
 
-4. 在 **DISKPART** 提示中鍵入 `extend [size=<size>]`。 這樣就會以單位為 MB 的「大小」  來延伸所選取磁碟區。
+1. 選取並按住 (或以滑鼠右鍵按一下) [開始] 按鈕，然後選取 [Windows PowerShell (系統管理員)]。
+2. 輸入下列命令，並在 *$drive_letter* 變數中指定您要延伸之磁碟區的磁碟機代號，將磁碟區大小調整為大小上限：
 
-| 值 | 描述 |
-| --- | --- |
-| **list volume** | 顯示所有磁碟上的基本和動態磁碟區清單。 |
-| **select volume** | 選取指定的磁碟區 (其中 <em>volumenumber</em> 是磁碟區編號)，並讓它成為焦點。 如果沒有指定磁碟區，**select** 命令會列出焦點所在的目前磁碟區。 您可以用編號、磁碟機代號或掛接點路徑來指定磁碟區。 在基本磁碟上，選取磁碟區也會讓對應的磁碟分割成為焦點。 |
-| **extend** | <ul><li>將焦點所在磁碟區延伸到下一個連續未配置的空間。 延伸基本磁碟區時，未配置的空間必須在同一個磁碟上，且必須跟隨在具有焦點的磁碟分割之後 (磁區位移較高)。 動態的簡單磁碟區或合併磁碟區可以延伸到任何動態磁碟上任何空白空間。 您可以使用這個命令，將現有磁碟區延伸到新建立的空間。</li ><li>如果先前已透過 NTFS 檔案系統將磁碟分割格式化，檔案系統會自動進行延伸以佔用更大的磁碟分割。 不會遺失任何資料。 如果磁碟分割先前是使用 NTFS 以外的任何檔案系統格式來格式化，則命令會失敗，但不會變更磁碟分割。</li></ul> |
-| **size=** <em>size</em> | 要新增至目前磁碟分割的空間數量，以 MB 為單位。 如果未指定大小，則會將磁碟延伸到占用所有的連續未配置空間。 |
+   ```PowerShell
+   # Variable specifying the drive you want to extend
+   $drive_letter = "C"
 
-## <a name="additional-considerations"></a>其他考量
+   # Script to get the partition sizes and then resize the volume
+   $size = (Get-PartitionSupportedSize -DriveLetter $drive_letter)
+   Resize-Partition -DriveLetter $drive_letter -Size $size.SizeMax
+   ```
 
--   如果磁碟沒有包含開機或系統磁碟分割，就可以將磁碟區延伸到其他非開機或非系統磁碟，但該磁碟將會轉換成動態磁碟 (若磁碟可升級)。
+## <a name="see-slso"></a>另請參閱
 
-## <a name="see-also"></a>另請參閱
-
--   [Command-line syntax notation](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx) (命令列語法標記法)
+- [Resize-Partition](https://docs.microsoft.com/powershell/module/storage/resize-partition)
+- [Diskpart 延伸](https://docs.microsoft.com/windows-server/administration/windows-commands/extend)

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 26eba76c836d1157f4d4c10d7a989a3a7dcc1538
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 806857d5de067c0f4640344ed80338b474dd758e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393833"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950065"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure 中跨地區的叢集對叢集儲存體複本
 
@@ -23,7 +23,7 @@ ms.locfileid: "71393833"
 您可以在 Azure 中將叢集設定為跨區域應用程式的叢集儲存體複本。 在下列範例中，我們使用雙節點叢集，但叢集對叢集儲存體複本不限於雙節點叢集。 下圖是兩個節點的儲存空間直接存取叢集，可以彼此通訊、位於相同的網域中，而且是跨區域。
 
 如需完整的程式逐步解說，請觀看下列影片。
-> [!video https://www.microsoft.com/en-us/videoplayer/embed/RE26xeW]
+> [!video https://www.microsoft.com/videoplayer/embed/RE26xeW]
 
 ![架構圖展示 C2C SR in Azure 遷移相同的區域。](media/Cluster-to-cluster-azure-cross-region/architecture.png)
 > [!IMPORTANT]
@@ -59,7 +59,7 @@ ms.locfileid: "71393833"
       - 將至少兩個受控磁片新增至每部電腦
       - 安裝容錯移轉叢集和儲存體複本功能
 
-   使用可用性設定組中的虛擬網路（**AZCROSS-VNET**）和網路安全性群組（AZCROSS **-NSG**），在資源群組（**AZCROSS**）中建立兩部虛擬機器（**AZCROSS1**、 **azcross2**）（**AZCROSS-AS**）. 在建立時將標準公用 IP 位址指派給每部虛擬機器
+   使用可用性設定組（**AZCROSS-AS**）中的虛擬網路（**AZCROSS-VNET**）和網路安全性群組（**NSG-AZCROSS**），在資源群組（**SR-AZCROSS**）中建立兩部虛擬機器（**azcross1**、 **azcross2**）。 在建立時將標準公用 IP 位址指派給每部虛擬機器
       - 在每部電腦上至少新增兩個受控磁片
       - 安裝容錯移轉叢集和儲存體複本功能
 
@@ -93,13 +93,13 @@ ms.locfileid: "71393833"
 8. 為每個叢集建立內部標準 SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) （**azlbr1**、 **azlbazcross**）。
 
    提供叢集 IP 位址做為負載平衡器的靜態私人 IP 位址。
-      - azlbr1 = > 前端 IP：10.3.0.100 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 IP 位址）
+      - azlbr1 = > 前端 IP：10.3.0.100 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 ip 位址）
       - 為每個負載平衡器建立後端集區。 新增相關聯的叢集節點。
       - 建立健康情況探查：埠59999
       - 建立負載平衡規則：允許 HA 埠，並啟用浮動 IP。
 
    提供叢集 IP 位址做為負載平衡器的靜態私人 IP 位址。 
-      - azlbazcross = > 前端 IP：10.0.0.10 （從虛擬網路（**azcross-VNET**）子網挑選未使用的 IP 位址）
+      - azlbazcross = > 前端 IP：10.0.0.10 （從虛擬網路（**azcross-VNET**）子網挑選未使用的 ip 位址）
       - 為每個負載平衡器建立後端集區。 新增相關聯的叢集節點。
       - 建立健康情況探查：埠59999
       - 建立負載平衡規則：允許 HA 埠，並啟用浮動 IP。 
@@ -128,7 +128,7 @@ ms.locfileid: "71393833"
 
     針對每個叢集，從叢集的任何一個節點執行一次。 
     
-    在我們的範例中，請務必根據您的設定值來變更 "ILBIP"。 從任何一個節點執行下列命令**az2az1** / **az2az2**
+    在我們的範例中，請務必根據您的設定值來變更 "ILBIP"。 從任何一個節點**az2az1**執行下列命令/**az2az2**
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -138,7 +138,7 @@ ms.locfileid: "71393833"
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
     ```
 
-12. 從任何一個節點執行下列命令**azcross1** / **azcross2**
+12. 從任何一個節點**azcross1**執行下列命令/**azcross2**
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.

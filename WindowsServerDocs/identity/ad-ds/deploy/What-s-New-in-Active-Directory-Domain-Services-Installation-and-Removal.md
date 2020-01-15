@@ -1,6 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
-title: Active Directory Domain Services 安裝和移除的新功能
+title: Active Directory 網域服務安裝和移除的新功能
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -9,14 +9,14 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 286d3ee6e9c2b9959a4cc60a710b1cb078612201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369559"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947908"
 ---
-# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services 安裝和移除的新功能
+# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 網域服務安裝和移除的新功能
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -60,7 +60,7 @@ Windows Server 2012 版本的 adprep 可以在執行64位版本的 Windows Serve
 >   
 > Adprep.exe 不是有效的 Win32 應用程式。  
 
-![新功能](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
+![最新動向](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
 
 如需解決 Adprep.exe 傳回的其他錯誤的相關資訊，請參閱 [Known issues](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues)。  
 
@@ -80,7 +80,7 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 如果執行 Adprep.exe 但沒有指定 /user 與 /userdomain 參數，而且操作主機是執行 Windows Server 2003，那麼 Adprep.exe 會連線目前登入使用者之網域中的網域控制站。 如果目前登入的使用者不是網域帳戶，Adprep.exe 就無法執行群組成員資格檢查。 如果使用了智慧卡認證，即使同時指定了 /user 與 /userdomain，Adprep.exe 還是不能執行群組成員資格檢查。  
   
-如果 Adprep 成功完成，不需要其他的動作。 如果執行期間出現存取錯誤而導致 Adprep 失敗，請提供具有正確成員資格的帳戶。 如需詳細資訊，請參閱[執行 Adprep.exe 及安裝 Active Directory 網域服務的認證需求](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
+如果 Adprep 成功完成，不需要其他的動作。 如果執行期間出現存取錯誤而導致 Adprep 失敗，請提供具有正確成員資格的帳戶。 如需詳細資訊，請參閱 [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
   
 ### <a name="syntax-for-adprep-in-windows-server-2012"></a>Windows Server 2012 中 Adprep 的語法
 
@@ -124,13 +124,13 @@ AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決�
 
 ## <a name="BKMK_SystemReqs"></a>系統需求
 
-Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
+Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。  
 
 某些功能可能會有其他的需求。 例如，虛擬網域控制站複製功能需要 PDC 模擬器執行 Windows Server 2012，以及安裝有 Hyper-v 角色的 Windows Server 2012 電腦。  
 
 ## <a name="BKMK_KnownIssues"></a>已知問題
 
-本節列出一些會影響 Windows Server 2012 中 AD DS 安裝的已知問題。 如需其他已知問題，請參閱[疑難排解網域控制站部署](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
+本節列出一些會影響 Windows Server 2012 中 AD DS 安裝的已知問題。 如需其他已知問題，請參閱 [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
 
 - 當您從遠端執行 adprep /forestprep 時，如果 Windows 防火牆封鎖 WMI 存取架構主機，則下列錯誤會被記錄到 %systemroot%\system32\debug\adprep 中的 adprep 記錄內：  
 
@@ -176,7 +176,7 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 �
 
    在這個情況下，您需要將 ADDSDeployment Cmdlet 與不支援原生 64 位元程序的 Cmdlet 分開執行。  
 
-- Windows Server 2012 中有一個新的檔案系統，稱為復原檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building the next generation file system for Windows: ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(為 Windows 建立新一代的檔案系統：ReFS)。  
+- Windows Server 2012 中有一個新的檔案系統，稱為復原檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building the next generation file system for Windows: ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(為 Windows 建立新一代的檔案系統：ReFS)。  
 - 在伺服器管理員中，在 Server Core 安裝上執行 AD DS 或其他伺服器角色並已升級至 Windows Server 2012 的伺服器，伺服器角色可能會出現紅色狀態，即使事件和狀態已如預期般收集也一樣。 執行初步發行版本 Windows Server 2012 的 Server Core 安裝的伺服器也可能受到影響。  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>如果錯誤阻止關鍵性複寫，Active Directory 網域服務安裝會停滯

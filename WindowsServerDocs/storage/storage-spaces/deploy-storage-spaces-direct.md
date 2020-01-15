@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: 使用 Windows Server 中的儲存空間直接存取，將軟體定義的存放裝置部署為超融合基礎結構或聚合式（也稱為分類式）基礎結構的逐步指示。
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402814"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950026"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
@@ -102,7 +102,7 @@ ms.locfileid: "71402814"
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
 ```
 
-如果您的存放裝置系統管理員帳戶不是 Domain Admins 群組的成員，請將您的儲存體系統管理員帳戶新增至每個節點上的本機 Administrators 群組（或更棒的是）新增用於存放裝置管理者的群組。 您可以使用下列命令（或撰寫 Windows PowerShell 函式來執行此動作-如需詳細資訊，請參閱[使用 PowerShell 將網域使用者新增至本機群組](http://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)）：
+如果您的存放裝置系統管理員帳戶不是 Domain Admins 群組的成員，請將您的儲存體系統管理員帳戶新增至每個節點上的本機 Administrators 群組（或更棒的是）新增用於存放裝置管理者的群組。 您可以使用下列命令（或撰寫 Windows PowerShell 函式來執行此動作-如需詳細資訊，請參閱[使用 PowerShell 將網域使用者新增至本機群組](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)）：
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -307,7 +307,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 4. 在 [**用戶端存取點**] 頁面上，輸入向外延展檔案伺服器的名稱。
 5. 前往 [**角色**] 確認已成功設定角色，並確認 [**狀態**] 欄顯示您所建立之叢集檔案伺服器角色旁**的 [執行**中]，如 [圖 1] 所示。
 
-   顯示向外延展檔案伺服器(media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "容錯移轉叢集管理員顯示向外延展檔案伺服器")的![容錯移轉叢集管理員螢幕擷取畫面]
+   ![顯示向外延展檔案伺服器之容錯移轉叢集管理員的螢幕擷取畫面](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "顯示向外延展檔案伺服器容錯移轉叢集管理員")
 
     **圖 1**顯示具有執行狀態的向外延展檔案伺服器容錯移轉叢集管理員
 
@@ -329,14 +329,14 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 建立虛擬磁片並將其新增至 Csv 之後，就可以在其上建立檔案共用-每個虛擬磁片每個 CSV 一個檔案共用。 System Center Virtual Machine Manager （VMM）可能是執行這項作業的 handiest 方式，因為它會為您處理許可權，但如果您的環境中沒有它，您可以使用 Windows PowerShell 來部分自動化部署。
 
-使用[適用于 Hyper-v 工作負載的 SMB 共用](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定腳本中包含的腳本，這會部分自動化建立群組和共用的流程。 它是針對 Hyper-v 工作負載所撰寫，因此，如果您要部署其他工作負載，您可能必須修改設定，或在建立共用之後執行其他步驟。 例如，如果您使用 Microsoft SQL Server，SQL Server 服務帳戶就必須被授與共享和檔案系統的完整控制權。
+使用[適用于 Hyper-v 工作負載的 SMB 共用](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定腳本中包含的腳本，這會部分自動化建立群組和共用的流程。 它是針對 Hyper-v 工作負載所撰寫，因此，如果您要部署其他工作負載，您可能必須修改設定，或在建立共用之後執行其他步驟。 例如，如果您使用 Microsoft SQL Server，SQL Server 服務帳戶就必須被授與共享和檔案系統的完整控制權。
 
 > [!NOTE]
 >  您必須在新增叢集節點時更新群組成員資格，除非您使用 System Center Virtual Machine Manager 來建立共用。
 
 若要使用 PowerShell 腳本建立檔案共用，請執行下列動作：
 
-1. 將[適用于 Hyper-v 工作負載的 SMB 共用](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定所包含的腳本下載到檔案伺服器叢集的其中一個節點。
+1. 將[適用于 Hyper-v 工作負載的 SMB 共用](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定所包含的腳本下載到檔案伺服器叢集的其中一個節點。
 2. 在管理系統上開啟具有網域系統管理員認證的 Windows PowerShell 會話，然後使用下列腳本建立 Hyper-v 電腦物件的 Active Directory 群組，將變數的值變更為適用于您的環境
 
     ```PowerShell
@@ -371,7 +371,7 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>步驟4.3 啟用 Kerberos 限制委派
 
-若要針對遠端案例管理設定 Kerberos 限制委派，並提高即時移轉安全性，請在其中一個存放裝置叢集節點上，使用[適用于 Hyper-v 工作負載的 SMB 共用](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定所包含的 KCDSetup 腳本。 以下是腳本的小型包裝函式：
+若要針對遠端案例管理設定 Kerberos 限制委派，並提高即時移轉安全性，請在其中一個存放裝置叢集節點上，使用[適用于 Hyper-v 工作負載的 SMB 共用](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定所包含的 KCDSetup 腳本。 以下是腳本的小型包裝函式：
 
 ```PowerShell
 $HyperVClusterName = "Compute01"
@@ -382,7 +382,7 @@ CD $ScriptFolder
 .\KCDSetup.ps1 -HyperVClusterName $HyperVClusterName -ScaleOutFSName $ScaleOutFSName -EnableLM
 ```
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 部署叢集檔案伺服器之後，我們建議您先使用綜合工作負載測試解決方案的效能，然後再啟動任何實際的工作負載。 這可讓您確認解決方案是否正常執行，並在增加工作負載複雜度之前，先解決任何延遲問題。 如需詳細資訊，請參閱[使用綜合工作負載測試儲存空間效能](https://technet.microsoft.com/library/dn894707.aspx)。
 

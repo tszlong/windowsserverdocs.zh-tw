@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 311789fdec160faeeeba0ecf26491d1e0cd6105d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407395"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949193"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 單一登入設定
 
@@ -46,9 +46,9 @@ AD FS 支援數種類型的單一登入體驗：
   
  如前所述，已註冊裝置上的使用者一律會取得持續性 SSO，除非已停用持續性 SSO。 針對未註冊的裝置，您可以藉由啟用「讓我保持登入」（KMSI）功能來達到持續性 SSO。 
  
- 針對 Windows Server 2012 R2，若要啟用「讓我保持登入」案例的 PSSO，您必須安裝此[修補程式](https://support.microsoft.com/en-us/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014年8月更新彙總套件](https://support.microsoft.com/en-us/kb/2975719)的一部分。   
+ 針對 Windows Server 2012 R2，若要啟用「讓我保持登入」案例的 PSSO，您必須安裝此[修補程式](https://support.microsoft.com/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014年8月更新彙總套件](https://support.microsoft.com/kb/2975719)的一部分。   
 
-工作 | PowerShell | 描述
+工作 | PowerShell | 說明
 ------------ | ------------- | -------------
 啟用/停用持續性 SSO | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 預設會啟用持續性 SSO。 如果已停用，則不會寫入任何 PSSO cookie。
 [啟用/停用] [讓我保持登入] | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | 預設會停用 [讓我保持登入] 功能。 如果已啟用，終端使用者會在 AD FS 登入頁面上看到 [讓我保持登入] 選項
@@ -127,18 +127,18 @@ Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
 ## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>啟用 PSSO for Office 365 使用者以存取 SharePoint Online  
- 一旦在 AD FS 中啟用並設定 PSSO 之後，AD FS 會在使用者經過驗證之後寫入持續性 cookie。 使用者下次進入時，如果持續性 cookie 仍然有效，使用者就不需要提供認證來重新驗證。 您也可以在 AD FS 中設定下列兩個宣告規則，以觸發 Microsoft Azure AD 和 SharePoint Online 的持續性，以避免 Office 365 和 SharePoint Online 使用者的額外驗證提示。  若要讓 PSSO for Office 365 使用者存取 SharePoint online，您必須安裝此[修補程式](https://support.microsoft.com/en-us/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014更新彙總套件](https://support.microsoft.com/en-us/kb/2975719)的一部分。  
+ 一旦在 AD FS 中啟用並設定 PSSO 之後，AD FS 會在使用者經過驗證之後寫入持續性 cookie。 使用者下次進入時，如果持續性 cookie 仍然有效，使用者就不需要提供認證來重新驗證。 您也可以在 AD FS 中設定下列兩個宣告規則，以觸發 Microsoft Azure AD 和 SharePoint Online 的持續性，以避免 Office 365 和 SharePoint Online 使用者的額外驗證提示。  若要讓 PSSO for Office 365 使用者存取 SharePoint online，您必須安裝此[修補程式](https://support.microsoft.com/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014更新彙總套件](https://support.microsoft.com/kb/2975719)的一部分。  
   
  要通過 InsideCorporateNetwork 宣告的發行轉換規則  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
 @RuleName = "Pass through claim - InsideCorporateNetwork"  
-c:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
+c:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
 => issue(claim = c);   
 A custom Issuance Transform rule to pass through the persistent SSO claim  
 @RuleName = "Pass Through Claim - Psso"  
-c:[Type == "http://schemas.microsoft.com/2014/03/psso"]  
+c:[Type == "https://schemas.microsoft.com/2014/03/psso"]  
 => issue(claim = c);  
   
 ```
@@ -165,21 +165,21 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
  <tr align="center">
     <td>SSO =&gt;設定重新整理權杖 =&gt;</td>
     <td>8小時</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>無</td>
+    <td>無</td>
     <th></th>
     <td>8小時</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>無</td>
+    <td>無</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;設定重新整理權杖 =&gt;</td>
-    <td>N/A</td>
+    <td>無</td>
     <td>24小時</td>
-    <td>7天</td>
+    <td>7 天</td>
     <th></th>
-    <td>N/A</td>
+    <td>無</td>
     <td>24小時</td>
     <td>最大90天（含14天）視窗</td>
   </tr>

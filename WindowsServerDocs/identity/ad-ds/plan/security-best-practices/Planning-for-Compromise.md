@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee1416a00fc0d347b7e05cb12c83f3d3532d693f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3d08e954b7a2a9ce58eb61dec54f2848ab68c12
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360136"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949167"
 ---
 # <a name="planning-for-compromise"></a>規劃危害因應措施
 
@@ -103,12 +103,12 @@ Windows Server 2012 中會顯示覆原 Active Directory 樹系的建議[：規�
 ### <a name="leveraging-nonmigratory-migrations"></a>利用「Nonmigratory」遷移  
 無論您是否知道您的環境已遭到入侵、懷疑其已遭入侵，或只是不想將舊版的資料和物件從舊版 Active Directory 安裝遷移到新的，請考慮不是技術上的遷移方法「遷移」物件。  
   
-### <a name="user-accounts"></a>使用者帳戶  
+### <a name="user-accounts"></a>[使用者帳戶]  
 在傳統的 Active Directory 從一個樹系遷移至另一個樹系時，使用者物件上的 SIDHistory （SID 歷程記錄）屬性會用來儲存使用者的 SID，以及使用者在舊版樹系中屬於其成員之群組的 Sid。 如果使用者帳戶已遷移至新的樹系，且他們存取舊版樹系中的資源，則 SID 歷程記錄中的 Sid 會用來建立存取權杖，讓使用者能夠在遷移帳戶之前存取他們擁有存取權的資源。  
   
 不過，維護 SID 歷程記錄在某些環境中已證明有問題，因為以目前和歷史的 Sid 填入使用者的存取權杖，可能會導致權杖膨脹。 權杖膨脹是一項問題，其中必須儲存在使用者的存取權杖中的 Sid 數目會使用或超過權杖中可用的空間量。  
   
-雖然權杖大小可以增加到有限的範圍，但權杖膨脹的最終解決方案是減少與使用者帳戶相關聯的 Sid 數目，不論是藉由合理化群組成員資格、排除 SID 歷程記錄或兩者的組合。 如需有關權杖膨脹的詳細資訊，請參閱[MaxTokenSize 和 Kerberos 權杖膨脹](http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)。  
+雖然權杖大小可以增加到有限的範圍，但權杖膨脹的最終解決方案是減少與使用者帳戶相關聯的 Sid 數目，不論是藉由合理化群組成員資格、排除 SID 歷程記錄或兩者的組合。 如需有關權杖膨脹的詳細資訊，請參閱[MaxTokenSize 和 Kerberos 權杖膨脹](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)。  
   
 使用 SID 歷程記錄，而不是從舊版環境（特別是群組成員資格和 SID 歷程記錄可能會遭到入侵的人）遷移使用者，請考慮利用中繼目錄應用程式來「遷移」使用者，而不需要攜帶 SID 歷程記錄進入新樹系。 在新樹系中建立使用者帳戶時，您可以使用中繼目錄應用程式，將帳戶對應至舊版樹系中的對應帳戶。  
   
@@ -144,7 +144,7 @@ Windows Server 2012 中會顯示覆原 Active Directory 樹系的建議[：規�
   
 例如，您可以定義一個原則，讓主管和其他 Vip 需要使用安全的工作站來存取敏感性資料和系統，以使用其他裝置來存取較不敏感的資料。 這是讓使用者記住的簡單原則，但是您可以執行一些後端控制項，以協助強制執行此方法。  
 
-您可以使用[驗證機制保證](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)，只有在使用者使用智慧卡登入安全系統時，才允許他們存取機密資料，而且可以使用 IPsec 和使用者權限限制來控制可連線到敏感性資料存放庫的系統。 您可以使用[Microsoft 資料分類工具](https://www.microsoft.com/download/details.aspx?id=27123)組來建立健全的檔案分類基礎結構，而且您可以根據存取嘗試的特性來執行[動態存取控制](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以限制資料的存取，將商務規則轉譯為技術控制項。  
+您可以使用[驗證機制保證](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)，只有在使用者使用智慧卡登入安全系統時，才允許他們存取機密資料，而且可以使用 IPsec 和使用者權限限制來控制可連線到敏感性資料存放庫的系統。 您可以使用[Microsoft 資料分類工具](https://www.microsoft.com/download/details.aspx?id=27123)組來建立健全的檔案分類基礎結構，而且您可以根據存取嘗試的特性來執行[動態存取控制](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以限制資料的存取，將商務規則轉譯為技術控制項。  
   
 從使用者的觀點來看，從安全的系統存取機密資料「直接運作」，然後從不安全的系統中嘗試這麼做。」 不過，從監控和管理環境的觀點來看，您可以在使用者如何存取機密資料和系統時，協助您建立可識別的模式，讓您更輕鬆地偵測異常的存取嘗試。  
   

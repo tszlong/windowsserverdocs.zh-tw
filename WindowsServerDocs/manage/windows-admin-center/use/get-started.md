@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 1643568cd1a0cdbb693d773a8357d2c36b701fd3
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903973"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950528"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows 管理中心
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903973"
 
 > [!Tip]
 > 對 Windows Admin Center 不熟悉？
-> [深入了解 Windows Admin Center](../understand/windows-admin-center.md) 或[立即下載](https://aka.ms/windowsadmincenter).
+> [深入了解 Windows Admin Center](../overview.md) 或[立即下載](https://aka.ms/windowsadmincenter).
 
 ## <a name="windows-admin-center-installed-on-windows-10"></a>安裝在 Windows 10 上的 windows 系統管理中心
 
@@ -97,7 +97,7 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 您可以使用目前的 Windows 認證，向受管理的節點進行驗證。 這是預設值，而且 Windows 管理中心會在您新增伺服器時嘗試登入。 
 
-**在 Windows Server 上部署為服務時的單一登入**
+**在部署為 Windows Server 上的服務時設定單一登入**
 
 如果您已在 Windows Server 上安裝 Windows 系統管理中心，則需要額外的設定才能進行單一登入。  [設定您的環境以進行委派](../configure/user-access-control.md)
 
@@ -151,7 +151,7 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 * 您可以選取 "or"、"and" 或 "not"，以修改所選標記的篩選行為。
 ![](../media/launch/tags-8.png)
 
-## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>使用 PowerShell 匯入或匯出您的連線（含標籤）
+## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>使用 PowerShell 匯入或匯出您的連線 (包含標記)
 
 [!INCLUDE [ps-connections](../includes/ps-connections.md)]
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 826769c1405648f37c86f97b4b9134871f4d30ed
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 227d66dafffd67b0b2e4f67158498cf43c7b59f8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791179"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950362"
 ---
 # <a name="protected-users-security-group"></a>Protected Users 安全性群組
 
@@ -26,7 +26,7 @@ ms.locfileid: "74791179"
 
 這個 IT 專業人員主題描述 Active Directory 的 Protected Users 安全性群組，並說明它的運作方式。 此群組是在 Windows Server 2012 R2 網域控制站中引進。
 
-## <a name="BKMK_ProtectedUsers"></a>簡要
+## <a name="BKMK_ProtectedUsers"></a>概觀
 
 此安全性群組的設計是管理企業內認證暴露的策略之一部分。 此群組的成員帳戶會自動套用不可設定的保護。 Protected Users 群組中的成員資格預設應該要有限制性和主動防護。 修改帳戶的這些保護的唯一方式就是從安全性群組移除帳戶。
 
@@ -89,7 +89,7 @@ ms.locfileid: "74791179"
 - 從 Windows 8.1 和 Windows Server 2012 R2 開始，即使啟用 Windows 摘要，Windows 摘要式也不會快取使用者的純文字認證。
 
 > [!Note]
-> 安裝[Microsoft 安全性諮詢 2871997](https://technet.microsoft.com/library/security/2871997)之後，Windows 摘要式會繼續快取認證，直到設定登錄機碼為止。 如需指示，請參閱[Microsoft 安全性摘要報告：更新以改善認證保護和管理： 2014 5 月13日](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)。
+> 安裝[Microsoft 安全性諮詢 2871997](https://technet.microsoft.com/library/security/2871997)之後，Windows 摘要式會繼續快取認證，直到設定登錄機碼為止。 如需指示，請參閱[Microsoft 安全性摘要報告：更新以改善認證保護和管理： 2014 5 月13日](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)。
 
 - NTLM 不會快取使用者的純文字認證或 NT 單向函式（NTOWF）。
 

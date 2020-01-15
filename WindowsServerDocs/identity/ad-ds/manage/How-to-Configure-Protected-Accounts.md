@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fcf10ee11e92a00aca8bc0589c7419690312b6b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3e6b698bfd799fb1975bfdd20ecc8f85c07f935
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390145"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949069"
 ---
 # <a name="how-to-configure-protected-accounts"></a>如何設定受保護的帳戶
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 透過傳遞雜湊 (Pass-the-hash，PtH) 攻擊，攻擊者可以使用使用者的密碼 (或其他認證系出項) 的基礎 NTLM 雜湊來向遠端伺服器或服務驗證。 Microsoft 先前已 [發佈指導方針](https://www.microsoft.com/download/details.aspx?id=36036) 以減輕傳遞雜湊的攻擊。  Windows Server 2012 R2 包含新的功能，可協助您進一步減輕這類攻擊。 如需協助防範認證竊取之安全性功能的詳細資訊，請參閱 [認證保護和管理](https://technet.microsoft.com/library/dn408190.aspx)。 此主題說明如何設定下列新功能：
 
@@ -30,7 +30,7 @@ ms.locfileid: "71390145"
 
 Windows 8.1 與 Windows Server 2012 R2 都內建額外的安全防護功能以協助防範認證竊取，下列主題涵蓋這些功能：
 
--   [遠端桌面的受限制系統管理員模式](http://blogs.technet.com/b/kfalde/archive/2013/08/14/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)
+-   [遠端桌面的受限制系統管理員模式](https://blogs.technet.com/b/kfalde/archive/2013/08/14/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)
 
 -   [LSA 保護](https://technet.microsoft.com/library/dn408187)
 
@@ -39,7 +39,7 @@ Protected Users 是新的全域安全性群組，您可以將新的或現有的�
 
 已登入 Windows 8.1 裝置和 Windows Server 2012 R2 主機的 Protected Users 群組成員無法*再*使用：
 
--   預設認證委派 (CredSSP) - 這是即使啟用「允許委派預設認證」原則，也不會被快取的純文字認證
+-   預設認證委派 (CredSSP) - 這是即使啟用「允許委派預設認證」 原則，也不會被快取的純文字認證
 
 -   Windows 摘要 - 這是即使啟用也不會被快取的純文字認證
 
@@ -59,16 +59,16 @@ Protected Users 是新的全域安全性群組，您可以將新的或現有的�
 
 -   在初始 4 小時存留期之後更新使用者票證 (TGT)
 
-若要將使用者新增至群組，您可以使用[UI 工具](https://technet.microsoft.com/library/cc753515.aspx)，例如 ACTIVE DIRECTORY 管理中心（ADAC）或 Active Directory 使用者和電腦，或命令列工具（例如[Dsmod 群組](https://technet.microsoft.com/library/cc732423.aspx)）或 Windows PowerShell[add-adgroupmember](https://technet.microsoft.com/library/ee617210.aspx)Cmdlet. 服務和電腦的帳戶 *不應該* 是 Protected Users 群組的成員。 因為主機上的密碼或憑證永遠都可使用，所以那些帳戶的成員資格不提供任何本機的保護。
+若要將使用者新增至群組，您可以使用[UI 工具](https://technet.microsoft.com/library/cc753515.aspx)，例如 ACTIVE DIRECTORY 管理中心（ADAC）或 Active Directory 使用者和電腦，或命令列工具（例如[Dsmod 群組](https://technet.microsoft.com/library/cc732423.aspx)）或 Windows PowerShell[add-adgroupmember](https://technet.microsoft.com/library/ee617210.aspx) Cmdlet。 服務和電腦的帳戶 *不應該* 是 Protected Users 群組的成員。 因為主機上的密碼或憑證永遠都可使用，所以那些帳戶的成員資格不提供任何本機的保護。
 
 > [!WARNING]
-> 驗證限制沒有因應措施，表示高特殊權限群組 (例如 Enterprise Admins 群組或 Domain Admins 群組) 的成員與 Protected Users 群組的其他成員受到一樣的限制。 如果此類群組的所有成員都已新增到 Protected Users 群組，所有這些帳戶很可能都會被鎖定。您不應該將任何高特殊權限的帳戶新增到 Protected Users 群組，除非您已經徹底測試過潛在影響。
+> 驗證限制沒有因應措施，表示高特殊權限群組 (例如 Enterprise Admins 群組或 Domain Admins 群組) 的成員與 Protected Users 群組的其他成員受到一樣的限制。 如果將這類群組的所有成員新增到 Protected Users 群組，則所有這些帳戶都可能被鎖定。您絕對不應該將所有高許可權的帳戶新增到 Protected Users 群組，直到您徹底測試過可能的影響。
 
-Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 的 Kerberos 進行驗證。 此方法需要 Active Directory 中帳戶的 AES 金鑰。 內建的系統管理員沒有 AES 金鑰，除非在執行 Windows Server 2008 或更新版本的網域控制站上變更了密碼。 此外，在執行舊版 Windows Server 之網域控制站上變更密碼的任何帳戶都會被鎖定。因此，請遵循這些最佳做法：
+Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 的 Kerberos 進行驗證。 此方法需要 Active Directory 中帳戶的 AES 金鑰。 內建的系統管理員沒有 AES 金鑰，除非在執行 Windows Server 2008 或更新版本的網域控制站上變更了密碼。 此外，在執行舊版 Windows Server 的網域控制站上變更密碼的任何帳戶都會被鎖定。因此，請遵循下列最佳作法：
 
 -   請勿在網域中進行測試，除非**所有網域控制站都執行 Windows Server 2008 或更新版本**。
 
--   為在建立網域「之前」就建立的所有網域帳戶*變更密碼*。 否則，這些帳戶都會無法驗證。
+-   為在建立網域**之前** 就建立的所有網域帳戶 *變更密碼* 。 否則，這些帳戶都會無法驗證。
 
 -   請先變更每個使用者的**密碼**，再將帳戶新增到 Protected Users 群組，或確定最近在執行 Windows Server 2008 或更新版本的網域控制站上變更了密碼。
 
@@ -84,7 +84,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 
 #### <a name="new-logs-for-protected-users"></a>Protected Users 的新記錄檔
 
-有兩個新的操作系統管理記錄檔可協助疑難排解與 Protected Users 相關的事件：受保護的使用者-用戶端記錄檔和受保護的使用者失敗-網域控制站記錄檔。 這些新的記錄檔位於 [事件檢視器] 中，且預設為停用。 若要啟用記錄檔，請依序按一下 [應用程式及服務記錄檔]、[Microsoft]、[Windows]、[驗證]，然後按一下記錄檔的名稱，再按一下 [動作]\(或在記錄檔上按一下滑鼠右鍵)，按一下 [啟用記錄]。
+有兩個新的作業系統記錄管理檔可協助您疑難排解與受保護使用者相關的事件：受保護的使用者-用戶端記錄檔和受保護的使用者失敗-網域控制站記錄檔。 這些新的記錄檔位於 [事件檢視器] 中，且預設為停用。 若要啟用記錄檔，請依序按一下 [應用程式及服務記錄檔]、[Microsoft]、[Windows]、[驗證]，然後按一下記錄檔的名稱，再按一下 [動作] (或在記錄檔上按一下滑鼠右鍵)，按一下 [啟用記錄]。
 
 如需這些記錄檔中的事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](https://technet.microsoft.com/library/dn486813.aspx)。
 
@@ -108,16 +108,16 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 若要對 **Protected Users** 群組的成員明確稽核驗證嘗試，您可以繼續收集安全性記錄檔稽核事件或在新的操作系統管理記錄檔中收集資料。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](https://technet.microsoft.com/library/dn486813.aspx)
 
 ### <a name="BKMK_ProvidePUdcProtections"></a>提供服務和電腦的 DC 端保護
-服務與電腦的帳戶不能是 **Protected Users** 的成員。 本節說明可對這些帳戶提供的網域控制站型保護：
+服務與電腦的帳戶不能是 **Protected Users**的成員。 本節說明可對這些帳戶提供的網域控制站型保護：
 
 -   拒絕 NTLM 驗證：僅可透過 [NTLM 封鎖原則](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)設定
 
--   拒絕 Kerberos 預先驗證中的資料加密標準 (DES)：Windows Server 2012 R2 網域控制站不接受電腦帳戶的 DES，除非已針對 DES 進行設定，因為使用 Kerberos 發行的每個 Windows 版本也支援 RC4。
+-   拒絕 Kerberos 預先驗證中的資料加密標準（DES）： Windows Server 2012 R2 網域控制站不接受電腦帳戶的 DES，除非已針對 DES 進行設定，因為使用 Kerberos 發行的每個 Windows 版本也支援RC4.
 
 -   拒絕 Kerberos 預先驗證中的 RC4：無法設定。
 
     > [!NOTE]
-    > 雖然可以 [變更支援之加密類型的設定](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)，但是不建議未在目標環境中測試過，就變更電腦帳戶的這些設定。
+    > 雖然可以 [變更支援之加密類型的設定](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)，但是不建議未在目標環境中測試過，就變更電腦帳戶的這些設定。
 
 -   限制使用者票證 (TGT) 為初始 4 小時存留期：使用驗證原則。
 
@@ -132,7 +132,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 
 -   使用者
 
--   Computer
+-   [電腦] 旁的核取方塊
 
 -   受管理的服務帳戶與群組受管理的服務帳戶 (GMSA)
 
@@ -155,7 +155,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
 如需詳細資訊，請參閱 [Kerberos 版本 5 驗證通訊協定的運作方式](https://technet.microsoft.com/library/cc772815(v=WS.10).aspx)。
 
-### <a name="overview"></a>總覽
+### <a name="overview"></a>概觀
 驗證原則提供一種方式可將設定的限制套用到帳戶，並對服務與電腦的帳戶提供限制，來彌補 Protected Users 的不足。 在 AS 交換或 TGS 交換期間，會強制實行驗證原則。
 
 您可以透過設定下列項目，限制初始驗證或 AS 交換：
@@ -192,15 +192,15 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)
 
-2.  在 **[選項]** 下的下拉式清單方塊中，選取 **[永遠提供宣告]** 。
+2.  在 [選項]下的下拉式清單方塊中，選取 [永遠提供宣告]。
 
     > [!NOTE]
-    > **支援**也可以設定，但因為網域位於 Windows Server 2012 R2 DFL，所以 dc 一律會提供宣告，以便在使用非宣告感知裝置和主機連接到宣告感知時，進行使用者宣告式存取檢查伺服器.
+    > 也可以設定**支援**，但因為網域是在 Windows Server 2012 R2 DFL，所以當使用非宣告感知裝置和主機連接到宣告感知服務時，dc 一律會提供宣告，讓使用者宣告式存取檢查發生。
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)
 
     > [!WARNING]
-    > 設定**Fail 未受防護驗證要求**會導致來自不支援 Kerberos 防護之任何作業系統（例如 Windows 7 和舊版作業系統，或從開始的作業系統）的驗證失敗Windows 8，尚未明確設定來支援它。
+    > 設定**Fail 未受防護驗證要求**會導致來自不支援 Kerberos 防護之任何作業系統（例如 windows 7 和舊版作業系統），或從 windows 8 開始的作業系統（尚未明確設定為支援它）的驗證失敗。
 
 #### <a name="create-a-user-account-audit-for-authentication-policy-with-adac"></a>使用 ADAC 建立驗證原則的使用者帳戶稽核
 
@@ -225,7 +225,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
     -   使用者
 
-    -   Computer
+    -   [電腦] 旁的核取方塊
 
     -   受管理的服務帳戶與群組受管理的服務帳戶
 
@@ -235,7 +235,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTLifetime.gif)
 
-    例如，如果您想要以 10 小時做為最大的 TGT 存留期，請如所示輸入 **600**。 若未設定 TGT 存留期，且帳戶是 **Protected Users** 群組的成員，則 TGT 存留期和更新為 4 小時。 否則，TGT 存留期和更新會根據網域的下列 [群組原則管理編輯器] 視窗中所顯示的網域原則採取預設設定。
+    例如，如果您想要以 10 小時做為最大的 TGT 存留期，請如所示輸入 **600** 。 若未設定 TGT 存留期，且帳戶是 **Protected Users** 群組的成員，則 TGT 存留期和更新為 4 小時。 否則，TGT 存留期和更新會根據網域的下列 [群組原則管理編輯器] 視窗中所顯示的網域原則採取預設設定。
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
@@ -336,7 +336,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>使用驗證原則失敗-網域控制站系統管理記錄
-新的**驗證原則失敗-** [**應用程式及服務記錄**檔] 下的網域控制站系統管理記錄  > **Microsoft** > **Windows** > **驗證**已建立，使其更容易探索因驗證原則而造成的失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](https://technet.microsoft.com/library/dn486813.aspx)。
+新的**驗證原則失敗-** [**應用程式及服務記錄**檔] 下的網域控制站系統管理記錄 > **Microsoft** > **Windows** > **驗證**已建立，以讓您更輕鬆地探索因驗證原則而造成的失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](https://technet.microsoft.com/library/dn486813.aspx)。
 
 ### <a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>使用 Windows PowerShell 管理驗證原則
 此命令會建立一個名為 **TestAuthenticationPolicy**的驗證原則。 **UserAllowedToAuthenticateFrom** 參數指定使用者可透過名為 someFile.txt 之檔案中的 SDDL 字串，從其驗證的裝置。
@@ -364,7 +364,7 @@ PS C:\> Set-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1 -Descriptio
 PS C:\> Remove-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1
 ```
 
-此命令使用 **Get-ADAuthenticationPolicy** Cmdlet 搭配 **Filter** 參數，以取得不會強制執行的所有驗證原則。 結果集會以管線方式輸出到 **Remove-ADAuthenticationPolicy** Cmdlet。
+此命令使用 **Get-ADAuthenticationPolicy** Cmdlet 搭配 **Filter** 參數，以取得不會強制執行的所有驗證原則。 系統會使用管線傳送結果集至 **Remove-ADAuthenticationPolicy** cmdlet。
 
 ```
 PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthenticationPolicy
@@ -424,7 +424,7 @@ PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthe
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CreateNewAuthNPolicySilo.gif)
 
-2.  在 [顯示名稱] 中，輸入定址接收器的名稱。 在 [允許的帳戶] 中，按一下 [新增]，輸入帳戶的名稱，然後按一下 [確定]。 您可以指定使用者、電腦或服務帳戶。 接著，指定要對所有主體使用單一原則，或對每個類型的主體使用不同的原則，以及原則的名稱。
+2.  在 [顯示名稱]中，輸入定址接收器的名稱。 在 [允許的帳戶]中，按一下 [新增]，輸入帳戶的名稱，然後按一下 [確定]。 您可以指定使用者、電腦或服務帳戶。 接著，指定要對所有主體使用單一原則，或對每個類型的主體使用不同的原則，以及原則的名稱。
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)
 

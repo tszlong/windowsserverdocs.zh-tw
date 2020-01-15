@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973867"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953025"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
 
@@ -42,7 +42,7 @@ ms.locfileid: "71973867"
 
 ## <a name="is-domain-controller-migration-supported"></a>是否支援網域控制站遷移？
 
-儲存體遷移服務目前不會在 Windows Server 2019 中遷移網域控制站。 因應措施是，只要您在 Active Directory 網域中有多個網域控制站，請先將網域控制站降級，再進行遷移，然後在剪下完成後將目的地升級。
+儲存體遷移服務目前不會在 Windows Server 2019 中遷移網域控制站。 因應措施是，只要您在 Active Directory 網域中有多個網域控制站，請先將網域控制站降級，再進行遷移，然後在剪下完成後將目的地升級。 如果您選擇遷移網域控制站來源或目的地，就無法進行切換。 當您從或移至網域控制站時，永遠不能遷移使用者和群組。
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>儲存體遷移服務會遷移哪些屬性？
 
@@ -58,18 +58,18 @@ ms.locfileid: "71973867"
     - CA 超時
     - 並行使用者限制
     - 持續可用
-    - 描述           
+    - 說明           
     - 加密資料
     - 身分識別遠端
     - 基礎結構
     - 名稱
     - 路徑
-    - 範圍
+    - 具範圍
     - 領域名稱
     - 安全性描述元
     - 陰影複製
     - 特殊
-    - 臨時性
+    - 暫時
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>我可以將多部伺服器合併成一部伺服器嗎？
 

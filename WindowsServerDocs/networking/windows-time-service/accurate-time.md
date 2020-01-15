@@ -8,26 +8,26 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 1399ed6a50085baa37f06c09b8c3e18ca8bca98b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e8e9e86f81596c85219c37c07d8fd2e95cc3a49
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395712"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953093"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Windows Server 2016 的準確時間
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更新版本
+>適用于： Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更新版本
 
 Windows 時間服務是一個元件，它會使用用戶端和伺服器時間同步處理提供者的外掛程式模型。  Windows 上有兩個內建的用戶端提供者，並提供協力廠商外掛程式。 一個提供者會使用[ntp （RFC 1305）](https://tools.ietf.org/html/rfc1305)或[ms-ntp](https://msdn.microsoft.com/library/cc246877.aspx) ，將本機系統時間與 NTP 和/或 ms ntp 相容參照伺服器同步。 另一個提供者適用于 Hyper-v，並會將虛擬機器（VM）同步處理至 Hyper-v 主機。  當有多個提供者存在時，Windows 會先使用階層層級來挑選最佳提供者，後面接著根延遲、根散佈，最後是時間位移。
 
 > [!NOTE]
-> 如需 Windows Time 服務的快速總覽，請參閱此[高階總覽影片](https://aka.ms/WS2016TimeVideo)。
+> 如需 Windows 時間服務的快速概觀，請觀看本[高階概觀影片](https://aka.ms/WS2016TimeVideo)。
 
 在本主題中，我們將討論 .。。這些主題與啟用正確時間相關： 
 
-- 措施
-- 測評
+- 增強功能
+- 度量
 - 最佳做法
 
 > [!IMPORTANT]
@@ -39,14 +39,14 @@ Windows 時間服務是一個元件，它會使用用戶端和伺服器時間同
 ## <a name="domain-hierarchy"></a>網域階層
 網域和獨立設定的工作方式不同。
 
-- 網域成員使用安全的 NTP 通訊協定，其使用驗證來確保時間參考的安全性和真實性。  網域成員會與網域階層和評分系統所決定的主要時鐘進行同步處理。  在網域中，有一個階層式的時間 stratums，讓每個 DC 指向具有更精確時間層次的父系 DC。  階層會解析為根樹系中的 PDC 或 DC，或具有 GTIMESERV 網域旗標的 DC，這代表網域的良好時間伺服器。  請參閱下面的[使用 GTIMESERV 指定本機可靠時間服務](#GTIMESERV)一節。
+- 網域成員使用安全的 NTP 通訊協定，其使用驗證來確保時間參考的安全性和真實性。  網域成員會與網域階層和評分系統所決定的主要時鐘進行同步處理。  在網域中，有一個階層式的時間 stratums，讓每個 DC 指向具有更精確時間層次的父系 DC。  階層會解析為根樹系中的 PDC 或 DC，或具有 GTIMESERV 網域旗標的 DC，這代表網域的良好時間伺服器。  請參閱下面的 [使用 GTIMESERV 指定本機可靠時間服務] 一節。
 
 - 預設會將獨立電腦設定為使用 time.windows.com。  此名稱是由您的 DNS 伺服器解析，這應指向 Microsoft 擁有的資源。  就像所有遠端找出時間參照，網路中斷可能會阻止同步處理。  網路流量負載和非對稱的網路路徑可能會降低時間同步處理的準確性。  對於1毫秒的精確度，您不能依賴遠端時間來源。
 
 由於 Hyper-v 來賓至少會有兩個 Windows 時間提供者可供選擇（主機時間和 NTP），因此以來賓身分執行時，您可能會看到網域或獨立的不同行為。
 
 > [!NOTE] 
-> 如需有關網域階層和計分系統的詳細資訊，請參閱「[什麼是 Windows 時間服務？](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) 」 blog 文章。
+> 如需有關網域階層和計分系統的詳細資訊，請參閱「[什麼是 Windows 時間服務？](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) 」 部落格文章。
 
 > [!NOTE]
 > 階層是在 NTP 和 Hyper-v 提供者中使用的概念，其值表示階層中的時鐘位置。  階層1是保留給最高層級的時鐘，而階層0則是保留給硬體使用，而不會有任何相關聯的延遲。  層次2與第1部伺服器交談，第3層次到層次2等等。  雖然較低的層次通常會指出較精確的時鐘，但可能會發現不一致的情況。  此外，W32time 只接受來自層次15或以下的時間。  若要查看用戶端的層次，請使用*w32tm/query/status*。

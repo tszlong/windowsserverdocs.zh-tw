@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: df455dfb0d2936192a3c2d7825e2d6d031cfe892
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361075"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948474"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的健全狀況服務
 
@@ -21,7 +21,7 @@ ms.locfileid: "71361075"
 
 健全狀況服務是 Windows Server 2016 中的新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
 
-## <a name="prerequisites"></a>必要條件  
+## <a name="prerequisites"></a>先決條件  
 
 根據預設，「健全狀況服務」會隨「儲存空間直接存取」一起啟用。 不需要其他動作來設定或啟動它。 若要深入瞭解儲存空間直接存取，請參閱[Windows Server 2016 中的儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)。  
 
@@ -33,7 +33,7 @@ ms.locfileid: "71361075"
 
 請參閱[健全狀況服務錯誤](health-service-faults.md)。
 
-## <a name="actions"></a>動作
+## <a name="actions"></a>[動作]
 
 請參閱[健全狀況服務動作](health-service-actions.md)。
 
@@ -90,9 +90,9 @@ ms.locfileid: "71361075"
 
 健全狀況服務提供強制機制，將儲存空間直接存取所使用的元件限制為系統管理員或解決方案廠商所提供的支援元件檔。 這可以防止您或其他人誤用不支援的硬體，這有助於符合保固或支援合約的規定。 此功能目前僅限於實體磁片裝置，包括 Ssd、Hdd 和 NVMe 磁片磁碟機。 支援的元件檔可以限制型號、製造商（選擇性）和固件版本（選擇性）。
 
-### <a name="usage"></a>用途  
+### <a name="usage"></a>用法  
 
-支援的元件檔使用以 XML 為靈感的語法。 建議您使用您慣用的文字編輯器（例如免費的[Visual Studio Code](http://code.visualstudio.com/)或記事本）來建立可儲存和重複使用的 XML 檔。
+支援的元件檔使用以 XML 為靈感的語法。 建議您使用您慣用的文字編輯器（例如免費的[Visual Studio Code](https://code.visualstudio.com/)或記事本）來建立可儲存和重複使用的 XML 檔。
 
 #### <a name="sections"></a>區段
 
@@ -166,7 +166,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.S
 Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion  
 ```
 
-## <a name="settings"></a>設定
+## <a name="settings"></a>[設定]
 
 請參閱[健全狀況服務設定](health-service-settings.md)。
 

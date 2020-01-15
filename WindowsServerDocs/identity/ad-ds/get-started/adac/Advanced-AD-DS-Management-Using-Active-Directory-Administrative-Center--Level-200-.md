@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00e307da35911189114257eea88ccaf90ceab1ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390723"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949329"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
@@ -96,9 +96,9 @@ Active Directory 資源回收筒會保留樹系中已刪除的所有物件。 �
   
 ![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
   
-「刪除的物件」容器會顯示該網域分割中所有可還原的物件。 存留期超過 **msDS-deletedObjectLifetime** 的已刪除物件稱為「已回收的物件」。 Active Directory 管理中心不會顯示已回收的物件，而且您也無法使用 Active Directory 管理中心來還原這些物件。  
+「刪除的物件」 容器會顯示該網域分割中所有可還原的物件。 存留期超過 **msDS-deletedObjectLifetime** 的已刪除物件稱為「已回收的物件」。 Active Directory 管理中心不會顯示已回收的物件，而且您也無法使用 Active Directory 管理中心來還原這些物件。  
   
-如需資源回收筒架構與處理規則的較深入說明，請參閱 [AD 資源回收筒：了解、實作、最佳做法以及疑難排解](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)。  
+如需資源回收筒架構與處理規則的較深入說明，請參閱 [AD 資源回收筒：了解、實作、最佳做法以及疑難排解](https://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)。  
   
 Active Directory 管理中心以人為方式將一個容器傳回的預設物件數目限制為 20,000 個物件。 您可以按一下 [管理] 功能表，然後按一下 [管理清單選項]，將此限制最高提高至 100,000 個物件。  
   
@@ -122,8 +122,8 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
 - 名稱  
 - 刪除時  
 - 上次已知父系  
-- 類型  
-- 描述  
+- 在工作列搜尋方塊中輸入  
+- 說明  
 - 縣市  
 - 國家 / 地區  
 - 部門  
@@ -150,7 +150,7 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
 還原已刪除的物件一直都是單一操作。  Active Directory 管理中心可以讓該操作更簡單。 若要還原已刪除的物件，例如單一使用者：  
   
 1. 按一下 Active Directory 管理中心瀏覽窗格中的網域名稱。  
-2. 按兩下管理清單中的 [刪除的物件]。  
+2. 按兩下管理清單中的 [刪除的物件] 。  
 3. 在物件上按一下滑鼠右鍵，然後按一下 [還原]，或按一下 [工作] 窗格中的 [還原] 。  
   
 物件會還原至其原始位置。  
@@ -163,7 +163,7 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
   
 ##### <a name="multiple-peer-objects"></a>多個對等物件
 
-您可以還原多個對等層級物件，例如某個 OU 中的所有使用者。 按住 CTRL 鍵，然後按一下一或多個您要還原的已刪除物件。 按一下 [工作] 窗格中的 [還原]。 您也可以按住 CTRL 鍵和 A 鍵來選取所有顯示的物件，或使用 SHIFT 鍵並按一下來選取某個範圍的物件。  
+您可以還原多個對等層級物件，例如某個 OU 中的所有使用者。 按住 CTRL 鍵，然後按一下一或多個您要還原的已刪除物件。 按一下 [工作] 窗格中的 [還原] 。 您也可以按住 CTRL 鍵和 A 鍵來選取所有顯示的物件，或使用 SHIFT 鍵並按一下來選取某個範圍的物件。  
   
 ![先進的 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestorePeers.png)  
   
@@ -180,7 +180,7 @@ Active Directory 管理中心提供功能強大的條件和篩選選項，您應
   
 **無法執行操作，因為物件的父系可能無法建立例項或已被刪除。**  
   
-「上次已知父系」屬性會顯示每個物件的父系關係。 在還原父系之後重新整理 Active Directory 管理中心時，「上次已知父系」 屬性會從已刪除位置變更為已還原位置。 因此，當父物件的位置不再顯示 [已刪除的物件] 容器的辨別名稱時，您可以還原該子物件。  
+「上次已知父系」 屬性會顯示每個物件的父系關係。 在還原父系之後重新整理 Active Directory 管理中心時，「上次已知父系」 屬性會從已刪除位置變更為已還原位置。 因此，當父物件的位置不再顯示 [已刪除的物件] 容器的辨別名稱時，您可以還原該子物件。  
   
 考量一下系統管理員不小心刪除包含子系 OU 和使用者的 Sales OU 案例。  
   
@@ -217,7 +217,7 @@ Restore-adobject
 在中型和大型企業中，「刪除的物件」容器在經過一段時間後，很可能會累積超過 20,000 (或甚至 100,000) 個物件，而無法顯示所有物件。 由於 Active Directory 管理中心的篩選機制依賴用戶端篩選，因此它無法顯示這些額外的物件。 若要解決這個限制，請使用下列步驟來執行伺服器端搜尋：  
   
 1. 在 [刪除的物件] 容器上按一下滑鼠右鍵，然後按一下 [在此節點下搜尋]。  
-2. 按一下＞形箭號以顯示 [+新增條件] 功能表，選取並新增 [上次修改時間介於指定日期之間]。 上次修改時間 (**whenChanged** 屬性) 是刪除時間的近似值，它們在大多數環境中都一樣。 這個查詢會執行伺服器端搜尋。  
+2. 按一下＞形箭號以顯示 [+新增條件] 功能表，選取並新增 [上次修改時間介於指定日期之間]。 上次修改時間 ( **whenChanged** 屬性) 是刪除時間的近似值，它們在大多數環境中都一樣。 這個查詢會執行伺服器端搜尋。  
 3. 在結果中使用進一步的顯示篩選、排序等等來找出要還原的已刪除物件，然後正常地還原它們。  
   
 ## <a name="BKMK_FGPP"></a>使用 Active Directory 管理中心設定和管理更細緻的密碼原則  

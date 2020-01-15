@@ -8,16 +8,16 @@ manager: alanth
 author: justinha
 ms.technology: security-crdential-protection-and-management
 ms.date: 11/09/2016
-ms.openlocfilehash: 64018f7f118086f3d290cb1ffa9b8d2b3e81c27c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 21c2d3d79653bd02fea9d2ac0d09bd18690a388f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386274"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949739"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>防止 Kerberos 變更使用 RC4 祕密金鑰的密碼
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2008 R2 和 Windows Server 2008
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2008 R2 和 Windows Server 2008
 
 本主題適用于 IT 專業人員，說明 Kerberos 通訊協定中的一些限制，可能會導致惡意使用者控制使用者的帳戶。 Kerberos 網路驗證服務（V5）標準（RFC 4120）有一項限制，這在業界中是知名的，因此攻擊者可以使用者身分驗證，或在攻擊者知道使用者的秘密金鑰時變更該使用者的密碼。
 
@@ -31,13 +31,13 @@ ms.locfileid: "71386274"
 
     [!NOTE]
     停用 RC4 可能會造成系統重新開機的已知問題。 請參閱下列修補程式：
-    - [Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/3038261)
-    - [Windows Server 2012](https://support.microsoft.com/en-us/kb/3086213)
+    - [Windows Server 2012 R2](https://support.microsoft.com/kb/3038261)
+    - [Windows Server 2012](https://support.microsoft.com/kb/3086213)
     - 舊版 Windows Server 沒有任何可用的修補程式
 
 - 部署設定為 Windows Server 2012 R2 網域功能等級或更高層級的網域，並將使用者設定為 Protected Users 安全性群組的成員。 因為這項功能只會干擾 Kerberos 通訊協定中的 RC4 使用方式，請參閱下列另[請參閱](#see-also)一節中的資源。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - 如需如何防止在 Windows Server 2012 R2 網域中使用 RC4 加密類型的相關資訊，請參閱[Protected Users 安全性群組](/../credentials-protection-and-management/protected-users-security-group.md)，以及[如何設定受保護的帳戶](/../credentials-protection-and-management/how-to-configure-protected-accounts.md)。
 

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358448"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948601"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 中的用戶端存取控制原則
 Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或授與使用者對資源的存取權。  本檔說明如何在 AD FS 2.0 中啟用用戶端存取原則，以及如何設定最常見的案例。
@@ -25,7 +25,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 
 ### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>步驟1：在您的 AD FS 伺服器上安裝 AD FS 2.0 套件的更新彙總套件2
 
-下載[Active Directory 同盟服務（AD FS）2.0 套件的更新彙總套件 2](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，並將它安裝在所有同盟伺服器和同盟伺服器 proxy 上。
+下載[Active Directory 同盟服務（AD FS）2.0 套件的更新彙總套件 2](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，並將它安裝在所有同盟伺服器和同盟伺服器 proxy 上。
 
 ### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>步驟2：將五個宣告規則新增至 Active Directory 的宣告提供者信任
 
@@ -162,7 +162,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>上述案例中使用的宣告規則語言語法描述
 
-|                                                                                                   描述                                                                                                   |                                                                     宣告規則語言語法                                                                     |
+|                                                                                                   說明                                                                                                   |                                                                     宣告規則語言語法                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              預設 AD FS 規則允許所有使用者的存取權。 此規則應該已經存在於 Microsoft Office 365 身分識別平臺信賴憑證者信任發行授權規則清單中。              |                                  = > 問題（類型 = "<https://schemas.microsoft.com/authorization/claims/permit>"，值 = "true"）;                                   |
 |                               將此子句新增至新的自訂規則，會指定要求來自同盟伺服器 proxy （也就是，它具有 x-ms proxy 標頭）                                |                                                                                                                                                                    |
@@ -195,7 +195,7 @@ X 毫秒轉送的用戶端 ip 宣告是從目前僅由 Exchange Online 設定的
 與 Exchange Online 基礎結構相關的 IP 位址不會出現在清單上。
 
 
-#### <a name="regular-expressions"></a>正則運算式
+#### <a name="regular-expressions"></a>規則運算式
 
 當您必須符合某個範圍的 IP 位址時，就必須建立正則運算式來執行比較。 在下一系列的步驟中，我們將提供如何建立這類運算式以符合下列位址範圍的範例（請注意，您必須變更這些範例以符合您的公用 IP 範圍）：
 

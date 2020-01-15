@@ -7,12 +7,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 22cd926fdb873538631a6f6850157dceb5a020d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80cc75f983d4593e4ee98309d1fa39c024b7b379
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385828"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950289"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：檔案和印表機共用連接埠應該開啟
 
@@ -21,7 +21,7 @@ ms.locfileid: "71385828"
 
 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012、Windows Server 2008 R2
 
-*本主題旨在解決最佳做法分析程式掃描所識別的特定問題。本主題中的資訊僅適用于已對其執行「檔案服務」最佳做法分析程式並遇到本主題所解決之問題的電腦。如需最佳做法和掃描的詳細資訊，請參閱*[最佳做法分析](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)程式。
+*本主題旨在解決最佳做法分析程式掃描所識別的特定問題。本主題中的資訊僅適用于已對其執行「檔案服務」最佳做法分析程式並遇到本主題所解決之問題的電腦。如需最佳做法和掃描的詳細資訊，請參閱*[最佳做法分析](https://go.microsoft.com/fwlink/?linkid=122786%0d%0a)程式。
 
 
 <table>
@@ -32,14 +32,14 @@ ms.locfileid: "71385828"
 <tbody>
 <tr class="odd">
 <td><p><strong>作業系統</strong></p></td>
-<td><p>Windows Server</p></td>
+<td><p>WIN ENT LTSB 2016 Estonian 64 Bits</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>產品/功能</strong></p></td>
 <td><p>檔案服務</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>低於</strong></p></td>
+<td><p><strong>嚴重性</strong></p></td>
 <td><p>錯誤</p></td>
 </tr>
 <tr class="even">
@@ -71,7 +71,7 @@ ms.locfileid: "71385828"
 
 3.  在 [**輸入規則**] 底下，找出 [檔案**及印表機共用（NB-會話）** ] 和 [檔案**及印表機共用（SMB）** ] 規則。
 
-4.  針對每個規則，以滑鼠右鍵按一下規則，然後按一下 [**啟用規則**]。
+4.  針對每個規則，以滑鼠右鍵按一下該規則，然後按一下 [啟用規則]。
 
 ## <a name="additional-references"></a>其他參考資料
 

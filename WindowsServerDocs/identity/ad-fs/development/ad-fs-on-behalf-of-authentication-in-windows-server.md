@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9c6c6e7d2c12b6b822989bba05370015f7cd1833
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ce000ec618d0c06ca938b21e9bc363250e1aa38f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407819"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949609"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>使用 OAuth 搭配 AD FS 2016 或更新版本，以使用代理程式（OBO）建立多層式應用程式
 
@@ -44,7 +44,7 @@ ms.locfileid: "71407819"
 範例會包含三個模組
 
 
-模組 | 描述
+模組 | 說明
 -------|------------
 ToDoClient | 使用者互動的 Native client
 ToDoService | 仲介層 Web API，作為後端 WebAPI 的用戶端
@@ -77,7 +77,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 
 ## <a name="clone-or-download-this-repository"></a>複製或下載此存放庫
 
-從您的 shell 或命令列：
+從殼層或命令列：
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
@@ -274,14 +274,14 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 * 開啟 web.config 檔案
 * 修改下列金鑰
 
-| 索引鍵                      | 值                                                                                                                                                                                                                   |
+| 按鍵                      | 值                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida：物件             | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如 https://localhost:44321/                                                                                         |
 | ida： ClientID             | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如 <https://localhost:44321/> </br>**Ida：受眾和 ida： ClientID 彼此相符非常重要** |
-| ida： ClientSecret         | 這是當您在中設定 ToDoListService 用戶端時，AD FS 產生的密碼 AD FS                                                                                                                   |
+| ida:ClientSecret         | 這是當您在中設定 ToDoListService 用戶端時，AD FS 產生的密碼 AD FS                                                                                                                   |
 | ida： AdfsMetadataEndpoint | 這是您 AD FS 中繼資料的 URL，例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
 | ida： OBOWebAPIBase        | 這是我們將用來呼叫後端 API 的基底位址，例如 https://localhost:44300                                                                                                                     |
-| ida：授權單位            | 這是您 AD FS 服務的 URL，範例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| ida:Authority            | 這是您 AD FS 服務的 URL，範例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 所有其他 ida： **appsettings**節點中的 XXXXXXX 索引鍵可以標記為批註或刪除
 
@@ -359,7 +359,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
     // POST api/todolist
     public async Task Post(TodoItem todo)
     {
-      if (!ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
+      if (!ClaimsPrincipal.Current.FindFirst("https://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
         {
             throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.Unauthorized, ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found" });
         }
@@ -494,7 +494,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 您也可以在 Fiddler 上查看詳細的追蹤。 啟動 Fiddler，並啟用 HTTPS 解密。 您可以看到我們對/adfs/oautincludes 端點提出兩個要求。
-在第一次互動中，我們會對權杖端點提供存取程式碼，並取得 https://localhost:44321/ ![AD FS OBO 的存取權杖](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+在第一次互動中，我們會對權杖端點提供存取程式碼，並取得 https://localhost:44321/ ![ AD FS OBO 的存取權杖](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 在與權杖端點的第二個互動中，您可以看到我們**requested_token_use**設定為**on_behalf_of** ，而我們使用的是針對仲介層 web 服務所取得的存取權杖，也就是 https://localhost:44321/ 作為判斷提示以取得代理者 token。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)

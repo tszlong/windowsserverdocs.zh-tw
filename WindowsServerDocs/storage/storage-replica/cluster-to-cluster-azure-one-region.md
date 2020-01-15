@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 55d9c600c86b6b64efdb5c7d4437697539f887ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e620b5597a2d25a7bb02daf80c5812d25f6a987
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402943"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950029"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure 中相同區域內的叢集對叢集儲存體複本
 
@@ -25,10 +25,10 @@ ms.locfileid: "71402943"
 觀看下列影片，以取得整個程式的完整逐步解說。
 
 第一部
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE26f2Y]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE26f2Y]
 
 第二部分
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE269Pq]
 
 ![架構圖會在相同區域中的 Azure 中展示叢集對叢集儲存體複本。](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
@@ -76,13 +76,13 @@ ms.locfileid: "71402943"
 11. 為每個叢集建立內部標準 SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) （**azlbr1**、**azlbr2**）。 
    
     提供叢集 IP 位址做為負載平衡器的靜態私人 IP 位址。
-    - azlbr1 = > 前端 IP：10.3.0.100 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 IP 位址）
+    - azlbr1 = > 前端 IP：10.3.0.100 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 ip 位址）
     - 為每個負載平衡器建立後端集區。 新增相關聯的叢集節點。
     - 建立健康情況探查：埠59999
     - 建立負載平衡規則：允許 HA 埠，並啟用浮動 IP。 
    
     提供叢集 IP 位址做為負載平衡器的靜態私人 IP 位址。
-    - azlbr2 = > 前端 IP：10.3.0.101 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 IP 位址）
+    - azlbr2 = > 前端 IP：10.3.0.101 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 ip 位址）
     - 為每個負載平衡器建立後端集區。 新增相關聯的叢集節點。
     - 建立健康情況探查：埠59999
     - 建立負載平衡規則：允許 HA 埠，並啟用浮動 IP。 
@@ -96,7 +96,7 @@ ms.locfileid: "71402943"
 13. 指示叢集接聽埠59999上的健康情況探查訊息，並從目前擁有此資源的節點回應。 
     針對每個叢集，從叢集的任何一個節點執行一次。 
     
-    在我們的範例中，請務必根據您的設定值來變更 "ILBIP"。 從任何一個節點**az2az1** / **az2az2**執行下列命令：
+    在我們的範例中，請務必根據您的設定值來變更 "ILBIP"。 從任何一個節點**az2az1**/**az2az2**執行下列命令：
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -106,7 +106,7 @@ ms.locfileid: "71402943"
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}
     ```
 
-14. 從任何一個節點**az2az3** / **az2az4**執行下列命令。 
+14. 從任何一個節點**az2az3**/**az2az4**執行下列命令。 
 
     ```PowerShell
     $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).

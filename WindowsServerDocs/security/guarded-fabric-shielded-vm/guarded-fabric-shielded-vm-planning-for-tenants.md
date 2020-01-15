@@ -7,16 +7,16 @@ ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c439a53abea07041e69e50d5d5148dae95243265
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386426"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949775"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>租使用者的受保護網狀架構與受防護的 VM 規劃指南
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 本主題著重于想要保護其虛擬機器（Vm）的 VM 擁有者，以符合規範和安全性目的。 無論 Vm 是在主機服務提供者的受防護網狀架構或私人保護網狀架構上執行，VM 擁有者都必須控制其受防護 Vm 的安全性層級，其中包括維護必要時將其解密的能力。
 
@@ -74,7 +74,7 @@ VM 受防護或加密是否受支援取決於建立 VM 時選取的防護資料�
 
 **我需要多少防護資料檔案？** 單一防護資料檔案可用於建立每個受防護的 VM。 不過，如果指定的受防護 VM 要求四個專案中的任一個不同，則需要額外的防護資料檔案。 例如，您可能會有一個 IT 部門的防護資料檔案，以及 HR 部門的不同防護資料檔案，因為其初始系統管理員密碼和 RDP 憑證不相同。
 
-雖然可能會針對每個受防護的 VM 使用個別的防護資料檔案，但這不一定是最佳選擇，而且應該因正確的理由而完成。 例如，如果每個受防護的 VM 都必須有不同的系統管理員密碼，請改為考慮使用密碼管理服務或工具，例如[Microsoft 的本機系統管理員密碼解決方案（LAPS）](https://www.microsoft.com/en-us/download/details.aspx?id=46899)。
+雖然可能會針對每個受防護的 VM 使用個別的防護資料檔案，但這不一定是最佳選擇，而且應該因正確的理由而完成。 例如，如果每個受防護的 VM 都必須有不同的系統管理員密碼，請改為考慮使用密碼管理服務或工具，例如[Microsoft 的本機系統管理員密碼解決方案（LAPS）](https://www.microsoft.com/download/details.aspx?id=46899)。
 
 ## <a name="creating-a-shielded-vm-on-a-virtualization-fabric"></a>在虛擬化網狀架構上建立受防護的 VM
 

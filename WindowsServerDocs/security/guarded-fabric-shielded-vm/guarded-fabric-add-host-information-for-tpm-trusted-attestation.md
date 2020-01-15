@@ -8,16 +8,16 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: 35efca71278c288189819d6c9fc49ba8195d18a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 923bc2c46f37cf7e631a744c9eae85c3dd7506dd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386816"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949810"
 ---
 >適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
-### <a name="add-host-information-for-tpm-trusted-attestation"></a>新增 TPM 信任證明的主機資訊
+# <a name="add-host-information-for-tpm-trusted-attestation"></a>新增 TPM 信任證明的主機資訊
 
 針對 TPM 模式，網狀架構系統管理員會捕獲三種主機資訊，每個都必須新增至 HGS 設定：
 

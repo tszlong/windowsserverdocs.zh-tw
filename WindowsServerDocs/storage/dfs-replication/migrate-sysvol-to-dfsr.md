@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 56877bc5ddb3ea5f24f4057051775094654d8bbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8d9d47ff8f14ce316d2352729247ab2dcf4acbc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386039"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949707"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>將 SYSVOL 複寫移轉至 DFS 複寫
 
@@ -24,15 +24,15 @@ ms.locfileid: "71386039"
 
 若要使用 DFS 複寫來複寫 SYSVOL 資料夾，您可以建立使用 Windows Server 2008 網域功能等級的新網域，也可以使用本檔中討論的程式升級現有的網域，並將複寫遷移至DFS 複寫。
 
-本檔假設您已具備 Active Directory Domain Services （AD DS）、FRS 和分散式檔案系統複寫（DFS 複寫）的基本知識。 如需詳細資訊，請參閱[Active Directory Domain Services 總覽](http://go.microsoft.com/fwlink/?linkid=147787)、 [FRS 總覽](http://go.microsoft.com/fwlink/?linkid=121763)或[DFS 複寫的總覽](http://go.microsoft.com/fwlink/?linkid=121762)
+本檔假設您已具備 Active Directory Domain Services （AD DS）、FRS 和分散式檔案系統複寫（DFS 複寫）的基本知識。 如需詳細資訊，請參閱[Active Directory Domain Services 總覽](https://go.microsoft.com/fwlink/?linkid=147787)、 [FRS 總覽](https://go.microsoft.com/fwlink/?linkid=121763)或[DFS 複寫的總覽](https://go.microsoft.com/fwlink/?linkid=121762)
 
 
 > [!NOTE]
-> 若要下載本指南的可列印版本，請<a href="http://go.microsoft.com/fwlink/?linkid=150375">移至 SYSVOL 複寫遷移指南：要 DFS 複寫</a>的 FRS （ http://go.microsoft.com/fwlink/?LinkId=150375)
+> 若要下載本指南的可列印版本，請移至<a href="https://go.microsoft.com/fwlink/?linkid=150375">SYSVOL 複寫遷移指南： FRS to DFS 複寫</a>（ https://go.microsoft.com/fwlink/?LinkId=150375)
 <br>
 
 
-## <a name="in-this-guide"></a>本指南內容
+## <a name="in-this-guide"></a>此指南內容
 
 [SYSVOL 遷移概念資訊](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640170(v=ws.10))
 
@@ -70,17 +70,17 @@ ms.locfileid: "71386039"
 
 ## <a name="additional-references"></a>其他參考資料
 
-[SYSVOL 遷移系列：第1部分-SYSVOL 遷移程式簡介](http://go.microsoft.com/fwlink/?linkid=121756)
+[SYSVOL 遷移系列：第1部分-SYSVOL 遷移程式簡介](https://go.microsoft.com/fwlink/?linkid=121756)
 
-[SYSVOL 遷移系列：第2部分— Drsrmig：SYSVOL 遷移工具](http://go.microsoft.com/fwlink/?linkid=121757)
+[SYSVOL 遷移系列：第2部分-Drsrmig： SYSVOL 遷移工具](https://go.microsoft.com/fwlink/?linkid=121757)
 
-[SYSVOL 遷移系列：第3部分：遷移至「備妥」狀態](http://go.microsoft.com/fwlink/?linkid=121758)
+[SYSVOL 遷移系列：第3部分—遷移至「備妥」狀態](https://go.microsoft.com/fwlink/?linkid=121758)
 
-[SYSVOL 遷移系列：第4部分—遷移至「重新導向」狀態](http://go.microsoft.com/fwlink/?linkid=121759)
+[SYSVOL 遷移系列：第4部分-遷移至「重新導向」狀態](https://go.microsoft.com/fwlink/?linkid=121759)
 
-[SYSVOL 遷移系列：第5部分：遷移至「已刪除」狀態](http://go.microsoft.com/fwlink/?linkid=121760)
+[SYSVOL 遷移系列：第5部分—遷移至「已刪除」狀態](https://go.microsoft.com/fwlink/?linkid=121760)
 
-[Windows Server 2008 中分散式檔案系統的逐步指南](http://go.microsoft.com/fwlink/?linkid=85231)
+[Windows Server 2008 中分散式檔案系統的逐步指南](https://go.microsoft.com/fwlink/?linkid=85231)
 
-[FRS 技術參考](http://go.microsoft.com/fwlink/?linkid=121764)
+[FRS 技術參考](https://go.microsoft.com/fwlink/?linkid=121764)
 

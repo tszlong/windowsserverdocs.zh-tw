@@ -1,5 +1,5 @@
 ---
-title: NTLM 概觀
+title: NTLM Overview
 description: Windows Server 安全性
 ms.custom: na
 ms.prod: windows-server
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: b8dec2877646fd2bfe00da9d5c9047e8edfd6f1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 74e6e05df037041b6c80239e26b39b5566474326
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386265"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949752"
 ---
-# <a name="ntlm-overview"></a>NTLM 概觀
+# <a name="ntlm-overview"></a>NTLM Overview
 
 >適用於：Windows Server (半年通道)、Windows Server 2016
 
@@ -50,14 +50,14 @@ Windows Server 2012 的 NTLM 沒有已移除或過時的功能。
 ## <a name="BKMK_LINKS"></a>另請參閱
 下表列出 NTLM 及其他 Windows 驗證技術的相關資源。
 
-|內容類型|參考|
+|內容類型|參考資料|
 |--------|-------|
 |**產品評估**|[NTLM 驗證的限制簡介](https://technet.microsoft.com/library/dd560653.aspx)<br /><br />[NTLM 驗證的變更](https://technet.microsoft.com/library/dd566199.aspx)|
 |**規劃**|[IT 基礎結構威脅模型化指南](https://technet.microsoft.com/library/dd941826.aspx)<br /><br />[威脅與因應對策： Windows Server 2003 和 Windows XP 中的安全性設定](https://technet.microsoft.com/library/dd162275.aspx)<br /><br />[威脅與對策指南： Windows Server 2008 和 Windows Vista 中的安全性設定](https://technet.microsoft.com/library/dd349791.aspx)<br /><br />[威脅與對策指南： Windows Server 2008 R2 和 Windows 7 中的安全性設定](https://technet.microsoft.com/library/hh125921.aspx)|
 |**部署**|[驗證擴充保護](https://support.microsoft.com/kb/968389)<br /><br />[審核和限制 NTLM 使用方式指南](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)<br /><br />[詢問目錄服務小組： NTLM 封鎖和您： Windows 7 中的應用程式分析和審核方法](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<br /><br />[Windows 驗證 Blog](https://blogs.technet.com/authentication/)<br /><br />[透過驗證設定 NTLM pass\-的 MaxConcurrentAPI](https://social.technet.microsoft.com/wiki/contents/articles/9759.configuring-maxconcurrentapi-for-ntlm-pass-through-authentication.aspx)|
-|**拓展**|[Microsoft NTLM \(Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<br /><br />[\[MS\-NLMP\]： NT LAN Manager \(NTLM\) 驗證通訊協定規格](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<br /><br />[\[MS\-NNTP\]： NT LAN Manager \(NTLM\) 驗證：網路新聞傳輸通訊協定 \(NNTP\) 延伸模組](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<br /><br />[\[MS\-NTHT\]： NTLM Over HTTP 通訊協定規格](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
+|**開發**|[Microsoft NTLM \(Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<br /><br />[\[MS\-NLMP\]： NT LAN Manager \(NTLM\) 驗證通訊協定規格](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<br /><br />[\[MS\-NNTP\]： NT LAN Manager \(NTLM\) 驗證：網路新聞傳輸通訊協定 \(NNTP\) 延伸模組](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<br /><br />[\[MS\-NTHT\]： NTLM Over HTTP 通訊協定規格](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
 |**疑難排解**|尚未提供|
-|**社群資源**|[這是不正確： NTLM 瓶頸與 RPC 執行時間](http://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
+|**社群資源**|[這是不正確： NTLM 瓶頸與 RPC 執行時間](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
 
 
 

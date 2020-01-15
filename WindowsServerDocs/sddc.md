@@ -12,12 +12,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a565eb9e26e03c1aad221059b327943485c81c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6490bd9a6cb7b305ba9746a357a8c909c7b84555
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403898"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950460"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server 軟體定義資料中心
 
@@ -33,7 +33,7 @@ Microsoft 的 SDDC 實作包含本文中提出的 Windows Server 技術。 這�
 
 內建於 Windows Server 和 System Center 的技術是 Windows Server SDDC 體驗的主要建置組塊。 但即使是虛擬化平台，底層仍需要正確的硬體來支援。 參與**Windows Server 軟體定義（WSSD）解決方案**和**Azure Stack HCI 解決方案**方案的 Microsoft 合作夥伴，可協助您的企業取得正確的硬體，並在一天零開始執行。
 
-![](media/sddc/video.png) **[觀看影片以深入瞭解 MICROSOFT 的 SDDC](https://mva.microsoft.com/en-US/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
+![](media/sddc/video.png) **[觀看影片以深入瞭解 MICROSOFT 的 SDDC](https://mva.microsoft.com/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
 
 ![](media/sddc/poster-ico.png) **[下載此頁面的海報大小 .pdf](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/media/sddc/sddc_poster_0801417_ANSI-E.pdf)檔案**
 
@@ -47,7 +47,7 @@ Microsoft 合作夥伴提供了一系列解決方案，可透過 Azure Stack HCI
 
 ![](media/sddc/learn.png) **[深入瞭解 Azure Stack HCI 解決方案](https://azure.microsoft.com/overview/azure-stack/hci)**
 
-![](media/sddc/learn.png) **[深入瞭解 WSSD 解決方案](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)**
+![](media/sddc/learn.png) **[深入瞭解 WSSD 解決方案](https://www.microsoft.com/cloud-platform/software-defined-datacenter)**
 
 ## <a name="windows-server-virtualized-technologies"></a>Windows Server 虛擬化技術 ##
 
@@ -71,7 +71,7 @@ Hyper-V 是以適用於 Windows、以 Hypervisor 為基礎的虛擬化技術。 
 
 ![](media/sddc/spacer1.png)![](media/sddc/hypervisor.png)
 
-![](media/sddc/learn.png) **[深入瞭解 hyper-v 虛擬程式](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
+![](media/sddc/learn.png) **[深入瞭解 hyper-v 虛擬程式](https://www.microsoft.com/cloud-platform/server-virtualization)**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>具有共用 VHDX 的來賓叢集
 
@@ -149,7 +149,7 @@ SLB 可讓多部伺服器裝載相同的工作負載，並提供高度可用性�
 
 ![](media/sddc/storage.png)
 
-### <a name="storage-spaces-direct"></a>儲存空間直接存取
+### <a name="storage-spaces-direct"></a>儲存空間 Direct
 
 ![](media/sddc/storage-line.png)
 

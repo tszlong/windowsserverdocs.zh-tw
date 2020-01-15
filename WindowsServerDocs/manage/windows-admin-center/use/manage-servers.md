@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903717"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950486"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>使用 Windows 系統管理中心管理伺服器
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903717"
 
 > [!Tip]
 > 對 Windows Admin Center 不熟悉？
-> [深入了解 Windows Admin Center](../understand/windows-admin-center.md) 或[立即下載](https://aka.ms/windowsadmincenter).
+> [下載或深入瞭解 Windows 系統管理中心](../overview.md)。
 
 ## <a name="managing-windows-server-machines"></a>管理 Windows Server 機器
 
@@ -53,16 +53,16 @@ ms.locfileid: "74903717"
 | [Active Directory](#active-directory-preview) | 管理 Active Directory |
 | [Backup](#backup) | 查看和設定 Azure 備份 |  
 | [憑證](#certificates) | 查看和修改憑證 |
-| [[設定 SSIS 記錄]](#containers) | 檢視容器 |
+| [容器](#containers) | 檢視容器 |
 | [裝置](#devices) | 查看和修改裝置 |
 | [DHCP](#dhcp) | 查看和管理 DHCP 伺服器設定 |
 | [DNS](#dns) | 查看和管理 DNS 伺服器設定 |
-| [[事件]](#events) | 檢視活動 |
+| [事件](#events) | 檢視活動 |
 | [檔案](#files) | 流覽檔案和資料夾 |
-| [Firewall](#firewall) | 查看和修改防火牆規則 |
+| [防火牆](#firewall) | 查看和修改防火牆規則 |
 | [已安裝的應用程式](#installed-apps) | 查看和移除已安裝的應用程式 |
 | [本機使用者和群組](#local-users-and-groups) | 查看和修改本機使用者和群組 |
-| [Network](#network) | 查看和修改網路裝置 |
+| [網路](#network) | 查看和修改網路裝置 |
 | [封包監視](https://aka.ms/wac1908) | 監視網路封包 |
 | [效能監視器](https://aka.ms/perfmon-blog) | 查看效能計數器和報告 |
 | [PowerShell](#powershell) | 透過 PowerShell 與伺服器互動 |
@@ -77,7 +77,7 @@ ms.locfileid: "74903717"
 | [儲存體遷移服務](#storage-migration-service) | 將伺服器和檔案共用遷移至 Azure 或 Windows Server 2019 |
 | [儲存體複本](#storage-replica) | 使用儲存體複本來管理伺服器對伺服器儲存體複寫 |
 | [系統深入解析](#system-insights) | 系統深入解析可讓您更深入瞭解伺服器的運作。 |
-| [Updates](#updates) | 已安裝視圖並檢查是否有新的更新 |
+| [更新](#updates) | 已安裝視圖並檢查是否有新的更新 |
 | [虛擬機器](manage-virtual-machines.md) | 查看和管理虛擬機器 |
 | [虛擬交換器](#virtual-switches) | 查看和管理虛擬交換器 |
 
@@ -417,7 +417,7 @@ PowerShell 支援下列功能：
 - 查看和修改以角色為基礎的存取控制設定
 - 查看和修改 Hyper-v 主機設定（如果適用）
 
-## <a name="storage"></a>儲存空間
+## <a name="storage"></a>存放
 
 **儲存體**可讓您管理電腦或伺服器上的存放裝置。
 

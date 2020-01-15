@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3c9e8792b425fd24d01ab997a5f7c2ac573814
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 66c6f94f1f3fee924ba0d9a3bfa0c712d62bb095
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370246"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947111"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適當位置的網域控制站和網站考慮
 
@@ -34,7 +34,7 @@ ms.locfileid: "71370246"
 
 ## <a name="optimization-considerations-for-trusts"></a>信任的優化考慮
 
-在樹系內案例中，會根據下列網域階層來處理信任：總計-子域-&gt; 子域-&gt; 樹系根域-&gt; 子域-&gt; 的單一子域。 這表示在樹系根節點和每個父系上的安全通道可能會因為驗證要求的匯總而超載，傳輸信任階層中的 Dc。 當驗證也必須傳輸高度潛在的連結來影響上述流程時，這也可能會導致大型地理散佈的 Active Directory 延遲。 多載可能發生在樹系和下層信任案例中。 下列建議適用于所有案例：
+在樹系內案例中，會根據下列網域階層來處理信任：&gt; 子域&gt; 樹系根域&gt; 子域&gt; 的單一子域。 這表示在樹系根節點和每個父系上的安全通道可能會因為驗證要求的匯總而超載，傳輸信任階層中的 Dc。 當驗證也必須傳輸高度潛在的連結來影響上述流程時，這也可能會導致大型地理散佈的 Active Directory 延遲。 多載可能發生在樹系和下層信任案例中。 下列建議適用于所有案例：
 
 -   適當地調整 MaxConcurrentAPI，以支援跨安全通道的負載。 如需詳細資訊，請參閱[如何使用 MaxConcurrentApi 設定進行 NTLM 驗證的效能微調](https://support.microsoft.com/kb/2688798/EN-US)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "71370246"
 
     -   如需 DCLocator 運作方式的詳細資訊，請參閱在[最接近的網站中尋找網域控制站](https://technet.microsoft.com/library/cc978016.aspx)。
 
-    -   在受信任網域與信任網域之間融合網站名稱，以反映相同位置中的網域控制站。 請確定子網和 IP 位址對應已適當地連結至兩個樹系中的網站。 如需詳細資訊，請參閱[跨樹系信任的網域定位器](http://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
+    -   在受信任網域與信任網域之間融合網站名稱，以反映相同位置中的網域控制站。 請確定子網和 IP 位址對應已適當地連結至兩個樹系中的網站。 如需詳細資訊，請參閱[跨樹系信任的網域定位器](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
 
     -   確定埠已根據 DCLocator 需求開啟，適用于網域控制站位置。 如果網域之間有防火牆存在，請確定已針對所有信任正確設定防火牆。 如果防火牆未開啟，信任的網域控制站仍然會嘗試存取受信任的網域。 如果通訊因任何原因而失敗，信任的網域控制站最終會將要求提供給受信任的網域控制站。 不過，這些時間輸出可能會花費數秒的每個要求，如果傳入要求的數量很高，則可能會耗盡信任網域控制站上的網路埠。 用戶端可能會在網域控制站上遇到等待時間超時的擱置執行緒，這可能會轉譯成無回應的應用程式（如果應用程式在前景執行緒中執行要求）。 如需詳細資訊，請參閱[如何設定網域和信任的防火牆](https://support.microsoft.com/kb/179442)。
 
@@ -76,7 +76,7 @@ ms.locfileid: "71370246"
 
 -   停用在所有可用的信任上指定 Null 網域的傳遞驗證要求。 [如果 Active Directory 網域控制站上有許多外部信任，Lsass.exe 進程可能會停止回應](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 - [Active Directory 伺服器的效能微調](index.md)
 - [硬體考量](hardware-considerations.md)
 - [LDAP 考量](ldap-considerations.md)

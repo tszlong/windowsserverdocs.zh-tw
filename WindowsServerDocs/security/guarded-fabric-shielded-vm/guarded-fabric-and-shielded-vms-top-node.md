@@ -9,16 +9,16 @@ author: rpsqrd
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: c06432a039341978956066344710920652187b97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f23d0be0d860695b014f57fd55d8e321e81a70ca
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403665"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950331"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>受防護網狀架構與受防護的 VM
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 提供裝載環境的其中一個最重要的目標，就是保證在環境中執行之虛擬機器的安全性。 身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS) (通常是有三個節點的叢集)，加上一個或多個受防護主機，以及一組受防護虛擬機器 (VM)。
 
@@ -27,12 +27,12 @@ ms.locfileid: "71403665"
 
 ## <a name="videos-blog-and-overview-topic-about-guarded-fabrics-and-shielded-vms"></a>有關受保護網狀架構和受防護 Vm 的影片、blog 和總覽主題
 
-- 視訊：[如何使用 Windows Server 2019 保護虛擬化網狀架構免于內部威脅](https://myignite.techcommunity.microsoft.com/sessions/64690)
-- 視訊：[Windows Server 2016 中受防護的虛擬機器簡介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
-- 視訊：[使用 Windows Server 2016 Hyper-v 深入探索受防護的 Vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
-- 視訊：[使用 Windows Server 2016 部署受防護的 Vm 和受防護的網狀架構](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
-- 日誌[資料中心和私用雲端安全性的 Blog](https://blogs.technet.microsoft.com/datacentersecurity/)
-- 概觀：[受防護網狀架構與受防護的 VM 概觀](Guarded-Fabric-and-Shielded-VMs.md)
+- 影片：[如何保護您的虛擬化網狀架構與 Windows Server 2019 的內部威脅](https://myignite.techcommunity.microsoft.com/sessions/64690)
+- 影片： [Windows Server 2016 中受防護的虛擬機器簡介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
+- 影片：[使用 Windows Server 2016 Hyper-v 深入探索受防護的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
+- 影片：[使用 Windows Server 2016 部署受防護的 vm 和受防護的網狀架構](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
+- Blog：[資料中心和私用雲端安全性 Blog](https://blogs.technet.microsoft.com/datacentersecurity/)
+- 總覽：[受保護的網狀架構和受防護的 vm 總覽](Guarded-Fabric-and-Shielded-VMs.md)
 
 ## <a name="planning-topics"></a>規劃主題
 

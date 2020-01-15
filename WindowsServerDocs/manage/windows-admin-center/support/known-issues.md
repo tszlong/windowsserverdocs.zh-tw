@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: c05987360256f7b7ed58911c1ded86586fc8b3aa
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 59c659041c7553d8e97a3bfbefbc3bde24098ef2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903900"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949931"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -80,7 +80,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。
 
-如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
+如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
 ## <a name="role-based-access-control-rbac"></a>角色型存取控制 (RBAC)
 
@@ -152,7 +152,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 如果您選擇要自動重新開機，將會在狀態更新進度達 100% 之前發生重新開機。 [13098852]
 
-### <a name="storage"></a>儲存空間
+### <a name="storage"></a>存放
 
 - 下層：DVD/CD/軟碟機不會顯示為下層的磁碟區。
 

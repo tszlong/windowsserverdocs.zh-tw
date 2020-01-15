@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ba67a5fcc127bbe6ffce9454ff98fd3bc3725e55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367707"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949638"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆
 
@@ -32,10 +32,10 @@ ms.locfileid: "71367707"
 
 以下是 Microsoft 官方企業支援 blog 的連結。 這些 blog 的內容提供有關審核的建議、指引和建議，可協助您增強 Active Directory 基礎結構的安全性，而且在設計稽核原則時是一項重要的資源。  
   
-* [全域物件存取的審核功能非常神奇](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-說明一種稱為「先進的稽核原則設定」的控制機制，已新增至 windows 7 和 Windows Server 2008 R2，讓您能夠輕鬆地設定您想要的資料類型，而不是操控腳本和 auditpol .exe。  
-* [Windows 2008 中的審核變更簡介](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-引進 windows Server 2008 中的審核功能變更。  
-* [Vista 和2008中](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 的有趣審核功能，可用於疑難排解問題或查看環境中發生的狀況。  
-* [Windows server 2008 和 Windows vista 中的一次性審核](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
+* [全域物件存取的審核功能非常神奇](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-說明一種稱為「先進的稽核原則設定」的控制機制，已新增至 windows 7 和 Windows Server 2008 R2，讓您能夠輕鬆地設定您想要的資料類型，而不是操控腳本和 auditpol .exe。  
+* [Windows 2008 中的審核變更簡介](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-引進 windows Server 2008 中的審核功能變更。  
+* [Vista 和2008中](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 的有趣審核功能，可用於疑難排解問題或查看環境中發生的狀況。  
+* [Windows server 2008 和 Windows vista 中的一次性審核](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
   
 下列連結提供 windows 8 和 Windows Server 2012 中 Windows 審核功能改進的相關資訊，以及 Windows Server 2008 中 AD DS 審核的相關資訊。  
   
@@ -114,7 +114,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 ![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> 群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol 則會執行。 如需詳細資訊，請參閱[在 Windows 7 和 2008 R2 中取得有效的稽核原則](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
+> 群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol 則會執行。 如需詳細資訊，請參閱[在 Windows 7 和 2008 R2 中取得有效的稽核原則](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
   
 每個主要類別都有多個子類別。 以下是類別目錄、其子類別和其功能的描述清單。  
   
@@ -170,7 +170,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
   
 #### <a name="detailed-process-tracking"></a>詳細的進程追蹤  
   
-##### <a name="process-creation"></a>進程建立  
+##### <a name="process-creation"></a>處理序建立  
 這個子類別會報告建立程式的方式，以及建立該進程的使用者或程式的名稱。  
   
 ##### <a name="process-termination"></a>進程終止  
@@ -193,12 +193,12 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 ##### <a name="directory-service-replication"></a>目錄服務複寫  
 此子類別會報告兩個網域控制站之間的複寫開始和結束的時間。  
   
-##### <a name="detailed-directory-service-replication"></a>詳細的目錄服務複寫  
+##### <a name="detailed-directory-service-replication"></a>詳細目錄服務複寫  
 此子類別會報告在網域控制站之間複寫之資訊的詳細資訊。 這些事件在大量中可能非常高。  
   
 #### <a name="logonlogoff"></a>登入/登出  
   
-##### <a name="logon"></a>登入  
+##### <a name="logon"></a>Logon  
 當使用者嘗試登入系統時，此子類別會報告。 這些事件會發生在存取的電腦上。 若為互動式登入，則會在登入的電腦上產生這些事件。 如果進行網路登入以存取共用，這些事件會在裝載所存取資源的電腦上產生。 如果此設定設為 [**無**]，則很難或無法判斷哪些使用者已存取或嘗試存取組織電腦。  
   
 ##### <a name="network-policy-server"></a>網路原則伺服器  
@@ -293,7 +293,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 ##### <a name="other-object-access-events"></a>其他物件存取事件  
 這個子類別會報告其他與物件存取相關的事件，例如工作排程器作業和 COM + 物件。  
   
-#### <a name="system"></a>系統  
+#### <a name="system"></a>[系統]  
   
 ##### <a name="security-state-change"></a>安全性狀態變更  
 此子類別會報告系統安全性狀態的變更，例如安全性子系統啟動和停止的時間。  
@@ -336,7 +336,7 @@ IPsec 驅動程式
 
 Auditpol （用於設定 Windows 稽核原則）是在 Windows Server 2008 和 Windows Vista 中引進。 一開始，只有 auditpol 可以用來設定 Advanced 稽核原則，但群組原則可以用於 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 和 Windows 7。  
   
-Auditpol 是命令列公用程式。 語法如下所示：  
+Auditpol 是命令列公用程式。 語法如下：  
   
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
   
@@ -355,7 +355,7 @@ Auditpol .exe 語法範例：
 
 Microsoft 會針對想要使用腳本設定「高級稽核原則」的系統管理員提供[範例腳本](https://support.microsoft.com/kb/921469)，而不是在每個 printbrm.exe 命令中手動輸入。  
   
-**注意**群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol 則會執行。 如需詳細資訊，請參閱[在 Windows 7 和 windows 2008 R2 中取得有效的稽核原則](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
+**注意**群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol 則會執行。 如需詳細資訊，請參閱[在 Windows 7 和 windows 2008 R2 中取得有效的稽核原則](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
   
 #### <a name="other-auditpol-commands"></a>其他 Auditpol 命令
 
@@ -388,7 +388,7 @@ Auditpol 可以用來儲存和還原本機稽核原則，以及查看其他的�
   
 您可以使用數種方法來設定 [審核子類別]，包括群組原則和命令列程式（auditpol .exe）。  
   
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
   
 * [Windows 7 和 Windows Server 2008 R2 中的先進安全性審查](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   

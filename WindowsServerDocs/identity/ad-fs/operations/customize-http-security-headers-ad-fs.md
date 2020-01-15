@@ -9,19 +9,19 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935039"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949209"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>使用 AD FS 2019 自訂 HTTP 安全性回應標頭 
  
-為了防止常見的安全性弱點，並讓系統管理員能夠利用以瀏覽器為基礎的保護機制的最新進展，AD FS 2019 新增了自訂 HTTP 安全性回應標頭的功能。由 AD FS 傳送。 這是透過引進兩個新的 Cmdlet 來完成`Get-AdfsResponseHeaders` ： `Set-AdfsResponseHeaders`和。  
+為了防止常見的安全性弱點，並讓系統管理員能夠利用以瀏覽器為基礎的保護機制的最新進展，AD FS 2019 新增了自訂 HTTP 安全性回應標頭的功能。由 AD FS 傳送。 這是透過引進兩個新的 Cmdlet 來完成： `Get-AdfsResponseHeaders` 和 `Set-AdfsResponseHeaders`。  
 
 >[!NOTE]
->使用 Cmdlet 自訂 HTTP 安全性回應標頭（CORS 標頭除外）的功能`Get-AdfsResponseHeaders` ： `Set-AdfsResponseHeaders`和是 backport 至 AD FS 2016。 您可以藉由安裝[KB4493473](https://support.microsoft.com/en-us/help/4493473/windows-10-update-kb4493473)和[KB4507459](https://support.microsoft.com/en-us/help/4507459/windows-10-update-kb4507459)，將功能新增至您的 AD FS 2016。 
+>使用 Cmdlet 自訂 HTTP 安全性回應標頭（CORS 標頭除外）的功能： `Get-AdfsResponseHeaders` 和 `Set-AdfsResponseHeaders` 已 backport 至 AD FS 2016。 您可以藉由安裝[KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473)和[KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459)，將功能新增至您的 AD FS 2016。 
 
 在本檔中，我們將討論常用的安全性回應標頭，以示範如何自訂 AD FS 2019 所傳送的標頭。   
  
@@ -40,11 +40,11 @@ ms.locfileid: "71935039"
 
  
 ## <a name="http-security-response-headers"></a>HTTP 安全性回應標頭 
-回應標頭會包含在 AD FS 傳送至網頁瀏覽器的傳出 HTTP 回應中。 您可以使用`Get-AdfsResponseHeaders` Cmdlet 來列出標頭，如下所示。  
+回應標頭會包含在 AD FS 傳送至網頁瀏覽器的傳出 HTTP 回應中。 您可以使用 `Get-AdfsResponseHeaders` Cmdlet 來列出標頭，如下所示。  
 
 ![標頭回應](media/customize-http-security-headers-ad-fs/header1.png)
 
-上述`ResponseHeaders`螢幕擷取畫面中的屬性會識別每個 HTTP 回應中 AD FS 將包含的安全性標頭。 只有當`ResponseHeadersEnabled`設為`True` （預設值）時，才會傳送回應標頭。 此值可以設定為`False` ，以防止 AD FS 包括 HTTP 回應中的任何安全性標頭。 不過，不建議這樣做。  若要這麼做，請使用下列各項：
+上述螢幕擷取畫面中的 `ResponseHeaders` 屬性會識別每個 HTTP 回應中 AD FS 所包含的安全性標頭。 只有當 `ResponseHeadersEnabled` 設定為 `True` （預設值）時，才會傳送回應標頭。 此值可以設定為 `False`，以防止 AD FS 包括 HTTP 回應中的任何安全性標頭。 不過，不建議這樣做。  若要這麼做，請使用下列各項：
 
 ```PowerShell
 Set-AdfsResponseHeaders -EnableResponseHeaders $false
@@ -55,11 +55,11 @@ HSTS 是一種 web 安全性原則機制，可協助減少同時具有 HTTP 和 
  
 Web 驗證流量的所有 AD FS 端點都會以獨佔方式透過 HTTPS 開啟。 因此，AD FS 有效地降低 HTTP Strict 傳輸安全性原則機制所提供的威脅（因為 HTTP 中沒有接聽程式，所以預設不會降級至 HTTP）。 您可以藉由設定下列參數來自訂標頭：
  
-- **最大壽命 =&lt; &gt;到期**時間–到期時間（以秒為單位）指定網站只能使用 HTTPS 存取的時間長度。 預設和建議值為31536000秒（1年）。  
+- **最大壽命 =&lt;到期時間&gt;** –到期時間（以秒為單位）指定只能使用 HTTPS 存取網站的時間長度。 預設和建議值為31536000秒（1年）。  
 - **includeSubDomains** –這是選擇性參數。 若已指定，HSTS 規則也會套用至所有子域。  
  
 #### <a name="hsts-customization"></a>HSTS 自訂 
-根據預設，標頭會啟用並`max-age`設為1年; 不過，系統管理員可以`max-age`修改（不建議使用 [減少最大壽命] 值），或透過`Set-AdfsResponseHeaders` Cmdlet 啟用子域的 HSTS。  
+預設會啟用標頭，`max-age` 設定為1年;不過，系統管理員可以修改 `max-age` （不建議減少最大壽命值），或透過 `Set-AdfsResponseHeaders` Cmdlet 啟用子域的 HSTS。  
  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=<seconds>; includeSubDomains" 
@@ -71,7 +71,7 @@ Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderVal
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=31536000; includeSubDomains" 
  ```
 
-根據預設，標頭會包含在`ResponseHeaders`屬性中; 不過，系統管理員可以`Set-AdfsResponseHeaders`透過 Cmdlet 移除標頭。  
+根據預設，標頭會包含在 `ResponseHeaders` 屬性中;不過，系統管理員可以透過 `Set-AdfsResponseHeaders` Cmdlet 移除標頭。  
  
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "Strict-Transport-Security" 
@@ -82,14 +82,14 @@ AD FS 預設不允許外部應用程式在執行互動式登入時使用 Iframe�
  
 不過，在某些罕見的情況下，您可能會信任需要支援 iFrame 的特定應用程式，AD FS 登入頁面。 ' X 框架-選項 ' 標頭用於此用途。  
  
-這個 HTTP 安全性回應標頭是用來與瀏覽器通訊，不論它是否可以在&lt;框架&gt; / &lt;iframe&gt;中轉譯頁面。 標頭可設為下列其中一個值： 
+這個 HTTP 安全性回應標頭是用來與瀏覽器通訊，不論它是否可以在 &lt;框架中轉譯頁面&gt;/&lt;iframe&gt;。 標頭可設為下列其中一個值： 
  
-- **拒絕**–畫面格中的頁面將不會顯示。 這是預設和建議的設定。  
+- **拒絕**–畫面格中的頁面將不會顯示。 這是預設值且為建議的設定。  
 - **sameorigin** –如果原點與網頁的來源相同，則頁面只會顯示在框架中。 除非所有祖系也位於相同的來源，否則選項不會非常有用。  
-- [允許]-只有在原點（例如，. "） https://www 時，頁面才會顯示在畫面格中。 **<specified origin>** com）符合標頭中的特定來源。 
+- **允許-從 <specified origin>** -只有在原點（例如， https://www. "）時，此頁面才會顯示在框架中。com）符合標頭中的特定來源。 
 
 #### <a name="x-frame-options-customization"></a>X 框架-選項自訂  
-根據預設，標頭會設定為拒絕;不過，系統管理員可以透過`Set-AdfsResponseHeaders` Cmdlet 來修改此值。  
+根據預設，標頭會設定為拒絕;不過，系統管理員可以透過 `Set-AdfsResponseHeaders` Cmdlet 來修改此值。  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/sameorigin/allow-from<specified origin>>" 
  ```
@@ -100,21 +100,21 @@ Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "allow-from https://www.example.com" 
  ```
 
-根據預設，標頭會包含在`ResponseHeaders`屬性中; 不過，系統管理員可以`Set-AdfsResponseHeaders`透過 Cmdlet 移除標頭。  
+根據預設，標頭會包含在 `ResponseHeaders` 屬性中;不過，系統管理員可以透過 `Set-AdfsResponseHeaders` Cmdlet 移除標頭。  
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options" 
 ```
 
-### <a name="x-xss-protection"></a>X-XSS-Protection 
+### <a name="x-xss-protection"></a>X-XSS-保護 
 當瀏覽器偵測到跨網站腳本（XSS）攻擊時，此 HTTP 安全性回應標頭可用來停止載入網頁。 這稱為 XSS 篩選。 標頭可設為下列其中一個值：
  
 - **0** –停用 XSS 篩選。 不建議使用。  
 - **1** –啟用 XSS 篩選。 如果偵測到 XSS 攻擊，browser 會淨化該頁面。   
-- **1; 模式 = 封鎖**–啟用 XSS 篩選。 如果偵測到 XSS 攻擊，瀏覽器將會防止轉譯頁面。 這是預設和建議的設定。  
+- **1; 模式 = 封鎖**–啟用 XSS 篩選。 如果偵測到 XSS 攻擊，瀏覽器將會防止轉譯頁面。 這是預設值且為建議的設定。  
 
 #### <a name="x-xss-protection-customization"></a>X-XSS-保護自訂 
-根據預設，標頭會設定為 1;mode = block;不過，系統管理員可以透過`Set-AdfsResponseHeaders` Cmdlet 來修改此值。  
+根據預設，標頭會設定為 1;mode = block;不過，系統管理員可以透過 `Set-AdfsResponseHeaders` Cmdlet 來修改此值。  
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/1; mode=block/1; report=<reporting-uri>>" 
@@ -126,14 +126,14 @@ Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "1" 
  ```
 
-根據預設，標頭會包含在`ResponseHeaders`屬性中; 不過，系統管理員可以`Set-AdfsResponseHeaders`透過 Cmdlet 移除標頭。 
+根據預設，標頭會包含在 `ResponseHeaders` 屬性中;不過，系統管理員可以透過 `Set-AdfsResponseHeaders` Cmdlet 移除標頭。 
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection" 
 ```
 
 ### <a name="cross-origin-resource-sharing-cors-headers"></a>跨原始來源資源分享（CORS）標頭 
-網頁瀏覽器安全性可防止網頁在腳本內起始跨原始來源要求。 不過，有時您可能會想要存取其他來源（網域）中的資源。 CORS 是一種 W3C 標準，可讓伺服器放寬相同的原始原則。 使用 CORS，伺服器可以明確允許某些跨原始來源要求，同時拒絕其他要求。  
+網頁瀏覽器安全性可防止網頁在腳本內起始跨原始來源要求。 不過，有時您可能會想要存取其他來源（網域）中的資源。 CORS 是一種 W3C 標準，可讓伺服器放寬相同的原始原則。 使用 CORS，伺服器可以明確允許某些跨源要求，然而拒絕其他要求。  
  
 為了進一步瞭解 CORS 要求，讓我們逐步解說單一頁面應用程式（SPA）需要使用不同網域呼叫 Web API 的案例。 此外，請考慮在 ADFS 2019 上設定 SPA 和 API，且 AD FS 已啟用 CORS，也就是 AD FS 可以識別 HTTP 要求中的 CORS 標頭、驗證標頭值，並在回應中包含適當的 CORS 標頭（詳細資料，以瞭解如何啟用和在下面的 CORS 自訂區段中，設定 AD FS 2019 上的 CORS）。 範例流程： 
 
@@ -183,12 +183,12 @@ CSP 標頭的自訂牽涉到修改安全性原則，以允許載入網頁的資�
  
 **Default-src**指示詞是用來修改[-src](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src)指示詞，而不需要明確列出每個指示詞。 例如，在下列範例中，原則1與原則2相同。  
 
-原則1 
+原則 1 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src 'self'" 
 ```
  
-原則2
+原則 2
 ```PowerShell 
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
@@ -205,7 +205,7 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
 - 「unsafe-內嵌」–在原則中指定此項可允許使用內嵌的 JavaScript 和 CSS 
 - ' unsafe-eval ' –在原則中指定此項，允許將文字用於 JavaScript 等機制（例如 eval） 
 - ' none ' –指定此限制要載入的任何來源內容 
-- 資料：-指定資料：Uri 可讓內容建立者內嵌內嵌在檔中的小型檔案。 不建議使用。  
+- 資料：-指定資料： Uri 可讓內容建立者嵌入檔中內嵌的小型檔案。 不建議使用。  
  
 >[!NOTE]
 >AD FS 在驗證程式中使用 JavaScript，因此在預設原則中包含 ' unsafe-inline ' 和 ' unsafe-eval ' 來源，藉以啟用 JavaScript。  
@@ -213,7 +213,7 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
 ### <a name="custom-headers"></a>自訂標頭 
 除了上述的安全性回應標頭（HSTS、CSP、X 框架選項、X-XSS-保護和 CORS）之外，AD FS 2019 提供設定新標頭的功能。  
  
-範例：若要設定新的標頭 "TestHeader"，並將值設為 "TestHeaderValue" 
+範例：若要設定新的標頭 "TestHeader"，其值為 "TestHeaderValue" 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderValue" 
@@ -230,11 +230,11 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 |-----|-----|
 |HTTP Strict-傳輸安全性（HSTS）|[HSTS 瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#Browser_compatibility)|
 |X 框架-選項|[X 框架-選項瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility)| 
-|X-XSS-Protection|[X-XSS-保護瀏覽器相容性](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
-|跨原始來源資源分享 (CORS)|[CORS 瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
+|X-XSS-保護|[X-XSS-保護瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
+|跨原始來源資源分享（CORS）|[CORS 瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |內容安全性原則（CSP）|[CSP 瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 
-## <a name="next"></a>下一個
+## <a name="next"></a>[下一步]
 
 - [使用 AD FS 協助疑難排解指南](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS 疑難排解](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

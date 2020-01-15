@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e7f46739dd8def6ffc34c6cc50210c0e6999c79
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 924fcd8e0c981c9164c3026a58cbb41ef8c0085a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403742"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950355"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -28,7 +28,7 @@ ms.locfileid: "71403742"
 
 
 ## <a name="BKMK_OVER"></a>功能描述
-獨立受管理的服務帳戶（sMSA）是一個受管理的網域帳戶，可提供自動密碼管理、簡化的服務主體名稱（SPN）管理，以及將管理委派給其他系統管理員的能力。 這種類型的受管理的服務帳戶（MSA）是在 Windows Server 2008 R2 和 Windows 7 中引進。
+獨立受管理的服務帳戶（sMSA）是一個受管理的網域帳戶，可提供自動密碼管理、簡化的服務主體名稱（SPN）管理，以及將管理委派給其他系統管理員的能力。 這種類型的受管理的服務帳戶 (MSA) 是在 Windows Server 2008 R2 和 Windows 7 中引進的。
 
 群組受管理的服務帳戶（gMSA）會在網域內提供相同的功能，但也會在多部伺服器上擴充該功能。 當連接到裝載于伺服器陣列的服務（例如網路負載平衡解決方案）時，支援相互驗證的驗證通訊協定會要求服務的所有實例都使用相同的主體。 當使用 gMSA 做為服務主體時，Windows 作業系統會管理帳戶的密碼，而不是依賴系統管理員來管理密碼。
 
@@ -37,7 +37,7 @@ Microsoft 金鑰發佈服務 \(kdssvc\) 提供使用 Active Directory 帳戶的�
 ## <a name="BKMK_APP"></a>實際應用
 Gmsa 為在伺服器陣列上執行的服務，或在網路 Load Balancer 後方的系統上，提供單一身分識別解決方案。 藉由提供 gMSA 解決方案，可以針對新的 gMSA 主體設定服務，而密碼管理則是由 Windows 處理。
 
-使用 gMSA，服務或服務系統管理員不需要管理服務實例之間的密碼同步處理。 GMSA 支援長時間保持離線狀態的主機，以及服務所有實例的成員主機管理。 這表示您可以部署一個支援單一識別的伺服器陣列，現有的用戶端電腦不需知道所連接的服務執行個體，就可以進行驗證。
+使用 gMSA，服務管理員就不用管理服務執行個體之間的密碼同步。 GMSA 支援長時間保持離線狀態的主機，以及服務所有實例的成員主機管理。 這表示您可以部署一個支援單一識別的伺服器陣列，現有的用戶端電腦不需知道所連接的服務執行個體，就可以進行驗證。
 
 容錯移轉叢集不支援 gMSA。 不過，在叢集服務上執行的服務如果是 Windows 服務、應用程式集區、排定的工作或原生支援 gMSA 或 sMSA，便可使用 gMSA 或 sMSA。
 
@@ -58,16 +58,16 @@ Gmsa 不適用於 Windows Server 2012 之前的 Windows 作業系統。
 ## <a name="BKMK_LINKS"></a>另請參閱
 下表提供與受管理的服務帳戶以及群組受管理的服務帳戶相關的其他資源連結。
 
-|內容類型|參考|
+|內容類型|參考資料|
 |--------|-------|
 |**產品評估**|[受管理的服務帳戶的新功能](what-s-new-for-managed-service-accounts.md)<br /><br />[Windows 7 和 Windows Server 2008 R2 的受管理的服務帳戶檔](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)<br /><br />[服務帳戶步驟\-by\-步驟指南](https://technet.microsoft.com/library/dd548356(v=ws.10).aspx)|
 |**規劃**|尚未提供|
 |**部署**|尚未提供|
 |**操作**|[Active Directory 中的受管理的服務帳戶](https://technet.microsoft.com/library/dd378925(v=ws.10).aspx)|
 |**疑難排解**|尚未提供|
-|**求**|[開始使用群組受管理的服務帳戶](getting-started-with-group-managed-service-accounts.md)|
+|**Evaluation**|[開始使用群組受管理的服務帳戶](getting-started-with-group-managed-service-accounts.md)|
 |**工具及設定**|[Active Directory Domain Services 中的受管理的服務帳戶](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
-|**社群資源**|[受管理的服務帳戶：瞭解、實施、最佳作法和疑難排解](http://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
-|**相關技術**|[Active Directory 網域服務概觀](active-directory-domain-services-overview.md)|
+|**社群資源**|[受管理的服務帳戶：瞭解、實施、最佳作法和疑難排解](https://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
+|**相關技術**|[Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)|
 
 

@@ -1,5 +1,5 @@
 ---
-title: 儲存體
+title: 存放
 description: ''
 author: JasonGerend
 manager: elizapo
@@ -11,14 +11,14 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: eadac31cb623a15dd308f7e33f984fe1fb46ffe5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365926"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950220"
 ---
-# <a name="storage"></a>儲存體
+# <a name="storage"></a>存放
 
 >適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
@@ -26,7 +26,7 @@ ms.locfileid: "71365926"
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
 
 <hr />
-Windows Server 中的儲存空間可以提供新功能和改進功能，讓軟體定義資料中心 (SDDC) 的客戶可以專注處理虛擬化工作負載。 Windows Server 也會為使用檔案伺服器搭配現有工作負載的企業客戶提供廣泛的支援。
+Windows Server 中的儲存空間可以提供新功能和改進功能，讓軟體定義資料中心 (SDDC) 的客戶可以專注處理虛擬化工作負載。 Windows Server 也會為使用檔案伺服器搭配現有工作負載的企業客戶提供廣泛的支援。
 
 <hr />
 <ul class="cardsF panelContent">
@@ -124,7 +124,7 @@ Windows Server 中的儲存空間可以提供新功能和改進功能，讓軟�
 <HR />
                         <p><h3><a href="refs/refs-overview.md">ReFS</a></h3> 彈性檔案系統，可將資料的可用性最大化、在各種工作負載間有效率地調整為非常大型的資料集，並透過損毀的復原方式（不論是軟體或硬體故障）來提供資料完整性。<p>
 <HR />
-                        <p><h3><a href="file-server/file-server-smb-overview.md">伺服器訊息區（SMB）通訊協定</a></h3> 一種網路檔案共用通訊協定，可讓電腦上的應用程式讀取和寫入檔案，並從電腦網路中的伺服器程式要求服務。 SMB 通訊協定可以用於其 TCP/IP 通訊協定或其他網路通訊協定的最上方。 使用 SMB 通訊協定，應用程式 (或應用程式的使用者) 可以存取遠端伺服器上的檔案或其他資源。 這允許應用程式讀取、建立及更新遠端伺服器上的檔案。 它也可以與任何設定來接收 SMB 用戶端要求的伺服器程式進行通訊。<p>
+                        <p><h3><a href="file-server/file-server-smb-overview.md">伺服器訊息區 (SMB) 通訊協定</a></h3> 一種網路檔案共用通訊協定，可讓電腦上的應用程式讀取和寫入檔案，並從電腦網路中的伺服器程式要求服務。 SMB 通訊協定可以用於其 TCP/IP 通訊協定或其他網路通訊協定的最上方。 使用 SMB 通訊協定，應用程式 (或應用程式的使用者) 可以存取遠端伺服器上的檔案或其他資源。 這允許應用程式讀取、建立及更新遠端伺服器上的檔案。 它也可以與任何設定來接收 SMB 用戶端要求的伺服器程式進行通訊。<p>
 <HR />
                         <p><h3><a href="storage-spaces/Storage-class-memory-health.md">儲存類別記憶體</a></h3> 提供的效能類似于電腦記憶體（非常快速），但具有一般存放磁片磁碟機的資料持續性。 存放裝置類別記憶體對於 Windows 就如同一般的磁碟機 (只是速度更快)，但其裝置健全狀況的管理方式有一些差異。<p>
 <HR />
@@ -146,4 +146,4 @@ Windows Server 中的儲存空間可以提供新功能和改進功能，讓軟�
 ## <a name="in-azure"></a>在 Azure 中
 
 * [Azure 儲存體](https://azure.microsoft.com/documentation/services/storage/)
-* [Azure StorSimple](https://www.microsoft.com/en-us/cloud-platform/azure-storsimple)
+* [Azure StorSimple](https://www.microsoft.com/cloud-platform/azure-storsimple)

@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 0977aa1fd9a6848bd7b85bb592b6a82556277e72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 594c20cbfea521006de6d1ec69763669298376e6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361584"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948525"
 ---
 >適用于： Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
@@ -25,7 +25,7 @@ ms.locfileid: "71361584"
 
 使用下列步驟，將 WSUS 資料庫（SUSDB）從 Windows 內部資料庫實例遷移到 SQL Server 的本機或遠端實例。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 - SQL 實例。 這可以是預設的**MSSQLServer**或自訂的實例。
 - SQL Server Management Studio
@@ -49,7 +49,7 @@ ms.locfileid: "71361584"
 
 1. 以滑鼠右鍵按一下 [SUSDB **-&gt; 工作**] -&gt; 按一下 [卸**離**]： ![image1](images/image1.png)
 2. 核取 [卸載**現有的連接**]，然後按一下 **[確定]** （如果有作用中連線存在，則為選擇性
-    ![image2)](images/image2.png)
+    ![image2](images/image2.png)
 
 #### <a name="using-command-prompt"></a>使用 [命令提示字元]
 
@@ -124,14 +124,14 @@ ms.locfileid: "71361584"
 4. 在 [**使用者對應**] 頁面上：
     - 在 **[對應到此登入的使用者**] 下：選取 [ **SUSDB** ]
     - 在 [**資料庫角色成員資格： SUSDB**] 底下，確定已核取下列各項：
-        - **公立**
+        - **public**
         - **webService** ![image9](images/image9.png)
 5. 按一下 **\[確定\]**
 
 您現在應該會在 [登入] 下看到**NT AUTHORITY\NETWORK SERVICE** 。
 ![image10](images/image10.png)
 
-#### <a name="database-permissions"></a>資料庫許可權
+#### <a name="database-permissions"></a>資料庫權限
 
 1. 以滑鼠右鍵按一下 SUSDB
 2. 選取**屬性**
@@ -158,7 +158,7 @@ ms.locfileid: "71361584"
 ### <a name="edit-the-registry-to-point-wsus-to-the-sql-server-instance"></a>編輯登錄以將 WSUS 指向 SQL Server 實例
 
 > [!IMPORTANT]
-> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/en-us/help/322756)，以免發生問題。
+> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
 1. 依序按一下 [開始] 和 [執行]、輸入 **regedit**，然後按一下 [確定]。
 2. 找出下列機碼： **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**

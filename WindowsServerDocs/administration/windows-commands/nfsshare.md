@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a952e247ee40f832045d39d0e2164bb2e6613c54
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d205bcfad11d22fea7fc9d0651aca61f234347cf
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373207"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948499"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -33,11 +33,11 @@ nfsshare <ShareName>=<Drive:Path> [-o <Option=value>...]
 nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 ```
 
-## <a name="description"></a>描述
+## <a name="description"></a>說明
 
 如果沒有引數， **nfsshare**命令列公用程式會列出 SERVER for NFS 所匯出的所有網路檔案系統（NFS）共用。 使用*共用名稱*作為唯一的引數時， **Nfsshare**會列出*共用名稱*所識別之 NFS 共用的屬性。 當已提供「*共用名稱*」和「<em>磁片磁碟機</em> **：** <em>路徑</em>」時， **nfsshare**會將<em>磁片磁碟機</em> **：** <em>path</em>所識別的資料夾匯出為*共用名稱* 使用 **/delete**選項時，不會再讓 NFS 用戶端使用指定的資料夾。
 
-## <a name="options"></a>選項
+## <a name="options"></a>[選項]
 
 **Nfsshare**命令會接受下列選項和引數：
 
@@ -56,6 +56,6 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 > [!NOTE]
 > 若要檢視此命令的完整語法，請在命令提示字元中輸入：</br>> **nfsshare/？**
 
-# #
+## <a name="see-also"></a>請參閱
 
-[Services For Network File System 命令參考](services-for-network-file-system-command-reference.md)另請參閱
+[網路檔案系統服務命令參考資料](services-for-network-file-system-command-reference.md)

@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945234"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949639"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -320,6 +320,35 @@ DFSR Debug 記錄檔：
 
 傳輸非常大量的檔案和嵌套資料夾時，這是預期的行為。 資料的大小不相關。 我們先對[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中的這項行為進行改良，並繼續優化傳輸效能。 若要進一步調整效能，請參閱[優化清查和傳輸效能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
 
+## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>在網域控制站上進行遷移時，資料不會傳輸、使用者重新命名
+
+開始從或到網域控制站的傳輸之後：
+
+ 1. 不會遷移任何資料，也不會在目的地上建立任何共用。
+ 2. Windows 系統管理中心顯示紅色錯誤符號，沒有錯誤訊息
+ 3. 一或多個 AD 使用者和網域本機群組已變更其名稱和/或 Windows 前2000的登入屬性
+ 4. 您會在 SMS orchestrator 上看到事件3509：
+ 
+ 記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 1/10/2020 2:53:48 PM 事件識別碼：3509工作類別：無層級：錯誤關鍵字：      
+ 使用者：網路服務電腦： orc2019-rtm.corp.contoso.com 描述：無法傳輸電腦的存放裝置。
+
+ 作業： dctest3 電腦： dc02-2019.corp.contoso.com 目的地電腦： dc03-2019.corp.contoso.com 狀態：失敗的錯誤：53251錯誤訊息：本機帳戶遷移失敗，發生錯誤系統。例外狀況：-2147467259 于StorageMigration. DeviceHelper. MigrateSecurity （IDeviceRecord sourceDeviceRecord，IDeviceRecord destinationDeviceRecord，TransferConfiguration config，Guid proxyId，CancellationToken cancelToken）
+
+如果您嘗試使用儲存體遷移服務從網域控制站進行遷移，並使用 [遷移使用者和群組] 選項來重新命名或重複使用帳戶，這是預期的行為。 而不是選取 [不要傳輸使用者和群組]。 [儲存體遷移服務不支援](faq.md)DC 遷移。 因為 DC 不具有真正的本機使用者和群組，所以儲存體遷移服務會將這些安全性主體視為在兩部成員伺服器之間進行遷移時的處理方式，並嘗試依照指示來調整 Acl，因而導致錯誤和已損壞或複製的帳戶。 
+
+如果您已多次執行轉移，請執行下列動作：
+
+ 1. 對 DC 使用下列 AD PowerShell 命令，以找出任何已修改的使用者或群組（變更 SearchBase 以符合您的網域 dinstringuished 名稱）： 
+
+    ```PowerShell
+    Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
+    ```
+   
+ 2. 針對以原始名稱傳回的任何使用者，編輯其 [使用者登入名稱（Windows 前2000）] 以移除儲存體遷移服務所新增的隨機字元尾碼，讓此失敗者可以登入。
+ 3. 針對以原始名稱傳回的任何群組，編輯其「組名（預先 Windows 2000）」，以移除儲存體遷移服務所新增的隨機字元尾碼。
+ 4. 針對任何已停用的使用者或名稱現在包含儲存體遷移服務所新增之後綴的群組，您可以刪除這些帳戶。 您可以確認稍後新增的是使用者帳戶，因為它們只會包含網域使用者群組，而且會有與儲存體遷移服務傳輸開始時間相符的建立日期/時間。
+ 
+ 如果您想要使用儲存體遷移服務搭配網域控制站來進行傳輸，請務必在 Windows 系統管理中心的 [傳輸設定] 頁面上，選取 [不要傳輸使用者和群組]。
 
 ## <a name="see-also"></a>請參閱
 

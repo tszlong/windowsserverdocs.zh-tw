@@ -1,5 +1,5 @@
 ---
-title: cleanmgr.exe 釋放
+title: cleanmgr
 description: 瞭解如何使用命令列選項來設定磁片清理工具（Cleanmgr.exe 釋放），以自動清除特定檔案。
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
@@ -8,16 +8,16 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 20bc60abc747e6bab0ef59f38d0a392f18d75abe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379382"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947579"
 ---
-# <a name="cleanmgr"></a>cleanmgr.exe 釋放
+# <a name="cleanmgr"></a>cleanmgr
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2008 R2、Windows Server （半年通道）
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2008 R2、Windows Server （半年通道）
 
 從您的電腦硬碟清除不必要的檔案。 您可以使用命令列選項來指定 Cleanmgr.exe 釋放清除暫存檔案、網際網路檔案、下載的檔案和回收站檔案。 接著，您可以使用 [排定的工作] 工具，將工作排程在特定時間執行。
 
@@ -29,19 +29,19 @@ ms.locfileid: "71379382"
 cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
-|      參數      |    描述     |
+|      參數      |    說明     |
 | ------------------- | ------------------ |
-|  /d \<driveletter >          | 指定您想要清理磁片的磁片磁碟機。<br>**注意：** /D 選項不會與/sagerun： n 搭配使用。 |
-| /sageset： n | 顯示 [磁片清理設定] 對話方塊，並建立登錄機碼來儲存您所選取的設定。 儲存在登錄中的 `n` 值可讓您指定要執行磁片清理的工作。 @No__t-0 值可以是從0到65535的任何整數值。 若要在使用/sageset 選項時提供所有選項，請指定安裝 Windows 的磁片磁碟機。  |
+|  /d \<磁碟機號 >          | 指定您想要清理磁片的磁片磁碟機。<br>**注意：** /D 選項不會與/sagerun： n 搭配使用。 |
+| /sageset： n | 顯示 [磁片清理設定] 對話方塊，並建立登錄機碼來儲存您所選取的設定。 儲存在登錄中的 `n` 值可讓您指定要執行磁片清理的工作。 `n` 值可以是從0到65535的任何整數值。 若要在使用/sageset 選項時提供所有選項，請指定安裝 Windows 的磁片磁碟機。  |
 |  /sagerun： n  |  如果您使用 \sageset 選項，則會執行指派給 n 值的指定工作。 系統會列舉電腦上的所有磁片磁碟機，並針對每個磁片磁碟機執行選取的設定檔。           |
 | /TUNEUP： n    | 針對相同的 `n` 執行/sageset 和/sagerun。 |
 | /LOWDISK     | 以預設設定執行。 |
 | /VERYLOWDISK | 以預設設定執行，不提示使用者。 |
 | /?           | 顯示 [說明]。 |
 
-## <a name="options"></a>選項。
+## <a name="options"></a>[選項]
 
 您可以使用/sageset 和/sagerun 針對 [磁片清理] 指定的檔案選項包括：
 
@@ -61,7 +61,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 - **離線檔案**-離線檔案是您特別想要讓離線使用的網路檔案本機複本，讓您可以在中斷與網路的連線之後使用這些檔案。 [View Files] 按鈕會開啟 [離線檔案] 資料夾。
 
-- **壓縮舊**檔案-Windows 可以壓縮您最近未使用過的檔案。 壓縮檔案可節省磁碟空間，但您仍然可以使用這些檔案。 不會刪除任何檔案。 因為檔案是以不同的速率進行壓縮，所以您將獲得大約的磁碟空間量。 [選項] 按鈕可讓您指定磁片清理壓縮未使用的檔案之前等待的天數。
+- **壓縮舊**檔案-Windows 可以壓縮您最近未使用過的檔案。 壓縮檔案可節省磁碟空間，但您仍然可以使用這些檔案。 不刪除任何檔案。 因為檔案是以不同的速率進行壓縮，所以您將獲得大約的磁碟空間量。 [選項] 按鈕可讓您指定磁片清理壓縮未使用的檔案之前等待的天數。
 
 - **內容索引器的類別目錄**檔案-索引服務會藉由維護磁片上檔案的索引，來加速並改善檔案搜尋。 這些類別目錄檔案會保留在先前的索引編制作業中，而且可以安全地刪除。 **注意：** 類別目錄檔案可能會出現在多個磁片磁碟機中，例如，不只是% SystemRoot%。
 
@@ -81,7 +81,7 @@ cleanmgr /sageset:1
 cleanmgr /sagerun:1
 ```
 
-若要同時執行 ```cleanmgr /sageset:1``` 並 ```cleanmgr /sagerun:1```，請輸入：
+若要同時執行 ```cleanmgr /sageset:1``` 和 ```cleanmgr /sagerun:1```，請輸入：
 
 ```
 cleanmgr /tuneup:1
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>其他參考資料
 
-[釋放 Windows 10 中的磁片磁碟機空間](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[釋放 Windows 10 中的磁片磁碟機空間](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

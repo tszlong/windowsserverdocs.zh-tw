@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: dbdf211138ddcd553171f3c8ce9c2e915ccf0057
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812268"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947122"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>效能微調遠端桌面虛擬主機
 
@@ -20,9 +20,9 @@ ms.locfileid: "72812268"
 
 Windows Server 支援兩種類型的虛擬桌面：個人虛擬桌面和集區虛擬桌面。
 
-## <a name="general-considerations"></a>一般考慮
+## <a name="general-considerations"></a>一般考量
 
-### <a name="storage"></a>儲存空間
+### <a name="storage"></a>存放
 
 儲存體是最可能的效能瓶頸，因此請務必調整您的儲存體大小，以適當處理虛擬機器狀態變更所產生的 i/o 負載。 如果試驗或模擬不可行，最好的指導方針是為四部作用中的虛擬機器布建一個磁片主軸。 使用具有良好寫入效能的磁片設定（例如 RAID 1 + 0）。
 
@@ -41,7 +41,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 > [!NOTE]
 > 已開啟檔案的重復資料刪除優化僅支援使用透過 SMB 3.0 的遠端存放 Hyper-v 的 VDI 案例。
 
-### <a name="memory"></a>記憶體
+### <a name="memory"></a>Memory
 
 伺服器記憶體使用量是由三個主要因素所驅動：
 
@@ -81,7 +81,7 @@ RD 虛擬化主機支援虛擬桌面集區的分層式儲存體。 集合內所�
 
 ### <a name="csv-cache"></a>CSV 快取
 
-Windows Server 2012 和更新版本中的容錯移轉叢集提供叢集共用磁片區（CSV）上的快取。 對於大多數讀取 i/o 來自管理作業系統的集區虛擬桌面集合而言，這非常有用。 CSV 快取會以數種程度來提供較高的效能，因為它會快取讀取超過一次的區塊，並從系統記憶體傳遞它們，進而減少 i/o。 如需 CSV 快取的詳細資訊，請參閱[如何啟用 csv](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx)快取。
+Windows Server 2012 和更新版本中的容錯移轉叢集提供叢集共用磁片區（CSV）上的快取。 對於大多數讀取 i/o 來自管理作業系統的集區虛擬桌面集合而言，這非常有用。 CSV 快取會以數種程度來提供較高的效能，因為它會快取讀取超過一次的區塊，並從系統記憶體傳遞它們，進而減少 i/o。 如需 CSV 快取的詳細資訊，請參閱[如何啟用 csv](https://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx)快取。
 
 ### <a name="pooled-virtual-desktops"></a>集區虛擬桌面
 
@@ -106,7 +106,7 @@ Windows Server 2012 和更新版本中的容錯移轉叢集提供叢集共用磁
 | 網際網路連線共用                  | 以取用者為中心的服務                                                                                                                                                                                  |
 | Media Center 擴充服務               | 以取用者為中心的服務                                                                                                                                                                                  |
 > [!NOTE]
-> 這份清單不是完整清單，因為任何變更都會影響到所需的目標和案例。 如需詳細資訊，請參閱[熱門的按下、立即取得、Windows 8 VDI 優化腳本，PFE！](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
+> 這份清單不是完整清單，因為任何變更都會影響到所需的目標和案例。 如需詳細資訊，請參閱[熱門的按下、立即取得、Windows 8 VDI 優化腳本，PFE！](https://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
 
 
 > [!NOTE]

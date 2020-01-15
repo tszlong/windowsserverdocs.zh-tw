@@ -7,12 +7,12 @@ ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: huu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: deeaa7eab01dd5da6d997dd6ec039a3319e5c2b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6db9ce1db139558bd1a7aa731cb12c1b227ead03
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386461"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949765"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受防護的網狀架構診斷工具進行疑難排解
 
@@ -24,7 +24,7 @@ ms.locfileid: "71386461"
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
 
-# <a name="quick-start"></a>快速入門
+## <a name="quick-start"></a>快速入門
 
 您可以從具有本機系統管理員許可權的 Windows PowerShell 會話呼叫下列內容，以診斷受防護主機或 HGS 節點：
 ```PowerShell

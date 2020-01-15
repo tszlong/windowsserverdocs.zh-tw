@@ -11,31 +11,38 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 12/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a13c7ccb7e1c72534ef63ba6d09f3055af174cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1edc7c78e2abe5fe4e2bf9cd2c48a6a19d89dbdd
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387775"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351834"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS 用戶端中的新功能
 
-我們會定期更新[適用於 iOS 的遠端桌面用戶端](remote-desktop-ios.md)，並新增功能和修正問題。 您可以在這裡找到最新的更新。
+我們會定期更新[適用於 iOS 的遠端桌面用戶端](remote-desktop-ios.md)，並新增功能和修正問題。 您可以在此頁面上找到最新的更新。
 
-## <a name="remote-desktop-ios-beta-client"></a>遠端桌面 iOS Beta 用戶端
+## <a name="updates-for-version-1000"></a>10.0.0 版的更新
 
-*發行日期：02/20/2019*
+*發行日期：12/13/19*
 
-[遠端桌面 iOS Beta 用戶端](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client-from-apple-testflight)現已在 TestFlight 上推出。 測試 iOS Beta 用戶端時，請記住這是新 iOS 用戶端的發行前版本，且不保證如生產版本一樣穩定。 我們會繼續更新此用戶端以提供新功能和修正。 已醒目提示 iOS Beta 用戶端的以下數個功能：
+上次更新適用於 iOS 的遠端桌面用戶端，距今已有一年的時間。 現在，我們推出了一項令人興奮的更新，且此後將會有更多更新會定期推出。以下是10.0.0 版的新功能：
 
-- 最新 iOS 裝置上改善的體驗。
-- Swiftpoint 和 ProPoint 實體滑鼠的支援。 請參閱 iOS Beta 用戶端[支援的輸入裝置清單](remote-desktop-ios.md#supported-input-devices)。
-- [Windows 虛擬桌面](https://aka.ms/wvd)的支援。
-- 麥克風和 iPhone 儲存空間重新導向。
-- AVC420 和 AVC444 支援。
-- 金屬硬體加速支援。
+- Windows 虛擬桌面服務的支援。
+- 新的連線中心 UI。
+- 新的作用中工作階段 UI 可在已連線的電腦與應用程式之間切換。
+- 輔助螢幕小鍵盤有新的配置。
+- 改良的外接鍵盤支援。
+- SwiftPoint Bluetooth 滑鼠支援。
+- 麥克風重新導向支援。
+- 本機儲存體重新導向支援。
+- 相機重新導向支援 (僅適用於 Windows 10 1809 版或更新版本)。
+- 支援新的 iPhone 和 iPad 裝置。
+- 深色和淺色佈景主題支援。
+- 可控制您的手機在連線至遠端電腦或應用程式時是否可鎖定。
+- 現在只要按住 [遠端桌面標誌] 按鈕，即可摺疊作用中工作階段連線列。
 
 ## <a name="updates-for-version-8142"></a>8\.1.42 版的更新
 
@@ -48,3 +55,7 @@ ms.locfileid: "71387775"
 *發行日期：03/28/2018*
 
 - 解決 CVE-2018-0886 中所述 CredSSP 加密 Oracle 修復的更新。
+
+## <a name="how-to-report-issues"></a>如何回報問題
+
+我們致力於讓此應用程式發揮最大的效用，並且非常重視您的意見反應。 您可以在用戶端中導覽至 [設定]   > [回報問題]  ，將問題回報給我們。

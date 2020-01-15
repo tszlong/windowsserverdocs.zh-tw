@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 27cf04e8745aeab5cd1f2ce379c8506be642fea2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5c28d8e970bd7db896073bf8cddb168ffe9deff
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381612"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946839"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
@@ -32,19 +32,19 @@ ms.locfileid: "71381612"
 bitsadmin /GetFilesTotal <Job>
 ```
 
-## <a name="parameters"></a>參數
+## <a name="parameters"></a>Parameters
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="BKMK_examples"></a>範例
 
 下列範例會抓取名為*myDownloadJob*之作業中包含的檔案數目。
 ```
 C:\>bitsadmin /GetFilesTotal myDownloadJob
 ```
 
-# #
+## <a name="see-also"></a>請參閱
 
-[命令列語法索引鍵](command-line-syntax-key.md)另請參閱
+[命令列語法關鍵](command-line-syntax-key.md)

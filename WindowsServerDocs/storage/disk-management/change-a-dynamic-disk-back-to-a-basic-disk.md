@@ -1,19 +1,19 @@
 ---
 title: 將動態磁碟變更回基本磁碟
 description: 描述如何將動態磁碟轉換回基本磁碟。
-ms.date: 06/07/2019
+ms.date: 12/18/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c24935e1e1921c2a041ef307ebeb71d10e2a4fe2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ad14225592d627b6ff88b9e2286b686aa549392
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386015"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351946"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>將動態磁碟變更回基本磁碟
 
@@ -24,23 +24,19 @@ ms.locfileid: "71386015"
 > [!WARNING]
 > 若要將動態磁碟轉換回基本磁碟，您必須從磁碟刪除所有磁碟區，並永久清除磁碟上的所有資料。 請務必先備份您想要保留的任何資料，再繼續進行作業。
 
-## <a name="changing-a-dynamic-disk-back-to-a-basic-disk"></a>將動態磁碟變更回基本磁碟
-
--   [使用 Windows 介面](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface)
--   [使用命令列](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line)
-
-> [!NOTE]
-> 您必須至少是**備份操作員**或**系統管理員**群組的成員，才能完成這些步驟。
-
-#### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface"></a>使用 Windows 介面將動態磁碟變更回基本磁碟
+## <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-by-using-disk-management"></a>使用磁碟管理將動態磁碟變更回基本磁碟
 
 1.  在您要從動態轉換為基本的磁碟上備份所有磁碟區。
 
-2.  在 [磁碟管理] 中，於您要轉換為基本磁碟的動態磁碟上以滑鼠右鍵按一下每個磁碟區，然後針對磁碟上的每個磁碟區按一下 [刪除磁碟區]  。
+2. 使用系統管理員權限開啟 [磁碟管理]。
+
+   執行此動作的簡易方法，是在工作列上的 [搜尋] 方塊中輸入**電腦管理**，選取並按住 (以滑鼠右鍵按一下) [電腦管理]  ，然後選取 [以系統管理員身分執行]   > [是]  。 在開啟 [電腦管理] 後，移至 [存放裝置]   > [磁碟管理]  。
+
+2.  在 [磁碟管理] 中，在要轉換為基本磁碟的動態磁碟上選取並按住 (或以滑鼠右鍵按一下) 每個磁碟區，然後按一下 [刪除磁碟區]  。
 
 3.  刪除磁碟上的所有磁碟區後，以滑鼠右鍵按一下磁碟，然後按一下 [轉換成基本磁碟]  。
 
-#### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line"></a>使用命令列將動態磁碟變更回基本磁碟
+## <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-by-using-a-command-line"></a>使用命令列將動態磁碟變更回基本磁碟
 
 1.  在您要從動態轉換為基本的磁碟上備份所有磁碟區。
 
@@ -50,7 +46,7 @@ ms.locfileid: "71386015"
 
 4.  在 **DISKPART** 提示中鍵入 `select disk <disknumber>`。
 
-5.  在 **DISKPART** 提示中鍵入 `detail disk <disknumber>`。
+5.  在 **DISKPART** 提示中鍵入 `detail disk`。
 
 6.  在 **DISKPART** 提示中，針對磁碟上的每個磁碟區鍵入 `select volume= <volumenumber>`，然後鍵入 `delete volume`。
 
@@ -58,8 +54,7 @@ ms.locfileid: "71386015"
 
 8.  在 **DISKPART** 提示中鍵入 `convert basic`。
 
-
-| 值  | 描述 |
+| 值  | 說明 |
 | --- | --- |
 | **list disk**                         | 顯示磁碟清單和這些磁碟的相關資訊，例如大小、可用空間數量、磁碟是基本還是動態磁碟，以及磁碟使用的是主開機記錄 (MBR) 還是 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。 標示有星號 (*) 的磁碟具有焦點。 |
 | **select disk** <em>disknumber</em>   | 選取指定的磁碟 (其中 <em>disknumber</em> 是磁碟編號)，並讓它成為焦點。  |

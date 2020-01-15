@@ -8,16 +8,16 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb93ec15fd138ee65797c9d27413552c3a1759a6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402120"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949675"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>在 Windows Server 上使用磁片清理
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 [磁片清理] 工具會在 Windows Server 環境中清除不必要的檔案。 Windows Server 2019 和 Windows Server 2016 上預設會提供這項工具，但您可能必須採取幾個手動步驟，才能在舊版的 Windows Server 上啟用它。
 
@@ -29,9 +29,9 @@ ms.locfileid: "71402120"
 
 請遵循下列步驟，使用 [新增角色及功能] Wizard 在執行 Windows Server 2012 R2 或更早版本的伺服器上安裝桌面體驗，這也會安裝磁片清理。
 
-1. 如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
+1. 如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項將其開啟。
 
-   - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。
+   - 在 Windows 桌面上，按一下 Windows 工作列中的 **\[伺服器管理員\]** 以啟動伺服器管理員。
 
    - 移至 [**開始**]，然後選取 [伺服器管理員] 磚。
 
@@ -61,10 +61,10 @@ ms.locfileid: "71402120"
 
 若要使用 cleanmgr.exe 釋放，請安裝先前所述的桌面體驗，或複製伺服器上已存在的兩個檔案 cleanmgr.exe 釋放和 cleanmgr.exe 釋放。 使用下表來找出作業系統的檔案。
 
-| 作業系統  | 架構  | 檔案位置  |
+| 作業系統  | Architecture  | 檔案位置  |
 | ----------------- | -------------- | --------------- |
-| Windows Server 2008 R2 | 64 位元 | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
-| Windows Server 2008 R2 | 64 位元 | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
+| Windows Server 2008 R2 | 64 位元 | C:\Windows\winsxs\ amd64_microsoft-Windows cleanmgr_31bf3856ad364e35_6. 1.7600. 16385_none_c9392808773cd7da \cleanmgr.exe 
+| Windows Server 2008 R2 | 64 位元 | C:\Windows\winsxs\ amd64_microsoft-Windows cleanmgr.exe 釋放 resources_31bf3856ad364e35_6. 1.7600. 16385_en-us_b9cb6194b257cc63 \cleanmgr.exe.mui |
 
 找出 cleanmgr.exe 釋放，並將檔案移至 **%systemroot%\System32**。
 
@@ -76,6 +76,6 @@ ms.locfileid: "71402120"
 
 ## <a name="additional-references"></a>其他參考資料
 
-[釋放 Windows 10 中的磁片磁碟機空間](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[釋放 Windows 10 中的磁片磁碟機空間](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
 
 [cleanmgr](../../administration/windows-commands/cleanmgr.md)

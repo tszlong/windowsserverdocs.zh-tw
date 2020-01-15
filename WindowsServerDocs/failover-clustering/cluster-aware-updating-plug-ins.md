@@ -9,12 +9,12 @@ author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
 description: 在 Windows Server 中使用叢集感知更新以在叢集上安裝更新時，如何使用外掛程式來協調更新。
-ms.openlocfilehash: f6c572a397530704dd91d9c67c5c1758ccc085c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5fabd55f54527a2396643cea48980077891e3281
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361295"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948070"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>叢集感知更新外掛程式的工作方式
 
@@ -46,12 +46,12 @@ ms.locfileid: "71361295"
 
 藉由使用下表所列的 CAU PowerShell Cmdlet，您可以藉由傳遞 **– CauPluginName**參數，為更新執行或掃描指定一或多個外掛程式\-。 您可以使用逗號分隔，以指定名稱中的多個外掛程式\-。 如果您指定多個外掛程式\-，您也可以在「更新執行」期間，藉由指定 **\-RunPluginsSerially**、 **\-StopOnPluginFailure**和 **– SeparateReboots**參數，來控制「外掛程式\-」在執行期間如何影響彼此。 如需使用多個外掛程式\-的詳細資訊，請使用下表中提供給 Cmdlet 檔的連結。  
   
-|Cmdlet|描述|  
+|Cmdlet|說明|  
 |----------|---------------|  
-|[新增-Add-cauclusterrole](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/add-cauclusterrole)|新增 CAU 叢集角色，以提供自我\-更新功能至指定的叢集。|  
-|[叫用-Get-caurun](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/invoke-caurun)|執行叢集節點掃描以判斷適用的更新，並透過所指定叢集上的「更新執行」安裝那些更新。|  
-|[叫用-Invoke-causcan](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/invoke-causcan)|執行叢集節點掃描以判斷適用的更新，並傳回將套用至所指定叢集中每個節點的初始更新集清單。|  
-|[設定-Add-cauclusterrole](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/set-cauclusterrole)|設定所指定叢集上的 CAU 叢集角色屬性。|  
+|[新增-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/add-cauclusterrole)|新增 CAU 叢集角色，以提供自我\-更新功能至指定的叢集。|  
+|[叫用-Get-caurun](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-caurun)|執行叢集節點掃描以判斷適用的更新，並透過所指定叢集上的「更新執行」安裝那些更新。|  
+|[叫用-Invoke-causcan](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-causcan)|執行叢集節點掃描以判斷適用的更新，並傳回將套用至所指定叢集中每個節點的初始更新集清單。|  
+|[設定-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/set-cauclusterrole)|設定所指定叢集上的 CAU 叢集角色屬性。|  
   
 如果您未使用這些 Cmdlet 在參數中指定 CAU 外掛程式\-，則預設值為**microsoft.windowsupdateplugin**中的插頭\-。  
   
@@ -81,11 +81,11 @@ CAU 安裝 \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) �
   
 ## <a name="manage-plug-ins-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell Cmdlet 管理外掛程式\-  
   
-|Cmdlet|描述|  
+|Cmdlet|說明|  
 |----------|---------------|  
-|[Unregister-cauplugin](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/get-cauplugin)|抓取在本機電腦上註冊的一或多個軟體更新\-外掛程式的相關資訊。|  
-|[註冊-Unregister-cauplugin]((https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/register-cauplugin))|在本機電腦上註冊 CAU 軟體更新外掛程式\-。|  
-|[取消註冊-Unregister-cauplugin](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/unregister-cauplugin)|從可供 CAU 使用的外掛程式\-清單中移除軟體更新外掛程式\-。 **注意：** 無法取消註冊與 CAU \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) 一起安裝的外掛程式\-。|  
+|[Unregister-cauplugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|抓取在本機電腦上註冊的一或多個軟體更新\-外掛程式的相關資訊。|  
+|[註冊-Unregister-cauplugin]((https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin))|在本機電腦上註冊 CAU 軟體更新外掛程式\-。|  
+|[取消註冊-Unregister-cauplugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|從可供 CAU 使用的外掛程式\-清單中移除軟體更新外掛程式\-。 **注意：** 無法取消註冊與 CAU \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) 一起安裝的外掛程式\-。|  
   
 ## <a name="BKMK_WUP"></a>使用 Microsoft.windowsupdateplugin  
 
@@ -95,13 +95,13 @@ CAU 安裝 \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) �
 - 只安裝選取的一般發行版本 \(GDR\) 更新。 根據預設，中的外掛程式\-只會套用重要的軟體更新。 不需要進行任何設定。 預設設定會在每個節點上下載並安裝重要 GDR 更新。 
 
 > [!NOTE]
-> 若要套用預設所選的重要軟體更新以外的更新 \(例如，\)的驅動程式更新，您可以在參數中設定選擇性的插頭\-。 如需詳細資訊，請參閱[設定 Windows Update 代理程式查詢字串](#BKMK_QUERY)。
+> 若要套用預設所選的重要軟體更新以外的更新 \(例如，\)的驅動程式更新，您可以在參數中設定選擇性的插頭\-。 如需詳細資訊，請參閱 [設定 Windows Update 代理程式查詢字串](#BKMK_QUERY)。
 
 ### <a name="requirements"></a>需求
 
 - 容錯移轉叢集與遠端更新協調器電腦 \(如果使用\) 必須符合 CAU 的需求，以及在[cau 的需求和最佳作法](cluster-aware-updating-requirements.md)中所列的遠端系統管理所需的設定。
 - 檢閱[套用 Microsoft 更新的建議](cluster-aware-updating-requirements.md#BKMK_BP_WUA)，接著針對容錯移轉叢集節點進行所需的任何 Microsoft Update 設定變更。
-- 為了獲得最佳結果，我們建議您 \(BPA\) 執行 CAU 最佳做法分析程式，以確保叢集和更新環境已正確設定，以使用 CAU 來套用更新。 如需詳細資訊，請參閱[測試 CAU 更新整備](cluster-aware-updating-requirements.md#BKMK_BPA)。
+- 為了獲得最佳結果，我們建議您 \(BPA\) 執行 CAU 最佳做法分析程式，以確保叢集和更新環境已正確設定，以使用 CAU 來套用更新。 如需詳細資訊，請參閱 [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA)。
 
 > [!NOTE]
 > 系統會排除需要接受 Microsoft 授權條款或需要使用者互動的更新，您需要手動安裝這些更新。
@@ -111,7 +111,7 @@ CAU 安裝 \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) �
 （選擇性）您可以在引數中指定下列的插入\-，以增強或限制中外掛程式\-所套用的更新集合：
 - 若要在中設定「外掛程式」\-以套用建議的更新，以及每個節點上的重要更新，請在 CAU UI 的 [**其他選項**] 頁面上，選取 [**以我接收重要更新的方式提供建議的更新**] 核取方塊。
 <br>或者，在引數中設定 **' IncludeRecommendedUpdates '\=' True** ' 外掛程式\-。
-- 若要在中設定「外掛程式」\-，以篩選套用至每個叢集節點的 GDR 更新類型，請在引數中使用**QueryString**插入\-來指定 Windows Update 代理程式查詢字串。 如需詳細資訊，請參閱[設定 Windows Update 代理程式查詢字串](#BKMK_QUERY)。
+- 若要在中設定「外掛程式」\-，以篩選套用至每個叢集節點的 GDR 更新類型，請在引數中使用**QueryString**插入\-來指定 Windows Update 代理程式查詢字串。 如需詳細資訊，請參閱 [設定 Windows Update 代理程式查詢字串](#BKMK_QUERY)。
 
 ### <a name="BKMK_QUERY"></a>設定 Windows Update 代理程式查詢字串  
 您可以在**microsoft.windowsupdateplugin**中設定預設插頭\-的插入\-，此引數是由 Windows Update 代理程式 \(WUA\) 查詢字串所組成。 此指示使用 WUA API 來識別要套用到每個節點的一或多個 Microsoft 更新群組 (根據特定選取範圍條件)。 您可以使用邏輯 AND 或邏輯 OR 來結合多個條件。 WUA 查詢字串是在引數的插入\-中指定，如下所示：  
@@ -153,8 +153,8 @@ CAU 安裝 \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) �
 
 - 容錯移轉叢集與遠端更新協調器電腦 \(如果使用\) 必須符合 CAU 的需求，以及在[cau 的需求和最佳作法](cluster-aware-updating-requirements.md)中所列的遠端系統管理所需的設定。
 - 檢閱[使用 Microsoft.HotfixPlugin 的建議](cluster-aware-updating-requirements.md#BKMK_BP_HF)。
-- 為獲得最佳結果，建議您執行 CAU 最佳做法分析程式 \(BPA\) 模型，以確保叢集和更新環境已正確設定，以使用 CAU 來套用更新。 如需詳細資訊，請參閱[測試 CAU 更新整備](cluster-aware-updating-requirements.md#BKMK_BPA)。
-- 從發行者取得更新，並將它們複製或解壓縮到伺服器訊息區 \(SMB\) 檔案共用\) \(可支援至少 SMB 2.0 且可供所有叢集節點和遠端更新協調器電腦使用的叢集（如果 CAU 在遠端 \(更新模式\-）。\) 如需詳細資訊，請參閱此主題稍後的[設定 Hotfix 根資料夾結構](#BKMK_HF_ROOT)。 
+- 為獲得最佳結果，建議您執行 CAU 最佳做法分析程式 \(BPA\) 模型，以確保叢集和更新環境已正確設定，以使用 CAU 來套用更新。 如需詳細資訊，請參閱 [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA)。
+- 從發行者取得更新，並將它們複製或解壓縮到伺服器訊息區 \(SMB\) 檔案共用\) \(可支援至少 SMB 2.0 且可供所有叢集節點和遠端更新協調器電腦使用的叢集（如果 CAU 在遠端 \(更新模式\-）。 如需詳細資訊，請參閱本主題稍後的 [設定 Hotfix 根資料夾結構](#BKMK_HF_ROOT) 。 
 
     > [!NOTE]
     > 根據預設，此外掛程式\-只會安裝具有下列副檔名的修補程式： .msu、.msi 和 .msp。
@@ -162,7 +162,7 @@ CAU 安裝 \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) �
 - 將 **% systemroot%\\System32\\WindowsPowerShell\\v1.0\\模組**中所提供的 \(defaulthotfixconfig.xml，複製到已安裝 CAU 工具的電腦上\\的 clusterawareupdating.DLL 檔案夾，\) 至您所建立的修補程式根資料夾，並在其中解壓縮修補程式。 例如，將配置檔案複製到 *\\\\MyFileServer\\的修補程式\\根\\* 。 
 
     > [!NOTE]
-    > 若要安裝 Microsoft 提供的大部分 Hotfix 與其他更新，您可以使用預設的 Hotfix 設定檔而無需修改。 若您的案例需要，您可以以進階工作方式自訂設定檔。 設定檔可以包含自訂規則，例如處理具有特定副檔名的 Hotfix 或定義特定結束條件行為的規則。 如需詳細資訊，請參閱此主題稍後的[自訂 Hotfix 設定檔](#BKMK_CONFIG_FILE)。
+    > 若要安裝 Microsoft 提供的大部分 Hotfix 與其他更新，您可以使用預設的 Hotfix 設定檔而無需修改。 若您的案例需要，您可以以進階工作方式自訂設定檔。 設定檔可以包含自訂規則，例如處理具有特定副檔名的 Hotfix 或定義特定結束條件行為的規則。 如需詳細資訊，請參閱本主題稍後的 [自訂 Hotfix 設定檔](#BKMK_CONFIG_FILE) 。
 
 ### <a name="configuration"></a>設定
 
@@ -177,7 +177,7 @@ CAU 安裝 \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) �
 
 - （選擇性）在中設定插頭\-，以便在從「修補程式」檔案共用存取資料時強制執行 SMB 加密。 在 CAU UI 的 [**其他選項**] 頁面上，選取 [**存取修補程式根資料夾時需要 SMB 加密**] 選項，或在引數中設定**RequireSMBEncryption\=' True '** PowerShell 外掛程式\-。 
   > [!IMPORTANT]
-  > 您必須在 SMB 伺服器上執行額外的設定步驟，以使用 SMB 簽署或 SMB 加密來啟用 SMB 資料完整性。 如需詳細資訊，請參閱[限制對 Hotfix 根資料夾的存取](#BKMK_ACL)中的步驟 4。 若選取強制使用 SMB 加密的選項，且未使用 SMB 加密來設定對 Hotfix 根資料夾的存取權，「更新執行」將失敗。
+  > 您必須在 SMB 伺服器上執行額外的設定步驟，以使用 SMB 簽署或 SMB 加密來啟用 SMB 資料完整性。 如需詳細資訊，請參閱 [限制對 Hotfix 根資料夾的存取](#BKMK_ACL)中的步驟 4。 若選取強制使用 SMB 加密的選項，且未使用 SMB 加密來設定對 Hotfix 根資料夾的存取權，「更新執行」將失敗。
 - 或者，您可以停用是否有足夠權限可存取 Hotfix 根資料夾與 Hotfix 設定檔的預設檢查。 在 CAU UI 中，選取 [停用] [**檢查] 以取得對此修補程式根資料夾和設定檔的系統管理員存取權**，或設定**DisableAclChecks\=' True '** 外掛程式\-in 引數。
 - （選擇性）設定**HotfixInstallerTimeoutMinutes\=<Integer>** 引數，以指定在等候「修補程式」的插入\-等待的時間長度。 \(預設值為30分鐘。\) 例如，若要指定兩個小時的超時期間，請將**HotfixInstallerTimeoutMinutes\=120**。
 - （選擇性）設定**HotfixConfigFileName \= <name>** 在引數中插入\-，以指定位於「修補程式」根資料夾中的「修補程式」設定檔名稱。 若未指定，會使用預設名稱 DefaultHotfixConfig.xml。
@@ -222,7 +222,7 @@ CAU 安裝 \(**microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**\) �
   
 #### <a name="example-3---folder-structure-used-to-apply-updates-other-than-msu-msi-and-msp-files"></a>範例 3-用來套用 .msu、.msi 和 .msp 檔案以外之更新的資料夾結構
   
-根據預設值，**Microsoft.HotfixPlugin** 只會套用具有 .msu、.msi 或 .msp 副檔名的更新。 不過，特定更新可能會有不同的副檔名，而且需要不同的安裝命令。 例如，您可能需要將具有副檔名 .exe 的韌體更新套用到叢集中的節點。 您可以使用子資料夾設定 [修補程式] 根資料夾，以指出應該安裝特定、非\-預設的更新類型。 您也必須設定對應的資料夾安裝規則，以在 Hotfix 設定 XML 檔案的 `<FolderRules>` 元素中指定安裝命令。  
+根據預設值， **Microsoft.HotfixPlugin** 只會套用具有 .msu、.msi 或 .msp 副檔名的更新。 不過，特定更新可能會有不同的副檔名，而且需要不同的安裝命令。 例如，您可能需要將具有副檔名 .exe 的韌體更新套用到叢集中的節點。 您可以使用子資料夾設定 [修補程式] 根資料夾，以指出應該安裝特定、非\-預設的更新類型。 您也必須設定對應的資料夾安裝規則，以在 Hotfix 設定 XML 檔案的 `<FolderRules>` 元素中指定安裝命令。  
   
 在下列範例中， **HotfixRootFolderPath**外掛程式\-in 引數會設定為 *\\\\MyFileServer\\的修補程式\\根\\* 。 有數個更新將套用到所有叢集節點，有一個韌體更新 *SpecialHotfix1.exe* 將套用到 *ContosoNode1* (使用 *FolderRule1*)。 如需有關在 Hotfix 設定檔中設定 *FolderRule1* 的資訊，請參閱此主題稍後的 [自訂 Hotfix 設定檔](#BKMK_CONFIG_FILE) 。  
   
@@ -295,12 +295,12 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
   
 下表說明 `<Template>` 屬性與可能的 `<ExitConditions>` 子元素。  
   
-|`<Template>` 屬性|描述|  
+|`<Template>` 屬性|說明|  
 |--------------------------|---------------|  
 |`path`|`<Extension name>` 屬性中定義之檔案類型的安裝程式完整路徑。<br /><br />若要指定 Hotfix 根資料夾結構中之更新的路徑，請使用 `$update$`。|  
 |`parameters`|`path`中指定之程式的必要或選擇性參數字串。<br /><br />若要指定 Hotfix 根資料夾結構中之更新檔案的路徑參數，請使用 `$update$`。|  
   
-|`<ExitConditions>` 子元素|描述|  
+|`<ExitConditions>` 子元素|說明|  
 |---------------------------------|---------------|  
 |`<Success>`|定義一或多個指出所指定更新已順利完成的結束代碼。 這是必要的子元素。|  
 |`<Success_RebootRequired>`|您可以定義一或多個結束代碼，指出所指定更新成功且節點必須重新啟動 <br>**注意：** （選擇性） `<Folder>` 元素可以包含 `alwaysReboot` 屬性。 若已設定此屬性，它會指出此規則安裝的 Hotfix 是否傳回 `<Success>`中定義的其中一個結束代碼，它是解譯為 `<Success_RebootRequired>` 結束條件。|  
@@ -326,15 +326,15 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
   
 5.  在 SMB 伺服器上啟用 Windows 防火牆規則  
   
-#### <a name="step-1-identify-the-user-account-that-is-used-for-updating-runs-by-using-the-hotfix-plug-in"></a>步驟 1. 識別用來更新執行的使用者帳戶，方法是使用中的 [修復外掛程式]\-
+#### <a name="step-1-identify-the-user-account-that-is-used-for-updating-runs-by-using-the-hotfix-plug-in"></a>步驟 1。 識別用來更新執行的使用者帳戶，方法是使用中的 [修復外掛程式]\-
   
 使用**microsoft.hotfixplugin**執行「更新執行」時，在 cau 中用來檢查安全性設定的帳戶，取決於是否在遠端\-更新模式或自我\-更新模式中使用 cau，如下所示：  
   
 -   **遠端\-更新模式**在叢集上具有系統管理許可權的帳戶，以預覽和套用更新。  
   
--   **自我\-更新模式**在 CAU 叢集角色的 Active Directory 中設定的虛擬電腦物件名稱。 這是針對 CAU 叢集角色在 Active Directory 中預先設置之虛擬電腦物件的名稱，或 CAU 針對叢集角色產生的名稱。 若要取得由 CAU 產生的名稱，請執行**Get\-Add-cauclusterrole** CAU PowerShell Cmdlet。 在輸出中，**ResourceGroupName** 是產生之虛擬電腦物件帳戶的名稱。  
+-   **自我\-更新模式**在 CAU 叢集角色的 Active Directory 中設定的虛擬電腦物件名稱。 這是針對 CAU 叢集角色在 Active Directory 中預先設置之虛擬電腦物件的名稱，或 CAU 針對叢集角色產生的名稱。 若要取得由 CAU 產生的名稱，請執行**Get\-Add-cauclusterrole** CAU PowerShell Cmdlet。 在輸出中， **ResourceGroupName** 是產生之虛擬電腦物件帳戶的名稱。  
   
-#### <a name="step-2-configure-this-user-account-in-the-necessary-groups-on-an-smb-file-server"></a>步驟 2. 在 SMB 檔案伺服器上的適當群組中設定此使用者帳戶
+#### <a name="step-2-configure-this-user-account-in-the-necessary-groups-on-an-smb-file-server"></a>步驟 2。 在 SMB 檔案伺服器上的適當群組中設定此使用者帳戶
   
 > [!IMPORTANT]  
 > 您必須在 SMB 伺服器上新增一個帳戶，供「更新執行」做為本機系統管理員帳戶使用。 若因為您組織的安全性原則而不允許您這樣做，請使用下列程序在 SMB 伺服器上為此帳戶設定必要權限。  
@@ -357,9 +357,9 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
   
 6.  新增將供「更新執行」使用的帳戶至 [群組或使用者名稱] 清單。  
   
-7.  將「執行方法」與「遠端啟用」權限授與將供「更新執行」使用的帳戶。  
+7.  將「執行方法」 與「遠端啟用」 權限授與將供「更新執行」使用的帳戶。  
   
-#### <a name="step-3-configure-permissions-to-access-the-hotfix-root-folder"></a>步驟 3。 設定對 Hotfix 根資料夾的存取權限
+#### <a name="step-3-configure-permissions-to-access-the-hotfix-root-folder"></a>步驟 3. 設定對 Hotfix 根資料夾的存取權限
   
 根據預設，當您嘗試套用更新時，在中的「修復外掛程式」\-會檢查 NTFS 檔案系統許可權的設定，以存取此「修補程式」根資料夾。 如果未正確設定資料夾存取權限，則在中使用 修復外掛程式\-執行的更新可能會失敗。  
   
@@ -371,7 +371,7 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
   
 -   僅允許特定安全性主體 \(但不需要\) 有寫入或修改許可權。 允許的主體是本機 Administrators 群組、SYSTEM、CREATOR OWNER 與 TrustedInstaller。 其他帳戶或群組不能有 Hotfix 根資料夾的「寫入」或「修改」權限。  
   
-（選擇性）您可以停用上述的 [外掛程式]\-預設執行的檢查。 若要執行這項作業，您可以使用兩種方法：  
+（選擇性）您可以停用上述的 [外掛程式]\-預設執行的檢查。 您可以透過下列兩種方式的其中一種來執行此動作：  
   
 -   如果您使用 CAU PowerShell Cmdlet，請在的**CauPluginArguments**參數中設定**DisableAclChecks\=' True '** 引數，以取得中的修補程式外掛程式\-。  
   
@@ -379,7 +379,7 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
   
 不過，做為許多環境中的最佳做法，我們建議您使用預設設定來強制這些檢查。  
   
-#### <a name="step-4-configure-settings-for-smb-data-integrity"></a>步驟 4. 設定 SMB 資料完整性設定
+#### <a name="step-4-configure-settings-for-smb-data-integrity"></a>步驟 4。 設定 SMB 資料完整性設定
   
 若要檢查叢集節點與 SMB 檔案共用之間連線中的資料完整性，中的「修補程式」\-外掛程式會要求您針對 SMB 簽署或 SMB 加密啟用 SMB 檔案共用上的設定。 從 Windows Server 2012 開始支援 SMB 加密，它在許多環境中提供增強的安全性和更好的效能。 您可以啟用任一設定或同時啟用這兩個設定，如下所示：  
   
@@ -406,7 +406,7 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
   
 -   [叢集感知更新總覽](cluster-aware-updating.md)
   
--   [叢集感知更新 Windows PowerShell Cmdlet](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating)  
+-   [叢集感知更新 Windows PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating)  
   
 -   [叢集感知更新外掛程式參考](https://msdn.microsoft.com/library/hh418084.aspx)  
   

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3098cb12379493a82c77412b2328f5312afb2c0c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8e3c98fd965fc6923c6af7893261bd1e0eee7d8b
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379683"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947595"
 ---
 # <a name="certreq"></a>certreq
 
@@ -30,7 +30,7 @@ Certreq 可以用來向憑證授權單位單位（CA）要求憑證、從 CA 取
 > - 舊版的 certreq 可能不會提供本檔中所述的所有選項。 您可以藉由執行語法標記法一節中所示的命令，來查看特定 certreq 版本所提供的所有選項。
 > - Certreq 不支援在 CEP/CES 環境中，根據金鑰證明範本來建立新的憑證要求
 
-## <a name="BKMK_Contents"></a>編制
+## <a name="BKMK_Contents"></a>目錄
 
 本文中的主要章節如下所示：
 1.  [之外](#BKMK_Verbs)
@@ -43,7 +43,7 @@ Certreq 可以用來向憑證授權單位單位（CA）要求憑證、從 CA 取
 
 下表描述可搭配 certreq 命令使用的動詞
 
-|參數|描述|
+|切換|說明|
 |------|-----------|
 |-提交|將要求提交至 CA。 如需詳細資訊，請參閱[Certreq-submit](#BKMK_Submit)。|
 |-取出*RequestID*|從 CA 抓取對先前要求的回應。 如需詳細資訊，請參閱[Certreq-取出](#BKMK_Retrieve)。|
@@ -53,29 +53,29 @@ Certreq 可以用來向憑證授權單位單位（CA）要求憑證、從 CA 取
 |-Sign|簽署交叉認證或合格的從屬要求。 如需詳細資訊，請參閱[Certreq-sign](#BKMK_sign)。|
 |-註冊|註冊或續約憑證。 如需詳細資訊，請參閱[Certreq-註冊](#BKMK_enroll)。|
 |-?|顯示 certreq 語法、選項和描述的清單。|
-|動詞 >-？ *\<*|顯示指定之動詞命令的說明。|
+|*\<動詞 >* -？|顯示指定之動詞命令的說明。|
 |-v-？|顯示 certreq 語法、選項和描述的詳細資訊清單。|
 
 返回[內容](#BKMK_Contents)
 
 ## <a name="BKMK_notation"></a>語法標記法
 
--   如需基本命令列語法, 請執行`certreq -?`
--   如需搭配特定動詞使用 certutil 的語法，請 > 執行**certreq**  *\<動詞*命令 **-？**
--   若要將所有 certutil 語法傳送到文字檔, 請執行下列命令:  
+-   如需基本命令列語法，請執行 `certreq -?`
+-   如需搭配特定動詞使用 certutil 的語法，請執行**certreq** *\<動詞 >* **-？**
+-   若要將所有 certutil 語法傳送到文字檔，請執行下列命令：  
     -   `certreq -v -? > certreqhelp.txt`
     -   `notepad certreqhelp.txt`
 
-下表描述用來表示命令列語法的標記法。
+下表說明用來指出命令列語法的表示法。
 
-|表示法|描述|
+|表示法|說明|
 |--------|-----------|
-|不含括弧或大括弧的文字|您必須輸入的專案, 如下所示|
-|\<角括弧內的文字 >|您必須為其提供值的預留位置|
-|[括弧內的文字]|選擇性的項目|
-|{大括弧內的文字}|必要專案集;選擇一個|
-|分隔號（&#124;）|互斥專案的分隔符號;選擇一個|
-|省略號 (...)|可以重複的專案|
+|不含括弧或大括弧的文字|必須依照顯示輸入的項目|
+|\<角括弧內的文字 >|必須在其中提供值的保留區|
+|[方括弧內的文字]|選擇性的項目|
+|{大括弧內的文字}|必要的項目集；選擇一個|
+|分隔號（&#124;）|互斥項目的分隔字元；選擇一個|
+|省略符號 (…)|可重複的項目|
 
 返回[內容](#BKMK_Contents)
 
@@ -85,7 +85,7 @@ Certreq 可以用來向憑證授權單位單位（CA）要求憑證、從 CA 取
 ```
 CertReq [-Submit] [Options] [RequestFileIn [CertFileOut [CertChainFileOut [FullResponseFileOut]]]]
 ```
-使用– submit 選項時，您必須指定憑證要求檔案。 如果省略此參數，則會顯示一般的 [開啟檔案] 視窗，您可以在其中選取適當的憑證要求檔案。
+您必須在使用 –submit 選項時指定憑證要求檔案。 假使忽略此參數，則會顯示一般的 [開啟舊檔] 視窗，讓您選取適當的憑證要求檔案。
 
 您可以使用這些範例作為起點，以建立您的憑證提交要求：
 
@@ -93,7 +93,7 @@ CertReq [-Submit] [Options] [RequestFileIn [CertFileOut [CertChainFileOut [FullR
 ```
 certreq –submit certRequest.req certnew.cer certnew.pfx
 ```
-若要藉由指定 SAN 屬性來要求憑證，請參閱 Microsoft 知識庫文章931351中的詳細步驟： < 如何使用 Certreq 公用程式建立和提交，以瞭解如何[將主體別名新增至安全的 LDAP 憑證](https://support.microsoft.com/kb/931351)包含 SAN 的憑證要求一節。
+若要藉由指定 SAN 屬性來要求憑證，請參閱 Microsoft 知識庫文章931351中的詳細步驟：
 
 返回[內容](#BKMK_Contents)
 
@@ -103,7 +103,7 @@ certreq –submit certRequest.req certnew.cer certnew.pfx
 certreq -retrieve [Options] RequestId [CertFileOut [CertChainFileOut [FullResponseFileOut]]]
 ```
 -   如果您未在-config CAComputerName\CANamea 中指定 [CAComputerName] 或 [CAName] 對話方塊，就會顯示所有可用的 Ca 清單。
--   如果您使用-config-而不是-config CAComputerName\CAName，則會使用預設 CA 來處理作業。
+-   如果使用 -config - 來代替 -config CAComputerName\CAName，則會以預設 CA 處理作業。
 -   您可以使用 certreq-取出*RequestID* ，在 CA 實際發出憑證後加以取出。 *RequestID*PKC 可以是具有0x 前置詞的十進位或十六進位，而且它可以是不含0x 前置詞的憑證序號。 您也可以使用它來抓取 CA 曾經發行的任何憑證，包括已撤銷或過期的憑證，而不考慮憑證的要求是否曾經處於擱置狀態。
 -   如果您將要求提交給 CA，CA 的原則模組可能會讓要求處於擱置狀態，並將*RequestID*傳回給 Certreq 呼叫端以供顯示。 最後，CA 的系統管理員會發出憑證或拒絕要求。
 
@@ -123,7 +123,7 @@ certreq -new [Options] [PolicyFileIn [RequestFileOut]]
 2.  「索引*鍵*」是位於等號左邊的參數。
 3.  *值*是等號右邊的參數。
 
-例如，最小的 INF 檔案看起來會像下面這樣：
+例如，最小的 INF 檔案看起來類似下面所示：
 ```
 [NewRequest] 
 ; At least one value must be set in this section 
@@ -135,67 +135,67 @@ Subject = "CN=W2K8-BO-DC.contoso2.com"
 
 對於作為新憑證要求範本的 INF 檔案而言，這是必要區段。 此區段至少需要一個具有值的索引鍵。
 
-|Key|定義|值|範例|
+|按鍵|定義|值|範例|
 |---|----------|-----|-------|
-|Subject|有數個應用程式依賴憑證中的主體資訊。 因此，建議您指定此索引鍵的值。 如果此處未設定主旨，建議您在主體別名憑證延伸中包含主體名稱。|相對辨別名稱字串值|Subject = "CN = computer1，contoso .com" Subject = "CN = John Smith，CN = Users，DC = Contoso，DC = com"|
-|Exportable|如果此屬性設定為 TRUE，則可以使用憑證來匯出私密金鑰。 為了確保高層級的安全性，私密金鑰不應該是可匯出的;不過，在某些情況下，如果有數部電腦或使用者必須共用相同的私密金鑰，可能就需要將私密金鑰匯出。|true、false|可匯出 = TRUE。 CNG 金鑰可以區分此和純文字匯出。 CAPI1 索引鍵不能。|
-|ExportableEncrypted|指定是否應將私密金鑰設定為可匯出。|true、false|ExportableEncrypted = true</br>秘訣：並非所有的公用金鑰大小和演算法都適用所有雜湊演算法。 Tamehe 指定的 CSP 也必須支援指定的雜湊演算法。 若要查看支援的雜湊演算法清單，您可以執行命令<code>certutil -oid 1 &#124; findstr pwszCNGAlgid &#124; findstr /v CryptOIDInfo</code>|
+|主體|有數個應用程式依賴憑證中的主體資訊。 因此，建議為此金鑰指定一個值。 假如此處沒有設定主體，建議在主體的別名憑證延伸中包括主體名稱。|相對辨別名稱字串值|Subject = "CN = computer1，contoso .com" Subject = "CN = John Smith，CN = Users，DC = Contoso，DC = com"|
+|Exportable|如果此屬性設為 TRUE，則可與憑證一起匯出私密金鑰。 為了確保高層級的安全性，不應該匯出私密金鑰，不過在某些情況下，如果有數部電腦或使用者必須共用相同的私密金鑰，可能就有必要使私密金鑰可以匯出。|true、false|可匯出 = TRUE。 CNG 金鑰可以區分此和純文字匯出。 CAPI1 索引鍵不能。|
+|ExportableEncrypted|指定是否應將私密金鑰設定為可匯出。|true、false|ExportableEncrypted = true</br>提示：並非所有公用金鑰大小和演算法都適用所有雜湊演算法。 Tamehe 指定的 CSP 也必須支援指定的雜湊演算法。 若要查看支援的雜湊演算法清單，您可以執行命令 <code>certutil -oid 1 &#124; findstr pwszCNGAlgid &#124; findstr /v CryptOIDInfo</code>|
 |HashAlgorithm|要用於此要求的雜湊演算法。|Sha256、sha384、sha512、sha1、md5、md4、md2|HashAlgorithm = sha1。 若要查看支援的雜湊演算法清單，請使用： certutil &#124; -oid &#124; 1 Findstr pwszCNGAlgid findstr/v CryptOIDInfo|
 |KeyAlgorithm|服務提供者將用來產生公開和私密金鑰組的演算法。|RSA、DH、DSA、ECDH_P256、ECDH_P521、ECDSA_P256、ECDSA_P384、ECDSA_P521|KeyAlgorithm = RSA|
-|KeyContainer|不建議針對產生新金鑰材料的新要求設定此參數。 金鑰容器是由系統自動產生和維護。 對於應該使用現有金鑰材料的要求，此值可以設定為現有金鑰的金鑰容器名稱。 使用 certutil – key 命令來顯示機器內容可用的金鑰容器清單。 針對目前使用者的內容，請使用 certutil – key – user 命令。|隨機字串值</br>秘訣：您應該使用雙引號括住具有空白或特殊字元的任何 INF 金鑰值，以避免可能的 INF 剖析問題。|KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}|
+|KeyContainer|不建議針對產生新金鑰材料的新要求設定此參數。 金鑰容器是由系統自動產生和維護。 對於應該使用現有金鑰材料的要求而言，可將此值設為現有金鑰的金鑰容器名稱。 使用 certutil –key 命令來顯示機器內容中可用的金鑰容器清單。 針對目前使用者的內容，請使用 certutil – key – user 命令。|隨機字串值</br>提示：您應該在具有空白或特殊字元的任何 INF 金鑰值前後加上雙引號，以避免可能的 INF 剖析問題。|KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}|
 |KeyLength|定義公開和私密金鑰的長度。 金鑰長度會影響憑證的安全性層級。 較大的金鑰長度通常會提供較高的安全性層級;不過，某些應用程式可能會有關于金鑰長度的限制。|密碼編譯服務提供者所支援的任何有效金鑰長度。|KeyLength = 2048|
-|KeySpec|決定金鑰是否可用於簽章、Exchange （加密）或兩者。|AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE|KeySpec = AT_KEYEXCHANGE|
-|KeyUsage|定義應使用的憑證金鑰。|CERT_DIGITAL_SIGNATURE_KEY_USAGE--80 （128）</br>秘訣：所顯示的值是每個位定義的十六進位（十進位）值。 也可以使用較舊的語法：已設定多個位的單一十六進位值，而不是符號標記法。 例如，KeyUsage = 0xa0。</br>CERT_NON_REPUDIATION_KEY_USAGE--40 （64）</br>CERT_KEY_ENCIPHERMENT_KEY_USAGE--20 （32）</br>CERT_DATA_ENCIPHERMENT_KEY_USAGE--10 （16）</br>CERT_KEY_AGREEMENT_KEY_USAGE--8</br>CERT_KEY_CERT_SIGN_KEY_USAGE--4</br>CERT_OFFLINE_CRL_SIGN_KEY_USAGE--2</br>CERT_CRL_SIGN_KEY_USAGE--2</br>CERT_ENCIPHER_ONLY_KEY_USAGE--1</br>CERT_DECIPHER_ONLY_KEY_USAGE--8000 （32768）|KeyUsage = "CERT_DIGITAL_SIGNATURE_KEY_USAGE &#124; CERT_KEY_ENCIPHERMENT_KEY_USAGE"</br>秘訣：多個值使用分隔號（&#124;）符號分隔符號。 使用多個值時，請確定您使用雙引號來避免 INF 剖析問題。|
+|KeySpec|決定金鑰是否可用於簽章、Exchange （加密）或兩者。|AT_NONE、AT_SIGNATURE、AT_KEYEXCHANGE|KeySpec = AT_KEYEXCHANGE|
+|KeyUsage|定義應使用的憑證金鑰。|CERT_DIGITAL_SIGNATURE_KEY_USAGE--80 （128）</br>提示：顯示的值是每個位定義的十六進位（十進位）值。 也可以使用較舊的語法：已設定多個位的單一十六進位值，而不是符號標記法。 例如，KeyUsage = 0xa0。</br>CERT_NON_REPUDIATION_KEY_USAGE--40 （64）</br>CERT_KEY_ENCIPHERMENT_KEY_USAGE--20 （32）</br>CERT_DATA_ENCIPHERMENT_KEY_USAGE--10 （16）</br>CERT_KEY_AGREEMENT_KEY_USAGE--8</br>CERT_KEY_CERT_SIGN_KEY_USAGE--4</br>CERT_OFFLINE_CRL_SIGN_KEY_USAGE--2</br>CERT_CRL_SIGN_KEY_USAGE--2</br>CERT_ENCIPHER_ONLY_KEY_USAGE--1</br>CERT_DECIPHER_ONLY_KEY_USAGE--8000 （32768）|KeyUsage = "CERT_DIGITAL_SIGNATURE_KEY_USAGE &#124; CERT_KEY_ENCIPHERMENT_KEY_USAGE"</br>提示：多個值使用分隔號（&#124;）符號分隔符號。 使用多個值時，請確定您使用雙引號來避免 INF 剖析問題。|
 |KeyUsageProperty|抓取值，識別可使用私密金鑰的特定目的。|NCRYPT_ALLOW_DECRYPT_FLAG--1</br>NCRYPT_ALLOW_SIGNING_FLAG--2</br>NCRYPT_ALLOW_KEY_AGREEMENT_FLAG--4</br>NCRYPT_ALLOW_ALL_USAGES--ffffff （16777215）|KeyUsageProperty = "NCRYPT_ALLOW_DECRYPT_FLAG &#124; NCRYPT_ALLOW_SIGNING_FLAG"|
-|MachineKeySet|當您需要建立由電腦所擁有而不是使用者所擁有的憑證時，此金鑰很重要。 產生的金鑰內容會保留在已建立要求之安全性主體（使用者或電腦帳戶）的安全性內容中。 當系統管理員代表電腦建立憑證要求時，必須在電腦的安全性內容中建立金鑰內容，而不是系統管理員的安全性內容。 否則，電腦無法存取其私密金鑰，因為它會在系統管理員的安全性內容中。|true、false|MachineKeySet = true</br>秘訣：預設值為 false。|
-|NotBefore|指定無法發出要求的日期或日期和時間。 NotBefore 可以與 ValidityPeriod 和 ValidityPeriodUnits 搭配使用。|日期或日期和時間|NotBefore = "7/24/2012 10:31 AM"</br>秘訣：NotBefore 和 NotAfter 僅適用于 RequestType = cert。日期剖析嘗試區分地區設定。使用月份名稱會區分其意義，且應該在每個地區設定中使用。|
-|NotAfter|指定無法發出要求的日期或日期和時間。 NotAfter 不能與 ValidityPeriod 或 ValidityPeriodUnits 搭配使用。|日期或日期和時間|NotAfter = "9/23/2014 10:31 AM"</br>秘訣：NotBefore 和 NotAfter 僅適用于 RequestType = cert。日期剖析嘗試區分地區設定。使用月份名稱會區分其意義，且應該在每個地區設定中使用。|
+|MachineKeySet|當您需要建立由電腦所擁有而不是使用者所擁有的憑證時，此金鑰很重要。 產生的金鑰材料會保存在建立該要求的安全性主體 (使用者或電腦帳戶) 的安全性內容中。 當系統管理員代表電腦建立憑證要求時，必須在電腦的安全性內容中建立金鑰內容，而不是系統管理員的安全性內容。 否則，電腦無法存取其私密金鑰，因為它會在系統管理員的安全性內容中。|true、false|MachineKeySet = true</br>提示：預設值為 false。|
+|NotBefore|指定無法發出要求的日期或日期和時間。 NotBefore 可以與 ValidityPeriod 和 ValidityPeriodUnits 搭配使用。|日期或日期和時間|NotBefore = "7/24/2012 10:31 AM"</br>提示： NotBefore 和 NotAfter 僅適用于 RequestType = cert。日期剖析嘗試區分地區設定。使用月份名稱會區分其意義，且應該在每個地區設定中使用。|
+|NotAfter|指定無法發出要求的日期或日期和時間。 NotAfter 不能與 ValidityPeriod 或 ValidityPeriodUnits 搭配使用。|日期或日期和時間|NotAfter = "9/23/2014 10:31 AM"</br>提示： NotBefore 和 NotAfter 僅適用于 RequestType = cert。日期剖析嘗試區分地區設定。使用月份名稱會區分其意義，且應該在每個地區設定中使用。|
 |PrivateKeyArchive|只有在對應的 RequestType 設定為 "CMC" 時，PrivateKeyArchive 設定才會運作，因為只有憑證管理訊息 over CMS （CMC）要求格式，才能安全地將要求者的私密金鑰傳送至 CA 進行金鑰保存。|true、false|PrivateKeyArchive = True|
-|EncryptionAlgorithm|要使用的加密演算法。|視作業系統版本和安裝的密碼編譯提供者集而定，可能的選項會有所不同。 若要查看可用的演算法清單，請執行命令<code>certutil -oid 2 &#124; findstr pwszCNGAlgid</code>指定的 CSP 也必須支援指定的對稱式加密演算法和長度。|EncryptionAlgorithm = 3des|
+|EncryptionAlgorithm|要使用的加密演算法。|視作業系統版本和安裝的密碼編譯提供者集而定，可能的選項會有所不同。 若要查看可用的演算法清單，請執行命令 <code>certutil -oid 2 &#124; findstr pwszCNGAlgid</code> 指定的 CSP 必須同時支援指定的對稱式加密演算法和長度。|EncryptionAlgorithm = 3des|
 |EncryptionLength|要使用的加密演算法長度。|指定 EncryptionAlgorithm 所允許的任何長度。|EncryptionLength = 128|
-|ProviderName|提供者名稱是 CSP 的顯示名稱。|如果您不知道所使用之 CSP 的提供者名稱，請從命令列執行 certutil –請 csplist。 此命令會顯示本機系統上所有可用的 Csp 名稱|ProviderName = "Microsoft RSA SChannel 密碼編譯提供者"|
-|ProviderType|提供者類型是用來根據特定的演算法功能（例如「RSA Full」）來選取特定的提供者。|如果您不知道所使用之 CSP 的提供者類型，請從命令提示字元執行 certutil –請 csplist。 此命令會顯示本機系統上所有可用 Csp 的提供者類型。|ProviderType = 1|
-|RenewalCert|如果您需要更新存在於產生憑證要求之系統上的憑證，您必須將其憑證雜湊指定為此金鑰的值。|在建立憑證要求的電腦上可用之任何憑證的憑證雜湊。 如果您不知道憑證雜湊，請使用 [憑證] MMC 嵌入式管理單元，並查看應更新的憑證。 開啟憑證內容，並查看憑證的「指紋」屬性。 憑證更新需要 PKCS # 7 或 CMC 要求格式。|RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D|
+|ProviderName|提供者名稱是 CSP 的顯示名稱。|假如您不知道所使用的 CSP 的提供者名稱，請從命令列執行 certutil –csplist。 此命令會顯示本機系統上所有可用的 Csp 名稱|ProviderName = "Microsoft RSA SChannel 密碼編譯提供者"|
+|ProviderType|提供者類型是用來根據特定的演算法功能（例如「RSA Full」）來選取特定的提供者。|假如您不知道所使用的 CSP 的提供者類型，請從命令列執行 certutil –csplist。 此命令會顯示本機系統上所有可用 Csp 的提供者類型。|ProviderType = 1|
+|RenewalCert|如果您需要更新存在於產生憑證要求之系統上的憑證，您必須將其憑證雜湊指定為此金鑰的值。|在建立憑證要求的電腦上可用之任何憑證的憑證雜湊。 若您不知道憑證雜湊，請使用 [憑證] MMC 嵌入式管理單元，並尋找應該要更新的憑證。 開啟憑證內容，並查看憑證的「指紋」屬性。 憑證更新需要 PKCS # 7 或 CMC 要求格式。|RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D|
 |RequesterName</br>注意：這會讓要求代表另一個使用者要求進行註冊。您也必須使用註冊代理程式憑證來簽署要求，否則 CA 將會拒絕要求。 使用-cert 選項來指定註冊代理程式憑證。|如果 RequestType 設定為 PKCS # 7 或 CMC，則可以為憑證要求指定要求者名稱。 如果 RequestType 設定為 PKCS # 10，則會略過此金鑰。 Requestername 只能設定為要求的一部分。 您無法在擱置中的要求中操作 Requestername。|採用|Requestername = "Contoso\BSmith"|
-|RequestType|決定用來產生和傳送憑證要求的標準。|PKCS10--1</br>PKCS7--2</br>CMC--3</br>Cert--4</br>SCEP--fd00 （64768）</br>秘訣：此選項表示自我簽署或自我頒發證書。 它不會產生要求，而是會產生新的憑證，然後安裝憑證。[自我簽署] 是預設值。使用– cert 選項指定簽署憑證，以建立未自我簽署的自我發行憑證。|RequestType = CMC|
-|SecurityDescriptor</br>秘訣：這僅與電腦內容非智慧卡金鑰有關。|包含與安全物件相關聯的安全性資訊。 對於大部分的安全物件，您可以在建立物件的函式呼叫中指定物件的安全描述項。|以[安全描述項定義語言](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx)為基礎的字串。|SecurityDescriptor = "D:P （A;;GA;;;SY）（A;;）GA;;;BA）」|
-|AlternateSignatureAlgorithm|指定並抓取布林值，指出 PKCS # 10 要求或憑證簽章的簽章演算法物件識別元（OID）是否為離散或結合。|true、false|AlternateSignatureAlgorithm = false</br>秘訣：針對 RSA 簽章，false 表示 Pkcs1 v 1.5。 True 表示2.1 版簽章。|
-|無訊息|根據預設，此選項可讓 CSP 存取互動式使用者桌面，並向使用者要求資訊，例如智慧卡 PIN。 如果此金鑰設定為 TRUE，CSP 就不能與桌面互動，而且將會遭到封鎖而無法向使用者顯示任何使用者介面。|true、false|無訊息 = true|
+|RequestType|決定用來產生和傳送憑證要求的標準。|PKCS10--1</br>PKCS7--2</br>CMC--3</br>Cert--4</br>SCEP--fd00 （64768）</br>提示：此選項表示自我簽署或自我頒發證書。 它不會產生要求，而是會產生新的憑證，然後安裝憑證。[自我簽署] 是預設值。使用– cert 選項指定簽署憑證，以建立未自我簽署的自我發行憑證。|RequestType = CMC|
+|SecurityDescriptor</br>提示：這僅與電腦內容非智慧卡金鑰有關。|包含與安全物件相關聯的安全性資訊。 對於大部分的安全物件，您可以在建立物件的函式呼叫中指定物件的安全描述項。|以[安全描述項定義語言](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx)為基礎的字串。|SecurityDescriptor = "D:P （A;;GA;;;SY）（A;;）GA;;;BA）」|
+|AlternateSignatureAlgorithm|指定並抓取布林值，指出 PKCS # 10 要求或憑證簽章的簽章演算法物件識別元（OID）是否為離散或結合。|true、false|AlternateSignatureAlgorithm = false</br>提示：針對 RSA 簽章，false 表示 Pkcs1 v 1.5。 True 表示2.1 版簽章。|
+|Silent|根據預設，此選項可讓 CSP 存取互動式使用者桌面，並向使用者要求資訊，例如智慧卡 PIN。 如果此金鑰設定為 TRUE，CSP 就不能與桌面互動，而且將會遭到封鎖而無法向使用者顯示任何使用者介面。|true、false|無訊息 = true|
 |SMIME|如果此參數設定為 TRUE，則會將具有物件識別碼值1.2.840.113549.1.9.15 的延伸加入至要求中。 物件識別碼的數目取決於 [已安裝的作業系統版本] 和 [CSP] 功能，這是指安全多用途網際網路郵件延伸（S/MIME）應用程式（如 Outlook）可能使用的對稱式加密演算法。|true、false|SMIME = true|
-|假如 useexistingkeyset|這個參數是用來指定建立憑證要求時，應該使用現有的金鑰組。 如果此機碼設為 TRUE，您也必須指定 RenewalCert 索引鍵或 KeyContainer 名稱的值。 您不得設定可匯出的金鑰，因為您無法變更現有金鑰的屬性。 在此情況下，建立憑證要求時，不會產生任何金鑰材料。|true、false|假如 useexistingkeyset = true|
+|假如 useexistingkeyset|這個參數是用來指定建立憑證要求時，應該使用現有的金鑰組。 如果此機碼設為 TRUE，您也必須指定 RenewalCert 索引鍵或 KeyContainer 名稱的值。 您不得設定可匯出的金鑰，因為您無法變更現有金鑰的屬性。 在此例中，當建立憑證要求時，不會產生任何金鑰材料。|true、false|假如 useexistingkeyset = true|
 |KeyProtection|指定一個值，指出私密金鑰在使用前如何受到保護。|XCN_NCRYPT_UI_NO_PROTCTION_FLAG--0</br>XCN_NCRYPT_UI_PROTECT_KEY_FLAG--1</br>XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG--2|KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG|
 |SuppressDefaults|指定布林值，指出要求中是否包含預設的擴充功能和屬性。 預設值是以其物件識別碼（Oid）來表示。|true、false|SuppressDefaults = true|
 |FriendlyName|新憑證的易記名稱。|文字|FriendlyName = "Server1"|
-|ValidityPeriodUnits</br>注意：只有在要求類型 = cert 時，才會使用此憑證。|指定要與 ValidityPeriod 搭配使用的單位數。|Numeric|ValidityPeriodUnits = 3|
+|ValidityPeriodUnits</br>注意：只有在要求類型 = cert 時，才會使用此憑證。|指定要與 ValidityPeriod 搭配使用的單位數。|數字|ValidityPeriodUnits = 3|
 |ValidityPeriod</br>注意：只有在要求類型 = cert 時，才會使用此憑證。|VValidityPeriod 必須是美式英文複數的時間週期。|年、月、周、日、小時、分鐘、秒|ValidityPeriod = 年|
 
 返回[內容](#BKMK_Contents)
 
 **延伸模組**
 
-這是選擇性區段。
+本節為選擇性。
 
 
 |  延伸 OID   | 定義 | 值 |                                                                                                                                                                                                                                                                                                                                                                                                                      範例                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |------------------|------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    2.5.29.17     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                                2.5.29.17 = "{text}"                                                                                                                                                                                                                                                                                                                                                                                                                |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                        *continue* = "UPN =User@Domain.com&"                                                                                                                                                                                                                                                                                                                                                                                                         |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                       *continue* = "EMail =User@Domain.com&"                                                                                                                                                                                                                                                                                                                                                                                                        |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                        *continue* = "DNS = 主機. domain .com &"                                                                                                                                                                                                                                                                                                                                                                                                         |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                               *continue* = "DIRECTORYNAME = CN = NAME，Dc = DOMAIN，DC = com &"                                                                                                                                                                                                                                                                                                                                                                                               |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                             *continue* = "URL =<http://host.domain.com/default.html&>"                                                                                                                                                                                                                                                                                                                                                                                              |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                         *continue* = "IPAddress = 10.0.0.1 &"                                                                                                                                                                                                                                                                                                                                                                                                         |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                       *continue* = "RegisteredId = 1.2.3.4.5 &"                                                                                                                                                                                                                                                                                                                                                                                                       |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                      *continue* = "1.2.3.4.6.1 = {Utf8} String &"                                                                                                                                                                                                                                                                                                                                                                                                      |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                  *continue* = "1.2.3.4.6.2 = {八進位} AAECAwQFBgc = &"                                                                                                                                                                                                                                                                                                                                                                                                   |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                          *continue* = "1.2.3.4.6.2 = {八進位} {hex} 00 01 02 03 04 05 06 07 &"                                                                                                                                                                                                                                                                                                                                                                                           |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                 *continue* = "1.2.3.4.6.3 = {Asn} BAgAAQIDBAUGBw = = &"                                                                                                                                                                                                                                                                                                                                                                                                  |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                           *continue* = "1.2.3.4.6.3 = {hex} 04 08 00 01 02 03 04 05 06 07"                                                                                                                                                                                                                                                                                                                                                                                            |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                        *continue* = "UPN =User@Domain.com&"                                                                                                                                                                                                                                                                                                                                                                                                         |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                       *continue* = "EMail =User@Domain.com&"                                                                                                                                                                                                                                                                                                                                                                                                        |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                        *continue* = "DNS = 主機. domain .com &"                                                                                                                                                                                                                                                                                                                                                                                                         |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                               *continue* = "DIRECTORYNAME = CN = NAME，Dc = DOMAIN，DC = com &"                                                                                                                                                                                                                                                                                                                                                                                               |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                             *continue* = "URL =<http://host.domain.com/default.html&>"                                                                                                                                                                                                                                                                                                                                                                                              |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                         *continue* = "IPAddress = 10.0.0.1 &"                                                                                                                                                                                                                                                                                                                                                                                                         |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                       *continue* = "RegisteredId = 1.2.3.4.5 &"                                                                                                                                                                                                                                                                                                                                                                                                       |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                      *continue* = "1.2.3.4.6.1 = {Utf8} String &"                                                                                                                                                                                                                                                                                                                                                                                                      |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                  *continue* = "1.2.3.4.6.2 = {八進位} AAECAwQFBgc = &"                                                                                                                                                                                                                                                                                                                                                                                                   |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                          *continue* = "1.2.3.4.6.2 = {八進位} {hex} 00 01 02 03 04 05 06 07 &"                                                                                                                                                                                                                                                                                                                                                                                           |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                 *continue* = "1.2.3.4.6.3 = {Asn} BAgAAQIDBAUGBw = = &"                                                                                                                                                                                                                                                                                                                                                                                                  |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                           *continue* = "1.2.3.4.6.3 = {hex} 04 08 00 01 02 03 04 05 06 07"                                                                                                                                                                                                                                                                                                                                                                                            |
 |    2.5.29.37     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                                 2.5.29.37 = "{text}"                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                            *continue* = "1.3.6.1.5.5.7。                                                                                                                                                                                                                                                                                                                                                                                                            |
-|    *持續*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                          *continue* = "1.3.6.1.5.5.7.3.1"                                                                                                                                                                                                                                                                                                                                                                                                          |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                            *continue* = "1.3.6.1.5.5.7。                                                                                                                                                                                                                                                                                                                                                                                                            |
+|    *continue*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                          *continue* = "1.3.6.1.5.5.7.3.1"                                                                                                                                                                                                                                                                                                                                                                                                          |
 |    2.5.29.19     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                              "{text} ca = 0pathlength = 3"                                                                                                                                                                                                                                                                                                                                                                                                              |
-|     重大     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                                 Critical = 2.5.29.19                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|     嚴重     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                                 Critical = 2.5.29.19                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |     KeySpec      |            |       |                                                                                                                                                                                                                                                                                                                                                                                             AT_NONE--0</br>AT_SIGNATURE--2</br>AT_KEYEXCHANGE--1                                                                                                                                                                                                                                                                                                                                                                                             |
 |   RequestType    |            |       |                                                                                                                                                                                                                                                                                                                                                                                   PKCS10--1</br>PKCS7--2</br>CMC--3</br>Cert--4</br>SCEP--fd00 （64768）                                                                                                                                                                                                                                                                                                                                                                                   |
 |     KeyUsage     |            |       |                                                                                                                                                                                                       CERT_DIGITAL_SIGNATURE_KEY_USAGE--80 （128）</br>CERT_NON_REPUDIATION_KEY_USAGE--40 （64）</br>CERT_KEY_ENCIPHERMENT_KEY_USAGE--20 （32）</br>CERT_DATA_ENCIPHERMENT_KEY_USAGE--10 （16）</br>CERT_KEY_AGREEMENT_KEY_USAGE--8</br>CERT_KEY_CERT_SIGN_KEY_USAGE--4</br>CERT_OFFLINE_CRL_SIGN_KEY_USAGE--2</br>CERT_CRL_SIGN_KEY_USAGE--2</br>CERT_ENCIPHER_ONLY_KEY_USAGE--1</br>CERT_DECIPHER_ONLY_KEY_USAGE--8000 （32768）                                                                                                                                                                                                       |
@@ -207,7 +207,7 @@ Subject = "CN=W2K8-BO-DC.contoso2.com"
 返回[內容](#BKMK_Contents)
 
 > [!NOTE]
-> SubjectNameFlags 可讓 INF 檔案根據目前的使用者或目前的電腦屬性，指定 certreq 自動填入的主旨和 SubjectAltName 延伸模組欄位：DNS 名稱、UPN 等等。 使用常值「範本」表示改用範本名稱旗標。 這可讓您在多個內容中使用單一 INF 檔案，以產生具有內容特定主體資訊的要求。
+> SubjectNameFlags 可讓 INF 檔案根據目前的使用者或目前的電腦屬性，指定 certreq 自動填入的主旨和 SubjectAltName 延伸模組欄位： DNS 名稱、UPN 等等。 使用常值「範本」表示改用範本名稱旗標。 這可讓您在多個內容中使用單一 INF 檔案，以產生具有內容特定主體資訊的要求。
 >
 > 當主體 INF 金鑰值轉換成 asn.1 編碼的辨別名稱時，X500NameFlags 指定要直接傳遞至 CertStrToName API 的旗標。
 
@@ -330,18 +330,18 @@ certreq -enroll –machine –policyserver * "WebServer"
 
 ## <a name="BKMK_Options"></a>選項
 
-|選項。|描述|
+|[選項]|說明|
 |-------|-----------|
 |-任何|強制執行 ICertRequest：： Submit 以判斷編碼類型。|
 |-attrib \<AttributeString >|指定名稱和值字串配對，並以冒號分隔。</br>以 \n 分隔名稱和值字串組（例如，Name1： Value1\nName2： Value2）。|
 |-binary|將輸出檔案格式化為二進位，而不是 base64 編碼。|
-|-PolicyServer  *\<PolicyServer >*|「ldap：  *\<路徑 >* 」</br>為執行憑證註冊原則 Web 服務的電腦插入 URI 或唯一識別碼。</br>若要指定您想要透過流覽來使用要求檔案，請只使用 *\<policyserver >* 的減號（-）符號。|
+|-PolicyServer *\<PolicyServer >*|「ldap： *\<路徑 >* 」</br>為執行憑證註冊原則 Web 服務的電腦插入 URI 或唯一識別碼。</br>若要指定您想要透過流覽來使用要求檔案，請使用 *\<policyserver >* 的減號（-）符號。|
 |-config \<ConfigString >|使用設定字串（也就是 CAHostName\CAName.）中指定的 CA 來處理作業。 若為 HTTPs 連線，請指定註冊伺服器 URI。 若為本機電腦存放區 CA，請使用減號（-）符號。|
-|-匿名|將匿名認證用於憑證註冊 Web 服務。|
+|-Anonymous|將匿名認證用於憑證註冊 Web 服務。|
 |-Kerberos|針對憑證註冊 Web 服務使用 Kerberos （網域）認證。|
-|-ClientCertificate  *\<ClientCertId >*|您可以使用憑證指紋、CN、EKU、範本、電子郵件、UPN 和新的 name = value 語法來取代 *\<ClientCertID >* 。|
-|-Username  *\<使用者名稱 >*|與憑證註冊 Web 服務搭配使用。 您可以使用 SAM 名稱或 domain\user 來替代 *\<UserName >* 此選項可搭配-p 選項使用。|
-|-p  *\<密碼 >*|與憑證註冊 Web 服務搭配使用。 以實際使用者的密碼取代 *\<Password >* 。 此選項可搭配-UserName 選項使用。|
+|-ClientCertificate *\<ClientCertId >*|您可以使用憑證指紋、CN、EKU、範本、電子郵件、UPN 和新的 name = value 語法來取代 *\<ClientCertID >* 。|
+|-UserName *\<使用者名稱 >*|與憑證註冊 Web 服務搭配使用。 您可以將 *\<UserName >* 替換成 SAM 名稱或 domain\user 此選項可搭配-p 選項使用。|
+|-p *\<密碼 >*|與憑證註冊 Web 服務搭配使用。 以實際使用者的密碼取代 *\<密碼 >* 。 此選項可搭配-UserName 選項使用。|
 |-使用者|為新的憑證要求設定-user 內容，或指定接受憑證的內容。 如果 INF 或範本中未指定任何內容，則此為預設內容。|
 |-機器|設定新的憑證要求，或指定電腦內容接受憑證的內容。 針對新的要求，它必須與 MachineKeyset INF 金鑰和範本內容一致。 如果未指定此選項，且範本未設定內容，則預設值為使用者內容。|
 |-crl|在 CertChainFileOut 指定之 base64 編碼的 PKCS #7 檔案的輸出中包含憑證撤銷清單（Crl），或是由 RequestFileOut 所指定的 base64 編碼檔案。|
@@ -357,9 +357,9 @@ certreq -enroll –machine –policyserver * "WebServer"
 
 ## <a name="BKMK_Formats"></a>格式
 
-|格式|描述|
+|格式|說明|
 |-------|-----------|
-|RequestFileIn|Base64 編碼或二進位輸入檔名稱：PKCS #10 憑證要求、CMS 憑證要求、PKCS #7 憑證更新要求、要交叉認證的 x.509 憑證，或 KeyGen 的標記格式憑證要求。|
+|RequestFileIn|Base64 編碼或二進位輸入檔名稱： PKCS #10 憑證要求、CMS 憑證要求、PKCS #7 憑證更新要求、x.509 憑證，以進行交叉認證，或 KeyGen 的標記格式憑證要求。|
 |RequestFileOut|Base64 編碼的輸出檔名稱|
 |CertFileOut|Base64 編碼的 X-509 檔案名。|
 |PKCS10FileOut|僅與[Certreq 原則](#BKMK_policy)動詞搭配使用。 Base64 編碼的 PKCS10 輸出檔名稱。|
@@ -372,11 +372,11 @@ certreq -enroll –machine –policyserver * "WebServer"
 下列文章包含 certreq 使用方式的範例：
 -   [如何使用自訂主體別名要求憑證](https://technet.microsoft.com/library/ff625722.aspx)
 -   [測試實驗室指南：部署 AD CS 兩層式 PKI 階層](https://technet.microsoft.com/library/hh831348.aspx)
--   [附錄3：Certreq .exe 語法](https://technet.microsoft.com/library/cc736326.aspx)
--   [如何手動建立網頁伺服器 SSL 憑證](http://blogs.technet.com/b/pki/archive/2009/08/05/how-to-create-a-web-server-ssl-certificate-manually.aspx)
+-   [附錄3： Certreq .exe 語法](https://technet.microsoft.com/library/cc736326.aspx)
+-   [如何手動建立網頁伺服器 SSL 憑證](https://blogs.technet.com/b/pki/archive/2009/08/05/how-to-create-a-web-server-ssl-certificate-manually.aspx)
 -   [使用 Windows Server 2008 CA 要求 AMT 布建憑證](https://social.technet.microsoft.com/wiki/contents/articles/request-an-amt-provisioning-certificate-using-a-windows-server-2008-ca.aspx)
 -   [System Center Operations Manager 代理程式的憑證註冊](https://social.technet.microsoft.com/wiki/contents/articles/certificate-enrollment-for-system-center-operations-manager-agent.aspx)
--   [AD CS 逐步指南：兩層 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
+-   [AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
 -   [如何使用協力廠商憑證授權單位單位啟用 LDAP over SSL](https://support.microsoft.com/kb/321051)
 
 返回[內容](#BKMK_Contents)

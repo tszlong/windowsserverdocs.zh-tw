@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
-ms.openlocfilehash: a29c43a87ccb55e85b018bc1b6dfe84bc53495b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fe2022ba3ff382d1070495b28dfdb03a34f9be42
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403451"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950309"
 ---
 # <a name="security--assurance"></a>安全性 | 保證
 
@@ -86,7 +86,7 @@ Windows Server 安全性提供內建於作業系統的保護層級，可對抗�
                             </div>
                           </a>
                         </li><li>
- <a href="http://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx">
+ <a href="https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -104,7 +104,7 @@ Windows Server 安全性提供內建於作業系統的保護層級，可對抗�
                             </div>
                           </a>
                         </li><li>
- <a href="http://channel9.msdn.com/events/ignite/2015/brk2482">
+ <a href="https://channel9.msdn.com/events/ignite/2015/brk2482">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -139,13 +139,13 @@ Windows Server 安全性提供內建於作業系統的保護層級，可對抗�
                     <div class="cardText">
                         <h3>透過受防護的 VM 保護虛擬化</h3>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016">Channel 9 中的受防護 VM</a></h3>受防護的 VM 技術和優點逐步解說</p>
+                        <p><h3><a href="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016">Channel 9 中的受防護 VM</a></h3>受防護的 VM 技術和優點逐步解說</p>
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=xip5Qtk-7d8">受防護的 VM 示範</a></h3>這段 4 分鐘的影片說明受防護 VM 的價值，以及受防護 VM 和不受防護 VM 之間的差異。</p>
 <HR />
                         <p><h3><a href="http://microsoft-cloud.cloudguides.com/Guides/Shielded%Virtual%Machines%in%Windows%Server.htm">Windows Server 中受防護的虛擬機器影片逐步解說</a></h3>此影片逐步解說示範「主機守護者服務」如何啟用受防護的虛擬機器，以防機密資料受到 Hyper-V 主機系統管理員未經授權的存取。</p>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/events/ignite/2015/brk3457">強化網狀架構：保護 Hyper-V 中的租用戶密碼 (Ignite 影片)</a></h3>此 Ignite 簡報將討論 Hyper-V、Virtual Machine Manager 中的增強功能，以及一個能啟用受防護 VM 的新守護者伺服器角色。 </p>
+                        <p><h3><a href="https://channel9.msdn.com/events/ignite/2015/brk3457">強化網狀架構：保護 Hyper-V 中的租用戶密碼 (Ignite 影片)</a></h3>此 Ignite 簡報將討論 Hyper-V、Virtual Machine Manager 中的增強功能，以及一個能啟用受防護 VM 的新守護者伺服器角色。 </p>
 <HR />
                         <p><h3><a href="guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md">受防護網狀架構部署指南</a></h3>本指南針對受防護網狀架構主機和受防護的 VM，提供 Windows Server 及 System Center Virtual Machine Manager 的安裝和驗證資訊。</p>
 <HR />
@@ -201,9 +201,9 @@ Windows Server 安全性提供內建於作業系統的保護層級，可對抗�
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/mt150258.aspx">Microsoft Identity Manager 的 Just in Time Administration</a></h3> 本文討論 Microsoft Identity Manager 中隨附的特性和功能，包括 Just In Time (JIT) 特殊權限存取管理的支援。</p>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/events/ignite/2015/brk3873">使用特殊權限存取管理保護 Windows 和 Microsoft Azure Active Directory</a></h3>此 Ignite 簡報將涵蓋 Microsoft 在 Windows Server、PowerShell、Active Directory、Identity Manager 和 Azure Active Directory 中的策略與投資，以便透過更強大的驗證功能，以及使用 Just in Time 和 Just Enough Administration (JEA) 管理存取權，來解決系統管理員存取的風險。</p>
+                        <p><h3><a href="https://channel9.msdn.com/events/ignite/2015/brk3873">使用特殊權限存取管理保護 Windows 和 Microsoft Azure Active Directory</a></h3>此 Ignite 簡報將涵蓋 Microsoft 在 Windows Server、PowerShell、Active Directory、Identity Manager 和 Azure Active Directory 中的策略與投資，以便透過更強大的驗證功能，以及使用 Just in Time 和 Just Enough Administration (JEA) 管理存取權，來解決系統管理員存取的風險。</p>
 <HR />
-                        <p><h3><a href="http://aka.ms/JEA">Just Enough Administration 文章</a></h3>本文將分享 Just Enough Administration 的願景和技術詳細資料。這是一個 PowerShell 工具組，其設計可協助組織將操作員限制為僅具備執行特定工作所需的存取權，藉以降低風險。</p>
+                        <p><h3><a href="https://aka.ms/JEA">Just Enough Administration 文章</a></h3>本文將分享 Just Enough Administration 的願景和技術詳細資料。這是一個 PowerShell 工具組，其設計可協助組織將操作員限制為僅具備執行特定工作所需的存取權，藉以降低風險。</p>
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=xnBrbkY9P20">Just Enough Administration 示範影片</a></h3>Just Enough Administration 示範逐步解說。</p>
                     </div>
@@ -223,7 +223,7 @@ Windows Server 安全性提供內建於作業系統的保護層級，可對抗�
                     <div class="cardText">
                         <h3>認證保護</h3>
 <HR />
-                        <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard">使用 Credential Guard 保護衍生的網域認證</a></h3>Credential Guard 使用以虛擬化為基礎的安全性來隔離機密資料，使得只有特殊權限的系統軟體可以存取這些資料。 對這些密碼的未經授權存取會導致認證竊取攻擊，例如傳遞雜湊 (Pass-the-Hash) 或傳遞票證 (Pass-The-Ticket)。</a> Credential Guard 可透過保護 NTLM 密碼雜湊和 Kerberos 票證授權票證來防止這些攻擊。</p>
+                        <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard">使用 Credential Guard 保護衍生的網域認證</a></h3>Credential Guard 使用以虛擬化為基礎的安全性來隔離機密資料，使得只有特殊權限的系統軟體可以存取這些資料。 對這些密碼的未經授權存取會導致認證竊取攻擊，例如傳遞雜湊 (Pass-the-Hash) 或傳遞票證 (Pass-The-Ticket)。</a> Credential Guard 會保護 NTLM 密碼雜湊和 Kerberos 票證授權票證，以防止這些攻擊。</p>
 <HR />
                         <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard">使用 Remote Credential Guard 保護遠端桌面認證</a></h3> Remote Credential Guard 可協助您將 Kerberos 要求重新導向回要求連線的裝置，藉以透過遠端桌面連線保護您的認證。 它也會針對遠端桌面工作階段，提供單一登入體驗。 </p>
 <HR />
@@ -253,7 +253,7 @@ Windows Server 安全性提供內建於作業系統的保護層級，可對抗�
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">OMS 和 Windows Server</a></h3>這段 3 分鐘的影片示範 OMS 如何協助偵測 Windows Server 所封鎖的潛在惡意行為。</p>
 <HR />
-                        <p><h3><a href="http://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft 進階威脅分析</a></h3>本部落格文章將討論 Microsoft 進階威脅分析。這是一個內部部署產品，可使用 Active Directory 網路流量和 SIEM 資料，來探索潛在威脅並發出警示。</p>
+                        <p><h3><a href="https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft 進階威脅分析</a></h3>本部落格文章將討論 Microsoft 進階威脅分析。這是一個內部部署產品，可使用 Active Directory 網路流量和 SIEM 資料，來探索潛在威脅並發出警示。</p>
                     </div>
                 </div>
             </div>

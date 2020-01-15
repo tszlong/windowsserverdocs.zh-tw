@@ -9,16 +9,16 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: 如何規劃工作資料夾的部署，包括系統需求以及如何準備您的網路環境。
-ms.openlocfilehash: e62cd61350299461d725c5d84209230ce1cc41a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf5cbc5a365dec3d34dcaa2c3bd6d27ad4f267bc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365739"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950202"
 ---
 # <a name="planning-a-work-folders-deployment"></a>工作資料夾部署的規劃
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1、Windows 7
+>適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1、Windows 7
 
 本主題說明設計工作資料夾實作的程序，並假設您已具備下列背景知識：  
   
@@ -62,7 +62,7 @@ ms.locfileid: "71365739"
   
     -   Windows 10  
   
-    -   Windows 8.1  
+    -   Windows 8.1  
   
     -   Windows RT 8.1  
   
@@ -74,7 +74,7 @@ ms.locfileid: "71365739"
   
 -   Windows 7 電腦必須執行下列其中一個 Windows 版本：  
   
-    -   Windows 7 專業版  
+    -   Windows 7 專業版  
   
     -   Windows 7 旗艦版  
   
@@ -108,7 +108,7 @@ ms.locfileid: "71365739"
 ## <a name="deployment-technologies"></a>部署技術  
  工作資料夾部署是由數種技術組合而成，它們共同搭配為內部和外部網路上的裝置提供服務。 設計工作資料夾部署之前，客戶應當熟悉下列每種技術的需求。  
   
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
+### <a name="active-directory-domain-services"></a>Active Directory 網域服務  
  AD DS 在工作資料夾部署中提供兩個重要的服務。 第一個，做為 Windows 驗證的後端，AD DS 提供安全性和驗證服務，用來授與使用者資料的存取權。 如果無法連線網域控制站，檔案伺服器就無法驗證傳入的要求，裝置也不能存取存放於該檔案伺服器上同步共用中的任何資料。  
   
  第二個，AD DS (包含 Windows Server 2012 R2 架構更新) 維護每個使用者的 msDS-SyncServerURL 屬性，用來自動將使用者導向到適當的同步伺服器。  
@@ -128,7 +128,7 @@ ms.locfileid: "71365739"
   您也可以使用群組原則，強制為每個使用者或每個電腦設定工作資料夾，但是這樣做會導致使用者登入的每個電腦進行工作資料夾同步 (使用每個使用者原則設定時)，並阻止使用者為自己電腦上的工作資料夾指定其他位置 (例如，指定 microSD 記憶卡以節省主要磁碟機上的空間)。 建議您強制進行自動設定之前，先審慎評估使用者的需求。  
   
 ### <a name="windows-intune"></a>Windows Intune  
- Windows Intune 也為未加入網域的裝置提供安全性和管理能力等級，否則將不會顯示這些裝置。 您可以使用 Windows Intune 來設定和管理使用者透過網際網路連線到工作資料夾的個人裝置 (如平板電腦)。 Windows Intune 可以提供具有同步處理伺服器 URL 的裝置，否則使用者必須輸入其工作電子郵件地址來查閱設定（如果您發佈的公用工作資料夾 URL 的格式為 https://workfolders ）。<em>contoso.com</em>），或直接輸入同步伺服器 URL。  
+ Windows Intune 也為未加入網域的裝置提供安全性和管理能力等級，否則將不會顯示這些裝置。 您可以使用 Windows Intune 來設定和管理使用者透過網際網路連線到工作資料夾的個人裝置 (如平板電腦)。 Windows Intune 可以提供具有同步處理伺服器 URL 的裝置，否則使用者必須輸入其工作電子郵件地址來查閱設定（如果您以 https://workfolders 的形式發行公用工作資料夾 URL。<em>contoso.com</em>），或直接輸入同步伺服器 URL。  
   
  如果不使用 Windows Intune 部署，使用者必須手動設定外部裝置，這會增加客戶對支援工程師人員的需求。  
   
@@ -155,13 +155,13 @@ ms.locfileid: "71365739"
   
 - 負載平衡 – 在大型環境中，將使用者資料存放於多個伺服器可能會增加伺服器的效能和執行時間。  
   
-  如需工作資料夾伺服器擴充和效能的相關資訊，請參閱[工作資料夾部署的效能考量](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)。  
+  如需工作資料夾伺服器擴充和效能的相關資訊，請參閱[工作資料夾部署的效能考量](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx) (英文)。  
   
 > [!NOTE]
 >  使用多個同步伺服器時，建議為使用者設定自動伺服器探索。 這個程序需要設定 AD DS 中每個使用者帳戶上的屬性。 這個屬性的名稱為 **msDS-SyncServerURL**，將 Windows Server 2012 R2 網域控制站新增到網域或套用 Active Directory 架構更新之後，使用者帳戶上即可使用該屬性。 您應該為每個使用者設定這個屬性，以確保使用者連線至適當的同步伺服器。 藉由使用自動伺服器探索，組織可以發佈「易記」 URL 後方的工作資料夾（例如 *https://workfolders.contoso.com* ），而不論操作中的同步伺服器數目為何。  
   
 ### <a name="number-of-sync-shares"></a>同步共用的數量  
- 個別同步伺服器可以維護多個同步共用。 這相當有用，原因如下：  
+ 個別同步伺服器可以維護多個同步共用。 這相當實用，原因如下：  
   
 -   稽核和安全性需求 – 如果特定部門使用的資料必須經常稽核或保留較長一段時間，個別的同步共用可協助系統管理員將不同稽核層級的使用者資料夾分開。  
   
@@ -215,7 +215,7 @@ ms.locfileid: "71365739"
   
     -   網路上網際網路入口/出口點在哪裡？  
   
-    -   同步伺服器會為容錯而被叢集化嗎？  
+    -   同步伺服器會因為容錯而叢集化嗎？  
   
     -   同步伺服器需要維護多個資料磁碟區來裝載使用者資料嗎？  
   
@@ -247,13 +247,13 @@ ms.locfileid: "71365739"
   
     -   裝置需要裝置註冊才能連線嗎？  
   
-## <a name="next-steps"></a>後續步驟  
+## <a name="next-steps"></a>接下來的步驟  
  設計工作資料夾實作之後，就該部署工作資料夾了。 如需詳細資訊，請參閱[部署工作資料夾](deploy-work-folders.md)。  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
  如需其他相關資訊，請參閱下列資源。  
   
-|內容類型|參考|  
+|內容類型|參考資料|  
 |------------------|----------------|  
-|**產品評估**|-   [工作資料夾](work-folders-overview.md)<br />-    個適用[于 Windows 7 的工作資料夾](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)（blog 文章）|  
-|**部署**|-   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 應用程式 Proxy 部署工作資料夾](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [工作資料夾部署的效能考慮](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-    個[適用于 Windows 7 的工作資料夾（64位下載）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-    個[適用于 Windows 7 的工作資料夾（32位下載）](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作資料夾測試實驗室部署](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（blog 文章）|
+|**產品評估**|-   [工作資料夾](work-folders-overview.md)<br />-   適用[于 Windows 7 的工作資料夾](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)（blog 文章）|  
+|**部署**|-   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 應用程式 Proxy 部署工作資料夾](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [工作資料夾部署的效能考慮](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   適用[于 Windows 7 的工作資料夾（64位下載）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   適用[于 Windows 7 的工作資料夾（32位下載）](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作資料夾測試實驗室部署](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（blog 文章）|

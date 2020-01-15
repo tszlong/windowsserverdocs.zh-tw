@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 70014c04bbb4425fe3c3fd0379f10cf00abe00ee
-ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
+ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72986439"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949779"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>建立 Windows 受防護的 VM 範本磁片
 
@@ -32,7 +32,7 @@ ms.locfileid: "72986439"
 |-----------|----|
 |必須是 GUID 磁碟分割表格（GPT）磁片 | 第2代虛擬機器需要支援 UEFI|
 |磁片類型必須是 [**基本**]，而不是 [**動態**]。 <br>注意：這是指邏輯磁片類型，而不是 Hyper-v 所支援的「動態擴充」 VHDX 功能。 | BitLocker 不支援動態磁碟。|
-|磁片至少有兩個磁碟分割。 一個磁碟分割必須包含安裝 Windows 的磁片磁碟機。 這是 BitLocker 將加密的磁片磁碟機。 另一個磁碟分割是作用中的磁碟分割，其中包含開機載入器，並且會保持未加密狀態，讓電腦可以啟動。|BitLocker 所需|
+|磁片至少有兩個磁碟分割。 一個磁碟分割必須包含安裝 Windows 的磁片磁碟機。 此為 BitLocker 將會加密的磁碟機。 另一個磁碟分割是作用中的磁碟分割，其中包含開機載入器，並且會保持未加密狀態，讓電腦可以啟動。|BitLocker 所需|
 |檔案系統為 NTFS | BitLocker 所需|
 |安裝在 VHDX 上的作業系統是下列其中一項：<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 需要支援第2代虛擬機器和 Microsoft 安全開機範本|
 |作業系統必須一般化（執行 sysprep.inf） | 範本布建牽涉到將 Vm 專門用於特定租使用者的工作負載| 
@@ -59,7 +59,7 @@ ms.locfileid: "72986439"
 
         Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
         
-    您也可以從已安裝[Windows 10 遠端伺服器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=45520)的用戶端電腦管理伺服器。
+    您也可以從已安裝[Windows 10 遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)的用戶端電腦管理伺服器。
 
 3. 取得或建立憑證，以簽署將成為新受防護 Vm 之範本磁片的 VHDX VSC。 當租使用者建立其防護資料檔案時，會向租使用者顯示此憑證的詳細資料，並授權其信任的磁片。 因此，請務必從您和您的租使用者雙方信任的憑證授權單位單位取得此憑證。 在您同時是主機服務提供者和租使用者的企業案例中，您可以考慮從 PKI 發行此憑證。
 

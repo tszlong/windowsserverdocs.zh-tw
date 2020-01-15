@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b23244f141cd0806ee14d3c40117ba72aeebb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402055"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950251"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 
@@ -46,7 +46,7 @@ ms.locfileid: "71402055"
 
 下表說明這個版本中可用的資料夾重新導向、離線檔案以及漫遊使用者設定檔的一些主要變更。
 
-| 特色/功能 | 新功能或更新功能？ | 描述 |
+| 特色/功能 | 新功能或更新功能？ | 說明 |
 | --- | --- | --- |
 | 永遠離線模式 | 新的 | 永遠離線工作，即使透過高速網路連線連接時也一樣，提供較快的檔案存取速度及較低的頻寬使用量。 |
 | 成本感知同步處理 | 新的 | 協助使用者在使用具有使用量限制的計量付費連線時，或在另一個提供者的網路上漫遊時，避免同步處理的高資料使用量成本。 |
@@ -125,14 +125,14 @@ ms.locfileid: "71402055"
 - Active Directory Domain Services （AD DS）架構必須更新為包含 Windows Server 2012 架構和條件（安裝 Windows Server 2012 或更新版本的網域控制站會自動更新架構）。 如需有關升級 AD DS 架構的詳細資訊，請參閱[將網域控制站升級至 Windows Server 2016](../../identity/ad-ds/deploy/upgrade-domain-controllers.md)。
 - 用戶端電腦必須執行 Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012，並加入您所管理的 Active Directory 網域。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>其他資訊
 
 如需其他相關資訊，請參閱下列資源。
 
-| 內容類型 | 參考 |
+| 內容類型 | 參考資料 |
 | --- | --- |
 | 產品評估 | [以可靠的檔案服務和儲存空間支援資訊工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（windows 7 和 windows Server 2008 R2）<br>[Windows Vista 離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中離線檔案的變更](<https://technet.microsoft.com/library/2007.11.offline.aspx>)（TechNet 雜誌） |
-| 部署 | [部署資料夾重新導向、離線檔案和漫遊使用者設定檔](deploy-folder-redirection.md)<br>[執行使用者資料集中化解決方案：資料夾重新導向和離線檔案技術驗證與部署](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫遊使用者資料部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[設定 Windows 7 電腦之新離線檔案功能的逐步指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[執行資料夾](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)重新導向（Windows Server 2003） |
+| 部署 | [部署資料夾重新導向、離線檔案和漫遊使用者設定檔](deploy-folder-redirection.md)<br>[執行使用者資料集中化解決方案：資料夾重新導向和離線檔案技術驗證與部署](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫遊使用者資料部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[設定 Windows 7 電腦之新離線檔案功能的逐步指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[執行資料夾](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)重新導向（Windows Server 2003） |
 | 工具及設定 | [MSDN 上的離線檔案](https://msdn.microsoft.com/library/cc296092.aspx)<br>[離線檔案群組原則參考](https://msdn.microsoft.com/library/ms878937.aspx)（Windows 2000） |
 | 社群資源 | [檔案服務和儲存體論壇](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[您好，編寫腳本的專家！如何使用 Windows 中的離線檔案功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[您好，編寫腳本的專家！如何啟用和停用離線檔案？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | 相關技術|[Windows Server 中的身分識別與存取](../../identity/identity-and-access.md)<br>[Windows Server 的儲存空間](../storage.md)<br>[遠端存取和伺服器管理](../../remote/index.md) |

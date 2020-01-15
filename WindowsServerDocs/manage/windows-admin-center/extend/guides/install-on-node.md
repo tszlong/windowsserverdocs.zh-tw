@@ -8,18 +8,18 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c5c87be882a32958946198eb6ff1b9d7000577e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a93a1105862ffbf4fcbd1d23b15d9bcaa6010dc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385286"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950505"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>在受管理的節點上安裝延伸模組承載
 
 >適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-## <a name="setup"></a>安裝程式
+## <a name="setup"></a>[設定]
 > [!NOTE]
 > 若要遵循本指南，您將需要組建1.2.1904.02001 或更高版本。 若要檢查組建編號，請開啟 [Windows 管理中心]，然後按一下右上方的問號。
 
@@ -45,7 +45,7 @@ echo 'Success'
 
 ## <a name="integration-with-ui"></a>與 UI 整合
 
-更新 ```\src\app\default.component.ts```，如下所示：
+將 ```\src\app\default.component.ts``` 更新為下列內容：
 
 ``` ts
 import { Component } from '@angular/core';
@@ -105,7 +105,7 @@ this.post('contoso.install-on-node', '1.0.0',
       );
 ```
 
-同時 ```\src\app\default.component.html``` 更新為：
+同時將 ```\src\app\default.component.html``` 更新為：
 ``` html
 <button (click)="installOnNode()">Click to install</button>
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
@@ -138,13 +138,13 @@ export class DefaultModule { }
 
 如果您之前尚未建立延伸模組套件，請遵循[發行延伸](../publish-extensions.md)模組指南。 
 > [!IMPORTANT]
-> 在此延伸模組的 nuspec 檔案中，請務必讓 ```<id>``` 值符合專案的 ```manifest.json``` 中的名稱，而 ```<version>``` 則符合新增至 ```\src\app\default.component.ts``` 的內容。 此外，在 [```<files>```] 下新增專案： 
+> 在此延伸模組的 nuspec 檔案中，請務必讓 ```<id>``` 值符合專案 ```manifest.json``` 中的名稱，而且 ```<version>``` 符合已加入 ```\src\app\default.component.ts```的內容。 同時在 [```<files>```] 下新增專案： 
 > 
-> ```<file src="Node\**\*.*" target="Node" />```.
+> ```<file src="Node\**\*.*" target="Node" />```。
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>contoso.install-on-node</id>
     <version>1.0.0</version>

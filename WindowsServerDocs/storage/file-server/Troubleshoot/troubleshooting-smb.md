@@ -7,12 +7,12 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 88f707cc02514dc13c212c6462c47e4d3a94b5f5
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 433221f9846e9e071557b5537974b5739131742b
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654579"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949689"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>先進的疑難排解伺服器訊息區（SMB）
 
@@ -158,7 +158,7 @@ SMB 用戶端和 SMB 伺服器都有詳細的事件記錄檔結構，如下列�
 
 ## <a name="smb-related-system-files"></a>SMB 相關的系統檔案
 
-此區段會列出 SMB 相關的系統檔案。 若要讓系統檔案保持更新，請確定已安裝最新的[更新彙總套件](https://support.microsoft.com/en-us/help/4498140/windows-10-update-history)。
+此區段會列出 SMB 相關的系統檔案。 若要讓系統檔案保持更新，請確定已安裝最新的[更新彙總套件](https://support.microsoft.com/help/4498140/windows-10-update-history)。
 
 在% windir% 底下列出的 SMB 用戶端二進位檔 **\\system32\\驅動程式**：
 

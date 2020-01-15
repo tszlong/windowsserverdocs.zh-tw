@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/18/2019
+ms.date: 01/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e71aa2b1cccda85e0bf6f8a80ad68013346b30d4
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 09010878e2381e8f1f00d6883a6871fcd69a48be
+ms.sourcegitcommit: 28b71d779386cd31e1511217aa1a6f3ab186bf9b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829613"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75682439"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>開始使用 Windows 桌面用戶端
 
@@ -33,7 +33,7 @@ ms.locfileid: "74829613"
 
 ## <a name="install-the-client"></a>安裝用戶端
 
-選擇符合 Windows 版本的用戶端。 新的遠端桌面用戶端 (MSRDC) 支援 Windows 10、Windows 10 IoT 企業版和 Windows 7 用戶端裝置。 
+選擇符合 Windows 版本的用戶端。 新的遠端桌面用戶端 (MSRDC) 支援 Windows 10、Windows 10 IoT 企業版和 Windows 7 用戶端裝置。
 
 - [Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2068602)
 - [Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2098960)
@@ -122,5 +122,20 @@ ms.locfileid: "74829613"
 
 有功能建議或想要回報問題嗎？ 請使用[意見反應中樞](feedback-hub://?tabid=2&contextid=883)告知我們。 您也可以透過用戶端存取意見反應中樞：
 
-1. 從連線中心，點選用戶端頂端命令列上的溢位功能表 ( **...** )。
-2. 從下拉式功能表選取 [摘要]  以開啟 [意見反應中樞]。
+1. 透過連線中心，在用戶端頂端的命令列上點選 [傳送意見反應]  選項，以開啟「意見反應中樞」應用程式。
+2. 在 [摘要]  和 [詳細資料]  欄位中輸入必要資訊。 完成後，請點選 [下一步]  。
+3. 選取 [問題]  或 [建議]  。
+4. 確認類別是否位於 [應用程式]   > [遠端桌面]  中。 如果是，請點選 [下一步]  。
+5. 查看現有的意見反應主題，以確認是否有其他人已回報相同的問題。 如果沒有，請選取 [提出新的錯誤]  ，然後點選 [下一步]  。
+6. 在下一個頁面上，您可以提供更多資訊，以便我們協助您解決問題。 您可以撰寫更詳細的資訊、提交螢幕擷取畫面，甚至進行問題的錄製，以說明發生了什麼情況。 若要進行錄製，請選取 [開始錄製]  ，然後執行發生問題的時間點之前的操作。 完成後請返回 [意見反應中樞]，然後選取 [停止錄製]  。
+7. 在提供了齊備的資訊後，請點選 [提交]  。
+8. 在 [感謝您提供的意見！] 頁面上，按一下 [分享我的意見反應]  ，以產生您可以視需要與其他人分享的意見反應連結。
+
+### <a name="access-client-logs"></a>存取用戶端記錄
+
+在調查問題時，您可能需要用戶端記錄。
+
+若要擷取用戶端記錄：
+
+1. 開啟 [檔案總管]  。
+2. 導覽至 **%temp%\DiagOutputDir\RdClientAutoTrace** 資料夾。

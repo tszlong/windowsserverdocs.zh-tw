@@ -11,20 +11,53 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/18/2019
+ms.date: 01/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f7c14dce8a8c319f9240c24ebcd8e2d4f7202
-ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
+ms.openlocfilehash: 614962cacbc29a26b0db246812ad17e24fc9859e
+ms.sourcegitcommit: fdb3412a6139ca62913606fa18036a91c093cd51
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166162"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75688113"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS 用戶端中的新功能
 
 我們會定期更新[適用於 macOS 的遠端桌面用戶端](remote-desktop-mac.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
-如果您遇到任何問題，一律可以透過 [協助]   > [回報問題]  與我們連絡。
+如果您遇到任何問題，可以隨時導覽至 [協助]   > [回報問題]  與我們連絡。
+
+## <a name="updates-for-version-1037"></a>10.3.7 版的更新
+
+*發行日期：1/6/20*
+
+在最後一次的年度更新中，我們微調了一些程式碼，並修正了下列行為：
+
+- 從遠端工作階段將內容複製到網路共用或 USB 磁碟機時，不會再建立空的檔案。
+- 在使用者帳戶中指定空白密碼時，不會再導致重複憑證提示。
+
+## <a name="updates-for-version-1036"></a>10.3.6 版的更新
+
+*發行日期：1/6/20*
+
+在此版本中，我們解決了您在使用檔案的複製並貼上將資料夾從遠端工作階段複製到本機電腦時會建立零長度檔案的問題。
+
+## <a name="updates-for-version-1035"></a>10.3.5 版的更新
+
+*發行日期：1/6/20*
+
+我們在每個問題回報者的協助下完成了這項更新。 在此版本中，我們進行了下列變更：
+
+- 重新導向的資料夾現在可以標示為唯讀，以防止其內容在遠端工作階段中遭到變更。
+- 我們解決了使用 RPC over HTTPS RD 閘道進行連線時所出現的 0x607 錯誤。
+- 已修正系統對使用者重複提出認證提示的狀況。
+- 已修正使用者收到兩次憑證警告提示的狀況。
+- 已新增啟發學習法來改善以軌跡板為基礎的捲動。
+- 如果沒有使用者建立的群組，用戶端就不會再顯示「已儲存的桌面」群組。
+- 已更新電腦檢視中的磚適用的 UI。
+- 已修正並解決透過應用程式遙測傳送給我們的損毀狀況。
+
+> [!NOTE]
+> 在此版本中，我們現在只會透過 [UserVoice](https://remotedesktop.uservoice.com/forums/287834-remote-desktop-for-mac) 接受 Mac 用戶端的意見反應。
 
 ## <a name="updates-for-version-1034"></a>10.3.4 版的更新
 

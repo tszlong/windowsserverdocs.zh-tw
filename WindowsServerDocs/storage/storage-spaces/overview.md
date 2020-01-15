@@ -7,12 +7,12 @@ ms.technology: storage-file-systems
 ms.topic: article
 author: jasongerend
 ms.date: 05/22/2018
-ms.openlocfilehash: 5de8b36916624b595d8f2ac9ddb0c000e015ee65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cab92de2a96f1d44c8ad6a33e84aba08cad38837
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366059"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950245"
 ---
 # <a name="storage-spaces-overview"></a>儲存空間總覽
 
@@ -20,7 +20,7 @@ ms.locfileid: "71366059"
 
 使用儲存空間有四種主要的方式：
 
-- **在 WINDOWS 電腦上**-如需詳細資訊，請參閱[windows 10 中的儲存空間](http://windows.microsoft.com/en-us/windows-10/storage-spaces-windows-10)。
+- **在 WINDOWS 電腦上**-如需詳細資訊，請參閱[windows 10 中的儲存空間](https://windows.microsoft.com/windows-10/storage-spaces-windows-10)。
 - 在**具有單一伺服器中所有存放裝置的獨立伺服器上**-如需詳細資訊，請參閱在[獨立伺服器上部署儲存空間](deploy-standalone-storage-spaces.md)。
 - **在使用儲存空間直接存取並在每個叢集節點中使用本機的直接連接存放裝置的叢集伺服器上**-如需詳細資訊，請參閱[儲存空間直接存取總覽](storage-spaces-direct-overview.md)。
 - **在具有一或多個共用 sas 儲存主機殼且保留所有磁片磁碟機的叢集伺服器上**-如需詳細資訊，請參閱[具有共用 SAS 的叢集上的儲存空間總覽](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v%3dws.11))。

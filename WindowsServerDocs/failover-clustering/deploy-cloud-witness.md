@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 如何使用 Microsoft Azure 來裝載雲端中 Windows Server 容錯移轉叢集的見證，亦即如何部署雲端見證。
-ms.openlocfilehash: 1f38a1a436cfced8637b743817dc1b3d150f7fa6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369876"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948170"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署容錯移轉叢集的雲端見證
 
@@ -26,7 +26,7 @@ ms.locfileid: "71369876"
 
 [圖 1] 說明使用 Windows Server 2016 的多網站延展容錯移轉叢集仲裁設定。 在此範例設定（圖1）中，2個資料中心內有2個節點（稱為「網站」）。 請注意，叢集可能會跨越超過2個資料中心。 此外，每個資料中心都可以有2個以上的節點。 這項安裝程式中的典型叢集仲裁設定（自動容錯移轉 SLA）會提供每個節點的投票。 仲裁見證會提供一項額外的投票，讓叢集可以繼續執行，即使其中一個資料中心發生電源中斷的情況也一樣。 數學運算很簡單-總共有5個投票，您需要3個投票讓叢集保持執行狀態。  
 
-![第三個不同網站中的檔案共用見證2個其他網站]檔案(media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "共用見證")中的節點  
+![第三個不同網站中的檔案共用見證，2個其他網站中有2個節點](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "檔案共用見證")  
 **圖1：使用檔案共用見證作為仲裁見證**  
 
 在一個資料中心發生電源中斷的情況下，為了讓其他資料中心的叢集有相當的機會讓它保持執行狀態，建議您將仲裁見證裝載于兩個資料中心以外的位置。 這通常表示需要第三個不同的資料中心（網站）來裝載檔案伺服器，而該伺服器會支援用來做為仲裁見證的檔案共用（檔案共用見證）。  
@@ -75,15 +75,15 @@ ms.locfileid: "71369876"
 
 ### <a name="to-create-an-azure-storage-account"></a>建立 Azure 儲存體帳戶
 
-1. 登入[Azure 入口網站](http://portal.azure.com)。
-2. 在 [中樞] 功能表上，選取 [新增->] [資料 + 儲存體]-[> 儲存體帳戶]。
+1. 登入 [Azure 入口網站](https://portal.azure.com)。
+2. 在 [集線器] 功能表中，選擇 [新增] -> [資料 + 儲存體] -> [儲存體帳戶]。
 3. 在 [建立儲存體帳戶] 頁面中，執行下列動作：
-    1. 輸入您儲存體帳戶的 [名稱]。
-    <br>儲存體帳戶名稱的長度必須介於3到24個字元，而且只能包含數位和小寫字母。 儲存體帳戶名稱在 Azure 內也必須是唯一的。
+    1. 輸入儲存體帳戶的名稱。
+    <br>儲存體帳戶名稱必須介於 3 到 24 個字元的長度，而且只能包含數字和小寫字母。 儲存體帳戶名稱在 Azure 內也必須是唯一的。
         
     2. 針對 [**帳戶類型**]，選取 **[一般用途**]。
     <br>您不能將 Blob 儲存體帳戶用於雲端見證。
-    3. 針對 [**效能**]，選取 [**標準**]。
+    3. 針對 [效能]，請選取 [標準]。
     <br>您無法將 Azure 進階儲存體用於雲端見證。
     2. 針對 **[** 複寫]，選取 **[本地-多餘儲存體（LRS）** ]。
     <br>容錯移轉叢集會使用 blob 檔案作為仲裁點，而在讀取資料時需要一些一致性保證。 因此，您**必須針對複寫**類型選取 [**本機-多餘的儲存體**]。

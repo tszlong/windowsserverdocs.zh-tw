@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 27d456dd274b917233f0484f055b679dc8c73214
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cce76e006272104033e1437e0ccf6cad5bc47f3f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403504"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950308"
 ---
 # <a name="passwords-overview"></a>密碼概觀
 
@@ -48,13 +48,13 @@ Windows Server 2012 和 Windows 8 中沒有任何密碼功能已被取代。
 ## <a name="BKMK_LINKS"></a>另請參閱
 下表列出密碼功能、技術和認證管理的其他資源。
 
-|內容類型|參考|
+|內容類型|參考資料|
 |--------|-------|
-|**案例檔**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
+|**案例檔**|[保護您的數位身分識別](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**操作**|[Active Directory 使用者和電腦](https://technet.microsoft.com/library/cc754217.aspx)|
-|**疑難排解**|[瞭解您的密碼何時過期 \- Active Directory PowerShell Blog](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
+|**疑難排解**|[瞭解您的密碼何時過期 \- Active Directory PowerShell Blog](https://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
 |**安全性**| Windows Server 2008 R2 和 Windows 7 的[威脅與對策指南：帳戶原則](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx)<br /><br />[變更和建立強式密碼的](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)指引|
 |**工具及設定**|[Microsoft 下載中心上的 Windows 和 Windows Server 群組原則設定參考](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**社群資源**|[保護您的數位身分識別](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[使用 Windows Live ID 登入 Windows 8](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[使用圖片密碼登入](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[優化圖片密碼安全性](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
+|**社群資源**|[保護您的數位身分識別](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[使用 Windows Live ID 登入 Windows 8](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[使用圖片密碼登入](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[優化圖片密碼安全性](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 
 

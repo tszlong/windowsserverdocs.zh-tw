@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c902f9a438afd226dfb58dbde9f3c00d57b0ed58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6cecf2edcb834a963c706fa4a63e7d15b13f7888
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408591"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949622"
 ---
 # <a name="audit-policy-recommendations"></a>稽核原則建議
 
@@ -34,17 +34,17 @@ ms.locfileid: "71408591"
 ## <a name="recommended-audit-policies-by-operating-system"></a>依作業系統建議的稽核原則  
 本節包含的資料表會列出適用于下列作業系統的審核設定建議：  
 
--   Windows Server 2016 
+-   WIN ENT LTSB 2016 Finnish 64 Bits 
 
--   Windows Server 2012  
+-   Windows 2012 Server  
 
--   Windows Server 2012 R2  
+-   Windows Server 2012 R2  
 
 -   Windows Server 2008  
 
 -   Windows 10
 
--   Windows 8.1  
+-   Windows 8.1  
 
 -   Windows 7  
 
@@ -57,7 +57,7 @@ ms.locfileid: "71408591"
 |**萬用字元**|**建議**|  
 |是|在一般案例中啟用|  
 |否|在一般案例中**不**啟用|  
-|只有|視需要針對特定案例啟用，或如果電腦上已安裝所需的審核角色或功能，則為|  
+|IF|視需要針對特定案例啟用，或如果電腦上已安裝所需的審核角色或功能，則為|  
 |DC|在網域控制站上啟用|  
 |著|沒有建議|  
 
@@ -69,7 +69,7 @@ ms.locfileid: "71408591"
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**帳戶登入**||||  
 |稽核認證驗證|不 不|是否|是的|  
-|稽核 Kerberos 驗證服務|||是的|  
+|Kerbero 驗證的新功能|||是的|  
 |稽核 Kerberos 服務票證作業|||是的|  
 |稽核其他帳戶登入事件|||是的|  
 |**帳戶管理**||||  
@@ -81,8 +81,8 @@ ms.locfileid: "71408591"
 |稽核使用者帳戶管理|是否|是否|是的|  
 |**詳細追蹤**||||  
 |稽核 DPAPI 活動|||是的|  
-|建立稽核程序||是否|是的|  
-|終止稽核程序||||  
+|稽核程序建立||是否|是的|  
+|稽核程序終止||||  
 |稽核 RPC 事件||||  
 |**DS 存取**||||  
 |稽核詳細目錄服務複寫||||  
@@ -101,14 +101,14 @@ ms.locfileid: "71408591"
 |稽核其他登入/登出事件||||  
 |稽核特殊登入|是否|是否|是的|  
 |**物件存取**||||  
-|已產生稽核應用程式||||  
+|稽核已產生的應用程式||||  
 |稽核憑證服務||||  
 |稽核詳細檔案共用||||  
 |稽核檔案共用||||  
 |稽核檔案系統||||  
 |稽核篩選平台連線||||  
 |稽核篩選平台封包丟棄||||  
-|稽核控點操作||||  
+|稽核控制碼操作||||  
 |稽核核心物件||||  
 |稽核其他物件存取事件||||  
 |稽核登錄||||  
@@ -120,20 +120,20 @@ ms.locfileid: "71408591"
 |稽核驗證原則變更|是否|是否|是的|  
 |稽核授權原則變更||||  
 |稽核篩選平台原則變更||||  
-|稽核 MPSSVC 規則層級原則變更|||是  |  
+|稽核 MPSSVC 規則層級原則變更|||[是]  |  
 |稽核其他原則變更事件||||  
 |**許可權使用**||||  
 |稽核非機密特殊權限使用情況||||  
 |稽核其他特殊權限使用事件||||  
-|稽核機密特殊權限使用情況||||  
-|**筆記本電腦**||||  
-|稽核 IPsec 驅動程式||是的|是的|  
+|稽核機密特殊權限使用||||  
+|**系統**||||  
+|稽核 IPSec 驅動程式||是的|是的|  
 |稽核其他系統事件|是的|||  
 |稽核安全性狀態變更|是否|是的|是的|  
 |稽核安全性系統延伸||是的|是的|  
 |稽核系統整合性|是的|是的|是的|  
 |**全域物件存取的審核**||||  
-|稽核 IPsec 驅動程式||||  
+|稽核 IPSec 驅動程式||||  
 |稽核其他系統事件||||  
 |稽核安全性狀態變更||||  
 |稽核安全性系統延伸||||  
@@ -147,7 +147,7 @@ ms.locfileid: "71408591"
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**帳戶登入**||||  
 |稽核認證驗證|不 不|是的|是的|  
-|稽核 Kerberos 驗證服務|||是的|  
+|Kerbero 驗證的新功能|||是的|  
 |稽核 Kerberos 服務票證作業|||是的|  
 |稽核其他帳戶登入事件|||是的|  
 |**帳戶管理**||||  
@@ -159,8 +159,8 @@ ms.locfileid: "71408591"
 |稽核使用者帳戶管理|是否|是的|是的|  
 |**詳細追蹤**||||  
 |稽核 DPAPI 活動|||是的|  
-|建立稽核程序||是否|是的|  
-|終止稽核程序||||  
+|稽核程序建立||是否|是的|  
+|稽核程序終止||||  
 |稽核 RPC 事件||||  
 |**DS 存取**||||  
 |稽核詳細目錄服務複寫||||  
@@ -179,14 +179,14 @@ ms.locfileid: "71408591"
 |稽核其他登入/登出事件|||是的|  
 |稽核特殊登入|是否|是否|是的|  
 |**物件存取**||||  
-|已產生稽核應用程式||||  
+|稽核已產生的應用程式||||  
 |稽核憑證服務||||  
 |稽核詳細檔案共用||||  
 |稽核檔案共用||||  
 |稽核檔案系統||||  
 |稽核篩選平台連線||||  
 |稽核篩選平台封包丟棄||||  
-|稽核控點操作||||  
+|稽核控制碼操作||||  
 |稽核核心物件||||  
 |稽核其他物件存取事件||||  
 |稽核登錄||||  
@@ -198,20 +198,20 @@ ms.locfileid: "71408591"
 |稽核驗證原則變更|是否|是否|是的|  
 |稽核授權原則變更||||  
 |稽核篩選平台原則變更||||  
-|稽核 MPSSVC 規則層級原則變更|||是  |  
+|稽核 MPSSVC 規則層級原則變更|||[是]  |  
 |稽核其他原則變更事件||||  
 |**許可權使用**||||  
 |稽核非機密特殊權限使用情況||||  
 |稽核其他特殊權限使用事件||||  
-|稽核機密特殊權限使用情況||||  
-|**筆記本電腦**||||  
-|稽核 IPsec 驅動程式||是的|是的|  
+|稽核機密特殊權限使用||||  
+|**系統**||||  
+|稽核 IPSec 驅動程式||是的|是的|  
 |稽核其他系統事件|是的|||  
 |稽核安全性狀態變更|是否|是的|是的|  
 |稽核安全性系統延伸||是的|是的|  
 |稽核系統整合性|是的|是的|是的|  
 |**全域物件存取的審核**||||  
-|稽核 IPsec 驅動程式||||  
+|稽核 IPSec 驅動程式||||  
 |稽核其他系統事件||||  
 |稽核安全性狀態變更||||  
 |稽核安全性系統延伸||||  
@@ -285,13 +285,13 @@ ms.locfileid: "71408591"
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>監視 Active Directory Domain Services 的其他資訊  
 請參閱下列連結，以取得有關監視 AD DS 的其他資訊：  
   
--   [全域物件存取審核非常神奇](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-提供有關設定和使用已新增至 windows 7 和 windows Server 2008 R2 之 Advanced Audit Policy Configuration 的資訊。  
+-   [全域物件存取審核非常神奇](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-提供有關設定和使用已新增至 windows 7 和 windows Server 2008 R2 之 Advanced Audit Policy Configuration 的資訊。  
 
--   [Windows 2008 中的「審核」變更簡介](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-引進 windows 2008 中所做的審核變更。  
+-   [Windows 2008 中的「審核」變更簡介](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-引進 windows 2008 中所做的審核變更。  
 
--   [Vista 和2008中](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 中的有趣新功能，可用於疑難排解問題或查看環境中發生的狀況。  
+-   [Vista 和2008中](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 中的有趣新功能，可用於疑難排解問題或查看環境中發生的狀況。  
 
--   [Windows server 2008 和 Windows vista 中的一次性審核](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
+-   [Windows server 2008 和 Windows vista 中的一次性審核](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
 
 -   [AD DS 審核逐步指南](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx)-說明 Windows Server 2008 中的新 Active Directory Domain Services （AD DS）審核功能。 它也會提供執行這項新功能的程式。  
 

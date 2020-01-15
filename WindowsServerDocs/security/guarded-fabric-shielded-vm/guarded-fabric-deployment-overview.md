@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402418"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949808"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>針對受防護網狀架構部署快速入門
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402418"
 
 本主題說明什麼是受防護的網狀架構、其需求，以及部署程式的摘要。 如需詳細的部署步驟，請參閱為[受防護的主機和受防護的 Vm 部署主機守護者服務](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)。
 
-想要看影片？ 請參閱 Microsoft 虛擬學院課程[部署受防護的 vm 和具有 Windows Server 2016 的受保護網狀架構](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)。
+想要看影片？ 請參閱 Microsoft 虛擬學院課程[部署受防護的 vm 和具有 Windows Server 2016 的受保護網狀架構](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)。
 
 ## <a name="what-is-a-guarded-fabric"></a>什麼是受防護的網狀架構
 

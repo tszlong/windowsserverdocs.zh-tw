@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7221d3ea94ff9f2d7fca8e95cee66597e2dc6270
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402069"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950265"
 ---
 # <a name="smb-security-enhancements"></a>SMB 安全性增強功能
 
->適用於：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用于： Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 本主題說明 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 中的 SMB 安全性增強功能。
 
@@ -78,7 +78,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 >[!NOTE]
 >* SMB 加密使用進階加密標準（AES）-CCM 演算法來加密和解密資料。 AES-CCM 也會針對加密的檔案共用提供資料完整性驗證（簽署），而不論 SMB 簽署設定為何。 如果您想要啟用不加密的 SMB 簽署，可以繼續執行此動作。 如需詳細資訊，請參閱[SMB 簽署的基本概念](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
 >* 當您的組織使用廣域網路（WAN）加速設備時，如果您嘗試存取檔案共用或伺服器，可能會遇到問題。
->* 使用預設設定（不允許加密檔案共用的未加密存取）時，如果不支援 SMB 3.0 的用戶端嘗試存取加密的檔案共用，則會將事件識別碼1003記錄到 SmbServer/Operational 事件記錄檔，而且用戶端會收到**拒絕存取**的錯誤訊息。
+>* 使用預設設定（不允許加密檔案共用的未加密存取）時，如果不支援 SMB 3.0 的用戶端嘗試存取加密的檔案共用，則會將事件識別碼1003記錄到 SmbServer/Operational 事件記錄檔中，而且用戶端會收到**拒絕存取**的錯誤訊息。
 >* NTFS 檔案系統中的 SMB 加密和加密檔案系統（EFS）不相關，而且 SMB 加密不需要或依存于使用 EFS。
 >* SMB 加密和 BitLocker 磁碟機加密不相關，而且 SMB 加密不需要或相依于使用 BitLocker 磁碟機加密。
 
@@ -86,11 +86,11 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 
 SMB 3.0 能夠偵測攔截式攻擊，嘗試降級 SMB 2.0 或 SMB 3.0 通訊協定，或用戶端和伺服器所協商的功能。 當用戶端或伺服器偵測到這類攻擊時，連接會中斷連線，而事件識別碼1005會記錄在 SmbServer/Operational 事件記錄檔中。 安全方言的協商無法偵測或防止從 SMB 2.0 或3.0 降級到 SMB 1.0。 因此，若要利用 SMB 加密的完整功能，我們強烈建議您停用 SMB 1.0 伺服器。 如需詳細資訊，請參閱[停用 SMB 1.0](#disabling-smb-10)。
 
-下一節所述的「安全方言」協商功能，可防止攔截式攻擊將 SMB 3 的連線降級為 SMB 2 （這會使用未加密的存取權）;不過，它不會防止對 SMB 1 的降級，這也會導致未加密的存取。 如需更多有關 SMB 的舊版非 Windows 實施問題的詳細資訊，請參閱[Microsoft 知識庫](http://support.microsoft.com/kb/2686098)。
+下一節所述的「安全方言」協商功能，可防止攔截式攻擊將 SMB 3 的連線降級為 SMB 2 （這會使用未加密的存取權）;不過，它不會防止對 SMB 1 的降級，這也會導致未加密的存取。 如需更多有關 SMB 的舊版非 Windows 實施問題的詳細資訊，請參閱[Microsoft 知識庫](https://support.microsoft.com/kb/2686098)。
 
 ## <a name="new-signing-algorithm"></a>新的簽署演算法
 
-SMB 3.0 使用較新的加密演算法進行簽署：進階加密標準（AES）-以密碼為基礎的訊息驗證碼（CMAC）。 SMB 2.0 使用較舊的 HMAC-SHA256 加密演算法。 AES CMAC 和 AES-CCM 可以大幅加速在具有 AES 指示支援的最新 Cpu 上的資料加密。 如需詳細資訊，請參閱[SMB 簽署的基本概念](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
+SMB 3.0 使用較新的加密演算法來簽署：進階加密標準（AES）-以密碼為基礎的訊息驗證碼（CMAC）。 SMB 2.0 使用較舊的 HMAC-SHA256 加密演算法。 AES CMAC 和 AES-CCM 可以大幅加速在具有 AES 指示支援的最新 Cpu 上的資料加密。 如需詳細資訊，請參閱[SMB 簽署的基本概念](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
 
 ## <a name="disabling-smb-10"></a>停用 SMB 1。0
 
@@ -117,7 +117,7 @@ Set-SmbServerConfiguration –EnableSMB1Protocol $false
 >[!NOTE]
 >如果 SMB 用戶端連線遭到拒絕，因為執行 SMB 1.0 的伺服器已停用，則事件識別碼1001會記錄在 SmbServer/Operational 事件記錄檔中。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>其他資訊
 
 以下是有關 SMB 的一些額外資源，以及 Windows Server 2012 中的相關技術。
 

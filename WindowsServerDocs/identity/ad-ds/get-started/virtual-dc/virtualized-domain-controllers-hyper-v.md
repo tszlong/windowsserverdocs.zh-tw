@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 19e8eef008d3818c413808ab1f085a7cc247ec36
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 209e87b90656555062d9f7e343beedb0143c1df2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369504"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949116"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>使用 Hyper-v 虛擬化網域控制站
 
@@ -25,7 +25,7 @@ Hyper-v 會將不同的伺服器角色合併到單一實體電腦上。 本指�
 
 本節涵蓋 Hyper-v 伺服器的硬體需求、如何避免單一失敗點、為您的 Hyper-v 伺服器和虛擬機器選取適當的設定類型，以及安全性和效能決策。
 
-## <a name="hyper-v-requirements"></a>Hyper-v 需求
+## <a name="hyper-v-requirements"></a>Hyper-V 需求
 
 若要安裝和使用 Hyper-v 角色，您必須具備下列各項：
 
@@ -91,7 +91,7 @@ Rodc 的一項優點是能夠將它們放在無法保證實體安全性的位置
 
 若要取得虛擬網域控制站效能的一般概念，請使用[Active Directory 效能測試控管（ADTest）](https://go.microsoft.com/fwlink/?linkid=137088)執行下列效能測試。
 
-輕量型目錄存取協定（LDAP）測試是在具有 ADTest 的實體網域控制站上執行，然後在與實體網域控制站相同的伺服器上主控的虛擬機器上執行。 只有一個邏輯處理器用於實體電腦，而且只有一個虛擬處理器用於虛擬機器，才能輕鬆達到 100% 的 CPU 使用率。 在下表中，每個測試之後，括弧中的字母和數位會指出 ADTest 中的特定測試。 如這份資料所示，虛擬網域控制站的效能是88到 98% 的實體網域控制站效能。
+輕量型目錄存取協定（LDAP）測試是在具有 ADTest 的實體網域控制站上執行，然後在與實體網域控制站相同的伺服器上主控的虛擬機器上執行。 只有一個邏輯處理器用於實體電腦，而且只有一個虛擬處理器用於虛擬機器，才能輕鬆達到100% 的 CPU 使用率。 在下表中，每個測試之後，括弧中的字母和數位會指出 ADTest 中的特定測試。 如這份資料所示，虛擬網域控制站的效能是88到98% 的實體網域控制站效能。
 
 <table>
 <colgroup>
@@ -103,11 +103,11 @@ Rodc 的一項優點是能夠將它們放在無法保證實體安全性的位置
 </colgroup>
 <thead>
 <tr class="header">
-<th>評定</th>
-<th>測試</th>
+<th>測量</th>
+<th>Test</th>
 <th>實體</th>
-<th>虛擬</th>
-<th>delta</th>
+<th>Virtual</th>
+<th>Delta</th>
 </tr>
 </thead>
 <tbody>
@@ -161,7 +161,7 @@ Rodc 的一項優點是能夠將它們放在無法保證實體安全性的位置
 <td><p>-1.12%</p></td>
 </tr>
 <tr class="even">
-<td><p>寫入數/秒</p></td>
+<td><p>寫入次數/秒</p></td>
 <td><p>寫入多個屬性（W2）</p></td>
 <td><p>6467</p></td>
 <td><p>5885</p></td>
@@ -176,7 +176,7 @@ Rodc 的一項優點是能夠將它們放在無法保證實體安全性的位置
 
 如需 AD DS 和 Hyper-v 的效能微調的詳細資訊，請參閱[Windows Server 2016 的效能微調方針](../../../../administration/performance-tuning/index.md)。
 
-此外，不打算在設定為網域控制站的虛擬機器上使用差異磁片 VHD，因為差異磁片 VHD 可能會降低效能。 若要深入瞭解 Hyper-v 磁片類型（包括差異磁片），請參閱[新增虛擬硬碟 Wizard](http://go.microsoft.com/fwlink/?linkid=137279)。
+此外，不打算在設定為網域控制站的虛擬機器上使用差異磁片 VHD，因為差異磁片 VHD 可能會降低效能。 若要深入瞭解 Hyper-v 磁片類型（包括差異磁片），請參閱[新增虛擬硬碟 Wizard](https://go.microsoft.com/fwlink/?linkid=137279)。
 
 如需有關虛擬主控環境中 AD DS 的詳細資訊，請參閱 Microsoft 知識庫中的在[虛擬主控環境中裝載 Active Directory 網域控制站時所要考慮的事項](https://go.microsoft.com/fwlink/?linkid=141292)。
 
@@ -237,7 +237,7 @@ System Center Virtual Machine Manager （VMM）2008提供實體機器和虛擬�
 > [!NOTE]
 > 本指南最近已更新，以反映目前的建議，只從網域階層同步處理來賓網域控制站的時間，而不是先前的建議，以部分停用主機之間的時間同步。系統和來賓網域控制站。
 
-## <a name="storage"></a>儲存體
+## <a name="storage"></a>存放
 
 若要將網域控制站虛擬機器的效能優化，並確保 Active Directory 寫入的持久性，請使用下列建議來儲存作業系統、Active Directory 和 VHD 檔案：
 
@@ -247,7 +247,7 @@ System Center Virtual Machine Manager （VMM）2008提供實體機器和虛擬�
   > 如果您打算使用虛擬 DC 來賓的 Bitlocker，您必須確定已將其他磁片區設定為「自動解除鎖定」。
   > 如需設定自動解除鎖定的詳細資訊，請參閱[BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
 
-- **VHD 檔案的主機存放裝置**。 相關主機儲存體建議會處理 VHD 檔案的儲存。 為了達到最大效能，請不要將 VHD 檔案儲存在其他服務或應用程式經常使用的磁片上，例如安裝主機 Windows 作業系統的系統磁片。 將每個 VHD 檔案儲存在與主機作業系統和任何其他 VHD 檔案不同的磁碟分割上。 理想的設定是將每個 VHD 檔案儲存在不同的實體磁片磁碟機上。  
+- **VHD 檔案的主機存放裝置**。 建議：主機儲存體建議會處理 VHD 檔案的儲存。 為了達到最大效能，請不要將 VHD 檔案儲存在其他服務或應用程式經常使用的磁片上，例如安裝主機 Windows 作業系統的系統磁片。 將每個 VHD 檔案儲存在與主機作業系統和任何其他 VHD 檔案不同的磁碟分割上。 理想的設定是將每個 VHD 檔案儲存在不同的實體磁片磁碟機上。  
 
   主機實體磁片系統也必須滿足下列**其中一個**準則，才能符合虛擬化工作負載資料完整性的需求：  
 
@@ -352,10 +352,10 @@ System Center Virtual Machine Manager （VMM）2008提供實體機器和虛擬�
 ## <a name="to-restore-a-previous-version-of-a-virtual-domain-controller-vhd-without-system-state-data-backup"></a>還原先前版本的虛擬網域控制站 VHD，而不使用系統狀態資料備份
 
 1. 使用先前的 VHD，以 DSRM 啟動虛擬網域控制站，如上一節所述。 不允許網域控制站在正常模式下啟動。 如果您錯過 Windows 開機管理程式畫面，而網域控制站在正常模式下開始啟動，請關閉虛擬機器，以防止它完成啟動。 如需輸入 DSRM 的詳細指示，請參閱上一節。
-2. 開啟「登錄編輯程式」。 若要開啟登錄編輯程式，請依序按一下 [**開始**] 和 [**執行**]、輸入**regedit**，然後按一下 [確定]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。 在 [登錄編輯程式] 中，展開下列路徑：**HKEY\_本機電腦系統\\CurrentControlSet 服務 NTDS參數\\。\\ \\ \_ \\** 尋找名為 [ **DSA 先前的還原計數**] 的值。 如果值在該處，請記下設定。 如果值不存在，則設定等於預設值，也就是零。 如果您在該處看不到值，請不要加一。
+2. 開啟「登錄編輯程式」。 若要開啟登錄編輯程式，請依序按一下 [**開始**] 和 [**執行**]、輸入**regedit**，然後按一下 [確定]。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。 在 [登錄編輯程式] 中，展開下列路徑： **HKEY\_本機\_機\\系統\\CurrentControlSet\\Services\\NTDS\\參數**。 尋找名為 [ **DSA 先前的還原計數**] 的值。 如果值在該處，請記下設定。 如果值不存在，則設定等於預設值，也就是零。 如果您在該處看不到值，請不要加一。
 3. 以滑鼠右鍵按一下 [**參數**] 索引鍵，按一下 [**新增**]，然後按一下 [ **DWORD （32-位）值**]。
 4. 輸入**從備份還原**的新名稱資料庫，然後按 enter。
-5. 按兩下您剛才建立的值，以開啟 [**編輯 DWORD （32-位）值**] 對話方塊，然後在 [**數值資料**] 方塊中輸入**1** 。 在執行 Windows 2000 Server Service Pack 4 （SP4）的網域控制站、Windows Server 2003，以及如何在中從 USN 回復偵測和復原中的更新，可以使用**從備份專案還原的資料庫**選項。 [已安裝 Microsoft 知識庫中的 windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182) ，以及 Windows server 2008。
+5. 按兩下您剛才建立的值，以開啟 [**編輯 DWORD （32-位）值**] 對話方塊，然後在 [**數值資料**] 方塊中輸入**1** 。 在執行 Windows 2000 Server Service Pack 4 （SP4）、Windows Server 2003 的網域控制站上，您可以從已安裝 Microsoft 知識庫中的[Windows server 2003、Windows server 2008 和 Windows server 2008 R2 中的 USN 回復](https://go.microsoft.com/fwlink/?linkid=137182)，以及 windows server 2008 中，取得**從備份輸入選項還原的資料庫**。
 6. 以正常模式重新開機網域控制站。
 7. 當網域控制站重新開機時，請開啟事件檢視器。 若要開啟 [事件檢視器]，請按一下 [開始]，再按一下 [控制台]，連按兩下 [系統管理工具]，再連按兩下 [事件檢視器]。
 8. 展開 [**應用程式及服務記錄**檔]，然後按一下 [**目錄服務**] 記錄檔。 確定事件出現在詳細資料窗格中。
@@ -376,7 +376,7 @@ System Center Virtual Machine Manager （VMM）2008提供實體機器和虛擬�
 
 11. 關閉 [事件檢視器]。
 12. 使用 [登錄編輯程式] 確認 [ **DSA 先前的還原計數**] 中的值是否等於先前的值加一。 如果這不是正確的值，而且在事件檢視器中找不到事件識別碼1109的專案，請確認網域控制站的 service pack 是最新的。 您無法在相同的 VHD 上再次嘗試此程式。 從步驟1開始，您可以在 VHD 複本或尚未以標準模式啟動的不同 VHD 上再試一次。
-13. 結束登錄編輯程式。
+13. 關閉登錄編輯程式。
 
 ## <a name="usn-and-usn-rollback"></a>USN 和 USN 復原
 
@@ -391,11 +391,11 @@ Active Directory Domain Services （AD DS）會使用更新序號（Usn）來追
 下列兩個複寫中繼資料表包含 Usn。 來源和目的地網域控制站會使用它們來篩選目的地網域控制站所需的更新。
 
 1. **最新向量**：目的地網域控制站為了追蹤從所有來源網域控制站接收的原始更新而維護的資料表。 當目的地網域控制站要求目錄磁碟分割的變更時，它會將其最新向量提供給來源網域控制站。 接著，來源網域控制站會使用此值來篩選其傳送至目的地網域控制站的更新。 來源網域控制站會在成功複寫週期完成時，將其最新向量傳送至目的地，以確保目的地網域控制站知道它已與每個網域控制站同步處理。原始更新和更新的層級與來源相同。  
-2. **上限**標準：一個值，目的網域控制站會維護以追蹤從特定資料分割的特定來源網域控制站收到的最近變更。 上限標準可防止來源網域控制站送出目的地網域控制站已收到的變更。  
+2. **上限**標準：目的地網域控制站維護的值，用來追蹤從特定資料分割的特定來源網域控制站收到的最近變更。 上限標準可防止來源網域控制站送出目的地網域控制站已收到的變更。  
 
 ## <a name="directory-database-identity"></a>目錄資料庫身分識別
 
-除了 Usn 以外，網域控制站還會追蹤來源複寫協力電腦的目錄資料庫。 在伺服器上執行之目錄資料庫的識別會與伺服器物件本身的識別分開維護。 每個網域控制站上的目錄資料庫身分識別會儲存在 NTDS 設定物件的**invocationID**屬性中，位於下列輕量型目錄存取協定（LDAP）路徑底下： CN = NTDS 設定，Cn = ServerName，cn= Servers，cn =*SiteName*，Cn = Sites，Cn = Configuration，Dc =*ForestRootDomain*。 伺服器物件識別會儲存在 NTDS 設定物件的**objectGUID**屬性中。 伺服器物件的身分識別永遠不會變更。 不過，目錄資料庫的身分識別會在伺服器上發生系統狀態還原程式時，或在新增應用程式目錄分割時變更，然後從伺服器中移除並重新加入。 （其他案例：當 HyperV 實例在包含虛擬 DC VHD 的磁碟分割上觸發其 VSS 寫入器時，來賓會輪流觸發自己的 VSS 寫入器（上面的備份/還原所使用的相同機制），因而產生另一種 invocationID 的方法啟動
+除了 Usn 以外，網域控制站還會追蹤來源複寫協力電腦的目錄資料庫。 在伺服器上執行之目錄資料庫的識別會與伺服器物件本身的識別分開維護。 每個網域控制站上的目錄資料庫身分識別會儲存在 [NTDS 設定] 物件的 [ **invocationID** ] 屬性中，其位於下列輕量型目錄存取協定（LDAP）路徑： CN = NTDS Settings，Cn = ServerName，Cn = Servers，Cn =*SiteName*，cn = Sites，cn = Configuration，dc =*ForestRootDomain*。 伺服器物件識別會儲存在 NTDS 設定物件的**objectGUID**屬性中。 伺服器物件的身分識別永遠不會變更。 不過，目錄資料庫的身分識別會在伺服器上發生系統狀態還原程式時，或在新增應用程式目錄分割時變更，然後從伺服器中移除並重新加入。 （其他案例：當 HyperV 實例在包含虛擬 DC 的 VHD 的磁碟分割上觸發其 VSS 寫入器時，來賓會輪流觸發自己的 VSS 寫入器（上面的備份/還原所使用的相同機制），而導致 invocationID 重設的另一種方法）
 
 因此， **invocationID**實際上會在網域控制站上，將一組原始更新與特定版本的目錄資料庫相關聯。 最新向量和上限標準資料表會分別使用**invocationID**和 DC GUID，讓網域控制站知道複寫資訊即將推出的 Active Directory 資料庫複本。
 

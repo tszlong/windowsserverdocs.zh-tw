@@ -1,30 +1,37 @@
 ---
 title: 疑難排解磁碟管理
 description: 本文描述如何針對 [磁碟管理] 問題進行疑難排解
-ms.date: 06/07/2019
+ms.date: 12/20/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d801b051918c090257a466ab58c200943487b2e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402168"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352361"
 ---
 # <a name="troubleshooting-disk-management"></a>疑難排解磁碟管理
 
 > **適用於：** Windows 10、Windows 8.1、Windows 7、Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題列出一些可能在使用 [磁碟管理] 時發生的常見問題。
+本主題列出一些在使用「磁碟管理」時可能發生的常見問題，以及可嘗試執行的疑難排解步驟。
 
 > [!TIP]
-> 如果您在遵循這些程序時收到錯誤或出現問題 - 別慌張！ [Microsoft 社群](https://answers.microsoft.com/en-us/windows)網站上有大量的資訊 - 請嘗試搜尋[檔案、資料夾與儲存體](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)一節；如果您還需要協助，請於此處張貼問題，Microsoft 或其他社群成員將會嘗試提供協助。 如果您對改善這些主題有任何意見反應，歡迎與我們分享！ 只要回答「此頁面有所助益嗎？」  提示，並於此處或在本主題底部的公開意見討論區中留下任何意見。
+> 如果您在遵循這些程序時收到錯誤或出現問題 - 別慌張！ 閱讀本主題只是嘗試解決問題的第一步；[檔案、資料夾和儲存體](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)一節中的[Microsoft 社群](https://answers.microsoft.com/en-us/windows)網站也會提供相當豐富的資訊，供以了解您可能須處理的各種硬體和軟體組態。 如果您仍然需要協助，請在該處張貼問題，或[連絡 Microsoft 支援服務](https://support.microsoft.com/contactus/)或硬體製造商。
 
-## <a name="a-disks-status-is-not-initialized-or-the-disk-is-missing"></a>磁碟的狀態為 [未初始化] 或磁碟已遺失
+## <a name="how-to-open-disk-management"></a>如何開啟磁碟管理
+
+在我們開始解決實質問題之前，先提醒您，您可以在必要時透過以下簡單的方法進入「磁碟管理」：
+
+1. 在工作列上的 [搜尋] 方塊中輸入**電腦管理**，選取並按住 (以滑鼠右鍵按一下) [電腦管理]  ，然後選取 [以系統管理員身分執行]   > [是]  。
+2. 在開啟 [電腦管理] 後，移至 [存放裝置]   > [磁碟管理]  。
+
+## <a name="disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps"></a>遺失或未初始化的磁碟，以及一般疑難排解步驟
 
 ![顯示不明磁碟而必須初始化的 [磁碟管理]。](media/uninitialized-disk.PNG)
 
@@ -34,7 +41,7 @@ ms.locfileid: "71402168"
 
 **解決方法：**   如果磁碟機為全新且只需要初始化來清除磁碟機上的所有資料，則解決方法很簡單；請參閱[將新磁碟初始化](initialize-new-disks.md)。 不過，您很有可能已經嘗試過這麼做，但沒有用。 或者，您可能有充滿重要檔案的磁碟，而不想要透過初始化來清除磁碟。
 
-磁碟遺失或無法初始化有許多原因，其中一個常見原因是磁碟失敗。 您對修復失敗磁碟所能做的事情有限，但您可以嘗試執行下列一些步驟來查看是否可以讓它恢復運作。 如果磁碟在下列其中一個步驟之後運作正常，您不需要執行後續步驟，只要放輕鬆慶祝並或許更新您的備份。
+磁碟或記憶卡遺失或無法初始化有許多原因，其中一個常見原因是磁碟故障。 您對修復失敗磁碟所能做的事情有限，但您可以嘗試執行下列一些步驟來查看是否可以讓它恢復運作。 如果磁碟在下列其中一個步驟之後運作正常，您不需要執行後續步驟，只要放輕鬆慶祝並或許更新您的備份。
 
 1. 在 [磁碟管理] 中查看磁碟。 如果顯示為「離線」  (如下所示)，請先嘗試以滑鼠右鍵按一下它，然後選取 [連線]  。
 
@@ -43,8 +50,12 @@ ms.locfileid: "71402168"
 
     ![顯示為連線的磁碟，其中具有狀況良好的磁碟區](media/healthy-volume.png)
     - 如果磁碟分割具有檔案系統，但沒有磁碟機代號 (例如 E:)，請參閱[變更磁碟機代號](change-a-drive-letter.md)以手動新增磁碟機代號。
-    - 如果沒有檔案系統 (NTFS、ReFS、FAT32 或 exFAT)，且您知道磁碟是空的，請以滑鼠右鍵按一下磁碟分割，然後選取 [格式化]  。 將磁碟格式化會清除磁碟上的所有資料，因此如果您想要嘗試從磁碟復原檔案，則請勿這麼做；相反地，請直接跳到下一個步驟。
-3. 如果您有外部磁碟，請拔除磁碟再將它插回，然後選取 [動作]   > [重新掃描磁碟]  。 
+    - 如果磁碟分割沒有檔案系統 (列示為 NTFS、ReFS、FAT32 或 exFAT)，且您知道磁碟是空的，請選取並按住 (或以滑鼠右鍵按一下) 磁碟分割，然後選取 [格式化]  。 將磁碟格式化會清除磁碟上的所有資料，因此如果您想要嘗試從磁碟復原檔案，則請勿這麼做；相反地，請直接跳到下一個步驟。
+    - 如果磁碟分割列示為 [未配置]  ，且您知道磁碟分割是空的，請選取並按住 (或以滑鼠右鍵按一下) 未配置的磁碟分割，然後選取 [新增簡單磁碟區]  ，並依照指示在可用空間中建立磁碟區。 如果您想要嘗試從這個磁碟分割復原檔案，則請勿這麼做；您應直接跳到下一個步驟。
+
+    > [!NOTE]
+    > 請忽略任何列示為 [EFI 系統磁碟分割]  或 [復原磁碟分割]  的磁碟分割。 這些磁碟分割已佔滿了電腦正常運作所需的重要檔案。 最好保持原狀，讓它們可以執行啟動電腦和協助從問題中復原等工作。
+3. 如果您有外部磁碟未顯示出來，請拔除磁碟再將它插回，然後選取 [動作]   > [重新掃描磁碟]  。 
 4. 將電腦關機、關閉外部硬碟 (如果是具有電源線的外部磁碟)，然後重新啟動電腦和磁碟。
     若要在 Windows 10 中將電腦關機，請依序選取 [開始] 按鈕、[電源] 按鈕和 [關機]  。
 5. 將磁碟插入直接位於電腦 (而不是集線器) 上的不同 USB 連接埠。
@@ -52,14 +63,14 @@ ms.locfileid: "71402168"
 6. 嘗試不同的纜線。
     這聽起來可能很瘋狂，但纜線經常失敗，所以請嘗試使用不同的纜線來插入磁碟。 如果您的桌上型電腦中有內部磁碟，您可能需要先將電腦關機再切換纜線；如需詳細資訊，請參閱您的電腦手冊。
 7. 檢查 [裝置管理員] 是否有問題。
-    按住 (或以滑鼠右鍵按一下) [開始] 按鈕，然後從操作功能表選取 [裝置管理員]。 尋找旁邊有驚嘆號或發生其他問題的任何裝置，按兩下裝置，然後讀取其狀態。
+    選取並按住 (或以滑鼠右鍵按一下) [開始] 按鈕，然後從操作功能表選取 [裝置管理員]。 尋找旁邊有驚嘆號或發生其他問題的任何裝置，按兩下裝置，然後讀取其狀態。
 
-    以下是[裝置管理員中的錯誤碼](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)清單，但一個有時有效的方法是以滑鼠右鍵按一下有問題的裝置，選取 [解除安裝裝置]  ，然後選取 [動作]   > [掃描硬體變更]  .
+    以下是[裝置管理員中的錯誤碼](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)清單，但一個有時有效的方法，是選取並按住 (或以滑鼠右鍵按一下) 有問題的裝置，選取 [解除安裝裝置]  ，然後選取 [動作]   > [掃描硬體變更]  。
 
     ![顯示不明 USB 裝置的 [裝置管理員]](media/device-manager.PNG)
 8. 將磁碟插入不同的電腦。
     
-    如果磁碟在另一部電腦上無法運作，這是好現象，因為這代表問題在於磁碟，而不是您的電腦。 我們知道這並不好笑。 您也可以嘗試 [External USB drive error "You must initialize the disk before Logical Disk Manager can access it"](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware) (外部 USB 磁碟機錯誤：「您必須將磁碟初始化，邏輯磁碟管理員才能存取它」) 中的一些其他步驟，但可能是時候在 [Microsoft 社群](https://answers.microsoft.com/en-us/windows)網站上搜尋並尋求協助，或連絡您的磁碟製造商。
+    如果磁碟在另一部電腦上無法運作，這是好現象，因為這代表問題在於磁碟，而不是您的電腦。 我們知道這並不好笑。 您也可以嘗試 [External USB drive error "You must initialize the disk before Logical Disk Manager can access it"](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware) (外部 USB 磁碟機錯誤：「您必須將磁碟初始化，邏輯磁碟管理員才能存取它」) 中的一些其他步驟，但可能是時候在 [Microsoft 社群](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)網站上搜尋並尋求協助，或連絡您的磁碟製造商或 [Microsoft 支援服務](https://support.microsoft.com/contactus/)。
 
     如果您還是無法讓它運作，也有應用程式可嘗試從失敗的磁碟復原資料；如果檔案非常重要，您可以付錢請資料修復公司嘗試復原檔案。 如果您發現任何方法對您有用，請在下方區段留言來讓我們知道。
 
@@ -75,7 +86,7 @@ ms.locfileid: "71402168"
 
 當磁碟正在啟動時，或 [磁碟管理] 正在重新掃描系統上的所有磁碟時，磁碟可能也會顯示 [無法讀取]  狀態。 在某些情況下，無法讀取的磁碟已失敗且無法復原。 動態磁碟的 [無法讀取]  狀態通常是磁碟空間有一部分已損毀或發生 I/O 錯誤所致，而不是整個磁碟失敗。
 
-**解決方法：**  重新掃描磁碟或重新啟動電腦，以查看磁碟狀態是否變更。 另請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中所述的疑難排解步驟。
+**解決方法：**  重新掃描磁碟或重新啟動電腦，以查看磁碟狀態是否變更。 另請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中所述的疑難排解步驟。
 
 ## <a name="a-dynamic-disks-status-is-foreign"></a>動態磁碟的狀態為 [外部]
 
@@ -83,7 +94,7 @@ ms.locfileid: "71402168"
 
 在某些情況下，先前已連接到系統的磁碟可能會顯示 [外部]  狀態。 動態磁碟的設定資料是儲存在所有動態磁碟上，因此當所有動態磁碟都失敗時，關於系統擁有哪些磁碟的資訊會遺失。
 
-**解決方法：**  將磁碟新增至電腦的系統設定，讓您可以存取磁碟上的資料。 若要將磁碟新增至電腦的系統設定，請匯入外部磁碟 (以滑鼠右鍵按一下該磁碟，然後按一下 [匯入外部磁碟]  )。 當您匯入磁碟時，外部磁碟所有的現有磁碟區都會顯示而且可存取。 
+**解決方法：**  將磁碟新增至電腦的系統設定，讓您可以存取磁碟上的資料。 若要將磁碟新增至電腦的系統設定，請匯入外部磁碟，方法是選取並按住 (或以滑鼠右鍵按一下) 該磁碟，然後按一下 [匯入外部磁碟]  。 當您匯入磁碟時，外部磁碟所有的現有磁碟區都會顯示而且可存取。 
 
 ## <a name="a-dynamic-disks-status-is-online-errors"></a>動態磁碟的狀態為 [連線 (錯誤)]
 
@@ -102,12 +113,12 @@ ms.locfileid: "71402168"
 1. 修復任何磁碟、控制器或電纜問題。 
 2. 確定實體磁碟已開啟電源、已插入並連結到電腦。 
 3. 接下來，使用 [重新啟動磁碟]  重新讓磁碟上線。
-4. 請嘗試執行[磁碟的狀態為未初始化或磁碟已完全遺失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中所述的疑難排解步驟。
-5. 如果磁碟狀態仍然是 [離線]  且磁碟名稱依舊為 [遺失]  ，而您判斷磁碟發生無法修復的問題時，可以在磁碟上按一下滑鼠右鍵，然後按一下 [移除磁碟]  將磁碟從系統移除。 不過，移除磁碟之前，您必須先刪除磁碟上的所有磁碟區 (或鏡像)。 您可以藉由移除鏡像而不是整個磁碟區來保留磁碟上的任何鏡像磁碟區。 刪除磁碟區會損毀磁碟區中的資料，因此只有在非常確定磁碟已永久損壞且無法使用時，才要移除磁碟。
+4. 請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中所述的疑難排解步驟。
+5. 如果磁碟狀態仍然是 [離線]  且磁碟名稱依舊為 [遺失]  ，而您判斷磁碟發生無法修復的問題時，您可以選取並按住 (或以滑鼠右鍵按一下) 磁碟，然後按一下 [移除磁碟]  將磁碟從系統移除。 不過，移除磁碟之前，您必須先刪除磁碟上的所有磁碟區 (或鏡像)。 您可以藉由移除鏡像而不是整個磁碟區來保留磁碟上的任何鏡像磁碟區。 刪除磁碟區會損毀磁碟區中的資料，因此只有在非常確定磁碟已永久損壞且無法使用時，才要移除磁碟。
 
 **若要讓狀態為 [離線] 且依舊名為「Disk \#」(而非「遺失」) 的磁碟重新上線，請嘗試下列其中一或多個程序：**
 
-1. 在 [磁碟管理] 中，以滑鼠右鍵按一下磁碟，然後按一下 [重新啟動磁碟]  ，使磁碟重新上線。 如果磁碟狀態仍然保持 [離線]  ，請檢查纜線和磁碟控制器，確定實體磁碟狀況良好。 修正任何問題，然後再次嘗試重新啟動磁碟。 如果磁碟重新啟動成功，磁碟上所有的磁碟區應該都會自動回復到 [狀況良好]  狀態。
+1. 在 [磁碟管理] 中，選取並按住 (或以滑鼠右鍵按一下) 磁碟，然後按一下 [重新啟動磁碟]  ，使磁碟重新上線。 如果磁碟狀態仍然保持 [離線]  ，請檢查纜線和磁碟控制器，確定實體磁碟狀況良好。 修正任何問題，然後再次嘗試重新啟動磁碟。 如果磁碟重新啟動成功，磁碟上所有的磁碟區應該都會自動回復到 [狀況良好]  狀態。
 2. 在 [事件檢視器] 中，查看事件記錄檔是否有任何磁碟相關錯誤，例如「不良設定複本」。 如果事件記錄檔包含這種錯誤，請連絡 [Microsoft 產品支援服務](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx)。
 
 3. 嘗試將磁碟移到另一部電腦。 如果您可以在另一部電腦讓磁碟進入 [連線]  狀態，此問題最有可能出在電腦的設定，磁碟因此而無法進入 [連線]  狀態。
@@ -123,13 +134,13 @@ ms.locfileid: "71402168"
 如果磁碟區是狀態為 [失敗]  的基本磁碟區：
 
 - 確定底層實體磁碟已開啟電源、已插入並連結到電腦。
-- 請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中所述的疑難排解步驟。
+- 請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中所述的疑難排解步驟。
 
 如果磁碟區是狀態為 [失敗]  的動態磁碟區：
 
 -   確定底層磁碟是 [連線] 狀態。 如果不是，請將磁碟回復到 [連線]  狀態。 如果成功，磁碟區就會自動重新啟動，並回到 [狀況良好]  狀態。 如果動態磁碟回復到 [連線]  狀態，但動態磁碟區卻未回復到 [狀況良好]  狀態，您可以手動重新啟動磁碟。
 -   如果動態磁碟區是包含舊資料的鏡像或 RAID-5 磁碟區，即使讓底層磁碟上線，也不會自動重新啟動磁碟區。 如果包含最新資料的磁碟已中斷連接，請先讓這些磁碟上線 (以允許資料同步)。 否則，請手動重新啟動鏡像或 RAID-5 磁碟區，然後執行錯誤檢查工具或 Chkdsk.exe。
-- 請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中所述的疑難排解步驟。
+- 請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中所述的疑難排解步驟。
 
 ## <a name="a-basic-or-dynamic-volumes-status-is-unknown"></a>基本或動態磁碟區的狀態為 [不明]
 
@@ -148,8 +159,8 @@ ms.locfileid: "71402168"
 
 如果您不再需要多磁碟的磁碟區，可以匯入磁碟，然後在其上建立新磁碟區。 若要這樣做：
 
-1. 以滑鼠右鍵按一下狀態為 [失敗]  或 [失敗的備援磁碟]  的磁碟區，然後按一下 [刪除磁碟區]  。
-2. 以滑鼠右鍵按一下磁碟，然後按一下 [新增磁碟區]  。
+1. 選取並按住 (或以滑鼠右鍵按一下) 狀態為 [失敗]  或 [失敗的備援磁碟]  的磁碟區，然後按一下 [刪除磁碟區]  。
+2. 選取並按住 (或以滑鼠右鍵按一下) 磁碟，然後按一下 [新增磁碟區]  。
 
 ## <a name="a-dynamic-volumes-status-is-healthy-at-risk"></a>動態磁碟區的狀態為 [狀況良好 (危險)]
 
@@ -160,7 +171,7 @@ ms.locfileid: "71402168"
 **解決方法：**  
 1. 將底層磁碟回復到 [連線]  狀態。 磁碟回復到 [連線]  狀態後，磁碟區應該會回復到 [狀況良好]  狀態。 如果 [狀況良好 (危險)]  狀態持續存在，磁碟可能會失敗。 
 
-2. 盡快備份資料並更換磁碟。 
+2. 盡快備份資料並更換磁碟。
 
 ## <a name="cannot-manage-striped-volumes-using-disk-management-or-diskpart"></a>無法使用 [磁碟管理] 或 DiskPart 來管理等量磁碟區
 
@@ -183,3 +194,7 @@ ms.locfileid: "71402168"
 
 > [!NOTE]
 > 不支援工作群組中的遠端連線。 本機電腦和遠端電腦都必須是網域的成員。
+
+另請參閱
+
+- [在 Windows 10 中釋放磁碟機空間](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

@@ -9,16 +9,16 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 442aef6daccda2ab3e95690a82f43f642e5a3f73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96659164a9eea1784cb529c47dd58be70d546f80
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358754"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948737"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>使用 AD FS 2016 或更新版本的 OAuth 公用用戶端建立原生用戶端應用程式
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 本文說明如何建立原生應用程式，以與受 AD FS 2016 或更新版本保護的 Web API 互動。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71358754"
 
 ![應用程式概觀](media/native-client-with-ad-fs-2016/appoverview.png)
 
-## <a name="pre-requisites"></a>先決條件
+## <a name="pre-requisites"></a>必要條件
 以下是完成本檔之前所需的先決條件清單。 本檔假設已安裝 AD FS，且已建立 AD FS 伺服器陣列。
 
 * GitHub 用戶端工具
@@ -41,10 +41,10 @@ ms.locfileid: "71358754"
 
 1. 在 AD FS 管理 中，以滑鼠右鍵按一下 **應用程式群組**，然後選取 **新增應用程式群組**。
 
-2. 在 [應用程式群組嚮導] 上，針對 [名稱] 輸入您偏好的任何名稱，例如 NativeToDoListAppGroup。 選取**存取 Web API 範本的原生應用程式**。 按一下 [下一步]。
+2. 在 [應用程式群組嚮導] 上，針對 [名稱] 輸入您偏好的任何名稱，例如 NativeToDoListAppGroup。 選取**存取 Web API 範本的原生應用程式**。 按一下 **\[下一步\]** 。
  ![新增應用程式群組](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
-3. 在 [**原生應用程式**] 頁面上，記下 AD FS 所產生的識別碼。 這是 AD FS 將用來辨識公用用戶端應用程式的識別碼。 複製 [**用戶端識別碼**] 值。 稍後在應用程式代碼中，將會使用它做為**ida： ClientId**的值。 如果您想要的話，可以在這裡提供任何自訂識別碼。 重新導向 URI 是任意值，例如 put https://ToDoListClient ![ 原生應用程式](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
+3. 在 [**原生應用程式**] 頁面上，記下 AD FS 所產生的識別碼。 這是 AD FS 將用來辨識公用用戶端應用程式的識別碼。 複製 [**用戶端識別碼**] 值。 稍後在應用程式代碼中，將會使用它做為**ida： ClientId**的值。 如果您想要的話，可以在這裡提供任何自訂識別碼。 重新導向 URI 是任意值，例如，put https://ToDoListClient ![ 原生應用程式](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
 
 4. 在 [設定**WEB api** ] 頁面上，設定 web api 的 [識別碼] 值。 在此範例中，這應該是 Web 應用程式應該執行的**SSL URL**值。 您可以按一下方案中 TooListServer 專案的屬性來取得此值。 稍後在 native client 應用程式**的 app.config 檔案中，** 這會做為**todo： TodoListResourceId**值，也會做為**todo： TodoListBaseAddress**。
 ![Web API](media/native-client-with-ad-fs-2016/addapplicationgroup3.png)
@@ -59,13 +59,13 @@ ms.locfileid: "71358754"
 若要設定宣告規則，請開啟剛建立的應用程式群組，然後按兩下 Web API。 選取 [發行轉換規則] 索引標籤，然後按一下 [新增規則] 按鈕。 在宣告規則的類型中，選擇 [自訂宣告規則]，然後新增宣告規則，如下所示。
 
 ```  
-c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
+c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
  => issue(store = "Active Directory", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"), query = ";givenName;{0}", param = c.Value);
 ```
 
 ![NameIdentifier 宣告規則](media/native-client-with-ad-fs-2016/addnameidentifierclaimrule.png)
 
-### <a name="modify-the-application-code"></a>修改應用程式代碼
+### <a name="modify-the-application-code"></a>修改應用程式程式碼
 
 本節討論如何下載範例 Web API，並在 Visual Studio 中加以修改。   我們將使用[這裡](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop)的 Azure AD 範例。  
 
@@ -88,14 +88,14 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 
 **App.config**
 
-* 使用描述 AD FS 服務的值，新增金鑰**ida：授權**單位。 例如： https://fs.contoso.com/adfs/
+* 使用描述 AD FS 服務的值，新增金鑰**ida：授權**單位。 例如， https://fs.contoso.com/adfs/
 * 在 AD FS 中建立應用程式群組期間，使用**原生應用程式**頁面中的 [**用戶端識別碼**] 值來修改**ida： ClientId**金鑰。 例如，3f07368b-6efd-4f50-a330-d93853f4c855
-* 在 AD FS 中建立應用程式群組期間，在 [**設定 WEB API** ] 頁面中，從 [**識別碼**] 的值修改**todo： todo： TodoListResourceId** 。 例如： https://localhost:44321/
-* 在 AD FS 中建立應用程式群組期間，從 [**設定 WEB API** ] 頁面中的 [**識別碼**] 的值修改**todo： TodoListBaseAddress** 。 例如： https://localhost:44321/
-* 在 AD FS 中建立應用程式群組期間，使用 [**原生應用程式**] 頁面中的 [重新**導向 URI** ] 的值來設定**ida： RedirectUri**的值。 例如： https://ToDoListClient
+* 在 AD FS 中建立應用程式群組期間，在 [**設定 WEB API** ] 頁面中，從 [**識別碼**] 的值修改**todo： todo： TodoListResourceId** 。 例如， https://localhost:44321/
+* 在 AD FS 中建立應用程式群組期間，從 [**設定 WEB API** ] 頁面中的 [**識別碼**] 的值修改**todo： TodoListBaseAddress** 。 例如， https://localhost:44321/
+* 在 AD FS 中建立應用程式群組期間，使用 [**原生應用程式**] 頁面中的 [重新**導向 URI** ] 的值來設定**ida： RedirectUri**的值。 例如， https://ToDoListClient
 * 為了方便閱讀，您可以移除/批註**ida： Tenant**和**ida： AADInstance**的金鑰。
 
-  ![應用程式設定](media/native-client-with-ad-fs-2016/app_configfile.PNG)
+  ![應用程式組態](media/native-client-with-ad-fs-2016/app_configfile.PNG)
 
 
 **MainWindow.xaml.cs**
@@ -126,11 +126,11 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 **Web.config**
 
 * 批註金鑰**ida：租**使用者，因為我們不需要它
-* 新增**ida：授權**單位的金鑰，其值指出 federation SERVICE 的 FQDN，範例 https://fs.contoso.com/adfs/
+* 為**ida：授權**單位新增金鑰，其值表示 federation SERVICE 的 FQDN，範例 https://fs.contoso.com/adfs/
 * 使用您在 AD FS 中新增應用程式群組期間在 [**設定 WEB api** ] 頁面中指定的 web api 識別碼值，修改金鑰**ida：物件**。
 * 新增金鑰**ida： AdfsMetadataEndpoint** ，其值對應至 AD FS 服務的同盟中繼資料 URL，例如： https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
 
-![Web 設定](media/native-client-with-ad-fs-2016/webconfig.PNG)
+![Web 組態](media/native-client-with-ad-fs-2016/webconfig.PNG)
 
 
 **Startup.Auth.cs**
@@ -156,7 +156,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 執行應用程式
 
 1. 在 方案 Nativeclient-android-DotNet 上，以滑鼠右鍵按一下並移至 屬性。 如下所示，將啟始專案變更為多個啟始專案，並將 TodoListClient 和 TodoListService 都設定為 [啟動]。
-![解決方案屬性](media/native-client-with-ad-fs-2016/solutionproperties.png)
+![方案屬性](media/native-client-with-ad-fs-2016/solutionproperties.png)
 
 2.  按下 F5 鍵，或選取功能表列中的 [Debug > 繼續]。 這會同時啟動原生應用程式和 WebAPI。 在原生應用程式上按一下 [登入] 按鈕，它會彈出來自 AD AL 的互動式登入，然後重新導向至您的 AD FS 服務。 輸入有效使用者的認證。
 ![登入](media/native-client-with-ad-fs-2016/sign-in.png)

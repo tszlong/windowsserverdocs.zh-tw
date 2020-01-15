@@ -6,16 +6,16 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8a540361cdd07f6adfc1c929d77c510ef8433d6d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47f3a515379eb79f628a0ee97ef2c7965c4d8d50
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369888"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948159"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>在 Active Directory 中設定的叢集帳戶
 
-適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008
+適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008
 
 在 Windows Server 中，當您建立容錯移轉叢集並設定叢集服務或應用程式時，容錯移轉叢集的嚮導會建立必要的 Active Directory 電腦帳戶（也稱為電腦物件），並提供特定的許可權。 此程式會建立叢集本身的電腦帳戶（此帳戶也稱為叢集名稱物件或 CNO），以及適用于大部分叢集服務和應用程式類型的電腦帳戶，這是 Hyper-v 虛擬機器的例外狀況。 這些帳戶的許可權會由容錯移轉叢集的嚮導自動設定。 如果許可權已變更，必須將它們變更回以符合叢集需求。 本指南描述這些 Active Directory 帳戶和許可權、提供其重要性的背景，並說明設定和管理帳戶的步驟。
       
@@ -47,7 +47,7 @@ ms.locfileid: "71369888"
 </colgroup>
 <thead>
 <tr class="header">
-<th>帳戶</th>
+<th>[帳戶]</th>
 <th>許可權的詳細資料</th>
 </tr>
 </thead>
@@ -59,7 +59,7 @@ ms.locfileid: "71369888"
 <tr class="even">
 <td><p>叢集名稱帳戶（叢集本身的電腦帳戶）</p></td>
 <td><p>執行「建立叢集」嚮導時，它會在用於網域中電腦帳戶的預設容器中，建立叢集名稱帳戶。 根據預設，叢集名稱帳戶（如同其他電腦帳戶）可以在網域中建立最多10個電腦帳戶。</p>
-<p>如果您在建立叢集之前先建立叢集名稱帳戶（叢集名稱物件），也就是預先設置帳戶，您必須在用於電腦的容器中，為它提供 [<strong>建立電腦物件</strong>] 和 [<strong>讀取所有屬性</strong>] 許可權。網域中的帳戶。 您也必須停用帳戶，並對安裝叢集的系統管理員將使用的帳戶提供<strong>完整控制權</strong>。 如需詳細資訊，請參閱本指南稍後的預先設置叢集<a href="#steps-for-prestaging-the-cluster-name-account" data-raw-source="[Steps for prestaging the cluster name account](#steps-for-prestaging-the-cluster-name-account)">名稱帳戶的步驟</a>。</p></td>
+<p>如果您在建立叢集之前建立叢集名稱帳戶（叢集名稱物件）（也就是預先設置帳戶），您必須在用於網域中電腦帳戶的容器中，為它提供 [<strong>建立電腦物件</strong>] 和 [<strong>讀取所有屬性</strong>] 許可權。 您也必須停用帳戶，並對安裝叢集的系統管理員將使用的帳戶提供<strong>完整控制權</strong>。 如需詳細資訊，請參閱本指南稍後的預先設置叢集<a href="#steps-for-prestaging-the-cluster-name-account" data-raw-source="[Steps for prestaging the cluster name account](#steps-for-prestaging-the-cluster-name-account)">名稱帳戶的步驟</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>叢集服務或應用程式的電腦帳戶</p></td>
@@ -89,7 +89,7 @@ ms.locfileid: "71369888"
 
 ![](media/configure-ad-accounts/Cc731002.beecc4f7-049c-4945-8fad-2cceafd6a4a5(WS.10).gif)
 
-如果圖表中顯示的問題類型發生，則會將特定事件（1193、1194、1206或1207）記錄在事件檢視器中。 如需這些事件的詳細資訊， [http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271)請參閱。
+如果圖表中顯示的問題類型發生，則會將特定事件（1193、1194、1206或1207）記錄在事件檢視器中。 如需這些事件的詳細資訊，請參閱[https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271)。
 
 請注意，如果已達到用來建立電腦物件（預設為10）的全網域配額，則建立叢集服務或應用程式的帳戶時，可能會發生類似的問題。 如果有的話，最好洽詢網域系統管理員來增加配額，雖然這是全網域的設定，而且應該在仔細考慮之後才變更，而且只有在確認上一個圖表沒有描述您的情況。 如需詳細資訊，請參閱本指南稍後的[針對叢集相關 Active Directory 帳戶中的變更所造成的問題疑難排解步驟](#steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts)。
 
@@ -97,7 +97,7 @@ ms.locfileid: "71369888"
 
 如前面三節所述，必須符合特定需求，才能在容錯移轉叢集上成功設定叢集服務和應用程式。 最基本的需求會考慮叢集節點的位置（在單一網域內），以及安裝叢集之人員帳戶的許可權層級。 如果符合這些需求，則容錯移轉叢集的嚮導可以自動建立叢集所需的其他帳戶。 下列清單提供有關這些基本需求的詳細資料。
 
-  - **子**所有節點都必須位於相同的 Active Directory 網域。 （網域不能以 Windows NT 4.0 為基礎，這不包含 Active Directory）。  
+  - **節點：** 所有節點都必須位於相同的 Active Directory 網域。 （網域不能以 Windows NT 4.0 為基礎，這不包含 Active Directory）。  
       
   - **安裝叢集的人員帳戶：** 安裝叢集的人員必須使用具有下列特性的帳戶：  
       
@@ -118,13 +118,13 @@ ms.locfileid: "71369888"
 
 安裝叢集之人員的帳戶很重要，因為它提供了為叢集本身建立電腦帳戶的基礎。
 
-完成下列程式所需的最小群組成員資格取決於您要建立網域帳戶，並為其指派網域中的必要許可權，或您是否只將帳戶（由其他人建立）放入將成為容錯移轉叢集中節點之伺服器上的本機系統**管理員**群組。 若要完成此程式，至少需要**Account Operators**的成員資格或同等許可權。 如果是後者，則為容錯移轉叢集節點之伺服器上本機**Administrators**群組的成員資格或同等許可權，全都是必要的。 如需使用適當帳戶和群組成員資格[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的詳細資訊，請參閱。
+完成下列程式所需的最小群組成員資格取決於您是否要建立網域帳戶，並為其指派網域中的必要許可權，或您是否只將帳戶（由其他人建立）放入將成為容錯移轉叢集中節點之伺服器上的本機系統**管理員**群組。 若要完成此程式，至少需要**Account Operators**的成員資格或同等許可權。 如果是後者，則為容錯移轉叢集節點之伺服器上本機**Administrators**群組的成員資格或同等許可權，全都是必要的。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-configure-the-account-for-the-person-who-installs-the-cluster"></a>為安裝叢集的人員設定帳戶
 
 1.  建立或取得安裝叢集之人員的網域帳戶。 此帳戶可以是網域使用者帳戶或**帳戶操作員**帳戶。 如果您使用標準使用者帳戶，您必須在此程式稍後授與它一些額外的許可權。
 
-2.  如果在步驟1中建立或取得的帳戶不會自動包含在網域中電腦的本機系統**管理員**群組中，請將該帳戶新增到將成為容錯移轉節點之伺服器上的本機系統**管理員**群組中。該群
+2.  如果在步驟1中建立或取得的帳戶不會自動包含在網域中電腦的本機**administrators**群組中，請將該帳戶新增到將成為容錯移轉叢集中節點之伺服器上的本機系統**管理員**群組：
     
     1.  依序按一下 [開始]、[系統管理工具]，然後按一下 [伺服器管理員]。  
           
@@ -132,7 +132,7 @@ ms.locfileid: "71369888"
           
     3.  在中央窗格中，以滑鼠右鍵按一下 [系統**管理員**]，按一下 [**加入群組**]，然後按一下 [**新增**]。  
           
-    4.  在 **[輸入物件名稱來選取**] 下，輸入在步驟1中建立或取得的使用者帳戶名稱。 如果出現提示，請輸入具有此動作之足夠許可權的帳戶名稱和密碼。 然後按一下 [確定]。  
+    4.  在 **[輸入物件名稱來選取**] 下，輸入在步驟1中建立或取得的使用者帳戶名稱。 如果出現提示，請輸入具有此動作之足夠許可權的帳戶名稱和密碼。 然後按一下 [**確定**]。  
           
     5.  在將成為容錯移轉叢集中節點的每部伺服器上重複這些步驟。  
 
@@ -143,7 +143,7 @@ ms.locfileid: "71369888"
 
 3. 如果在步驟1中建立或取得的帳戶是網域系統管理員帳戶，請略過此程式的其餘部分。 否則，請在用於網域中電腦帳戶的容器中，將 [**建立電腦物件**] 和 [**讀取所有屬性**] 許可權提供給帳戶。
     
-   1.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**繼續**]。  
+   1.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **繼續**]。  
           
    2.  在 [ **View** ] 功能表上，確認已選取 [ **Advanced Features** ]。  
           
@@ -163,13 +163,13 @@ ms.locfileid: "71369888"
 
 如果您未預先設置叢集名稱帳戶，而是改為在執行 [建立叢集嚮導] 時自動建立和設定帳戶，則通常會比較簡單。 不過，如果因為貴組織的需求而必須預先設置叢集名稱帳戶，請使用下列程式。
 
-若要完成此程序，至少需要 **Domain Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的詳細資訊，請參閱。 請注意，您可以在此程式中使用相同的帳戶，就像您在建立叢集時所使用的一樣。
+若要完成此程序，至少需要 **Domain Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。 請注意，您可以在此程式中使用相同的帳戶，就像您在建立叢集時所使用的一樣。
 
 #### <a name="to-prestage-a-cluster-name-account"></a>若要預先設置叢集名稱帳戶
 
 1.  請確定您知道叢集將擁有的名稱，以及建立叢集的人員將使用的使用者帳戶名稱。 （請注意，您可以使用該帳戶來執行此程式。）
 
-2.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**繼續**]。
+2.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **繼續**]。
 
 3.  在主控台樹中，以滑鼠右鍵按一下在網域中建立電腦帳戶的 [**電腦**] 或 [預設容器]。 **電腦**位於<b>Active Directory 使用者和電腦/</b><i>網域節點</i><b>/Computers</b>中。
 
@@ -203,9 +203,9 @@ ms.locfileid: "71369888"
           
     2.  在您剛才建立的電腦帳戶**上按一下滑鼠**右鍵，然後按一下 [內容]。  
           
-    3.  在 [安全性] 索引標籤上，按一下 [新增]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**繼續**]。  
+    3.  在 [安全性] 索引標籤上，按一下 [新增]。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **繼續**]。  
           
-    4.  使用 [**選取使用者、電腦或群組**] 對話方塊，即可指定建立叢集時將使用的使用者帳戶。 然後按一下 [確定]。  
+    4.  使用 [**選取使用者、電腦或群組**] 對話方塊，即可指定建立叢集時將使用的使用者帳戶。 然後按一下 [**確定**]。  
           
     5.  請確定已選取您剛才新增的使用者帳戶，然後選取 [**完全控制**] 旁邊的 [**允許**] 核取方塊。  
           
@@ -215,13 +215,13 @@ ms.locfileid: "71369888"
 
 如果您不為叢集服務或應用程式預先設置電腦帳戶，而是改為在執行高可用性嚮導時自動建立和設定帳戶，通常會比較簡單。 不過，如果因為貴組織的需求而需要預先設置帳戶，請使用下列程式。
 
-若要完成此程式，至少需要**Account Operators**群組的成員資格或同等許可權。 如需使用適當帳戶和群組成員資格[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的詳細資訊，請參閱。
+若要完成此程式，至少需要**Account Operators**群組的成員資格或同等許可權。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-prestage-an-account-for-a-clustered-service-or-application"></a>為叢集服務或應用程式預先設置帳戶
 
 1.  請確定您知道叢集的名稱以及叢集服務或應用程式將擁有的名稱。
 
-2.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**繼續**]。
+2.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **繼續**]。
 
 3.  在主控台樹中，以滑鼠右鍵按一下在網域中建立電腦帳戶的 [**電腦**] 或 [預設容器]。 **電腦**位於<b>Active Directory 使用者和電腦/</b><i>網域節點</i><b>/Computers</b>中。
 
@@ -262,7 +262,7 @@ ms.locfileid: "71369888"
 
 如需確保叢集系統管理員有正確許可權可以視需要執行下列程式的相關資訊，請參閱本指南稍早的針對密碼重設和其他帳戶維護進行規劃。
 
-您至少必須有本機 **Administrators** 群組的成員資格或同等權限，才能完成此程序。 此外，您的帳戶必須具有叢集名稱帳戶的 [**重設密碼**] 許可權（除非您的帳戶是**網域系統管理員**帳戶，或者是叢集名稱帳戶的 Creator 擁有者）。 安裝叢集的人員所使用的帳戶可用於此程式。 如需使用適當帳戶和群組成員資格[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的詳細資訊，請參閱。
+您至少必須有本機 **Administrators** 群組的成員資格或同等權限，才能完成此程序。 此外，您的帳戶必須具有叢集名稱帳戶的 [**重設密碼**] 許可權（除非您的帳戶是**網域系統管理員**帳戶，或者是叢集名稱帳戶的 Creator 擁有者）。 安裝叢集的人員所使用的帳戶可用於此程式。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-troubleshoot-password-problems-with-the-cluster-name-account"></a>疑難排解叢集名稱帳戶的密碼問題
 
@@ -276,13 +276,13 @@ ms.locfileid: "71369888"
 
 ### <a name="steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>針對叢集相關 Active Directory 帳戶中的變更所造成的問題進行疑難排解的步驟
 
-如果刪除叢集名稱帳戶，或從它移除許可權，當您嘗試設定新的叢集服務或應用程式時，就會發生問題。 若要疑難排解可能原因的問題，請使用 [Active Directory 使用者和電腦] 嵌入式管理單元來查看或變更叢集名稱帳戶和其他相關帳戶。 如需這類問題發生時所記錄事件的詳細資訊（事件1193、1194、1206或1207），請參閱[http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271)。
+如果刪除叢集名稱帳戶，或從它移除許可權，當您嘗試設定新的叢集服務或應用程式時，就會發生問題。 若要疑難排解可能原因的問題，請使用 [Active Directory 使用者和電腦] 嵌入式管理單元來查看或變更叢集名稱帳戶和其他相關帳戶。 如需這類問題發生時所記錄事件的詳細資訊（事件1193、1194、1206或1207），請參閱[https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271)。
 
-若要完成此程序，至少需要 **Domain Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的詳細資訊，請參閱。
+若要完成此程序，至少需要 **Domain Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-troubleshoot-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>針對叢集相關 Active Directory 帳戶中的變更所造成的問題進行疑難排解
 
-1.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**繼續**]。
+1.  在網域控制站上，依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [ **Active Directory 使用者和電腦**]。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **繼續**]。
 
 2.  展開 [預設**電腦**] 容器或叢集名稱帳戶（叢集的電腦帳戶）所在的資料夾。 **電腦**位於<b>Active Directory 使用者和電腦/</b><i>網域節點</i><b>/Computers</b>中。
 
@@ -294,7 +294,7 @@ ms.locfileid: "71369888"
 
 5.  在 [預設**電腦**] 容器或叢集名稱帳戶所在的資料夾上按一下滑鼠右鍵。
 
-6.  按一下 [內容]。
+6.  按一下 **\[屬性\]** 。
 
 7.  在 [安全性] 索引標籤上，按一下 [進階]。
 
@@ -312,7 +312,7 @@ ms.locfileid: "71369888"
 
 10. 按一下 **[確定]** ，直到您回到 [ **Active Directory 使用者和電腦**] 嵌入式管理單元為止。
 
-11. 請參閱與建立電腦帳戶（物件）相關的網域原則（如有適用的網域系統管理員諮詢）。 請確定每次您設定叢集服務或應用程式時，叢集名稱帳戶都可以建立電腦帳戶。 例如，如果您的網域系統管理員已設定讓所有新電腦帳戶建立在特殊容器而非預設**電腦**容器中的設定，請確定這些設定允許叢集名稱帳戶同時在該容器中建立新的電腦帳戶。
+11. 請參閱與建立電腦帳戶（物件）相關的網域原則（如有適用的網域系統管理員諮詢）。 請確定每次您設定叢集服務或應用程式時，叢集名稱帳戶都可以建立電腦帳戶。 例如，如果您的網域系統管理員已設定讓所有新電腦帳戶建立在特殊容器中的設定，而不是預設的**電腦**容器，請確定這些設定也允許叢集名稱帳戶在該容器中建立新的電腦帳戶。
 
 12. 展開 [預設**電腦**] 容器或其中一個叢集服務或應用程式的電腦帳戶所在的容器。
 
