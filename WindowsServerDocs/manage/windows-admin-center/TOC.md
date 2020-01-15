@@ -1,12 +1,10 @@
 # [Windows Admin Center](overview.md)
 
 ## 了解
-### [Windows Admin Center 與您見面！](understand/windows-admin-center.md)
 ### [什麼是 Windows Admin Center？](understand/what-is.md)
 ### [常見問題集](understand/faq.md)
 ### [案例研究](understand/case-studies.md)
 ### [相關管理產品](understand/related-management.md)
-### [影片](understand/videos.md)
 
 ## 規劃
 ### [什麼類型的安裝最適合您？](plan/installation-options.md)
@@ -26,14 +24,13 @@
 ### [使用 PowerShell 進行自動化](configure/use-powershell.md)
 
 ## 用法
-### [入門](use/get-started.md)
+### [開始使用](use/get-started.md)
 ### [管理伺服器](use/manage-servers.md)
 ### [部署超融合式基礎結構](use/deploy-hyperconverged-infrastructure.md)
 ### [管理超融合式基礎結構](use/manage-hyper-converged.md)
 ### [管理容錯移轉叢集](use/manage-failover-clusters.md)
 ### [管理 Hyper-V 虛擬機器](use/manage-virtual-machines.md)
 ### [記錄](use/logging.md)
-
 
 ## 連線到 Azure
 ### [Azure 混合式服務](azure/index.md)
@@ -47,6 +44,7 @@
 ### [使用 Windows Admin Center 管理 Azure VM](azure/manage-azure-vms.md)
 
 ## 支援
+### [發行大事記](support/release-history.md)
 ### [支援原則](support/index.md)
 ### [一般疑難排解步驟](support/troubleshooting.md)
 ### [已知問題](support/known-issues.md)
