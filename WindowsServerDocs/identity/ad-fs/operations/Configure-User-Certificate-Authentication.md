@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b5f2202313c225d57b29997753b090e10b9c2e6c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949298"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145924"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>設定使用者憑證驗證的 AD FS
 
@@ -54,7 +54,7 @@ ms.locfileid: "75949298"
 本檔的重點在於，當 AD FS 設定為使用者的憑證驗證時，遇到常見問題的問題。 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>檢查是否已在所有 AD FS/WAP 伺服器中正確設定憑證信任簽發者
-*常見的徵兆： HTTP 204 「沒有來自 HTTPs 的內容\://certuath.adfs.contoso.com」*
+*常見的徵兆： HTTP 204 「沒有來自 HTTPs 的內容\://certauth.adfs.contoso.com」*
 
 AD FS 使用基礎 windows 作業系統來證明擁有使用者憑證，並藉由執行憑證信任鏈驗證，確保它符合受信任的簽發者。 若要比對受信任的簽發者，您必須確定所有的根和中繼授權單位都已設定為 [本機電腦憑證授權單位單位] 存放區中的 [信任的發行者]。 若要自動驗證此情況，請使用[AD FS 診斷分析器工具](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze)。 此工具會查詢所有伺服器，並確保正確布建正確的憑證。 
 1)  依據上述連結中提供的指示，下載並執行工具

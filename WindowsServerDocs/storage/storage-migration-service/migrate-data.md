@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0ef7860250a0a3d9b14fe24224432e00ee1bba86
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4da69087ab1df6200394b36c938cb05ec5185045
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949650"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124886"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>使用儲存體遷移服務來遷移伺服器
 
@@ -57,7 +57,15 @@ ms.locfileid: "75949650"
 在此步驟中，您會在指定要將資料放在目的地伺服器上的位置之後，將它傳輸。
 
 1. 在 [**傳送資料** > **輸入認證**] 頁面上，輸入可在您要遷移目的地伺服器上使用的系統管理員認證，然後選取 **[下一步]** 。
-2. 在 [**新增目的地裝置和**對應] 頁面上，會列出第一部來源伺服器。 輸入您要遷移的伺服器或叢集檔案伺服器的名稱，然後選取 [**掃描裝置**]。 如果是從已加入網域的來源電腦進行遷移，則目的地伺服器必須加入相同的網域。
+2. 在 [**新增目的地裝置和**對應] 頁面上，會列出第一部來源伺服器。 輸入您要遷移的伺服器或叢集檔案伺服器的名稱，然後選取 [**掃描裝置**]。 如果是從已加入網域的來源電腦進行遷移，則目的地伺服器必須加入相同的網域。 您也可以按一下 [建立新的 Azure VM]，然後使用嚮導在 Azure 中部署新的目的地伺服器。 這會自動調整您的 VM 大小、布建存放裝置、格式化磁片、加入網域，以及將儲存體遷移服務 proxy 新增至 Windows Server 2019 目的地。 您可以從 Windows Server 2019 （建議選項）、Windows Server 2016 和 Windows Server 2012 R2 Vm 中選擇任何大小，並使用受控磁片。   
+
+ > [!NOTE]
+   > 使用「建立新的 Azure VM」需要您具備：
+   > - 有效的 Azure 訂用帳戶。
+   > - 您擁有建立許可權的現有 Azure 計算資源群組。
+   > - 現有的 Azure 虛擬網路和子網。 
+   > - 系結至虛擬網路和子網的 Azure Express Route 或 VPN 解決方案，允許從這個 Azure IaaS VM 連線到您的內部部署用戶端、網域控制站、儲存體遷移服務協調器電腦、Windows 系統管理中心電腦、和要遷移的來源電腦。
+
 3. 將來源磁片區對應到目的地磁片區，清除您不想要傳輸的任何共用（包括位於 Windows system 資料夾中的任何系統管理共用）的 [**包含**] 核取方塊，然後選取 **[下一步]** 。
    ![螢幕擷取畫面，其中顯示來源伺服器及其磁片區和共用，以及它們在目的地的傳輸位置](media/migrate/transfer.png)**圖3：來源伺服器及其存放裝置將傳送至其中**
 4. 為其他來源伺服器新增目的地伺服器和對應，然後選取 **[下一步]** 。

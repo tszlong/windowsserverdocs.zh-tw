@@ -6,14 +6,14 @@ ms.topic: article
 manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
-ms.date: 6/24/2017
+ms.date: 06/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: 17adf89d3a26767bbc736a31da7b7b2b204570a2
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: f0222226191719fd11e68def8970c0e83529f801
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945223"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145904"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾：步驟 4 設定 Web 應用程式 Proxy
 

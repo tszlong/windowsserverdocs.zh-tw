@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408557"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162479"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
@@ -22,17 +22,18 @@ ms.locfileid: "71408557"
 
 本檔包含 AD FS 的所有檔作業的清單。 
 
-## <a name="service-configuration"></a>服務設定
+## <a name="service-configuration"></a>服務組態
 - [更新 AD FS 和 WAP 2016 中的 SSL 憑證](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
 - [AD FS 快速還原工具](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
 - [在 AD FS 中設定憑證驗證的替代主機名稱系結](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [新增屬性存放區](../ad-fs/operations/Add-an-Attribute-Store.md)
 - [使用 AD FS 2019 自訂 HTTP 安全性回應標頭](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
-- [微調 SQL 並解決延遲](../ad-fs/operations/adfs-sql-latency.md) 
+- [微調 SQL 並解決延遲](../ad-fs/operations/adfs-sql-latency.md)
+- [AlwaysOn 可用性群組](../ad-fs/operations/ad-fs-always-on.md) 
 
 
-## <a name="authentication-configuration"></a>驗證設定
+## <a name="authentication-configuration"></a>驗證組態
 ### <a name="strong-authentication-mfa--password-less"></a>增強式驗證（MFA） & 不限密碼
 - [在 AD FS 中將外部驗證提供者設定為主要（2019或更新版本）](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
 - [設定 AD FS （2016或更新版本）和 Azure MFA](../ad-fs/operations/Configure-AD-FS-2016-and-Azure-MFA.md)
@@ -84,8 +85,8 @@ ms.locfileid: "71408557"
 - [設定 AD FS 實驗室環境](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
 - [逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [逐步解說指南：使用條件式存取控制管理風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [逐步解說：將 Windows 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [逐步解說：將 iOS 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [逐步解說：使用 Windows 裝置 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [逐步解說：使用 iOS 裝置 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
 

@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949639"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145934"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -25,7 +25,7 @@ ms.locfileid: "75949639"
 
 ## <a name="collecting-logs"></a>如何在使用 Microsoft 支援服務時收集記錄檔
 
-儲存體遷移服務包含 Orchestrator 服務和 Proxy 服務的事件記錄檔。 Urchestrator 伺服器一律會同時包含事件記錄檔，以及已安裝 proxy 服務的目的地伺服器包含 proxy 記錄。 這些記錄檔位於：
+儲存體遷移服務包含 Orchestrator 服務和 Proxy 服務的事件記錄檔。 Orchestrator 伺服器一律會同時包含事件記錄檔，以及已安裝 proxy 服務的目的地伺服器包含 proxy 記錄。 這些記錄檔位於：
 
 - 應用程式和服務記錄檔 \ Microsoft \ Windows \ StorageMigrationService
 - 應用程式和服務記錄檔 \ Microsoft \ Windows \ StorageMigrationService-Proxy

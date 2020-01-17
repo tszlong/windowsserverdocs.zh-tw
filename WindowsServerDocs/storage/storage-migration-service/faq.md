@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953025"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124896"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
 
@@ -138,6 +138,10 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 6. 確定系統對該資料夾的所有檔案和子資料夾具有完全控制權
 7. 移除您自己的帳戶許可權。
 8. 啟動「儲存體遷移服務」服務。
+
+## <a name="does-the-storage-migration-service-migrate-locally-installed-applications-from-the-source-computer"></a>儲存體遷移服務是否會從來源電腦遷移本機安裝的應用程式？
+
+否，儲存體遷移服務不會遷移本機安裝的應用程式。 完成遷移之後，請將任何應用程式重新安裝到來源電腦上執行的目的地電腦上。 不需要重新設定任何使用者或其應用程式;儲存體遷移服務的設計目的是要讓用戶端看不到伺服器變更。 
 
 ## <a name="give-feedback"></a>我有哪些選項可以提供意見反應、提出 bug，或取得支援？
 
