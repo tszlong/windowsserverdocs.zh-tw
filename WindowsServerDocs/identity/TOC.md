@@ -392,6 +392,7 @@
 ##### [適用於 Windows Server 2012 R2 的 AD FS 中的存取控制原則](ad-fs/operations/Access-Control-Policies-W2K12.md)
 ##### [AD FS 2.0 中的存取控制原則](ad-fs/operations/Access-Control-Policies-in-AD-FS-2.md)
 #### [AD FS 2019 中的其他驗證方法](ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
+#### [AlwaysOn 可用性群組](ad-fs/operations/ad-fs-always-on.md)
 #### [AD FS 提示登入參數支援](ad-fs/operations/AD-FS-Prompt-Login.md)
 #### [AD FS 分頁登入](ad-fs/operations/AD-FS-paginated-sign-in.md)
 #### [AD FS 2016 單一登入設定](ad-fs/operations/AD-FS-Single-Sign-On-Settings.md)
