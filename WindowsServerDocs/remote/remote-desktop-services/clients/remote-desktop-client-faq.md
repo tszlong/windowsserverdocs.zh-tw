@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 8ab42d7781c547d516a51c89e9c8ecba0ff72ad6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935030"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950435"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>關於遠端桌面用戶端的常見問題集
 
@@ -67,7 +67,7 @@ ms.locfileid: "71935030"
 您可以為特定使用者授與存取此電腦的權限 - 若要這麼做，請按一下 [選取可從遠端存取此電腦的使用者]  。
 系統管理員群組的成員會自動取得存取權。
 
-在 Windows 8.1 上，請依照[使用遠端桌面連線來連線至其他桌面](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)中的指示，允許遠端連線。
+在 Windows 8.1 上，請依照[使用遠端桌面連線來連線至其他桌面](https://support.microsoft.com/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)中的指示，允許遠端連線。
 
 
 
@@ -147,11 +147,11 @@ Web 用戶端支援 Windows、macOS、Linux 和 ChromeOS。 目前不支援行�
 
 ### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>是否可在沒有閘道的遠端桌面部署中使用 Web 用戶端？
 
-不。 用戶端必須要有遠端桌面閘道才能連線。 不知道這是什麼意思嗎？ 請詢問您的系統管理員。
+不可以。 用戶端必須要有遠端桌面閘道才能連線。 不知道這是什麼意思嗎？ 請詢問您的系統管理員。
 
 ### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>遠端桌面 Web 用戶端是否會取代遠端桌面 Web 存取頁面？
 
-不。 遠端桌面 Web 用戶端與遠端桌面 Web 存取頁面裝載於不同的 URL。 您可以使用 Web 用戶端或 Web 存取頁面，在瀏覽器中檢視遠端資源。
+不可以。 遠端桌面 Web 用戶端與遠端桌面 Web 存取頁面裝載於不同的 URL。 您可以使用 Web 用戶端或 Web 存取頁面，在瀏覽器中檢視遠端資源。
 
 ### <a name="can-i-embed-the-web-client-in-another-web-page"></a>是否可將 Web 用戶端內嵌在另一個網頁中？
 

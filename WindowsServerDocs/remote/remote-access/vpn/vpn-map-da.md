@@ -9,12 +9,12 @@ ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ba0b3969695611385fb0a0bdc6df900eeab85254
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 2b9f1e01073f6ef8fdfe89623a383e26f8559977
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791135"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259113"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On VPN 功能和功能
 
@@ -53,14 +53,14 @@ ms.locfileid: "74791135"
 |                                       支援 IPv4 和 IPv6。                                        |                                                                                                                                                                 透過 Always On VPN，使用者可以存取公司網路上的 IPv4 和 IPv6 資源。 Always On VPN 用戶端會使用不特別依賴 IPv6 的雙重堆疊方法，或需要 VPN 閘道提供 NAT64 或 DNS64 轉譯服務的需求。                                                                                                                                                                  |
 |                                支援雙因素或 OTP 驗證。                                 |                    Always On 的 VPN 平臺原本就支援 EAP，這可讓您使用各種 Microsoft 和協力廠商 EAP 類型做為驗證工作流程的一部分。 Always On VPN 特別支援智慧卡（實體和虛擬）和 Windows Hello 企業版憑證，以滿足雙因素驗證需求。 此外，Always On VPN 藉由 EAP RADIUS 整合，透過 MFA 支援 OTP （原本就不支援，只有協力廠商外掛程式才支援）。<p><p>使用下列定義：<br>**VPNv2/ProfileName/NativeProfile/驗證**                    |
 |                                  支援多個網域和樹系。                                   |                                   Always On 的 VPN 平臺不會相依于 Active Directory Domain Services （AD DS）樹系或網域拓撲（或相關聯的功能/架構層級），因為它不需要將 VPN 用戶端加入網域來運作。 群組原則因此不是定義 VPN 設定檔設定的相依性，因為您在用戶端設定期間並不會用到它。 在需要 Active Directory 授權整合的情況下，您可以在 EAP 驗證和授權程式中透過 RADIUS 達到此目的。                                   |
-|              支援針對網際網路/內部網路流量分離的分割和強制通道。               |                                                                                               您可以將 Always On VPN 設定為同時支援強制通道（預設作業模式）和分割通道。 Always On VPN 會針對應用程式特定的路由原則提供額外的細微性。<p><p>***注意：***<br>僅由使用者通道支援。<p><p>使用下列定義：<p> **VPNv2/ProfileName/NativeProfile/RoutingPolicyType**<br>**VPNv2/ProfileName/TrafficFilterList/App/RoutingPolicyType**                                                                                               |
+|              支援針對網際網路/內部網路流量分離的分割和強制通道。               |                                                                                               您可以將 Always On VPN 設定為同時支援強制通道（預設作業模式）和分割通道。 Always On VPN 會針對應用程式特定的路由原則提供額外的細微性。<p><p>***注意：***<br>只有使用者通道支援強制通道。 沒有任何其他 VPN 通道可平行作用於強制通道使用者通道。<p><p>使用下列定義：<p> **VPNv2/ProfileName/NativeProfile/RoutingPolicyType**<br>**VPNv2/ProfileName/TrafficFilterList/App/RoutingPolicyType**                                                                                               |
 |                                          多個通訊協定支援。                                          |                                                                                                                                                                            如果需要 IKEv2 的安全通訊端層 fallback，可以將 Always On VPN 設定為原生支援 SSTP。<p><p>***注意：***<br>使用者通道支援 SSTP 和 IKEv2，而裝置通道僅支援 IKEv2，而不支援 SSTP 回溯。                                                                                                                                                                            |
 |                       提供公司線上狀態的連接助理。                       |                                                                                                            Always On VPN 會與原生網路連線助理完全整合，並可從 [查看所有網路] 介面提供連接狀態。 隨著 Windows 10 建立者更新（版本1703）的推出，您現在也可以透過網路飛出視窗（適用于 Windows 內建 VPN 用戶端），取得使用者通道的 VPN 線上狀態和 VPN 連接控制。                                                                                                            |
 | 使用簡短名稱、完整功能變數名稱（FQDN）和 DNS 尾碼的公司資源名稱解析。 | Always On VPN 可在 VPN 連線和 IP 位址指派程式中，以原生方式定義一或多個 DNS 尾碼，包括簡短名稱、Fqdn 或整個 DNS 命名空間的公司資源名稱解析。 Always On VPN 也支援使用名稱解析原則資料表來提供命名空間特定的解析資料細微性。<p><p>***注意：***<br>使用名稱解析原則資料表時，請避免使用全域尾碼，因為它們會干擾簡短名稱解析。<p><p>使用下列定義：<br>**VPNv2/ProfileName/DnsSuffix**<br>**VPNv2/ProfileName/DomainNameInformationList** |
 
 
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 - [深入瞭解 Always On VPN 增強功能](always-on-vpn/always-on-vpn-enhancements.md)
 

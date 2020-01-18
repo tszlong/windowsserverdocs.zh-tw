@@ -1,5 +1,5 @@
 ---
-title: 移至 Windows Server 2016 的建議
+title: 移至 Windows Server 2016 的建議
 description: 移至 Windows Server 2016 的建議。
 ms.custom: na
 ms.prod: windows-server
@@ -14,23 +14,23 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 379808e861f087bdda800ae6877c73c02d242a7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: be63880e8a07e71aa6811f3a6979eb6e2fcd8eba
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391631"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947800"
 ---
-# <a name="recommendations-for-moving-to-windows-server-2016"></a>移至 Windows Server 2016 的建議
+# <a name="recommendations-for-moving-to-windows-server-2016"></a>移至 Windows Server 2016 的建議
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 
 |如果您執行：|Windows Server 2012 R2 或 Windows Server 2012|Windows Server 2008 R2 或 Windows Server 2008|  
 |-------------------|----------|--------------|--------------|---------------------------------------|  
 |**Windows Server 角色基礎結構**|取決於[特定角色指引](https://technet.microsoft.com/windowsserver/jj554790)來選擇升級或移轉。|- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 <br>- 遵循[特定角色指引](https://technet.microsoft.com/windowsserver/jj554790)。|
-|**Microsoft 伺服器管理和應用程式工作負載**|- 應用程式升級應包含*移轉* 至 Windows Server 2016。 請參閱[相容性清單](Server-Application-Compatibility.md)。 <br>- 僅升級至 Windows Server 2016 (意即不升級應用程式) 應使用應用程式特定的指引。|- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 請遵循適用的移轉指引。 <br>- 或保留在目前的 OS 上，並在 Windows Server 2016 主機或 Microsoft Azure 所執行的虛擬機器中執行。 請透過[軟體保證](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)連絡您的 EA 轉銷商、TAM 或 Microsoft 取得延伸支援選項。|
-|**ISV 應用程式工作負載**|- 升級至 Windows Server 2016 應使用應用程式特定的指引。 <br>如需 Windows Server 與非 Microsoft 應用程式的相容性相關資訊，請瀏覽 [Windows Server Logo Certification 入口網站](https://msdn.microsoft.com/enterprisecloudcertified)。|- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 請遵循適用的移轉指引。 <br>- 或保留在目前的 OS 上，並在 Windows Server 2016 主機或 Microsoft Azure 所執行的虛擬機器中執行。 請透過[軟體保證](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)連絡您的 EA 轉銷商、TAM 或 Microsoft 取得延伸支援選項。|
+|**Microsoft 伺服器管理和應用程式工作負載**|- 應用程式升級應包含*移轉* 至 Windows Server 2016。 請參閱[相容性清單](Server-Application-Compatibility.md)。 <br>- 僅升級至 Windows Server 2016 (意即不升級應用程式) 應使用應用程式特定的指引。|- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 請遵循適用的移轉指引。 <br>- 或保留在目前的 OS 上，並在 Windows Server 2016 主機或 Microsoft Azure 所執行的虛擬機器中執行。 請透過[軟體保證](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx)連絡您的 EA 轉銷商、TAM 或 Microsoft 取得延伸支援選項。|
+|**ISV 應用程式工作負載**|- 升級至 Windows Server 2016 應使用應用程式特定的指引。 <br>如需 Windows Server 與非 Microsoft 應用程式的相容性相關資訊，請瀏覽 [Windows Server Logo Certification 入口網站](https://msdn.microsoft.com/enterprisecloudcertified)。|- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 請遵循適用的移轉指引。 <br>- 或保留在目前的 OS 上，並在 Windows Server 2016 主機或 Microsoft Azure 所執行的虛擬機器中執行。 請透過[軟體保證](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx)連絡您的 EA 轉銷商、TAM 或 Microsoft 取得延伸支援選項。|
 |**自訂應用程式工作負載**|- 請洽詢應用程式開發人員取得 Windows Server 2016 相容性及升級指南。 <br>- 善用 Microsoft Azure 在切換前於 Windows Server 2016 測試應用程式。 <br>- 請參閱下一節中的完整選項。|- 請洽詢應用程式開發人員取得 Windows Server 2016 相容性及升級指南。 <br>- 善用 Microsoft Azure 在切換前於 Windows Server 2016 測試您的應用程式。 <br>- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 <br>- 請參閱下一節中的完整選項。|
 
 ## <a name="complete-options-for-moving-servers-running-custom-or-in-house-applications-on-older-versions-of-windows-server-to-windows-server-2016"></a>完成將在 Windows Server 較舊版本上執行自訂或「內部」應用程式的伺服器移至 Windows Server 2016 的選項
@@ -49,7 +49,7 @@ ms.locfileid: "71391631"
 
     - 如果您已有 Windows Server 的軟體保證，即可透過使用 [Azure 混合式使用權益](https://azure.microsoft.com/pricing/hybrid-use-benefit/) 進行部署來節省成本。 
 
-- Windows Server 的[軟體保證](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)計畫提供新版本權限的權益。 除了一系列其他權益之外，附有軟體保證的伺服器還可以在可用時升級至最新版的 Windows Server，無需購買新的授權。 
+- Windows Server 的[軟體保證](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx)計畫提供新版本權限的權益。 除了一系列其他權益之外，附有軟體保證的伺服器還可以在可用時升級至最新版的 Windows Server，無需購買新的授權。 
 
 ## <a name="additional-resources"></a>其他資源
 

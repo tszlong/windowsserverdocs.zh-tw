@@ -1,5 +1,5 @@
 ---
-title: start
+title: 啟動
 description: '\* * * * 的 Windows 命令主題 '
 ms.custom: na
 ms.prod: windows-server
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 48197b1bc1d1c9f91a6a35b5fb8aad81b229eb6b
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781305"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259083"
 ---
-# <a name="start"></a>start
+# <a name="start"></a>啟動
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "74781305"
 ## <a name="syntax"></a>語法
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
 ```
 
 ## <a name="parameters"></a>Parameters
@@ -48,8 +48,8 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/wait|啟動應用程式，並等候它結束。|
 |/elevate|以系統管理員身分執行應用程式。|
 |/b|啟動應用程式，而不開啟新的命令提示字元視窗。 除非應用程式啟用 CTRL + C 處理，否則會忽略 CTRL + C 處理。 使用 CTRL + BREAK 來中斷應用程式。|
-|/b \<命令 > \| \<程式 >|指定要啟動的命令或程式。|
-|\<參數 >|指定要傳遞給命令或程式的參數。|
+|\<命令 > \| \<程式 >|指定要啟動的命令或程式。|
+|\<參數 > 。|指定要傳遞給命令或程式的參數。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -59,12 +59,12 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 - 當您執行32點陣圖形使用者介面（GUI）應用程式時， **cmd**不會等待應用程式結束，然後再返回命令提示字元。 如果您從命令腳本執行應用程式，就不會發生這種行為。
 - 當您執行使用第一個不含擴充功能之權杖的命令時，Cmd.exe 會使用 PATHEXT 環境變數的值來決定要尋找的延伸模組和順序。 PATHEXT 變數的預設值為：  
   ```
-  .COM;.EXE;.BAT;.CMD 
+  .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC 
   ```  
   請注意，語法與 PATH 變數相同，以分號分隔每個副檔名。
 - 當它搜尋可執行檔時，如果有任何延伸模組沒有相符專案，就會**開始**檢查名稱是否符合目錄名稱。 如果**有，就會開啟**該路徑上的 Explorer。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="BKMK_examples"></a>範例
 
 若要在命令提示字元中啟動 Myapp 程式，並繼續使用目前的命令提示字元視窗，請輸入：
 ```

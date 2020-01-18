@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f54548e8e68a0ee693c5d8ec80e67057b3d5b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387665"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950413"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -28,7 +28,7 @@ ms.locfileid: "71387665"
 
 * 確定您的[遠端桌面部署](../rds-deploy-infrastructure.md)具有執行於 Windows Server 2016 或 2019 的 RD 閘道、RD 連線代理人和 RD Web 存取。
 * 確定您的部署已設定了[每一使用者的用戶端存取使用權](../rds-client-access-license.md) (CAL) (而非每一裝置)，否則將會使用所有授權。
-* 在 RD 閘道上安裝 [Windows 10 KB4025334 更新](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)。 更新版本的累積更新可能已包含此 KB。
+* 在 RD 閘道上安裝 [Windows 10 KB4025334 更新](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334)。 更新版本的累積更新可能已包含此 KB。
 * 確定已為「RD 閘道」和「RD Web 存取」角色設定公開信任憑證。
 * 確定您的使用者將連接的任何電腦執行的是下列其中一個 OS 版本：
   * Windows 10
@@ -300,7 +300,7 @@ RD Web 存取角色可能未使用信任憑證。 請確定已為「RD Web 存�
 如果使用者回報他們即使可看到列出的資源，仍無法透過 Web 用戶端加以連線，請檢查下列事項：
 
 * RD 閘道角色是否正確設定為使用信任的公開憑證？
-* RD 閘道伺服器是否已安裝必要的更新？ 請確定您的伺服器已安裝 [KB4025334 更新](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)。
+* RD 閘道伺服器是否已安裝必要的更新？ 請確定您的伺服器已安裝 [KB4025334 更新](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334)。
 
 如果在使用者嘗試連線時出現「收到非預期的伺服器驗證憑證」錯誤訊息，訊息將會顯示憑證的指紋。 請使用該指紋搜尋 RD 代理人伺服器的憑證管理員，以找出正確的憑證。 在遠端桌面部署的屬性頁面中，確認該憑證已設定為要用於 RD 代理人角色。 確定憑證尚未過期後，請以 .cer 檔案的格式將憑證複製到 RD Web 存取伺服器，並在 RD Web 存取伺服器上執行下列命令 (請將括號內的值取代為憑證的檔案路徑)：
 

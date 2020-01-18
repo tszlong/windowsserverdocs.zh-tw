@@ -8,12 +8,12 @@ ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
-ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 946c1266f1c2cdc78cedac6794abb9f8d26696cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868518"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947703"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>適用於 Windows Server 的 Azure Hybrid Benefit
 
@@ -84,7 +84,7 @@ Windows Server 搭配 SA 需求參考表：
 
 請務必在您擁有的每個訂閱中進行清查，以產生您授權定位的完整檢視。
 
-[Azure Hybrid Benefit WS SA 計數工具](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Azure Hybrid Benefit WS SA 計數工具](https://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
 如果您執行上述步驟並確認您已獲得您正在執行的 Azure Hybrid Benefit 執行個體數目的完整授權，則不需要任何其他動作。 如果您發現您可使用權益涵蓋增量式 VM，您可能會想要切換到搭配權益的執行中執行個體而非全部成本，來進一步最佳化您的成本。
 
@@ -95,7 +95,7 @@ Windows Server 搭配 SA 需求參考表：
 | 頻道                      | 開啟     | OVS      | Select/ Select Plus  | MPSA       | EA/EAS   |
 |------------------------------|----------|----------|-----------------------|-----------|----------|
 | 一般大小 (裝置數)  | 5-250    | 5-250    | >250                  | >250      | >500     |
-| SA/訂閱            | 選擇性 | 內含 | 選擇性              | 選擇性  | 內含 |
+| SA/訂閱            | 選用 | 內含 | 選用              | 選用  | 內含 |
 
 Microsoft 保留隨時稽核最終客戶以驗證其是否符合 Azure Hybrid Benefit 資格的權利。 
 

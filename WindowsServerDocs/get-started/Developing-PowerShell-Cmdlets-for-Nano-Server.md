@@ -1,5 +1,5 @@
 ---
-title: 開發 Nano Server 的 PowerShell Cmdlet
+title: 開發 Nano 伺服器的 PowerShell Cmdlet
 description: '移植 CIM、.NET Cmdlet、C++ '
 ms.prod: windows-server
 ms.service: na
@@ -12,16 +12,16 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d6cdd3056d9c7e0a0815ce5856f961d79fcc34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391778"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948458"
 ---
-# <a name="developing-powershell-cmdlets-for-nano-server"></a>開發 Nano Server 的 PowerShell Cmdlet
+# <a name="developing-powershell-cmdlets-for-nano-server"></a>開發 Nano 伺服器的 PowerShell Cmdlet
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
@@ -138,7 +138,7 @@ PowerShell 支援 Cmdlet 的一些實作類型，而您所使用的類型會決�
 ### <a name="building-c-for-nano-server"></a>建置適用於 Nano Server 的 C++  
 若要讓 C++ DLL 在 Nano Server 上正常運作，請針對 Nano Server (而不是特定版本) 加以編譯。  
   
-如需在 Nano Server 上開發 C++ 的先決條件和逐步解說，請參閱 [Developing Native Apps on Nano Server](http://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx) (在 Nano Server 上開發原生應用程式)。  
+如需在 Nano Server 上開發 C++ 的先決條件和逐步解說，請參閱 [Developing Native Apps on Nano Server](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx) (在 Nano Server 上開發原生應用程式)。  
   
   
 ## <a name="porting-net-cmdlets"></a>移植 .NET Cmdlet  
@@ -151,7 +151,7 @@ Nano Server 支援大部分的 C# 程式碼。 您可以使用 [ApiPort](https:/
   
 PowerShell Core SDK 模組所公開的 Cmdlet，可設定正確的 CoreCLR 和 PowerShell Core 參考組件、在 Visual Studio 2015 中建立以這些參考組件為目標的 C# 專案，以及在 Nano Server 電腦上設定遠端偵錯工具，讓開發人員可以偵錯 Nano Server 上以 Visual Studio 2015 遠端執行的 .NET Cmdlet。  
   
-PowerShell Core SDK 模組需要 Visual Studio 2015 Update 2。 如果您未安裝 Visual Studio 2015，您可以安裝 [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)。  
+PowerShell Core SDK 模組需要 Visual Studio 2015 Update 2。 如果您未安裝 Visual Studio 2015，您可以安裝 [Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs.aspx)。  
   
 SDK 模組也相依於要在 Visual Studio 2015 中安裝的下列功能：  
   

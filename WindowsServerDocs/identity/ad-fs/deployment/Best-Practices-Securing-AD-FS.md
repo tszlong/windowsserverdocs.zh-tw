@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: abbc9cf76056af4ac421d9a38381bd8d8f666e4c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949536"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265810"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory 同盟服務的最佳做法
 
@@ -26,6 +26,9 @@ ms.locfileid: "75949536"
 若要在內部部署環境中部署，建議採用標準部署拓朴，此拓撲是由內部公司網路上的一或多部 AD FS 伺服器所組成，其中包含一或多個 Web 應用程式 Proxy （WAP）伺服器，位於 DMZ 或外部網路。  在每一層，AD FS 和 WAP，硬體或軟體負載平衡器會放在伺服器陣列的前方，並處理流量路由。  防火牆會在負載平衡器的外部 IP 位址前面放在每個（FS 和 proxy）伺服器陣列前面。
 
 ![AD FS 標準拓撲](media/Best-Practices-Securing-AD-FS/adfssec1.png)
+
+>[!NOTE]
+> AD FS 需要完整的可寫入網域控制站，才能正常運作，而不是唯讀網域控制站。 如果規劃的拓撲包含唯讀網域控制站，唯讀網域控制站就可以用於驗證，但是 LDAP 宣告處理將需要連線到可寫入的網域控制站。
 
 ## <a name="ports-required"></a>需要端口
 下圖說明在 AD FS 和 WAP 部署的元件之間，必須啟用的防火牆埠。  如果部署不包含 Azure AD/Office 365，則可以忽略同步處理需求。

@@ -5,14 +5,15 @@ ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
-author: huu
+author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 6db9ce1db139558bd1a7aa731cb12c1b227ead03
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.date: 01/14/2020
+ms.openlocfilehash: c69fc70282ff61ecce25f6413244d7ba3a5ba3bc
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949765"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265820"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受防護的網狀架構診斷工具進行疑難排解
 
@@ -20,21 +21,24 @@ ms.locfileid: "75949765"
 
 本主題說明如何使用受防護的網狀架構診斷工具，來找出並修復部署、設定和受防護網狀架構基礎結構的持續性作業中常見的失敗。 這包括主機守護者服務（HGS）、所有受防護的主機和支援的服務，例如 DNS 和 Active Directory。 診斷工具可以用來在分級失敗的受防護網狀架構時執行第一階段，為系統管理員提供解決中斷的起點，並找出設定錯誤的資產。 此工具並不是為了讓您瞭解如何操作受防護的網狀架構，而只是為了快速驗證日常作業期間最常遇到的問題。
 
-本主題中所使用之 Cmdlet 的檔可在[TechNet](https://technet.microsoft.com/library/mt718834.aspx)上找到。
+本文中所使用 Cmdlet 的完整檔可在[HgsDiagnostics 模組參考](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps)中找到。
 
-[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
+[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
 ## <a name="quick-start"></a>快速入門
 
 您可以從具有本機系統管理員許可權的 Windows PowerShell 會話呼叫下列內容，以診斷受防護主機或 HGS 節點：
+
 ```PowerShell
 Get-HgsTrace -RunDiagnostics -Detailed
 ```
+
 這會自動偵測目前主機的角色，並診斷可自動偵測到的任何相關問題。  此程式期間所產生的所有結果都會顯示，因為 `-Detailed` 參數是否存在。
 
 本主題的其餘部分將提供詳細的逐步解說，說明如何使用 `Get-HgsTrace` 的先進方法，來進行一次診斷多部主機，以及偵測複雜的跨節點設定錯誤。
 
 ## <a name="diagnostics-overview"></a>診斷總覽
+
 已安裝受防護虛擬機器相關工具和功能的任何主機上都可以使用受保護的網狀架構診斷，包括執行 Server Core 的主機。  目前，診斷包含在下列功能/套件中：
 
 1. 主機守護者服務角色
@@ -49,6 +53,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 系統管理員可以藉由執行 `Get-HgsTrace`來開始任何診斷工作。  此命令會根據執行時間所提供的參數執行兩個不同的函式：追蹤收集和診斷。  這兩個組合構成了整個受防護網狀架構診斷工具。  雖然不明確需要，但最有用的診斷只需要追蹤目標上的系統管理員認證才能收集的追蹤。  如果執行追蹤集合的使用者擁有不足的許可權，則需要提高許可權的追蹤將會失敗，而其他所有專案則會通過。  這可在具有低許可權的操作員正在執行分級的事件中進行部分診斷。 
 
 ### <a name="trace-collection"></a>追蹤集合
+
 根據預設，`Get-HgsTrace` 只會收集追蹤，並將它們儲存至暫存資料夾。  追蹤的格式為在目標主機之後命名的資料夾，並填入特別格式化的檔案，說明如何設定主機。  這些追蹤也包含中繼資料，描述如何叫用診斷來收集追蹤。  此資料會在執行手動診斷時，供診斷用來解除凍結主機的相關資訊。
 
 如有必要，可以手動檢查追蹤。  所有格式都是人們可讀取的（XML），也可以使用標準工具（例如 X509 憑證和 Windows 密碼編譯 Shell 延伸模組）來立即進行檢查。  不過，請注意，追蹤並不是針對手動診斷而設計，而且在使用 `Get-HgsTrace`的診斷功能處理追蹤時，一律會更有效率。
@@ -58,6 +63,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 使用 `-Diagnostic` 參數，您可以將追蹤集合限制為只有操作指定之診斷所需的追蹤。  這會減少所收集的資料量，以及叫用診斷所需的許可權。
 
 ### <a name="diagnosis"></a>診斷
+
 藉由提供 `Get-HgsTrace` 追蹤的位置，透過 `-Path` 參數並指定 `-RunDiagnostics` 參數，即可診斷收集的追蹤。  此外，`Get-HgsTrace` 可以藉由提供 `-RunDiagnostics` 參數和追蹤目標清單，在單一階段中執行收集和診斷。  如果未提供任何追蹤目標，則會使用目前的電腦作為隱含目標，並藉由檢查已安裝的 Windows PowerShell 模組來推斷其角色。
 
 診斷會以階層格式提供結果，顯示哪些追蹤目標、診斷集和個別診斷會負責特定的失敗。  失敗包括補救和解決建議，以便判斷接下來應採取什麼動作。  根據預設，會隱藏傳遞和不相關的結果。  若要查看診斷所測試的所有專案，請指定 `-Detailed` 參數。  這會導致所有結果顯示，不論其狀態為何。
@@ -78,13 +84,17 @@ Get-HgsTrace -RunDiagnostics -Detailed
 隱含本機目標會使用角色推斷來判斷目前主機在受防護網狀架構中所扮演的角色。  這是以已安裝的 Windows PowerShell 模組為基礎，其大致對應于系統上已安裝的功能。  `HgsServer` 模組的存在會使追蹤目標將角色 `HostGuardianService`，而 `HgsClient` 模組的存在會使追蹤目標接受角色 `GuardedHost`。  給定的主機可能會同時有這兩個模組，在這種情況下，它會被視為 `HostGuardianService` 和 `GuardedHost`。
 
 因此，診斷的預設調用會在本機收集追蹤：
+
 ```PowerShell
 Get-HgsTrace
 ```
+
 ...相當於下列內容：
+
 ```PowerShell
 New-HgsTraceTarget -Local | Get-HgsTrace
 ```
+
 > [!TIP]
 > `Get-HgsTrace` 可以透過管線或直接透過 `-Target` 參數來接受目標。  這兩個操作性之間沒有任何差異。
 
@@ -159,6 +169,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
    ```
+
 2. 要求每部主機管理員封裝產生的追蹤資料夾，並將它傳送給您。  此程式可透過電子郵件、檔案共用或任何其他機制（根據貴組織所建立的操作原則和程式）來驅動。
 
 3. 將所有接收的追蹤合併至單一資料夾，而不含其他內容或資料夾。
@@ -197,3 +208,15 @@ Get-HgsTrace -RunDiagnostics -Target $hgs03 -Path .\FabricTraces
 ``` 
 
 診斷 Cmdlet 會識別所有預先收集的主機，以及另一個仍然需要追蹤並執行必要追蹤的主機。  接著會診斷所有預先收集和最近收集的追蹤總和。  產生的追蹤資料夾將同時包含舊的和新的追蹤。
+
+## <a name="known-issues"></a>已知問題
+
+在 Windows Server 2019 或 Windows 10 1809 版和更新版本的作業系統上執行時，受防護的網狀架構診斷模組具有已知的限制。
+使用下列功能可能會導致錯誤的結果：
+
+* 主機金鑰證明
+* 僅限證明 HGS 設定（適用于 SQL Server Always Encrypted 案例）
+* 在證明原則預設為 v2 的 HGS 伺服器上使用 v1 原則構件
+
+使用這些功能時 `Get-HgsTrace` 失敗，不一定表示 HGS 伺服器或受防護主機的設定不正確。
+在受防護主機上使用其他診斷工具（例如 `Get-HgsClientConfiguration`），以測試主機是否已通過證明。

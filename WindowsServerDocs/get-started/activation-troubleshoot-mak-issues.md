@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fa6d32571597136580afe062aa8d9c7e2d82b7
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 5ed934e52b11db5b83948ba995eaf31e9ff2cce3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962984"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947628"
 ---
 # <a name="mak-activation-known-issues"></a>MAK 啟用：已知問題
 
@@ -26,7 +26,7 @@ ms.locfileid: "71962984"
 
 ## <a name="the-computer-does-not-activate-over-the-internet"></a>電腦並未透過網際網路啟用
 
-確定所需的連接埠已在防火牆中開啟。 如需連接埠清單，請參閱[大量啟用部署指南](http://go.microsoft.com/fwlink/?linkid=150083)。
+確定所需的連接埠已在防火牆中開啟。 如需連接埠清單，請參閱[大量啟用部署指南](https://go.microsoft.com/fwlink/?linkid=150083)。
 
 ## <a name="internet-and-telephone-activation-fail"></a>網際網路和電話啟用失敗
 

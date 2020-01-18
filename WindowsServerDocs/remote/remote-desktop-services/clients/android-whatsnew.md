@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e9008515213c69090ac1f85a7c7866398a682349
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 32823762d18617d29689ad9455791ab55bff2dbf
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387789"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919831"
 ---
 # <a name="whats-new-in-the-android-client"></a>Android 用戶端中的新功能
 
@@ -71,7 +71,7 @@ ms.locfileid: "71387789"
 - 已新增對 Samsung DeX 的沈浸式模式支援，進而隱藏底部工作列。
 - 已新增將中繼和 Alt 鍵從實體鍵盤傳送至 Samsung DeX 遠端工作階段的支援。
 - 滑鼠指標現在會根據遠端工作階段的內容更新 (Android 7.0+)
-- 其他錯誤修正。
+- 其他 Bug 修正。
 
 ## <a name="updates-for-version-8161"></a>8\.1.61 版的更新
 

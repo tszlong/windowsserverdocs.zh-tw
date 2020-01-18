@@ -7,13 +7,13 @@ ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: f26f75b8ce3f5438362c15b84aeca9339b95ebbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387199"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949819"
 ---
 # <a name="remote-desktop-services-roles"></a>遠端桌面服務角色
 
@@ -101,4 +101,4 @@ RD Web 存取需要 Internet Information Services (IIS) 才能正常運作。 �
 * [使用用戶端存取使用權 (CAL) 授權您的 RDS 部署](rds-client-access-license.md)
 * [啟用遠端桌面服務授權伺服器](rds-activate-license-server.md)
 * [追蹤您的遠端桌面服務用戶端存取使用權 (RDS CAL)](rds-track-cals.md)
-* [Microsoft 大量授權：服務提供者授權選項](https://www.microsoft.com/en-us/Licensing/licensing-programs/spla-program.aspx)
+* [Microsoft 大量授權：服務提供者授權選項](https://www.microsoft.com/Licensing/licensing-programs/spla-program.aspx)

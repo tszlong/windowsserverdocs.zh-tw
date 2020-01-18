@@ -8,12 +8,12 @@ ms.date: 06/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 785ecd4de86c06dd12eb57e41efaa1103f2afdc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5e90119066285ae8e04b392a13ab1a38488f5ee
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357810"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265750"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>微調 SQL 並解決 AD FS 的延遲問題
 在[AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)的更新中，我們引進了下列改良功能來減少跨資料庫的延遲。 即將推出的 AD FS 2019 更新將包含這些改良功能。
@@ -23,10 +23,12 @@ ms.locfileid: "71357810"
 
 在 AD FS 的最新更新中，降低延遲的目標是透過新增背景執行緒來重新整理 AD FS 設定快取，以及設定重新整理時間週期的設定。 在要求執行緒中，資料庫查閱所花費的時間會大幅減少，因為資料庫快取更新會移到背景執行緒中。  
 
-`backgroundCacheRefreshEnabled`當設定為 true 時，AD FS 會讓背景執行緒執行快取更新。 藉由設定`cacheRefreshIntervalSecs`，您可以將從快取中提取資料的頻率自訂為時間值。 當設定為 true 時`backgroundCacheRefreshEnabled` ，預設值會設定為300秒。 在設定值持續時間之後，AD FS 開始重新整理它的快取，而當更新正在進行時，將會繼續使用舊的快取資料。  
+當 `backgroundCacheRefreshEnabled` 設定為 true 時，AD FS 會讓背景執行緒執行快取更新。 藉由設定 `cacheRefreshIntervalSecs`，可以將從快取中提取資料的頻率自訂為時間值。 當 `backgroundCacheRefreshEnabled` 設定為 true 時，預設值會設定為300秒。 在設定值持續時間之後，AD FS 開始重新整理它的快取，而當更新正在進行時，將會繼續使用舊的快取資料。  
+
+當 AD FS 收到應用程式的要求時，AD FS 會從 SQL 抓取應用程式，並將它新增至快取。 在 `cacheRefreshIntervalSecs` 值中，會使用背景執行緒來重新整理快取中的應用程式。 當快取中有專案存在時，連入要求將會在背景重新整理進行時使用快取。 如果無法存取 5 * `cacheRefreshIntervalSecs`的專案，則會從快取中卸載。 一旦達到可設定的 `maxRelyingPartyEntries` 值，也可以從快取中卸載最舊的專案。
 
 >[!NOTE]
-> 如果 ADFS 收到來自 SQL 的通知，表示資料庫`cacheRefreshIntervalSecs`中發生了變更，則快取的資料會在值之外重新整理。 此通知會觸發重新整理快取。 
+> 如果 ADFS 收到來自 SQL 的通知，表示資料庫中發生了變更，則快取的資料將會在 `cacheRefreshIntervalSecs` 值之外重新整理。 此通知會觸發重新整理快取。 
 
 ### <a name="recommendations-for-setting-the-cache-refresh"></a>設定快取重新整理的建議 
 快取重新整理的預設值為**5 分鐘**。 建議您將它設定為**1 小時**，以 AD FS 減少不必要的資料重新整理，因為如果發生任何 SQL 變更，就會重新整理快取資料。  
@@ -35,7 +37,7 @@ AD FS 會註冊 SQL 變更的回呼，而在變更時，ADFS 會收到通知。 
 
 發生網路問題而導致 AD FS 遺失 SQL 通知時，AD FS 會依照快取重新整理值所指定的間隔重新整理。 如果 AD FS 和 SQL 之間有任何連線問題，建議您將快取重新整理值設定為低於1小時。  
 
-### <a name="configuration-instructions"></a>設定指示 
+### <a name="configuration-instructions"></a>組態指示 
 設定檔支援多個快取專案。 下列列出的全部都可以根據您組織的需求進行設定。 
 
 下列範例會啟用背景快取重新整理，並將快取重新整理期間設定為1800秒或30分鐘。 這必須在每個 ADFS 節點上完成，而且 ADFS 服務必須在之後重新開機。 這些變更不會影響其他節點，而且在所有節點中進行變更之前，會先測試第一個節點。 
@@ -43,7 +45,7 @@ AD FS 會註冊 SQL 變更的回呼，而在變更時，ADFS 會收到通知。 
   1. 流覽至 AD FS 的設定檔，並在 "IdentityServer" 區段下新增下列專案：  
   
   - `backgroundCacheRefreshEnabled`-指定是否啟用背景快取功能。 "true/false" 值。
-  - `cacheRefreshIntervalSecs`-ADFS 會重新整理快取的值（以秒為單位）。 如果 SQL 中有任何變更，AD FS 會重新整理快取。 AD FS 將會收到 SQL 通知，並重新整理快取。  
+  - `cacheRefreshIntervalSecs`-值（以秒為單位），ADFS 會重新整理快取。 如果 SQL 中有任何變更，AD FS 會重新整理快取。 AD FS 將會收到 SQL 通知，並重新整理快取。  
  
  >[!NOTE]
  > 設定檔中的所有專案都會區分大小寫。  
@@ -51,8 +53,8 @@ AD FS 會註冊 SQL 變更的回呼，而在變更時，ADFS 會收到通知。 
  
 其他支援的可設定值： 
 
-   - **maxRelyingPartyEntries** -AD FS 將保留在記憶體中的信賴憑證者專案數上限。 OAuth 應用程式許可權快取也會使用此值。 如果應用程式許可權多於 RPs，而且全部都儲存在記憶體中，則此值應為應用程式許可權的數目。 預設值為1000。
-   - **maxIdentityProviderEntries** -這是 AD FS 將保留在記憶體中的宣告提供者專案數上限。 預設值為200。 
+   - **maxRelyingPartyEntries** -AD FS 將保留在記憶體中的信賴憑證者專案數上限。 OAuth 應用程式許可權快取也會使用此值。 如果應用程式許可權多於 RPs，而且全部都儲存在記憶體中，則此值應為應用程式許可權的數目。 預設值為 1000。
+   - **maxIdentityProviderEntries** -這是 AD FS 將保留在記憶體中的宣告提供者專案數上限。 預設值為 200。 
    - **maxClientEntries** -這是 AD FS 將保留在記憶體中的 OAuth 用戶端專案數上限。 預設值為 500。 
    - **maxClaimDescriptorEntries** -AD FS 將保留在記憶體中的宣告描述項專案數上限。 預設值為 500。 
    - **maxNullEntries** -這會用來作為負數快取。 當 AD FS 在資料庫中尋找某個專案，但找不到它時，AD FS 會加入負快取。 這是該快取的大小上限。 每種類型的物件都有負數快取，但它不是所有物件的單一快取。 預設值為50，0000。 
@@ -65,9 +67,9 @@ AD FS 會註冊 SQL 變更的回呼，而在變更時，ADFS 會收到通知。 
 
 ### <a name="requirements"></a>需求： 
 在設定多個成品資料庫支援之前，請先在所有節點上執行更新，並更新二進位檔，因為多節點呼叫會透過此功能進行。 
-  1. 產生部署腳本以建立成品 DB：若要部署多個成品 DB 實例，系統管理員必須產生成品 DB 的 SQL 部署腳本。 在此更新過程中，現有`Export-AdfsDeploymentSQLScript`的 Cmdlet 已更新為可選擇性地採用參數，以指定要產生 SQL 部署腳本的 AD FS 資料庫。 
+  1. 產生部署腳本以建立成品 DB：若要部署多個成品 DB 實例，系統管理員必須產生成品 DB 的 SQL 部署腳本。 在此更新過程中，現有的 `Export-AdfsDeploymentSQLScript`Cmdlet 已更新，可選擇性地採用參數，指定要為哪一個 AD FS 資料庫產生 SQL 部署腳本。 
  
- 例如，若要只針對成品 DB 產生部署腳本，請指定`-DatabaseType`參數，並傳入 "成品" 值。 選擇性`-DatabaseType`參數會指定 AD FS 資料庫類型，而且可以設定為：All （預設值）、成品或設定。 如果未`-DatabaseType`指定任何參數，腳本會同時設定成品和設定腳本。  
+ 例如，若要只針對成品 DB 產生部署腳本，請指定 `-DatabaseType` 參數，並傳入 "成品" 值。 選擇性的 `-DatabaseType` 參數會指定 AD FS 資料庫類型，而且可以設定為： All （預設值）、成品或 Configuration。 如果未指定 `-DatabaseType` 參數，腳本會同時設定成品和設定腳本。  
 
    ```PowerShell
    PS C:\> Export-AdfsDeploymentSQLScript -DestinationFolder <script folder where scripts will be created> -ServiceAccountName <domain\serviceaccount> -DatabaseType "Artifact" 

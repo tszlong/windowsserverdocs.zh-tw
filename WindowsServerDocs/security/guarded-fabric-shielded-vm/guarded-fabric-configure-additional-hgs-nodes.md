@@ -7,17 +7,17 @@ ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 10/22/2018
-ms.openlocfilehash: 5277a97f7f58d9d7edb1457cb363cb6ddf1d8b59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 01/14/2020
+ms.openlocfilehash: ece005617c4a2faac41c2be15967b2f43951517e
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403693"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265860"
 ---
 # <a name="configure-additional-hgs-nodes"></a>設定其他 HGS 節點
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 在生產環境中，您應該在高可用性叢集中設定 HGS，以確保即使 HGS 節點停止運作，受防護的 Vm 仍可開機。 針對測試環境，不需要次要 HGS 節點。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71403693"
 |新的 HGS 樹系  | [使用 PFX 檔案](#dedicated-hgs-forest-with-pfx-certificates) | [使用憑證指紋](#dedicated-hgs-forest-with-certificate-thumbprints) |
 |現有的防禦樹系 |  [使用 PFX 檔案](#existing-bastion-forest-with-pfx-certificates) | [使用憑證指紋](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 請確定每個額外的節點： 
 - 具有與主要節點相同的硬體和軟體設定 
@@ -116,7 +116,7 @@ ms.locfileid: "71403693"
 如果您想要使用 SSL 憑證來保護 HGS 端點，您必須在此節點上設定 SSL 憑證，以及在 HGS 叢集中的每個其他節點。
 HGS*不會*複寫 SSL 憑證，而且不需要針對每個節點使用相同的金鑰（也就是每個節點可以有不同的 SSL 憑證）。
 
-要求 SSL 憑證時，請確定叢集的完整功能變數名稱（如的輸出`Get-HgsServer`中所示）是憑證的主體一般名稱，或包含為主體替代 DNS 名稱。
+當要求 SSL 憑證時，請確定叢集的完整功能變數名稱（如 `Get-HgsServer`的輸出中所示）是憑證的主體一般名稱，或包含為主體替代 DNS 名稱。
 當您從憑證授權單位單位取得憑證時，您可以設定 HGS 將它與[HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver)搭配使用。
 
 ```powershell
@@ -141,16 +141,8 @@ HGS 一律會公開用於通訊的 HTTP 和 HTTPS 埠。
 
    這會從叢集中移除節點，並卸載證明和金鑰保護服務。 
    如果它是叢集中的最後一個節點，則需要-Force，以表示您想要移除最後一個節點，並在 Active Directory 中摧毀叢集。 
-   
+
    如果在防禦樹系（預設值）中部署 HGS，這就是唯一的步驟。 
    您可以選擇性地將電腦從網域退出，並從 Active Directory 移除 gMSA 帳戶。
 
-1. 如果 HGS 建立了自己的網域，您也應該[卸載 hgs](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)以退出網域，並將網域控制站降級。
-
-
-
-## <a name="next-step"></a>後續步驟
-
-> [!div class="nextstepaction"]
-> [驗證 HGS 設定](guarded-fabric-verify-hgs-configuration.md)
-
+2. 如果 HGS 建立了自己的網域，您也應該[卸載 hgs](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)以退出網域，並將網域控制站降級。

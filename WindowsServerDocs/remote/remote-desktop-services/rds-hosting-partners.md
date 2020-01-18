@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8433aa50d585300df03222b78cf0823985237aa5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4d9a6d4885566204bf9fc29cd9513d25d1b39deb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403970"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949849"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>遠端桌面服務託管合作夥伴
 
@@ -29,7 +29,7 @@ ms.locfileid: "71403970"
 1. 成為 [Microsoft 合作夥伴](https://partner.microsoft.com/) (如果您還不是)。
 2. 觀看[在 Azure 中使用遠端桌面服務託管 Windows 桌面與應用程式](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=2915&rowId=3603)訓練課程。
 3. 接受[技術評定](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871)。
-4. 確定您符合[雲端平台專長認證的需求](https://partner.microsoft.com/en-us/membership/cloud-platform-competency)。
+4. 確定您符合[雲端平台專長認證的需求](https://partner.microsoft.com/membership/cloud-platform-competency)。
 
 已是 Microsoft 合作夥伴，而有任何問題嗎？ 請遠端桌面小組連絡：<rdhostingpartners@microsoft.com>。  
 

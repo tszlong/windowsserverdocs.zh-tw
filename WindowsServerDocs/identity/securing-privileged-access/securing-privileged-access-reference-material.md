@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 16d711a288843163b134b0226ed4b8513d7070eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407226"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950058"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 系統管理層模型
 
@@ -139,7 +139,7 @@ ms.locfileid: "71407226"
 
 ![此圖顯示您應該盡可能減少 Active Directory 和網域控制站相依的系統數量](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-如需強化 Active Directory 最高風險的詳細資訊，請參閱[本頁](http://aka.ms/hardenAD)。
+如需強化 Active Directory 最高風險的詳細資訊，請參閱[本頁](https://aka.ms/hardenAD)。
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>以乾淨來源準則為基礎的操作標準
 
@@ -168,12 +168,12 @@ ms.locfileid: "71407226"
 - 受管理的所有工作站正在執行 Windows 7 或更新版本，並已啟用 RDP RestrictedAdmin 模式。
 
    > [!NOTE]
-   > 若要啟用 RDP RestrictedAdmin 模式，請參閱[本頁](http://aka.ms/RDPRA)。
+   > 若要啟用 RDP RestrictedAdmin 模式，請參閱[本頁](https://aka.ms/RDPRA)。
 
 - 智慧卡已可供使用且已發行至所有系統管理帳戶。
 - 已將適用於每個網域的 *Builtin\Administrator* 指定為緊急存取帳戶。
 - 已部署企業身分識別管理解決方案。
-- 已將 [LAPS](http://aka.ms/laps) 部署到伺服器和工作站，以管理本機系統管理員帳戶密碼。
+- 已將 [LAPS](https://aka.ms/laps) 部署到伺服器和工作站，以管理本機系統管理員帳戶密碼。
 - 已有一個特殊權限存取管理解決方案 (例如 Microsoft Identity Manager)，或計劃要採用一個。
 - 已指派人員來監視安全性警示，並加以回應。
 - 快速套用 Microsoft 安全性更新的技術能力已可供使用。
@@ -314,7 +314,7 @@ ms.locfileid: "71407226"
 > [!NOTE]
 > 這是必要的，因為以互動方式登入主機會為該主機授與認證的控制權。
 >
-> 如需登入類型、常見管理工具及認證暴露的詳細資訊，請參閱[系統管理工具和登入類型](http://aka.ms/admintoolsecurity)。
+> 如需登入類型、常見管理工具及認證暴露的詳細資訊，請參閱[系統管理工具和登入類型](https://aka.ms/admintoolsecurity)。
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>使用核准的支援技術和方法
 
@@ -330,7 +330,7 @@ ms.locfileid: "71407226"
 確定會在這種情況下套用下列做法：
 
 - **遠端伺服器支援** - 從遠端存取伺服器時，第 0 層系統管理員必須遵循這些指導方針：
-  - **主要 (工具)** - 使用網路登入的遠端工具 (類型 3)。 如需詳細資訊，請參閱[系統管理工具和登入類型](http://aka.ms/admintoolsecurity)。
+  - **主要 (工具)** - 使用網路登入的遠端工具 (類型 3)。 如需詳細資訊，請參閱[系統管理工具和登入類型](https://aka.ms/admintoolsecurity)。
   - **主要 (互動式)** - 搭配網域帳戶來使用系統管理工作站的 RDP RestrictedAdmin 或標準的 RDP 工作階段。
 
     > [!NOTE]
@@ -366,7 +366,7 @@ ms.locfileid: "71407226"
    - **主要** -不需任何工具，即可提供 "Over The Shoulder" 的支援。
    - **禁止** - 此案例中不允許使用網域帳戶的系統管理認證來登入。 需要系統管理權限時，請切換到桌面端工作站支援。
 - **遠端使用者支援** - 第 2 層支援人員實際上是在使用者的遠端。
-   - **主要** - 可能會使用遠端協助、商務用 Skype 或類似的使用者螢幕共用。 如需詳細資訊，請參閱[什麼是 Windows 遠端協助？](https://windows.microsoft.com/en-us/windows/what-is-windows-remote-assistance)
+   - **主要** - 可能會使用遠端協助、商務用 Skype 或類似的使用者螢幕共用。 如需詳細資訊，請參閱[什麼是 Windows 遠端協助？](https://windows.microsoft.com/windows/what-is-windows-remote-assistance)
    - **禁止** - 此案例中不允許使用網域帳戶的系統管理認證來登入。 需要系統管理權限時，請切換到工作站支援。
 - **工作站支援** - 工作包括執行工作站維護或疑難排解，需要有系統的存取權，以便檢視記錄檔、安裝軟體、更新驅動程式等。
    - **桌面端工作站支援** - 第 2 層支援人員實際位於使用者的工作站。
@@ -464,7 +464,7 @@ ms.locfileid: "71407226"
 > [!NOTE]
 > 這種方法適合用來進行 Active Directory 的系統管理，但有許多應用程式不適合使用標準信任透過外部樹系的帳戶來管理。
 
-此圖說明第 0 層資產的系統管理所使用的 ESAE 樹系，以及設定來與搭配使用 Microsoft Identity Manager 的 Privileged Access Management 功能的 PRIV 樹系。 如需部署 MIM PAM 執行個體的詳細資訊，請參閱 [Active Directory Domain Services (AD DS) 的特殊權限身分識別管理](https://technet.microsoft.com/library/mt150258.aspx)。
+此圖說明第 0 層資產的系統管理所使用的 ESAE 樹系，以及設定來與搭配使用 Microsoft Identity Manager 的 Privileged Access Management 功能的 PRIV 樹系。 如需部署 MIM PAM 執行個體的詳細資訊，請參閱 [Active Directory 網域服務 (AD DS) 的特殊權限身分識別管理](https://technet.microsoft.com/library/mt150258.aspx)。
 
 ![此圖顯示第 0 層資產的系統管理所使用的 ESAE 樹系，以及設定來與 Microsoft Identity Manager 的特殊權限存取管理功能搭配使用的 PRIV 樹系](../media/securing-privileged-access-reference-material/PAW_RM_Fig14.JPG)
 
@@ -489,7 +489,7 @@ ms.locfileid: "71407226"
 
 - **強化工作站** - 使用 [特殊權限存取工作站](../securing-privileged-access/privileged-access-workstations.md) (透過第 3 階段) 來建置系統管理工作站，但將網域成員資格變更為系統管理樹系，而不是生產環境。
 - **強化伺服器與 DC** - 針對系統管理樹系中的所有網域控制站和伺服器：
-   - 確定使用[安裝媒體的乾淨來源](http://aka.ms/cleansource)中的指引來驗證所有媒體
+   - 確定使用[安裝媒體的乾淨來源](https://aka.ms/cleansource)中的指引來驗證所有媒體
    - 確定系統管理樹系伺服器應該已安裝最新作業系統，即使這在生產環境中並不可行。
    - 應利用安全性更新來自動更新系統管理樹系主機。
 
@@ -523,7 +523,7 @@ ms.locfileid: "71407226"
    - 攻擊面分析可防止在安裝新軟體期間，將新的攻擊媒介引進 Windows。
 
       > [!NOTE]
-      > 使用 [Attack Surface Analyzer (ASA)](https://www.microsoft.com/en-us/download/details.aspx?id=24487) 等工具有助於評估主機上的組態設定，並找出軟體或組態變更所引進的攻擊媒介。
+      > 使用 [Attack Surface Analyzer (ASA)](https://www.microsoft.com/download/details.aspx?id=24487) 等工具有助於評估主機上的組態設定，並找出軟體或組態變更所引進的攻擊媒介。
 
 - 強化帳戶
    - 應該針對系統管理樹系中的所有帳戶設定多重要素驗證，但有一個帳戶除外。 至少應該有一個系統管理帳戶是密碼型帳戶，以確保在多重要素驗證程序中斷時還能進行存取。 此帳戶應該受到嚴格的實際控制程序所保護。
@@ -568,32 +568,32 @@ ms.locfileid: "71407226"
 
 下表包含最常見系統管理工具和連線方法的指引：
 
-|連線方式|登入類型|目的地上可重複使用的認證|註解|
+|連線方式|登入類型|目的地上可重複使用的認證|評價|
 |-----------|-------|--------------------|------|
 |在主控台登入|Interactive (互動式)|v|包含硬體遠端存取 / 熄燈介面卡和網路 KVM。|
 |RUNAS|Interactive (互動式)|v||
 |RUNAS /NETWORK|NewCredentials|v|複製目前的 LSA 工作階段以進行本機存取，但連線到網路資源時，請使用新的認證。|
 |遠端桌面 (成功)|RemoteInteractive|v|如果已將遠端桌面用戶端設為共用本機裝置和資源，則這些也可能會遭到破解。|
 |遠端桌面 (失敗 - 登入類型已遭拒)|RemoteInteractive|-|根據預設，如果 RDP 登入失敗，則只會非常短暫地儲存認證。 若電腦已遭破解，可能就不是這樣了。|
-|Net use * \\\SERVER|Network|-||
-|Net use * \\\SERVER /u:user|Network|-||
-|MMC 嵌入式管理單元到遠端電腦|Network|-|範例：電腦管理、事件檢視器、裝置管理員、服務|
-|PowerShell WinRM|Network|-|範例：Enter-PSSession 伺服器|
+|Net use * \\\SERVER|網路|-||
+|Net use * \\\SERVER /u:user|網路|-||
+|MMC 嵌入式管理單元到遠端電腦|網路|-|範例：電腦管理、事件檢視器、裝置管理員、服務|
+|PowerShell WinRM|網路|-|範例：Enter-PSSession 伺服器|
 |PowerShell WinRM with CredSSP|NetworkClearText|v|New-PSSession 伺服器<br />-Authentication Credssp<br />-Credential cred|
-|PsExec，而不需明確的認證|Network|-|範例：PsExec \\\server cmd|
+|PsExec，而不需明確的認證|網路|-|範例：PsExec \\\server cmd|
 |PsExec，以及明確的認證|網路 + 互動式|v|PsExec \\\server -u user -p pwd cmd<br />建立多個登入工作階段。|
-|遠端登錄|Network|-||
-|遠端桌面閘道|Network|-|向遠端桌面閘道進行驗證。|
+|遠端登錄|網路|-||
+|遠端桌面閘道|網路|-|向遠端桌面閘道進行驗證。|
 |排定的工作|Batch|v|密碼也會當成 LSA 密碼儲存於磁碟上。|
-|以服務形式執行工具|服務|v|密碼也會當成 LSA 密碼儲存於磁碟上。|
-|弱點掃描器|Network|-|大部分的掃描器預設都會使用網路登入，但有些廠商可能會實作非網路登入，因而引進了更多認證遭竊的風險。|
+|以服務形式執行工具|Service|v|密碼也會當成 LSA 密碼儲存於磁碟上。|
+|弱點掃描器|網路|-|大部分的掃描器預設都會使用網路登入，但有些廠商可能會實作非網路登入，因而引進了更多認證遭竊的風險。|
 
 針對 Web 驗證，使用下表中的參考：
 
-|連線方式|登入類型|目的地上可重複使用的認證|註解|
+|連線方式|登入類型|目的地上可重複使用的認證|評價|
 |-----------|-------|--------------------|------|
 |IIS「基本驗證」|NetworkCleartext<br />(IIS 6.0+)<br /><br />Interactive (互動式)<br />(IIS 6.0 之前)|v||
-|IIS「整合式 Windows 驗證」|Network|-|NTLM 和 Kerberos 提供者。|
+|IIS「整合式 Windows 驗證」|網路|-|NTLM 和 Kerberos 提供者。|
 
 欄位定義：
 
@@ -615,9 +615,9 @@ ms.locfileid: "71407226"
 |登入類型|#|接受的驗證器|LSA 工作階段中可重複使用的認證|範例|
 |-------|---|--------------|--------------------|------|
 |互動式 (也稱為本機登入)|2|密碼、智慧卡、<br />其他|是|主控台登入；<br />RUNAS；<br />硬體遠端控制解決方案 (例如，網路 KVM 或遠端存取 / 伺服器中的熄燈介面卡)<br />IIS 基本驗證 (IIS 6.0 之前)|
-|Network|3|密碼、<br />NT 雜湊、<br />Kerberos 票證|否 (但如果已啟用委派，則會有 Kerberos 票證存在)|NET USE；<br />RPC 呼叫；<br />遠端登錄；<br />IIS 整合式 Windows 驗證；<br />SQL Windows 驗證；|
+|網路|3|密碼、<br />NT 雜湊、<br />Kerberos 票證|否 (但如果已啟用委派，則會有 Kerberos 票證存在)|NET USE；<br />RPC 呼叫；<br />遠端登錄；<br />IIS 整合式 Windows 驗證；<br />SQL Windows 驗證；|
 |Batch|4|密碼 (通常儲存為 LSA 密碼)|是|排定的工作|
-|服務|5|密碼 (通常儲存為 LSA 密碼)|是|Windows 服務|
+|Service|5|密碼 (通常儲存為 LSA 密碼)|是|Windows 服務|
 |NetworkCleartext|8|密碼|是|IIS 基本驗證 (IIS 6.0 及更新版本)；<br />含 CredSSP 的 Windows PowerShell|
 |NewCredentials|9|密碼|是|RUNAS /NETWORK|
 |RemoteInteractive|10|密碼、智慧卡、<br />其他|是|遠端桌面 (先前稱為「終端機服務」)|

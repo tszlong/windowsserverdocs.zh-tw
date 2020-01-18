@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dab8294837a5f9116328e59364de9beb139a4b77
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 110e3a685293c447d03158eac57d38fedd28b0cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71963004"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948310"
 ---
 # <a name="kms-activation-known-issues"></a>KMS 啟用：已知問題
 
@@ -35,7 +35,7 @@ KMS 主機不需要備份。 不過，如果您使用工具來定期清除事件
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>KMS 用戶端電腦並未啟用
 
-確認已符合 KMS 啟用閾值。 在 KMS 主機電腦上，執行 Slmgr.vbs 並使用 **/dli**命令列選項來判斷主機的目前計數。 直到 KMS 主機的計數為 25 時，才能啟用 Windows 7 用戶端電腦。 Windows Server 2008 R2 KMS 用戶端的 KMS 計數必須為 5 才能啟用。 如需 KMS 需求的詳細資訊，請參閱[大量啟用規劃指南](http://go.microsoft.com/fwlink/?linkid=155926)。 
+確認已符合 KMS 啟用閾值。 在 KMS 主機電腦上，執行 Slmgr.vbs 並使用 **/dli**命令列選項來判斷主機的目前計數。 直到 KMS 主機的計數為 25 時，才能啟用 Windows 7 用戶端電腦。 Windows Server 2008 R2 KMS 用戶端的 KMS 計數必須為 5 才能啟用。 如需 KMS 需求的詳細資訊，請參閱[大量啟用規劃指南](https://go.microsoft.com/fwlink/?linkid=155926)。 
 
 在 KMS 用戶端電腦上，查看應用程式事件記錄檔中的事件識別碼 12289。 檢查此事件以取得下列資訊：
 
@@ -86,4 +86,4 @@ KMS 金鑰只應該安裝在 KMS 主機上，而不是在 KMS 用戶端上。 �
 
 如果 KMS 主機失敗，您必須在新主機上安裝 KMS 主機金鑰，然後啟動主機。 請確定新的 KMS 主機在 DNS 資料庫中具有 SRV RR。 如果您使用與失敗 KMS 主機相同的電腦名稱和 IP 位址來安裝新的 KMS 主機，新的 KMS 主機可以使用失敗主機的 DNS SRV 記錄。 如果新主機具有不同的電腦名稱稱，您可以手動移除失敗主機的 DNS SRV RR，或者 (如果 DNS 中已啟用清除) 讓 DNS 自動移除它。 如果網路使用 DDNS，新的 KMS 主機會在 DNS 伺服器上自動建立新的 SRV RR。 新的 KMS 主機接著會開始收集用戶端更新要求，並在符合 KMS 啟用閾值時立即開始啟用用戶端。
 
-如果 KMS 用戶端使用自動探索，則會在原始 KMS 主機未回應更新要求時，自動選取另一個 KMS 主機。 如果用戶端未使用自動探索，您必須執行 **slmgr.vbs /skms**，手動更新指派給失敗 KMS 主機的 KMS 用戶端電腦。 若要避免這種情況，請將 KMS 用戶端設定為使用自動探索。 如需相關資訊，請參閱[大量啟用部署指南](http://go.microsoft.com/fwlink/?linkid=150083)。
+如果 KMS 用戶端使用自動探索，則會在原始 KMS 主機未回應更新要求時，自動選取另一個 KMS 主機。 如果用戶端未使用自動探索，您必須執行 **slmgr.vbs /skms**，手動更新指派給失敗 KMS 主機的 KMS 用戶端電腦。 若要避免這種情況，請將 KMS 用戶端設定為使用自動探索。 如需相關資訊，請參閱[大量啟用部署指南](https://go.microsoft.com/fwlink/?linkid=150083)。

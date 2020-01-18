@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163098"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265740"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題（FAQ）
 
@@ -48,7 +48,7 @@ Windows Server 2016 已新增 HTTP/2 支援，但 HTTP/2 無法用於用戶端�
 是，支援此設定，但此設定不支援新的 AD FS 2016 功能。  這項設定在從 AD FS 2012 R2 到 AD FS 2016 的遷移階段，應該是暫時性的，而且不應該長時間部署。
 
 ### <a name="is-it-possible-to-deploy-ad-fs-for-office-365-without-publishing-a-proxy-to-office-365"></a>是否可以部署 Office 365 AD FS，而不需要將 proxy 發佈到 Office 365？
-是，支援這種情況。 不過，做為副作用
+是，支援此做法。 不過，做為副作用
 
 1. 您將需要手動管理更新權杖簽署憑證，因為 Azure AD 將無法存取同盟中繼資料。 如需有關手動更新權杖簽署憑證的詳細資訊，請參閱[更新 Office 365 和 Azure Active Directory 的同盟憑證](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. 您將無法利用舊版驗證流程（例如 ExO proxy 驗證流程）
@@ -103,7 +103,7 @@ Apple 已發行一組稱為應用程式傳輸安全性（ATS）的需求，可�
 
 若要確保您的 AD FS 和 WAP 伺服器只會協調支援 ATP 的 TLS 加密套件，您可以停用不在[atp 相容的加密套件清單](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)中的所有加密套件。  若要這麼做，請使用[WINDOWS TLS PowerShell Cmdlet](https://technet.microsoft.com/itpro/powershell/windows/tls/index)。
 
-## <a name="developer"></a>開發人員
+## <a name="developer"></a>Developer
 
 ### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>針對以 AD 進行驗證的使用者產生具有 ADFS 的 id_token 時，如何在 id_token 中產生「子」宣告？
 "Sub" 宣告的值是用戶端識別碼 + 錨點宣告值的雜湊。
@@ -126,7 +126,7 @@ AD FS 2016 中已加入這個的特殊 ValueType （"<http://www.w3.org/2001/XML
     "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
 
 ### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>我可以將資源值當做範圍值的一部分來傳遞，像是如何對 Azure AD 進行要求？
-使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如  
+使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如：  
 **< 建立有效的範例要求 >**
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>AD FS 是否支援 PKCE 延伸模組？
@@ -307,4 +307,7 @@ ADFS 和 Web 應用程式伺服器支援任何不會在端點上執行 SSL 終�
 `Set-AdfsProperties -IgnoreTokenBinding $true`
 
 ### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>我已將伺服器陣列從 Windows Server 2016 中的 AD FS 升級到 Windows Server 2019 中的 AD FS。 AD FS 伺服器陣列的伺服器陣列行為層級已成功提高至2019，但 Web 應用程式 Proxy 設定仍然顯示為 Windows Server 2016？
-升級至 Windows Server 2019 之後，Web 應用程式 Proxy 的設定版本將會繼續顯示為 Windows Server 2016。 Web 應用程式 Proxy 沒有適用于 Windows Server 2019 的新版本特定功能，如果伺服器陣列行為層級已成功在 AD FS 上引發，Web 應用程式 Proxy 就會繼續依設計的形式顯示為 Windows Server 2016。 
+升級至 Windows Server 2019 之後，Web 應用程式 Proxy 的設定版本將會繼續顯示為 Windows Server 2016。 Web 應用程式 Proxy 沒有適用于 Windows Server 2019 的新版本特定功能，如果伺服器陣列行為層級已成功在 AD FS 上引發，Web 應用程式 Proxy 就會繼續依設計的形式顯示為 Windows Server 2016。
+
+### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>我可以在啟用 ESL 之前，先估計 ADFSArtifactStore 的大小嗎？
+啟用 ESL 時，AD FS 會追蹤 ADFSArtifactStore 資料庫中使用者的帳戶活動和已知位置。 這個資料庫的大小會相對於所追蹤的使用者數目和已知位置而調整。 規劃啟用 ESL 時，您可以估計 ADFSArtifactStore 資料庫的大小，以每100000位使用者最多1GB 的速率成長。 如果 AD FS 伺服器陣列使用 Windows 內部資料庫（WID），則資料庫檔案的預設位置是 C:\Windows\WID\Data。 若要避免填滿此磁片磁碟機，請在啟用 ESL 之前，先確定您有至少5GB 的可用儲存空間。 除了磁片儲存體之外，請在啟用 ESL 之後，針對500000或更少的使用者人口數增加1GB 的 RAM，規劃總處理常式記憶體的成長。

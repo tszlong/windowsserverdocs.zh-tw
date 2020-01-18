@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 007668d1c0f8f2a6701813385b0e0bb7a09b29a0
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 0932bbbb87c6fcae9dc0b871bd605302acdb25cc
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529948"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265910"
 ---
 # <a name="remote-desktop-client-disconnects-and-cant-reconnect-to-the-same-session"></a>遠端桌面用戶端連線中斷，且無法重新連線至同一工作階段
 
@@ -40,7 +40,7 @@ ms.locfileid: "68529948"
 
 > [!NOTE]  
 >  - 當用戶端與 RD 工作階段主機伺服器之間的通訊需要最高層級的加密時，請使用與 FIPS 相容的加密。
->  - 您在群組原則中設定的任何加密層級設定都會覆寫使用遠端桌面服務設定工具所設的設定。 此外，如果您啟用[系統密碼編譯：使用 FIPS 相容演算法以供加密、雜湊和簽署](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)原則，此設定會覆寫**設定用戶端連線加密層級**原則。 系統密碼編譯原則位於**電腦設定\\Windows 設定\\安全性設定\\本機原則\\安全性選項**資料夾中。
+>  - 您在群組原則中設定的任何加密層級設定都會覆寫使用遠端桌面服務設定工具所設的設定。 此外，如果您啟用[系統密碼編譯：使用 FIPS 相容演算法以供加密、雜湊和簽署](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)原則，此設定會覆寫**設定用戶端連線加密層級**原則。 系統密碼編譯原則位於**電腦設定\\Windows 設定\\安全性設定\\本機原則\\安全性選項**資料夾中。
 >  - 當您變更加密層級時，新的加密層級會在下次使用者登入時生效。 如果您需要在單一伺服器上設定多重加密層級，請安裝多張網路介面卡並分別設定每張介面卡。
 >  - 若要確認憑證是否具有對應的私密金鑰，請移至遠端桌面服務設定，以滑鼠右鍵按一下要檢視憑證的連線，選取 [一般]  ，然後選取 [編輯]  。 完成後，選取 [檢視憑證]  。 當您移至在 [一般]  索引標籤時，如果金鑰已存在，您應該會看到這句話：「您有此憑證相對應的私密金鑰」。 您也可以使用 [憑證] 嵌入式管理單元來檢視這項資訊。
 >  - FIPS 相容加密 (**系統密碼編譯：使用 FIPS 相容演算法以供加密、雜湊和簽署**原則或在遠端桌面伺服器設定中的 **FIPS 相容**設定) 使用 Microsoft 密碼編譯模組，透過聯邦資訊處理標準 (FIPS) 140-1 加密演算法，可加密及解密在伺服器和用戶端之間傳送的資料。 如需詳細資訊，請參閱 [FIPS 140 驗證](https://docs.microsoft.com/windows/security/threat-protection/fips-140-validation)。

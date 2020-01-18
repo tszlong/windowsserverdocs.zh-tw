@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b86bf779a4ea9d67f959dacf125a98a8e26a729
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5658a101371cf3b865dec04ac76716b536792602
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947129"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265700"
 ---
 # <a name="tuning-iis-100"></a>調整 IIS 10。0
 

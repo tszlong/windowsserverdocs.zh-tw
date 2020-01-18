@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: bcc4bf7b3fbdbff1aed2c8dd07b90346fe9eebab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 577014f6fd7e3a3eb58567b1a644d44360f9e498
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383429"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259059"
 ---
 # <a name="administer-a-server-core-server"></a>管理 Server Core 伺服器
 
@@ -124,8 +124,8 @@ ms.locfileid: "71383429"
 |         變更工作群組中電腦的名稱         |                                                                                                                                                                **netdom renamecomputer \<currentcomputername\>/NewName：\<newcomputername\>** <br>重新啟動電腦。                                                                                                                                                                 |
 |                停用分頁檔管理                 |                                                                                                                                                                        **wmic，其中 name = "\<computername\>" set AutomaticManagedPagefile = False**                                                                                                                                                                         |
 |                   設定分頁檔                   |                                                            **wmic pagefileset，其中 name = "\<path/filename\>" set InitialSize =\<InitialSize\>，MaximumSize =\<maxsize\>** <br>其中*path/filename*是分頁檔案的路徑和名稱， *initialsize*是分頁檔案的開始大小（以位元組為單位）， *maxsize*是分頁檔案的大小上限（以位元組為單位）。                                                             |
-|                 變更到靜態 IP 位址                 | **ipconfig/all** <br>記錄相關資訊，或將其重新導向至文字檔（**ipconfig/all > ipconfig .txt**）。<br>**netsh interface ipv4 show 介面**<br>確認有介面清單。<br>**從介面清單中 \<識別碼的 netsh 介面 ipv4 設定位址名稱\> 來源 = 靜態位址 =\<慣用的 IP 位址\> 閘道 =\<閘道位址\>**<br>執行**ipconfig/all** ，確認 [DHCP 已啟用] 已設定為 [**否**]。 |
-|                   設定靜態 DNS 位址。                   |   <strong>netsh interface ipv4 add dnsserver name =\<name 或 network 介面卡的識別碼\> address =\<主要 DNS 伺服器的 IP 位址\> index = 1 <br></strong>netsh interface ipv4 add dnsserver name =\<name of 次要 DNS 伺服器\> address =\<次要 DNS 伺服器的 IP 位址\> index = 2\*\* <br> 視需要重複上述步驟，以新增額外的伺服器。<br>執行**ipconfig/all**以確認位址是否正確。   |
+|                 變更到靜態 IP 位址                 | **ipconfig/all** <br>記錄相關資訊，或將其重新導向至文字檔（**ipconfig/all > ipconfig .txt**）。<br>**netsh interface ipv4 show 介面**<br>確認有介面清單。<br>**從介面清單中的 netsh 介面 ipv4 設定位址 \<名稱識別碼\> 來源 = 靜態位址 =\<慣用的 IP 位址\> 閘道 =\<閘道位址\>**<br>執行**ipconfig/all** ，確認 [DHCP 已啟用] 已設定為 [**否**]。 |
+|                   設定靜態 DNS 位址。                   |   <strong>netsh interface ipv4 add dnsserver name =\<name 或 network 介面卡的識別碼\> address =\<主要 DNS 伺服器的 IP 位址\> index = 1 <br></strong>netsh interface ipv4 add dnsserver name =\<name of 次要 DNS 伺服器\> address =\<次要 DNS 伺服器的 IP 位址\> index = 2\*\* <br> 視需要重複上述步驟以新增其他伺服器。<br>執行**ipconfig/all**以確認位址是否正確。   |
 | 從靜態 IP 位址變更為 DHCP 提供的 IP 位址 |                                                                                                                                      **netsh interface ipv4 set address name =\<local system 的 IP 位址\> source = DHCP** <br>執行**ipconfig/all** ，確認 [DCHP 已啟用] 已設定為 **[是]** 。                                                                                                                                      |
 |                      輸入產品金鑰                      |                                                                                                                                                                                                   **slmgr.vbs – ipk \<產品金鑰\>**                                                                                                                                                                                                    |
 |                  從本機啟用伺服器                  |                                                                                                                                                                                                           **slmgr.vbs-ato**                                                                                                                                                                                                            |
@@ -140,7 +140,7 @@ ms.locfileid: "71383429"
 |顯示或修改 IPSEC 設定|**netsh ipsec**| 
 |顯示或修改 NAP 設定|**netsh nap**| 
 |顯示或修改 IP 至實體位址轉譯|**arp**| 
-|顯示或設定本機路由表|**料**| 
+|顯示或設定本機路由表|**route**| 
 |查看或設定 DNS 伺服器設定|**nslookup**| 
 |顯示通訊協定統計資料以及目前的 TCP/IP 網路連線|**netstat**| 
 |使用 NetBIOS over TCP/IP （NBT）顯示通訊協定統計資料和目前的 TCP/IP 連接|**nbtstat**| 
@@ -150,7 +150,7 @@ ms.locfileid: "71383429"
 |啟用防火牆的遠端系統管理|**netsh advfirewall 防火牆設定規則群組 = "Windows Defender 防火牆遠端系統管理" new enable = yes**| 
  
 
-### <a name="updates-error-reporting-and-feedback"></a>更新、錯誤報表和意見反應
+### <a name="updates-error-reporting-and-feedback"></a>更新、錯誤報告及意見反應
 
 |                               工作                                |                                                                                                                               命令                                                                                                                                |
 |-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

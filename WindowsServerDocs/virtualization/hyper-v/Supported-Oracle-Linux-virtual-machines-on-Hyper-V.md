@@ -11,12 +11,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: 4b09b8e760ce716da7f5aa6abecbead52293e77b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e932a379a46675c7ae0bf34cf27d9e0eb3d40beb
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365488"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259123"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Oracle Linux 虛擬機器
 
@@ -26,9 +26,9 @@ ms.locfileid: "71365488"
 
 本節內容：
 
-* [Red Hat 相容核心系列](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_rhc)
+* [具有 Red Hat 相容核心 Oracle Linux 版本的功能](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_rhc)
 
-* [Unbreakable 企業核心系列](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_uek)
+* [使用 Unbreakable Enterprise 核心（UEK）的 Oracle Linux 版本](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_uek)
 
 * [注意事項](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_notes)
 
@@ -40,9 +40,9 @@ ms.locfileid: "71365488"
 
 * （*空白*）-無法使用功能
 
-* **UEK R\*x QU\*y** Unbreakable Enterprise KERNEL （UEK），其中*x*是版本號碼，而*y*是每季更新。
+* **UEK RxUy** -Unbreakable Enterprise KERNEL （UEK），其中 x 是版本號碼，而 y 是每季更新。
 
-## <a name="BKMK_rhc"></a>Red Hat 相容核心系列
+## <a name="BKMK_rhc"></a>具有 Red Hat 相容核心 Oracle Linux 版本的功能
 
 6\. x 系列的32位核心已啟用 PAE。 Oracle Linux RHCK 6.0-6.3 沒有內建的 .LIS 支援。 Oracle Linux 7.x 核心僅限64位。
 
@@ -59,14 +59,14 @@ ms.locfileid: "71365488"
 | vRSS                                                                                                                                         | 2019、2016、2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 |                           |                           |
 | TCP 分割和總和檢查碼卸載                                                                                                       | 2019、2016、2012 R2、2012、2008 R2 | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 |                           |                           |
 | SR-IOV                                                                                                                                       | 2019、2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
-| **[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
+| **[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 | VHDX 調整大小                                                                                                                                  | 2019、2016、2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 | &#10004;                  |                           |
 | 虛擬光纖通道                                                                                                                        | 2019、2016、2012 R2                | &#10004;附注2    | &#10004;附注2     | &#10004;附注2                                                     | &#10004;附注2                                                     | &#10004;附注2          | &#10004;附注2          | &#10004;附注2          | &#10004;附注2           |                           |
 | 即時虛擬機器備份                                                                                                                  | 2019、2016、2012 R2                | &#10004;注11，3 | &#10004;注11，3 | &#10004;注3，4                                                  | &#10004;注3，4                                                  | &#10004;注3、4、11   | &#10004;注3、4、11   | &#10004;注3、4、11   | &#10004;注3、4、5、11 | &#10004;注3、4、5、11 |
 | 修剪支援                                                                                                                                 | 2019、2016、2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 |                          |                           |                           |
 | SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                | &#10004;           |                     | &#10004;                                                            | &#10004;                                                            |                          |                          |                          |                           |                           |
 | **[快閃記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
-| PAE 核心支援                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | 不適用                | 不適用                 | &#10004;（僅限 6. x）                                                 | &#10004;（僅限 6. x）                                                 | 不適用                      | &#10004;                 | &#10004;                 | &#10004;                  | &#10004;                  |
+| PAE 核心支援                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | 無                | 無                 | &#10004;（僅限 6. x）                                                 | &#10004;（僅限 6. x）                                                 | 無                      | &#10004;                 | &#10004;                 | &#10004;                  | &#10004;                  |
 | 設定 MMIO 間隙                                                                                                                    | 2019、2016、2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 | &#10004;                  | &#10004;                  |
 | 動態記憶體-熱新增                                                                                                                     | 2019、2016、2012 R2、2012          | &#10004;注8、9 | &#10004;注8、9  | &#10004;附注7、8、9、10（適用于 6.4-6.7 的注6）                      | &#10004;附注7、8、9、10（適用于 6.4-6.7 的注6）                      | &#10004;附注6、7、8、9 | &#10004;附注6、7、8、9 | &#10004;附注6、7、8、9 | &#10004;附注6、7、8、9  |                           |
 | 動態記憶體-佔用                                                                                                                  | 2019、2016、2012 R2、2012          | &#10004;注8、9 | &#10004;注8、9  | &#10004;附注7、9、10（適用于 6.4-6.7 的注6）                         | &#10004;附注7、9、10（適用于 6.4-6.7 的注6）                         | &#10004;附注6、8、9    | &#10004;附注6、8、9    | &#10004;附注6、8、9    | &#10004;附注6、8、9     | &#10004;附注6、8、9、10 |
@@ -85,11 +85,11 @@ ms.locfileid: "71365488"
 | 安全開機                                                                                                                                  | 2019、2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 
 
-## <a name="BKMK_uek"></a>Unbreakable 企業核心系列
+## <a name="BKMK_uek"></a>使用 Unbreakable Enterprise 核心（UEK）的 Oracle Linux 版本
 
-Oracle Linux Unbreakable Enterprise Kernel （UEK）僅限64，並內建了 .LIS 支援。
+Unbreakable Enterprise Kernel （UEK）的 Oracle Linux 僅限64，並內建了 .LIS 支援。 
 
-| **功能**                                                                                                                                  | **Windows server 版本**         | **UEK R5**                | **UEK R4**                | **UEK R3 QU3**            | **UEK R3 QU2**            | **UEK R3 QU1**       |
+| **功能**                                                                                                                                  | **Windows server 版本**         | **R5**                | **R4**                | **R3 QU3**            | **R3 QU2**            | **R3 QU1**       |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|---------------------------|---------------------------|---------------------------|---------------------------|----------------------|
 | **可用性**                                                                                                                             |                                    | 內建                  | 內建                  | 內建                  | 內建                  | 內建             |
 | **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2、2012、2008 R2 | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;             |
@@ -102,14 +102,14 @@ Oracle Linux Unbreakable Enterprise Kernel （UEK）僅限64，並內建了 .LIS
 | vRSS                                                                                                                                         | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | TCP 分割和總和檢查碼卸載                                                                                                       | 2019、2016、2012 R2、2012、2008 R2 | &#10004;                  | &#10004;                  |                           |                           |                      |
 | SR-IOV                                                                                                                                       | 2019、2016                         |                           |                           |                           |                           |                      |
-| **[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                           |                           |                           |                           |                      |
+| **[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                           |                           |                           |                           |                      |
 | VHDX 調整大小                                                                                                                                  | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  |                      |
 | 虛擬光纖通道                                                                                                                        | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  |                      |
 | 即時虛擬機器備份                                                                                                                  | 2019、2016、2012 R2                | &#10004;注3、4、5、11 | &#10004;注3、4、5、11 | &#10004;注3、4、5、11 | &#10004;注3、4、5、11 |                      |
 | 修剪支援                                                                                                                                 | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                |                           |                           |                           |                           |                      |
 | **[快閃記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                    |                           |                           |                           |                           |                      |
-| PAE 核心支援                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | 不適用                       | 不適用                       | 不適用                       | 不適用                       | 不適用                  |
+| PAE 核心支援                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | 無                       | 無                       | 無                       | 無                       | 無                  |
 | 設定 MMIO 間隙                                                                                                                    | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;             |
 | 動態記憶體-熱新增                                                                                                                     | 2019、2016、2012 R2、2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
 | 動態記憶體-佔用                                                                                                                  | 2019、2016、2012 R2、2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
@@ -127,7 +127,7 @@ Oracle Linux Unbreakable Enterprise Kernel （UEK）僅限64，並內建了 .LIS
 | 使用 UEFI 開機                                                                                                                              | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | 安全開機                                                                                                                                  | 2019、2016                         | &#10004;                  | &#10004;                  |                           |                           |                      |
 
-## <a name="BKMK_notes"></a>紀錄
+## <a name="BKMK_notes"></a>注意
 
 1. 在此 Oracle Linux 版本中，VLAN 標記可運作，但 VLAN 中繼不會。
 
@@ -137,7 +137,7 @@ Oracle Linux Unbreakable Enterprise Kernel （UEK）僅限64，並內建了 .LIS
 
 4. 如果虛擬機器有連結的 iSCSI 裝置或直接連接的存放裝置（也稱為傳遞磁片），即時備份作業可能會以無訊息模式失敗。
 
-5. 您可以透過適用[于 Linux 的 Hyper-v 備份 Essentials](https://github.com/LIS/backupessentials/tree/1.0)，取得 Oracle Linux 6.4/6.5/UEKR3 QU2 和 QU3 的即時備份支援。
+5. 您可以透過適用[于 Linux 的 Hyper-v 備份 Essentials](https://github.com/LIS/backupessentials/tree/1.0)，取得 Oracle Linux 6 update 4 和 Oracle Linux 6 update 5 WITH UEK R3Q2 和 UEK R3Q3 的即時備份支援。
 
 6. 動態記憶體支援僅適用于64位的虛擬機器。
 

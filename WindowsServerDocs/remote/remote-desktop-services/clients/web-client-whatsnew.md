@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f5bd7be03e61471683d5fc04df9ee10bc09e58
-ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
+ms.openlocfilehash: b5bf231b2aa3542c9cd276b29e7821bdb5dd7cfb
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74189482"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919803"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
@@ -111,7 +111,7 @@ ms.locfileid: "74189482"
 ## <a name="updates-for-version-081"></a>0\.8.1 版的更新
 *發行日期：05/17/2018*
 
-- 解決 CVE-2018-0886 中所述的 CredSSP 加密 Oracle 修復的更新。
+- 解決 CVE-2018-0886 中所述 CredSSP 加密 Oracle 修復的更新。
 - 已修正啟用列印時，部分語言連線失敗的問題。
 - 已改進閘道不是部署一部分時的錯誤訊息。
 - 已新增 [說明]  和 [意見反應]  選項。

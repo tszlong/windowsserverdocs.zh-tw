@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1512589315489f5bc351ff105a56694e0947463b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e73511709bfbee69a6dcbaaff4341c8b067079f3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404137"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949859"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -169,7 +169,7 @@ Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌
 > [!IMPORTANT]
 > 雖然本文的前半段有所討論，但 Windows 8.1 之前的自訂驗證和授權模型不受支援。
 
-若要深入了解這項功能，請參閱 [http://aka.ms/paa-sample](http://aka.ms/paa-sample)。
+若要深入了解這項功能，請參閱 [https://aka.ms/paa-sample](https://aka.ms/paa-sample)。
 
 
 > [!TIP]

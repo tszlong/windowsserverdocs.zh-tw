@@ -11,13 +11,13 @@ ms.date: 07/06/2018
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: 7ff88368c937890d3d5c4f650f6c4c08d404069f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: cf189b15ca15fb556424b5e4931f19d4be356d4d
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387856"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919951"
 ---
 # <a name="desktop-hosting-service"></a>桌面主機服務
 
@@ -31,7 +31,7 @@ ms.locfileid: "71387856"
 
 提供者的桌面主機服務會實作為一組經隔離租用戶環境。 每個租用戶的環境都由儲存體容器、一組虛擬機器和 Azure 服務所組成，這些服務全都透過隔離的虛擬網路進行通訊。 每部虛擬機器都包含組成租用戶裝載桌面環境的一或多個元件。 下列各小節介紹組成每個租用戶裝載桌面環境的元件。
 
-## <a name="active-directory-domain-services"></a>Active Directory Domain Services
+## <a name="active-directory-domain-services"></a>Active Directory 網域服務
 
 Active Directory 網域服務 (AD DS) 提供網域和樹系資訊，讓租用戶的使用者可以登入桌面和應用程式來執行其工作負載。 這也可讓您設定或連線到 Windows 應用程式可能需要的必要檔案共用和資料庫。
 
