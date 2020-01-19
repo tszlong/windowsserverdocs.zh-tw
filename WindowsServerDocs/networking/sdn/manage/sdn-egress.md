@@ -25,7 +25,7 @@ ms.locfileid: "71406003"
 
 Windows Server 2019 中 SDN 網路流量的輸出計量可讓您提供輸出資料傳輸的使用量計量。 離開每個虛擬網路但仍留在資料中心內的網路流量，可以個別追蹤，使其可以從計費計算中排除。 針對未包含在其中一個未開立帳單位址範圍內的目的地 IP 位址所系結的封包，會以計費的輸出資料傳輸進行追蹤。
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虛擬網路未開立帳單位址範圍（IP 範圍的白名單）
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虛擬網路未開立帳單位址範圍（IP 範圍的允許清單）
 
 您可以在現有虛擬網路的 [ **UnbilledAddressRanges** ] 屬性下找到未開立帳單位址範圍。 根據預設，不會新增任何位址範圍。
 
