@@ -6,16 +6,16 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 506cd5cb44d93c9d7d221917505f76a2c5625baa
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 51768dc65128f27dcbf78cbfc776500ac3832615
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870546"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949838"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>開始您的 Windows Server 一般資料保護規定（GDPR）旅程 
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本文提供 GDPR 的相關資訊，包括它是什麼，以及 Microsoft 提供哪些產品來協助您符合法規。
 
@@ -28,7 +28,7 @@ Microsoft 以及我們的客戶現在正朝向達成 GDPR 的隱私權目標邁�
 
 我們已在以下文章中概述我們對 GDPR 的承諾，以及我們如何支援客戶：[透過 Microsoft Cloud 符合 GDPR](https://blogs.microsoft.com/on-the-issues/2017/02/15/get-gdpr-compliant-with-the-microsoft-cloud/#hv52B68OZTwhUj2c.99)部落格文章 (英文)，由我們的首席隱私官 [Brendon Lynch](https://blogs.microsoft.com/on-the-issues/author/brendonlynch/)撰寫；以及[透過一般資料保護法規履約承諾贏得您的信任](https://blogs.microsoft.com/on-the-issues/2017/04/17/earning-trust-contractual-commitments-general-data-protection-regulation/#6QbqoGWXCLavGM63.99)部落格文章 (英文)，由 Microsoft 公司副總裁兼副總法律顧問 [Rich Sauer](https://blogs.microsoft.com/on-the-issues/author/rsauer/) 撰寫。
 
-雖然您的 GDPR 合規之旅看似困難重重，但我們會在這裡協助您。 如需 GDPR 特定資訊、我們的承諾，以及如何開始您的旅程，請造訪 [Microsoft 信任中心的 GDPR 部分](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr)。
+雖然您的 GDPR 合規之旅看似困難重重，但我們會在這裡協助您。 如需 GDPR 特定資訊、我們的承諾，以及如何開始您的旅程，請造訪 [Microsoft 信任中心的 GDPR 部分](https://www.microsoft.com/trustcenter/privacy/gdpr)。
 
 ## <a name="gdpr-and-its-implications"></a>GDPR 和其影響
 GDPR 是龐雜的法規，需要大幅改變您收集、使用及管理個人資料的方法。 Microsoft 長久以來一直協助客戶遵守複雜規範，現在要為 GDPR 做準備了，我們會是您的旅程最佳夥伴。
@@ -53,7 +53,7 @@ GDPR 引進了遺傳資料（例如，個人的 gene 序列）與生物特徵辨
 ### <a name="examples-of-info-relating-to-an-identified-or-identifiable-natural-person-data-subject"></a>已識別或可識別自然人的相關資訊範例 (資料主題)
 這份清單提供 GDPR 規範的數個資訊類型範例。 並非完整的清單。
 
--   Name
+-   名稱
 
 -   身分證號碼 (例如 SSN)
 
@@ -80,14 +80,14 @@ GDPR 引進了遺傳資料（例如，個人的 gene 序列）與生物特徵辨
 
     ![4 個主要 GDPR 步驟搭配運作的圖表](../media/GDPR-Windows-Server-Overview/gdpr-steps-diagram.png)
 
-我們已經針對每個步驟，概述各種 Microsoft 解決方案提供的工具範例、資源和功能，可以用來協助您處理該步驟的需求。 雖然本文不是完整的「操作說明」指南，但我們已包含連結供您尋找更多詳細資料，而您可以在[Microsoft 信任中心的 GDPR 一節](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr)中取得更多資訊。
+我們已經針對每個步驟，概述各種 Microsoft 解決方案提供的工具範例、資源和功能，可以用來協助您處理該步驟的需求。 雖然本文不是完整的「操作說明」指南，但我們已包含連結供您尋找更多詳細資料，而您可以在[Microsoft 信任中心的 GDPR 一節](https://www.microsoft.com/trustcenter/privacy/gdpr)中取得更多資訊。
 
 ## <a name="windows-server-security-and-privacy"></a>Windows Server 安全性與隱私權
 GDPR 會要求您執行適當的技術和組織安全性措施，以保護個人資料和處理系統。 在 GDPR 的內容中，您的實體和虛擬伺服器環境可能會處理個人和敏感性資料。 處理可以表示任何作業或操作集，例如資料收集、儲存和抓取。
 
 您滿足這項需求的能力，以及執行適當的技術安全性措施，必須反映出您在現今日益惡意的 IT 環境中所面臨的威脅。 現今的安全性威脅環境是一種積極且 tenacious 的威脅。 以往，惡意攻擊者主要將重點放在透過攻擊獲得社群認可，或者暫時使系統離線的快感。 從那時起，攻擊者的動機已轉移到金錢，包括保留裝置和資料 hostage，直到擁有者支付要求的 ransom 為止。
 
-現代化攻擊越來越針對大規模竊取智慧財產權，以及會導致財務損失的目標系統效能降低，更遑論威脅全球個人、企業和國家/地區利益的網路恐怖主義。 這些攻擊者通常是訓練有素的個人和安全專家，其中有些人甚至受雇於擁有大量預算，以及似乎有無限制人力資源的民族國家/地區。 此類威脅，需要能夠應付這種挑戰的方法。
+現代化攻擊越來越針對大規模竊取智慧財產權，以及會導致財務損失的目標系統效能降低，更遑論威脅全球個人、企業和國家利益的網路恐怖主義。 這些攻擊者通常是訓練有素的個人和安全專家，其中有些人甚至受雇於擁有大量預算，以及似乎有無限制人力資源的民族國家。 此類威脅，需要能夠應付這種挑戰的方法。
 
 這些威脅不只是威脅到您掌控任何個人或機密資料的能力，也對您的整體企業造成重大風險。 請考慮 McKinsey、Ponemon 研究所、Verizon 和 Microsoft 的最新資料：
 
@@ -168,7 +168,7 @@ Windows Server 2016 致力於協助保護身分識別、作業系統和虛擬化
 
 - **社交工程研究。** 大部分的認證威脅一開始先研究組織，然後透過社交工程進行。 例如，攻擊者可能會執行電子郵件網路釣魚攻擊，以洩露可存取組織網路的合法帳戶（但不一定是提高許可權的帳戶）。 然後，攻擊者會使用這些有效的帳戶在您的網路上執行額外的研究，以及識別可執行系統管理工作的特殊許可權帳戶。 
 
-- **利用具有更高許可權的帳戶。** 即使是在網路中使用一般且未提高許可權的使用者帳戶，攻擊者還是可以存取具有較高許可權的帳戶。 其中一個較常見的方法，就是使用傳遞雜湊或傳遞權杖攻擊。 如需有關傳遞雜湊和其他認證竊取技術的詳細資訊，請參閱 <<c0>傳遞雜湊（PtH）頁面上的資源。
+- **利用具有更高許可權的帳戶。** 即使是在網路中使用一般且未提高許可權的使用者帳戶，攻擊者還是可以存取具有較高許可權的帳戶。 其中一個較常見的方法，就是使用傳遞雜湊或傳遞權杖攻擊。 如需有關傳遞雜湊和其他認證竊取技術的詳細資訊，請參閱 [傳遞雜湊（PtH）頁面上的資源](https://technet.microsoft.com/dn785092.aspx)。
 
 還有其他方法可供攻擊者用來識別及危害特殊許可權身分識別（每天都會建立新的方法）。 因此，您必須建立作法，讓使用者以最低許可權帳戶登入，以降低攻擊者取得特殊許可權身分識別的能力。 下列各節概述 Windows Server 可減輕這些風險的功能。
 
@@ -185,11 +185,11 @@ Windows Server 2016 致力於協助保護身分識別、作業系統和虛擬化
 
 如果 DNS 系統管理員的認證遭竊，請想像這種情況。 首先，由於認證沒有任何系統管理員許可權，因此攻擊者將無法存取 DNS 伺服器（或其他任何系統）來進行任何變更。 如果攻擊者嘗試要求 DNS 伺服器的許可權，則第二因素驗證會要求他們確認其身分識別。 由於攻擊者不可能有 DNS 系統管理員的行動電話，因此驗證會失敗。 這會鎖定系統的攻擊者，並警示 IT 組織該認證可能遭到入侵。
 
-此外，許多組織會使用免費的[本機系統管理員密碼解決方案（LAPS）](http://aka.ms/laps) ，做為其伺服器和用戶端系統的簡單但功能強大的 JIT 管理機制。 LAPS 功能可讓您管理已加入網域之電腦的本機帳戶密碼。 密碼會儲存在 Active Directory （AD）中，並受到和存取控制清單（ACL）的保護，因此只有合格的使用者可以讀取或要求重設。
+此外，許多組織會使用免費的[本機系統管理員密碼解決方案（LAPS）](https://aka.ms/laps) ，做為其伺服器和用戶端系統的簡單但功能強大的 JIT 管理機制。 LAPS 功能可讓您管理已加入網域之電腦的本機帳戶密碼。 密碼會儲存在 Active Directory （AD）中，並受到和存取控制清單（ACL）的保護，因此只有合格的使用者可以讀取或要求重設。
 
-如《 [Windows 認證竊取緩和指南》](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095)所述， 
+如《 [Windows 認證竊取緩和指南》](https://www.microsoft.com/download/confirmation.aspx?id=54095)所述， 
 
-> 「犯罪罪犯用來執行認證竊取和重複使用攻擊的工具和技術，惡意攻擊者發現能夠更輕鬆地達成目標。_認證竊取通常依賴操作實務或使用者認證暴露，因此有效的緩和措施需要全面的方法來處理人員、程式和技術。此外，這些攻擊會依賴攻擊者竊取認證，然後再危害系統以擴充或保存存取權，因此組織必須藉由執行可防止攻擊者在遭入侵的網路。_ 」
+> 「_犯罪罪犯用來執行認證竊取和重複使用攻擊的工具和技術，惡意攻擊者發現能夠更輕鬆地達成目標。認證竊取通常依賴操作實務或使用者認證暴露，因此有效的緩和措施需要全面的方法來處理人員、程式和技術。此外，這些攻擊會依賴攻擊者竊取認證，然後危害系統以擴充或保存存取權，因此組織必須藉由實行可防止攻擊者在遭到入侵的網路中自由移動和偵測到的策略，快速地包含漏洞。_ 」
 
 Windows Server 的重要設計考慮是減輕認證竊取的風險，特別是衍生的認證。 Credential Guard 針對衍生的認證竊取和重複使用提供大幅改良的安全性，方法是在 Windows 中執行重大的架構變更，其設計目的是為了協助排除硬體隔離攻擊，而不只是嘗試防禦它們。
 
@@ -242,7 +242,7 @@ Windows Server 2016 也包含內建的保護，可防範某些類別的記憶體
 
 當程式呼叫此函式時，它就可以跳到攻擊者所指定的非預期位置。 這些攻擊也稱為跳躍式程式設計（JOP）攻擊。 控制流程防護會將嚴格限制放在可執行檔應用程式程式碼，以防止 JOP 攻擊，特別是間接呼叫指示。 它會新增輕量的安全性檢查，以識別應用程式中的函式集合，這些函式是間接呼叫的有效目標。 當應用程式執行時，它會驗證這些間接呼叫目標是否有效。
 
-如果控制流程防護檢查在執行時間失敗，Windows Server 2016 會立即終止程式，並中斷任何嘗試間接呼叫無效位址的惡意探索。 控制流程防護可為裝置防護提供一層額外的保護。 如果白名單的應用程式已遭入侵，它就能夠由 Device Guard 取消核取，因為 Device Guard 檢測會看到應用程式已簽署並被視為受信任。
+如果控制流程防護檢查在執行時間失敗，Windows Server 2016 會立即終止程式，並中斷任何嘗試間接呼叫無效位址的惡意探索。 控制流程防護可為裝置防護提供一層額外的保護。 如果允許清單的應用程式已遭入侵，它就能夠由 Device Guard 取消核取，因為 Device Guard 檢測會看到應用程式已簽署並被視為受信任。
 
 但是因為控制流程防護可以識別應用程式是否以非預先決定的非可行循序執行，所以攻擊會失敗，使遭入侵的應用程式無法執行。 這些保護結合在一起，讓攻擊者難以將惡意程式碼插入 Windows Server 2016 上執行的軟體。
 
@@ -302,11 +302,11 @@ Windows Server 2016 支援 TPM 的虛擬機器，可讓您在虛擬機器中支�
 在虛擬化環境中改善保護的其中一種方法，就是將網路劃分成可讓 Vm 只與運作所需的特定系統通訊的方式。 例如，如果您的應用程式不需要與網際網路連線，您可以將其分割，將這些系統排除為來自外部攻擊者的目標。 Windows Server 2016 中的軟體定義網路（SDN）包含分散式網路防火牆，可讓您以動態方式建立安全性原則，以保護您的應用程式免于來自網路內部或外部的攻擊。 此分散式網路防火牆可讓您隔離網路中的應用程式，以增加您的安全性層級。 原則可以套用至虛擬網路基礎結構的任何位置、隔離 VM 對 VM 流量、VM 對主機流量，或 VM 到網際網路流量（如有需要）–可能是因為個別系統遭到入侵或以程式設計方式跨多個子網。 Windows Server 2016 軟體定義的網路功能也可讓您路由傳送或鏡像非 Microsoft 虛擬裝置的連入流量。 例如，您可以選擇透過 Barracuda 虛擬裝置傳送所有的電子郵件流量，以提供額外的垃圾郵件篩選保護。 這可讓您輕鬆地將內部部署或雲端中的額外安全性分層。
 
 ### <a name="other-gdpr-considerations-for-servers"></a>伺服器的其他 GDPR 考慮
-GDPR 包含入侵通知的明確需求，其中的個人資料缺口表示「_違反安全性，導致意外或非法的損毀、遺失、改變、未經授權的洩漏，或存取個人資料已傳送、儲存或以其他方式處理。_ 」  很明顯地，如果您一開始就無法偵測到缺口，就無法開始在72小時內繼續符合嚴格的 GDPR 通知需求。
+GDPR 包含入侵通知的明確需求，其中的個人資料缺口表示「_違反安全性，導致意外或非法的損毀、遺失、改變、未經授權的洩漏，或存取、已傳送、儲存或其他方式處理的個人資料」。_  很明顯地，如果您一開始就無法偵測到缺口，就無法開始在72小時內繼續符合嚴格的 GDPR 通知需求。
 
 如 Windows 資訊安全中心白皮書中所述， [Post 缺口：處理先進的威脅](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
-> 「_與前置缺口不同的是，入侵後會假設已發生缺口–作為飛行記錄器和犯罪場景調查員（CSI）。入侵後，會為安全性小組提供識別、調查和回應攻擊所需的資訊和工具組，否則會保持無法偵測到的內容。_ 」
+> 「_與前置缺口不同的是，入侵後會假設已發生缺口–作為飛行記錄器和犯罪場景調查員（CSI）。入侵後，會為安全性小組提供識別、調查和回應攻擊所需的資訊和工具組，否則會保持無法偵測到的外觀。_ 」
 
 在本節中，我們將探討 Windows Server 如何協助您符合 GDPR 缺口通知義務。 這一開始會先瞭解 Microsoft 提供的基礎威脅資料，並針對您的權益進行收集和分析，而透過 Windows Defender Advanced 威脅防護（ATP），該資料對您而言可能非常重要。
 
@@ -317,52 +317,52 @@ GDPR 包含入侵通知的明確需求，其中的個人資料缺口表示「_�
 
 ![Microsoft 智慧安全性圖表](../media/GDPR-Windows-Server-Overview/gdpr-intelligent-security-graph.png)
 
-Microsoft 的威脅情報範圍，實際上是數十億個資料點：35000000000每月、1000000000客戶在企業和取用者區段中掃描的訊息，存取200個以上的雲端服務，並14000000000每天執行的驗證。 這項資料會由 Microsoft 代表您一起提取，以建立 Intelligent Security Graph，協助您以動態方式保護您的 front 門，以保持安全、維持生產力，並符合 GDPR 的需求。
+Microsoft 的威脅情報範圍，也就是數十億個資料點：每月掃描35000000000則訊息、跨企業和消費者區段的1000000000客戶存取200個以上的雲端服務，以及14000000000已執行的驗證次. All this data is pulled together on your behalf by Microsoft to create the Intelligent Security Graph that can help you protect your front door in a dynamic way to stay secure, remain productive and meet the requirements of the GDPR.
 
 #### <a name="detecting-attacks-and-forensic-investigation"></a>偵測攻擊和鑑識調查
-隨著網路攻擊越來越精巧也越來越針對性，即使是最好的端點防護最終也可能被破解。 有兩個功能可用來協助進行潛在的缺口偵測-Windows Defender Advanced 威脅防護（ATP）和 Microsoft Advanced 威脅分析（ATA）。
+隨著網路攻擊越來越精巧也越來越針對性，即使是最好的端點防護最終也可能被破解。 Two capabilities can be used to help with potential breach detection - Windows Defender Advanced Threat Protection (ATP) and Microsoft Advanced Threat Analytics (ATA).
 
-Windows Defender 進階威脅防護 (ATP) 可協助您偵測、調查及回應網路上的進階攻擊和資料漏洞。 GDPR 的資料缺口類型預期您會透過技術安全性措施來保護，以確保個人資料和處理系統的機密性、完整性和可用性。
+Windows Defender 進階威脅防護 (ATP) 可協助您偵測、調查及回應網路上的進階攻擊和資料漏洞。 The types of data breach the GDPR expects you to protect against through technical security measures to ensure the ongoing confidentiality, integrity, and availability of personal data and processing systems.
 
-Windows Defender ATP 的主要優點包括下列各項：
+Among the key benefits of Windows Defender ATP are the following:
 
-- **偵測無法偵測的。** 在作業系統核心、Windows 安全性專家，以及超過1000000000部機器的獨特光纖，以及所有 Microsoft 服務的信號之間建立的感應器。
+- **Detecting the undetectable.** Sensors built deep into the operating system kernel, Windows security experts, and unique optics from over 1 billion machines and signals across all Microsoft services.
 
-- **內建，而不是置中。** 無代理程式，具有高效能且最小的影響，雲端技術;無部署的輕鬆管理。 
+- **Built in, not bolted on.** Agentless, with high performance and minimal impact, cloud-powered; easy management with no deployment. 
 
-- **適用于 Windows 安全性的單一窗格。** 從 Windows Defender ATP、Windows Defender 防毒軟體和 Windows Defender Device Guard，探索6個月的豐富、機器時間軸、統一的安全性事件。
+- **Single pane of glass for Windows security.** Explore 6 months of rich, machine-timeline, unifying security events from Windows Defender ATP, Windows Defender Antivirus and Windows Defender Device Guard.
 
-- **Microsoft graph 的威力。** 利用 Microsoft 智慧安全性圖表來整合偵測和探索與 Office 365 ATP 訂用帳戶，以追蹤和回應攻擊。
+- **Power of the Microsoft graph.** Leverages the Microsoft Intelligence Security Graph to integrate detection and exploration with Office 365 ATP subscription, to track back and respond to attacks.
 
-如需詳細資訊，請參閱[Windows DEFENDER ATP 建立者更新預覽的新功能](https://blogs.microsoft.com/microsoftsecure/2017/03/13/whats-new-in-the-windows-defender-atp-creators-update-preview/)。
+Read more at [What's new in the Windows Defender ATP Creators Update preview](https://blogs.microsoft.com/microsoftsecure/2017/03/13/whats-new-in-the-windows-defender-atp-creators-update-preview/).
 
-ATA 是內部部署產品，可協助偵測組織中的身分識別洩漏。 ATA 可以針對驗證、授權和資訊收集通訊協定（例如 Kerberos、DNS、RPC、NTLM 和其他通訊協定），來捕捉和剖析網路流量。 ATA 會使用此資料來建立與網路上的使用者和其他實體相關的行為設定檔，讓它能夠偵測異常和已知的攻擊模式。 下表列出 ATA 偵測到的攻擊類型。
+ATA is an on-premises product that helps detect identity compromise in an organization. ATA can capture and parse network traffic for authentication, authorization, and information gathering protocols (such as Kerberos, DNS, RPC, NTLM, and other protocols). ATA uses this data to build a behavioral profile about users and other entities on a network so that it can detect anomalies and known attack patterns. The following table lists the attack types detected by ATA.
 
 
-|攻擊類型 |描述 |
+|Attack type |說明 |
 |---------|---------|
-|惡意攻擊 |從已知的攻擊類型清單中尋找攻擊，就會偵測到這些攻擊，包括：<ul><li>傳遞票證（Platform ptt）</li><li>傳遞雜湊（PtH）</li><li>越過-雜湊</li><li>偽造的 PAC （MS14-068）</li><li>黃金票證</li><li>惡意的複寫</li><li>偵察</li><li>暴力密碼破解</li><li>遠端執行</li></ul>如需可偵測到之惡意攻擊的完整清單及其描述，請參閱[ATA 可以偵測哪些可疑的活動？](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats)。|
-|異常行為 |這些攻擊會使用行為分析來偵測，並使用機器學習來識別可疑的活動，包括：<ul><li>異常登入</li><li>未知的威脅</li><li>密碼共用</li><li>橫向移動</li></ul>|
-|安全性問題和風險 |藉由查看目前的網路和系統組態來偵測這些攻擊，包括：<ul><li>信任中斷</li><li>弱式通訊協定</li><li>已知的通訊協定弱點</li></ul>|
+|Malicious attacks |These attacks are detected by looking for attacks from a known list of attack types, including:<ul><li>傳遞票證 (PtT)</li><li>傳遞雜湊 (PtH)</li><li>越過雜湊</li><li>偽造的 PAC (MS14-068)</li><li>黃金票證</li><li>惡意的複寫</li><li>偵察</li><li>暴力密碼破解</li><li>遠端執行</li></ul>For a complete list of malicious attacks that can be detected and their description, see [What Suspicious Activities Can ATA detect?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
+|異常行為 |These attacks are detected by using behavioral analysis and use machine learning to identify questionable activities, including:<ul><li>異常的登入</li><li>不明的威脅</li><li>共用密碼</li><li>橫向移動</li></ul>|
+|Security issues and risks |These attacks are detected by looking at current network and system configuration, including:<ul><li>信任中斷</li><li>弱式通訊協定</li><li>已知的通訊協定弱點</li></ul>|
 
-您可以使用 ATA 來協助偵測嘗試入侵特殊許可權身分識別的攻擊者。 如需有關部署 ATA 的詳細資訊，請參閱[Advanced 威脅分析檔](https://docs.microsoft.com/advanced-threat-analytics/)中的規劃、設計和部署主題。
+You can use ATA to help detect attackers attempting to compromise privileged identities. For more information on deploying ATA, see the Plan, Design, and Deploy topics in the [Advanced Threat Analytics documentation](https://docs.microsoft.com/advanced-threat-analytics/).
 
-## <a name="related-content-for-associated-windows-server-2016-solutions"></a>相關聯 Windows Server 2016 解決方案的相關內容
+## <a name="related-content-for-associated-windows-server-2016-solutions"></a>Related content for associated Windows Server 2016 solutions
 
-- **Windows Defender 防毒軟體：** https://www.youtube.com/watch?v=P1aNEy09NaI 和 https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
+- **Windows Defender Antivirus:** https://www.youtube.com/watch?v=P1aNEy09NaI and https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
 
-- **Windows Defender Advanced 威脅防護：** https://www.youtube.com/watch?v=qxeGa3pxIwg 和 https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
+- **Windows Defender Advanced Threat Protection:** https://www.youtube.com/watch?v=qxeGa3pxIwg and https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
 
-- **Windows Defender Device Guard：** https://www.youtube.com/watch?v=F-pTkesjkhI 和 https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
+- **Windows Defender Device Guard:** https://www.youtube.com/watch?v=F-pTkesjkhI and https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
 
-- **Windows Defender Credential Guard：** https://www.youtube.com/watch?v=F-pTkesjkhI 和 https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
+- **Windows Defender Credential Guard:** https://www.youtube.com/watch?v=F-pTkesjkhI and https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
 
-- **控制流程防護：** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
+- **Control Flow Guard:** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
-- **安全性與保證：** https://docs.microsoft.com/windows-server/security/security-and-assurance
+- **Security and Assurance:** https://docs.microsoft.com/windows-server/security/security-and-assurance
 
 ## <a name="disclaimer"></a>免責聲明
-本文代表 Microsoft 於截至文件發行當日為止對於 GDPR 的探討觀點。 我們花了很多時間來 GDPR，並想想我們已經仔細瞭解其意圖和意義。 但 GDPR 的應用與具體事實高度相關，並非 GDPR 的所有面向與解讀都符合現況。
+本文代表 Microsoft 於截至文件發行當日為止對於 GDPR 的探討觀點。 We've spent a lot of time with GDPR and like to think we've been thoughtful about its intent and meaning. 但 GDPR 的應用與具體事實高度相關，並非 GDPR 的所有面向與解讀都符合現況。
 
 因此，本文僅供參考，不應做為法律建議或用來判斷 GDPR 會如何套用到您與您的組織。 我們鼓勵您與具具有法律資格的專業人員討論 GDPR、其如何具體套用至您的組織，以及如何最理想地確保合規性。
 
@@ -372,6 +372,6 @@ MICROSOFT 對於本文中的資訊不負任何明示、默示或法定擔保責�
 
 發行日期：2017 年 9 月<br>
 版本 1.0<br>
-© 2017 Microsoft. 著作權所有，並保留一切權利。
+© 2017 Microsoft. 保留一切權利。
 
 
