@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
 ms.prod: windows-server
-ms.openlocfilehash: 6d04b641c56e9461f0134bfc4734fea36955106c
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 4ce42420430e9a12dd6123ec18c9ded25abc97bb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904062"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949962"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常見問題集
 
@@ -41,7 +41,7 @@ Windows Admin Center 經過最佳化，最適用於 Windows Server 2019，並且
 
 ## <a name="is-windows-admin-center-a-complete-replacement-for-all-traditional-in-box-and-rsat-tools"></a>Windows Admin Center 是否會完全取代所有傳統的隨附工具和 RSAT 工具？
 
-不。 Windows Admin Center 可以管理許多常見的案例，但不會完全取代所有傳統 Microsoft Management Console (MMC) 工具。 如需詳細查看 Windows Admin Center 中隨附哪些工具，請閱讀我們文件中更多有關[管理伺服器](../use/manage-servers.md)的資訊。 Windows Admin Center 在其伺服器管理員解決方案中有下列重要功能：
+不可以。 Windows Admin Center 可以管理許多常見的案例，但不會完全取代所有傳統 Microsoft Management Console (MMC) 工具。 如需詳細查看 Windows Admin Center 中隨附哪些工具，請閱讀我們文件中更多有關[管理伺服器](../use/manage-servers.md)的資訊。 Windows Admin Center 在其伺服器管理員解決方案中有下列重要功能：
 
 * 顯示資源和資源使用率
 * 憑證管理
@@ -86,7 +86,7 @@ Windows Admin Center 與 RSAT (遠端伺服器管理工具) 相輔相成，但�
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>Windows Admin Center 是否有任何方案可以管理 Windows Server 2008 R2 或更早版本？
 
-Windows Admin Center 現已支援**有限的**功能來管理 Windows Server 2008 R2。 Windows Admin Center 需依賴 Windows Server 2008 R2 中所沒有的 PowerShell 功能和平台技術，使完整支援變得可行。 Windows Server 2008/2008 R2 即將於 2020 年 1 月終止支援，因此 Microsoft 建議客戶[移轉至 Azure 或升級至最新版的 Windows Server](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008)。
+Windows Admin Center 現已支援**有限的**功能來管理 Windows Server 2008 R2。 Windows Admin Center 需依賴 Windows Server 2008 R2 中所沒有的 PowerShell 功能和平台技術，使完整支援變得可行。 Windows Server 2008/2008 R2 即將於 2020 年 1 月終止支援，因此 Microsoft 建議客戶[移轉至 Azure 或升級至最新版的 Windows Server](https://www.microsoft.com/cloud-platform/windows-server-2008)。
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>是否有任何要讓 Windows Admin Center 管理 Linux 連線的計劃？
 
@@ -131,7 +131,7 @@ Windows Admin Center 有可用的 SDK，因此讓任何人都可以撰寫自己�
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-不。 Windows Admin Center 可與 System Center 互補，但 System Center 並非必要的。 [深入了解 Windows Admin Center 和 System Center](related-management.md#system-center)。
+不可以。 Windows Admin Center 可與 System Center 互補，但 System Center 並非必要的。 [深入了解 Windows Admin Center 和 System Center](related-management.md#system-center)。
 
 ## <a name="can-windows-admin-center-replace-system-center-virtual-machine-manager-scvmm"></a>Windows Admin Center 可以取代 System Center Virtual Machine Manager (SCVMM) 嗎？
 
@@ -150,7 +150,7 @@ Windows Admin Center 與 SCVMM 相輔相成；Windows Admin Center 主要用來�
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center 預覽版
 
 * 如果您是 IT 系統管理員，想要依一般發行頻率取得最新的絕佳功能時，此版本正合您需要。 我們的目的是每個月左右提供後續的更新版本。 核心平台仍繼續為生產就緒產品，而授權會提供生產使用權。 但請注意，您將會看到清楚標示為 PREVIEW 且適合評估及測試的新工具和功能陸續推出。
-* 若要取得最新的 Insider Preview 版本，已註冊的測試人員可以直接從 [Windows Server Insider Preview 下載頁面](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)的 [其他下載] 下拉式清單中下載 Windows Admin Center 預覽版。 如果您還沒有註冊為測試人員，請參閱商務用 Windows 測試人員入口網站上的[開始使用 Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/)。
+* 若要取得最新的 Insider Preview 版本，已註冊的測試人員可以直接從 [Windows Server Insider Preview 下載頁面](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)的 [其他下載] 下拉式清單中下載 Windows Admin Center 預覽版。 如果您還沒有註冊為測試人員，請參閱商務用 Windows 測試人員入口網站上的[開始使用 Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/)。
 
 ## <a name="why-was-windows-admin-center-chosen-as-the-final-name-for-project-honolulu"></a>為什麼選擇「Windows Admin Center」做為「Project Honolulu」的最終名稱？
 
@@ -162,7 +162,7 @@ Windows Admin Center 是「Project Honolulu」的正式產品名稱，加強了�
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>Windows Admin Center 的版本記錄為何？
 
-[在此檢視版本記錄。](../overview.md#release-history)
+[在此檢視版本記錄。](../support/release-history.md)
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>我的 Windows Admin Center 發生問題，我可以在哪裡取得協助？
 

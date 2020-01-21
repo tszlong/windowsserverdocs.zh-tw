@@ -12,16 +12,16 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 34cb9a50fad7ea64cd8af5b893f5fbd5217a95e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 92c27884475beb83000fb7aac15339135e3f2109
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391855"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948460"
 ---
 # <a name="deploy-nano-server"></a>部署 Nano Server
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
@@ -32,9 +32,9 @@ ms.locfileid: "71391855"
 
 Nano Server Image Builder 工具可協助您在圖形化介面的輔助下，建立自訂 Nano Server 映像和可開機的 USB 媒體。 根據您提供的輸入，它會產生可重複使用的 PowerShell 指令碼，讓您輕鬆地自動並一致安裝執行 Windows Server 2016 Datacenter 或 Standard Edition 的 Nano Server。
 
-從[下載中心](https://www.microsoft.com/en-us/download/details.aspx?id=54065)取得工具。 
+從[下載中心](https://www.microsoft.com/download/details.aspx?id=54065)取得工具。 
 
-此工具也需要 [Windows 評定及部署套件 (ADK)](https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit)。
+此工具也需要 [Windows 評定及部署套件 (ADK)](https://developer.microsoft.comwindows/hardware/windows-assessment-deployment-kit)。
 
 
 Nano Server Image Builder 會建立 VHD、VHDX 或 ISO 格式的自訂 Nano Server 映像，以及可開機的 USB 媒體，來部署 Nano Server 或偵測伺服器的硬體設定。 它也可以執行下列作業：
@@ -74,7 +74,7 @@ Nano Server Image Builder 會建立 VHD、VHDX 或 ISO 格式的自訂 Nano Serv
 |                                                          Windows Defender，包括預設簽章檔案                                                           |                                                                                                                                                                                                         -Defender                                                                                                                                                                                                         |
 |                         反轉轉寄站以與應用程式相容，例如 Ruby、Node.js 等通用應用程式架構。                         |                                                                                                                                                                                                  現在預設會包含                                                                                                                                                                                                  |
 |                                                                             DNS 伺服器角色                                                                             |                                                                                                                                                                                         -Package Microsoft-NanoServer-DNS-Package                                                                                                                                                                                         |
-|                                                              PowerShell 預期狀態設定 (DSC)                                                               |                                                                                                                               -Package Microsoft-NanoServer-DSC-Package<br />**注意：** 如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](https://msdn.microsoft.com/powershell/dsc/nanoDsc)。                                                                                                                               |
+|                                                              PowerShell Desired State Configuration (DSC)                                                               |                                                                                                                               -Package Microsoft-NanoServer-DSC-Package<br />**注意：** 如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](https://msdn.microsoft.com/powershell/dsc/nanoDsc)。                                                                                                                               |
 |                                                                    Internet Information Server (IIS)                                                                    |                                                                                                                                       -Package Microsoft-NanoServer-IIS-Package<br />**注意：** 如需使用 IIS 的詳細資訊，請參閱 [Nano Server 上的 IIS](IIS-on-Nano-Server.md)。                                                                                                                                        |
 |                                                                   Windows 容器的主機支援                                                                   |                                                                                                                                                                                                        -Containers                                                                                                                                                                                                        |
 |                                                               System Center Virtual Machine Manager 代理程式                                                               | -Package Microsoft-NanoServer-SCVMM-Package<br />-Package Microsoft-NanoServer-SCVMM-Compute-Package<br />**注意：** 只有在監視 Hyper-V 時才能使用 SCVMM 計算套件。 針對 VMM 中的超融合部署，您應該同時指定 -Storage 參數。 如需詳細資訊，請參閱 [VMM 文件](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-compute-add-nano-hyper-v)。 |
@@ -144,7 +144,7 @@ Nano Server Image Builder 會建立 VHD、VHDX 或 ISO 格式的自訂 Nano Serv
 
 最後會產生 .\FirstStepsNano.vhdx 的映像。  
 
-此 Cmdlet 會在執行時產生記錄檔，並在完成時告訴您此記錄檔的所在位置。 隨附的指令碼會完成 WIM 與 VHD 的轉換，並在 %TEMP%\Convert-WindowsImage\\\<GUID&gt; 中產生自己的記錄檔 (其中 \<GUID&gt; 是每個轉換工作階段的唯一識別碼)。  
+此 Cmdlet 會在執行時產生記錄檔，並在完成時告訴您此記錄檔的所在位置。 隨附的指令碼會完成 WIM 與 VHD 的轉換，並在 %TEMP%\Convert-WindowsImage\\\<GUID> 中產生自己的記錄檔 (其中 \<GUID> 是每個轉換工作階段的唯一識別碼)。  
 
 只要您使用相同的基底路徑，就可以在每次執行此 Cmdlet 時省略媒體路徑參數，因為它會使用從基底路徑快取的檔案。 如果您未指定基底路徑，此 Cmdlet 會在 TEMP 資料夾中產生預設路徑。 不過，如果您想要使用不同的來源媒體但相同的基底路徑，則應該指定媒體路徑參數。  
 
@@ -205,7 +205,7 @@ Nano Server Image Builder 會建立 VHD、VHDX 或 ISO 格式的自訂 Nano Serv
 
 ## <a name="BKMK_online"></a>線上安裝角色和功能  
 > [!NOTE]
-> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，它並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器**之前**，立即安裝[最新的累積更新](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server)。
+> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，其並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器**之前**，立即安裝[最新的累積更新](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server)。
 
 ### <a name="installing-roles-and-features-from-a-package-repository"></a>從套件存放庫安裝角色和功能  
 您可以使用 PackageManagement PowerShell 模組的 NanoServerPackage 提供者，從線上套件存放庫尋找及安裝 Nano Server 套件。 若要安裝此提供者，請使用下列 Cmdlet：
@@ -223,7 +223,7 @@ Save-Module -Path "$Env:ProgramFiles\WindowsPowerShell\Modules\" -Name NanoServe
 Import-PackageProvider NanoServerPackage
 ```
 
-安裝且匯入此提供者後，您便可使用特地設計用來與 Nano Server 套件搭配使用的 Cmdlet 搜尋、下載並安裝 Nano Server 套件。
+安裝且匯入此提供者後，您便可使用特地設計用來與 Nano Server 套件搭配使用的 Cmdlet 搜尋、下載並安裝 Nano Server 套件：
 
 ```powershell
 Find-NanoServerPackage  
@@ -251,7 +251,7 @@ Find-NanoServerPackage
 
 執行 `Find-Package -ProviderName NanoServerPackage -DisplayCulture` 會顯示所有可用的文化特性。
 
-如果您需要特定地區設定版本 (例如美國英文)，您可以使用 `Find-NanoServerPackage -Culture en-us`、  
+如果您需要特定地區設定版本 (例如繁體中文)，您可以使用 `Find-NanoServerPackage -Culture en-us`、  
 `Find-Package -ProviderName NanoServerPackage -Culture en-us` 或 `Find-Package -Culture en-us -DisplayCulture`。
 
 若要依套件名稱尋找特定套件，請使用 -Name 參數。 此參數也接受萬用字元。 例如，若要尋找名稱中有 VMM 的所有套件，請使用 `Find-NanoServerPackage -Name *VMM*` 或 `Find-Package -ProviderName NanoServerPackage -Name *VMM*`。
@@ -593,7 +593,7 @@ PnP 和檔案系統篩選器驅動程式套件必須遵循通用驅動程式需�
 
 **dism\dismmedia:.\mountdir /Apply-Unattend:.\unattend.xml**  
 
-建立 "Panther" 資料夾 (供 Windows 系統用於存放安裝期間的檔案；如需詳細資訊，請參閱 [Windows 7, Windows Server 2008 R2, and Windows Vista setup log file locations](https://support.microsoft.com/en-us/kb/927521) (Windows 7、Windows Server 2008 R2 和 Windows Vista 安裝記錄檔位置))，將 Unattend.xml 檔案複製到其中，然後使用下列命令取消掛接 VHD：  
+建立 "Panther" 資料夾 (供 Windows 系統用於存放安裝期間的檔案；如需詳細資訊，請參閱 [Windows 7, Windows Server 2008 R2, and Windows Vista setup log file locations](https://support.microsoft.com/kb/927521) (Windows 7、Windows Server 2008 R2 和 Windows Vista 安裝記錄檔位置))，將 Unattend.xml 檔案複製到其中，然後使用下列命令取消掛接 VHD：  
 
 **md .\mountdir\windows\panther**  
 
@@ -633,9 +633,9 @@ Hyper-V 在 Nano Server 上的運作方式與在 Server Core 模式的 Windows S
 
 限制委派的運作方式與舊版完全相同。 如需詳細資訊，請參閱下列文章：  
 
--   [Enabling Hyper-V Remote Management - Configuring Constrained Delegation For SMB and Highly Available SMB](http://blogs.msdn.com/b/taylorb/archive/2012/03/20/enabling-hyper-v-remote-management-configuring-constrained-delegation-for-smb-and-highly-available-smb.aspx) (啟用 Hyper-V 遠端管理 - 為 SMB 和高可用性 SMB 設定限制委派)  
+-   [Enabling Hyper-V Remote Management - Configuring Constrained Delegation For SMB and Highly Available SMB](https://blogs.msdn.com/b/taylorb/archive/2012/03/20/enabling-hyper-v-remote-management-configuring-constrained-delegation-for-smb-and-highly-available-smb.aspx) (啟用 Hyper-V 遠端管理 - 為 SMB 和高可用性 SMB 設定限制委派)  
 
--   [Enabling Hyper-V Remote Management - Configuring Constrained Delegation For Non-Clustered Live Migration](http://blogs.msdn.com/b/taylorb/archive/2012/03/20/enabling-hyper-v-remote-management-configuring-constrained-delegation-for-non-clustered-live-migration.aspx) (啟用 Hyper-V 遠端管理 - 為非叢集即時移轉設定限制委派)  
+-   [Enabling Hyper-V Remote Management - Configuring Constrained Delegation For Non-Clustered Live Migration](https://blogs.msdn.com/b/taylorb/archive/2012/03/20/enabling-hyper-v-remote-management-configuring-constrained-delegation-for-non-clustered-live-migration.aspx) (啟用 Hyper-V 遠端管理 - 為非叢集即時移轉設定限制委派)  
 
 **CredSSP**  
 

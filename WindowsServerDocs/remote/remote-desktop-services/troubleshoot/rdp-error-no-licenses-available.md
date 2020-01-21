@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 540c368812866655452115d8928a915a07cacc97
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 74b4656216d5568f546d1a13722eeec748f1f9b5
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529968"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265890"
 ---
 # <a name="clients-cant-connect-and-see-no-licenses-available-error"></a>用戶端無法連線並看到「沒有可用的授權」錯誤
 

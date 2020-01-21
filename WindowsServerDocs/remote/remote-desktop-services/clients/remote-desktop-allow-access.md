@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a875f8bddd934ac9fb70ca9c0b86772d9fa63b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de08101ed1d4d4527242778d657778f1a16b3dad
+ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404176"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76248400"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>遠端桌面 - 允許存取您的電腦
 

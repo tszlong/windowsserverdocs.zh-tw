@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 4e2f7cbaed42dd1c1b1884438467cf59f1529f0c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391544"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948345"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>版本資訊：Windows Server 2016 中的重要問題
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 這些版本資訊摘要說明 Windows Server 2016 作業系統中最重要的問題，包括可避免或暫時解決問題 (如果已知) 的方式。 如需這個版本的設計變更、新功能及修正的相關資訊，請參閱 [Windows Server 2016 的新功能](whats-new-in-windows-server-2016.md)和特定功能小組的通知。 除非另有說明，否則這其中每個回報的問題都適用於 Windows Server 2016 的所有版本和安裝選項。
 
@@ -42,7 +42,7 @@ ms.locfileid: "71391544"
 ## <a name="containers"></a>容器
 
 [comment]: # (ID:371; Submitter: taylorb; state: 已核准)
-- 使用容器之前，請先安裝 [Windows 10 1607 版的服務堆疊更新：2016 年 8 月 23 日](https://support.microsoft.com/en-us/kb/3176936)或任何可用的更新版本。 否則，可能會發生許多問題，包括建置、啟動，或執行容器失敗，以及與「CreateProcess 在 Win32 中失敗:RPC 伺服器無法使用」類似的錯誤。
+- 使用容器之前，請先安裝 [Windows 10 1607 版的服務堆疊更新：2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936)或任何可用的更新版本。 否則，可能會發生許多問題，包括建置、啟動，或執行容器失敗，以及與「CreateProcess 在 Win32 中失敗:RPC 伺服器無法使用」類似的錯誤。
 
 [comment]: # (ID:373; Submitter: plang; state: 已核准)
 - NanoServerPackage OneGet 提供者無法在 Windows 容器中運作。 若要解決這個問題，請在不同的電腦 (非容器) 上使用 Find-NanoServerPackage 和 Save-NanoServerPackage，來下載所需的套件。 然後將套件複製到容器並進行安裝。
@@ -55,7 +55,7 @@ ms.locfileid: "71391544"
 ## <a name="microsoft-exchange"></a>Microsoft Exchange
 
 [comment]: # (ID:375; Submitter: wgries; state: 已核准)
-如果您嘗試在 Windows Server 2016 上執行 Microsoft Exchange 2016 CU3，IIS 主機處理程序 W3WP.exe 就會發生錯誤。 目前尚無解決的方法。 您應該在有可用的支援修正程式之前，延後部署 Windows Server 2016 上的 Exchange 2016 CU3。
+如果您嘗試在 Windows Server 2016 上執行 Microsoft Exchange 2016 CU3，IIS 主機處理程序 W3WP.exe 就會發生錯誤。 目前尚無解決的方法。 您應該在有可用的支援修正程式之前，延後部署 Windows Server 2016 上的 Exchange 2016 CU3。
 
 ## <a name="remote-server-administration-tools-rsat"></a>遠端伺服器管理工具 (RSAT)
 
@@ -88,9 +88,9 @@ ms.locfileid: "71391544"
 
 本文件是以原本的形式提供， 本文件中提供的資訊及檢視 (包括 URL 及其他網際網路網站參照) 如有變更，恕不另行通知。  
 
-本文件不為您提供對任何 Microsoft 產品中的任何智慧財產的法定權利。 您可以複製本文件，但僅限內部參考之用途。  
+本文件不為您提供對任何 Microsoft 產品中的任何智慧財產的法定權利。 您可以複製本文件供內部參照之用。  
 
-&copy; 2016 Microsoft Corporation. 保留一切權利。  
+&copy; 2016 Microsoft Corporation. 著作權所有，並保留一切權利。  
 
 Microsoft、Active Directory、Hyper-V、Windows 及 Windows Server 係 Microsoft Corporation 在美國及/或其他國家/地區的註冊商標或商標。  
 

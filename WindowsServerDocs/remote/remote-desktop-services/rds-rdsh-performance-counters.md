@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: b59d93d576967ee83b3efecc2630034eab919bf2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403910"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950420"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>在遠端桌面工作階段主機上使用效能計數器來診斷應用程式效能問題
 
@@ -42,7 +42,7 @@ ms.locfileid: "71403910"
 
 例如，在下表中，使用者輸入延遲會在此間隔內回報為 1,000 毫秒。 計數器會以該間隔回報最慢的使用者輸入延遲，因為使用者對於「緩慢」的認知取決於他們所體驗到的最慢輸入時間 (上限)，而非所有輸入總數的平均速度。
 
-|Number| 0 | 1 | 2 |
+|數字| 0 | 1 | 2 |
 |------|---|---|---|
 |延遲 |16 毫秒| 20 毫秒| 1,000 毫秒|
 
@@ -140,7 +140,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 ## <a name="download-windows-server-insider-software"></a>下載 Windows Server 測試人員軟體
 
-已註冊的測試人員可以直接巡覽至 [Windows Server Insider Preview 下載頁面](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) \(英文\)，來取得最新的測試人員軟體下載。  若要了解如何註冊為測試人員，請參閱[開始使用 Server](https://insider.windows.com/en-us/for-business-getting-started-server/) \(英文\)。
+已註冊的測試人員可以直接巡覽至 [Windows Server Insider Preview 下載頁面](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) \(英文\)，來取得最新的測試人員軟體下載。  若要了解如何註冊為測試人員，請參閱[開始使用 Server](https://insider.windows.com/en-us/for-business-getting-started-server/) \(英文\)。
 
 ## <a name="share-your-feedback"></a>分享您的意見反應
 

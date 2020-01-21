@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 700d419d06c0b007ed05be4f82137828f52143e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404147"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949876"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -200,7 +200,7 @@ ms.locfileid: "71404147"
 用戶端會使用標準的輕觸手勢。 您也可以使用輕觸手勢來複寫遠端桌面上的滑鼠動作。 下表中定義可用的滑鼠模式。
 
 > [!NOTE]
-> 與 Windows 8 或更新版本互動時，原生輕觸手勢在直接輕觸模式中受到支援。 如需有關 Windows 8 手勢的詳細資訊，請參閱[觸控：撥動、點選等等](https://windows.microsoft.com/en-US/windows-8/touch-swipe-tap-beyond)。
+> 與 Windows 8 或更新版本互動時，原生輕觸手勢在直接輕觸模式中受到支援。 如需有關 Windows 8 手勢的詳細資訊，請參閱[觸控：撥動、點選等等](https://windows.microsoft.com/windows-8/touch-swipe-tap-beyond)。
 
 | 滑鼠模式    | 滑鼠操作      | 手勢                                                    |
 |---------------|----------------------|------------------------------------------------------------|
@@ -211,7 +211,7 @@ ms.locfileid: "71404147"
 | 滑鼠指標 | 按滑鼠右鍵          | 2 指點選                                               |
 | 滑鼠指標 | 按滑鼠右鍵並拖曳 | 用 2 指點兩下並按住，然後拖曳                    |
 | 滑鼠指標 | 滑鼠滾輪          | 用 2 指點兩下並按住，然後向上或向下拖曳                |
-| 滑鼠指標 | Zoom                 | 捏合 2 隻手指可放大；張開 2 隻手指可縮小 |
+| 滑鼠指標 | 縮放                 | 捏合 2 隻手指可放大；張開 2 隻手指可縮小 |
 
 ## <a name="supported-input-devices"></a>支援的輸入裝置
 
@@ -233,7 +233,7 @@ iOS 用戶端目前僅支援 Swiftpoint 滑鼠。 請參閱 [iOS 用戶端中的
 - 游標鍵
 - TAB：Tab 運作正常，但 Shift+Tab 無法運作
 - Home / Pos1：Alt+Left = Home
-- 結束:Alt+向右鍵 = End
+- 結束：Alt+向右鍵 = End
 - Page Up：Alt+向上鍵 = Page Up
 - Page Down：Alt+向下鍵 = Page Down
 - 全選：Command+A = Ctrl+A (在大部分程式中全選)

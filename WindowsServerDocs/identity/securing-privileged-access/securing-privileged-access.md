@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d60ba6ffd661aeb284a2ade775e14b9108cbb6c9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357699"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950537"
 ---
 # <a name="securing-privileged-access"></a>保護特殊權限存取
 
@@ -90,7 +90,7 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 ### <a name="2-just-in-time-local-admin-passwords"></a>2.Just in Time 本機系統管理員密碼
 
-為了降低攻擊者從本機 SAM 資料庫竊取本機系統管理員帳戶密碼雜湊，並濫用它來攻擊其他電腦的風險，組織應確保每部電腦都有唯一的本機系統管理員密碼。 本機系統管理員密碼解決方案 (LAPS) 工具可在每個工作站和伺服器上設定唯一的隨機密碼，並將其儲存在受到 ACL 保護的 Active Directory (AD) 中。 只有合格的授權使用者才可讀取或要求重設這些本機系統管理員帳戶密碼。 您可以從 [Microsoft 下載中心](http://Aka.ms/LAPS)取得要在工作站和伺服器上使用的 LAPS。
+為了降低攻擊者從本機 SAM 資料庫竊取本機系統管理員帳戶密碼雜湊，並濫用它來攻擊其他電腦的風險，組織應確保每部電腦都有唯一的本機系統管理員密碼。 本機系統管理員密碼解決方案 (LAPS) 工具可在每個工作站和伺服器上設定唯一的隨機密碼，並將其儲存在受到 ACL 保護的 Active Directory (AD) 中。 只有合格的授權使用者才可讀取或要求重設這些本機系統管理員帳戶密碼。 您可以從 [Microsoft 下載中心](https://aka.ms/LAPS)取得要在工作站和伺服器上使用的 LAPS。
 
 如需使用 LAP 和 PAW 操作環境的其他指導方針，請參閱[以乾淨來源準則為基礎的操作標準](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)。
 
@@ -122,7 +122,7 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 若要降低權限的公開時間並增加使用的可見性，請使用如下所示的其中一個適當解決方案或其他第三方解決方案，即時提供權限 (JIT)：
 
-* 針對 Active Directory Domain Services (AD DS)，請使用 Microsoft Identity Manager (MIM) 的[特殊權限存取管理員 (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) 功能。
+* 針對 Active Directory 網域服務 (AD DS)，請使用 Microsoft Identity Manager (MIM) 的[特殊權限存取管理員 (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) 功能。
 * 針對 Azure Active Directory，請使用 [Azure AD 特殊權限身分識別管理 (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan) 功能。
 
 ### <a name="4-enable-windows-defender-credential-guard"></a>4.啟用 Windows Defender Credential Guard

@@ -5,12 +5,12 @@ keywords: OpenSSH, SSH, SSHD, 安裝, 設定
 contributor: maertendMSFT
 author: maertendMSFT
 title: 安裝適用於 Windows 的 OpenSSH
-ms.openlocfilehash: 3c742e20432d20ea3c402af66f19a803ea1f3a56
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 9cf87229f5ebde6f0ff52a4e9b1b11b6e3ed4f0a
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71934932"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145914"
 ---
 # <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>安裝適用於 Windows Server 2019 和 Windows 10 的 OpenSSH #
 
@@ -18,7 +18,7 @@ OpenSSH 用戶端和 OpenSSH 伺服器是 Windows Server 2019 和 Windows 10 180
 具有這些 Windows 版本的使用者應該使用後續的指示來安裝和設定 OpenSSH。 
 
 > [!NOTE] 
-> 從 PowerShell Github 存放庫 (https://github.com/PowerShell/OpenSSH-Portable) ) 取得 OpenSSH 的使用者應該使用該處的指示，__不應該__使用這些指示。 
+> 從 PowerShell GitHub 存放庫 (https://github.com/PowerShell/OpenSSH-Portable) ) 取得 OpenSSH 的使用者應該使用該處的指示，__不應該__使用這些指示。 
 
 
 ## <a name="installing-openssh-from-the-settings-ui-on-windows-server-2019-or-windows-10-1809"></a>從 Windows Server 2019 或 Windows 10 1809 上的設定 UI 安裝 OpenSSH

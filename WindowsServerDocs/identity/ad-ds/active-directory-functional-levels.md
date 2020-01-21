@@ -1,6 +1,6 @@
 ---
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
-title: Windows Server 2016 功能等級
+title: Windows Server 2016 功能等級
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -11,12 +11,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 7f16d58eb6c5074c75f49ba7936c4d312a3dbda4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53793fc62b1bc1444c567f92c9f18642245fded9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390984"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948179"
 ---
 # <a name="forest-and-domain-functional-levels"></a>樹系和網域功能等級
 
@@ -28,7 +28,7 @@ ms.locfileid: "71390984"
 
 在 Windows 2003 的生命週期結束後，Windows 2003 網域控制站 (DC) 必須更新為 Windows Server 2008、2008R2、2012、2012R2、2016 或 2019。 因此，執行 Windows Server 2003 的任何網域控制站都應該從網域中移除。
 
-在 Windows Server 2008 及更高版本的網域功能等級，分散式檔案服務 (DFS) 複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更高版本建立新的網域，DFS 複寫會自動複寫 SYSVOL。 如果您已在較低的功能等級建立網域，則需要從使用 FRS 移轉至 SYSVOL 的 DFS 複寫。 至於移轉的步驟，您可以遵循 [TechNet 上的程序](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可以參閱[Storage Team File Cabinet 上的簡化步驟](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。
+在 Windows Server 2008 及更高版本的網域功能等級，分散式檔案服務 (DFS) 複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更高版本建立新的網域，DFS 複寫會自動複寫 SYSVOL。 如果您已在較低的功能等級建立網域，則需要從使用 FRS 移轉至 SYSVOL 的 DFS 複寫。 至於移轉的步驟，您可以遵循 [TechNet 上的程序](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可以參閱[Storage Team File Cabinet 上的簡化步驟](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -36,12 +36,12 @@ ms.locfileid: "71390984"
 
 新增 Windows Server 2019 網域控制站的最低需求是 Windows Server 2008 功能等級。 網域也必須使用「DFS-R」作為引擎來複寫 SYSVOL。
 
-## <a name="windows-server-2016"></a>Windows Server 2016
+## <a name="windows-server-2016"></a>Windows Server 2016
 
 支援的網域控制站作業系統：
 
 * Windows Server 2019
-* Windows Server 2016
+* Windows Server 2016
 
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Windows Server 2016 樹系功能等級的功能
 
@@ -62,7 +62,7 @@ ms.locfileid: "71390984"
 支援的網域控制站作業系統：
 
 * Windows Server 2019
-* Windows Server 2016
+* Windows Server 2016
 * Windows Server 2012 R2
 
 ### <a name="windows-server-2012r2-forest-functional-level-features"></a>Windows Server 2012R2 樹系功能等級的功能
@@ -87,7 +87,7 @@ ms.locfileid: "71390984"
 支援的網域控制站作業系統：
 
 * Windows Server 2019
-* Windows Server 2016
+* Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
 
@@ -105,7 +105,7 @@ ms.locfileid: "71390984"
 支援的網域控制站作業系統：
 
 * Windows Server 2019
-* Windows Server 2016
+* Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
@@ -126,7 +126,7 @@ ms.locfileid: "71390984"
 支援的網域控制站作業系統：
 
 * Windows Server 2019
-* Windows Server 2016
+* Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2

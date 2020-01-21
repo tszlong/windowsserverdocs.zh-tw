@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 12/16/2019
-ms.openlocfilehash: a5af1ad5a730f1dc90111734a9b8b1aacc91201b
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75466341"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162499"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)
 
@@ -49,6 +49,17 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期將於 2020 年 1 月
 
 > [!NOTE]
 > 如果您在 Azure 中執行 Windows Server 2008/2008 R2 VM，則不需要執行下列步驟。 延伸安全性更新會自動啟用 Azure VM。 您不需要建立延伸安全性更新資源和金鑰，也不需額外付費即可使用 Azure VM 的延伸安全性更新。
+
+> [!NOTE]
+> 依照下列步驟進行之前，請先傳送電子郵件至 [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com)，並提供這項資訊以供核准列入至白名單：
+> * 客戶名稱：
+> * Azure 訂用帳戶：
+> * EA 合約編號 (適用於 ESU)：
+> * ESU 伺服器數目：
+> 
+> 小組會查看提供的資訊，並將使用者/訂用帳戶新增至白名單。
+> 
+> 如果要求者未列入白名單，可能會發生下列錯誤：[在命名空間 'Microsoft.WindowsESU' 中找不到資源類型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
 
 若要為延伸安全性更新註冊非 Azure VM 並建立金鑰，請在 Azure 入口網站中完成下列步驟：
 

@@ -8,12 +8,12 @@ ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: 17d4dc0ce531327db21d660481386fcc56498ae3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588032"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948288"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>針對 DNS 相關啟用問題進行疑難排解的指導方針
 
@@ -21,7 +21,7 @@ ms.locfileid: "72588032"
 
 - 您可以使用大量授權的媒體和大量授權一般產品金鑰來安裝下列其中一個作業系統：&nbsp;
    - Windows Server 2019
-   - Windows Server 2016
+   - Windows Server 2016
    - Windows Server 2012 R2
    - Windows Server 2012
    - Windows Server 2008 R2
@@ -52,7 +52,7 @@ ms.locfileid: "72588032"
 
 若要將產品金鑰變更為 MAK，請遵循下列步驟：
 
-1. 開啟提升權限的 [命令提示字元] 視窗。 若要這麼做，請按 Windows 標誌鍵+X，以滑鼠右鍵按一下 [命令提示字元]  ，然後選取 [以系統管理員身分執行]  。 如果系統提示您輸入系統管理員密碼或進行確認，請輸入密碼或提供確認。
+1. 開啟提高權限的命令提示字元視窗。 若要這麼做，請按 Windows 標誌鍵+X，以滑鼠右鍵按一下 [命令提示字元]  ，然後選取 [以系統管理員身分執行]  。 如果系統提示您輸入系統管理員密碼或進行確認，請輸入密碼或提供確認。
 2. 在命令提示字元中執行以下命令：
    ```cmd
     slmgr -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
@@ -74,7 +74,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 
 使用 ping 命令確認 DNS 伺服器的基本 IP 連線能力。 若要這麼做，請在發生錯誤的 KMS 用戶端和 KMS 主機電腦上，執行下列步驟：
 
-1. 開啟提升權限的 [命令提示字元] 視窗。
+1. 開啟提高權限的命令提示字元視窗。
 1. 在命令提示字元中執行以下命令：
    ```cmd
    ping <DNS_Server_IP_address>
@@ -88,7 +88,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 
 檢查 KMS 主機伺服器的登錄，以判斷它是否向 DNS 登錄。 根據預設，KMS 主機伺服器會每隔 24小時動態登錄一次 DNS SRV 記錄。 
 > [!IMPORTANT]
-> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/en-us/help/322756)，以免發生問題。  
+> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。  
 
 若要檢查此設定，請遵循下列步驟：
 1. 啟動 [登錄編輯程式]。 若要這麼做，請以滑鼠右鍵按一下 [開始]  、選取 [執行]  輸入 **regedit**，然後按 Enter。
@@ -144,7 +144,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
    - KMS 用戶端電腦使用的預設閘道 IP 位址
    - KMS 用戶端電腦使用的 DNS 尾碼搜尋清單
 1. 確認 KMS 主機 SRV 記錄已登錄在 DNS 中。 若要這樣做，請執行下列步驟：  
-   1. 開啟提升權限的 [命令提示字元] 視窗。
+   1. 開啟提高權限的命令提示字元視窗。
    1. 在命令提示字元中執行以下命令：
       ```cmd
       nslookup -type=all _vlmcs._tcp>kms.txt
@@ -186,7 +186,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 - 名稱：&nbsp; **_vlmcs._TCP**
 - 類型：&nbsp;**SRV**
 - 優先順序：**0**
-- 權數：**0**
+- 權重：**0**
 - 連接埠：**1688**
 - 主機名稱： **&lt;*KMS 主機的 FQDN 或名稱*&gt;**
 

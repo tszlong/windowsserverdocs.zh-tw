@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: 適用於 Windows 的 OpenSSH 伺服器設定
-ms.openlocfilehash: ed424c33c4cd2c19a9b5e985ab6083bcbcb9fbdc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546258"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259044"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>適用於 Windows 10 1809 和 Server 2019 的 OpenSSH 伺服器設定
 
@@ -27,7 +27,7 @@ OpenSSH 會在線上 ([OpenSSH.com](https://www.openssh.com/manual.html)) 維護
 
 命令殼層 | 要使用的命令
 ------------- | -------------- 
-命令 | path
+命令 | 路徑
 PowerShell | $env:path
 
 在 Windows 中設定預設 ssh 殼層，是藉由將殼層可執行檔的完整路徑新增至 DefaultShell 字串值的 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH 中來完成。 
@@ -84,7 +84,7 @@ AllowGroups sshusers
 
 ### <a name="hostkey"></a>HostKey
 
-預設值為 %programdata%/ssh/ssh_host_ecdsa_key、%programdata%/ssh/ssh_host_ed25519_key 和 %programdata%/ssh/ssh_host_rsa_key。 如果預設值不存在，sshd 會在服務啟動時自動產生。
+預設值為 %programdata%/ssh/ssh_host_ecdsa_key、%programdata%/ssh/ssh_host_ed25519_key、%programdata%/ssh/ssh_host_dsa_key 和 %programdata%/ssh/ssh_host_rsa_key。 如果預設值不存在，sshd 會在服務啟動時自動產生。
 
 ### <a name="match"></a>比對
 
@@ -99,7 +99,7 @@ AllowGroups sshusers
 如果您需要以檔案為基礎的記錄，請使用 LOCAL0。 記錄檔會在 %programdata%\ssh\logs 下產生
 其他任何值 (包括預設值 AUTH) 都會將記錄導向至 ETW。 如需詳細資訊，請參閱 Windows 中的「記錄設施」。
 
-### <a name="not-supported"></a>不支援 
+### <a name="not-supported"></a>不受支援 
 
 在 Windows Server 2019 和 Windows 10 1809 隨附的 OpenSSH 版本中，無法使用下列設定選項：
 

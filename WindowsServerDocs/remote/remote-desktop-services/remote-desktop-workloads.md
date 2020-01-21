@@ -11,13 +11,13 @@ ms.date: 12/02/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: 32781946ad2c49ec51e11dfe1e8af078425d35b0
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+manager: lizross
+ms.openlocfilehash: 693d1abd91fbfa2d44a6af42dd9f5338bd461927
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700927"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919947"
 ---
 # <a name="remote-desktop-workloads"></a>遠端桌面工作負載
 
@@ -25,10 +25,10 @@ ms.locfileid: "74700927"
 
 下表提供每個工作負載的描述。 「範例使用者」是可能找到每個最實用工作負載的使用者類型。 「範例應用程式」是最適合每個工作負載的應用程式種類。
 
-| 工作負載類型 | 範例使用者 | 範例 app |
+| 工作負載類型 | 範例使用者 | 範例應用程式 |
 | --- | --- | --- |
-| 亮 | 執行基本資料輸入工作的使用者 | 資料庫輸入應用程式、命令列介面 |
-| 中等 | 顧問和市場研究人員 | 資料庫輸入應用程式、命令列介面、Microsoft Word、靜態網頁 |
+| 輕量型 | 執行基本資料輸入工作的使用者 | 資料庫輸入應用程式、命令列介面 |
+| 中 | 顧問和市場研究人員 | 資料庫輸入應用程式、命令列介面、Microsoft Word、靜態網頁 |
 | 大量 | 軟體工程師、內容建立者 | 資料庫輸入應用程式、命令列介面、Microsoft Word、靜態網頁、Microsoft Outlook、Microsoft PowerPoint、動態網頁 |
 | 電源 | 圖形設計師、3D 模型製造商、機器學習研究人員 | 資料庫輸入應用程式、命令列介面、Microsoft Word、靜態網頁、Microsoft Outlook、Microsoft PowerPoint、動態網頁、Adobe Photoshop、Adobe Illustrator、電腦輔助設計 (CAD)、電腦輔助製造 (CAM) |
 

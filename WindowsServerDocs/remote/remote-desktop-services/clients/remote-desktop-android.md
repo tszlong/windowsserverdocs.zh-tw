@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 12/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a1349f1181cdf2ead51a263a3ba62c1789c76b3b
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700161"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919826"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -222,10 +222,10 @@ ms.locfileid: "74700161"
 | 滑鼠模式    | 滑鼠動作         | 手勢                                                                 |
 |---------------|----------------------|-------------------------------------------------------------------------|
 | 直接觸控  | 按滑鼠左鍵           | 使用一指點選                                                     |
-| 直接觸控  | 按一下滑鼠右鍵          | 使用一指點選並按住，然後放開                              |
-| 滑鼠指標 | Zoom                 | 將兩指捏合以縮小，或將手指分開以放大。 |
+| 直接觸控  | 以滑鼠右鍵按一下          | 使用一指點選並按住，然後放開                              |
+| 滑鼠指標 | 縮放                 | 將兩指捏合以縮小，或將手指分開以放大。 |
 | 滑鼠指標 | 按滑鼠左鍵           | 使用一指點選                                                     |
 | 滑鼠指標 | 按滑鼠左鍵並拖曳  | 使用一指點兩下並按住，然後拖曳                          |
-| 滑鼠指標 | 按一下滑鼠右鍵          | 使用兩指點選                                                    |
+| 滑鼠指標 | 以滑鼠右鍵按一下          | 使用兩指點選                                                    |
 | 滑鼠指標 | 按滑鼠右鍵並拖曳 | 使用兩指點兩下並按住，然後拖曳                         |
 | 滑鼠指標 | 滑鼠滾輪          | 使用兩指點選並按住，然後向上或向下拖曳                     |

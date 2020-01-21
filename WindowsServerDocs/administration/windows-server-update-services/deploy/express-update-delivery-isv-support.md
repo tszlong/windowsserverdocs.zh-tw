@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: a4880a1a66d9c722cfda9e194c4eff38c5058674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13568bb320a3d70bfd6a70d2b9731b460be6f346
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361719"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948495"
 ---
 # <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 
@@ -53,7 +53,7 @@ ISV 可以使用 WSUS 和 WU 用戶端來支援快速更新傳遞。 Microsoft �
 3.  [**設定 ISV 用戶端代理程式以指示 WU 用戶端作業**](#BKMK_3)
 
 >[!NOTE]
->需要安裝 2017 年 1 月 (或之後) 的 Windows 10 版本 1607 累計更新 ([KB3213986 (作業系統組建 14393.693)](https://support.microsoft.com/en-us/help/4009938/january-10-2017-kb3213986-os-build-14393-693)。
+>需要安裝 2017 年 1 月 (或之後) 的 Windows 10 版本 1607 累計更新 ([KB3213986 (作業系統組建 14393.693)](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693)。
     
    - ISV 用戶端代理程式會決定要核准的更新，以及下載和安裝更新的時間
    - WU 用戶端會決定要下載的位元組範圍，並起始下載要求

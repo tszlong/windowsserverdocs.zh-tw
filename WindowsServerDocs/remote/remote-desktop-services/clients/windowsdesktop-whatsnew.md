@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
-ms.date: 12/04/2019
+ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829612"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953067"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -30,8 +30,21 @@ ms.locfileid: "74829612"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|Public     |1.2.535  |
-|測試人員    |1.2.535  |
+|公用     |1.2.535  |
+|Insider    |1.2.594  |
+
+## <a name="updates-for-version-12594"></a>1\.2.594 版的更新
+
+*發行日期：01/14/2020*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+
+- 您現在可以選取要用於桌面連線的顯示器。 若要變更此設定，請在桌面連線的圖示上按一下滑鼠右鍵，然後選取 [設定]  。
+- 已修正連線設定未顯示正確可用的縮放比例問題。
+- 已修正 [朗讀程式] 無法讀取連線起始時顯示的對話方塊問題。
+- 已修正當 Azure Active Directory 和 Active Directory 名稱不相符時，所顯示錯誤使用者名稱的問題。
+- 已修正在未連線到網路的情況下，在起始連線時使用戶端停止回應的問題。
+- 已修正在連接耳機時導致用戶端停止回應的問題。
 
 ## <a name="updates-for-version-12535"></a>1\.2.535 版的更新
 

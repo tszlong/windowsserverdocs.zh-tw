@@ -10,16 +10,16 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cfd0f0cca18fb072883a9e14fae420516bd329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391356"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948267"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 ![顯示報紙的圖示](media/whats-new.png)若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server&reg; 2016 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。
 
@@ -35,7 +35,7 @@ ms.locfileid: "71391356"
 
 -   [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)：Windows Server 2016 容器支援新增效能改進、簡化網路管理，以及對 Windows 10 上 Windows 容器的支援。 如需一些關於容器的額外資訊，請參閱[容器︰Docker、Windows 及趨勢](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
 
-### <a name="nano-server"></a>Nano Server  
+### <a name="nano-server"></a>Nano 伺服器  
 [Nano 伺服器](getting-started-with-nano-server.md)中的新功能。 Nano 伺服器現在提供建置 Nano 伺服器映像的更新模組，包括實體主機和客體虛擬機器功能之間的進一步分隔，以及針對不同 Windows Server 版本的支援。   
 
 此外，也針對「修復主控台」提供改進功能，包括輸入和輸出防火牆規則的分隔，以及修復 WinRM 設定的能力。  
@@ -65,16 +65,16 @@ Windows Server 2016 提供新的 Hyper-V 型受防護虛擬機器，保護遭入
 ### <a name="active-directory-certificate-services"></a>Active Directory 憑證服務  
 Windows Server 2016 中的 Active Directory 憑證服務 (AD CS) 增加對 TPM 金鑰證明的支援：您現在可以針對金鑰證明使用智慧卡 KSP，而未加入網域的裝置現在可以使用 NDES 註冊來取得可針對 TPM 中的金鑰進行證明的憑證。  
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
+### <a name="active-directory-domain-services"></a>Active Directory 網域服務  
 「Active Directory 網域服務」包含可協助組織確保 Active Directory 環境及為公司裝置與個人裝置提供更佳身分識別管理體驗的改進。 如需詳細資訊，請參閱 [What's new in Active Directory Domain Services (AD DS) in Windows Server 2016](../identity/whats-new-active-directory-domain-services.md) (Windows Server 2016 中 Active Directory 網域服務 (AD DS) 的新功能)。   
 
-### <a name="active-directory-federation-services"></a>Active Directory 同盟服務  
+### <a name="active-directory-federation-services"></a>Active Directory Federation Services  
 Active Directory 同盟服務的新功能。 Windows Server 2016 中的 Active Directory Federation Services (AD FS) 包含可讓您設定 AD FS 以驗證儲存在「輕量型目錄存取通訊協定」(LDAP) 目錄中之使用者的新功能。 如需詳細資訊，請參閱[適用於 Windows Server 2016 之 AD FS 的新功能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)。  
 
 ### <a name="web-application-proxy"></a>Web 應用程式 Proxy  
 最新版的「Web 應用程式 Proxy」著重於可發行和預先驗證更多應用程式及改善使用者體驗的新功能。 請查看新功能的完整清單，其中包括豐富型用戶端應用程式 (例如 Exchange ActiveSync) 的預先驗證，以及讓 SharePoint 應用程式更容易發行的萬用字元網域。 如需詳細資訊，請參閱 [Windows Server 2016 的 Web 應用程式 Proxy](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。  
 
-##  <a name="administrationadministrationmanage-windows-servermd"></a>[管理](../administration/manage-windows-server.md)  
+##  <a name="administrationadministrationmanage-windows-servermd"></a>[系統管理](../administration/manage-windows-server.md)  
 「管理和自動化」領域著重在適用於想要執行和管理 Windows Server 2016 (包括 Windows PowerShell) 之 IT 專業人員的工具及參考資訊。
 
 Windows PowerShell 5.1 包含重要的新功能 (包括支援進行類別開發)，以及新的安全性功能，這些安全性功能可延伸其用途、改善其可用性，並可讓您更輕鬆地全面控制及管理 Windows 型環境。 如需詳細資訊，請參閱 [WMF 5.1 中的新案例及功能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)。
@@ -132,11 +132,11 @@ Credential Guard 支援 RDP 工作階段，讓使用者認證保留在用戶端�
 控制流程防護 (CFG) 是平台安全性功能，建立目的是要對抗記憶體損毀弱點。 如需詳細資訊，請參閱 [Control Flow Guard](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx) (控制流程防護)。
 
 
-## <a name="storagestoragestoragemd"></a>[儲存空間](../storage/storage.md)
+## <a name="storagestoragestoragemd"></a>[儲存體](../storage/storage.md)
 
 Windows Server 2016 中的儲存體包括軟體定義儲存體的新功能和增強功能，以及傳統檔案伺服器的新功能和增強功能。 以下是其中一些新功能。如需詳細增強功能和詳細資訊，請參閱 [Windows Server 2016 中儲存體的新功能](../storage/whats-new-in-storage.md)。
 
-### <a name="storage-spaces-direct"></a>儲存空間直接存取
+### <a name="storage-spaces-direct"></a>儲存空間 Direct
 
 「儲存空間直接存取」能讓您使用具本機磁碟的伺服器，建置高可用且可調整的儲存空間。 它簡化了軟體定義儲存體系統的部署和管理，也解除了先前使用共用磁碟的叢集儲存空間限制，而能夠使用新的磁碟裝置類型 (例如 SATA SSD 和 NVMe 磁碟裝置)。
 
@@ -195,7 +195,7 @@ Windows Server 2016 的 IIS 10.0 Web 伺服器提供新功能，包括︰
 
 - DSN 名稱限制從 256 位元組增加到 3072 位元組。 如需詳細資訊，請參閱 [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)，[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx) 或 [IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)。
 
-- 已改善追蹤可讓您設定登錄機碼，將映像檔路徑包含在追蹤記錄檔名稱，以決定檢查哪個追蹤記錄檔。 如需設定 MSDTC 追蹤，請參閱[如何在 Windows 電腦上啟用 MS DTC 診斷追蹤](https://support.microsoft.com/en-us/kb/926099)。
+- 已改善追蹤可讓您設定登錄機碼，將映像檔路徑包含在追蹤記錄檔名稱，以決定檢查哪個追蹤記錄檔。 如需設定 MSDTC 追蹤，請參閱[如何在 Windows 電腦上啟用 MS DTC 診斷追蹤](https://support.microsoft.com/kb/926099)。
 
 
 

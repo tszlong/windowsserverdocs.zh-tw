@@ -5,37 +5,49 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/18/2019
+ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 37be666643dee4e5b9051ae29562a86b23fb71f7
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 7b3a75258086a73fbd618c2e8221454d7e616556
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903960"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949991"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
 > 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-**Windows Admin Center** (之前代號為 **Project Honolulu**) 是 Windows Server 隨附管理工具的演進。這是將本機與遠端伺服器所有管理層面結合在一起的單一窗口。 因為是在本機部署、以瀏覽器為基礎的管理體驗，所以並不需要網際網路連線和 Azure。 Windows Admin Center 讓您完全控制部署的各個層面，包括未連線至網際網路的私人網路。
+Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，用於管理 Windows 伺服器、叢集、超融合式基礎結構以及 Windows 10 電腦。 除了 Windows 本身以外，不需另付費用，而且可以立即使用於生產環境中。
 
-## <a name="introduction"></a>簡介
+若要瞭解最新功能，請參閱＜[發行歷程記錄](support/release-history.md)＞。
 
->[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
+## <a name="download-now"></a>立即下載
 
-![Windows Admin Center 資訊圖表](media/WAC1910Poster_thumb.PNG)
+請從 Microsoft 評估中心下載 [Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)。  雖然其會顯示「開始評估」，但這是正式運作的生產環境使用版本，內含為 Windows 或 Windows Server 授權的一部分。
+
+如需安裝的說明，請參閱＜[安裝](deploy/install.md)＞。 如需開始使用 Windows Admin Center 的提示，請參閱＜[快速入門](use/get-started.md)＞。
+
+您可以使用 Microsoft Update 或以手動下載並安裝 Windows Admin Center 的方式更新非預覽版的 Windows Admin Center。 每個非預覽版的 Windows Admin Center 在下一個非預覽版發行後，仍可支援 30 天。 如需詳細資訊，請參閱我們的[支援原則](support/index.md)。
+
+## <a name="windows-admin-center-scenarios"></a>Windows Admin Center 案例
+
+您可以將 Windows Admin Center 用於以下事項：
+
+|     |     |
+| --- | --- |
+| ![](media/simple-icon.png)| **簡化伺服器管理** <br/> 使用現代化版本的熟悉工具 (例如伺服器管理員) 來管理您的伺服器和叢集。 安裝不到五分鐘，便可立即管理您環境中的伺服器，不需要任目標設定。 如需詳細資訊，請參閱＜[什麼是 Windows Admin Center？](understand/what-is.md)＞。 |
+| ![](media/future-icon.png)| **運用混合式解決方案** <br/> 與 Azure 整合可協助您選擇性地將內部部署伺服器與相關的雲端服務連接。 如需詳細資訊，請參閱＜[Azure 混合式服務](azure/index.md)＞ |
+| ![](media/secure-icon.png)| **簡化超融合式管理** <br/> 簡化 Azure Stack HCI 或 Windows Server 超融合式叢集的管理。 使用簡化的工作負載來建立和管理 VM、儲存空間直接存取磁碟區、軟體定義的網路功能等等。 如需詳細資訊，請參閱＜[使用 Windows Admin Center 來管理超融合式基礎結構](use/manage-hyper-converged.md)＞|
+
+這裡有一段影片可讓您大致瞭解，接著是提供更多詳細資料的海報：
+>[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
+
+[![Windows Admin Center 海報](media/WAC1910Poster_thumb_small.PNG)](media/WAC1910Poster_thumb.png)
 
 [下載 PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
 
-## <a name="quick-start"></a>快速入門
-
-您在數分鐘內就可以讓 Windows Admin Center 在環境中啟動並執行：
-
-1. [下載](https://aka.ms/windowsadmincenter)
-2. [安裝](deploy/install.md)
-3. [入門](use/get-started.md)
 
 ## <a name="contents-at-a-glance"></a>內容簡介
 
@@ -49,7 +61,6 @@ ms.locfileid: "74903960"
             <li><a href="understand/faq.md">常見問題集</a>
             <li><a href="understand/case-studies.md">案例研究</a>
             <li><a href="understand/related-management.md">相關管理產品</a>
-            <li><a href="understand/videos.md">視訊</a>
             </ul>
         </td>
         <td style="vertical-align: top;">
@@ -108,6 +119,7 @@ ms.locfileid: "74903960"
             <td style="vertical-align: top;">
             <h3>支援</h3>
             <ul>
+            <li><a href="support/release-history.md">發行大事記</a>
             <li><a href="support/index.md">支援原則</a>
             <li><a href="support/troubleshooting.md">一般疑難排解步驟</a>
             <li><a href="support/known-issues.md">已知問題</a>
@@ -127,35 +139,51 @@ ms.locfileid: "74903960"
 
 </table>
 
-## <a name="release-history"></a>發行大事記
+## <a name="video-based-learning"></a>以影片為基礎的學習
 
-了解我們最新發行的功能：
+以下是來自 Microsoft Ignite 2019 研討會的一些影片：
 
-- 版本 [1910](https://aka.ms/wac1910) 是最新的 GA 版本 - 引進數個新的 Azure 混合式服務，並將先前預覽版中的功能帶入 GA 通道。
-- 版本 [1909](https://aka.ms/wac1909) 引進了 Azure VM 特定的連線類型，並將傳統容錯移轉叢集和 HCI 叢集的連線類型統一。
-- 版本 [1908](https://aka.ms/wac1908) 新增了視覺更新、Packetmon、FlowLog Audit、叢集的 Azure 監視器上架，以及透過 HTTPS 支援 WinRM (連接埠 5986)。
-- 版本 [1907](https://aka.ms/wac1907) 新增了 Azure 成本預估連結，並改善了匯入/匯出和標記虛擬機器的功能。
-- 版本 [1906](https://aka.ms/wac1906) 新增匯入/匯出 VM、切換 Azure 帳戶、從 Azure 新增連線、連線能力設定實驗、效能改進和效能分析工具。
-- 版本 1904.1 是一項維護更新，旨在改善閘道外掛程式的穩定性。
-- 版本 [1904](https://aka.ms/wac1904) 是引進 Azure 混合式服務工具的 GA 版本，其中已將先前預覽版中的功能帶入 GA 通道。
-- 版本 [1903](https://aka.ms/wac1903) 新增來自 Azure 監視器的電子郵件通知、從 Active Directory 新增伺服器或電腦連線的能力，以及用來管理 Active Directory、DHCP 和 DNS 的新工具。
-- 版本 [1902](https://aka.ms/wac1902) 已對軟體定義網路 (SDN) 管理新增共用連線清單並進行改善，包括新增用來管理 ACL、閘道連線和邏輯網路的 SDN 工具。
-- 版本 [1812](https://aka.ms/wac1812) 新增深色佈景主題 (預覽版)、電源組態設定、BMC 資訊和 PowerShell 支援，以管理[擴充功能](./configure/using-extensions.md#manage-extensions-with-powershell)和[連線](./use/get-started.md#use-powershell-to-import-or-export-your-connections-with-tags)。
-- 版本 [1809.5](https://aka.ms/wac1809.5) 是正式運作的累積更新，包含整個平台的各種品質與功能改進和錯誤修正，以及超融合式基礎結構管理解決方案中的幾個新功能。
-- 版本 [1809](https://cloudblogs.microsoft.com/windowsserver/2018/09/20/windows-admin-center-1809-and-sdk-now-generally-available/) 是正式運作的版本，將先前預覽版中的功能引入正式運作的通道。
-- 版本 [1808](https://aka.ms/WACPreview1808-InsiderBlog) 新增 [已安裝的應用程式] 工具、許多隱藏版改進功能，以及預覽版 SDK 的重大更新。
-- 版本 [1807](https://aka.ms/WACPreview1807-InsiderBlog) 新增簡化的 Azure 連線體驗、VM 詳細目錄頁面改進、檔案共用、Azure 更新管理整合等功能。 
-- 版本 [1806](https://aka.ms/WACPreview1806-InsiderBlog) 新增顯示 PowerShell 指令碼、SDN 管理、2008 R2 連線、SDN、排程工作，以及許多其他改進功能。
-- 版本 1804.25 - 維護更新以支援使用者將 Windows Admin Center 安裝於完全離線環境。
-- 版本 [1804](https://cloudblogs.microsoft.com/windowsserver/2018/04/12/announcing-windows-admin-center-our-reimagined-management-experience/) - Project Honolulu 變成 Windows Admin Center，並新增安全性功能和角色型存取控制。 我們第一個 GA 版本。
-- 版本 [1803](https://blogs.windows.com/windowsexperience/2018/03/13/announcing-project-honolulu-technical-preview-1803-and-rsat-insider-preview-for-windows-10) 新增對 Azure AD 存取控制、詳細記錄、可調整大小內容的支援，以及許多工具改進功能。
-- 版本 [1802](https://blogs.windows.com/windowsexperience/2018/02/13/announcing-windows-server-insider-preview-build-17093-project-honolulu-technical-preview-1802) 新增對協助工具、當地語系化、高可用性部署、標記、Hyper-V 主機設定及閘道驗證的支援。
-- 版本 [1712](https://blogs.windows.com/windowsexperience/2017/12/19/announcing-project-honolulu-technical-preview-1712-build-05002) 新增更多在工具各方面的虛擬機器功能和效能增強功能。
-- 版本 [1711](https://cloudblogs.microsoft.com/windowsserver/2017/12/01/1711-update-to-project-honolulu-technical-preview-is-now-available/) 新增備受期待的工具 (遠端桌面和 PowerShell) 以及其他改進功能。
-- 版本 [1709](https://cloudblogs.microsoft.com/windowsserver/2017/09/22/project-honolulu-technical-preview-is-now-available-for-download/) 開始以我們第一個公開預覽版本的形式推出。
+- [Windows Admin Center：發揮 Azure 混合式的價值](https://aka.ms/WAC-BRK3165)
+- [Windows Admin Center：新功能與新趨勢](https://aka.ms/WAC-BRK2048)
+- [使用 Windows Admin Center 從 Azure 自動監視、保護及更新您的內部部署伺服器](https://aka.ms/WAC-THR2146)
+- [透過 Windows Admin Center 協力廠商擴充功能來完成更多工作](https://aka.ms/WAC-THR2140)
+- [成為 Windows Admin Center 專家：部署、設定和安全性的最佳作法](https://aka.ms/WAC-THR2135)
+- [Windows Admin Center：與 System Center 和 Microsoft Azure 搭配使用的效果更佳](https://aka.ms/WAC-THR2176)
+- [如何將 Windows Admin Center 和 Windows Server 與 Microsoft Azure 混合式服務搭配使用](https://aka.ms/WAC-THR2073)
+- [即時問與答：使用 Windows Admin Center 管理您的混合式伺服器環境](https://aka.ms/WAC-MLS1055)
+- [學習路徑：混合式管理技術](https://aka.ms/WAC-HybridMgmtTech)
+- [實習實驗室：Windows Admin Center 和混合式部署](https://aka.ms/WAC-HOL2019)
+
+以下是來自 Windows Server Summit 2019 研討會的一些影片：
+
+- [使用 Windows Admin Center 邁向混合](https://aka.ms/WAC-WSS2019-GoHybridWAC)
+- [Windows Admin Center v1904 的最新動向](https://aka.ms/WAC-WSS2019-WhatsNewv1904)
+
+以下是一些其他資源：
+
+- [Windows Admin Center 伺服器管理重新構思](https://aka.ms/WAC-ServerMgmtReimagined)
+- [使用 Windows Admin Center 隨處管理伺服器和虛擬機器](https://aka.ms/WAC-Webinar2019)
+- [如何開始使用 Windows Admin Center](https://www.youtube.com/embed/PcQj6ZklmK0)
+
+## <a name="see-how-customers-are-benefitting-from-windows-admin-center"></a>了解客戶如何從 Windows Admin Center 中受益
+
+|     |
+| --- |
+| 「[Windows Admin Center] 在管理我們的管理系統上，已減少我們 75% 以上的時間/精力。」<br> *- Convergent Computing 總裁 Rand Morimoto* |
+| 「多虧 [Windows Admin Center] 的幫助，我們才可以透過 HTML5 入口網站從遠端管理客戶而不發生問題，並且歸功於多重要素驗證，我們能夠運用與 Azure Active Directory 的完全整合來提高安全性。」<br/> *- Inside Technologies 創立者暨資深顧問 Silvio Di Benedetto* |
+| 「我們已經可以用更有效率的方式部署 [Server Core] SKU，改善資源效率、安全性及自動化，同時仍能達到相當高的生產力，並減少僅依賴指令碼時可能發生的錯誤。」 <br/> *- VaiSulWeb 創立者暨執行長 Guglielmo Mengora* |
+| 「[Windows Admin Center] 推出後，特別是在 SMB 市場的客戶，現在已有簡單好用的工具可以來管理其內部基礎結構。 這不僅讓系統管理工作負荷減少至最低限度，同時也節省了大量時間。 更好的是，還不需任何其他授權費用，就能享有 [Windows Admin Center]！」 <br/> *- SecureGUARD 管理總監 Helmut Otto* |
+
+[閱讀更多有關各家公司在其生產環境中使用 Windows Admin Center 的資訊。](understand/case-studies.md)
+
+## <a name="related-products"></a>相關產品
+
+Windows Admin Center 主要用於管理單一伺服器或叢集。 它補充但不取代現有的 Microsoft 監視與管理解決方案，例如遠端伺服器管理工具 (RSAT)、System Center、Intune 或 Azure Stack。
+
+[了解 Windows Admin Center 如何與其他 Microsoft 管理解決方案相輔相成。](understand/related-management.md)
 
 ## <a name="stay-updated"></a>持續更新
 
-![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[在 Twitter 上關注我們](https://twitter.com/servermgmt)
+![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[在 Twitter 上關注我們](https://twitter.com/servermgmt)
 
-![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[閱讀我們的部落格](https://blogs.technet.microsoft.com/servermanagement/)
+![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[閱讀我們的部落格](https://blogs.technet.microsoft.com/servermanagement/)

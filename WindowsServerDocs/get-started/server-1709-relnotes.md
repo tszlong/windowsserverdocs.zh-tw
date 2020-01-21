@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5f899964414c10350cc22a594a959c940a1514
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd50b287ad0f3dd49a0df3c1fe531379bd4078e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391517"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948232"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>版本資訊：Windows Server 1709 版中的重要問題
 
@@ -29,7 +29,7 @@ ms.locfileid: "71391517"
 
 本文件將持續更新。 發現有需要採取因應措施的重大問題時，就會將它們加入，而在有新的因應措施和修正程式時也會加入。  
   
-## <a name="storage-spaces-direct"></a>儲存空間直接存取
+## <a name="storage-spaces-direct"></a>儲存空間 Direct
 [comment]: # (ID: 未知; Submitter: stevenek; state: 已核准)  
 儲存空間直接存取未隨附於 Windows Server 1709 版。 如果您在執行 Windows Server 1709 版的伺服器上呼叫 *Enable-ClusterStorageSpacesDirect* 或其別名 *Enable-ClusterS2D*，將會收到錯誤訊息「不支援要求的操作」。
 
@@ -41,4 +41,4 @@ Windows Server 半年通道著重受益於快速創新的容器和應用程式�
 
 Windows Server 2016 中引進儲存空間直接存取，它是我們超融合式平台的基礎。 積極採用 Microsoft 超融合式平台的市況令人振奮，我們會致力於為客戶提供最好的服務。
 
-傾聽了您的意見反應後，我們一直在努力達成他們對超融合式平台[下一輪創新](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) \(英文\) 的期望。 這些功能現已在 [Windows 測試人員](https://insider.windows.com/for-business/)組建中實現，非常希望您來試用，並分享您的意見反應。 正在尋找已驗證超融合式解決方案的客戶，建議您加入 [Windows Server 軟體定義](http://microsoft.com/wssd)計畫。
+傾聽了您的意見反應後，我們一直在努力達成他們對超融合式平台[下一輪創新](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) \(英文\) 的期望。 這些功能現已在 [Windows 測試人員](https://insider.windows.com/for-business/)組建中實現，非常希望您來試用，並分享您的意見反應。 正在尋找已驗證超融合式解決方案的客戶，建議您加入 [Windows Server 軟體定義](https://microsoft.com/wssd)計畫。

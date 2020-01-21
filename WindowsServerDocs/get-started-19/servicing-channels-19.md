@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 814bcf3e989e9aa9b83ba447d07c45ee95309a5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3d443ff123cc041196f59d93d156415c34bdf70f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391981"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947876"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -36,7 +36,7 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 半年通道中推出的大多數功能都會彙總到 Windows Server 的下一次長期維護通道發行。 各次發行的版本、功能及支援內容可能會依據客戶意見反應而有所改變。
 
-半年通道可供大量授權客戶搭配[軟體保證](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)，以及透過 Azure Marketplace 或其他雲端/主機服務提供者和忠誠度方案 (例如 Visual Studio 訂閱) 來享用。
+半年通道可供大量授權客戶搭配[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，以及透過 Azure Marketplace 或其他雲端/主機服務提供者和忠誠度方案 (例如 Visual Studio 訂閱) 來享用。
 
 > [!Note]  
 > **目前的半年通道版本是 Windows Server 版本 1903**。 如果您想將伺服器加入這個通道，就應該安裝 Windows Server 版本 1903，而您可以在 Server Core 模式下進行安裝，或是將其安裝成執行於容器中的 Nano 伺服器。 不支援從長期維護通道版本中進行就地升級，因為這些升級位在**不同的發行管道**。 半年通道版本未更新 – 這是半年通道中的下一個 Windows Server 版本。
@@ -84,9 +84,9 @@ IT 專業人員有許多工具可以維護 Windows Server。 每個選項都有�
 
 半年通道版本應該安裝為全新安裝。
 
-- 大量授權服務中心 (VLSC)：有[軟體保證](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)的大量授權客戶可以取得此版本，方式為前往[大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)並按一下 [登入]  。 然後按一下 [下載和金鑰]  並搜尋此版本。 
+- 大量授權服務中心 (VLSC)：有[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的大量授權客戶可以取得此版本，方式為前往[大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)並按一下 [登入]  。 然後按一下 [下載和金鑰]  並搜尋此版本。 
 
-- 半年通道版本也可從 [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中取得。
+- 半年通道版本也可從 [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中取得。
 
 - Visual Studio 訂閱：Visual Studio 訂閱者可從 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)中下載半年通道版本。 如果您還不是訂閱者，請前往 [Visual Studio 訂閱](https://www.visualstudio.com/subscriptions/)註冊，然後依上述方式瀏覽 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)。 透過 Visual Studio 訂閱取得的版本僅供開發和測試用途。
 
@@ -171,7 +171,7 @@ Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
 ````
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 [Nano Server 在 Windows Server 半年通道中的變更](../get-started/nano-in-semi-annual-channel.md)
 

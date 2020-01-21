@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c65683a69633a950630b7fd74e1181da767ae35b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bcf2c8163123cbb71162f8ee44d283c532bd01a8
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870576"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265920"
 ---
 # <a name="poor-performance-or-application-problems-during-remote-desktop-connection"></a>遠端桌面連線期間效能不佳或應用程式發生問題
 

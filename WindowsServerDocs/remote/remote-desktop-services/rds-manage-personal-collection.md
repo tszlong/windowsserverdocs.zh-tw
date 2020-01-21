@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6bf0ad3a2cd35c9794fd13631ed29df94725685c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7be6b2bfe1105357811927f5da7092e8c16c3446
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387413"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949842"
 ---
-## <a name="manage-your-personal-desktop-session-collections"></a>管理您的個人桌面工作階段集合
+# <a name="manage-your-personal-desktop-session-collections"></a>管理您的個人桌面工作階段集合
 
 請使用下列資訊來管理遠端桌面服務中的個人桌面工作階段集合。
 
-### <a name="manually-assign-a-user-to-a-personal-session-host"></a>以手動方式將使用者指派給個人工作階段主機
+## <a name="manually-assign-a-user-to-a-personal-session-host"></a>以手動方式將使用者指派給個人工作階段主機
 使用 **Set-RDPersonalSessionDesktopAssignment** Cmdlet，以手動方式將使用者指派給集合中的個人工作階段主機伺服器。 此 Cmdlet 支援下列參數：
 
 -CollectionName \<string\>
@@ -49,7 +49,7 @@ ms.locfileid: "71387413"
 
 **–Path** 會指定要匯入之檔案的路徑和檔案名稱。
  
-### <a name="removing-a-user-assignment-from-a-personal-session-host"></a>從個人工作階段主機中移除使用者指派
+## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>從個人工作階段主機中移除使用者指派
 使用 **Remove-RDPersonalSessionDesktopAssignment** Cmdlet，可移除個人工作階段桌面與使用者之間的關聯。 此 Cmdlet 支援下列參數：
 
 -CollectionName \<string\>
@@ -64,7 +64,7 @@ ms.locfileid: "71387413"
 
 **–Force** 會強制執行命令而不要求使用者確認。
 
-### <a name="query-user-assignments"></a>查詢使用者指派
+## <a name="query-user-assignments"></a>查詢使用者指派
 使用 **Get-RDPersonalSessionDesktopAssignment** Cmdlet，可取得個人工作階段桌面和相關使用者帳戶的清單。 此 Cmdlet 支援下列參數：
 
 -CollectionName \<string\>

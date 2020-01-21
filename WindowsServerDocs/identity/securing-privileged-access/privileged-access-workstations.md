@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 2625097c56e6b2121cbdac45e1cc5f86972e4898
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: 03f62fd8d9a95c4f0b83e64d672a3c1134833cae
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823853"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950550"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 
@@ -34,7 +34,7 @@ ms.locfileid: "74823853"
 > [!NOTE]
 > 無法存取 Windows 10 企業版的組織可以使用 Windows 10 專業版，其中包含 PAW 的許多重要基本技術，包括信任式開機、BitLocker 和遠端桌面。  教育客戶可以使用 Windows 10 教育版。  Windows 10 家用版不應用於 PAW。
 >
-> 如需不同版本 Windows 10 的比較表，請參閱[本文](https://www.microsoft.com/en-us/WindowsForBusiness/Compare)。
+> 如需不同版本 Windows 10 的比較表，請參閱[本文](https://www.microsoft.com/WindowsForBusiness/Compare)。
 
 PAW 安全性控制項著重在緩和最大的影響力以及高可能性的危害風險。 這些包括緩和對環境的攻擊，以及緩和可能會隨著時間降低 PAW 控制項效率的風險︰
 
@@ -50,7 +50,7 @@ PAW 安全性控制項著重在緩和最大的影響力以及高可能性的危�
 >
 > 如需有關回應與復原指導方針的詳細資訊，請參閱 [Mitigating Pass-the-Hash and Other Credential Theft](https://aka.ms/pth) (第 2 版) 的 "Respond to suspicious activity" 和 "Recover from a breach" 章節。
 >
-> 如需詳細資訊，請瀏覽 [Microsoft 的事件回應和復原服務](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)頁面。
+> 如需詳細資訊，請瀏覽 [Microsoft 的事件回應和復原服務](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)頁面。
 
 ### <a name="paw-hardware-profiles"></a>PAW 硬體設定檔
 
@@ -96,7 +96,7 @@ PAW 安全性控制項著重在緩和最大的影響力以及高可能性的危�
 
 若要進行此設定，請遵循本指導方針中對於 PAW 主機的指示，新增用戶端 Hyper-V 功能、建立使用者 VM，然後在使用者 VM 上安裝 Windows 10 公司映像。
 
-如需有關這項功能的詳細資訊，請閱讀[用戶端 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) 文件。 請注意，客體虛擬機器中的作業系統必須先根據 [Microsoft 產品授權](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx)獲得授權，在[這裡](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)也有相關說明。
+如需有關這項功能的詳細資訊，請閱讀[用戶端 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) 文件。 請注意，客體虛擬機器中的作業系統必須先根據 [Microsoft 產品授權](https://www.microsoft.com/Licensing/product-licensing/products.aspx)獲得授權，在[這裡](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)也有相關說明。
 
 #### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>同時使用 - 新增 RemoteApp、RDP 或 VDI
 
@@ -274,7 +274,7 @@ Microsoft 建議使用 PAW 存取權限管理解決方案。 對於這些解決�
 |伺服器維護系統管理員<br />- 第 1 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 應該用於更新、修補執行 Windows Server、Linux 和其他作業系統的企業伺服器與應用程式，以及為其進行疑難排解的系統管理員。<br />-   可能需要新增 PAW 的專用管理工具，才能處理更大規模的這些系統管理員。|
 |使用者工作站系統管理員 <br />- 第 2 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於具有使用者裝置系統管理權限的角色 (例如技術服務人員和技術支援角色) 已經足夠。<br /><br />-   PAW 上可能需要安裝其他應用程式，才能啟用票證管理和其他支援功能。<br />- 應在工作站上設定 Windows Defender 惡意探索防護。<br />    可能需要新增 PAW 的專用管理工具，才能處理更大規模的這些系統管理員。|
 |SQL、SharePoint 或企業營運 (LOB) 系統管理員<br />- 第 1 層|是|使用階段 2 指導方針建置的 PAW 對於此角色已經足夠。<br /><br />-   PAW 上可能需要安裝其他管理工具，才能允許系統管理員管理應用程式，而不需要使用遠端桌面連線到伺服器。|
-|管理社交媒體顯示狀態的使用者|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用。<br /><br />-   使用 Azure Active Directory (AAD) 保護與管理社交媒體帳戶，以共用、保護並追蹤對於社交媒體帳戶的存取。<br />    如需有關這項功能的詳細資訊，請參閱[此部落格文章](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)。<br />-   輸出網路限制必須允許與這些服務的連線。 這可以透過允許開放式網際網路連線 (否定許多 PAW 保證的更高安全性風險)，或僅允許服務所需的 DNS 位址 (可能不容易取得) 完成。|
+|管理社交媒體顯示狀態的使用者|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用。<br /><br />-   使用 Azure Active Directory (AAD) 保護與管理社交媒體帳戶，以共用、保護並追蹤對於社交媒體帳戶的存取。<br />    如需有關這項功能的詳細資訊，請參閱[此部落格文章](https://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)。<br />-   輸出網路限制必須允許與這些服務的連線。 這可以透過允許開放式網際網路連線 (否定許多 PAW 保證的更高安全性風險)，或僅允許服務所需的 DNS 位址 (可能不容易取得) 完成。|
 |標準使用者|否|雖然標準使用者可以使用許多強化步驟，但是 PAW 是針對隔離帳戶與多數使用者為了工作職責所需的開放式網際網路存取所設計。|
 |客體 VDI/Kiosk|否|雖然客體的 Kiosk 系統可以使用許多強化步驟，但是 PAW 架構的設計是為了針對敏感度高的帳戶提供更高的安全性，而不是針對敏感度較低的帳戶提供更高的安全性。|
 |VIP 使用者 (主管、研究人員等等)|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用。<br /><br />-   此案例類似於標準使用者桌面，但通常會有更小、更簡單，而且已知的應用程式設定檔。 此案例通常需要探索及保護機密資料、服務，以及 (不一定是安裝在桌上型電腦上的) 應用程式。<br />-   這些角色通常需要高度的安全性以及非常高度的可用性，這需要進行設計變更，才能符合使用者喜好設定。|
@@ -290,7 +290,7 @@ Microsoft 建議使用 PAW 存取權限管理解決方案。 對於這些解決�
 
 本指導方針包含上述案例的 PAW 設定詳細指示。 如果您有其他案例的需求，可以根據本指導方針自行調整指示，或雇用一個專業的服務組織協助調整，例如 Microsoft。
 
-如需有關吸引人的 Microsoft 服務詳細資訊，以便設計為您的環境量身打造的 PAW，請連絡您的 Microsoft 代表或瀏覽[本頁](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)。
+如需有關吸引人的 Microsoft 服務詳細資訊，以便設計為您的環境量身打造的 PAW，請連絡您的 Microsoft 代表或瀏覽[本頁](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)。
 
 ## <a name="paw-phased-implementation"></a>PAW 階段式實作
 
@@ -345,7 +345,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 4. **取得並驗證所需的 Windows 10 企業版和應用程式軟體。** 取得 PAW 所需的軟體，並使用[適用於安裝媒體的乾淨來源](https://aka.ms/cleansource)中的指導方針進行驗證。
 
    * Windows 10 企業版
-   * Windows 10 的[遠端伺服器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=45520)
+   * Windows 10 的[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)
    * [Windows 10 安全性基準](https://aka.ms/win10baselines)
 
       > [!NOTE]
@@ -459,7 +459,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
 1. **封鎖網際網路瀏覽** - 若要防止不小心瀏覽網際網路，這將會設定迴路位址 (127.0.0.1) 的 Proxy 位址。
    1. 移至 [使用者設定\喜好設定\Windows 設定\登錄]。 在 [登錄] 上按一下滑鼠右鍵，選取 [新增]   > [登錄項目]  ，並進行下列設定︰
-      1. 動作：替換
+      1. 動作：取代
       2. Hive：HKEY_CURRENT_USER
       3. 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet Settings
       4. 值名稱：ProxyEnable
@@ -468,7 +468,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
          > 請不要選取 [數值名稱] 左側的 [預設] 方塊。
 
       5. 值類型：REG_DWORD
-      6. 若要解決此問題，請使用下列任一種方法。1
+      6. 數值資料：1
          1. 按一下 [通用] 索引標籤，然後選取 [當不再套用這個項目時移除它]  。
          2. 在 [通用] 索引標籤上，選取 [項目等級目標]  ，然後按一下 [目標]  。
          3. 按一下 [新增項目]  ，然後選取 [安全性群組]  。
@@ -481,7 +481,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       7. 按一下 [確定]  ，完成 ProxyServer 群組原則設定
    2. 移至 [使用者設定\喜好設定\Windows 設定\登錄]。 在 [登錄] 上按一下滑鼠右鍵，選取 [新增]   > [登錄項目]  ，並進行下列設定︰
 
-      * 動作：替換
+      * 動作：取代
       * Hive：HKEY_CURRENT_USER
       * 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet Settings
          * 值名稱：ProxyServer
@@ -490,7 +490,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
             > 請不要選取 [數值名稱] 左側的 [預設] 方塊。
 
          * 值類型：REG_SZ
-         * 若要解決此問題，請使用下列任一種方法。127.0.0.1:80
+         * 數值資料：127.0.0.1:80
             1. 按一下 [通用]  索引標籤，然後選取 [當不再套用這個項目時移除它]  。
             2. 在 [通用]  索引標籤上，選取 [項目等級目標]  ，然後按一下 [目標]  。
             3. 按一下 [新增項目]  ，然後選取安全性群組。
@@ -660,7 +660,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 2. 為本機 Administrator 帳戶設定一個複雜的唯一密碼。  請不要使用曾經用於環境中其他任何帳戶的密碼。
 
    > [!NOTE]
-   > Microsoft 建議使用[本機系統管理員密碼解決方案 (LAPS)](https://www.microsoft.com/en-us/download/details.aspx?id=46899) 管理所有工作站的本機系統管理員密碼，包括 PAW。  如果您使用 LAPS，請確定您只授與 PAW Maintenance 群組權限，為 PAW 讀取受 LAPS 管理的密碼。
+   > Microsoft 建議使用[本機系統管理員密碼解決方案 (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) 管理所有工作站的本機系統管理員密碼，包括 PAW。  如果您使用 LAPS，請確定您只授與 PAW Maintenance 群組權限，為 PAW 讀取受 LAPS 管理的密碼。
 
 3. 使用乾淨來源安裝媒體，安裝 Windows 10 的遠端伺服器管理工具。
 4. 設定 Windows Defender 惡意探索防護
@@ -705,7 +705,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
        2. 此外，請使用 [編輯本機使用者和群組]  確定下列群組沒有任何成員︰備份操作員、Cryptographic Operator、Hyper-V 系統管理員、Network Configuration Operator、進階使用者、遠端桌面使用者、複寫者
 
-12. (選擇性) 如果您的組織使用安全性資訊及事件管理 (SIEM) 解決方案，請確認 PAW [設為使用 Windows 事件轉送 (WEF) 將事件轉送到系統](http://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx)，或使用解決方案登錄，讓 SIEM 主動地接收來自 PAW 的事件和資訊。  此操作的詳細資料會因為您的 SIEM 解決方案而有所不同。
+12. (選擇性) 如果您的組織使用安全性資訊及事件管理 (SIEM) 解決方案，請確認 PAW [設為使用 Windows 事件轉送 (WEF) 將事件轉送到系統](https://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx)，或使用解決方案登錄，讓 SIEM 主動地接收來自 PAW 的事件和資訊。  此操作的詳細資料會因為您的 SIEM 解決方案而有所不同。
 
     > [!NOTE]
     > 如果您的 SIEM在 PAW 上需要有以系統或本機系統管理帳戶身分執行的代理程式，請確定 SIEM 是使用與您的網域控制站和身分識別系統相同的信任層級加以管理。
@@ -778,7 +778,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
          > [!NOTE]
          > 您必須在下載後更新 *proxy.pac* 檔案，以確保這是最新而且完整的檔案。  
-         > Microsoft 會在 Office [支援中心](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)發佈所有最新的 Office 365 和 Azure URL。 這些指示假設您將使用 Internet Explorer (或 Microsoft Edge) 進行 Office 365、Azure 和其他雲端服務的系統管理作業。 Microsoft 建議為進行系統管理所需的任何協力廠商瀏覽器，設定類似的限制。 PAW 上的網頁瀏覽器應該僅用於雲端服務的系統管理，而且絕不會用於一般網頁瀏覽。
+         > Microsoft 會在 Office [支援中心](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)發佈所有最新的 Office 365 和 Azure URL。 這些指示假設您將使用 Internet Explorer (或 Microsoft Edge) 進行 Office 365、Azure 和其他雲端服務的系統管理作業。 Microsoft 建議為進行系統管理所需的任何協力廠商瀏覽器，設定類似的限制。 PAW 上的網頁瀏覽器應該僅用於雲端服務的系統管理，而且絕不會用於一般網頁瀏覽。
          >
          > 您可能需要新增其他有效的網際網路目的地，才能為其他 IaaS 提供者新增至此清單，但是請不要將生產力、娛樂、新聞，或搜尋網站新增至此清單。
          >
@@ -788,7 +788,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
       3. 一旦您設定 *proxy.pac* 檔案之後，更新 PAW 設定 - 使用者 GPO。
          1. 移至 [使用者設定\喜好設定\Windows 設定\登錄]。 在 [登錄] 上按一下滑鼠右鍵，選取 [新增]   > [登錄項目]  ，並進行下列設定︰
-            1. 動作：替換
+            1. 動作：取代
             2. Hive：HKEY_CURRENT_USER
             3. 機碼路徑：Software\Microsoft\Windows\CurrentVersion\Internet Settings
             4. 值名稱：AutoConfigUrl
@@ -800,7 +800,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
             6. 數值資料︰輸入 *proxy.pac* 檔案的完整 URL，包括 http:// 和檔案名稱，例如 http://proxy.fabrikam.com/proxy.pac 。  URL 也可以是單一標籤 URL，例如 http://proxy/proxy.pac 。
 
                > [!NOTE]
-               > PAC 檔案也可以裝載在檔案共用上，其語法為 file://server.fabrikan.com/share/proxy.pac，但這必須允許使用 file:// 通訊協定。 如需有關設定所需登錄值的其他詳細資訊，請參閱這個[了解 Web Proxy 設定](http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx)部落格的「附註：File:// 型 Proxy 指令碼已過時」一節。
+               > PAC 檔案也可以裝載在檔案共用上，其語法為 file://server.fabrikan.com/share/proxy.pac，但這必須允許使用 file:// 通訊協定。 如需有關設定所需登錄值的其他詳細資訊，請參閱這個[了解 Web Proxy 設定](https://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx)部落格的「附註：File:// 型 Proxy 指令碼已過時」一節。
 
             7. 按一下 [通用]  索引標籤，然後選取 [當不再套用這個項目時移除它]  。
             8. 在 [通用]  索引標籤上，選取 [項目等級目標]  ，然後按一下 [目標]  。
@@ -924,7 +924,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       如需 Windows Hello 企業版的詳細資訊，請參閱 [Windows Hello 企業版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)一文。
    * **Azure 多重要素驗證**：Azure 多重要素驗證 (MFA) 可提供另一個驗證要素的安全性，並透過監視和機器學習式分析，提供增強的防護。  Azure MFA 不僅可以保護 Azure 系統管理員的安全，還可以保護其他許多解決方案，包括 Web 應用程式、Azure Active Directory，以及內部部署解決方案 (例如遠端存取和遠端桌面)。  如需有關 Azure 多重要素驗證的詳細資訊，請參閱[多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication)一文。
 
-2. **使用 Windows Defender 應用程式控制和/或 AppLocker，將受信任的應用程式加入白名單**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
+2. **使用 Windows Defender 應用程式控制和/或 AppLocker，將受信任的應用程式加入允許清單**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
 
    * **Applocker**：AppLocker 可協助系統管理員控制可以在指定系統上執行的應用程式。  AppLocker 可以透過群組原則集中加以控制，而且可以套用至特定的使用者或群組 (針對以 PAW 使用者為目標的應用)。  如需有關 AppLocker 的詳細資訊，請參閱 TechNet 文章 [AppLocker 概觀](https://technet.microsoft.com/library/hh831440.aspx)。
    * **Windows Defender 應用程式控制**︰新的 Windows Defender 應用程式控制功能可提供增強的硬體式應用程式控制項，與 AppLocker 不同的是，無法在受影響的裝置上覆寫該控制項。  如同 AppLocker，Windows Defender 應用程式控制可以透過群組原則加以控制，並以特定使用者為目標。  有關如何使用 Windows Defender 應用程式控制限制應用程式使用方式，詳細資訊請參閱 TechNet 文章 [Windows Defender 應用程式控制部署指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
@@ -1070,7 +1070,7 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 ## <a name="related-topics"></a>相關主題
 
-[吸引人的 Microsoft 網路安全性服務](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)
+[吸引人的 Microsoft 網路安全性服務](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)
 
 [頂級體驗︰如何減輕傳遞雜湊和其他形式認證竊取的風險](https://channel9.msdn.com/Blogs/Taste-of-Premier/Taste-of-Premier-How-to-Mitigate-Pass-the-Hash-and-Other-Forms-of-Credential-Theft)
 
@@ -1084,13 +1084,13 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [Dave Probert 主講：Windows 10 中隔離的使用者模式 (第 9 頻道)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 
-[Logan Gabriel 主講：Windows 10 中隔離的使用者模式程序和功能 (第 9 頻道)](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
+[Logan Gabriel 主講：Windows 10 中隔離的使用者模式程序和功能 (第 9 頻道)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
 
 [Dave Probert 主講：深入探討 Windows 10 隔離的使用者模式中的程序和功能 (第 9 頻道)](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
 
 [使用 Windows 10 隔離的使用者模式來減少認證竊取 (第 9 頻道)](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
 
-[在 Windows Kerberos 中啟用嚴格 KDC 驗證](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
+[在 Windows Kerberos 中啟用嚴格 KDC 驗證](https://www.microsoft.com/download/details.aspx?id=6382)
 
 [Windows Server 2012 Kerberos 驗證的新功能](https://technet.microsoft.com/library/hh831747.aspx)
 
