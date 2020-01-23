@@ -4,16 +4,16 @@ description: 儲存體遷移服務可讓您更輕鬆地將存放裝置遷移至 
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 10/25/2019
+ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 968122612845a9be105ca7d3231edc0faa039e76
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352681"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519470"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -46,6 +46,10 @@ ms.locfileid: "75352681"
 
 ![螢幕擷取畫面，顯示已準備好掃描的伺服器](media/migrate/inventory.png)
 **圖2：儲存體遷移服務清查伺服器**
+
+以下影片示範如何使用儲存體遷移服務來採用伺服器，例如現在不支援的 Windows Server 2008 R2 伺服器，以及將存放裝置移至較新的伺服器。
+
+> [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
 ## <a name="requirements"></a>需求
 

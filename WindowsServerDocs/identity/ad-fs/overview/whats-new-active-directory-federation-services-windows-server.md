@@ -1,20 +1,20 @@
 ---
 ms.assetid: aa892a85-f95a-4bf1-acbb-e3c36ef02b0d
-title: Windows Server 2016 的 Active Directory 同盟服務新功能
+title: Windows Server 2016 的 Active Directory 同盟服務新功能
 description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 04/23/2019
+ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385555"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519480"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory 同盟服務的新功能
 
@@ -87,9 +87,8 @@ AD FS 2019 現在包含下列部署更新：
  
 使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 這與 Azure AD 也可以對其進行驗證的方式一致。 
 
-範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如：  
+範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 
 
-**< 建立有效的範例要求 >**
 > [!NOTE]
 > 只有一個資源可以在驗證要求中指定。 如果要求中包含一個以上的資源，AD FS 將會傳回錯誤，且驗證將會失敗。 
 
@@ -106,17 +105,17 @@ B. 授權端點會如往常般回應，但會記錄 "t （code_verifier）" 和�
 
 C. 接著，用戶端會如往常般傳送存取權杖要求中的授權碼，但包含在（A）產生的「code_verifier」秘密。 
 
-d. AD FS 會轉換 "code_verifier"，並將它與（B）的 "t （code_verifier）" 進行比較。  如果存取不相等，則會遭到拒絕。 
+D. AD FS 會轉換 "code_verifier"，並將它與（B）的 "t （code_verifier）" 進行比較。  如果存取不相等，則會遭到拒絕。 
 
 #### <a name="faq"></a>常見問題 
-**問題解答.** 我可以將資源值當做範圍值的一部分來傳遞，像是如何對 Azure AD 進行要求？ 
-</br>**為.** 使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如：  
+**問：** 我可以將資源值當做範圍值的一部分來傳遞，像是如何對 Azure AD 進行要求？ 
+</br>**A.** 使用伺服器2019上的 AD FS，您現在可以傳遞內嵌在範圍參數中的資源值。 範圍參數現在可以組織成以空格分隔的清單，其中每個專案的結構都是資源/範圍。 例如：  
 **< 建立有效的範例要求 >**
 
-**問題解答.** AD FS 是否支援 PKCE 延伸模組？
-</br>**為.** 伺服器2019中的 AD FS 支援 OAuth 授權碼授與流程的程式碼交換的證明金鑰（PKCE） 
+**問：** AD FS 是否支援 PKCE 延伸模組？
+</br>**A.** 伺服器2019中的 AD FS 支援 OAuth 授權碼授與流程的程式碼交換的證明金鑰（PKCE） 
 
-## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>Windows Server 2016 的 Active Directory 同盟服務新功能   
+## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>Windows Server 2016 的 Active Directory 同盟服務新功能   
 如果您要尋找舊版 AD FS 的相關資訊，請參閱下列文章：  
  [Windows Server 2012 或 2012 R2](https://technet.microsoft.com/library/hh831502.aspx)和[AD FS 2.0](https://technet.microsoft.com/library/adfs2.aspx)中的 ADFS  
 
@@ -160,7 +159,11 @@ AD FS 在混合式案例中提供條件式存取原則的內部部署元件。 �
 *  [使用 AD FS 規劃以裝置為基礎的條件式存取](../../ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)  
 * [AD FS 中的存取控制原則](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)  
 
-### <a name="sign-in-with-windows-hello-for-business"></a>使用 Windows Hello 企業版登入   
+### <a name="sign-in-with-windows-hello-for-business"></a>使用 Windows Hello 企業版登入  
+
+> [!NOTE]
+> 目前，使用 Microsoft Windows Hello 企業版的單一登入（SSO），不支援 Google Chrome 和以 Chromium 開放原始碼專案瀏覽器為基礎的[新 Microsoft Edge](https://www.microsoft.com/edge?form=MB110A&OCID=MB110A) 。 請使用 Internet Explorer 或較舊版本的 Microsoft Edge。  
+
 Windows 10 裝置引進 Windows Hello 和 Windows Hello 企業版，以使用者的手勢所保護的強式裝置系結使用者認證來取代使用者密碼（PIN、指紋之類的生物識別手勢或臉部辨識）。 AD FS 2016 支援這些新的 Windows 10 功能，讓使用者可以登入來自內部網路或外部網路的 AD FS 應用程式，而不需要提供密碼。
 
 如需在您的組織中使用 Microsoft Windows Hello 企業版的詳細資訊
