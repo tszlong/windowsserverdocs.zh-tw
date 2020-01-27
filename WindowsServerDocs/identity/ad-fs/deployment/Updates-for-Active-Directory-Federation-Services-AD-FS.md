@@ -9,15 +9,14 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 31f6c00f829569586630629d2fa18c1fb65cd1d6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0850145c9281c769c5a2b6532ccb56615abd11b3
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949460"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725783"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory 同盟服務（AD FS）和 Web 應用程式 Proxy （WAP）的必要更新
-
 
 從2016年10月起，Windows Server 所有元件的所有更新都只會透過 Windows Update （WU）發行。  沒有更多的修補程式或個別下載。
 這適用于 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 SP1。
@@ -29,7 +28,7 @@ Windows Server 2016 的更新會每月透過 Windows Update 傳遞，而且是�
 
 |文庫# |說明|發行日期
 |----- | ----- |-----
-|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019 年 7 月|
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019年7月|
 |[4489889（OS 組建14393.2879）](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 解決 Active Directory 同盟服務（AD FS）中導致重複的信賴憑證者信任出現在 AD FS 管理主控台的問題。 當您使用 AD FS 管理主控台建立或查看信賴憑證者信任時，就會發生這種情況。</br></br> 解決在 AD FS 2016 上啟用外部網路智慧鎖定（ESL）時，所發生的高 Active Directory 同盟服務（ADFS） Web 應用程式 Proxy （WAP）延遲問題（超過10毫秒）。 此安全性更新會解決[CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794)中所述的弱點。 |2019 年 3 月|
 |[4487006（OS 組建14393.2828）](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | 解決在使用 PowerShell 或 Active Directory 同盟服務（AD FS）管理主控台時，導致信賴憑證者信任的更新失敗的問題。 如果您將信賴憑證者信任設定為使用可發佈多個 PassiveRequestorEndpoint 的線上中繼資料 URL，就會發生此問題。 錯誤為「MSIS7615：信賴憑證者信任中指定的信任端點對於該信賴憑證者信任必須是唯一的。」  </br></br>解決因 Azure 密碼保護原則而顯示特定錯誤訊息的問題，以因應外部複雜度的密碼變更。 |2019 年 2 月|
 |[4462928（OS 組建14393.2580）](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|解決 Active Directory 同盟服務（ADFS）外部網路智慧鎖定（ESL）與替代登入識別碼之間的互通性問題。 啟用替代登入識別碼時，會呼叫 AD FS Powershell Cmdlet AdfsAccountActivity 和 Reset-AdfsAccountLockout，傳回「找不到帳戶」錯誤。 呼叫 AdfsAccountActivity 時，會加入新的專案，而不是編輯現有的專案。|2018 年 10 月|
@@ -51,7 +50,7 @@ Windows Server 2016 的更新會每月透過 Windows Update 傳遞，而且是�
 
 |文庫# |說明|發行日期
 |----- | ----- |-----
-|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019 年 7 月
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019年7月
 |[4041685](https://support.microsoft.com/kb/4041685)|解決了 AD FS 問題，其中要求標頭中的 MSISConext cookie 最後可能會溢位標頭大小限制，並導致無法以 HTTP 狀態碼400「錯誤的要求標頭太長」進行驗證。</br></br>修正了在驗證期間，ADFS 無法再忽略「提示 = 登入」的問題。 已將 [已停用] 選項新增至使用非密碼驗證的還原案例。|2017年10月更新彙總套件預覽
 |[4019217](https://support.microsoft.com/kb/4019217)|使用伺服器 2012 R2 AD FS 伺服器時，使用權杖代理程式的工作資料夾用戶端無法正常執行|5月2017預覽更新彙總套件
 |[4015550](https://support.microsoft.com/kb/4015550)|修正了 AD FS 未驗證外部使用者，以及 AD FS WAP 隨機無法轉寄要求的問題|2017年4月更新彙總套件
@@ -68,8 +67,8 @@ Windows Server 2016 的更新會每月透過 Windows Update 傳遞，而且是�
 |[3080778](https://support.microsoft.com/kb/3080778)|當 MFA adapter 在 Windows Server 2012 R2 中擲回例外狀況時，AD FS 不會呼叫 OnError|2015 年 7 月
 |[3075610](https://support.microsoft.com/kb/3075610)|在 Windows Server 2012 R2 中新增或移除宣告提供者之後，次要 AD FS 伺服器上的信任關係會遺失|2015 年 7 月
 |[3070080](https://support.microsoft.com/kb/3070080)|在非宣告感知信賴憑證者信任中，主領域探索無法正常運作|2015 年 6 月
-|[3052122](https://support.microsoft.com/kb/3052122)|更新在 Windows Server 2012 R2 的 AD FS token 中新增複合識別碼宣告的支援|2015 年 5 月
-|[3045711](https://support.microsoft.com/kb/3045711)|MS15-040： Active Directory 同盟服務中的弱點可能會允許資訊洩漏|2015 年 4 月
+|[3052122](https://support.microsoft.com/kb/3052122)|更新在 Windows Server 2012 R2 的 AD FS token 中新增複合識別碼宣告的支援|5月2015
+|[3045711](https://support.microsoft.com/kb/3045711)|MS15-040： Active Directory 同盟服務中的弱點可能會允許資訊洩漏|2015年4月
 |[3042127](https://support.microsoft.com/kb/3042127)|當您透過 Windows Server 2012 R2 中的 WAP 開啟共用信箱時，出現「HTTP 400-不正確的要求」錯誤|2015 年 3 月
 |[3042121](https://support.microsoft.com/kb/3042121)|Windows Server 2012 R2 中 Web 應用程式 Proxy 驗證權杖的 AD FS token 重新執行保護|2015 年 3 月
 |[3035025](https://support.microsoft.com/kb/3035025)|更新密碼功能的修復，讓使用者不需要在 Windows Server 2012 R2 中使用已註冊的裝置|2015 年 1 月
@@ -84,7 +83,7 @@ Windows Server 2016 的更新會每月透過 Windows Update 傳遞，而且是�
 |[2975719](https://support.microsoft.com/kb/2975719)|Windows Server 2012 R2 更新彙總套件|2014 年 8 月
 |[2967917](https://support.microsoft.com/kb/2967917)|Windows Server 2012 R2 更新彙總套件|2014 年 7 月
 |[2962409](https://support.microsoft.com/kb/2962409)|Windows Server 2012 R2 更新彙總套件|2014 年 6 月
-|[2955164](https://support.microsoft.com/kb/2955164)|Windows Server 2012 R2 更新彙總套件|2014 年 5 月
+|[2955164](https://support.microsoft.com/kb/2955164)|Windows Server 2012 R2 更新彙總套件|5月2014
 |[2919355](https://support.microsoft.com/kb/2919355)|Windows Server 2012 R2 更新彙總套件|2014 年 4 月
 
 ## <a name="updates-for-ad-fs-in-windows-server-2012-ad-fs-21-and-ad-fs-20"></a>Windows Server 2012 （AD FS 2.1）和 AD FS 2.0 中的 AD FS 更新
@@ -93,19 +92,19 @@ Windows Server 2016 的更新會每月透過 Windows Update 傳遞，而且是�
 |文庫# |說明|發行日期|適用於：
 |----- | ----- |-----|-----
 |[3197878](https://support.microsoft.com/kb/3197878)|在 Windows Server 2012 中透過 proxy 驗證失敗（這是「修補程式3094446」的一般版本）|2016年11月品質匯總套件|AD FS 2。1
-|[3197869](https://support.microsoft.com/kb/3197869)|在 Windows Server 2008 R2 SP1 中透過 proxy 驗證失敗（這是「修補程式3094446」的一般版本）|2016年11月品質匯總套件|AD FS 2.0
-|[3094446](https://support.microsoft.com/kb/3094446)|在 Windows Server 2012 或 Windows Server 2008 R2 SP1 中透過 proxy 驗證失敗|2015 年 9 月|AD FS 2.0 和2。1
+|[3197869](https://support.microsoft.com/kb/3197869)|在 Windows Server 2008 R2 SP1 中透過 proxy 驗證失敗（這是「修補程式3094446」的一般版本）|2016年11月品質匯總套件|AD FS 2。0
+|[3094446](https://support.microsoft.com/kb/3094446)|在 Windows Server 2012 或 Windows Server 2008 R2 SP1 中透過 proxy 驗證失敗|2015年9月|AD FS 2.0 和2。1
 |[3070078](https://support.microsoft.com/kb/3070078)|當您對 Windows Server 2012 中的加密憑證進行驗證時，AD FS 2.1 會擲回例外狀況|2015 年 7 月|AD FS 2。1
 |[3062577](https://support.microsoft.com/kb/3062577)|MS15-062： Active Directory federation services 中的弱點可能會允許權限提高|2015 年 6 月|AD FS 2.0/2。1
 |[3003381](https://support.microsoft.com/kb/3003381)|MS14-077： Active Directory 同盟服務中的弱點可能會允許資訊洩漏：2015年4月14日|2014 年 11 月|AD FS 2.0/2。1
 |[2987843](https://support.microsoft.com/kb/2987843)|當許多使用者登入 Windows Server 2012 中的 web 應用程式時，AD FS 同盟伺服器的記憶體使用量會持續增加|2014 年 7 月|AD FS 2。1
-|[2957619](https://support.microsoft.com/kb/2957619)|對委派權杖的 AD FS 提出要求時，AD FS 中的信賴憑證者信任已停止|2014 年 5 月|AD FS 2。1
+|[2957619](https://support.microsoft.com/kb/2957619)|對委派權杖的 AD FS 提出要求時，AD FS 中的信賴憑證者信任已停止|5月2014|AD FS 2。1
 |[2926658](https://support.microsoft.com/kb/2926658)|如果您沒有 SQL 許可權，ADFS SQL 伺服器陣列部署將會失敗|2014 年 10 月|AD FS 2。1
-|[2896713](https://support.microsoft.com/kb/2896713)或[2989956](https://support.microsoft.com/kb/2989956)|在 AD FS 伺服器上安裝安全性更新2843638之後，有可用來修正數個問題的更新|2013 年 11 月</br></br>2014 年 9 月|AD FS 2.0/2。1
+|[2896713](https://support.microsoft.com/kb/2896713)或[2989956](https://support.microsoft.com/kb/2989956)|在 AD FS 伺服器上安裝安全性更新2843638之後，有可用來修正數個問題的更新|2013年11月</br></br>2014年9月|AD FS 2.0/2。1
 |[2877424](https://support.microsoft.com/kb/2877424)|更新可讓您在 AD FS 2.1 伺服器陣列中，將一個憑證用於多個信賴憑證者信任|2013 年 10 月|AD FS 2。1
-|[2873168](https://support.microsoft.com/kb/2873168)|修正：當您使用協力廠商 CSP 和 HSM，然後在 Windows Server 2008 R2 Service Pack 1 上的 AD FS 2.0 的更新彙總套件3中設定宣告提供者信任時，就會發生錯誤。|2013 年 9 月|AD FS 2.0
-|[2861090](https://support.microsoft.com/kb/2861090)|加密憑證的主體名稱中的逗號會導致 Windows Server 2008 R2 SP1 發生例外狀況|2013 年 8 月|AD FS 2.0
-|[2843639](https://support.microsoft.com/kb/2843639)|安全級Active Directory 同盟服務中的弱點可能會允許資訊洩漏|2013 年 11 月|AD FS 2。1
-|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066： Active Directory 同盟服務2.0 的安全性更新描述：2013年8月13日|2013 年 8 月|AD FS 2.0
-|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata 在 Windows Server 2012 中未包含 WS-TRUST 和 WS-同盟端點的 MEX 端點資訊|2013 年 5 月|AD FS 2。1
-|[2790338](https://support.microsoft.com/kb/2790338)|Active Directory 同盟服務（AD FS）2.0 的更新彙總套件3描述|2013 年 3 月|AD FS 2.0
+|[2873168](https://support.microsoft.com/kb/2873168)|修正：當您使用協力廠商 CSP 和 HSM，然後在 Windows Server 2008 R2 Service Pack 1 上的 AD FS 2.0 的更新彙總套件3中設定宣告提供者信任時，就會發生錯誤。|2013年9月|AD FS 2。0
+|[2861090](https://support.microsoft.com/kb/2861090)|加密憑證的主體名稱中的逗號會導致 Windows Server 2008 R2 SP1 發生例外狀況|2013年8月|AD FS 2。0
+|[2843639](https://support.microsoft.com/kb/2843639)|安全級Active Directory 同盟服務中的弱點可能會允許資訊洩漏|2013年11月|AD FS 2。1
+|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066： Active Directory 同盟服務2.0 的安全性更新描述：2013年8月13日|2013年8月|AD FS 2。0
+|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata 在 Windows Server 2012 中未包含 WS-TRUST 和 WS-同盟端點的 MEX 端點資訊|5月2013|AD FS 2。1
+|[2790338](https://support.microsoft.com/kb/2790338)|Active Directory 同盟服務（AD FS）2.0 的更新彙總套件3描述|2013 年 3 月|AD FS 2。0

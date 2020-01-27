@@ -3,20 +3,18 @@ title: 瞭解和設定 Azure 監視器
 description: Azure 監視器的詳細設定資訊，以及如何在 Windows Server 2016 和2019中設定儲存空間直接存取叢集的電子郵件和 sms 警示。
 keywords: 儲存空間直接存取，azure 監視器，通知，電子郵件，sms
 ms.assetid: ''
-ms.prod: ''
+ms.prod: windows-server-threshold
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
-ms.date: 3/26/2019
-ms.localizationpriority: ''
-ms.openlocfilehash: 4a11ad670bdd26cdc771bb5ae357db4928995bb8
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.date: 01/10/2020
+ms.openlocfilehash: 933a22dad76f80b8ff76f604089bfd7c9bf3e207
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352614"
----
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919973"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>使用 Azure 監視器來傳送健全狀況服務錯誤的電子郵件
 
@@ -26,6 +24,14 @@ Azure 監視器可藉由提供全方位的解決方案，以便收集、分析�
 
 這對您的內部部署超融合式叢集特別有用。 在 Azure 監視器整合後，您將能夠設定電子郵件、文字（SMS）和其他警示，以便在叢集發生問題時 ping 您（或者，當您想要根據所收集的資料來標示一些其他活動時）。 以下將簡短說明 Azure 監視器的運作方式、如何安裝 Azure 監視器，以及如何設定它來傳送通知給您。
 
+如果您使用的是 System Center，請查看同時監視 Windows Server 2019 和 Windows Server 2016 儲存空間直接存取叢集的[儲存空間直接存取管理元件](https://www.microsoft.com/download/details.aspx?id=100782)。
+
+此管理組件包含：
+
+* 實體磁片健全狀況和效能監視
+* 存放裝置節點健全狀況和效能監視
+* 存放集區健全狀況和效能監視
+* 磁片區復原類型與重復資料刪除狀態
 
 ## <a name="understanding-azure-monitor"></a>瞭解 Azure 監視器
 
@@ -127,7 +133,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 8. 在 [安裝準備就緒] 頁面上，檢閱您的選擇，然後按一下 [安裝]。
 9. 在 [設定成功完成] 頁面上，按一下 [完成]。
 
-完成時，[Microsoft 管理代理程式] Microsoft Monitoring Agent 會出現在 [控制台] 裡的步驟，安裝代理程式 您可以檢閱您的組態，並確認代理程式已連線到 Log Analytics。 已連線時，在 [Azure Log Analytics] 索引標籤上，代理程式會顯示下列訊息︰**Microsoft Monitoring Agent 已成功連線到 Microsoft Log Analytics 服務。** 
+完成時，[Microsoft 管理代理程式] **Microsoft Monitoring Agent** 會出現在 **[控制台] **裡的步驟，安裝代理程式 您可以檢閱您的組態，並確認代理程式已連線到 Log Analytics。 已連線時，在 [Azure Log Analytics] 索引標籤上，代理程式會顯示下列訊息︰**Microsoft Monitoring Agent 已成功連線到 Microsoft Log Analytics 服務。** 
 
 ![MMA 對 Log Analytics 的連線狀態](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
@@ -234,7 +240,7 @@ Event | where (EventLevelName == "Error")
 10. 按一下 [確定] 以完成動作群組。 
 11. 按一下 [建立警示規則] 以完成警示規則。 此警示規則會立即開始執行。<br><br> ![完成建立新的警示規則](media/configure-azure-monitor/alert-rule-01.png)<br> 
 
-## <a name="see-alerts"></a>查看警示
+### <a name="example-alert"></a>範例警示
 
 如需參考，這是 Azure 中範例警示的外觀。
 

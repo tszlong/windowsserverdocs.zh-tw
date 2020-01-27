@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5291c30baf3aff4a9b3540f0bbaa5193aba176aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ff38072855d0fd44a083ed6b3c931a6a0ed9f88a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369594"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947950"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -66,18 +66,18 @@ ms.locfileid: "71369594"
   
 Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn.microsoft.com/library/windows/desktop/hh848037(v=vs.85).aspx)的新功能。 自動維護合併了許多不同的功能，這些功能是分別用來管理它自己的排程及執行邏輯。 這項合併可以讓所有這些元件使用最少的系統資源、穩定運作、尊重新裝置類型的新 [連線待命](https://msdn.microsoft.com/library/windows/hardware/jj248729.aspx) 狀態，並使用較少的可攜式裝置電池電力。  
   
-因為 Windows Update 是 Windows 8 和 Windows Server 2012 中自動維護的一部分，其本身設定日期和時間來安裝更新的內部排程已不再有效。 為協助確保您企業中的所有裝置與電腦 (包括執行 Windows 8 與 Windows Server 2012 的所有裝置與電腦) 有一致且可預期的重新啟動行為，請參閱 Microsoft 知識庫文章 [2885694](https://support.microsoft.com/kb/2885694) (或參閱 2013 年 10 月的累積彙總套件 [2883201](https://support.microsoft.com/kb/2883201))，然後設定下列 WSUS 部落格文章中描述的原則設定： [為 Windows 8 與 Windows Server 2012 啟用更好預測的 Windows Update 體驗 (KB 2885694)](http://blogs.technet.com/b/wsus/archive/2013/10/08/enabling-a-more-predictable-windows-update-experience-for-windows-8-and-windows-server-2012-kb-2885694.aspx)。  
+因為 Windows Update 是 Windows 8 和 Windows Server 2012 中自動維護的一部分，其本身設定日期和時間來安裝更新的內部排程已不再有效。 為協助確保您企業中的所有裝置與電腦 (包括執行 Windows 8 與 Windows Server 2012 的所有裝置與電腦) 有一致且可預期的重新啟動行為，請參閱 Microsoft 知識庫文章 [2885694](https://support.microsoft.com/kb/2885694) (或參閱 2013 年 10 月的累積彙總套件 [2883201](https://support.microsoft.com/kb/2883201))，然後設定下列 WSUS 部落格文章中描述的原則設定： [為 Windows 8 與 Windows Server 2012 啟用更好預測的 Windows Update 體驗 (KB 2885694)](https://blogs.technet.com/b/wsus/archive/2013/10/08/enabling-a-more-predictable-windows-update-experience-for-windows-8-and-windows-server-2012-kb-2885694.aspx)。  
 
 ## <a name="BKMK_NewWS2012R2"></a>Windows Server 2012 R2 中 AD DS 的新功能
 
 下表摘要說明 Windows Server 2012 R2 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能更詳細的說明，包含這些功能的需求，請參閱 [Windows Server 2012 R2 中 Active Directory 的新功能](https://technet.microsoft.com/library/dn268294.aspx)。  
 
-|功能|描述|  
+|功能|說明|  
 |-----------|---------------|  
 |[Workplace Join](https://technet.microsoft.com/library/dn280945.aspx)|可讓資訊工作者將其個人裝置與公司聯結，以存取公司資源和服務。|  
 |[Web 應用程式 Proxy](https://technet.microsoft.com/library/dn280942.aspx)|運用新的遠端存取角色服務提供 Web 應用程式的存取。|  
 |[Active Directory 同盟服務](https://technet.microsoft.com/library/hh831502.aspx)|AD FS 簡化了部署與改良功能，讓使用者可以從個人裝置存取資源，並協助 IT 部門管理存取控制。|  
-|[SPN 和 UPN 的唯一性](https://technet.microsoft.com/library/dn535779.aspx)|執行 Windows Server 2012 R2 的網域控制站會封鎖建立重複的服務主體名稱（Spn）和使用者主體名稱（Upn）。|  
+|[SPN 和 UPN 的唯一性](https://technet.microsoft.com/library/dn535779.aspx)|執行 Windows Server 2012 R2 的網域控制站會阻止建立重複的服務主體名稱 (SPN) 與使用者主體名稱 (UPN)。|  
 |[Winlogon 自動重新啟動登入 (ARSO)](https://technet.microsoft.com/library/dn535772.aspx)|讓鎖定螢幕應用程式可在 Windows 8.1 裝置上重新啟動並使用。|  
 |[TPM 金鑰證明](https://technet.microsoft.com/library/dn581921.aspx)|讓 CA 以密碼編譯方式證明發行的憑證中，憑證要求者私密金鑰實際上受信賴平台模組 (TPM) 的保護。|  
 |[認證保護和管理](https://technet.microsoft.com/library/dn408190.aspx)|新的認證保護與網域驗證控制可減少認證被盜的機會。|  
@@ -91,7 +91,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 
 下表摘要說明 Windows Server 2012 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能的詳細說明，包括其需求，請參閱[Active Directory Domain Services （AD DS）中的新](https://technet.microsoft.com/library/hh831477.aspx)功能。  
   
-|功能|描述|  
+|功能|說明|  
 |-----------|---------------|  
 |Active Directory 型啟用 (AD BA)；請參閱 [大量啟用概觀](https://technet.microsoft.com/library/hh831612.aspx)|簡化大量軟體授權發佈和管理的設定工作。|  
 |[Active Directory 同盟服務（AD FS）](https://technet.microsoft.com/library/hh831502.aspx)|透過伺服器管理員新增角色安裝、簡化信任設定、自動化信任管理、SAML 通訊協定支援等等。|  
@@ -129,7 +129,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 |**受 WSUS 管理**<br /><br />-在不同的小時/天內錯開安裝|為應該一起更新的不同電腦群組設定目標群組<br /><br />為先前的案例使用上述步驟<br /><br />為不同的目標群組設定不同期限|  
 |**不受 WSUS 管理-不支援期限**<br /><br />-在不同時間錯開安裝|**原則**：設定自動更新 (啟用)<br /><br />設定自動更新： 4-自動下載和排程安裝<br /><br />**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<br /><br />**原則：** 自動維護隨機延遲 (啟用)<br /><br />將 [定期維護隨機延遲] 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<br /><br />-更新將會在設定的維護時間加上隨機延遲後進行安裝。<br /><br />-每台機器的重新開機只會在3天后進行<br /><br />或者，為每個電腦群組設定不同的維護時間|  
 
-如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](http://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。  
+如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](https://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。  
 
 ## <a name="BKMK_InstallationChanges"></a>AD DS 伺服器角色安裝變更
 
@@ -158,10 +158,10 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 |||||  
 |-|-|-|-|  
 |加密類型或原則|Windows Server 2008 預設值|Windows Server 2012 和 Windows Server 2008 R2 預設值|留言|  
-|AllowNT4Crypto|停用|停用|協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558)。|  
-|DES|啟用|停用|Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （ https://go.microsoft.com/fwlink/?LinkId=177717)|  
-|CBT/整合式驗證的擴充保護|不適用|啟用|請參閱 microsoft 資訊[安全摘要報告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和 microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251)。<br /><br />如有需要，請在 Microsoft 知識庫[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) （ https://go.microsoft.com/fwlink/?LinkId=186394) 中查看並安裝此修補程式。|  
-|LMv2|啟用|停用|Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251)|  
+|AllowNT4Crypto|停用|停用|協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558) 。|  
+|DES|Enabled|停用|Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （ https://go.microsoft.com/fwlink/?LinkId=177717)|  
+|CBT/整合式驗證的擴充保護|無|Enabled|請參閱 microsoft 資訊[安全摘要報告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和 microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251) 。<br /><br />如有需要，請在 Microsoft 知識庫[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) （ https://go.microsoft.com/fwlink/?LinkId=186394) 中查看並安裝此修補程式。|  
+|LMv2|Enabled|停用|Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
 ## <a name="BKMK_SysReqs"></a>作業系統需求
 
@@ -206,10 +206,10 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
 
 |如果您執行這些版本|您可以升級到這些版本|  
 |-------------------------------------|-------------------------------------|  
-|Windows Server 2008 Standard (含 SP2)<br /><br />或<br /><br />Windows Server 2008 Enterprise (含 SP2)|Windows Server 2012 Standard<br /><br />或<br /><br />Windows Server 2012 Datacenter|  
+|Windows Server 2008 Standard (含 SP2)<br /><br />或者<br /><br />Windows Server 2008 Enterprise (含 SP2)|Windows Server 2012 Standard<br /><br />或者<br /><br />Windows Server 2012 Datacenter|  
 |Windows Server 2008 Datacenter (含 SP2)|Windows Server 2012 Datacenter|  
 |Windows Web Server 2008|Windows Server 2012 Standard|  
-|Windows Server 2008 R2 Standard (含 SP1)<br /><br />或<br /><br />Windows Server 2008 R2 Enterprise (含 SP1)|Windows Server 2012 Standard<br /><br />或<br /><br />Windows Server 2012 Datacenter|  
+|Windows Server 2008 R2 Standard (含 SP1)<br /><br />或者<br /><br />Windows Server 2008 R2 Enterprise (含 SP1)|Windows Server 2012 Standard<br /><br />或者<br /><br />Windows Server 2012 Datacenter|  
 |Windows Server 2008 R2 Datacenter (含 SP1)|Windows Server 2012 Datacenter|  
 |Windows Web Server 2008 R2|Windows Server 2012 Standard|  
   
@@ -279,17 +279,17 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 
 下表涵蓋常見的整合 Active Directory Microsoft 應用程式。 表格內容包含應用程式可以安裝在哪些版本的 Windows Server 上，以及採用 Windows Server 2012 DC 是否會對應用程式相容性產生影響。  
 
-|產品|附註|  
+|產品|備註|  
 |-----------|---------|  
-|[Microsoft Configuration Manager 2007](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2007 含 SP2 (包含 Configuration Manager 2007 R2 和 Configuration Manager 2007 R3)：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter**注意：** 雖然這些都是用戶端的完整支援，但並不打算新增使用 Configuration Manager 2007 作業系統部署功能將這些部署為作業系統的支援。 同時，也沒有任何 Windows Server 2012 的 SKU 支援站台伺服器或站台系統。|  
+|[Microsoft Configuration Manager 2007](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2007 含 SP2 (包含 Configuration Manager 2007 R2 和 Configuration Manager 2007 R3)：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter**注意：** 雖然這些都是用戶端的完整支援，但並不打算新增使用 Configuration Manager 2007 作業系統部署功能將這些部署為作業系統的支援。 同時，也沒有任何 Windows Server 2012 的 SKU 支援站台伺服器或站台系統。|  
 |[Microsoft SharePoint 2007](https://support.microsoft.com/kb/2728964)|Microsoft Office SharePoint Server 2007 不能安裝在 Windows Server 2012 上。|  
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在 <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<br /><br />在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<br /><br />SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<br /><br />SharePoint Server 2010 必要條件安裝程式（Prerequisiteinstaller.exe）失敗，並出現「此程式有相容性問題」錯誤。 按一下 [執行程式但不取得協助]，會顯示錯誤「正在驗證 SharePoint 是否可以&#124;安裝 sharepoint server 2010 （不含 service pack），無法安裝在 Windows Server 2012 上」。|  
 |[Microsoft SharePoint 2013](https://technet.microsoft.com/library/cc262485(v=office.15).aspx)|伺服器陣列中的資料庫伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<br /><br />含內建資料庫的單一伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<br /><br />伺服器陣列中的前端網頁伺服器和應用程式伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter。|  
-|[Microsoft System Center Configuration Manager 2012](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Configuration Manager Service Pack 1：<br /><br />Microsoft 會在發行 Service Pack 1 時，在我們的用戶端支援基礎新增下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<br /><br />所有站台伺服器角色 (包含站台伺服器、SMS 提供者和管理點) 都可以部署在含下列作業系統版本的伺服器：<br /><br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[Microsoft System Center Configuration Manager 2012](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Configuration Manager Service Pack 1：<br /><br />Microsoft 會在發行 Service Pack 1 時，在我們的用戶端支援基礎新增下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<br /><br />所有站台伺服器角色 (包含站台伺服器、SMS 提供者和管理點) 都可以部署在含下列作業系統版本的伺服器：<br /><br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |[Microsoft Lync Server 2013](https://technet.microsoft.com/library/gg412883.aspx)|Lync Server 2013 需要搭配 Windows Server 2008 R2 或 Windows Server 2012。 它不能在 Server Core 安裝上執行， 可以在 [虛擬伺服器](https://technet.microsoft.com/library/gg399035.aspx)上執行。|  
 |[Lync Server 2010](https://support.microsoft.com/kb/2777359)|如果安裝了 [Lync Server 的 2012 年 10 月累計更新](https://support.microsoft.com/?kbid=2493736) ，Lync Server 2010 便無法安裝在新的 (而非升級的) Windows Server 2012 安裝。 不支援將現有 Lync Server 2010 安裝的作業系統升級到 Windows Server 2012。 Windows Server 2012 也不支援 Microsoft Lync Server 2010 群組聊天伺服器。|  
-|[System Center 2012 Endpoint Protection](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Endpoint Protection Service Pack 1 會更新用戶端支援基礎，以包含下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
-|[System Center 2012 Forefront Endpoint Protection](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|FEP 2010 含更新彙總套件 1 會更新用戶端支援基礎，以包含下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[System Center 2012 Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Endpoint Protection Service Pack 1 會更新用戶端支援基礎，以包含下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[System Center 2012 Forefront Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|FEP 2010 含更新彙總套件 1 會更新用戶端支援基礎，以包含下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |Forefront Threat Management Gateway (TMG)|僅支援 TMG 在 Windows Server 2008 和 Windows Server 2008 R2 上執行。 如需詳細資訊，請參閱 [Forefront TMG 的系統需求](https://technet.microsoft.com/library/dd896981.aspx)。|  
 |Windows Server Update Services|這個版本的 WSUS 已經可以支援 Windows 8 電腦或 Windows Server 2012 電腦做為用戶端。|  
 |Windows Server Update Services 3.0|更新知識庫文章[2734608](https://support.microsoft.com/kb/2734608)讓執行 WINDOWS SERVER UPDATE SERVICES （WSUS） 3.0 SP2 的伺服器能夠更新執行 Windows 8 或 Windows Server 2012：**注意：** 具有獨立 wsus 3.0 SP2 環境或 System Center Configuration Manager 2007 Service PACK 2 環境搭配 WSUS 3.0 SP2 的客戶需要[2734608](https://support.microsoft.com/kb/2734608)以適當的方式管理以 windows 8 為基礎的電腦或以 windows Server 2012 為基礎的電腦做為用戶端。|  

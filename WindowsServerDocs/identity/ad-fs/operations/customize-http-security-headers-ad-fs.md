@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b81d498c6e601fcce0a0760cb4877fcc98c8beb9
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949209"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725793"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>使用 AD FS 2019 自訂 HTTP 安全性回應標頭 
  
@@ -32,11 +32,11 @@ ms.locfileid: "75949209"
 在討論標頭之前，讓我們先來看一些案例，建立系統管理員自訂安全性標頭的需求 
  
 ## <a name="scenarios"></a>案例 
-1. 系統管理員已啟用[**HTTP 嚴格傳輸安全性（HSTS）** ](#http-strict-transport-security-hsts) （強制所有透過 HTTPS 加密的連線），以保護可能使用 HTTP 從可能遭到駭客入侵的公用 wifi 存取點存取 web 應用程式的使用者。 她想要啟用子域的 HSTS 來進一步加強安全性。  
-2. 系統管理員已設定[**X 框架選項**](#x-frame-options)回應標頭（防止轉譯 iFrame 中的任何網頁），以保護網頁不被 clickjacked。 不過，她必須自訂標頭值，這是因為新的商務需求，會從具有不同來源（網域）的應用程式顯示資料（在 iFrame 中）。
-3. 系統管理員已啟用[**X-XSS 保護**](#x-xss-protection)（防止跨腳本攻擊），以在瀏覽器偵測到跨腳本攻擊時，淨化並封鎖頁面。 不過，她必須自訂標頭，以允許頁面在經過清理之後載入。  
+1. 系統管理員已啟用[**HTTP 嚴格傳輸安全性（HSTS）** ](#http-strict-transport-security-hsts) （強制所有透過 HTTPS 加密的連線），以保護可能使用 HTTP 從可能遭到駭客入侵的公用 wifi 存取點存取 web 應用程式的使用者。 他們想要啟用子域的 HSTS 來進一步加強安全性。  
+2. 系統管理員已設定[**X 框架選項**](#x-frame-options)回應標頭（防止轉譯 iFrame 中的任何網頁），以保護網頁不被 clickjacked。 不過，他們需要自訂標頭值，這是因為新的商務需求，會從具有不同來源（網域）的應用程式顯示資料（在 iFrame 中）。
+3. 系統管理員已啟用[**X-XSS 保護**](#x-xss-protection)（防止跨腳本攻擊），以在瀏覽器偵測到跨腳本攻擊時，淨化並封鎖頁面。 不過，他們需要自訂標頭，以允許頁面在經過清理之後載入。  
 4. 系統管理員必須啟用[**跨原始來源資源分享（CORS）** ](#cross-origin-resource-sharing-cors-headers) ，並將 AD FS 上的來源（網域）設定為允許單一頁面應用程式存取具有另一個網域的 Web API。  
-5. 系統管理員已啟用[**內容安全性原則（CSP）** ](#content-security-policy-csp)標頭，藉由禁止任何跨網域要求，防止跨網站腳本和資料插入攻擊。 不過，由於新的商務需求，她必須自訂標頭，以允許網頁從任何來源載入影像，並將媒體限制為受信任的提供者。  
+5. 系統管理員已啟用[**內容安全性原則（CSP）** ](#content-security-policy-csp)標頭，藉由禁止任何跨網域要求，防止跨網站腳本和資料插入攻擊。 不過，由於新的商務需求，他們需要自訂標頭，以允許網頁從任何來源載入影像，並將媒體限制為受信任的提供者。  
 
  
 ## <a name="http-security-response-headers"></a>HTTP 安全性回應標頭 
@@ -84,7 +84,7 @@ AD FS 預設不允許外部應用程式在執行互動式登入時使用 Iframe�
  
 這個 HTTP 安全性回應標頭是用來與瀏覽器通訊，不論它是否可以在 &lt;框架中轉譯頁面&gt;/&lt;iframe&gt;。 標頭可設為下列其中一個值： 
  
-- **拒絕**–畫面格中的頁面將不會顯示。 這是預設值且為建議的設定。  
+- **拒絕**–畫面格中的頁面將不會顯示。 這是預設和建議的設定。  
 - **sameorigin** –如果原點與網頁的來源相同，則頁面只會顯示在框架中。 除非所有祖系也位於相同的來源，否則選項不會非常有用。  
 - **允許-從 <specified origin>** -只有在原點（例如， https://www. "）時，此頁面才會顯示在框架中。com）符合標頭中的特定來源。 
 
@@ -111,7 +111,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
  
 - **0** –停用 XSS 篩選。 不建議使用。  
 - **1** –啟用 XSS 篩選。 如果偵測到 XSS 攻擊，browser 會淨化該頁面。   
-- **1; 模式 = 封鎖**–啟用 XSS 篩選。 如果偵測到 XSS 攻擊，瀏覽器將會防止轉譯頁面。 這是預設值且為建議的設定。  
+- **1; 模式 = 封鎖**–啟用 XSS 篩選。 如果偵測到 XSS 攻擊，瀏覽器將會防止轉譯頁面。 這是預設和建議的設定。  
 
 #### <a name="x-xss-protection-customization"></a>X-XSS-保護自訂 
 根據預設，標頭會設定為 1;mode = block;不過，系統管理員可以透過 `Set-AdfsResponseHeaders` Cmdlet 來修改此值。  
@@ -133,7 +133,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection"
 ```
 
 ### <a name="cross-origin-resource-sharing-cors-headers"></a>跨原始來源資源分享（CORS）標頭 
-網頁瀏覽器安全性可防止網頁在腳本內起始跨原始來源要求。 不過，有時您可能會想要存取其他來源（網域）中的資源。 CORS 是一種 W3C 標準，可讓伺服器放寬相同的原始原則。 使用 CORS，伺服器可以明確允許某些跨源要求，然而拒絕其他要求。  
+網頁瀏覽器安全性可防止網頁在腳本內起始跨原始來源要求。 不過，有時您可能會想要存取其他來源（網域）中的資源。 CORS 是一種 W3C 標準，可讓伺服器放寬相同的原始原則。 使用 CORS，伺服器可以明確允許某些跨原始來源要求，同時拒絕其他要求。  
  
 為了進一步瞭解 CORS 要求，讓我們逐步解說單一頁面應用程式（SPA）需要使用不同網域呼叫 Web API 的案例。 此外，請考慮在 ADFS 2019 上設定 SPA 和 API，且 AD FS 已啟用 CORS，也就是 AD FS 可以識別 HTTP 要求中的 CORS 標頭、驗證標頭值，並在回應中包含適當的 CORS 標頭（詳細資料，以瞭解如何啟用和在下面的 CORS 自訂區段中，設定 AD FS 2019 上的 CORS）。 範例流程： 
 
@@ -183,12 +183,12 @@ CSP 標頭的自訂牽涉到修改安全性原則，以允許載入網頁的資�
  
 **Default-src**指示詞是用來修改[-src](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src)指示詞，而不需要明確列出每個指示詞。 例如，在下列範例中，原則1與原則2相同。  
 
-原則 1 
+原則1 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src 'self'" 
 ```
  
-原則 2
+原則2
 ```PowerShell 
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
