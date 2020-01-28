@@ -8,13 +8,13 @@ author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.date: 12/16/2019
-ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.date: 01/23/2020
+ms.openlocfilehash: 0f3ea0dacc200adaaec5064d19754ad6de0042a6
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162499"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725773"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)
 
@@ -43,23 +43,38 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期將於 2020 年 1 月
 
 如需詳細資訊，請參閱[延伸安全性更新常見問題集](https://www.microsoft.com/cloud-platform/extended-security-updates)。
 
+## <a name="how-to-use-extended-security-updates"></a>使用延伸安全性更新的方法
+
+如果您在 Azure 中執行 Windows Server 2008/2008 R2 VM，其會自動啟用延伸安全性更新。 您不需要執行任何設定，也不需額外付費即可使用 Azure VM 的延伸安全性更新。 如果設定為接收更新，則延伸安全性更新會自動傳遞至 Azure VM。
+
+針對其他環境 (例如內部部署 VM 或實體伺服器)，您必須手動要求並設定延伸安全性更新。 如果您已購買延伸安全性更新，這些更新可透過大量授權方案取得，例如 Enterprise 合約 (EA)、Enterprise 合約訂用帳戶 (EAS)、註冊教育解決方案 (EES)，或伺服器和雲端註冊 (SCE)，您可以使用下列其中一個步驟來取得啟用金鑰：
+
+* 登入 [Microsoft 大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)以檢視並取得啟用金鑰。
+* 在 Azure 入口網站中註冊獲得延伸安全性更新，以取得 Windows Server 2008/R2 啟用金鑰。
+    * 如需完成此程序的步驟方法，請參閱本文中的下列步驟。
+
 ## <a name="register-for-extended-security-updates"></a>註冊延伸安全性更新
 
 若要使用延伸安全性更新，您可以建立多個啟用金鑰(MAK)，並將其套用至 Windows Server 2008 和 2008 R2 電腦。 此金鑰可讓 Windows Update 伺服器知道您可以繼續接收安全性更新。 即使您只使用內部部署電腦，也能使用 Azure 入口網站來註冊延伸安全性更新及管理這些金鑰。
 
 > [!NOTE]
-> 如果您在 Azure 中執行 Windows Server 2008/2008 R2 VM，則不需要執行下列步驟。 延伸安全性更新會自動啟用 Azure VM。 您不需要建立延伸安全性更新資源和金鑰，也不需額外付費即可使用 Azure VM 的延伸安全性更新。
+>
+> 如果您正在 Azure VM 上執行 Windows Server 2008 和 2008 R2，則不需要註冊延伸安全性更新。 對於其他環境 (例如內部部署 VM 或實體伺服器)，請先[購買延伸安全性更新](https://www.microsoft.com/licensing/how-to-buy/how-to-buy)，再嘗試註冊並使用該更新。
 
-> [!NOTE]
-> 依照下列步驟進行之前，請先傳送電子郵件至 [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com)，並提供這項資訊以供核准列入至白名單：
+> [!IMPORTANT]
+>
+> 請確定您已遵循先前的步驟，透過大量授權方案購買延伸安全性更新。 依照下列步驟進行之前，請先傳送電子郵件至 [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com)，並提供下列資訊以供核准使用該功能：
+>
 > * 客戶名稱：
 > * Azure 訂用帳戶：
 > * EA 合約編號 (適用於 ESU)：
 > * ESU 伺服器數目：
-> 
-> 小組會查看提供的資訊，並將使用者/訂用帳戶新增至白名單。
-> 
-> 如果要求者未列入白名單，可能會發生下列錯誤：[在命名空間 'Microsoft.WindowsESU' 中找不到資源類型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
+>
+> 小組會查看提供的資訊，並將使用者/訂用帳戶新增至核准清單。
+>
+> 如果要求者未列入核准清單，可能會發生下列錯誤：
+>
+> [在命名空間 'Microsoft.WindowsESU' 中找不到資源類型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
 
 若要為延伸安全性更新註冊非 Azure VM 並建立金鑰，請在 Azure 入口網站中完成下列步驟：
 
