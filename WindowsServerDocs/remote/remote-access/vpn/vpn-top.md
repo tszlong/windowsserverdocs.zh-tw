@@ -9,16 +9,16 @@ ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b647d8cbf9586408b49c1519b57d32e596fce10
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fdd409dee5a7a957580daeeb05209336edfd86f6
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404231"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822611"
 ---
 # <a name="virtual-private-networking-vpn"></a>虛擬私人網路 (VPN)
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
 
 ## <a name="ras-gateway-as-a-single-tenant-vpn-server"></a>作為單一租使用者 VPN 伺服器的 RAS 閘道
 
@@ -38,16 +38,16 @@ ms.locfileid: "71404231"
 >您也可以將 RAS 閘道部署為多租使用者 VPN 伺服器，以與軟體定義網路（SDN）或 DirectAccess 伺服器搭配使用。 如需詳細資訊，請參閱[RAS 閘道](https://docs.microsoft.com/windows-server/remote/remote-access/ras-gateway/ras-gateway)、[軟體定義網路功能（SDN）](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)和[DirectAccess](https://docs.microsoft.com/windows-server/remote/remote-access/directaccess/directaccess)。
 
 ## <a name="related-topics"></a>相關主題
-- [ALWAYS ON VPN 特性和功能](vpn-map-da.md)：在本主題中，您將瞭解 Always On VPN 的特性和功能。 
+- [ALWAYS ON vpn 特性和功能](vpn-map-da.md)：在本主題中，您將瞭解 Always On VPN 的特性和功能。 
 
-- [在 Windows 10 中設定 VPN 裝置通道](vpn-device-tunnel-config.md)：Always On VPN 可讓您為裝置或電腦建立專用的 VPN 設定檔。 Always On VPN 連接包含兩種類型的通道：_裝置_通道和_使用者_通道。 裝置通道用於登入連線案例和裝置管理用途。 使用者通道可讓使用者透過 VPN 伺服器存取組織資源。
+- [在 Windows 10 中設定 Vpn 裝置通道](vpn-device-tunnel-config.md)： Always On VPN 可讓您為裝置或電腦建立專用的 vpn 設定檔。 Always On VPN 連接包含兩種類型的通道：_裝置_通道和_使用者_通道。 裝置通道用於登入連線案例和裝置管理用途。 使用者通道可讓使用者透過 VPN 伺服器存取組織資源。
 
-- [適用于 Windows Server 2016 和 windows 10 的 ALWAYS ON VPN 部署](always-on-vpn/deploy/always-on-vpn-deploy.md)：提供將遠端存取部署為點對站 VPN 連線的單一租使用者 VPN RAS 閘道的指示，以允許您的遠端員工使用 Always On VPN 連線連線到您的組織網路。 建議您參閱設計和部署指南，以瞭解此部署中所使用的每項技術。
+- [適用于 Windows Server 2016 和 windows 10 的 ALWAYS ON VPN 部署](always-on-vpn/deploy/always-on-vpn-deploy.md)：提供將遠端存取部署為點對站 vpn 連線的單一租使用者 Vpn RAS 閘道的指示，讓您的遠端員工能夠 Always On VPN 連線連接到您的組織網路。 建議您參閱設計和部署指南，以瞭解此部署中所使用的每項技術。
 
 - [Windows 10 VPN 技術指南](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide)：引導您完成企業 VPN 解決方案中的 Windows 10 用戶端所做的決定，以及如何設定您的部署。 您可以找到 VPNv2 設定服務提供者（CSP）的參考，並使用 Microsoft Intune 和適用于 Windows 10 的 VPN 設定檔範本來提供行動裝置管理（MDM）設定指示。
 
-- [如何在 System Center Configuration Manager 中建立 VPN 設定檔](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)：在本主題中，您將瞭解如何在 System Center Configuration Manager （SCCM）中建立 VPN 設定檔。
+- [如何在 Configuration Manager 中建立 vpn 設定檔](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)：在本主題中，您將瞭解如何在 Configuration Manager 中建立 vpn 設定檔。
 
-- [設定 Windows 10 用戶端 ALWAYS ON VPN](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections)連線：本主題描述 ProfileXML 選項和架構，以及如何建立 ProfileXML VPN。 設定伺服器基礎結構之後，您必須將 Windows 10 用戶端電腦設定為使用 VPN 連線與該基礎結構進行通訊。
+- [設定 Windows 10 用戶端 ALWAYS ON VPN](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections)連線：本主題說明 ProfileXML 選項和架構，以及如何建立 ProfileXML VPN。 設定伺服器基礎結構之後，您必須將 Windows 10 用戶端電腦設定為使用 VPN 連線與該基礎結構進行通訊。
 
-- [VPN 設定檔選項](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)：本主題說明 Windows 10 中的 VPN 設定檔設定，並瞭解如何使用 Intune 或 SCCM 來設定 VPN 設定檔。 您可以使用 VPNv2 CSP 中的 ProfileXML 節點來設定 Windows 10 中的所有 VPN 設定。
+- [Vpn 設定檔選項](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)：本主題說明 Windows 10 中的 vpn 設定檔設定，並瞭解如何使用 Intune 或 Configuration Manager 來設定 vpn 設定檔。 您可以使用 VPNv2 CSP 中的 ProfileXML 節點來設定 Windows 10 中的所有 VPN 設定。

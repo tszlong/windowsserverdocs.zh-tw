@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 12/20/2019
+ms.date: 1/16/2019
 description: 適用于 IT 專業人員之 Windows Server 的內部部署儲存體檔中的新增和更新的主題。
-ms.openlocfilehash: d50d4ca5b49b7f895fad3d3866226f95c55ae485
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: eb0e4f5cd357718be298290930bdf6fb9f7f041f
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352781"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822601"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中的儲存空間主題變更歷程記錄
 
@@ -24,7 +24,13 @@ ms.locfileid: "75352781"
 
 > 如果您要尋找 Windows Server 的更新歷程記錄，請參閱[windows 10 和 Windows Server 2019 更新歷程記錄](https://support.microsoft.com/help/4464619)或[Windows server 2016 更新歷程記錄](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
-## <a name="december-2019"></a>2019 年 12 月
+## <a name="january-2020"></a>2020年1月
+
+| 新增或已變更的主題 | 說明 |
+| --- | --- |
+|[了解和部署持續性記憶體](storage-spaces/deploy-pmem.md) | 已新增已知硬體問題。 |
+
+## <a name="december-2019"></a>2019年12月
 
 | 新增或已變更的主題                                        | 說明 |
 | ---                                                         | ---           |

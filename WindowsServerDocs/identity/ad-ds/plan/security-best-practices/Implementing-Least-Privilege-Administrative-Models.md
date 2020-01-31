@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8ad9b00070d5daef2e5aee43cfdee2d192bddae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61bc1ccb7d9b09a17713946b5b8c2cc352f43ac
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367726"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822091"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>實作最低權限管理模型
 
@@ -253,7 +253,7 @@ ms.locfileid: "71367726"
 3. 哪些使用者應該被授與角色的成員資格。  
 4. 如何執行角色成員資格的管理。  
 
-在許多環境中，手動建立以角色為基礎的存取控制來管理 Active Directory 環境，可能是執行和維護的挑戰。 如果您已清楚定義管理 IT 基礎結構的角色和責任，您可能會想要利用其他工具來協助您建立可管理的原生 RBAC 部署。 例如，如果您的環境中使用 Forefront Identity Manager （FIM），您可以使用 FIM 自動建立和擴展系統管理角色，這可以簡化進行中的管理工作。 如果您使用 System Center Configuration Manager （SCCM）和 System Center Operations Manager （SCOM），您可以使用應用程式專屬的角色來委派管理和監視功能，並在中跨系統強制執行一致的設定和審核網域。 如果您已執行公開金鑰基礎結構（PKI），您可以發行並要求負責管理環境之 IT 人員的智慧卡。 使用 FIM 認證管理（FIM CM），您甚至可以將角色和認證的管理結合為系統管理人員。  
+在許多環境中，手動建立以角色為基礎的存取控制來管理 Active Directory 環境，可能是執行和維護的挑戰。 如果您已清楚定義管理 IT 基礎結構的角色和責任，您可能會想要利用其他工具來協助您建立可管理的原生 RBAC 部署。 例如，如果您的環境中使用 Forefront Identity Manager （FIM），您可以使用 FIM 自動建立和擴展系統管理角色，這可以簡化進行中的管理工作。 如果您使用 Microsoft Endpoint Configuration Manager 和 System Center Operations Manager （SCOM），您可以使用應用程式專屬的角色來委派管理和監視功能，並在中跨系統強制執行一致的設定和審核網域。 如果您已執行公開金鑰基礎結構（PKI），您可以發行並要求負責管理環境之 IT 人員的智慧卡。 使用 FIM 認證管理（FIM CM），您甚至可以將角色和認證的管理結合為系統管理人員。  
 
 在其他情況下，組織最好考慮部署協力廠商 RBAC 軟體，以提供「現成可用」的功能。 適用于 Active Directory、Windows 和非 Windows 目錄和作業系統之 RBAC 的商業、現成（COTS）解決方案是由許多廠商所提供。 在原生解決方案和協力廠商產品之間進行選擇時，您應該考慮下列因素：  
 

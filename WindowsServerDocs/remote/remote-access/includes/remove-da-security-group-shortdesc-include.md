@@ -1,1 +1,1 @@
-**DirectAccess 安全性群組中移除裝置。** 當使用者成功移轉，從 DirectAccess 安全性群組中移除他們的裝置。 之前先移除您的環境中的 DirectAccess，請檢查 DirectAccess 安全性群組是否空白。 **不這麼做**移除的安全性群組，如果它仍然包含成員。 如果您移除的安全性群組中的成員，您可能會離開而不需要遠端存取的員工從他們的裝置。 決定裝置指派資訊，並探索哪些裝置屬於每個使用者使用 Microsoft System Center Configuration Manager 或 Microsoft Intune。 
+**從 DirectAccess 安全性群組中移除裝置。** 當使用者成功遷移時，您會從 DirectAccess 安全性群組中移除其裝置。 從您的環境移除 DirectAccess 之前，請檢查 DirectAccess 安全性群組是否是空的。 如果安全性群組仍包含成員，**請勿**將它移除。 如果您確實移除具有成員的安全性群組，您會有風險離開員工，而不需要從他們的裝置進行遠端存取。 使用 Microsoft 端點 Configuration Manager 或 Microsoft Intune 來判斷裝置指派資訊，並探索哪些裝置屬於每位使用者。 

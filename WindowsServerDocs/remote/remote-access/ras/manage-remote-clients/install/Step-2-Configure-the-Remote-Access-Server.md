@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: c0257b98-5633-4264-9df6-b6ffae80592c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b4e3c2f4a27652e7b28b826981d192d6a4c6c107
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c112898217eb05ad2fd9b387f401ce129b47e54
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404561"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822691"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>步驟2設定遠端存取服務器
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404561"
 
 本主題說明如何設定遠端系統管理 DirectAccess 用戶端所需的用戶端和伺服器設定。 開始部署步驟之前，請確定您已完成[步驟2規劃遠端存取部署](../plan/Step-2-Plan-the-Remote-Access-Deployment.md)中所述的規劃步驟。  
   
-|工作|描述|  
+|工作|說明|  
 |----|--------|  
 |安裝遠端存取角色|安裝「遠端存取」角色。|  
 |設定部署類型|將部署類型設定為 DirectAccess 與 VPN、僅 DirectAccess 或僅 VPN。|  
@@ -83,7 +83,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-configure-the-deployment-type"></a>設定部署類型  
   
-1.  在 [遠端存取] 伺服器上，開啟 [遠端存取管理] 主控台：在 [**開始**] 畫面上，輸入，輸入 [**遠端存取管理主控台**]，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [遠端存取] 伺服器上，開啟 [遠端存取管理] 主控台：在 [**開始**] 畫面上，輸入，輸入 [**遠端存取管理主控台**]，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
   
 2.  在 [遠端存取管理] 主控台的中央窗格中，按一下 [執行遠端存取安裝精靈]。  
   
@@ -115,7 +115,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
         > [!NOTE]  
         > 啟用本機名稱解析時，執行 NCA 的使用者可以使用在 DirectAccess 用戶端電腦上設定的 DNS 伺服器來解析名稱。  
   
-6.  按一下 **[完成]** 。  
+6.  按一下 **\[完成\]** 。  
   
 ## <a name="BKMK_Server"></a>設定遠端存取服務器  
 若要部署遠端存取，您需要使用下列各項來設定將作為遠端存取服務器的伺服器：  
@@ -152,7 +152,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
     -   若要讓執行 Windows 7 的用戶端電腦透過 DirectAccess 進行連線，請選取 [**啟用 windows 7 用戶端電腦透過 directaccess 進行連線]** 核取方塊。 在這種部署中，您必須也使用電腦憑證驗證。  
   
-7.  按一下 **[完成]** 。  
+7.  按一下 **\[完成\]** 。  
   
 ## <a name="BKMK_Infra"></a>設定基礎結構伺服器  
 若要在遠端存取部署中設定基礎結構伺服器，您必須設定下列各項：  
@@ -177,9 +177,9 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 4.  在 [ **DNS 尾碼搜尋清單**] 頁面上，「遠端存取」伺服器會自動偵測部署中的網域尾碼。 使用 [**新增**] 和 [**移除**] 按鈕來建立您要使用的網域尾碼清單。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按一下 **\[下一步\]** 。  
   
-5.  在 [**管理**] 頁面上，新增未自動偵測到的管理伺服器，然後按 **[下一步]** 。 「遠端存取」會自動新增網域控制站和 System Center Configuration Manager 伺服器。  
+5.  在 [**管理**] 頁面上，新增未自動偵測到的管理伺服器，然後按 **[下一步]** 。 遠端存取會自動新增網域控制站和 Configuration Manager 伺服器。  
   
-6.  按一下 **[完成]** 。  
+6.  按一下 **\[完成\]** 。  
   
 ## <a name="BKMK_App"></a>設定應用程式伺服器  
 在完整的遠端存取部署中，設定應用程式伺服器是選擇性的工作。 在此案例中，DirectAccess 用戶端的遠端系統管理不會使用應用程式伺服器，而且此步驟會呈現灰色，表示它不在作用中。 按一下 **[完成]** 以套用設定。  

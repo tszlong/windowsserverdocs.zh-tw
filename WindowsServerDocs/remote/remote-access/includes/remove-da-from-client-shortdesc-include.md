@@ -1,1 +1,1 @@
-**移除用戶端的 DirectAccess 設定。** 監視成功的 VPN 設定部署的 Microsoft System Center Configuration Manager 或 Microsoft Intune。 然後，使用報告來判斷裝置指派的資訊，並探索哪些裝置屬於每個使用者。 當使用者移轉成功時，您移除他們的裝置從 DirectAccess 安全性群組，讓您可以移除您的環境中的 DirectAccess。
+**從用戶端移除 DirectAccess 設定。** 針對成功的 VPN 設定部署，監視 Microsoft 端點 Configuration Manager 或 Microsoft Intune。 然後，使用報告來判斷裝置指派資訊，並探索哪些裝置屬於每位使用者。 當使用者成功遷移時，您會從 DirectAccess 安全性群組中移除其裝置，讓您可以從環境中移除 DirectAccess。

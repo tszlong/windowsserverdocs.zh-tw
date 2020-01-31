@@ -9,25 +9,25 @@ ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 65bf9f732e28e5974a3880c7d07ab7262de18144
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8a79e590a273d7d7ccb673e5043bed2fcd1aeace
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871377"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822671"
 ---
 # <a name="always-on-vpn-enhancements"></a>Always On VPN 增強功能
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10
 
-- [**處**瞭解 Always On 的 VPN 功能](../vpn-map-da.md)
-- [**下一個**瞭解 Always On VPN 技術](always-on-vpn-technology-overview.md)
+- [**上一步：** 瞭解 Always On 的 VPN 功能](../vpn-map-da.md)
+- [**下一步：** 瞭解 Always On VPN 技術](always-on-vpn-technology-overview.md)
 
 Always On VPN 在過去的 Windows VPN 解決方案方面有許多好處。 下列重要的改良功能，與 Microsoft 的雲端優先、行動優先願景 Always On 的 VPN 一致：
 
 - **平臺整合：** Always On VPN 已改善與 Windows 作業系統和協力廠商解決方案的整合，為無數的先進連線案例提供強大的平臺。
 
-- **安全級**Always On VPN 具有全新、先進的安全性功能，可限制流量類型、哪些應用程式可以使用 VPN 連線，以及您可以使用哪些驗證方法來起始連線。 當連接在大多數時間都處於作用中狀態時，請務必保護連接的安全。 如需詳細資訊，請參閱[VPN 驗證選項](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication)。
+- **安全性：** Always On VPN 具有全新、先進的安全性功能，可限制流量類型、哪些應用程式可以使用 VPN 連線，以及您可以使用哪些驗證方法來起始連線。 當連接在大多數時間都處於作用中狀態時，請務必保護連接的安全。 如需詳細資訊，請參閱[VPN 驗證選項](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication)。
 
 - **VPN 連線能力：** Always On VPN，不論裝置通道是否提供自動觸發程式功能。 在 Always On VPN 之前，無法透過使用者或裝置驗證觸發自動連線的功能。  
 
@@ -36,18 +36,18 @@ Always On VPN 在過去的 Windows VPN 解決方案方面有許多好處。 下�
   >[!NOTE]
   >開始之前，請務必在 VPN 伺服器上啟用 IPv6。 否則，就無法建立連接，並顯示錯誤訊息。
 
-- **設定和相容性：** 您可以透過數種方式來部署和管理 Always On VPN，讓 Always On VPN 與其他 VPN 用戶端軟體相比有數個優點。
+- 設定**和相容性：** 您可以透過數種方式來部署和管理 Always On VPN，讓 Always On VPN 與其他 VPN 用戶端軟體相比有數個優點。
 
 ## <a name="platform-integration"></a>平臺整合
 
 Microsoft 已在 Always On VPN 中引進或改良了下列整合功能：
 
 
-| 金鑰改進   |  描述  |
+| 金鑰改進   |  說明  |
 |----------------|---|
 | **[Windows 資訊保護（WIP）](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | 與 WIP 的整合可讓網路原則強制執行，以判斷流量是否允許通過 VPN。 如果使用者設定檔為作用中，且已套用 WIP 原則，則會自動觸發 Always On VPN 以進行連線。 此外，當您使用 WIP 時，不需要在 VPN 設定檔中個別指定 AppTriggerList 和 TrafficFilterList 規則（除非您想要更先進的設定），因為 WIP 原則和應用程式清單會自動生效。 |
 |**[Windows Hello 企業版](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-overview)** |Always On VPN 原本就支援 Windows Hello 企業版（以憑證為基礎的驗證模式），以提供無縫單一登入體驗，可讓您登入電腦和 VPN 連線。 因此，VPN 連線不需要進行次要驗證（使用者認證），因此可以使用與 Windows Hello 企業版驗證的 Always On 連接。 |
-| **[Microsoft Azure 條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls)**  |Always On VPN 用戶端可以與 Azure 條件式存取平臺整合，以強制執行多重要素驗證（MFA）、裝置合規性或兩者的組合。 當符合條件式存取原則時，Azure Active Directory （Azure AD）會發出短期（預設為60分鐘）的 IP 安全性（IPsec）驗證憑證，以用來驗證 VPN 閘道。 裝置合規性會使用 System Center Configuration Manager/Intune 合規性原則，其中可以包含裝置健康情況證明狀態作為連線合規性檢查的一部分。|
+| **[Microsoft Azure 條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls)**  |Always On VPN 用戶端可以與 Azure 條件式存取平臺整合，以強制執行多重要素驗證（MFA）、裝置合規性或兩者的組合。 當符合條件式存取原則時，Azure Active Directory （Azure AD）會發出短期（預設為60分鐘）的 IP 安全性（IPsec）驗證憑證，以用來驗證 VPN 閘道。 裝置合規性會使用 Configuration Manager/Intune 合規性原則，其中可以包含裝置健康情況證明狀態作為連線合規性檢查的一部分。|
 |  **Azure MFA** |結合遠端驗證撥入使用者服務（RADIUS）服務和適用于 Azure MFA 的網路原則伺服器（NPS）延伸模組時，VPN 驗證可以使用強式 MFA。 | **協力廠商 VPN 外掛程式**  | 使用通用 Windows 平臺（UWP），協力廠商 VPN 提供者可以為完整範圍的 Windows 10 裝置建立單一應用程式。 UWP 在各種裝置上提供保證的核心 API 層，以消除通常與寫入核心層級驅動程式相關的問題複雜度。 目前，Windows 10 UWP VPN 外掛程式存在於[脈衝安全](https://www.microsoft.com/p/pulse-secure/9nblggh3b0bp)、 [F5 存取](https://www.microsoft.com/p/f5-access/9wzdncrdsfn0)、 [Check Point 膠囊 VPN](https://www.microsoft.com/p/check-point-capsule-vpn/9wzdncrdjxtj)、 [FortiClient](https://www.microsoft.com/p/forticlient/9wzdncrdh6mc)、 [SonicWall Mobile Connect](https://www.microsoft.com/p/sonicwall-mobile-connect/9wzdncrdsfkz)和[GlobalProtect](https://www.microsoft.com/p/globalprotect/9nblggh6bzl3);不確定，未來將會出現其他的情況。 |
 
 ## <a name="security"></a>安全性
@@ -64,7 +64,7 @@ Microsoft 已在 Always On VPN 中引進或改良了下列整合功能：
 
 以下是 Always On VPN 連線能力的主要改良功能：
 
-|  金鑰改進  | 描述 |
+|  金鑰改進  | 說明 |
 |---|---|
 |                    **Always On**                    |                                                                                          Always On 是一項 Windows 10 功能，可讓使用中的 VPN 設定檔自動連接，並根據觸發程式保持線上狀態，也就是使用者登入、網路狀態變更或裝置螢幕作用中。 Always On 也會整合到連線待命體驗中，以達到最高的電池壽命。                                                                                           |
 |             **應用程式觸發**              |                                                                                                                                          您可以將 Windows 10 中的 VPN 設定檔設定為在一組指定的應用程式啟動時自動連接。 您可以設定桌面和 UWP 應用程式來觸發 VPN 連線。                                                                                                                                          |
@@ -72,12 +72,12 @@ Microsoft 已在 Always On VPN 中引進或改良了下列整合功能：
 |            **受信任的網路偵測**            |                                                                                    Always On VPN 包含這項功能，可確保當使用者連線至公司界限內的受信任網路時，不會觸發 VPN 連線能力。 您可以將此功能與先前所述的任何觸發方法結合，以提供順暢的「只在需要時連接」使用者體驗。                                                                                     |
 | **[裝置通道](../vpn-device-tunnel-config.md)** | Always On VPN 可讓您為裝置或電腦建立專用的 VPN 設定檔。 不同*于使用者通道*，只有在使用者登入裝置或電腦之後才會連線，*裝置*通道可讓 VPN 在使用者登入前建立連線能力。 裝置通道和使用者通道都是獨立運作的 VPN 設定檔，可以同時連線，並且可以適當地使用不同的驗證方法和其他 VPN 設定。 |
 
-## <a name="networking"></a>網路功能
+## <a name="networking"></a>網路
 
 以下是 Always On VPN 中的一些網路增強功能：
 
 
-|              金鑰改進              |                                                                                                                                                                                                                描述                                                                                                                                                                                                                |
+|              金鑰改進              |                                                                                                                                                                                                                說明                                                                                                                                                                                                                |
 |-------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **IPv4 和 IPv6 的雙重堆疊支援**  | Always On VPN 原本就支援在雙重堆疊方法中使用 IPv4 和 IPv6。 它對另一個通訊協定沒有任何特定的相依性，它允許最大的 IPv4/IPv6 應用程式相容性，並支援未來的 IPv6 網路需求。<p>***注意：*** 開始之前，請務必在 VPN 伺服器上啟用 IPv6。 否則，就無法建立連接，並顯示錯誤訊息。 |
 | **應用程式特定的路由原則** |                            除了定義網際網路和內部網路流量隔離的全域 VPN 連線路由原則之外，您也可以新增路由原則來控制分割通道的使用，或強制以每個應用程式為基礎的通道設定。 此選項可讓您更細微地控制哪些應用程式可以透過 VPN 通道與哪些資源互動。                             |
@@ -93,10 +93,10 @@ Microsoft 已在 Always On VPN 中引進或改良了下列整合功能：
 |    **協力廠商 VPN 閘道相容性**     | Always On 的 VPN 用戶端不需要使用以 Microsoft 為基礎的 VPN 閘道來操作。 透過 IKEv2 通訊協定的支援，用戶端可協助與支援此產業標準通道類型的協力廠商 VPN 閘道互通。 您也可以使用與自訂通道類型結合的 UWP VPN 外掛程式，達到與協力廠商 VPN 閘道的互通性，而不會犧牲 Always On 的 VPN 平臺功能和優點。<p><p>***注意：***<br>請洽詢您的閘道或協力廠商後端設備廠商，以使用 IKEv2 Always On VPN 和裝置通道的設定和相容性。 |
 | **業界標準 IKEv2 VPN 通訊協定支援** |                                                                                                                                                                                                                              Always On 的 VPN 用戶端支援 IKEv2，這是現今最普遍使用的業界標準通道通訊協定之一。 這種相容性最大化與協力廠商 VPN 閘道的互通性。                                                                                                                                                                                                                               |
 |               **平臺支援**               |                                                                                                                                                                                                           AAlways On VPN 支援已加入網域、未加入網域（工作組）或已加入 Azure AD 的裝置，以允許企業和攜帶您自己的裝置（BYOD）案例。 此外，所有 Windows 版本中都有提供 Always On VPN。                                                                                                                                                                                                           |
-| **各種管理和部署機制** |                                                                                                                                 您可以使用許多管理和部署機制來管理 VPN 設定（稱為*vpn 設定檔*），包括 windows PowerShell、System Center Configuration Manager、Intune 或協力廠商行動裝置管理（MDM）工具，以及 windows設定設計工具。 這些選項可簡化 Always On VPN 的設定，而不論您使用的用戶端管理工具為何。                                                                                                                                 |
+| **各種管理和部署機制** |                                                                                                                                 您可以使用許多管理和部署機制來管理 VPN 設定（稱為*vpn 設定檔*），包括 windows PowerShell、Microsoft Endpoint Configuration Manager、Intune 或協力廠商行動裝置管理（MDM）工具，以及 Windows 設定設計工具。 這些選項可簡化 Always On VPN 的設定，而不論您使用的用戶端管理工具為何。                                                                                                                                 |
 |     **標準化的 VPN 設定檔定義**      |                                                                                                                                                                                                                                  Always On VPN 支援使用標準 XML 設定檔（ProfileXML）進行設定，提供大部分管理和部署工具組所使用的標準設定範本格式。                                                                                                                                                                                                                                   |
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 - [瞭解一些 advanced Always On VPN 功能](deploy/always-on-vpn-adv-options.md)
 

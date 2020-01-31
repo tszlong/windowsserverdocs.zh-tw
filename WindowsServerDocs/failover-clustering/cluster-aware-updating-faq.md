@@ -8,12 +8,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Windows Server 中叢集感知更新的常見問題解答。
-ms.openlocfilehash: a08366c7e64d9612d63e348d4cecdb4b2389737a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 736b49222ae4c9e2a27229341f0d886bd3e0343c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361355"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822131"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>叢集感知更新：常見問題集
 
@@ -22,7 +22,7 @@ ms.locfileid: "71361355"
 叢集[感知更新](cluster-aware-updating.md)\(CAU\) 這項功能會以不影響服務可用性的方式，協調容錯移轉叢集中所有伺服器上的軟體更新，而不會影響叢集節點的規劃容錯移轉。 對於一些具有持續可用性功能的應用程式 \(例如具有即時移轉的超\-V，或具有 SMB 透明容錯移轉\)的 SMB 3.x 檔案伺服器，CAU 可以協調自動的叢集更新，而不會影響到服務可用性。
 
 ## <a name="does-cau-support-updating-storage-spaces-direct-clusters"></a>CAU 是否支援更新儲存空間直接存取叢集？  
-是。 CAU 支援更新[儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)叢集，而不論部署類型為何：超交集或已聚合。 具體而言，CAU 協調流程可確保暫停每個叢集節點會等待基礎叢集儲存空間狀況良好。
+可以。 CAU 支援更新[儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)叢集，而不論部署類型為何：超交集或已聚合。 具體而言，CAU 協調流程可確保暫停每個叢集節點會等待基礎叢集儲存空間狀況良好。
 
 ## <a name="does-cau-work-with-windowsserver-2008r2-or-windows7"></a>CAU 可以與 Windows Server 2008 R2 或 Windows 7 搭配使用嗎？  
 不。 CAU 只會從執行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1 或 Windows 8 的電腦協調叢集更新作業。 正在更新的容錯移轉叢集必須執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。
@@ -34,37 +34,37 @@ ms.locfileid: "71361355"
 > 目前，下列叢集工作負載已針對 CAU 進行測試及認證： SMB、Hyper-v\-V、DFS 複寫、DFS 命名空間、iSCSI 和 NFS。  
   
 ## <a name="does-cau-support-updates-from-microsoft-update-and-windows-update"></a>CAU 支援 Microsoft Update 與 Windows Update 的更新嗎？  
-是。 根據預設，會使用中的外掛程式來設定 CAU，此\-會在叢集節點上使用 Windows Update 代理程式 \(WUA\) 公用程式 Api。 WUA 基礎結構可以設定為指向 Microsoft Update 並 Windows Update，或 Windows Server Update Services \(WSUS\) 做為其更新來源。  
+可以。 根據預設，會使用中的外掛程式來設定 CAU，此\-會在叢集節點上使用 Windows Update 代理程式 \(WUA\) 公用程式 Api。 WUA 基礎結構可以設定為指向 Microsoft Update 並 Windows Update，或 Windows Server Update Services \(WSUS\) 做為其更新來源。  
   
 ## <a name="does-cau-support-wsus-updates"></a>CAU 支援 WSUS 更新嗎？  
-是。 根據預設，會使用中的外掛程式來設定 CAU，此\-會在叢集節點上使用 Windows Update 代理程式 \(WUA\) 公用程式 Api。 WUA 基礎結構可以設定為指向 Microsoft Update，並 Windows Update 或本機 Windows Server Update Services \(WSUS\) 伺服器做為更新的來源。  
+可以。 根據預設，會使用中的外掛程式來設定 CAU，此\-會在叢集節點上使用 Windows Update 代理程式 \(WUA\) 公用程式 Api。 WUA 基礎結構可以設定為指向 Microsoft Update，並 Windows Update 或本機 Windows Server Update Services \(WSUS\) 伺服器做為更新的來源。  
   
 ## <a name="can-cau-apply-limited-distribution-release-updates"></a>CAU 可以套用限量發行版本的更新嗎？  
-是。 有限的散發發行 \(LDR\) 更新（也稱為「修補程式」）不會透過 Microsoft Update 或 Windows Update 發行，因此 Windows Update 代理程式無法下載 \(WUA\) 在預設情況下，該 CAU 使用的插頭\-。  
+可以。 有限的散發發行 \(LDR\) 更新（也稱為「修補程式」）不會透過 Microsoft Update 或 Windows Update 發行，因此 Windows Update 代理程式無法下載 \(WUA\) 在預設情況下，該 CAU 使用的插頭\-。  
   
 不過，CAU 包含第二個外掛程式\-，您可以選擇套用修補程式更新。 您也可以自訂中的此「修復程式插頭」\-，以套用非\-的 Microsoft 驅動程式、固件和 BIOS 更新。  
   
 ## <a name="can-i-use-cau-to-apply-cumulative-updates"></a>可以使用 CAU 套用累計更新嗎？  
-是。 如果累計更新是一般發行版本的更新或 LDR 更新，CAU 可以套用它們。  
+可以。 如果累計更新是一般發行版本的更新或 LDR 更新，CAU 可以套用它們。  
   
 ## <a name="can-i-schedule-updates"></a>我可以排程更新嗎？  
-是。 CAU 支援下列更新模式，這兩種模式都可以排程更新：  
+可以。 CAU 支援下列更新模式，這兩種模式都可以排程更新：  
   
 **自我\-更新**讓叢集根據定義的設定檔和定期排程（例如每月維護期間）來更新本身。 您也可以隨時啟動隨選執行的自我\-更新。 若要啟用自我\-的更新模式，您必須將 CAU 叢集角色新增至叢集。 CAU 自助式\-更新功能的執行方式就像任何其他叢集工作負載一樣，而且它可以順暢地與更新協調器電腦的規劃和未計畫容錯移轉搭配運作。  
   
 **遠端\-更新**可讓您在執行 Windows 或 Windows Server 的電腦上隨時啟動「更新執行」。 您可以透過 [叢集感知更新] 視窗或使用 [叫用 **\-get-caurun** ] PowerShell Cmdlet 來啟動「更新執行」。 遠端\-更新是 CAU 的預設更新模式。 您可以使用工作排程器，從不是叢集節點的其中一部遠端電腦，以自己想要的排程來執行 [Invoke-CauRun](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-caurun) Cmdlet。  
   
 ## <a name="can-i-schedule-updates-to-apply-during-a-backup"></a>我可以將更新排程在備份期間套用嗎？  
-是。 CAU 不會在這方面強加任何條件約束。 不過，當伺服器備份正在進行時，在伺服器 \(上執行軟體更新時，\) 不是 IT 最佳作法。 請注意，CAU 僅使用叢集 API 來判斷資源容錯移轉與容錯回復，因此，CAU 不會知道伺服器備份的狀態。  
+可以。 CAU 不會在這方面強加任何條件約束。 不過，當伺服器備份正在進行時，在伺服器 \(上執行軟體更新時，\) 不是 IT 最佳作法。 請注意，CAU 僅使用叢集 API 來判斷資源容錯移轉與容錯回復，因此，CAU 不會知道伺服器備份的狀態。  
   
-## <a name="can-cau-work-with-system-center-configuration-manager"></a>CAU 可以與 System Center Configuration Manager 搭配使用嗎？  
+## <a name="can-cau-work-with-configuration-manager"></a>CAU 可以與 Configuration Manager 搭配使用嗎？  
 CAU 是協調叢集節點上軟體更新的工具，而且 Configuration Manager 也會執行伺服器軟體更新。 請務必設定這些工具，使其在任何資料中心部署中都不會有相同伺服器的重迭涵蓋範圍，包括使用不同的 Windows Server Update Services 伺服器。 這可確保使用 CAU 背後的目標不會不慎失效，因為 Configuration Manager\-驅動的更新不會納入叢集感知。  
   
 ## <a name="do-i-need-administrative-credentials-to-run-cau"></a>我需要系統管理認證才能執行 CAU 嗎？  
-是。 為了執行 CAU 工具，CAU 在本機伺服器上需要系統管理認證，或者，在本機伺服器或執行它的用戶端電腦上需要**在驗證後模擬用戶端**使用者權限。 不過，若要協調叢集節點上的軟體更新，CAU 就需要每個節點上的叢集系統管理認證。 雖然 CAU UI 可以在沒有認證的情況下啟動，但它會在連接到叢集實例以預覽或套用更新時，提示您輸入叢集系統管理認證。  
+可以。 為了執行 CAU 工具，CAU 在本機伺服器上需要系統管理認證，或者，在本機伺服器或執行它的用戶端電腦上需要 **在驗證後模擬用戶端** 使用者權限。 不過，若要協調叢集節點上的軟體更新，CAU 就需要每個節點上的叢集系統管理認證。 雖然 CAU UI 可以在沒有認證的情況下啟動，但它會在連接到叢集實例以預覽或套用更新時，提示您輸入叢集系統管理認證。  
   
 ## <a name="can-i-script-cau"></a>我可以編寫 CAU 的腳本嗎？  
-是。 CAU 隨附 PowerShell Cmdlet，提供一組豐富的腳本選項。 CAU UI 也是呼叫這些 Cmdlet 來執行 CAU 動作。  
+可以。 CAU 隨附 PowerShell Cmdlet，提供一組豐富的腳本選項。 CAU UI 也是呼叫這些 Cmdlet 來執行 CAU 動作。  
 
 ## <a name="what-happens-to-active-clustered-roles"></a>現用叢集角色會發生什麼事？
 
@@ -92,7 +92,7 @@ CAU 預設會依據活動的等級來選取更新節點的順序。 裝載最少
 不。 CAU 只會報告從 CAU 內部執行的更新執行。 不過，啟動後續的 CAU 更新執行時，會適當地考慮透過非\-CAU 方法安裝的更新，以判斷可能適用于每個叢集節點的其他更新。  
   
 ## <a name="can-cau-support-my-unique-it-process-needs"></a>CAU 是否能夠支援我獨特的 IT 程式需求？  
-是。 CAU 提供下列方面的彈性，來適應企業客戶獨特 IT 程序需求：  
+可以。 CAU 提供下列方面的彈性，來適應企業客戶獨特 IT 程序需求：  
   
 **腳本**「更新執行」可以指定預先\-的更新 PowerShell 腳本和 post\-更新 PowerShell 腳本。 在節點暫停之前，會在每個叢集節點上執行前\-更新腳本。 安裝節點更新之後，會在每個叢集節點上執行 post\-更新腳本。  
   
@@ -147,10 +147,10 @@ CAU 不需要在叢集節點上執行的服務。 不過，CAU 需要在叢集�
 -   只有執行 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 的叢集才支援 CAU。 VMM 也支援執行 Windows Server 2008 R2 和 Windows Server 2008 之電腦上的超\-V 叢集。  
   
 ## <a name="can-i-use-remote-updating-on-a-cluster-that-is-configured-for-self-updating"></a>我可以在設定自行\-更新的叢集上使用遠端\-更新嗎？  
-是。 本身\-更新設定的容錯移轉叢集，可以在\-需求上透過遠端\-更新進行更新，就像您可以隨時在電腦上強制執行 Windows Update 掃描一樣，即使 Windows Update 設定為自動安裝更新也一樣。 不過，您需要確定「更新執行」沒有正在執行。  
+可以。 本身\-更新設定的容錯移轉叢集，可以在\-需求上透過遠端\-更新進行更新，就像您可以隨時在電腦上強制執行 Windows Update 掃描一樣，即使 Windows Update 設定為自動安裝更新也一樣。 不過，您需要確定「更新執行」沒有正在執行。  
   
 ## <a name="can-i-reuse-my-cluster-update-settings-across-clusters"></a>可以在多個叢集上重複使用叢集更新設定嗎？  
-是。 CAU 支援許多「更新執行」選項；當「更新執行」在更新叢集的時候，這些選項可以決定更新執行的行為。 這些選項會儲存為更新執行設定檔，而且可以在任何叢集上重複使用。 建議您儲存設定，並在具有類似更新需求的容錯移轉叢集上重複使用。 例如，您可能會針對支援業務\-重要服務的所有 Microsoft SQL Server 叢集，建立「商務\-重要的 SQL Server 叢集更新執行設定檔」。  
+可以。 CAU 支援許多「更新執行」選項；當「更新執行」在更新叢集的時候，這些選項可以決定更新執行的行為。 這些選項會儲存為更新執行設定檔，而且可以在任何叢集上重複使用。 建議您儲存設定，並在具有類似更新需求的容錯移轉叢集上重複使用。 例如，您可能會針對支援業務\-重要服務的所有 Microsoft SQL Server 叢集，建立「商務\-重要的 SQL Server 叢集更新執行設定檔」。  
   
 ## <a name="where-is-the-cau-plug-in-specification"></a>什麼是在規格中的 CAU 外掛程式\-？  
   
@@ -160,5 +160,5 @@ CAU 不需要在叢集節點上執行的服務。 不過，CAU 需要在叢集�
   
 ## <a name="see-also"></a>請參閱  
   
--   [叢集\-感知更新總覽](cluster-aware-updating.md)  
+-   [叢集感知更新概觀](cluster-aware-updating.md)  
   

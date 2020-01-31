@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9fa6fe4de0c8723c17f6a61717281d0a38d1b579
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb8bb6dda6eab27413b462a4c7f17176fbed85a1
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388658"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822771"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步驟1規劃 Advanced DirectAccess 基礎結構
 
@@ -25,7 +25,7 @@ ms.locfileid: "71388658"
 
 為單一伺服器上的進階 DirectAccess 部署做規劃的第一步，就是規劃部署所需的基礎結構。 本主題描述基礎結構規劃步驟。 這些規劃工作不需要依特定的順序完成。  
   
-|工作|描述|
+|工作|說明|
 |----|--------|  
 |[1.1 規劃網路拓朴和設定](#11-plan-network-topology-and-settings)|決定 DirectAccess 伺服器的放置位置 (在邊緣，或在「網路位址轉譯」(NAT) 裝置或防火牆後面)，並規劃 IP 位址指定、路由及強制通道。|  
 |[1.2 規劃防火牆需求](#12-plan-firewall-requirements)|為允許 DirectAccess 流量通過邊緣防火牆做規劃。|  
@@ -264,7 +264,7 @@ DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺
   
     3.  開啟 IP-HTTPS 狀態設定，並將 URL 變更為 **https://<DirectAccess 伺服器名稱 (例如 server.contoso.com)>: 44500/IPHTTPS**。  
   
-    4.  按一下 [套用]。  
+    4.  按一下 **\[Apply\]** (套用)。  
   
 2.  修改用戶端 GPO 中的 Kerberos Proxy 用戶端設定。  
   
@@ -272,7 +272,7 @@ DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，而您必須手動在伺
   
     2.  開啟 IPHTTPS 狀態設定，並將 URL 變更為 **https://<DirectAccess 伺服器名稱 (例如 server.contoso.com)>: 44500/IPHTTPS**。  
   
-    3.  按一下 [套用]。  
+    3.  按一下 **\[Apply\]** (套用)。  
   
 3.  修改用戶端 IPsec 原則設定以使用 ComputerKerb 和 UserKerb。  
   
@@ -465,9 +465,9 @@ DirectAccess 用戶端會起始與提供服務 (例如 Windows Update 和防毒�
   
 -   網域控制站-會針對與 DirectAccess 伺服器和用戶端電腦位於相同樹系中的所有網域，執行網域控制站的自動探索。  
   
--   System Center Configuration Manager 伺服器-會針對與 DirectAccess 伺服器和用戶端電腦相同樹系中的所有網域執行 System Center Configuration Manager 伺服器的自動探索。  
+-   Microsoft 端點 Configuration Manager 伺服器-針對與 DirectAccess 伺服器和用戶端電腦相同樹系中的所有網域，執行 Configuration Manager 伺服器的自動探索。  
   
-初次設定 DirectAccess 時，就會自動偵測網域控制站和 System Center Configuration Manager 伺服器。 偵測到的網域控制站不會顯示在主控台中，但是您可以使用 Windows PowerShell Cmdlet **DAMgmtServer-Type All**來抓取設定。 如果修改了網域控制站或 System Center Configuration Manager 伺服器，在 [遠端存取管理主控台] 中按一下 [重新整理管理伺服器]，就會重新整理管理伺服器清單。  
+第一次設定 DirectAccess 時，會自動偵測網域控制站和 Configuration Manager 伺服器。 偵測到的網域控制站不會顯示在主控台中，但是您可以使用 Windows PowerShell Cmdlet **DAMgmtServer-Type All**來抓取設定。 如果網域控制站或 Configuration Manager 伺服器遭到修改，按一下 [遠端存取管理] 主控台中的 [重新整理**管理伺服器**]，會重新整理管理伺服器清單。  
   
 **管理伺服器需求**  
   
@@ -484,7 +484,7 @@ DirectAccess 用戶端會起始與提供服務 (例如 Windows Update 和防毒�
   
 DirectAccess 會使用 AD DS 並 Active Directory 群組原則物件（Gpo），如下所示：  
   
--   **驗證**  
+-   [驗證]  
   
     AD DS 會用於驗證。 基礎結構通道針對連線到 DirectAccess 伺服器的電腦帳戶會使用 NTLMv2 驗證，而該帳戶必須列在 Active Directory 網域中。 內部網路通道會使用 Kerberos 驗證來讓使用者建立第二個通道。  
   
@@ -683,7 +683,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
   
 3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成之後，伺服器將會還原到未設定的狀態。  
   
-## <a name="next-steps"></a>後續步驟  
+## <a name="next-steps"></a>接下來的步驟  
   
 -   [步驟2：規劃 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
   

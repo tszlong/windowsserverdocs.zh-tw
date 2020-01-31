@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b5be8827cee22b35fb31bf08d1c960b150dcad84
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388033"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822651"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中設定 VPN 裝置通道
 
@@ -46,9 +46,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN 裝置通道設定
 
-下面的範例設定檔 XML 提供良好的指引，適用于只需要透過裝置通道進行用戶端起始提取的案例。  流量篩選器會用來將裝置通道限制為僅限管理流量。  此設定適用于 Windows Update、一般群組原則（GP）和 System Center Configuration Manager （SCCM）更新案例，以及用於第一次登入但沒有快取認證或密碼重設案例的 VPN 連線能力。 
+下面的範例設定檔 XML 提供良好的指引，適用于只需要透過裝置通道進行用戶端起始提取的案例。  流量篩選器會用來將裝置通道限制為僅限管理流量。  此設定適用于 Windows Update、一般群組原則（GP）和 Microsoft 端點 Configuration Manager 更新案例，以及用於第一次登入但沒有快取認證或密碼重設案例的 VPN 連線能力。 
 
-針對伺服器起始的推送案例（例如 Windows 遠端管理（WinRM）、遠端 GPUpdate 和遠端 SCCM 更新案例），您必須允許裝置通道上的輸入流量，因此無法使用流量篩選器。  如果在裝置通道設定檔中，您開啟流量篩選器，則裝置通道會拒絕輸入流量。  未來的版本將會移除這項限制。
+針對伺服器起始的推送案例（例如 Windows 遠端管理（WinRM）、遠端 GPUpdate 和遠端 Configuration Manager 更新案例），您必須允許裝置通道上的輸入流量，因此無法使用流量篩選器。  如果在裝置通道設定檔中，您開啟流量篩選器，則裝置通道會拒絕輸入流量。  未來的版本將會移除這項限制。
 
 
 ### <a name="sample-vpn-profilexml"></a>範例 VPN profileXML
@@ -173,7 +173,7 @@ Write-Host "$Message"
 
 以下是 VPN 用戶端設定資源。
 
-- [如何在 System Center Configuration Manager 中建立 VPN 設定檔](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [如何在 Configuration Manager 中建立 VPN 設定檔](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
 - [設定 Windows 10 用戶端 Always On VPN 連線](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [VPN 設定檔選項](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 

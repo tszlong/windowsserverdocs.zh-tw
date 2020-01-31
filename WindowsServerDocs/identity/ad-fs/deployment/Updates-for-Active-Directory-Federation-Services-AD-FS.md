@@ -9,12 +9,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0850145c9281c769c5a2b6532ccb56615abd11b3
-ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
+ms.openlocfilehash: b50b1b7b43002c91ee849f352e255f520f6d96f0
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725783"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822731"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory 同盟服務（AD FS）和 Web 應用程式 Proxy （WAP）的必要更新
 
@@ -28,7 +28,8 @@ Windows Server 2016 的更新會每月透過 Windows Update 傳遞，而且是�
 
 |文庫# |說明|發行日期
 |----- | ----- |-----
-|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019年7月|
+|[4534271](https://support.microsoft.com/help/4534271/windows-10-update-kb4534271) | 因 Google Chrome 版本80預設支援新的[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie 原則，而無法解決潛在 AD FS chrome 失敗。 如需詳細資訊，請參閱[這裡](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)。 |2020年1月|
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019 年 7 月|
 |[4489889（OS 組建14393.2879）](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 解決 Active Directory 同盟服務（AD FS）中導致重複的信賴憑證者信任出現在 AD FS 管理主控台的問題。 當您使用 AD FS 管理主控台建立或查看信賴憑證者信任時，就會發生這種情況。</br></br> 解決在 AD FS 2016 上啟用外部網路智慧鎖定（ESL）時，所發生的高 Active Directory 同盟服務（ADFS） Web 應用程式 Proxy （WAP）延遲問題（超過10毫秒）。 此安全性更新會解決[CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794)中所述的弱點。 |2019 年 3 月|
 |[4487006（OS 組建14393.2828）](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | 解決在使用 PowerShell 或 Active Directory 同盟服務（AD FS）管理主控台時，導致信賴憑證者信任的更新失敗的問題。 如果您將信賴憑證者信任設定為使用可發佈多個 PassiveRequestorEndpoint 的線上中繼資料 URL，就會發生此問題。 錯誤為「MSIS7615：信賴憑證者信任中指定的信任端點對於該信賴憑證者信任必須是唯一的。」  </br></br>解決因 Azure 密碼保護原則而顯示特定錯誤訊息的問題，以因應外部複雜度的密碼變更。 |2019 年 2 月|
 |[4462928（OS 組建14393.2580）](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|解決 Active Directory 同盟服務（ADFS）外部網路智慧鎖定（ESL）與替代登入識別碼之間的互通性問題。 啟用替代登入識別碼時，會呼叫 AD FS Powershell Cmdlet AdfsAccountActivity 和 Reset-AdfsAccountLockout，傳回「找不到帳戶」錯誤。 呼叫 AdfsAccountActivity 時，會加入新的專案，而不是編輯現有的專案。|2018 年 10 月|
@@ -50,7 +51,8 @@ Windows Server 2016 的更新會每月透過 Windows Update 傳遞，而且是�
 
 |文庫# |說明|發行日期
 |----- | ----- |-----
-|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019年7月
+|[4534309](https://support.microsoft.com/help/4534309/windows-8-1-kb4534309)| 因 Google Chrome 版本80預設支援新的[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie 原則，而無法解決潛在 AD FS chrome 失敗。 如需詳細資訊，請參閱[這裡](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)。 |2020年1月
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 此安全性更新解決了 Active Directory 同盟服務（AD FS）中的弱點，這可能會讓攻擊者略過外部網路鎖定原則。 |2019 年 7 月
 |[4041685](https://support.microsoft.com/kb/4041685)|解決了 AD FS 問題，其中要求標頭中的 MSISConext cookie 最後可能會溢位標頭大小限制，並導致無法以 HTTP 狀態碼400「錯誤的要求標頭太長」進行驗證。</br></br>修正了在驗證期間，ADFS 無法再忽略「提示 = 登入」的問題。 已將 [已停用] 選項新增至使用非密碼驗證的還原案例。|2017年10月更新彙總套件預覽
 |[4019217](https://support.microsoft.com/kb/4019217)|使用伺服器 2012 R2 AD FS 伺服器時，使用權杖代理程式的工作資料夾用戶端無法正常執行|5月2017預覽更新彙總套件
 |[4015550](https://support.microsoft.com/kb/4015550)|修正了 AD FS 未驗證外部使用者，以及 AD FS WAP 隨機無法轉寄要求的問題|2017年4月更新彙總套件

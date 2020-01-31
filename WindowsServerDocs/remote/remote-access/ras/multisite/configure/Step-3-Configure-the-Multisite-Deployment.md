@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ccfde5d13b9b2b722498e824d497a9b790875e14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ae66c125548e31603318a7e600c36c00df9d005
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404504"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822551"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>步驟3設定多網站部署
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404504"
 
 設定多網站基礎結構之後，請遵循下列步驟來設定遠端存取多網站部署。  
   
-|工作|描述|  
+|工作|說明|  
 |----|--------|  
 |3.1. 設定遠端存取服務器|藉由設定 IP 位址、將它們加入網域，以及安裝遠端存取角色，來設定其他遠端存取服務器。|  
 |3.2. 授與系統管理員存取權|授與其他遠端存取服務器對 DirectAccess 系統管理員的許可權。|  
@@ -38,7 +38,7 @@ ms.locfileid: "71404504"
 > [!NOTE]  
 > 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigServer"></a>3.1。 設定遠端存取服務器  
+## <a name="BKMK_ConfigServer"></a>3.1. 設定遠端存取服務器  
 
   
 ### <a name="to-install-the-remote-access-role"></a>安裝「遠端存取」角色  
@@ -77,7 +77,7 @@ ms.locfileid: "71404504"
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Admin"></a>3.2。 授與系統管理員存取權  
+## <a name="BKMK_Admin"></a>3.2. 授與系統管理員存取權  
   
 #### <a name="to-grant-administrator-permissions"></a>授與系統管理員許可權  
   
@@ -99,12 +99,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 9. 在將成為多網站部署一部分的所有遠端存取服務器上重複此程式。  
   
-## <a name="BKMK_IPHTTPS"></a>3.3。 為多網站部署設定 ip-HTTPs  
+## <a name="BKMK_IPHTTPS"></a>3.3. 為多網站部署設定 ip-HTTPs  
 在每個要新增至多網站部署的遠端存取服務器上，必須要有 SSL 憑證，才能驗證 ip-HTTPs web 伺服器的 HTTPS 連線。 您至少必須有本機 **Administrators** 群組的成員資格或同等權限，才能完成此程序。  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>取得 IP-HTTPS 憑證  
   
-1.  在每部遠端存取服務器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在每部遠端存取服務器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
   
 2.  按一下 [檔案]，**然後按一下 [** **新增/移除嵌入式管理單元**]。  
   
@@ -142,7 +142,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-install-a-certificate-for-network-location"></a>若要安裝網路位置的憑證  
   
-1.  在 [遠端存取] 伺服器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [遠端存取] 伺服器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
   
 2.  按一下 [檔案]，**然後按一下 [** **新增/移除嵌入式管理單元**]。  
   
@@ -221,7 +221,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
   
 ### <a name="EnabledMultisite"></a>啟用多網站設定  
   
-1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
   
 2.  在 **[遠端存取管理] 主控台**中 **，按一下 [** 設定]，然後在 [工作] 窗格中，按一下 [**啟用多**網站]。  
   
@@ -289,7 +289,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 ### <a name="AddEP"></a>將進入點新增至您的多網站部署  
   
-1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
   
 2.  在 **[遠端存取管理] 主控台**中 **，按一下 [** 設定]，然後在 [工作] 窗格中，按一下 [**新增進入點**]。  
   
@@ -338,7 +338,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
 15. 在 [**新增進入點**] 對話方塊中，按一下 [**關閉**]，然後在 [新增進入點] 嚮導上，按一下 [**關閉**]。  
   
     > [!NOTE]  
-    > 如果新增的進入點與現有的進入點或用戶端電腦位於不同的樹系，則必須按一下 **[工作] 窗格中的 [** 重新整理**管理伺服器**]，以探索新樹系中的網域控制站和 System Center Configuration Manager。  
+    > 如果新增的進入點與現有的進入點或用戶端電腦位於不同的樹系，則必須按一下 **[工作] 窗格中的 [** 重新整理**管理伺服器**]，以探索新樹系中的網域控制站和 Configuration Manager。  
   
 16. 針對您想要新增至多網站部署的每個進入點，重複步驟2中的此程式。  
   

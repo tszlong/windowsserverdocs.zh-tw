@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 59c659041c7553d8e97a3bfbefbc3bde24098ef2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949931"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822701"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -44,7 +44,7 @@ ms.locfileid: "75949931"
 
 - 在 Windows 管理中心模組中執行的 OSS 版本號碼和協力廠商軟體注意事項中所列出的內容之間，可能會有些許差異。
 
-### <a name="extension-manager"></a>擴充管理員
+### <a name="extension-manager"></a>延伸模組管理員
 
 - 當您更新 Windows 管理中心時，必須重新安裝擴充功能。
 - 如果您新增無法存取的延伸模組摘要，就不會出現警告。 [14412861]
@@ -82,7 +82,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
-## <a name="role-based-access-control-rbac"></a>角色型存取控制 (RBAC)
+## <a name="role-based-access-control-rbac"></a>以角色為基礎的存取控制（RBAC）
 
 - RBAC 部署無法在設定為使用 Windows Defender 應用程式控制 (WDAC，先前稱為程式碼完整性) 的電腦上成功進行。[16568455]
 
@@ -201,7 +201,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 管理叢集時，(超融合式或傳統式？) 可能會發生**找不到命令介面**錯誤。 如果發生這種情況，請重新載入瀏覽器，或往外瀏覽至其他工具，然後再瀏覽器回來。 [13882442]
 
-- 管理尚未設定完全的下層 (Windows Server 2012 或 2012 R2) 叢集時，可能會發生問題。 此問題的修正方式為，確保叢集的**每個成員節點**皆已安裝並啟用 Windows 功能 **RSAT-Clustering-PowerShell**。 若要使用 PowerShell 達成此目的，請在所有叢集節點上輸入下列命令 `Install-WindowsFeature -Name RSAT-Windows-PowerShell`。 [12524664]
+- 管理尚未設定完全的下層 (Windows Server 2012 或 2012 R2) 叢集時，可能會發生問題。 此問題的修正方式為，確保叢集的**每個成員節點**皆已安裝並啟用 Windows 功能 **RSAT-Clustering-PowerShell**。 若要使用 PowerShell 達成此目的，請在所有叢集節點上輸入下列命令 `Install-WindowsFeature -Name RSAT-Clustering-PowerShell`。 [12524664]
 
 - 叢集可能必須使用整個 FQDN 來新增，才能正確地探索到該叢集。
 

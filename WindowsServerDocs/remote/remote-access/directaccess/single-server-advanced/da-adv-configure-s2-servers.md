@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0ba2154338871827aae03936e5e39a356a43d675
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c5fec6d9dafa350f46dfb5b2f213d628391b87f
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388629"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822781"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>步驟2設定 Advanced DirectAccess 伺服器
 
@@ -25,7 +25,7 @@ ms.locfileid: "71388629"
 
 本主題說明如何針對在混合了 IPv4 和 IPv6 的環境中使用單一「遠端存取」伺服器的進階「遠端存取」部署，設定所需的用戶端和伺服器設定。 開始部署步驟之前，請確定您已完成[規劃先進的 DirectAccess 部署](Plan-an-Advanced-DirectAccess-Deployment.md)中所述的規劃步驟。  
   
-|工作|描述|  
+|工作|說明|  
 |----|--------|  
 |2.1. 安裝遠端存取角色|安裝「遠端存取」角色。|  
 |2.2. 設定部署類型|將部署類型設定為 DirectAccess 與 VPN、僅 DirectAccess 或僅 VPN。|  
@@ -52,7 +52,7 @@ ms.locfileid: "71388629"
   
 4.  按 [下一步] 五次。  
   
-5.  在 [確認安裝選項] 頁面上，按一下 [安裝]。  
+5.  在 [**確認安裝選項**] 頁面上，按一下 [**安裝**]。  
   
 6.  在 [安裝進度] 頁面上，確認安裝成功，然後按一下 [關閉]。  
   
@@ -77,7 +77,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-configure-the-deployment-type"></a>設定部署類型  
   
-1.  在遠端存取服務器上，開啟 [遠端存取管理] 主控台：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在遠端存取服務器上，開啟 [遠端存取管理] 主控台：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
   
 2.  在 [遠端存取管理] 主控台的中央窗格中，按一下 [執行遠端存取安裝精靈]。  
   
@@ -97,7 +97,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
 4.  在 [選取群組] 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。  
   
     > [!NOTE]  
-    > 如果安全性群組位於與「遠端存取」伺服器不同的樹系，在您完成 [遠端存取安裝精靈] 之後，請按一下 [工作] 窗格中的 [重新整理管理伺服器]，以探索新樹系中的網域控制站和 System Center Configuration Manager 伺服器。  
+    > 如果安全性群組位於與「遠端存取」伺服器不同的樹系中，在您完成 [遠端存取設定] 嚮導之後，請按一下 **[工作] 窗格中的 [** 重新整理**管理伺服器**]，以探索新樹系中的網域控制站和 Configuration Manager 伺服器。  
   
 5.  視需要選取 [僅針對攜帶型電腦啟用 DirectAccess] 核取方塊，以只允許行動電腦存取內部網路。  
   
@@ -121,7 +121,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
         > [!NOTE]  
         > 已啟用本機名稱解析時，執行 [網路連線助理] 的使用者可以選擇使用 DirectAccess 用戶端電腦上設定的 DNS 伺服器來解析名稱。  
   
-9. 按一下 **[完成]** 。  
+9. 按一下 **\[完成\]** 。  
   
 ## <a name="BKMK_Server"></a>2.4。 設定遠端存取伺服器  
 若要部署「遠端存取」，您需要在「遠端存取」伺服器設定正確的網路介面卡、用戶端電腦可連線之「遠端存取」伺服器的公用 URL (ConnectTo 位址)、主體符合 ConnectTo 位址的 IP-HTTPS 憑證、IPv6 設定，以及用戶端電腦驗證。  
@@ -150,7 +150,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
         > [!NOTE]  
         > 在這種部署中，您必須也使用電腦憑證驗證。  
   
-6.  按一下 **[完成]** 。  
+6.  按一下 **\[完成\]** 。  
   
 ## <a name="BKMK_Infra"></a>2.5。 設定基礎結構伺服器  
 若要在「遠端存取」部署中設定基礎結構伺服器，您必須設定網路位置伺服器、DNS 設定 (包括 DNS 尾碼搜尋清單)，以及「遠端存取」不會自動偵測的管理伺服器。  
@@ -165,12 +165,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 4.  在 [DNS 尾碼搜尋清單] 頁面上，「遠端存取」伺服器會自動偵測部署中的任何網域尾碼。 請使用 [新增] 和 [移除] 按鈕，從要使用的網域尾碼清單中新增和移除網域尾碼。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按一下 **\[下一步\]** 。  
   
-5.  在 [管理] 頁面上，新增系統不會自動偵測的任何管理伺服器，然後按 [下一步]。 「遠端存取」會自動新增網域控制站和 System Center Configuration Manager 伺服器。  
+5.  在 [管理] 頁面上，新增系統不會自動偵測的任何管理伺服器，然後按 [下一步]。 遠端存取會自動新增網域控制站和 Configuration Manager 伺服器。  
   
     > [!NOTE]  
-    > 雖然會自動新增伺服器，但它們不會出現在清單中。 在您第一次套用設定之後，System Center Configuration Manager 伺服器才會出現在清單中。  
+    > 雖然會自動新增伺服器，但它們不會出現在清單中。 第一次套用設定之後，Configuration Manager 的伺服器就會出現在清單中。  
   
-6.  按一下 **[完成]** 。  
+6.  按一下 **\[完成\]** 。  
   
 ## <a name="BKMK_App"></a>2.6。 設定應用程式伺服器  
 在「遠端存取」部署中，設定應用程式伺服器是一項選擇性的工作。 「遠端存取」可讓您針對選取的應用程式伺服器要求進行驗證，若要這麼做，只要將這些伺服器包含在應用程式伺服器安全群組中即可。 根據預設，連到需要驗證之應用程式伺服器的流量也會經過加密；不過，您可以選擇不要加密連到應用程式伺服器的流量，而只使用驗證。  
@@ -188,7 +188,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 4.  若要在沒有加密的情況下使用驗證，請選取 **不要加密流量。僅使用驗證** 核取方塊。  
   
-5.  按一下 **[完成]** 。  
+5.  按一下 **\[完成\]** 。  
   
 ## <a name="BKMK_GPO"></a>2.7。 設定摘要和替代 GPO  
 當「遠端存取」設定完成時，會顯示 [遠端存取檢閱]。 您可以檢閱先前選取的所有設定，包括：  

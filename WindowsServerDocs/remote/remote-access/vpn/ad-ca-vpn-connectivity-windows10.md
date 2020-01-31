@@ -9,12 +9,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: be50c8eaf789b6f0737cbe07cf10d041d25e74f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b813e3f978ad1e61e6770edcf26b1c716efcbbe4
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388197"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822481"
 ---
 # <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>步驟 7. 選擇性使用 Azure AD 進行 VPN 連線的條件式存取
 
@@ -23,7 +23,7 @@ ms.locfileid: "71388197"
 
 在此選擇性步驟中，您可以使用[Azure Active Directory （Azure AD）條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)，微調 VPN 使用者存取資源的方式。 透過 Azure AD 虛擬私人網路（VPN）連線的條件式存取，您可以協助保護 VPN 連接。 「條件式存取」是原則型評估引擎，可讓您為任何 Azure Active Directory (Azure AD) 已連線的應用程式建立存取規則。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 您已熟悉下列主題：
 
@@ -79,9 +79,9 @@ ms.locfileid: "71388197"
 
 ## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devicesvpn-create-oma-dm-based-vpnv2-profilesmd"></a>[步驟7.5。建立以 OMA DM 為基礎的 VPNv2 設定檔到 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
-在此步驟中，您可以使用 Intune 建立 OMA DM 型 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 SCCM 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。
+在此步驟中，您可以使用 Intune 建立 OMA DM 型 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 Configuration Manager 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 [步驟7.1。設定 EAP-TLS 以忽略憑證撤銷清單（CRL）檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)：在此步驟中，您必須新增**IgnoreNoRevocationCheck**並將它設定為允許在憑證不包含 CRL 發佈點時驗證用戶端。 根據預設，IgnoreNoRevocationCheck 會設定為0（已停用）。
 
@@ -89,7 +89,7 @@ ms.locfileid: "71388197"
 
 - [設定 VPNv2 設定檔](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)： VPN 用戶端現在可以與雲端型條件式存取平臺整合，以提供遠端用戶端的裝置相容性選項。 在此步驟中，您會設定具有 **\<DeviceCompliance > \<啟用 > true\</Enabled >** 的 VPNv2 設定檔。
 
-- [使用自動 VPN 設定檔強化 Windows 10 中的遠端存取](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile)：瞭解 Microsoft 如何實行 VPN 連線的條件式存取。 VPN 設定檔包含裝置連線到公司網路所需的所有資訊，包括支援的驗證方法，以及裝置應連接的 VPN 伺服器。 Windows 10 年度更新版中的變更（包括條件式存取和單一登入）讓我們能夠建立我們的 Always On VPN 連線設定檔。 我們已使用 System Center Configuration Manager 主控台為已加入網域和 Microsoft Intune 管理的裝置建立連線設定檔。
+- [使用自動 VPN 設定檔強化 Windows 10 中的遠端存取](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile)：瞭解 Microsoft 如何實行 VPN 連線的條件式存取。 VPN 設定檔包含裝置連線到公司網路所需的所有資訊，包括支援的驗證方法，以及裝置應連接的 VPN 伺服器。 Windows 10 年度更新版中的變更（包括條件式存取和單一登入）讓我們能夠建立我們的 Always On VPN 連線設定檔。
 
 - [Azure Active Directory 中的條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)：安全性對於使用雲端的組織而言是最重要的考慮。 雲端安全性的重要層面是管理雲端資源時的身分識別和存取權。 在行動優先、雲端優先的世界中，使用者可以從任何地方使用各種裝置和應用程式來存取您組織的資源。 因此，只著重于誰可以存取資源並不足夠。 為了讓安全性與生產力之間的平衡，IT 專業人員也必須考慮如何將資源存取為存取控制決策。
 

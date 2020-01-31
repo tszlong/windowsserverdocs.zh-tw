@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 65275f4fc2717fdf9bf85ad2aa31eb12d318cc9f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2233a638aa0a422d5792f8c949c46ac8de099ba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367700"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822041"
 ---
 # <a name="avenues-to-compromise"></a>危及系統安全的途徑
 
@@ -60,7 +60,7 @@ IT 檔、進程和程式的分析，識別由攻擊者利用的系統管理實�
 ### <a name="incomplete-patching"></a>不完整的修補  
 *第三條法則：如果您沒有跟上安全性修正程式，您的網路將不會是您的長時間。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
   
-Microsoft 會在每個月的第二個星期二發行安全性公告，不過，在少數情況下，安全性更新會在每月的安全性更新（也稱為「頻外」更新）之間發行，而此弱點是在判斷是否要造成的客戶系統的緊急風險。 無論小型企業是否將其 Windows 電腦設定為使用 Windows Update 來管理系統和應用程式修補，或大型組織使用 System Center Configuration Manager （SCCM）之類的管理軟體來根據詳細資訊部署修補程式，階層式計畫，許多客戶會以相對及時的方式修補其 Windows 基礎結構。  
+Microsoft 會在每個月的第二個星期二發行安全性公告，不過，在少數情況下，安全性更新會在每月的安全性更新（也稱為「頻外」更新）之間發行，而此弱點是在判斷是否要造成的客戶系統的緊急風險。 無論小型企業是否將其 Windows 電腦設定為使用 Windows Update 來管理系統和應用程式修補，或大型組織使用 Microsoft Endpoint Configuration Manager 之類的管理軟體，根據詳細的來部署修補程式。階層式計畫，許多客戶會以相對及時的方式修補其 Windows 基礎結構。  
   
 不過，少數的基礎結構只包含 Windows 電腦和 Microsoft 應用程式，而在遭入侵的環境中，通常會發現組織的修補程式管理原則包含間距。 這些環境中的 Windows 系統會以不一致的方式進行修補。 非 Windows 作業系統會偶爾修補（如果有的話）。 商業現成（COTS）應用程式包含修補程式存在但尚未套用的弱點。 網路裝置通常會使用出廠預設認證進行設定，而且在安裝後不會有任何固件更新年份。 不受其廠商支援的應用程式和作業系統通常會保持執行狀態，儘管它們無法再針對弱點進行修補。 這些未修補的系統都代表攻擊者的另一個可能的進入點。  
   

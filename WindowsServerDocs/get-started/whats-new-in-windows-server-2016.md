@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948267"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822711"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
@@ -86,7 +86,7 @@ Windows Server 2016 的新版本包含︰能夠在 Nano 伺服器上本機執行
 ### <a name="powershell-desired-state-configuration-dsc-in-windows-management-framework-wmf-5"></a>Windows Management Framework (WMF) 5 中的 PowerShell 預期狀態設定 (DSC)
 Windows Management Framework 5 包含 Windows PowerShell 預期狀態設定 (DSC)、Windows 遠端管理 (WinRM) 和 Windows Management Instrumentation (WMI) 的更新。
 
-如需測試 Windows Management Framework 5 之 DSC 功能的詳細資訊，請參閱[驗證 PowerShell DSC 的功能](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)中討論的部落格文章系列。 若要下載，請參閱 [Windows Management Framework 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
+如需測試 Windows Management Framework 5 之 DSC 功能的詳細資訊，請參閱[驗證 PowerShell DSC 的功能](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)中討論的部落格文章系列。 若要下載，請參閱 [Windows Management Framework 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>軟體探索、安裝和清查的 PackageManagement 整合套件管理
 Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前稱為 OneGet)，可讓 IT 專業人員或 DevOps 在本機或從遠端自動化軟體探索、安裝及清查 (SDII)，不論安裝程式技術為何，以及軟體位於何處。 
@@ -201,4 +201,3 @@ Windows Server 2016 的 IIS 10.0 Web 伺服器提供新功能，包括︰
 
 ## <a name="see-also"></a>另請參閱  
 -   [版本資訊：Windows Server 2016 中的重要問題](Windows-Server-2016-GA-Release-Notes.md)  
-

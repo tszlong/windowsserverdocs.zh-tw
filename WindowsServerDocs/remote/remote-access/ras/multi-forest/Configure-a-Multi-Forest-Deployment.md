@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 41c4de30482ff09cb0db8a113fa324b7299af43d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404533"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822681"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -177,7 +177,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [網路位置伺服器] 頁面上，按 [下一步]。  
   
-3.  在 [DNS] 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址] 中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按一下 \[下一步\]。  
+3.  在 [DNS] 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址]中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按一下 \[下一步\]。  
   
 4.  選擇性：在 [DNS 尾碼搜尋清單] 頁面的 [新尾碼] 方塊中輸入尾碼，然後按一下 [新增]來新增任意的 DNS 尾碼。 然後按一下 \[下一步\]。  
   
@@ -202,7 +202,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [遠端存取伺服器安裝精靈] 中，按一下 [首碼設定]。  
   
-3.  在 [首碼設定] 頁面的 [內部網路 IPv6 首碼] 中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按一下 \[下一步\]。  
+3.  在 [首碼設定] 頁面的 [內部網路 IPv6 首碼]中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按一下 \[下一步\]。  
   
 4.  在 [驗證] 頁面上，按一下 [完成]。  
   
@@ -236,7 +236,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
 ### <a name="RefreshMgmtServers"></a>重新整理管理伺服器清單  
 遠端存取會自動探索所有包含 DirectAccess 設定 GPO 之樹系中的基礎結構伺服器。 如果已將 DirectAccess 部署於 Forest1 的伺服器上，則會將伺服器 GPO 寫入它在 Forest1 中的網域。 如果您針對 Forest2 的用戶端啟用 DirectAccess 存取，則會將用戶端 GPO 寫入 Forest2 中的網域。  
   
-必須具備基礎結構伺服器的自動探索程序，才能透過 DirectAccess 存取網域控制站和 System Center Configuration Manager。 您必須手動啟動探索程序。  
+需要基礎結構伺服器的自動探索程式，才能允許透過 DirectAccess 存取網域控制站和 Microsoft 端點 Configuration Manager。 您必須手動啟動探索程序。  
   
 ##### <a name="to-refresh-the-management-servers-list"></a>重新整理管理伺服器清單  
   

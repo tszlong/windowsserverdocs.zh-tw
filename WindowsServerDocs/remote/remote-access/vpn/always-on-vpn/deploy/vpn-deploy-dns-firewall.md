@@ -9,19 +9,19 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 06/11/2018
-ms.openlocfilehash: 326f1e8d52dc34ad433e8cc3bd4c4e84508026b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aa7658587b8434bfbaa6874498215a6b2c9213be
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388085"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822661"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>步驟 5. 設定 DNS 和防火牆設定
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**處**步驟 4.安裝並設定 NPS 伺服器](vpn-deploy-nps.md)
-- [**下一個**步驟 6.設定 Windows 10 用戶端 Always On VPN 連線](vpn-deploy-client-vpn-connections.md)
+- [**上一步：** 步驟4。安裝和設定 NPS 伺服器](vpn-deploy-nps.md)
+- [**下一步：** 步驟6。設定 Windows 10 用戶端 Always On VPN 連線](vpn-deploy-client-vpn-connections.md)
 
 在此步驟中，您會設定 VPN 連線能力的 DNS 和防火牆設定。
 
@@ -82,6 +82,6 @@ ms.locfileid: "71388085"
 
 如果您不使用 NPS 部署中的預設 RADIUS 埠，您必須將防火牆設定為允許您所使用之埠上的 RADIUS 流量。 如需詳細資訊，請參閱[設定 RADIUS 流量的防火牆](../../../../../networking/technologies/nps/nps-firewalls-configure.md)。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
-[步驟 6.設定 Windows 10 用戶端 Always On VPN](vpn-deploy-client-vpn-connections.md)連線：在此步驟中，您會將 Windows 10 用戶端電腦設定為使用 VPN 連線與該基礎結構進行通訊。 您可以使用數種技術來設定 Windows 10 VPN 用戶端，包括 Windows PowerShell、System Center Configuration Manager 和 Intune。 這三個都需要 XML VPN 設定檔來設定適當的 VPN 設定。
+[步驟6。設定 Windows 10 用戶端 Always On VPN](vpn-deploy-client-vpn-connections.md)連線：在此步驟中，您會將 windows 10 用戶端電腦設定為使用 vpn 連線與該基礎結構進行通訊。 您可以使用數種技術來設定 Windows 10 VPN 用戶端，包括 Windows PowerShell、Microsoft Endpoint Configuration Manager 和 Intune。 這三個都需要 XML VPN 設定檔來設定適當的 VPN 設定。

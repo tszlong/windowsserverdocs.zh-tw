@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 56986f2ea9f49bdfc1194ae5342798793524e86c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 241418b87fd0f1e6fa64c4b1267e6d9fcde6b0d3
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408611"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822761"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>實作安全的管理主機
 
@@ -76,7 +76,7 @@ ms.locfileid: "71408611"
 > 在撰寫本文時，Microsoft 安全性合規性管理員不會包含跳躍伺服器或其他安全系統管理主機的特定設定，但仍可使用安全性合規性管理員（SCM）來建立系統管理的初始基準主機. 不過，若要適當地保護主機，您應該將額外的安全性設定套用到高度安全的工作站和伺服器。  
   
 ### <a name="applocker"></a>AppLocker  
-系統管理主機和虛擬 machinesshould 透過 AppLocker 或協力廠商應用程式限制軟體，透過腳本、工具和應用程式允許清單進行設定。 任何未遵守安全設定的系統管理應用程式或公用程式，都應該升級或取代為符合安全開發和管理實務的工具。 當系統管理主機需要新的或額外的工具時，應該徹底測試應用程式和公用程式，而且如果工具適合部署在系統管理主機上，則可以將它新增至系統的允許清單中。  
+系統管理主機和虛擬 machinesshould 透過 AppLocker 或協力廠商應用程式限制軟體，透過腳本、工具和應用程式白名單進行設定。 任何未遵守安全設定的系統管理應用程式或公用程式，都應該升級或取代為符合安全開發和管理實務的工具。 當系統管理主機需要新的或額外的工具時，應該徹底測試應用程式和公用程式，而且如果工具適合部署在系統管理主機上，則可以將它新增至系統的白名單中。  
   
 ### <a name="rdp-restrictions"></a>RDP 限制  
 雖然特定設定會根據系統管理系統的架構而有所不同，但您應該包括哪些帳戶和電腦可以用來建立與受控系統遠端桌面通訊協定（RDP）連線的限制，例如，使用遠端桌面閘道（RD 閘道）跳躍伺服器，從授權的使用者和系統控制網域控制站和其他受管理系統的存取權。  
@@ -84,7 +84,7 @@ ms.locfileid: "71408611"
 您應該允許經過授權的使用者進行互動式登入，而且應該移除或甚至封鎖伺服器存取不需要的其他登入類型。  
   
 ### <a name="patch-and-configuration-management"></a>修補和設定管理  
-較小的組織可能會依賴 Windows Update 或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）等供應專案來管理 Windows 系統更新的部署，而較大型的組織可能會實行企業修補程式和設定管理軟體（例如 System Center Configuration Manager）。 無論您用來將更新部署至一般伺服器和工作站擴展的機制為何，您都應該考慮針對高度安全的系統（例如網域控制站、憑證授權單位單位和管理主機）進行個別部署。 藉由將這些系統與一般管理基礎結構隔離，如果您的管理軟體或服務帳戶遭到入侵，就無法輕易地將危害延伸到基礎結構中最安全的系統。  
+較小的組織可能會依賴 Windows Update 或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）之類的供應專案來管理 Windows 系統更新的部署，而較大型的組織可能會實行企業修補程式和設定管理軟體，例如 Microsoft 端點 Configuration Manager。 無論您用來將更新部署至一般伺服器和工作站擴展的機制為何，您都應該考慮針對高度安全的系統（例如網域控制站、憑證授權單位單位和管理主機）進行個別部署。 藉由將這些系統與一般管理基礎結構隔離，如果您的管理軟體或服務帳戶遭到入侵，就無法輕易地將危害延伸到基礎結構中最安全的系統。  
   
 雖然您不應該為安全系統執行手動更新程式，但您應該設定不同的基礎結構來更新安全系統。 即使在非常大型的組織中，此基礎結構通常也可以透過專用的 WSUS 伺服器和 Gpo 來執行，以保護系統。  
   
