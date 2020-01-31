@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ff38072855d0fd44a083ed6b3c931a6a0ed9f88a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f8e5164ee1b5729d30536ae61df7cf3579e57fe6
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947950"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822721"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -27,7 +27,7 @@ ms.locfileid: "75947950"
   
 1. 確認目標伺服器符合 [系統需求](https://technet.microsoft.com/library/dn303418.aspx)。  
 2. 確認 [Application compatibility](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)。  
-3. 確認安全性設定。 如需詳細資訊，請參閱 [與 Windows Server 2012 中 AD DS 相關的過時功能與行為變更](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures) 和 [Secure default settings in Windows Server 2008 和 Windows Server 2008 R2](https://technet.microsoft.com/library/upgrade-domain-controllers-to-windows-server-2008-r2(WS.10).aspx#BKMK_SecureDefault)。  
+3. 確認安全性設定。 如需詳細資訊，請參閱 與 Windows Server 2012 中 AD DS 相關的過時功能與行為變更 和 Secure default settings in Windows Server 2008 和 Windows Server 2008 R2。  
 4. 檢查要執行安裝的電腦與目標伺服器的連線。  
 5. 檢查必要操作主機角色的可用性：  
 
@@ -281,18 +281,17 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 
 |產品|備註|  
 |-----------|---------|  
-|[Microsoft Configuration Manager 2007](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2007 含 SP2 (包含 Configuration Manager 2007 R2 和 Configuration Manager 2007 R3)：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter**注意：** 雖然這些都是用戶端的完整支援，但並不打算新增使用 Configuration Manager 2007 作業系統部署功能將這些部署為作業系統的支援。 同時，也沒有任何 Windows Server 2012 的 SKU 支援站台伺服器或站台系統。|  
-|[Microsoft SharePoint 2007](https://support.microsoft.com/kb/2728964)|Microsoft Office SharePoint Server 2007 不能安裝在 Windows Server 2012 上。|  
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在 <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<br /><br />在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<br /><br />SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<br /><br />SharePoint Server 2010 必要條件安裝程式（Prerequisiteinstaller.exe）失敗，並出現「此程式有相容性問題」錯誤。 按一下 [執行程式但不取得協助]，會顯示錯誤「正在驗證 SharePoint 是否可以&#124;安裝 sharepoint server 2010 （不含 service pack），無法安裝在 Windows Server 2012 上」。|  
 |[Microsoft SharePoint 2013](https://technet.microsoft.com/library/cc262485(v=office.15).aspx)|伺服器陣列中的資料庫伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<br /><br />含內建資料庫的單一伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<br /><br />伺服器陣列中的前端網頁伺服器和應用程式伺服器最低需求：<br /><br />64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter。|  
-|[Microsoft System Center Configuration Manager 2012](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Configuration Manager Service Pack 1：<br /><br />Microsoft 會在發行 Service Pack 1 時，在我們的用戶端支援基礎新增下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<br /><br />所有站台伺服器角色 (包含站台伺服器、SMS 提供者和管理點) 都可以部署在含下列作業系統版本的伺服器：<br /><br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[Configuration Manager 2012](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2012 Service Pack 1：<br /><br />Microsoft 會在發行 Service Pack 1 時，在我們的用戶端支援基礎新增下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<br /><br />所有站台伺服器角色 (包含站台伺服器、SMS 提供者和管理點) 都可以部署在含下列作業系統版本的伺服器：<br /><br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[Microsoft 端點 Configuration Manager （最新分支）](https://docs.microsoft.com/configmgr/core/plan-design/configs/supported-configurations)|[Configuration Manager 網站系統伺服器支援的作業系統](https://docs.microsoft.com/configmgr/core/plan-design/configs/supported-operating-systems-for-site-system-servers)。|  
 |[Microsoft Lync Server 2013](https://technet.microsoft.com/library/gg412883.aspx)|Lync Server 2013 需要搭配 Windows Server 2008 R2 或 Windows Server 2012。 它不能在 Server Core 安裝上執行， 可以在 [虛擬伺服器](https://technet.microsoft.com/library/gg399035.aspx)上執行。|  
 |[Lync Server 2010](https://support.microsoft.com/kb/2777359)|如果安裝了 [Lync Server 的 2012 年 10 月累計更新](https://support.microsoft.com/?kbid=2493736) ，Lync Server 2010 便無法安裝在新的 (而非升級的) Windows Server 2012 安裝。 不支援將現有 Lync Server 2010 安裝的作業系統升級到 Windows Server 2012。 Windows Server 2012 也不支援 Microsoft Lync Server 2010 群組聊天伺服器。|  
 |[System Center 2012 Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Endpoint Protection Service Pack 1 會更新用戶端支援基礎，以包含下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |[System Center 2012 Forefront Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|FEP 2010 含更新彙總套件 1 會更新用戶端支援基礎，以包含下列作業系統：<br /><br />-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |Forefront Threat Management Gateway (TMG)|僅支援 TMG 在 Windows Server 2008 和 Windows Server 2008 R2 上執行。 如需詳細資訊，請參閱 [Forefront TMG 的系統需求](https://technet.microsoft.com/library/dd896981.aspx)。|  
 |Windows Server Update Services|這個版本的 WSUS 已經可以支援 Windows 8 電腦或 Windows Server 2012 電腦做為用戶端。|  
-|Windows Server Update Services 3.0|更新知識庫文章[2734608](https://support.microsoft.com/kb/2734608)讓執行 WINDOWS SERVER UPDATE SERVICES （WSUS） 3.0 SP2 的伺服器能夠更新執行 Windows 8 或 Windows Server 2012：**注意：** 具有獨立 wsus 3.0 SP2 環境或 System Center Configuration Manager 2007 Service PACK 2 環境搭配 WSUS 3.0 SP2 的客戶需要[2734608](https://support.microsoft.com/kb/2734608)以適當的方式管理以 windows 8 為基礎的電腦或以 windows Server 2012 為基礎的電腦做為用戶端。|  
+|Windows Server Update Services 3.0|更新知識庫文章[2734608](https://support.microsoft.com/kb/2734608)讓執行 WINDOWS SERVER UPDATE SERVICES （WSUS） 3.0 SP2 的伺服器能夠更新執行 Windows 8 或 Windows Server 2012：**注意：** 具有獨立 wsus 3.0 SP2 環境或 Configuration Manager 2007 Service PACK 2 環境搭配 WSUS 3.0 SP2 的客戶需要[2734608](https://support.microsoft.com/kb/2734608)以適當的方式管理以 windows 8 為基礎的電腦或以 windows Server 2012 為基礎的電腦做為用戶端。|  
 |[Exchange 2013](https://technet.microsoft.com/library/bb691354.aspx)|Windows Server 2012 Standard 和 Datacenter 支援下列角色：架構主機、通用類別目錄伺服器、網域控制站、信箱和用戶端存取伺服器角色<br /><br />樹系功能等級：Windows Server 2003 或更新版本<br /><br />來源：Exchange 2013 系統需求|  
 |Exchange 2010|[來源： Exchange 2010 Service Pack 3](https://blogs.technet.com/b/exchange/archive/2012/09/25/announcing-exchange-2010-service-pack-3.aspx)<br /><br />Exchange 2010 (含 Service Pack 3) 可以安裝在 Windows Server 2012 成員伺服器上。<br /><br />[Exchange 2010 系統需求](https://technet.microsoft.com/library/aa996719(EXCHG.141).aspx) 會列出最新支援的架構主機、通用類別目錄和網域控制站，如同 Windows Server 2008 R2。<br /><br />樹系功能等級：Windows Server 2003 或更新版本|  
 |SQL Server 2012|來源：KB [2681562](https://support.microsoft.com/kb/2681562)<br /><br />Windows Server 2012 支援 SQL Server 2012 RTM。|  
