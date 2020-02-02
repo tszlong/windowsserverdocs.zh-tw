@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d00092ee2cd4e6cc74d48e08ad5c316c2b309ab4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4f9d8fa71671c4ad4651008729d4cee53c8ee2f
+ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357874"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76918254"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>使用 AD FS 將 Azure MFA 設定為驗證提供者
 
@@ -25,10 +25,10 @@ ms.locfileid: "71357874"
 
 ## <a name="registering-users-for-azure-mfa-with-ad-fs"></a>向 AD FS 註冊 Azure MFA 的使用者
 
-AD FS 不支援內嵌&#34;證明&#34;，或註冊 Azure MFA 安全性驗證資訊，例如電話號碼或行動裝置應用程式。 這表示使用者必須在使用 Azure MFA 向[https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx) AD FS 應用程式進行驗證之前造訪，才能完成校訂。 當尚未校訂 Azure AD 的使用者嘗試在 AD FS 使用 Azure MFA 進行驗證時，將會收到 AD FS 錯誤。  身為 AD FS 系統管理員，您可以自訂此錯誤體驗，改為引導使用者前往 proofup 頁面。  您可以使用 onload 自訂來偵測 [AD FS] 頁面內的錯誤訊息字串，並顯示新的訊息以引導使用者造訪[https://aka.ms/mfasetup](https://aka.ms/mfasetup)，然後重新嘗試驗證。 如需詳細指引，請參閱本文中的「自訂 AD FS 網頁以引導使用者註冊 MFA 驗證方法」。
+AD FS 不支援內嵌&#34;證明&#34;，或註冊 Azure MFA 安全性驗證資訊，例如電話號碼或行動裝置應用程式。 這表示在使用 Azure MFA 向 AD FS 應用程式進行驗證之前，使用者必須先造訪[https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx) ，以取得校訂。 當尚未校訂 Azure AD 的使用者嘗試在 AD FS 使用 Azure MFA 進行驗證時，將會收到 AD FS 錯誤。  身為 AD FS 系統管理員，您可以自訂此錯誤體驗，改為引導使用者前往 proofup 頁面。  您可以使用 onload 自訂來偵測 [AD FS] 頁面內的錯誤訊息字串，並顯示新的訊息，引導使用者流覽[https://aka.ms/mfasetup](https://aka.ms/mfasetup)，然後重新嘗試驗證。 如需詳細指引，請參閱本文中的「自訂 AD FS 網頁以引導使用者註冊 MFA 驗證方法」。
 
 >[!NOTE]
-> 之前，使用者必須使用 MFA 進行驗證以進行註冊（例如[https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx)透過快捷方式[https://aka.ms/mfasetup](https://aka.ms/mfasetup)造訪）。  現在，尚未註冊 MFA 驗證資訊的 AD FS 使用者，可以透過僅使用主要&#34;驗證的快捷方式[https://aka.ms/mfasetup](https://aka.ms/mfasetup) （例如 Windows 整合式驗證或透過 AD 的使用者名稱和密碼）存取 Azure AD s proofup 頁面FS 網頁）。  如果使用者未設定任何驗證方法，Azure AD 將會執行內嵌註冊，使用者會在其中看到訊息&#34;，表示您的系統管理員已要求您設定此帳戶以進行&#34;其他安全性驗證，然後使用者可以選取以&#34;立即&#34;設定。
+> 先前，使用者必須使用 MFA 進行驗證以進行註冊（例如，透過快捷方式[https://aka.ms/mfasetup](https://aka.ms/mfasetup)）來進行註冊（請造訪[https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx)）。  現在，尚未註冊 MFA 驗證資訊的 AD FS 使用者，可以透過僅使用主要&#34;驗證（例如 Windows 整合式驗證或透過 AD FS 網頁的使用者名稱和密碼）的快捷[https://aka.ms/mfasetup](https://aka.ms/mfasetup)方式存取 Azure AD s proofup 頁面。  如果使用者未設定任何驗證方法，Azure AD 將會執行內嵌註冊，使用者會在其中看到訊息&#34;，表示您的系統管理員已要求您設定此帳戶以進行&#34;其他安全性驗證，然後使用者可以選擇&#34;立即&#34;設定。
 > 已設定至少一個 MFA 驗證方法的使用者，在造訪 proofup 頁面時，仍會提示您提供 MFA。
 
 ## <a name="recommended-deployment-topologies"></a>建議的部署拓撲
@@ -44,7 +44,7 @@ AD FS 不支援內嵌&#34;證明&#34;，或註冊 Azure MFA 安全性驗證資�
 
 您現在可以將 [Azure AD 網域] 設定設為 [在內部部署執行 MFA] &#34;（&#34;將 SupportsMfa 設定為 [$True]）來執行此動作。  在此設定中，Azure AD 會提示 AD FS，以針對需要的條件&#34;式存取&#34;案例執行額外的驗證或真正的 MFA。  
 
-如上所述，尚未註冊的任何 AD FS 使用者（已設定的 MFA 驗證資訊）都應該透過自訂的 AD FS 錯誤頁面進行提示，以[https://aka.ms/mfasetup](https://aka.ms/mfasetup)流覽以設定驗證資訊，然後重新嘗試 AD FS 登入。  
+如上所述，尚未註冊的任何 AD FS 使用者（已設定的 MFA 驗證資訊）都應該透過自訂的 AD FS 錯誤頁面來進行提示，以流覽[https://aka.ms/mfasetup](https://aka.ms/mfasetup)以設定驗證資訊，然後重試 AD FS 登入。  
 由於 Azure MFA 視為主要因素，因此在初始設定之後，使用者將需要提供額外的因素來管理或更新 Azure AD 中的驗證資訊，或存取其他需要 MFA 的資源。
 
 >[!NOTE]
@@ -58,7 +58,7 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 
 先前，如果您想要讓 Azure MFA 做為 Office 365 或其他信賴憑證者 AD FS 中的其他驗證方法，最佳選項是將 Azure AD 設定為執行複合 MFA，其中主要驗證是在內部部署環境 AD FS 中執行，而 MFA 則是 trAzure AD iggered。 現在，當 [網域 SupportsMfa] 設定設定為 [$True] 時，您可以使用 Azure MFA 做為 AD FS 中的額外驗證。  
 
-如上所述，尚未註冊的任何 AD FS 使用者（已設定的 MFA 驗證資訊）都應該透過自訂的 AD FS 錯誤頁面進行提示，以[https://aka.ms/mfasetup](https://aka.ms/mfasetup)流覽以設定驗證資訊，然後重新嘗試 AD FS 登入。  
+如上所述，尚未註冊的任何 AD FS 使用者（已設定的 MFA 驗證資訊）都應該透過自訂的 AD FS 錯誤頁面來進行提示，以流覽[https://aka.ms/mfasetup](https://aka.ms/mfasetup)以設定驗證資訊，然後重試 AD FS 登入。  
 
 ## <a name="pre-requisites"></a>先決條件
 
@@ -78,8 +78,8 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 - 您的內部部署環境會[與 Azure AD 同盟。](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs)  
 - [適用于 Windows PowerShell 的 windows Azure Active Directory 模組](https://docs.microsoft.com/powershell/module/Azuread/?view=azureadps-2.0)。  
 - 全域管理員 Azure AD 實例上的許可權，以使用 Azure AD PowerShell 進行設定。  
-- 用於設定 Azure MFA 之 AD FS 伺服器陣列的企業系統管理員認證。  
-  
+- 用於設定 Azure MFA 之 AD FS 伺服器陣列的企業系統管理員認證。
+
 ## <a name="configure-the-ad-fs-servers"></a>設定 AD FS 伺服器
 
 若要完成適用于 AD FS 的 Azure MFA 設定，您需要使用所述的步驟來設定每個 AD FS 伺服器。 
@@ -87,7 +87,7 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 >[!NOTE]
 >請確定已在伺服器陣列中的**所有**AD FS 伺服器上執行這些步驟。 如果您的伺服器陣列中有多部 AD FS 伺服器，您可以使用 Azure AD PowerShell 從遠端執行必要的設定。  
 
-### <a name="step-1-generate-a-certificate-for-azure-mfa-on-each-ad-fs-server-using-the-new-adfsazuremfatenantcertificate-cmdlet"></a>步驟 1:使用`New-AdfsAzureMfaTenantCertificate` Cmdlet 在每部 AD FS 伺服器上產生 Azure MFA 的憑證
+### <a name="step-1-generate-a-certificate-for-azure-mfa-on-each-ad-fs-server-using-the-new-adfsazuremfatenantcertificate-cmdlet"></a>步驟1：使用 `New-AdfsAzureMfaTenantCertificate` Cmdlet 在每部 AD FS 伺服器上產生 Azure MFA 的憑證
 
 您需要做的第一件事，就是產生憑證供 Azure MFA 使用。  這可以使用 PowerShell 來完成。  產生的憑證可以在 [本機電腦] 憑證存放區中找到，並以主體名稱標示，其中包含您 Azure AD 目錄的 TenantID。
 
@@ -98,12 +98,12 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 
 ![AD FS 和 MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA1.PNG)  
   
-### <a name="step-2-add-the-new-credentials-to-the-azure-multi-factor-auth-client-service-principal"></a>步驟 2:將新認證新增至 Azure 多因素驗證用戶端服務主體
+### <a name="step-2-add-the-new-credentials-to-the-azure-multi-factor-auth-client-service-principal"></a>步驟2：將新認證新增至 Azure 多因素驗證用戶端服務主體
 
-為了讓 AD FS 伺服器能夠與 Azure 多因素驗證用戶端通訊，您必須將認證新增至 Azure 多因素驗證用戶端的服務主體。 使用`New-AdfsAzureMFaTenantCertificate` Cmdlet 產生的憑證將會作為這些認證。 請使用 PowerShell 來執行下列動作，以將新認證新增至 Azure 多因素驗證用戶端服務主體。  
+為了讓 AD FS 伺服器能夠與 Azure 多因素驗證用戶端通訊，您必須將認證新增至 Azure 多因素驗證用戶端的服務主體。 使用 `New-AdfsAzureMFaTenantCertificate` Cmdlet 所產生的憑證將會作為這些認證。 請使用 PowerShell 來執行下列動作，以將新認證新增至 Azure 多因素驗證用戶端服務主體。  
 
 > [!NOTE]
-> 若要完成此步驟，您需要使用`Connect-MsolService`PowerShell 連接到您的 Azure AD 實例。  這些步驟假設您已透過 PowerShell 連線。  如需詳細資訊，請參閱[ `Connect-MsolService`。](https://msdn.microsoft.com/library/dn194123.aspx)  
+> 若要完成此步驟，您必須使用 `Connect-MsolService`，透過 PowerShell 連接到您的 Azure AD 實例。  這些步驟假設您已透過 PowerShell 連線。  如需詳細資訊，請參閱[`Connect-MsolService`。](https://msdn.microsoft.com/library/dn194123.aspx)  
 
 **將憑證設定為針對 Azure 多因素驗證用戶端的新認證**  
 
@@ -117,29 +117,44 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
   
 ## <a name="configure-the-ad-fs-farm"></a>設定 AD FS 伺服器陣列  
   
-當您完成每個 AD FS 伺服器上的上一節後，就必須執行`Set-AdfsAzureMfaTenant` Cmdlet。  
-  
-此 Cmdlet 只需要針對 AD FS 伺服器陣列執行一次。  使用 PowerShell 來完成此步驟。
-  
-> [!NOTE]  
-> 您必須先重新開機伺服器陣列中每部伺服器上的 AD FS 服務，這些變更才會生效。  
-  
-    Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f8b09b8cd720  
+當您完成每個 AD FS 伺服器上的上一節之後，請使用[AdfsAzureMfaTenant](https://docs.microsoft.com/powershell/module/adfs/export-adfsauthenticationproviderconfigurationdata) Cmdlet 來設定 Azure 租使用者資訊。 此 Cmdlet 只需要針對 AD FS 伺服器陣列執行一次。
 
-![AD FS 和 MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA5.png)  
-  
-在此之後，您會看到 Azure MFA 可作為內部網路和外部網路使用的主要驗證方法。    
-  
+開啟 PowerShell 提示字元，並使用[AdfsAzureMfaTenant](https://docs.microsoft.com/powershell/module/adfs/export-adfsauthenticationproviderconfigurationdata) Cmdlet 輸入您自己的*tenantId* 。 針對使用 Microsoft Azure Government cloud 的客戶，請新增 `-Environment USGov` 參數：
+
+> [!NOTE]
+> 您必須先重新開機伺服器陣列中每部伺服器上的 AD FS 服務，這些變更才會生效。 針對最小的影響，請將每個 AD FS 伺服器一次從 NLB 輪替中執行，並等候所有連線清空。
+
+```powershell
+Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f8b09b8cd720
+```
+
+![AD FS 和 MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA5.png)
+
+沒有最新 Service Pack 的 Windows Server 不支援[AdfsAzureMfaTenant](https://docs.microsoft.com/powershell/module/adfs/export-adfsauthenticationproviderconfigurationdata) Cmdlet 的 `-Environment` 參數。 如果您使用 Azure Government 雲端，而先前的步驟因遺失 `-Environment` 參數而無法設定您的 Azure 租使用者，請完成下列步驟以手動建立登錄專案。 如果先前的 Cmdlet 正確地註冊您的租使用者資訊，或您不在 Azure Government 雲端中，請略過這些步驟：
+
+1. 在 AD FS 伺服器上開啟 [**登錄編輯程式**]。
+1. 瀏覽到 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ADFS`。 建立下列登錄機碼值：
+
+    | 登錄機碼       | 值 |
+    |--------------------|-----------------------------------|
+    | SasUrl             | https://adnotifications.windowsazure.us/StrongAuthenticationService.svc/Connector |
+    | StsUrl             | https://login.microsoftonline.us |
+    | ResourceUri        | https://adnotifications.windowsazure.us/StrongAuthenticationService.svc/Connector |
+
+1. 請先重新開機伺服器陣列中每部伺服器上的 AD FS 服務，這些變更才會生效。 針對最小的影響，請將每個 AD FS 伺服器一次從 NLB 輪替中執行，並等候所有連線清空。
+
+在此之後，您會看到 Azure MFA 可作為內部網路和外部網路使用的主要驗證方法。
+
 ![AD FS 和 MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA6.png)  
 
 ## <a name="renew-and-manage-ad-fs-azure-mfa-certificates"></a>更新和管理 AD FS Azure MFA 憑證
 
 下列指導方針會引導您瞭解如何管理 AD FS 伺服器上的 Azure MFA 憑證。
-根據預設，當您使用 Azure MFA 設定 AD FS 時，透過`New-AdfsAzureMfaTenantCertificate` PowerShell Cmdlet 產生的憑證有效期限為2年。  若要判斷憑證的到期日，然後更新並安裝新的憑證，請使用下列程式。
+根據預設，當您使用 Azure MFA 設定 AD FS 時，透過 `New-AdfsAzureMfaTenantCertificate` PowerShell Cmdlet 產生的憑證有效期限為2年。  若要判斷憑證的到期日，然後更新並安裝新的憑證，請使用下列程式。
 
 ### <a name="assess-ad-fs-azure-mfa-certificate-expiration-date"></a>評估 AD FS Azure MFA 憑證到期日
 
-在每部 AD FS 伺服器上，在本機電腦的 [我的存放區] 中，將會&#34;有一個自我簽署憑證，&#34;其中 OU = Microsoft AD FS 簽發者和主旨中的 Azure MFA。  這是 Azure MFA 憑證。  請檢查每個 AD FS 伺服器上此憑證的有效期間, 以判斷到期日。  
+在每部 AD FS 伺服器上，在本機電腦的 [我的存放區] 中，將會&#34;有一個自我簽署憑證，&#34;其中 OU = Microsoft AD FS 簽發者和主旨中的 Azure MFA。  這是 Azure MFA 憑證。  請檢查每個 AD FS 伺服器上此憑證的有效期間，以判斷到期日。  
 
 ### <a name="create-new-ad-fs-azure-mfa-certificate-on-each-ad-fs-server"></a>在每部 AD FS 伺服器上建立新的 AD FS Azure MFA 憑證
 
@@ -153,13 +168,13 @@ PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such a
 
 ### <a name="configure-each-new-ad-fs-azure-mfa-certificate-in-the-azure-ad-tenant"></a>在 Azure AD 租使用者中設定每個新的 AD FS Azure MFA 憑證
 
-使用 Azure AD PowerShell 模組，針對每個新憑證（在每部 AD FS 伺服器上）更新您的 Azure AD 租使用者設定，如下所示（注意：您必須先使用`Connect-MsolService`連線到租使用者，才能執行下列命令）。
+使用 Azure AD PowerShell 模組，針對每個新憑證（在每部 AD FS 伺服器上）更新您的 Azure AD 租使用者設定，如下所示（注意：您必須先使用 `Connect-MsolService` 連線到租使用者，才能執行下列命令）。
 
 ```
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$certbase64`這是新的憑證。  若要取得 base64 編碼的憑證，您可以將憑證（不含私密金鑰）匯出為 DER 編碼的檔案，然後在 Notepad.exe 中開啟，然後複製/貼上至 PowerShell 會話並指派給該`$certbase64`變數。
+`$certbase64` 是新的憑證。  若要取得 base64 編碼的憑證，您可以將憑證（不含私密金鑰）匯出為 DER 編碼的檔案，然後在 Notepad.exe 中開啟，然後複製/貼上至 PowerShell 會話，並將指派給 `$certbase64`的變數。
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>確認新的憑證將用於 Azure MFA
 
@@ -274,7 +289,7 @@ New expiration date: 2/27/2020 2:16:07 AM.
     //End Custom Code
     ```
     > [!IMPORTANT]
-    > 您需要變更 "< YOUR_DOMAIN_NAME_HERE >";以使用您的功能變數名稱。 例如：`var domain_hint = "contoso.com";`
+    > 您需要變更「< YOUR_DOMAIN_NAME_HERE >」;以使用您的功能變數名稱。 例如：`var domain_hint = "contoso.com";`
     
 5. 儲存 onload 檔案
 6. 輸入下列 Windows PowerShell 命令，將 onload 檔案匯入您的自訂主題：
@@ -288,6 +303,6 @@ New expiration date: 2/27/2020 2:16:07 AM.
     Set-AdfsWebConfig -ActiveThemeName "ProofUp"
     ```
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 [管理 AD FS 和 Azure MFA 所使用的 TLS/SSL 通訊協定和加密套件](manage-ssl-protocols-in-ad-fs.md)

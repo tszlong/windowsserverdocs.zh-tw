@@ -6,22 +6,22 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: faf9547833764e9075e86515d1f486a5a3f61ff8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
+ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872085"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76918297"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔儲存空間直接存取中的磁片區配置
-> 適用於：Windows Server Standard 2012 R2
+> 適用于： Windows Server 2019
 
 Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取中的磁片區配置加以分隔。 這麼做可以在某些情況下大幅增加容錯能力，但會強加一些額外的管理考慮和複雜度。 本主題說明其運作方式，並提供 PowerShell 中的範例。
 
    > [!IMPORTANT]
    > 這是 Windows Server 2019 中的新功能。 它在 Windows Server 2016 中無法使用。 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 ### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![綠色核取記號圖示。](media/delimit-volume-allocation/supported.png) 如果是下列情況，請考慮使用此選項：
 
@@ -53,17 +53,12 @@ Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取
 
 ### <a name="new-delimited-allocation"></a>新增：分隔配置
 
-使用分隔配置時，您可以指定要使用的伺服器子集（三向鏡像最少三個）。 磁片區會分割成複製三次（如先前）的 slab，而不是在每一部伺服器上配置，而是**只會將 slab 配置給您指定的伺服器子集**。
+使用分隔配置時，您可以指定要使用的伺服器子集（最少四個）。 磁片區會分割成複製三次（如先前）的 slab，而不是在每一部伺服器上配置，而是**只會將 slab 配置給您指定的伺服器子集**。
 
-![此圖顯示分割成三個 slab 堆疊，而且只散發到六部伺服器的三個。](media/delimit-volume-allocation/delimited-allocation.png)
-
+例如，如果您有8個節點的叢集（節點1到8），您可以指定只在節點1、2、3、4中的磁片上找出的磁片區。
 #### <a name="advantages"></a>優點
 
-使用此配置時，磁片區可能會存活三個並行失敗：事實上，在此情況下，其生存機率會從 0% （具有一般配置）增加到 95% （使用分隔的配置）！ 直覺來說，這是因為它不會相依于伺服器4、5或6，因此不會受到其失敗的影響。
-
-在上述範例中，伺服器1、3和5會同時失敗。 因為分隔的配置可確保伺服器2包含每個樓板的複本，所以每個樓板都會有一個存活的複本，而且磁片區會保持連線並可供存取：
-
-![顯示六部伺服器以紅色醒目提示的圖表，但整體磁片區為綠色。](media/delimit-volume-allocation/delimited-does-survive.png)
+使用範例配置時，磁片區可能會存活三個並行失敗。 如果節點1、2和6停止，只有2個節點的資料會保留3個磁片區，且磁片區會保持線上狀態。
 
 生存機率取決於伺服器的數目和其他因素–如需詳細資訊，請參閱[分析](#analysis)。
 
@@ -79,7 +74,7 @@ Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取
 
 ## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
 
-您可以使用`New-Volume` Cmdlet 在儲存空間直接存取中建立磁片區。
+您可以使用 `New-Volume` Cmdlet，在儲存空間直接存取中建立磁片區。
 
 例如，若要建立一般的三向鏡像磁片區：
 
@@ -91,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 建立三向鏡像磁片區，並將其配置分隔：
 
-1. 首先，將您叢集中的伺服器指派給`$Servers`變數：
+1. 首先，將叢集中的伺服器指派給變數 `$Servers`：
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -100,36 +95,36 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
    > [!TIP]
    > 在儲存空間直接存取中，「存放裝置縮放單位」一詞指的是連接到一部伺服器的所有原始存放裝置，包括直接連接的磁片磁碟機，以及具有磁片磁碟機的直接連接外部主機殼。 在此內容中，它與「伺服器」相同。
 
-2. 指定要搭配新`-StorageFaultDomainsToUse`參數使用的伺服器，並藉由`$Servers`編制索引。 例如，將配置分隔到第一個、第二個和第三個伺服器（索引0、1和2）：
+2. 指定要搭配新的 `-StorageFaultDomainsToUse` 參數使用的伺服器，以及編制 `$Servers`的索引。 例如，若要將配置分隔到第一個、第二、第三和第四部伺服器（索引0、1、2和3）：
 
     ```PowerShell
-    New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2]
+    New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
     ```
 
 ### <a name="see-a-delimited-allocation"></a>查看分隔的配置
 
-若要查看*MyVolume*的配置方式，請`Get-VirtualDiskFootprintBySSU.ps1`使用[附錄](#appendix)中的腳本：
+若要查看*MyVolume*的配置方式，請使用[附錄](#appendix)中的 `Get-VirtualDiskFootprintBySSU.ps1` 腳本：
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  0       0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
 ```
 
-請注意，只有 Server1、Server2 和 Server3 包含*MyVolume*的 slab。
+請注意，只有 Server1、Server2、Server3 和伺服器4包含*MyVolume*的 slab。
 
 ### <a name="change-a-delimited-allocation"></a>變更分隔的配置
 
-使用新`Add-StorageFaultDomain`的和`Remove-StorageFaultDomain` Cmdlet 來變更配置的分隔方式。
+使用新的 `Add-StorageFaultDomain` 和 `Remove-StorageFaultDomain` Cmdlet 來變更配置的分隔方式。
 
 例如，若要將*MyVolume*移到一部伺服器上：
 
-1. 指定第四部伺服器**可以**儲存*MyVolume*的 slab：
+1. 指定第五個伺服器**可以**儲存*MyVolume*的 slab：
 
     ```PowerShell
-    Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[3]
+    Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[4]
     ```
 
 2. 指定第一部伺服器**無法**儲存*MyVolume*的 slab：
@@ -144,66 +139,48 @@ MyVolume                300 GB         100 GB  100 GB  100 GB  0       0       0
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-![此圖顯示從伺服器1、2和3到伺服器2、3和4的 slab 遷移移。](media/delimit-volume-allocation/move.gif)
+您可以使用 `Get-StorageJob`監視重新平衡的進度。
 
-您可以使用`Get-StorageJob`監視重新平衡的進度。
-
-完成後，請`Get-VirtualDiskFootprintBySSU.ps1`再次執行以確認*MyVolume*已移動。
+完成後，請再次執行 `Get-VirtualDiskFootprintBySSU.ps1`，以確認*MyVolume*已移動。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
 ```
 
-請注意，Server1 不再包含*MyVolume*的 slab，而是 Server04。
+請注意，Server1 不再包含*MyVolume*的 slab，而是 Server5。
 
 ## <a name="best-practices"></a>最佳做法
 
 以下是使用分隔磁片區配置時要遵循的最佳作法：
 
-### <a name="choose-three-servers"></a>選擇三部伺服器
+### <a name="choose-four-servers"></a>選擇四部伺服器
 
-將每個三向鏡像磁片區分隔成三部伺服器，而不是更多。
+將每個三向鏡像磁片區分隔成四部伺服器，而不是更多。
 
 ### <a name="balance-storage"></a>平衡儲存體
 
 平衡配置給每部伺服器的儲存空間量，會計入磁片區大小。
 
-### <a name="every-delimited-allocation-unique"></a>每個分隔的唯一配置
+### <a name="stagger-delimited-allocation-volumes"></a>錯開分隔的配置磁片區
 
-若要最大化容錯，請將每個磁片區的配置設為唯一，這表示它不會與另一個磁片區共用其*所有*伺服器（有一些重迭功能）。 有了 N 部伺服器，有「N 選擇3」獨特的組合–以下是對一些常見叢集大小的意義：
+若要最大化容錯，請將每個磁片區的配置設為唯一，這表示它不會與另一個磁片區共用其*所有*伺服器（有一些重迭功能）。 
 
-| 伺服器數目（N） | 唯一分隔配置的數目（N 選擇3） |
-|-----------------------|-----------------------------------------------------|
-| 6                     | 20                                                  |
-| 8                     | 56                                                  |
-| 12                    | 220                                                 |
-| 16                    | 560                                                 |
-
-   > [!TIP]
-   > 請考慮這項 combinatorics 的實用審查[，並選擇標記法](https://betterexplained.com/articles/easy-permutations-and-combinations/)。
-
-以下是最大化容錯的範例-每個磁片區都有唯一的分隔配置：
-
-![唯一-配置](media/delimit-volume-allocation/unique-allocation.png)
-
-相反地，在下一個範例中，前三個磁片區會使用相同的分隔配置（對伺服器1、2和3），而最後三個磁片區會使用相同的分隔配置（到伺服器4、5和6）。 這不會將容錯最大化：如果有三部伺服器失敗，多個磁片區可能會離線，並同時變成無法存取。
-
-![非唯一的配置](media/delimit-volume-allocation/non-unique-allocation.png)
+例如，在八個節點的系統上：磁片區1：伺服器1、2、3、4磁片區2：伺服器5、6、7、8磁片區3：伺服器3、4、5、6磁片區4：伺服器1、2、7、8
 
 ## <a name="analysis"></a>Analysis
 
 這一節衍生的數學機率，是磁片區保持在線上且可存取的（或同等的整體儲存空間，可維持在線上且可供存取）作為失敗次數和叢集大小的功能。
 
    > [!NOTE]
-   > 這是選擇性的閱讀區段。 如果您想要查看數學，請繼續閱讀！ 但如果沒有，別擔心：[PowerShell 中的使用方式](#usage-in-powershell)和[最佳作法](#best-practices)，只是您必須成功執行已分隔的配置。
+   > 這是選擇性的閱讀區段。 如果您想要查看數學，請繼續閱讀！ 但如果沒有，別擔心： [PowerShell 中的使用方式](#usage-in-powershell)，以及[最佳作法](#best-practices)，您只需要成功執行已分隔的配置即可。
 
 ### <a name="up-to-two-failures-is-always-okay"></a>最多有兩個失敗永遠都沒問題
 
-每個三向鏡像磁片區在同一時間最多可承受兩個失敗，因為[這些範例](storage-spaces-fault-tolerance.md#examples)會說明，而不論其配置為何。 如果兩個磁片磁碟機失敗，或兩部伺服器故障，或其中一個失敗，則每個三向鏡像磁片區都保持連線並可供使用，即使是一般配置也一樣。
+無論其配置為何，每個三向鏡像磁片區都可以同時存活最多兩個失敗。 如果兩個磁片磁碟機失敗，或兩部伺服器故障，或其中一個失敗，則每個三向鏡像磁片區都保持連線並可供使用，即使是一般配置也一樣。
 
 ### <a name="more-than-half-the-cluster-failing-is-never-okay"></a>超過一半的叢集失敗，永遠都沒問題
 
@@ -211,65 +188,19 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  0       0
 
 ### <a name="what-about-in-between"></a>在之間有何意義？
 
-如果一次發生三個以上的失敗，但至少有一半的伺服器和磁片磁碟機仍在運作中，則具有分隔配置的磁片區可能會保持連線並可供存取，視哪些伺服器失敗而定。 讓我們執行數位來判斷確切的機率。
-
-為了簡單起見，根據上述最佳做法，假設磁片區是獨立且完全分散的（IID），而且每個磁片區的配置都有足夠的唯一組合可供使用。 任何指定的磁片區不受的機率，也是由預期的線性不受的整體儲存體所預期的分數。 
-
-假設有**N**個伺服器**的 f**發生失敗，配置給其中**3**的磁片區會離線（如果是），而只有在**F** **中發生**失敗。 有 **（N 選擇 f）** 發生**F**失敗的方法，其中 **（F 選擇3）** 導致磁片區離線並變成無法存取。 機率可以表示為：
-
-![P_offline = Fc3/NcF](media/delimit-volume-allocation/probability-volume-offline.png)
-
-在所有其他情況下，磁片區會保持連線並可供存取：
-
-![P_online = 1 –（Fc3/NcF）](media/delimit-volume-allocation/probability-volume-online.png)
-
-下表會評估一些常見叢集大小的機率，以及最多5次失敗，並顯示在每個案例中，相較于一般配置，已分隔的配置會增加容錯能力。
-
-### <a name="with-6-servers"></a>含6部伺服器
-
-| 配置                           | 存活1失敗的機率 | 存活2次失敗的機率 | 存活3次失敗的機率 | 存活4次失敗的機率 | 存活5次失敗的機率 |
-|--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 一般，散佈在所有6部伺服器上 | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 僅分隔為3部伺服器          | 100%                               | 100%                                | 95.0%                               | 0                                  | 0                                  |
-
-   > [!NOTE]
-   > 在6部以上的伺服器中超過3個失敗之後，叢集就會失去仲裁。
-
-### <a name="with-8-servers"></a>含8部伺服器
-
-| 配置                           | 存活1失敗的機率 | 存活2次失敗的機率 | 存活3次失敗的機率 | 存活4次失敗的機率 | 存活5次失敗的機率 |
-|--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 一般，分散在所有8部伺服器上 | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 僅分隔為3部伺服器          | 100%                               | 100%                                | 98.2%                               | 94.3%                               | 0                                  |
-
-   > [!NOTE]
-   > 在總共8部伺服器中超過4個失敗之後，叢集就會失去仲裁。
-
-### <a name="with-12-servers"></a>含12部伺服器
-
-| 配置                            | 存活1失敗的機率 | 存活2次失敗的機率 | 存活3次失敗的機率 | 存活4次失敗的機率 | 存活5次失敗的機率 |
-|---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 一般，散佈在所有12部伺服器上 | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 僅分隔為3部伺服器           | 100%                               | 100%                                | 99.5%                               | 99.2%                               | 98.7%                               |
-
-### <a name="with-16-servers"></a>含16部伺服器
-
-| 配置                            | 存活1失敗的機率 | 存活2次失敗的機率 | 存活3次失敗的機率 | 存活4次失敗的機率 | 存活5次失敗的機率 |
-|---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 一般，散佈在所有16部伺服器上 | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 僅分隔為3部伺服器           | 100%                               | 100%                                | 99.8%                               | 99.8%                               | 99.8%                               |
+如果一次發生三個以上的失敗，但至少有一半的伺服器和磁片磁碟機仍在運作中，則具有分隔配置的磁片區可能會保持連線並可供存取，視哪些伺服器失敗而定。
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>我可以分隔某些磁片區，而不是其他磁片區嗎？
 
-是的。 您可以選擇每個磁片區是否要分隔配置。
+可以。 您可以選擇每個磁片區是否要分隔配置。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔配置是否會變更磁片磁碟機更換的運作方式？
 
 否，與一般配置相同。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [儲存空間直接存取中的容錯](storage-spaces-fault-tolerance.md)
@@ -278,7 +209,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  0       0
 
 此腳本可協助您查看磁片區的配置方式。
 
-如以上所述使用它，請複製/貼上並`Get-VirtualDiskFootprintBySSU.ps1`另存新檔。
+如以上所述使用它，請複製/貼上並另存為 `Get-VirtualDiskFootprintBySSU.ps1`。
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {
