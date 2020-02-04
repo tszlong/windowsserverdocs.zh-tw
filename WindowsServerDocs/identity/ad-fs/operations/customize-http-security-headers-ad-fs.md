@@ -234,7 +234,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 |跨原始來源資源分享（CORS）|[CORS 瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |內容安全性原則（CSP）|[CSP 瀏覽器相容性](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 
-## <a name="next"></a>[下一步]
+## <a name="next"></a>下一步
 
 - [使用 AD FS 協助疑難排解指南](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS 疑難排解](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)
