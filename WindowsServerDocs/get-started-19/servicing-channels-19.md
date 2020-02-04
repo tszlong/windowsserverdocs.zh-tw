@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 3d443ff123cc041196f59d93d156415c34bdf70f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 06f92e0a2f74ed229b42e936583a7f75d4584234
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947876"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822111"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -76,9 +76,9 @@ IT 專業人員有許多工具可以維護 Windows Server。 每個選項都有�
 
 - **Windows Update (獨立)** ：這個選項只適用於連線至網際網路且已啟用 Windows Update 的伺服器。
 - **Windows Server Update Services (WSUS)** 提供比 Windows 10 和 Windows Server 更新更加廣泛的控制，而且內建在 Windows Server 作業系統中。 除了延遲更新的能力，組織可以新增更新的核准層，並選擇在電腦就緒時將更新部署至特定的電腦或一組電腦。
-- **System Center Configuration Manager** 提供最大限度掌控維護的能力。 IT 專業人員可以延遲更新、核准更新，而且有多個選項可以設定部署，以及管理頻寬的使用方式和部署時間。
+- **Microsoft Endpoint Configuration Manager** 提供最大限度掌控維護的能力。 IT 專業人員可以延遲更新、核准更新，而且有多個選項可以設定部署，以及管理頻寬的使用方式和部署時間。
 
-您可能已經根據您的資源、人員及專業知識，選擇使用至少其中一個選項。 您仍然可以繼續對半年通道發行版本使用同樣的程序：例如，已經使用 System Center Configuration Manager 來管理更新，還是可以繼續使用。 同樣地，如果您正在使用 WSUS，也可以繼續這麼使用。
+您可能已經根據您的資源、人員及專業知識，選擇使用至少其中一個選項。 您仍然可以繼續對半年通道發行版本使用相同的程序：例如，已經使用 Configuration Manager 來管理更新，還是可以繼續使用。 同樣地，如果您正在使用 WSUS，也可以繼續這麼使用。
 
 ## <a name="where-to-obtain-semi-annual-channel-releases"></a>如何取得半年通道版本
 
