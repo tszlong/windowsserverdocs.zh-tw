@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b3a30c081731de97e1bdf9abe711a5ef6460be0f
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 70281f581974493d3182fb6fdd8f35cb37bed4bf
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918312"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001903"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>使用 OAuth 搭配 AD FS 2016 或更新版本，以使用代理程式（OBO）建立多層式應用程式
 
@@ -44,7 +44,7 @@ ms.locfileid: "76918312"
 範例會包含三個模組
 
 
-模組 | 說明
+模組 | 描述
 -------|------------
 ToDoClient | 使用者互動的 Native client
 ToDoService | 仲介層 Web API，作為後端 WebAPI 的用戶端
@@ -222,14 +222,13 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
 
-* 提供適當的控制器名稱
+* 為控制器指定適當的名稱。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
 
-* 在控制器中新增下列程式碼
+* 在控制器中新增下列程式碼：
 
-
-~~~
+```cs
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -238,15 +237,16 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
     using System.Web.Http;
     namespace WebAPIOBO.Controllers
     {
+        [Authorize]
         public class WebAPIOBOController : ApiController
         {
             public IHttpActionResult Get()
             {
-                return Ok("WebAPI via OBO");
+                return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
             }
         }
     }
-~~~
+```
 
 當有人將 Get 要求放在 WebAPI WebAPIOBO 時，此程式碼只會傳回字串
 
@@ -274,7 +274,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 * 開啟 web.config 檔案
 * 修改下列金鑰
 
-| 按鍵                      | 值                                                                                                                                                                                                                   |
+| Key                      | 值                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida：物件             | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如 https://localhost:44321/                                                                                         |
 | ida： ClientID             | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如 <https://localhost:44321/> </br>**Ida：受眾和 ida： ClientID 彼此相符非常重要** |
@@ -494,7 +494,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 您也可以在 Fiddler 上查看詳細的追蹤。 啟動 Fiddler，並啟用 HTTPS 解密。 您可以看到我們對/adfs/oautincludes 端點提出兩個要求。
-在第一次互動中，我們會對權杖端點提供存取程式碼，並取得 https://localhost:44321/ ![ AD FS OBO 的存取權杖](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+在第一次互動中，我們會對權杖端點提供存取程式碼，並取得 https://localhost:44321/ ![AD FS OBO 的存取權杖](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 在與權杖端點的第二個互動中，您可以看到我們**requested_token_use**設定為**on_behalf_of** ，而我們使用的是針對仲介層 web 服務所取得的存取權杖，也就是 https://localhost:44321/ 作為判斷提示以取得代理者 token。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)

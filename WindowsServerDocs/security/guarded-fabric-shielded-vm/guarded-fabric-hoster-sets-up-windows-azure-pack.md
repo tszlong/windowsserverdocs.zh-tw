@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: d388da2b7416543c307bd931636902b4a7543e1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7336637bd3186f885db6d94eeffd0d2311edf3ac
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403658"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001837"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防護的 VM - 託管服務提供者會設定 Windows Azure Pack
 
@@ -48,7 +48,7 @@ ms.locfileid: "71403658"
 
 1.  查看[WAP 系統需求](https://technet.microsoft.com/library/dn296442.aspx)，並安裝[先決條件軟體](https://technet.microsoft.com/library/dn469335.aspx)。
 
-2.  下載並安裝[Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)。 如果電腦未連線到網際網路，請遵循[離線安裝指示](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)。
+2.  下載並安裝[Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)。 如果電腦未連線到網際網路，請遵循[離線安裝指示](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)。
 
 3.  開啟 Web Platform Installer 並尋找 **產品** 索引標籤底下的  **Windows Azure 套件：入口網站和 API Express** 。按一下 **新增**，然後在視窗底部**安裝**。
 
@@ -113,7 +113,7 @@ ms.locfileid: "71403658"
 
     此時，已設定 Windows Azure 套件，而且租使用者將能夠訂閱您剛建立的方案，並部署受防護的 Vm。 如需租使用者需要完成的其他步驟，請參閱適用于租使用者的[受防護 vm-使用 Windows Azure 套件部署受防護的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

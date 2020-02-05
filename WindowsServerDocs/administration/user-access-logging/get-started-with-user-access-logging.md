@@ -13,20 +13,20 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15906e8cc1e5e85a471f1b8725435eb60852f6f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382873"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001783"
 ---
 # <a name="get-started-with-user-access-logging"></a>開始使用使用者存取記錄
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用者存取記錄（UAL）是 Windows Server 中的一項功能，可依本機伺服器上的角色和產品匯總用戶端使用資料。 它可協助 Windows server 系統管理員針對本機伺服器上的角色和服務，量化用戶端電腦的要求。  
   
-預設會安裝並啟用 UAL，並以近乎即時的方式收集資料。 不需要系統管理員設定，雖然可以停用或啟用 UAL。 如需詳細資訊，請參閱 [Manage User Access Logging](Manage-User-Access-Logging.md)。 使用者存取記錄服務會將角色和產品的用戶端使用量資料匯總至本機資料庫檔案。  IT 系統管理員稍後可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell Cmdlet 來擷取依伺服器角色 (或軟體產品)、依使用者、依裝置、依本機伺服器以及依日期的數量和執行個體。  
+預設會安裝並啟用 UAL，並以近乎即時的方式收集資料。 不需要系統管理員設定，雖然可以停用或啟用 UAL。 如需詳細資訊，請參閱[管理使用者存取記錄](Manage-User-Access-Logging.md)。 使用者存取記錄服務會將角色和產品的用戶端使用量資料匯總至本機資料庫檔案。  IT 系統管理員稍後可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell Cmdlet 來擷取依伺服器角色 (或軟體產品)、依使用者、依裝置、依本機伺服器以及依日期的數量和執行個體。  
   
 > [!NOTE]  
 > UAL 支援 [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000)。  
@@ -50,7 +50,7 @@ UAL 可以支援下列伺服器角色和服務：
   
 -   Active Directory 憑證服務 (AD CS)  
   
--   Active Directory Rights Management Services (AD RMS)  
+-   Active Directory Rights Management Services (AD RMS)  
   
 -   BranchCache  
   
@@ -75,7 +75,7 @@ UAL 可以支援下列伺服器角色和服務：
 -   Web 伺服器 (IIS)  
   
     > [!WARNING]  
-    > 若要搭配使用 UAL 與 IIS，您必須使用 iisual.exe。 如需詳細資訊，請參閱 [使用 IIS 使用者存取記錄分析用戶端使用資料](http://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging)。  
+    > 若要搭配使用 UAL 與 IIS，您必須使用 iisual.exe。 如需詳細資訊，請參閱 [使用 IIS 使用者存取記錄分析用戶端使用資料](https://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging)。  
   
 -   Microsoft Message 佇列 (MSMQ) 服務  
   

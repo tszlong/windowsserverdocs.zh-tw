@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e5832843dce05832a231ed3a4d7e20cf90f1d183
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: a98c560306debc0e10c2c0ac44b41e12141b6e9f
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822591"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001883"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -64,11 +64,11 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 使用 Windows Admin Center 或 PowerShell 下載傳輸作業詳細的錯誤-僅限 CSV 記錄檔時，您會收到錯誤：
 
- >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間可能是較長時間的一部分。 這可能是因為服務仍在處理作業，或服務無法傳送回復訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
+ >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間，可能是較長逾時的一部分。 這可能是因為服務仍然在處理作業，或服務無法傳送回覆訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
 
 此問題是因為儲存體遷移服務所允許的預設一分鐘時間內，無法篩選出的傳輸檔案數量非常大。 
 
-若要解決此問題：
+若要解決這個問題：
 
 1. 在 orchestrator 電腦上，使用 Notepad.exe 編輯 *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*檔案，將 "sendTimeout" 從其1分鐘的預設值變更為10分鐘
 
@@ -123,7 +123,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用儲存體遷移服務預置資料時，DFSR 雜湊不相符
 
-當使用儲存體遷移服務將檔案傳輸到新的目的地，然後設定 DFS 複寫（DFSR）透過 preseeded 複寫或 DFSR 資料庫複製來複寫該資料與現有的 DFSR 伺服器時，所有檔案都會 experiemce 雜湊不相符，而且會重新複寫。 在使用 SMS 傳送資料流程、安全性資料流程、大小和屬性之後，這些資料流程會完全相符。 使用 ICACLS 或 DFSR 資料庫複製 debug 記錄來檢查檔案會顯示：
+當使用儲存體遷移服務將檔案傳輸到新的目的地，然後將 DFS 複寫（DFSR）設定為透過 preseeded 複寫或 DFSR 資料庫複製來複寫該資料與現有的 DFSR 伺服器時，所有檔案都會遇到雜湊不相符，而且會重新複寫。 在使用 SMS 傳送資料流程、安全性資料流程、大小和屬性之後，這些資料流程會完全相符。 使用 ICACLS 或 DFSR 資料庫複製 debug 記錄來檢查檔案會顯示：
 
 來源檔案：
 
@@ -350,6 +350,6 @@ DFSR Debug 記錄檔：
  
  如果您想要使用儲存體遷移服務搭配網域控制站來進行傳輸，請務必在 Windows 系統管理中心的 [傳輸設定] 頁面上，選取 [不要傳輸使用者和群組]。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存體遷移服務總覽](overview.md)

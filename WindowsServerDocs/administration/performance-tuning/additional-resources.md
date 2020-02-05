@@ -7,19 +7,19 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ee14a2bd9290dbaa5653640a80528d163635142d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947217"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001863"
 ---
 # <a name="additional-performance-tuning-resources"></a>其他效能微調資源
 
 使用本主題中的連結，深入瞭解此微調指南中所討論的概念。
 
 ## <a name="microsoft-windows-server-websites"></a>Microsoft Windows Server 網站
--   [Windows Server Catalog](http://www.windowsservercatalog.com/)
+-   [Windows Server Catalog](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 

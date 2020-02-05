@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a4f9d8fa71671c4ad4651008729d4cee53c8ee2f
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: c3a7e7c420ef63adc906e6558ed7aff6819e983c
+ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918254"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013053"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>使用 AD FS 將 Azure MFA 設定為驗證提供者
 
@@ -174,7 +174,7 @@ PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such a
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$certbase64` 是新的憑證。  若要取得 base64 編碼的憑證，您可以將憑證（不含私密金鑰）匯出為 DER 編碼的檔案，然後在 Notepad.exe 中開啟，然後複製/貼上至 PowerShell 會話，並將指派給 `$certbase64`的變數。
+`$newcert` 是新的憑證。 若要取得 base64 編碼的憑證，您可以將憑證（不含私密金鑰）匯出為 DER 編碼的檔案，然後在 Notepad.exe 中開啟，然後複製/貼上至 PowerShell 會話，並將指派給 `$newcert`的變數。
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>確認新的憑證將用於 Azure MFA
 
@@ -303,6 +303,6 @@ New expiration date: 2/27/2020 2:16:07 AM.
     Set-AdfsWebConfig -ActiveThemeName "ProofUp"
     ```
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 [管理 AD FS 和 Azure MFA 所使用的 TLS/SSL 通訊協定和加密套件](manage-ssl-protocols-in-ad-fs.md)
