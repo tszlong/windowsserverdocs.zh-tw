@@ -1,5 +1,5 @@
 ---
-title: Nano Server 上的 IIS
+title: Nano 伺服器上的 IIS
 description: 在 Nano Server 上設定 IIS 的詳細資料
 ms.prod: windows-server
 ms.service: na
@@ -12,16 +12,16 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c2d7eab2f149505758ab21f08cd6b8bdb74b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96a5e5f23ad3cdfc829fd141c3c90f6c200f06c9
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360299"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001803"
 ---
-# <a name="iis-on-nano-server"></a>Nano Server 上的 IIS
+# <a name="iis-on-nano-server"></a>Nano 伺服器上的 IIS
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
@@ -65,7 +65,7 @@ ms.locfileid: "71360299"
 |**管理工具**||  
 |適用於 Windows PowerShell 的 IIS 系統管理模組|x|  
 
-[http://iis.net/learn](http://iis.net/learn) 已發佈其他 IIS 設定 (例如使用 ASP.NET、PHP 和 Java) 的系列文章，以及其他相關內容。  
+[http://iis.net/learn](https://iis.net/learn) 已發佈其他 IIS 設定 (例如使用 ASP.NET、PHP 和 Java) 的系列文章，以及其他相關內容。  
 
 ## <a name="installing-iis-on-nano-server"></a>在 Nano Server 上安裝 IIS  
 您可以離線 (Nano Server 已關閉時) 或線上 (Nano Server 正在執行時) 安裝此伺服器角色；離線安裝是建議選項。  
@@ -242,7 +242,7 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
     $sm.CommitChanges()  
     ```  
 
-    您也可以使用伺服器名稱指示 (SNI) 與特定的主機名稱，並搭配下列語法：`$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    您也可以使用伺服器名稱指示 (SNI) 與特定的主機名稱，並搭配下列語法：`$sm.Sites["Default Web Site"].Bindings.Add("*:443: www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>附錄 1：IIS 子功能清單
 
