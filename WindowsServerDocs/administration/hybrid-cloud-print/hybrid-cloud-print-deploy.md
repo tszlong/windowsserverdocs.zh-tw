@@ -12,12 +12,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: c756aaeb293f9e6822e979e0f305f0c4f98adf72
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 77462ab74ee63677362b779615376e831c71de00
+ms.sourcegitcommit: eca5bb75d1db20ac07232cea759b6b542626c02f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352045"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114527"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合式雲端列印
 
@@ -107,8 +107,8 @@ ms.locfileid: "75352045"
 
     ![AAD 公開 API 5](../media/hybrid-cloud-print/AAD-AppRegistration-ECP-ExposeAPI-ScopeName.png)
 
-3. 新增 API 權限
-    - 返回應用程式註冊 分頁。 按一下 [原生應用程式]，然後選取 [API 許可權]。 按一下 [新增權限]。
+3. 新增 API 許可權
+    - 返回應用程式註冊 分頁。 按一下 [原生應用程式]，然後選取 [API 許可權]。 按一下 [**新增許可權**]。
 
     ![AAD API 許可權1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
 
@@ -178,7 +178,7 @@ ms.locfileid: "75352045"
 1. 請確定列印伺服器已安裝所有可用的 Windows Update。 注意：伺服器2019必須修補為組建17763.165 或更新版本。
     - 安裝下列伺服器角色：
         - 列印伺服器角色
-        - Internet Information Service (IIS)
+        - 網際網路資訊服務（IIS）
     - 如需如何安裝伺服器角色的詳細資訊，請參閱[使用新增角色及功能嚮導來安裝角色、角色服務和功能](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw)。
 
     ![列印伺服器角色](../media/hybrid-cloud-print/PrintServer-Roles.png)
@@ -199,7 +199,7 @@ ms.locfileid: "75352045"
 
         `"C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0"`
 
-    - 執行
+    - WMIMgmt.msc
 
         `.\CloudPrintDeploy.ps1 -AzureTenant <Azure Active Directory domain name> -AzureTenantGuid <Azure Active Directory ID>`
 
@@ -215,9 +215,9 @@ ms.locfileid: "75352045"
 
     ![列印伺服器雲端列印部署](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - 檢查記錄檔以查看是否有任何錯誤： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0>notepad CloudPrintDeploy.log`
+    - 檢查記錄檔以查看是否有任何錯誤： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
-4. 在提高許可權的命令提示字元中開啟 RegitEdit。 前往 Computer \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
+4. 在提高許可權的命令提示字元中執行**RegitEdit** 。 前往 Computer \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
     - 請確定 [AzureAudience] 設定為 [企業雲端列印應用程式] 的 [應用程式識別碼 URI]。
     - 請確定 [AzureTenant] 設定為 [Azure AD 功能變數名稱]。
 
@@ -238,7 +238,7 @@ ms.locfileid: "75352045"
     - 如果您向協力廠商提供者註冊您的網域，您將需要使用 SSL 憑證來設定 IIS 端點。 如需詳細資訊，請參閱本[指南](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/)。
 
 8. 安裝 SQLite 套件。
-   - 開啟已提高權限的 PowerShell 命令提示字元。
+   - 開啟已提升許可權的 PowerShell 命令提示字元。
    - 執行下列命令以下載 system.string nuget 套件。
 
         `Register-PackageSource -Name nuget.org -ProviderName NuGet -Location https://www.nuget.org/api/v2/ -Trusted -Force`
@@ -332,7 +332,7 @@ ms.locfileid: "75352045"
     - 在 Azure 入口網站上，移至**Azure Active Directory** > 的**企業應用程式** > **所有應用程式**。
     - 選取 [MopriaDiscoveryService 應用程式]。
     - 移至 [**應用程式 proxy**]。 將 [預先驗證方法] 變更為**Azure Active Directory**。
-    - 移至 [單一登入]。 選取 [整合式 Windows 驗證] 做為單一登入方法。
+    - 移至 [**單一登入**]。 選取 [整合式 Windows 驗證] 做為單一登入方法。
     - 將 [**內部應用程式 spn** ] 設定為列印伺服器電腦的 spn。
     - 將 [**委派的登**入身分識別] 設定為 [使用者主體名稱]。
     - 針對 EntperiseCloudPrint 應用程式重複此步驟。
@@ -351,7 +351,7 @@ ms.locfileid: "75352045"
 
 > 注意：如果您使用 Microsoft Intune 服務，您可以在 [雲端印表機] 類別下找到這些設定。
 
-|Intune 顯示名稱                     |原則                         |
+|Intune 顯示名稱                     |Policy(Windows Intune 說明：原則)                         |
 |----------------------------------------|-------------------------------|
 |印表機探索 URL                   |CloudPrinterDiscoveryEndpoint  |
 |印表機存取授權 URL            |CloudPrintOAuthAuthority       |
@@ -443,19 +443,21 @@ ms.locfileid: "75352045"
 
 > 注意：如果使用 "EcpPrintTest" 印表機，您可以在列印伺服器電腦的 "C：\\ECPTestOutput\\EcpTestPrint. xps" 位置中找到輸出檔案。
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 
-有各種記錄可協助疑難排解失敗。
-- 在 Windows 10 用戶端上。
-    - 使用意見反應中樞新增意見反應。
-        - 按一下 [**開始**] 並輸入「意見反應中樞」。
-        - 在 [類別] 下，選取 [**問題**、**裝置和驅動程式**、**列印**]。
-        - 在 [新增更多詳細資料] 區段中，按一下 [**開始錄製**] 按鈕。
-        - 重試失敗的列印工作。
-        - 返回 [意見反應中樞]，然後按一下 [**停止錄製**] 按鈕。
-        - 按一下 [**提交**] 以提交您的意見反應。
-    - 使用事件檢視器查看 Azure AD 作業的記錄。 按一下 [**開始**]，然後輸入 "事件檢視器"。 流覽至 [應用程式及服務記錄檔] > Microsoft > Windows > AAD > 作業。
-- 在連接器伺服器上。
-    - 使用事件檢視器查看應用程式 Proxy 的記錄檔。 按一下 [**開始**]，然後輸入 "事件檢視器"。 流覽至 [應用程式及服務記錄檔] > Microsoft > AadApplicationProxy > 連接器 > 系統管理員。
-- 在列印伺服器上。
-    - 您可以在 C:\inetpub\logs\LogFiles\W3SVC1. 找到 Mopria 探索服務應用程式和企業雲端列印應用程式的記錄檔。
+以下是 HCP 部署期間的常見問題
+
+|錯誤 |建議的步驟 |
+|------|------|
+|CloudPrintDeploy PowerShell 腳本失敗 | <ul><li>確定 Windows Server 有最新的更新。</li><li>如果使用 Windows Server Update Services （WSUS），請參閱[如何在使用 WSUS/SCCM 時，讓功能隨選和語言套件可用](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
+|SQLite 安裝失敗，訊息：偵測到封裝 ' System.object ' 的相依性迴圈 | Install-Package system.object-providername nuget-SkipDependencies<br>Install-Package EF6-providername nuget-SkipDependencies<br>Install-Package system.string-providername nuget-SkipDependencies<br><br>成功下載套件之後，請確定它們都是相同的版本。 如果不是，請將-requiredversion 參數新增至上述命令，並將它們設定為相同的版本。 |
+|發行印表機失敗 | <ul><li>針對 [傳遞預先驗證]，請確定發行印表機的使用者已獲得發行資料庫的適當許可權。</li><li>針對 Azure AD 預先驗證，請確定已在 IIS 中啟用 Windows 驗證。 請參閱步驟5.3。 此外，請先嘗試傳遞預先驗證。 如果通過預先驗證運作，問題可能與應用程式 proxy 相關。 請參閱針對[應用程式 Proxy 問題和錯誤訊息進行疑難排解](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 請注意，切換到 [通過] 會重設單一登入設定;再次流覽步驟5以重新設定 Azure AD 預先驗證。</li></ul> |
+|列印工作會保持「傳送至印表機」狀態 | <ul><li>請確定連接器伺服器上已啟用 TLS 1.2。 請參閱步驟2.1 中的連結文章。</li><li>請確定連接器伺服器上的 HTTP2 已停用。 請參閱步驟2.1 中的連結文章。</li></ul> |
+
+以下是可協助疑難排解的記錄檔位置
+
+|元件 |記錄檔位置 |
+|------|------|
+|Windows 10 用戶端 | <ul><li>使用事件檢視器查看 Azure AD 作業的記錄。 按一下 [**開始**]，然後輸入 "事件檢視器"。 流覽至 [應用程式及服務記錄檔] > Microsoft > Windows > AAD > 作業。</li><li>使用意見反應中樞來收集記錄。 請參閱[使用意見反應中樞應用程式將意見反應傳送給 Microsoft](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
+|連接器伺服器 | 使用事件檢視器查看應用程式 Proxy 的記錄檔。 按一下 [**開始**]，然後輸入 "事件檢視器"。 流覽至 [應用程式及服務記錄檔] > Microsoft > AadApplicationProxy > 連接器 > 系統管理員。 |
+|列印伺服器 | 您可以在 C:\inetpub\logs\LogFiles\W3SVC1. 找到 Mopria 探索服務應用程式和企業雲端列印應用程式的記錄檔。 |
