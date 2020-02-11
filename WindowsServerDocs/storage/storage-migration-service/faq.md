@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
-ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
+ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124896"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125139"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
 
@@ -27,6 +27,10 @@ ms.locfileid: "76124896"
 - $Recycle bin、Recycler、回收、系統磁碟區資訊、$UpgDrv $、$SysReset、$Windows。 ~ BT、$Windows. ~ LS、Windows .old、開機、復原、檔和設定
 - hiberfil.sys、sys.databases、cloud-init、winpepge.sys、sys.databases、bootsect.exe、.bak、bootmgr、bootnxt
 - 來源伺服器上的任何檔案或資料夾，與目的地上排除的資料夾衝突。 <br>例如，如果來源上有 N:\Windows 資料夾，而且它會對應至 C：\因為它會干擾目的地上的 C：\Windows 系統資料夾，所以目的地上的磁片區不會傳輸（不論其包含的內容為何）。
+
+## <a name="are-locked-files-migrated"></a>是否已遷移鎖定的檔案？
+
+儲存體遷移服務不會遷移應用程式獨佔鎖定的檔案。 服務會自動重試三次，並在嘗試之間有60秒的延遲，而且您可以控制嘗試次數和延遲。 您也可以重新執行傳輸，只複製先前因共用違規而略過的檔案。
 
 ## <a name="are-domain-migrations-supported"></a>是否支援網域遷移？
 
@@ -58,18 +62,18 @@ ms.locfileid: "76124896"
     - CA 超時
     - 並行使用者限制
     - 持續可用
-    - 說明           
+    - 描述           
     - 加密資料
     - 身分識別遠端
-    - 基礎結構
+    - 基礎架構
     - 名稱
     - 路徑
-    - 具範圍
+    - 範圍
     - 領域名稱
     - 安全性描述元
     - 陰影複製
     - 特殊
-    - 暫時
+    - 臨時性
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>我可以將多部伺服器合併成一部伺服器嗎？
 
@@ -143,6 +147,14 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 
 否，儲存體遷移服務不會遷移本機安裝的應用程式。 完成遷移之後，請將任何應用程式重新安裝到來源電腦上執行的目的地電腦上。 不需要重新設定任何使用者或其應用程式;儲存體遷移服務的設計目的是要讓用戶端看不到伺服器變更。 
 
+## <a name="what-happens-with-existing-files-on-the-destination-server"></a>目的地伺服器上現有的檔案會發生什麼事？
+
+執行傳輸時，儲存體遷移服務會搜尋來自來源伺服器的資料鏡像。 目的地伺服器不應包含任何實際執行資料或已連線的使用者，因為該資料可能會遭到覆寫。 根據預設，第一次傳輸會建立目的地伺服器上任何資料的備份複本作為保護措施。 在所有後續的傳輸中，根據預設，儲存體遷移服務會將資料鏡像至目的地;這表示不僅新增檔案，也會任意覆寫任何現有的檔案，並刪除來源上不存在的檔案。 這是刻意的行為，可讓來源電腦達到完美的精確度。 
+
+## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>錯誤號碼在傳送 CSV 中的意義為何？
+
+在傳輸 CSV 檔案中找到的大部分錯誤都是 Windows 系統錯誤碼。 您可以查看[Win32 錯誤碼檔](https://docs.microsoft.com/windows/win32/debug/system-error-codes)，瞭解每個錯誤的意義。 
+
 ## <a name="give-feedback"></a>我有哪些選項可以提供意見反應、提出 bug，或取得支援？
 
 若要提供儲存體遷移服務的意見反應：
@@ -162,6 +174,6 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
  - [Windows Server 2019 Technet 論壇](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)上的文章 
  - 透過[Microsoft 支援服務](https://support.microsoft.com)開啟支援案例
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存體遷移服務總覽](overview.md)

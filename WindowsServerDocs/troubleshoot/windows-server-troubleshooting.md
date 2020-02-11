@@ -14,12 +14,12 @@ ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 593fc4abbdce3ed53fa8d7ef73d529558b100bcc
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001793"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125129"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 元件疑難排解
 
@@ -46,17 +46,17 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 
 ## <a name="troubleshoot-startup-and-restart"></a>疑難排解啟動和重新開機
 
-- [Windows 啟動的先進疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup.md)
-- [如何判斷64位版本 Windows 的適當頁面檔案大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size.md)
-- [產生核心或完成損毀傾印](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump.md)
-- [分頁檔簡介](https://docs.microsoft.com/windows/client-management/introduction-page-file.md)
-- [在 Windows 中設定系統失敗和修復選項](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options.md)
-- [Windows 開機問題的先進疑難排解](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems.md)
-- [Windows 電腦凍結的 Advanced 疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze.md)
-- [停止錯誤或藍色螢幕錯誤的 Advanced 疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors.md)
-- [針對 stop 錯誤7B 或 Inaccessible_Boot_Device 進行先進的疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device.md)
-- [事件識別碼41的 Advanced 疑難排解「系統已重新開機，但未完全關閉」](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart.md)
-- [當您更新內建的 Broadcom 網路介面卡驅動程式時，發生停止錯誤](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update.md)
+- [Windows 啟動的先進疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [如何判斷64位版本 Windows 的適當頁面檔案大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [產生核心或完成損毀傾印](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
+- [分頁檔簡介](https://docs.microsoft.com/windows/client-management/introduction-page-file)
+- [在 Windows 中設定系統失敗和修復選項](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
+- [Windows 開機問題的先進疑難排解](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Windows 電腦凍結的 Advanced 疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [停止錯誤或藍色螢幕錯誤的 Advanced 疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [針對 stop 錯誤7B 或 Inaccessible_Boot_Device 進行先進的疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [事件識別碼41的 Advanced 疑難排解「系統已重新開機，但未完全關閉」](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
+- [當您更新內建的 Broadcom 網路介面卡驅動程式時，發生停止錯誤](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
 ## <a name="troubleshoot-ad-forest-recovery"></a>針對 AD 樹系復原進行疑難排解
 
@@ -162,7 +162,7 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 ## <a name="troubleshoot-sdn"></a>疑難排解 SDN
 
 - [疑難排解 SDN](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-software-defined-networking)
-- [對 Windows Server 軟體定義網路堆疊進行疑難排解](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+- [針對 Windows Server 軟體定義網路堆疊進行疑難排解](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 
 ## <a name="troubleshoot-rds-session-connectivity"></a>針對 RDS 會話連接進行疑難排解
 
