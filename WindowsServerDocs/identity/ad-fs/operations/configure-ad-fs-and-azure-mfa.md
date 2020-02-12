@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c3a7e7c420ef63adc906e6558ed7aff6819e983c
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
+ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013053"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145487"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>使用 AD FS 將 Azure MFA 設定為驗證提供者
 
@@ -160,11 +160,14 @@ Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f
 
 如果您憑證的有效期間即將結束，請在每部 AD FS 伺服器上產生新的 Azure MFA 憑證，以開始更新程式。 在 PowerShell 命令視窗中，使用下列 Cmdlet 在每部 AD FS 伺服器上產生新的憑證：
 
+> [!CAUTION]
+> 如果您的憑證已過期，請勿將 `-Renew $true` 參數新增至下列命令。 在此案例中，現有過期的憑證會取代為新的憑證，而不會保留在原處，而是建立額外的憑證。
+
 ```
 PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such as contoso.onmicrosoft.com> -Renew $true
 ```
 
-此 Cmdlet 的結果是，從未來2天起算的新憑證將會產生2天 + 2 年。  AD FS 和 Azure MFA 作業不會受到此 Cmdlet 或新憑證的影響。 （請注意：這兩天的延遲是刻意的，並提供時間來執行下列步驟，在租使用者中設定新憑證，然後 AD FS 開始使用它來進行 Azure MFA）。
+如果憑證尚未過期，則會產生一個從未來2天起算的新憑證到2天 + 2 年。 AD FS 和 Azure MFA 作業不會受到此 Cmdlet 或新憑證的影響。 （請注意：這兩天的延遲是刻意的，並提供時間來執行下列步驟，在租使用者中設定新憑證，然後 AD FS 開始使用它來進行 Azure MFA）。
 
 ### <a name="configure-each-new-ad-fs-azure-mfa-certificate-in-the-azure-ad-tenant"></a>在 Azure AD 租使用者中設定每個新的 AD FS Azure MFA 憑證
 
@@ -174,7 +177,7 @@ PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such a
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$newcert` 是新的憑證。 若要取得 base64 編碼的憑證，您可以將憑證（不含私密金鑰）匯出為 DER 編碼的檔案，然後在 Notepad.exe 中開啟，然後複製/貼上至 PowerShell 會話，並將指派給 `$newcert`的變數。
+如果您先前的憑證已過期，請重新開機 AD FS 服務以挑選新的憑證。 如果您在憑證到期之前已更新，則不需要重新開機 AD FS 服務。
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>確認新的憑證將用於 Azure MFA
 
