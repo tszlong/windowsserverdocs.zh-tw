@@ -9,17 +9,17 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
-author: lizap
-manager: dongill
-ms.author: elizapo
-date: 08/27/2019
+author: Heidilohr
+manager: lizross
+ms.author: helohr
+date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949876"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77179352"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -33,60 +33,13 @@ ms.locfileid: "75949876"
 > - 想知道適用於 iOS 用戶端的新版本嗎？ 請參閱 [iOS 上的遠端桌面有什麼新功能？](ios-whatsnew.md)
 > - iOS 用戶端支援執行 iOS 6.x 和更新版本的裝置。
 
-## <a name="get-the-remote-desktop-beta-client-and-start-using-it"></a>取得遠端桌面 Beta 版用戶端，並開始使用它
-目前，透過 Apple TestFlight 提供的 iOS Beta 用戶端可支援與 Windows 虛擬桌面資源連線。
-
-### <a name="download-the-remote-desktop-ios-beta-client-from-apple-testflight"></a>從 Apple TestFlight 下載遠端桌面 iOS Beta 版用戶端
-以下說明如何在您的 iOS 裝置上設定遠端桌面 Beta 版用戶端：
-
-1. 在您的 iOS 裝置上安裝 [AppleTestFlight](https://apps.apple.com/us/app/testflight/id899247664) 應用程式。
-2. 在您的 iOS 裝置上開啟瀏覽器，並瀏覽至 [aka.ms/rdiosbeta](https://aka.ms/rdiosbeta)。
-3. 在 [步驟 2：加入 Beta 版]  標籤下方，選取 [開始測試]  。
-4. 當您重新導向至 TestFlight 應用程式時，請選取 [接受]  ，然後**安裝**用戶端。
-
-### <a name="add-a-connection-to-a-pc"></a>新增電腦的連線
-若要建立與電腦的遠端連線：
-
-1. 在 [連線中心] 內點選 **+** ，然後點選 [新增電腦]  。
-2. 在 [電腦名稱]  中輸入遠端電腦的名稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊附加到電腦名稱 (例如 **MyDesktop:3389** 或 **10.0.0.1:3389**)。
-3. 選取您要用來存取遠端電腦的 [使用者帳戶]  。
-   - 選取 [每次都要求]  ，讓用戶端在您每次連線到遠端電腦時都要求您提供認證。
-   - 選取 [新增使用者帳戶]  以儲存經常使用的帳戶，如此您就不需在每次登入時都輸入認證。 請依照[這些指示](#manage-your-user-accounts)來管理您的使用者帳戶。
-4. 您也可以設定下列選擇性參數：
-   - 在 [易記名稱]  中，您可以為連線到的電腦輸入更容易記住的名稱。
-   - **系統管理模式**可讓您連線到遠端電腦上的系統管理工作階段。
-   - **交換滑鼠按鈕**可切換右、左滑鼠手勢所傳送的命令。 這適用於左手的使用者。
-   - **閘道**是您將用來從外部網路連線到電腦的遠端桌面閘道。 如需詳細資訊，請洽詢系統管理員。
-   - **音效**會選取您的遠端工作階段用於音訊的裝置。 您可以選擇在本機裝置、遠端裝置上播放音效，或者完全不要播放音效。
-   - **麥克風**可啟用麥克風重新導向。 此設定預設為停用。
-   - **相機**可啟用相機重新導向。 此設定預設為停用。
-   - **剪貼簿**可啟用剪貼簿重新導向。 預設會啟用此設定。
-   - **儲存體**可啟用本機儲存體重新導向。 此設定預設為停用。
-5. 選取 [儲存]  以新增遠端電腦連線。
-
-### <a name="add-remote-resources"></a>新增遠端資源
-遠端資源包括 RemoteApp 程式、工作階段型桌面，以及您的系統管理員所發佈的虛擬桌面。IOS 用戶端支援從**遠端桌面服務**和 **Windows 虛擬桌面**部署發佈的資源。 若要新增遠端資源：
-
-1. 在 [連線中心] 內點選 **+** ，然後點選 [新增工作區]  。
-2. 輸入**摘要 URL**。 這可以是 URL 或電子郵件地址：
-   - 此 **URL** 是 RD Web 存取伺服器的 URL，由您的系統管理員提供給您。如果從 Windows 虛擬桌面存取資源，您可以使用 `https://rdweb.wvd.microsoft.com`。
-   - 如果您打算使用**電子郵件**，請在此欄位中輸入您的電子郵件地址。 這會指示用戶端搜尋與您電子郵件地址相關聯的 RD Web 存取伺服器 (如果系統管理員已加以設定)。
-3. 點選 [下一步]  。
-4. 出現提示時，請提供您的登入資訊。 提示內容可能會根據部署而有所不同，可能包括：
-   - **使用者名稱**，這是有權存取資源的使用者名稱。
-   - **密碼**，這是與使用者名稱相關聯的密碼。
-   - **其他因素**，這是根據系統管理員所設定的驗證方式而提示的內容。
-5. 點選 [儲存]  。
-
-遠端資源將會顯示於連線中心。
-
 ## <a name="get-the-remote-desktop-client-and-start-using-it"></a>取得遠端桌面用戶端，並開始使用它
 
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>從 iOS 商店下載遠端桌面用戶端
 
 依照下列步驟，在 iOS 裝置上開始使用遠端桌面：
 
-1. 從 [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8) 下載 Microsoft 遠端桌面用戶端。
+1. 從 [iOS App Store](https://aka.ms/rdios) 或 [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8) 下載 Microsoft 遠端桌面用戶端。
 2. [將您的電腦設定成接受遠端連線](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。
 3. 新增[遠端桌面連線](#add-a-remote-desktop-connection)或[遠端資源](#add-a-remote-resource)。 您可以使用連線直接連線至 Windows 電腦和遠端資源，以使用 RemoteApp 程式、工作階段型桌面，或使用 RemoteApp 和桌面連線在內部部署發佈的虛擬桌面。 在公司環境中通常可以使用這項功能。
 
@@ -143,7 +96,7 @@ ms.locfileid: "75949876"
 
 1. 在 [連線中心] 內，點選 [設定]  ，然後點選 [使用者帳戶]  。
 2. 選取您要刪除的帳戶。
-3. 點選 [刪除]  。   
+3. 點選 [刪除]  。
 
 ## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>連線至 RD 閘道以存取內部資產
 
@@ -158,6 +111,7 @@ ms.locfileid: "75949876"
    - **使用者名稱** - 您要連線的遠端桌面閘道所要使用的使用者名稱和密碼。 您也可以選取 [使用連線認證]  ，以使用針對遠端桌面連線而使用的相同使用者名稱和密碼。
 
 ## <a name="navigate-the-remote-desktop-session"></a>瀏覽遠端桌面工作階段
+
 當您開始遠端桌面工作階段時，提供一些您可以用來瀏覽工作階段的工具。
 
 ### <a name="start-a-remote-desktop-connection"></a>開始遠端桌面連線
@@ -178,6 +132,7 @@ ms.locfileid: "75949876"
 - **移動連線列**：點選並按住連線列，然後拖放到畫面頂端的新位置。
 
 ### <a name="session-selection"></a>工作階段選取
+
 您可以同時向不同的電腦開啟多個連線。 點選連線列可顯示畫面左側的工作階段選取列。 工作階段選取列可讓您檢視已開啟的連線，並在兩者之間切換。
 
 - 在開啟的遠端資源工作階段中的應用程式之間切換。
@@ -215,9 +170,7 @@ ms.locfileid: "75949876"
 
 ## <a name="supported-input-devices"></a>支援的輸入裝置
 
-[遠端桌面 iOS Beta 用戶端](https://aka.ms/rdiosbeta)支援 Swiftpoint GT 和 ProPoint 實體滑鼠。 Swiftpoint 在適用於 iOS Beta 用戶端使用者的 GT 上，提供[獨家折扣](https://www.swiftpoint.com/microsoft/)。
-
-iOS 用戶端目前僅支援 Swiftpoint 滑鼠。 請參閱 [iOS 用戶端中的新功能](ios-whatsnew.md) 頁面和 [iOS App Store](https://aka.ms/rdios) 以取得有關未來對其他裝置的支援的消息。
+iOS 用戶端目前僅支援 Swiftpoint GT 和 ProPoint 滑鼠。 如需裝置支援的詳細資訊，請參閱 [iOS 用戶端的新功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>在遠端工作階段中使用鍵盤
 

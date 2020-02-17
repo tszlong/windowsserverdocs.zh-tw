@@ -13,12 +13,12 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cffc007970245ab9bd96c7cae9bb5137a8030b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a596bcd29fdb80f8b2b0fa86ee808755dd09f43
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387796"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125090"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
@@ -26,7 +26,7 @@ ms.locfileid: "71387796"
 
 請參閱[此文件](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)以了解如何使用 PowerShell 自訂主機集區的 RDP 屬性。
 
-| RDP 設定                        | 描述            | 值                 | 預設值          | Windows 虛擬桌面 | Windows | HTML5   |
+| RDP 設定                        | 說明            | 值                 | 預設值          | Windows 虛擬桌面 | Windows | HTML5   |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|:-------:|:-------:|
 | alternate full address:s:value | 指定遠端電腦的替代名稱或 IP 位址。 | 遠端電腦的任何有效名稱或 IP 位址，例如 "10.10.15.15" | | x | x | x |
 | alternate shell:s:value        | 決定當您使用 RDP 進行連線時是否自動啟動程式。 若要指定替代殼層，請輸入可執行檔的有效路徑作為值，例如 "C:\ProgramFiles\Office\word.exe"。 如果啟用 RemoteApplicationMode，此設定也會決定連線時要啟動的遠端應用程式路徑或別名。 | "C:\ProgramFiles\Office\word.exe" || x | x | x |
@@ -40,6 +40,7 @@ ms.locfileid: "71387796"
 | desktop size id:i:value | 從一組預先定義的選項指定遠端工作階段桌面尺寸。 如果指定了 desktopheight 或 desktopwidth，則會覆寫此設定。| \- 0：640×480<br>- 1：800×600<br>- 2：1024×768<br>- 3：1280×1024<br>- 4：1600×1200 | 0 | x | x | x |
 | desktopheight:i:value | 決定當您使用遠端桌面連線進行連線時，遠端桌面上的解析度高度 (以像素為單位)。 此設定相當於 RDC [選項] 下 [顯示] 索引標籤上 [顯示器設定] 滑桿中的選項。 | 介於 200 到 2048 之間的數值 | 預設值會設定為本機電腦上的解析度 | x | x | x |
 | desktopwidth:i:value | 決定當您使用遠端桌面連線進行連線時，遠端桌面上的解析度寬度 (以像素為單位)。 此設定相當於 RDC [選項] 下 [顯示] 索引標籤上 [顯示器設定] 滑桿中的選項。 | 介於 200 到 4096 之間的數值 | 預設值會設定為本機電腦上的解析度 | x | x | x |
+| devicestoredirect:s:value | 決定用戶端電腦上要重新導向至遠端工作階段以供使用的裝置。 | - *:重新導向所有支援的裝置，包括稍後連線的裝置<br> - 一或多個裝置的有效硬體識別碼 | | x | x | x |
 | disableconnectionsharing:i:value | 決定當啟動 RemoteApp 或桌面時，遠端桌面用戶端是否會重新連線到任何現有開啟連線或起始新的連線 | - 0：重新連線到任何現有的工作階段<br>- 1：起始新的連線 | 0 | x | x | x |
 | domain:s:value | 指定登入遠端電腦時，用於登入的使用者帳戶所在網域名稱。 | 有效的網域名稱，例如 "CONTOSO" | 沒有預設值 | x | x | x |
 | drivestoredirect:s:value | 決定用戶端電腦上要重新導向至遠端工作階段以供使用的本機磁碟機。 | - 未指定值：不要重新導向任何磁碟機<br>- * :重新導向所有磁碟機，包括稍後連接的磁碟機<br>- DynamicDrives：重新導向稍後連接的任何磁碟機<br>- 一或多個磁碟機的磁碟機和標籤 (例如 "drivestoredirect:s:C:;E:;")：重新導向指定的磁碟機| 未指定值：不要重新導向任何磁碟機 | x | x    | |

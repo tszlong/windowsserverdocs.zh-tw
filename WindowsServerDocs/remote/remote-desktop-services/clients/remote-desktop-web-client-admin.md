@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950413"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125149"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
@@ -170,10 +170,12 @@ ms.locfileid: "75950413"
 
 依照[如何發佈遠端桌面 Web 用戶端](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client)下的指示操作 (請將步驟 4 和 5 取代為下列步驟)。
 
-4. 從本機資料夾匯入遠端桌面 Web 用戶端管理 PowerShell 模組：
-    ```PowerShell
-    Import-Module -Name "C:\WebClient\"
-    ```
+4. 擷取最新 Web 用戶端管理 PowerShell 模組的方式有兩種：
+    - 匯入遠端桌面 Web 用戶端管理 PowerShell 模組：
+      ```PowerShell
+      Import-Module -Name RDWebClientManagement
+      ```
+    - 將下載的 RDWebClientManagement 資料夾複製到 **$env:psmodulePath**下所列的其中一個本機 PowerShell 模組資料夾，或將包含下載檔案的資料夾路徑新增至 **$env:psmodulePath**。
 
 5. 從本機資料夾部署最新版的遠端桌面 Web 用戶端 (請取代為適當的 zip 檔案)：
     ```PowerShell
