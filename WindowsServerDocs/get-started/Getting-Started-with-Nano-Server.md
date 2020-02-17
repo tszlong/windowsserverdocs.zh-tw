@@ -12,12 +12,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f94e2c083f0bc05231543c15120818481afbabb0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 09f031c19c8f6d1105d47b9f22d52db30e9c57ef
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947850"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822151"
 ---
 # <a name="install-nano-server"></a>安裝 Nano 伺服器
 
@@ -50,7 +50,7 @@ Nano Server 適用於一些案例：
 - 不支援群組原則。 不過，您可以使用[預期狀態設定](https://msdn.microsoft.com/powershell/dsc/nanoDsc)大規模地套用設定。
 - 無法將 Nano Server 設為使用 Proxy 伺服器存取網際網路。
 - 不支援 NIC 小組 (具體而言，指負載平衡和容錯移轉，或稱 LBFO)。 改為支援切換內嵌小組 (SET)。
-- 不支援 System Center Configuration Manager 及 System Center Data Protection Manager。
+- 不支援 Microsoft Endpoint Configuration Manager 及 System Center Data Protection Manager。
 - 不支援最佳做法分析程式 (BPA) Cmdlet 及 BPA 與伺服器管理員整合。
 - Nano Server 不支援虛擬主機匯流排介面卡 (HBA)。
 - Nano Server 不需要以產品金鑰啟用。 Nano Server 作為 Hyper-V 主機運作時，不支援[自動虛擬機器啟用](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) \(AVMA\) (英文)。 在 Nano Server 主機上執行的虛擬機器可使用[金鑰管理服務](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) \(KMS\) (英文) 搭配一般的大量授權金鑰，或使用[Active Directory 型啟用](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx) \(英文\) 來啟用。

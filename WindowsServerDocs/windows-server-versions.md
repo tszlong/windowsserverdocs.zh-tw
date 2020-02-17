@@ -1,6 +1,6 @@
 ---
-title: IT 系統管理員適用的 Windows Server 技術內容 - Windows Server
-description: 取得適用於 IT 專業人員的 Windows Server 新版與舊版技術文章，以及產品評估，
+title: IT 管理員適用的 Windows Server 技術內容 - Windows Server
+description: 取得適用於 IT 專業人員的 Windows Server 新版與舊版技術文章，以及產品評估。
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -16,19 +16,19 @@ manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 5430dfa2facfb7412077931637f5e95e35f0d934
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71392470"
 ---
-# <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 新版與舊版 IT 系統管理員內容
+# <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 新版與舊版的 IT 管理員內容
 
 Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基礎結構之平台，範圍包括工作群組到資料中心。
 
 使用下列連結來檢視適用於 IT 專業人員的不同版本 Windows Server 技術內容。
 
 > [!IMPORTANT]
-> 您的電腦執行 Windows 嗎？ Windows 10、Windows 8 或 8.1？ Windows 7？ 您遇到問題嗎？ 請移至 [Microsoft 支援服務](https://support.microsoft.com) - 只需在搜尋列中輸入您的問題。 他們提供 Windows、Office、Skype 等等的相關資訊，應有盡有。 
+> 您的電腦執行 Windows 嗎？ Windows 10、Windows 8 或 8.1？ Windows 7？ 有任何問題嗎？ 請移至 [Microsoft 支援服務](https://support.microsoft.com) - 只需在搜尋列中輸入您的問題即可。 他們提供 Windows、Office、Skype 等項目的相關資訊，應有盡有。 
 > 
 > 以下資訊*只*適用於 Windows **Server**。
 
@@ -40,7 +40,7 @@ Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基
 
 [Windows Server 2012 R2 和 Windows Server 2012 技術文件庫](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/) 
 
-[MSDN 上的 Windows Server 2012 R2 開發人員程式庫](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
+[MSDN 上的 Windows Server 2012 R2 開發人員文件庫](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
 
 ## <a name="windows-server-2008-r2-and-windows-server-2008"></a>Windows Server 2008 R2 和 Windows Server 2008
 
@@ -50,7 +50,7 @@ Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 
-[Windows Server 2003 技術文件庫](https://www.microsoft.com/download/details.aspx?id=53314)-下載 PDF 版的封存內容
+[Windows Server 2003 技術文件庫](https://www.microsoft.com/download/details.aspx?id=53314) - 下載 PDF 版的封存內容
 
 [MSDN 上的 Windows Server 2003 開發人員文件庫](https://msdn.microsoft.com/library/dn792549.aspx)
 
@@ -64,5 +64,5 @@ Windows Server 是建置互相連線的應用程式、網路及 Web 服務的基
 [Windows Server 2016 產品資訊](https://www.microsoft.com/cloud-platform/windows-server) 
 
 > [!TIP]
-> 您遇到問題了嗎？ 從 [Microsoft 支援服務](https://support.microsoft.com)開始 - 只需在搜尋列中輸入您的問題。 您可以取得有關 Windows、Office、Skype 等方面的協助，應有盡有。 
+> 有任何問題嗎? 從 [Microsoft 支援服務](https://support.microsoft.com)開始 - 只需在搜尋列中輸入您的問題即可。 您可以取得有關 Windows、Office、Skype 等方面的協助，應有盡有。 
 

@@ -13,12 +13,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2195c3bafaa01a1b1c16c17889d5e04d7213a5b6
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c0a9f11aea9e24cc1a2bab275aae8dc0a81e9cba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919709"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822359"
 ---
 # <a name="windows-desktop-client-for-admins"></a>適用於系統管理員的 Windows 桌面用戶端
 
@@ -28,7 +28,7 @@ ms.locfileid: "75919709"
 
 ## <a name="installation-options"></a>安裝選項
 
-雖然您的使用者可以在下載後直接安裝用戶端，但如果您要部署到多個裝置，您也可以透過其他方式來部署用戶端。 使用群組原則或 System Center Configuration Manager 進行部署，可讓您使用命令列以無訊息方式執行安裝程式。 執行下列命令來部署個別裝置或個別使用者的用戶端。
+雖然您的使用者可以在下載後直接安裝用戶端，但如果您要部署到多個裝置，您也可以透過其他方式來部署用戶端。 使用群組原則或 Microsoft Endpoint Configuration Manager 進行部署，可讓您使用命令列以無訊息方式執行安裝程式。 執行下列命令來部署個別裝置或個別使用者的用戶端。
 
 ### <a name="per-device-installation"></a>個別裝置安裝
 

@@ -1,6 +1,6 @@
 ---
-title: 超文字傳輸通訊協定（HTTP）的 Netsh 命令
-description: 使用 netsh HTTP 來查詢和設定 HTTP.SYS 設定和參數。
+title: 超文字傳輸通訊協定 (HTTP) 的 netsh 命令
+description: 使用 netsh http 查詢和設定 HTTP.sys 設定和參數。
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
@@ -10,43 +10,43 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 7b9032eb05128532c8bf90a0db2f685b4435e6eb
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71401876"
 ---
-# <a name="netsh-http-commands"></a>Netsh http 命令
+# <a name="netsh-http-commands"></a>netsh http 命令
 
 
-使用**netsh HTTP**來查詢和設定 HTTP.sys 設定和參數。  
+使用 **netsh http** 查詢和設定 HTTP.sys 設定和參數。  
 
 >[!TIP]
->如果您在執行 Windows Server 2016 或 Windows 10 的電腦上使用 Windows PowerShell，請輸入**netsh** ，然後按 enter。 在 netsh 提示字元中輸入**HTTP** ，然後按 enter 鍵以取得 netsh HTTP 提示字元。
+>如果您在執行 Windows Server 2016 或 Windows 10 的電腦上使用 Windows PowerShell，請輸入 **netsh**，然後按 Enter 鍵。 在 netsh 提示字元中輸入 **http**，然後按 Enter 鍵，以取得 netsh http 提示字元。
 >
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh HTTP\>
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh http\>
 
-可用的 netsh HTTP 命令如下：
+可用的 netsh http 命令如下：
 
-- [新增 iplisten](#add-iplisten)
-- [新增 sslcert](#add-sslcert)
-- [新增超時](#add-timeout)
-- [新增 urlacl](#add-urlacl)
-- [刪除快取](#delete-cache)
-- [刪除 iplisten](#delete-iplisten)
-- [刪除 sslcert](#delete-sslcert)
-- [刪除超時](#delete-timeout)
-- [刪除 urlacl](#delete-urlacl)
-- [清除 logbuffer](#flush-logbuffer)
-- [顯示 cachestate](#show-cachestate)
-- [顯示 iplisten](#show-iplisten)
-- [顯示 servicestate](#show-servicestate)
-- [顯示 sslcert](#show-sslcert)
-- [顯示超時](#show-timeout)
-- [顯示 urlacl](#show-urlacl)
+- [add iplisten](#add-iplisten)
+- [add sslcert](#add-sslcert)
+- [add timeout](#add-timeout)
+- [add urlacl](#add-urlacl)
+- [delete cache](#delete-cache)
+- [delete iplisten](#delete-iplisten)
+- [delete sslcert](#delete-sslcert)
+- [delete timeout](#delete-timeout)
+- [delete urlacl](#delete-urlacl)
+- [flush logbuffer](#flush-logbuffer)
+- [show cachestate](#show-cachestate)
+- [show iplisten](#show-iplisten)
+- [show servicestate](#show-servicestate)
+- [show sslcert](#show-sslcert)
+- [show timeout](#show-timeout)
+- [show urlacl](#show-urlacl)
 
-## <a name="add-iplisten"></a>新增 iplisten
+## <a name="add-iplisten"></a>add iplisten
 
-將新的 IP 位址新增至 IP 接聽清單，但不包括埠號碼。
+將新的 IP 位址新增至 IP 接聽清單 (不包括連接埠號碼)。
 
 **語法**
 
@@ -58,24 +58,24 @@ add iplisten [ ipaddress= ] IPAddress
 
 |               |                                                                                                                                                                                                                          |          |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ip** | 要新增至 IP 接聽清單的 IPv4 或 IPv6 位址。 IP 接聽清單可用來界定 HTTP 服務所系結的地址清單範圍。 「0.0.0.0」表示任何 IPv4 位址和「：：」表示任何 IPv6 位址。 | 必要 |
+| **ipaddress** | 要新增至 IP 接聽清單的 IPv4 或 IPv6 位址。 IP 接聽清單可用來界定 HTTP 服務所繫結的位址清單範圍。 "0.0.0.0" 表示任何 IPv4 位址，"::" 表示任何 IPv6 位址。 | 必要 |
 
 ---
 
-**典型**
+**範例**
 
-以下是**add iplisten**命令的四個範例。
+以下是 **add iplisten** 命令的四個範例。
 
--   add iplisten ipaddress = fe80：：1
--   新增 iplisten ipaddress = 1.1.1。1
--   新增 iplisten ipaddress = 0.0.0。0
--   新增 iplisten ipaddress =：：
+-   add iplisten ipaddress=fe80::1
+-   add iplisten ipaddress=1.1.1.1
+-   add iplisten ipaddress=0.0.0.0
+-   add iplisten ipaddress=::
 
 ---
 
-## <a name="add-sslcert"></a>新增 sslcert
+## <a name="add-sslcert"></a>add sslcert
 
-為 IP 位址和埠加入新的 SSL 伺服器憑證系結和對應的用戶端憑證原則。
+為 IP 位址和連接埠新增新的 SSL 伺服器憑證繫結和對應的用戶端憑證原則。
 
 **語法**
 
@@ -88,33 +88,33 @@ add sslcert [ ipport= ] IPAddress:port [ certhash= ] CertHash [ appid= ] GUID [ 
 
 |                                              |                                                                                                                                                                                          |          |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-|                  **ipport**                  |                       指定系結的 IP 位址和埠。 冒號字元（:)會用來做為 IP 位址與埠號碼之間的分隔符號。                        | 必要 |
-|                 **certhash**                 |                                     指定憑證的 SHA 雜湊。 此雜湊長度為20個位元組，並指定為十六進位字串。                                      | 必要 |
-|                  **標識**                   |                                                                  指定識別擁有應用程式的 GUID。                                                                  | 必要 |
-|              **certstorename**               |                                  指定憑證的存放區名稱。 預設值為 MY。 憑證必須儲存在本機電腦內容中。                                  | 選擇性 |
-|        **verifyclientcertrevocation**        |                                                      指定是否要開啟/關閉用戶端憑證撤銷的驗證。                                                       | 選擇性 |
-| **verifyrevocationwithcachedclientcertonly** |                                      指定是否只針對撤銷檢查啟用或停用快取用戶端憑證的使用方式。                                       | 選擇性 |
-|                **usagecheck**                |                                                      指定是否啟用或停用使用檢查。 預設為啟用。                                                       | 選擇性 |
-|         **revocationfreshnesstime**          | 指定檢查已更新憑證撤銷清單（CRL）的時間間隔（以秒為單位）。 如果此值為零，則只有在前一個 CRL 過期時，才會更新新的 CRL。 | 選擇性 |
-|           **urlretrievaltimeout**            |                            指定嘗試取得遠端 URL 的憑證撤銷清單後的逾時間隔（以毫秒為單位）。                            | 選擇性 |
-|             **sslctlidentifier**             |                指定可信任的憑證簽發者清單。 此清單可以是電腦信任之憑證簽發者的子集。                 | 選擇性 |
-|             **sslctlstorename**              |                                                指定儲存 SslCtlIdentifier 之 LOCAL_MACHINE 下的憑證存放區名稱。                                                | 選擇性 |
-|              **dsmapperusage**               |                                                        指定是否啟用或停用 DS 對應程式。 預設為停用。                                                         | 選擇性 |
-|          **clientcertnegotiation**           |                                              指定是否啟用或停用憑證的協商。 預設為停用。                                               | 選擇性 |
+|                  **ipport**                  |                       指定繫結的 IP 位址和連接埠。 冒號字元 (:) 可作為 IP 位址與連接埠號碼之間的分隔符號。                        | 必要 |
+|                 **certhash**                 |                                     指定憑證的 SHA 雜湊。 此雜湊的長度為 20 個位元組，且會指定為十六進位字串。                                      | 必要 |
+|                  **appid**                   |                                                                  指定用來識別主控應用程式的 GUID。                                                                  | 必要 |
+|              **certstorename**               |                                  指定憑證的存放區名稱。 預設為 MY。 憑證必須儲存在本機電腦內容中。                                  | 選用 |
+|        **verifyclientcertrevocation**        |                                                      指定要開啟/關閉用戶端憑證撤銷的驗證。                                                       | 選用 |
+| **verifyrevocationwithcachedclientcertonly** |                                      指定要啟用還是停用僅使用快取的用戶端憑證進行撤銷檢查的功能。                                       | 選用 |
+|                **usagecheck**                |                                                      指定要啟用還是停用使用檢查。 預設值為啟用。                                                       | 選用 |
+|         **revocationfreshnesstime**          | 指定檢查是否有更新的憑證撤銷清單 (CRL) 的時間間隔 (以秒為單位)。 如果此值為零，則只有在前一個 CRL 過期時，才會更新新的 CRL。 | 選用 |
+|           **urlretrievaltimeout**            |                            指定嘗試擷取遠端 URL 的憑證撤銷清單之後的逾時間隔 (以毫秒為單位)。                            | 選用 |
+|             **sslctlidentifier**             |                指定可信任的憑證簽發者清單。 此清單可以是電腦信任之憑證簽發者的子集。                 | 選用 |
+|             **sslctlstorename**              |                                                指定儲存 SslCtlIdentifier 儲存所在之 LOCAL_MACHINE 下的憑證存放區名稱。                                                | 選用 |
+|              **dsmapperusage**               |                                                        指定要啟用還是停用 DS 對應工具。 預設值為停用。                                                         | 選用 |
+|          **clientcertnegotiation**           |                                              指定要啟用還是停用憑證的交涉。 預設值為停用。                                               | 選用 |
 
 ---
 
-**典型**
+**範例**
 
-以下是**add sslcert**命令的範例。
+以下是 **add sslcert** 命令的範例。
 
-add sslcert ipport = 1.1.1.1： 443 certhash = 0102030405060708090A0B0C0D0E0F1011121314 appid = {00112233-4455-6677-8899-AABBCCDDEEFF}
+add sslcert ipport=1.1.1.1:443 certhash=0102030405060708090A0B0C0D0E0F1011121314 appid={00112233-4455-6677-8899- AABBCCDDEEFF}
 
 ---
 
-## <a name="add-timeout"></a>新增超時
+## <a name="add-timeout"></a>add timeout
 
-將全域超時加入至服務。
+將全域逾時新增至服務。
 
 **語法** 
 
@@ -126,23 +126,23 @@ add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=]
 
 |                 |                                                                                                     |
 |-----------------|-----------------------------------------------------------------------------------------------------|
-| **timeouttype** |                                    設定的超時類型。                                     |
-|    **值**    | 超時時間的值（以秒為單位）。 如果值是十六進位標記法，則新增前置詞0x。 |
+| **timeouttype** |                                    設定的逾時類型。                                     |
+|    **值**    | 逾時的值 (以秒為單位)。 若此值採用十六進位標記法，請新增前置詞 0x。 |
 
 ---
 
-**典型**
+**範例**
 
-以下是**add timeout**命令的兩個範例。
+以下是 **add timeout** 命令的兩個範例。
 
--   add timeout timeouttype = idleconnectiontimeout value = 120
--   add timeout timeouttype = headerwaittimeout value = 0x40
+-   add timeout timeouttype=idleconnectiontimeout value=120
+-   add timeout timeouttype=headerwaittimeout value=0x40
 
 ---
 
-## <a name="add-urlacl"></a>新增 urlacl
+## <a name="add-urlacl"></a>add urlacl
 
-加入統一資源定位器（URL）保留專案。 此命令會保留非系統管理員使用者和帳戶的 URL。 您可以使用 NT 帳戶名稱搭配接聽和委派參數，或使用 SDDL 字串來指定 DACL。
+加入統一資源定位器 (URL) 保留項目。 此命令會保留非系統管理員使用者和帳戶的 URL。 您可以使用 NT 帳戶名稱搭配接聽和委派參數來指定 DACL，或使用 SDDL 字串來指定。
 
 **語法**
 
@@ -154,28 +154,28 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 
 |              |                                                                                                                                                  |          |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-|   **連結**    |                                          指定完整的統一資源定位器（URL）。                                           | 必要 |
-|   **使用者**   |                                                      指定使用者或使用者組名                                                       | 必要 |
-|  **接聽**  | 指定下列其中一個值：是：允許使用者註冊 Url。 這是預設值。 否：拒絕使用者註冊 Url。 | 選擇性 |
-| **委託人** |  指定下列其中一個值： [是]： [允許使用者委派 Url]： [拒絕使用者委派 Url]。 這是預設值。  | 選擇性 |
-|   **sddl**   |                                                指定描述 DACL 的 SDDL 字串。                                                 | 選擇性 |
+|   **url**    |                                          指定完整的統一資源定位器 (URL)。                                           | 必要 |
+|   **user**   |                                                      指定使用者或使用者群組名稱                                                       | 必要 |
+|  **listen**  | 指定下列其中一個值：是：允許使用者註冊 URL。 這是預設值。 否：拒絕使用者註冊 URL。 | 選用 |
+| **delegate** |  指定下列其中一個值：是：允許使用者委派 URL。否：拒絕使用者委派 URL。 這是預設值。  | 選用 |
+|   **sddl**   |                                                指定說明 DACL 的 SDDL 字串。                                                 | 選用 |
 
 ---
 
-**典型**
+**範例**
 
-以下是**add urlacl**命令的四個範例。
+以下是 **add urlacl** 命令的四個範例。
 
-- 新增 urlacl url =https://+:80/MyUri 使用者 = 網域\\使用者
-- 新增 urlacl url =<https://www.contoso.com:80/MyUri> 使用者 = 網域\\使用者接聽 = 是
-- 新增 urlacl url =<https://www.contoso.com:80/MyUri> 使用者 = 網域\\使用者委派 = 否
-- 新增 urlacl url =https://+:80/MyUri sddl = 。
+- add urlacl url=https://+:80/MyUri user=DOMAIN\\ user
+- add urlacl url=<https://www.contoso.com:80/MyUri> user=DOMAIN\\user listen=yes
+- add urlacl url=<https://www.contoso.com:80/MyUri> user=DOMAIN\\user delegate=no
+- add urlacl url=https://+:80/MyUri sddl=...
 
 ---
 
-## <a name="delete-cache"></a>刪除快取
+## <a name="delete-cache"></a>delete cache
 
-從 HTTP 服務核心 URI 快取中刪除所有專案，或指定的專案。
+從 HTTP 服務核心 URI 快取中刪除所有項目或指定的項目。
 
 **語法**
 
@@ -187,23 +187,23 @@ delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 
 |               |                                                                                                                              |          |
 |---------------|------------------------------------------------------------------------------------------------------------------------------|----------|
-|    **連結**    |                    指定您想要刪除的完整統一資源定位器（URL）。                     | 選擇性 |
-| **式** | 指定是否要移除 url 快取底下的所有專案。 **是**：移除所有專案**否**：不要移除所有專案 | 選擇性 |
+|    **url**    |                    指定您要刪除的完整統一資源定位器 (URL)。                     | 選用 |
+| **recursive** | 指定是否要移除 URL 快取下的所有項目。 **是**：移除所有項目。**否**：不移除所有項目 | 選用 |
 
 ---
 
-**典型**
+**範例**
 
-以下是**delete cache**命令的兩個範例。
+以下是 **delete cache** 命令的兩個範例。
 
-- 刪除快取 url =<https://www.contoso.com:80/myresource/> 遞迴 = 是
-- 刪除快取
+- delete cache url=<https://www.contoso.com:80/myresource/> recursive=yes
+- delete cache
 
 ---
 
-## <a name="delete-iplisten"></a>刪除 iplisten
+## <a name="delete-iplisten"></a>delete iplisten
 
-從 IP 接聽清單中刪除 IP 位址。 IP 接聽清單可用來界定 HTTP 服務所系結的地址清單範圍。
+從 IP 接聽清單中刪除 IP 位址。 IP 接聽清單可用來界定 HTTP 服務所繫結的位址清單範圍。
 
 **語法**
 
@@ -215,26 +215,26 @@ delete iplisten [ ipaddress= ] IPAddress
 
 |               |                                                                                                                                                                                                                                                                     |          |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ip** | 要從 IP 接聽清單中刪除的 IPv4 或 IPv6 位址。 IP 接聽清單可用來界定 HTTP 服務所系結的地址清單範圍。 「0.0.0.0」表示任何 IPv4 位址和「：：」表示任何 IPv6 位址。 這不包含通訊埠編號。 | 必要 |
+| **ipaddress** | 要從 IP 接聽清單中刪除的 IPv4 或 IPv6 位址。 IP 接聽清單可用來界定 HTTP 服務所繫結的位址清單範圍。 "0.0.0.0" 表示任何 IPv4 位址，"::" 表示任何 IPv6 位址。 其中不包括連接埠號碼。 | 必要 |
 
 ---
 
 
-**典型**
+**範例**
 
-以下是**delete iplisten**命令的四個範例。
+以下是 **delete iplisten** 命令的四個範例。
 
--   delete iplisten ipaddress = fe80：：1
--   delete iplisten ipaddress = 1.1.1。1
--   delete iplisten ipaddress = 0.0.0。0
--   delete iplisten ipaddress =：：
+-   delete iplisten ipaddress=fe80::1
+-   delete iplisten ipaddress=1.1.1.1
+-   delete iplisten ipaddress=0.0.0.0
+-   delete iplisten ipaddress=::
 
 ---
 
-## <a name="delete-sslcert"></a>刪除 sslcert
+## <a name="delete-sslcert"></a>delete sslcert
 
 
-刪除 IP 位址和埠的 SSL 伺服器憑證系結和對應的用戶端憑證原則。
+刪除 IP 位址和連接埠的 SSL 伺服器憑證繫結和對應的用戶端憑證原則。
 
 **語法**
 
@@ -246,24 +246,24 @@ delete sslcert [ ipport= ] IPAddress:port
 
 |            |                                                                                                                                                                                          |          |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ipport** | 指定要刪除 SSL 憑證系結的 IPv4 或 IPv6 位址和埠。 冒號字元（:)會用來做為 IP 位址與埠號碼之間的分隔符號。 | 必要 |
+| **ipport** | 指定要刪除 SSL 憑證繫結的 IPv4 或 IPv6 位址和連接埠。 冒號字元 (:) 可作為 IP 位址與連接埠號碼之間的分隔符號。 | 必要 |
 
 ---
 
 
-**典型**
+**範例**
 
-以下是**delete sslcert**命令的三個範例。
+以下是 **delete sslcert** 命令的三個範例。
 
-- delete sslcert ipport = 1.1.1.1：443
-- delete sslcert ipport = 0.0.0.0：443
-- delete sslcert ipport = [：：]：443
+- delete sslcert ipport=1.1.1.1:443
+- delete sslcert ipport=0.0.0.0:443
+- delete sslcert ipport=[::]:443
 
 ---
 
-## <a name="delete-timeout"></a>刪除超時
+## <a name="delete-timeout"></a>delete timeout
 
-刪除全域超時，並讓服務還原為預設值。
+刪除全域逾時，並且使服務還原為預設值。
 
 **語法**
 
@@ -275,23 +275,23 @@ delete timeout [ timeouttype= ] idleconnectiontimeout | headerwaittimeout
 
 |                 |                                        |          |
 |-----------------|----------------------------------------|----------|
-| **timeouttype** | 指定超時設定的類型。 | 必要 |
+| **timeouttype** | 指定逾時設定的類型。 | 必要 |
 
 ---
 
 
-**典型**
+**範例**
 
-以下是**delete timeout**命令的兩個範例。
+以下是 **delete timeout** 命令的兩個範例。
 
--   delete timeout timeouttype = idleconnectiontimeout
--   delete timeout timeouttype = headerwaittimeout
+-   delete timeout timeouttype=idleconnectiontimeout
+-   delete timeout timeouttype=headerwaittimeout
 
 ---
 
-## <a name="delete-urlacl"></a>刪除 urlacl
+## <a name="delete-urlacl"></a>delete urlacl
 
-刪除 URL 保留專案。
+刪除 URL 保留。
 
 **語法**
 
@@ -303,21 +303,21 @@ delete urlacl [ url= ] URL
 
 |         |                                                                                       |          |
 |---------|---------------------------------------------------------------------------------------|----------|
-| **連結** | 指定您想要刪除的完整統一資源定位器（URL）。 | 必要 |
+| **url** | 指定您要刪除的完整統一資源定位器 (URL)。 | 必要 |
 
 ---
 
 
-**典型**
+**範例**
 
-以下是**delete urlacl**命令的兩個範例。
+以下是 **delete urlacl** 命令的兩個範例。
 
-- 刪除 urlacl url =https://+:80/MyUri
-- 刪除 urlacl url =<https://www.contoso.com:80/MyUri>
+- delete urlacl url=https://+:80/MyUri
+- delete urlacl url=<https://www.contoso.com:80/MyUri>
 
 ---
 
-## <a name="flush-logbuffer"></a>清除 logbuffer
+## <a name="flush-logbuffer"></a>flush logbuffer
 
 排清記錄檔的內部緩衝區。
 
@@ -329,7 +329,7 @@ flush logbuffer
 
 ---
 
-## <a name="show-cachestate"></a>顯示 cachestate
+## <a name="show-cachestate"></a>show cachestate
 
 列出快取的 URI 資源及其相關聯的屬性。 此命令會列出在 HTTP 回應快取中快取的所有資源及其相關聯的屬性，或顯示單一資源及其相關聯的屬性。
 
@@ -343,23 +343,23 @@ show cachestate [ [url= ] URL]
 
 |         |                                                                                                                                                    |          |
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **連結** | 指定您想要顯示的完整 URL。 如果未指定，則會顯示所有 Url。 URL 也可以是已註冊 Url 的前置詞。 | 選擇性 |
+| **url** | 指定您要顯示的完整 URL。 若未指定，則會顯示所有 URL。 URL 也可以是已註冊 URL 的前置詞。 | 選用 |
 
 ---
 
 
-**典型**
+**範例**
 
-以下是**show cachestate**命令的兩個範例：
+以下是 **show cachestate** 命令的兩個範例：
 
-- 顯示 cachestate url =<https://www.contoso.com:80/myresource>
-- 顯示 cachestate
+- show cachestate url=<https://www.contoso.com:80/myresource>
+- show cachestate
 
 ---
 
-## <a name="show-iplisten"></a>顯示 iplisten
+## <a name="show-iplisten"></a>show iplisten
 
-顯示 IP 接聽清單中的所有 IP 位址。 IP 接聽清單可用來界定 HTTP 服務所系結的地址清單範圍。 「0.0.0.0」表示任何 IPv4 位址和「：：」表示任何 IPv6 位址。
+顯示 IP 接聽清單中的所有 IP 位址。 IP 接聽清單可用來界定 HTTP 服務所繫結的位址清單範圍。 "0.0.0.0" 表示任何 IPv4 位址，"::" 表示任何 IPv6 位址。
 
 **語法**
 
@@ -369,7 +369,7 @@ show iplisten
 
 ---
 
-## <a name="show-servicestate"></a>顯示 servicestate
+## <a name="show-servicestate"></a>show servicestate
 
 顯示 HTTP 服務的快照集。
 
@@ -382,23 +382,23 @@ show servicestate [ [ view= ] session | requestq ] [ [ verbose= ] yes | no ]
 
 |             |                                                                                                                      |          |
 |-------------|----------------------------------------------------------------------------------------------------------------------|----------|
-|  **檢視**   | 指定是否要根據伺服器會話或要求佇列，來查看 HTTP 服務狀態的快照集。 | 選擇性 |
-| **冗余** |                指定是否要顯示也會顯示內容資訊的詳細資訊。                | 選擇性 |
+|  **檢視**   | 指定要根據伺服器工作階段還是要求佇列來檢視 HTTP 服務狀態的快照集。 | 選用 |
+| **Verbose** |                指定是否要顯示也會顯示屬性資訊的詳細資訊。                | 選用 |
 
 ---
 
-**典型**
+**範例**
 
-以下是**show servicestate**命令的兩個範例。
+以下是 **show servicestate** 命令的兩個範例。
 
--   顯示 servicestate 視圖 = "會話"
--   顯示 servicestate view = "requestq"
+-   show servicestate view="session"
+-   show servicestate view="requestq"
 
 ---
 
-## <a name="show-sslcert"></a>顯示 sslcert
+## <a name="show-sslcert"></a>show sslcert
 
-顯示 IP 位址和埠的安全通訊端層（SSL）伺服器憑證系結和對應的用戶端憑證原則。
+顯示 IP 位址和連接埠的安全通訊端層 (SSL) 伺服器憑證繫結和對應的用戶端憑證原則。
 
 **語法**
 
@@ -410,26 +410,26 @@ show sslcert [ ipport= ] IPAddress:port
 
 |            |                                                                                                                                                                                                                                                |          |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ipport** | 指定 SSL 憑證系結所顯示的 IPv4 或 IPv6 位址和埠。 冒號字元（:)會用來做為 IP 位址與埠號碼之間的分隔符號。 如果您未指定 ipport，則會顯示所有系結。 | 必要 |
+| **ipport** | 指定要顯示 SSL 憑證繫結的 IPv4 或 IPv6 位址和連接埠。 冒號字元 (:) 可作為 IP 位址與連接埠號碼之間的分隔符號。 若未指定 ipport，則會顯示所有繫結。 | 必要 |
 
 ---
 
 
-**典型**
+**範例**
 
-以下是**show sslcert**命令的五個範例。
+以下是 **show sslcert** 命令的五個範例。
 
--   show sslcert ipport = [fe80：： 1]：443
--   顯示 sslcert ipport = 1.1.1.1：443
--   顯示 sslcert ipport = 0.0.0.0：443
--   show sslcert ipport = [：：]：443
--   顯示 sslcert
+-   show sslcert ipport=[fe80::1]:443
+-   show sslcert ipport=1.1.1.1:443
+-   show sslcert ipport=0.0.0.0:443
+-   show sslcert ipport=[::]:443
+-   show sslcert
 
 ---
 
-## <a name="show-timeout"></a>顯示超時
+## <a name="show-timeout"></a>show timeout
 
-顯示 HTTP 服務的超時值（以秒為單位）。
+顯示 HTTP 服務的逾時值 (以秒為單位)。
 
 **語法**
 
@@ -439,9 +439,9 @@ show timeout
 
 ---
 
-## <a name="show-urlacl"></a>顯示 urlacl
+## <a name="show-urlacl"></a>show urlacl
 
-針對指定的保留 URL 或所有保留的 Url，顯示任意存取控制清單（Dacl）。
+針對指定的保留 URL 或所有保留的 URL 顯示判別存取控制清單 (DACL)。
 
 **語法**
 
@@ -453,17 +453,17 @@ show urlacl [ [url= ] URL]
 
 |         |                                                                                                |          |
 |---------|------------------------------------------------------------------------------------------------|----------|
-| **連結** | 指定您想要顯示的完整 URL。 如果未將其顯示，則顯示所有 Url。 | 選擇性 |
+| **url** | 指定您要顯示的完整 URL。 若未指定，則會顯示所有 URL。 | 選用 |
 
 ---
 
 
-**典型**
+**範例**
 
-以下是**顯示 urlacl**命令的三個範例。
+以下是 **show urlacl** 命令的三個範例。
 
-- 顯示 urlacl url =https://+:80/MyUri
-- 顯示 urlacl url =<https://www.contoso.com:80/MyUri>
-- 顯示 urlacl
+- show urlacl url=https://+:80/MyUri
+- show urlacl url=<https://www.contoso.com:80/MyUri>
+- show urlacl
 
 ---

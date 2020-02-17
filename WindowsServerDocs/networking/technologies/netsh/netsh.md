@@ -1,6 +1,6 @@
 ---
 title: 網路殼層 (Netsh)
-description: 本主題提供 Windows Server 2016 中的 Network Shell （netsh）命令列公用程式的總覽。
+description: 本主題提供 Windows Server 2016 中的網路殼層 (Netsh) 命令列公用程式概觀。
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
@@ -11,32 +11,32 @@ author: shortpatti
 ms.date: 09/13/2018
 ms.openlocfilehash: ac440c8187424733c0636cf2013342458f08d2f4
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405549"
 ---
-# <a name="network-shell-netsh"></a>\(Netsh\) 的網路命令介面
+# <a name="network-shell-netsh"></a>網路殼層 \(Netsh\)
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-Network shell （netsh）是一種命令列公用程式，可讓您在執行 Windows Server 2016 的電腦上安裝各種網路通訊伺服器角色和元件之後，設定和顯示其狀態。
+網路殼層 (Netsh) 是命令列公用程式，可讓您將各種網路通訊伺服器角色與元件安裝在執行 Windows Server 2016 的電腦之後，加以設定並顯示狀態。
 
-某些用戶端技術（例如動態主機設定通訊協定 \(DHCP\) 用戶端和 BranchCache）也提供 netsh 命令，可讓您設定執行 Windows 10 的用戶端電腦。
+某些用戶端技術 (例如動態主機組態通訊協定 \(DHCP\) 用戶端和 BranchCache) 也提供 netsh 命令，可讓您設定執行 Windows 10 的用戶端電腦。
 
-在大部分的情況下，當您使用 Microsoft Management Console \(MMC\) 的嵌入式管理\-，適用于每個網路伺服器角色或網路功能，netsh 命令提供的功能相同。 例如，您可以使用 NPS MMC 嵌入式管理單元或**netsh NPS**內容中的 netsh 命令，來設定網路原則伺服器 \(NPS\)。
+在大部分的情況下，當您針對每個網路伺服器角色或網路功能使用 Microsoft Management Console \(MMC\) 嵌入式管理單元\-時，netsh 命令會提供相同的功能。 例如，您可以使用 NPS MMC 嵌入式管理單元或 **netsh NPS** 內容中的 netsh 命令﹐來設定網路原則伺服器 \(NPS\)。
 
-此外，還有適用于網路技術的 netsh 命令，例如 IPv6、網路橋接器，以及遠端程序呼叫 \(RPC\)，在 Windows Server 中無法當做 MMC 嵌入式管理單元使用。
+此外，還有適用於網路技術的 netsh 命令 (例如 IPv6、網路橋接器，以及遠端程序呼叫 \(RPC\))，無法在 Windows Server 中作為 MMC 嵌入式管理單元使用。
 
 >[!IMPORTANT]
->建議您使用 Windows PowerShell 來管理[Windows Server 2016 和 windows 10](https://technet.microsoft.com/library/mt156917.aspx)中的網路技術，而不是使用網路介面。 為了與您的腳本相容，會包含網路介面，並支援其使用方式。
+>建議您使用 Windows PowerShell 來管理 [Windows Server 2016 和 Windows 10](https://technet.microsoft.com/library/mt156917.aspx) 中的網路技術，而不是使用網路殼層。 不過，為了與您的指令碼相容，系統會納入網路殼層，並可支援使用。
 
-## <a name="network-shell-netsh-technical-reference"></a>Network Shell （Netsh）技術參考
+## <a name="network-shell-netsh-technical-reference"></a>網路殼層 (Netsh) 技術參考
 
-Netsh 技術參考提供完整的 netsh 命令參考，包括語法、參數和 Netsh 命令的範例。 您可以使用 Netsh 技術參考，在執行 Windows Server 2016 和 Windows 10 的電腦上，使用 netsh 命令來建立腳本和批次檔，以進行本機或遠端系統管理網路技術。  
+Netsh 技術參考提供完整的 netsh 命令參考，包括語法、參數和 Netsh 命令範例。 您可以使用 Netsh 技術參考，在執行 Windows Server 2016 和 Windows 10 的電腦上，使用 netsh 命令來建立指令碼和批次檔，以在本機或遠端管理網路技術。  
   
 ### <a name="content-availability"></a>內容可用性  
   
-您可以從 TechNet 資源庫中的 Windows Help \(* .chm\) 格式下載網路命令介面技術參考（英文）： [Netsh 技術參考](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
+您可以從 TechNet 資源庫中以 Windows Help \(* .chm\) 格式下載網路殼層技術參考：[ 技術參考](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
   
 ---
