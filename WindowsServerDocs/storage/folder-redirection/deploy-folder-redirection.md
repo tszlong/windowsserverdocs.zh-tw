@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21172d9d3e6d91af691986bfd84b0e32049f3b88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d8f6bf0df67b76028945403352bd135e6641a5a
+ms.sourcegitcommit: ab3967d71dcbb962079af194875de58e7c32c4e2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401969"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967423"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>使用離線檔案部署資料夾重新導向
 

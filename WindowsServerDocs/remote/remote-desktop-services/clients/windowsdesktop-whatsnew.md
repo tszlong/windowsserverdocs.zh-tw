@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889442"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155382"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -31,7 +31,20 @@ ms.locfileid: "76889442"
 |使用者群組 |版本  |
 |-----------|---------|
 |公用     |1.2.605  |
-|Insider    |1.2.605  |
+|Insider    |1.2.673  |
+
+## <a name="updates-for-version-12673"></a>1\.2.673 版的更新
+
+*發行日期：02/11/2020*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+
+- 如果 RDP 檔案遺漏簽章，或其中一個 signscope 屬性已修改，則現在會封鎖對 Windows 虛擬桌面的連線。
+- 當工作區是空的或已移除時，連接中心不會再顯示為空白。
+- 已在中斷連線的訊息上新增活動識別碼和錯誤碼，以改善疑難排解。 您可以使用 **Ctrl + C** 複製對話方塊訊息。
+- 已修正導致桌面連線設定不會偵測到顯示的問題。
+- 用戶端更新不會再自動重新啟動電腦。
+- 無視窗圖示應該不會再出現在工作列上。
 
 ## <a name="updates-for-version-12605"></a>1\.2.605 版的更新
 
