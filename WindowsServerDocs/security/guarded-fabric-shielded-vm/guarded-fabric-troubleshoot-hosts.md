@@ -8,16 +8,16 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 0479309efe629d204bdc98fe11a7ccb4447a7369
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: ec885670ca6808e89c63848781c4ff3dc27799b8
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940722"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465602"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>針對受防護主機進行疑難排解
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 本主題說明在您的受防護網狀架構中部署或操作受防護的 Hyper-v 主機時，所遇到常見問題的解決方式。
 如果您不確定問題的本質，請先嘗試在 Hyper-v 主機上執行受防護的網狀[架構診斷](guarded-fabric-troubleshoot-diagnostics.md)，以縮小可能的原因。
@@ -48,14 +48,14 @@ Install-WindowsFeature HostGuardian -Restart
 
 AttestationStatus         | 說明
 --------------------------|------------
-已到期                   | 主機先前已通過證明，但其簽發的健康情況憑證已過期。 請確定主機和 HGS 時間皆已同步。
+已過期                   | 主機先前已通過證明，但其簽發的健康情況憑證已過期。 請確定主機和 HGS 時間皆已同步。
 InsecureHostConfiguration | 主機未通過證明，因為它不符合 HGS 上設定的證明原則。 如需詳細資訊，請參閱 AttestationSubStatus 資料表。
 NotConfigured             | 主機未設定為使用 HGS 進行證明和金鑰保護。 它是針對原生模式而設定的。 如果此主機位於受防護的網狀架構中，請使用[get-hgsclientconfiguration](https://technet.microsoft.com/library/dn914494.aspx)來提供您 HGS 伺服器的 url。
-已                    | 主機通過證明。
+成功                    | 主機通過證明。
 TransientError            | 上次證明嘗試因網路、服務或其他暫時性錯誤而失敗。 請重試您的上一個操作。
 TpmError                  | 因為 TPM 發生錯誤，所以主機無法完成最後一個證明嘗試。 如需詳細資訊，請參閱您的 TPM 記錄檔。
 UnauthorizedHost          | 主機未通過證明，因為它未獲授權，無法執行受防護的 Vm。 請確定主機屬於 HGS 所信任的安全性群組，以執行受防護的 Vm。
-不明                   | 主機尚未嘗試使用 HGS 進行證明。
+未知                   | 主機尚未嘗試使用 HGS 進行證明。
 
 當**AttestationStatus**報告為**InsecureHostConfiguration**時，[ **AttestationSubStatus** ] 欄位中會填入一或多個原因。
 下表說明 AttestationSubStatus 的可能值，以及如何解決問題的秘訣。
@@ -71,7 +71,7 @@ FullBoot                   | 主機已從睡眠狀態恢復或休眠。 重新�
 HibernationEnabled         | 主機已設定為允許休眠，而不需要加密休眠檔案，而 HGS 原則不允許這種情況。 停用休眠並重新啟動主機，或設定傾印[加密](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)。
 HypervisorEnforcedCodeIntegrityPolicy | 主機未設定為使用「執行程式碼完整性」原則。 確認程式碼完整性已啟用、設定，並由虛擬程式強制執行。 如需詳細資訊，請參閱[Device Guard 部署指南](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies)。
 Iommu                      | 主機的虛擬化型安全性功能未設定為需要 IOMMU 裝置，以根據 HGS 原則的要求來保護直接記憶體存取攻擊。 確認主機具有 IOMMU、已啟用，而且裝置防護已設定為在啟動 VBS 時[需要 DMA 保護](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard)。
-PagefileEncryption         | 未在主機上啟用分頁檔案加密。 若要解決此問題，請執行 `fsutil behavior set encryptpagingfile 1`，以啟用分頁檔加密。 如需詳細資訊，請參閱[fsutil 行為](https://technet.microsoft.com/library/cc785435.aspx)。
+PagefileEncryption         | 未在主機上啟用分頁檔案加密。 若要解決此問題，請執行 `fsutil behavior set encryptpagingfile 1` 以啟用分頁檔加密。 如需詳細資訊，請參閱[fsutil 行為](https://technet.microsoft.com/library/cc785435.aspx)。
 SecureBoot                 | 未在此主機上啟用安全開機，或未使用 Microsoft 安全開機範本。 請使用 Microsoft 安全開機範本來[啟用安全開機](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot)，以解決此問題。
 SecureBootSettings         | 此主機上的 TPM 基準不符合 HGS 信任的任何一個。 藉由安裝新的硬體或軟體來變更 UEFI 啟動授權單位、.DBX 變數、debug 旗標或自訂安全開機原則時，可能會發生這種情況。 如果您信任這部電腦目前的硬體、固件和軟體設定，您可以[捕捉新的 TPM 基準](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware)並[向 HGS 註冊](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)。
 TcgLogVerification         | 無法取得或驗證 TCG 記錄（TPM 基準）。 這可能表示主機的 [固件]、[TPM] 或其他硬體元件發生問題。 如果您的主機設定為在啟動 Windows 之前嘗試 PXE 開機，則過時的 Net Boot 程式（NBP）也會造成此錯誤。 請確定在啟用 PXE 開機時，所有 Nbp 都是最新狀態。

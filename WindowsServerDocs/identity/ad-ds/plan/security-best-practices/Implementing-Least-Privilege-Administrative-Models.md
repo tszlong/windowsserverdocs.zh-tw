@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f61bc1ccb7d9b09a17713946b5b8c2cc352f43ac
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: a2b4bd25c50eb8e76627bb6532345f3c187e4f0e
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822091"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465532"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>實作最低權限管理模型
 
@@ -234,7 +234,7 @@ ms.locfileid: "76822091"
 > [!NOTE]  
 > 當您對 Gpo 中的 Administrators 群組執行限制時，Windows 除了網域的 Administrators 群組之外，還會將設定套用至電腦的本機系統管理員群組成員。 因此，在系統管理員群組上執行限制時，您應該小心。 雖然禁止網路，但系統管理員群組成員的批次和服務登入都是建議的作法，而不是透過遠端桌面服務來限制本機登入或登入。 封鎖這些登入類型可能會封鎖本機 Administrators 群組成員的電腦的合法管理。 下列螢幕擷取畫面顯示封鎖內建本機和網域系統管理員帳戶誤用的設定，以及濫用內建的本機或網域系統管理員群組。 請注意，[**拒絕登入遠端桌面服務**] 使用者權限不包含 [系統管理員] 群組，因為將它包含在此設定中，也會針對屬於本機電腦之 Administrators 群組成員的帳戶封鎖這些登入。 如果電腦上的服務設定為在本節所述之任何特殊許可權群組的內容中執行，則執行這些設定可能會導致服務和應用程式失敗。 因此，如同本節中的所有建議，您應該徹底測試環境中的適用性設定。  
 >
-> ![最少的特權管理模型](media/Implementing-Least-Privilege-Administrative-Models/SAD_3.gif)  
+> ![最低版權管理模型](media/Implementing-Least-Privilege-Administrative-Models/SAD_3.gif)  
 
 ### <a name="role-based-access-controls-rbac-for-active-directory"></a>Active Directory 以角色為基礎的存取控制（RBAC）
 
@@ -314,7 +314,7 @@ ms.locfileid: "76822091"
 
 向已加入網域的系統驗證憑證時，憑證中的 [主旨] 或 [主體別名（SAN）] 屬性的內容會用來將憑證對應至 Active Directory 中的使用者物件。 根據憑證的類型和其結構，憑證中的主旨屬性通常會包含使用者的一般名稱（CN），如下列螢幕擷取畫面所示。  
 
-![最少的特權管理模型](media/Implementing-Least-Privilege-Administrative-Models/SAD_4.gif)  
+![最低版權管理模型](media/Implementing-Least-Privilege-Administrative-Models/SAD_4.gif)  
 
 根據預設，Active Directory 藉由串連帳戶的名字 + "" + 姓氏來建立使用者的 CN。 不過，Active Directory 中使用者物件的 CN 元件不是必要或保證是唯一的，而且將使用者帳戶移至目錄中的不同位置會變更帳戶的辨別名稱（DN），這是物件在中的完整路徑。目錄，如先前螢幕擷取畫面的下方窗格所示。  
 

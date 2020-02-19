@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 70281f581974493d3182fb6fdd8f35cb37bed4bf
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 028396bffff6449a296e2922846fe2fc379fe624
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001903"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465612"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>使用 OAuth 搭配 AD FS 2016 或更新版本，以使用代理程式（OBO）建立多層式應用程式
 

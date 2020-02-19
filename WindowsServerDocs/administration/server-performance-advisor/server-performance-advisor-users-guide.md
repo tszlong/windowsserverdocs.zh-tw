@@ -9,12 +9,12 @@ ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: manage
-ms.openlocfilehash: 6a6ccedeeb007b9d3ab32c308fae991deb526442
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b29a7e10cc6a862873516b9adc16182d64dd926
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383086"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465462"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Server Performance Advisor 使用者指南
 
@@ -28,7 +28,7 @@ SPA 可協助您進行下列動作：
 
 * 提供有關常見設定和效能問題的資料包表和建議。
 
-* 根據所收集的資料，提供最佳的 pratice 建議。
+* 根據所收集的資料，提供最佳做法建議。
 
 > [!NOTE]
 > SPA 主控台不會對伺服器進行任何變更。
@@ -130,7 +130,7 @@ SPA 主控台可以在下列作業系統上執行：
 
 * Windows Server 2012 R2
 
-* Windows Server 2012
+* Windows 2012 Server
 
 * Windows Server 2008 R2
 
@@ -138,7 +138,7 @@ SPA 主控台可以在下列作業系統上執行：
 
 在一般商務應用程式中，有三個層級：展示層、商務邏輯層和儲存層。 SPA 是設計為主控台和資料庫的兩層產品。 主控台會當做包含特定處理常式相關邏輯的展示層，而資料庫會當做儲存層和商業邏輯層。 主控台會捕獲使用者輸入，並控制資料收集、資料處理和產生報告的步驟。 SPA 不依存于 Windows 系統服務。
 
-下圖顯示 SPA 系統的高層級架構。 程式為：
+下圖顯示 SPA 系統的高層級架構。 程序如下：
 
 1.  從 SPA 主控台中，您可以在指定的伺服器上執行效能分析。
 
@@ -222,7 +222,7 @@ SPA 主控台會使用相同的帳戶來讀取記錄，並將它們匯入至資�
 
     * 將伺服器新增至目標伺服器清單
 
-3.  按一下 **\[下一步\]** 。 [**建立專案資料庫**] 頁面會要求您提供要在其中建立資料庫之 Microsoft SQL Server 實例的名稱。 例如，如果與主控台位於同一部電腦上，您可以使用**localhost\\&lt;您的 SQL server 名稱&gt;** 。
+3.  按 [下一步]。 [**建立專案資料庫**] 頁面會要求您提供要在其中建立資料庫之 Microsoft SQL Server 實例的名稱。 例如，如果與主控台位於同一部電腦上，您可以使用**localhost\\&lt;您的 SQL server 名稱&gt;** 。
 
     **注意**SQL Server 2008 R2 Express 安裝的預設實例名稱是 SQLExpress。 針對安裝在本機電腦上 SQL Server 2008 R2 Express 的實例，資料庫通常會預設為**localhost\\SQLExpress**。 不過，在 SQL Server 安裝期間可能已變更，因此您必須確定使用的是正確的 SQL Server 實例名稱。
 
@@ -346,7 +346,7 @@ Advisor 套件名稱旁邊有三個圖示，可顯示伺服器上最新分析執
 
 * 警告圖示會指出潛在問題的存在。
 
-* 規則的名稱。 例如，[**網路接收封包**捨棄] 是指向 [規則詳細資料] 頁面的連結，如[管理 advisor 套件](#bkmk-manageadvisorpacks)中所述。
+* 規則名稱。 例如，[**網路接收封包**捨棄] 是指向 [規則詳細資料] 頁面的連結，如[管理 advisor 套件](#bkmk-manageadvisorpacks)中所述。
 
 * 有關潛在問題的簡單描述。
 
@@ -586,7 +586,7 @@ SPA 主控台支援透過 UI 進行週期性資料收集。 如果該功能不�
 
 下表描述 SPA Windows PowerShell Cmdlet：
 
-| Cmdlet 名稱 | Parameters | 描述 |
+| Cmdlet 名稱 | 參數 | 描述 |
 | ------ | ------- | ------ |
 | 開始-SpaAnalysis | **-ServerName**目標伺服器的名稱。<br>**-AdvisorPackName**要在伺服器上排入佇列之 advisor 套件的完整名稱。 當有多個套件排程為同時執行時，參數的值應格式化為 AP1name，AP2name。<br>**-持續時間**資料收集的持續時間。<br>**-認證**在目標伺服器上執行資料收集之帳戶的使用者認證。<br>**-SqlInstanceName**SQL Server 實例的名稱。<br>**-SqlDatabaseName**SPA 專案資料庫的名稱。 | 在指定的伺服器上啟動 SPA 資料收集會話。 |
 | 停止-SpaAnalysis | **-SqlInstanceName**SQL Server 實例的名稱。<br>**-SqlDatabaseName**SPA 專案資料庫的名稱。<br>**-ServerName**目標伺服器的名稱。 | 嘗試停止執行中的 SPA 會話。 如果會話已完成，則會傳回，而不會執行任何動作。 |
@@ -759,7 +759,7 @@ SPA 會保護 SPA 成功產生之每個報告的完整性。 同時，SPA 並不
 
 如果資料收集器結果包含 ETW 追蹤遺失以外的不完整資料，且 advisor 套件開發人員已新增 ETW 事件遺失通知的支援，則會在單一報表頂端顯示資訊列，以通知使用者可能的資料遺失導致不一致的報表。 詳細資料遺失資訊可以在記錄檔 .txt 檔案中找到。
 
-## <a name="glossary"></a>詞彙
+## <a name="glossary"></a>字彙
 
 
 以下是搭配 SPA 使用的一些詞彙：

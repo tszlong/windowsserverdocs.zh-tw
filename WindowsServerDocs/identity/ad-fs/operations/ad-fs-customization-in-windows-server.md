@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4b0ea70bd9346bf8abee4e0d96a8915e29cac462
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7402cf549a7a2fb4b112bf92b36182f882b9d73
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357777"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465242"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 中的 AD FS 自訂
 
@@ -25,7 +25,7 @@ ms.locfileid: "71357777"
 ## <a name="global-settings"></a>全域設定    
 針對一般的全域設定，您可以參考自訂 Windows Server 2012 R2 中 AD FS 隨附的[AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。  
   
-## <a name="pre-requisites"></a>先決條件  
+## <a name="pre-requisites"></a>必要條件  
 在嘗試本檔中所述的程式之前，必須先具備下列必要條件。  
   
 -   Windows Server 2016 TP4 或更新版本中的 AD FS  
@@ -79,13 +79,13 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
 `Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme`  
   
 ## <a name="home-realm-discovery"></a>主領域探索  
-針對 [主領域] 探索自訂，請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。  
+針對主領域探索自訂，請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。  
   
 ## <a name="updated-password-page"></a>已更新密碼頁面  
 如需自訂 [更新密碼] 頁面的詳細資訊，請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)。  
   
 ## <a name="customizing-and-alternate-ids"></a>自訂和替代識別碼  
-使用者可以使用 Active Directory Domain Services （AD DS）所接受的任何形式的使用者識別碼，登入 Active Directory 同盟服務（AD FS）啟用的應用程式。 這些包含使用者主體名稱（Upn）（johndoe@contoso.com）或網域限定的 sam 帳戶名稱（contoso\johndoe 或 contoso. com\johndoe）。  如需這種情況的詳細資訊，請參閱設定[替代登入識別碼。](Configuring-Alternate-Login-ID.md)  
+使用者可以使用 Active Directory Domain Services （AD DS）所接受的任何形式的使用者識別碼，登入 Active Directory 同盟服務（AD FS）啟用的應用程式。 這些包含使用者主體名稱（Upn）（johndoe@contoso.com）或網域限定的 sam 帳戶名稱（contoso\johndoe 或 com\johndoe）。  如需這種情況的詳細資訊，請參閱設定[替代登入識別碼。](Configuring-Alternate-Login-ID.md)  
   
 您可能需要自訂 AD FS 登入頁面，以提供使用者有關替代登入識別碼的一些提示。 若要這麼做，您可以新增自訂的登入頁面描述以取得詳細資訊，請參閱[自訂 AD FS 登入頁面。](https://technet.microsoft.com/library/dn280950.aspx)   
   

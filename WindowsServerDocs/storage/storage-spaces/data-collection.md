@@ -10,24 +10,24 @@ ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 67f35e3afa8e9eafabe7b22eb60cc85c7be6cb23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d64e6188b24b5a1ec45242c3d99366fdde5a623
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402879"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465212"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>使用儲存空間直接存取收集診斷資料
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 您可以使用各種診斷工具來收集疑難排解儲存空間直接存取和容錯移轉叢集所需的資料。 在本文中，我們將著重于**SDDCDiagnosticInfo** -一種觸控工具，它會收集所有相關資訊，以協助您診斷叢集。
 
-假設**SDDCDiagnosticInfo**的記錄和其他資訊很密集，下列有關疑難排解的資訊將有助於疑難排解已升級的 advanced 問題，而且可能需要將資料傳送至Microsoft 進行分級。
+假設**SDDCDiagnosticInfo**的記錄和其他資訊很密集，下列有關疑難排解的資訊將有助於疑難排解已升級的 advanced 問題，而且可能需要將資料傳送給 Microsoft 進行分級。
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>安裝 SDDCDiagnosticInfo
 
-**SDDCDiagnosticInfo** PowerShell Cmdlet （也稱為 **PCStorageDiagnosticInfo**（先前稱為**測試 StorageHealth**）可用來收集和執行容錯移轉叢集的健康狀態檢查（叢集、資源、網路、節點）、儲存空間（實體磁片、主機殼、虛擬磁片）、叢集共用磁片區、SMB 檔案共用和重復資料刪除。 
+**SDDCDiagnosticInfo** PowerShell Cmdlet （也稱為 **PCStorageDiagnosticInfo**（先前稱為**測試 StorageHealth**）可用來收集和執行容錯移轉叢集（叢集、資源、網路、節點）的健康狀態檢查、儲存空間（實體磁片、主機殼、虛擬磁片）、叢集共用磁片區、SMB 檔案共用，以及重復資料刪除。 
 
 有兩種方法可以安裝腳本，這兩者都是下面的概述。
 
@@ -35,12 +35,15 @@ ms.locfileid: "71402879"
 
 [PowerShell 資源庫](https://www.powershellgallery.com/packages/PrivateCloud.DiagnosticInfo)是 GitHub 存放庫的快照集。 請注意，從 PowerShell 資源庫安裝專案需要最新版本的 PowerShellGet 模組，其適用于 Windows 10、Windows Management Framework （WMF）5.0，或以 MSI 為基礎的安裝程式（適用于 PowerShell 3 和4）。
 
+我們也會在此程式中安裝最新版本的[Microsoft 網路診斷工具](https://www.powershellgallery.com/packages/MSFT.Network.Diag)，因為 SDDCDiagnosticInfo 會依賴這項功能。 此資訊清單模組包含網路診斷和疑難排解工具，由 Microsoft 的 Microsoft 核心網路產品小組維護。
+
 您可以在 PowerShell 中以系統管理員許可權執行下列命令來安裝模組：
 
 ``` PowerShell
 Install-PackageProvider NuGet -Force
 Install-Module PrivateCloud.DiagnosticInfo -Force
 Import-Module PrivateCloud.DiagnosticInfo -Force
+Install-Module -Name MSFT.Network.Diag
 ```
 
 若要更新模組，請在 PowerShell 中執行下列命令：
@@ -51,7 +54,7 @@ Update-Module PrivateCloud.DiagnosticInfo
 
 ### <a name="github"></a>GitHub
 
-[GitHub](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)存放庫是模組的最新版本，因為我們會持續在此反復查看。 若要從 GitHub 安裝模組，請從封存中下載最[新的模組，並將](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)PrivateCloud. DiagnosticInfo 目錄解壓縮至 ```$env:PSModulePath``` 所指向的正確 PowerShell 模組路徑
+[GitHub](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)存放庫是模組的最新版本，因為我們會持續在此反復查看。 若要從 GitHub 安裝模組，請從封存中下載最[新的模組，並將](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)PrivateCloud. DiagnosticInfo 目錄解壓縮至所指向的正確 PowerShell 模組路徑 ```$env:PSModulePath```
 
 ``` PowerShell
 # Allowing Tls12 and Tls11 -- e.g. github now requires Tls12

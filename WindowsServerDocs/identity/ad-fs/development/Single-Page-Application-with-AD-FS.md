@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: d54c33e092204f208590bd15db0d3c7fe7f852f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4973da0d9e0c347cff8fc910f96277055b66dec
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407898"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465542"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 建立單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
 
@@ -27,7 +27,7 @@ ms.locfileid: "71407898"
 >[!NOTE]
 >本逐步解說**僅**適用于 AD FS Server 2016 和更新版本 
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 在此範例中，我們將建立驗證流程，其中單一頁面應用程式用戶端會對 AD FS 進行驗證，以安全存取後端上的 WebAPI 資源。 以下是整體驗證流程
 
 
@@ -43,9 +43,9 @@ ms.locfileid: "71407898"
 ## <a name="setting-up-the-environment"></a>設定環境
 在此逐步解說中，我們將使用的基本設定：
 
-1.  DC將主控 AD FS 之網域的網域控制站
+1.  DC：將主控 AD FS 之網域的網域控制站
 2.  AD FS 伺服器：網域的 AD FS 伺服器
-3.  開發電腦：已安裝 Visual Studio 的電腦，並將會開發我們的範例
+3.  開發電腦：我們已安裝 Visual Studio 的電腦，並將會開發我們的範例
 
 如有需要，您可以只使用兩部電腦。 一個用於 DC/AD FS，另一個用於開發範例。
 
@@ -72,12 +72,12 @@ ms.locfileid: "71407898"
 
 **HomeController**-顯示如何利用 ADAL 中的 login （）和登出（）方法。
 
-**UserDataController** -示範如何從快取的 id_token 中解壓縮使用者資訊。
+**UserDataController** ：顯示如何從快取的 id_token 中解壓縮使用者資訊。
 
 **Startup.Auth.cs** -包含 WebAPI 的設定，以使用 Active Directory 持有人驗證的同盟服務。
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>在 AD FS 中註冊公用用戶端
-在範例中，會將 WebAPI 設定為在 https://localhost:44326/ 時接聽。 **存取 web 應用程式**的應用程式群組網頁瀏覽器可以用來設定隱含授與流程應用程式。
+在範例中，會將 WebAPI 設定為在 https://localhost:44326/接聽。 **存取 web 應用程式**的應用程式群組網頁瀏覽器可以用來設定隱含授與流程應用程式。
 
 1. 開啟 AD FS 管理主控台，然後按一下 [**新增應用程式群組**]。 在 [**新增應用程式組嚮導]** 中，輸入應用程式的名稱、描述，然後從 [**用戶端-伺服器應用程式**] 區段中選取 [**存取 web 應用程式] 範本的網頁瀏覽器**，如下所示
 
@@ -112,9 +112,9 @@ ms.locfileid: "71407898"
 
 |組態|描述|
 |--------|--------|
-|示例|您的 STS URL，例如 https://fs.contoso.com/|
-|出租|將其保留為 ' adfs '|
-|ClientID|這是您在設定單一頁面應用程式的公用用戶端時所指定的用戶端識別碼。|
+|執行個體|您的 STS URL，例如 https://fs.contoso.com/|
+|tenant|將其保留為 ' adfs '|
+|clientID|這是您在設定單一頁面應用程式的公用用戶端時所指定的用戶端識別碼。|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>將 WebAPI 設定為使用 AD FS
 開啟範例中的**Startup.Auth.cs**檔案，並在開頭新增下列內容：

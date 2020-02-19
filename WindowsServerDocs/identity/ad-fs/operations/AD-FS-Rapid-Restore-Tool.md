@@ -9,12 +9,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b47cdc4770b1ed6478d1502ed5264164e99352b
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013043"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465262"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速還原工具
 
@@ -29,6 +29,9 @@ ms.locfileid: "77013043"
     - 使用此工具建立 AD FS 的冷待命安裝，可以快速部署來取代線上 AD FS 伺服器
 2. 部署相同的測試和生產環境
     - 使用工具，在測試環境中快速建立生產 AD FS 的精確複本，或將已驗證的測試設定快速部署到生產環境
+3. 從 SQL 型設定遷移至 WID，反之亦然
+    - 使用工具從 SQL 伺服器陣列設定移至 WID，反之亦然。 
+
 
 >[!NOTE] 
 >如果您使用 SQL 合併式複寫或 Always on 可用性群組，則不支援快速還原工具。 我們建議使用以 SQL 為基礎的備份，以及 SSL 憑證的備份做為替代方案。

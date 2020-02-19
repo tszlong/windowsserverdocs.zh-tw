@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407535"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465274"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>管理 AD FS 的 SSL/TLS 通訊協定和加密套件
 下列檔提供如何停用及啟用 AD FS 所使用的特定 TLS/SSL 通訊協定和加密套件的相關資訊。
@@ -34,13 +34,13 @@ AD FS 使用 Schannel 來執行其安全通訊互動。  目前 AD FS 支援 Sch
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>管理 TLS/SSL 通訊協定和加密套件
 > [!IMPORTANT]
-> 本節包含的步驟會告訴您如何修改登錄。 不過，如果您不正確地修改登錄，可能會發生嚴重的問題。 因此，請確定您已仔細遵循這些步驟。 
+> 本節包含的步驟會告訴您如何修改登錄。 不過，如果您不當修改登錄，可能造成嚴重的問題發生。 因此，請務必小心遵循下列步驟。 
 > 
 > 請注意，變更 SCHANNEL 的預設安全性設定可能會中斷或防止特定用戶端與伺服器之間的通訊。  如果需要安全通訊，而且沒有可與通訊的通訊協定，就會發生這種情況。
 > 
 > 如果您要套用這些變更，則必須將它們套用至伺服器陣列中的所有 AD FS 伺服器。  套用這些變更之後，需要重新開機。
 
-在今天和年齡中，強化伺服器並移除舊版或弱式加密套件，對於許多組織而言都是主要的優先考慮。  提供的軟體套件將會測試您的伺服器，並提供這些通訊協定和套件的詳細資訊。  為了保持相容或達到安全的評等，移除或停用較弱的通訊協定或加密套件已成為必須。  本檔的其餘部分將提供如何啟用或停用特定通訊協定和加密套件的指引。
+在今天的日期和年齡中，強化伺服器並移除舊版或弱式加密套件，對於許多組織而言都是主要的優先考慮。  提供的軟體套件將會測試您的伺服器，並提供這些通訊協定和套件的詳細資訊。  為了保持相容或達到安全的評等，移除或停用較弱的通訊協定或加密套件已成為必須。  本檔的其餘部分將提供如何啟用或停用特定通訊協定和加密套件的指引。
 
 下列登錄機碼位於相同的位置： HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols。  使用 regedit 或 PowerShell 來啟用或停用這些通訊協定和加密套件。
 

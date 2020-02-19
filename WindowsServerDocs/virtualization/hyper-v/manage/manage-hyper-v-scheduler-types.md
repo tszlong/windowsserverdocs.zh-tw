@@ -9,16 +9,16 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: c7c2de8354d067faf0dcf1787c3e178421e2ac03
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872035"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465572"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虛擬程式排程器類型
 
->適用於：Windows 10，Windows Server 2016，Windows Server，版本1709，Windows Server，版本1803，Windows Server 2019
+>適用于： Windows 10、Windows Server 2016、Windows Server、版本1709、Windows Server、版本1803、Windows Server 2019
 
 本文說明 Windows Server 2016 中首次引進的虛擬處理器排程邏輯新模式。 這些模式或排程器類型會決定 Hyper-v 虛擬機器如何配置及管理跨來賓虛擬處理器的工作。 Hyper-v 主機系統管理員可以選取最適用于來賓虛擬機器（Vm）的虛擬程式排程器類型，並設定 Vm 以利用排程邏輯。
 
@@ -66,7 +66,7 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 傳統排程器是自其開始後所有版本的 Windows Hyper-v 虛擬機器的預設值，包括 Windows Server 2016 Hyper-v。 傳統排程器會為來賓虛擬處理器提供公平共用、搶先式迴圈配置資源排程模型。
 
-傳統的排程器類型最適合大部分傳統的 Hyper-v 用途–適用于私人雲端、主機服務提供者等等。 效能特性已充分瞭解，且最適合用來支援各種不同的虛擬化案例，例如過度訂閱 VPs 至 LPs、同時執行許多不同的 Vm 和工作負載，以及執行較大的高擴充性效能 Vm，支援不受限制的 Hyper-v 完整功能集等等。
+傳統的排程器類型最適合大部分傳統的 Hyper-v 用途–適用于私人雲端、主機服務提供者等等。 效能特性已充分瞭解，且最適合用來支援各種不同的虛擬化案例，例如過度訂閱 VPs 至 LPs、同時執行許多異類 Vm 和工作負載，以及執行較大的規模高效能 Vm，支援不受限制的 Hyper-v 完整功能集等等。
 
 ### <a name="the-core-scheduler"></a>核心排程器
 
@@ -122,8 +122,8 @@ PowerShell 必須用來在來賓虛擬機器中啟用 SMT;Hyper-v 管理員中�
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-其中<n>是來賓 VM 將會看到每個核心的 SMT 執行緒數目。  
-請注意<n> ，= 0 會將 HwThreadCountPerCore 值設定為符合主機的每個核心值的 SMT 執行緒計數。
+其中 <n> 是來賓 VM 將會看到的每個核心 SMT 執行緒數目。  
+請注意，<n> = 0 會將 HwThreadCountPerCore 值設定為符合主機的每個核心值的 SMT 執行緒計數。
 
 >[!NOTE] 
 >從 Windows Server 2019 開始支援設定 HwThreadCountPerCore = 0。
@@ -148,12 +148,12 @@ Windows Server 2016 Hyper-v 預設會使用傳統的虛擬程式管理器排程�
 >[!NOTE]
 >若要使用本檔中所述的程式管理器排程器功能，必須進行下列更新。 這些更新包含變更，以支援主機設定所需的新 ' hypervisorschedulertype ' BCD 選項。
 
-| Version | 發行  | 需要更新 | 知識庫文章 |
+| 版本 | 發行  | 需要更新 | 知識庫文章 |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018.07 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server Standard 2012 R2 | 1804 | 無 | None |
+|Windows Server 2019 | 1804 | 無 | 無 |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>選取 Windows Server 上的虛擬程式排程器類型
 
@@ -165,10 +165,10 @@ Windows Server 2016 Hyper-v 預設會使用傳統的虛擬程式管理器排程�
      bcdedit /set hypervisorschedulertype type
 ```
 
-其中`type`是下列其中一個：
+其中 `type` 是下列其中一個：
 
 * 傳統
-* 核心
+* Core
 * 根目錄
 
 系統必須重新開機，程式管理器排程器類型的任何變更才會生效。

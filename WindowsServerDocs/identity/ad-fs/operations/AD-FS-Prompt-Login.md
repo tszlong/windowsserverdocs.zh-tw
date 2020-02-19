@@ -9,12 +9,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cb91bb61adf97fee6f157ca44eb657e20670a1e7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a80678f5d2773e3fcd7a95032853249dc36d5616
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948688"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465522"
 ---
 # <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory 同盟服務提示 = 登入參數支援
 
@@ -63,7 +63,7 @@ Windows Server 2012 R2 中的 AD FS 與7月2016更新彙總套件引進了 `prom
 ![Get-MsolDomainFederationSettings](media/AD-FS-Prompt-Login/GetMsol.png)
 
 > [!NOTE]
-> 如果 `PreferredAuthenticationMethod` 屬性是空的（`$null`），則表示 `TranslateToFreshPasswordAuth`的預設行為。
+> 如果屬性（property）的值 `PromptLoginBehavior` 是空的（`$null`），則會使用 `TranslateToFreshPasswordAuth` 的行為。
 
 2. 執行下列命令，以設定所需的 `PromptLoginBehavior` 值：
 

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 620ab75fc5f44af7cd754847e3e5b717eece5057
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d95feb67001dc7b5eff68a0062d5f944672bad80
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393815"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465227"
 ---
 # <a name="storage-replica-overview"></a>儲存體複本概觀
 
@@ -71,11 +71,11 @@ ms.locfileid: "71393815"
 
 * **以 SMB3 為基礎**： 儲存體複本會使用經過實證且成熟的 SMB 3 技術，此技術首次是在 Windows Server 2012 中發佈。 這表示所有 SMB 的進階特性 (例如 RoCE、iWARP 及 InfiniBand RDMA 網路卡上的多重通道和 SMB 直接傳輸支援) 都可用於儲存體複本。   
 
-* **安全性**。 與許多廠商的產品不同，儲存體複本具備領先業界的安全性技術。 這包括封包簽署、AES-128-GCM 完整資料加密、Intel AES NI 加密加速的支援，以及預先驗證完整性攔截式攻擊預防。 儲存體複本在節點之間利用 Kerberos AES256 進行所有驗證。  
+* **安全性**： 與許多廠商的產品不同，儲存體複本具備領先業界的安全性技術。 這包括封包簽署、AES-128-GCM 完整資料加密、Intel AES NI 加密加速的支援，以及預先驗證完整性攔截式攻擊預防。 儲存體複本在節點之間利用 Kerberos AES256 進行所有驗證。  
 
 * **高效能的初始同步**。儲存體複本支援已植入的初始同步，其中資料的子集已經存在於舊版複本、備份，或隨附磁碟機的目標上。 初始複寫只會複製不同的區塊，可能會縮短初始同步處理時間，並防止資料使用有限的頻寬。 儲存體複本會封鎖總和檢查碼計算和彙總，也就是說，初始同步效能只會受到儲存體和網路速度的限制。  
 
-* **一致性群組**： 寫入順序可保證 Microsoft SQL Server 之類的應用程式可以寫入多個複寫的磁片區，並知道目的地伺服器上的資料是依序寫入。  
+* **一致性群組**： 寫入順序可保證 Microsoft SQL Server 之類的應用程式可以寫入多個複寫的磁片區，並知道資料是依序寫入目的地伺服器。  
 
 * **使用者委派**： 不是區域複寫節點上內建系統管理員群組成員的使用者，可以取得委派權限以管理複寫，這將能限制該使用者對於不相關區域的存取。  
 
@@ -96,7 +96,7 @@ ms.locfileid: "71393815"
 | 伺服器對伺服器複寫 | 是 |
 | 叢集對叢集複寫 | 是 |
 | 傳輸 | SMB3 |
-| Network | TCP/IP 或 RDMA |
+| 網路 | TCP/IP 或 RDMA |
 | 網路限制支援 | 是 |
 | RDMA* | iWARP、InfiniBand、RoCE v2 |
 | 複寫網路連接埠防火牆需求 | 單一 IANA 連接埠 (TCP 445 或 5445) |
@@ -111,7 +111,7 @@ ms.locfileid: "71393815"
 
 ## <a name="BKMK_SR3"></a>儲存體複本必要條件
 
-* Active Directory Domain Services 樹系。
+* Active Directory 網域服務樹系。
 * 具有 SAS JBOD、儲存空間直接存取、光纖通道 SAN、共用 VHDX、iSCSI 目標或本機 SAS/SCSI/SATA 儲存體的儲存空間。 針對複寫記錄檔磁碟機，建議使用 SSD 或更快的裝置。 Microsoft 建議記錄檔儲存體應該要比資料儲存體更快。 記錄檔磁碟區不得用於其他工作負載。
 * 每部伺服器上至少要有一個乙太網路/TCP 連線，以進行同步複寫，但最好是 RDMA。
 * 每部伺服器至少要有 2 GB 的 RAM 和兩個核心。
@@ -138,7 +138,7 @@ ms.locfileid: "71393815"
 
 當應用程式寫入在來源資料複本上發生時，原始儲存體將不會立即確認 IO。 相反地，那些資料變更會複寫到遠端目的地複本並傳回確認。 只有在那時，應用程式才會接收到 IO 確認。 這可確保遠端站台與來源站台持續同步處理，因而將儲存體 IO 延伸到整個網路。 如果來源站台失敗，應用程式可以容錯移轉至遠端站台，並繼續執行其作業並保證零資料遺失。  
 
-| 模式 | 圖表 | 步驟 |
+| Mode | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
 | **同步**<br /><br />零資料遺失<br /><br />RPO | ![這個圖表顯示儲存體複本如何在同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.應用程式寫入資料<br />2.記錄檔資料已寫入，且資料已複寫至遠端站台<br />3.記錄檔資料已在遠端站台寫入<br />4.遠端站台做出確認<br />5.應用程式寫入已確認<br /><br />t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
 
@@ -150,7 +150,7 @@ ms.locfileid: "71393815"
 
 由於非同步複寫具有高於零的 RPO，因此比較不適合做為容錯移轉叢集之類的 HA 解決方案，因為它們是針對具有備援能力且不會遺失資料的連續作業而設計。  
 
-| 模式 | 圖表 | 步驟 |
+| Mode | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
 | **同步**<br /><br />接近零的資料遺失<br /><br />(取決於多個因素)<br /><br />RPO | ![這個圖表顯示儲存體複本如何在非同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.應用程式寫入資料<br />2.記錄檔資料已寫入<br />3.應用程式寫入已確認<br />4.資料複寫到遠端站台<br />5.記錄檔資料已在遠端站台寫入<br />6.遠端站台做出確認<br /><br />t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
 
@@ -188,7 +188,7 @@ Windows Server （版本1709）中的**測試容錯移轉**Cmdlet 推出也包�
 
 如需 Windows Server 2019 中儲存體複本的新功能清單，請參閱[儲存體的新](../whats-new-in-storage.md#storage-replica2019)功能
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)  
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)  

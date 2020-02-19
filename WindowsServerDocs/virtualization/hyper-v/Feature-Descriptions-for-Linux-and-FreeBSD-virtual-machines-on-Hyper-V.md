@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 1690230d326d7e32175ccde5da1e5fae421a76d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 829a3897ef54155e34ced75721ec048ba16b342a
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366804"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465172"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上 Linux 和 FreeBSD 虛擬機器的功能描述
 
@@ -24,9 +24,9 @@ ms.locfileid: "71366804"
 
 本文說明在虛擬機器上使用 Linux 和 FreeBSD 時，核心、網路、儲存體和記憶體等元件中可用的功能。
 
-## <a name="core"></a>核心版
+## <a name="core"></a>Core
 
-|**功能**|**描述**|
+|**特徵**|**描述**|
 |-|-|
 |整合式關機|有了這項功能，系統管理員就可以從 Hyper-v 管理員關閉虛擬機器。 如需詳細資訊，請參閱[作業系統關機](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_Shutdown)。|
 |時間同步處理|這項功能可確保虛擬機器內的維護時間與主機上的維護時間保持同步。 如需詳細資訊，請參閱[時間同步](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_time)處理。|
@@ -39,9 +39,9 @@ ms.locfileid: "71366804"
 
 ## <a name="networking"></a>網路功能
 
-|**功能**|**描述**|
+|**特徵**|**描述**|
 |-|-|
-|大型訊框|有了這項功能，系統管理員可以增加超過1500個位元組的網路框架大小，這會導致網路效能大幅增加。|
+|Jumbo 框架|有了這項功能，系統管理員可以增加超過1500個位元組的網路框架大小，這會導致網路效能大幅增加。|
 |VLAN 標記和中繼|這項功能可讓您設定虛擬機器的虛擬 LAN （VLAN）流量。|
 |即時移轉|透過這項功能，您可以將虛擬機器從一部主機遷移至另一部主機。 如需詳細資訊，請參閱[虛擬機器即時移轉總覽](https://technet.microsoft.com/library/hh831435.aspx)。|
 |靜態 IP 插入|有了這項功能，您可以在虛擬機器故障後複寫至不同主機上的複本之後，複寫其靜態 IP 位址。 這類 IP 複寫可確保網路工作負載在容錯移轉事件之後繼續順暢地工作。|
@@ -50,9 +50,9 @@ ms.locfileid: "71366804"
 |大型接收卸載（LRO）|藉由將多個封包匯總成較大的緩衝區來增加高頻寬連線的輸入輸送量，因而降低 CPU 負荷。|
 |SR-IOV|單一根目錄 i/o 裝置會使用 DDA，讓來賓能夠存取特定 NIC 卡的某些部分，以降低延遲並增加輸送量。 SR-IOV 需要來賓上主機和虛擬函式（VF）驅動程式的最新實體功能（PF）驅動程式。|
 
-## <a name="storage"></a>儲存體
+## <a name="storage"></a>存放裝置
 
-|**功能**|**描述**|
+|**特徵**|**描述**|
 |-|-|
 |VHDX 調整大小|有了這項功能，系統管理員可以調整連接至虛擬機器的固定大小 .vhdx 檔案大小。 如需詳細資訊，請參閱[線上虛擬硬碟調整大小總覽](https://technet.microsoft.com/library/dn282286.aspx)。|
 |虛擬光纖通道|有了這項功能，虛擬機器就可以辨識光纖通道裝置，並以原生方式掛接它。 如需詳細資訊，請參閱 [Hyper-V 虛擬光纖通道概觀](https://technet.microsoft.com/library/hh831413.aspx)。|
@@ -62,7 +62,7 @@ ms.locfileid: "71366804"
 
 ## <a name="memory"></a>記憶體
 
-|**功能**|**描述**|
+|**特徵**|**描述**|
 |-|-|
 |PAE 核心支援|實體位址延伸模組（PAE）技術可讓32位核心存取大於4GB 的實體位址空間。 舊版的 Linux 散發套件（例如 RHEL 5.x）用來運送已啟用 PAE 的個別核心。 較新的發行版本（例如 RHEL 6.x）提供預先建立的 PAE 支援。|
 |設定 MMIO 間隙|透過這項功能，設備製造商可以設定記憶體對應 i/o （MMIO）間隙的位置。 MMIO 間隙通常用來分割設備的足夠作業系統（JeOS）與應用裝置的實際軟體基礎結構之間的可用實體記憶體。|
@@ -70,15 +70,15 @@ ms.locfileid: "71366804"
 |動態記憶體-佔用|主機可以動態地增加或減少虛擬機器在運作時可用的記憶體數量。 在布建之前，系統管理員會在 [虛擬機器設定] 面板中啟用動態記憶體，並指定虛擬機器的啟動記憶體、最小記憶體和最大記憶體。 當虛擬機器在作業中時動態記憶體無法停用，而且只能變更最小值和最大值設定。 （最佳作法是將這些記憶體大小指定為128MB 的倍數）。<br /><br />當虛擬機器第一次啟動時，可用的記憶體會等於**啟動記憶體**。 由於應用程式工作負載導致記憶體需求增加，Hyper-v 可能會透過熱新增機制（如上）動態配置更多記憶體給虛擬機器。 當記憶體需求降低時，Hyper-v 可能會透過氣球機制自動從虛擬機器取消布建記憶體。 Hyper-v 不會將記憶體解除布建在**最小記憶體**參數之下。<br /><br />Hyper-v 管理員的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器中的記憶體統計資料將會顯示配置的最高記憶體數量。<br /><br />如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。<br /><br />|
 |執行時間記憶體大小調整|系統管理員可以設定虛擬機器在運作時可用的記憶體數量、增加記憶體（「熱新增」）或減少它（「熱移除」）。 記憶體會透過氣球驅動程式傳回到 Hyper-v （請參閱 "動態記憶體-佔用"）。 氣球驅動程式會在佔用（稱為「樓層」）後維持最小的可用記憶體數量，因此指派的記憶體無法縮減低於目前的需求加上此樓層數量。 Hyper-v 管理員的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器中的記憶體統計資料將會顯示配置的最高記憶體數量。 （最佳作法是將記憶體值指定為128MB 的倍數）。|
 
-## <a name="video"></a>影片
+## <a name="video"></a>視訊
 
-|**功能**|**描述**|
+|**特徵**|**描述**|
 |-|-|
 |Hyper-v 特定的影片裝置|這項功能可為虛擬機器提供高效能圖形和絕佳解析度。 此裝置不提供增強的會話模式或 RemoteFX 功能。|
 
 ## <a name="miscellaneous"></a>其他
 
-|**功能**|**描述**|
+|**特徵**|**描述**|
 |-|-|
 |KVP （機碼值組）交換|這項功能提供虛擬機器的索引鍵/值組（KVP）交換服務。 系統管理員通常會使用 KVP 機制來執行虛擬機器上的讀取和寫入自訂資料作業。 如需詳細資訊，請參閱[資料交換：使用機碼值組在 hyper-v 上的主機和來賓之間共用資訊](https://technet.microsoft.com/library/dn798287.aspx)。|
 |非遮罩式插斷|透過這項功能，系統管理員可以將非遮罩式插斷（NMI）發行至虛擬機器。 Nmi 有助於取得因應用程式錯誤而變得沒有回應的作業系統損毀傾印。 重新開機之後，即可診斷這些損毀傾印。|
@@ -89,12 +89,12 @@ ms.locfileid: "71366804"
 
 ## <a name="generation-2-virtual-machines"></a>第 2 代虛擬機器
 
-|**功能**|**描述**|
+|**特徵**|**描述**|
 |-|-|
 |使用 UEFI 開機|這項功能可讓虛擬機器使用整合可延伸韌體介面（UEFI）開機。<br /><br />如需詳細資訊，請參閱[第 2 代虛擬機器概觀](https://technet.microsoft.com/library/dn282285.aspx)。|
 |安全開機|這項功能可讓虛擬機器使用以 UEFI 為基礎的安全開機模式。 當虛擬機器以安全模式開機時，會使用 UEFI 資料存放區中存在的簽章來驗證各種作業系統元件。<br /><br />如需詳細資訊，請參閱[安全開機](https://technet.microsoft.com/library/dn486875.aspx)。|
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

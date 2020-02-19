@@ -11,19 +11,19 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: bd0b50534096bc06edb41390ef2c4ec3554d8406
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364084"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465552"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>我應該在 Hyper-v 中建立第1代或第2代虛擬機器嗎？
 
 >適用于： Windows 10、Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
 > [!NOTE]
-> 如果您打算將 Windows 虛擬機器（VM）從內部部署上傳至 Microsoft Azure，請使用 VHD 檔案格式的第1代和第2代 Vm，並支援固定大小的磁片。 若要深入瞭解 Azure 上支援的第2代功能，請參閱[azure 上的第2代 vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 。 如需上傳 Windows VHD 或 VHDX 的詳細資訊，請參閱[準備要上傳至 Azure 的 WINDOWS vhd 或 vhdx](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
+> 如果您打算從內部部署將 Windows 虛擬機器（Vm）上傳至 Microsoft Azure，第1代和第2代 Vm 會使用 VHD 檔案格式，並可支援固定大小的磁片。 若要深入瞭解 Azure 上支援的第2代功能，請參閱[azure 上的第2代 vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 。 如需上傳 Windows VHD 或 VHDX 的詳細資訊，請參閱[準備要上傳至 Azure 的 WINDOWS vhd 或 vhdx](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
 
 您選擇建立第1代或第2代虛擬機器的方式，取決於您想要安裝的客體作業系統，以及您要用來部署虛擬機器的開機方法。 我們建議您建立第2代虛擬機器，以利用安全開機之類的功能，除非下列其中一個陳述為 true：  
 
@@ -60,9 +60,9 @@ ms.locfileid: "71364084"
 |64位版本的 Windows|第 1 代|第 2 代|  
 |-------------------------------|----------------|----------------|  
 | Windows Server 2019 |&#10004;|&#10004;|  
-| Windows Server 2016 |&#10004;|&#10004;|  
+| Windows Server 2016 |&#10004;|&#10004;|  
 | Windows Server 2012 R2 |&#10004;|&#10004;|  
-| Windows Server 2012 |&#10004;|&#10004;|  
+| Windows 2012 Server |&#10004;|&#10004;|  
 |Windows Server 2008 R2|&#10004;| &#10006;|  
 |Windows Server 2008|&#10004;| &#10006;|  
 |Windows 10|&#10004;|&#10004;|  
@@ -189,16 +189,16 @@ ms.locfileid: "71364084"
 |IDE CD-ROM|虛擬 SCSI CD-ROM|每個 SCSI 控制器最多支援 64 個 SCSI DVD 裝置。|  
 |舊有的 BIOS|UEFI 韌體|安全開機|  
 |傳統網路介面卡|綜合網路介面卡|IPv4 與 IPv6 網路開機|  
-|軟碟機控制器與 DMA 控制器|不支援磁碟機控制器|不適用|  
+|軟碟機控制器與 DMA 控制器|不支援磁碟機控制器|N/A|  
 |通用非同步接收器/傳輸器 (UART) COM 連接埠|選擇性 UART 偵錯|更快速且更可靠|  
 |i8042 鍵盤控制器|軟體型輸入|因為沒有任何模擬，所以使用較少的資源。 另外降低了客體作業系統的攻擊面。|  
 |PS/2 鍵盤|軟體型鍵盤|因為沒有任何模擬，所以使用較少的資源。 另外降低了客體作業系統的攻擊面。|  
 |PS/2 滑鼠|軟體型滑鼠|因為沒有任何模擬，所以使用較少的資源。 另外降低了客體作業系統的攻擊面。|  
 |S3 視訊|軟體型視訊|因為沒有任何模擬，所以使用較少的資源。 另外降低了客體作業系統的攻擊面。|  
-|PCI 匯流排|不再需要|不適用|  
-|可程式化插斷控制器 (PIC)|不再需要|不適用|  
-|可程式化間隔計時器 (PIT)|不再需要|不適用|  
-|進階 I/O 裝置|不再需要|不適用|  
+|PCI 匯流排|不再需要|N/A|  
+|可程式化插斷控制器 (PIC)|不再需要|N/A|  
+|可程式化間隔計時器 (PIT)|不再需要|N/A|  
+|進階 I/O 裝置|不再需要|N/A|  
 
 ## <a name="more-about-generation-2-virtual-machines"></a>深入瞭解第2代虛擬機器
 
@@ -251,7 +251,7 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 > [!NOTE]  
 > 設定的 COM 埠不會列在 [Hyper-v 管理員] 中的虛擬機器設定中。
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 
 - [Hyper-v 上的 Linux 和 FreeBSD 虛擬機器](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [在 Hyper-v 虛擬機器上使用本機資源搭配 VMConnect](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)

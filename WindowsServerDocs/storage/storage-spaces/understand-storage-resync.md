@@ -9,16 +9,16 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 53f48421bddd416d24c5f46e53652cc89c10c785
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d271d92a14278e52a6020c60f96f48b1c8b35871
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402850"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465302"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>了解和監視存放裝置重新同步
 
->適用於：Windows Server Standard 2012 R2
+>適用于： Windows Server 2019
 
 儲存體重新同步警示是 Windows Server 2019 中[儲存空間直接存取](storage-spaces-direct-overview.md)的新功能，可讓健全狀況服務在 resyncing 儲存體時擲回錯誤。 警示適用于在發生重新同步時通知您，因此您不會意外地將更多的伺服器關機（這可能會導致多個容錯網域受到影響，因而導致叢集停止運作）。 
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 576ec407e244485441e99ed831b4ed9a0dac198c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6223d261467f1e73b22d5035a73c37868081cef7
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358246"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465252"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>將瀏覽器設定為使用 Windows 整合式驗證（WIA）搭配 AD FS
 
@@ -56,9 +56,14 @@ MSIE 6。0|IE 6。0|
 MSIE 7.0;Windows NT|IE 7，位於內部網路區域。 「Windows NT」片段是由桌上型電腦作業系統傳送。|
 MSIE 8。0|IE 8.0 （沒有任何裝置傳送此資訊，因此需要進行更明確的動作）|
 MSIE 9。0|IE 9.0 （沒有任何裝置傳送此資訊，因此不需要讓它更明確）|
-MSIE 10.0;Windows NT 6|適用于 Windows XP 和較新版本之桌面作業系統的 IE 10。0</br></br>已排除 Windows Phone 8.0 裝置（喜好設定為 mobile），因為它們會傳送</br></br>使用者代理程式：Mozilla/5.0 （相容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;ARM按鍵式NETWORKSLumia 920）|
+MSIE 10.0;Windows NT 6|適用于 Windows XP 和較新版本之桌面作業系統的 IE 10。0</br></br>已排除 Windows Phone 8.0 裝置（喜好設定為 mobile），因為它們會傳送</br></br>使用者代理程式： Mozilla/5.0 （相容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;ARM按鍵式NETWORKSLumia 920）|
 Windows NT 6.3;Trident/7。0</br></br>Windows NT 6.3;Win64x64Trident/7。0</br></br>Windows NT 6.3;WOW64Trident/7。0| Windows 8.1 桌面作業系統、不同的平臺|
 Windows NT 6.2;Trident/7。0</br></br>Windows NT 6.2;Win64x64Trident/7。0</br></br>Windows NT 6.2;WOW64Trident/7。0|Windows 8 桌面作業系統，不同的平臺|
 Windows NT 6.1;Trident/7。0</br></br>Windows NT 6.1;Win64x64Trident/7。0</br></br>Windows NT 6.1;WOW64Trident/7。0|Windows 7 桌面作業系統，不同的平臺|
+Edg/79.0.309.43 | Microsoft Edge （Chromium） | 
 [MSIPC]| Microsoft Information Protection and Control 用戶端|
 Windows Rights Management 用戶端|Windows Rights Management 用戶端|
+
+### <a name="additional-links"></a>其他連結
+
+[Microsoft Edge 檔](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string)

@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 5df216d8c7b829a6c60db4e5d771824a7bacdb47
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567093"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465322"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑難排解
 
@@ -165,8 +165,10 @@ REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalA
 
    > [!TIP]
    > 如需一次就能設定所有 TrustedHosts 的簡便方法，您可以使用萬用字元。
-   > 
-   >     Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   >
+   > ```powershell
+   > Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   > ```
 
 4. 當您完成測試時，可以從提升權限的 PowerShell 工作階段發出下列命令來清除 TrustedHosts 設定：
 
@@ -191,14 +193,14 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure 功能無法在 Edge 中正常運作
 
-Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，這些問題會影響 Windows 管理中心的 Azure 登入。 如果您在使用 Edge 時遇到使用 Azure 功能的問題，請嘗試將閘道的 https://login.microsoftonline.com 、 https://login.live.com 和 URL 新增為信任的網站，並在用戶端瀏覽器上加入允許的邊緣快顯封鎖程式設定的網站。 
+Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，這些問題會影響 Windows 管理中心的 Azure 登入。 如果您在使用 Edge 時遇到使用 Azure 功能的問題，請嘗試將閘道的 https://login.microsoftonline.com、 https://login.live.com 和 URL 新增為信任的網站，並在用戶端瀏覽器上加入允許的邊緣快顯封鎖程式設定的網站。 
 
-做法如下：
+若要這樣做：
 1. 在 Windows [開始] 功能表中搜尋 [**網際網路選項**]
 2. 移至 [**安全性**] 索引標籤
-3. 在 [**信任的網站**] 選項底下，按一下 [**網站**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
+3. 在 [**信任的網站**] 選項底下，按一下 [**網站**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL 以及 https://login.microsoftonline.com 和 https://login.live.com。
 4. 前往 [**隱私權**] 索引標籤
-5. 在 [快顯封鎖**程式**] 區段下，按一下 [**設定**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
+5. 在 [快顯封鎖**程式**] 區段下，按一下 [**設定**] 按鈕，並在開啟的對話方塊中新增 url。 您必須新增閘道 URL 以及 https://login.microsoftonline.com 和 https://login.live.com。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>遇到與 Azure 相關的功能有問題嗎？
 
@@ -231,9 +233,9 @@ Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azu
 * 您是否使用了預設連接埠設定來安裝？
     * 如果不是，您指定了哪個連接埠？
 * **安裝** Windows Admin Center 的電腦是否已加入網域？
-* **安裝** Windows Admin Center 所在的 Windows [版本](#check-the-windows-version)：
+* [安裝](#check-the-windows-version) Windows Admin Center 所在的 Windows **版本**：
 * 您要**嘗試管理**的電腦是否已加入網域？
-* 您要**嘗試管理**之電腦的 Windows [版本](#check-the-windows-version)：
+* 您要[嘗試管理](#check-the-windows-version)之電腦的 Windows **版本**：
 * 您使用的是哪個瀏覽器？
     * 如果您使用 Google Chrome，版本為何？ ([說明] > [關於 Google Chrome])
 
