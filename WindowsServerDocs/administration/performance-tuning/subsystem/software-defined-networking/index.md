@@ -7,18 +7,18 @@ ms.topic: article
 ms.author: grcusanz; AnPaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8227c94e6785f4acf9135aac12406b6ac98a0910
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ef8a991b8ababa13c0a7a7be605c6dbe2af17a2
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383516"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465452"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>效能微調軟體定義網路
 
 Windows Server 2016 中的軟體定義網路 (SDN) 是由網路控制卡、Hyper-V 主機、軟體負載平衡器閘道和 HNV 閘道的組合所組成。  如需微調上述每個元件，請參閱下列各節：
 
-## <a name="network-controller"></a>網路控制卡
+## <a name="network-controller"></a>網路控制站
 
 網路控制卡是一個 Windows Server 角色，其在設定為使用 SDN 且受網路控制卡控制的主機上執行的虛擬機器上必須加以啟用。
 
