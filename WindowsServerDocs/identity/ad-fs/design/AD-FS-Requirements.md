@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 720c20437f7e6da875b809b2816f0d4df5d210d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34ea5ca29672cb7bc0080a1c27b1910d5cf6b92e
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359195"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517523"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -46,7 +46,7 @@ ms.locfileid: "71359195"
   
 -   [密碼編譯需求](AD-FS-Requirements.md#BKMK_12)  
   
--   [許可權需求](AD-FS-Requirements.md#BKMK_13)  
+-   [權限需求](AD-FS-Requirements.md#BKMK_13)  
   
 ## <a name="BKMK_1"></a>憑證需求  
 憑證在保護同盟伺服器、Web 應用程式 proxy、宣告\-感知應用程式和 Web 用戶端之間的通訊時，扮演最重要的角色。 憑證的需求會根據您設定的是同盟伺服器或 proxy 電腦而有所不同，如本節所述。  
@@ -62,7 +62,7 @@ ms.locfileid: "71359195"
 |**權杖\-解密\/加密憑證：** 這是標準的 X509 憑證，用來解密\/加密任何傳入的權杖。 它也會在同盟中繼資料中發佈。|-根據預設，AD FS 會建立具有2048位金鑰的自我\-簽署憑證。<br />-也支援 CA 發行的憑證，並且可以使用中的 [AD FS 管理] 嵌入式管理單元來加以變更\-<br />-CA 發行的憑證必須儲存 & 透過 CSP 加密提供者存取。<br />-權杖\-解密\/加密憑證不能是使用 CNG 金鑰的憑證。<br />-根據預設，AD FS 會產生並使用它自己的內部產生和自我\-簽署的憑證，以進行權杖解密。  基於此目的，AD FS 不需要外部註冊的憑證。<br />    此外，AD FS 會在這些自我\-簽署的憑證到期之前自動加以更新。<br />    **我們建議您使用自動產生的預設憑證來進行權杖解密。**<br />    如果您的組織有需要針對權杖解密設定不同憑證的原則，您可以在安裝時使用 Powershell 指定憑證 \(使用 Install\-AdfsFarm Cmdlet\)的– DecryptionCertificateThumbprint 參數。  安裝之後，您可以使用 AD FS 管理主控台或\-Get-adfscertificate 設定的 Powershell Cmdlet 來查看和管理權杖解密憑證，並取得\-Get-adfscertificate。<br />    **當外部註冊的憑證用於權杖解密時，AD FS 不會執行自動憑證更新。 此程式必須由系統管理員執行**。<br />-AD FS 服務帳戶必須能夠存取本機電腦之個人存放區中的權杖\-簽署憑證的私密金鑰。 安裝程式會負責此動作。 您也可以使用中的 [AD FS 管理] 嵌入式\-管理單元來確保此存取權（如果您後續變更權杖\-簽署憑證）。|  
   
 > [!CAUTION]  
-> 用於權杖\-簽署和權杖\-解密\/加密的憑證，對於同盟服務穩定性而言非常重要。 管理自己權杖的客戶\-簽署 & 權杖\-解密\/加密憑證應確保這些憑證已備份，並可在復原事件期間獨立取得。  
+> 用來進行權杖簽署和權杖解密\-加密的憑證對於同盟服務的穩定性而言相當重要。 管理自有權杖簽署和權杖解密\-加密憑證的客戶應確保這些憑證已完成備份，並可在復原事件期間獨立取得。  
   
 > [!NOTE]  
 > 在 AD FS 您可以將用於數位簽章的安全雜湊演算法 \(SHA\) 層級變更為 SHA\-1 或 SHA\-256 \(更安全的\)。 AD FS 不支援將憑證與其他雜湊方法搭配使用，例如 MD5 \(與 Makecert 命令\-行工具\)搭配使用的預設雜湊演算法。 基於安全性最佳作法的考慮，我們建議您使用 SHA\-256 \(預設會針對所有簽章設定\)。 只有在必須與不支援使用 SHA\-256 進行通訊的產品相交互操作的情況下（例如非\-的 Microsoft 產品或舊版的 AD FS），才建議使用 SHA\-1。  
@@ -75,9 +75,9 @@ ms.locfileid: "71359195"
   
 ||||  
 |-|-|-|  
-|**硬體需求**|**最低需求**|**建議的需求**|  
+|**硬體需求**|**最低需求**|**建議需求**|  
 |CPU 速度|1.4 GHz 64\-位處理器|四\-核心，2 GHz|  
-|RAM|512 MB|4 GB|  
+|RAM|512 MB|4 GB|  
 |磁碟空間|32 GB|100 GB|  
   
 ## <a name="BKMK_3"></a>軟體需求  
@@ -94,14 +94,19 @@ ms.locfileid: "71359195"
   
 > [!NOTE]  
 > Windows server 2003 網域控制站環境的所有支援將于 Windows Server 2003 的延伸支援結束日期之後結束。 強烈建議客戶儘快升級其網域控制站。 如需 Microsoft 支援服務生命週期的詳細資訊，請造訪[此頁面](https://support.microsoft.com/lifecycle/search/default.aspx?sort=PN&alpha=Windows+Server+2003&Filter=FilterNO)。 對於特定于 Windows Server 2003 網域控制站環境的問題，將只會針對安全性問題發出修正，而且如果在 Windows Server 2003 的延伸支援到期之前，可以發出修正程式。  
+
+
+
+>[!NOTE]
+> AD FS 需要完整的可寫入網域控制站，才能正常運作，而不是唯讀網域控制站。 如果規劃的拓撲包含唯讀網域控制站，唯讀網域控制站就可以用於驗證，但是 LDAP 宣告處理將需要連線到可寫入的網域控制站。
   
-**網域功能\-層級需求**  
+**網域功能等級的需求\-  
   
-所有使用者帳戶網域以及 AD FS 伺服器所加入的網域，都必須在 Windows Server 2003 或更高版本的網域功能等級操作。  
+所有使用者帳戶的網域以及 AD FS 伺服器所加入的網域，都必須在 Windows Server 2003 或更新版本的網域功能等級上運作。  
   
 大部分的 AD FS 功能都不需要 AD DS 功能\-層級修改才能成功運作。 但是，如果憑證明確對應到 AD DS 中的使用者帳戶，則用戶端憑證驗證需要 Windows Server 2008 網域功能等級或更高等級才能成功運作。  
   
-**架構需求**  
+**結構描述需求**  
   
 -   AD FS 不需要架構變更或功能\-層級修改來 AD DS。  
   
@@ -192,10 +197,13 @@ AD FS 會建立必須儲存在用戶端電腦上的會話\-型和持續性 cooki
   
 **設定公司防火牆**  
   
-位於 Web 應用程式 Proxy 與同盟伺服器陣列之間的防火牆，以及用戶端與 Web 應用程式 Proxy 之間的防火牆，都必須啟用 TCP 埠443的輸入。  
+位於 Web 應用程式 Proxy 與同盟伺服器陣列之間的防火牆，以及位於用戶端與 Web 應用程式 Proxy 之間的防火牆，都必須啟用 TCP 連接埠 443 的輸入。  
   
-此外，如果用戶端使用者憑證驗證 \(使用 X509 使用者憑證進行 Clienttls 是驗證\) 是必要的，在 Windows Server 2012 R2 中 AD FS 會要求在用戶端與 Web 應用程式 Proxy 之間的防火牆上啟用 TCP 埠49443。 \)Web 應用程式 Proxy 與同盟伺服器之間的防火牆不需要這麼做。  
-  
+此外，如果用戶端使用者憑證驗證 \(使用 X509 使用者憑證進行 Clienttls 是驗證\) 是必要的，在 Windows Server 2012 R2 中 AD FS 會要求在用戶端與 Web 應用程式 Proxy 之間的防火牆上啟用 TCP 埠49443。 Web 應用程式 Proxy 與同盟伺服器之間的防火牆則不需要這麼做。  
+
+> [!NOTE]
+> 也請確定 Web 應用程式 Proxy 伺服器上的任何其他服務都未使用埠49443。
+
 **設定 DNS**  
   
 -   若要進行內部網路存取，所有存取內部公司網路內 AD FS 服務的用戶端 \(內部網路\) 都必須能夠將 SSL 憑證所提供的 AD FS 服務名稱 \(名稱，解析\) 伺服器或 AD FS 伺服器的負載平衡器。  
@@ -338,14 +346,13 @@ AD FS 在使用者工作場所加入裝置的動作期間，使用裝置註冊�
 |AES192KeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes192](http://www.w3.org/2001/04/xmlenc#kw-aes192)|192|支援加密安全性權杖之對稱金鑰的演算法。|  
 |AES256KeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes256](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|支援加密安全性權杖之對稱金鑰的演算法。|  
 |RsaV15KeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-1\_5](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|支援加密安全性權杖之對稱金鑰的演算法。|  
-|RsaOaepKeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-oaep\-rsa-oaep-mgf1p 代表](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|預設。 支援加密安全性權杖之對稱金鑰的演算法。|  
+|RsaOaepKeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-oaep\-rsa-oaep-mgf1p 代表](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|Default： 支援加密安全性權杖之對稱金鑰的演算法。|  
 |SHA1\-[HTTP：\/\/www.w3.org\/圖片\/DSig\/SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|由成品 SourceId 產生中的 AD FS 伺服器使用：在此案例中，STS 會根據 SAML 2.0 標準\) 中的建議使用 SHA1 \(，以建立成品 sourceiD 的簡短160位值。<br /><br />ADFS web 代理 \(程式也會使用 WS2003 時間範圍內的舊版元件\) 來識別「上次更新」時間值的變更，讓它知道何時要從 STS 更新資訊。|  
 |SHA1withRSA\-<br /><br />[HTTP：\/\/www.w3.org\/圖片\/DSig\/RSA\-SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|用於 AD FS 伺服器驗證 SAML AuthenticationRequest 簽章、簽署成品解析要求或回應、建立權杖\-簽署憑證的情況。<br /><br />在這些情況下，SHA256 是預設值，只有在合作夥伴 \(信賴憑證者\) 無法支援 SHA256 且必須使用 SHA1 時，才會使用 SHA1。|  
   
-## <a name="BKMK_13"></a>許可權需求  
+## <a name="BKMK_13"></a>權限需求  
 執行安裝的系統管理員和 AD FS 的初始設定，必須擁有本機網域中的網域系統管理員許可權 \(換句話說，即為同盟伺服器加入的網域。\)  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
-

@@ -8,12 +8,12 @@ ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 77a23e5787283aa93d6f2f303cf45b461ccf52dd
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 92742929e3826fca3cf87cb84341d3aecec0d55d
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125109"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517493"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -110,12 +110,25 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 從來源清查或傳輸檔案到目的地電腦時，使用者移除系統管理員群組許可權的檔案無法遷移。 檢查儲存體遷移服務-Proxy 調試顯示：
 
-  記錄名稱： StorageMigrationService-Proxy/Debug 來源： Microsoft-Windows-StorageMigrationService-Proxy 日期： 2/26/2019 9:00:04 AM 事件識別碼：10000工作類別：無層級：錯誤關鍵字：      
-  使用者：網路服務電腦： srv1.contoso.com 描述：
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          2/26/2019 9:00:04 AM
+    Event ID:      10000
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      srv1.contoso.com
+    Description:
 
-  02/26/2019-09：00： 04.860 [Error] \\srv1 的傳輸錯誤。 com\public\indy.png：（5）存取被拒。
-堆疊追蹤：在 StorageMigration. FileDirUtils. OpenFile （String fileName，DesiredAccess desiredAccess，ShareMode shareMode，CreationDisposition creationDisposition，FlagsAndAttributes flagsAndAttributes），位於StorageMigration. FileDirUtils. GetTargetFile （String path），網址為： FileDirUtils （GetTargetFile 檔案），網址為. FileInfo. StorageMigration。FileTransfer. InitializeSourceFileInfo （），位於 Microsoft. StorageMigration. Proxy. FileTransfer. transfer. StorageMigration （），位於StorageMigration. FileTransfer. TryTransfer （） [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs：： TryTransfer：： 55]
-
+    02/26/2019-09:00:04.860 [Error] Transfer error for \\srv1.contoso.com\public\indy.png: (5) Access is denied.
+    Stack Trace:
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.OpenFile(String fileName, DesiredAccess desiredAccess, ShareMode shareMode, CreationDisposition creationDisposition, FlagsAndAttributes flagsAndAttributes)
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile(String path)
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile(FileInfo file)
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo()
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer()
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()   
 
 此問題是由儲存體遷移服務中的程式碼缺失所造成，其中不會叫用備份許可權。 
 
@@ -137,11 +150,19 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 DFSR Debug 記錄檔：
 
-  20190308 10：18： 53.116 3948 DBCL 4045 [警告] DBClone：： IDTableImportUpdate 不相符的記錄。 
+    20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found. 
 
-  本機 ACL 雜湊： 1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 LastWriteTime： 20190308 18：09： 44.876 FileSizeLow： 1131654 FileSizeHigh：0屬性：32 
+    Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 
+    LastWriteTime:20190308 18:09:44.876 
+    FileSizeLow:1131654 
+    FileSizeHigh:0 
+    Attributes:32 
 
-  複製 ACL 雜湊：**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** LastWriteTime： 20190308 18：09： 44.876 FileSizeLow： 1131654 FileSizeHigh：0屬性：32 
+    Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** 
+    LastWriteTime:20190308 18:09:44.876 
+    FileSizeLow:1131654 
+    FileSizeHigh:0 
+    Attributes:32 
 
 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新已修正此問題
 
@@ -149,8 +170,8 @@ DFSR Debug 記錄檔：
 
 嘗試從 Windows Server 2008 R2 來源電腦傳輸資料時，不會傳輸任何資料，而且您會收到錯誤訊息：  
 
-  無法在任何端點上傳輸儲存體。
-0x9044
+    Couldn't transfer storage on any of the endpoints.
+    0x9044
 
 如果您的 Windows Server 2008 R2 電腦未使用 Windows Update 的所有重大和重要更新進行完整修補，則預期會發生此錯誤。 無論儲存體遷移服務為何，基於安全考慮，我們一律建議修補 Windows Server 2008 R2 電腦，因為該作業系統並未包含較新版本 Windows Server 的安全性改進。
 
@@ -158,26 +179,30 @@ DFSR Debug 記錄檔：
 
 嘗試從來源電腦傳送資料時，部分或所有共用不會傳輸，摘要錯誤如下：
 
-   無法在任何端點上傳輸儲存體。
-0x9044
+    Couldn't transfer storage on any of the endpoints.
+    0x9044
 
 檢查 SMB 傳輸詳細資料會顯示錯誤：
 
-   檢查來源裝置是否在線上-我們無法存取它。
+    Check if the source device is online - we couldn't access it.
 
 檢查 StorageMigrationService/Admin 事件記錄檔會顯示：
 
-   無法傳輸儲存體。
+    Couldn't transfer storage.
 
-   作業： Job1 識別碼：  
-   狀態：失敗錯誤：36931錯誤訊息： 
+    Job: Job1
+    ID:  
+    State: Failed
+    Error: 36931
+    Error Message: 
 
    指引：檢查詳細的錯誤，並確定已符合傳輸需求。 傳送作業無法傳輸任何來源和目的地電腦。 這可能是因為協調器電腦無法連線到任何來源或目的地電腦，可能是因為防火牆規則或遺失許可權所致。
 
 檢查 StorageMigrationService-Proxy/Debug 記錄檔會顯示：
 
-   07/02/2019-13：35： 57.231 [Error] 傳輸驗證失敗。 錯誤碼：40961、來源端點無法連線或不存在，或來源認證無效，或驗證的使用者沒有足夠的許可權可以存取它。
-在 TransferOperation. StorageMigration （ProcessRequest fileTransferRequest，Guid operationId）上進行 StorageMigration （）的驗證（）（& g.）。   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
+    07/02/2019-13:35:57.231 [Error] Transfer validation failed. ErrorCode: 40961, Source endpoint is not reachable, or doesn't exist, or source credentials are invalid, or authenticated user doesn't have sufficient permissions to access it.
+    at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate()
+    at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest(FileTransferRequest fileTransferRequest, Guid operationId)    
 
 這是一個程式碼缺失，如果您的遷移帳戶至少沒有 SMB 共用的讀取權限，就會產生資訊清單。 此問題先在累計更新[4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062)中修正。 
 
@@ -185,15 +210,55 @@ DFSR Debug 記錄檔：
 
 安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)並嘗試執行清查之後，清查會失敗，並出現錯誤：
 
-  來自 HRESULT 的例外狀況：0x80005000
+    EXCEPTION FROM HRESULT: 0x80005000
   
-  記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 9/9/2019 5:21:42 PM 事件識別碼：2503工作類別：無層級：錯誤關鍵字：      
-  使用者：網路服務電腦： FS02。TailwindTraders.net 描述：無法清查電腦。
-作業： foo2 識別碼：20ac3f75-4945-41d1-9a79-d11dbb57798b 狀態：失敗錯誤：36934錯誤訊息：所有裝置的清查失敗指引：請檢查詳細錯誤，並確定已符合清查需求。 作業無法清查任何指定的來源電腦。 這可能是因為協調器電腦無法透過網路連線，可能是因為防火牆規則或遺失許可權所致。
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          9/9/2019 5:21:42 PM
+    Event ID:      2503
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      FS02.TailwindTraders.net
+    Description:
+    Couldn't inventory the computers.
+    Job: foo2
+    ID: 20ac3f75-4945-41d1-9a79-d11dbb57798b
+    State: Failed
+    Error: 36934
+    Error Message: Inventory failed for all devices
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The job couldn't inventory any of the specified source computers. This could be because the orchestrator computer couldn't reach it over the network, possibly due to a firewall rule or missing permissions.
   
-  記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 9/9/2019 5:21:42 PM 事件識別碼：2509工作類別：無層級：錯誤關鍵字：      
-  使用者：網路服務電腦： FS02。TailwindTraders.net 描述：無法清查電腦。
-作業： foo2 電腦： FS01。TailwindTraders.net 狀態：失敗錯誤：-2147463168 錯誤訊息：指引：檢查詳細錯誤，並確定符合清查需求。 清查無法判斷指定來源電腦的任何層面。 這可能是因為來源或封鎖的防火牆埠缺少許可權或許可權。
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          9/9/2019 5:21:42 PM
+    Event ID:      2509
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      FS02.TailwindTraders.net
+    Description:
+    Couldn't inventory a computer.
+    Job: foo2
+    Computer: FS01.TailwindTraders.net
+    State: Failed
+    Error: -2147463168
+    Error Message: 
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
+  
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          2/14/2020 1:18:21 PM
+    Event ID:      10000
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      2019-rtm-orc.ned.contoso.com
+    Description:
+    02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
   
 當您以使用者主體名稱（UPN）的形式提供遷移認證（例如 'meghan@contoso.com'）時，儲存體遷移服務中的程式碼缺失會導致此錯誤。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
 
@@ -203,8 +268,9 @@ DFSR Debug 記錄檔：
 
 嘗試傳輸叢集檔案伺服器的資料時，您會收到如下的錯誤： 
 
-   請確定 proxy 服務已安裝且正在執行，然後再試一次。 目前無法使用 proxy。
-0x9006 ServiceError0x9006，StorageMigration. 命令. UnregisterSmsProxyCommand
+    Make sure the proxy service is installed and running, and then try again. The proxy isn't currently available.
+    0x9006
+    ServiceError0x9006,Microsoft.StorageMigration.Commands.UnregisterSmsProxyCommand
 
 如果檔案伺服器資源從其原始的 Windows Server 2019 叢集擁有者節點移至新節點，而該節點上未安裝儲存體遷移服務 Proxy 功能，就會發生此錯誤。
 
@@ -329,10 +395,25 @@ DFSR Debug 記錄檔：
  3. 一或多個 AD 使用者和網域本機群組已變更其名稱和/或 Windows 前2000的登入屬性
  4. 您會在 SMS orchestrator 上看到事件3509：
  
- 記錄名稱： StorageMigrationService/Admin 來源： Microsoft-Windows-StorageMigrationService Date： 1/10/2020 2:53:48 PM 事件識別碼：3509工作類別：無層級：錯誤關鍵字：      
- 使用者：網路服務電腦： orc2019-rtm.corp.contoso.com 描述：無法傳輸電腦的存放裝置。
+        Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+        Source:        Microsoft-Windows-StorageMigrationService
+        Date:          1/10/2020 2:53:48 PM
+        Event ID:      3509
+        Task Category: None
+        Level:         Error
+        Keywords:      
+        User:          NETWORK SERVICE
+        Computer:      orc2019-rtm.corp.contoso.com
+        Description:
+        Couldn't transfer storage for a computer.
 
- 作業： dctest3 電腦： dc02-2019.corp.contoso.com 目的地電腦： dc03-2019.corp.contoso.com 狀態：失敗的錯誤：53251錯誤訊息：本機帳戶遷移失敗，發生錯誤系統。例外狀況：-2147467259 于StorageMigration. DeviceHelper. MigrateSecurity （IDeviceRecord sourceDeviceRecord，IDeviceRecord destinationDeviceRecord，TransferConfiguration config，Guid proxyId，CancellationToken cancelToken）
+        Job: dctest3
+        Computer: dc02-2019.corp.contoso.com
+        Destination Computer: dc03-2019.corp.contoso.com
+        State: Failed
+        Error: 53251
+        Error Message: Local accounts migration failed with error System.Exception: -2147467259
+           at Microsoft.StorageMigration.Service.DeviceHelper.MigrateSecurity(IDeviceRecord sourceDeviceRecord, IDeviceRecord destinationDeviceRecord, TransferConfiguration config, Guid proxyId, CancellationToken cancelToken)
 
 如果您嘗試使用儲存體遷移服務從網域控制站進行遷移，並使用 [遷移使用者和群組] 選項來重新命名或重複使用帳戶，這是預期的行為。 而不是選取 [不要傳輸使用者和群組]。 [儲存體遷移服務不支援](faq.md)DC 遷移。 因為 DC 不具有真正的本機使用者和群組，所以儲存體遷移服務會將這些安全性主體視為在兩部成員伺服器之間進行遷移時的處理方式，並嘗試依照指示來調整 Acl，因而導致錯誤和已損壞或複製的帳戶。 
 

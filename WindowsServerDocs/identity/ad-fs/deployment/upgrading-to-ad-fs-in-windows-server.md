@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ebcc679b2bc5ab3c6d7c70c9e84ba45697c80165
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265590"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517573"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 
@@ -149,3 +149,16 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 ```
 
 這將會完成 WAP 伺服器的升級。
+
+
+> [!NOTE] 
+> 如果執行具有混合式憑證信任的 Windows Hello 企業版，則 AD FS 2019 中存在已知的 PRT 問題。 您可能會在 ADFS 系統管理員事件記錄檔中遇到此錯誤：已收到不正確 Oauth 要求。 已禁止用戶端 ' NAME ' 存取範圍為 ' ugs ' 的資源。 若要補救此錯誤： 
+> 1. 啟動 AD FS 管理主控台。 Brose 至「服務 > 範圍描述」
+> 2. 以滑鼠右鍵按一下 [範圍描述]，然後選取 [新增領域描述]
+> 3. 在 [名稱] 下輸入 "ugs"，然後按一下 [套用] > [確定]
+> 4. 以系統管理員身分啟動 Powershell
+> 5. 執行 "Get-AdfsApplicationPermission" 命令。 尋找具有 ClientRoleIdentifier 的 ScopeNames： {openid，aza}。 記下 ObjectIdentifier。
+> 6. 從步驟 5 >-AddScope ' ugs ' 執行命令 "AdfsApplicationPermission-TargetIdentifier < ObjectIdentifier
+> 7. 重新開機 ADFS 服務。
+> 8. 在用戶端上：重新開機用戶端。 系統應該會提示使用者提供 WHFB。
+> 9. 如果 [布建] 視窗未出現，則需要收集 NGC 追蹤記錄和進一步的疑難排解。

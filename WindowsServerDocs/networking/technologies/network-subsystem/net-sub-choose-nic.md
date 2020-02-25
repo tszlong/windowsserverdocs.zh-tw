@@ -8,49 +8,49 @@ ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: cf93e6f91f4a1c21050c7ad1cb4de43258be1a65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9271cf4e5f50adf93f421e830a226507034ac454
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401852"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517473"
 ---
 # <a name="choosing-a-network-adapter"></a>選擇網路介面卡
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解可能會影響購買選擇之網路介面卡的一些功能。
 
 需要大量網路的應用程式需要高效能的網路介面卡。 本節將探討選擇網路介面卡的一些考慮，以及如何設定不同的網路介面卡設定，以達到最佳的網路效能。
 
 > [!TIP]
->  您可以使用 Windows PowerShell 來設定網路介面卡。 如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](https://technet.microsoft.com/library/jj134956.aspx)。
+>  您可以使用 Windows PowerShell 來設定網路介面卡。 如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
 
 ##  <a name="bkmk_offload"></a>卸載功能
 
-將工作從中央處理器\(CPU\)卸載到網路介面卡，可以減少伺服器上的 cpu 使用量，進而提升整體系統效能。
+從中央處理單元卸載工作 \(CPU\) 到網路介面卡，可以減少伺服器上的 CPU 使用量，進而改善整體系統效能。
 
 如果您選取具有適當卸載功能的網路介面卡，Microsoft 產品中的網路堆疊可以將一或多個工作卸載到網路介面卡。 下表簡要介紹 Windows Server 2016 中可用的各種卸載功能。
   
 |卸載類型|描述|
 |------------------|-----------------|  
-|TCP 的總和檢查碼計算|網路堆疊可以在傳送和接收程式碼路徑上，卸載\(傳輸\)控制通訊協定 TCP 總和檢查碼的計算和驗證。 它也可以在傳送和接收程式碼路徑上，卸載 IPv4 和 IPv6 總和檢查碼的計算和驗證。|  
-|UDP 的總和檢查碼計算 |網路堆疊可以在傳送和接收程式碼路徑上，卸載\(使用者\)資料包協定 UDP 總和檢查碼的計算和驗證。|
+|TCP 的總和檢查碼計算|網路堆疊可以在傳送和接收程式碼路徑上卸載傳輸控制通訊協定的計算和驗證 \(TCP\) 總和檢查碼。 它也可以在傳送和接收程式碼路徑上，卸載 IPv4 和 IPv6 總和檢查碼的計算和驗證。|  
+|UDP 的總和檢查碼計算 |網路堆疊可以在傳送和接收程式碼路徑上，卸載使用者資料包協定的計算和驗證 \(UDP\) 總和檢查碼。|
 |IPv4 的總和檢查碼計算 |網路堆疊可以在傳送和接收程式碼路徑上卸載 IPv4 總和檢查碼的計算和驗證。 |
 |IPv6 的總和檢查碼計算 |網路堆疊可以在傳送和接收程式碼路徑上卸載 IPv6 總和檢查碼的計算和驗證。 | 
 |大型 TCP 封包的分割|TCP/IP 傳輸層支援大型傳送卸載 v2 （LSOv2）。 透過 LSOv2，TCP/IP 傳輸層可以將大型 TCP 封包的分割卸載到網路介面卡。|  
-|接收端調整\(RSS\)|RSS 是一種網路驅動程式技術，可讓您在多處理器系統中，有效率地將網路接收處理散發到多個 Cpu。 本主題稍後會提供更多有關 RSS 的詳細資料。|  
-|接收區段\(聯合 RSC\)|RSC 能夠將封包群組在一起，以最小化執行主機所需的標頭處理。 最多可將 64 KB 的已接收承載結合成一個較大的封包以進行處理。 本主題稍後會提供有關 RSC 的更多詳細資料。|  
+|\(RSS\) 接收端調整|RSS 是一種網路驅動程式技術，可讓您在多處理器系統中，有效率地將網路接收處理散發到多個 Cpu。 本主題稍後會提供更多有關 RSS 的詳細資料。|  
+|\(RSC\) 接收區段聯合|RSC 能夠將封包群組在一起，以最小化執行主機所需的標頭處理。 最多可將 64 KB 的已接收承載結合成一個較大的封包以進行處理。 本主題稍後會提供有關 RSC 的更多詳細資料。|  
   
 ###  <a name="bkmk_rss"></a>接收端調整
 
-Windows server 2016、windows server 2012、windows server 2012 R2、windows server 2008 R2 和 windows server 2008 支援接收端調整\(RSS。\) 
+Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows Server 2008 R2 和 Windows Server 2008 支援 \(RSS\)接收端調整。 
 
-某些伺服器會設定多個邏輯處理器，以共用硬體\(資源（例如實體核心\) ），並被視為同時多執行緒\(SMT\)對等。 Intel 超執行緒技術就是一個例子。 RSS 會將網路處理導向每個核心最多一個邏輯處理器。 例如，在具有 Intel 超執行緒、4核心和8個邏輯處理器的伺服器上，RSS 不會使用4個以上的邏輯處理器來進行網路處理。  
+某些伺服器會設定多個邏輯處理器，以共用硬體資源 \(例如實體核心\)，並會被視為同時多執行緒 \(SMT\) 對等體。 Intel 超執行緒技術就是一個例子。 RSS 會將網路處理導向每個核心最多一個邏輯處理器。 例如，在具有 Intel 超執行緒、4核心和8個邏輯處理器的伺服器上，RSS 不會使用4個以上的邏輯處理器來進行網路處理。  
 
 RSS 會將傳入的網路 i/o 封包分散到邏輯處理器，以便在相同的邏輯處理器上處理屬於相同 TCP 連線的封包，以保留順序。 
 
-RSS 也會對 UDP 單播和多播流量進行負載平衡，並將\(來源和目的地位址\)雜湊所決定的相關流程路由傳送至相同的邏輯處理器，以保留相關抵達的順序。 這有助於改善接收密集型案例的擴充性和效能，這些伺服器的網路介面卡比執行合格的邏輯處理器少。 
+RSS 也會對 UDP 單播和多播流量進行負載平衡，並將相關流程 \(由將來源和目的地位址\) 雜湊至相同的邏輯處理器來決定，以保留相關抵達的順序。 這有助於改善接收密集型案例的擴充性和效能，這些伺服器的網路介面卡比執行合格的邏輯處理器少。 
 
 #### <a name="configuring-rss"></a>設定 RSS
 
@@ -65,13 +65,13 @@ RSS 也會對 UDP 單播和多播流量進行負載平衡，並將\(來源和目
 >[!NOTE]
 >如需每個 Cmdlet 的詳細命令參考，包括語法和參數，您可以按一下下列連結。 此外，您可以在 Windows PowerShell 提示字元中傳遞 Cmdlet 名稱，以**取得**每個命令的詳細資料。  
 
-- [停用-set-netadapterrss](https://technet.microsoft.com/library/jj130892)。 此命令會在您指定的網路介面卡上停用 RSS。
+- [停用-set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Disable-NetAdapterRss)。 此命令會在您指定的網路介面卡上停用 RSS。
 
-- [啟用-set-netadapterrss](https://technet.microsoft.com/library/jj130859)。 此命令會在您指定的網路介面卡上啟用 RSS。
+- [啟用-set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRss)。 此命令會在您指定的網路介面卡上啟用 RSS。
   
-- [Set-netadapterrss](https://technet.microsoft.com/library/jj130912)。 此命令會抓取您指定之網路介面卡的 RSS 屬性。
+- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterRss)。 此命令會抓取您指定之網路介面卡的 RSS 屬性。
   
-- [Set-netadapterrss](https://technet.microsoft.com/library/jj130863)。 此命令會在您指定的網路介面卡上設定 RSS 屬性。  
+- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)。 此命令會在您指定的網路介面卡上設定 RSS 屬性。  
 
 #### <a name="rss-profiles"></a>RSS 設定檔
 
@@ -98,31 +98,31 @@ RSS 也會對 UDP 單播和多播流量進行負載平衡，並將\(來源和目
 >[!NOTE]
 >在以下每個參數的範例語法中，網路介面卡名稱**Ethernet**會當做**set-netadapterrss**命令的 **– name**參數的範例值使用。 當您執行 Cmdlet 時，請確定您使用的網路介面卡名稱適用于您的環境。
 
-- **MaxProcessors\*** ：設定要使用的 RSS 處理器最大數目。 這可確保應用程式流量會系結至指定介面上的處理器數目上限。 範例語法：
+- **\* MaxProcessors**：設定要使用的 RSS 處理器最大數目。 這可確保應用程式流量會系結至指定介面上的處理器數目上限。 範例語法：
 
      `Set-NetAdapterRss –Name “Ethernet” –MaxProcessors <value>`
 
-- **BaseProcessorGroup\*** ：設定 NUMA 節點的基礎處理器群組。 這會影響 RSS 所使用的處理器陣列。 範例語法：
+- **\* BaseProcessorGroup**：設定 NUMA 節點的基礎處理器群組。 這會影響 RSS 所使用的處理器陣列。 範例語法：
 
      `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorGroup <value>`
   
-- **MaxProcessorGroup\*** ：設定 NUMA 節點的最大處理器群組。 這會影響 RSS 所使用的處理器陣列。 設定此項會限制最大處理器群組，讓負載平衡在 k 群組內對齊。 範例語法：
+- **\* MaxProcessorGroup**：設定 NUMA 節點的最大處理器群組。 這會影響 RSS 所使用的處理器陣列。 設定此項會限制最大處理器群組，讓負載平衡在 k 群組內對齊。 範例語法：
 
      `Set-NetAdapterRss –Name “Ethernet” –MaxProcessorGroup <value>`
 
-- **BaseProcessorNumber\*** ：設定 NUMA 節點的基本處理器號碼。 這會影響 RSS 所使用的處理器陣列。 這可讓您跨網路介面卡分割處理器。 這是指派給每個介面卡的 RSS 處理器範圍中的第一個邏輯處理器。 範例語法：
+- **\* BaseProcessorNumber**：設定 NUMA 節點的基本處理器號碼。 這會影響 RSS 所使用的處理器陣列。 這可讓您跨網路介面卡分割處理器。 這是指派給每個介面卡的 RSS 處理器範圍中的第一個邏輯處理器。 範例語法：
 
      `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorNumber <Byte Value>`
 
-- **NumaNode\*** ：每個網路介面卡可以配置記憶體的 NUMA 節點。 這可以在 k 群組中，或來自不同的 k 群組。 範例語法：
+- **\* NumaNode**：每個網路介面卡可以從中配置記憶體的 NUMA 節點。 這可以在 k 群組中，或來自不同的 k 群組。 範例語法：
 
      `Set-NetAdapterRss –Name “Ethernet” –NumaNodeID <value>`
 
-- **NumberofReceiveQueues\*** ：如果您的邏輯處理器似乎未充分利用以接收\(流量（例如在工作管理員\)中查看），您可以嘗試將 RSS 佇列的數目從預設值2增加到網路介面卡所支援的最大值. 您的網路介面卡可能有選項可將 RSS 佇列的數目變更為驅動程式的一部分。 範例語法：
+- **\* NumberofReceiveQueues**：如果您的邏輯處理器似乎使用量過低，而無法接收流量 \(例如，如工作管理員\)所示，您可以嘗試將 RSS 佇列的數目從預設值2增加到網路介面卡所支援的最大值。 您的網路介面卡可能有選項可將 RSS 佇列的數目變更為驅動程式的一部分。 範例語法：
 
      `Set-NetAdapterRss –Name “Ethernet” –NumberOfReceiveQueues <value>`
 
-如需詳細資訊，請按一下下列連結以[下載可調整的網路功能：排除接收處理瓶頸--Word 格式](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)的 RSS 簡介。
+如需詳細資訊，請按一下下列連結以下載[可調整的網路功能：排除接收處理瓶頸— Word 格式的 RSS 簡介](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)。
   
 #### <a name="understanding-rss-performance"></a>瞭解 RSS 效能
 
@@ -160,11 +160,11 @@ IndirectionTable: [Group:Number]:
   
 ###  <a name="bkmk_rsc"></a>接收區段聯合（RSC）
 
-接收區段\(聯合 RSC\)藉由減少針對指定的已接收資料量所處理的 IP 標頭數目，來協助效能。 它應該用來將較小的封包分組\( \)或結合成較大的單位，以協助調整已接收資料的效能。
+\(RSC\) 接收區段聯合，藉由減少針對指定的已接收資料量所處理的 IP 標頭數目，來協助效能。 它應該用來協助調整已接收資料的效能，方法是將 \(或聯合\) 較小的封包合併成較大的單位。
 
 這種方法可能會影響輸送量增益中大部分所見到的延遲。 建議使用 RSC 來增加所接收之繁重工作負載的輸送量。 請考慮部署支援 RSC 的網路介面卡。 
 
-在這些網路介面卡上，請確定 rsc 是\( \)預設值，除非您有特定的工作負載\(，例如，低延遲、低輸送量的網路\) ，顯示從 RSC 關閉的好處.
+在這些網路介面卡上，請確定 RSC 已開啟 \(這是\)的預設設定，除非您有特定的工作負載 \(例如，低延遲、低輸送量的網路\) 會顯示從 RSC 關閉的權益。
 
 #### <a name="understanding-rsc-diagnostics"></a>瞭解 RSC 診斷
 
@@ -204,7 +204,7 @@ CoalescingExceptions : 0
 
 只有當主機網路介面卡未系結至 Hyper-v 虛擬交換器時，實體主機才支援 RSC。 當主機系結至 Hyper-v 虛擬交換器時，作業系統會停用 RSC。 此外，虛擬機器不會獲得 RSC 的優點，因為虛擬網路介面卡不支援 RSC。
 
-啟用單一根目錄輸入/輸出虛擬化\(sr-iov\)時，可以為虛擬機器啟用 RSC。 在此情況下，虛擬函式支援 RSC 功能;因此，虛擬機器也會獲得 RSC 的優勢。
+當啟用單一根目錄輸入/輸出虛擬化 \(SR-IOV\) 時，可以為虛擬機器啟用 RSC。 在此情況下，虛擬函式支援 RSC 功能;因此，虛擬機器也會獲得 RSC 的優勢。
 
 ##  <a name="bkmk_resources"></a>網路介面卡資源
 
@@ -212,28 +212,28 @@ CoalescingExceptions : 0
 
 使用下列 Windows PowerShell Cmdlet 可簡化設定網路介面卡資源。
 
-- [NetAdapterAdvancedProperty](https://technet.microsoft.com/library/jj130901.aspx)
+- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
 
-- [設定-NetAdapterAdvancedProperty](https://technet.microsoft.com/library/jj130894.aspx)
+- [設定-NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
 
-- [啟用-Get-netadapter](https://technet.microsoft.com/library/jj130876.aspx)
+- [啟用-Get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapte)
 
-- [啟用-NetAdapterBinding](https://technet.microsoft.com/library/jj130913.aspx)
+- [啟用-NetAdapterBinding](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterBinding)
 
-- [啟用-NetAdapterChecksumOffload](https://technet.microsoft.com/library/jj130918.aspx)
+- [啟用-NetAdapterChecksumOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [啟用-NetAdapterIPSecOffload](https://technet.microsoft.com/library/jj130890.aspx)
+- [啟用-NetAdapterIPSecOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [啟用-NetAdapterLso](https://technet.microsoft.com/library/jj130922.aspx)
+- [啟用-NetAdapterLso](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterLso)
 
-- [啟用-NetAdapterPowerManagement](https://technet.microsoft.com/library/jj130907.aspx)
+- [啟用-NetAdapterPowerManagement](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
 
-- [啟用-Get-netadapterqos](https://technet.microsoft.com/library/jj130866.aspx)
+- [啟用-Get-netadapterqos](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterQos)
 
-- [啟用-NetAdapterRDMA](https://technet.microsoft.com/library/jj130909.aspx)
+- [啟用-NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRDMA)
 
-- [啟用-Get-netadaptersriov](https://technet.microsoft.com/library/jj130899.aspx)
+- [啟用-Get-netadaptersriov](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterSriov)
 
-如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](https://technet.microsoft.com/library/jj134956.aspx)。
+如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
 
 如需本指南中所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。

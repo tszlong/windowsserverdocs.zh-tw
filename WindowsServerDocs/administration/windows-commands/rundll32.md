@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29a87f9f07c25a0c671e47550e0a054d8308f747
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7345c1ad59a4209e607245db1b2a79055ffcb5fe
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384424"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517284"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -42,7 +42,7 @@ Rundll32 <DLLname>
 
 ## <a name="remarks"></a>備註
 
-Rundll32.exe 只能從已明確寫入要由 Rundll32.exe 所呼叫的 DLL 中呼叫函式。 如需 Rundll32.exe 需求的詳細資訊，請參閱 Microsoft 知識庫中的[文章 164787](https://go.microsoft.com/fwlink/?LinkID=165773) （ https://go.microsoft.com/fwlink/?LinkID=165773) 。
+Rundll32.exe 只能從明確寫入要由 Rundll32.exe 所呼叫的 DLL 中呼叫函式。
 
 #### <a name="additional-references"></a>其他參考資料
 

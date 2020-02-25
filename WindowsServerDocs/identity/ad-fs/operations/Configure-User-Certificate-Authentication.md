@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145924"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517513"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>設定使用者憑證驗證的 AD FS
 
@@ -23,7 +23,7 @@ ms.locfileid: "76145924"
 * 使用者使用布建到行動裝置的憑證
 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 1) 使用[本文所](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)述的其中一種模式，判斷您想要啟用之 AD FS 使用者憑證驗證的模式
 2) 請確定您的使用者憑證信任鏈已安裝 & 由所有 AD FS 和 WAP 伺服器信任，包括任何中繼憑證授權單位單位。 這通常是透過 AD FS/WAP 伺服器上的 GPO 來完成的
 3)  請確定您的使用者憑證信任鏈的根憑證位於 NTAuth 存放區中的 Active Directory
@@ -39,8 +39,10 @@ ms.locfileid: "76145924"
 如果您要設定 Azure AD 憑證驗證的 AD FS，請確定您已進行[Azure AD 設定](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)和憑證簽發者和序號[所需的 AD FS 宣告規則](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)
 
 此外，還有一些選擇性層面。
-- 如果您想要根據憑證欄位和延伸模組，以及 EKU （宣告類型 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) 來使用宣告，請在 Active Directory 宣告提供者信任上設定額外的宣告傳遞規則。  如需可用憑證宣告的完整清單，請參閱下文。  
+- 如果您想要根據憑證欄位和延伸模組，以及 EKU （宣告類型 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku)來使用宣告，請在 Active Directory 宣告提供者信任上設定額外的宣告傳遞規則。  如需可用憑證宣告的完整清單，請參閱下文。  
 - 如果您需要根據憑證類型來限制存取，您可以在應用程式的 AD FS 發行授權規則中，使用憑證上的其他屬性。 常見的案例是「只允許 MDM 提供者所布建的憑證」或「只允許智慧卡憑證」
+>[!IMPORTANT]
+> 使用裝置程式碼流程進行驗證，以及使用 Azure AD 以外的 IDP （例如 AD FS）執行裝置驗證的客戶，將無法強制執行裝置型存取（例如，只允許使用協力廠商 MDM 服務的受管理裝置）用於 Azure AD 資源。 若要在 Azure AD 中保護公司資源的存取，並防止任何資料洩漏，客戶應設定 Azure AD 裝置型條件式存取（也就是「需要將裝置標示為抱怨」授與 Azure AD 條件式存取中的控制）。
 - 使用[本文中「](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx)管理用戶端驗證的受信任簽發者」下的指引，設定允許的用戶端憑證頒發證書授權單位。
 - 在執行憑證驗證時，您可能會想要考慮修改登入頁面，以符合使用者的需求。 常見的情況是（a）將「使用您的 X509 憑證登入」變更為更容易使用的使用者
 
@@ -90,7 +92,7 @@ AD FS 需要用戶端裝置（或瀏覽器）和負載平衡器支援 SNI。 某
     *   輸入 `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>檢查是否已正確布建憑證給用戶端裝置
-您可能會注意到有些裝置正常運作，但其他裝置則否。 在此情況下，通常是因為未在用戶端裝置上正確布建使用者憑證的結果。 請依照下列步驟進行操作。 
+您可能會注意到有些裝置正常運作，但其他裝置則否。 在此情況下，通常是因為未在用戶端裝置上正確布建使用者憑證的結果。 請遵循下列步驟。 
 1)  如果問題是 Android 裝置特有的，最常見的問題是憑證鏈在 Android 裝置上並未完全受信任。  請參閱您的 MDM 廠商，以確保憑證已正確布建，而且整個鏈在 Android 裝置上完全受信任。 
 2)  如果問題專屬於 Windows 裝置，請檢查已登入使用者（非系統/電腦）的 Windows 憑證存放區，以檢查憑證是否已正確布建。
 3)  將用戶端使用者憑證匯出為 .cer 檔案，並執行命令 ' certutil-f-urlfetch verify-verify certificatefilename .cer '
@@ -108,7 +110,7 @@ AD FS 需要用戶端裝置（或瀏覽器）和負載平衡器支援 SNI。 某
 
 ### <a name="additional-troubleshooting"></a>其他疑難排解
 這些很罕見發生
-1)  如果您的 CRL 清單很長，可能會在嘗試下載時遇到一段時間。 在這種情況下，您必須依據，更新 ' MaxFieldLength ' 和 ' MaxRequestByte https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
+1)  如果您的 CRL 清單很長，可能會在嘗試下載時遇到一段時間。 在此情況下，您必須依據 https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows 更新 ' MaxFieldLength ' 和 ' MaxRequestByte '
 
 
 

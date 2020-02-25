@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265810"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517543"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory 同盟服務的最佳做法
 
@@ -41,30 +41,30 @@ ms.locfileid: "76265810"
 > 埠808（Windows Server 2012R2）或埠1501（Windows Server 2016 +）是用於本機 WCF 端點的 Net.tcp AD FS 埠，可將設定資料傳送至服務處理常式和 Powershell。 您可以藉由執行 Set-adfsproperties 來查看此埠 |選取 [NetTcpPort]。 這是不需要在防火牆中開啟，但會顯示在埠掃描中的本機埠。 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect 和同盟伺服器/WAP
-此表說明 Azure AD Connect 伺服器與同盟/WAP 伺服器之間通訊所需的連接埠和通訊協定。  
+下表描述 Azure AD Connect 伺服器與同盟/WAP 伺服器之間通訊所需的埠和通訊協定。  
 
-通訊協定 |連接埠 |說明
+通訊協定 |連接埠 |描述
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|用於下載 CRL (憑證撤銷清單) 以驗證 SSL 憑證。
-HTTPS|443(TCP/UDP)|用來與 Azure AD 同步處理。
+HTTP|80（TCP/UDP）|用來下載 Crl （憑證撤銷清單）以驗證 SSL 憑證。
+HTTPS|443（TCP/UDP）|用來與 Azure AD 同步處理。
 WinRM|5985| WinRM 接聽程式
 
 ### <a name="wap-and-federation-servers"></a>WAP 和同盟伺服器
-此表說明同盟伺服器與 WAP 伺服器之間通訊所需的連接埠和通訊協定。
+下表描述同盟伺服器與 WAP 伺服器之間通訊所需的埠和通訊協定。
 
-通訊協定 |連接埠 |說明
+通訊協定 |連接埠 |描述
 --------- | --------- |---------
-HTTPS|443(TCP/UDP)|用於進行驗證。
+HTTPS|443（TCP/UDP）|用於驗證。
 
 ### <a name="wap-and-users"></a>WAP 和使用者
-此表說明使用者與 WAP 伺服器之間通訊所需的連接埠和通訊協定。
+下表描述使用者與 WAP 伺服器之間通訊所需的埠和通訊協定。
 
-通訊協定 |連接埠 |說明
+通訊協定 |連接埠 |描述
 --------- | --------- |--------- |
-HTTPS|443(TCP/UDP)|用於裝置驗證。
-TCP|49443 (TCP)|用於憑證驗證。
+HTTPS|443（TCP/UDP）|用於裝置驗證。
+TCP|49443（TCP）|用於憑證驗證。
 
-如需混合式部署所需的必要端口和通訊協定的詳細資訊，請參閱[這裡](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/)的檔。
+如需混合式部署所需的必要端口和通訊協定的詳細資訊，請參閱[這裡](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-ports)的檔。
 
 如需 Azure AD 和 Office 365 部署所需之埠和通訊協定的詳細資訊，請參閱[這裡](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)的檔。
 
@@ -90,7 +90,7 @@ TCP|49443 (TCP)|用於憑證驗證。
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 
-例如：
+例如，
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     
@@ -140,7 +140,7 @@ Azure AD 客戶監視並保持最新基礎結構的建議方式是透過 Azure A
 
     PS:\>Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
 
-如需參考, 請參閱[這項](https://technet.microsoft.com/library/dn486806.aspx )功能的公開檔。 
+如需參考，請參閱這項功能的公開[檔。](https://technet.microsoft.com/library/dn486806.aspx ) 
 
 ### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>停用 proxy 上的 WS-TRUST Windows 端點，即來自外部網路
 
