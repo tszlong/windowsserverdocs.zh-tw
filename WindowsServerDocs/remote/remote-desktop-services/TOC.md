@@ -60,6 +60,7 @@
 ## [執行並微調](rds-run-and-tune.md)
 ### [管理個人桌面工作階段集合](rds-manage-personal-collection.md)
 ### [建議的 VDI 桌面設定](rds-vdi-recommendations.md)
+### [針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化](rds_vdi-recommendations-1909.md)
 ### [針對虛擬桌面基礎結構 (VDI) 角色最佳化 Windows 10 版本 1803](rds-vdi-recommendations-1803.md)
 ### [管理 RDS 集合中的使用者](rds-user-management.md)
 ### [使用 Windows Server 上的 PowerShell 自訂 RDS 標題「工作資源」](rds-work-resources.md)
