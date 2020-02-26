@@ -7,19 +7,19 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 06/06/2019
-ms.openlocfilehash: 8c17671f2f15d1373973dcf2fbafc753f0a163a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 02/25/2020
+ms.openlocfilehash: fb53ae74e471d590f83e1017662f33bb5a4b7c1d
+ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402885"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77608808"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>建立儲存空間直接存取中的磁碟區
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
-本主題描述如何使用 Windows 系統管理中心、PowerShell 或容錯移轉叢集管理員，在儲存空間直接存取叢集上建立磁片區。
+本主題描述如何使用 Windows 管理中心和 PowerShell，在儲存空間直接存取叢集上建立磁片區。
 
 > [!TIP]
 > 如果您尚未開始，請先查看[規劃儲存空間直接存取中的磁碟區](plan-volumes.md)。
@@ -42,7 +42,7 @@ ms.locfileid: "71402885"
 
 ## <a name="create-a-mirror-accelerated-parity-volume"></a>建立鏡像加速同位磁片區
 
-鏡像加速的同位會減少 HDD 上磁片區的使用量。 例如，三向鏡像磁片區表示每隔 10 tb 的大小，您的使用量將需要 30 tb。 若要降低使用量的負荷，請建立具有鏡像加速同位的磁片區。 如此一來，即使只有4部伺服器，也可以將最多的 20% 資料鏡像，並使用同位檢查來儲存其餘部分，以減少 30 tb 到 22 tb 的使用量。 您可以調整同位和鏡像的比例，讓效能與容量的取捨最適合您的工作負載。 例如，90% 同位檢查和 10% 鏡像會產生較低的效能，但更進一步簡化使用量。
+鏡像加速的同位會減少 HDD 上磁片區的使用量。 例如，三向鏡像磁片區表示每隔 10 tb 的大小，您的使用量將需要 30 tb。 若要降低使用量的負荷，請建立具有鏡像加速同位的磁片區。 如此一來，即使只有4部伺服器，也可以將最多的20% 資料鏡像，並使用同位檢查來儲存其餘部分，以減少 30 tb 到 22 tb 的使用量。 您可以調整同位和鏡像的比例，讓效能與容量的取捨最適合您的工作負載。 例如，90% 同位檢查和10% 鏡像會產生較低的效能，但更進一步簡化使用量。
 
 若要在 Windows 系統管理中心建立具有鏡像加速同位的磁片區：
 
@@ -100,15 +100,15 @@ ms.locfileid: "71402885"
 
 **New-Volume** cmdlet 有四個您永遠需要提供的參數：
 
-- **FriendlyName**您想要的任何字串，例如 *"Volume1"*
-- **內**可能是**CSVFS_ReFS** （建議）或**CSVFS_NTFS**
-- **StoragePoolFriendlyName**儲存集區的名稱，例如 *"S2D On ClusterName"*
-- **大小:** 磁片區的大小，例如「 *10tb* 」
+- **FriendlyName：** 任何您想要的字串，例如 *"Volume1"*
+- **FileSystem**：**CSVFS_ReFS** (建議選項) 或 **CSVFS_NTFS**
+- **StoragePoolFriendlyName：** 儲存集區的名稱，例如 *"S2D on ClusterName"*
+- **Size：** 磁碟區大小，例如 *"10TB"*
 
    > [!NOTE]
-   > Windows，包括 PowerShell，使用二進位 (以 2 為底數) 數字計算，而磁碟機通常使用十進位 (以 10 為底數) 數字標示。 這解釋 "1 TB" 磁碟機，定義為 1,000,000,000,000 位元組，為何在 Windows 中顯示為約 "909 GB"。 這是預期行為。 在使用 **New-Volume** 建立磁碟區時，您應該以二進位 (以 2 為底數) 數字指定 **Size** 參數。 例如，指定 "909GB" 或 "0.909495TB" 會建立大約 1,000,000,000,000 位元組的磁碟區。
+   > Windows，包括 PowerShell，使用二進位 (以 2 為底數) 數字計算，而磁碟機通常使用十進位 (以 10 為底數) 數字標示。 這解釋 "1 TB" 磁碟機，定義為 1,000,000,000,000 位元組，為何在 Windows 中顯示為約 "909 GB"。 此為預期性行為。 在使用 **New-Volume** 建立磁碟區時，您應該以二進位 (以 2 為底數) 數字指定 **Size** 參數。 例如，指定 "909GB" 或 "0.909495TB" 會建立大約 1,000,000,000,000 位元組的磁碟區。
 
-### <a name="example-with-2-or-3-servers"></a>範例：含2或3部伺服器
+### <a name="example-with-2-or-3-servers"></a>範例：使用 2 或 3 部伺服器
 
 為了簡化，如果您的部署只有兩部伺服器，儲存空間直接存取會自動使用雙向鏡像復原類型。 如果您的部署只有三部伺服器，它就會自動使用三向鏡像。
 
@@ -116,11 +116,11 @@ ms.locfileid: "71402885"
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>範例：含4部以上的伺服器
+### <a name="example-with-4-servers"></a>範例：使用 4 部以上伺服器
 
 如果您有四部以上的伺服器，您可以使用選擇性的 **ResiliencySettingName** 參數選擇您的復原類型。
 
--   **ResiliencySettingName**可能是鏡像**或同**位。
+-   **ResiliencySettingName**：**Mirror** 或 **Parity**。
 
 在下列範例， *"Volume2"* 使用三向鏡像，而 *"Volume3"* 使用雙同位（通常稱為「清除編碼」）。
 
@@ -149,41 +149,7 @@ Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedund
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 
-## <a name="create-volumes-using-failover-cluster-manager"></a>使用容錯移轉叢集管理員建立磁碟區
-
-您也可以使用*新增虛擬硬碟精靈 (儲存空間直接存取)* ，後面接著容錯移轉叢集管理員的*新增磁碟區精靈*，來建立磁碟區，不過這個工作流程有更多手動步驟而且不建議。
-
-有三個主要步驟：
-
-### <a name="step-1-create-virtual-disk"></a>步驟 1:建立虛擬磁片
-
-![新增虛擬硬碟](media/creating-volumes/GUI-Step-1.png)
-
-1. 在 \[容錯移轉叢集管理員\] 中，瀏覽至 **\[儲存\]**  ->  **\[集區\]** 。
-2. 從右側 \[執行\] 窗格選取 **\[新增虛擬硬碟\]** ，或以滑鼠右鍵按一下集區，然後選取 **\[新增虛擬硬碟\]** 。
-3. 選取儲存集區然後按一下 **\[確定\]** 。 *\[新增虛擬硬碟精靈 (儲存空間直接存取)\]* 隨即開啟。
-4. 使用精靈為虛擬硬碟命名，並指定其大小。
-5. 檢視您的選項，然後按一下 **\[建立\]** 。
-6. 關閉前，確定標記 **\[當此精靈關閉時建立磁碟區\]** 核取方塊已選取。
-
-### <a name="step-2-create-volume"></a>步驟 2:建立磁片區
-
-此時會開啟 *\[新增磁碟區精靈\]* 。
-
-7. 選擇您剛建立的虛擬磁碟，然後按一下 **\[下一步\]** 。
-8. 指定磁碟區大小 (預設：與虛擬磁碟大小相同)，按一下 **\[下一步\]** 。 
-9. 指定磁碟區的磁碟機代號，或選擇 **\[不指派成磁碟機代號或資料夾\]** ，按一下 **\[下一步\]** 。
-10. 指定要使用的檔案系統，將配置單位大小保留為 *\[預設\]* ，命名磁碟區，並按一下 **\[下一步\]** 。
-11. 檢視您的選項，然後按一下 **\[建立\]** ，然後按一下 **\[關閉\]** 。
-
-### <a name="step-3-add-to-cluster-shared-volumes"></a>步驟 3：新增至叢集共用磁片區
-
-![[新增至叢集共用磁碟區]](media/creating-volumes/GUI-Step-2.png)
-
-12. 在 \[容錯移轉叢集管理員\] 中，瀏覽至 **\[儲存\]**  ->  **\[磁碟\]** 。
-13. 選擇您剛建立的虛擬磁碟，然後從右側 \[執行\] 窗格選取 **\[新增至叢集共用磁碟區\]** 或以滑鼠右鍵按一下虛擬磁碟，然後選取 **\[新增至叢集共用磁碟區\]** 。
-
-大功告成！ 視需要重複以建立一個以上的磁碟區。
+您已順利完成！ 視需要重複以建立一個以上的磁碟區。
 
 ## <a name="see-also"></a>另請參閱
 

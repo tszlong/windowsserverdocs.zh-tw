@@ -8,16 +8,16 @@ manager: alanth
 author: michikos
 ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 616ebf1a8e01f84618d22d535609a0dc8414d718
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9c4342281ee2036e152c8034fa72e421487a45b
+ms.sourcegitcommit: 9bc7a0478d72944f714f8041fa4506e0d1ed0366
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403495"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607080"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>加入網域的裝置公開金鑰驗證
 
->適用於：Windows Server 2016、Windows 10
+>適用于： Windows Server 2016、Windows 10
 
 Kerberos 新增了已加入網域的裝置支援，以使用從 Windows Server 2012 和 Windows 8 開始的憑證進行登入。 這種變更可讓協力廠商的廠商建立解決方案，以布建及初始化已加入網域之裝置的憑證，以用於網域驗證。 
 
@@ -25,12 +25,12 @@ Kerberos 新增了已加入網域的裝置支援，以使用從 Windows Server 2
 
 從 Windows 10 版本1507和 Windows Server 2016 開始，已加入網域的裝置會自動將系結的公開金鑰布建到 Windows Server 2016 網域控制站（DC）。 布建金鑰後，Windows 就可以對網域使用公開金鑰驗證。
 
-### <a name="public-key-generation"></a>公用金鑰產生
-如果裝置正在執行 Credential Guard，則會建立一個由 Credential Guard 保護的公開金鑰。 
+### <a name="key-generation"></a>金鑰產生
+如果裝置正在執行 Credential Guard，則會建立公開/私密金鑰組，並受到 Credential Guard 的保護。 
 
-如果 Credential Guard 無法使用，而且 TPM 為，則會建立受 TPM 保護的公開金鑰。 
+如果 Credential Guard 無法使用，而且 TPM 為，則會建立受 TPM 保護的公開/私密金鑰組。 
 
-如果兩者都無法使用，則不會產生金鑰，且裝置只能使用密碼進行驗證。
+如果兩者都無法使用，則不會產生金鑰組，且裝置只能使用密碼進行驗證。
 
 ### <a name="provisioning-computer-account-public-key"></a>布建電腦帳戶公開金鑰
 當 Windows 啟動時，它會檢查是否已為其電腦帳戶布建公開金鑰。 如果不是，則會產生系結的公開金鑰，並使用 Windows Server 2016 或更高的 DC 為其在 AD 中的帳戶進行設定。 如果所有 Dc 都已關閉層級，則不會布建任何金鑰。
