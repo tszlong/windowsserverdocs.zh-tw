@@ -10,14 +10,14 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 39d57afbd8c4df78764c5975d4cc3d48848475c1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcf8109530043f5e0a6d141c484233c4364fb307
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392771"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169568"
 ---
->適用于： Windows 10、Windows Server 2016、Windows Server 2019
+>適用于： Windows 10、Windows Server 2012、Windows Server 2012R2、Windows Server 2016、Windows Server 2019
 
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -226,46 +226,46 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 我們建議您將 integration services 保持在最新狀態，以便為您的虛擬機器取得最佳效能和最新功能。 根據預設，大部分的 Windows 來賓都會發生這種情況，如果它們設定為從 Windows Update 取得重要更新。 當您更新核心時，使用目前核心的 Linux 來賓將會收到最新的整合元件。
 
-**在 Windows 10 主機上執行的虛擬機器：**
+**針對在 Windows 10/Windows Server 2016/2019 主機上執行的虛擬機器：**
 
 > [!NOTE]
-> Windows 10 上的 Hyper-v 並未包含影像檔 vmguest.iso，因為不再需要此檔案。
+> Windows 10/Windows Server 2016/2019 上的 Hyper-v 並未隨附影像檔 vmguest.iso，因為不再需要此檔案。
 
-| Guest  | 更新機制 | 附註 |
+| 來賓  | 更新機制 | 注意事項 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| Windows 8 | Windows Update | 需要資料交換整合服務。* |
-| Windows 7 | Windows Update | 需要資料交換整合服務。* |
-| Windows Vista (SP 2) | Windows Update | 需要資料交換整合服務。* |
+| Windows 8 | Windows Update | 需要「資料交換」整合服務。* |
+| Windows 7 | Windows Update | 需要「資料交換」整合服務。* |
+| Windows Vista (SP 2) | Windows Update | 需要「資料交換」整合服務。* |
 | - | | |
-| Windows Server 2016 | Windows Update | |
+| Windows Server 2016 | Windows Update | |
 | Windows Server 半年通道 | Windows Update | |
 | Windows Server 2012 R2 | Windows Update | |
-| Windows Server 2012 | Windows Update | 需要資料交換整合服務。* |
-| Windows Server 2008 R2 (SP 1) | Windows Update | 需要資料交換整合服務。* |
+| Windows Server 2012 | Windows Update | 需要「資料交換」整合服務。* |
+| Windows Server 2008 R2 (SP 1) | Windows Update | 需要「資料交換」整合服務。* |
 | Windows Server 2008 (SP 2) | Windows Update | 僅限 Windows Server 2016 中的擴充支援（[閱讀更多](https://support.microsoft.com/lifecycle?p1=12925)）。 |
 | Windows Home Server 2011 | Windows Update | Windows Server 2016 中將不支援（[閱讀更多](https://support.microsoft.com/lifecycle?p1=15820)）。 |
 | Windows Small Business Server 2011 | Windows Update | 不包含在主要支援中 ([閱讀更多](https://support.microsoft.com/lifecycle?p1=15817))。 |
 | - | | |
 | Linux 客體 | 封裝管理員 | 適用于 Linux 的 Integration services 已內建于散發版本中，但可能有選擇性的更新可供使用。 ******** |
 
-\* 如果無法啟用資料交換整合服務，則可以從[下載中心](https://support.microsoft.com/kb/3071740)以封包（cab）檔案的形式取得這些來賓的整合服務。 此[blog 文章](https://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)提供套用 cab 的指示。
+\* 如果無法啟用資料交換整合服務，則可以從[下載中心](https://support.microsoft.com/kb/3071740)以封包（cab）檔案的形式取得這些來賓的整合服務。 此[blog 文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供套用 cab 的指示。
 
-**在 Windows 8.1 主機上執行虛擬機器：**
+**針對在 Windows 8.1/Windows Server 2012R2 主機上執行的虛擬機器：**
 
-| Guest  | 更新機制 | 附註 |
+| 來賓  | 更新機制 | 注意事項 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
-| Windows 8.1 | Windows Update | |
+| Windows 8.1 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows 8 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows 7 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows XP (SP 2、SP 3) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2016 | Windows Update | |
+| Windows Server 2016 | Windows Update | |
 | Windows Server 半年通道 | Windows Update | |
-| Windows Server 2012 R2 | Windows Update | |
+| Windows Server 2012 R2 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Server 2012 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Server 2008 R2 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Server 2008 (SP 2) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
@@ -277,17 +277,17 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | Linux 客體 | 封裝管理員 | 適用于 Linux 的 Integration services 已內建于散發版本中，但可能有選擇性的更新可供使用。 ** |
 
 
-**在 Windows 8 主機上執行虛擬機器：**
+**針對在 Windows 8/Windows Server 2012 主機上執行的虛擬機器：**
 
-| Guest  | 更新機制 | 附註 |
+| 來賓  | 更新機制 | 注意事項 |
 |:---------|:---------|:---------|
-| Windows 8.1 | Windows Update | |
+| Windows 8.1 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows 8 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows 7 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows XP (SP 2、SP 3) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2012 R2 | Windows Update | |
+| Windows Server 2012 R2 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Server 2012 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Server 2008 R2 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。|
 | Windows Server 2008 (SP 2) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
@@ -302,14 +302,20 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 ## <a name="install-or-update-integration-services"></a>安裝或更新 integration services
 
-對於早于 Windows Server 2016 和 Windows 10 的主機，您必須手動安裝或更新客體作業系統中的整合服務。 
+> [!NOTE]
+> 對於早于 Windows Server 2016 和 Windows 10 的主機，您必須**手動安裝或更新**客體作業系統中的整合服務。 
+
+手動安裝或更新整合服務的程式：
+
+1.  開啟 [Hyper-V 管理員]。 從伺服器管理員的 [工具] 功能表中，按一下 [ **Hyper-v 管理員**]。  
   
-1.  開啟 \[Hyper-V 管理員\]。 從伺服器管理員的 [工具] 功能表中，按一下 [ **Hyper-v 管理員**]。  
+2.  連接到虛擬機器。 以滑鼠右鍵按一下虛擬機器，然後按一下 **[連線]** 。  
   
-2.  連線到虛擬機器。 以滑鼠右鍵按一下虛擬機器，然後按一下 **[連線]** 。  
-  
-3.  在 [虛擬機器連線] 的 [執行] 功能表中，按一下 [插入整合服務安裝磁片]。 這個動作會載入虛擬 DVD 光碟機中的安裝磁片。 視客體作業系統而定，您可能需要手動啟動安裝。  
+3.  在虛擬機器連線的 [執行] 功能表中，按一下 [插入整合服務安裝磁片]。 這個動作會載入虛擬 DVD 光碟機中的安裝磁片。 視客體作業系統而定，您可能需要手動啟動安裝。  
   
 4.  安裝完成後，即可使用所有的整合服務。
 
-在線上虛擬機器的 Windows PowerShell 會話中，無法自動或完成這些步驟。 您可以將它們套用到離線 VHDX 映射;[請參閱這篇 blog 文章](https://blogs.technet.microsoft.com/virtualization/2013/04/18/how-to-install-integration-services-when-the-virtual-machine-is-not-running/)。
+> [!NOTE]
+> 在**線上**虛擬機器的 Windows PowerShell 會話中，**無法自動**或完成這些步驟。
+> 您可以將它們套用到**離線**VHDX 映射;請參閱[如何在虛擬機器未執行時安裝 integration services](https://docs.microsoft.com/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
+> 您也可以透過與 Vm**連線**的**Configuration Manager**來自動化整合服務的部署，但必須在安裝結束時重新開機 vm;請參閱[使用 Config Manager 和 DISM 將 hyper-v Integration Services 部署至 vm](https://docs.microsoft.com/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)

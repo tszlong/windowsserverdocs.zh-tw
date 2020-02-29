@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5323210962298ff3f2d0b159cba7726adfbb89d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7da68fa9cbe71f8a67e74671d64d11908ae4654
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361619"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169558"
 ---
 # <a name="running-wsus-replica-mode"></a>執行 WSUS 複本模式
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 [複本] 模式中執行的 WSUS 伺服器會繼承在管理伺服器上建立的更新核准和電腦群組。 在使用「複本」模式的案例中，您通常會有一部管理伺服器，而且一或多個次級複本 WSUS 伺服器會根據網站或組織的拓撲分散到整個組織。 您在管理伺服器上核准更新並建立電腦群組，然後複本模式伺服器就會進行鏡像。 只有在安裝 WSUS 時，才可以設定複本模式伺服器，而且如果您執行此案例，很可能是因為您的組織中的更新核准和電腦群組是集中管理的，所以這是很重要的。
 

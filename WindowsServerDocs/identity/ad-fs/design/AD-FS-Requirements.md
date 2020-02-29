@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 34ea5ca29672cb7bc0080a1c27b1910d5cf6b92e
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517523"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169598"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -202,7 +202,7 @@ AD FS 會建立必須儲存在用戶端電腦上的會話\-型和持續性 cooki
 此外，如果用戶端使用者憑證驗證 \(使用 X509 使用者憑證進行 Clienttls 是驗證\) 是必要的，在 Windows Server 2012 R2 中 AD FS 會要求在用戶端與 Web 應用程式 Proxy 之間的防火牆上啟用 TCP 埠49443。 Web 應用程式 Proxy 與同盟伺服器之間的防火牆則不需要這麼做。  
 
 > [!NOTE]
-> 也請確定 Web 應用程式 Proxy 伺服器上的任何其他服務都未使用埠49443。
+> 也請確定 AD FS 和 Web 應用程式 Proxy 伺服器上的任何其他服務都未使用埠49443。
 
 **設定 DNS**  
   
