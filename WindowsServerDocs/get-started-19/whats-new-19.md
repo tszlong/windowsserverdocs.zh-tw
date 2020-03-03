@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 13eed225dfc144d5e7e59be13dbed14d4de8bb01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360785"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465492"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
-> 適用於：Windows Server Standard 2012 R2
+> 適用於：Windows Server 2019
 
 本主題說明 Windows Server 2019 中的一些新功能。 Windows Server 2019 建置在 Windows Server 2016 的強大基礎上，並在四個關鍵主題上帶來多項改革：混合式雲端、安全性、應用程式平台和超融合式基礎結構 (HCI)。
 
@@ -107,7 +107,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 - 將我們的預設 TCP 擁塞提供者變更為 Cubic，為您提供更多輸送量！
 
-## <a name="storage"></a>儲存體
+## <a name="storage"></a>存放裝置
 
 以下是我們對 Windows Server 2019 儲存空間所做的一些變更。 如需詳細資訊，請參閱[儲存空間的新功能](../storage/whats-new-in-storage.md)。
 
@@ -115,7 +115,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 儲存空間移轉服務是新的技術，可讓您更輕鬆地將伺服器移轉至較新版本的 Windows Server。 它提供圖形化工具，可用於清查伺服器上的資料、將資料與設定傳輸到較新的伺服器，然後選擇性地將舊伺服器的身分識別移動至新伺服器，因此應用程式和使用者不需要變更任何項目。 如需詳細資訊，請參閱[存放裝置移轉服務](../storage/storage-migration-service/overview.md)。
 
-### <a name="storage-spaces-direct"></a>儲存空間直接存取
+### <a name="storage-spaces-direct"></a>儲存空間 Direct
 
 以下是儲存空間直接存取的新功能清單。 如需詳細資訊，請參閱[儲存空間直接存取的新功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。 另請參閱 [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)，以了解如何取得已驗證的「儲存空間直接存取」系統。
 
