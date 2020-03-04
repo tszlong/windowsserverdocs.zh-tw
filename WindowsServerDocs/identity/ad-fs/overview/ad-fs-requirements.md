@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c8ab160699bc6a961f4fbed6c58cf072a395a313
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407417"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517533"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 

@@ -204,6 +204,7 @@
 ### [網路殼層 (Netsh) 範例批次檔](technologies/netsh/netsh-wins.md)
 ### [Netsh http 命令](technologies/netsh/netsh-http.md)
 ### [Netsh 介面 portproxy 命令](technologies/netsh/netsh-interface-portproxy.md)
+### [Netsh mbn 命令](technologies/netsh/netsh-mbn.md)
 
 ## [網路子系統效能調整](technologies/network-subsystem/net-sub-performance-top.md)
 ### [選擇網路介面卡](technologies/network-subsystem/net-sub-choose-nic.md)

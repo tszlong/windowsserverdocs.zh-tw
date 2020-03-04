@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a01d8881e8f0f7ca6feff691938f926a12460db0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8ebe1f82cd6f616d42521729c5efc14821c20fa
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361659"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169578"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步驟 4：設定自動更新的群組原則設定
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Active Directory 環境中，您可以使用群組原則來定義電腦和使用者 (在此文件中稱為 WSUS 用戶端) 如何與 Windows Update 互動，以從 Windows Server Update Services (WSUS) 取得自動更新。
 
@@ -621,7 +621,7 @@ ms.locfileid: "71361659"
 
 3.  在左窗格中按兩下 [網域]  ，然後按兩下您要管理其群組原則物件的網域。 例如，按兩下 **example.com**。
 
-4.  執行下列其中一項：
+4.  執行下列其中一個動作：
 
     -  **若要開啟現有的網域層級 GPO 以進行編輯**，請按兩下您要管理的群組原則物件所屬的網域，以滑鼠右鍵按一下您要管理的網域原則，然後按一下 [編輯]  。 群組原則管理編輯器 (GPME) 隨即開啟。
 
@@ -661,7 +661,7 @@ ms.locfileid: "71361659"
 
 3.  在 [選項]  中，如果有列出任何選項，請保留預設值，或視需要加以修改。
 
-4.  執行下列其中一項：
+4.  執行下列其中一個動作：
 
     -   若要儲存變更並繼續進行下一個設定，請按一下 [套用]  ，然後按 [下一個設定]  。
 
@@ -672,7 +672,7 @@ ms.locfileid: "71361659"
 ### <a name="changes-to-wsus-relevant-to-this-guide"></a>與本指南相關的 WSUS 變更
 下表摘要說明 WSUS 的現行版本與舊版之間與本指南相關的主要差異。
 
-|Windows Server 和 WSUS 版本|描述|
+|Windows Server 和 WSUS 版本|說明|
 |------------------|--------|
 | 使用 WSUS 6.0 的 Windows Server 2012 R2 和後續版本|從 Windows Server 2012 開始，WSUS 伺服器角色已與作業系統整合，且 WSUS 用戶端的相關群組原則設定依預設會包含在群組原則中。|
 | 使用 WSUS 3.2 和更早版本的 Windows Server 2008 (和更早版本的 Windows Server)|在使用 WSUS 3.2 版 (和更早版本) 的 Windows Server 2008 (和更早版本的 Windows Server) 中，管理 WSUS 用戶端的群組原則設定並未包含在這些 Windows Server 作業系統中。 原則設定位於 WSUS 系統管理範本 **wuau.adm** 中。 在這些伺服器版本中，必須先將 WSUS 系統管理範本新增至群組原則管理主控台 (GPMC) 中，才能設定 WSUS 用戶端設定。|

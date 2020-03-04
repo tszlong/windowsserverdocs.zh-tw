@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 37e37e33b5d8dd571f8519aaa48251856503578d
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953082"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77520639"
 ---
 # <a name="windows-server-2016-improvements"></a>Windows Server 2016 改進功能
 
@@ -39,7 +39,7 @@ Windows 2016 改進了 Hyper-v TimeSync 服務。 改進功能包括更準確的
 |----- | ----- |
 |計算的時間位移| 系統時鐘與所選時間來源間的絕對時間位移，由 W32Time 服務計算 (以毫秒為單位)。 當有新的有效樣本可供使用時，會以樣本所指示的時間位移來更新計算的時間。 這是本機時鐘的實際時間位移。 W32time 會使用此位移起始時鐘更正作業，並以需要套用至本機時鐘的剩餘時間位移，更新樣本之間的計算時間。 您可以使用此效能計數器搭配低輪詢間隔 (例如 256 秒或更少) 來追蹤時鐘準確度，並尋找小於所需的時鐘準確度限制的計數器值。|
 |時鐘頻率調整| W32Time 以每十億為單位，對本機系統時鐘進行絕對時鐘頻率調整。 此計數器有助於將 W32time 採取的動作以視覺化方式呈現。|
-|NTP 來回延遲| NTP 用戶端最近從伺服器接收回應所經歷的來回延遲 (以毫秒為單位)。 這是在傳送要求到 |NTP 伺服器，並接收來自伺服器的有效回應間，NTP 用戶端上所經過的時間。 此計數器有助於描述 NTP 用戶端所遇到的延遲特性。 較大或不同的來回作業可能會增加 NTP 時間計算的雜訊，這可能會影響透過 NTP 同步時間的準確度。|
+|NTP 來回延遲| NTP 用戶端最近從伺服器接收回應所經歷的來回延遲 (以毫秒為單位)。 這是在傳送要求到 NTP 伺服器，並從伺服器接收有效回應之間，NTP 用戶端所經過的時間。 此計數器有助於描述 NTP 用戶端所遇到的延遲特性。 較大或不同的來回作業可能會增加 NTP 時間計算的雜訊，這可能會影響透過 NTP 同步時間的準確度。|
 |NTP 用戶端來源計數| NTP 用戶端使用的作用中 NTP 時間來源總數。 這是作用中、相異 IP 位址的時間伺服器計數，會回應此用戶端的要求。 數目可能大於或小於設定的同儕節點，視同儕節點名稱的 DNS 解析和目前的觸達能力而定。|
 |NTP 伺服器連入要求| NTP 伺服器接收的要求數 (要求/每秒)。|
 |NTP 伺服器連出回應| NTP 伺服器回答的要求數 (回應/每秒)。|
@@ -398,7 +398,7 @@ NTP 來源沒有回應| 檢查適用於 NTP 用戶端來源計數、NTP 伺服�
 氣候和地質事件會讓地球的自轉週期隨著時間而改變。 一般來說，每幾年會有一秒的變化。 每當原子時間的變化太大時，就會插入一秒 (向上或向下) 來更正，稱為「閏秒」。 如此一來，差異不會超過 0.9 秒。 這項更正會在實際發生的六個月前宣佈。 在 Windows Server 2016 之前，Microsoft 時間服務不會感知閏秒，只能依賴外部時間服務來處理這個問題。 隨著 Windows Server 2016 的時間準確度增加，Microsoft 正致力於打造更能妥善處理閏秒的解決方案。
 
 ## <a name="secure-time-seeding"></a>安全時間植入
-Server 2016 中的 W32time 包含安全時間植入功能。 這項功能會判斷來自連出 SSL 連線的約略目前時間。這個時間值用來監視本機系統時鐘，並更正所有的嚴重錯誤。 This time value is used to monitor the local system clock and correct any gross errors. 若要深入了解此功能，請參閱[此部落格文章](https://blogs.msdn.microsoft.com/w32time/2016/09/28/secure-time-seeding-improving-time-keeping-in-windows/)。 在具有可靠時間來源的部署和受監視的電腦 (包含時間位移的監視) 中，您可以選擇不要使用安全時間植入功能，而改為依賴現有的基礎結構。 
+Server 2016 中的 W32time 包含安全時間植入功能。 這項功能會判斷來自連出 SSL 連線的約略目前時間。 這個時間值用來監視本機系統時鐘，並更正所有的嚴重錯誤。 若要深入了解此功能，請參閱[此部落格文章](https://blogs.msdn.microsoft.com/w32time/2016/09/28/secure-time-seeding-improving-time-keeping-in-windows/)。 在具有可靠時間來源的部署和受監視的電腦 (包含時間位移的監視) 中，您可以選擇不要使用安全時間植入功能，而改為依賴現有的基礎結構。 
 
 您可以使用下列步驟來停用此功能：
 

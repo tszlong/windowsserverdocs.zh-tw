@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e73511709bfbee69a6dcbaaff4341c8b067079f3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949859"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465472"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -40,7 +40,7 @@ ms.locfileid: "75949859"
 3. 新增遠端桌面連線或遠端資源。 您可以使用連線直接連線至 Windows 電腦和遠端資源，以使用 RemoteApp 程式、工作階段型桌面，或使用 RemoteApp 和桌面連線在內部部署發佈的虛擬桌面。 在公司環境中通常可以使用這項功能。
 
 ## <a name="what-about-the-mac-beta-client"></a>Mac Beta 用戶端呢？
-我們正在 HockeyApp 的預覽通道上測試新功能。 想一探究竟嗎？ 請前往[適用於 Mac 的 Microsoft 遠端桌面](https://go.microsoft.com/fwlink/?LinkID=619698)，然後按一下 [下載]  。 您不需要建立帳戶或登入 HockeyApp，即可下載 Beta 用戶端。
+我們正在 AppCenter 的預覽通道上測試新功能。 想一探究竟嗎？ 請前往[適用於 Mac 的 Microsoft 遠端桌面](https://aka.ms/rdmacbeta)，然後按一下 [下載]  。 您不需要建立帳戶或登入 AppCenter，即可下載 Beta 用戶端。
 
 如果您已有用戶端，您可以檢查更新，以確定您擁有最新版本。 在 Beta 用戶端中，按一下頂端的 [Microsoft 遠端桌面 Beta 版]  ，然後按一下 [檢查更新]  。 
 

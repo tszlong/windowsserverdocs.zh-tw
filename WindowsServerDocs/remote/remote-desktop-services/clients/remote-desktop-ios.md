@@ -14,12 +14,12 @@ manager: lizross
 ms.author: helohr
 date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
-ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
+ms.openlocfilehash: ef13227a9f7b83f01786bbb11498da912c86581b
+ms.sourcegitcommit: 32211610ad9a24d282b35ed8c0aaa179497c63bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77179352"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77780817"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -170,7 +170,12 @@ ms.locfileid: "77179352"
 
 ## <a name="supported-input-devices"></a>支援的輸入裝置
 
-iOS 用戶端目前僅支援 Swiftpoint GT 和 ProPoint 滑鼠。 如需裝置支援的詳細資訊，請參閱 [iOS 用戶端的新功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
+iOS 13 和 iPadOS 中的基本[藍牙滑鼠支援](https://support.apple.com/HT210546)可作為協助工具功能。 您可以使用 Swiftpoint GT 和 ProPoint 滑鼠來取得 RD 用戶端中更深入的滑鼠整合。 此外，系統也支援與 iOS 和 iPadOS 相容的外部鍵盤。
+
+如需裝置支援的詳細資訊，請參閱 [iOS 用戶端的新功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
+
+> [!TIP]
+> Swiftpoint 針對適用於 iOS 用戶端的使用者，提供 [ProPoint 滑鼠的獨家折扣](https://www.swiftpoint.com/microsoft)。
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>在遠端工作階段中使用鍵盤
 
@@ -180,20 +185,7 @@ iOS 用戶端目前僅支援 Swiftpoint GT 和 ProPoint 滑鼠。 如需裝置�
 
 如果您的 iOS 裝置啟用藍牙，則用戶端會自動偵測藍牙鍵盤。
 
-請注意，由於作業系統上的限制，在使用藍牙鍵盤時，諸如 Ctrl、Option 和 Function 等特殊按鍵將無法如預期般運作。 下列按鍵運作正常：
+雖然某些按鍵組合在遠端工作階段中可能無法如預期般運作，但許多常見的 Windows 按鍵組合 (例如 CTRL+C、CTRL+V 和 ALT+TAB) 都可以運作。
 
-- 英數字元鍵
-- 游標鍵
-- TAB：Tab 運作正常，但 Shift+Tab 無法運作
-- Home / Pos1：Alt+Left = Home
-- 結束：Alt+向右鍵 = End
-- Page Up：Alt+向上鍵 = Page Up
-- Page Down：Alt+向下鍵 = Page Down
-- 全選：Command+A = Ctrl+A (在大部分程式中全選)
-- 剪下：Command+X = Ctrl+X (在大部分程式中剪下)
-- 複製：Command+C = Ctrl+C (在大部分程式中複製)
-- 貼上：Command+V = Ctrl+V (在大部分程式中貼上)
-- 符號：Alt+英數字元鍵根據所設定的語言，將會產生不同的符號
-
-> [!TIP]
-> 歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。
+> [!IMPORTANT]
+> 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。

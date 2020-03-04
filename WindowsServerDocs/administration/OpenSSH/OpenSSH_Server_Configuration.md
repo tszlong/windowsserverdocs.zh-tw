@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: 適用於 Windows 的 OpenSSH 伺服器設定
-ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 61e6e24e6682802fd07e70dcb49aa0f382e1638e
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259044"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169588"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>適用於 Windows 10 1809 和 Server 2019 的 OpenSSH 伺服器設定
 
@@ -76,7 +76,7 @@ AllowGroups sshusers
 
 ### <a name="authorizedkeysfile"></a>AuthorizedKeysFile 
 
-預設值為 “.ssh/authorized_keys .ssh/authorized_keys2”。 如果路徑不是絕對路徑，則會相對於使用者的主目錄 (或設定檔映像路徑) 來取得。 例如： c:\users\user。
+預設值為 “.ssh/authorized_keys .ssh/authorized_keys2”。 如果路徑不是絕對路徑，則會相對於使用者的主目錄 (或設定檔映像路徑) 來取得。 例如： c:\users\user。 請注意，如果使用者屬於系統管理員群組，則會改用 %programdata%/ssh/administrators_authorized_keys。
 
 ### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory (在 v7.7.0.0 中新增支援)
 

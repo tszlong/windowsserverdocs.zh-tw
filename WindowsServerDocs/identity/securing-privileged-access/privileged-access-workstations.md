@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 03f62fd8d9a95c4f0b83e64d672a3c1134833cae
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 86d7b2ff99debbecec930693fb93dc965fefc59e
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950550"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517593"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 

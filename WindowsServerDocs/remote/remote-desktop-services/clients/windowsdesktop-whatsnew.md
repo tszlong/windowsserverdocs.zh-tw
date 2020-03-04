@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 02/11/2020
+ms.date: 02/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
-ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
+ms.openlocfilehash: f435892f0a200056c08094cac1831c710a47a6be
+ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77155382"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77608792"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -30,14 +30,14 @@ ms.locfileid: "77155382"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|公用     |1.2.605  |
-|Insider    |1.2.673  |
+|公用     |1.2.675  |
+|Insider    |1.2.675  |
 
-## <a name="updates-for-version-12673"></a>1\.2.673 版的更新
+## <a name="updates-for-version-12675"></a>1\.2.675 版的更新
 
-*發行日期：02/11/2020*
+*發行日期：02/25/2020*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
 
 - 如果 RDP 檔案遺漏簽章，或其中一個 signscope 屬性已修改，則現在會封鎖對 Windows 虛擬桌面的連線。
 - 當工作區是空的或已移除時，連接中心不會再顯示為空白。

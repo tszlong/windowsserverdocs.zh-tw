@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 67e35a47467b1f5f66bfd073c6f9db06094ea3f9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391034"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465502"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>安全的虛擬化 Active Directory Domain Services (AD DS)
 
@@ -103,7 +103,7 @@ Value: 0x4
 > [!CAUTION]
 > 如果實際執行環境中的網域控制站不小心被還原成快照，建議您諮詢廠商該虛擬機器上裝載的應用程式和服務相關事宜，取得快照還原之後確認這些程式狀態的指示說明。
 
-如需詳細資訊，請參閱[虛擬網域控制站安全還原架構](../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。
+如需詳細資訊，請參閱 [Virtualized domain controller safe restore architecture](../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。
 
 ## <a name="recovering-from-a-usn-rollback"></a>從 USN 回復復原
 
@@ -129,7 +129,7 @@ Value: 0x4
 
 您也可以使用快照做為備份的來源。 或者，利用[在沒有適當系統狀態資料備份的情況下還原虛擬網域控制站](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)中的程序，將資料庫設定成為其本身提供新的引動過程識別碼。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
-* 如需虛擬網域控制站疑難排解的詳細資訊，請參閱[虛擬網域控制站疑難排解](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)。
+* 如需有關虛擬的網域控制站的疑難排解資訊，請參閱＜ [Virtualized Domain Controller Troubleshooting](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)＞。
 * [Windows Time Service (W32Time) 的詳細資訊](../../networking/windows-time-service/windows-time-service-top.md)
