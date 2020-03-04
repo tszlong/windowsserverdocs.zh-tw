@@ -9,16 +9,16 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: 如何在虛擬機器來賓叢集中部署儲存空間直接存取-例如，在 Microsoft Azure 中。
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0ce792c5a948e763a48493a78ccdac7a6fe74c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34241183a56cdb9be4690e1edd68b56320cc01de
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366054"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261917"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>使用來賓虛擬機器叢集中的儲存空間直接存取
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 您可以將儲存空間直接存取部署在實體伺服器或虛擬機器來賓叢集的叢集上，如本主題中所述。 這種類型的部署會在私人或公用雲端上的一組 Vm 之間提供虛擬共用存放裝置，讓應用程式的高可用性解決方案得以用來提高應用程式的可用性。
 
@@ -49,7 +49,7 @@ ms.locfileid: "71366054"
 
     -   Hyper-v –在 Vm 上設定 AntiAffinityClassNames，以將 Vm 分散到不同的節點
 
-    -   VMware –藉由建立「個別虛擬機器」類型的 DRS 規則來設定 VM VM 反親和性規則，以將 Vm 分散到 ESX 主機。 提供給儲存空間直接存取使用的磁片應該使用 Paravirtual SCSI （PVSCSI）介面卡。 如需 Windows Server 的 PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398 。
+    -   VMware –藉由建立「個別虛擬機器」類型的 DRS 規則來設定 VM VM 反親和性規則，以將 Vm 分散到 ESX 主機。 提供給儲存空間直接存取使用的磁片應該使用 Paravirtual SCSI （PVSCSI）介面卡。 如需 Windows Server 的 PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398。
 
 -   利用低延遲/高效能儲存體-需要 Azure 進階儲存體受控磁片
 
@@ -65,10 +65,6 @@ ms.locfileid: "71366054"
     Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
     ```
 
--   不支援：主機層級虛擬磁片快照集/還原
-
-    相反地，請使用傳統來賓層級備份解決方案來備份和還原儲存空間直接存取磁片區上的資料。
-
 -   若要為來賓叢集中可能的 VHD/VHDX/VMDK 儲存延遲提供更高的復原能力，請增加儲存空間 i/o 超時值：
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
@@ -76,6 +72,16 @@ ms.locfileid: "71366054"
     `dword: 00007530`
 
     十六進位7530的十進位對等是30000，也就是30秒。 請注意，預設值為1770十六進位，或 6000 Decimal，其為6秒。
+
+## <a name="not-supported"></a>不受支援
+
+-   主機層級虛擬磁片快照集/還原
+
+    相反地，請使用傳統來賓層級備份解決方案來備份和還原儲存空間直接存取磁片區上的資料。
+
+-   主機層級的虛擬磁片大小變更
+
+    透過虛擬機器公開的虛擬磁片必須保留相同的大小和特性。 將更多虛擬磁片新增至每部虛擬機器，並將其新增至集區，即可完成將更多的容量新增至存放集區。 強烈建議使用與目前虛擬磁片相同大小和特性的虛擬磁片。
 
 ## <a name="see-also"></a>另請參閱
 
