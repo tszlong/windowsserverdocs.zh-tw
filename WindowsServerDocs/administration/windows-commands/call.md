@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 0e5f9f2b0102c12ee0925bb434fdeddde85e34cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
+ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379725"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280189"
 ---
 # <a name="call"></a>呼叫
 
@@ -37,7 +37,7 @@ ms.locfileid: "71379725"
 call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>參數
 
 |           參數           |                                                                         描述                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -78,7 +78,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 |% ~ dp $ 路徑：1|搜尋 **%1**的 PATH 環境變數中所列的目錄，然後展開至找到的第一個目錄的磁碟機號和路徑。|
 |% ~ ftza1|展開 **%1**以顯示類似**dir**命令的輸出。|
 
-在上述範例中， **%1**和 PATH 可以由其他有效的值取代。 <strong>%~</strong>語法會以有效的引數編號結束。 <strong>%~</strong>修飾詞不能與 **%\\\*** 搭配使用。
+在上述範例中， **%1**和 PATH 可以由其他有效的值取代。 <strong>%~</strong>語法會以有效的引數編號結束。 <strong>%~</strong>修飾詞不能與 **%\*** 搭配使用。
 
 ## <a name="remarks"></a>備註
 
@@ -98,7 +98,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
     如果已啟用命令延伸模組，請**呼叫**接受*標籤*做為呼叫的目標。 正確的語法如下所示：
 
-    `call :\<Label> <Arguments>`
+    `call :<Label> <Arguments>`
 
 ## <a name="BKMK_examples"></a>典型
 

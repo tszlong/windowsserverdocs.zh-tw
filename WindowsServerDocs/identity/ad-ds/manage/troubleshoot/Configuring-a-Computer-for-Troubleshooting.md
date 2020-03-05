@@ -9,16 +9,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8e11883de9f89d0b95ed0fc35b4f5f3941ef82a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368902"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278553"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>設定電腦進行疑難排解
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用先進的疑難排解技術識別並修正 Active Directory 問題之前，請先設定您的電腦以進行疑難排解。 您也應該對疑難排解概念、程式和工具有基本瞭解。
 
@@ -42,20 +42,20 @@ Windows Server 包含 Windows 可靠性和效能監視器，這是一個 Microso
 
 ### <a name="set-logging-levels"></a>設定記錄層級
 
-如果您在事件檢視器的目錄服務記錄中收到的資訊不足以進行疑難排解，請在 HKEY_LOCAL_ 中使用適當的登錄專案來提高記錄層級。 **MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics**。
+如果您在事件檢視器的目錄服務記錄中收到的資訊不足以進行疑難排解，請在**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**中使用適當的登錄專案來提高記錄層級。
 
 根據預設，所有專案的記錄層級都會設定為**0**，以提供最少的資訊數量。 最高的記錄層級為**5**。 增加專案的層級會導致目錄服務事件記錄檔中的其他事件記錄下來。
 
-請使用下列程式來變更診斷專案的記錄層級。 若要完成此程序，至少需要 **Domain Admins** 的成員資格或同等權限。
+請使用下列程式來變更診斷專案的記錄層級。 至少要有 **Domain Admins** 的成員資格或是對等成員資格，才能完成此程序。
 
 > [!WARNING]
-> 建議您不要直接編輯登錄，除非已沒有其他替代方案。 登錄編輯器或 Windows 不會先對登錄進行修改，也不會在應用程式中進行驗證，因此可能會儲存不正確的值。 這可能會導致系統中發生無法復原的錯誤。 可能的話，請使用群組原則或其他 Windows 工具（例如 MMC 嵌入式管理單元）來完成工作，而不是直接編輯登錄。 如果您必須編輯登錄，必須非常小心。
+> 建議您不要直接編輯登錄，除非已沒有其他替代方案。 對登錄所做的修改會不經登錄編輯程式或 Windows 驗證就加以套用，因此可能會儲存不正確的值。 這可能會導致系統發生嚴重錯誤。 可能的話，請使用群組原則或其他 Windows 工具（例如 MMC 嵌入式管理單元）來完成工作，而不是直接編輯登錄。 如果您必須編輯登錄，必須非常小心。
 >
 
 變更診斷專案的記錄層級
 
-1. 按一下 [**開始**]  > **執行**> 輸入**Regedit** ，> 按一下 **[確定]** 。
+1. 按一下 [**啟動**] > **執行**> 輸入**Regedit** ，> 按一下 **[確定]** 。
 2. 流覽至您要設定登入的專案。
-   * 範例：HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
+   * 範例： HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
 3. 按兩下專案，然後在 [**基底**] 中按一下 [ **Decimal**]。
 4. 在 [**值**] 中，輸入從**0**到**5**的整數，然後按一下 **[確定]** 。

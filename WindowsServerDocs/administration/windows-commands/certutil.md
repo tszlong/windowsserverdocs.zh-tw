@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71525e4051a079eb9a3d0c8c197c8157b53e5e67
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379647"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278543"
 ---
 # <a name="certutil"></a>certutil
 
 Certutil 是安裝為憑證服務一部分的命令列程式。 您可以使用 Certutil 來傾印和顯示憑證授權單位單位（CA）設定資訊、設定憑證服務、備份和還原 CA 元件，以及驗證憑證、金鑰組和憑證鏈。
 
-當 certutil 在沒有其他參數的憑證授權單位單位上執行時，它會顯示目前的憑證授權單位單位設定。 在非憑證授權單位單位上執行 cerutil 時，此命令預設為執行 certutil [-](#-dump)傾印動詞。
+當 certutil 在沒有其他參數的憑證授權單位單位上執行時，它會顯示目前的憑證授權單位單位設定。 當 certutil 在非憑證授權單位單位上執行時，此命令會預設為執行 certutil [-](#-dump)傾印動詞。
 
 > [!WARNING]
 > 較早版本的 certutil 可能無法提供本檔中所述的所有選項。 您可以藉由執行[語法標記法](#syntax-notations)一節中所示的命令，查看特定版本的 certutil 所提供的所有選項。
@@ -38,11 +38,11 @@ Certutil 是安裝為憑證服務一部分的命令列程式。 您可以使用 
 - [選項](#options)
 - [其他 certutil 範例](#additional-certutil-examples)
 
-## <a name="verbs"></a>動詞
+## <a name="verbs"></a>動詞命令
 
 下表描述可搭配 certutil 命令使用的動詞。
 
-|動詞|描述|
+|動詞命令|描述|
 |-----|-----------|
 |[-傾印](#-dump)|傾印設定資訊或檔案|
 |[-asn](#-asn)|剖析 ASN 1 檔案|
@@ -143,17 +143,17 @@ Certutil 是安裝為憑證服務一部分的命令列程式。 您可以使用 
   - `certutil -v -? > certutilhelp.txt`
   - `notepad certutilhelp.txt`
 
-下表描述用來表示命令列語法的標記法。
+下表說明用來指出命令列語法的表示法。
 
 
 |            表示法             |                  描述                  |
 |---------------------------------|-----------------------------------------------|
-| 不含括弧或大括弧的文字 |         您必須輸入的專案，如下所示          |
-|  \<角括弧內的文字 >  | 您必須為其提供值的預留位置 |
-|  [括弧內的文字]  |                選擇性的項目                 |
-|      {大括弧內的文字}       |       必要專案集;選擇一個       |
+| 不含括弧或大括弧的文字 |         必須依照顯示輸入的項目          |
+|  \<角括弧內的文字 >  | 必須在其中提供值的保留區 |
+|  [方括弧內的文字]  |                選擇性的項目                 |
+|      {大括弧內的文字}       |       必要的項目集；選擇一個       |
 |         分隔號（          |                       )                       |
-|          省略號（...）           |          可以重複的專案           |
+|          省略符號 (…)           |          可重複的項目           |
 
 返回[功能表](#menu)
 
@@ -1626,7 +1626,7 @@ CertUtil [Options]-GetKey SearchToken 取出 |復原 OutputFileBaseName
 
 SearchToken：用來選取要復原的金鑰和憑證。
 
-可以是下列任何一項：
+可為下列任一項：
 
 1. 憑證一般名稱
 2. 憑證序號
@@ -1706,13 +1706,13 @@ Salt： EPF 輸出檔 salt 字串
 |-enterprise|使用本機電腦的 Enterprise registry 憑證存放區|
 |-使用者|使用 HKEY_CURRENT_USER 金鑰或憑證存放區|
 |-GroupPolicy|使用群組原則憑證存放區|
-|-未通過|顯示使用者範本|
+|-ut|顯示使用者範本|
 |-mt|顯示電腦範本|
 |-Unicode|以 Unicode 寫入重新導向的輸出|
 |-UnicodeText|以 Unicode 寫入輸出檔|
 |-gmt|以 GMT 顯示時間|
 |-秒|以秒和毫秒為單位顯示時間|
-|-無訊息|使用無訊息旗標來取得 crypt 內容|
+|-silent|使用無訊息旗標來取得 crypt 內容|
 |-split|分割內嵌的 asn.1 元素，並儲存至檔案|
 |-v|詳細資訊作業|
 |-privatekey|顯示密碼和私密金鑰資料|
@@ -1720,7 +1720,7 @@ Salt： EPF 輸出檔 salt 字串
 |-urlfetch verify|取得並驗證 AIA 憑證和 CDP Crl|
 |-config Machine\CAName|CA 和電腦名稱稱字串|
 |-PolicyServer URLOrId|原則伺服器 URL 或識別碼。針對 [選取] U/I，請使用-PolicyServer。 針對所有原則伺服器，請使用-PolicyServer \*|
-|-匿名|使用匿名 SSL 認證|
+|-Anonymous|使用匿名 SSL 認證|
 |-Kerberos|使用 Kerberos SSL 認證|
 |-ClientCertificate ClientCertId|使用 x.509 憑證 SSL 認證。 針對 [選取] U/I，請使用-clientCertificate。|
 |-UserName 使用者名稱|使用命名帳戶作為 SSL 認證。 針對 [選取] U/I，請使用-UserName。|
@@ -1728,7 +1728,7 @@ Salt： EPF 輸出檔 salt 字串
 |-dc DCName|以特定網域控制站為目標|
 |-限制 RestrictionList|以逗號分隔的限制清單。 每個限制都包含一個資料行名稱、一個關聯式運算子和一個常數整數、字串或日期。 一個資料行名稱前面可能會加上加號或減號，以指出排序次序。 範例：</br>"RequestId = 47"</br>"+ RequesterName > = a，RequesterName < b"</br>「-RequesterName > 網域，配置 = 21」|
 |-out ColumnList|逗號分隔的資料行清單|
-|-p 密碼|密碼|
+|-p 密碼|Password|
 |-ProtectTo SAMNameAndSIDList|以逗號分隔的 SAM 名稱/SID 清單|
 |-csp 提供者|提供者|
 |-t Timeout|URL 提取超時（以毫秒為單位）|
