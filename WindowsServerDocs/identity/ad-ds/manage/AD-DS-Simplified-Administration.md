@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369454"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371516"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 簡化的系統管理
 
@@ -114,7 +114,7 @@ Windows Server 2012 新增額外的 Active Directory 複寫 Cmdlet 到 Active Di
 
 Windows 2000 Active Directory 引進 RID 主機，其可將相關的識別元集區發行到網域控制站，以建立安全性信任者 (如使用者、群組及電腦) 的安全性識別碼 (SID)。  根據預設，這個全域的 RID 空間大小限制為 2<sup>30</sup> (或網域中共建立 1,073,741,823 個 SID) 。 SID 無法傳回集區或重新發行。 經過一段時間，大型網域的 RID 可能會開始不足，或意外可能導致不必要的 RID 消耗，最後終究匱乏。  
   
-Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 這些地方包括：  
+Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 這些包括：  
 
 - 定期的 RID 消耗警告會寫入事件記錄檔  
 - 當系統管理員使 RID 集區失效時會產生事件記錄檔  
@@ -209,5 +209,5 @@ ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查�
 |VerifyWin2KSchema<br /><br />一致性|LDAP|驗證現有的樹系架構是否有一致 (未經其他廠商不當修改) 的核心屬性及類別。|  
 |DCPromo|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|驗證命令列語法已傳送到升級程式碼和測試升級。 如果是新建樹系或網域，驗證其是否尚未存在|  
 |VerifyOutbound<br /><br />ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|檢查 NTDS 設定物件的選項屬性是否為 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)，以驗證指定為複寫協力電腦的現有網域控制站是否已啟用連出複寫|  
-|VerifyMachineAdmin<br /><br />密碼|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|驗證為 DSRM 設定的安全模式密碼符合網域複雜性需求。|  
+|VerifyMachineAdmin<br /><br />Password|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|驗證為 DSRM 設定的安全模式密碼符合網域複雜性需求。|  
 |VerifySafeModePassword|*不適用*|驗證設定的本機系統管理員密碼符合電腦的安全性原則複雜性需求。|  

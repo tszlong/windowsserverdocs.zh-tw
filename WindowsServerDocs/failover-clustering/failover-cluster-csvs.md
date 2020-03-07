@@ -9,11 +9,11 @@ ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: da0f541c34c7f8687822bec365364fdd406fa3c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369742"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370705"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>在容錯移轉叢集中使用叢集共用磁片區
 
@@ -29,7 +29,7 @@ CSV 提供一般用途的叢集檔案系統，其層高於 NTFS （或 Windows S
 > [!NOTE]
 > Csv 不支援 SQL Server 2012 和舊版 SQL Server 中的 Microsoft SQL Server 叢集工作負載。
 
-在 Windows Server 2012 中，CSV 功能已大幅增強。 例如，已移除 Active Directory 網域服務的相依性。 新增的支援包括對 **chkdsk**中功能的改進、與防毒和備份應用程式的互通性，以及與一般的存放裝置功能 (例如 BitLocker 加密磁碟區) 與儲存空間的整合。 如需 Windows Server 2012 中所引進 CSV 功能的總覽，請參閱[Windows server 2012 中容錯移轉叢集的新功能 \[重新導向\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
+在 Windows Server 2012 中，CSV 功能已大幅增強。 例如，已移除 Active Directory 網域服務的相依性。 新增的支援包括對 **chkdsk** 中功能的改進、與防毒和備份應用程式的互通性，以及與一般的存放裝置功能 (例如 BitLocker 加密磁碟區) 與儲存空間的整合。 如需 Windows Server 2012 中所引進 CSV 功能的總覽，請參閱[Windows server 2012 中容錯移轉叢集的新功能 \[重新導向\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
 Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、透過伺服器服務的可用性提升復原能力、可配置給 CSV 快取的實體記憶體數量有更大的彈性。; 和增強的互通性，包括對 ReFS 和重復資料刪除的支援。 如需詳細資訊，請參閱[容錯移轉叢集的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
@@ -61,7 +61,7 @@ Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、�
 - **以原則為依據的服務品質 (QoS)** 。 我們建議您在使用 CSV 時針對每個節點的網路流量設定 QoS 優先順序原則與最小頻寬原則。 如需詳細資訊，請參閱[服務品質（QoS）](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>)。
 - **存放網路**。 對於適用於存放網路的建議，請檢視存放裝置廠商提供的指導方針。 如需有關 CSV 存放裝置的其他考慮，請參閱本主題稍後的[儲存體和磁片設定需求](#storage-and-disk-configuration-requirements)。
 
-如需容錯移轉叢集的硬體、網路和存放裝置需求的概觀，請參閱 [Failover Clustering Hardware Requirements and Storage Options](clustering-requirements.md)。
+如需容錯移轉叢集的硬體、網路與存放裝置需求概觀，請參閱[容錯移轉叢集的硬體需求及存放選項](clustering-requirements.md)。
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>關於 CSV 通訊中 I/O 同步處理和 I/O 重新導向
 
@@ -79,7 +79,7 @@ Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、�
 - **檔案系統重新導向** 重新導向是每個磁碟區個別進行，例如，當備份應用程式拍攝 CSV 快照時，當 CSV 磁碟區以手動方式放置在重新導向的 I/O 模式時。
 - **區塊重新導向** 重新導向位於檔案區塊層級，例如，存放裝置與磁碟區的連線遺失時。 區塊重新導向會比檔案系統重新導向快很多。
 
-在 Windows Server 2012 R2 中，您可以根據每個節點來查看 CSV 磁片區的狀態。 例如，您可以看到 I/O 是直接或重新導向，或者 CSV 磁碟區是否無法使用。 如果 CSV 磁碟區處於 I/O 重新導向模式中，您也可以檢視其原因。 使用 Windows PowerShell Cmdlet **Get-ClusterSharedVolumeState** 檢視此資訊。
+在 Windows Server 2012 R2 中，您可以根據每個節點來查看 CSV 磁片區的狀態。 例如，您可以看到 I/O 是直接或重新導向，或者 CSV 磁碟區是否無法使用。 如果 CSV 磁碟區處於 I/O 重新導向模式中，您也可以檢視其原因。 使用 Windows PowerShell Cmdlet **Get-ClusterSharedVolumeState** 來檢視此資訊。
 
 > [!NOTE]
 > * 在 Windows Server 2012 中，由於 CSV 設計方面的改進，CSV 在直接 i/o 模式中執行的作業比 Windows Server 2008 R2 中所發生的還要多。
@@ -110,7 +110,7 @@ Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、�
 若要使用 CSV，您的節點必須符合以下需求：
 
 - **系統磁碟的磁碟機代號**。 在所有節點上，系統磁碟的磁碟機代號都必須相同。
-- **驗證通訊協定**。 在所有節點上都必須啟用 NTLM 通訊協定。 此功能預設為啟用。
+- **驗證通訊協定**。 在所有節點上都必須啟用 NTLM 通訊協定。 預設為啟用。
 
 ## <a name="plan-to-use-csv-in-a-failover-cluster"></a>計劃在容錯移轉叢集中使用 CSV
 
@@ -140,7 +140,7 @@ Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、�
 當您為使用 CSV 的容錯移轉叢集規劃存放裝置設定時，請考慮下列建議：
 
 - 若要決定需設定多少個 LUN，請洽詢存放裝置廠商。 例如，存放裝置廠商可能會建議您每個 LUN 設定一個磁碟分割，並在上面放置一個 CSV 磁碟區。
-- 單一 CSV 磁碟區上支援的虛擬機器數目沒有限制。 不過，您應該考慮叢集中計劃擁有的虛擬機器數，以及每個虛擬機器的工作負載 (每秒的 I/O 作業)。 請考量以下範例：
+- 單一 CSV 磁碟區上支援的虛擬機器數目沒有限制。 不過，您應該考慮叢集中計劃擁有的虛擬機器數，以及每個虛擬機器的工作負載 (每秒的 I/O 作業)。 請考慮以下範例：
 
   - 一個組織正在部署將支援虛擬桌面基礎結構 (VDI) 的虛擬機器，這是相對較低的工作負載。 叢集使用高效能的存放裝置。 叢集系統管理員諮詢存放裝置廠商之後, 決定在每個 CSV 磁碟區上放置相對大量的虛擬機器。
   - 另一個組織要部署大量的虛擬機器，它們將支援重度使用的資料庫應用程式，這是較高的工作負載。 叢集使用較低效能的存放裝置。 叢集系統管理員諮詢存放裝置廠商之後, 決定在每個 CSV 磁碟區上放置相對小量的虛擬機器。
@@ -163,7 +163,7 @@ Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、�
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-available-storage"></a>Windows PowerShell 對等命令（將磁片新增至可用的存放裝置）
 
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。
 
 以下範例會識別已經可以新增至叢集的磁碟，然後將它們新增至 [可用存放裝置] 群組。
 
@@ -183,9 +183,9 @@ Get-ClusterAvailableDisk | Add-ClusterDisk
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-csv"></a>Windows PowerShell 對等命令（將磁片新增至 CSV）
 
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。
 
-以下範例會將 [可用存放裝置] 中的 [叢集磁碟 1] 新增到本機叢集上的 CSV。
+以下範例會將 [可用存放裝置] 中的 **[叢集磁碟 1]** 新增到本機叢集上的 CSV。
 
 ```PowerShell
 Add-ClusterSharedVolume –Name "Cluster Disk 1"
@@ -207,7 +207,7 @@ CSV 快取會將系統記憶體 (RAM) 配置為直接寫入式快取，以便在
 | BlockCacheSize                   | SharedVolumeBlockCacheSizeInMB       | 這是叢集一般屬性，可讓您定義要為叢集中每個節點上 CSV 快取保留多少記憶體 (MB)。 例如，如果將值定義為 512，每個節點上就會保留 512 MB 的系統記憶體。 （在許多群集中，512 MB 是建議的值）。預設設定為0（表示停用）。 |
 | EnableBlockCache                 | CsvEnableBlockCache                  | 這是叢集實體磁碟資源的私用屬性。 它可讓您在新增到 CSV 的個別磁碟上啟用 CSV 快取。 在 Windows Server 2012 中，預設設定為0（表示停用）。 若要在磁碟上啟用 CSV 快取，請將值設為 1。 根據預設，在 Windows Server 2012 R2 中，會啟用此設定。 |
 
-您可以在 [叢集 CSV 磁碟區快取]底下新增計數器，以在效能監視器中監視 CSV 快取。
+您可以在 [叢集 CSV 磁碟區快取] 底下新增計數器，以在效能監視器中監視 CSV 快取。
 
 #### <a name="configure-the-csv-cache"></a>設定 CSV 快取
 
@@ -255,7 +255,7 @@ CSV 快取會將系統記憶體 (RAM) 配置為直接寫入式快取，以便在
 > [!WARNING]
 > 如果您需要將備份資料還原到 CSV 磁碟區，請注意備份應用程式的功能和限制，以便在叢集節點上保持並還原應用程式一致的資料。 以某些應用程式為例，如果還原 CSV 的節點與備份 CSV 磁碟區的節點不同，您可能會不小心覆寫執行還原之節點上與應用程式狀態有關的重要資料。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>其他資訊
 
 - [容錯移轉叢集](failover-clustering.md)
 - [部署叢集儲存空間](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

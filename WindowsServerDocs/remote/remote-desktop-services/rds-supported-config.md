@@ -14,11 +14,11 @@ ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
 ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187887"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370669"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>支援遠端桌面服務的設定
 
@@ -69,7 +69,7 @@ GPU 廠商對於 RDSH 案例可能會有個別的授權配置，或限制伺服�
 
 下表顯示由不同版本 RDSH 主機所支援的案例。
 
-|功能|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server 2019|
+|功能|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server 2019|
 |---|---|---|---|---|
 |在所有 RDP 工作階段使用硬體 GPU|否|是|是|是|
 |H.264/AVC 硬體編碼 (如果受 GPU 支援)|否|否|是|是|
@@ -108,7 +108,7 @@ GPU 廠商對於 RDSH 案例可能會有個別的授權配置，或限制伺服�
 
 Windows Server 2016 和 Windows Server 2019 RD 虛擬主機伺服器支援下列客體作業系統：
 
-- Windows 10 企業版
+- Windows 10 Enterprise
 - Windows 8.1 Enterprise
 - Windows 7 SP1 企業版
 

@@ -11,15 +11,15 @@ description: 如何在 Windows Server 移除儲存空間直接存取集區中的
 ms.date: 2/5/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402805"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370734"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>移除儲存空間直接存取中的伺服器
 
->適用於：Windows Server 2019、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server 2016
 
 本主題說明如何使用 PowerShell 移除[儲存空間直接存取](storage-spaces-direct-overview.md)中的伺服器。
 
