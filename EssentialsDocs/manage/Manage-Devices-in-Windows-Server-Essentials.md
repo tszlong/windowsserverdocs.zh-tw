@@ -13,15 +13,15 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865163"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371201"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的裝置
 
->適用於：Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
  
  下列各節討論伺服器的裝置管理功能，並說明如何在您的網路上設定及使用裝置：  
   
@@ -100,7 +100,7 @@ ms.locfileid: "70865163"
   
 3.  在使用者帳戶清單中，選取您想要變更的使用者帳戶。  
   
-4.  在 [ **< 使用者帳戶\>** 工作] 窗格中，按一下 **[查看帳戶屬性**]。 使用者帳戶的 [內容] 頁面隨即出現。  
+4.  在 **< 的使用者帳戶\>** 工作 窗格中，按一下**查看帳戶屬性**。 使用者帳戶的 [內容] 頁面隨即出現。  
   
 5.  在 [電腦存取] 索引標籤上，選取這個使用者可以從遠端存取的電腦，然後按一下 [確定]。  
   
@@ -127,15 +127,15 @@ ms.locfileid: "70865163"
   
 2.  在瀏覽列上，按一下 [裝置]。  
   
-3.  若為 Windows Server Essentials：在全域 [使用者工作] 窗格中，按一下 [實作群組原則]。  
+3.  針對 Windows Server Essentials：在全域 [**使用者**工作] 窗格中，按一下 [**執行群組原則**]。  
   
-     若為 Windows Server Essentials：在全域 [裝置工作] 窗格中，按一下 [實作群組原則]。  
+     針對 Windows Server Essentials：在 [全域**裝置**工作] 窗格中，按一下 [**執行群組原則**]。  
   
 4.  [實作群組原則精靈] 隨即開啟。  
   
 5.  在精靈的 [啟用資料夾重新導向群組原則] 頁面上，您可以選擇您想要重新導向的使用者資料夾。  
   
-6.  在精靈的 [啟用安全性原則設定] 頁面上，您可以選擇啟用 [Windows Update]、[Windows Defender]及 [網路防火牆]的「群組原則」設定。  
+6.  在精靈的 [啟用安全性原則設定] 頁面上，您可以選擇啟用 [Windows Update]、[Windows Defender] 及 [網路防火牆] 的「群組原則」設定。  
   
 7.  按一下 [完成] 來實作「群組原則」設定。  
   

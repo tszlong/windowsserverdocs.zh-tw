@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: e53b267f1319681f4a1914b16aaed149134054a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407075"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371416"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>動態存取控制：案例概觀
 

@@ -8,15 +8,15 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 8a9273eef906130b11b98148cf1e84f7e18812b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402372"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371445"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>受防護主機的必要條件
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 檢查您所選擇之證明模式的主機必要條件，然後按一下下一步以新增受防護的主機。
 
@@ -34,12 +34,12 @@ ms.locfileid: "71402372"
     - 設定為使用 UEFI （不是 BIOS 或「舊版」模式）開機
     - 已啟用安全開機
         
--   **作業系統**:Windows Server 2016 Datacenter edition 或更新版本
+-   **作業系統**： Windows Server 2016 Datacenter edition 或更新版本
 
     > [!IMPORTANT]
     > 請確定您已安裝[最新的累計更新](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。  
 
--   **角色和功能**：Hyper-v 角色與主機守護者 Hyper-v 支援功能。 主機守護者 Hyper-v 支援功能僅適用于 Windows Server 的 Datacenter edition。 
+-   **角色與功能**： hyper-v 角色與主機守護者 hyper-v 支援功能。 主機守護者 Hyper-v 支援功能僅適用于 Windows Server 的 Datacenter edition。 
 
 > [!WARNING]
 > 主機守護者 Hyper-v 支援功能可啟用程式碼完整性的虛擬化保護，這可能會與某些裝置不相容。 我們強烈建議您先在實驗室中測試這項設定，再啟用此功能。 若未能這麼做，可能會造成非預期的失敗，最嚴重可能包括資料遺失或藍色畫面錯誤 (也稱為停止錯誤)。 如需詳細資訊，請參閱[具有 Windows Server 虛擬化型保護程式碼完整性的相容硬體](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)。
@@ -52,9 +52,9 @@ ms.locfileid: "71402372"
 
 使用主機金鑰證明的受防護主機必須符合下列必要條件：
 
-- **硬體**：能夠從 Windows Server 2019 開始執行 Hyper-v 的任何伺服器
-- **作業系統**:Windows Server 2019 Datacenter 版本
-- **角色和功能**：Hyper-v 角色與主機守護者 Hyper-v 支援功能 
+- **硬體**：任何能夠執行 hyper-v 的伺服器，從 Windows server 2019 開始
+- **作業系統**： Windows Server 2019 Datacenter edition
+- **角色與功能**： hyper-v 角色與主機守護者 hyper-v 支援功能 
 
 主機可以聯結至網域或工作組。 
 
@@ -71,14 +71,14 @@ ms.locfileid: "71402372"
 
 Hyper-v 主機必須符合下列 AD 模式的必要條件：
 
--   **硬體**：能夠從 Windows Server 2016 開始執行 Hyper-v 的任何伺服器。 初始部署需要一部主機。 若要測試受防護 Vm 的 Hyper-v 即時移轉，您至少需要兩部主機。
+-   **硬體**：任何能夠從 Windows server 2016 開始執行 hyper-v 的伺服器。 初始部署需要一部主機。 若要測試受防護 Vm 的 Hyper-v 即時移轉，您至少需要兩部主機。
 
--   **作業系統**:Windows Server 2016 Datacenter edition
+-   **作業系統**： Windows Server 2016 Datacenter edition
 
     > [!IMPORTANT]
     > 安裝[最新的累計更新](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
--   **角色和功能**：Hyper-v 角色和主機守護者 Hyper-v 支援功能，僅適用于 Windows Server 2016 Datacenter edition。 
+-   **角色與功能**： hyper-v 角色與主機守護者 hyper-v 支援功能（僅適用于 Windows Server 2016 Datacenter edition）。 
 
 > [!WARNING]
 > 主機守護者 Hyper-v 支援功能可啟用程式碼完整性的虛擬化保護，這可能會與某些裝置不相容。 我們強烈建議您先在實驗室中測試這項設定，再啟用此功能。 若未能這麼做，可能會造成非預期的失敗，最嚴重可能包括資料遺失或藍色畫面錯誤 (也稱為停止錯誤)。 如需詳細資訊，請參閱[相容硬體與 Windows Server 2016 虛擬化型的程式碼完整性保護](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)。
