@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407153"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371724"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>使用軟體限制原則規則
 
@@ -98,7 +98,7 @@ ms.locfileid: "71407153"
 
 #### <a name="BKMK_2"></a>啟用群組原則物件的憑證規則，而且您位於已加入網域的伺服器上
 
-1.  開啟 Microsoft Management Console (MMC)。
+1.  開啟 [Microsoft Management Console (MMC)]。
 
 2.  在 [檔案] 功能表上，按一下 [新增/移除嵌入式管理單元]，然後按一下 [新增]。
 
@@ -164,7 +164,7 @@ ms.locfileid: "71407153"
 > 您必須執行此程序，憑證規則才能生效。
 
 ### <a name="set-trusted-publisher-options"></a>設定信任的發行者選項
-有越來越多的軟體發行者及應用程式開發人員選擇使用軟體簽署，以確認其應用程式來自受信任的來源。 不過，許多使用者並不了解，或是鮮少注意與他們所安裝之應用程式相關的簽章憑證。
+有越來越多的軟體發行者及應用程式開發人員選擇使用軟體簽章，以確認其應用程式來自受信任的來源。 然而，許多使用者並不瞭解，或是鮮少注意與他們所安裝之應用程式相關的簽章憑證。
 
 憑證路徑驗證原則之 [受信任的發行者] 索引標籤中的原則設定，可讓系統管理員控制可接受哪些來自受信任之發行者的憑證。
 
@@ -180,7 +180,7 @@ ms.locfileid: "71407153"
 
 ##### <a name="to-configure-the-trusted-publishers-policy-settings-for-a-domain"></a>設定網域之受信任的發行者原則設定
 
-1.  開啟**群組原則管理**。
+1.  開啟 [群組原則管理]。
 
 2.  在主控台樹中，按兩下樹系和網域中**群組原則物件**，其中包含您想要編輯的**預設網域原則**群組原則物件（GPO）。
 
@@ -192,7 +192,7 @@ ms.locfileid: "71407153"
 
 6.  選取 [定義這些原則設定] 核取方塊後，選取您要套用的原則設定，然後按一下 [確定] 套用新設定。
 
-##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-local-computer"></a>僅允許系統管理員管理用於本機電腦程式碼簽署的憑證
+##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-local-computer"></a>僅允許系統管理員管理用於本機電腦代碼簽署的憑證
 
 1.  在 [**開始**] 畫面的 [**搜尋程式及**檔案] 或 [Windows 8] 中，于桌面上輸入， **gpedit.msc** ，然後按 enter。
 
@@ -204,9 +204,9 @@ ms.locfileid: "71407153"
 
 5.  按一下 [受信任的發行者管理] 下的 [僅允許所有的系統管理員管理受信任的發行者]，然後按一下 [確定] 套用新設定。
 
-##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>僅允許系統管理員管理用於網域程式碼簽署的憑證
+##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>僅允許系統管理員管理用於網域代碼簽署的憑證
 
-1.  開啟**群組原則管理**。
+1.  開啟 [群組原則管理]。
 
 2.  在主控台樹中，按兩下樹系和網域中的**群組原則物件**，其中包含您想要編輯的**預設網域原則**GPO。
 

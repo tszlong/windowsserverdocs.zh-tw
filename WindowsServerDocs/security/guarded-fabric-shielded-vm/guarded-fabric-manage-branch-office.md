@@ -7,15 +7,15 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403580"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371360"
 ---
 # <a name="branch-office-considerations"></a>分公司考量
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、 
+> 適用于： Windows Server 2019、Windows Server （半年通道）、 
 
 本文說明在分公司和其他遠端案例中執行受防護虛擬機器的最佳作法，其中 Hyper-v 主機可能有一段時間與 HGS 的連線能力有限。
 
@@ -24,7 +24,7 @@ ms.locfileid: "71403580"
 從 Windows Server 1709 版開始，您可以在 Hyper-v 主機上設定一組額外的主機守護者服務 Url，以便在主要 HGS 沒有回應時使用。
 這可讓您執行本機 HGS 叢集作為主伺服器，以便在本機伺服器關閉時，能夠切換回您公司資料中心的 HGS，以獲得更佳的效能。
 
-若要使用 fallback 選項，您必須設定兩部 HGS 伺服器。 他們可以執行 Windows Server 2019 或 Windows Server 2016，而且可能屬於相同或不同的叢集。 如果它們是不同的叢集，您會想要建立作業實務，以確保兩個伺服器之間的證明原則是同步的。 它們都必須能夠正確授權 Hyper-v 主機執行受防護的 Vm，並擁有啟動受防護 Vm 所需的金鑰內容。 您可以選擇在兩個叢集之間擁有一對共用加密和簽署憑證，或使用不同的憑證，並設定 HGS 受防護的 VM，以授權防護資料中的保護者（加密/簽署憑證組）文字檔.
+若要使用 fallback 選項，您必須設定兩部 HGS 伺服器。 他們可以執行 Windows Server 2019 或 Windows Server 2016，而且可能屬於相同或不同的叢集。 如果它們是不同的叢集，您會想要建立作業實務，以確保兩個伺服器之間的證明原則是同步的。 它們都必須能夠正確授權 Hyper-v 主機執行受防護的 Vm，並擁有啟動受防護 Vm 所需的金鑰內容。 您可以選擇在兩個叢集之間擁有一組共用加密和簽署憑證，或使用不同的憑證，並設定 HGS 受防護的 VM，以授權防護資料檔案中的保護者（加密/簽署憑證配對）。
 
 然後，將您的 Hyper-v 主機升級為 Windows Server 1709 版或 Windows Server 2019，然後執行下列命令：
 ```powershell

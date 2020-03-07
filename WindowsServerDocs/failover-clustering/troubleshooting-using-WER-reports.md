@@ -10,15 +10,15 @@ author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
 ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361015"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371780"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 錯誤報告疑難排解容錯移轉叢集 
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server
 
 Windows 錯誤報告（WER）是彈性的事件型意見基礎結構，其設計目的是協助高級管理員或第3層支援收集 Windows 可偵測之硬體和軟體問題的相關資訊，並向 Microsoft 報告資訊。並為使用者提供任何可用的解決方案。 此[參考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting Cmdlet 的說明和語法。
 
@@ -255,7 +255,7 @@ DynamicSig[29].Name=FailureTime
 DynamicSig[29].Value=2017//12//12-22:38:05.485
 ```
 
-由於資源無法上線，因此不會收集任何傾印，但 Windows 錯誤報告報表會收集記錄。 如果您使用 Microsoft Message Analyzer 開啟所有的 .evtx 檔案，您會看到透過系統通道、應用程式通道、容錯移轉叢集診斷通道和其他幾個查詢所收集的所有資訊 **。** 泛型通道。
+由於資源無法上線，因此不會收集任何傾印，但 Windows 錯誤報告報表會收集記錄。 如果您使用 Microsoft Message Analyzer 開啟所有 **.evtx**檔案，您會看到透過系統通道、應用程式通道、容錯移轉叢集診斷通道和一些其他一般通道，使用下列查詢所收集的所有資訊。
 
 ```powershell
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
@@ -302,7 +302,7 @@ Message Analyzer 可讓您捕獲、顯示和分析通訊協定訊息流量。 �
 
 ![依提供者分組的記錄](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-若要找出磁片失敗的原因，請流覽至 [**故障叢集/診斷**和**故障叢集/DiagnosticVerbose**] 底下的事件。 然後執行下列查詢：**EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** 。  這會提供您下列輸出：
+若要找出磁片失敗的原因，請流覽至 [**故障叢集/診斷**和**故障叢集/DiagnosticVerbose**] 底下的事件。 然後執行下列查詢： **EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** 。  這會提供您下列輸出：
 
 ![執行中記錄查詢的輸出](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
@@ -398,9 +398,9 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-我們在傾印中收集的服務和處理常式清單是由下列屬性所控制：**PS C:\Windows\system32 > （ClusterResourceType-Name 「實體磁片」）。DumpServicesSmphost**
+我們在傾印中收集的服務和處理常式清單是由下列屬性所控制： **PS C:\Windows\system32 > （ClusterResourceType-Name "實體磁片"）。DumpServicesSmphost**
 
-若要識別發生停止回應的原因，請開啟 dum 檔案。 然後執行下列查詢：**EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** 這會提供您下列輸出：
+若要識別發生停止回應的原因，請開啟 dum 檔案。 然後執行下列查詢： **EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** ，這會提供您下列輸出：
 
 ![執行中記錄查詢2的輸出](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 
