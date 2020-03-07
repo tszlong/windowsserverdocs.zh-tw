@@ -12,11 +12,11 @@ author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
 ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465552"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370622"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>我應該在 Hyper-v 中建立第1代或第2代虛擬機器嗎？
 
@@ -60,9 +60,9 @@ ms.locfileid: "77465552"
 |64位版本的 Windows|第 1 代|第 2 代|  
 |-------------------------------|----------------|----------------|  
 | Windows Server 2019 |&#10004;|&#10004;|  
-| Windows Server 2016 |&#10004;|&#10004;|  
+| Windows Server 2016 |&#10004;|&#10004;|  
 | Windows Server 2012 R2 |&#10004;|&#10004;|  
-| Windows 2012 Server |&#10004;|&#10004;|  
+| Windows Server 2012 |&#10004;|&#10004;|  
 |Windows Server 2008 R2|&#10004;| &#10006;|  
 |Windows Server 2008|&#10004;| &#10006;|  
 |Windows 10|&#10004;|&#10004;|  
@@ -253,6 +253,6 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 
 ## <a name="see-also"></a>另請參閱  
 
-- [Hyper-v 上的 Linux 和 FreeBSD 虛擬機器](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
-- [在 Hyper-v 虛擬機器上使用本機資源搭配 VMConnect](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
+- [Hyper-V 上的 Linux 和 FreeBSD 虛擬機器](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [使用 VMConnect 在 Hyper-V 虛擬機器上使用本機資源](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
 - [規劃 Windows Server 2016 中的 Hyper-v 擴充性](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)

@@ -9,15 +9,15 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 2aea6c8416a0f3af04ad6056c5d09a4d07708eaa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386649"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371790"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>建立主機金鑰並將它新增至 HGS
 
->適用於：Windows Server Standard 2012 R2
+>適用于： Windows Server 2019
 
 
 本主題涵蓋如何使用主機金鑰證明（金鑰模式）準備 Hyper-v 主機成為受防護主機。 您將建立主機金鑰組（或使用現有的憑證），並將金鑰的公用部分新增至 HGS。
