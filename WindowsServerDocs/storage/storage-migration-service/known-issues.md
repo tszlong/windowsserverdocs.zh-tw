@@ -3,17 +3,17 @@ title: 儲存體遷移服務的已知問題
 description: 儲存體遷移服務的已知問題和疑難排解支援，例如如何收集 Microsoft 支援服務的記錄。
 author: nedpyle
 ms.author: nedpyle
-manager: siroy
+manager: tiaascs
 ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 92742929e3826fca3cf87cb84341d3aecec0d55d
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517493"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856342"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -295,13 +295,15 @@ DFSR Debug 記錄檔：
 
 ## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>針對 Windows Server 2003 來源電腦執行清查時，發生「端點對應程式中沒有其他可用的端點」錯誤
 
-當嘗試使用[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)累計更新或更新版本修補的儲存體遷移服務 orchestrator 伺服器來執行清查時，您會收到下列錯誤：
+嘗試對 Windows Server 2003 來源電腦使用儲存體遷移服務協調器執行清查時，您會收到下列錯誤：
 
     There are no more endpoints available from the endpoint mapper  
 
-若要解決此問題，請從儲存體遷移服務協調器電腦暫時卸載 KB4512534 累計更新（以及取代它的任何）。 當遷移完成時，請重新安裝最新的累計更新。  
+[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新已解決此問題。
 
-請注意，在某些情況下，卸載 KB4512534 或其取代更新可能會導致儲存體遷移服務無法再啟動。 若要解決此問題，您可以備份和刪除儲存體遷移服務資料庫：
+## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>卸載 cumulutative 更新可防止儲存體遷移服務啟動
+
+卸載 Windows Server 累積更新可能會導致儲存體遷移服務無法啟動。 若要解決此問題，您可以備份和刪除儲存體遷移服務資料庫：
 
 1.  開啟提升許可權的 cmd 提示字元，其中您是儲存體遷移服務 orchestrator 伺服器上的系統管理員成員，並執行：
 
@@ -343,7 +345,7 @@ DFSR Debug 記錄檔：
 
 這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後變更目的地叢集網路名稱和 IP，以手動執行切換要與原始來源相符的位址。 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在來源電腦上的「38% 對應網路介面已停止回應」 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>在來源電腦上的「38% 對應網路介面已停止回應」使用 DHCP 時 
 
 當嘗試在來源電腦上執行剪下時，將來源電腦設定為在一或多個網路介面上使用新的靜態（而非 DHCP） IP 位址時，剪下會停滯在「來源 comnputer 上的「38% 對應網路介面」階段 ...」而且您會在 SMS 事件記錄檔中收到下列錯誤：
 
@@ -372,13 +374,7 @@ DFSR Debug 記錄檔：
 
 如果您在 Windows 系統管理中心的 [設定轉換] 畫面上選取 [使用 DHCP]，則只有在指定新的靜態 IP 位址、子網和閘道時，才會發生此問題。 
 
-此問題是因為[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中的回歸所造成。 此問題目前有兩個解決方法：
-
-  - 切換之前：在切換前不要設定新的靜態 IP 位址，請選取 [使用 DHCP]，並確定 DHCP 領域涵蓋該子網。 SMS 會將來源電腦設定為在來源電腦介面上使用 DHCP，而將其切換為正常進行。 
-  
-  - 如果 [剪下] 已停滯，請在確定 DHCP 領域涵蓋該子網後，登入來源電腦，並在其網路介面上啟用 DHCP。 當來源電腦取得 DHCP 提供的 IP 位址時，SMS 會在正常情況下繼續進行切換。
-  
-在這兩種因應措施中，在完成之後，您就可以視需要在舊的來源電腦上設定靜態 IP 位址，並使用 DHCP 來停止。   
+[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新已解決此問題。
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比預期的重新傳輸效能慢
 
@@ -489,6 +485,48 @@ DFSR Debug 記錄檔：
  - 防火牆不允許從 Orchestrator 對來源伺服器進行遠端登入連線。
  - 來源遷移帳戶沒有連接到來源電腦的遠端登入權利。
  - 來源遷移帳戶在來源電腦的登錄中，沒有 [HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\CurrentVersion] 或 [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\] 底下的 [讀取] 許可權LanmanServer
+ 
+ ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在來源電腦上的「38% 對應網路介面已停止回應」 
+
+嘗試在來源電腦上執行剪下時，切換會停滯在來源 comnputer 上的「38% 對應網路介面」階段 ...」而且您會在 SMS 事件記錄檔中收到下列錯誤：
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/11/2020 8:51:14 AM
+    Event ID:      20505
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      nedwardo.contosocom
+    Description:
+    Couldn't establish a CIM session with the computer.
+
+    Computer: 172.16.10.37
+    User Name: nedwardo\MsftSmsStorMigratSvc
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+此問題是由在來源電腦上設定下列登錄值的群組原則所造成：
+
+ "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System LocalAccountTokenFilterPolicy = 0"
+ 
+這項設定不是標準群組原則的一部分，而是使用[Microsoft 安全性合規性工具](https://www.microsoft.com/download/details.aspx?id=55319)組所設定的附加元件：
+ 
+ - Windows Server 2012 R2：「電腦建構管理的 Templates\SCM：將雜湊 Mitigations\Apply UAC 限制傳遞至網路登入上的本機帳戶」
+ - 孤行伺服器2016：「電腦建構管理的 Templates\MS 安全性 Guide\Apply 在網路登入上對本機帳戶的 UAC 限制」
+ 
+您也可以使用群組原則喜好設定，搭配自訂的登錄設定。 您可以使用 GPRESULT 工具來判斷哪個原則要將此設定套用至來源電腦。
+
+儲存體遷移服務會暫時啟用[LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows)做為剪下程式的一部分，然後在完成時將其移除。 當群組原則套用衝突的群組原則物件（GPO）時，它會覆寫儲存體遷移服務並防止切換。
+
+若要解決此問題，請使用下列其中一個選項：
+
+1. 暫時將來源電腦從套用此衝突 GPO 的 Active Directory OU 中移出。 
+2. 暫時停用套用此衝突原則的 GPO。
+3. 暫時建立新的 GPO，將此設定設為停用，並套用至來源伺服器的特定 OU，其優先順序高於任何其他 Gpo。
 
 ## <a name="see-also"></a>另請參閱
 
