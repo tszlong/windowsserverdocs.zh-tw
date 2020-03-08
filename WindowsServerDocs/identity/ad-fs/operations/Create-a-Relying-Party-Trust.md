@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407641"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371486"
 ---
 # <a name="create-a-relying-party-trust"></a>建立信賴憑證者信任
 
@@ -25,7 +25,7 @@ ms.locfileid: "71407641"
 
 若要使用中的 [AD FS 管理] 嵌入式管理單元\-新增新的信賴憑證者信任，並手動設定這些設定，請在同盟伺服器上執行下列程式。  
 
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。
   
 1. 在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
   
@@ -69,7 +69,7 @@ ms.locfileid: "71407641"
 >[!NOTE]
 >雖然使用具有不合格主機名稱的憑證（例如 https://myserver）很長，但這些憑證沒有安全性價值，而且可以讓攻擊者模擬發行同盟中繼資料的同盟服務。 因此，在查詢同盟中繼資料時，您應該只使用完整功能變數名稱，例如 https://myserver.contoso.com。
 
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。
 
 
 1. 在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  

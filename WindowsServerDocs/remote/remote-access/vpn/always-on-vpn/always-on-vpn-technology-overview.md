@@ -9,18 +9,18 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.openlocfilehash: 31d0d5c12760fc627ce93972f4a70e85f61dd178
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404369"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371888"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN 技術總覽
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**處**瞭解 Always On 的 VPN 增強功能](always-on-vpn-enhancements.md)
-- [**下一個**瞭解 Always On VPN 的 advanced 功能](deploy/always-on-vpn-adv-options.md)
+- [**上一步：** 瞭解 Always On 的 VPN 增強功能](always-on-vpn-enhancements.md)
+- [**下一步：** 瞭解 Always On VPN 的 advanced 功能](deploy/always-on-vpn-adv-options.md)
 
 針對此部署，您必須安裝執行 Windows Server 2016 的新遠端存取服務器，以及修改一些部署的現有基礎結構。
 
@@ -76,7 +76,7 @@ IKEv2 是網際網路工程任務要求批註7296中所述的 VPN 通道通訊�
 
 NPS 可讓您針對連線要求驗證和授權，建立並強制執行整個組織的網路存取原則。 當您使用 NPS 做為遠端驗證撥入使用者服務（RADIUS）伺服器時，您可以設定網路存取伺服器（例如 VPN 伺服器）做為 NPS 中的 RADIUS 用戶端。
 
-您也可以設定 NPS 用來授權連線要求的網路原則，並且可以設定 RADIUS 帳戶處理，讓 NPS 將計量資訊記錄到本機硬碟上或 Microsoft SQL Server 資料庫中的記錄檔。
+您也可以設定 NPS 用來授權連線要求的網路原則，並且可以設定 RADIUS 帳戶處理，讓 NPS 將帳戶處理資訊記錄到本機硬碟上或 Microsoft SQL Server 資料庫中的記錄檔。
 
 如需詳細資訊，請參閱[網路原則伺服器（NPS）](../../../../networking/technologies/nps/nps-top.md)。
 
@@ -98,15 +98,15 @@ NPS 可讓您針對連線要求驗證和授權，建立並強制執行整個組�
 
 憑證範本可讓您發行針對所選工作預先設定的憑證，大幅簡化管理憑證授權單位單位（CA）的工作。 [憑證範本] MMC 嵌入式管理單元可讓您執行下列工作。
 
-- 查看每個憑證範本的屬性。
+- 檢視每個憑證範本的內容。
 
-- 複製和修改憑證範本。
+- 複製及修改憑證範本。
 
 - 控制哪些使用者和電腦可以讀取範本及註冊憑證。
 
 - 執行與憑證範本相關的其他管理工作。
 
-憑證範本是企業憑證授權單位單位（CA）不可或缺的一部分。 它們是環境之憑證原則的重要元素，這是一組用於憑證註冊、使用和管理的規則和格式。
+憑證範本是企業憑證授權單位 (CA) 不可缺少的部份。 它們對於環境而言是重要的憑證原則元素，而且是憑證註冊、使用及管理的規則集和格式。
 
 如需詳細資訊，請參閱[憑證範本](https://technet.microsoft.com/library/cc730705.aspx)。
 
@@ -122,7 +122,7 @@ NPS 可讓您針對連線要求驗證和授權，建立並強制執行整個組�
 
 3. 藉由將憑證金鑰與電腦網路上的電腦、使用者或裝置帳戶產生關聯，進行驗證。
 
-如需詳細資訊， [請參閱 AD CS 逐步指南：兩層 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)。
+如需詳細資訊，請參閱[AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)。
 
 ## <a name="active-directory-domain-services-ad-ds"></a>Active Directory 網域服務 (AD DS)
 
@@ -144,7 +144,7 @@ AD DS 包含使用者帳戶、電腦帳戶，以及受保護的可延伸驗證�
 
 Active Directory 使用者和電腦是 AD DS 的元件，其中包含代表實體實體的帳戶，例如電腦、個人或安全性群組。 安全性群組是使用者或電腦帳戶的集合，系統管理員可將其管理為單一單位。 屬於特定群組的使用者和電腦帳戶稱為群組成員。
 
-Active Directory 使用者和電腦中的使用者帳戶具有 NPS 在授權程式期間所評估的撥入內容-除非使用者帳戶的**網路存取權限**內容已設定為**透過 NPS 網路原則控制存取權**. 這是所有使用者帳戶的預設設定。 不過，在某些情況下，此設定可能會有不同的設定，而導致使用者無法使用 VPN 進行連接。 若要防止這種可能性，您可以設定 NPS 伺服器忽略使用者帳戶撥入內容。
+Active Directory 使用者和電腦中的使用者帳戶具有 NPS 在授權程式期間所評估的撥入內容-除非使用者帳戶的**網路存取權限**內容已設定為**透過 NPS 網路原則控制存取**。 這是所有使用者帳戶的預設設定。 不過，在某些情況下，此設定可能會有不同的設定，而導致使用者無法使用 VPN 進行連接。 若要防止這種可能性，您可以設定 NPS 伺服器忽略使用者帳戶撥入內容。
 
 如需詳細資訊，請參閱[設定 NPS 以忽略使用者帳戶撥入屬性](../../../../networking/technologies/nps/nps-np-configure.md#configure-nps-to-ignore-user-account-dial-in-properties)。
 
@@ -161,7 +161,7 @@ Active Directory 使用者和電腦中的使用者帳戶具有 NPS 在授權程�
 
 Windows 10 VPN 用戶端是可高度設定的，並提供許多選項。 為了更清楚說明此案例所使用的特定功能，[表 1] 會識別此部署所參考的 VPN 功能類別和特定設定。 您將使用此部署中稍後討論的 VPNv2 設定服務提供者（CSP），來設定這些功能的個別設定。 
 
-表 1. 此部署中討論的 VPN 功能和設定
+表 1。 此部署中討論的 VPN 功能和設定
 
 | VPN 功能     |     部署案例設定         |
 |-----------------|-----------------------------------------------|
@@ -192,20 +192,20 @@ Windows 10 提供許多 Csp，但此部署著重于使用 VPNv2 CSP 來設定 VP
 
 ## <a name="related-topics"></a>相關主題
 
-- [適用于 Microsoft Azure 虛擬機器的 Microsoft 伺服器軟體支援](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)：本文討論在 Microsoft Azure 虛擬機器環境（基礎結構即服務）中執行 Microsoft 伺服器軟體的支援原則。
+- [Microsoft Azure 虛擬機器的 microsoft 伺服器軟體支援](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)：本文討論在 Microsoft Azure 虛擬機器環境（基礎結構即服務）中執行 microsoft 伺服器軟體的支援原則。
 
-- [遠端存取](../../Remote-Access.md)：本主題提供 Windows Server 2016 中遠端存取服務器角色的總覽。
+- [遠端存取](../../Remote-Access.md)：本主題提供 Windows server 2016 中遠端存取服務器角色的總覽。
 
-- [Windows 10 VPN 技術指南](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide)：本指南將引導您完成企業 VPN 解決方案中的 Windows 10 用戶端所做的決定，以及如何設定您的部署。 本指南參考 VPNv2 設定服務提供者（CSP），並使用 Microsoft Intune 和適用于 Windows 10 的 VPN 設定檔範本，提供行動裝置管理（MDM）設定指示。
+- [Windows 10 VPN 技術指南](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide)：本指南會逐步引導您進行企業 VPN 解決方案中的 Windows 10 用戶端，以及如何設定部署的決策。 本指南參考 VPNv2 設定服務提供者（CSP），並使用 Microsoft Intune 和適用于 Windows 10 的 VPN 設定檔範本，提供行動裝置管理（MDM）設定指示。
 
 - [核心網路指南](../../../../networking/core-network-guide/Core-Network-Guide.md)：本指南提供如何在新樹系中規劃和部署全功能網路和新 Active Directory 網域所需之核心元件的指示。
 
-- [網域名稱系統（DNS）](../../../../networking/dns/dns-top.md)：本主題提供網域名稱系統（DNS）的總覽。 在 Windows Server 2016 中，DNS 是一種伺服器角色，您可以使用伺服器管理員或 Windows PowerShell 命令來安裝它。 如果您要安裝新的 Active Directory 樹系和網域，則會自動安裝 DNS，Active Directory 做為樹系和網域的全域目錄伺服器。
+- [網域名稱系統（dns）](../../../../networking/dns/dns-top.md)：本主題提供網域名稱系統（dns）的總覽。 在 Windows Server 2016 中，DNS 是一種伺服器角色，您可以使用伺服器管理員或 Windows PowerShell 命令來安裝它。 如果您要安裝新的 Active Directory 樹系和網域，則會自動安裝 DNS，Active Directory 做為樹系和網域的全域目錄伺服器。
 
 - [Active Directory 憑證服務總覽](https://technet.microsoft.com/library/hh831740.aspx)：本檔提供 Windows Server®2012中 Active Directory 憑證服務（AD CS）的總覽。 AD CS 是一種伺服器角色，可以讓您為組織建立公開金鑰基礎結構 (PKI)，並提供公開金鑰密碼編譯、數位憑證以及數位簽章功能。
 
-- [公開金鑰基礎結構設計指導](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)方針：此 wiki 提供設計公開金鑰基礎結構（Pki）的指導方針。 設定 PKI 和憑證授權單位單位（CA）階層之前，您應該瞭解組織的安全性原則和憑證實務聲明（CPS）。
+- [公開金鑰基礎結構設計指導](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)方針：此 wiki 提供有關設計公開金鑰基礎結構（pki）的指導方針。 設定 PKI 和憑證授權單位單位（CA）階層之前，您應該瞭解組織的安全性原則和憑證實務聲明（CPS）。
 
-- [AD CS 逐步指南：兩層 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：本逐步指南說明在實驗室環境中設定 Active Directory®憑證服務（AD CS）的基本設定所需的步驟。 Windows Server® 2008 R2 中的 AD CS 提供了可自訂的服務，可用來建立及管理採用公開金鑰技術的軟體安全性系統中所使用的公開金鑰憑證。
+- [AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：此逐步指南說明在實驗室環境中設定 Active Directory®憑證服務（AD CS）基本設定所需的步驟。 Windows Server® 2008 R2 中的 AD CS 提供了可自訂的服務，可用來建立及管理採用公開金鑰技術的軟體安全性系統中所使用的公開金鑰憑證。
 
-- [網路原則伺服器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主題概要說明 Windows Server 2016 中的網路原則伺服器。 網路原則伺服器 (NPS) 可讓您建立並執行全組織網路存取原則，以用於連線要求驗證與授權。
+- [網路原則伺服器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主題提供 Windows Server 2016 中網路原則伺服器的總覽。 網路原則伺服器 (NPS) 可讓您建立並執行全組織網路存取原則，以用於連線要求驗證與授權。

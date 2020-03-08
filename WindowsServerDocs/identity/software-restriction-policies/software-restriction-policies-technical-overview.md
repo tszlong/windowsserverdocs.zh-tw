@@ -14,15 +14,15 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 293239c9f746f939b06d45d6e8c1a50b59e2bc43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407132"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371726"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>軟體限制原則技術概觀
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題描述軟體限制原則、使用此功能的時機和方式、過去版本中已執行的變更，並提供其他資源的連結，協助您建立及部署從 Windows 開始的軟體限制原則。伺服器2008和 Windows Vista。
 
@@ -75,7 +75,7 @@ IT 組織和使用者必須能夠判斷哪些軟體可以安全執行，哪些�
 ## <a name="BKMK_Diffs_Changes"></a>功能的差異和變更
 Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
-**支援的版本**
+**支援版本**
 
 軟體限制原則只能在執行至少 Windows Server 2003 的電腦上設定，包括 Windows Server 2012，以及至少 Windows XP （包括 Windows 8）。
 
@@ -88,7 +88,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 |應用程式控制函式|SRP|AppLocker|
 |----------------|----|-------|
-|`Scope`|SRP 原則可以套用到從 Windows XP 和 Windows Server 2003 開始的所有 Windows 作業系統。|AppLocker 原則僅適用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 和 Windows 8。|
+|範圍|SRP 原則可以套用到從 Windows XP 和 Windows Server 2003 開始的所有 Windows 作業系統。|AppLocker 原則僅適用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 和 Windows 8。|
 |原則建立|SRP 原則會透過群組原則進行維護，而且只有 GPO 的系統管理員可以更新 SRP 原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 SRP 原則。|AppLocker 原則會透過群組原則維護，只有 GPO 的系統管理員可以更新原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 AppLocker 原則。<br /><br />AppLocker 允許自訂錯誤訊息，將使用者導向至網頁尋求協助。|
 |原則維護|SRP 原則必須使用本機安全性原則嵌入式管理單元（如果原則是在本機建立）或群組原則管理主控台（GPMC）來更新。|您可以使用本機安全性原則嵌入式管理單元（如果原則是在本機建立）、GPMC 或 Windows PowerShell AppLocker Cmdlet 來更新 AppLocker 原則。|
 |原則應用程式|SRP 原則會透過群組原則散發。|AppLocker 原則會透過群組原則散發。|
@@ -97,7 +97,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 |指定的檔案類型|SRP 支援已被視為可執行檔案類型的可擴充清單。 系統管理員可以為應該視為可執行檔的檔案新增擴充功能。|AppLocker 不支援此功能。 AppLocker 目前支援下列副檔名：<br /><br />-可執行檔（.exe、.com）<br />-Dll （.ocx、.dll）<br />-腳本（.vbs、.js、ps1、.cmd、.bat）<br />-Windows 安裝程式（.msi、.mst、.msp）<br />-已封裝的應用程式安裝程式（.appx）|
 |規則類型|SRP 支援四種類型的規則：<br /><br />-Hash<br />-Path<br />-Signature<br />-網際網路區域|AppLocker 支援三種類型的規則：<br /><br />-Hash<br />-Path<br />-發行者|
 |編輯雜湊值|SRP 可讓系統管理員提供自訂的雜湊值。|AppLocker 會計算雜湊值本身。 在內部，它會針對可移植的可執行檔（Exe 和 Dll）和 Windows 安裝程式使用 SHA1 Authenticode 雜湊，並針對其餘部分使用 SHA1 一般檔案雜湊。|
-|支援不同的安全性層級|透過 SRP 系統管理員，可以指定應用程式可以執行的許可權。 因此，系統管理員可以設定規則，讓「記事本」一律以限制許可權執行，而不使用管理許可權。<br /><br />Windows Vista 和更早版本上的 SRP 支援多個安全性層級。 在 Windows 7 上，清單僅限於兩個層級：不允許且不受限制（基本使用者會轉譯為不允許）。|AppLocker 不支援安全性層級。|
+|支援不同的安全性層級|透過 SRP 系統管理員，可以指定應用程式可以執行的許可權。 因此，系統管理員可以設定規則，讓「記事本」一律以限制許可權執行，而不使用管理許可權。<br /><br />Windows Vista 和更早版本上的 SRP 支援多個安全性層級。 在 Windows 7 上，清單僅限於兩個層級：不允許和不受限制（基本使用者會轉譯為不允許）。|AppLocker 不支援安全性層級。|
 |管理已封裝的應用程式和已封裝的應用程式安裝程式|無法|.appx 是 AppLocker 可以管理的有效檔案類型。|
 |將規則的目標設為使用者或使用者群組|SRP 規則適用于特定電腦上的所有使用者。|AppLocker 規則可以鎖定特定使用者或使用者群組。|
 |支援規則例外狀況|SRP 不支援規則例外狀況|AppLocker 規則可能有例外狀況，可讓系統管理員建立規則，例如「允許來自 Windows 的所有專案，但 Regedit.exe 除外」。|

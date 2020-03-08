@@ -8,15 +8,15 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386865"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370652"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>受防護網狀架構與受防護的 VM 概觀
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 ## <a name="overview-of-the-guarded-fabric"></a>受防護網狀架構概觀
 
@@ -34,7 +34,7 @@ ms.locfileid: "71386865"
 
 ![受防護主機網狀架構](../media/Guarded-Fabric-Shielded-VM/Guarded-Host-Overview-Diagram.png)
 
-## <a name="video-introduction-to-shielded-virtual-machines"></a>視訊：受防護的虛擬機器簡介 
+## <a name="video-introduction-to-shielded-virtual-machines"></a>影片：受防護的虛擬機器簡介 
 
 <iframe src="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016/player" width="650" height="440" allowFullScreen frameBorder="0"></iframe>
 
@@ -49,7 +49,7 @@ HGS 針對受防護網狀架構支援不同的證明模式：
 
 | **您為主機選擇的證明模式**                                            | **主機保證** |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**TPM 信任證明：** 提供最強的可能保護，但也需要更多的設定步驟。 主機硬體和固件必須包含 TPM 2.0 和 UEFI 2.3.1 （已啟用安全開機）。 | 受防護主機會根據其 TPM 身分識別、測量的開機順序和程式碼完整性原則進行核准，以確保它們只會執行核准的程式碼。| 
+|**TPM 信任證明：** 提供可能的最強保護，但也要求更多的設定步驟。 主機硬體和固件必須包含 TPM 2.0 和 UEFI 2.3.1 （已啟用安全開機）。 | 受防護主機會根據其 TPM 身分識別、測量的開機順序和程式碼完整性原則進行核准，以確保它們只會執行核准的程式碼。| 
 | **主機金鑰證明：** 旨在支援無法使用 TPM 2.0 的現有主機硬體。 需要較少的設定步驟，並與一般伺服器硬體相容。 | 受防護的主機會根據擁有金鑰來進行核准。 | 
 
 另一個名為 [系統**管理-信任證明**] 的模式從 Windows Server 2019 開始已淘汰。 此模式是以指定 Active Directory Domain Services （AD DS）安全性群組中的受防護主機成員資格為基礎。 主機金鑰證明提供類似的主機識別，並且更容易設定。 
@@ -89,7 +89,7 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 
 受防護網狀架構能夠以三種可能方式的其中之一執行 VM：
 
-1.  一般的 VM，不提供舊版本 Hyper-V 以外的保護
+1.  一般的 VM 供應項目，不提供舊版本 Hyper-V 以外的保護
 2.  支援加密的 VM，可由網狀架構系統管理員設定保護
 3.  受防護的 VM，所有的保護均會開啟，並且無法由網狀架構系統管理員停用
 
@@ -113,7 +113,7 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 
 受防護的 VM 和支援加密的 VM 皆會繼續支援一般的網狀架構管理功能，例如即時移轉、Hyper-V 複本、VM 檢查點等等。
 
-## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>主機守護者服務的運作方式：受防護的 VM 如何開啟
+## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>作用中的主機守護者服務：如何開啟受防護的 VM
 
 ![防護資料檔案](../media/Guarded-Fabric-Shielded-VM/shielded-vms-how-a-shielded-vm-is-powered-on.png)
 
@@ -125,7 +125,7 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 
     受防護主機會要求證明。 證明模式取決於「主機守護者服務」：
 
-    **TPM 信任證明**：Hyper-v 主機傳送的資訊包括：
+    **TPM 信任證明**： hyper-v 主機傳送的資訊包括：
 
        - TPM 識別資訊 (其簽署金鑰)
        - 最近開機順序期間所啟動程序的相關資訊 (TCG 記錄檔)
@@ -133,9 +133,9 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 
        Attestation happens when the host starts and every 8 hours thereafter. If for some reason a host doesn't have an attestation certificate when a VM tries to start, this also triggers attestation.
 
-    **主機金鑰證明**：Hyper-v 主機會傳送金鑰組的公用一半。 HGS 會驗證主機金鑰是否已註冊。 
+    **主機金鑰證明**： hyper-v 主機會傳送金鑰組的公用一半。 HGS 會驗證主機金鑰是否已註冊。 
     
-    系統**管理員信任的證明**：Hyper-v 主機會傳送 Kerberos 票證，以識別主機所在的安全性群組。 HGS 會驗證主機所屬的安全性群組是由受信任的 HGS 系統管理員在先前所設定。
+    **系統管理信任證明**：Hyper-V 主機會傳送 Kerberos 票證，用來識別主機所在的安全性群組。 HGS 會驗證主機所屬的安全性群組是由受信任的 HGS 系統管理員在先前所設定。
 
 3. 證明成功 (或失敗)。
 
@@ -179,6 +179,6 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 ## <a name="see-also"></a>另請參閱
 
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)
-- 日誌[資料中心和私用雲端安全性的 Blog](https://blogs.technet.microsoft.com/datacentersecurity/)
-- 視訊：[受防護的虛擬機器簡介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
-- 視訊：[使用 Windows Server 2016 Hyper-v 深入探索受防護的 Vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
+- Blog：[資料中心和私用雲端安全性 Blog](https://blogs.technet.microsoft.com/datacentersecurity/)
+- 影片：[受防護的虛擬機器簡介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
+- 影片：[使用 Windows Server 2016 Hyper-v 深入探索受防護的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
