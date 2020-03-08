@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: a1b1a5492a6e5dbc48899b3918314676884e0454
-ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74897680"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371406"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>安裝 Windows Server Essentials 記錄檔收集器
 
@@ -49,12 +49,12 @@ Windows Server Essentials 記錄檔收集器安裝精靈會將記錄檔收集器
   
 1.  開啟 [儀表板]。  
   
-2.  按一下 [增益集] 索引標籤，從清單中選取 [記錄檔收集器] ，然後按一下 [解除安裝]。  
+2.  按一下 [增益集] 索引標籤，從清單中選取 [記錄檔收集器]，然後按一下 [解除安裝]。  
   
 
-3.  執行先前的程序中的步驟 [To install the Log Collector](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)，以下載並安裝記錄檔收集器。  
+3.  執行先前的程序[安裝記錄檔收集器](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步驟以下載並安裝記錄檔收集器。  
 
-3.  執行先前的程序中的步驟 [To install the Log Collector](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)，以下載並安裝記錄檔收集器。  
+3.  執行先前的程序[安裝記錄檔收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步驟以下載並安裝記錄檔收集器。  
 
   
 ### <a name="manually-install-the-log-collector"></a>手動安裝記錄檔收集器  

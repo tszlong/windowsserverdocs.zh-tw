@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389602"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371868"
 ---
 # <a name="multipoint-services-site-planning"></a>MultiPoint 服務網站規劃
 您應該考慮將會部署一或多部執行 MultiPoint 服務之電腦及其相關聯的工作站的位置。  
@@ -116,7 +116,7 @@ LAN 用戶端沒有實體距離限制。 只要它們在 LAN 上，就可以連�
 ### <a name="downstream-hubs"></a>下游集線器  
 下游中樞會連線到站中樞，為工作站裝置新增更多可用的埠。 下游中樞可以是外部電源或匯流排驅動，視插入集線器的裝置而定。  
   
-![多個 USB 零用戶端]連線(./media/WMS_diagram4.gif "WMS_diagram4")  
+![多個 USB 零用戶端連接](./media/WMS_diagram4.gif "WMS_diagram4")  
   
 **圖 7**具有中繼中樞、站中樞和下游中樞的 MultiPoint 服務系統  
   
@@ -127,8 +127,8 @@ LAN 用戶端沒有實體距離限制。 只要它們在 LAN 上，就可以連�
 下列元件需要存取 power 帶狀或插座：  
   
 -   Server  
--   [監視]
--   中繼中樞\(（如果使用）\) 
+-   監視器
+-   中繼中樞 \(（如果使用）\) 
 -   某些 USB 零用戶端  
 -   電源上的 USB 裝置，例如一些外部存放裝置和 DVD 光碟機  
   
@@ -154,6 +154,6 @@ LAN 用戶端沒有實體距離限制。 只要它們在 LAN 上，就可以連�
   
 ![MultiPoint 服務活動中心](./media/WMSActivityCenter.gif)  
   
-**小型企業辦公室**在此設定中，執行 MultiPoint 服務的電腦會放在中央位置，而整個辦公室的使用者會使用區域網路\(LAN\)連接到該電腦。  
+**小型企業辦公室**在此設定中，執行 MultiPoint 服務的電腦會放在中央位置，而整個辦公室的使用者會使用區域網路 \(LAN\)來連接到該區域。  
   
 ![USB 極簡型用戶端連線的工作站](./media/Diagram1.gif)

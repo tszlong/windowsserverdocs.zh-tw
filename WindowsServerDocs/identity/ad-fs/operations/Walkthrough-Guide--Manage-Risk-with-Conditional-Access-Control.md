@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407466"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371660"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>逐步解說指南：使用條件式存取控制管理風險
 
@@ -66,7 +66,7 @@ ms.locfileid: "71407466"
     您將會獲得應用程式的存取權。
 
 ## <a name="BKMK_3"></a>步驟3：根據使用者資料設定條件式存取控制原則
-在這個步驟中，您將根據使用者群組成員資格資料設定存取控制原則。 換句話說，您將為代表範例應用程式 ( **claimapp** ) 的信賴憑證者信任，在同盟伺服器上設定 [發行授權規則]。 根據此規則的邏輯， **Robert Hatley** AD 使用者將會發出存取此應用程式所需的宣告，因為他屬於**財務**群組。 您已在為[Windows Server 2012 R2 中的 AD FS 設定實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中，將**Robert Hatley**帳戶新增至**財務**群組。
+在這個步驟中，您將根據使用者群組成員資格資料設定存取控制原則。 換句話說，您將為代表範例應用程式 - **claimapp** 的信賴憑證者信任，在同盟伺服器上設定 [發行授權規則]。 根據此規則的邏輯， **Robert Hatley** AD 使用者將會發出存取此應用程式所需的宣告，因為他屬於**財務**群組。 您已在為[Windows Server 2012 R2 中的 AD FS 設定實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中，將**Robert Hatley**帳戶新增至**財務**群組。
 
 您可以使用 AD FS 管理主控台或透過 Windows PowerShell 完成此工作。
 
@@ -78,7 +78,7 @@ ms.locfileid: "71407466"
 
 3.  在 [編輯 claimapp 宣告規則] 視窗中，選取 [發行授權規則] 索引標籤，然後按一下 [新增規則]。
 
-4.  在 [新增發行授權宣告規則精靈]中，選取 [選取規則範本]頁面上的 [根據連入宣告允許或拒絕使用者] 宣告規則範本，然後按 [下一步]。
+4.  在 [新增發行授權宣告規則精靈] 中，選取 [選取規則範本] 頁面上的 [根據連入宣告允許或拒絕使用者] 宣告規則範本，然後按 [下一步]。
 
 5.  在 [設定規則] 頁面上，執行下列所有動作，然後按一下 [完成]：
 
@@ -128,7 +128,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 
     此時，因為您在上一個步驟中設定的存取控制原則，所以會針對不屬於**財務**群組的此 AD 使用者顯示「拒絕存取」訊息。 預設郵件內文是**您未獲授權存取此網站。按一下這裡登出並重新登入，或洽詢您的系統管理員以取得許可權。** 。不過，您可以完全自訂這段文字內容。 如需如何自訂登入體驗的詳細資訊，請參閱＜ [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)＞。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [使用條件式存取控制管理風險](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 [在 Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

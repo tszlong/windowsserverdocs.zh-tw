@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405079"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371820"
 ---
 # <a name="multipoint--stations"></a>MultiPoint 工作站
 在 MultiPoint 服務系統內容中，*工作站*是用來連接到執行 MultiPoint 服務之電腦的使用者端點。 每個工作站會為使用者提供獨立的 Windows 10 體驗。 支援下列工作站類型：  
@@ -90,7 +90,7 @@ USB over 乙太網路的零用戶端是一種 USB 零用戶端的變化，會將
   
 **圖 3**具有 RDP over LAN 連線工作站的 MultiPoint 服務系統  
   
-## <a name="additional-configuration-options"></a>其他設定選項  
+## <a name="additional-configuration-options"></a>其他組態選項  
   
 ### <a name="split-screen-stations"></a>分割畫面工作站  
 MultiPoint 服務會在具有直接視頻連線的工作站或 USB-零用戶端連線工作站的電腦上提供分割畫面選項。 分割畫面提供每個監視器建立額外工作站的能力。 除了需要兩個監視器以外，您還可以使用一個具有兩個工作站中樞的監視器來建立具有一個監視器的兩個工作站。 您可以快速增加可用的工作站數目，而不需要購買額外的監視器、USB-零用戶端或視訊卡。  
