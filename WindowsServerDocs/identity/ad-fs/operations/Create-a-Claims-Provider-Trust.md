@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: 4539e8abd1af1eca7bacb51971e6d355bb0aab28
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407659"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371576"
 ---
 # <a name="create-a-claims-provider-trust"></a>建立宣告提供者信任
 
@@ -84,6 +84,6 @@ ms.locfileid: "71407659"
   
 [檢查清單：建立宣告提供者信任的宣告規則](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 
   
