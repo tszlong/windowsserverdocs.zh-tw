@@ -13,21 +13,21 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914688"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371169"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>使用 Windows Server Essentials 中的遠端 Web 存取
 
->適用於：Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
-  遠端 Web 存取是 Windows Server Essentials 的一項功能, 可讓您透過網頁瀏覽器, 透過網際網路連線能力存取網路上的檔案/資料夾和電腦。 
+  遠端 Web 存取是 Windows Server Essentials 的一項功能，可讓您透過網頁瀏覽器，透過網際網路連線能力存取網路上的檔案/資料夾和電腦。 
   
-  「遠端 Web 存取」可協助您在置身他處時與 Windows Server Essentials 網路保持連線。 當您登入遠端 Web 存取時, 您可以連線到 Windows Server Essentials 網路上的電腦、開啟 [儀表板] 來管理 Windows Server Essentials 網路, 以及存取伺服器上的所有共用資料夾和媒體檔案。  
+  「遠端 Web 存取」可協助您在置身他處時與 Windows Server Essentials 網路保持連線。 當您登入遠端 Web 存取時，您可以連線到 Windows Server Essentials 網路上的電腦、開啟 [儀表板] 來管理 Windows Server Essentials 網路，以及存取伺服器上的所有共用資料夾和媒體檔案。  
   
- 本主題包含下列各節：  
+ 這個主題包括下列各節：  
   
 
 -   [連接至遠端 Web 存取](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
@@ -56,28 +56,28 @@ ms.locfileid: "68914688"
 
   
 ###  <a name="BKMK_1"></a>登入遠端 Web 存取  
- 當您從本機或遠端電腦登入遠端 Web 存取時, 您可以存取執行 Windows Server Essentials 之伺服器上的資源, 以及網路上的電腦。  
+ 當您從本機或遠端電腦登入遠端 Web 存取時，您可以存取執行 Windows Server Essentials 之伺服器上的資源，以及網路上的電腦。  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>從網路電腦登入遠端 Web 存取  
   
-1.  開啟網頁瀏覽器, 在網址列中輸入**HTTPs://** _< 您伺服器名稱\>_  **/remote** , 然後按 enter。  
+1.  開啟網頁瀏覽器，在網址列中輸入**HTTPs://** _< 您伺服器名稱\>_ **/remote** ，然後按 enter 鍵。  
   
     > [!NOTE]
     >  請確定您在 HTTPs 中包含 s。  
   
-2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼, 然後按一下箭號。  
+2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼，然後按一下箭號。  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>從遠端電腦登入遠端 Web 存取  
   
-1.  開啟網頁瀏覽器, 在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_  **/remote** , 然後按 enter。  
+1.  開啟網頁瀏覽器，在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_ **/remote** ，然後按 enter 鍵。  
   
     > [!NOTE]
     >  您可以向您的網路系統管理員取得您的網域名稱資訊。 請確定您在 HTTPs 中包含 s。  
   
-2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼, 然後按一下箭號。  
+2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼，然後按一下箭號。  
   
 ###  <a name="BKMK_1.5"></a>從遠端存取您的電腦  
- 當您不在辦公室時, 您可以使用網頁瀏覽器登入遠端 Web 存取網站, 從遠端存取您的 Windows Server Essentials 儀表板、共用資料夾和網路上的電腦。  
+ 當您不在辦公室時，您可以使用網頁瀏覽器登入遠端 Web 存取網站，從遠端存取您的 Windows Server Essentials 儀表板、共用資料夾和網路上的電腦。  
   
  連線到 [儀表板] 之後，您就可以像在辦公室裡一樣管理 Windows Server Essentials。 您可以執行所有一般的系統管理工作，例如新增使用者帳戶、新增共用資料夾、設定共用資料夾存取等等。 當您連線到網路上的電腦時，您可以存取它們的桌面，就好像您置身於辦公室中坐在那些電腦前一樣。  
   
@@ -123,16 +123,16 @@ ms.locfileid: "68914688"
 -   將檔案從您的電腦上傳 (傳送) 到 Windows Server Essentials。  
   
     > [!NOTE]
-    >  您只能將檔案而不能將資料夾上傳到 [遠端 Web 存取]。 如果您想要讓伺服器上的 [共用資料夾] 擁有與您電腦上相同的檔案和資料夾階層，您必須在 [遠端 Web 存取] 中建立伺服器上的資料夾，然後將檔案上傳到您所建立的資料夾。 如需建立伺服器資料夾的相關資訊，請參閱 [Add or move a server folder](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。  
+    >  您只能將檔案而不能將資料夾上傳到 [遠端 Web 存取]。 如果您想要讓伺服器上的 [共用資料夾] 擁有與您電腦上相同的檔案和資料夾階層，您必須在 [遠端 Web 存取] 中建立伺服器上的資料夾，然後將檔案上傳到您所建立的資料夾。 如須有關建立伺服器資料夾的資訊，請參閱[新增或移動伺服器資料夾](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。  
   
 -   將檔案和資料夾從 Windows Server Essentials 下載 (接收) 到您的電腦。  
   
 -   在 Windows Server Essentials 上的共用資料夾內建立資料夾。  
   
 
--   移動、刪除及重新命名 Windows Server Essentials 上的檔案和資料夾。 如需詳細資訊, 請參閱[建立、重新命名、移動、刪除或複製遠端 Web 存取中的檔案和資料夾](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。  
+-   移動、刪除及重新命名 Windows Server Essentials 上的檔案和資料夾。 如需詳細資訊，請參閱[建立、重新命名、移動、刪除或複製遠端 Web 存取中的檔案和資料夾](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。  
 
--   移動、刪除及重新命名 Windows Server Essentials 上的檔案和資料夾。 如需詳細資訊, 請參閱[建立、重新命名、移動、刪除或複製遠端 Web 存取中的檔案和資料夾](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。  
+-   移動、刪除及重新命名 Windows Server Essentials 上的檔案和資料夾。 如需詳細資訊，請參閱[建立、重新命名、移動、刪除或複製遠端 Web 存取中的檔案和資料夾](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。  
 
   
 #### <a name="upload-files"></a>上傳檔案  
@@ -193,7 +193,7 @@ ms.locfileid: "68914688"
 > [!NOTE]
 >  只有當您要將多個檔案或資料夾下載到您的電腦時，才會有這些選項。  
   
-- **自我解壓縮的可執行檔 (.exe)**  
+- **自我解壓縮的可執行檔（.exe）**  
   
   > [!NOTE]
   >   本節適用于執行 Windows Server Essentials 的伺服器。  
@@ -203,7 +203,7 @@ ms.locfileid: "68914688"
   > [!NOTE]
   >  這個選項支援 Unicode 字元。  
   
-- **Windows 壓縮資料夾 (.zip)**  
+- **Windows 壓縮資料夾（.zip）**  
   
    壓縮檔案會建立比原始檔案小的檔案壓縮版本。 檔案的壓縮版本具有.zip 副檔名。 壓縮後縮減最多的檔案類型是文字導向的檔案類型 (例如 .txt、.doc、.xls) 和使用非壓縮檔案類型的圖形檔案 (例如 .bmp)。 有些圖形檔案 (例如 .jpg 和 .gif 檔案) 已經使用壓縮，因此壓縮後檔案大小縮減很少。 此外，包含大量圖形的 Word 文件縮減程度也不如大部份是文字的文件。  
   
@@ -252,7 +252,7 @@ ms.locfileid: "68914688"
  您可以使用「遠端 Web 存取」在您的伺服器上於現有的共用資料夾中建立新資料夾、重新命名檔案和資料夾、移動及複製檔案和資料夾，以及刪除檔案和資料夾。  
   
 > [!NOTE]
->  若要在執行 Windows Server Essentials 的伺服器上新增共用資料夾，您必須使用 [儀表板]。 若要從 [遠端的 Web 存取] 連線到伺服器主控台，請在 [電腦] 索引標籤上，按一下伺服器名稱，按一下 [連線]，然後依照指示來登入伺服器。 如需如何建立共用資料夾的相關資訊，請參閱 [Add or move a server folder](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。  
+>  若要在執行 Windows Server Essentials 的伺服器上新增共用資料夾，您必須使用 [儀表板]。 若要從 [遠端的 Web 存取] 連線到伺服器主控台，請在 [電腦] 索引標籤上，按一下伺服器名稱，按一下 [連線]，然後依照指示來登入伺服器。 如須有關如何建立共用資料夾的資訊，請參閱[新增或移動伺服器資料夾](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。  
   
 ##### <a name="to-create-a-new-folder"></a>建立新資料夾  
   
@@ -314,23 +314,23 @@ ms.locfileid: "68914688"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>從行動裝置登入遠端 Web 存取  
   
-1.  開啟網頁瀏覽器, 然後在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_  **/remote** 。  請確定您在 HTTPs 中包含 s。  
+1.  開啟網頁瀏覽器，然後在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_ **/remote** 。  請確定您在 HTTPs 中包含 s。  
   
-2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼, 然後按一下箭號。 這會將您登入行動裝置版本的「遠端 Web 存取」。  
+2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼，然後按一下箭號。 這會將您登入行動裝置版本的「遠端 Web 存取」。  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>切換到桌面版本的遠端 Web 存取  
   
-1.  開啟網頁瀏覽器, 然後在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_  **/remote** 。  請確定您在 HTTPs 中包含 s。  
+1.  開啟網頁瀏覽器，然後在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_ **/remote** 。  請確定您在 HTTPs 中包含 s。  
   
-2.  在 [遠端 Web 存取登入] 頁面上, 于文字方塊中輸入您的使用者名稱和密碼, 按一下 [**觀看桌上出版本**], 然後按一下箭號。 這會將您登入桌面版本的「遠端 Web 存取」。  
+2.  在 [遠端 Web 存取登入] 頁面上，于文字方塊中輸入您的使用者名稱和密碼，按一下 [**觀看桌上出版本**]，然後按一下箭號。 這會將您登入桌面版本的「遠端 Web 存取」。  
   
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>回到行動裝置版本的遠端 Web 存取  
   
 1. 登出。  
   
-2. 開啟網頁瀏覽器, 然後在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_ **網址列/remote/m** 。 請確定您在 HTTPs 中包含 s。  
+2. 開啟網頁瀏覽器，然後在網址列中輸入**HTTPs://** _< 您功能變數名稱\>_ **網址列/remote/m** 。 請確定您在 HTTPs 中包含 s。  
   
-3. 隨即顯示 遠端 Web 存取的行動版。 在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼, 然後按一下箭號。 您登入的是行動版的遠端 Web 存取。  
+3. 隨即顯示 遠端 Web 存取的行動版。 在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼，然後按一下箭號。 您登入的是行動版的遠端 Web 存取。  
   
    您可以搜尋伺服器上共用資料夾中的檔案和資料夾。  
   
