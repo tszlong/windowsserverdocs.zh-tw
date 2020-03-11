@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 875edcf191596d181ec0d70a83f9f3c20f5d5f4a
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385599"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261937"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID Connect/OAuth 流程和應用程式案例
 適用於 AD FS 2016 和更新版本
@@ -292,7 +292,7 @@ OAuth 2.0 代理者流程 (OBO) 可處理應用程式叫用服務/Web API，而�
 
   1. 用戶端應用程式使用權杖 A 向 API A 提出要求。  
   注意：在 AD FS 中設定 OBO 流程時，請確定已選取 `user_impersonation` 範圍，而且用戶端會在要求中建立要求的 `user_impersonation` 範圍。 
-  2. API A 會向 AD FS 權杖發行端點進行驗證，並要求存取 API B 的權杖。注意：在 AD FS 中設定此流程時，請確定 API A 也已註冊為伺服器應用程式，而 clientID 的值與 API A 中的資源識別碼相同。如需詳細資訊，請參閱這裡的「代理者」範例新增連結。  
+  2. API A 會向 AD FS 權杖發行端點進行驗證，並要求存取 API B 的權杖。注意：在 AD FS 中設定此流程時，請確定 API A 也已註冊為伺服器應用程式，而 clientID 的值與 API A 中的資源識別碼相同。
   3. AD FS 權杖發行端點會使用權杖 A 來驗證 API A 的認證，並發出 API B 的存取權杖 (權杖 B)。 
   4. 權杖 B 會在 API B 的要求授權標頭中設定。 
   5. API B 會傳回來自受保護資源的資料。 
