@@ -7,18 +7,21 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 05/07/2019
-ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 03/10/2020
+ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
+ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366088"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089347"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>延伸儲存空間直接存取中的磁碟區
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 本主題提供使用 Windows 系統管理中心調整[儲存空間直接存取](storage-spaces-direct-overview.md)叢集上磁片區大小的指示。
+
+> [!WARNING]
+> **不支援：調整儲存空間直接存取所使用的基礎儲存體大小。** 如果您執行的是虛擬化儲存環境中的儲存空間直接存取（包含在 Azure 中），則不支援調整或變更虛擬機器所使用之存放裝置的特性，而且將導致資料變成無法存取。 相反地，請遵循[新增伺服器或磁片磁碟機](add-nodes.md)一節中的指示，在擴充磁片區之前新增額外的容量。
 
 觀賞如何調整音量的快速影片。
 
@@ -50,7 +53,7 @@ ms.locfileid: "71366088"
 
 若要熟悉它們，請嘗試執行**Get-** 搭配 PowerShell 的對應名詞使用。
 
-例如:
+例如：
 
 ```PowerShell
 Get-VirtualDisk
