@@ -12,11 +12,11 @@ author: KBDAzure
 ms.author: kathydav
 ms.date: 09/21/2017
 ms.openlocfilehash: 195d78ff8de75ca9e3a88d4300bb2f52cd45632f
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371760"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322300"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 新功能
 
@@ -56,7 +56,7 @@ ms.locfileid: "78371760"
 
     如果您執行混合的作業系統環境，Windows Server 2019 現在支援在受防護的虛擬機器中執行 Ubuntu、Red Hat Enterprise Linux 和 SUSE Linux Enterprise Server。
 
-## <a name="windows-server-2016"></a>Windows Server 2016
+## <a name="windows-server-2016"></a>Windows Server 2016
 
 ### <a name="compatible-with-connected-standby-new"></a>與連線的待命相容 \(新\)
 

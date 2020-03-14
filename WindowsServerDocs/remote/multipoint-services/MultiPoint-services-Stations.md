@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371820"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322800"
 ---
 # <a name="multipoint--stations"></a>MultiPoint 工作站
 在 MultiPoint 服務系統內容中，*工作站*是用來連接到執行 MultiPoint 服務之電腦的使用者端點。 每個工作站會為使用者提供獨立的 Windows 10 體驗。 支援下列工作站類型：  

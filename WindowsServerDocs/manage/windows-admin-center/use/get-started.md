@@ -1,6 +1,6 @@
 ---
-title: Windows 管理中心入門
-description: Windows 管理中心入門
+title: 開始使用 Windows 管理中心
+description: 開始使用 Windows 管理中心
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
 ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950528"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322870"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows 管理中心
 
@@ -21,7 +21,7 @@ ms.locfileid: "75950528"
 
 > [!Tip]
 > 對 Windows Admin Center 不熟悉？
-> [深入了解 Windows Admin Center](../overview.md) 或[立即下載](https://aka.ms/windowsadmincenter).
+> [深入了解 Windows Admin Center](../overview.md) 或[立即下載](https://aka.ms/windowsadmincenter)。
 
 ## <a name="windows-admin-center-installed-on-windows-10"></a>安裝在 Windows 10 上的 windows 系統管理中心
 

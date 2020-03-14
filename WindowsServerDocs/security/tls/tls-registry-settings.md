@@ -13,15 +13,15 @@ ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
 ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403411"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322400"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>傳輸層安全性（TLS）登錄設定
 
->適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10
 
 此適用于 IT 專業人員的參考主題包含透過 Schannel 安全性支援的傳輸層安全性（TLS）通訊協定和安全通訊端層（SSL）通訊協定之 Windows 執行支援的登錄設定資訊提供者（SSP）。 本主題所涵蓋的登錄子機碼和專案可協助您管理和疑難排解安全通道 SSP，特別是 TLS 和 SSL 通訊協定。 
 
@@ -51,9 +51,9 @@ ms.locfileid: "71403411"
 3. 一對一對應 (也稱為主體/簽發者對應)
 4. 多對一對應
 
-適用的版本：指定在位於本主題開頭的 [適用於] 清單中。
+適用版本：如本主題開頭的 [**適用**于] 清單中所指定。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="ciphers"></a>加密
 
@@ -76,7 +76,7 @@ ms.locfileid: "71403411"
 
 從 Windows Server 2008 和 Windows Vista 開始，預設用戶端快取時間為10小時。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 預設用戶端快取時間
 
@@ -90,11 +90,11 @@ ms.locfileid: "71403411"
 - 需要伺服器名稱指示
 - 使用集中式憑證存放區
 
-在此情況下，TLS 交握期間的伺服器 hello 回應預設不會包含 OCSP 裝訂狀態。 此行為可改善效能：Windows OCSP 裝訂執行會調整為數百個伺服器憑證。 由於 SNI 和 CCS 可讓 IIS 擴充到數千個可能有數千個伺服器憑證的網站，因此設定此行為預設為啟用可能會導致效能問題。
+在此情況下，TLS 交握期間的伺服器 hello 回應預設不會包含 OCSP 裝訂狀態。 此行為可改善效能： Windows OCSP 裝訂的執行會調整為數百個伺服器憑證。 由於 SNI 和 CCS 可讓 IIS 擴充到數千個可能有數千個伺服器憑證的網站，因此設定此行為預設為啟用可能會導致效能問題。
 
 適用的版本：從 Windows Server 2012 和 Windows 8 開始的所有版本。 
 
-登錄路徑： [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+登錄路徑： [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
 
 新增下列機碼：
 
@@ -109,11 +109,11 @@ ms.locfileid: "71403411"
 
 ## <a name="fipsalgorithmpolicy"></a>FIPSAlgorithmPolicy
 
-此項目會控制美國聯邦資訊處理 (FIPS) 相容。 預設值為 0。
+此項目會控制美國聯邦資訊處理 (FIPS) 相容。 預設為 0。
 
 適用的版本：從 Windows Server 2012 和 Windows 8 開始的所有版本。 
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\LSA
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\LSA
 
 Windows Server FIPS 加密套件：請參閱[SCHANNEL SSP 中支援的加密套件和通訊協定](https://technet.microsoft.com/library/dn786419.aspx)。
 
@@ -125,21 +125,21 @@ TLS/SSL 雜湊演算法應該藉由設定加密套件順序來控制。 如需�
 
 此項目會控制簽發者快取大小，會與簽發者對應搭配使用。 Schannel SSP 會嘗試對應用戶端憑證鏈中的所有簽發者，而不只是用戶端憑證的直接發行者。 當簽發者未對應至帳戶時 (一般會如此)，伺服器可能會嘗試重複對應相同的簽發者名稱，每秒達數百次。 
 
-為避免此狀況，伺服器備有負快取，因此若簽發者名稱未對應至帳戶，該名稱將會新增至快取，安全通道 SSP 將不會再次嘗試對應簽發者名稱，直到快取項目到期為止。 此登錄項目會指定快取大小。 此項目依預設不存在於登錄中。 預設值是 100。 
+為避免此狀況，伺服器備有負快取，因此若簽發者名稱未對應至帳戶，該名稱將會新增至快取，安全通道 SSP 將不會再次嘗試對應簽發者名稱，直到快取項目到期為止。 此登錄項目會指定快取大小。 此項目依預設不存在於登錄中。 預設值為 100。 
 
 適用的版本：從 Windows Server 2008 和 Windows Vista 開始的所有版本。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="issuercachetime"></a>IssuerCacheTime
 
 此項目會控制快取逾時間隔的長度 (以毫秒為單位)。 Schannel SSP 會嘗試對應用戶端憑證鏈中的所有簽發者，而不只是用戶端憑證的直接發行者。 若簽發者未對應至帳戶 (一般會如此)，伺服器可能會嘗試重複對應相同的簽發者名稱，每秒達數百次。
 
-為避免此狀況，伺服器備有負快取，因此若簽發者名稱未對應至帳戶，該名稱將會新增至快取，安全通道 SSP 將不會再次嘗試對應簽發者名稱，直到快取項目到期為止。 此快取會基於效能考量而保留，使系統不會繼續嘗試對應相同的簽發者。 此項目依預設不存在於登錄中。 預設值是 10 分鐘。
+為避免此狀況，伺服器備有負快取，因此若簽發者名稱未對應至帳戶，該名稱將會新增至快取，安全通道 SSP 將不會再次嘗試對應簽發者名稱，直到快取項目到期為止。 此快取會基於效能考量而保留，使系統不會繼續嘗試對應相同的簽發者。 此項目依預設不存在於登錄中。 預設值為 [10] 分鐘。
 
 適用的版本：從 Windows Server 2008 和 Windows Vista 開始的所有版本。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="keyexchangealgorithm---client-rsa-key-sizes"></a>Asymmetricalgorithm.keyexchangealgorithm-用戶端 RSA 金鑰大小
 
@@ -149,7 +149,7 @@ TLS/SSL 雜湊演算法應該藉由設定加密套件順序來控制。 如需�
 
 已在 Windows 10 版本1507和 Windows Server 2016 中新增。
 
-登錄路徑：HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS
+登錄路徑： HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS
 
 若要針對 TLS 用戶端指定最小支援的 RSA 金鑰位長度範圍，請建立**ClientMinKeyBitLength**專案。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為所需的位長度。 如果未設定，1024位會是最小值。 
 
@@ -163,7 +163,7 @@ TLS/SSL 雜湊演算法應該藉由設定加密套件順序來控制。 如需�
 
 已在 Windows 10 版本1507和 Windows Server 2016 中新增。
 
-登錄路徑：HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman
+登錄路徑： HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman
 
 若要針對 TLS 用戶端指定 Helman 金鑰位長度的最低支援範圍，請建立**ClientMinKeyBitLength**專案。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為所需的位長度。 如果未設定，1024位會是最小值。 
  
@@ -177,7 +177,7 @@ TLS/SSL 雜湊演算法應該藉由設定加密套件順序來控制。 如需�
 
 適用的版本：從 Windows Server 2008 和 Windows Vista 開始的所有版本。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="messaging--fragment-parsing"></a>訊息-片段剖析
 
@@ -191,7 +191,7 @@ ________________________________________
 已在 Windows 7 和 Windows Server 2008 R2 中新增。
 可以使用 windows XP、Windows Vista 或 Windows Server 2008 中的 Internet Explorer 來剖析已分割的 TLS/SSL 交握訊息的更新。
 
-登錄路徑：HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Messaging
+登錄路徑： HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Messaging
 
 若要指定 TLS 用戶端會接受的分散 TLS 交握訊息的最大允許大小，請建立**MessageLimitClient**專案。 建立專案之後，請將 DWORD 值變更為所需的位長度。 如果未設定，預設值會是0x8000 個位元組。 
 
@@ -211,14 +211,14 @@ ________________________________________
 
 預設傳送信任的簽發者清單行為
 
-| Windows 版本 | Time |
+| Windows 版本 | 時間 |
 |-----------------|------|
 | Windows Server 2012 和 Windows 8 和更新版本 | FALSE |
 | Windows Server 2008 R2 和 Windows 7 和更早版本 | TRUE |
 
 適用的版本：從 Windows Server 2008 和 Windows Vista 開始的所有版本。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="servercachetime"></a>ServerCacheTime
 
@@ -226,9 +226,9 @@ ________________________________________
 
 適用的版本：從 Windows Server 2008 和 Windows Vista 開始的所有版本。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
-預設伺服器快取時間：10 小時
+預設伺服器快取時間：10小時
 
 ## <a name="ssl-20"></a>SSL 2.0
 
@@ -237,7 +237,7 @@ ________________________________________
 從 Windows 10 版本1607和 Windows Server 2016 開始，已移除 SSL 2.0，而且不再支援。
 如需 SSL 2.0 預設設定，請參閱[TLS/SSL （SCHANNEL SSP）中的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。 
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要啟用 SSL 2.0 通訊協定，請在 [用戶端] 或 [伺服器] 子機碼中建立**已啟用**的專案，如下表所述。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為1。 
 
@@ -263,7 +263,7 @@ SSL 2.0 子機碼資料表
 
 從 Windows 10 版本1607和 Windows Server 2016 開始，預設會停用 SSL 3.0。 如需 SSL 3.0 預設設定，請參閱[TLS/SSL （SCHANNEL SSP）中的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。 
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要啟用 SSL 3.0 通訊協定，請在 [用戶端] 或 [伺服器] 子機碼中建立**已啟用**的專案，如下表所述。  
 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為1。 
@@ -290,7 +290,7 @@ SSL 3.0 子機碼資料表
 
 如需 TLS 1.0 預設設定，請參閱[tls/SSL （SCHANNEL SSP）中的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要啟用 TLS 1.0 通訊協定，請在用戶端或伺服器子機碼中建立**已啟用**的專案，如下表所述。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為1。 
 
@@ -316,7 +316,7 @@ TLS 1.0 子機碼資料表
 
 如需 TLS 1.1 預設設定，請參閱[tls/SSL （SCHANNEL SSP）中的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要啟用 TLS 1.1 通訊協定，請在用戶端或伺服器子機碼中建立**已啟用**的專案，如下表所述。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為1。 
 
@@ -342,7 +342,7 @@ TLS 1.1 子機碼資料表
 
 如需 TLS 1.2 預設設定，請參閱[tls/SSL （SCHANNEL SSP）中的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要啟用 TLS 1.2 通訊協定，請在用戶端或伺服器子機碼中建立**已啟用**的專案，如下表所述。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為1。 
 
@@ -368,7 +368,7 @@ TLS 1.2 子機碼資料表
 
 如需 DTLS 1.0 預設設定，請參閱[TLS/SSL （SCHANNEL SSP）中的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要啟用 DTLS 1.0 通訊協定，請在用戶端或伺服器子機碼中建立**已啟用**的專案，如下表所述。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為1。 
 
@@ -394,7 +394,7 @@ DTLS 1.0 子機碼資料表
 
 如需 DTLS 1.2 預設設定，請參閱[TLS/SSL （SCHANNEL SSP）中的通訊協定](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-登錄路徑：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+登錄路徑： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要啟用 DTLS 1.2 通訊協定，請在用戶端或伺服器子機碼中建立**已啟用**的專案，如下表所述。 此項目依預設不存在於登錄中。 建立專案之後，請將 DWORD 值變更為1。 
 

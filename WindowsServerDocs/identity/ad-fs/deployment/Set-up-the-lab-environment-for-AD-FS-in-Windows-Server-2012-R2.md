@@ -1,6 +1,6 @@
 ---
 ms.assetid: 6b38480e-5b1c-49f0-9d46-8cf22f70f0d2
-title: 在 Windows Server 2012 R2 設定 AD FS 實驗室環境
+title: 在 Windows Server 2012 R2 設定 AD FS 實驗室環境
 description: ''
 author: billmath
 ms.author: billmath
@@ -10,13 +10,13 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: 52199ab8ca6f82443e78e72c6980746fa561363a
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371670"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323120"
 ---
-# <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 設定 AD FS 實驗室環境
+# <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 設定 AD FS 實驗室環境
 
 
 此主題概述設定測試環境以用於完成下列逐步解說指南中之逐步解說所需的步驟：

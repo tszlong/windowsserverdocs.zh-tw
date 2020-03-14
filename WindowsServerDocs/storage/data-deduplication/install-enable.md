@@ -10,11 +10,11 @@ ms.author: wgries
 ms.date: 05/09/2017
 description: 在 Windows Server 上安裝「重複資料刪除」的方式，取決於工作負載是否是不錯的「重複資料刪除」候選，並且在磁碟區上啟用「重複資料刪除」。
 ms.openlocfilehash: 36c9894fd8916643340134698f36af3bd50c34d8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402318"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322420"
 ---
 # <a name="install-and-enable-data-deduplication"></a>安裝並啟用重複資料刪除
 > 適用於 Windows Server (半年度管道)、Windows Server 2016
@@ -41,7 +41,7 @@ ms.locfileid: "71402318"
 若要在 Nano 伺服器安裝中安裝重複資料刪除︰
 
 1. 利用[開始使用 Nano 伺服器](../../get-started/getting-started-with-nano-server.md)所述的已安裝存放裝置，建立 Nano 伺服器安裝。
-2. 從執行 Nano 伺服器以外之任何模式的 Windows Server 2016 伺服器中，或從已安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520) (RSAT) 的 Windows 電腦中，將具有明確參考的重複資料刪除安裝到 Nano 伺服器執行個體上 (以 Nano 伺服器執行個體的實際名稱取代 'MyNanoServer')：  
+2. 從執行 Nano 伺服器以外之任何模式的 Windows Server 2016 伺服器中，或從已安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520) (RSAT) 的 Windows 電腦中，將具有明確參考的重複資料刪除安裝到 Nano 伺服器執行個體上 (以 Nano 伺服器執行個體的實際名稱取代 'MyNanoServer')：  
     ```PowerShell
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
@@ -59,7 +59,7 @@ ms.locfileid: "71402318"
 ### <a id="enable-dedup-candidate-workloads"></a>判斷哪些工作負載是重復資料刪除的候選項目
 重複資料刪除可透過減少重複資料所耗用的磁碟空間量，有效地將伺服器應用程式的資料消耗量成本降至最低。 啟用重複資料刪除之前，請務必了解您工作負載的特性，以確保存放裝置能夠發揮最大效能。 有兩種工作負載類別需要考量：
 
-*  「建議的工作負載」，此類別已證明同時具有能高度受益於重複資料刪除的兩個資料集，且具有與重複資料刪除之後續處理模型相容的資源耗用量模式。 建議您一律在下列的工作負載上[啟用重複資料刪除](install-enable.md#enable-dedup-lights-on)：
+* 「建議的工作負載」，此類別已證明同時具有能高度受益於重複資料刪除的兩個資料集，且具有與重複資料刪除之後續處理模型相容的資源耗用量模式。 建議您一律在下列的工作負載上[啟用重複資料刪除](install-enable.md#enable-dedup-lights-on)：
     * 提供共用的一般用途檔案伺服器 (GPFS)，例如小組共用、使用者主資料夾、工作資料夾，以及軟體開發共用。
     * 虛擬桌面基礎結構 (VDI) 伺服器。
     * 虛擬備份應用程式，例如 [Microsoft Data Protection Manager (DPM)](https://technet.microsoft.com/library/hh758173.aspx)。

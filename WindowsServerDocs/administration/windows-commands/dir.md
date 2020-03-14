@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b073b0557cd011f6742a8a8e532165f53b0a6974
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8aeb2b3b7d62ae62ba9b8fa70988cf64060673ca
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377884"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320012"
 ---
 # <a name="dir"></a>dir
 
@@ -34,7 +34,7 @@ ms.locfileid: "71377884"
 dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>]][/o[[:]<SortOrder>]] [/t[[:]<TimeField>]] [/s] [/b] [/l] [/n] [/x] [/c] [/4]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -64,7 +64,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
   **星號（\*）：** 使用星號取代任何字元字串，例如：  
   - **dir \*** 會列出目前目錄中副檔名開頭為 .txt 的所有檔案，例如 .txt、. txt1、. txt_old。
   - **dir read\*.txt**列出目前目錄中開頭為「讀取」且副檔名開頭為 .txt 的所有檔案，例如 .txt、txt1 或 txt_old。
-  - **目錄讀取\*。\\** * 會列出目前目錄中所有副檔名開頭為「讀取」的所有檔案。
+  - **目錄讀取\*。\*** 會列出目前目錄中所有副檔名開頭為「讀取」的所有檔案。
 
   星號萬用字元一律使用簡短的檔案名對應，因此您可能會收到非預期的結果。 例如，下列目錄包含兩個檔案（txt2 和 t97）： 
  

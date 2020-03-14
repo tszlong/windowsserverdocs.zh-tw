@@ -9,11 +9,11 @@ ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
 ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365844"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322330"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存放裝置的新功能
 
@@ -143,7 +143,7 @@ Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存
 
 ### <a name="smb"></a>SMB
 
-- **SMB1 與客體驗證移除**：Windows Server 預設不會再安裝 SMB1 用戶端和伺服器。 此外，在 SMB2 和更新版本中以客體身分驗證的功能也預設為關閉。 如需詳細資訊，請檢閱[在 Windows 10 版本 1709 及 Windows Server 版本 1709 中，預設不安裝 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。 
+- **Smb1 和來賓驗證移除**： Windows Server 預設不會再安裝 smb1 用戶端和伺服器。 此外，在 SMB2 和更新版本中以客體身分驗證的功能也預設為關閉。 如需詳細資訊，請檢閱[在 Windows 10 版本 1709 及 Windows Server 版本 1709 中，預設不安裝 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。 
 
 - **SMB2/SMB3 安全性與相容性**：已新增安全性及應用程式相容性的額外選項，包括可在 SMB2+ 中停用舊版應用程式 Oplocks 的功能，以及向用戶端要求對每一連線的簽署或加密。 如需詳細資訊，請檢閱 SMBShare PowerShell 模組說明。
 
@@ -152,13 +152,13 @@ Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存
 - **重複資料刪除現在支援 ReFS**：再也不必權衡新式檔案系統在 ReFS 和重複資料刪除方面的優勢，從兩者之間做出選擇：您現在只要可以啟用 ReFS，也就可以啟用重複資料刪除。 透過 ReFS 提升儲存效率，增加 95% 以上。
 - **適用於重複資料刪除磁碟區最佳化輸入/輸出的 DataPort API**：開發人員現在可以利用重複資料刪除功能關於有效率儲存資料方面的優勢，在磁碟區、伺服器和叢集之間有效率地移動資料。
 
-### <a name="file-server-resource-manager"></a>檔案伺服器資源管理員
+### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
 Windows Server 2019 包括在服務啟動時，防止檔案伺服器 Resource Manager 服務在所有磁片區上建立變更日誌（也稱為 USN 日誌）的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Windows Server （版本1803）中存放裝置的新功能
 
-### <a name="file-server-resource-manager"></a>檔案伺服器資源管理員
+### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
 Windows Server 1803 版包含在服務啟動時，防止檔案伺服器 Resource Manager 服務在所有磁片區上建立變更日誌（也稱為 USN 日誌）的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
 
@@ -173,7 +173,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 儲存體複本所新增的嚴重損壞修復保護現在已擴充為包含：
 
 - **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。 如需詳細資訊，請參閱[儲存體複本的常見問題集](https://aka.ms/srfaq)。
-- **Windows 系統管理中心支援**：透過 [伺服器管理員] 工具，Windows 管理中心現已提供複寫的圖形化管理支援。 這包括伺服器對伺服器複寫、叢集對叢集，以及延展叢集複寫。
+- **Windows 系統管理中心支援**： Windows 系統管理中心已透過伺服器管理員工具提供複寫的圖形化管理支援。 這包括伺服器對伺服器複寫、叢集對叢集，以及延展叢集複寫。
 
 儲存體複本也包含下列增強功能：
 
@@ -251,17 +251,17 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 ### <a name="dedup"></a>重復資料刪除  
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
-| [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重複資料刪除支援**最高 64 TB** 的磁碟區大小。 |
-| [大型檔案的支援](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，已完全支援**最高 1 TB** 大小的檔案。 |
-| [Nano 伺服器的支援](data-deduplication/whats-new.md#nano-server-support) | 新的 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
-| [簡化的備份支援](data-deduplication/whats-new.md#simple-backup-support) | 新的 | 在 Windows Server 2012 R2 中，虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx)) 必須透過一系列的手動設定步驟來取得支援。 在 Windows Server 2016 中，已加入新的預設使用類型 "Backup"，以無接縫地針對虛擬備份應用程式部署重複資料刪除。 |
-| [支援叢集 OS 輪流升級](data-deduplication/whats-new.md#cluster-upgrade-support) | 新的 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
+| [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重複資料刪除支援「最高 64 TB」的磁碟區大小。 |
+| [大型檔案的支援](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，已完全支援「最高 1 TB」大小的檔案。 |
+| [Nano 伺服器的支援](data-deduplication/whats-new.md#nano-server-support) | 新增 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
+| [簡化的備份支援](data-deduplication/whats-new.md#simple-backup-support) | 新增 | 在 Windows Server 2012 R2 中，虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx)) 必須透過一系列的手動設定步驟來取得支援。 在 Windows Server 2016 中，已加入新的預設使用類型 "Backup"，以無接縫地針對虛擬備份應用程式部署重複資料刪除。 |
+| [支援叢集 OS 輪流升級](data-deduplication/whats-new.md#cluster-upgrade-support) | 新增 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
 
 ### <a name="smb-hardening-improvements"></a>SYSVOL 和 NETLOGON 連線的 SMB 強化功能改進  
 在 Windows 10 和 Windows Server 2016 中，用戶端針對網域控制站上 Active Directory 網域服務之預設 SYSVOL 和 NETLOGON 共用的連線，現在需要 SMB 簽署及相互驗證 (例如 Kerberos)。   
 
 **這個變更增加了什麼價值？**  
-這項變更降低了攔截式攻擊的可能性。   
+這項變更可降低攔截式攻擊的可能性。   
 
 **有哪些不同？**  
 如果無法使用 SMB 簽署和相互驗證，Windows 10 或 Windows Server 2016 電腦將不會處理網域型的群組原則和指令碼。  
@@ -269,7 +269,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 > [!NOTE]  
 > 這些設定的登錄值預設將不會顯示，但仍會套用強化原則，直到由群組原則或其他登錄值覆寫為止。  
 
-如需這些安全性增強功能（也稱為 UNC 強化）的詳細資訊，請參閱 Microsoft 知識庫文章 [3000483](https://support.microsoft.com/kb/3000483) [和 MS15-011 & MS15-014：強化群組原則](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)。  
+如需這些安全性改進 (也稱為 UNC 強化) 的詳細資訊，請參閱 Microsoft 知識庫文章 [3000483](https://support.microsoft.com/kb/3000483) 和 [MS15-011 與 MS15-014：強化群組原則](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy) (英文)。  
 
 ### <a name="work-folders"></a>工作資料夾
 已改善當工作資料夾伺服器執行 Windows Server 2016 和工作資料夾用戶端為 Windows 10 時的變更通知。

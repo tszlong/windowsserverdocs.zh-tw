@@ -9,15 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: e26d285f1802e78b2cbf84e38407ff134e7b7035
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403231"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322390"
 ---
 # <a name="understanding-data-deduplication"></a>了解重複資料刪除
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）
 
 本文件說明[重複資料刪除](overview.md)的運作方式。
 

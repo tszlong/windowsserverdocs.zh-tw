@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371486"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323050"
 ---
 # <a name="create-a-relying-party-trust"></a>建立信賴憑證者信任
 
@@ -94,5 +94,5 @@ ms.locfileid: "78371486"
 
 
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 

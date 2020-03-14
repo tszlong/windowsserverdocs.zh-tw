@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 284131028b308ee86389f25102d934390ba2f16d
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371867"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322080"
 ---
 # <a name="hardware-requirements-and-performance-recommendations"></a>硬體需求和效能建議
 本主題描述執行 MultiPoint 服務系統所需的硬體，並支援使用者應用程式案例。 使用者案例會直接影響 CPU、RAM 和網路頻寬需求。  

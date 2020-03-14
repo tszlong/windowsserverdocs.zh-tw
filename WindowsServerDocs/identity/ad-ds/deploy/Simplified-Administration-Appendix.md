@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369637"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323240"
 ---
 # <a name="simplified-administration-appendix"></a>簡化的系統管理附錄
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
 -   [伺服器管理員新增伺服器 對話方塊（Active Directory）](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
@@ -81,7 +81,7 @@ Get-Module -ListAvailable
   
 ```  
   
-使用**import-module**命令的主要案例是當您需要存取 "AD："Windows PowerShell 虛擬磁片磁碟機和其他東西都已載入模組。 例如，使用下列命令：  
+使用**import-module**命令的主要案例是當您需要存取 "AD：" Windows PowerShell 虛擬磁片磁碟機，而沒有其他任何已載入模組的情況下。 例如，使用下列命令：  
   
 ```  
 import-module activedirectory  

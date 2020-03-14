@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390515"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323150"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虛擬網域控制站架構
 
@@ -29,7 +29,7 @@ ms.locfileid: "71390515"
 ## <a name="BKMK_CloneArch"></a>虛擬網域控制站複製架構  
   
 ### <a name="overview"></a>概觀  
-虛擬網域控制站複製依賴 Hypervisor 平台公開稱為「VM 世代識別碼」 的識別碼來偵測虛擬機器的建立。 在網域控制站升級期間，AD DS 一開始會將此識別碼的值儲存在其資料庫 (NTDS.DIT)。 當虛擬機器開機時，會比較目前來自虛擬機器之「VM 世代識別碼」的值與資料庫中的值。 如果兩個值不同，網域控制站會重設「引動過程識別碼」並捨棄 RID 集區，因此可以防止重複使用 USN 或可能會建立重複安全性主體的問題。 接著，網域控制站會在＜ [Cloning Detailed Processing](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)＞步驟 3 所述的位置中尋找 DCCloneConfig.xml 檔案。 如果發現 DCCloneConfig.xml 檔案，它會做出被部署為複本的結論，因此它會起始複製程序，使用現有的 NTDS.DIT 與從來源媒體複製的 SYSVOL 內容重新升級，將自己佈建為其他網域控制站。  
+虛擬網域控制站複製依賴 Hypervisor 平台公開稱為「VM 世代識別碼」 的識別碼來偵測虛擬機器的建立。 在網域控制站升級期間，AD DS 一開始會將此識別碼的值儲存在其資料庫 (NTDS.DIT)。 當虛擬機器開機時，會比較目前來自虛擬機器之「VM 世代識別碼」的值與資料庫中的值。 如果兩個值不同，網域控制站會重設「引動過程識別碼」並捨棄 RID 集區，因此可以防止重複使用 USN 或可能會建立重複安全性主體的問題。 接著，網域控制站會在[複製的詳細程序](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)之步驟 3 所述的位置中尋找 DCCloneConfig.xml 檔案。 如果發現 DCCloneConfig.xml 檔案，它會做出被部署為複本的結論，因此它會起始複製程序，使用現有的 NTDS.DIT 與從來源媒體複製的 SYSVOL 內容重新升級，將自己佈建為其他網域控制站。  
   
 在有些 Hypervisor 支援「VM 世代識別碼」，而有些不支援的混合環境中，可能會不小心在不支援「VM 世代識別碼」的 Hypervisor 上部署複製媒體。 DCCloneConfig.xml 檔案存在表示系統管理員意圖複製 DC。 因此，如果在開機期間發現 DCCloneConfig.xml 檔案，但主機未提供「VM 世代識別碼」，表示複製 DC 開機進入目錄服務還原模式 (DSRM)，以防止環境中的其他部分受影響。 接著，您可以將複製媒體移動到支援「VM 世代識別碼」的 Hypervisor，然後重試複製。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71390515"
   
     1.  若兩個識別碼相符合，表示這不是新的虛擬機器，且複製作業不會繼續執行。 如果 DCCloneConfig.xml 檔案存在，網域控制站會以時間日期戳記重新命名該檔案，以防止複製。 伺服器會繼續正常開機。 這是 Windows Server 2012 中的虛擬網域控制站在每次重新開機時的運作方式。  
   
-    2.  若兩個識別碼不相符，表示這是新的虛擬機器，其包含來自先前之虛擬網域控制站 (或其還原的快照) 的 NTDS.DIT。 如果 DCCloneConfig.xml 檔案存在，網域控制站會繼續執行複製操作。 如果沒有，它會繼續執行快照還原操作。 請參閱 [Virtualized domain controller safe restore architecture](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。  
+    2.  若兩個識別碼不相符，表示這是新的虛擬機器，其包含來自先前之虛擬網域控制站 (或其還原的快照) 的 NTDS.DIT。 如果 DCCloneConfig.xml 檔案存在，網域控制站會繼續執行複製操作。 如果沒有，它會繼續執行快照還原操作。 請參閱[虛擬網域控制站安全還原架構](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。  
   
     3.  若 Hypervisor 沒有提供「VM 世代識別碼」供比較，但有 DCCloneConfig.xml 檔案存在，客體會重新命名該檔案，並重新開機進入 DSRM 以避免網路上出現重複的網域控制站。 如果沒有 dccloneconfig.xml 檔案，客體會正常開機 (可能會在網路上產生重複的網域控制站)。 如需有關如何回收此重複網域控制站的詳細資訊，請參閱 Microsoft 知識庫文章 [2742970](https://support.microsoft.com/kb/2742970)。  
   
@@ -180,7 +180,7 @@ AD DS 依賴 Hypervisor 平台公開稱為「VM 世代識別碼」 的識別碼�
 > [!NOTE]  
 > 上圖經過簡化以說明概念。  
   
-1.  在時間點 T1，Hypervisor 系統管理員建立虛擬機器 DC1 的快照。 此時 DC1 的 USN 值 (實際為 **highestCommittedUsn**) 為 100、InvocationId (在上圖中以 ID 表示) 的值為 A (實務上為 GUID)。 savedVMGID 值是 DC 之 DIT 檔案中的「VM 世代識別碼」(儲存在 DC 的電腦物件中名為 **msDS-GenerationId**的屬性)。 VMGID 是目前「VM 世代識別碼」的值 (來自虛擬機器驅動程式)。 這個值是由 Hypervisor 所提供。  
+1.  在時間點 T1，Hypervisor 系統管理員建立虛擬機器 DC1 的快照。 此時 DC1 的 USN 值 (實際為**highestCommittedUsn** ) 為 100、InvocationId (在上圖中以 ID 表示) 的值為 A (實務上為 GUID)。 savedVMGID 值是 DC 之 DIT 檔案中的「VM 世代識別碼」(儲存在 DC 的電腦物件中名為 **msDS-GenerationId**的屬性)。 VMGID 是目前「VM 世代識別碼」的值 (來自虛擬機器驅動程式)。 這個值是由 Hypervisor 所提供。  
   
 2.  在稍後的時間點 T2，100 位使用者被新增至此 DC (將使用者視為在 T1 與 T2 時間點間執行更新的範例，這些更新實際上可以是使用者建立、群組建立、密碼更新、屬性更新等等的混合)。 在此範例中，每一個更新都會使用一個唯一的 USN (但實際上使用者建立可能使用多個 USN)。 認可這些更新之前，DC1 會檢查其資料庫中的「VM 世代識別碼」(savedVMGID) 與目前來自驅動程式的值 (VMGID) 是否相同。 兩個值相同 (因為尚未發生復原)，因此更新已被認可，且 USN 提升至 200，表示下次更新時可以使用 USN 201。 InvocationId、savedVMGID 或 VMGID 都沒有變更。 這些更新會在下一個複寫週期複寫至 DC2。 DC2 以 DC1 （A） @USN = 200 來更新它在這裡所表示的高水位線（和**UptoDatenessVector**）。 也就是說，DC2 知道來自 DC1 的所有更新 (透過 USN 200 的 InvocationId A 內容)。  
   

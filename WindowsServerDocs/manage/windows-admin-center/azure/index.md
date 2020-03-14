@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
 ms.openlocfilehash: b82d2eaa9283d99993102f1656262e2eda86cfff
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371750"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323320"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>將 Windows Server 連線到 Azure 混合式服務
 
@@ -80,7 +80,7 @@ ms.locfileid: "78371750"
 ### <a name="extend-compute-capacity"></a>擴充計算容量
 
 - **建立新的 Azure 虛擬機器，而不脫離 Windows Admin Center**  
-從 Windows Admin Center 內的 [所有連線] 頁面，移至 [新增]，然後在 [Azure VM] 下選取 [新建]。 您甚至可以網域加入 Azure VM，並在此逐步建立工具中設定儲存體。
+從 Windows Admin Center 內的 [所有連線]  頁面，移至 [新增]  ，然後在 [Azure VM]  下選取 [新建]  。 您甚至可以網域加入 Azure VM，並在此逐步建立工具中設定儲存體。
 
 - **透過[雲端見證](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)，利用 Azure 在容錯移轉叢集上實現仲裁**  
 您可以使用 Azure 儲存體帳戶做為 Azure Stack HCI 叢集或其他容錯移轉叢集的叢集見證，而不需要投資額外的硬體以在 2 節點叢集上實現仲裁。  

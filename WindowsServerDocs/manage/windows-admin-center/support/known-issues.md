@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
 ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822701"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322920"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -27,7 +27,7 @@ ms.locfileid: "76822701"
 
 - 不支援使用低於1024的埠。 在服務模式中，您可以選擇性地將埠80設定為重新導向至指定的埠。
 
-## <a name="general"></a>[一般]
+## <a name="general"></a>一般
 
 - 如果您將 Windows 系統管理中心安裝為**Windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含 ```Faulting application name: sme.exe``` 和 ```Faulting module name: WsmSvc.dll```的事件記錄檔中發生錯誤時損毀。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
@@ -53,7 +53,7 @@ ms.locfileid: "76822701"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果您已將 Windows 系統管理中心部署為服務，而且您使用 Microsoft Edge 作為瀏覽器，則在建立新的瀏覽器視窗之後，將閘道連線至 Azure 可能會失敗。 請嘗試在用戶端瀏覽器上新增 https://login.microsoftonline.com 、 https://login.live.com 和閘道的 URL 作為 [信任的網站] 和 [允許的網站] 快顯封鎖程式設定，以解決此問題。 如需修正此問題的詳細指引，請[參考疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果您已將 Windows 系統管理中心部署為服務，而且您使用 Microsoft Edge 作為瀏覽器，則在建立新的瀏覽器視窗之後，將閘道連線至 Azure 可能會失敗。 請嘗試在用戶端瀏覽器上新增 https://login.microsoftonline.com、 https://login.live.com和閘道的 URL 作為 [信任的網站] 和 [允許的網站] 快顯封鎖程式設定，以解決此問題。 如需修正此問題的詳細指引，請[參考疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -78,7 +78,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 > [!NOTE]
 > Windows 管理中心需要不包含在 Windows Server 2012 R2、2012或 2008 R2 中的 PowerShell 功能。 如果您要使用 Windows 系統管理中心來管理 Windows Server，您必須在這些伺服器上安裝 WMF 5.1 版或更新版本。
 
-在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF 且版本是 5.1 或更高版本。
+請在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF，且版本是 5.1 或更新版本。
 
 如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
@@ -104,7 +104,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
   - 若要解決此問題，請在閘道電腦上以提高許可權的命令提示字元中使用下列命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>Files
+### <a name="files"></a>檔案
 
 - 尚未支援上傳或下載大型檔案。 （\~100mb 限制）[12524234]
 

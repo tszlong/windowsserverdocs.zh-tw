@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d9002a1530e114f490ddf1cfb0e5706ddec52431
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371197"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322130"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理系統健康情況
 
@@ -72,13 +72,13 @@ ms.locfileid: "78371197"
   
 - **事件記錄中的嚴重錯誤** 系統會掃描應用程式和服務記錄檔，並在報告的 [詳細資料] 區段中顯示過去 24 小時記錄的錯誤。  
   
-- **伺服器備份**報告的 [詳細資料] 區段中會顯示上一次伺服器備份的相關資訊。  
+- **伺服器備份** 報告的 [詳細資料] 區段中會顯示上一次伺服器備份的相關資訊。  
   
 - **自動啟動服務未執行** 產生報告時，如果自動啟動服務未執行，報告的 [詳細資料] 區段中將會列出這項服務的相關資訊。  
   
 - **更新** 您可以在 [詳細資料] 區段中看見伺服器和所有用戶端電腦的更新狀態。  
   
-- **存放** [詳細資料] 區段中會顯示磁碟機及其容量的清單。  
+- **儲存體** [詳細資料] 區段中會顯示磁碟機及其容量的清單。  
   
   在「健康情況報告」中，請先檢視 [摘要]，然後針對那些帶有紅色錯誤圖示或黃色警告圖示的項目，按一下同一列中的 [詳細資料] 連結，以檢視該項目的相關詳細資料。  
   
@@ -360,8 +360,8 @@ ms.locfileid: "78371197"
 |警示標題|警示影響和解決方法|  
 |-----------------|---------------------------------|  
 |「網路防火牆」的目前狀態會降低這台電腦的保護。|如果未開啟「Windows 防火牆」，未經授權的人員或軟體可能就能夠存取這台電腦。|  
-|防毒保護已關閉、未安裝或不是最新的。|如果 [防毒保護] 安全性設定已關閉或未更新，您電腦上的資料就會有風險。 [若要保護您的電腦](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Protect)，請依照下方指示的步驟執行。|  
-|間諜軟體及垃圾軟體防護已關閉、未安裝或不是最新的。|如果 [間諜軟體及垃圾軟體防護] 已關閉或未更新，您電腦上的資料就會有風險。 [若要保護您的電腦](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Protect)，請依照下方指示的步驟執行。|  
+|防毒保護已關閉、未安裝或不是最新的。|如果 [防毒保護] 安全性設定已關閉或未更新，您電腦上的資料就會有風險。 [To protect your computer](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Protect)，請依照指定的步驟進行。|  
+|間諜軟體及垃圾軟體防護已關閉、未安裝或不是最新的。|如果 [間諜軟體及垃圾軟體防護] 已關閉或未更新，您電腦上的資料就會有風險。 [To protect your computer](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Protect)，請依照指定的步驟進行。|  
 |Windows Update 已關閉。|除非開啟 Windows Update，否則您將無法享有更新項目既新穎又已修正之功能的好處。 若要開啟 Windows Update，請在 [警示檢視器] 中按一下 [開啟 Windows Update]。<br /><br /> 如果未顯示 [開啟 Windows Update] 工作，表示您沒有登入發生警示的電腦。 您必須登入發生警示的電腦，才能在 [警示檢視器] 中執行這項工作。|  
 |應該安裝重要的更新。|除非開啟 Windows Update，否則您將無法享有更新項目既新穎又已修正之功能的好處。 若要開啟 Windows Update，請在 [警示檢視器] 中按一下 [開啟 Windows Update]。<br /><br /> 如果未顯示 [開啟 Windows Update] 工作，表示您沒有登入發生警示的電腦。 您必須登入發生警示的電腦，才能在 [警示檢視器] 中執行這項工作。|  
 |重新啟動電腦以套用更新。|在套用更新之前，您無法享有更新項目既新穎又已修正之功能的好處。 請儲存您的所有資料，然後重新啟動電腦以套用更新。|  

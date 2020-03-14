@@ -9,11 +9,11 @@ ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949948"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322860"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>使用 Windows 管理中心管理超融合式基礎結構
 
@@ -92,7 +92,7 @@ ms.locfileid: "75949948"
 
 部署大約需要30–45分鐘的時間。
 
-## <a name="get-started"></a>入門
+## <a name="get-started"></a>開始使用
 
 一旦部署超融合式基礎結構之後，您就可以使用 Windows 系統管理中心來管理它。
 
@@ -135,7 +135,7 @@ ms.locfileid: "75949948"
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>管理 Windows Server 2016 和 Windows Server 2019 有何差異？
 
-可以。 適用于超融合基礎結構的 Windows 系統管理中心會接收經常更新，以改善 Windows Server 2016 和 Windows Server 2019 的體驗。 不過，某些新功能僅適用于 Windows Server 2019 –例如，用於重復資料刪除和壓縮的切換參數。
+是的。 適用于超融合基礎結構的 Windows 系統管理中心會接收經常更新，以改善 Windows Server 2016 和 Windows Server 2019 的體驗。 不過，某些新功能僅適用于 Windows Server 2019 –例如，用於重復資料刪除和壓縮的切換參數。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>我可以使用 Windows 系統管理中心來管理其他使用案例（非超融合式）的儲存空間直接存取，例如交集向外延展檔案伺服器（SoFS）或 Microsoft SQL Server？
 
@@ -161,15 +161,15 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-不。
+No。
 
 ### <a name="does-it-require-an-internet-connection"></a>是否需要網際網路連線？
 
-不。
+No。
 
 雖然 Windows 系統管理中心提供與 Microsoft Azure 雲端的強大且便利的整合，但超融合基礎結構的核心管理和監視體驗完全在內部部署。 可以在沒有網際網路連線的情況下安裝及使用。
 
-## <a name="things-to-try"></a>可以嘗試的方法
+## <a name="things-to-try"></a>要嘗試的事項
 
 如果您剛開始使用，以下是一些快速教學課程，可協助您瞭解適用于超融合式基礎結構的 Windows 系統管理中心如何組織和運作。 請執行良好的 judgement，並小心使用生產環境。 這些影片已記錄在 Windows 管理中心1804版和 Windows Server 2019 的 Insider preview 組建中。
 
@@ -286,7 +286,7 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 - [加入 Microsoft Tech 社區的 Windows 管理中心論壇](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - 推文至 `@servermgmt`
 
-### <a name="see-also"></a>請參閱
+### <a name="see-also"></a>另請參閱
 
 - [Windows Admin Center](../overview.md)
 - [儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

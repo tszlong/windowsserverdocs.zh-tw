@@ -9,15 +9,15 @@ ms.localizationpriority: medium
 ms.date: 12/02/2019
 ms.prod: windows-server
 ms.openlocfilehash: 4ce42420430e9a12dd6123ec18c9ded25abc97bb
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371683"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323540"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常見問題集
 
-> 適用于： Windows 系統管理中心、Windows 系統管理中心預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 以下是有關 Windows Admin Center 最常見問題的解答。
 
@@ -27,7 +27,7 @@ Windows Admin Center 是輕量的瀏覽器型 GUI 平台與工具組，供 IT �
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>我可以在生產環境中使用 Windows Admin Center 嗎？
 
-是的。 Windows Admin Center 已正式運作，並且已準備就緒可供廣泛使用和生產部署。 目前的平台功能及核心工具符合 Microsoft 的標準發行準則，以及我們對可用性、可靠性、效能、協助工具、安全性和採用率的品質規範。
+是。 Windows Admin Center 已正式運作，並且已準備就緒可供廣泛使用和生產部署。 目前的平台功能及核心工具符合 Microsoft 的標準發行準則，以及我們對可用性、可靠性、效能、協助工具、安全性和採用率的品質規範。
 
 [!INCLUDE [support-policy](../includes/support-policy.md)]
 
@@ -37,11 +37,11 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。 您可�
 
 ## <a name="what-versions-of-windows-server-can-i-manage-with-windows-admin-center"></a>哪些版本的 Windows Server 可以使用 Windows Admin Center 來管理？
 
-Windows Admin Center 經過最佳化，最適用於 Windows Server 2019，並且會在即將發行的 Windows Server 2019 版本中啟用重要主題：尤其是混合式雲端案例和超融合式基礎結構管理。 雖然 Windows 管理中心最適用于 Windows Server 2019，但它支援管理客戶已使用的各種版本：完全支援 Windows Server 2012 和更新版本。 另外還有用於管理 Windows Server 2008 R2 的有限功能。
+Windows Admin Center 經過最佳化，最適用於 Windows Server 2019，並且會在即將發行的 Windows Server 2019 版本中啟用重要主題：尤其是混合式雲端案例和超融合式基礎結構管理。 雖然 Windows Admin Center 最適合與 Windows Server 2019 搭配使用，但也支援管理各種客戶已經使用的版本：完全支援 Windows Server 2012 和更新版本。 另外還有用於管理 Windows Server 2008 R2 的有限功能。
 
 ## <a name="is-windows-admin-center-a-complete-replacement-for-all-traditional-in-box-and-rsat-tools"></a>Windows Admin Center 是否會完全取代所有傳統的隨附工具和 RSAT 工具？
 
-No。 Windows Admin Center 可以管理許多常見的案例，但不會完全取代所有傳統 Microsoft Management Console (MMC) 工具。 如需詳細查看 Windows Admin Center 中隨附哪些工具，請閱讀我們文件中更多有關[管理伺服器](../use/manage-servers.md)的資訊。 Windows Admin Center 在其伺服器管理員解決方案中有下列重要功能：
+不可以。 Windows Admin Center 可以管理許多常見的案例，但不會完全取代所有傳統 Microsoft Management Console (MMC) 工具。 如需詳細查看 Windows Admin Center 中隨附哪些工具，請閱讀我們文件中更多有關[管理伺服器](../use/manage-servers.md)的資訊。 Windows Admin Center 在其伺服器管理員解決方案中有下列重要功能：
 
 * 顯示資源和資源使用率
 * 憑證管理
@@ -74,7 +74,7 @@ Windows Admin Center 與 RSAT (遠端伺服器管理工具) 相輔相成，但�
 
 ## <a name="can-windows-admin-center-be-used-to-manage-the-free-microsoft-hyper-v-server"></a>是否可以使用 Windows Admin Center 來管理免費的 Microsoft Hyper-V Server？
 
-是的。 Windows Admin Center 可以用來管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
+是。 Windows Admin Center 可以用來管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>是否可以在 Windows 10 電腦上部署 Windows Admin Center？
 
@@ -94,7 +94,7 @@ Windows Admin Center 現已支援**有限的**功能來管理 Windows Server 200
 
 ## <a name="which-web-browsers-are-supported-by-windows-admin-center"></a>Windows Admin Center 支援哪些網頁瀏覽器？
 
-最新版本的 Microsoft Edge (Windows 10 版本 1709 或更新版本)、Google Chrome 和 [Microsoft Edge Insider](https://microsoftedgeinsider.com) 已在 Windows 10 上測試過並且可受到支援。 [檢視瀏覽器特有的已知問題](../support/known-issues.md#browser-specific-issues)。 其他新式網頁瀏覽器或其他平台目前未納入我們的測試矩陣，因此沒有「正式」支援。
+最新版本的 Microsoft Edge (Windows 10 版本 1709 或更新版本)、Google Chrome 和 [Microsoft Edge Insider](https://microsoftedgeinsider.com) 已在 Windows 10 上測試過並且可受到支援。 [檢視瀏覽器特有的已知問題](../support/known-issues.md#browser-specific-issues)。 其他新式網頁瀏覽器或其他平台目前未納入我們的測試矩陣，因此沒有「正式」  支援。
 
 ## <a name="how-does-windows-admin-center-handle-security"></a>Windows Admin Center 如何處理安全性？
 
@@ -127,11 +127,11 @@ Windows Admin Center 有可用的 SDK，因此讓任何人都可以撰寫自己�
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>是否可以使用 Windows Admin Center 來管理超融合式基礎結構？
 
-是的。 Windows Admin Center 支援管理執行 Windows Server 2016 或 Windows Server 2019 組建的超融合式叢集。 Windows Admin Center 中的超融合式叢集管理員解決方案先前是以預覽版提供，但現在已「正式推出」(有些新功能仍在預覽狀態)。 如需詳細資訊，請[閱讀更多有關管理超融合式基礎結構的資訊](../use/manage-hyper-converged.md)。
+是。 Windows Admin Center 支援管理執行 Windows Server 2016 或 Windows Server 2019 組建的超融合式叢集。 Windows Admin Center 中的超融合式叢集管理員解決方案先前是以預覽版提供，但現在已「正式推出」  (有些新功能仍在預覽狀態)。 如需詳細資訊，請[閱讀更多有關管理超融合式基礎結構的資訊](../use/manage-hyper-converged.md)。
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-No。 Windows Admin Center 可與 System Center 互補，但 System Center 並非必要的。 [深入了解 Windows Admin Center 和 System Center](related-management.md#system-center)。
+不可以。 Windows Admin Center 可與 System Center 互補，但 System Center 並非必要的。 [深入了解 Windows Admin Center 和 System Center](related-management.md#system-center)。
 
 ## <a name="can-windows-admin-center-replace-system-center-virtual-machine-manager-scvmm"></a>Windows Admin Center 可以取代 System Center Virtual Machine Manager (SCVMM) 嗎？
 

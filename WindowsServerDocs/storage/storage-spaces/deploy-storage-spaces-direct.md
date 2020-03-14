@@ -11,11 +11,11 @@ ms.date: 06/07/2019
 description: 使用 Windows Server 中的儲存空間直接存取，將軟體定義的存放裝置部署為超融合基礎結構或聚合式（也稱為分類式）基礎結構的逐步指示。
 ms.localizationpriority: medium
 ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371770"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323290"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
@@ -62,7 +62,7 @@ ms.locfileid: "78371770"
 - 已加入相同的網域或完全受信任的網域
 - 適用於 Hyper-V 和容錯移轉叢集的遠端伺服器管理工具 (RSAT) 和 PowerShell 模組。 RSAT 工具和 PowerShell 模組可在 Windows Server 上使用，而且可以在不安裝其他功能的情況下安裝。 您也可以在 Windows 10 管理電腦上安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。
 
-在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用 **「新增角色及功能」** 精靈完成。 在 **\[功能\]** 頁面上，選取 **\[遠端伺服器管理工具\]** ，然後選取要安裝的工具。
+在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用「新增角色及功能」精靈完成。 在 [功能] 頁面上，選取 [遠端伺服器管理工具]，然後選取要安裝的工具。
 
 進入 PS 工作階段，並使用伺服器名稱，或是您要連線之節點的 IP 位址。 當您執行此命令時，系統會提示您輸入密碼，請輸入您在設定 Windows 時指定的系統管理員密碼。
 

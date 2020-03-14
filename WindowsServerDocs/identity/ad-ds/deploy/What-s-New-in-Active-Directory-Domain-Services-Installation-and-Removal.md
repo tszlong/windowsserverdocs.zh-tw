@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947908"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323200"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 網域服務安裝和移除的新功能
 
@@ -34,7 +34,7 @@ AD DS 安裝包括下列功能：
 - **新的 AD DS 安裝包含先決條件驗證。** 任何可能出現的錯誤會在安裝開始前就先發現。 您可以在錯誤狀況發生之前就進行修正，而不用擔心會出現部分完整升級的錯誤。 例如，如果必須執行 adprep /domainprep，安裝精靈會確認使用者的權限足以執行操作。  
 - **根據最常用的升級選項順序來分組設定頁面，以更少的精靈頁面來包含相關的選項。** 這可為安裝選項提供較佳的內容。  
 - **您可以匯出包含圖形化安裝期間指定之所有選項的 Windows PowerShell 指令碼。** 在安裝或移除的最後，您可以將設定匯出到 Windows PowerShell 指令碼，以便用於自動化相同的操作。  
-- **在重新開機之前只會執行關鍵性複寫。** 新的參數允許在重新開機前複寫非關鍵性資料。 如需詳細資訊，請參閱 [ADDSDeployment cmdlet arguments](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)。  
+- **在重新開機之前只會執行關鍵性複寫。** 新的參數允許在重新開機前複寫非關鍵性資料。 如需詳細資訊，請參閱 [ADDSDeployment Cmdlet 引數](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)。  
 
 ## <a name="BKMK_ADConfigurationWizard"></a>Active Directory Domain Services Configuration Wizard
 
@@ -60,9 +60,9 @@ Windows Server 2012 版本的 adprep 可以在執行64位版本的 Windows Serve
 >   
 > Adprep.exe 不是有效的 Win32 應用程式。  
 
-![最新動向](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
+![新功能](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
 
-如需解決 Adprep.exe 傳回的其他錯誤的相關資訊，請參閱 [Known issues](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues)。  
+如需解決 Adprep.exe 傳回的其他錯誤的相關資訊，請參閱[已知問題](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues)。  
 
 ### <a name="group-membership-check-against-windows-server-2003-operations-master-roles"></a>檢查 Windows Server 2003 操作主機角色的群組成員資格
 
@@ -80,7 +80,7 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 如果執行 Adprep.exe 但沒有指定 /user 與 /userdomain 參數，而且操作主機是執行 Windows Server 2003，那麼 Adprep.exe 會連線目前登入使用者之網域中的網域控制站。 如果目前登入的使用者不是網域帳戶，Adprep.exe 就無法執行群組成員資格檢查。 如果使用了智慧卡認證，即使同時指定了 /user 與 /userdomain，Adprep.exe 還是不能執行群組成員資格檢查。  
   
-如果 Adprep 成功完成，不需要其他的動作。 如果執行期間出現存取錯誤而導致 Adprep 失敗，請提供具有正確成員資格的帳戶。 如需詳細資訊，請參閱 [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
+如果 Adprep 成功完成，不需要其他的動作。 如果執行期間出現存取錯誤而導致 Adprep 失敗，請提供具有正確成員資格的帳戶。 如需詳細資訊，請參閱[執行 Adprep.exe 及安裝 Active Directory 網域服務的認證需求](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
   
 ### <a name="syntax-for-adprep-in-windows-server-2012"></a>Windows Server 2012 中 Adprep 的語法
 
@@ -124,13 +124,13 @@ AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決�
 
 ## <a name="BKMK_SystemReqs"></a>系統需求
 
-Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。  
+Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
 
 某些功能可能會有其他的需求。 例如，虛擬網域控制站複製功能需要 PDC 模擬器執行 Windows Server 2012，以及安裝有 Hyper-v 角色的 Windows Server 2012 電腦。  
 
 ## <a name="BKMK_KnownIssues"></a>已知問題
 
-本節列出一些會影響 Windows Server 2012 中 AD DS 安裝的已知問題。 如需其他已知問題，請參閱 [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
+本節列出一些會影響 Windows Server 2012 中 AD DS 安裝的已知問題。 如需其他已知問題，請參閱[疑難排解網域控制站部署](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
 
 - 當您從遠端執行 adprep /forestprep 時，如果 Windows 防火牆封鎖 WMI 存取架構主機，則下列錯誤會被記錄到 %systemroot%\system32\debug\adprep 中的 adprep 記錄內：  
 

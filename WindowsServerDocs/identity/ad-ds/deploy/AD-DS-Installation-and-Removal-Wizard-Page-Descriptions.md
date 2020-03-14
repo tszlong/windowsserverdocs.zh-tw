@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391196"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323250"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS 安裝和移除精靈頁面說明
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題提供下列精靈頁面的控制項說明；這些精靈頁面組成了 [伺服器管理員] 中的 AD DS 伺服器角色安裝和移除。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71391196"
   
 -   建立新樹系時，必須指定樹系根網域的名稱。 樹系根功能變數名稱不可以是單一標籤（例如，它必須是 "contoso.com"，而不是 "contoso"）。 它必須使用允許的 DNS 網域命名慣例。 您可以指定國際化網域名稱 (IDN)。 如需 DNS 網域命名慣例的詳細資訊，請參閱 [KB 909264](https://support.microsoft.com/kb/909264)。  
   
--   建立新的 Active Directory 樹系時，請不要使用與外部 DNS 名稱相同的名稱。 例如，如果您的網際網路 DNS URL 是 HTTP： \//contoso .com，您必須為內部樹系選擇不同的名稱，以避免未來的相容性問題。 這個名稱必須是唯一而且不像是會用在網路流量的名稱，如 corp.contoso.com。  
+-   建立新的 Active Directory 樹系時，請不要使用與外部 DNS 名稱相同的名稱。 例如，如果您的網際網路 DNS URL 是 HTTP：\//contoso.com，您必須為您的內部樹系選擇不同的名稱，以避免未來的相容性問題。 這個名稱必須是唯一而且不像是會用在網路流量的名稱，如 corp.contoso.com。  
   
 -   在想要建立新樹系的伺服器上，您必須是該伺服器的 Administrators 群組成員。  
   
@@ -124,7 +124,7 @@ ms.locfileid: "71391196"
   
     Microsoft 建議所有的網域控制站提供 DNS 和通用類別目錄服務，以便在分散式環境中具有高可用性，這也是為什麼在建立新網域時精靈會預設啟用這些選項的原因。  
   
--   [網域控制站選項] 頁面也能讓您從樹系設定選擇適當的 Active Directory 邏輯 [站台名稱]。 它預設會選取包含最正確子網路的站台。 如果只有一個站台，就會自動選取該站台。  
+-   [網域控制站選項] 頁面也能讓您從樹系設定選擇適當的 Active Directory 邏輯 [站台名稱] 。 它預設會選取包含最正確子網路的站台。 如果只有一個站台，就會自動選取該站台。  
   
     > [!IMPORTANT]  
     > 如果伺服器不屬於 Active Directory 子網路且有一個以上的站台，則不會選取任何站台，而且會等到您從清單選擇一個站台後，[下一步] 按鈕才可以使用。  
@@ -160,7 +160,7 @@ ms.locfileid: "71391196"
   
 父系網域與升級之子網域之間的委派，可以在安裝前或安裝後建立及驗證。 由於您無法建立或更新 DNS 委派，因此沒有必要推遲安裝新網域控制站。  
   
-如需委派的詳細資訊，請參閱[瞭解區域委派](https://go.microsoft.com/fwlink/?LinkId=164773)（ https://go.microsoft.com/fwlink/?LinkId=164773) 。 如果在您的情況下無法建立區域委派，可以考慮其他方法，從其他網域將名稱解析提供到您網域內的主機。 例如，其他網域的 DNS 系統管理員可以設定條件性轉送、虛設常式區域或次要區域，以解析網域中的名稱。 如需詳細資訊，請參閱下列主題：  
+如需委派的詳細資訊，請參閱[瞭解區域委派](https://go.microsoft.com/fwlink/?LinkId=164773)（ https://go.microsoft.com/fwlink/?LinkId=164773)。 如果在您的情況下無法建立區域委派，可以考慮其他方法，從其他網域將名稱解析提供到您網域內的主機。 例如，其他網域的 DNS 系統管理員可以設定條件性轉送、虛設常式區域或次要區域，以解析網域中的名稱。 如需詳細資訊，請參閱下列主題：  
   
 -   [瞭解區欄位型別](https://go.microsoft.com/fwlink/?LinkID=157399)（ https://go.microsoft.com/fwlink/?LinkID=157399)  
   
@@ -175,9 +175,9 @@ ms.locfileid: "71391196"
   
 -   委派的系統管理員帳戶可取得對 RODC 的本機管理權限。 這些使用者可以使用與本機電腦的系統管理員群組相同的許可權來操作。 他們不是 Domain Admins 群組的成員或網域內建的 Administrators 群組的成員。 這個選項對於委派分公司管理權卻不用釋出網域管理權限很有用。 不需要設定管理委派。 如需詳細資訊，請參閱[系統管理員角色區隔](https://technet.microsoft.com/library/cc753170(v=WS.10).aspx)。  
   
--   「密碼複寫原則」可做為存取控制清單 (ACL)。 該原則會決定是否應允許 RODC 快取密碼。 在 RODC 收到已驗證使用者或電腦登入要求之後，它會參照「密碼複寫原則」來判斷是否應該快取帳戶的密碼。 如此一來，這個相同的帳戶之後就可以更快速地登入。  
+-   密碼複寫原則可做為存取控制清單 (ACL)。 該原則會決定是否允許 RODC 快取密碼。 在 RODC 收到已驗證的使用者或電腦登入要求之後，就會依據密碼複寫原則來決定是否應該快取帳戶的密碼。 同一帳戶接著可以更有效率地執行後續登入。  
   
-    「密碼複寫原則」(PRP) 列出了密碼可以被快取的帳戶，以及明確拒絕快取其密碼的帳戶。 被允許快取的使用者和電腦帳戶清單，不表示 RODC 一定會快取這些帳戶的密碼。 例如，系統管理員可以預先指定 RODC 將會快取的任何帳戶。 透過這種方式，即使與中樞站台之間的廣域網路 (WAN) 連線中斷時，RODC 仍然可以驗證這些帳戶。  
+    「密碼複寫原則」(PRP) 列出了密碼可以被快取的帳戶，以及明確拒絕快取其密碼的帳戶。 被允許快取的使用者與電腦帳戶清單不表示 RODC 已經快取那些帳戶密碼。 例如，系統管理員可以進一步指定 RODC 將快取的任何帳戶。 這樣，RODC 可以驗證那些帳戶，即使中樞站台的 WAN 連結為離線。  
   
     沒有被允許 (包括隱含) 或拒絕的任何使用者或電腦都不能快取它們的密碼。 如果這些使用者或電腦沒有可寫入網域控制站的存取權，他們就無法存取 AD DS 提供的資源或功能。 如需 PRP 的詳細資訊，請參閱[密碼複寫原則](https://technet.microsoft.com/library/cc730883(v=ws.10).aspx)。 如需管理 PRP 的詳細資訊，請參閱[管理密碼複寫原則](https://technet.microsoft.com/library/rodc-guidance-for-administering-the-password-replication-policy(v=ws.10).aspx)。  
   
@@ -276,7 +276,7 @@ ms.locfileid: "71391196"
   
 -   通用類別目錄：使用者可能無法登入樹系中的網域。 移除通用類別目錄伺服器之前，請確定這個樹系和站台中有足夠的通用類別目錄伺服器可以服務使用者登入。 如有必要，指定另一個通用類別目錄伺服器，並使用這個新的資訊更新用戶端和應用程式。  
   
--   DNS 伺服器：儲存在 Active Directory 整合區域中的所有 DNS 資料都將遺失。 移除 AD DS 之後，這個 DNS 伺服器將無法為整合 Active Directory 的 DNS 區域執行名稱解析。 因此，建議您更新目前參照此 DNS 伺服器之 IP 位址的所有電腦的 DNS 設定，以便對新 DNS 伺服器的 IP 位址執行名稱解析。  
+-   DNS 伺服器：將遺失所有儲存於整合 Active Directory 區域的 DNS 資料。 移除 AD DS 之後，這個 DNS 伺服器將無法為整合 Active Directory 的 DNS 區域執行名稱解析。 因此，建議您更新目前參照此 DNS 伺服器之 IP 位址的所有電腦的 DNS 設定，以便對新 DNS 伺服器的 IP 位址執行名稱解析。  
   
 -   基礎結構主機：網域中的用戶端可能無法找到其他網域中的物件。 在您繼續之前，請將基礎結構主機轉移到不是通用類別目錄伺服器的網域控制站。  
   

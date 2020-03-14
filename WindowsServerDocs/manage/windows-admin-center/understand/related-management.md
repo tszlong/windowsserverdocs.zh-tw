@@ -8,11 +8,11 @@ ms.author: harowl
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371682"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323530"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center 與相關的 Microsoft 管理解決方案
 
@@ -45,6 +45,6 @@ ms.locfileid: "78371682"
 |**個別**的 2–4 節點 **HCI** 叢集的最佳化管理，整合 Hyper-V、儲存空間直接存取與 SDN|透過 SCVMM 從**裸機**部署和管理**資料中心規模**的 Hyper-V、Windows Server 叢集|
 |僅**監視 HCI**；叢集健康情況服務儲存歷程記錄。 第一方和第三方**系統管理工具擴充功能**的可延伸平台|SCOM 中的**可延伸** & **可擴充監視**平台，具有警示、通知、第三方工作負載監視、採用 SQL 的歷程記錄|
 |最簡單的**混合式**橋接；內建並使用各種 Azure 服務以進行資料保護、複寫、更新等作業|**內建**資料保護、複寫、更新 (DPM/VMM/SCCM)。 使用 Log Analytics 與服務對應的混合式整合|
-|瞭解 Windows Server 的**平臺功能**：儲存體遷移服務、儲存體複本、系統深入解析等。|**其他平臺**： ORCHESTRATOR/SMA 中的自動化。與 SCSM & 其他服務管理工具整合|
+|**突顯 Windows Server 的平台功能**：儲存體移轉服務、儲存體複本、系統深入解析等等|**其他平台**：Orchestrator/SMA 中的自動化。與 SCSM 和其他服務管理工具整合|
 
 #### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>兩者可個別提供既定的價值；搭配使用可藉由互補功能**相輔相成**。

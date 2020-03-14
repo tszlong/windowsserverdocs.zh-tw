@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 3eace9281d9fcdea5262274ac7fb20ec30d30fb4
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371199"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322280"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理遠端 Web 存取
 
@@ -292,11 +292,11 @@ ms.locfileid: "78371199"
 ###  <a name="BKMK_Prefixes"></a>選擇功能變數名稱首碼  
  網域名稱是由階層式標籤所組成。  
   
- **頂層網域延伸**是網域名稱中最右邊的標籤。 例如，在 www\.contoso.com 中，com 是頂層功能變數名稱稱延伸。  
+ **頂層網域延伸** 是網域名稱中最右邊的標籤。 例如，在 www\.contoso.com 中，com 是頂層功能變數名稱稱延伸。  
   
- **次層網域名稱**是頂層網域名稱延伸旁的標籤。 次層網域名稱通常是根據公司名稱、產品或服務來建立的。 例如，在 www\.contoso.com 中，contoso 是第二層功能變數名稱，並已針對公司名稱 Contoso 製藥進行選擇。 次層網域有時也稱為主機名稱，它會有一個關聯的 IP 位址。  
+ **次層網域名稱** 是頂層網域名稱延伸旁的標籤。 次層網域名稱通常是根據公司名稱、產品或服務來建立的。 例如，在 www\.contoso.com 中，contoso 是第二層功能變數名稱，並已針對公司名稱 Contoso 製藥進行選擇。 次層網域有時也稱為主機名稱，它會有一個關聯的 IP 位址。  
   
- **網域名稱前置碼**可識別子網域。 子網域名稱可用來識別服務、裝置或地區。 例如，Contoso Pharmaceuticals 想要讓遠端使用者可以登入「遠端 Web 存取」，但是不想要將網站提供給大眾使用，因此它們會建立一個只允許具有適當權限之使用者存取網站的子網域。 Contoso Pharmaceuticals 會設定 remote.contoso.com 做為子網域，而 remote 就是網域名稱前置碼。  
+ **網域名稱前置碼** 可識別子網域。 子網域名稱可用來識別服務、裝置或地區。 例如，Contoso Pharmaceuticals 想要讓遠端使用者可以登入「遠端 Web 存取」，但是不想要將網站提供給大眾使用，因此它們會建立一個只允許具有適當權限之使用者存取網站的子網域。 Contoso Pharmaceuticals 會設定 remote.contoso.com 做為子網域，而 remote 就是網域名稱前置碼。  
   
 > [!TIP]
 >  建議您使用預設的 **Remote** 做為您網域名稱的前置碼。  
@@ -408,7 +408,7 @@ ms.locfileid: "78371199"
 ###  <a name="BKMK_CustomizeImages"></a>自訂背景和標誌的影像  
  本節提供您可用來自訂「遠端 Web 存取」的影像相關資訊。  
   
-#### <a name="image-size"></a>映像大小  
+#### <a name="image-size"></a>影像大小  
  **標誌影像**  
   
  建議您使用 32x32 像素的標誌影像。 較大的影像會壓縮成 32x32，較小的影像則會伸展成 32x32，這可能會導致影像變形。  
