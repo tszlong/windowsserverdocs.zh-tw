@@ -12,14 +12,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370671"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323420"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -229,3 +229,11 @@ ms.locfileid: "78370671"
 | 滑鼠指標 | 以滑鼠右鍵按一下          | 使用兩指點選                                                    |
 | 滑鼠指標 | 按滑鼠右鍵並拖曳 | 使用兩指點兩下並按住，然後拖曳                         |
 | 滑鼠指標 | 滑鼠滾輪          | 使用兩指點選並按住，然後向上或向下拖曳                     |
+
+## <a name="join-the-beta-channel"></a>加入搶鮮版 (Beta) 通道
+
+如果您想要比其他人更早使用最新功能，或想要在發行新版本之前協助找出問題，則您適合使用 Beta 頻道！ 搶鮮版 (Beta) 通道也是企業系統管理員針對其環境中的使用者，驗證新版 Android 用戶端的絕佳方法。
+
+若要加入搶鮮版 (Beta)，只需同意存取預覽版並下載用戶端即可。 您會直接透過 Google Play 商店收到預覽版。
+
+[加入搶鮮版 (Beta)](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)

@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 1b2ea23e95796f6cce90a1dc90de896c2242084a
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465472"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79319992"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -164,7 +164,7 @@ Mac 的鍵盤配置與 Windows 的鍵盤配置不同。
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>支援遠端桌面閘道插入式驗證和授權
 
-Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌面閘道插入式驗證和授權，可為自訂驗證常式提供更大的彈性。 現在，您可以將此驗證模型用於 Mac 用戶端。 
+Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌面閘道插入式驗證和授權，可為自訂驗證常式提供更大的彈性。 現在，您可以在 Mac 用戶端試用此驗證模型。 
 
 > [!IMPORTANT]
 > 雖然本文的前半段有所討論，但 Windows 8.1 之前的自訂驗證和授權模型不受支援。
@@ -174,4 +174,3 @@ Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌
 
 > [!TIP]
 > 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。
-

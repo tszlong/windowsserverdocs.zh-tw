@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 7b3a75258086a73fbd618c2e8221454d7e616556
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bb2f6d7fcbf18ef9bc67534982d1a98fdc5172a1
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949991"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320032"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -37,7 +37,7 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 |     |     |
 | --- | --- |
-| ![](media/simple-icon.png)| **簡化伺服器管理** <br/> 使用現代化版本的熟悉工具 (例如伺服器管理員) 來管理您的伺服器和叢集。 安裝不到五分鐘，便可立即管理您環境中的伺服器，不需要任目標設定。 如需詳細資訊，請參閱＜[什麼是 Windows Admin Center？](understand/what-is.md)＞。 |
+| ![](media/simple-icon.png)| **簡化伺服器管理** <br/> 使用現代化版本的熟悉工具 (例如伺服器管理員) 來管理您的伺服器和叢集。 不到五分鐘即可安裝完畢，並可立即管理您環境中的伺服器，而不需要其他設定。 如需詳細資訊，請參閱＜[什麼是 Windows Admin Center？](understand/what-is.md)＞。 |
 | ![](media/future-icon.png)| **運用混合式解決方案** <br/> 與 Azure 整合可協助您選擇性地將內部部署伺服器與相關的雲端服務連接。 如需詳細資訊，請參閱＜[Azure 混合式服務](azure/index.md)＞ |
 | ![](media/secure-icon.png)| **簡化超融合式管理** <br/> 簡化 Azure Stack HCI 或 Windows Server 超融合式叢集的管理。 使用簡化的工作負載來建立和管理 VM、儲存空間直接存取磁碟區、軟體定義的網路功能等等。 如需詳細資訊，請參閱＜[使用 Windows Admin Center 來管理超融合式基礎結構](use/manage-hyper-converged.md)＞|
 

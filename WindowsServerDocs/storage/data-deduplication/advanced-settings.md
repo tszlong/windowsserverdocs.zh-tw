@@ -9,11 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403220"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322640"
 ---
 # <a name="advanced-data-deduplication-settings"></a>進階重複資料刪除設定
 
@@ -22,14 +22,14 @@ ms.locfileid: "71403220"
 本文件說明如何修改進階[重複資料刪除](overview.md)設定。 針對[建議的工作負載](install-enable.md#enable-dedup-candidate-workloads)，預設設定應已足夠。 修改這些設定的主要原因，是為了改進重複資料刪除搭配其他工作負載類型時的效能。
 
 ## <a id="modifying-job-schedules"></a>修改重復資料刪除工作排程
-[預設重複資料刪除工作排程](understand.md#job-info)是專為搭配建議的工作負載運作並盡可能不干擾工作而設計 (不包括為備份[使用類型**啟用的**「優先順序最佳化」](understand.md#usage-type-backup)工作)。 當工作負載有大型資源需求時，它可以確保工作僅在閒置時間執行，或是減少或增加允許重複資料刪除工作使用的系統資源量。
+[預設重複資料刪除工作排程](understand.md#job-info)是專為搭配建議的工作負載運作並盡可能不干擾工作而設計 (不包括為備份[使用類型**啟用的「優先順序最佳化」** ](understand.md#usage-type-backup)工作)。 當工作負載有大型資源需求時，它可以確保工作僅在閒置時間執行，或是減少或增加允許重複資料刪除工作使用的系統資源量。
 
 ### <a id="modifying-job-schedules-change-schedule"></a>變更重復資料刪除排程
 重複資料刪除工作是透過 Windows 工作排程器排程，並且可以在 Microsoft\Windows\Deduplication 路徑下檢視及編輯。 重複資料刪除包括數個可讓您輕鬆排程的 Cmdlet。
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx)會顯示目前的排程工作。
-* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx)會建立新的排程工作。
-* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx)修改現有的排程工作。
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)移除排程工作。
+* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) 可顯示目前排程的工作。
+* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) 可建立新的排程工作。
+* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) 可修改現有的排程工作。
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) 可移除排程的工作。
 
 變更重複資料刪除工作執行時間最常見的原因，是為了確保工作在非尖峰時間執行。 以下的逐步範例示範如何針對「陽光普照的一天」案例修改重複資料刪除排程：有一部超交集 Hyper-V 主機會在週末以及工作日下午 7:00 之後閒置。 為了變更排程，請使用系統管理員身分執行下列 PowerShell Cmdlet。
 
@@ -88,19 +88,19 @@ ms.locfileid: "71403220"
             <td>此值為必要，因為它是您要排定的工作類型。 在工作排定之後，您就無法變更這個值。</td>
         </tr>
         <tr>
-            <td>Priority</td>
+            <td>優先順序</td>
             <td>已排定工作的系統優先順序</td>
             <td>
                 <ul>
                     <li>高</li>
-                    <li>中等</li>
+                    <li>中</li>
                     <li>低</li>
                 </ul>
             </td>
             <td>這個值有助於系統判斷如何配置 CPU 時間。 <em>High</em> 將使用較多的 CPU 時間，<em>Low</em> 則會使用較少的 CPU 時間。</td>
         </tr>
         <tr>
-            <td>天</td>
+            <td>日</td>
             <td>排定執行工作的日子</td>
             <td>0-6 的整數陣列，代表星期幾：<ul>
                 <li>0 = 星期日</li>
@@ -114,7 +114,7 @@ ms.locfileid: "71403220"
             <td>排定的工作必須至少在其中一天執行。</td>
         </tr>
         <tr>
-            <td>Cores</td>
+            <td>核心</td>
             <td>工作應使用系統上之核心的百分比</td>
             <td>整數 0-100 (表示百分比)</td>
             <td>控制工作將對系統上的計算資源產生的影響程度</td>
@@ -126,7 +126,7 @@ ms.locfileid: "71403220"
             <td>防止工作負載&#39;的非閒置時間</td>
         </tr>
         <tr>
-            <td>啟用</td>
+            <td>已啟用</td>
             <td>是否將執行工作</td>
             <td>True/false</td>
             <td>停用工作而不移除工作</td>
@@ -152,7 +152,7 @@ ms.locfileid: "71403220"
         <tr>
             <td>名稱</td>
             <td>已排程工作的名稱</td>
-            <td>字串</td>
+            <td>String</td>
             <td>工作必須有可唯一識別的名稱。</td>
         </tr>
         <tr>
@@ -162,7 +162,7 @@ ms.locfileid: "71403220"
             <td>您可以手動還原位於磁碟損壞區段的檔案。</td>
         </tr>
         <tr>
-            <td>開始時間</td>
+            <td>啟動</td>
             <td>指定工作應該開始的時間</td>
             <td><code>System.DateTime</code></td>
             <td>提供給<em>開始</em>之 <code>System.Datetime</code> 的&#39;<em>日期</em>部分無關（前提是它是在過去），但時間部分會指定工作應該開始的<em>時機</em>。</td>

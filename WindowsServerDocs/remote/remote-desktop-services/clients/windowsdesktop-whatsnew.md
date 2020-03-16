@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 02/25/2020
+ms.date: 03/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f435892f0a200056c08094cac1831c710a47a6be
-ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
+ms.openlocfilehash: 981a9071b3f5daf1ca97dcde8a8b32b2a2588d99
+ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77608792"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038061"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -31,7 +31,21 @@ ms.locfileid: "77608792"
 |使用者群組 |版本  |
 |-----------|---------|
 |公用     |1.2.675  |
-|Insider    |1.2.675  |
+|Insider    |1.2.787  |
+
+## <a name="updates-for-version-12787"></a>1\.2.787 版的更新
+
+*發行日期：2020/03/10*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qZVh)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qXhC)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qRVA)
+
+- 為了與其他遠端桌面用戶端保持一致，已將工作區的「更新」動作重新命名為「重新整理」。
+- 您現在可以直接從其操作功能表重新整理工作區。
+- 立即手動重新整理工作區，可確保所有本機內容都會更新。
+- 您現在可以從 [關於] 頁面重設用戶端的使用者資料，而不需要將應用程式解除安裝。
+- 您也可以使用 msrdcw.exe /reset 搭配選用的 /f 參數來重設用戶端的使用者資料，以略過提示。
+- 現在，當我們瀏覽至 [關於] 頁面時，會自動尋找用戶端更新。
+- 更新了按鈕色彩以保持一致性。
 
 ## <a name="updates-for-version-12675"></a>1\.2.675 版的更新
 
