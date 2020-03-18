@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ee8c0203be25b30f173b1887de506844d5b58738
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 90f5b670744b812769164a7a2c70fc673fe4089f
+ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406913"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79432447"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center 擴充功能
 
@@ -27,10 +27,10 @@ Windows Admin Center 擴充功能是使用新式 Web 技術 (包括 HTML5、CSS�
 
 以下是開發 Windows 管理中心延伸模組時，您可以帶入產品和客戶的價值：
 
-- **與 Windows 管理中心工具整合：** 將您的產品與服務與 Windows 管理中心的伺服器和叢集管理工具整合，為您的客戶提供統一且順暢的端對端監視、管理和疑難排解體驗。
-- **利用平臺安全性、身分識別和管理功能：** 藉由運用 Windows 管理中心平臺功能來滿足現今的複雜需求，為您的產品和服務啟用 Azure Active Directory （AAD）支援、多重要素驗證、角色型存取控制（RBAC）、記錄、審核IT 組織。
-- **使用最新的 web 技術進行開發：** 使用現代化的 web 技術，包括 HTML5、CSS、角度、TypeScript 和 jQuery，以及 Windows 管理中心 SDK 中豐富且功能強大的 UI 控制項，快速打造絕佳的使用者體驗。
-- **擴充產品延伸：** 成為全新 Windows 管理中心生態系統的一部分，並提供我們快速成長的客戶群，並在今年稍後利用 Windows Server 2019 上市動力。
+- **與 Windows Admin Center 工具整合：** 將您的產品及服務與 Windows Admin Center 中的伺服器及叢集管理工具整合，並將一致且順暢的端對端監視、管理及疑難排解體驗提供給您的客戶。
+- **利用平臺安全性、身分識別和管理功能：** 藉由運用 Windows 管理中心平臺功能，以符合現今 IT 組織的複雜需求，為您的產品和服務啟用 Azure Active Directory （AAD）支援、多重要素驗證、角色型存取控制（RBAC）、記錄、審核。
+- **使用最新的 Web 技術進行開發：** 使用新式 Web 技術 (包括 HTML5、CSS、Angular、TypeScript 和 jQuery)，以及 Windows Admin Center SDK 中包含的豐富強大的 UI 控制項，快速建置精彩體驗。
+- **擴展產品推廣範圍：** 將業務拓展到我們快速成長的客戶群，成為新興 Windows Admin Center 生態系統的一部分，並趁勢掌握今年稍後時間將推出 Windows Server 2019 的市場動向。
 
 ## <a name="start-developing-with-the-windows-admin-center-sdk"></a>使用 Windows Admin Center SDK 開始進行開發
 
@@ -85,9 +85,3 @@ DataON 必須擴充功能，將監視、管理和端對端深入解析帶入以 
 QCT 管理套件延伸模組提供實體伺服器監視和管理功能，可供 QCT Azure Stack HCI 認證系統使用，以補充 Windows 系統管理中心。 QCT 管理套件延伸模組會顯示伺服器硬體資訊，並提供直覺的 wizard UI，協助您有效率地更換實體磁片、硬體事件記錄檔工具和 S.M.A.R.T。 以預測性磁片管理為基礎。 [深入瞭解 QCT 管理套件延伸](case-studies/qct.md)模組。
 
 ![QCT 延伸模組](../media/extensibility-overview/qct-extension.png)
-
-### <a name="squared-up"></a>Squared Up
-
-Squared Up 提供以 System Center Operations Manager 為基礎且與 Azure 記錄分析、Application Insights 及其他監視解決方案整合的同等級最佳監控體驗。 [Squared Up 擴充功能](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-docs&utm_medium=public-relations&utm_campaign=honolulu)將歷史效能資料和即時應用程式拓撲與相依性帶進 Windows Admin Center 所提供的伺服器及叢集管理內容中，而其可使許多來自相異來源的龐大資料形成單一體驗的實用價值已備受早期採用客戶的讚譽。 [深入了解 Squared Up 的擴充功能及其開發經驗](case-studies/squared-up.md)。
-
-![Squared Up 擴充功能](../media/extensibility-overview/squaredup-extension.png)
