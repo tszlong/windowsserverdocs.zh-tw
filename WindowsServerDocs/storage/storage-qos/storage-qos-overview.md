@@ -8,16 +8,16 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ed7d7ca4f41784f2ae12220eb2e30077e2467175
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950089"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518743"
 ---
 # <a name="storage-quality-of-service"></a>存放裝置服務品質
 
-> 適用於：Windows Server (半年通道)、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
 Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，以使用 Hyper-V 與向外延展檔案伺服器角色來集中監視和管理虛擬機器的存放裝置效能。 此功能會使用相同的檔案伺服器叢集，自動改善多個虛擬機器之間存放裝置資源的公平性，並允許使用已標準化的 IOPS 來設定以原則為基礎的最小和最大效能目標。  
 
@@ -31,7 +31,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 本文件概述企業如何從新的存放裝置 QoS 功能中受益。 本文件假設您先前已具備使用 Windows Server、Windows Server 容錯移轉叢集、向外延展檔案伺服器、Hyper-V 和 Windows PowerShell 的知識。
 
-## <a name="BKMK_Overview"></a>概觀  
+## <a name="BKMK_Overview"></a>簡要  
 本節說明使用存放裝置 QoS 的需求、使用存放裝置 QoS 的軟體定義解決方案概觀，以及一份存放裝置 QoS 相關術語的清單。  
 
 ### <a name="BKMK_Requirements"></a>存放裝置 QoS 需求  
@@ -68,18 +68,18 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 ### <a name="BKMK_Glossary"></a>詞彙  
 
-|詞彙|說明|  
+|詞彙|描述|  
 |--------|---------------|  
 |標準化的 IOPS|所有的存放裝置使用量都是以「標準化的 IOPS」來測量。  這是存放裝置每秒輸入/輸出作業的計數。  任何等於或小於 8 KB 的 IO 都會被視為一個標準化的 IO。  任何大於 8 KB 的 IO 都會被視為多個標準化的 IO。 例如，256 KB 的要求會被視為 32 個標準化的 IOPS。<br /><br />Windows Server 2016 讓您能夠指定要用來將 IO 標準化的大小。  在存放裝置叢集上，可以指定標準化的大小，並在整個標準化計算叢集中生效。  預設值會維持 8 KB。|  
 |流程|每個由 Hyper-V 伺服器開啟到 VHD 或 VHDX 檔案的檔案控制代碼都會被視為一個「流程」。 如果一個虛擬機器連接了兩個虛擬硬碟，則每個檔案中都會有 1 個連至檔案伺服器叢集的流程。 如果 VHDX 會與多個虛擬機器共用，則每個虛擬機器中將會有 1 個流程。|  
 |InitiatorName|針對每個流程要對向外延展檔案伺服器報告的虛擬機器名稱。|  
 |InitiatorID|符合虛擬機器識別碼的識別碼。  這一律可用來唯一識別個別流程的虛擬機器，即使虛擬機器具有相同的 InitiatorName 也一樣。|  
-|原則|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
+|Policy(Windows Intune 說明：原則)|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
 |PolicyId|原則的唯一識別碼。  根據預設所產生，但可視需要加以指定。|  
 |MinimumIOPS|原則將提供的最小值標準化 IOPS。  也稱為「保留項目」。|  
 |MaximumIOPS|原則將限制的最大值標準化 IOPS。  也稱為「限制」。|  
 |彙總 |原則類型，指定的 MinimumIOPS 與 MaximumIOPS 和 Bandwidth 會在指派給原則的所有流程中加以共用。 在該存放系統上指派原則的所有 VHD，在它們到所有共用之間都會有單一配置的 I/O 頻寬。|  
-|Dedicated|原則類型，會針對個別 VHD/VHDx 管理指定的Minimum 與 MaximumIOPS 和 Bandwidth。|  
+|專用|原則類型，會針對個別 VHD/VHDx 管理指定的Minimum 與 MaximumIOPS 和 Bandwidth。|  
 
 ## <a name="BKMK_SetUpQoS"></a>如何設定存放裝置 QoS 和監視基本效能  
 本節說明如何啟用新的存放裝置 QoS 功能，以及如何在不套用自訂原則的情況下監視存放裝置效能。  
@@ -127,7 +127,7 @@ Windows Server 2016 中的 Hyper-V 角色具備存放裝置 QoS 的內建支援�
 本指南中所示的範例案例包含五個虛擬機器。 BuildVM1、BuildVM2、BuildVM3 和 BuildVM4 正以低到中等的儲存需求來執行桌面工作負載。 TestVm1 正以高等級的儲存需求來執行線上交易處理的效能評定。  
 
 ### <a name="view-current-storage-performance-metrics"></a>檢視目前的存放裝置效能計量  
-本節包含：  
+本節涵蓋：  
 
 -   如何使用 `Get-StorageQosFlow` Cmdlet 來查詢流程。  
 
