@@ -8,12 +8,12 @@ ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519470"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110671"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -70,7 +70,7 @@ ms.locfileid: "76519470"
 - 來源和目的地電腦必須啟用下列防火牆規則（不過您可能*已經啟用）* ：
   - 檔案及印表機共用 (SMB-In)
   - Netlogon 服務（NP-IN）
-  - Windows Management Instrumentation (DCOM-In)
+  - Windows Management Instrumentation （DCOM）
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
@@ -85,9 +85,9 @@ ms.locfileid: "76519470"
 
 - Windows Server 半年通道
 - Windows Server 2019
-- WIN ENT LTSB 2016 Finnish 64 Bits
-- Windows Server 2012 R2
-- Windows 2012 Server
+- Windows Server 2016
+- Windows Server 2012 R2
+- Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
 - Windows Server 2003 R2
@@ -124,11 +124,15 @@ ms.locfileid: "76519470"
 
 - Windows Server 半年通道
 - Windows Server 2019
-- WIN ENT LTSB 2016 Finnish 64 Bits
-- Windows Server 2012 R2
+- Windows Server 2016
+- Windows Server 2012 R2
 
 > [!TIP]
 > 執行 Windows Server 2019 或 Windows Server、半年通道或更新版本的目的地伺服器，具有舊版 Windows Server 的兩倍傳輸效能。 這種效能提升的原因是包含內建的儲存體遷移服務 proxy 服務，這也會開啟必要的防火牆埠（如果尚未開啟）。
+
+## <a name="azure-vm-migration"></a>Azure VM 遷移
+
+Windows Admin Center 1910 版可讓您部署 Azure 虛擬機器。 這會將 VM 部署整合到儲存體遷移服務。 不要在部署您的工作負載之前以手動方式在 Azure 入口網站中建立新的伺服器和 Vm，而是可能遺失必要的步驟和設定-Windows 管理中心可以部署 Azure VM、設定其儲存體、將其加入您的網域、安裝角色，以及然後設定您的分散式系統。 
 
 ## <a name="whats-new-in-storage-migration-service"></a>儲存體遷移服務的新功能
 
@@ -140,7 +144,7 @@ ms.locfileid: "76519470"
 - 使用 Azure 檔案同步，更輕鬆地同步已遷移至 Azure 的共用
 - 遷移新的網路，例如 Azure
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [使用儲存體遷移服務遷移檔案伺服器](migrate-data.md)
 - [儲存體遷移服務常見問題（FAQ）](faq.md)
