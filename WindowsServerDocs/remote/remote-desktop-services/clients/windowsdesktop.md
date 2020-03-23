@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 03/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1753780474332a6d5786a5804fc1b4fe5e3d8883
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 8b7aefa169fe2121c5a2da1f913714d23d989d16
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889432"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518733"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>開始使用 Windows 桌面用戶端
 
@@ -134,5 +134,6 @@ ms.locfileid: "76889432"
 
 若要擷取用戶端記錄：
 
-1. 開啟 [檔案總管]  。
-2. 導覽至 **%temp%\DiagOutputDir\RdClientAutoTrace** 資料夾。
+1. 以滑鼠右鍵按一下系統匣中的 [遠端桌面]  圖示，然後選取 [中斷所有工作階段的連線]  ，以確定沒有作用中的工作階段，且用戶端處理序並未在背景中執行。
+2. 開啟 [檔案總管]  。
+3. 導覽至 **%temp%\DiagOutputDir\RdClientAutoTrace** 資料夾。
