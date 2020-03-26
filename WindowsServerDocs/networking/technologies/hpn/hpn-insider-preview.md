@@ -9,19 +9,19 @@ ms.date: 09/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7098e81f486a5b0b4974c19b47e2d48c6f98832b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bca603344047ea5cc890bf9976ca5a6c79514136
+ms.sourcegitcommit: 9feb093a0acb8834c9ef3c066667c7062d85e6e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355370"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80289793"
 ---
-# <a name="insider-preview"></a>Insider Preview
+# <a name="new-hpn-features-in-windows-server-2019"></a>Windows Server 2019 中的新 HPN 功能
 
 
 ## <a name="dynamic-vrss-and-vmmq"></a>動態 vRSS 和 VMMQ
 
->適用於：Windows Server Standard 2012 R2
+>適用于： Windows Server 2019
 
 在過去，虛擬機器佇列和虛擬機器多佇列已啟用個別 Vm 的輸送量更高，因為網路輸送量第一次達到10GbE 標記和更遠。 可惜的是，成功所需的規劃、基準化、微調和監視變得很大，通常不只是 IT 系統管理員想要花費的。 
 
@@ -35,7 +35,7 @@ Windows Server 2019 藉由動態散佈和微調網路工作負載的處理，來
 
 ## <a name="receive-segment-coalescing-rsc-in-the-vswitch"></a>在 vSwitch 中接收區段聯合 (RSC)
 
->適用於：Windows Server 2019 和 Windows 10，版本1809
+>適用于： Windows Server 2019 和 Windows 10，版本1809
 
 VSwitch 中的接收區段聯合（RSC）是一項增強功能，可在資料通過 vSwitch 之前，將多個 TCP 區段合併成較大的區段。 大型區段可改善虛擬工作負載的網路效能。
 

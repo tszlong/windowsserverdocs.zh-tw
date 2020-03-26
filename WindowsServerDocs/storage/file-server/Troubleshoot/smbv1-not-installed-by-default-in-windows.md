@@ -7,12 +7,12 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9a6e9778e0ce1e50a70e68832390321fb2d9f971
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 27869820e49257d059d124bac3f515ac91fef7b0
+ms.sourcegitcommit: 30afd51d74cb6472720fb13ec47d80cf42b20c27
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654359"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80272314"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>在 Windows 10 1709 版、Windows Server 1709 版和更新版本中，預設不會安裝 SMBv1
 
@@ -114,7 +114,7 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 > [!NOTE]
 > Windows 10 版本1709也稱為「秋季建立者更新」。   
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 若要解決此問題，請洽詢僅支援 SMBv1 的產品製造商，並要求支援 SMBv 2.02 或更新版本的軟體或固件更新。 如需目前已知的廠商清單及其 SMBv1 需求，請參閱下列 Windows 和 Windows Server Storage 工程小組的 Blog 文章： 
 
@@ -146,8 +146,22 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 如果您無法使用上述任何因應措施，或如果應用程式製造商無法提供支援的 SMB 版本，您可以遵循[如何在 Windows 中偵測、啟用和停用 SMBv1、SMBv2 和 SMBv3](detect-enable-and-disable-smbv1-v2-v3.md)中的步驟，手動重新啟用 SMBv1。
 
 > [!IMPORTANT]
-> 我們強烈建議您不要重新安裝 SMBv1。 這是因為這個較舊的通訊協定有關于勒索軟體和其他惡意程式碼的已知安全性問題。   
+> 我們強烈建議您不要重新安裝 SMBv1。 這是因為這個較舊的通訊協定有關于勒索軟體和其他惡意程式碼的已知安全性問題。  
 
-## <a name="references"></a>參考資料
+#### <a name="windows-server-best-practices-analyzer-messaging"></a>Windows Server 最佳做法分析程式訊息
+
+Windows Server 2012 和更新版本的伺服器作業系統包含適用于檔案伺服器的最佳做法分析程式（BPA）。 如果您已遵循正確的線上指引來卸載 SMB1，執行此 BPA 將會傳回矛盾的警告訊息：
+
+    Title: The SMB 1.0 file sharing protocol should be enabled
+    Severity: Warning
+    Date: 3/25/2020 12:38:47 PM
+    Category: Configuration
+    Problem: The Server Message Block 1.0 (SMB 1.0) file sharing protocol is disabled on this file server.
+    Impact: SMB not in a default configuration, which could lead to less than optimal behavior.
+    Resolution: Use Registry Editor to enable the SMB 1.0 protocol.
+
+您應該忽略此特定 BPA 規則的指導方針，其已被取代。 我們重複：不要啟用 SMB 1.0。
+
+## <a name="references"></a>參考
 
 [停止使用 SMB1](https://aka.ms/stopusingsmb1)
