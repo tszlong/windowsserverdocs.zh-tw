@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 354ae5e3-bae1-44f9-afd7-7eaba70f2346
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a2b8d7decad482ca8756aa4d82baa35abf16f5fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 513bcae13d4a8f3ab935d2bda77745baa1788fa9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404444"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313789"
 ---
 # <a name="troubleshooting-general-issues"></a>疑難排解一般問題
 
@@ -43,7 +43,7 @@ DirectAccess 無法存取部署中其中一個進入點的 GPO，因此無法載
 > [!NOTE]  
 > 當目前進入點的伺服器 GPO 無法使用時，不會發生這種情況。  
   
-您可以使用 `Get-DAEntryPointDC` Cmdlet 列出所有存放伺服器 Gpo 的網域控制站，以及與 `Get-RemoteAccess` 一起 `Get-DAMultiSite`，以取得部署中伺服器 Gpo 的完整清單。 例如：  
+您可以使用 `Get-DAEntryPointDC` Cmdlet 列出所有存放伺服器 Gpo 的網域控制站，以及與 `Get-RemoteAccess` 一起 `Get-DAMultiSite`，以取得部署中伺服器 Gpo 的完整清單。 例如，  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   

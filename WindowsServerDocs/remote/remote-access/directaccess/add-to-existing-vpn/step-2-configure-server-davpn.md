@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ee691a02df385e29bdac9656d50bc2c6d3af087
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c26f1fbcfa2d94c001579aabd6794c6537bd06f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388744"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314747"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>步驟2：設定 DirectAccess-VPN 伺服器
 
@@ -40,7 +40,7 @@ ms.locfileid: "71388744"
 
 2. 如果 wizard 不會自動啟動，請以滑鼠右鍵按一下 [路由及遠端存取] 樹狀目錄中的伺服器節點，然後按一下 [**啟用 DirectAccess**]。
 
-3. 按一下 **\[下一步\]** 。
+3. 按 [下一步]。
 
 ## <a name="configure-directaccess-clients"></a>設定 DirectAccess 用戶端
 
@@ -54,7 +54,7 @@ ms.locfileid: "71388744"
 
 4. 選取 [使用強制通道] 核取方塊，透過遠端存取伺服器路由所有用戶端流量 (到內部網路和到網際網路)。
 
-5. 按一下 **\[下一步\]** 。
+5. 按 [下一步]。
 
 ## <a name="configure-the-network-topology"></a>設定網路拓撲
 
@@ -64,7 +64,7 @@ ms.locfileid: "71388744"
 
 ## <a name="configure-the-dns-suffix-search-list"></a>設定 DNS 尾碼搜尋清單
 
-對於 DNS 用戶端，您可以設定 DNS 網域尾碼搜尋清單來擴充或修訂其 DNS 搜尋能力。 您可以在清單中加入其他尾碼，搜尋多個指定的 DNS 網域中簡短、不完整的電腦名稱。 然後，如果 DNS 查詢失敗，DNS 用戶端服務可以使用此清單，將其他名稱尾碼附加至原始名稱，並對 DNS 伺服器重複執行這些替代 Fqdn 的 DNS 查詢。
+對於 DNS 用戶端，您可以設定 DNS 網域尾碼搜尋清單，來擴充或修訂用戶端的 DNS 搜尋能力。 將其他尾碼加入清單，您就可以在多個指定的 DNS 網域中，搜尋簡短、不完整的電腦名稱。 之後，如果 DNS 查詢失敗，DNS 用戶端服務可以使用此清單，將其他名稱尾碼附加到原來名稱的後面，然後對 DNS 伺服器重複執行 DNS 查詢，搜尋是否有這些替代 FQDN。
 
 1. 選取 [以 DNS 用戶端尾碼搜尋清單設定 DirectAccess 用戶端] 指定其他尾碼用於用戶端名稱搜尋。
 
@@ -83,9 +83,9 @@ ms.locfileid: "71388744"
 如果查詢附加以及嘗試清單中每個尾碼的結果所組成的所有 FQDN 都無法解析，查詢程序會失敗，並產生「 找不到名稱 」的結果。 
 
 > [!WARNING]
-> 如果使用網域尾碼清單，則用戶端就可以在查詢沒有回應或無法解析查詢時，根據不同的 DNS 網域名稱繼續傳送其他替代查詢。 一旦使用尾碼清單中的項目解析名稱，就不會嘗試未使用的清單項目。 因此，最有效率的方式是優先排列最常使用的網域尾碼清單。
+> 如果使用網域尾碼清單，用戶端會在查詢沒有回應或無法解析時，繼續根據其他 DNS 網域名稱傳送其他替代查詢。 一旦使用尾碼清單中的項目解析名稱，就不會嘗試未使用的清單項目。 因此，最有效率的方式是優先排列最常使用的網域尾碼清單。
 > 
-> 只有當 DNS 名稱項目不完整時，才使用網域名稱尾碼搜尋。 要讓 DNS 名稱完全合格，需在名稱結尾輸入結尾的句點 (.)。
+> 只有 DNS 名稱項目不完整時，才使用網域名稱尾碼搜尋。 要讓 DNS 名稱完全合格，需在名稱結尾輸入結尾的句點 (.)。
 
 ## <a name="gpo-configuration"></a>GPO 設定
 

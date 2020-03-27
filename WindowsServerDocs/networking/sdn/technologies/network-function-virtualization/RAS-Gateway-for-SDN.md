@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 20fc19dc31ee612de0a736bfe989f930a9afa202
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 415a5f4728b1b08e59630935e47f22d74b0267e8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405866"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312935"
 ---
 # <a name="ras-gateway-for-sdn"></a>適用於 SDN 的 RAS 閘道
 
->適用於：Windows Server （半年通道）、Windows Server 2016 # # 適用于 SDN 的 RAS 閘道  
+>適用于： Windows Server （半年通道）、Windows Server 2016 # # 適用于 SDN 的 RAS 閘道  
 
 
 RAS 閘道是一種以軟體為基礎、多租使用者、邊界閘道協定（BGP）功能的路由器，其適用于雲端服務提供者（Csp），以及裝載多個使用 Hyper-v 網路虛擬化之租使用者虛擬網路的企業。 RAS 閘道會在實體網路與 VM 網路資源之間路由傳送網路流量，而不論位置為何。 您可以在相同的實體位置或許多不同的位置路由傳送網路流量。   

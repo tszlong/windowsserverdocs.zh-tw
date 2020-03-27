@@ -7,14 +7,14 @@ ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f338ddf0a7d3a4fe41277ddbf49b0c3db34ae11b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e2e59b70b102e7ca942e2aafb8b216fecd62fc32
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395704"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315152"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支援的網路功能案例
 
@@ -24,7 +24,7 @@ ms.locfileid: "71395704"
 >[!IMPORTANT]
 >針對所有生產案例，請使用原始設備製造商所提供的最新簽署硬體驅動程式 \(OEM\) 或獨立硬體廠商 \(IHV\)。
   
-## <a name="bkmk_supp"></a>支援的網路案例
+## <a name="supported-networking-scenarios"></a><a name="bkmk_supp"></a>支援的網路案例
 
 本節包含 Windows Server 2016 支援的網路功能案例的相關資訊，並包含下列案例分類。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71395704"
 
 - [切換內嵌小組 \(設定\) 案例](#bkmk_set)
   
-### <a name="bkmk_sdn"></a>軟體定義網路（SDN）案例
+### <a name="software-defined-networking-sdn-scenarios"></a><a name="bkmk_sdn"></a>軟體定義網路（SDN）案例
  
 您可以使用下列檔來部署具有 Windows Server 2016 的 SDN 案例。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71395704"
   
 如需詳細資訊，請參閱[軟體&#40;定義&#41;網路 SDN](sdn/software-defined-networking.md)。  
   
-#### <a name="bkmk_netc"></a>網路控制站案例
+#### <a name="network-controller-scenarios"></a><a name="bkmk_netc"></a>網路控制站案例
 
 網路控制站案例可讓您：  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71395704"
   
 如需詳細資訊，請參閱[網路控制卡](sdn/technologies/network-controller/Network-Controller.md)。  
   
-#### <a name="bkmk_netf"></a>網路功能虛擬化（NFV）案例  
+#### <a name="network-function-virtualization-nfv-scenarios"></a><a name="bkmk_netf"></a>網路功能虛擬化（NFV）案例  
 NFV 案例可讓您：  
   
 -   部署並使用軟體負載平衡器，以分散 northbound 和 southbound 流量。  
@@ -84,7 +84,7 @@ NFV 案例可讓您：
   
 如需詳細資訊，請參閱[網路功能虛擬化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)。  
   
-### <a name="bkmk_netp"></a>網路平臺案例
+### <a name="network-platform-scenarios"></a><a name="bkmk_netp"></a>網路平臺案例
 
 在本節的案例中，Windows Server 網路小組支援使用任何 Windows Server 2016 認證的驅動程式。 請洽詢您的網路介面卡 \(NIC\) 製造商，以確保您有最新的驅動程式更新。
   
@@ -98,7 +98,7 @@ NFV 案例可讓您：
   
 如需詳細資訊，請參閱[遠端直接&#40;記憶體&#41;訪問 RDMA 和交換器&#40;內嵌&#41;小組集](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。  
   
-#### <a name="bkmk_switch"></a>Hyper-v 虛擬交換器案例
+#### <a name="hyper-v-virtual-switch-scenarios"></a><a name="bkmk_switch"></a>Hyper-v 虛擬交換器案例
 
 Hyper-v 虛擬交換器案例可讓您：  
   
@@ -112,7 +112,7 @@ Hyper-v 虛擬交換器案例可讓您：
   
 如需詳細資訊，請參閱[遠端直接&#40;記憶體&#41;訪問 RDMA 和交換器&#40;內嵌&#41;小組集](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
   
-### <a name="bkmk_dns"></a>DNS 伺服器案例
+### <a name="dns-server-scenarios"></a><a name="bkmk_dns"></a>DNS 伺服器案例
 
 DNS 伺服器案例可讓您：  
   
@@ -138,7 +138,7 @@ DNS 伺服器案例可讓您：
   
 如需詳細資訊，請參閱[Windows server 2016 中 Dns 用戶端的新功能](dns/What-s-New-in-DNS-Client.md)和[windows SERVER 2016 中 Dns 伺服器的新功能](dns/What-s-New-in-DNS-Server.md)主題。  
   
-### <a name="bkmk_ipam"></a>使用 DHCP 和 DNS 的 IPAM 案例
+### <a name="ipam-scenarios-with-dhcp-and-dns"></a><a name="bkmk_ipam"></a>使用 DHCP 和 DNS 的 IPAM 案例
 
 IPAM 案例可讓您：  
   
@@ -152,7 +152,7 @@ IPAM 案例可讓您：
   
     如需詳細資訊，請參閱[管理 IPAM](technologies/ipam/Manage-IPAM.md)。  
   
-### <a name="bkmk_nicteam"></a>NIC 小組案例
+### <a name="nic-teaming-scenarios"></a><a name="bkmk_nicteam"></a>NIC 小組案例
 
 NIC 小組案例可讓您：  
   
@@ -169,7 +169,7 @@ NIC 小組案例可讓您：
 
 如需詳細資訊，請參閱[NIC](technologies/nic-teaming/NIC-Teaming.md)小組。 
 
-### <a name="bkmk_set"></a>切換內嵌小組 \(設定\) 案例
+### <a name="switch-embedded-teaming-set-scenarios"></a><a name="bkmk_set"></a>切換內嵌小組 \(設定\) 案例
 
 SET 是替代的 NIC 小組解決方案，可供您在 Windows Server 2016 中包含 Hyper-v 和軟體定義網路（SDN）堆疊的環境中使用。 將一些 NIC 小組功能整合到 Hyper-v 虛擬交換器。 
 
@@ -177,7 +177,7 @@ SET 是替代的 NIC 小組解決方案，可供您在 Windows Server 2016 中�
   
  
   
-## <a name="bkmk_unsupp"></a>不支援的網路案例  
+## <a name="unsupported-networking-scenarios"></a><a name="bkmk_unsupp"></a>不支援的網路案例  
 Windows Server 2016 不支援下列網路功能案例。  
   
 -   以 VLAN 為基礎的租使用者虛擬網路。  

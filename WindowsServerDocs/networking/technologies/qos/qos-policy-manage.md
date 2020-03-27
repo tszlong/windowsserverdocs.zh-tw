@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4b8f10ab7b3da05fbefabb735ee2b8bb4ef1cb8a
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 36c30372b6cac40b603658eca9636a265801fb1a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781345"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315448"
 ---
 # <a name="manage-qos-policy"></a>管理 QoS 原則
 
@@ -32,7 +32,7 @@ ms.locfileid: "74781345"
 
 -  [查看、編輯或刪除 QoS 原則](#bkmk_editpolicy)
 
-##  <a name="bkmk_createpolicy"></a>建立 QoS 原則
+##  <a name="create-a-qos-policy"></a><a name="bkmk_createpolicy"></a>建立 QoS 原則
 
 建立 QoS 原則之前，請務必瞭解用來管理網路流量的兩個重要 QoS 控制項：
 
@@ -49,20 +49,20 @@ ms.locfileid: "74781345"
 > [!NOTE]
 >  根據預設，Windows 流量的 DSCP 值為0。
   
-組織的 QoS 策略必須設計佇列數目及優先順序行為。 例如，您的組織可能會選擇擁有五個佇列：延遲敏感的流量、控制流量、業務關鍵流量、最佳流量，以及大量資料傳輸流量。  
+佇列數目和優先順序行為必須設計為您組織 QoS 策略中的一部分。 例如，您的組織可能會選擇擁有五個佇列：延遲敏感的流量、控制流量、業務關鍵流量、最佳流量，以及大量資料傳輸流量。  
   
-### <a name="throttling-traffic"></a>流量節流
+### <a name="throttling-traffic"></a>節流流量
 
-除了 DSCP 值，節流是管理網路頻寬的另一個主要控制項。 如先前所述，您可以使用 [**指定節流閥速率**] 設定，針對輸出流量使用特定的節流速率來設定 QoS 原則。 藉由使用節流，QoS 原則會將傳出的網路流量限制為指定的節流速率。 DSCP 標示和節流可以一起用來有效管理流量。
+除了 DSCP 值，節流是管理網路頻寬的另一個主要控制項。 如先前所述，您可以使用 [**指定節流閥速率**] 設定，針對輸出流量使用特定的節流速率來設定 QoS 原則。 藉由使用節流，QoS 原則會將傳出的網路流量限制為指定的節流速率。 DSCP 標示及節流可以一起使用，以有效管理流量。
 
 >[!NOTE]
 >預設不會選取 [指定節流閥速率] 核取方塊。
 
 若要建立 QoS 原則，請在群組原則管理主控台（GPMC）工具內編輯群組原則物件（GPO）的設定。 GPMC 接著會開啟群組原則物件編輯器。
 
-QoS 原則名稱必須是唯一的。 原則套用至伺服器和使用者的方式，取決於 QoS 原則儲存在群組原則物件編輯器中的位置：
+QoS 原則名稱必須為唯一。 原則套用至伺服器和使用者的方式，取決於 QoS 原則儲存在群組原則物件編輯器中的位置：
 
-- 無論目前登入的使用者為何，電腦的 [配置] Settings\QoS 原則中的 QoS 原則都會套用至電腦。 通常對於伺服器電腦，會使用以電腦為依據的 QoS 原則。
+- 無論目前登入的使用者為何，電腦的 [配置] Settings\QoS 原則中的 QoS 原則都會套用至電腦。 通常會針對伺服器電腦使用以電腦為依據的 QoS 原則。
 
 - 使用者配置系統 Settings\QoS 原則中的 QoS 原則會在使用者登入之後套用至他們，不論他們登入的是哪一部電腦。
 
@@ -70,11 +70,11 @@ QoS 原則名稱必須是唯一的。 原則套用至伺服器和使用者的方
 
 -   在群組原則物件編輯器中，以滑鼠右鍵按一下其中一個**QoS 原則**節點，然後按一下 [**建立新原則**]。
 
-### <a name="wizard-page-1---policy-profile"></a>Wizard 第1頁-原則設定檔
+### <a name="wizard-page-1---policy-profile"></a>精靈第 1 頁 - 原則設定檔
 
 在 [QoS 原則] [wizard] 的第一頁上，您可以指定原則名稱，並設定 QoS 控制傳出網路流量的方式。
 
-#### <a name="to-configure-the-policy-profile-page-of-the-qos-based-policy-wizard"></a>設定 [以原則為依據的 QoS 精靈] 的 [原則設定檔] 頁面
+#### <a name="to-configure-the-policy-profile-page-of-the-qos-based-policy-wizard"></a>設定 [以原則為依據的 QoS 精靈] 之 [原則設定檔] 頁面
 
 1. 在 [原則名稱] 中，輸入 QoS 原則的名稱。 此名稱必須唯一識別該原則。
 
@@ -82,9 +82,9 @@ QoS 原則名稱必須是唯一的。 原則套用至伺服器和使用者的方
 
 3. 或者，使用 [指定節流閥速率] 來啟用流量節流，並設定節流閥速率。 節流閥速率值必須大於1，而且您可以指定每秒 kb 單位 \(KBps\) 或每秒 mb 數 \(MBps\)。
 
-4. 按一下 **\[下一步\]** 。
+4. 按 [下一步]。
 
-### <a name="wizard-page-2---application-name"></a>Wizard 第2頁-應用程式名稱
+### <a name="wizard-page-2---application-name"></a>精靈第 2 頁 - 應用程式名稱
 
 在 [QoS 原則] 嚮導的第二個頁面中，您可以將原則套用至 [所有應用程式]、依其可執行檔名稱識別的特定應用程式、路徑和應用程式名稱，或用於處理特定 URL 之要求的 HTTP 伺服器應用程式。
 
@@ -94,7 +94,7 @@ QoS 原則名稱必須是唯一的。 原則套用至伺服器和使用者的方
 
 - **只有回應此 URL 之要求的 HTTP 伺服器應用程式**會指定 [QoS 原則] 的第一頁上的流量管理設定僅適用于特定的 HTTP 伺服器應用程式。
 
-您可以選擇輸入應用程式路徑。 若要指定應用程式路徑，請在路徑加入應用程式名稱。 路徑可以包含環境變數。 例如，%ProgramFiles%\My Application Path\MyApp.exe，或 c:\program files\my application path\myapp.exe。
+您可以選擇性地輸入應用程式路徑。 若要指定應用程式路徑，請在路徑中包括應用程式名稱。 路徑可以包含環境變數。 例如，%ProgramFiles%\My Application Path\MyApp.exe，或 c:\program files\my application path\myapp.exe。
 
 >[!NOTE]
 >應用程式路徑不能包含解析成符號連結的路徑。
@@ -111,13 +111,13 @@ URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式為 `htt
 
 2. 如果選取 [僅此可執行檔名稱的應用程式]，請指定以 .exe 附檔名結尾的可執行檔名稱。
 
-3. 按一下 **\[下一步\]** 。
+3. 按 [下一步]。
 
-### <a name="wizard-page-3---ip-addresses"></a>Wizard 第3頁-IP 位址
+### <a name="wizard-page-3---ip-addresses"></a>精靈第 3 頁 - IP 位址
 
 在 [QoS 原則嚮導] 的第三個頁面中，您可以指定 QoS 原則的 IP 位址條件，包括下列各項：
 
-- 所有來源 IPv4 或 IPv6 位址，或是特定的來源 IPv4 或 IPv6 位址。
+- 所有來源 IPv4 或 IPv6 位址或特定來源 IPv4 或 IPv6 位址
 
 - 所有目的地 IPv4 或 IPv6 位址，或特定目的地 IPv4 或 IPv6 位址
 
@@ -147,14 +147,14 @@ URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式為 `htt
 
 4. 如果您選取 **[僅下列 IP 目的地位址**]，請指定 IPv4 或 IPv6 位址或首碼，其對應至為來源位址指定的位址或首碼類型。
 
-5.  按一下 **\[下一步\]** 。  
+5.  按 [下一步]。  
 
-### <a name="wizard-page-4---protocols-and-ports"></a>Wizard 第4頁-通訊協定和埠
+### <a name="wizard-page-4---protocols-and-ports"></a>精靈第 4 頁 - 通訊協定及連接埠
 
 在 [QoS 原則嚮導] 的第四個頁面上，您可以指定流量的類型，以及由嚮導第一頁上的設定所控制的埠。 您可以指定：  
--   TCP 流量、UDP 流量或兩者  
+-   TCP 流量、UDP 流量，或兩者  
 
--   所有來源連接埠、某個範圍的來源連接埠，或特定來源連接埠
+-   所有來源連接埠、一個範圍內的來源連接埠，或特定來源連接埠
 
 -   所有目的地埠、目的地埠範圍或特定目的地埠  
 
@@ -172,11 +172,11 @@ URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式為 `htt
 
 5. 如果在上一個步驟中選取了 [到此目的地連接埠號碼]，請輸入介於 1 和 65535 之間的連接埠號碼。
 
-若要完成建立新的 QoS 原則，請在 [QoS 原則] wizard 的 [**通訊協定和埠**] 頁面上按一下 [**完成]** 。 完成時，新的 QoS 原則會列在群組原則物件編輯器的詳細資料窗格中。  
+若要完成建立新的 QoS 原則，請在 [QoS 原則] wizard 的 [**通訊協定和埠**] 頁面上按一下 [**完成]** 。 完成時，新的 QoS 原則會列在 [群組原則物件編輯器] 的詳細資料窗格內。  
   
 若要將 QoS 原則設定套用到使用者或電腦，請將 QoS 原則所在的 GPO 連結到 Active Directory Domain Services 容器，例如網域、網站或組織單位（OU）。  
   
-##  <a name="bkmk_editpolicy"></a>查看、編輯或刪除 QoS 原則
+##  <a name="view-edit-or-delete-a-qos-policy"></a><a name="bkmk_editpolicy"></a>查看、編輯或刪除 QoS 原則
 
 先前所述的 QoS 原則 wizard 頁面會對應至您在查看或編輯原則內容時所顯示的屬性頁面。  
   
@@ -184,15 +184,15 @@ URL 必須符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式為 `htt
   
 -   在群組原則物件編輯器的 [詳細資料] 窗格中，以滑鼠右鍵按一下原則名稱，然後按一下 [**屬性**]。  
   
-     群組原則物件編輯器會顯示具有下列索引標籤的 [屬性] 頁面：  
+     [群組原則物件編輯器] 會顯示內容頁及下列索引標籤：  
   
     -   原則設定檔  
   
-    -   應用程式名稱  
+    -   Application Name  
   
     -   IP 位址  
   
-    -   通訊協定及連接埠  
+    -   通訊協定與連接埠  
   
 ### <a name="to-edit-a-qos-policy"></a>編輯 QoS 原則  
   
@@ -253,7 +253,7 @@ Advanced QoS 設定可提供額外的控制，讓 IT 系統管理員管理電腦
   
 Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows Server 2008 和 Windows Vista 中的 TCP 接收視窗已從舊版 Windows 變更。 舊版的 Windows 限制 TCP 接收端視窗的上限為 64 kb，而 Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows Server 2008 和 Windows Vista 會動態調整接收端視窗的大小，最高可達 16 mb （MB）). 在 [輸入 TCP 流量控制] 中，您可以設定 TCP 接收視窗可成長的最大值，以控制輸入輸送量層級。 層級會對應至下列最大值。 
   
-|輸入輸送量層級|最大值|  
+|輸入輸送量層級|最大需求|  
 |------------------------|-------|  
 |0|64 KB|
 |1|256 KB|
@@ -291,7 +291,7 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 
 您可以建立使用這些 DSCP 值的 QoS 原則，以確保在 WMM 無線介面卡上，具有 Wi-fi\-Fi 認證™的攜帶型電腦，在與適用于 WMM 存取點的 Wi-fi\-Wi-fi 認證相關聯時，會收到優先順序的處理。
   
-### <a name="BKMK_precedencerules"></a>QoS 原則優先順序規則
+### <a name="qos-policy-precedence-rules"></a><a name="BKMK_precedencerules"></a>QoS 原則優先順序規則
 
 與 GPO 的優先順序類似，QoS 原則具有優先順序規則，可在多個 QoS 原則套用至一組特定的流量時解決衝突。 針對輸出 TCP 或 UDP 流量，一次只能套用一個 QoS 原則，這表示 QoS 原則沒有累積的效果，例如節流速率會加總。
 
@@ -326,7 +326,7 @@ DSCP 標記覆寫會限制應用程式指定的能力（或「標記」），而
 
 - 目的地 IP 位址
 
-- 來源埠
+- 來源連接埠
 
 - 目的地連接埠
 

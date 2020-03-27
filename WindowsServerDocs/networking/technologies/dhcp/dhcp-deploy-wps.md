@@ -6,14 +6,14 @@ ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 16900809c2c6b877d2b5c45f1c3ca26e55c6bea9
-ms.sourcegitcommit: 7df2bd3a7d07a50ace86477335ed6fbfb2dac373
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77027948"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312665"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>使用 Windows PowerShell 部署 AD DHCP
 
@@ -39,19 +39,19 @@ ms.locfileid: "77027948"
 - [適用于 DHCP 的 Windows PowerShell 命令](#bkmk_dhcpwps)
 - [本指南中的 Windows PowerShell 命令清單](#bkmk_list)
 
-## <a name="bkmk_overview"></a>DHCP 部署總覽
+## <a name="dhcp-deployment-overview"></a><a name="bkmk_overview"></a>DHCP 部署總覽
 
 下圖說明您可以使用本指南來部署的案例。 此案例包含一個 Active Directory 網域中的 DHCP 伺服器。 伺服器設定為在兩個不同的子網上，提供 IP 位址給 DHCP 用戶端。 子網是由已啟用 DHCP 轉送的路由器所分隔。
 
 ![DHCP 網路拓朴總覽](../../media/Core-Network-Guide/cng16_overview.jpg)
 
-## <a name="bkmk_technologies"></a>技術概覽
+## <a name="technology-overviews"></a><a name="bkmk_technologies"></a>技術概覽
 
 下列各節提供 DHCP 和 TCP/IP 的簡要概述。
 
 ### <a name="dhcp-overview"></a>DHCP 總覽
 
-DHCP 是簡化主機 IP 設定管理的 IP 標準。 DHCP 標準提供使用 DHCP 伺服器做為管理動態 IP 位址配置的方法，以及網路上啟用 DHCP 的用戶端的其他相關設定詳細資料。
+DHCP 是簡化主機 IP 設定管理的 IP 標準。 DHCP 標準可讓 DHCP 伺服器在網路上管理已啟用 DHCP 的用戶端 IP 位址動態配置和其他設定詳細資料。
 
 DHCP 可讓您使用 DHCP 伺服器，以動態方式將 IP 位址指派給區域網路上的電腦或其他裝置（例如印表機），而不是使用靜態 IP 位址手動設定每個裝置。
 
@@ -59,7 +59,7 @@ TCP/IP 網路上的每部電腦都必須擁有唯一的 IP 位址，因為 IP �
 
 對於以 TCP/IP 為基礎的網路，DHCP 會減少與設定電腦相關的複雜性和管理工作數量。
 
-### <a name="tcpip-overview"></a>TCP/IP 總覽
+### <a name="tcpip-overview"></a>TCP/IP 概觀
 
 根據預設，所有版本的 Windows Server 和 Windows 用戶端作業系統都有 IP 第4版網路連線的 TCP/IP 設定，其設定為自動從 DHCP 伺服器取得 IP 位址和其他資訊（稱為 DHCP 選項）。 因此，您不需要手動設定 TCP/IP 設定，除非電腦是伺服器電腦或是需要手動設定靜態 IP 位址的其他裝置。 
 
@@ -79,17 +79,17 @@ Windows Server 2016 中的 TCP/IP 如下所示：
 
 TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Microsoft 及非 Microsoft 系統連線和共用資訊，其中包括：
 
-- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2016
 
 - Windows 10
 
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 
-- Windows 8.1
+- Windows 8.1
 
-- Windows 2012 Server
+- Windows Server 2012
 
-- Windows 8
+- Windows 8
 
 - Windows Server 2008 R2
 
@@ -113,7 +113,7 @@ TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Micr
 
 - 啟用有線乙太網路或無線802.11 技術的平板電腦和行動電話通訊電話
 
-## <a name="bkmk_plan"></a>規劃 DHCP 部署
+## <a name="plan-dhcp-deployment"></a><a name="bkmk_plan"></a>規劃 DHCP 部署
 
 以下是安裝 DHCP 伺服器角色之前的主要規劃步驟。
 
@@ -133,15 +133,15 @@ TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Micr
 
 領域是一組電腦的 IP 位址，具有管理性質，位於使用 DHCP 服務的子網路上。 系統管理員首先為每個實體子網路建立一個領域，然後使用領域來定義用戶端所使用的參數。
 
-領域具有下列內容：
+領域有下列屬性：
 
 - IP 位址範圍，從此範圍包括或排除用於 DHCP 服務租用供應項目的位址。
 
 - 子網路遮罩，決定指定 IP 位址的子網路首碼。
 
-- 建立領域時指派的領域名稱。
+- 建立時指派的領域名稱。
 
-- 租用期間值，指派給 DHCP 用戶端，接收動態配置的 IP 位址。
+- 租用期間值，指派給接收動態配置之 IP 位址的 DHCP 用戶端。
 
 - 為指派給 DHCP 用戶端所設定的任何 DHCP 領域選項，例如，DNS 伺服器 IP 位址以及路由器/預設閘道 IP 位址。
 
@@ -187,14 +187,14 @@ TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Micr
 
 建議您使用額外的位址來設定排除範圍，以因應未來的網路成長。 下表提供範圍的範例排除範圍，IP 位址範圍為 10.0.0.1-10.0.0.254，子網路遮罩為255.255.255.0。
 
-|設定項目|範例值|
+|組態項目|範例值|
 |-----------------------|------------------|
 |排除範圍起始 IP 位址|10.0.0.1|
 |排除範圍結束 IP 位址|10.0.0.25|
 
 ### <a name="planning-tcpip-static-configuration"></a>規劃 TCP/IP 靜態設定
 
-如路由器、DHCP 伺服器以及 DNS 伺服器的特定裝置都必須設定為使用靜態 IP 位址。 此外，您可能想要確定其他裝置永遠使用相同的 IP 位址，例如印表機。 列出您要為每個子網路靜態設定的裝置，然後規劃用於 DHCP 伺服器的排除範圍，以確保 DHCP 伺服器不會租用靜態設定裝置的 IP 位址。 排除範圍是領域中要從 DHCP 服務供應項目中排除的有限 IP 位址順序。 排除範圍假設伺服器不會提供這些範圍中的任何位址給網路上的 DHCP 用戶端。
+如路由器、DHCP 伺服器以及 DNS 伺服器的特定裝置都必須設定為使用靜態 IP 位址。 此外，您可能想要確定其他裝置永遠使用相同的 IP 位址，例如印表機。 列出您要為每個子網路靜態設定的裝置，然後規劃用於 DHCP 伺服器的排除範圍，以確保 DHCP 伺服器不會租用靜態設定裝置的 IP 位址。 排除範圍是領域中要從 DHCP 服務提供中排除的有限 IP 位址順序。 排除範圍假設伺服器不會提供這些範圍中的任何位址給網路上的 DHCP 用戶端。
 
 例如，如果子網路的 IP 位址範圍是 192.168.0.1 至 192.168.0.254，而且您有十個裝置要設定為使用靜態 IP 位址，則可以為 192.168.0.*x* 領域建立排除範圍，使其包含十個或更多 IP 位址：192.168.0.1 至 192.168.0.15。
 
@@ -202,15 +202,15 @@ TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Micr
 
 下表提供 AD DS 和 DNS 的其他設定專案範例。
 
-|設定項目|範例值|
+|組態項目|範例值|
 |-----------------------|------------------|
-|網路連線繫結|Ethernet|
+|網路連線繫結|乙太網路|
 |DNS 伺服器設定|DC1.corp.contoso.com|
 |慣用 DNS 伺服器 IP 位址|10.0.0.2|
 |範圍值<br /><br />1. 範圍名稱<br />2. 起始 IP 位址<br />3. 結束 IP 位址<br />4. 子網路遮罩<br />5. 預設閘道（選擇性）<br />6. 租用期間|1. 主要子網<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6. 8 天|
 |IPv6 DHCP 伺服器操作模式|未啟用|
 
-## <a name="bkmk_lab"></a>在測試實驗室中使用本指南
+## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>在測試實驗室中使用本指南
 
 在生產環境中部署之前，您可以使用本指南在測試實驗室中部署 DHCP。 
 
@@ -273,13 +273,13 @@ TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Micr
 3. 一部執行 Windows 用戶端作業系統的實體電腦，您將用它來確認 DHCP 伺服器是否會將 IP 位址和 DHCP 選項動態配置給 DHCP 用戶端。
 
 
-## <a name="bkmk_deploy"></a>部署 DHCP
+## <a name="deploy-dhcp"></a><a name="bkmk_deploy"></a>部署 DHCP
 
 本節提供您可以用來在一部伺服器上部署 DHCP 的範例 Windows PowerShell 命令。 在您的伺服器上執行這些範例命令之前，您必須修改命令以符合您的網路和環境。 
 
 例如，在執行命令之前，您應該在下列專案中取代命令中的範例值：
 
-- 電腦名稱稱
+- 電腦名稱
 - 您想要設定之每個範圍的 IP 位址範圍（每個子網1個範圍）
 - 您想要設定的每個 IP 位址範圍的子網路遮罩
 - 每個領域的範圍名稱
@@ -490,7 +490,7 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 > [!IMPORTANT]
 > 確定 DHCP 用戶端和 DHCP 伺服器之間的所有路由器都已設定 DHCP 訊息轉送。 如需如何設定 DHCP 轉送的詳細資訊，請參閱您的路由器檔。
 
-## <a name="bkmk_verify"></a>確認伺服器功能
+## <a name="verify-server-functionality"></a><a name="bkmk_verify"></a>確認伺服器功能
 
 若要確認您的 DHCP 伺服器是否提供對 DHCP 用戶端的 IP 位址動態配置，您可以將另一部電腦連線到已服務的子網。 將 Ethernet 纜線連接到網路介面卡並開啟電腦電源後，它會向您的 DHCP 伺服器要求一個 IP 位址。 您可以使用**ipconfig/all**命令和檢查結果，或藉由執行連線測試（例如嘗試使用 Windows Explorer 或其他應用程式的瀏覽器或檔案共用來存取 Web 資源）來驗證成功的設定。
 
@@ -501,7 +501,7 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 3. 執行下列命令，以確認 DHCP 伺服器已在 Active Directory 中獲得授權，以從 Active Directory 取出授權的 DHCP 伺服器清單。 [DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/Get-DhcpServerInDC)。
 4. 開啟 DHCP 主控台 \(伺服器管理員、**工具**、 **dhcp**\)，並展開伺服器樹狀目錄以審查領域，然後按一下 右\-，以確認您的範圍是否已啟用。 如果產生的功能表包含選取專案 [**啟動**]，請按一下 [**啟用**]。 \(如果範圍已啟用，則功能表選取會讀取 [**停用**]。\)
 
-## <a name="bkmk_dhcpwps"></a>適用于 DHCP 的 Windows PowerShell 命令
+## <a name="windows-powershell-commands-for-dhcp"></a><a name="bkmk_dhcpwps"></a>適用于 DHCP 的 Windows PowerShell 命令
 
 下列參考會針對 Windows Server 2016 的所有 DHCP 伺服器 Windows PowerShell 命令，提供命令說明和語法。 本主題會根據命令開頭的動詞（例如**Get**或**Set**）以字母順序列出命令。
 
@@ -517,7 +517,7 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 
 - [Windows PowerShell 中的 DHCP 伺服器 Cmdlet](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
 
-## <a name="bkmk_list"></a>本指南中的 Windows PowerShell 命令清單
+## <a name="list-of-windows-powershell-commands-in-this-guide"></a><a name="bkmk_list"></a>本指南中的 Windows PowerShell 命令清單
 
 以下是本指南中使用的命令和範例值的簡單列表。
 

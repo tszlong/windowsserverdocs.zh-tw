@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cbebd0388ccd5dd2540a20f5d325d7f97c7e2bb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8c1aef88aec45ee63614b889658daceca3779e91
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405440"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316005"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>匯出 NPS 設定以在另一部伺服器上匯入
 
@@ -50,7 +50,7 @@ ms.locfileid: "71405440"
 
 **系統管理認證**
 
-若要完成此程式，您必須是 Administrators 群組的成員。
+若要完成此程序，您必須是 Administrators 群組的成員。
 
 ### <a name="export-example"></a>匯出範例 
 
@@ -85,7 +85,7 @@ ms.locfileid: "71405440"
 
 **系統管理認證**
 
-若要完成此程式，您必須是 Administrators 群組的成員。
+若要完成此程序，您必須是 Administrators 群組的成員。
 
 ### <a name="to-copy-an-nps-configuration-to-another-nps-using-netsh-commands"></a>使用 Netsh 命令將 NPS 設定複製到另一個 NPS
 
@@ -93,7 +93,7 @@ ms.locfileid: "71405440"
 
 2. 在**netsh**提示字元中，輸入**nps**，然後按 enter。 
 
-3. 在**netsh nps**提示字元中，輸入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是您要儲存 nps 設定檔的資料夾位置，而*file*是您想要儲存的 xml 檔案名。 按 Enter 鍵。 
+3. 在**netsh nps**提示字元中，輸入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是您要儲存 nps 設定檔的資料夾位置，而*file*是您想要儲存的 xml 檔案名。 按 Enter。 
 
 這會儲存設定 \(包括 XML 檔案中\) 的登錄設定。 路徑可以是相對或絕對路徑，也可以是 \(UNC\) 路徑的通用命名慣例。 按下 Enter 之後，會出現一則訊息，指出匯出至檔案是否成功。
 

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da23f3082e1d97f1bcfbee7365b863d29ba2d020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b9da54822c1b7610bbd7a095beeb305eb243bb1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404497"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314038"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>以多站台部署方式部署多個遠端存取伺服器
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404497"
 
  Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服務（RAS） VPN 結合成一個遠端存取角色。 在多個企業案例中，我們可以部署「遠端存取」。 本總覽提供在多網站設定中部署遠端存取服務器的企業案例簡介。  
   
-## <a name="BKMK_OVER"></a>案例描述  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述  
 在多網站部署中，會部署兩個或更多部遠端存取服務器或伺服器叢集，並將其設定為單一位置或散佈地理位置中的不同進入點。 在單一位置部署多個進入點，可允許伺服器的冗余，或與現有網路架構的遠端存取服務器一致。 依地理位置部署可確保有效率地使用資源，因為遠端用戶端電腦可以使用最接近它們的進入點連線到內部網路資源。 跨多網站部署的流量可以透過外部全域負載平衡器來散發和平衡。  
   
 多網站部署支援執行 Windows 10、Windows 8 或 Windows 7 的用戶端電腦。 執行 Windows 10 或 Windows 8 的用戶端電腦會自動識別進入點，或使用者可以手動選取進入點。 自動指派會依照下列優先權順序進行：  
@@ -64,14 +64,14 @@ ms.locfileid: "71404497"
   
 4. 針對[多網站部署進行疑難排解](troubleshoot/Troubleshoot-a-Multisite-Deployment.md)。 此疑難排解章節說明在多網站部署中部署遠端存取時，可能發生的數個最常見的錯誤。
   
-## <a name="BKMK_APP"></a>實際應用  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用  
 多網站部署提供下列各項：  
   
 -   改善的效能-多網站部署可讓用戶端電腦使用遠端存取來存取內部資源，以使用最接近且最適合的進入點進行連線。 用戶端會有效率地存取內部資源，並改善透過 DirectAccess 路由傳送的用戶端網際網路要求速度。 您可以使用外部全域負載平衡器來平衡進入點之間的流量。  
   
 -   易於管理-多網站可讓系統管理員將遠端存取部署與 Active Directory 網站部署保持一致，以提供簡化的架構。 您可以輕鬆地在進入點伺服器或叢集之間設定共用設定。 遠端存取設定可以從部署中的任何伺服器進行管理，或從遠端使用遠端伺服器管理工具（RSAT）。 此外，您可以從單一遠端存取管理主控台監視整個多網站部署。  
   
-## <a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
 下表列出此案例中使用的角色和功能。  
   
 |角色/功能|如何支援本案例|  
@@ -79,7 +79,7 @@ ms.locfileid: "71404497"
 |遠端存取角色|這個角色是利用伺服器管理員主控台安裝和解除安裝。 它包含 DirectAccess (以前是 Windows Server 2008 R2 的功能)、 路由及遠端存取服務 (RRAS，以前是網路原則與存取服務 (NPAS) 伺服器角色底下的角色服務)。 遠端存取角色包含兩個元件：<br /><br />-DirectAccess 與路由及遠端存取服務（RRAS） VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />-RRAS 路由-在舊版路由及遠端存取主控台中管理 RRAS 路由功能。<br /><br />相依性如下所示：<br /><br />-Internet Information Services （IIS）網頁伺服器-設定網路位置伺服器和預設 Web 探查時，需要這項功能。<br />-Windows 內部資料庫-用於遠端存取服務器上的本機帳戶處理。|  
 |遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<br /><br />遠端存取管理工具功能包含以下各項：<br /><br />-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />-群組原則管理主控台<br />-RAS 連線管理員系統管理元件（CMAK）<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
   
-## <a name="BKMK_HARD"></a>硬體需求  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求  
 本案例需要的硬體如下所示：  
   
 -   至少要將兩部遠端存取電腦收集到多網站部署。   
@@ -88,7 +88,7 @@ ms.locfileid: "71404497"
   
 -   若要平衡進入點伺服器之間的流量負載，需要協力廠商外部全域負載平衡器。  
   
-## <a name="BKMK_SOFT"></a>軟體需求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求  
 本案例的軟體需求如下：  
   
 -   部署單一伺服器時的軟體需求。  
@@ -117,7 +117,7 @@ ms.locfileid: "71404497"
   
         -   針對每個網域啟用 Windows 7 用戶端支援的每個進入點都需要唯一的 Windows 7 用戶端 GPO。  
   
-## <a name="KnownIssues"></a>已知問題  
+## <a name="known-issues"></a><a name="KnownIssues"></a>已知問題  
 以下是設定多網站案例的已知問題：  
   
 -   **相同 IPv4 子網中的多個進入點**。 在相同的 IPv4 子網中新增多個進入點會導致 IP 位址衝突訊息，而且不會如預期般設定進入點的 DNS64 位址。 當 IPv6 尚未部署在公司網路上的伺服器內部介面上時，就會發生此問題。 若要避免這個問題，請在所有目前和未來的遠端存取服務器上執行下列 Windows PowerShell 命令：  

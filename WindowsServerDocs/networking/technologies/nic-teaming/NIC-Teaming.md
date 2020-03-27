@@ -10,19 +10,19 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: 2356de674bfc6e57c9444136b1244934464a2d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396498"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316439"
 ---
 # <a name="nic-teaming"></a>NIC 小組
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，我們將概述 Windows Server 2016 中的網路介面卡（NIC）小組。 NIC 小組可讓您將一和32實體 Ethernet 網路介面卡分成一或多個以軟體為基礎的虛擬網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。  
   
@@ -88,7 +88,7 @@ Vmq 數量是為每個 VM 配置佇列的 NIC 功能。  任何時候，當您�
   
 -   當小組處於切換獨立模式並使用位址雜湊負載平衡時，輸入流量一律會出現在一個 NIC （主要小組成員）上，只會在一個小組成員上。 由於其他小組成員不會處理輸入流量，因此會使用與主要成員相同的佇列來進行程式設計，因此，如果主要成員失敗，則任何其他小組成員都可以用來挑選輸入流量，而佇列也已準備就緒。  
 
-- 大部分的 Nic 都有用於接收端調整（RSS）或 VMQ 的佇列，但不是同時使用。 某些 VMQ 設定似乎是 RSS 佇列的設定，但根據目前正在使用的功能，一般佇列上的設定是由 RSS 和 VMQ 所使用。 每個 NIC 在其 advanced 屬性中都有 * RssBaseProcNumber 和\*MaxRssProcessors 的值。 以下是一些可提供較佳系統效能的 VMQ 設定。  
+- 大部分的 Nic 都有用於接收端調整（RSS）或 VMQ 的佇列，但不是同時使用。 某些 VMQ 設定似乎是 RSS 佇列的設定，但根據目前正在使用的功能，一般佇列上的設定是由 RSS 和 VMQ 所使用。 每個 NIC 在其 advanced 屬性中都有 * RssBaseProcNumber 和 \*MaxRssProcessors 的值。 以下是一些可提供較佳系統效能的 VMQ 設定。  
   
 -   在理想的情況下，每個 NIC 都應該將 * RssBaseProcNumber 設定為大於或等於二（2）的偶數數位。 第一個實體處理器（核心0（邏輯處理器0和1））通常會執行大部分的系統處理，因此網路處理應該會脫離此實體處理器。 某些機器架構沒有每個實體處理器有兩個邏輯處理器，因此，針對這類機器，基底處理器應該大於或等於1。 如果有疑問，請假設您的主機使用每個實體處理器架構2個邏輯處理器。  
   
@@ -155,11 +155,11 @@ Windows Server 2016 中的 NIC 小組支援在 Vm 中有兩個成員的團隊。
 
 ## <a name="related-topics"></a>相關主題
 
-- [NIC 小組 MAC 位址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：當您使用「交換器獨立模式」設定 NIC 小組，並使用「位址雜湊」或「動態」負載散發時，小組會在輸出流量上使用主要 NIC 小組成員的媒體存取控制（MAC）位址。 主要 NIC 小組成員是由一組初始小組成員的作業系統選取的網路介面卡。
+- [NIC 小組 MAC 位址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：當您使用「交換器獨立模式」和「位址雜湊」或「動態」負載分佈來設定 NIC 小組時，小組會使用連出流量的主要 NIC 小組成員的媒體存取控制（MAC）位址。 主要 NIC 小組成員是由一組初始小組成員的作業系統選取的網路介面卡。
 
-- [NIC 小組設定](nic-teaming-settings.md)：在本主題中，我們將概述 NIC 小組的屬性，例如團隊和負載平衡模式。 我們也會提供有關待命介面卡設定和主要小組介面屬性的詳細資料。 如果您的 NIC 小組中至少有兩張網路介面卡，則不需要指定待命介面卡來容錯。
+- [Nic 小組設定](nic-teaming-settings.md)：在本主題中，我們將概述 nic 團隊的屬性，例如團隊和負載平衡模式。 我們也會提供有關待命介面卡設定和主要小組介面屬性的詳細資料。 如果您的 NIC 小組中至少有兩張網路介面卡，則不需要指定待命介面卡來容錯。
   
-- [在主機電腦或 VM 上建立新的 NIC 小組](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)：在本主題中，您會在主機電腦或執行 Windows Server 2016 的 Hyper-v 虛擬機器（VM）中建立新的 NIC 小組。
+- 在[主機電腦或 VM 上建立新的 Nic 小組](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)：在本主題中，您會在主機電腦或執行 Windows Server 2016 的 hyper-v 虛擬機器（VM）中建立新的 nic 小組。
 
-- 針對[NIC 小組進行疑難排解](Troubleshooting-NIC-Teaming.md)：在本主題中，我們將討論針對 NIC 小組進行疑難排解的方法，例如硬體、實體交換器的證券，以及使用 Windows PowerShell 來停用或啟用網路介面卡。 
+- 針對[nic 小組進行疑難排解](Troubleshooting-NIC-Teaming.md)：在本主題中，我們會討論針對 nic 小組進行疑難排解的方法，例如硬體、實體交換器的安全性，以及使用 Windows PowerShell 來停用或啟用網路介面卡。 
  

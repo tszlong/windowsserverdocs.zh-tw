@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 2900dd2c-0f70-4f8d-9650-ed83d51d509a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bbcf3338f2cd6d8662a84faf263b486e31b140e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0e012746841bcf736b7698afb5d7c807194bbec0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405336"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315736"
 ---
 # <a name="plan-nps-as-a-radius-server"></a>將 NPS 作為 RADIUS 伺服器規劃
 
@@ -87,7 +87,7 @@ PEAP 與 Microsoft 挑戰交握驗證通訊協定第2版（PEAP-MS-CHAP v2）提
 
 針對 VPN 連線，EAP-TLS 是以憑證為基礎的驗證方法，它會提供強大的安全性來保護網路流量，即使它是透過網際網路從家用或行動電腦傳輸到組織的 VPN 伺服器也一樣。
 
-### <a name="certificate-based-authentication-methods"></a>以憑證為基礎的驗證方法
+### <a name="certificate-based-authentication-methods"></a>憑證驗證方法
 
 以憑證為基礎的驗證方法有提供強大安全性的優點;而且它們的缺點是比密碼驗證方法更容易部署。
 

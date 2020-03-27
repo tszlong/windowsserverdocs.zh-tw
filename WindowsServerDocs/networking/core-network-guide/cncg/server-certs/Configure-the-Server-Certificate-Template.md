@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 8ff610e2-43ca-407f-a828-06d9366e02f0
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35d5875c78dcd92f3b40b919568dabcf0d45d673
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fc4ba05466c2d87e6d6e9f7c0d5cee1bb405c79a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356764"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318395"
 ---
 # <a name="configure-the-server-certificate-template"></a>設定伺服器憑證範本
 
@@ -36,13 +36,13 @@ ms.locfileid: "71356764"
   
 2.  在 MMC 中，按兩下 CA 名稱，以滑鼠右鍵按一下 [**憑證範本**]，然後按一下 [**管理**]。  
   
-3.  [憑證範本] 主控台隨即開啟。 所有憑證範本都會顯示在詳細資料窗格中。  
+3.  [憑證範本] 主控台隨即開啟。 所有的憑證範本都會顯示在詳細資料窗格中。  
   
 4.  在詳細資料窗格中，按一下 [ **RAS 和 資訊存取伺服器**] 範本。  
   
 5.  按一下 [**動作**] 功能表，然後按一下 [**複製範本**]。 [範本**屬性**] 對話方塊隨即開啟。  
   
-6.  按一下 [安全性] 索引標籤。   
+6.  按一下 **[安全性]** 索引標籤。   
   
 7.  在 [**安全性**] 索引標籤的 [**群組或使用者名稱**] 中，按一下 [ **RAS 和 資訊存取伺服器**]。  
   

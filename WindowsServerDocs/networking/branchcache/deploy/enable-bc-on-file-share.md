@@ -10,18 +10,18 @@ ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 37bab11a0914a3f6854314016bb59297aa6954f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d2b98e7ccd3604de60bfabf865404506569f8c82
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406365"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319134"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>啟用檔案共用的 BranchCache (選用)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用這個程式，在檔案共用上啟用 BranchCache。  
   
@@ -32,9 +32,9 @@ ms.locfileid: "71406365"
   
 ### <a name="to-enable-branchcache-on-a-file-share"></a>在檔案共用上啟用 BranchCache  
   
-1.  開啟 Windows PowerShell，輸入 **mmc**，然後按 ENTER 鍵。 此時會開啟 Microsoft Management Console (MMC)。  
+1.  開啟 Windows PowerShell，然後輸入 **mmc**，再按 ENTER 鍵。 此時會開啟 Microsoft Management Console (MMC)。  
   
-2.  在**MMC 的 [檔案] 功能表上**，按一下 [**新增/移除嵌入式管理單元**]。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
+2.  在 MMC 的 **[檔案]** 功能表上，按一下 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
   
 3.  在 [**新增或移除嵌入式管理單元**] 的 [可用的嵌入式**管理**單元] 中，按兩下 [**共用資料夾**]。 [共用資料夾] Wizard 隨即開啟，並已選取 [本機電腦] 物件。 設定您偏好的視圖，按一下 **[完成]** ，然後按一下 **[確定]** 。  
   

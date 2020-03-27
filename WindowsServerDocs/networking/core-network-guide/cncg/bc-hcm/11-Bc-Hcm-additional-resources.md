@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: c7326f5b-87fb-4e57-9b77-72a5d0ab0444
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 66fb104fd6f72f3eca4fe26adfcdc41f3fd52c5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 204a82226961fe43f07b2a197e6e9db5ab64eb0a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356363"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319078"
 ---
 # <a name="branchcache-additional-resources"></a>BranchCache 其他資源
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如需本指南中所討論之技術的詳細資訊，請參閱下列資源：
 

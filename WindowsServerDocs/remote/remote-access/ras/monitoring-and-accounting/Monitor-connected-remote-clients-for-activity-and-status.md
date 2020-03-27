@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 03d87fb086a9f2797af8399be3d833b11bed79a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b2377816255189efbaa6d5c39cd4e91b923a039
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367265"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314223"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>監視連線的遠端用戶端以查看其活動和狀態
 
@@ -42,7 +42,7 @@ ms.locfileid: "71367265"
   
 ![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 PS> Get-RemoteAccessConnectionStatistics  
@@ -52,8 +52,8 @@ PS> Get-RemoteAccessConnectionStatistics
   
 |欄位名稱|值|  
 |-------|-----|  
-|使用者名稱|遠端使用者的使用者名稱或別名。 您可以使用萬用字元來選取使用者群組，例如 contoso\\* 或 \*\administrator。|  
-|主機名稱|遠端使用者的電腦帳戶名稱。 也可以指定 IPv4 或 IPv6 位址。|  
+|Username|遠端使用者的使用者名稱或別名。 您可以使用萬用字元來選取使用者群組，例如 contoso\\* 或 \*\administrator。|  
+|Hostname|遠端使用者的電腦帳戶名稱。 也可以指定 IPv4 或 IPv6 位址。|  
 |類型|DirectAccess 或 VPN。 如果選取 [DirectAccess]，則會列出所有使用 DirectAccess 連線的遠端使用者。 如果選取 VPN，則會列出所有使用 VPN 連線的遠端使用者。|  
 |ISP 位址|遠端使用者的 IPv4 或 IPv6 位址。|  
 |IPv4 位址|將遠端使用者連接到公司網路之通道的內部 IPv4 位址。|  

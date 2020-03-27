@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8032b7c8e78170d57b0367775672577d9fd900e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 58d849fa1003148b034cc426817b97d3a70d4421
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355447"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312690"
 ---
 # <a name="whats-new-in-dhcp"></a>DHCP 的新功能
 
@@ -52,7 +52,7 @@ Windows Server 2008 的 DHCP 伺服器角色引進了 NAP 支援，windows 10 �
 | Windows Server 2008 R2 |支援|  
 | Windows Server 2012 |支援|  
 | Windows Server 2012 R2 |支援|  
-| Windows Server 2016|不支援|  
+| Windows Server 2016|不支援|  
   
 在 NAP 部署中，執行作業系統以支援 NAP 的 DHCP 伺服器，可以做為 NAP DHCP 強制方法的 NAP 強制端點。 如需 NAP 中 DHCP 的詳細資訊，請參閱[檢查清單：實施 Dhcp 強制設計](https://technet.microsoft.com/library/dd314186.aspx)。  
   
@@ -60,7 +60,7 @@ Windows Server 2008 的 DHCP 伺服器角色引進了 NAP 支援，windows 10 �
 
 如果執行 Windows Server 2016 的伺服器是將驗證要求轉寄到網路原則伺服器的 RADIUS proxy \(支援 NAP 的 NPS\)，這些 NAP 用戶端會由 NPS 評估為不支援 NAP\-，而且 NAP 處理會失敗。
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
   
 -   [動態主機設定通訊協定 (DHCP)](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
   

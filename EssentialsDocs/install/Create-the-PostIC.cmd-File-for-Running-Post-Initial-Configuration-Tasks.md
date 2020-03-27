@@ -1,9 +1,9 @@
 ---
 title: 建立 PostIC.cmd 檔案以便執行初始設定後續的工作
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 99e258bc-0695-48c9-b694-a7f3cbe2a2d0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e15cb8591fc701094dde884d0a55e08d2cf422bb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 81a38f0baf3a47323f6bf8836e48d02bc955cde0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433606"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312067"
 ---
 # <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>建立 PostIC.cmd 檔案以便執行初始設定後續的工作
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 您可以撰寫自己的程式碼，然後從名為 PostIC.cmd 的指令碼檔案呼叫該程式碼，藉此來新增後置初始設定的自訂項目。 使用 PostIC.cmd 檔案時，必須遵守下列規定：  
   
@@ -31,7 +31,7 @@ ms.locfileid: "66433606"
   
 - 您的自訂程式碼必須在三分鐘以內執行完成。  
   
-  定義您的 PostIC.cmd 檔案，使其在程式碼執行成功時傳回 0。 如果傳回其他值，作業系統就會尋找名為 [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure)的檔案，這個檔案包含當 PostIC.cmd 檔案中的程式碼執行失敗時，應該執行的程式碼。 PostIC.cmd 檔案和 SetupFailure.cmd 檔案都必須位於 C:\Windows\Setup\Scripts 中。  
+  定義您的 PostIC.cmd 檔案，使其在程式碼執行成功時傳回 0。 如果傳回其他值，作業系統就會尋找名為 [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure) 的檔案，這個檔案包含當 PostIC.cmd 檔案中的程式碼執行失敗時，應該執行的程式碼。 PostIC.cmd 檔案和 SetupFailure.cmd 檔案都必須位於 C:\Windows\Setup\Scripts 中。  
   
 #### <a name="to-define-post-initial-configuration-customizations"></a>若要定義初始設定的後續自訂項目  
   
@@ -43,7 +43,7 @@ ms.locfileid: "66433606"
   
 4.  (選用) 建立 SetupFailure.cmd 檔案，使其在 PostIC.cmd 傳回非 0 的值時執行程式碼。  
   
-###  <a name="BKMK_SetupFailure"></a> SetupFailure.cmd  
+###  <a name="setupfailurecmd"></a><a name="BKMK_SetupFailure"></a>Setupfailure.cmd .cmd  
  您可以使用 SetupFailure.cmd，在初始設定中提供問題通知。 SetupFailure.cmd 檔案包含您要在發生問題時執行的程式碼。 SetupFailure.cmd 檔案會放置於 C:\Windows\Setup\Scripts 中，且會在設定工作發生問題或是 PostIC.cmd 檔案傳回非 0 的值時執行。  
   
 ##### <a name="to-define-notifications"></a>若要定義通知  
@@ -55,8 +55,8 @@ ms.locfileid: "66433606"
 3.  在 C:\Windows\Setup\Scripts 中儲存 SetupFailure.cmd。  
   
 ## <a name="see-also"></a>另請參閱  
- [與 Windows Server Essentials ADK 快速入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他自訂項目](Additional-Customizations.md)   
- [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
+ [其他自訂](Additional-Customizations.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)

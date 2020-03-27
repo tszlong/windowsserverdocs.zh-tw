@@ -7,14 +7,14 @@ ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 52f8b9e1446b5b3f3b1e7060cc737204771d1eae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 62bac410d92e63f4f5cb759b04f7a51ef17d18b0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356072"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318042"
 ---
 # <a name="core-network-guidance-for-windows-server"></a>Windows Server 核心網路指導方針
 
@@ -26,7 +26,7 @@ ms.locfileid: "71356072"
   
 -   [Windows Server 的核心網路指南](#bkmk_core)  
   
-## <a name="bkmk_intro"></a>Windows Server Core 網路簡介
+## <a name="introduction-to-the-windows-server-core-network"></a><a name="bkmk_intro"></a>Windows Server Core 網路簡介
 
 核心網路是網路硬體、裝置以及軟體的集合，提供組織資訊技術 (IT) 需求的基礎服務。
 
@@ -46,7 +46,7 @@ Windows Server 核心網路提供許多好處，包括下列各項。
 
 核心網路也可以讓您隨著組織擴充及 IT 需求變更來調整網路大小。 例如，您可以使用核心網路來新增網域、IP 子網、遠端存取服務、無線服務，以及 Windows Server 2016 所提供的其他功能和伺服器角色。
 
-## <a name="bkmk_core"></a>Windows Server 的核心網路指南
+## <a name="core-network-guide-for-windows-server"></a><a name="bkmk_core"></a>Windows Server 的核心網路指南
 
 《 Windows Server 2016 核心網路指南》提供如何在新樹系中規劃及部署完全正常運作的網路和新的 Active Directory&reg; 網域所需之核心元件的指示。 使用本指南，您可以部署以下列 Windows 伺服器元件設定的電腦：
 

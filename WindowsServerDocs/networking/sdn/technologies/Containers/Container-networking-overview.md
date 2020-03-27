@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
-ms.author: pashort
+ms.author: lizross
 author: jmesser81
 ms.date: 09/04/2018
-ms.openlocfilehash: 352b4303b7cf08a0c53712e46a309b8365c10d08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8ec74ff0ebf0f0cb87db4d79ed5d37583f9beb9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355683"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317260"
 ---
 # <a name="container-networking-overview"></a>容器網路功能概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，我們將概述 Windows 容器的網路堆疊，並提供有關建立、設定和管理容器網路的其他指引連結。
 
@@ -41,4 +41,4 @@ Windows 容器會與容器主機和所有在主機上執行的容器共用核心
 
 - [Windows 容器網路](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture)功能：瞭解如何建立及管理非重迭/SDN 部署的容器網路。
 
-- [將容器端點連線至租使用者虛擬網路](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)：瞭解如何使用 SDN 來建立和管理用於重迭虛擬網路的容器網路。 
+- [將容器端點連線至租使用者虛擬網路](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)：瞭解如何使用 SDN 來建立和管理重迭虛擬網路的容器網路。 

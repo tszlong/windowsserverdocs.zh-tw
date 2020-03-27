@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f07520dcdefa04cb43760c5e5c66e28c0d1ce878
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ddc5ebd5f2e00251bcd1cdd915702902dcdb14ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322110"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318097"
 ---
 # <a name="wireless-access-deployment"></a>無線存取部署
 
@@ -31,7 +31,7 @@ ms.locfileid: "79322110"
 
 - [將新的無線電腦加入網域](#bkmk_domain)
 
-## <a name="bkmk_aps"></a>部署及設定無線 Ap
+## <a name="deploy-and-configure-wireless-aps"></a><a name="bkmk_aps"></a>部署及設定無線 Ap
 
 請遵循下列步驟來部署和設定您的無線 Ap：
 
@@ -42,7 +42,7 @@ ms.locfileid: "79322110"
 >[!NOTE]
 >本指南中的程式不包含開啟 [**使用者帳戶控制**] 對話方塊來要求您的許可權以繼續的情況的指示。 如果執行本指南的程序時此對話方塊開啟，或此對話方塊因回應您的動作而開啟，請按一下 [繼續]。
 
-### <a name="bkmk_channel"></a>指定無線 AP 通道頻率
+### <a name="specify-wireless-ap-channel-frequencies"></a><a name="bkmk_channel"></a>指定無線 AP 通道頻率
 
 當您在單一地理位置部署多個無線 Ap 時，您必須設定具有重迭信號的無線 Ap，以使用唯一的通道頻率來減少無線 Ap 之間的干擾。
 
@@ -52,7 +52,7 @@ ms.locfileid: "79322110"
 
 - 識別您組織中相鄰樓層的重迭無線信號。 在識別組織外部和內部的重迭涵蓋範圍之後，為您的無線 Ap 指派通道頻率，以確保具有重迭涵蓋範圍的兩個無線 Ap 會被指派不同的通道頻率。
 
-### <a name="bkmk_wirelessaps"></a>設定無線 Ap
+### <a name="configure-wireless-aps"></a><a name="bkmk_wirelessaps"></a>設定無線 Ap
 
 使用下列資訊以及無線 AP 製造商提供的產品檔來設定您的無線 Ap。
 
@@ -95,7 +95,7 @@ ms.locfileid: "79322110"
 
 - [將使用者新增至無線安全性群組](#bkmk_addusers)
 
-### <a name="bkmk_groups"></a>建立無線使用者安全性群組
+### <a name="create-a-wireless-users-security-group"></a><a name="bkmk_groups"></a>建立無線使用者安全性群組
 
 您可以使用此程式，在 [Active Directory 使用者和電腦] Microsoft Management Console \(MMC\) 中的嵌入式管理\-中建立無線安全性群組。  
 
@@ -123,7 +123,7 @@ ms.locfileid: "79322110"
 
 如果您需要無線使用者有多個安全性群組，請重複這些步驟來建立其他無線使用者群組。 稍後您可以在 NPS 中建立個別的網路原則，將不同的條件和條件約束套用到每個群組，並提供不同的存取權限和連線規則。
 
-### <a name="bkmk_addusers"></a>將使用者新增至無線使用者安全性群組
+### <a name="add-users-to-the-wireless-users-security-group"></a><a name="bkmk_addusers"></a>將使用者新增至無線使用者安全性群組
 
 您可以使用此程式，將使用者、電腦或群組新增至 [Active Directory 使用者和電腦] Microsoft Management Console \(MMC\) 中的嵌入式管理\-中的無線安全性群組。
 
@@ -155,7 +155,7 @@ ms.locfileid: "79322110"
 
 4. 若要將群組成員資格指派給其他電腦，請重複執行此程式的步驟 1\-3。
 
-## <a name="bkmk_policies"></a>設定無線網路 \(IEEE 802.11\) 原則
+## <a name="configure-wireless-network-ieee-80211-policies"></a><a name="bkmk_policies"></a>設定無線網路 \(IEEE 802.11\) 原則
 
 請遵循下列步驟來設定無線網路 \(IEEE 802.11\) 原則群組原則延伸模組：
 
@@ -165,7 +165,7 @@ ms.locfileid: "79322110"
 
 - [設定新的無線網路原則](#bkmk_policyconfig)
 
-### <a name="bkmk_opengpme"></a>開啟或新增並開啟群組原則物件
+### <a name="open-or-add-and-open-a-group-policy-object"></a><a name="bkmk_opengpme"></a>開啟或新增並開啟群組原則物件
 
 根據預設，當安裝 Active Directory Domain Services \(AD DS\) 伺服器角色，並將伺服器設定為網域控制站時，群組原則管理功能會安裝在執行 Windows Server 2016 的電腦上。 下列程式說明如何在網域控制站上開啟群組原則管理主控台 \(GPMC\)。 此程式接著會說明如何開啟現有的網域\-層級群組原則物件 \(GPO\) 進行編輯，或建立新的網域 GPO 並開啟以供編輯。
 
@@ -191,7 +191,7 @@ ms.locfileid: "79322110"
 
 在下一節中，您將使用群組原則管理編輯器來建立無線原則。
 
-### <a name="bkmk_activate"></a>啟用預設無線網路 \(IEEE 802.11\) 原則
+### <a name="activate-default-wireless-network-ieee-80211-policies"></a><a name="bkmk_activate"></a>啟用預設無線網路 \(IEEE 802.11\) 原則
 
 此程式描述如何使用群組原則管理編輯器 \(GPME\)來啟動預設的無線網路 \(IEEE 802.11\) 原則。
 
@@ -220,7 +220,7 @@ ms.locfileid: "79322110"
 
 在下一節中，您可以執行原則設定、原則處理喜好設定順序和網路許可權。
 
-### <a name="bkmk_policyconfig"></a>設定新的無線網路原則
+### <a name="configure-the-new-wireless-network-policy"></a><a name="bkmk_policyconfig"></a>設定新的無線網路原則
 
 您可以使用本節中的程式來設定無線網路 \(IEEE 802.11\) 原則。 此原則可讓您設定安全性與驗證設定、管理無線設定檔，以及指定未設定為慣用網路的無線網路許可權。
 
@@ -230,7 +230,7 @@ ms.locfileid: "79322110"
 
 - [定義網路許可權](#bkmk_permissions)  
 
-#### <a name="bkmk_configureprofile"></a>設定 PEAP\-MS\-CHAP v2 的無線連線設定檔
+#### <a name="configure-a-wireless-connection-profile-for-peap-ms-chap-v2"></a><a name="bkmk_configureprofile"></a>設定 PEAP\-MS\-CHAP v2 的無線連線設定檔
 
 此程式提供設定 PEAP\-MS\-CHAP v2 無線設定檔所需的步驟。  
 
@@ -309,7 +309,7 @@ ms.locfileid: "79322110"
 
 在下一節中，您可以訂購原則設定檔以獲得最佳安全性。
 
-#### <a name="bkmk_preferenceorder"></a>設定無線連線設定檔的喜好設定順序
+#### <a name="set-the-preference-order-for-wireless-connection-profiles"></a><a name="bkmk_preferenceorder"></a>設定無線連線設定檔的喜好設定順序
 如果您已在無線網路原則中建立多個無線設定檔，而且想要排序設定檔以獲得最佳的效能和安全性，則可以使用此程式。
 
 為了確保無線用戶端能夠以其所能支援的最高安全性層級進行連線，請將您最嚴格的原則放在清單頂端。
@@ -332,7 +332,7 @@ ms.locfileid: "79322110"
 
 在下一節中，您可以定義無線原則的網路許可權。
 
-#### <a name="bkmk_permissions"></a>定義網路許可權
+#### <a name="define-network-permissions"></a><a name="bkmk_permissions"></a>定義網路許可權
 您可以針對套用無線網路 \(IEEE 802.11\) 原則的網域成員，在 [**網路許可權**] 索引標籤上設定設定。
 
 您只能針對 [**無線網路原則**內容] 頁面中 [**一般**] 索引標籤上未設定的無線網路套用下列設定：
@@ -382,7 +382,7 @@ ms.locfileid: "79322110"
 
     -   若要指定使用者只能使用群組原則設定檔連線到允許的網路，請選取 [**僅針對允許的網路使用群組原則設定檔**]。
 
-## <a name="bkmk_nps"></a>設定您的 Nps
+## <a name="configure-your-npss"></a><a name="bkmk_nps"></a>設定您的 Nps
 請遵循下列步驟來設定 Nps，以執行無線存取的 802.1 X 驗證：
 
 - [在 Active Directory Domain Services 中註冊 NPS](#bkmk_npsreg)
@@ -391,7 +391,7 @@ ms.locfileid: "79322110"
 
 - [使用 Wizard 建立 802.1 X 無線網路的 NPS 原則](#bkmk_npspolicy)
 
-### <a name="bkmk_npsreg"></a>在 Active Directory Domain Services 中註冊 NPS
+### <a name="register-nps-in-active-directory-domain-services"></a><a name="bkmk_npsreg"></a>在 Active Directory Domain Services 中註冊 NPS
 您可以使用此程式，將執行網路原則伺服器 \(NPS\) 的伺服器註冊到 NPS 所屬網域中 Active Directory Domain Services \(AD DS\)。 若要讓 Nps 在授權程式期間授與使用者帳戶內容中讀取撥號\-的許可權，則必須在 AD DS 中註冊每個 NPS。 註冊 NPS 會將伺服器新增至 AD DS 中的 [ **RAS 和 資訊存取伺服器**] 安全性群組。
 
 >[!NOTE]
@@ -409,7 +409,7 @@ ms.locfileid: "79322110"
 
 3. 在 [網路原則伺服器] 中，按一下 [確定]，再按一次 [確定]。
 
-### <a name="bkmk_radiusclient"></a>將無線 AP 設定為 NPS RADIUS 用戶端
+### <a name="configure-a-wireless-ap-as-an-nps-radius-client"></a><a name="bkmk_radiusclient"></a>將無線 AP 設定為 NPS RADIUS 用戶端
 您可以使用此程式，將 AP （也稱為*網路存取伺服器 \(NAS\)* ）設定為使用者服務中的遠端驗證撥號\-，\(RADIUS\) 用戶端使用中的 NPS 嵌入式管理\-。 
 
 >[!IMPORTANT]
@@ -450,7 +450,7 @@ ms.locfileid: "79322110"
 
 9. 按一下 [確定]。 您的 NAS 會出現在 NPS 上設定的 RADIUS 用戶端清單中。
 
-### <a name="bkmk_npspolicy"></a>使用 Wizard 建立 802.1 X 無線網路的 NPS 原則
+### <a name="create-nps-policies-for-8021x-wireless-using-a-wizard"></a><a name="bkmk_npspolicy"></a>使用 Wizard 建立 802.1 X 無線網路的 NPS 原則
 您可以使用此程式來建立連線要求原則和網路原則，以將 802.1 X\-功能的無線存取點部署為使用者服務中的遠端驗證撥號\-，\(RADIUS\) 用戶端連線到執行網路原則伺服器 \(NPS\)的 RADIUS 伺服器。  
 在執行精靈之後，會建立下列原則：
 
@@ -512,7 +512,7 @@ ms.locfileid: "79322110"
 
 現在已建立您的 NPS 原則，而且您可以繼續將無線電腦加入網域。
 
-## <a name="bkmk_domain"></a>將新的無線電腦加入網域
+## <a name="join-new-wireless-computers-to-the-domain"></a><a name="bkmk_domain"></a>將新的無線電腦加入網域
 將新的無線電腦加入網域的最簡單方法，就是將電腦實際連接到有線 LAN 的區段，\(在將電腦加入網域之前，不是由 802.1 X 交換器\) 控制的區段。 這是最簡單的方式，因為無線群組原則設定會自動且立即套用，而且如果您已部署自己的 PKI，電腦會收到 CA 憑證，並將它放在「信任的根憑證授權單位」憑證存放區中。允許無線用戶端信任 Nps 與您 CA 所簽發的伺服器憑證。
 
 同樣地，在新的無線電腦加入網域之後，使用者登入網域的慣用方法是使用網路的有線連線來執行登入。
@@ -528,7 +528,7 @@ ms.locfileid: "79322110"
 
 如需詳細資訊，請參閱[使用者加入網域和使用啟動程式無線設定檔](#bkmk_userbootstrap)設定來登入一節。
 
-### <a name="bkmk_itstaff"></a>使用 IT 人員電腦設定方法加入網域並登入
+### <a name="join-the-domain-and-log-on-by-using-the-it-staff-computer-configuration-method"></a><a name="bkmk_itstaff"></a>使用 IT 人員電腦設定方法加入網域並登入
 已加入網域\-無線用戶端電腦的網域成員使用者，可以使用暫時的無線設定檔連線到 802.1 X\-驗證無線網路，而不需要先連線到有線 LAN。 這個暫時的無線設定檔稱為*啟動程式無線設定檔*。
 
 啟動程式無線設定檔需要使用者手動指定其網域使用者帳號憑證，而且不會驗證在執行網路原則伺服器 \(NPS\)的使用者服務 \(RADIUS\) 伺服器中，遠端驗證撥號\-的憑證。
@@ -560,7 +560,7 @@ ms.locfileid: "79322110"
 
 當使用者啟動電腦時，Windows 會提示使用者輸入他們的網域使用者帳戶名稱和密碼。 由於已啟用單一登入，因此電腦會使用網域使用者帳號憑證，先建立與無線網路的連線，然後登入網域。
 
-#### <a name="bkmk_w10"></a>使用執行 Windows 10 的電腦登入網域
+#### <a name="log-on-to-the-domain-using-computers-running-windows-10"></a><a name="bkmk_w10"></a>使用執行 Windows 10 的電腦登入網域
 
 1. 登出電腦，或重新啟動電腦。
 
@@ -575,7 +575,7 @@ ms.locfileid: "79322110"
 >[!NOTE]
 >如果 [**其他使用者**] 畫面不包含文字登入 **：** 和您的功能變數名稱，您應該以*domain\\使用者*的格式輸入您的使用者名稱。 例如，若要使用名為**User\-01**的帳戶登入網域 example.com，請輸入**範例\\user\-01**。
 
-### <a name="bkmk_userbootstrap"></a>使用使用者的啟動程式無線設定檔設定加入網域並登入
+### <a name="join-the-domain-and-log-on-by-using-bootstrap-wireless-profile-configuration-by-users"></a><a name="bkmk_userbootstrap"></a>使用使用者的啟動程式無線設定檔設定加入網域並登入
 使用此方法時，您必須完成一般步驟一節中的步驟，然後向您的網域\-成員使用者提供如何使用啟動程式無線設定檔手動設定無線電腦的指示。 啟動程式無線設定檔可讓使用者建立無線連線，然後加入網域。 當電腦加入網域並重新啟動之後，使用者就可以透過無線連線登入網域。
 
 #### <a name="general-steps"></a>一般步驟

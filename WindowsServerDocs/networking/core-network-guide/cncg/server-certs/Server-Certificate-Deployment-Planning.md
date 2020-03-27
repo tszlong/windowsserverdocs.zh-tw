@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 7eb746e0-1046-4123-b532-77d5683ded44
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1ec5bc315381f85434753f9becc94409a74271b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2da57ab750cc556b521329f4096fb088e212a903
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356113"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318210"
 ---
 # <a name="server-certificate-deployment-planning"></a>伺服器憑證部署規劃
 
@@ -37,25 +37,25 @@ ms.locfileid: "71356113"
   
 -   [在 CA 上規劃伺服器憑證範本的設定](#bkmk_template)  
   
-## <a name="bkmk_basic"></a>規劃基本伺服器設定  
+## <a name="plan-basic-server-configuration"></a><a name="bkmk_basic"></a>規劃基本伺服器設定  
 在您打算用來作為憑證授權單位單位和網頁伺服器的電腦上安裝 Windows Server 2016 之後，您必須重新命名電腦，並為本機電腦指派和設定靜態 IP 位址。  
   
 如需詳細資訊，請參閱《 Windows Server 2016[核心網路指南》](../../../core-network-guide/Core-Network-Guide.md)。  
   
-## <a name="bkmk_domain"></a>規劃網域存取  
+## <a name="plan-domain-access"></a><a name="bkmk_domain"></a>規劃網域存取  
 若要登入網域，電腦必須是網域成員電腦，而且必須在登入嘗試之前 AD DS 中建立使用者帳戶。 此外，本指南中的大部分程式都需要使用者帳戶是 Active Directory 使用者和電腦中 Enterprise Admins 或 Domain Admins 群組的成員，因此您必須使用具有適當群組成員資格的帳戶登入 CA。  
   
 如需詳細資訊，請參閱《 Windows Server 2016[核心網路指南》](../../../core-network-guide/Core-Network-Guide.md)。  
   
-## <a name="bkmk_virtual"></a>規劃 Web 服務器上虛擬目錄的位置和名稱  
+## <a name="plan-the-location-and-name-of-the-virtual-directory-on-your-web-server"></a><a name="bkmk_virtual"></a>規劃 Web 服務器上虛擬目錄的位置和名稱  
 若要將 CRL 和 CA 憑證的存取權提供給其他電腦，您必須將這些專案儲存在 Web 服務器上的虛擬目錄中。 在本指南中，虛擬目錄位於 Web 服務器 WEB1 上。 此資料夾位於 "C：" 磁片磁碟機上，且名稱為 "pki"。 您可以在您的部署適用的任何資料夾位置上，找出 Web 服務器上的虛擬目錄。  
   
-## <a name="bkmk_cname"></a>規劃 Web 服務器的 DNS 別名（CNAME）記錄  
-別名（CNAME）資源記錄有時也稱為正式名稱資源記錄。 透過這些記錄，您可以使用多個名稱指向單一主機，讓您輕鬆地將檔案傳輸通訊協定（FTP）伺服器和網頁伺服器裝載在同一部電腦上。 例如，已知的伺服器名稱（ftp、www）是使用別名（CNAME）資源記錄（對應至裝載這些服務之伺服器電腦的網域名稱系統（DNS）主機名稱，例如 WEB1）來註冊。  
+## <a name="plan-a-dns-alias-cname-record-for-your-web-server"></a><a name="bkmk_cname"></a>規劃 Web 服務器的 DNS 別名（CNAME）記錄  
+別名 (CNAME) 資源記錄有時也稱為正式名稱資源記錄。 您可以使用這些記錄，將一個以上的名稱指向單一主機，讓在相同電腦上裝載檔案傳輸通訊協定 (FTP) 伺服器和網頁伺服器變得容易。 例如，已知的伺服器名稱（ftp、www）是使用別名（CNAME）資源記錄（對應至裝載這些服務之伺服器電腦的網域名稱系統（DNS）主機名稱，例如 WEB1）來註冊。  
   
 本指南提供設定 Web 服務器以裝載憑證授權單位單位（CA）之憑證撤銷清單（CRL）的指示。 因為您可能也會想要使用網頁伺服器來進行其他用途，例如裝載 FTP 或網站，所以最好是在 DNS 中為您的 Web 服務器建立別名資源記錄。 在本指南中，CNAME 記錄名為「pki」，但您可以選擇適合您部署的名稱。  
   
-## <a name="bkmk_capolicy"></a>規劃 Capolicy.inf 的設定  
+## <a name="plan-configuration-of-capolicyinf"></a><a name="bkmk_capolicy"></a>規劃 Capolicy.inf 的設定  
 安裝 AD CS 之前，您必須在 CA 上設定 Capolicy.inf，並提供您部署的正確資訊。 Capolicy.inf .inf 檔案包含下列資訊：  
   
 ```  
@@ -99,7 +99,7 @@ Critical=Yes
 > [!IMPORTANT]  
 > 不建議您變更 Capolicy.inf .inf 檔案中的任何其他設定，除非您有特定原因要這麼做。  
   
-## <a name="bkmk_cdp"></a>在 CA1 上規劃 CDP 和 AIA 延伸模組的設定  
+## <a name="plan-configuration-of-the-cdp-and-aia-extensions-on-ca1"></a><a name="bkmk_cdp"></a>在 CA1 上規劃 CDP 和 AIA 延伸模組的設定  
 當您在 CA1 上設定憑證撤銷清單（CRL）發佈點（CDP）和授權單位資訊存取（AIA）設定時，您需要 Web 服務器的名稱和功能變數名稱。 您也需要在 Web 服務器上建立的虛擬目錄名稱，其中會儲存憑證撤銷清單（CRL）和憑證授權單位單位憑證。  
   
 您在此部署步驟中必須輸入的 CDP 位置格式如下：  
@@ -118,10 +118,10 @@ Critical=Yes
       
     `http:\/\/pki.corp.contoso.com\/pki\/<ServerDNSName>\_<CaName><CertificateName>.crt`  
       
-## <a name="bkmk_copy"></a>規劃 CA 與 Web 服務器之間的複製操作  
+## <a name="plan-the-copy-operation-between-the-ca-and-the-web-server"></a><a name="bkmk_copy"></a>規劃 CA 與 Web 服務器之間的複製操作  
 若要將 CRL 和 CA 憑證從 CA 發佈至 Web 服務器虛擬目錄，您可以在設定 CA 上的 CDP 和 AIA 位置之後，執行 certutil-CRL 命令。 請確定您在 [CA 內容**延伸**] 索引標籤上設定正確的路徑，然後再使用本指南中的指示執行此命令。 此外，若要將企業 CA 憑證複製到 Web 服務器，您必須已經在 Web 服務器上建立虛擬目錄，並將資料夾設定為共用資料夾。  
   
-## <a name="bkmk_template"></a>在 CA 上規劃伺服器憑證範本的設定  
+## <a name="plan-the-configuration-of-the-server-certificate-template-on-the-ca"></a><a name="bkmk_template"></a>在 CA 上規劃伺服器憑證範本的設定  
 若要部署自動註冊的伺服器憑證，您必須複製名為**RAS 和 資訊存取伺服器**的憑證範本。 根據預設，此複本的名稱為 [ **RAS 和 資訊存取伺服器的複本**]。 如果您想要重新命名此範本複本，請在此部署步驟中規劃您要使用的名稱。  
   
 > [!NOTE]  

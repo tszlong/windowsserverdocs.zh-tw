@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8387eabe-7363-4367-b5b1-03c67baa2933
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 95c575b255e7495f85e731bdb84ae441e35b1463
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d5c189969c31ef9627dd7daee0e09162ea9aec39
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404478"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313878"
 ---
 # <a name="plan-a-multisite-deployment"></a>規劃多站台部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
  Windows server 2016、Windows Server 2012 將 DirectAccess 與路由及遠端存取服務（RRAS） VPN 合併成一個遠端存取角色。 本總覽提供在多網站設定中部署 Windows Server 2016 或 Windows Server 2012 遠端存取所需之規劃步驟的簡介。  
   

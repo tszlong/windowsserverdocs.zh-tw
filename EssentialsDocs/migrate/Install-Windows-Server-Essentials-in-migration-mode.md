@@ -1,9 +1,9 @@
 ---
-title: 以移轉模式 1 安裝 Windows Server Essentials
-description: 描述如何使用 Windows Server Essentials
+title: 在遷移 mode1 中安裝 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,22 +12,22 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 74c40cc0f06d73a922a3d7fb819f7e71b47ac088
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: dbbd9f7303995e1547e48aa9701467b45e4bad34
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432960"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318991"
 ---
-# <a name="install-windows-server-essentials-in-migration-mode1"></a>以移轉模式 1 安裝 Windows Server Essentials
+# <a name="install-windows-server-essentials-in-migration-mode1"></a>在遷移 mode1 中安裝 Windows Server Essentials
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-您可以在執行 Windows Server Essentials，您網路上只有一部伺服器，該伺服器必須是網域控制站的網路。  
+您的網路上只能有一部執行 Windows Server Essentials 的伺服器，而且該伺服器必須是網路的網域控制站。  
   
- 當您安裝 Windows Server Essentials 以移轉模式時，安裝精靈會執行下列工作：  
+ 當您以移轉模式安裝 Windows Server Essentials 時，安裝精靈會執行下列工作：  
   
-1.  安裝和設定目的地伺服器上的 Windows Server Essentials 伺服器軟體。  
+1.  在目的地伺服器上安裝和設定 Windows Server Essentials 伺服器軟體。  
   
 2.  將網域架構更新至最新版本。  
   
@@ -42,36 +42,36 @@ ms.locfileid: "66432960"
   
 6.  將目的地伺服器設定成站台授權伺服器。  
   
-##  <a name="BKMK_Install"></a> 在目的地伺服器上安裝 Windows Server Essentials  
- 若要安裝和設定 Windows Server Essentials 以移轉模式在目的地伺服器上，執行下列程序。  
+##  <a name="install-windows-server-essentials-on-the-destination-server"></a><a name="BKMK_Install"></a>在目的地伺服器上安裝 Windows Server Essentials  
+ 若要在目的地伺服器上以移轉模式安裝和設定 Windows Server Essentials，請執行下列程式。  
   
-#### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>若要在目的地伺服器上安裝 Windows Server Essentials  
+#### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>在目的地伺服器上安裝 Windows Server Essentials  
   
-1. 開啟目的地伺服器上與 Windows Server Essentials DVD1 插入 DVD 光碟機。 如果您看到一則訊息，詢問您是否要從 CD 或 DVD 開機，請按任一鍵以執行這項操作。  
-  
-   > [!NOTE]
-   >  如果目的地伺服器支援從 USB 快閃磁碟機開機，您可以使用**Windows 7 USB/DVD 下載工具**從 Windows Server Essentials 的 ISO 檔案建立可開機的 USB 快閃磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)免費 Microsoft Store 網站。  
+1. 開啟目的地伺服器，並將 Windows Server Essentials DVD1 插入 DVD 光碟機。 如果您看到一則訊息，詢問您是否要從 CD 或 DVD 開機，請按任一鍵以執行這項操作。  
   
    > [!NOTE]
-   >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]  。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。  
+   >  如果目的地伺服器支援從 USB 快閃磁片磁碟機開機，您可以使用**windows 7 USB/DVD 下載工具**，從 Windows SERVER Essentials ISO 檔案建立可開機的 Usb 快閃磁片磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以在 Microsoft Store 網站免費[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)。  
   
-2. 按一下 [新的安裝]  。  
+   > [!NOTE]
+   >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。  
   
-3. 如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]  ，並在繼續前先安裝必要的驅動程式。  
+2. 按一下 [新的安裝]。  
   
-4. 選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]  。  
+3. 如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]，並在繼續前先安裝必要的驅動程式。  
   
-5. 在 [選擇伺服器的安裝模式]  頁面上，按一下 [伺服器移轉]  ，然後提供必要的移轉資訊。  
+4. 選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]。  
   
-6. 當 [已成功移轉您的伺服器]  訊息出現，請按一下 [關閉]  。  
+5. 在 [選擇伺服器的安裝模式] 頁面上，按一下 [伺服器移轉]，然後提供必要的移轉資訊。  
+  
+6. 當 [已成功移轉您的伺服器] 訊息出現，請按一下 [關閉]。  
   
    安裝完成後，會自動以您在移轉回應檔案中提供的系統管理員使用者帳戶與密碼登入。  
   
 > [!NOTE]
->  若要解除鎖定桌面，安裝 Windows Server Essentials 時，使用內建的 administrator 帳戶並將密碼保持空白。  
+>  若要在 Windows Server Essentials 安裝時解除鎖定桌面，請使用內建的系統管理員帳戶，並將密碼保留空白。  
   
-##  <a name="BKMK_VerifyTheHealthOfDC"></a> 確認網域控制站的健全狀況  
- 繼續進行移轉之前，您應該確保網域控制站與 Windows Server Essentials 網路的狀況良好。  
+##  <a name="verify-the-health-of-the-domain-controller"></a><a name="BKMK_VerifyTheHealthOfDC"></a>確認網域控制站的健全狀況  
+ 繼續進行遷移之前，您應該確定網域控制站和 Windows Server Essentials 網路的狀況良好。  
   
  下表列出您可以用來診斷目的地伺服器、網路和網域問題的工具：  
   
@@ -84,4 +84,4 @@ ms.locfileid: "66432960"
  您應該修正這些工具回報的所有問題，然後再繼續移轉作業。  
   
 > [!NOTE]
->  如果您打算將電子郵件移轉到其他內部部署 Exchange server，請參閱[整合內部部署 Exchange Server 與 Windows Server Essentials](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md)如需有關如何設定您的內部部署 Exchange server 資訊。
+>  如果您打算將電子郵件遷移至另一個內部部署 Exchange 伺服器，請參閱[整合內部部署 Exchange server 與 Windows Server Essentials](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md) ，以取得如何設定內部部署 exchange server 的相關資訊。

@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-da
 ms.topic: article
 ms.assetid: 68fdc02b-2904-4a67-8bfe-45e426f2bd6c
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
-ms.openlocfilehash: 9010327effe17f6337a37cd1dfc6acf2c6e229db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 46da99ca49dd5138ead9106cded661585e4aaa3a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404819"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314628"
 ---
 # <a name="step-1-complete-the-directaccess-configuration"></a>步驟1完成 DirectAccess 設定
 

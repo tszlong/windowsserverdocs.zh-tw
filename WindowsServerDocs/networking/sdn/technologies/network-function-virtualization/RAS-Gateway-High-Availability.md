@@ -10,22 +10,22 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7d9c37629c0e0d9964554ba90887aa45f74a330a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5fca4fc6a636bcde155e60b6da3c827bc9313606
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355604"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313040"
 ---
 # <a name="ras-gateway-high-availability"></a>RAS 閘道高可用性
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解適用于軟體定義網路（SDN）之 RAS 多租使用者閘道的高可用性設定。  
   
-本主題涵蓋下列各節。  
+本主題包含下列各節。  
   
 -   [RAS 閘道總覽](#bkmk_overview)  
   
@@ -35,7 +35,7 @@ ms.locfileid: "71355604"
   
 -   [RAS 閘道與網路控制站的整合](#bkmk_integration)  
   
-## <a name="bkmk_overview"></a>RAS 閘道總覽  
+## <a name="ras-gateway-overview"></a><a name="bkmk_overview"></a>RAS 閘道總覽  
 如果您的組織是雲端服務提供者（CSP）或具有多個租使用者的企業，您可以在多租使用者模式中部署 RAS 閘道，以提供進出虛擬和實體網路（包括網際網路）的網路流量路由。  
   
 您可以在多組織使用者共用模式中將 RAS 閘道部署為邊緣閘道，以將租使用者客戶網路流量路由至租使用者虛擬網路和資源。  
@@ -46,7 +46,7 @@ ms.locfileid: "71355604"
   
 如需 RAS 閘道的詳細總覽資訊，請參閱[Ras 閘道](../../../../remote/remote-access/ras-gateway/RAS-Gateway.md)。  
   
-## <a name="bkmk_pools"></a>閘道集區總覽  
+## <a name="gateway-pools-overview"></a><a name="bkmk_pools"></a>閘道集區總覽  
 在 Windows Server 2016 中，您可以在一或多個集區中部署閘道。  
   
 下圖顯示在虛擬網路之間提供流量路由的不同類型閘道集區。  
@@ -73,7 +73,7 @@ ms.locfileid: "71355604"
   
 -   多個集區可以提供相同的閘道功能，但容量不同。 例如，您可以建立同時支援高輸送量和低輸送量 IKEv2 S2S 連線的閘道集區。  
   
-## <a name="bkmk_deployment"></a>RAS 閘道部署總覽  
+## <a name="ras-gateway-deployment-overview"></a><a name="bkmk_deployment"></a>RAS 閘道部署總覽  
 下圖示范 RAS 閘道的一般雲端服務提供者（CSP）部署。  
   
 ![RAS 閘道部署總覽](../../../media/RAS-Gateway-High-Availability/ras_csp_deploy.png)  
@@ -84,7 +84,7 @@ ms.locfileid: "71355604"
   
 BGP 路由器會在圖表中分開，以描述此集中式路由概念。 閘道 BGP 實行也提供傳輸路由，可讓雲端作為在兩個租使用者網站之間路由的傳輸點。 這些 BGP 功能適用于所有閘道功能。  
   
-## <a name="bkmk_integration"></a>RAS 閘道與網路控制站的整合  
+## <a name="ras-gateway-integration-with-network-controller"></a><a name="bkmk_integration"></a>RAS 閘道與網路控制站的整合  
 RAS 閘道與 Windows Server 2016 中的網路控制站完全整合在一起。 部署 RAS 閘道和網路控制站時，網路控制卡會執行下列功能。  
   
 -   閘道集區的部署  
@@ -103,7 +103,7 @@ RAS 閘道與 Windows Server 2016 中的網路控制站完全整合在一起。 
   
 -   [L3 轉送閘道的高可用性](#bkmk_l3)  
   
-### <a name="bkmk_provisioning"></a>閘道連線的布建和負載平衡（IKEv2、L3 和 GRE）  
+### <a name="provisioning-and-load-balancing-of-gateway-connections-ikev2-l3-and-gre"></a><a name="bkmk_provisioning"></a>閘道連線的布建和負載平衡（IKEv2、L3 和 GRE）  
 當租使用者要求閘道連線時，會將要求傳送至網路控制卡。 網路控制卡已設定所有閘道集區的相關資訊，包括每個集區的容量，以及每個集區中的每個閘道。 網路控制卡會為連線選取正確的集區和閘道。 此選項是根據連接的頻寬需求。 網路控制卡會使用「最適合」演算法，在集區中有效率地挑選連接。 如果這是租使用者的第一次連線，此時也會指定連線的 BGP 對等互連點。  
   
 在網路控制卡選取連線的 RAS 閘道之後，網路控制卡會為閘道上的連線布建必要的設定。 如果連接是 IKEv2 S2S 連線，網路控制卡也會在 SLB 集區上布建網路位址轉譯（NAT）規則;SLB 集區上的此 NAT 規則會將來自租使用者的連接要求導向至指定的閘道。 租使用者是由來源 IP 來區分，這應該是唯一的。  
@@ -113,7 +113,7 @@ RAS 閘道與 Windows Server 2016 中的網路控制站完全整合在一起。 
   
 如果已針對連線啟用 BGP 路由，則會由 RAS 閘道起始 BGP 對等互連，而路由會在內部部署與雲端閘道之間交換。 BGP 所學習到的路由（如果未使用 BGP，則是以靜態方式設定的路由）會傳送至網路控制站。 然後，網路控制站會向下連接至安裝租使用者 Vm 的 Hyper-v 主機。 此時，可以將租使用者流量路由傳送至正確的內部部署網站。 網路控制站也會建立相關聯的 Hyper-v 網路虛擬化原則，以指定閘道位置，並向下連接至 Hyper-v 主機。  
   
-### <a name="bkmk_ike"></a>IKEv2 S2S 的高可用性  
+### <a name="high-availability-for-ikev2-s2s"></a><a name="bkmk_ike"></a>IKEv2 S2S 的高可用性  
 集區中的 RAS 閘道是由不同租使用者的連線和 BGP 對等互連所組成。 每個集區都有「作用中閘道」和「N」待命閘道。  
   
 網路控制站會以下列方式處理閘道的失敗。  
@@ -140,8 +140,8 @@ RAS 閘道與 Windows Server 2016 中的網路控制站完全整合在一起。 
   
 -   同時，當新的主動閘道上出現設定時，會重新建立 IKEv2 S2S 連線和 BGP 對等互連。 雲端閘道或內部部署閘道可以起始連線和 BGP 對等互連。 閘道會重新整理其路由，並將其傳送至網路控制卡。 在網路控制卡學習閘道探索到的新路由之後，網路控制站會將路由和相關聯的 Hyper-v 網路虛擬化原則，傳送至失敗影響的租使用者 Vm 所在的 Hyper-v 主機。 此網路控制卡活動類似于新連線設定的情況，只有在較大規模的情況下才會發生。  
   
-### <a name="bkmk_gre"></a>GRE 的高可用性  
-網路控制站的 RAS 閘道容錯移轉回應程式-包括失敗偵測、將連線和路由設定複製到待命閘道、容錯移轉受影響連線的 BGP/靜態路由（包括提款和重新設定計算主機和 BGP 重新對等互連上的路由，以及在計算主機上重新設定 Hyper-v 網路虛擬化原則，對於 GRE 閘道和連線而言是相同的。 不過，重新建立 GRE 連線的方式會有所不同，但 GRE 的高可用性解決方案則有一些額外的需求。  
+### <a name="high-availability-for-gre"></a><a name="bkmk_gre"></a>GRE 的高可用性  
+網路控制站的 RAS 閘道容錯移轉回應程式-包括失敗偵測、將連線和路由設定複製到待命閘道、受影響連線的 BGP/靜態路由的容錯移轉（包括在計算主機和 BGP 重新對等互連上進行路由提款和重新設定），以及在計算主機上重新設定 Hyper-v 網路虛擬化原則的程式，對於 GRE 閘道和連線而言 不過，重新建立 GRE 連線的方式會有所不同，但 GRE 的高可用性解決方案則有一些額外的需求。  
   
 ![GRE 的高可用性](../../../media/RAS-Gateway-High-Availability/ras_ha.png)  
   
@@ -151,14 +151,14 @@ RAS 閘道與 Windows Server 2016 中的網路控制站完全整合在一起。 
   
 當閘道失敗時，網路控制站會將失敗閘道的 VIP 位址和其他設定資料複製到待命閘道。 當待命閘道變成作用中狀態時，它會將 VIP 公告至其 TOR 交換器，並將它進一步公佈到實體網路。 遠端路由器會繼續將 GRE 通道連線到相同的 VIP，而路由基礎結構則可確保封包會路由傳送至新的作用中閘道。  
   
-### <a name="bkmk_l3"></a>L3 轉送閘道的高可用性  
+### <a name="high-availability-for-l3-forwarding-gateways"></a><a name="bkmk_l3"></a>L3 轉送閘道的高可用性  
 Hyper-v 網路虛擬化 L3 轉送閘道是資料中心內的實體基礎結構與 Hyper-v 網路虛擬化雲端中虛擬化基礎結構之間的橋樑。 在多組織使用者共用的 L3 轉送閘道上，每個租使用者都使用自己的 VLAN 標記邏輯網路，與租使用者的實體網路連線。  
   
 當新的租使用者建立新的 L3 閘道時，網路控制卡閘道 Service Manager 會選取可用的閘道 VM，並使用高可用性客戶位址（CA）空間 IP 位址（來自租使用者的 VLAN 標記邏輯網路）來設定新的租使用者介面。). IP 位址會用來作為遠端（實體網路）閘道上的對等 IP 位址，而是下一個躍點來連線到租使用者的 Hyper-v 網路虛擬化網路。  
   
 與 IPsec 或 GRE 網路連線不同的是，TOR 交換器不會動態學習租使用者的 VLAN 標記網路。 租使用者的 VLAN 已標記網路的路由必須在 TOR 交換器和實體基礎結構與閘道之間的所有中繼交換器和路由器上設定，以確保端對端連線能力。  以下是虛擬網路設定的範例 CSP，如下圖所示。  
   
-|Network|Subnet|VLAN 識別碼|預設閘道|  
+|網路|子網路|VLAN 識別碼|預設閘道|  
 |-----------|----------|-----------|-------------------|  
 |Contoso L3 邏輯網路|10.127.134.0/24|1001|10.127.134.1|  
 |Woodgrove L3 邏輯網路|10.127.134.0/24|1002|10.127.134.1|  
