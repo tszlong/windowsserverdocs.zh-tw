@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 763d11a8-4225-4d96-b56f-1ec62e256bfd
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dc8f8485fcbf9e7aaa0ee50a220658ae277e0502
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c464784e95f011ed4fa0ddeb18e91d456fe8da32
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355715"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317357"
 ---
 # <a name="security-for-sdn"></a>SDN 的安全性
 
@@ -30,7 +30,7 @@ ms.locfileid: "71355715"
 > - [管理 SDN](../manage/manage-sdn.md)  
 > - [疑難排解 SDN](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)
 
-本節包含下列主題：
+本節包含下列主題。
 
 - [網路控制卡安全性](nc-security.md)
 - [管理軟體定義網路的憑證](sdn-manage-certs.md)

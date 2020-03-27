@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 4d79b6f29fbe64633bf04604ad586aff3dd86edf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80dae16442041e3b46babaca6d163095c1c5e475
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405849"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309691"
 ---
 # <a name="network-load-balancing"></a>網路負載平衡
 
@@ -27,7 +27,7 @@ ms.locfileid: "71405849"
 
 網路負載平衡 \(NLB\) 功能會使用 TCP\/IP 網路通訊協定，將流量分散到多部伺服器。 藉由將兩部或多部執行應用程式的電腦結合成單一虛擬叢集，NLB 可以提供網頁伺服器和其他任務\-重要伺服器的可靠性和效能。  
   
-NLB 叢集中的伺服器稱為「主機」，而且每部主機都會執行不同複本的伺服器應用程式。 NLB 將連入的用戶端要求分配給叢集中的各個主機。 您可以設定每部主機要處理的負載。 您也可以將主機動態新增至叢集，以處理增加的負載。 此外，NLB 可以將所有流量導向指定的單一主機，該主機稱為「預設主機」。  
+NLB 叢集中的伺服器稱為「主機」，而且每部主機都會執行不同複本的伺服器應用程式。 NLB 將內送的用戶端要求分送至叢集中的各個主機。 您可以設定每部主機要處理的負載。 您也可以將主機動態新增至叢集，以處理增加的負載。 此外，NLB 可以將所有流量導向指定的單一主機，該主機稱為「預設主機」。  
   
 NLB 允許利用同一組 IP 位址將叢集中的所有電腦定址，而且它會針對每部主機維護一組唯一的固定 IP 位址。 針對負載\-平衡的應用程式，當主機故障或離線時，負載會在仍在運作的電腦之間自動重新分配。 準備好時，離線電腦可以通透方式重新加入叢集，並重新取得它的工作量共用，這能讓叢集中的其他電腦處理較少的流量。  
   
@@ -75,7 +75,7 @@ NLB 有助於確保無狀態應用程式（例如執行 Internet Information Ser
 
 -   使用 Windows PowerShell 命令或指令碼，遠端啟動、停止和控制 NLB 動作。  
 
--   檢視 Windows 事件記錄檔來檢查 NLB 事件。 NLB 會在事件記錄檔中記錄所有動作與叢集變更。  
+-   檢視 Windows 事件記錄檔來檢查 NLB 事件。 NLB 會在事件日誌中記錄所有動作與叢集變更。  
 
 ## <a name="important-functionality"></a>重要功能  
  

@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 804b7314054691fa0abc19f1cc4e4bffbd6457cf
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 1f004ec59c8d2eac2a944a69bbbfc9af76b39826
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822441"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307726"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步驟 7.5. 建立以 OMA DM 為基礎的 VPNv2 設定檔到 Windows 10 裝置
 
@@ -35,7 +35,7 @@ ms.locfileid: "76822441"
 
 本節討論的所有內容，都是讓 VPN 與條件式存取搭配使用的最低需求。 它不涵蓋分割通道、使用 WIP、建立自訂的 Intune 裝置設定設定檔，以取得 AutoVPN 運作或 SSO。 將下列設定整合到您稍早在步驟5中建立的 VPN 設定檔[。設定 Windows 10 用戶端 Always On VPN](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)連線。  在此範例中，我們會將它們整合到[使用 Intune 原則設定 VPN 用戶端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)。 
 
-**必要條件：**
+**必要**
 
 Windows 10 用戶端電腦已使用 Intune 設定 VPN 連線。   
 
@@ -63,7 +63,7 @@ Windows 10 用戶端電腦已使用 Intune 設定 VPN 連線。
 
     ![Always On VPN 的條件式存取-屬性](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
-5. 選取 **\[確定\]** 。
+5. 選取 **[確定]** 。
 
 6. 選取 [**指派**]，在 [包含] 底下，選取 [**選取要包含的群組**]。
 
@@ -86,7 +86,7 @@ Windows 10 用戶端電腦已使用 Intune 設定 VPN 連線。
 5. 選取 [**同步**處理]，並確認 vpn 設定檔出現在 [設定]\\[網路 & 網際網路\\VPN] 底下。
 
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 您已完成設定 VPN 設定檔，以使用 Azure AD 條件式存取。 
 

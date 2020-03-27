@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/07/2018
-ms.openlocfilehash: 2bcbc7030d54e96b4ac120b943cc1adc0513feca
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 9f78edf0e48dc914b09a5e6f2d054e0fafba62e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822634"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309307"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>移轉至 Always On VPN 並解除委任 DirectAccess
 
@@ -120,9 +120,9 @@ ms.locfileid: "76822634"
 4. 部署 Always On VPN 設定。 當發出 VPN 驗證憑證，而且您執行**GetUsersWithCert**腳本時，使用者會新增至 Vpn 部署就緒安全性群組。
 
 
-| 如果您使用 。  | 則... |
+| 如果您使用 。  | 結果 |
 | ---- | ---- |
-| Configuration Manager | 根據該安全性群組的成員資格來建立使用者集合。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)！|
+| 組態管理員 | 根據該安全性群組的成員資格來建立使用者集合。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)！|
 | Intune | 只有在同步處理之後，才直接以安全性群組為目標。 |
 |
     
