@@ -7,16 +7,16 @@ ms.technology: networking-ras
 ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 41e98648ab963347f8370233c320f5e38b5d4d96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: def4c0d7437dd297460d0a863cd2568325825ca9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388013"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319038"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>步驟 7.2. 使用 Azure AD 建立 VPN 驗證的條件式存取根憑證
 
@@ -49,7 +49,7 @@ VPN 用戶端接著會將憑證問題 Azure AD 傳送至 VPN 以進行認證驗�
 4. 在 [**條件式存取**] 頁面的 [**管理**] 區段中，按一下 [ **VPN 連線能力（預覽）** ]。
 5. 在 [ **VPN 連線能力**] 頁面上，按一下 [**新增憑證**]。
 6. 在 [**新增**] 頁面上，執行下列步驟： a。 針對 [**選取持續時間**]，選取1、2或3年。
-   b. 選取 **\[建立\]** 。
+   b. 選取 [建立]。
 
 ## <a name="next-steps"></a>後續步驟
 

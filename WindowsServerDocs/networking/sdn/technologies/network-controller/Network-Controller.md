@@ -1,21 +1,21 @@
 ---
-title: 網路控制卡
+title: 網路控制站
 description: 本主題提供 Windows Server 2016 中網路控制卡的總覽。
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 13f535b9a91f26b30600b637b46817cfa33ccd7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ad13e41e756f0185a748fe9e17df64c71a8754bc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355644"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317075"
 ---
-# <a name="network-controller"></a>網路控制卡
+# <a name="network-controller"></a>網路控制站
 
 >適用於：Windows Server (半年通道)、Windows Server 2016
 
@@ -32,7 +32,7 @@ Windows Server 2016 中的新功能，網路控制站提供集中式、可程式
 > - [網路控制卡的部署後步驟](post-deploy-steps-nc.md)
 > - [網路控制卡 Cmdlet](https://technet.microsoft.com/library/mt576401.aspx) 
 
-## <a name="bkmk_overview"></a>網路控制卡總覽
+## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>網路控制卡總覽
 
 網路控制站是高度可用且可擴充的伺服器角色，可提供一個應用程式開發介面 \(API\)，讓網路控制站能夠與網路通訊，以及可讓您與網路控制站通訊的第二個 API。
 
@@ -70,7 +70,7 @@ Windows Server 2016 中的新功能，網路控制站提供集中式、可程式
 
 若要在較大的資料中心內提供高可用性，您可以使用安裝在三部或多部 Hyper-v 主機上的三個 Vm 來部署叢集。 如需詳細資訊，請參閱[網路控制站高可用性](network-controller-high-availability.md)。
 
-## <a name="bkmk_features"></a>網路控制卡功能
+## <a name="network-controller-features"></a><a name="bkmk_features"></a>網路控制卡功能
 
 下列網路控制器功能可讓您設定與管理虛擬和實體網路裝置和服務。  
   
@@ -85,25 +85,25 @@ Windows Server 2016 中的新功能，網路控制站提供集中式、可程式
 >[!IMPORTANT]
 >網路控制卡備份和還原目前無法在 Windows Server 2016 中使用。
   
-### <a name="bkmk_firewall"></a>防火牆管理
+### <a name="firewall-management"></a><a name="bkmk_firewall"></a>防火牆管理
 
 此網路控制器功能可讓您設定與管理允許/拒絕防火牆存取控制規則，以存取資料中心內東/西和北/南網路流量的工作負載 VM。 防火牆規則會套用在工作負載 VM 的 vSwitch 連接埠，因此它們會分散到資料中心的所有工作負載。 使用 Northbound API 時，您可以定義來自工作負載 VM 之傳入和傳出流量的防火牆規則。 您也可以設定每個防火牆規則，以記錄規則允許或拒絕的流量。  
 
 如需詳細資訊，請參閱[資料中心防火牆總覽](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。
 
-### <a name="bkmk_slb"></a>軟體 Load Balancer 管理
+### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>軟體 Load Balancer 管理
 
 此網路控制器功能可讓您啟用多部伺服器，以裝載相同的工作負載，並提供高度可用性和延展性。  
   
 如需詳細資訊，請參閱[SDN &#40;的&#41;軟體負載平衡 SLB](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。  
   
-### <a name="bkmk_virtual"></a>虛擬網路管理
+### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>虛擬網路管理
 
 此網路控制器功能可讓您部署與設定 HYPER-V 網路虛擬化 (包括個別 VM 上的 HYPER-V 虛擬交換器和虛擬網路介面卡)，並且儲存及散發虛擬網路原則。
 
 網路控制器支援網路虛擬化 Generic Routing Encapsulation (NVGRE) 和虛擬可延伸區域網路 (VXLAN)。
 
-### <a name="bkmk_gateway"></a>RAS 閘道管理
+### <a name="ras-gateway-management"></a><a name="bkmk_gateway"></a>RAS 閘道管理
 
 此網路控制器功能可讓您部署、設定和管理屬於 RAS 閘道集區成員的虛擬機器（Vm），並提供閘道服務給您的租使用者。 網路控制站可讓您使用下列閘道功能，自動部署執行 RAS 閘道的 Vm：
 

@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 11584b73-f9e2-4530-afa5-b8df970e6b24
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e870863b497c17b4b56265d99d91274e34690767
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 223ffd17f1e623f974e97c787fb8b18a806e5d0c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356543"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319261"
 ---
 # <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>啟用非網域成員檔案伺服器的雜湊發行
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式，在執行 Windows Server 2016 的檔案伺服器上，使用已安裝檔案服務伺服器角色的**BranchCache For Network Files**角色服務來設定群組原則 branchcache 的雜湊發行。  
   
@@ -30,13 +30,13 @@ ms.locfileid: "71356543"
   
 ### <a name="to-enable-hash-publication-for-one-file-server"></a>啟用一部檔案伺服器的雜湊發行  
   
-1.  開啟 Windows PowerShell，輸入 **mmc**，然後按 ENTER 鍵。 此時會開啟 Microsoft Management Console (MMC)。  
+1.  開啟 Windows PowerShell，然後輸入 **mmc**，再按 ENTER 鍵。 此時會開啟 Microsoft Management Console (MMC)。  
   
-2.  在**MMC 的 [檔案] 功能表上**，按一下 [**新增/移除嵌入式管理單元**]。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
+2.  在 MMC 的 **[檔案]** 功能表上，按一下 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
   
 3.  在 [**新增或移除嵌入式管理單元**] 的 [可用的嵌入式**管理**單元] 中，按兩下 [**群組原則物件編輯器**]。 [群組原則 Wizard] 隨即開啟，並選取 [本機電腦] 物件。 按一下 [完成]，然後按一下 [確定]。  
   
-4.  在本機群組原則編輯器 MMC 中，展開下列路徑：**本機電腦原則**、**電腦**設定、**系統管理範本**、**網路**、 **Lanman 伺服器**。 按一下 [ **Lanman 伺服器**]。  
+4.  在本機群組原則編輯器 MMC 中，展開下列路徑： [**本機電腦原則**]、[**電腦**設定]、[**系統管理範本**]、[**網路**]、[ **Lanman 伺服器**]。 按一下 [ **Lanman 伺服器**]。  
   
 5.  在詳細資料窗格中，按兩下 [ **BranchCache 的雜湊發行**]。 [ **BranchCache 的雜湊發行**] 對話方塊隨即開啟。  
   

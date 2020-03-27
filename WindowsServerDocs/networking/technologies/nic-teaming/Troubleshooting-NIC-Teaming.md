@@ -10,19 +10,19 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 2f21301e0669fb593acda47787fed5f396618daf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 75b6ae2f2c7d6b4ab28aaedcc7309ccba3dcbd02
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405557"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316375"
 ---
 # <a name="troubleshooting-nic-teaming"></a>對 NIC 小組進行疑難排解
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，我們將討論針對 NIC 小組進行疑難排解的方法，例如硬體和實體交換器的安全性。  當標準通訊協定的硬體實現不符合規格時，NIC 小組的效能可能會受到影響。 此外，視設定而定，NIC 小組可能會從相同的 IP 位址傳送封包，並將多個 MAC 位址與實體交換器上的安全性功能結合在一起。
 
@@ -57,9 +57,9 @@ Enable-NetAdapter *
 ## <a name="related-topics"></a>相關主題  
 - [NIC](NIC-Teaming.md)小組：在本主題中，我們將概述 Windows Server 2016 中的網路介面卡（NIC）小組。 NIC 小組可讓您將一和32實體 Ethernet 網路介面卡分成一或多個以軟體為基礎的虛擬網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。   
 
-- [NIC 小組 MAC 位址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：當您使用「交換器獨立模式」設定 NIC 小組，並使用「位址雜湊」或「動態」負載散發時，小組會在輸出流量上使用主要 NIC 小組成員的媒體存取控制（MAC）位址。 主要 NIC 小組成員是由一組初始小組成員的作業系統選取的網路介面卡。
+- [NIC 小組 MAC 位址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：當您使用「交換器獨立模式」和「位址雜湊」或「動態」負載分佈來設定 NIC 小組時，小組會使用連出流量的主要 NIC 小組成員的媒體存取控制（MAC）位址。 主要 NIC 小組成員是由一組初始小組成員的作業系統選取的網路介面卡。
 
-- [NIC 小組設定](nic-teaming-settings.md)：在本主題中，我們將概述 NIC 小組的屬性，例如團隊和負載平衡模式。 我們也會提供有關待命介面卡設定和主要小組介面屬性的詳細資料。 如果您的 NIC 小組中至少有兩張網路介面卡，則不需要指定待命介面卡來容錯。
+- [Nic 小組設定](nic-teaming-settings.md)：在本主題中，我們將概述 nic 團隊的屬性，例如團隊和負載平衡模式。 我們也會提供有關待命介面卡設定和主要小組介面屬性的詳細資料。 如果您的 NIC 小組中至少有兩張網路介面卡，則不需要指定待命介面卡來容錯。
   
 
 

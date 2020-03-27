@@ -2,18 +2,18 @@
 title: 從舊版移轉到 Windows Server Essentials 或 Windows Server Essentials 體驗
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f58a8f83fed4185ee51145b988cfef1074f889c7
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945142"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318890"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>從舊版移轉到 Windows Server Essentials 或 Windows Server Essentials 體驗
 
@@ -54,9 +54,9 @@ ms.locfileid: "74945142"
   
    有幾個移轉程序需要您以系統管理員的身分開啟 [命令提示字元] 視窗。 下列程序說明如何執行這項操作。  
   
-###  <a name="BKMK_OpenACommandPromptAsAdmin"></a>以系統管理員身分在來源伺服器上開啟 [命令提示字元] 視窗  
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>以系統管理員身分在來源伺服器上開啟 [命令提示字元] 視窗  
   
-1.  按一下 **\[開始\]** 。  
+1.  按一下 **[開始]** 。  
   
 2.  在搜尋方塊中，輸入 **cmd**。  
   
@@ -68,7 +68,7 @@ ms.locfileid: "74945142"
   
 2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
   
 -   [移轉伺服器資料到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

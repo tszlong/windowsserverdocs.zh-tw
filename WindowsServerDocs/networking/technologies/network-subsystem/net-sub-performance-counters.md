@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ebff972d670f3fd0b8d12959d161bce03ac487e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e62b92fbb78dc267dbd9cd09927bf54c62d8245f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401847"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316604"
 ---
 # <a name="network-related-performance-counters"></a>網路相關的效能計數器
 
@@ -27,7 +27,7 @@ ms.locfileid: "71401847"
   
 -   [接收端聯合（RSC）效能](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a>資源使用率  
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>資源使用率  
 
 下列效能計數器與網路資源使用率相關。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71401847"
   
 - 處理器資訊  
   
-  - % Processor Time  
+  - % 處理器時間  
   
   - 中斷數/秒  
   
@@ -69,7 +69,7 @@ ms.locfileid: "71401847"
   
     此計數器是 Dpc 新增至邏輯處理器之 DPC 佇列的平均速率。 每個邏輯處理器都有自己的 DPC 佇列。 此計數器會測量 Dpc 新增至佇列的速率，而不是佇列中的 Dpc 數目。 它會顯示在最後兩個樣本中觀察到的值之間的差異，並除以取樣間隔的持續時間。  
   
-##  <a name="bkmk_np"></a>可能的網路問題  
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>可能的網路問題  
 
 下列效能計數器與潛在的網路問題有關。  
   
@@ -119,7 +119,7 @@ ms.locfileid: "71401847"
   
     -   拒絕的連線數/秒  
   
-##  <a name="bkmk_rsc"></a>接收端聯合（RSC）效能  
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>接收端聯合（RSC）效能  
 
 下列效能計數器與 RSC 效能相關。  
   

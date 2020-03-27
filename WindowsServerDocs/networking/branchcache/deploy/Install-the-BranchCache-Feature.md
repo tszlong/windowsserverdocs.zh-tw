@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 4f31dc61-2dbe-4c7e-b3f9-85ae49a45049
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5ee438ef57d3355cf19713d8574591aeea6ae06f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a895e65686a6ccfb1453bc7cc7ddfcab5720a206
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406438"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319218"
 ---
 # <a name="install-the-branchcache-feature"></a>安裝 BranchCache 功能
 
@@ -34,7 +34,7 @@ ms.locfileid: "71406438"
   
 ### <a name="to-install-and-enable-the-branchcache-feature"></a>安裝和啟用 BranchCache 功能  
   
-1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按一下 **\[下一步\]** 。  
+1.  在 [伺服器管理員] 中，按一下 [ **管理**]，然後按一下 [ **新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按 [下一步]。  
   
 2.  在 [**選取安裝類型**] 中，確定已選取 [以**角色為基礎] 或 [功能型安裝**]，然後按 **[下一步]** 。  
   

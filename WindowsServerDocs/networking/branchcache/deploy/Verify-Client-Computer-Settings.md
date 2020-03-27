@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 31ea58b0-d407-4f62-8ec6-6a1b19174042
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6d0adbf0db2d7888ca12ca49f50fc37baa8cbc16
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4bd3c4d4b2998f5c4faea22887bdef8663587cb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356505"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319171"
 ---
 # <a name="verify-client-computer-settings"></a>確認用戶端電腦設定
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式來驗證是否已正確設定 BranchCache 的用戶端電腦。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71356505"
   
     在**ClientSettings**中， **CurrentClientMode**的值應該是**DistributedClient**或**HostedCacheClient**，視您使用本指南所設定的模式而定。  
   
-    在**ClientSettings**中，如果您設定了託管快取模式，並在設定期間提供託管快取伺服器的名稱，或用戶端已使用服務連接點自動找出託管快取伺服器， **HostedCacheServerList**的值應該與託管快取伺服器名稱相同。 例如，如果您的託管快取伺服器名為 HCS1，而您的網域是 corp.contoso.com，則**HostedCacheServerList**的值會是**HCS1.corp.contoso.com**。  
+    在**ClientSettings**中，如果您設定了託管快取模式，並在設定期間提供託管快取伺服器的名稱，或是用戶端已使用服務連接點自動找出託管快取伺服器，則**HostedCacheServerList**應該具有與託管快取伺服器名稱相同的值。 例如，如果您的託管快取伺服器名為 HCS1，而您的網域是 corp.contoso.com，則**HostedCacheServerList**的值會是**HCS1.corp.contoso.com**。  
   
 5.  如果以上列出的任何 BranchCache 設定沒有正確的值，請使用本指南中的步驟來確認群組原則或本機電腦原則設定，以及您所設定的防火牆例外狀況，並確認它們是否正確。 此外，請重新開機電腦，或遵循此程式中的步驟重新整理群組原則並重新啟動 BranchCache 服務。  
   

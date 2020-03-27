@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 4235231c-4732-4ea9-9330-2a8c8a616d39
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 49e74132dba2909b7e5b639c95ef50064cf23e8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1da6df19933d3a4b9866b0428fb0088ac5f862b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356375"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319089"
 ---
 # <a name="deploy-branchcache-hosted-cache-mode"></a>部署 BranchCache 託管快取模式
 
@@ -44,7 +44,7 @@ ms.locfileid: "71356375"
 
 - [其他資源](11-Bc-Hcm-additional-resources.md)
 
-## <a name="bkmk_pre"></a>使用本指南的必要條件
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>使用本指南的必要條件
 
 這是《 Windows Server 2016 核心網路指南》的附屬指南。 若要使用此指南部署託管快取模式的 BranchCache，您必須先執行以下作業：
 
@@ -58,10 +58,10 @@ ms.locfileid: "71356375"
 - 使用虛擬私人網路 \(VPN\)、DirectAccess 或其他連線方法，在您的分公司、總公司和您的雲端資源之間建立廣域網路 \(WAN\) 連線。
 
 - 在執行下列其中一種作業系統的分公司中部署用戶端電腦，其中提供支援背景智慧型傳送服務（BITS）、超文字傳輸通訊協定（HTTP）和伺服器訊息區（SMB）的 BranchCache.
-    - Windows 10 企業版
-    - Windows 10 教育版
-    - Windows 8.1 Enterprise
-    - Windows 8 企業版
+    - Windows 10 Enterprise
+    - Windows 10 Education
+    - Windows 8.1 Enterprise
+    - Windows 8 Enterprise
 
 > [!NOTE]
 > 在下列作業系統中，BranchCache 不支援 HTTP 和 SMB 功能，但支援 BranchCache 位功能。
@@ -69,13 +69,13 @@ ms.locfileid: "71356375"
 >     - Windows 8.1 Pro，僅支援 BITS
 >     - Windows 8 專業版，僅支援 BITS
 
-## <a name="bkmk_about"></a>關於本指南
+## <a name="about-this-guide"></a><a name="bkmk_about"></a>關於本指南
 
 本指南是針對已遵循《 Windows Server 2016 核心網路指南》或 Windows Server 2012 核心網路指南中的指示來部署核心網路的網路和系統管理員所設計，也適用于先前已部署「核心網路指南」中所含技術的使用者，包括 Active Directory Domain Services \(AD DS\)、功能變數名稱服務 \(DNS\)、動態主機設定通訊協定 \(DHCP\)和 TCP\/IP v4。
 
 建議您檢閱此部署案例中所用每個技術的設計和部署指南。 這些指南可協助您判斷此部署案例是否提供貴組織的網路需要的服務與設定。
 
-## <a name="bkmk_not"></a>本指南未提供的內容
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>本指南未提供的內容
 
 本指南未提供 BranchCache 的概念資訊，包括關於 BranchCache 模式和功能的資訊。  
 
@@ -88,7 +88,7 @@ ms.locfileid: "71356375"
 > [!IMPORTANT]
 > 如果您的託管快取伺服器執行 Windows Server 2008 R2，請使用 Windows Server 2008 R2 [BranchCache 部署指南](https://technet.microsoft.com/library/ee649232(v=ws.10).aspx)（而非本指南），以託管快取模式部署 BranchCache。 將該指南中所述的群組原則設定，套用至執行 windows 7 到 Windows 10 之 Windows 版本的所有 BranchCache 用戶端。 無法使用本指南中的步驟來設定執行 Windows Server 2008 R2 的電腦。
 
-## <a name="bkmk_tech"></a>技術概覽
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>技術概覽
 
 本附屬指南中，BranchCache 是您唯一需要安裝和設定的技術。 您必須在內容伺服器 (如 Web 和檔案伺服器) 上執行 Windows PowerShell BranchCache 命令，但您不需要以任何其他方式變更或重新設定內容伺服器。 此外，您必須在執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 AD DS 的網域控制站上，使用群組原則來設定用戶端電腦。
 

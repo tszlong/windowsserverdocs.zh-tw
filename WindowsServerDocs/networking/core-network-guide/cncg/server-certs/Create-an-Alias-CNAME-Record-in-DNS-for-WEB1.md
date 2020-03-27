@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: bfae23f0-ae12-486b-94fe-50a137e141a5
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 77b8e464d2d8fab8803477e59826c3e715c0a6d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0ac6ef7da3c9e604d9fa3c029f1afa2861a56741
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406292"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318331"
 ---
 # <a name="create-an-alias-cname-record-in-dns-for-web1"></a>在 WEB1 的 DNS 中建立 \(CNAME\) 記錄的別名
 
