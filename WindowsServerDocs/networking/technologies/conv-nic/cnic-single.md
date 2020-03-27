@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: eed5c184-fa55-43a8-a879-b1610ebc70ca
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: 2ad7592fd9faf1e92893e6271daabdad907d3aaa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a088df043190de9e7f1df4dccdc2fc832751093
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405799"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309626"
 ---
 # <a name="converged-nic-configuration-with-a-single-network-adapter"></a>具有單一網路介面卡的聚合式 NIC 設定
 
@@ -40,9 +40,9 @@ ms.locfileid: "71405799"
    _**更**_  
 
 
-   | 名稱 |    InterfaceDescription     | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
+   | 名稱 |    InterfaceDescription     | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
    |------|-----------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox ConnectX-3 Pro 。 |    4    |   Up   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox ConnectX-3 Pro 。 |    4    |   上移   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
@@ -155,7 +155,7 @@ ms.locfileid: "71405799"
 
 
 
-## <a name="step-3-optional-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步驟 3。 選擇性設定安裝在 Hyper-v 主機中的 Nic 的 VLAN 識別碼
+## <a name="step-3-optional-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步驟 3： 選擇性設定安裝在 Hyper-v 主機中的 Nic 的 VLAN 識別碼
 
 許多網路設定都會使用 Vlan，如果您打算在網路中使用 Vlan，就必須重複先前的測試，並設定 Vlan。 此外，如果您打算將 RoCE 用於 RDMA 服務，則必須啟用 Vlan。
 
@@ -209,9 +209,9 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   | 名稱 |          InterfaceDescription           | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
+   | 名稱 |          InterfaceDescription           | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
    |------|-----------------------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox ConnectX-3 Pro Ethernet 的 Ada 。 |    4    |   Up   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox ConnectX-3 Pro Ethernet 的 Ada 。 |    4    |   上移   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
@@ -274,7 +274,7 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   | Priority | 啟用 | PolicySet | ifIndex | IfAlias |
+   | 優先順序 | 已啟用 | PolicySet | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  全域   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  全域   | &nbsp;  | &nbsp;  |
@@ -330,9 +330,9 @@ ms.locfileid: "71405799"
    _**OperationalClassifications:**_  
 
 
-   | 通訊協定  | 埠/類型 | Priority |
+   | 通訊協定  | 埠/類型 | 優先順序 |
    |-----------|-----------|----------|
-   |  Default  |  &nbsp;   |    0     |
+   |  預設  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
 
    ---
@@ -348,7 +348,7 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   | 名稱 | 演算法 | 頻寬（%） | Priority | PolicySet | ifIndex | IfAlias |
+   | 名稱 | 演算法 | 頻寬（%） | 優先順序 | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      30      |    3     |  全域   | &nbsp;  | &nbsp;  |
 
@@ -363,9 +363,9 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   |   名稱    | 演算法 | 頻寬（%） | Priority | PolicySet | ifIndex | IfAlias |
+   |   名稱    | 演算法 | 頻寬（%） | 優先順序 | PolicySet | IfIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
-   | 預設 |    ETS    |      70      | 0-2、4-7  |  全域   | &nbsp;  | &nbsp;  |
+   | [預設] |    ETS    |      70      | 0-2、4-7  |  全域   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      30      |    3     |  全域   | &nbsp;  | &nbsp;  |
 
    ---
@@ -394,7 +394,7 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   | 名稱 |           InterfaceDescription           | 啟用 |
+   | 名稱 |           InterfaceDescription           | 已啟用 |
    |------|------------------------------------------|---------|
    |  M1  | Mellanox ConnectX-3 Pro 乙太網路介面卡 |  True   |
 
@@ -446,7 +446,7 @@ ms.locfileid: "71405799"
    >[!NOTE]
    >如果 RDMA 流量失敗，特別針對 RoCE 案例，請參閱 ToR 交換器設定，以取得應符合主機設定的適當 PFC/ETS 設定。 如需參考值，請參閱本檔中的 QoS 一節。
 
-## <a name="step-7-remove-the-access-vlan-setting"></a>步驟 7. 移除存取 VLAN 設定
+## <a name="step-7-remove-the-access-vlan-setting"></a>步驟 7： 移除存取 VLAN 設定
 
 在準備建立 Hyper-v 交換器時，您必須移除先前安裝的 VLAN 設定。  
 
@@ -463,7 +463,7 @@ ms.locfileid: "71405799"
    ```  
 
 
-## <a name="step-8-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步驟8。 在您的 Hyper-v 主機上建立 Hyper-v vSwitch
+## <a name="step-8-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步驟 8： 在您的 Hyper-v 主機上建立 Hyper-v vSwitch
 
 下圖描述 Hyper-v 主機1與 vSwitch。
 
@@ -493,9 +493,9 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   |         名稱          |        InterfaceDescription         | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
+   |         名稱          |        InterfaceDescription         | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
    |-----------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet \(VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   Up   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | vEthernet \(VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   上移   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
@@ -545,9 +545,9 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   | VMName | VMNetworkAdapterName |  模式  | Vlanlist 下面 |
+   | VMName | VMNetworkAdapterName |  Mode  | Vlanlist 下面 |
    |--------|----------------------|--------|----------|
-   | &nbsp; |       VMSTEST        | 存取權 |   101    |
+   | &nbsp; |       VMSTEST        | 存取 |   101    |
 
    ---  
 
@@ -596,7 +596,7 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   |         名稱          |        InterfaceDescription         | 啟用 |
+   |         名稱          |        InterfaceDescription         | 已啟用 |
    |-----------------------|-------------------------------------|---------|
    | vEthernet \(VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |  False  |
 
@@ -615,9 +615,9 @@ ms.locfileid: "71405799"
    _**更**_   
 
 
-   |        名稱         |        InterfaceDescription         | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
+   |        名稱         |        InterfaceDescription         | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet （VMSTEST） | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   Up   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | vEthernet （VMSTEST） | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   上移   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
@@ -632,7 +632,7 @@ ms.locfileid: "71405799"
    _**更**_
 
 
-   |         名稱          |        InterfaceDescription         | 啟用 |
+   |         名稱          |        InterfaceDescription         | 已啟用 |
    |-----------------------|-------------------------------------|---------|
    | vEthernet \(VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |  True   |
 

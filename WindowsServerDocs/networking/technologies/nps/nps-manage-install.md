@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4842a4ab-70bb-4744-bea7-70f2ac892ad1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 25b8586d370865dd3ae4393c2536c348a5d0810f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d64498d5d77483ae43ade01b30aaeecd3e9fc753
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396189"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315979"
 ---
 # <a name="install-network-policy-server"></a>安裝網路原則伺服器
 
@@ -43,13 +43,13 @@ ms.locfileid: "71396189"
 
 3.  在 [選取安裝類型] 中，確定已選取 [角色型或功能型安裝]，然後按 [下一步]。
 
-4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 **\[下一步\]** 。
+4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按 [下一步]。
 
 5.  在 [**選取伺服器角色**] 的 [**角色**] 中，選取 [**網路原則與存取服務**]。 隨即會出現一個對話方塊，詢問它是否應該新增網路原則與存取服務所需的功能。 按一下 [**新增功能**]，然後按 **[下一步]**
 
 6.  在 [選取功能] 中，按 [下一步]，然後在 [網路原則與存取服務]中，檢閱提供的資訊，接著按 [下一步]。
 
-7.  在 [選取角色服務] 中，按一下 [網路原則伺服器]。  在 [新增網路原則伺服器所需的功能] 中，按一下 [新增功能]。 按一下 **\[下一步\]** 。
+7.  在 [選取角色服務] 中，按一下 [網路原則伺服器]。  在 [新增網路原則伺服器所需的功能] 中，按一下 [新增功能]。 按 [下一步]。
 
 8.  在 [確認安裝選項] 中，按一下 [必要時自動重新啟動目的地伺服器]。 提示您確認這個選取項目時，按一下 [是]，然後按一下 [安裝]。 [安裝進度] 頁面會在安裝程序期間顯示狀態。 當程式完成時，會顯示「在*ComputerName*上安裝成功」訊息，其中*ComputerName*是您安裝網路原則伺服器的電腦名稱稱。 按一下 **關閉**。
 

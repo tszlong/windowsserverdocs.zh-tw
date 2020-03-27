@@ -11,18 +11,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e692384e9416e21e00556af6ada9af8df1713a03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a8628404de8a1b9caccc7f7f51b063cabb1caf27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405857"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317199"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 網路虛擬化技術詳細資料
 
->適用於：Windows Server 2016
+>適用于： Windows Server 2016
 
 伺服器虛擬化可以讓多個伺服器執行個體同時在單一實體主機上執行；且伺服器執行個體還可以彼此獨立。 每部虛擬機器的基本操作方式就像是實體電腦上唯一執行的伺服器一樣。  
 
@@ -35,7 +35,7 @@ ms.locfileid: "71405857"
 ## <a name="hyper-v-network-virtualization-concepts"></a>Hyper-V 網路虛擬化概念  
 在 Hyper-v 網路虛擬化（HNV）中，客戶或租使用者會定義為部署在企業或資料中心的一組 IP 子網的「擁有者」。 客戶可以是公司或企業，在需要網路隔離的私人資料中心，或在服務提供者所裝載的公用資料中心內有多個部門或業務單位。 每個客戶都可以在資料中心內有一或多個[虛擬網路](#VirtualNetworks)，而每個虛擬網路都包含一或多個[虛擬子網](#VirtualSubnets)。  
 
-Windows Server 2016 中有兩種 HNV 的實現方式：HNVv1 和 HNVv2。  
+Windows Server 2016 中有兩種 HNV 的實現方式： HNVv1 和 HNVv2。  
 
 -   **HNVv1**  
 
@@ -55,19 +55,19 @@ Windows Server 2016 中有兩種 HNV 的實現方式：HNVv1 和 HNVv2。
     > [!IMPORTANT]  
     > 本主題著重于 HNVv2。  
 
-### <a name="VirtualNetworks"></a>虛擬網路  
+### <a name="virtual-network"></a><a name="VirtualNetworks"></a>虛擬網路  
 
 -   每個虛擬網路都是由一或多個虛擬子網所組成。 虛擬網路會形成隔離界限，其中虛擬網路內的虛擬機器只能彼此通訊。 傳統上，這種隔離是使用具有隔離 IP 位址範圍和 802.1 q 標記或 VLAN ID 的 Vlan 來強制執行。 但使用 HNV 時，會使用 NVGRE 或 VXLAN 封裝來強制執行隔離，以建立重迭網路，而且可能會在客戶或租使用者之間有重迭的 IP 子網。  
 
 -   每個虛擬網路在主機上都有唯一的路由網域識別碼（RDID）。 此 RDID 大約會對應至資源識別碼，以識別網路控制卡中的虛擬網路 REST 資源。 虛擬網路 REST 資源是使用統一資源識別項（URI）命名空間來參考，並附上附加的資源識別碼。  
 
-### <a name="VirtualSubnets"></a>虛擬子網  
+### <a name="virtual-subnets"></a><a name="VirtualSubnets"></a>虛擬子網  
 
 -   虛擬子網路會針對相同虛擬子網路中的虛擬機器，實作第 3 層 IP 子網路語意。 虛擬子網形成廣播網域（類似于 VLAN），並使用 [NVGRE 租使用者網路識別碼] （TNI）或 [VXLAN 網路識別碼] （VNI）欄位來強制執行隔離。  
 
 -   每個虛擬子網都屬於單一虛擬網路（RDID），而且會使用已封裝之包頭中的 TNI 或 VNI 金鑰，為其指派唯一的虛擬子網識別碼（VSID）。 VSID 在資料中心內必須是唯一的，且範圍介於4096到 2 ^ 24-2 之間。  
 
-虛擬網路和路由網域的主要優點是它可讓客戶將自己的網路拓撲（例如 IP 子網）帶入雲端。 圖 2 顯示的範例是 Contoso 公司擁有兩個獨立的網路：R&D 網路和銷售網路。 由於這兩個網路具有不同的路由網域識別碼，因此彼此無法互動。 也就是說，Contoso R&D 網路與 Contoso 銷售網路相互隔離，即使這兩者的擁有者都是 Contoso 公司。Contoso R&D Net 包含三個虛擬子網路。 請注意，RDID 和 VSID 在資料中心內都是唯一的。  
+虛擬網路和路由網域的主要優點是它可讓客戶將自己的網路拓撲（例如 IP 子網）帶入雲端。 圖 2 顯示的範例是 Contoso 公司擁有兩個獨立的網路：R&D 網路和銷售網路。 由於這兩個網路具有不同的路由網域識別碼，因此彼此無法互動。 也就是說，Contoso R&D 網路與 Contoso 銷售網路相互隔離，即使這兩者的擁有者都是 Contoso 公司。Contoso R&D 網路包含三個虛擬子網路。 請注意，RDID 和 VSID 在資料中心內都是唯一的。  
 
 ![客戶網路和虛擬子網路](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF6.gif)  
 
@@ -134,7 +134,7 @@ CA 會保留客戶的網路拓樸，這樣會虛擬化並分隔實際基礎實�
 
 ![實體基礎結構網路虛擬化的概念圖](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF2.gif)  
 
-圖 6：實體基礎結構網路虛擬化的概念圖  
+圖 6：實體基礎結構的網路虛擬化概念性圖表  
 
 在此圖中，客戶虛擬機器會在 CA 空間中傳送資料封包，以透過自己的虛擬網路或「通道」來跨越實體網路基礎結構。 在上述範例中，您可以將通道視為 Contoso 和 Fabrikam 資料封包的「信封」，並將綠色出貨標籤（PA 位址）從左側的來源主機傳遞至右邊的目的地主機。 金鑰是主機如何判斷對應于 Contoso 和 Fabrikam CA 的「運送位址」（PA）、「信封」如何放在封包周圍，以及目的地主機如何解除封裝並傳遞至 Contoso 和 Fabrikam目的地虛擬機器正確。  
 
@@ -176,7 +176,7 @@ Windows Server 2012 R2 的 PA 共用配置是每部主機每個 VSID 的一個 P
 
 ![多租用戶部署範例](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF5.png)  
 
-圖 8：多租用戶部署範例  
+圖 8：多組織用戶共享部署範例  
 
 討論圖 8 中的範例。 移到裝載提供者的共用 IaaS 服務之前：  
 
@@ -190,9 +190,9 @@ Windows Server 2012 R2 的 PA 共用配置是每部主機每個 VSID 的一個 P
 
 這兩家公司都是由網路控制卡指派下列虛擬子網識別碼（VSID），如下所示。  每個 Hyper-v 主機上的主機代理程式會從網路控制站接收配置的 PA IP 位址，並在非預設的網路區間中建立兩個 PA 主機 Vnic。 網路介面會指派給每一個指派 PA IP 位址的主機 Vnic，如下所示：  
 
--   Contoso Corp 的虛擬機器 VSID 和 PAs：**VSID**是5001， **SQL pa**是192.168.1.10， **Web pa**是192.168.2.20  
+-   Contoso Corp 的虛擬機器 VSID 和 PAs： **VSID**為5001， **SQL pa**為192.168.1.10， **Web pa**為192.168.2.20  
 
--   Fabrikam Corp 的虛擬機器 VSID 和 PAs：**VSID**是6001， **SQL pa**是192.168.1.10， **Web pa**是192.168.2.20  
+-   Fabrikam Corp 的虛擬機器 VSID 和 PAs： **VSID**為6001， **SQL pa**為192.168.1.10， **Web pa**為192.168.2.20  
 
 網路控制站會將所有網路原則（包括 CA PA 對應）連接到 SDN 主機代理程式，這會在持續性存放區（在 OVSDB 資料庫資料表中）維護原則。  
 
@@ -233,7 +233,7 @@ Windows Server 2012 R2 的 PA 共用配置是每部主機每個 VSID 的一個 P
 
 -   然後，VFP 引擎會將封包轉送到目的地 VM 所連線的 vSwitch 埠。  
 
-A similar process for traffic between the Fabrikam Corp **Web** 和 **SQL** 虛擬機器間流量類似的程序會針對 Fabrikam Corp. 使用 HNV 原則設定。結果，Fabrikam Corp 和 Contoso Corp 虛擬機器透過 HNV 進行互動，如同在原始的內部網路一般。 即使它們使用相同的 IP 位址，也絕對無法彼此互動。  
+Fabrikam Corp **Web** 和 **SQL** 虛擬機器會使用 Fabrikam Corp 的 HNV 原則設定執行類似的流量處理程序。如此一來，HNV、Fabrikam Corp 與 Contoso Corp 虛擬機器就可以進行互動，如同在原始內部網路一樣。 即使它們使用相同的 IP 位址，也絕對無法彼此互動。  
 
 不同的位址（CAs 和 PAs）、Hyper-v 主機的原則設定，以及輸入和輸出虛擬機器流量的 CA 與 PA 之間的位址轉譯，都是使用 NVGRE 金鑰或 VLXAN VNID 來隔離這些伺服器集合。 此外，虛擬化對應和轉換會分隔實體網路基礎架構與虛擬網路架構。 即使 Contoso **SQL** 和 **Web** 及 Fabrikam **SQL** 和 **Web** 都位於它們自己的 CA IP 子網路 (10.1.1/24) 內，其實體部署都發生在不同 PA 子網路 192.168.1/24 和 192.168.2/24 各自的主機上。 這暗示跨子網路的虛擬機器佈建和即時移轉可以透過 HNV 執行。  
 
@@ -250,7 +250,7 @@ VSwitch 和 VFP 轉送擴充功能的物件階層如下：
 
     -   全域轉送規則  
 
-    -   連接埠  
+    -   Port  
 
         -   用來釘選的輸出轉送層  
 
@@ -288,16 +288,16 @@ HNV 原則是由主機代理程式所設計。 每個虛擬機器網路介面卡
 
 圖 9：HNV 架構  
 
-## <a name="summary"></a>總結  
+## <a name="summary"></a>摘要  
 雲端式資料中心可以提供許多優點，例如，改善的延展性和較佳的資源使用率。 若要了解這些潛在優點，需要具備基本上可以在動態環境中處理多組織用戶共享延展性問題的技術。 HNV 的設計就是要解決這些問題，同時透過分離實體網路拓撲的虛擬網路拓撲來提升資料中心的運作效率。 以現有標準為基礎，HNV 會在現今的資料中心執行，並與您現有的 VXLAN 基礎結構搭配運作。 具有 HNV 的客戶現在可以將其資料中心合併到私人雲端，或使用混合式雲端順暢地將其資料中心延伸至主控伺服器提供者的環境。  
 
-## <a name="BKMK_LINKS"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱  
 若要深入瞭解 HNVv2，請參閱下列連結：  
 
 
 |       內容類型       |                                                                                                                                              參考                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **社區資源**  |                                                                -   [私用雲端架構的 Blog](https://blogs.technet.com/b/privatecloud)<br />-詢問問題： [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
+| **社群資源**  |                                                                -   [私用雲端架構的 Blog](https://blogs.technet.com/b/privatecloud)<br />-詢問問題： [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
 |         **最新發佈**          |                                                                   -   [NVGRE 草稿 RFC](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
 | **相關技術** | -如需 Windows Server 2012 R2 中的 Hyper-v 網路虛擬化技術詳細資料，請參閱[Hyper-v 網路虛擬化技術詳細資料](https://technet.microsoft.com/library/jj134174.aspx)<br />-   [網路控制](../../../sdn/technologies/network-controller/Network-Controller.md)卡 |
 

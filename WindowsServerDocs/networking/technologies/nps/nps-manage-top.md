@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a275b02c-62b3-4b8a-8417-a710f24bebfe
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a676a8b27c3f799a4cab275610016bfb311e044d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: bc96a6c4406988db2d7906d76af2c1abcfdffeac
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405375"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315906"
 ---
 # <a name="manage-network-policy-server-nps"></a>管理網路原則伺服器（NPS）
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本節中的主題來管理網路原則伺服器。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71405375"
 >- [規劃網路原則伺服器](nps-plan-top.md)
 >- [部署網路原則伺服器](nps-deploy.md)  
   
-本節包含下列主題：  
+本節包含下列主題。  
   
 - [使用管理工具的網路原則伺服器管理](nps-admintools.md)
 - [設定連線要求原則](nps-crp-configure.md)

@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: bdac7d2a-25b4-4f61-bed1-b290700c18f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f675322c32db0816d5afb155d53fad9f096ad650
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0568bf051fee3c9ee4fd5d1f403f5110f7669ad3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356690"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319345"
 ---
 # <a name="configure-an-existing-file-server-as-a-content-server"></a>將現有檔案伺服器設定為內容伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式，在執行 Windows Server 2016 的電腦上安裝檔案服務伺服器角色的 [網路檔案的**BranchCache** ] 角色服務。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "71356690"
   
 ### <a name="to-install-the-branchcache-for-network-files-role-service"></a>安裝網路檔案的 BranchCache 角色服務  
   
-1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按一下 [下一步]。  
+1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按 [下一步]。  
   
 2.  在 [**選取安裝類型**] 中，確定已選取 [以**角色為基礎] 或 [功能型安裝**]，然後按 **[下一步]** 。  
   
@@ -50,7 +50,7 @@ ms.locfileid: "71356690"
     > [!TIP]  
     > 如果您尚未這麼做，建議您同時選取**重復資料刪除**的核取方塊。  
   
-    按一下 [下一步]。  
+    按 [下一步]。  
   
 6.  在 [**選取功能**] 中，按 **[下一步]** 。  
   

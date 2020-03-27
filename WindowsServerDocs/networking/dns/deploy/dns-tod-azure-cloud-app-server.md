@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4307ce1512980277af819e0710e0447d8dbac8c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: be0604a850e54f4945e7416298fad30ce3dbf083
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406194"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317840"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>使用 Azure 雲端應用程式伺服器以時間為基礎的 DNS 回應
 
@@ -57,7 +57,7 @@ DNS 伺服器是以區域範圍和 DNS 原則進行設定，因此每天下午5-
  
 本文示範如何使用兩個不同的應用程式伺服器 IP 位址來設定 DNS 伺服器來回答 DNS 查詢-一部 web 伺服器位於西雅圖，另一個則位於 Azure 資料中心。
 
-根據西雅圖的尖峰時數下午6點至9點設定新的 DNS 原則之後，DNS 伺服器會將每個 DNS 回應的70傳送到包含西雅圖 Web 服務器 IP 位址的用戶端，並將每一美分的 dns 回應的30個設定為用戶端nts 包含 Azure Web 服務器的 IP 位址，藉此將用戶端流量導向至新的 Azure Web 服務器，並防止西雅圖網頁伺服器超載。 
+根據西雅圖的尖峰時數下午6點至9點設定新的 DNS 原則之後，DNS 伺服器會針對包含西雅圖 Web 服務器 IP 位址的用戶端，將每美分的 DNS 回應傳送70，而每個用戶端的 DNS 回應數目為三十包含 Azure Web 服務器的 IP 位址，因此會將用戶端流量導向至新的 Azure Web 服務器，並防止西雅圖網頁伺服器超載。 
 
 在每天的其他所有時間，會進行一般查詢處理，而回應會從預設區域範圍傳送，其中包含內部部署資料中心內 web 伺服器的記錄。 
 

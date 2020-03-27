@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 989b00c5-4767-4081-ace5-6321f8b2c55e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5ac733c11b277f09e64779c33d3392303fc34d98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0e6a35640d6a4a7c5665f3638925d9dc99a9df9d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396151"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315932"
 ---
 # <a name="manage-nps-templates"></a>管理 NPS 範本
 

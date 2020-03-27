@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fc42040d68b8a22dcfc46aa30db3a2a3c3bc060a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 59db462e3772b551f0d80819e7cd79519e95fb14
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367057"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313827"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>疑難排解啟用多站台
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題包含與 `Enable-DAMultisite` 命令問題有關的疑難排解資訊。 若要確認您所收到的錯誤與啟用多站台有關，請檢查 Windows 事件記錄檔中的事件識別碼 10051。  
   
@@ -118,7 +118,7 @@ IP-HTTPS 憑證是自我簽署。 您無法在多站台部署中使用自我簽�
 針對所有 Windows 8 用戶端電腦，DirectAccess 至少需要一個安全性群組，並針對每個進入點要求適用于 Windows 7 用戶端電腦的安全性群組。 每部用戶端電腦應只包含於一個安全性群組中。 因此，您應該確定 Windows 8 用戶端的安全性群組只包含執行 Windows 8 的電腦，而且每個 Windows 7 用戶端電腦都屬於相關進入點的單一專用安全性群組，而且沒有 Windows 8 用戶端屬於 Windows 7 安全性群組。  
   
 ## <a name="active-directory-site"></a>Active Directory 站台  
-**收到錯誤**。 伺服器 < server_name > 未與 Active Directory 網站相關聯。  
+**收到錯誤**。 伺服器 < server_name > 並未與 Active Directory 網站相關聯。  
   
 **原因**  
   
@@ -128,7 +128,7 @@ DirectAccess 無法判斷 Active Directory 站台。 在 [Active Directory 站�
   
 確認這是在遠端存取伺服器上執行 `nltest /dsgetsite` 命令的問題。 如果是這個問題，命令會傳回 ERROR_NO_SITENAME。 若要解決此問題，請在網域控制站上，確認已經有包含內部伺服器 IP 位址的子網路，並且使用 Active Directory 站台來定義子網路。  
   
-## <a name="SaveGPOSettings"></a>正在儲存伺服器 GPO 設定  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>正在儲存伺服器 GPO 設定  
 **收到錯誤**。 將遠端存取設定儲存至 GPO < GPO_name > 時發生錯誤。  
   
 **原因**  
@@ -139,7 +139,7 @@ DirectAccess 無法判斷 Active Directory 站台。 在 [Active Directory 站�
   
 確認遠端存取伺服器和網域控制站之間有連線能力。 如果有連線能力，請檢查網域控制站，是否有其他使用者鎖定 registry.pol 檔案，並視需要結束該使用者工作階段來解除鎖定檔案。  
   
-## <a name="InternalServerError"></a>發生內部錯誤  
+## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>發生內部錯誤  
 **收到錯誤**。 發生內部錯誤。  
   
 **原因**  

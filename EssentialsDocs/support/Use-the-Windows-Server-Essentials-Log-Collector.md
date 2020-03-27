@@ -3,7 +3,7 @@ title: 使用 Windows Server Essentials 記錄檔收集器
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3bc43b08df30d03f29d9f343b7d6ed4d63c85eda
-ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
+ms.openlocfilehash: d163195343b67ca38e565a0249363e7d1cec21f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74897675"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318564"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 記錄檔收集器
 
@@ -56,9 +56,9 @@ ms.locfileid: "74897675"
   
 -   繫結至 TCP/IP 的網路介面卡  
   
--   Locale  
+-   地區設定  
   
--   處理程序  
+-   處理序  
   
 -   存放裝置設定  
   
@@ -115,7 +115,7 @@ ms.locfileid: "74897675"
   
 -   伺服器產品記錄檔，從 < ProgramData\>\Microsoft\Windows Server\Logs  
   
--   排定工作  
+-   排定的工作  
   
 -   安裝程式 API 記錄檔  
   
@@ -164,7 +164,7 @@ ms.locfileid: "74897675"
   
 -   Library/Logs/DiagnosticReports/啟動列-< nnn\> （複製所有 [啟動列-< nnn]\>[損毀檔案]）  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
   
 
 -   [針對記錄收集器錯誤進行疑難排解](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)

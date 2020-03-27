@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 541645a274481bb8b044c37df572d7746c5da30e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4e032e2c5b89dc362fceb34e06525d8632f7b19e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405666"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312400"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>篩選 DNS 資源記錄的檢視
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，在 IPAM 用戶端主控台中篩選 DNS 資源記錄的視圖。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "71405666"
   
     ![選取準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_02.jpg)  
   
-8.  按一下 [新增]。  
+8.  按一下 [加入]。  
   
     ![新增準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_03.jpg)  
   
@@ -55,7 +55,7 @@ ms.locfileid: "71405666"
   
     ![指定您想要尋找的記錄類型](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_04.jpg)  
   
-10. 按 ENTER 鍵。 DNS 資源記錄會根據您指定的準則和搜尋片語進行篩選。  
+10. 按 ENTER。 DNS 資源記錄會根據您指定的準則和搜尋片語進行篩選。  
   
     ![執行篩選準則](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_05.jpg)  
   

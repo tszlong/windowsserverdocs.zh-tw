@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 54a8b9490fdf83d04c6b69fa88f4e8beca4f703a
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 196a124533b98c6945186ee827494b206028d2c8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259063"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317405"
 ---
 # <a name="secure-the-network-controller"></a>保護網路控制卡
 
@@ -33,7 +33,7 @@ ms.locfileid: "76259063"
 
 網路控制站支援用於 Northbound 通訊的驗證、授權和加密。 下列各節提供如何設定這些安全性設定的相關資訊。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>驗證
 
 當您設定網路控制站 Northbound 通訊的驗證時，您會允許網路控制站叢集節點和管理用戶端驗證與其通訊之裝置的身分識別。
 
@@ -64,7 +64,7 @@ ms.locfileid: "76259063"
 3.  **無**。 當您選擇此模式時，節點和管理用戶端之間不會執行任何驗證。 在測試環境中使用「無」進行測試，因此不建議在生產環境中使用。 
 
 
-### <a name="encryption"></a>Encryption
+### <a name="encryption"></a>加密
 
 Northbound 通訊會使用安全通訊端層 \(SSL\) 來建立管理用戶端與網路控制站節點之間的加密通道。 Northbound 通訊的 SSL 加密包括下列需求：
 
@@ -94,7 +94,7 @@ Northbound 通訊會使用安全通訊端層 \(SSL\) 來建立管理用戶端與
 
 如需詳細資訊，請參閱[Install-NetworkControllerCluster](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontrollercluster)。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>驗證
 
 當您設定網路控制站叢集通訊的驗證時，您會允許網路控制卡叢集節點驗證與其通訊的其他節點的身分識別。
 
@@ -121,11 +121,11 @@ Northbound 通訊會使用安全通訊端層 \(SSL\) 來建立管理用戶端與
 
 3. **無**。 當您選擇此模式時，網路控制卡節點之間不會執行任何授權。 此模式僅供測試之用，不建議用於生產環境。
 
-### <a name="encryption"></a>Encryption
+### <a name="encryption"></a>加密
 
 網路控制站節點之間的通訊會使用 WCF 傳輸層級加密進行加密。 當驗證和授權方法是 Kerberos 或 X509 憑證時，會使用這種形式的加密。 如需詳細資訊，請參閱下列主題。
 
-- [如何：利用 Windows 認證保護服務的安全](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [如何：使用 Windows 認證保護服務](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
 - [如何：使用 X.509 憑證保護服務的安全](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate)。
 
 ## <a name="southbound-communication"></a>Southbound 通訊
@@ -144,7 +144,7 @@ Northbound 通訊會使用安全通訊端層 \(SSL\) 來建立管理用戶端與
 
 針對上述每個通訊協定，下一節將說明這兩種通訊機制。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>驗證
 
 針對 Southbound 通訊，會使用下列通訊協定和驗證方法。
 
@@ -164,7 +164,7 @@ Northbound 通訊會使用安全通訊端層 \(SSL\) 來建立管理用戶端與
 
 3.  **OVSDB**。 沒有提供此通訊協定的授權。
 
-### <a name="encryption"></a>Encryption
+### <a name="encryption"></a>加密
 
 針對 Southbound 通訊，會將下列加密方法用於通訊協定。
 

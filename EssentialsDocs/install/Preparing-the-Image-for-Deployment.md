@@ -1,9 +1,9 @@
 ---
 title: 準備用於部署的映像
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 16411ab073e9417c52592aa9a6b13707dd461537
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: aac776253c094c4a77269720bcc5762d6c41d720
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838529"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311555"
 ---
 # <a name="preparing-the-image-for-deployment"></a>準備用於部署的映像
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 用來準備映像的一般工具為 sysprep.exe。 執行此工具來一般化映像並關閉伺服器，這樣在重新啟動包含該映像的伺服器時，將會執行初始設定。 對於映像的所有修改都必須在執行 sysprep.exe 之前完成。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "59838529"
   
 1.  刪除新增的 SkipIC.txt。  
   
-2.  開啟提升權限的命令提示字元視窗。 按一下 **[開始]**，以滑鼠右鍵按一下 **[命令提示字元]**，然後選取 **[以系統管理員身分執行]**。  
+2.  開啟提升權限的命令提示字元視窗。 按一下 **[開始]** ，以滑鼠右鍵按一下 **[命令提示字元]** ，然後選取 **[以系統管理員身分執行]** 。  
   
 3.  執行下列命令以重設登錄機碼，讓使用者在伺服器變成不相容之前有完整的寬限期。  
   
@@ -123,7 +123,7 @@ ms.locfileid: "59838529"
     ```  
   
     > [!IMPORTANT]
-    >  您也可以將 unattend.xml 新增至 %systemdrive% 之下而不新增為 sysprep 參數。 如果該檔案位於 c:\它將會受到使用者的設定，但如果使用的 sysprep 參數，它將不包含在使用者的設定。 %systemdrive% 之下的 unattend.xml 將會在每次重新啟動伺服器時刪除。 因此，當您在 %systemdrive% 之下建立 unattend.xml 後，請確認伺服器並未重新啟動。  
+    >  您也可以將 unattend.xml 新增至 %systemdrive% 之下而不新增為 sysprep 參數。 如果檔案位於 c：\ 之下它會由使用者的設定涵蓋，但如果做為 sysprep 的參數使用，則不會由使用者的設定涵蓋。 %systemdrive% 之下的 unattend.xml 將會在每次重新啟動伺服器時刪除。 因此，當您在 %systemdrive% 之下建立 unattend.xml 後，請確認伺服器並未重新啟動。  
   
 10. 執行下列命令新增登錄機碼以略過 Windows OOBE 機碼頁面。  
   

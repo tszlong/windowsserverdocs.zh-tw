@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 75da22fa4b1e59a7a666ee1a2c8f4e88cf7beeef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950477"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317736"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 原則進行分割\-大腦 DNS 部署
 
@@ -28,12 +28,12 @@ ms.locfileid: "75950477"
 
 分割大腦部署的另一個設定案例是 DNS 名稱解析的選擇性遞迴控制。 在某些情況下，企業 DNS 伺服器預期會透過網際網路對內部使用者執行遞迴解析，而它們也必須作為外部使用者的授權名稱伺服器，並封鎖它們的遞迴。 
 
-本主題涵蓋下列各節。
+本主題包含下列各節。
 
 - [DNS 分割大腦部署的範例](#bkmk_sbexample)
 - [DNS 選擇性遞迴控制的範例](#bkmk_recursion)
 
-## <a name="bkmk_sbexample"></a>DNS 分割大腦部署的範例
+## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>DNS 分割大腦部署的範例
 以下是如何使用 DNS 原則來完成先前所述之分裂式 DNS 案例的範例。
 
 本節包含下列主題。
@@ -57,7 +57,7 @@ ms.locfileid: "75950477"
 ![分裂式 DNS 部署](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-## <a name="bkmk_sbhow"></a>DNS 分割大腦部署的運作方式
+## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>DNS 分割大腦部署的運作方式
 
 當 DNS 伺服器設定必要的 DNS 原則時，每個名稱解析要求都會根據 DNS 伺服器上的原則進行評估。
 
@@ -67,7 +67,7 @@ ms.locfileid: "75950477"
 
 因此，在我們的範例中，在私人 IP （10.0.0.56）上收到的 www.career.contoso.com DNS 查詢會收到包含內部 IP 位址的 DNS 回應。而且在公用網路介面上接收到的 DNS 查詢，會收到包含預設區域範圍中公用 IP 位址的 DNS 回應（這與一般查詢解析相同）。  
 
-## <a name="bkmk_sbconfigure"></a>如何設定 DNS 分割大腦部署
+## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>如何設定 DNS 分割大腦部署
 若要使用 DNS 原則設定 DNS 分割部署，您必須使用下列步驟。
 
 - [建立區域範圍](#bkmk_zscopes)  
@@ -79,7 +79,7 @@ ms.locfileid: "75950477"
 >[!IMPORTANT]
 >下列各節包含範例 Windows PowerShell 命令，其中包含許多參數的範例值。 執行這些命令之前，請務必將這些命令中的範例值取代為適用于您的部署的值。 
 
-### <a name="bkmk_zscopes"></a>建立區域範圍
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>建立區域範圍
 
 區域範圍是區域的唯一實例。 DNS 區域可以有多個區域範圍，其中每個區域範圍都包含自己的一組 DNS 記錄。 相同的記錄可以出現在多個範圍中，具有不同的 IP 位址或相同的 IP 位址。 
 
@@ -92,7 +92,7 @@ ms.locfileid: "75950477"
 
 如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records"></a>將記錄新增至區域範圍
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>將記錄新增至區域範圍
 
 下一個步驟是將代表 Web 服務器主機的記錄新增至兩個區域範圍-內部和預設（適用于外部用戶端）。 
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-### <a name="bkmk_policies"></a>建立 DNS 原則
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>建立 DNS 原則
 
 在您識別出外部網路和內部網路的伺服器介面，且已建立區域範圍之後，您必須建立連接內部和外部區域範圍的 DNS 原則。
 
@@ -128,7 +128,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。  
 
 
-## <a name="bkmk_recursion"></a>DNS 選擇性遞迴控制的範例
+## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>DNS 選擇性遞迴控制的範例
 
 以下範例示範如何使用 DNS 原則來完成先前所述的 DNS 選擇性遞迴控制案例。
 
@@ -154,9 +154,9 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 ![選擇性遞迴控制](../../media/DNS-Split-Brain/Dns-Split-Brain-02.jpg) 
 
 
-### <a name="bkmk_recursionhow"></a>DNS 選擇性遞迴控制的運作方式
+### <a name="how-dns-selective-recursion-control-works"></a><a name="bkmk_recursionhow"></a>DNS 選擇性遞迴控制的運作方式
 
-如果收到的查詢是未授權的 Contoso DNS 伺服器（例如 https://www.microsoft.com ），則會根據 DNS 伺服器上的原則來評估名稱解析要求。 
+如果收到的查詢是未授權的 Contoso DNS 伺服器（例如 https://www.microsoft.com），則會根據 DNS 伺服器上的原則來評估名稱解析要求。 
 
 因為這些查詢不會落在任何區域底下，所以不會評估分割大腦範例中所定義的區域層級原則 \(\)。 
 
@@ -168,14 +168,14 @@ DNS 伺服器接著會執行遞迴，以從網際網路取得 https://www.micros
 
 這可防止伺服器做為外部用戶端的開啟解析程式，同時做為內部用戶端的快取解析程式。 
 
-### <a name="bkmk_recursionconfigure"></a>如何設定 DNS 選擇性遞迴控制
+### <a name="how-to-configure-dns-selective-recursion-control"></a><a name="bkmk_recursionconfigure"></a>如何設定 DNS 選擇性遞迴控制
 
 若要使用 DNS 原則設定 DNS 選擇性遞迴控制，您必須使用下列步驟。
 
 - [建立 DNS 遞迴範圍](#bkmk_recscopes)
 - [建立 DNS 遞迴原則](#bkmk_recpolicy)
 
-#### <a name="bkmk_recscopes"></a>建立 DNS 遞迴範圍
+#### <a name="create-dns-recursion-scopes"></a><a name="bkmk_recscopes"></a>建立 DNS 遞迴範圍
 
 遞迴範圍是一組設定的唯一實例，可控制 DNS 伺服器上的遞迴。 遞迴範圍包含轉寄站的清單，並指定是否啟用遞迴。 DNS 伺服器可以有許多遞迴範圍。 
 
@@ -190,7 +190,7 @@ DNS 伺服器接著會執行遞迴，以從網際網路取得 https://www.micros
 
 如需詳細資訊，請參閱[DnsServerRecursionScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
-#### <a name="bkmk_recpolicy"></a>建立 DNS 遞迴原則
+#### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>建立 DNS 遞迴原則
 
 您可以建立 DNS 伺服器遞迴原則，為一組符合特定準則的查詢選擇遞迴範圍。 
 

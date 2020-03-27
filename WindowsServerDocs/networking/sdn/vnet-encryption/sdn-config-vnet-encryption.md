@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: 40150e312f4776ec093c9230eedb646eec277f49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e68da9be84e9567458467c9ebd89155e7c405c5c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405805"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312821"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>設定虛擬子網的加密
 
->適用於：Windows Server
+>適用于： Windows Server
 
 虛擬網路加密可加密 Vm 之間的虛擬網路流量，這些 Vm 會在標示為「加密已啟用」的子網內彼此通訊。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
 
@@ -36,7 +36,7 @@ ms.locfileid: "71405805"
 >如果您必須將應用程式限制為只能在加密的子網上進行通訊，您只能使用存取控制清單（Acl），以允許目前子網內的通訊。 如需詳細資訊，請參閱[使用存取控制清單（acl）管理資料中心網路流量](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
 
 
-## <a name="step-1-create-the-encryption-certificate"></a>步驟 1. 建立加密憑證
+## <a name="step-1-create-the-encryption-certificate"></a>步驟 1。 建立加密憑證
 每部主機都必須安裝加密憑證。 您可以對所有租使用者使用相同的憑證，或為每個租使用者產生唯一一個。 
 
 1.  產生憑證  
@@ -118,7 +118,7 @@ ms.locfileid: "71405805"
 
 3. 在您的每個 hyper-v 主機上安裝憑證 
 
-   PS c：\> dir c：\$subjectname. *
+   PS C：\> dir c：\$subjectname. *
 
 
 ~~~
@@ -175,7 +175,7 @@ Mode                LastWriteTime         Length Name
 
 6. 驗證憑證的安裝。<p>檢查「我的根憑證存放區」的內容，以確認憑證：
 
-   PS C：\>輸入-pssession Server1
+   PS C：\> 輸入-pssession Server1
 
 ~~~
 [Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
@@ -218,7 +218,7 @@ Thumbprint                                Subject
 >您可以針對每個加密的虛擬網路重複使用此認證，也可以為每個租使用者部署及使用唯一的憑證。
 
 
-## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>步驟 3。 設定加密的虛擬網路
+## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>步驟 3： 設定加密的虛擬網路
 
 此步驟假設您已建立虛擬網路名稱「我的網路」，且其中至少包含一個虛擬子網。  如需建立虛擬網路的詳細資訊，請參閱[建立、刪除或更新租使用者虛擬網路](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)。
 

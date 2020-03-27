@@ -6,18 +6,18 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 74c97a14-b957-4568-b48e-8963a674fdb3
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1bde6c859284fbd1756517d7b08ec96816bb2bb5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a2b0990bd1416032cd519c60878c389f391e053d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395964"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315530"
 ---
 # <a name="qos-policy-frequently-asked-questions"></a>QoS 原則的常見問題
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 以下是 QoS 原則的常見問題和這些問題的答案。
   

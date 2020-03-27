@@ -7,18 +7,18 @@ ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7126be417702eab54a36765c146acff14d8a8c88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6fe2cf5d593500565b02f60efb0976000095dd9e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406474"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319298"
 ---
 # <a name="deploy-branchcache"></a>部署 BranchCache
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 下列各節提供在分散式和託管快取模式中部署 BranchCache 的相關資訊。  
   

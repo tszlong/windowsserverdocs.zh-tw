@@ -10,22 +10,22 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5905532b-626d-4b35-99a3-72a063e25809
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e204eaca846f152da991f7f0674bc10f66555f3f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 15ba6f6039e9b2249fadd7898a5393527e6ea2ab
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406082"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313009"
 ---
 # <a name="manage-tenant-virtual-networks"></a>管理租用戶虛擬網路
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本節中的主題，在部署軟體定義的網路功能之後，使用[使用腳本部署軟體定義網路基礎結構](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)主題來管理租使用者 Hyper-v 網路虛擬化虛擬網路。  
   
-本節包含下列主題：  
+本節包含下列主題。  
   
 - [瞭解虛擬網路和 Vlan 的使用方式](Understanding-Usage-of-Virtual-Networks-and-VLANs.md)  
 - [使用存取控制清單（Acl）管理資料中心網路流量](use-acls-for-traffic-flow.md)  

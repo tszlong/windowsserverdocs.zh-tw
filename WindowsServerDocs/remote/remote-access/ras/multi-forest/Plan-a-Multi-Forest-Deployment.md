@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8e483f5986a5a23123495e3a13440ddc57a6c521
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404512"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314045"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>規劃多樹系部署
 
@@ -38,7 +38,7 @@ ms.locfileid: "71404512"
   
 此外，遠端存取管理員必須是所有遠端存取伺服器上的本機系統管理員，而這些伺服器會包含於已新增來做為原始遠端存取部署進入點之新樹系的遠端存取伺服器上。  
   
-## <a name="ClientSG"></a>規劃用戶端安全性群組  
+## <a name="plan-client-security-groups"></a><a name="ClientSG"></a>規劃用戶端安全性群組  
 您至少必須針對新樹系中的 DirectAccess 用戶端電腦，在新樹系中設定一個安全性群組。 這是因為單一安全性群組無法包含來自數個樹系的帳戶。  
   
 > [!NOTE]  

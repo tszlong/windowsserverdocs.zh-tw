@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: da74fea7-52b2-4d6d-9d21-19184eedbe3c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bae0d3dff22205f3311020e233a26835527186f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 660a4979aa5e29a6dd22cb2e0e6659966d077a8e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406494"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319334"
 ---
 # <a name="configure-the-branchcache-hash-publication-group-policy-object"></a>設定 BranchCache 雜湊發行群組原則物件
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用這個程式來設定 BranchCache 雜湊發行集群組原則物件（GPO），讓您新增到 OU 的所有檔案伺服器都具有相同的雜湊發行集原則設定。  
   
@@ -30,15 +30,15 @@ ms.locfileid: "71406494"
   
 1.  以系統管理員身分執行 Windows PowerShell，輸入**mmc**，然後按 enter。 此時會開啟 Microsoft Management Console (MMC)。  
   
-2.  在**MMC 的 [檔案] 功能表上**，按一下 [**新增/移除嵌入式管理單元**]。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
+2.  在 MMC 的 **[檔案]** 功能表上，按一下 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
   
 3.  在 [**新增或移除嵌入式管理單元**] 的 [**可用**的嵌入式管理單元] 中，按兩下 [**群組原則管理**]，然後按一下 **[確定]** 。  
   
-4.  在群組原則管理 MMC 中，展開您先前建立的 BranchCache 雜湊發行 GPO 的路徑。 例如，如果您的樹系名為 example.com，您的網域會命名為 example1.com，而您的 GPO 名為**BranchCache 雜湊發行**，請展開下列路徑：**群組原則管理**、**樹系： example.com**、**網域**、 **Example1.com**、**群組原則物件**、 **BranchCache 雜湊發行**。  
+4.  在群組原則管理 MMC 中，展開您先前建立的 BranchCache 雜湊發行 GPO 的路徑。 例如，如果您的樹系名為 example.com，您的網域會命名為 example1.com，而您的 GPO 名為**BranchCache 雜湊發行**，請展開下列路徑：**群組原則管理**、**樹系： example.com**、**網域**、 **example1.com**、**群組原則物件**、 **BranchCache 雜湊發行**。  
   
 5.  以滑鼠右鍵按一下**BranchCache 雜湊發行**GPO，然後按一下 [**編輯**]。 群組原則管理編輯器主控台隨即開啟。  
   
-6.  在群組原則管理編輯器主控台中，展開下列路徑：**電腦**設定、**原則**、**系統管理範本**、**網路**、 **Lanman 伺服器**。  
+6.  在群組原則管理編輯器主控台中，展開下列路徑： [**電腦**設定]、[**原則**]、[**系統管理範本**]、[**網路**]、[ **Lanman 伺服器**]。  
   
 7.  在群組原則管理編輯器主控台中，按一下 [ **Lanman 伺服器**]。 在詳細資料窗格中，按兩下 [ **BranchCache 的雜湊發行**]。 [ **BranchCache 的雜湊發行**] 對話方塊隨即開啟。  
   

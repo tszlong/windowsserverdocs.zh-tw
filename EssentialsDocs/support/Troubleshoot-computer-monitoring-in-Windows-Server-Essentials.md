@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials 中的電腦監視問題疑難排解
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,27 +12,27 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1adf8ae2dd8763d0bc5a514609bb2470de6acde4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 968c8c82bfde350e631f1f6ae4830a4fd920aa4b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436076"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318601"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦監視問題疑難排解
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本主題提供針對監視健全狀況狀態，在 警示檢視器中及透過電子郵件通知，Windows Server Essentials 中的電腦時所遇到的問題進行疑難排解。  
+本主題提供在 [警示檢視器] 中監視電腦的健全狀況狀態，以及透過 Windows Server Essentials 中的電子郵件通知，所遇到的問題疑難排解。  
   
 > [!NOTE]
->  從 Windows Server Essentials 社群最新的疑難排解資訊，建議您瀏覽[Windows Server Essentials 論壇](https://social.technet.microsoft.com/Forums/winserveressentials/threads)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。  
+>  如需 Windows Server Essentials 社區最新的疑難排解資訊，建議您流覽[Windows Server Essentials 論壇](https://social.technet.microsoft.com/Forums/winserveressentials/threads)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。  
   
-##  <a name="BKMK_TS"></a> 疑難排解警示的電子郵件通知  
+##  <a name="troubleshooting-email-notifications-for-alerts"></a><a name="BKMK_TS"></a>疑難排解警示的電子郵件通知  
  本節列出使用警示的電子郵件通知時，可能會遇到的各種問題。  
   
 ### <a name="cannot-send-the-test-email-for-the-alert"></a>無法傳送警示的測試電子郵件  
- **問題**您收到錯誤訊息，指出，無法傳送測試電子郵件警示。  
+ **問題**您會收到錯誤訊息，指出「無法傳送警示的測試電子郵件」。  
   
  **原因** 這個錯誤可能是因為警示通知的設定中有下列問題：  
   
@@ -53,28 +53,28 @@ ms.locfileid: "66436076"
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  若要查看 [ProgramData] 資料夾，您必須顯示隱藏的項目。 如果您沒有看到 [ProgramData] 資料夾中，在功能區上**檢視**索引標籤中，於**顯示/隱藏**群組中，選取**隱藏的項目**文字方塊。  
+    >  若要查看 [ProgramData] 資料夾，您必須顯示隱藏的項目。 如果您沒有看到 [ProgramData] 資料夾，請在功能區的 [**視圖**] 索引標籤上，于 [**顯示/隱藏**] 群組中選取 [**隱藏專案**] 文字方塊。  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>更新警示的電子郵件通知設定  
   
 1.  在儀表板上，按一下右上角的任何警示圖示以開啟警示檢視器。  
   
-2.  在警示檢視器底部，按一下 [設定警示的電子郵件通知]  。  
+2.  在警示檢視器底部，按一下 [設定警示的電子郵件通知]。  
   
-3.  在 [設定警示的電子郵件通知]  對話方塊中，按一下 [啟用]  。  
+3.  在 [設定警示的電子郵件通知] 對話方塊中，按一下 [啟用]。  
   
-4.  在 [SMTP 設定]  對話方塊中，更新 SMTP 設定，然後按一下 [確定]  。  
+4.  在 [SMTP 設定] 對話方塊中，更新 SMTP 設定，然後按一下 [確定]。  
   
-5.  若要測試更新的設定，請按一下 [套用及傳送電子郵件]  。  
+5.  若要測試更新的設定，請按一下 [套用及傳送電子郵件]。  
   
-6.  確認測試電子郵件已成功後，按一下 [確定]  以儲存更新的設定。  
+6.  確認測試電子郵件已成功後，按一下 [確定] 以儲存更新的設定。  
   
 ### <a name="test-email-notification-does-not-list-any-alerts"></a>測試電子郵件通知沒有列出任何警示  
  **問題** 警示的測試電子郵件通知沒有顯示任何警示，即使警示檢視器中有列出警示時亦同。  
   
  **解決方式** 警示檢視器中並非所有警示都會產生電子郵件通知。 只有在其健康定義檔內設定為以電子郵件通知呈報的警示，才會以電子郵件傳送給指定的電子郵件收件者。  
   
- 當您按一下 [套用及傳送電子郵件]  時，通常您會收到沒有列出任何健康情況警示的範例電子郵件通知。 不過，如果此測試程序期間已確認有設定為傳送電子郵件通知的健康警示，測試電子郵件中就會包含該警示。  
+ 當您按一下 [套用及傳送電子郵件] 時，通常您會收到沒有列出任何健康情況警示的範例電子郵件通知。 不過，如果此測試程序期間已確認有設定為傳送電子郵件通知的健康警示，測試電子郵件中就會包含該警示。  
   
 ### <a name="active-alerts-are-displayed-for-an-uninstalled-application"></a>已解除安裝的應用程式顯示作用中警示  
  **問題** 即使應用程式及其健康定義檔已解除安裝，仍然會顯示應用程式的作用中警示。  
@@ -87,4 +87,4 @@ ms.locfileid: "66436076"
   
 2.  在瀏覽窗格中，按一下任何顯示的警示圖示 (嚴重、警告或資訊)。 這會啟動警示檢視器。  
   
-3.  在 [警示檢視器] 中，以滑鼠右鍵按一下您想要刪除的警示，然後按一下 [刪除此警示]  。
+3.  在 [警示檢視器] 中，以滑鼠右鍵按一下您想要刪除的警示，然後按一下 [刪除此警示]。

@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: c7789781-87e8-464e-981b-af887d01badd
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 07/16/2018
-ms.openlocfilehash: 09e775bfe956d67adbd70cf4ce3f9461e1c37cf5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcf179484718aa029302281ea91c99588ad2857a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405515"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316549"
 ---
 # <a name="performance-tools-for-network-workloads"></a>網路工作負載的效能工具
 
@@ -24,13 +24,13 @@ ms.locfileid: "71405515"
 
 本主題包含有關用戶端到伺服器流量工具、TCP/IP 視窗大小和 Microsoft Server Performance Advisor 的各節。
 
-##  <a name="bkmk_tuning"></a>用戶端對伺服器流量工具
+##  <a name="client-to-server-traffic-tool"></a><a name="bkmk_tuning"></a>用戶端對伺服器流量工具
 
 \(ctsTraffic\) tool 的用戶端對伺服器流量，會提供您建立和驗證網路流量的能力。
 
 如需詳細資訊及下載此工具，請參閱[ctsTraffic （用戶端對伺服器流量）](https://github.com/Microsoft/ctsTraffic)。
   
-##  <a name="bkmk_size"></a>TCP/IP 視窗大小
+##  <a name="tcpip-window-size"></a><a name="bkmk_size"></a>TCP/IP 視窗大小
 
 針對 1 GB 介面卡，上表所顯示的設定應該提供良好的輸送量，因為 NTttcp 會透過特定的邏輯處理器選項，將預設的 TCP 視窗大小設定為 64 K，\(連線的 SO_RCVBUF\)。 這會在低延遲的網路上提供良好的效能。  
 
@@ -38,7 +38,7 @@ ms.locfileid: "71405515"
 
 您可以使用 **-rb**選項，以靜態方式將 TCP 視窗大小設定為較大的值。 此選項會停用 TCP 視窗自動調整，而且只有在使用者完全瞭解 TCP/IP 行為中的結果變更時，才建議使用。 根據預設，TCP 視窗大小會設定為足夠的值，且只會在大量負載或高延遲的連結上調整。  
 
-##  <a name="bkmk_advisor"></a>Microsoft Server Performance Advisor
+##  <a name="microsoft-server-performance-advisor"></a><a name="bkmk_advisor"></a>Microsoft Server Performance Advisor
 
 Microsoft Server Performance Advisor \(SPA\) 可協助 IT 系統管理員收集計量，以識別、比較及診斷 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 部署中的潛在效能問題。 
 

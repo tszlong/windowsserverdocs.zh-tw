@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae6a42db-a104-401b-a8e6-b85c47d30b46
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 01e3216ca62cdb780342b477e575e00cdeedc6dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 61b8a331d5451e65d2b29f973b66c41a2aad8c1a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405711"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312619"
 ---
 # <a name="create-a-user-role-for-access-control"></a>建立存取控制的使用者角色
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，在 IPAM 用戶端主控台中建立新的存取控制使用者角色。  
   

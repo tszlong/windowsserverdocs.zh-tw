@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35743d9e1a25c71a35eed018a4a3882a3d094d76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1e7870e045f9af79ed46ec1ad998dbc1f1474afd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355572"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312906"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>適用于 SDN 的軟體負載平衡 \(SLB\)
 
@@ -114,7 +114,7 @@ SLB 包含健康情況探查，可驗證網路基礎結構的健康情況，包�
   
 不同于傳統負載平衡器設備，其中探查是在應用裝置上進行，並透過網路傳輸至 DIP，SLB 探查會在 DIP 所在的主機上產生，並直接從 SLB 主機代理程式傳送至 DIP，進一步發佈跨主機工作。  
   
-## <a name="bkmk_infrastructure"></a>軟體負載平衡基礎結構  
+## <a name="software-load-balancing-infrastructure"></a><a name="bkmk_infrastructure"></a>軟體負載平衡基礎結構  
 若要部署 Windows Server SLB，您必須先在 Windows Server 2016 中部署網路控制站，以及一或多個 SLB MUX Vm。  
   
 此外，您必須使用已啟用 SDN 的 Hyper-v 虛擬交換器來設定 Hyper-v 主機，並確定 SLB 主機代理程式正在執行。  服務主機的路由器必須支援相等的成本多重路徑（ECMP）路由和邊界閘道協定（BGP），而且必須設定為接受 SLB Mux 的 BGP 對等互連要求。  
@@ -133,7 +133,7 @@ SLB 包含健康情況探查，可驗證網路基礎結構的健康情況，包�
 > [!NOTE]  
 > 如果您不想要使用 System Center 2016，您可以使用 Windows PowerShell 或其他管理應用程式來安裝和設定網路控制站和其他 SLB 基礎結構。 如需詳細資訊，請參閱[使用 Windows PowerShell 部署網路控制](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)站。  
   
-### <a name="network-controller"></a>網路控制卡  
+### <a name="network-controller"></a>網路控制站  
 網路控制卡會裝載 SLB 管理員，並針對 SLB 執行下列動作。  
   
 -   處理透過 Northbound API 從 System Center、Windows PowerShell 或其他網路管理應用程式傳入的 SLB 命令。  
@@ -179,7 +179,7 @@ BGP 路由器會針對 SLB 執行下列動作。
   
 -   如果保持運作失敗，則從 SLB 旋轉移除 SLB Mux。  
   
-## <a name="bkmk_features"></a>軟體負載平衡功能  
+## <a name="software-load-balancing-features"></a><a name="bkmk_features"></a>軟體負載平衡功能  
 以下是 SLB 的部分特性和功能。  
   
 **核心功能**  

@@ -3,7 +3,7 @@ title: 管理 Windows Server Essentials 中的伺服器備份
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 0302d070-c58a-40f2-b56d-7e7842813d02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7e40a4675cf77d55a3047b41e0ab852fd7cd9de9
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 9489ae5bdb8de594befc2d8aec18f686cb5cbedd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322240"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311155"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的伺服器備份
 
@@ -41,7 +41,7 @@ ms.locfileid: "79322240"
   
 -   [從伺服器備份還原檔案和資料夾](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_7)  
   
-##  <a name="BKMK_WhichBackup"></a>我應該選擇哪個備份？  
+##  <a name="which-backup-should-i-choose"></a><a name="BKMK_WhichBackup"></a>我應該選擇哪個備份？  
  如果您有最新的成功備份，也知道該備份包含您的所有重要資料，則選擇備份可以是很直接的。 如果您正嘗試從舊的備份還原到伺服器或電腦，選擇良好的備份來還原可能需要一些調查，也可能需要一些妥協。  
   
 #### <a name="to-choose-a-backup"></a>選擇備份  
@@ -54,10 +54,10 @@ ms.locfileid: "79322240"
   
 4.  最佳做法是將檔案和資料夾還原到替代位置，然後讓檔案和資料夾的擁有者將他們所需的檔案和資料夾移到原始位置。 當他們完成時，就可以刪除留在替代位置中的檔案和資料夾。  
   
-##  <a name="BKMK_1"></a>設定或自訂伺服器備份  
+##  <a name="set-up-or-customize-server-backup"></a><a name="BKMK_1"></a>設定或自訂伺服器備份  
  在安裝期間不會自動設定伺服器備份。 您應該排定每日備份來自動保護您的伺服器及其資料。 建議您維持一個每日備份計劃，因為大多數組織皆無法承受失去數天所建立之資料的損失。 如需詳細資訊，請參閱[設定或自訂伺服器備份](Set-up-or-customize-server-backup.md)。  
   
-##  <a name="BKMK_2"></a>停止伺服器備份進行中  
+##  <a name="stop-server-backup-in-progress"></a><a name="BKMK_2"></a>停止伺服器備份進行中  
  不論伺服器備份是在定期排定的時間開始，或是由您手動啟動伺服器備份，您都可以停止進行中的備份。  
   
 #### <a name="to-stop-a-backup-in-progress"></a>停止進行中的備份  
@@ -70,7 +70,7 @@ ms.locfileid: "79322240"
   
 4.  按一下 [是] 以確認您的動作。  
   
-##  <a name="BKMK_3"></a>從遠端系統管理您的備份  
+##  <a name="remotely-manage-your-backups"></a><a name="BKMK_3"></a>從遠端系統管理您的備份  
  當您不在辦公室時，您可以使用 Windows Server Essentials 的「遠端 Web 存取」來存取 [Windows Server Essentials 儀表板] 以管理您的伺服器。  
   
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>使用遠端 Web 存取來管理您的伺服器  
@@ -87,7 +87,7 @@ ms.locfileid: "79322240"
   
    如需遠端 Web 存取的詳細資訊，請參閱[遠端 Web 存取總覽](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)。  
   
-##  <a name="BKMK_4"></a>停用伺服器備份  
+##  <a name="disable-server-backup"></a><a name="BKMK_4"></a>停用伺服器備份  
  您應該排定每日備份來自動保護您的伺服器及其資料。 建議您維持一個每日備份計劃，因為大多數組織皆無法承受失去數天所建立之資料的損失。  
   
  如果您已經設定伺服器備份，而稍後想要使用協力廠商應用程式來備份伺服器，則可以停用 Windows Server Essentials 伺服器備份。  
@@ -107,13 +107,13 @@ ms.locfileid: "79322240"
   
 5.  在 [設定選項] 頁面上，按一下 [停用伺服器備份]。 遵循精靈的指示進行。  
   
-##  <a name="BKMK_5"></a>深入瞭解設定伺服器備份  
+##  <a name="learn-more-about-setting-up-server-backup"></a><a name="BKMK_5"></a>深入瞭解設定伺服器備份  
  在伺服器設定期間並不會啟用伺服器備份。  
   
 > [!NOTE]
 >  當您設定伺服器備份時，應該至少將一個外接式硬碟連接到伺服器，以做為備份目的地硬碟。  
   
-###  <a name="BKMK_Target"></a>備份目的地磁片磁碟機  
+###  <a name="backup-destination-drive"></a><a name="BKMK_Target"></a>備份目的地磁片磁碟機  
  您可以使用多個外部存放磁碟機進行備份，然後讓這些磁碟機在站上與離站位置之間輪替。 這可以協助您在站上硬體發生實體損壞時復原資料，改善嚴重損壞的準備計畫。  
   
  為您的伺服器備份選擇存放磁碟機時，請考慮下列各項：  
@@ -159,7 +159,7 @@ ms.locfileid: "79322240"
   
  例如，您可能有資料夾包含使用大量硬碟空間的錄製電視節目。 您可以選擇不要備份這些檔案，因為您通常在看過它們之後就會將它們刪除。 或者，您可能有資料夾包含您不想要保留的暫存檔案。  
   
-##  <a name="BKMK_6"></a>重新分割伺服器上的硬碟  
+##  <a name="repartition-a-hard-drive-on-the-server"></a><a name="BKMK_6"></a>重新分割伺服器上的硬碟  
  在 Windows Server Essentials 伺服器上偵測到未格式化的內部硬碟時，系統會發出含有 [新增硬碟精靈] 連結的健康狀態警示。 [新增硬碟精靈] 會引導您完成將硬碟格式化的各種選項。 當精靈完成時，視磁碟機的大小，將會在硬碟上建立一或多個格式化邏輯硬碟，並格式化成 NTFS。  
   
  如果有必要重新分割硬碟，請依照下列指示進行：  
@@ -182,7 +182,7 @@ ms.locfileid: "79322240"
     > [!NOTE]
     >  重複這個步驟，直到硬碟上的所有未配置空間都已使用為止。  
   
-##  <a name="BKMK_7"></a>從伺服器備份還原檔案和資料夾  
+##  <a name="restore-files-and-folders-from-a-server-backup"></a><a name="BKMK_7"></a>從伺服器備份還原檔案和資料夾  
  您可以從伺服器備份瀏覽並還原個別的檔案和資料夾。  
   
 #### <a name="to-restore-files-and-folders-from-a-server-backup"></a>從伺服器備份還原檔案和資料夾  

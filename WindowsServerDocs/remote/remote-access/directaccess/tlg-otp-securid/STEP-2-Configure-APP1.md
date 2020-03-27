@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea96a30caeedc188a5a41c097a5c8a90e2b5dbc7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dbeba9f1646cfb13d709cb4f7987802f69708adb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388209"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314428"
 ---
 # <a name="step-2-configure-app1"></a>步驟2設定 APP1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 使用下列步驟來準備 APP1 以支援 OTP：  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71388209"
 > [!WARNING]  
 > 此測試實驗室指南的設計包括基礎結構伺服器，例如網域控制站和執行 Windows Server 2012 R2 或 Windows Server 2012 的憑證授權單位單位（CA）。 使用此測試實驗室指南來設定執行其他作業系統的基礎結構伺服器尚未經過測試，且本指南不含設定其他作業系統的指示。  
   
-## <a name="DAOTPRA"></a>建立及部署用來簽署 OTP 憑證要求的憑證範本  
+## <a name="to-create-and-deploy-a-certificate-template-used-to-sign-otp-certificate-requests"></a><a name="DAOTPRA"></a>建立及部署用來簽署 OTP 憑證要求的憑證範本  
   
 1.  執行**certtmpl.msc**，然後按 enter。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "71388209"
   
 9. 按一下 [**擴充**功能] 索引標籤，選取 [**應用程式原則**]，然後按一下 [**編輯**] 移除所有現有的應用程式原則。 按一下 [新增]，然後在 [新增**應用程式原則**] 對話方塊**中按一下 [** **新增**]，在 [**名稱：** ] 欄位中輸入**DA OTP RA** ，然後在 [**物件識別碼：** ] 欄位中輸入**1.3.6.1.4.1.311.81.1.1** ，再按一下 **[確定]** 。 在 [**新增應用程式原則**] 對話方塊中，按一下 **[確定]** 。 在 [**編輯應用程式原則] 延伸**模組上，按一下 **[確定]** 。 在 [**新範本**的內容] 對話方塊中，按一下 **[確定**]。  
   
-## <a name="DAOTPLogon"></a>建立及部署公司 CA 所發行之 OTP 憑證的憑證範本  
+## <a name="to-create-and-deploy-a-certificate-template-for-otp-certificates-issued-by-the-corporate-ca"></a><a name="DAOTPLogon"></a>建立及部署公司 CA 所發行之 OTP 憑證的憑證範本  
   
 1.  在 [憑證範本] 主控台的詳細資料窗格中，以滑鼠右鍵按一下**智慧卡登**入範本，然後按一下 [**複製範本**]。  
   
@@ -65,13 +65,13 @@ ms.locfileid: "71388209"
     > [!IMPORTANT]  
     > **Windows Server 2003 CA**。 在憑證授權單位單位（CA）位於執行 Windows Server 2003 的電腦上時，必須在不同的電腦上設定憑證範本。 這是必要的，因為在 Windows Server 2008 和 Windows Vista 之前執行 Windows 版本時，不可能設定以小時為單位的**有效期間**。 如果您用來設定範本的電腦未安裝 Active Directory 憑證服務伺服器角色，或者它是用戶端電腦，則您可能需要安裝 [憑證範本] 嵌入式管理單元。 如需詳細資訊，請參閱[安裝憑證範本嵌入式管理](https://technet.microsoft.com/library/cc732445.aspx)單元。  
     >   
-    > **Windows Server 2008 R2 CA**。 如果您已部署執行 Windows Server 2008 R2 的憑證授權單位單位（CA），您必須將憑證範本的**更新期間**設定為1或2小時，且**有效期間**必須超過**更新期間**，但不超過4小時。 如果您使用執行 Windows Server 2008 R2 的 CA 來設定超過4小時的憑證範本**有效期間**，directaccess 安裝精靈將無法偵測到憑證範本，且 directaccess 安裝將會失敗。  
+    > **Windows Server 2008 R2 CA**。 如果您已部署執行 Windows Server 2008 R2 的憑證授權單位單位（CA），您必須將憑證範本的**更新期間**設定為1或2小時，而且**有效期間**比**更新期間**長，但不超過4小時。 如果您使用執行 Windows Server 2008 R2 的 CA 來設定超過4小時的憑證範本**有效期間**，directaccess 安裝精靈將無法偵測到憑證範本，且 directaccess 安裝將會失敗。  
   
 5.  按一下 [**安全性**] 索引標籤，選取 [**已驗證的使用者**]，在 [**允許**] 欄中選取 [**讀取**] 和 [**註冊**] 核取方塊。 按一下 [確定]。 按一下 [ **Domain admins** ] 和 [ **Enterprise Admins**]，然後按一下 [**允許**] 資料行底下的 [**完全控制**]。 按一下 **[套用]** 。  
   
 6.  按一下 [**主體名稱**] 索引標籤，然後**從這個 Active Directory 資訊中**按一下 [建立]。 在 [**主體名稱格式：** ] 清單中，選取 [**完整辨別名稱**]，確認已核取 [**使用者主要名稱（UPN）** ] 方塊，**然後按一下 [** 套用]。  
   
-7.  按一下 [**伺服器**] 索引標籤，選取 [**不要在 CA 資料庫中儲存憑證和要求**] 核取方塊，清除 [不在已**發行的憑證中包含撤銷資訊**] 核取方塊，然後在**新範本**的內容上對話方塊中 **，按一下 [** 套用]。  
+7.  按一下 [**伺服器**] 索引標籤，選取 [**不要在 CA 資料庫中儲存憑證和要求**] 核取方塊，清除 [不要**在已發行的憑證中包含撤銷資訊**] 核取方塊，然後在 [**新範本**的內容] 對話方塊中按一下 [套用 **]。**  
   
 8.  按一下 [**發行需求**] 索引標籤，選取 [**此授權簽章數目：** ] 核取方塊，將值設定為1。 在 [簽章**所需的原則類型：** ] 清單中選取 [**應用程式原則**]，然後在**應用程式原則**清單中選取 [ **DA OTP RA**]。 在 [**新範本**的內容] 對話方塊中，按一下 **[確定**]。  
   
@@ -85,13 +85,13 @@ ms.locfileid: "71388209"
   
 13. 在憑證範本清單中，按一下 [ **DAOTPRA**和**DAOTPLogon**]，然後按一下 **[確定]** 。  
   
-14. 在主控台的詳細資料窗格中，您應該會看到 [ **DAOTPRA** ] 憑證範本具有 [適用于**DA OTP RA**的**目標**] 和 [ **DAOTPLogon**憑證範本]，並具有用於**智慧卡登**入的**預定用途**.  
+14. 在主控台的詳細資料窗格中，您應該會看到 [ **DAOTPRA** ] 憑證範本具有 [適用于**DA OTP RA**的**目標**] 和 [ **DAOTPLogon**憑證範本]，並具有**預定用途**的**智慧卡登**入。  
   
 15. 重新開機服務。  
   
-16. 關閉 [憑證授權單位] 主控台。  
+16. 關閉憑證授權單位主控台。  
   
-17. 開啟提升權限的命令提示字元。 輸入**CertUtil-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**，然後按 enter。  
+17. 開啟更高權限的命令提示字元。 輸入**CertUtil-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**，然後按 enter。  
   
 18. 讓命令提示字元視窗保持開啟，以進行下一個步驟。  
   

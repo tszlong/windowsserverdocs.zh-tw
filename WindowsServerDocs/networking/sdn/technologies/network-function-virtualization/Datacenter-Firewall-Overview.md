@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9562972f731a553dbc3e5558fcce1d5c51d539d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 141057d2ee3e648f589d255ea04fdef179cedf3c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405891"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317038"
 ---
 # <a name="datacenter-firewall-overview"></a>資料中心防火牆概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 資料中心防火牆是 Windows Server 2016 隨附的新服務。 它是一個網路層、5個元組（通訊協定、來源和目的地埠號碼、來源和目的地 IP 位址）、可設定狀態、多租使用者的防火牆。 當服務提供者部署並提供為服務時，租使用者系統管理員可以安裝和設定防火牆原則，以協助保護其虛擬網路免于來自網際網路和內部網路的不必要流量。  
   

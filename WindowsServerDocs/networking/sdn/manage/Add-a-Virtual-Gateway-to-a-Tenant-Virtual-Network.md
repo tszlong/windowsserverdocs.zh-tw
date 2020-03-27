@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: deeb226d81c48e0e389ea4d2619c43aca01e25c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: feee6f7bfaa34983290bfe173c7729666581e3f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355894"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309925"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>將虛擬閘道新增到租用戶虛擬網路 
 
->適用於：Windows Server (半年度管道)、Windows Server 2016 
+>適用於：Windows Server (半年通道)、Windows Server 2016 
 
 瞭解如何使用 Windows PowerShell Cmdlet 和腳本，為您租使用者的虛擬網路提供站對站連線能力。 在本主題中，您會使用網路控制站，將租使用者虛擬閘道新增至屬於閘道集區成員的 RAS 閘道實例。 視每個租使用者使用的頻寬而定，RAS 閘道最多可支援100個租使用者。 網路控制站會在您為租使用者部署新的虛擬閘道時，自動決定要使用的最佳 RAS 閘道。  
 
@@ -33,7 +33,7 @@ ms.locfileid: "71355894"
 
 |                                                        網路連接選項                                                         |                                              BGP 設定選項                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| <ul><li>IPSec 站對站虛擬私人網路（VPN）</li><li>一般路由封裝（GRE）</li><li>第三層轉送</li></ul> | <ul><li>BGP 路由器設定</li><li>BGP 對等設定</li><li>BGP 路由原則設定</li></ul> |
+| <ul><li>IPSec 站對站虛擬私人網路（VPN）</li><li>Generic Routing Encapsulation (GRE)</li><li>第三層轉送</li></ul> | <ul><li>BGP 路由器設定</li><li>BGP 對等設定</li><li>BGP 路由原則設定</li></ul> |
 
 ---
 

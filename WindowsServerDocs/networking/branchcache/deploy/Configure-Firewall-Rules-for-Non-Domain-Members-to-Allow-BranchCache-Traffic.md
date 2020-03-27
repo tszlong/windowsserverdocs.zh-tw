@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: da956be0-c92d-46ea-99eb-85e2bd67bf07
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a96b67b235b813ad455d5b289b7238f671e4c547
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4a86d37fe8744127a91b7fb89e4f34d4a0a021fa
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356714"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318489"
 ---
 # <a name="configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic"></a>將非網域成員的防火牆規則設定為允許 BranchCache 流量
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題中的資訊來設定協力廠商防火牆產品，以及手動設定具有防火牆規則的用戶端電腦，讓 BranchCache 以分散式快取模式執行。  
   
@@ -34,20 +34,20 @@ ms.locfileid: "71356714"
   
 IPv4 多播：239.255.255.250  
   
-IPv6 多播：FF02：： C  
+IPv6 多播： FF02：： C  
   
-輸入流量：本機埠：3702，遠端埠：暫時  
+輸入流量：本機埠：3702、遠端埠：暫時  
   
 輸出流量：本機埠：暫時、遠端埠：3702  
   
 程式：%systemroot%\system32\svchost.exe （BranchCache 服務 [PeerDistSvc]）  
   
-## <a name="ms-pccrr-peer-content-caching-and-retrieval-retrieval-protocol"></a>[MS-PCCRR]：對等內容的快取和抓取：抓取通訊協定  
+## <a name="ms-pccrr-peer-content-caching-and-retrieval-retrieval-protocol"></a>[MS-PCCRR]：對等內容快取和抓取：抓取通訊協定  
 分散式快取用戶端必須允許傳入和傳出的 PCCRR 流量，如要求建議（RFC）2616中所述，會以 HTTP 1.1 通訊協定傳送。  
   
 防火牆設定必須允許輸入和輸出流量。 您可以使用下列設定來設定分散式快取模式的防火牆例外。  
   
-輸入流量：本機埠：80，遠端埠：暫時  
+輸入流量：本機埠：80、遠端埠：暫時  
   
 輸出流量：本機埠：暫時、遠端埠：80  
   

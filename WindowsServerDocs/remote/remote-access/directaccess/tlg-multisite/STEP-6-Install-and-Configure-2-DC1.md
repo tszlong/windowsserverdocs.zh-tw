@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4c7a8243922f58f9705a85cd30b2a68cf4d876c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 558c99c187ab01f3084621410964f3a01c0dace8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404778"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308667"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>步驟6安裝和設定 2-DC1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 2-DC1 提供下列服務：  
   
@@ -50,7 +50,7 @@ ms.locfileid: "71404778"
   
 1.  開始安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。  
   
-2.  依照指示完成安裝，指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）以及本機系統管理員帳戶的強式密碼。 使用本機 Administrator 帳戶登入。  
+2.  依照指示完成安裝，指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）以及本機系統管理員帳戶的強式密碼。 使用本機系統管理員帳戶登入。  
   
 3.  將 2-DC1 連線到具有網際網路存取權的網路，並執行 Windows Update 以安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然後中斷網際網路連線。  
   
@@ -67,7 +67,7 @@ ms.locfileid: "71404778"
   
 3.  按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]，然後按一下 [內容]。  
   
-4.  按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**10.2.0.1**。 在 [子網路遮罩]中，輸入 **255.255.255.0**。 在 [**預設閘道**] 中，輸入**10.2.0.254**。 按一下 **[使用下列的 dns 伺服器位址**]，在 [**慣用 dns 伺服器**] 中輸入**10.2.0.1**，然後在 [**其他 dns 伺服器**] 中輸入**10.0.0.1**。  
+4.  按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**10.2.0.1**。 在 [子網路遮罩] 中，輸入 **255.255.255.0**。 在 [**預設閘道**] 中，輸入**10.2.0.254**。 按一下 **[使用下列的 dns 伺服器位址**]，在 [**慣用 dns 伺服器**] 中輸入**10.2.0.1**，然後在 [**其他 dns 伺服器**] 中輸入**10.0.0.1**。  
   
 5.  按一下 [進階]，然後按一下 [DNS] 索引標籤。  
   
@@ -181,13 +181,13 @@ CORP2 網域中的電腦必須從 APP1 上的憑證授權單位單位取得電�
   
 6.  在**輸入要選取的物件名稱** 中，輸入**Domain Admins;網域電腦**，然後按一下**確定**。  
   
-7.  在 [**用戶端-伺服器驗證**內容] 對話方塊的 [**群組或使用者名稱**] 中，按一下 [**網域系統管理員（CORP2\Domain Admins）** ]，在 [ **domain admins**] 的 [許可權] 中，于 [**允許**] 欄位中選取 [**寫入**]並**註冊**。  
+7.  在 [**用戶端-伺服器驗證**內容] 對話方塊的 [**群組或使用者名稱**] 中，按一下 [**網域系統管理員（CORP2\Domain Admins）** ]，然後在 [**網域管理員的許可權**] 的 [**允許**] 欄位中，選取 [**寫入**並**註冊**]。  
   
 8.  在 **[群組或使用者名稱**] 中，按一下 [**網域電腦（CORP2\Domain 電腦）** ]，然後在 [**網域電腦的許可權**] 的 [**允許**] 欄中，選取 [**註冊**並**自動註冊**]，然後按一下 **[確定]** 。  
   
 9. 關閉 [憑證範本主控台]。  
   
-## <a name="replication"></a>強制在 DC1 和 2-DC1 之間複寫  
+## <a name="force-replication-between-dc1-and-2-dc1"></a><a name="replication"></a>強制在 DC1 和 2-DC1 之間複寫  
 您必須先強制將設定從 DC1 複寫至 2-DC1，才可以在 2-EDGE1 上註冊憑證。 此作業應該在 DC1 上完成。  
   
 ### <a name="to-force-replication"></a>強制複寫  
@@ -200,7 +200,7 @@ CORP2 網域中的電腦必須從 APP1 上的憑證授權單位單位取得電�
   
 4.  在 [ **DEFAULTIPSITELINK 屬性**] 對話方塊的 [**成本**] 中，輸入**1**，在 [複寫**間隔**] 中輸入**15**，然後按一下 **[確定]** 。 等候15分鐘的時間完成複寫。  
   
-5.  若要立即在主控台樹中強制複寫，請展開 [ **Sites\Default-First-Site-name\Servers\DC1\NTDS 設定**]，在詳細資料窗格中，以滑鼠右鍵按一下 [ **<automatically generated>** ]，按一下 [**立即**複寫]，然後在 [**立即**複寫] 對話方塊中，按一下 **[確定]** 。  
+5.  若要立即在主控台樹中強制複寫，請展開 [ **Sites\Default-First-Site-name\Servers\DC1\NTDS 設定**]，在詳細資料窗格中，以滑鼠右鍵按一下 [ **<automatically generated>** ]，按一下 [**立即**複寫]，然後在 [**立即**複寫] 對話方塊中按一下 **[確定]** 。  
   
 6.  若要確保複寫順利完成，請執行下列動作：  
   

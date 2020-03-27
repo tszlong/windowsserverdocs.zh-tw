@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: f2c1de01883f2fb52faebb4abf1d0c9e61f0139b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c58386467d632d77fdc96bf3bc18b5a85d1ecdaf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388068"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307699"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>步驟 7.1. 設定 EAP-TLS 以忽略憑證撤銷清單 (CRL) 檢查
 

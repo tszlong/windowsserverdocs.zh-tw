@@ -1,5 +1,5 @@
 ---
-title: 網路
+title: 網路功能
 description: 本主題提供 Windows Server 2016 中可用的「軟體定義網路」和「網路平台」技術概觀。
 ms.prod: windows-server
 layout: LandingPage
@@ -7,17 +7,17 @@ ms.technology: networking
 ms.topic: landing-page
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: e625bb537ef514ff68241669c3e75f482a61f068
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823843"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318571"
 ---
-# <a name="networking"></a>網路
+# <a name="networking"></a>網路功能
 
 >[!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
@@ -193,7 +193,7 @@ ms.locfileid: "74823843"
 
 <hr />
 
-## <a name="bkmk_networking"></a>網路技術
+## <a name="networking-technologies"></a><a name="bkmk_networking"></a>網路技術
 
 <ul class="cardsF panelContent">
     <li>
@@ -537,7 +537,7 @@ ms.locfileid: "74823843"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Windows 容器網路功能</a></h3>
+                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Windows 容器的網路功能</a></h3>
                         <hr />
                         <p>Windows 容器網路功能可讓您使用業界標準工具和工作流程，來建立和管理用於連線 Windows 10 和 Windows Server 主機上容器端點的網路。 Windows 容器網路支援多拓撲，包括私人、flat-L2 和 routed-L3。</p>
                         <p>此外，您可以透過與 Windows 主機網路服務（HNS）通訊的外掛程式，使用 Docker、Kubernetes 或 Windows PowerShell，在主機本機上建立重迭。 您可以透過本機代理程式與每個節點的 HNS 進行通訊，藉此建立和管理多節點叢集網路。</p>

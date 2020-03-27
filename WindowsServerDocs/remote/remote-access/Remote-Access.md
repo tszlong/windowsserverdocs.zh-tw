@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/18/2018
-ms.openlocfilehash: d2fa9c82c4cab05b2a60916fee3f09c1ea48a472
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dbcd0380dffca29e782be2179024270da73a2c11
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388914"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309409"
 ---
 # <a name="remote-access"></a>遠端存取
 
@@ -36,7 +36,7 @@ ms.locfileid: "71388914"
 >[!IMPORTANT]
 >請勿嘗試在 Microsoft Azure 的虛擬機器 \(VM\) 上部署遠端存取。 不支援在 Microsoft Azure 中使用遠端存取。 您無法在 Azure VM 中使用「遠端存取」來部署 VPN、DirectAccess，或 Windows Server 2016 或舊版 Windows Server 中的任何其他遠端存取功能。 如需詳細資訊，請參閱[Microsoft Microsoft Azure 虛擬機器的伺服器軟體支援](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
 
-## <a name="bkmk_da"></a>遠端存取服務 \(RAS\)-RAS 閘道
+## <a name="remote-access-service-ras---ras-gateway"></a><a name="bkmk_da"></a>遠端存取服務 \(RAS\)-RAS 閘道
 
 當您安裝**DirectAccess 和 VPN （RAS）** 角色服務時，您會將遠端存取服務閘道部署 \(**RAS 閘道**\)。 您可以將 RAS 閘道部署為單一租使用者 RAS 閘道虛擬私人網路，\(VPN\) 伺服器、多租使用者 RAS 閘道 VPN 伺服器和 DirectAccess 伺服器。
 
@@ -51,7 +51,7 @@ ms.locfileid: "71388914"
 
 如需詳細資訊，請參閱[RAS 閘道](ras-gateway/RAS-Gateway.md)和[邊界閘道協定（BGP）](bgp/Border-Gateway-Protocol-BGP.md)。
 
-## <a name="bkmk_rras"></a>傳入
+## <a name="routing"></a><a name="bkmk_rras"></a>傳入
 
 您可以使用遠端存取，在區域網路上的子網之間路由傳送網路流量。 路由可支援使用網際網路群組管理通訊協定（IGMP）的網路位址轉譯（NAT）路由器、執行 BGP 的 LAN 路由器、路由資訊通訊協定（RIP）以及具備多播功能的路由器。 作為功能完整的路由器，您可以在伺服器電腦或執行 Hyper-v 之電腦上的虛擬機器（VM）部署 RAS。
 
@@ -61,7 +61,7 @@ ms.locfileid: "71388914"
 Install-RemoteAccess -VpnType RoutingOnly
 ```  
 
-## <a name="bkmk_proxy"></a>Web 應用程式 Proxy
+## <a name="web-application-proxy"></a><a name="bkmk_proxy"></a>Web 應用程式 Proxy
 
 Web 應用程式 Proxy 是 Windows Server 2016 中的遠端存取角色服務。 Web Application Proxy 為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以允許任何裝置上的使用者從公司網路外部存取這些應用程式。 Web 應用程式 Proxy 會使用 Active Directory 同盟服務（AD FS）預先驗證 web 應用程式的存取權，也可做為 AD FS Proxy。
 

@@ -1,9 +1,9 @@
 ---
 title: 將 Windows Server 2008 Foundation 的設定和資料移至目的地伺服器以進行 Windows Server Essentials 移轉
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,28 +12,28 @@ ms.assetid: 3ff7d040-ebd1-421c-80db-765deacedd4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d9e662a6474823cae42d0a2abec60963273ca18
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 61a5caee1aba9de5f60bf0723ee0dadaf4871e5e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828542"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318840"
 ---
 # <a name="move-windows-server-2008-foundation-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>將 Windows Server 2008 Foundation 的設定和資料移至目的地伺服器以進行 Windows Server Essentials 移轉
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 如下所示將設定和資料移動到目的地伺服器：
 
-1. [將資料複製到目的地伺服器 （選擇性）](#copy-data-to-the-destination-server)
+1. [將資料複製到目的地伺服器（選擇性）](#copy-data-to-the-destination-server)
 
-2. [Active Directory 使用者帳戶匯入到 Windows Server Essentials 儀表板 （選擇性）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板（選擇性）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
-3. [從來源伺服器的 DHCP 伺服器角色移到路由器](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
+3. [將 DHCP 伺服器角色從來源伺服器移到路由器](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
 4. [設定網路](#configure-the-network) 
 
-5. [允許的電腦對應到使用者帳戶](#map-permitted-computers-to-user-accounts)
+5. [將允許的電腦對應到使用者帳戶](#map-permitted-computers-to-user-accounts)
   
 ## <a name="copy-data-to-the-destination-server"></a>將資料複製到目的地伺服器
  在您將資料從來源伺服器複製到目的地伺服器之前，請執行下列工作：  
@@ -48,22 +48,22 @@ ms.locfileid: "66828542"
   
 1.  以網域系統管理員身分登入目的地伺服器，然後開啟命令視窗。  
   
-2.  在命令提示字元中輸入下列命令，然後按 ENTER：  
+2.  在命令提示字元，輸入下列命令，然後按 ENTER：  
   
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`  
   
      其中：
-     - \<SourceServerName\>是來源伺服器的名稱
-     - \<Sharedsourcefoldername&gt\>是來源伺服器上的共用資料夾的名稱
-     - \<D\>是目的地伺服器的名稱
-     - \<Shareddestinationfoldername&gt\>是要將資料複製到其中的目的地伺服器上的共用的資料夾。  
+     - \<SourceServerName\> 是來源伺服器的名稱
+     - \<SharedSourceFolderName\> 是來源伺服器上共用資料夾的名稱
+     - \<e\> 是目的地伺服器的名稱，
+     - \<SharedDestinationFolderName\> 是要將資料複製到其中的目的地伺服器上的共用資料夾。  
   
 3.  在每一個從來源伺服器移轉的共用資料夾重複上述步驟。  
   
-## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Active Directory 使用者帳戶匯入到 Windows Server Essentials 儀表板
- 根據預設，來源伺服器上建立的所有使用者帳戶會自動都移轉到 Windows Server Essentials 儀表板。 不過，如果所有內容都不符合移轉需求，Active Directory 使用者帳戶的自動移轉將會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。  
+## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
+ 根據預設，在來源伺服器上建立的所有使用者帳戶都會自動遷移至 Windows Server Essentials 中的儀表板。 不過，如果所有內容都不符合移轉需求，Active Directory 使用者帳戶的自動移轉將會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。  
   
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>若要匯入 Windows Server Essentials 儀表板的 Active Directory 使用者帳戶
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
   
 1.  以網域系統管理員身分登入目的地伺服器。  
   
@@ -80,11 +80,11 @@ ms.locfileid: "66828542"
   
 1.  如下所示關閉來源伺服器上的 DHCP 服務：  
   
-    1.  在來源伺服器上，依序按一下 [開始]  、[系統管理工具]  ，然後按一下 [服務]  。  
+    1.  在來源伺服器上，依序按一下 [開始]、[系統管理工具]，然後按一下 [服務]。  
   
-    2.  在目前執行中服務的清單中，以滑鼠右鍵按一下 [DHCP 伺服器]  ，然後按一下 [屬性]  。  
+    2.  在目前執行中服務的清單中，以滑鼠右鍵按一下 [DHCP 伺服器]，然後按一下 [屬性]。  
   
-    3.  於 [啟動類型]  選取 [停用]  。  
+    3.  於 [啟動類型] 選取 [停用]。  
   
     4.  停止服務。  
   
@@ -104,7 +104,7 @@ ms.locfileid: "66828542"
   
 1. 在目的地伺服器上，開啟儀表板。  
   
-2. 在 [儀表板] 的 [首頁]  頁面上，按一下 [設定]  ，按一下 [設定隨處存取]  ，然後選擇 [按一下以設定隨處存取]  選項。  
+2. 在 [儀表板] 的 [首頁] 頁面上，按一下 [設定]，按一下 [設定隨處存取]，然後選擇 [按一下以設定隨處存取] 選項。  
   
 3. 完成精靈中的指示，來設定您的路由器及網域名稱。  
   
@@ -112,24 +112,24 @@ ms.locfileid: "66828542"
   
 -   連接埠 80：HTTP 網路流量  
   
--   連接埠 443:HTTPS 網路流量  
+-   連接埠 443：HTTP 網路流量  
   
 ## <a name="map-permitted-computers-to-user-accounts"></a>將允許的電腦對應到使用者帳戶  
- 在 Windows Server Essentials 中，使用者必須明確地指派給它才會顯示在 遠端 Web 存取的電腦。 從 Windows Server 2008 Foundation 移轉的每個使用者帳戶都必須對應至一或多部電腦。  
+ 在 Windows Server Essentials 中，必須明確地將使用者指派給電腦，才會顯示在遠端 Web 存取。 從 Windows Server 2008 Foundation 移轉的每個使用者帳戶都必須對應至一或多部電腦。  
   
 #### <a name="to-map-user-accounts-to-computers"></a>將使用者帳戶對應至電腦  
   
 1.  開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [使用者]  。  
+2.  在瀏覽列中，按一下 [使用者]。  
   
-3.  在使用者帳戶清單中，以滑鼠右鍵按一下使用者帳戶，然後按一下 [檢視帳戶內容]  。  
+3.  在使用者帳戶清單中，以滑鼠右鍵按一下使用者帳戶，然後按一下 [檢視帳戶內容]。  
   
-4.  按一下 [隨處存取]  索引標籤，然後按一下 [允許遠端 Web 存取，以及存取 Web 服務應用程式]  。  
+4.  按一下 [隨處存取] 索引標籤，然後按一下 [允許遠端 Web 存取，以及存取 Web 服務應用程式]。  
   
-5.  選取 [共用資料夾]  ，選取 [電腦]  、[首頁連結]  ，然後按一下 [套用]  。  
+5.  選取 [共用資料夾]，選取 [電腦]、[首頁連結]，然後按一下 [套用]。  
   
-6.  按一下 [電腦存取]  索引標籤，然後再按一下您想要允許存取的電腦名稱。  
+6.  按一下 [電腦存取] 索引標籤，然後再按一下您想要允許存取的電腦名稱。  
   
 7.  對每個使用者帳戶重複步驟 3、4、5 和 6。  
   

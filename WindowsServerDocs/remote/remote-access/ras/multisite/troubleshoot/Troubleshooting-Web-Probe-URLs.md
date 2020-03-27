@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6dfffd1e-f4f4-43b6-9e3c-49015ce34338
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 132db4811ee135d2ebff99efed6f53b5db1356ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fd09c8e9c7a6f0ea7192ca20440c18f21ba65c93
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404440"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313756"
 ---
 # <a name="troubleshooting-web-probe-urls"></a>疑難排解 Web 探查 URL
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404440"
 
 本主題包含與 `Set-DAEntryPointDC` 命令問題有關的疑難排解資訊。 若要確認您所收到的錯誤與設定進入點網域控制站有關，請檢查 Windows 事件記錄檔中的事件識別碼 10065。  
   
-## <a name="SaveGPOSettings"></a>正在儲存伺服器 GPO 設定  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>正在儲存伺服器 GPO 設定  
 **收到錯誤**。 將遠端存取設定儲存至 GPO < GPO_name > 時發生錯誤。  
   
 若要疑難排解這個錯誤，請參閱儲存伺服器 GPO 設定。  

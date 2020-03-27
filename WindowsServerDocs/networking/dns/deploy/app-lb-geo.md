@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea3f959612de0f2bc56a887ba73aba47f1d3f141
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d4e005e65a3ff645ed91f488820435aff5173390
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406220"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317895"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>使用 DNS 原則進行具有地理位置感知的應用程式負載平衡
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何設定 DNS 原則，以對具有地理位置感知的應用程式進行負載平衡。
 
@@ -45,7 +45,7 @@ DNS 系統管理員也希望世界各地其他位置的所有查詢在其資料�
 >[!IMPORTANT]
 >下列各節包含範例 Windows PowerShell 命令，其中包含許多參數的範例值。 執行這些命令之前，請務必將這些命令中的範例值取代為適用于您的部署的值。
 
-### <a name="bkmk_clientsubnets"></a>建立 DNS 用戶端子網
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_clientsubnets"></a>建立 DNS 用戶端子網
 
 您必須先識別北美洲和歐洲地區的子網或 IP 位址空間。
 
@@ -61,7 +61,7 @@ DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送�
     
 如需詳細資訊，請參閱[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
-### <a name="bkmk_zscopes2"></a>建立區域範圍
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>建立區域範圍
 
 在用戶端子網備妥之後，您必須將區域 contosogiftservices.com 分割成不同的區域範圍，每個都適用于資料中心。
 
@@ -85,7 +85,7 @@ DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送�
 
 如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records2"></a>將記錄新增至區域範圍
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>將記錄新增至區域範圍
 
 現在您必須將代表 web 伺服器主機的記錄新增到區域範圍中。
 
@@ -98,14 +98,14 @@ DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送�
 
 如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-### <a name="bkmk_policies2"></a>建立 DNS 原則
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>建立 DNS 原則
 
 建立分割區（區域範圍）並新增記錄之後，您必須建立可將傳入查詢分散到這些範圍的 DNS 原則。
 
 在此範例中，跨不同資料中心的應用程式伺服器的查詢散發符合下列準則。
 
-1. 從北美洲用戶端子網中的來源接收 DNS 查詢時，50% 的 DNS 回應會指向西雅圖資料中心，而 25% 的回應會指向芝加哥資料中心，而其餘 25% 的回應會指向達拉斯資料中心。
-2. 從歐洲用戶端子網上的來源接收 DNS 查詢時，50% 的 DNS 回應會指向都柏林資料中心，而 50% 的 DNS 回應會指向阿姆斯特丹資料中心。
+1. 從北美洲用戶端子網中的來源接收 DNS 查詢時，50% 的 DNS 回應會指向西雅圖資料中心，而25% 的回應會指向芝加哥資料中心，而其餘25% 的回應會指向達拉斯資料中心。
+2. 從歐洲用戶端子網上的來源接收 DNS 查詢時，50% 的 DNS 回應會指向都柏林資料中心，而50% 的 DNS 回應會指向阿姆斯特丹資料中心。
 3. 當查詢來自世界各地的任何地方時，DNS 回應會分散在所有五個資料中心。
 
 您可以使用下列 Windows PowerShell 命令來執行這些 DNS 原則。

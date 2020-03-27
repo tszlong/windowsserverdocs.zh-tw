@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 0f00ae6e-ae1b-41e3-8c50-65226b5b9c9e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9287408446b81805e3c13ff876535a615ecb03d5
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd02dff51d2d1a1a389765f6af7857083529834c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822791"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319250"
 ---
 # <a name="install-content-servers-that-use-the-branchcache-feature"></a>安裝使用 BranchCache 功能的內容伺服器
 

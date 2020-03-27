@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8fe318a8ac17c650d8dbf2339e72b561de529c4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3aa20913a01a23291879b98d6f53fe60a7138670
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405673"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312456"
 ---
 # <a name="dns-resource-record-management"></a>DNS 資源記錄管理
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題提供使用 IPAM 管理 DNS 資源記錄的相關資訊。  
   
@@ -79,7 +79,7 @@ ms.locfileid: "71405673"
   
 -   SRV  
   
--   文字  
+-   Text  
   
 -   知名的服務  
   

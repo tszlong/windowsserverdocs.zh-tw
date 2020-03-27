@@ -10,15 +10,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
-ms.author: pashort
+ms.author: lizross
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: 3feec719934fb16ca34cebe1e653768da5fb9eb7
-ms.sourcegitcommit: 33c89b76ac902927490b9727f3cf92b374754699
+ms.openlocfilehash: f802804d64b3047a2612b7f346de03aff61c30cd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728429"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316547"
 ---
 # <a name="performance-tuning-network-adapters"></a>效能調整網路介面卡
 
@@ -33,9 +33,9 @@ ms.locfileid: "75728429"
 - 伺服器硬體和軟體資源  
 - 您的伺服器效能目標  
 
-以下各節說明一些效能調整選項。  
+下列小節描述一些效能調整選項。  
 
-##  <a name="bkmk_offload"></a>啟用卸載功能
+##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>啟用卸載功能
 
 調整網路介面卡卸載功能通常會有好處。 不過，網路介面卡的功能可能不足以處理高輸送量的卸載功能。
 
@@ -48,7 +48,7 @@ ms.locfileid: "75728429"
 > [!NOTE]  
 > 某些網路介面卡需要您個別啟用傳送和接收路徑的卸載功能。
 
-##  <a name="bkmk_rss_web"></a>啟用網頁伺服器的接收端調整（RSS）
+##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>啟用網頁伺服器的接收端調整（RSS）
 
 當伺服器上的網路介面卡比邏輯處理器少時，RSS 可以改善 Web 延展性和效能。 當所有網路流量都通過支援 RSS 的網路介面卡時，伺服器可以跨不同的 Cpu 同時處理來自不同連線的傳入 web 要求。
 
@@ -63,7 +63,7 @@ ms.locfileid: "75728429"
 
 例如，如果您開啟 [工作管理員] 並檢查伺服器上的邏輯處理器，而且似乎未充分利用接收流量，您可以嘗試將 RSS 佇列的數目從預設的2增加到網路介面卡所支援的最大值。 您的網路介面卡可能會在驅動程式中提供變更 RSS 佇列數目的選項。
 
-##  <a name="bkmk_resources"></a>增加網路介面卡資源
+##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>增加網路介面卡資源
 
 對於可讓您手動設定資源（例如接收和傳送緩衝區）的網路介面卡，您應該增加已配置的資源。  
 
@@ -78,7 +78,7 @@ ms.locfileid: "75728429"
 
 針對 CPU 系結的工作負載，您應該考慮中斷仲裁。 使用中斷仲裁時，請考慮主機 CPU 節約和延遲與增加的主機 CPU 節約之間的取捨，因為有更多中斷和較少的延遲。 如果網路介面卡不會執行中斷仲裁，但它確實會公開緩衝區聯合，您可以增加結合的緩衝區數目，以允許每個傳送或接收更多的緩衝區，藉此改善效能。
 
-##  <a name="bkmk_low"></a>低延遲封包處理的效能微調
+##  <a name="performance-tuning-for-low-latency-packet-processing"></a><a name="bkmk_low"></a>低延遲封包處理的效能微調
 
 許多網路介面卡都有提供將作業系統引起的延遲最佳化的選項。 延遲係指網路驅動程式處理連入封包到網路驅動程式將封包傳送回去之間的經歷時間。 此時間通常是以微秒為單位。 相較之下，用於長距離封包傳輸的傳輸時間則通常是以毫秒 (量級較大) 為單位。 這項調整不會縮短封包在傳輸上所花的時間。
 
@@ -98,7 +98,7 @@ ms.locfileid: "75728429"
 
 - 在與處理封包的程式 (使用者執行緒) 所使用之核心共用 CPU 快取的核心處理器上，處理網路介面卡插斷和 DPC。 CPU 親和性調整可用來將處理程序導向特定邏輯處理器並搭配 RSS 設定來完成這項作業。 將相同的核心用於插斷、DPC 及使用者模式執行緒會讓效能隨著負載增加而變差，因為 ISR、DPC 及執行緒會爭相使用該核心。
 
-##  <a name="bkmk_smi"></a>系統管理中斷
+##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>系統管理中斷
 
 許多硬體系統都會使用系統管理中斷（SMI-S）來進行各種維護功能，例如回報錯誤修正程式碼（ECC）記憶體錯誤、維持舊版 USB 相容性、控制風扇，以及管理 BIOS 控制的電源設置。
 
@@ -111,11 +111,11 @@ SMI-S 是系統上最高優先順序的插斷，會將 CPU 放在管理模式中
 > [!NOTE]  
 > 作業系統無法控制 SMIs，因為邏輯處理器是在特殊維護模式下執行，這可防止作業系統介入。
 
-##  <a name="bkmk_tcp"></a>效能微調 TCP
+##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>效能微調 TCP
 
  您可以使用下列專案來調整 TCP 效能。
 
-###  <a name="bkmk_tcp_params"></a>TCP 接收視窗自動優化
+###  <a name="tcp-receive-window-autotuning"></a><a name="bkmk_tcp_params"></a>TCP 接收視窗自動優化
 
 在 Windows Vista、Windows Server 2008 和更新版本的 Windows 中，Windows 網路堆疊會使用名為*tcp 接收視窗自動調整層級*的功能來協調 tcp 接收視窗大小。 這項功能可以在 TCP 交握期間，針對每個 TCP 通訊，協調定義的接收視窗大小。
 
@@ -231,10 +231,10 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 您可以將接收視窗自動優化設定為五個層級的任一個。 預設層級為**正常**。 下表描述這些層級。
 
-|層級 |十六進位值 |評價 |
+|Level |十六進位值 |註解 |
 | --- | --- | --- |
 |標準 (預設) |0x8 （調整因數為8） |將 [TCP 接收] 視窗設定為 [成長]，以容納幾乎所有的案例。 |
-|停用 |沒有可用的縮放比例 |將 TCP 接收視窗設定為預設值。 |
+|已停用 |沒有可用的縮放比例 |將 TCP 接收視窗設定為預設值。 |
 |Restricted (受限制的) |0x4 （4的縮放因數） |將 TCP 接收視窗設定為超過其預設值，但在某些情況下限制這類成長。 |
 |高度限制 |0x2 （調整因數為2） |將 [TCP 接收] 視窗設定為超過其預設值，但非常保守地這麼做。 |
 |實驗性 |0xE （調整因數為14） |將 [TCP 接收] 視窗設定為「成長」，以容納極端的案例。 |
@@ -376,7 +376,7 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 > **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
 
-###  <a name="bkmk_wfp"></a>Windows 篩選平台
+###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Windows 篩選平台
 
 Windows Vista 和 Windows Server 2008 引進了 Windows 篩選平台（WFP）。 WFP 提供 Api 給非 Microsoft 獨立軟體廠商（Isv），以建立封包處理篩選器。 範例包括防火牆和防毒軟體。
 

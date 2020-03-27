@@ -7,17 +7,17 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 ms.author: dacuo
-author: shortpatti
+author: eross-msft
 ms.date: 09/07/2018
-ms.openlocfilehash: dce890d5ae542789c49bf08b5e7f25e62ea2e8c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4a6fd33dce35cf2a185cf5e4357c37e8050197a2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355297"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312509"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 中的 RSC
->適用於：Windows Server Standard 2012 R2
+>適用于： Windows Server 2019
 
 VSwitch 中的接收區段聯合（RSC）是 Windows Server 2019 和 Windows 10 2018 年10月更新中的一項功能，可透過將多個 TCP 區段結合成較少但較大的時間，協助降低主機 CPU 使用率並增加虛擬工作負載的輸送量部門. 較少的處理、大型區段（結合）比處理許多小型區段更有效率。
 
@@ -27,7 +27,7 @@ Windows Server 2012 和更新版本包含硬體專用卸載版本（實作為實
 
 其資料路徑從這項功能中受益于虛擬交換器的工作負載。
 
-例如:
+例如，
 
 -   裝載虛擬 Nic，包括：
 
@@ -35,7 +35,7 @@ Windows Server 2012 和更新版本包含硬體專用卸載版本（實作為實
 
     -   Hyper-V 主機
 
-    -   儲存空間直接存取
+    -   儲存空間 Direct
 
 -   Hyper-v 來賓虛擬 Nic
 
@@ -66,7 +66,7 @@ Get-VMSwitch -Name vSwitchName | Select-Object *RSC*
 
 
 >[!IMPORTANT]
->重要事項：VSwitch 中的 RSC 可以即時啟用和停用，而不會影響現有的連線。
+>重要：您可以立即啟用和停用 vSwitch 中的 RSC，而不會影響現有的連接。
 
 
 **停用 vSwitch 中的 RSC**

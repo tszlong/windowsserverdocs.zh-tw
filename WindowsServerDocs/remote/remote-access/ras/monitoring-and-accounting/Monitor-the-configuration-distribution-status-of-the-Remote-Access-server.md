@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de285d13-9e54-4c46-88f0-607182e5e3dc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3218e1110bc17979fdda949956f551997859f5ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 19a9b6a10d70b75763e7b139dbbab932dcd251b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368254"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314199"
 ---
 # <a name="monitor-the-configuration-distribution-status-of-the-remote-access-server"></a>監視「遠端存取」伺服器的設定發佈狀態
 
@@ -39,7 +39,7 @@ ms.locfileid: "71368254"
   
 |||||  
 |-|-|-|-|  
-|嚴重性|訊息|意義|該怎麼辦？|  
+|Severity|訊息|意義|該怎麼辦？|  
 |成功|已成功散佈設定。|已將 GPO 中的設定成功套用在伺服器上。|不需要採取任何動作。|  
 |警告|未從網域控制站抓取伺服器 [伺服器名稱] 的設定。 未連結 GPO。|GPO 中的設定尚未送達伺服器。 這可能是因為 GPO 未連結到伺服器。|將 GPO 連結到套用至伺服器的管理領域，或是在暫存 GPO 案例中，手動將設定從暫存 GPO 中匯出，再匯入到實際執行 GPO 中。 如需有關暫存 Gpo 的詳細資訊，**請參閱在**[步驟 1-----DirectAccess--------------------](../../directaccess/single-server-advanced/Step-1-Plan-the-DirectAccess-Infrastructure.md) 如需 GPO 暫存步驟，請參閱[步驟1：設定 DirectAccess 基礎結構](../../directaccess/single-server-advanced/Step-1-Configuring-DirectAccess-Infrastructure.md)中**的使用有限的許可權設定遠端存取 gpo** 。|  
 |警告|尚未從網域控制站抓取伺服器 [伺服器名稱] 的設定。|GPO 中的設定尚未送達伺服器。<br /><br />最多可能需要花 10 分鐘才能傳播新設定。|允許更多時間來更新伺服器上的原則。|  

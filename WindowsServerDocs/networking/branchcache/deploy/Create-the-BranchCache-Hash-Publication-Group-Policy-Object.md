@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: c3d33bed-83ef-4eb8-acf9-0719ecb4a931
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 10230b57075943a5d92dce7155e794293157cba4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e546705d022bbac2588ace5b3e2c6c807c96da63
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356643"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319302"
 ---
 # <a name="create-the-branchcache-hash-publication-group-policy-object"></a>建立 BranchCache 雜湊發行群組原則物件
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式來建立 BranchCache 雜湊發行集群組原則物件（GPO）。  
   
@@ -28,9 +28,9 @@ ms.locfileid: "71356643"
   
 ### <a name="to-create-the-branchcache-hash-publication-group-policy-object"></a>若要建立 BranchCache 雜湊發行集群組原則物件  
   
-1.  開啟 Windows PowerShell，輸入 **mmc**，然後按 ENTER 鍵。 此時會開啟 Microsoft Management Console (MMC)。  
+1.  開啟 Windows PowerShell，然後輸入 **mmc**，再按 ENTER 鍵。 此時會開啟 Microsoft Management Console (MMC)。  
   
-2.  在**MMC 的 [檔案] 功能表上**，按一下 [**新增/移除嵌入式管理單元**]。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
+2.  在 MMC 的 **[檔案]** 功能表上，按一下 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。  
   
 3.  在 [**新增或移除嵌入式管理單元**] 的 [**可用**的嵌入式管理單元] 中，按兩下 [**群組原則管理**]，然後按一下 **[確定]** 。  
   

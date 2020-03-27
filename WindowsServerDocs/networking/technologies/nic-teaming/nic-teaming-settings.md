@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ab9a8e309c8031108d58c73d82357e913d5ce398
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc9ab0fa3d1da0e7af8a7a1d7a8706ba6d128648
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396479"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316515"
 ---
 # <a name="nic-teaming-settings"></a>NIC 小組設定
 在本主題中，我們將概述 NIC 小組的屬性，例如團隊和負載平衡模式。 我們也會提供有關待命介面卡設定和主要小組介面屬性的詳細資料。 如果您的 NIC 小組中至少有兩張網路介面卡，則不需要指定待命介面卡來容錯。

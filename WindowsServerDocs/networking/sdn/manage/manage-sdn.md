@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7e2b4540-de56-4d5f-bb8e-9f81ca0ea4eb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/26/2018
-ms.openlocfilehash: acfbfbde5a10393b100be36ce8853fc54b05a7a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 949ab458239786d531c98ff1bb97b41993e27c98
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406023"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317561"
 ---
 # <a name="manage-sdn"></a>管理 SDN
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本節中的主題來管理軟體定義的網路功能，包括租使用者工作負載和虛擬網路。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "71406023"
 >- [SDN 的安全性](../security/sdn-security-top.md)
 >- [疑難排解 SDN](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)  
 
-本節包含下列主題：  
+本節包含下列主題。  
   
 - [管理租使用者虛擬網路](Manage-Tenant-Virtual-Networks.md)
 - [管理租使用者工作負載](Manage-Tenant-Workloads.md)

@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed49a0a3-1c45-42e5-8f13-cad20c1c1d68
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 83ea3c4e4feefacde3e1ed7be6b605d8c0e644a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a3d3fadbe2f187ae6b5a77137393b7ad7be338b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366968"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313638"
 ---
 # <a name="step-4-verify-directaccess-with-otp"></a>步驟4使用 OTP 驗證 DirectAccess
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何使用 OTP 部署來驗證您的 DirectAccess 是否已正確設定。
   
@@ -36,7 +36,7 @@ ms.locfileid: "71366968"
 4. 確認 OTP 的狀態會顯示綠色圖示且正在運作。  
   
     > [!NOTE]  
-    > 健全狀況狀態更新間隔會是登錄機碼 HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout 中的值總和，以及遠端存取中所設定之**伺服器活動的時間間隔上限。** 配置.  
+    > [健全狀況狀態] 更新間隔會是登錄機碼 HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout 中的值總和，以及遠端存取設定中設定之**伺服器活動的時間間隔**上限。  
   
 ### <a name="to-verify-access-to-internal-resources-using-otp-authentication"></a>使用 OTP 驗證來驗證內部資源的存取權  
   

@@ -7,14 +7,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8b656bbd823a10f1e36d1757bb53c4565d4e828c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b8a3e1ede1cdec1ca5ee66be8d53d4420bec673b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405840"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317129"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>使用伺服器管理員安裝網路控制卡伺服器角色
 
@@ -29,7 +29,7 @@ ms.locfileid: "71405840"
   
 ### <a name="to-install-network-controller"></a>安裝網路控制卡  
   
-1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按一下 **\[下一步\]** 。  
+1.  在 [伺服器管理員] 中，按一下 [ **管理**]，然後按一下 [ **新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按 [下一步]。  
   
 2.  在 [**選取安裝類型**] 中，保留預設設定，然後按 **[下一步]** 。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71405840"
   
     ![網路控制卡伺服器角色](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
-5.  [**新增網路控制器所需的功能**] 對話方塊隨即開啟。 按一下 [**新增功能**]。  
+5.  [**新增網路控制器所需的功能**] 對話方塊隨即開啟。 按一下 **[新增功能]** 。  
   
     ![新增網路控制卡的功能](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_06.jpg)  
   
@@ -53,7 +53,7 @@ ms.locfileid: "71405840"
   
 9. 在 [**確認安裝選項**] 中，檢查您的選擇。 安裝網路控制卡時，需要您在執行嚮導之後重新開機電腦。 因此，按一下 **[必要時自動重新開機目的地伺服器**]。 [**新增角色及功能嚮導**] 對話方塊隨即開啟。 按一下 [是]。  
   
-    ![新增角色及功能精靈](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
+    ![新增角色與功能精靈](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   
 10. 在 [確認安裝選項] 中，按一下 [安裝]。  
   
@@ -63,7 +63,7 @@ ms.locfileid: "71405840"
   
     ![伺服器管理員](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [網路控制卡](Network-Controller.md)  
   
 

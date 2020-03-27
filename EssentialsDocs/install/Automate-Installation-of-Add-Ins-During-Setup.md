@@ -1,9 +1,9 @@
 ---
 title: 安裝期間自動安裝增益集
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 579ed4e6e780c261ca582e943cebf2fc18b5ef62
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433639"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310118"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>安裝期間自動安裝增益集
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a> 在安裝期間自動安裝的增益集  
- 要在安裝期間安裝增益集，可以使用本文件中 [建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) 一節中說明的 PostIC.cmd 方法進行。  
+##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a>在安裝期間自動安裝增益集  
+ 若要在安裝過程中安裝增益集，請使用本文件中的[建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節中描述的 PostIC.cmd 方法。  
   
  將下列項目新增到您的 PostIC.cmd：  
   
@@ -65,7 +65,7 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 <¦>  
 ```  
   
- 其中 **exefile** 是增益集套件中的可執行檔，用於執行前置安裝步驟，必須加以指定。 **NormalArgs** 指定在使用互動模式時，要在命令行中遞送給 exefile 的引數。 在此模式中，exefile 會快顯一些對話方塊，用來與使用者互動。 **SilentArgs** 指定在使用無訊息模式時，要在命令行中遞送給 exefile 的引數 (叫用 installaddin.exe 時，會指定 -q)。 在此模式中，exefile 不應快顯任何視窗。 如果將 **IgnoreExitCode** 指定為 true，將一律認為前置安裝步驟成功，否則將以結束碼 0 表示成功，1 表示取消，其他值表示失敗。 **NormalArgs**、 **SilentArgs**和 **IgnoreExitCode** 標記都是選用的。  
+ 其中 **exefile** 是增益集套件中的可執行檔，用於執行前置安裝步驟，必須加以指定。 **NormalArgs** 指定在使用互動模式時，要在命令行中遞送給 exefile 的引數。 在此模式中，exefile 會快顯一些對話方塊，用來與使用者互動。 **SilentArgs** 指定在使用無訊息模式時，要在命令行中遞送給 exefile 的引數 (叫用 installaddin.exe 時，會指定 -q)。 在此模式中，exefile 不應快顯任何視窗。 如果將 **IgnoreExitCode** 指定為 true，將一律認為前置安裝步驟成功，否則將以結束碼 0 表示成功，1 表示取消，其他值表示失敗。 **NormalArgs**、**SilentArgs** 和 **IgnoreExitCode** 標記都是選用的。  
   
  可針對下列任何情況使用自訂解除安裝步驟：  
   
@@ -118,7 +118,7 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   任何叫用 exefile 失敗的情況，都會導致與 exefile 傳回非 0 或 1 字碼相同的行為。  
   
 ## <a name="see-also"></a>另請參閱  
- [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他自訂項目](Additional-Customizations.md)   
- [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
+ [其他自訂](Additional-Customizations.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)

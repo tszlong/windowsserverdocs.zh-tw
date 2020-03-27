@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c5a316e1230692fb800c088d752c26ec4a0f3349
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fddffbc2954ef7f0687fc7865ec295295b32983a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388259"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314526"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>步驟7：安裝和設定 2-APP1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 2-APP1 提供 web 與檔案共用服務。 2-APP1 設定包含下列各項：  
   
@@ -35,20 +35,20 @@ ms.locfileid: "71388259"
   
 - 在 2-APP1 上建立共用資料夾 
   
-## <a name="bkmk_InstallOS"></a>在 2-APP1 上安裝作業系統  
+## <a name="install-the-operating-system-on-2-app1"></a><a name="bkmk_InstallOS"></a>在 2-APP1 上安裝作業系統  
 首先，安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。  
   
 #### <a name="to-install-the-operating-system-on-2-app1"></a>若要在 2-APP1 上安裝作業系統  
   
 1.  開始安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）。  
   
-2.  依指示完成安裝，為本機 Administrator 帳戶指定強式密碼。 使用本機 Administrator 帳戶登入。  
+2.  依指示完成安裝，為本機 Administrator 帳戶指定強式密碼。 使用本機系統管理員帳戶登入。  
   
 3.  連接 2-APP1 至具有網際網路存取權的網路，並執行 Windows Update 以安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然後中斷網際網路連線。  
   
 4.  連接 2-APP1 至2公司網路子網。  
   
-## <a name="bkmk_TCP"></a>設定 TCP/IP 屬性  
+## <a name="configure-tcpip-properties"></a><a name="bkmk_TCP"></a>設定 TCP/IP 屬性  
 在 2-APP1 上設定 TCP/IP 屬性。  
   
 #### <a name="to-configure-tcpip-properties"></a>設定 TCP/IP 內容  
@@ -59,11 +59,11 @@ ms.locfileid: "71388259"
   
 3.  按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]，然後按一下 [內容]。  
   
-4.  按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**10.2.0.3**。 在 [子網路遮罩]中，輸入 **255.255.255.0**。 在 [**預設閘道**] 中，輸入**10.2.0.254**。  
+4.  按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**10.2.0.3**。 在 [子網路遮罩] 中，輸入 **255.255.255.0**。 在 [**預設閘道**] 中，輸入**10.2.0.254**。  
   
 5.  按一下 [使用下列的 DNS 伺服器位址]。 在 [**慣用 DNS 伺服器**] 中，輸入**10.2.0.1**。  
   
-6.  按一下 [進階]，然後按一下 [DNS] 索引標籤。在 [**這個連線的 DNS 尾碼**] 中，輸入**corp2.corp.contoso.com**，然後按兩次 **[確定]** 。  
+6.  按一下 [ **Advanced**]，然後按一下 [ **DNS** ] 索引標籤。在 [**這個連線的 DNS 尾碼**] 中，輸入**corp2.corp.contoso.com**，然後按兩次 **[確定]** 。  
   
 7.  選取 **[網際網路通訊協定第 6 版 (TCP/IPv6)]** ，然後按一下 **[屬性]** 。  
   
@@ -77,7 +77,7 @@ ms.locfileid: "71388259"
   
 12. 關閉 [網路連線] 視窗。  
   
-## <a name="bkmk_JoinDomain"></a>聯結 2-APP1 至 CORP2 網域  
+## <a name="join-2-app1-to-the-corp2-domain"></a><a name="bkmk_JoinDomain"></a>聯結 2-APP1 至 CORP2 網域  
 聯結 2-APP1 至 corp2.corp.contoso.com 網域。  
   
 #### <a name="to-join-2-app1-to-the-corp2-domain"></a>將 2-APP1 加入 CORP2 網域  
@@ -100,7 +100,7 @@ ms.locfileid: "71388259"
   
 9. 在電腦重新開機之後，按一下 [**切換使用者**]，然後按一下 [**其他使用者**]，並使用系統管理員帳戶登入 CORP2 網域。  
   
-## <a name="bkmk_IIS"></a>在 2-APP1 上安裝網頁伺服器（IIS）角色  
+## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>在 2-APP1 上安裝網頁伺服器（IIS）角色  
 安裝網頁伺服器（IIS）角色，讓 web 伺服器具有 2 APP1。  
   
 #### <a name="to-install-the-web-server-iis-role"></a>若要安裝網頁伺服器（IIS）角色  
@@ -115,7 +115,7 @@ ms.locfileid: "71388259"
   
 5.  確認安裝成功，然後按一下 [**關閉**]。  
   
-## <a name="bkmk_Share"></a>在 2-APP1 上建立共用資料夾  
+## <a name="create-a-shared-folder-on-2-app1"></a><a name="bkmk_Share"></a>在 2-APP1 上建立共用資料夾  
 在 2-APP1 的資料夾中建立共用資料夾和文字檔。  
   
 #### <a name="to-create-a-shared-folder"></a>建立共用資料夾  
@@ -132,7 +132,7 @@ ms.locfileid: "71388259"
   
 6.  依序**按一下 [檔案**]、[**儲存** **]、[** **電腦**]，再按兩下 [**本機磁片（C：）** ]，然後按兩下 [檔案] 資料夾。  
   
-7.  在 [**檔案名**] 中，輸入**example .txt**，然後按一下 [**儲存**]。 關閉 [記事本]。  
+7.  在 [**檔案名**] 中，輸入**example .txt**，然後按一下 [**儲存**]。 關閉「記事本」。  
   
 8.  在 [**本機磁片**] 視窗中，在 [檔案] 資料夾上按一下滑鼠右鍵，指向 [**共用位置**]，然後**按一下 [** **特定人員**]。  
   

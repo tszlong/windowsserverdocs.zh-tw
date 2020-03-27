@@ -3,7 +3,7 @@ title: 準備您的來源伺服器以進行 Windows Server Essentials migration1
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d09ad4b66029c40c840ff5764fdaa2705b44bac2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 503b8edc645b43da1dc5c5fb37547e8e0245d4a2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947447"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318809"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>準備您的來源伺服器以進行 Windows Server Essentials migration1
 
@@ -49,7 +49,7 @@ ms.locfileid: "75947447"
 5.  [建立可遷移企業營運應用程式的計畫](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_PlanToMigrateLineOfBusinessApplications)  
 
   
-###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>備份您的來源伺服器  
+###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>備份您的來源伺服器  
  開始移轉程序之前先備份您的來源伺服器。 進行備份可協助您保護資料，以免因移轉期間發生無法復原的錯誤而導致資料遺失。  
   
 ##### <a name="to-back-up-the-source-server"></a>若要備份來源伺服器  
@@ -58,10 +58,10 @@ ms.locfileid: "75947447"
   
 2.  確認備份執行成功。 若要測試備份的完整性，從備份隨機選取檔案、將這些檔案還原到其他位置，然後確認還原的檔案與原始檔案相同。  
   
-###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安裝最新的 service pack  
+###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安裝最新的 service pack  
  移轉之前，您必須在來源伺服器上安裝最新的更新和 Service Pack。  
   
-###  <a name="BKMK_UseWindowsBestPracticeAnalyzer"></a>評估來源伺服器的健全狀況  
+###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_UseWindowsBestPracticeAnalyzer"></a>評估來源伺服器的健全狀況  
  請務必在開始移轉前評估來源伺服器的健康情況。 您可以使用下列程序，確保更新為最新的，以產生系統健康情況報告，並執行 Windows Server 解決方案最佳做法分析程式 (BPA)。  
   
 #### <a name="download-and-install-critical-and-security-updates"></a>下載及安裝重大和安全性更新  
@@ -104,7 +104,7 @@ ms.locfileid: "75947447"
   
    收集有關伺服器設定的資訊之後，Windows Server 解決方案 BPA 會確認資訊正確，然後提供系統管理員一份依重要性排序的資訊與問題清單。 清單中會描述每個問題，並提供建議或可能的解決方案。 有三種可用的報告類型：  
   
-|報告類型|說明|  
+|報告類型|描述|  
 |-----------------|-----------------|  
 |清單報告|以一維清單的方式顯示報告。|  
 |樹狀報告|以階層式清單的方式顯示報告。|  
@@ -112,14 +112,14 @@ ms.locfileid: "75947447"
   
  若要檢視問題的描述和解決方案，在報告中按一下該問題。 並非 Windows SBS 2011 Essentials BPA 回報的所有問題都會影響遷移，但您應盡可能解決這些問題，以確保遷移成功。  
   
-####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>同步處理來源伺服器時間與外部時間來源  
+####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>同步處理來源伺服器時間與外部時間來源  
  來源伺服器上的時間與目的地伺服器上的時間差距不能超過 5 分鐘，而且兩部伺服器上的日期和時區必須相同。 若來源伺服器是在虛擬機器中執行，則主機伺服器的日期、時間與時區必須符合來源伺服器與目的地伺服器的日期、時間與時區。 為協助確保已成功安裝 Windows Server Essentials，您必須將來源伺服器的時間與網際網路上的網路時間通訊協定（NTP）伺服器同步。  
   
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>同步來源伺服器和 NTP 伺服器的時間  
   
 1.  使用網域系統管理員帳戶和密碼登入來源伺服器。  
   
-2.  按一下 [開始]、[執行]，在文字方塊中輸入 **cmd** ，然後按 ENTER。  
+2.  按一下 [開始] **、[執行]** ，在文字方塊中輸入 **cmd**，然後按 ENTER。  
   
 3.  在命令提示字元中輸入 w32tm /config /syncfromflags:domhier /reliable:no /update，然後按 ENTER。  
   
@@ -130,7 +130,7 @@ ms.locfileid: "75947447"
 > [!IMPORTANT]
 >  在 Windows Server Essentials 安裝期間，您有機會確認目的地伺服器上的時間，並視需要加以變更。 確定與來源伺服器上所設時間的誤差不超過 5 分鐘。 安裝完成後，目的地伺服器會與 NTP 進行同步。 所有加入網域的電腦 (包含來源伺服器) 都會與目的地伺服器同步，目的地伺服器將成為網域主控站 (PDC) 模擬器主機的角色。  
   
-###  <a name="BKMK_MPT"></a>在來源伺服器上執行「遷移準備工具」  
+###  <a name="run-the-migration-preparation-tool-on-the-source-server"></a><a name="BKMK_MPT"></a>在來源伺服器上執行「遷移準備工具」  
  若未先在來源伺服器上執行「移轉準備工具」，即無法執行移轉模式的安裝。 此工具的設計是為了準備您的來源伺服器和網域，以遷移至 Windows Server Essentials。  
   
 > [!IMPORTANT]
@@ -181,7 +181,7 @@ ms.locfileid: "75947447"
 3. 在 [移轉準備工具] 中，選取 [我擁有一個備份，而且已準備好繼續進行]，然後按一下 [下一步]。  
   
    > [!WARNING]
-   >  如果您收到與修補程式安裝相關的錯誤訊息，請參閱 Microsoft 知識庫[文章 822798](https://go.microsoft.com/FWLink/p/?LinkID=118672)中的  
+   >  如果您收到與修補程式安裝相關的錯誤訊息，請參閱 Microsoft 知識庫[文章 822798](https://go.microsoft.com/FWLink/p/?LinkID=118672)中的 < 方法2：重新命名 Catroot2 資料夾。  
   
     「移轉準備工具」會透過擴充 Active Directory 架構來準備移轉用的來源網域。 工作完成後，請按 **[下一步]** 繼續進行。  
   
@@ -200,7 +200,7 @@ ms.locfileid: "75947447"
 > [!NOTE]
 >  您必須在目的地伺服器上安裝 Windows Server Essentials 的兩周內，于來源伺服器上順利完成遷移準備工具的執行。 否則，將會封鎖在目的地伺服器上安裝 Windows Server Essentials。 若發生此狀況，您必須在來源伺服器上再次執行「移轉準備工具」。  
   
-###  <a name="BKMK_PlanToMigrateLineOfBusinessApplications"></a>建立可遷移企業營運應用程式的計畫  
+###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_PlanToMigrateLineOfBusinessApplications"></a>建立可遷移企業營運應用程式的計畫  
  企業營運 (LOB) 應用程式是指對企業運作而言不可或缺的重要電腦應用程式。 LOB 應用程式包括會計、供應鏈管理與資源規劃應用程式。  
   
  當您計劃移轉 LOB 應用程式時，請務必諮詢 LOB 應用程式提供者，以決定適用於移轉每個應用程式的方式。 您也必須尋找用於在目的地伺服器上安裝 LOB 應用程式的媒體。  

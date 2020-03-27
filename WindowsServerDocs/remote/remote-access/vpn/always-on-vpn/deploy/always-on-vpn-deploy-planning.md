@@ -6,24 +6,24 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 11/05/2018
-ms.openlocfilehash: f92cfdbe13633dd4c59012f566c6888fdc7fc7a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0e061a38170242a3808fbad0c82a4154bf9c536
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388165"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313300"
 ---
-# <a name="step-1-plan-the-always-on-vpn-deployment"></a>步驟 1. 規劃 Always On VPN 部署
+# <a name="step-1-plan-the-always-on-vpn-deployment"></a>步驟 1。 規劃 Always On VPN 部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**處**瞭解部署 Always On VPN 的工作流程](always-on-vpn-deploy-deployment.md)
-- [**下一個**步驟 2.設定伺服器基礎結構](vpn-deploy-server-infrastructure.md)
+- [**上一步：** 瞭解部署 Always On VPN 的工作流程](always-on-vpn-deploy-deployment.md)
+- [**下一步：** 步驟2。設定伺服器基礎結構](vpn-deploy-server-infrastructure.md)
 
-在此步驟中，您會開始規劃和準備您的 Always On VPN 部署。 在您打算使用做為 VPN 伺服器的電腦上安裝遠端存取服務器角色之前, 請執行下列工作。 適當規劃之後, 您可以部署 Always On VPN, 並選擇性地使用 Azure AD 設定 VPN 連線的條件式存取。
+在此步驟中，您會開始規劃和準備您的 Always On VPN 部署。 在您打算使用做為 VPN 伺服器的電腦上安裝遠端存取服務器角色之前，請執行下列工作。 適當規劃之後，您可以部署 Always On VPN，並選擇性地使用 Azure AD 設定 VPN 連線的條件式存取。
 
 [!INCLUDE [always-on-vpn-standard-config-considerations-include](../../../includes/always-on-vpn-standard-config-considerations-include.md)]
 
@@ -73,4 +73,4 @@ IKEv2 是[網際網路工程任務要求批註 7296](https://datatracker.ietf.or
 
 ## <a name="next-steps"></a>後續步驟
 
-[步驟 2.設定伺服器基礎結構](vpn-deploy-server-infrastructure.md)：在此步驟中，您會安裝並設定支援 VPN 所需的伺服器端元件。 伺服器端元件包括設定 PKI，以散發使用者、VPN 伺服器和 NPS 伺服器所使用的憑證。
+[步驟2。設定伺服器基礎結構](vpn-deploy-server-infrastructure.md)：在此步驟中，您會安裝並設定支援 VPN 所需的伺服器端元件。 伺服器端元件包括設定 PKI，以散發使用者、VPN 伺服器和 NPS 伺服器所使用的憑證。

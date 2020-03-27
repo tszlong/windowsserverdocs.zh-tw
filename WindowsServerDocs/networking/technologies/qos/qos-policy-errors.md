@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 76974e10-6a57-4533-83be-cfd5a0d364a3
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 935bda5ab47f3e9a362c81a8aeb99ebf22095725
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d0eb137716795c324afcf1a708fff00c2f7266d6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405325"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315568"
 ---
 # <a name="qos-policy-error-and-event-messages"></a>QoS 原則錯誤和事件訊息
 
@@ -21,13 +21,13 @@ ms.locfileid: "71405325"
 
 以下是與 QoS 原則相關聯的錯誤和事件訊息。  
   
-## <a name="informational-messages"></a>參考用訊息  
+## <a name="informational-messages"></a>告知性訊息  
 
 以下是 QoS 原則參考訊息的清單。
 
 |||  
 |-|-|  
-|**MessageId**|16500|  
+|**Id**|16500|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_MACHINE_POLICY_REFRESH_NO_CHANGE|  
 |**語言**|英文|  
@@ -35,7 +35,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16501|  
+|**Id**|16501|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_MACHINE_POLICY_REFRESH_WITH_CHANGE|  
 |**語言**|英文|  
@@ -43,7 +43,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16502|  
+|**Id**|16502|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_USER_POLICY_REFRESH_NO_CHANGE|  
 |**語言**|英文|  
@@ -51,7 +51,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16503|  
+|**Id**|16503|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_USER_POLICY_REFRESH_WITH_CHANGE|  
 |**語言**|英文|  
@@ -59,7 +59,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16504|  
+|**Id**|16504|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_TCP_AUTOTUNING_NOT_CONFIGURED|  
 |**語言**|英文|  
@@ -67,7 +67,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16505|  
+|**Id**|16505|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_TCP_AUTOTUNING_OFF|  
 |**語言**|英文|  
@@ -75,7 +75,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16506|  
+|**Id**|16506|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_TCP_AUTOTUNING_HIGHLY_RESTRICTED|  
 |**語言**|英文|  
@@ -83,7 +83,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16507|  
+|**Id**|16507|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_TCP_AUTOTUNING_RESTRICTED|  
 |**語言**|英文|  
@@ -91,7 +91,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16508|  
+|**Id**|16508|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_TCP_AUTOTUNING_NORMAL|  
 |**語言**|英文|  
@@ -99,7 +99,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16509|  
+|**Id**|16509|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_APP_MARKING_NOT_CONFIGURED|  
 |**語言**|英文|  
@@ -107,7 +107,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16510|  
+|**Id**|16510|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_APP_MARKING_IGNORED|  
 |**語言**|英文|  
@@ -115,7 +115,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16511|  
+|**Id**|16511|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_APP_MARKING_ALLOWED|  
 |**語言**|英文|  
@@ -123,7 +123,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16512|  
+|**Id**|16512|  
 |**低於**|資訊|  
 |**SymbolicName**|EVENT_EQOS_INFO_LOCAL_SETTING_DONT_USE_NLA|  
 |**語言**|英文|  
@@ -135,7 +135,7 @@ ms.locfileid: "71405325"
 
 |||  
 |-|-|  
-|**MessageId**|16600|  
+|**Id**|16600|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_1|  
 |**語言**|英文|  
@@ -143,7 +143,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16601|  
+|**Id**|16601|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_2|  
 |**語言**|英文|  
@@ -151,7 +151,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16602|  
+|**Id**|16602|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_VERSION|  
 |**語言**|英文|  
@@ -159,7 +159,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16603|  
+|**Id**|16603|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_VERSION|  
 |**語言**|英文|  
@@ -167,7 +167,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16604|  
+|**Id**|16604|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_PROFILE_NOT_SPECIFIED|  
 |**語言**|英文|  
@@ -175,7 +175,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16605|  
+|**Id**|16605|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_PROFILE_NOT_SPECIFIED|  
 |**語言**|英文|  
@@ -183,7 +183,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16606|  
+|**Id**|16606|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_QUOTA_EXCEEDED|  
 |**語言**|英文|  
@@ -191,7 +191,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16607|  
+|**Id**|16607|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_QUOTA_EXCEEDED|  
 |**語言**|英文|  
@@ -199,7 +199,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16608|  
+|**Id**|16608|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_CONFLICT|  
 |**語言**|英文|  
@@ -207,7 +207,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16609|  
+|**Id**|16609|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_CONFLICT|  
 |**語言**|英文|  
@@ -215,7 +215,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16610|  
+|**Id**|16610|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_NO_FULLPATH_APPNAME|  
 |**語言**|英文|  
@@ -223,7 +223,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16611|  
+|**Id**|16611|  
 |**低於**|警告|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_NO_FULLPATH_APPNAME|  
 |**語言**|英文|  
@@ -235,7 +235,7 @@ ms.locfileid: "71405325"
 
 |||  
 |-|-|  
-|**MessageId**|16700|  
+|**Id**|16700|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_REFERESH|  
 |**語言**|英文|  
@@ -243,7 +243,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16701|  
+|**Id**|16701|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_REFERESH|  
 |**語言**|英文|  
@@ -251,7 +251,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16702|  
+|**Id**|16702|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_ROOT_KEY|  
 |**語言**|英文|  
@@ -259,7 +259,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16703|  
+|**Id**|16703|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_ROOT_KEY|  
 |**語言**|英文|  
@@ -267,7 +267,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16704|  
+|**Id**|16704|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_TOO_LONG|  
 |**語言**|英文|  
@@ -275,7 +275,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16705|  
+|**Id**|16705|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_TOO_LONG|  
 |**語言**|英文|  
@@ -283,7 +283,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16706|  
+|**Id**|16706|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_SIZE_ZERO|  
 |**語言**|英文|  
@@ -291,7 +291,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16707|  
+|**Id**|16707|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_SIZE_ZERO|  
 |**語言**|英文|  
@@ -299,7 +299,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16708|  
+|**Id**|16708|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_SUBKEY|  
 |**語言**|英文|  
@@ -307,7 +307,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16709|  
+|**Id**|16709|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_SUBKEY|  
 |**語言**|英文|  
@@ -315,7 +315,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16710|  
+|**Id**|16710|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_MACHINE_POLICY_FIELD|  
 |**語言**|英文|  
@@ -323,7 +323,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16711|  
+|**Id**|16711|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_USER_POLICY_FIELD|  
 |**語言**|英文|  
@@ -331,7 +331,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16712|  
+|**Id**|16712|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_TCP_AUTOTUNING|  
 |**語言**|英文|  
@@ -339,7 +339,7 @@ ms.locfileid: "71405325"
   
 |||  
 |-|-|  
-|**MessageId**|16713|  
+|**Id**|16713|  
 |**低於**|錯誤|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_APP_MARKING|  
 |**語言**|英文|  

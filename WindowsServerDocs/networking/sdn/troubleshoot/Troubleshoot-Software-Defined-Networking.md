@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 427048db-bab6-49b1-9611-099bb547ec0e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 33eef13bc13081acf398f3d3f26dc04219aa1d20
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8358d52796fee29cc446aa78ae36572ee3332644
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405827"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312861"
 ---
 # <a name="troubleshoot-sdn"></a>疑難排解 SDN
 
@@ -30,7 +30,7 @@ ms.locfileid: "71405827"
 > - [管理 SDN](../manage/manage-sdn.md)
 > - [SDN 的安全性](../security/sdn-security-top.md)
 
-本節包含下列主題：
+本節包含下列主題。
 
 - [對 Windows Server 軟體定義網路堆疊進行疑難排解](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 - Blog 文章[SDN 疑難排解： UDP 通訊失敗和變更網路控制卡憑證](https://techcommunity.microsoft.com/t5/Networking-Blog/SDN-Troubleshooting-UDP-Communication-failures-and-changing-the/ba-p/339694)

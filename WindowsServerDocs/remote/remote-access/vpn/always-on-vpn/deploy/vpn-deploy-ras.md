@@ -6,23 +6,23 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: c04074338cf4ba0189eb1e9bc45a80b948fdbfbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d3afb21c466ef1010a20ec811df45b9dcb2b711
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388039"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312258"
 ---
-# <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>步驟 3。 設定 Always On VPN 的遠端存取伺服器
+# <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>步驟 3： 設定 Always On VPN 的遠端存取伺服器
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**處**步驟 2.設定伺服器基礎結構](vpn-deploy-server-infrastructure.md)
-- [**處**步驟 4.安裝和設定網路原則伺服器（NPS）](vpn-deploy-nps.md)
+- [**上一步：** 步驟2。設定伺服器基礎結構](vpn-deploy-server-infrastructure.md)
+- [**上一步：** 步驟4。安裝和設定網路原則伺服器（NPS）](vpn-deploy-nps.md)
 
 RRAS 的設計可同時做為路由器和遠端存取服務器，因為它支援廣泛的功能陣列。 基於此部署的目的，您只需要這些功能的一小部分：支援 IKEv2 VPN 連線和 LAN 路由。
 
@@ -140,7 +140,7 @@ IKEv2 是網際網路工程任務要求批註7296中所述的 VPN 通道通訊�
 
        [RADIUS 驗證] 對話方塊隨即開啟。
 
-    c. 選取 [**新增**]。
+    c. 選取 [新增]。
 
        [新增 RADIUS 伺服器] 對話方塊隨即開啟。
 
@@ -169,7 +169,7 @@ IKEv2 是網際網路工程任務要求批註7296中所述的 VPN 通道通訊�
 
 13. 如有需要，請變更值以符合環境的需求，然後選取 **[確定]** 。
 
-    NAS 是提供較大型網路存取層級的裝置。 使用 RADIUS 基礎結構的 NAS 也是 RADIUS 用戶端，將連線要求和帳戶處理訊息傳送至 RADIUS 伺服器，以進行驗證、授權和帳戶處理。
+    NAS 是提供較大型網路存取層級的裝置。 使用 RADIUS 基礎結構的 NAS 也是 RADIUS 用戶端，傳送連線要求及帳戶處理訊息到 RADIUS 伺服器進行驗證、授權以及帳戶處理。
 
 14. 檢查 [帳戶處理**提供者**] 的設定：
 
@@ -194,11 +194,11 @@ IKEv2 是網際網路工程任務要求批註7296中所述的 VPN 通道通訊�
 
 16. 選擇性*如果您要設定 vpn 連線的條件式存取*，請從 [**憑證**] 下拉式清單的 [ **SSL 憑證**系結] 底下，選取 [VPN 伺服器驗證]。
 
-17. 選擇性*如果您要設定 VPN 連線的條件式存取*，請在 NPS MMC 中展開 [原則 **\\] [網路原則**]，然後執行： 
+17. 選擇性*如果您要設定 VPN 連線的條件式存取*，請在 NPS MMC 中展開 [**原則]\\[網路原則**]，然後執行： 
 
     a. [連線**到 Microsoft 路由及遠端存取服務器**網路原則]，然後選取 [**屬性**]。
 
-    b. 選取 [ **授與存取權]。如果連線要求符合此原則**選項，則授與存取權。
+    b. 選取 [**授與存取權]。如果連線要求符合此原則選項，則授與存取權**。
 
     c. 在 [網路存取伺服器類型] 底下，從下拉式選單選取 [**遠端存取服務器（VPN-撥號）** ]。
 
@@ -210,28 +210,28 @@ IKEv2 是網際網路工程任務要求批註7296中所述的 VPN 通道通訊�
 
     a. 清除 [**遠端存取連接（僅限輸入）** ] 和 [指定**撥號路由連線（輸入和輸出）** ] 核取方塊。
 
-    b. 選取 [確定]。
+    b. 選取 **[確定]** 。
 
 20. 選取 **[WAN 迷你埠（L2TP）** ]，然後選取 [**設定**]。 [設定裝置-WAN 迷你埠（L2TP）] 對話方塊隨即開啟。
 
     a. 在 [**最大端口**] 中，輸入要與您要支援的同時 VPN 連線數目上限相符的埠數目。
 
-    b. 選取 [確定]。
+    b. 選取 **[確定]** 。
 
 21. 選取 **[WAN 迷你埠（PPTP）** ]，然後選取 [**設定**]。 [設定裝置-WAN 迷你埠（PPTP）] 對話方塊隨即開啟。
 
     a. 在 [**最大端口**] 中，輸入要與您要支援的同時 VPN 連線數目上限相符的埠數目。
 
-    b. 選取 [確定]。
+    b. 選取 **[確定]** 。
 
 22. 選取 **[WAN 迷你埠（IKEv2）** ]，然後選取 [**設定**]。 [設定裝置-WAN 迷你埠（IKEv2）] 對話方塊隨即開啟。
 
      a. 在 [**最大端口**] 中，輸入要與您要支援的同時 VPN 連線數目上限相符的埠數目。
 
-     b. 選取 [確定]。
+     b. 選取 **[確定]** 。
 
 23. 若出現提示，請選取 **[是]** 以確認重新開機伺服器，然後選取 [**關閉**] 以重新開機伺服器。
 
 ## <a name="next-step"></a>後續步驟
 
-[步驟 4.安裝和設定網路原則伺服器（NPS）](vpn-deploy-nps.md)：在此步驟中，您會使用 Windows PowerShell 或伺服器管理員新增角色及功能嚮導 來安裝網路原則伺服器（NPS）。 您也可以設定 NPS，以處理從 VPN 伺服器接收的連線要求的所有驗證、授權和帳戶管理責任。
+[步驟4。安裝和設定網路原則伺服器（NPS）](vpn-deploy-nps.md)：在此步驟中，您會使用 Windows PowerShell 或伺服器管理員新增角色及功能嚮導 來安裝網路原則伺服器（nps）。 您也可以設定 NPS，以處理從 VPN 伺服器接收的連線要求的所有驗證、授權和帳戶管理責任。

@@ -10,19 +10,19 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 158183bab74e6e45c36c579f3259fc2095a939b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db634af114610cce0bdbcacd58986ceb5f00dd99
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406051"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317579"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>使用虛擬網路上的網路虛擬設備
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，您將瞭解如何在租使用者虛擬網路上部署網路虛擬裝置。 您可以將網路虛擬裝置新增至執行使用者定義路由和埠鏡像功能的網路。
 
@@ -95,7 +95,7 @@ ms.locfileid: "71406051"
 
 ## <a name="example-port-mirroring"></a>範例：埠鏡像
 
-在此範例中，您會設定 MyVM_Ethernet1 至鏡像 Appliance_Ethernet1 的流量。  我們假設您已部署兩個 Vm，一個做為應用裝置，另一個作為要以鏡像監視的 VM。 
+在此範例中，您會設定 MyVM_Ethernet1 鏡像 Appliance_Ethernet1 的流量。  我們假設您已部署兩個 Vm，一個做為應用裝置，另一個作為要以鏡像監視的 VM。 
 
 設備必須有第二個網路介面來進行管理。 在 Appliciance_Ethernet1 上啟用鏡像做為目的地之後，它就不會再接收到目的地設定之 IP 介面的流量。
 

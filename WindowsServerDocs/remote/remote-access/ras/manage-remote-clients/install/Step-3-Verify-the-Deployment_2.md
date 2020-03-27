@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a78a078-d2e7-4cbd-b8d5-20cfb6d1524b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 81ac8bf7321df915330d8d706fa5ba3912b8f54c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e1a8d3208acb0e0ce891e517492916357b9fbfcc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367292"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314349"
 ---
 # <a name="step-3-verify-the-deployment"></a>步驟3驗證部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何確認您已正確設定部署，以進行 DirectAccess 用戶端的遠端系統管理。  
   
@@ -35,7 +35,7 @@ ms.locfileid: "71367292"
   
 4.  從公司網路移除電腦，並將它連線到公用網路。  
   
-5.  在命令提示字元中，輸入**nltest/dsgetdc： [完整功能變數名稱]** 。 此命令會確認用戶端可以存取公司網路。 如果無法存取網域控制站，下列錯誤訊息將會顯示網域不存在的報告：ERROR_NO_SUCH_DOMAIN.  
+5.  在命令提示字元中，輸入**nltest/dsgetdc： [完整功能變數名稱]** 。 此命令會確認用戶端可以存取公司網路。 如果無法存取網域控制站，下列錯誤訊息將會顯示網域不存在的報告： ERROR_NO_SUCH_DOMAIN。  
   
 
 

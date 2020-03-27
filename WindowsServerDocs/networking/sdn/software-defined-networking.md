@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9a1ea73c-20cd-42c5-95ad-b003b9cc6d64
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/09/2018
-ms.openlocfilehash: dd2b39f3563a47db18564de282f2646ec269e584
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1283c6afcebe7b6abc12f9847865d6305bd3f2c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405931"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317271"
 ---
 # <a name="sdn-in-windows-server-overview"></a>Windows Server 中的 SDN 概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 
 軟體定義網路功能 (SDN) 提供的方法可讓您集中設定及管理實體與虛擬網路裝置，例如您資料中心內的路由器、交換器與閘道。 您可以使用現有的 SDN 相容裝置，在虛擬網路和實體網路之間取得更深入的整合。 Hyper-v 虛擬交換器、Hyper-v 網路虛擬化和 RAS 閘道等虛擬網路元素，都是設計成 SDN 基礎結構的整數元素。 

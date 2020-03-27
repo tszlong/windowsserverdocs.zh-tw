@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/29/2018
-ms.openlocfilehash: d3ea6f0e29803b8a709f31811f77678bf03201a8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: bd4d0d4d3b165a4e89a00cd2975ace20687aed7d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822574"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314979"
 ---
 # <a name="overview-of-the-directaccess-to-always-on-vpn-migration"></a>DirectAccess 移轉至 Always On VPN 概觀 
 
@@ -61,18 +61,18 @@ DirectAccess 到 Always On VPN 遷移套裝程式含四個主要元件和高層�
 
 | DirectAccess 功能 | 一般案例 |
 |-----|----|
-| 部署案例                   | 部署完整 DirectAccess 以進行用戶端存取和遠端系統管理                                               |
+| 部署狀況                   | 部署完整 DirectAccess 以進行用戶端存取和遠端系統管理                                               |
 | 網路介面卡                      | 2                                                                                                              |
 | 使用者驗證                   | Active Directory 認證                                                                                   |
-| 使用電腦憑證             | [是]                                                                                                            |
-| 安全性群組                       | [是]                                                                                                            |
-| 單一 DirectAccess 伺服器            | [是]                                                                                                            |
+| 使用電腦憑證             | 是                                                                                                            |
+| 安全性群組                       | 是                                                                                                            |
+| 單一 DirectAccess 伺服器            | 是                                                                                                            |
 | 網路拓撲                      | 具有兩張網路介面卡的邊緣防火牆後方的網路位址轉譯（NAT）                            |
 | 存取模式                           | 端對邊緣                                                                                                    |
 | 通道                             | 分割通道                                                                                                   |
-| Authentication                        | 使用電腦憑證加上 Kerberos 的標準公開金鑰基礎結構（PKI）驗證（非 KerbProxy） |
+| 驗證                        | 使用電腦憑證加上 Kerberos 的標準公開金鑰基礎結構（PKI）驗證（非 KerbProxy） |
 | 通訊協定                             | 透過 HTTPS 的 IP （ip-HTTPs）                                                                                       |
-| 網路位置伺服器（NLS）已關閉-box | [是]                                                                                                            |
+| 網路位置伺服器（NLS）已關閉-box | 是                                                                                                            |
 
 ## <a name="always-on-vpn-deployment-scenario"></a>Always On VPN 部署案例
 
@@ -85,11 +85,11 @@ DirectAccess 到 Always On VPN 遷移套裝程式含四個主要元件和高層�
 | 連線類型 | Native 網際網路金鑰交換版本2（IKEv2） |
 | 網路介面卡   | 2        |
 | 使用者驗證  | Active Directory 認證            |
-| 使用電腦憑證        | [是]                          |
+| 使用電腦憑證        | 是                          |
 | 路由 | 分割通道 |
 | 名稱解析 | 功能變數名稱資訊清單和網域名稱系統（DNS）尾碼 |
 | 各個 | Always on 和信任的網路偵測 |
-| Authentication  | 受保護的可延伸驗證通訊協定-傳輸層安全性（PEAP-TLS）與可信賴平臺模組-受保護的使用者憑證 |
+| 驗證  | 受保護的可延伸驗證通訊協定-傳輸層安全性（PEAP-TLS）與可信賴平臺模組-受保護的使用者憑證 |
 
 ## <a name="next-step"></a>後續步驟
 

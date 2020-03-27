@@ -1,23 +1,23 @@
 ---
-title: 動態主機設定通訊協定 (DHCP)
+title: Dynamic Host Configuration Protocol (DHCP)
 description: 本主題提供 Windows Server 2016 中動態主機設定通訊協定（DHCP）的簡短介紹。
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 0ff29ef3-c458-4432-9065-e50a7de5b4b9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c71517bc742cf9eda62cc7d83128f1ab9bd04547
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5fc44d0f58ed73ff48f530bad3206baa675d9ac9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355394"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312528"
 ---
-# <a name="dynamic-host-configuration-protocol-dhcp"></a>動態主機設定通訊協定 (DHCP)
+# <a name="dynamic-host-configuration-protocol-dhcp"></a>Dynamic Host Configuration Protocol (DHCP)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解 Windows Server 2016 中的 DHCP。
 

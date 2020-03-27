@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1fd3a20cb6429d60f450478f5e817a7506b28346
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791167"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314242"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>識別並解決「遠端存取」伺服器操作問題
 
@@ -38,7 +38,7 @@ ms.locfileid: "74791167"
   
 - 還原 IP Helper 服務  
   
-### <a name="BKMK_Simulate"></a>模擬作業問題  
+### <a name="simulate-an-operations-issue"></a><a name="BKMK_Simulate"></a>模擬作業問題  
   
 > [!CAUTION]  
 > 因為您的遠端存取服務器可能已正確設定，而不會發生任何問題，所以您可以使用下列程式來模擬作業問題。 如果您的伺服器目前在生產環境中服務用戶端，您可能不想要在此時執行這些動作。 相反地，您可以仔細閱讀這些步驟，瞭解如何解決未來遠端存取服務器可能發生的問題。  
@@ -51,7 +51,7 @@ IP 協助程式服務（IPHlpSvc）會裝載 IPv6 轉換技術（例如 IP-HTTPS
   
 2.  在**服務**清單中，向下並以滑鼠右鍵按一下 [ **IP Helper**]，然後按一下 [**停止**]。  
   
-### <a name="BKMK_Identify"></a>找出作業問題並採取矯正措施  
+### <a name="identify-the-operations-issue-and-take-corrective-action"></a><a name="BKMK_Identify"></a>找出作業問題並採取矯正措施  
 關閉 IP 協助程式服務會在遠端存取服務器上造成嚴重的錯誤。 [監視] 儀表板會顯示伺服器的作業狀態和問題的詳細資料。  
   
 ##### <a name="to-identify-the-details-and-take-corrective-action"></a>識別詳細資料並採取矯正措施  
@@ -82,7 +82,7 @@ IP 協助程式服務（IPHlpSvc）會裝載 IPv6 轉換技術（例如 IP-HTTPS
   
     3.  若要重新開機服務，請從提升許可權的 Windows PowerShell 命令提示字元中輸入**restart-服務 iphlpsvc** 。  
   
-### <a name="BKMK_Restart"></a>還原 IP Helper 服務  
+### <a name="restore-the-ip-helper-service"></a><a name="BKMK_Restart"></a>還原 IP Helper 服務  
 若要在您的遠端存取服務器上還原 IP 協助程式服務，您可以遵循上述解決步驟來啟動或重新開機服務，或者您可以使用下列程式來反轉用來模擬 IP Helper 服務失敗的程式。  
   
 ##### <a name="to-restart-the-ip-helper-service-on-the-remote-access-server"></a>重新開機遠端存取服務器上的 IP Helper 服務  
@@ -93,7 +93,7 @@ IP 協助程式服務（IPHlpSvc）會裝載 IPv6 轉換技術（例如 IP-HTTPS
   
 ![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  

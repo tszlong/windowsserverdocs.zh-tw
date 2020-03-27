@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 88d39f41f61ae7c7f6a1fb84aa99806c4796c8cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b9522909960470d9f5f3e183afbd97ab1b919019
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356193"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318252"
 ---
 # <a name="refresh-group-policy"></a>重新整理群組原則
 

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 613bb7f43b382389dc0db953a48668147cfaee88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a6fe98dea50dd194c2bb2303a663968f93818332
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356050"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317960"
 ---
 # <a name="dns-policies-overview"></a>DNS 原則概觀
 
@@ -49,7 +49,7 @@ DNS 原則會依層級和類型來劃分。 您可以使用查詢解析原則來
 
 您可以使用 DNS 查詢解析原則來指定 DNS 伺服器處理傳入解析查詢的方式。 每個 DNS 查詢解析原則都包含下列元素：  
 
-|欄位|描述|可能值|  
+|欄位|描述|可能的值|  
 |---------|---------------|-------------------|  
 |**名稱**|原則名稱|-最多256個字元<br />-可以包含任何對檔案名有效的字元|  
 |**狀態**|原則狀態|-Enable （預設值）<br />-已停用|  
@@ -71,7 +71,7 @@ DNS 原則會依層級和類型來劃分。 您可以使用查詢解析原則來
 |     **傳輸通訊協定**      |        查詢中使用的傳輸通訊協定。 可能的專案為**UDP**和**TCP**        |                                                                                                                    -   **EQ，TCP**<br />-   **EQ、UDP**                                                                                                                     |
 |      **網際網路通訊協定**      |        查詢中使用的網路通訊協定。 可能的專案為**IPv4**和**IPv6**        |                                                                                                                   -   **EQ、IPv4**<br />-   **EQ、IPv6**                                                                                                                    |
 | **伺服器介面 IP 位址** |                   傳入 DNS 伺服器網路介面的 IP 位址                   |                                                                                                              -   **EQ，10.0.0.1**<br />-   **EQ，192.168.1.1**                                                                                                              |
-|            **稱**             |            查詢中記錄的 FQDN，以及使用萬用字元的可能性            | -   **EQ，www. contoso .com** -只有在查詢嘗試解析<em>www.contoso.com</em> FQDN 時，才會解析為 true<br />-   **EQ，\*. contoso.com，\*. woodgrove.com** -如果查詢是針對以*contoso.com***或***woodgrove.com*結尾的任何記錄，則會解析為 true |
+|            **稱**             |            查詢中記錄的 FQDN，以及使用萬用字元的可能性            | -   **EQ， www. contoso .com** -只有在查詢嘗試解析<em>www.contoso.com</em> FQDN 時，才會解析為 true<br />-   **EQ，\*. contoso.com，\*. woodgrove.com** -如果查詢是針對以*contoso.com***或***woodgrove.com*結尾的任何記錄，則會解析為 true |
 |         **查詢類型**          |                          查詢的記錄類型（A、SRV、TXT）                          |                                                  -   **EQ，TXT，SRV** -解析為 true （如果查詢要求 TXT**或**SRV 記錄）<br />-   **EQ，MX** -如果查詢要求 MX 記錄，則會解析為 true                                                   |
 |         **當日時間**         |                              接收查詢的當日時間                               |                                                                    -   **EQ，10： 00-12：00，22： 00-23： 00** -如果在上午10點和中午之間**或**10pm-12am 與晚上11點之間收到查詢，則會解析為 true                                                                    |
 
@@ -84,7 +84,7 @@ DNS 原則會依層級和類型來劃分。 您可以使用查詢解析原則來
 |伺服器介面 IP 位址|EQ、10.0.0。3|  
 |FQDN|EQ、*. contoso .com|  
 |查詢類型|NE、SRV|  
-|當日時間|EQ、20： 00-22：00|  
+|一天中的時間|EQ、20： 00-22：00|  
 
 您可以建立相同層級的多個查詢解決原則，只要它們的處理順序有不同的值即可。 當有多個原則可供使用時，DNS 伺服器會以下列方式處理傳入的查詢：  
 

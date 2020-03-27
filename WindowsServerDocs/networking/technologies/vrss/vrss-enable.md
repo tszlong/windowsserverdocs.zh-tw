@@ -8,14 +8,14 @@ ms.assetid: cb48315c-0204-4927-aa24-64f6789c2e20
 manager: dougkim
 ms.localizationpriority: medium
 ms.date: 09/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8f2886f01e4835cf2edb86fcae0a1fe77bc03d25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4be9060da4a738e3ad8e4976d037f3a05467da3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405255"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315378"
 ---
 # <a name="enable-vrss-on-a-virtual-network-adapter"></a>在虛擬網路介面卡上啟用 vRSS
 
@@ -30,7 +30,7 @@ ms.locfileid: "71405255"
 請使用下列程式，使用 Windows PowerShell 或 Device Manager 來啟用 vRSS。
 
 -   裝置管理員
--   Windows PowerShell
+-   資料夾，然後按一下 [Windows PowerShell]
   
 ### <a name="device-manager"></a>裝置管理員
 
@@ -53,14 +53,14 @@ ms.locfileid: "71405255"
 
 7.  確定 [**值**] 中的選取專案已**啟用**。 
 
-8.  按一下 **\[確定\]** 。
+8.  按一下 [確定]。
   
 > [!NOTE]
 > 在 [ **Advanced** ] 索引標籤上，某些網路介面卡也會顯示介面卡支援的 RSS 佇列數目。
 
 ---
 
-### <a name="windows-powershell"></a>Windows PowerShell
+### <a name="windows-powershell"></a>資料夾，然後按一下 [Windows PowerShell]
 
 請使用下列程式，使用 Windows PowerShell 來啟用 vRSS。
 

@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 013df067-e2a0-4cd5-a08b-29238663ebf8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 773862f2bec0826f12cd3bf55025243583c20114
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7e03187b2163725ac48fd49921c537790eb640b3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367510"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314387"
 ---
 # <a name="step-5-verify-otp-health-on-edge1"></a>步驟5確認 EDGE1 上的 OTP 健全狀況
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 下列程式會確認 OTP 已設定且正常運作，使用 EDGE1 上的 DirectAccess 伺服器健全狀況監視。  
   

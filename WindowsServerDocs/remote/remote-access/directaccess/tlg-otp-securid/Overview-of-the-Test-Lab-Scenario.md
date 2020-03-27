@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ce584811-b209-48fe-ab2b-4c399bd0bd79
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ba3981c79d1441797f21c8ed8051ace6ac490cab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cd47f9866859f6d57fab8dcf76b1bcb475420d97
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404740"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314469"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>測試實驗室案例概觀
 

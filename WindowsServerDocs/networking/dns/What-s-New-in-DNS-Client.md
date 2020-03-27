@@ -6,24 +6,24 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 6edaba84-4595-4fd8-95d7-64d4d975a38a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 696ea0b499a4132d630cc0cda15a1d7efdac37a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a02aea149a658be2696195a2a17429b506dec1fa
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356055"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317988"
 ---
 # <a name="whats-new-in-dns-client-in-windows-server-2016"></a>Windows Server 2016 中 DNS 用戶端的新功能
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明在 Windows 10 和 Windows Server 2016 和更新版本的作業系統中，新的或已變更的網域名稱系統（DNS）用戶端功能。
   
 ## <a name="updates-to-dns-client"></a>DNS 用戶端的更新
 
-**DNS 用戶端服務**系結：在 Windows 10 中，DNS 用戶端服務為具有多個網路介面的電腦提供增強的支援。 對於多重主目錄電腦，DNS 解析會以下列方式進行優化：  
+**Dns 用戶端服務**系結：在 Windows 10 中，Dns 用戶端服務會針對具有多個網路介面的電腦提供增強的支援。 對於多重主目錄電腦，DNS 解析會以下列方式進行優化：  
   
 -   當使用特定介面上設定的 DNS 伺服器來解析 DNS 查詢時，DNS 用戶端服務會先系結至此介面，然後再傳送 DNS 查詢。  
   

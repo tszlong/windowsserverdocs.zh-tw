@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9271cf4e5f50adf93f421e830a226507034ac454
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517473"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316627"
 ---
 # <a name="choosing-a-network-adapter"></a>選擇網路介面卡
 
@@ -26,7 +26,7 @@ ms.locfileid: "77517473"
 > [!TIP]
 >  您可以使用 Windows PowerShell 來設定網路介面卡。 如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
 
-##  <a name="bkmk_offload"></a>卸載功能
+##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>卸載功能
 
 從中央處理單元卸載工作 \(CPU\) 到網路介面卡，可以減少伺服器上的 CPU 使用量，進而改善整體系統效能。
 
@@ -42,7 +42,7 @@ ms.locfileid: "77517473"
 |\(RSS\) 接收端調整|RSS 是一種網路驅動程式技術，可讓您在多處理器系統中，有效率地將網路接收處理散發到多個 Cpu。 本主題稍後會提供更多有關 RSS 的詳細資料。|  
 |\(RSC\) 接收區段聯合|RSC 能夠將封包群組在一起，以最小化執行主機所需的標頭處理。 最多可將 64 KB 的已接收承載結合成一個較大的封包以進行處理。 本主題稍後會提供有關 RSC 的更多詳細資料。|  
   
-###  <a name="bkmk_rss"></a>接收端調整
+###  <a name="receive-side-scaling"></a><a name="bkmk_rss"></a>接收端調整
 
 Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows Server 2008 R2 和 Windows Server 2008 支援 \(RSS\)接收端調整。 
 
@@ -158,7 +158,7 @@ IndirectionTable: [Group:Number]:
 
 可以在使用 NIC 小組與另一個網路介面卡組合的網路介面卡上啟用 RSS。 在此案例中，只有基礎實體網路介面卡可以設定為使用 RSS。 使用者無法在組合的網路介面卡上設定 RSS Cmdlet。
   
-###  <a name="bkmk_rsc"></a>接收區段聯合（RSC）
+###  <a name="receive-segment-coalescing-rsc"></a><a name="bkmk_rsc"></a>接收區段聯合（RSC）
 
 \(RSC\) 接收區段聯合，藉由減少針對指定的已接收資料量所處理的 IP 標頭數目，來協助效能。 它應該用來協助調整已接收資料的效能，方法是將 \(或聯合\) 較小的封包合併成較大的單位。
 
@@ -206,7 +206,7 @@ CoalescingExceptions : 0
 
 當啟用單一根目錄輸入/輸出虛擬化 \(SR-IOV\) 時，可以為虛擬機器啟用 RSC。 在此情況下，虛擬函式支援 RSC 功能;因此，虛擬機器也會獲得 RSC 的優勢。
 
-##  <a name="bkmk_resources"></a>網路介面卡資源
+##  <a name="network-adapter-resources"></a><a name="bkmk_resources"></a>網路介面卡資源
 
 有些網路介面卡會主動管理其資源，以達到最佳效能。 數個網路介面卡可讓您使用介面卡的 [ **Advanced** network] 索引標籤手動設定資源。 針對這類介面卡，您可以設定多個參數的值，包括接收緩衝區的數目和傳送緩衝區。
 

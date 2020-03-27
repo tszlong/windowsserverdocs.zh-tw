@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1320a5c8b8c267f270dae43e764533d9289006a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e85998138f3aa3627b5e212766d491cd3fc8305f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404456"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313865"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步驟3規劃多網站部署
 
@@ -27,7 +27,7 @@ ms.locfileid: "71404456"
 
 下列各節提供詳細的規劃資訊。
   
-## <a name="bkmk_3_1_IPHTTPS"></a>3.1 規劃 IP-HTTPS 憑證  
+## <a name="31-plan-ip-https-certificates"></a><a name="bkmk_3_1_IPHTTPS"></a>3.1 規劃 IP-HTTPS 憑證  
 當您設定進入點時，會使用特定的 ConnectTo 位址來設定每個進入點。 每個進入點的 IP-HTTPS 憑證必須符合 ConnectTo 位址。 取得憑證時，請注意下列事項：  
   
 -   您無法在多站台部署中使用自我簽署憑證。  
@@ -48,7 +48,7 @@ ms.locfileid: "71404456"
   
 -   IP-HTTPS 憑證必須直接匯入到電腦的個人存放區，而不是使用者。  
   
-## <a name="bkmk_3_2_NLS"></a>3.2 規劃網路位置伺服器  
+## <a name="32-plan-the-network-location-server"></a><a name="bkmk_3_2_NLS"></a>3.2 規劃網路位置伺服器  
 網路位置伺服器網站可以裝載在遠端存取服務器或組織中的另一部伺服器上。 如果您將網路位置伺服器裝載在遠端存取服務器上，當您部署遠端存取時，就會自動建立網站。 如果您在組織中執行 Windows 作業系統的另一部伺服器上裝載網路位置伺服器，您必須確定已安裝 Internet Information Services （IIS）以建立網站。  
   
 ### <a name="321-certificate-requirements-for-the-network-location-server"></a>網路位置伺服器的3.2.1 憑證需求  
@@ -89,7 +89,7 @@ ms.locfileid: "71404456"
   
 -   在新增進入點之前，必須先建立進入點的網路位置伺服器基礎結構（DNS 和憑證設定）。  
   
-## <a name="bkmk_3_3_IPsec"></a>3.3 規劃所有遠端存取服務器的 IPsec 根憑證  
+## <a name="33-plan-the-ipsec-root-certificate-for-all-remote-access-servers"></a><a name="bkmk_3_3_IPsec"></a>3.3 規劃所有遠端存取服務器的 IPsec 根憑證  
 規劃多網站部署中的 IPsec 用戶端驗證時，請注意下列事項：  
   
 1.  如果您在設定單一遠端存取服務器時選擇使用內建的 Kerberos proxy 進行電腦驗證，您必須將設定變更為 [使用由內部 CA 發行的電腦憑證]，因為多網站不支援 Kerberos proxy部署.  
@@ -100,7 +100,7 @@ ms.locfileid: "71404456"
   
 4.  您必須在多網站部署中的所有遠端存取服務器上安裝相同的 IPsec 根或中繼憑證。  
   
-## <a name="bkmk_3_4_GSLB"></a>3.4 規劃全域伺服器負載平衡  
+## <a name="34-plan-global-server-load-balancing"></a><a name="bkmk_3_4_GSLB"></a>3.4 規劃全域伺服器負載平衡  
 在多網站部署中，您可以額外設定全域伺服器負載平衡器。 如果您的部署涵蓋大型地理分佈，則全域伺服器負載平衡器對您的組織來說可能會很有用，因為它可以分散進入點之間的流量負載。  全域伺服器負載平衡器可以設定為 DirectAccess 用戶端提供最接近進入點的進入點資訊。 此程式的運作方式如下：  
   
 1.  執行 Windows 10 或 Windows 8 的用戶端電腦具有全域伺服器負載平衡器 IP 位址的清單，每個都與一個進入點相關聯。  
@@ -111,7 +111,7 @@ ms.locfileid: "71404456"
   
 如需支援遠端存取之全域伺服器負載平衡裝置的清單，請移至在[Microsoft 伺服器和雲端平臺](https://www.microsoft.com/server-cloud/)尋找合作夥伴頁面。  
   
-## <a name="bkmk_3_5_EP_Selection"></a>3.5 規劃 DirectAccess 用戶端進入點選擇  
+## <a name="35-plan-directaccess-client-entry-point-selection"></a><a name="bkmk_3_5_EP_Selection"></a>3.5 規劃 DirectAccess 用戶端進入點選擇  
 當您設定多網站部署時，根據預設，Windows 10 和 Windows 8 用戶端電腦會設定為連線至部署中所有進入點所需的資訊，並根據選取專案自動連線到單一進入點演算法. 您也可以將部署設定為允許 Windows 10 和 Windows 8 用戶端電腦手動選取要連線的進入點。 如果 Windows 10 或 Windows 8 用戶端電腦目前已連線到美國進入點，並已啟用自動進入點選取，則在幾分鐘後，用戶端電腦會嘗試連線透過歐洲進入點。 建議使用自動進入點選取;不過，允許手動進入點選擇可讓使用者根據目前的網路狀況，連接到不同的進入點。 例如，如果電腦連接到美國進入點，而與內部網路的連線速度會比預期慢很多。 在此情況下，終端使用者可以手動選取以連線到歐洲進入點，以改善內部網路的連線。  
   
 > [!NOTE]  
@@ -119,7 +119,7 @@ ms.locfileid: "71404456"
   
  Windows 7 用戶端電腦會使用連線至多網站部署中單一進入點所需的資訊進行設定。 他們無法同時儲存多個進入點的資訊。 例如，您可以將 Windows 7 用戶端電腦設定為連線到美國的進入點，但不能連接到歐洲的進入點。 如果無法連線到美國的進入點，Windows 7 用戶端電腦將會失去與內部網路的連線，直到進入點可連線為止。 使用者無法進行任何變更以嘗試連接到歐洲進入點。  
   
-## <a name="bkmk_3_6_IPv6"></a>3.6 方案首碼和路由  
+## <a name="36-plan-prefixes-and-routing"></a><a name="bkmk_3_6_IPv6"></a>3.6 方案首碼和路由  
   
 ### <a name="internal-ipv6-prefix"></a>內部 IPv6 首碼  
 在部署單一遠端存取服務器時，您規劃了內部網路 IPv6 首碼，請注意以下在多站部署中的下列各項：  
@@ -205,7 +205,7 @@ ms.locfileid: "71404456"
   
 3.  修改 EntryPointRange 參數時，請確定您不會移除屬於 IPsec 通道端點和 DNS64 位址的現有128位首碼。  
   
-## <a name="bkmk_3_7_TransitionIPv6"></a>3.7 規劃在部署多網站遠端存取時轉換為 IPv6  
+## <a name="37-plan-the-transition-to-ipv6-when-multisite-remote-access-is-deployed"></a><a name="bkmk_3_7_TransitionIPv6"></a>3.7 規劃在部署多網站遠端存取時轉換為 IPv6  
 許多組織會在公司網路上使用 IPv4 通訊協定。 在耗盡可用的 IPv4 首碼之後，許多組織都會從 IPv4 轉換成僅 IPv6 網路。  
   
 這項轉換最有可能發生在兩個階段：  
@@ -216,7 +216,7 @@ ms.locfileid: "71404456"
   
 在每個部分中，可能會分階段執行轉換。 在每個階段中，網路的一個子網可能會變更為新的網路設定。 因此，需要 DirectAccess 多網站部署才能支援混合式部署，例如，某些進入點屬於僅支援 IPv4 的子網，其他則屬於 IPv6 + IPv4 子網。 此外，轉換程式期間的設定變更不得透過 DirectAccess 中斷用戶端連線。  
   
-### <a name="TransitionIPv4toMixed"></a>從僅 IPv4 轉換至 IPv6 + IPv4 公司網路  
+### <a name="transition-from-an-ipv4-only-to-an-ipv6ipv4-corporate-network"></a><a name="TransitionIPv4toMixed"></a>從僅 IPv4 轉換至 IPv6 + IPv4 公司網路  
 將 IPv6 位址新增到僅 IPv4 的公司網路時，您可能會想要將 IPv6 位址新增至已部署的 DirectAccess 伺服器。 此外，您可能會想要將進入點或節點新增至具有 IPv4 和 IPv6 位址的負載平衡叢集，以進行 DirectAccess 部署。  
   
 遠端存取可讓您將具有 IPv4 和 IPv6 位址的伺服器，新增至原本只使用 IPv4 位址設定的部署。 這些伺服器會新增為僅 IPv4 伺服器，而 DirectAccess 會忽略其 IPv6 位址;因此，您的組織無法利用這些新伺服器上的原生 IPv6 連線優勢。  
@@ -226,7 +226,7 @@ ms.locfileid: "71404456"
 > [!NOTE]  
 > 如同 IPv4 專用的網路，在混合的 IPv4 + IPv6 網路中，用來解析用戶端 DNS 要求的 DNS 伺服器位址，必須使用部署于遠端存取服務器本身的 DNS64 來設定，而不是使用公司 DNS。  
   
-### <a name="TransitionMixedtoIPv6"></a>從 IPv6 + IPv4 轉換到僅 IPv6 的公司網路  
+### <a name="transition-from-an-ipv6ipv4-to-an-ipv6-only-corporate-network"></a><a name="TransitionMixedtoIPv6"></a>從 IPv6 + IPv4 轉換到僅 IPv6 的公司網路  
 只有當部署中的第一部遠端存取服務器最初同時具有 IPv4 和 IPv6 位址，或只有 IPv6 位址時，DirectAccess 才可讓您新增 IPv6 專用的進入點。 也就是說，您無法在單一步驟中從僅 IPv4 網路轉換成 IPv6 私人網路絡，而不需要重新安裝 DirectAccess。 若要從僅 IPv4 網路直接轉換為僅限 IPv6 的網路，請參閱使用雙重 DirectAccess 部署從僅 IPv4 轉換為僅限 IPv6 的部署。  
   
 當您完成從僅 IPv4 部署到 IPv6 + IPv4 部署的轉換之後，您可以轉換到 IPv6 私人網路絡。 在轉換期間和之後，請注意下列事項：  
@@ -239,7 +239,7 @@ ms.locfileid: "71404456"
   
 若要支援用戶端連線到公司網路，您必須確定網路位置伺服器可以由公司 DNS 解析為其 IPv6 位址。 另一個 IPv4 位址也可以設定，但不是必要的。  
   
-### <a name="DualDeployment"></a>使用雙重 DirectAccess 部署，從僅 IPv4 轉換為僅限 IPv6 的部署  
+### <a name="transition-from-an-ipv4-only-to-an-ipv6-only-deployment-using-dual-directaccess-deployments"></a><a name="DualDeployment"></a>使用雙重 DirectAccess 部署，從僅 IPv4 轉換為僅限 IPv6 的部署  
 不需要重新安裝 DirectAccess 部署，就能從僅 IPv4 轉換成僅 IPv6 的公司網路。 若要在轉換期間維護用戶端連線能力，您可以使用另一個 DirectAccess 部署。 當第一個轉換階段完成時（僅 IPv4 網路已升級至 IPv4 + IPv6），而且您想要準備未來轉換至僅 IPv6 的公司網路 orto 時，需要進行雙重部署，以利用原生 IPv6 連線能力的優勢。 雙重部署的說明請見下列一般步驟：  
   
 1.  安裝第二個 DirectAccess 部署。 您可以在新的伺服器上安裝 DirectAccess，或從第一個部署中移除伺服器，並將它們用於第二個部署。  

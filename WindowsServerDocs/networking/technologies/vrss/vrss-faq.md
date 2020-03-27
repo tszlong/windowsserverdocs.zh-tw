@@ -8,14 +8,14 @@ ms.assetid: 61ae242e-82a8-430d-b07d-52b86c01e686
 ms.localizationpriority: medium
 manager: dougkim
 ms.date: 09/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5c7feb696c6ee9014032229543a4f43fb5884527
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0ee9bf121d64eebe98798df907a2584747a00c7a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395853"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315361"
 ---
 # <a name="vrss-frequently-asked-questions"></a>vRSS 常見問題
 
@@ -23,23 +23,23 @@ ms.locfileid: "71395853"
 
 ## <a name="what-are-the-requirements-for-the-physical-network-adapters-that-i-use-with-vrss"></a>搭配 vRSS 使用之實體網路介面卡的需求為何？
 
-網路介面卡必須與虛擬機器佇列\(VMQ\)相容，而且必須具有 10 Gbps 或以上的連結速度。
+網路介面卡必須與虛擬機器佇列 \(VMQ\) 相容，而且必須具有 10 Gbps 或以上的連結速度。
 
 如需詳細資訊，請參閱[規劃使用 vRSS](vrss-plan.md)。
 
-## <a name="does-vrss-work-with-hyper-threaded-processor-cores"></a>VRSS 是否能與超\-執行緒處理器核心搭配使用？
+## <a name="does-vrss-work-with-hyper-threaded-processor-cores"></a>VRSS 是否能與超\-執行緒處理器核心搭配運作？
 
-資料分割 VRSS 和 VMQ 都會忽略超\-執行緒處理器核心。
+No。 VRSS 和 VMQ 都會忽略超\-執行緒處理器核心。
 
-## <a name="does-vrss-work-for-host-virtual-nics-vnics"></a>VRSS 是否適用于主機虛擬 nic \(vnic\)？
+## <a name="does-vrss-work-for-host-virtual-nics-vnics"></a>VRSS 是否適用于 \(Vnic\)的主機虛擬 Nic？
 
-是的。 在**VMNetworkAdapter** Windows PowerShell 命令上使用 **-ManagementOS**參數\(，\)而不是虛擬機器 VM 名稱，並在主機 vNIC 上**啟用-set-netadapterrss** 。
+是的。 在**VMNetworkAdapter** Windows PowerShell 命令上使用 **-ManagementOS**參數，而不是虛擬機器 \(VM\) 名稱，然後在主機 VNIC 上**啟用-set-netadapterrss** 。
 
 如需詳細資訊，請參閱[RSS 和 vRSS 的 Windows PowerShell 命令](vrss-wps.md)。
 
 ## <a name="how-many-logical-processors-does-a-vm-need-to-use-vrss"></a>VM 需要有多少個邏輯處理器才能使用 vRSS？
 
-Vm 需要兩個或多個\(邏輯\)處理器 LPs，才能夠使用 vRSS。
+Vm 需要兩個或多個邏輯處理器 \(LPs\) 才能使用 vRSS。
 
 如需詳細資訊，請參閱[規劃使用 vRSS](vrss-plan.md)。
 
@@ -49,15 +49,15 @@ Vm 需要兩個或多個\(邏輯\)處理器 LPs，才能夠使用 vRSS。
 
 ## <a name="vrss-is-enabled-but-how-do-i-know-if-it-is-working"></a>已啟用 vRSS，但我要如何知道它是否正常運作？ 
 
-您可以藉由在您的 VM 中開啟工作管理員，並查看虛擬處理器使用率，來告訴 vRSS 是否正常運作。 如果 VM 有多個建立的連線，您可以看到高於 0% 使用率的一個以上的核心。
+您可以藉由在您的 VM 中開啟工作管理員，並查看虛擬處理器使用率，來告訴 vRSS 是否正常運作。 如果 VM 有多個建立的連線，您可以看到高於0% 使用率的一個以上的核心。
 
 因為單一 TCP 會話無法跨多個邏輯處理器核心進行負載平衡，所以您的 VM 必須接收多個 TCP 會話，才能觀察 vRSS 是否正常運作。
 
-如果 VM 接收到多個 TCP 會話，但您沒有看到超過一個以上的 LP 核心超過 0% 使用率，請確定您已完成[規劃使用 vRSS](vrss-plan.md)主題中的所有準備步驟。
+如果 VM 接收到多個 TCP 會話，但您沒有看到超過一個以上的 LP 核心超過0% 使用率，請確定您已完成[規劃使用 vRSS](vrss-plan.md)主題中的所有準備步驟。
 
 ## <a name="im-looking-at-the-host-and-not-all-of-the-processors-are-being-used-it-looks-like-every-other-one-is-being-skipped"></a>我正在查看主機，而不是所有的處理器都在使用中。 似乎其他處理器都被忽略。
   
-檢查是否已啟用超執行緒。 VMQ 和 vRSS 都是設計來略過\-超執行緒核心。
+檢查是否已啟用超執行緒。 VMQ 和 vRSS 都是為了略過超\-執行緒核心而設計的。
 
 ## <a name="are-there-different-windows-powershell-commands-for-rss-and-vrss"></a>RSS 和 vRSS 是否有不同的 Windows PowerShell 命令？
 

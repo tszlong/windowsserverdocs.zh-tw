@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 1f49fc3c-28a6-4d3d-b787-1be9e61e792f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 489006c50ccbfa1f452d56b1a18217692d45cb1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5abe1520de24d366df43210219119ae9f806adc4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406456"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319238"
 ---
 # <a name="install-a-new-file-server-as-a-content-server"></a>將新的檔案伺服器作為內容伺服器安裝
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式，在執行 Windows Server 2016 的電腦上安裝「檔案服務」伺服器角色和「網路檔案的**BranchCache** 」角色服務。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71406456"
     > [!TIP]  
     > 建議您同時選取**重復資料刪除**的核取方塊。
   
-    按一下 [下一步]。  
+    按 [下一步]。  
   
 6.  在 [**選取功能**] 中，按 **[下一步]** 。  
   

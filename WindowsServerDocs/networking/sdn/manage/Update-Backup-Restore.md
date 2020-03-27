@@ -7,18 +7,18 @@ ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
-author: shortpatti
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 7f385e094ca70027d1b036bf53af23c1fc4a1bd1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fbb173224797d32bd05fbdadb1bf4cefdc475cb6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406054"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317600"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>升級、備份及還原 SDN 基礎結構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，您將瞭解如何更新、備份及還原 SDN 基礎結構。 
 
@@ -43,7 +43,7 @@ SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 �
 
 2. 在第一個網路控制站 VM 上，安裝所有更新並重新啟動。
 
-3. 繼續進行下一個網路控制站 VM 之前，請`get-networkcontrollernode`使用 Cmdlet 來檢查您已更新並重新啟動之節點的狀態。
+3. 繼續進行下一個網路控制站 VM 之前，請使用 `get-networkcontrollernode` Cmdlet 來檢查已更新並重新啟動之節點的狀態。
 
 4. 在重新開機迴圈期間，等候網路控制卡節點關閉，然後再次返回。<p>重新開機 VM 之後，可能需要幾分鐘的時間才能回到 [ **_啟動_** ] 狀態。 如需輸出的範例，請參閱 
 
@@ -66,7 +66,7 @@ SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 �
 
 ### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>範例：使用 networkcontrollernode Cmdlet 
 
-在此範例中，您會在其中一個`get-networkcontrollernode`網路控制站 vm 中看到 Cmdlet 的輸出。  
+在此範例中，您會看到從其中一個網路控制站 Vm 執行 `get-networkcontrollernode` Cmdlet 的輸出。  
 
 您在範例輸出中看到的節點狀態為：
 
@@ -80,7 +80,7 @@ SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 �
 更新所有網路控制站節點之後，網路控制站會在一小時內更新網路控制卡叢集中執行的微服務。 
 
 >[!TIP]
->您可以使用`update-networkcontroller` Cmdlet 來觸發立即更新。
+>您可以使用 `update-networkcontroller` Cmdlet 來觸發立即更新。
 
 
 ```Powershell
@@ -108,7 +108,7 @@ Status          : Up
 ```
 
 ### <a name="example-use-the-update-networkcontroller-cmdlet"></a>範例：使用 networkcontroller Cmdlet
-在此範例中，您會看到`update-networkcontroller` Cmdlet 的輸出，以強制網路控制站更新。 
+在此範例中，您會看到 `update-networkcontroller` Cmdlet 的輸出，以強制網路控制站更新。 
 
 >[!IMPORTANT]
 >當您沒有其他要安裝的更新時，請執行此 Cmdlet。
@@ -125,7 +125,7 @@ NetworkControllerClusterVersion NetworkControllerVersion
 
 網路控制站資料庫的定期備份可確保在發生損毀或資料遺失時的業務持續性。  備份網路控制站 Vm 並不足夠，因為它不會確保會話會跨多個網路控制站節點繼續進行。
 
-**滿足**
+**需求：**
 * SMB 共用和認證，具有共用和檔案系統的讀取/寫入權限。
 * 如果也使用 GMSA 來安裝網路控制站，您可以選擇使用群組受管理的服務帳戶（GMSA）。
 
@@ -138,9 +138,9 @@ NetworkControllerClusterVersion NetworkControllerVersion
    >[!IMPORTANT]
    >在網路控制卡備份完成之前，請勿重新開機 SCVMM 服務。
 
-3. 使用`new-networkcontrollerbackup` Cmdlet 備份網路控制站資料庫。
+3. 使用 `new-networkcontrollerbackup` Cmdlet 來備份網路控制站資料庫。
 
-4. 使用`get-networkcontrollerbackup` Cmdlet 檢查備份的完成和成功。
+4. 使用 `get-networkcontrollerbackup` Cmdlet 檢查備份的完成和成功。
 
 5. 如果使用 SCVMM，請啟動 SCVMM 服務。
 
@@ -286,7 +286,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 5. 停止 SLB Mux Vm。
 
-6. 使用`new-networkcontrollerrestore` Cmdlet 還原網路控制卡。
+6. 使用 `new-networkcontrollerrestore` Cmdlet 還原網路控制卡。
 
 7. 檢查 [還原] **ProvisioningState** ，以瞭解還原順利完成的時間。
 

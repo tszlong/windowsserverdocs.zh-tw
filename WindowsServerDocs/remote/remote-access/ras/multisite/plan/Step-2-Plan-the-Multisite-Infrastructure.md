@@ -10,24 +10,24 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64c10107-cb03-41f3-92c6-ac249966f574
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ff8a58aa679691132d074ef52b876cea05366ab5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6e23c3c3d22509af46b1a1741b545a787be00bfc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367100"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313885"
 ---
 # <a name="step-2-plan-the-multisite-infrastructure"></a>步驟2規劃多網站基礎結構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在多網站拓撲中部署遠端存取的下一個步驟，是完成多網站基礎結構規劃;包括、Active Directory、安全性群組和群組原則物件。  
-## <a name="bkmk_2_1_AD"></a>2.1 方案 Active Directory  
+## <a name="21-plan-active-directory"></a><a name="bkmk_2_1_AD"></a>2.1 方案 Active Directory  
 可以在數種拓撲中設定遠端存取多網站部署：  
   
--   **單一 Active Directory 網站、多個進入點**-在此拓撲中，您可以在整個組織中擁有單一 Active Directory 網站，其中包含整個網站的快速內部網路連結，但您已在整個過程中部署多部遠端存取服務器。您的組織，每個都作為進入點。 此拓撲的地理範例為美國地區的單一 Active Directory 網站，並在「東部」和「West coast」上使用進入點。  
+-   **單一 Active Directory 網站，多個進入點**-在此拓撲中，您可以在整個組織中擁有單一 Active Directory 網站，其中包含整個網站的快速內部網路連結，但您在整個組織中部署了多部遠端存取服務器，每一部都作為進入點。 此拓撲的地理範例為美國地區的單一 Active Directory 網站，並在「東部」和「West coast」上使用進入點。  
   
     ![多網站基礎結構](../../../../media/Step-2-Plan-the-Multisite-Infrastructure/RAMultisiteTopo1.png)  
   
@@ -56,16 +56,16 @@ ms.locfileid: "71367100"
   
     2.  如果管理伺服器 GPO 的網域控制站無法使用，請使用 DAEntryPointDC PowerShell Cmdlet，將新的網域控制站與進入點產生關聯。 在執行此 Cmdlet 之前，新的網域控制站應該具有最新的 Gpo。  
   
-## <a name="bkmk_2_2_SG"></a>2.2 規劃安全性群組  
-在部署具有「高級」設定的單一伺服器期間，所有透過 DirectAccess 存取內部網路的用戶端電腦都會收集到安全性群組中。 在多網站部署中，此安全性群組僅用於 Windows 8 用戶端電腦。 針對多網站部署，會針對多網站部署中的每個進入點，將 Windows 7 用戶端電腦收集到個別的安全性群組。 例如，如果您先前將所有用戶端電腦群組在群組 DA_Clients 中，您現在必須從該群組移除任何 Windows 7 電腦，並將它們放在不同的安全性群組中。 例如，在 [多個 Active Directory 網站]、[多個進入點拓撲] 中，您會建立美國進入點（DA_Clients_US）的安全性群組，以及一個用於歐洲進入點（DA_Clients_Europe）的群組。 將位於美國地區的任何 Windows 7 用戶端電腦放在 DA_Clients_US 群組中，並將任何位於歐洲的 DA_Clients_Europe 群組中。 如果您沒有任何 Windows 7 用戶端電腦，則不需要規劃 Windows 7 電腦的安全性群組。  
+## <a name="22-plan-security-groups"></a><a name="bkmk_2_2_SG"></a>2.2 規劃安全性群組  
+在部署具有「高級」設定的單一伺服器期間，所有透過 DirectAccess 存取內部網路的用戶端電腦都會收集到安全性群組中。 在多網站部署中，此安全性群組僅用於 Windows 8 用戶端電腦。 針對多網站部署，會針對多網站部署中的每個進入點，將 Windows 7 用戶端電腦收集到個別的安全性群組。 例如，如果您先前將群組中的所有用戶端電腦分組 DA_Clients，則必須從該群組移除任何 Windows 7 電腦，並將它們放在不同的安全性群組中。 例如，在 [多個 Active Directory 網站]、[多個進入點拓撲] 中，您會建立美國進入點（DA_Clients_US）的安全性群組，以及一個用於歐洲進入點（DA_Clients_Europe）的群組。 將位於美國的任何 Windows 7 用戶端電腦放在 [DA_Clients_US] 群組中，並將任何位於歐洲的 [DA_Clients_Europe] 群組中。 如果您沒有任何 Windows 7 用戶端電腦，則不需要規劃 Windows 7 電腦的安全性群組。  
   
 必要的安全性群組如下所示：  
   
 -   適用于所有 Windows 8 用戶端電腦的一個安全性群組。 建議為每個網域的這些用戶端建立唯一的安全性群組。  
   
--   唯一的安全性群組，其中包含每個進入點的 Windows 7 用戶端電腦。 建議您為每個網域建立唯一的群組。 例如: Domain1\DA_Clients_Europe;Domain2\DA_Clients_Europe;Domain1\DA_Clients_US;Domain2\DA_Clients_US.  
+-   唯一的安全性群組，其中包含每個進入點的 Windows 7 用戶端電腦。 建議您為每個網域建立唯一的群組。 例如： Domain1 \ DA_Clients_Europe;Domain2> ... \ DA_Clients_Europe;Domain1 \ DA_Clients_US;Domain2> ... \ DA_Clients_US。  
   
-## <a name="bkmk_2_3_GPO"></a>2.3 計畫群組原則物件  
+## <a name="23-plan-group-policy-objects"></a><a name="bkmk_2_3_GPO"></a>2.3 計畫群組原則物件  
 在遠端存取部署期間設定的 DirectAccess 設定會收集到 Gpo 中。 您的單一伺服器部署已針對 DirectAccess 用戶端、遠端存取服務器以及應用程式伺服器（選擇性）使用 Gpo。 多網站部署需要下列 Gpo：  
   
 -   每個進入點的伺服器 GPO。  
@@ -90,7 +90,7 @@ Gpo 可以設定如下：
   
     -   若為伺服器 GPO，location 和 link 參數都會指向包含遠端存取服務器的網域。  
   
-    -   針對用戶端 Gpo，連結目標會設定為 GPO 建立所在網域的根目錄。 系統會為每個包含用戶端電腦的網域建立 GPO，而 GPO 會連結至每個網域的根目錄。 .  
+    -   針對用戶端 Gpo，連結目標會設定為 GPO 建立所在網域的根目錄。 系統會為每個包含用戶端電腦的網域建立 GPO，而 GPO 會連結至每個網域的根目錄。 。  
   
 -   針對自動建立的 Gpo，若要套用 DirectAccess 設定，遠端存取服務器系統管理員需要下列許可權：  
   
@@ -115,7 +115,7 @@ Gpo 可以設定如下：
   
     -   **伺服器 gpo**-每個進入點的伺服器 gpo （在進入點所在的網域中）。 這個 GPO 會套用到進入點中的每個遠端存取服務器。  
   
-    -   **用戶端 GPO （Windows 7）** -每個進入點的 GPO，以及每個包含將連線到多網站部署進入點的 Windows 7 用戶端電腦的網域。 例如 Domain1\DA_W7_Clients_GPO_Europe;Domain2\DA_W7_Clients_GPO_Europe;Domain1\DA_W7_Clients_GPO_US;Domain2\DA_W7_Clients_GPO_US. 如果沒有 Windows 7 用戶端電腦連接到進入點，就不需要 Gpo。  
+    -   **用戶端 GPO （Windows 7）** -每個進入點的 GPO，以及每個包含將連線到多網站部署進入點的 Windows 7 用戶端電腦的網域。 例如 Domain1 \ DA_W7_Clients_GPO_Europe;Domain2> ... \ DA_W7_Clients_GPO_Europe;Domain1 \ DA_W7_Clients_GPO_US;Domain2> ... \ DA_W7_Clients_GPO_US。 如果沒有 Windows 7 用戶端電腦連接到進入點，就不需要 Gpo。  
   
 -   不需要為 Windows 8 用戶端電腦建立額外的 Gpo。 部署單一遠端存取服務器時，已建立每個包含用戶端電腦之網域的 GPO。 在多網站部署中，這些用戶端 Gpo 將作為 Windows 8 用戶端的 Gpo。  
   
@@ -146,11 +146,11 @@ Gpo 可以設定如下：
   
     2.  修改設定之後，您必須等候變更複寫到與 Gpo 相關聯的網域控制站。 在複寫完成之前，請不要使用「遠端存取管理主控台」或「遠端存取」 PowerShell Cmdlet 進行其他變更。 如果在複寫完成之前在兩個不同的網域控制站上編輯 GPO，可能會發生合併衝突，而導致設定損毀。  
   
--   或者，您也可以使用 [群組原則管理主控台] 中的 [**變更網域控制站**] 對話方塊，或使用**open-netgpo** PowerShell Cmdlet 來變更預設設定，以便使用主控台或網路功能 Cmdlet 所做的變更使用您指定的網域控制站。  
+-   或者，您可以使用 [群組原則管理主控台] 中的 [**變更網域控制站**] 對話方塊，或使用 open-netgpo PowerShell Cmdlet 來變更預設設定，如此**一**來，使用主控台或網路 Cmdlet 所做的變更會使用您指定的網域控制站。  
   
     1.  若要在群組原則管理主控台中執行此操作，請以滑鼠右鍵按一下 [網域或網站] 容器，然後按一下 [**變更網域控制站**]。  
   
-    2.  若要在 PowerShell 中執行這項操作，請指定 Open-netgpo 指令程式的 [控制器] 參數。 例如，若要使用名為 europe-dc.corp.contoso.com 的網域控制站，在名為 domain1\DA_Server_GPO _Europe 的 GPO 上啟用 Windows 防火牆中的私用和公用設定檔，請執行下列動作：  
+    2.  若要在 PowerShell 中執行這項操作，請指定 Open-netgpo 指令程式的 [控制器] 參數。 例如，若要在名為 domain1 \ DA_Server_GPO 的 GPO 上啟用 Windows 防火牆中的私用和公用設定檔，_Europe 使用名為 europe-dc.corp.contoso.com 的網域控制站，請執行下列動作：  
   
         ```  
         $gpoSession = Open-NetGPO -PolicyStore "domain1\DA_Server_GPO _Europe" -DomainController "europe-dc.corp.contoso.com"  
@@ -165,7 +165,7 @@ Gpo 可以設定如下：
   
 -   設定**發佈的優化**-在網路基礎結構變更之後，可能需要在與進入點相同的 Active Directory 網站中，管理網域控制站上進入點的伺服器 GPO。   
   
-## <a name="bkmk_2_4_DNS"></a>2.4 規劃 DNS  
+## <a name="24-plan-dns"></a><a name="bkmk_2_4_DNS"></a>2.4 規劃 DNS  
 規劃多網站部署的 DNS 時，請注意下列事項：  
   
 1.  用戶端電腦會使用 ConnectTo 位址來連線到遠端存取服務器。 部署中的每個進入點都需要不同的 ConnectTo 位址。 每個進入點 ConnectTo 位址都必須在公用 DNS 中提供，而且您選擇的位址必須符合您為 IP-HTTPS 連線部署的 ip-HTTPs 憑證的主體名稱。   

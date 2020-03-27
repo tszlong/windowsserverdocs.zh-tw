@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: cde37849-ce79-4c26-aa14-cd0ef31cae18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6870029e02ae91b1ef5bf4d4302ac2bed2e27d84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b7bc75ea81133c91ad7e9883f03c3e32f085b5eb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405299"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315706"
 ---
 # <a name="configure-radius-clients"></a>設定 RADIUS 用戶端
 
@@ -65,7 +65,7 @@ ms.locfileid: "71405299"
     - 確定已選取 [**手動**]，然後在 [**共用密碼**] 中，輸入也在 NAS 上輸入的強式密碼。 在 [**確認共用密碼**] 中重新輸入共用密碼。
     - 選取 [**產生**]，然後按一下 [**產生**] 以自動產生共用密碼。 將產生的共用密碼儲存在 NAS 上，讓它可以與 NPS 通訊。
 7. 在 [**新增 RADIUS 用戶端**] 的 [**其他選項**] 中，如果您使用 EAP 和 PEAP 以外的任何驗證方法，且您的 NAS 支援使用 [訊息驗證者] 屬性，則選取 **[存取要求訊息必須包含訊息驗證者屬性**]。
-8. 按一下 **\[確定\]** 。 您的 NAS 會出現在 NPS 上設定的 RADIUS 用戶端清單中。
+8. 按一下 [確定]。 您的 NAS 會出現在 NPS 上設定的 RADIUS 用戶端清單中。
 
 ## <a name="configure-radius-clients-by-ip-address-range-in-windows-server-2016-datacenter"></a>在 Windows Server 2016 Datacenter 中依 IP 位址範圍設定 RADIUS 用戶端
 
@@ -90,7 +90,7 @@ ms.locfileid: "71405299"
     - 確定已選取 [**手動**]，然後在 [**共用密碼**] 中，輸入也在 NAS 上輸入的強式密碼。 在 [**確認共用密碼**] 中重新輸入共用密碼。
     - 選取 [**產生**]，然後按一下 [**產生**] 以自動產生共用密碼。 將產生的共用密碼儲存在 NAS 上，讓它可以與 NPS 通訊。
 7. 在 [**新增 RADIUS 用戶端**] 的 [**其他選項**] 中，如果您使用 EAP 和 PEAP 以外的任何驗證方法，而且所有的 nas 都支援使用 [訊息驗證者] 屬性，請選取 **[存取要求訊息必須包含訊息驗證者屬性**]。
-8. 按一下 **\[確定\]** 。 您的 Nas 會出現在 NPS 上設定的 RADIUS 用戶端清單中。
+8. 按一下 [確定]。 您的 Nas 會出現在 NPS 上設定的 RADIUS 用戶端清單中。
 
 如需詳細資訊，請參閱[RADIUS 用戶端](nps-radius-clients.md)。
 

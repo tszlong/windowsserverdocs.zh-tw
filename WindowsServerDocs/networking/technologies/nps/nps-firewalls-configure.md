@@ -6,20 +6,20 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 58cca2b2-4ef3-4a09-a614-8bdc08d24f15
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: eb7f5c495fa09aed584ef37d668d1fa232d7a497
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 57661fee2cf633a1efe8e264b0f7fe717b81e20d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405448"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316089"
 ---
 # <a name="configure-firewalls-for-radius-traffic"></a>設定 RADIUS 流量的防火牆
 
 >適用於：Windows Server (半年通道)、Windows Server 2016
 
-防火牆可以設定為允許或封鎖進出執行防火牆之電腦或裝置的 IP 流量類型。 如果防火牆未正確設定為允許 RADIUS 用戶端、RADIUS proxy 和 RADIUS 伺服器之間的 RADIUS 流量，網路存取驗證可能會失敗，而導致使用者無法存取網路資源。 
+您可以針對執行防火牆的電腦或裝置，設定防火牆所要允許或封鎖的送入或送出 IP 流量類型。 如果未正確設定防火牆以允許 RADIUS 用戶端、RADIUS Proxy 以及 RADIUS 伺服器之間的 RADIUS 流量，網路存取驗證可能會失敗，而導致使用者無法存取網路資源。 
 
 您可能需要設定兩種類型的防火牆，以允許 RADIUS 流量：
 
@@ -32,7 +32,7 @@ ms.locfileid: "71405448"
 
 因此，如果您使用預設的 UDP 埠，就不需要變更 Windows Defender 防火牆設定，以允許 Nps 的 RADIUS 流量。
 
-在某些情況下，您可能會想要變更 NPS 用於 RADIUS 流量的埠。 如果您設定 NPS 和網路存取伺服器，以在預設值以外的埠上傳送和接收 RADIUS 流量，您必須執行下列動作：
+在某些情況下，您可能會想要變更 NPS 用於 RADIUS 流量的連接埠。 如果您設定 NPS 與網路存取伺服器使用預設值以外的連接埠傳送和接收 RADIUS 流量，就必須執行下列動作：
 
 - 移除允許預設埠上的 RADIUS 流量的例外狀況。
 - 建立新的例外狀況，以允許新埠上的 RADIUS 流量。
@@ -45,70 +45,70 @@ ms.locfileid: "71405448"
 
 若要連線到內部網路中的網域控制站，NPS 可能具有：
 
-- 周邊網路上的介面和內部網路上的介面（未啟用 IP 路由）。 
-- 周邊網路上的單一介面。 在此設定中，NPS 會透過將周邊網路連線到內部網路的另一個防火牆，與網域控制站通訊。
+- 一個周邊網路介面以及一個內部網路介面 (未啟用 IP 路由)。 
+- 一個單一的周邊網路介面。 在此設定中，NPS 會透過將周邊網路連線到內部網路的另一個防火牆，與網域控制站通訊。
 
 ## <a name="configuring-the-internet-firewall"></a>設定網際網路防火牆
 
-連線到網際網路的防火牆必須設定其網際網路介面上的輸入和輸出篩選器 \(並選擇性地將其網路周邊介面\)，以允許在 NPS 和 RADIUS 用戶端或網際網路上的 proxy 之間轉送 RADIUS 訊息。 您可以使用其他篩選器，將流量傳遞至 Web 服務器、VPN 伺服器，以及周邊網路上的其他類型伺服器。
+連線到網際網路的防火牆必須設定其網際網路介面上的輸入和輸出篩選器 \(並選擇性地將其網路周邊介面\)，以允許在 NPS 和 RADIUS 用戶端或網際網路上的 proxy 之間轉送 RADIUS 訊息。 其他篩選器可用來允許將流量傳遞到網頁伺服器、VPN 伺服器，以及周邊網路上其他類型的伺服器。
 
-您可以在網際網路介面和周邊網路介面上，設定個別的輸入和輸出封包篩選器。
+您可以在網際網路介面與周邊網路介面上，設定個別的輸入與輸出封包篩選器。
 
 ### <a name="configure-input-filters-on-the-internet-interface"></a>設定網際網路介面上的輸入篩選器
 
-在防火牆的網際網路介面上設定下列輸入封包篩選器，以允許下列類型的流量：
+在防火牆的網際網路介面上設定下列輸入封包篩選器，即可允許下列類型的流量：
 
 - 周邊網路介面的目的地 IP 位址，以及 NPS 的1812（0x714） UDP 目的地埠。  此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 驗證流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2865 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1812。
 - 周邊網路介面的目的地 IP 位址，以及 NPS 的1813（0x715） UDP 目的地埠。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 帳戶處理流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2866 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1813。
-- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1645 \(0x66D\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
-- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1646 \(0x66E\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
+- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1645 \(0x66D\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
+- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1646 \(0x66E\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
 
 ### <a name="configure-output-filters-on-the-internet-interface"></a>設定網際網路介面上的輸出篩選器
 
-在防火牆的網際網路介面上設定下列輸出篩選器，以允許下列類型的流量：
+在防火牆的網際網路介面上設定下列輸出篩選器，即可允許下列類型的流量：
 
 - 周邊網路介面的來源 IP 位址，以及 NPS 的1812（0x714） UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 驗證流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2865 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1812。
 - 周邊網路介面的來源 IP 位址，以及 NPS 的1813（0x715） UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 帳戶處理流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2866 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1813。
-- \(\) 周邊網路介面的來源 IP 位址，以及 1645 \(0x66D\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
-- \(\) 周邊網路介面的來源 IP 位址，以及 1646 \(0x66E\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
+- \(\) 周邊網路介面的來源 IP 位址，以及 1645 \(0x66D\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
+- \(\) 周邊網路介面的來源 IP 位址，以及 1646 \(0x66E\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
 
 ### <a name="configure-input-filters-on-the-perimeter-network-interface"></a>設定周邊網路介面上的輸入篩選器
 
-在防火牆的周邊網路介面上設定下列輸入篩選器，以允許下列類型的流量：
+在防火牆的周邊網路介面上設定下列輸入篩選器，即可允許下列類型的流量：
 
 - 周邊網路介面的來源 IP 位址，以及 NPS 的1812（0x714） UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 驗證流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2865 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1812。
 - 周邊網路介面的來源 IP 位址，以及 NPS 的1813（0x715） UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 帳戶處理流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2866 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1813。
-- \(\) 周邊網路介面的來源 IP 位址，以及 1645 \(0x66D\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
-- \(\) 周邊網路介面的來源 IP 位址，以及 1646 \(0x66E\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
+- \(\) 周邊網路介面的來源 IP 位址，以及 1645 \(0x66D\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
+- \(\) 周邊網路介面的來源 IP 位址，以及 1646 \(0x66E\) 的 UDP 來源埠。 此篩選器允許從 NPS 到以網際網路為基礎的 RADIUS 用戶端的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
 
 ### <a name="configure-output-filters-on-the-perimeter-network-interface"></a>設定周邊網路介面上的輸出篩選器
 
-在防火牆的周邊網路介面上設定下列輸出封包篩選器，以允許下列類型的流量：
+在防火牆的周邊網路介面上設定下列輸出封包篩選器，即可允許下列類型的流量：
 
 - 周邊網路介面的目的地 IP 位址，以及 NPS 的1812（0x714） UDP 目的地埠。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 驗證流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2865 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1812。
 - 周邊網路介面的目的地 IP 位址，以及 NPS 的1813（0x715） UDP 目的地埠。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 帳戶處理流量。 這是 NPS 使用的預設 UDP 埠，如 RFC 2866 中所定義。 如果您使用不同的埠，請將該埠號碼替換為1813。
-- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1645 \(0x66D\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
-- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1646 \(0x66E\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 埠。
+- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1645 \(0x66D\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 驗證流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
+- \(\) 周邊網路介面的目的地 IP 位址，以及該 NPS 的 UDP 目的地埠 1646 \(0x66E\)。 此篩選器允許從以網際網路為基礎的 RADIUS 用戶端到 NPS 的 RADIUS 帳戶處理流量。 這是較舊的 RADIUS 用戶端所使用的 UDP 連接埠。
 
 為了增加安全性，您可以使用每個 RADIUS 用戶端的 IP 位址，透過防火牆傳送封包，以定義用戶端與周邊網路上 NPS IP 位址之間的流量篩選器。
 
 ### <a name="filters-on-the-perimeter-network-interface"></a>周邊網路介面上的篩選器
 
-在內部網路防火牆的周邊網路介面上設定下列輸入封包篩選器，以允許下列類型的流量：
+在內部網路防火牆的周邊網路介面上設定下列輸入封包篩選器，即可允許下列類型的流量：
 
 - NPS 周邊網路介面的來源 IP 位址。 此篩選器允許來自周邊網路上 NPS 的流量。
 
-在內部網路防火牆的周邊網路介面上設定下列輸出篩選器，以允許下列類型的流量：
+在內部網路防火牆的周邊網路介面上設定下列輸出篩選器，即可允許下列類型的流量：
 
 - NPS 周邊網路介面的目的地 IP 位址。 此篩選器允許對周邊網路上 NPS 的流量。
 
-### <a name="filters-on-the-intranet-interface"></a>內部網路介面上的篩選
+### <a name="filters-on-the-intranet-interface"></a>內部網路介面上的篩選器
 
-在防火牆的內部網路介面上設定下列輸入篩選器，以允許下列類型的流量：
+在防火牆的內部網路介面上設定下列輸入篩選器，即可允許下列類型的流量：
 
 - NPS 周邊網路介面的目的地 IP 位址。 此篩選器允許對周邊網路上 NPS 的流量。
 
-在防火牆的內部網路介面上設定下列輸出封包篩選器，以允許下列類型的流量：
+在防火牆的內部網路介面上設定下列輸出封包篩選器，即可允許下列類型的流量：
 
 - NPS 周邊網路介面的來源 IP 位址。 此篩選器允許來自周邊網路上 NPS 的流量。
 

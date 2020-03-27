@@ -3,7 +3,7 @@ title: 在 Windows Server Essentials 中建立連線
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 05/07/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 04d09574046474da5bee4437628ade9646cf58ca
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 14acbff8b538224546884e5bb51c40a22b8849b4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322120"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318558"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>在 Windows Server Essentials 中建立連線
 
@@ -41,7 +41,7 @@ ms.locfileid: "79322120"
 -   [使用啟動列](Get-Connected-in-Windows-Server-Essentials.md#BKMK_C)  
 
 
-##  <a name="BKMK_A"></a>準備將電腦連線到伺服器  
+##  <a name="prepare-to-connect-computers-to-the-server"></a><a name="BKMK_A"></a>準備將電腦連線到伺服器  
  本節討論連線程式軟體、Windows Server Essentials 支援的作業系統、將電腦連線到伺服器之前必須先完成的先決條件工作，以及執行連線程式軟體時伺服器對電腦所做的變更。  
 
 
@@ -61,7 +61,7 @@ ms.locfileid: "79322120"
 
 -   [從 Windows 網域移除電腦](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)  
 
-###  <a name="BKMK_1"></a>連接器軟體總覽  
+###  <a name="connector-software-overview"></a><a name="BKMK_1"></a>連接器軟體總覽  
  Windows Server Essentials 作業系統的連線程式軟體可將您網路中的電腦連線到 Windows Server Essentials 伺服器。 將電腦連線到伺服器時，連線程式軟體可讓您自動備份電腦並監視其健康情況。 連線程式軟體也可讓您設定及從遠端管理 Windows Server Essentials 伺服器。 當您將用戶端電腦連線到伺服器時，就會安裝連線程式軟體。 如需有關將用戶端電腦連線到 Windows Server Essentials 伺服器的詳細指示，請參閱本主題中稍後的[將電腦連線到伺服器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
 -   [連接器軟體總覽](Get-Connected-in-Windows-Server-Essentials.md#BKMK_1)  
@@ -80,11 +80,11 @@ ms.locfileid: "79322120"
 
 -   [從 Windows 網域移除電腦](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)  
 
-###  <a name="BKMK_1"></a>連接器軟體總覽  
+###  <a name="connector-software-overview"></a><a name="BKMK_1"></a>連接器軟體總覽  
  Windows Server Essentials 作業系統的連線程式軟體可將您網路中的電腦連線到 Windows Server Essentials 伺服器。 將電腦連線到伺服器時，連線程式軟體可讓您自動備份電腦並監視其健康情況。 連線程式軟體也可讓您設定及從遠端管理 Windows Server Essentials 伺服器。 當您將用戶端電腦連線到伺服器時，就會安裝連線程式軟體。 如需有關將用戶端電腦連線到 Windows Server Essentials 伺服器的詳細指示，請參閱本主題中稍後的[將電腦連線到伺服器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
 
-###  <a name="BKMK_2"></a>將電腦連接到伺服器的必要條件  
+###  <a name="prerequisites-for-connecting-a-computer-to-the-server"></a><a name="BKMK_2"></a>將電腦連接到伺服器的必要條件  
  將電腦連線到網路之前，必須先符合下列需求：  
 
 -   已完成 Windows Server Essentials 安裝且伺服器正在執行。 如果連線程式軟體無法與伺服器通訊，就會結束連線程式軟體安裝。  
@@ -130,7 +130,7 @@ ms.locfileid: "79322120"
  如需將電腦連線到執行 Windows Server Essentials 之伺服器的逐步指示，請參閱[將電腦連線到伺服器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
 
-###  <a name="BKMK_3"></a>將 Mac 電腦連接到網路的必要條件  
+###  <a name="prerequisites-for-connecting-a-mac-computer-to-the-network"></a><a name="BKMK_3"></a>將 Mac 電腦連接到網路的必要條件  
  將 Mac 電腦連線到網路之前，必須先符合下列需求：  
 
 -   已完成伺服器作業系統安裝且伺服器正在執行。 如果連線程式軟體無法與伺服器通訊，就不會安裝連線程式軟體。  
@@ -151,7 +151,7 @@ ms.locfileid: "79322120"
 
 -   在任何指定時間，用戶端電腦都只能連線到一部伺服器。  
 
-###  <a name="BKMK_4"></a>用戶端電腦支援的作業系統  
+###  <a name="supported-operating-systems-for-client-computers"></a><a name="BKMK_4"></a>用戶端電腦支援的作業系統  
  Windows Server Essentials 為所有支援的用戶端電腦都提供一組相同的功能。 這些功能包括 [網域加入]、[啟動列] 及用戶端健康情況通知。  
 
 > [!IMPORTANT]
@@ -178,7 +178,7 @@ ms.locfileid: "79322120"
 
 - Windows 8  
 
-- Windows 8 Pro  
+- Windows 8 專業版  
 
 - Windows 8 企業版  
 
@@ -194,11 +194,11 @@ ms.locfileid: "79322120"
 
 - Windows 10  
 
-- Windows 10 Pro  
+- Windows 10 專業版  
 
-- Windows 10 Enterprise  
+- Windows 10 企業版  
 
-- Windows 10 Education  
+- Windows 10 教育版  
 
   **Mac 用戶端電腦**  
 
@@ -234,7 +234,7 @@ ms.locfileid: "79322120"
 
 - Windows 8  
 
-- Windows 8 Pro  
+- Windows 8 專業版  
 
 - Windows 8 企業版  
 
@@ -242,11 +242,11 @@ ms.locfileid: "79322120"
 
 - Windows 10  
 
-- Windows 10 Pro  
+- Windows 10 專業版  
 
-- Windows 10 Enterprise  
+- Windows 10 企業版  
 
-- Windows 10 Education  
+- Windows 10 教育版  
 
   **Mac 用戶端電腦**  
 
@@ -259,7 +259,7 @@ ms.locfileid: "79322120"
 > [!NOTE]
 >  您可以從 [Windows Server Essentials 儀表板] 檢視 Mac 電腦的健康情況和備份狀態。 不過，您無法從 [儀表板] 設定電腦備份或啟動備份。 此外，您也無法使用「遠端 Web 存取」來連線到 Mac 電腦。  
 
-###  <a name="BKMK_5"></a>伺服器對用戶端電腦進行的變更  
+###  <a name="changes-the-server-makes-to-a-client-computer"></a><a name="BKMK_5"></a>伺服器對用戶端電腦進行的變更  
  將電腦連線到伺服器時，Windows Server Essentials 軟體會對電腦做一些變更，以便讓電腦和伺服器可以一起運作。  
 
  這個軟體會執行下列動作：  
@@ -297,16 +297,16 @@ ms.locfileid: "79322120"
 
  如需有關將您的電腦連線到伺服器的資訊，請參閱[將電腦連線到伺服器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
-###  <a name="BKMK_6"></a>網路使用者名稱和密碼資訊  
+###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a>網路使用者名稱和密碼資訊  
  您可以向管理您伺服器的人員取得您的網路使用者名稱和密碼資訊。 您可以使用這些認證將您的電腦連線到伺服器，以及從伺服器存取資訊。  
 
-###  <a name="BKMK_6"></a>網路使用者名稱和密碼資訊  
+###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a>網路使用者名稱和密碼資訊  
  您可以向管理您伺服器的人員取得您的網路使用者名稱和密碼資訊。 您可以使用這些認證將您的電腦連線到伺服器，以及從伺服器存取資訊。 
 
 
  如果您是伺服器系統管理員，您可以從 [儀表板] 的 [使用者] 索引標籤新增使用者帳戶來建立網路認證 。 如需有關使用者帳戶的詳細資訊，請參閱[使用儀表板來管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)。  
 
-###  <a name="BKMK_7"></a>伺服器管理員的帳戶  
+###  <a name="server-administrators-account"></a><a name="BKMK_7"></a>伺服器管理員的帳戶  
  您必須要能夠提供網路系統管理員帳戶名稱和密碼，才能安裝連線程式軟體。 網路系統管理員帳戶可讓使用者管理您組織的區域網路，以及協助管理和維護網路裝置 (例如交換器和路由器)。  
 
  可以使用網路系統管理員帳戶來執行的工作可包括：  
@@ -323,12 +323,12 @@ ms.locfileid: "79322120"
 
   在 Windows Server Essentials、Windows Server Essentials 和已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 中，您可以將網路系統管理員存取層級指派給任何使用者帳戶。 這會授與執行網路系統管理員工作所需的權限。 在使用者獲指派網路系統管理員存取層級之後，只要有任何需要系統管理員權限的工作，就會開啟 [使用者存取控制] 提示。  
 
-###  <a name="BKMK_8"></a>從 Windows 網域移除電腦  
+###  <a name="remove-a-computer-from-a-windows-domain"></a><a name="BKMK_8"></a>從 Windows 網域移除電腦  
  為了將電腦從其網域中移除，系統會提示您輸入網域帳戶的使用者名稱和密碼。  
 
 ##### <a name="to-remove-a-computer-from-a-windows-domain"></a>將電腦從 Windows 網域中移除  
 
-1.  按一下 [開始]，在 [電腦] 上按一下滑鼠右鍵，然後按一下 [內容]。  
+1.  按一下 [開始]，在 [電腦]上按一下滑鼠右鍵，然後按一下 [內容]。  
 
 2.  在 **[電腦名稱、網域及工作群組設定]** 底下，按一下 **[變更設定]** 。  
 
@@ -346,7 +346,7 @@ ms.locfileid: "79322120"
         > [!NOTE]
         >  您的電腦將會從網域中移除，而您在該網域上的電腦帳戶將會停用。  
 
-##  <a name="BKMK_B"></a>使用連接器軟體將電腦連線到伺服器  
+##  <a name="connect-computers-to-the-server-by-using-the-connector-software"></a><a name="BKMK_B"></a>使用連接器軟體將電腦連線到伺服器  
  本節可讓您存取一些程序和資訊，用來協助您安裝連線程式軟體、將您的電腦連線到伺服器，以及進行電腦與伺服器連線問題疑難排解。  
 
 
@@ -383,7 +383,7 @@ ms.locfileid: "79322120"
 -   [備份如何與睡眠和睡眠模式搭配運作](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Sleep)  
 
 
-###  <a name="BKMK_9"></a>將電腦連線到伺服器  
+###  <a name="connect-computers-to-the-server"></a><a name="BKMK_9"></a>將電腦連線到伺服器  
  當您將電腦連線到執行 Windows Server Essentials 或 Windows Server 2012 R2 且已安裝 Windows Server Essentials 體驗角色的伺服器時，請確定您的用戶端電腦具有有效的網際網路連接。  
 
  請在所有用戶端電腦上完成以下程序，以將這些電腦連線到您的伺服器。  
@@ -423,7 +423,7 @@ ms.locfileid: "79322120"
 
 5.  在檔案下載安全性警告訊息中，按一下 **[執行]** 。  
 
-6.  如果出現 [使用者帳戶控制] 訊息，按一下 [是]，或在出現提示時輸入本機使用者名稱及密碼。  
+6.  如果出現 [使用者帳戶控制] 訊息，按一下 [是] ，或在出現提示時輸入本機使用者名稱及密碼。  
 
 7.  [將電腦連線到伺服器精靈] 就會出現。 執行下列作業來完成精靈：  
 
@@ -452,11 +452,11 @@ ms.locfileid: "79322120"
 
     -   如果您的電腦執行的是 Windows 8、Windows 8.1 或 Windows 10，儀表板和連接器 TrayApp 將可作為應用程式進行搜尋。  
 
-    -   從 [連線程式] 系統匣應用程式，您可以啟用或停用 [維持遠端連線]功能。 您也可以按兩下系統匣應用程式來啟動 [啟動列]。 從 [啟動列]，您可以存取 [共用資料夾] 捷徑、設定電腦備份、處理警示，以及開啟「遠端 Web 存取」網站。  
+    -   從 [連線程式] 系統匣應用程式，您可以啟用或停用 [維持遠端連線] 功能。 您也可以按兩下系統匣應用程式來啟動 [啟動列]。 從 [啟動列]，您可以存取 [共用資料夾] 捷徑、設定電腦備份、處理警示，以及開啟「遠端 Web 存取」網站。  
 
     -   從 [儀表板] 連結，您可以管理您的伺服器。  
 
-###  <a name="BKMK_10"></a>將電腦連線到 Windows Server Essentials 伺服器而不加入網域  
+###  <a name="connect-computers-to-a-windows-server-essentials-server-without-joining-the-domain"></a><a name="BKMK_10"></a>將電腦連線到 Windows Server Essentials 伺服器而不加入網域  
  本主題說明如何將 Windows 7、Windows 8、Windows 8.1 或 Windows 10 電腦新增至 Windows Server Essentials 網路，而不需要在內部部署用戶端部署中將電腦加入 Windows Server Essentials 網域。 Windows Server Essentials 和 Windows Server Essentials 支援此連接方法。  
 
  這是需要將電腦加入 Windows Server Essentials 網域之一般方法的替代方法。 使用該方法時，如果電腦位於另一個網域中，就必須先將它從該網域中移除，才能將它加入 Windows Server Essentials 網域中。  
@@ -505,7 +505,7 @@ ms.locfileid: "79322120"
 
     -   在 Windows 10 中，按一下 **開始** 按鈕，選取 **所有應用程式** -> **Windows 系統工具** -> **命令提示**字元，以滑鼠右鍵按一下 命令提示字元，然後按一下 以**系統管理員身分執行**  
 
-    -   在 Windows 8 的 [**開始**] 頁面上，輸入**command** ，然後按 enter。 在結果中，於 [命令提示字元] 上按一下滑鼠右鍵，然後按一下 [以系統管理員身分執行]。  
+    -   在 Windows 8 的 [**開始**] 頁面上，輸入**command** ，然後按 enter。 在結果中，於 [命令提示字元]上按一下滑鼠右鍵，然後按一下 [以系統管理員身分執行]。  
 
     -   在 Windows 7 的 [**開始**] 功能表上，于搜尋方塊中輸入**command** ，在 [**命令提示**字元] 上按一下滑鼠右鍵，然後按一下 [以**系統管理員身分執行**]。  
 
@@ -519,7 +519,7 @@ ms.locfileid: "79322120"
 4.  完成[將電腦連線到伺服器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)中的步驟。  
 
 
-####  <a name="BKMK_SecondServer"></a>將第二部伺服器加入網路  
+####  <a name="join-a-second-server-to-the-network"></a><a name="BKMK_SecondServer"></a>將第二部伺服器加入網路  
 
 ###### <a name="to-join-a-second-server-to-the-network"></a>將第二部伺服器加入網路  
 
@@ -581,7 +581,7 @@ ms.locfileid: "79322120"
 
 - 第二部伺服器的群組原則狀態會顯示為 [**不適用**]。  
 
-###  <a name="BKMK_11"></a>安裝連接器軟體  
+###  <a name="install-the-connector-software"></a><a name="BKMK_11"></a>安裝連接器軟體  
  當您使用 [將電腦連線到伺服器精靈] 將您的電腦連線到伺服器時，就會安裝 Windows Server Essentials 中的連線程式軟體。 您可以在網頁瀏覽器的網址列中輸入 HTTP：/ **/< ServerName\>/connect** （其中 *< ServerName\>* 是您的伺服器名稱），來啟動此嚮導。  
 
 > [!NOTE]
@@ -601,17 +601,17 @@ ms.locfileid: "79322120"
  如需有關將您的電腦連線到 Windows Server Essentials 伺服器的逐步指示，請參閱[將電腦連線到伺服器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。   
 
 
-###  <a name="BKMK_12"></a>手動移動電腦資料和設定  
+###  <a name="move-computer-data-and-settings-manually"></a><a name="BKMK_12"></a>手動移動電腦資料和設定  
   Windows Server Essentials 和 Windows Server Essentials 僅支援執行 Windows 7 作業系統的用戶端電腦上的使用者設定檔遷移。 當您將 Windows 7 型電腦連線到伺服器時，[將電腦連線到伺服器精靈] 可以自動移轉使用者設定檔。  
 
  將 Windows 8、Windows 8.1 或 Windows 10 電腦連接到伺服器時，無法自動傳輸使用者設定檔。 不過，在 Windows 8 電腦上，您可以使用「Windows 輕鬆傳輸」將原始本機使用者的資料和設定傳輸到已加入網域的電腦。 若要這樣做，您必須同時是 Windows 8 來源電腦和 Windows 8 目的電腦上的系統管理員。 如需使用「Windows 輕鬆傳輸」來傳輸檔案和設定的相關資訊，請參閱 Microsoft 知識庫中的 [文章 2735227](https://support.microsoft.com/kb/2735227) 。  
 
-###  <a name="BKMK_Transfer"></a>在電腦部署期間傳輸多個使用者設定檔  
+###  <a name="transfer-multiple-user-profiles-during-computer-deployment"></a><a name="BKMK_Transfer"></a>在電腦部署期間傳輸多個使用者設定檔  
  若要傳輸多個本機使用者設定檔，在您將執行 Windows 7 或 Windows 7 SP1 作業系統的電腦連線到 Windows Server Essentials 伺服器之前，必須先在伺服器上建立對應的網路使用者帳戶。 如需有關建立網路使用者帳戶的詳細資訊，請參閱[新增使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。  
 
  只有執行 Windows 7 （適用于 Windows Server Essentials）或 Windows 7 SP1 （適用于 Windows Server Essentials）的電腦才支援使用者設定檔遷移。 當您使用 [將您的電腦連線到伺服器精靈] 將電腦連線到 Windows Server Essentials 伺服器時，會提供您將舊使用者本機帳戶的使用者資料和設定移到新網路使用者帳戶的選項。 若要這樣做，請在精靈的 [移動現有的使用者資料和設定] 頁面上，將網路使用者帳戶對應到存在於電腦上的本機使用者帳戶，以傳輸位於用戶端電腦上的多個使用者設定檔。  
 
-###  <a name="BKMK_13"></a>卸載連接器軟體  
+###  <a name="uninstall-the-connector-software"></a><a name="BKMK_13"></a>卸載連接器軟體  
  您可以使用 [控制台] 將連線程式軟體從電腦中解除安裝。 通常是在連線程式軟體發生問題，或需要安裝新版的連線程式軟體時，您才會這樣做。 您必須以系統管理員身分登入電腦，才能完成這個程序。  
 
 > [!IMPORTANT]
@@ -638,7 +638,7 @@ ms.locfileid: "79322120"
 > -   將連線程式軟體解除安裝並不會讓電腦退出原始網域。 您必須手動將電腦退出網域。 如需相關指示，請參閱[將電腦從 Windows 網域中移除](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。  
 
 
-###  <a name="BKMK_14"></a>中斷電腦的連線，或將電腦重新連線到伺服器  
+###  <a name="disconnect-your-computer-from-or-reconnect-your-computer-to-the-server"></a><a name="BKMK_14"></a>中斷電腦的連線，或將電腦重新連線到伺服器  
  若要將電腦與伺服器中斷連線，您必須完成下列步驟：  
 
 
@@ -658,10 +658,10 @@ ms.locfileid: "79322120"
 
 6. 使用 [Connect Computer 精靈] 將電腦連線到伺服器。 如需逐步指示，請參閱[將電腦連線到伺服器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
-###  <a name="BKMK_Sleep"></a>備份如何與睡眠和睡眠模式搭配運作  
+###  <a name="how-backup-works-with-sleep-and-hibernate-modes"></a><a name="BKMK_Sleep"></a>備份如何與睡眠和睡眠模式搭配運作  
  如果您在將電腦連線到伺服器時選取 [喚醒這台電腦以進行備份] 選項，電腦將會依據備份排程中所指定，每天自動從睡眠或休眠模式喚醒以供進行備份。 備份完成之後，電腦會依據其電源管理設定，回到睡眠或休眠模式。 如果您沒有選取這個選項，當電腦處於睡眠或休眠狀態時，伺服器將不會備份電腦。 如需詳細資訊，請參閱[管理用戶端備份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。  
 
-##  <a name="BKMK_C"></a>使用啟動列  
+##  <a name="use-the-launchpad"></a><a name="BKMK_C"></a>使用啟動列  
  您可以使用 [啟動列] 從 Windows Server Essentials 伺服器存取共用資源、執行電腦備份，以及回應系統健康情況警示。  
 
 -   [啟動列總覽](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  

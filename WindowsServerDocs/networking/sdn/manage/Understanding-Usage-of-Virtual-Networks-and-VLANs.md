@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84ac2458-3fcf-4c4f-acfe-6105443dd83f
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/26/2018
-ms.openlocfilehash: 854adf0e7bb2a8715e3d447c04e2f09c3470a781
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1faf0112953146959ce2ec587c083c9ae9fed9c5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355829"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317617"
 ---
 # <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>瞭解虛擬網路和 Vlan 的使用方式
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，您將瞭解 Hyper-v 網路虛擬化虛擬網路，以及它們與虛擬區域網路（Vlan）的差異。 使用 Hyper-v 網路虛擬化時，您會建立重迭虛擬網路，也稱為虛擬網路。
 

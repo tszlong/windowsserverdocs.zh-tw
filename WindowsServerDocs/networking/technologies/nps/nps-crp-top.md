@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 849d661a-42c1-4f93-b669-6009d52aad39
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 268a307336d9a4fae1be5621eec7c32a06a6204e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 311003201f96c5f566077867b09fee0a325ed011
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405399"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316190"
 ---
 # <a name="connection-request-processing"></a>連線要求處理
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解 Windows Server 2016 中網路原則伺服器的連線要求處理。
 
@@ -29,11 +29,11 @@ ms.locfileid: "71405399"
 
 您可以使用連線要求處理來指定執行連線要求驗證的位置-在本機電腦上，或在屬於遠端 RADIUS 伺服器群組成員的遠端 RADIUS 伺服器上。 
 
-如果您想要讓執行網路原則伺服器（NPS）的本機伺服器針對連線要求進行驗證，可以使用預設連線要求原則，而不需要其他設定。 根據預設原則，NPS 會驗證在本機網域和受信任網域中具有帳戶的使用者和電腦。
+如果您想要讓執行網路原則伺服器（NPS）的本機伺服器針對連線要求進行驗證，可以使用預設連線要求原則，而不需要其他設定。 根據預設原則，NPS 會驗證擁有本機網域與受信任網域之帳戶的使用者與電腦。
 
-如果您想要將連線要求轉送到遠端 NPS 或其他 RADIUS 伺服器，請建立遠端 RADIUS 伺服器群組，然後設定連線要求原則，將要求轉送到該遠端 RADIUS 伺服器群組。 使用此設定時，NPS 可以將驗證要求轉寄到任何 RADIUS 伺服器，而且具有不受信任網域中帳戶的使用者可以進行驗證。
+如果您想要將連線要求轉送到遠端 NPS 或其他 RADIUS 伺服器，請建立遠端 RADIUS 伺服器群組，然後設定連線要求原則，將要求轉送到該遠端 RADIUS 伺服器群組。 透過此設定，NPS 便可以將驗證要求轉送到任何 RADIUS 伺服器，而且可以驗證擁有不受信任網域中之帳戶的使用者。
 
-下圖顯示從網路存取伺服器到 RADIUS proxy 的存取要求訊息的路徑，再到遠端 RADIUS 伺服器群組中的 RADIUS 伺服器。 在 RADIUS proxy 上，網路存取伺服器會設定為 RADIUS 用戶端;而在每個 RADIUS 伺服器上，RADIUS proxy 會設定為 RADIUS 用戶端。
+以下圖例顯示 Access-Request 訊息的路徑，路徑是從網路存取伺服器到 RADIUS Proxy，再到遠端 RADIUS 伺服器群組的 RADIUS 伺服器。 在 RADIUS Proxy 上，是將網路存取伺服器設定為 RADIUS 用戶端；而在每個 RADIUS 伺服器上，則是將 RADIUS Proxy 設定為 RADIUS 用戶端。
 
 
 ![NPS 連接要求處理](../../media/Nps-Connection-Request-Processing/Nps-Connection-Request-Processing.jpg)
@@ -42,7 +42,7 @@ ms.locfileid: "71405399"
 >[!NOTE]
 >您搭配 NPS 使用的網路存取伺服器可以是與 RADIUS 通訊協定相容的閘道裝置，例如 802.1 X 無線存取點和驗證交換器、執行設定為 VPN 或撥號伺服器之遠端存取的伺服器，或其他與 RADIUS 相容的裝置。
 
-如果您想要 NPS 在本機處理某些驗證要求，同時將其他要求轉送到遠端 RADIUS 伺服器群組，請設定一個以上的連線要求原則。
+如果要讓 NPS 在本機處理某些驗證要求，而將其他要求轉送到遠端 RADIUS 伺服器群組，請設定一個以上的連線要求原則。
 
 若要設定連線要求原則來指定要處理驗證要求的 NPS 或 RADIUS 伺服器群組，請參閱連線要求原則。
 
@@ -60,9 +60,9 @@ ms.locfileid: "71405399"
 
 4. 如有需要，NPS 會將「存取挑戰」訊息傳送至存取伺服器。 存取伺服器會處理挑戰，並將更新的存取要求傳送到 NPS。 
 
-5. 系統會檢查使用者認證，並使用網域控制站的安全連線來取得使用者帳戶的撥入屬性。 
+5. 檢查使用者認證以及取得使用者帳戶的撥入內容時，是透過連到網域控制站的安全連線。 
 
-6. 連線嘗試會使用使用者帳戶的撥入內容和網路原則進行授權。 
+6. 授權連線嘗試時，是同時透過使用者帳戶的撥入內容以及網路原則。 
 
 7. 如果連線嘗試已通過驗證和授權，NPS 就會傳送接受存取訊息給存取伺服器。 如果連線嘗試未通過驗證或未獲授權，NPS 會將拒絕存取訊息傳送至存取伺服器。 
 
@@ -71,30 +71,30 @@ ms.locfileid: "71405399"
 9. NPS 會將帳戶處理回應傳送到存取伺服器。 
 
 >[!NOTE]
->存取伺服器也會在建立連線的時間、存取用戶端連線關閉時，以及啟動和停止存取伺服器時，傳送帳戶處理要求訊息。
+>當存取用戶端連線關閉時，以及當存取伺服器啟動和停止時，存取伺服器也會在建立連線期間傳送 Accounting-Request 訊息。
 
 ## <a name="nps-as-a-radius-proxy-connection-request-processing"></a>NPS 做為 RADIUS proxy 連線要求處理
 
-當 NPS 做為 RADIUS 用戶端與 RADIUS 伺服器之間的 RADIUS proxy 使用時，網路存取連線嘗試的 RADIUS 訊息會以下列方式轉送：
+當 NPS 做為 RADIUS 用戶端與 RADIUS 伺服器之間的 RADIUS Proxy 時，網路存取連線嘗試的 RADIUS 訊息會以下列方式轉寄：
 
-1. 存取伺服器，例如撥號網路存取伺服器、虛擬私人網路（VPN）伺服器以及無線存取點，都會從存取用戶端接收連線要求。
+1. 存取伺服器，例如撥號網路存取伺服器、虛擬私人網路 (VPN) 伺服器以及無線存取點，都會從存取用戶端接收連線要求。
 
 2. 設定為使用 RADIUS 做為驗證、授權和帳戶處理通訊協定的存取伺服器，會建立存取要求訊息，並將它傳送至做為 NPS RADIUS proxy 使用的 NPS。
 
-3. NPS RADIUS proxy 會接收存取要求訊息，而且根據本機設定的連線要求原則，會決定要轉送存取要求訊息的位置。
+3. NPS RADIUS Proxy 接收 Access-Request 訊息，並根據本機設定的連線要求原則，判斷將 Access-Request 訊息轉寄到何處。
 
-4. NPS RADIUS proxy 會將存取要求訊息轉送至適當的 RADIUS 伺服器。
+4. NPS RADIUS Proxy 將 Access-Request 訊息轉寄到適當的 RADIUS 伺服器。
 
-5. RADIUS 伺服器會評估要求存取訊息。
+5. RADIUS 伺服器評估 Access-Request 訊息。
 
-6. 如有需要，RADIUS 伺服器會將「存取挑戰」訊息傳送到 NPS RADIUS proxy，以轉送到存取伺服器。 存取伺服器會使用存取用戶端來處理挑戰，並將更新的存取要求傳送到 NPS RADIUS proxy，並將其轉送到 RADIUS 伺服器。
+6. 必要時，RADIUS 伺服器將 Access-Challenge 訊息傳送到 NPS RADIUS Proxy，在此將它轉寄到存取伺服器。 存取伺服器處理與存取用戶端的挑戰，並將更新的 Access-Request 傳送到 NPS RADIUS Proxy，在此將它轉寄到 RADIUS 伺服器。
 
-7. RADIUS 伺服器會驗證並授權連接嘗試。
+7. RADIUS 伺服器驗證並授權連線嘗試。
 
-8. 如果連線嘗試已通過驗證並獲得授權，則 RADIUS 伺服器會傳送接受存取訊息到 NPS RADIUS proxy，以轉送到存取伺服器。 如果連線嘗試未通過驗證或未獲授權，RADIUS 伺服器就會將拒絕存取訊息傳送到 NPS RADIUS proxy，以轉送到存取伺服器。
+8. 如果同時驗證和授權連線嘗試，RADIUS 伺服器會將 Access-Challenge 訊息傳送到 NPS RADIUS Proxy，在此將它轉寄到存取伺服器。 如果既未驗證也未授權連線嘗試，RADIUS 伺服器會將 Access-Reject 訊息傳送到 NPS RADIUS Proxy，在此將它轉寄到存取伺服器。
 
-9. 存取伺服器會完成與存取用戶端的連線程式，並將帳戶處理要求訊息傳送至 NPS RADIUS proxy。 NPS RADIUS proxy 會記錄帳戶處理資料，並將訊息轉送到 RADIUS 伺服器。
+9. 存取伺服器完成與存取用戶端的連線程序，並傳送 Accounting-Request 訊息給 NPS RADIUS Proxy。 NPS RADIUS Proxy 記錄帳戶處理資料，並將訊息轉寄到 RADIUS 伺服器。
 
-10. RADIUS 伺服器會將會計回應傳送到 NPS RADIUS proxy，以轉送到存取伺服器。
+10. RADIUS 伺服器將 Accounting-Response 傳送到 NPS RADIUS Proxy，在此將它轉寄到存取伺服器。
 
 如需 NPS 的詳細資訊，請參閱[網路原則伺服器（NPS）](nps-top.md)。

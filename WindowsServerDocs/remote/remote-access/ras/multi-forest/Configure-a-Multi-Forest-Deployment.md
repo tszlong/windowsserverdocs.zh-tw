@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 68eed3866dc6c6fb02d54bda41c453a9c64c7578
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822681"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314070"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -25,7 +25,7 @@ ms.locfileid: "76822681"
 
 本主題說明如何在數個潛在案例中設定遠端存取多樹系部署。 所有案例均假設 DirectAccess 目前已部署於名為 Forest1 的單一樹系上，而您正在設定 DirectAccess 以便與名為 Forest2 的新樹系一起運作。  
   
-## <a name="AccessForest2"></a>從 Forest2 存取資源  
+## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>從 Forest2 存取資源  
 在這個案例中，DirectAccess 已經部署於 Forest1，而且已設定為允許 Forest1 的用戶端存取公司網路。 根據預設，透過 DirectAccess 連線的用戶端只能存取 Forest1 中的資源，無法存取 Forest2 中的任何伺服器。  
   
 #### <a name="to-enable-directaccess-clients-to-access-resources-from-forest2"></a>讓 DirectAccess 用戶端可以存取 Forest2 的資源  
@@ -34,20 +34,20 @@ ms.locfileid: "76822681"
   
 2.  如果 IPv6 已部署於內部網路中，請在 Forest2 中新增相關的內部 IPv6 首碼。  
   
-## <a name="EnableForest2DA"></a>允許來自 Forest2 的用戶端透過 DirectAccess 連線  
+## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>允許來自 Forest2 的用戶端透過 DirectAccess 連線  
 在這個案例中，您可以設定遠端存取部署，以允許 Forest2 的用戶端存取公司網路。 假設您已針對 Forest2 中的用戶端電腦建立必要的安全性群組。   
   
 #### <a name="to-allow-clients-from-forest2-to-access-the-corporate-network"></a>允許 Forest2 的用戶端存取公司網路  
   
 1.  新增 Forest2 的用戶端的安全性群組。  
   
-2.  如果 Forest2 的 DNS 尾碼不是 Forest1 DNS 尾碼的一部分，請在 Forest2 中新增具有用戶端網域尾碼的 NRPT 規則，以啟用網域控制站的存取權以進行驗證，並選擇性地將 Forest2 中網域的尾碼新增至 DNS suf修正搜尋清單。 
+2.  如果 Forest2 的 DNS 尾碼不是 Forest1 DNS 尾碼的一部分，請在 Forest2 中新增具有用戶端網域尾碼的 NRPT 規則，以啟用網域控制站的存取權以進行驗證，並選擇性地將 Forest2 中網域的尾碼新增至 DNS尾碼搜尋清單。 
   
 3.  在 Forest2 中新增內部 IPv6 首碼，啟用 DirectAccess 來建立網域控制站的 IPsec 通道以進行驗證。  
   
 4.  重新整理管理伺服器清單。  
   
-## <a name="AddEPForest2"></a>新增 Forest2 的進入點  
+## <a name="add-entry-points-from-forest2"></a><a name="AddEPForest2"></a>新增 Forest2 的進入點  
 在這個案例中，DirectAccess 已部署於 Forest1 上的多站台設定中，而您想要從 Forest2 新增名為 DA2 的遠端存取伺服器，以做為現有 DirectAccess 多站台部署的進入點。  
   
 #### <a name="to-add-a-remote-access-server-from-forest2-as-an-entry-point"></a>從 Forest2 新增遠端存取伺服器以做為進入點  
@@ -62,7 +62,7 @@ ms.locfileid: "76822681"
   
 5.  重新整理管理伺服器清單。  
   
-## <a name="OTPMultiForest"></a>在多樹系部署中設定 OTP  
+## <a name="configure-otp-in-a-multi-forest-deployment"></a><a name="OTPMultiForest"></a>在多樹系部署中設定 OTP  
 在多樹系部署中設定 OTP 時，請注意下列術語：  
   
 -   根 CA-樹系主要的 PKI 樹狀結構 CA。  
@@ -76,9 +76,9 @@ ms.locfileid: "76822681"
 PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD CS：適用於跨樹系憑證註冊的 PKISync.ps1 指令碼](https://technet.microsoft.com/library/ff961506.aspx)。  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-### <a name="BKMK_CertPub"></a>將 Ca 設定為憑證發行者  
+### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>將 Ca 設定為憑證發行者  
   
 1.  從提升權限的命令提示字元執行下列命令，在所有樹系的所有企業 CA 中啟用 LDAP 轉介支援：  
   
@@ -127,7 +127,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD
   
     5.  從發行的憑證範本清單移除帳戶樹系 OTP 憑證範本。  
   
-### <a name="BKMK_DelImp"></a>刪除和匯入 OTP 憑證範本  
+### <a name="delete-and-import-otp-certificate-templates"></a><a name="BKMK_DelImp"></a>刪除和匯入 OTP 憑證範本  
   
 1.  從帳戶樹系 (也就是 Forest2) 刪除 OTP 憑證範本。  
   
@@ -139,11 +139,11 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD
     .\PKISync.ps1 -sourceforest <resource forest DNS> -targetforest <account forest DNS> -type Oid -f  
     ```  
   
-### <a name="BKMK_Publish"></a>發佈 OTP 憑證範本  
+### <a name="publish-otp-certificate-templates"></a><a name="BKMK_Publish"></a>發佈 OTP 憑證範本  
   
 -   在所有帳戶樹系 CA 上發行最新匯入的憑證範本。  
   
-### <a name="BKMK_Extract"></a>將 CA 解壓縮並同步處理  
+### <a name="extract-and-synchronize-the-ca"></a><a name="BKMK_Extract"></a>將 CA 解壓縮並同步處理  
   
 1.  從提升權限的命令提示字元執行下列命令，從帳戶樹系擷取所有企業 CA 憑證：  
   
@@ -166,7 +166,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD
 ## <a name="configuration-procedures"></a>設定程序  
 下列各節包含上述案例部署的設定程序。 完成程序之後，請返回案例繼續。  
   
-### <a name="NRPT_DNSSearchSuffix"></a>新增 NRPT 規則與 DNS 尾碼  
+### <a name="add-nrpt-rules-and-dns-suffixes"></a><a name="NRPT_DNSSearchSuffix"></a>新增 NRPT 規則與 DNS 尾碼  
 透過 DirectAccess 連線至公司網路的用戶端會使用名稱解析原則表格 (NRPT)，來判斷應使用哪一部 DNS 伺服器來解析不同資源的位址。 這允許用戶端解析公司資源位址，並協助用戶端維護適當的公司內部/公司外部分類，需要有此分類才能使 DirectAccess 維持運作。 DirectAccess 設定工具會自動偵測 Forest1 的根 DNS 尾碼，並將它新增到 NRPT 表格。 但是，Forest2 的 FQDN 尾碼並不會自動新增到 NRPT 表格，而遠端存取管理員必須手動新增它們。  
   
 DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 FQDN。 遠端存取設定工具會自動將 Forest1 中的所有網域新增到 DNS 尾碼搜尋清單。 如果您想要讓用戶端針對 Forest2 中的資源使用簡短標籤名稱，則需要手動新增它們。  
@@ -177,9 +177,9 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [網路位置伺服器] 頁面上，按 [下一步]。  
   
-3.  在 [DNS] 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址]中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按一下 \[下一步\]。  
+3.  在 [DNS] 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址] 中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按 **[下一步]** 。  
   
-4.  選擇性：在 [DNS 尾碼搜尋清單] 頁面的 [新尾碼] 方塊中輸入尾碼，然後按一下 [新增]來新增任意的 DNS 尾碼。 然後按一下 \[下一步\]。  
+4.  選擇性：在 [DNS 尾碼搜尋清單] 頁面的 [新尾碼] 方塊中輸入尾碼，然後按一下 [新增] 來新增任意的 DNS 尾碼。 然後按 **[下一步]** 。  
   
 5.  在 [管理] 頁面上，按一下 [完成]。  
   
@@ -189,7 +189,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 8.  在 [套用遠端存取安裝精靈設定] 對話方塊上，按一下 [關閉]。  
   
-### <a name="IPv6Prefix"></a>新增內部 IPv6 首碼  
+### <a name="add-internal-ipv6-prefix"></a><a name="IPv6Prefix"></a>新增內部 IPv6 首碼  
   
 > [!NOTE]  
 > 只有在 IPv6 已部署於內部網路時，新增內部 IPv6 首碼才會有相關性。  
@@ -202,7 +202,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [遠端存取伺服器安裝精靈] 中，按一下 [首碼設定]。  
   
-3.  在 [首碼設定] 頁面的 [內部網路 IPv6 首碼]中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按一下 \[下一步\]。  
+3.  在 [首碼設定] 頁面的 [內部網路 IPv6 首碼] 中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按 **[下一步]** 。  
   
 4.  在 [驗證] 頁面上，按一下 [完成]。  
   
@@ -212,7 +212,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 7.  在 [套用遠端存取安裝精靈設定] 對話方塊上，按一下 [關閉]。  
   
-### <a name="SGs"></a>新增用戶端安全性群組  
+### <a name="add-client-security-groups"></a><a name="SGs"></a>新增用戶端安全性群組  
 若要從 Forest2 啟用 Windows 8 用戶端電腦以透過 DirectAccess 存取資源，您必須將安全性群組從 Forest2 新增到遠端存取部署。  
   
 ##### <a name="to-add-windows-8-client-security-groups"></a>新增 Windows 8 用戶端安全性群組  
@@ -221,7 +221,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 2.  在 [DirectAccess 用戶端安裝精靈] 中，按一下 [選取群組]，然後在 [選取群組] 頁面上按一下 [新增]。  
   
-3.  在 [選取群組] 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。 然後按一下 \[下一步\]。  
+3.  在 [選取群組] 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。 然後按 **[下一步]** 。  
   
 4.  在 [網路連線助理] 頁面上，按一下 [完成]。  
   
@@ -233,7 +233,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 若要從 Forest2 啟用 Windows 7 用戶端電腦，以便在啟用多網站時透過 DirectAccess 存取資源，您必須將安全性群組從 Forest2 新增至每個進入點的遠端存取部署。 如需新增 Windows 7 安全性群組的相關資訊，請參閱3.6 中**用戶端支援**頁面的說明。 啟用多網站部署。  
   
-### <a name="RefreshMgmtServers"></a>重新整理管理伺服器清單  
+### <a name="refresh-the-management-servers-list"></a><a name="RefreshMgmtServers"></a>重新整理管理伺服器清單  
 遠端存取會自動探索所有包含 DirectAccess 設定 GPO 之樹系中的基礎結構伺服器。 如果已將 DirectAccess 部署於 Forest1 的伺服器上，則會將伺服器 GPO 寫入它在 Forest1 中的網域。 如果您針對 Forest2 的用戶端啟用 DirectAccess 存取，則會將用戶端 GPO 寫入 Forest2 中的網域。  
   
 需要基礎結構伺服器的自動探索程式，才能允許透過 DirectAccess 存取網域控制站和 Microsoft 端點 Configuration Manager。 您必須手動啟動探索程序。  

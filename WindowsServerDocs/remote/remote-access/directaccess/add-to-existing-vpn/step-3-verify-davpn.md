@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 43ac612e-2e77-418c-8171-ebb2086b7cb6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 82acca0309835149ca35676784120b3130e72a54
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3967f50a354ee6ed31273734f2449d6d337d9b50
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388702"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314719"
 ---
 # <a name="step-3-verify-the-deployment"></a>步驟3驗證部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何確認您已正確設定您的 DirectAccess 部署。  
   

@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: e753c56b-8902-4610-9c53-381e77bf29ab
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c254a6f19d07f1c6b3197b46e208b7c837c8236c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b41cc5151d24574bba254c01e26fb153a3dc3f9c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356552"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319219"
 ---
 # <a name="install-and-configure-content-servers"></a>安裝和設定內容伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 當您以分散式快取模式或託管快取模式部署 BranchCache 時，您必須在總公司或雲端中部署一或多個內容伺服器。 網頁伺服器或應用程式伺服器的內容伺服器會使用 BranchCache 功能。 屬於檔案伺服器的內容伺服器會使用 Windows Server 2016 中檔案服務伺服器角色的 [網路檔案的 BranchCache] 角色服務。  
   

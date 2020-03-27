@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 7e79c66a-8555-4d8e-8691-d6c37377aab4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fe206576278b09e4a360c7bb27f5ff076af97be7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f47fbb5c10828d16a18b5cf486e620b3ace458c7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356251"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318455"
 ---
 # <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>在託管快取伺服器上預先雜湊並預先載入內容 \(選擇性\)
 

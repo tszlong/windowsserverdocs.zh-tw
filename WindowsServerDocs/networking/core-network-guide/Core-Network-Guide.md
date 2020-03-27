@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cae789974c3f2b4f83c9120558d77dbe27f4190a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356408"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319148"
 ---
 # <a name="core-network-components"></a>核心網路元件
 
@@ -38,7 +38,7 @@ ms.locfileid: "71356408"
 
 - [附錄 A 到 E](#BKMK_appendix)
 
-## <a name="BKMK_about"></a>關於本指南
+## <a name="about-this-guide"></a><a name="BKMK_about"></a>關於本指南
 本指南是針對網路與系統管理員所設計，他們安裝新網路或建立網域型網路，取代含有工作群組的網路。 如果您預期未來有新增更多服務與功能至網路的需求，則本指南提供的部署案例特別有用。
 
 建議您檢閱此部署案例中所用每個技術的設計和部署指南，以協助您判斷此指南是否提供您需要的服務與設定。
@@ -77,7 +77,7 @@ Windows Server 核心網路提供許多好處，包括下列各項。
 
 -   其他網路資源，例如印表機及檔案伺服器
 
--   網際網路連線
+-   網際網路連線能力
 
 -   遠端存取
 
@@ -91,14 +91,14 @@ Windows Server 核心網路提供許多好處，包括下列各項。
 ## <a name="technology-overviews"></a>技術概觀
 下列幾節提供為建立核心網路所部署之必要技術的簡短概觀。
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services
+### <a name="active-directory-domain-services"></a>Active Directory 網域服務
 目錄是階層結構，可以儲存網路上物件的相關資訊，例如，使用者和電腦。 目錄服務（例如 AD DS）提供儲存目錄資料的方法，並讓網路使用者和系統管理員可以使用此資料。 例如，AD DS 會儲存使用者帳戶的相關資訊，包括名稱、電子郵件地址、密碼和電話號碼，並可讓相同網路上的其他授權使用者存取此資訊。
 
 ### <a name="dns"></a>DNS
 DNS 是 TCP/IP 網路 (例如網際網路或組織網路) 的名稱解析通訊協定。 DNS 伺服器所裝載的資訊可讓用戶端電腦和服務將容易辨識的英數 DNS 名稱解析為電腦之間互相通訊所使用的 IP 位址。
 
 ### <a name="dhcp"></a>DHCP
-DHCP 是簡化主機 IP 設定管理的 IP 標準。 DHCP 標準提供使用 DHCP 伺服器做為管理動態 IP 位址配置的方法，以及網路上啟用 DHCP 的用戶端的其他相關設定詳細資料。
+DHCP 是簡化主機 IP 設定管理的 IP 標準。 DHCP 標準可讓 DHCP 伺服器在網路上管理已啟用 DHCP 的用戶端 IP 位址動態配置和其他設定詳細資料。
 
 DHCP 可讓您使用 DHCP 伺服器，以動態方式將 IP 位址指派給區域網路上的電腦或其他裝置 (例如印表機)。 TCP/IP 網路上的每部電腦都必須擁有唯一的 IP 位址，因為 IP 位址及其相關的子網路遮罩會識別主機電腦和電腦所連線的子網路。 藉由使用 DHCP，您可以確定已設定為 DHCP 用戶端的所有電腦都會收到適合其網路位置和子網路的 IP 位址，而且藉由使用 DHCP 選項 (例如，預設閘道和 DNS 伺服器)，您可以自動為 DHCP 用戶端提供它們在您網路上正常運作所需的資訊。
 
@@ -119,7 +119,7 @@ Windows Server 2016 中的 TCP/IP 如下所示：
 
 TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Microsoft 及非 Microsoft 系統連線和共用資訊，其中包括：
 
--    Windows Server 2016
+-    Windows Server 2016
 
 -   Windows 10
 
@@ -153,7 +153,7 @@ TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Micr
 
 -   啟用有線乙太網路或無線802.11 技術的平板電腦和行動電話通訊電話
 
-## <a name="BKMK_overview"></a>核心網路總覽
+## <a name="core-network-overview"></a><a name="BKMK_overview"></a>核心網路總覽
 下圖顯示 Windows Server 核心網路拓撲。
 
 ![Windows Server 核心網路拓撲](../media/Core-Network-Guide/cng16_overview.jpg)
@@ -179,7 +179,7 @@ DHCP 伺服器 (名為 DHCP1) 已設定為有一個領域，此領域提供網�
 ##### <a name="client-computers"></a>用戶端電腦
 預設會將執行 Windows 用戶端作業系統的電腦設定為 DHCP 用戶端，以自動從 DHCP 伺服器取得 IP 位址和 DHCP 選項。
 
-## <a name="BKMK_planning"></a>核心網路規劃
+## <a name="core-network-planning"></a><a name="BKMK_planning"></a>核心網路規劃
 在部署核心網路之前，您必須規劃下列項目。
 
 -   [規劃子網](#bkmk_NetFndtn_Pln_Subnt)
@@ -197,7 +197,7 @@ DHCP 伺服器 (名為 DHCP1) 已設定為有一個領域，此領域提供網�
 > [!NOTE]
 > 如需規劃部署的協助，另請參閱[附錄 E-核心網路規劃準備工作表](#BKMK_E)。
 
-### <a name="bkmk_NetFndtn_Pln_Subnt"></a>規劃子網
+### <a name="planning-subnets"></a><a name="bkmk_NetFndtn_Pln_Subnt"></a>規劃子網
 在傳輸控制通訊協定/網際網路通訊協定 (TCP/IP) 網路中，路由器是用來相互連接用於不同實體網路區段的硬體和軟體，這些網路區段稱為子網路。 路由器也可以用來在每個子網路之間轉寄 IP 封包。 在繼續本指南的說明之前，先確定網路的實體配置，包括您需要的路由器與子網路數目。
 
 此外，若要使用靜態 IP 位址來設定網路的伺服器，必須確定您要用於核心網路伺服器所在之子網路的 IP 位址範圍。 在本指南中，會使用10.0.0.254 和10.0.1.1 的私人 IP 位址範圍做為範例，但您可以使用您偏好的任何私人 IP 位址範圍。
@@ -220,7 +220,7 @@ DHCP 伺服器 (名為 DHCP1) 已設定為有一個領域，此領域提供網�
 
 如需詳細資訊，請參閱[規劃 DHCP1 的部署](#bkmk_NetFndtn_Pln_DHCP-01)。
 
-### <a name="bkmk_NetFndtn_Pln_AllSrvrs"></a>規劃所有伺服器的基本設定
+### <a name="planning-basic-configuration-of-all-servers"></a><a name="bkmk_NetFndtn_Pln_AllSrvrs"></a>規劃所有伺服器的基本設定
 針對核心網路中的每部伺服器，您必須將電腦重新命名，並為該電腦指派和設定靜態 IPv4 位址及其他 TCP/IP 內容。
 
 #### <a name="planning-naming-conventions-for-computers-and-devices"></a>規劃電腦與裝置的命名慣例
@@ -241,7 +241,7 @@ DHCP 伺服器 (名為 DHCP1) 已設定為有一個領域，此領域提供網�
 
 下表提供靜態 IP 位址設定的範例值。
 
-|設定項目|範例值|
+|組態項目|範例值|
 |-----------------------|------------------|
 |IP 位址|10.0.0.2|
 |子網路遮罩|255.255.255.0|
@@ -251,7 +251,7 @@ DHCP 伺服器 (名為 DHCP1) 已設定為有一個領域，此領域提供網�
 > [!NOTE]
 > 如果您規劃部署一部以上的 DNS 伺服器，也可以規劃其他 DNS 伺服器 IP 位址。
 
-### <a name="bkmk_NetFndtn_Pln_AD-DNS-01"></a>規劃 DC1 的部署
+### <a name="planning-the-deployment-of-dc1"></a><a name="bkmk_NetFndtn_Pln_AD-DNS-01"></a>規劃 DC1 的部署
 以下是在 DC1 上安裝 Active Directory Domain Services （AD DS）和 DNS 之前的主要規劃步驟。
 
 #### <a name="planning-the-name-of-the-forest-root-domain"></a>規劃樹系根網域的名稱
@@ -308,7 +308,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 |第二個反向對應區域名稱精靈頁面|網路識別碼 = 10.0.0。|
 |動態更新|**只允許安全的動態更新**|
 
-### <a name="bkmk_NetFndtn_Pln_DomAccess"></a>規劃網域存取
+### <a name="planning-domain-access"></a><a name="bkmk_NetFndtn_Pln_DomAccess"></a>規劃網域存取
 若要登入網域，電腦必須是網域成員電腦，而且必須在登入嘗試之前 AD DS 中建立使用者帳戶。
 
 > [!NOTE]
@@ -324,7 +324,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 
 -   將電腦加入網域。 提供或存取網路資源的任何電腦都必須加入網域。 如需詳細資訊，請參閱[將伺服器電腦加入網域並登入](#BKMK_joinlogserver)和[將用戶端電腦加入網域並登入](#BKMK_joinlogclients)。
 
-### <a name="bkmk_NetFndtn_Pln_DHCP-01"></a>規劃 DHCP1 的部署
+### <a name="planning-the-deployment-of-dhcp1"></a><a name="bkmk_NetFndtn_Pln_DHCP-01"></a>規劃 DHCP1 的部署
 下面是在 DHCP1 上安裝 DHCP 伺服器角色之前的主要規劃步驟。
 
 #### <a name="planning-dhcp-servers-and-dhcp-forwarding"></a>規劃 DHCP 伺服器與 DHCP 轉寄
@@ -341,15 +341,15 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 
 領域是一組電腦的 IP 位址，具有管理性質，位於使用 DHCP 服務的子網路上。 系統管理員首先為每個實體子網路建立一個領域，然後使用領域來定義用戶端所使用的參數。
 
-領域具有下列內容：
+領域有下列屬性：
 
--   IP 位址範圍，從此範圍包括或排除用於 DHCP 服務租用提供的位址。
+-   IP 位址範圍，從此範圍包括或排除用於 DHCP 服務租用供應項目的位址。
 
 -   子網路遮罩，決定指定 IP 位址的子網路首碼。
 
--   建立領域時指派的領域名稱。
+-   建立時指派的領域名稱。
 
--   租用期間值，指派給 DHCP 用戶端，接收動態配置的 IP 位址。
+-   租用期間值，指派給接收動態配置之 IP 位址的 DHCP 用戶端。
 
 -   為指派給 DHCP 用戶端所設定的任何 DHCP 領域選項，例如，DNS 伺服器 IP 位址以及路由器/預設閘道 IP 位址。
 
@@ -393,7 +393,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 
 建議您使用額外的位址來設定排除範圍，以因應未來的網路成長。 下表提供範圍的範例排除範圍，IP 位址範圍為 10.0.0.1-10.0.0.254，子網路遮罩為255.255.255.0。
 
-|設定項目|範例值|
+|組態項目|範例值|
 |-----------------------|------------------|
 |排除範圍起始 IP 位址|10.0.0.1|
 |排除範圍結束 IP 位址|10.0.0.25|
@@ -407,15 +407,15 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 
 下表提供 AD DS 和 DNS 的其他設定專案範例。
 
-|設定項目|範例值|
+|組態項目|範例值|
 |-----------------------|------------------|
-|網路連線繫結|Ethernet|
+|網路連線繫結|乙太網路|
 |DNS 伺服器設定|DC1.corp.contoso.com|
 |慣用 DNS 伺服器 IP 位址|10.0.0.2|
 |[新增領域] 對話方塊值<br /><br />1. 範圍名稱<br />2. 起始 IP 位址<br />3. 結束 IP 位址<br />4. 子網路遮罩<br />5. 預設閘道（選擇性）<br />6. 租用期間|1. 主要子網<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6. 8 天|
 |IPv6 DHCP 伺服器操作模式|未啟用|
 
-## <a name="BKMK_deployment"></a>核心網路部署
+## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>核心網路部署
 若要部署核心網路，其基本步驟如下：
 
 1.  [設定所有伺服器](#BKMK_configuringAll)
@@ -434,7 +434,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 > -   本指南中的大部分程序都會有同等的 Windows PowerShell 命令。 在 Windows PowerShell 中執行這些 Cmdlet 之前，請以您網路部署適用的值取代範例值。 此外，您必須在 Windows PowerShell 中以單行方式輸入每個 Cmdlet。 在本指南中，個別的 Cmdlet 可能會因為格式化的限制和透過瀏覽器或其他應用程式顯示文件的關係，而出現在數行中。
 > -   本指南的程序不包含開啟 [使用者帳戶控制] 對話方塊來要求權限以繼續執行的說明。 如果執行本指南的程序時此對話方塊開啟，或此對話方塊因回應您的動作而開啟，請按一下 [繼續]。
 
-### <a name="BKMK_configuringAll"></a>設定所有伺服器
+### <a name="configuring-all-servers"></a><a name="BKMK_configuringAll"></a>設定所有伺服器
 在安裝其他技術 (例如 Active Directory 網域服務或 DHCP) 之前，重點是要設定下列項目。
 
 -   [重新命名電腦](#BKMK_rename)
@@ -445,7 +445,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 
 若要執行這些程序，至少需要 **Administrators** 的成員資格或同等權限。
 
-#### <a name="BKMK_rename"></a>重新命名電腦
+#### <a name="rename-the-computer"></a><a name="BKMK_rename"></a>重新命名電腦
 您可以使用本節中的程式來變更電腦的名稱。 當作業系統已自動建立您不想使用的電腦名稱時，將電腦重新命名就很有用。
 
 > [!NOTE]
@@ -468,7 +468,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 > [!NOTE]
 > 如需有關如何重新命名執行其他 Microsoft 作業系統之電腦的詳細資訊，請參閱[附錄 A-重新命名電腦](#BKMK_A)。
 
-#### <a name="BKMK_ip"></a>設定靜態 IP 位址
+#### <a name="configure-a-static-ip-address"></a><a name="BKMK_ip"></a>設定靜態 IP 位址
 您可以使用本主題中的程式，針對執行 Windows Server 2016 的電腦，使用靜態 IP 位址來設定網路連線的網際網路通訊協定第4版（IPv4）內容。
 
 > [!NOTE]
@@ -506,7 +506,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 > [!NOTE]
 > 如需如何在執行其他 Microsoft 作業系統的電腦上設定靜態 IP 位址的相關資訊，請參閱[附錄 B-設定靜態 ip 位址](#BKMK_B)。
 
-#### <a name="BKMK_deployADDNS01"></a>部署 DC1
+#### <a name="deploying-dc1"></a><a name="BKMK_deployADDNS01"></a>部署 DC1
 若要部署 DC1 （也就是執行 Active Directory Domain Services （AD DS）和 DNS 的電腦），您必須依照下列順序完成這些步驟：
 
 -   執行[設定所有伺服器](#BKMK_configuringAll)一節中的步驟。
@@ -535,7 +535,7 @@ Domain Users 群組的所有成員都可以登入任何已加入網域的用戶�
 
 您可以設定使用者帳戶來指定允許使用者登入電腦的日期及時間。 您也可以指定允許每個使用者使用的電腦。 若要設定這些設定，請開啟 [Active Directory 使用者和電腦]，找出您要設定的使用者帳戶，然後按兩下這個帳戶。 在使用者帳戶的 [內容] 中，按一下 [帳戶] 索引標籤，然後按 [登入時數] 或 [登入]。
 
-#### <a name="BKMK_installAD-DNS"></a>為新樹系安裝 AD DS 和 DNS
+#### <a name="install-ad-ds-and-dns-for-a-new-forest"></a><a name="BKMK_installAD-DNS"></a>為新樹系安裝 AD DS 和 DNS
 
 您可以使用下列其中一個程式來安裝 Active Directory Domain Services （AD DS）和 DNS，並在新樹系中建立新的網域。 
 
@@ -615,21 +615,21 @@ Get-WindowsFeature
 
 3.  在 [選取安裝類型] 中，確定已選取 [角色型或功能型安裝]，然後按 [下一步]。
 
-4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 **\[下一步\]** 。
+4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按 [下一步]。
 
-5.  在 [選取伺服器角色] 的 [角色] 中，按一下 [Active Directory 網域服務]。 在 [新增 Active Directory 網域服務所需的功能] 中，按一下 [新增功能]。 按一下 **\[下一步\]** 。
+5.  在 [選取伺服器角色] 的 [角色] 中，按一下 [Active Directory 網域服務]。 在 [新增 Active Directory 網域服務所需的功能] 中，按一下 [新增功能]。 按 [下一步]。
 
 6.  在 [選取功能] 中，按 [下一步]，然後在 [Active Directory 網域服務]中，檢閱提供的資訊，接著按 [下一步]。
 
 7.  在 [確認安裝選項] 中，按一下 [安裝]。 [安裝進度] 頁面會在安裝程序期間顯示狀態。 當程序完成時，在訊息詳細資料中，按一下 [將此伺服器升級為網域控制站]。 [Active Directory 網域服務設定精靈] 隨即開啟。
 
-8.  在 [部署設定] 中，選取 [新增樹系]。 在 [根網域名稱] 中，輸入網域的完整網域名稱 (FQDN)。 例如，如果您的 FQDN 是 corp.contoso.com，請輸入 **corp.contoso.com**。 按一下 **\[下一步\]** 。
+8.  在 [部署設定] 中，選取 [新增樹系]。 在 [根網域名稱] 中，輸入網域的完整網域名稱 (FQDN)。 例如，如果您的 FQDN 是 corp.contoso.com，請輸入 **corp.contoso.com**。 按 [下一步]。
 
-9. 在 [網域控制站選項] 的 [選取新樹系和根網域的功能等級] 中，選取您要使用的樹系功能等級和網域功能等級。 在 [指定網域控制站功能] 中，確定已選取 [網域名稱系統 (DNS) 伺服器] 和 [通用類別目錄 (GC)]。 在 [密碼] 和 [確認密碼] 中，輸入您要使用的目錄服務還原模式 (DSRM) 密碼。 按一下 **\[下一步\]** 。
+9. 在 [網域控制站選項] 的 [選取新樹系和根網域的功能等級] 中，選取您要使用的樹系功能等級和網域功能等級。 在 [指定網域控制站功能] 中，確定已選取 [網域名稱系統 (DNS) 伺服器] 和 [通用類別目錄 (GC)]。 在 [密碼] 和 [確認密碼] 中，輸入您要使用的目錄服務還原模式 (DSRM) 密碼。 按 [下一步]。
 
 10. 按一下 [DNS 選項] 中的 [下一步]。
 
-11. 在 [其他選項] 中，確認指派給網域的 NetBIOS 名稱，並且只在需要時變更。 按一下 **\[下一步\]** 。
+11. 在 [其他選項] 中，確認指派給網域的 NetBIOS 名稱，並且只在需要時變更。 按 [下一步]。
 
 12. 在 [路徑] 的 [指定 AD DS 資料庫、記錄檔及 SYSVOL 的位置] 中，執行下列其中一項：
 
@@ -637,17 +637,17 @@ Get-WindowsFeature
 
     -   輸入 [資料庫資料夾]、[記錄檔資料夾] 以及 [SYSVOL 資料夾] 的資料夾位置。
 
-13. 按一下 **\[下一步\]** 。
+13. 按 [下一步]。
 
 14. 在 [檢閱選項] 中檢閱您的選項。
 
-15. 如果想要將設定匯出至 Windows PowerShell 指令碼，請按一下 [檢視指令碼]。 隨即會在 [記事本] 開啟指令碼，您可以將它儲存到所需的資料夾位置。 按一下 **\[下一步\]** 。 在 [先決條件檢查] 中，驗證您的選取項目。 檢查完成時，按一下 [安裝]。 當 Windows 提示時，按一下 [關閉]。 伺服器會重新開機，以完成 AD DS 和 DNS 的安裝。
+15. 如果想要將設定匯出至 Windows PowerShell 指令碼，請按一下 [檢視指令碼]。 隨即會在 [記事本] 開啟指令碼，您可以將它儲存到所需的資料夾位置。 按 [下一步]。 在 [先決條件檢查] 中，驗證您的選取項目。 檢查完成時，按一下 [安裝]。 當 Windows 提示時，按一下 [關閉]。 伺服器會重新開機，以完成 AD DS 和 DNS 的安裝。
 
 16. 若要確認安裝是否成功，請在伺服器重新開機之後，查看伺服器管理員主控台。 AD DS 和 DNS 都應該出現在左窗格中，如同下圖中反白顯示的專案。
 
 ![伺服器管理員中的 AD DS 和 DNS](../media/Core-Network-Guide/server-roles-installed-sm.jpg)
 
-##### <a name="BKMK_createUA"></a>在 Active Directory 使用者和電腦中建立使用者帳戶
+##### <a name="create-a-user-account-in-active-directory-users-and-computers"></a><a name="BKMK_createUA"></a>在 Active Directory 使用者和電腦中建立使用者帳戶
 您可以使用此程序在 [Active Directory 使用者和電腦] Microsoft Management Console (MMC) 中建立新網域使用者帳戶。
 
 若要執行此程序，至少需要 **Domain Admins** 的成員資格或同等權限。
@@ -677,19 +677,19 @@ Get-WindowsFeature
 
 4.  在 [名字] 中輸入使用者的名字。
 
-5.  在 [縮寫] 中輸入使用者的縮寫。
+5.  在 [英文縮寫] 中輸入使用者的縮寫。
 
 6.  在 [姓氏] 中輸入使用者的姓氏。
 
 7.  修改 [全名] 以新增縮寫或讓名字與姓氏的順序互換。
 
-8.  在 [使用者登入名稱] 中輸入使用者的登入名稱。 按一下 **\[下一步\]** 。
+8.  在 [使用者登入名稱] 中輸入使用者的登入名稱。 按 [下一步]。
 
 9. 在 [新增物件 - 使用者]、[密碼] 及 [確認密碼] 中，輸入使用者的密碼，然後選取適當的密碼選項。
 
 10. 按 [下一步]，檢閱新的使用者帳戶設定，然後按一下 [完成]。
 
-##### <a name="BKMK_assigngroup"></a>指派群組成員資格
+##### <a name="assign-group-membership"></a><a name="BKMK_assigngroup"></a>指派群組成員資格
 您可以使用此程序在 [Active Directory 使用者和電腦] Microsoft Management Console (MMC) 中新增使用者、電腦或群組至群組中。
 
 若要執行此程序，至少需要 **Domain Admins** 的成員資格或同等權限。
@@ -712,7 +712,7 @@ Get-WindowsFeature
 
 6.  若要指派群組成員資格給其他使用者、群組或電腦，請重複此程序的步驟 4 與 5。
 
-##### <a name="BKMK_reverse"></a>設定 DNS 反向對應區域
+##### <a name="configure-a-dns-reverse-lookup-zone"></a><a name="BKMK_reverse"></a>設定 DNS 反向對應區域
 您可以使用此程序來設定網域名稱系統 (DNS) 中的反向對應區域。
 
 若要執行此程序，至少需要 **Domain Admins** 的成員資格。
@@ -735,23 +735,23 @@ Get-WindowsFeature
 
 5.  在 [區域類型] 中，選取 [主要區域]。
 
-6.  如果 DNS 伺服器是可寫入的網域控制站，請確定已選取 [將區域存放在 Active Directory 上]。 按一下 **\[下一步\]** 。
+6.  如果 DNS 伺服器是可寫入的網域控制站，請確定已選取 [將區域存放在 Active Directory 上]。 按 [下一步]。
 
-7.  在 [Active Directory 區域複寫領域] 中，除非您有特殊理由要選擇其他選項，否則請選取 [到這個網域中網域控制站執行的所有 DNS 伺服器]。 按一下 **\[下一步\]** 。
+7.  在 [Active Directory 區域複寫領域] 中，除非您有特殊理由要選擇其他選項，否則請選取 [到這個網域中網域控制站執行的所有 DNS 伺服器]。 按 [下一步]。
 
-8.  在第一個 [反向對應區域名稱] 頁面中，選取 [IPv4 反向對應區域]。 按一下 **\[下一步\]** 。
+8.  在第一個 [反向對應區域名稱] 頁面中，選取 [IPv4 反向對應區域]。 按 [下一步]。
 
 9. 在第二個 [反向對應區域名稱] 頁面中，執行下列其中一項：
 
     -   在 [網路識別碼] 中，輸入您的 IP 位址範圍的網路識別碼。 例如，如果您的 IP 位址範圍是 10.0.0.1 到 10.0.0.254，請輸入 **10.0.0**。
 
-    -   在 [反向對應區域名稱] 中，會自動新增您的 IPv4 反向對應區域名稱。 按一下 **\[下一步\]** 。
+    -   在 [反向對應區域名稱] 中，會自動新增您的 IPv4 反向對應區域名稱。 按 [下一步]。
 
-10. 在 [動態更新] 中，選取您所允許的動態更新類型。 按一下 **\[下一步\]** 。
+10. 在 [動態更新] 中，選取您所允許的動態更新類型。 按 [下一步]。
 
 11. 在 [完成新增區域精靈] 中，檢閱您所做的選擇，然後按 [完成]。
 
-#### <a name="BKMK_joinlogserver"></a>將伺服器電腦加入網域並登入
+#### <a name="joining-server-computers-to-the-domain-and-logging-on"></a><a name="BKMK_joinlogserver"></a>將伺服器電腦加入網域並登入
 安裝 Active Directory Domain Services （AD DS）並建立一或多個具有將電腦加入網域之許可權的使用者帳戶之後，您可以將核心網路伺服器加入網域並登入伺服器，以便安裝其他技術，例如動態主機設定通訊協定（DHCP）。
 
 在您要部署的所有伺服器上，除了執行 AD DS 的伺服器之外，請執行下列動作：
@@ -777,11 +777,11 @@ Get-WindowsFeature
 
 3.  在 [電腦名稱] 的 [成員隸屬] 中按一下 [網域]，然後輸入您要加入的網域名稱。 例如，如果網域名稱是 corp.contoso.com，請輸入 **corp.contoso.com**。
 
-4.  按一下 **\[確定\]** 。 [Windows 安全性] 對話方塊隨即開啟。
+4.  按一下 [確定]。 [Windows 安全性] 對話方塊隨即開啟。
 
-5.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 **\[確定\]** 。
+5.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 [確定]。
 
-6.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 **\[確定\]** 。
+6.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 [確定]。
 
 7.  在 [系統內容] 對話方塊的 [電腦名稱] 索引標籤上，按一下 [關閉]。 此時會開啟 [Microsoft Windows] 對話方塊，再度顯示指出您必須重新啟動電腦才能套用變更的訊息。 按一下 [立即重新啟動]。
 
@@ -803,7 +803,7 @@ Get-WindowsFeature
 > [!NOTE]
 > 如需如何使用執行其他 Microsoft 作業系統的電腦登入網域的相關資訊，請參閱[附錄 D-登入網域](#BKMK_D)。
 
-#### <a name="BKMK_deployDHCP01"></a>部署 DHCP1
+#### <a name="deploying-dhcp1"></a><a name="BKMK_deployDHCP01"></a>部署 DHCP1
 在部署核心網路的這個元件時，您必須執行下列各項：
 
 -   執行[設定所有伺服器](#BKMK_configuringAll)一節中的步驟。
@@ -837,7 +837,7 @@ Get-WindowsFeature
 >
 > `Add-DhcpServerInDC -DnsName DHCP1.corp.contoso.com`
 
-##### <a name="BKMK_installDHCP"></a>安裝動態主機設定通訊協定（DHCP）
+##### <a name="install-dynamic-host-configuration-protocol-dhcp"></a><a name="BKMK_installDHCP"></a>安裝動態主機設定通訊協定（DHCP）
 您可以使用此程序，使用 [新增角色及功能精靈] 來安裝和設定 DHCP 伺服器角色。
 
 若要執行此程序，至少需要 **Domain Admins** 的成員資格或同等權限。
@@ -853,17 +853,17 @@ Get-WindowsFeature
 
 3.  在 [選取安裝類型] 中，確定已選取 [角色型或功能型安裝]，然後按 [下一步]。
 
-4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 **\[下一步\]** 。
+4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按 [下一步]。
 
-5.  在 [**選取伺服器角色**] 的 [**角色**] 中，選取 [ **DHCP 伺服器**]。 在 [新增 DHCP 伺服器所需的功能] 中，按一下 [新增功能]。 按一下 **\[下一步\]** 。
+5.  在 [**選取伺服器角色**] 的 [**角色**] 中，選取 [ **DHCP 伺服器**]。 在 [新增 DHCP 伺服器所需的功能] 中，按一下 [新增功能]。 按 [下一步]。
 
 6.  在 [選取功能] 中，按 [下一步]，然後在 [DHCP 伺服器]中，檢閱提供的資訊，接著按 [下一步]。
 
-7.  在 [確認安裝選項] 中，按一下 [必要時自動重新啟動目的地伺服器]。 提示您確認這個選取項目時，按一下 [是]，然後按一下 [安裝]。 [**安裝進度**] 頁面會在安裝過程中顯示狀態。 當程式完成時，就會顯示「需要設定」訊息。 [ *Computername*] 上的 [安裝成功] 隨即顯示，其中*ComputerName*是您安裝 DHCP 伺服器的電腦名稱稱。 在訊息視窗中，按一下 [完成 DHCP 設定]。 [DHCP 後續安裝設定精靈] 隨即開啟。 按一下 **\[下一步\]** 。
+7.  在 [確認安裝選項] 中，按一下 [必要時自動重新啟動目的地伺服器]。 提示您確認這個選取項目時，按一下 [是]，然後按一下 [安裝]。 [**安裝進度**] 頁面會在安裝過程中顯示狀態。 當程式完成時，就會顯示「需要設定」訊息。 [ *Computername*] 上的 [安裝成功] 隨即顯示，其中*ComputerName*是您安裝 DHCP 伺服器的電腦名稱稱。 在訊息視窗中，按一下 [完成 DHCP 設定]。 [DHCP 後續安裝設定精靈] 隨即開啟。 按 [下一步]。
 
 8.  在 [授權] 中，指定您要在 Active Directory 網域服務中用來授權 DHCP 伺服器的認證，然後按一下 [認可]。 授權完成後，請按一下 [關閉]。
 
-##### <a name="BKMK_newscopeDHCP"></a>建立和啟用新的 DHCP 領域
+##### <a name="create-and-activate-a-new-dhcp-scope"></a><a name="BKMK_newscopeDHCP"></a>建立和啟用新的 DHCP 領域
 您可以使用這個程序，使用 DHCP Microsoft Management Console (MMC) 來建立新的 DHCP 領域。 完成程序時，即會啟用該領域，而您所建立的排除範圍會防止 DHCP 伺服器租用您用來靜態設定需要靜態 IP 位址的伺服器和其他裝置的 IP 位址。
 
 若要執行此程序，至少需要 DHCP 系統管理員的成員資格或同等權限。
@@ -890,7 +890,7 @@ Get-WindowsFeature
 
     3.  請視需要來修改 [長度] 或 [子網路遮罩] 的值，使其適於您的定址配置。
 
-    4.  按一下 **\[下一步\]** 。
+    4.  按 [下一步]。
 
 8.  在 [新增排除範圍]，執行下列各項：
 
@@ -927,7 +927,7 @@ Get-WindowsFeature
 > [!IMPORTANT]
 > 若要建立其他子網路的新領域，請重複執行這個程序。 針對您計畫部署的每個子網路使用不同的 IP 位址範圍，並確定已在引導至其他子網路的所有路由器上啟用 DHCP 訊息轉送。
 
-### <a name="BKMK_joinlogclients"></a>將用戶端電腦加入網域並登入
+### <a name="joining-client-computers-to-the-domain-and-logging-on"></a><a name="BKMK_joinlogclients"></a>將用戶端電腦加入網域並登入
 
 > [!NOTE]
 > 若要使用 Windows PowerShell 執行這個程序，請開啟 PowerShell 並輸入下列 Cmdlet，然後按 ENTER 鍵。 您也必須以您要使用的名稱取代網域名稱。
@@ -950,11 +950,11 @@ Get-WindowsFeature
 
 5.  在 [**電腦名稱稱/網域變更**] 的 [**成員隸屬**] 中，按一下 [**網域**]，然後輸入您要加入之網域的名稱。 例如，如果網域名稱是 corp.contoso.com，請輸入 **corp.contoso.com**。
 
-6.  按一下 **\[確定\]** 。 [Windows 安全性] 對話方塊隨即開啟。
+6.  按一下 [確定]。 [Windows 安全性] 對話方塊隨即開啟。
 
-7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 **\[確定\]** 。
+7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 [確定]。
 
-8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 **\[確定\]** 。
+8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 [確定]。
 
 9. 在 [系統內容] 對話方塊的 [電腦名稱] 索引標籤上，按一下 [關閉]。 此時會開啟 [Microsoft Windows] 對話方塊，再度顯示指出您必須重新啟動電腦才能套用變更的訊息。 按一下 [立即重新啟動]。
 
@@ -970,11 +970,11 @@ Get-WindowsFeature
 
 5.  在 [**電腦名稱稱/網域變更**] 的 [**成員隸屬**] 中，按一下 [**網域**]，然後輸入您要加入之網域的名稱。 例如，如果網域名稱是 corp.contoso.com，請輸入 **corp.contoso.com**。
 
-6.  按一下 **\[確定\]** 。 [Windows 安全性] 對話方塊隨即開啟。
+6.  按一下 [確定]。 [Windows 安全性] 對話方塊隨即開啟。
 
-7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 **\[確定\]** 。
+7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 [確定]。
 
-8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 **\[確定\]** 。
+8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 [確定]。
 
 9. 在 [系統內容] 對話方塊的 [電腦名稱] 索引標籤上，按一下 [關閉]。 此時會開啟 [Microsoft Windows] 對話方塊，再度顯示指出您必須重新啟動電腦才能套用變更的訊息。 按一下 [立即重新啟動]。
 
@@ -990,7 +990,7 @@ Get-WindowsFeature
 
 5.  在 [密碼] 中，輸入網域密碼，然後按方向鍵或按 ENTER。
 
-### <a name="BKMK_optionalfeatures"></a>部署網路存取驗證和 Web 服務的選用功能
+### <a name="deploying-optional-features-for-network-access-authentication-and-web-services"></a><a name="BKMK_optionalfeatures"></a>部署網路存取驗證和 Web 服務的選用功能
 如果您想要部署網路存取伺服器，例如無線存取點或 VPN 伺服器，在安裝核心網路之後，建議您部署 NPS 和 Web 服務器。 對於網路存取部署，建議使用安全憑證式驗證方法。 您可以使用 NPS 管理網路存取原則以及部署安全驗證方法。 您可以使用網頁伺服器發佈憑證授權單位 (CA) 的憑證撤銷清單 (CRL)，為安全驗證提供憑證。
 
 > [!NOTE]
@@ -1006,7 +1006,7 @@ Get-WindowsFeature
 
 -   [部署 WEB1](#BKMK_IIS)
 
-#### <a name="BKMK_deployNPS1"></a>部署 NPS1
+#### <a name="deploying-nps1"></a><a name="BKMK_deployNPS1"></a>部署 NPS1
 安裝網路原則伺服器 (NPS) 伺服器是部署其他網路存取技術的準備步驟，例如虛擬私人網路 (VPN) 伺服器、無線存取點以及 802.1X 驗證交換器。
 
 網路原則伺服器（NPS）可讓您使用下列功能來集中設定和管理網路原則：遠端驗證撥入使用者服務（RADIUS）伺服器與 RADIUS proxy。
@@ -1035,7 +1035,7 @@ NPS 是核心網路的選用元件，但是如果下列任一項為真，您應�
 > [!NOTE]
 > 本指南提供在獨立伺服器或名為 NPS1 的 VM 上部署 NPS 的指示。  另一個建議的部署模型是在網域控制站上安裝 NPS。 如果您偏好在網域控制站（而不是獨立伺服器）上安裝 NPS，請在 DC1 上安裝 NPS。
 
-##### <a name="bkmk_NetFndtn_Pln_NPS-01"></a>規劃 NPS1 的部署
+##### <a name="planning-the-deployment-of-nps1"></a><a name="bkmk_NetFndtn_Pln_NPS-01"></a>規劃 NPS1 的部署
 若您要部署網路存取伺服器，例如無線存取點或 VPN 伺服器，則在部署核心網路之後，建議您部署 NPS。
 
 當您使用 NPS 當作遠端驗證撥入使用者服務 (RADIUS) 伺服器時，NPS 會透過網路存取伺服器來執行連線要求的驗證及授權作業。 NPS 也可以讓您集中設定和管理網路原則，以決定誰可以存取網路、它們如何存取網路、以及它們何時存取網路。
@@ -1046,7 +1046,7 @@ NPS 是核心網路的選用元件，但是如果下列任一項為真，您應�
 
 - 規劃 RADIUS 帳戶處理。 您可以使用 NPS 將帳戶資料記錄到本機電腦上的 SQL Server 資料庫或文字檔。 如果您要使用 SQL Server 記錄，請規劃執行 SQL Server 的伺服器的安裝與設定作業。
 
-##### <a name="BKMK_installNPS"></a>安裝網路原則伺服器（NPS）
+##### <a name="install-network-policy-server-nps"></a><a name="BKMK_installNPS"></a>安裝網路原則伺服器（NPS）
 您可以使用此程式來安裝網路原則伺服器（NPS），方法是使用 [新增角色及功能]。 NPS 是網路原則與存取服務伺服器角色的角色服務。
 
 > [!NOTE]
@@ -1061,7 +1061,7 @@ NPS 是核心網路的選用元件，但是如果下列任一項為真，您應�
 >
 > `Install-WindowsFeature NPAS -IncludeManagementTools`
 
-###### <a name="to-install-nps"></a>安裝 NPS
+###### <a name="to-install-nps"></a>若要安裝 NPS
 
 1.  在 NPS1 的 [伺服器管理員] 中，按一下 [管理]，然後按一下 [新增角色及功能]。 [新增角色及功能精靈] 隨即開啟。
 
@@ -1072,17 +1072,17 @@ NPS 是核心網路的選用元件，但是如果下列任一項為真，您應�
 
 3.  在 [選取安裝類型] 中，確定已選取 [角色型或功能型安裝]，然後按 [下一步]。
 
-4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按一下 **\[下一步\]** 。
+4.  在 [選取目的地伺服器] 中，確定已選取 [從伺服器集區選取伺服器]。 在 [伺服器集區] 中，確定已選取本機電腦。 按 [下一步]。
 
 5.  在 [**選取伺服器角色**] 的 [**角色**] 中，選取 [**網路原則與存取服務**]。 隨即會出現一個對話方塊，詢問它是否應該新增網路原則與存取服務所需的功能。 按一下 [新增功能]，然後按 [下一步]。
 
 6.  在 [選取功能] 中，按 [下一步]，然後在 [網路原則與存取服務]中，檢閱提供的資訊，接著按 [下一步]。
 
-7.  在 [選取角色服務] 中，按一下 [網路原則伺服器]。  在 [新增網路原則伺服器所需的功能] 中，按一下 [新增功能]。 按一下 **\[下一步\]** 。
+7.  在 [選取角色服務] 中，按一下 [網路原則伺服器]。  在 [新增網路原則伺服器所需的功能] 中，按一下 [新增功能]。 按 [下一步]。
 
 8.  在 [確認安裝選項] 中，按一下 [必要時自動重新啟動目的地伺服器]。 提示您確認這個選取項目時，按一下 [是]，然後按一下 [安裝]。 [安裝進度] 頁面會在安裝程序期間顯示狀態。 當程式完成時，會顯示「在*ComputerName*上安裝成功」訊息，其中*ComputerName*是您安裝網路原則伺服器的電腦名稱稱。 按一下 **關閉**。
 
-##### <a name="BKMK_registerNPS"></a>在預設網域中註冊 NPS
+##### <a name="register-the-nps-in-the-default-domain"></a><a name="BKMK_registerNPS"></a>在預設網域中註冊 NPS
 您可以使用此程式在伺服器為網域成員的網域中註冊 NPS。
 
 Nps 必須在 Active Directory 中註冊，才能讓他們在授權程式期間擁有讀取使用者帳戶撥入內容的許可權。 註冊 NPS 會將伺服器新增至 Active Directory 中的 [ **RAS 和 資訊存取伺服器**] 群組。
@@ -1106,7 +1106,7 @@ Nps 必須在 Active Directory 中註冊，才能讓他們在授權程式期間�
 
 如需網路原則伺服器的詳細資訊，請參閱[網路原則伺服器（NPS）](../technologies/nps/nps-top.md)。
 
-#### <a name="BKMK_IIS"></a>部署 WEB1
+#### <a name="deploying-web1"></a><a name="BKMK_IIS"></a>部署 WEB1
 
 Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管理、模組化且可擴充的平臺，讓您能夠可靠地裝載網站、服務和應用程式。 使用 Internet Information Services （IIS），您可以與網際網路、內部網路或外部網路上的使用者共用資訊。 IIS 是整合 IIS、ASP.NET、FTP 服務、PHP 和 Windows Communication Foundation （WCF）的統一 web 平臺。
 
@@ -1130,7 +1130,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 -   [安裝網頁伺服器（IIS）伺服器角色](#BKMK_install_IIS)
 
-##### <a name="BKMK_install_IIS"></a>安裝網頁伺服器（IIS）伺服器角色
+##### <a name="install-the-web-server-iis-server-role"></a><a name="BKMK_install_IIS"></a>安裝網頁伺服器（IIS）伺服器角色
 若要完成此程序，您必須是 **Administrators** 群組的成員。
 
 > [!NOTE]
@@ -1155,7 +1155,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 7.  確認所有安裝成功，然後按一下 [關閉]。
 
-## <a name="BKMK_resources"></a>其他技術資源
+## <a name="additional-technical-resources"></a><a name="BKMK_resources"></a>其他技術資源
 如需本指南中之技術的詳細資訊，請參閱下列資源：
 
  Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 技術文件庫資源
@@ -1174,7 +1174,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 -   [網頁伺服器（IIS）總覽](https://technet.microsoft.com/library/hh831725.aspx)，位於 https://technet.microsoft.com/library/hh831725.aspx。
 
-## <a name="BKMK_appendix"></a>附錄 A 到 E
+## <a name="appendices-a-through-e"></a><a name="BKMK_appendix"></a>附錄 A 到 E
 下列各節包含執行 Windows Server 2016、Windows 10、Windows Server 2012 和 Windows 8 以外作業系統之電腦的其他設定資訊。 此外，也提供網路準備工作表來協助您進行部署。
 
 1.  [附錄 A-重新命名電腦](#BKMK_A)
@@ -1187,14 +1187,14 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 5.  [附錄 E-核心網路規劃準備工作表](#BKMK_E)
 
-## <a name="BKMK_A"></a>附錄 A-重新命名電腦
+## <a name="appendix-a---renaming-computers"></a><a name="BKMK_A"></a>附錄 A-重新命名電腦
 您可以使用本節中的程式，為執行 Windows Server 2008 R2、Windows 7、Windows Server 2008 和 Windows Vista 的電腦提供不同的電腦名稱稱。
 
 -   [Windows Server 2008 R2 和 Windows 7](#bkmk_NetFndtn_Pln_rename_R2)
 
 -   [Windows Server 2008 和 Windows Vista](#bkmk_NetFndtn_Pln_Renam08)
 
-### <a name="bkmk_NetFndtn_Pln_rename_R2"></a>Windows Server 2008 R2 和 Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="bkmk_NetFndtn_Pln_rename_R2"></a>Windows Server 2008 R2 和 Windows 7
 若要執行這些程序，至少需要 **Administrators** 的成員資格或同等權限。
 
 ##### <a name="to-rename-computers-running-windows-server-2008-r2-and-windows-7"></a>重新命名執行 Windows Server 2008 R2 和 Windows 7 的電腦
@@ -1212,7 +1212,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 5.  按兩次 [確定]，按一下 [關閉]，然後按一下 [立即重新啟動] 來重新啟動電腦。
 
-### <a name="bkmk_NetFndtn_Pln_Renam08"></a>Windows Server 2008 和 Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="bkmk_NetFndtn_Pln_Renam08"></a>Windows Server 2008 和 Windows Vista
 若要執行這些程序，至少需要 **Administrators** 的成員資格或同等權限。
 
 ##### <a name="to-rename-computers-running-windows-server-2008-and-windows-vista"></a>重新命名執行 Windows Server 2008 和 Windows Vista 的電腦
@@ -1230,14 +1230,14 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 5.  按兩次 [確定]，按一下 [關閉]，然後按一下 [立即重新啟動] 來重新啟動電腦。
 
-## <a name="BKMK_B"></a>附錄 B-設定靜態 IP 位址
+## <a name="appendix-b---configuring-static-ip-addresses"></a><a name="BKMK_B"></a>附錄 B-設定靜態 IP 位址
 這個主題提供在執行下列作業系統的電腦上設定靜態 IP 位址的程序：
 
 -   [Windows Server 2008 R2](#bkmk_R2Cng_WS08R2IP)
 
 -   [Windows Server 2008](#bkmk_NetFndtn_Pln_CfgStatic08)
 
-### <a name="bkmk_R2Cng_WS08R2IP"></a>Windows Server 2008 R2
+### <a name="windows-server-2008-r2"></a><a name="bkmk_R2Cng_WS08R2IP"></a>Windows Server 2008 R2
 若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。
 
 ##### <a name="to-configure-a-static-ip-address-on-a-computer-running-windows-server-2008-r2"></a>在執行 Windows Server 2008 R2 的電腦上設定靜態 IP 位址
@@ -1266,7 +1266,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 11. 按一下 [確定]，然後按一下 [關閉]。
 
-### <a name="bkmk_NetFndtn_Pln_CfgStatic08"></a>Windows Server 2008
+### <a name="windows-server-2008"></a><a name="bkmk_NetFndtn_Pln_CfgStatic08"></a>Windows Server 2008
 若要執行這些程序，至少需要 **Administrators** 的成員資格或同等權限。
 
 ##### <a name="to-configure-a-static-ip-address-on-a-computer-running-windows-server-2008"></a>在執行 Windows Server 2008 的電腦上設定靜態 IP 位址
@@ -1293,7 +1293,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 11. 按一下 [確定]，然後按一下 [關閉]。
 
-## <a name="BKMK_C"></a>附錄 C-將電腦加入網域
+## <a name="appendix-c---joining-computers-to-the-domain"></a><a name="BKMK_C"></a>附錄 C-將電腦加入網域
 您可以使用這些程式，將執行 Windows Server 2008 R2、Windows 7、Windows Server 2008 和 Windows Vista 的電腦加入網域。
 
 -   [Windows Server 2008 R2 和 Windows 7](#BKMK_c1)
@@ -1303,7 +1303,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 > [!IMPORTANT]
 > 若要將電腦加入網域，您必須使用本機 Administrator 帳戶登入電腦；或者如果您使用沒有本機電腦系統管理認證的使用者帳戶登入電腦，就必須在將電腦加入網域的處理作業期間，提供本機 Administrator 帳戶的認證。 此外，您必須在電腦要加入的網域中擁有使用者帳戶。 在將電腦加入網域的處理作業期間，將提示您輸入網域帳戶認證 (使用者名稱與密碼)。
 
-### <a name="BKMK_c1"></a>Windows Server 2008 R2 和 Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="BKMK_c1"></a>Windows Server 2008 R2 和 Windows 7
 若要執行此程序，至少需要 **Domain Users** 的成員資格或同等權限。
 
 ##### <a name="to-join-computers-running-windows-server-2008-r2-and-windows-7-to-the-domain"></a>將執行 Windows Server 2008 R2 和 Windows 7 的電腦加入網域
@@ -1321,15 +1321,15 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 5.  在 [電腦名稱] 的 [成員隸屬] 中選取 [網域]，然後輸入您要加入的網域名稱。 例如，如果網域名稱是 corp.contoso.com，請輸入 **corp.contoso.com**。
 
-6.  按一下 **\[確定\]** 。 [Windows 安全性] 對話方塊隨即開啟。
+6.  按一下 [確定]。 [Windows 安全性] 對話方塊隨即開啟。
 
-7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 **\[確定\]** 。
+7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 [確定]。
 
-8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 **\[確定\]** 。
+8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 [確定]。
 
 9. 在 [系統內容] 對話方塊的 [電腦名稱] 索引標籤上，按一下 [關閉]。 此時會開啟 [Microsoft Windows] 對話方塊，再度顯示指出您必須重新啟動電腦才能套用變更的訊息。 按一下 [立即重新啟動]。
 
-### <a name="BKMK_c2"></a>Windows Server 2008 和 Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="BKMK_c2"></a>Windows Server 2008 和 Windows Vista
 若要執行此程序，至少需要 **Domain Users** 的成員資格或同等權限。
 
 ##### <a name="to-join-computers-running-windows-server-2008-and-windows-vista-to-the-domain"></a>將執行 Windows Server 2008 和 Windows Vista 的電腦加入網域
@@ -1344,22 +1344,22 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 5.  在 [電腦名稱] 的 [成員隸屬] 中選取 [網域]，然後輸入您要加入的網域名稱。 例如，如果網域名稱是 corp.contoso.com，請輸入 **corp.contoso.com**。
 
-6.  按一下 **\[確定\]** 。 [Windows 安全性] 對話方塊隨即開啟。
+6.  按一下 [確定]。 [Windows 安全性] 對話方塊隨即開啟。
 
-7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 **\[確定\]** 。
+7.  在 [電腦名稱/網域變更] 的 [使用者名稱] 中，輸入使用者名稱，在 [密碼] 中輸入密碼，然後按一下 **[確定]** 。 此時會開啟 [電腦名稱/網域變更] 對話方塊，歡迎您使用此網域。 按一下 [確定]。
 
-8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 **\[確定\]** 。
+8.  [電腦名稱/網域變更] 對話方塊顯示的訊息指出您必須重新啟動電腦才能套用變更。 按一下 [確定]。
 
 9. 在 [系統內容] 對話方塊的 [電腦名稱] 索引標籤上，按一下 [關閉]。 此時會開啟 [Microsoft Windows] 對話方塊，再度顯示指出您必須重新啟動電腦才能套用變更的訊息。 按一下 [立即重新啟動]。
 
-## <a name="BKMK_D"></a>附錄 D-登入網域
+## <a name="appendix-d---log-on-to-the-domain"></a><a name="BKMK_D"></a>附錄 D-登入網域
 您可以使用這些程式，使用執行 Windows Server 2008 R2、Windows 7、Windows Server 2008 和 Windows Vista 的電腦登入網域。
 
 -   [Windows Server 2008 R2 和 Windows 7](#BKMK_d1)
 
 -   [Windows Server 2008 和 Windows Vista](#BKMK_d2)
 
-### <a name="BKMK_d1"></a>Windows Server 2008 R2 和 Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="BKMK_d1"></a>Windows Server 2008 R2 和 Windows 7
 若要執行此程序，至少需要 **Domain Users** 的成員資格或同等權限。
 
 ##### <a name="log-on-to-the-domain-using-computers-running-windows-server-2008-r2-and-windows-7"></a>使用執行 Windows Server 2008 R2 和 Windows 7 的電腦登入網域
@@ -1374,7 +1374,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 5.  在 [密碼] 中，輸入網域密碼，然後按方向鍵或按 ENTER。
 
-### <a name="BKMK_d2"></a>Windows Server 2008 和 Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="BKMK_d2"></a>Windows Server 2008 和 Windows Vista
 若要執行此程序，至少需要 **Domain Users** 的成員資格或同等權限。
 
 ##### <a name="log-on-to-the-domain-using-computers-running-windows-server-2008-and-windows-vista"></a>使用執行 Windows Server 2008 和 Windows Vista 的電腦登入網域
@@ -1389,7 +1389,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 5.  在 [密碼] 中，輸入網域密碼，然後按方向鍵或按 ENTER。
 
-## <a name="BKMK_E"></a>附錄 E-核心網路規劃準備工作表
+## <a name="appendix-e---core-network-planning-preparation-sheet"></a><a name="BKMK_E"></a>附錄 E-核心網路規劃準備工作表
 您可以使用此「網路規劃準備表」來收集安裝核心網路所需的資訊。 這個主題提供的表格包含安裝或設定程序期間，您必須提供資訊或特定值之每部伺服器電腦的個別設定項目。 每個設定項目都有提供範例值。
 
 基於規劃和追蹤目的，每個表格中都為您提供空格，讓您輸入部署所用的值。 若您在這些表格中記錄安全性相關的值，就應該將此資訊存放在安全的位置。
@@ -1408,7 +1408,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 3.  [安裝網路原則伺服器（選擇性）](#BKMK_FndtnPrep_InstallNPS)
 
-### <a name="BKMK_FndtnPrep_InstallAD"></a>安裝 Active Directory Domain Services 和 DNS
+### <a name="installing-active-directory-domain-services-and-dns"></a><a name="BKMK_FndtnPrep_InstallAD"></a>安裝 Active Directory Domain Services 和 DNS
 本節中的表格列出預先安裝和安裝 Active Directory Domain Services （AD DS）和 DNS 的設定專案。
 
 ##### <a name="pre-installation-configuration-items-for-ad-ds-and-dns"></a>AD DS 和 DNS 的預先安裝設定專案
@@ -1416,7 +1416,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 -   [設定靜態 IP 位址](#BKMK_ip)
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |IP 位址|10.0.0.2||
 |子網路遮罩|255.255.255.0||
@@ -1433,7 +1433,7 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 ##### <a name="ad-ds-and-dns-installation-configuration-items"></a>AD DS 和 DNS 安裝設定專案
 Windows Server 核心網路部署程序[安裝新樹系的 AD DS 與 DNS](#BKMK_installAD-DNS) 的設定項目：
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |完整 DNS 名稱|corp.contoso.com||
 |樹系功能等級|Windows Server 2003||
@@ -1443,9 +1443,9 @@ Windows Server 核心網路部署程序[安裝新樹系的 AD DS 與 DNS](#BKMK_
 |目錄還原模式系統管理員密碼|J*p2leO4$F||
 |回應檔案名稱 (選擇性)|AD DS_AnswerFile||
 
-#### <a name="BKMK_FndtnPrep_DNSRevrsLook"></a>設定 DNS 反向對應區域
+#### <a name="configuring-a-dns-reverse-lookup-zone"></a><a name="BKMK_FndtnPrep_DNSRevrsLook"></a>設定 DNS 反向對應區域
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |區域類型：|-主要區域<br />-次要區域<br />-存根區域||
 |區域類型<br /><br />**將區域儲存在 Active Directory**|-已選取<br />-未選取||
@@ -1453,7 +1453,7 @@ Windows Server 核心網路部署程序[安裝新樹系的 AD DS 與 DNS](#BKMK_
 |反向對應區域名稱<br /><br />(IP 類型)|-IPv4 反向對應區域<br />-IPv6 反向對應區域||
 |反向對應區域名稱<br /><br />(網路識別碼)|10.0.0||
 
-### <a name="BKMK_FndtnPrep_InstallDHCP"></a>安裝 DHCP
+### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>安裝 DHCP
 本節中的表格列出預先安裝及安裝 DHCP 的設定項目。
 
 ##### <a name="pre-installation-configuration-items-for-dhcp"></a>DHCP 的預先安裝設定項目
@@ -1461,7 +1461,7 @@ Windows Server 核心網路部署程序[安裝新樹系的 AD DS 與 DNS](#BKMK_
 
 -   [設定靜態 IP 位址](#BKMK_ip)
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |IP 位址|10.0.0.3||
 |子網路遮罩|255.255.255.0||
@@ -1478,9 +1478,9 @@ Windows Server 核心網路部署程序[安裝新樹系的 AD DS 與 DNS](#BKMK_
 ##### <a name="dhcp-installation-configuration-items"></a>DHCP 安裝設定項目
 Windows Server 核心網路部署程序[安裝動態主機設定通訊協定 (DHCP)](#BKMK_installDHCP) 的設定項目：
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
-|網路連線繫結|Ethernet||
+|網路連線繫結|乙太網路||
 |DNS 伺服器設定|DC1||
 |慣用 DNS 伺服器 IP 位址|10.0.0.2||
 |其他 DNS 伺服器 IP 位址|10.0.0.15||
@@ -1492,35 +1492,35 @@ Windows Server 核心網路部署程序[安裝動態主機設定通訊協定 (DH
 |租用期間|8天||
 |IPv6 DHCP 伺服器操作模式|未啟用||
 
-#### <a name="BKMK_FndtnPrep_DHCP_Exclusn"></a>在 DHCP 中建立排除範圍
+#### <a name="creating-an-exclusion-range-in-dhcp"></a><a name="BKMK_FndtnPrep_DHCP_Exclusn"></a>在 DHCP 中建立排除範圍
 在 DHCP 中建立領域時，建立排除範圍的設定項目。
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |領域名稱|Corp1||
 |領域說明|總公司子網路 1||
 |排除範圍起始 IP 位址|10.0.0.1||
 |排除範圍結束 IP 位址|10.0.0.15||
 
-#### <a name="bkmk_NetFndtn_Pln_DHCP_NewScope"></a>建立新的 DHCP 領域
+#### <a name="creating-a-new-dhcp-scope"></a><a name="bkmk_NetFndtn_Pln_DHCP_NewScope"></a>建立新的 DHCP 領域
 Windows Server 核心網路部署程序[建立和啟用新的 DHCP 領域](#BKMK_newscopeDHCP)的設定項目：
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |新領域名稱|Corp2||
 |領域說明|總公司子網2||
 |(IP 位址範圍)<br /><br />起始 IP 位址|10.0.1.1||
 |(IP 位址範圍)<br /><br />結束 IP 位址|10.0.1.254||
-|長度|8||
+|Length|8||
 |子網路遮罩|255.255.255.0||
 |(排除範圍) 起始 IP 位址|10.0.1.1||
 |排除範圍結束 IP 位址|10.0.1.15||
-|租用期間<br /><br />天<br /><br />小時<br /><br />分|-8<br />-0<br />-0||
+|租用期間<br /><br />日<br /><br />時<br /><br />分|-8<br />-0<br />-0||
 |路由器 (預設閘道)<br /><br />IP 位址|10.0.1.1||
 |DNS 父系網域|corp.contoso.com||
 |DNS 伺服器<br /><br />IP 位址|10.0.0.2||
 
-### <a name="BKMK_FndtnPrep_InstallNPS"></a>安裝網路原則伺服器（選擇性）
+### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>安裝網路原則伺服器（選擇性）
 本節中的表格列出預先安裝及安裝 NPS 的設定項目。
 
 ##### <a name="pre-installation-configuration-items"></a>預先安裝設定項目
@@ -1528,7 +1528,7 @@ Windows Server 核心網路部署程序[建立和啟用新的 DHCP 領域](#BKMK
 
 -   [設定靜態 IP 位址](#BKMK_ip)
 
-|設定項目|範例值|值|
+|組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |IP 位址|10.0.0.4||
 |子網路遮罩|255.255.255.0||

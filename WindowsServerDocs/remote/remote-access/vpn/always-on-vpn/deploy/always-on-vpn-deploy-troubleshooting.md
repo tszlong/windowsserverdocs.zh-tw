@@ -1,5 +1,5 @@
 ---
-title: 疑難排解 Always On VPN
+title: Always On VPN 疑難排解
 description: 本主題提供驗證和疑難排解 Windows Server 2016 中 Always On VPN 部署的指示。
 ms.prod: windows-server
 ms.technology: networking-ras
@@ -7,16 +7,16 @@ ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
 ms.localizationpriority: medium
 ms.date: 06/11/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 649fbc16e3dfef2ed1061d0ba6a5c22a8712b186
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6dc4f2f090d28f9fa25ce381f8cd981569da6a4a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404381"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313275"
 ---
-# <a name="troubleshoot-always-on-vpn"></a>疑難排解 Always On VPN 
+# <a name="troubleshoot-always-on-vpn"></a>Always On VPN 疑難排解 
 
 >適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 

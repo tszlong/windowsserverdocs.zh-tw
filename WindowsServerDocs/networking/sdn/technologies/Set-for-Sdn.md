@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa5b5d11-3921-44f9-8e14-e378c75fca76
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 32f35eccfe55b01a0f3326df2bda9db26a23abe2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: bfa5d570b68943ef5cdaefc82a707ca69dea975e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355637"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317238"
 ---
 # <a name="switch-embedded-teaming-for-sdn"></a>適用於 SDN 的交換器內嵌小組
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 SET 是替代的 NIC 小組解決方案，可供您在 Windows Server 2016 中包含 Hyper-v 和軟體定義網路（SDN）堆疊的環境中使用。 將一些 NIC 小組功能整合到 Hyper-v 虛擬交換器。 
 

@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aded2881-99ed-4f18-868b-b765ab926597
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 472c1dc6c5531a7c8d41e40bc926bb3e25f73448
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 82e9720bc09593ea7b8d7af4b2102ac3e3ba3e3d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367605"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314705"
 ---
 # <a name="step-6-test-directaccess-client-connectivity-from-behind-a-nat-device"></a>步驟6測試從 NAT 裝置後方的 DirectAccess 用戶端連線能力
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 將 DirectAccess 用戶端從 NAT 裝置或 Web Proxy 伺服器後方連線到網際網路時，DirectAccess 用戶端會使用 Teredo 或 IP-HTTPS 來連線到「遠端存取」伺服器。 
 
@@ -50,7 +50,7 @@ ms.locfileid: "71367605"
   
 2. 檢查 ipconfig 命令的輸出。  
   
-   CLIENT1 現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 當 DirectAccess 用戶端位於 NAT 裝置後方並且被指派私人 IPv4 位址時，慣用的 IPv6 轉換技術是 Teredo。 如果您查看 ipconfig 命令的輸出，您應該會看到「通道介面卡 Teredo 通道虛擬介面」的區段，然後是描述「Microsoft Teredo 通道介面卡」，其 IP 位址開頭為2001：與 Teredo 一致應對. 如果您沒有看到 Teredo 區段，請使用下列命令來啟用 Teredo： **netsh Interface Teredo set state enterpriseclient** ，然後重新執行 ipconfig 命令。 您不會看到列出 Teredo 通道介面卡的預設閘道。  
+   CLIENT1 現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 當 DirectAccess 用戶端位於 NAT 裝置後方並且被指派私人 IPv4 位址時，慣用的 IPv6 轉換技術是 Teredo。 如果您查看 ipconfig 命令的輸出，應該會看到「通道介面卡 Teredo 通道虛擬介面」的區段，然後會有一個「Microsoft Teredo 通道介面卡」描述，含有一個開頭為 2001 的 IP 位址：與 Teredo 位址相符。 如果您沒有看到 Teredo 區段，請使用下列命令來啟用 Teredo： **netsh Interface Teredo set state enterpriseclient** ，然後重新執行 ipconfig 命令。 您不會看到列出 Teredo 通道介面卡的預設閘道。  
   
 3. 在 Windows PowerShell 視窗中，輸入**ipconfig/flushdns** ，然後按 enter。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "71367605"
   
 9. 在 Internet Explorer 網址列中，輸入 **https://app2/** ，然後按 enter。 您將會看到 APP2 上的預設網站。  
   
-10. 在 [**開始**] 畫面上，輸入<strong>\\ \ App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。  
+10. 在 [**開始**] 畫面上，輸入<strong>\\\App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。  
   
 ## <a name="test-ip-https-connectivity"></a>測試 IP-HTTPS 連線  
   
@@ -78,7 +78,7 @@ ms.locfileid: "71367605"
   
 2. 在 Windows PowerShell 視窗中，輸入**ipconfig/all** ，然後按 enter。  
   
-3. 檢查 ipconfig 命令的輸出。 這部電腦現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 Teredo 已被停用，而 DirectAccess 用戶端則回復成 IP-HTTPS。 當您查看 ipconfig 命令的輸出時，您會看到一個區段，其中包含以2001： db8：1：100開頭的 IP 位址的通道介面卡 ipHTTPsinterface，這是以設定時所設定的前置詞為基礎的 ip-HTTPs 位址DirectAccess. 您不會看到列出 IP-HTTPS 通道介面卡的預設閘道。  
+3. 檢查 ipconfig 命令的輸出。 這部電腦現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 Teredo 已被停用，而 DirectAccess 用戶端則回復成 IP-HTTPS。 當您檢視 ipconfig 命令的輸出時，會看到「通道介面卡 iphttpsinterface」的區段，含有一個開頭為 2001:db8:1:100 的 IP 位址，根據設定 DirectAccess 時所設定的首碼，此位址與 IP-HTTPS 位址相符。 您不會看到列出 IP-HTTPS 通道介面卡的預設閘道。  
   
 4. 在 Windows PowerShell 視窗中，輸入**ipconfig/flushdns** ，然後按 enter。 這會將自用戶端電腦連線到公司網路後，可能仍存在於用戶端 DNS 快取中的名稱解析項目排清。  
   
@@ -90,4 +90,4 @@ ms.locfileid: "71367605"
   
 8. 在 Internet Explorer 網址列中，輸入 **https://app2/** ，然後按 enter。 您將會看到 APP2 上的預設網站。  
   
-9. 在 [**開始**] 畫面上，輸入<strong>\\ \ App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。
+9. 在 [**開始**] 畫面上，輸入<strong>\\\App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。

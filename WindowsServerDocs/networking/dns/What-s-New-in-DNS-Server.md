@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: de502d7be023d12e3350063e467a60356b2472c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 26d9a532f8c2276a81e8718e76290d41c78f6633
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406241"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317969"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Windows Server 中 DNS 伺服器的新功能
 
@@ -25,11 +25,11 @@ ms.locfileid: "71406241"
   
 |功能|新功能或增強功能|描述|  
 |-----------------|-------------------|---------------|  
-|DNS 原則|新的|您可以設定 DNS 原則，以指定 DNS 伺服器回應 DNS 查詢的方式。 DNS 回應可以根據用戶端 IP 位址（位置）、一天的時間，以及數個其他參數。 DNS 原則可啟用位置感知的 DNS、流量管理、負載平衡、分裂式 DNS 和其他案例。|  
-|回應速率限制（RRL）|新的|您可以在 DNS 伺服器上啟用回應速率限制。 如此一來，您就可以避免惡意系統使用您的 DNS 伺服器在 DNS 用戶端上起始阻絕服務攻擊的可能性。|  
-|命名實體的 DNS 驗證（來）|新的|您可以使用 TLSA （傳輸層安全性驗證）記錄來提供資訊給 DNS 用戶端，以指出他們應從您的功能變數名稱取得憑證的 CA。 這可防止中間人攻擊，其中有人可能會損毀 DNS 快取以指向自己的網站，並提供他們從不同 CA 發行的憑證。|  
-|未知的記錄支援|新的|您可以使用「未知記錄」功能來新增 Windows DNS 伺服器不明確支援的記錄。|  
-|IPv6 根目錄提示|新的|您可以使用原生 IPV6 根提示支援，使用 IPV6 根功能變數名稱伺服器來執行網際網路名稱解析。|  
+|DNS 原則|新增|您可以設定 DNS 原則，以指定 DNS 伺服器回應 DNS 查詢的方式。 DNS 回應可以根據用戶端 IP 位址（位置）、一天的時間，以及數個其他參數。 DNS 原則可啟用位置感知的 DNS、流量管理、負載平衡、分裂式 DNS 和其他案例。|  
+|回應速率限制（RRL）|新增|您可以在 DNS 伺服器上啟用回應速率限制。 如此一來，您就可以避免惡意系統使用您的 DNS 伺服器在 DNS 用戶端上起始阻絕服務攻擊的可能性。|  
+|命名實體的 DNS 驗證（來）|新增|您可以使用 TLSA （傳輸層安全性驗證）記錄來提供資訊給 DNS 用戶端，以指出他們應從您的功能變數名稱取得憑證的 CA。 這可防止中間人攻擊，其中有人可能會損毀 DNS 快取以指向自己的網站，並提供他們從不同 CA 發行的憑證。|  
+|未知的記錄支援|新增|您可以使用「未知記錄」功能來新增 Windows DNS 伺服器不明確支援的記錄。|  
+|IPv6 根目錄提示|新增|您可以使用原生 IPV6 根提示支援，使用 IPV6 根功能變數名稱伺服器來執行網際網路名稱解析。|  
 |Windows PowerShell 支援|增強功能|新的 Windows PowerShell Cmdlet 適用于 DNS 伺服器。|  
   
 ## <a name="dns-policies"></a>DNS 原則
@@ -67,9 +67,9 @@ ms.locfileid: "71406241"
   
 -   **回應的最大值**。 這是當回應暫停時，伺服器會向用戶端發出的回應數目上限。  
   
--   **允許清單網域**。 這是要從 RRL 設定中排除的網域清單。  
+-   **白名單網域**。 這是要從 RRL 設定中排除的網域清單。  
   
--   **允許清單子網**。 這是要從 RRL 設定中排除的子網清單。  
+-   **白名單子網**。 這是要從 RRL 設定中排除的子網清單。  
   
 -   **白色清單伺服器介面**。 這是要從 RRL 設定中排除的 DNS 伺服器介面清單。  
   
@@ -150,7 +150,7 @@ Windows Server 2016 中引進了下列新的 Windows PowerShell Cmdlet 和參數
 - [DnsServer 模組](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
 - [Set-dnsclient 模組](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
   
 -   [DNS 用戶端的新功能](What-s-New-in-DNS-Client.md)  
   

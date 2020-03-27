@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dc6ade92eb5fe04271033973911ccb98e871d236
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2ac8dc289cf321266d39016f841c243899fe6cf4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406374"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319065"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>BranchCache 託管快取模式部署概觀
 
@@ -23,7 +23,7 @@ ms.locfileid: "71406374"
 
 此總覽包含您需要的 BranchCache 基礎結構，以及部署的簡單逐步總覽。
 
-## <a name="bkmk_components"></a>託管快取伺服器部署基礎結構
+## <a name="hosted-cache-server-deployment-infrastructure"></a><a name="bkmk_components"></a>託管快取伺服器部署基礎結構
 
 在此部署中，會使用 Active Directory Domain Services \(AD DS\)中的服務連接點來部署託管快取伺服器，而且您可以選擇 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的 BranchCache 來預先雜湊 Web 和檔案型內容伺服器上的共用內容，然後在託管快取伺服器上預先載入內容。
 
@@ -56,7 +56,7 @@ DC1 是網域控制站，而且您必須設定預設網域原則，或其他更�
 
 您必須重新整理用戶端電腦上的群組原則，才能套用新的 BranchCache 群組原則設定，並允許用戶端找出並使用託管快取伺服器。
 
-## <a name="bkmk_overview"></a>託管快取伺服器部署程式總覽
+## <a name="hosted-cache-server-deployment-process-overview"></a><a name="bkmk_overview"></a>託管快取伺服器部署程式總覽
 
 >[!NOTE]
 >[BranchCache 託管快取模式部署](4-Bc-Hcm-Deployment.md)一節中會提供如何執行這些步驟的詳細資料。

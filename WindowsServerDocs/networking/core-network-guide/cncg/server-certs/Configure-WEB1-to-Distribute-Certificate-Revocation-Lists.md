@@ -6,22 +6,22 @@ ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5d53cbba37699346db110f0748a9c3e0c834c18e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3319715e70c1e68739a10a4c67a9fa404d5ad80e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356292"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318410"
 ---
 # <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>設定 WEB1 以發佈憑證撤銷清單（Crl）
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用這個程式來設定 web 伺服器 WEB1 來散發 Crl。  
   
-在根 CA 的延伸模組中，會指出根 CA 的 CRL 可透過 https://pki.corp.contoso.com/pki 提供。 目前，WEB1 上沒有 PKI 虛擬目錄，因此必須建立一個。  
+在根 CA 的延伸模組中，會指出來自根 CA 的 CRL 可透過 https://pki.corp.contoso.com/pki取得。 目前，WEB1 上沒有 PKI 虛擬目錄，因此必須建立一個。  
   
 若要執行此程式，您必須是**Domain Admins**的成員。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71356292"
   
 4.  在 [檔案**共用**] 中，輸入**Cert 發行者**，然後按一下 [**新增**]。 [憑證發行者] 群組會新增至清單。 在清單的 [**許可權等級**] 中，按一下 [ **Cert 發行者**] 旁的箭號，然後按一下 [**讀取/寫入**]。 按一下 [**共用**]，然後按一下 [**完成**]。  
   
-5.  關閉 [Windows Explorer]。  
+5.  關閉 Windows 檔案總管。  
   
 6.  開啟 IIS 主控台。 在 [伺服器管理員] 按一下 [工具]，然後按一下 [Internet Information Services (IIS) 管理員]。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71356292"
   
 9. 在 [**別名**] 中，輸入**pki**。 在 [**實體路徑**] 中輸入**C:\pki**，然後按一下 **[確定]** 。  
   
-10. 啟用 pki 虛擬目錄的匿名存取，讓任何用戶端都可以檢查 CA 憑證和 Crl 的有效性。 方法如下：  
+10. 啟用 pki 虛擬目錄的匿名存取，讓任何用戶端都可以檢查 CA 憑證和 Crl 的有效性。 若要這樣做：  
   
     1.  在 [連線] 窗格中，確認已選取 [pki]。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "71356292"
   
 13. 在 [要求篩選] 窗格中，預設會選取 [副檔名] 索引標籤。 在 [動作] 窗格中，按一下 [編輯功能設定]。  
   
-14. 在 [編輯要求篩選設定]中，選取 [允許雙重逸出] ，然後按一下 [確定]。  
+14. 在 [編輯要求篩選設定] 中，選取 [允許雙重逸出]，然後按一下 [確定]。  
   
 15. 在 [Internet Information Services （IIS）管理員] MMC 中，按一下您的 Web 服務器名稱。 例如，如果您的 Web 服務器名為 WEB1，請按一下 [ **WEB1**]。  
   

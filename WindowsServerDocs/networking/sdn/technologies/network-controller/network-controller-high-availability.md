@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 334b090d-bec4-4e67-8307-13831dbdd1d8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 11f392e99803f0e0ddd0f8b62c9dbca5827a831c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ce3a0dd33ff105fa7cc36305048b8a311577aa21
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405941"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317060"
 ---
 # <a name="network-controller-high-availability"></a>網路控制卡高可用性
 

@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: f032717b9f4dca65454d8251083b73ff2d57dba7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 93913acbe598c4fd1b8ee5556dbf70013f3d714a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355318"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316941"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>軟體和硬體 (SH) 整合功能和技術
 
@@ -41,7 +41,7 @@ ms.locfileid: "71355318"
 
 如需 RDMA 和設定的詳細資訊，請參閱[遠端直接記憶體存取（RDMA）和交換器內嵌小組（SET）](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)。
 
-## <a name="data-center-bridging-dcb"></a>資料中心橋接 (DCB) 
+## <a name="data-center-bridging-dcb"></a>Data Center Bridging (DCB) 
 
 DCB 是一組電氣和電子公司工程師（IEEE）標準，可在資料中心內啟用聚合網狀架構。 DCB 會在主機中提供以硬體佇列為基礎的頻寬管理，並從連續的交換器進行合作。 儲存體、資料網路、叢集處理序間通訊（IPC）和管理的所有流量都會共用相同的 Ethernet 網路基礎結構。 在 Windows Server 2016 中，DCB 可分別套用至任何 NIC，以及系結至 Hyper-v 交換器的 Nic。
 
@@ -70,7 +70,7 @@ IPsec 工作卸載是一項 NIC 功能，可讓作業系統使用 NIC 上的處�
 
 Pvlan 只允許相同虛擬化伺服器上的虛擬機器之間進行通訊。 私人虛擬網路未系結至實體網路介面卡。 私人虛擬網路會與虛擬化伺服器上的所有外部網路流量隔離，以及管理作業系統與外部網路之間的任何網路流量。 當您需要建立隔離的網路環境 (例如隔離的測試網域) 時，此類型的網路相當實用。 Hyper-v 和 SDN 堆疊僅支援 PVLAN 隔離埠模式。
 
-如需有關 PVLAN 隔離的詳細[資訊，請參閱 System Center：Virtual Machine Manager 工程 Blog](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)。
+如需有關 PVLAN 隔離的詳細資訊，請參閱[System Center： Virtual Machine Manager 工程 Blog](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)。
 
 ## <a name="remote-direct-memory-access-rdma"></a>遠端直接記憶體存取 (RDMA) 
 
@@ -90,7 +90,7 @@ SR-IOV 可讓 VM 流量直接從 NIC 移至 VM，而不需要通過 Hyper-v 主�
 
 使用 SR-IOV 的流量會略過 Hyper-v 交換器，這表示將不會套用任何原則，例如 Acl 或頻寬管理。 SR-IOV 流量也無法透過任何網路虛擬化功能傳遞，因此無法套用 NV 或 VxLAN 封裝。 只有在特定情況下，才將 SR-IOV 用於受到妥善信任的工作負載。 此外，您也無法使用主機原則、頻寬管理和虛擬化技術。
 
-未來，兩種技術會允許 SR-IOV：一般資料流程資料表（GFT）和硬體 QoS 卸載（NIC 中的頻寬管理）–只要我們生態系統中的 Nic 支援它們即可。 這兩種技術的結合，可讓 SR-IOV 適用于所有 Vm，允許套用原則、虛擬化和頻寬管理規則，而且可能會導致 SR-IOV 的一般應用程式中有很大的進展。
+在未來，兩種技術會允許 SR-IOV：一般資料流程資料表（GFT）和硬體 QoS 卸載（NIC 中的頻寬管理）–只要我們生態系統中的 Nic 支援它們即可。 這兩種技術的結合，可讓 SR-IOV 適用于所有 Vm，允許套用原則、虛擬化和頻寬管理規則，而且可能會導致 SR-IOV 的一般應用程式中有很大的進展。
 
 如需詳細資訊，請參閱[單一根目錄 I/o 虛擬化（sr-iov）的總覽](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-)。
 

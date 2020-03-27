@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 131520f567da6529e342229a0f6965d3223f928b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 39b6d0b924d4939361cb66109d049a6924e9be3e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404573"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314230"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>步驟2規劃遠端存取部署
 
@@ -92,7 +92,7 @@ ms.locfileid: "71404573"
   
     如果「遠端存取伺服器安裝精靈」偵測到網路介面卡上已部署 IPv6，它就會自動填入內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。 如果自動產生的首碼不適用您的原生 IPv6 或 ISATAP 基礎結構，您必須手動變更它們。  
   
--   **驗證**  
+-   [驗證]  
   
     您可以選擇下列其中一種方法，對遠端存取服務器驗證 DirectAccess 用戶端：  
   
@@ -118,7 +118,7 @@ ms.locfileid: "71404573"
   
 -   **管理伺服器** 
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
   
 -   [步驟1：規劃遠端存取基礎結構](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
   

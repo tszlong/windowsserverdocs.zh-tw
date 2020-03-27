@@ -6,19 +6,19 @@ ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 07/19/2018
-ms.openlocfilehash: 335efc4fae1f12f2af8443e91c67ff6ba936edb0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 275bec5c950ea20c3a7d5a933648cf7e068164d1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356206"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318358"
 ---
 # <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>將 CA 憑證和 CRL 複製到虛擬目錄
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式，將憑證授權單位單位的憑證撤銷清單和企業根 CA 憑證複製到 Web 服務器上的虛擬目錄，並確保 AD CS 已正確設定。 執行下列命令之前，請確定您已將目錄和伺服器名稱取代為適用于您部署的路徑。  
   

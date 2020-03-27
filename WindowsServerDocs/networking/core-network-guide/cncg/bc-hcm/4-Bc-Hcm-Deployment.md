@@ -7,18 +7,18 @@ ms.suite: na
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: c635fa48-d064-4b8b-9dce-9f26abfbcfa4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8734942e6d048df4be0107c67af7a2f741845e8b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a03a4bc51429daea0d1a6cfaeb3da2f8805e711e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406409"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318484"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment"></a>BranchCache 託管快取模式部署
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用本主題，以取得詳細的程式主題連結，引導您完成 BranchCache 託管快取模式部署流程。
 

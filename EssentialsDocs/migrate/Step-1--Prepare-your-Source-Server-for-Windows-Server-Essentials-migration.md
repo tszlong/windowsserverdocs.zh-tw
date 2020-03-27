@@ -3,7 +3,7 @@ title: 步驟 1：準備好來源伺服器以進行 Windows Server Essentials �
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f95ebfec13c2ec1f374c60f48d5f8af6c4b22324
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cb0cffdda0e0f1528887d3c94a1905a99c5c55c3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947395"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318788"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>步驟 1：準備好來源伺服器以進行 Windows Server Essentials 移轉
 
@@ -38,7 +38,7 @@ ms.locfileid: "75947395"
 
 5.  [建立可遷移企業營運應用程式的計畫](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MigrateLOB)  
 
-###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>備份您的來源伺服器  
+###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>備份您的來源伺服器  
  開始移轉程序之前先備份您的來源伺服器。 進行備份可協助您保護資料，以免因移轉期間發生無法復原的錯誤而導致資料遺失。  
 
 ##### <a name="to-back-up-the-source-server"></a>若要備份來源伺服器  
@@ -56,10 +56,10 @@ ms.locfileid: "75947395"
    |Windows Small Business Server 2011 Standard|[管理伺服器備份](https://technet.microsoft.com/library/cc527488.aspx)  
    |Windows Server Essentials|[在 Windows Server Essentials 中管理備份與還原](https://technet.microsoft.com/library/jj713536.aspx)
 
-###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安裝最新的 service pack  
+###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安裝最新的 service pack  
  移轉之前，您必須在來源伺服器上安裝最新的更新和 Service Pack。  
 
-###  <a name="BKMK_DeleteSvcAcctSetting"></a>刪除 [以服務方式登入] 帳戶設定  
+###  <a name="delete-the-log-on-as-a-service-account-setting"></a><a name="BKMK_DeleteSvcAcctSetting"></a>刪除 [以服務方式登入] 帳戶設定  
  如果您從 Windows Small Business Server 2003 或 Windows Server 2003 移轉，請從群組原則刪除 [以服務方式登入] 帳戶設定。  
 
 ##### <a name="to-delete-the-log-on-as-a-service-account-setting"></a>刪除 [以服務方式登入] 帳戶設定  
@@ -76,7 +76,7 @@ ms.locfileid: "75947395"
 
 6.  Delete \\\localhost\SYSVOL\\< domainname\>\scripts\ SBS_LOGIN_SCRIPT .bat。  
 
-###  <a name="BKMK_EvaluateHealth"></a>評估來源伺服器的健全狀況  
+###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>評估來源伺服器的健全狀況  
  請務必在開始移轉前評估來源伺服器的健康情況。 您可以使用下列程序，確保更新為最新的，以產生系統健康情況報告，並執行 Windows Server 解決方案最佳做法分析程式 (BPA)。  
 
 #### <a name="download-and-install-critical-and-security-updates"></a>下載及安裝重大和安全性更新  
@@ -133,21 +133,21 @@ ms.locfileid: "75947395"
 
    BPA 工具收集伺服器設定的相關資訊之後，它會驗證資訊是否正確，然後向系統管理員呈現一份資訊和依重要性排序問題的清單。 清單中會描述每個問題，並提供建議或可能的解決方案。 有三種可用的報告類型：  
 
-|報告類型|說明
+|報告類型|描述
 |-----------------|----------------- 
 |清單報告|以一維清單的方式顯示報告。 
 |樹狀報告|以階層式清單的方式顯示報告。
 
 若要檢視問題的描述和解決方案，在報告中按一下該問題。 並非 BPA 工具回報的所有問題都會影響移轉，但您應盡可能解決這些問題，以確保移轉能順利進行。  
 
-####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>同步處理來源伺服器時間與外部時間來源  
+####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>同步處理來源伺服器時間與外部時間來源  
  來源伺服器上的時間與目的地伺服器上的時間差距不能超過 5 分鐘，而且兩部伺服器上的日期和時區必須相同。 若來源伺服器是在虛擬機器中執行，則主機伺服器的日期、時間與時區必須符合來源伺服器與目的地伺服器的日期、時間與時區。 為協助確保已成功安裝 Windows Server Essentials，您必須將來源伺服器的時間與網際網路上的網路時間通訊協定（NTP）伺服器同步。  
 
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>同步來源伺服器和 NTP 伺服器的時間  
 
 1.  使用網域系統管理員帳戶和密碼登入來源伺服器。  
 
-2.  按一下 [開始]、[執行]，在文字方塊中輸入 **cmd** ，然後按 ENTER。  
+2.  按一下 [開始] **、[執行]** ，在文字方塊中輸入 **cmd**，然後按 ENTER。  
 
 3.  在命令提示字元中輸入 w32tm /config /syncfromflags:domhier /reliable:no /update，然後按 ENTER。  
 
@@ -158,7 +158,7 @@ ms.locfileid: "75947395"
 > [!IMPORTANT]
 >  在 Windows Server Essentials 安裝期間，您有機會確認目的地伺服器上的時間，並視需要加以變更。 確定與來源伺服器上所設時間的誤差不超過 5 分鐘。 安裝完成後，目的地伺服器會與 NTP 進行同步。 所有加入網域的電腦 (包含來源伺服器) 都會與目的地伺服器同步，目的地伺服器將成為網域主控站 (PDC) 模擬器主機的角色。  
 
-###  <a name="BKMK_MigrateLOB"></a>建立可遷移企業營運應用程式的計畫  
+###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_MigrateLOB"></a>建立可遷移企業營運應用程式的計畫  
  企業營運 (LOB) 應用程式是指對企業運作而言不可或缺的重要電腦應用程式。 LOB 應用程式包括會計、供應鏈管理與資源規劃應用程式。  
 
  當您計劃移轉 LOB 應用程式時，請務必諮詢 LOB 應用程式提供者，以決定適用於移轉每個應用程式的方式。 您也必須尋找用於在目的地伺服器上安裝 LOB 應用程式的媒體。  
@@ -184,7 +184,7 @@ ms.locfileid: "75947395"
 > [!IMPORTANT]
 >  若要允許 Office 365 移轉工具連線到來源伺服器上執行的 Exchange Server，您必須啟用來源伺服器的 RPC over HTTP。 如需如何啟用 RPC over HTTP 的相關資訊，請參閱 [如何在 Small Business Server 2003 (Standard 或 Premium) 中第一次部署 RPC over HTTP](https://technet.microsoft.com/library/bb123622%28EXCHG.65%29.aspx)。 如果您無法在啟用 RPC over HTTP 後順利執行 Office 365 移轉工具，請檢視登錄 HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy 中的 [ValidPorts] 設定，確定有列出來源伺服器的完整網域名稱 (FQDN)。 如果沒有列出 FQDN，請使用下列範例手動將它加入：  
 >   
->  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004 (以您的網域名稱取代 *contoso* )。  
+>  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004 (以您的網域名稱取代 *contoso*)。  
 
 #### <a name="migrate-email-to-another-on-premises-exchange-server"></a>將電子郵件移轉到其他內部部署 Exchange Server  
  如需如何將電子郵件遷移至另一個內部部署 Exchange Server 的相關資訊，請參閱[整合內部部署 Exchange server 與 Windows Server Essentials](https://technet.microsoft.com/library/jj200172.aspx)。 建議您在安裝 Windows Server Essentials 之後設定新的內部部署 Exchange Server，然後在降級來源伺服器之前完成電子郵件遷移。  
@@ -195,7 +195,7 @@ ms.locfileid: "75947395"
 > [!NOTE]
 >  在您更新並備妥來源伺服器以進行移轉之後，您應該在繼續移轉程序之前先建立已更新伺服器的備份。  
 
-## <a name="next-steps"></a>接下來的步驟  
+## <a name="next-steps"></a>後續步驟  
  您已準備好要遷移到 Windows Server Essentials 的來源伺服器。  現在請移至[步驟2：將 Windows Server Essentials 安裝為新的複本網域控制站](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)。  
 
 若要查看所有步驟，請參閱[遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。

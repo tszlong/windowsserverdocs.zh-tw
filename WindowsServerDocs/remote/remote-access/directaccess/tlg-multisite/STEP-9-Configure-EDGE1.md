@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ce86a75ac5b8d53874d2fc5c6743979506591680
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74c4eae329698d33b160ac7180bbabd6d1d8fbad
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388235"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314517"
 ---
 # <a name="step-9-configure-edge1"></a>步驟9設定 EDGE1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 下列程式會在 EDGE1 伺服器上執行：  
   
@@ -29,7 +29,7 @@ ms.locfileid: "71388235"
   
 2. 設定子網之間的路由。 設定 EDGE1 上的路由，以啟用公司網路與2公司網路子網之間的通訊。  
   
-## <a name="IPv6"></a>在 EDGE1 上設定 DNS 伺服器  
+## <a name="configure-the-dns-servers-on-edge1"></a><a name="IPv6"></a>在 EDGE1 上設定 DNS 伺服器  
   
 1.  在伺服器管理員主控台中，按一下 [**本機伺服器**]，然後在 [**屬性**] 區域的 [**公司**網路] 旁，按一下連結。  
   
@@ -47,9 +47,9 @@ ms.locfileid: "71388235"
   
 8.  關閉 [網路連線] 視窗。  
   
-## <a name="ConfigRouting"></a>設定子網之間的路由  
+## <a name="configure-routing-between-subnets"></a><a name="ConfigRouting"></a>設定子網之間的路由  
   
-1.  在 [**開始**] 畫面上，輸入**cmd.exe**，在**cmd**上按一下滑鼠右鍵，按一下 [ **Advanced**]，然後按一下 [以**系統管理員身分執行**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [**開始**] 畫面上，輸入**cmd.exe**，在**cmd**上按一下滑鼠右鍵，按一下 [ **Advanced**]，然後按一下 [以**系統管理員身分執行**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [命令提示字元] 視窗中，輸入下列命令。 輸入每個命令之後，按 ENTER 鍵。  
   

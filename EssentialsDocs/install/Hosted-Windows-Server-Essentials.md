@@ -3,7 +3,7 @@ title: 主控的 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 84464c69d4b8576906e5fb0d0a7de7e382a59537
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 76319f87a246c6fabbe0befaf7dc4c74d1416ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947502"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311752"
 ---
 # <a name="hosted-windows-server-essentials"></a>主控的 Windows Server Essentials
 
@@ -57,10 +57,10 @@ ms.locfileid: "75947502"
   
    如果您使用 Virtual Machine Manager，可使用執行中的執行個體來建立範本。 建立範本將會在執行個體上執行 Sysprep 並關閉伺服器。 在儲存至程式庫之後，您就可以依個別情況將執行個體叫出。  
   
-##  <a name="BKMK_automatedeployment"></a>如何? 自動化部署？  
+##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a>如何? 自動化部署？  
  在您取得自訂映像之後，就可以使用您自己的映像來執行部署。 若要執行半自動安裝，您必須提供部署 unattend.xml 以進行 WinPE 設定。 若要執行完全自動安裝，您也需要提供適用于 Windows Server Essentials 初始設定的 cfg .ini 檔案。  
   
-1. 僅執行自動 WinPE 設定。 這只會自動化 WinPE 設定，並讓安裝在初始設定之前停止，讓使用者可在 RDP 進入伺服器工作階段之後自行提供 Corp、網域和系統管理員資訊。 做法如下：  
+1. 僅執行自動 WinPE 設定。 這只會自動化 WinPE 設定，並讓安裝在初始設定之前停止，讓使用者可在 RDP 進入伺服器工作階段之後自行提供 Corp、網域和系統管理員資訊。 若要這樣做：  
   
    1.  提供 Windows unattend.xml 檔案。 遵循[WINDOWS 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)以產生檔案，並提供所有必要的資訊，包括伺服器名稱、產品金鑰和系統管理員密碼。 在 unattend.xml 檔案的 [Microsoft-Windows 設定] 區段中，提供如下所示的資訊。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "75947502"
   
    如果您使用 Virtual Machine Manager，當您從範本建立新的執行個體時，可以在主控台指定系統管理員密碼。  
   
-2. 執行包含自動初始設定在內的完整自動設定。 做法如下：  
+2. 執行包含自動初始設定在內的完整自動設定。 若要這樣做：  
   
    1.  如果部署從 WinPE 設定開始，您可以如同前述提供 unattend.xml 檔案。  
   
@@ -211,7 +211,7 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
   
  該命令會使用自動設定的路由器啟用遠端 Web 存取，並變更所有現有使用者的預設存取權限。  
   
- **加入使用者**  
+ **新增使用者**  
   
 ```  
 Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]  
@@ -306,11 +306,11 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 #### <a name="back-up-the-server"></a>備份伺服器  
  Windows Server Essentials 支援兩種備份伺服器的方式：內部部署備份和外部部署備份。  
   
- **內部部署備份** 可讓您在個別磁碟上定期執行區塊層級的增量備份。 身為主機服務提供者，您可以將虛擬磁片連結至 Windows Server Essentials VM，並將伺服器備份設定為此虛擬磁片。 虛擬磁片應該位於與 Windows Server Essentials VM 不同的實體磁片上。  
+ **內部部署備份**可讓您在個別磁碟上定期執行區塊層級的增量備份。 身為主機服務提供者，您可以將虛擬磁片連結至 Windows Server Essentials VM，並將伺服器備份設定為此虛擬磁片。 虛擬磁片應該位於與 Windows Server Essentials VM 不同的實體磁片上。  
   
 - 如果您有另一種機制來備份 Windows Server Essentials VM，而您不想讓使用者看到 Windows Server Essentials 原生伺服器備份功能，您可以將其關閉，並從 Windows Server Essentials 移除所有相關的使用者介面。儀錶. 如需詳細資訊，請參閱[ADK 檔](https://go.microsoft.com/fwlink/p/?LinkID=249124)的自訂伺服器備份一節。  
   
-  **外部部署備份** 可讓您定期將伺服器資料備份至雲端服務。 您可以下載並安裝適用于 Windows Server Essentials 的 Microsoft Azure 備份整合模組，以利用 Microsoft 提供的 Azure 備份。  
+  **外部部署備份**可讓您定期將伺服器資料備份至雲端服務。 您可以下載並安裝適用于 Windows Server Essentials 的 Microsoft Azure 備份整合模組，以利用 Microsoft 提供的 Azure 備份。  
   
   如果您或您的使用者偏好其他的雲端服務，則可執行以下步驟：  
   
@@ -340,7 +340,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
   [檔案歷程**記錄**] 是將設定檔資料（媒體櫃、桌面、連絡人、我的最愛）備份到網路共用的 Windows 8.1 功能。 在 Windows Server Essentials 中，我們允許集中管理所有加入 Windows Server Essentials 的 Windows 8.1 用戶端的 [檔案歷程記錄] 設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您可以遵循[ADK](https://technet.microsoft.com/library/jj200150)檔的建立 Cfg 檔案一節中的步驟來關閉這項功能。  
   
-### <a name="storage-management"></a>存放裝置管理  
+### <a name="storage-management"></a>存放管理  
  [新的「儲存空間」功能](https://technet.microsoft.com/library/hh831739.aspx) 可讓您彙總不同硬碟的實體儲存容量、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 您也可以將 iSCSI 磁片連結到 Windows Server Essentials 以擴充其存放裝置。  
   
 ## <a name="what-are-the-main-scenarios-i-should-test"></a>我應測試哪些主要實例？  

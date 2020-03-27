@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 6a1d210d25309be322359add20da4eb8d0eee091
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355812"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317481"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>使用存取控制清單（Acl）管理資料中心網路流量流程
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，您將瞭解如何使用虛擬子網上的資料中心防火牆和 Acl，設定存取控制清單（Acl）來管理資料流程的流量。 您可以藉由建立可套用至虛擬子網或網路介面的 Acl 來啟用和設定資料中心防火牆。   
 
@@ -35,7 +35,7 @@ ms.locfileid: "71355812"
 使用下表中的專案來建立一組規則，以允許所有輸入和輸出網路流量。
 
 
-| 來源 IP | 目的地 IP | Protocol | 來源連接埠 | 目的地連接埠 | Direction | Action | Priority |
+| 來源 IP | 目的地 IP | 通訊協定 | 來源連接埠 | 目的地連接埠 | 方向 | 動作 | 優先順序 |
 |:---------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
 |    \*     |       \*       |   全部    |     \*      |        \*        |  輸入  | 允許  |   100    |
 |    \*     |       \*       |   全部    |     \*      |        \*        | 輸出  | 允許  |   110    |
@@ -90,12 +90,12 @@ New-NetworkControllerAccessControlList -ResourceId "AllowAll" -Properties $aclli
 在此範例中，您會建立 ACL，以防止 192.168.0.0/24 子網中的 Vm 彼此通訊。 這種類型的 ACL 有助於限制攻擊者在子網內散佈橫向的能力，同時仍然允許 Vm 接收來自子網外部的要求，以及與其他子網上的其他服務通訊。   
 
 
-|   來源 IP    | 目的地 IP | Protocol | 來源連接埠 | 目的地連接埠 | Direction | Action | Priority |
+|   來源 IP    | 目的地 IP | 通訊協定 | 來源連接埠 | 目的地連接埠 | 方向 | 動作 | 優先順序 |
 |:--------------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
 |  192.168.0.1   |       \*       |   全部    |     \*      |        \*        |  輸入  | 允許  |   100    |
 |       \*       |  192.168.0.1   |   全部    |     \*      |        \*        | 輸出  | 允許  |   101    |
-| 192.168.0.0/24 |       \*       |   全部    |     \*      |        \*        |  輸入  | 封鎖  |   102    |
-|       \*       | 192.168.0.0/24 |   全部    |     \*      |        \*        | 輸出  | 封鎖  |   103    |
+| 192.168.0.0/24 |       \*       |   全部    |     \*      |        \*        |  輸入  | 區塊  |   102    |
+|       \*       | 192.168.0.0/24 |   全部    |     \*      |        \*        | 輸出  | 區塊  |   103    |
 |       \*       |       \*       |   全部    |     \*      |        \*        |  輸入  | 允許  |   104    |
 |       \*       |       \*       |   全部    |     \*      |        \*        | 輸出  | 允許  |   105    |
 

@@ -3,7 +3,7 @@ title: 設定或自訂伺服器備份
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 820474934ef1f164d24d4893c42b10c5043f7707
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 06d8381e622cdb6c437b0f5aa4d1cd9293ef779a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865206"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310591"
 ---
 # <a name="set-up-or-customize-server-backup"></a>設定或自訂伺服器備份
 
->適用於：Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
  在安裝期間不會自動設定伺服器備份。 您應該排定每日備份來自動保護您的伺服器及其資料。 建議您維持一個每日備份計劃，因為大多數組織皆無法承受失去數天所建立之資料的損失。  
   
@@ -35,7 +35,7 @@ ms.locfileid: "70865206"
   
 -   [要備份的專案](Set-up-or-customize-server-backup.md#BKMK_4)  
   
-##  <a name="BKMK_1"></a>設定或變更伺服器備份設定  
+##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a>設定或變更伺服器備份設定  
   
 #### <a name="to-set-up-or-change-server-backup-settings"></a>設定或變更伺服器備份設定  
   
@@ -51,7 +51,7 @@ ms.locfileid: "70865206"
 4.  遵循精靈的指示進行。  
   
     > [!NOTE]
-    >  如果您先啟動精靈才將外部硬碟連接至伺服器，請在連接硬碟後，按一下 [選取備份目的地] 頁面上的 [重新整理清單] 。  
+    >  如果您先啟動精靈才將外部硬碟連接至伺服器，請在連接硬碟後，按一下 [選取備份目的地] 頁面上的 [重新整理清單]。  
   
 > [!NOTE]
 >  在 Windows Server Essentials 的預設安裝中，伺服器會設定為每週自動執行一次磁碟重組。 如果您使用非 Microsoft 映像處理軟體，這可能會導致比一般備份還要大。 如果沒有必要定期進行伺服器磁碟重組，您可以依照下列步驟關閉磁碟重組排程：  
@@ -62,11 +62,11 @@ ms.locfileid: "70865206"
 >    4. 在 [最佳化磁碟機] 頁面中，選取一個磁碟機，然後按一下 [變更設定]。  
 >    5. 在 [最佳化排程] 視窗中，取消選取 [依排程執行 (建議)] 核取方塊，然後按一下 [確定] 來儲存變更。  
   
-##  <a name="BKMK_2"></a>伺服器備份排程  
+##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a>伺服器備份排程  
  當您使用「設定伺服器備份精靈」或「自訂伺服器備份精靈」時，可以選擇在一日內多次備份伺服器資料。 因為精靈排程的是增量備份，因此備份執行地很迅速，而且不會大幅影響伺服器效能。 精靈預設會排程在每日中午 12:00 與晚上 11:00 執行備份。 不過，您可以根據您組織的需求調整備份排程。 您應該偶爾評估您備份計劃的有效性，然後視需要變更計劃。  
   
-##  <a name="BKMK_Target"></a>備份目標磁片磁碟機  
- 您可以使用多個外部存放磁碟機進行備份，然後讓這些磁碟機在站上與離站位置之間輪替。 這樣可在站上硬體發生實體損害時協助您復原資料，藉以改善您的災害防範規劃。  
+##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a>備份目標磁片磁碟機  
+ 您可以使用多個外部存放磁碟機進行備份，然後讓這些磁碟機在站上與離站位置之間輪替。 這可以協助您在站上硬體發生實體損壞時復原資料，改善嚴重損壞的準備計畫。  
   
  為您的伺服器備份選擇存放磁碟機時，請考慮下列各項：  
   
@@ -92,7 +92,7 @@ ms.locfileid: "70865206"
   
     1.  在 [控制台] 中開啟 [系統及安全性]。  
   
-    2.  在 [系統管理工具]下，按一下 [建立及格式化硬碟磁碟分割]。  
+    2.  在 [系統管理工具] 下，按一下 [建立及格式化硬碟磁碟分割]。  
   
     3.  刪除 USB 磁碟上的所有磁碟區，或者只刪除 EFI 磁碟分割。 「設定伺服器備份精靈」會刪除所有磁碟區。  
   
@@ -110,14 +110,14 @@ ms.locfileid: "70865206"
 >  **重新指派現有磁片區的磁碟機號**  
 > 
 > 1. 在 [控制台] 中開啟 [系統及安全性]。  
->    2. 在 [系統管理工具]下，按一下 [建立及格式化硬碟磁碟分割]。  
+>    2. 在 [系統管理工具] 下，按一下 [建立及格式化硬碟磁碟分割]。  
 >    3. 以滑鼠右鍵按一下磁碟機，然後按一下 [變更磁碟機代號及路徑]。  
->    4. 按一下 [新增]。  
->    5. 在 [新增磁碟機代號或路徑] 對話方塊中，選取要指派的磁碟機代號。 (您可以重新指派相同的磁碟機代號。)然後按一下 [確定]。  
+>    4. 按一下 [加入]。  
+>    5. 在 [新增磁碟機代號或路徑] 對話方塊中，選取要指派的磁碟機代號。 （您可以重新指派相同的磁碟機號。）然後按一下 **[確定]** 。  
 > 
 >    磁碟機會立即出現在儀表板上。  
   
-##  <a name="BKMK_4"></a>要備份的專案  
+##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a>要備份的專案  
  您可以選擇備份伺服器上所有的磁碟機、檔案和資料夾，或選取個別的磁碟機、檔案或資料夾進行備份。  
   
  當您新增或移除磁碟機，或者新增或移除共用的檔案和資料夾時，您應重新檢查伺服器備份設定，以確定這些項目加入備份設定或從備份設定中移除。 若要新增或移除要備份的項目，請執行下列其中一個動作：  

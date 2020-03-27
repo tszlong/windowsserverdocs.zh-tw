@@ -10,36 +10,36 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: f2f2f1a5-ac2f-41b7-a495-98ad0e2a9b20
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fc19a58482df5dfbfb4ea324f317bbe1b27bf834
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d87c149bef3af0aa2b2b86aa5dfce58294b1634b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405594"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312299"
 ---
 # <a name="whats-new-in-ipam"></a>IPAM 的新功能
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明 Windows Server 2016 中新增或變更的 IP 位址管理（IPAM）功能。  
   
 IPAM 為企業或雲端服務提供者（CSP）網路上的 IP 位址和 DNS 基礎結構提供高度可自訂的系統管理和監視功能。 您可以使用 IPAM 來監視、審查和管理執行動態主機設定通訊協定（DHCP）和網域名稱系統（DNS）的伺服器。  
   
-## <a name="BKMK_IPAM2012R2"></a>IPAM 伺服器中的更新  
+## <a name="updates-in-ipam-server"></a><a name="BKMK_IPAM2012R2"></a>IPAM 伺服器中的更新  
 以下是 Windows Server 2016 中 IPAM 的全新和改良功能。  
   
 |特色/功能|新功能或增強功能|描述|  
 |--------------------------|-------------------|---------------|  
 |[增強的 IP 位址管理](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#EIP)|增強功能|IPAM 功能已針對處理 IPv4/32 和 IPv6/128 子網，以及尋找 IP 位址區塊中的可用 IP 位址子網和範圍等案例進行改良。|  
-|[增強的 DNS 服務管理](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#EDNS)|新的|IPAM 可針對加入網域的 Active Directory 整合式和以檔案為基礎的 DNS 伺服器，支援 DNS 資源記錄、條件式轉寄站和 DNS 區域管理。|  
+|[增強的 DNS 服務管理](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#EDNS)|新增|IPAM 可針對加入網域的 Active Directory 整合式和以檔案為基礎的 DNS 伺服器，支援 DNS 資源記錄、條件式轉寄站和 DNS 區域管理。|  
 |[整合式 DNS、DHCP 和 IP 位址（DDI）管理](../../technologies/ipam/../../technologies/ipam/../../technologies/ipam/What-s-New-in-IPAM.md#DDI)|增強功能|已啟用數個新體驗和整合式生命週期管理作業，例如將所有與 IP 位址有關的 DNS 資源記錄視覺化、根據 DNS 資源記錄自動清查 IP 位址，以及 IP 位址生命週期管理適用于 DNS 和 DHCP 作業。|  
-|[多個 Active Directory 樹系支援](#bkmk_ad)|新的|當安裝 IPAM 的樹系和每個遠端樹系之間有雙向信任關係時，您可以使用 IPAM 來管理多個 Active Directory 樹系的 DNS 和 DHCP 伺服器。|  
-|[清除使用量資料](#bkmk_purge)|新的|您現在可以藉由清除早于指定日期的 IP 位址使用量資料，來減少 IPAM 資料庫大小。|  
-|[以角色為基礎的存取控制的 Windows PowerShell 支援](#bkmk_ps)|新的|您可以使用 Windows PowerShell 來設定 IPAM 物件的存取範圍。|  
+|[多個 Active Directory 樹系支援](#bkmk_ad)|新增|當安裝 IPAM 的樹系和每個遠端樹系之間有雙向信任關係時，您可以使用 IPAM 來管理多個 Active Directory 樹系的 DNS 和 DHCP 伺服器。|  
+|[清除使用量資料](#bkmk_purge)|新增|您現在可以藉由清除早于指定日期的 IP 位址使用量資料，來減少 IPAM 資料庫大小。|  
+|[以角色為基礎的存取控制的 Windows PowerShell 支援](#bkmk_ps)|新增|您可以使用 Windows PowerShell 來設定 IPAM 物件的存取範圍。|  
   
-### <a name="EIP"></a>增強的 IP 位址管理  
+### <a name="enhanced-ip-address-management"></a><a name="EIP"></a>增強的 IP 位址管理  
 下列功能會改善 IPAM 位址管理功能。  
 >[!NOTE]
 >如需 IPAM Windows PowerShell 命令參考，請參閱[Windows powershell 中的 IP 位址管理（IPAM）伺服器 Cmdlet](https://docs.microsoft.com/powershell/module/ipamserver/)。  
@@ -69,7 +69,7 @@ Windows Server 2016 中的 IPAM 現在支援/31、/32 和/128 子網。 例如�
   
 如需詳細資訊，請參閱[IpamFreeRange](https://docs.microsoft.com/powershell/module/ipamserver/Find-IpamFreeRange)。  
   
-### <a name="EDNS"></a>增強的 DNS 服務管理  
+### <a name="enhanced-dns-service-management"></a><a name="EDNS"></a>增強的 DNS 服務管理  
 Windows Server 2016 中的 IPAM 現在支援在執行 IPAM 的 Active Directory 樹系中探索以檔案為基礎、已加入網域的 DNS 伺服器。  
   
 此外，已新增下列 DNS 函式：  
@@ -86,24 +86,24 @@ Windows Server 2016 中的 IPAM 現在支援在執行 IPAM 的 Active Directory 
   
 -   條件式轉寄站集合和設定（[建立]、[刪除]、[編輯]）。  
   
-### <a name="DDI"></a>整合式 DNS、DHCP 和 IP 位址（DDI）管理  
+### <a name="integrated-dns-dhcp-and-ip-address-ddi-management"></a><a name="DDI"></a>整合式 DNS、DHCP 和 IP 位址（DDI）管理  
 當您查看 IP 位址清查中的 IP 位址時，您可以在 [詳細資料] 視圖中選擇此選項，以查看與該 IP 位址相關聯的所有 DNS 資源記錄。  
   
 做為 DNS 資源記錄集合的一部分，IPAM 會收集 DNS 反向查詢區域的 PTR 記錄。 針對對應至任何 IP 位址範圍的所有反向對應區域，IPAM 會在對應的對應 IP 位址範圍內，為屬於該區域的所有 PTR 記錄建立 IP 位址記錄。 如果 IP 位址已存在，PTR 記錄就會直接與該 IP 位址相關聯。 如果反向對應區域未對應至任何 IP 位址範圍，則不會自動建立 IP 位址。  
   
 透過 IPAM 在反向對應區域中建立 PTR 記錄時，會以如上所述的相同方式更新 IP 位址清查。 在後續的集合中，由於 IP 位址已存在於系統中，因此 PTR 記錄只會與該 IP 位址對應。  
   
-### <a name="bkmk_ad"></a>多個 Active Directory 樹系支援  
+### <a name="multiple-active-directory-forest-support"></a><a name="bkmk_ad"></a>多個 Active Directory 樹系支援  
 在 Windows Server 2012 R2 中，IPAM 能夠探索和管理屬於與 IPAM 伺服器相同 Active Directory 樹系的 DNS 和 DHCP 伺服器。 現在您可以管理屬於不同 AD 樹系的 DNS 和 DHCP 伺服器，與安裝 IPAM 伺服器的樹系具有雙向信任關係。 您可以移至 [**設定伺服器探索**] 對話方塊，並從您想要管理的其他受信任樹系新增網域。 探索到伺服器之後，管理體驗會與屬於安裝 IPAM 之相同樹系的伺服器相同。  
   
 如需詳細資訊，請參閱[管理多個 Active Directory 樹系中的資源](../../technologies/ipam/Manage-Resources-in-Multiple-Active-Directory-Forests.md)  
   
-### <a name="bkmk_purge"></a>清除使用量資料  
+### <a name="purge-utilization-data"></a><a name="bkmk_purge"></a>清除使用量資料  
 清除使用量資料可讓您藉由刪除舊的 IP 位址使用量資料，來減少 IPAM 資料庫大小。 若要執行資料刪除，您可以指定日期，而 IPAM 會刪除早于或等於您所提供日期的所有資料庫專案。   
   
 如需詳細資訊，請參閱[清除使用量資料](../../technologies/ipam/Purge-Utilization-Data.md)。  
   
-### <a name="bkmk_ps"></a>以角色為基礎的存取控制的 Windows PowerShell 支援  
+### <a name="windows-powershell-support-for-role-based-access-control"></a><a name="bkmk_ps"></a>以角色為基礎的存取控制的 Windows PowerShell 支援  
 您現在可以使用 Windows PowerShell 來設定以角色為基礎的存取控制。 您可以使用 Windows PowerShell 命令來取出 IPAM 中的 DNS 和 DHCP 物件，並變更其存取範圍。 因此，您可以撰寫 Windows PowerShell 腳本，將存取範圍指派給下列物件。  
   
 -   IP 位址空間  

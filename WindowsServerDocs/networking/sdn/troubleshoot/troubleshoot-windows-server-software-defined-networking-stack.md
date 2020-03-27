@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
-ms.author: pashort
+ms.author: lizross
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5827ad3b23d6f084e0138bf34ad47223eccb4e76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949919"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312841"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>對 Windows Server 軟體定義網路堆疊進行疑難排解
 
@@ -121,9 +121,9 @@ Message:          Host is not Connected.
 下表根據觀察到的設定狀態，顯示要採取的錯誤碼、訊息和後續動作的清單。
 
 
-| **Code**| **Message**| **動作**|  
+| **錯誤碼**| **消息**| **動作**|  
 |--------|-----------|----------|  
-| 不明| 未知的錯誤| |  
+| 未知| 未知的錯誤| |  
 | HostUnreachable                       | 無法連線到主機電腦 | 檢查網路控制站與主機之間的管理網路連線能力 |  
 | PAIpAddressExhausted                  | 已耗盡的 PA Ip 位址 | 增加 HNV 提供者邏輯子網的 IP 集區大小 |  
 | PAMacAddressExhausted                 | 已耗盡的 PA Mac 位址 | 增加 Mac 集區範圍 |  
@@ -422,8 +422,8 @@ Ethernet adapter VLAN11:
 
 |-Hyper-v 主機-|-PA IP 位址1|-PA IP 位址2|
 |---             |---            |---             |
-|主機 1 | 10.10.182.64 | 10.10.182.65 |
-|主機 2 | 10.10.182.66 | 10.10.182.67 |
+|主機1 | 10.10.182.64 | 10.10.182.65 |
+|主機2 | 10.10.182.66 | 10.10.182.67 |
 
 我們可以使用下列命令，在兩者之間進行 ping，以檢查 HNV 提供者邏輯網路連線能力。
 
@@ -597,7 +597,7 @@ PA 路由資訊：
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
 
- <snip> ...
+ <snip> 。
 
 4. 出租檢查虛擬子網或 VM 網路介面上未指定任何分散式防火牆原則，這會封鎖流量。    
 

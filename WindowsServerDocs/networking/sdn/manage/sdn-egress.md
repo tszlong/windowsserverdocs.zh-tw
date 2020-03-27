@@ -6,26 +6,26 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 10/02/2018
-ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5425a562264addd3b2fc416f659f8ba79d6d99d6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406003"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317491"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>虛擬網路中的輸出計量
 
->適用於：Windows Server Standard 2012 R2
+>適用于： Windows Server 2019
 
 
 雲端網路營收的基本層面是能夠依網路頻寬使用量來計費。 輸出資料的收費依據是在給定的計費週期內，透過網際網路從資料中心移出資料的總金額。
 
 Windows Server 2019 中 SDN 網路流量的輸出計量可讓您提供輸出資料傳輸的使用量計量。 離開每個虛擬網路但仍留在資料中心內的網路流量，可以個別追蹤，使其可以從計費計算中排除。 針對未包含在其中一個未開立帳單位址範圍內的目的地 IP 位址所系結的封包，會以計費的輸出資料傳輸進行追蹤。
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虛擬網路未開立帳單位址範圍（IP 範圍的允許清單）
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虛擬網路未開立帳單位址範圍（IP 範圍的白名單）
 
 您可以在現有虛擬網路的 [ **UnbilledAddressRanges** ] 屬性下找到未開立帳單位址範圍。 根據預設，不會新增任何位址範圍。
 

@@ -3,7 +3,7 @@ title: 使用 Windows Server Essentials 中的遠端 Web 存取
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 8ea6e5c1936cb87fb90cd24fd8e0f6186f42b129
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322100"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313131"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>使用 Windows Server Essentials 中的遠端 Web 存取
 
@@ -36,7 +36,7 @@ ms.locfileid: "79322100"
   
 -   [從行動裝置連接](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a>連接至遠端 Web 存取  
+##  <a name="connect-to-remote-web-access"></a><a name="BKMK_Connect"></a>連接至遠端 Web 存取  
   
 -   [登入遠端 Web 存取](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
@@ -48,14 +48,14 @@ ms.locfileid: "79322100"
   
 -   [從行動裝置連接](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a>連接至遠端 Web 存取  
+##  <a name="connect-to-remote-web-access"></a><a name="BKMK_Connect"></a>連接至遠端 Web 存取  
   
 -   [登入遠端 Web 存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
 -   [從遠端存取您的電腦](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
   
-###  <a name="BKMK_1"></a>登入遠端 Web 存取  
+###  <a name="log-on-to-remote-web-access"></a><a name="BKMK_1"></a>登入遠端 Web 存取  
  當您從本機或遠端電腦登入遠端 Web 存取時，您可以存取執行 Windows Server Essentials 之伺服器上的資源，以及網路上的電腦。  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>從網路電腦登入遠端 Web 存取  
@@ -76,7 +76,7 @@ ms.locfileid: "79322100"
   
 2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼，然後按一下箭號。  
   
-###  <a name="BKMK_1.5"></a>從遠端存取您的電腦  
+###  <a name="remotely-access-your-computer"></a><a name="BKMK_1.5"></a>從遠端存取您的電腦  
  當您不在辦公室時，您可以使用網頁瀏覽器登入遠端 Web 存取網站，從遠端存取您的 Windows Server Essentials 儀表板、共用資料夾和網路上的電腦。  
   
  連線到 [儀表板] 之後，您就可以像在辦公室裡一樣管理 Windows Server Essentials。 您可以執行所有一般的系統管理工作，例如新增使用者帳戶、新增共用資料夾、設定共用資料夾存取等等。 當您連線到網路上的電腦時，您可以存取它們的桌面，就好像您置身於辦公室中坐在那些電腦前一樣。  
@@ -105,7 +105,7 @@ ms.locfileid: "79322100"
 #### <a name="to-connect-to-the-server-dashboard"></a>連線到伺服器儀表板  
  在 [裝置] 索引標籤上，按一下您伺服器的名稱。 您只能選取狀態為 [可用] 的電腦。 您必須要能夠提供您伺服器上系統管理員使用者帳號和密碼，才能使用 [儀表板]。  
   
-##  <a name="BKMK_SharedFolders"></a>共用檔案和資料夾  
+##  <a name="share-files-and-folders"></a><a name="BKMK_SharedFolders"></a>共用檔案和資料夾  
   
 
 -   [在遠端 Web 存取中上傳和下載檔案](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
@@ -117,7 +117,7 @@ ms.locfileid: "79322100"
 -   [建立、重新命名、移動、刪除或複製遠端 Web 存取中的檔案和資料夾](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
   
-###  <a name="BKMK_UploadRWA"></a>在遠端 Web 存取中上傳和下載檔案  
+###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_UploadRWA"></a>在遠端 Web 存取中上傳和下載檔案  
  在 [遠端 Web 存取] 的 [共用資料夾] 索引標籤上，您可以執行下列動作：  
   
 -   將檔案從您的電腦上傳 (傳送) 到 Windows Server Essentials。  
@@ -248,7 +248,7 @@ ms.locfileid: "79322100"
     > [!NOTE]
     >  如果您使用協力廠商檔案壓縮程式，請依照該程式的程序，將您的檔案從壓縮檔中解壓縮。  
   
-###  <a name="BKMK_2"></a>建立、重新命名、移動、刪除或複製遠端 Web 存取中的檔案和資料夾  
+###  <a name="create-rename-move-delete-or-copy-files-and-folders-in-remote-web-access"></a><a name="BKMK_2"></a>建立、重新命名、移動、刪除或複製遠端 Web 存取中的檔案和資料夾  
  您可以使用「遠端 Web 存取」在您的伺服器上於現有的共用資料夾中建立新資料夾、重新命名檔案和資料夾、移動及複製檔案和資料夾，以及刪除檔案和資料夾。  
   
 > [!NOTE]
@@ -294,7 +294,7 @@ ms.locfileid: "79322100"
   
 3.  在您想要將檔案或資料夾複製到該處的資料夾上按一下滑鼠右鍵，然後按一下 [貼上]。  
   
-##  <a name="BKMK_ConnectMobile"></a>從行動裝置連接  
+##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>從行動裝置連接  
   
 
 -   [從行動裝置使用遠端 Web 存取](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
@@ -306,7 +306,7 @@ ms.locfileid: "79322100"
 -   [行動裝置支援的網頁瀏覽器](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
 
   
-###  <a name="BKMK_8"></a>從行動裝置使用遠端 Web 存取  
+###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>從行動裝置使用遠端 Web 存取  
  您可以從智慧型手機登入 [遠端 Web 存取] 來檢視伺服器上共用資料夾中的檔案和資料夾。  
   
 > [!NOTE]
@@ -334,7 +334,7 @@ ms.locfileid: "79322100"
   
    您可以搜尋伺服器上共用資料夾中的檔案和資料夾。  
   
-###  <a name="BKMK_9"></a>行動裝置支援的網頁瀏覽器  
+###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a>行動裝置支援的網頁瀏覽器  
  支援的行動裝置網頁瀏覽器包括：  
   
 -   Internet Explorer Mobile 6.0 或更新版本  

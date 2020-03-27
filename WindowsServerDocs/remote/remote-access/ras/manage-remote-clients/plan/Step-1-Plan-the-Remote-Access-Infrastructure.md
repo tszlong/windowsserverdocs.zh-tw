@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 71a6d38b9c77b3b8c24b28f78114daa63f5bd527
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7c6b4e4d4975303aef6a2334bce164ce498f7254
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822531"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314279"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步驟1規劃遠端存取基礎結構
 
@@ -28,7 +28,7 @@ ms.locfileid: "76822531"
   
 本主題說明規劃基礎結構的步驟，您可以用來設定單一遠端存取服務器以進行 DirectAccess 用戶端的遠端系統管理。 下表列出這些步驟，但這些規劃工作不需要依特定循序執行。  
   
-|工作|說明|  
+|工作|描述|  
 |----|--------|  
 |[規劃網路拓朴和伺服器設定](#plan-network-topology-and-settings)|決定要在何處放置遠端存取服務器（在邊緣或網路位址轉譯（NAT）裝置或防火牆後面），並規劃 IP 位址和路由。|  
 |[規劃防火牆需求](#plan-firewall-requirements)|規劃透過邊緣防火牆允許遠端存取。|  
@@ -64,8 +64,8 @@ ms.locfileid: "76822531"
   
     ||外部網路介面卡|內部網路介面卡<sup>1，上方</sup>|路由需求|  
     |-|--------------|------------------------|------------|  
-    |IPv4 網際網路和 IPv4 內部網路|設定下列各項：<br/><br/>-兩個具有適當子網路遮罩的靜態連續公用 IPv4 位址（僅限 Teredo 所需）。<br/>-網際網路防火牆或本機網際網路服務提供者（ISP）路由器的預設閘道 IPv4 位址。 **注意：** 遠端存取服務器需要兩個連續的公用 IPv4 位址，才能作為 Teredo 伺服器，而 Windows 型 Teredo 用戶端可以使用遠端存取服務器來偵測 NAT 裝置的類型。|設定下列各項：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意：** 請勿在任何內部網路介面上設定預設閘道。|若要將遠端存取服務器設定為連線到內部 IPv4 網路上的所有子網，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用 `route add -p` 或 `netsh interface ipv4 add route` 命令，將 IPv4 位址空間新增為遠端存取服務器之 IPv4 路由表中的靜態路由。|  
-    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br/><br/>-使用您 ISP 所提供的自動設定位址設定。<br/>-使用 `route print` 命令，以確保指向 ISP 路由器的預設 IPv6 路由存在於 IPv6 路由表中。<br/>-判斷 ISP 和內部網路路由器是否使用預設的路由器喜好設定（如 RFC 4191 中所述），以及其使用的預設喜好設定是否高於您的近端內部網路路由器。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到遠端存取服務器的網際網路介面的 IPv6 位址。|設定下列各項：<br/><br/>如果您不是使用預設的喜好設定層級，請使用 `netsh interface ipv6 set InterfaceIndex ignoredefaultroutes=enabled` 命令來設定內部網路介面。 這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以從 `netsh interface show interface` 命令的顯示中取得內部網路介面的 InterfaceIndex。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv6 位址空間。<br/>-使用 `netsh interface ipv6 add route` 命令來新增 IPv6 位址空間，做為遠端存取服務器的 IPv6 路由表中的靜態路由。|  
+    |IPv4 網際網路和 IPv4 內部網路|設定下列項目：<br/><br/>-兩個具有適當子網路遮罩的靜態連續公用 IPv4 位址（僅限 Teredo 所需）。<br/>-網際網路防火牆或本機網際網路服務提供者（ISP）路由器的預設閘道 IPv4 位址。 **注意：** 遠端存取服務器需要兩個連續的公用 IPv4 位址，才能作為 Teredo 伺服器，而 Windows 型 Teredo 用戶端可以使用遠端存取服務器來偵測 NAT 裝置的類型。|設定下列項目：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意：** 請勿在任何內部網路介面上設定預設閘道。|若要將遠端存取服務器設定為連線到內部 IPv4 網路上的所有子網，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用 `route add -p` 或 `netsh interface ipv4 add route` 命令，將 IPv4 位址空間新增為遠端存取服務器之 IPv4 路由表中的靜態路由。|  
+    |IPv6 網際網路與 IPv6 內部網路|設定下列項目：<br/><br/>-使用您 ISP 所提供的自動設定位址設定。<br/>-使用 `route print` 命令，以確保指向 ISP 路由器的預設 IPv6 路由存在於 IPv6 路由表中。<br/>-判斷 ISP 和內部網路路由器是否使用預設的路由器喜好設定（如 RFC 4191 中所述），以及其使用的預設喜好設定是否高於您的近端內部網路路由器。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到遠端存取服務器的網際網路介面的 IPv6 位址。|設定下列項目：<br/><br/>如果您不是使用預設的喜好設定層級，請使用 `netsh interface ipv6 set InterfaceIndex ignoredefaultroutes=enabled` 命令來設定內部網路介面。 這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以從 `netsh interface show interface` 命令的顯示中取得內部網路介面的 InterfaceIndex。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv6 位址空間。<br/>-使用 `netsh interface ipv6 add route` 命令來新增 IPv6 位址空間，做為遠端存取服務器的 IPv6 路由表中的靜態路由。|  
     |IPv4 網際網路和 IPv6 內部網路|遠端存取服務器會使用 Microsoft 6to4 介面卡介面，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的6to4 轉送。 當公司網路中沒有部署原生 IPv6 時，您可以使用下列命令，為 IPv4 網際網路上的 Microsoft 6to4 轉送 IPv4 位址設定遠端存取服務器： `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`。|||  
   
     > [!NOTE]  
@@ -79,7 +79,7 @@ DirectAccessclients 遠端系統管理需要 ISATAP，讓 DirectAccess 管理伺
   
 |ISATAP 部署案例|需求|  
 |---------------|--------|  
-|現有的原生 IPv6 內部網路（不需要 ISATAP）|使用現有的原生 IPv6 基礎結構，您可以在遠端存取部署期間指定組織的首碼，而遠端存取服務器則不會將自己設定為 ISATAP 路由器。 執行下列動作：<br/><br/>1. 若要確保可以從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由，以便將預設路由流量轉送至遠端存取服務器。 如果您的內部網路 IPv6 位址空間使用單一48位 IPv6 位址首碼以外的位址，您必須在部署期間指定相關的組織 IPv6 首碼。<br/>2. 如果您目前已連線到 IPv6 網際網路，您必須設定預設路由流量，使其轉送至遠端存取服務器，然後在遠端存取服務器上設定適當的連線和路由，讓預設路由流量會轉送到連接到 IPv6 網際網路的裝置。|  
+|現有的原生 IPv6 內部網路（不需要 ISATAP）|使用現有的原生 IPv6 基礎結構，您可以在遠端存取部署期間指定組織的首碼，而遠端存取服務器則不會將自己設定為 ISATAP 路由器。 請執行下列動作：<br/><br/>1. 若要確保可以從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由，以便將預設路由流量轉送至遠端存取服務器。 如果您的內部網路 IPv6 位址空間使用單一48位 IPv6 位址首碼以外的位址，您必須在部署期間指定相關的組織 IPv6 首碼。<br/>2. 如果您目前已連線到 IPv6 網際網路，您必須設定預設路由流量，使其轉送至遠端存取服務器，然後在遠端存取服務器上設定適當的連線和路由，讓預設路由流量會轉送到連接到 IPv6 網際網路的裝置。|  
 |現有的 ISATAP 部署|如果您有現有的 ISATAP 基礎結構，在部署期間，系統會提示您輸入組織的48位首碼，而遠端存取服務器不會將自己設定為 ISATAP 路由器。 若要確保可以從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由基礎結構，以便將預設路由流量轉送至遠端存取服務器。 這種變更必須在內部網路用戶端必須已經轉送預設流量的現有 ISATAP 路由器上完成。|  
 |沒有現有的 IPv6 連線能力|當「遠端存取」安裝程式偵測到伺服器沒有以原生或 ISATAP 為基礎的 IPv6 連線時，它會自動為內部網路衍生以6to4 為基礎的48位首碼，並將遠端存取服務器設定為 ISATAP 路由器以提供 IPv6內部網路上的 ISATAP 主機連線能力。 （只有當伺服器具有公用位址時，才會使用以6to4 為基礎的前置詞，否則會自動從唯一的本機位址範圍產生前置詞）。<br/><br/>若要使用 ISATAP，請執行下列動作：<br/><br/>1. 針對您要啟用 ISATAP 型連線的每個網域，在 DNS 伺服器上註冊 ISATAP 名稱，讓內部 DNS 伺服器可以將 ISATAP 名稱解析成遠端存取服務器的內部 IPv4 位址。<br/>2. 根據預設，使用全域查詢封鎖清單執行 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 解析 ISATAP 名稱的 DNS 伺服器。 若要啟用 ISATAP，您必須從封鎖清單中移除 ISATAP 名稱。 如需詳細資訊，請參閱[從 DNS 全域查詢封鎖清單中移除 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>以 Windows 為基礎的 ISATAP 主機若可以解析 ISATAP 名稱，會自動以遠端存取服務器設定位址，如下所示：<br/><br/>1. ISATAP 通道介面上以 ISATAP 為基礎的 IPv6 位址<br/>2. 64 位路由，可提供與內部網路上其他 ISATAP 主機的連線能力<br/>3. 指向遠端存取服務器的預設 IPv6 路由。 預設路由可確保內部網路 ISATAP 主機可以連接到 DirectAccess 用戶端<br/><br/>當以 Windows 為基礎的 ISATAP 主機取得 ISATAP 型 IPv6 位址時，如果目的地也是 ISATAP 主機，它們就會開始使用 ISATAP 封裝的流量來進行通訊。 由於 ISATAP 會針對整個內部網路使用單一64位子網，因此您的通訊會從分割的 IPv4 通訊模型傳送到具有 IPv6 的單一子網通訊模型。 這可能會影響某些 Active Directory Domain Services （AD DS）和依賴您 Active Directory 網站和服務設定之應用程式的行為。 例如，如果您使用 [Active Directory 網站和服務] 嵌入式管理單元來設定網站、以 IPv4 為基礎的子網，以及用來將要求轉送到網站內伺服器的站對端傳輸，則 ISATAP 主機不會使用此設定。<br/><br/><ol><li>若要設定在 ISATAP 主機的網站內轉送 Active Directory 網站和服務，您必須針對每個 IPv4 子網物件設定對等的 IPv6 子網物件，其中子網的 IPv6 位址首碼會表示相同的 ISATAP 主機範圍作為 IPv4 子網的位址。 例如，對於 IPv4 子網 192.168.99.0/24 和64位 ISATAP 位址首碼2002：836b：1：8000：：/64，IPv6 子網物件的對等 IPv6 位址首碼為2002：836b：1：8000：0：5efe： 192.168.99.0/120。 針對任意的 IPv4 前置長度（在範例中設為24），您可以從公式 96 + IPv4PrefixLength 判斷對應的 IPv6 前置長度。</li><li>針對 DirectAccess 用戶端的 IPv6 位址，請新增下列內容：<br/><br/><ul><li>針對以 Teredo 為基礎的 DirectAccess 用戶端：範圍為2001：0： WWXX： YYZZ：：/64 的 IPv6 子網，其中 WWXX： YYZZ 是遠端存取服務器第一個網際網路對向 IPv4 位址的冒號-十六進位版本。 。</li><li>針對以 ip-HTTPs 為基礎的 DirectAccess 用戶端：適用于2002： WWXX： YYZZ：8100：：/56 範圍的 IPv6 子網，其中 WWXX： YYZZ 是遠端存取服務器第一個網際網路對應 IPv4 位址（w.x.y.z. x. z. z. z. z. z. z. z. y. z. z. z. z. z. z. z 。</li><li>對於6to4 型 DirectAccess 用戶端：一系列以2002開頭的6to4 型 IPv6 首碼，分別代表由網際網路指派的數位授權單位（IANA）和地區登錄所管理的地區、公用 IPv4 位址首碼。 公用 IPv4 位址首碼 w.x.y.z/n 的6to4 首碼是2002： WWXX： YYZZ：/[16 + n]，其中 WWXX： YYZZ 是冒號-十六進位版本的 w.x.y.z。<br/><br/>        例如，7.0.0.0/8 範圍是由美國登錄所管理，用於北美洲的網際網路號碼（ARIN）。 此公用 IPv6 位址範圍的對應6to4 首碼為2002:700::/24。 如需有關 IPv4 公用位址空間的詳細資訊，請參閱[IANA Ipv4 位址空間](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)登錄。 。</li></ul></li></ol>|  
   

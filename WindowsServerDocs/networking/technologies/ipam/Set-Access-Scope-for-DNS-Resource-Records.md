@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b1790f2cbf84fd68f33ca30d2fe7663dde824240
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fd084c856b4f78810ce732fd64b801d6b0f7b67d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405648"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316779"
 ---
 # <a name="set-access-scope-for-dns-resource-records"></a>設定 DNS 資源記錄的存取範圍
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此主題，使用 IPAM 用戶端主控台來設定 DNS 資源記錄的存取領域。  
   

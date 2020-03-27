@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0f4d665-d44e-4348-a89f-5f9191bd96fd
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7d67af8419ce9533243f9d2eac230825bacb28b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d2c326c3783fee589e5551351a8b93d413c4120c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404410"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313650"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步驟1執行單一伺服器遠端存取部署
 
@@ -28,7 +28,7 @@ ms.locfileid: "71404410"
 ## <a name="implement-a-single-server-deployment"></a>執行單一伺服器部署  
 在您可以使用 OTP 設定遠端存取之前，必須先設定 advanced 單一伺服器遠端存取部署，如[使用 Advanced Settings 部署單一 DirectAccess 伺服器](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)中所述。  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [步驟2：設定 RADIUS 伺服器](Step-2-Configure-the-RADIUS-Server.md)  
   

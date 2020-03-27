@@ -10,34 +10,34 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f04eb11e-ed5f-42a1-a77b-57a248ba2d10
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3dad1db575bd9b9b4a70a24da44d1d030273f021
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cb869ad1617d52562e73eb6965a9f1c2184a56a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404869"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310780"
 ---
 # <a name="step-3-install-and-configure-edge2"></a>步驟3安裝和設定 EDGE2
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 EDGE2 是遠端存取叢集的第二個成員。 在啟用叢集設定之前，會先安裝並設定 EDGE2。
 
 請執行下列步驟來設定 EDGE2：
 
-## <a name="installOS"></a>在 EDGE2 上安裝作業系統  
+## <a name="install-the-operating-system-on-edge2"></a><a name="installOS"></a>在 EDGE2 上安裝作業系統  
   
 1.  在 EDGE2 上，啟動 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的安裝。  
   
-2.  依照指示完成安裝，指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）以及本機系統管理員帳戶的強式密碼。 使用本機 Administrator 帳戶登入。  
+2.  依照指示完成安裝，指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）以及本機系統管理員帳戶的強式密碼。 使用本機系統管理員帳戶登入。  
   
 3.  將 EDGE2 連線至具有網際網路存取權的網路，並執行 Windows Update 以安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然後中斷網際網路連線。  
   
 4.  將一個網路介面卡連線到公司網路子網或代表公司網路子網的虛擬交換器，另一個則連接到代表網際網路子網的網際網路子網或虛擬交換器。  
   
-## <a name="TCP"></a>設定 TCP/IP 屬性  
+## <a name="configure-tcpip-properties"></a><a name="TCP"></a>設定 TCP/IP 屬性  
   
 1.  在伺服器管理員主控台中，按一下 [**本機伺服器**]，然後在 [**屬性**] 區域中的 [**有線乙太**網路連線] 旁，按一下連結。  
   
@@ -49,7 +49,7 @@ EDGE2 是遠端存取叢集的第二個成員。 在啟用叢集設定之前，�
   
 5.  按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]，然後按一下 [內容]。  
   
-6.  按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**10.0.0.8**。 在 [子網路遮罩]中，輸入 **255.255.255.0**。  
+6.  按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**10.0.0.8**。 在 [子網路遮罩] 中，輸入 **255.255.255.0**。  
   
 7.  按一下 [使用下列的 DNS 伺服器位址]。 在 [慣用 DNS 伺服器] 中，輸入 **10.0.0.1**。  
   
@@ -89,7 +89,7 @@ EDGE2 是遠端存取叢集的第二個成員。 在啟用叢集設定之前，�
   
 25. 關閉 [命令提示字元] 視窗。  
   
-## <a name="rename"></a>重新命名 EDGE2，並將它加入網域  
+## <a name="rename-edge2-and-join-it-to-the-domain"></a><a name="rename"></a>重新命名 EDGE2，並將它加入網域  
   
 1.  在伺服器管理員主控台的 [**本機伺服器**] 的 [內容 **] 區域中，按一下 [** **電腦名稱稱**] 旁的連結。  
   
@@ -109,9 +109,9 @@ EDGE2 是遠端存取叢集的第二個成員。 在啟用叢集設定之前，�
   
 9. 重新開機之後，以 CORP\User1. 的身分登入  
   
-## <a name="IPHTTPSCert"></a>安裝 IP-HTTPS 憑證  
+## <a name="install-the-ip-https-certificate"></a><a name="IPHTTPSCert"></a>安裝 IP-HTTPS 憑證  
   
-1.  在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
   
@@ -139,7 +139,7 @@ EDGE2 是遠端存取叢集的第二個成員。 在啟用叢集設定之前，�
   
 14. 關閉主控台視窗。 如果系統提示您儲存設定，請按一下 [**否**]。  
   
-## <a name="InstallDA"></a>在 EDGE2 上安裝遠端存取角色  
+## <a name="install-the-remote-access-role-on-edge2"></a><a name="InstallDA"></a>在 EDGE2 上安裝遠端存取角色  
   
 1.  在伺服器管理員主控台的 [**儀表板**] 中，按一下 [**新增角色及功能**]。  
   
@@ -149,9 +149,9 @@ EDGE2 是遠端存取叢集的第二個成員。 在啟用叢集設定之前，�
   
 4.  按 [下一步] 五次。  
   
-5.  在 [確認安裝選項] 對話方塊中，按一下 [安裝]。  
+5.  在 [確認安裝選項] 對話方塊上，按一下 [安裝]。  
   
-6.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+6.  在 [安裝進度] 對話方塊上，驗證安裝是否成功，然後按一下 [關閉]。  
   
 
 

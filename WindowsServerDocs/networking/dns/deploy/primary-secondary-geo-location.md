@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6a7836160fc7363ec3d7b2fb11e194db82970f9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f9bc1a35016ca5946eddeada2088a83f1fa8ca05
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406158"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317755"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>透過主要-次要部署使用地理位置流量管理的 DNS 原則
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 當您的 DNS 部署同時包含主要和次要 DNS 伺服器時，您可以使用本主題來瞭解如何針對以地理位置為基礎的流量管理建立 DNS 原則。  
 
@@ -37,7 +37,7 @@ ms.locfileid: "71406158"
   
 Contoso 雲端服務有兩個資料中心，一個位於美國，另一個位於歐洲，Contoso 會在其上裝載其食物訂購入口網站以供 woodgrove.com。  
   
-Contoso DNS 部署包含兩部次要伺服器：**SecondaryServer1**，IP 位址為 10.0.0.2;和**SecondaryServer2**，並使用 IP 位址10.0.0.3。 這些次要伺服器會作為兩個不同區域中的名稱伺服器，SecondaryServer1 位於歐洲，而 SecondaryServer2 位於美國
+Contoso DNS 部署包含兩部次要伺服器： **SecondaryServer1**，IP 位址為 10.0.0.2;和**SecondaryServer2**，並使用 IP 位址10.0.0.3。 這些次要伺服器會作為兩個不同區域中的名稱伺服器，SecondaryServer1 位於歐洲，而 SecondaryServer2 位於美國
   
 **PrimaryServer** （IP 位址10.0.0.1）上有一個主要的可寫入區域複本，其中會進列區域變更。 透過一般區域轉送到次要伺服器，次要伺服器一律會保持最新狀態，而對 PrimaryServer 上的區域有任何新的變更。
   
@@ -80,7 +80,7 @@ OPT RR 的值是正在傳送要求的區域範圍名稱。 當主要 DNS 伺服�
   
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>如何設定主要-次要地理位置型流量管理的 DNS 原則
 
-在開始之前，請確定您已完成將[DNS 原則用於以地理位置為基礎的流量管理](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)主題中的所有步驟，並使用區域、區域範圍、Dns 用戶端子網和 dns 設定主要 DNS 伺服器策略.  
+開始之前，請確定您已完成將[DNS 原則用於以地理位置為基礎的流量管理](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)主題中的所有步驟，並使用區域、區域範圍、Dns 用戶端子網和 dns 原則設定主要 DNS 伺服器。  
   
 > [!NOTE]
 > 本主題中將 DNS 用戶端子網、區域範圍和 DNS 原則從 DNS 主伺服器複製到 DNS 次要伺服器的指示，適用于您的初始 DNS 設定和驗證。 未來，您可能會想要變更主伺服器上的 DNS 用戶端子網、區域範圍和原則設定。 在此情況下，您可以建立自動化腳本，讓次要伺服器與主伺服器保持同步。  

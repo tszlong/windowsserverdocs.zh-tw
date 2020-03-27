@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 356c61c2cc5b60f43a69f17966c97f3c69d05cda
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 86ce83142cafe8ebe61aff2fb193e9b646172651
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356035"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317881"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 原則進行應用程式負載平衡
 
@@ -79,7 +79,7 @@ Dns 原則的負載平衡有一個可能的問題，就是 DNS 用戶端和解�
 
 如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-#### <a name="bkmk_records"></a>將記錄新增至區域範圍
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>將記錄新增至區域範圍
 
 現在您必須將代表 web 伺服器主機的記錄新增到區域範圍中。
 
@@ -100,7 +100,7 @@ Dns 原則的負載平衡有一個可能的問題，就是 DNS 用戶端和解�
 
 如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-#### <a name="bkmk_policies"></a>建立 DNS 原則
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>建立 DNS 原則
 
 建立分割區（區域範圍）並新增記錄之後，您必須建立可將傳入查詢分散到這些範圍的 DNS 原則，以便將 contosogiftservices.com 的50% 查詢以 Web 的 IP 位址回應西雅圖資料中心內的伺服器，其餘部分則平均分散于芝加哥和達拉斯的資料中心。
 

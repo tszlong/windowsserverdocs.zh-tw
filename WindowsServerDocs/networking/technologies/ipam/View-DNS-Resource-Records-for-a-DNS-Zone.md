@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 375feefc-949e-47c3-9e61-35b79e021966
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6e4b5ecd87e4976c0c65403bd63180e1d659e40b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ca2cf532fc9fa7e1f12e5294b40d29863fd42261
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405640"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312333"
 ---
 # <a name="view-dns-resource-records-for-a-dns-zone"></a>檢視 DNS 區域的 DNS 資源記錄
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，在 IPAM 用戶端主控台中，查看 DNS 區域的 DNS 資源記錄。  
   

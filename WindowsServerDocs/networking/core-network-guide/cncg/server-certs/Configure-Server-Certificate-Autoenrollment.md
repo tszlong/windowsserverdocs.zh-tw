@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: c81e85cb-ecb8-442a-ad27-442c2f9e40df
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c0803e369d9b48547190dc242617fed6e72d9ce4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9c85c4fd9026155fe1ca880ecb05f4c9358a2309
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406333"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318420"
 ---
 # <a name="configure-certificate-auto-enrollment"></a>設定憑證自動註冊
 
@@ -26,7 +26,7 @@ ms.locfileid: "71406333"
 ## <a name="configure-server-certificate-auto-enrollment"></a>設定伺服器憑證自動註冊
 
 1. 在安裝 AD DS 的電腦上，開啟 Windows PowerShell&reg;，輸入**mmc**，然後按 enter。 Microsoft Management Console 便會隨即開啟。
-2. 按一下 **[檔案]** 功能表上的 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。
+2. 在 **[檔案]** 功能表上，按一下 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。
 3. 在 [可用的嵌入式**管理**單元] 中，向下流覽至 [**群組原則管理編輯器**] 並按兩下。 [**選取群組原則物件**] 對話方塊隨即開啟。
 
      > [!IMPORTANT]
@@ -42,12 +42,12 @@ ms.locfileid: "71406333"
      2. 選取 [更新**過期的憑證，更新擱置中的憑證] 和 [移除撤銷的憑證**] 核取方塊。
      3. 選取 [**更新使用憑證範本的憑證**] 核取方塊。
 
-9. 按一下 **\[確定\]** 。
+9. 按一下 [確定]。
 
 ## <a name="configure-user-certificate-auto-enrollment"></a>設定使用者憑證自動註冊
 
 1. 在安裝 AD DS 的電腦上，開啟 Windows PowerShell&reg;，輸入**mmc**，然後按 enter。 Microsoft Management Console 便會隨即開啟。
-2. 按一下 **[檔案]** 功能表上的 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。
+2. 在 **[檔案]** 功能表上，按一下 **[新增/移除嵌入式管理單元]** 。 [**新增或移除嵌入式管理單元**] 對話方塊隨即開啟。
 3. 在 [可用的嵌入式**管理**單元] 中，向下流覽至 [**群組原則管理編輯器**] 並按兩下。 [**選取群組原則物件**] 對話方塊隨即開啟。
 
      > [!IMPORTANT]
@@ -63,7 +63,7 @@ ms.locfileid: "71406333"
      2. 選取 [更新**過期的憑證，更新擱置中的憑證] 和 [移除撤銷的憑證**] 核取方塊。
      3. 選取 [**更新使用憑證範本的憑證**] 核取方塊。
 
-9. 按一下 **\[確定\]** 。
+9. 按一下 [確定]。
 
 ## <a name="next-steps"></a>後續步驟
 

@@ -1,9 +1,9 @@
 ---
 title: 針對遠端管理的伺服器建立伺服器復原 DVD
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,25 +12,25 @@ ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 999887f09c27c1df481cb5e46579942424a2847b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a9b571c2d3e5d531d8c923741500c72675022adc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433618"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312195"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>針對遠端管理的伺服器建立伺服器復原 DVD
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_HeadlessRecovery"></a> 建立伺服器復原 DVD 的遠端管理的伺服器  
+##  <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a><a name="BKMK_HeadlessRecovery"></a>為遠端系統管理的伺服器建立伺服器復原 DVD  
  原廠重設及伺服器復原有兩個模式，兩者會隨客戶收到的硬體而有所不同。  
   
- **從遠端管理的伺服器**  
+ **遠端系統管理的伺服器**  
   
  此伺服器復原選項需要從相同網路的用戶端電腦執行程序。 由於原廠重設需要硬體特定映像隨附於伺服器，合作夥伴必須編寫伺服器復原 DVD。  
   
- **在本機管理的伺服器**  
+ **本機管理的伺服器**  
   
  這是在伺服器主控台中管理伺服器的傳統模式。 伺服器安裝媒體是用來執行復原。 這需要伺服器除了包含 DVD 讀取程式之外，還需要具有檢視視訊輸出的功能。 客戶會從該伺服器安裝媒體開機，然後選擇適當的復原方法。 您不需要針對本機管理的伺服器建立伺服器復原 DVD。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "66433618"
   
  **恢復出廠預設值**  
   
- 此復原會將伺服器回復成從原廠出貨時的原始狀態。 在進行原廠重設之後，系統會要求您執行與您第一次將伺服器開機時相同的初始設定，而所有的設定與自訂項目都會遺失。 這也稱為第 0 天。 嗎？ 由於原廠重設需要硬體特定映像隨附於伺服器，合作夥伴必須編寫伺服器復原 DVD。  
+ 此復原會將伺服器回復成從原廠出貨時的原始狀態。 在進行原廠重設之後，系統會要求您執行與您第一次將伺服器開機時相同的初始設定，而所有的設定與自訂項目都會遺失。 這也稱為「第0天」。 由於原廠重設需要硬體特定映像隨附於伺服器，合作夥伴必須編寫伺服器復原 DVD。  
   
  **裸機還原**  
   
@@ -52,7 +52,7 @@ ms.locfileid: "66433618"
 ### <a name="remotely-administered-server-recovery"></a>遠端管理的伺服器復原  
  本節說明合作夥伴必須執行的自訂項目，以及必須隨附於每個伺服器的最終媒體。 在深入瞭解之前，讓我們看看客戶體驗。  
   
- 在此案例中，客戶 」 狀況的伺服器不再運作。 這可能是由病毒、硬碟故障或某些其他原因所導致。 客戶在與伺服器位於相同網路的用戶端電腦上，放入伺服器復原 DVD。 伺服器復原應用程式會執行三個步驟，逐步復原伺服器：  
+ 在此案例中，客戶「伺服器」無法再運作。 這可能是由病毒、硬碟故障或某些其他原因所導致。 客戶在與伺服器位於相同網路的用戶端電腦上，放入伺服器復原 DVD。 伺服器復原應用程式會執行三個步驟，逐步復原伺服器：  
   
 1.  建立可開機 USB 快閃磁碟機，用來將伺服器重新開機至復原模式。 此 USB 快閃磁碟機的大小不可低於 8 GB。  
   
@@ -63,24 +63,24 @@ ms.locfileid: "66433618"
 ### <a name="steps-for-creating-a-server-recovery-dvd-for-multiple-language-support"></a>針對多語言支援建立伺服器復原 DVD 的步驟  
  建立伺服器復原 DVD 有六個主要步驟  
   
-1.  [（選擇性）更新 WinPE](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Updating)  
+1.  [選擇性更新 WinPE](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Updating)  
   
-2.  [收集原廠重設映像與 XML 檔案](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Collecting)  
+2.  [收集原廠重設映射與 XML 檔案](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Collecting)  
   
-3.  [建立伺服器復原 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Creating)  
+3.  [建立伺服器修復 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Creating)  
   
-4.  [自訂精靈](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Customizing)  
+4.  [自訂嚮導](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Customizing)  
   
 5.  [建立 ISO 檔案](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_CreatingISO)  
   
-6.  [測試復原 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Testing)  
+6.  [測試修復 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Testing)  
   
-####  <a name="BKMK_Updating"></a> 步驟 1:(選用) 更新 WinPE  
+####  <a name="step-1-optional-update-winpe"></a><a name="BKMK_Updating"></a>步驟1：（選擇性）更新 WinPE  
  ADK 包含一份已自訂的 Windows PE。 當此映像開機時會自動啟動指標，用戶端復原應用程式會利用該指標，來連線至處於復原模式的伺服器。  
   
  您必須新增任何的硬體特定驅動程式 (如網路或磁碟控制卡驅動程式)，進一步自訂 Windows PE。 從 WinPE 開機後，必須可辨識系統上的硬碟，同時網路必須正常運作。  
   
-####  <a name="BKMK_Collecting"></a> 步驟 2:收集原廠重設映像與 XML 檔案  
+####  <a name="step-2-collect-the-factory-reset-images-and-xml-files"></a><a name="BKMK_Collecting"></a>步驟2：收集原廠重設映射與 XML 檔案  
  若要將伺服器重設為原廠預設值，則必須擷取下列兩個映像：  
   
 - 系統磁碟機映像  
@@ -96,7 +96,7 @@ ms.locfileid: "66433618"
     > [!NOTE]
     >  會分割系統 .wim 檔案，使其符合檔案不超過 4 GB 的 FAT32 需求。 在此程序期間，用來擷取 .wim 檔案的目標所需容量必須大於 8 GB，才能應付分割程序。  
   
-####  <a name="BKMK_Creating"></a> 步驟 3:若要建立伺服器復原 DVD  
+####  <a name="step-3-create-the-server-recovery-dvd"></a><a name="BKMK_Creating"></a>步驟3：建立伺服器復原 DVD  
  原廠出貨的每部伺服器都必須隨附伺服器復原 DVD。 您的 ADK 工具 DVD 包含建立 DVD 所需要的檔案。  
   
 ###### <a name="to-create-the-server-recovery-dvd"></a>建立伺服器復原 DVD  
@@ -111,7 +111,7 @@ ms.locfileid: "66433618"
   
 5.  從資料夾中移除 GenDiskXML.exe。 此檔案僅供原廠處理之用，並且不應納入要出貨給客戶的 DVD 中。  
   
-####  <a name="BKMK_Customizing"></a> 步驟 4:自訂精靈  
+####  <a name="step-4-customize-the-wizard"></a><a name="BKMK_Customizing"></a>步驟4：自訂嚮導  
  伺服器復原應用程式必須使用裝置的影像，以及說明如何將特定裝置啟動至復原模式的文字進行自訂。 「還原檔案與資料夾精靈」的這個頁面會隨硬體而有所不同，因此將伺服器啟動至復原模式的步驟也會隨之不同。  
   
 > [!NOTE]
@@ -119,15 +119,15 @@ ms.locfileid: "66433618"
   
 1. 精靈頁面上會有其他說明的連結。 若此 .chm 檔案存在，則會覆寫網頁說明的 FWLink。 說明檔案位於：  
   
-    < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\RestartHelp.chm  
+    < DVD 根\>\\$OEM $ \Customization\\< 文化特性名稱\>\RestartHelp.chm  
   
 2. 此檔案包含客戶在精靈頁面上所看見的文字。 這些文字會說明如何將伺服器開機至復原模式。 其控制項是可捲動的，它會對可新增的文字數量施以實用的限制。  
   
     下列檔案是用來取代精靈中的範例圖片，主要與商標有關。 它必須是 .png 檔案。 檔案大小必須是 256 像素 x 256 像素，否則會在於精靈中顯示時遭到截斷。  
   
-    < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\RestartInstructions.rtf  
+    < DVD 根\>\\$OEM $ \Customization\\< 文化特性名稱\>\RestartInstructions.rtf  
   
-3. < DVD 根目錄\>\\$OEM$ \Customization\\< 文化特性名稱\>\ServerImage.png  
+3. < DVD 根\>\\$OEM $ \Customization\\< 文化特性名稱\>\ServerImage.png  
   
    轉換伺服器復原 DVD 以支援多個語言時，請確定執行下列作業：  
   
@@ -135,19 +135,19 @@ ms.locfileid: "66433618"
   
 5. 在您所建立的每個文化特性資料夾中，新增三個自訂檔案 (.png、.chm 及 .rtf)。  
   
-6. 複製這兩個文化特性資料夾從 語言套件\\< CultureName\>\Server Recovery 伺服器復原 DVD 的根目錄。 例如: ES 及 ES-ES 這兩個資料夾將會複製到 DVD 的根目錄，以支援西班牙文。  
+6. 將\\< CultureName\>\Server 復原的語言套件中的兩個文化特性資料夾複製到伺服器復原 DVD 的根目錄。 例如：ES 及 ES-ES 這兩個資料夾將會複製到 DVD 的根目錄，以支援西班牙文。  
   
 7. 完成 ISO 檔案。  
   
    支援的文化特性名稱包括：  
 
 |-|-|  
-|- cs-CZ<br /><br /> -DE-DE<br /><br /> -英文<br /><br /> - es-ES<br /><br /> - fr-FR<br /><br /> -HU-HU<br /><br /> -IT-IT<br /><br /> -若為 JA-JP<br /><br /> - ko-KR<br /><br /> - nl-NL|- pl-PL<br /><br /> - pt-BR<br /><br /> - pt-PT<br /><br /> -RU-RU<br /><br /> - sv-SE<br /><br /> - tr-TR<br /><br /> - zh-CN<br /><br /> - zh-HK<br /><br /> - zh-TW
+|-cs-CZ<br /><br /> -de<br /><br /> -en-us<br /><br /> -es<br /><br /> -fr-FR<br /><br /> -hu-HU<br /><br /> -it-IT<br /><br /> -ja-jp<br /><br /> -ko-KR<br /><br /> -nl-NL |-pl-PL<br /><br /> -pt-BR<br /><br /> -pt-PT<br /><br /> -ru-RU<br /><br /> -sv-SE<br /><br /> -tr-TR<br /><br /> -zh-CN<br /><br /> -zh-HK<br /><br /> -zh-幼圓
   
-####  <a name="BKMK_CreatingISO"></a> 步驟 5:建立 ISO 檔案  
+####  <a name="step-5-create-the-iso-file"></a><a name="BKMK_CreatingISO"></a>步驟5：建立 ISO 檔案  
  建立的資料夾與所有內容都可以燒錄至 DVD。 這是會隨新伺服器提供給客戶的 DVD。  
   
-####  <a name="BKMK_Testing"></a> 步驟 6:測試復原 DVD  
+####  <a name="step-6-test-the-recovery-dvd"></a><a name="BKMK_Testing"></a>步驟6：測試修復 DVD  
  完成伺服器安裝之後，請設定伺服器備份，並執行伺服器備份，然後測試復原 DVD。  
   
 ###### <a name="to-configure-and-run-a-server-backup"></a>若要設定及執行伺服器備份  
@@ -169,7 +169,7 @@ ms.locfileid: "66433618"
 3.  按一下 **[從備份還原伺服器]** ，然後遵循精靈中的指示作業。  
   
 ## <a name="see-also"></a>另請參閱  
- [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他自訂項目](Additional-Customizations.md)   
- [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
+ [其他自訂](Additional-Customizations.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)

@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82f8f382-246e-4164-8306-437f7a019e0f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5fad1062b65b4784a8a5ddfde927951230cb6ab8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a3e58a3ca8ca5334996776644bfb2c3b19cbc2e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355227"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309592"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>管理多個 Active Directory 樹系中的資源
 

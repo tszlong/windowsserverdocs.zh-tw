@@ -10,24 +10,24 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84457351-1ca7-4e7c-8e2c-53d55b1fcdc0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b9eb37433e26c174ccae85482163c976577ff479
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: eea83bd9788ffd704b6169c140adc68465f9325d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388509"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310846"
 ---
 # <a name="step-2-configure-edge1"></a>步驟2設定 EDGE1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 下列程式是在 DirectAccess 伺服器上執行：
 
 ## <a name="to-configure-directaccess-on-edge1"></a>在 EDGE1 上設定 DirectAccess
   
-1.  在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台的左窗格中 **，按一下 [** 設定]。  
   

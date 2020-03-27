@@ -6,24 +6,24 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e497b0d73c816f0295588aa77a21c49d376c0dcf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4bb075368bb3dfadaa8046b177dbbac637763e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406182"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317828"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>使用 DNS 原則以時間為基礎進行智慧型 DNS 回應
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何使用以當天時間為基礎的 DNS 原則，將應用程式流量分散到應用程式的不同地理位置。  
   
 當您想要將一個時區的流量導向另一個時區的其他應用程式伺服器（例如 Web 服務器）時，此案例很有用。 這可讓您在主伺服器以流量超載時的尖峰時段，對應用程式實例之間的流量進行負載平衡。   
   
-### <a name="bkmk_example1"></a>以當日時間為基礎的智慧型 DNS 回應範例  
+### <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day"></a><a name="bkmk_example1"></a>以當日時間為基礎的智慧型 DNS 回應範例  
 以下範例示範如何使用 DNS 原則，根據一天的時間來平衡應用程式流量。  
   
 這個範例使用一個虛構的公司 Contoso 禮物服務，透過其網站 contosogiftservices.com 提供全球各地的線上贈與解決方案。   
@@ -38,7 +38,7 @@ Contoso 禮物服務會執行網站分析，併發現在當地時間下午6點�
   
 ![一天中的時間 DNS 原則範例](../../media/DNS-Policy-Tod1/dns_policy_tod1.jpg)  
   
-### <a name="bkmk_works1"></a>以每天時間為基礎的智慧型 DNS 回應的運作方式  
+### <a name="how-intelligent-dns-responses-based-on-time-of-day-works"></a><a name="bkmk_works1"></a>以每天時間為基礎的智慧型 DNS 回應的運作方式  
   
 當 DNS 伺服器設定為一天的 DNS 原則時，在每個地理位置的下午6點到下午9點，DNS 伺服器會執行下列動作。  
   
@@ -53,7 +53,7 @@ Contoso 禮物服務會執行網站分析，併發現在當地時間下午6點�
   
 如需原則類型和準則的詳細資訊，請參閱[DNS 原則總覽](../../dns/deploy/DNS-Policies-Overview.md)。  
   
-### <a name="bkmk_how1"></a>如何根據一天中的時間，設定智慧型 DNS 回應的 DNS 原則  
+### <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day"></a><a name="bkmk_how1"></a>如何根據一天中的時間，設定智慧型 DNS 回應的 DNS 原則  
 若要針對每日時間以應用程式負載平衡為基礎的查詢回應設定 DNS 原則，您必須執行下列步驟。  
   
 - [建立 DNS 用戶端子網](#bkmk_subnets)  
@@ -69,7 +69,7 @@ Contoso 禮物服務會執行網站分析，併發現在當地時間下午6點�
 >[!IMPORTANT]
 >下列各節包含範例 Windows PowerShell 命令，其中包含許多參數的範例值。 執行這些命令之前，請務必將這些命令中的範例值取代為適用于您的部署的值。  
   
-#### <a name="bkmk_subnets"></a>建立 DNS 用戶端子網  
+#### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>建立 DNS 用戶端子網  
 第一個步驟是識別您想要將流量重新導向之區域的子網或 IP 位址空間。 例如，如果您想要重新導向「美國」和「歐洲」的流量，則需要識別這些區域的子網或 IP 位址空間。  
   
 您可以從地理 IP 對應取得此資訊。 根據這些地理 IP 散發套件，您必須建立「DNS 用戶端子網」。 DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送到 DNS 伺服器。  
@@ -84,7 +84,7 @@ Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.
 ```  
 如需詳細資訊，請參閱[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。  
   
-#### <a name="bkmk_zscopes"></a>建立區域範圍  
+#### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>建立區域範圍  
 設定用戶端子網之後，您必須將想要重新導向其流量的區域分割成兩個不同的區域範圍，也就是您已設定的每個 DNS 用戶端子網都有一個範圍。  
   
 例如，如果您想要重新導向 DNS 名稱 www.contosogiftservices.com 的流量，您必須在 contosogiftservices.com 區域中建立兩個不同的區域範圍，一個用於美國，一個用於歐洲。  
@@ -104,7 +104,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 ```  
 如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。  
   
-#### <a name="bkmk_records"></a>將記錄新增至區域範圍  
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>將記錄新增至區域範圍  
 現在您必須將代表 web 伺服器主機的記錄新增到這兩個區域範圍中。  
   
 例如，在**SeattleZoneScope**中，會使用位於西雅圖資料中心的 IP 位址192.0.0.1 新增記錄<strong>www.contosogiftservices.com</strong> 。 同樣地，在**DublinZoneScope**中，記錄<strong>www.contosogiftservices.com</strong>會新增至都柏林資料中心內的 IP 位址141.1.0。3  
@@ -121,15 +121,15 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
   
 如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。  
   
-#### <a name="bkmk_policies"></a>建立 DNS 原則  
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>建立 DNS 原則  
 建立子網、分割區（區域範圍）並新增記錄之後，您必須建立用來連接子網和分割區的原則，如此一來，當查詢來自其中一個 DNS 用戶端子網中的來源時，就會從傳回查詢回應區域的正確範圍。 對應預設區域範圍不需要任何原則。  
   
 設定這些 DNS 原則之後，DNS 伺服器的行為如下所示：  
   
 1. 歐洲的 DNS 用戶端會在其 DNS 查詢回應中，收到都柏林資料中心內 Web 服務器的 IP 位址。  
 2. 美國的 DNS 用戶端會在其 DNS 查詢回應的西雅圖資料中心內，接收 Web 服務器的 IP 位址。  
-3. 在都柏林的下午6點到下午9點，歐洲用戶端的 20% 查詢會在其 DNS 查詢回應的西雅圖資料中心內收到 Web 服務器的 IP 位址。  
-4. 在西雅圖下午6點到下午9點，美國用戶端的 20% 查詢會在其 DNS 查詢回應中收到都柏林資料中心內 Web 服務器的 IP 位址。  
+3. 在都柏林的下午6點到下午9點，歐洲用戶端的20% 查詢會在其 DNS 查詢回應的西雅圖資料中心內收到 Web 服務器的 IP 位址。  
+4. 在西雅圖下午6點到下午9點，美國用戶端的20% 查詢會在其 DNS 查詢回應中收到都柏林資料中心內 Web 服務器的 IP 位址。  
 5. 來自世界各地的一半查詢會收到西雅圖資料中心的 IP 位址，而另一半則會收到都柏林資料中心的 IP 位址。  
   
   

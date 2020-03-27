@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 29ae0f54-f045-465a-a08e-5867979345f2
-author: shortpatti
-ms.author: pashort
-ms.openlocfilehash: 93fb80c550771e4e7d8bc400d647b520b0c67fdf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+author: eross-msft
+ms.author: lizross
+ms.openlocfilehash: 476e86dd4b762a46a97dca0b9ec100b245a58f81
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356084"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318111"
 ---
 # <a name="wireless-access-deployment-overview"></a>無線存取部署概觀
 
@@ -37,7 +37,7 @@ ms.locfileid: "71356084"
 
 - 選取無線 Ap 的通道頻率。
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services
+### <a name="active-directory-domain-services"></a>Active Directory 網域服務
 以下是無線存取部署所需的 AD DS 元素。
 
 #### <a name="users-and-computers"></a>使用者和電腦

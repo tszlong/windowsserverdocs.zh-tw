@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79e87013-7f27-4031-8383-288bcb291731
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea279a6131c06d5bb991edbbf22c1ba0d5ffc592
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 503048688679cab352ce246c07ccb9316f8216d8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406149"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309997"
 ---
 # <a name="microsoft-azure-and-software-defined-networking"></a>Microsoft Azure 和軟體定義網路功能
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 Microsoft Azure 是 Microsoft 的雲端平臺：持續成長的整合式服務集合（計算、儲存體、資料、網路和應用程式），可協助您更快速地移動、執行更多工具，並節省成本。  
   
