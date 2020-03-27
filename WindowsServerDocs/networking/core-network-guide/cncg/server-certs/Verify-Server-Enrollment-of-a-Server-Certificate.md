@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5f87db78d6f07d11c36193b1a56cf66bd44e7160
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b55988d9e5d4832acf6c74039815c9e8c9a8a6ca
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356099"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318129"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>驗證伺服器憑證的伺服器註冊
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式來確認您的網路原則伺服器（NPS）伺服器已向憑證授權單位單位（CA）註冊伺服器憑證。   
   
@@ -34,7 +34,7 @@ ms.locfileid: "71356099"
   
 1.  在伺服器管理員中，按一下 [**工具**]，然後按一下 [**網路原則伺服器**]。 [網路原則伺服器] Microsoft Management Console （MMC）隨即開啟。  
   
-2.  按兩下 [**原則**]，以滑鼠右鍵按一下 [**網路原則**]，然後按一下 [**新增**]。 [新增網路原則] wizard 隨即開啟。  
+2.  按兩下 [**原則**]，以滑鼠右鍵按一下 [**網路原則**]，然後按一下 [**新增**]。 此時會開啟新增網路原則精靈。  
   
 3.  在 [**指定網路原則名稱和連線類型**] 的 [**原則名稱**] 中，輸入**測試原則**。 確定**網路存取伺服器的類型**具有**未指定**的值，然後按 **[下一步]** 。  
   
@@ -44,7 +44,7 @@ ms.locfileid: "71356099"
   
 6.  在 [**指定存取權限**] 中，確定已選取 [**授與存取**權]，然後按 **[下一步]** 。  
   
-7.  在 [**設定驗證方法**] 中，按一下 [**新增**]。 在 [**新增 EAP**] 中，按一下 [**Microsoft]：受保護的 EAP （PEAP）** ，然後按一下 **[確定]** 。 在  **EAP 類型** 中，選取 **Microsoft：受保護的 EAP （PEAP）** ，然後按一下 **編輯**。 [**編輯受保護的 EAP 屬性**] 對話方塊隨即開啟。  
+7.  在 [**設定驗證方法**] 中，按一下 [**新增**]。 在 [**新增 EAP**] 中，按一下 [ **Microsoft：受保護的 EAP （PEAP）** ]，然後按一下 **[確定]** 。 在 [ **EAP 類型**] 中，選取 [ **Microsoft：受保護的 EAP （PEAP）** ]，然後按一下 [**編輯**]。 [**編輯受保護的 EAP 屬性**] 對話方塊隨即開啟。  
   
 8.  在 [**編輯受保護的 EAP**內容] 對話方塊的 [**憑證發出至**] 中，NPS 會以*ComputerName*格式顯示伺服器憑證的名稱。*網域*。 例如，如果您的 NPS 命名為 NPS-01，而您的網域是 example.com，NPS 會顯示憑證**NPS-01.example.com**。 此外，在**簽發者**中，會顯示憑證授權單位單位的名稱，而且在**到期日**，會顯示伺服器憑證的到期日。 這會示範您的 NPS 已註冊有效的伺服器憑證，可用來向嘗試透過網路存取伺服器（例如虛擬私人網路（VPN）伺服器）存取網路的用戶端電腦證明其身分識別，802.1 X 功能無線存取點、遠端桌面閘道伺服器，以及 802.1 X 支援的乙太網路交換器。  
   

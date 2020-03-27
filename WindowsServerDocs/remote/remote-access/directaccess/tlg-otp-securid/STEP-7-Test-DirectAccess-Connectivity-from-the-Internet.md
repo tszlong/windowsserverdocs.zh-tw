@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed2a1616-30c6-482a-9a02-4a5023621f58
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 738e0f10762c0d292e344ba25fa34cdb0d17b766
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 89f26dfa3be83167b7b62b8f464eede7f4db8db0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367542"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308562"
 ---
 # <a name="step-7-test-directaccess-connectivity-from-the-internet"></a>步驟7測試來自網際網路的 DirectAccess 連線能力
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 DirectAccess 一次性密碼（OTP）部署已從 Homenet 子網進行測試，現在可以從網際網路進行測試。  
   
@@ -29,13 +29,13 @@ DirectAccess 一次性密碼（OTP）部署已從 Homenet 子網進行測試，�
   
 1. 在 CLIENT1 上，請確定您是以**User1**身分登入。 將 CLIENT1 連線到公司網路子網。  
   
-2. 在 [**開始**] 畫面上，輸入**powershell**，以滑鼠右鍵按一下 [ **powershell**]，然後按一下 [ **Advanced**]，再按一下 [以**系統管理員身分執行**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+2. 在 [**開始**] 畫面上，輸入**powershell**，以滑鼠右鍵按一下 [ **powershell**]，然後按一下 [ **Advanced**]，再按一下 [以**系統管理員身分執行**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 3. 在 Windows PowerShell 視窗中，輸入**gpupdate/force** ，然後按 enter。  
   
 4. 從 Homenet 子網拔下 CLIENT1、將其連線到網際網路，然後重新開機電腦。  
   
-5. 在 CLIENT1 上開啟 Internet Explorer，然後在網址列中輸入 **https://app1.corp.contoso.com/** ，然後按 enter 鍵。 按 F5。  
+5. 在 CLIENT1 上開啟 Internet Explorer，然後在網址列中輸入 **https://app1.corp.contoso.com/** ，然後按 enter 鍵。 請按 F5。  
   
    網站不應開啟。  
   
@@ -51,15 +51,15 @@ DirectAccess 一次性密碼（OTP）部署已從 Homenet 子網進行測試，�
   
 11. 貼上先前複製的八個數字權杖，然後按一下 **[確定]** 。 等待驗證完成。 DirectAccess 工作場所線上狀態現在將會**連接**。  
   
-12. 在 Internet Explorer 的網址列中，輸入 **https://app1.corp.contoso.com/** ，然後按 enter 鍵。 按 F5。 您將會看到 APP1 上的預設 IIS 網站。  
+12. 在 Internet Explorer 的網址列中，輸入 **https://app1.corp.contoso.com/** ，然後按 enter 鍵。 請按 F5。 您將會看到 APP1 上的預設 IIS 網站。  
   
-13. 在 Internet Explorer 網址列中，輸入 **https://app2.corp.contoso.com/** ，然後按 enter。 按 F5。 您會在 APP2 上看到預設的 IIS 網站。  
+13. 在 Internet Explorer 網址列中，輸入 **https://app2.corp.contoso.com/** ，然後按 enter。 請按 F5。 您會在 APP2 上看到預設的 IIS 網站。  
   
-14. 在 [**開始**] 畫面上，輸入<strong>\\ \ app1\files</strong>，然後按 enter。  
+14. 在 [**開始**] 畫面上，輸入<strong>\\\app1\files</strong>，然後按 enter。  
   
 15. **在 [檔案共用資料夾**] 視窗中，按兩下**範例 .txt**檔案。 您會看到範例 .txt 檔案的內容。  
   
-16. 在 [**開始**] 畫面上，輸入<strong>\\ \ app2\files</strong>，然後按 enter。  
+16. 在 [**開始**] 畫面上，輸入<strong>\\\app2\files</strong>，然後按 enter。  
   
 17. 在 [檔案共用資料夾] 視窗中，按兩下新的 [**檔**] [ **txt** ] 檔案。 您會看到新的文字檔 .txt 檔案的內容。  
   

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c508005af67e9dd5b0c9a22693aca25eb19e8e48
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fb2ebf485b5004e457558fc16d8535662c0c5ff2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366826"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307985"
 ---
 # <a name="hyper-v-virtual-switch"></a>Hyper-V 虛擬交換器
 
@@ -57,7 +57,7 @@ Hyper-v 虛擬交換器功能提供您更多的選項來強制執行租使用者
 >[!NOTE]
 > 在 Windows Server 2016 中，具有虛擬 NIC 的 VM 會正確顯示虛擬 NIC 的最大輸送量。 若要在**網路**連線中查看虛擬 nic 速度，請在所需的虛擬 nic 圖示上按一下滑鼠右鍵，然後按一下 [**狀態**]。 [虛擬 NIC**狀態**] 對話方塊隨即開啟。 在 [連線]**中，[** **速度**] 的值會符合伺服器中安裝之實體 NIC 的速度。
   
-## <a name="bkmk_apps"></a>使用 Hyper-v 虛擬交換器
+## <a name="uses-for-hyper-v-virtual-switch"></a><a name="bkmk_apps"></a>使用 Hyper-v 虛擬交換器
 
 以下是 Hyper-v 虛擬交換器的一些使用案例。
 
@@ -69,7 +69,7 @@ Hyper-v 虛擬交換器功能提供您更多的選項來強制執行租使用者
   
 **轉送擴充功能管理 VLAN 識別碼**：主要交換器公司正在建立轉送延伸模組，以套用所有的網路原則。 它所管理的一個元素就是虛擬區域網路 (VLAN) 識別碼。 虛擬交換器會放棄 VLAN 的控制而交給轉送擴充功能。 交換器公司的安裝以程式設計方式呼叫 Windows Management Instrumentation （WMI）應用程式開發介面（API），以開啟透明度，告知 Hyper-v 虛擬交換器通過 VLAN 標記而不採取任何動作。  
   
-## <a name="bkmk_func"></a>Hyper-v 虛擬交換器功能
+## <a name="hyper-v-virtual-switch-functionality"></a><a name="bkmk_func"></a>Hyper-v 虛擬交換器功能
  
 Hyper-V 虛擬交換器包含下列主要功能：  
   

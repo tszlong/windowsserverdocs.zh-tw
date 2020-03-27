@@ -3,7 +3,7 @@ title: 設定伺服器儲存體
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 718080c050dadc20837ab6b11a677029227e1709
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3d7c2b49afc9d740e6a4b3fa7ed659e8358c8dc6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865038"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312140"
 ---
 # <a name="configure-server-storage"></a>設定伺服器儲存體
 
@@ -32,7 +32,7 @@ ms.locfileid: "70865038"
 |伺服器層級|磁碟設定|  
 |------------------|------------------------|  
 |項目|-兩個實體磁片<br /><br /> -設定為 RAID 1 鏡像集，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1000 GB|  
-|中等|-三個實體磁片<br /><br /> -設定為 RAID 5 集合，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1500 GB|  
+|中|-三個實體磁片<br /><br /> -設定為 RAID 5 集合，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1500 GB|  
 |高|-五個以上的實體磁片總計<br /><br /> -RAID 1 鏡像集內的兩個磁片，其中包含 C： volume？ 100 GB<br /><br /> -RAID 5 集合中的所有剩餘磁片，其中包含下列各項：<br /><br /> -D： volume？ 1500 GB<br /><br /> -E：磁片區？ 1500 GB|  
   
  這些建議考慮到已安裝的作業系統大小、伺服器使用的資料存放區平均大小，以及伺服器存留時間內的預期資料儲存成長。 磁碟區可以是單一實體磁碟上的磁碟分割，也可以置於個別的實體磁碟上。 由於伺服器會儲存客戶的重要資料，因此建議您使用硬體 RAID 或儲存空間，以使用多個實體磁片並協助保護您的客戶資料。  
@@ -43,7 +43,7 @@ ms.locfileid: "70865038"
 ## <a name="partition-configuration"></a>磁碟分割設定  
  在伺服器的初始設定期間，會在磁碟 0 最大的資料磁碟分割中建立一組包含共用資料夾的預設伺服器資料夾，以及用戶端電腦備份資料夾。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 
  [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   

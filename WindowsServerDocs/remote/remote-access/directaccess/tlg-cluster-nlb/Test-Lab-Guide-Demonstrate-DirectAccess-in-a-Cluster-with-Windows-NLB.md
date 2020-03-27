@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e0c82f9f56ea680c11cd612e17326fe7cf96aeca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 563ccf1cf68fc6ffd67a29533b3fb3b579a55ee6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388433"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308841"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>測試實驗室指南：示範在具備 Windows NLB 功能的叢集中使用 DirectAccess
 
@@ -31,12 +31,12 @@ ms.locfileid: "71388433"
 > [!IMPORTANT]  
 > 這個實驗室是使用最少部電腦的概念性驗證。 本指南詳述的設定僅供測試實驗室使用，不得用於實際執行環境。  
   
-## <a name="KnownIssues"></a>已知問題  
+## <a name="known-issues"></a><a name="KnownIssues"></a>已知問題  
 以下是設定叢集案例的已知問題：  
   
 -   在具有單一網路介面卡的純 IPv4 部署中設定 DirectAccess 之後，並且在預設 DNS64 (包含 ":3333::" 的 IPv6 位址) 自動於網路介面卡上設定之後，透過遠端存取管理主控台嘗試啟用負載平衡會導致提示使用者提供 IPv6 DIP。 如果提供 IPv6 DIP，設定會在按一下 [認可] 之後失敗，並發生錯誤：參數不正確。  
   
-    解決此問題：  
+    若要解決此問題：  
   
     1.  從 [備份和還原遠端存取設定](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6)下載備份和還原指令碼。  
   
@@ -44,7 +44,7 @@ ms.locfileid: "71388433"
   
     3.  嘗試啟用負載平衡，直到它失敗所在的步驟。 在 [啟用負載平衡] 對話方塊中，展開詳細資料區域、在詳細資料區域以滑鼠右鍵按一下，然後按一下 [複製指令碼]。  
   
-    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如：  
+    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如，  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  
@@ -52,7 +52,7 @@ ms.locfileid: "71388433"
   
     5.  關閉任何開啟的 [遠端存取] 對話方塊，並關閉遠端存取管理主控台。  
   
-    6.  編輯貼上的文字，並移除 IPv6 位址。 例如：  
+    6.  編輯貼上的文字，並移除 IPv6 位址。 例如，  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0') -InternetVirtualIPAddress @('10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

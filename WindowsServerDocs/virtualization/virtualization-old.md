@@ -5,16 +5,16 @@ ms.prod: windows-server
 manager: dougkim
 ms.technology: compute
 ms.topic: article
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: bbbd8ea812a25b0d538dcb87a380184412235b99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d5a3390f1a072e5d155f19a97fe90ef481436f33
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364043"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307912"
 ---
 # <a name="virtualization"></a>虛擬化
 
@@ -25,7 +25,7 @@ ms.locfileid: "71364043"
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> Windows Server 2016 中的虛擬化是建立軟體定義基礎結構所需的其中一種基礎技術。 搭配網路功能與儲存空間，虛擬化功能可以賦予為您客戶提供強大工作負載所需的彈性。
 
-Windows Server 虛擬化技術包括 Hyper-v、Hyper-v 虛擬交換器和受防護網狀架構的更新，以及可改善安全性、擴充性和可靠性的虛擬機器 \(Vm\)。 容錯移轉叢集、網路功能和儲存空間的更新讓您更容易在搭配 Hyper-V 時部署和管理這些技術。 
+Windows Server 虛擬化技術包括 Hyper-v、Hyper-v 虛擬交換器和受防護網狀架構的更新，以及可改善安全性、擴充性和可靠性的虛擬機器 \(Vm\)。 容錯移轉叢集、網路功能和儲存體的更新讓您更容易在搭配 Hyper-V 時部署和管理這些技術。 
 
 
 <ul class="cardsI panelContent">
@@ -139,7 +139,7 @@ Windows Server 虛擬化技術包括 Hyper-v、Hyper-v 虛擬交換器和受防�
 
 
 
-## <a name="related"></a>相關
+## <a name="related"></a>相關的
 
 Hyper-V 需要特定硬體來建立虛擬化環境。 如需詳細資訊，請參閱 [Windows Server 2016 上 Hyper-V 的系統需求](./hyper-v/system-requirements-for-hyper-v-on-windows.md)。 
 

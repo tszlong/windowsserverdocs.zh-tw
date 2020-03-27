@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0c6bff2acc15b7ff90731e0113ae0d5a429c635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3cd73f1a5e2612f4551be1f16e49e9645c5e12c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404792"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308737"
 ---
 # <a name="step-2-install-and-configure-router1"></a>步驟2安裝和設定 ROUTER1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在此多網站測試實驗室指南中，路由器電腦會在公司網路與2公司網路之間提供 IPv4 和 IPv6 橋接器，並作為 IP-HTTPS 和 Teredo 流量的路由器。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71404792"
   
 1.  開始安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）。  
   
-2.  依指示完成安裝，為本機 Administrator 帳戶指定強式密碼。 使用本機 Administrator 帳戶登入。  
+2.  依指示完成安裝，為本機 Administrator 帳戶指定強式密碼。 使用本機系統管理員帳戶登入。  
   
 3.  將 ROUTER1 連線至具有網際網路存取權的網路，並執行 Windows Update 以安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然後中斷網際網路連線。  
   
@@ -112,7 +112,7 @@ ms.locfileid: "71404792"
   
 5.  在 [**具有高級安全性的 Windows 防火牆**] 對話方塊的 [**公用設定檔**] 索引標籤上，按一下 [**防火牆狀態**] 中的 [**關閉**]，然後按一下 **[確定]** 。  
   
-6.  關閉 [具有 Advanced Security 的 Windows 防火牆]。  
+6.  接著並關閉 [具有進階安全性的 Windows 防火牆]。  
   
 ## <a name="configure-routing-and-forwarding"></a>設定路由和轉送  
 若要在公司網路與2公司網之間提供路由和轉送服務，您必須在網路介面上啟用轉送，並設定子網之間的靜態路由。  

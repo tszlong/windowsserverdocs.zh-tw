@@ -4,16 +4,16 @@ description: 儲存體遷移服務可讓您更輕鬆地將存放裝置遷移至 
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 01/17/2020
+ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
-ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
+ms.openlocfilehash: 0765c43333f23fb09c0f69ceca1ff21cfce25874
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110671"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310499"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -21,7 +21,7 @@ ms.locfileid: "80110671"
 
 儲存體遷移服務可讓您更輕鬆地將存放裝置遷移至 Windows Server 或 Azure。 它提供了一種圖形化工具，可清查 Windows 和 Linux 伺服器上的資料，然後將資料傳輸到較新的伺服器或 Azure 虛擬機器。 儲存體遷移服務也提供將伺服器身分識別傳送至目的地伺服器的選項，讓應用程式和使用者可以存取其資料，而不需要變更連結或路徑。
 
-本主題討論您想要使用儲存體遷移服務的原因、遷移程式的運作方式，以及來源和目的地伺服器的需求。
+本主題討論為何您會想要使用儲存體遷移服務、遷移程式的運作方式、來源與目的地伺服器的需求，以及[儲存體遷移服務的新功能](#whats-new-in-storage-migration-service)。
 
 ## <a name="why-use-storage-migration-service"></a>為何要使用儲存體遷移服務
 
@@ -134,7 +134,12 @@ ms.locfileid: "80110671"
 
 Windows Admin Center 1910 版可讓您部署 Azure 虛擬機器。 這會將 VM 部署整合到儲存體遷移服務。 不要在部署您的工作負載之前以手動方式在 Azure 入口網站中建立新的伺服器和 Vm，而是可能遺失必要的步驟和設定-Windows 管理中心可以部署 Azure VM、設定其儲存體、將其加入您的網域、安裝角色，以及然後設定您的分散式系統。 
 
+   以下影片顯示如何使用儲存體遷移服務來遷移至 Azure Vm。
+   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+
 ## <a name="whats-new-in-storage-migration-service"></a>儲存體遷移服務的新功能
+
+Windows 管理中心1910版新增了部署 Azure 虛擬機器的功能。 這會將 Azure VM 部署整合到儲存體遷移服務。 如需詳細資訊，請參閱[AZURE VM 遷移](#azure-vm-migration)。
 
 在 Windows Server、1903版或更新版本上執行儲存體遷移伺服器協調器，或安裝了[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)的舊版 windows server 時，可以使用下列新功能：
 

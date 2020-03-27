@@ -7,14 +7,14 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 04/26/2019
+ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: a21000e857d702846703deb4f55380e1a998f6d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9873378d62ccc7b53dcc6fc629651df2aa1c6708
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402955"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308110"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>使用儲存體複本進行伺服器對伺服器儲存體複寫
 
@@ -50,7 +50,7 @@ ms.locfileid: "71402955"
 
 若要搭配使用「儲存體複本」和「Windows 管理中心」，您需要下列各項：
 
-| 系統                        | 作業系統                                            | 需要     |
+| System                        | 作業系統                                            | 需要     |
 |-------------------------------|-------------------------------------------------------------|------------------|
 | 兩部伺服器 <br>（任何混合的內部部署硬體、Vm 和雲端 Vm，包括 Azure Vm）| Windows Server 2019、Windows Server 2016 或 Windows Server （半年通道） | 儲存體複本  |
 | 一部電腦                     | Windows 10                                                  | Windows Admin Center |
@@ -67,14 +67,14 @@ ms.locfileid: "71402955"
 
 ![這個圖表顯示與建築物 9 的伺服器進行複寫之建築物 5 的伺服器](media/Server-to-Server-Storage-Replication/Storage_SR_ServertoServer.png)  
 
-**圖 1:伺服器對伺服器複寫**  
+**圖1：伺服器對伺服器複寫**  
 
-## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>步驟 1:在您的電腦上安裝和設定 Windows Admin Center
+## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>步驟1：在您的電腦上安裝和設定 Windows 系統管理中心
 
 如果您使用 Windows 系統管理中心來管理儲存體複本，請使用下列步驟來準備您的電腦以管理儲存體複本。
 1. 下載並安裝[Windows 管理中心](../../manage/windows-admin-center/overview.md)。
 2. 下載並安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。
-    - 如果您使用的是 Windows 10 1809 版或更新版本，請安裝 "RSAT：適用于 Windows PowerShell 的儲存體複本模組（從功能隨選安裝）。
+    - 如果您使用的是 Windows 10 1809 版或更新版本，請從功能隨選安裝「RSAT：適用于 Windows PowerShell 的儲存體複本模組」。
 3. 選取 [**開始**] 按鈕，輸入**powershell**，以滑鼠右鍵按一下 [ **Windows PowerShell]，** 然後選取 [以**系統管理員身分執行**]，以系統管理員身分開啟 PowerShell 會話。
 4. 輸入下列命令以啟用本機電腦上的 WS-MANAGEMENT 通訊協定，並在用戶端上設定遠端系統管理的預設設定。
 
@@ -84,11 +84,14 @@ ms.locfileid: "71402955"
 
 5. 輸入**Y**以啟用 winrm 服務，並啟用 Winrm 防火牆例外。
 
-## <a name="provision-os"></a>步驟2：佈建作業系統、功能、角色、儲存體及網路
+## <a name="step-2-provision-operating-system-features-roles-storage-and-network"></a><a name="provision-os"></a>步驟2：布建作業系統、功能、角色、儲存體和網路
 
 1.  在安裝類型為 Windows Server **（桌面體驗）** 的兩個伺服器節點上安裝 windows server。 
  
     若要透過 ExpressRoute 使用連線到您網路的 Azure VM，請參閱透過[Expressroute 新增連線到您網路的 AZURE vm](#add-azure-vm-expressroute)。
+    
+    > [!NOTE]
+    > 從 Windows Admin Center 1910 版開始，您可以在 Azure 中自動設定目的地伺服器。 如果您選擇該選項，請在來源伺服器上安裝 Windows Server，然後跳至[步驟3：設定伺服器對伺服器](#step-3-set-up-server-to-server-replication)複寫。 
 
 3.  新增網路資訊，將伺服器加入與 Windows 10 管理電腦相同的網域（如果您使用的話），然後重新開機伺服器。  
 
@@ -111,13 +114,13 @@ ms.locfileid: "71402955"
     -   **Windows 系統管理中心方法**
         1. 在 Windows 管理中心中，流覽至 [伺服器管理員]，然後選取其中一部伺服器。
         2. 流覽至 [角色] [&] [**功能**]。
-        3. 選取 [**功能** > ] [**存放裝置複本**]，然後按一下 [**安裝**]。
+        3. 選取 [**功能** > **儲存體複本**]，然後按一下 [**安裝**]。
         4. 在另一台伺服器上重複執行。
     -   **伺服器管理員方法**  
 
         1.  執行 **ServerManager.exe**，並新增所有伺服器節點以建立伺服器群組。  
 
-        2.  在每個節點上安裝 **\[檔案伺服器\]** 和 **\[儲存體複本\]** 角色和功能，然後予以重新啟動。  
+        2.  在每個節點上安裝 [檔案伺服器] 和 [儲存體複本] 角色和功能，然後予以重新啟動。  
 
     -   **Windows PowerShell 方法**  
 
@@ -149,7 +152,7 @@ ms.locfileid: "71402955"
 
         1.  請確定每部伺服器只能看到該網站的儲存體機箱，同時已正確設定 SAS 連線。  
 
-        2.  遵循[在獨立伺服器上部署儲存空間](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
+        2.  遵循**在獨立伺服器上部署儲存空間**中提供的[步驟 1-3](../storage-spaces/deploy-standalone-storage-spaces.md)，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
 
     - **針對 iSCSI 儲存體：**  
 
@@ -188,9 +191,9 @@ ms.locfileid: "71402955"
 
     ![這個畫面顯示拓撲報告](media/Server-to-Server-Storage-Replication/SRTestSRTopologyReport.png)
 
-    **圖 2:儲存體複寫拓撲報告**
+    **圖2：儲存體複寫拓撲報告**
 
-## <a name="step-3-set-up-server-to-server-replication"></a>步驟 3：設定伺服器對伺服器複寫
+## <a name="step-3-set-up-server-to-server-replication"></a>步驟3：設定伺服器對伺服器複寫
 ### <a name="using-windows-admin-center"></a>使用 Windows 管理中心
 
 1. 新增來源伺服器。
@@ -199,11 +202,20 @@ ms.locfileid: "71402955"
     3. 輸入伺服器的名稱，然後選取 [**提交**]。
 2. 在 [**所有連接**] 頁面上，選取來源伺服器。
 3. 從 [工具] 面板中選取 [**儲存體複本**]。
-4. 選取 [**新增**] 以建立新的合作關係。
-5. 提供合作關係的詳細資料，然後選取 [**建立**]。 <br>
-   ![新的合作關係畫面會顯示合作關係詳細資料，例如 8 GB 的記錄大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+4. 選取 [**新增**] 以建立新的合作關係。 若要建立新的 Azure VM 作為合作關係的目的地：
+   
+    1. 在 [**使用其他伺服器**複寫] 底下，選取 [**使用新的 Azure VM** ] 然後選取 **[下一步]** 。 如果您沒有看到此選項，請確定您使用的是 Windows 系統管理中心1910版或更新版本。
+    2. 指定來源伺服器資訊和複寫組名，然後選取 **[下一步]** 。<br><br>這會開始一種程式，自動選取 Windows Server 2019 或 Windows Server 2016 Azure VM 作為遷移來源的目的地。 儲存體遷移服務會建議 VM 大小以符合您的來源，但您可以選取 [**查看所有大小**] 來覆寫。 清查資料是用來自動設定您的受控磁片和其檔案系統，以及將您的新 Azure VM 加入您的 Active Directory 網域。
+    3. 在 Windows 系統管理中心建立 Azure VM 之後，請提供複寫組名，然後選取 [**建立**]。 接著，Windows 管理中心會開始正常的儲存體複本初始同步處理常式，以開始保護您的資料。
+    
+    以下影片顯示如何使用儲存體複本來遷移至 Azure Vm。
 
-    **圖 3:建立新的合作關係**
+    > [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
+
+5. 提供合作關係的詳細資料，然後選取 [**建立**] （如 [圖 3] 所示）。 <br>
+   ![新的合作關係畫面，顯示合作關係詳細資料，例如 8 GB 的記錄檔大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+
+    **圖3：建立新的合作關係**
 
 > [!NOTE]
 > 從「Windows 系統管理中心」中的「儲存體複本」移除合作關係並不會移除複寫組名。
@@ -287,9 +299,9 @@ ms.locfileid: "71402955"
         ```  
 
         > [!NOTE]
-        > 儲存體複本會將目的地磁碟區與其磁碟機代號或掛接點卸載。 這是原廠設定。  
+        > 儲存體複本會將目的地磁碟區與其磁碟機代號或掛接點卸載。 這是設計的做法。  
 
-    3.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如:  
+    3.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如，  
 
         ```PowerShell  
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining  
@@ -326,23 +338,23 @@ ms.locfileid: "71402955"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -350,11 +362,11 @@ ms.locfileid: "71402955"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -428,21 +440,21 @@ ms.locfileid: "71402955"
    > [!NOTE]
    > 嚴重損壞修復規劃是一個複雜的主題，需要非常注意細節。 強烈建議您建立年度即時容錯移轉步驟 Runbook 和效能。 當實際的災害來襲時，混亂將會主導一切，而且可能無法連絡到有經驗的人員。  
 
-## <a name="add-azure-vm-expressroute"></a>透過 ExpressRoute 新增連線到您網路的 Azure VM
+## <a name="adding-an-azure-vm-connected-to-your-network-via-expressroute"></a><a name="add-azure-vm-expressroute"></a>透過 ExpressRoute 新增連線到您網路的 Azure VM
 
 1. [在 Azure 入口網站中建立 ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)。<br>ExpressRoute 經核准之後，會將資源群組新增至訂用帳戶-流覽至 [**資源群組**] 以查看這個新群組。 記下 [虛擬網路名稱]。
-![Azure 入口網站顯示新增至 ExpressRoute 的資源群組](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
+![Azure 入口網站顯示隨 ExpressRoute 新增的資源群組](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
     
     **圖4：與 ExpressRoute 相關聯的資源-記下虛擬網路名稱**
 1. [建立新的資源群組](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
 1. [新增網路安全性群組](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)。 建立時，請選取與您所建立之 ExpressRoute 相關聯的訂用帳戶識別碼，並選取您剛才建立的資源群組。
 <br><br>將您需要的任何輸入和輸出安全性規則新增至網路安全性群組。 例如，您可能想要允許遠端桌面存取 VM。
 1. 使用下列設定[建立 AZURE VM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) （如 [圖 5] 所示）：
-    - **公用 IP 位址**:None
-    - **虛擬網路**:從新增 ExpressRoute 的資源群組中，選取您所記下的虛擬網路。
+    - **公用 IP 位址**：無
+    - **虛擬網路**：從新增 ExpressRoute 的資源群組中，選取您所記下的虛擬網路。
     - **網路安全性群組（防火牆）** ：選取您先前建立的網路安全性群組。
-    ![建立顯示 ExpressRoute 網路設定](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-     **的虛擬機器圖5：在選取 ExpressRoute 網路設定時建立 VM**
+    ![建立顯示 ExpressRoute 網路設定的虛擬機器](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
+    **圖5：選取 expressroute 網路設定時建立 VM**
 1. 建立 VM 之後，請參閱[步驟2：布建作業系統、功能、角色、儲存體和網路](#provision-os)。
 
 
@@ -451,5 +463,5 @@ ms.locfileid: "71402955"
 - [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)  
 - [叢集對叢集儲存體複寫](cluster-to-cluster-storage-replication.md)
 - [儲存體複本：已知問題](storage-replica-known-issues.md)  
-- [儲存體複本：常見問題集](storage-replica-frequently-asked-questions.md)
+- [儲存體複本：常見問題](storage-replica-frequently-asked-questions.md)
 - [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)  

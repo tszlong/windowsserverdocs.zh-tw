@@ -5,18 +5,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da2166d28edda5662797824d9b26ad930f51083c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 35c3c3b2610918e8b0fd69ccf04422e3f6df4d0e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406757"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318545"
 ---
 # <a name="whats-new-in-networking"></a>網路的新功能
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 以下是 Windows Server 2016 中新的或增強的網路技術。  
   Upd 本主題包含下列各節。  
@@ -25,7 +25,7 @@ ms.locfileid: "71406757"
   
 -   [其他網路技術的新功能](#bkmk_existing)  
   
-## <a name="bkmk_features"></a>新的網路功能與技術
+## <a name="new-networking-features-and-technologies"></a><a name="bkmk_features"></a>新的網路功能與技術
 
 網路功能是軟體定義資料中心（SDDC）平臺的基礎部分，而 Windows Server 2016 則提供全新和改良的軟體定義網路（SDN）技術，可協助您為組織移至完全實現的 SDDC 解決方案。  
   
@@ -72,28 +72,28 @@ ms.locfileid: "71406757"
   
 -   **切換內嵌小組（SET）** 。        SET 是在 Hyper-v 虛擬交換器中整合的 NIC 小組解決方案。 設定可讓最多八個實體 NIC 組成單一集合小組，以改善可用性並提供容錯移轉。 在 Windows Server 2016 中，您可以建立限制使用伺服器訊息區（SMB）和 RDMA 的集合小組。 此外，您可以使用設定小組來散發 Hyper-v 網路虛擬化的網路流量。 如需詳細資訊，請參閱[遠端直接&#40;記憶體&#41;訪問 RDMA 和交換器&#40;內嵌&#41;小組集](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。  
   
-## <a name="bkmk_existing"></a>其他網路技術的新功能
+## <a name="new-features-for-additional-networking-technologies"></a><a name="bkmk_existing"></a>其他網路技術的新功能
 
 本章節包含熟悉的網路技術之新功能的相關資訊。
   
-## <a name="bkmk_dhcp"></a>DHCP  
+## <a name="dhcp"></a><a name="bkmk_dhcp"></a>DHCP  
 DHCP 是一項網際網路工程任務推動小組 (IETF) 標準，旨在減輕 TCP/IP 網路 (如私人內部網路) 上設定主機的管理負擔及複雜度。 使用 DHCP 伺服器服務可以將 DHCP 用戶端設定 TCP/IP 的程序自動化。  
   
 如需詳細資訊，請參閱[DHCP 的新功能](technologies/dhcp/What-s-New-in-DHCP.md)。  
   
-## <a name="bkmk_dns"></a>DNS  
-DNS 是 TCP/IP 網路中用來命名電腦及網路服務的系統。 DNS 命名會透過易記名稱找到電腦和服務。 當使用者在應用程式中輸入 DNS 名稱時，DNS 服務便可以將此名稱解析為與此名稱關聯的其他資訊 (如 IP 位址)。  
+## <a name="dns"></a><a name="bkmk_dns"></a>DNS  
+DNS 是 TCP/IP 網路中用來命名電腦及網路服務的系統。 DNS 命名方式讓您可以透過好記的名稱來尋找電腦與服務。 當使用者在應用程式中輸入 DNS 名稱時，DNS 服務便可以將此名稱解析為與此名稱相關的其他資訊 (如 IP 位址)。  
   
 以下是 DNS 用戶端和 DNS 伺服器的相關資訊。  
   
-### <a name="bkmk_dnsc"></a>DNS 用戶端  
+### <a name="dns-client"></a><a name="bkmk_dnsc"></a>DNS 用戶端  
 以下是新的或改良的 DNS 用戶端技術。  
   
 -   **DNS 用戶端服務**系結。 在 Windows 10 中，DNS 用戶端服務為具有多個網路介面的電腦提供增強的支援。  
   
 如需詳細資訊，請參閱[Windows Server 2016 中 DNS 用戶端的新功能](dns/What-s-New-in-DNS-Client.md)  
   
-### <a name="bkmk_dnss"></a>DNS 伺服器  
+### <a name="dns-server"></a><a name="bkmk_dnss"></a>DNS 伺服器  
 以下是新的或改良的 DNS 伺服器技術。  
   
 -   **DNS 原則**。  您可以設定 DNS 原則，以指定 DNS 伺服器回應 DNS 查詢的方式。 DNS 回應可以根據用戶端 IP 位址（位置）、一天的時間，以及數個其他參數。 DNS 原則可啟用位置感知的 DNS、流量管理、負載平衡、分裂式 DNS 和其他案例。  
@@ -118,17 +118,17 @@ DNS 是 TCP/IP 網路中用來命名電腦及網路服務的系統。 DNS 命名
   
 如需詳細資訊，請參閱[Windows server 2016 中 DNS 伺服器的新功能](dns/What-s-New-in-DNS-Server.md)  
   
-## <a name="bkmk_GRE"></a>GRE 通道  
+## <a name="gre-tunneling"></a><a name="bkmk_GRE"></a>GRE 通道  
 RAS 閘道現在支援站對站連線的高可用性一般路由封裝（GRE）通道和閘道的 M + N 冗余。 GRE 是輕量級的通道通訊協定，可透過網際網路通訊協定網路封裝各種不同的虛擬點對點連結內的網路層通訊協定。  
   
 如需詳細資訊，請參閱[Windows Server 2016 中的 GRE 通道](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md)。  
   
-## <a name="HNV"></a>Hyper-v 網路虛擬化  
+## <a name="hyper-v-network-virtualization"></a><a name="HNV"></a>Hyper-v 網路虛擬化  
 Hyper-v 網路虛擬化（HNV）在 Windows Server 2012 中引進，可讓客戶網路在共用實體網路基礎結構之上進行虛擬化。 透過實體網路網狀架構上所需的最少變更，HNV 可讓服務提供者在三個雲端的任何位置部署和遷移租使用者工作負載的靈活性：服務提供者雲端、私人雲端或 Microsoft Azure 公用雲端。  
   
 如需詳細資訊，請參閱[Windows Server 2016 中 Hyper-v 網路虛擬化的新功能](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
   
-## <a name="bkmk_ipam"></a>IPAM  
+## <a name="ipam"></a><a name="bkmk_ipam"></a>IPAM  
 IPAM 為組織網路上的 IP 位址和 DNS 基礎結構提供高度可自訂的系統管理和監視功能。 使用 IPAM，您可以監視、audit 和管理執行動態主機設定通訊協定（DHCP）和網域名稱系統（DNS）的伺服器。  
   
 -   **增強的 IP 位址管理**。  

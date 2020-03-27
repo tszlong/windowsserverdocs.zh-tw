@@ -3,7 +3,7 @@ title: 新增 Windows Server Essentials 做為成員伺服器
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 09943f9708af3839ff21717316853fab9ba0283b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4b87c066885ed2bf0ac6dfa29496317310b062d9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865044"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310171"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>新增 Windows Server Essentials 做為成員伺服器
 
->適用於：Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 本主題適用于執行 Windows Server 2012 R2 Standard、Windows Server 2012 R2 Datacenter 或 Windows Server 2016 且已安裝 Windows Server Essentials 體驗角色的伺服器。 在本文件的其餘部分，Windows Server Essentials 體驗角色會稱為 Windows Server Essentials。  
   
@@ -76,7 +76,7 @@ ms.locfileid: "70865044"
   
 2.  使用您的網域系統管理員帳戶登入伺服器。  
   
-3.  開啟伺服器管理員。  
+3.  開啟 [伺服器管理員]。  
   
 4.  在 [伺服器管理員] 的旗標通知區域中，按一下旗標，然後按一下 [設定 Windows Server Essentials]。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "70865044"
   
 6.  按一下 [設定] 開始設定。 設定過程需要花費大約 10 分鐘的時間。  
   
-7.  在桌面上，按一下 [儀表板] 圖示以啟動伺服器 [儀表板]。 在 [首頁] 頁面上，完成 [設定] 索引標籤上所列的 [快速入門] 工作。  
+7.  在桌面上，按一下儀表板圖示以啟動伺服器儀表板。 在 [首頁] 頁面上，完成 [設定] 索引標籤上所列的 [快速入門] 工作。  
   
 ## <a name="see-also"></a>另請參閱  
   

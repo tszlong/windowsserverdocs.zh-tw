@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bd0f8ba10536a28479269abafadaaacaffd3d0a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3f67ef0131d5fc765c3fe99fdff85d93e869902e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388378"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308836"
 ---
 # <a name="step-12-test-directaccess-connectivity"></a>步驟12測試 DirectAccess 連線能力
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 當用戶端電腦位於網際網路或 Homenet 網路時，您必須確定它們具有正確的群組原則設定，才能測試其連線能力。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71388378"
 ## <a name="prerequisites"></a>必要條件  
 將兩部用戶端電腦連線到公司網路，然後重新開機兩部用戶端電腦。  
   
-## <a name="policy"></a>確認用戶端具有正確的群組原則  
+## <a name="verify-clients-have-the-correct-group-policy"></a><a name="policy"></a>確認用戶端具有正確的群組原則  
   
-1.  在 CLIENT1 上，按一下 [**開始**]，輸入**powershell**，以滑鼠右鍵按一下 [ **powershell**]，然後按一下 [ **Advanced**]，再按一下 [以**系統管理員身分執行**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 CLIENT1 上，按一下 [**開始**]，輸入**powershell**，以滑鼠右鍵按一下 [ **powershell**]，然後按一下 [ **Advanced**]，再按一下 [以**系統管理員身分執行**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 Windows PowerShell 視窗中，輸入**ipconfig** ，然後按 enter。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "71388378"
   
 4.  讓 Windows PowerShell 視窗保持開啟，以進行下一個程式。  
   
-5.  在 CLIENT2 上，依序按一下 [**開始**]、[**所有程式**]、[**附屬**應用]、[ **windows powershell**]、[ **windows powershell**]，然後按一下 [以**系統管理員身分執行**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+5.  在 CLIENT2 上，依序按一下 [**開始**]、[**所有程式**]、[**附屬**應用]、[ **windows powershell**]、[ **windows powershell**]，然後按一下 [以**系統管理員身分執行**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 6.  在 Windows PowerShell 視窗中，輸入**ipconfig** ，然後按 enter。  
   
@@ -68,7 +68,7 @@ ms.locfileid: "71388378"
   
 8.  讓 Windows PowerShell 視窗保持開啟，以進行下一個程式。  
   
-## <a name="EDGE1"></a>透過 EDGE1 測試來自網際網路的 DirectAccess 連線能力  
+## <a name="test-directaccess-connectivity-from-the-internet-through-edge1"></a><a name="EDGE1"></a>透過 EDGE1 測試來自網際網路的 DirectAccess 連線能力  
   
 1. 從網際網路網路拔下 2-EDGE1。  
   
@@ -90,10 +90,10 @@ ms.locfileid: "71388378"
   
 7. 請確定您已透過 EDGE1 連線。 輸入**netsh interface HTTPstunnel show** interface，然後按 enter。  
   
-   輸出應該包含 URL： https://edge1.contoso.com:443/IPHTTPS 。  
+   輸出應該包含 URL： https://edge1.contoso.com:443/IPHTTPS。  
   
    > [!TIP]  
-   > 在 CLIENT1 上，您也可以執行下列 Windows PowerShell 命令：**NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連接和目前作用中的設定檔。  
+   > 在 CLIENT1 上，您也可以執行下列 Windows PowerShell 命令： **NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連接和目前作用中的設定檔。  
   
 8. 在 Windows PowerShell 視窗中，輸入**ping app1** ，然後按 enter。 您應該會看到指派給 APP1 的 IPv6 位址回復，在此案例中為2001： db8：1：：3。  
   
@@ -109,11 +109,11 @@ ms.locfileid: "71388378"
   
 13. 在 Internet Explorer 網址列中，輸入 **https://app2/** ，然後按 enter。 您將會看到 APP2 上的預設網站。  
   
-14. 在 [**開始**] 畫面上，輸入<strong>\\ \ 2-App1\Files</strong>，然後按 enter。 按兩下範例文字檔。  
+14. 在 [**開始**] 畫面上，輸入<strong>\\\2-App1\Files</strong>，然後按 enter。 按兩下範例文字檔。  
   
     這會示範當透過 EDGE1 連線時，您能夠連接到 corp2.corp.contoso.com 網域中的檔案伺服器。  
   
-15. 在 [**開始**] 畫面上，輸入<strong>\\ \ App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。  
+15. 在 [**開始**] 畫面上，輸入<strong>\\\App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。  
   
     這會示範您可以使用 SMB 連線到僅 IPv4 的伺服器，以取得資源網域中的資源。  
   
@@ -121,19 +121,19 @@ ms.locfileid: "71388378"
   
 17. 在 [**具有 Advanced Security 的 Windows 防火牆**] 主控台中，請注意只有**公用設定檔**為作用中。 必須啟用 Windows 防火牆，DirectAccess 才能正常運作。 如果 Windows 防火牆已停用，DirectAccess 連線就無法運作。  
   
-18. 在主控台的左窗格中，展開 [**監視**] 節點，然後按一下 [連線**安全性規則**] 節點。 您應該會看到作用中的連線安全性規則：**Directaccess 原則-ClientToCorp**、 **Directaccess 原則-ClientToDNS64NAT64PrefixExemption**、 **Directaccess 原則-ClientToInfra**和**directaccess 原則-ClientToNlaExempt**。 將中間窗格向右移動，以顯示 [**第一個驗證方法**] 和 [**第二個驗證方法**] 資料行。 請注意，第一個規則（ClientToCorp）會使用 Kerberos V5 來建立內部網路通道，而第三個規則（ClientToInfra）則使用 NTLMv2 來建立基礎結構通道。  
+18. 在主控台的左窗格中，展開 [**監視**] 節點，然後按一下 [連線**安全性規則**] 節點。 您應該會看到使用中的連線安全性規則： **Directaccess 原則-ClientToCorp**、 **Directaccess 原則-ClientToDNS64NAT64PrefixExemption**、 **Directaccess 原則-ClientToInfra**和**directaccess 原則-ClientToNlaExempt**。 將中間窗格向右移動，以顯示 [**第一個驗證方法**] 和 [**第二個驗證方法**] 資料行。 請注意，第一個規則（ClientToCorp）會使用 Kerberos V5 來建立內部網路通道，而第三個規則（ClientToInfra）則使用 NTLMv2 來建立基礎結構通道。  
   
 19. 在主控台的左窗格中，展開 [**安全性關聯**] 節點，然後按一下 [**主要模式]** 節點。 請注意，使用 NTLMv2 的基礎結構通道安全性關聯和使用 Kerberos V5 的內部網路通道安全性關聯。 以滑鼠右鍵按一下顯示 [**使用者（Kerberos V5）** ] 做為**第二個驗證方法**的專案，然後按一下 [**屬性**]。 在 [**一般**] 索引標籤上，請注意**第二個驗證本機識別碼**是**CORP\User1**，表示 User1 能夠使用 Kerberos 成功地向 CORP 網域進行驗證。  
   
 20. 在 CLIENT2 上的步驟3中重複此程式。  
   
-## <a name="secgroup"></a>將 CLIENT2 移至 Win7_Clients_Site2 安全性群組  
+## <a name="move-client2-to-the-win7_clients_site2-security-group"></a><a name="secgroup"></a>將 CLIENT2 移至 Win7_Clients_Site2 安全性群組  
   
 1.  在 DC1 上，按一下 [**開始**]，輸入**dsa.msc**，然後按 enter。  
   
 2.  在 [Active Directory 使用者和電腦] 主控台中，開啟**corp.contoso.com/Users** ，然後按兩下 [ **Win7_Clients_Site1**]。  
   
-3.  在 [ **Win7_Clients_Site1 屬性**] 對話方塊中，按一下 [**成員**] 索引標籤，依序按一下 [ **CLIENT2**]、[**移除** **]、[是]** ，然後按一下 **[確定]** 。  
+3.  在 [ **Win7_Clients_Site1**內容] 對話方塊中，按一下 [**成員**] 索引標籤，依序按一下 [ **CLIENT2**]、[**移除** **]、[是]** ，然後按一下 **[確定]** 。  
   
 4.  按兩下 [ **Win7_Clients_Site2**]，然後在 [ **Win7_Clients_Site2 屬性**] 對話方塊中，按一下 [**成員**] 索引標籤。  
   
@@ -151,7 +151,7 @@ ms.locfileid: "71388378"
   
     -   nls.corp.contoso.com-這些設定表示名稱 nls.corp.contoso.com 有豁免。  
   
-## <a name="DAConnect"></a>透過 2-EDGE1 測試來自網際網路的 DirectAccess 連線能力  
+## <a name="test-directaccess-connectivity-from-the-internet-through-2-edge1"></a><a name="DAConnect"></a>透過 2-EDGE1 測試來自網際網路的 DirectAccess 連線能力  
   
 1. 連接 2-EDGE1 到網際網路網路。  
   
@@ -163,10 +163,10 @@ ms.locfileid: "71388378"
   
 5. 請確定您已透過 2-EDGE1 連線。 輸入**netsh interface HTTPstunnel show** interface，然後按 enter。  
   
-   輸出應該包含 URL： https://2-edge1.contoso.com:443/IPHTTPS 。  
+   輸出應該包含 URL： https://2-edge1.contoso.com:443/IPHTTPS。  
   
    > [!TIP]  
-   > 在 CLIENT1 上，您也可以執行下列命令：**NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連接和目前作用中的設定檔。  
+   > 在 CLIENT1 上，您也可以執行下列命令： **NetIPHTTPSConfiguration**。 輸出會顯示可用的伺服器 URL 連接和目前作用中的設定檔。  
   
    > [!NOTE]  
    > CLIENT1 會自動變更與公司資源連接的伺服器。 如果命令的輸出顯示 EDGE1 的連線，請等候約五分鐘，然後再試一次。  
@@ -185,11 +185,11 @@ ms.locfileid: "71388378"
   
 11. 在 Internet Explorer 網址列中，輸入 **https://app2/** ，然後按 enter。 您會看到 APP3 上的預設網站。  
   
-12. 在 [**開始**] 畫面上，輸入<strong>\\ \ App1\Files</strong>，然後按 enter。 按兩下範例文字檔。  
+12. 在 [**開始**] 畫面上，輸入<strong>\\\App1\Files</strong>，然後按 enter。 按兩下範例文字檔。  
   
     這會示範在透過 2 EDGE1 連線時，您能夠連接到 corp.contoso.com 網域中的檔案伺服器。  
   
-13. 在 [**開始**] 畫面上，輸入<strong>\\ \ App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。  
+13. 在 [**開始**] 畫面上，輸入<strong>\\\App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。  
   
     這會示範您可以使用 SMB 連線到僅 IPv4 的伺服器，以取得資源網域中的資源。  
   

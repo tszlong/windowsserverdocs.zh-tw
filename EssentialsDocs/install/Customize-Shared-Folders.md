@@ -1,9 +1,9 @@
 ---
 title: 自訂共用資料夾
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d8f52cbe76204bb00cb15c3093f69daf3d8abb6e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433531"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311910"
 ---
 # <a name="customize-shared-folders"></a>自訂共用資料夾
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 伺服器資料夾依預設會建立在磁碟 0 最大的資料磁碟分割上。 合作夥伴可使用下列步驟來自訂位置，以及指定其他伺服器資料夾：  
   
@@ -31,7 +31,7 @@ ms.locfileid: "66433531"
   
    1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]** 。  
   
-   2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]  應用程式。  
+   2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit] 應用程式。  
   
    3.  在瀏覽窗格中，依序展開 **[HKEY_LOCAL_MACHINE]** 、 **[SOFTWARE]** 與 **[Microsoft]** 。  
   
@@ -47,13 +47,13 @@ ms.locfileid: "66433531"
   
    9. 將此新機碼的值設定為 **1**，然後按一下 **[確定]** 。  
   
-2. 使用 PostIC.cmd 指令碼將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 1:建立自訂資料夾，並在預設資料夾移至新的位置從 PostIC.cmd 使用 Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1)。  
+2. 使用 PostIC.cmd 指令碼將資料夾移至不同的位置，或建立其他資料夾。 請參閱下列範例：[範例 1：使用 Windows PowerShell 建立自訂資料夾，然後透過 PostIC.cmd 將預設資料夾移至新位置](Customize-Shared-Folders.md#BKMK_Example1)。  
   
-3. 使用 Windows Server 解決方案 SDK 將資料夾移至不同的位置，或建立其他資料夾。 請參閱以下範例：[範例 2:建立自訂資料夾，並使用 Windows Server 解決方案 SDK 中移動現有資料夾](Customize-Shared-Folders.md#BKMK_Example2)。  
+3. 使用 Windows Server 解決方案 SDK 將資料夾移至不同的位置，或建立其他資料夾。 請參閱下列範例：[範例 2：使用 Windows Server 解決方案 SDK 建立自訂資料夾並移動現有資料夾](Customize-Shared-Folders.md#BKMK_Example2)。  
   
    或者，合作夥伴也可以將資料夾保留在磁碟機 C 上。如此可讓使用者或轉銷商判斷資料磁碟機上的資料夾配置。  
   
-###  <a name="BKMK_Example1"></a> 範例 1：使用 Windows PowerShell 從 PostIC.cmd 建立自訂資料夾，並將預設資料夾移到新位置  
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>範例1：使用 Windows PowerShell 建立自訂資料夾，並將預設資料夾移至 Postic.cmd 中的新位置  
   
 1.  依照[建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節中的詳細說明，建立用來執行初始設定後續工作的 PostIC.cmd 檔案。  
   
@@ -99,7 +99,7 @@ ms.locfileid: "66433531"
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a> 範例 2：使用 Windows Server 解決方案 SDK 建立自訂資料夾，並移動現有資料夾  
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>範例2：使用 Windows Server 解決方案 SDK 建立自訂資料夾並移動現有資料夾  
  您所建立的程式碼可編譯為可執行檔，然後從 PostIC.cmd 檔案加以呼叫，或直接從已安裝的增益集呼叫。  
   
 ```  
@@ -144,7 +144,7 @@ static void Main(string[] args)
 ```  
   
 ## <a name="see-also"></a>另請參閱  
- [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他自訂項目](Additional-Customizations.md)   
- [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
+ [其他自訂](Additional-Customizations.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)

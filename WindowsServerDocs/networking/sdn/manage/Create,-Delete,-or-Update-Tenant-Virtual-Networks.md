@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/24/2018
-ms.openlocfilehash: 779c7bc4f6c4ff1e66fca68ced8b0eeb4d54abc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f85f593ec3dca33c5b35fb065c7d84ed12ea9af2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406064"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309827"
 ---
 # <a name="create-delete-or-update-tenant-virtual-networks"></a>建立、刪除或更新租用戶虛擬網路
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，您將瞭解如何在部署軟體定義的網路功能（SDN）後，建立、刪除和更新 Hyper-v 網路虛擬化虛擬網路。 Hyper-v 網路虛擬化可協助您隔離租使用者網路，讓每個租使用者網路都是個別的實體。 除非您設定公用存取工作負載，否則每個實體都沒有跨連接的可能性。   
   
@@ -41,8 +41,8 @@ ms.locfileid: "71406064"
   
 租使用者名稱  |虛擬子網識別碼  |虛擬子網首碼    
 ---------|---------|---------  
-送交    |5001         |24.30.1.0/24           
-送交     |5002         | 24.30.2.0/20          
+Fabrikam    |5001         |24.30.1.0/24           
+Fabrikam     |5002         | 24.30.2.0/20          
 Contoso    |6001         |  24.30.1.0/24         
 Contoso    | 6002        |  24.30.2.0/24         
 Contoso     | 6003        | 24.30.3.0/24          

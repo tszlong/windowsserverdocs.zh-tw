@@ -1,9 +1,9 @@
 ---
 title: 管理 Windows Server Essentials 中的隨處存取
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: c369c317-f94d-4179-a735-e74bf6f62692
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c9857cc6dd056e36133736c4888b46505ec8c3c7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 58cb5072ae037a4c0dca0328a17675d50fa5495f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838609"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311460"
 ---
 # <a name="manage-anywhere-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的隨處存取
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-當您開啟隨處存取功能、 遠端 Web 存取、 虛擬私人網路和 DirectAccess 在 Windows Server Essentials 中，或 Windows Server 2012 R2 中已安裝的 Windows Server Essentials 體驗角色時，它們可讓您的網路若要從具有網際網路連線，在任何時間，並在任何裝置上的任何位置存取伺服器資源的使用者。 下列主題討論如何在伺服器上設定「遠端 Web 存取」、虛擬私人網路 (VPN)和 DirectAccess 功能。  
+當您開啟 Windows Server Essentials 中的隨處存取功能、遠端 Web 存取、虛擬私人網路和 DirectAccess，或在已安裝 Windows server Essentials 體驗角色的 Windows Server 2012 R2 中，他們會啟用您的網路使用者可以隨時從任何具有網際網路連線的位置，以及在任何裝置上存取伺服器資源。 下列主題討論如何在伺服器上設定「遠端 Web 存取」、虛擬私人網路 (VPN)和 DirectAccess 功能。  
   
 -   [管理遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
@@ -35,7 +35,7 @@ ms.locfileid: "59838609"
   
 -   [設定 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md)  
   
-     DirectAccess 可讓您順暢地連線到您的組織 」 狀況的網路從而不必建立虛擬私人網路 (VPN) 連線，任何具備網際網路的遠端位置。 DirectAccess 提供提升產能為您的組織 」 狀況 s 行動工作力的供應項目相同的連線體驗在辦公室內外。  
+     DirectAccess 可讓您從任何具備網際網路的遠端位置順暢地連接到您的組織「存放」網路，而不需要建立虛擬私人網路（VPN）連線。 DirectAccess 藉由在辦公室內部和外部提供相同的連線體驗，為您的組織提供更高的生產力。  
   
 ## <a name="see-also"></a>另請參閱  
 

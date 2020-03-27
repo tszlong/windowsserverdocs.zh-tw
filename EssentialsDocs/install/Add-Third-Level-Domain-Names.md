@@ -1,9 +1,9 @@
 ---
 title: 新增第三層網域名稱
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,42 +12,42 @@ ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5608fb5417b9e958b45d150879daccc3b7767e59
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833319"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310229"
 ---
 # <a name="add-third-level-domain-names"></a>新增第三層網域名稱
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 您可以在設定網域名稱精靈中新增讓使用者要求第三層網域名稱的功能。 透過建立及安裝作業系統中設定管理員所使用的程式碼組件即可達成。  
   
 ## <a name="create-a-provider-of-third-level-domain-names"></a>建立第三層網域名稱的提供者  
  您可以建立並安裝會提供網域名稱給精靈的程式碼組件，以使第三層網域名稱變得可用。 若要執行此動作，請完成下列工作：  
   
--   [將 IDomainSignupProvider 介面的實作新增至組件](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
+-   [將 IDomainSignupProvider 介面的執行加入至元件](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
   
--   [將 IDomainMaintenanceProvider 介面的實作新增至組件](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
+-   [將 IDomainMaintenanceProvider 介面的執行加入至元件](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
   
--   [登入具有 Authenticode 簽章的組件](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
+-   [使用 Authenticode 簽章簽署元件](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
   
--   [在參照電腦上安裝組件](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
+-   [將元件安裝在參照電腦上](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
   
--   [重新啟動 Windows Server Domain Name Management 服務](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
+-   [重新開機 Windows Server 功能變數名稱管理服務](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
   
-###  <a name="BKMK_DomainSignup"></a> 將 IDomainSignupProvider 介面的實作新增至組件  
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>將 IDomainSignupProvider 介面的執行加入至元件  
  IDomainSignupProvider 介面可用來新增網域選項至精靈。  
   
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>若要將 IDomainSignupProvider 程式碼新增至組件  
   
-1.  用滑鼠右鍵按一下 [開始]  功能表中的程式，然後選取 [以系統管理員身分執行] ，以系統管理員身分開啟 Visual Studio 2008。  
+1.  用滑鼠右鍵按一下 [開始] 功能表中的程式，然後選取 [以系統管理員身分執行]，以系統管理員身分開啟 Visual Studio 2008。  
   
-2.  依序按一下 **[檔案]**、 **[新增]**，然後按一下 **[專案]**。  
+2.  依序按一下 **[檔案]** 、 **[新增]** ，然後按一下 **[專案]** 。  
   
-3.  在 **[新增專案]** 對話方塊中，依序按一下 **[Visual C#]** 和 **[類別庫]**，輸入方案的名稱，然後按一下 **[確定]**。  
+3.  在 **[新增專案]** 對話方塊中，依序按一下 **[Visual C#]** 和 **[類別庫]** ，輸入方案的名稱，然後按一下 **[確定]** 。  
   
 4.  重新命名 Class1.cs 檔案。 例如，MyDomainNameProvider.cs。  
   
@@ -278,7 +278,7 @@ ms.locfileid: "59833319"
   
 21. 儲存但不要關閉專案，因為您會在下一個程序中新增專案內容。 除非您完成下一個程序，否則無法建置專案。  
   
-###  <a name="BKMK_DomainMaintenance"></a> 將 IDomainMaintenanceProvider 介面的實作新增至組件  
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>將 IDomainMaintenanceProvider 介面的執行加入至元件  
  IDomainMaintenanceProvider 用來在網域建立之後維護網域。  
   
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>若要將 IDomainMaintenanceProvider 程式碼新增至組件  
@@ -517,10 +517,10 @@ ms.locfileid: "59833319"
   
 14. 儲存並建置方案。  
   
-###  <a name="BKMK_SignAssembly"></a> 登入具有 Authenticode 簽章的組件  
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 簽章簽署元件  
  您必須使用 Authenticode 來簽署組件，才能在作業系統中使用這些組件。 如需簽署組件的相關詳細資訊，請參閱 [使用 Authenticode 簽署和檢查程式碼](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)。  
   
-###  <a name="BKMK_InstallAssembly"></a> 在參照電腦上安裝組件  
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>將元件安裝在參照電腦上  
  將組件放置在參照電腦上的資料夾中。 記下資料夾位置，因為在下一個步驟您將會在登錄中輸入此位置。  
   
 ### <a name="add-a-key-to-the-registry"></a>新增登錄機碼  
@@ -528,59 +528,59 @@ ms.locfileid: "59833319"
   
 ##### <a name="to-add-a-key-to-the-registry"></a>若要新增登錄機碼  
   
-1.  在參照電腦上，按一下**開始**，輸入**regedit**，然後按**Enter**。  
+1.  在參照電腦上，按一下 **[開始]** ，輸入 **regedit**，然後按 **ENTER**。  
   
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server**、**Domain Managers** 和 **Providers**。  
   
-3.  以滑鼠右鍵按一下 **Providers**，指向 **[新增]**，然後按一下 **[機碼]**。  
+3.  以滑鼠右鍵按一下 **Providers**，指向 **[新增]** ，然後按一下 **[機碼]** 。  
   
-4.  輸入提供者的識別項作為機碼的名稱。 識別碼是您在 [將 IDomainSignupProvider 介面的實作新增至組件](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)的步驟 8 中為提供者定義的 GUID。  
+4.  輸入提供者的識別項作為機碼的名稱。 識別項就是您在步驟 8 [將 IDomainSignupProvider 介面的實作新增至組件](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)中為提供者定義的 GUID。  
   
-5.  以滑鼠右鍵按一下您剛才建立的機碼，然後按一下 **[字串值]**。  
+5.  以滑鼠右鍵按一下您剛才建立的機碼，然後按一下 **[字串值]** 。  
   
 6.  輸入 **Assembly** 作為字串的名稱，然後按 **ENTER**。  
   
-7.  在右窗格中，以滑鼠右鍵按一下新的 **Assembly**，然後按一下 **[修改]**。  
+7.  在右窗格中，以滑鼠右鍵按一下新的 **Assembly**，然後按一下 **[修改]** 。  
   
-8.  輸入您先前建立之組件檔案的完整路徑，然後按一下 **[確定]**。  
+8.  輸入您先前建立之組件檔案的完整路徑，然後按一下 **[確定]** 。  
   
-9. 再以滑鼠右鍵按一下機碼，然後按一下 **[字串值]**。  
+9. 再以滑鼠右鍵按一下機碼，然後按一下 **[字串值]** 。  
   
 10. 輸入 **Enabled** 作為字串的名稱，然後按 **ENTER**。  
   
-11. 在右窗格中，以滑鼠右鍵按一下新的 **Enabled**，然後按一下 **[修改]**。  
+11. 在右窗格中，以滑鼠右鍵按一下新的 **Enabled**，然後按一下 **[修改]** 。  
   
-12. 輸入 **True**，然後按一下 [確定] 。  
+12. 輸入 **True**，然後按一下 [確定]。  
   
-13. 再以滑鼠右鍵按一下機碼，然後按一下 **[字串值]**。  
+13. 再以滑鼠右鍵按一下機碼，然後按一下 **[字串值]** 。  
   
 14. 輸入 **Type** 作為字串名稱，然後按 **ENTER**。  
   
-15. 在右窗格中，以滑鼠右鍵按一下新的 **Type** ，然後按一下 **[修改]**。  
+15. 在右窗格中，以滑鼠右鍵按一下新的 **Type**，然後按一下 **[修改]** 。  
   
-16. 輸入組件中所定義之提供者的完整類別名稱，然後按一下 **[確定]**。  
+16. 輸入組件中所定義之提供者的完整類別名稱，然後按一下 **[確定]** 。  
   
-###  <a name="BKMK_RestartService"></a> 重新啟動 Windows Server Domain Name Management 服務  
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>重新開機 Windows Server 功能變數名稱管理服務  
  您必須重新啟動 Windows Server Domain Management 服務，讓提供者在作業系統中生效。  
   
 ##### <a name="restart-the-service"></a>重新啟動服務  
   
-1.  按一下 [開始] ，輸入 **mmc**，然後按 **ENTER**。  
+1.  按一下 [開始]，輸入 **mmc**，然後按 **ENTER**。  
   
 2.  如果主控台中沒有列出 [服務] 嵌入式管理單元，請完成下列步驟加以新增：  
   
-    1.  按一下 **[檔案]**，然後按一下 **[新增/移除嵌入式管理單元]**。  
+    1.  按一下 **[檔案]** ，然後按一下 **[新增/移除嵌入式管理單元]** 。  
   
-    2.  在 **[可用的嵌入式管理單元]** 清單中，按一下 **[服務]**，然後按一下 **[新增]**。  
+    2.  在 **[可用的嵌入式管理單元]** 清單中，按一下 **[服務]** ，然後按一下 **[新增]** 。  
   
-    3.  在 **[服務]** 對話方塊中，確保選取 **[本機電腦]** ，然後按一下 **[完成]**。  
+    3.  在 **[服務]** 對話方塊中，確保選取 **[本機電腦]** ，然後按一下 **[完成]** 。  
   
     4.  按一下 **[確定]** 以關閉 **[新增/移除嵌入式管理單元]** 對話方塊。  
   
-3.  按兩下 **[服務]**，向下捲動並選取 **[Windows Server Domain Management]**，然後按一下 **[重新啟動服務]**。  
+3.  按兩下 **[服務]** ，向下捲動並選取 **[Windows Server Domain Management]** ，然後按一下 **[重新啟動服務]** 。  
   
 ## <a name="see-also"></a>另請參閱  
- [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他自訂項目](Additional-Customizations.md)   
- [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
+ [其他自訂](Additional-Customizations.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)

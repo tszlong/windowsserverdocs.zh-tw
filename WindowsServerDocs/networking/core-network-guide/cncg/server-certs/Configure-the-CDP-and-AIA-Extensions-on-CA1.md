@@ -6,15 +6,15 @@ ms.topic: article
 ms.assetid: f77a3989-9f92-41ef-92a8-031651dd73a8
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 07/26/2018
-ms.openlocfilehash: 94304f6ae2604dad9f1d21be62d19e4a57a7a1ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6434b05d45cf9b8309fac4f6cd5cb5d6d149a7c2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356164"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318407"
 ---
 # <a name="configure-the-cdp-and-aia-extensions-on-ca1"></a>在 CA1 上設定 CDP 及 AIA 延伸模組
 
@@ -26,7 +26,7 @@ ms.locfileid: "71356164"
   
 #### <a name="to-configure-the-cdp-and-aia-extensions-on-ca1"></a>在 CA1 上設定 CDP 和 AIA 延伸模組  
   
-1.  在 [伺服器管理員] 按一下 [工具] ，然後按一下 [憑證授權單位]。  
+1.  在 [伺服器管理員] 按一下 [工具]，然後按一下 [憑證授權單位]。  
   
 2.  在 [憑證授權單位單位] 主控台樹中，以滑鼠右鍵按一下 [ **corp-CA1-CA**]，然後按一下 [**屬性**]。  
   

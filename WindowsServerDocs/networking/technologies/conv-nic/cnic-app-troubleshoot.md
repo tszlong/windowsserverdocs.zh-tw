@@ -6,18 +6,18 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 297044397088bfb64b51e1553d3f69d5b933e81b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c20c21c39e44d7eb3da812bbe71f175d0688d6c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405898"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309649"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>針對聚合式 NIC 設定進行疑難排解
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用下列腳本來驗證 Hyper-v 主機上的 RDMA 設定是否正確。
 
@@ -82,7 +82,7 @@ ms.locfileid: "71405898"
 
 ## <a name="get-netadapterqos"></a>Get-netadapterqos
 
-您可以藉由執行下列 Windows PowerShell 命令\(，\)來查看服務 QoS 設定的網路介面卡品質。
+您可以藉由執行下列 Windows PowerShell 命令，來查看網路介面卡的服務品質 \(QoS\) 設定。
 
     Get-NetAdapterQos
 
@@ -96,14 +96,14 @@ ms.locfileid: "71405898"
 
 如果您的結果不是預期的，請執行下列步驟。
 
-1. 確定實體網路介面卡支援資料中心橋接\(DCB\)和 QoS
+1. 確定實體網路介面卡支援 \(DCB\) 和 QoS 的資料中心橋接
 2. 確定網路介面卡驅動程式是最新的。
 
 --- 
 
 ## <a name="get-smbmultichannelconnection"></a>SmbMultiChannelConnection
 
-您可以使用下列 Windows PowerShell 命令來確認遠端節點的 IP 位址是否具備 RDMA\-功能。
+您可以使用下列 Windows PowerShell 命令來確認遠端節點的 IP 位址是否\-支援 RDMA。
 
     Get-SmbMultiChannelConnection
 
@@ -125,7 +125,7 @@ ms.locfileid: "71405898"
 
 ## <a name="get-smbclientnetworkinterface"></a>SmbClientNetworkInterface
 
-您可以使用下列命令來確認您為 rdma 啟用的虛擬 NIC 回報為受 SMB 支援的\-rdma。
+您可以使用下列命令來確認您為 RDMA 啟用的虛擬 NIC 回報為 RDMA\-SMB 提供支援。
 
     Get-SmbClientNetworkInterface
 
@@ -147,7 +147,7 @@ ms.locfileid: "71405898"
 
 ## <a name="vstat-mellanox-specific"></a>vstat \(Mellanox 特定\)
 
-如果您使用的是 Mellanox 網路介面卡，您可以使用**vstat**命令來確認 hyper-v 節點上的 RDMA \(是否\)超過聚合式 Ethernet RoCE 版本。
+如果您使用的是 Mellanox 網路介面卡，您可以使用**vstat**命令，以在 hyper-v 節點上透過聚合式 Ethernet \(RoCE\) 版本來驗證 RDMA。
 
 ### <a name="vstat-expected-results"></a>vstat 預期的結果
 

@@ -4,16 +4,16 @@ description: 搜尋引擎結果主題的簡短描述
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 02/13/2019
+ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 20aa5fbc40efc5a3a439361dadfac0f47f4b41d8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: cb1ac2fc1c7d4ed0a7f57bbe95cb9989bc85e99e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822621"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310555"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>使用儲存體遷移服務來遷移伺服器
 
@@ -60,12 +60,15 @@ ms.locfileid: "76822621"
 1. 在 [**傳送資料** > **輸入認證**] 頁面上，輸入可在您要遷移目的地伺服器上使用的系統管理員認證，然後選取 **[下一步]** 。
 2. 在 [**新增目的地裝置和**對應] 頁面上，會列出第一部來源伺服器。 輸入您要遷移的伺服器或叢集檔案伺服器的名稱，然後選取 [**掃描裝置**]。 如果是從已加入網域的來源電腦進行遷移，則目的地伺服器必須加入相同的網域。 您也可以按一下 [建立新的 Azure VM]，然後使用嚮導在 Azure 中部署新的目的地伺服器。 這會自動調整您的 VM 大小、布建存放裝置、格式化磁片、加入網域，以及將儲存體遷移服務 proxy 新增至 Windows Server 2019 目的地。 您可以從 Windows Server 2019 （建議選項）、Windows Server 2016 和 Windows Server 2012 R2 Vm 中選擇任何大小，並使用受控磁片。   
 
- > [!NOTE]
-   > 使用「建立新的 Azure VM」需要您具備：
-   > - 有效的 Azure 訂用帳戶。
-   > - 您擁有建立許可權的現有 Azure 計算資源群組。
-   > - 現有的 Azure 虛擬網路和子網。 
-   > - 系結至虛擬網路和子網的 Azure Express Route 或 VPN 解決方案，允許從這個 Azure IaaS VM 連線到您的內部部署用戶端、網域控制站、儲存體遷移服務協調器電腦、Windows 系統管理中心電腦、和要遷移的來源電腦。
+    > [!NOTE]
+    > 使用「建立新的 Azure VM」需要您具備：
+    > - 有效的 Azure 訂用帳戶。
+    > - 您擁有建立許可權的現有 Azure 計算資源群組。
+    > - 現有的 Azure 虛擬網路和子網。 
+    > - 系結至虛擬網路和子網的 Azure Express Route 或 VPN 解決方案，允許從這個 Azure IaaS VM 連線到您的內部部署用戶端、網域控制站、儲存體遷移服務協調器電腦、Windows 系統管理中心電腦、和要遷移的來源電腦。
+   
+    以下影片顯示如何使用儲存體遷移服務來遷移至 Azure Vm。
+    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
 
 3. 將來源磁片區對應到目的地磁片區，清除您不想要傳輸的任何共用（包括位於 Windows system 資料夾中的任何系統管理共用）的 [**包含**] 核取方塊，然後選取 **[下一步]** 。
    ![螢幕擷取畫面，其中顯示來源伺服器及其磁片區和共用，以及它們在目的地的傳輸位置](media/migrate/transfer.png)**圖3：來源伺服器及其存放裝置將傳送至其中**
@@ -111,7 +114,7 @@ ms.locfileid: "76822621"
 7. 在 [**驗證來源和目的地裝置**] 頁面上選取 [**驗證**]，然後選取 **[下一步]** 。
 8. 當您準備好要執行轉換時，請選取 [**開始**切換]。 <br>使用者和應用程式可能會在位址和名稱移動時遇到中斷，而且伺服器會重新開機數次，但不會受到遷移的影響。 轉換所需的時間長短取決於伺服器重新開機的速度，以及 Active Directory 和 DNS 複寫時間。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存體遷移服務總覽](overview.md)
 - [儲存體遷移服務常見問題（FAQ）](faq.md)

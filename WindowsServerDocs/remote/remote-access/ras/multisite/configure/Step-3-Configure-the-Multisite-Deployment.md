@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3ae66c125548e31603318a7e600c36c00df9d005
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0ac6e231ac797d1ba1e8dfb314c6aa3df99ff91d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822551"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313965"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>步驟3設定多網站部署
 
@@ -25,7 +25,7 @@ ms.locfileid: "76822551"
 
 設定多網站基礎結構之後，請遵循下列步驟來設定遠端存取多網站部署。  
   
-|工作|說明|  
+|工作|描述|  
 |----|--------|  
 |3.1. 設定遠端存取服務器|藉由設定 IP 位址、將它們加入網域，以及安裝遠端存取角色，來設定其他遠端存取服務器。|  
 |3.2. 授與系統管理員存取權|授與其他遠端存取服務器對 DirectAccess 系統管理員的許可權。|  
@@ -36,9 +36,9 @@ ms.locfileid: "76822551"
 |3.7。 將進入點新增至多網站部署|新增額外的進入點至多網站部署。|  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigServer"></a>3.1. 設定遠端存取服務器  
+## <a name="31-configure-remote-access-servers"></a><a name="BKMK_ConfigServer"></a>3.1. 設定遠端存取服務器  
 
   
 ### <a name="to-install-the-remote-access-role"></a>安裝「遠端存取」角色  
@@ -63,7 +63,7 @@ ms.locfileid: "76822551"
   
 10. 按 [下一步]，然後按一下 [安裝]。  
   
-11.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+11.  在 [安裝進度] 對話方塊上，驗證安裝是否成功，然後按一下 [關閉]。  
   
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
@@ -71,13 +71,13 @@ ms.locfileid: "76822551"
   
 步驟 1-3 必須以手動方式執行，而且不能使用此 Windows PowerShell Cmdlet 來完成。  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Admin"></a>3.2. 授與系統管理員存取權  
+## <a name="32-grant-administrator-access"></a><a name="BKMK_Admin"></a>3.2. 授與系統管理員存取權  
   
 #### <a name="to-grant-administrator-permissions"></a>授與系統管理員許可權  
   
@@ -99,12 +99,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 9. 在將成為多網站部署一部分的所有遠端存取服務器上重複此程式。  
   
-## <a name="BKMK_IPHTTPS"></a>3.3. 為多網站部署設定 ip-HTTPs  
-在每個要新增至多網站部署的遠端存取服務器上，必須要有 SSL 憑證，才能驗證 ip-HTTPs web 伺服器的 HTTPS 連線。 您至少必須有本機 **Administrators** 群組的成員資格或同等權限，才能完成此程序。  
+## <a name="33-configure-ip-https-for-a-multisite-deployment"></a><a name="BKMK_IPHTTPS"></a>3.3. 為多網站部署設定 ip-HTTPs  
+在每個要新增至多網站部署的遠端存取服務器上，必須要有 SSL 憑證，才能驗證 ip-HTTPs web 伺服器的 HTTPS 連線。 具備本機 **Administrators** 群組的成員資格 (或權限相當者) 是完成此程序的最低必要條件。  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>取得 IP-HTTPS 憑證  
   
-1.  在每部遠端存取服務器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
+1.  在每部遠端存取服務器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  按一下 [檔案]，**然後按一下 [** **新增/移除嵌入式管理單元**]。  
   
@@ -114,7 +114,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 5.  在 [憑證] 上按一下滑鼠右鍵，指向 [所有工作]，然後按一下 [要求新憑證]。  
   
-6.  按兩次 [下一步] 。  
+6.  按兩次 [下一步]。  
   
 7.  在 [**要求憑證**] 頁面上，按一下 [Web 服務器證書] 範本，然後按一下 [**需要更多資訊才能註冊此憑證**]。  
   
@@ -137,12 +137,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 14. 在部署中的所有遠端存取服務器上重複此程式。  
   
-## <a name="BKMK_NLS"></a>3.4。 設定多網站部署的網路位置伺服器  
-當您設定第一部伺服器時，如果您選擇在遠端存取服務器上設定網路位置伺服器網站，您所新增的每個新遠端存取服務器都必須設定 Web 服務器證書，該憑證的主體名稱必須與為 t 所選的相同第一部伺服器的網路位置伺服器。 每部伺服器都需要憑證來驗證連到網路位置伺服器的連線，而位於內部網路的用戶端電腦必須能夠解析 DNS 中的網站名稱。  
+## <a name="34-configure-the-network-location-server-for-a-multisite-deployment"></a><a name="BKMK_NLS"></a>3.4。 設定多網站部署的網路位置伺服器  
+當您設定第一部伺服器時，如果您選擇在遠端存取服務器上設定網路位置伺服器網站，您所新增的每個新遠端存取服務器都必須使用已選取之相同主體名稱的 Web 服務器證書進行設定第一部伺服器的網路位置伺服器。 每部伺服器都需要憑證來驗證連到網路位置伺服器的連線，而位於內部網路的用戶端電腦必須能夠解析 DNS 中的網站名稱。  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>若要安裝網路位置的憑證  
   
-1.  在 [遠端存取] 伺服器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
+1.  在 [遠端存取] 伺服器上：在 [**開始**] 畫面上，輸入**mmc**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  按一下 [檔案]，**然後按一下 [** **新增/移除嵌入式管理單元**]。  
   
@@ -155,7 +155,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
     > [!NOTE]  
     > 您也可以匯入用於第一部遠端存取服務器之網路位置伺服器的相同憑證。  
   
-6.  按兩次 [下一步] 。  
+6.  按兩次 [下一步]。  
   
 7.  在 [**要求憑證**] 頁面上，按一下 [Web 服務器證書] 範本，然後按一下 [**需要更多資訊才能註冊此憑證**]。  
   
@@ -178,7 +178,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 14. 在部署中的所有遠端存取服務器上重複此程式。  
   
-### <a name="NLS"></a>建立網路位置伺服器 DNS 記錄  
+### <a name="to-create-the-network-location-server-dns-records"></a><a name="NLS"></a>建立網路位置伺服器 DNS 記錄  
   
 1.  在 DNS 伺服器上：在 [**開始**] 畫面上，輸入**dnsmgmt.msc**，然後按 enter。  
   
@@ -190,11 +190,11 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 5.  針對部署中的每一部遠端存取服務器，重複步驟3和4。  
   
-6.  按一下 \[完成\]。  
+6.  按一下 [完成]。  
   
 7.  在新增伺服器做為部署中的其他進入點之前，重複此程式。  
   
-## <a name="BKMK_Client"></a>3.5。 設定多網站部署的 DirectAccess 用戶端  
+## <a name="35-configure-directaccess-clients-for-a-multisite-deployment"></a><a name="BKMK_Client"></a>3.5。 設定多網站部署的 DirectAccess 用戶端  
 DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安全性群組成員。 啟用多網站之前，這些安全性群組可以包含 Windows 8 用戶端和 Windows 7 用戶端（如果已選取適當的「下層」模式）。 啟用多網站之後，現有的用戶端安全性群組（在單一伺服器模式中）只會轉換成 Windows 8 的安全性群組。 啟用多網站之後，DirectAccess Windows 7 用戶端電腦必須移至對應的專用 Windows 7 用戶端安全性群組（與特定的進入點相關聯），否則將無法透過 DirectAccess 進行連線。 Windows 7 用戶端必須先從現有的安全性群組（現在是 Windows 8 安全性群組）中移除。 注意：屬於 Windows 7 和 Windows 8 用戶端安全性群組成員的 Windows 7 用戶端電腦將會失去遠端連線，而且未安裝 SP1 的 Windows 7 用戶端也會失去公司的連線能力。 因此，所有 Windows 7 用戶端電腦都必須從 Windows 8 安全性群組中移除。  
   
 #### <a name="remove--windows-7--clients-from-windows-8-security-groups"></a>從 Windows 8 安全性群組移除 Windows 7 用戶端  
@@ -210,7 +210,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
 > [!IMPORTANT]  
 > 啟用遠端存取多網站設定時，所有用戶端電腦（Windows 7 和 Windows 8）都會失去遠端連線能力，直到能夠直接連線到公司網路，或由 VPN 更新其群組原則為止。 這適用于第一次啟用多網站功能，以及停用多網站時。  
   
-## <a name="BKMK_Enable"></a>3.6。 啟用多網站部署  
+## <a name="36-enable-the-multisite-deployment"></a><a name="BKMK_Enable"></a>3.6。 啟用多網站部署  
 若要設定多站部署，請在現有的遠端存取服務器上啟用 [多網站] 功能。 在您的部署中啟用多網站之前，請確定您擁有下列資訊：  
   
 1.  全域負載平衡器設定和 IP 位址：如果您想要對部署中所有進入點的 DirectAccess 用戶端連線進行負載平衡。  
@@ -219,9 +219,9 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
   
 3.  群組原則物件名稱，如果您需要使用非預設的群組原則物件，在部署中的第一個進入點會套用到 Windows 7 用戶端電腦上（如果您需要 Windows 7 用戶端電腦的支援）。  
   
-### <a name="EnabledMultisite"></a>啟用多網站設定  
+### <a name="to-enable-a-multisite-configuration"></a><a name="EnabledMultisite"></a>啟用多網站設定  
   
-1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
+1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 **[遠端存取管理] 主控台**中 **，按一下 [** 設定]，然後在 [工作] 窗格中，按一下 [**啟用多**網站]。  
   
@@ -231,7 +231,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
   
 5.  在 [**進入點選擇**] 頁面上，執行下列其中一項動作：  
   
-    -   按一下 [**自動指派進入點]，並允許用戶端手動選取**[自動將用戶端電腦路由至最適合的進入點]，同時允許用戶端電腦手動選取進入點。 手動進入點選擇僅適用于 Windows 8 電腦。 按一下 **\[下一步\]** 。  
+    -   按一下 [**自動指派進入點]，並允許用戶端手動選取**[自動將用戶端電腦路由至最適合的進入點]，同時允許用戶端電腦手動選取進入點。 手動進入點選擇僅適用于 Windows 8 電腦。 按 [下一步]。  
   
     -   按一下 [**自動指派進入點**]，自動將用戶端電腦路由至最適合的進入點，然後按 **[下一步]** 。  
   
@@ -262,7 +262,7 @@ DirectAccess Windows 用戶端電腦必須是定義其 DirectAccess 關聯的安
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 若要在名為 ' Edge1-US ' 的第一個進入點上啟用名為 ' Contoso ' 的多網站部署。 部署可讓用戶端手動選取進入點，而不會使用全域負載平衡器。  
   
@@ -276,7 +276,7 @@ Enable-DAMultiSite -Name 'Contoso' -EntryPointName 'Edge1-US' -ManualEntryPointS
 Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_US') -DownlevelGpoName @('corp.contoso.com\DA_W7_Clients_GPO_US)  
 ```  
   
-## <a name="BKMK_EntryPoint"></a>3.7。 將進入點新增至多網站部署  
+## <a name="37-add-entry-points-to-the-multisite-deployment"></a><a name="BKMK_EntryPoint"></a>3.7。 將進入點新增至多網站部署  
 在您的部署中啟用多網站之後，您可以使用 [新增進入點嚮導] 新增額外的進入點。 新增進入點之前，請確定您有下列資訊：  
   
 -   如果您使用的是全域負載平衡，則為每個新進入點的全域負載平衡器 IP 位址。  
@@ -287,9 +287,9 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 -   在組織的網路中部署 IPv6 的情況下，您必須為新的進入點準備 IP-HTTPS 首碼。  
   
-### <a name="AddEP"></a>將進入點新增至您的多網站部署  
+### <a name="to-add-entry-points-to-your-multisite-deployment"></a><a name="AddEP"></a>將進入點新增至您的多網站部署  
   
-1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [ **使用者帳戶控制** ] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [ **是**]。  
+1.  在現有的遠端存取服務器上：在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 **[遠端存取管理] 主控台**中 **，按一下 [** 設定]，然後在 [工作] 窗格中，按一下 [**新增進入點**]。  
   
@@ -302,7 +302,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 5.  在 [**網路拓撲**] 頁面上，按一下與您要新增之遠端存取服務器的網路拓撲對應的拓撲，然後按 **[下一步]** 。  
   
-6.  在 [**網路名稱或 Ip 位址**] 頁面的 [輸入**用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址]** 中，輸入用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址。 公用名稱會對應至 IP-HTTPS 憑證的主體名稱。 在執行邊緣網路拓撲的情況下，IP 位址會是遠端存取服務器的外部介面卡。 按一下 **\[下一步\]** 。  
+6.  在 [**網路名稱或 Ip 位址**] 頁面的 [輸入**用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址]** 中，輸入用戶端用來連線到遠端存取服務器的公用名稱或 ip 位址。 公用名稱會對應至 IP-HTTPS 憑證的主體名稱。 在執行邊緣網路拓撲的情況下，IP 位址會是遠端存取服務器的外部介面卡。 按 [下一步]。  
   
 7.  在 [**網路介面卡**] 頁面上，執行下列其中一項：  
   
@@ -310,7 +310,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
     -   如果您要使用一個網路介面卡部署拓撲，請在 [**網路介面卡**] 中，選取連線到內部網路的介面卡。  
   
-8.  在 [**網路介面卡**] 頁面的 [**選取用來驗證 ip-HTTPs 連線的憑證**] 中，按一下 **[流覽]** 以找出並選取 ip-HTTPs 憑證。 按一下 **\[下一步\]** 。  
+8.  在 [**網路介面卡**] 頁面的 [**選取用來驗證 ip-HTTPs 連線的憑證**] 中，按一下 **[流覽]** 以找出並選取 ip-HTTPs 憑證。 按 [下一步]。  
   
 9. 如果在公司網路上設定 IPv6，請在 [**首碼**設定] 頁面上，于 [**指派給用戶端電腦的 ipv6 首碼**] 中輸入 ip-HTTPs 首碼，以將 Ipv6 位址指派給 DirectAccess 用戶端電腦，然後按 **[下一步]** 。  
   
@@ -344,7 +344,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 若要將電腦 edge2 從 corp2 網域新增為第二個進入點，名為 Edge2-歐洲。 進入點設定是：用戶端 IPv6 首碼 ' 2001： db8：2：2000：：/64 '、連接到位址（edge2 電腦上的 IP-HTTPS 憑證） ' edge2.contoso.com '、名為「DirectAccess 伺服器設定-Edge2-歐洲」的伺服器 GPO，以及分別名為 Internet 和 Corpnet2 的內部和外部介面：  
   
@@ -358,6 +358,6 @@ Add-DAEntryPoint -RemoteAccessServer 'edge2.corp2.corp.contoso.com' -Name 'Edge2
 Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.com\ DA_W7_Clients_GPO_Europe') -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_Europe')  
 ```  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [步驟2：設定多網站基礎結構](Step-2-Configure-the-Multisite-Infrastructure.md)

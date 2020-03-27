@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/22/2018
-ms.openlocfilehash: 246adc6b4fd3ea130196cf1786f7fa130703de1a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1452720d8ba71e7306dce0271ea7a9e6011b2952
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355762"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317375"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN 防火牆稽核
 
->適用於：Windows Server Standard 2012 R2
+>適用于： Windows Server 2019
 
 防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，會記錄已啟用記錄的 SDN 防火牆規則（Acl）所處理的任何流程。 記錄檔必須是與[Azure 網路監看員流量記錄](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的語法。 這些記錄可用於診斷或封存，以供日後分析。 
 

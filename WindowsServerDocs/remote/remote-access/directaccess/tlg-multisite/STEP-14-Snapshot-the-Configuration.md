@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e17d886-f216-400e-bd31-808aceb88033
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c1d8ddf2949c2b859ac0d734149eddd88874998a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2b6a279ea114262dd3a9f97ac2ce808bfd0e184a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388332"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308710"
 ---
 # <a name="step-14-snapshot-the-configuration"></a>步驟14將設定快照集
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 這會完成 DirectAccess 多網站測試實驗室。 若要儲存這項設定，讓您能夠快速返回工作中的 DirectAccess 多網站設定，您可以從中測試其他 DirectAccess 模組化測試實驗室指南、測試實驗室指南延伸模組，或進行您自己的實驗和學習，請執行下列動作:  
   

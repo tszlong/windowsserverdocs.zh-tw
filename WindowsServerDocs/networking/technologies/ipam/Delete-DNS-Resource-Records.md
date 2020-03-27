@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fcaaf89989a44cc7a0e84e296ce16083fe021577
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8c93af6a5d43086320ab27982f7a0c0308ee551d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405657"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312468"
 ---
 # <a name="delete-dns-resource-records"></a>刪除 DNS 資源記錄
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題，使用 IPAM 用戶端主控台刪除一或多個 DNS 資源記錄。  
   

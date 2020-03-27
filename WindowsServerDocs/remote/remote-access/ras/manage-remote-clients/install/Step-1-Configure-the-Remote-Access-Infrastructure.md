@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 110696d9f1ff082cfae315632c78fddc14359d52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 549150b10dede7dca9786fe38da40e9b7dea706f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367319"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308158"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>步驟1設定遠端存取基礎結構
 
@@ -40,9 +40,9 @@ ms.locfileid: "71367319"
 |設定網路位置伺服器|設定網路位置伺服器，包括安裝網路位置伺服器網站憑證。|  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigNetworkSettings"></a>設定伺服器網路設定  
+## <a name="configure-server-network-settings"></a><a name="BKMK_ConfigNetworkSettings"></a>設定伺服器網路設定  
 根據您是否決定將遠端存取服務器放在邊緣或網路位址轉譯（NAT）裝置後方，在具有 IPv4 和 IPv6 的環境中進行單一伺服器部署時，需要下列網路介面位址設定。 您可以使用 [Windows 網路和共用中心] 中的 [變更介面卡設定] 設定所有 IP 位址。  
   
 **邊緣拓朴**：  
@@ -78,14 +78,14 @@ ms.locfileid: "71367319"
   
     要在此命令中使用的 IPsec 原則名稱包括**Directaccess DaServerToInfra**和**directaccess DaServerToCorp**。  
   
-## <a name="BKMK_ConfigRouting"></a>設定公司網路中的路由  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="BKMK_ConfigRouting"></a>設定公司網路中的路由  
 設定公司網路中的路由，如下所示：  
   
 -   在組織中部署原生 IPv6 時，請新增路由，讓內部網路的路由器透過遠端存取伺服器將 IPv6 流量路由回來。  
   
 -   在遠端存取伺服器上手動設定組織 IPv4 和 IPv6 的路由。 新增已發佈的路由，以便將具有（/48） IPv6 首碼的所有流量轉送至內部網路。 此外，如果是 IPv4 流量，則新增明確的路由，讓 IPv4 流量轉送到內部網路。  
   
-## <a name="BKMK_ConfigFirewalls"></a>設定防火牆  
+## <a name="configure-firewalls"></a><a name="BKMK_ConfigFirewalls"></a>設定防火牆  
 視您選擇的網路設定而定，當您在部署中使用額外的防火牆時，會對遠端存取流量套用下列防火牆例外：  
   
 ### <a name="remote-access-server-on-ipv4-internet"></a>IPv4 網際網路上的遠端存取服務器  
@@ -124,12 +124,12 @@ ms.locfileid: "71367319"
   
 -   所有 IPv4 或 IPv6 流量的 ICMP  
   
-## <a name="BKMK_ConfigCAs"></a>設定 Ca 和憑證  
+## <a name="configure-cas-and-certificates"></a><a name="BKMK_ConfigCAs"></a>設定 Ca 和憑證  
 透過 Windows Server 2012 中的遠端存取，您可以選擇使用憑證來進行電腦驗證，或使用內建的 Kerberos 驗證（使用使用者名稱和密碼）。 您也必須在遠端存取服務器上設定 IP-HTTPS 憑證。 本節說明如何設定這些憑證。  
   
 如需設定公開金鑰基礎結構（PKI）的相關資訊，請參閱[Active Directory 憑證服務](https://technet.microsoft.com/library/cc770357.aspx)。  
   
-### <a name="BKMK_ConfigIPsec"></a>設定 IPsec 驗證  
+### <a name="configure-ipsec-authentication"></a><a name="BKMK_ConfigIPsec"></a>設定 IPsec 驗證  
 遠端存取服務器和所有 DirectAccess 用戶端上都需要憑證，才能使用 IPsec 驗證。 憑證必須由內部憑證授權單位單位（CA）發行。 遠端存取服務器和 DirectAccess 用戶端必須信任簽發根和中繼憑證的 CA。  
   
 ##### <a name="to-configure-ipsec-authentication"></a>設定 IPsec 驗證  
@@ -145,7 +145,7 @@ ms.locfileid: "71367319"
   
 4.  視需要設定憑證自動註冊。 如需詳細資訊，請參閱[設定憑證自動註冊](https://technet.microsoft.com/library/cc731522.aspx)。  
   
-### <a name="BKMK_ConfigCertTemp"></a>設定憑證範本  
+### <a name="configure-certificate-templates"></a><a name="BKMK_ConfigCertTemp"></a>設定憑證範本  
 當您使用內部 CA 來頒發證書時，您必須設定 IP-HTTPS 憑證和網路位置伺服器網站憑證的憑證範本。  
   
 ##### <a name="to-configure-a-certificate-template"></a>設定憑證範本  
@@ -160,7 +160,7 @@ ms.locfileid: "71367319"
   
 -   [設定網路位置伺服器](#BKMK_ConfigNLS)  
   
-### <a name="BKMK_IPHTTPS"></a>設定 IP-HTTPS 憑證  
+### <a name="configure-the-ip-https-certificate"></a><a name="BKMK_IPHTTPS"></a>設定 IP-HTTPS 憑證  
 遠端存取需要 IP-HTTPS 憑證來驗證遠端存取伺服器的 IP-HTTPS 連線。 有三種 IP-HTTPS 憑證的憑證選項：  
   
 -   **公立**  
@@ -226,10 +226,10 @@ ms.locfileid: "71367319"
   
 14. 在 [憑證] 嵌入式管理單元的 [詳細資料] 窗格中，確認已使用伺服器驗證的目的來註冊新的憑證。  
   
-## <a name="BKMK_ConfigDNS"></a>設定 DNS 伺服器  
+## <a name="configure-the-dns-server"></a><a name="BKMK_ConfigDNS"></a>設定 DNS 伺服器  
 您必須為部署中內部網路的網路位置伺服器網站手動設定 DNS 項目。  
   
-### <a name="NLS_DNS"></a>新增網路位置伺服器和 web 探查  
+### <a name="to-add-the-network-location-server-and-web-probe"></a><a name="NLS_DNS"></a>新增網路位置伺服器和 web 探查  
   
 1.  在內部網路 DNS 伺服器上：在 [**開始**] 畫面上，輸入**dnsmgmt.msc**，然後按 enter。  
   
@@ -239,13 +239,13 @@ ms.locfileid: "71367319"
   
 4.  在 [**新增主機**] 對話方塊的 [**名稱（如果空白就使用父系網域名稱）** ] 方塊中，輸入 web 探查的 DNS 名稱（預設 web 探查的名稱是 directaccess-directaccess-webprobehost）。 在 [IP 位址] 方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]。  
   
-5.  為 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [ **DNS** ] 對話方塊中，按一下 **[確定]** 。  
+5.  針對 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [ **DNS** ] 對話方塊中，按一下 **[確定]** 。  
   
-6.  按一下 \[完成\]。  
+6.  按一下 [完成]。  
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -266,7 +266,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
     [站上自動通道定址通訊協定（ISATAP）] 會使用通道，讓 DirectAccess 用戶端透過 IPv4 網際網路連線到遠端存取服務器，將 IPv6 封包封裝在 IPv4 標頭內。 「遠端存取」會使用它，透過內部網路提供對 ISATAP 主機的 IPv6 連線能力。 在非原生 IPv6 網路環境中，遠端存取服務器會自動將自己設定為 ISATAP 路由器。 需要 ISATAP 名稱的解析支援。  
   
-## <a name="BKMK_ConfigAD"></a>設定 Active Directory  
+## <a name="configure-active-directory"></a><a name="BKMK_ConfigAD"></a>設定 Active Directory  
 遠端存取伺服器和所有 DirectAccess 用戶端電腦都必須加入 Active Directory 網域。 DirectAccess 用戶端電腦必須是下列其中一種網域類型的成員：  
   
 -   與遠端存取伺服器屬於相同樹系的網域。  
@@ -317,7 +317,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 > [!NOTE]  
 > 輸入下列命令之後，您必須提供網域認證。  
@@ -327,7 +327,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="BKMK_ConfigGPOs"></a>設定 Gpo  
+## <a name="configure-gpos"></a><a name="BKMK_ConfigGPOs"></a>設定 Gpo  
 若要部署遠端存取，您至少需要兩個群組原則物件。 其中一個群組原則物件包含遠端存取服務器的設定，另一個則包含 DirectAccess 用戶端電腦的設定。 當您設定「遠端存取」時，嚮導會自動建立必要的群組原則物件。 不過，如果您的組織強制執行命名慣例，或您沒有建立或編輯群組原則物件的必要許可權，則必須在設定遠端存取之前先建立它們。  
   
 若要建立群組原則物件，請參閱[建立和編輯群組原則物件](https://technet.microsoft.com/library/cc754740.aspx)。  
@@ -351,10 +351,10 @@ Restart-Computer
 > [!NOTE]  
 > 如果群組原則物件是以手動方式建立，則在 DirectAccess 設定期間，可能會無法使用群組原則物件。 群組原則物件可能尚未複寫到最接近管理電腦的網域控制站。 系統管理員可以等待複寫完成或強制複寫。  
   
-## <a name="BKMK_ConfigSGs"></a>設定安全性群組  
+## <a name="configure-security-groups"></a><a name="BKMK_ConfigSGs"></a>設定安全性群組  
 用戶端電腦中包含的 DirectAccess 設定群組原則物件，只會套用到您在設定遠端存取時所指定之安全性群組的成員電腦。  
   
-### <a name="Sec_Group"></a>建立 DirectAccess 用戶端的安全性群組  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>建立 DirectAccess 用戶端的安全性群組  
   
 1.  在 [**開始**] 畫面上，輸入**dsa.msc**，然後按 enter。  
   
@@ -372,14 +372,14 @@ Restart-Computer
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_ConfigNLS"></a>設定網路位置伺服器  
+## <a name="configure-the-network-location-server"></a><a name="BKMK_ConfigNLS"></a>設定網路位置伺服器  
 網路位置伺服器應該位於具有高可用性的伺服器上，而且需要 DirectAccess 用戶端信任的有效安全通訊端層（SSL）憑證。  
   
 > [!NOTE]  
@@ -453,7 +453,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 4.  請確定內部網路上的 DirectAccess 用戶端可以解析網路位置伺服器的名稱，而且網際網路上的 DirectAccess 用戶端無法解析此名稱。  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [步驟2：設定遠端存取服務器](Step-2-Configure-the-Remote-Access-Server.md)
 

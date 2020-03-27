@@ -10,29 +10,29 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 80f1319c1abc845d7e63a2d53868bf7a3c381019
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a12d9a1ea953b587918fed8367ee21626697e256
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406092"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309880"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>設定軟體負載平衡器以進行負載平衡和網路位址轉譯 (NAT)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-您可以使用本主題來瞭解如何使用軟體定義網路\(SDN\)軟體負載平衡器\(SLB\)來提供輸出網路位址轉譯\(NAT\)，輸入 NAT，或多個應用程式實例之間的負載平衡。
+您可以使用本主題來瞭解如何使用軟體定義網路 \(SDN\) 軟體負載平衡器 \(SLB\)，在多個應用程式實例之間提供輸出網路位址轉譯 \(NAT\)、輸入 NAT 或負載平衡。
 
 ## <a name="software-load-balancer-overview"></a>軟體 Load Balancer 總覽
 
-SDN Software Load Balancer \(SLB\)可為您的應用程式提供高可用性和網路效能。 它是第 4 \(層 TCP，UDP\)負載平衡器，可將連入流量分散到雲端服務或負載平衡器集合中定義的虛擬機器中狀況良好的服務實例之間。
+SDN 軟體 Load Balancer \(SLB\) 為您的應用程式提供高可用性和網路效能。 這是第4層 \(TCP、UDP\) 負載平衡器，可將連入流量分散到雲端服務或負載平衡器集合中定義的虛擬機器中狀況良好的服務實例之間。
 
 設定 SLB 以執行下列動作：
 
-- 將虛擬網路外部的連入流量負載平衡到虛擬\(機\)vm，也稱為公用 VIP 負載平衡。
+- 將虛擬網路外部的連入流量負載平衡到 \(Vm\)的虛擬機器，也稱為「公用 VIP 負載平衡」。
 - 負載平衡虛擬網路中的 Vm、雲端服務中的 Vm 之間，或內部部署電腦與跨單位虛擬網路中 Vm 之間的連入流量。 
 - 使用網路位址轉譯（NAT）（也稱為輸出 NAT），將 VM 網路流量從虛擬網路轉送到外部目的地。
 - 將外部流量轉送至特定 VM，也稱為「輸入 NAT」。
@@ -40,7 +40,7 @@ SDN Software Load Balancer \(SLB\)可為您的應用程式提供高可用性和�
 
 
 
-## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>範例：建立公用 VIP 以負載平衡虛擬網路上兩部 Vm 的集區
+## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>範例：建立公用 VIP 以用於負載平衡虛擬網路上兩部 Vm 的集區
 
 在此範例中，您會建立具有公用 VIP 和兩個 Vm 的負載平衡器物件做為集區成員，以提供 VIP 的要求。 此範例程式碼也會新增 HTTP 健康情況探查，以偵測其中一個集區成員是否變得沒有回應。
 

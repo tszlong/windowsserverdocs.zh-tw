@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88ffd598-2fde-402c-bd12-be790f84dc96
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 764fd6d272a498898bbdb1f1da68e0d41c39cf84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 943ec8d386d5fe9910b4415a2ab2525d23efc32e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404615"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308257"
 ---
 # <a name="plan-a-remote-access-cluster-deployment"></a>規劃遠端存取叢集部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
  Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服務（RAS） VPN 結合成一個遠端存取角色。 本總覽提供部署 Windows Server 2016 或 Windows Server 2012 遠端存取服務器叢集所需之規劃步驟的簡介。
   
@@ -31,7 +31,7 @@ ms.locfileid: "71404615"
   
 -   [步驟3：規劃負載平衡的叢集部署](Step-3-Plan-a-Load-Balanced-Cluster-Deployment.md)。  
   
--   步驟 4：記錄遠端存取先進部署的規劃決策。 這個記錄可做為參與完成部署步驟的每個人的工作輔助。  
+-   步驟4：記錄遠端存取先進部署的規劃決策。 這個記錄可做為參與完成部署步驟的每個人的工作輔助。  
   
 完成這些規劃步驟之後，請參閱[設定遠端存取](../configure/Configure-a-Remote-Access-Cluster.md)叢集。 
 

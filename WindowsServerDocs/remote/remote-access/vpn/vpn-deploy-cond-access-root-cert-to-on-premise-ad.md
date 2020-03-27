@@ -7,16 +7,16 @@ ms.technology: networking-ras
 ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 60be590d0d133f00817018018af42cfc23f1bee5
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: aeb35d8c3eafd436330b66ca7d5be68d78045df0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822391"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307841"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>步驟 7.4. 將條件式存取根憑證部署到內部部署 AD
 
@@ -37,7 +37,7 @@ ms.locfileid: "76822391"
    >[!NOTE]
    >若為 VPN 伺服器未加入 Active Directory 網域的環境，則必須手動將雲端根憑證新增至「信任的_根憑證授權_單位」存放區。
 
-   | 命令 | 說明 |
+   | 命令 | 描述 |
    | --- | --- |
    | `certutil -dspublish -f VpnCert.cer RootCA` | 會在**CN = AIA**和**Cn = 憑證授權單位**單位容器底下建立兩個**microsoft VPN 根 ca gen 1**容器，並將每個根憑證發佈為兩個**microsoft VPN 根 CA gen 1**容器的_cACertificate_屬性值。 |
    | `certutil -dspublish -f VpnCert.cer NTAuthCA` | 在**cn = AIA**和**CN = 憑證授權單位**單位容器底下建立一個**cn = NTAuthCertificates**容器，並將每個根憑證發佈為**cn = NTAuthCertificates**容器之_cACertificate_屬性的值。 |
@@ -57,6 +57,6 @@ ms.locfileid: "76822391"
       - AIA 容器
       - 憑證授權單位單位容器
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 [步驟7.5。建立以 OMA-URI 為基礎的 VPNv2 設定檔到 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md)：在此步驟中，您可以使用 Intune 建立 oma-uri 型的 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。

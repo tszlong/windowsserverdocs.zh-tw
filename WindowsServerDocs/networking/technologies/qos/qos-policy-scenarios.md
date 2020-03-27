@@ -6,18 +6,18 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9ac5ab31db1b8c184fd179ecb3e6b87f7fffd2ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 927232a3b191be86ae91b1dd0d6af767d4f024ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405240"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315419"
 ---
 # <a name="qos-policy-scenarios"></a>QoS 原則案例
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來審查示範如何、何時以及為何使用 QoS 原則的假設案例。
 
@@ -29,15 +29,15 @@ ms.locfileid: "71405240"
 >[!NOTE]
 >本主題的某些章節包含執行所述動作時可以採取的一般步驟。 如需管理 QoS 原則的詳細指示，請參閱[管理 Qos 原則](qos-policy-manage.md)。
 
-## <a name="scenario-1-prioritize-network-traffic-for-a-line-of-business-application"></a>案例 1：設定企業營運應用程式網路流量的優先順序
+## <a name="scenario-1-prioritize-network-traffic-for-a-line-of-business-application"></a>案例1：為企業營運應用程式設定網路流量的優先順序
 
 在此案例中，IT 部門有數個可使用 QoS 原則完成的目標：
 
-- 為要徑任務\-應用程式提供更好的網路效能。
+- 為任務\-關鍵應用程式提供更好的網路效能。
 - 當使用者使用特定應用程式時，為一組重要的使用者提供更好的網路效能。
-- 確定全公司\-的資料備份應用程式不會同時使用太多頻寬，而妨礙網路效能。
+- 確保公司\-wide 資料備份應用程式不會一次使用太多頻寬，而妨礙網路效能。
 
-IT 部門決定將 QoS 原則設定為使用差異服務程式代碼點\(DSCP\)值來分類網路流量，並設定其路由器以提供優先的針對較高優先權流量的處理方式。 
+IT 部門決定將 QoS 原則設定為使用差異服務程式代碼點 \(DSCP\) 值來分類網路流量，並設定其路由器為較高優先順序的流量提供優先處理。 
 
 >[!NOTE]
 >如需 DSCP 的詳細資訊，請參閱「[服務品質（QoS）原則](qos-policy-top.md)」主題中的**透過差異服務碼點定義 QoS 優先順序**一節。
@@ -50,11 +50,11 @@ IT 部門決定將 QoS 原則設定為使用差異服務程式代碼點\(DSCP\)�
 
 #### <a name="qos-policy-for-lob-app-servers"></a>LOB 應用程式伺服器的 QoS 原則
 
-IT 部門建立\-QoS 原則的第一個任務關鍵性應用程式是全公司\-的企業資源規劃\(ERP\)應用程式。 ERP 應用程式裝載于數部執行 Windows Server 2016 的電腦上。 在 Active Directory Domain Services 中，這些電腦是\(針對企業\(營運 LOB\)應用\)程式伺服器所建立之組織單位 OU 的成員。 ERP 應用\-程式的用戶端元件會安裝在執行 Windows 10 的電腦上，並 Windows 8.1。
+IT 部門建立 QoS 原則的第一個任務\-關鍵應用程式，是\-寬企業資源規劃 \(ERP\) 應用程式的公司。 ERP 應用程式裝載于數部執行 Windows Server 2016 的電腦上。 在 Active Directory Domain Services 中，這些電腦是針對企業營運 \(LOB\) 應用程式伺服器所建立的組織單位 \(OU\) 的成員。 ERP 應用程式的用戶端\-端元件會安裝在執行 Windows 10 和 Windows 8.1 的電腦上。
 
-在群組原則中，IT 系統管理員會選取要\(套用\) QoS 原則的群組原則物件 GPO。 藉由使用「qos 原則嚮導」，IT 系統管理員會建立名為「伺服器 LOB 原則」的 qos 原則\-，為所有應用程式、任何 IP 位址、TCP 和 UDP，以及埠號碼指定高優先順序的 DSCP 值44。
+在群組原則中，IT 系統管理員會選取要套用 QoS 原則 \(GPO\) 的群組原則物件。 藉由使用「QoS 原則嚮導」，IT 系統管理員會建立名為「伺服器 LOB 原則」的 QoS 原則，為所有應用程式、任何 IP 位址、TCP 和 UDP，以及埠號碼指定高\-優先順序 DSCP 值44。
 
-QoS 原則只會套用至 LOB 服務器，方法是透過群組原則管理主控台\(GPMC\)工具，將 GPO 連結至僅包含這些伺服器的 OU。 當電腦傳送網路流量時，此\-初始伺服器 LOB 原則會套用高優先順序的 DSCP 值。 您稍後可以在群組原則物件編輯器工具\( \)中編輯此 QoS 原則，以包含 ERP 應用程式的埠號碼，這會限制只有在使用指定的埠號碼時，才會套用原則。
+QoS 原則只會套用至 LOB 服務器，方法是透過群組原則管理主控台 \(GPMC\) 工具，將 GPO 連結到僅包含這些伺服器的 OU。 每當電腦傳送網路流量時，此初始伺服器 LOB 原則會套用高\-優先順序 DSCP 值。 您稍後可以在群組原則物件編輯器工具中編輯此 QoS 原則 \(\) 包含 ERP 應用程式的埠號碼，這會限制只有在使用指定的埠號碼時，才會套用原則。
 
 #### <a name="qos-policy-for-the-finance-group"></a>財務群組的 QoS 原則
 
@@ -79,10 +79,10 @@ QoS 原則只會套用至 LOB 服務器，方法是透過群組原則管理主�
   
 |原則名稱|DSCP 值|節流速率|套用至組織單位|描述|  
 |-----------------|----------------|-------------------|-----------------------------------|-----------------|
-|[無原則]|0|None|[無部署]|未分類流量的最佳操作（預設）處理。|  
-|備份資料|1|None|所有用戶端|套用此大量資料的低優先順序 DSCP 值。|  
-|伺服器 LOB|44|None|ERP 伺服器的電腦 OU|為 ERP 伺服器流量套用高優先順序的 DSCP|  
-|用戶端 LOB|60|None|財務使用者群組|適用于 ERP 用戶端流量的高優先順序 DSCP|  
+|[無原則]|0|無|[無部署]|未分類流量的最佳操作（預設）處理。|  
+|備份資料|1|無|所有用戶端|套用此大量資料的低優先順序 DSCP 值。|  
+|伺服器 LOB|44|無|ERP 伺服器的電腦 OU|為 ERP 伺服器流量套用高優先順序的 DSCP|  
+|用戶端 LOB|60|無|財務使用者群組|適用于 ERP 用戶端流量的高優先順序 DSCP|  
 
 >[!NOTE]
 >DSCP 值會以十進位格式表示。
@@ -97,9 +97,9 @@ QoS 原則只會套用至 LOB 服務器，方法是透過群組原則管理主�
 
 - 相關的電腦正在執行 QoS\-相容的作業系統。
 
-- 相關電腦是 Active Directory Domain Services \(AD DS\)網域的成員，因此可以使用群組原則來設定它們。
+- 相關電腦是 Active Directory Domain Services \(AD DS\) 網域的成員，因此可以使用群組原則進行設定。
 
-- Tcp/ip 網路是使用針對 DSCP \(RFC 2474\)所設定的路由器來設定。 如需詳細資訊，請參閱[RFC 2474](https://www.ietf.org/rfc/rfc2474.txt)。
+- TCP/IP 網路是使用為 DSCP \(RFC 2474\)所設定的路由器進行設定。 如需詳細資訊，請參閱[RFC 2474](https://www.ietf.org/rfc/rfc2474.txt)。
 
 - 符合系統管理認證需求。
 
@@ -122,19 +122,19 @@ QoS 原則只會套用至 LOB 服務器，方法是透過群組原則管理主�
 
 若要設定企業營運應用程式的優先順序，請完成下列工作：
 
-1. 建立群組原則物件\(GPO\)並連結至 QoS 原則。
+1. 使用 QoS 原則，建立和連結群組原則物件 \(GPO\)。
 
 2. 根據選取的 DSCP 值，將路由器設定為微分處理企業營運應用程式（藉由使用佇列）。 這項工作的程式會根據您擁有的路由器類型而有所不同。
 
-## <a name="scenario-2-prioritize-network-traffic-for-an-http-server-application"></a>案例 2：設定 HTTP 伺服器應用程式的網路流量優先順序
+## <a name="scenario-2-prioritize-network-traffic-for-an-http-server-application"></a>案例2：設定 HTTP 伺服器應用程式的網路流量優先順序
 
 在 Windows Server 2016 中，以原則為依據的 QoS 包含以 URL 為基礎的功能原則。 URL 原則可讓您管理 HTTP 伺服器的頻寬。
 
-許多企業應用程式都是針對 Internet Information Services \(IIS\) web 伺服器所開發和裝載，而 web 應用程式則是從用戶端電腦上的瀏覽器進行存取。
+許多企業應用程式都是針對 Internet Information Services \(IIS\) web 伺服器而開發，而且 Web 應用程式是從用戶端電腦上的瀏覽器進行存取。
 
 在此案例中，假設您管理一組 IIS 伺服器，以裝載貴組織所有員工的訓練影片。 您的目標是要確保來自這些影片伺服器的流量不會造成您的網路不足，並確保視頻流量與網路上的語音和資料流量有所區別。 
 
-工作與案例1中的工作類似。 您將設計和設定流量管理設定，例如視頻流量的 DSCP 值，以及與企業營運應用程式相同的節流率。 但在指定流量時，您只需要輸入 HTTP 伺服器應用程式將回應的 URL，而不是提供應用程式名稱：例如， https://hrweb/training 。
+工作與案例1中的工作類似。 您將設計和設定流量管理設定，例如視頻流量的 DSCP 值，以及與企業營運應用程式相同的節流率。 但在指定流量時，您只需輸入 HTTP 伺服器應用程式將回應的 URL，而不是提供應用程式名稱，例如 https://hrweb/training。
   
 > [!NOTE]
 >您無法使用以 URL 為基礎的 QoS 原則，針對執行 windows 7 和 Windows Server 2008 R2 之前發行之 Windows 作業系統的電腦設定網路流量的優先順序。
@@ -153,25 +153,25 @@ QoS 原則只會套用至 LOB 服務器，方法是透過群組原則管理主�
 
 但哪一個會得到優先順序？ 規則很簡單。 URL 型原則會以由左至右的讀取順序排定優先順序。 因此，從最高優先順序到最低優先順序，URL 欄位如下：
   
-[1.URL 配置](#bkmk_QoS_UrlScheme)
+[1. URL 配置](#bkmk_QoS_UrlScheme)
 
-[2.URL 主機](#bkmk_QoS_UrlHost)
+[2. URL 主機](#bkmk_QoS_UrlHost)
 
-[3.URL 埠](#bkmk_QoS_UrlPort)
+[3. URL 埠](#bkmk_QoS_UrlPort)
 
-[4.URL 路徑](#bkmk_QoS_UrlPath)
+[4. URL 路徑](#bkmk_QoS_UrlPath)
 
-詳細資料如下所示：
+詳細資料如下:
 
-####  <a name="bkmk_QoS_UrlScheme"></a>sha-1.URL 配置
+####  <a name="1-url-scheme"></a><a name="bkmk_QoS_UrlScheme"></a>1. URL 配置
 
- `https://`的優先順序`https://`高於。
+ `https://` 的優先順序高於 `https://`。
 
-####  <a name="bkmk_QoS_UrlHost"></a>2.URL 主機
+####  <a name="2-url-host"></a><a name="bkmk_QoS_UrlHost"></a>2. URL 主機
 
  從最高優先順序到最低，它們是：
 
-1. 主機名稱
+1. Hostname
 
 2. IPv6 位址
 
@@ -191,11 +191,11 @@ QoS 原則只會套用至 LOB 服務器，方法是透過群組原則管理主�
   
   **video.internal.training.hr.mycompany.com**具有最高優先順序，而**selfguide.training.mycompany.com**具有下一個最高優先順序。 **定型**和連結**庫**共用具有相同的最低優先順序。  
   
-####  <a name="bkmk_QoS_UrlPort"></a>第.URL 埠
+####  <a name="3-url-port"></a><a name="bkmk_QoS_UrlPort"></a>3. URL 埠
 
 特定或隱含埠號碼的優先順序高於萬用字元埠。
 
-####  <a name="bkmk_QoS_UrlPath"></a>4gb.URL 路徑
+####  <a name="4-url-path"></a><a name="bkmk_QoS_UrlPath"></a>4. URL 路徑
 
 如同主機名稱，URL 路徑可能是由多個元素所組成。 具有更多元素的專案，其優先順序會高於較少的專案。 例如，下列路徑會依優先順序列出：  
 

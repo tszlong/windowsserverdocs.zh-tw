@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509eaa08-c49d-448d-a71e-c1c45519ccd5
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f888ebadfaa91b35f0924b23e9818da1c32f26e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c2f855512b978462f89b8f32b1f7edf59180f563
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388477"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310771"
 ---
 # <a name="step-4-create-the-network-load-balanced-remote-access-cluster"></a>步驟4建立網路負載平衡的遠端存取叢集
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
  Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 可讓您建立遠端存取服務器的叢集。 叢集會做為單一邏輯伺服器，並針對叢集中的伺服器提供集中化的設定和管理。 使用網路負載平衡（NLB）時，單一叢集中最多支援8個遠端存取成員。 遠端存取叢集可提供從 DirectAccess 用戶端連線到內部網路的高可用性和負載平衡。  
   
@@ -62,7 +62,7 @@ ms.locfileid: "71388477"
   
 3.  在 [**選取功能**] 對話方塊中，選取 [**網路負載平衡**]，按一下 [**新增功能**]，按 **[下一步]** ，然後按一下 [**安裝**]  
   
-4.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+4.  在 [安裝進度] 對話方塊上，驗證安裝是否成功，然後按一下 [關閉]。  
   
 5.  在 EDGE2 上重複此程式。  
   
@@ -71,7 +71,7 @@ ms.locfileid: "71388477"
   
 ### <a name="enable-load-balancing"></a>啟用負載平衡  
   
-1.  在 EDGE1 上，按一下 [**開始**]，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 EDGE1 上，按一下 [**開始**]，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台的左窗格中，按一下 [設定]，**然後在 [工作]** 窗格中 **，按一下 [** **啟用負載平衡**]。  
   
@@ -117,7 +117,7 @@ ms.locfileid: "71388477"
   
 8.  在 [**新增和移除伺服器**] 對話方塊中，按一下 [**關閉**]。  
   
-9. 在 [**開始**] 畫面上，輸入**nlbmgr**，然後按 enter 鍵。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+9. 在 [**開始**] 畫面上，輸入**nlbmgr**，然後按 enter 鍵。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 10. 在 [**網路負載平衡管理員**] 中，按一下 [**內部 DA**叢集]。 在詳細資料窗格中，確定**EDGE1 （公司網路）** 和**EDGE2 （公司網路）** 都有交集**的狀態。**  
   

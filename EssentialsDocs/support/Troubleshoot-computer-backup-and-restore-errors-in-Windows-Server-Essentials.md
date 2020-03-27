@@ -1,9 +1,9 @@
 ---
 title: 疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 06/25/2013
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,23 +12,23 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 37e79661442ba9f66a564b6c6c8fb57db1978454
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 28e3564c93f192563626bfb44992ef9bc4a49598
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812329"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313243"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 使用下列程序可疑難排解在 Windows Server Essentials 中的電腦備份，包括備份設定問題、不完整或不成功的備份、備份的健康情況警示，以及檔案、資料夾或完整系統還原的問題。  
   
 > [!NOTE]
->  從 Windows Server Essentials 社群最新的疑難排解資訊，請造訪[Windows Server Essentials 論壇](https://social.technet.microsoft.com/Forums//winserveressentials/threads)。  
+>  如需 Windows Server Essentials 社區的最新疑難排解資訊，請造訪[Windows Server Essentials 論壇](https://social.technet.microsoft.com/Forums//winserveressentials/threads)。  
   
-##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a> 針對已連線的電腦的備份設定問題進行疑難排解  
+##  <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a><a name="BKMK_TroubleshootBackupConfigurationIssues"></a>針對連線電腦的備份設定問題進行疑難排解  
  使用這些程序可疑難排解在 Windows Server Essentials 伺服器上備份之電腦的備份設定問題。  
   
 ### <a name="errors"></a>錯誤  
@@ -39,7 +39,7 @@ ms.locfileid: "59812329"
   
 -   從備份移除電腦時發生錯誤  
   
-### <a name="resolutions"></a>解決方法  
+### <a name="resolutions"></a>解決方式  
   
 ##### <a name="to-troubleshoot-errors-that-occur-while-you-configure-backups-for-a-connected-computer"></a>疑難排解設定連線電腦的備份時所發生的錯誤  
   
@@ -53,9 +53,9 @@ ms.locfileid: "59812329"
   
     1.  在伺服器上，依序按一下 [開始]、[系統管理工具]，然後按一下 [服務]。  
   
-    2.  向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動] ，則以滑鼠右鍵按一下服務，然後按一下 [啟動] 。  
+    2.  向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。  
   
-    3.  按一下 [Windows Server Client Computer Backup Service]。 如果服務的狀態不是 [已啟動] ，則以滑鼠右鍵按一下服務，然後按一下 [啟動] 。  
+    3.  按一下 [Windows Server Client Computer Backup Service]。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。  
   
     4.  關閉 [服務]。  
   
@@ -63,9 +63,9 @@ ms.locfileid: "59812329"
   
     ###### <a name="to-start-the-computer-backup-service-on-the-client-computer"></a>在用戶端電腦上啟動電腦備份服務  
   
-    1.  用戶端電腦上，按一下**開始**，型別**Services**中**搜尋程式及檔案**文字方塊，然後再按 Enter 鍵。  
+    1.  在用戶端電腦上，按一下 [開始] **，在 [搜尋程式及檔案]** 文字方塊中輸入**服務**，然後按 Enter 鍵。  
   
-    2.  向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動] ，則以滑鼠右鍵按一下服務，然後按一下 [啟動] 。  
+    2.  向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。  
   
     3.  關閉 [服務]。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "59812329"
   
 6.  從電腦解除安裝 Windows Server Essentials 連接器軟體，然後再重新安裝它。 如需詳細資訊，請參閱主題[解除安裝連接器軟體](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)和[安裝連接器軟體](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)。  
   
-##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a> 疑難排解未正確完成的備份  
+##  <a name="troubleshoot-a-backup-that-did-not-complete-properly"></a><a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a>針對未正確完成的備份進行疑難排解  
  備份若處於不成功的狀態，則備份的所有部份都視為不成功，也沒有資料可供您還原。 不過，若備份處於不完整的狀態，則表示並非備份設定中指定的所有項目都已備份，但某些資料可能可供您還原。  
   
 ### <a name="errors"></a>錯誤  
@@ -82,13 +82,13 @@ ms.locfileid: "59812329"
   
 -   備份不成功  
   
-### <a name="resolutions"></a>解決方法  
+### <a name="resolutions"></a>解決方式  
   
 ##### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>找出未成功備份的磁碟區  
   
 1.  開啟 Windows Server Essentials 儀表板，然後按一下 [電腦和備份]。  
   
-2.  按一下備份未成功完成的電腦名稱，然後按一下 [工作]  窗格中的 [檢視電腦內容]  。  
+2.  按一下備份未成功完成的電腦名稱，然後按一下 [工作] 窗格中的 [檢視電腦內容]。  
   
 3.  按一下未成功完成的備份，然後按一下 [檢視詳細資料]。  
   
@@ -98,7 +98,7 @@ ms.locfileid: "59812329"
   
 1.  確定硬碟已連接到電腦、電源已開啟，而且正常運作。  
   
-2.  執行 **chkdsk /f /r** 修正硬碟上的任何錯誤 (**/f**)，以及從任何損壞的磁區復原可讀取的資訊 (**/r**)。 如需執行 **chkdsk**的詳細資訊，請參閱 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)。  
+2.  執行 **chkdsk /f /r** 修正硬碟上的任何錯誤 ( **/f**)，以及從任何損壞的磁區復原可讀取的資訊 ( **/r**)。 如需執行 **chkdsk**的詳細資訊，請參閱 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)。  
   
 3.  確定備份執行時電腦未關機或中斷網路連線。  
   
@@ -110,11 +110,11 @@ ms.locfileid: "59812329"
   
         ###### <a name="to-extend-a-volume"></a>延伸磁碟區  
   
-        1.  在 [控制台] 中，按一下 [系統及安全性] 。  
+        1.  在 [控制台] 中，按一下 [系統及安全性]。  
   
-        2.  在 [系統管理工具] 下，按一下 [建立及格式化硬碟磁碟分割] 。  
+        2.  在 [系統管理工具] 下，按一下 [建立及格式化硬碟磁碟分割]。  
   
-        3.  以滑鼠右鍵按一下您想要延伸的磁碟區。 如果 [延伸磁碟區]  已啟用，請選取該選項。 如果選項未啟用，您就無法延伸磁碟區。  
+        3.  以滑鼠右鍵按一下您想要延伸的磁碟區。 如果 [延伸磁碟區] 已啟用，請選取該選項。 如果選項未啟用，您就無法延伸磁碟區。  
   
         4.  依照「延伸磁碟區精靈」中的步驟延伸磁碟區。  
   
@@ -132,7 +132,7 @@ ms.locfileid: "59812329"
   
 6.  在命令提示字元中執行 **vssadmin** 可疑難排解磁碟區陰影複製服務 (VSS) 問題。 如需 **vssadmin**的相關資訊，請參閱 [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332)。  
   
-##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a> 疑難排解備份健康情況警示問題  
+##  <a name="troubleshoot-backup-health-alert-issues"></a><a name="BKMK_TroubleshootBackupHealthAlertIssues"></a>疑難排解備份健康情況警示問題  
   
 ### <a name="errors"></a>錯誤  
   
@@ -140,7 +140,7 @@ ms.locfileid: "59812329"
   
 -   Windows Server 解決方案用戶端電腦備份提供者服務 停止運作  
   
-### <a name="resolutions"></a>解決方法  
+### <a name="resolutions"></a>解決方式  
   
 ##### <a name="to-troubleshoot-a-backup-health-alert"></a>疑難排解備份健康情況警示  
   
@@ -155,19 +155,19 @@ ms.locfileid: "59812329"
         > [!NOTE]
         >  如果您從遠端管理伺服器，您必須使用「遠端桌面連線」存取伺服器桌面。 如需使用「遠端桌面連線」的相關資訊，請參閱 [使用「遠端桌面連線」連線到另一部電腦](https://windows.microsoft.com/windows-vista/Connect-to-another-computer-using-Remote-Desktop-Connection)。  
   
-    2.  向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動] ，則以滑鼠右鍵按一下服務，然後按一下 [啟動] 。  
+    2.  向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。  
   
-    3.  按一下 [Windows Server Client Computer Backup Service]。 如果服務的狀態不是 [已啟動] ，則以滑鼠右鍵按一下服務，然後按一下 [啟動] 。  
+    3.  按一下 [Windows Server Client Computer Backup Service]。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。  
   
     4.  關閉 [服務]。  
   
     ###### <a name="to-start-backup-services-on-a-client-computer"></a>在用戶端電腦上啟動備份服務  
   
-    1.  用戶端電腦上，按一下**開始**，型別**Services**中**搜尋程式及檔案** 文字方塊中，然後按 enter 鍵。  
+    1.  在用戶端電腦上，按一下 [開始] **，在 [搜尋程式及檔案]** 文字方塊中輸入**服務**，然後按 Enter 鍵。  
   
-    2.  以滑鼠右鍵按一下 [Windows Server Client Computer Backup Provider Service] ，然後按一下 [啟動] 。  
+    2.  以滑鼠右鍵按一下 [Windows Server Client Computer Backup Provider Service]，然後按一下 [啟動]。  
   
-    3.  關閉 [服務] 。  
+    3.  關閉 [服務]。  
   
 3.  查看用戶端電腦或伺服器上的事件記錄檔，了解與備份服務或驅動程式相關的問題。  
   
@@ -175,13 +175,13 @@ ms.locfileid: "59812329"
   
 5.  檢查健康情況警示是否有可能會對用戶端備份產生影響的其他問題。  
   
-##  <a name="BKMK_FileAndFolder"></a> 針對檔案或資料夾還原進行疑難排解  
+##  <a name="troubleshoot-a-file-or-folder-restore"></a><a name="BKMK_FileAndFolder"></a>針對檔案或資料夾還原進行疑難排解  
   
 ### <a name="errors"></a>錯誤  
   
 -   檔案或資料夾還原未順利完成。  
   
-### <a name="resolutions"></a>解決方法  
+### <a name="resolutions"></a>解決方式  
   
 ##### <a name="to-troubleshoot-an-unsuccessful-file-or-folder-restore"></a>疑難排解失敗的檔案或資料夾還原  
   
@@ -197,7 +197,7 @@ ms.locfileid: "59812329"
   
     ###### <a name="to-check-the-status-of-the-windows-server-solution-computer-restore-driver"></a>檢查 Windows Server 解決方案電腦還原驅動程式的狀態  
   
-    1.  按一下 [**開始**，型別**Device Manager**中**搜尋程式及檔案**] 文字方塊中，然後按 enter 鍵。  
+    1.  按一下 [開始]，在 [搜尋程式及檔案] 文字方塊中輸入 **Device Manager**，然後按 Enter 鍵。  
   
     2.  在裝置管理員中，按一下 [系統裝置]，捲動到 [Windows Server 解決方案電腦還原驅動程式]。  
   
@@ -205,40 +205,40 @@ ms.locfileid: "59812329"
   
         1.  以系統管理員權限開啟命令提示字元並執行下列命令：  
   
-             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  �i**  
+             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe？-i**  
   
         2.  重新整理裝置管理員。 驅動程式應該會出現。  
   
-    4.  如果顯示的圖示是電腦監視器，表示驅動程式已安裝並正確執行。 關閉裝置管理員。  
+    4.  如果顯示的圖示是電腦監視器，表示驅動程式已安裝並正確執行。 關閉 [裝置管理員]。  
   
     5.  如果顯示的圖示不是電腦監視器  
   
-        1.  以滑鼠右鍵按一下 [Windows Server 解決方案電腦還原驅動程式] ，然後按一下 [內容] 。  
+        1.  以滑鼠右鍵按一下 [Windows Server 解決方案電腦還原驅動程式]，然後按一下 [內容]。  
   
         2.  按一下 [驅動程式] 索引標籤，然後按一下 [更新驅動程式]。  
   
-        3.  按一下 [自動搜尋更新的驅動程式軟體] ，然後依照指示更新驅動程式。  
+        3.  按一下 [自動搜尋更新的驅動程式軟體]，然後依照指示更新驅動程式。  
   
-    6.  關閉裝置管理員。  
+    6.  關閉 [裝置管理員]。  
   
 6.  從電腦解除安裝 Windows Server Essentials 連接器軟體，然後再重新安裝它。 如需詳細資訊，請參閱主題[解除安裝連接器軟體](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)和[安裝連接器軟體](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)。  
   
-##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a> 疑難排解完整系統還原  
+##  <a name="troubleshoot-a-full-system-restore"></a><a name="BKMK_Troubleshootfullsystemrestoreissues"></a>針對完整系統還原進行疑難排解  
   
 ### <a name="errors"></a>錯誤  
   
 -   進行完整系統還原之後無法登入用戶端電腦。  
   
-### <a name="resolutions"></a>解決方法  
+### <a name="resolutions"></a>解決方式  
  如果您變更電腦的名稱，而且之後需要還原至電腦名稱變更之前儲存的備份，在還原之後，當您嘗試以您的網域帳戶登入時，您會收到下列錯誤：「伺服器上的安全性資料庫沒有此工作站信任關係的電腦帳戶。」 若要再次使用網路存取電腦，請移除連接器軟體，從 Windows 網域移除電腦，然後再重新連線到伺服器。  
   
 ##### <a name="to-regain-network-access-to-a-restored-computer-after-a-computer-name-change"></a>電腦名稱變更之後要再次使用網路存取還原的電腦  
   
 1.  以本機系統管理員身分登入電腦。  
   
-2.  解除安裝連接器軟體。 如需詳細資訊，請參閱 [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。  
+2.  解除安裝連接器軟體。 如需詳細資訊，請參閱[解除安裝連接器軟體](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。  
   
-3.  從網域移除電腦。 如需詳細資訊，請參閱 [Remove a computer from a Windows domain](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。  
+3.  從網域移除電腦。 如需詳細資訊，請參閱[從 Windows 網域移除電腦](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。  
   
 4.  再次將電腦連線到伺服器。 如需詳細資訊，請參閱[將電腦連線到伺服器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
   

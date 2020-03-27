@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2b9065b2d4541063c8cd6f09d47f48a9ba7833e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6437a7aa5a535352ad4f6c6be8fbac2162b6feea
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404655"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308436"
 ---
 # <a name="manage-remote-access"></a>管理遠端存取
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 「DirectAccess 遠端用戶端管理」部署案例會使用 DirectAccess 來維護透過網際網路的用戶端。 本節說明案例，包括其階段、角色、功能及其他資源的連結。  
   
@@ -33,7 +33,7 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與路由及遠端�
 > -   [使用遠端存取監視和計量](monitoring-and-accounting/Use-Remote-Access-Monitoring-and-Accounting.md)  
 > -   [遠端管理 DirectAccess 用戶端](manage-remote-clients/Manage-DirectAccess-Clients-Remotely.md)  
   
-## <a name="BKMK_OVER"></a>案例描述  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述  
 每當 DirectAccess 用戶端電腦連線到網際網路時，不論使用者是否登入電腦，都會連線到內部網路。 它們可以當做內部網路資源管理，並隨時保持與群組原則變更、作業系統更新、反惡意程式碼更新與其他組織變更同步更新。  
   
 在某些情況下，內部網路伺服器或電腦必須主動連接 DirectAccess 用戶端。 例如，技術支援部門技術人員可以使用遠端桌面連線，連線至遠端 DirectAccess 用戶端並且進行疑難排解。 這個案例可以讓您將現有的存取方案應用到使用者網路連接，讓 DirectAccess 只用於遠端管理。  
@@ -47,7 +47,7 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
 「DirectAccess 遠端用戶端管理」部署案例包括用於計劃和設定的下列步驟：  
   
 ### <a name="plan-the-deployment"></a>計劃部署  
-計劃本案例時，只有幾項電腦和網路需求： 其中包括：  
+計劃本案例時，只有幾項電腦和網路需求： 包括：  
   
 -   **網路和伺服器拓撲**：有了 DirectAccess 之後，您可以將遠端存取伺服器放到內部網路的邊緣，或者放到網路位址轉譯 (NAT) 裝置或防火牆的後面。  
   
@@ -56,7 +56,7 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
 -   **DirectAccess 用戶端**：決定哪些受管理的電腦會設定為 DirectAccess 用戶端。  
   
 ### <a name="configure-the-deployment"></a>設定部署  
-設定部署包含一些步驟。 它們包括：  
+設定部署包含一些步驟。 這些地方包括：  
   
 1.  **設定基礎結構**：設定 DNS 設定值、必要時將伺服器和用戶端電腦加入網域，以及設定 Active Directory 安全性群組。  
   
@@ -74,22 +74,22 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
   
 7.  **確認部署**：測試用戶端，確定它可以利用 DirectAccess 連接內部網路以及網際網路。  
   
-## <a name="BKMK_APP"></a>實際應用  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用  
 部署單一的遠端存取伺服器，用於管理 DirectAccess 用戶端時，可以提供以下功能：  
   
--   **容易存取**：執行 Windows 8 或 Windows 7 的受管理用戶端電腦可以設定為 DirectAccess 用戶端電腦。 這些用戶端只要連線到網際網路便可隨時透過 DirectAccess 存取內部網路資源，而不需登入 VPN 連線。 未執行上述作業系統的用戶端電腦可以透過 VPN 連接內部網路。 DirectAccess 和 VPN 都在同一個主控台，以及使用相同的一組精靈進行管理。  
+-   **易於存取**：執行 Windows 8 或 Windows 7 的受管理用戶端電腦可以設定為 DirectAccess 用戶端電腦。 這些用戶端只要連線到網際網路便可隨時透過 DirectAccess 存取內部網路資源，而不需登入 VPN 連線。 未執行上述作業系統的用戶端電腦可以透過 VPN 連接內部網路。 DirectAccess 和 VPN 都在同一個主控台，以及使用相同的一組精靈進行管理。  
   
 -   **容易管理**：遠端存取系統管理員可以透過 DirectAccess，從遠端管理連線到網際網路的 DirectAccess 用戶端電腦，即使用戶端電腦不位於公司內部網路上也可以。 管理伺服器可以自動修復不符合公司規定的用戶端電腦。 只要一部遠端存取管理主控台就可以管理一或多個遠端存取伺服器。  
   
-## <a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
 下表列出本案例必備的角色和功能：  
   
 |角色或功能|如何支援本案例|  
 |----------|-----------------|  
-|*遠端存取角色*|使用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝這個角色。 這個角色包含 DirectAccess (以前是 Windows Server 2008 R2 的功能) 與路由及遠端存取服務 (以前是網路原則與存取服務 (NPAS) 伺服器角色底下的角色服務)。 遠端存取角色包含兩個元件：<br /><br />1.DirectAccess 與路由及遠端存取服務 (RRAS) VPN：在遠端存取管理主控台中管理 DirectAccess 和 VPN。<br />2.RRAS：在路由及遠端存取主控台中管理功能。<br /><br />遠端存取伺服器角色需要下列功能：<br /><br />-Web Server （IIS）：設定網路位置伺服器和預設 Web 探查時，需要這個功能。<br />-Windows 內部資料庫：用於遠端存取伺服器上的本機帳戶處理。|  
+|*遠端存取角色*|使用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝這個角色。 這個角色包含 DirectAccess (以前是 Windows Server 2008 R2 的功能) 與路由及遠端存取服務 (以前是網路原則與存取服務 (NPAS) 伺服器角色底下的角色服務)。 遠端存取角色包含兩個元件：<br /><br />1. DirectAccess 與路由及遠端存取服務（RRAS） VPN： DirectAccess 和 VPN 是在遠端存取管理主控台中進行管理。<br />2. RRAS：功能會在 [路由及遠端存取] 主控台中進行管理。<br /><br />遠端存取伺服器角色需要下列功能：<br /><br />-Web Server （IIS）：設定網路位置伺服器和預設 Web 探查的必要動作。<br />-Windows 內部資料庫：用於遠端存取服務器上的本機帳戶處理。|  
 |遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-做為未執行遠端存取服務器角色之伺服器上的選項。 在此情況下，它是用於遠端管理遠端存取伺服器。<br /><br />這項功能包含下列項目：<br /><br />-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />-群組原則管理主控台<br />-RAS 連線管理員系統管理元件（CMAK）<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
   
-## <a name="BKMK_HARD"></a>硬體需求  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求  
 本案例需要的硬體如下所示：  
   
 ### <a name="server-requirements"></a>伺服器需求  
@@ -114,7 +114,7 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
   
 -   需要執行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 含 SP2 的 DNS 伺服器。  
   
-## <a name="BKMK_SOFT"></a>軟體需求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求  
 本案例的軟體需求如下：  
   
 ### <a name="server-requirements"></a>伺服器需求  

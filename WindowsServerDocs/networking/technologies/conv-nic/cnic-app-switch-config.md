@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 6d53c797-fb67-4b9e-9066-1c9a8b76d2aa
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: d10e8ca6e4689b89a8b9532f77613f17280282b1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 57fc944461254e78635913ac298bacc26a0789f2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355481"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309609"
 ---
 # <a name="physical-switch-configuration-for-converged-nic"></a>聚合式 NIC 的實體交換器設定
 
@@ -45,7 +45,7 @@ ms.locfileid: "71355481"
 13. 顯示執行 \(確認已在埠上正確設定設定\)
 14. wr \(，讓設定在交換器重新開機期間持續\)
 
-### <a name="tips"></a>各種
+### <a name="tips"></a>祕訣：
 1.  否 #command # 對命令進行否定
 2.  如何新增 VLAN： int vlan 100 \(如果儲存體網路位於 VLAN 100\)
 3.  如何檢查現有的 Vlan：顯示 vlan

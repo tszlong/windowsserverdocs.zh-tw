@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1b5708e51b2653444fb3eb636baac6a165dfc55d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 92641ccf19f77becd9ed5476cd8c0178f4090f49
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404846"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310830"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>步驟5從網際網路和叢集測試 DirectAccess 連線能力
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 CLIENT1 現在已準備好進行 DirectAccess 測試。  
   
@@ -54,7 +54,7 @@ CLIENT1 現在已準備好進行 DirectAccess 測試。
   
 8. 在 Internet Explorer 網址列中，輸入 **https://app2/** ，然後按 enter。 您將會看到 APP2 上的預設網站。  
   
-9. 在 [**開始**] 畫面上，輸入<strong>\\ \ App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。  
+9. 在 [**開始**] 畫面上，輸入<strong>\\\App2\Files</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。  
   
     這會示範您可以使用 SMB 連線到僅 IPv4 的伺服器，以取得資源網域中的資源。  
   
@@ -62,7 +62,7 @@ CLIENT1 現在已準備好進行 DirectAccess 測試。
   
 11. 請注意，在 [**具有 Advanced Security 的 Windows 防火牆**] 主控台中，只有**私人**或**公用設定檔**為作用中。 必須啟用 Windows 防火牆，DirectAccess 才能正常運作。 如果 Windows 防火牆已停用，DirectAccess 連線就無法運作。  
   
-12. 在主控台的左窗格中，展開 [**監視**] 節點，然後按一下 [連線**安全性規則**] 節點。 您應該會看到作用中的連線安全性規則：**Directaccess 原則-ClientToCorp**、 **Directaccess 原則-ClientToDNS64NAT64PrefixExemption**、 **Directaccess 原則-ClientToInfra**和**directaccess 原則-ClientToNlaExempt**。 將中間窗格向右移動，以顯示 [**第一個驗證方法**] 和 [**第二個驗證方法**] 資料行。 請注意，第一個規則（ClientToCorp）會使用 Kerberos V5 來建立內部網路通道，而第三個規則（ClientToInfra）則使用 NTLMv2 來建立基礎結構通道。  
+12. 在主控台的左窗格中，展開 [**監視**] 節點，然後按一下 [連線**安全性規則**] 節點。 您應該會看到使用中的連線安全性規則： **Directaccess 原則-ClientToCorp**、 **Directaccess 原則-ClientToDNS64NAT64PrefixExemption**、 **Directaccess 原則-ClientToInfra**和**directaccess 原則-ClientToNlaExempt**。 將中間窗格向右移動，以顯示 [**第一個驗證方法**] 和 [**第二個驗證方法**] 資料行。 請注意，第一個規則（ClientToCorp）會使用 Kerberos V5 來建立內部網路通道，而第三個規則（ClientToInfra）則使用 NTLMv2 來建立基礎結構通道。  
   
 13. 在主控台的左窗格中，展開 [**安全性關聯**] 節點，然後按一下 [**主要模式]** 節點。 請注意，使用 NTLMv2 的基礎結構通道安全性關聯和使用 Kerberos V5 的內部網路通道安全性關聯。 以滑鼠右鍵按一下顯示 [**使用者（Kerberos V5）** ] 做為**第二個驗證方法**的專案，然後按一下 [**屬性**]。 在 [**一般**] 索引標籤上，請注意**第二個驗證本機識別碼**是**CORP\User1**，表示 User1 能夠使用 Kerberos 成功地向 CORP 網域進行驗證。  
   
@@ -76,9 +76,9 @@ CLIENT1 現在已準備好進行 DirectAccess 測試。
   
 3. 在 Windows PowerShell 視窗中，偵測 APP1 和 APP2。 您應該會收到這兩個資源的回復。  
   
-4. 在 [**開始**] 畫面上，輸入<strong>\\ \ app2\files</strong>。 您應該會看到 APP2 電腦上的共用資料夾。 在 APP2 上開啟檔案共用的功能指出第二個通道（需要使用者的 Kerberos 驗證）運作正常。  
+4. 在 [**開始**] 畫面上，輸入<strong>\\\app2\files</strong>。 您應該會看到 APP2 電腦上的共用資料夾。 在 APP2 上開啟檔案共用的功能指出第二個通道（需要使用者的 Kerberos 驗證）運作正常。  
   
-5. 開啟 Internet Explorer，然後開啟網站 https://app1/ ，然後 https://app2/ 。 開啟這兩個網站的功能可確認第一個和第二個通道都已啟動且正常運作。 關閉 Internet Explorer。  
+5. 開啟 Internet Explorer，然後開啟 [網站] https://app1/ 並 https://app2/。 開啟這兩個網站的功能可確認第一個和第二個通道都已啟動且正常運作。 關閉 Internet Explorer。  
   
 6. 啟動 EDGE2 電腦。  
   

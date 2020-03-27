@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ecdfc589-fa14-4bb3-ab7e-456ebc719385
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cf6b8418482b606c86bac77b2790e3365e80bf5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dc4dc26a5079a34cdaa3d455e59f6bfb4d1f74c1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355154"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309525"
 ---
 # <a name="role-based-access-control"></a>角色型存取控制
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題提供在 IPAM 中使用角色型存取控制的相關資訊。  
   

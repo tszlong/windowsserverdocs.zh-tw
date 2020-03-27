@@ -8,8 +8,8 @@ metadata:
   text: Always On VPN 為所有連接的裝置 (甚至是個人擁有的裝置) 提供單一且一致的解決方案，以進行遠端存取。 使用 Always On VPN，連線類型不必是專用使用者或裝置，但可以是兩者的組合。 例如，您可以為遠端裝置管理啟用裝置驗證，然後再啟用使用者驗證以連線到內部公司站台及服務。
   keywords: 'Windows 10, Windows Server, Windows Server 2016, 遠端存取, VPN'
   ms.localizationpriority: high
-  author: shortpatti
-  ms.author: pashort
+  author: eross-msft
+  ms.author: lizross
   ms.date: 11/05/2018
   ms.topic: article
   ms.devlang: na

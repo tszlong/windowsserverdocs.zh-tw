@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/10/2018
-ms.openlocfilehash: 38d104bc3ceca478f0e261b3a364b5d4448b22f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a16d82e4db1e92a5dd20f6b4feb88f0619d50cc4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406015"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317515"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署網路控制站的需求
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 準備您的資料中心以進行網路控制站部署，這需要一或多部電腦或 vm，以及一部電腦或 VM。 您必須先設定安全性群組、記錄檔位置（如有需要）和動態 DNS 註冊，才能部署網路控制站。
 
@@ -36,7 +36,7 @@ ms.locfileid: "71406015"
 
 部署網路控制站之前，您必須設定安全性群組、記錄檔位置（如有需要），以及動態 DNS 註冊。
 
-### <a name="step-1-configure-your-security-groups"></a>步驟 1. 設定安全性群組
+### <a name="step-1-configure-your-security-groups"></a>步驟 1。 設定安全性群組
 
 您想要做的第一件事是建立兩個安全性群組來進行 Kerberos 驗證。 
 
@@ -56,12 +56,12 @@ ms.locfileid: "71406015"
 >如果您將記錄儲存在遠端檔案共用中，請確定可以從網路控制站存取該共用。
 
 
-### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>步驟 3。 設定網路控制站的動態 DNS 註冊
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>步驟 3： 設定網路控制站的動態 DNS 註冊
 
 最後，您要做的下一件事，就是在相同的子網或不同的子網上部署網路控制站叢集節點。 
 
 
-|         如果...         |                                                                                                                                                         則...                                                                                                                                                         |
+|         假設狀況         |                                                                                                                                                         結果                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  在相同的子網上，  |                                                                                                                                您必須提供網路控制卡的 REST IP 位址。                                                                                                                                 |
 | 在不同的子網上， | 您必須提供在部署過程中建立的網路控制站 REST DNS 名稱。 您也必須執行下列動作：<ul><li>在 DNS 伺服器上設定網路控制站 DNS 名稱的 DNS 動態更新。</li><li>僅限制網路控制站節點的 DNS 動態更新。</li></ul> |
@@ -85,7 +85,7 @@ ms.locfileid: "71406015"
 
    b. 在 [**高級安全性設定**] 中，按一下 [**新增**]。 
 
-   c. 按一下 [**選取一個主體**]。 
+   c. 按一下 [選取主體]。 
 
    d. 在 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊中，按一下 [**物件類型**]。 
 

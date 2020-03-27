@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cd1e9efd-19e9-49e7-8432-881f661c9792
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 487b85713d415cdda9ee40548091abdb5fe7fc2e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: abc3038cfe0dacb09c115f37289fe72f1c14b96d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404833"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308850"
 ---
 # <a name="overview-of-the-directaccess-cluster-nlb-test-lab-scenario"></a>DirectAccess Cluster-NLB 測試實驗室案例概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在此測試實驗室案例中，會使用下列內容來部署 DirectAccess：  
   

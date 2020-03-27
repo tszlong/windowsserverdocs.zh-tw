@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8ccb91973dfb3493b534bdbc8fc4e2bcb26b26b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4e6c8379f225dbeefd7c97ac96b9a0047dfd4a0b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404959"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309212"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>使用進階設定部署單一 DirectAccess 伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題提供使用單一 DirectAccess 伺服器的 DirectAccess 案例簡介，並可讓您使用 advanced 設定部署 DirectAccess。  
   
@@ -32,11 +32,11 @@ ms.locfileid: "71404959"
   
 -   [部署 DirectAccess 的必要條件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   
-## <a name="BKMK_OVER"></a>案例描述  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述  
 在此案例中，執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的單一電腦會設定為具有 advanced 設定的 DirectAccess 伺服器。  
   
 > [!NOTE]  
-> 如果您想要設定一個只具有簡單設定的基本部署，請參閱[使用快速入門精靈部署單一 DirectAccess 伺服器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)。 在簡單案例中，會使用精靈以預設設定來設定 DirectAccess，而不需要設定基礎結構設定，例如憑證授權單位 (CA) 或 Active Directory 安全性群組。  
+> 如果您要設定只具有簡單設定的基本部署，請參閱＜ [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)＞。 在簡單案例中，會使用精靈以預設設定來設定 DirectAccess，而不需要設定基礎結構設定，例如憑證授權單位 (CA) 或 Active Directory 安全性群組。  
   
 ## <a name="in-this-scenario"></a>在這個案例中  
 若要使用進階設定來設定單一 DirectAccess 伺服器，您必須完成數個規劃和部署步驟。  
@@ -71,24 +71,24 @@ ms.locfileid: "71404959"
   
 3.  **確認部署**。 這個階段包括確認 DirectAccess 部署的步驟。  
   
-如需詳細的部署步驟，請參閱＜ [Install and Configure Advanced DirectAccess](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md)＞。  
+如需詳細的部署步驟，請參閱[安裝和設定進階 DirectAccess](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md)。  
   
-## <a name="BKMK_APP"></a>實際應用  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用  
 部署單一 DirectAccess 伺服器可提供下列好處：  
   
 -   **容易存取**。 執行 Windows 10、Windows 8.1、Windows 8 和 Windows 7 的受管理用戶端電腦，可以設定為 DirectAccess 用戶端電腦。 這些用戶端可以隨時透過 DirectAccess 連接位於網際網路上的內部網路資源，無須登入 VPN 網路。 未執行上述作業系統的用戶端電腦可以透過 VPN 連接內部網路。  
   
 -   **容易管理**。 「遠端存取」系統管理員可以透過 DirectAccess，從遠端管理網際網路上的 DirectAccess 用戶端電腦，即使用戶端電腦不位於公司內部網路上也可以。 管理伺服器可以自動修復不符合公司規定的用戶端電腦。 DirectAccess 和 VPN 都是在同一個主控台以及使用相同的一組精靈進行管理。 此外，只要單一的「遠端存取管理主控台」就可以管理一或多部 DirectAccess 伺服器。  
   
-## <a name="BKMK_NEW"></a>此案例所需的角色和功能  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>此案例所需的角色和功能  
 下表列出本案例所需的角色與功能：  
   
 |角色/功能|如何支援本案例|  
 |---------|-----------------|  
-|遠端存取角色|這個角色是利用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝。 這個角色同時包含 DirectAccess 和「路由及遠端存取服務」(RRAS)。 遠端存取角色包含兩個元件：<br/><br/>1.DirectAccess 和 RRAS VPN。 在 [遠端存取管理] 主控台中，會同時管理 DirectAccess 和 VPN。<br/>2.RRAS 路由。 RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<br /><br />「遠端存取」伺服器角色取決於下列伺服器角色/功能：<br/><br/> -Internet Information Services （IIS）網頁伺服器-設定 DirectAccess 伺服器上的網路位置伺服器和預設 Web 探查時，需要這項功能。<br/> -Windows 內部資料庫。 用於 DirectAccess 伺服器上的本機帳戶處理。|  
+|遠端存取角色|這個角色是利用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝。 這個角色同時包含 DirectAccess 和「路由及遠端存取服務」(RRAS)。 遠端存取角色包含兩個元件：<br/><br/>1. DirectAccess 和 RRAS VPN。 在 [遠端存取管理] 主控台中，會同時管理 DirectAccess 和 VPN。<br/>2. RRAS 路由。 RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<br /><br />「遠端存取」伺服器角色取決於下列伺服器角色/功能：<br/><br/> -Internet Information Services （IIS）網頁伺服器-設定 DirectAccess 伺服器上的網路位置伺服器和預設 Web 探查時，需要這項功能。<br/> -Windows 內部資料庫。 用於 DirectAccess 伺服器上的本機帳戶處理。|  
 |遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設會將它安裝在 DirectAccess 伺服器上，並支援遠端管理主控台使用者介面和 Windows PowerShell Cmdlet。<br />-您可以選擇性地將它安裝在未執行 DirectAccess 伺服器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<br /><br />遠端存取管理工具功能包含以下各項：<br /><br />-遠端存取圖形化使用者介面（GUI）<br />-適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />-群組原則管理主控台<br />-RAS 連線管理員系統管理元件（CMAK）<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
   
-## <a name="BKMK_HARD"></a>硬體需求  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求  
 本案例需要的硬體如下所示：  
   
 -   伺服器需求：  
@@ -110,7 +110,7 @@ ms.locfileid: "71404959"
     -   用戶端電腦必須執行 Windows 10、Windows 8 或 Windows 7。  
   
         > [!NOTE]  
-        > 下列作業系統可以做為 DirectAccess 用戶端使用：Windows 10、Windows Server 2012 R2、Windows Server 2012、Windows 8 Enterprise、Windows 7 Enterprise 或 Windows 7 旗艦版。  
+        > 下列作業系統可以用來做為 DirectAccess 用戶端： Windows 10、Windows Server 2012 R2、Windows Server 2012、Windows 8 Enterprise、Windows 7 Enterprise 或 Windows 7 旗艦版。  
   
 -   基礎結構和管理伺服器需求：  
   
@@ -120,7 +120,7 @@ ms.locfileid: "71404959"
   
     -   如果啟用 VPN，而且在未使用靜態位址集區的情況下，需要 DHCP 伺服器自動分配 IP 給 VPN 用戶端。  
   
-## <a name="BKMK_SOFT"></a>軟體需求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求  
 本案例的一些需求：  
   
 -   伺服器需求：  
@@ -143,7 +143,7 @@ ms.locfileid: "71404959"
         > [!IMPORTANT]  
         > 如果您已在 DirectAccess 部署中啟用 Teredo，而且想要提供對 Windows 7 用戶端的存取權，請確定用戶端已升級至 Windows 7 （含 SP1）。 使用 Windows 7 RTM 的用戶端將無法透過 Teredo 進行連線。 不過，這些用戶端仍然可以透過 IP-HTTPS 連線到公司網路。  
   
-## <a name="BKMK_LINKS"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱  
 下表提供其他資源的連結。  
   
 |內容類型|參考|  

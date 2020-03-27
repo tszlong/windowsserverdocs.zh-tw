@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3511a91f-1d5d-45a0-97f2-3fc0d6f079b4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a80fdd391f9cc1ba5a928f29131921b98d39274c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3eb27f9249be04f43544eb928570ea252df27f73
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394585"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310932"
 ---
 # <a name="directaccess-known-issues"></a>DirectAccess 已知問題
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 
 ## <a name="recommended-hotfixes-and-updates-for-windows-server-2012-directaccess"></a>Windows Server 2012 DirectAccess 的建議的修補程式和更新  

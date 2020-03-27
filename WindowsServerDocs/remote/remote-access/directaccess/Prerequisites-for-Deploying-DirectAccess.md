@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 57c7e039-42ef-4909-867a-b5f669c9e74e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6e04dbf1576277493ec849c8de82aeab51e97649
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 14da51a2617764f2ee11eedcbc7a4e10b3b0da15
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388810"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309318"
 ---
 # <a name="prerequisites-for-deploying-directaccess"></a>部署 DirectAccess 的必要條件
 

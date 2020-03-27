@@ -1,9 +1,9 @@
 ---
-title: 適用於 Windows Server Essentials 的發行文件
-description: 描述如何使用 Windows Server Essentials
+title: Windows Server Essentials 的發行檔
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,24 +12,24 @@ ms.assetid: db402a2b-7a46-448a-841c-750557cd12cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ffbf87ccb8ee29efa62bd9c45db172db7aa59269
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e6e0b1515591dbc7c0a8f242390a7e159163ad5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875319"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310386"
 ---
-# <a name="release-documentation-for-windows-server-essentials"></a>適用於 Windows Server Essentials 的發行文件
+# <a name="release-documentation-for-windows-server-essentials"></a>Windows Server Essentials 的發行檔
 
->適用於：Windows Server 2016 Essentials
+>適用于： Windows Server 2016 Essentials
 
-歡迎使用 Windows Server 2016 Essentials 伺服器軟體版本文件。 本主題包含安裝和執行 Windows 2016 Server Essentials 伺服器軟體時，可能會遇到的問題的資訊。 安裝及執行 Windows Server 2016 Essentials 在您的網路之前，您應該檢閱本主題。  
+Windows 歡迎畫面 Server 2016 Essentials 伺服器軟體的版本檔。 本主題包含您在安裝和執行 Windows 2016 Server Essentials 伺服器軟體時可能會遇到之問題的相關資訊。 在您的網路中安裝和執行 Windows Server 2016 Essentials 之前，請先參閱本主題。  
   
 ## <a name="client-computers"></a>用戶端電腦  
   
 ### <a name="install-all-available-critical-and-security-updates-from-windows-update"></a>安裝 Windows Update 所有可用的重大和安全性更新  
 
-用戶端電腦連線到伺服器之前，請確定您在用戶端電腦上開啟 Windows Update 並安裝所有可用的重大和安全性更新。  
+將用戶端電腦連線到伺服器之前，請確定您已在用戶端電腦上開啟 Windows Update，並安裝所有可用的重大和安全性更新。  
   
-### <a name="client-computer-restore-may-not-succeed-after-migration-to-windows-10"></a>用戶端電腦可能無法成功還原之後移轉至 Windows 10  
- 從 Windows 8.1 用戶端電腦到 Windows 10 更新之後，用戶端電腦的還原可能無法正常運作。 您必須重新連線到 Windows Server 2016 Essentials 用戶端。 
+### <a name="client-computer-restore-may-not-succeed-after-migration-to-windows-10"></a>在遷移至 Windows 10 之後，用戶端電腦還原可能會失敗  
+ 將用戶端電腦從 Windows 8.1 更新為 Windows 10 之後，用戶端電腦的還原可能無法正常運作。 您必須將用戶端重新連線至 Windows Server 2016 Essentials。 

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 28abdfe8295ad3f9fac29b8cc80aeebe2992392c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 083558762051283115211d10d32ebb6fd3ad3953
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366866"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308038"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>設定和檢視 Hyper-V 虛擬交換器連接埠上的 VLAN 設定
 

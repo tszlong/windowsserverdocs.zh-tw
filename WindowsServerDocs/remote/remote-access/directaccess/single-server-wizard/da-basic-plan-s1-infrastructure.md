@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6f4c727dc8f7905502d47119bd0e911537e827aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9c71ef26f9e4ba5d20705827109d9ad22fe5c7ab
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404872"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308898"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟1規劃基本 DirectAccess 基礎結構
 在單一伺服器上進行基本 DirectAccess 部署的第一個步驟，是針對部署所需的基礎結構進行規劃。 本主題描述基礎結構規劃步驟：  
@@ -33,7 +33,7 @@ ms.locfileid: "71404872"
   
 這些規劃工作不需要依特定的順序完成。  
   
-## <a name="bkmk_1_1_Network_svr_top_settings"></a>規劃網路拓朴和設定  
+## <a name="plan-network-topology-and-settings"></a><a name="bkmk_1_1_Network_svr_top_settings"></a>規劃網路拓朴和設定  
   
 ### <a name="plan-network-adapters-and-ip-addressing"></a>規劃網路介面卡和 IP 位址  
   
@@ -55,8 +55,8 @@ ms.locfileid: "71404872"
   
     ||外部網路介面卡|內部網路介面卡<sup>1</sup>|路由需求|  
     |-|--------------|--------------------|------------|  
-    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<br /><br />-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br />-網際網路防火牆或本機網際網路服務提供者 \(ISP\) 路由器的預設閘道 IPv4 位址。|設定下列各項：<br /><br />-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-連線\-內部網路命名空間的特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br /><br />1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用**route add \-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|  
-    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br /><br />-使用您 ISP 所提供的自動設定位址設定。<br />-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br />-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br /><br />由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器\-面向介面的 IPv6 位址。|設定下列各項：<br /><br />-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br /><br />1. 列出內部網路上所有位置的 IPv6 位址空間。<br />2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|  
+    |IPv4 內部網路與 IPv4 網際網路|設定下列項目：<br /><br />-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br />-網際網路防火牆或本機網際網路服務提供者 \(ISP\) 路由器的預設閘道 IPv4 位址。|設定下列項目：<br /><br />-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-連線\-內部網路命名空間的特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br /><br />1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用**route add \-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|  
+    |IPv6 網際網路與 IPv6 內部網路|設定下列項目：<br /><br />-使用您 ISP 所提供的自動設定位址設定。<br />-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br />-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br /><br />由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器\-面向介面的 IPv6 位址。|設定下列項目：<br /><br />-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br /><br />1. 列出內部網路上所有位置的 IPv6 位址空間。<br />2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|  
     |IPv4 網際網路和 IPv6 內部網路|DirectAccess 伺服器會使用 Microsoft 6to4 介面卡介面，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令，針對 IPv4 網際網路上的 Microsoft 6to4 轉送的 IPv4 位址設定 DirectAccess 伺服器 \(在公司網路\) 中未部署原生 IPv6 時使用： netsh interface IPv6 6to4 set 轉送 name\=192.88.99.1 state\=enabled 命令。|||  
   
     > [!NOTE]  
@@ -65,7 +65,7 @@ ms.locfileid: "71404872"
     > 1.  如果 DirectAccess 用戶端已被指派公用的 IPv4 位址，它會使用 6to4 轉換技術連線到內部網路。 如果 DirectAccess 用戶端無法使用6to4 連接到 DirectAccess 伺服器，則會使用 IP\-HTTPS。  
     > 2.  原生 IPv6 用戶端電腦不需要任何轉換技術，即可透過原生 IPv6 連線到 DirectAccess 伺服器。  
   
-### <a name="ConfigFirewalls"></a>規劃防火牆需求  
+### <a name="plan-firewall-requirements"></a><a name="ConfigFirewalls"></a>規劃防火牆需求  
 如果 DirectAccess 伺服器是在邊緣防火牆後面，當 DirectAccess 伺服器位於 IPv4 網際網路上時，必須為 DirectAccess 流量設定下列例外：  
   
 -   6to4 流量-IP 通訊協定41輸入和輸出。  
@@ -89,7 +89,7 @@ ms.locfileid: "71404872"
   
 -   所有 IPv4\/IPv6 流量的 TCP\/UDP  
   
-### <a name="bkmk_1_2_CAs_and_certs"></a>規劃憑證需求  
+### <a name="plan-certificate-requirements"></a><a name="bkmk_1_2_CAs_and_certs"></a>規劃憑證需求  
 IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAccess 伺服器之間建立 IPsec 連線時所使用的電腦憑證，以及 DirectAccess 伺服器用來與 DirectAccess 用戶端建立 IPsec 連線的電腦憑證。 針對 Windows Server 2012 R2 和 Windows Server 2012 中的 DirectAccess，不一定要使用這些 IPsec 憑證。 「快速入門精靈」會設定 DirectAccess 伺服器做為 Kerberos Proxy 來執行 IPsec 驗證，而不需要憑證。
   
 1.  **IP\-HTTPS 伺服器**。 當您設定 DirectAccess 時，DirectAccess 伺服器會自動設定為作為 IP\-HTTPS 網頁接聽程式。 IP\-HTTPS 網站需要網站憑證，而且用戶端電腦必須能夠與憑證的憑證撤銷清單 \(CRL\) 網站。 「啟用 DirectAccess」精靈會嘗試使用 SSTP VPN 憑證。 如果未設定 SSTP，它會檢查電腦個人存放區中是否有 IP\-HTTPS 的憑證。 如果沒有可用的，它會自動建立自我\-簽署的憑證。
@@ -104,7 +104,7 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAc
 ||內部 CA-您可以使用內部 CA 來發行 IP\-HTTPS 憑證;不過，您必須確定 CRL 發佈點可供外部使用。|自我\-簽署的憑證-您可以使用網路位置伺服器網站的自我\-簽署憑證;不過，您無法在多網站部署中使用自我\-簽署的憑證。|  
 ||自我\-簽署的憑證-您可以針對 IP\-HTTPS 伺服器使用自我\-簽署的憑證;不過，您必須確定 CRL 發佈點可供外部使用。 自我\-簽署的憑證無法用於多網站部署。||  
   
-#### <a name="bkmk_website_cert_IPHTTPS"></a>規劃 IP\-HTTPS 和網路位置伺服器的憑證  
+#### <a name="plan-certificates-for-ip-https-and-network-location-server"></a><a name="bkmk_website_cert_IPHTTPS"></a>規劃 IP\-HTTPS 和網路位置伺服器的憑證  
 如果您想要佈建憑證來用於這些用途，請參閱[使用進階設定部署單一 DirectAccess 伺服器](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。 如果沒有可用的憑證，消費者入門 wizard 會針對這些用途自動建立自我\-簽署的憑證。
   
 > [!NOTE]
@@ -146,14 +146,14 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAc
 > [!NOTE]  
 > 在部署 DirectAccess 時，建議您不要使用執行 Windows Server 2003 的 DNS 伺服器。 雖然 Windows Server 2003 DNS 伺服器支援 IPv6 記錄，但 Microsoft 不再支援 Windows Server 2003。 此外，如果您的網域控制站因為檔案複寫服務問題而執行 Windows Server 2003，則不應部署 DirectAccess。 如需詳細資訊，請參閱 [DirectAccess 不支援的設定](../DirectAccess-Unsupported-Configurations.md)。  
   
-### <a name="bkmk_1_4_NLS"></a>規劃網路位置伺服器  
+### <a name="plan-the-network-location-server"></a><a name="bkmk_1_4_NLS"></a>規劃網路位置伺服器  
 網路位置伺服器是一個用來偵測 DirectAccess 用戶端是否位於公司網路中的網站。 公司網路中的用戶端不會使用 DirectAccess 來連線到內部資源，而是會直接連線。  
   
 「快速入門精靈」會自動在 DirectAccess 伺服器上設定網路位置伺服器，而當您部署 DirectAccess 時，便會自動建立網站。 這可讓您進行簡易安裝，而不需使用憑證基礎結構。
   
 如果您想要部署網路位置伺服器，而不使用自我\-簽署的憑證，請參閱[使用 Advanced Settings 部署單一 DirectAccess 伺服器](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。
   
-### <a name="bkmk_1_6_AD"></a>規劃 Active Directory  
+### <a name="plan-active-directory"></a><a name="bkmk_1_6_AD"></a>規劃 Active Directory  
 DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件，如下所示：
   
 -   **驗證**： 使用 Active Directory 進行驗證。 DirectAccess 通道會使用 Kerberos 驗證來讓使用者存取內部資源。
@@ -184,7 +184,7 @@ DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件�
 > - DirectAccess 伺服器不可以是網域控制站。  
 > - 無法從 DirectAccess 伺服器的外部網際網路介面卡連線到 DirectAccess 所使用的 Active Directory 網域控制站，\(介面卡不得位於 Windows 防火牆\)的網域設定檔中。  
   
-### <a name="bkmk_1_7_GPOs"></a>規劃群組原則物件  
+### <a name="plan-group-policy-objects"></a><a name="bkmk_1_7_GPOs"></a>規劃群組原則物件  
 當您設定 DirectAccess 時所設定的 DirectAccess 設定會收集到 \(GPO\)的群組原則物件中。 兩個不同的 GPO 會被填入 DirectAccess 設定，並依下列方式分配：  
   
 -   **DirectAccess 用戶端 GPO**。 這個 GPO 包含用戶端設定，包括 IPv6 轉換技術設定、NRPT 項目，以及「具有進階安全性的 Windows 防火牆」連線安全性規則。 這個 GPO 會套用到為用戶端電腦指定的安全性群組。  
@@ -250,7 +250,7 @@ DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件�
   
 3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成後，伺服器將會還原到未設定的\-狀態。  
   
-### <a name="BKMK_Links"></a>下一步  
+### <a name="next-step"></a><a name="BKMK_Links"></a>下一步  
   
 -   [步驟2：規劃基本 DirectAccess 部署](da-basic-plan-s2-deployment.md)  
   

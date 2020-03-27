@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 7da0f509-7b02-4a0f-90fb-d97c83a2bc4e
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: 7ecb2a1373efcf15aada451313e334e210c76d1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8e12e5ff8a1ce8403e9d13d215f26f46352b17d1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355533"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309750"
 ---
 # <a name="virtual-network-encryption"></a>虛擬網路加密
 
->適用於：Windows Server
+>適用于： Windows Server
 
 虛擬網路加密可讓虛擬機器之間的虛擬網路流量進行加密，這兩者會在子網內彼此通訊，並標示為「啟用加密」。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
 

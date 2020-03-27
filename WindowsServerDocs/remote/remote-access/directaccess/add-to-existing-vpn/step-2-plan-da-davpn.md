@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72b5b2af-6925-41e0-a3f9-b8809ed711d1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cd42d00d8bddc786ea8a13faf10703361bf8da7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 865f9ffd3eed3ce145364c227845af097194416e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404969"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309239"
 ---
 # <a name="step-2-plan-the-directaccess-deployment"></a>步驟2規劃 DirectAccess 部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 規劃遠端存取基礎結構之後，啟用 DirectAccess 的下一步是規劃「啟用 DirectAccesss 精靈」的設定。  
   
@@ -30,7 +30,7 @@ ms.locfileid: "71404969"
 |規劃用戶端部署|規劃如何讓用戶端電腦使用 DirectAccess 連線。 決定哪些受管理的電腦會設定為 DirectAccess 用戶端。|  
 |規劃遠端存取伺服器部署|規劃如何部署遠端存取伺服器。|  
   
-## <a name="bkmk_2_1_client"></a>規劃用戶端部署  
+## <a name="planning-for-client-deployment"></a><a name="bkmk_2_1_client"></a>規劃用戶端部署  
 規劃用戶端部署時要進行兩個決策：  
   
 -   DirectAccess 將僅供攜帶型電腦使用，或是可供任何電腦使用？  
@@ -41,7 +41,7 @@ ms.locfileid: "71404969"
   
     DirectAccess 設定包含在 DirectAccess 用戶端 GPO 中。 GPO 會套用到您在「啟用 DirectAccess 精靈」指定之安全性群組中的電腦。 您可以指定在任何支援的網域中所包含的安全性群組。 設定遠端存取之前，必須先建立安全性群組。 您可以在完成遠端存取部署之後，將電腦新增到安全性群組，但請注意，如果您新增位於不同網域中的用戶端電腦到安全性群組，用戶端 GPO 將不會套用到這些用戶端。 例如，如果您在網域 A 中建立 SG1 做為 DirectAccess 用戶端，之後新增網域 B 的用戶端到此群組，用戶端 GPO 將不會套用到網域 B 中的用戶端。若要避免這個問題，請為每個包含用戶端電腦的網域建立新的用戶端安全性群組。 或者，如果您不想要建立新的安全性群組，請執行 Add-DAClient Cmdlet，加上新網域的新 GPO 名稱。  
   
-## <a name="bkmk_2_2_server"></a>規劃遠端存取服務器部署  
+## <a name="planning-for-remote-access-server-deployment"></a><a name="bkmk_2_2_server"></a>規劃遠端存取服務器部署  
 規劃部署遠端存取伺服器時要進行許多決策：  
   
 -   **網路拓撲**-部署遠端存取服務器時，有兩種可用的拓撲：  
@@ -56,7 +56,7 @@ ms.locfileid: "71404969"
   
 -   **Ip-HTTPs 憑證**-如果已設定 SSTP VPN，則 [啟用 DirectAccess] 嚮導會針對 IP-HTTPS 挑選 SSTP 使用的憑證。 如果未設定 SSTP VPN，精靈會嘗試查看是否已設定 IP-HTTPS 的憑證。 如果沒有，它會自動為 IP-HTTPS 佈建自我簽署的憑證。精靈會自動啟用 Kerberos 驗證。 精靈也會啟用 NAT64 和 DNS64，以便轉換 IPv4 環境使用的通訊協定。  
   
--   **IPv6 首碼**-如果此嚮導偵測到網路介面卡已部署 ipv6，它會自動為內部網路建立 ipv6 首碼、指派給 DirectAccess 用戶端電腦的 ipv6 首碼，以及要指派給 VPN 用戶端的 ipv6 首碼電腦. 如果自動產生的首碼不適用您的原生 IPv6 或 ISATAP 基礎結構，您必須手動變更它們。 請參閱1.1 規劃網路和伺服器拓撲和設定。  
+-   **IPv6 首碼**-如果此嚮導偵測到網路介面卡已部署 ipv6，它會自動為內部網路建立 ipv6 首碼、指派給 DirectAccess 用戶端電腦的 ipv6 首碼，以及要指派給 VPN 用戶端電腦的 ipv6 首碼。 如果自動產生的首碼不適用您的原生 IPv6 或 ISATAP 基礎結構，您必須手動變更它們。 請參閱1.1 規劃網路和伺服器拓撲和設定。  
   
 -   **Windows 7 客戶**端-根據預設，windows 7 用戶端電腦無法連線到 windows Server 2012 遠端存取部署。 如果您的組織中有需要遠端存取內部資源的 Windows 7 用戶端電腦，您可以允許它們連線。 您想要允許存取內部資源的任何用戶端電腦都必須是您在「啟用 DirectAccess 精靈」中指定之安全性群組的成員。  
   

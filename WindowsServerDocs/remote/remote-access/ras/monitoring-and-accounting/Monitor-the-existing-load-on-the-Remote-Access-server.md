@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 43c447205a5ef0cbd33b0486e01d630e6d00c633
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0507a7f0151e1f5f8aefaf4de5a3a4f8a776971d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367216"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314198"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>監視「遠端存取」伺服器上現有的負載
 
@@ -60,7 +60,7 @@ ms.locfileid: "71367216"
   
 ![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 PS> Get-RemoteAccessConnectionStatisticsSummary  

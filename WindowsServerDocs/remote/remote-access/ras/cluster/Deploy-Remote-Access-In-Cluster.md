@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5e4108eee0c62ae4d4db31560b31a6f90751c6b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a025c82b5bece3a4719905c4e28333c42aac35c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404646"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308379"
 ---
 # <a name="deploy-remote-access-in-a-cluster"></a>在叢集中部署遠端存取
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404646"
 
 Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服務 \(RAS\) VPN 合併成一個遠端存取角色。 您可以在許多企業案例中部署遠端存取。 本總覽提供企業案例的簡介，以在使用 Windows 網路負載平衡的叢集中部署多部遠端存取服務器 \(NLB\) 或使用外部負載平衡器 \(ELB\)，例如 F5 Big\-IP。  
 
-## <a name="BKMK_OVER"></a>案例描述  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述  
 叢集部署會將多部遠端存取服務器收集成單一單位，然後使用遠端存取叢集的外部虛擬 IP \(VIP\) 位址，透過 DirectAccess 或 VPN 連線到內部公司網路的遠端用戶端電腦的單一連絡人點。  叢集的流量會使用 Windows NLB 或外部負載平衡器 \(（如 F5 Big\-IP\)）進行負載平衡。  
 
 ## <a name="prerequisites"></a>必要條件  
@@ -58,7 +58,7 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 
 3.  [設定遠端存取](configure/Configure-a-Remote-Access-Cluster.md)叢集。 這包含幾個設定步驟，包括準備適用于 Windows NLB 或外部負載平衡器的單一伺服器、準備額外的伺服器以加入叢集，以及啟用負載平衡。  
 
-## <a name="BKMK_APP"></a>實際應用  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用  
 將多個伺服器納入叢集中，可以提供以下優點：  
 
 -   延展性。 一部遠端存取服務器提供有限等級的伺服器可靠性和可擴充的效能。 將兩部或更多伺服器編列成單一叢集後，您就可以有更多能力接納更多使用者以及提供更高的輸送量。  
@@ -67,7 +67,7 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 
 -   簡化\-管理\-。 叢集可讓多部伺服器做為單一實體進行管理。 共用的設定可以輕鬆設定到叢集中的每一部伺服器。 您可以從叢集中的任何伺服器管理遠端存取設定，或使用遠端伺服器管理工具 \(RSAT\)從遠端進行管理。 此外，整個叢集可以從單一「遠端存取管理」主控台進行監視。  
 
-## <a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
 下表列出本案例必備的角色和功能：  
 
 |角色\/功能|如何支援本案例|  
@@ -76,7 +76,7 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 |遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<br /><br />遠端存取管理工具功能包含以下各項：<br /><br />-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />-群組原則管理主控台<br />-RAS 連線管理員系統管理元件 \(CMAK\)<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
 |網路負載平衡|這個功能利用 Windows NLB，提供叢集的負載平衡功能。|  
 
-## <a name="BKMK_HARD"></a>硬體需求  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求  
 本案例需要的硬體如下所示：  
 
 -   至少兩部符合 Windows Server 2012 硬體需求的電腦。  
@@ -85,7 +85,7 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 
 -   為了測試案例，您必須至少有一部執行 Windows 10 的電腦設定為 Always On VPN 用戶端。   
 
-## <a name="BKMK_SOFT"></a>軟體需求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求  
 本案例的一些需求：  
 
 -   部署單一伺服器時的軟體需求。 如需詳細資訊，請參閱[使用 Advanced Settings 部署單一 DirectAccess 伺服器](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。 單一遠端存取）。  
@@ -100,12 +100,12 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 
     -   指派給伺服器叢集 DirectAccess 用戶端電腦的 IPv6 首碼必須是 59 位元。 如果開通 VPN，則 VPN 首碼也必須設定成 59 位元。  
 
-## <a name="KnownIssues"></a>已知問題  
+## <a name="known-issues"></a><a name="KnownIssues"></a>已知問題  
 以下是設定叢集案例的已知問題：  
 
 -   \-在僅使用單一網路介面卡的部署中設定 DirectAccess 之後，在預設的 DNS64 \(的 IPv6 位址（包含 "：3333：："\) 已自動在網路介面卡上設定）之後，嘗試透過遠端存取管理主控台啟用負載\-平衡會導致提示使用者提供 IPv6 DIP。 如果提供 IPv6 DIP，設定會在按一下 [認可] 之後失敗，並發生錯誤：參數不正確。  
 
-    解決此問題：  
+    若要解決此問題：  
 
     1.  從 [備份和還原遠端存取設定](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6)下載備份和還原指令碼。  
 
@@ -113,7 +113,7 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 
     3.  嘗試啟用負載平衡，直到它失敗所在的步驟。 在 [啟用負載平衡] 對話方塊中，展開 [詳細資料] 區域，以滑鼠右鍵按一下 [詳細資料] 區域中的\-，然後按一下 [**複製腳本**]。  
 
-    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如：  
+    4.  開啟 [記事本]，並貼上剪貼簿的內容。 例如，  
 
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19 /255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21 /255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  
@@ -121,7 +121,7 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 
     5.  關閉任何開啟的 [遠端存取] 對話方塊，並關閉遠端存取管理主控台。  
 
-    6.  編輯貼上的文字，並移除 IPv6 位址。 例如：  
+    6.  編輯貼上的文字，並移除 IPv6 位址。 例如，  
 
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19 /255.255.255.0') -InternetVirtualIPAddress @('10.244.4.21 /255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

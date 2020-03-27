@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9969cade328b19f16dbdbad432b96dabb5518007
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e63b4c4f266d286b766c89b61676493328aa8652
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394842"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310988"
 ---
 # <a name="directaccess-capacity-planning"></a>DirectAccess 容量規劃
 

@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 17aadbb789052be7f33822ce49f3b797f2211d55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 608bc4b2805639e2638ac12f74b712c812ce165f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367385"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308240"
 ---
 # <a name="step-2-plan-cluster-servers"></a>步驟2規劃叢集伺服器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 部署單一遠端存取服務器之後，請規劃新增其他伺服器到叢集。  
   
@@ -30,10 +30,10 @@ ms.locfileid: "71367385"
 |[2.1 安裝角色和功能](#BKMK_Install)。|針對要新增到叢集的每部伺服器，規劃遠端存取角色和 Windows NLB 功能的安裝（如有需要），規劃拓撲、IP 位址、路由和轉送。|  
 |[2.2 設定伺服器設定](#BKMK_Config)|針對將新增到叢集的每部伺服器進行設定。 請注意，您可以使用虛擬機器設定伺服器的負載平衡叢集。 為了讓路由和連線正常運作，您必須將虛擬機器設定為使用 MAC 位址詐騙。|  
   
-## <a name="BKMK_Install"></a>2.1 安裝角色和功能  
+## <a name="21-installing-roles-and-features"></a><a name="BKMK_Install"></a>2.1 安裝角色和功能  
 針對您想要加入叢集的每部伺服器，規劃安裝遠端存取角色。 此外，如果您想要使用 Windows NLB 將流量負載平衡至叢集，請規劃安裝網路負載平衡（NLB）功能。 如需詳細資訊，請參閱[網路負載平衡](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing)。  
   
-## <a name="BKMK_Config"></a>2.2 設定伺服器設定  
+## <a name="22-configure-server-settings"></a><a name="BKMK_Config"></a>2.2 設定伺服器設定  
 針對將新增到叢集的每部伺服器，規劃 IP 位址和網域設定。 請注意下列事項：  
   
 1.  叢集中的伺服器必須全都屬於相同的網域。  

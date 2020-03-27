@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: aa251ccc0cc48e3805667a247047711c2ae4fcf6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 698bc250b428fe5efc4d111f8783483005d48dc5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388299"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308671"
 ---
 # <a name="step-5-configure-dc1"></a>步驟5設定 DC1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 DC1 作為 corp.contoso.com 網域的網域控制站、DNS 伺服器和 DHCP 伺服器。  
   

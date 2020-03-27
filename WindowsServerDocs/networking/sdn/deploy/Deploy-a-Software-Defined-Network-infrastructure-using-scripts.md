@@ -7,15 +7,15 @@ ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 29013827d0cde0447c48afa7a42551760ab9e940
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a17d5f5fec0a05b4258b295eb37b6dc80cdaee1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356001"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313050"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用指令碼部署軟體定義網路的基礎結構
 
@@ -89,7 +89,7 @@ ms.locfileid: "71356001"
    a. 以滑鼠右鍵按一下 [**開始**]，按一下 [**系統**]，然後按一下 [**變更設定**]。  
    b. 按一下 [變更]。  
    c. 按一下 [**網域**]，並指定功能變數名稱。  
-   d. 按一下 **\[確定\]** 。  
+   d. 按一下 [確定]。  
    e. 出現提示時，輸入使用者名稱和密碼認證。  
    f. 重新啟動伺服器。  
 
@@ -192,11 +192,11 @@ ms.locfileid: "71356001"
 
 1.  藉由變更 **< > > <** 以特定值（例如： VHD 映射名稱、網路控制器 REST 名稱、vSwitch 名稱等等）來自訂 SDNExpress\scripts\TenantConfig.psd1 檔案，如先前在 fabricconfig.psd1. .psd1 檔案中所定義）  
 
-2.  執行腳本。 例如：  
+2.  執行指令碼。 例如，  
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 
-3.  若要復原設定，請使用**undo**參數執行相同的腳本。 例如：  
+3.  若要復原設定，請使用**undo**參數執行相同的腳本。 例如，  
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 

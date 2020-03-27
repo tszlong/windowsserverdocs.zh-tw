@@ -1,18 +1,18 @@
 ---
 title: 容錯移轉叢集系統記錄檔事件
 description: Windows Server 系統記錄中的容錯移轉叢集事件清單。 這些事件可以用來對叢集進行疑難排解。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5c2606b96b42d08cc66da2e19596240c21bf4b88
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 0346b56ad2fe8a60ab84b7e6ab43e0558ed1c85b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956450"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310055"
 ---
 # <a name="failover-clustering-system-log-events"></a>容錯移轉叢集系統記錄檔事件
 
@@ -133,7 +133,7 @@ ms.locfileid: "75956450"
 
 叢集服務無法啟動，因為此節點偵測到它沒有最新的叢集設定資料複本。 當此節點不在成員資格中，而導致無法接收設定資料更新時，就會發生叢集變更。
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 嘗試在叢集中的所有節點上啟動叢集服務，讓具有最新叢集設定資料複本的節點可以先形成叢集。 這個節點接著就能夠加入叢集，並自動取得更新的叢集設定資料。 如果最新的叢集設定資料複本沒有可用的節點，請執行 ' Start-clusternode-FQ ' Windows PowerShell Cmdlet。 使用 ForceQuorum （FQ）參數會啟動叢集服務，並將此節點的叢集設定資料複本標示為已授權。 在具有過期叢集資料庫複本的節點上強制仲裁，可能會導致叢集設定變更，因為節點未參與叢集而無法中斷。
 
@@ -497,7 +497,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 叢集網路名稱資源無法註冊一或多個相關聯的 DNS 名稱，因為對應的 DNS 區域不接受動態更新。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 確定 DNS 已設定為動態 DNS 區域。 如果 DNS 伺服器不接受動態更新，請取消核取網路介面卡內容中的 [在 DNS 中註冊此連線的位址]。
 
@@ -517,7 +517,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 叢集網路名稱資源無法修改 DNS 註冊。<br><br>叢集網路名稱： ' %1 '<br>錯誤碼： ' %2 '
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 確定與相依 IP 位址資源相關聯的網路介面卡已設定至少有一部 DNS 伺服器的存取權。
 
@@ -525,7 +525,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 叢集網路名稱資源無法修改 DNS 註冊。<br><br>叢集網路名稱： ' %1 '<br>原因： ' %2 '
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 確定與相依 IP 位址資源相關聯的網路介面卡已設定至少有一部 DNS 伺服器的存取權。
 
@@ -533,7 +533,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 叢集網路名稱資源無法發佈 DNS 反向對應區域中的 PTR 記錄。<br><br>叢集網路名稱： ' %1 '<br>錯誤碼： ' %2 '
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 請確定與相依 IP 位址資源相關聯的網路介面卡已設定至少有一部 DNS 伺服器的存取權，且 DNS 反向對應區域存在。
 
@@ -541,7 +541,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 叢集網路名稱資源無法發佈 DNS 反向對應區域中的 PTR 記錄。<br><br>叢集網路名稱： ' %1 '<br>原因： ' %2 '
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 請確定與相依 IP 位址資源相關聯的網路介面卡已設定至少有一部 DNS 伺服器的存取權，且 DNS 反向對應區域存在。
 
@@ -609,7 +609,7 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 雲端見證資源無法連接 Microsoft Azure 儲存體服務。<br><br>叢集資源： %1 <br>叢集節點： %2 
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 這可能是因為叢集節點與封鎖的 Microsoft Azure 服務之間的網路通訊。 確認節點的網際網路連線到 Microsoft Azure。 連接到 Microsoft Azure 入口網站，並確認儲存體帳戶存在。
 
@@ -621,7 +621,7 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 雲端見證資源無法向 Microsoft Azure 儲存體服務進行驗證。 嘗試聯繫 Microsoft Azure 儲存體帳戶時，傳回「拒絕存取」錯誤。 <br><br>叢集資源： %1 
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 儲存體帳戶的存取金鑰可能不再有效。 使用容錯移轉叢集管理員或 Set-clusterquorum Windows PowerShell Cmdlet 中的 [設定叢集仲裁]，以更新的儲存體帳戶存取金鑰來設定雲端見證資源。
 
@@ -726,7 +726,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 叢集服務無法連線到網域上的任何可用網域控制站。 這可能會影響依存于叢集網路名稱驗證的功能。<br><br>DC 伺服器： %1 
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 確認可在網路上存取叢集節點的網域控制站。
 
@@ -734,14 +734,14 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 叢集網路名稱資源在 Active Directory 中找不到相關聯的電腦物件。 這可能會影響依存于叢集網路名稱驗證的功能。<br><br>網路名稱： %1<br>組織單位： %2
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 從 Active Directory 回收站還原網路名稱的電腦物件。 或者，將叢集網路名稱資源離線，並執行修復動作，以在 Active Directory 中重新建立電腦物件。
 
 ### <a name="event-1685-res_netname_computer_object_cno_not_found"></a>事件1685： RES_NETNAME_COMPUTER_OBJECT_CNO_NOT_FOUND
 
 叢集網路名稱資源在 Active Directory 中找不到相關聯的電腦物件。 這可能會影響依存于叢集網路名稱驗證的功能。<br><br>網路名稱： %1<br>組織單位： %2
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 從 Active Directory 回收站還原網路名稱的電腦物件。
 
@@ -749,7 +749,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 叢集網路名稱資源在要停用的 Active Directory 中找到相關聯的電腦物件。 這可能會影響依存于叢集網路名稱驗證的功能。<br><br>網路名稱： %1<br>組織單位： %2
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 在 Active Directory 中啟用網路名稱的電腦物件。
 
@@ -757,7 +757,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 叢集網路名稱資源在要停用的 Active Directory 中找到相關聯的電腦物件。 這可能會影響依存于叢集網路名稱驗證的功能。<br><br>網路名稱： %1<br>組織單位： %2
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 在 Active Directory 中啟用網路名稱的電腦物件。 或者，將叢集網路名稱資源離線，並執行修復動作，以在 Active Directory 中啟用電腦物件。
 
@@ -765,7 +765,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 叢集網路名稱資源偵測到 Active Directory 中相關聯的電腦物件已停用，並在嘗試啟用它時失敗。 這可能會影響依存于叢集網路名稱驗證的功能。<br><br>網路名稱： %1<br>組織單位： %2
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 在 Active Directory 中啟用網路名稱的電腦物件。
 
@@ -908,7 +908,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-5219-csv_register_snapshot_prov_with_vss_failed"></a>事件5219： CSV_REGISTER_SNAPSHOT_PROV_WITH_VSS_FAILED
 
-叢集服務無法使用磁片區陰影服務（VSS）註冊叢集共用磁片區快照集提供者。 這可能是因為 VSS 服務關閉或可能是因為 VSS 服務發生問題而導致它無法接受連入要求所致。 <br>錯誤: %1
+叢集服務無法使用磁片區陰影服務（VSS）註冊叢集共用磁片區快照集提供者。 這可能是因為 VSS 服務關閉或可能是因為 VSS 服務發生問題而導致它無法接受連入要求所致。 <br>錯誤： %1
 
 ### <a name="event-5377-operation_exceeded_timeout"></a>事件5377： OPERATION_EXCEEDED_TIMEOUT
 
@@ -926,7 +926,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 叢集無法啟動。 嘗試啟動叢集的節點集內，無法使用最新的叢集設定資料複本。 當節點集不在成員資格中，而導致無法接收設定資料更新時，就會發生叢集變更。 。<br><br>啟動叢集所需的投票： %1<br>可用的投票： %2<br>具有投票的節點： %3
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 嘗試在叢集中的所有節點上啟動叢集服務，讓具有最新叢集設定資料複本的節點可以先形成叢集。 叢集將能夠啟動，而且節點會自動取得更新的叢集設定資料。 如果最新的叢集設定資料複本沒有可用的節點，請執行 ' Start-clusternode-FQ ' Windows PowerShell Cmdlet。 使用 ForceQuorum （FQ）參數會啟動叢集服務，並將此節點的叢集設定資料複本標示為已授權。 在具有過期叢集資料庫複本的節點上強制仲裁，可能會導致叢集設定變更，因為節點未參與叢集而無法中斷。
 
@@ -1113,7 +1113,7 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 叢集實體磁片資源無法上線。<br><br>實體磁片資源名稱： %1<br>錯誤碼： %2<br>經過時間（秒）： %3
 
-#### <a name="guidance"></a>指導方針
+#### <a name="guidance"></a>指引
 
 執行 [驗證設定] 嚮導，以檢查您的存放裝置設定。 如果錯誤碼是 ERROR_CLUSTER_SHUTDOWN 則系統管理員已取消線上擱置狀態。 如果這是複寫的磁片區，這可能是因為無法設定磁片屬性所導致。 如需其他資訊，請參閱儲存體複寫事件。
 
@@ -1250,6 +1250,6 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 叢集實體磁片資源 ' %1 ' 已刪除軟體快照集。 叢集共用磁碟區 ' %2 ' 上的軟體快照集已刪除，因為它早于 ' %3 ' 天。 快照集識別碼是 ' %4 '，而它是從 ' %6 ' 的節點 ' %5 ' 所建立。
 在備份作業完成之後，備份應用程式應該會刪除快照集。 此快照集超過快照集存在所需的時間。 請向備份應用程式確認備份作業已順利完成。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [Windows Server 2008 中容錯移轉叢集元件的詳細事件資訊](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

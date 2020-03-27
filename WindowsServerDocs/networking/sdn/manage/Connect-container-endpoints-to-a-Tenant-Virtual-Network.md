@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
-ms.author: pashort
+ms.author: lizross
 author: jmesser81
 ms.date: 08/24/2018
-ms.openlocfilehash: 83996f7ffb82d01c9f36945efa022f0dd0b9825b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5673cb6f808f37fb7737e22cf93c3984073e4f48
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355815"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309830"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>將容器端點連線至租用戶虛擬網路
 
@@ -153,6 +153,6 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 >[!NOTE]
 >搭配 Microsoft SDN 堆疊使用時， *l2bridge*或*l2tunnel*容器網路不支援靜態 IP 指派。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 如需部署 SDN 基礎結構的詳細資訊，請參閱[部署軟體定義的網路基礎結構](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)。
 

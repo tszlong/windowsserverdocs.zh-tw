@@ -6,29 +6,29 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: 4d35501b8d876f2a178a4744d495125dea8da6c7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4ea035d80a32e245edc4633ee14e98b9d1153fff
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405812"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309733"
 ---
 # <a name="configure-virtual-network-peering"></a>設定虛擬網路對等互連
 
->適用於：Windows Server
+>適用于： Windows Server
 
 在此程式中，您會使用 Windows PowerShell 來建立兩個虛擬網路，每個都有一個子網。 然後，您可以設定兩個虛擬網路之間的對等互連，以啟用兩者之間的連線。
 
-- [步驟 1.建立第一個虛擬網路](#step-1-create-the-first-virtual-network)
+- [步驟1。建立第一個虛擬網路](#step-1-create-the-first-virtual-network)
 
-- [步驟 2.建立第二個虛擬網路](#step-2-create-the-second-virtual-network)
+- [步驟2。建立第二個虛擬網路](#step-2-create-the-second-virtual-network)
 
-- [步驟 3.設定從第一個虛擬網路到第二個虛擬網路的對等互連](#step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network)
+- [步驟3。設定從第一個虛擬網路到第二個虛擬網路的對等互連](#step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network)
 
-- [步驟 4.設定從第二個虛擬網路到第一個虛擬網路的對等互連](#step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network)
+- [步驟4。設定從第二個虛擬網路到第一個虛擬網路的對等互連](#step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network)
 
 
 >[!IMPORTANT]
@@ -90,7 +90,7 @@ $vnetproperties.Subnets = @($vsubnet)
 New-NetworkControllerVirtualNetwork -ResourceId "Woodgrove_VNet1" -ConnectionUri $uri -Properties $vnetproperties
 ```
 
-## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>步驟 3。 設定從第一個虛擬網路到第二個虛擬網路的對等互連
+## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>步驟 3： 設定從第一個虛擬網路到第二個虛擬網路的對等互連
 
 在此步驟中，您會設定第一個虛擬網路與您在前兩個步驟中建立的第二個虛擬網路之間的對等互連。 下列範例腳本會建立從**Contoso_vnet1**到**Woodgrove_vnet1**的虛擬網路對等互連。
 

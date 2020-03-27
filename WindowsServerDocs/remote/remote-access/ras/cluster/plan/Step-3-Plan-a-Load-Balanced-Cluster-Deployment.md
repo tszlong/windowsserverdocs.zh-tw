@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: beb2f5ce27115bf328917e38910198794f523547
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1a195be9c00ef35f80a7e1975b52128681fca1f0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404606"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308217"
 ---
 # <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>步驟3：規劃負載平衡叢集部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 下一步是規劃負載平衡設定和叢集部署。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71404606"
 |3.3 規劃 VPN 用戶端連接|請注意 VPN 用戶端連線的需求。|  
 |3.4 規劃網路位置伺服器|如果網路位置伺服器網站裝載于遠端存取服務器上，且未使用自我簽署憑證，請確定叢集中的每部伺服器都具有伺服器憑證，以驗證網站的連線。|  
   
-## <a name="bkmk_2_1_Plan_LB"></a>3.1 規劃負載平衡  
+## <a name="31-plan-load-balancing"></a><a name="bkmk_2_1_Plan_LB"></a>3.1 規劃負載平衡  
 遠端存取可以部署在單一伺服器或遠端存取服務器的叢集上。 對叢集的流量可進行負載平衡，為 DirectAccess 用戶端提供高可用性和擴充性。 有兩個負載平衡選項：  
   
 -   **WINDOWS nlb**-windows Nlb 是 windows server 功能。 若要使用它，您不需要額外的硬體，因為叢集中的所有伺服器都負責管理流量負載。 Windows NLB 在「遠端存取」叢集中最多支援八部伺服器。  
@@ -47,7 +47,7 @@ ms.locfileid: "71404606"
   
     -   系統管理員可以從 Windows NLB 切換到外部負載平衡器，反之亦然。 請注意，如果外部負載平衡器部署中有8部以上的伺服器，系統管理員就無法從外部負載平衡器切換至 Windows NLB。  
   
-### <a name="ELBConfigEx"></a>3.1.1 外部 Load Balancer 設定範例  
+### <a name="311-external-load-balancer-configuration-example"></a><a name="ELBConfigEx"></a>3.1.1 外部 Load Balancer 設定範例  
 本節說明在新的遠端存取部署上啟用外部負載平衡器的設定步驟。 使用外部負載平衡器時，遠端存取叢集可能如下圖所示，其中遠端存取服務器會透過內部網路上的負載平衡器連線到公司網路，並透過負載平衡器連接到網際網路。已連線到外部網路：  
   
 ![外部 Load Balancer 設定範例](../../../../media/Step-3-Plan-a-Load-Balanced-Cluster-Deployment/ELBDiagram-URA_Enterprise_NLB-.png)  
@@ -85,7 +85,7 @@ ms.locfileid: "71404606"
   
 6.  遠端存取服務器現在會設定為已規劃的 IP 位址，而叢集的外部和內部 IP 位址則會根據規劃的 IP 位址進行設定。  
   
-## <a name="bkmk_2_2_NLB"></a>3.2 規劃 IP-HTTPS  
+## <a name="32-plan-ip-https"></a><a name="bkmk_2_2_NLB"></a>3.2 規劃 IP-HTTPS  
   
 1.  **憑證需求**-在部署單一遠端存取服務器時，您選取要使用由公用或內部憑證授權單位單位（CA）所發行的 ip-HTTPs 憑證，或自我簽署憑證。 針對叢集部署，您必須在遠端存取叢集的每個成員上使用相同類型的憑證。 也就是說，如果您使用公用 CA 所發行的憑證（建議選項），您必須在叢集的每個成員上安裝公用 CA 所發行的憑證。 新憑證的主體名稱應該與您的部署中目前使用的 ip-HTTPs 憑證主體名稱相同。 請注意，如果您使用自我簽署憑證，則會在叢集部署期間，于每部伺服器上自動設定。  
   
@@ -94,7 +94,7 @@ ms.locfileid: "71404606"
     > [!NOTE]  
     > 前置詞需求只與啟用 IPv6 的內部網路（僅限 IPv6 或 IPV4 + IPv6）相關。 在僅 IPv4 的公司網路中，會自動設定用戶端首碼，而且系統管理員無法變更它。  
   
-## <a name="BKMK_3.3"></a>3.3 規劃 VPN 用戶端連接  
+## <a name="33-plan-for-vpn-client-connections"></a><a name="BKMK_3.3"></a>3.3 規劃 VPN 用戶端連接  
 VPN 用戶端連線有數個考慮：  
   
 -   如果使用 DHCP 配置 VPN 用戶端位址，VPN 用戶端流量就無法進行負載平衡。 需要靜態位址集區。  
@@ -105,7 +105,7 @@ VPN 用戶端連線有數個考慮：
   
 -   若要讓 VPN IPv6 用戶端流量達到負載平衡，您必須指定59位 IPv6 首碼。  
   
-## <a name="BKMK_nls"></a>3.4 規劃網路位置伺服器  
+## <a name="34-plan-the-network-location-server"></a><a name="BKMK_nls"></a>3.4 規劃網路位置伺服器  
 如果您是在單一遠端存取服務器上執行網路位置伺服器網站，則在部署期間，您選擇使用由內部憑證授權單位單位（CA）所發行的憑證或自我簽署的憑證。  請注意下列事項：  
   
 1.  「遠端存取」叢集的每個成員都必須有網路位置伺服器的憑證，而該伺服器會對應到網路位置伺服器網站的 DNS 專案。  

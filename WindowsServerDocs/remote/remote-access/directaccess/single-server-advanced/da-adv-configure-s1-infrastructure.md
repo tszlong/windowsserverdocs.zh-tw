@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 30705a9aa55cdc652280c27c327cf865a47c5a11
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c5ab8e089d3cf5fd8f9ed53f7f67cc47a8c17f70
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404936"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309185"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>步驟1設定 Advanced DirectAccess 基礎結構
 
@@ -39,9 +39,9 @@ ms.locfileid: "71404936"
 |1.10 設定網路位置伺服器|設定網路位置伺服器，包括安裝網路位置伺服器網站憑證。|  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="ConfigNetworkSettings"></a>1.1 設定伺服器網路設定  
+## <a name="11-configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>1.1 設定伺服器網路設定  
 以下是在使用 IPv4 和 IPv6 的環境中進行單一伺服器部署時，所需的網路介面設定。 您可以使用 [Windows 網路和共用中心] 中的 [變更介面卡設定] 設定所有 IP 位址。  
   
 **邊緣拓撲**  
@@ -75,7 +75,7 @@ ms.locfileid: "71404936"
 >     Save-NetGPO "GPOSession $gposession  
 >     ```  
   
-## <a name="BKMK_forcetunnel"></a>1.2 設定強制通道  
+## <a name="12-configure-force-tunneling"></a><a name="BKMK_forcetunnel"></a>1.2 設定強制通道  
 可以透過「遠端存取安裝精靈」設定強制通道。 它在「設定遠端用戶端精靈」中是顯示為核取方塊。 這個設定只會影響 DirectAccess 用戶端。 如果啟用了 VPN，VPN 用戶端預設便會使用強制通道。 系統管理員可以從用戶端設定檔變更 VPN 用戶端的設定。  
   
 選取強制通道的核取方塊會有下列作用：  
@@ -98,14 +98,14 @@ Set-DAClientDNSConfiguration "DNSSuffix "." "ProxyServer <Name of the proxy serv
 > [!NOTE]  
 > 如果組織使用 Web Proxy 讓 DirectAccess 用戶端存取網際網路資源，而公司 Proxy 無法處理內部網路資源，則 DirectAccess 用戶端若不在內部網路中，就會無法存取內部資源。 在這樣的案例中，若要讓 DirectAccess 用戶端存取內部資源，請使用基礎結構精靈的 DNS 頁面，手動為內部網路尾碼建立 NRPT 項目。 請勿在這些 NRPT 尾碼上套用 Proxy 設定。 尾碼應該被填入預設的 DNS 伺服器項目。  
   
-## <a name="ConfigRouting"></a>1.3 設定公司網路中的路由  
+## <a name="13-configure-routing-in-the-corporate-network"></a><a name="ConfigRouting"></a>1.3 設定公司網路中的路由  
 設定公司網路中的路由，如下所示：  
   
 -   在組織中部署原生 IPv6 之後，新增一個路由，以便讓內部網路上的路由器透過 DirectAccess 伺服器將 IPv6 流量遞送回來。  
   
 -   在 DirectAccess 伺服器上手動設定組織的 IPv4 和 IPv6 路由。 新增一個已發佈的路由，以便將所有含有組織 (/48) IPv6 首碼的流量轉送到內部網路。 針對 IPv4 流量，新增明確的路由，以便將 IPv4 流量轉送到內部網路。  
   
-## <a name="ConfigFirewalls"></a>1.4 設定防火牆  
+## <a name="14-configure-firewalls"></a><a name="ConfigFirewalls"></a>1.4 設定防火牆  
 當部署中使用額外的防火牆時，如果 DirectAccess 伺服器位於 IPv4 網際網路上，請為「遠端存取」流量套用下列網際網路對向防火牆例外：  
   
 -   Teredo 流量「使用者資料包協定（UDP）目的地埠3544輸入，以及 UDP 來源埠3544輸出。  
@@ -136,7 +136,7 @@ Set-DAClientDNSConfiguration "DNSSuffix "." "ProxyServer <Name of the proxy serv
   
 -   適用於所有 IPv4/IPv6 流量的 ICMP  
   
-## <a name="ConfigCAs"></a>1.5 設定 Ca 和憑證  
+## <a name="15-configure-cas-and-certificates"></a><a name="ConfigCAs"></a>1.5 設定 Ca 和憑證  
 Windows Server 2012 中的遠端存取可讓您選擇使用憑證來進行電腦驗證，或使用內建的 Kerberos proxy 來驗證使用使用者名稱和密碼。 您必須也在 DirectAccess 伺服器上設定 IP-HTTPS 憑證。  
   
 如需詳細資訊，請參閱 [Active Directory 憑證服務](https://technet.microsoft.com/library/cc770357.aspx)。  
@@ -155,7 +155,7 @@ DirectAccess 伺服器和所有 DirectAccess 用戶端上都必須有電腦憑�
   
 3.  視需要設定評證範本以進行自動註冊。 如需詳細資訊，請參閱[設定憑證自動註冊](https://technet.microsoft.com/library/cc731522.aspx)。  
   
-### <a name="ConfigCertTemp"></a>1.5.2 設定憑證範本  
+### <a name="152-configure-certificate-templates"></a><a name="ConfigCertTemp"></a>1.5.2 設定憑證範本  
 使用內部 CA 來簽發憑證時，您必須為 IP-HTTPS 憑證和網路位置伺服器網站憑證設定憑證範本。  
   
 ##### <a name="to-configure-a-certificate-template"></a>設定憑證範本  
@@ -218,7 +218,7 @@ DirectAccess 伺服器和所有 DirectAccess 用戶端上都必須有電腦憑�
   
 5.  在 [憑證] 上按一下滑鼠右鍵，指向 [所有工作]，然後按一下 [要求新憑證]。  
   
-6.  按兩次 [下一步] 。  
+6.  按兩次 [下一步]。  
   
 7.  在 [**要求憑證**] 頁面上，選取您先前建立之憑證範本的核取方塊（如需詳細資訊，請參閱1.5.2 設定憑證範本）。 視需要按一下 [需要更多資訊才能註冊此憑證]。  
   
@@ -238,10 +238,10 @@ DirectAccess 伺服器和所有 DirectAccess 用戶端上都必須有電腦憑�
   
 15. 在 [憑證] 嵌入式管理單元的詳細資料窗格中，確認已註冊新憑證且「使用目的」為「伺服器驗證」。  
   
-## <a name="ConfigDNS"></a>1.6 設定 DNS 伺服器  
+## <a name="16-configure-the-dns-server"></a><a name="ConfigDNS"></a>1.6 設定 DNS 伺服器  
 您必須為部署中內部網路的網路位置伺服器網站手動設定 DNS 項目。  
   
-### <a name="NLS_DNS"></a>建立網路位置伺服器  
+### <a name="to-create-the-network-location-server"></a><a name="NLS_DNS"></a>建立網路位置伺服器  
   
 1.  在內部網路 DNS 伺服器上：在 [**開始**] 畫面上，輸入**dnsmgmt.msc**，然後按 enter。  
   
@@ -265,7 +265,7 @@ DirectAccess 伺服器和所有 DirectAccess 用戶端上都必須有電腦憑�
   
 ![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -286,7 +286,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
     「內部網站自動通道定址通訊協定」(ISATAP) 會使用通道讓 DirectAccess 用戶端透過 IPv4 網際網路 (將 IPv6 封包封裝在 IPv4 標頭內) 連線到 DirectAccess 伺服器。 「遠端存取」會使用它，透過內部網路提供對 ISATAP 主機的 IPv6 連線能力。 在非原生 IPv6 網路環境中，DirectAccess 伺服器會自動將自己設定為 ISATAP 路由器。 需要 ISATAP 名稱的解析支援。  
   
-## <a name="ConfigAD"></a>1.7 設定 Active Directory  
+## <a name="17-configure-active-directory"></a><a name="ConfigAD"></a>1.7 設定 Active Directory  
 DirectAccess 伺服器和所有 DirectAccess 用戶端電腦都必須加入 Active Directory 網域。 DirectAccess 用戶端電腦必須是下列其中一種網域類型的成員：  
   
 -   與 DirectAccess 伺服器屬於相同樹系的網域。  
@@ -337,7 +337,7 @@ DirectAccess 伺服器和所有 DirectAccess 用戶端電腦都必須加入 Acti
   
 ![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 > [!NOTE]  
 > 當您輸入下列 **Add-Computer** 命令時，您必須提供網域認證。  
@@ -347,14 +347,14 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>1.8 設定 Gpo  
+## <a name="18-configure-gpos"></a><a name="ConfigGPOs"></a>1.8 設定 Gpo  
 若要部署遠端存取，至少需要兩個群組原則物件：  
   
 -   一個包含 DirectAccess 伺服器的設定  
   
 -   一個包含 DirectAccess 用戶端電腦的設定  
   
-當您設定「遠端存取」時，嚮導會自動建立必要的群組原則物件。 不過，如果您的組織有強制執行命名慣例，您可以在 [遠端存取管理主控台] 的 [GPO] 對話方塊中輸入名稱。 如需詳細資訊，請參閱2.7。 設定摘要和替代 Gpo。 如果您已經建立權限，GPO 也將被建立。 如果您沒有可建立 GPO 的必要權限，則必須先建立這些權限，再設定「遠端存取」。  
+當您設定「遠端存取」時，嚮導會自動建立必要的群組原則物件。 不過，如果您的組織有強制執行命名慣例，您可以在 [遠端存取管理主控台] 的 [GPO] 對話方塊中輸入名稱。 如需詳細資訊，請參閱 2.7. 設定摘要和替代 GPO。 如果您已經建立權限，GPO 也將被建立。 如果您沒有可建立 GPO 的必要權限，則必須先建立這些權限，再設定「遠端存取」。  
   
 若要建立群組原則物件，請參閱[建立和編輯群組原則物件](https://technet.microsoft.com/library/cc754740.aspx)。  
   
@@ -372,7 +372,7 @@ Restart-Computer
 ### <a name="181-configure-remote-access-gpos-with-limited-permissions"></a>1.8.1 使用有限的權限設定遠端存取 GPO  
 在使用暫時與實際執行 GPO 的部署中，網域系統管理員應執行下列動作：  
   
-1.  從「遠端存取」系統管理員取得「遠端存取」部署所需的 GPO 清單。 如需詳細資訊，請參閱1.8 方案群組原則物件。  
+1.  從「遠端存取」系統管理員取得「遠端存取」部署所需的 GPO 清單。 如需詳細資訊，請參閱1.8 規劃群組原則物件。  
   
 2.  為「遠端存取」系統管理員要求的每一個 GPO ，建立一對具有不同名稱的 GPO。 第一個會用來做為暫存 GPO，第二個會用來做為實際執行 GPO。  
   
@@ -426,7 +426,7 @@ Restart-Computer
   
 ![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 -   若要將網域 "corp.contoso.com" 中的預備用戶端 GPO "DirectAccess Client Settings-預備" 備份到備份檔案夾 "C:\Backups\"：  
   
@@ -452,10 +452,10 @@ Restart-Computer
     Import-GPO "BackupId $backup.Id "Path $backup.BackupDirectory "TargetName 'DirectAccess Client Settings - Production' "Domain 'corp.contoso.com'  
     ```  
   
-## <a name="ConfigSGs"></a>1.9 設定安全性群組  
+## <a name="19-configure-security-groups"></a><a name="ConfigSGs"></a>1.9 設定安全性群組  
 用戶端電腦中包含的 DirectAccess 設定群組原則物件，只會套用到您在設定遠端存取時所指定之安全性群組的成員電腦。 此外，如果您使用安全性群組來管理應用程式伺服器，請為這些伺服器建立安全性群組。  
   
-### <a name="Sec_Group"></a>建立 DirectAccess 用戶端的安全性群組  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>建立 DirectAccess 用戶端的安全性群組  
   
 1.  在 [**開始**] 畫面上，輸入**dsa.msc**，然後按 enter。 在 [Active Directory 使用者和電腦] 主控台的左窗格中，展開將包含安全性群組的網域，在 [使用者] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [群組]。  
   
@@ -471,14 +471,14 @@ Restart-Computer
   
 ![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="ConfigNLS"></a>1.10 設定網路位置伺服器  
+## <a name="110-configure-the-network-location-server"></a><a name="ConfigNLS"></a>1.10 設定網路位置伺服器  
 網路位置伺服器應該是具有高可用性的伺服器，而且應該要有 DirectAccess 用戶端信任的有效 SSL 憑證。 有兩種網路位置伺服器憑證的憑證選項：  
   
 -   **私人憑證**  
@@ -511,7 +511,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 5.  在 [憑證] 上按一下滑鼠右鍵，指向 [所有工作]，然後按一下 [要求新憑證]。  
   
-6.  按兩次 [下一步] 。  
+6.  按兩次 [下一步]。  
   
 7.  在 [**要求憑證**] 頁面上，選取您依照1.5.2 設定憑證範本中的指示所建立之憑證範本的核取方塊。 視需要按一下 [需要更多資訊才能註冊此憑證]。  
   
@@ -553,7 +553,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 4.  確定內部網路上的 DirectAccess 用戶端可以解析網路位置伺服器的名稱。 確定網際網路上的 DirectAccess 用戶端無法解析該名稱。  
   
-## <a name="BKMK_Links"></a>下一步  
+## <a name="next-step"></a><a name="BKMK_Links"></a>下一步  
   
 -   [步驟2：設定 Advanced DirectAccess 伺服器](da-adv-configure-s2-servers.md)  
   

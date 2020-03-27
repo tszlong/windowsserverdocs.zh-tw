@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2175cf9c740d7b727ba017922a77c94d4379c891
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b2fa8ff6742dc393a5a2cc962c7f849049b5ef31
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355283"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312425"
 ---
 # <a name="edit-a-dns-zone"></a>編輯 DNS 區域
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來編輯 IPAM 用戶端主控台中的 DNS 區域。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71355283"
   
     ![編輯 DNS 區域](../../media/Edit-a-DNS-Zone/ipam_EditZone_02.jpg)  
   
-6.  [**編輯 DNS 區域**] 對話方塊隨即開啟，並已選取 [**一般**] 頁面。 如有需要，請編輯一般區域屬性：[ **DNS 伺服器**]、[**區域類別**] 和 [**區欄位型別**]，**然後按一下**[套用]，如果您的編輯完成，請按 **[確定]** 。  
+6.  [**編輯 DNS 區域**] 對話方塊隨即開啟，並已選取 [**一般**] 頁面。 如有需要，請編輯 [一般區域內容]： [ **DNS 伺服器**]、[**區域類別**] 和 [**區欄位型別**]，**然後按一下 [** 套用]，或者如果您的編輯完成，請按 **[確定]** 。  
   
     ![編輯區域屬性並儲存](../../media/Edit-a-DNS-Zone/ipam_EditZone_03a.jpg)  
   
@@ -57,7 +57,7 @@ ms.locfileid: "71355283"
   
     ![編輯 advanced zone properties](../../media/Edit-a-DNS-Zone/ipam_EditZone_04a.jpg)  
   
-8.  如有需要，請選取其他區域屬性頁面名稱（名稱伺服器、SOA、區域轉送）、進行編輯，然後按一下 [套用 **] 或 [確定]** 。 若要檢查您所有的區域編輯，請按一下 [**摘要**]，然後按一下 **[確定]** 。  
+8.  如有需要，請選取其他區域屬性頁面名稱（名稱伺服器、SOA、區域轉送）、進行編輯，然後按一下**Apply** [套用 **] 或 [確定]** 。 若要檢查您所有的區域編輯，請按一下 [**摘要**]，然後按一下 **[確定]** 。  
   
 ## <a name="see-also"></a>另請參閱  
 [DNS 區域管理](DNS-Zone-Management.md)  

@@ -3,7 +3,7 @@ title: 管理 Windows Server Essentials 中的伺服器資料夾
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0c46d19f4f172786e0ffe7f3b9dd7ac1d8f4fcf0
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ba5dd5e5978687c9d80a6d34e5e622aaa37c4b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322230"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311127"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的伺服器資料夾
 
@@ -39,7 +39,7 @@ ms.locfileid: "79322230"
   
 -   [瞭解陰影複製](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_Shadow)  
   
-##  <a name="BKMK_2"></a>使用儀表板管理伺服器資料夾  
+##  <a name="manage-server-folders-using-the-dashboard"></a><a name="BKMK_2"></a>使用儀表板管理伺服器資料夾  
  Windows Server Essentials 可讓您使用 [儀表板] 來執行一般系統管理工作。 [儀表板] 的 [伺服器資料夾] 頁面提供下列各項：  
   
 - 一份伺服器資料夾清單，當中顯示：  
@@ -72,7 +72,7 @@ ms.locfileid: "79322230"
 |新增資料夾|會協助您建立新的伺服器資料夾，以及指派針對每個使用者帳戶允許的存取層級。|  
 |了解伺服器資料夾|會開啟網際網路上的說明主題，當中說明伺服器資料夾的使用方式和功能。|  
   
-##  <a name="BKMK_1"></a>管理伺服器資料夾的存取權  
+##  <a name="manage-access-to-server-folders"></a><a name="BKMK_1"></a>管理伺服器資料夾的存取權  
  Windows Server Essentials 可讓您藉由使用伺服器資料夾，將用戶端電腦上的檔案儲存在一個集中位置。 將您的檔案儲存在伺服器資料夾中，可確保那些檔案是位於一個永遠都能從每個用戶端安全存取的位置。  
   
  使用伺服器資料夾來儲存您的檔案可讓您：  
@@ -105,7 +105,7 @@ ms.locfileid: "79322230"
   
 -   [View 或 modify server 資料夾屬性](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_10)  
   
-###  <a name="BKMK_Hide"></a>隱藏伺服器資料夾  
+###  <a name="hide-server-folders"></a><a name="BKMK_Hide"></a>隱藏伺服器資料夾  
  如果您是網路系統管理員，您可以選擇隱藏任何這些伺服器資料夾，防止它們在「遠端 Web 存取」網站或「Web 服務」應用程式 (例如 My Server) 上顯示。  
   
 > [!NOTE]
@@ -123,7 +123,7 @@ ms.locfileid: "79322230"
   
 5.  在 **< 資料夾名\> 屬性** 中，按一下 **共用**，選取 **從遠端 Web 存取和 Web 服務應用程式隱藏此資料夾**，**然後按一下** 套用。  
   
-###  <a name="BKMK_Perms"></a>設定伺服器資料夾的許可權  
+###  <a name="set-permissions-to-server-folders"></a><a name="BKMK_Perms"></a>設定伺服器資料夾的許可權  
  對於您使用 [儀表板] 在伺服器上新增的任何其他伺服器資料夾，您可以為其選擇三種不同的存取設定：  
   
 -   **讀取/寫入**  
@@ -162,7 +162,7 @@ ms.locfileid: "79322230"
 > [!NOTE]
 >  您無法修改 [檔案歷程記錄備份]、[資料夾重新導向] 及 [使用者] 伺服器資料夾的共用權限。 因此，這些伺服器資料夾的資料夾內容也就沒有包含 [共用] 索引標籤。  
   
-###  <a name="BKMK_10"></a>View 或 modify server 資料夾屬性  
+###  <a name="view-or-modify-server-folder-properties"></a><a name="BKMK_10"></a>View 或 modify server 資料夾屬性  
  您可以修改伺服器資料夾名稱、其描述，以及定義哪些使用者帳戶可以透過 [儀表板] 之 [伺服器資料夾] 索引標籤上的 [檢視資料夾內容] 工作存取伺服器資料夾。  
   
 > [!NOTE]
@@ -183,7 +183,7 @@ ms.locfileid: "79322230"
     > [!NOTE]
     >  在 Windows Server Essentials 和已安裝「Windows Server Essentials 體驗」角色的 Windows Server 2012 R2 中，您也可以修改資料夾配額，以在伺服器資料夾達到指定的大小時提供警告訊息。  
   
-##  <a name="BKMK_5"></a>新增或移動伺服器資料夾  
+##  <a name="add-or-move-a-server-folder"></a><a name="BKMK_5"></a>新增或移動伺服器資料夾  
  除了在安裝期間建立的預設伺服器資料夾之外，您也可以在伺服器上**新增更多伺服器資料夾**來儲存您的檔案。 您可以在執行 Windows Server Essentials 的主要伺服器或成員伺服器上新增伺服器資料夾。  
   
  您可以視需要使用**移動資料夾精靈**，將位於執行 Windows Server Essentials 之主要伺服器上並顯示在 [儀表板] 之 [伺服器資料夾] 索引標籤上的伺服器資料夾移動到另一個硬碟。 在下列情況下，您可以將伺服器資料夾移到另一個硬碟位置位址：  
@@ -226,7 +226,7 @@ ms.locfileid: "79322230"
   
 - 配額  
   
-###  <a name="BKMK_6"></a>要在何處新增或移動伺服器資料夾  
+###  <a name="where-to-add-or-move-a-server-folder"></a><a name="BKMK_6"></a>要在何處新增或移動伺服器資料夾  
  一般而言，您應該將伺服器資料夾新增或移到擁有最大可用空間的硬碟上。 儘可能避免將共用資料夾新增或移到系統磁碟機 (例如 C:) 上，因為這可能會佔用作業系統及其更新所需的必要磁碟機空間。 此外，也請避免將伺服器資料夾新增或移到外接式硬碟上，因為這些硬碟可被輕易地中斷連線，而導致您可能無法存取您的檔案。 取而代之的是，我們建議您在內部磁碟機上建立資料夾。  
   
  伺服器資料夾無法被新增或移到下列位置，如果選取任何這些位置來進行新增或移動，將會導致發生錯誤：  
@@ -278,7 +278,7 @@ ms.locfileid: "79322230"
   
 5.  遵循指示以完成精靈。  
   
-##  <a name="BKMK_9"></a>新增遺失的伺服器資料夾  
+##  <a name="add-a-missing-server-folder"></a><a name="BKMK_9"></a>新增遺失的伺服器資料夾  
  當伺服器偵測到預先定義的伺服器資料夾時？公司、使用者、用戶端電腦備份、「檔案歷程記錄備份」或「資料夾重新導向」已不再共用（基於某些原因或另一個），會產生警示以引導使用者解決此問題。 建議您從伺服器備份嘗試還原資料夾。 不過，如果尚未備份伺服器，則請選取遺失的資料夾，然後按一下 [重建遺失的資料夾] 來重新設定伺服器資料夾的位置。  
   
 > [!NOTE]
@@ -288,10 +288,10 @@ ms.locfileid: "79322230"
   
  如需有關從伺服器備份還原檔案的詳細資訊，請參閱[管理備份和還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)主題中的深入瞭解還原檔案和資料夾一節。  
   
-##  <a name="BKMK_11"></a>瞭解共用資料夾  
+##  <a name="understand-shared-folders"></a><a name="BKMK_11"></a>瞭解共用資料夾  
  有數種不同的方式可供您從連線到伺服器的裝置存取您在 Windows Server Essentials 上的共用資料夾。 如需詳細資訊，請參閱[使用共用資料夾](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)主題。  
   
-##  <a name="BKMK_Shadow"></a>瞭解陰影複製  
+##  <a name="understand-shadow-copies"></a><a name="BKMK_Shadow"></a>瞭解陰影複製  
  使用伺服器「陰影複製」，使用者便可以檢視存在於過去時間點的共用檔案和資料夾。 存取先前版本的檔案或陰影複製是非常有用的，因為使用者可以：  
   
 1. **復原意外刪除的檔案**。 如果您意外刪除了檔案，可以開啟先前版本，然後將它複製到安全的位置。  

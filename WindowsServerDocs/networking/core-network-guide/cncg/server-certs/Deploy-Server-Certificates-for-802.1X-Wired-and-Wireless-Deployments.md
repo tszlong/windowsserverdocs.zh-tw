@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0dce886555167ad651704045120fb92eff0dcea1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0636fc321b4e94351628fd577526a8e81b4fc4cf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356183"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318315"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>部署 802.1 X 有線和無線部署的伺服器憑證
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本指南，將伺服器憑證部署至您的遠端存取和網路原則伺服器（NPS）基礎結構伺服器。   
 
@@ -58,10 +58,10 @@ ms.locfileid: "71356183"
 - 每個伺服器憑證都包含「伺服器驗證」目的和「用戶端驗證」目的，以增強金鑰使用方法（EKU）延伸。  
 - 延展性。 使用本指南部署您的企業根 CA 之後，您可以藉由新增企業次級 Ca 來擴充您的公開金鑰基礎結構（PKI）。  
 - 管理性。 您可以使用 AD CS 主控台，或使用 Windows PowerShell 命令和腳本來管理 AD CS。  
-- 簡單。 您可以使用 Active Directory 群組帳戶和群組成員資格，指定用來註冊伺服器憑證的伺服器。   
+- 簡單： 您可以使用 Active Directory 群組帳戶和群組成員資格，指定用來註冊伺服器憑證的伺服器。   
 - 當您部署伺服器憑證時，憑證是以您使用本指南中的指示進行設定的範本為基礎。 這表示您可以針對特定伺服器類型自訂不同的憑證範本，也可以針對您要發出的所有伺服器憑證使用相同的範本。  
 
-## <a name="bkmk_pre"></a>使用本指南的必要條件  
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>使用本指南的必要條件  
 
 本指南提供如何使用 AD CS 和 Windows Server 2016 中的網頁伺服器（IIS）伺服器角色來部署伺服器憑證的指示。 以下是執行本指南中程式的必要條件。  
 
@@ -71,15 +71,15 @@ ms.locfileid: "71356183"
 
 - 您必須閱讀本指南的規劃一節，以確保您在執行部署之前已準備好進行這項部署。  
 - 您必須依照其呈現順序來執行本指南中的步驟。 請不要繼續進行並部署您的 CA，而不需執行導致部署伺服器的步驟，否則您的部署將會失敗。  
-- 您必須準備好在您的網路上部署兩部新的伺服器-一台伺服器，您會將 AD CS 安裝為企業根 CA，而一個伺服器則會安裝網頁伺服器（IIS），讓您的 CA 可以將憑證撤銷清單（CRL）發佈到 Web se伺服器.   
+- 您必須準備好在您的網路上部署兩部新的伺服器-一台伺服器，您會將 AD CS 安裝為企業根 CA，而一個伺服器則會安裝網頁伺服器（IIS），讓您的 CA 可以將憑證撤銷清單（CRL）發佈到 Web伺服器.   
 
 >[!NOTE]  
 >您已準備好要將靜態 IP 位址指派給您使用本指南部署的 Web 和 AD CS 伺服器，以及根據組織的命名慣例來命名電腦。 此外，您必須將電腦加入您的網域。  
 
-## <a name="bkmk_not"></a>本指南未提供的內容  
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>本指南未提供的內容  
 本指南不提供使用 AD CS 設計和部署公開金鑰基礎結構（PKI）的完整指示。 建議您先參閱 AD CS 檔和 PKI 設計檔，再部署本指南中的技術。   
 
-## <a name="bkmk_tech"></a>技術概覽  
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>技術概覽  
 以下是 AD CS 和網頁伺服器（IIS）的技術概覽。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 憑證服務  

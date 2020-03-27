@@ -1,9 +1,9 @@
 ---
 title: 安裝 Windows Server Essentials
-description: 描述如何安裝和自訂 Windows Server Essentials
+description: 說明如何安裝和自訂 Windows Server Essentials
 ms.custom: na
 ms.date: 01/02/2017
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,34 +12,34 @@ ms.assetid: fdf020cd-3184-4886-9f9d-7d729a89057e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 29f861b6d6f115dc1a1d2cab3ae04f566da90d8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51c61c22c2d9972e4a7e98509292b38e6443ddc8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879829"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311729"
 ---
 # <a name="install-windows-server-essentials"></a>安裝 Windows Server Essentials
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-下列文件提供安裝和設定 Windows Server Essentials 和 Windows Server Essentials，包括安裝前工作和系統需求的相關資訊的逐步指示。   
+下列檔提供安裝和設定 Windows Server Essentials 和 Windows Server Essentials 的逐步指示，包括預先安裝工作和系統需求的相關資訊。   
   
--   [安裝 Windows Server Essentials 之前](Before-You-Install-Windows-Server-Essentials.md)  
+-   [在您安裝 Windows Server Essentials 之前](Before-You-Install-Windows-Server-Essentials.md)  
   
--   [適用於 Windows Server Essentials 的系統需求](../get-started/system-requirements.md)  
+-   [Windows Server Essentials 系統需求](../get-started/system-requirements.md)  
   
--   [適用於 Windows Server Essentials 的發行文件](../get-started/release-notes.md)  
+-   [Windows Server Essentials 的發行檔](../get-started/release-notes.md)  
   
 -   [安裝和設定 Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md)  
   
--   [託管的 Windows Server Essentials](Hosted-Windows-Server-Essentials.md)  
+-   [裝載的 Windows Server Essentials](Hosted-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials-評定及部署套件](Assessment-and-Deployment-Kit-for-Windows-Server-Essentials.md)  
  
--   [部署 Windows Server Essentials 體驗為託管伺服器](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md)  
+-   [部署 Windows Server Essentials 體驗做為託管伺服器](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md)  
   
--   [新增 Windows Server Essentials 為成員伺服器](Add-Windows-Server-Essentials-as-a-Member-Server.md)  
+-   [新增 Windows Server Essentials 做為成員伺服器](Add-Windows-Server-Essentials-as-a-Member-Server.md)  
   
 -   [在 Windows Azure 虛擬機器上裝載 Windows Server Essentials 體驗](https://msdn.microsoft.com/library/dn520828.aspx) (MSDN)  
   
@@ -57,7 +57,7 @@ ms.locfileid: "59879829"
 ## <a name="see-also"></a>另請參閱  
     
   
--   [將伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
+-   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   

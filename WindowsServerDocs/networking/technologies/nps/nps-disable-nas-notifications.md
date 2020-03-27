@@ -6,22 +6,22 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a09bfb03-95fc-4534-bf3c-97078ef6b07e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b8ae0ab02a5c14675d543087f635d53ee63e0423
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd56dfd4db9dd41c98141e2239efcca544a364fe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396248"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316162"
 ---
 # <a name="disable-nas-notification-forwarding-in-nps"></a>停用 NPS 中的 NAS 通知轉送
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用此程式來停用從網路存取伺服器（Nas）轉送啟動和停止訊息到 NPS 中設定的遠端 RADIUS 伺服器群組的成員。
 
-當您設定遠端 RADIUS 伺服器群組，並在 NPS 連線**要求原則**中，清除 [將**要求轉寄到此遠端 RADIUS 伺服器群組**] 核取方塊時，這些群組仍會傳送至 NAS 啟動和停止通知訊息. 
+當您設定遠端 RADIUS 伺服器群組，而且在 NPS 連線**要求原則**中，您清除 [將**要求轉寄到此遠端 RADIUS 伺服器群組**] 核取方塊時，這些群組仍會傳送至 NAS 啟動和停止通知訊息。 
 
 這會產生不必要的網路流量。 若要排除此流量，請停用每個遠端 RADIUS 伺服器群組中個別伺服器的 NAS 通知轉送。
 

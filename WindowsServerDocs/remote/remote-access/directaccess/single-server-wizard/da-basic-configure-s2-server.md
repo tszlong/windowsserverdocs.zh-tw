@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a21e5799824c968b29c719585ca16b6b45a9ef37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6faa40428df424f60637fb206641d8bae2774c79
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404918"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308938"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>步驟2設定基本 DirectAccess 伺服器
 
@@ -32,9 +32,9 @@ ms.locfileid: "71404918"
 |更新用戶端的 DirectAccess 設定|如果想收到 DirectAccess 設定，用戶端必須在連接內部網路的時候更新群組原則。|  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Role"></a>安裝遠端存取角色  
+## <a name="install-the-remote-access-role"></a><a name="BKMK_Role"></a>安裝遠端存取角色  
 若要部署「遠端存取」，您必須在將組織中將做為「遠端存取」伺服器的伺服器上安裝「遠端存取」角色。  
   
 #### <a name="to-install-the-remote-access-role"></a>安裝「遠端存取」角色  
@@ -51,7 +51,7 @@ ms.locfileid: "71404918"
   
 6.  按一下 [**新增功能**]，按 **[下一步]** ，然後按一下 [**安裝**]。  
   
-7.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+7.  在 [安裝進度] 對話方塊上，驗證安裝是否成功，然後按一下 [關閉]。  
   
 ![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
@@ -90,7 +90,7 @@ ms.locfileid: "71404918"
   
 3.  按一下 [僅部署 DirectAccess]。  
   
-4.  選取網路設定拓樸，然後輸入遠端存取用戶端會連接的公用名稱。 按一下 **\[下一步\]** 。  
+4.  選取網路設定拓樸，然後輸入遠端存取用戶端會連接的公用名稱。 按 [下一步]。  
   
     > [!NOTE]  
     > 根據預設值，開始使用精靈會將 WMI 篩選器套用至用戶端設定 GPO，進而將 DirectAccess 部署至網域內的所有膝上型或筆記型電腦。  
@@ -119,7 +119,7 @@ ms.locfileid: "71404918"
   
 6.  輸入 **Get-DAConnectionStatus**，然後按 **ENTER** 鍵 因為用戶端可以連線網路位置伺服器 URL，所以狀態會顯示成 [本機連線]。  
   
-## <a name="BKMK_Links"></a>上一個步驟  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>上一個步驟  
   
 -   [步驟1：設定 DirectAccess 基礎結構](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   

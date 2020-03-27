@@ -6,26 +6,26 @@ ms.topic: article
 ms.assetid: ca5c3e04-ae25-4590-97f3-0376a9c2a9a2
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d4b713437f031e4a381d2759bdcbf7f41bd573d5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 63cc9e3b347635aaf631169b887b0e4c0dd9e989
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406348"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318237"
 ---
 # <a name="server-certificate-deployment-overview"></a>伺服器憑證部署概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-本主題涵蓋下列各節。  
+本主題包含下列各節。  
   
 -   [伺服器憑證部署元件](#bkmk_components)
   
 -   [伺服器憑證部署程式總覽](#bkmk_process)
   
-## <a name="bkmk_components"></a>伺服器憑證部署元件
+## <a name="server-certificate-deployment-components"></a><a name="bkmk_components"></a>伺服器憑證部署元件
 您可以使用本指南，將 Active Directory 憑證服務（AD CS）安裝為企業根憑證授權單位（CA），並向執行網路原則伺服器（NPS）、路由及遠端存取服務（RRAS）的伺服器註冊伺服器憑證。或 NPS 和 RRAS。
 
 
@@ -36,7 +36,7 @@ ms.locfileid: "71406348"
 ![伺服器憑證部署所需的基礎結構](../../../media/Nps-Certs/Nps-Certs.jpg)  
   
 > [!NOTE]  
-> 在上圖中，會說明多部伺服器：DC1、CA1、WEB1，以及許多 SDN 伺服器。 本指南提供部署和設定 CA1 和 WEB1，以及設定 DC1 的指示，本指南假設您已在網路上安裝。 如果您尚未安裝 Active Directory 網域，可以使用 Windows Server 2016 的[核心網路指南](https://technet.microsoft.com/library/mt604042.aspx)來執行此動作。  
+> 在上圖中，會描述多部伺服器： DC1、CA1、WEB1 和許多 SDN 伺服器。 本指南提供部署和設定 CA1 和 WEB1，以及設定 DC1 的指示，本指南假設您已在網路上安裝。 如果您尚未安裝 Active Directory 網域，可以使用 Windows Server 2016 的[核心網路指南](https://technet.microsoft.com/library/mt604042.aspx)來執行此動作。  
   
 如需有關上圖中所描述之每個專案的詳細資訊，請參閱下列各項：  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71406348"
   
 -   [NPS1](#bkmk_nps1)  
   
-### <a name="bkmk_ca1"></a>執行 AD CS 伺服器角色的 CA1  
+### <a name="ca1-running-the-ad-cs-server-role"></a><a name="bkmk_ca1"></a>執行 AD CS 伺服器角色的 CA1  
 在此案例中，企業根憑證授權單位（CA）也是發行 CA。 CA 會將憑證頒發給具有正確安全性許可權的伺服器電腦，以註冊憑證。 Active Directory 憑證服務（AD CS）安裝在 CA1 上。  
   
 對於較大的網路或安全性考慮提供理由，您可以區隔根 CA 和發行 CA 的角色，以及部署發行 Ca 的次級 Ca。  
@@ -66,13 +66,13 @@ ms.locfileid: "71406348"
 #### <a name="additional-ca1-configuration"></a>其他 CA1 設定  
 CA 會發佈憑證撤銷清單（CRL），而電腦必須檢查這些憑證，以確保出示給他們身分識別證明的憑證是有效的憑證，而且尚未被撤銷。 您必須使用 CRL 的正確位置來設定您的 CA，讓電腦知道在驗證過程中要尋找 CRL 的位置。  
   
-### <a name="bkmk_web1"></a>執行 Web 服務（IIS）伺服器角色的 WEB1  
+### <a name="web1-running-the-web-services-iis-server-role"></a><a name="bkmk_web1"></a>執行 Web 服務（IIS）伺服器角色的 WEB1  
 在執行網頁伺服器（IIS）伺服器角色的電腦上，WEB1，您必須在 Windows Explorer 中建立資料夾，以作為 CRL 和 AIA 的位置。  
   
 #### <a name="virtual-directory-for-the-crl-and-aia"></a>CRL 和 AIA 的虛擬目錄  
 在 Windows Explorer 中建立資料夾之後，您必須在 [Internet Information Services （IIS）管理員] 中將資料夾設定為虛擬目錄，以及為虛擬目錄設定存取控制清單，以允許電腦存取 AIA 和 CRL在該處發佈之後。  
   
-### <a name="bkmk_dc1"></a>DC1 執行 AD DS 和 DNS 伺服器角色  
+### <a name="dc1-running-the-ad-ds-and-dns-server-roles"></a><a name="bkmk_dc1"></a>DC1 執行 AD DS 和 DNS 伺服器角色  
 DC1 是您網路上的網域控制站和 DNS 伺服器。  
   
 #### <a name="group-policy-default-domain-policy"></a>群組原則預設網域原則  
@@ -81,13 +81,13 @@ DC1 是您網路上的網域控制站和 DNS 伺服器。
 #### <a name="dns-alias-cname-resource-record"></a>DNS 別名（CNAME）資源記錄  
 您必須建立網頁伺服器的別名（CNAME）資源記錄，以確保其他電腦可以找到伺服器，以及伺服器上儲存的 AIA 和 CRL。 此外，使用別名 CNAME 資源記錄可提供彈性，讓您可以針對其他用途（例如，裝載 Web 和 FTP 網站）使用網頁伺服器。  
   
-### <a name="bkmk_nps1"></a>NPS1 執行網路原則與存取服務伺服器角色的網路原則伺服器角色服務  
+### <a name="nps1-running-the-network-policy-server-role-service-of-the-network-policy-and-access-services-server-role"></a><a name="bkmk_nps1"></a>NPS1 執行網路原則與存取服務伺服器角色的網路原則伺服器角色服務  
 NPS 會在您執行 Windows Server 2016 核心網路指南中的工作時安裝，因此在您執行本指南中的工作之前，您的網路上應該已安裝一或多個 Nps。  
   
 #### <a name="group-policy-applied-and-certificate-enrolled-to-servers"></a>群組原則已套用並已向伺服器註冊憑證  
 設定憑證範本和自動註冊之後，您可以重新整理所有目標伺服器上的群組原則。 此時，伺服器會從 CA1 註冊伺服器憑證。  
   
-### <a name="bkmk_process"></a>伺服器憑證部署程式總覽  
+### <a name="server-certificate-deployment-process-overview"></a><a name="bkmk_process"></a>伺服器憑證部署程式總覽  
   
 > [!NOTE]  
 > [伺服器憑證部署](../../../core-network-guide/cncg/server-certs/Server-Certificate-Deployment.md)一節中會提供如何執行這些步驟的詳細資料。  

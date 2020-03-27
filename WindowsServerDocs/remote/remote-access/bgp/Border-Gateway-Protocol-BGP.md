@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ae6fddce1564e44ad72a5630c6abb16cdb6735d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3e04c732cbacb182731717215a4cf99cf3cc1f76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388976"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309295"
 ---
 # <a name="border-gateway-protocol-bgp"></a>邊界閘道通訊協定 (BGP)
 
@@ -61,7 +61,7 @@ Enable-RemoteAccessRoutingDomain -Name $Contoso_RoutingDomain -Type All -PassThr
 Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassThru  
 ```  
   
-## <a name="bkmk_top"></a>BGP 支援的部署拓撲  
+## <a name="bgp-supported-deployment-topologies"></a><a name="bkmk_top"></a>BGP 支援的部署拓撲  
 以下列出企業網站連接到雲端服務提供者 (CSP) 的資料中心支援的部署拓撲。  
   
 在所有案例中，CSP 閘道是邊緣的 Windows Server 2016 RAS 閘道。 RAS 閘道能夠處理來自多個租使用者的多個連線，這是由 Hyper-v 主機和實際設定為閘道的 VM 所組成。 此邊緣閘道是設定為使用站台對站台 VPN 連線做為多租用戶 BGP 路由器，以交換企業和 CSP 子網路路由。  
@@ -80,7 +80,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 下列各節包含每個支援的 BGP 拓撲的其他資訊。  
   
-### <a name="bkmk_top1"></a>在企業網站邊緣具有 BGP 的 RAS VPN 站對站閘道  
+### <a name="ras-vpn-site-to-site-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top1"></a>在企業網站邊緣具有 BGP 的 RAS VPN 站對站閘道  
 此拓撲描述連接至 CSP 的企業網站。 企業路由拓撲包含內部路由器、針對與 CSP 的 VPN 站對站連線設定的 Windows Server 2016 RAS 閘道，以及邊緣防火牆裝置。 RAS 閘道會終止 S2S VPN 和 BGP 連線。  
   
 ![RAS VPN 站對站閘道](../../media/Border-Gateway-Protocol-BGP/bgp_01.jpg)  
@@ -97,7 +97,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
     -   邊緣裝置可以使用 BGP 設定為使用靜態路由或介面以選取通告的路由。 邊緣裝置也會將外部路由發佈至使用 IGP 的其他內部部署路由器。  
   
-### <a name="bkmk_top2"></a>在企業網站邊緣具有 BGP 的協力廠商閘道  
+### <a name="third-party-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top2"></a>在企業網站邊緣具有 BGP 的協力廠商閘道  
 此拓撲描述使用協力廠商邊緣路由器連線至 CSP 的企業網站。 邊緣路由器也可做為站台對站台 VPN 閘道。  
   
 ![協力廠商閘道與企業網站邊緣的 BGP](../../media/Border-Gateway-Protocol-BGP/bgp_02.jpg)  
@@ -108,7 +108,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 -   邊緣裝置會實作內部閘道通訊協定 (IGP)，並直接參與內部路由。  
   
-### <a name="bkmk_top3"></a>連接至 CSP 雲端資料中心的多個企業網站  
+### <a name="multiple-enterprise-sites-connecting-to-csp-cloud-datacenter"></a><a name="bkmk_top3"></a>連接至 CSP 雲端資料中心的多個企業網站  
 此拓撲描述使用協力廠商閘道連線至 CSP 的多個企業網站。 協力廠商邊緣裝置做為站台對站台 VPN 閘道和 BGP 路由器。  
   
 ![連接至 CSP 雲端資料中心的多個企業網站](../../media/Border-Gateway-Protocol-BGP/bgp_03.jpg)  
@@ -125,7 +125,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 如果企業網站1的 BGP 路由器無法與企業網站 2 BGP 路由器連線，因為連線已失敗，則 Site 1 BGP 路由器會動態開始學習從 CSP BGP 路由器到 Enterprise Site 2 網路的路由，而流量會順暢地透過 CSP 的 Windows Server BGP 路由器，從網站1重新路由至網站2。  
   
-### <a name="bkmk_top4"></a>BGP 和 VPN 的個別終止點  
+### <a name="separate-termination-points-for-bgp-and-vpn"></a><a name="bkmk_top4"></a>BGP 和 VPN 的個別終止點  
 此拓撲描述使用兩個不同的路由器做為 BGP 和站台對站台 VPN 端點的企業。 站對站 VPN 會在 Windows Server 2016 RAS 閘道上終止，而 BGP 則是在內部路由器上終止。 在連線的 CSP 端，CSP 會同時終止與 RAS 閘道的 VPN 和 BGP 連線。 使用這種設定，內部的協力廠商路由器硬體必須支援對 BGP 的 IGP 路由轉散發，以及對 IGP 路由的 BGP 轉散發。  
   
 ![區隔 BGP 和 VPN 的終止點](../../media/Border-Gateway-Protocol-BGP/bgp_04.jpg)  
@@ -144,7 +144,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 從現在開始，企業內部路由器和 CSP RAS 閘道會交換路由資訊。 而企業 RAS BGP 路由器會學習 CSP 路由和企業路由，以在網路之間實際路由封包。  
   
-## <a name="bkmk_features"></a>BGP 功能  
+## <a name="bgp-features"></a><a name="bkmk_features"></a>BGP 功能  
 以下是 RAS 閘道 BGP 路由器的功能。  
   
 **作為遠端存取角色服務的 BGP 路由**。 當您想要使用遠端存取作為 BGP LAN 路由器時，您現在可以安裝遠端存取服務器角色的**路由**角色服務，而不需要安裝**遠端存取服務（RAS）** 角色服務。  這會減少 BGP 路由器記憶體使用量，而且只會安裝動態 BGP 路由所需的元件。 只有當需要 BGP 路由器 VM，而且您不需要使用 DirectAccess 或 VPN 時，路由角色服務才會很有用。 此外，使用「遠端存取」作為具有 BGP 的 LAN 路由器，可提供您內部網路上 BGP 的動態路由優勢。  

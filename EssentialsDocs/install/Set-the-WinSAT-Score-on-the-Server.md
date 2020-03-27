@@ -1,9 +1,9 @@
 ---
 title: 在伺服器上設定 WinSAT 分數
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,25 +12,25 @@ ms.assetid: 911dc494-0f8f-4723-93d6-2106f914b906
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4e5ce037c7a8c802419cd980fc0272c4f687c6a6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 20aafa957bd49f6522bfef98a2f8626dc5aab9df
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433457"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311499"
 ---
 # <a name="set-the-winsat-score-on-the-server"></a>在伺服器上設定 WinSAT 分數
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-您應該執行 Windows Server Essentials 作業系統，以最佳化視訊串流解析度的伺服器設定 WinSAT CPU 分數。 建立並安裝含有 WinSAT 分數資訊的 .xml 檔案，即可達到此目的。  
+您應該為執行 Windows Server Essentials 作業系統的伺服器設定 WinSAT CPU 分數，以優化影片串流解析度。 建立並安裝含有 WinSAT 分數資訊的 .xml 檔案，即可達到此目的。  
   
 ## <a name="obtain-the-winsat-cpu-score"></a>取得 WinSAT CPU 分數  
  OPK 隨附一個名為 WinServerSAT.exe 的程式，這個程式會探索 WinSAT CPU 分數，並將該資訊放置在作業系統會讀取的 WinServerSAT.xml 檔案中。  
   
 #### <a name="to-obtain-the-winsat-cpu-score"></a>若要取得 WinSAT CPU 分數  
   
-1. 複製 Resources\WinServerSAT\\* 到參照電腦的 ADK 媒體中。  
+1. 將 ADK 媒體中的 Resources\WinServerSAT\\* 複製到參照電腦。  
   
 2. 在參照電腦上，開啟提高權限的命令提示字元視窗。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "66433457"
   
 4. 輸入以下命令，然後按 Enter。  
   
-    **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
+    **Winserversat.xml "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
   
    以下範例顯示已建立的 WinServerSAT.xml 檔案的 XML 內容。  
   

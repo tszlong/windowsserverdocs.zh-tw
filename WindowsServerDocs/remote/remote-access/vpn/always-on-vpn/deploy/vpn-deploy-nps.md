@@ -6,22 +6,22 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 5cb0d342afec9c28259efb7a2e15666358f3cb5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18fa85189b082a4a88a8a0bc0d6df11e21e7c97d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404252"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307692"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>步驟 4. 安裝和設定網路原則伺服器（NPS）
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**下一個**步驟 3。設定 Always On VPN 的遠端存取伺服器](vpn-deploy-ras.md)
-- [**下一個**步驟 5.設定 DNS 和防火牆設定](vpn-deploy-dns-firewall.md)
+- [**下一步：** 步驟3。設定 Always On VPN 的遠端存取服務器](vpn-deploy-ras.md)
+- [**下一步：** 步驟5。設定 DNS 和防火牆設定](vpn-deploy-dns-firewall.md)
 
 在此步驟中，您將安裝網路原則伺服器（NPS），以處理 VPN 伺服器所傳送的連線要求：
 
@@ -88,7 +88,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     
     [安裝進度] 頁面會在安裝過程中顯示狀態。 當程式完成時，會顯示「在*ComputerName*上安裝成功」訊息，其中*ComputerName*是您安裝網路原則伺服器的電腦名稱稱。
 
-13. 選取 **\[關閉\]** 。
+13. 選取 [關閉]。
 
 ## <a name="configure-nps"></a>設定 NPS
 
@@ -104,7 +104,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 2.  在 NPS 主控台中，以滑鼠右鍵按一下 [ **nps （本機）** ]，然後選取 [**在 Active Directory 中註冊伺服器**]。
    
-     [網路原則伺服器] 對話方塊隨即開啟。
+     此時會開啟 [網路原則伺服器] 對話方塊。
 
 3.  在 [網路原則伺服器] 對話方塊中，選取 **[確定]** 兩次。
 
@@ -114,11 +114,11 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 在此程式中，請使用下列其中一種記錄類型來設定網路原則伺服器帳戶處理：
 
-- **事件記錄**。 主要用於針對連線嘗試進行審核和疑難排解。 您可以在 NPS 主控台中取得 NPS 伺服器屬性來設定 NPS 事件記錄。
+- **事件記錄**。 主要用於稽核和疑難排解連線嘗試問題。 您可以在 NPS 主控台中取得 NPS 伺服器屬性來設定 NPS 事件記錄。
 
-- **將使用者驗證和帳戶處理要求記錄到本機**檔案。 主要用於連接分析和計費用途。 也可用來做為安全性調查工具，因為它提供了一種方法，讓您在攻擊之後追蹤惡意使用者的活動。 您可以使用 [帳戶處理] 設定向導來設定本機檔案記錄。
+- **將使用者驗證和帳戶處理要求記錄到本機**檔案。 主要用於連線分析及計費用途。 也可用來做為安全性調查工具，因為它提供了一種方法，讓您在攻擊之後追蹤惡意使用者的活動。 您可以使用 [帳戶處理] 設定向導來設定本機檔案記錄。
 
-- **將使用者驗證和帳戶處理要求記錄到 MICROSOFT SQL SERVER XML 相容的資料庫**。 用來允許多部執行 NPS 的伺服器擁有一個資料來源。 也提供使用關係資料庫的優點。 您可以使用 [帳戶處理] 設定向導來設定 SQL Server 記錄。
+- **將使用者驗證和帳戶處理要求記錄到 MICROSOFT SQL SERVER XML 相容的資料庫**。 用於允許執行 NPS 的多部伺服器擁有一個資料來源。 還可提供使用關聯式資料庫的優點。 您可以使用 [帳戶處理] 設定向導來設定 SQL Server 記錄。
 
 若要設定網路原則伺服器帳戶處理，請參閱[設定網路原則伺服器帳戶](../../../../../networking/technologies/nps/nps-accounting-configure.md)處理。
 
@@ -153,7 +153,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
     3. 在 [確認共用密碼] 中重新輸入共用密碼。
 
-7. 選取 [確定]。 VPN 伺服器會出現在 NPS 伺服器上設定的 RADIUS 用戶端清單中。
+7. 選取 **[確定]** 。 VPN 伺服器會出現在 NPS 伺服器上設定的 RADIUS 用戶端清單中。
 
 ## <a name="configure-nps-as-a-radius-for-vpn-connections"></a>將 NPS 設定為 VPN 連線的 RADIUS
 
@@ -171,7 +171,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 4. 在 [指定撥號或 VPN 伺服器] 的 [RADIUS 用戶端] 中，選取您在上一個步驟中新增的 VPN 伺服器名稱。 例如，如果您的 VPN 伺服器 NetBIOS 名稱是 RAS1，請選取 [ **RAS1**]。
 
-5. 選取 **\[下一步\]** 。
+5. 選取 [下一步]。
 
 6. 在 [設定驗證方法] 中，完成下列步驟：
 
@@ -179,27 +179,27 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
     2. 選取 [可延伸的**驗證通訊協定**] 核取方塊來選取它。
 
-    3. 在 類型 中（根據存取和網路設定的方法）， **選取 Microsoft：受保護的 EAP （** PEAP），然後選取 **設定**。
+    3. 在 [類型] 中（根據存取和網路設定的方法），選取 [ **Microsoft：受保護的 EAP （PEAP）** ]，然後選取 [**設定**]。
       
         [編輯受保護的 EAP 屬性] 對話方塊隨即開啟。
 
     4. 選取 [**移除**] 以移除受保護的密碼（EAP-MSCHAP V2） EAP 類型。
 
-    5. 選取 [**新增**]。 [新增 EAP] 對話方塊隨即開啟。
+    5. 選取 [新增]。 [新增 EAP] 對話方塊隨即開啟。
 
     6. 選取 [**智慧卡或其他憑證**]，然後選取 **[確定]** 。
 
     7. 選取 **[確定]** 以關閉 [編輯受保護的 EAP 屬性]。
 
-7. 選取 **\[下一步\]** 。
+7. 選取 [下一步]。
 
 8. 在 [指定使用者群組] 中，完成下列步驟：
 
-    1. 選取 [**新增**]。 [選取使用者、電腦、服務帳戶或群組] 對話方塊隨即開啟。
+    1. 選取 [新增]。 [選取使用者、電腦、服務帳戶或群組] 對話方塊隨即開啟。
 
     2. 輸入**VPN 使用者**，然後選取 **[確定]** 。
 
-    3. 選取 **\[下一步\]** 。
+    3. 選取 [下一步]。
 
 9. 在 [指定 IP 篩選器 **] 中選取 [下一步]** 。
 
@@ -228,4 +228,4 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 ## <a name="next-steps"></a>後續步驟
 
-[步驟 5.設定 Always On VPN](vpn-deploy-dns-firewall.md)的 DNS 和防火牆設定：在此步驟中，您會使用 Windows PowerShell 或伺服器管理員新增角色及功能嚮導 來安裝網路原則伺服器（NPS）。 您也可以設定 NPS，以處理從 VPN 伺服器接收的連線要求的所有驗證、授權和帳戶管理責任。
+[步驟5。設定 Always On VPN 的 DNS 和防火牆設定](vpn-deploy-dns-firewall.md)：在此步驟中，您會使用 Windows PowerShell 或伺服器管理員新增角色及功能嚮導來安裝網路原則伺服器（NPS）。 您也可以設定 NPS，以處理從 VPN 伺服器接收的連線要求的所有驗證、授權和帳戶管理責任。

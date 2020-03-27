@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f000066e-7cf8-4085-82a3-4f4fe1cb3c5c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fb7dca9a0f7875936cbb30cbc9c5e9e0a7473237
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 19a87762e19dd763376f50c7c5b04da3f2187874
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404635"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308357"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>步驟3：設定負載平衡叢集
 
@@ -41,27 +41,27 @@ ms.locfileid: "71404635"
 > [!NOTE]  
 > 請務必不要使用已存在於網路上另一部電腦上的 DIP。  
   
-## <a name="BKMK_Prefix"></a>3.1 設定 IPv6 首碼  
+## <a name="31-configure-the-ipv6-prefix"></a><a name="BKMK_Prefix"></a>3.1 設定 IPv6 首碼  
   
-### <a name="configDA"></a>設定前置詞  
+### <a name="to-configure-the-prefix"></a><a name="configDA"></a>設定前置詞  
   
-1.  在 [遠端存取] 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [遠端存取] 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台中，按一下 [設定]。  
   
 3.  在主控台中間窗格的 [**步驟 2 DirectAccess 伺服器**] 區域中，按一下 [**編輯**]。  
   
-4.  按一下 [**前置**詞設定]。 在 [**首碼**設定] 頁面的 [ **ipv6 首碼指派給 directaccess 用戶端電腦**] 中，輸入子網長度為59的 DirectAccess 用戶端電腦所使用的 ipv6 首碼，例如**2001： db8：1：1000：：/59**。 如果 VPN 也已啟用 IPv6，則會顯示 IPv6 首碼，而子網長度則需要變更為59。 按一下 **\[下一步\]** 。  
+4.  按一下 [**前置**詞設定]。 在 [**首碼**設定] 頁面的 [ **ipv6 首碼指派給 directaccess 用戶端電腦**] 中，輸入子網長度為59的 DirectAccess 用戶端電腦所使用的 ipv6 首碼，例如**2001： db8：1：1000：：/59**。 如果 VPN 也已啟用 IPv6，則會顯示 IPv6 首碼，而子網長度則需要變更為59。 按 [下一步]。  
   
 5.  在主控台中間窗格中，按一下 **[完成**]。  
   
 6.  在 [**遠端存取審核**] 對話方塊中，檢查設定，**然後按一下 [** 套用]。 在 [套用遠端存取安裝精靈設定] 對話方塊上，按一下 [關閉]。  
   
-## <a name="BKMK_NLB"></a>3.2 啟用負載平衡  
+## <a name="32-enable-load-balancing"></a><a name="BKMK_NLB"></a>3.2 啟用負載平衡  
   
 #### <a name="to-enable-load-balancing"></a>啟用負載平衡  
   
-1.  在設定的 DirectAccess 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在設定的 DirectAccess 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台的左窗格中，按一下 [設定]，**然後在 [工作]** 窗格中 **，按一下 [** **啟用負載平衡**]。  
   
@@ -102,7 +102,7 @@ ms.locfileid: "71404635"
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 如果您在規劃步驟中選擇使用 Windows NLB，請執行下列動作：  
   
@@ -119,12 +119,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
 > [!NOTE]  
 > 如果您使用的是暫存 Gpo，建議您不要將負載平衡器設定的變更包含在其他任何設定的變更中。 對於負載平衡器設定所做的任何變更都必須先套用，然後再進行其他設定變更。 此外，在新的 DirectAccess 伺服器上設定負載平衡器之後，請在您變更與新叢集相關的其他 DirectAccess 設定之前，允許一段時間，讓 IP 變更套用並複寫至企業中的所有 DNS 伺服器。  
   
-## <a name="BKMK_InstallIPHTTP"></a>3.3 安裝 IP-HTTPS 憑證  
-您至少必須有本機 **Administrators** 群組的成員資格或同等權限，才能完成此程序。  
+## <a name="33-install-the-ip-https-certificate"></a><a name="BKMK_InstallIPHTTP"></a>3.3 安裝 IP-HTTPS 憑證  
+具備本機 **Administrators** 群組的成員資格 (或權限相當者) 是完成此程序的最低必要條件。  
   
-### <a name="IPHTTPSCert"></a>安裝 IP-HTTPS 憑證  
+### <a name="to-install-the-ip-https-certificate"></a><a name="IPHTTPSCert"></a>安裝 IP-HTTPS 憑證  
   
-1.  在設定的遠端存取服務器上，按一下 [**開始**]，輸入**mmc** ，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在設定的遠端存取服務器上，按一下 [**開始**]，輸入**mmc** ，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
   
@@ -132,7 +132,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 4.  在主控台的左窗格中，流覽至 [**憑證（本機電腦）] \Personal\Certificates**。 以滑鼠右鍵按一下 [IP-HTTPS 憑證]，指向 [**所有**工作]，然後按一下 [**匯出**]。  
   
-5.  在 [**歡迎使用憑證匯出嚮導]** 頁面上，按 **[下一步]** 。  
+5.  在 [歡迎使用憑證匯出精靈] 頁面上，按 [下一步]。  
   
 6.  在 [匯出私密金鑰] 頁面上，按一下 [是，匯出私密金鑰]，然後按 [下一步]。  
   
@@ -148,7 +148,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 12. 將憑證複製到您想要成為叢集成員的所有伺服器。  
   
-13. 在新 DirectAccess 伺服器上，按一下 [**開始**]，輸入**mmc** ，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+13. 在新 DirectAccess 伺服器上，按一下 [**開始**]，輸入**mmc** ，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 14. 在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
   
@@ -164,18 +164,18 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 20. 在 [**憑證存放區**] 頁面上，按 [**下一步**]。  
   
-21. 在 [完成憑證匯入精靈] 頁面上，按一下 [完成]。  
+21. 在 **[完成憑證匯入精靈]** 頁面上，按一下 **[完成]** 。  
   
 22. 在 [**憑證匯入嚮導**] 對話方塊中，按一下 **[確定**]。  
   
 23. 在您要做為叢集成員的所有伺服器上重複步驟13-22。  
   
-## <a name="BKMK_NLS"></a>3.4 安裝網路位置伺服器憑證  
-您至少必須有本機 **Administrators** 群組的成員資格或同等權限，才能完成此程序。  
+## <a name="34-install-the-network-location-server-certificate"></a><a name="BKMK_NLS"></a>3.4 安裝網路位置伺服器憑證  
+具備本機 **Administrators** 群組的成員資格 (或權限相當者) 是完成此程序的最低必要條件。  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>若要安裝網路位置的憑證  
   
-1.  在 [遠端存取] 伺服器上，按一下 [**開始**]，輸入**mmc**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [遠端存取] 伺服器上，按一下 [**開始**]，輸入**mmc**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  按一下 [檔案]，**然後按一下 [** **新增/移除嵌入式管理單元**]。  
   
@@ -185,7 +185,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 5.  在 [憑證] 上按一下滑鼠右鍵，指向 [所有工作]，然後按一下 [要求新憑證]。  
   
-6.  按兩次 [下一步] 。  
+6.  按兩次 [下一步]。  
   
 7.  在 [**要求憑證**] 頁面上，按一下 [Web 服務器證書] 範本，然後按一下 [**需要更多資訊才能註冊此憑證**]。  
   
@@ -208,12 +208,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 14. 在您要做為叢集成員的所有伺服器上重複此程式。  
   
-## <a name="BKMK_Add"></a>3.5 新增伺服器至叢集  
+## <a name="35-add-servers-to-the-cluster"></a><a name="BKMK_Add"></a>3.5 新增伺服器至叢集  
  
   
 #### <a name="to-add-servers-to-the-cluster"></a>將伺服器新增至叢集  
   
-1.  在設定的 DirectAccess 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在設定的 DirectAccess 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台中，按一下 [設定]。 **在 [工作**] 窗格的 [**負載平衡**叢集] 下，按一下 [**新增或移除伺服器**]。  
   
@@ -249,7 +249,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>  
@@ -258,12 +258,12 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
 > [!NOTE]  
 > 如果未在負載平衡的叢集中啟用 VPN，則使用 Windows PowerShell Cmdlet 將新的伺服器新增至叢集時，不應提供任何 VPN 位址範圍。 如果您不小心這麼做，請從叢集中移除伺服器，然後再次將它新增至叢集，而不需要指定 VPN 位址範圍。  
   
-## <a name="BKMK_remove"></a>3.6 從叢集中移除伺服器  
+## <a name="36-remove-a-server-from-the-cluster"></a><a name="BKMK_remove"></a>3.6 從叢集中移除伺服器  
  
   
 #### <a name="to-remove-a-server-from-the-cluster"></a>從叢集中移除伺服器  
   
-1.  在設定的遠端存取服務器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在設定的遠端存取服務器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台中，按一下 [設定]。 **在 [工作**] 窗格的 [**負載平衡**叢集] 下，按一下 [**新增或移除伺服器**]。  
   
@@ -279,18 +279,18 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>  
 ```  
   
-## <a name="BKBK_disable"></a>3.7 停用負載平衡  
+## <a name="37-disable-load-balancing"></a><a name="BKBK_disable"></a>3.7 停用負載平衡  
 [使用 Windows PowerShell 執行此步驟](assetId:///7a817ca0-2b4a-4476-9d28-9a63ff2453f9)  
   
 #### <a name="to-disable-load-balancing"></a>停用負載平衡  
   
-1.  在設定的 DirectAccess 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在設定的 DirectAccess 伺服器上，按一下 [**開始**]，然後按一下 [**遠端存取管理**]。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台中，按一下 [設定]。 **在 [工作**] 窗格的 [**負載平衡**叢集] 下，按一下 [**停用負載平衡**]。  
   
@@ -300,7 +300,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 set-RemoteAccessLoadBalancer -disable  
@@ -315,7 +315,7 @@ set-RemoteAccessLoadBalancer -disable
 > -   使用 RemoteAccessLoadBalancer 指令**程式**停用負載平衡之後，請等待2分鐘，再執行任何其他 Cmdlet。 在**RemoteAccessLoadBalancer-disable** Cmdlet 之後執行另一個 Cmdlet 的任何腳本中，也應該執行此動作。  
 > -   停用負載平衡會將叢集的虛擬 IP 位址變更為專用的 IP 位址。 因此，在伺服器上的快取 DNS 專案到期之前，查詢伺服器名稱的任何作業都會失敗。 在伺服器上的快取過期之前，請確定您沒有在停用負載平衡之後執行任何遠端存取 PowerShell Cmdlet。 如果您嘗試在另一部位於其他網域的電腦上停用負載平衡，則此問題較為常見。 如果您停用遠端存取管理主控台的負載平衡，而且可能會導致無法載入設定，也會發生這種情況。 設定將會在快取過期或排清之後載入。  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [步驟4：驗證叢集](Step-4-Verify-the-Cluster.md)  
   

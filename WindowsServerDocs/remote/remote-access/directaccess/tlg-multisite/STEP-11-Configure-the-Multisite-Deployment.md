@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3a80697665eeb67c2dda0d4d25201c7d02ed0c7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d90b20716c49b2ea0b1cd002a1c1933fbd6e26e5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404809"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314569"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>步驟11設定多網站部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 若要設定多網站部署，請在 EDGE1 上變更目前的「遠端存取設定」 wizard，啟用「多網站」功能，然後新增 2-EDGE1 作為第二個進入點。  
   
@@ -31,9 +31,9 @@ ms.locfileid: "71404809"
   
 - 新增2個 EDGE1 做為第二個進入點  
   
-## <a name="configDA"></a>在 EDGE1 上設定遠端存取  
+## <a name="configure-remote-access-on-edge1"></a><a name="configDA"></a>在 EDGE1 上設定遠端存取  
   
-1.  在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+1.  在 [**開始**] 畫面上，輸入**ramgmtui.exe**，然後按 enter。 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 2.  在 [遠端存取管理] 主控台中，按一下 [設定]。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71404809"
   
 5.  在主控台中間窗格的 [**步驟3基礎結構伺服器**] 區域中，按一下 [**編輯**]。  
   
-6.  按一下 [ **DNS 尾碼搜尋清單**]。 在 [ **DNS 尾碼搜尋清單**] 頁面上，確定已選取 [**設定 DirectAccess 用戶端與 DNS 用戶端尾碼搜尋清單**] 核取方塊，以及**corp.contoso.com**和**corp2.corp.contoso.com**網域尾碼出現在 [**要使用的網域尾碼**] 清單中，按 **[下一步**]，然後按一下 [完成]。  
+6.  按一下 [ **DNS 尾碼搜尋清單**]。 在 [ **DNS 尾碼搜尋清單**] 頁面上，確定已選取 [**使用 dns 用戶端尾碼搜尋清單設定 DirectAccess 客戶**端] 核取方塊，而且**corp.contoso.com**和**corp2.corp.contoso.com**網域尾碼出現在 [**要使用的網域尾碼**] 清單中，按 **[下一步**]，然後按一下 [完成]。  
   
 7.  在主控台中間窗格中，按一下 **[完成**]。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71404809"
   
 9. **在 [工作**] 窗格中，按一下 [重新整理**管理伺服器**]，然後在完成時按一下 [**關閉**]。  
   
-## <a name="EnabledMultisite"></a>在 EDGE1 上啟用多網站設定  
+## <a name="enable-multisite-configuration-on-edge1"></a><a name="EnabledMultisite"></a>在 EDGE1 上啟用多網站設定  
   
 1.  在 [遠端存取**管理] 主控台的 [** 工作] 窗格中，按一下 [**啟用多**網站]。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "71404809"
   
 6.  在 [**用戶端支援**] 頁面上，按一下 [**允許執行 Windows 7 的用戶端電腦存取此進入點**]，然後按一下 [**新增**]。  
   
-7.  在 [**選取群組**] 對話方塊的 [**輸入物件名稱來選取**] 中，輸入**Win7_Clients_Site1**，按一下 **[確定]** ，然後按 **[下一步**]。  
+7.  在 [**選取群組**] 對話方塊的 [**輸入要選取的物件名稱**] 中，輸入**Win7_Clients_Site1**，按一下 **[確定]** ，然後按 **[下一步**]。  
   
 8.  在 [**用戶端 GPO 設定**] 頁面上，按 **[下一步]** 。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "71404809"
   
 10. 在 [**啟用多網站部署**] 對話方塊中，按一下 [**關閉**]，然後在 [啟用多網站部署嚮導] 上按一下 [**關閉**]。  
   
-## <a name="AddEP"></a>新增2個 EDGE1 做為第二個進入點  
+## <a name="add-2-edge1-as-a-second-entry-point"></a><a name="AddEP"></a>新增2個 EDGE1 做為第二個進入點  
   
 1.  在 [遠端存取**管理] 主控台的 [** 工作] 窗格中，按一下 [**新增進入點**]。  
   
@@ -89,7 +89,7 @@ ms.locfileid: "71404809"
   
 7.  在 [**用戶端支援**] 頁面上，按一下 [**允許執行 Windows 7 的用戶端電腦存取此進入點**]，然後按一下 [**新增**]。  
   
-8.  在 [**選取群組**] 對話方塊的 [**輸入物件名稱來選取**] 中，輸入**Win7_Clients_Site2**，按一下 **[確定]** ，然後按 **[下一步**]。  
+8.  在 [**選取群組**] 對話方塊的 [**輸入要選取的物件名稱**] 中，輸入**Win7_Clients_Site2**，按一下 **[確定]** ，然後按 **[下一步**]。  
   
 9. 在 [**用戶端 GPO 設定**] 頁面上，按 **[下一步]** 。  
   

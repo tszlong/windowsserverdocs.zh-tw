@@ -7,18 +7,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a3673bb8-43dc-44e2-9e10-caf09bae2aa9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c75cb392446eadc78ff4bff63ff5b66cda88a329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1a74117d335a2a4f1750acf806823c064755978d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388874"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314873"
 ---
 # <a name="directaccess"></a>DirectAccess
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在 Windows Server 2016 中，**DirectAccess 和 VPN** 是**遠端存取**伺服器角色的角色服務。
 

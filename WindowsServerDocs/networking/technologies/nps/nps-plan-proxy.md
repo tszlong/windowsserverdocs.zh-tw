@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 29a48275dfd56cbf223e0fca0c9c276f35a675cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d64fceaf7242b7fe44912f105229c132ef9ee3b3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396021"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315749"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>將 NPS 作為 RADIUS Proxy 規劃
 
@@ -59,7 +59,7 @@ NPS 必須設定為使用 RADIUS 通訊協定與 RADIUS 用戶端（也稱為網
 
 ## <a name="plan-radius-clients"></a>規劃 RADIUS 用戶端
 
-RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人網路 \(VPN\) 伺服器、802.1 X 功能交換器和撥號伺服器。 將連線要求訊息轉寄到 RADIUS 伺服器的 RADIUS proxy 也是 RADIUS 用戶端。 NPS 支援所有符合 RADIUS 通訊協定的網路存取伺服器和 RADIUS proxy，如 RFC 2865 遠端驗證撥入使用者服務 \(RADIUS\)」和 RFC 2866 「RADIUS 帳戶處理」中所述。
+RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人網路 \(VPN\) 伺服器、802.1 X 功能交換器和撥號伺服器。 將連線要求訊息轉寄到 RADIUS 伺服器的 RADIUS proxy 也是 RADIUS 用戶端。 NPS 支援所有符合 RADIUS 通訊協定的網路存取伺服器和 RADIUS proxy，如 RFC 2865 < 遠端驗證撥入使用者服務 \(RADIUS\)」和 RFC 2866 「RADIUS 帳戶處理」中所述。
 
 此外，無線存取點和交換器都必須能夠 802.1 X 驗證。 如果您想要部署可擴充的驗證通訊協定（EAP）或受保護的可延伸驗證通訊協定（PEAP），存取點和交換器必須支援使用 EAP。
 
@@ -107,9 +107,9 @@ RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人�
 
 您可以建立下列屬性的規則。
 
-- 呼叫-工作站識別碼。 網路存取伺服器（NAS）的電話號碼。 這個屬性的值是字元字串。 您可以使用模式比對語法來指定區功能變數代碼。
+- 呼叫-工作站識別碼。 網路存取伺服器（NAS）的電話號碼。 這個屬性的值是字元字串。 您可以使用模式比對語法指定區碼。
 
-- 呼叫站識別碼。 呼叫者使用的電話號碼。 這個屬性的值是字元字串。 您可以使用模式比對語法來指定區功能變數代碼。
+- 呼叫站識別碼。 呼叫者使用的電話號碼。 這個屬性的值是字元字串。 您可以使用模式比對語法指定區碼。
 
 - 使用者名稱。 存取用戶端提供的使用者名稱，以及 NAS 在 RADIUS 存取要求訊息中所包含的名稱。 這個屬性的值是一個字元字串，通常包含領域名稱和使用者帳戶名稱。
 

@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f92b1335-ac4a-4501-a5ec-d1851e6f0fc7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a886740afeabf19f1a8f3035d15a5e5803bc1596
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a8ab0aae0e6c43c2c3ea29ea44e24b17cef7de6d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367086"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313848"
 ---
 # <a name="troubleshoot-a-multisite-deployment"></a>疑難排解多站台部署
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題說明如何疑難排解設定多站台遠端存取部署時最常見的錯誤。   
   

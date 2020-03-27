@@ -2,26 +2,26 @@
 title: 針對多語言支援建立伺服器復原 DVD
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: 59d8d41e5836ba88b405a058c8340f454b081c06
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: b71fc748f7cc8d82420b7a62fe502135036db727
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980253"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312118"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>針對多語言支援建立伺服器復原 DVD
 
->適用於：Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_MLHeadedRecovery"></a>在本機管理的伺服器上建立伺服器設定和伺服器復原 DVD 以提供多種語言支援  
+##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>在本機管理的伺服器上建立伺服器設定和伺服器復原 DVD 以提供多種語言支援  
   
 > [!NOTE]
->  您必須先建立多語系 Windows 映像, 如[逐步解說:在您將 windows](https://technet.microsoft.com/library/jj126995) Server Essentials 語言 install.wim pack 新增至 install .wim 之前, 會建立多語系 windows 映射。  
+>  您必須先建立多語系 windows 映射，如逐步解說[：多語系 Windows 映像建立](https://technet.microsoft.com/library/jj126995)中所述，再將 Windows Server Essentials 語言 install.wim pack 新增至 install .wim。  
   
  安裝有兩個階段：Windows 預先安裝環境 (Windows PE) 和初始設定。 根據預設，將不會在初始設定中顯示語言選取頁面。  
   
@@ -48,28 +48,28 @@ ms.locfileid: "69980253"
  若要為 Windows 安裝程式新增多語言支援，您將需要下列項目：  
   
 
--   可提供建立自訂 WinPE 映像所需之所有工具與來源檔案的技術人員電腦。 如需詳細資訊，請參閱 [Prepare the Technician Computer](Prepare-the-Technician-Computer.md)。  
+-   可提供建立自訂 WinPE 映像所需之所有工具與來源檔案的技術人員電腦。 如需詳細資訊，請參閱[準備技術人員電腦](Prepare-the-Technician-Computer.md)。  
 
--   可提供建立自訂 WinPE 映像所需之所有工具與來源檔案的技術人員電腦。 如需詳細資訊，請參閱 [Prepare the Technician Computer](../install/Prepare-the-Technician-Computer.md)。  
+-   可提供建立自訂 WinPE 映像所需之所有工具與來源檔案的技術人員電腦。 如需詳細資訊，請參閱[準備技術人員電腦](../install/Prepare-the-Technician-Computer.md)。  
 
   
 -   Windows Server Essentials DVD。  
   
 -   Windows Server Essentials 語言套件 DVD。  
   
-###  <a name="BKMK_Steps"></a>新增多個語言支援  
+###  <a name="adding-multiple-language-support"></a><a name="BKMK_Steps"></a>新增多個語言支援  
  若要將多個語言支援新增至 Windows 安裝程式您可以藉由在其中新增 Windows Server 2012 和 Windows Server Essentials 語言套件來更新 Install。  
   
 #### <a name="update-installwim"></a>更新 Install.wim  
- 在此步驟中, 您會將 Windows Server 2012 和 Windows Server Essentials 語言套件新增至 Install .wim。  
+ 在此步驟中，您會將 Windows Server 2012 和 Windows Server Essentials 語言套件新增至 Install .wim。  
   
 > [!NOTE]
->  確認您已安裝 Windows Server 2012 的語言套件。 如此可確保您會有適當的商標。 Windows Server 2012 多語系使用者介面語言套件可在[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上取得。 請依照下列逐步解說所述[的指示進行:在您將 windows Server Essentials 語言套件](https://technet.microsoft.com/library/jj126995.aspx)新增至 install .wim 之前, 建立多語系 windows 映射所建立的多語系 windows 映射。  
+>  確認您已安裝 Windows Server 2012 的語言套件。 如此可確保您會有適當的商標。 Windows Server 2012 多語系使用者介面語言套件可在[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上取得。 請依照[逐步解說：](https://technet.microsoft.com/library/jj126995.aspx)在建立多語系 windows 映射時建立多語系 windows 映射中所述的指示，將 Windows Server Essentials 語言套件新增至 install .wim。  
 >   
->  Windows Server Essentials 語言套件可在 \Language pack\\< CultureName\>的語言套件媒體中取得。  
+>  Windows Server Essentials 語言套件可在 \Language Pack\\< CultureName\>的語言套件媒體中取得。  
   
 > [!NOTE]
->  在 Windows Server 2012 發行之前, 並非所有語言套件都可能無法使用。  
+>  在 Windows Server 2012 發行之前，並非所有語言套件都可能無法使用。  
   
 ###### <a name="to-add-language-packs-to-installwim"></a>若要將語言套件新增至 Install.wim  
   
@@ -84,9 +84,9 @@ ms.locfileid: "69980253"
     ```  
   
 
-2.  使用[建立多語言用戶端還原媒體](Build-Multi-Language-Client-Restore-Media.md)中所述的程式, 新增語言特定檔案以支援建立用戶端備份還原 USB 快閃磁片磁碟機。  
+2.  使用[建立多語言用戶端還原媒體](Build-Multi-Language-Client-Restore-Media.md)中所述的程式，新增語言特定檔案以支援建立用戶端備份還原 USB 快閃磁片磁碟機。  
 
-2.  使用[建立多語言用戶端還原媒體](../install/Build-Multi-Language-Client-Restore-Media.md)中所述的程式, 新增語言特定檔案以支援建立用戶端備份還原 USB 快閃磁片磁碟機。  
+2.  使用[建立多語言用戶端還原媒體](../install/Build-Multi-Language-Client-Restore-Media.md)中所述的程式，新增語言特定檔案以支援建立用戶端備份還原 USB 快閃磁片磁碟機。  
 
   
 3.  使用 `DISM /Gen-LangINI` 命令，在可攜式儲存媒體中重新建立 Lang.ini 檔案，以反映其他語言支援，例如：  
@@ -106,11 +106,11 @@ ms.locfileid: "69980253"
 
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)
 
  [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
  [其他自訂](../install/Additional-Customizations.md)   
- [準備要部署的映射](../install/Preparing-the-Image-for-Deployment.md)   
+ [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

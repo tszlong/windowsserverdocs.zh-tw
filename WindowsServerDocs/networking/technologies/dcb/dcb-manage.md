@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d635f96516040fcb30504f752c8194b0323c63f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d61287b82cd6d3b869b1120d3cb21b3c8792bd1e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405774"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312755"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理資料中心橋接（DCB）
 
@@ -428,7 +428,7 @@ Remove-NetQosPolicy -Name "Network Management" -Store GPO:localhost
 
 如果您從交換器設定 DCB，並依賴 DCBX 將設定傳播到網路介面卡，您可以在啟用網路介面卡上的 DCB 之後，檢查從作業系統端接收和強制執行網路介面卡的設定。
 
-###  <a name="bkmk_enabledcb"></a>啟用和顯示網路介面卡上的 DCB 設定
+###  <a name="enable-and-display-dcb-settings-on--network-adapters"></a><a name="bkmk_enabledcb"></a>啟用和顯示網路介面卡上的 DCB 設定
 
 ```
 PS C:\> Enable-NetAdapterQos M1
@@ -470,18 +470,18 @@ Capabilities :                       Hardware     Current
                NumTCs(Max/ETS/PFC) : 8/8/8        0/0/0  
 
 ```
-## <a name="bkmk_wps"></a>適用于 DCB 的 Windows PowerShell 命令
+## <a name="windows-powershell-commands-for-dcb"></a><a name="bkmk_wps"></a>適用于 DCB 的 Windows PowerShell 命令
 
 Windows Server 2016 和 Windows Server 2012 R2 都有 DCB 的 Windows PowerShell 命令。 您可以在 Windows Server 2016 中，使用 Windows Server 2012 R2 的所有命令。
 
 ### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>適用于 DCB 的 windows Server 2016 Windows PowerShell 命令
 
-下列適用于 Windows Server 2016 的主題提供 Windows PowerShell Cmdlet 描述和語法，適用于所有資料中心橋接 \(DCB\) 服務品質 \(QoS\)\-特定 Cmdlet。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
+下列適用于 Windows Server 2016 的主題提供 Windows PowerShell Cmdlet 描述和語法，適用于所有資料中心橋接 \(DCB\) 服務品質 \(QoS\)\-特定 Cmdlet。 也依 Cmdlet 開頭的動詞，按字母順序列出 Cmdlets。
 
 - [DcbQoS 模組](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>適用于 DCB 的 windows Server 2012 R2 Windows PowerShell 命令
 
-下列適用于 Windows Server 2012 R2 的主題提供 Windows PowerShell Cmdlet 描述和語法，適用于所有資料中心橋接 \(DCB\) 服務品質 \(QoS\)\-特定 Cmdlet。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
+下列適用于 Windows Server 2012 R2 的主題提供 Windows PowerShell Cmdlet 描述和語法，適用于所有資料中心橋接 \(DCB\) 服務品質 \(QoS\)\-特定 Cmdlet。 也依 Cmdlet 開頭的動詞，按字母順序列出 Cmdlets。
 
 - [Windows PowerShell 中的資料中心橋接（DCB）服務品質（QoS） Cmdlet](https://technet.microsoft.com/library/hh967440.aspx)

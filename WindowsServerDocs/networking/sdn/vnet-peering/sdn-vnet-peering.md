@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: ccdcbb953939345ef5e9a45dff87fc7af62eb7bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01c768aefa685b688c2ed3f777c44a4665b5e4a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355492"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309687"
 ---
 # <a name="virtual-network-peering"></a>虛擬網路對等互連
 
->適用於：Windows Server
+>適用于： Windows Server
 
 虛擬網路對等互連可讓您順暢地連接兩個虛擬網路。 一旦對等互連，基於連線目的，虛擬網路會顯示為一。 
 
@@ -83,11 +83,11 @@ ms.locfileid: "71355492"
 
 您可以監視對等互連連線的狀態，這可以是下列其中一種狀態：
 
--   **引發**當您建立從第一個虛擬網路到第二個虛擬網路的對等互連時顯示。
+-   **起始：** 當您建立從第一個虛擬網路到第二個虛擬網路的對等互連時顯示。
 
--   **聯繫**在您建立從第二個虛擬網路到第一個虛擬網路的對等互連之後顯示。 第一個虛擬網路的對等互連狀態從 [已起始] 變更為 [已連線]。 在成功建立虛擬網路對等互連之前，這兩個虛擬網路對等的狀態必須是 [已連線]。
+-   **已連線：** 在您建立從第二個虛擬網路到第一個虛擬網路的對等互連之後顯示。 第一個虛擬網路的對等互連狀態從 [已起始] 變更為 [已連線]。 在成功建立虛擬網路對等互連之前，這兩個虛擬網路對等的狀態必須是 [已連線]。
 
--   **已**當一個虛擬網路與另一個虛擬網路中斷連線時顯示。
+-   已**中斷連線：** 當一個虛擬網路與另一個虛擬網路中斷連線時顯示。
 
 [狀態的資訊圖]
 

@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0240a3-b927-4a1e-b241-5f8f29a9552f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2da5bc3008b9b686ddb2bce460ced39f98183f28
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 22f4475df00e975ffc5cd0956a0126673a67f907
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394623"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309269"
 ---
 # <a name="bgp-windows-powershell-command-reference"></a>BGP Windows PowerShell 命令參考
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在撰寫 Windows PowerShell 腳本時，您可以使用本主題做為參考，以新增、設定和移除 RAS 閘道和遠端存取區域網路（LAN）路由器的 BGP 功能。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71394623"
 ## <a name="bgp-command-reference"></a>BGP 命令參考  
 下列各節提供每個 BGP 命令的命令名稱、用途和語法，以及遠端存取參考中命令的連結，其中包含每個命令的詳細資訊。  
   
-此參考包含下列各節。  
+本參考包含下列各節。  
   
 -   [新增命令](#bkmk_add)  
   
@@ -52,7 +52,7 @@ ms.locfileid: "71394623"
   
 -   [卸載命令](#bkmk_uninstall)  
   
-### <a name="bkmk_add"></a>新增命令  
+### <a name="add-commands"></a><a name="bkmk_add"></a>新增命令  
 以下是 BGP Add 命令。  
   
 [新增-Add-bgpcustomroute](https://technet.microsoft.com/library/dn262684.aspx)  
@@ -103,7 +103,7 @@ Add-BgpRoutingPolicy [-Name] <String> [-PolicyType] <PolicyType> {Deny | Allow |
 Add-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -PolicyName <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_clear"></a>清除命令  
+### <a name="clear-commands"></a><a name="bkmk_clear"></a>清除命令  
 以下是 BGP 的清除命令  
   
 [清除-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463114.aspx)  
@@ -114,7 +114,7 @@ Add-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -Pol
 Clear-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Prefix <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_disable"></a>停用和啟用命令  
+### <a name="disable-and-enable-commands"></a><a name="bkmk_disable"></a>停用和啟用命令  
 以下是 BGP 的停用和啟用命令  
   
 [停用-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463100.aspx)  
@@ -133,7 +133,7 @@ Disable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Informati
 Enable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-PassThru] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_get"></a>取得命令  
+### <a name="get-commands"></a><a name="bkmk_get"></a>取得命令  
 以下是 BGP 的 Get 命令。  
   
 [Add-bgpcustomroute](https://technet.microsoft.com/library/dn262664.aspx)  
@@ -200,7 +200,7 @@ Get-BgpRoutingPolicy [[-Name] <String[]> ] [-CimSession <CimSession[]> ] [-Infor
 Get-BgpStatistics [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_install"></a>安裝命令  
+### <a name="install-commands"></a><a name="bkmk_install"></a>安裝命令  
 以下是 RAS 閘道和 BGP 的安裝命令。  
   
 [安裝-RemoteAccess](https://technet.microsoft.com/library/hh918408.aspx)  
@@ -234,7 +234,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
 Install-RemoteAccess -VpnType RoutingOnly  
 ```  
   
-### <a name="bkmk_remove"></a>移除命令  
+### <a name="remove-commands"></a><a name="bkmk_remove"></a>移除命令  
 以下是 BGP 的移除命令。  
   
 [移除-Add-bgpcustomroute](https://technet.microsoft.com/library/dn262669.aspx)  
@@ -286,7 +286,7 @@ Parameter Set: Remove1
 Remove-BgpRoutingPolicyForPeer [-CimSession <CimSession[]> ] [-Direction <PolicyDirection> {Ingress | Egress} ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-PolicyName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_set"></a>設定命令  
+### <a name="set-commands"></a><a name="bkmk_set"></a>設定命令  
 以下是 BGP 的 Set 命令。  
   
 [設定-Bgp](https://technet.microsoft.com/library/dn262673.aspx)  
@@ -337,7 +337,7 @@ Set-BgpRoutingPolicy [-Name] <String> [-AddCommunity <String[]> ] [-CimSession <
 Set-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -PolicyName <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_start"></a>啟動和停止命令  
+### <a name="start-and-stop-commands"></a><a name="bkmk_start"></a>啟動和停止命令  
 以下是 BGP 的開始和停止命令。  
   
 [開始-Bgp](https://technet.microsoft.com/library/dn262683.aspx)  
@@ -356,7 +356,7 @@ Start-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-InformationActi
 Stop-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_uninstall"></a>卸載命令  
+### <a name="uninstall-commands"></a><a name="bkmk_uninstall"></a>卸載命令  
 以下是 RAS 閘道和 BGP 的卸載命令。  
   
 [卸載-RemoteAccess](https://technet.microsoft.com/library/hh918390.aspx)  

@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 95b68995326dc3d3bf48ca36caa9b2ab4923a7c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 45dad1eb40caba7ac304fc640e3d56044254f08c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406204"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317836"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>使用 DNS 原則進行 DNS 查詢上的篩選套用
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何在 Windows Server&reg; 2016 中設定 DNS 原則，以根據您所提供的準則建立查詢篩選器。 
 
@@ -27,25 +27,25 @@ DNS 原則中的查詢篩選器可讓您設定 DNS 伺服器，以自訂的方�
 
 另一個範例是建立查詢篩選允許清單，只允許一組特定的用戶端解析特定的名稱。
 
-## <a name="bkmk_criteria"></a>查詢篩選準則
+## <a name="query-filter-criteria"></a><a name="bkmk_criteria"></a>查詢篩選準則
 您可以使用下列準則的任何邏輯組合（和/或）來建立查詢篩選。
 
-|Name|描述|
+|名稱|描述|
 |-----------------|---------------------|
 |用戶端子網|預先定義的用戶端子網名稱。 用來驗證傳送查詢的子網。|
 |傳輸通訊協定|查詢中使用的傳輸通訊協定。 可能的值為 UDP 和 TCP。|
 |網際網路通訊協定|查詢中使用的網路通訊協定。 可能的值為 IPv4 和 IPv6。|
 |伺服器介面 IP 位址|接收 DNS 要求的 DNS 伺服器網路介面的 IP 位址。|
 |FQDN|查詢中記錄的完整功能變數名稱，有可能會使用萬用字元。|
-|查詢類型|查詢\(的記錄類型為、SRV、TXT\)等等。|
-|當日時間|接收查詢的當日時間。|
+|查詢類型|所查詢的記錄類型 \(A、SRV、TXT 等等\)。|
+|一天中的時間|接收查詢的當日時間。|
 
 下列範例示範如何針對封鎖或允許 DNS 名稱解析查詢的 DNS 原則建立篩選器。
 
 >[!NOTE]
 >本主題中的範例命令會使用 Windows PowerShell 命令**DnsServerQueryResolutionPolicy**。 如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。 
 
-## <a name="bkmk_block1"></a>封鎖來自網域的查詢
+## <a name="block-queries-from-a-domain"></a><a name="bkmk_block1"></a>封鎖來自網域的查詢
 
 在某些情況下，您可能會想要針對已識別為惡意的網域，或不符合貴組織使用指導方針的網域封鎖 DNS 名稱解析。 您可以使用 DNS 原則來完成網域的封鎖查詢。
 
@@ -60,7 +60,7 @@ Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicy" -Action IGNORE -FQDN 
 >[!NOTE]
 >當您使用 [**略**過] 值設定**動作**參數時，會將 DNS 伺服器設定為卸載沒有回應的查詢。 這會導致惡意網域中的 DNS 用戶端超時。
 
-## <a name="bkmk_block2"></a>封鎖子網的查詢
+## <a name="block-queries-from-a-subnet"></a><a name="bkmk_block2"></a>封鎖子網的查詢
 在此範例中，您可以封鎖子網的查詢（如果它被發現受到部分惡意程式碼感染，並嘗試使用您的 DNS 伺服器來連線到惡意網站）。 
 
 ' DnsServerClientSubnet-Name "MaliciousSubnet06"-IPv4Subnet 172.0.33.0/24-PassThru
@@ -73,14 +73,14 @@ DnsServerQueryResolutionPolicy-Name "BlockListPolicyMalicious06"-Action IGNORE-C
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyMalicious06" -Action IGNORE -ClientSubnet  "EQ,MaliciousSubnet06" –FQDN “EQ,*.contosomalicious.com” -PassThru
 `
 
-## <a name="bkmk_block3"></a>封鎖查詢類型
+## <a name="block-a-type-of-query"></a><a name="bkmk_block3"></a>封鎖查詢類型
 您可能需要在伺服器上封鎖特定類型查詢的名稱解析。 例如，您可以封鎖「任何」查詢，這可以用來惡意建立放大攻擊。
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyQType" -Action IGNORE -QType "EQ,ANY" -PassThru
 `
 
-## <a name="bkmk_allow1"></a>只允許來自網域的查詢
+## <a name="allow-queries-only-from-a-domain"></a><a name="bkmk_allow1"></a>只允許來自網域的查詢
 您不能只使用 DNS 原則來封鎖查詢，您可以使用它們來自動核准來自特定網域或子網的查詢。 當您設定允許清單時，DNS 伺服器只會處理來自允許網域的查詢，同時封鎖其他網域的所有其他查詢。
 
 下列範例命令只允許 contoso.com 和子域中的電腦和裝置查詢 DNS 伺服器。
@@ -89,7 +89,7 @@ Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyQType" -Action IGNORE -
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicyDomain" -Action IGNORE -FQDN "NE,*.contoso.com" -PassThru 
 `
 
-## <a name="bkmk_allow2"></a>只允許來自子網的查詢
+## <a name="allow-queries-only-from-a-subnet"></a><a name="bkmk_allow2"></a>只允許來自子網的查詢
 您也可以建立 IP 子網的允許清單，以忽略所有不是源自這些子網的查詢。
 
 `
@@ -99,7 +99,7 @@ Add-DnsServerClientSubnet -Name "AllowedSubnet06" -IPv4Subnet 172.0.33.0/24 -Pas
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicySubnet” -Action IGNORE -ClientSubnet  "NE, AllowedSubnet06" -PassThru
 `
 
-## <a name="bkmk_allow3"></a>僅允許特定 QTypes
+## <a name="allow-only-certain-qtypes"></a><a name="bkmk_allow3"></a>僅允許特定 QTypes
 您可以將允許清單套用至 QTYPEs。 
 
 例如，如果您有外部客戶查詢 DNS 伺服器介面164.8.1.1，則只允許查詢特定 QTYPEs，而有其他 QTYPEs （例如 SRV 或 TXT 記錄）供內部伺服器用來進行名稱解析或用於監視用途。

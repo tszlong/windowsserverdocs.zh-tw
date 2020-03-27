@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 915ef7dd-169d-4d58-9174-438d8ffa3584
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: af862a9342204bbdcbcad97d9b819de831c1fee1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6848c3900e4dad389f40ce3c8c707bcf4ea30971
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404822"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310756"
 ---
 # <a name="step-8-snapshot-the-directaccess-cluster-nlb-configuration"></a>步驟8：設定 DirectAccess 叢集的快照-NLB 設定
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 這會完成 DirectAccess 測試實驗室。 若要儲存此設定，讓您可以快速地回到具有 NLB 叢集設定的工作中 DirectAccess，您可以在其中測試其他 DirectAccess 模組化測試實驗室指南、測試實驗室指南延伸模組，或是您自己的實驗與學習下列  
   

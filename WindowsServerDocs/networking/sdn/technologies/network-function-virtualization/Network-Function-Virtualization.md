@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 338d5a285f2524932a91a66db186554cd0f50e2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1d5d5aaae5983e062dae203c60a7001f36e5629b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355657"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309812"
 ---
 # <a name="network-function-virtualization"></a>網路函式虛擬化
 
@@ -36,7 +36,7 @@ ms.locfileid: "71355657"
 Microsoft 從 Windows Server 2012 R2 開始，將獨立閘道納入為虛擬裝置。 如需詳細資訊，請參閱 [Windows Server 閘道](https://technet.microsoft.com/library/dn313101.aspx)。 現在，有了 Windows Server 2016 之後，Microsoft 就會繼續擴充並投資網路功能虛擬化市場。  
   
 ## <a name="virtual-appliance-benefits"></a>虛擬裝置的優點  
-虛擬裝置是動態且易於變更的，因為它是預先建立的自訂虛擬機器。 它可以是一或多個以一個單位封裝、更新及維護的虛擬機器。 搭配軟體定義網路（SDN），您可以在現今的雲端式基礎結構中取得所需的靈活性和彈性。 例如：  
+虛擬裝置是動態且易於變更的，因為它是預先建立的自訂虛擬機器。 它可以是一或多個以一個單位封裝、更新及維護的虛擬機器。 搭配軟體定義網路（SDN），您可以在現今的雲端式基礎結構中取得所需的靈活性和彈性。 例如，  
   
 -   SDN 會將網路呈現為集區和動態資源。  
   
@@ -63,7 +63,7 @@ Microsoft 從 Windows Server 2012 R2 開始，將獨立閘道納入為虛擬裝�
   
     -   防火牆  
   
-    -   防毒  
+    -   防毒軟體  
   
     -   DDoS （分散式阻斷服務）  
   
@@ -77,9 +77,9 @@ Microsoft 從 Windows Server 2012 R2 開始，將獨立閘道納入為虛擬裝�
   
     -   L3 閘道  
   
-    -   定址  
+    -   路由器  
   
-    -   參數  
+    -   交換機  
   
     -   NAT  
   

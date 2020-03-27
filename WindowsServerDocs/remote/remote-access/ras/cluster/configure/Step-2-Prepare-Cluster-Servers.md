@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 87983076ee8a7d5546a5ac491ed4ca88153798f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74aac416a5aa69a0cd935d58e3ecb931e4b5fd02
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367415"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308330"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>步驟2準備叢集伺服器
 
@@ -31,7 +31,7 @@ ms.locfileid: "71367415"
 |[2.2 安裝遠端存取角色](#BKMK_Install)|在您要新增到叢集的每部額外伺服器上，安裝遠端存取角色|  
 |[2.3 安裝 NLB](#BKMK_NLB)|在部署的遠端存取服務器上，以及您要新增到叢集的每部額外伺服器上，安裝 NLB 功能。 請注意，使用外部 Load Balancer 時，不需要執行此步驟。|  
   
-## <a name="BKMK_config"></a>2.1 設定遠端存取基礎結構  
+## <a name="21-configure-the-remote-access-infrastructure"></a><a name="BKMK_config"></a>2.1 設定遠端存取基礎結構  
 若要設定遠端存取叢集，您必須在將形成叢集一部分的每部伺服器上，設定伺服器拓撲、IP 位址、路由和轉送。  
   
 ### <a name="to-configure-the-remote-access-infrastructure"></a>設定遠端存取基礎結構  
@@ -42,7 +42,7 @@ ms.locfileid: "71367415"
   
 3.  將叢集中的每部伺服器聯結到與第一部遠端存取服務器相同的網域。  
   
-## <a name="BKMK_Install"></a>2.2 安裝遠端存取角色  
+## <a name="22-install-the-remote-access-role"></a><a name="BKMK_Install"></a>2.2 安裝遠端存取角色  
 若要設定遠端存取叢集，您必須在將形成叢集一部分的每一部伺服器上安裝遠端存取角色。  
   
 ### <a name="to-install-the-remote-access-role-on-always-on-vpn-servers"></a>在 Always On VPN 伺服器上安裝遠端存取角色  
@@ -61,11 +61,11 @@ ms.locfileid: "71367415"
   
 7. 按 [下一步]，然後按一下 [安裝]。  
   
-8.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+8.  在 [安裝進度] 對話方塊上，驗證安裝是否成功，然後按一下 [關閉]。  
   
 9.  在您要做為叢集成員的所有伺服器上重複此程式。  
   
-## <a name="BKMK_NLB"></a>2.3 安裝 NLB  
+## <a name="23-install-nlb"></a><a name="BKMK_NLB"></a>2.3 安裝 NLB  
 若要設定遠端存取叢集，您必須在將形成叢集一部分的每一部伺服器上安裝網路負載平衡功能。  
   
 > [!NOTE]  
@@ -79,11 +79,11 @@ ms.locfileid: "71367415"
   
 3.  在 [**選取功能**] 對話方塊中，選取 [**網路負載平衡**]，按一下 [**新增功能**]，按 **[下一步]** ，然後按一下 [**安裝**]  
   
-4.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+4.  在 [安裝進度] 對話方塊上，驗證安裝是否成功，然後按一下 [關閉]。  
   
 5.  在您要做為叢集成員的所有伺服器上重複此程式。  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [步驟3：設定負載平衡叢集](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   

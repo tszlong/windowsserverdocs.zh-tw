@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7044a0d219decceb7669e92e884c78bcd9e3a61c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7d21d80f4970a501e31a053483c37268bdddb811
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388386"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314618"
 ---
 # <a name="step-10-install-and-configure-2-edge1"></a>步驟10安裝和設定 2-EDGE1
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 2-EDGE1 設定包含下列各項：  
   
@@ -41,17 +41,17 @@ ms.locfileid: "71388386"
   
 2-EDGE1 必須安裝兩張網路介面卡。  
   
-## <a name="installOS"></a>在 2-EDGE1 上安裝作業系統  
+## <a name="install-the-operating-system-on-2-edge1"></a><a name="installOS"></a>在 2-EDGE1 上安裝作業系統  
   
 1.  開始安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。  
   
-2.  依照指示完成安裝，指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）以及本機系統管理員帳戶的強式密碼。 使用本機 Administrator 帳戶登入。  
+2.  依照指示完成安裝，指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）以及本機系統管理員帳戶的強式密碼。 使用本機系統管理員帳戶登入。  
   
 3.  連接 2-EDGE1 至具有網際網路存取權的網路，並執行 Windows Update 以安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然後中斷網際網路連線。  
   
 4.  將一張網路介面卡連線到2公司網路子網，另一個連接到模擬的網際網路。  
   
-## <a name="tcpip"></a>設定 TCP/IP 屬性  
+## <a name="configure-tcpip-properties"></a><a name="tcpip"></a>設定 TCP/IP 屬性  
   
 1.  在伺服器管理員主控台中，按一下 [**本機伺服器**]，然後在 [**屬性**] 區域中的 [**有線乙太**網路連線] 旁，按一下連結。  
   
@@ -85,9 +85,9 @@ ms.locfileid: "71388386"
   
 16. 按一下 [網際網路通訊協定第 4 版 (TCP/IPv4)]，然後按一下 [內容]。  
   
-17. 按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**131.107.0.20**。 在 [子網路遮罩]中，輸入 **255.255.255.0**。  
+17. 按一下 [使用下列的 IP 位址]。 在 [ **IP 位址**] 中，輸入**131.107.0.20**。 在 [子網路遮罩] 中，輸入 **255.255.255.0**。  
   
-18. 按一下 [進階]。 在 [IP 設定] 索引標籤的 [IP 位址] 區域，按一下 [新增]。 在 [ **Tcp/ip 位址**] 對話方塊的 [ **IP 位址**] 中，輸入**131.107.0.21**，在 [**子網路遮罩**] 中輸入**255.255.255.0**，然後按一下 [**新增**]。  
+18. 按一下 **[進階]** 。 在 [IP 設定] 索引標籤的 [IP 位址] 區域，按一下 [新增]。 在 [ **Tcp/ip 位址**] 對話方塊的 [ **IP 位址**] 中，輸入**131.107.0.21**，在 [**子網路遮罩**] 中輸入**255.255.255.0**，然後按一下 [**新增**]。  
   
 19. 按一下 [DNS] 索引標籤。  
   
@@ -95,7 +95,7 @@ ms.locfileid: "71388386"
   
 21. 關閉 [網路連線] 視窗。  
   
-## <a name="routing"></a>設定子網之間的路由  
+## <a name="configure-routing-between-subnets"></a><a name="routing"></a>設定子網之間的路由  
   
 1.  在 [**開始**] 畫面上，輸入**cmd.exe**，然後按 enter。  
   
@@ -112,7 +112,7 @@ ms.locfileid: "71388386"
   
 5.  關閉 [命令提示字元] 視窗。  
   
-## <a name="Join"></a>聯結 2-EDGE1 至 CORP2 網域  
+## <a name="join-2-edge1-to-the-corp2-domain"></a><a name="Join"></a>聯結 2-EDGE1 至 CORP2 網域  
   
 1.  在伺服器管理員主控台的 [**本機伺服器**] 的 [內容 **] 區域中，按一下 [** **電腦名稱稱**] 旁的連結。  
   
@@ -132,7 +132,7 @@ ms.locfileid: "71388386"
   
 9. 電腦重新開機之後，按一下 [**切換使用者**]，然後按一下 [**其他使用者**]，並使用系統管理員帳戶登入 CORP2 網域。  
   
-## <a name="certs"></a>在 2-EDGE1 取得憑證  
+## <a name="obtain-certificates-on-2-edge1"></a><a name="certs"></a>在 2-EDGE1 取得憑證  
   
 1.  在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
   
@@ -144,7 +144,7 @@ ms.locfileid: "71388386"
   
 5.  以滑鼠右鍵按一下 [**個人**]，指向 [**所有**工作]，然後按一下 [**要求新憑證**]。  
   
-6.  按兩次 [下一步] 。  
+6.  按兩次 [下一步]。  
   
 7.  在 [**要求憑證**] 頁面上，選取 [**用戶端-伺服器驗證**] 和 [ **Web 服務器**] 核取方塊，然後按一下 [**需要更多資訊才能註冊此憑證**]。  
   
@@ -164,7 +164,7 @@ ms.locfileid: "71388386"
   
 15. 關閉主控台視窗。 如果系統提示您儲存設定，請按一下 [**否**]。  
   
-## <a name="Access"></a>提供 CORP\User1 的存取權  
+## <a name="provide-access-to-corpuser1"></a><a name="Access"></a>提供 CORP\User1 的存取權  
   
 1.  在 [**開始**] 畫面上，輸入**compmgmt.msc**，然後按 enter。  
   
@@ -182,7 +182,7 @@ ms.locfileid: "71388386"
   
 8.  關閉 [電腦管理] 視窗。  
   
-## <a name="InstallDA"></a>在 2-EDGE1 上安裝遠端存取角色  
+## <a name="install-the-remote-access-role-on-2-edge1"></a><a name="InstallDA"></a>在 2-EDGE1 上安裝遠端存取角色  
   
 1.  在伺服器管理員主控台的 [**儀表板**] 中，按一下 [**新增角色及功能**]。  
   
@@ -192,9 +192,9 @@ ms.locfileid: "71388386"
   
 4.  按 [下一步] 五次。  
   
-5.  在 [確認安裝選項] 對話方塊中，按一下 [安裝]。  
+5.  在 [確認安裝選項] 對話方塊上，按一下 [安裝]。  
   
-6.  在 [安裝進度] 對話方塊中，確認安裝成功，然後按一下 [關閉]。  
+6.  在 [安裝進度] 對話方塊上，驗證安裝是否成功，然後按一下 [關閉]。  
   
 
 

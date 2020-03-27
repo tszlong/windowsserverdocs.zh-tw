@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
-ms.author: pashort
+ms.author: lizross
 author: kallie-b
-ms.openlocfilehash: a62a661fc9bb665f71f0e16cb3298ff52f3137db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 84c0847313542953543316ceb6c3d9cffb99c2dc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355992"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309971"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 
@@ -23,17 +23,17 @@ Microsoft 的**軟體定義網路 \(SDN\)** 和**容器網路**解決方案是�
 
 有很多途徑可以聯繫 Microsoft 團隊，雖然我們在 SDN 團隊中的最佳做法是遵循我們的社區所用的所有途徑，但以下是一份最常使用的論壇清單。 *這些是我們的使用者的重要資源，因此我們會觀賞最接近的途徑。*
 
-## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
+## <a name="twitter"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
 最近，我們已將 Twitter 上的目前狀態啟動為[@Microsoft_SDN](https://twitter.com/Microsoft_SDN)。 歡迎使用我們的 Twitter 控制碼提出問題、提供意見反應或提出功能/檔要求。
 > 除了您可以與問題/意見反應/要求聯繫的地方外，請考慮將您的「摘要」放在所有 SDN 和 Windows 容器網路相關的地方--Twitter 是我們**張貼新聞**的第一個位置，宣佈**新功能**，並將該社區指向所有**最新的 blog 和資源**。
 
-## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub （[Microsoft/SDN](https://github.com/Microsoft/SDN/issues)存放庫）
+## <a name="github-microsoftsdn-repo"></a>GitHub （[Microsoft/SDN](https://github.com/Microsoft/SDN/issues)存放庫）
 前往[這裡](https://github.com/Microsoft/SDN/issues)，透過我們的 GitHub 存放庫將問題提交給 SDN 小組。 這是**取得協助疑難排解**或**報告 bug**的最佳位置。
 
 > GitHub 是與我們聯繫的最佳位置，其中包含的主題與您可以在推文中輕鬆容納的專案類型有關。 *您的 SDN 部署需要協助嗎？不確定我們的功能可以如何滿足您組織的獨特需求？有可能的 bug 嗎？* 藉由提交 GitHub 問題，讓我們能夠與我們聯繫的所有好原因。
 
-## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
+## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
 我們的[容器網路檔](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs （docs.microsoft.com）](https://docs.microsoft.com/)上找到，其具有**內建的批註功能**。 若要在 Microsoft Docs 直接登入來回複留言，請在您想要參考的 [Microsoft Docs] 頁面底部向下流覽，然後在該處提交批註。
 
 > [Microsoft Docs](https://docs.microsoft.com/)是 Microsoft 的新整合檔網站。 雖然我們的大部分小組[SDN 檔](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)都保留在 TechNet 上，但我們的[容器網路功能檔](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)現在已 Microsoft Docs。

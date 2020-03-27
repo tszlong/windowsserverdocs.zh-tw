@@ -10,20 +10,20 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 22ccd5c3-0a26-484c-88c8-54119d1228cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: edbc9a3e44f3f2aa2586f7c82462255beec3733b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f2874f5ab75723f6a0fec137dd1f1cd7d6a2efbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404994"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310959"
 ---
 # <a name="directaccess-deployment-paths-in-windows-server"></a>Windows Server 中的 DirectAccess 部署路徑
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
-本主題提供兩個主要遠端存取部署路徑的檔案清單：**Basic**和**Advanced**。  
+本主題提供兩個主要遠端存取部署路徑的檔案清單：**基本**和**Advanced**。  
   
 您可以使用下一節來瞭解 DirectAccess Basic 和 Advanced 部署路徑之間的差異，而且您可以使用檔連結來找出最適合您目標的部署指南。  
   

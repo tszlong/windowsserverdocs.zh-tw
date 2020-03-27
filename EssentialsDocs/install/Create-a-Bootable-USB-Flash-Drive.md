@@ -1,9 +1,9 @@
 ---
 title: 建立可開機的 USB 快閃磁碟機
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 05/04/2018
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,22 +12,22 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cb62a460c09fdb2874bcc051176a05e88cee19e7
-ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
+ms.openlocfilehash: 88ae4bc7b560b0571ca339138cb99843c2d078c8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65621276"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312124"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>建立可開機的 USB 快閃磁碟機
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-您可以建立可開機 USB 快閃磁碟機用來部署 Windows Server Essentials。 第一個步驟是使用 DiskPart 這項命令列公用程式來準備 USB 快閃磁碟機。 如需 DiskPart 的相關資訊，請參閱 [DiskPart 命令列選項](https://go.microsoft.com/fwlink/?LinkId=207073)。  
+您可以建立可開機的 USB 快閃磁片磁碟機，用來部署 Windows Server Essentials。 第一個步驟是使用 DiskPart 這項命令列公用程式來準備 USB 快閃磁碟機。 如需 DiskPart 的相關資訊，請參閱 [DiskPart 命令列選項](https://go.microsoft.com/fwlink/?LinkId=207073)。  
 
 
 > [!TIP]
-> 若要建立可開機 USB 快閃磁碟機用於復原或重新安裝 Windows，而不是伺服器的電腦上，請參閱[建立復原磁碟機](https://support.microsoft.com/help/4026852/windows-create-a-recovery-drive)。
+> 若要建立可開機的 USB 快閃磁片磁碟機，以用於復原或重新安裝電腦上的 Windows，而不是伺服器，請參閱[建立修復磁片磁碟機](https://support.microsoft.com/help/4026852/windows-create-a-recovery-drive)。
   
  如需建立或使用可開機的 USB 快閃磁碟機之其他案例，請參閱下列主題：  
   
@@ -67,16 +67,16 @@ ms.locfileid: "65621276"
   
 ## <a name="see-also"></a>另請參閱  
 
- [與 Windows Server Essentials ADK 快速入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [建立和自訂映像](Creating-and-Customizing-the-Image.md)   
- [其他自訂項目](Additional-Customizations.md)   
- [準備用於部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
+ [其他自訂](Additional-Customizations.md)   
+ [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)   
 
- [與 Windows Server Essentials ADK 快速入門](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [建立和自訂映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他自訂項目](../install/Additional-Customizations.md)   
- [準備用於部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [消費者入門與 Windows Server ESSENTIALS ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
+ [其他自訂](../install/Additional-Customizations.md)   
+ [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](../install/Testing-the-Customer-Experience.md)   
 
  [我們該如何協助您？](https://windows.microsoft.com/windows/support)

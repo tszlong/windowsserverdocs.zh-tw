@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b39cac842f115a1828c666eec52f17f80971510c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cfa8076b84a2fc62cec2a709fc15d3dc5be8eb77
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322710"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307989"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>\(RDMA\) 的遠端直接記憶體存取和交換器內嵌小組 \(設定\)
 
@@ -25,7 +25,7 @@ ms.locfileid: "79322710"
 > 除了本主題之外，還有下列交換器內嵌小組內容可供使用。 
 > - TechNet 元件庫下載： [Windows Server 2016 NIC 和交換器內嵌小組使用者指南](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
 
-## <a name="bkmk_rdma"></a>使用 Hyper-v 設定 RDMA 介面  
+## <a name="configuring-rdma-interfaces-with-hyper-v"></a><a name="bkmk_rdma"></a>使用 Hyper-v 設定 RDMA 介面  
 
 在 Windows Server 2012 R2 中，同時在提供 RDMA 服務的網路介面卡所在的同一部電腦上使用 RDMA 和 Hyper-v，無法系結至 Hyper-v 虛擬交換器。 這會增加需要安裝在 Hyper-v 主機中的實體網路介面卡數目。
 
@@ -94,7 +94,7 @@ ms.locfileid: "79322710"
 
     Get-NetAdapterRdma
 
-###  <a name="bkmk_set-rdma"></a>使用 SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器
+###  <a name="create-a-hyper-v-virtual-switch-with-set-and-rdma-vnics"></a><a name="bkmk_set-rdma"></a>使用 SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器
 
 若要使用 Hyper-v 主機虛擬網路介面卡上的 RDMA capabilies \(Vnic\) 在支援 RDMA 小組的 Hyper-v 虛擬交換器上，您可以使用這些範例 Windows PowerShell 命令。
 
@@ -144,7 +144,7 @@ ms.locfileid: "79322710"
 
 - [管理集合小組](#bkmk_manage)
 
-## <a name="bkmk_over"></a>設定總覽
+## <a name="set-overview"></a><a name="bkmk_over"></a>設定總覽
 
 SET 是替代的 NIC 小組解決方案，可用於包含 Hyper-v 的環境，以及在 Windows Server 2016 中 \(SDN\) 堆疊的軟體定義網路功能。 將一些 NIC 小組功能整合到 Hyper-v 虛擬交換器。
 
@@ -167,15 +167,15 @@ SET 是替代的 NIC 小組解決方案，可用於包含 Hyper-v 的環境，�
 
 此外，SET 架構不會公開小組介面。 相反地，您必須設定 Hyper-v 虛擬交換器埠。
 
-## <a name="bkmk_avail"></a>設定可用性
+## <a name="set-availability"></a><a name="bkmk_avail"></a>設定可用性
 
 SET 適用于所有版本的 Windows Server 2016，包括 Hyper-v 和 SDN 堆疊。 此外，您可以使用 Windows PowerShell 命令和遠端桌面連線，從執行支援工具的用戶端作業系統的遠端電腦管理設定。
 
-## <a name="bkmk_nics"></a>設定的支援 Nic
+## <a name="supported-nics-for-set"></a><a name="bkmk_nics"></a>設定的支援 Nic
 
 您可以使用已通過 Windows 硬體合格和標誌的任何 Ethernet NIC，\(WHQL\) 測試在 Windows Server 2016 中的一組小組。 設定需要所有屬於集合小組成員的網路介面卡都必須相同 \(也就是相同的製造商、相同的型號、相同的固件和驅動程式\)。 設定小組中的一到八個網路介面卡之間的支援。
   
-## <a name="bkmk_compat"></a>設定與 Windows Server 網路技術的相容性
+## <a name="set-compatibility-with-windows-server-networking-technologies"></a><a name="bkmk_compat"></a>設定與 Windows Server 網路技術的相容性
 
 SET 與 Windows Server 2016 中的下列網路技術相容。
 
@@ -210,7 +210,7 @@ SET 與 Windows Server 2016 中的下列網路技術不相容。
 
 - 虛擬機器 QoS \(VM-QoS\)。 VM QoS 已可使用，但預設為停用。 如果您在設定的環境中設定 VM QoS，QoS 設定會導致無法預期的結果。
 
-## <a name="bkmk_modes"></a>設定模式和設定
+## <a name="set-modes-and-settings"></a><a name="bkmk_modes"></a>設定模式和設定
 
 與 NIC 小組不同的是，當您建立集合團隊時，無法設定小組名稱。 此外，NIC 小組也支援使用待命介面卡，但 SET 中不支援。 當您部署 SET 時，所有網路介面卡都處於作用中狀態，而且沒有處於待命模式。
 
@@ -253,7 +253,7 @@ Vm 會連線至 Hyper-v 虛擬交換器上的埠。 針對設定小組使用 Hyp
 
 當動態模式演算法偵測到已遇到的 flowlet 界限時（例如，當 TCP 流程中發生了足夠長度的中斷）時，演算法會自動將流程重新平衡至另一個小組成員（如果有的話）。  在某些罕見的情況下，此演算法可能也會定期重新平衡不包含任何 flowlets 的流程。 因此，TCP 流程與小組成員之間的親和性可能會隨時變更，因為動態平衡演算法會運作，以平衡小組成員的工作負載。
 
-## <a name="bkmk_vmq"></a>設定虛擬機器佇列（Vmq 數量）（& a）
+## <a name="set-and-virtual-machine-queues-vmqs"></a><a name="bkmk_vmq"></a>設定虛擬機器佇列（Vmq 數量）（& a）
 
 VMQ 並妥善設定工作，而且您應該在每次使用 Hyper-v 並設定時啟用 VMQ。
 
@@ -273,15 +273,15 @@ VMQ 並妥善設定工作，而且您應該在每次使用 Hyper-v 並設定時�
 
 - 小組成員的處理器應該是實際、非重迭的範圍。 例如，在4核心主機 \(8 個邏輯處理器\) 與2個 10Gbps Nic 的小組一起使用時，您可以將第一個設定為使用基底處理器2，並使用4個核心;第二個設定為使用基本處理器6，並使用2個核心。
 
-## <a name="bkmk_hnv"></a>\(HNV\) 設定和 Hyper-v 網路虛擬化
+## <a name="set-and-hyper-v-network-virtualization-hnv"></a><a name="bkmk_hnv"></a>\(HNV\) 設定和 Hyper-v 網路虛擬化
 
 SET 與 Windows Server 2016 中的 Hyper-v 網路虛擬化完全相容。 HNV 管理系統會提供資訊給 SET 驅動程式，允許設定以針對 HNV 流量優化的方式來分散網路流量負載。
   
-## <a name="bkmk_live"></a>設定和即時移轉
+## <a name="set-and-live-migration"></a><a name="bkmk_live"></a>設定和即時移轉
 
 Windows Server 2016 支援即時移轉。
 
-## <a name="bkmk_mac"></a>MAC 位址在傳輸的封包上使用
+## <a name="mac-address-use-on-transmitted-packets"></a><a name="bkmk_mac"></a>MAC 位址在傳輸的封包上使用
 
 當您使用動態負載分佈來設定集合小組時，來自單一來源 \(（例如單一 VM\)）的封包會同時分散到多個小組成員。 
 
@@ -311,7 +311,7 @@ Windows Server 2016 支援即時移轉。
   
     - 在相似化為小組成員以外的小組成員上傳送的封包將會完成來源 MAC 位址取代  
   
-## <a name="bkmk_manage"></a>管理集合小組
+## <a name="managing-a-set-team"></a><a name="bkmk_manage"></a>管理集合小組
 
 建議您使用 System Center Virtual Machine Manager \(VMM\) 來管理集合小組，不過您也可以使用 Windows PowerShell 來管理集合。 下列各節提供可用來管理 SET 的 Windows PowerShell 命令。
 

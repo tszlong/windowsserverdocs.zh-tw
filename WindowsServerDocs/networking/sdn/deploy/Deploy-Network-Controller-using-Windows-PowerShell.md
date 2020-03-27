@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 294466ef70a9ffc230953b48bb292938be519eac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee3aa93c02419667b05a987f548ef4d14285231d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406119"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313076"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>使用 Windows PowerShell 部署網路控制卡
 
@@ -112,8 +112,8 @@ Install-NetworkControllerCluster -Node <NetworkControllerNode[]> -ClusterAuthent
 |DiagnosticLogLocation|**DiagnosticLogLocation**參數會指定要定期上傳診斷記錄的共用位置。 如果您未指定這個參數的值，記錄檔會儲存在本機的每個節點上。 記錄檔會儲存在本機資料夾%systemdrive%\Windows\tracing\SDNDiagnostics。 叢集記錄檔會儲存在本機的資料夾%systemdrive%\ProgramData\Microsoft\Service Fabric\log\Traces。|
 |LogLocationCredential|**LogLocationCredential**參數會指定存取記錄儲存所在之共用位置所需的認證。|
 |CredentialEncryptionCertificate|**CredentialEncryptionCertificate**參數會指定網路控制站用來加密用來存取網路控制卡二進位檔和**LogLocationCredential**之認證的憑證（如果有指定的話）。 在您執行此命令之前，必須先在所有網路控制站節點上布建憑證，而且必須在所有叢集節點上註冊相同的憑證。 建議在生產環境中使用此參數來保護網路控制卡二進位檔和記錄檔。 若沒有此參數，認證會以純文字儲存，並可由任何未經授權的使用者誤用。|
-|認證|只有當您從遠端電腦執行此命令時，才需要此參數。 **Credential**參數指定具有在目的電腦上執行此命令之許可權的使用者帳戶。|
-|憑證指紋|只有當您從遠端電腦執行此命令時，才需要此參數。 **CertificateThumbprint**參數會指定具有在目的電腦上執行此命令之許可權的使用者帳戶的數位公開金鑰憑證（X509）。|
+|Credential|只有當您從遠端電腦執行此命令時，才需要此參數。 **Credential**參數指定具有在目的電腦上執行此命令之許可權的使用者帳戶。|
+|CertificateThumbprint|只有當您從遠端電腦執行此命令時，才需要此參數。 **CertificateThumbprint**參數會指定具有在目的電腦上執行此命令之許可權的使用者帳戶的數位公開金鑰憑證（X509）。|
 |UseSSL|只有當您從遠端電腦執行此命令時，才需要此參數。 **UseSSL**參數會指定用來建立與遠端電腦之連接的安全通訊端層（SSL）通訊協定。 預設不會使用 SSL。|
 |ComputerName|**ComputerName**參數會指定用來執行此命令的網路控制站節點。 如果您未指定這個參數的值，預設會使用本機電腦。|
 |LogSizeLimitInMBs|此參數會指定網路控制站可以儲存的最大記錄檔大小（以 MB 為單位）。 記錄會以迴圈方式儲存。 如果提供 DiagnosticLogLocation，此參數的預設值為 40 GB。 如果未提供 DiagnosticLogLocation，記錄會儲存在網路控制卡節點上，而此參數的預設值為 15 GB。|
@@ -137,8 +137,8 @@ Install-NetworkController -Node <NetworkControllerNode[]> -ClientAuthentication 
 |RESTIPAddress|您不需要使用網路控制站的單一節點部署來指定**RESTIPAddress**的值。 針對多節點部署， **RESTIPAddress**參數會以 CIDR 標記法指定 REST 端點的 IP 位址。 例如，192.168.1.10/24。 **ServerCertificate**的 [主體名稱] 值必須解析為**RESTIPAddress**參數的值。 當所有節點都位於相同的子網時，必須為所有多節點網路控制站部署指定此參數。 如果節點位於不同的子網，您必須使用**RestName**參數，而不是使用**RESTIPAddress**。|
 |RestName|您不需要使用網路控制站的單一節點部署來指定**RestName**的值。 只有當多個節點的部署具有不同子網的節點時，您才必須指定**RestName**的值。 針對多節點部署， **RestName**參數會指定網路控制卡叢集的 FQDN。|
 |ClientSecurityGroup|**ClientSecurityGroup**參數會指定成員為網路控制站用戶端的 Active Directory 安全性群組的名稱。 只有當您針對**ClientAuthentication**使用 Kerberos 驗證時，才需要此參數。 安全性群組必須包含用來存取 REST Api 的帳戶，而且您必須先建立安全性群組並新增成員，才能執行此命令。|
-|認證|只有當您從遠端電腦執行此命令時，才需要此參數。 **Credential**參數指定具有在目的電腦上執行此命令之許可權的使用者帳戶。|
-|憑證指紋|只有當您從遠端電腦執行此命令時，才需要此參數。 **CertificateThumbprint**參數會指定具有在目的電腦上執行此命令之許可權的使用者帳戶的數位公開金鑰憑證（X509）。|
+|Credential|只有當您從遠端電腦執行此命令時，才需要此參數。 **Credential**參數指定具有在目的電腦上執行此命令之許可權的使用者帳戶。|
+|CertificateThumbprint|只有當您從遠端電腦執行此命令時，才需要此參數。 **CertificateThumbprint**參數會指定具有在目的電腦上執行此命令之許可權的使用者帳戶的數位公開金鑰憑證（X509）。|
 |UseSSL|只有當您從遠端電腦執行此命令時，才需要此參數。 **UseSSL**參數會指定用來建立與遠端電腦之連接的安全通訊端層（SSL）通訊協定。 預設不會使用 SSL。|
 
 完成網路控制站應用程式的設定之後，您的網路控制站部署就已完成。

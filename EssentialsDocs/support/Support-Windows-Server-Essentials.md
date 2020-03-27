@@ -3,7 +3,7 @@ title: 支援 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d6855e777ea6e59ce5a9596adc9ba2e186b0a3e5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9142f44e61a7361bd4c40bdfdb5869e326d67343
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947387"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318665"
 ---
 # <a name="support-windows-server-essentials"></a>支援 Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "75947387"
 
 本主題提供 Windows Server Essentials 的支援和疑難排解選項。  
   
-##  <a name="BKMK_Top"></a>熱門支援解決方案和更新  
+##  <a name="top-support-solutions-and-updates"></a><a name="BKMK_Top"></a>熱門支援解決方案和更新  
   
 -   [Windows Server 2012 R2 和 Windows Server 2012 的最佳支援解決方案](https://blogs.technet.com/b/topsupportsolutions/archive/2014/02/04/top-support-solutions-for-microsoft-windows-server-2012.aspx)  
   
@@ -41,7 +41,7 @@ ms.locfileid: "75947387"
   
 -   [修補程式：您無法在 Windows Server Essentials 中啟用 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663)（2013年2月）  
   
-## <a name="troubleshoot"></a>[疑難排解]  
+## <a name="troubleshoot"></a>疑難排解  
  本節提供可協助您疑難排解使用 Windows Server Essentials 時可能遇到之常見問題的資訊。 疑難排解資訊依據與主要產品功能相對應的邏輯區域加以組織。  
   
 -   [Windows Server Essentials 最佳做法分析器 (BPA) 工具所使用的規則](../migrate/Rules-used-by-the-Windows-Server-Essentials-Best-Practices-Analyzer--BPA--Tool.md)  
@@ -126,7 +126,7 @@ ms.locfileid: "75947387"
   
 -    若要了解如何安全地與合作夥伴和廠商共同作業，請參閱[提升小型和中型企業中的共同作業](https://technet.microsoft.com/library/dn747893.aspx)。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
   
 -   [安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)  
   

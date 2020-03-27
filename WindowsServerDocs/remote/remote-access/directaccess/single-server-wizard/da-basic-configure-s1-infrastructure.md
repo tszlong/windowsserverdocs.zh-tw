@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b6b8ebfe0a6b42fe174d4b376b981641f043cf58
-ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c53adce68168ac4890f14c766e10b2b886dd598c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827675"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308949"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>步驟1設定基本 DirectAccess 基礎結構
 
@@ -25,7 +25,7 @@ ms.locfileid: "75827675"
 
 本主題說明如何針對在混合了 IPv4 和 IPv6 的環境中使用單一 DirectAccess 伺服器的基本 DirectAccess 部署，設定所需的基礎結構。 開始部署步驟之前，請確定您已完成[規劃基本 DirectAccess 部署](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md)中所述的規劃步驟。  
   
-|工作|說明|  
+|工作|描述|  
 |----|--------|  
 |設定伺服器網路設定|設定 DirectAccess 伺服器上的伺服器網路設定。|  
 |設定公司網路中的路由|設定公司網路中的路由，確保適當地路由流量。|  
@@ -36,9 +36,9 @@ ms.locfileid: "75827675"
 |設定安全性群組|設定將包含 DirectAccess 用戶端電腦的安全性群組，以及部署所需的任何其他安全性群組。|  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="ConfigNetworkSettings"></a>設定伺服器網路設定  
+## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>設定伺服器網路設定  
 在 IPv4 和 IPv6 同時存在的環境中，單一伺服器部署需要下列網路介面設定。 您可以使用 [Windows 網路和共用中心] 中的 [變更介面卡設定] 設定所有 IP 位址。  
   
 -   邊緣拓撲  
@@ -74,14 +74,14 @@ ms.locfileid: "75827675"
 >   
 >     IPsec 原則的名稱是 DirectAccess-DaServerToInfra 和 DirectAccess-DaServerToCorp。  
   
-## <a name="ConfigRouting"></a>設定公司網路中的路由  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="ConfigRouting"></a>設定公司網路中的路由  
 設定公司網路中的路由，如下所示：  
   
 -   在組織中部署原生 IPv6 時，請新增路由，讓內部網路的路由器透過遠端存取伺服器將 IPv6 流量路由回來。  
   
 -   在遠端存取伺服器上手動設定組織 IPv4 和 IPv6 的路由。 新增一個已發佈的路由，以便將所有含有組織 (/48) IPv6 首碼的流量轉送到內部網路。 此外，如果是 IPv4 流量，則新增明確的路由，讓 IPv4 流量轉送到內部網路。  
   
-## <a name="ConfigFirewalls"></a>設定防火牆  
+## <a name="configure-firewalls"></a><a name="ConfigFirewalls"></a>設定防火牆  
 當部署中使用額外防火牆時，如果遠端存取伺服器位於 IPv4 網際網路，請為遠端存取流量套用下列網際網路對向的防火牆例外：  
   
 -   6to4 流量-IP 通訊協定41輸入和輸出。  
@@ -106,10 +106,10 @@ ms.locfileid: "75827675"
   
 -   適用於所有 IPv4/IPv6 流量的 TCP/UDP  
   
-## <a name="ConfigDNS"></a>設定 DNS 伺服器  
+## <a name="configure-the-dns-server"></a><a name="ConfigDNS"></a>設定 DNS 伺服器  
 您必須為部署中內部網路的網路位置伺服器網站手動設定 DNS 項目。  
   
-### <a name="NLS_DNS"></a>建立網路位置伺服器和 NCSI 探查 DNS 記錄  
+### <a name="to-create-the-network-location-server-and-ncsi-probe-dns-records"></a><a name="NLS_DNS"></a>建立網路位置伺服器和 NCSI 探查 DNS 記錄  
   
 1.  在內部網路 DNS 伺服器上，執行**dnsmgmt.msc** ，然後按 enter。  
   
@@ -117,13 +117,13 @@ ms.locfileid: "75827675"
   
 3.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入網路位置伺服器網站的 DNS 名稱 (這是 DirectAccess 用戶端用來連線到網路位置伺服器的名稱)。 在 [IP 位址] 方塊中，輸入網路位置伺服器的 IPv4 位址，然後按一下 [新增主機]。 在 [DNS] 對話方塊中，按一下 [確定]。  
   
-4.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入 Web 探查的 DNS 名稱 (預設 Web 探查的名稱是 directaccess-webprobehost)。 在 [IP 位址] 方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]。 為 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [DNS] 對話方塊中，按一下 [確定]。  
+4.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入 Web 探查的 DNS 名稱 (預設 Web 探查的名稱是 directaccess-webprobehost)。 在 [IP 位址] 方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]。 針對 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [DNS] 對話方塊中，按一下 [確定]。  
   
-5.  按一下 \[完成\]。  
+5.  按一下 [完成]。  
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
 
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -136,7 +136,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   **CRL 撤銷檢查**-directaccess 會針對 directaccess 用戶端與遠端存取服務器之間的 ip-HTTPs 連線，以及 directaccess 用戶端與網路位置伺服器之間的 HTTPS 連接，使用憑證撤銷檢查。 在這兩種情況下，DirectAccess 用戶端都必須要能夠解析和存取 CRL 發佈點位置。  
   
-## <a name="ConfigAD"></a>設定 Active Directory  
+## <a name="configure-active-directory"></a><a name="ConfigAD"></a>設定 Active Directory  
 遠端存取伺服器和所有 DirectAccess 用戶端電腦都必須加入 Active Directory 網域。 DirectAccess 用戶端電腦必須是下列其中一種網域類型的成員：  
   
 -   與遠端存取伺服器屬於相同樹系的網域。  
@@ -147,7 +147,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 #### <a name="to-join-the-remote-access-server-to-a-domain"></a>將遠端存取伺服器加入網域  
   
-1.  在 [伺服器管理員] 中，按一下 [本機伺服器]。 在詳細資料窗格中，按一下 [電腦名稱]旁邊的連結。  
+1.  在 [伺服器管理員] 中，按一下 [本機伺服器]。 在詳細資料窗格中，按一下 [電腦名稱] 旁邊的連結。  
   
 2.  在 [**系統**內容] 對話方塊中，按一下 [**電腦名稱稱**] 索引標籤。在 [**電腦名稱稱**] 索引標籤上，按一下 [**變更**]。  
   
@@ -185,7 +185,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 請注意，在您輸入下方的 Add-Computer 命令後，必須提供網域認證。  
   
@@ -194,7 +194,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>設定 Gpo  
+## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>設定 Gpo  
 若要部署遠端存取，您至少需要兩個群組原則物件：一個群組原則物件包含遠端存取服務器的設定，一個包含 DirectAccess 用戶端電腦的設定。 當您設定遠端存取時，嚮導會自動建立必要的群組原則物件。 不過，如果您的組織強制執行命名慣例，或您沒有建立或編輯群組原則物件的必要許可權，則必須在設定遠端存取之前先建立它們。  
   
 若要建立群組原則物件，請參閱[建立和編輯群組原則物件](https://technet.microsoft.com/library/cc754740.aspx)。  
@@ -213,10 +213,10 @@ Restart-Computer
 > [!Warning]
 > 不支援使用 DirectAccess 設定向導以外的任何方式來設定 DirectAccess，例如直接修改 DirectAccess 群組原則物件，或手動修改伺服器或用戶端上的預設原則設定。
   
-## <a name="ConfigSGs"></a>設定安全性群組  
+## <a name="configure-security-groups"></a><a name="ConfigSGs"></a>設定安全性群組  
 用戶端電腦群組策略物件中包含的 DirectAccess 設定只會套用到您在設定「遠端存取」時所指定之安全性群組的成員電腦。  
   
-### <a name="Sec_Group"></a>建立 DirectAccess 用戶端的安全性群組  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>建立 DirectAccess 用戶端的安全性群組  
   
 1.  執行**dsa.msc**。 在 [Active Directory 使用者和電腦] 主控台的左窗格中，展開將包含安全性群組的網域，在 [使用者] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [群組]。  
   
@@ -232,14 +232,14 @@ Restart-Computer
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_Links"></a>下一步  
+## <a name="next-step"></a><a name="BKMK_Links"></a>下一步  
   
 -   [步驟2：設定基本 DirectAccess 伺服器](da-basic-configure-s2-server.md)  
   

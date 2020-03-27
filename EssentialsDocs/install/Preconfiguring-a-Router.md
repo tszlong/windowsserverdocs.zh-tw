@@ -3,7 +3,7 @@ title: 預先設定路由器
 description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbff22c03b7bf4310b86048848ded276547b911f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bdfa3215b7a2426bcde807119971d99ccc229716
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865197"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311570"
 ---
 # <a name="preconfiguring-a-router"></a>預先設定路由器
 
@@ -46,9 +46,9 @@ ms.locfileid: "70865197"
 -   如果路由器具有 Active DirectoryÂ®網域服務的整合式存取控制功能，您可以在伺服器的初始設定期間自動化 Active Directory 整合。 您還必須透過儀表板中的路由器管理增益集來公開此功能。  
   
 > [!NOTE]
->  如需有關設定無線連線的詳細資訊，請參閱 [Configure Support for a Wireless Network](Configure-Support-for-a-Wireless-Network.md)。  
+>  如需設定無線連線的詳細資訊，請參閱[設定無線網路支援](Configure-Support-for-a-Wireless-Network.md)。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
  [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   

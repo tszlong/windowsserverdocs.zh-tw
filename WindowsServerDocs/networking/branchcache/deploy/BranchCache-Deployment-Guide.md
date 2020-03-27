@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 3830b356-36d3-44f9-a1d7-990ff3e57403
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 14eb9e5b4d5a28a64d3cfa0d27b5294ba7168da9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: df6287f35c3fbf397df3b4d61812db3b14f3ce38
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356726"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318509"
 ---
 # <a name="branchcache-deployment-guide"></a>BranchCache 部署指南
 

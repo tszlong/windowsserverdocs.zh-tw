@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/24/2018
-ms.openlocfilehash: 3e0678fb204e0895bf4429e8bb877a3f1c0e7a97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ef588cfc93216f13490ef3196ec0990b9e7f48d3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355862"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309789"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>建立 VM 並連線至租用戶虛擬網路或 VLAN
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 在本主題中，您會建立租使用者 VM，並將它連線至使用 Hyper-v 網路虛擬化或虛擬區域網路（VLAN）所建立的虛擬網路。 您可以使用 Windows PowerShell 網路控制卡 Cmdlet 來連線到虛擬網路或 NetworkControllerRESTWrappers，以連線到 VLAN。
 

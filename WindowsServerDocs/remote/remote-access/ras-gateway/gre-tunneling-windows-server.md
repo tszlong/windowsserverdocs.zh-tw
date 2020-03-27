@@ -1,21 +1,21 @@
 ---
-title: Windows Server 2016 中的 GRE 通道
+title: Windows Server 2016 中的 GRE 通道
 description: 您可以使用本主題來瞭解 Windows Server 2016 中 RAS 閘道的一般路由封裝（GRE）通道功能更新。
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: df2023bf-ba64-481e-b222-6f709edaa5c1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: be57bc0ce1b509c49f269618765c79f380fd3b12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d246f0e56681f75e4336ed225d1557a0e05c581b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404680"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308550"
 ---
-# <a name="gre-tunneling-in-windows-server-2016"></a>Windows Server 2016 中的 GRE 通道
+# <a name="gre-tunneling-in-windows-server-2016"></a>Windows Server 2016 中的 GRE 通道
 
 >適用於：Windows Server (半年通道)、Windows Server 2016
 
@@ -64,19 +64,19 @@ GRE 通道功能可啟用或增強數個主要案例，以使用 Microsoft 技�
 
 以下是 GRE 通道功能所解決的重要案例。  
   
-### <a name="BKMK_Access"></a>從租使用者虛擬網路到租使用者實體網路的存取權
+### <a name="access-from-tenant-virtual-networks-to-tenant-physical-networks"></a><a name="BKMK_Access"></a>從租使用者虛擬網路到租使用者實體網路的存取權
 
 此案例可讓您透過可調整的方式，提供從租使用者虛擬網路到位於主機服務提供者內部部署的租使用者實體網路的存取權。 在多租使用者閘道上建立 GRE 通道端點，會在實體網路上的協力廠商裝置上建立另一個 GRE 通道端點。 第3層流量會在虛擬網路中的虛擬機器與實體網路上的協力廠商裝置之間路由傳送。  
   
 ![連接主機服務提供者實體網路和租使用者虛擬網路的 GRE 通道](../../media/gre-tunneling-in-windows-server/GRE_.png)  
   
-### <a name="BKMK_Speed"></a>高速連線能力
+### <a name="high-speed-connectivity"></a><a name="BKMK_Speed"></a>高速連線能力
 
 此案例可讓您透過可調整的方式，提供從租使用者內部部署網路到其位於主機服務提供者網路之虛擬網路的高速連線能力。 租使用者透過多重通訊協定標籤切換（MPLS）連線到服務提供者網路，其中會在主機服務提供者的邊緣路由器與多租使用者的虛擬網路之間建立 GRE 通道。  
   
 ![連接租使用者企業 MPLS 網路和租使用者虛擬網路的 GRE 通道](../../media/gre-tunneling-in-windows-server/GRE-.png)  
   
-### <a name="BKMK_Integration"></a>與 VLAN 型隔離整合
+### <a name="integration-with-vlan-based-isolation"></a><a name="BKMK_Integration"></a>與 VLAN 型隔離整合
 
 此案例可讓您將 VLAN 型隔離與 Hyper-v 網路虛擬化整合。 主機服務提供者網路上的實體網路包含使用 VLAN 型隔離的負載平衡器。 多租使用者閘道會在實體網路上的負載平衡器與虛擬網路上的多租使用者閘道之間建立 GRE 通道。  
   
@@ -84,7 +84,7 @@ GRE 通道功能可啟用或增強數個主要案例，以使用 Microsoft 技�
   
 ![連接租使用者虛擬網路的多個 GRE 通道](../../media/gre-tunneling-in-windows-server/GRE-VLANIsolation.png)  
   
-### <a name="BKMK_Shared"></a>存取共用資源
+### <a name="access-shared-resources"></a><a name="BKMK_Shared"></a>存取共用資源
 
 此案例可讓您存取位於主機服務提供者網路上的實體網路上的共用資源。  
   
@@ -96,7 +96,7 @@ GRE 通道功能可啟用或增強數個主要案例，以使用 Microsoft 技�
   
 ![使用多個通道連接多個虛擬網路的單一租使用者閘道](../../media/gre-tunneling-in-windows-server/GRE-SharedResource.png)  
   
-### <a name="BKMK_thirdparty"></a>協力廠商裝置到租使用者的服務
+### <a name="services-of-third-party-devices-to-tenants"></a><a name="BKMK_thirdparty"></a>協力廠商裝置到租使用者的服務
 
 此案例可用於將協力廠商裝置（例如硬體負載平衡器）整合到租使用者虛擬網路流量流程中。 例如，來自企業網站的流量會通過 S2S 通道傳遞給多租使用者閘道。 流量會透過 GRE 通道路由傳送至負載平衡器。 負載平衡器會將流量路由至企業虛擬網路上的多部虛擬機器。 相同的情況會發生在虛擬網路中有可能重迭 IP 位址的另一個租使用者。 網路流量會在負載平衡器上使用 Vlan 隔離，並適用于支援 Vlan 的所有第3層裝置。  
   
@@ -110,7 +110,7 @@ GRE 通道會公開為 S2S 介面中的其他通訊協定。 它的執行方式�
   
 [使用腳本部署軟體定義的網路基礎結構](../../../networking/sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
   
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 如需部署 S2S 閘道的詳細資訊，請參閱下列主題：  
   

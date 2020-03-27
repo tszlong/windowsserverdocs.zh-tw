@@ -10,23 +10,23 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a1c18f264a6a8d263f3e9f50bc325ef97f4240af
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2f3581451b65e96a277b23bd6808d2dea6ba45c9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366922"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313441"
 ---
 # <a name="troubleshooting-enabling-otp"></a>疑難排解啟用 OTP
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題包含有關使用**DAOtpAuthentication** PowerShell Cmdlet 或遠端存取管理主控台啟用 DirectAccess OTP 驗證之問題的疑難排解資訊。
   
 ## <a name="failed-to-enroll-the-otp-signing-certificate"></a>無法註冊 OTP 簽署憑證  
-**收到的錯誤**（伺服器事件記錄檔）。 無法使用 < OTP_signing_template_name 的憑證範本註冊 OTP 簽署憑證 >  
+**收到的錯誤**（伺服器事件記錄檔）。 無法使用憑證範本 < OTP_signing_template_name 註冊 OTP 簽署憑證 >  
   
 **原因**  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71366922"
 2.  如果範本不存在，請依照3.3 規劃登錄授權單位憑證中所述的方式加以建立，或者如果另一個相符的範本存在，請使用新的範本名稱重新設定 DirectAccess OTP。  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>安裝 WebDAV 時無法啟用 DirectAccess OTP  
-**案例**。 嘗試在 [遠端存取管理] 主控台或使用 `Enable-DAOtpAuthentication` PowerShell Cmdlet 來套用 DirectAccess OTP 設定時，作業會失敗。  
+**案例**。 嘗試在 [遠端存取管理] 主控台中或藉由使用 `Enable-DAOtpAuthentication` PowerShell Cmdlet 來套用 DirectAccess OTP 設定時，作業會失敗。  
   
 **收到的錯誤**（伺服器事件記錄檔）。 因為 WebDAV IIS 擴充功能正在伺服器上執行，所以無法套用 DirectAccess OTP 設定。 請移除 WebDAV，然後再次套用設定。  
   

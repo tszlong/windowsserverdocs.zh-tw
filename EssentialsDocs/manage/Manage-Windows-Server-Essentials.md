@@ -1,9 +1,9 @@
 ---
 title: 管理 Windows Server Essentials
-description: 描述如何使用 Windows Server Essentials
+description: 說明如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,28 +12,28 @@ ms.assetid: 4f1902f1-a0e0-49a6-afa7-3c4b61a11b48
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 59dc0073aa6fe5a7dd35c84b477acda8294e100c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 79291293e69f88beae6e05112ec232a4ab3c77b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873659"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319042"
 ---
 # <a name="manage-windows-server-essentials"></a>管理 Windows Server Essentials
 
->適用於：Windows Server 2016 Essentials、 Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 下列主題提供與 Windows Server Essentials 所包含的伺服器和網路管理功能相關的資訊：  
   
--   [儀表板概觀](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
+-   [儀表板總覽](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
   
--   [啟動列概觀](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
+-   [啟動列總覽](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
   
 -   [管理隨處存取](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理應用程式](Manage-Applications-in-Windows-Server-Essentials.md)  
   
--   [管理備份和還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
+-   [管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
   
 -   [管理 BranchCache](Manage-BranchCache-in-Windows-Server-Essentials.md)  
   
@@ -43,13 +43,13 @@ ms.locfileid: "59873659"
   
 -   [管理電子郵件服務整合](Manage-Email-Service-Integration-in-Windows-Server-Essentials.md)  
   
--   [Manage Microsoft Online Services](Manage-Microsoft-Online-Services-in-Windows-Server-Essentials.md)  
+-   [管理 Microsoft Online Services](Manage-Microsoft-Online-Services-in-Windows-Server-Essentials.md)  
   
 -   [管理伺服器資料夾](Manage-Server-Folders-in-Windows-Server-Essentials.md)  
   
--   [管理伺服器存放裝置](Manage-Server-Storage-in-Windows-Server-Essentials.md)  
+-   [管理伺服器儲存體](Manage-Server-Storage-in-Windows-Server-Essentials.md)  
   
--   [管理系統健康情況](Manage-System-Health-in-Windows-Server-Essentials.md)  
+-   [管理系統健全狀況](Manage-System-Health-in-Windows-Server-Essentials.md)  
   
 -   [管理使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md)  
   
@@ -65,7 +65,7 @@ ms.locfileid: "59873659"
   
 -   [安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)  
   
--   [將伺服器資料移轉到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
+-   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
   
 -   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   
