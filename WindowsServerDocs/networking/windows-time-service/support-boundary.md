@@ -2,19 +2,19 @@
 ms.assetid: ''
 title: 高準確度時間的支援界限
 description: 本文說明 Windows 時間 (W32Time) 服務在需要高度準確且穩定系統時間之環境中的支援界限。
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 212b9c79bc2e43e966180b928c865a9053332c3f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5748d598272c8f096876bab0d24142d38c2fd64b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405262"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314968"
 ---
 # <a name="support-boundary-for-high-accuracy-time"></a>高準確度時間的支援界限
 

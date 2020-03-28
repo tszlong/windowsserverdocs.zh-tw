@@ -2,19 +2,19 @@
 ms.assetid: ''
 title: 適用於可追蹤性的 Windows Time
 description: 在許多磁區中，都必須仰賴 UTC 對系統的追蹤來符合法規。  這表示系統的位移可在 UTC 方面得到證實。
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 307739042426088fa92c50e6ea4dc5d2a744f15a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405217"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314930"
 ---
 # <a name="windows-time-for-traceability"></a>適用於可追蹤性的 Windows Time
 >適用於：Windows Server 2016 1709 版或更新版本，以及 Windows 10 1703 或更新版本
@@ -41,7 +41,7 @@ ms.locfileid: "71405217"
 
 下一節將概述會記錄哪些事件以供可追蹤性案例使用。
 
-# <a name="257tab257"></a>[257](#tab/257)
+# <a name="257"></a>[257](#tab/257)
 系統會在 Windows Time 服務 (W32Time) 啟動時記錄此事件，其中記錄目前時間、目前刻度計數、執行階段組態、時間提供者和目前時脈速率的相關資訊。
 
 |||
@@ -71,7 +71,7 @@ w32tm.exe /query /status /verbose
 ```
 
 
-# <a name="258tab258"></a>[258](#tab/258)
+# <a name="258"></a>[258](#tab/258)
 系統會在 Windows Time 服務 (W32Time) 停止時記錄此事件，其中記錄目前時間和刻度計數的相關資訊。
 
 |||
@@ -84,7 +84,7 @@ w32tm.exe /query /status /verbose
 **範例文字：** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
 
-# <a name="259tab259"></a>[259](#tab/259)
+# <a name="259"></a>[259](#tab/259)
 此事件會定期記錄其目前的時間來源清單及其選擇的時間來源。  此外也會記錄目前刻度計數。  此事件並不會在每次時間來源變更時引發。  此功能會由本文件中稍後列出的其他事件提供。
 
 |||
@@ -105,7 +105,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 *識別對等項*
 `w32tm.exe /query /peers`
 
-# <a name="260tab260"></a>[260](#tab/260)
+# <a name="260"></a>[260](#tab/260)
 
 |||
 |---|---|
@@ -113,7 +113,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |詳細資料 |W32time 會定期記錄其組態和狀態。 其效用相當於呼叫：<br><br>`w32tm /query /configuration /verbose`<br>或者<br>`w32tm /query /status /verbose` |
 |節流機制  |每 8 小時記錄一次。 |
 
-# <a name="261tab261"></a>[261](#tab/261)
+# <a name="261"></a>[261](#tab/261)
 此事件會在使用 SetSystemTime API 修改系統時間時記錄每個實例。
 
 |||
@@ -121,7 +121,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |事件描述 |已設定系統時間 |
 |節流機制  |無。<br><br>在正常進行時間同步處理的系統上應該鮮少發生這種情況，而一旦發生，我們即應加以記錄。 我們在記錄此事件時會忽略 TimeJumpAuditOffset 設定，因為該設定的目的是要節流 Windows 系統事件記錄檔中的事件。 |
 
-# <a name="262tab262"></a>[262](#tab/262)
+# <a name="262"></a>[262](#tab/262)
 
 |||
 |---|---|
@@ -129,7 +129,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |詳細資料 |當時鐘緊密同步處理時，W32time 會持續修改系統時脈頻率。 我們應在事件記錄檔不滿溢的情況下，擷取對時脈頻率的「相當程度的」調整。 |
 |節流機制  |所有低於 TimeAdjustmentAuditThreshold (最小值 = 百萬分之 128，預設值 = 百萬分之 800) 的時脈調整，都不會列入記錄。<br><br>具有目前細微性的時脈頻率若有 2 PPM 的變更，時鐘準確度將會產生 120 微秒/秒的變更。<br><br>在同步化系統上，大部分的調整都會低於此層級。 如果您想要更細微的追蹤，您可以調整這項設定，或是使用效能計數器，或兩者同時進行。 |
 
-# <a name="263tab263"></a>[263](#tab/263)
+# <a name="263"></a>[263](#tab/263)
 
 |||
 |---|---|
@@ -138,7 +138,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |節流機制  |無。<br><br>只有在系統管理員或 GP 更新變更了時間提供者，然後觸發 W32time 時，才會發生此事件。 我們應記錄設定變更的每個實例。 |
 
 
-# <a name="264tab264"></a>[264](#tab/264)
+# <a name="264"></a>[264](#tab/264)
 
 |||
 |---|---|
@@ -146,7 +146,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |詳細資料 |當時間伺服器/對等項變更狀態 (**擱置 -> 同步**、**同步 -> 無法連線**，或其他轉換) 時，NTP 用戶端會記錄時間伺服器/對等項現行狀態的事件 |
 |節流機制  |最大頻率 - 每 5 分鐘僅一次，以防止記錄發生暫時性問題以及進行不當的提供者實作。 |
 
-# <a name="265tab265"></a>[265](#tab/265)
+# <a name="265"></a>[265](#tab/265)
 
 |||
 |---|---|
@@ -155,7 +155,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |節流機制  |無。 |
 
 
-# <a name="266tab266"></a>[266](#tab/266)
+# <a name="266"></a>[266](#tab/266)
 
 |||
 |---|---|

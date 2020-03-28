@@ -2,19 +2,19 @@
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Windows Time 服務
 description: ''
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: e3dbaa188426ac81073e706db3adc6ab0a655c01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b8b1e91f56ec4d6c070037a0f3cc5ec4d50c63e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405188"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314928"
 ---
 # <a name="windows-time-service-w32time"></a>Windows Time 服務 (W32Time)
 
@@ -32,7 +32,7 @@ Windows Time 服務 (W32Time) 主題中包含下列內容：
     - **[Windows Time 服務工具和設定](Windows-Time-Service-Tools-and-Settings.md)。** 大部分網域成員電腦的時間用戶端類型都是 NT5DS，這表示其會與網域階層的時間同步。 一般來說，關於這一點的唯一例外是作為樹系根網域主要網域控制站 (PDC) 模擬器操作主機的網域控制站，這個網域控制站通常會設定為與外部時間來源的時間同步。
 
 
-## <a name="related-topics"></a>相關主題
+## <a name="related-topics"></a>[相關主題]
 如需有關網域階層和計分系統的詳細資訊，請參閱[「Windows Time 服務是什麼？」](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) 部落格文章。
 
 Windows 時間提供者外掛程式模型已[記載於 TechNet](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx) 上。

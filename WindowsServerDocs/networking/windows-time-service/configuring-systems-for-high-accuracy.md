@@ -2,18 +2,18 @@
 ms.assetid: ''
 title: 設定高準確度的系統
 description: Windows 10 和 Windows Server 2016 中的時間同步功能已大幅改善。  在合理的作業狀況下，系統可以設定為維持 1 ms (毫秒) 或更高的準確度 (以 UTC 為準)。
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cdded0eb0dc663d352011fb1a6765a2ed358764
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405193"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315029"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>設定高準確度的系統
 >適用於：Windows Server 2016 與 Windows 10 版本 1607 或更新版本
@@ -106,7 +106,7 @@ Windows Time 服務 (W32Time) 必須持續執行。  若要這麼做，請將 Wi
 
 #### <a name="registry-settings"></a>登錄設定
 
-# <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
 設定系統輪詢所允許的最小間隔 (以 log2 秒為單位)。
 
 |  |  | 
@@ -120,7 +120,7 @@ Windows Time 服務 (W32Time) 必須持續執行。  若要這麼做，請將 Wi
 `w32tm /config /update`
 
 
-# <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
+# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 設定系統輪詢所允許的最大間隔 (以 log2 秒為單位)。
 
 |  |  |  
@@ -133,7 +133,7 @@ Windows Time 服務 (W32Time) 必須持續執行。  若要這麼做，請將 Wi
 
 `w32tm /config /update`
 
-# <a name="updateintervaltabupdateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
+# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 每次相位校正調整所間隔的時鐘刻度數目。
 
 |  |  |  
@@ -146,7 +146,7 @@ Windows Time 服務 (W32Time) 必須持續執行。  若要這麼做，請將 Wi
 
 `w32tm /config /update`
 
-# <a name="specialpollintervaltabspecialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
+# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 設定啟用了 SpecialInterval 0x1 旗標時的輪詢間隔 (以秒為單位)。
 
 |  |  |  
@@ -159,7 +159,7 @@ Windows Time 服務 (W32Time) 必須持續執行。  若要這麼做，請將 Wi
 
 `net stop w32time && net start w32time`
 
-# <a name="frequencycorrectratetabfrequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
+# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
 
 |  |  |  
 |---------|---------|

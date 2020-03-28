@@ -3,7 +3,7 @@ ms.assetid: 6086947f-f9ef-4e18-9f07-6c7c81d7002c
 title: Windows 時間服務工具和設定
 description: ''
 author: Teresa-Motiv
-ms.author: pashort
+ms.author: lizross
 manager: dougkim
 ms.date: 02/24/2020
 ms.topic: article
@@ -13,12 +13,12 @@ ms.custom:
 - CI ID 113344
 - CSSTroubleshoot
 audience: Admin
-ms.openlocfilehash: e99c07428a1689e3c079ff2570759c849a61e945
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e9432aa11446cdd4f00efca3af28c24d757d6019
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323470"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315134"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
@@ -256,7 +256,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 >  
 > 例如，5 分鐘會變成 5 &times; 60 &times; 1000 &times; 10000 = 3,000,000,000 時鐘刻度。  
 
-### <a id="config"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" subkey entries
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig-subkey-entries"></a><a id="config"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" subkey entries
 
 |登錄項目 |版本 |說明 |
 | --- | --- | --- |
@@ -289,7 +289,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 |**UpdateInterval** |所有版本 |指定每次相位校正調整所間隔的時鐘刻度數目。 網域控制站的預設值是 **100**。 網域成員的預設值是 **30,000**。 獨立用戶端和伺服器的預設值是 **360,000**。<br /><br />**注意**<br />0 對於 **UpdateInterval** 登錄項目來說是無效值。 在執行 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008 和 Windows Server 2008 R2 的電腦上，如果此值設定為 **0**，則 Windows Time 服務會自動將其變更為 **1**。|
 |**UtilizeSslTimeData** |Windows 10 組建 1511 以後的 Windows 版本 |值為 **1** 表示 W32Time 會使用多個 SSL 時間戳記來植入極其不精確的時鐘。 |
 
-### <a id="parameters"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters" subkey entries
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters-subkey-entries"></a><a id="parameters"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters" subkey entries
 
 | 登錄項目 | 版本 | 說明 |
 | --- | --- | --- |
@@ -299,7 +299,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 |**ServiceMain** |所有版本 |由 W32Time 維護。 其包含 Windows 作業系統所使用的保留資料，而且對此設定所做的任何變更都可能會導致無法預期的結果。 網域成員上的預設值是 **SvchostEntry_W32Time**。 獨立用戶端和伺服器上的預設值是 **SvchostEntry_W32Time**。 |
 |**類型** |所有版本 |指出要接受作為同步來源的對等：  <ul><li>**NoSync**。 時間服務不會與其他來源同步。</li><li>**NTP**： 時間服務會從 **NtpServer** 中指定的伺服器同步。 登錄項目。</li><li>**NT5DS**。 時間服務會從網域階層同步。  </li><li>**AllSync**。 時間服務會使用所有可用的同步機制。  </li></ul>網域成員上的預設值是 **NT5DS**。 獨立用戶端和伺服器上的預設值是 **NTP**。 |
 
-### <a id="ntpclient"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient" subkey entries
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient-subkey-entries"></a><a id="ntpclient"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient" subkey entries
 
 |登錄項目 |版本 |說明 |
 | --- | --- | --- |
@@ -316,7 +316,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 |**SpecialPollInterval** |所有版本 |指定手動對等的特殊輪詢間隔 (以秒為單位)。 已啟用 **SpecialInterval** 0x1 旗標時，W32Time 將會使用此輪詢間隔，而不是作業系統所決定的輪詢間隔。 網域成員上的預設值是 **3,600**。 獨立用戶端和伺服器上的預設值是 **604,800**。<br/><br/>**SpecialPollInterval** 對組建 1702 來說是新項目，會包含在 **MinPollInterval** 和 **MaxPollInterval** 設定的登錄值中。|
 |**SpecialPollTimeRemaining** |所有版本 |由 W32Time 維護。 其包含 Windows 作業系統所使用的保留資料。 其會指定 W32Time 要在電腦重新啟動後多久 (以秒為單位) 才會重新同步。 對此設定所做的任何變更都會導致無法預期的結果。 網域成員和獨立用戶端與伺服器上的預設值會保留空白。 |
 
-### <a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer" 子機碼項目
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a><a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer" 子機碼項目
 
 |登錄項目 |版本 |說明 |
 | --- | --- | --- |

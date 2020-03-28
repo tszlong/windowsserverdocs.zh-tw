@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 815e59ca00d6450b8ef09a034434c4209c928e78
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fe2318ad7feb732b86bcd69317bff20146923b64
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405580"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312246"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Netsh 命令語法、內容與格式
 
