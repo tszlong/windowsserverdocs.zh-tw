@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/10/2020
+ms.date: 03/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 981a9071b3f5daf1ca97dcde8a8b32b2a2588d99
-ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
+ms.openlocfilehash: 38b779b12b841e276d8f807af6f6332469c20817
+ms.sourcegitcommit: 9e8fddf683c9a36aad330ebef9b80d57f75ffb43
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79038061"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233299"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -30,14 +30,14 @@ ms.locfileid: "79038061"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|公用     |1.2.675  |
-|Insider    |1.2.787  |
+|公用     |1.2.790  |
+|Insider    |1.2.790  |
 
-## <a name="updates-for-version-12787"></a>1\.2.787 版的更新
+## <a name="updates-for-version-12790"></a>1\.2.790 版的更新
 
-*發行日期：2020/03/10*
+*發行日期：2020/03/24*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qZVh)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qXhC)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qRVA)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
 
 - 為了與其他遠端桌面用戶端保持一致，已將工作區的「更新」動作重新命名為「重新整理」。
 - 您現在可以直接從其操作功能表重新整理工作區。
