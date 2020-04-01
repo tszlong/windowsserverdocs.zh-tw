@@ -63,7 +63,7 @@
 ### [針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化](rds_vdi-recommendations-1909.md)
 ### [針對虛擬桌面基礎結構 (VDI) 角色最佳化 Windows 10 版本 1803](rds-vdi-recommendations-1803.md)
 ### [管理 RDS 集合中的使用者](rds-user-management.md)
-### [使用 Windows Server 上的 PowerShell 自訂 RDS 標題「工作資源」](rds-work-resources.md)
+### [在 Windows Server 上使用 PowerShell 自訂 RDS 標題「工作資源」](rds-work-resources.md)
 ### [使用效能計數器來診斷應用程式效能](rds-rdsh-performance-counters.md)
 
 ## 存取您的遠端桌面資源
@@ -93,8 +93,8 @@
 #### [授與從網路外部存取電腦的權限](clients/remote-desktop-allow-outside-access.md)
 #### [變更電腦上的 RD 接聽連接埠](clients/change-listening-port.md)
 ### 進階資訊
-#### [哪個用戶端最適合您？](clients/remote-desktop-app-compare.md)
-#### [遠端桌面 RDP 檔案設定](clients/rdp-files.md)
+#### [比較用戶端](clients/remote-desktop-app-compare.md)
+#### [支援的遠端桌面 RDP 檔案設定](clients/rdp-files.md)
 #### [遠端桌面 URI 配置](clients/remote-desktop-uri.md)
 #### [遠端桌面用戶端常見問題集](clients/remote-desktop-client-faq.md)
 #### [受控應用程式和桌面的隱私權設定](clients/remote-privacy-settings.md)
