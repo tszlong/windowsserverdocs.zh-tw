@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 7a717acf5c132d68d6ee041aeb5af5a430aa171b
+ms.sourcegitcommit: 9f7cc76b8c9add44dcbbd97f77b4f881d5a2c073
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791760"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612999"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Debian 虛擬機器
 
@@ -32,13 +32,13 @@ ms.locfileid: "74791760"
 
 * （*空白*）-無法使用功能
 
-| **特徵**                                                                                                                                  | **Windows Server 作業系統版本** | **10（buster）** | **9.0-9.6 （延展）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
+| **特徵**                                                                                                                                  | **Windows Server 作業系統版本** | **10.0-10.3 （buster）** | **9.0-9.12 （延展）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **可用性**                                                                                                                             |                                             | 內建              | 內建              | 內建              | 內建（注6）     |
 | **[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | Windows Server 2016 精確時間                                                                                                            | 2019、2016                                  | &#10004;附注8       | &#10004;附注8       |                       |                       |
 | **[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
-| 大型訊框                                                                                                                                 | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Jumbo 框架                                                                                                                                 | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | VLAN 標記和中繼                                                                                                                    | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | 即時移轉                                                                                                                               | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | 靜態 IP 插入                                                                                                                          | 2019、2016、2012 R2、2012                   |                       |                       |                       |                       |
@@ -71,7 +71,7 @@ ms.locfileid: "74791760"
 | 安全開機                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="BKMK_notes"></a>紀錄
+## <a name="notes"></a><a name="BKMK_notes"></a>紀錄
 
 1. 不支援在大於2TB 的 Vhd 上建立檔案系統。
 
@@ -93,7 +93,7 @@ ms.locfileid: "74791760"
    ```
 8. 最新的上游核心功能僅適用于使用核心內含的[Debian 反向移植](https://wiki.debian.org/Backports)。
 
-請參閱
+另請參閱
 
 * [Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
