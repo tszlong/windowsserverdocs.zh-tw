@@ -95,7 +95,7 @@ ms.locfileid: "71407144"
 
 6.  按一下 [確定] 來建立虛擬網路並關閉 [虛擬網路管理員]，或按一下 [套用] 來建立虛擬網路並繼續使用 [虛擬網路管理員]。  
 
-### <a name="BKMK_Build"></a>建立網域控制站  
+### <a name="build-the-domain-controller"></a><a name="BKMK_Build"></a>建立網域控制站  
 建立要做為網域控制站 (DC1) 的虛擬機器。 使用 Windows Server 2012 ISO 安裝虛擬機器，並將它命名為 DC1。  
 
 ##### <a name="to-install-active-directory-domain-services"></a>安裝 Active Directory 網域服務  
@@ -199,7 +199,7 @@ ms.locfileid: "71407144"
     gpupdate /force  
     ```  
 
-### <a name="BKMK_FS1"></a>建立檔案伺服器和 AD RMS 伺服器（FILE1）  
+### <a name="build-the-file-server-and-ad-rms-server-file1"></a><a name="BKMK_FS1"></a>建立檔案伺服器和 AD RMS 伺服器（FILE1）  
 
 1. 從 Windows Server 2012 ISO 建立名為 FILE1 的虛擬機器。  
 
@@ -282,7 +282,7 @@ ms.locfileid: "71407144"
 > [!NOTE]  
 > 系統或開機磁碟區 C: 上預設不會啟用集中存取原則。  
 
-#### <a name="BKMK_CS1"></a>安裝 Active Directory Rights Management Services  
+#### <a name="install-active-directory-rights-management-services"></a><a name="BKMK_CS1"></a>安裝 Active Directory Rights Management Services  
 透過伺服器管理員新增 Active Directory Rights Management Services (AD RMS) 和所有必要的功能。 選擇所有預設值。  
 
 ###### <a name="to-install-active-directory-rights-management-services"></a>安裝 Active Directory Rights Management Services  
@@ -552,9 +552,9 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
     -   值：DWORD  
 
-## <a name="BKMK_CF"></a>實驗室設定，用於跨樹系部署宣告案例  
+## <a name="lab-setup-for-deploying-claims-across-forests-scenario"></a><a name="BKMK_CF"></a>實驗室設定，用於跨樹系部署宣告案例  
 
-### <a name="BKMK_2.1"></a>建立 DC2 的虛擬機器  
+### <a name="build-a-virtual-machine-for-dc2"></a><a name="BKMK_2.1"></a>建立 DC2 的虛擬機器  
 
 -   從 Windows Server 2012 ISO 建立虛擬機器。  
 
@@ -567,7 +567,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 >   
 > 所有虛擬機器映像 (伺服器與用戶端) 必須重新設定為使用靜態 IP 第 4 版 (IPv4) 位址及網域名稱系統 (DNS) 用戶端設定。 如需詳細資訊，請參閱 [設定 DNS 用戶端的靜態 IP 位址](https://go.microsoft.com/fwlink/?LinkId=150952)。  
 
-### <a name="BKMK_2.2"></a>設定名為 adatum.com 的新樹系  
+### <a name="set-up-a-new-forest-called-adatumcom"></a><a name="BKMK_2.2"></a>設定名為 adatum.com 的新樹系  
 
 ##### <a name="to-install-active-directory-domain-services"></a>安裝 Active Directory 網域服務  
 
@@ -620,7 +620,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 >   
 > 如果執行這些命令沒有錯誤，表示樹系可彼此通訊。 如需 nslookup 錯誤的詳細資訊，請參閱主題 [使用 NSlookup.exe](https://support.microsoft.com/kb/200525)中的＜疑難排解＞一節  
 
-### <a name="BKMK_2.22"></a>將 contoso.com 設定為 adatum.com 的信任樹系  
+### <a name="set-contosocom-as-a-trusting-forest-to-adatumcom"></a><a name="BKMK_2.22"></a>將 contoso.com 設定為 adatum.com 的信任樹系  
 在這個步驟中，您將會在 Adatum Corporation 站台和 Contoso, Ltd. 站台之間建立信任關係。  
 
 ##### <a name="to-set-contoso-as-a-trusting-forest-to-adatum"></a>將 Contoso 設定為 Adatum 信任的樹系  
@@ -641,7 +641,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 8.  依照精靈中的指示繼續執行。  
 
-### <a name="BKMK_2.4"></a>在 Adatum 樹系中建立其他使用者  
+### <a name="create-additional-users-in-the-adatum-forest"></a><a name="BKMK_2.4"></a>在 Adatum 樹系中建立其他使用者  
 使用<strong>pass@word1</strong>的密碼建立 Jeff Low 使用者，並使用值**Adatum**指派公司屬性。  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>建立包含公司屬性的使用者  
@@ -662,7 +662,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
     ```  
 
-### <a name="BKMK_2.5"></a>在 adataum.com 上建立公司宣告類型  
+### <a name="create-the-company-claim-type-on-adataumcom"></a><a name="BKMK_2.5"></a>在 adataum.com 上建立公司宣告類型  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>使用 Windows PowerShell 建立宣告類型  
 
@@ -683,7 +683,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
     ```  
 
-### <a name="BKMK_2.55"></a>在 contoso.com 上啟用 [公司資源] 屬性  
+### <a name="enable-the-company-resource-property-on-contosocom"></a><a name="BKMK_2.55"></a>在 contoso.com 上啟用 [公司資源] 屬性  
 
 ##### <a name="to-enable-the-company-resource-property-on-contosocom"></a>啟用 contoso.com 的公司資源內容  
 
@@ -697,7 +697,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 5.  從 [資源內容] 清單中選取 [公司]，以滑鼠右鍵按一下並選取 [啟用]。  
 
-### <a name="BKMK_2.6"></a>在 adatum.com 上啟用動態存取控制  
+### <a name="enable-dynamic-access-control-on-adatumcom"></a><a name="BKMK_2.6"></a>在 adatum.com 上啟用動態存取控制  
 
 ##### <a name="to-enable-dynamic-access-control-for-adatumcom"></a>啟用 adatum.com 的動態存取控制  
 
@@ -717,7 +717,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
     gpupdate /force  
     ```  
 
-### <a name="BKMK_2.8"></a>在 contoso.com 上建立公司宣告類型  
+### <a name="create-the-company-claim-type-on-contosocom"></a><a name="BKMK_2.8"></a>在 contoso.com 上建立公司宣告類型  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>使用 Windows PowerShell 建立宣告類型  
 
@@ -734,7 +734,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
     ```  
 
-### <a name="BKMK_2.9"></a>建立集中存取規則  
+### <a name="create-the-central-access-rule"></a><a name="BKMK_2.9"></a>建立集中存取規則  
 
 ##### <a name="to-create-a-central-access-rule"></a>建立集中存取規則  
 
@@ -765,7 +765,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
    -Server:"contoso.com" `  
    ```  
 
-### <a name="BKMK_2.10"></a>建立集中存取原則  
+### <a name="create-the-central-access-policy"></a><a name="BKMK_2.10"></a>建立集中存取原則  
 
 ##### <a name="to-create-a-central-access-policy"></a>建立集中存取原則  
 
@@ -779,7 +779,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
     -Member "AdatumEmployeeAccessRule" `  
     ```  
 
-### <a name="BKMK_2.11"></a>透過群組原則發佈新原則  
+### <a name="publish-the-new-policy-through-group-policy"></a><a name="BKMK_2.11"></a>透過群組原則發佈新原則  
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>透過群組原則在檔案伺服器之間套用集中存取原則  
 
@@ -811,13 +811,13 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 
 7.  關閉 \[群組原則管理編輯器\]。 您現在已將集中存取原則新增到群組原則。  
 
-### <a name="BKMK_2.12"></a>在檔案伺服器上建立收益資料夾  
+### <a name="create-the-earnings-folder-on-the-file-server"></a><a name="BKMK_2.12"></a>在檔案伺服器上建立收益資料夾  
 在 FILE1 上建立新的 NTFS 磁碟區，然後建立下列資料夾：D:\Earnings。  
 
 > [!NOTE]  
 > 系統或開機磁碟區 C: 上預設不會啟用集中存取原則。  
 
-### <a name="BKMK_2.13"></a>設定分類並套用 [收益] 資料夾上的集中存取原則  
+### <a name="set-classification-and-apply-the-central-access-policy-on-the-earnings-folder"></a><a name="BKMK_2.13"></a>設定分類並套用 [收益] 資料夾上的集中存取原則  
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>指派檔案伺服器上的集中存取原則  
 

@@ -22,7 +22,7 @@ ms.locfileid: "76822721"
 
 本主題提供有關 Windows Server 2012 R2 和 Windows Server 2012 中 Active Directory Domain Services 的背景資訊，並說明從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的程式。  
   
-## <a name="BKMK_UpgradeWorkflow"></a>網域控制站升級步驟  
+## <a name="domain-controller-upgrade-steps"></a><a name="BKMK_UpgradeWorkflow"></a>網域控制站升級步驟  
 升級網域的建議方式是視需要升級執行較新版 Windows Server 的網域控制站，以及降級舊版網域控制站。 該方法是升級現有網域控制站之作業系統的慣用方法。 這份清單涵蓋執行較新版本之 Windows Server 的網域控制站升級之前要遵循的一般步驟：  
   
 1. 確認目標伺服器符合 [系統需求](https://technet.microsoft.com/library/dn303418.aspx)。  
@@ -68,7 +68,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
   
 因為 Windows Update 是 Windows 8 和 Windows Server 2012 中自動維護的一部分，其本身設定日期和時間來安裝更新的內部排程已不再有效。 為協助確保您企業中的所有裝置與電腦 (包括執行 Windows 8 與 Windows Server 2012 的所有裝置與電腦) 有一致且可預期的重新啟動行為，請參閱 Microsoft 知識庫文章 [2885694](https://support.microsoft.com/kb/2885694) (或參閱 2013 年 10 月的累積彙總套件 [2883201](https://support.microsoft.com/kb/2883201))，然後設定下列 WSUS 部落格文章中描述的原則設定： [為 Windows 8 與 Windows Server 2012 啟用更好預測的 Windows Update 體驗 (KB 2885694)](https://blogs.technet.com/b/wsus/archive/2013/10/08/enabling-a-more-predictable-windows-update-experience-for-windows-8-and-windows-server-2012-kb-2885694.aspx)。  
 
-## <a name="BKMK_NewWS2012R2"></a>Windows Server 2012 R2 中 AD DS 的新功能
+## <a name="whats-new-in-ad-ds-in-windows-server-2012-r2"></a><a name="BKMK_NewWS2012R2"></a>Windows Server 2012 R2 中 AD DS 的新功能
 
 下表摘要說明 Windows Server 2012 R2 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能更詳細的說明，包含這些功能的需求，請參閱 [Windows Server 2012 R2 中 Active Directory 的新功能](https://technet.microsoft.com/library/dn268294.aspx)。  
 
@@ -87,7 +87,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 |[1644 事件改進](https://technet.microsoft.com/library/dn535775.aspx)|LDAP 搜尋結果統計資料已加入事件識別碼 1644 以協助疑難排解。|  
 |[Active Directory 複寫輸送量改進](https://technet.microsoft.com/library/dn535775.aspx)|將最大 AD 複寫輸送量由 40Mbps 調整為約 600 Mbps|  
 
-## <a name="BKMK_WhatsNewAD"></a>Windows Server 2012 中 AD DS 的新功能
+## <a name="whats-new-in-ad-ds-in-windows-server-2012"></a><a name="BKMK_WhatsNewAD"></a>Windows Server 2012 中 AD DS 的新功能
 
 下表摘要說明 Windows Server 2012 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能的詳細說明，包括其需求，請參閱[Active Directory Domain Services （AD DS）中的新](https://technet.microsoft.com/library/hh831477.aspx)功能。  
   
@@ -108,7 +108,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 |[虛擬 Dc 的 USN 復原保護](https://technet.microsoft.com/library/hh831734.aspx#safe_virt_dc)|意外地還原虛擬 DC 的快照備份時，不會再造成 USN 復原。|  
 |[Windows PowerShell 歷程記錄檢視器](https://technet.microsoft.com/library/hh831702.aspx#windows_powershell_history_viewer)|使用 ADAC 時，系統管理員可以檢視執行的 Windows PowerShell 命令。|  
   
-### <a name="BKMK_"></a>套用更新後，自動維護和重新開機行為的變更 Windows Update
+### <a name="automatic-maintenance-and-changes-to-restart-behavior-after-updates-are-applied-by-windows-update"></a><a name="BKMK_"></a>套用更新後，自動維護和重新開機行為的變更 Windows Update
 
 在 Windows 8 版本之前，Windows Update 會管理其內部排程以檢查更新，並下載及安裝它們。 這需要始終在背景執行 Windows Update 代理程式，因而會耗用記憶體和其他系統資源。  
   
@@ -131,7 +131,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](https://msdn
 
 如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](https://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。  
 
-## <a name="BKMK_InstallationChanges"></a>AD DS 伺服器角色安裝變更
+## <a name="ad-ds-server-role-installation-changes"></a><a name="BKMK_InstallationChanges"></a>AD DS 伺服器角色安裝變更
 
 從 Windows Server 2003 到 Windows Server 2008 R2，您都是在執行 Active Directory 安裝精靈 Dcpromo.exe 之前執行 x86 或 X64 版本的 Adprep.exe 命令列工具，而且 Dcpromo.exe 擁有選擇性變數可從媒體安裝或進行自動安裝。  
   
@@ -142,7 +142,7 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 綜合以上所述，AD DS 安裝變更簡化了 DC 角色安裝程序，而且降低管理錯誤的發生，特別是當您跨通用區域和網域部署多個網域控制站時。  
 更多 GUI 和 Windows PowerShell 安裝的詳細資訊，包含命令列語法和逐步精靈指示，請參閱 [安裝 Active Directory 網域服務](https://technet.microsoft.com/library/hh472162.aspx)。 系統管理員如果希望控制在 Active Directory 樹系 (與現有樹系中的 Windows Server 2012 DC 安裝無關) 採用的架構變更，還是可以在提升權限的命令提示字元執行 Adprep.exe 命令。  
 
-## <a name="BKMK_DeprecatedFeatures"></a>Windows Server 2012 中與 AD DS 相關的已淘汰功能和行為變更
+## <a name="deprecated-features-and-behavior-changes-related-to-ad-ds-in-windows-server-2012"></a><a name="BKMK_DeprecatedFeatures"></a>Windows Server 2012 中與 AD DS 相關的已淘汰功能和行為變更
 
 以下是與 AD DS 有關的變更：  
 
@@ -163,7 +163,7 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 |CBT/整合式驗證的擴充保護|無|Enabled|請參閱 microsoft 資訊[安全摘要報告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和 microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251) 。<br /><br />如有需要，請在 Microsoft 知識庫[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) （ https://go.microsoft.com/fwlink/?LinkId=186394) 中查看並安裝此修補程式。|  
 |LMv2|Enabled|停用|Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
-## <a name="BKMK_SysReqs"></a>作業系統需求
+## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>作業系統需求
 
 下表列出 Windows Server 2012 的最低系統需求。 如需系統需求及預先安裝資訊的詳細資訊，請參閱 [安裝 Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx)。 安裝新 Active Directory 樹系沒有額外的系統需求，但是您應該增加足夠的記憶體用於快取 Active Directory 資料庫的內容，以便提升網域控制站、LDAP 用戶端要求和 Active Directory 應用程式的效能。 如果您要升級現有網域控制站或將新的網域控制站新增到現有的樹系，請參閱下一節以確保伺服器符合磁碟空間需求。  
 
@@ -175,7 +175,7 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 |螢幕解析度|800 x 600 或更高|  
 |其他|DVD 光碟機、鍵盤、網際網路存取|  
 
-### <a name="BKMK_DiskSpaceDCWin8"></a>升級網域控制站的磁碟空間需求
+### <a name="disk-space-requirements-for-upgrading-domain-controllers"></a><a name="BKMK_DiskSpaceDCWin8"></a>升級網域控制站的磁碟空間需求
 
 本節只涵蓋從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的磁碟空間需求。 如需將網域控制站升級到舊版 Windows Server 之磁碟空間需求的詳細資訊，請參閱 [升級到 Windows Server 2008 的磁碟空間需求](https://technet.microsoft.com/library/cc754463(WS.10).aspx#BKMK_2008) 或 [升級到 Windows Server 2008 R2 的磁碟空間需求](https://technet.microsoft.com/library/cc754463(WS.10).aspx#BKMK_2008R2)。  
   
@@ -200,7 +200,7 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
    - 執行 Windows 8.1 或 Windows 8 的電腦也可加入網域控制站執行舊版 Windows Server (包括 Windows Server 2003 或更新版本) 的網域中。 不過，在此情況下，某些 Windows 8 功能可能需要額外的設定或可能無法使用。 如需這些功能和管理舊版網域中 Windows 8 用戶端的其他建議的詳細資訊，請參閱 [在 Windows Server 2003 網域中執行 Windows 8 成員電腦](https://social.technet.microsoft.com/wiki/contents/articles/17361.running-windows-8-member-computers-in-windows-server-2003-domains.aspx)。  
 - 伺服器作業系統：Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2 及 Windows Server 2003  
 
-## <a name="BKMK_UpgradePaths"></a>支援的就地升級路徑
+## <a name="supported-in-place-upgrade-paths"></a><a name="BKMK_UpgradePaths"></a>支援的就地升級路徑
 
 執行64位版本的 Windows Server 2008 或 Windows Server 2008 R2 的網域控制站可以升級至 Windows Server 2012。 您不能升級執行 Windows Server 2003 或 32 位元版本 Windows Server 2008 的網域控制站。 若要取代它們，請在網域中安裝執行更新版 Windows Server 的網域控制站，然後移除執行 Windows Server 2003 的網域控制站。  
 
@@ -217,7 +217,7 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
   
 由於已知問題，您無法將執行 Windows Server 2008 R2 之 Server Core 安裝的網域控制站升級至 Windows Server 2012 的 Server Core 安裝。 在升級程序後期，升級會當機並呈現全黑的螢幕。 重新啟動這類 DC 會在 boot.ini 檔案中看到一個選項，回復到之前的作業系統版本。 再次重新開機會觸發自動回復到之前的作業系統版本。 在有解決方案可用之前，建議您安裝新的網域控制站，執行 Windows Server 2012 的 Server Core 安裝，而不是就地升級執行 Windows Server 之 Server Core 安裝的現有網域控制站。2008 R2。 如需詳細資訊，請參閱知識庫文章 [2734222](https://support.microsoft.com/kb/2734222)。  
 
-## <a name="BKMK_FunctionalLevels"></a>功能等級功能和需求
+## <a name="functional-level-features-and-requirements"></a><a name="BKMK_FunctionalLevels"></a>功能等級功能和需求
 
 Windows Server 2012 需要 Windows Server 2003 樹系功能等級。 也就是說，在您可以將執行 Windows Server 2012 的網域控制站新增至現有的 Active Directory 樹系之前，樹系功能等級必須是 Windows Server 2003 或更高的版本。 這表示執行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的網域控制站可以在相同的樹系中運作，但不支援執行 Windows 2000 Server 的網域控制站，而且會封鎖執行 Windows Server 2012 之網域控制站的安裝。 如果樹系包含執行 Windows Server 2003 或更新版本的網域控制站，但樹系功能等級還是 Windows 2000，也會封鎖安裝。  
   
@@ -244,7 +244,7 @@ Windows Server 2012 樹系功能等級不提供任何新功能，但可確保樹
 > [!NOTE]  
 > Microsoft Exchange Server 2013 需要 Windows Server 2003 或更高的樹系功能等級。  
 
-## <a name="BKMK_ServerRoles"></a>AD DS 與其他伺服器角色和 Windows 作業系統的互通性
+## <a name="ad-ds-interoperability-with-other-server-roles-and-windows-operating-systems"></a><a name="BKMK_ServerRoles"></a>AD DS 與其他伺服器角色和 Windows 作業系統的互通性
 
 下列 Windows 作業系統不支援 AD DS：  
   
@@ -256,7 +256,7 @@ AD DS 無法安裝在同時執行下列伺服器角色或角色服務的伺服�
 - Hyper-V 伺服器  
 - 遠端桌面連線代理人  
   
-## <a name="BKMK_OpsMasters"></a>操作主機角色
+## <a name="operations-master-roles"></a><a name="BKMK_OpsMasters"></a>操作主機角色
 
 Windows Server 2012 中的一些新功能會影響操作主機角色：  
 
@@ -267,15 +267,15 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 > [!NOTE]  
 > 雖然它們不是操作主機角色，但 AD DS 安裝的另一項變更是，預設會在執行 Windows Server 2012 的所有網域控制站上安裝 DNS 伺服器角色和通用類別目錄。  
 
-## <a name="BKMK_Virtual"></a>虛擬化網域控制站
+## <a name="virtualizing-domain-controllers"></a><a name="BKMK_Virtual"></a>虛擬化網域控制站
 
 從 Windows Server 2012 開始的 AD DS 增強功能可讓網域控制站的虛擬化更安全，以及複製網域控制站的能力。 複製網域控制站的能力接著能夠在新的網域中快速部署其他網域控制站並提供其他好處。 如需詳細資訊，請參閱[Active Directory Domain Services &#40;AD DS&#41;虛擬&#40;化層&#41;級100的簡介](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。  
 
-## <a name="BKMK_Admin"></a>Windows Server 2012 伺服器的管理
+## <a name="administration-of-windows-server-2012-servers"></a><a name="BKMK_Admin"></a>Windows Server 2012 伺服器的管理
 
 使用[windows 8 的遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)來管理網域控制站和執行 windows Server 2012 的其他伺服器。 您可以在執行 Windows 8 的電腦上執行 Windows Server 2012 遠端伺服器管理工具。  
 
-## <a name="BKMK_AppCompat"></a>應用程式相容性
+## <a name="application-compatibility"></a><a name="BKMK_AppCompat"></a>應用程式相容性
 
 下表涵蓋常見的整合 Active Directory Microsoft 應用程式。 表格內容包含應用程式可以安裝在哪些版本的 Windows Server 上，以及採用 Windows Server 2012 DC 是否會對應用程式相容性產生影響。  
 
@@ -299,7 +299,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 |SQL Server 2008|來源：KB [2681562](https://support.microsoft.com/kb/2681562)<br /><br />需要 SQL Server 2008 (含 Service Pack 3) 或更新版本才能安裝在 Windows Server 2012。|  
 |SQL Server 2005|來源：KB [2681562](https://support.microsoft.com/kb/2681562)<br /><br />不支援安裝在 Windows Server 2012。|  
 
-## <a name="BKMK_KnownIssues"></a>已知問題
+## <a name="known-issues"></a><a name="BKMK_KnownIssues"></a>已知問題
 
 下表列出與 AD DS 安裝相關的已知問題。  
 
