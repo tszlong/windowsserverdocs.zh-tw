@@ -8,12 +8,12 @@ ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856342"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661074"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -23,7 +23,7 @@ ms.locfileid: "78856342"
 
 例如，Windows Server 1903 版包含儲存體遷移服務的新功能和修正，其也適用于 Windows Server 2019 和 Windows Server 1809 版，安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)。
 
-## <a name="collecting-logs"></a>如何在使用 Microsoft 支援服務時收集記錄檔
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>如何在使用 Microsoft 支援服務時收集記錄檔
 
 儲存體遷移服務包含 Orchestrator 服務和 Proxy 服務的事件記錄檔。 Orchestrator 伺服器一律會同時包含事件記錄檔，以及已安裝 proxy 服務的目的地伺服器包含 proxy 記錄。 這些記錄檔位於：
 
@@ -343,7 +343,7 @@ DFSR Debug 記錄檔：
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後變更目的地叢集網路名稱和 IP，以手動執行切換要與原始來源相符的位址。 
+這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後以手動方式變更叢集的來源檔案伺服器資源的網路名稱和 IP 位址，然後將目的地叢集的網路名稱和 IP 位址變更為符合原始來源，以手動執行轉換。 
 
 ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>在來源電腦上的「38% 對應網路介面已停止回應」使用 DHCP 時 
 
@@ -421,7 +421,7 @@ DFSR Debug 記錄檔：
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
    
- 2. 針對以原始名稱傳回的任何使用者，編輯其 [使用者登入名稱（Windows 前2000）] 以移除儲存體遷移服務所新增的隨機字元尾碼，讓此失敗者可以登入。
+ 2. 針對以原始名稱傳回的任何使用者，編輯其 [使用者登入名稱（Windows 前2000）] 以移除儲存體遷移服務所新增的隨機字元尾碼，讓此使用者可以登入。
  3. 針對以原始名稱傳回的任何群組，編輯其「組名（預先 Windows 2000）」，以移除儲存體遷移服務所新增的隨機字元尾碼。
  4. 針對任何已停用的使用者或名稱現在包含儲存體遷移服務所新增之後綴的群組，您可以刪除這些帳戶。 您可以確認稍後新增的是使用者帳戶，因為它們只會包含網域使用者群組，而且會有與儲存體遷移服務傳輸開始時間相符的建立日期/時間。
  
@@ -484,7 +484,7 @@ DFSR Debug 記錄檔：
  - 來源電腦上沒有執行遠端登入服務。
  - 防火牆不允許從 Orchestrator 對來源伺服器進行遠端登入連線。
  - 來源遷移帳戶沒有連接到來源電腦的遠端登入權利。
- - 來源遷移帳戶在來源電腦的登錄中，沒有 [HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\CurrentVersion] 或 [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\] 底下的 [讀取] 許可權LanmanServer
+ - 來源遷移帳戶在來源電腦的登錄中，沒有 [HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\CurrentVersion] 或 [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer] 底下的 [讀取] 許可權
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在來源電腦上的「38% 對應網路介面已停止回應」 
 

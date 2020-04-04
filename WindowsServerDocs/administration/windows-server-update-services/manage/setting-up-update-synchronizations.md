@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4559016388f9b0d765c8e4d76f76fa7ef0a7f0f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361604"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639748"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新同步處理設定
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在同步處理期間，WSUS 伺服器會從更新來源下載更新（更新中繼資料和檔案）。 它也會下載新的產品分類和類別（如果有的話）。 當您的 WSUS 伺服器第一次進行同步處理時，它會下載您在設定同步處理選項時所指定的所有更新。 在第一次同步處理之後，您的 WSUS 伺服器只會下載更新來源的更新，以及現有更新的中繼資料中的修訂，以及更新的到期日。
 
@@ -77,7 +77,7 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 
     -   如果您想要為連接到 proxy 伺服器的使用者啟用基本驗證，請選取 [**允許基本驗證（密碼會以純文字傳送）** ] 核取方塊。
 
-3.  按一下 **\[確定\]** 。
+3.  按一下 [確定]。
 
     > [!NOTE]
     > 因為 WSUS 會起始其所有網路流量，所以不需要在直接連線到 Microsoft update 的 WSUS 伺服器上設定 Windows 防火牆。
@@ -110,7 +110,7 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 
 4.  針對 **[每天同步處理]** ，選取您想要每天進行的同步處理次數。 例如，如果您一天從上午3:00 開始進行四次同步處理，則同步處理將會發生在上午3:00、9:00 A.M.、下午3:00 和下午9:00。 每天。 （請注意，隨機時間位移將會加入到排定的同步處理時間，以便將伺服器連接空間以 Microsoft Update。）
 
-5.  按一下 **\[確定\]** 。
+5.  按一下 [確定]。
 
 #### <a name="to-synchronize-your-wsus-server-immediately"></a>立即同步處理您的 WSUS 伺服器
 

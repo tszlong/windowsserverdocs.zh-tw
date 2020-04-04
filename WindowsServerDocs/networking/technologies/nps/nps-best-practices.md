@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 278d813aa13ea42b7f597bdbe7eb210f68cee955
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 4e6e6d2612af80bdaaa3900414bb08c3f0c18ea3
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316300"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639915"
 ---
 # <a name="network-policy-server-best-practices"></a>網路原則伺服器最佳做法
 
@@ -97,7 +97,7 @@ NPS 中有兩種類帳戶處理或記錄：
 
 - 請儘可能使用使用者主要名稱來參照使用者。 使用者可以有相同的使用者主要名稱，不論成員資格為何。 這項作法提供具有大量網域的組織可能所需的延展性。
 
-- 如果您已在網域控制站以外的電腦上安裝網路原則伺服器 \(NPS\)，而 NPS 每秒都會收到大量的驗證要求，您可以增加 NPS 和網域控制站之間允許的並行驗證次數，藉此改善 NPS 效能。 如需詳細資訊，請參閱 
+- 如果您已在網域控制站以外的電腦上安裝網路原則伺服器 \(NPS\)，而 NPS 每秒都會收到大量的驗證要求，您可以增加 NPS 和網域控制站之間允許的並行驗證次數，藉此改善 NPS 效能。 如需詳細資訊，請參閱[增加 NPS 處理的並行驗證](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-concurrent-auth)。
 
 ## <a name="security-issues"></a>安全性問題
 

@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: f2320b80fb372a227098f952dc8e7f0758420f34
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1bbb8f06ab66ced50024f4ff17b73229d50ec5c6
+ms.sourcegitcommit: 479ad84a0d6c7c7b8308122b8bac8308cb36fe9b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947822"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391712"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
@@ -57,9 +57,9 @@ ms.locfileid: "75947822"
 ### <a name="windows-server-2019"></a>Windows Server 2019
 | 作業系統版本       | KMS 用戶端安裝識別碼          |
 |--------------------------------|-------------------------------|
-| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG  | 
-| Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C  |
-| Windows Server 2019 Essentials|WVDHN-86M7X-466P6-VHXV7-YY726|
+| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG | 
+| Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C |
+| Windows Server 2019 Essentials | WVDHN-86M7X-466P6-VHXV7-YY726 |
 
 ### <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -75,34 +75,34 @@ ms.locfileid: "75947822"
 
 | 作業系統版本          | KMS 用戶端安裝識別碼          |
 |-----------------------------------|-------------------------------|
-|Windows 10 Pro|W269N-WFGWX-YVC9B-4J6C9-T83GX|
-|Windows 10 Pro N|MH37W-N47XK-V7XM9-C7227-GCQG9|
-|Windows 10 工作站專業版|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
-|Windows 10 工作站專業版 N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
-|Windows 10 專業教育版|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
-|Windows 10 專業教育版 N|YVWGF-BXNMC-HTQYQ-CPQ99-66QFC|
-|Windows 10 Education|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|
-|Windows 10 Education N |2WH4N-8QGBV-H22JP-CT43Q-MDWWJ|
-|Windows 10 Enterprise  |NPPR9-FWDCX-D2C8J-H872K-2YT43|
-|Windows 10 Enterprise N    |DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4|
-|Windows 10 企業版 G|YYVX9-NTFWV-6MDM3-9PT4T-4M68B|
-|Windows 10 企業版 G N|44RPN-FTY23-9VTTB-MP9BX-T84FV|
+| Windows 10 Pro                    | W269N-WFGWX-YVC9B-4J6C9-T83GX |
+| Windows 10 Pro N                  | MH37W-N47XK-V7XM9-C7227-GCQG9 |
+| Windows 10 工作站專業版   | NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J |
+| Windows 10 工作站專業版 N | 9FNHH-K3HBT-3W4TD-6383H-6XYWF |
+| Windows 10 專業教育版          | 6TP4R-GNPTD-KYYHQ-7B7DP-J447Y |
+| Windows 10 專業教育版 N        | YVWGF-BXNMC-HTQYQ-CPQ99-66QFC |
+| Windows 10 Education              | NW6C2-QMPVW-D7KKK-3GKT6-VCFB2 |
+| Windows 10 Education N            | 2WH4N-8QGBV-H22JP-CT43Q-MDWWJ |
+| Windows 10 Enterprise             | NPPR9-FWDCX-D2C8J-H872K-2YT43 |
+| Windows 10 Enterprise N           | DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4 |
+| Windows 10 企業版 G           | YYVX9-NTFWV-6MDM3-9PT4T-4M68B |
+| Windows 10 企業版 G N         | 44RPN-FTY23-9VTTB-MP9BX-T84FV |
 
 ## <a name="windows-10-ltscltsb-versions"></a>Windows 10 LTSC/LTSB 版本
 
 ### <a name="windows-10-ltsc-2019"></a>Windows 10 LTSC 2019
 
-|作業系統版本|KMS 用戶端安裝識別碼|
-|-|-|
-|Windows 10 企業版 LTSC 2019|M7XTQ-FN8P6-TTKYV-9D4CC-J462D|
-|Windows 10 企業版 N LTSC 2019|92NFX-8DJQP-P6BBQ-THF9C-7CG2H|
+| 作業系統版本          | KMS 用戶端安裝識別碼          |
+|-----------------------------------|-------------------------------|
+| Windows 10 企業版 LTSC 2019   | M7XTQ-FN8P6-TTKYV-9D4CC-J462D |
+| Windows 10 企業版 N LTSC 2019 | 92NFX-8DJQP-P6BBQ-THF9C-7CG2H |
 
 ### <a name="windows-10-ltsb-2016"></a>Windows 10 LTSB 2016
 
-|作業系統版本|KMS 用戶端安裝識別碼|
-|-|-|
-|Windows 10 Enterprise LTSB 2016|DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ|
-|Windows 10 Enterprise N LTSB 2016|QFFDN-GRT3P-VKWWX-X7T3R-8B639|
+| 作業系統版本          | KMS 用戶端安裝識別碼          |
+|-----------------------------------|-------------------------------|
+| Windows 10 Enterprise LTSB 2016   | DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ |
+| Windows 10 Enterprise N LTSB 2016 | QFFDN-GRT3P-VKWWX-X7T3R-8B639 |
 
 ### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015 
 
@@ -115,17 +115,17 @@ ms.locfileid: "75947822"
 
 ### <a name="windows-server-version-1803"></a>Windows Server 1803 版
 
-| 作業系統版本       | KMS 用戶端安裝識別碼          |
-|--------------------------------|-------------------------------|
-| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG  | 
-| Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR  |
+| 作業系統版本  | KMS 用戶端安裝識別碼          |
+|---------------------------|-------------------------------|
+| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG | 
+| Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR |
 
 ### <a name="windows-server-version-1709"></a>Windows Server 1709 版
 
-| 作業系統版本       | KMS 用戶端安裝識別碼          |
-|--------------------------------|-------------------------------|
-| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6  | 
-| Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4  |
+| 作業系統版本  | KMS 用戶端安裝識別碼          |
+|---------------------------|-------------------------------|
+| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6 | 
+| Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4 |
 
 ### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
@@ -178,33 +178,33 @@ ms.locfileid: "75947822"
 
 ### <a name="windows-81"></a>Windows 8.1
 
-| 作業系統版本               | KMS 用戶端安裝識別碼          |
-|----------------------------------------|-------------------------------|
-| Windows 8.1 專業版               | GCRJD-8NW9H-F2CDX-CCM8D-9D6T9 |
-| Windows 8.1 專業版 N             | HMCNV-VVBFX-7HMBH-CTY9B-B4FXY |
-| Windows 8.1 Enterprise                 | MHF9N-XY6XB-WVXMC-BTDCT-MKKG7 |
-| Windows 8.1 Enterprise N               | TT4HM-HN7YT-62K67-RGRQJ-JFFXW |
+| 作業系統版本 | KMS 用戶端安裝識別碼          |
+|--------------------------|-------------------------------|
+| Windows 8.1 專業版          | GCRJD-8NW9H-F2CDX-CCM8D-9D6T9 |
+| Windows 8.1 專業版 N        | HMCNV-VVBFX-7HMBH-CTY9B-B4FXY |
+| Windows 8.1 Enterprise   | MHF9N-XY6XB-WVXMC-BTDCT-MKKG7 |
+| Windows 8.1 Enterprise N | TT4HM-HN7YT-62K67-RGRQJ-JFFXW |
 
 ### <a name="windows-8"></a>Windows 8
 
-| 作業系統版本                | KMS 用戶端安裝識別碼          |
-|-----------------------------------------|-------------------------------|
-| Windows 8 Pro                  | NG4HW-VH26C-733KW-K6F98-J8CK4 |
-| Windows 8 專業版 N                | XCVCF-2NXM9-723PB-MHCB7-2RYQQ |
-| Windows 8 企業版                    | 32JNW-9KQ84-P47T8-D8GGY-CWCK7 |
-| Windows 8 企業版 N                  | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
+| 作業系統版本 | KMS 用戶端安裝識別碼          |
+|--------------------------|-------------------------------|
+| Windows 8 Pro            | NG4HW-VH26C-733KW-K6F98-J8CK4 |
+| Windows 8 專業版 N          | XCVCF-2NXM9-723PB-MHCB7-2RYQQ |
+| Windows 8 企業版     | 32JNW-9KQ84-P47T8-D8GGY-CWCK7 |
+| Windows 8 企業版 N   | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
 
 
 ### <a name="windows-7"></a>Windows 7 
 
-| 作業系統版本                         | KMS 用戶端安裝識別碼          |
-|--------------------------------------------------|-------------------------------|
-| Windows 7 專業版                           | FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 |
-| Windows 7 專業版 N                         | MRPKT-YTG23-K7D7T-X2JMM-QY7MG |
-| Windows 7 專業版 E                         | W82YF-2Q76Y-63HXB-FGJG9-GF7QX |
-| Windows 7 Enterprise                             | 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH |
-| Windows 7 企業版 N                           | YDRBP-3D83W-TY26F-D46B2-XCKRJ |
-| Windows 7 企業版 E                           | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
+| 作業系統版本 | KMS 用戶端安裝識別碼          |
+|--------------------------|-------------------------------|
+| Windows 7 專業版   | FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 |
+| Windows 7 專業版 N | MRPKT-YTG23-K7D7T-X2JMM-QY7MG |
+| Windows 7 專業版 E | W82YF-2Q76Y-63HXB-FGJG9-GF7QX |
+| Windows 7 Enterprise     | 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH |
+| Windows 7 企業版 N   | YDRBP-3D83W-TY26F-D46B2-XCKRJ |
+| Windows 7 企業版 E   | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
 
 
 另請參閱

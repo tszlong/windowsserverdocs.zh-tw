@@ -12,12 +12,12 @@ ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b9c4e60864566d978603276c3119d3cbff1bbf57
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b99a21d38011b40515fb322429b73f23ad5849cf
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318938"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639904"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>將 Windows Small Business Server 2003 移轉到 Windows Server Essentials
 
@@ -64,23 +64,7 @@ ms.locfileid: "80318938"
   
 7.  [執行 Windows Server Essentials 遷移的遷移後](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md)工作。  完成將所有設定和資料移轉到 Windows Server Essentials 之後，您可能會想要將允許的電腦對應到使用者帳戶。  
   
-8.  [執行 Windows Server Essentials 最佳做法分析](Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)程式。  完成將設定和資料移轉到 Windows Server Essentials 之後，您應該下載並執行 Windows Server Essentials BPA。  
-
-1.  [準備您的來源伺服器以進行 Windows Server Essentials 遷移](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)。  您必須確定您的來源伺服器和網路已經準備就緒可以進行移轉。 本節引導您備份來源伺服器、評估來源伺服器系統健康情況、安裝最新的 Service Pack 和修正程式，以及確認網路設定。  
-  
-2.  [以移轉模式安裝 Windows Server Essentials](../migrate/Install-Windows-Server-Essentials-in-migration-mode.md)。  本節說明在移轉模式下，于目的地伺服器上安裝 Windows Server Essentials 時應採取的步驟。  
-  
-3.  將[電腦加入新的 Windows Server Essentials 網路](../migrate/Join-computers-to-the-new-Windows-Server-Essentials-network.md)。  本節涵蓋將用戶端電腦加入新的 Windows Server Essentials 網路，以及更新群組原則設定。  
-  
-4.  [將 SBS 2003 設定和資料移至目的地伺服器](../migrate/Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。  
-  
-5.  在[Windows Server Essentials 目的地伺服器上啟用資料夾](../migrate/Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md)重新導向。  如果來源伺服器上已啟用資料夾重新導向，您可以在目的地伺服器啟用資料夾重新導向，然後刪除舊的資料夾重新導向群組原則設定。  
-  
-6.  [從新的 Windows Server Essentials 網路降級和移除來源伺服器](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)。  從網路移除來源伺服器之前，您必須強制執行群組原則更新並降級來源伺服器。  
-  
-7.  [執行 Windows Server Essentials 遷移的遷移後](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md)工作。  完成將所有設定和資料移轉到 Windows Server Essentials 之後，您可能會想要將允許的電腦對應到使用者帳戶。  
-  
-8.  [執行 Windows Server Essentials 最佳做法分析](../migrate/Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)程式。  完成將設定和資料移轉到 Windows Server Essentials 之後，您應該下載並執行 Windows Server Essentials BPA。  
+8.  [執行 Windows Server Essentials 最佳做法分析](Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)程式。  完成將設定和資料移轉到 Windows Server Essentials 之後，您應該下載並執行 Windows Server Essentials BPA。   
 
   
  有幾個移轉程序需要您以系統管理員的身分開啟 [命令提示字元] 視窗。  

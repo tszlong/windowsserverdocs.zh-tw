@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 47269fbfac6aea3fe46513ad67d2cfa2f0c9b78e
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465492"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639922"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
@@ -63,7 +63,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 -   [降低攻擊面 (ASR)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) 是一組控制項，可透過封鎖可疑的惡意檔案 (例如 Office 檔案)、指令碼、橫向移動、勒索軟體行為以及電子郵件型威脅，讓企業防止惡意軟體進入機器。
 
--   [網路保護](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/network-protection-exploit-guard?ocid=cx-blog-mmpc)透過 Windows Defender SmartScreen 阻止裝置上任何傳向不受信任主機/IP 位址的輸出程序，保護端點免受到 Web 型威脅。
+-   [網路保護](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/network-protection)透過 Windows Defender SmartScreen 阻止裝置上任何傳向不受信任主機/IP 位址的輸出程序，保護端點免受到 Web 型威脅。
 
 -   [受控資料夾存取權](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc)會阻止不受信任的處理程序存取受保護的資料夾，進而保護敏感性資料免受勒索軟體侵害。
 

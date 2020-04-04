@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/30/2019
 description: 本文說明叢集集合案例
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d686fa9797d84f56182b15c36a26440792ec13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402914"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639956"
 ---
 # <a name="cluster-sets"></a>叢集集合
 
@@ -65,7 +65,7 @@ ms.locfileid: "71402914"
 
 **可用性設定組**
 
-可用性設定組可協助系統管理員在容錯網域中設定所需的叢集工作負載複本，方法是將它們組織成可用性設定組，並將工作負載部署到該可用性設定組。 假設您要部署兩層式應用程式，建議您在可用性設定組中為每一層設定至少兩部虛擬機器，以確保當該可用性設定組中的一個容錯網域停止運作時，您的應用程式至少會有每一層中的一部虛擬機器，裝載于相同可用性設定組的不同容錯網域上。
+可用性設定組可協助系統管理員在容錯網域中設定所需的叢集工作負載複本，方法是將它們組織成可用性設定組，並將工作負載部署到該可用性設定組。 假設您要部署兩層式應用程式，建議您在可用性設定組中為每個階層設定至少兩部虛擬機器，以確保當該可用性設定組中的一個容錯網域停止運作時，您的應用程式至少會在相同可用性設定組的不同容錯網域上主控一部虛擬機器。
 
 ## <a name="why-use-cluster-sets"></a>為何要使用叢集集合
 
@@ -100,7 +100,7 @@ ms.locfileid: "71402914"
 
 下列考慮適用于基礎結構 SOFS 角色：
 
-1.  容錯移轉叢集上最多隻能有一個基礎結構 SOFS 叢集角色。 基礎結構 SOFS 角色是藉由指定**ClusterScaleOutFileServerRole** Cmdlet 的「**基礎結構**」切換參數來建立。  例如：
+1.  容錯移轉叢集上最多隻能有一個基礎結構 SOFS 叢集角色。 基礎結構 SOFS 角色是藉由指定**ClusterScaleOutFileServerRole** Cmdlet 的「**基礎結構**」切換參數來建立。  例如，
 
         Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
 
@@ -163,7 +163,7 @@ ms.locfileid: "71402914"
 
         Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
 
-8. 若要確認叢集集建立程式是否已建立一個 SMB 共用（識別為 Volume1，或在每個叢集成員的基礎結構 SOFS 上，將 ScopeName 標示為基礎結構檔案伺服器的名稱，以及兩者的路徑）CSV 磁片區：
+8. 若要確認叢集集建立程式是否已建立一個 SMB 共用（識別為 Volume1，或在每個叢集成員的 CSV 磁片區的基礎結構 SOFS 上，將 ScopeName 標示為基礎結構檔案伺服器的名稱，以及兩者的路徑）：
 
         Get-SmbShare -CimSession CSMASTER
 
@@ -171,7 +171,7 @@ ms.locfileid: "71402914"
 
         Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
 
-9. 設定所有叢集集合成員之間的 Kerberos[限制委派](https://blogs.technet.microsoft.com/virtualization/2017/02/01/live-migration-via-constrained-delegation-with-kerberos-in-windows-server-2016/)。
+9. 設定所有叢集集合成員之間的 Kerberos[限制委派](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334)。
 
 10. 在叢集集合中的每個節點上，將跨叢集虛擬機器即時移轉驗證類型設定為 Kerberos。
 
@@ -260,7 +260,7 @@ ms.locfileid: "71402914"
 
 使用叢集設定時，不需要執行這些步驟，而且只需要一個命令。  首先，您應該使用命令將所有網路設定為可供遷移：
 
-    Set-VMHost -UseAnyNetworkMigration $true
+    Set-VMHost -UseAnyNetworkForMigration $true
 
 例如，我想要將叢集集虛擬機器從 CLUSTER1 移至 CLUSTER3 上的節點 2-CL3。  單一命令會是：
 

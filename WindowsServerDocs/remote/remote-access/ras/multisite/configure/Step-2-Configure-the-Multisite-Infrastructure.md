@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6f020dc2bf5c0dc11d18e886346a98a4a40f3855
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9434f3192da110c8ad61e999d2aecd02bfff3812
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314049"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639842"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>步驟2設定多網站基礎結構
 
@@ -241,7 +241,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 #### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>變更管理伺服器 Gpo 的網域控制站  
   
--   在遠端存取服務器上執行 Windows PowerShell Cmdlet `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC`，並為*ExistingDC*參數指定無法連線的網域控制站名稱。 此命令會針對目前由該網域控制站管理的進入點，修改其伺服器 Gpo 的網域控制站關聯。  
+-   在遠端存取服務器上執行 Windows PowerShell Cmdlet [DAEntryPointDC](https://docs.microsoft.com/powershell/module/remoteaccess/set-daentrypointdc) ，並為*ExistingDC*參數指定無法連線的網域控制站名稱。 此命令會針對目前由該網域控制站管理的進入點，修改其伺服器 Gpo 的網域控制站關聯。
   
     -   若要以網域控制站 "dc2.corp.contoso.com" 取代無法連線的網域控制站 "dc1.corp.contoso.com"，請執行下列動作：  
   
@@ -300,7 +300,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>設定散發的優化  
-進行設定變更時，只有在伺服器 Gpo 傳播至遠端存取服務器之後，才會套用變更。 若要減少設定散發時間，遠端存取會自動選取可寫入的網域控制站，這是在建立其伺服器 GPO 時，與遠端存取服務器最接近的超連結「<https://technet.microsoft.com/library/cc978016.aspx>」。  
+進行設定變更時，只有在伺服器 Gpo 傳播至遠端存取服務器之後，才會套用變更。 若要減少設定散發時間，遠端存取會在建立其伺服器 GPO 時，自動選取[最接近遠端存取服務器](https://technet.microsoft.com/library/cc978016.aspx)的可寫入網域控制站。  
   
 在某些情況下，可能需要手動修改管理伺服器 GPO 的網域控制站，以便優化設定散發時間：  
   
@@ -336,4 +336,3 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 -   [步驟3：設定多網站部署](Step-3-Configure-the-Multisite-Deployment.md)  
 -   [步驟1：執行單一伺服器遠端存取部署](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
-

@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 454fa385dc9fb91218ad836d4ad34e92e9644dac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36ac4230ae84cae3a859e53e5faa2b83cb7412d5
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361635"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639817"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>管理 WSUS 用戶端電腦和 WSUS 電腦群組
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 [電腦] 節點是 WSUS 管理主控台中用來管理 WSUS 用戶端電腦和裝置的集中存取點。 在此節點下，您可以找到已設定的不同群組（加上預設群組 [未指派的電腦]）。
 
