@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 37e3a7788ccd409f4002f5fe2d7ea087e89b3419
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323520"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639926"
 ---
 # <a name="plan-your-wsus-deployment"></a>規劃 WSUS 部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2019、Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 做出重要決定是部署 Windows Server Update Services (WSUS) 的第一步，例如決定 WSUS 部署案例、選擇網路拓撲以及了解系統需求。 下列檢查清單摘要準備部署時所需的步驟。
 
@@ -37,7 +37,7 @@ ms.locfileid: "79323520"
 
 ### <a name="system-requirements"></a>系統需求
 
-啟用 WSUS 伺服器角色之前，請依據下列指導方針，確認伺服器符合系統需求，並確認具有完成安裝的必要權限：
+硬體和資料庫軟體需求是由貴組織中要更新的用戶端電腦數目所驅動。  啟用 WSUS 伺服器角色之前，請依據下列指導方針，確認伺服器符合系統需求，並確認具有完成安裝的必要權限：
 
 -   啟用 WSUS 角色的伺服器硬體需求會與硬體需求合併在一起。 WSUS 的最小硬體需求：
 
@@ -45,9 +45,12 @@ ms.locfileid: "79323520"
 
     -   **記憶體：** 除了伺服器和其他所有服務或軟體所需的 RAM，WSUS 還需要額外的 2 GB。
 
-    -   **可用磁碟空間：** 10 GB (建議 40 GB 或以上)
+    -   **可用磁碟空間：** 建議 40 GB 或以上
 
-    -   **網路介面卡：** 每秒 100 Mbps 或以上
+    -   **網路介面卡：** 每秒 100 Mbps 或以上 (建議 1GB)
+
+> [!NOTE] 
+> 這些指導方針假設 WSUS 用戶端會為總計 30000 個用戶端，每隔八小時與伺服器進行同步處理。 如果同步處理頻率較高，伺服器負載就會有相對應的增量。  
 
 -   軟體需求：
 

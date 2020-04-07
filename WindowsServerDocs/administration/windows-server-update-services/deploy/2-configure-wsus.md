@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a78d2006a45bb2af8f87a91d7bb888964ddbcb
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: c1e68685e3a1e5486360d7946d5aeb36abbdcd3a
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323500"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639874"
 ---
 # <a name="step-2-configure-wsus"></a>步驟 2：設定 WSUS
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2019、Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在您的伺服器上安裝 WSUS 伺服器角色之後，需要正確地設定它。 下列檢查清單摘要為 WSUS 伺服器執行初始設定所需的步驟。
 

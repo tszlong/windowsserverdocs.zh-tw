@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22554a9669c30cc827c509824f187fbaaedb1272
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d71a26cbe889f5de11934b2af411ac407fc5e75
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361696"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639865"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>步驟 1：安裝 WSUS 伺服器角色
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2019、Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 部署 WSUS 伺服器的下一個步驟是安裝 WSUS 伺服器角色。 下列程序描述如何使用伺服器管理員安裝 WSUS 伺服器角色。
 

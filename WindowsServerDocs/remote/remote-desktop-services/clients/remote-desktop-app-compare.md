@@ -1,6 +1,6 @@
 ---
-title: 遠端桌面 - 比較用戶端應用程式
-description: 了解不同的 RD 應用程式在支援特性和功能方面的比較。
+title: 遠端桌面 - 比較用戶端
+description: 了解不同的 RD 用戶端在支援特性和功能方面的比較。
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -9,64 +9,62 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 05/20/2019
+author: heidilohr
+manager: lizross
+ms.author: helohr
+ms.date: 03/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 237bb79fae6460bc3b31fb1753e2d679c8d67512
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11c91ac951db27915d9313f7f98e5e2cfc56b726
+ms.sourcegitcommit: 78c00944b6990702d28bdcc4a9215927ca901bfb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404166"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80440367"
 ---
-# <a name="compare-the-client-apps"></a>比較用戶端應用程式
+# <a name="compare-the-clients"></a>比較用戶端
 
 >適用於：Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-我們經常被問到與不同的遠端桌面用戶端應用程式相較之下有何差異。 其功能是否完全相同？ 以下是這些問題的解答。
+我們經常被問到與不同的遠端桌面用戶端相較之下有何差異。 其功能是否完全相同？ 以下是這些問題的解答。
 
 ## <a name="redirection-support"></a>重新導向支援
 
-下表比較遠端桌面連線應用程式、通用應用程式、Android 應用程式、iOS 應用程式、macOS 應用程式和網頁用戶端上的裝置及其他重新導向支援。 這些表格涵蓋您可以在遠端工作階段中存取一次的重新導向。 
+下表比較不同用戶端上對裝置和其他重新導向的支援。 這些表格涵蓋您可以在遠端工作階段中存取一次的重新導向。
 
-如果您遠端連線到個人桌面，您可以在 [其他設定]  中為工作階段設定其他重新導向。 如果您的遠端桌面或應用程式是由您組織所管理，則您的系統管理員可以透過群組原則設定啟用或停用重新導向。
+如果您遠端連線到個人桌面，您可以在 [其他設定]  中為工作階段設定其他重新導向。 如果您的遠端桌面或應用程式是由您組織所管理，則您的系統管理員可以透過群組原則設定或 RDP 屬性來啟用或停用重新導向。
 
 ### <a name="input-redirection"></a>輸入重新導向
 
-| 重新導向 | 遠端桌面<br> 連線 | 通用 | Android | iOS | macOS |          網頁用戶端           |
-|-------------|-------------------------------|-----------|---------|-----|-------|-------------------------------|
-|  鍵盤   |               X               |     X     |    X    |  X  |   X   |               X               |
-|    滑鼠    |               X               |     X     |    X    | X\* |   X   |               X               |
-|    觸控    |               X               |     X     |    X    |  X  |       | X (不支援 Edge 和 IE) |
-|    其他    |              手寫筆              |           |         |     |       |                               |
+| 重新導向 | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 市集 | Android | iOS | macOS | 網頁用戶端    |
+|-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|---------------|
+| 鍵盤    | X                         | X                           | X             | X       | X   | X     | X             |
+| 滑鼠       | X                         | X                           | X             | X       | X\* | X     | X             |
+| 觸控       | X                         | X                           | X             | X       | X   |       | X (IE 除外) |
+| 手寫筆         | X                         | X                           |               |         |     |       |               |
 
-*檢視[遠端桌面 iOS 搶鮮版 (Beta) 用戶端支援的輸入裝置清單](remote-desktop-ios.md#supported-input-devices)。
+*檢視[遠端桌面 iOS 用戶端支援的輸入裝置清單](remote-desktop-ios.md#supported-input-devices)。
 
-### <a name="port-redirection"></a>連接埠重新導向   
+### <a name="port-redirection"></a>連接埠重新導向
 
-| 重新導向 | 遠端桌面 <br>連線 | 通用 | Android | iOS | macOS | 網頁用戶端 |
-|-------------|-------------------------------|-----------|---------|-----|-------|------------|
-| 序列埠 | X                             |           |         |     |       |            |
-| USB         | X                             |           |         |     |       |            |
+| 重新導向 | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 市集 | Android | iOS | macOS | 網頁用戶端 |
+|-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|------------|
+| 序列埠 | X                         | X                           |               |         |     |       |            |
+| USB         | X                         | X                           |               |         |     |       |            |
 
 當您啟用 USB 連接埠重新導向時，會在遠端工作階段中自動辨識連結到 USB 連接埠的任何 USB 裝置。
 
 ### <a name="other-redirection-devices-etc"></a>其他重新導向 (裝置等)
 
-
-
-| 重新導向         | 遠端桌面連線 | 通用   | Android | iOS         | macOS                                    | 網頁用戶端    |
-|---------------------|---------------------------|-------------|---------|-------------|------------------------------------------|---------------|
-| 相機             | X                         |             |         |             |                                          |               |
-| 剪貼簿           | X                         | 文字、影像 | 文字    | 文字、影像 | X                                        | 文字          |
-| 本機磁碟機/存放區 | X                         |             | X       |             | x                                        |               |
-| Location            | X                         |             |         |             |                                          |               |
-| 麥克風         | X                         |X            |         |             | X                                        |               |
-| 印表機            | X                         |             |         |             | X (僅限 CUPS)                            | PDF 列印     |
-| 掃描器            | X                         |             |         |             |                                          |               |
-| 智慧卡         | X                         |             |         |             | X (不支援 Windows 驗證) |               |
-| 喇叭            | X                         | X           | X       | X           | X                                        | X (IE 除外) |
+| 重新導向         | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 市集 | Android | iOS         | macOS                           | 網頁用戶端    |
+|---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
+| 相機             | X                         | X                           |               |         |             | X                               |               |
+| 剪貼簿           | X                         | X                           | X             | 文字    | 文字、影像 | X                               | 文字          |
+| 本機磁碟機/存放區 | X                         | X                           |               | X       |             | X                               |               |
+| 位置            | X                         | X                           |               |         |             |                                 |               |
+| 麥克風         | X                         | X                           | X             |         |             | X                               |               |
+| 印表機            | X                         | X                           |               |         |             | X (僅限 CUPS)                   | PDF 列印     |
+| 掃描器            | X                         | X                           |               |         |             |                                 |               |
+| Smart Cards         | X                         | X                           |               |         |             | X (不支援 Windows 登入) |               |
+| Speakers            | X                         | X                           | X             | X       | X           | X                               | X (IE 除外) |
 
 *對於印表機重新導向 - macOS 應用程式預設支援 Publisher 網片輸出機印表機驅動程式。 不支援重新導向原生印表機驅動程式。

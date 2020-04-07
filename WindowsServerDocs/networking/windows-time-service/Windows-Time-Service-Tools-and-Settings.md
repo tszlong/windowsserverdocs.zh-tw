@@ -13,12 +13,12 @@ ms.custom:
 - CI ID 113344
 - CSSTroubleshoot
 audience: Admin
-ms.openlocfilehash: e9432aa11446cdd4f00efca3af28c24d757d6019
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 52c3d1527726241313cf2b741fbc5a5799aca661
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315134"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661080"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
@@ -133,7 +133,7 @@ Windows 會將這些設定載入下列子機碼下的登錄原則區域中：
 |Time Providers\Enable Windows NTP Server |W32Time\TimeProviders\NtpServer |
 
 > <sup>1</sup> 類別路徑：**Computer Configuration\Administrative Templates\System\Windows Time Service**  
-> <sup>2</sup> 子機碼:**HKLM\SOFTWARE\Policies\Microsoft\Windows**  
+> <sup>2</sup> 子機碼:**HKLM\SOFTWARE\Policies\Microsoft**  
 > <sup>3</sup> 子機碼:**HKLM\SYSTEM\CurrentControlSet\Services**
 
 ## <a name="enabling-w32time-logging"></a>啟用 W32Time 記錄
