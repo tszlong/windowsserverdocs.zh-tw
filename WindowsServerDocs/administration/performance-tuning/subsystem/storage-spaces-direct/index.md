@@ -6,14 +6,14 @@ ms.technology: performance-tuning-guide
 ms.topic: article
 ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
-ms.author: Vshankar; DanLo; clausjor; StevenEk
+ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: dabfadb30666ec93aa36985e2bc55a3f496e6d34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a24bbdb83ec1b08f56989368a4831549c594f6c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383468"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851601"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>儲存空間直接存取的效能調整
 
@@ -36,7 +36,7 @@ ms.locfileid: "71383468"
 
 若要檢視並修改快取設定，請使用 [Get-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt634616.aspx) 與 [Set-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt763265.aspx) Cmdlet。 `CacheModeHDD` 與 `CacheModeSSD` 屬性定義快取如何在指定類型的容量媒體上作業。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [了解儲存空間直接存取](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
 - [規劃儲存空間直接存取](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)

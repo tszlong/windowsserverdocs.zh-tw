@@ -8,8 +8,8 @@ metadata:
   text: 軟體定義網路 (SDN) 允許您以動態方式管理您的資料中心網路連線，以滿足工作負載和應用程式的需求。 即使在部署新工作負載或跨虛擬或實體網路移動工作負載時，也可以大規模一致地實作網路原則。
   keywords: 'Windows Server, Windows Server 2016, 軟體定義網路, sdn'
   ms.localizationpriority: medium
-  author: eross-msft
-  ms.author: lizross
+  author: AnirbanPaul
+  ms.author: anpaul
   ms.date: 09/04/2018
   ms.topic: article
   ms.devlang: na

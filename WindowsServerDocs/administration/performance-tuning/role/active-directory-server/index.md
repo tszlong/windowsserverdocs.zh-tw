@@ -4,15 +4,15 @@ description: Active Directory 伺服器的效能調整
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c4d14cfb4bfc8a6919683a360ec171de8250799a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 643a603e89adeb0c1f3c70b0b0cabbf6bcb54731
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370323"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851901"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory 伺服器的效能調整
 
@@ -44,7 +44,7 @@ Active Directory 與用戶端效能最佳化中的大量增強功能在最近數
 
 我們鼓勵您關注我們的小組部落格 [Ask the Directory Services Team](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS) (英文)，密切注意有關管理 ADDS 的最新新聞、指導方針與最佳做法。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [AD DS 容量規劃](capacity-planning-for-active-directory-domain-services.md)
 - [硬體考量](hardware-considerations.md)

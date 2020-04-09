@@ -4,15 +4,15 @@ description: Windows Server 16 上網頁伺服器的效能調整建議
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: DavSo; Ericam; YaShi
+ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9587eb5215d2920a0146e8a697c6f36c50f19f27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ec36d87957e5bbe897597e330e766c3193cd30d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370049"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851691"
 ---
 # <a name="performance-tuning-web-servers"></a>網頁伺服器的效能調整
 
@@ -57,7 +57,7 @@ ms.locfileid: "71370049"
 >[!Warning]
 > 某些應用程式 (例如增量備份公用程式) 仰賴此更新資訊，而且若沒有此資訊，它們將無法運作。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [IIS 10.0 效能調整](tuning-iis-10.md)
 - [HTTP 1.1/2 調整](http-performance.md)
 
